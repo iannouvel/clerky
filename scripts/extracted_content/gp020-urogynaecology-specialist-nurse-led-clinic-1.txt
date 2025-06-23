@@ -1,0 +1,767 @@
+# Extracted from: GP020 Urogynaecology Specialist  Nurse-Led Clinic (1).pdf
+# Guideline ID: gp020-urogynaecology-specialist-nurse-led-clinic-1
+# Content length: 33415 characters
+# Processing date: 1750066900.9761868
+
+Urogynaecology Specialist 
+Nurse -led Clinics 
+
+Gynaecology Protocol: GP020 
+ 
+Date Agreed: June 2017 Urogynaecology Specialist Nurse -Led Clinics GP020 
+Brighton & Sussex University Page 2 of 23 
+Hospital Trust 
+
+Manager responsible: Mr VuiVun Wong 
+Author/s: Dr Sharif Ismail 
+Protocol: GP020 
+Version: 1 
+Approving committee: Womens Safety & Quality Committee 
+First Publishe d: June 2017 
+Review date: June 2020 
+ Urogynaecology Specialist Nurse -Led Clinics GP020 
+Brighton & Sussex University Page 3 of 23 
+Hospital Trust Key Principl es 
+ 
+A protocol is a set of measurable, objective standards to determine a course of 
+action. 
+Professional judgement may be used in the application of a protocol. 
+ 
+Scope 
+ 
+This guideline applies to: 
+ The setup and actual carrying out of Urogynaecology Specialist Nurse -led 
+Clinics 
+ Consent, confidentiality, documentation and communication i n relation to 
+telephone follow up clinics 
+ Audit, research, team working, support, training and care quality 
+ 
+Responsibilities 
+ 
+Urogynaecology Specialist Nurse and Urogynaecologisys: 
+ To access, read, understand and follow this guidance 
+ To use their profess ional judgement in the application of this protocol 
+Managers: 
+ To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations 
+ To ensure the protocol is accessible to all relevant staff 
+
+ Urogynaecology Specialist Nurse -Led Clinics GP020 
+Brighton & Sussex University Page 4 of 23 
+Hospital Trust Table of Contents 
+Key Principles ................................ ................................ ................................ ................. 3 
+Scope ................................ ................................ ................................ .............................. 3 
+Responsibilities ................................ ................................ ................................ .............. 3 
+1 Objective standards / Introduction ................................ ................................ ....... 5 
+2 Urinary Incontinence Triage Clinic: ................................ ................................ ........ 6 
+3 Free Flowmetry and Residual Volume Clinic ................................ ......................... 7 
+4 Teleph one Urinary Incontinence Follow Up Clinic ................................ ................ 7 
+5 Pessary Replacement Clinic ................................ ................................ ................... 9 
+6 Post -operative Follow Up Cli nic ................................ ................................ ........... 10 
+7 Trial Without Catheter (TWOC) Clinic ................................ ................................ .. 11 
+8 Posterior Tibial Nerve Stimulation (PTNS) Clinic ................................ ................. 11 
+9 Intra -vesical Instillation Clinic ................................ ................................ .............. 12 
+10 Risk Management ................................ ................................ ................................ 12 
+11 Training ................................ ................................ ................................ ................ 12 
+12 Audit ................................ ................................ ................................ ..................... 12 
+13 Research ................................ ................................ ................................ ............... 13 
+14 Monitoring compliance: ................................ ................................ ....................... 13 
+Appendix A: Telephone Follow ................................ ................................ .................... 15 
+Appendix B: Pessary Replacement Sheet ................................ ................................ .... 16 
+Appendix C: Urogynaecology Post -operative Follow up sheet ................................ ... 17 
+Appendix D: Trial without Catheter ................................ ................................ ............. 19 
+Appendix E: Percutaneous tibial nerve stimulation ................................ .................... 21 
+Appendix F: Hyacyst Sheet ................................ ................................ ........................... 23 
+
+ Urogynaecology Specialist Nurse -Led Clinics GP020 
+Brighton & Sussex University Page 5 of 23 
+Hospital Trust 1 Objective standards / Introduction 
+ 
+1.1 Nurse -led clinics have been introduced to improve the efficiency and 
+quality of patient c are. They enable high quality patient care through 
+training, set up and team working and expand capacity through the 
+input of experienced specialised nursing input. The role of the 
+Urogynaecology Specialist Nurse is an essential requirement for 
+Urogynaecol ogy Unit Certification by the British Society of 
+Urogynaecology, in recognition of the central importance of this role in 
+good organisation and delivery of patient care. There are several 
+successful examples of such roles in leading units in the United 
+Kingdom. Brighton and Sussex University Hospitals NHS Trust adopts 
+this practice to improve its Urogynaecology Services to gain 
+Urogynaecology Unit Certification. 
+ 
+1.2 The underlying principle of Urogynaecology Specialist Nurse -led 
+Clinics is safe and effective patient care, through training, support and 
+audit, which will also increase capacity and enhance efficiency to 
+meet current realities in the National Health Service. Team working is 
+paramount so that patient care is not duplicated and proper 
+standards are fulfilled. This will ensure that training and support are 
+provided and care quality is improved. The role is evolving nationally 
+and its introduction locally is in the development stage, which will 
+progress with time. 
+ 
+1.3 With the change of practice, there is always the need for audit to 
+ensure good standards and fulfilled objectives. There is also an 
+opportunity for research to assess the impact of the change as well as 
+the factors that can help improving it further. 
+ 
+1.4 The following clinics are to be provided as Urogynaecology Specialist 
+Nurse -led Clinics: 
+ Urinary Incontinence Triage Clinic 
+ Free flowmetry and Residual Volume Clinic 
+ Telephone Continence Follow Up Clinic 
+ Pessary Replacement Clinic 
+ Post -operative Follow Up Clinic 
+ Trial Without Catheter (TWOC) C linic 
+ Posterior Tibial Nerve Stimulation (PTNS) Clinic 
+ Intra -vesical Instillation Clinic 
+ 
+1.5 It is important to ensure that the patient is happy with this 
+arrangement. If patients were to insist on being seen in person, rather Urogynaecology Specialist Nurse -Led Clinics GP020 
+Brighton & Sussex University Page 6 of 23 
+Hospital Trust than having a Telephone Follow U p Consultation, or being seen by 
+medical staff member, this should be organised. 
+ 
+2 Urinary Incontinence Triage Clinic: 
+ 
+2.1 Ideally, the Urinary Incontinence Triage Clinic runs in conjunction with 
+primary care colleagues, along the pathway outlined in Nice Guid elines 
+on Urinary Incontinence in Women. 
+2.2 Patients with one or more of the following features should be seen in the 
+Urogynaecology Clinic, rather than the Urogynaecology Specialist Nurse -
+led Urinary Incontinence Clinic: 
+ Voiding dysfunction , suspected rete ntion of urine 
+ Previo us urinary continence procedure 
+ Neurological problems 
+ Pelvic Organ Prolapse 
+ Painful bladder syndrome 
+ Urinary Tract Infection 
+2.3 Patients with stress incontinence of urine and/or overactive bladder are 
+ideally seen in the Urogynaecology Specialist Nurse -led Urinary 
+Incontinence Triage Clinic, where history can be obtained, examination 
+carried out and documented in the Urogynaecology Assessment Sheet 
+and Frequency Volume Charts and Quality of Life Questionnaire 
+Completed. 
+2.4 Patients should be counselled about their conditions and provided with 
+relevant Patient Information Leaflets. These leaflets are available online 
+at www.bsuh.nhs.uk/bsugs It is hoped that this website address will be 
+included in future clinic letters and Primary Care Col leagues would be 
+made aware of this website, so that they can direct patients to these 
+leaflets prior to attendance at the clinic. This will depend on 
+establishing a section for General Practitioners on the Trust external 
+website. 
+2.5 Patients can be offered conservative measures including Fluid advice, 
+smoking cessation, Specialist Female Pelvic Floor Physiotherapist -
+supervised Pelvic Floor Muscle Training (PFMT) and bladder drill. 
+2.6 Patients can be offered to attend the Female Pelvic Floor Support 
+Group meetin gs, which will hopefully be established in the not too 
+distant future. 
+2.7 The patient’s General Practitioner can be asked to prescribe local 
+oestrogen (pessary or cream), anti -muscarinics and/or beta -3 receptor 
+agonist treatment, as appropriate. Urogynaecology Specialist Nurse -Led Clinics GP020 
+Brighton & Sussex University Page 7 of 23 
+Hospital Trust 2.8 The patient’ s General Practitioner can be asked to review the patient if 
+she does not get adequate improvement and/or suffers from side 
+effects on such treatment and adjust dosage and/or change treatment 
+as required. The combined Formulary includes guidance on how to 
+proceed with treatment, in line with Nice Guidelines on Urinary 
+Incontinence in Women. 
+ 
+3 Free Fl owmetry and Residual Volume Clinic 
+ 
+3.1 Occasionally, some patients may require free flowmetry and/or residual 
+urine volume estimation, rather than full urodynamic assessment. 
+These can be done by the Urogynaecology Specialist Nurse. Residual 
+urine volume is usually estimated using portable bladder ultrasound 
+scanner to measure the post -void bladder volume. In exceptional 
+circumstances, it may be necessary to pass a n in/out urinary catheter, 
+following aseptic technique and with patient consent. 
+ 
+3.2 The free flowmetry and bladder scan generate a print out that should be 
+kept in the notes, with the patient details and date printed on it. 
+ 
+3.3 In most circumstances, such tes ts are carried out as confirmation of 
+normal or ruling out of abnormality, when patients can be re -assured and 
+discharged, according to their clinical features. Occasionally, patients 
+may need to be reviewed by a medical practitioner, for example upon the 
+detection of high residual urine volume . 
+ 
+4 Tel ephone Urinary Incontinence Foll ow Up Clinic 
+ 
+4.1 Patients on conservative measures for stress incontinence of urine 
+and/or overactive bladder can be followed on the phone, saving them 
+the need to attend in person, which can be inconvenient. 
+4.2 Ideally, this option should be explored with patients during their first 
+consultation, either in the Urogynaecology Clinic or the Triage Clinic. It 
+might be better to document this in the notes and obtain the patient 
+consent for it. 
+4.3 The time interval at which patients can be followed up varies from 
+patient to patient and this applies to telephone follow up just as it 
+applies to telephone follow up. It is customary to offer follow up at 6 
+months, so as to ensure that patients had a chance to get to see the Urogynaecology Specialist Nurse -Led Clinics GP020 
+Brighton & Sussex University Page 8 of 23 
+Hospital Trust Physiotherapist and allow enough time for Pelvic Floor Muscle Training 
+and bladder drill to achieve maximum benefit and also allow time to try 
+medication with dose adjustment and/or change of medication before 
+proceeding to invas ive tests, such as Urodynamic Assessment and/or 
+Cystoscopy. 
+4.4 Telephone follow up consultations should be booked as a clinic slot, 
+with agreed time slot, to be booked at the end of the first consultation, 
+as for a standard follow up appointment. 
+4.5 Telephone follow up consultations should be carried out by the 
+Urogynaecology Specialist Nurse whilst alone in an office, to ensure 
+patient confidentiality. 
+4.6 Telephone follow up consultations should be carried out with the 
+patient notes available, to ensure that inf ormation about the patient 
+condition as well as previous care are available and documentation can 
+be made during the consultation in the notes. 
+4.7 Patient identity should be verified at the start of the telephone follow 
+up consultation, for example by checki ng the date of birth, address and 
+hospital number or name and address of General Practice. 
+4.8 Patient consent should be obtained / checked after that, and 
+documented in the notes. 
+4.9 The actual conservative measures tried should be verified and 
+documented in t he notes. This includes first visit as well as subsequent 
+visits to the Specialist Female Pelvic Floor Physiotherapist, doing Pelvic 
+Floor Muscle Training and Bladder Drill, use, effect, or lack of it, and 
+side effect(s) of medication(s) used, dose and dos e modificatio n(s) and 
+change of medication. 
+4.10 Patients who had improvement in their symptoms and quality of life 
+and are satisfied with the outcome can be discharged back to their 
+General Practitioner. They should be advised to continue with the 
+conservativ e measures and contact their General Practitioner, if they 
+have any problems. They should be made aware that re -referral can be 
+arranged, if and when required. 
+4.11 Patients who suffer from problems, gain inadequate relief of their 
+symptoms and/or are unhappy with the outcome should be booked to 
+be reviewed in the Urogynaecology Clinic or booked for Urodynamic 
+Assessment, as appropriate. Urogynaecology Specialist Nurse -Led Clinics GP020 
+Brighton & Sussex University Page 9 of 23 
+Hospital Trust 4.12 The follow up sheet (Appendix A ) should be used for the telephone 
+consultation and a letter should be dictated to be posted t o the General 
+Practitioner, with a copy to the patient. 
+5 Pessary Replacement Clinic 
+ 
+5.1 Whenever possible, pessary replacements should be carried out in 
+General Practice, so as to save patients the need to attend in clinic. Shelf 
+and Gellhorn pessaries might b e more difficult for General Practitioners 
+to change and might therefore be booked for pessary replacement in 
+clinic. 
+ 
+5.2 Ring, shelf and Gellhorn pessary replacements can be carried out in the 
+Urogynaecology Specialist Nurse -led Clinic. 
+ 
+5.3 Patient symptoms a nd her satisfaction with and intention to continue 
+with pessary treatment should be checked and documented. 
+ 
+5.4 The pessary is them removed and the vagina checked for any ulceration, 
+using Cusco’s speculum. In the presence of vaginal ulceration, the 
+pessarie s should not be replaced. Patients should be counselled about 
+the nature of such ulceration and local oestrogen cream prescribed for 
+use to help healing of the ulcer(s). Patients should be offered another 
+appointment in 2 -4 weeks, to allow time for healing of the vagina, when 
+speculum examination should be repeated to check for this healing. If 
+healing is complete, then a new pessary can be inserted. If not, then a 
+new pessary should not be inserted and another appointment should be 
+offered in 2 -4 weeks. An additional local oestrogen prescription should 
+be provided, if required. Patients with slow healing, suspicisous and/or 
+recurrent ulceration should be seen in the Urogynaecology Clinic to check 
+the reason and rule out the remote possibility of fistula and /or 
+malignancy. 
+ 
+5.5 It may become necessary to increase or decrease the size of the pessary 
+or change its type as time passes. Patients should counselled about this 
+and their consent to the change should be obtained and documented. 
+ 
+5.6 The follow up duration a fter pessary replacement varies from patient to 
+patient. It is customary to offer the replacement at 6 monthly intervals. 
+ Urogynaecology Specialist Nurse -Led Clinics GP020 
+Brighton & Sussex University Page 10 of 23 
+Hospital Trust 5.7 The pessa ry replacement sheet ( Appendix B ) should be used for 
+documentation. 
+6 Post -operative Foll ow Up Clinic 
+ 
+6.1 Post -operative follow up is vital to audit the safety and effectiveness of 
+surgery. This should be documented on the national database for 
+Urogynaecological surgery ( www.bsug.net ). 
+ 
+6.2 Post -operative follow up is usually carried out at 8 weeks after surgery 
+for stress urinary incontinence and 12 weeks after surgery for pelvic 
+organ prolapse. Patients can be seen earlier if there are any problems. 
+Such patients with problems may be better seen in the Urogynaecology 
+Clinic. 
+ 
+6.3 Patients should be pr ovided with the quality of life questionnaires on the 
+day of surgery to bring back with then for follow up. If these 
+questionnaires were not provided or were not completed and brought 
+with the patient, they should be provided for completion before the 
+patient is seen. 
+ 
+6.4 The patient consent to have her data added to the national database for 
+Urogynecological Surgery ( www.bsug.net ) should have been obtained 
+with her consent for surgery. If this was not carried out, then it should be 
+obtained at the follow up consultation. 
+ 
+6.5 The post -opera tive follow up sheet ( Appendix C ) should be used to 
+complete the patient symptom check and quality of life evaluation, as 
+well as examination, as to be filled on the national database for 
+Urogynecological Surgery ( www.bsug.net ). Examination includes 
+checking for mesh complications, where mesh was used, including 
+exposure, infection and/or tenderness. Such complications should be 
+rated according to the Inter national Urogynecological Association 
+classification. The examination also includes grading of pelvic organ 
+prolapse on the Pelvic Organ Prolapse -Quantification (POP -Q) system. 
+ 
+6.6 If there is any problem, then advice should be obtained from a medical 
+practi tioner or arrangement should be made for the patient to be seen in 
+the Urogynaecology Clinic as soon as possible. 
+ Urogynaecology Specialist Nurse -Led Clinics GP020 
+Brighton & Sussex University Page 11 of 23 
+Hospital Trust 7 Trial Without Catheter (TWOC) Clinic 
+7.1 Patients who fail their Trial Without Catheter (TWOC) following surgery 
+are discharged home with a c atheter to come back for a fresh attempt 
+after a varied duratio n between few days to a week). 
+7.2 Attendance at the Trial Without Catheter (TWOC) Clinic is better than 
+attendance on the ward, where busy nursing staff may not be able to 
+attend to patients as r equired and the busy ward environment may not 
+offer patients the ap propriate privacy and comfort. 
+7.3 Patients who attend for Trial Without Catheter (TWOC), they should 
+have their catheter removed and they are encouraged to drink and 
+mobilise normally. They s hould use the disposable measuring pot to 
+measure the volume voided and provide to the Specialist Nurse as soon 
+as they void, so that a Post -void Bladder Volume can be estimate d using 
+portable bladder scan. 
+7.4 Patients who pass more than 100ml with <100ml Po st-void Bladder 
+Volume can be discharged. Otherwise, management should be 
+individualised. Patients with reducing Post -void Bladder Volume can try 
+again. Those keen on another period of catheterisation can have a new 
+urethral catheter inserted under sterile and aseptic conditions. 
+Otherwise, patients can be taught Clean Inte rmittent Self 
+Catheterisation. 
+7.5 The trial without c atheter (TWOC) sheet ( Appendix D ) should be used 
+for documentation and kept in the notes. 
+ 
+8 Posterior Tibial Nerve Stimulation (PTNS) Cl inic 
+8.1 Patients with overactive bladder symptoms that do not improve on 
+conservative measures, including 2 different medications 
+(antimuscarinic or beta 3 receptor agonist) should have Urodynamic 
+assessment, to confirm Detrusor Overactivity. 
+8.2 Patients with r efractory detrusor overactivity should be offered a 
+choice between Botulinum Toxin “A” bladder wall injection and 
+Percutaneous Tibial Nerve Stimulation (PTNS). Patients who wish to 
+have Botulinum Toxin “A” bladder wall injection can have this carried 
+out a t the same time as having cystoscopy, to rule out local pathology 
+in the bladder. 
+8.3 The plan to go for Percutaneous Tibial Nerve Stimulation (PTNS) should 
+be discussed at the Multi -disciplinary Team (MDT) Meeting, in line with 
+Nice Guidelines on Urinary Inc ontinence in Women. Urogynaecology Specialist Nurse -Led Clinics GP020 
+Brighton & Sussex University Page 12 of 23 
+Hospital Trust 8.4 Percutaneous Tibial Nerve Stimulation (PTNS) can be carried out 
+trained Urogyanecology Specialist Nurse. The Percutaneous Tibial 
+Nerve Stim ulation (PTNS) sheet ( Appendix E ) should be used. 
+9 Intra -vesical Instillation Clinic 
+9.1 Patients with painful bladder syndrome may need intravesical 
+instillation treatment. Patients have first, repeat and top up instillations 
+as required by their clinical conditions. The currently used preparation 
+is hyacyst . Other preparations may be used in individual cases. 
+9.2 The hyacyst sheet ( Appendix F ) should be used. 
+ 
+10 Risk Management 
+10.1 Patients with complications or particular circumstances may need to be 
+seen by a medical practitioner. 
+10.2 Documentation will be kept and au dit will be carried out. Training and 
+support will be provided as required. 
+10.3 Any unusual features should be discussed with the Consultant. Patients 
+remain under the care of their Consultant and may need discussion in 
+the Multidisciplinary Team Me eting (MDT ) as for all cases. 
+ 
+11 Training 
+ 
+Training in the role of Urogynaecology Specialist Nurse was provided and additional 
+help, training and support will be provided as required, including visits to other units if 
+and when necessary. 
+ 
+12 Audit 
+ 
+12.1 Audit will be re quired to ensure safe and effective practice as well as 
+achievement of the goals of establishing the clinics. 
+ 
+12.2 Audit will be maintained through good documentation to be kept on 
+databases for regular audit without the need to retrieve the notes. 
+ 
+12.3 Audit wi ll be presented at the Departmental Clinical Governance Meeting 
+on regular basis, as part of the Urogynaecology Audit. Urogynaecology Specialist Nurse -Led Clinics GP020 
+Brighton & Sussex University Page 13 of 23 
+Hospital Trust 
+13 Research 
+ 
+13.1 The new role of Urogynaecology Specialist Nurse offers opportunities for 
+research and this will be organised, as appropriate. 
+ 
+13.2 Patients involved in research may need data collection and this will be 
+completed as required. The Good Clinical Practice Certificate will be 
+completed and updated, as required for all those involved in research 
+activity. 
+14 Monitoring compliance: 
+Pleas e refer to the Monitoring and Auditing document for details on monitoring 
+compliance for this protocol. 
+
+ Urogynaecology Specialist Nurse -Led Clinics GP020 
+Brighton & Sussex University Page 14 of 23 
+Hospital Trust References 
+ 
+ George J (2012) Setting up a nurse -run pessary clinic, Nursing New Zealand 
+(Wellington) 18:27. 
+ Hotouras A, Allison M, Currie A , Knowles CH, Chan CL, Thaha MA (2012) 
+Percutaneous tibial nerve stimulation for fecal incontinence: a video 
+demonstration, Diseases of the Colon and Rectum 55:711 -713. 
+ Jeyarajah S, Adams KJ, Higgins L, Ryan S, Leather AJ, Papagrigoriadis S (2011) 
+Prospect ive evaluation of a colorectal cancer nurse follow -up clinic, 
+Colorectal Disease 13:31 -38. 
+ Maito JM, Quam ZA, Craig E, Danner KA, Rogers RG (2006) Predictors of 
+successful pessary fitting and continued use in a nurse -midwifery pessary 
+clinic, Journal of M idwifery and Women's Health 51:78 -84. 
+ National Institute for Health and Care Excellence (2013) Urinary incontinence: 
+the management of urinary incontinence in women, Nice Clinical Guideline 
+171, National Institute for Health and Care Excellence, London, U nited 
+Kingdom. 
+ Oliver R, Thakar R, Sultan AH, Phillimore A (2009) Urogynecology triage clinic: 
+a model of healthcare delivery, International Urogynecology Journal 20:913 -
+917. 
+ Sillesen H, Madelung S, Eldrup N, Roed M (2007) Organising a nurse -driven 
+PAD r ehabilitation clinic within the vascular surgical department: what is 
+required and are treatment goals reached: a prospective study?, European 
+Journal of Vascular and Endovascular Surgery 33:26 -32. 
+ Sivagnanam P, Rhodes M (2010) The importance of follow -up and distance 
+from centre in weight loss after laparoscopic adjustable gastric banding, 
+Surgical Endoscopy 24:2432 -2438. 
+
+ Urogynaecology Specialist Nurse -Led Clinics GP020 
+Brighton & Sussex University Page 15 of 23 
+Hospital Trust Appendix A: Tel ephone Foll ow 
+Urogynaecology Specialist Nurse -Led Clinics GP020 
+Brighton & Sussex University Page 16 of 23 
+Hospital Trust 
+ 
+Appendix B: Pessary Replacement Sheet 
+
+ Urogynaecology Specialist Nurse -Led Clinics GP020 
+Brighton & Sussex University Page 17 of 23 
+Hospital Trust Append ix C: Urogynaecol o gy Post -operative Foll ow 
+up sheet 
+ 
+Location: PRH / LVH / RSCH Telephone Postal GP 
+ 
+Patient Details 
+ 
+Name : ………………………………….. 
+ 
+Hospital No. : ………………………………….. 
+ 
+D. O. B. : ........../.............../..................... 
+ 
+Op Date: …./ …..../……... 
+ 
+FU Date: …./….../….….. 
+ 
+Interval : ……….…wks 
+ 
+Peri-operative Review 
+ 
+Return to theatre <72 hrs Y/N 
+ 
+Return to Hospital <30 days Y/N 
+for procedure related event 
+ 
+ISC/Catheter > 10 days Y/N 
+ Procedure: 
+ 
+……………………………. 
+ 
+……………………………. 
+ 
+Cathe ter use 
+ 
+Pre-op Post-op 
+
+Morbidity eg. UTI / Visit to GP / Visit to Hospital / Visits by health care staff/ Antibiotic 
+use 
+ 
+Details of above: …………………………………………………………………………… 
+ 
+……………………………………………………………………………………………….. 
+ 
+Follow -up assessment 
+ 
+QoL Scores: ICIQ – UI: /21 ICIQ – VS: /53 ICIQ – SM: / 58 
+ 
+Global Impression of Outcomes 
+ 
+ Greatly 
+Worse Moderately 
+Worse Slightly 
+Worse No 
+Change Slightly 
+Improved Moderately 
+Improved Greatly 
+Improved 
+Incontinence 
+Prolapse 
+ 
+Changes in Urinary inconti nence 
+ 
+ Worse No Change Improved Cured 
+Stress incontinence 
+Urgency Incontinence Urogynaecology Specialist Nurse -Led Clinics GP020 
+Brighton & Sussex University Page 18 of 23 
+Hospital Trust Symptom Check: 
+ 
+Urinary Stress I, Urgency, Urge I, Frequency D / N -------------------- , 
+Voiding dysfunction, Haematuria, UTI ………………………………… 
+Prolapse Bulge, drag ging sensation, pressure 
+Bowel Urgency, Urge I, Frequency, Anal I (Flatus/Loose Stools/Solid Stools), 
+Obstructed Defecation, Bleeding 
+Sexual SA Y/N, reason…………………., Dyspareunia, Male discomfort, PCB 
+Pain Bladder / urethra / vagina / perineum 
+Notes…………………………………………………………………………………………… 
+ 
+……… ………………… ………………………………………………………………………… 
+ 
+Examination: 
+ 
+Healing / Erosion / Exposure / Tissue softness / Flexibility 
+ 
+POP -Q 
+ B-W 
+ 
+Aa 
+ Ba C Ant Vag Wall I II III IV 
+GH 
+ PB TVL Post Vag Wall I II III IV 
+Ap 
+ Bp D Cx / Cuff I II III IV 
+ 
+Notes …………… ………………………………………………………………………………. 
+ 
+.....……………………………………………………………………… ………………………... 
+ 
+Plan: 
+ 
+Physio Discharged Medication……………………..…... 
+ 
+FU…….../……... 
+ 
+Waiting list for 
+………………………………………………………………………………….… ………….. 
+ 
+………………… ………………… …………………………………………………………… 
+ 
+Seen By: …………………………………….. Grade: ………………..……………………. Urogynaecology Specialist Nurse -Led Clinics GP020 
+Brighton & Sussex University Page 19 of 23 
+Hospital Trust Appendix D : Trial without Catheter 
+ 
+Trial without Catheter 
+Date………… ……………………………………………………………… …….. 
+Time……………………………………………………………………………..… 
+Date Cathe ter Inserted……………………………………………..……. 
+Type/Size of Catheter……………………………………..………………. 
+Reason for catheter 
+………………………………………………………………………………………………………………………………………………………………
+…………………………………………………… ………………………………………………………………………………………………………… 
+Relevant medical history 
+………………………………………………………………………………………………………………………………………………………………
+……………………………………………………………………………………………………………………………………………………………… 
+Medications 
+……………………………………………………………………………………………………………………………………………………… ………
+………………………………………………………………………………… …………………………………………………………………………… 
+Trial without catheter (TWOC) 
+Consent obtained Y/N Chaperone offered Y/N Declined / Requested 
+Time Catheter Removed………………………………………………………….. Mls in balloon……………… ……… 
+Comments on Removal 
+………………………………………………………………………………………………………………………………………………………………
+………………………………………………………………………………………………………………………………………………………………
+……………………………………………………………………………………………………………………………………………………………… 
+Volume of Urine Passed 
+Time Volume of Urine Passed Residual (bladder 
+scan) Urinalysis 
+
+ PATIENT DETAILS 
+ 
+Name………………………………………………. 
+ 
+Date of Birth…………………………………… 
+ 
+Hospital Number……………………………. Urogynaecology Specialist Nurse -Led Clinics GP020 
+Brighton & Sussex University Page 20 of 23 
+Hospital Trust 
+
+ Urinalysis on 2nd void. 
+ Residual on 3rd void. 
+ Consider CISC or catheterisation if residual greater that voided volume or residual 
+greater than 150mls. 
+Failed Trial without Catheter 
+CISC 
+………………………………………………………………………………………………………………………………………………
+…….…………………………………………………………………………………………………………………………………………
+………………….……………………………………………………………………………………… ……………………………… 
+Re-insertion of Catheter: 
+Size………………………………………Type………………… ……………………………………………………………………… 
+Mls i n balloon…………………….Lot No………………………………………Expiry 
+Date…………………………………………… 
+Comments………………………………………………………………………………………………………………………………
+………………………………………………………………………………………………………………………………………………
+………………………………………………………… ………………………………………………………………………………… … 
+Management Plan 
+………………… ……………………………………………………………………………………………………………………………
+………………………………………………………………………………………………………………………………………………
+…………………………………………………………………………………………………… ………………………………………… 
+Order with Charter Y/N 
+……………………………………………………………………………………………………………………… ……………………… . 
+Referral to Community Nurses Y/N 
+…………………………………………………………………………………………………… …………………………………………. 
+Follow up 
+appointment……………………………………………………………………………………………………………………… ….. 
+Signature……………………………………………….. 
+Print………………………………………………………. 
+Designation……………………………………… ……. 
+Contact Details……………………………………….. Urogynaecology Specialist Nurse -Led Clinics GP020 
+Brighton & Sussex University Page 21 of 23 
+Hospital Trust 
+Appendix E : Percutaneous tibial nerve 
+stimulation 
+
+Date 
+ 
+Consultant 
+ 
+Doctor 
+ 
+Name 
+ 
+Hospital Number 
+ 
+Date of birth 
+
+Urodynamically proven d etrusor overactivity Yes / No 
+ 
+Normal cystoscopy Yes / No 
+ 
+Tried 
+- Fluid advice Yes / No 
+- Bladder drill Yes / No 
+- 2 differ ent anticholinergics Yes / No 
+ ............................................................... 
+ ............................................................... 
+ 
+Contraindications: Yes / No 
+ 
+- Neurological disease interfering with posterior tibial nerve or pelvic floor 
+function. 
+- Pregnancy or planning pregnancy within 12 weeks treatment schedule. 
+- Having a pace maker in place, or planned insertion during treatment 12 
+weeks schedule. 
+- Having any electric / electronic monitoring or treatment device attached to 
+the body. 
+- Use of any inflammable or explosive gas, including oxygen for respiratory 
+disease. 
+- Inflamed or damaged skin around the needle insertion area. 
+- Bleeding tendency. 
+- No planned vaca tion or admission to hospital during 12 weeks treatment 
+schedule. 
+- More than one non -attendance during 12 weeks treatment schedule. 
+- Needle phobia. 
+Signature:.................................................... 
+ Urogynaecology Specialist Nurse -Led Clinics GP020 
+Brighton & Sussex University Page 22 of 23 
+Hospital Trust 
+
+Date No. QoL Score Ankle used Setting Response Problems Signature 
+ 1 Rt / Lt Toe flexion/ foot 
+sensation 
+ 2 Rt / Lt Toe flexion/ foot 
+sensation 
+ 3 Rt / Lt Toe flexion/ foot 
+sensation 
+ 4 Rt / Lt Toe flexion/ foot 
+sensation 
+ 5 Rt / Lt Toe flexion/ foot 
+sensation 
+ 6 Rt / Lt Toe flexion/ foot 
+sensation 
+ 7 Rt / Lt Toe flexion/ foot 
+sensation 
+ 8 Rt / Lt Toe flexion/ foot 
+sensation 
+ 9 Rt / Lt Toe flexion/ foot 
+sensation 
+ 10 Rt / Lt Toe flexion/ foot 
+sensation 
+ 11 Rt / Lt Toe flexion/ foot 
+sensation 
+ 12 Rt / Lt Toe flexion/ foot 
+sensation 
+ 
+Twelve weeks follow up visit: 
+ 
+Date: 
+ 
+FVC: 
+ 
+Quality of life score: 
+ 
+Subjective assessment: 
+
+Signature:………………………………………………………… 
+ 
+Name:………………………………………………………………. 
+ Urogynaecology Specialist Nurse -Led Clinics GP020 
+Brighton & Sussex University Page 23 of 23 
+Hospital Trust 
+Appendix F: Hyacyst Sheet 
+Lewes Victoria Hospital 
+Urogynacology Unit Consultant: AG / SI / VW 
+ 
+Date : ………./………./………………. 
+ 
+Doctor : ………………………………….. 
+ 
+Grade : ..………………………………… 
+ 
+Name 
+ 
+Hospital Number 
+ 
+Date of birth 
+
+Urodynamics : Yes / No Result:…………………………………………. 
+ 
+Cystoscopy:…………………….……………………………………………………………... .......................... 
+ 
+Treatment tried:…….................................................... .................................................. 
+ 
+Visit No. Date Name Grade Signature 
+Weekly / 
+2 weekly 1 …../…../……. 
+2 …../…../……. 
+3 …../…../……. 
+4 …../…../……. 
+Monthly 1 …../…../……. 
+2 …../…../……. 
+3 …../…../……. 
+4 …../… ../……. 
+5 …../…../……. 
+6 …../…../……. 
+ 
+12 weeks follow up visit / Telephone: Date: …………/…………/…………… .. 
+ 
+Outcome: Better / same / worse /........…………………………………………………… ……………… 
+ 
+Plan: Discharged / Top up / ........................................... ............................................. 
+ 
+............................................................................................................................. ....... . 
+ 
+.......................................................................... .......................................................... . 
+ 
+Name ................................................... ...... 
+ 
+Signature:....................................................

@@ -1,0 +1,488 @@
+# Extracted from: MP066 Neonatal Resuscitation (Term and Pre-term).pdf
+# Guideline ID: mp066-neonatal-resuscitation-term-and-pre-term
+# Content length: 24159 characters
+# Processing date: 1750066901.6224174
+
+Neonatal Resuscitation 
+Newborn life support 
+(Term and Pre -term) 
+
+Maternity protocol: MP066 
+ 
+Date agreed: April 2022 
+Neonatal Resuscitation Newborn life support MP066 
+(Term and Pre -term) (RSCH PRH only ) 
+University Hospital’s Sussex NHS Trust East Page 2 of 14 
+
+Guideline Reviewer : Amanda Clifton 
+Manager responsible: Ryan Watkins 
+Version: 2.4 
+Approval Committee: Women’s Safety and Quality Committee 
+Date agreed: April 2022 
+Review date: April 2025 
+Cross reference: MP020 Multiple Pregnancy 
+MP037 Fetal heart monitoring 
+MP038 Fetal Blood Sampling 
+MP046 Breech & ECV 
+MP048 Shoulder Dystocia 
+MP049 Operative Vaginal delivery 
+MP050 Caesarean Section (LSCS) 
+MP068 Admission to Neonatal Unit (NICU/SCBU) 
+MP069 Care of the Newborn Immediately after Birth Neonatal Resuscitation Newborn life support MP066 
+(Term and Pre -term) (RSCH PRH only ) 
+University Hospital’s Sussex NHS Trust East Page 3 of 14 Contents 
+Key Principles ................................ ................................ ................................ ........................ 4 
+Scope ................................ ................................ ................................ ................................ ..... 4 
+Responsibilities ................................ ................................ ................................ ...................... 4 
+1.0 Introduction ................................ ................................ ................................ ................ 5 
+2.0 Preparation & Equipment ................................ ................................ .......................... 5 
+3.0 Homebirth ................................ ................................ ................................ .................. 6 
+4.0 Process for Availability of Staff Trained in Advanced Neonatal Resuscitation ....... 7 
+5.0 Resuscitation Process (See Appendix) ................................ ................................ ....... 8 
+6.0 Resuscitation Drugs ................................ ................................ ................................ .. 10 
+7.0 Babies Born in Meconium Stained Liquor ................................ ............................... 11 
+8.0 Guidelines for Resuscitation of Extremely Premature Infants ............................... 11 
+10.0 Staff Training ................................ ................................ ................................ ............ 12 
+12.0 References ................................ ................................ ................................ ................ 13 
+Neonatal Resuscitation Flow Chart ................................ ................................ .................... 13 
+ Neonatal Resuscitation Newborn life support MP066 
+(Term and Pre -term) (RSCH PRH only ) 
+University Hospital’s Sussex NHS Trust East Page 4 of 14 
+Key Principles 
+ 
+A protocol is a set of measurable, objective standards to determine a course of 
+action. 
+Professional judgement may be used in the application of a protocol. 
+ 
+Scope 
+ 
+This protocol applies to: 
+• Any newborn babies who require resuscitation at birth 
+• Any babies born with meconium stained liquor 
+ 
+Responsibilities 
+ 
+Maternity, neonatal and A&E staff : 
+• To access, read, understand and follow this guidance 
+• To use their professional judgement in application of this protocol 
+ 
+Management : 
+• To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations 
+• To ensure the protocol is accessible to all relevant staff 
+• To ensure the protocol is available to service users on request 
+ 
+Link Paediatrician for Labour ward and Neonatal Service : 
+• Responsible for the clinical standards in relation to care of the newborn 
+ Neonatal Resuscitation Newborn life support MP066 
+(Term and Pre -term) (RSCH PRH only ) 
+University Hospital’s Sussex NHS Trust East Page 5 of 14 
+1.0 Introduction 
+ 
+1.2 Resuscitation is calle d for when the circulation or established regular 
+breathing is suboptimal or both. In adults collapse is usually a primary cardiac 
+arrest, however in newborn babies the problem is nearly alw ays initially a 
+respiratory one. 
+ 
+1.3 A healthy newborn baby is designed to undertake the passage through the 
+birth canal and the newborn baby’s brain can withstand lack of oxygen for 
+very much longer than the adult brain. Birth is a relatively hypoxic experience 
+for the fetus, since respiratory exchange is interrupted for the 50 – 75 second 
+duration of the average contraction Though most babies tolerate this well, 
+some do not and these few may require help to establish breathing at birth. 
+ 
+1.4 Healthy babies who have shown no signs of hypoxia during labour and have a 
+good colour (centrally pink) and tone at birth should be kept with their 
+mothers or birthing parent to promote bonding and a physiological response 
+from mother or birthing parent and baby. Oxygen will continue to flow to the 
+baby through the umbilical cord, if left intact, until the baby establishes 
+breathing. It is recommended to keep the cord intact for at least a minute 
+following birth in well babies. Skin to skin contact will keep the baby warm 
+and promote the establishment of breastfeeding or chestfeeding . 
+ 
+1.5 To resuscitate a baby it is usually sufficient to merely inflate the lungs with air 
+(or oxygen, if air not available), and only in rare cases will the heart need to 
+be ‘bump started’ through cardiac massage or drugs. However, every 
+newborn baby should be individually assessed at birth. 
+ 
+2.0 Preparation & Equipment 
+ 
+2.1 Preparation and anticipation will aid a successful resuscitation and 
+appropriate equipment and a warm environment should be available for all 
+births: 
+2.1.1 Shut all doors and windows 
+2.1.2 Switch on heater (above and below baby , if available ) and turn off 
+fans 
+2.1.3 Minimum equipment required in all areas where birth may occur: 
+• Clean flat surface 
+• Light source 
+• Towels, preferably warmed 
+• 500mls Ambi -bag with size 00, 01 & 02 masks 
+• Guedel airways 
+• I-gels or LMA 
+ Neonatal Resuscitation Newborn life support MP066 
+(Term and Pre -term) (RSCH PRH only ) 
+University Hospital’s Sussex NHS Trust East Page 6 of 14 
+2.2 Availability of resuscitation equipment in all care setting: 
+2.2.1 There should be continual availability of neonatal resuscitation 
+equipment in all care settings. At BSUH this includes Royal Sussex 
+County Hospital Maternity unit and Princess Royal Hospital Maternity 
+unit. 
+2.2.2 Labour wards: resuscitaires are available in the corridors on the 
+labour wards. These can be brought into the room when required 
+2.2.3 Obstetric theatres: there is a designated resuscitaire in each obstetric 
+theatre. Additional resuscitaires can be brought in if required. 
+2.2.4 Homebirth: there are resuscitation kits for homebirths which are kept 
+on the labour wards. It is expected that midwives attending a home 
+birth will pick up the required kit, including resuscitation equipment 
+when they are called to attend. 
+2.2.5 There is a neonata l resuscitaire available in CED at RA CH. There is 
+neonatal resuscitation kit available in the resuscitation area at PRH 
+ 
+2.3 Process for documenting that the resuscitation equipment used by the 
+maternity service is checked, stocked and fit for use in all care settings : 
+2.3.1 Resuscitation equipment on the ward and in obstetric theatre should 
+be checked, stocked and fit for use as ready for use. The person 
+undertaking the check is required to check the equipment against a 
+checklist, sign and date it. The records are kept as evidence of this. 
+The ward co -ordinator on for each shift is responsible for ensuring 
+these checks are carried out in their area. Completion of all checks will 
+be logged in the ‘daily checklist’. 
+2.3.2 On labour ward and postnatal wards this check should be carried out 
+on every shift (twice a day). 
+2.3.3 Homebirth resuscitation equipment in pool cars must be checked 
+daily by the community midwife using the vehicle and documented in 
+the homebirth checking log in the vehicle. Homebirth resuscitation 
+equipment on delivery suites must be checked daily and documented 
+in the delivery suite equipment checking log 
+ 
+3.0 Homebirth 
+ 
+3.1 All midwives undertaking home birth should be competent to carry out first 
+line treatment in regards to neonatal resuscitation ( attendance at neonatal 
+resuscitation update on the mandatory annual rolling programme see MD084 
+BSUH Maternity & Obstetric Training Needs Analysis & Skills and Drills ). In the 
+event of the baby being born in poor condition and requiring resuscitation 
+and transfer into hospital, the midwife or other person in attendance will dial 
+999 for a paramedic ambulance. The labour ward will be informed by the 
+midwife and a request for emergency resuscitation team to be available in 
+A&E. Neonatal Resuscitation Newborn life support MP066 
+(Term and Pre -term) (RSCH PRH only ) 
+University Hospital’s Sussex NHS Trust East Page 7 of 14 3.2 On arrival of the paramedics, the midwife will ask for assistance and should 
+accompany the baby in the ambulance. A second ambulance should be called 
+for the mother or birthing parent . 
+ 
+3.3 The midwife will give a full report to the neonatal staff at the hospital on 
+arrival. Documentation in the maternal or parental notes must be completed 
+and an incident form (Datix) must be completed. 
+ 
+4.0 Process for Availability of Staff Trained in Advanced Neonatal Resuscitation 
+ 
+4.1 All midwives are trained in newborn life support skills at the point of 
+qualification. Every 12 months midwives will attend 2 mandatory training 
+sessions updating them in newborn life support (see TNA document). 
+Therefore all deliveries will be attended by midwives with newborn life 
+support skills. 
+ 
+4.2 At home , 2 midwives will attend for the birth; this ensures 1 midwife will 
+always be available for newborn life support if required. If the birth is rapid 
+and the se cond midwife has not yet arrived , the first midwife is expected to 
+call for a paramedic ambulance (paramedics all have newborn life support 
+training). In hospital, a second midwife is available should newborn life 
+support be required (the midwife can call for assistance via the normal or 
+emergency buzzer as appropriate) 
+ 
+4.3 For details on which deliveries should be attended by clinicians with basic or 
+advance newborn life support skills see MP068 Admission to Neonatal Unit 
+(NICU / SCBU ) (page 5) 
+ 
+4.4 RSCH 
+4.4.1 There is a tier 1 member of the neonatal staff (ST3, clinical fellow or 
+ANNP) available at all times to attend planned deliveries or 
+emergencies. They may be contacted via the dedicated pager or will 
+attend following a neonatal crash call. 
+4.4.2 There is a tier 2 member or the neonatal staff (ST4 or above, clinical 
+fellow Staff Grade or ANNP) available at all times to attend planned 
+deliveries or emergencies. They may be contacted via the dedicated 
+pager or will attend following a neonatal crash call. 
+4.4.3 Process for 24hr availability in obstetric units of a consultant 
+paediatrician: There is a consultant responsible for the labour ward at all 
+times in office hours (0800 -1700h Mon – Fri). They may be contacted by 
+telephone call to T revor Mann Baby Unit (TMBU) ext 64377. 
+4.4.4 There is a consultant neonatologist on call at all times out of hours 
+and available to attend emergencies within 30 minutes. They may be 
+contacted by telephone call ( landline or mobile) . Neonatal Resuscitation Newborn life support MP066 
+(Term and Pre -term) (RSCH PRH only ) 
+University Hospital’s Sussex NHS Trust East Page 8 of 14 4.5 PRH 
+4.5.1 There is a member of the neonatal staff (ANNP or Staff Grade) 
+available at all times to attend planned deliveries or emergencies. 
+They may be contacted via the dedicated pager or will attend 
+following a neonatal crash call. 
+4.5.2 A neonatal nurse will attend emergencies if a neonatal crash call is 
+issued. 
+4.5.3 There is a consultant responsible for PRH at all times in office hours 
+(0800 -1700h Mon – Fri). They may be contacted by telephone call to 
+SCBU or TMBU or their mobile phone. 
+4.5.4 There is a consultant neonatologist on call at all times out of hours 
+and available to attend emergencies within 30 minutes. They may be 
+contacted by telephone call (landline or mobile) 
+ 
+5.0 Resuscitation Process ( See Appendix ) 
+https://www.resus.org.uk/library/2021 -resuscitation -guidelines/newborn -
+resuscitation -and-support -transition -infants -birth 
+ 
+5.1 If the newborn fails to establish respiration, or is in distress prior to birth then 
+proceed as far as it is necessary down the following list: 
+5.1.1 Dry and cover the baby 
+5.1.2 Assess the situation 
+5.1.3 Call for help if required 
+5.1.4 Airway – establish a patent airway 
+5.1.5 Breathing – support breathing using inflation/ventilation breaths 
+5.1.6 Circulation – support the heart using chest compressions 
+5.1.7 Drugs 
+ 
+5.2 Note the time of delivery 
+ 
+5.3 Dry the baby quickly and effectively. Remove the wet towel and wrap in a 
+fresh, dry, warm towel. 
+5.4 During this period assess the baby 
+5.4.1 Colour 
+5.4.2 Tone 
+5.4.3 Breathing 
+5.4.4 Heart rate 
+ 
+5.5 If the heart rate is good (more than 100 bpm) and the baby is breathing then 
+no further resuscitation is required. It i s usually clear that the heart rate is 
+slow or fast, and an accurate count is not necessary. The heart should be 
+auscultated using a stethoscope. 
+ 
+5.6 If the baby is requiring resuscitation then call for assistance : 
+5.6.1 If in hospital: pull the emergency buzzer 
+• Phone 2222 and state ‘neonatal emergency’ and state location 
+• Gain assistance from other health professionals Neonatal Resuscitation Newborn life support MP066 
+(Term and Pre -term) (RSCH PRH only ) 
+University Hospital’s Sussex NHS Trust East Page 9 of 14 5.6.2 If at home: 
+• Phone 999 and ask for paramedic ambulance 
+• Contact the maternity unit; inform them of the situation and 
+request second midwife 
+ 
+5.7 If the baby is not breathing and has a slow heart rate then the airway must be 
+opened. This can be done by lying baby in the neutral position with the head 
+in line with the body and checking inside the baby’s mouth. If thick 
+meconium or blood can be seen blocking the airway then this can be 
+removed by suction under direct vision. 
+ 
+5.8 Reassess the baby’s condition : 
+ 
+5.8.1 Breathing 
+5.8.2 Heart rate 
+ 
+5.9 If there is no change and the baby is still not breathing then the lungs need to 
+be inflated. Until birth the lungs are filled with fluid and in order to clear this 
+fluid inflation breaths are req uired. For a term baby, initial pressures of 30cm 
+of water would be reasonable if sustained for 2 -3 seconds. 5 inflation breaths 
+are required. Observe the chest movement during the procedure to check 
+the lungs are being inflated successfully. If there is no increase in heart rate 
+and no chest movements then re -position the baby’s head, check airway and 
+re-position mask. Attempt the 5 inflation breaths again. 
+ 
+5.10 Reassess the baby’s condition: 
+5.10.1 Breathing 
+5.10.2 Heart rate 
+5.10.3 Chest Rise 
+ 
+5.11 If the heart rate is increasing then continue with ventilation support at around 30 
+breaths per minute. Reassess baby’s condition every 30 seconds. If the heart rate 
+does not respond then check the lungs have been properly inflated. Consider 
+changing to i -gel or Guedel, suction or two person techniques . 
+ 
+5.12 If the lungs have been successfully oxygenated for 30 seconds and there is a 
+slow heart rate then it will be necessary to commence chest compressions. 
+This will aim to move oxygenated blood from the lungs to the heart and 
+coronary arteries. Chest compressions should be positioned just below the 
+imaginary line joining the baby’s nipples and aim to depress the sternum by a 
+third at least. Aim for a rate of approximately 90 compressions per minute 
+ 
+5.13 Proceed with chest compressions and ventilation breaths on a 3:1 ratio 
+ 
+5.14 Reassess baby’s condition every 30 seconds : 
+5.14.1 Breathing 
+5.14.2 Heart rate Neonatal Resuscitation Newborn life support MP066 
+(Term and Pre -term) (RSCH PRH only ) 
+University Hospital’s Sussex NHS Trust East Page 10 of 14 
+5.15 Continue with ventilation breaths and cardiac compressions whilst neonatal 
+assistance arrives. Inform parents of what is happenin g and the possible plan 
+of care, b e honest. 
+ 
+5.15.1. If there is no increase in heart rate or saturations remain low, despite 
+ effective ventilation, increase the oxygen concentration to achieve 
+ adequate pre -ductal oxygen saturations 
+ 
+5.16 If at h ome transfer the baby by ambulance as swiftly as possible. It is vital to 
+maintain a good airway during transfer so ventilation breaths and cardiac 
+compressions can continue: consider using the I-gel or Guedel airway in this 
+situation. Also ensure the baby is kept as warm as possible during transfer. 
+Label the baby appropriately 
+ 
+5.17 Following any resuscitation ensure contemporaneous and comprehensive 
+documentation of the techniques and procedures used, including accurate 
+times and details of who was present. Present factual information and use 
+Apgar scores where appropriate. Debrief with the parents and attending 
+health professionals 
+ 
+5.18 Newly born infants born at term or near term with evolving moderate to 
+severe hypoxic – ischaemic encephalopathy should be consider for 
+therapeutic hypothermia. Do not passively cool. 
+ 
+5.19 Placental histology 
+ 
+Refer to Placental Histology proform a and remember to send form in MP035 
+Care of Women or People in Labour to Histopathology with placenta 
+
+6.0 Resuscitation Drugs 
+
+GESTATION 
+ ADRENALINE 
+1:10,000 
+ 
+0.2 ml/kg 
+BICARBONATE 
+ 
+4.2% 
+ 
+2-4 ml/kg 
+VOLUME 
+ 
+NaCl 0.9 % or 
+Packed cells 
+10-20 ml/kg 
+DEXTROSE 
+ 
+10% 
+ 
+2.5 ml/kg 
+ 28 WKS 0.1 ML 2 ML 10 ML 2 ML 
+28-34 WKS 0.2 ML 4 ML 20 ML 4 ML 
+34-37 WKS 0.3 ML 6 ML 30 ML 6 ML Neonatal Resuscitation Newborn life support MP066 
+(Term and Pre -term) (RSCH PRH only ) 
+University Hospital’s Sussex NHS Trust East Page 11 of 14  37 WKS 0.4 ML 8ML 40 ML 8 ML 
+ 
+6.1 If adrenaline is given then the intraven ous route is recommended using a 
+dose of 20mcg/kg. If the tracheal rout e is used, it is likely that a dose of at 
+least 100 mcg/kg will be needed . 
+ 
+7.0 Babies Born in Meconium Stained Liquor 
+ 
+7.1 Meconium stained liquor occurs in 10 – 20% of deliveries and increase to 
+over 20% after 42 weeks gestation. Meconium aspiration syndrome occurs in 
+2-5% of babies born through meconium stained liquor. 
+7.1.1 At delivery 
+A neonatologist or advanced neonatal nurse practitioner (ANNP) to be 
+called to attend all births with meconium. Call Neonatal emergency 
+team on 2222 if needed. 
+7.1.2 Vigorous screaming baby 
+• Do not suction the airway, there is no evidence that this improves 
+outcome. 
+• If heart rate over 100, baby crying with normal respirations and 
+spontaneous movements – dry and hand to mother 
+7.1.3 Non - vigorous baby & not breathing well 
+• Dry and wrap the baby 
+• Assess: colour, tone, heart rate, breathing 
+• Place baby into neutral position 
+• If no meconium presen t follow resuscitation protocol 
+• If meconium present – suction only if you are unable to inflate the 
+chest. 
+• Do not lavage trachea. 
+• Take paired cord samples for blood gas analysis. 
+ 
+See Maternity protocol MP069 Care of the Newborn Immediately after Birth 
+for information on postnatal care of babies born in meconium stained liquor. 
+ 
+8.0 Guidelines for Resuscitation of Extremely Premature Infants 
+ 
+8.1 The decision regarding initiation of intensive care for these babies requires 
+consideration of the chances of survival and also the chance of survival 
+without major handicap. Parents should be counselled before birth by a 
+Senior Neonatologist, that is a registrar or consultant, whenever possible. A 
+Senior Neonatologist should be present at the delivery at 2 2 – 27+6 weeks’ 
+gestation neonates. 
+ 
+8.2 Therefore adequate warning must be given to the Trevor Mann Baby Unit and 
+neonatal registrar. If there is uncertainty about the gestational age a senior 
+neonatologist should be present below 23 weeks’ gestational age. 
+ Neonatal Resuscitation Newborn life support MP066 
+(Term and Pre -term) (RSCH PRH only ) 
+University Hospital’s Sussex NHS Trust East Page 12 of 14 8.3 Preterm babies less t han 32 weeks ge station should receive blended oxygen 
+and air judiciously (≤ 30% O 2) and its use guided by pulse oximetry. If a blend 
+of oxygen and air is not available use what is available. 
+ 
+8.4 Preterm babies of less than 30 weeks gestation should be completely 
+covered up to their necks in a food -grade plastic wrap or bag, without drying, 
+immediately after birth. They should then be nursed under a radiant heater 
+and stabilised. They should remain wrapped until their temperature has been 
+checked after admission. For these infants delivery room temperatures 
+should be at least 26°C. 
+ 
+8.5. Follow neonatal guideline for delivery room management and resuscitation 
+of extremely pre term infants available on the neonatal website. 
+ 
+10.0 Staff Training 
+(MD084 BSUH Maternity & Obstetric Training Needs Analysis & Skills and Drills ) 
+ 
+10.1 All Midwives, MCAs, MSW, NN, neonatal nursing staff, Obstetric SHOs and all 
+grades of obstetricians potentially or actually involved in deliveries and 
+neonatal resuscitation should attend annual updates relating to the theory 
+and practice of neonatal resuscitation. Training attendance will be logged 
+centrally and co -ordinated by the Practice Development Lead Midwife 
+ 
+10.2 All neonatal ST3s, middle grades, staff grades and ANNPs are expected to 
+attend a 4 yearly NLS course run by the Resuscitation council UK. 
+ 
+10.3 Maternity and neonatal staff are e xpected to be involved with the 
+unannounced skills drills that are ru n by the education team on the wards. 
+Involvement of staff members will be logge d by the PD lead midwife as part 
+of the training records 
+ 
+ Neonatal Resuscitation Newborn life support MP066 
+(Term and Pre -term) (RSCH PRH only ) 
+University Hospital’s Sussex NHS Trust East Page 13 of 14 
+12.0 References 
+ 
+Department of Health. (2004). Maternity Standard, National Service Framework for 
+Children, Young People and Maternity Services. London: COI. www.dh.gov.uk 
+ 
+King’s Fund. (2008). Safe Births: Everybody’s business - Independent Inquiry into the 
+Safety of Maternity Services in England. London: King’s Fund. www.kingsfund.org.uk 
+ 
+National Institute for Health and Clinical Excellence. (2007). Intrapartum care: Care of 
+healthy women and their babies during childbirth. London: NICE. www.nice.org.uk 
+ 
+Resuscitation Council (UK). (2005). Resuscitation Guidelines. London: Resuscitation 
+Council (UK). www.resus.org.uk 
+ 
+Royal College of Anaesthetists, Royal College of Midwives, Royal College of 
+Obstetricians and Gynaecologists, Royal College of Paediatrics and Child Health. 
+(2007). Safer Childbirth: Minimum Standards for the Organisation and Delivery of 
+Care in Labour. London: RCOG Press. www.rcog.org.uk 
+ 
+Royal College of Obstetricians and Gynaecologists, Royal College of Anaesthetists, 
+Royal College of Midwives, Royal College of Paediatrics and Child Health. (2008). 
+Standards for Maternity Care: Report of a Working Party. London: RCOG Press. 
+www.rcog.org.uk 
+ 
+Royal College of Paediatrics and Child Health, Royal College of Obstetricians and 
+Gynaecologists, Royal College of Midwives. (2006) Joint Statement on Trai ning and 
+Maintenance of Skills f or Professionals Responsible for Resuscitation of Babies at 
+Birth 
+ 
+SANDS (2013). Guide for Consent Takers: Seeking consent/authorisation for the post 
+mortem examination of a baby . 
+https://www.hta.gov.uk/sites/default/files/5._Sands__Guide_for_consent_takers_Ja
+n_2013.pdf 
+ 
+Neonatal Resuscitation Flow Chart 
+ 
+https://www.resus.org.uk/sites/default/files/2021 -
+05/Newborn%20Life%20Support%20Algorithm%202021.pdf Neonatal Resuscitation Newborn life support MP066 
+(Term and Pre -term) (RSCH PRH only ) 
+University Hospital’s Sussex NHS Trust East Page 14 of 14

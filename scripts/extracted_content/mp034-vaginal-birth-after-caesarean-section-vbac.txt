@@ -1,0 +1,470 @@
+# Extracted from: MP034 Vaginal Birth after Caesarean Section (VBAC).pdf
+# Guideline ID: mp034-vaginal-birth-after-caesarean-section-vbac
+# Content length: 20342 characters
+# Processing date: 1750066901.353395
+
+Vaginal Birth after 
+Caesarean Section (VBAC) 
+
+Maternity Protocol: MP034 
+Date agreed: April 2022 
+(RSCH PRH only ) Vaginal Birth after Caesarean Section (VBAC) MP034 
+University Sussex Hospital NHS Trust East Page 2 of 14 
+
+Guideline Reviewer : Heather Brown 
+Version: 4 
+Approval Committee: Women/ People ’s Safety and Quality Committee 
+Date agreed: 
+Amendment date: February 2022 
+ 
+Review date: 
+Amended Dates: 
+Cross Referenced Protocols: February 2025 
+MP001 Provision and Schedule of Antenatal Care 
+MP032 Rupture of Membranes 
+MP033 Induction of Labour 
+MP037 Fetal Heart Monitoring 
+MP041 Delay in Labour and use of Oxytocin 
+MP050 Caesarean Section (LSCS) 
+ 
+ (RSCH PRH only ) Vaginal Birth after Caesarean Section (VBAC) MP034 
+University Sussex Hospital NHS Trust East Page 3 of 14 
+ Contents 
+Key Principles ................................ ................................ ................................ ........................ 4 
+Scope ................................ ................................ ................................ ................................ .... 4 
+Responsibilities ................................ ................................ ................................ ...................... 4 
+1 Introduction ................................ ................................ ................................ ................ 5 
+1.1 Contraindications for VBAC ................................ ................................ .......... 5 
+1.2 Special Considerations ................................ ................................ .................... 5 
+2 Responsibilities of Relevant Staff Groups ................................ ................................ ..... 5 
+3 Antenatal Management ................................ ................................ ............................... 6 
+4 Discussion and Documentation of Plan ................................ ................................ ........ 6 
+4.1 All women/people with previous Caesarean Section :................................ ... 6 
+4.2 Planned VBAC ................................ ................................ ................................ . 7 
+4.3 Discussion / Information to be provided ................................ ....................... 7 
+5 Documentation ................................ ................................ ................................ ............ 9 
+6 40 weeks and Induction of Labour (IOL) ................................ ................................ ....... 9 
+7 Intrapartum Care ................................ ................................ ................................ ....... 11 
+8 VBAC and Use of the Birthing Pool ................................ ................................ ............. 12 
+9 Monitoring Compliance ................................ ................................ ............................. 12 
+10 References ................................ ................................ ................................ ................. 12 
+Appendix A: VBAC pathway from normal pregnancy and birth (handheld) notes Error! Bookmark not defined. 
+Appendix B: Birth Options Clinic’s ................................ .............. Error! Bookmark not defined. 
+Appendix C - Benefits and Risks of Vaginal Birth after Caesarean Section (VBAC) .................. 13 
+Appendix D: Birth Options clinic appointment flow .................... Error! Bookmark not defined. 
+Appendix E: Information on the Birth Options Clinic .................... Error! Bookmark not defined. 
+Appendix F: Membrane sweep proforma for VBAC women/people at 40 and 41 wk. Error! Bookmark not defined. 
+
+ (RSCH PRH only ) Vaginal Birth after Caesarean Section (VBAC) MP034 
+University Sussex Hospital NHS Trust East Page 4 of 14 
+ Key Principles 
+A protocol is a set of measurable, objective standards to determine a course of action. 
+Professional judgement may be used in the application of a protocol. 
+ 
+Scope 
+This protocol applies to: 
+All women/people who have had a prior caesarean section and are considering VBAC. 
+ 
+Responsibilities 
+Midwives and Obstetricians : 
+• To access, read, understand and follow this guidance 
+• To use their professional judgement in application of this guidance 
+ 
+Management Team : 
+• To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations 
+• To ensure the protocol is accessible to all relevant staff 
+• To ensure protocols are available to service users on request 
+
+ (RSCH PRH only ) Vaginal Birth after Caesarean Section (VBAC) MP034 
+University Sussex Hospital NHS Trust East Page 5 of 14 
+ 1 Introduction 
+ 
+The management of Vaginal Birth after Caesarean Section (VBAC) and the risk 
+associated with vaginal birth and Elective Repeat Caesarean Section (ERCS). Women ’s 
+preferences and priorities will be paramount in decisions related to mode of birth. In 
+general all women who have had an uncomplicated previous caesarean section will be 
+able to consider VBAC. 
+1.1 Contraindications for VBAC 
+• Previous Classical Incision 
+• Previous Uterine rupture 
+• ≥ 3 previous LSCS 
+1.2 Special Considerations 
+• VBAC may be considered for women/people with 2 previous 
+caesarean sections if the two previous caesarean sections have been 
+uncomplicated. 
+• Previous extension of transverse uterine incision 
+2 Responsibilities of Relevant Staff Groups 
+ 
+2.1 
+ 
+Lead professional 
+(Consultant 
+Obstetrician) • To give evidence -based information regarding: 
+➢ Mode of birth 
+➢ Place of birth 
+➢ Benefits and potential complications of each option 
+• To discuss fully the options with a person and made an 
+appropriate and agreed plan of care. 
+• To refer onto other professionals as appropriate – 
+➢ Consultant Midwife 
+➢ PNMH Service 
+➢ Anaesthetists 
+ 
+2.2 
+ 
+Community 
+Midwives • To book in line with Maternity Protocol MP001: Provision 
+and Schedule of antenatal care 
+• To discuss mode of birth / location for birth and provide 
+information verbally as well as highlighted sources of 
+additional information (website and leaflets) 
+• To complete the VBAC proforma on B adgernet Refer to the 
+Birth Options clinic to discuss and birth options including 
+ELRCS (see Appendix B ). 
+• To provide antenatal care in line with Maternity Protocol 
+MP001: Provision and Schedule of antenatal care 
+• To make additional referrals as determined by clinical 
+presentations 
+ (RSCH PRH only ) Vaginal Birth after Caesarean Section (VBAC) MP034 
+University Sussex Hospital NHS Trust East Page 6 of 14 
+ 2.3 
+Anaesthetists 
+ • Review women/people with anaesthetic risk factors in the 
+Anaes thetic High Risk clinic including anxieties related to the 
+previous CS anaesthetic Communication with relevant 
+colleagues for complex CS 
+2.4 
+ 
+Consultant Midwives • Point of referral for woman & people and any member of the 
+Multi disciplinary team 
+• To discuss birth / labour options in light of evidence 
+available and Trust protocols 
+• To assist with care planning where there are concerns about 
+woman & people birthing out of guidance. 
+• To support midwifery staff providing care to women/people 
+• To act as an advocate for women/people 
+• To disseminate information/ agreed care planning 
+appropriately amongst hospital colleagues and 
+women/people 
+3 Antenatal Management 
+ 
+3.1 Consultant Obstetrician Led care within the Birth Options Clinic and 
+pathway. 
+3.2 Booking: 
+Community midwife at booking should refer women/people who have 
+had one or two uncomplicated caesarean births to the Birth Options 
+clinic. It should be explained that the role of the Birth Options clinic is to 
+enable and facilitate plans for the birth that are in line with the 
+woman/person’s priorities and preferences and in line with evidence 
+based clinical care. 
+4 Discussion and Documentation of Plan 
+ 
+4.1 All women/people with previous Caesarean Section : 
+4.1.1 Should have a documented discussion about their mode and 
+place of labour / birth during the antenatal period with a focus 
+on their preferences and priorities 
+4.1.2 Should be informed how to access the VBAC information 
+4.1.3 The following women/people should be able to discuss the 
+option of a planned VBAC3: 
+• one or two previous uncomplicated LSCS(s ) 
+• Singleton pregnancy, cephalic presentation 
+• 
+• no contraindications to vaginal birth (RSCH PRH only ) Vaginal Birth after Caesarean Section (VBAC) MP034 
+University Sussex Hospital NHS Trust East Page 7 of 14 
+ 4.1.4 All discussions and decisions should both be documented by the 
+health professional facilitating discussions in Badgernet 
+4.2 Planned VBAC 
+Refers to any person who has experienced a prior caesarean birth who 
+plans to have a vaginal birth rather than by ERCS (elective repeat 
+caesarean section) 
+4.3 Discussion / Information to be provided 
+ 
+4.3.1 
+ 
+Chances of success • overall the likelihood /chances of a successful planned 
+VBAC are 7 0-75% 
+• this may be affected by the indicat ion for the previous 
+C/S. 
+4.3.2 
+ 
+General considerations • Focus on individual preferences 
+and priorities 
+• Further babies planned 
+4.3.3 
+ 
+Place of birth 
+ • Hospital birth is recommended if the person chooses 
+to opt for a home birth, they should be referred to the 
+Consultant Midwives. 
+ 
+4.3.4 
+ 
+Risks / benefits3 
+ • Risks and benefits are to be discussed in line with NICE 
+Guidance 2021 and with a focus on the 
+woman/persons priorities and preferences. 
+Risks of VBAC 
+Uterine rupture 0.5% (1 in 200) 
+Blood transfusion or 
+endometritis 1% additional risk 
+Birth -related perinatal death 2-3/10,000 (VBAC) 
+1 / 10,000 (ERCS) 
+Infant developing hypoxic 
+ischaemic encephalopathy (HIE) 8 /10,000 
+Benefits of VBAC 
+• VBAC reduces risk of baby having respiratory problems 
+at birth 
+• Greater chance of uncomplicated births in future (RSCH PRH only ) Vaginal Birth after Caesarean Section (VBAC) MP034 
+University Sussex Hospital NHS Trust East Page 8 of 14 
+ pregnancies 
+• Shorter recovery period due to avoiding complications 
+associated with surgery 
+• Shorter stay in hospital 
+• No restrictions on driving and lifting 
+Potential complications of ERCS 
+• ERCS may increase the risk of serious complications in 
+future pregnancies 
+• Repeat surgery carries a higher risk of bladder and 
+bowel damage 
+• Increase in adhesions can make surgery more difficult 
+• Longer stay in hospital and longer recovery period 
+• Restricted mobility and ability to drive and lift. 
+• Increased chance of requiring a blood transfusion and 
+experiencing thrombosis 
+• Increased possibility of placental accreta and placenta 
+praevia in future pregnancies 
+
+ (RSCH PRH only ) Vaginal Birth after Caesarean Section (VBAC) MP034 
+University Sussex Hospital NHS Trust East Page 9 of 14 
+ 5 Documentation 
+ 
+The following should be documented in Badgernet on the VBAC section 
+5.1 The eligibility for VBAC and woman/person ’s preference s and priorities 
+5.2 Hospital birth is recommended Continuous electronic fetal monitoring is 
+recommended once in established labour. This includes telemetry. 
+5.3 An individualised management plan should be discussed and 
+documented and include : 
+• If labour commence s early , especially prior to a planned CS 
+• If the waters break prior to labour 
+5.4 There should be a documented plan for labour should this not 
+commence as planned (e.g. if pregnancy is over 40 weeks gestation), that 
+has been discussed with the with a Consultant Obstetrician and 
+documented in the maternal notes 
+6 40 weeks and I nductio n of L abour (IOL) 
+• Community midwives to offer a membrane sweep if the pregn ancy is over 40 
+weeks gestation and no additional risk factors Appendix F . 
+• 41 w eek Birth Options appointment with Birth Option Lead 
+Midwife /obstetrician to discuss IOL or an ELRCS. The risks and benefits of both 
+ELRCS and IOL should be discussed and should include a focus on the 
+individuals preferences and priorities. In addition the increased risk of uterine 
+scar dehiscence should be described;1.5 fold increase when compared to 
+spontaneous VBAC 
+• IOL methods include cervical sweeps, ARM and oxytocin. 
+Dinoprostone is not recommended for IOL with a previous CS due to the 
+increased likelihood of scar dehiscence 
+Admit for IOL at 40+7 with an obstetrics review Interval between ARM and 
+commencing oxytocin (usual regimen for first stage oxytocin) 4 -6 hours 
+Continuous electronic fetal monitoring is essential with oxytocin use 
+
+ (RSCH PRH only ) Vaginal Birth after Caesarean Section (VBAC) MP034 
+University Sussex Hospital NHS Trust East Page 10 of 14 
+ 6.1 Pre labour Spontaneous Rupture of Membranes (SROM) 
+6.1.1 Women/people planning VBAC with pre labour spontaneous 
+rupture of membranes should be advised to attend the 
+maternity unit as soon as possible and have a review, CONFIRM 
+OR EXCLUDE SROM, perform CTG and the expected maternal 
+observations ( see MP032 Rupture of Membranes for details) 
+undertaken by a midwife. All women/people should then be 
+reviewed by the Obstetric Registrar and a plan of care discussed 
+and agreed with the person which is then documented in the 
+maternal notes . If person /pregnancy is low risk (other than a 
+previous caesarean section), and she is not having uterine 
+contractions, she should be supported to go home and await 
+events with the usual advice of checking their temperature, 
+avoiding intercourse, observing fetal movements and PV loss 
+and to call the Maternity Unit if feel unwell, any concerns 
+(including pain and bleeding). Once contractions become regular 
+and moderate in strength women/people should call the 
+maternity unit and be advised to come in. This will be earlier 
+than for women/people who have not had a previous caesarean 
+section in order to have electronic fetal monitoring. A 
+documented plan should be made for Induction of labour 24hrs 
+after RoM as per usual recommended care plan for pre labour 
+RoM (for details of timings and process refer to Maternity 
+Protocol MP032 Rupture of Membranes ). 
+6.1.2 Women/people should be made aware that the risk of uterine 
+scar rupture increases by 1.5 fold with induction of labour. 
+6.1.3 if additional risk factors are present women/people should be 
+advised to stay in the maternity unit and a plan of care made 
+and documented by the Obstetric Registrar . The discussion on 
+risks and benefits of IOL should focus on the individuals 
+preferences and priorities and include the increased risk of scar 
+dehiscence (1.5 fold as compared to spontaneous VBAC) 
+ (RSCH PRH only ) Vaginal Birth after Caesarean Section (VBAC) MP034 
+University Sussex Hospital NHS Trust East Page 11 of 14 
+ 
+7 Intrapartum Care 
+7.1 On admission the woman/person should have a comprehensive plan 
+documented for labour and the obstetric team should be aware of the 
+admission 
+7.2 Continuous electronic fetal monitoring is recommended. This includes 
+telemetry 
+7.3 The partogram should be commenced as soon as labour is established 
+7.4 Take blood for Hb and Group & Save 
+7.5 IV cannula only if difficulties with venous access are anticipated eg raised 
+BMI 
+7.6 In established labour consider the use of the wireless CTG to aid mobility. 
+7.7 Women/people who decline continuous monitoring 
+7.7.1 This should have ideally been discussed antenatally with 
+consultant and senior midwife input 
+7.7.2 The benefits of continuous monitoring should be clearly 
+explained and documented and women/people should be made 
+aware that there is limited data on the safety of other forms of 
+monitoring in VBAC. 
+7.7.3 If a person declines monitoring when she presents in labour the 
+consultant obstetrician and senior midwife should be involved. 
+It may be necessary to contact the Consultant Midwife 
+7.8 Encourage mobil isation 
+7.9 Light diet 
+7.10 Omeprazole 20mg twice daily 
+7.11 Ensure analgesic needs are addressed 
+7.12 Signs of scar dehiscence: 
+• Abnormal CTG – early sign is fetal tachycardia 
+• Maternal tachycardia 
+• Vaginal bleeding 
+• Loss of station of presenting part 
+• Acute onset of scar tenderness (RSCH PRH only ) Vaginal Birth after Caesarean Section (VBAC) MP034 
+University Sussex Hospital NHS Trust East Page 12 of 14 
+ • Chest pain 
+• Shoulder Tip Pain 
+• Cessation of previous efficient uterine activity 
+• Poor / incoordinate uterine activity 
+• Acute onset of haematuria 
+• Severe lower abdominal pain especially in between contractions 
+7.13 Vaginal examinations as per usual If delay in the first stage, inform the 
+middle grade who should review progress and discuss with the 
+consultant before commencing Oxytocin. 
+ 
+8 VBAC and Use of the Birthing Pool 
+ 
+8.1 A number of women/people planning a VBAC may wish to use the pool. 
+See Maternity Protocol MP039 Waterbirth for further information / 
+guidance 
+8.2 Each Labour Ward has telemetry ( a wireless CTG machine ) that can be 
+used underwater in the pool. We recommend continuous fetal 
+monitoring with this machine whilst using the pool. 
+8.3 If the wireless CTG machine is not available then women/people should 
+be advised that we would not recommend the use of the pool as we 
+would not be able to continuously monitor fetal wellbeing 
+ 
+9 Monitoring Compliance 
+ 
+Please refer to the Monitoring and Auditing document for details on monitoring 
+compliance for this protocol. 
+10 References 
+ 
+1) National Institute for Health and Clinical Excellence - NICE. (20 21). Caesarean 
+Section: Guidance (CG132). Available at: www.nice.org.uk/guidance/cg132 
+
+Appendix - Benefits and Risks of Vaginal Birth after Caesarean Section 
+(VBAC) compared to ERCS 
+ 
+ Planned VBAC ERCS from 39 + Weeks 
+Maternal Outcomes • If Successful a shorter stay and 
+recovery. 
+ 
+• Approximately 0.5% risk of uterine 
+scar rupture. If occurs, associated 
+with maternal morbidity and fetal 
+morbidity/mortality. 
+ 
+• Increased likelihood of future vaginal 
+birth. 
+ 
+• Risk of anal sphincter injury in 
+women/people undergoing VBAC is 
+5% and birthweight is the strongest 
+predictor of this. 
+ 
+• Risk of Maternal death with planned 
+VBAC is 4/100000 (95% Cl 1/100000 
+to 16/100000) 
+ 
+• 72-75% chance of successful VBAC. 
+ 
+• The rate of instramental delivery is 
+also increased up to 39%. 
+ • Longer stay and recovery. 
+
+• Virtually avoids the risk of uterine 
+rupture (actual risk is extremely low, 
+less than 0.02%). 
+
+• Future pregnancies – likely to 
+require caesarean delivery. 
+ 
+• Increased risk of placenta 
+previa/accreta and adhesions with 
+successive caesarean 
+deliveries/abdominal sergery. 
+ 
+• Risk of maternal death with ERCS of 
+13/100000 (95% Cl 4/100000 to 
+42/100000). 
+ 
+• Able to plan a known delivery date in 
+selected patients. This may however 
+change based on circumstances 
+surrounding maternal and fetal 
+wellbeing in the antenatal period. 
+ 
+• Reduces the risk of Pelvic organ 
+prolapse and urinary incontinence in 
+comparison with number of vaginal 
+birth (dose -response effect) at least 
+in the short term. 
+ 
+• Option for sterilisation if fertility is 
+no longer desired. Evidence suggests 
+that the regret rate is higher and 
+that the failure rate from 
+sterilisation assiciated with 
+pregnancy may be higher than that 
+from an interval procedure. If 
+sterilisation is to be performed at 
+the same time as a ERCS, counselling 
+and agreement should have been 
+given at least 2 weeks prior to the 
+procedure. 
+ Vaginal Birth after Caesarean Section (VBAC) MP034 
+ 
+Page 14 of 14 
+Brighton & Sussex University Hospitals 
+ Infant Outcomes • 8 per 10000 (0.08%) risk of hypoxic 
+ischaemic encephalopathy (HIE) 
+ 
+• Risk of transient respiratory 
+morbidity of 2 -3% 
+
+• 10 per 10000 (0.1%) prospective risk 
+of antepartum stillbirth beyond 39 
+weeks while awaiting spontaneous 
+labour (similar to nulliparous 
+women/people ). 
+• 4 per 10000 (0.4%) risk delivery -
+related perinatal death. This is 
+comparable to the risk for 
+nulliparous women/people in labout. • <1 per 10000 (<0.01%) risk of 
+delivery -related perinatal death or 
+HIE. 
+ 
+• Risk of transient respiratory 
+morbidity of 4 -5% (6% risk if delivery 
+performed at 38 instead of 39 
+weeks). The risk is reduced with 
+antenatal corticosteriods, but there 
+are concerns about potential long -
+term adverse effects. 
+The estimate of risk for adverse maternal or fetal events in VBAC are based on women/people 
+receiving continuous eectronic monitoring during their labour.

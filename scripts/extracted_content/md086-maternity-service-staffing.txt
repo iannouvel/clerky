@@ -1,0 +1,760 @@
+# Extracted from: MD086 Maternity Service Staffing.pdf
+# Guideline ID: md086-maternity-service-staffing
+# Content length: 42432 characters
+# Processing date: 1750066901.011691
+
+Maternity Services Staffing: 
+Midwifery, nursing and support 
+staff for all care settings 
+
+Maternity Document: MD086 
+Date agreed: January 2016 
+ Maternity Services Staffing: MD086 
+Midwifery, nursing and support staff for all care settings (RSCH PRH only ) 
+Page 2 of 21 
+Brighton and Sussex University Hospitals 
+As discussed at previous audit and safety meetings as part of the review of guidelines following 
+the review of women’s services governance Julie Wade was attached to the governance team 
+to undertake some guideline reviews. At the back of the guidelines Julie has attached a clear 
+summary of her review. These guidelines will be circulated on a daily basis for your comments. 
+Whilst is acknowledged that in an ideal world only a few guidelines would be sent out for 
+comments however unfortunately as we need to get all our guidelines in date and be safe and 
+fit for purpose we do not have that luxury. Further it also recognised that Julie is a midwife and 
+some of these guidelines are obstetric focused. We are very grateful for everyone’s support in 
+taking our guidelines forward. 
+
+ Guideline Reviewer: Julie Wade 
+Version: 2.3 
+Approval Committee: Women’s Services Safety and Quality Committee 
+Date agreed: January 2016 
+Review date: January 2019 
+Cross reference: HR032 Annual Leave Policy 
+HR013 Managing Sickness Absence Policy 
+HR030 Parent Leave Policy 
+MP058 Escalation Protocol 
+Management Structure Consultation Paper 
+ Maternity Services Staffing: MD086 
+Midwifery, nursing and support staff for all care settings (RSCH PRH only ) 
+Page 3 of 21 
+Brighton and Sussex University Hospitals 
+Contents 
+Introduction ................................ ................................ ................................ ................................ ........... 5 
+This document provides a description of: ................................ ................................ ........................... 5 
+Section One - Existing Staff Capacity ................................ ................................ ................................ ..... 5 
+1.0 Midwifery and Support Staffing ................................ ................................ ................................ . 5 
+1.4 Community Staff shift patterns ................................ ................................ ................................ . 5 
+1.7 Midwifery Nursing, support staff groups utilised by the maternity services in each care 
+ setting ................................ ................................ ................................ ................................ ........ 6 
+Royal Sussex County Hospital – Brighton ................................ ................................ ............................ 6 
+1.7.1 Care settings at RSCH: ................................ ................................ ................................ ....... 6 
+1.7.2 Management and staff groups: ................................ ................................ .......................... 6 
+1.7.3 Labour ward, triage and Level 12 ................................ ................................ ....................... 6 
+1.7.4 Antenatal Clinic and Day Assessment Unit (DAU) ................................ .............................. 6 
+Princess Royal Hospital – Haywards Heath ................................ ................................ ......................... 7 
+1.7.5 Care settings at PRH: ................................ ................................ ................................ .......... 7 
+1.7.6 Management and staff groups: ................................ ................................ ......................... 7 
+1.7.7 Labour ward, triage and Bolney ................................ ................................ ........................ 7 
+1.7.8 Antenatal Clinic and Day Assessment Unit (DAU) ................................ ............................. 7 
+Community Teams (covers both PRH and RSCH) ................................ ................................ ................ 7 
+1.8 Specialist Midwives ................................ ................................ ................................ ................ 8 
+1.9 Supervisors of Midwives (SoM) ................................ ................................ ............................. 8 
+1.10 Manager’s on -call ................................ ................................ ................................ ................... 8 
+1.11 Required staffing levels for each care setting ................................ ................................ ........ 8 
+1.12 Parameters of Care and Staffing Allowances included in the ratios ................................ ...... 9 
+1.12.1 Community based staff; Home, Caseload and Community care for hospital births .......... 9 
+1.12.2 Community care for hospital births ................................ ................................ ................... 9 
+1.12.3 Home Births ................................ ................................ ................................ ........................ 9 
+1.12.4 Hospital Ratios include the following: ................................ ................................ .............. 10 
+1.13 Skill Mix Rationale ................................ ................................ ................................ ................ 10 
+1.14 Additional Roles ................................ ................................ ................................ ................... 10 
+1.15 Required Staffing Levels ................................ ................................ ................................ ...... 12 
+Royal Sussex County Hospital ................................ ................................ ................................ ............ 12 
+ Maternity Services Staffing: MD086 
+Midwifery, nursing and support staff for all care settings (RSCH PRH only ) 
+Page 4 of 21 
+Brighton and Sussex University Hospitals 
+Maternity Unit Labour ward, Triage and Level 12 RSCH ................................ ................................ . 12 
+1.15.1 Midwives (included in midwife to birth ratio) ................................ ................................ . 12 
+1.15.2 Nursing and Support staff ................................ ................................ ................................ 12 
+Maternity Unit Antenatal clinic and day unit RSCH ................................ ................................ ........ 12 
+1.15.3 Midwives (included in midwife to birth ratio) ................................ ................................ . 12 
+1.15.4 Nursing and Support staff (Maternity care assistants) ................................ .................... 12 
+Maternity Unit Labour ward, Bolney ward & triage PRH ................................ ................................ 13 
+1.15.5 Midwives (included in midwife to birth ratio) ................................ ................................ . 13 
+1.15.6 Nursing and Support staff ................................ ................................ ................................ 13 
+Maternity Unit Antenatal clinic and day unit PRH ................................ ................................ .......... 13 
+1.15.7 Midwives (included in midwife to birth ratio) ................................ ................................ . 13 
+1.15.8 Nursing and Support staff (Maternity care assistants) ................................ .................... 13 
+Community both PRH and RSCH ................................ ................................ ................................ ..... 13 
+1.15.9 Midwives (included in midwife to birth ratio) ................................ ................................ ..... 13 
+1.15.10 Nursing and Support staff (included in midwife to birth ratio) ................................ ............ 14 
+Section Two - Managing Short -Medium Term Midwifery, Nursing and Support Staffing Staff Issues 14 
+2.0 Short and Long Term Staffing Shortfalls / Unexpected Increased Workload and 
+ Contingency Planning ................................ ................................ ................................ ........... 14 
+2.1 Process for identifying and addressing short -medium term midwifery, nursing and support 
+staff staffing issues ................................ ................................ ................................ .......................... 14 
+2.2 Planning rotas ................................ ................................ ................................ ...................... 14 
+2.3 Planned Leave ................................ ................................ ................................ ...................... 15 
+2.4 Maternity / paternity leave ................................ ................................ ................................ .. 15 
+2.5 Short term leave / absence / sickness / unplanned increased workload ............................ 15 
+Section Three - Future Staffing Requirements / Ongoing Staffing Shortfalls ................................ ..... 16 
+3.0 Process for Annual Review of Midwifery, Nursing and Support Staffing in all Care .. Settings 
+within the Maternity Service ................................ ................................ ................................ ........... 16 
+3.1 Annual review: ................................ ................................ ................................ ......................... 16 
+4.0 Monitoring Compliance ................................ ................................ ................................ ....... 19 
+4.1 Minimum Auditable Standards: ................................ ................................ ........................... 19 
+5.0 References ................................ ................................ ................................ ............................ 20 
+Appendix A - Current supervisors of midwives; ................................ ................................ .............. 21 Maternity Services Staffing: MD086 
+Midwifery, nursing and support staff for all care settings (RSCH PRH only ) 
+Page 5 of 21 
+Brighton and Sussex University Hospitals 
+Introduction 
+ 
+This document provides a description of: 
+1. Midwifery and support staffing arrangements within the BSUH (Brighton and Sussex 
+University Hospitals) Maternity Department ; 
+2. The policies and procedures in the Department for addressing short, medium and long -
+term issues with medical cover; and 
+3. The process for reviewing longer -term medical staffing needs and future staffing plans for 
+the obstetric anaesthetic Department. 
+ 
+This will help inform future business cases for further investment, provide annual evidence to 
+the Trust Board 
+ 
+Maternity services are currently provided on two sites; Royal Sussex County Hospital (RSCH) 
+and Princess Royal Hospital (PRH). The service also supports homebirths and community 
+services. 
+ 
+The document will act as an information document for the purpose of evidence for CNST 
+(Clinical Negligence Scheme for Trusts) 
+ 
+Section One - Existing Staff Capacity 
+ 
+1.0 Midwifery and Support Staffing 
+ 
+1.1 The Associate Chief Nurse Women & Children / Head of Midwifery has overall 
+responsibility for ensuring a safe service with appropriate staffing levels are maintained 
+at all times. 
+ 
+1.2 Currently there is a 8 week rota within the maternity un its. All staff groups work 
+predominately long days ho wever a few continue to work early shifts and late shifts . 
+ 
+1.3 Shift patterns for maternity services 
+Long day 07:30 to 20:00 
+Night 19.30 to 08.00 
+Early shift 07:30 to 13.50 
+Late shift 12:30 to 20: 00 
+ 
+1.4 Community Staff shift patterns 
+ Community staff work day shifts only, with a variety of start times dependa nt on their 
+allocated work for the day which is indicated on the rota in advance. There are also two 
+homebirth midwives who will be on duty for a long day or night shift and will be Maternity Services Staffing: MD086 
+Midwifery, nursing and support staff for all care settings (RSCH PRH only ) 
+Page 6 of 21 
+Brighton and Sussex University Hospitals available for homebirths. If they are not needed for any homebirths they will continue 
+with community work or help out on the unit as needed during their shift. 
+ 
+1.5 Midwives are supported by the practice development team to meet their competencies 
+from a band 5 to 6 with many completing within a year of qualifying. All staff are 
+supported to achieve their mandatory training requirements through a rolling 
+programme lead by the practice development team. 
+ 
+1.6 The units are staffed as a whole and midwives and support staff work flexibly across the 
+care settings according to where the activity is. This means templates are worked out to 
+cover the main care settings (see below). The labour ward co -ordinators will consider the 
+clinical requirements and allocate staff to clinical areas as required on a shift by shift basis. 
+This is also reviewed as required during the shift. A minimum of 2 midwives with support 
+staff would be left on the antenatal / postnatal ward. 
+ 
+1.7 Midwifery Nursing, support staff groups utilised by the maternity services in each care 
+ setting 
+ 
+Royal Sussex County Hospital – Brighton 
+1.7.1 Care settings at RSCH : 
+• Labour ward , level 13 : 6 en -suite and 1 non en -suite birthing rooms, 1 obstetric 
+theatre, 1 emergency theatre, 2 bed recovery area, 1 high risk en -suite birthing 
+room, 2 bed assessment room, 1 pool room on the ward and 2 pool rooms off the 
+ward. 
+• Triage : a 2 room area for predominantly early labour assessment 
+• Level 12 (postnatal and antenatal) : 22 postnatal beds, 7 antenatal beds 
+• Antenatal clinic : a 7 room area with Ultrasound facilities and waiting room 
+• Day assessment unit : a 2 bed area with seating for phlebotomy, and waiting area 
+ 
+1.7.2 Management and staff groups: 
+The Maternity unit is managed by Midwifery Ma nager 8A and supported by a Labour 
+Ward Lead (Level 13 ) and Midwifery ward manager (Level 12) 
+ 
+1.7.3 Labour ward, triage and Level 12 
+In addition there is a team of Band 7 Labour ward coordinators who work 
+permanently on labour ward with a minimum of 1 per shift one to lead the shift and 
+usually another Band 7 midwife to support more junior staff. The remaining midwives 
+are band 5 or 6 with the majority being band 6. Triage is staffed from within this 
+template with a Band 6 midwife and 1 maternity care assistant . Triage unit is open 
+24/7. 
+ 
+1.7.4 Antenatal Clinic and Day Assessment Unit (DAU) 
+The Antenatal clinic and Day Assessmen t Unit are managed by 1.4 WTE Band 7 
+midwives. The clinic and DAU midwives are supported by Maternity Care Assistant s. 
+Outpatient induction of labour is also undertaken in this area. Maternity Services Staffing: MD086 
+Midwifery, nursing and support staff for all care settings (RSCH PRH only ) 
+Page 7 of 21 
+Brighton and Sussex University Hospitals 
+Princess Royal Hospital – Haywards Heath 
+1.7.5 Care settings at PRH : 
+• Labour ward (also c alled Central Delivery Suite): 8 birthing rooms (2 of which are pool 
+room s), 1 Obst etric Theatre, and 1 bereavement room (Willow room). 
+• Bolney Ward (postnatal, antenatal and triage): 18 beds in 3 bays (6 beds in each bay) 
+and 7 side rooms (2 have bathrooms) 
+• Triage: 3 beds and 2 chair recliners for monitoring 
+• ANC: 6 clinical rooms and 3 offices of which 2 have ultrasound facilities. There is a 
+waiting area and quiet area/screening room to discuss anomaly scans 
+• DAU: 1 bed and 2 chairs for monitoring. Also a waiting area 
+ 
+1.7.6 Management and staff groups: 
+ The Maternity unit is managed by Midwifery M anager 8A (1WTE) and supported by a 
+Labour Ward Lead (CDS) and Midwifery ward manager (Bolney) 
+ 
+1.7.7 Labour ward, triage and Bolney 
+ In addition there is a team of Band 7 Labour ward coordinators who work 
+permanently on labour ward one per shift. The remaining midwives are band 5 or 6 
+with the majority being band 6. Triage is staffed from within this template with a 
+Band 6 midwife and 1 maternity care assistant. Triage unit is open 12 hours 7 days a 
+week. 
+ 
+1.7.8 Antenatal Clinic and Day Assessment Unit (DAU) 
+ The Antenatal clinic and Day Assessment Unit are managed by 0.6 WTE Band 7 
+midwife . The clinic and DAU midwives are supported by Maternity Care Assistant s 
+and Maternity suppor t worker who assist with the Antenatal screening programme. 
+ 
+Community Teams (covers both PRH and RSCH) 
+1.7.9 The Community is managed by Community Matron Band 8a (0.8wte) for the whole 
+maternity s ervice and consists of 9 T eams: 6 in the Brighton area and 3 in the 
+Princess Royal area; 
+ 
+Brighton & Hove area Princess Royal Hospital area 
+East Team North Team 
+West Team 
+ 
+1.7.10 The Brighton teams are based in Children’s Centres broadly linking with GP 
+geographical areas. The Brighton teams have 3.2 WTE Band 7 as a team leader 
+ 
+1.7.11 The Hayward’s Heath teams are geographically based linking with the GP’s surgeries. 
+The case loads are supported by the teams but average around 140 women per 
+midwife. The Hayward ’s Heath teams are led by one Band 7 team leader . 
+ 
+1.7.12 The teams consist of Band 6 midwives . There are also Maternity Support Workers 
+(Band3) who work with the community teams . 
+ Maternity Services Staffing: MD086 
+Midwifery, nursing and support staff for all care settings (RSCH PRH only ) 
+Page 8 of 21 
+Brighton and Sussex University Hospitals 
+1.7.13 The community midwives cover a number of clinics and children’s centres in the local 
+area . One Midwife on each site is allocated to Home births during the day. The Team 
+leaders are responsible for off duty, organising cover for clinics, parent education, 
+team meetings. Many of the community midwives also work in the units to maintain 
+their intrapartum skills , and there is a flexible programme available for Midwives who 
+wish to do this . 
+ 
+1.7.14 There is 24 hour cover for Homebirths provided by two midwives on duty (one at each 
+site) for each long day or night shift. If they are not needed for any homebirths they 
+will continue with community work or help out on the unit as needed during their 
+shift. 
+ 
+1.8 Specialist Midwives 
+The following staff provide specialist clinical care, skills, teaching and management for 
+the whole of the maternity services and work both at RSCH and PRH: 
+1.8.1 Maternity Risk M idwife 
+1.8.2 Practice Development / Audit Lead 
+1.8.3 Clinical Skills Facilitators x2 WTE 
+1.8.4 Antenatal Screening Coordinator 
+1.8.5 Bereavement Lead 
+1.8.6 Teenage Pregnancy Midwife 
+1.8.7 Infant Feeding Specialist 
+1.8.8 Substance Misuse / Travellers / homeless 
+ 
+1.9 Supervisors of Midwives (SoM) 
+ 1.9.1 The supervisors of midwives provide a rota for 24/7 on -call which covers all of 
+maternity services. The rotas and contact details are available via both labour 
+wards. 
+1.9.2 The expected ratio of supervisors to midwives is 1:15. It is expected that 3 trainee 
+supervisors who are supported annually to maintain ratio levels. (See Appendix A 
+for list of current SoM’s) 
+ 
+1.10 Manager’s on -call 
+1.10.1 There is a manager on -call rota 24/7 which the 3 ma nagers and Deputy Head of 
+Midwifery support. The Associate Chief Nurse Women & Children / Head of 
+Midwifery covers calls especially when the manager has been called out over 
+night or in the event of sickness. 
+1.10.2 The Head of Midwifery is available to be contacted out of hours and will return 
+calls / messages as soon as is able 
+
+1.11 Required staffing levels for each care setting 
+1.11.1 In maternity services it is recognised that intrapartum care is provided in diverse 
+birth settings, at home, in midwifery units and acute hospitals. The planning for 
+staffing and skill mix levels needs to reflect the local model of care, case mix, the 
+needs of women, their families and service design. Maternity Services Staffing: MD086 
+Midwifery, nursing and support staff for all care settings (RSCH PRH only ) 
+Page 9 of 21 
+Brighton and Sussex University Hospitals 1.11.2 The totality of midwifery care has an impact on and implications for antenatal, 
+intrapartum and postnatal provision within the acute sector, as well as in primary 
+care and community settings. The need for continuous care means that labour 
+ward staffing requirements cannot be considered in isolation or separated from 
+the total establishment of the maternity service. Equally, staffing of the labour 
+ward must not be at the expense of other areas of the maternity services, such as 
+community midwifery. 
+1.11.3 Using the methodology from Safer Childbirth (RCOG 2007) and Birthrate Plus the 
+following workforce calculations have been made. This is based on the total births 
+of 6009 for the period 1st April 2011 to 31st March 2012. 
+1.11.4 The latest form al commissioned Birthrate Plus review was completed in July 2009 
+and the Head of Midwifery has repeated this exercis e for data collected for 2013 . 
+With colleagues an assessment of the case mix arising from the intrapartum 
+episode using current birth statistics; 
+ 
+ Categories I -III Categories IV - V 
+RSCH 56% 44% 
+PRH 58% 42% 
+ 
+Categories Definition 
+I Low risk women, home birth, birth centre, hospital, normal 
+no intervention 
+II Low risk women, home birth, birth centre, hospital, normal 
+no intervention 
+III Moderate degree of intervention; induction, fetal 
+monitoring, instrumental birth, 3rd degree tear, pre term 
+IV Higher risk / higher choice; normal birth with epidural for 
+pain relief, El C/S, post birth complications 
+V Highest risk; emergencies, Em C/S, multiple births, still 
+births, sever pregnancy induced hypertension 
+ 
+1.12 Parameters of Care and Staffing Allowances included in the ratios 
+ 
+ 1.12.1 Community based staff; Home, Caseload and Community care for hospital 
+births 
+17.5% Travel Time Allowance 
+ 
+ 1.12.2 Community care for hospital births 
+12 –15 hours for all antenatal and postnatal care including parent education 
+depending upon the birth outcome and neonatal needs. 
+ 
+ 1.12.3 Home Births 
+All antenatal and postnatal care as above, plus an allowance of 17 hours for 
+intrapartum care including second midwife present for the birth, and first follow 
+up visit. 
+ Maternity Services Staffing: MD086 
+Midwifery, nursing and support staff for all care settings (RSCH PRH only ) 
+Page 10 of 21 
+Brighton and Sussex University Hospitals 1.12.4 Hospital Ratios include the following: 
+Measured workload for antenatal outpatient activity including clinics and day 
+units, 
+• All antenatal inpatient activity, plus ward attendees 
+• Postnatal care in hospital 
+• Neonatal examination of the newborn 
+ 
+1.13 Skill Mix Rationale 
+1.13.1 It is important to distinguish between the situations where MCA assist the 
+midwife and where he/she replaces the midwife. 
+1.13.2 Birthrate Plus  (1996) makes it clear the ward and clinic staffing levels for 
+midwives are based upon the premise that they are supported by MCA and 
+clerical staff and these staff needs are assessed on a shift by shift basis. 
+1.13.3 Overall the % of midwives to trained support staff is 90/10, so this split can be applied 
+to the total clinical establishment as a means to estimate the contribution from non -
+midwives. However, this remains a local decision and is not a recommendation of 
+Birthrate Plus®. 
+1.13.4 Units Leave allowance = 24%. This includes annual leave, an element of sick and 
+study leave. 
+ 
+RSCH Ratio applied No. of births/ 
+episodes WTE staffing 
+Hospital births 1: 42 3421 81.45 
+Home births 1: 35 164 4.68 
+Traditional community 1: 96 3421 35.63 
+Total 121.76 WTE 
+ 
+PRH Ratio applied No. of births/ 
+episodes WTE staffing 
+Hospital births 1: 45 2361 52.46 
+Home births 1: 35 60 1.71 
+Traditional community 1: 96 2361 24.59 
+Total 78.76 WTE 
+ 
+1.14 Additional R oles 
+1.14.1 All maternity services require additional roles to manage and provide maternity 
+services over and above clinical care. This includes senior midwifery 
+management, governance, risk, practice development, antenatal screening 
+coordinator, and specialist midwives. An element of these roles is included in 
+clinical care. 
+1.14.2 Birth rate Plus and Royal College of Midwives recommends this should be 8% = 15 
+WTE . At BSUH non clinical roles = 6.88 WTE = 3.6%. 
+1.14.3 Birthrate Plus recommends an allowance of 1% for Supervision of Midwifery 
+=2WTE Maternity Services Staffing: MD086 
+Midwifery, nursing and support staff for all care settings (RSCH PRH only ) 
+Page 11 of 21 
+Brighton and Sussex University Hospitals 
+ 1.14.4 Summary 
+ ROYAL SUSSEX PRINCESS 
+ROYAL 
+BR+ Ratios WTE 121.76 78.76 
+TOTAL BR+ WTE 200.52 
+TOTAL funded Midwife comparative WTE 165.4 (1.4.12) 
+BR+ Additional WTE , 
+Support staff 10% = 20 WTE 15.72 WTE = 9% 
+(shared across Trust) 
+TOTAL current Midwives & Support staff 181.12 
+Difference between BR+ & current WTE - 19.4 WTE Total 
+(-15.12 Midwives ) 
+(- 4.28 Support staff ) 
+Overall ratio for ALL births as inc luding hospital 
+& home. 
+(not as per BR+) 29 births to 1 
+WTE 30 births to 1 
+WTE 
+ Maternity Services Staffing: MD086 
+Midwifery, nursing and support staff for all care settings (RSCH PRH only ) 
+Page 12 of 21 
+Brighton and Sussex University Hospitals 1.15 Required Staffing Levels 
+ The required staffing levels for all midwifery, nursing and support staff for each of the 
+care settings in BSUH NHS Trust maternity services: Calculated using Table 6 of Safer 
+Childbirth and Birthrate Plus ratio (RCOG, 2007) : 1st April 2012 to 31st March 2013 . 
+ 
+Royal Sussex County Hospital 
+Maternity Unit Labour ward, Triage and L evel 12 RSCH 
+ 
+1.15.1 Midwives (included in midwife to birth ratio) 
+ 
+75.13 WTE Mon Tue Wed Thurs Fri Sat Sun 
+Long day 12(+1) 12(+1) 12(+1) 12(+1) 12(+1) 12 12 
+Night 12 12 12 12 12 12 12 
+ (+1 = theatre RGN on an early shift Monday to Friday) 
+ 
+1.15.2 Nursing and Support staff 
+Nursery Nurse (included in midwife to birth ratio) 
+ 
+5.37 WTE Mon Tue Wed Thurs Fri Sat Sun 
+Long day 1 1 1 1 1 1 1 
+Night 1 1 1 1 1 1 1 
+ 
+Maternity care assistants (not included in midwife to birth ratio) 
+ 
+16.1 WTE Mon Tue Wed Thurs Fri Sat Sun 
+Long day 4(+1) 4(+1) 4(+1) 4(+1) 4(+1) 4 4 
+Night 3 3 3 3 3 3 3 
+(+1 = theatre mca on an early shift Monday to Friday ) 
+ 
+Maternity Unit Anten atal clinic and day unit RSCH 
+ 
+1.15.3 Midwives (included in midwife to birth ratio) 
+ 
+2.91 WTE Mon Tue Wed Thurs Fri 
+Long day 1 1 1 1 1 
+8am -4pm 1 1 0 1 1 
+ 
+1.15.4 Nursing and Support staff (Maternity care assistants ) 
+(not included in midwife to birth ratio) 
+ 
+3.75 WTE Mon Tue Wed Thurs Fri 
+8am -4pm 3 3 3 3 3 
+ 
+ Maternity Services Staffing: MD086 
+Midwifery, nursing and support staff for all care settings (RSCH PRH only ) 
+Page 13 of 21 
+Brighton and Sussex University Hospitals 
+Maternity Unit Labour ward, Bolney ward & triage PRH 
+ 
+1.15.5 Midwives (included in midwife to birth ratio) 
+ 
+44.85 c Mon Tue Wed Thurs Fri Sat Sun 
+Long day 9 9 9 9 9 9 9 
+Night 9 9 9 9 9 9 9 
+
+1.15.6 Nursing and Support staff 
+Nursery Nurse ( included in midwife to birth ratio) 
+ 
+5.37 WTE Mon Tue Wed Thurs Fri Sat Sun 
+Long day 1 1 1 1 1 1 1 
+Night 1 1 1 1 1 1 1 
+ 
+Maternity care assistants (not included in midwife to birth ratio) 
+ 
+16.1 WTE Mon Tue Wed Thurs Fri Sat Sun 
+Long day 3 3 3 3 3 3 3 
+Night 3 3 3 3 3 3 3 
+
+Maternity Unit Antenatal clinic and day unit PRH 
+ 
+1.15.7 Midwives (included in midwife to birth ratio) 
+ 
+3.0 WTE Mon Tue Wed Thurs Fri 
+8am -4pm 3 2 2 2 3 
+
+1.15.8 Nursing and Support staff (Maternity care assistants ) 
+(not included in midwife to birth ratio) 
+ 
+2.0 WTE Mon Tue Wed Thurs Fri 
+8am -4pm 2 2 1 2 1 
+
+Community both PRH and RSCH 
+ 
+1.15.9 Midwives (included in midwife to birth ratio) 
+ Maternity Services Staffing: MD086 
+Midwifery, nursing and support staff for all care settings (RSCH PRH only ) 
+Page 14 of 21 
+Brighton and Sussex University Hospitals 59.0 WTE Mon Tue Wed Thurs Fri Sat Sun 
+9am -5pm 39 39 39 39 39 20 20 
+ 
+1.15.10 Nursing and Support staff (included in midwife to birth ratio) 
+ 
+5.2 WTE Mon Tue Wed Thurs Fri Sat Sun 
+9am -5pm 3 3 3 3 3 3 3 
+
+Section Two - Managing Short -Medium Term Midwifery, Nursing and Support Staffing Staff 
+Issues 
+ 
+2.0 Short and Long Term Staffing Shortfalls / Unexpected Increased Workload and 
+ Contingency Planning 
+ 
+2.1 Process for identifying and addressing sho rt-medium term midwifery, nursing and 
+support staff staffing issues 
+2.1.1 Every Department will have staffing issues and unexpected increased workload 
+from time to time and thus the Department should have a clear process for 
+identifying and addressing short - medium staffing issues. 
+2.1.2 Overall responsibility for ensuring that there is appropriate Midwifery, nursing and 
+support staff staffing rests with the Head of Midwifery 
+ 
+2.2 Planning rotas 
+2.2.1 Midwifery, nursing and support staff rotas are completed 6 weeks in advance on 
+Rostapro and are approved by the Ma nagers on each site . In community the rota 
+is not done on Rostapro and the rota’s are done by the community Team Leaders 
+and approved by the community manager 
+2.2.2 At this point, any gaps in the rota are identified and a plan put in place for 
+addressing them . Staffing arrangements are monitored monthly via the 
+maternity dashboard and using the NPSA score card for 1 to 1 care in labour. 
+These are reviewed at the midwifery management meeting monthly and 
+bimonthly MSLC forums. Exceptions are reported to the Safety & Quality 
+Committee and Chief Nurses Division quarterly reporting. The Associate Chief 
+Nurse Women & Children meets monthly with the Chief Nurse and discusses 
+staffing ratios. 
+2.2.3 On a day to day basis, the Labour ward leads, working in conjunction with the 
+matrons on each site, manages the midwifery, nursing and support staff rota and 
+are responsible for reviewing staffing provision, identifying any gaps in the rota 
+and escalating these as appropriate (see below) . 
+ 
+2.2.4 Where the gaps are due to problems in recruiting, these are escalated to the Head of 
+Midwifery / D eputy Head of Midwifery who develop and agree a plan. This may 
+involve taking an alternative approach to working patterns. Maternity Services Staffing: MD086 
+Midwifery, nursing and support staff for all care settings (RSCH PRH only ) 
+Page 15 of 21 
+Brighton and Sussex University Hospitals 2.2.5 For the period until staff can be secured, the Department will look to cover this 
+using existing staff and Bank staff (and very rarely agency nurses/Midwives to 
+support ). 
+ 
+2.3 Planned Leave 
+2.3.1 For a ll leave arrangements refer to HR032 Annual Leave Policy 
+2.3.2 Head of Midwifery and Deputy Head of Midwifery : 
+The H ead of Midwifery’s l eave is approved by the Chief of Division; the H ead of 
+Midwifery approves the Deputy Head of Midwifery th ey endeavour to never be 
+on leave at the same time. When either of them is on leave, they cover or cancel 
+meetings as appropriate. 
+2.3.3 Specialist Midwives : all annual leave must be approved by the individual’s line 
+manager. Specialist midwives are expected to make their own contingency plans 
+about covering work/ commitments in their absence (such as colleague cover) to 
+ensure any specific work will still be covered and communicating this to the 
+department and other relevant people. 
+2.3.4 Midwives (band 5, 6, and 7 ), RGN and MCA, MSW, Nursery Nurses: All annual 
+leave requests should also be added by the individual to Rostapro. These will be 
+reviewed by the designated Band 7 midwife on each site for approval. Any 
+requests for leave over 2 weeks in length should be submitted to the Ma nager . 
+2.3.5 The number of staff allowed leave at any one time is decided by a formula that 
+determines the minimal amount of staff available for clinical work, thus the 
+number of staff allowed leave. No annual leave will be taken over to the next 
+financial year. Staff are expected to take a quarter of their annual leave every 
+quarter year. 
+ 
+2.4 Maternity / paternity leave 
+2.4.1 For all leave arrangements refer to HR030 Parent Leave Policy 
+2.4.2 When staff are on maternity leave the staffing shortfall is addressed by: 
+• Deputy Head of Midwifery will lead on prospectively identifying when leave will be 
+taken on a rolling basis 
+• Contact ing HR and agree external adverts for short term contracts to cover 60% of 
+the hours of the staff member on leave 
+• Following recruitment staff on short term contacts will cover the length of the 
+expected maternity leave 
+ 
+2.5 Short term leave / absence / sickness / unplanned increased workload 
+2.5.1 For all leave arrangements refer to HR013 Managing Sickness Absence Policy and 
+Procedure 
+2.5.2 Head of Midwifery and Deputy Head of Midwifery : 
+The HOM would contact the Chief and DHOM and the Deputy would contact the 
+HOM to advise of the short term sickness leave or unplanned increased workload . 
+Contingency and cover arrangements would be made . 
+2.5.3 Specialist Midwives : Specialist midwives are expected to contact the LW 
+coordinator to inform them about short term sickness / absence as per policy. 
+The LW coordinators must escalate this to line managers / matrons who will 
+make own contingency plans about covering work/ commitments (such as Maternity Services Staffing: MD086 
+Midwifery, nursing and support staff for all care settings (RSCH PRH only ) 
+Page 16 of 21 
+Brighton and Sussex University Hospitals colleague cover) to ensure any specific work will still be covered and 
+communicating this to the department and other relevant people. 
+2.5.4 Midwives (band 5, 6, 7) MCA, MSW, Nursery Nurses : When staff are on short term 
+leave the staffing shortfall is addressed by: 
+1. Labour ward coordinator (will support from the operational management 
+team) will review the staffing and consider amending the rota to address the 
+shortfall (e.g. asking staff to change shifts) 
+2. If unsuccessful the LW coordinator will contact the Bank office and ask for 
+Bank staff to cover the work required. 
+3. If unsuccessful the LW coordinator will instigat e the MP058 Escalation 
+Protocol 
+ 
+2.6 For cases of unplanned increased workload the LW coordinator should attempt to find 
+staffing cover within the existing pool of staff (e.g. ask staff from another ward / area to 
+cover) and refer to the processes set out in the escalation protocol. 
+ 
+Section Three - Future Staffing Requirements / Ongoing Staffing Shortfalls 
+ 
+3.0 Process for Annual Review of Midwifery, Nursing and Support Staffing in all Care 
+Settings within the Maternity Service 
+ 
+3.1 Annual review: 
+An annual review of the midwifery, nursing and support staffing levels in maternity 
+service will be undertaken to establish whether they are in line with the 
+recommendations in Safer Childbirth (RCOG, 2007) 
+This will be led by the Head of Midwifery . The timing of this review will coincide with 
+budget setting, the commissioning timetable and taking into account any new national 
+requirements (NICE guidance, Royal College recommendations etc.) . Staffing levels are 
+compared with current and anticipated activity levels and expected changes in service 
+which may impact on staffing. The process of how and when this audit occurs is set out in 
+Section 4.1 
+ 
+3.2 For Midwifery, nursing and support staff , this process will be led by the Head of Midwifery 
+who should consult with and involve other members of the Midwifery Management team 
+and Supervisors of Midwives . The results of this staffing review will be presented by the 
+Head of Midwifery at the Women’s Safety Quality Committee (WSQC) meeting . The 
+department should consider whether it has the ability to address the issues through 
+departmental efficiencies / working differently / review of resource allocation 
+ 
+3.3 Should the Department conclude that it has insufficient resources (or does not have the 
+ability to make the changes required) to deliver the quality and level of care that is 
+required as informed by the annual review, the management team should first consider 
+whether funding for additional resources can be found within the specialty’s budget 
+through efficiencies/working differently. 
+ 
+ Maternity Services Staffing: MD086 
+Midwifery, nursing and support staff for all care settings (RSCH PRH only ) 
+Page 17 of 21 
+Brighton and Sussex University Hospitals 3.4 If this is not possible, the Head of Midwifery will present the annual review results to the 
+Divisional Management Team at the Women’s and Children’s Divisional meeting. The 
+Women’s and Children’s Division should consider whether it has the ability to address the 
+issues through divisional efficiencies / working differently / review of resource allocation 
+ 
+3.5 Business case (plan): If this is not possible, an allocated appropriate member of staff will 
+prepare a business case, which reflects the results of the annual review. There is a 
+standard Trust Business Case template. The template requires Departments to consider 
+all of the possible options, the impact of these on other teams within the hospital, the 
+revenue and capital implications of each option and the risks associated with options and 
+how these might be managed. 
+ 
+3.6 Once completed, the business case is submitted to the Divisional Management Team 
+(Chief, General Manager and Divisional Finance Manager) who will review the case and 
+determine whether the Division is willing to support it. If they are, the Divisional 
+Management Team may decide to provide funding from Divisional funds. If the funds are 
+not available within the Division, the Business Case will be submitted to the Trust 
+Executive Team for consideration (via Internal Prioritisation Group). Before being 
+submitted to the Trust Executive Team, the business case must be signed off by the 
+Divisional Finance Manager, Divisional Director and the Director of Estates. 
+ 
+3.7 The staffing issue/s identified which cannot be resolved at divisional level will also be 
+reported to the Maternity Risk Man ager and entered onto the Trust Risk Register 
+(Women’s and Children’s Division section). The issue will remain on the Risk Register, 
+monitored by the Trust Safety and Quality Committee and the Women’s Safety and 
+Quality Committee meeting, until resolved 
+ 
+3.8 Process for monitoring progression of business plan and contingency plan (and review 
+of action plan) . The progress of the business plan will be reported back to the department 
+by the Chief of Women and Children at the Women’s and Children’s Divisional meetings 
+as a standing item until closed. The results of the business plan will be reviewed by the 
+Chief of Women and Children and presented at the Women’s and Children’s Divisional 
+meetings . Any actions plans arising from the business plan will be monitored at the 
+Women’s and Children’s Divisional meeting . 
+ 
+3.9 Once the business case has been submitted and all processes followed, should funding be 
+denied, the business case will remain with the Board (and on the Trust Risk Register) and 
+be their responsibility. 
+ 
+ 3.10 4.0 Monitoring Compliance 
+For details on how audit is undertaken, results reviewed and how action plans are monitored see 
+the Monitoring Compliance document 
+ 
+4.1 Minimum Auditable Standards: 
+4.1.1 the Midwifery, nursing and support staff utilised by the maternity services in all 
+care settings 
+4.1.2 required staffing levels for Midwifery, nursing and support staff utilised by the 
+maternity services in all care settings as set out in section 1.11 (against standards 
+for Safer Childbirth RCOG) 
+4.1.3 the implementation of contingency plans to address ongoing shortfalls and short 
+term staffing shortfalls (e.g. sickness or increased workload) 
+4.1.4 if in place, the monitoring of the business plan and action plans from this that 
+reflects the annual review 
+ 
+Type Annual Audit / or more frequently as indicated 
+Who Head of Midwifery / Deputy Head of Midwifery 
+Lead Head of Midwifery 
+How 1. a list of current Midwifery, nursing and support staff utilised 
+by the maternity services in all care settings obtained from 
+the rota (from rostapro) and from Human Resources 
+department 
+2. a review of the rota from the previous 12 months (this will be 
+6 separate weeks taken from a 12 months period) comparing 
+actual staffing levels with the standards set out in section 
+1.11 (or similar pattern with different time period) 
+3. identify cases from the rota from the previous 12 months of 
+long term and short term absence and show evidence, from 
+the rota and correspondence, where the contingencies as set 
+out in section 2 were followed 
+4. a review of the Maternity risk register from the previous 12 
+months and the minutes of the Women’s and Children’s 
+Divisional meeting and WSQC meeting , with any action plans 
+relating to the business case 
+Frequency Overall results presented annually 
+Presented to W&C divisional meeting 
+Monitoring of action 
+plan by Head of Midwifery 
+Completion/ exception 
+reported to W&C divisional meeting 
+ 
+ Maternity Services Staffing: MD086 
+Midwifery, nursing and support staff for all care settings (RSCH PRH only ) 
+Page 20 of 21 
+Brighton and Sussex University Hospitals 
+5.0 References 
+ 
+Birthrate Plus 2009 Evidence based ratios fro Midwifery Workforce Planning. Birthrate Plus. 
+ 
+Royal College of Obstetrics and Gynaecology. 2007. Safer Childbirth: minimum Standards for 
+the Organisation and Delivery of Care in Labour. RCOG press, London. 
+ Maternity Services Staffing: MD086 
+Midwifery, nursing and support staff for all care settings (RSCH PRH only ) 
+Page 21 of 21 
+Brighton and Sussex University Hospitals 
+Appendix A - Current supervisors of midwives; 
+ 
+Julia Banks Community Team Leader 
+John Bell Lead Research Midwife/ LW Coordinator 
+Helen Smith LW Coordinator 
+Claire Bradley Clinical Skills Facilitator 
+Jane Cleary Clinical Skills Facilitator 
+Dawn Elson Matron RSCH 
+Debi Fillery Nurse Consultant for Safeguarding children and young people 
+Lisa Jury Community Midwife 
+Mags Rathbone Community Midwife 
+Julie Sinden -Edwards LW Coordinator 
+Nicky Van Eerde Matron PRH 
+Katie Tibble LW Coordinator 
+Anne Woodroffe LW Coordinator 
+Mel Sanders Community Midwife 
+Pip Andrew s Postnatal Ward Manager RSCH 
+Vanessa Haywar d Midwife 
+Sue Defreitas LW Coordinator 
+Carey Burt LW Coordinator 
+Debbie Laing LW Coordinator 
+Leslie Leale Midwife 
+Fiona Rose Safeguarding Midwife 
+Louise Jennett Practice Education Facilitator

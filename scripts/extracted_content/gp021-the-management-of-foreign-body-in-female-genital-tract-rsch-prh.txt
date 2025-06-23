@@ -1,0 +1,427 @@
+# Extracted from: GP021 The Management of Foreign Body in Female Genital Tract (RSCH PRH).pdf
+# Guideline ID: gp021-the-management-of-foreign-body-in-female-genital-tract-rsch-prh
+# Content length: 15303 characters
+# Processing date: 1750066900.9809792
+
+University Hospitals Sussex NHS Foundation Trust 1 
+Protocol: The management of foreign body in female genital tract 
+Date Agreed : Amended : Review Date: 
+
+The management of foreign body in 
+female genital tract 
+ 
+Manager responsible : Mr. VuiVun Wong 
+Author : Dr. Sharif Ismail 
+Protocol Title : The management of foreign body in female genital tract 
+Cross reference: 
+Protocol Number: GP021 
+Version number: 1 
+Approving Committee: Womens’ Safety & Quality Committee 
+Date agreed: August 2021 
+Review Date: August 2025 
+
+University Hospitals Sussex NHS Foundation Trust 2 
+Protocol: The management of foreign body in female genital tract 
+Date Agreed : Amended : Review Date: 
+ Contents 
+Section Title Page 
+ Key principles 4 
+ Scope 4 
+ Responsibilities 4 
+ Objective standards 5 
+1 Introduction 5 
+2 Causes 5 
+3 Referral 5 
+4 Assessment 5 
+4.1 History 5 
+4.2 Examination 6 
+4.3 Investigations 6 
+5 Treatment 7 
+5.1 Arrangement 7 
+5.2 Procedure 7 
+5.3 After care 8 
+6 Monitoring compliance 8 
+7 References 8 
+8 Flow charts 9 
+ Flow chart 1: Referral 9 
+ Flow chart 2: Guide for dealing with patients in Mental Health Units 10 
+9 Tables 12 
+ Table 1: grading for theatre bookings 12 
+ 
+ University Hospitals Sussex NHS Foundation Trust 3 
+Protocol: The management of foreign body in female genital tract 
+Date Agreed : Amended : Review Date: 
+ KEY PRINCIPLES 
+ 
+A protocol is a set of measurable, objective standards to determine a course of action. 
+Professional judgement may be use in the application of a protocol. 
+ 
+SCOPE 
+ 
+This guideline applies to: 
+ Women who are suspected of having a foreign body in their genital tract. 
+ 
+RESPONSIBILITES 
+ 
+Nurses & Gynaecologists : 
+ To access, read, understand and follow this guidance 
+ To use their professional judgement in application of this protocol 
+ 
+Management: 
+ To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations 
+ To ensure the protocol is accessible to all relevant staff University Hospitals Sussex NHS Foundation Trust 4 
+Protocol: The management of foreign body in female genital tract 
+Date Agreed : Amended : Review Date: 
+ OBJECTIVE STANDARDS 
+1.0 Introduction: 
+ 
+1.1 Foreign body insertion in the female genital tract is not an uncommon 
+presentation in Gynaecology. 
+1.2 This protocol provides guidance to help patient assessment and 
+management. 
+ 
+2.0 Causes: 
+ 
+2.1 Missed tampon can simply be forgotten. 
+2.2 Foreign bodies could be inserted accidentally by children. 
+2.3 Foreign bodies could be inserted by patients themselves. 
+2.4 Foreign bodies might be an indication of sexual abuse or domestic violence. 
+2.5 Patients with mental health issues can insert foreign bodies either as self -
+harm, seeking healthcare attention or sexual gratification. 
+ 
+3.0 Referral: 
+ 
+3.1.1 Patients in shock, because of bleeding, patients suspected of 
+infection , including toxic shock syndrome, as well as p atients with 
+suspected sharp foreign bodies, like broken glass or sharp metal, will 
+need emergency referral . 
+3.1.2 Patients with long forgotten foreign body with no suspicion of infection 
+and no immediate risk their health can be seen during the day ti me 
+either at the Gynaecology Assessment Unit (GAU) on the 
+Gynaecology Ward or the Emergency and Ambulatory Care Unit 
+(EACU) to be assessed. If surgery is required, then patients can be 
+prepared for it and surgery can be booked as a scheduled procedure 
+(category 3), as outlined below. 
+3.1.3 Children (age < 16 years old) may need to be seen at the Royal 
+Alexandra Children’s Hospital. 
+3.1.4 A flow chart is shown to illustrate this (Flow chart 1). 
+3.1.5 In the case of any doubt, advice can be sought from the on call 
+Gynaeco logy middle grade or Consultant. 
+ 
+4.0 Assessment: 
+ 
+4.1 History: 
+ 
+4.1.1 The patient, her relatives / carers may know the nature and number of 
+the foreign body. Patients already in Mental Health Units may come 
+with Mental Health staff members. 
+4.1.2 At times, the foreign bod y might be accidentally detected on 
+examination or investigation. 
+4.1.3 It is important to ascertain whether this is the first time or not and 
+whether the insertion was done by the patient / with her consent or 
+against her wishes. 
+4.1.4 It is helped to try to establ ish the duration of time the foreign body / 
+bodies had been in place. This can be easy when the event of 
+insertion is known to the patient and/or her relative(s) / carer(s). At 
+times, this event may not be known and the foreign body / bodies 
+might come to light later, for example by noticing discharge or University Hospitals Sussex NHS Foundation Trust 5 
+Protocol: The management of foreign body in female genital tract 
+Date Agreed : Amended : Review Date: 
+ bleeding or by accidental detection on examination and/or 
+investigation. 
+4.1.5 Checking for sexual abuse / domestic violence requires sensitivity and 
+empathy. 
+4.1.6 Advice may need to be sought from Mental Health Team regarding 
+mental health issues. 
+ 
+4.2 Examination: 
+ 
+4.2.1 Principles for obtaining consent from children and patients lacking 
+capacity apply for examination . 
+4.2.2 For children, the child best interest should be noted and their co -
+operation as well as parental agreement are important. 
+4.2.3 Patients with mental health issues, including those detained under a 
+section of the Mental Health Act, may have more complicated lega l 
+issues. Support and advice can be soug ht from their treating team or 
+Psychiatric Liaison T eam. 
+4.2.4 Features of mental health, genetic disorder and domestic violence 
+should be noted. These include scars, bruising, burns and swellings. 
+4.2.5 General examination sho uld enable detecting signs of shock, like 
+rapid heart rate and low blood pressure, in the case of severe 
+bleeding, and infection, like raised temperature and heart rate. 
+4.2.6 Local examination should be only carried out when safe for the 
+examiner and with pat ient consent. A sharp foreign body can injure 
+the examiner. 
+4.2.7 Blood loss, discharge and urine / faecal matter should be noted. 
+4.2.8 Speculum examination will enable visualising the foreign body and 
+may enable its removal, with forceps. Prior administration of ana lgesia 
+may help. 
+ 
+4.3 Investigations: 
+ 
+4.3.1 Full blood count will detect anaemia, as a result of bleeding, and 
+leucocytosis, as a result of infection. 
+4.3.2 Erythrocyte sedimentation rate and c -reactive protein will be elevated 
+in the case of infection. 
+4.3.3 Clotting and l iver as well as kidney function would be deranged in 
+sepsis. 
+4.3.4 Swabs should be obtained from any discharge that raises suspicion of 
+infection, for culture and sensitivity. 
+4.3.5 Blood cultures will need to be obtained in patients suspected of 
+septicaemia. 
+4.3.6 X-ray would pick up metal foreign bodies. Radiolucent foreign bodies 
+may require other forms of imaging. These will need discussion with 
+Radiology colleagues. 
+4.3.7 The same consent requirements for examination apply for 
+investigations. 
+4.3.8 Urology and/or Colo -Rectal / General Surgical colleagues may need to 
+be involved, if there is any suspicion of the foreign body perforating 
+the urinary tract or gastro -intestinal tract. 
+ 
+5.0 Treatment: 
+ 
+5.1 Arrangement: 
+ University Hospitals Sussex NHS Foundation Trust 6 
+Protocol: The management of foreign body in female genital tract 
+Date Agreed : Amended : Review Date: 
+ 5.1.1 The same consent considerations for examination and investigation 
+apply to treatment. 
+5.1.2 Children may need to be admitted to the Royal Alexandra Children’s 
+Hospital. 
+5.1.3 Patients in shock, because of bleeding, will need resuscitation. 
+Bleeding may not be extern al. Intravenous access should be 
+established and intravenous fluid administered. Blood transfusion 
+might be required. 
+5.1.4 Patients suspected of infection will need antibiotic treatment, after the 
+appropriate samples have been obtained for culture and sensitiv ity. 
+5.1.5 Patients suspected of septicaemia may need admission to the High 
+Dependency Unit (HDU) or the Intensive Therapy Unit (ITU), after 
+discussion with the Anaesthetic / Intensivist colleagues. 
+5.1.6 Safe guarding rules should be followed, if there is suspicio n of sexual 
+abuse or domestic violence. 
+5.1.7 Patients with suspected sharp foreign bodies, like broken glass or 
+sharp metal, and those with bleeding or toxic shock syndrome will 
+need urgent removal of the foreign bodies (category 1). 
+5.1.8 Patients with long forgott en foreign body where there is suspicion of 
+infection but not serious enough to endanger their health will need 
+emergency removal of the foreign bodies (category 2). 
+5.1.9 Patients with no sharp foreign bodies, who are not bleeding or 
+suspected of having toxic shock syndrome or infection can have their 
+foreign bodies removed as a booked emergency (category 3). They 
+can be admitted through Theatre Admission Unit on the day or at the 
+Princess Royal Hospital for Confidential Enquiries into Peri -Operative 
+Death (CEP OD) list. 
+5.1.10 The grading is shown in table 1. 
+5.1.11 Patients who require input from Urology and/or Bowel Surgical 
+colleagues will need to have procedures organised as combined 
+procedures. 
+ 
+5.2 Procedure: 
+ 
+5.2.1 Speculum examination followed by removal of the foreign body would 
+be carried out. Whenever possible, a photo should be obtained and 
+kept into the notes. This is likely to obviate the need for histo -
+pathological examination, thought this examination might at times be 
+required. 
+5.2.2 The foreign body may need to be sent for microbiology, though a 
+swab might be sufficient. 
+5.2.3 Injuries should be looked for and repaired, if required. 
+5.2.4 Antibiotics might be required. 
+5.2.5 The use of catheters and bowel care will be according to the advice 
+from the Urology / Bowel Surgical colleagues, if involved. 
+ 
+6.0 After Care 
+ 
+6.1 Patients are usually discharged home on the day, unless otherwise indicated. 
+6.2 Habitual insertion of foreign bodies whilst in Mental Health Units may need 
+Psychiatric / Mental Health Team help. Ensuring that patients do not have 
+access to such foreign bodies, especially sharp ones, may help, though it can 
+be difficult. Care arrangements can be discussed with the Psychia tric / Mental 
+Health Team. 
+6.3 Safe-guarding colleagues should be informed, as required. University Hospitals Sussex NHS Foundation Trust 7 
+Protocol: The management of foreign body in female genital tract 
+Date Agreed : Amended : Review Date: 
+ 
+7.0 MONITORING COMPLIANCE 
+ 
+7.1 An audit will be carried out on regular basis to monitor compliance with this 
+protocol. 
+ 
+8.0 REFERENCES 
+ 
+- Bansal A, Kumar M, Goel S, Aeron R (2016) Vesicovaginal fistula following insertion 
+of a foreign body in the vagina for sexual gratification: could it be catastrophic?, 
+British Medical Journal Case Reports 12: 2016. 
+- Caldwell J Jr (1953) Foreign body in the vagina for twenty years; report of a ca se, 
+American Journal of Obstetrics and Gynecology 66: 899 -901. 
+- Dasari P, Sagili H(2012) Incarcerated foreign body in the vagina: A metal bangle 
+used as a pessary, British Medical Journal Case Reports 11: 2012. 
+- Lo TS, Jaili SB, Ibrahim R, Kao CC, Uy-Patrimonio MC (2018) Ureterovaginal fistula: 
+A complication of a vaginal foreign body, Taiwanese Journal Obstetrics and 
+Gynecology 57:150-152. 
+- Sakhavar N, Teimoori B, Ghasemi M (2014) Foreign body in the vagina of a four -
+year-old-girl: A childish prank or sexual abuse , International Journal of High Risk 
+Behav iour and Addict ion 21 : e10534 . 
+- Yang X, Sun L, Ye J, Li X, Tao R (2017) Ultrasonography in detection of vaginal 
+foreign bodies in girls: A retrospective study, Journal of Pediatric and Adolescent 
+Gynecology 30: 620 -625. 
+
+ University Hospitals Sussex NHS Foundation Trust 8 
+Protocol: The management of foreign body in female genital tract 
+Date Agreed : Amended : Review Date: 
+ 9.0 Flow charts: 
+ 
+Flow chart 1: Referral 
+- Foreign body : 
+ 
+o Confirmed / Suspected 
+ 
+o Type: metal / plastic / glass / ………………………………….. 
+ 
+o Recent / Old ……………………………………………………….. 
+ 
+o Sharp → 
+ 
+o Non sharp → 
+ 
+- Bleeding : 
+ 
+o No / Mild → 
+ 
+o Severe → 
+ 
+- Infection : 
+ 
+o No / Mild → 
+ 
+o Severe → 
+ 
+- Mental health issues : 
+ 
+o Yes → 
+ 
+o No → 
+ 
+- Abuse / domestic violence issues: 
+ 
+o Yes → 
+ 
+o No → 
+ 
+- Safe guarding issues: 
+ 
+o Yes → 
+ 
+o No → 
+ Booked appointment at GAU or EACU Booked appointment at GAU or EACU 
+Booked appointment at GAU or EACU Urgent referral 
+Urgent referral 
+Urgent referral 
+Involve the Mental Health Team 
+No need to involve the Mental Health Team 
+Involve Child Protection / Domestic Violence 
+No need to involve Child Protection / Domestic 
+Violence 
+Involve Safe Guarding 
+ 
+No need to involve Safe Guarding 
+ University Hospitals Sussex NHS Foundation Trust 9 
+Protocol: The management of foreign body in female genital tract 
+Date Agreed : Amended : Review Date: 
+ Flow chart 2: Guide for dealing with patients in Mental Health Units 
+- Patient features: 
+ 
+o Age………………………… years 
+ 
+o Parity………………………………. 
+ 
+o Mental health issues: ………………………………………………………… 
+ 
+.………………………………………………………………………………..... 
+………………………………………………………………………………..... 
+………………………………………………………………………………..... 
+o Other health issues: ………………………………………………………… 
+ 
+………………………………………………………………………………..... 
+………………………………………………………………………………..... 
+………………………………………………………………………………..... 
+- Foreign body : 
+ 
+o Confirmed / Suspected 
+ 
+o Type: metal ……… / plastic ……… / glass ……… / ……………………… 
+ 
+o Date of detection: …………./.………/…………… 
+ 
+o Date of insertion: …………./.………/…………… 
+ 
+o Likely / accurate duration foreign body has / bodies have been in 
+ 
+………………………………………………………. 
+ 
+o Sharp → 
+
+o Non sharp → 
+ 
+- Bleeding : 
+ 
+o Mild vaginal bleeding → 
+ Call the hospital to speak to the Gynaecology middle 
+grade at any time 
+Call the hospital to speak to the Gynaecology middle 
+grade during office hours on week days 
+ 
+Call the hospital to speak to the 
+Gynaecology middle grade during office 
+hours on week days 
+ University Hospitals Sussex NHS Foundation Trust 10 
+Protocol: The management of foreign body in female genital tract 
+Date Agreed : Amended : Review Date: 
+
+o Significant vaginal bleeding or suspected internal haemorrhage 
+ 
+ → 
+ 
+- Infection : 
+ 
+o Minimal vaginal discharge, no systemic symptoms or signs 
+ 
+→ 
+ 
+o Significant vaginal discharge, systematically unwell,…………………… 
+ 
+→ Call the hospital to speak to the Gynaecology middle 
+grade at any time 
+Call the hospital to speak to the Gynaecology middle 
+grade at any time Call the hospital to speak to the Gynaecology middle 
+grade during office hours on week days 
+ University Hospitals Sussex NHS Foundation Trust 11 
+Protocol: The management of foreign body in female genital tract 
+Date Agreed : Amended : Review Date: 
+ 10.0 Tables 
+ 
+Table 1: grading for theatre bookings 
+ 
+Features 
+ Category 
+- Sharp foreign body 
+- Risk of perforation 
+- Severe bleeding 
+- Severe infection 
+ 1 
+- As soon as possible 
+- Non sharp foreign body with: 
+o Mild bleeding 
+o Mild infection 
+ 2 
+- Confidential Enquiries into Peri -Operative 
+Deaths (CEPOD) 
+ 
+- Non sharp foreign body with: 
+o No bleeding 
+o No infection 
+ 3 
+- Elective list 
+- Non urgent Confidential Enquiries into Peri -
+Operative Deaths (CEPOD)

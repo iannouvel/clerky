@@ -1,0 +1,1129 @@
+# Extracted from: CG12018 Ectopic Pregnancy Guideline.pdf
+# Guideline ID: cg12018-ectopic-pregnancy-guideline
+# Content length: 56167 characters
+# Processing date: 1750066900.2112434
+
+CG12018 Ectopic Pregnancy Guideline v 4.0 Oct ober 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 1 of 30 
+Management and diagnosis of an Ectopic Pregnancy and /or 
+Pregnancy of Unknown Location (PUL) Guideline 
+Summary statement: How does the 
+document support patient care? By providing evidence based guidance for staff in the 
+management of ectopic p regnancy and Pregnanc y of 
+Unknown L ocation (PUL) 
+Staff/stakeholders involved in 
+development: 
+ Leads for Maternity Risk Management (Obstetric and 
+Midwifery), Labour Ward Leads (Obstetric and Midwifery), 
+Joint Obstetric Guidelines Group , Consultant leads for Early 
+Pregnancy & Gynaecology Emergency, Gynaecology 
+Matron , Superintendent Sonographer 
+Division: Women and Children’s 
+Department: Gynaecology 
+Responsible Person: Chief of Service 
+Author: Obstetrics and Gynaecology Consultant and Registrar , 
+Gynaecology QI&I Matron, Gynaecology Matron 
+For use by: Gynaecology, Obstetric, A & E , Nursing and Midwifery staff , 
+Sonographers and General Practitioners (GP) 
+Purpose: To provide clear evidence -based guidance on the 
+management of ectopic p regnancy and PUL 
+This document supports: 
+ NICE guideline NG126; Ectopic pregnancy and miscarriage: 
+diagnosis and initial management, April 2019, updated 
+November 2021 
+RCOG Diagnosis an d management of Ectopic Pregnancy - 
+Green -top Guideline No. 21 , November 2016 
+Key related documents: UH Sussex (SRH&WH) Gynaecology Guidelines : 
+Miscarriage and early pregnancy loss m anagement 
+Approved by: Joint Obstetric and Gynaecology Guidelines Group 
+MGC (13TH December 2022) 
+Approval date: 16th October 2022 Date uploaded: 04th January 2023 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable – Divisional Ratification only required 
+Ratification Date: Not Applicable – Divisional Ratification only required 
+Expiry Date: June 2023 
+Review date: December 2022 
+If you require this document in another format such as Braille, large print, audio or another 
+language please contact the Trusts Communications Team 
+Reference Number: CG12018 
+CG12018 Ectopic Pregnancy Guideline v 4.0 Oct ober 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 2 of 30 
+
+Version Date Author Status Comment 
+1.0 Feb 2012 Consultant Obstetrician Archived New Trust guideline 
+2.0 November 2013 Consultant Obstetrician Archived Guideline updated 
+3.0 June 2019 Gynaecology Matron 
+Consultant leads for Early 
+Pregnancy & Gynaecology 
+Emergency and Specialist 
+Registrar Dr A Stienen -
+Durand 
+ Archived 
+(Not taken 
+through 
+JOGG & 
+uploaded to 
+Staffnet) Guideline updated 
+ 
+4.0 October 2022 J. Birrell, Gynaecology 
+Matron Consultant leads for 
+Early Pregnancy & 
+Gynaecology Emergency 
+and Specialist LIVE 3 year review 
+ 
+The interpretation and application of clinical guidelines will remain the 
+responsibility of the individual clinician. 
+If in doubt contact a senior colleague or expert. 
+
+CG12018 Ectopic Pregnancy Guideline v 4.0 Oct ober 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 3 of 30 
+
+Contents 
+1.0 Aim................................ ................................ ................................ ........................... 5 
+2.0 Scope ................................ ................................ ................................ ....................... 5 
+3.0 Responsibilities ................................ ................................ ................................ ........ 5 
+4.0 Abbreviations used within this guideline ................................ ................................ ... 6 
+5.0 Introduction ................................ ................................ ................................ .............. 6 
+6.0 Risk factors ................................ ................................ ................................ .............. 6 
+7.0 Signs an d symptoms ................................ ................................ ................................ 7 
+7.1 Common symptoms ................................ ................................ ................................ . 7 
+7.2 More common signs ................................ ................................ ................................ . 7 
+7.3 Other reported symptoms – causes for concern ................................ ....................... 7 
+8.0 Initial assessment ................................ ................................ ................................ ..... 8 
+9.0 Diagnosis of ectopic pregnancy ................................ ................................ ................ 8 
+9.1 Ultrasound diagnosis of intrauterine, PUL and ectopic pregnancies ......................... 8 
+9.2 Ultrasound diagn osis of intrauterine pregnancy ................................ ........................ 8 
+9.3 Ultrasound Diagnosis of PUL an d Ectopic Pregnancy ................................ .............. 8 
+9.3.1 Intrauterine and adnexal appearance for a PUL or ectopic pregnancy: .................... 9 
+9.3.2 Interstitial ectopic pregnancy ................................ ................................ .................... 9 
+9.3.3 Cervical ectopic pregnancy ................................ ................................ .................... 10 
+9.3.4 Caesarean scar ectopic pregnancy ................................ ................................ ........ 10 
+9.3.5 Ovarian ectopic pregnancy ................................ ................................ ..................... 10 
+9.3.6 Abdominal ectopic pregnancy ................................ ................................ ................ 10 
+10.0 Management of ectopic pregnancy ................................ ................................ ......... 11 
+10.1 Expectant management ................................ ................................ ......................... 11 
+10.1.1 Selection criteria for expectant management ................................ .......................... 11 
+10.1.2 Follow -up ................................ ................................ ................................ ............... 11 
+10.2.1 Selec tion criteria for medical management ................................ ............................. 12 
+10.2.2 Medical or surgical management ................................ ................................ ............ 12 
+10.2.3 Exclusion criteria ................................ ................................ ................................ .... 13 
+10.2.4 Medical management treatment protocol ................................ ............................... 13 
+10.2.5 Medical Management Single – Dose Regime ................................ ......................... 14 
+10.2.5.1 Information for the clinician ................................ ................................ .................... 15 
+10.2.5.2 Patients need to be aware ................................ ................................ ...................... 15 
+10.3 Surgical management of ectopic pregnancy by laparoscopy ................................ .. 15 
+10.3.1 Advantages of laparoscopic surgery ................................ ................................ ....... 16 
+10.3.2 Disadvantages ................................ ................................ ................................ ....... 16 
+10.4 Management by laparotomy ................................ ................................ ................... 16 
+10.5 Safety ................................ ................................ ................................ ..................... 16 
+10.6 Follow -up regime after salpingotomy ................................ ................................ ...... 17 
+10.7 Recommendations arising from the 33rd RCOG Study Group ................................ 17 
+CG12018 Ectopic Pregnancy Guideline v 4.0 Oct ober 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 4 of 30 
+11.0 Management of Ruptured Ectopic with Collapse ................................ .................... 17 
+12.0 Anti-D rhesus prophylaxis ................................ ................................ ...................... 18 
+13.0 Pregnancy of Unknown Location (PUL) ................................ ................................ .. 18 
+14.0 Serum hCG ................................ ................................ ................................ ............ 19 
+15.0 Serum pro gesterone ................................ ................................ .............................. 20 
+16.0 Patient follow up after an ectopic pregnancy and PUL ................................ ............ 21 
+17.0 Audit ................................ ................................ ................................ ....................... 21 
+References ................................ ................................ ................................ ............................ 22 
+Support Networks ................................ ................................ ................................ .................. 23 
+Appendix 1: Early Pregnancy Assessment Clinic Initial Clinical Assessment .......................... 24 
+Appendix 2: Early Pregnancy ultrasound diagnosis ................................ ................................ 25 
+Appendix 3: Management of ectopic pregnancy ................................ ................................ ..... 27 
+Appendix 4: Standard Operating Procedure for the administration of intramuscular 
+Methotrexate for the management of ectopic pregnancy and persistent trophoblastic disease 28 
+Appendix 5: Management of a ruptured ectopic with collapse in A&E ................................ .... 29 
+Appendix 6: Flowchart for management of PUL ................................ ................................ ..... 30 
+
+CG12018 Ectopic Pregnancy Guideline v 4.0 Oct ober 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 5 of 30 
+Ectopic Pregnancy and 
+Pregnancy of Unknown Location (PUL) Guideline 
+
+1.0 Aim 
+ 
+The aim is to provide clear guidance for all staff caring for pregnant women and people with 
+early pregnancy complications. 
+ 
+2.0 Scope 
+ 
+This guideline applies to: 
+ 
+ Gynaecology medical and nursing staff 
+ Obstetricians 
+ Junior doctors 
+ A & E doctors and nurses 
+ General Practitioners (GPs) 
+ Midwives 
+ Sonographers 
+ 
+3.0 Responsibilities 
+ 
+This guidance is for staff employed at University Hospitals Sussex within at Richards’ and 
+Worthing Hospitals. The guidance is flexible and should be tailored to the individual 
+circumstances of the patient. 
+ 
+Obstetricians and Gynaecologists, Gynaecology Nurses, Junior D octors, A & E Staff, GPs , 
+Midwives and Sonographers t o: 
+ 
+ Access, read, understand and follow this guidance . 
+ Use their professional judgement in application of this guideline . 
+ Document the reason and/or justify , with clear documentation of a lternative plans and 
+discussions that have taken place if the guidance is not being followed . 
+ 
+Clinical Managers are to ensure: 
+ 
+ The guideline is reviewed as required in line with Trust, National RCOG and NICE 
+recommendations ’ 
+ The guideline is accessible to all relevant staff ’ 
+ 
+CG12018 Ectopic Pregnancy Guideline v 4.0 Oct ober 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 6 of 30 
+4.0 Abbreviations used within this guideline 
+ 
+SRH St Richards Hospital WH Worthing Hospital 
+EPAC Early Pregnancy Assessment Clinic GDU Gynae Day Unit 
+PUL Pregnancy of Unknown Location TVS Transvaginal Scan 
+FBC Full blood count G&S Group & Save 
+U&Es Urea & Electrolytes BHCG Beta-Human Chorionic Gonadotropin 
+LFT Liver Function Test NSAIDs Non Steroidal Anti Inflammatory 
+Drugs 
+IV Intravenous O&G Obstetrics and Gynaecology 
+BP Blood pressure hCG Human Chorionic Gonadotropin 
+PV Per vaginal 
+ 
+5.0 Introduction 
+ 
+Ectopic pregnancy has an adverse effect on the quality of life of many women. The incidence of 
+ectopic pregnancy is approximately 11 per 1000 pregnancies (RCOG, 2016 , NICE, 2019 ) and 
+the maternal (and birthing parent) mortality rate is 0.2 per 1000 (HSIB, 2018 ). Improvement in 
+diagnosis and management of early pregnancy loss is therefore of vital importance, in order to 
+reduce the incidence of the associated psychological morbidity and avoid the unnecessary 
+death of wom en with ectopic pregnancies (NICE, 2019). 
+ 
+The fallopian tube is the most common site accounting for nearly 95% of ectopic pregnancies. 
+Other possible sites of an ectopic pregnan cy are interstitial (2-4%), ovarian (3%), cornual (<1%) , 
+cervical (< 1%), caesa rean section scar or abdominal (rare) (Lin, Bhatt & Dogra, 2008) . An 
+abdominal ectopic pregnancy may be primary or secondary resulting from a tubal miscarriage. 
+ 
+6.0 Risk factors 
+ 
+Risk factors for ectopic pregnancy are p resent only in 25% - 50% of patients with an ectopic 
+pregnancy. They include a history of: 
+ 
+ Previous pelvic inflammatory disease 
+ Previous pelvic surgery 
+ Previous ectopic pregnancy 
+ Subfertility 
+ In vitro fertilisation 
+ Intrauterine contraceptive device 
+ Failure of emergency contraception (Levone lle) 
+ Smoking 
+ Maternal or birthing parent age more than 40 years 
+ 
+CG12018 Ectopic Pregnancy Guideline v 4.0 Oct ober 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 7 of 30 
+7.0 Signs and symptoms 
+ 
+GPs and midwives should r efer pregnant women and people who are haemodynamically 
+unstable, or in whom there is significant concern about the degree of pain or bleed ing, directly to 
+A & E. 
+ 
+Between 6 -16% of pregnant women and people who attend A&E with vaginal bleeding or 
+abdominal pain in the first trimester of pregnancy will have an ectopic pregnancy (HSIB, 2018). 
+Be aware that atypical presentation for ectopic pregnancy is common. 
+
+7.1 Common symptoms 
+ 
+ Abdominal or pelvic pain 
+ Amenorrhoea , missed period or irregular bleeding 
+ Vaginal bleeding of more than three days duration 
+
+7.2 More common signs 
+ 
+ Abdominal tenderness, guarding and rigidity . 
+ Pelvic tenderness . 
+ Adnexal tenderness . 
+ Cervical motion tenderness . 
+ Pallor. 
+ Abdominal distension . 
+ Enlarged uterus . 
+ Tachycardia ( heart rate greater than 100 beats per minute) . 
+ Hypotension ( blood pressure lower than 100/60 mmHg) . 
+ Shock or collapse . 
+ Orthostatic hypotension . 
+
+7.3 Other reported s ymptoms – causes for concern 
+ 
+ Diarrhoea on more than three occasions in the previous 24 hours . 
+ Dizziness, fainting or syncope . 
+ Shoulder tip pain . 
+ Urinary symptoms (difficulty or unable to pass urine) . 
+ Passage of tissue . 
+ Rectal pressure or pain on defaecation . 
+ 
+CG12018 Ectopic Pregnancy Guideline v 4.0 Oct ober 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 8 of 30 
+8.0 Initial assessment 
+(see Appendix 1 ) 
+ 
+All women and people of reproductive age should have a pregnancy test . The symptoms and 
+signs of ectopic pregnancy can resemble common sympto ms and signs of other conditions such 
+as gastrointestinal conditions or urinary tract infection. 
+ 
+If clinically stable r efer to the Early Pregnancy A ssessment Clinic (EPAC) or Gynaecology Day 
+Unit. Out-of-hours or if EPAC /GDU is unavailable contact the on call Gynaecology Registrar for 
+further assessment of women and people with a positive pregnancy test and the following on 
+examination: 
+ 
+ Pain and abdominal tenderness or 
+ Pelvic tenderness or 
+ Cervical motion tenderness 
+ 
+to exclude the p ossibility of ectop ic pregnancy even in the absence of risk factors. The majority 
+of women and people with an ectopic pregnancy will have no known risk factors. 
+ 
+9.0 Diagnosis of ectopic pregnancy 
+ 
+9.1 Ultrasound diagnosis of intrauterine, PUL and ectopic pregnancies 
+ 
+All pregnancies have a natural history of evolution; hence the ultrasound findings depend on the 
+developmental stage at the time of examination. Before makin g a diagnosis take into account, 
+patient history, intrauterine and adnexal findings, the patient ’s clinical presentation and serum 
+HCG levels. 
+ 
+9.2 Ultrasound diagnosis of intrauterine p regnancy (Jurkovic, Valentin & Vyas, 2009) 
+ 
+ A gestation sac seen within the endometrium that is spherical, regular and 
+eccentrically situated towards the fundus can be visualised from 4+3 -4+6/40 . 
+ A yolk sac within the chorionic cavity should be visible in all pregnancies from 5 -
+5+6/40 when the mean gestational sac diameter is >12mm . 
+ The embryonic pole should be visible from 5+6/40 . 
+ 
+9.3 Ultrasound Diagnosis of PUL an d Ectopic Pregnancy 
+ 
+Ultrasound features suggestive of PUL and ectopic pregnancy can be a combination of 
+intrauterine and adnexal findings. The fallopian tube is the most common site accounting for 
+nearly 95% of ectopic pregnancies. Other possible sites of an ectopic pregnancy are interstitial 
+(2-4%), ovarian (3%), cornual (<1%), cervical (<1%), caesarean section scar or abdominal 
+(rare) (Lin, Bhatt & Dogra, 2008). An abdominal ectopic pregnancy may be primary or 
+secondary resulting from a tubal miscarriage. 
+CG12018 Ectopic Pregnancy Guideline v 4.0 Oct ober 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 9 of 30 
+ 
+Further in -depth detail can be found in Appendix 2 . 
+ 
+When carrying out transvaginal ultrasound scan in early pregnancy, it is important to look for the 
+following signs which are indications of the possibility, high probability or existence of a tubal 
+ectopic pregnancy. 
+ 
+9.3.1 Intrau terine and adnexal appearance for a PUL or ectopic pregnancy : 
+ 
+ An empty uterus or 
+ A variable degree of thickening of the endometrium or 
+ A collection of fluid within the uterine cavity (sometimes described as a ‘pseudo -sac’ 
+and found in 20% of all ectopic pregnancies. This collection of fluid must be 
+differentiated from an early intrauterine sac, which is identified by the presence of an 
+eccentrically located hypoechoic structure with a double decidual sign (gest ational 
+sac surrounded by 2 concentric rings) in the endometrium. 
+ An adnexal mass, moving separate to the ovary (sometimes called the ‘sliding sign’), 
+comprising a gestation sac containing a yolk sac or 
+ An adnexal mass, moving separately to the ovary, com prising a gestational sac and 
+fetal pole (with or without a fetal heartbeat) (NICE 2019) . 
+ An adnexal mass, moving separately to the ovary (sometimes called the ‘sliding 
+sign’), with an empty gestational sac (sometimes described as a ‘tubal ring’ or a 
+‘bage l sign’ and will be present in around 20 -40% of cases or 
+ A complex, inhomogeneous adnexal mass, moving separate to the ovary and uterus 
+and is the most common finding in around 50 -60% of cases . 
+ An extrauterine gestational sac moving separately to the uterus with a yolk sac +/ - an 
+embryo with or without cardiac activity in 15 -20% of cases . 
+ Echogenic fluid in the Pouch of Douglas, signifying blood leaking from the fimbrial end 
+of the fallopian tube or tubal ruptu re, in 28 -56% of cases . 
+ The corpus luteum may be present on the ipsilateral side in 85% of cases . 
+ 
+It is important to: 
+ 
+ Ensure the use of colour Doppler when assessing an ectopic pregnancy. 
+ Report the location and enter the size in three dimensions. 
+ Report and measure on any free fluid. 
+ 
+9.3.2 Interstitial ectopic pregnancy 
+ 
+ Implantation of the conceptus in the interstitial portion of the fallopian tube which is 
+surrounded by the muscular wall of the uterus . 
+ An empty uterine cavity and a gestational sac seen adjacent to the lateral aspect of 
+the uterine cavity surrounded by a thin myometrial layer . 
+CG12018 Ectopic Pregnancy Guideline v 4.0 Oct ober 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 10 of 30 
+ The interstitial line sign refers to the proximal part of the interstitial tube which joins 
+the lateral aspect of the uterine cavity and the ectopic gestat ional sac . 
+ Three dimensional ultrasound can also be helpful to differentiate between intrauterine 
+and interstitial pregnancies . 
+ 
+9.3.3 Cervical ectopic pregnancy 
+ 
+ Implantation of the conceptus within the cervix, below* the level of the internal os . 
+ Intracervical localisation of an ectopic gestational sac or trophoblastic mass is the 
+cornerstone for the diagnosis of cervical pregnancy . 
+ The finding of a gestational sac which contains an embryo with visible heart activity 
+within the cervical canal gives a definitive diagnosis of cervical pregnancy . 
+ 
+9.3.4 Caesarean scar ectopic pregnancy 
+ 
+ Ultrasound diagnosis is based on the visualisation of the gestational sac, which is 
+located at* the level of the internal os, and penetrating the anterior uterine wall 
+approaching the bladder . 
+ The use of Doppler helps to confirm that the implantation has occurred within the 
+myometrial defect . 
+ The diagnosis of caesarean pregnancy is most accurate in the early first trimester and 
+becomes more difficult as the pregnancy pro gresses . 
+ 
+9.3.5 Ovarian ectopic pregnancy 
+ 
+ Implantation of the conceptus on the surface or inside the ovary . 
+ Most case reports include the description of a cystic structure surrounded by an 
+echogenic ring and healthy ovarian tissue . 
+ 
+9.3.6 Abdominal ectopic pregnancy 
+ 
+ Differentiating an abdominal pregnancy from a tubal ectopic pregnancy might be difficult 
+in early pregnancy . 
+ An empty uterus and the presence of a gestational sac or a mass separate from the 
+uterus, adnexae and ovaries should raise the de gree of suspicion of an early abdominal 
+pregnancy . 
+ In later pregnancy an abdominal pregnancy is characterised by an empty uterus, 
+abnormal fetal lie, oligohydramnios and poor placental definition . 
+ 
+All pregnant women and people with an ectopic pregnancy sh ould receive oral and written 
+information about the treatment options and what to expect during and after treatment, how and 
+who they can contact for advice after treatment if needed as well as where and when to get help 
+CG12018 Ectopic Pregnancy Guideline v 4.0 Oct ober 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 11 of 30 
+in an emergency. Inform women and p eople who have had an ectopic pregnancy that they can 
+self-refer to the EPAC for an early scan in all future pregnancies. 
+(Jurkovic, Valentin & Vyas, 2009) 
+ 
+10.0 Management of ectopic pregnancy 
+(see Appendix 3) 
+ 
+10.1 Expectant management 
+ 
+Not all ectopic pregnancies progress and pose a risk to the mother or birthing parent . 
+Spontaneous resolution of tubal ectopic pregnancies is well documented . 
+ 
+10.1.1 Selection criteria for expectant management 
+ 
+ Patient is clinically stable and pain free with no signs of rupture or intraperitoneal 
+bleeding and 
+ A tubal ectopic pregnancy of less than 35mm is visualised on transvaginal 
+ultrasound scan with no heartbeat and 
+ Serum hCG level ≤1000IU/L . Expectant management is a documented Consultant 
+decision if the two previous criteria are satisfied but the serum hCG level ≥1000 but 
+≤1500IU/L . 
+ The patient is able to return for follow up and review . 
+ 
+The Consultant on -call must be involved in the decision -making. The patient must be well 
+motivated to accept that the rate of ectopic pregnancy resolution, risk of tubal rupture, need for 
+additional treatment and future fertility outcomes are likely to be the same with either expectant 
+or medical management. 
+ 
+Studies have reported success rate s of between 80 -90% for spontaneous resolution of an 
+ectopic pregnancy when the i nitial hCG level is <1000 IU/L. The risk of tubal rupture in a patient 
+with an ectopic pregnancy exists until the hCG level has fallen to <20 IU/L. 
+ 
+10.1.2 Follow -up 
+ 
+Repeat serum hCG levels on day 2, day 4 and day 7 after the original test. 
+ 
+ If serum hCG levels drop by 15 % or more from the previous value on day 2, day 4 
+and day 7 then repeat weekly until a negative result (less than 20IU/L) is obtained or 
+ If serum hCG levels do not fall by 15%, stay the same or rise from the previous value 
+review the patient ’s clinical condition and seek Consultant advice. If at any stage the 
+patient develops pain then s urgery needs to be considered whereas if the patient 
+remains asymp tomatic then medical management should be offered. 
+ 
+CG12018 Ectopic Pregnancy Guideline v 4.0 Oct ober 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 12 of 30 
+The patient should be provided with written contact details of the Gynaecology department and 
+counselled that if they develop significant lower abdominal pain, heavy bleeding or vasovagal 
+symptoms they should contact the department or call 999 depending on the severity of their 
+symptoms. 
+ 
+10.2 Medical management 
+ 
+Methotrexate is a folic acid -antagonist (anti -metabolite) that prevents the growth of rapidly 
+dividing cells by interfering with DNA synthe sis. It is most commonly given as a single intra -
+muscular dose of 50 mg/m2. Methotrexate should only be offered on a first visit when there is a 
+definitive diagnosis of an ectopic pregnancy and a viable intrauterine pregnancy has been 
+excluded following Co nsultant discussion . Offer surgery where treatment with methotrexate is 
+not acceptable to the patient . 
+ 
+10.2.1 Selection criteria for medical management 
+ 
+ Patient is clinically stable with no significant pain and 
+ Unruptured tubal ectopic pregnancy with an adnexal mass of less than 35mm with no 
+visible heart beat and 
+ No echogenic free fluid on TVS and 
+ No intrauterine pregnancy on transvaginal ultrasound s can and 
+ A serum h CG (day 0) <1500 IU/L and 
+ Normal FBC, U& E’s and LFT’s and 
+ Are able to return for follow up and are remaining within the UK . 
+ 
+10.2.2 Medical or surgical management 
+ 
+Women and people with a BhCG of >1500 IU/L and <5000 IU/L offer the choice of medical or 
+surgical management . 
+ 
+ Patient is clinically stable with no significant pain and 
+ Unruptured tubal ectopic pregnancy with an adnexal mass of less than 35mm with no 
+visible heart beat and 
+ No echogenic free fluid on TVS and 
+ No intrauterine pregnancy on transvaginal ultrasound scan and 
+ Normal FBC, U&E’s and LFT’s and 
+ Are able to return for fo llow up and are remaining within the UK / 
+ 
+Or in cases of: 
+ 
+ A persistent trophoblast after salpingotomy . 
+ Selective cases of P regnancy of Unknown Location (check the PUL f low chart) . 
+ 
+CG12018 Ectopic Pregnancy Guideline v 4.0 Oct ober 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 13 of 30 
+10.2.3 Exclusion criteria 
+ 
+ An ectopic pregnancy and significant pain. 
+ Any evidence of intraperitoneal haemorrhage i.e. haemoperitoneum (echog enic fluid - 
+not anechoic) on transvaginal ultrasound scan . 
+ An ectopic pregnancy with serum HCG (day 0) ≥5000 IU/L. 
+ An ectopic pregnancy with an adnexal mass >35mm . 
+ The presence of fetal cardiac activity in an ectopic pregnancy . 
+ Heterotopic pregnancy (simultaneous intrauterine and extrauterine pregnancy) . 
+ Any hepatic dysfunction, thrombocytopenia (platelet count <100,000), bl ood dyscrasia 
+(WCC <2000 cells/ cm3). 
+ Difficulty or unwillingness of patient to undertake prolonged follow -up (average 35 
+days) . 
+ Women or people on concurrent corticosteroid therapy . 
+ Patients who are due to travel abroad and are not available to monitor FU bloods . 
+ 
+10.2.4 Medical management treatment protocol 
+ 
+The administration of Methotrexate for the medical management of an ectopic pregnancy would 
+only occur following discussion with a Consultant. Methotrexate must not be administered on a 
+single BhCG result . Medical management may be considered in cases of p ersistent PUL and 
+static or persistent low BhCGs . 
+ 
+Discuss options for management (expectant/medical/surgical) based on patient eligibility and 
+exclusion criteria . Patient selection is important for their safety and treatment success. 
+ 
+The dose is calculated on the body surface area (50 mgs/ m2) and this is calculated using the 
+Dubois calculator omnicalculator.com/health/bsa 
+ 
+All patients must: 
+ 
+ Have their height and weight taken within clinic to support the accurate calculation of 
+the dosage required. 
+ FBC, G&S, BHCG, U&E’S, LFT’S taken and checked prior to treatment . 
+ Be counselled and the medical management treatment protocol explained in det ail. 
+ Agree to be compliant with the regime and follow up bloods as this can continue for 
+several weeks . 
+ Remain within the UK during the follow up regime with access to emergency services . 
+ Understand the importance of refraining from intercourse and alcohol until bloods 
+have returned to normal . 
+ Aspirin and NSAID’s should not be taken . 
+ Provided with the Ectopi c Trust and Miscarriage Association information leaflet 
+specific to medical management of an ectopic pregnancy . 
+CG12018 Ectopic Pregnancy Guideline v 4.0 Oct ober 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 14 of 30 
+ Be able to provide informed consent . 
+ Be informed of the follow up schedule for further bloods . 
+ Be informed of the side effects associated with Methotrexate . 
+ 
+Refer to the Standard Operating Procedure for the Administration of Intra Muscular 
+Methotrexate for the management of Ectopic Pregnancy an d Persistent Trophoblastic Disease 
+(Appendix 4). 
+ 
+The person prescribing the Methotrexate is responsible for: 
+ 
+ Document ing the calculation for dose of Methotrexate on a drug chart . 
+ Sending the drug chart or electronic prescription to Pharmacy (24 hours’ notice is 
+required to dispense the Methotrexate ). 
+ 
+The person administering the Methotrexate is responsible for: 
+ 
+ Ensuring they are not pregnant, or trying to become pregnant or breast feeding. 
+ Should wear Personal Protective Equipment (PPE) of an apron and gloves . 
+ Injecting the Methotrexate into the gluteal muscle . 
+ Disposing of the sharps in accordance with the SOP and Trust policy . 
+ 
+Arrange follow -up by EPAC, provide written contact de tails of the Gynaecology department and 
+counsel the patient that if she develops significant lower abdominal pain, heavy bleeding or 
+vasovagal symptoms she should contact the department or call 999 depending on the severity 
+of her symptoms. 
+ 
+10.2.5 Medica l Management Single – Dose Regime 
+
+Day 0 
+ Serum hCG, FBC, U&Es, LFTs, G&S 
+ Prescription request to Pharmacy 
+ 
+Day 1 Serum hCG 
+ Intramuscular Methotrexate 50 mg/m2 
+ 
+Day 4 Serum hCG 
+ 
+Day 7 
+ Serum hCG, FBC, U&E’s , LFT s 
+ If serum hCG decreases < 15% between 
+days 4-7 reassess the patient, consider 
+repeating transvaginal ultrasound scan 
+and/or repeating seco nd dose of 
+Methotrexate 
+ 
+If serum hCG decrease s >15 % between 
+days 4-7 repeat serum hCG weekly until 
+<15 IU/L 
+ 
+CG12018 Ectopic Pregnancy Guideline v 4.0 Oct ober 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 15 of 30 
+10.2.5.1 Information for the clinician 
+ Up to 75% of patients may comp lain of pain on days 3 -7 and this is thought to b e due 
+to tubal miscarriage. The risk of tubal rupture is 7% and this risk remains while there 
+is a persistently elevated serum h CG. 
+ In up to 86% of patients ’ serum hCG levels may initially rise between days 1 – 4. 
+ 14% of medically treated women will require more than one dose of Methotrexate. A 
+second dose may be administered on day 7 if serum h CG levels fail to fall by more 
+than 15% between day s 4-7. 
+ Mean time to resolution is 35 days . 
+ Folinic acid rescue is not requ ired for the single dose regime . 
+ During treatment patients should avoid : 
+o Alcohol and vitamins containing folate . 
+o Intercourse to reduce the risk of rupture . 
+ Avoid vaginal examination. Transvaginal ultrasound scan may be undertaken if 
+clinically indicated. 
+ Ovarian cysts , that undergo spontaneous resolution, may be fo und following 
+treatment . 
+ It is recommended that women and people treated with Meth otrexate wait at least 3 
+months from a n egative urine pregnancy test before trying to conceive again . 
+ Once the serum hCG has returned to normal patients that would like to try for a 
+pregnancy after their 3 month period should start taking folic acid 400 mcg unless the 
+patients BMI is >35 when 5 mgs of folic acid is required . 
+ 
+10.2.5.2 Patients need to be aware 
+ 
+ to make contact or attend ED if unwell or symptomatic 
+ the risk of sun sensitivity 
+ developing mouth ulcers/soreness 
+ minimal hair loss 
+ the review process can go on for 4 -8 weeks 
+ using contr aception and not becoming pregnant in the next 3 months due to the risk 
+of fetal abnormality 
+ increased risk of ectopic pregnancy in future pregnancies and that an early scan at 
+6-7 weeks gestation is recommended to ensure that the pregnancy is intrauterine 
+ 
+10.3 Surgical management of ectopic pregnancy by laparoscopy 
+ 
+When surgical treatment is indicated for pregnant women and people with an ectopic 
+pregnancy, it should be performed laparoscopically whenever possible, taking into account the 
+condition of the patient and the complexity of the surgical procedure. Surgeons providing care to 
+women and people with ectopic pregnancy should be competent to perform laparoscopic 
+surgery. Evidence suggests tha t there is no difference in terms of health benefits between 
+laparoscopy and laparotomy including subsequent successful pregnancy. 
+CG12018 Ectopic Pregnancy Guideline v 4.0 Oct ober 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 16 of 30 
+ 
+10.3.1 Advantages of laparoscopic surgery 
+ 
+ Shorter hospital stay (1 days) . 
+ Significantly less intraoperative blood loss . 
+ Less adhesion formation . 
+ Lower analgesic requirements . 
+ Quicker post operative recovery time . 
+ 
+10.3.2 Disadvantages 
+ 
+ Increas ed risk of bowel/vascular injury . 
+ 
+10.4 Management by laparotomy 
+ 
+Management in the presence of haemodynamic instability should be by the most expedient 
+meth od. 
+ 
+Experienced operators may be able to manage women and people with even a large 
+haemoperitoneum safely by laparoscopic me thod but the surgical procedure that prevents 
+further blood loss most quickly should be used . 
+ 
+10.5 Safety 
+ 
+10.5.1 Salpingectomy v salpingotomy 
+ 
+ There is no significant difference in the subsequent intrauterine pregnancy rate 
+following salpingotomy or salpin gectomy (61% v 56 %). 
+ The rec urrent ectopic pregnancy rate i s higher following salpingotomy (8 %) than after 
+salpingectomy (5 %). 
+ Following salpingotomy p ersistent trophoblast was noted in 7% of patients hence 
+there is a need to monitor serum hCG post salpingotomy . 
+ Following salpingectomy <1% of patients have persistent trophoblast however all 
+women and people should take a urine pregnan cy test 3 weeks post operatively and 
+contact EPAC if it is posit ive. 
+ 
+In the presence of a healthy contralateral tube there is no clear evidence that salpingotomy 
+should be performe d in preference to salpingectomy. Laparoscopic salpingotomy should be 
+considered as the primary treatment when managing tubal pregnancy in the p resence of 
+contralateral tubal disease and the desire for future fertility. Pre-operatively, treatment should be 
+discussed with the patient with the option of conserving or removing the tube. 
+
+CG12018 Ectopic Pregnancy Guideline v 4.0 Oct ober 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 17 of 30 
+10.6 Follow -up regime after salpingotomy 
+ 
+While trophoblast remains in the tube it has a capacity to rupture. Between 4 -11% of patients 
+having a salpingotomy may need further surgical or medical treatment . 
+ 
+ Follow -up with weekly ser um h CG until the level is < 20 IU/L. 
+ If hCG level rises or plateaus consider further treatment with Methotrexate . 
+ Surgical management if serum h CG level >4000 IU/L . 
+ 
+Outcome after conservative surgery in women and people with one tube : 
+ 
+ Subsequ ent intrauterine pregnancy rate is 75% 
+ 
+Conservative surgery is only appropriate if the patient is aware of the risk involved. 
+Salpingectomy followed by In vitro fertilisation may be alternative treatment in such cases. 
+ 
+The patient should be provided with written contact details of the Gynaecology department and 
+counselled that if they develop significant lower abdominal pain, heavy bleeding or vasovagal 
+symptoms , they should contact the department or call 999 depending o n the severity of their 
+symptoms. 
+ 
+10.7 Recommendations arising from the 33rd RCOG Study Group 
+ 
+At laparoscopy for ectopic pregnancy, precise documentation of the state of the pelvis, with 
+particular emphasis on the affected and contralateral tube and ovaries, should be undertaken to 
+determine prognosis of future fertility. 
+ 
+The definitive procedure undertaken at surgery (removal of the ectopic by salpingotomy; 
+unilateral salpingectomy; bilateral salpingectomy) should be determined by the reproductive 
+aspirations of the patient, her reproductive history, the state of the pelvis and the availability of 
+assisted conception services. 
+ 
+Fimbrial evacuation (milking) of ectopic pregnancy from the fallopian tube should not be as it 
+predisposes to persistence o f tubal pregnancy . 
+ 
+11.0 Management of Ruptured Ectopic with C ollapse 
+(see Appendix 5) 
+ 
+ Assess and support A, B, C. 
+ Get h elp; contact O&G Registrar, O&G Consultant on -call and CEPOD Anaesthetist . 
+ Site two intravenous lines (at least 16G ), commence IV fluids (crystalloid), give facial 
+oxygen and insert indwelling catheter . 
+ Send blood for FBC, c lotting screen and cross -match at least 4 units of blood . 
+ Arrange theatre admission for laparotomy or laparoscopy . 
+CG12018 Ectopic Pregnancy Guideline v 4.0 Oct ober 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 18 of 30 
+ Continue flu id resuscitation and ensure intensive monitoring of haemodynamic state 
+whilst awaiting transfer to theatre . Do not wait for BP and pulse to normalise prior to 
+transfer . 
+ Salpingectomy and wash out abdomen . 
+ Assess bloods and consider Critical Care care after discussion with anaesthetist . 
+ Record operative as per RCOG recommendations findings including the state of the 
+remaining tube . 
+ A Datix form should be completed following all ruptured ectopics . 
+ 
+12.0 Anti-D rhesus prophylaxis 
+ 
+Offer anti -D rhesus prophylaxis at a dose of 1500IU to all rhesus negative women and people 
+who have a surgical procedure to manage an ectopic pregnancy or a miscarriage. 
+ 
+Do not offer anti -D rhesus prophylaxis to women and people who: 
+ 
+ Receive solely expectant or medical ma nagement for an ectopic pregnancy or 
+miscarriage or 
+ Have a threatened miscarriage or 
+ Have a complete miscarriage or 
+ Have a pregnancy of unknown location. 
+ 
+Do not use a Kleihauer test for quantifying feto –maternal haemorrhage. 
+
+13.0 Pregnancy of Unknown Lo cation (PUL) 
+(see Appendix 6) 
+ 
+The term ‘pregnancy of unknown location’ (PUL) is used whenever there is no sign of either intra 
+or extrauterine pregnancy or retained products of conception on transvaginal ultrasound, despite 
+a positive pregnancy test. A pregnancy site will not be visualised in 8 –25% of early pregnancy 
+scans. 
+ 
+The sonographer’s experience and resolution of the ultrasound machine , the patient ’s body 
+habitus and the chair or couch used to pe rform the scan influences the prevalence of PUL. Be 
+aware that women and people with a PUL could have an ectopic pregnancy until the location is 
+determined. 
+ 
+In a patient with a PUL, place more importance on clinical symptoms than on serum hCG results, 
+and review the patient 's condition if any of their symptoms change, regardless of previous results 
+and assessments. 
+ 
+With a positive pregnancy test, there could be three reasons for a scan to be classified as PUL: 
+ 
+CG12018 Ectopic Pregnancy Guideline v 4.0 Oct ober 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 19 of 30 
+ A very early intrauterine pregnancy or 
+ A complete miscarriage or 
+ An early ectopic pregnancy 
+ 
+At subsequent follow -up visits the diagnosis may become clear. However, if symptoms and 
+signs of pregnancy are resolving (including serum hCG levels), this can be classified as a 
+‘resolving PUL’ 
+
+14.0 Serum hCG 
+ 
+Do not use serum hCG measurements to determine the location of the pregnancy. Use serum 
+hCG measurements only for assessing trophoblastic proliferation to help to determine 
+subsequent management in conjunction with the patients clinical history . 
+ 
+Take one serum hCG measurement and if it is: 
+ 
+ Less than 1000, clinically well repeat in 48 hours to determine subsequent 
+management of a PUL . 
+ Greater than 1000IU/L with no clinical history of miscarriage arrange a rescan for a 
+second opinion preferably by a Consultant (specialising e arly pregnancy and 
+emergency gynaecology) within 48 -72 hours if clinically stable, otherwise review as 
+an emergency . 
+ Greater than 1000 with a clinical his tory of of heavy PV bleeding, clots and possibly 
+passing products of concept ion repeat BhCG in 48 hours. 
+
+For a patient with an increase in serum hCG concentration greater than 6 3% after 48 hours: 
+ 
+ Inform the patient that it is likely to be a developing intrauterine pregnancy although 
+the possibility of an ectopi c pregnancy cannot be excluded 
+ Offer a transvaginal ultrasound scan to determine the location of the pregnancy 7 to 
+14 days later 
+ If a viable intr auterine pregnancy is confirmed, offer routine antenatal care. If a viable 
+intrauterine pregnancy is not confirmed, refer for immedia te clinical review by a senior 
+Gynaecologist. 
+ 
+For a patient with a decrease in serum hCG concentration greater than 50% after 48 hours: 
+ 
+ Inform them that the pregnancy is unlikely to continue but that this is not confirmed 
+and provide them with oral and written information about where they can access 
+support and counselling services . 
+ Ask them to take a urine pregnancy test 3 weeks after the second serum hCG test, 
+and explain that: 
+CG12018 Ectopic Pregnancy Guideline v 4.0 Oct ober 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 20 of 30 
+o If the test is negative, no further action is necessary . 
+o If the test is positive, they should return to EPAC for clinical review within 24 
+hours. 
+ 
+For a patient with a change in serum hCG concentration between a 50% decline a nd 63% rise 
+inclusive repeat a third serum hCG after 48 hours: 
+ 
+ If there is a decrease in serum hcg concentration of greater than 50% irrespective of 
+serum progesterone inform them that the pregnancy is unlikely to continue but that 
+this is not confirmed. Ask the patient to take a urine pregnancy test in 3 weeks. 
+o If the test is negative, no further action is necessary . 
+o If the test is positive, the patient should be contacted by EPAC for telephone 
+review within 24 hours and invited to return if clinically indicated . 
+ Repeat serum hcg in 7 days and weekly unti l serum h cg is les s than 20IU/L 
+ 
+Regardless of serum hCG the patient should be provided with written contact details of the 
+Gynaecology department and counselled that if they develop any new or worsening symptoms 
+such as significant lower abdominal pain, heavy bleeding or vasovagal symptoms , they should 
+contact the department or call 999 depending on the severity of their symptoms. 
+ 
+Regardless of serum hCG levels, give women and peop le with a PUL written information about 
+what to do if they experience any new or worsening symptoms, including details about how to 
+access emergency care 24 hours a day. Advise women and people to return if there are new 
+symptoms or if existing symptoms wo rsen. 
+ 
+Serum hCG should always be measured even if the diagnosis of an ectopic pregnancy is clear 
+on scan findings as its level is used as a predictor for the success of expectant, medical or 
+surgical management of the ectopic pregnancy. 
+ 
+15.0 Serum proge sterone 
+ 
+A serum progesterone level below 20nmol/l has been shown to have a positive predictive value 
+greater than 95% o f predicting pregnancy failure. Levels below 20nmol/l are likely to indicate a 
+failing pregnancy and above 20nmol/l are ass ociated with a viable pregnancy irrespective of its 
+location. 
+ 
+Whilst a single serum progesterone measurement has a good discriminative capacity to 
+distinguish between pregnancy failure and a viable IUP, a single measurement cannot 
+discriminate between ectopic pregnan cy and non -ectopic pregnancy. In summary serum 
+progesterone level is good at predicting viability, but not the location of pregnancy. 
+
+CG12018 Ectopic Pregnancy Guideline v 4.0 Oct ober 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 21 of 30 
+16.0 Patient follow up after an ectopic pregnancy and PUL 
+ 
+When patients who have had an ectopic pregnancy or a PUL had registered their pregnancy 
+with maternity services the healthcare provider should inform the maternity department of the 
+pregnancy outcome prior to discharging the patient. Patients should also be provided with 
+information on support networks including th e Ectopic Pregnancy Trust and the Miscarriage 
+Association (see details on the following page). Patients who have had an ectopic pregnancy 
+should be advised to contact the EPAC with any subsequent positive pregnancy test in order to 
+book an early scan. 
+ 
+17.0 Audit 
+ 
+The process for audit and monitoring of this guideline are contained within the Gynaecology 
+Audit Document. 
+CG12018 Ectopic Pregnancy Guideline v 4.0 Oct ober 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 22 of 30 
+References 
+ 
+Association of Early Pregnancy Units Guidelines , 2007 (Archived) 
+ 
+Healthcare Safety Investigation Branch (HSIB) Interim Bulletin: The Diagnosis of Ectopic 
+Pregnancy, 2018 
+ 
+Jurkovic, Valentin & Vyas, 2009. Gynaecological ultrasound in clinical practice: Ultrasound 
+imaging in the manageme nt of gynaecological conditions. 
+Royal College o f Obstetrics and G ynaecology. LONDON 
+ 
+Kirk, E. & Bourne , T. 2008. Predicting Outcomes in Pregnancies of Unknown Location. 
+Women's Health, 4 (5) pp. 491-499 
+ 
+Linn E., Bhatt, S. & Dogra , V. 2008 . Diagnostic Clues to Ecto pic Pregnancy RadioGraphics 28 
+(6) pp.1661 -1671 t 
+ 
+NICE Clinical Guideline CG154 Dec 2012; Ectopic pregnancy and miscarriage: diagnosis and 
+initial management. 
+ 
+NICE guideline NG126 , April 2019 ; Ectopic pregnancy and miscarriage: d iagnosis and initial 
+management. Updated November 2019 
+ 
+33rd RCOG Study Grou p. Recommendations arising from the33rd RCOG Study Group: 
+Problems in Early Pregnancy –Advances in Diagnosis and Management. In: Grudzinskas JG, 
+O’Brien PM, editors. Problems in Early Pregnancy: Advances in Diagnosis andManagement. 
+London: RCOG Press; 1997. p. 327 –31and cited in RCOG/AEPU Greentop Guideline No 21. 
+Nov 2016; Diagnosis and management of Ectopic Pregnancy 
+ 
+RCOG Green -top Guideline No.21, Diagnosis and Management of Ectopic P regnancy, 
+November 2016 , British Journal of Obstetrics and Gynaecology 
+ 
+Sagili , H. & Mohamed , K. 2008. Pregnancy of Unknown L ocation: a n Evidence -Based A pproach 
+to 
+Management. T he Obstetrician & Gynaecologist, 10 pp.2 24–230 
+
+CG12018 Ectopic Pregnancy Guideline v 4.0 Oct ober 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 23 of 30 
+Support Networks 
+ 
+The Ectopic Pregnancy T rust 
+(www.ectopic.org.uk ) 
+ 
+‘Supporting people who have experienced an early pregnancy complication and the healthcare 
+professionals who care for them’ 
+
+The Miscarriage Association 
+(www.miscarriageassociat ion.org.uk ) 
+ 
+‘Founded in 1982 by a group of people who had experienced miscarriage and we continue to 
+offer support and information to anyone affected by the loss of a baby in pregnancy, to raise 
+awareness and promote good practice in medical care.’ 
+
+CG12018 Ectopic Pregnancy Guideline v 4.0 Oct ober 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 24 of 30 
+Appendix 1 : Early Pregnancy Assessment Clinic Initial Clinical Assessment 
+
+Pregnant w omen and people 
+with pain and/or bleeding, or 
+atypical symptoms suggestive of 
+early pregnancy problems 
+Pregnant w omen and people 
+with acute presentations of 
+shock or collapse are outside of 
+the scope of this pathway 
+Clinical history to include history 
+taking, physical examination and 
+urine pregnancy test 
+Negative 
+pregnancy test 
+Positive 
+pregnancy test 
+Abdominal tenderness on 
+examination 
+No abdominal tenderness or 
+signs of intra -abdominal 
+bleeding 
+Consider vaginal examination 
+Cervical excitation (CET) or 
+pelvic tenderness 
+No vaginal examination or 
+No CET or pelvic tenderness 
+Refer to EPAC. 
+Urgency dependant on clinical 
+situation 
+Pregnant w omen and people with: 
+*pregnancy <6 weeks who are 
+bleeding or 
+*pregnancy >6 weeks with 
+minimal bleeding (spotting) 
+Pregnant w omen and people with: 
+*Pain or 
+*Pregnancy of uncertain gestation or 
+*pregnancy >6 weeks, with more than 
+minimal bleeding (spotting ) 
+ 
+Manage expectantly. Advise urine 
+pregnancy test after a week and 
+to return if symptoms worsen 
+CG12018 Ectopic Pregnancy Guideline v 4.0 Oct ober 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 25 of 30 
+Appendix 2 : Early Pregnancy ultrasound diagnosis 
+
+ Gestational (chorionic) sac 
+Measurements should be performed from the inner 
+edges of trophoblast in three planes. The diameters 
+measured correspond to those of the chorionic cavity. 
+The maximum and mean diameters should be 
+recorded. The volume may also be calculated using 
+formula for ellipsoid V= A x B x C x 0.523. 
+(Robinson HP. Gestational sac volumes as 
+determined by sonar in the first trimester of 
+pregnancy. Br J Obstet Gynecology, 1975; 82:100) 
+ 
+ Amniotic sac - The three perpendicular diameters 
+should be measured and the mean diameter 
+calculated. As the amnion is very thin the 
+measurements should be taken from the centre of the 
+membrane. (Horrow M. Enlarged amniotic cavity: new 
+sonographic sign of early embryonic death. Am J 
+Roentgen 1992; 158:359 ) 
+ 
+ Measure three perpendicular diameters from the 
+centre of the yolk sac wall. (Jauniaux E et al. 
+Development of the secondary human yolk sac: 
+Correlation of sonographic and anatomic features. 
+Human Reproduction 1991; 6:1160) 
+ 
+In early pregnancy this is the greatest length of the 
+embryo, as the crown and rump cannot be 
+distinguished. From seven weeks onwards the 
+measurement should be taken from a saggital 
+section of the embryo, with care taken not to include 
+the yolk sac. ( Robinson HP et al. A critical evaluation 
+of sonar crown -rump length measurement. Br J 
+Obstet Gynecology,1975; 82:702) 
+
+Embryonic cardiac activity is usually evident as soon 
+as the embryo itself can be visualised. In the first 
+trimester the heart rate should be measured using M -
+mode only. 
+ 
+CG12018 Ectopic Pregnancy Guideline v 4.0 Oct ober 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 26 of 30 
+Landmarks for diagnosis 
+ 
+ (Jurkovic D et al. Ultrasound features of normal early pregnancy development. Current Opinion 
+in Obstetrics and Gynaec ology, 1995;7:493) 
+ 
+4+3 to 5+0 A small gestation sac (2 -5 mm) is seen within the endometrium. The sac is 
+spherical, regular in outline and eccentrically situated towards the fundus. It is 
+implanted just below the surface of the endometrium (midline echo) and is 
+surrounded by echogenic trophoblast. In symptomatic patients the scan should 
+be repeated in a week when yolk sac should be visible. 
+ 
+5+1 to 5+5 Yolk sac becomes visible within the chorionic cavity. This should be seen in all 
+pregnancies with a mean gestational sac diameter of > 12 mm. If it is not, the 
+diagnosis of blighted ovum is almost certain and the scan should be repeated a 
+week later to confirm thi s. 
+ 
+5+6 to 6+0 The embryonic pole is visible and it measures 2 -4 mm in length. Heart action is 
+also detectable. An embryo is usually visible with a mean gestational sac 
+diameter of > 18 mm. If this is not the case then the pregnancy is likely to be 
+abnorma l and another scan should be organised a week later. 
+ 
+6+1 to 6+6 The embryo changes from being a straight line at the top of the yolk sac to being 
+kidney bean shaped, with the yolk sac separated from the embryo by the vitelline 
+duct. The crown -rump length measures 4 to 10 mm. If the heart rate is not 
+detectable the diagnosis of missed miscarriage is almost certain. 
+ 
+7+0 to 7+6 The crown -rump length measures 11 to16 mm. The rhombencephalon becomes 
+distinguishable as a diamond shaped cavity, enabling distinct ion of cephalad and 
+caudal. The spine is seen as double echogenic parallel lines. The amniotic 
+membrane becomes visible defining the amniotic cavity from the chorionic cavity. 
+The umbilical cord can also be seen. 
+ 
+8+0 to 8+6 Crown -rump length 17 -23 mm. Forebrain, midbrain, hindbrain and skull are 
+distinguishable. Limb buds are also visible. Midgut hernia is present. The 
+amniotic cavity expands and the umbilical cord and vitteline duct lengthens. 
+ 
+9+0 to 10+0 Crown -rump length 23-32 mm. The limbs lengthen and hands and feet are seen. 
+Embryonic heart rate peaks at 170 -180 bpm. 
+ 
+CG12018 Ectopic Pregnancy Guideline v 4.0 Oct ober 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 27 of 30 
+Appendix 3 : Management of ectopic pregnancy 
+
+CG12018 Ectopic Pregnancy Guideline v 4.0 Oct ober 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 28 of 30 
+Appendix 4 : Standard Operating Procedure for the administration of 
+intramuscular Methotrexate for the ma nagement of ectopic pregnancy and 
+persistent trophoblastic disease 
+ 
+Please click on link for SOP & competency document : 
+ 
+http://nww.westernsussexhospitals.nhs.uk/assets/im -methotrexate -sop-and-competency -
+document -v1-0-oct-2022.pdf 
+CG12018 Ectopic Pregnancy Guideline v 4.0 Oct ober 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 29 of 30 
+Appendix 5: Management of a ruptured ectopic with collapse in A&E 
+
+ ABCDE 
+Assessment 
+Commence: 
+ 100% O 2 via 
+non-rebreathe 
+mask 
+ Site 2 large 
+bore (grey) 
+cannulas 
+ Give IV fluids 
+crystalloids 
+stat 
+ Site indwelling 
+urinary 
+catheter 
+ Perform 
+urinary 
+pregnancy test 
+ Send bloods for: 
+ FBC 
+ Clotting 
+ Cross match 
+minimum of 4 units 
+ BhCG & Prog 
+ Contact: 
+ O&G/Consultant on 
+call 
+ CEPOD Anaesthetist 
+O&G to arrange: 
+ Theatre 
+admission via 
+CEPOD for 
+surgical 
+management of 
+an ectopic 
+pregnancy 
+ Complete CEP OD 
+booking form and 
+send to theatre 
+Continue: 
+ Fluid 
+resuscitation and 
+ensure continual 
+monitoring of 
+haemodynamic 
+state. 
+ Regular 
+Observations DO NOT WAIT FOR 
+BP or Pulse to 
+normalise before 
+transfer to theatre 
+ 
+CG12018 Ectopic Pregnancy Guideline v 4.0 Oct ober 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 30 of 30 
+ 
+Appendix 6: Flowchart for management of PUL

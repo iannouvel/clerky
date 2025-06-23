@@ -1,0 +1,367 @@
+# Extracted from: MP065 Neonatal BCG Immunisation Programme.pdf
+# Guideline ID: mp065-neonatal-bcg-immunisation-programme
+# Content length: 18623 characters
+# Processing date: 1750066901.6095672
+
+Neonatal BCG 
+Immunisation 
+Programme 
+Maternity Protocol: MP065 
+ 
+Date agreed: January 2022 
+ 
+Neonatal BCG Immunisation Programme (RSCH PRH only ) MP065 
+University Hospitals Sussex NHS Trust Page 2 of 16 
+
+Guideline Reviewer: Bettina Reulecke & Marie Hornsby 
+Version: 2 
+Approval Committee: Women’s Services Safety and Quality Committee 
+Date agreed: January 2022 
+Review date: April 2024 
+ 
+ Neonatal BCG Immunisation Programme (RSCH PRH only ) MP065 
+University Hospitals Sussex NHS Trust Page 3 of 16 Contents 
+Key Principles: ................................ ................................ ................................ ....................... 4 
+Scope: ................................ ................................ ................................ ................................ ... 4 
+Responsibilities: ................................ ................................ ................................ .................... 4 
+1 Neonatal BCG Immunisation Programme ................................ ................................ ..... 5 
+2 BCG Vaccination Pathway ................................ ................................ ............................ 6 
+2.1 Antenatal Pathway ................................ ................................ ................................ ....... 6 
+2.5 Postnatal Pathway ................................ ................................ ................................ ....... 6 
+2.6 Referral to BCG vaccination service ................................ ................................ ........... 6 
+2.6.1 The clinician making the referral must ................................ ................................ 7 
+2.6.2 The administrator must ................................ ................................ ........................ 7 
+2.7 Referral Protocol ................................ ................................ ................................ ......... 7 
+3 Neonatal BCG Vaccination Service ................................ ................................ ............... 8 
+4 Failsafe Procedures ................................ ................................ ................................ ..... 8 
+5 Reporting Requirements ................................ ................................ ............................. 9 
+Appendix A: BCG vaccine referral form ................................ ................................ ................ 11 
+Appendix B: Surrey & Sussex Overview ................................ ................................ ................ 13 
+Appendix C: Public Healt h England Patient leaflet ................................ ................................ 14 
+
+ Neonatal BCG Immunisation Programme (RSCH PRH only ) MP065 
+University Hospitals Sussex NHS Trust Page 4 of 16 Key Principles: 
+ 
+A protocol is a set of measurable, objective standards to determine a course of action. 
+Professional judgement may be used in the application of a protocol. 
+Scope: 
+This protocol applies to all women; those booking at any stage of pregnancy, women who 
+deliver and those who receive postnatal care. 
+ 
+Neonatal BCG vaccine is offered to 
+• All infants (0 -12 months) living in areas of the UK where annual incidence of TB is 
+40/10,000 or greater. 
+• All infants (0 -12 months) where one or more parent or grandparent was born in a 
+country where the annual incidence of TB is 40/100,000 or greater. 
+ 
+University Hospital Trust is responsible for antenatal identification of babies who meet the 
+criteria for neonatal BCG and for referring these babies at birth 
+ 
+University Hospital Trust is financially responsible under national Maternity Pathway 
+Payment rules for all babies born at Brighton & Sussex University Hospitals who receive a 
+neonatal BCG vaccination 
+ 
+Responsibilities: 
+ 
+Midwives & Obstetricians 
+• To access, read, understand and follow this guidance 
+ 
+Paediatricians & Neonatologists 
+• To access, read, understand and follow this guidance 
+ 
+Management Team 
+• To ensure the protocol is reviewed as required in line with Trust and 
+national recommendations 
+• To ensure the protocol is accessible to all relevant staff 
+• To ensure the protocol is aligned with the external neonatal BCG service 
+commissioned 
+• To ensure the protocol and procedures are compliant with Caldicott 
+guidance and information sharing governance 
+ 
+ Neonatal BCG Immunisation Programme (RSCH PRH only ) MP065 
+University Hospitals Sussex NHS Trust Page 5 of 16 1 Neonatal BCG Immunisation Programme 
+ 
+1.1 The aim of the neonatal BCG immunisation programme is to protect newborn 
+babies who are at an increased risk from exposure to, or developing human 
+tuberculosis (TB) which may result in serious illness and premature death. 
+1.2 The neonatal BCG vaccine is routinely used to protect newborn babies who are 
+at increased risk of exposure to TB infection. 
+1.3 The BCG immunisation programme is delivered as a risk -based programme. A 
+key part of this risk based approach is the selective neonatal programme 
+targeted at those infants most at risk of exposure to TB 
+1.4 The key details of neonatal BCG are 
+• It is a risk -based programme, the key part being the neonatal 
+programme which targets those infants most at risk from or exposure to 
+TB 
+• It is offered to all infants (0 -12 months) living in areas of the UK where 
+annual incidence of TB is 40/10,000 or greater 
+• It is offered to all infants (0 -12 months) where one or more parent or 
+grandparent was born in a country where the annual incidence of TB is 
+40/100,000 or greater 
+• Antenatal risk assessment to accurately identify these babies is a 
+cornerstone of this programme 
+• The BCG (Bacillus Calmette -Guérin) vaccine contains a live attenuated 
+strain of mycobacterium. A single dose is required for infants under 12 
+months in line with national recommendations 
+• It is important the guidance on neonatal BCG immunisation in the Green 
+Book is followed at all times: 
+https://www.gov.uk/government/publications/tuberculosis -the-green -
+book -chapter -32 
+• Analysis shows the vaccine to be 70 -80% effective against the most 
+severe forms of the disease that includes TB meningitis in children 
+1.5 The referral form (Appendix A) identifies the countries with a high risk of TB 
+(120). This form is reviewed annually and countries amended according to 
+WHO list of countries with prevalence > 40 per 100,000. Neonatal BCG Immunisation Programme (RSCH PRH only ) MP065 
+University Hospitals Sussex NHS Trust Page 6 of 16 2 BCG Vaccination Pathway 
+2.1 Antenatal Pathway 
+2.1.1 All women / people have a booking appointment with a midwife. At 
+booking the midwife will identify all babies who r equire a BCG. The 
+midwife will - 
+• Record in maternity notes (handheld notes) that the baby will 
+require a BCG 
+• Record on the Booking Form that the baby will require a BCG 
+using the field provided 
+• Ensure that all eligible women are given a BCG vaccination 
+information leaflet 
+• Signpost women to website if there is no leaflet available 
+ 
+2.2 Booking forms are sent to the maternity administration office where 
+information is taken from the form and put onto the maternity IT database 
+(Maternity Smart). 
+2.3 The identification of babies requiring BCG vaccine will not be recorded on 
+Maternity Smart at this time. These women and babies will be recorded on 
+the BCG database specifically established for this purpose. 
+2.4 The following information must be entered onto the BCG database for all 
+babies identified at risk 
+• NHS number of woman 
+• Estimate Date of Delivery (EDD) 
+• Address 
+• Date of booking appointment 
+• Date baby inputted onto the BCG database 
+2.5 Postnatal Pathway 
+2.5.1 Following the delivery of baby, the clinician undertaking the Newborn 
+Infant Physical Examination (NIPE) must; 
+• Check whether the baby was identified antenatally as requiring 
+BCG vaccine using handheld notes 
+• Identify whether the baby meet the neonatal BCG vaccination 
+criteria. 
+• Explain the implications of TB and the protection offered by the 
+BCG to the parents and provide a BCG vaccination information 
+leaflet 
+• Gain consent to refer and refer the baby to the local, external 
+BCG immunisation service 
+2.6 Referral to BCG vaccination service 
+ Neonatal BCG Immunisation Programme (RSCH PRH only ) MP065 
+University Hospitals Sussex NHS Trust Page 7 of 16 2.6.1 The clinician making the referral must 
+• Ensure the electronic referral form is completed in full 
+(incomplete forms will be returned by the service provider) 
+• Midwives email the referral directly to the administrators. 
+Doctors/ANNP’S will save the referral in the Team Drive folder 
+(Team Drive -> TMBUSHO -> NIPE REFERRAL LETTERS -> BCG 
+REFERRALS) from which it will be picked up by the administrator 
+2.6.2 The administrator must 
+2.6.2.1 Email any referrals to the service provider as requested by 
+clinicians 
+2.6.2.2 Save a copy of completed referral form in the Team Drive 
+folder called BCG referrals 
+2.6.2.3 Update the BCG database with 
+• DOB of the baby 
+• Baby’s initials 
+• The date the referral was made (Baby identified at birth 
+and date electronic referral made) 
+• Acknowledgement of the referral is received from the 
+external immunisation service (Receipt of referral 
+acknowledged by SCT) 
+2.7 Referral Protocol 
+2.7.1 The following must be adhered to for all referrals 
+• Referrals must be made electronically on the agreed referral form 
+(Appendix A) within 72 hours to the Sussex Community Trust. 
+• Referrals must be complete or they will be returned by the service 
+provider 
+• Only one referral can be sent in an email 
+• The initials for the baby and DOB must be in the email Subject box 
+• Record on the database that receipt of referral has been 
+acknowledged 
+2.7.2 Babies who are referred for BCG and whose mother is HIV positive will 
+also require a letter from the nominated neonatal lead (Dr Bomont) 
+to be sent to the neonatal BCG vaccination service. It is the 
+responsibility of the clinician making the referral to include the HIV 
+status of the mother on the referral form and to notify the neonatal 
+lead of the referral. 
+ Neonatal BCG Immunisation Programme (RSCH PRH only ) MP065 
+University Hospitals Sussex NHS Trust Page 8 of 16 3 Neonatal BCG Vaccination Service 
+ 
+3.1 The BCG vaccination service is delivered by Sussex Community Trust (SCT) 
+under an SLA arrangement. 
+3.2 The service commissioned is expected to meet the NHSE national specification 
+(updated local specification awaited) and meets the Surrey & Sussex BCG 
+Pathway (Appendix B) as defined below; 
+• 3rd Party provider to acknowledge referral 
+• Record, send appointment & document consent for BCG immunisation 
+with parent and send information leaflet 
+• Following immunisation - record immunisation including batch number 
+and date given in Red Book, health records and/or Community 
+Information System (CIS) 
+• Notify CHRD that BCG has been given, who will notify GP (SCT will 
+notify GP direct) 
+• If baby does not attend (DNA) for immunisation after two invitations, 
+letter to be sent to GP and copy to Health Visitor Team and CCHIB 
+3.3 The following arrangements have been reached with SCT 
+• Return of incomplete or ineligible forms to the BSUH administrator 
+• Acknowledgment of receipt of all referrals 
+• Escalation of babies that are referred by clinicians NOT in BSUH 
+midwifery or neonatology/paediatric services e.g. health visitors or 
+GPs. This will be done be done by email by SCT to nominated BSUH 
+representatives 
+• Input of date of BCG into the shared database by SCT for all babies 
+born at BSUH 
+• Information requirements as per identified reporting requirements in 
+next section 
+3.4 SCT will support national and local reporting with the provision of timely and 
+ accurate data in line with the national reporting requirements (Section 5). 
+4 Failsafe Procedures 
+ 
+4.1 BCG vaccination database to be checked by administrator monthly to ensure 
+all babies with expected EDD have been born and referred for a BCG. 
+Investigation of those that have not been referred but for which there is no 
+known reason, e.g. they have not yet delivered, moved away or still birth, will 
+be by a Lead midwife for BCG. 
+4.2 Acknowledgement from provider on the receipt of every referral and recorded 
+on database 
+ Neonatal BCG Immunisation Programme (RSCH PRH only ) MP065 
+University Hospitals Sussex NHS Trust Page 9 of 16 4.3 Investigation by the Lead midwife for BCG of all babies that have been 
+escalated by Sussex Community Trust who were born at Royal Sussex County 
+Hospital, Princess Royal or at home who were NOT identified and referred by 
+maternity services or paediatricians/neonatologists but referred instead by 
+health visitors or GPs (as examples). 
+ 
+5 Reporting Requirements 
+ 
+5.1 The following are the local reporting requirements in place: 
+• SCT will provide a monthly activity report detailing all the babies that have 
+received a BCG vaccination that month 
+• SCT will provide a monthly invoice 
+ 
+5.2 National reporting requirements are defined in the NHS England , 2016/17 NHS 
+Standard Contract Particulars for NHS Neonatal BCG Immunisation 
+Programme : Schedule 6 – Contract Management, reporting and information 
+requirements ; B. Reporting Requirements document (Table 1 below). It is 
+BSUH’s responsibility to report on this service however SCT will support BSUH 
+reporting by: 
+• Providing routine data to NHS England, Public Health England, and the 
+Health and Social Care Information Centre, in a timely manner. 
+• Contribute to national data collection exercises where required 
+• Provide annual data measuring performance against both standards and 
+the Key Performance Indicators. Neonatal BCG Immunisation Programme (RSCH PRH only ) MP065 
+University Hospitals Sussex NHS Trust Page 10 of 16 
+5.3 Table 1: Reporting Requirements 
+
+ Neonatal BCG Immunisation Programme (RSCH PRH only ) MP065 
+University Hospitals Sussex NHS Trust Page 11 of 16 Appendix A: BCG vaccine referral form 
+
+CHILDS DETAILS 
+Child’s Forename: 
+(please print) Child’s Surname: 
+(please print) 
+Address: Date of Birth: Age: 
+NHS Number: Sex: F  
+M  
+Postcode: School: (if applicable) 
+Contact Number of Person with Parental Responsibility: 
+
+(to opt out of text reminders tick here)  Is an i nterpreter required for the BCG a ppointment? 
+Yes  No  
+If answered yes, 
+please specify the language: 
+GP Name: Hospital of Birth: 
+GP Practice Address: 
+ CPP  LAC  
+Please tick if 
+applicable Please ensure person with parental 
+responsibility is available for consent. 
+Please answer all of the following questions. YES NO 
+Was the child born in one of the TB high risk countries overleaf? 
+If answered yes, please specify the country: 
+Does the child have a parent or grandparent who was born in one of the TB high risk 
+countries overleaf? 
+If answered yes, please specify the country: 
+Has the child lived in a TB high risk country for longer than 3 consecutive months? 
+If answered yes, please specify the country: 
+Are there any clinically relevant medical conditions? (e.g. prematurity, maternal HIV 
+etc) If answered yes, please state the clinically relevant medical conditions below : 
+(e.g. prematurity, maternal HIV etc 
+Has the mother received TNFa antagonists or other biological immunosuppressive 
+treatment either in pregnancy or whilst breast feeding? 
+If answered yes, the immunisation will be postponed and the Immunisation Team will contact mother 
+to discuss. 
+For maternal HIV only, please tick box to state risk of transmission OR please provide most recent 
+maternal HIV viral load before baby was born in the box provided below 
+High risk ☐ Low risk ☐ Very low risk ☐ Viral load result: 
+Any other relevant information? (e.g. SCBU, plans to travel) 
+REFERRERS DETAILS 
+Name: 
+(please print) Job Title: 
+Contact Number: Address/Base: 
+Date: Signature: PLEASE COMPLETE ONE FORM PER CHILD 
+ALL FIELDS UNLESS STATED ARE MANDATORY – INCOMPLETE REFERRALS WILL BE RETURNED 
+Please return each completed form by email to: SC-TR.imms -team@nhs.net 
+
+ Neonatal BCG Immunisation Programme (RSCH PRH only ) MP065 
+University Hospitals Sussex NHS Trust Page 12 of 16 
+Source 
+https://www.gov.uk/government/publications/tuberculosis -tb-by-country -rates -per-
+100000 -people 
+ 
+IMMUNISATION TEAM DETAILS 
+If submitting the referral by post, please send to relevant address below 
+South Referrals 
+01273 696011 ext. 8100 Immunisation Team, Westhampnett Centre, 28 – 29 
+Westhampnett Road, Chichester PO19 7HH 
+North Referrals 
+01293 227792 Immunisation Team, Crawley Hospital, 4th Floor, West Green 
+Drive, 
+Crawley RH11 7DH 
+Brighton and Hove Referrals 
+01273 696011 ext. 3789 Immunisation Team, Children and Families Clinic, D Block, 
+Brighton General Hospital, Elm Grove, Brighton BN2 3EW COUNTRIES WITH A HIGH RISK OF TB 
+Afghanistan DPR Korea Iraq Nepal Somalia 
+Algeria DR Congo Kazakhstan Nicaragua South Africa 
+Angola Djibouti Kenya Niger South Sudan 
+Azerbaijan Dominican 
+Republic Kiribati Nigeria Sri Lanka 
+Bangladesh Ecuador Kyrgyzstan Niue Sudan 
+Benin El Salvador Lao PDR Northern Mariana 
+Islands Tajikistan 
+Bhutan Equatorial Guinea Lesotho Pakistan Thailand 
+Bolivia (Plurinational 
+State of) Eritrea Liberia Palau Timor -Leste 
+Botswana Eswatini Libya Panama Togo 
+Brazil Ethiopia Lithuania Papua New Guinea Turkmenistan 
+Brunei Darussalam Fiji Madagascar Paraguay Tuvalu 
+Burkina Faso Gabon Malawi Peru Uganda 
+Burundi Gambia Malaysia Philippines Ukraine 
+Cabo Verde Georgia Mali Rep. Korea UR Tanzania 
+Cambodia Ghana Marshall Islands Republic of Moldova Uzbekistan 
+Cameroon Greenland Mauritania Romania Vanuatu 
+Central African 
+Republic Guam Micronesia (FSO) Russian Federation Venezuela (Bolivarian 
+Republic of) 
+Chad Guinea Mongolia Rwanda Viet Nam 
+China Guinea -Bissau Morocco Sao Tome & Principe Yemen 
+China, Hong Kong Guyana Mozambique Senegal Zambia 
+China, Macao SAR Haiti Myanmar Sierra Leone Zimbabwe 
+Congo India Namibia Singapore 
+Côte d'Ivoire Indonesia Nauru Solomon Islands Neonatal BCG Immunisation Programme MP065 
+University Hospitals Sussex NHS Trust Page 13 of 16 
+ 
+Appendix B: Surrey & Sussex Overview 
+
+ Neonatal BCG Immunisation Programme MP065 
+University Hospitals Sussex NHS Trust Page 14 of 16 
+ Appendix C: Public Health England Patient leaflet (https://www.gov.uk/government/publications/tb -bcg-and -your -baby -leaflet ) 
+ 
+Neonatal BCG Immunisation Programme MP065 
+University Hospitals Sussex NHS Trust Page 15 of 16 
+ 
+Neonatal BCG Immunisation Programme MP065 
+University Hospitals Sussex NHS Trust Page 16 of 16

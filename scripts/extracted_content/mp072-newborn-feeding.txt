@@ -1,0 +1,1920 @@
+# Extracted from: MP072 Newborn Feeding.pdf
+# Guideline ID: mp072-newborn-feeding
+# Content length: 101194 characters
+# Processing date: 1750066901.670259
+
+Newborn Feeding 
+
+Maternity Protocol : MP072 
+ 
+Date agreed : September 2021 
+ 
+ Newborn Feeding (RSCH PRH only ) MP072 
+2 
+
+Manager responsible : Amanda Clifton 
+Author : Anouk Lloyd 
+Cross Reference: MP068 Admissions Neonatal Unit (NICU/SCBU) 
+ MP069 Care of the Newborn Immediately after birth 
+ MP071 Provision and Schedule of Postnatal Care 
+ MD085 Maternity Risk Management Strategy 
+Version : 3.2 
+Approving Committee : Women’s’ Safety & Quality Committee 
+Date Agreed : September 202 1 
+Review Date : September 2024 
+
+ Newborn Feeding (RSCH PRH only ) MP072 
+3 
+ Contents 
+ 
+Contents ................................ ................................ ................................ ................................ ..... 3 
+Key Principles ................................ ................................ ................................ ......................... 5 
+Scope ................................ ................................ ................................ ................................ ......... 5 
+Responsibilities ................................ ................................ ................................ ...................... 5 
+1 Policy Statement and Rationale ................................ ................................ ......................... 6 
+2 Aims and Objectives ................................ ................................ ................................ .......... 6 
+3 Outcomes ................................ ................................ ................................ ........................... 6 
+4 The purpose of the breastfeeding protocol ................................ ................................ ......... 7 
+5 Definitions ................................ ................................ ................................ .......................... 7 
+6 Care standards ................................ ................................ ................................ .................... 8 
+7 Skin to skin safety considerations ................................ ................................ ...................... 9 
+8 Support for breastfeeding ................................ ................................ ................................ . 10 
+9 Responsive feeding ................................ ................................ ................................ .......... 11 
+10 Exclusive breastfeeding ................................ ................................ ................................ ... 11 
+11 Modified feeding regimes ................................ ................................ ................................ 12 
+12 Hand expressing ................................ ................................ ................................ ............... 12 
+13 Using an electric breast pump ................................ ................................ .......................... 13 
+14 Supplementation ................................ ................................ ................................ .............. 13 
+15 Syringe feeding (Appendix A – Patient Information leaflet) ................................ ........... 14 
+16 Cup feeding (Appendix A – Patient information leaflet) ................................ ................. 14 
+17 Safe Cup Feeding ................................ ................................ ................................ ............. 15 
+18 Use of Dummies and Nipple Shields ................................ ................................ ............... 15 
+19 Formula Feeding ................................ ................................ ................................ .............. 16 
+20 Recommendations for discussing bed -sharing with parents ................................ ............ 17 
+21 Guidance for the Management of the Reluctant Feeder (Appendix B flow chart) .......... 17 
+22 Process for weighing Newborns ................................ ................................ ...................... 20 
+23 Identification of excessive weight loss ................................ ................................ ............ 21 
+24 Calculating weight loss ................................ ................................ ................................ .... 21 
+25 Action plans for weight loss (Appendix C) ................................ ................................ ..... 23 
+26 Calculating milk volumes for supplementation (Appendix D) ................................ ........ 25 
+Volume of milk required in 24hrs mls/kg ................................ ................................ ................ 26 
+References; ................................ ................................ ................................ .............................. 26 
+27 Neonatal readmissions ................................ ................................ ................................ ..... 26 
+Section 2 ................................ ................................ ................................ ................................ ... 28 
+1 Babies requiring care in the neonatal unit ................................ ................................ ........ 28 Newborn Feeding (RSCH PRH only ) MP072 
+4 
+ 2 Valuing parents as partners in care whilst on the neonatal unit ................................ ....... 29 
+3 Babies Receiving Special / Transitional Care ................................ ................................ .. 30 
+Section 3 ................................ ................................ ................................ ................................ ... 31 
+1 Neonatal jaundice and supporting breastfeeding outside of the neonatal unit ................. 31 
+2 The presence of physiological jaundice from 2 -3 days ................................ ................... 32 
+3 Concerns about lactation ................................ ................................ ................................ .. 32 
+4 Staff Rules ................................ ................................ ................................ ........................ 33 
+5 Training and compliance ................................ ................................ ................................ .. 33 
+6 Supporting Documentation and References ................................ ................................ ..... 33 
+Appendices ................................ ................................ ................................ ............................... 34 
+1 Appendix A – Cup and syringe feeding PIL ................................ ................................ .... 34 
+2 Appendix B – Feeding flowchart ................................ ................................ ..................... 35 
+3 Appendix C – Prevention and management of excessive weight loss in healthy breastfed 
+newborns ................................ ................................ ................................ ................................ .. 37 
+4 Appendix D – Calculating milk volumes for supplementation ................................ ....... 39 
+5 Appendix E – Transcutaneous bilirubin monitoring ................................ ........................ 40 
+6 Appendix F - Breastfeeding Specialist Contact Details ................................ ................... 41 
+7 Appendix G - Tongue Tie ................................ ................................ ................................ 41 
+8 Appendix H - BTAT/TABBY TOOL ................................ ................................ .............. 46 
+9 Appendix I – Antenatal Hand Expressing ................................ ................................ ....... 47 
+10 References and resources ................................ ................................ ................................ . 48 
+ Newborn Feeding (RSCH PRH only ) MP072 
+5 
+ Key Principles 
+ 
+A protocol is a set of measurable, objective, standards to determine a course of action. 
+Professional judgement may be used in the application of a protocol. 
+ 
+Scope 
+ 
+This guideline applies to all women, mothers, and babies receiving care from the Brighton & 
+Sussex University Hospitals NHS Trust, Directorate of Women and Children’s Health. Whilst 
+this guidance uses the words women, mother and breastfeeding we also acknowledge that 
+not all pregnant or birthing people identify as women or mothers and some choose to use 
+the words chest and chest feeding. All staff should be respectful of with the use of chosen 
+pronouns and language choices. 
+ 
+Responsibilities 
+ 
+Midwives, Nursery Nurses, Maternity Support Workers, Maternity Care Assistants, 
+Paediatricians. 
+• To access, read, understand and follow this protocol. 
+• To clearly document any practice which deviates from the protocol and give 
+rationale for doing so. This would only occur in exceptional circumstances. 
+ 
+Management: 
+• To ensure that the protocol is reviewed annually in line with Baby Friendly Initiative 
+requirements. 
+• To ensure that the protocol is accessible to all relevant staff. 
+• To ensure that the protocol is available to service users on request . 
+ Newborn Feeding (RSCH PRH only ) MP072 
+6 
+ 1 Policy Statement and Rationale 
+ 
+The purpose of this protocol is to ensure that all staff at Brighton and Sussex University 
+Hospitals Trust understands their role and responsibilities in supporting expectant and new 
+mothers and their partners to feed and care for their baby in ways which support optimum 
+health and well -being. 
+ 
+All staff are expected to comply with this policy. This Policy is based on the UNICEF Baby 
+Friendly Initiative standards which are recognised as the standard for best practice in 
+promoting, supporting and sustaining breastfeeding and early infant relationships. 
+The Policy is also supported by NICE guidance (April 2021) and sets out the Trust’s process 
+for supporting mothers who are both breast and formula feeding. This policy relates to 
+Maternity, Neonatal and Paediatric Services. 
+ 
+2 Aims and Objectives 
+ 
+Breastfeeding is an important health issue and its positive impact on the short and long 
+term health of mothers and newborns is well documented. 
+ 
+The aim of this breastfeeding protocol is to show the University Hospitals Sussex ( Brighton 
+and Sussex University Hospitals ) commitment, to promoting, protecting, and supporting 
+breastfeeding, by providing the highest standard of care, to support expectant and new 
+mothers and their partners to feed their baby and build strong and loving parent -infant 
+relationships. This is in recognition of the profound importance of early relationships to 
+future health and well -being, and the significant contribution that breastfeeding makes to 
+good physical and emotional health outcomes for children and mothers. This policy aims to 
+ensure that the health benefits of breastfeeding and the potential health risks of formula 
+feeding are discussed with all women so that they can make an informed choice about how 
+they will feed their baby. 
+ 
+3 Outcomes 
+ 
+This policy aims to ensure that the care provided improves outcomes for children and 
+families, specifically to deliver: 
+• An increase in breastfeeding initiation rates in Maternity and Neonatal Services 
+• An increase in the number of babies on the Neonatal Unit receiving breastmilk. 
+• An increase in breastfeeding rates at discharge and at 10 days 
+• Amongst mothers who choose to artificially feed, an increase in those doing so as 
+safely as possible, in line with nationally agreed guidance. 
+• Improvements in parents’ experience of care 
+• A reduction in the number of re -admissions for feeding problems 
+ Newborn Feeding (RSCH PRH only ) MP072 
+7 
+ 4 The purpose of the breastfeeding protocol 
+ 
+The purpose of this protocol is to promote breastfeeding and safe feeding practices by: 
+ 
+4.1 Ensuring that all staff understands their role and responsibilities in supporting 
+expectant and new mothers and their partners to feed and care for their 
+baby in ways which support optimum health and wellbeing; by providing a 
+clear and concise framework within which staff must practice, with regards to 
+newborn feeding. Any deviation from the protocol must be documented and 
+justified. This would only occur in exceptional circumstances. 
+4.2 Familiarising new staff with the protocol within one week of appointment. 
+4.3 Performing a bi -annual review of this protocol, for updating and maintaining 
+relevance. 
+4.4 Showing the trust commitment to promoting and protecting breastfeeding by 
+making both the staff protocol readily available and client guidelines to the 
+protocol visible in all relevant areas including areas that serve mothers and 
+babies. 
+4.5 Creating an environment where women are more likely to initiate 
+breastfeeding and to receive appropriate information, which is in line with 
+government guidelines for exclusive breastfeeding for six months and as part 
+of a mixed diet, through to two years and beyond, if this is what they wish. 
+4.6 Providing a programme of education for all staff appropriate to their 
+position. New employees will receive an induction day within six months of 
+starting employment. All staff must attend all breastfeeding training and 
+complete the workbook and meet with a BFI Key trainer within six weeks of 
+attending the BFI induction day. 
+4.7 A curriculum for all training will be available and should be audited with 
+regards to uptake, and training standards. 
+4.8 Forbidding the promotion of artificial milks, bottles, teats and dummies in 
+line with the WHO Code for the Marketing of Artificial Milk and other breast 
+milk substitutes. 
+4.9 Ensuring that literature provided by the Trust is not sourced from artificial 
+milk companies or containing of any adverts or promotional products 
+pertaining to newborn feeding. 
+ 
+5 Definitions 
+ 
+The infant feeding policy covers breastfeeding and formula feeding. Breastfeeding can be 
+defined as giving human breastmilk to infants to meet their nutritional needs. The nutrients 
+in breastmilk are unique and provide optimal health and immunological benefits for both Newborn Feeding (RSCH PRH only ) MP072 
+8 
+ mother and child. Infant formula is a food manufactured, usually from modified cow’s milk, 
+to support growth of infants under 6 months of age. It is an artificial substitute for feeding 
+infants and does not provide the same health outcomes as breastmilk. 
+ 
+6 Care standards 
+ 
+This is the care the Trust is committed to giving each and every expectant mother and new 
+family. It is based on the UNICEF UK Baby Friendly Initiative standards for both 
+Maternity and Neonatal Servic es and relevant NICE guidance. 
+6.1 Pregnancy 
+ All women will be given the opportunity to discuss feeding and 
+caring for their baby with a midwife in the pregnancy, on a one to 
+one basis or with their partner. How and when this happens may 
+vary from mother to mother. It may be appropriate to begin this 
+conversation quite early on in the pregnancy and thread it 
+through the rest of the care, incorporating different topics as the 
+mother approaches the end of her pregnancy. It is recommended 
+that the following topics have been covered by 34 weeks: 
+• The value of connecting with their growing baby in utero. 
+• The value of skin to skin for all mothers and babies. 
+• The importance of responding to their baby’s need for 
+comfort, closeness and feeding after birth, and the role 
+that keeping their baby close has in supporting this. 
+• Feeding, including: 
+• Finding out what the mothers thoughts and feelings are, 
+with regards feeding and caring for her baby. 
+➢ An exploration of what parents already know about 
+breastfeeding. 
+➢ The value of breastfeeding as protection, comfort 
+and food. 
+➢ Getting breastfeeding off to a good start. 
+ 
+6.2 Information given sh ould be supported with the o ff to a Good Start leaflet and 
+Building A Happy Baby leaflet, directions to the BSUHT maternity website: 
+https://www.bsuh.nhs.uk/maternity/ 
+6.3 When women have a medical condition which may affect the physiology of 
+lactation, an appropriate plan should be made with the mother and midwife 
+(or Infant Feeding Midwife) to assist the initiation and maintenance of 
+lactation. Antenatal women will not be shown how to make up a bottle of 
+manufactured milk. 
+6.4 Birth 
+ Newborn Feeding (RSCH PRH only ) MP072 
+9 
+ 6.5 All women will be offered uninterrupted Skin to Skin contact with their baby in 
+an unhurried environment. This should last at least an hour or until after the 
+first feed, or until mother wants to end skin to skin (early cessation should not 
+be prompted by the midwife).The midwife providing care should document in 
+the maternal notes the occurrence and length of time of skin to skin contact. 
+6.6 All women must be given the opportunity to feed their baby whilst on labour 
+ward (or at home) following delivery while the baby is skin to skin and showing 
+signs of readiness to feed. Assistance should be offered by the midwife 
+providing care, or a support worker. 
+6.7 When women choose to formula feed they will be encouraged to offer the first 
+bottle feed in skin contact. Subsequent formula (bottle) feeds should also be 
+encouraged in skin contact. 
+6.8 Transfer to the post natal area should not interfere with skin to skin. Women 
+should be encouraged to continue putting the baby skin to skin over the next 
+few days by the health professional or support worker providing care. 
+Allowa nces should be made for the post natal area being cooler, and the baby 
+suitably covered whilst in skin to skin. 
+6.9 When it has been necessary to separate mother and baby due to clinical need 
+then skin to skin should be achieved as soon as possible. Partners can also give 
+their baby skin to skin . 
+ 
+7 Skin to skin safety considerations 
+ 
+Vigilance of the baby’s well -being is a fundamental part of postnatal care immediately 
+following and in the first few hours after birth. For this reason, normal observations of the 
+baby’s temperature, breathing, colour and tone should continue throughout the period of 
+skin-to-skin contact in the same way as would occur if the baby were in a cot (this includes 
+calculation of the Apgar score at 1, 5 and 10 minutes following birth). Care should always be 
+taken to ensure that the baby is kept warm. Observations should also be made of the 
+mother, with prompt removal of the baby if the health of either gives rise to concern. 
+ 
+▪ Staff should have a conversation with the mother and her companion about the importance 
+of recognising changes in the baby’s colour or tone and the need to alert staff immediately if 
+they are concerned. 
+▪ 
+It is important to ensure that the baby cannot fall onto the floor or become trapped in 
+bedding or by the mother’s body. Mothers should be encouraged to be in a semi -recumbent 
+position to hold and feed their baby. Particular care should be taken with the position of the 
+baby, ensuring the head is supported so the infant’s air way does not become obstructed. 
+Notes – Mothers 
+Observations of the mother’s vital signs and level of consciousness should be continued 
+throughout the period of skin to skin contact. Mothers may be very tired following birth, 
+and so may need constant support and supervision to observe changes in their baby’s 
+condition or to reposition their baby when needed. Newborn Feeding (RSCH PRH only ) MP072 
+10 
+ Many mothers can continue to hold their baby in skin to skin during perineal suturing, 
+providing they have adequate pain relief. However a mother who is in pain may not be able 
+to hold her baby safely. Babies should not be in skin to skin contact with their mothers when 
+they are receiving Entonnox or other analgesics that impact consciousness. 
+Notes – Babies 
+ 
+All babies should be routinely monitored whilst in skin -to-skin c ontact with mother or 
+partner. 
+Observation to include: 
+• Checking that the baby’s position is such that a clear airway is maintained: Observe 
+respiratory rate and chest movement and listen for unusual breathing sounds or 
+absence of noise from the baby. 
+• Colour: The baby should be assessed by looking at the whole of the baby’s body, as 
+the limbs can often be discoloured first. Subtle changes to colour indicate changes in 
+the baby’s condition. 
+• Tone: The baby should have a good tone and not be limp or unresponsive. 
+• Temperature: Ensure the baby is kept warm during skin contact. 
+ 
+Always listen to parents and respond immediately to any concerns raised 
+ 
+8 Support for breastfeeding 
+ 
+8.1 Mothers who are enabled to achieve effective breastfeeding according to their 
+needs (including appropriate support with positioning and attachment, hand 
+expression and the signs of effective feeding). This will continue until the 
+mothers are feeding confidently. If a baby does not feed spontaneously in the 
+first four hours of life, or does not spontaneously feed again within 6 hours of 
+life, the “care of the baby who is reluctant to feed” flowchart (Appendix 4) will 
+be instigated. 
+ 
+Mothers will have the opportunity to discuss breastfeeding in the first few 
+hours after birth as appropriate to their own needs and those of their baby. 
+The discussion will include information on responsive feeding and feeding 
+cues. Mothers and babies will not be routinely separated on the wards. 
+ 
+A formal feeding assessment will be carried out using the breastfeeding 
+assessment tool in Badgernet and as often as required, with a mi nimum of 2 
+assessments in the first week , and always to include; 
+• prior to discharge from hospital (or leaving house if homebirth) 
+• first postnatal visit by community midwife 
+• day 5 
+ Newborn Feeding (RSCH PRH only ) MP072 
+11 
+ The rationale for doing this is to adequately assess breastfeeding in a 
+standardised manner, to ensure effective feeding and the wellbeing of 
+mother and baby. 
+ 
+Before discharge home, breastfeeding mothers will be given information 
+both verbally and on the Badgernet app about recognising effective feeding 
+and where to call for additional help if they have any concerns. All mothers 
+will be made aware of the importance of wet and dirty nappies in the baby, 
+with an emphasis on changing stool from birth to day 5. Mothers will be 
+advised to contact the community midwives if there is an absence of dirty 
+nappies. Mothers should be directed to the ‘Off to the Best Start’ leaflet or 
+The Mothers and Others Guide, demo nstrating stool colour change. 
+ 
+All breastfeeding mothers will be informed about how to contact our 24hour support 
+service, local support service for breastfeeding and directed to the postnatal booklet to 
+access the updated breastfeeding drop in infor mation and national helplines. 
+ 
+9 Responsive feeding 
+ 
+The term responsive feeding is used to describe a feeding relationship which is sensitive, 
+reciprocal, and about more than nutrition. Staff should ensure that mothers have the 
+opportunity to discuss this aspect of feeding and should reassure mothers that: 
+breastfeeding can be used to feed, comfort and calm babies; breastfeeds can be long or 
+short; breastfed babies cannot be overfed or ‘spoiled’ by too much feeding, and 
+breastfeeding will not, in and of itself, tire mothers any more than caring for a new baby 
+without breastfeeding. Most babies will feed between 8 -12 times in 24 hou rs. UNICEF UK’s 
+responsive feeding info -sheet: unicef.uk/bf -responsive 
+ 
+10 Exclusive b reastfeeding 
+ 
+10.1 Mothers who breastfeed will be provided with information about why 
+exclusive breastfeeding leads to the best outcomes for their baby and why it is 
+particularly important during the establishment of breastfeeding. 
+10.2 When exclusive breastfeeding is not possible, the value of continuing partial 
+breastfeeding will be emphasised and mothers will be supported to maximise 
+the amount of breastmilk their baby receives. 
+10.3 Mothers who give other feeds in conjunction with breastfeeding will be 
+enabled to do so as safely as possible and with the least possible disruption to 
+breastfeeding . This will include appropriate information and a discussion 
+regarding the potential impact of introducing a teat when a baby is learning to 
+breastfeed. 
+ Newborn Feeding (RSCH PRH only ) MP072 
+12 
+ 10.4 A full record will be made of all supplements given, including the rationale for 
+supplementation and the discussion held with parents and should be 
+completed on Badgernet . 
+10.5 Supplementation rates will be audited. 
+Modified feeding regimes 
+ 
+10.6 There are a number of clinical indications for short term modified feeding 
+regime in the early days after birth. Examples include: preterm or small for 
+gestational age babies and those who are excessively sleepy after birth. 
+Frequent feeding, including a minimum number of feeds in 24hours, should be 
+offered to ensure safety. 
+10.7 And hypoglycaemia protocol needs to be implemented as per: 
+https://www.unicef.org.uk/babyfriendly/wp -
+content/uploads/sites/2/2010/10/hypo_policy.pdf 
+ 
+10.8 Babies that may require modified feeding regimes are identified as: 
+• Intrauterine growth r estriction, or small for gestational age 
+• Infants of diabetic mothers 
+• Maternal beta blocker use 
+• Gestation <37 weeks at birth 
+• Moderate to severe birth asphyxia 
+• Hypothermia 
+ 
+11 Hand e xpressing 
+ 
+Hand expressing is a skill all women should be taught and can be invaluable in the early days 
+of breastfeeding. 
+Women should be encouraged to read the trust guide to hand expressing and be offered 
+colostrum sy ringes at 36 weeks antenatally. 
+All women should be taught the skill of hand expressing , along with breast massage within 6 
+hours of birth. It is also an ideal method of expressing milk in the first few days. 
+Colostrum is low in volum e and may get lost in the pump. 
+Helping a mother to maintain her milk supply whilst providing colostrum for her baby can 
+help build her confidence and help avoid unnecessary infant formula. Breastmilk flow is 
+reliant on oxytocin, which can be inhibited by anxiety or embarrassment. If a mother has 
+attempted unsuccessfully to hand express, ask a colleague to go through the technique 
+again. 
+Ensure leaflets from Trust website my Pregnancy Matters and knitted breasts are taken to 
+the bedside to assist demonstration. 
+When the baby is not breastfeeding because of illness, prematurity, or some specific 
+breastfeeding problem, the initiation, establishment and maintenance, of lactat ion is 
+dependent on expressing. Newborn Feeding (RSCH PRH only ) MP072 
+13 
+ Women should be supported to express 8 -10 times in 24hours including once at night in 
+order to initiate and maintain lactation. 
+ 
+12 Using an electric breast p ump 
+ 
+Breast massage followed by hand expressing 8 -10 x in 24hrs should always be used in the 
+first few days, as this is the best way to collect colostrum. However women who deliver 
+extremely low birth weight babies or babies <34 weeks can combine hand expressing with 
+early pump use, using the initiate/stimulation setting within 2 hours of birth. Research has 
+demonstrated increased milk production when combining these methods . (Lussier 2015) 
+ 
+• On the second day, all women who are experiencing breastfeeding 
+difficulties will be shown how to use an electric double pump , alongside 
+continued hand expressing on the post natal ward. 
+• Women will be informed that at least 8-10 expressions in 24 hours are 
+required, including at least one night expression. 
+• While establishing lactation women are encouraged to express for 15 
+minutes. Milk flow may cease before this. 
+• Once full lactation is established women should be encouraged to express 
+for at least 15 minutes but not more than 30 minutes. 
+• Women will be informed how to obtain suitable equipment. A hospital 
+grade pump may be beneficial when expressing, in the longer term. 
+ 
+13 Supplementation 
+13.1 Breast fed babies should not be offered anything other than breast milk. 
+13.2 Artificial supplements should only be given where medically indicated with 
+informed consent from the mother. The reason s hould be clearly documented 
+in Badgernet by the midwife, ANNP or neonatologist providing care. When 
+medically indicated artificial supplementation has been introduced, a plan to 
+support breastfeeding/lactation and reduce artificial supplementation, should 
+be put in place. 
+13.3 Any other supplementation which is not medically indicated must only be 
+given if the mother has made a fully informed choice and alternative 
+management strategies offered. All discussions with and decisions made by the 
+mother should be clearly documented by the health professional providing 
+care. Should the baby be given any supplement which is not medically 
+indicated, as a result of informed choice by the mother, it is preferable to 
+avoid a teat. 
+ Newborn Feeding (RSCH PRH only ) MP072 
+14 
+ 13.4 Where supplementation is medically indicated it is preferable to avoid artificial 
+teats in a breast fed baby. A syringe, feeding cup, spoon or finger feeding can 
+be used instead. Some babies receiving transitional or special care may be 
+given supplementation by nasogastric tube. 
+13.5 Breastfeeding women will not routinely be shown how to make up artificial 
+milk. 
+ 
+14 Syringe feeding ( Appendix A – Patient Information leaflet) 
+ 
+For babies who aren’t yet feeding at the breast , syringe feeding is used to give a baby small 
+amounts (<2mls) of colostrum that wou ld otherwise get lost in a cup. 
+To syringe feed safely, health professionals should teach this skill and support parents until 
+they are confident to syri nge feed their baby themselves. 
+The baby should be held in the mother’s arms, slightly upright and a 1ml oral syringe placed 
+gently in between the gum and the cheek. A little colostrum is gently dripped into the cheek 
+cavity (no more than 0.2ml at a time), allow the baby to suck and swallow before 
+continuing. 
+Move onto cup feeding once you have more than 2 -5mls of colostrum. Babies should not be 
+discharged home syringe feeding. 
+ 
+15 Cup feedin g (Appendix A – Patient information leaflet) 
+ 
+Cup feeding may be an interim measure whilst supporting a baby to transition to the breast 
+or providing breastfed babies wit h additional supplementation. 
+Cup feeding encourages the baby to practice tongue movements, enhances digestion by 
+stimulating saliva and allows the baby to control the rate of milk given. It can be used when 
+volumes are greater than 5ml. 
+It does not risk causing nipple confusion or babies imprinting onto a teat. Healthcare 
+professionals should teach this skill and support parents until parents are confident to cup 
+feed their baby themselves. 
+Volumes should be offered around 5 -10mls each cup which can be refilled until the required 
+volume has been taken and the overall volume documented. Cup feeding is a short term 
+method of feeding and it is not routine policy to dis charge a baby home cup feeding. 
+Babies have a need to suck and generally a teat may be offered around day five, as volumes 
+have increased and the baby will have a chance to suck. 
+ 
+15.1 Contraindicated in: 
+• Infants with poor gag reflex, increases the risk of aspiration 
+• Babies who are lethargic and/or have very poor sucking reflex 
+• Babies who have marked neurological deficits 
+ 
+ Newborn Feeding (RSCH PRH only ) MP072 
+15 
+ 16 Safe Cup Feeding 
+• The baby should be awake and alert. Never cup feed a sleepy lethargic 
+baby. 
+• Explain cup feeding to parents and gain consent 
+• Wash hands and gather feeding cup and EBM 
+• Wrap baby securely to prevent milk spillage 
+• Support the baby in a semi -upright position on your lap, to avoid the RISK OF 
+ASPIRATION 
+• Place the brim of the cup at the corners of the baby’s mouth, with it gently resting 
+on the lower lip. 
+• DO NOT FORCE THE CUP INTO THE BABY’S MOUTH 
+• Tip the cup so that the milk is just touching the baby’s lips 
+• DO NOT POUR MILK INTO THE BABY’S MOUTH 
+• Expect the baby to sip or lap the milk 
+• Keep the cup in contact with the baby’s mouth, allowing the baby to feed and 
+pause as it wants. This takes time 
+• Allow the baby to feed at its own pace 
+If the parents wish to offer cup feeds, risk of aspiration with unsafe positioning or pouring 
+the milk should be discussed . 
+ 
+16.1 Parents wishing to cup feed at this time should be assessed as having 
+understood safety issues and demonstrated a safe cup feed themselves. 
+ 
+• Discuss potential wastage of milk due to dribbling 
+• Ensure mothers receive on -going breastfeeding support, to ensure cup 
+feeds are used only as short -term support of and not a replacement to 
+breastfeeding. 
+• A management plan should be documented for any baby receiving milk by 
+either cup or syringe. 
+• Consider teaching paced bottle feeding to mothers, who se babies haven't 
+yet managed to feed exclusively at the breast. 
+• Paced bottle feeding is considered to help protect babies from developing a 
+flow preference and imprinting on the teat. 
+17 Use of Dummies and Nipple Shields 
+17.1 Breastfeeding reduces the risk of cot death. The Lullaby Trust says that settling 
+the baby to sleep with a dummy, even for naps, can reduce the risk of cot 
+death. If breastfeeding do not begin to give a dummy until the baby is at least 
+one month old or until breastfeeding is well established. 
+17.2 Dummy use has been negatively associated with both the exclusivity and 
+duration of breastfeeding. 
+17.3 All breastfeeding women should be discouraged from using teats and dummies 
+during the establishment of breastfeeding. 
+ Newborn Feeding (RSCH PRH only ) MP072 
+16 
+ 17.4 Health professionals providing care in the postnatal period should discuss with 
+all women their own particular circumstances with regards to the 
+establishment of breastfeeding and lactation, and the appropriate use of 
+dummies, so as to ensure benefit from the positive aspects of dummy use 
+without putting the breastfeeding relationship at risk. In this way parents can 
+make an informed choice about the use of dummies. All discussions and 
+decisions should be documented in the baby’s notes by the health professional 
+or support worker providing care. 
+17.5 Nipple shields should be avoided as they may cause problems. They should 
+never be used in the first few days as full lactation is not yet established and 
+breast drainage will not be sufficient for the newborns need, with inadequate 
+stimulation of lactation. They must only be used under the guidance of a 
+trained midwife with referral to a member of staff in a breastfeeding support 
+post. Mothers should be made aware of the disadvantages and use 
+discontinued as soon as possible. The emphasis should be on the 
+establishment of lactation and ensuring adequate intake of milk in the baby. 
+Use of nipple shields during the establishment of lactation is not 
+recommended. 
+ 
+18 Formula Feeding 
+ 
+Mothers who formula feed will be enabled to do so as safely as possible through offers of 
+discussion about how to prepare infant formula, at home and also when out and about, using 
+the NHS guide to bottle feeding . We do not recommend prep machines as they have safety 
+concerns. Direct to First Steps Nutrition Website: 
+https://www.firststepsnutrition.org/infant -milks -overview 
+18.1 Mothers who formula feed will have a discussion about the importance of 
+responsive feeding and be encouraged to: 
+• Respond to cues that their baby is hungry 
+• Invite their baby to draw the teat rather than forcing the teat into their 
+baby’s mouth 
+• Pace the feed so that the baby is not forced to feed more than they 
+want to 
+• Recognise their baby’s feeding cues that they have had enough milk and 
+avoid forcing their baby to take more milk than the baby wants. 
+• Mothers should be advised that only First milks are advised for the first 
+year of life. 
+18.2 Early postnatal period: support for parenting and close relationships : 
+• Skin to skin contact will be encouraged throughout the postnatal period 
+• All parents will be supported to understand a newborn baby’s needs 
+(including encouraging frequent touch and sensitive verbal/visual 
+communication, keeping babies close, responsive feeding and safe 
+sleeping practice). Newborn Feeding (RSCH PRH only ) MP072 
+17 
+ • Mothers who bottle feed will be encouraged to hold their baby close 
+during feeds and offer the majority of feeds to their baby themselves to 
+help enhanc e the mother -baby relationship. 
+• Parents will be given information about local parenting support that is 
+available. 
+19 Recommendations for discussing bed -sharing with parents 
+ 
+To aid discussions with families: https://www.unicef.org.uk/babyfriendly/wp -
+content/uploads/sites/2/2011/11/Caring -for-your -Baby -at-Night -A-Health -Professionals -
+Guide.pdf 
+ 
+Simplistic messages in relation to where a baby sleeps should be av oided; neither blanket 
+prohibitions nor blanket permissions reflect the current research evidence. 
+ 
+The current body of evidence overwhelmingly supports the following key messages, which 
+shou ld be conveyed to all parents: 
+• The safest place for your baby to sleep is in a cot by your bed for the first 6 months 
+of life. 
+• They need a clear sleep space, no pillows, quilts or duvets, bumpers, pod nests or 
+sleep positioners 
+• Ensure baby’s head is uncovered so they don’t overheat 
+• If baby sleeps in sling ensure parents aware of TICKS guidance for safe use 
+• https://www.rospa.com/home -safety/advice/product/baby -slings 
+• Sleeping with your bay on a sofa puts your baby at greatest risk. It should never be done. 
+ 
+Your baby should not share a bed with anyone who is a smoker, has consumed alcohol, or 
+who has taken drugs (legal or illegal) that make them sleepy. 
+ 
+The incidence of SIDS (often called ‘cot death’ ) is higher in the following groups: 
+• Parents in low socio -economic groups 
+• Parents who currently abuse alcohol or drugs 
+• Young mothers with more than one child 
+• Premature infants and those with low birthweight 
+Parents within these groups will need more face to face discussion to ensure that these key 
+message s are explored and understood. 
+ 
+20 Guidance for the Management of t he Reluctant Feeder 
+(Appendix B flow chart) 
+ Newborn Feeding (RSCH PRH only ) MP072 
+18 
+ 20.1 To promote best practice in the care of newborn, healthy, term babies greater 
+than 2.5kg, between 3rd and 90th centile. 
+20.2 If babies have any risk factors for hypoglycaemia they should be managed as 
+per the Trust hypoglycaemia pathway. 
+20.3 Rationale 
+ Babies need to feed at frequent intervals and healthy, term 
+babies will wake and feed. The term “reluctant feeder” is applied 
+to newborn babies who are too sleepy to attach and suck at the 
+breast or who do not wake for feeds very often. 
+ It is quite normal for term babies to feed infrequently in the first 
+24 hours. If a baby has not fed within the first four hours or is not 
+effectively feeding within six hours, then it should be considered 
+to be a reluctant feeder. This guidance is not for babies with an 
+infrequent feeding pattern in the first 24 -48 hours but those who 
+are not waking for feeds at all. 
+ Reluctant feeding is common behaviour for many healthy term 
+babies in the first 24 hours of life and mothers will require 
+reassurance if they are anxious. Early, prolonged skin to skin 
+contact can minimise reluctance to breastfeed. 
+ Normal healthy term newborns are at low risk of hypoglycaemia 
+because of their physiological ability to adapt to a low enteral 
+food supply in the first 24 -48 hours. These babies are able to 
+mobilise alternate fuel sources to protect normal brain function. 
+It is essential to differentiate the healthy term neonate from the 
+baby who is at risk of hypoglycaemia. Lack of interest in feeding 
+can be the first sign of an unrecognised disorder or illness. For this 
+reason it is important to monitor these babies closely and 
+perform frequent Observations of vital signs to exclude 
+underlying illness and signs and symptoms of hypoglycaemia. 
+These include: 
+• Jitteriness – repetitive, unprovoked movements of one or more 
+limbs* 
+• Lethargy and/or hypertonia 
+• Feeding difficulties (poor suck/refusal to feed) 
+• Irritability and/or tremor 
+• Apnoea and cyanotic episodes 
+• High pitched cry 
+• Difficulty maintaining body temperature/hypothermia 
+• Coma and/or seizures 
+ 
+*jitteriness refers to a high frequency, generalised, symmetrical tremor of the limbs which 
+are unprovoked and usually relatively fast. It is important to be sure that this movement is 
+not simply a response to stimuli. Unlike seizures, jitteriness can usually be Newborn Feeding (RSCH PRH only ) MP072 
+19 
+ stopped/controlled by holding the limb firmly e.g. Baby’s arm held close to baby’s chest. 
+Excessive or persistent jitteriness requires investigation. 
+ It is necessary to stimulate a good milk supply by early and 
+frequent breastfeeding or expressing. This guideline aims to 
+support all health professionals in providing consistent advice and 
+in planning care and support mothers to become empowered to 
+help promote and manage their babies feeding. 
+ Babies may be slow to feed for a number of reasons; these 
+include sedation, illness, birth trauma and missed opportunity for 
+skin to skin contact . Babies who have had an instrumental birth, 
+long augmented or difficult labour can deplete their glycogen 
+stores. Babies that become cold also deplete their glycogen stores 
+and being too cold can depress feeding behaviour. 
+Thermoregulation should be monitored as per Trust Guideline 
+‘Care of the N ewborn Immediately after Birth’ MP069. 
+20.4 What if the mother does not want to express and give colostrum? 
+ The length of labour and type of birth may influence the mother’s 
+feelings about expressing. She may ask you to give formula instead. 
+Obviously give consideration to cultural/personal choices. However 
+remember that if her baby has not breastfed, she needs to express to 
+initiate good milk supply. This is because prolactin receptors should 
+be activated within 4 -6 hours of the birth to enhance , long term milk 
+production. Feeding or expressing soon after birth and frequently 
+thereafter is associated with long term success in breastfeeding . 
+ If a mother chooses not to express colostrum by hand or pump, and 
+requests her baby receive a supplementary formula feed, the aim 
+should be to ensure she is fully informed of the risks, benefits and 
+alternatives of all the choices available to her. To enable informed 
+choice, the mother has a right to know: 
+• Formula supplements are highly likely to negatively affect her 
+milk supply 
+• Giving formula may impair the baby’s ability to utilise ketone 
+bodies and counter -regulate (De Rooy and Hawdon, 2002). 
+• There is a risk of possible allergic sensitisation of the baby to 
+cow’s milk protein 
+• It is known that, in genetically susceptible individuals, 
+breastfeeding can have a protective effect on the later 
+development of diabetes. 
+ Newborn Feeding (RSCH PRH only ) MP072 
+20 
+ • When supplements are given with an artificial nipple (teat) 
+they have been associated with breastfeeding problems such 
+as incorrect suckin g technique and breast refusal . Although 
+some babies appear to be able to breastfeed successfully after 
+having been given a teat, there are other babies for whom 
+early introduction of a teat leads to breastfeeding cessation. 
+Therefore it makes sense to avoid teats wherever possible 
+while babies are learning to breastfeed. 
+ 
+• The discussion should take place in an unhurried manner and 
+should be given sensitively, as it may not be easy for a new 
+mother to hear. Ensure the mother understands that these are 
+risks, not certainties. The discussion should be documented in 
+the baby’s records. Mothers should be aware that staff will 
+respect her wishes and choices whatever she decides . Whilst 
+in-patients, all supplemental feeds should be documented on 
+Badgernet. If supplements are advised whilst doing a home 
+visit this should documented on Badgernet. Families should be 
+directed to the Guide to Bottle Feeding. 
+ 
+Any formula given should be appropriate to the baby’s age i.e. day ) 5 -10mls per feed, day 1 
+10-15mls per feed, day 2 15 -20mls per feed, day 3 20mls per feed. Formula top -ups should 
+not exceed 20mls per feed once lactation is established. 
+ 
+21 Process for weighing N ewborns 
+ 
+The process for weighing newborns is naked, on electronic scales, on a firm surface, ideally 
+in the prone position to reduce stress. For consistency, where possible t he same scales 
+should be used . Ideally ask parents to take a photograph to avoid errors . 
+Weights should be documented o n Badgernet and the Red Book, if available. 
+21.1 At birt h 
+21.2 At around 72hrs of age (day 3), if an inpatient, and if thought to be clinically 
+beneficial in terms of informing the feeding plan, o r if risk factors are present. 
+Occasionally this may be indicated whilst in the community if feeding 
+problems are identified. 
+21.3 Day 5: Along with observation of a full feed and documentation of feeding 
+assessment. 
+ Newborn Feeding (RSCH PRH only ) MP072 
+21 
+ 21.4 At day 10 or at next community appointment (Birth weight should normally 
+have been re -gained by 14 days. PLEASE NOTE: Babies should be gaining 
+weight at a minimum of 20g per day, from routine day 5 weight) Average 
+daily gain is 25 -30 grams per day. 
+21.5 Babies who have not regained their birthweight should not be discharged 
+from midwifery care. Babies who are not back to birthweight by 3 weeks 
+should be reviewed by their GP for faltering growth. 
+ 
+22 Identification of excessive weight loss 
+ 
+Neonatal weight loss in the first few days of life is part of normal physiological process 
+where excess extra -cellular fluid is excreted. This weight loss has been expected to be up to 
+10% of the birth weight, although this expectation was never evidence based. Recent 
+studies have indicated that normal weight loss in the majority of babies is more likely to be 
+around 5 -7% of birth weight (Dewey et al 2005, Macdonald 2003), however a small group of 
+babies may be vulnerable to greater loss. Peak weight loss usually occurs around 72 hours. 
+ 
+Excessive weight loss (>8%) in healthy breastfed newborns results when there is ineffective 
+milk transfer to the baby. The most likely reasons are: 
+ 
+• the baby is not latching to the breast effectively 
+• the baby is not feeding frequently enough or for long enough 
+• more rarely, it may be due to a medical condition or physical abnormality of either 
+mother or baby (illness, infection). 
+ 
+In all but a very small minority of cases the problem can be overcome with good feeding 
+management. If the problem is not corrected, suppression of milk production will result. In 
+the first few days of life the problem is more likely to be one of milk transfer from mother to 
+baby rather than milk supply. An underlying illness can in itself cause weight loss or may be 
+the reason for poor feeding responses. 
+ 
+Infant weight is a late indicator of poor breastfeeding and close monitoring of the following 
+would indicate poor breast milk intake prior to a weight loss occurring: 
+• Observing effective positioning and attachment 
+• Observation of the suck/swallow pattern of the baby throughout a feed 
+• Frequent assessment of urine output and stool frequency 
+23 Calculating weight l oss 
+ 
+Calculation of percentage weight loss in infant 
+Actual weight loss ÷ BW × 100 = n% 
+Example: 
+BW of 3500g, weight on day 5 3140g = loss of 360g 
+360 ÷ 3500 × 100 = 10.2% 
+ Newborn Feeding (RSCH PRH only ) MP072 
+22 
+ Weight loss of 8 -10.0% Plan A should be commenced. 
+Weight loss of >10 -12.0% Plan A and B 
+Weight loss of >12% Plan A, B and C (see below) 
+Please refer to Trust Guideline for the Prevention and Management of Excessive Weight 
+Loss in Healthy Breastfed Newborns Appendix D 
+ Newborn Feeding (RSCH PRH only ) MP072 
+23 
+ 24 Action plans for weight loss (Appendix C) 
+24.1 Plan A 8 -10% weight loss after 72hrs (or for older babies) (Appendix C) 
+ Perform a full examination of the baby and re -check weights and 
+calculations 
+ Take a full breastfeeding history from the mother 
+ Observe a full breastfeed – ensure effective positioning and 
+attachment. Observe sucking pattern – short initial sucks change 
+to deep rhythmic sucks with pauses and audible swallows from 
+day 4 -6 as milk volume increases. Ratio should be one to two 
+sucks per swallow. Document the ratio. Complete the 
+breastfeeding assessment form on Badgernet . 
+ Teach the mother how to do breast compressions whilst baby is 
+feeding. 
+ Ensure minimum of 8 feeds in 24 hours. Advic e mother to initiate 
+feeds every 2 -3 hours if baby not showing feeding cues regularly. 
+Show mother how to wake a sleepy baby. Start a feed chart via 
+the breastfeeding diary (Appendix 2) 
+ Skin to skin contact to encourage pre -feeding behaviour and 
+effective breastfeeding 
+ Observe for change in frequency and volume of urine and stool 
+output, ensure changing stool pattern. 
+ If a restricted lingual frenulum (tongue tie) is suspected book a 
+clinic appointment via Badgernet or by email the antenatal clinic 
+at RSCH or Maternity Office at PRH. 
+Uhsussex.maternityadminprh@nhs.net or 
+uhsussex.maternityadminrsch@nhs.net 
+ If at any point illness is suspected refer immediately to SCBU or 
+CASU 
+ Offer visit/telephone after 24 hours to ensure stool and urine 
+output are improving 
+ Review at 24 -48 hours. Consider re -weigh in 48hours if no change 
+in frequency/amount of urine and stools and document. Minimal 
+weight gain is 20g in a 24hour period. If weight increasing , 
+continue to monitor and provide encouragement and support. 
+ After 48 hours if no weight increase, move to management plan 
+B straight away. 
+ Newborn Feeding (RSCH PRH only ) MP072 
+24 
+ 24.2 Plan B >10 -12% weight loss of birth weight at 72 hours or for older babies 
+with no/minimal improvement following management plan A (Appendix C) 
+ Follow management plan A 
+ Refer to the infant feeding team 
+ Discuss with neonatal registrar for underlying illness. If baby is 
+clinically well continue with plan B. 
+ Perform a full set of observations. Examine baby and also look for 
+signs of jaundice and document extent. 
+ Commence a breastfeeding diary Appendix 2 
+ Ensure breast compressions are being done effectively and 
+throughout a feed 
+ If babies are sleepy or have a poor suck, teach mothers ‘switch 
+nursing’ technique *, which involves swapping the baby from one 
+breast to the other and back each time the sucking pattern ceases 
+to be a nutritive pattern (short term only) 
+ Monitor and record urine and stool output noting frequency and 
+colour. 
+ Express breastmilk after each feed , ideally using a double electric 
+breast pump and give to baby. Express for 15 minutes following 
+feeds. Continue even when the flow of milk stops. Any milk 
+expressed can be given as a top up following the next feed. 
+ Visit at 24hours to ensure stool and urine output are improving 
+and breastfeeding is more effective and/or frequent. 
+ Ensure you are aware of any issues specific to the mother and 
+have considered any potential impact on that individual situation. 
+ Weigh again at 48hours, preferably on the same scales. 
+ If no increase in weight or only minimal increase (<20g day) or 
+weight loss, move to Management Plan C straight away. 
+*switch nursing technique is used for sleepy babies. Let baby feed at the breast until sucking 
+and swallowing slows down then swap breasts. Do this thro ughout the feed. For short -term 
+use only. 
+ Newborn Feeding (RSCH PRH only ) MP072 
+25 
+ 24.3 Plan C More than 12.% weight loss of birth weight at 72 hours or for older 
+babies or no/minimal improvement following management plans A and B 
+refer baby to CASU at RACH (RSCH) or SCBU <14 days (PRH). This is 
+mandatory (Appendix C) 
+24.4 Follow management plan A and B plus: 
+ Minimum of 8 feeds in 24 hours plus supplements of EBM each 
+feed to rehydrate. If EBM is insufficient give adequate volume of 
+formula for age of baby. 
+ Express after and between feeds, using hand expressing, own 
+pump or hospital grade pump, whichever yields most milk to 
+increase supply. 
+ Re-weigh in 24hours then weekly weights, until clear trend 
+towards birth weight is demonstrated. 
+ COMPLETE A DATIX 
+ 
+24.5 Treatment for babies requiring rehydration 
+ All babies should be supplemented with expressed breast milk in 
+the first instance. This would be done with a plan to protect the 
+breastfeeding relationship and preserve breastmilk supply. 
+Formula should only be used if insufficient volumes of expressed 
+breastmilk are available whilst encouraging 
+breastfeeding/expressing 
+ A pragmatic approach would be to feed the baby between ½ of its 
+fluid requirement as supplemental feeds whilst continuing to 
+support lactation and breastfeeding. 
+25 Calculating milk volumes for supplementation (Appendix D) 
+Rationale for colostrum vo lumes in healthy term infant that will not latch due to tongue tie 
+or other problems 
+As there is limited research available, the amount of expressed milk given should reflect the 
+normal amounts of colostrum available, the size of the infant’s stomach and the age and 
+size of infant (The Academy of Breastfeeding Medicine, 2017). Several studies give an idea 
+of intakes at the breast over time. None are indications of the mother’s capacity to make 
+milk. The number of feedings should be based on infant cues. 
+Average Reported Intakes of Colostrum per feed by Healthy, Term Breastfed Infants 
+(Academy of Breastfeeding Medicine, 2017) 
+ 
+ Newborn Feeding (RSCH PRH only ) MP072 
+26 
+ Time (hours) Intake (ml per feed) 
+First 24 hours (Day 0) 2-10 
+24-48 (Day 1) 5-15 
+48-72 (Day 2) 15-30 
+72-96 (Day 3) 30-60 
+ 
+Boss et al (2018) found that the mean milk production of lactating women by 8 days 
+postpartum is 650 mL/24 hours, and from 1 to 6 months of lactation the mean range for 
+exclusively breastfed infants is between 750 and 800 mL/24 hours. 
+Volume of milk required in 24hrs mls/kg 
+Day 3 120mls/kg 
+Day 4 140mls/kg 
+Day 5 onwards 150mls/kg 
+ 
+This would equate to approximately 30mls of milk per feed for a 4kg baby on day 3 if 
+feeding 3 hourly (120mls/kg). This supplement may also be given as 1 feed of 60mls 
+approximately 6 hourly along with support of lactation and feeding. Larger supplements 
+given less frequently may be more protective for breastfeeding and lactation. All feeds 
+should be clearly documented on the feeding chart. Feeds should not be more than 6 hours 
+apart in this group of babies and breastfeeding and/or breastmilk should be given in 
+between formula feeds as frequently as possible. Breastmilk removal at night is important 
+for lactation production. 
+Supplementation should reduce once breastmilk yield increases, baby’s weight has 
+increased and blood profile has normalised. 
+References ; 
+Academy of Breastfeeding Medicine Protocol Committee.(2017) ‘ABM Protocol # Hospital 
+Guidelines for the Use of Supplementary Feedings in the Healthy Term Breastfed Neonate. 
+Revised 2017’. Breastfeeding Medicine Vol 12 (4) 
+Boss, Melinda et al.( 2018) ‘Normal Human Lactation: closing the gap’ F1000Research vol. 7 
+F1000 Faculty Rev -801. 20 Jun. 2018, doi:10.12688/f1000research.14452.12 
+ 
+26 Neonatal readmissions 
+ 
+The health professional admitting the baby into hospital should be responsible for 
+completing the DATIX form. The Infant Feeding Specialist midwife with liaise with Clinical 
+Governance regularly to analyse data on readmissions for excessive weight loss and 
+resulting hypernatremia on an individual basis. 
+ Newborn Feeding (RSCH PRH only ) MP072 
+27 
+ 26.1 Babies readmitted to the postnatal ward 
+Readmitted with: 
+• >12% weight loss 
+• Sodium >150 
+• Complex feeding problems 
+26.2 Management P lan 
+• ANNP or Neonatologist will clinically review baby 
+• ANNP or neonatologist will discuss and agree a management plan 
+with the mother and action a feeding plan accordingly. This should 
+be clearly documented in the baby’s notes. 
+• System for reporting all newborns readmitted to hospital with 
+feeding problems in the first 28 days of life: admitting clinicians 
+will complete DATIX form. For more information on how the Datix 
+is then managed please see MD085 Maternity Risk Management 
+Strategy Page 22, 14.6 
+26.3 Midwives providing care should: 
+• Commence checking and documenting wet and dirty nappies 
+• Contact Infant feeding team for on -going support 
+• Consider and support maternal physical and mental health 
+26.4 For women who are breastfeeding the management plan should be: 
+• BF responsively looking for early feeding cues, but at least 3hrly + 
+top up volumes below (see be low) via bottle 
+• Day 3 120ml/kg. Day 4 140 mls/kg. Day 5 onwards 150mls/kg. 
+Depending on what the baby is taking from the breast, these 
+volumes may exceed what a thriving breastfed baby would take 
+and can have a negative impact on helping the mother to achieve 
+exclusive breastfeeding. If the baby is seen to breastfeed well and 
+it has been assessed that there has been good milk transfer, the 
+volume of top up can be adjusted accordingly.) 
+• Midwife providing care should encourage and support women to 
+continue to breastfeed and commence expressing (see expressing 
+section) 
+• The quality and volumes of each feed should be documented in 
+the baby’s notes and on the feed chart. 
+• As the breastfeeding / lactation improves, mothers should be 
+given a plan to reduce the volume of top ups and return to 
+exclusive breastfeeding . 
+26.5 For women who are artificially feeding baby 
+• Artificially feed baby volumes below 
+• Day 3 onwards 150ml/kg 
+• The quality and volumes of each feed should be documented in 
+the baby’s notes and on the feed chart 
+ Newborn Feeding (RSCH PRH only ) MP072 
+28 
+ Section 2 
+ 
+1 Babies requiring care in the n eonatal unit 
+ 
+1.1 Parents with a baby on the neonatal unit are supported to have a close and 
+loving relationship with their baby. All parents will: 
+ Have a discussion with an appropriate staff member as soon as 
+possible (either before or after their baby’s birth) about the 
+importance of touch, comfort and communication for their baby’s 
+health and development as soon as possible. 
+ Be encouraged to provide touch, comfort and emotional support to 
+their baby, throughout their baby’s stay on the neonatal unit. 
+ Be enabled to have frequent and prolonged skin to sin contact with 
+their baby as soon as possible after the birth and throughout the 
+baby’s stay on the neonatal unit, providing the baby’s condition 
+allows. 
+1.2 This service recognises the importance of breastmilk for babies’ survival and 
+health. Therefore, this service will ensure that: 
+ A mother’s own breastmilk is always the first choice to feed her baby. 
+ Mothers have a discussion regarding the importance of their 
+breastmilk for their preterm or ill baby as soon as is appropriate. 
+ A suitable environment conducive to effective expression is created 
+ Mothers have access to effective breast pumps and equipment. 
+ Mothers are enabled to express breastmilk for their baby, including 
+support to: 
+• Express as early as possible after birth (ideally within two 
+hours). 
+• Learn how to express effectively, including by hand and 
+by pump, using breast compressions to optimise supply. 
+• Learn how to use pump equipment and store milk safely. 
+• Express frequen tly between 8 -10 times in 24 hours, 
+including once at night), especially in the first two to three 
+weeks following delivery, in order to optimise long term 
+milk supply. 
+• Overcome expressing difficulties where necessary, 
+particularly where milk supply is inadequate, or if less 
+than 750ml in 24hours is expressed by day 10. 
+• Stay close to their babies when expressing milk Newborn Feeding (RSCH PRH only ) MP072 
+29 
+ • Use their milk for mouth care when their baby is not 
+tolerating oral feeds, and later to tempt their baby to 
+feed. 
+1.3 Where possible, breastfeeding babies should receive their non -nutritive 
+sucking at the breast. There is evidence that non -nutritive sucking in this way 
+improves breastfeeding outcomes. 
+1.4 In mothers absence or if non -nutritive sucking at the breast is not possible for 
+medical reasons for e.g. CPAP and venti lation, it may be appropriate, with her 
+permission and under the guidance of senior neonatal nurs e to temporarily 
+provide non -nutritive sucking with a dummy. In certain cases for e.g. when 
+baby’s fluid intake is restricted , non -nutritive sucking may be offered at the 
+breast after mother has expressed and emptied her breasts or by a dummy 
+1.5 In cases where the baby has been using a dummy on the neonatal unit and is 
+then transferred from the neonatal unit to the postnatal ward for transitional 
+care, further dummy use will be discouraged so as to ensure any sucking, 
+nutritive or non -nutritive is received at the breast so as to avoid sucking 
+abnormalities which may complicate breastfeeding. 
+1.6 When supplementation is medically indicated, there must be a 
+breastfeeding/lactation supportive plan put in p lace, with a plan for reducing 
+supplementation as soon as possible. 
+1.7 A formal review of expressing is undertaken a minimum of four times in the 
+first two weeks to support optimum expressing and milk supply. 
+1.8 This service will ensure that mothers receive care that supports the transition 
+to breastfeeding, including support to: 
+ Recognise and respond to feeding cues and use skin to skin contact to 
+encourage instinctive feeding behaviour 
+ Position and attach their baby for breastfeeding 
+ Recognise effective feeding and overcome challenges when needed. 
+ 
+2 Valuing parents as partners in care whilst on the neonatal u nit 
+ Newborn Feeding (RSCH PRH only ) MP072 
+30 
+ 2.1 This service recognises that parents are vital to ensuring the best possible 
+short and long term outcomes for babies and therefore, should considered a s 
+the primary partners in care. The service will ensure that parents: 
+ Have unrestricted access to their baby , unless individual restrictions 
+can be justified in the baby’s best interest. 
+ Are fully involved in their baby’s care, with all care possible entrusted 
+to them. 
+ Are listened to, including their observations, feelings and wishes 
+regarding their baby’s care 
+ Have full information regarding their baby’s condition and treatment 
+to enable informed decision making. 
+ Are make comfortable when on the unit, with the aim of enabling 
+them to spend as much time as is possible with their baby. 
+2.2 The Neonatal unit will ensure that parents who formula feed: 
+ Receive information about how to clean, sterilise equipment and 
+make up a bottle of formula milk as safely as possible to minimise the 
+risks of formula milk. 
+ Are able to bottle feed using a safe and responsive technique. 
+ 
+3 Babies Receiving Special / Transitional Care 
+ 
+Babies at risk of hypoglycaemia should follow the hypoglycaemic pathway (see 
+hypoglycaemia protocol MP069 Care of the Newborn immediately after birth ). 
+Breast milk will be the first choice of nutrition, other supplements may be necessary. When 
+other supplementation is medica lly indicated, the lead health professional (midwife, ANNP 
+or neonatologist) must give women full explanations and obtain informed consent. All 
+conversations should be documented and a supplemental sticker completed for the notes 
+for those babies on transitional care. 
+ Newborn Feeding (RSCH PRH only ) MP072 
+31 
+ 3.1 Advise mother where she can obtain a suitable pump for use at home 
+3.2 Continue to keep offering the breast. Use both prescriptive holds and 
+biological nurturing. Avoid situations where baby and mother become upset 
+at efforts to breastfeed 
+3.3 Where possible avoid a bottle in the first five days. After this, the larger 
+quantities of breast milk required, may necessitate the use of a bottle 
+3.4 Give parents information about how to assess neonatal wellbeing, including 
+expected number and volume of wet nappies and numbers of dirty nappies 
+and colour of stool. Parents should be advised to ring the community 
+midwives office if there are concerns re baby’s urine or stool output. 
+3.5 Inform parents about local and national breastfeeding drop -ins, which 
+provide ongoing support, and telephone advice. 
+3.6 Inform partner and family and friends so that they can provide support 
+which, protects the breastfeeding relationship and allows mother to make 
+her own choices 
+3.7 Staff should remain positive, in their attitude. As long as the mother is 
+establishing a good lactation, the window of opportunity for breastfeeding 
+remains open. 
+
+Section 3 
+ 
+1 Neonatal jaundice and s uppor ting breastfeeding outside of the 
+neonatal u nit 
+ 
+Optimal Care of the Breastfeeding Newborn 
+1.1 The following advice and measure s have been shown to: 
+• help to reduce the severity of physiological jaundice 
+• prevent its transition to a pathological condition which may threaten the 
+breastfeeding relationship 
+1.2 Colostrum has a laxative affect, and early establishment of breastfeeding and 
+the subsequent bowel stimulation helps to reduce the incidence and seve rity 
+of physiological jaundice, meconium contains bilirubin which is reab sorbed 
+through the neonatal gut 
+1.3 After delivery t he midwi fe providing care at birth will: 
+• Help with the first breastfeed 
+• If the baby does not feed at birth the midwife providing care should show 
+the mother how to hand express Newborn Feeding (RSCH PRH only ) MP072 
+32 
+ 1.4 If the baby is reluctant to breastfeed in the first two days, mother should be 
+encouraged to hand express and offer the baby her colostrum in a syringe. 
+2 The presence of physiological jaundice from 2 -3 days 
+2.1 The midwife providing postnatal care should advise mother to: 
+ Arrange a transcutaneous bilirubin check (TCB) within 24hrs if no 
+other concerns. If concerns regarding wellbeing or raised TCB refer to 
+RACH/SCBU 
+ Look for early feeding cues, a nd respond to them (responsive 
+feeding). 
+ If the baby is not waking spontaneously, wake baby every three hours 
+and offer a breastfeed. 
+ Seek advice from the midwife should the baby refuse to feed on two 
+consecutive occasions . 
+ Respond to feeding cues. Do not wait for the baby to cry for food. 
+ Aim that the baby has 8-12 good feeds in 24 hrs 
+2.2 Advise to keep baby warm 
+2.3 The midwife providing postnatal care should show the mother: 
+ How to wake a sleepy baby, in order to achieve a successful 
+breastfeed 
+ Optimise positioning and attachment so that breast drainage is 
+optimal and assess adequate milk transfer by observing the suck and 
+swallow pattern (ratio2:1) 
+2.4 Breast milk aids the conjugation and elimination of bilirub in, offer the second 
+ breast, once the first breast is drained. 
+ 
+3 Concerns about l actation 
+ 
+If there are concerns over lactation, the Midwife providing postnatal care should: Newborn Feeding (RSCH PRH only ) MP072 
+33 
+ 3.1 Suggest expressing after feeds to increase the amount of milk available at the 
+next feed, and offer any EBM expressed, by cup 
+3.2 Offer additional support with breastfeeding by referring to the breastfeeding 
+team 
+3.3 Ensure that mother knows how to seek advice on a 24 hr basis 
+3.4 Always refer to a paediatrician if the baby’s condition gives rise for concern. 
+3.5 If the jaundice persists beyond ten days, refer for assessment but continue to 
+support breastfeeding 
+ 
+4 Staff Rules 
+ 
+4.1 All staff must follow the International Code for the Advertising of Artificial Milk 
+and all Breast Milk Substitutes. This prohibits the advertising or promotion of 
+any artificial milk and associated equipment. 
+4.2 Employees should never recommend a particular brand of artificial of milk. 
+4.3 Evidence based information is available from First Steps Nutrition , a UK 
+document which is published quarterly. 
+4.4 Artificial milk company representatives are only allowed on site by prior 
+appointment with either, the Infant Feeding Midwife, named neonatal 
+consultant or neonatal dietician. 
+ 
+5 Training and co mpliance 
+ 
+5.1 Please refer to the Training Needs Analysis document for details on staff training in 
+relation to this protocol. 
+5.2 Please refer to the Monitoring and Auditing document for details on monitoring 
+compliance for this protocol. 
+In addition there will be at least one annual audit of infant feeding outcomes, using the BFI 
+Maternity Audit tool. Audit results will be reported to the Head of Midwifery. 
+ 
+6 Supporting Documentation and R eferences 
+ 
+De Rooy L, Hawdon J. (2002) Nutritional factors that affect the postnatal metabolic 
+adaptation of full -term small for gestational age infants. P aediatrics; 109:e42. Newborn Feeding (RSCH PRH only ) MP072 
+34 
+ WHO Code of Milk marketing substitutes https://www.unicef.org.uk/babyfriendly/baby -
+friendly -resources/international -code -marketing -breastmilk -substitutes -resources/the -
+code/ 
+ 
+Unicef Baby Friendly Resources: https://www.unicef.org.uk/babyfriendly/baby -friendly -
+resources/breastfeeding -resources/ 
+ 
+Unicef Bottle Feeding: https://www.unicef.org.uk/babyfriendly/baby -friendly -
+resources/bottle -feeding -resources/ 
+ 
+First Steps Nutrition Trust Infant milks Overview: https://www.firststepsnutrition.org/infant -
+milks -overview 
+ 
+Building a Happy Baby Leaflet: https://www.unicef.org.uk/babyfriendly/wp -
+content/uploads/sites/2/2018/04/happybaby_leaflet_web.pdf 
+ 
+Sleep Information: https://www.lullabytrust.org.uk/safer -sleep -advice/ 
+ 
+Off to the Best start: https://www.unicef.org.uk/babyfriendly/baby -friendly -
+resources/breastfeeding -resources/off -to-the-best -start/ 
+
+Academy of Breastfeeding Medi cine: 
+https://abm.memberclicks.net/assets/DOCUMENTS/PROTOCOLS/3 -supplementation -
+protocol -english.pdf?fbclid=IwAR3fg5 -2kXF5D4kCH0 -
+PKk4SMVD_rAepDIyyNkYAOdeX4p0xz8ws9QFl8 -c 
+ 
+NICE Faltering Growth -recognition and management of faltering growth in children 2017. 
+https://www.nice.org.uk/guidance/ng75 
+ 
+Appendices 
+ 
+1 Appendix A – Cup and syringe f eeding PIL 
+ 
+cup and syringe 
+feeding.pdf
+
+ Newborn Feeding (RSCH PRH only ) MP072 
+35 
+ 2 Appendix B – Feeding flowchart 
+Managemen t of feeding for all healthy term i nfants >37 weeks and >2.5kg. 
+Recognition and m anagement of the reluctant feeder 0-24h 
+
+ 6-8 hours following 
+birth 
+▪ Second feed 
+completed? 
+ 
+ Fed effectively? 
+NO 
+Initiate Active Feeding plan** 
+Active Feeding Plan** 
+▪ Maintain skin -to- skin contact 
+▪ Try mother & baby in laid back 
+position 
+▪ Review every 2 -3 hours 
+▪ Actively encourage feeding 
+▪ Offer feeds according to feeding 
+cues at least 8 -10 times in 24 
+hours when feeding established 
+▪ If Breastfeeding: hand express at 
+least 8 -10 times in 24 hours 
+(commence pumping from day 2 
+or when milk comes in if mother 
+chooses to do so) 
+▪ Continue to give EBM and actively 
+support until breastfeeding 
+▪ Avoid teats dummies and nipple 
+shields 
+▪ Support mother and listen/action 
+any concerns regarding ill health 
+▪ Monitor well -being of baby at last 
+4 hourly * 
+▪ Continue until feeding issue 
+resolves 
+ YES 
+ 
+Complete Initial ‘Breastfeeding 
+Assessment within 6 hours of birth or 
+once feeding initiated. 
+Assess: 
+▪ Signs of effective feeding 
+▪ Pain Free 
+▪ Breast/Nipple Damage 
+▪ Maternal Concerns 
+▪ Baby readiness to feed 
+▪ Monitor well -being * 
+Once baby is feeding successfully (at 
+least twice since birth) 
+▪ Complete Badgernet feeding 
+assessment twice in 1st week as 
+a minimum. 
+Once baby is feeding successfully: 
+▪ Complete the Bottle feeding 
+assessment for formula fed 
+babies. Monitor well –being of baby at 
+least 4 hourly* 
+Check: 
+▪ Any maternal concerns 
+▪ Colour 
+▪ Tone 
+▪ Respiratory well -being 
+▪ Temperature 
+▪ Alertness/level of 
+consciousness 
+▪ Number and consistency 
+of wet & dirty nappies 
+▪ Risk for sepsis 
+ 
+If any signs of illness refer to 
+neonatal team or contact 
+Paediatric team if coming in 
+from home. 
+ 
+Any hypoglycaemia concerns 
+refer to guideline YES NO
+O
+O 
+NO Birth - All Babies 
+▪ Dry baby/keep warm 
+▪ Initiate and maintain skin 
+contact for at least 1 hour or 
+until after 1st feed 
+▪ Encourage responsiveness with 
+mother 
+▪ Discuss signs of readiness to 
+feed 
+▪ First feed in skin contact 
+preferably within 1 hour 
+▪ For babies being fed formula 
+follow this chart but give 
+formula milk instead of 
+colostrum 
+ 
+Fed Effectively? 1-2 hours following birth 
+▪ Maintain skin -to- 
+skin contact 
+▪ Try mother & baby 
+with feeding 
+positions including 
+laid back position 
+▪ Assess well -being of 
+the baby * and 
+record observations 
+▪ If breastfeeding 
+encourage mother 
+to hand expres s and 
+give colostrum 
+(EBM) baby 
+ 
+Fed Effectively? Newborn Feeding (RSCH PRH only ) MP072 
+36 
+ Management of feeding for all healthy term i nfants >37 weeks and >2.5kg . 
+Identification and management of the r eluctant feeder more than 24 hours old 
+
+ Concerns about baby wellbeing?* 
+ 
+▪ Refer to neonatal team/to 
+paediatric team if coming in 
+from home* 
+ 
+Day 2 (48 - 72 hours old) and not breastfeeding continue to: 
+ 
+▪ Encourage long periods of skin - to-skin /laid back position 
+▪ Observe and document clinical signs of wellbeing 4 h ourly Colour, 
+tone, alertness, temperature, general wellbeing, desire to feed, 
+hunger cues 
+▪ Monitor urinary output and frequency and colour of stools 
+▪ Offer breast 2 -3 hourly 
+▪ Express using pump, at least 8 -10 times in 24 hrs 
+▪ Give EBM, increase volume to 15 -30 ml/feed 
+▪ If EBM volume is small despite frequent expressing, consider 
+offering formula supplement to make up the difference to 
+20ml/feed by cup 
+▪ Refer to infant feeding team YES 
+Responsive 
+Feeding Suggested volumes are an average. Increase feeding 
+volumes daily to meet baby’s needs. Some will take 
+more, some less. Start small, more can be offered 
+when baby cues. Day 1 (24 - 48 hours old) and not 
+breastfeeding, co ntinue to: 
+ 
+▪ Encourage long periods of skin to 
+skin /laid back position 
+▪ Observe and document clinical signs 
+of well-being 4 h ourly: Colour, tone, 
+alertness, temperature, general 
+wellbeing, desire to feed, hunger 
+cues 
+▪ Monitor urinary output and 
+frequency and colour of stools 
+▪ Offer breast 2 - 3 hourly 
+▪ Hand express frequently 8 -10 times 
+in 24 hrs 
+▪ Give EBM, increase volume 5 - 15 
+ml/feed or more if available 
+▪ If EBM volume is <5ml despite 
+frequent hand expressing consider 
+offering A/F top -up, 10 -15mls/feed 
+by cup. 
+Baby feeds? Features suggesting a same day 
+medical review to exclude 
+hypoglycaemia or other illness* 
+▪ Not waking or showing signs of 
+hunger 
+▪ Temperature outside of 
+normal range (36.5°C – 37.4) 
+▪ Floppy, sleepy/ reduced 
+responsiveness on handling 
+▪ Pallor 
+▪ Cool peripheries, mottling or 
+slow capillary refill ( > 2 
+seconds) 
+▪ Heart rate outside normal 
+limits (100 -160 beats per 
+minute) 
+▪ Respiration rate outside 
+normal limits (40 -60 breaths 
+per minute) or signs of 
+increased work of breathing. 
+Apnoea 
+▪ Abnormal cry 
+▪ Jitteriness can be normal but if 
+persistent/recurrent and/or 
+infant has other concerns 
+consider hypoglycaemia or 
+illness as a potential cause. 
+Seizures require urgent review. NO Newborn Feeding (RSCH PRH only ) MP072 
+37 
+ 3 Appendix C – Prevention and management of excessive weight 
+loss in healthy breastfed newborns 
+ 
+Plan A 8-10% weight loss after 72hrs (or for older babies) 
+• Perform a full examination of the baby and re -check weights and calculations 
+• Take a full breastfeeding history from the mother 
+• Observe a full breastfeed – ensure effective positioning and attachment. Observe 
+sucking pattern – short initial sucks change to deep rhythmic sucks with pauses and 
+audible swallows from day 4 -6 as milk volume increases. Ratio should be one to two 
+sucks per swallow. Document the ratio. Complete the breastfeeding assessment 
+form 
+• Teach the mother how to do breast compressions whi lst baby is feeding 
+• Ensure minimum of 8 feeds in 24 hours. Inform mother to initiate feeds every 2 -
+3hours if baby not showing feeding cues regularly. Show mother how to wake a 
+sleepy baby. Start a feed chart via the breastfeeding diary (Appendix A) 
+• Skin to skin contact to encourage pre -feeding behaviour and effective breastfeeding 
+• Observe for change in frequency and volume of urine and stool output, ensure 
+changing stool pattern. 
+• If a restricted lingual frenulum (tongue tie) is suspected book a clinic appointment by 
+telephoning the antenatal clinic at RSCH 
+• If at any point illness is suspected refer immediately to SCBU or CASU 
+ 
+3.1 Offer visit or telephone call after 24 hours to ensure stool and urine output 
+are improving. 
+• Review at 24 -48 hours. Consider re -weigh in 48hours if no change in frequency/amount of 
+urine and stools and document. Minimal weight gain is 20g in a 24hour period. If weight 
+increasing continue to monitor and provide encouragement and support. 
+ 
+After 48 hours if no weight increase, move to management plan B straight away 
+ 
+Plan B >10 -12% weight loss of birth weight at 72 hours or for older babies with no/minimal 
+improvement following management plan A 
+• Follow management plan A plus 
+• Discuss with neonatal registrar for underlying illness. If baby clinically well continue 
+with plan B. 
+• Perform a full set of observations. Examine baby and also look for signs of jaundice 
+and document extent. 
+• Ensure skilled help w ith positioning and attachment. R efer to a more exp erienced 
+colleague if necessary . 
+• Commence a breastfeeding diary (appendix 2) 
+• Ensure breast compressions are being done effectively and throughout a feed Newborn Feeding (RSCH PRH only ) MP072 
+38 
+ • If babies are sleepy or have a poor suck, teach mothers switch nursing* technique, 
+which involves swapping the baby from one breast to the other and back each time 
+the sucking pattern ceases to be a nutritive pattern. 
+• Monitor and record urine and stool output noting frequency and colour. 
+• Express breastmilk after each feed and give to baby. Express for 15 minutes following 
+feeds. Continue even when the flow of milk stops. Any milk expressed can be given 
+as a top up following the next feed. 
+ 
+3.2 Visit at 24 hours to ensure stool and urine output are improving and 
+breastfeeding is more effective and/or frequent. 
+• Ensure you are aware of any issues specific to the mother and have considered any 
+potential impact on that individual situation. 
+ 
+• Weigh again at 48 hours, preferably on the same scales. 
+
+If no increase in weight or only minimal increase (<20g day) or w eight loss, move to 
+management p lan C straight away. 
+ 
+*switch nursing technique swaps baby from one breast to the other and back each time the 
+sucking pattern ceases to be a nutritive pattern. 
+
+Plan C more than 12% weight loss of birth weight at 72 hours or for older babies with no 
+minimal improvement following management plans A and B 
+ 
+• Refer baby to CASU at RACH (RSCH) or SCBU (PRH) if <14 days . This is mandatory. 
+ 
+Follow management plan A and B plus: 
+ 
+• Perform a full set of observations. Examine the baby for signs of jaundice and 
+document extent of jaundice. Observe urine and stool frequency. 
+• Minimum of 8 feeds in 24 hours plus supplements of EBM each feed to rehydrate 
+plus appropriate formula supplementation when clinically indicated. Express after 
+and between feeds, using hand expressing, own pump or hospital grade pump, 
+whichever yields most milk to increase supply. 
+• Re-weigh in 24hours then weekly weights, until clear trend towards birth weight is 
+demonstrated. 
+• Serum sodium <150 admit to SCBU/RACH commence feeding plan 
+• Serum sodium 150 -170 admit to SCBU/RACH – IV or oral rehydration 
+• Serum sodium >170 admit to SCBU/RACH – IV rehydration Newborn Feeding (RSCH PRH only ) MP072 
+39 
+ 4 Appendix D – Calculating milk volumes for supplementation 
+ 
+Rationale for colostrum volumes in a healthy term infant w ho will not latch due to tongue 
+tie or other problems. 
+As there is limited research available, the amount of expressed milk given should reflect the 
+normal amounts of colostrum available, the size of the infant’s stomach and the age and 
+size of infant (The Academy of Breastfeeding Medicine, 2017). Several studies give an idea 
+of intakes at the breast over time. None are indications of the mother’s capacity to make 
+milk. The number of feedings should be based on infant cues. 
+Average Reported Intakes of Colostrum per feed by Healthy, Term Breastfed Infants 
+(Academy of Breastfeeding Medicine, 2017) 
+ 
+Time (hours) Intake (ml per feed) 
+First 24 hours (Day 0) 2-10 
+24-48 (Day 1) 5-15 
+48-72 (Day 2) 15-30 
+72-96 (Day 3) 30-60 
+ 
+Boss et al (2018) found that the mean milk production of lactating women by 8 days 
+postpartum is 650 mL/24 hours, and from 1 to 6 months of lactation the mean range for 
+exclusively breastfed infants is between 750 and 800 mL/24 hours. 
+ 
+Volume of milk required in 24hrs mls/kg 
+Day 3 120mls/kg 
+Day 4 140mls/kg 
+Day 5 onwards 150mls/kg 
+ 
+This would equate to approximately 60mls of milk per feed for a 4kg baby on day 3 if 
+feeding 3 hourly (120mls/kg/day), and taking no breastfeeds. It may be prudent and 
+protective of breastfeeding to give half this volume if the baby is breastfeeding and taking 
+some milk and the infant requires a top -up only. Larger supplements given less frequently 
+may be more protective for breastfeeding and lactation. All feeds should be clearly 
+documented on the feeding chart. Feeds should not be more than 6 hours apart in this 
+group of babies and breastfeeding and/or breastmilk should be given in between formula 
+feeds as frequently as possible. Breastmilk removal at night is important for lactation 
+production. 
+Supplementation should reduce once breastmilk yield increases, baby’s weight has 
+increased and blood profile has normalised. 
+ 
+References 
+Academy of Breastfeeding Medicine Protocol Committee.(2017) ‘ABM Protocol # Hospital 
+Guidelines for the Use of Supplementary Feedings in the Healthy Term Breastfed Neonate. 
+Revised 2017’. Breastfeeding Medicine Vol 12 (4) 
+Boss, Melinda et al.( 2018) ‘Normal Human Lactation: closing the gap’ F1000Research vol. 7 
+F1000 Faculty Rev -801. 20 Jun. 2018, doi:10.12688/f1000research.14452.12 Newborn Feeding (RSCH PRH only ) MP072 
+40 
+ 
+5 Appendix E – Transcutaneous bilirubin monitoring 
+ 
+Use serum bilirubin measurement for babies: 
+• in the first 24 hours of life or 
+• who have a gestational age of less than 35 weeks . 
+In babies who have a gestational age of 35 weeks or more, and who are over 24 hours old: 
+• Use a transcuta neous bilirubinometer to measure the bilirubin level 
+• If a transcutaneous bilirubinometer is not available, measure the serum bilirubin 
+• If a transcutaneous bilirubinometer measurement indicates a bilirubin level greater 
+than 250 micromol/litre , measure the serum bilirubin to check the result 
+• Use serum bilirubin measurement if bilirubin levels are at or above the relevant 
+treatment thresholds for their age, and for all subsequent measurements. 
+Do not use an icterometer to measure bilirubin levels in babies. 
+Do not measure bilirubin levels routinely in babies who are not visibly jaundiced 
+ 
+Appendix E - Management of physiological jaundice (from 2 -3 days) 
+
+ Advise mother to feed responsively 
+Recommended transcutaneous bilirubin check at SCBU/RACH 
+Baby waking for feeds? 
+YES NO 
+Responsive feeding Advise woman to wake baby 3 hourly and offer 
+breast feed 
+Baby refuses feed on two consecutive occasions? Seek assistance Advise mother: 
+• Look for feeding cues 
+• Don’t wait for baby to cry 
+• Aim for 8-12 good feeds in 24 hours 
+• Second breast can be offered at each feed 
+Teach mother: 
+• How to rouse sleeping baby to encourage successful feed 
+Assess 
+• Positioning and attachment 
+• Assess and document milk transfer by observing suck & swallow pattern Newborn Feeding (RSCH PRH only ) MP072 
+41 
+ 6 Appendix F - Breastfeeding Specialist Contact Details 
+ 
+Name Title Contact 
+Number Email 
+Anouk Lloyd Infant Feeding 
+Specialist Midwife 07900716090 
+Anouk.lloyd@bsuh.nhs.uk 
+
+All referrals to the Infant feeding team should be done via Badgernet. Otherwise email: 
+uhsussex.specialistbreastfeedingbsuh@nhs.net 
+ 
+7 Appendix G - Tongue Tie 
+ 
+Tongue Tie (Ankyloglossia) 
+Division of Tongue Tie ( Frenulotomy ) to Assist Newborn Feeding 
+ 
+7.1 Introduction – Breastfeeding is the optimal way for a baby to feed, and not 
+doing so increases health risks for life for both mother and baby. The UK 
+government and the World Health Organisation (WHO) recommend six 
+months exclusive breastfeeding. The National Institute of Health and Clinical 
+Excellence have issued guidelines for the diagnosis, management and 
+treatment of tongue tie in breastfed babies. The guidelines do not specifically 
+cover bottle fed babies, but may apply to them also. 
+ 
+ Only those who are a registered health professional and have successfully completed 
+an approved training may undertake the division of tongue tie. 
+ 
+7.2 Effects of Tongue Tie on Infant Feeding 
+ 
+ Babies may present with a range of problems including: 
+• Difficulty or inability to attach to the breast 
+• Constantly slipping off the breast 
+• Excessive weight loss 
+• Slow or no weight gain 
+• Constant or very frequent feeding 
+• Unsettled baby 
+• Difficulty taking the teat in a bottle fed baby 
+• Excessive dribbling in a bottle fed baby 
+• Prolonged feeding in a bottle fed baby 
+• Slow weight gain in a bottle fed baby 
+• Prolonged jaundice 
+ 
+ Mothers often complain of: Newborn Feeding (RSCH PRH only ) MP072 
+42 
+ • Sore nipples 
+• Painful breastfeeding 
+• Engorgement or mastitis 
+• Poor milk supply 
+• Exhaustion from constant breastfeeding 
+ 
+Some of these problems are commonly seen during the early breastfeeding period when a 
+mother has not been assisted to position and attach her baby correctly for breastfeeding. 
+When tongue tie is present these problems persist regardless of skilled help, and may result 
+in a mother deciding to stop breastfeeding before she is ready to do so. 
+ 
+Assessment for tongue t ie is not part of the check of the newborn and should only be 
+performed as part of the overall asses sment for feeding problems. A full tongue tie 
+assessment should only be made by a health professional who is a tongue tie practitioner 
+and has been approv ed to perform this role by the t rust. However in the presence of 
+feeding problems, staff who have been trained in the use of the BTAT/TABBY Tool (Appendix 
+H) may, if confident to do so, perform a full feeding assessment followed by a TABBY 
+assessment. If the assessment scores 6 or below and there are persistent feeding problems 
+then a ref erral can be made to the tongue tie clinic for a full assessment. 
+ 
+Adequate tongue movement is essential for successful breastfeeding. Approximately 10% of 
+babies are born with a significant lingual frenulum. They do not all need snipping. If the 
+lingual frenulum is short and limiting tongue movement to the extent that feeding is 
+affected, then frenulotomy is indicated. 
+ 
+The signs for tongue tie are one or more of the following: 
+• The tongue appears shortened or flattened at the front. 
+• The normal tongue groove is increased on protrusion 
+• The tongue does not extend beyond the lower gum, when the mouth is open. 
+• The tongue tips down on extension 
+• Elevation of tongue is restricted with digital examination. 
+• The sides of the tongue rise well above the tip when the tongue is elevated 
+creating a heart shaped or butterfly appearance. 
+• Finger cupping is poor or absent on digital examination of suck. 
+ 
+The assessment of tongue movement is the most important part of diagnosis but the extent 
+of the frenulum and whether it is diaphanous (elastic) or short and thick are also key 
+observations. 
+ 
+When tongue tie is suspected, the baby should be referred to a tongue tie practitioner who 
+will make the definitive assessment, diagnosis, and clinical decision as to whether or not a 
+frenulotomy is indicated. 
+ 
+The parents should not be given the impression that a frenulotomy will definitely be 
+performed 
+ Newborn Feeding (RSCH PRH only ) MP072 
+43 
+ 7.3 Referral 
+ 
+The baby must be less than 12 weeks old at the time of making the appointment. Older 
+babies should be referred to : Uhsussex.ttbrightonsurgeons@nhs.net 
+ 
+There is often provision to offer assessment a nd frenulotomy to babies who are on the 
+post natal ward and having difficulties with feeding that are not resolved by help with 
+position ing and attachment. Assessment must be made by a Trust approved tongue tie 
+practitioner. 
+ 
+There must be a feeding problem that has not been resolved despite help with positioning 
+and attachment. 
+ 
+Babies who are breastfeeding well and thriving, and the mother is comfortable should not 
+be referred, regardless of the appearance of the tongue. 
+Concerns about eating, speech, the aesthetics or dental decay in the future are not 
+appropriate referral criteria for this clinic and these babies should be referred to the GP for 
+guidance. 
+ 
+Referral can be made by G.P’s, ANNP’s, midwives, nursery nurses maternity support 
+workers, health visitors, or the mother can self-refer, provided feeding has been assessed by 
+a health worker, skilled in the support of infant feeding. 
+ 
+Appointments are made on Badgernet or by emailing the referral form (appendix J) to t he 
+Maternity Office PRH or Antenatal Clinic RSCH uhsussex.maternityadminrsch@nhs.net or 
+uhsussex.maternityadminprh@nhs.net 
+ 
+Clinics are held eve ry Friday 1.30 – 4.30pm at RACH and every Wednesday 9.30 – 12.00 at 
+PRH antenatal clinic. 
+ 
+Parents should not be given the impression that a frenulotomy will definitely be performed 
+Advise parents to contact the antenatal clinic at RSCH if they no longer require the 
+appointment, so that it can be reallocated. 
+ 
+7.4 Management whilst waiting for appointment 
+ 
+Even when there is a tongue tie, improving positioning and attachment will often help to 
+make the mother more comfortable . An exaggerated attachment technique may help the 
+breastfed baby. 
+Put breastfeeding plan in place and e ducate mother to signs of effective feedin g and 
+support with literature e. g. NHS Off to The Best Start 
+If baby/mother unable to feed, advise breast expression to maintain lactation and provide 
+food for the baby. Start hand expressing as soon as possible after birth between 8 -10 times 
+every 24hrs including once at night. A breast pump can be started from day 2. 
+ 
+Advise on volumes of milk according to the age of the baby. If giving expressed milk, use a 
+cup in the first five days, after this time a bottle may be used. Newborn Feeding (RSCH PRH only ) MP072 
+44 
+ It should be possible to avoid large weight loss, if an adequate lactation is established. 
+Artificial milk should only be used if the mother is unable to express sufficient breast milk. 
+Mothers experiencing difficulties with breastfeeding due to tongue tie will require 
+emotional as well as practical support in order to continue breastfeeding whilst they wait 
+for the assessment appointment. 
+Bottle feeding babies will usually manage without intervention, small more frequent feeds, 
+may help. 
+Any baby with suspected tongue tie who is not feeding well or whose weight loss/gain, or 
+general condition gives cause for concern should be seen by a paediatrician. 
+ 
+7.5 Procedure 
+ 
+On arrival parents take a seat in the waiting area. If the mother is breastfeeding then she 
+should attend the appointment. If the baby is artificially feeding then the carer must bring a 
+dummy and or bottle feed. 
+A detailed feeding and relevant medical history is taken. Frenulotomy is contraindicated if 
+there is a family history of bleeding disorders for which the baby has not been investigated. 
+In these cases refer the parents to the baby’s GP for further guidance. 
+The baby should have had Vitamin K, at birth. If this is not the case, refer to GP for 
+paediatric referral for further guidance. 
+After hand washing and putting on gloves an examination of the baby’s mouth is made, to 
+exclude other anomalies that may affect feeding. 
+The presence of tongue tie is confirmed or excluded following full assessment. 
+Discussion takes place between the practitioner and the parent s. If there is not a tongue tie 
+present, alternative help with the feeding is offered. If there is a tongue tie the procedure 
+for frenulotomy is explained including any possible complications. 
+Parents are given time to ask any questions and to decide whether to proceed to 
+frenulotomy if diagnosis is confirmed. 
+If proceeding with frenulotomy the parents are encouraged to remain with the baby and be 
+involved by holding the baby. The equipment is placed read y. The baby is placed on a flat 
+surface . 
+The baby is swaddled firmly in a towel, sheet or blanket. The assistant’s hands are placed 
+either side of the baby’s head on the baby’s shoulders to ensure that the baby’s arms are 
+held firmly in position. After hand washing and putting on gloves the practitioner stretches 
+the frenulum using left index finger, the lower lip is protected and pushed down by the left 
+thumb. The frenulum is divided using appropriate scissors, being careful to snip in the 
+midline so as not to damage the underneath of the tongue and cause bleeding, not to snip 
+too low and damage salivary glands but to divide deeply enough to prevent regrowth of the 
+frenulum. Usually one snip is sufficient but occasionally two or three may be necessary. 
+The wound is compressed using a swab. The baby is quickly unwrapped and handed to the 
+mother for a feed. Feeding the baby immediately will cal m the baby, help to control any 
+bleeding and reassure the mother. 
+Breastfeeding mothers are helped with the positioning and attachment. 
+ 
+7.6 Problems 
+ Newborn Feeding (RSCH PRH only ) MP072 
+45 
+ If there is excessive bleeding or any immediate problems: 
+• Refer to paediatrician or ANNP 
+• If at home, apply pressure and call for an ambulance. 
+• Please see guidance below from the Association of Tongue Tie Practitioners for 
+the control of excessive bleeding post frenulotomy. 
+ 
+Guideline for the management of bleeding post frenulotomy 
+ 
+A small amount of bleeding post division is common and to be expected. Allowing the baby 
+to feed treats this best, as feeding will compress the floor of the mouth. 
+If there is an unusual amount of bleeding after division, it is likely to be dark venous 
+bleeding. Bright red arterial bleeding is very rare. 
+ 
+1. Hold baby in an upright position. Put some gauze on the raw diamond under the tongue 
+and hold in place firmly with one finger, taking care not to place any pressure under baby’s 
+chin as this can obstruct the airway. Moistening the gauze with sterile water, cooled boiled 
+water, or breastmilk will help prevent the clot sticking to the gauze and being removed when 
+the gauze is removed. Continue to press for at least 10 timed minutes. Ensure that the 
+airway is maintained. Keep baby warm and calm. Walking round whilst carrying baby, 
+rocking, white noise, music, fresh air, toys, etc . can be used to distract and help calm baby. 
+ 
+2. If the gauze becomes soaked while you are pressing, you are not pressing in the right 
+place. Replace the gauze and check you are pressing under the tongue on the raw diamond, 
+but now press with two fingers, side by side, to ensure you are pressing on the outer edges 
+as well as the centre. Continue pressure for at least 10 timed minutes 
+ 
+3. Do not continually remove the gauze to see if the bleeding has stopped – wait for at least 
+10 minutes and then look. 
+ 
+4. If bleeding persists apply pressure for a further 10 minutes using gauze 
+ 
+5. In a controlled, hospital environment, with suitable monitoring, put a few drops of 
+adrenaline (1:1000, 1:10000 and 1:100000, or lignocaine 1% with 1:100,000 adrenaline have 
+all been used) on a gauze swab and press for 5 minutes on to the wound. There is no correct 
+dose, but the potential side -effects of systemic absorption need to be considered when 
+choosing the dose to use. 
+ 
+6. Rebound bleeding is a risk with adrenaline so tranexamic acid can be used as an 
+alternative or after the application of adrenaline . Soak gauze in tranexamic a cid and apply 
+for 5 minutes. 
+ 
+7. If all this fails, you will have to invoke surgical help … Silver Nitrate, electrocautery and 
+suturing are options at this point 
+This group of babies have had a long period of sublingual pressure followed by some form of 
+surgery. This causes considerable oedema and some oral aversion, so they need to be kept 
+under very close supervision, potentially as an inpatient for several days, until they are Newborn Feeding (RSCH PRH only ) MP072 
+46 
+ feeding normally. A prompt naso -gastric tube for initial stress -free feeds is very useful and 
+avoids an unnecessary IV line. 
+ 
+7.7 References 
+Interventional Procedures Advisory Committee. Overview of Division of Ankyloglosia 
+(tongue Tie) in babies with difficulty breastfeeding.2005. NHS.NICE 
+Division of Ankyloglossia (Tongue Tie) for breastfeeding (IPG 149) Dec 2005. NHS. NICE. 
+Association of Tongue Tie Practitioners www.tongue -tie.org.uk 
+Control of Bleeding Post Tongue Tie Division M.Griffiths. Association of To ngue Tie 
+Practitioners 2020 
+ 
+8 Appendix H - BTAT/TABBY TOOL 
+
+Newborn Feeding (RSCH PRH only ) MP072 
+47 
+ 
+9 Appendix I – Antenatal Hand Expressing 
+ 
+Background 
+Colostrum is the optimal source of nutrition for newborns. However, some infants are at risk 
+of receiving manufactured milk before colostrum in the first few days after the birth, due to 
+a number of medical conditions and possible barriers to early breastfeeding. 
+ 
+Antenatal hand expression and storage of colostrum during pregnancy can reduce the need 
+for/amount of manufactured milk given to at risk infants. 
+ 
+Desired outcome 
+To raise the profile on the value of breast milk, the normality of hand expression and reduce 
+the need for manufactured milks; thereby ensuring that all newborns including those at 
+higher risk will, benefit from the best possible nutrition and reduce the risks associated with 
+using manufactured milks. 
+ 
+Issues to Consider 
+• Nipple stimulation at term may assist with cervical ripening (up to 45 minutes three 
+times a day) 
+• Nipple stimulation will not augment labour. 
+• Women successfully breastfeed whilst pregnant 
+• There is no significant relationship between nipple stimulation and inducing labour. 
+Newborn Feeding (RSCH PRH only ) MP072 
+48 
+ 
+In recognition that nipple stimulation may cause uterine contractions/Braxton Hicks 
+it is recommended that women: 
+• Commence daily expression at 36 weeks 
+• Start with 3 -5 minutes each breast 
+• Total time 5 -10 minutes, build up to 3 times a day 
+• Stop if hand expressing causes contractions, before 37 weeks. 
+• Mothers admitted in established preterm labour may hand express. 
+ 
+Equipment 
+ 
+• Knitted breast/diagram of breast for teaching 
+• Leaflet on hand expressing 
+• 1ml oral syringes for collection of any colostrum expressed 
+• Zip lock food bags to put syringes in 
+• Labels (mothers’ name, date of birth and date of expression) 
+• Patient information leaflet antenatal hand expressing 
+ 
+Frozen colostrum should be put immediately in the freezer on arrival at hospital as 
+once defrosted must be used within 12 hours 
+ 
+hand expressing 
+breast milk .pdf
+
+10 References and resources 
+ 
+Unicef Video clip of expressing: https://www.unicef.org.uk/babyfriendly/baby -friendly -
+resources/breastfeeding -resources/hand -expression -video/ 
+ 
+Unicef Breastmilk Expression Checklist: https://www.unicef.org.uk/babyfriendly/wp -
+content/uploads/sites/2/2016/10/Assessment -of-breastmilk -expression -checklist -2017.pdf 
+ 
+Expressing and Storing Breastmilk – The Breastfeeding Network: 
+https://www.breastfeedingnetwork.org.uk/publications -leaflets/ 
+ 
+Global Health Media: How to Express Breastmilk Video: 
+https://www.youtube.com/watch?v=axQi5PqRZ0M 
+ 
+Antenatal Hand Expression: A Critical Review of the literature. Chapman.T (2012) Midwife. 
+10.1016 2013 
+ 
+Antenatal Hand Expression: Women with diabetes: Outcomes from a retrospective cohort 
+study. Soltani,H.et al (2012) International Breastfeeding Journal 7 (18) 1 -5 
+ Newborn Feeding (RSCH PRH only ) MP072 
+49 
+ Diabetes and Antenatal Hand Expression: A pilot project to inform the development of a 
+random controlled trial. Forster,D. et al (2009). Midwives 2 209 -214. 
+ 
+Lussier. Mary M. etal. 2015. Daily Breastmilk Volume in Mothers of Very Low Birth Weight 
+Neonates: A Repeated -Measures Randomised Trial of Hand Expression Versus Electric 
+Breast Pump Expression. Breastfeed Med. 2015 Jul -Aug;10(6):312 -
+7.doi:10.1089/bfm.2015.0014.PMID:26204125 
+ 
+British As sociation of perinatal Medicine : Optimising Early Maternal Breast Milk for Pre-
+Term Infants: A Quality Improvement Toolkit. Nov 2020. https://hubble -live-
+assets.s3.amazonaws.com/bapm/redactor2_assets/files/755/BAPM_Preterm_MBM_Toolkit
+_Final_for_publication.pdf

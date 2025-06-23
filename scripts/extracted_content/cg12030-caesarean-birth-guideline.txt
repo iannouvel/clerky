@@ -1,0 +1,1600 @@
+# Extracted from: CG12030 Caesarean Birth Guideline.pdf
+# Guideline ID: cg12030-caesarean-birth-guideline
+# Content length: 80912 characters
+# Processing date: 1750066900.2388835
+
+CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 1 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Caesarean Section Birth Guideline 
+Summary statement: How does the 
+document support patient care? The purpose of this guideline is to provide good practice 
+evidence for staff caring for pregnant women and people 
+undergoing caesarean birth. 
+Staff/stakeholders involved in 
+development: Labour Ward Leads (Obstetric and Midwifery), Senior 
+midwives and obstetricians, Joint Obstetric Guideline Group. 
+Division: Women and Childrens 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Obstetric consultant, midwife, obstetric anaesthetist 
+For use by: All Medical and Midwifery staff 
+Purpose: To provide evidence -based guidance on the management of 
+pregnant women and people who require caesarean section 
+(CS) and ensure care is safe, consistent and of high quality. 
+This document supports: NICE 2011 Caesarean Section , NICE NG192 Caesarean 
+Birth (2021) 
+Key related documents: UH Sussex (SRH & WH) Maternity Guidelines: Vaginal 
+Birth After Caesarean (VBAC), Recovery following 
+Caesarean Section and other Obstetric Procedures, Venous 
+Thromboembolism, Management of Infectious Diseases in 
+Pregnancy, Uterine Rupture, Bladder Care for Maternity 
+Patients (including management of urinary retention), 
+Postpartum Haemorrhage, Preterm Risk Pathway, 
+UH Sussex Pharmacy: Carbetocin to prevent PPH at CS 
+Approved by: Joint Obstetric Guideline Group: 16th August 2023 
+Date uploaded: 30th October 2023 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable – Divisional Ratification only required 
+Ratification Date: Not Applicable – Divisional Ratification only required 
+Expiry Date: September 2024 
+Review date: March 2024 
+If you require this document in another format such as Braille, large print, audio or 
+another language please contact the Trusts Communications Team 
+Reference Number: CG12030 CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 2 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Version Date Author Status Comment 
+1.0 June 2010 Obstetric Consultant 
+and IT, Audit & Clinical 
+Effectiveness Midwife Archived New Trustwide Guideline 
+2.0 February 2011 Obstetric Consultants Archived 
+3.0 June 2011 Obstetric Consultants Archived Guideline amended following incident 
+review recommendations 
+4.0 July 2012 Obstetric Consultants Archived Guideline amended following incident 
+review recommendations and NICE 2011 
+guideline 
+4.1 September 
+2013 Obstetric Consultants 
+and CNST Midwife Archived Addition of actions to be taken when 
+suspected ureteric injury 
+Clarification of prophylactic antibiotics 
+5.0 November 2015 Obstetric Consultants & 
+Senior Training Grade 
+Doctor Archived Guideline triennial review and update 
+6.0 Oct 2016 Labour Ward manager Archived Addition of Enhanced Recovery 
+Programme. Name change 
+7.0 March 2017 Midwife Counsellor Archived Addition of Appendix 3 
+8.0 Oct 2017 Patient safety Midwife 
+Obstetric Consultants Archived Addition of consent discussion and new 
+emergency call 
+9.0 July 2018 Obstetric consultant Archived Addition of PICO flowchart 
+10.0 January 2021 J. Collard, Clinical 
+Effectiveness Support 
+Midwife Archived Guideline revised in line with NICE CG132 
+Caesarean Section 
+11.0 April 2022 K. Ashpole, Consultant 
+Anaesthetist Archived • Guideline revised in line with NICE 
+NG192 Caesarean Birth (2021) 
+• Flow charts for Cat 1 CS made separate 
+from other categories. (See appendix 2a 
+& 2b). 
+• Equipment & personnel for CS outside of 
+maternity unit updated. (See appendix 3). 
+• Anaesthetic review of guideline and 
+update to reflect change to use of 
+preservative free morphine. (See 
+appendices 7 & 8). 
+• Management of impacted fetal head 
+added. (See appendix 10). 
+• Neurological monitoring added (See 
+appendix 11). 
+• Consultant attendance table added. (See 
+appendix 12). 
+• Information regarding vaginal cleansing 
+added. (See appendix 13). 
+J. Collard, Clinical 
+Effectiveness Support 
+Midwife 
+11.1 July 2022 K. Ashpole, Consultant 
+Anaesthetist Archived • Amendments made to post-operative 
+analgesia for Medicines Governance 
+Committee. 
+• Updated regarding discussing risks and 
+benefits for corticosteroids and connected 
+appendix in line with RCOG (2022) GTG 
+no.74 Antenatal Corticosteroids to reduce 
+neonatal morbidity and mortality Claire Foyle, W&C 
+Pharmacist 
+ C. Goumalatsou, 
+Obstetric Registrar 
+ J. Collard, Clinical 
+Effectiveness Support 
+Midwife 
+11.2 March 2023 Claire Parr, Maternity 
+Governance Lead Archived • Minor amendment to 12.0- Observations 
+within an hour of admission. CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 3 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+11.3 July 2023 Julie Carr, Maternity In- 
+Patient Matron 
+
+Clinical Effectiveness 
+Team LIVE • Addition of carbetocin for the prevention 
+of PPH for uterine atony following 
+caesarean birth. 
+• Removed requirement for MRSA testing 
+antenatally to align with UHSIC007 – 
+Prevention and Control of MRSA Policy 
+• Category 3 CS definition amended. 
+• Worthing ‘Immediate CS’ call changed to 
+‘Cat 1 Caesarean Section’ to align with 
+the rest of the Trust. 
+The interpretation and application of clinical guidelines will remain the 
+responsibility of the individual clinician. If in doubt contact a 
+senior colleague or expert. CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 4 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Contents 
+1.0 Aim ................................ ................................ ................................ ............................. 6 
+2.0 Scope ................................ ................................ ................................ ......................... 6 
+3.0 Responsibilities ................................ ................................ ................................ .......... 6 
+4.0 Introduction ................................ ................................ ................................ ................ 6 
+4.1 Abbreviations used within this guideline ................................ ................................ ...... 7 
+5.0 Classification of urgency of caesarean birth ................................ ................................ 7 
+6.0 Planned caesarean birth ................................ ................................ ............................. 7 
+6.1 Planned CS is recommended in the following situations: ................................ ............ 8 
+6.2 Planned CS should not be routinely offered to pregnant women and people with:....... 8 
+7.0 Morbidly adherent placenta ................................ ................................ ........................ 9 
+8.0 Elective caesarean birth: enhanced recovery programme ................................ ........... 9 
+9.0 Maternal and birthing parent request for CS ................................ .............................. 10 
+10.0 Timing of planned CS & corticosteroids ................................ ................................ ..... 11 
+11.0 Antenatal preoperative assessment ................................ ................................ ........... 11 
+11.1 For healthy women and people with an uncomplicated pregnancy do not routinely 
+offer ................................ ................................ ................................ ........................... 12 
+12.0 On admission ................................ ................................ ................................ ............ 12 
+13.0 Unplanned CS ................................ ................................ ................................ ........... 12 
+13.1 Immediate CS (Category 1) ................................ ................................ ....................... 13 
+14.0 Theatre procedure for all CS ................................ ................................ ..................... 13 
+15.0 Prophylactic antibiotics ................................ ................................ .............................. 14 
+16.0 Surgical techniques ................................ ................................ ................................ ... 15 
+16.1 Advised surgical techniques: ................................ ................................ ..................... 15 
+16.2 Surgical techniques not advised routinely ................................ ................................ .. 16 
+17.0 Consultant presence at CS ................................ ................................ ........................ 16 
+17.1 Consultants are required to attend all CS for ................................ ............................. 16 
+17.2 Other indications ................................ ................................ ................................ ....... 16 
+17.3 Cases where consultant presence may be indicated include: ................................ ..... 16 
+17.4 Prevention of post partum haemorrhage (PPH) ................................ ......................... 16 
+18.0 Postoperative care ................................ ................................ ................................ ..... 17 
+18.1. Immediate recovery care following CS ................................ ................................ ....... 17 
+18.2. Further care of the woman and person and baby immediately after CS ..................... 17 
+18.3. Risk of thromboembolic disease ................................ ................................ ................ 18 
+18.4. Analgesia ................................ ................................ ................................ .................. 18 
+18.5. Wound care ................................ ................................ ................................ ............... 20 
+18.6. Oral fluids and diet................................ ................................ ................................ ..... 20 
+18.7. Removal of urinary catheter ................................ ................................ ....................... 21 
+18.8. Suspected ureteric injury ................................ ................................ ........................... 21 
+18.9. Pregnancy and childbirth advice following CS ................................ ............................ 21 
+18.10. Discharge and follow up ................................ ................................ ............................ 21 
+19.0 Audit ................................ ................................ ................................ .......................... 23 
+References ................................ ................................ ................................ ........................... 24 
+Appendix 1: Risks of planned CS v vaginal birth ................................ ................................ ... 25 
+Appendix 2a: Category 1 Unplanned caesarean birth flowchart ................................ ............. 26 
+Appendix 2b: Category 2 & 3 unplanned caesarean birth flowchart ................................ ....... 27 
+Appendix 3: Emergency CS outside of obstetric theatre ................................ ........................ 28 
+equipment and personnel ................................ ................................ ................................ ..... 28 CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 5 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Appendix 4: Required observations following caesarean birth ................................ ............... 30 
+Appendix 5: Maternal and birthing parent request for CS ................................ ...................... 31 
+Appendix 6: PICO wound management ................................ ................................ ................ 31 
+Appendix 7: Neuraxial Preservative Free Morphine (PFM) ................................ .................... 33 
+Appendix 8: Analgesia in caesarean section audit form ................................ ......................... 34 
+Appendix 9: Caesarean Section WHO Surgical Safety Checklist ................................ ........... 35 
+Appendix 10: Impacted fetal head (IFH) at Caesarean ................................ .......................... 36 
+Appendix 10 (cont): Impacted fetal head (IFH) at Caesarean ................................ ................ 37 
+Appendix 11: Neurological monitoring after spinal/epidural ................................ ................... 38 
+Appendix 12: Consultant attendance required table ................................ .............................. 39 
+Appendix 13: Vaginal Preparation SOP ................................ ................................ ................ 40 
+Appendix 14: Risk and benefits for corticosteroids ................................ ................................ 41 CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 6 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Caesarean Section (CS) Birth Guideline 
+ 
+1.0 Aim 
+ 
+To provide evidence -based guidance on the management of pregnant women and people 
+who require caesarean birth (CS) and ensure care of women experiencing CS is safe, 
+consistent and of high quality. 
+ 
+2.0 Scope 
+ 
+This guideline applies to: 
+ 
+• Midwives 
+• Obstetricians 
+• Anaesthetists 
+• Maternity recovery staff 
+• Operating Department Practitioners 
+• Maternity Assistants 
+ 
+3.0 Responsibilities 
+ 
+A guideline is a set of measurable, objective standards to determine a course of action. 
+Professional judgement may be use in the application of a guideline . 
+ 
+Midwives & obstetricians: 
+• To access, read, understand and follow this guidance. 
+• To use their professional judgement in application of this guideline. 
+ 
+Management: 
+• To ensure the guideline is reviewed as required in line with Trust and National 
+recommendations. 
+• To ensure the guideline is accessible to all relevant staff. 
+ 
+4.0 Introduction 
+ 
+At UH Sussex West between 2018 and 2019, 32.4% of births were undertaken by caesarean 
+section (CS). In the UK for June 2020 29% of pregnant women and people had a CS (13% 
+had an elective CS and 16% had an emergency CS) (Maternity Services Monthly Statistics 
+June 2020 – NHS Digital ). The indications for the procedure vary. 
+ 
+This guideline has been developed to help ensure consistency and quality of care 
+experienced by women and people in these groups: 
+ 
+• Pregnant women and people who have a clinical indication for a CS. 
+• Pregnant women and people who are considering a CS in the absence of a clinical 
+indication. CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 7 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ The purpose of this guideline is to enable clinicians to give appropriate, research -based 
+advice to women and people and their families. This will enable the woman and people to 
+make properly informed decisions about their care. 
+ 
+4.1 Abbreviations used within this guideline 
+ 
+CS - Caesarean Section GA - General Anaesthesia 
+ECV - External Cephalic Version VTE - Venous Thromboembolism 
+ERP - Enhanced Recovery Plan TAP - Transverse Abdominis Plane 
+G&S - Group and Save PCA - Patient Controlled Anaesthesia 
+CTG - Cardiotocograph CT - Computed Tomograph 
+NSAIDs - Non-Steroidal Anti-Inflammatory 
+Drugs IOCS - Intraoperative Cell Salavage 
+PFM - Preservative Free Morphine TTN - Transient Tachypnoea of the Newborn 
+SCBU – Special Care Baby Unit MIS - Maternity Information system eg 
+Badgernet 
+ 
+5.0 Classification of urgency of caesarean birth 
+ 
+The following classifications should be used to describe the urgency of caesarean births 
+undertaken within this Trust. 
+ 
+Category Definition Decision to delivery 
+interval 
+ 
+Category 1 Involves an immediate threat 
+to the life of the mother and 
+person and/or fetus 
+Within 30 minutes 
+ 
+Category 2 Maternal and birthing parent or 
+fetal compromise which is not 
+immediately life-threatening 
+Within 75 minutes 
+ 
+Category 3 No maternal and birthing 
+parent or fetal compromise but 
+requires early birth No maternal and birthing 
+parent or fetal compromise 
+but needs early birth 
+ 
+Category 4 
+Elective Delivery timed to suit woman 
+and person and service 
+provision 
+ 
+Perform Category 1 and 2 caesarean births as quickly as possible after making the decision 
+(particularly for Category 1); taking into account the condition of the woman and person and 
+the unborn baby when making decisions about rapid delivery. 
+ 
+6.0 Planned caesarean birth 
+ 
+• Caesarean birth should be recommended only when delivery confers benefit to the 
+woman and person or baby. 
+• The indication should be clearly documented in the notes with all the factors that 
+influence the decision documented, and which of these is the most influential. CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 8 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ • Women and people who have had one or more previous CS should be counselled 
+regarding birth options. (See CG1152 Birth after Caesarean Section (BAC) 
+Guideline ) 
+ 
+6.1 Planned CS is recommended in the following situations: 
+ 
+• A term singleton breech (if ECV contraindicated or unsuccessful). 
+• A twin pregnancy with the first twin breech. 
+• Primary genital herpes in third trimester. 
+• Placenta praevia, where placenta partly or completely covers the internal cervical 
+os (minor or major). 
+• Previous upper uterine segment CS or hysterotomy. 
+• HIV who are not receiving any retroviral therapy. 
+• HIV and a viral load equal to or greater than 400 copies per ml at 36 weeks 
+regardless of anti -retroviral therapy. 
+• HIV and taking zidovudine monotherapy. 
+• Pregnant women and people who are co -infected with Hepatitis C virus and HIV 
+should be offered planned CS because it reduces mother and birth parent -to-child 
+transmission of both Hepatitis C virus and HIV. 
+ 
+This list is not exhaustive, and CS may be indicated for complex or rare conditions. 
+ 
+6.2 Planned CS should not be routinely offered to pregnant women and people 
+with: 
+ 
+• 1 previous CS 
+• Preterm labour 
+• Twin pregnancy (first twin cephalic at term) 
+• A ‘small for gestational age’ baby 
+• Hepatitis B 
+• Hepatitis C 
+• Recurrent genital herpes at term 
+• BMI >50 (with no other risk factors) 
+ 
+Ideally, pregnant women and people who may require a planned caesarean birth should 
+have consultant involvement in the decision -making. 
+ 
+Discuss the risks and benefits of CS and vaginal birth with the woman and person, taking 
+into account their circumstances, concerns, priorities and plans for future pregnancies 
+(including the risks of placental problems with multiple CS) See Appendix 1 . 
+ 
+A pregnant woman and person is entitled to decline the offer of treatment such as CS, 
+even when the treatment would clearly benefit their or their baby's health. Declining an 
+offer of treatment needs to be one of the woman and person's options. CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 9 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Women and people with HIV positive pregnancy should not routinely be offered a 
+planned CS if: 
+ 
+• They are on highly active anti-retroviral therapy (HAART) with a viral load of less 
+than 400 copies per ml at 36 weeks or 
+• Or they are on any anti-retroviral therapy with a viral load of less than 50 copies 
+per ml. 
+ 
+Inform women and people that in these circumstances the risk of HIV transmission is the 
+same for a CS and a vaginal birth. 
+ 
+Inform women and people on anti-retroviral therapy (ART) with a viral load of 50–400 copies 
+per ml that there is insufficient evidence that a CS prevents mother -to-child transmission of 
+HIV. Take into account the actual viral load, the trajectory of the viral load, length of time on 
+treatment, adherence issues, obstetric factors and the woman and person’s views in 
+considering planned caesarean birth or vaginal birth. 
+ 
+For further guidance on delivery management of women and people with HIV, see CG1199 
+Management of infectious diseases . 
+ 
+7.0 Morbidly adherent placenta 
+ 
+The highest risk factors for the development of a morbidly adherent placenta (including 
+placenta accreta, placenta increta and placenta percreta) are placenta praevia and previous 
+Caesarean section (or uterine surgery). The risk in the presence of both of these risk factors 
+is around 5 -10%. 
+ 
+Placenta accreta should be suspected in any pregnant woman and person with an anterior 
+placenta praevia and a previous caesarean section. 
+ 
+For antenatal screening, antenatal management, and additional caesarean birth 
+recommendations see CG12004 APH & Intrapartum Haemorrhage . 
+ 
+8.0. Elective caesarean birth: enhanced recovery programme 
+ 
+Since 2016, all women and people undergoing an elective caesarean birth are offered a 
+programme of enhanced recovery (ERP). 
+ 
+“The underlying principle is to enable patients to recover from surgery and leave hospital 
+sooner by minimising the stress responses on the body during surgery." (Department of 
+Health, 2010). 
+ 
+Benefits: 
+• Improved patient experience and increased confidence in organisation. 
+• Improved clinical outcomes and multi -disciplinary team working. 
+• Reduction in length of stay. 
+• Less in hospital acquired infections. CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 10 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+The key principles are that the woman and person is in the best possible condition for 
+surgery, the woman and person has the best possible management during and after their 
+operation and they experiences the best post -operative rehabilitation as detailed below: 
+ 
+When to start ERP 
+ 
+• Commence the pathway at the time the decision is made for an elective caesarean 
+birth and the date is booked. 
+• Signpost the woman and person to the RCOG online patient information: 
+Considering a caesarean birth patient information leaflet | RCOG 
+• All women and people who are booked for an elective caesarean birth are eligible to 
+commence on the ERP. However it may be that they are not suitable to complete all 
+parts of the pathway or need to come off the pathway all together. 
+ 
+It is important to note that for a variety of reasons women and people may not feel ready to 
+go home on day 1. If they have met the ERP criteria they can be medically discharged, but 
+no woman and person should feel that they is being rushed to leave before they are ready. 
+This should be discussed on an individual basis. 
+9.0. Maternal and birthing parent request for CS 
+ 
+• Maternal and birthing parent request is not on its own an indication for CS 
+(Appendix 5 ). 
+• Pregnant women and people who request a caesarean birth (when there is no 
+clinical indication) should have a documented discussion with a member of the 
+maternity team about the overall risks and benefits of a caesarean birth compared 
+with vaginal birth ( Appendix 1 ). 
+• Explore, discuss and record specific reasons for the request. 
+• Where there is anxiety about childbirth - offer referral to a healthcare professional 
+with expertise in providing perinatal mental health support. 
+• For women and people requesting a CS and considering vaginal birth as still not 
+acceptable; after discussion and offer of support, a planned CS should be offered. CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 11 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ • CS for maternal and birthing parent request must be booked by a Consultant 
+Obstetrician. 
+• The clinician can decline a request for CS, but should offer referral for second 
+opinion. 
+ 
+10.0 Timing of planned CS & corticosteroids 
+ 
+The risk of respiratory morbidity is increased in babies born by CS before labour, but this risk 
+decreases significantly after 39 weeks. Therefore, planned CS should not routinely be carried 
+out before 39 weeks. 
+ 
+For women and people undergoing planned caesarean birth between 37+0 and 38+6 weeks 
+an informed discussion should take place with the woman and person (and their family 
+members or carers as appropriate) about the potential risks and benefits of a course of 
+antenatal corticosteroids and also the potential risks and benefits of birth before 39 weeks. 
+This should be fully documented on MIS. Women and people may be offered further 
+monitoring to provide reassurance if appropriate. 
+ 
+Although antenatal corticosteroids may reduce admission to the special care baby unit 
+(SCBU) for respiratory morbidity, it is uncertain if there is any reduction in RDS, transient 
+tachypnoea of the newborn (TTN) or SCBU admission overall, and antenatal corticosteroids 
+may result in harm to the neonate which includes hypoglycaemia and potential 
+developmental delay (see appendix14 ). RCOG (2022) 
+ 
+11.0 Antenatal preoperative assessment 
+ 
+This should usually be done in the Antenatal Clinic. 
+ 
+• Document the discussion and the indication for CS and that the decision has been 
+discussed with a Consultant/Associate Specialist. 
+• Book a date (after 39 weeks unless otherwise indicated), by phoning Labour Ward. 
+• If the woman and person has had a previous CS, document awareness of the 
+placental site (from most recent ultrasound scan). If the placenta is anterior and 
+low the women and people should be referred for further imaging to assess the risk 
+of placenta accreta. 
+• Complete the consent form in the clinic documenting discussion on risks to inform 
+the woman and person's decision, ensuring that they are offered a copy (consent 
+must be reconfirmed on the day of operation by the operating surgeon). 
+(See Appendix 1 for risks and benefits). 
+• Blood for FBC (can be taken at or after 36 weeks) and G&S (within 72 hours of 
+ELCS). 
+• Prescribe antacid prophylaxis. 
+• Consider use of pro-kinetic drug e.g. Metoclopramide. 
+• Book anaesthetic appointments if any concerns and check that appropriate early 
+referral is made. 
+• Ensure patient is directed to online maternity information Considering a caesarean 
+birth patient information leaflet | RCOG CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 12 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 11.1 For healthy women and people with an uncomplicated pregnancy do not 
+routinely offer: 
+ 
+• Cross -matching of blood. 
+• Clotting screen. 
+• Preoperative ultrasound to localise the placenta. 
+ 
+Note: High risk women and people for planned CS should have a Group and Save (G&S) or 
+cross -match, taken within 72 hours of the planned surgery, as clinically indicated. 
+
+12.0 On admission 
+ 
+• All women and people who attend for an elective Caesarean should have maternal 
+and birthing parent observations, routine enquiry about fetal movements and 
+auscultation of the fetal heart performed within an hour of admission. Further 
+observations/FH monitoring should be performed in a timeframe agreed with the 
+obstetric team depending on reasons for surgery. 
+• Welcome and admit to Labour Ward. 
+• Ensure patient identification applied. 
+• Notes and consent checked by midwife and operating obstetrician. 
+• If indication is malpresentation, confirm presentation by ultrasound. 
+o If presentation is found to be cephalic, check that malpresentation is the 
+only indication for CS, discuss findings with the woman and person and 
+cancel if appropriate. 
+• Complete theatre checklist and pressure ulcer risk assessment on MIS. 
+• Anaesthetist to review. 
+• Insert cannula using aseptic non-touch technique and take blood for FBC, U&Es 
+and group & save if not already taken at pre -operative assessment. 
+• Insert urinary catheter after anaesthetic to prevent over distension of the bladder 
+because the anaesthetic block interferes with normal bladder function. 
+• Fluid balance monitoring should be commenced post catheter insertion and 
+completed both during the caesarean section and post operatively. (See CG21009 
+Maternity fluid management as an in patient or in labour ). 
+ 
+13.0 Unplanned CS 
+ 
+• The consultant obstetrician/associate specialist must be involved in the decision 
+for emergency CS and the discussion documented clearly on MIS. 
+• In the case of a Category 1 CS for severe fetal or maternal compromise, the 
+Consultant should be informed as soon as possible ( Appendix 2 ). 
+• All the factors that influence the decision should be documented, and which of 
+these is the most influential. 
+• If the CS is for an abnormal CTG, a fetal blood sample should be considered, and 
+if this is not done, the reason documented. 
+• Pelvimetry, maternal and birthing parent height, estimations of fetal size 
+(ultrasound or clinical examination) do not accurately predict cephalopelvic 
+disproportion and should not be used to predict ‘failure to progress’ during labour. CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 13 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ • The reason for performing caesarean births which are classified 1 (within 30 mins) 
+or 2 (within 75 mins) must be recorded by the obstetrician making the decision, 
+along with the time of decision and birth. Remember that rapid delivery may be 
+harmful in certain circumstances. For instance a Category 1 CS is not always 
+achievable in cases of raised BMI or maternal co -morbidity due to issues of 
+maternal and birthing parent safety. If there is delay for any reason; this must be 
+documented on MIS. 
+• If IV access not already obtained, cannulate with consent and take bloods for FBC, 
+U&Es and G&S. 
+• Paired cord blood sampling should be taken at CS for suspected fetal compromise. 
+• An appropriately trained paediatrician should be present in theatre for CS 
+performed under GA or where there is evidence of fetal compromise. 
+• Risk assess for impacted fetal head (see appendix 10). 
+
+13.1 Category 1 CS 
+ 
+• Decision to birth time should be within 30 minutes. 
+• Dial 2222 and state ‘Cat 1 Caesarean Section’ . 
+• Verbal consent may be adequate depending on the urgency of the situation. 
+• Transfer immediately to theatre. 
+• Liaise with Anaesthetist regarding mode of anaesthesia. 
+• Give appropriate preoperative antacids/pro -kinetics. 
+• Administer facial oxygen and ensure left lateral tilt. 
+• Complete Theatre Checklist and CAT 1 essential questions (in red) on WHO 
+Surgical Safety checklist. (See appendix 9 ) 
+• Catheterise in theatre. 
+ 
+14.0 Theatre procedure for all CS 
+ 
+• Give antiemetic as per Trust policy. 
+• Use prophylactic vasopressors either by infusion (NICE recommended) or as 
+multiple bolus doses to keep maternal and birthing parent blood pressure at >90% 
+of baseline and avoid decreases of <80% baseline. Monitor the NIBP at least 
+every 2 minutes. 
+• When using an alpha -agonist vasopressor, a bradycardia may occur. Give 
+intravenous ephedrine boluses to manage hypotension during caesarean birth if 
+the heart rate is low and blood pressure is less than 90% of baseline, or 
+glycopyrrolate. 
+• Use intravenous crystalloid co-loading in addition to vasopressors to reduce the 
+risk of hypotension occurring during caesarean birth. 
+• Include pre-oxygenation, cricoid pressure and rapid sequence induction in general 
+anaesthesia for caesarean birth to reduce the risk of aspiration. 
+• Use a fluid warming device with all obstetric theatre cases. NICE 
+recommendations are that > 500ml of fluid should be warmed and all blood 
+products should be administered warmed. 
+• Consider forced air warming for women and people who shiver, feel cold, or have 
+a temperature of less than 36°degrees Celsius during caesarean birth. CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 14 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ • Women and people who are having a CS should be offered regional anaesthesia 
+because it is safer and results in less maternal and birthing parent and neonatal 
+morbidity than general anaesthesia. However, women and people who have 
+additional risk factors, such as a diagnosis of placenta praevia, will have an 
+individualised plan discussed with them and recommendations made. 
+• Offer women and people diamorphine (0.3 to 0.4 mg intrathecally) for analgesia to 
+reduce the need for supplemental analgesia after a caesarean birth. Epidural 
+diamorphine (2.5 to 5 mg) is a suitable alternative where intrathecal diamorphine 
+has not been given. Preservative Free Morphine (PFM) in combination with 
+fentanyl may be used as an alternative if diamorphine is unavailable. There may 
+be more itching and nausea with PFM. (See Appendix 7 ) 
+• Clean the surgical site using appropriate skin preparation. 
+• Consider the use of intra-operative cell salvage; if there is risk of haemorrhage e.g. 
+placenta praevia/accreta, multiple pregnancy, anticoagulant therapy or other risk 
+factors for haemorrhage in an elective CS. Use IOCS for all emergency CS. (See 
+appendix 1 of CG12029 PPH guideline v5.3 for risk factors). 
+• A single birth companion may accompany a woman having a CS under regional 
+anaesthesia. 
+• If a general anaesthetic is required, the birth companion will be asked to leave the 
+theatre before induction of anaesthesia. 
+• For emergency CS performed outside of obstetric theatres – see Appendix 3 for 
+required equipment and personnel. 
+ 
+14.1 Theatre documentation 
+ 
+• Complete pre-operative checklist on MIS. 
+• Ensure all sections of the Maternity ‘WHO’ surgical safety checklist are completed 
+in theatre at the appropriate times, and the final checks before the woman and 
+person leaves theatre. 
+ 
+It is the responsibility of the operating surgeon to ensure this documentation is complete. 
+ 
+15.0 Prophylactic antibiotics 
+ 
+Women and people should be offered Intravenous (IV) prophylactic antibiotics and be 
+informed that: 
+• Endometritis, urinary tract and wound infections occur in about 8% of women and 
+people who have had a caesarean birth. 
+• IV antibiotics given before skin incision, reduces the risk of this more than 
+prophylactic antibiotics given after skin incision. 
+• All IV antibiotics may be given before knife -to-skin (KTS) and are considered safe 
+except Augmentin which is given after delivery as it may have an effect on the 
+baby. 
+ 
+Peak tissue levels are 30-60 minutes after administration therefore if surgery is delayed for 
+more than 3 hours after administration; give another full dose of the IV antibiotics. CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 15 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ The responsibility for administering prophylactic antibiotics rests with the anaesthetist, as 
+with other surgical procedures. 
+ 
+• For Category 2, 3 and 4 CS administer IV Cefuroxime 1.5g and Metronidazole 
+500mgs before skin incision. 
+• For Category 1 CS, administer prophylactic antibiotics as above; whenever it is 
+safe to do so. 
+ 
+Refer to the Trust Adult Antimicrobial Guide . If MRSA positive, contact on call microbiologist 
+for advice with regard to prophylactic antibiotics. 
+
+16.0 Surgical techniques 
+ 
+For uncomplicated CS at term: 
+ 
+16.1 Advised surgical techniques: 
+ 
+• The operating table for CS should have a lateral tilt of 15°. 
+• Use a transverse lower abdominal incision. 
+• Subsequent tissue layers are opened bluntly and, if necessary, extended with 
+scissors and not a knife. 
+• Use blunt extension of the uterine incision. 
+• Rupture the membranes and deliver the baby avoid lifting the baby high up in the 
+‘lion king’ pose and provide skin to skin if baby does not require resuscitation (see 
+optimal cord clamping in skin to skin guidance). 
+• Use controlled cord traction for removal of the placenta. 
+• Close the uterine incision with two suture layers. 
+• Check haemostasis. 
+• Close sheath with 1/0 braided absorbable suture (currently Polysorb). 
+• Use sutures rather than staples to close the skin after caesarean section to reduce 
+the risk of superficial wound dehiscence. 
+• Close the skin incision with a monofilament absorbable subcuticular suture. 
+• Use single layer or double layer uterine closure in caesarean birth, depending on 
+the clinical circumstances. Note that single layer closure does not increase the risk 
+of postoperative bleeding or uterine rupture in a subsequent pregnancy. 
+• In the rare circumstances that a midline abdominal incision is used at CS, mass 
+closure with slowly absorbable continuous sutures should be used because this 
+results in fewer incisional hernias and less dehiscence than layered closure. 
+• Consider need for PICO dressing (see appendix 6). 
+• Check umbilical artery and vein pH if CS performed for fetal compromise. 
+• Consider women and person’s preferences for birth (e.g. music playing in theatre) 
+along with any other birth preferences that will influence the environment. 
+• Facilitate early skin-to-skin contact for mother and birthing parent and baby. CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 16 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 16.2 Surgical techniques not advised routinely 
+ 
+• Close subcutaneous space (unless >2cm of fat). 
+• Use superficial wound drains. 
+• Use separate surgical knives for skin and deeper tissues. 
+• Use forceps to deliver baby’s head. 
+• Suture either the visceral or parietal peritoneum. 
+• Exteriorise the uterus. 
+• Manually remove the placenta. 
+ 
+The effects of different suture material or methods of skin closure are uncertain. 
+ 
+17.0 Consultant presence at CS 
+ 
+17.1 Consultants are required to attend all CS for: 
+ 
+• Major placenta praevia. 
+• Placenta accreta. 
+• Women and people who decline blood products. 
+• Uterine rupture. 
+
+17.2 Other indications: 
+ 
+The Consultant will decide whether to attend, depending on the complexity of the case and 
+the experience of the registrar on duty. However, the consultant is required to attend if 
+requested by any member of staff. 
+ 
+17.3 Cases where consultant presence may be indicated include: 
+ 
+• Delivery at less than 34 weeks. 
+• Previous complicated abdominal surgery or multiple procedures. 
+• Transverse lie. 
+• Maternal and birthing parent medical complications. 
+• BMI >40. 
+• Large or multiple uterine fibroids. 
+• Caesarean section at full dilatation due to the risk of head impaction and causing 
+fetal injury during disimpaction if not experienced in this procedure. (See appendix 
+10: Impacted Fetal Head ) 
+• Please see appendix 12 for a more comprehensive list for consultant attendance. 
+ 
+17.4 Prevention of post partum haemorrhage (PPH) 
+ 
+All women and people undergoing caesarean birth are recommended to have Carbetocin 
+instead of oxytocin for the prevention of postpartum haemorrhage due to uterine atony. 
+Please see Carbetocin to prevent PPH at CS UHS -CG-0009 -2023 for administration, 
+contraindications and cautions. CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 17 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ • Carbetocin is recommend for routine administration immediately after delivery of 
+the baby during caesarean birth to prevent postpartum haemorrhage. Carbetocin is 
+a longer -acting analogue of oxytocin, with a similar mechanism of action and 
+adverse effects profile. 
+• The increased duration of action of Carbetocin compared with oxytocin eliminates 
+the requirement for an infusion after the initial dose making it the preferred first-line 
+drug for routine administration immediately after birth. 
+• If Carbetocin does not provide adequate uterine tone, a second -line drug should 
+be considered early. A second line agent should be guided by clinical context and 
+presence of contraindications, for example Ergometrine, Misoprostal, Carboprost 
+as per CG12029 PPH guideline . 
+ 
+18.0 Postoperative care 
+ 
+18.1. Immediate recovery care following CS 
+ 
+• After CS, women and people should be observed on a one-to-one basis. 
+• If the CS was under a general anaesthetic, a healthcare professional with airway 
+skills should carry out continuous, one -to-one observation of the woman and 
+person until they have regained airway control, and are haemodynamically stable, 
+and able to communicate. 
+• See the Maternity guideline for CG11103 Recovery post regiona and GA 
+anaesthesia for required observations and Appendix 4 (for summary). 
+• Use Maternity MEOWS and fluid monitoring form on MIS to document 
+observations and fluid balance. Observations outside of normal parameters should 
+be escalated to the appropriate personnel as per MEOWS score. 
+• Be aware that although it is rare for women and people to need intensive care 
+following childbirth, this occurs more frequently after CS (about 9 per 1000). 
+
+18.2. Further care of the woman and person and baby immediately after CS 
+ 
+• Encourage skin to skin contact as soon as reasonably possible. This should be 
+uninterrupted for as long as the mother wishes, until after the first feed or at least 
+for an hour. See CG20015 Parent -to-baby skin ontact guideline 
+• Provide additional support to help the woman and person to feed and care for their 
+baby. 
+• Breastfeeding - Lactogenesis 2 can be delayed by caesarean birth so proactive 
+measures should be made that include: 
+o Aim to breastfeed within first hour, if this is not possible hand express to 
+stimulate lactation. 
+o Hand express after each feed to continue to stimulate milk supply. Store any 
+colostrum collected for use later if required. 
+o Frequent safe skin to skin contact. 
+o Bring baby to the breast as often as possible and feed regularly to encourage 
+abundant milk supply. CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 18 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ o Baby driven positions that support attachment (laid back swing nursing 
+position) which involves limited positioning of the mother and birthing parent. 
+Alternatively side lying position or rugby position work well too. 
+o Offer both breasts at each feed allow baby to feed for as long as it likes. 
+o Adequate pain relief to adopt feeding positions and responsiveness to 
+feeding cues (alongside staff responding to call bells to support lifting of 
+baby). 
+o Avoid unnecessary supplementations due to the effect on milk supply. If 
+above is supported there should be no ongoing concerns. 
+ 
+Babies born by CS are more likely to have a lower temperature, and thermal care should be 
+in accordance with good practice for thermal care of the newborn baby, this includes skin to 
+skin with the mother and birthing parent. 
+ 
+18.3. Risk of thromboembolic disease 
+ 
+Women and people who have had a caesarean birth may be at increased risk of 
+thromboembolic disease (both deep vein thrombosis and pulmonary embolism). The VTE 
+risk assessment should be performed on admission, and post-birth with prophylaxis offered 
+according to risk. 
+ 
+• Any woman and person who has undergone spinal anaesthesia will have a yellow 
+wristband attached by the anaesthetist. The midwife should assess the woman 
+and person for straight leg rise after 4 hours (see appendix 11 ). If able to straight 
+leg rise (SLR), yellow wristband can be removed. If unable to SLR, notify the 
+anaesthetist and leave yellow wristband in place. Dalteparin should only be 
+given once the regional anaesthetic block has resolved and the woman and 
+person is able to straight leg raise (SLR). 
+• Re-assess and document the VTE score and give dalteparin in accordance with 
+CG1153 Obstetric VTE and aim to start, or resume, 6 hours post operatively 
+unless there are specific contraindications. 
+• LMWH should not be given for 4 hours after use of spinal anaesthesia or after the 
+epidural catheter has been removed. 
+• Ensure the woman and person is reweighed post birth, before starting or 
+recommencing VTE prophylaxis, to ensure correct dose is prescribed. 
+ 
+Postnatally pay particular attention to respiratory symptoms (such as cough or shortness of 
+breath) or leg symptoms (such as painful swollen calf), and seek obstetric review if these 
+symptoms occur postnatally. See CG1153 Obstetric VTE and Trust Venous 
+Thromboembolism (VTE) Prevention Policy for further guidance. 
+ 
+18.4. Analgesia 
+ 
+Discuss options for pain relief after caesarean birth with women and people and explain that: 
+ 
+• Pain after caesarean birth can be controlled using oral or injectable medicines and 
+will depend on the severity of pain, whether they had spinal or epidural 
+anaesthesia, or general anaesthesia. CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 19 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ • Reassure if they wish to breastfeed, they will usually be able to do this and care for 
+their baby while taking pain relief medicines. The anaesthetist will discuss with the 
+woman and person if they are offering medication that may affect breastfeeding 
+and the baby, such as tramadol, oxycodone or very large doses of opioids. 
+ 
+Immediate post CS analgesia: 
+ 
+• Transversus Abdominis Plane (TAP) blocks should be considered as a part of 
+post-operative multimodal pain management for CS, especially when the CS has 
+been performed under general anaesthesia. Morphine oral solution: prescribe 
+20mg PRN 2 hourly while in hospital. 
+• A diclofenac suppository 100mg can be inserted PR post operatively in theatre 
+with consent gained prior to the caesarean birth. 
+ 
+Regular post CS analgesia: 
+ 
+• A combination of paracetamol and, unless contraindicated, a non -steroidal anti - 
+inflammatory drug, like ibuprofen will reduce opioid requirements. The maximum 
+dose of Ibuprofen is 600mg TDS which should be given with daily omeprazole on 
+this dose. (The dose of Ibuprofen will be reduced to 400mg TDS on discharge from 
+hospital.) 
+• If there is any concern about dehydration or renal function whilst on the higher 
+dose of ibuprofen, give IV fluids or stop the NSAIDS. If there is any concern about 
+gastric irritation increase the dose of Omeprazole to 40mg or stop the NSAIDS. 
+• Offer PRN morphine oral solution and PRN antiemetic to women and people who 
+have received spinal or epidural anaesthesia for caesarean birth. The dose of 
+Morphine oral solution is 10 -20mg 2 hourlyPRN and Ondansetron every 8 hours 
+PRN. It is recommended that senna or macrogol are offered daily whilst taking 
+opioids to prevent constipation. 
+• Encourage the woman and person to take paracetamol and NSAID regularly and 
+not just when needed for pain relief. 
+• Consider prescribing a second line anti-emetic, like cyclizine for women and 
+people taking opioids, if needed for nausea and vomiting. 
+• Advise women and people that some over-the-counter medicines contain codeine, 
+and should not be taken while breastfeeding because this can lead to serious 
+neonatal sedation and respiratory depression. 
+ 
+Discharge medication: 
+• Following caesarean section, women and people will be advised to take 
+paracetamol, ibuprofen (400mg TDS), senna. 
+• Ideally both ibuprofen and paracetamol should be provided by the woman and 
+person, although a supply from ward TTO stock can be supplied if necessary. 
+• If being discharged before day 3, morphine oral solution should also be considered 
+to support an earlier discharge and enhanced recovery. If prescribing morphine 
+oral solution on discharge prescribe the smallest effective dose, there must 
+be 4 hours between dosages and state max number of dosages per day for 
+limit of 3 days post birth. CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 20 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ • If a woman and person is discharged home on opioids, advise them to contact 
+their healthcare provider if they are concerned about their baby (for example 
+drowsiness, breathing difficulties, constipation or difficulty feeding). 
+ 
+For women and people with severe pain after caesarean birth, when other pain relief is 
+not sufficient: 
+ 
+• Perform a full assessment to exclude other causes for the pain (for example, 
+sepsis, haemorrhage including haematomas, urinary retention). 
+• Consider Pain Team review for those whose pain is not managed with regular 
+routine analgesia. 
+• Ensure the woman and person’s pain control is optimised then discuss with the 
+woman and person that alternative pain relief medicines are available. If the 
+woman and person chooses, to try alternative opioids consider a short course of 
+tramadol or oxycodone at the lowest effective dose. 
+• Make sure the woman and person is aware that, if taken while breastfeeding, 
+these medicines could increase the risk of neonatal sedation and respiratory 
+depression. 
+• In breastfeeding women and people, use opioid analgesics at the lowest effective 
+dose and for the shortest duration, and not for more than 3 days after date of birth 
+of the baby. (Refer to CG1127 Neonatal Abstinence Syndrome (NAS) for further 
+information.) 
+ 
+18.5. Wound care 
+ 
+• Any pressure dressing should be removed prior to transfer to the Postnatal Ward. 
+• If PICO dressing present follow Appendix 6. 
+• Remove the wound dressing after 6 - 24 hours. There is no difference in the risk of 
+wound infection when dressings are removed 6 hours postoperatively, compared 
+with 24 hours postoperatively. 
+• If the wound is leaking a clean dressing should be applied. 
+• Monitor the woman and person for signs of infection (fever, increasing pain, 
+redness or discharge) or dehiscence. 
+• If any concerns, liaise with the Infection Control and/or Tissue Viability nurses at 
+the earliest opportunity. 
+• Encourage women and people to keep wound clean and dry (daily showering) and 
+wear loose comfortable clothing and cotton underwear. 
+• If used, there should be a plan documented for the removal of clips/staples and 
+any non -dissolvable sutures. 
+ 
+18.6. Oral fluids and diet 
+ 
+• Women and people who are feeling well and have no complications, can eat and 
+drink when they feel hungry or thirsty (start with sips of clear fluid; wait for a 
+minimum of 2 hours before light diet). 
+• All women and people should remain on water only until discharge from recovery 
+criteria is met. CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 21 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 18.7. Removal of urinary catheter 
+ 
+See ‘Bladder Care for Maternity Patients Guideline (Including Management of Urinary 
+Retention )’. 
+ 
+• Removal of the urinary catheter should be carried out once the woman and person 
+is mobile after a regional anaesthetic for caesarean birth, but no sooner than 
+12 hours after the last 'top-up' dose. 
+• If cannula has not already been removed, removal should be considered at this 
+time. 
+• The recommended time is between 12 and 24 hours. 
+ 
+If urinary symptoms present consider the possible diagnosis of: 
+ 
+• Urinary tract infection. 
+• Stress incontinence (occurs in about 4% of women and people after CS). 
+• Urinary tract injury (occurs in about 1 per 1000 CS). 
+• Urinary retention. 
+ 
+18.8. Suspected ureteric injury 
+ 
+If ureteric injury is suspected a CT (computed tomography) urogram should be requested 
+within 24 hours (at the weekend discuss case with the on -call Consultant Radiologist to 
+arrange). ( ToG 2016 :18:265 -72) 
+ 
+Breastfeeding can continue following the contrast. 
+ 
+18.9. Pregnancy and childbirth advice following CS 
+ 
+Discuss the reasons for the caesarean birth and provide both verbal and written information 
+about birth options for any future pregnancies, and document this on MIS. If the 
+woman/person prefers, provide this at a later date. 
+ 
+When advising about the mode of birth following CS consider maternal and birthing parent 
+preferences and priorities, the risks and benefits of repeat CS and the risks and benefits of 
+planned vaginal birth, including the risk of unplanned CS. 
+ 
+18.10. Discharge and follow up 
+ 
+• Average length of stay is likely to be longer after CS compared with vaginal birth. 
+• Offer early discharge (after 24 hours) and home follow up to women and people 
+who are recovering, apyrexial and have no complications. 
+• In the event of heavy and/or irregular vaginal bleeding following CS, healthcare 
+professionals should consider that this is more likely to be due to endometritis than 
+retained products of conception. 
+• Women and people who have undergone a Category 1 CS should be offered 
+postnatal follow up in the Consultant clinic at around 6 weeks. Plans for CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 22 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ subsequent pregnancies should be discussed and documented at this time if not 
+previously occurred. 
+• Discuss Birth Afterthoughts service if appropriate. 
+• Women/ people who have had a dural tap, failed spinal/epidural, general 
+anaesthetic with awareness or difficult anaesthetic experience should be referred 
+to anaesthetic obstetric clinic. This should also be noted in their discharge 
+summary by the obstetric team and in a letter to their GP. CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 23 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 19.0 Audit 
+ 
+CS Rate is monitored via clinical dashboard and Category 1 CS are monitored via patient 
+safety. 
+ 
+Suggested audit standards: 
+ 
+• Documented evidence of informed consent including discussion regarding risks 
+and benefits of CS. 
+• Use the following decision -to-birth intervals to measure the overall performance of 
+an obstetric unit: 
+o 30 minutes for category 1 CS 
+o Both 30 and 75 minutes for category 2 CS. 
+• Pregnant women and person who have had 1 or more previous caesarean births 
+have a documented discussion of the option to plan a vaginal birth. 
+• Pregnant women and person who request a caesarean birth (when there is no 
+clinical indication) have a documented discussion with members of the maternity 
+team about the overall risks and benefits of a caesarean birth compared with 
+vaginal birth. 
+• Pregnant women and people who request a caesarean birth because of anxiety 
+about childbirth are offered a referral to a healthcare professional with expertise in 
+perinatal mental health support. 
+• Pregnant women and people who may require a planned caesarean birth have 
+consultant involvement in decision -making. 
+• Pregnant women and people having a planned caesarean birth have the 
+procedure carried out at or after 39 weeks 0 days, unless an earlier delivery is 
+necessary because of maternal WHO Surgical Safety Checklist birthing parent or 
+fetal indications. 
+• Women and people being considered for an unplanned caesarean birth have a 
+consultant obstetrician involved in the decision. 
+• Women and people in labour for whom a caesarean birth is being considered for 
+suspected fetal compromise are offered fetal blood sampling to inform decision - 
+making. 
+• Women and people who have had a caesarean birth are offered a discussion and 
+are given written information about the reasons for their caesarean birth and birth 
+options for future pregnancies. 
+• Women and people who have had a caesarean birth are monitored for 
+postoperative complications. CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 24 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ References 
+ 
+National Institute of Clinical Excellence (NICE). 2011. Caesarean Section. Clinical guideline 
+132. London. NICE. Updated 2019. NICE CG132 
+ 
+National Institute of Clinical Excellence (NICE). 2021. Caesarean Birth. National Guidance 
+192. London. NICE. NICE NG192 Caesarean Birth 
+ 
+NHS Litigation Authority (NHSLA) 2012 -13. CNST Maternity Risk Management Standards 
+Version 1. London. NHSLA. 
+ 
+MBRRACE UK: Saving Lives, Improving Mother’s Care 2015 -2017. mbrrace -uk report 2019 
+Oxford : MBRRACE -UK 
+ 
+National Confidential Enquiry into Perioperative Death (NCEPOD) 2004. Classification of 
+Interventions. London NCEPOD 
+ 
+British HIV association (BHIVA). 2014. Guidelines for the management of HIV infection in 
+pregnant women 2012 
+ 
+NHS Digital. Maternity Services Monthly Statistics June 2020 – NHS Digital 
+ 
+Raising the standards, RCOA quality improvement compendium, 4th Edition 
+September 2020 Chapter 7 
+ 
+Guideline on anaesthesia and sedation in breastfeeding women 2020 Mitchell J et al. 
+Anaesthesia 2020 
+OAA / AAGBI Guidelines for Obstetric Anaesthetic services 2013 Plat F et al. Anaesthesia 
+2013 
+Safety Guideline: neurological monitoring associated with Obstetric Neuraxial Block 2020 
+Yentis S et al. Anaesthesia 2020 
+ 
+2021 Exceptional Surveillance of Caesarean birth- diamorphine (NICE guideline NG192) 
+(Oct 19th 2021 update) pertaining to appendix 7/8. 
+ 
+RCOG (2022) GTG no.74 Antenatal Corticosteroids to reduce neonatal morbidity and 
+mortality 
+
+Association of Anaesthetists (2019) International consensus statement on the use of 
+uterotonic agents during caesarean section. doi:10.1111/amae.14757 CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 25 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Appendix 1: Risks of planned CS v vaginal birth 
+ 
+Discuss the benefits and risks of both caesarean and vaginal birth with women and people, 
+taking into account their circumstances, concerns, priorities and plans for future 
+pregnancies. 
+• There are benefits and risks associated with both vaginal and caesarean birth, 
+some of which are very small absolute risks and some are greater absolute risks, 
+and the pregnant woman and person will need to decide which risks are more (or 
+less) acceptable to them. 
+• There are other risks not included in these tables that might be relevant to their 
+individual circumstances (for example placental adherence problems from multiple 
+caesarean births, fetal lacerations in caesarean birth, term birth injuries with 
+vaginal birth or caesarean birth). 
+Further detail on calculated risk can be found at: NICE NG192 Caesarean Birth (2021) 
+ 
+Risks for women and people Risks for babies/children 
+May be more likely with caesarean birth - 
+• Peripartum hysterectomy 
+• Maternal death 
+• Length of hospital stay. 
+• Placenta accreta in future pregnancy. 
+• Uterine rupture in future pregnancy or 
+birth. 
+• Neonatal mortality 
+• Asthma 
+• Childhood obesity 
+May be less likely with caesarean birth - 
+• Urinary incontinence occurring more than 
+1 year after birth. 
+• Faecal incontinence occurring more than 
+1 year after birth; compared to assisted 
+vaginal birth. 
+• Vaginal tear 
+• Perineal/abdominal pain during birth and 3 
+days after birth. 
+Are likely to be similar for caesarean or vaginal birth - 
+• Thromboembolic disease 
+• Major obstetric haemorrhage 
+• Postnatal depression 
+• Faecal incontinence (occurring more than 
+1 year after birth; compared to unassisted 
+vaginal birth) • Admission to neonatal unit 
+• Infection 
+• Persistent verbal delay 
+• Infant mortality (up to 1 year) 
+Outcomes that have conflicting or limited evidence about the risk 
+with caesarean or vaginal birth - 
+ 
+• ITU admission 
+• Stillbirth in a subsequent pregnancy. • Respiratory morbidity 
+• Cerebral palsy 
+• Autism spectrum condition 
+• Type 1 diabetes. CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 26 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+CATEGORY 1 CAESAREAN BIRTH CALLED 
+Dial 2222 
+state: 
+‘Cat 1 Caesarean Section ’ 
+Category 1 
+Within 30 mins of decision 
+Organise CS Team 
+•Midwife Co-ordinator 
+•Anaesthetist 
+•ODP 
+•Obstetric Registrar & SHO 
+•Paediatrician (if required) Appendix 2a: Category 1 Unplanned caesarean birth flowchart 
+
+Remember 
+•Complete WHO Surgical Safety Checklist when 
+time allows 
+•Prophylactic antibiotics 
+•Cord pH’s 
+•VTE & Thromboprophylaxis 
+•Debrief & discuss with woman and person 
+•Documentation 
+Complete Preoperative Preparation 
+•Transfer to theatre immediately 
+•Administer O2 and ensure left lateral tilt 
+•Consent can be verbal dependant on urgency 
+•IV access – FBC, U&Es, Group & Save 
+•Catheterise in theatre 
+•Preoperative antacids/pro -kinetics 
+•WHO Surgical Safety Checklist – questions in red CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 27 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+UNPLANNED CATEGORY 2 & 3 CAESAREAN BIRTH CALLED 
+Define category 
+Complete Preoperative Preparation 
+•Checklist 
+•Consent 
+•Urgent bloods – FBC, U&Es, Group & 
+Save 
+•Catheterise in theatre 
+•Preoperative antacids/pro -kinetics 
+•WHO checklist 
+Organise CS Team 
+•Midwife Co-ordinator 
+•Anaesthetist 
+•ODP 
+•Obstetric Registrar & SHO 
+•Paediatrician (if required) 
+Remember 
+• ‘WHO’ theatre checklist 
+• Prophylactic antibiotics 
+• Cord pH’s 
+• VTE & Thromboprophylaxis 
+• Debrief & discuss with woman 
+and person 
+• Documentation Appendix 2b: Category 2 & 3 unplanned caesarean birth flowchart 
+
+Category 2 
+within 75 mins Category 3 
+within 4 hours 
+
+ CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 28 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Appendix 3: Emergency CS outside of obstetric theatre – 
+equipment and personnel 
+ 
+EMERGENCY CS OUTSIDE OF OBSTETRIC THEATRE 
+Daytime Emergency CS called 
+St Richards Worthing 
+• Phone 35946 and ask for Theatre Co- 
+ordinator or bleep 6134 
+• Theatre co-ordinator will have pre-determined 
+an ODP/ scrub nurse for allocation to a 
+second obstetric theatre and will be 
+responsible for sending them to labour ward 
+• Room 3/ second theatre on labour ward must 
+be checked daily to ensure it is primed and 
+operationally ready. Spare equipment must 
+not be stored in room 3. • Phone 84086 (85653 if busy). 
+• Ask for theatre manager/ coordinator. 
+• Liaise which theatre is available/ how long is 
+needed. 
+• Inform Obstetric theatre staff to allow 
+adequate discussion between Anaesthetists. 
+Useful numbers 
+84086 CEPOD 
+Phone Obstetric anaesthetist bleep 1201 
+85653 Main desk 
+On call ODP bleep 1029 
+Out of hours/Weekends Emergency CS Called 
+St Richards Worthing 
+• Bleep CEPOD Team on 6009 
+• If already busy, contact on-call site manager 
+to call in another team if indicated. • Phone 84086 (85653 if busy). 
+• Ask for theatre manager/ coordinator. 
+• Liaise which theatre is available/ how long is 
+needed. 
+• Inform Obstetric theatre staff to allow 
+adequate discussion between Anaesthetists. 
+Personnel 
+St Richards Worthing 
+• Obstetric consultant 
+• Obstetric Registrar 
+• Paediatric registrar or consultant 
+• Neonatal specialist nurse 
+• Midwife 
+• Anaesthetic Reg 
+• Anaesthetic consultant 
+• ODP 
+• Scrub nurse 
+• Runner • Obstetric consultant 
+• Obstetric Registrar 
+• Paediatric registrar or consultant 
+• Neonatal specialist nurse 
+• Midwife 
+• Anaesthetic Reg 
+• Anaesthetic consultant 
+• ODP 
+• Scrub nurse 
+• Runner 
+Equipment – Theatre staff to transfer into theatre 
+St Richards Worthing 
+ 
+Not applicable due to both theatres already 
+being on CLS. 
+• LSCS tray 
+• Resuscitaire CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 29 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Resuscitaire 
+St Richards Worthing 
+Ensure checked and stocked as per standard 
+stock requirements and transfer to theatre being 
+opened. Sats monitor. Neonatal drug box to be 
+put onto Resusitaire. Ensure checked and stocked as per standard 
+stock requirements. 
+Ensure Neonatal Drug Box is present and in date. 
+Anaesthetic checklist – Equipment 
+St Richards Worthing 
+• Spinal/epidural/CSE* kit available in trolley 
+• IV infusion pumps x 2 
+• Fluid warmer 
+• Oxford Pillow 
+• Haemorrhage Trolley (LW or Theatre 5) 
+• IOCS if appropriate 
+ 
+(*Epidural/CSE kit may need to be collected from 
+LW) • Spinal trolley 
+• Syringe driver (for phenylephrine) 
+• Curly wurly giving set 
+• 50ml syringe 
+• IV infusion pump (for oxytocin (Syntocinon)) 
+• Giving set for infusion pump 
+• Blood giving set and Y-connector 
+• Cell saver (Outside Theatre 3 or 9) 
+• Wedge - if no time can use a 3l bag fluid 
+• Oxford pillow 
+• Resuscitaire 
+Anaesthetic checklist – Drugs 
+St Richards Worthing 
+• Sodium citrate 
+• Ergometrine (LW fridge) 
+• Carboprost (LW fridge) 
+• Diamorphine or PFM (LW CD cupboard) 
+• Metaraminol infusion (0.5mg/ml) 
+• Tocolytics – GTN spray in Tocolysis box 
+• Carbetocin 
+All other drugs will be found in all anaesthetic 
+rooms: 
+• GA drugs 
+• Opioids 
+• Tranexamic Acid 
+• IV Fluid for co-loading • Sodium citrate (Theatre 3) 
+• Ergometrine (Theatre 3 fridge) 
+• Carboprost (Theatre 3 fridge) 
+• Phenylephrine (Theatre 3) 
+• Metronidazole (Theatre 3) 
+• Gentamicin (Theatre 3) 
+• Cefuroxime (Pharmacy store) 
+• Clindamycin (Pharmacy store) 
+• Diamorphine (Theatre 8/9 CD) 
+• Saline 100ml bag (for phenylephrine) 
+• Saline 500ml bag (for oxytocin (Syntocinon)) 
+• Hartmanns 1000ml 
+• Carbetocin 
+• Tranexamic Acid 
+ 
+IF SIGNIFICANT BLEEDING – 
+Belmont Pump located in Sluice between 
+Labour Ward Theatres IF DIFFICULT AIRWAY – 
+Difficult airway trolley +/- CMAC outside 
+Theatre 3. 
+ 
+IF SIGNIFICANT BLEEDING – 
+Send Porters to Delivery Suite 
+anaesthetic room for Belmont pump. Please check on the intranet that this printout is the most recent version of this document before use. 
+ Appendix 4: Required observations following caesarean birth 
+ 
+As a minimum the following observations should be recorded every 5 minutes for the first 15 
+minutes, and recorded on the Maternity Early Obstetric Warning Score (MEOWS) on MIS. 
+The MEOWS score instructions should be followed for abnormal observations ( CG1148 
+Recognition and management of severely ill pregnant women ) 
+ 
+• Level of consciousness (using AVPU as per MEOWS score). 
+• Heart rate. 
+• Blood pressure. 
+• Respiratory rate. 
+• Oxygen saturation by pulse oximetry. 
+• Verbal pain. 
+• Vaginal bleeding. 
+• Overall appearance (well or unwell). 
+• Evidence block height and motor block resolving. (see appendix 11) 
+ 
+These observations, if stable should then be recorded ½ hourly for 1 hour . Following this, 
+hourly observations should continue until the pre-discharge from recovery checklist criteria 
+on MIS is met, before commencing 4 hourly observations. If not stable, perform observations 
+more frequently and seek medical review. 
+ 
+This pre-discharge checklist must be fully completed including date and time of assessment 
+prior to discharge to the Postnatal Ward. 
+ 
+The following observations should be closely monitored and documented: 
+ 
+• Nausea/vomiting. 
+• Wound -bleeding from operation site, wound drains. 
+• Uterine fundus. 
+ 
+Additional observations to be recorded hourly for the first two hours 
+ 
+• Urine output – Obstetrician and Anaesthetist should be informed if urinary output falls 
+below 30mls per hour on 2 consecutive occasions. 
+• Temperature. 
+ 
+These observations, if stable for 2 hours can be reduced to 4 hourly. 
+
+CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 30 of 41 CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 31 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Maternal and birthing parent request for caesarean section with no medical risk factors 
+Anxiety about childbirth 
+See doctor in Antenatal Clinic to discuss and 
+document and give information leaflet. 
+Midwife counsellor 
+Still wants an elective caesarean 
+section, for consultant to book. 
+Community midwife care 
+Happy for a vaginal birth 
+Appendix 5: Maternal and birthing parent request for CS 
+ 
+ CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 32 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+PICO incision/wound management pathway for women/people undergoing c -section 
+Clearpore dressing 
+(Trust standard of post-op 
+dressing) 
+BMI less than 35 
+If Clearpore dressing is heavily 
+stained with ooze prior to 
+planned removal, refer to 
+obstetric team to assess for 
+PICO application. 
+•Leave dressing in place for 
+6-24 hours. 
+•Check dressing regularly for 
+signs of excessive ooze or 
+infection. 
+Apply PICO in theatre 
+•Apply as per manufacturer’s instructions. 
+•Ensure device is operating correctly with a good seal. 
+•Write date of application on the back of the PICO pump. 
+•Fully complete PICO Patient Selection Form and return to 
+the Purple PICO Folder. 
+BMI 35 or more 
+•Day 6 post CS the pump will expire. Remove PICO Pad and 
+dispose of expired pump. 
+•Reassess the patient’s incision, if dry and completely 
+closed, discontinue PICO. 
+•Monitor PICO Pad for the amount of ‘staining’ or ‘strike 
+through’. 
+•Leave PICO Pad in place until it is completely full or day 6 
+post CS – whichever is sooner. 
+•If ‘dressing full’ indicator lights up/or the PICO Pad is 
+completely full before day 6, refer to ADAU for assessment 
+of incision and application of a second PICO Pad. Appendix 6: PICO wound management 
+ Appendix 7: Neuraxial Preservative Free Morphine (PFM) 
+CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 33 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+Preservative Free Morphine for Epidural or Intrathecal Use is now available at SRH and WH in line with 
+other hospitals within University Sussex Hospitals Trust. 
+Special Care: 
+Please ensure that ONLY the PRESERVATIVE FREE formulation of MORPHINE (PFM) is used via 
+the INTRATHECAL or EPIDURAL routes. 
+Safety Features: 
+• PFM is only presented as 1mg/ml vials. 
+• PFM is only stored in clear/yellow bags in designated neuraxial CD cupboards on Labour Ward 
+at SRH & WH. 
+• Care when drawing up the PFM as very low volumes are required, discard drawing up needle to 
+inject into syringe for neuraxial injection. 
+ 
+Suggested 
+Dose of PFM Obstetrics (LSCS) OAA Recommendation 
+Intrathecal Dose 0.1 – 0.15 mg 
+(100-150 micrograms) Add in Fentanyl 10-20 micrograms 
+Epidural Dose 2 mg -3 mg Flush with 2ml N Saline 
+ 
+Standard Intrathecal Dose for LSCS: 100micrograms PFM and 15micrograms Fentanyl with your 
+usual dose of bupivacaine 
+PFM will remain in the CSF longer when compared with diamorphine or fentanyl but recent publications 
+recommend the same monitoring post operatively as for diamorphine but consider the caveats. 
+Based on the suggested doses the average duration of analgesia is 18-24 hours and side effects are 
+rare. 
+Caveats: 
+• There is a dose dependent increased risk of delayed respiratory depression and a slightly 
+higher incidence of pruritis and nausea/vomiting. 
+• Reduce dose/avoid in the elderly, COPD, morbid obesity, sleep apnoea, liver and renal failure. 
+• Naloxone should always be prescribed in the postoperative period. 
+• Ondansetron is first line for reducing PFM pruritis and consider regular prescription for the 1st 24 
+hours post neuraxial PFM. 
+Do not prescribe regular opioids for the 1st 24 hours post neuraxial PFM with doses only 
+prescribed/ given as required (PRN). 
+ 
+Complete the Analgesia in Caesarean Section Audit Form - Appendix 8 
+
+Full details can be read from: Dispensing Storage 
+and Administration of Appendix 8: Analgesia in caesarean section audit form 
+CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 34 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Printed surname of Person Completing Form: …………………..….…. Date of Follow Up: …….……… 
+ 
+Audit of Analgesia Use intra and Post C -Section with RA Block 
+Please complete with post -operative review by circling/documenting appropriate response. 
+Patient Hospital Number and Initials : …………………………………………………. 
+Was Pre -op information on Intra and Post -op analgesia given? Y / N 
+Was it read? Y / N 
+ 
+Mode of Anaesthesia: Spinal / Epidural Top Up / CSE 
+Opioids given via spinal/epidural? Diamorphine / PF Morphine / Fentanyl 
+Please note dose under drug: 
+ 
+IV Opioids required intra -op? Diamorphine / Morphine / Fentanyl / Alfentanil 
+Please note dose under drug: 
+Category CS? 4 3 2 1 Number CS? 1st 2nd 3rd 4th Converted to GA? Y / N 
+If Converted to GA what additional analgesia 
+was given? TAP Block / LA infiltration / PCA post-op 
+ 
+Patient satisfaction with pain management day 1 post -operatively: 
+Very Good Good Satisfactory Poor Very Poor 
+ 
+Has Oramorph been prescribed? Y / N 
+ 
+Simple Analgesics prescribed? Prn? Y / N Regular 6hr Paracetamol? Y / N 
+Regular (change to guidance)? Y / N Ibuprofen 600mg tds? Y / N 
+How much oramorph was required on day 1 post op? …………………….………….. 
+Anti-Emetic Antipruritic 
+Was nausea a significant issue post-op? Y / N Was itch an issue post op? Y / N 
+Was Ondansetron required? Y / N Was treatment required? Y / N 
+Was a second anti -emetic required? Y / N 
+Please note any other relevant comments, critical incidents or drug reactions 
+pertaining to Neuraxial opioid administration: 
+………………………………………………………………………………………………… 
+ 
+…………………………………………………………………………………………..…….. 
+ 
+Please place completed forms in the Obstetric Anaesthetic Office – Many thanks 
+K Ashpole Nov 2021 Appendix 9: Caesarean Section WHO Surgical Safety Checklist 
+CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 35 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Please do not print from guideline 
+ 
+Appendix 10: Impacted fetal head (IFH) at Caesarean 
+CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 36 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+PREEMPT Are there signs of obstruction? 
+Is this a second stage LSCS? 
+PREPARE 
+Discuss at 
+team brief Legs into low lithotomy. 
+Surgical step. 
+Tocolysis immediately available? 
+Allocate roles. 
+• Coordinator aware? 
+• Paediatrics aware? 
+DECLARE If head not delivered by standard 
+techniques declare: 
+‘Impacted fetal head ’ 
+
+DELIVER Call senior team. 
+‘Please give GTN spray’. 
+Legs into McRoberts. 
+Head down tilt or step if needed. 
+Adequate access – extend incision if 
+needed. 
+Push or Pull techniques: 
+• Push up, hand cupped around baby’s 
+head and flex. 
+• Reverse breech extraction (OP). 
+• Patwardhan (useful if OA) deliver the 
+shoulders and arms first, fundal 
+pressure to flex body and deliver legs 
+and breech. 
+Consider GA for uterine relaxation. 
+Document and debrief parents and team Appendix 10 (cont): Impacted fetal head (IFH) at Caesarean 
+CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 37 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Working definition is: ‘Caesarean birth requiring additional techniques and/or tocolysis to 
+disimpact the fetal head after standard delivery manoeuvres have failed’. 
+ 
+There is no clear national guidance on how to manage this condition which is relatively 
+common (PROMPT). 50% occur before full dilatation. 
+ 
+Was considered rare, but NHS resolution early notification scheme identified IFH as a 
+contributory factor in 9% of their cases (usually birth trauma/HIE), and Bristol reported IFH 
+11% all EMCS and 32% of CS at full dilatation in 2016. 
+ 
+Complications of IFH 
+Mother Baby 
+Damage to uterus Skull fracture 
+Damage to urinary tract Intracranial bleed 
+Uterine bleeding and PPH Nerve injury 
+Longer hospital stay Hypoxic brain damage 
+Hysterectomy Neonatal death 
+
+Risk factors for IFH 
+Maternal/perinatal factors Primiparity 
+Macrosomia 
+
+Intrapartum factors Full cervical dilatation 
+OT/OP malposition 
+Mid or low cavity station 
+Oxytocin augmentation 
+Epidural 
+Failed operative vaginal birth 
+Operator factors Less experienced obstetricians 
+ 
+There is some evidence that reverse breech/Patwardhan’s reduces maternal/birthing parent 
+trauma compared to pushing up, but there is no evidence of difference in fetal trauma. 
+ 
+Limited evidence for use of tocolysis in these cases – GTN 2 puffs under the tongue is 
+suggested because immediately available and rapid onset of action. Terbutaline 
+250micrograms can be used, but needs to be drawn up and given subcutaneously. 
+
+References: Professor Tim Draycott, PROMPT 2020, Waterfall H, Grivell RM, Dodd JM. Techniques 
+for assisting difficult delivery at caesarean section. Cochrane Database of Systematic Reviews 2016, 
+Issue 1. Art. No.: CD004944. DOI: 10.1002/14651858.CD004944.pub3. CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 38 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+Appendix 11: Neurological monitoring after spinal/epidural 
+Appendix 12: Consultant attendance required table 
+CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 39 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Situations in which the consultant MUST ATTEND 
+In the event of high levels of activity e.g a second theatre being opened, unit closure due to 
+high levels of activity requiring obstetrician input. 
+Any return to theatre 
+Team debrief requested 
+If requested to do so 
+Early warning score protocol or sepsis screening tool that suggests critical deterioration where 
+HDU / ITU care is likely to become necessary. 
+Caesarean birth for major placenta praevia / abnormally invasive placenta 
+Caesarean birth for women with a BMI >50 Caesarean birth 
+Caesarean birth <28/40 
+Premature twins <30/40 
+4th degree perineal tear repair 
+Unexpected intrapartum stillbirth 
+Eclampsia 
+Maternal (or birthing parent) collapse eg septic shock, massive abruption 
+PPH >2L where the haemorrhage is continuing and Massive Obstetric Haemorrhage protocol 
+has been instigated. 
+Situations in which the consultant must ATTEND unless the most senior doctor present 
+has documented evidence as being signed off as competent. In these situations, the 
+senior doctor and the consultant should decide in advance if the consultant should be 
+INFORMED prior to the senior doctor undertaking the procedure. 
+Any patient in obstetrics with an EBL >1.5litres and ongoing bleeding. 
+Trial of instrumental birth 
+Vaginal twin birth 
+Caesarean birth at full dilatation 
+Caesarean birth for women with a BMI >40 
+Caesarean birth for transverse lie 
+Caesarean birth at <32/40 
+Vaginal breech birth 
+3rd degree perineal tear repair Appendix 13: Vaginal Preparation SOP 
+CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 40 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Introduced as per WHO guidance in 2015 and a Cochrane review in 2020. The Cochrane 
+review in 2020 showed a reduction in risk of post -caesarean endometritis of around 50% 
+(from 7.2% to 3.1%) and evidence of reduction in wound infections and post-operative fever. 
+ 
+Vaginal preparation is to be done for all caesarean sections regardless of categorisation, 
+unless it will impact the safety of mother or baby by delaying delivery. 
+ 
+This should be done at the time of catheter insertion, if already catheterised it should be 
+done just before prepping the abdomen. 
+ 
+Equipment required: 
+ 
+• Sachet of Tisept (no other solution is appropriate, if Tisept not available, please 
+ask coordinator to order from pharmacy). 
+• Rampleys sponge holding forceps. 
+• Pack of swabs. 
+ 
+Procedure: 
+ 
+• Wrap gaze swab around the end of the Rampleys sponge forceps and soak in 
+Tisept. 
+• Place into the vagina and clean vagina in a circular motion for around 30 seconds. 
+• Count swabs and instruments. Appendix 14: Risk and benefits for corticosteroids 
+CG12030 Caesarean Birth Guideline v11.3 August 2023 Page 41 of 41 
+Please check on the intranet that this printout is the most recent version of this document before use.

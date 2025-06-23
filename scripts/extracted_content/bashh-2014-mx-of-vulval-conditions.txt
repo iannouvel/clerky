@@ -1,0 +1,1075 @@
+# Extracted from: BASHH - 2014 - Mx of Vulval Conditions.pdf
+# Guideline ID: bashh-2014-mx-of-vulval-conditions
+# Content length: 48438 characters
+# Processing date: 1745330753.8606794
+
+1 2014 UK National Guideline on the 
+Management of Vulval Conditions 
+ 
+Clinical Effectiveness Group British Association for Sexual Health and HIV 
+ 
+Date of writing: Feb 2014 
+Date review due: 2018 
+
+Guideline development group membership 
+Sarah K Edwards (Consultant GU Physician) , Christine Bates (Consultant GU 
+Physician) , Fiona Lewis (Consultant Dermatologist) , Cindy Sethi (Consultant GU 
+Physician) 
+Lead Editor from CEG: Dr Deepa Grover (Consultant GU Physician) 
+ 
+New in the 201 4 Guidelines 
+ General advice f or the management of vulval disorders 
+ Onward referral guidelines 
+ Vulval lichen simplex 
+ Vulval psoriasis 
+ Use of calcineurin inhibitors 
+ 
+Introduction and Methodology 
+ 
+Objectives 
+This guideline offers recommendation on the management of a range of vulval 
+disorders who may present to Genitourinary Medicine clinics. Vulval disorders 
+represent a disparate group of conditions with a variety of causes, affecting a 
+particular anatomical site and may affect women of any age . 
+These guidelines concentrate on a selecte d group of conditions, which may be 
+managed by Genitourinary Physicians, either alone or in conjunction with other 
+specialists , dependant on local expertise . Guidance for onward referral is also 
+included. It is not intended as a comprehensive review of t he treatment of all 
+vulval disease. The main categories of non -infective vulval diseases are 
+dermatoses, pain syndromes and pre -malignant conditions. 
+This guideline offers recommendations on the diagnostic tests and treatment 
+regime ns needed for the effec tive management of the following vulval 
+conditions: 
+Vulval lichen sclerosus 
+Vulval lichen planus 
+Vulval eczema 
+Vulval lichen simplex 
+Vulval psoriasis 
+Vulval intraepithelial neoplasia 
+Vulval pain syndromes 
+It is aimed primarily at people aged 16 years or older presenting to 
+Genitourinary Medicine clinics. 
+
+NHS Evidence has accredited the process used by the British Association for Sexual Health & 
+HIV (BASHH) to produce UK national guidelines. Accreditation is valid for 3 years from January 
+2011 and is retrospectively applicable to guidance produced using the processes described in 
+the BASHH Framework for Guideline Development and Assessment dated September 2010. 
+More information on accreditation can be viewed at www.evidence.nhs.uk 2 
+Search Strategy . 
+This document was produced in accordance with the guidance set out in the 
+CEG’s document ‘Framework for guideline development and assessment ’ at 
+http:/www.bashh.org/guidelines. 
+ 
+Four reference sources were used to provide a comprehensive basis for 
+the guideline: 
+1. Medline and Embase Search up to March 2012 
+The search strategy comprised the following terms in the title or abstract: 
+Vulval lichen sclerosus 
+Vulval lichen planus 
+Vulva l eczema 
+Vulval lichen simplex 
+Vulval psoriasis 
+Vulval intraepithelial neoplasia 
+Vulval pain syndromes /vulvodynia 
+2. Green -top Guideline 58 The Management of Vulval Skin Disorders. 2011 
+http://www.rcog.org.uk/files/rcog -corp/GTG58Vulval22022011.pdf 
+3. British Association of Dermatology Guidelines 
+4. Cochrane Collaboration Databases (www.cochrane.org) 
+ 
+Methods 
+Article titles and abstracts were reviewed and if relevant the full text article 
+obtained. Priority was given to randomised controlled trial and systematic review 
+evidence, and recommendations made and graded on the basis of best available 
+evidence . (Appendix 1) 
+ 
+Piloting and Feedback 
+The guidelines have been reviewed and approved b y an expert patient , and also 
+by the BASHH patient and public engagement panel . 
+ 
+Management 
+General advice for delivery of vulval care 
+Vulval conditions may present to Genitourinary Medicine Physicians, 
+Dermatologists and Gynaecologists and treatment modal ities also span 
+across this spectrum. Care of patients with vulval conditions is therefore 
+best managed by a multidisciplinary approach1. This includes clear 
+working arrangements between disciplines or access to a specialist 
+multidisciplinary vulval serv ice. The service should also have access to 
+clinicopathological discussion and review of histology results. 
+ 
+General Advice for all vulval conditions 
+ Avoid contact with soap, shampoo and bubble bath. Simple emollients 
+can be used as a soap substitute and general moisturiser 
+ Avoid tight fitting garments which may irritate the area 
+ Avoid use of spermicidally lubricated condoms 
+ Patients should be given a detailed explanation of their condition with 
+particular emphasis on any long-term implications for the health of 
+themselves and their partner(s). This should be reinforced by giving 
+them clear and accurate written information. (The British Society for 
+the Study of Vulval Disease produces some patient information leaflets 3 www.bssvd.org/leaflets.asp , also include BAD leaflets, ISSVD, Vulval 
+Pain Society and NZ Dermnet ) 
+ The patient’s GP should be informed. 
+ STI screening should be considered in all patients and vulvovaginal 
+candidiasis excluded if the patient p resents with vulval itch. 
+ All patients should be assessed for sexual dysfunction 
+ 
+Sexual partners 
+ Partner tracing is not required unless screening detects a sexually 
+transmitted infection. 
+
+Vulval lichen sclerosus 2 
+ 
+These guidelines relate to the managem ent of lichen sclerosus in adult females. 
+Additional guidelines have been produced by the Royal College of Obstetricians 
+and Gynaecologists1 and the British Association of Dermatologists3. 
+ 
+Aetiolog y 
+Lichen sclerosus (LS) is an inflammatory dermatosis of unknown aetiology. 
+There is evidence to suggest that auto -immu ne factors may be involved in it s 
+pathogenesis and recent evidence has shown autoantibodies to extracellular 
+matrix protein 14. There is an increased frequency of other autoimmune 
+disorders in fe males with lichen sclerosu s5 
+ 
+Clinical Features 
+ 
+Symptoms 
+ Itch 
+ Soreness 
+ Dyspareunia if introital narrowing 
+ Urinary symptoms 
+ Other symptoms, e.g. constipation, can occur if there is peri -anal 
+involvement 
+ Can be asymptomatic , but this is rare 
+ 
+Signs 
+ Pale, white atrophic a reas affecting the vulva 
+ Purpura (ecchymosis) is common 
+ Fissuring 
+ Erosions, but blistering is very rare 
+ Hyperkeratosis can occur 
+ Changes may be localised or in a ‘figure of eight’ distribution including 
+the perianal area 
+ Loss of architectur e may be manifest as loss of the labia minora and/or 
+midline fusion. The clitoral hood may be sealed over the clitoris so that 
+it is buried 
+ 
+Complications 
+ Development of squamous cell carcinoma (actual risk <5%6) 
+ Development of clitoral pseudo cyst 
+ Sexual dysfunction 4  Dysaesthesia 
+ 
+Diagnosis 
+ Characteristic clinical appearance 
+ Histology of vulval biopsy: thinned epidermis with sub -epidermal 
+hyalinization and deeper inflammatory infiltrate. In early disease 
+histology can be difficult .7 
+ 
+Management 
+ Further in vestigation 
+ Biopsy: is mandatory if the diagnosis is uncertain , there are atypical 
+features or coexistent vulval intraepithelial neoplasia (VIN) / squamous 
+cell carcinoma (SCC) is suspected 
+ Investigation for autoimmune disease if clinically indicated , espe cially 
+thyroid dysfunction ( i.e. T4 and TSH) as it is often asymptomatic and 
+has been found be associated (IV,C)5 
+ Skin swab : only useful to exclude co-existing infection if there are 
+symptoms or signs suggestive of this 
+ Patch testing : rarely required and only if secondary medicament 
+allergy suspected . The advice of a dermatologist should be sought. 
+ 
+Treatment 
+ General Advice 
+ Patients should be informed about the condition and given 
+written information. Patients should be made aware of the small 
+risk of n eoplastic change. They should be advised to contact the 
+doctor if they notice a change in appearance or texture (e.g. 
+lump or hardening of skin) , or if there is a major change in 
+symptoms. 
+ 
+ Recommended Regimen 
+ Ultra-potent topical steroids8 e.g. Clobet asol proprionate (I A). 
+Various regimens are used one of the most common being daily 
+use for one month, alternate days for one month, twice weekly 
+for one month with review at 3 months. It can then be used as 
+needed depending on symptoms. There is no evide nce on the 
+optimal regimen. 
+ 30gm of an ultra -potent steroid should last at least 3 months 
+ Ointment bases are much better to use on the ano -genital skin 
+because of the reduced need for preservatives in an ointment 
+base, and hence less risk of a secondary contact allergy. 
+ 
+Alternative regimens 
+ An ultra -potent topical steroid with antibacterial and antifungal 
+e.g. Dermovate NN ® or generic equivalent (Clobetasol with 
+neomycin and nystatin) or an alternative preparation that 
+combats secondary infection ( such a s Fucibet ® cream ) may be 
+appropriate if secondary infection is a concern. These should 
+only be used for a short period of time to clear infection (IV, C). 
+ 5 Research findings and unlicensed treatments 
+ Topical calcineurin inhibitors. This is not a licensed i ndication 
+and long -term safety and efficacy is not established. 
+Tacrolimus 0.1% has been shown to be effective when used for 
+16 to 24 weeks (IIb B) 9. This study, which included males and 
+females and genital and extra genital lichen sclerosus, showed 
+that 77% of evaluable patients responded to treatment with 
+43% showing a complete response (absence of symptoms and 
+skin findings excepting induration and atrophy) at 24 weeks. 
+The follow up period was 18 months and whilst no patient was 
+shown to have skin mali gnancy or dysplastic change the long -
+term risks need to be studied in view of concerns about the 
+possibility of topical immunosuppression increasing susceptibility 
+of malignancy. A study of the related agent, pimecrolimus, 
+showed that 42% of patients were in ‘complete remission’ after 
+6 months application10. (IIb B) Local irritancy was the most 
+common side effect with both tacrolimus and pimecrolimus but 
+usually improved after the initial period of use. Cases of 
+malignancy have been reported11,12 and it is recommended that 
+these agents should not be used first line. 
+ Oral retinoids, e.g. acitretin13 – these may be effective in severe 
+recalcitrant disease (Ib A) but should only be given by a 
+dermatologist , experienced in the use of these agents. They are 
+severely teratogenic and pregnancy must be avoided for 2 years 
+after finishing treatment. 
+ UVA1 phototherapy has been reported as successful in a small 
+number of cases.14 (III,B) 
+ 
+Pregnancy and Breast -feeding 
+ Topical steroids are safe to use while pregnant or breast -feeding 
+ Topical calcineurin inhibitors are contra -indicated whilst 
+pregnant or breast -feeding. 
+ Retinoids are absolutely contra -indicated during pregnancy and 
+for at least 2 years before. They should be used with caution in 
+females of child -bearing age. 
+
+Onward referral criteria 
+ Those with a ctive disease which has not responded adequately to 
+treatment should be referred to a specialised Vulval Clinic 
+ Any patient who develops differentiated or undifferentiated VIN or an 
+SCC on a background of LS shou ld be seen and follow -up in a 
+specialised Vulval Clinic . Surgery15 – should only be used for the 
+treatment of coexistent VIN / SCC or fusion. Disease tends to recur 
+around the scar . (III, B). 
+ 
+Follow -up 
+ After 3 months to assess response to treatment 
+ Stable disease should be reviewed annually and this can be done by 
+the General Practitioner in those with well controlled disease. This 
+must be communicated to the patient and GP by the clinic. 6  Patients should be informed that if they notice the development of a 
+lump, sore area, change in symptoms or change in appearance they 
+should prompt medical review. 
+ 
+Auditable outcome measures 
+ Biopsy should be performed in patients not responding to an initial 
+course of steroid treatment and if raised lesions devel op Target 
+100% 
+ Written information should be given to all patients Target 100% 
+ 
+Vulval Lichen Planus 
+ 
+Aetiology 
+Lichen planus is an inflammatory disorder with manifestations on the skin, 
+genital and oral mucous membranes. More rarely it affects the lacrimal duct , 
+oesophagus and external auditory meatus . It is an inflammatory condition of 
+unknown pathogenesis b ut it is probably an immunological response by T cells 
+activated by, as yet, unidentified antigens. Weak circulating basement 
+membrane zone antibodies have b een shown to be present in 61% of patients 
+with erosive lichen planus of the vulva16. In some cases there is overlap between 
+lichen sclerosus and lichen planus. 
+ 
+Clinical Features 
+ 
+Symptoms 
+ Itch / irritation 
+ Soreness 
+ Dyspareunia 
+ Urinary symptoms 
+ Vaginal di scharge 
+ Can be asymptomatic 
+ 
+Signs 
+The anogenital lesions of lichen planus may be divided into three main 
+groups according to their clinical presentation: 
+1. Classical: typical papules will be found on the keratinised anogenital 
+skin, with or without stria e on the inner aspect of the vulva. 
+Hyperpigmentation frequently follows their resolution, particularly 
+those with dark -skin. This type of lichen planus may be asymptomatic. 
+Vulval lesions were found in 19 out of 37 women with cutaneous lichen 
+planus, wit h four of the 19 having had no symptoms17 
+2. Hypertrophic: these lesions are relatively rare and can be difficult to 
+diagnose. They particularly affect the perineum and perianal area, 
+presenting as thickened warty plaques which may become ulcerated, 
+infected and painful. Because of these features , they can mimic 
+malignancy. They do not appear to be accompanied by vaginal lesions. 
+3. Erosive: the most common subtype to cause vulval symptoms. The 
+mucosal surfaces are eroded. At the edges of the erosions the 
+epithelium is mauve and a pale network (Wickham’s striae) is 
+sometimes seen. The vaginal lesions in erosive lichen planus are 
+important to recognise early and start treatment as they can lead to 
+scarring and complete stenosis. The lesions consist of friab le 7 telang iectasia with patchy erythema which are responsible for the 
+common symptoms of postcoital bleeding, dyspareunia and a variable 
+discharge which is often serosanguinous. As erosions heal synaechiae 
+and scarring can develop.18 This type is also seen in the oral mucosa 
+although synaechia are uncommon. The term vulvo -vaginal gingival 
+syndrome is used when erosive disease occurs in these three sites . The 
+presenting symptom is usually of pain and soreness. 
+ 
+Complications 
+ Scarring, including vaginal synec hiae 
+ Development of squamous cell carcinoma .. In one study the incidence 
+was as high as 3%.19 
+ 
+Diagnosis 
+ Characteristic clinical appearance. Involvement of the vagina excludes 
+lichen sclerosus. Skin changes elsewhere can be helpful but overlap 
+between lic hen planus and lichen sclerosus is described . 
+Immunobullous disorders such as pemphigus can look clinically similar 
+to erosive lichen planus. 
+ Histology of vulval biopsy: irregular saw -toothed acanthosis, increased 
+granular layer and basal cell liquefaction . Band -like dermal infiltrate 
+mainly lymphocytic. 
+ 
+Management 
+ Further investigation 
+ Biopsy: is a necessity if the diagnosis is uncertain or coexistent vulval 
+intraepithelial neoplasia (VIN) / squamous cell carcinoma (SCC) is 
+suspected. Direct immunofluor escence should be performed if an 
+immunobullous disease is considered in the differential diagnosis. Only 
+25% are classic on biopsy and clinicopathological discussion is 
+important 
+ Investigation for autoimmune disease especially of the thyroid (i.e T4 
+and T SH if there is any suspicion of abnormality) (IV C)5 
+ Skin swab: to exclude secondary infection especially of excoriated 
+lesions 
+ Patch testing: if secondary medicament allergy suspected 
+ Whilst a link with hepatitis C and sometimes B has been noted in some 
+countries there is no evidence of increased incidence in the UK and 
+routine screening is not thought necessary.20 
+ 
+Treatment 
+ General Advice 
+ Patients should be informed about the condition and given 
+written information. Patients should be made aware of the small 
+risk of neoplastic change. They should be advised to contact the 
+doctor if they notice a change in appearance or texture (e.g. 
+lump or hardening of skin). 
+ 
+ Recommended Regimen 
+ Ultrapotent topical steroids e.g. Clobetasol proprionate . (Iib,B) 
+In a study of 114 patients in a vulval clinic, 89 used ultra potent 
+topical steroids as first line treatment of whom 75% improved 8 and 54% were symptom free. However in only 9% was there 
+resolution of signs of inflammation.19 There is no evidence on 
+the opti mal regimen. 
+ Maintenance treatment may be required and can either be with 
+weaker steroid preparations or less frequent use of potent 
+steroids. 
+ Vaginal corticosteroids: Delivery of corticosteroids to the vagina 
+is not easy. A proprietary preparation contain ing hydrocortisone 
+(Colifoam), introduced with an applicator, is useful. Prednisolone 
+suppositories may be used in more severe cases (IV,C) . 
+ 
+Alternative regimens 
+ An ultra -potent topical steroid with antibacterial and antifungal 
+e.g. Dermovate NN® or gener ic equivalent (Clobetasol with 
+neomycin and nystatin) or an alternative preparation that 
+combats secondary infection (such as Fucibet® cream ) may be 
+appropriate if secondary infection is a concern. These should 
+only be used for a short period of time to cl ear infection (IV, C). 
+ 
+Pregnancy and Breast -feeding 
+ Topical steroids are safe to use while pregnant or breast -
+feeding. 
+ Topical calcineurin inhibitors are contra -indicated whilst 
+pregnant or breast -feeding. 
+ Retinoids are absolutely contraindicated during pregnancy and 
+for at least 2 years before. They should be used with caution in 
+females of child -bearing age. 
+ 
+Onward referral 
+Referral to a multidisciplinary vulval clinic is recommended for erosive disease 
+and any recalcitrant cases, or those in whom syst emic therapy is considered. 
+Systemic treatments: There is no consensus and little evidence base for the use 
+of systemic agents. In the vulvovaginal –gingival syndrome there is general 
+agreement that azathioprine, dapsone, griseofulvin, chloroquine and 
+minoc ycline, all tried empirically, are of little or no benefit; 
+● Oral ciclosporin may be considered . 
+● Retinoids can be very helpful in hypertrophic cases. 
+● Oral steroids are used, for example prednisolone 40 mg/day, tapered 
+off over a few weeks; courses can be repeated as necessary for severe 
+flares. 
+● The new biological agents have been used in oral and cutaneous 
+disease. Basiliximab21 has been found to be effective but its’ use has 
+not been evaluated in vulval disease. All these potentially toxic 
+therapies need careful monitoring and are best supervised by a 
+dermatologist in the context of a speciali sed clinic (IV, C). 
+ 
+Follow -up 
+ At 2-3 months to assess response to treatment 
+ Active disease should be assessed as clinically required . Erosive lichen 
+planus needs lo ng term specialised follow -up (IV, C). 
+ Stable disease should be reviewed annually except in well -counselled 
+patients who control their symptoms well. If review is by the General 9 Practitioner this should be communicated to the patient and GP by the 
+clinic. 
+ Patients should be informed that if they notice the development of a 
+lump or change in appearance they should seek medical advice 
+urgently. 
+ 
+Auditable outcome measures 
+● Biopsy should be performed in patients not responding to an initial 
+course of treatment and if raised lesions develop 
+ Target 100% 
+ 
+Vulval eczema 
+ 
+Aetiology 
+Eczematous and lichenified diseases , as classified by ISSVD ,22 includes: 
+ Atopic : the ‘allergic’ t ype often seen in people who also have hay fever or 
+asthma . 
+ Allergic contact : due to skin contact to a substance to which the 
+individual is sensitive. 
+ Irritant contact : due to skin contact with irritating chemica ls, powders, 
+cleaning agents, etc. 
+ 
+Clinical Features 
+ 
+Symptoms 
+ Vulval itch 
+ Soreness 
+ 
+Signs 
+ Erythema 
+ Lichenification and excoriation 
+ Fissuring 
+ 
+Complications 
+ Secondary infection 
+ 
+Diagnosis 
+ Clinical presentation (as above). 
+ General examination of the skin to look for other signs of dermatitis 
+ 
+Management 
+ Further Investigation 
+ Patch testing23,24 – standard battery and medicaments (III,B) 
+ Biopsy (IV,C) – only if atypical features or failure to respond to 
+treatment 
+ 
+Treatment 
+ Recommended Regimens 
+ Avoidance of precipitating factor (IV,C) 
+ Use of emollient soap substitute (aqueous cream should not be 
+applied as a moisturiser due to the risk of irritant effects , 
+Hydramol can be a suitable alternative ) 10  Topical corticosteroid – the choice of preparation will depe nd on 
+severity, 1% Hydrocortisone ointment in milder cases, or 
+betamethasone valerate 0.025% or clobetasol propionate 0.05% 
+for limited periods if severe or lichenified . A combined 
+preparation containing antifungal and/or antibiotic may be 
+required if sec ondary infection suspected. Apply once 
+daily.(IV,C) 
+ 
+Follow -up 
+ As clinically required 
+ Long-term follow up and psychological support may be needed 
+ 
+Auditable Outcomes 
+ Patients should be given a full explanation of their condition with 
+written information Target 100% 
+ 
+Lichen simplex 
+ 
+Aetiology 
+Categorised into 4 main groups. 
+ Underlying dermatoses , i.e. atopic dermatitis, allergic contact dermatitis, 
+superficial fungal (tinea and candidiasis) infections 
+ Systemic conditions causing pruritus , i.e. renal f ailure, obstructive biliary 
+disease (primary biliary cirrhosis and primary sclerosing cholangitis), 
+Hodgkin's lymphoma, hyper - or hypothyroidism, and polycythaemia rubra 
+vera 
+ Environmental factors: heat, sweat, rubbing of clothing, and other 
+irritants suc h as harsh skincare products. 
+ Psychiatric disorders: anxiety, depression, obsessive -compulsive disorder, 
+and dissociative experiences are often associated with the condition. 
+Emotional tensions in predisposed people (i.e., those with an underlying 
+predispo sition for atopic dermatitis, asthma, and allergic rhinitis) can 
+induce itch and thus begin the chronic itch -scratch cycle25,26. 
+ 
+Clinical Features 
+ 
+Symptoms 
+ Vulval itch 
+ Soreness 
+ 
+Signs 
+ Lichenification i.e. thickened, slightly scaly, pale or earthy -colour ed 
+skin with accentuated markings, maybe more marked on the side 
+opposite the dominant hand. 
+ Erosions and fissuring. 
+ Excoriations as a result of scratching may be seen 
+ The pubic hair is often lost in the area of scratching 
+ 
+Complications 11  Secondary infecti on 
+ 
+Diagnosis 
+ Clinical presentation (as above). Psoriasis of the vulva is usually less 
+itchy and lesions are bright red, often glazed and well demarcated and 
+frequently involves natal cleft 
+ History including mental state examination where indicated 
+ Gener al examination of the skin to look for other signs of psoriasis or 
+lichen simplex elsewhere 
+ 
+Management 
+ Further Investigation 
+ Screening for infection (e.g. Staphylococcus aureus, Candida albicans ) 
+ Dermatological referral for consideration of patch testing23 – standard 
+battery and medicaments (III,B) 
+ Ferritin27 (III,B) 
+ Biopsy (IV,C) 
+ 
+Treatment 
+ Recommended Regimens 
+ Avoidance of precipitating factor (IV,C) 
+ Use of emollient soap (some people may have a reaction to 
+Aqueous cream when it is used as an emollie nt. For this reason 
+it is recommended only as a soap substitute and not an 
+emollient ). 
+ Topical corticosteroid – potent topical steroids are required when 
+treating lichenified areas e.g. betamethasone or clobetasol for 
+limited periods . A combined prepara tion containing antifungal 
+and/or antibiotic may be required if secondary infection 
+suspected. Apply once or twice daily.(IV,C) 
+ A mildly anxiolytic antihistamine such as hydroxyzine or doxepin 
+at night is helpful 
+ The symptoms of pruritus often respond fair ly quickly to a 
+topical steroid but, unless the lichenification resolves, the itch –
+scratch cycle will remain and the symptoms will recur. A 
+graduated reduction in the frequency of application of the topical 
+steroid is helpful , over about 3 -4 months 
+ Cogniti ve behavioural therapy may be helpful if there are co -
+existing mental health issues 
+ 
+Follow -up 
+ Mild disease – as clinically required 
+ Severe disease (i.e. when using potent topical steroids) – 1 month 
+then as required 
+ 
+Auditable Outcome Measures 
+ Patients sh ould be given a full explanation of their condition with 
+written information Target 100% 
+
+ 12 Vulval psoriasis 
+ 
+Aetiology 
+Psoriasis is a chronic inflammatory epidermal skin disease affecting 
+approximately 2% of the general population. Genital psoriasis may present as 
+part of plaque or flexural psoriasis or, rarely, as the only area affected. 
+ 
+Clinical Features 
+ 
+Symptoms 
+ Vulval itch 
+ Soreness 
+ Burning sensation 
+ 
+Signs 
+ Well demarcated brightly erythematous plaques 
+ Often symmetrical 
+ Frequently affects nata l cleft 
+ Usually lacks scaling due to maceration 
+ Fissuring 
+ 
+Complications 
+ May be worsened due to Koebner effect by irritation from urine, tight-
+fitting clothes or sexual intercourse. 
+
+Diagnosis 
+ Clinical presentation [as above.] 
+ General examination of the skin and nails to look for other signs of 
+psoriasis 
+ 
+Management 
+ Further Investigation 
+ Skin punch biopsy if the diagnosis is in doubt 
+ 
+Treatment28 
+ Recommended Regimens 
+ Avoidance of irritating factors 
+ Use of emollient soap substitute 
+ Topical corticost eroid - weak to moderate steroids are preferred 
+but if insufficient to induce a response then intensive short term 
+potent steroid such as clobetasol propionate 0.05% may be 
+used. A combined preparation containing antifungal and/or 
+antibiotic may be require d if secondary infection suspected (e.g. 
+Trimovate®) .(IV, C) 
+ Coal-tar preparations – may be used alone or combined or 
+alternated with topical steroids. However, these preparations 
+can cause irritation and folliculitis. (IV, C) 
+ Vitamin D analogues such as T alcalcitol – alone or in 
+combination with corticosteroid, however their usefulness may 
+be limited by causing irritation. (IV, C) 
+ 13 Onward referral 
+ Referral to a multidisciplinary vulval clinic is recommended for 
+unresponsive or recalcitrant cases, or those in whom systemic therapy 
+is considered. 
+ Systemic treatments: if required for severe and extensive psoriasis 
+may help genital lesions but not recommended for isolated genital 
+psoriasis. 
+ 
+Follow -up 
+ Mild disease – as clinically required 
+ Severe disease – (i.e. when using potent topical steroids) 1 month 
+then as required 
+ 
+Auditable Outcome Measures 
+ Patients should be given a full explanation of their condition with 
+written information Target 100% 
+
+Other Vulval Dermatoses 
+Many other skin conditions can a ffect the vulva. Where the diagnosis is not 
+obvious patients should be referred to a combined vulva l clinic or to a 
+dermatologist. 
+ 
+Vulval intraepithelial neoplasia (VIN)2 
+ 
+Aetiology 
+This is a vulval skin condition which may become cancerous if left untrea ted. It 
+is confirmed by histological diagnosis . In Genitourinary Medicine clinics the 
+commonest aetiological agent is Human papillomavirus (HPV) this is known as 
+usual type and is mainly associated with HPV 1629. A second type, generally not 
+HPV re lated occurs in conjunction with lichen sclerosus or lichen planus (known 
+as differentiated type)30. The risk of progression to squamous cell carcinoma is 
+much greater with the differentiated type of VIN and needs specialised 
+management. VIN is commoner in immuno compromised women .31 Smoking is 
+also a risk factor. 
+ 
+Clinical Features 
+Symptoms 
+ Lumps 
+ Burning and itch / irritation 
+ Asymptomatic 
+ Pain 
+ 
+Signs 
+ Clinical appearance is very variable 
+ Raised white, erythematous or pigmented lesions occur and these may 
+be warty, moist or eroded (pigmented lesions were previously known 
+as Bowenoid papulosis) 
+ Multifocal lesions are common 
+ 
+Complications 14  Development of squamous cell carcinoma (SCC) has been reported in 
+between 9%32 and 18.5% of women33 
+ Recurrence is common and progr ession to cancer can occur following 
+previous treatment 33 
+ Psychosexual consequences have also been described (especially 
+following surgical treatment)34 
+ 
+Diagnosis 
+ Biopsy – histology shows loss of organisation of squamous epithelium 
+with a variable degree of cytological atypia which is graded as 
+undifferentiated or differentiated30 and by depth. Multiple biopsies may 
+be required as there is a risk of missing invasive disease35 
+ 
+Management 
+ Further investigation 
+ Ensure that cervical cytology remains up to date - there is an 
+association with cervical intraepithelial neoplasia (CIN)36 (this is 
+probably only applicable to those due to HPV) (IV,C) 
+ All patients with VIN should be referred for up -to date colposcopy to 
+exclude CIN and VIN. If there are any peri -anal lesions, referral for 
+anoscopy is recommended (IV, C). 
+ 
+Treatment 37,38 
+Most studies and research relate to full thickness VIN. Multifocal lesions 
+can be treated in the same manner as single lesions, but may have a 
+higher recurrence rate28. 
+. Recommended Regimen 
+ Local excision39 – this is the treatment of choice for small well 
+circumscribed lesions as it has the lowest rate of recurrence on 
+follow up.(III,B) 
+ Imiquimod cream 5 % - partial and complete clinical and 
+histological regression has been sho wn in small studies but 
+treatment limited by side effects. Only short term follow up 
+data is available. This is an unlicensed indication. (I b,A)40,41 
+ Vulvectomy – this has been effective but recurrence may occur 
+and function and cosmesis will be impaired (IV,C)34,39 
+ 
+Alternative Regimens 
+1. Local destruction – a variety of techniques have been evaluated 
+30, 32, including carbon dioxide laser and ultrasonic surgical 
+aspiration 42, photodynamic therapy39, cryotherapy 32, 
+laser39.(IIa, B) There are anecdotal r eports of treatment with 
+diathermy. Involvement of skin appendages can occur and 
+recurrence may ensue if the appropriate depth of treatment is 
+not achieved. The recurrence rates at follow -up tend to be 
+higher than for excision, but cosmesis is usually goo d. 
+2. 5 fluorouracil cream 43 – may lead to resolution of some lesions 
+but results are variable and side effects are common. No 
+consensus on usefulness or regimen. This is an unlicensed 
+indication. (IV,C). 
+3. Supervision35 – some lesions will spontaneously regr ess. This 
+may be the best policy for partial thickness VIN . However there 15 is a risk of progression and patients should be made aware of 
+this (IV , C). 
+ 
+Pregnancy and Breast -feeding 
+ Imiquimod and 5 fluorouracil cream s are not licensed in 
+pregnancy 
+ 
+Onward referral 
+● Cases of VIN should be assessed in a multidisciplinary vulval clinic, or 
+have input from gynaecology regarding assessment for surgical 
+excision1. 
+Follow -up 
+ Close follow -up is mandatory. Although resolution may occur VIN III 
+particularly has a s ignificant rate of progression (6.5% in one study)33 
+ 
+Auditable Outcome Measures 
+ Follow up of cases until 5 years after resolution Target 80% 
+
+Vulval pain 
+International Society for the Study of Vulvovaginal Diseases [ISSVD] defines 
+vulvodynia as ‘vulvar discomfort, most often described as burning pain, 
+occurring in the absence of relevant visible findings or a specific, clinically 
+identifiable, neurologic disorder’. 44 
+Vulvodynia is categorised, by the ISSVD, as generalised or localised; provoked, 
+unprovo ked or a mixture of the two. 
+Localised provoked vulvodynia [vestibulodynia] 
+ 
+Aetiology 
+Likely to be multifactorial; a history of vulvovaginal candidiasis, usually 
+recurrent, is the most commonly reported feature. Experimental animal study 
+supports this ass ociation .45 
+ 
+Clinical Features 
+ 
+ Symptoms 
+ Vulval pain – frequently felt at the introitus at penetration during 
+sexual intercourse or on insertion of tampons. There is usually a long 
+history. 
+ 
+Signs 
+ Focal tenderness elicited by gentle application of a cott on wool tip bud 
+at the introitus or around the clitoris 
+ There are no signs of an acute inflammatory process 
+ 
+Complications 
+ Sexual dysfunction 
+ Psychological morbidity 
+ 16 Diagnosis 
+● Clinical diagnosis made on history and examination 
+ 
+Management 
+ 
+Further inves tigation 
+ After exclusion of other treatable causes no further investigation is 
+required 
+ 
+Treatment 
+The British Society for the Study of Vulval Disease [BSSVD] recommends 
+a multidisciplinary approach to patient care and that combining 
+treatments can be help ful in dealing with different aspects of vulval pain. 
+46,47 
+
+Recommended regimens 
+● Avoidance of irritating factors 
+● Use of emollient soap substitute 
+● Topical local anaesthetics e.g. 5% lidocaine ointment or 2 % lidocaine 
+gel should be used with caution as i rritation may be caused. The 
+application should be made 15 -20 minutes prior to penetrative sex and 
+washing off the lidocaine just before sex or the use of condom by the 
+partner can reduce the risk of transfer resulting in penile numbness. 
+Oral contact should be avoided (IVC) 
+ 
+● Physical therapies 
+ Pelvic floor muscle biofeedback48 (III,B) 
+ Vaginal transcutaneous electrical nerve stimulation [TENS] (Ib ,A) 49 
+ Vaginal trainers (III ,B) 50 
+ 
+ Cognitive behaviour therapy (III ,C) 51 
+ 
+Alternative Regimens 
+● Pain modifiers – the benefit of drugs such as tricyclic antidepressants, 
+gabapentin and pregabalin is not clear. Amitriptyline gradually titrated 
+from 10mg up to 100 mg according to response and side effects may 
+be beneficial in some women (IVC) 
+ Surgery – Modified vestib ulectomy may be considered in cases where 
+other measures have been unsuccessful. Patients who have responded 
+to topical lidocaine prior to sex have a better outcome. (IIIB) 52,53 
+ 
+Follow -up 
+● As clinically required 
+● Long-term follow -up and psychological supp ort may be needed 
+ 
+Auditable Outcomes 
+ Patients should be given a full explanation of their condition with 
+written information Target 100% 
+
+ 17 Unprovoked Vulvodynia 
+ 
+Aetiology 
+The aetiology is unknown and the condition is best managed as a chronic pain 
+syndrome. 
+ 
+Clinical Features 
+ 
+ Symptoms 
+ Pain that is longstanding and unexplained. 
+ May be associated with urinary symptoms such as interstitial cystitis54 
+ 
+Signs 
+ The vulva appears normal 
+. 
+Complications 
+ Sexual dysfunction 
+ Psychological morbidity 
+ 
+Diagn osis 
+ Clinical diagnosis made on history and examination having excluded 
+other causes. 
+ 
+Management 
+Further investigation 
+ After exclusion of other treatable causes no further investigation is 
+required 
+ 
+Treatment 
+The British Society for the Study of Vulval D isease [BSSVD] recommends 
+a multidisciplinary approach to patient care and that combining 
+treatments can be helpful in dealing with different aspects of vulval pain. 
+46 
+ 
+Treatment resistant unprovoked vulvodynia may require referral to a pain 
+clinic. 
+ 
+Recommended regimens 
+ Use of emollient soap substitute 
+ Pain modifiers – tricyclic antidepressants are well established in chronic 
+pain management. Few studies have specifically examined the effect in 
+vulvodynia however amitriptyline is frequently first line t reatment; 
+dosage should be increased by small increments starting at 10mg up 
+to 100mg daily according to the patient’s response55 (III,B) 
+ Note: a recent randomised study has not confirmed the beneficial 
+effect of amitriptyline. (Ib, A)56 
+ If unresponsi ve or unable to tolerate the side eff ects, 
+gabapentin57(III,B) or pregabalin58 may be used (IIb,B) 
+ 
+ 18 Alternative regimens 
+ Topical local anaesthetic e.g. 5% lidocaine ointment or 2% lidocaine 
+gel. A trial of local anaesthetic may be considered although irri tation is 
+a common side effect. (IV,C) 
+ Cognitive behavioural therapy and psychotherapy59 (IIb,B) 
+ Acupuncture60 (IIb, C) 
+ 
+Follow up 
+ As clinically required 
+ 
+Auditable outcomes 
+ Patients should be given a full explanation of their condition with 
+written infor mation Target 100% 
+ 
+Editorial independence 
+This guideline was commissioned, edited and endorsed by the BASHH CEG 
+without external funding being sought or obtained. 
+ 
+Declarations of interest 
+All members of the guideline writing committee completed the BASHH 
+conflict of interest declaration detailed below at the time the guidelines 
+final draft was submitted to the CEG. 
+ 
+Cost implications 
+These guidelines have been revised to include a much wider group of conditions 
+than included in previous guidance. Ma ny of these conditions already do present 
+to GUM setting initially. Where appropriate, onward referral to Dermatology is 
+recommended and is therefore unlikely to impact greatly on the cost of 
+managing these chronic conditions 
+
+ 19 
+
+Appendix 1 
+
+Levels of evidence and grading of recommendations 
+ 
+Level of evidence 
+Ia Meta -analysis of randomised controlled trials 
+Ib At least one randomised controlled trial 
+IIa At least one well designed controlled study without randomisatio n 
+IIb At least one other type of well-designed quasi-experimental study 
+III Well designed non -experimental descriptive studies 
+IV Expert committee reports or opinions of respected authorities 
+ 
+Grading of recommendation 
+A Evidence at level Ia or Ib 
+B Evidence at level IIa, IIb or III 
+C Evidence at level IV 
+
+Acknowledgments 
+Dr John Evans -Jones provided feedback during the consultation period 
+
+References 
+1. Cruickshank ME, Hay I. Green -top Guideline 58 The Management of 
+Vulval Skin Disorders. 2011 http://www.rcog.org.uk/files/rcog -
+corp/GTG58Vulval22022011.pdf 
+2. Neill SM, Lewis FM. Non -infective cutaneous conditions of the vulva. In 
+Neill SM, Lewis FM eds. Ridley’s ‘The Vulva’. London: Wiley -Blackwell 
+2009 
+3. Neill SM, Lewi s FM, Tatnall FM, Cox NH. British Association of 
+Dermatologists’ guidelines for the management of lichen sclerosus 2010. 
+British Journal of Dermatology 2010; 163: 672-82. 
+4. Oyama N, Chan I, Neill SM et al. Autoantibodies to extracellular matrix 
+protein 1 in lichen sclerosus. Lancet 2003 ; 362:118 -23. 
+5. Meyrick -Thomas RH, Ridley CM, McGibbon DH, Black MM. Lichen 
+sclerosus and autoimmunity – a study of 350 women. Br J Dermatol 
+1988; 118:41 -46. 
+6. Wallace HJ. Lichen sclosus et atrophicus. Trans St John’s Hosp Derma tol 
+Soc 1971: 57: 9 -30. 
+7. Regauer S, Reich O. Early vulvar lichen sclerosus: a histological 
+challenge Histopathology 2005 ; 47:340 -7. 
+8. Chi CC, Kirtschig G, Baldo M, Brackenbury F, Lewis F. Wojnarowska F. 
+Topical interventions for genital lichen sclerosus (Revi ew). Cochrane 
+Library 2011, Issue 12. E -pub 20 9. Hengge UR, Krause W, Hofmann H et al Multi -centre, phase II trial on 
+the safety and efficacy of topical tacrolimus ointment for the treatment 
+of lichen sclerosus. Br J Dermatol 2006 ; 155:1021 -8. 
+10.Nissi R, Risteli J, Niemimaa M. Pimecrolimus cream 1% in the treatment 
+of lichen sclerosus. Gynecol Obstet Invest 2006 ; 63:151 -154. 
+11.Edey K, Bisson D, Kennedy C. Topical tacrolimus in the management of 
+lichen sclerosus. Br J Obstet Gynaecol 2006: 113;1482 
+12.Fischer G, Bradfor d J. Topical immunosuppressants, genital lichen 
+sclerosus and the risk of squamous cell carcinoma. J Reprod Med 2007; 
+52: 329 -31. 
+13.Bousema MT, Romppanen U, Geiger JM et al. Acitretin in the treatment 
+of severe lichen sclerosus et atrophicus of the vulva: a double -blind, 
+placebo controlled study. J Am Acad Dermatol 1994 ; 30:225 -231. 
+14.Beattie PE, Dawe RS, Ferguson J, Ibbotson SH. UVA1 phototherapy for 
+genital lichen sclerosus Clin Exp Dermatol 2006;31:343 -7. 
+15.Abramov Y, Elchalal U, Abramov D, Goldfarb A, Schen ker JG. Surgical 
+treatment of vulvar lichen sclerosus: a review. Obstet Gynecol Surv. 
+1996; 51:193 -9. 
+16.Cooper, S.M., Dean, D., Allen, J. et al. Erosive lichen planus of the 
+vulva: weak circulating basement membrane zone antibodies are 
+present. Clin Exp Derm atol 2005 ; 30:551 –556. 
+17.Lewis, F.M., Shah, M. & Harrington, C.I. Vulval involvement in lichen 
+planus: a study of 37 women. Br J Dermatol 1996 ; 135 : 89–91. 
+18.Genadry R, Provost TT. Severe vulvar scarring in patients with erosive 
+lichen planus. J Reprod Med 200 6; 51:67 -72. 
+19.Cooper SM, Wojnarwowska F. Influence of treatment of erosive lichen 
+planus of the vulva on its prognosis. Arch Dermatol. 2006 ; 142:362 -4. 
+20.Mucosal vulval lichen planus: outcome, clinical and laboratory findings. 
+Kirtschig G, Wakelin SH, Wojnaro wska F. J Eur Acad Dermatol Venerol 
+2005; 19:301 -7. 
+21.Rebora, A., Parodi, A. & Marialdo, G. Basiliximab is effective for erosive 
+lichen planus. Archives of Dermatology 2002 ; 138 : 1100 –1111. 
+22.Lynch PJ, Moyal -Barracco M, Scurry J, Stockdale C. ISSVD Terminolog y 
+and Classification of Vulvar Dermatological Disorders: An Approach to 
+clinical diagnosis. Presented at the XXI World Congress of the ISSVD, 
+Paris, France Sept 3 -8 2011 
+23.Nardelli A, Degreef H, Goossens A. Contact allergic reactions of the 
+vulva: a 14 year review. Dermatitis 2004;15:131 -6 
+24.Haverhoek E, Reid C, Gordon L et al Prospective stud y of patch testing 
+in patients with vulval pruritis. Australas J Dermatol. 2008;49(2):80 -5 
+25.Lotti T, Buggiani G , Prignano F . Prurigo nodularis and lichen simplex 
+chronicus. Dermatol Ther 2008; 21:42 -46. 
+26.Lynch PJ. Lichen simplex chronicus (atopic/neuroder matitis) of the 
+anogenital region. Dermatol Ther 2004; 17: 8 -19 
+27.Crone AM, Stewart EJ, Wojnarowska F, Powell SM. Aetiological factors 
+in vulvar dermatitis. J Eur Acad Dermatol Venereol 2000;14:181 -6. 
+28.Meeuwis KA, et al. Genital psoriasis: A systematic lit erature review on 
+this hidden skin disease. Acta Derm Venereol. 2011 Jan ; 91(1):5-11. 
+29.Hording U, Daugaard S, Iversen AK et al. Human Papillomavirus 16 in 
+vulvar carcinoma, vulvar intraepithelial neoplasia, and associated 
+cervical neoplasia. Gynecol Oncol 1991; 42:22 -26. 21 30.Sideri M , Jones RW , Wilkinson EJ , Preti M , Heller DS , Scurry J , et al. 
+Squamous vulvar intraepithelial neoplasia: 2004 modified terminology, 
+ISSVD Vulvar Oncology Subcommittee . J Reprod Med 2005; 
+50(11):807-10. 
+31.Petry KU, Kochel H, Bode U e t al. Human papillomavirus is associated 
+with the frequent detection of warty and basaloid high -grade neoplasia 
+of the vulva and cervical neoplasia among immunocompromised women. 
+Gynecol Oncol 1996 ; 60:30 -34. 
+32.van Seters M , van Beurden M , de Craen AJ . Is the assumed natural 
+history of vulvar intraepithelial neoplasia III based on enough evidence? 
+A systematic review of 3322 published patients . Gynecologic Oncology 
+2005 May ; 97(2):645-51. 
+33.Jones RW , Rowan DM , Stewart AW . Vulvar intraepithelial neoplasia: 
+aspects of the natural history and outcome in 405 women . Obstetrics 
+and Gynecology 2005 Dec ; 106(6):1319-26. 
+34.Andreasson B , Moth I , Jensen SB , Bock JE . Sexual function and 
+somatopsychic reactions in vulvectomy -operated women and their 
+partners . Acta Obstetrici a ET Gynecologica Scandinavica 1986; 65(1):7-
+10. 
+35.Polterauer S,Catharina Dressler A,Grimm C, Seebacher V, Tempfer 
+C,Reinthaller A, et al. Accuracy of preoperative vulva biopsy and the 
+outcome of surgery in vulvar intraepithelial neoplasia 2 and 3. Int J 
+Gynecol Pathol 2009; 28:559 –62. 
+36.de Bie RP, van de Nieuwenhof HP, Bekkers RL, Melchers WJ, Siebers AG, 
+Bulten J, Massuger LF, de Hullu JA. Patients with usual vulvar 
+intraepithelial neoplasia -related vulvar cancer have an increased risk of 
+cervical abnormaliti es. Br J Cancer. 2009 Jul 7 ; 101 (1):27 -31. Epub 
+2009 Jun 9. 
+37.Pepas L, Kaushik S, Bryant A, Nordin A, Dickinson HO. Medical 
+interventions for high grade vulval intraepithelial neoplasia. Cochrane 
+Database of Systematic Reviews 2011, Issue 4. Art. No.: CD007924. 
+DOI: 10.1002/14651858.CD007924.pub2. 
+38.Kaushik S, Pepas L, Nordin A, Bryant A, Dickinson HO. Surgical 
+interventions for high grade vulval intraepithelial n eoplasia. Cochrane 
+Database of Systematic Reviews 2011, Issue 1. Art. No.: CD007928. 
+DOI: 10.1002/14651858.CD007928.pub2. 
+39.Hillemanns P, Wang X, Staehle S, Michels W, Dannecker C. Evaluation of 
+different treatment modalities for vulvar intraepithelial neop lasia (VIN): 
+CO(2) laser vaporization, photodynamic therapy, excision and 
+vulvectomy. Gynecol Oncol 2006 ; 100 (2):271 -5. 
+40.van Seters M , van Beurden M , Kate FJ , Beckmann I , Ewing PC , 
+Eijkemans MJ , et al. Treatment of vulvar intraepithelial neoplasia with 
+topical imiquimod . N Engle J Med 2008; 358(14):1465-73. 
+41.Mathiesen O , Buus SK , Cramers M . Topical imiquimod can reverse 
+vulvar intraepithelial neoplasia: A randomised, double -blinded study . 
+Gynecol Oncol 2007;107(2):219-22. 
+42.von Gruenigen V E , Gibbons H E Gibbi ns K Jenison E L Hopkins M P . 
+Surgical treatments for vulvar and vaginal dysplasia: a randomized 
+controlled trial . Obstet Gynecol 2007; 109(4): 942-7. 
+43.Sillman FH and Sedlis A. 5-FU/Chemosurgery in the Treatment of Vulvar 
+Intraepithelial Neoplasia . Journal o f Gynecologic Surgery. 1988, 4(3): 
+171-185 Journal of Gynecologic Surgery. 1988, 4(3): 171 -185. 22 44.Moyal -Barracco M, Lynch PJ. 2003 ISSVD terminology and classification 
+of vulvodynia: a historical perspective. J Reprod Med 2004;49(io):772 -7 
+45.Farmer MA, Talor A M, Bailey AL et al Repeated vulvovaginal fungal 
+infections cause persistent pain in a mouse model of vulvodynia. Sci 
+Transi Med 2011;3(101):101ra92 
+46.Mandal D, Nunns D et al Guidelines for the management of 
+Vulvodynia.Br J Dermatol 2010 ;162:1180 –1185 
+47.Spoelstra SK. Dijkstra JR. van Driel MF. Weijmar Schultz WC. Long-term 
+results of an individualized, multifaceted, and multidisciplinary 
+therapeutic approach to provoked vestibulodynia. J Sex Med 2011 
+8(2):489 -96. 
+48. Gentilcore -Saulnier E. McLean L. Goldfinger C. et al Pelvic floor muscle 
+assessment outcomes in women with and without provoked 
+vestibulodynia and the imp act of a physical therapy program. J Sex Med 
+2010;7(2 Pt 2):1003 -22 
+49.Murina F, Bianco V, Radici G, et al Transcutaneous electrical nerve 
+stimulation to treat vestibulodynia: a randomised controlled trial. BJOG 
+2008 115(9):1165 -70 
+50.Murina F, Bernorio R, Palmiotto R, The Use of Amielle Vaginal Trainers 
+as Adjuvant in the Treatment of Vestibulodynia: An Observational 
+Multicentric Study. Medscape J Med. 2008; 10(1): 23 
+51.Desrochers G. Bergeron S. Khalife S. et al Provoked vestibulodynia: 
+psychological predictors of topical and cognitive -behavioral treatment 
+outcome. Behav Res & Ther 2010 48(2):106 -15 
+52.Tommola P, Unkila -Kallio L, Paavonen J. Long -term follow up of 
+posterior vestibulectomy for treating vu lvar vestibulitis. Acta Obstet 
+Gynecol Scand 2011;90(11):1225 -31 
+53.Eva LJ, Narain S. Orakwue CO. Luesley DM. Long-term follow up of 
+posterior vestibulectomy for treating vulvar vestibulitis. J Reprod 
+Med.2008; 53(6):435 -40 
+54.Peters K, Girdler B, Carrico D, et al Painful bladder syndrome/interstitial 
+cystitis and vulvodynia: a clinical correlation In t Urogynecol J 19;5:665-
+669 
+55.Reed BD, Caron AM, Gorenflo DW, Haefner HK. J Treatment of 
+vulvod ynia with tricyclic antidepressants: efficacy and associated factors 
+Low Genit Tract Dis . 2006 ; 10(4):245 -51. 
+56.Brown CS. Wan J. Bachmann G. Rosen R. Self-management, 
+amitriptyline, and amitriptyline plus triamcinolone in the management of 
+vulvodynia. J Women's Health. 2009;18(2):163 -9 
+57.Harris G, Horowitz B , Borgida A . Evaluation of gabapentin in the 
+treatment of generalized vulvodynia, unprovoked. Evaluation of 
+gabapentin in the treat ment of generalized vulvodynia, unprovoked. J 
+Reprod Med. 2007; 52(2):103 -6. 
+58.Jerome L. Pregaba lin-induced remission in a 62 -year-old woman with a 
+20-year history of vulvodynia. Pain Res Manag . 2007 ; 12(3):212 -4. 
+59.Masheb RM, Kerns RD , Lozano C , et al A randomized clinical trial for 
+women with vulvodynia : Cognitive -behavioral therapy vs. supportive 
+psychotherapy. Pain 2009; 141 (1-2):31 -40. 
+60.Powell J, Wojnarowska F Acupuncture for vulvodynia. J R Soc Med . 
+1999;92(11):579 -81

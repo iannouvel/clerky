@@ -1,0 +1,547 @@
+# Extracted from: Lipid Lowering Therapy in Pregnancy.pdf
+# Guideline ID: lipid-lowering-therapy-in-pregnancy
+# Content length: 30942 characters
+# Processing date: 1750066900.9947405
+
+Page 1 of 16 
+ CLINICAL GUIDELINE Due for review : January 202 8 Name of Guideline : Guideline for Using Lipid Lowering Therapy in 
+Pregnancy For use at : Trust Wid e 
+
+Please note, IF DOCUMENT IS PRINTED, IT MAY BECOME OUT OF DATE. 
+ 
+TRUST CLINICAL GUIDELINE 
+Guideline for Using Lipid Lowering Therapy in Pregnancy 
+ 
+Overview 
+ 
+This guideline is to support the management of people at childbearing age who are trying to 
+conceive, are pregnant or breast feeding , and who are on , or require , lipid lowering therapy. There 
+are no national guidelines, and this cohort are generally excluded from research trials contributing 
+to poor outcome s for cardiovascular disease in women. The guideline aim s to support all clinicians 
+to manage these patients , although the care will mainly be provided by maternal medicine and 
+lipidology services. By producing pan -Sussex guidance the aim is to ensure all clinician s can 
+identify, counsel , and refer this patient cohort in a timely manner and support specialist services by 
+providing guidance for a structured approach pan -Sussex . 
+ 
+Owner Sunil Sharma , Clinical Director Pathology 
+Author/further information Dr Kate Shipman, Consultant Lipidologist 
+UHSx. 
+Guideline version Clinical Guideline, with suggested Pathway 
+Version 1.0 
+Related policies N/A 
+Related protocols/procedures N/A 
+Standards NICE NG238, CG71, MHRA (use of medicines 
+in pregnancy and breast feeding) 
+Superseded documents N/A 
+Review due January 202 8 
+
+Page 2 of 16 
+ CLINICAL GUIDELINE Due for review : January 202 8 Name of Guideline : Guideline for Using Lipid Lowering Therapy in 
+Pregnancy For use at : Trust Wid e 
+
+Approval 
+Medical Governance Committee Date approved : 19/11/2024 
+Sussex Area Prescribing Committee Date approved : 30/07/2024 
+Consultation as relevant 
+Circulated with maternal medicine, 
+pharmacy, lipid and cardiovascular 
+colleagues. Date approved : Prior to application 
+to APC (2024) 
+Ratification 
+Clinical Document Approval Group Date approved : 27/1/2025 
+
+Page 3 of 16 
+ CLINICAL GUIDELINE Due for review : January 202 8 Name of Guideline : Guideline for Using Lipid Lowering Therapy in 
+Pregnancy For use at : Trust Wid e 
+ 
+ Contents 
+1.Introduction ................................ ................................ ................................ ........................ 4 
+2.Recommendations ................................ ................................ ................................ ............. 5 
+2.1 PREGNANCY AND FAMILIAL HYPERCHOLESTEROLAEMIA ................................ .................... 5 
+2.2 PREGNANCY AND HYPERTRIGLYCERIDAEMIA ................................ ................................ .... 5 
+2.3 PREGNANCY AND LIPID-LOWERING MEDICATION ................................ ............................... 7 
+2.4 BREAST /INFANT FEEDING ................................ ................................ ................................ 9 
+2.5 SUMMARY ................................ ................................ ................................ ..................... 10 
+3.Research Recommendations ................................ ................................ ........................... 11 
+4.Related Guidelines, Policies And Pathways ................................ ................................ .....11 
+5.Monitoring The Effectiveness Of This Guideline ................................ ............................... 11 
+Appendix 1: Guideline Appendices ........................... ERROR! BOOKMARK NOT DEFINED. 
+Appendix 2: Guideline Version Control Log ................................ ................................ ......... 12 
+Appendix 3: Due Regard Assessment Tool ................................ ................................ ......... 13 
+Appendix 4: Template Dissemination, Implementation And Access Plan ............................ 14 
+Appendix 5: Additional Guidance And Information ................................ .............................. 15 
+
+Page 4 of 16 
+ CLINICAL GUIDELINE Due for review : January 202 8 Name of Guideline : Guideline for Using Lipid Lowering Therapy in 
+Pregnancy For use at : Trust Wid e 
+ 
+ 1. Introduction 
+ 
+The introduction of new classes of lipid lowering agents, accumulation of safety data and poor 
+outcomes for women secondary to atherosclerotic heart disease has led to the critical examination 
+of how we treat dyslipidaemias and cardiovascular risk in pregnancy (see Figure 1) . 
+Figure 1: Flow Chart to Summarise the approach to Lipid Lowering Therapy in Pregnancy 
+Planning/Management in People with High Cardiovascular Disease (CVD) Risk . 
+(Created using Biorender.com) 
+
+Page 5 of 16 
+ CLINICAL GUIDELINE Due for review : January 202 8 Name of Guideline : Guideline for Using Lipid Lowering Therapy in 
+Pregnancy For use at : Trust Wid e 
+ 
+ Background 
+There is a physiological increase in plasma concentrations of cholesterol and triglycerides during 
+normal pregnancy with a linear association between triglycerides and adverse pregnancy outcomes 
+and complications [1, 2] . Changes in fat metabolism relate to delivery of nutrients to the feto -
+placental unit to an extent, but excessive fat intake is not recommended [3]. Maternal lipid targets 
+are reported in Table 1, but there is no evidence that pharmacologically treating to these targets 
+improves pregnancy outcomes [4]: 
+Table 1: Lipid targets during pregnancy associated with optimum outcomes [4] 
+Lipid test (mmol/L) Early pregnancy Middle pregnancy 
+Total cholesterol <5.64 <7.50 
+Triglycerides <1.95 <3.56 
+HDL >1.23 >1.41 
+LDL* <3.27 <4.83 
+ 
+*no methods in paper (results from hospital labs from routine care) 
+Blood lipid levels remain elevated for at least one month following the birth of the baby, although 
+triglyceride concentrations can fall more rapidly in individuals who breastfeed. Checking a lipid 
+profile should normally be delayed for at least 2 -3 months following delivery. 
+Individuals with pre -existing dyslipidaemias may exhibit extreme elevations which can be associated 
+with complications. In the case of severe hypertriglyceridaemia there is an increased risk of acute 
+pancreatitis and skin manifestations (eruptive xanthoma, a maculopapular rash, that can be widely 
+distributed and intensely itchy). Atherosclerotic complications have significant impact on both 
+pregnancy and the woman’s outcome long term [5]. 
+2. Recommendations 
+2.1 Pregnancy and familial hypercholesterolaemia 
+An otherwise healthy woman with familial hypercholesterolaemia (FH) should not be discouraged 
+from becoming pregnant or breastfeeding their baby. However, all women with FH who are of 
+childbearing age should be aware of the need for pre -pregnancy counselli ng prior to embarking on a 
+pregnancy, and what they should do if they have an unplanned pregnancy. Pregnant women with 
+FH should be under the shared care of specialists e.g. maternal medicine obstetrician / obstetric 
+physician. All individuals should have a baseline ECG. 
+2.2 Pregnancy and hypertriglyceridaemia 
+With respect to the treatment of severe hypertriglyceridaemia during pregnancy, with or without 
+pancreatitis, there are very limited data for treatment modalities (see below - Triglyceride reducing 
+medicines). In very severe hypertriglyceridaemia (Familial Chylomicronaemia Syndrome), diabetes 
+mellitus is often a co -morbidity, and improving diabetic control is a critical first step . Limiting fat 
+intake, glycaemic control and increasing lipoprotein lipase activity, e.g. with Fenofibrate, are 
+the mainstay of management (see Figure 2) [6]. 
+ 
+Page 6 of 16 
+ CLINICAL GUIDELINE Due for review : January 202 8 Name of Guideline : Guideline for Using Lipid Lowering Therapy in 
+Pregnancy For use at : Trust Wid e 
+ 
+ Figure 2: Management of Hypertriglyceridemia in Adult In -patients; adapted from Guy’s and 
+St Thomas’ Clinical Guideline (Integrated Care Pathway V 1.1). 
+(Created using Biorender.com) 
+
+Page 7 of 16 
+ CLINICAL GUIDELINE Due for review : January 202 8 Name of Guideline : Guideline for Using Lipid Lowering Therapy in 
+Pregnancy For use at : Trust Wid e 
+ 
+ 2.3 Pregnancy and lipid -lowering medication 
+ 
+The maternal medicine network can provide support and guidance for medication use in pregnancy. 
+The team can be accessed for pre -pregnancy counselling or for referral/advice for pregnancy by 
+emailing uhsussex.sussexmmc@nhs.net or by contacting the maternal medicine consultants at 
+each site through antenatal clinic. Also consider discussion with lipid services and cardiology if 
+appropriate. A summary of the following medication information is found in table 2. 
+➢ LDL-cholesterol reducing medicines 
+ 
+Statins 
+Recently published meta -analyses, found no evidence for congenital abnormalities with 
+statin usage [7, 8] . There may be a signal for spontaneous miscarriages in the first trimester, 
+but this may be because the women on statins had other risk factors for miscarriage, e.g. 
+significant co -morbidities and higher age, and this was only seen in cohort studies (i.e. 
+exclusion of these studies and only inclusion of randomised controlled trials (RCT) found no 
+significant risk) [7]. 
+ 
+One of the largest RCTs so far is a pre -eclampsia trial with pravastatin, started at 35 -37 
+weeks until week 41 [9]. High risk warnings have been removed in recent years, such as the 
+FDA, but statins are not yet recommended in pregnancy [5, 10] . One suggestion is that as 
+uncertainty remains then reserving statins to the 2nd and 3rd trimester would most likely be a 
+beneficial strategy with the lowest risk, and the most safety evidence exists for pravastatin 
+[7]. Women to particularly consider continuing therapy in (throughout, or from the 2nd 
+trimester onwards) include familial hypercholesterolaemia (FH) and secondary prevention 
+patients for example. 
+ 
+No studies have looked at maternal safety secondary to stopping statins due to pregnancy. 
+The FH survival data is however poor for women, the hypothesis being the lack of treatment 
+during pregnancy causing significantly higher lifetime risk [11]. There is excellent safety data 
+for statins in childhood [12]. 
+Ezetimibe 
+There are no human data of ezetimibe in pregnancy, but animal studies have demonstrated 
+no effects on fertility, embryofetal development, birth or postnatal development. Due to lack 
+of systemic effects, there is no evidence that this drug must be stopped a nd therefore 
+discuss on a case -by-case basis. 
+ 
+Proprotein convertase subtilisin/kexin type 9 inhibitors (PCSK9i) 
+Biologics (antibodies) in general are permitted during pregnancy (no placental transfer). 
+There is a published case report of evolocumab (started at 28 weeks) with no apparent 
+complications [13]. Therefore, do not stop and potentially consider starting (instead of other 
+medications) in secondary prevention patients who are eligible, for example, if choose to 
+stop statins for the duration of pregnancy (based on the indirect evidence of safety with other 
+biologic medications). 
+ 
+Inclisiran No medication should be stopped automatically due to pregnancy. 
+Lipid -lowering drug therapy should be consented carefully 
+when starting in women of child -bearing age (see Table 2). 
+Page 8 of 16 
+ CLINICAL GUIDELINE Due for review : January 202 8 Name of Guideline : Guideline for Using Lipid Lowering Therapy in 
+Pregnancy For use at : Trust Wid e 
+ 
+ There has been one case reported to Novartis of a pregnant woman having exposure for 
+approximately 2 months with inclisiran with no adverse effects. Inclisiran is only present in 
+the blood for 48 hours after injection and is targeted to the liver. Theoreti cally therefore one 
+could discuss treatment prior to conception of a single dose (40% reduction of LDL at 9 
+months) in high -risk patients where the plan is to stop the statins for early pregnancy, 
+however there are no data for this approach and the licence is for secondary prevention only 
+when LDL is ≥2.6 mmol/L (i.e. not an option for high -risk primary prevention) and they should 
+be counselled to avoid becoming pregnant for 48 hours after the injection (at which point no 
+drug is circulating in the maternal blood stream). 
+ 
+Bempedoic acid 
+There are no human data and recommendations are to avoid and/or stop. In light of the 
+other options with more data, it would seem sensible to substitute bempedoic acid for an 
+alternative at the moment. The half -life for bempedoic acid is 19 hours at steady state in 
+humans. 
+ 
+Bile acid sequestrants 
+This has historically been one of the only treatment options for LDL -cholesterol during 
+pregnancy as bile acid sequestrants are not absorbed systemically and do not cross the 
+placenta [14]. Bile acid sequestrants can reduce the absorption of fat -soluble vitamins and 
+folic acid, therefore supplementation is recommended, and they only reduce LDL by 15%. 
+Colesevalam is better tolerated than cholestyramine (less constipating). 
+ 
+Lipid apheresis 
+This is a safe option for either high cholesterol or triglycerides but difficult to access and not 
+widely available. Guys & St Thomas (GSTT) and Southampton are locations that have this 
+service. 
+ 
+Aspirin 
+It should be continued (75 – 150 mg OD) if previously prescribed and otherwise 
+commenced for pre -eclampsia prevention at a dose of 150 mg per day from 12 weeks’ 
+gestation. 
+ 
+➢ Triglyceride reducing medicines. 
+Fibrates (fenofibrate) and omega -3 fish oils (e.g OMACOR ) 
+They have been used to treat hypertriglyceridaemia and are recognised therapeutic 
+strategies, combined with a low -fat diet. 
+ 
+Icosapent ethyl (IPE) 
+A purified omega -3 has been used for hypertriglyceridemia in the US for over a decade (but 
+only more recently been granted a secondary prevention licence in this country). Thousands 
+of pregnant women (>11,000) have been treated with omega -3 during pregnancy in trials 
+[15]. However, these generic drugs are a mixture of eicosapentaenoic acid (EPA) and 
+docosahexaenoic acid (DHA) ethyl esters. EPA and DHA are biochemically and clinically 
+distinct [16]. Therefore, the safety and toxicity of mixed EPA+DHA compared to pure EPA 
+may differ, and their role in pregnancy is unclear. 
+ 
+There are case reports of IPE usage in pregnancy, primarily for treatment of 
+hypertriglyceridaemia and pancreatitis risk. In all cases no adverse outcomes were reported, 
+and the women avoided pancreatitis [17-21]. There may be limitations on use, due to the UK 
+licence, however it would seem that IPE may be an option for pancreatitis prevention, CVD 
+risk reduction, and treatment of hypertriglyceridaemia in pregnancy. 
+Page 9 of 16 
+ CLINICAL GUIDELINE Due for review : January 202 8 Name of Guideline : Guideline for Using Lipid Lowering Therapy in 
+Pregnancy For use at : Trust Wid e 
+
+2.4 Breast/Infant feeding 
+
+Bile acid sequestrants are safe but there are no clinical trials examining the safety of other lipid 
+lowering therapies in breastfeeding. The hydrophilic statins rosuvastatin and pravastatin may be 
+associated with lower transfer into breast milk than other statins [22, 23] . Atorvastatin can also be 
+considered during breastfeeding [24]. Ezetimibe and PCSK9i have data and licences for paediatric 
+populations but the inclisiran paediatric trial is awaited and there are no data for bempedoic acid 
+[25]. This does not necessarily mean that presence in breast milk of lipid lowering therapy has no 
+risk for the infant , but reassuring when one is discussing the risks and benefits in high -risk women. 
+ For most postnatal women and people, treatment with bile acid sequestrants is safe, the 
+risk-benefit of other lipid lowering therapies must be discussed with the mother . 
+Page 10 of 16 
+ CLINICAL GUIDELINE Due for review : January 202 8 Name of Guideline : Guideline for Using Lipid Lowering Therapy in 
+Pregnancy For use at : Trust Wid e 
+
+2.5 Summary 
+There is a need to be more proactive at maintaining good lipid control during pregnancy for both 
+mother and child. We would always recommend seeking support and advice from maternal 
+medicine and lipidology services as appropriate. 
+Table 2: Summary recommendations on use of lipid lowering therapies in Pregnancy. 
+Drug Recommendations (all shared decisions) 
+Statins Do not stop automatically in high -risk patients. 
+Consider cessation in first trimester and then restart in second 
+trimester or continue throughout (based on preference and risk). 
+Ezetimibe Do not stop automatically. 
+Lack of data however, so consider cessation and substitute e.g. bile 
+acid sequestrants (base on preference and risk) 
+Bile acid 
+sequestrants Safe during conception, pregnancy and breast feeding. 
+Caution with risk of vitamin deficiencies 
+Bempedoic acid Stop during conception, pregnancy and breast feeding 
+PCSK9i Continue if on evolocumab or alirocumab, consider starting in those 
+stopping other therapies if eligible 
+Inclisiran Do not continue during pregnancy. 
+If eligible consider administration prior to conception 
+Icsosapent ethyl Continue if on it, consider starting in those eligible. 
+Consider for hypertriglyceridaemia (outside current UK licence) 
+Fibrates 
+e.g. fenofibrate Treatment for hypertriglyceridaemia in pregnancy, particularly in 
+those with previous pancreatitis in pregnancy due to 
+hypertriglyceridaemia or with known genetic or secondary issues 
+causing pre -existing hypertriglyceridaemia (consider if triglycerides 
+>5 mmol/L prior t o conception, or >10 mmol/L during pregnancy). 
+Omega 3 fish oils 
+e.g. OMACOR Treatment for hypertriglyceridaemia in pregnancy, particularly in 
+those with previous pancreatitis in pregnancy due to 
+hypertriglyceridaemia or with known genetic or secondary issues 
+causing pre -existing hypertriglyceridaemia. 
+Consider if triglycerides >10 mmol/L but note safety notice secondary 
+to atrial fibrillation so consider dietary input, glycaemic control and 
+fibrates in preference. 
+High doses up to 4 g twice daily may be required (unlicensed use – 
+specialist recommendation only) 
+ 
+Page 11 of 16 
+ CLINICAL GUIDELINE Due for review : January 202 8 Name of Guideline : Guideline for Using Lipid Lowering Therapy in 
+Pregnancy For use at : Trust Wid e 
+ 
+ 3. Research Recommendations 
+This guideline has been developed in the absence of national guidance and has been developed with local 
+subject experts and liaison with medical staff from pharmaceutical companies . 
+Research is required on the safety of lipid lowering therapies throughout pregnancy to both the baby and 
+woman but particularly on the effects to the mother o f stopping therapy. Nothing is known about whether the 
+child’s cardiovascular outcome and lipid concentrations can be improved by treating the mother . Best regime, 
+time to start, use of injectable agents prior to conception have not been studied. 
+4. Related guidelines, policies and pathways 
+NICE NG238, CG71, MHRA (use of medicines in pregnancy and breast feeding) . 
+5. Monitoring the effectiveness of this guideline 
+Issue being 
+monitored Monitoring 
+method Responsibility Frequency Reviewed by and 
+actions arising 
+followed up by 
+Automatic 
+cessation of lipid 
+lowering therapy , 
+or not offering 
+treatment in the 
+first place , due to 
+chance of patient 
+becoming 
+pregnant /being 
+pregnant Number of women 
+on lipid lowering 
+therapy during 
+pregnancy Kate Shipman, 
+pathology Triannual Collegiate review 
+by lipid specialists, 
+maternal medicine 
+specialists and 
+cardiovascular 
+disease leads . 
+
+Page 12 of 16 
+ CLINICAL GUIDELINE Due for review : January 202 8 Name of Guideline : Guideline for Using Lipid Lowering Therapy in 
+Pregnancy For use at : Trust Wid e 
+ 
+ Appendix 1: Guideline Version Control Log 
+This should be included for all new and updated guidelines, summarising the changes between the current 
+and previous version. 
+Do not list minor and stylistic changes or changes which do not alter the processes described. 
+If the update includes a significant reorganisation of the material, indicate this and list the main areas where 
+the process itself has changed. 
+Change Log – Guideline Name 
+ 
+Substantive changes since 
+previous version/ development 
+of new guideline Reason for Change/ 
+development of new guideline Version Control 
+N/A first version First version Version 1 2024 
+
+Page 13 of 16 
+ CLINICAL GUIDELINE Due for review : January 202 8 Name of Guideline : Guideline for Using Lipid Lowering Therapy in 
+Pregnancy For use at : Trust Wid e 
+ 
+ Appendix 2: Due Regard Assessment Tool 
+To be completed and attached to any guideline when submitted to the appropriate committee for 
+consideration and approval. 
+ Yes/No Comments 
+1. Does the document/guidance affect one group less or more 
+favourably than another on the basis of: 
+ Age yes Childbearing 
+ages 
+ · Disability No 
+ · Gender (Sex) yes Women 
+ · Gender Identity yes Able to get 
+pregnant 
+therefore may 
+include some 
+individuals 
+identifying as 
+male 
+ · Marriage and civil partnership No 
+ · Pregnancy and maternity Yes 
+ · Race (ethnicity, nationality, colour) No 
+ · Religion or Belief No 
+ · Sexual orientation, including lesbian, gay and bisexual people No 
+2. Is there any evidence that some groups are affected differently 
+and what is/are the evidence source(s)? yes This focuses 
+on a very 
+specific group 
+3. If you have identified potential discrimination, are there any 
+exceptions valid, legal and/or justifiable? no Aim to stop 
+discrimination 
+against this 
+group 
+4. Is the impact of the document likely to be negative? No 
+5. If so, can the impact be avoided? n/a 
+6. What alternative is there to achieving the intent of the document 
+without the impact? n/a 
+7. Can we reduce the impact by taking different action and, if not, 
+what, if any, are the reasons why the guideline should continue in 
+its current form? n/a 
+8. Has the document been assessed to ensure service users, staff 
+and other stakeholders are treated in line with Human Rights 
+FREDA principles (fairness, respect, equality, dignity and 
+autonomy)? yes 
+ 
+If you have identified a potential discriminatory impact of this guideline, please refer it to [Insert Name], 
+together with any suggestions as to the action required to avoid/reduce this impact. For advice in respect of 
+answering the above questions, pleas e contact uhsussex.equality@nhs.net 01273 664685). 
+ 
+Page 14 of 16 
+ CLINICAL GUIDELINE Due for review : January 202 8 Name of Guideline : Guideline for Using Lipid Lowering Therapy in 
+Pregnancy For use at : Trust Wid e 
+ 
+ Appendix 3: Template Dissemination, Implementation and Access Plan 
+ 
+To be completed and attached to any guideline when submitted to Clinical Documents Approval 
+Group for consideration and CDAG approval. 
+ 
+ Dissemination Plan Comments 
+1. Identify: 
+ Which members of staff or staff groups will be affected by 
+this guideline? Any clinician looking after anyone 
+who is considering becoming or is 
+pregnant 
+ How will you confirm that they have received the guideline 
+and understood its implications? Ratified by Sussex APC so 
+available to all GPs, maternal 
+medicine services co -authored as 
+did all lipidologists therefore all 
+services who would be providing 
+advice are aware. By taking 
+through Trust process then 
+hospital users can also use 
+document 
+ How have you linked the dissemination of the guideline with 
+induction training, continuous professional development, and 
+clinical supervision as appropriate? Included in lipid teaching but no 
+routine training as this cohort it 
+rare and usually discussed with 
+maternal medicine or lipid clinic 
+2. How and where will staff access the document (at 
+operational level)? Aim to get to SharePoint for Trust 
+staff and on ICB website for 
+community 
+ 
+ Yes/No Comments 
+3. Have you made any plans to remove old 
+versions of the guideline or related 
+documents from circulation? n/a 
+4. Have you ensured staff are aware the 
+document is logged on the organisation’s 
+register? no Will let internal specialists know 
+when available 
+ 
+Page 15 of 16 
+ CLINICAL GUIDELINE Due for review : January 202 8 Name of Guideline : Guideline for Using Lipid Lowering Therapy in 
+Pregnancy For use at : Trust Wid e 
+ 
+ Appendix 4: Additional guidance and information 
+[1] Vrijkotte, T.G.M.; Krukziener, N.; Hutten, B.A.; Vollebregt, K.C.; van Eijsden, M.; Twickler, 
+M.B. Maternal lipid profile during early pregnancy and pregnancy complications and outcomes: the 
+ABCD study. J. Clin. Endocrinol. Metab. 2012 , 97, 3917 -3925, 10.1210/jc.2012 -1295. 
+[2] Zhu, X.; Deng, Z.; Dai, F.; Liu, H.; Cheng, Y. The impact of early pregnancy metabolic 
+disorders on pregnancy outcome and the specific mechanism. Eur. J. Med. Res. 2023 , 28, 197 -
+z, 10.1186/s40001 -023-01161 -z. 
+[3] Herrera, E. Lipid metabolism in pregnancy and its consequences in the fetus and newborn. 
+Endocrine 2002 , 19, 43-55, 10.1385/ENDO:19:1:43. 
+[4] Wang, C.; Kong, L.; Yang, Y.; Wei, Y.; Zhu, W.; Su, R.; Lin, L.; Yang, H. Recommended 
+reference values for serum lipids during early and middle pregnancy: a retrospective study from 
+China. Lipids Health. Dis. 2018 , 17, 246 -3, 10.1186/s12944 -018-0885 -3. 
+[5] Roeters van Lennep, J.E.; Tokgözoğlu, L.S.; Badimon, L.; Dumanski, S.M.; Gulati, M.; Hess, 
+C.N.; Holven, K.B.; Kavousi, M.; Kayıkçıoğlu, M.; Lutgens, E.; Michos, E.D.; Prescott, E.; Stock, 
+J.K.; Tybjaerg -Hansen, A.; Wermer, M.J.H.; Benn, M. Women, lipids, and atherosclerotic 
+cardiovascular disease: a call to action from the European Atherosclerosis Society. Eur. Heart 
+J. 2023 , 44, 4157 -4173, 10.1093/eurheartj/ehad472. 
+[6] Aljenedil, S.; Hegele, R.A.; Genest, J.; Awan, Z. Estrogen -associated severe 
+hypertriglyceridemia with pancreatitis. J. Clin. Lipidol. 2017 , 11, 297 -300, 
+10.1016/j.jacl.2016.12.006. 
+[7] Hirsch, A.; Ternovsky, N.; Zwas, D.R.; Rotem, R.; Amir, O.; Hirsh Raccah, B. The effect of 
+statins exposure during pregnancy on congenital anomalies and spontaneous abortions: A 
+systematic review and meta -analysis. Front. Pharmacol. 2022 , 13, 1003060, 
+10.3389/fphar.2022.1003060. 
+[8] Karadas, B.; Uysal, N.; Erol, H.; Acar, S.; Koc, M.; Kaya -Temiz, T.; Koren, G.; Kaplan, Y.C. 
+Pregnancy outcomes following maternal exposure to statins: A systematic review and meta -
+analysis. Br. J. Clin. Pharmacol. 2022 , 88, 3962 -3976, 10.1111/bcp.15423. 
+[9] Döbert, M.; Varouxaki, A.N.; Mu, A.C.; Syngelaki, A.; Ciobanu, A.; Akolekar, R.; De Paco 
+Matallana, C.; Cicero, S.; Greco, E.; Singh, M.; Janga, D.; Del Mar Gil, M.; Jani, J.C.; Bartha, 
+J.L.; Maclagan, K.; Wright, D.; Nicolaides, K.H. Pravastatin Versus Pl acebo in Pregnancies at 
+High Risk of Term Preeclampsia. Circulation 2021 , 144 , 670 -679, 
+10.1161/CIRCULATIONAHA.121.053963. 
+[10] Mauricio, R.; Khera, A. Statin Use in Pregnancy: Is It Time For a Paradigm Shift? Circulation 
+2022 , 145 , 496 -498, 10.1161/CIRCULATIONAHA.121.058983. 
+[11] Graham, D.F.; Raal, F.J. Management of familial hypercholesterolemia in pregnancy. Curr. 
+Opin. Lipidol. 2021 , 32, 370 -377, 10.1097/MOL.0000000000000790. 
+[12] Luirink, I.K.; Wiegman, A.; Kusters, D.M.; Hof, M.H.; Groothoff, J.W.; de Groot, E.; Kastelein, 
+J.J.P.; Hutten, B.A. 20 -Year Follow -up of Statins in Children with Familial 
+Hypercholesterolemia. N. Engl. J. Med. 2019 , 381 , 1547 -1556, 10.1056/NEJMoa1816454. 
+[13] Suzuki, T.; Tsurane, K.; Umemoto, T.; Sasano, T.; Ushiki, E.; Fudono, A.; Hirose, A.; 
+Sekiguchi, M.; Miyasaka, N. PCSK9 inhibitor use during pregnancy in a case of familial 
+hypercholesterolemia complicated with coronary artery disease. J. Obstet. Gynaecol. Res. 
+2023 , 10.1111/jog.15813. 
+Page 16 of 16 
+ CLINICAL GUIDELINE Due for review : January 202 8 Name of Guideline : Guideline for Using Lipid Lowering Therapy in 
+Pregnancy For use at : Trust Wid e 
+ 
+ [14] Balla, S.; Ekpo, E.P.; Wilemon, K.A.; Knowles, J.W.; Rodriguez, F. Women Living with 
+Familial Hypercholesterolemia: Challenges and Considerations Surrounding Their Care. Curr. 
+Atheroscler. Rep. 2020 , 22, 60-5, 10.1007/s11883 -020-00881 -5. 
+[15] Serra, R.; Peñailillo, R.; Monteiro, L.J.; Monckeberg, M.; Peña, M.; Moyano, L.; Brunner, C.; 
+Vega, G.; Choolani, M.; Illanes, S.E. Supplementation of Omega 3 during Pregnancy and the 
+Risk of Preterm Birth: A Systematic Review and Meta -Analysis. Nutrients 2021 , 13, 1704. doi: 
+10.3390/nu13051704, 10.3390/nu13051704. 
+[16] Mason, R.P.; Libby, P.; Bhatt, D.L. Emerging Mechanisms of Cardiovascular Protection for 
+the Omega -3 Fatty Acid Eicosapentaenoic Acid. Arterioscler. Thromb. Vasc. Biol. 2020 , 40, 
+1135 -1147, 10.1161/ATVBAHA.119.313286. 
+[17] Wójcik, C.; Fazio, S.; McIntyre, A.D.; Hegele, R.A. Co -occurrence of heterozygous CREB3L3 
+and APOA5 nonsense variants and polygenic risk in a patient with severe hypertriglyceridemia 
+exacerbated by estrogen administration. J. Clin. Lipidol. 2018 , 12, 1146 -1150, 
+10.1016/j.jacl.2018.05.014. 
+[18] Sato, S.; Ohkuchi, A.; Kawano, M.; Iwanaga, N.; Furukawa, Y.; Matsumoto, H. Effect of 
+eicosapentaenoic acid agent on aggravated hypertriglyceridemia during pregnancy. J. Obstet. 
+Gynaecol. Res. 2013 , 39, 1541 -1544, 10.1111/jog.12095. 
+[19] Takaishi, K.; Miyoshi, J.; Matsumura, T.; Honda, R.; Ohba, T.; Katabuchi, H. 
+Hypertriglyceridemic acute pancreatitis during pregnancy: prevention with diet therapy and 
+omega -3 fatty acids in the following pregnancy. Nutrition 2009 , 25, 1094 -1097, 
+10.1016/j.nut.2009.04.009. 
+[20] Nakao, J.; Ohba, T.; Takaishi, K.; Katabuchi, H. Omega -3 fatty acids for the treatment of 
+hypertriglyceridemia during the second trimester. Nutrition 2015 , 31, 409 -412, 
+10.1016/j.nut.2014.09.006. 
+[21] Kimura, J.; Kawamura, K.; Minoura, M.; Hiramoto, A.; Suga, Y.; Okahara, S.; Inoue, R.; 
+Sumikura, H. Formulating an anesthetic plan using a list of high -risk pregnant women on cloud -
+based business communication tools: a case report. JA Clin. Rep. 2021 , 7, 26-2, 
+10.1186/s40981 -021-00430 -2. 
+[22] Lwin, E.M.P.; Leggett, C.; Ritchie, U.; Gerber, C.; Song, Y.; Hague, W.; Turner, S.; Upton, R.; 
+Garg, S. Transfer of rosuvastatin into breast milk: liquid chromatography -mass spectrometry 
+methodology and clinical recommendations. Drug Des. Devel. Ther. 2018 , 12, 3645 -3651, 
+10.2147/DDDT.S184053. 
+[23] Lecarpentier, E.; Morel, O.; Fournier, T.; Elefant, E.; Chavatte -Palmer, P.; Tsatsaris, V. 
+Statins and pregnancy: between supposed risks and theoretical benefits. Drugs 2012 , 72, 773 -
+788, 10.2165/11632010 -000000000 -00000. 
+[24] Specialist Pharmacy Service Using lipid -lowering medicines during breastfeeding. 
+https://www.sps.nhs.uk/articles/using -lipid-lowering -medicines -during -
+breastfeeding/#:~:text=Although%20there%20is%20very%20limited,and%20development%20o
+f%20breastfed%20infants. (accessed 19/07/, 2024). 
+[25] Fiorentino, R.; Chiarelli, F. Treatment of Dyslipidaemia in Children. Biomedicines 2021 , 9, 
+1078. doi: 10.3390/biomedicines9091078, 10.3390/biomedicines9091078.

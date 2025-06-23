@@ -1,0 +1,544 @@
+# Extracted from: CG1192 Large for Gestational Age.pdf
+# Guideline ID: cg1192-large-for-gestational-age
+# Content length: 26450 characters
+# Processing date: 1750066900.137205
+
+CG1192 Large for Gestational Age Guideline v6.0 November 2023 Page 1 of 13 
+Please check against the intranet that this printout is the most recent version of this document. 
+ 
+Large for Gestational Age Guideline 
+Summary statement: How does the 
+document support patient care? The purpose of this guideline is to provide good practice 
+evidence for staff in planning the care of women and people 
+who have a suspected or confirmed large for gestational age 
+fetus . 
+Staff/stakeholders involved in 
+development : Obstetric consultants, screening co -ordinator, clinical 
+effectiveness 
+Division: Women & Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Obstetric Consultant 
+For use by: Medical and Midwifery staff 
+Purpose: To provide evidence based guidance for staff on planning the 
+care for women and people who have a suspected or 
+confirmed large for gestational age fetus . 
+This document supports: 
+ NICE (2008) CG70 Inducing labour 
+RCOG (2012) Shoulder Dystocia Green Top Guideline 42 
+Key related documents: UH Sussex (SRH & WH) Maternity Guidelines : 
+Shoulder Dystocia Guideline 
+Induction and augmentation of Labour (including use of 
+oxytocin) Gui deline 
+Diabetes in Pregnancy guideline 
+Approved by: Joint Obstetric Guideline Group 
+Approval date: 15th November 2023 Date uploaded: 21st November 2023 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable -Divisional Ratification only required 
+Ratification Date: Not Applicable -Divisional Ratification only required 
+Expiry Da te: November 202 6 
+Review date: May 2026 
+If you require this document in another format such as Braille, large print, audio or 
+another language please contact the Trusts Communications Team 
+Reference Number: CG1192 
+
+CG1192 Large for Gestational Age Guideline v6.0 November 2023 Page 2 of 13 
+Please check against the intranet that this printout is the most recent version of this document. 
+
+Version Date Author Status Comment 
+1.0 Nov 2011 M. Jolly Archived New Trustwide guideline 
+2.0 January 2015 M. Jolly Archived 3 year review and update 
+3.0 July 
+2016 /oct2016 Miss S Stone 
+Joint Obstetric 
+Guideline Group Archived Up date 
+4.0 January 2017 Mr Jolly Archived Update 
+5.0 June 2020 Clinical 
+effectiveness 
+midwife, screening 
+co-ordinator, 
+obstetric consultant Archived ‘Fit for purpose’ review – 
+awaiting ‘Big Baby’ Trial 
+results for full review. 
+Updated diabetes pathway in 
+line with amended diabetes 
+guideline, management o f 
+raised AC>95th centile at 
+anomaly USS , links to 
+guidelines added 
+5.1 June 2022 A. Mcavoy, 
+Obstetric 
+Consultant 
+ 
+J. Collard, Clinical 
+Effectiveness 
+Support Midwife Archived Updated to align with NICE 
+NG207 Inducing labour 2021 
+5.2 December 2022 E.Meadows 
+Research Midwife Archived Big Baby study information 
+removed due to end of 
+recruitment 
+6.0 November 2023 A. Mcavoy, 
+Obstetric 
+Consultant LIVE 3 year review. 
+SFH to be from 26 -28 weeks . 
+SFH to be stopped once 
+serial growth scans are 
+commenced. 
+
+CG1192 Large for Gestational Age Guideline v6.0 November 2023 Page 3 of 13 
+Please check against the intranet that this printout is the most recent version of this document. 
+Contents 
+ 
+1.0 Aim ................................ ................................ ................................ ............................ 4 
+2.0 Scope ................................ ................................ ................................ ........................ 4 
+3.0 Responsibilities ................................ ................................ ................................ .......... 4 
+4.0 Abbreviations used within this guideline ................................ ................................ ..... 4 
+5.0 Introduction ................................ ................................ ................................ ................ 4 
+6.0 Key points ................................ ................................ ................................ .................. 5 
+7.0 Antenatal Management as per intergrowth measurements ................................ ......... 5 
+8.0 Example of excessive fetal growth ................................ ................................ ............. 6 
+9.0 Fetal Macrosomia from 38 weeks ................................ ................................ ............... 7 
+9.1 Polyhydramnios ................................ ................................ ................................ ......... 7 
+10.0 Caesarean birth ................................ ................................ ................................ ......... 8 
+11.0 Informed discussion with the woman and person presenting with a large for 
+gestational age baby ................................ ................................ ................................ .. 8 
+11.1 Risks of vaginal birth with a macrosomic baby ................................ ........................... 9 
+11.2 Risks of induction of labour with a macrosomic baby ................................ ................ 10 
+11.3 Risks of caesarean birth ................................ ................................ ............................ 10 
+12.0 Post birth ................................ ................................ ................................ ................... 11 
+13.0 Audit ................................ ................................ ................................ ......................... 12 
+References ................................ ................................ ................................ ........................... 13 
+
+CG1192 Large for Gestational Age Guideline v6.0 November 2023 Page 4 of 13 
+Please check against the intranet that this printout is the most recent version of this document. 
+Large for Gestational Age Guideline 
+ 
+1.0 Aim 
+ 
+To provide evidence based guideline for obstetric management in the case of a suspected 
+large for gestational age (LGA) fetus. 
+ 
+2.0 Scope 
+ 
+This guideline applies to all medical and midwifery staff and ultra-sonographers . 
+This guideline is to be used in conjunction with UH Sussex (SRH & WH) Diabetes in 
+Pregnancy G uideline however, management of LGA for non -diabetic women and people 
+should follow this guideline and the diabetes pathway should be followed when diabetes is 
+considered the cause for LGA. 
+ 
+3.0 Responsibilities 
+ 
+It is the responsibility of all m idwifery and medical staff and ultra -sonographers to: 
+ 
+ Access, read, understand and follow this guidance 
+ To use their professional judgement in the application of this guideline 
+ 
+Management : 
+ 
+ To ensure the guideline is reviewed as required in line with Trust and national 
+recommendations . 
+ To ensure the guideline is accessible to all relevant staff . 
+ 
+4.0 Abbreviations used within this guideline 
+ 
+LGA - Large for Gestational Age EFW - Estimated Fetal Weight 
+PPH - Postpartum Haemorrhage SCBU - Special Care Baby Unit 
+AC - Abdominal Circumference GTT - Glucose Tolerance T est 
+GROW - Gestation Related Optimal Weight IOL - Induction of Labour 
+USS - Ultrasound Scan GDM - Gestational Diabetes 
+TOF - tracheo -oesophageal fistula OGTT - Oral Glucose Tolerance Test 
+CPD - Cephalic Pelvic Disproportion SFH - Symphys is fundal height 
+ 
+5.0 Introduction 
+ 
+Management of the LGA estimated fetal weight (EF W) >97th centile or macrosomic fetus 
+(EFW >4.5kg) in the non -diabetic mother and birthing parent is becoming a more frequent 
+dilemma in antenatal care . The a verage birthweight at term is known to be increasing and is 
+thought to be due to more prevalent maternal and birthing parent obesity, increased maternal 
+CG1192 Large for Gestational Age Guideline v6.0 November 2023 Page 5 of 13 
+Please check against the intranet that this printout is the most recent version of this document. 
+and birthing parent age and reduction in smoking. There are risks associated with LGA and 
+fetal macroso mia, including increased maternal and birthing parent and neonatal morbidity, 
+risk of caesarean birth, shoulder dystocia, postpartum h aemorrhage (PPH), fourth degree 
+perineal tears and admiss ion to the Special Care Baby Unit (SCBU ). 
+ 
+ 6.0 Key points 
+ 
+ A large baby may either be appropriately large or be macrosomic , causes of which 
+include excess calorie intake, maternal and birthing parent diabetes , and obesity . 
+ 
+ A ‘large for dates ’ pregnancy might be the first presentation of gestational 
+diabetes, which can also cause polyhydramnios (see Diabetes in Pregnancy 
+Guideline ). 
+ 
+ If the fetal abdominal circumference (AC) on scan is disproportionally raised >95th 
+centile (compared to the head circumference), discuss a low glycaemic index diet , 
+offer a Glucose Tolerance T est (GTT) to women and people (who have not 
+previously had a GTT) and offer 36/40 scan to those women and people not found 
+to be diabetic . 
+ 
+ Ultrasound derived estimated fetal weight es timates have an error of 10 - 25%, 
+especially in the late third trimester . 
+ 
+ A suspected diagnosis of a large fetus c an cause anxiety for the mother /birthing 
+parent and therefore give as much information to her and discuss options 
+available. This includes discussing the influence of th e suspected large baby on 
+the woman and person ’s birth preferences, with the understanding of the 
+evidenced 10 -20% error. Women and people should also be made aware that 
+there is no consensus around planned mode of delivery and/or induc tion of labour . 
+ 
+7.0 Antenatal Management as per intergrowth measurements 
+ 
+ Fundal height measurement should be started from 26-28 weeks and plotted on 
+the intergrowth charts for SFH , and monitored and plotted there after at every 
+antenatal appointment (preferably by the same person). Once regular serial growth 
+scans are commenced , SFH measurements should be stopped, however this is 
+not the case for ad hoc gro wth scans when SFH measurements should be 
+continued . It should be documented on MIS that this is the reason SFH 
+measurement is not being performed . Saving babies’ lives Care Bundle v3.1 
+ A single plot above the 90th centile on the intergrowth char t is not an indication for 
+an ultrasound scan , unless there are other concerns . 
+ Consistent growth above the 90th centile without other co ncerns is not an indication 
+for an ultrasound scan. 
+ The key factor is to refer when fundal height plots are defining a curve significantly 
+more steep than the reference curves on the intergrowth chart – see below . 
+CG1192 Large for Gestational Age Guideline v6.0 November 2023 Page 6 of 13 
+Please check against the intranet that this printout is the most recent version of this document. 
+8.0 Example of excessive fetal growth 
+
+If a LGA fetus is suspected based on the criteria above on an intergrowth chart, the woman 
+and person should be referred for an ultrasound scan for fetal biometry and liquor volume 
+with an antenatal clinic appointment for review . 
+ 
+The clinical interpretation of the scan results should be informed by a full obstetric history, 
+dietary history and clinically relevant information e.g. maternal and birthi ng parent stature . A 
+management plan might include dietary modification and screening for gestational diabetes . 
+When counselling about birth options it is important to factor in previous births and the 
+relative size of the fetus and mother and birthing parent . The risks should be discussed in 
+context with an emphasis on the metabolic risks to the fetus, the physical risks to the 
+mother /birthing parent and fetus associated with birth , and the known risk of scanning error . 
+The options for birth are expect ant management, induction of labour or caesarean birth. The 
+information should be shared with the woman and people in an appropriate manner, bearing 
+in mind the limitations of ultrasound biometry , and addressing any concerns that she /they 
+raise . This shoul d provide them with a balanced view in order to make an informed decision. 
+Women and b irthing people should be informed that there is no consensus as yet as to 
+whether induction of labour significantly reduces the complications associated with shoulder 
+dystocia, and that induction of labour is considered a known risk factor for shoulder dystocia. 
+. 
+. 
+. 
+CG1192 Large for Gestational Age Guideline v6.0 November 2023 Page 7 of 13 
+Please check against the intranet that this printout is the most recent version of this document. 
+ 
+9.0 Fetal Macrosomia from 38 weeks 
+The risks and benefits of induction of labour (IOL) must be discussed with the woman and 
+person . Refer to ‘ Induction a nd Augmentation of Labour (Including Use of O xytocin) 
+Guideline ’. 
+IOL at term can be offered for fetal macrosomia from the consultant ANC if the EFW on USS 
+is above > 90th centile. Timing of this needs to be discussed with the woman and person and 
+should include a discussion about the risk of shoulder dystocia at different feta l weights 
+rather than simply centiles. An estimate of risks at different weights is: 
+ 5% (1 in 20) in birthweight of 4000 – 4250g (8lb 13oz to 9lb 6oz) 
+ 9% (1 in 12) in birthweight of 4250 – 4500g (9lb 6oz to 9lb 15oz) 
+ 14% (1 in 7) in birthweight 4500 – 4750g (9lb 15oz to 10lb 7oz) 
+ 21% (1 in 5) in birthweight 4750g – 5000g (10lb 7oz to 11lb) (Nesbitt 1998) 
+Using this information, it would be reasonable to offer induction when the EFW is predicted to 
+be around 4kg. If the woman or person declines IOL and wants t o consider expectant 
+management, repeat scan in 2 weeks to reassess growth. If size increases beyond 5000g 
+arrang e discussion of mode of birth . 
+ 
+Women and b irthing people should be informed that there is uncertainty about the risk s and 
+benefits of induction of labour v erses expectant management, but: 
+ 
+ Rate of shoulder dystocia is reduced compared with expectant management . 
+ There is evidence that risk of perinatal death, brachial plexus injury or need for 
+emergency caesarean birth is unchanged between induction of labour and 
+expectant management . 
+ Induction of labour increases the rate of 3rd and 4th degree tears. 
+ 
+Women and people should also be advised to consider the impact of induction of labour on 
+their birth experience and on their baby. 
+ 
+Discuss the options for birth with the woman and person , taking into account their individual 
+circumstances and her preferences, and respect their decision. Support recruitment into 
+clinical trials, if available. 
+ 
+9.1 Polyhydramnios 
+If po lyhydramnios is confirmed, consid er causes: - 
+1. Idiopathic 
+2. Maternal (gestational diabetes, GDM) 
+3. Fetal (tracheo -oesophageal fistula [TOF] – may be absent stomach on ultrasound, 
+although presence of stomach does not exclude diagnosis). 
+CG1192 Large for Gestational Age Guideline v6.0 November 2023 Page 8 of 13 
+Please check against the intranet that this printout is the most recent version of this document. 
+ 
+Guidance on who to perform O ral Glucose Tolerance Test’s (OGTT) is in the trust guideline 
+on diagnosis and management of gestational diabetes ( see Diabetes in Pregnancy 
+Guideline ). It depends if patient h as pre -pregnancy risk factors for GDM and whether they 
+have had previous OGTTs. If TOF suspected by absent stomach (and after GDM excluded) 
+consider referral to fetal medici ne as there is around 50% chance of other abnormalities and 
+5% association with aneuploidy. 
+Paediatric alerts do not need to be sent for isolated mild polyhydramnios. 
+For severe polyhydramnios at less than 34 weeks gestation it may be appropriate to disc uss 
+with one of the fetal medicine consultants about merits of amnio -drainage. 
+ 
+10.0 Caesarean birth 
+ 
+In some cases, the risk of an emergency caesarean birth for true CPD (Cephalic Pelvic 
+Disproportion) or concerns raised by the woman and person around signific ant perineal 
+trauma may be sufficiently high to justify a planned caesarean birth. This should be a 
+consultant decision with a threshold of an estimated birth weight of 4.5kg or more . Women 
+and b irthing people should be advised that caesarean birth is an acceptable choice if there 
+are significant concerns regarding the risk of shoulder dystocia. 
+
+11.0 Informed discussion with the woman and person presenting with a large 
+for gestational age baby 
+ 
+(For guidance on suspected fetal macrosomia in women and people with pre -existing or 
+gestational diabetes see CG1109 Diabetes in pregnancy -guideline .) 
+ 
+Using the table below d iscuss with pregnant women and people without diabetes and with 
+suspected fetal macrosomia that: 
+ 
+• The options for birth are expectant management, induction of labour or caesarean 
+birth. 
+• There is uncertainty about the benefits and risks of induction of labour compared to 
+expectant management, but: 
+- With induction of labour the risk of shoulder dystocia is reduced compared 
+with expectant management. 
+- With induction of labour the risk of third - or fourth -degree perineal tears is 
+increased compared with e xpectant management. 
+- There is evidence that the risk of perinatal death, brachial plexus injuries in 
+the baby, or the need for emergency caesarean birth is the same between 
+the 2 options. 
+• They will also need to consider the impact of induction on their birth 
+experience and on their baby. 
+CG1192 Large for Gestational Age Guideline v6.0 November 2023 Page 9 of 13 
+Please check against the intranet that this printout is the most recent version of this document. 
+ 
+Discuss the options for birth with the woman or person , taking into account their individual 
+circumstances and her /their preferences, and respect their decision. 
+ 
+Outcome Induction of 
+labour Expectant 
+Management Risk Difference 
+Shoulder 
+Dystocia About 410 babies 
+would per 10,000 
+would be expected 
+to have a shoulder 
+dystocia (so 9,590 
+would not). About 680 babies 
+per 10,000 would 
+be expected to 
+have a shoulder 
+dystocia (so 
+9,320 would not). 
+ 
+ About 270 more babies per 
+10,000 whose mother and 
+birthing parent's birth was 
+managed expectantly would 
+be expected to have a 
+shoulder dystocia; so for 9,730 
+the outcome would be the 
+same irrespective of the 
+management strategy. 
+Third or fourth 
+degree perineal 
+tears About 260 per 
+10,000 women and 
+people would be 
+expected to have 
+third or fourth 
+degree tears (so 
+9,740 would not) About 69 per 
+10,000 women 
+and people would 
+be expected to 
+have third or 
+fourth degree 
+tears (so 9,931 
+would not) About 191 women and people 
+whose labour was induced 
+would be expected to have 
+third or fourth degree tears; so 
+for 9,809 the outcome would 
+be the same irrespective of 
+the management strategy. 
+NICE NG207 2021 
+11.1 Risks o f vaginal birth with a macrosomic baby 
+ 
+Risks to b aby Risks to woman and person 
+One in 10 babies who experience shoulder 
+dystocia will have stretching of the nerves in 
+the neck. This is called brachial plexus injury 
+and can causes loss of movement in the 
+baby's arm. The most common type of 
+brachial plexus injury is Erb's palsy. For on e 
+in 10 babies with a brachial plexus injury, the 
+loss of movement will be permanent. Sometimes the labour can be longer for 
+bigger babies. In the UK 15 in 100 women 
+and people who are planning to have a 
+vaginal birth will need to have an emergency 
+caesa rean birth. Some women and people 
+may need to have a forceps or ventouse 
+(suction) birth. 
+In babies who experience shoulder dystocia, 
+one in 10 may have a fracture to their 
+collarbone. Four in 100 babies who 
+experience shoulder dystocia may have a 
+fractur e to their arm. These heal well. Sometimes women and people with a big 
+baby may experience heavier bleeding after 
+the baby is born. In rare cases, some women 
+and people may need a blood transfusion. 
+Very rarely, a baby may suffer brain damage 
+if they did not get enough oxygen during the 
+birth because of shoulder dystocia. 
+CG1192 Large for Gestational Age Guideline v6.0 November 2023 Page 10 of 13 
+Please check against the intranet that this printout is the most recent version of this document. 
+11.2 Risks of induction of labour with a macrosomic b aby 
+ 
+Risks to b aby Risks to woman and person 
+Inducing labour at 38 weeks is safe for the 
+baby. There is some evidence that inducing 
+labour earlier can lead to jaundice in the 
+baby. This usually has no long -term effects. Often women and people who have labour 
+induced will find their labour is longer and more 
+painful than for women who go into labour 
+naturally. 
+ If the woman and person has a vaginal birth 
+the risks are shown in table above. Having 
+labour induced can increase the risk of a tear 
+to the vagina that extends into the back 
+passage. 
+ Sometimes if the wom an and person is 
+induced they may need an emergency 
+caesarean birth, and the risks of this are 
+shown in table below. 
+ 
+11.3 Risks of caesarean birth 
+ 
+Risks to b aby Risks to woman and person 
+One in 10 babies may experience breathing 
+difficulties. Some of these babies will need 
+to have treatment for this in the neonatal 
+unit. Nine in 100 women and people report 
+persistent pain at the wound site and in 
+their abdomen for a few months following a 
+caesarean birth. 
+One to two babies in 100 will have a cut to 
+their skin. Five in 100 women and people will need to 
+be readmitted to hospital following a 
+caesarean birth. This might be because 
+their wound is not healing or because they 
+have an infection. 
+Some women and people report that it 
+takes longer to bond with their baby after a 
+Caesarean birth. Six in 100 women and people will have an 
+infection after a caesarean birth. The 
+infection may involve the scar, their bladder 
+or kidneys, or the lining of their womb. 
+ One in 10 00 women and people may have 
+an injury to their bladder or bowel during a 
+caesarean birth. This will need repairing. 
+ Five in 1000 women and people bleed 
+heavily (haemorrhage) during a caesarean 
+birth. Some of these women and people will 
+need to have a bl ood transfusion. In some 
+cases, a woman and person may need to 
+have a hysterectomy (where the womb is 
+removed) to control the bleeding. 
+CG1192 Large for Gestational Age Guideline v6.0 November 2023 Page 11 of 13 
+Please check against the intranet that this printout is the most recent version of this document. 
+ Five in 1000 women and people may need 
+to have further surgery after their caesarean 
+birth. 
+ Six in 10,000 women and people will have a 
+blood clot in their leg or lung following a 
+caesarean birth. 
+ One in four women and people who have a 
+caesarean birth will need another 
+caesarean birth if they attempt a vaginal 
+birth in their next pregnancy. 
+If they have a caesarean birth and decide to 
+try a vaginal birth in their next pregnancy, 
+they would need extra monitoring in labour 
+as there is a risk (one in 200 women and 
+people ) that the scar in the uterus can open 
+during labour. 
+ If the woman and person has a caesarean 
+birth in this pregnancy, in their next 
+pregnancy there is increased chance of a 
+stillbirth. This is uncommon. 
+ If the woman and person has a caesarean 
+birth in this pregnancy and the placenta is 
+low in their next pregnancy, there is an 
+increased chance that the placenta will not 
+come away easily after the baby has been 
+born. This can cause serious bleeding and 
+may mean they need to have a 
+hysterectomy. This is uncommon, but the 
+chance increases with each caesarean 
+birth. 
+ 
+12.0 Post birth 
+ 
+With any of the scenarios presented above it may be reasonable to explore with the woman 
+and person how they may feel and/or feels, following the baby’s birth if in fact the baby when 
+born was not large (10 -20% error of scanning). The woman and person ’s birth preferences 
+will have been important to them and if a joint decision was made in line with a suspected 
+large baby rather than their initial preference then they may feel disappointed with the choice 
+made suspecting their baby to be large. 
+
+CG1192 Large for Gestational Age Guideline v6.0 November 2023 Page 12 of 13 
+Please check against the intranet that this printout is the most recent version of this document. 
+13.0 Audit 
+ 
+Suggested audit question: 
+ 
+ Has the fundal height measurement should be charted from 2 6-28 weeks and plotted 
+on the intergrowth charts . 
+ 
+ If the fetal abdominal circumference (AC) on scan is disproportionally raised >95th 
+centile (compared to the head circumference), has: 
+o A low glycaemic index diet been discussed 
+o A Glucose Tolerance Test (GTT) been offered to women and people (who 
+have not previously had a GTT) 
+o A 36/40 scan to offered those women and people not found to be diabetic 
+ 
+ If fetal macrosomi a from 38 weeks, has the risks and benefits of induction of labour 
+(IOL) been be discussed with the woman and person . 
+ 
+CG1192 Large for Gestational Age Guideline v6.0 November 2023 Page 13 of 13 
+Please check against the intranet that this printout is the most recent version of this document. 
+References 
+ 
+Aye SS, Miller V, Saxena S, Farhan M. (2010) Management of large -for-gestational -age in 
+non-diabetic women. The Obste trician and Gynaecologist; 12:250 – 256. 
+ 
+Boulvain M, Senat MV et al. Induction of labour versus expectant management for large -for-
+date fetuses: a randomised controlled trial. Lancet 2015 Jun 27;385(9987):2600 -5. 
+ 
+Characteristics a nd birth, England and Wales. 2014. Office of national statistics. [ONLINE] 
+Available at: http://www.ons.gov.uk/ons/rel/vsob1/characteristics -of-birth-1--england -and-
+wales/index.html. [Accessed 15 March 2016] 
+ 
+Francis, Tonks & Gardosi. Accuracy of ultrasound estimation of fetal weight at term. Arch 
+Dis Child Fetal Neonatal Ed 2011; 96:Fa61 
+ 
+Jolly MC, Sebire NJ, Harris JP, Regan L, Robinson S. (2003) Risk factors for macrosomia 
+and its clinical consequences: a study of 350,311 pregnancies. Eur J Obstet Gynecol Reprod 
+Biol. 2003 Nov 10: 111(1): 9-14. 
+ 
+NHS England , July 2023 . Saving -babies -lives-version -three -a-care-bundle -for-reducing -
+perinatal -mortality NHS England. [Accessed November 2023 ] 
+ 
+NICE (NOV 2021) NG207 Inducing labour 
+ 
+RCOG (2012) Shoulder Dystocia Green Top Guideline 42 (last updated February 2017) 
+ 
+Rosati P, Arduini M, Girl C et al. (2010) Ultrasonographic weight estimation in large for 
+gestational age fetuses: a comparison of 17 sonographic formulas and four models 
+algorithms. J M atern Fetal Neonatal Med. 23(7): 675-80.

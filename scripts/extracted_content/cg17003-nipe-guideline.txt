@@ -1,0 +1,1602 @@
+# Extracted from: CG17003 NIPE guideline.pdf
+# Guideline ID: cg17003-nipe-guideline
+# Content length: 82266 characters
+# Processing date: 1750066900.409489
+
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 1 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Newborn Infant Physical Examination (NIPE) Screening 
+Guide for Health Professionals (including referral pathways) 
+Summary statement: How does the document 
+support patient care? The NHS NIPE Programme’s main aim is to identify 
+and refer all children bor n with congenital 
+abnormalities of the eyes, heart, hips, and testes, 
+where these are detectable, within 72 hours of birth. 
+This age is recommended based on best practice and 
+current evidence and should facilitate a prompt 
+referral for early clinical asses sment. 
+This document offers a guide to the examination for all 
+NIPE practitioners and local referral pathways 
+Staff/stakeholders involved in development: Consultant Paediatrician, Midwives 
+Division: Women and Chi ldren’s 
+Department: Maternity & Paediatr ics 
+Responsible Person: Chief of Service 
+Author: Consultant Paediatrician and Public Health Midwife 
+For use by: All medical and maternity staff involved in newborn infant 
+physical examination at UH Sussex SRH & WH 
+Purpose: To provide evidence based practice for health profe ssionals 
+who undertake examination of the newborn 
+This document supports: 
+Standards and legislation Public Health England standards 
+Public Health England (2020) Newborn & Infant Physical 
+Examination (NIPE) Screening Programme Handbook . 
+Key related documents: Newborn Scre ening Failsafes; NIPE SOP; Neonatal BCG 
+Immunisation Programme 
+Approved by: Joint Obstetric Guideline Group (JOGG) : 15th February 2023 
+Maternity & Neonatal Meeting : 27th June 2023 
+Date uploaded : 14th July 2023 
+Ratified by Board of Directors/ Committee of 
+the Board of Directors N/A 
+Ratification Date: N/A 
+Expiry Date: February 202 6 
+Review date: August 2025 
+If you require this document in another format such as Braille, large print, audio or 
+another language please contact the Trusts Communications Team 
+Reference Number: CG1700 3 
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 2 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Version Date Author Status Comment 
+1.0 November 2016 Claire Parr , Nick 
+Brennan, Katia 
+Vamvakiti Archive Guideline in line with NIPE 
+Standards 
+2.0 June 2019 Claire Parr Archive Update local referrals and 
+national standards from PHE 
+3.0 June 2020 Claire Parr , Nick 
+Brennan, Victoria 
+Clarke, Katia 
+Vamvakiti Archive Update with PHE handbook 
+and local changes 
+4.0 February 2021 Caroline Thomas 
+(NIPE lead) Archived Public Health England 
+guidance changes from April 
+2021 
+5.0 February 2023 Caroline Thomas 
+(NIPE lead) LIVE Formatted to Trust standard 
+to include: 
+Responsibilities & 
+Abbreviations used within 
+guideline. 
+New sections 6.0, 6.1, 9.1, 
+11.7.4, 25 
+Appendix 2: New patient 
+information leaflet for Heart 
+Murmur 
+
+The interpretation and application of cl inical guidelines will remain the 
+responsibility of the individual clinician. 
+If in doubt contact a senior colleague or expert . 
+
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 3 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Contents 
+ 
+1.0 Aim and scope ................................ ................................ ............................... 6 
+2.0 Responsibilities ................................ ................................ .............................. 6 
+3.0 Abbreviations used within this guideline ................................ ......................... 7 
+4.0 Record Keeping ................................ ................................ ............................. 7 
+5.0 Process for Newborn Examination ................................ ................................ . 8 
+6.0 E-Learning Requirements & Competency Framework ................................ ... 8 
+7.0 Babies in SCBU ................................ ................................ ............................. 9 
+8.0 Communicating results of the screen ................................ ........................... 10 
+9.0 The process for full examination ................................ ................................ .. 11 
+9.1 History ................................ ................................ ................................ ......... 11 
+9.2 BCG immunisation Referral. ................................ ................................ ........ 11 
+9.3 The newborn ex amination ................................ ................................ ............ 12 
+9.3 General observations ................................ ................................ ................... 12 
+9.4 Colour ................................ ................................ ................................ .......... 12 
+9.5 Posture and behaviour ................................ ................................ ................. 12 
+10.0 Skin examination ................................ ................................ ......................... 13 
+10.1 Capillary naevi ................................ ................................ ............................. 13 
+10.2 Dermal melanocytosis/ Slate Grey Nevi. (Mongolian/ Blue spots) ................ 13 
+10.3 Strawberry naevi / Cavernous haemangiomata ................................ ............ 13 
+10.4 Melanocytic naevi ................................ ................................ ........................ 14 
+10.5 Port wine Stain ................................ ................................ ............................. 14 
+10.6 Erythema toxicum of the newborn ................................ ................................ 14 
+10.7 Herpes Simplex ................................ ................................ ........................... 14 
+10.8 Jaundice ................................ ................................ ................................ ...... 15 
+11.0 Head and skull ................................ ................................ ............................. 15 
+11.1 Cephalhaematoma/Caput succedaneum ................................ ..................... 15 
+11.2 Forceps / Ventouse trauma ................................ ................................ .......... 15 
+11.3 Face ................................ ................................ ................................ ............ 15 
+11.4 Facial Palsy ................................ ................................ ................................ . 16 
+11.5 Ears ................................ ................................ ................................ ............. 16 
+11.6 Nose ................................ ................................ ................................ ............ 16 
+11.7 Eyes ................................ ................................ ................................ ............ 17 
+11.7.1 Clinical risk factors ................................ ................................ ....................... 17 
+11.7.2 Screen positive ................................ ................................ ............................ 17 
+11.7.3 Other eye conditions ................................ ................................ .................... 18 
+11.7.4 Subconjunctival Haemorrhages ................................ ................................ ... 18 
+11.8 Mouth and Palate ................................ ................................ ......................... 18 
+11.8.1 Micrognathia ................................ ................................ ................................ 18 
+11.8.2 Accessory tooth ................................ ................................ ........................... 18 
+11.8.3 Swelling under the to ngue ................................ ................................ ............ 19 
+11.8.4 Visible Frenulum/Tongue tie ................................ ................................ ........ 19 
+11.8.5 Bifid uvula ................................ ................................ ................................ .... 19 
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 4 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+11.8.6 Cleft Palate ................................ ................................ ................................ .. 19 
+12.0 Neck and Clavicles ................................ ................................ ..................... 19 
+13.0 Chest ................................ ................................ ................................ .......... 20 
+13.1 Lungs ................................ ................................ ................................ ........... 20 
+13.1 Breast Development ................................ ................................ .................... 20 
+14.0 Abdomen and umbilicus ................................ ................................ ............... 20 
+14.1 Scaphoid abdomen ................................ ................................ ...................... 20 
+14.2 Distended abdomen ................................ ................................ ..................... 21 
+14.5 Liver and spleen ................................ ................................ .......................... 21 
+14.6 Umbilicus ................................ ................................ ................................ ..... 21 
+14.7 Hernia ................................ ................................ ................................ .......... 21 
+15.0 Upper Limbs and Hands (Digital Anomalies) ................................ ................ 21 
+15.1 Syndactyly or Polydactyly ................................ ................................ ............ 21 
+15.2 Limb reduction defects ................................ ................................ ................. 21 
+15.3 Contractures/Tortic ollis ................................ ................................ ................ 22 
+15.4 Erb's Palsy ................................ ................................ ................................ ... 22 
+16.0 Hips ................................ ................................ ................................ ............. 22 
+16.1 Screen negative ................................ ................................ ........................... 23 
+16.2 Screen positive ................................ ................................ ............................ 23 
+16.3 Management of ‘Clicky ‘Hi ps ................................ ................................ ........ 24 
+17.0 Lower Limbs – Feet ................................ ................................ ..................... 24 
+17.1 Talipes ................................ ................................ ................................ ......... 24 
+17.2 Major Limb Deficiencies ................................ ................................ ............... 25 
+18.0 Genitalia ................................ ................................ ................................ ...... 25 
+18.1 Ambiguous genitalia ................................ ................................ ..................... 25 
+18.2 Female babies ................................ ................................ ............................. 25 
+18.3 Male babies ................................ ................................ ................................ . 25 
+18.3.1 Hydroceles ................................ ................................ ................................ ... 26 
+18.3.2 Undescended testes ................................ ................................ .................... 26 
+18.3.3 Screen Positive ................................ ................................ ............................ 26 
+18.3.4 Unilateral undescended testes ................................ ................................ ..... 26 
+18.3.5 Bilateral undescended testes ................................ ................................ ....... 26 
+18.3.6 Torsion o f the testes ................................ ................................ .................... 27 
+18.3.7 Hypospadias ................................ ................................ ................................ 27 
+18.3.8 Inguinal hernias ................................ ................................ ........................... 28 
+19.0 Anus ................................ ................................ ................................ ............ 28 
+19.1 Anorectal malformation ................................ ................................ ................ 28 
+19.2 Stools ................................ ................................ ................................ ........... 28 
+20.0 Urine ................................ ................................ ................................ ............ 29 
+21.0 Spine ................................ ................................ ................................ ........... 29 
+21.1 Sacral sinus ................................ ................................ ................................ . 29 
+21.2 Midline spinal haemangiomas ................................ ................................ ...... 29 
+21.3 Spina Bifida (Myelocoele & Meningomyelocoele) ................................ ......... 29 
+22.0 Nervous System/Reflexes ................................ ................................ ............ 29 
+22.1 Femoral Pulses ................................ ................................ ............................ 30 
+23.0 Heart ................................ ................................ ................................ ............ 30 
+23.1 Screen positive ................................ ................................ ............................ 31 
+24.0 Congenital Abnormality ................................ ................................ ................ 33 
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 5 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+24.1 Down’s Syndrome ................................ ................................ ........................ 33 
+25.0 Audit and monitoring ................................ ................................ .................... 35 
+References ................................ ................................ ................................ .............. 35 
+Appendix 1: Pulse Oximetry screening ................................ ................................ .... 36 
+Appendix 2: Heart Murmur Patient Information Leaflet ................................ ............ 38 
+ 
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 6 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Newborn Infant Physical Examination (NIPE) 
+Screening Guide for Health Professionals 
+(Including referral pathways) 
+ 
+1.0 Aim and scope 
+ 
+The UK National Screening Committe e (UK NSC) recommends that all eligible 
+babies should be offered the Newborn Infant Physical Examination ( NIPE ) screen. 
+The screen should be undertaken and completed within 72 hours of birth and then 
+again at 6 to 8 weeks of age (undertaken by the GP). 
+ 
+The NIPE screen provides a holistic head -to-toe examination of the baby. The NHS 
+NIPE Screening Programme aims to reduce morbidity and mortality by: 
+ 
+ Identifying and referring all babies born with congenital abnormalities of the 
+eyes, heart, hips, and teste s, where these are detectable, within 72 hours 
+of birth . 
+ Identifying those abnormalities that may become detectable by 6 to 8 
+weeks of age, at the second physical examination (undertaken by GP) . 
+ 
+These ages are recommended based on best practice , national and regional 
+historical data and current evidence and should facilitate a prompt referral for early 
+clinical assessment. 
+ 
+Screening providers should use information in ‘Screening tests for you and your 
+baby’ to inform parents about the newborn and 6 to 8 week physical examinations 
+during the antenatal period and again before the newborn examination is offered. For 
+babies in the Special Care Baby Unit (SCBU) the national information ‘Babies in 
+special care units: screening tests for your baby’ should be u sed. 
+ 
+Parents should be informed of findings at the time of each examination and advised 
+to report any concerns they have about their baby’s wellbeing to a healthcare 
+professional at any time. 
+ 
+2.0 Responsibilities 
+ 
+Midwives & paediatricians: 
+ To access, re ad, understand and follow this guidance 
+ To use their professional judgement in application of this guideline 
+ 
+Management: 
+ To ensure the guideline is reviewed as required in line with Trust and 
+National recommendations. 
+ To ensure the guideline is accessible to all relevant staff. 
+ 
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 7 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+3.0 Abbreviations used within this guideline 
+ 
+NIPE - Newborn Infant Physical 
+Examination PCHR - Personal Child Health Record 
+CPAP - continuous positive airway 
+pressure ROP - Retinopathy of prematurity 
+SCBU – Special Care Baby Unit GOSH - Great Ormond Street Hospital 
+GBS - Group B streptococcal ECV - External cephalic version 
+USS - Ultrasound Scan BP - Blood pressure 
+NQM - Newly qualified Midwives CAH – Congential Adrenal Hyperplasia 
+ECG - Electrocardiogram CHD - Congenital Hear t Disease 
+CCHD - Critical Congenital Heart Disease FASP - Fetal anomaly screening programme 
+SLE - Systemic lupus erythematosis PEC - Paediatrician with expertise in 
+Cardiology 
+AVSD – atrioventricular septal defect NG - Nasogastric 
+SALT – Speech and Lan guage Therapy CXR - Chest X -Ray 
+FBC - Full Blood Count SIAF -Serious Incident Assessment form 
+ 
+4.0 Record Keeping 
+ 
+Verbal consent should be obtained for the screening. This may include 1 of 4 
+outcomes : 
+ 
+ Full consent (verbal consent given by the mother /birthing parent ). 
+ Partial consent (verbal consent given by the mother /birthing parent for only 
+certain aspects of the screen) . 
+ Professional consent (if the mother /birthing parent is too unwell to consent 
+for the screen and it is in the baby’s best interest fo r the screen to be 
+undertaken) . 
+ Declined consent (the mother /birthing parent declines the screen 
+completely). The mother /birthing parent should have an in -depth 
+discussion regarding screening from either a senior paediatrician or the 
+NIPE Lead. This should be recorded on the S4N system via case notes . 
+The NIPE Lead will send the mother a letter detailing the discussion and 
+who to contact should they change their mind. 
+ 
+Newborn Infant Physical Examination (NIPE) screening should be documented within 
+the Scre ening Management and Reporting Tools system for NIPE (S4N ) and 
+Personal Child Health Record (red book). Please enter as much information as 
+possib le of your findings and print off 1 copy in the Personal Child Health Record (if 
+the parent has not received o r brought with them the PCHR then please give this to 
+them to place in the book) . 
+ 
+Any updates to the screen should be amended on S4N and reprinted so that the 
+notes and PCHR have the most up -to-date copy contained within. This would include 
+editing resul ts following senior review for screen positive referrals where the check is 
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 8 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+required within 24 hours (i.e. heart and bilateral undescended testes). Alternatively 
+enter an outcome using the outcome function on S4N to document findings. 
+ 
+A written paper copy of the NIPE screen findings should only be carried out on the 
+rare occasion a baby cannot be located on the S4N system. This paper copy should 
+be scanned to the NIPE Lead and The Newborn Failsafe Administrator to ensure that 
+the contents are put on the sy stem as soon as possible. This will ensure that the 
+relevant referrals are processed with minimal delay. 
+ 
+5.0 Process for Newborn Examination 
+ 
+All live babies are eligible for the NIPE examination. All babies should have their 
+screening by 72 hours of age a by a NIPE trained midwife or paediatric doctor . It is 
+considered safer to undertake the NIPE examination early with the potential for more 
+false positives rather than to discharge the baby and risk missing screening 
+altogether . It is best practice to do the NIPE in the presence of the parent so they 
+can ask questions and have findings explained . 
+ 
+6.0 E-Learning Requirements & Competency Framework 
+ 
+All NIPE trained midwives must compete this annually. This framework ensures all 
+midwives are regularly per forming NIPE examinations and ensures competency. 
+ 
+All NIPE trained midwives must complete annually: 
+ Minimum of 10 NIPE’s 
+ Complete the e -learning module 
+ Attend an annual update session 
+This framework needs to be signed by a confirmer (Fellow NIPE trained 
+Midwife/NIPE lead M idwife) and the completed framework shared with to the PDT. 
+ 
+NQM with NIPE as part of training : 
+ Attend NIPE teaching session as part of their preceptorship. 
+ Perform 10 supervised N IPE’s and 10 unsupervised NIPE’s (to be checked 
+by a NIPE practitioner) 
+ Final Sign off by consultant/NIPE lead midwife. 
+ Completion of the e -learning module and cleft palate training. 
+ 
+Midwives with NIPE qualification - Return to practice 
+For midwives who have not performed NIPE's within last 12 months they are re quired 
+to: 
+ Complete the competency framework document 
+ Perform a minimum of 10 NIPE's supervised by fellow NIPE/NIPE 
+lead/Paediatric Registrar/ Consultant and signed off as competent. 
+ Attend Annual NIPE update session. 
+ Complete NIPE e -learning for Health mo dule 
+ Complete cleft palate training. 
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 9 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Update from NIPE lead on use of S4N system (can be arranged on an ad 
+hoc basis). 
+ 
+Records of NIPE trained midwives are held with in the Practice Development team. 
+ 
+ 6.1 Criteria for Midwife/Paediatric NIPE 
+ 
+Midwives : are the expert in ‘normal babies’. Midwives can undertake NIPE if t hey 
+meet the following criteria – 
+ 
+Well babies on postnatal ward that are: 
+ Over 36 weeks gestation . 
+ Babies of mothers /birthing parents with GBS risk factors . 
+ Babies of diabetic mothers /birthing parents. 
+ Having routine blood sugar monitoring . 
+ On 48 hrs prophylactic IV antibiotics for maternal risk factors. 
+ Uncomplicated instrumental birth. 
+ 
+Midwives should use their clinical judgement when undertaking NIPE’s, if they have 
+any concerns then t hey can request a paediatrician to perform a NIPE. 
+ 
+Paediatric NIPE: 
+ <36 weeks Gestation 
+ Antenatal congenital anomalies 
+ Babies on treatment course of antibiotics 
+ Birthweight <2.2kg 
+ Antenatal management plan in place which requires treatment or referral. 
+ Complex instrumental birth. 
+ 
+If baby is close to breech time and paediatric team is unable to perform NIPE 
+consultant on call needs to be aware. An individual plan on a case by case basis can 
+be made. An experienced NIPE midwife may be able to facilitate ex amination . 
+ 
+7.0 Babies in SCBU 
+ 
+Babies in SCBU should be assessed at each medical handover and if well enough , 
+the NIPE screen should take place within 72 hours of age. Any baby transferred to 
+the Postnatal Ward should have NIPE performed prior to transfer . 
+ 
+Some babies on the SCBU may be too unwell or too premature for examination to be 
+completed (e.g. fused eyes) and the NIPE screen is not appropriate at the time the 
+examination is due . If possible, all screening elements should be carried out but it is 
+also appropriate to examine each element of the NIPE as soon as practical once the 
+baby’s category of care is special care . If this is the case and element of the screen 
+has not been carried out then please ensure this is clearly documented as 
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 10 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+intentionally omitted so a re cord can be kept of the need to complete when 
+appropriate. 
+ 
+Newborn screening may be delayed (>72 h ours of age) where a clinical decision is 
+made because the baby is ‘too young’ or ‘too ill’ for NIPE screening. 
+ 
+ Too young for NIPE screeni ng’ is defined as babies born <34+0 weeks 
+gestation. 
+ Screening may be delayed until these babies reach 34+0 wee ks corrected 
+age. 
+ Screening ideally being undertaken withi n 72 hours of reaching this age. 
+ Any baby deemed ‘too ill’ for sc reen will require acce ptable mitigations for 
+delay to be submitted in the KPI data. Clinical judgement should be used 
+when assessing suitability for NIPE screening. The list below gives 
+circumstances NIPE can be delayed: 
+o Respiratory support ( other than low -flow oxygen) , includ ing the 
+presence of chest drains for first 72hrs . 
+o Any cardiovascular support, for example, inotropes, prostin . 
+o Ventilated infant until extubated. 
+o Baby on continuous positive airway pressure (CPAP) . 
+o Therapeutic hypothermia . 
+o Intense phototherapy (double or more, need for 
+immunoglobulin/exchange transfusion. 
+o Chest drain in place(without additional respiratory support) . 
+o Umbilical lines in place/arterial lines in place. 
+o Post-operative, until off analgesia. 
+o Unstable hypoglycaemia until off dextrose. 
+o Where active reorientation of care to comfort/palliative care is taking 
+place. 
+ 
+Referral timescales should not be age adjusted for preterm babies although local 
+arrangements have been agreed regarding routine hip scans (please see hip 
+section). 
+ 
+Babies less t han 32 weeks gestational age (up to 31 weeks and 6 days) or less than 
+1501g birthweight should be screened for retinopathy of prematurity (ROP). Please 
+check local guidance for this pathway. 
+ 
+8.0 Communicating results of the screen 
+ 
+Following the newborn e xamination, the parents should be informed of the outcome 
+of the examination with explanation of referral process if required. They should also 
+be informed that the NIPE screen will be repeated at 6 -8 weeks of age by their GP as 
+some conditions can develop or become apparent later. 
+
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 11 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+9.0 The process for full examination 
+ 
+ Explain purpose and limitations of the examination and gain verbal consent 
+from the mother / birthing parent . Ideally a t least one parent should be 
+present during the examination, in order that outcomes can be 
+communicated. 
+ Mother’s / birthing parent’s notes should be available for review. 
+ The infant’s general condition should be assessed prior to the examination. 
+ Elicit any concerns or queries about the infant from the parents including 
+detail of family history (1st degree) where relevan t. (1st degree family is the 
+relation to the baby which includes any siblings and both parents. ) 
+ 
+9.1 History 
+ 
+A review of the maternity and baby medical record should be undertaken prior to the 
+screen. This should include a review of family history as well as maternal / birthing 
+parent antenatal , labour/ birth and perinatal histories. 
+ 
+Check if there are any plan s made antenatally including known fetal anomalies 
+(genetic or structurally) by checking scan re sults. 
+ 
+Details of any plans made antenatally are transferred on to the S4N system and the 
+consultant/ team responsible informed of the birth and any referrals required as 
+planned are made and documented . 
+ 
+Where notes are not available to review then the NIPE practitioner should take time 
+to elicit as much information about pertinent family history, pregnancy and scan 
+findings, birth outcome and initial examination and any postnatal issue. 
+ 
+Specific information should be gathered about the baby’s family hi story: 
+ 
+ Congenital ab normality of the heart, eyes, hips and testes (if male) 
+ Assessment of risk for TB. 
+ 
+9.2 BCG immunisatio n Referral. 
+ 
+All babies should be identified at NIPE if they are at risk of TB. BCG vaccination is 
+recommended for babies up to 1 year who: 
+ 
+ Has a parent or grandparent of the baby, born in country where’s a high 
+rate of TB . 
+ Live with or have close contracts of someone who has TB(active/latent) . 
+ Baby will be living with local people for 3 months or longer in countries with 
+high rate s of TB. 
+ 
+Parents should be advised they will receive an appointment for the vaccine at around 
+28 days old. This is in outpatient clinic at both SRH and WH. 
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 12 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Referral letter is on the S4N system and should be email to: 
+uhsussex.bcgimmunisationprogram@nhs.net 
+ 
+(See BCG Immunisation Guid eline .) 
+
+9.3 The newborn examination 
+ 
+The examination should take place in a warm , bright environment and on a firm flat 
+surface with the baby undressed and settled. The examination should be performed 
+in a systemic manne r however man y elements can b e checked opportunistically . 
+Ideally parents should be present during the examination to allow exchange of 
+information and advice as appropriate. 
+ 
+9.3 General observations 
+ 
+ Does the baby appear well? 
+ Are there any obvious malformations? 
+ Does the baby have dysmorphic features i.e. Down Syndrome 
+ Does the infant have severe intrauterine growth restriction (birth weight 
+<2nd centile )? 
+ 
+9.4 Colour 
+ 
+Is there pallor, cyano sis, plethora or jaundice present? 
+ 
+If cyanosis present is this peripheral or central (chec k tongue and buccal mucosa) . 
+Carry out pulse oximetry to check saturation levels (low threshold) if available. 
+Acrocynosis is often seen in healthy newborns in the first few h ours of life and refers 
+to peripheral cyanosis typically the extremities. This i s a normal finding. 
+
+9.5 Posture and behaviour 
+ 
+ Tone – Assess activity, posture and response to handling and reflexes. 
+ Moro reflux - symmetrical? Action: 
+Central cyanosis(check tongue and buccal mucosa .- immediate paediatric 
+referral. Declare neonatal emergency 2222. Carry out pulse oximetry 
+(Appendix 1). If NIPE performed in the community then dial 999. 
+Jaundice:< 24hrs: immediate review by paediatric team. 
+ >24hrs TCB and plotted on chart (see Jaundice guideline) 
+
+ Action: Do cument on S4N. Complete and email referral letter. 
+uhsussex.bcgimmunisationprogram@nhs.net 
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 13 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Abnormal movements ? (Excessive jitteriness, jerking of limbs, abnormal 
+mouth or eye movements. 
+ Is the baby normally active? 
+ Is the posture normal (flexed extremities)? 
+ Is the cry normal? 
+ 
+10.0 Skin exami nation 
+
+9.5.1 Birth marks/Rashes 
+ 
+Note the colour and texture of the skin as well as any birthmarks or rashes . These 
+should be documented very clearly with regards to their appearance and location on 
+the body preferably using a body map to depict exact appearanc e. A body map is 
+available in the baby’s postnatal record on MIS or as a download on the S4N system. 
+ 
+10.1 Capillary naevi 
+ 
+These are "stork mar ks" at the nape of the neck but are also commonly seen on the 
+upper eyelids. They fade rapidly in the early months of life though they may become 
+more obvious with crying. They need no follow up and parents can be reassured. 
+Occasionally they can appear el sewhere on the body, sometimes initially looking like 
+bruises. However, naevi will blanch allowing differentiation. 
+ 
+Action: S4N - mark as normal observation not suspected abnormality 
+ 
+10.2 Dermal melanocytosis/ S late G rey Nevi . (Mongolian/ Blue spots) 
+ 
+These are well -demarcated areas of increased pigmentation within the skin usually 
+found over the lower back and buttocks at birth. The pigment is within the skin and 
+the borders are not palpable. They are most common in children of African ethnicity 
+but a lso occur in Asian and Caucasian Babies. They can be confused with bruising 
+due to the colouration but need no follow up, if in doubt request senior review. 
+ 
+Action: S4N - mark as normal observation not suspected abnormality. 
+ 
+10.3 Strawberry naevi / Cave rnous haemangiomata 
+ 
+These are usually not present at birth but start as minute bright red spots in the first 
+few weeks of life. They increase in size rapidly in the first few months of life and their 
+natural history is to then regress, disappearing by the age of 6 -7 years old . They 
+rarely bleed, although this can occur in large ones. 
+ 
+Action: No action is necessary unless their position is problematical involving the 
+airway, face, genitals or anus or they become excessively large. In these cases 
+consultan t review is indicated and early referral to dermatology may be considered 
+for treatment with propranolol or laser. Always discuss facial haemangiomata with the Action: Document on S4N refer to paediatric team if concerned. 
+ 
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 14 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+consultant. Follow -up is only needed for naevi involving those areas above. Parents 
+should seek medical advice if naevi increase dramatically. 
+ S4N - document as suspected abnormality if they involve the concerning areas 
+above - if not as an observation only. 
+ 
+10.4 Melanocytic naevi 
+ 
+These are rare but important. They are much darker than the surroun ding skin and 
+may have a raised edge. They often have thick hair growing within them. 
+ 
+Action: careful assessment needed by a consultant or dermatologist as they may 
+warrant dermal abrasion in the first few weeks of life. 
+ 
+10.5 Port wine Stain 
+ 
+A port -wine stain is a permanent birthmark present from birth. It starts out pinkish or 
+reddish and turns darker as the child grows. Most often, a port -wine stain appears on 
+the face, but it can affect other areas of the body. 
+ 
+Action: Discuss this with a senior p aediatrician, registrar/consultant. If there is eye 
+involvement refer to ophthalmology by emailing the teams 
+SRH emergencyreferralssrh.ophthalmic@nhs.net 
+WH referralssld.ophthalmic@nhs.net 
+Consider the possibility of Sturge -Weber syndrome. Sturge -Weber syndrome is a 
+condition that affects the development of certain blood vessels, causing 
+abnormalities in the brain, skin, and eyes from bir th. Sturge -Weber syndrome has 
+three major features: a red or pink birthmark called a port -wine birthmark; a brain 
+abnormality called a leptomeningeal angioma, and increased pressure in the eye 
+(glaucoma). These features can vary in severity and not all ind ividuals with Sturge -
+Weber syndrome have all three features. S4N - document as suspected abnormality. 
+ 
+10.6 Erythema toxicum of the newborn 
+ 
+This begins within 48 hours of birth and disappears in a few days. Blotchy 
+erythematous macules 2 -3cm in diameter with a central vesicle appear over the 
+trunk, face or limbs. This is common and benign. 
+ 
+Action: S4N - mark as normal observation not suspected abnormality. 
+ 
+10.7 Herpes Simplex 
+ 
+In the presence of vesicles, herpes simplex must be suspected. This can be caused 
+by either Herpes virus type 1 or type 2. A maternal history is often not found. 
+ 
+Action: requires urgent review by a registrar S4N - document as suspected 
+abnormality. 
+ 
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 15 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+10.8 Jaundice 
+ 
+If the baby appears to be jaundiced please refer to the jaundice guideline for 
+diagnosis and treatment pathways . 
+ 
+11.0 Head and skull 
+ 
+Check the shape of the head. P alpate the anterior fontanelle, sagittal, coronal and 
+lambdoid sutures and posterior fontanelle. 
+ 
+Head circumference should be measured and recorded. 
+ 
+Note head circumference in centimetres. If large variation between birth 
+measurement and current measurement discuss with a senior paediatrician . 
+ 
+ 11.1 Cephalhaematoma /Caput succedaneum 
+ 
+A cephalhaematoma i s a sub -periosteal collection of blood that develops over the 
+first few days of life, limited by the periosteal attachments to the area of a single bone 
+of the skull. Soft and fluctuating it feels like a fluid -filled cyst. It may last for several 
+weeks, gradually getting smaller. These infants are at increased risk of developing 
+jaundice . 
+ 
+Caput Succedaneum - swelling or oedema observable shortly after delivery. Swe lling 
+extends above the periost um and can cross suture lines . 
+ 
+Action: S4N - mark as observation . Add to body maps . 
+And plan for ongoing review in relation to jaundice management if required. 
+ 
+11.2 Forceps / Ventouse trauma 
+ 
+Ventouse extraction can cause suction marks and occasionally raw areas on the 
+scalp. Forceps marks can be seen on the face. These infants are at increased risk of 
+developing jaundice . If severe these babies may be very unsettled and may be 
+fractious on handling. A senior paediatric review is required and pain relief may be 
+required for these babies. 
+ 
+A boggy swelling in the first few hours after ventouse birth may be subgaleal 
+haemorrhage and requires urgent review 
+ 
+Action: S4N - mark as observation and plan for ongoing review in relation to jaundice 
+management if required. 
+ 
+11.3 Face 
+ 
+Observe facial features and symmetry. Compare with other family members before 
+deciding the baby looks ‘abnormal / dysmorphic’. 
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 16 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+11.4 Facial Palsy 
+ 
+Asymmetric crying may be the only clue to a unilateral f acial palsy. The affected side 
+does not move as much as the other side, with the nasolabial fold remaining flat and 
+the corner of the mouth is drooping. These are almost all caused by pressure on the 
+facial nerve during birth. This is sometimes due to forc eps but can occur by 
+prolonged pressure on the maternal sacral promontory. The majority of facial palsies 
+resolve spontaneously without any permanent damage. 
+ 
+Action - Ensure that feeding is effective , (discuss with midwifery team to complete 
+thorough fee ding assessment). If the eye does not close then liaise with 
+ophthalmology. 
+WH babies email : emergencyreferralssid.opthalmology@nhs.net 
+SRH babies email: emergencyreferralssrh.opthalmolgy@nh s.net 
+ 
+11.5 Ears 
+ 
+ Ears which are floppy and lacking in normal cartilage are of significance 
+and may be associated with urinary tract abnormalities. 
+ Low set ears can be associated with various syndromes. 
+ Pre-auricular tags are usually benign; however th ey should alert the 
+examiner in carefully assessing the form of the ear. I solated preauricular 
+tags in otherwise normally formed ears are not an indication for renal 
+imaging. 
+ Bilateral or unilateral atresia (no ear canal). These babies cannot have 
+their he aring screen co mpleted in the normal manner . 
+ Bilateral or unilateral microtia (malformed pinna). These babies cannot 
+have their hearing screen completed in the normal manner . 
+ 
+ Action: any suspected abnormality should be reviewed by a registrar. S4N 
+- documented as suspected abnormality. 
+ Malformed pinna or no ear canal requires a direct referral to audiometry for 
+a diagnostic ABR. Please inform the NHSP Lead, and Newborn Screening 
+Failsafe Administrator . 
+
+11.6 Nose 
+ 
+Choanal atresia is suspected if the baby is struggling to feed and there is evidence of 
+persistent nasal congestion. If in any doubt check nasal airways with a feeding tube. 
+ 
+ Action: Dysmorphic appearance - refer to paediatric team. . 
+Document on S4N with plan of senior review. 
+ 
+Action: Document findings. Review by paediatric tea m 
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 17 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+11.7 Eyes 
+ 
+The prime purpose of screening is to identify congenital cataracts . 
+ 
+Approximately 2 or 3 in 10,000 b abies have problems with their eyes that require 
+treatment. The prime purpose of screening is to identify congenital cataracts. 
+ 
+11.7.1 Clinical risk factors 
+ 
+Risk factors for eye or visual problems include: 
+ 
+ A family history of bilateral congenital or her editary cataracts affecting a 
+first-degree relative . 
+ A first-degree relative with an ocular condition which was congenital or 
+developed in early childhood, for example, aniridia (absence of the iris), 
+colobomata (a hole in one of the structures of the eye) or retinoblastoma (a 
+rare malignant tumour of the retina) . 
+ Genetic syndromes, such as trisomy 21, associated with eye and vision 
+disorders . 
+ Extensive port wine stain involving the eyelids, which can cause glaucoma . 
+ Maternal exposure to viruses during preg nancy, including rubella and 
+cytomegalovirus . 
+ Neurodevelopmental conditions or sensorineural hearing loss (a type of 
+hearing loss, or deafness, in which the root cause lies in the inner ear) . 
+ Prematurity . 
+ 
+Bilateral examination covers : 
+ 
+ Eye opening – prese nce of eyes 
+ Position and symmetry 
+ Size and colour 
+ Presence of fundal (red) reflex 
+
+11.7.2 Screen positive 
+ 
+The absence of fundal (red) reflex suggests the presence of a congenital cataract. 
+A white reflex (leukocoria) suggests a tumour of the eye (retin oblastoma) . 
+ 
+Babies with an abnormality of the eye identified should attend an ophthalmology 
+assessment appointment by 2 weeks of examination. S4N - document as suspected 
+abnormality . An urgent ophthalmology referral should be made via S4N and emailed 
+to: 
+ SRH emergencyreferralssrh.ophthalmic@nhs.net 
+ WH referralssld.ophthalmic@nhs.net 
+
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 18 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+11.7.3 Other eye conditions 
+ 
+ Any additional risk fac tors or incidental findings, inc luding the presence of 
+aniridia , colobomata and retinoblastoma, please discuss with a Registrar . 
+ Sticky eyes are usually due to irritation rather than infection and washing 
+with ster ile water or saline is adequate . 
+ Chlamy dia or Gonoc occal infection should be considered if bilateral 
+copious purulent conjunctivitis on day 1 
+
+11.7.4 Subconjunctival Haemorrhages 
+ 
+These are common finding in healthy new -born babies caused by mild birth injury 
+that resolves spontaneously within the first few weeks after birth. It is caused by 
+bleeding under the conjunctiva during vaginal delivery. The extent may be large or 
+small but always confined to the limits of the sclera. Clear documentation can prevent 
+future safeguarding investigat ions. 
+
+11.8 Mout h and Palate 
+ 
+The mouth shou ld be fully inspected using palpation followed by a tongue depressor 
+and a torch to visualise the mouth to ensure visualisation is optimal . 
+ 
+11.8.1 Micrognathia 
+ 
+Can be found with Pierre -Robin sequence whic h can cause possible respiratory 
+compromise . 
+ 
+Action: where there is severe micrognathia (Pierre -Robin sequence), there are often 
+airway problems and such babies should be assessed on SCBU by a registrar or 
+consultant. S4N - document as suspected abnormal ity. 
+ 
+11.8.2 Accessory tooth 
+ 
+Potential to lead to parental anxiety around breastfeeding. 
+ 
+Action: S4N - document as an observation. Reassure parents. Ask the midwives to 
+carry out a breastfeeding assessment. If loose, discuss with consultant paediatricia n 
+regarding removal. 
+ Action: document findings on S4N refer to paediatric team. 
+Action: Document on S4N findings. Mark on body maps. Reassure parents and 
+suggest parents to take ph oto on their own phone for comparison in case of any 
+future safeguarding concerns. 
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 19 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+11.8.3 Swelling under the tongue 
+ 
+Consider ranula cyst which could lead to feeding difficulty . 
+ 
+Action: S4N - document as a suspected abnormality and request registrar review. 
+Ask the midwives to carry out a breastfeeding assessment . 
+ 
+11.8.4 Visible Frenulum /Tongue tie 
+ 
+A visible frenulum is not a tongue tie. A diagnosis of tongue tie can only be made 
+after full tongue assessment including full f eeding assessment by a member of the 
+maternity team . Frenotomy is only recommended if f eeding is adversely affected. 
+(Avoid any negative connotation regarding this in relation to feeding as this can 
+negatively impact the woman’s /birthing parent’s confidence with feeding . CG12033 
+Division of Tongue Tie (Ankyloglossia) Guideline 
+ 
+Action: Request a thorough feeding assessment by the midwifery team . Patient 
+information is available online. S4N - document as for observation. 
+ 
+11.8. 5 Bifid uvula 
+ 
+Denoting soft cleft palate or other midline defect, eg hypopituitarism . See actions 
+below for cleft palate and discuss with Paediatric consultant . 
+ 
+11.8.6 Cleft Palate 
+ 
+The current national rate of cleft palates (isolated clefts) which are missed at the 
+newborn examination is in the range of 23%. In order to improve this figure it is 
+recommended that the palate of the newborn infant is in spected visually, using a 
+torch with a tongue depressor, as well as digitally with the finger. 
+ 
+Action: where a cleft is detected or suspected, the regional Cleft Lip and Palate Team 
+(Lead specialist nurse) should be informed, immediately. Always notify the consultant 
+on call. The immediate practical problem with facial clefts is to establish oral feeding, 
+liaise with nurse in charge on SCBU . S4N - document as suspected abnormality. 
+ Worthing referrals - Evelina London Cleft Service 07548 152 738. Messages can 
+be left on the number at any time. 
+ St Richard’s referrals - Spires Cleft Centre, Salisbury 07500 12765 7 (Office 
+hours). Messages can be left on the number at any time. On call nurse 
+0750012657 
+ 
+Antenatal diagnosis - letter from cleft team in notes and sent to consultant. 
+ 
+12.0 Neck and Clavicles 
+ 
+Short neck is often significant; webbing should be looked for (present in Turner and 
+Noonan Syndrome) . 
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 20 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Feel for both clavicles – they may be absent or ‘broken’, check movement of both 
+arms and the symmetry of the Moro reflex. 
+ 
+Action: any suspected abnormality, refer to paediatric registrar. S4N - document as 
+suspected abnormality. 
+ 
+13.0 Chest 
+ 
+Asymmetry and thoracic cage defects should be noted . 
+ 
+13.1 Lungs 
+ 
+Effort, rate and auscultation: 
+ 
+ Listen for equal air entry and added sounds. 
+ Is the baby tachypnoeic? 
+ Are there any signs of respiratory distress i.e. nasal flaring, 
+intercostal/subcostal recessions? 
+ 
+Action: refer to paediatric registrar for immediate review. S4N - document as 
+suspected abnormality . Perform full set of observations including pulse oximetry. 
+ 
+13.1 Breast Development 
+ 
+Maternal hormones m ay cause transient development of breast tissue in infants of 
+both sexes. There may even be some production of milk. 
+ 
+Action: this is normal and parents should be reassured. Check for signs of 
+inflammation for the rare possibility of overlying infection. 
+
+14.0 Abdomen and umbilicus 
+ 
+Ensure normal bowel sounds are present, if increased or absent – consult senior for 
+advice. 
+ 
+14.1 Scaphoid abdomen 
+ 
+Suggests possible absence of intestine from abdominal cavity, usually found with a 
+diaphragmatic hernia . 
+ 
+Action: request paediatric registrar review. S4N - document suspected abnormality. 
+
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 21 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+14.2 Distended abdomen 
+ 
+Requires more detailed examination and frequently additional investigations to 
+determine cause, which may vary from distension of stomach and intes tines as a 
+result of resuscitation, to gross pathology such as that associated with intrauterine 
+peritonitis, or gross neoplastic disease. 
+ 
+Action: Request paediatric registrar review. S4N - document suspected abnormality. 
+ 
+14.5 Liver and spleen 
+ 
+Gentle examination of the abdomen. The liver can be located approximately one 
+finger below the ribs on the right hand side. The spleen may be palpable on left 
+upper quadrant. 
+
+14.6 Umbilicus 
+ 
+Note origin of umbilical cord. Check for number of vessels. 
+ 
+Action: refer to paediatrician if umbilicus is inflamed with ‘flared’ or erythematous 
+surrounding skin, for discussion about commencing IV antibiotics 
+ 
+14.7 Hernia 
+ 
+ Umbilical hernia usually resolves spont aneously by a few years of age. 
+ Para -umbilical herni a is an abnormal finding . 
+ 
+Action: Discuss with paediatric registrar and refer to surgeons. S4N - document as 
+suspected abnormality 
+ 
+15.0 Upper Limb s and Hands (Digital Anomalies) 
+15.1 Syndactyly or Polydactyly 
+ 
+Action: minor hand defects are referred to Mr Pandya QA consultant, to his QA clinic. 
+S4N - document as suspected abnormality. 
+ 
+15.2 Limb reduction defects 
+ 
+Action: if diagnosed antenatally please check paediatric plan and follow instructions. 
+If not previous diagnosed discuss with consultant on call. S4N - document as 
+suspected abnormality. 
+ 
+ Action: Any masses felt. Refer to paediatric registrar. Document findings on S4N. 
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 22 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+15.3 Contract ures /Torticollis 
+ 
+Action: refer to physiotherapist via Bleep (WH 1148, SRH 6153 ) or complete orange 
+card for Worthing babies or physio book for Chichester babies. For babies in 
+community send email to wsht.paediatricphysio@nhs.net 
+ 
+15.4 Erb's Palsy 
+ 
+Trauma to the brachial plexus during birth is the most likely cause of congenital 
+brachial palsy. It occurs in about 1 in 1000 births. High ri sk births for this injury 
+include shoulder dystocia, large babies and difficult instrumental birth. Always 
+consider the possibility of other trauma such as clavicular fracture. 
+ 
+There are three main patterns of injury: 
+ 
+ C5-6: Paralysis of shoulder and bice ps. The arm is adducted and internally 
+rotated at the shoulder, the elbow extended, the forearm pronated and the 
+wrist flexed (waiter’ s tip position). 
+ C5-7: Paralysis of shoulder, biceps, forearms extensors possibly causing 
+slight flexion of the elbow. 
+ C5-T1: Complete paralysis of the limb. Sometimes there is also a Horner’s 
+syndrome on the affected side. 
+ 
+16.0 Hips 
+ 
+The purpose of screening is to improve the early identification developmental hip 
+dyplasia .(DDH) Approximately 1 or 2 in 1,000 babies have hip problems that r equire 
+treatment. Parents should be informed that this condition can develop over time and 
+signs should be discussed with parents. 
+ 
+The NHS NIPE programme national hip risk factors are: 
+ 
+ First degree family history of hip problems in early life. This inclu des baby’s 
+parents or siblings who have had a hip problem that started as a baby or 
+young child that needed treatment with a splint, harness or operation. 
+ Breech presentation at or after 36 completed weeks of pregnancy, 
+irrespective of presentation at birt h or mode of birth. This includes breech 
+babies who have had a successful external cephalic version (ECV). 
+ Breech birth betwe en 28 weeks gestation and term . 
+ Multiple pregnancies - where any of the hip risk factors is present, all 
+babies from that pregnancy should receive a hip ultrasound. The rationale Action: Discuss with consultant on -call and arrange an x -ray of clavicle and upper 
+limb. Immediate referral to physiotherapy via Bleep (WH 1148, SRH 6153) or if 
+unavailable email wsht.paediatricphysio@nhs.net . 
+Reassure parents that most cases resolve spontaneously within a few days or 
+weeks. Arrange in -patient physio therapy review and Paediatric consulta nt follow up 
+in outpatients clinic at 4 weeks S4N - document suspected abnormality. 
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 23 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+for this advice is that if one of the babies meets the criteria of breech 
+presentation, as described above, it may be difficult to accurately identify 
+which baby was affected. 
+ 
+ Action: For babies with any of the above risk factors, hip ultrasound 
+examination should be arranged within 4 -6 weeks of age. USS of babies born 
+34/40 or less will be age adjusted to term. S4N - document in risk factors 
+ Practitioner needs to order Hip USS via the ICE system. 
+ Referrals for babies with abnormal hip scans should be sent to: 
+uhsussex.outpatientbookings@nhs.net and to 
+uhsussex.infanthipscreening@nhs.net 
+ Explain to parents they should receive appointment within 2 -3 weeks 
+ 
+Observation covers: 
+ 
+ Symmetry of leg length 
+ Level of knees when hips and knees are bilaterally flexed 
+ Restricted abduction of the hip in flexion 
+ 
+Ortolani and Barlow manoeuvres should be p erformed on each hip separately to 
+assess hip stability. Ortolani manoeuvre is used to screen for a dislocated hip. 
+Barlow manoeuvre is used to screen for dislocatable hip. 
+ 
+16.1 Screen negative 
+ 
+Following normal examination, parents should be advised to c ontact their midwife, 
+GP or health visitor if they have concerns about their baby’s hips. In particular they 
+should observe if: 
+ 
+ One leg cannot be moved out sideways as far as the other when changing 
+the baby’s nappy 
+ One leg seems to be longer than the oth er 
+ A click can be felt or heard in one or both hips 
+ One leg drags when their baby starts crawling 
+ Their child walks with a limp or has a ‘waddling’ gait 
+ 
+16.2 Screen positive 
+ 
+Screen positive results are: 
+ 
+ Difference in leg length . 
+ Knees at different le vels when hips and knees are bilaterally flexed . 
+ Restricted unilateral limitation of hip abduction (with a difference of 20 
+degrees or more between hips) . 
+ Gross bilateral limitation of hip abduction (loss of 30 degrees abduction or 
+more) . 
+ Palpable ‘clunk’ when undertaking either the Ortolani manoeuvre . 
+ 
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 24 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Action: Babies who meet screen positive threshold should undergo hip 
+ultrasound within 4 -6 weeks of age and be reviewed by a senior paediatrician. 
+ S4N - document suspected abnormality and make ICE request f or Hip USS. 
+ 
+16.3 Management of ‘Clicky ‘Hips 
+ 
+Babies who have no predisposing risk factors and are found to have ‘clicky hips’ 
+should NOT to be classified as screen positive and do not require any referral for 
+ultrasound . Clicks and snaps can sometimes be heard and felt and are not normally 
+associated with hip pathology. These noises are as a result of movement of tendons, 
+ligaments or fluid in the hip joint . 
+ 
+Action: confirmation of the screening outcome by a paedia tric registrar should be 
+sought if unsure if findings After second opinion , a scan can be requested only if it 
+meets the screen positive criteria. Isolated clicks without any other relevant clinical 
+findings should not be routinely referred. S4N - document ‘clicky hips’ as other on 
+hips scr een and document findings including senior review in free text box . 
+ 
+17.0 Lower Limbs – Feet 
+ 
+17.1 Talipes 
+ 
+Feet should be examined for : 
+ 
+ Talipes equino varus 
+ Calcaneo valgus talipes 
+ 
+It is important to distinguish between mild, positional talipes and fixed talipes 
+requiring intervention. Any suspicion of fixed talipes the physiotherapist should 
+assess before discharge and will then refe r for further intervention. 
+ 
+Action: If practitioner assess talipes to be positional or mild no referral is require d. 
+Exercises can be discussed with parents . Referral can be made to physiotherap y 
+team if required. Exercise sheet can be downloaded from the S4N system and given 
+to parents. 
+Referral to physiotherapist is indicated via email to wsht.paediatricphysio@nhs.net 
+(Worthing) or SC-TR.chipaedsphysio@nhs.net (Chichester). Please state in referral 
+to the physiotherapist, the type of talipes so the baby can be t riaged appropriately . 
+ 
+Fixed talipes requires the physiotherapist to assess before discharge where possible. 
+Bleep numbers are WH 1148, SRH 6153. For fixed talipes request a hip USS to 
+check for any abnormal hip using the ICE system . 
+Referrals should be made to Orthopaedic teams at Brighton . 
+Uhsussex.paediatricphysio@nhs.net and Uhsussex.outpatientbookings@nhs.net 
+for urgent referrals ple ase call 01273 523153 
+S4N - document suspected abnormality. 
+ 
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 25 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+17.2 Major Limb Deficiencies 
+ 
+This is a tremendously distressing time if the problem was not expected. It will be 
+difficult for parents to comprehend how such a problem was not found antenatall y. 
+ 
+Action: If diagnosed antenatally please check antenatal paediatric plan and follow 
+instructions. If not previously diagnosed contact the consultant on call and the 
+physiotherapist on call who will visit baby. S4N - document as suspected 
+abnormality. 
+ 
+REACH is a helpful charity run by parents and can offer support on 
+www.reach.org.uk for parents with children with upper limb deformities. 
+ 
+STEPS is a similar charity for those with lower limb problems and can be co ntacted 
+on www.steps -charity.org.uk 
+ 
+18.0 Genitalia 
+ 
+18.1 Ambiguous genitalia 
+ 
+Abnormality suggestive of intersex conditions should always be checked carefully 
+and investigated. Avoid allocating a sex to th e baby and do not refer to the baby as 
+“he” or “she”. Use terms such as they, the baby or use their name if they have been 
+given one already. 
+ 
+Note - Posterior hypospadias particularly in the absence of palpable gonads, should 
+be regarded as an indetermi nate sex or ambiguous genitalia . 
+ 
+Action: Seek consultant paediatric review ASAP. S4N - document suspected 
+abnormality . 
+
+18.2 Female babies 
+ 
+ Confirm normal labia majora and minora and absence of swelling (ectopic 
+testis). 
+ Vaginal Tags: These are of no sig nificance and usually disappear in a few 
+months . 
+ Occasionally female infants may even have a slight vaginal b loody 
+discharge due to maternal/birthing parent hormones, again reassure. 
+ 
+18.3 Male babies 
+ 
+Confirm the shaft of penis is 2.5 cm in length (inc luding buried). 
+ 
+Action: Seek review with registrar or consultant . 
+S4N - document suspected abnormality. 
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 26 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+18.3.1 Hydroceles 
+ 
+These are common in newborns. A hydrocele is type of swelling in the scrotum that 
+occurs when fluid collects in the sheath su rrounding a testicle . Transillumination will 
+show clear fluid surrounding the testicle. Parents can be reassured that they will 
+usually resolve spontaneously. 
+ 
+Action: No follow -up is required. However a full explanation should be given to the 
+parents. S4 N - document as observation. 
+ 
+18.3.2 Undescended testes 
+ 
+Cryptorchidism affects approximately 2 -6% of male babies born at term. It is 
+associated with: a significant increase in the risk of testicular cancer (primarily 
+seminoma); reduced fertility when com pared with normally descended testes; it may 
+also be associated with other urogenital problems such as hypospadias and 
+testicular torsion. 
+ 
+The term ‘undescended’ applies for clinical findings of either ‘absence’ or ‘incorrect 
+position’. 
+ 
+Associated risk factors include: 
+ 
+ A first degree family history of cryptorchid ism (baby’s father or sibling) . 
+ Low birth weight . 
+ Small for gestational age or preterm birth. 
+ 
+Observation : Observe scrotum for symmetry, size and colour . 
+ 
+18.3.3 Screen Positive 
+ 
+Action: S4N - document as suspected abnormality. 
+ 
+18.3.4 Unilateral undescended teste s 
+ 
+These babies should be reviewed at the 6 -8 week GP NIPE screen. 
+
+18.3.5 Bilateral undescended testes 
+ 
+May be associated with intersex or an underlying endocrine disorder such as 
+congenital adrenal hyperplasia. 
+ Action: Complete outcomes on S4N. 
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 27 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Where testes are felt bilaterally but high, this should also be managed as screen 
+positive. The term ‘undescended’ applies for clinical findings of either ‘absence’ or 
+‘incorrect position’. 
+ 
+Action: These babies should be seen for assessment by a senior paediatrician 
+Registrar or Consultant within 24 hours of the examination to rule out metabolic and 
+intersex conditions . Please ensure consultant is aware. 
+Refer to Paediatric Surgeons to be seen in their outreach clinic in Chichester or 
+Worthing. 
+Worthing - refer to Paediatric Surgeon based at RACH, Brighton. 
+SRH - refer to Paediatric Surgeon, based at Southampton 
+S4N - document as suspected abnormality. 
+ 
+18.3.6 Torsion of the testes 
+ 
+This is a rare occurrence but may occur in the newborn baby. The scrotum is likely to 
+be red and inflamed or can appear darkened; the scrotum can also be firm to touch. 
+The baby will likely be very uncomfortable. 
+ 
+Action: Suspicion of torsion should be considered a medical emergency. If in doubt, 
+ask for an urgent registrar or consultant opinion. S4N - document as suspected 
+abnormality. 
+
+18.3.7 Hypospadias 
+ 
+Hypospadias is a very c ommon congenital anomaly (1 in 2 00 male births). 
+Urethral meatal openings are generally described as being: 
+ 
+ Anterior – distal position, where the meat us is near the tip of the penis, 
+15% of these cases, the penis also curves downward slightly known as 
+‘chordee’. 
+ Middle – where the meatus is along the shaft of the penis . 
+ Posterior – where the meatus is near th e base of the penis or in the 
+scrotum . 
+ 
+The baby requires a complete examination to determine whether other external 
+abnormalities are present. However in most cases, hypospadias is the only 
+developmental problem and doesn’t imply there are other flaws in the urinary system 
+or other organs. 
+ 
+Renal ultrasound is not indicated for simple anterior or middle hypospadias unless 
+there are other features of concern (for example, dysmorphic features). Renal 
+abnormalities are more common with posterior hypospadias . 
+ 
+Penile length should be determined, normal stretched penile length at term >2.5cm 
+ 
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 28 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Action: Posterior hypospadias particularly in the absence of palpable testes should 
+be regarded as an indeterminate sex or ambiguous genitalia, inform the consultant. 
+It must be explained to parents that no babies should undergo circumcision, as the 
+skin will be needed for the repair. 
+Worthing - refer to Paediatric Surgeon, based at RACH, Brighton, with outreach clinic 
+at Worthing. 
+St Richard’s - refer to Paediatric Urol ogists at Southampton. S4N - document as 
+suspected abnormality. 
+ 
+18.3.8 Inguinal hernias 
+ 
+These hernias can be seen bulging when the baby cries or strains and often 
+disappears when the baby is calm. 
+ 
+Action: Refer baby to paediatric surgeons. S4N – docum ent as suspected 
+abnormality. 
+ 
+19.0 Anus 
+ 
+19.1 Anorectal malformation 
+ 
+Anorectal malformation is a term used to describe several types of anomalies. The 
+anus and the rectum have not developed properly. The baby may be born with: 
+ 
+ No anal opening at all . 
+ An ectopic anus (small opening in the wrong place) . 
+ Anal stenosis (narrowed opening of the bottom) . 
+ 
+Confirm and note time meconium has been passed, but remember that passage of 
+meconium does not preclude careful examination, e.g. imperforate anus with 
+asso ciated fistula. Careful examination of the anus is required to exclude anomaly. 
+ 
+Action: Anorectal malformation requires urgent surgical referral to Brighton or 
+Southampton Paediatric surgeons. S4N - document suspected abnormality 
+ 
+19.2 Stools 
+ 
+Day 0 -2- An infant’s first few bowel movements consist of accumulated intestinal 
+cells, bile and proteinaceous material formed during intestinal development. The 
+material, termed meconium, is greenish -black. Term babies who do not pass 
+meconium in the first 2 days of life may indicate intestinal obstruction . 
+ 
+Action : Ask the paediatric registrar to review. 
+S4N - document suspected abnormality . 
+
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 29 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+20.0 Urine 
+ 
+Day 1 -2: 1-2 or more wet nappies a day. Urates may be present (dark pink / red / 
+orange substance). 
+ 
+Actio n: If <24 hrs of age advised parents that babies should pass urine within 24hrs. 
+If >24hrs inform paediatric team 
+ 
+21.0 Spine 
+ 
+Inspect and palpate bony structures down to sacrum including the integrity of the 
+skin. 
+ 
+21.1 Sacral sinus 
+ 
+Most suspected sinu ses are actually blind sacral pits low down on the sacrum. These 
+are common and not usually associated with underlying spinal problems. When the 
+bottom cannot be visualised and is >25mm from the anus or >5mm from the midline 
+or hairy patch present then an image of the spine is required. 
+ 
+Action: Paedatric review 
+ Send referral for ultrasound of the spine. S4N - document suspected abnormality . 
+ 
+21.2 Midline spinal haemangiomas 
+ 
+These are vascular lesion found within the vertebral body and require investig ation . 
+ 
+Action: Paediatric review 
+Send referral for a spinal x -ray and ultrasound of the spine. S4N - document 
+suspected abnormality. 
+ 
+21.3 Spina Bifida (Myelocoele & Meningomyelocoele ) 
+ 
+A large blister type sac can be seen on the back covered by a thin layer of skin. 
+ 
+Action: Inform the Consultant on call. This needs an urgent referral to a 
+neurosurgeon, especially where the membrane is thin or defective, as early closing of 
+the defect may be required. 
+S4N - document suspected abnormality. 
+ 
+22.0 Nervou s System/Reflexes 
+ 
+The presence of normal activity and limb movements and normal limb tone should be 
+checked. In addition attempts should be made to elicit normal grasp and Moro 
+'startle' reflex. Inability to do this strongly suggests significant abnormali ty of central 
+nervous system. Remember that when the infant is crying it is sometimes not 
+possible to elicit a normal Moro reflex. 
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 30 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Action: If a normal response cannot be elicited following calming the baby then this is 
+significant and the baby will need to be reviewed by a consultant paediatrician. 
+ S4N - document as suspected abnormality. 
+ 
+22.1 Femoral Pulses 
+ 
+Palpate both femoral pulses simultaneously taking your time with the baby’s legs flat 
+not flexed at the hip . If the pulse is weak, c ompare the fe moral pulse volume with the 
+baby’s right brachial pulse by palpating these simultaneously. Absent or weakened 
+femoral pulses as compared to the right brachial pulse indicate a possible coarctation 
+or narrowing of the baby’s aorta. 
+ 
+Action: A registrar rev iew is urgently required and would warrant careful examination 
+of the cardiovascular system including both brachial and femoral pulse volumes, 
+observations and considering ECG Appropriate transfer to SCBU should be 
+considered. 
+ S4N - document suspected abn ormality. 
+ 
+23.0 Heart 
+ 
+The purpose of screening is early identificatio n of congenital heart problems. 
+ 
+Ranging from non -significant to major and critical lesions, the overall incidence of 
+Congenital Heart Disease (CHD) is about 8 per 1,000 (range 6 -12 per 1,000 live 
+births). Critical Congenital Heart Disease (CCHD) accounts for 15% to 25% and 
+these are a leading cause of morbidity and mortality . 
+ 
+Congenital heart abnormalities can be categorised as: 
+ 
+ CCHD: includes all potentially life threatening duct -dependent conditions 
+and those conditions that require procedures within the first 28 days of 
+life. 
+ major serious CHD: those defects not classified as critical but requiring 
+invasive intervention in the first year of life . 
+ 
+Some critical and major cardiac l esions may be detected during pregnancy as part of 
+the fetal anomaly screening programme (FASP) during the fetal anomaly ultrasound 
+scan. The acceptable FASP standard target detection rate for specific cardiac 
+abnormal ity is ≥50%. 
+ 
+ The NHS NIPE programme clinical risk factors include : 
+ 
+ Family history of CHD (first degree relative) . 
+ Fetal trisomy 21 or other trisomy diagnosed (these babies have high risk 
+of cardiac defects and require continued surveillance) . 
+ Cardiac ab normality suspected from the antenatal scan. 
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 31 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Maternal exposure to viruses, for example, rubella during early 
+pregnancy, 
+ Maternal /birthing parent conditions, such as diabetes (type 1), epilepsy, 
+systemic lupus erythematosis (SLE) . 
+ Drug-related teratogens du ring pregnancy, for example, antiepileptic and 
+psychotrophic drugs . 
+ 
+Auscultation covers: 
+ 
+ Presence of a murmur , either systolic or diastolic and loudness . 
+ Second intercostal spaces adjacent to the sternum: left (pulmonary area) . 
+ Second intercostal spaces adjacent to the sternum: right (aortic area) . 
+ Lower left sternal border in the 4th intercostal space (tricuspid area) . 
+ Apex (mitral area) . 
+ Midscapulae (coarctation area) . 
+ 
+23.1 Screen positive 
+ 
+Signs and symptoms that suggest critical or major congenital h eart abnormality are: 
+ 
+ Tachypnoea at rest . 
+ Episodes of apnoea lasting longer than 20 seconds or associated with 
+colour change . 
+ Intercostal, sub -costal, sternal or supra -sternal recession, nasal flaring . 
+ Central cyanosis . 
+ Visible pulsations over the precord ium, heaves, thrills . 
+ Absent or weak femoral pulses . 
+ Presence of cardiac murmurs/extra heart sounds: 
+o Significant murmurs are usually loud, heard over a wide area, have a 
+harsh rather than soft quality, and are associated with other abnormal 
+findings . 
+o Benign murmurs are typically short, soft, systolic, localised to the left 
+sternal border, have no added sounds or other clinical abnormalities 
+associated with them . 
+
+Action: Babies with screen positive clinical findings should be seen by a registrar 
+or consult ant in the early neonatal period as required (urgency will depend on 
+suspected condition). Heart rate, respiratory rate and pulse oximetry should be 
+undertaken ASAP and repeated and escalated appropriately if abnormal. All 
+babies found to have a murmur on examination should also have a 12 -lead ECG 
+performed. 
+ 
+Any babies with a suspected major or critical heart condition should be seen as a 
+matter of urgency and definitely before discharge home. 
+
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 32 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Symptomatic or unwell babies 
+ 
+Babies with any of the followi ng RED FLAGS are more likely to have a significant 
+congenital cardiac defect : 
+ 
+ Symptoms or signs of cardiac failure or shock 
+ Oxygen saturations <95% 
+ Right arm to leg saturation difference >2% 
+ Absent/weak femoral pulses 
+ 
+These babies should be admitted to SCBU , discussed with and reviewed by the 
+attending/on call Consultant and managed . Urgent cardiac review should take 
+place if local expertise available. SORT guidance can be located here 
+ 
+Asymptomati c babies 
+ 
+Babies with any of the following may have acyanotic congenital heart disease : 
+ 
+ “Pathological murmur” (>3/6, area other than LSE, palpable thrill or heave) . 
+ Dysmorphic features or other associated congenital abnormalities . 
+ 
+*those with clinically suspected or genetically confirmed Trisomy 21 should have 
+an ECG performed. 
+ 
+These babies should be reviewed by the attending consultant and discussed with 
+the local Paediatrician with expertise in Cardiology (PEC), Not all will require an 
+inpatient echoca rdiogram prior to discharge, some may be appropriate for urgent 
+outpatient review. This will be decided on a case by case basis. 
+ 
+Babies with no red flags who have all of the following are likely to have innocent 
+murmurs : 
+ Soft systolic murmur, <3/6, locat ed in LSE, no radiation, no thrill/heave . 
+ Saturations >95% . 
+ Right arm to leg saturation difference <2% . 
+ Normal 12 -lead ECG . 
+ 
+These babies should be reassessed >24 hours of age by the Neonatal registrar. 
+Babies should be reviewed by GP at 6 -8 week check and re-referred as required . 
+ 
+In all cases where babies are discharged home with a murmur please do the 
+following : 
+ Print GP letter to inform of patient being discharged with abnormal cardiac 
+findings (in case the family contact them prior to their planned outpatient 
+review). Give letter to the parents to hand in when registering their baby at 
+the practice. 
+ Give safety net advice to the parents regarding signs and symptoms of 
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 33 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+cardiac failure. 
+ Provide parents with the T rust patient information leaflet “ Heart murmur ” 
+See appendix 2 . Explain to the parents that if the baby should become 
+unwell in the interim that they should bring the baby directly to A&E. 
+ 
+S4N - document as suspected abnormality. 
+ 
+24.0 Congenital Abnormality 
+ 
+ Keep the baby with mother /birthing parent (if the condition of the baby 
+allows it). R ejection is very uncommon but there may be grief exacerbated 
+by separation which will increase the risk of perinatal mental health 
+concerns . 
+ Do not try to hide anything. Fears are usually wor se than reality (but not 
+always ). Explain carefully and gently what the abnormalities are. Do no 
+prognosticate and explain that you will ask a senior paediatrician to 
+review, to provide a detailed explanation . 
+ Do not be afr aid of stating when you do not know the answers and need 
+help. Find out when that help will attend and inform parents and midwife 
+as well as documenting it. It is always best for both parents to be present 
+when that senior paediatrician attends for review . 
+ If you are in doubt as to the baby’s sex, say so and explained that it can 
+be sometimes difficult to be sure at birth. Do not guess and do not refer to 
+the baby by gender whatever you may think , unless you are sure. Be 
+cautious in assigning sex to a baby with severe hypospadias (contact the 
+consultant urgently) . 
+ Referral to the genetics service may be appropriate at St George’s 
+Hospital . 
+ 
+24.1 Down’s Syndrome 
+ 
+Suspected Down’ s Syndrome 
+ 
+Are any of the following features present? 
+ 
+1. Low muscle tone . 
+2. Eyes sl anting upward ( up slanting palpebral fissure) . 
+3. Small skin folds (epicanthic folds) in the inner corner of the eyes . 
+4. Flat nasal bridge . 
+5. Relatively small nose and ears . 
+6. Large tongue in relation to the size of the mouth . 
+7. Flat occiput ( brachycephally ). 
+8. Single horizontal crease across the palm of the hand (simian crease) . 
+9. Wide gap between the large and second toe . 
+ 
+If yes the Consultant Paediatrician (not the SHO or Registrar) should be contacted 
+ASAP to discuss clinical suspicions with the parents . 
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 34 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Check mater nal/birthing parent notes to see if there is a first trimester screening 
+result or reason not done. Review anomaly scan . 
+ 
+If Down’s syndrome was not suspected antentally, i nform NIPE lead midwife in order 
+to inform screening team and review USS images by consultant fetal medicine team. 
+ 
+There are certain important principles, which apply to this and other situations where 
+unexpected news must be broken. 
+ 
+ Both parents should be seen together at the outset, and unsupported 
+mothers should be asked if they wo uld like a supportive relative or friend 
+with them. A consultant should s ee them at an appropriate time . 
+ The discussion should be conducted somewhere private, never on an 
+open ward. The midwife looking afte r the mother should be present . 
+ Always refer to th e baby by its given name . 
+ Where no mention of Down syndrome has been made it is important not 
+to state the probable diagnosis but to examine the child, indicating 
+features and explain that although each can be found individually in the 
+general population , the pattern is suggestive of Down syndrome. Absolute 
+diagnosis must wait karyotyping and a chromosome result. 
+ Send bloods to Guy’s and St Thomas urgent PCR and next day result, 
+(collect by 10:30 am for Positive PCR unless the weekend) . Liaise with 
+the ant enatal screening team and the sister in charge on SCBU . 
+ 
+Down’s Syndrome Association: http://www.downs -syndrome.org.uk / 0845 230 
+0372 0333 1212300. Email: info@downs -syndrome.org.uk 
+ 
+Contact a Family: http://www.cafamily.org.uk / 0808 808 3555 
+ 
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 35 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+25.0 Audit and monitoring 
+ 
+The NIPE programme has a defined set of standards which must be met. This is 
+overseen by the Screening quality assurance service ( SQAS). 
+ 
+There are 2 KPI’s for NIPE screening. NP1 and NP3. This is reported on the S4N 
+system which supports complete cohort identification, failsafe and reporting. 
+ 
+Data reporting is collected directly from S4N and NIPE lead provides mitigations for 
+each baby. This is produced on a quarterly basis. 
+ 
+Failsafe progresses are in place to ensure the whole screening pathway is followed. 
+ 
+Any incidents are reported directly to the SQAS regional team and PHE screening 
+team via a SIAF. 
+
+References 
+ 
+Ainsworth S, Wren C, W yllie JP. (1999) The Prevalence and clinical significance of 
+cardiac murmurs in neonates. Arch Dis Child ;80,(1):F43 -45 
+ 
+Arch. Dis. Child ( 2003 ); 88 (Suppl 1): A48 -A49 
+ 
+Arch Dis Child (2005 ); 90:99 –104. doi: 10.1136/adc.2004.064063 
+ 
+NICE (2021 ). Overview | Postnatal care | Guidance | NICE 
+ 
+Owen K, Wyllie J. (2001) Audit of Murmurs at birth. 
+ 
+Public Health England (2021 ) Newborn & Infant Physical Examination (NIPE) 
+Screening Programme Handbook . 
+ 
+Richmond S, Abu -Harb M, Wyllie J. (2001) Screening for Congenital heart disease 
+using saturation readings in Newborn babies . RCPCH annual meeti ng York . 
+ 
+Wren et al (1999) The presentation of congenital he art disease. Arch Dis Child ; 
+80(1):F49 -53 
+
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 36 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 1 : Pulse Oximetry screening 
+
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 37 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+CG17003 NIPE Screening guide for professionals (inc. referral pathways) v5.0 February 2023 Page 38 of 38 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 2: Heart Murmur Patient Information Leaflet

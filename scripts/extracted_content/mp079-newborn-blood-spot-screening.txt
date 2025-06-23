@@ -1,0 +1,2081 @@
+# Extracted from: MP079 Newborn Blood Spot Screening.pdf
+# Guideline ID: mp079-newborn-blood-spot-screening
+# Content length: 88520 characters
+# Processing date: 1750066901.744238
+
+Newborn Blood Spot 
+Screening 
+
+Maternity Protocol: MP079 
+ 
+Date agreed: March 2022 
+
+Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 2 of 50 
+
+Guideline Reviewer : Alex Winstanley and Sally Burrows 
+Version: 1 
+Approval Committee: Women’s Services Safety and Quality Committee 
+Date agreed: March 2022 
+Review date: March 2022 
+ Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 3 of 50 
+ Contents 
+Key Principles ................................ ................................ ................................ ............................. 5 
+Scope ................................ ................................ ................................ ................................ .......... 5 
+Responsibilities ................................ ................................ ................................ .......................... 5 
+Update Process ................................ ................................ ................................ .......................... 5 
+1.0 Newborn Blood Spot Screening: Rationale for Screening and Conditions Screened for . 6 
+2.0 Definition of ‘sample taker’ ................................ ................................ ........................... 7 
+3.0 Pre-Screening Information ................................ ................................ ............................. 8 
+4.0 Offering screening ................................ ................................ ................................ .......... 9 
+5.0 When Parents Decline Screening ................................ ................................ ................. 10 
+6.0 Performing the Screening Test ................................ ................................ .................... 13 
+7.0 Collecting the Blood Spot Sample ................................ ................................ ................ 15 
+8.0 Sample Transport ................................ ................................ ................................ ......... 19 
+9.0 Results Processes ................................ ................................ ................................ ......... 22 
+10.0 Repeat Samples ................................ ................................ ................................ ............ 24 
+11.0 Special Circumstances: Babies who have moved into the area. ................................ 26 
+12.0 Special Circumstances: Babies born preterm or cared for in hospital specialist units .. 
+ ................................ ................................ ................................ ................................ ....... 28 
+13.0 Documentation ................................ ................................ ................................ ............. 31 
+14.0 Special Circumstances: Family history of any of the conditions screened for ........... 31 
+15.0 Ensuring All Babies Have Been Offered Screening ................................ ...................... 32 
+16.0 Audit, training and performance management of sampling [including Key 
+Performance Indicators] ................................ ................................ ................................ ......... 33 
+17.0 References ................................ ................................ ................................ .................... 33 Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 4 of 50 
+ Abbreviations used within this document : ................................ ................................ ........... 34 
+Appendix A - Care Pathways ................................ ................................ ................................ .... 35 
+Appendix B : Contacts ................................ ................................ ................................ ............. 40 
+Appendix C – Patient Information Leaflet – Repeat Screening Test. ................................ .... 45 
+Appendix D – Letter to inform health professionals of screening decline: .......................... 47 
+Appendix E Parental Decline Form ................................ ................................ ..................... 48 
+Appendix: F HV Referral Form to Paediatric Phlebotom ................................ ..................... 49 
+Appendix G : Flow Chart: Performance Management Of Avoidable Repeats ............... 50 
+
+ Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 5 of 50 
+ 
+Key Principles 
+A protocol is a set of measurable, objective standards to determine a course of action. 
+Professional judgement may be used in the application of a protocol. 
+ 
+Scope 
+♦ This protocol applies to: all babies born within BSUH NHS trust or resident within the 
+catchment area within the first year of life. This includes babies who were born elsewhere 
+but have moved into the area during the first year of life. 
+ 
+Responsibilities 
+ 
+• Midwives & Obstetricians: [include neonatal staff, and those members of staff trained to 
+take newborn blood spot screening samples: this may include nursery nurses, maternity 
+support workers and maternity / neonatal care assistants working under supervision of a 
+registered professional : 
+o To access, read, understand and follow this guidance 
+o To use their professional judgement in application of this protocol 
+ 
+• Management Team : 
+ 
+To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations 
+ 
+To ensure the protocol is accessible to all relevant staff 
+ 
+Update Process 
+ 
+Prior to the review of this guideline a structured search and appraisal of the evidence will 
+be undertaken by the lead author with the library services in the Trust. The most recent 
+national guidance from the RCOG is still current at the time of this update and no 
+additional evidence was found that added to the recommendations in this document. 
+ 
+ Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 6 of 50 
+ 
+1.0 Newborn Blood Spot Screening: Rationale for Screening and Conditions Screened for 
+ 
+1.1 Newborn blood spot screening is recommended for all babies up to one year old. Up to 
+but not including 1st birthday. Screening for Cystic Fibrosis is unreliable after 8 weeks. 
+ 
+1.2 At BSUH screening is offered for the following conditions: 
+ 
+• phenylketonuria [PKU] 
+• congenital hypothyroidism (CHT) 
+• medium chain acyl -Co A dehydrogenase deficiency [MCADD] 
+• sickle cell disease [SCD] 
+• cystic fibrosis [CF]. 
+• maple syrup urine disease (MSUD) 
+• homocystinuria (pyridoxine unresponsive) (HCU) 
+• isovaleric acidaemia (IVA) 
+• glutaric aciduria type 1 (GA1) 
+ 
+1.3 A summary of the national pathway for newborn screening is given in diagram 1.1 
+below: 
+
+Diagram 1.1 Ref: NHS Newborn bloodspot screening programme [2013] 
+ 
+Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 7 of 50 
+ 1.4 Aims and Objectives 
+ 
+1.4.1 The aims of newborn blood spot screening are: 
+ 
+• To achieve early detection, referral and treatment of babies thought to be 
+affected by the conditions. 
+ 
+• To reduce morbidity and mortality through prompt identification and treatment 
+of affected babies 
+ 
+1.4.2 The national objectives of the newborn bloodspot scree ning programme [NHS 
+England 2018: 
+ 
+• To offer all eligible babies timely screening 
+• Support parents to make an informed choice about screening for their baby. 
+• To refer all screen positive babies to diagnostic and clinical care within an 
+effective timeframe (in accordance with standards ) remove in brackets 
+• Provide equal access to high quality screening across England 
+• To record all results on a Child Health IT system and give a copy to parents 
+• To ensure all those involved in the care of the child also have access to the 
+results – remove this statement 
+• Minimise harmful effects of screening including anxiety, inaccurate information 
+and unnecessary investigation. 
+ 
+1.5 The designated programme lead for maternity services at this trust is the antenatal 
+screening co -ordinator. 
+ 
+1.6 See appendix B for contact details of the BSUH programme lead and other staff, 
+departments and organisations relevant to the screening programme. 
+ 
+1.7 This screening programme is dependent on systematic specified relationships between 
+the following stakeholders: maternity services, neonatal and paediatric services, the 
+newborn screening laboratory, diagnostics and genetics laboratory, child health 
+records, health visiting services, and specialist condition specific services. This protocol 
+includes details of roles and responsibilities of external agencies where relevant. 
+ 
+2.0 Definition of ‘sample taker’ 
+ 
+2.1 The term ‘sample taker’ is used throughout this document to indicate the clinician 
+responsible for obtaining parental consent and taking the blood spot sam ple. 
+ 
+2.2 The newborn blood spot sample may be taken by any member of staff who has 
+undergone training for the procedure. Within BSUH NHS TRUST this may include: 
+ 
+2.2.1 Registered professionals : 
+Midwife 
+Nurse [neonatal / paediatric] 
+Doctor [paediatric] Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 8 of 50 
+ 
+2.2.2 Non -registered staff: 
+Nursery nurse 
+Maternity support worker 
+Paediatric phlebotomist 
+ 
+2.3 Nursery nurses and maternity support workers may take the sample only after 
+appropriate training and only working under supervision of a registered nurse or 
+midwife. They should only be assigned routine cases and must refer back immediately to 
+their supervising professional in the following circumstances: 
+ 
+2.3.1 Where parents decline screening for some or all of the conditions. 
+2.3.2 [In such cases, a follow -up visit by a registered nurse or midwife, must be 
+arranged within 24 hours of the parent declining the test] 
+2.3.3 Where parents have questions that the nursery nurse or maternity support 
+worker cannot answer 
+ 
+2.4 A paediatric phlebotomist may take the sample following referral by a registered 
+professional who has previously conducted pre -test discussion and obtained and 
+documented parental consent. The referring professional is responsible for completing 
+the sample request card [except for date of sample collection and name of sample taker 
+which should be completed by the sample taker at time of sample collection]. 
+ 
+2.5 Repeat samples for an inconclusive result or suspected affected baby must always be 
+taken by a registered professional as these cases are likely to involve more detailed 
+explanations requiring additional expertise. A registered professional may refer a baby 
+for a repeat sample to paediatric phlebotomy after discussion with the parents. 
+ 
+3.0 Pre-Screening Information 
+ 
+3.1 The trust uses the UK National Screening Committee patient information leaflet 
+‘Screening tests for you and your baby’ which includes the section ‘Blood spot sc reening 
+for your newborn baby’. Available in a number of languages at gov.uk 
+ 
+3.2 The patient information leaflet should be given to women prior to or at booking [ideally 
+prior to 10 weeks gestation]. Parents who have babies admitted to the neonatal unit will 
+receive a copy of this leaflet on admission. 
+ 
+3.3 The midwife should document at booking in the maternal hand held notes that this 
+information leaflet has been given. 
+ 
+3.4 The sample taker should ensure that parents have had access to the patient leaflet at 
+least 24 hours before the test is due and they should document this in the maternity or 
+paediatric notes. 
+ 
+3.5 Leaflet is available in English and other languages to download via the following website: 
+https://www.gov.uk/government/publications/screening -tests -for-you-and-your -baby -
+description -in-brief Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 9 of 50 
+ 
+3.6 Interpreting services should be used for communicating with parents who are not fluent 
+in English at all stages of the screening pathway. 
+ 
+4.0 Offering screening 
+ 
+4.1 Newborn bloodspot screening should be offered to all babies: 
+ 
+4.1.1 The policy is to actively recommend screening however parents have the right to 
+decline some or all of the tests. 
+ 
+4.1.2 Pathway 1 [Appendix A] summarises the pre -test information and testing 
+process. 
+
+4.2 Pre-test discussion 
+Pre-test discussion with the parent[s] should ideally include the following: 
+ 
+• The conditions currently being screened for including rationale for screening 
+and treatment in the case of an affected baby 
+ 
+• That this is a screening test and so both false -negatives and false -positives 
+can be obtained 
+ 
+• How the test is taken from their baby 
+ 
+• The results process to include follow up in the case of a screen positive result 
+ 
+• Sample storage and future research [see section 4.4] 
+
+4.2.1 If parents require further information that cannot be answered by the 
+sample taker, then referral can be made to the screening midwife team [see 
+contacts appendix B]. 
+ 
+4.3 Obtaining consent to screen 
+4.3.1 Screening should only be performed with parental consent. Verbal consent is 
+adequate and so does not requir e a signature from the parent. 
+4.3.2 The professional gaining consent from the parents should document in the 
+postnatal baby notes, [or neonatal/ paediatric notes if the baby is under the care 
+of the paediatric services], that discussion has taken place and the parent’s 
+decision to accept or decline screening. 
+4.3.3 Consent should also be documented in the personal child health record book 
+[PCHR] where available. 
+ Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 10 of 50 
+ 
+4.4 Parents must understand that they are agreeing to both testing and quality assurance processes 
+that are an essenti al part of the screening program . These include: 
+• completing the blood spot card and taking the sample 
+• testing the blood spot sample in a newborn screening laboratory 
+• additional testing of the same sample if the initial result is positive (may involve testing in 
+another laboratory) 
+• contacting parents about the screening results – positive or negative or carrier (only for CF 
+and SCD) 
+• referral to a specialist clinical team if the result is positive 
+• recording the screening results on laboratory and child health information systems, national 
+newborn blood spot failsafe solution and sickle cell and thalassemia newborn outcomes 
+system 
+• retention and storage of residual blood spots for checking the screening results, monitoring 
+and improving the screening program 
+• Residual blood spots are dried blood spots that are ‘left over’ after the laboratory punches 
+(removes) several small discs from the sample to complete screening. The screening 
+laboratory stores them for 5 years. 
+• Laboratories use residual blood spots to check screening results, for testing equipment or 
+methods, and for training and audit. It is a vital part of screening that helps to maintain 
+high standards. If parents consent to screening, they cannot opt out of storage of 
+their baby’s residual blood spots for these purposes . 
+
+5.0 When Parents Decline Screening 
+ 
+5.1 Although screening is recommended, parents have the option of declining some or all 
+tests offered. 
+5.2 With regard metabolic disorders, parent cannot decline individual metabolic disorders. 
+They can decline all of them or accept all of them. This is because they are processed 
+simultaneously in the lab and it is not possible to exclude screening for individual 
+metabolic disorders from the testing panel. 
+ 
+5.3 Where parents have declined screening and the member of staff involved at the point of 
+declining is a Phlebotomist, Maternity Support Worker or Nursery Nurse, then a follow 
+up appointment should be made with a registered midwife [or neonatal professional if 
+the baby is on the special care unit or Health Visitor if the baby was referred by the HV] 
+to revisit and discuss the offer of a test again within 24 hours of the decline. 
+ 
+5.4 Where parents have declined screening, the sample taker must complete the following 
+actions: 
+ 
+5.4.1 Document the decline and reason for the decline [if stated] in the maternity 
+postnatal baby notes or paediatric record and, if available, personal child health 
+record book [under ‘birth details’ section]. Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 11 of 50 
+ 
+5.4.2 Complete all sections of the sample card as described in section 6.2] and write 
+the following on the card according to which tests have been declined: 
+ 
+If all tests are declined write: ‘ DECLINES ALL TESTS’ 
+ 
+If specific tests are declined – write the specific tests 
+declined on the card. 
+E.g. if sickle cell and CF have been declined write: 
+‘DECLINES SICKLE CELL and CF ONLY’ 
+ 
+5.4.3 Send the completed sample card [without any blood spots if all tests were 
+declined] to the laboratory as per section 8.0. The rationale being that the 
+newborn screening laboratory receives a card for every baby born. The newborn 
+screening laboratory will then inform the child health record department that 
+screening has been declined. 
+ 
+5.4.4 Inform the following professionals in writing of the conditions for which the 
+parents have declined screening using the template letter in appendix E as a 
+guide: 
+• General practitioner 
+• Health visitor 
+• Child health record unit 
+• Community midwife team leader 
+ 
+5.4.5 A copy of this letter should be retained in the postnatal maternity records. 
+ 
+5.4.6 Ask the parents to sign the ‘decline form’ in appendix F and retain this to be 
+inserted in the postnatal baby notes. 
+ 
+5.5 The registered professional discussing the implications of declining screening with 
+parents should clearly state the following: 
+5.5.1 The potential complications if their baby is affected by one of the conditions 
+being screened for and remains undiagnosed. Such complications include 
+irreversible brain damage and death and this should be clearly stated to the 
+parents. 
+5.5.2 That many of the conditions being screened for are recessively inherited and so 
+anyone could carry these genes and not be aware of it. Hence the fact that if 
+there is no one in their family with these conditions it does not mean that they 
+cannot have an affected child. 
+5.6 Details of the discussion made between the registered professional and the parents 
+should be clearly documented in the baby notes. 
+ 
+5.7 The sample taker should inform parents who to contact [and how to contact them] if 
+they subsequently change their minds about screening or would like to discuss this 
+further. The screening midwife team are available to speak with parents for further Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 12 of 50 
+ discussion in such cases [see appendix B for contact d etails]. The parents should be 
+given a letter that confirms their decision (for their records). 
+
+ Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 13 of 50 
+ 
+6.0 Performing t he Screening Test 
+ 
+6.1 Timing 
+6.1.1 The blood spot sample should be taken on day 5 of life. For the purpose of 
+screening, date of birth is day 0. 
+6.1.2 The sample should be taken on day 5 of life on all babies where parental 
+consent has been given regardless of medical condition, prescribed drugs, milk 
+feeding and prematurity. 
+
+6.2 Completing the blood spot card 
+ 
+6.2.1 Prior to completing a sample card, the sample taker should check the expiry 
+date on the front of the card. The laboratory will be unable to process samples if 
+the card is out of date and a repeat sample will be required, resulting in a 
+possible delay in treatment if the baby is subsequently diagnosed with a 
+condition. 
+6.2.2 A sample card should not be used if it has been damaged in any way, for 
+example the blotting paper is folded, contaminated or has been compressed. 
+ 
+6.2.3 It is the responsibility of the sample taker to enter the details on the blood 
+spot card at the time of sampling. 
+ 
+6.2.4 It is mandatory to enter the baby’s NHS number onto the sample card. Where 
+the NHS number is not given or is incorrect, the laboratory will issue a request 
+for a repeat sample to be taken resulting in a possible delay in treatment if the 
+baby is subsequently diagnosed with a condition. 
+ 
+6.2.5 If available, a NHS number bar -coded label should be used. When using a bar -
+coded label: 
+ 
+• Ensure no sections of the bar code or text are missing 
+• Ensure the printing is aligned: the laboratory may reject a card where the 
+print is misaligned, partially missing or at an angle. 
+• Check all details on the label are correct with the parent and make any 
+necessary changes 
+• Apply one label to each sheet of the blood spot card at the time of sampling 
+ 
+6.2.6 Any additional information required on the card that is not included on the bar -
+coded label should b e completed by the sample in block capitals. 
+ 
+6.2.7 Where labels are not available, the sample taker should ensure that all fields on 
+the card are completed using legible handwriting. The sample taker should then 
+check all details entered by hand onto the sample card with the parent. 
+ 
+6.2.8 When completing the card, care must be taken to ensure it is placed on a clean 
+surface to avoid contamination of the blood spot sample. Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 14 of 50 
+ 
+6.2.9 Care must be taken not to fold or compress the blotting paper on the card as 
+this will result in the sample being rejected by the laboratory. 
+ 
+6.2.10 The sample taker should, where relevant, enter the following information in the 
+‘comments’ box on the card: 
+ 
+• Baby’s known medical condition [if any] including any drugs received by the 
+baby or breastfeeding mother within 24 hours of the blood test. 
+• State if the baby had an in -utero blood transfusion 
+• State if the mother has received thyroxine or anti -thyroid drugs 
+• Relevant family history [e.g. known history of PKU, CF, MCADD etc] 
+• Results of pre -natal diagnostic testing if relevant [for example CVS result 
+where the couple was at –risk for having a baby with sickle cell disorder] 
+• Mother’s carrier status for sickle cell of haemoglobin variant [if known] 
+• If the sample was not taken on day 5, state why: [eg pre -transfusion spot, 
+preterm CHT ] 
+ 
+6.2.11 Write the maternity code into the PCT box [bottom left hand corner of the 
+sample card]. The maternity code alerts the screening lab as to which trust took 
+the sample [which may of course be different to the hospital of birth]. This 
+ensures swift follow up on any samples that may require repeating. Use the 
+maternity code as listed in the table below according to where the sample was 
+taken: 
+ 
+ Maternity codes for newborn bloodspot screening cards 
+CODE For samples taken in: 
+RXH 1 M RSCH maternity Community / hospital midwifery 
+RXH 1 T RSCH TMBU Trevor Mann Baby Unit 
+RXH 1 A RACH Royal Alexandra Children’s Hospital 
+RXH 2 M PRH maternity Community / hospital midwifery 
+RXH 2 S PRH SCBU PRH special care baby unit Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 15 of 50 
+ 
+7.0 Collecting t he Blood Spot Sample 
+ 
+7.1 Sample takers should gather necessary equipment prior to taking the sample and 
+ comply with the trust guidance on infection control, using universal precautions 
+ before taking any blood sample. 
+7.2 The sample taker should recommend comfort measures for the baby [ UK Newborn 
+ Screening Programme Centre [2012] section 3 page 6]: 
+ 
+7.2.1 Ensure the baby is cuddled and in a secure position for taking the sample as 
+swaddling may reduce pain and discomfort 
+ 
+7.2.2 Engaging the baby through face -to-face contact, voice and touch may also be 
+beneficial 
+7.2.3 Breastfeeding during sample collection may have analgesic affect. Offering 
+expressed milk, non -nutritive sucking [e.g. a pacifier] or a sucrose or glucose 
+solution are alternatives to breastfeeding. Painful procedures are a medical 
+indication for such measures and do not undermine the WHO/UNICEF’s Baby 
+Friendly Initiative. 
+ 
+7.2.4 There is no evidence that formula feed has analgesic properties, but parents may 
+comfort formula fed babies with a feed during the procedure. 
+ 
+7.2.5 Containment holding or the use of a pacifier (with parental consent) may provide 
+comfort measures for babies on the neonatal unit 
+ 
+7.3 Preparing the foot 
+ 
+7.3.1 The heel should be cleaned prior to taking the sample, with tepid plain water and 
+cotton wool/ gauze. This is to avoid contamination of the s ample which may 
+affect results. 
+ 
+7.3.2 Alcohol or alcohol based wipes must NOT be used as this can cause burns and 
+blisters. 
+ 
+7.3.3 Soap and detergent should not normally be used as this can be irritant to infantile 
+skin. However if faecal matter cannot be removed with water alone, mild 
+unperfumed soap may be used and rinsed off thoroughly after. Faecal 
+contamination of the sample can lead to a false positive result for CF screening 
+ 
+7.3.4 The heel should be completely dry before taking the sample 
+ 
+7.3.5 The baby should be warm and comfortable prior to taking the sample. Additional 
+warming is not required. The foot should NOT be soaked in warm water as there 
+is no evidence that warming the foot aids blood flow and there have been reports 
+of babies being scalded/ burned during foot warming [ UK Newborn Screening 
+Programme Centre [2012] section 3.4 page 7] 
+ Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 16 of 50 
+ 7.3.6 The sample should be obtained using an automated incision device designed for 
+use on newborns [eg Gentleheel lancet] in accordance with manufacturer’s 
+instructions. The device should be placed against the heel gently and not pressed 
+into the heel, to ensure correct depth of incision is achieved. Manual lancets must 
+not be used. 
+ 
+7.3.7 For full term and preterm infants, the external and internal limits of the calcaneus 
+are the preferred puncture site. This is marked by the shaded area in diagram A 
+below. The skin to calcaneous depth is greater in these areas and so using these 
+areas minimises the risk of calcaneal puncture that may lead to osteomyelitis. The 
+automated incision device should have a penetrative depth of no more than 2.0 
+mm. 
+
+Diagram A and B – Puncture sites [UK Newborn Screening Programme Centre 2012 page 8] 
+
+7.3.8 For infants requiring repeated heel punctures, for example babies in neonatal or 
+paediatric care, the areas marked in diagram B may also be used. However when 
+using the whole plantar surface, it is recommended that the automated incision 
+device should have a penetrative depth of no more than 1.0 mm [Arena et al 2005 
+in UK Newborn Screening Programme Centre 2012 ]. 
+ 
+7.3.9 Avoid the posterior curvature of the heel. 
+ 
+7.3.10 Allow the heel to hang down to assist blood flow. 
+ 
+7.3.11 It is acceptable for paediatric phlebotomists who are trained in venous sampling 
+of neonates, to take a venous sample from the antecubital fossa and use this for 
+newborn bloodspot sampling. Such samples should be obtained in accordance 
+with phlebotomy protocols. 
+
+Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 17 of 50 
+ 7.4 Filling the Circles 
+ 
+7.4.1 The aim is to fill each circle on the newborn blood spot sample card using a single 
+drop of blood. The blood should reach the printed edge of the circle. 
+7.4.2 Wait for the blood to flow. Allow one spot to drop onto each of the circles on the 
+card. Do not allow the heel to make contact with the card. 
+ 
+7.4.3 Allow the blood to fill the circle by natural flow and seep through the card. 
+ 
+7.4.4 Do not squeeze the foot in an attempt to increase blood flow. 
+ 
+7.4.5 The minimum sample requirement for day 5 screening is for four blood spots at 
+least 7mm in diameter. Therefore aim to fill each of the four circles completely. 
+ 
+7.4.6 Table 7.1 summarises the number of spots required according to reason for 
+sampling and advises which section of the policy to refer to for further 
+information: 
+ 
+Table 7.1: Number of spots required for 
+sampling 
+
+Reason for sampling Baby’s age at which 
+sample should be taken Minimum 
+number of 
+spots 
+required Section in 
+policy to refer 
+to for further 
+information 
+Pre-transfusion admission spot [on NICU 
+or SCBU] to be dispatched with D5 spot On admission to NICU/ 
+SCBU 1 12.3 
+Routine for all babies Day 5 4 6.0 and 12.4 
+Repeat sample requested by the lab 
+because: 
+- Because first sample went 
+missing 
+- Because first sample was 
+insufficient or unsuitable 
+ Within 72 hours of 
+laboratory request for 
+repeat 4 10.3 
+Repeat sample for confirmation [Usually 
+CF] As directed by laboratory 2 10.2 
+Premature babies born < 32 weeks – 
+repeat for CHT screening Day 28 or discharge – 
+whichever is soonest 2 12.6 
+Baby has moved in to area having not 
+previously been screened or no evidence 
+that screened for all conditions currently 
+offered in England Up to 1 year of age 4 11.0 
+ 
+7.4.7 Do not layer the blood. Layering is where more than one drop of blood has been 
+added on top of another blood spot to one circle from either the same side of the 
+card or both sides of the card. Layered samples are not acceptable as they can 
+give false positive results and the laboratory will request a repeat sample. 
+ 
+ Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 18 of 50 
+ 7.4.8 After taking the four spots of blood, ensure the blood has seeped through to the 
+other side. If one circle is insufficient it is acceptable to add additional blood spots 
+anywhere on the blotting paper, taking care that the blood spots don’t join 
+together. 
+ 
+7.4.9 Do not compress the blood spot in order to ensure that the blood has soaked 
+through to the reverse of the card. This increases the risk of a false negative 
+result. 
+ 
+7.4.10 See Diagram C for summary [UK Newborn Screening Programme Centre 2012] 
+
+Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 19 of 50 
+ 
+7.4.11 If the blood ceases to flow: 
+• Wipe away the congealed blood with cotton wool or gauze. 
+• Gently massage the foot, avoid squeezing, to encourage flow 
+and drop the blood onto the card. 
+ 
+7.4.12 If the baby is not bleeding, a second puncture is required. Perform the second 
+puncture on a different part of the same foot or on the other foot. 
+ 
+7.5 After taking the sample: 
+ 
+7.5.1 Wipe excess blood from the heel and apply gentle pressure to the wound with 
+gauze or cotton wool. This should be sufficient t o stop bleeding in most babies. 
+7.5.2 If required, in a healthy term neonate, a hypoallergenic spot plaster may be 
+applied, reminding the parent to remove the plaster in a few hours. However if 
+the baby is on the neonatal unit, spot plasters are not to be used, in order to 
+minimise the amount of adhesive that is applied to the skin [especially premature 
+skin which is more delicate] and to avoid the risk that the plaster may come off 
+and remain unnoticed in the incubator creating an infection risk. 
+ 
+7.5.3 Allow blood spots on the sample card to air -dry away from direct sunlight or heat 
+before placing in the glassine envelope for protection. 
+ 
+7.6 Documentation of sample taking 
+ 
+7.7 The sample taker must record that the sample has been taken in the mother’s maternity 
+record and PCHR [and the child’s hos pital records if appropriate]. 
+ 
+7.8 All blood spots to be double checked by another practitioner qualified to perform 
+bloodspots before posting. 
+ 
+7.9 The screening status should be recorded on discharge and transfer notifications by the 
+clinician responsible for discharging the baby. 
+ 
+8.0 Sample Transport 
+ 
+8.1 Posting routine samples [routine day 5 samples] 
+ 
+8.1.1 Samples are processed at the Newborn Screening 
+Laboratory at St. Thomas’s Hospital, London [see address appendix B] 
+ 
+8.1.2 It is the sample taker’s responsibility to ensure that the sample is transported to the 
+laboratory according to these guidelines. 
+ 
+8.1.3 All samples must be despatched to the newborn screening laboratory in the prepaid 
+addressed envelope and posted within 24 hours of the sample being taken. 
+ Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 20 of 50 
+ 8.1.4 Samples are posted using first class Royal Mail either in standard post boxes or via 
+the hospital post room. 
+ 
+8.1.5 Samples must NEVER be sent via hospital internal mail as this causes unacceptable 
+delays in the cards reaching the laboratory. However, sample cards from babies that 
+are in -patient [to include babies on postnatal wards, neonatal units, paediatric wards 
+or out -patient paediatric phlebotomy] can be taken on a daily basis direct to the 
+hospital post -room on each site where staff will put the samples immediately into 
+the external post. 
+ 
+8.1.6 Samples must be posted on the same day that the sample was taken. Despatch 
+should not be delayed in order to batch cards together. 
+ 
+8.1.7 A maximum of 5 sample cards can be put in one pre -paid envelope. 
+ 
+8.2 Record of samples taken by the maternity unit 
+ 
+8.2.1 Every sample taker should keep a record of all samples that they have taken and sent 
+to the laboratory. This record must include the baby’s name and NHS number, date 
+taken, card serial number, reason sample was taken, date posted and location of 
+post box used. This is for internal audit purposes. See appendix C for an example 
+record sheet. 
+ 
+8.2.2 The sample taker must forward the record sheets of samples taken on a weekly basis 
+to a central collection point where they are to be retained for audit: 
+• RSCH midwives – level 12 community office, RSCH 
+• PRH midwives – community office, PRH 
+ 
+8.3 Record of samples taken by the neonatal unit / SCBU 
+ 
+8.3.1 Babies screened on the neonatal unit [Trevor Mann Baby Unit and Special Care Baby 
+Unit] will retain a central record of all babies screened in each area respectively. As it is 
+necessary to record where samples were posted, it would be advisable to post all 
+samples at either the hospital post room or post box immediately outside the hospital. 
+ 
+8.4 Record of samples taken by the RACH 
+ 
+8.4.1 Paediatric wards at the Royal Alexandra Children’s hospital should maintain a record 
+of all samples taken. As it is necessary to record where samples were posted, it would 
+be advisable to post all samples at the hospital post room. 
+ 
+8.5 Sample transport in exceptional circumstances 
+ 
+8.5.1 Where there are exceptional circumstances that may disrupt postal services and 
+delay sample transport to the laboratory [for example: over long bank holiday 
+periods, prolonged bad weather or postal strikes], contingency plans will be made 
+for alternative methods of transporting samples to the laboratory. 
+ Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 21 of 50 
+ 8.5.2 At such times the trust may revert to using a courier service during the period of 
+disruption. Staff will be informed of changes to services accordingly and advised of 
+sample collection points. At such times further information will be available via the 
+Community Midwifery Matron, antenatal screening midwives or community midwife 
+team leaders. 
+ 
+8.6 Transport of repeat samples 
+ 
+8.6.1 Where a sample requires repeating [regardless of the reason], there is already the 
+possibility of delayed diagnosis of an affected baby. For this reason every effort must 
+be taken to repeat and transport the sample to the labo ratory as quickly as possible. 
+ 
+8.6.2 In all cases it is the sample taker’s responsibility to ensure that the repeat sample 
+has arrived at the laboratory within 5 working days of taking the sample. In the case 
+of samples taken by the paediatric phlebotomy department, it is the sample 
+requestor’s responsibility to do this. 
+ 
+8.6.3 In certain circumstances, it is advisable to use a courier to transport the sample to 
+the laboratory. For example: 
+• if the baby is unwell 
+• if it is suspected that the baby may be affected by one of the conditions being 
+screened for 
+• if this is the second [or more] repeat sample. 
+ 
+8.6.4 The sample taker should exercise their judgement as to whether a courier is 
+necessary. Advice, including information on how to arrange a courier can be 
+obtained from the screening midwives, community midwifery matron or community 
+midwife team leaders 
+
+8.6.5 Samples sent by courier must be inserted into a plain envelope which is then sealed 
+with the following address clearly written on the front: 
+ 
+Newborn Bloodspot Screening lab 
+C/O Central Specimen Reception 
+5th Floor 
+North wing 
+St Thomas Hospital 
+London 
+SE1 7EH 
+ 
+8.6.6 Note that the address must be written on the envelope PRIOR to putting the sample 
+inside. This ensures that there is no sample compression during writing which could 
+cause the laboratory to reject the sample. 
+ 
+8.6.7 Courier company details are given in appendix B. 
+ 
+ Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 22 of 50 
+ 9.0 Results Processes 
+ 
+9.1 The sample taker should inform parents of the results process. 
+ 
+9.2 Results process when conditions not suspected 
+ 
+9.2.1 Where conditions are not suspected, the child health bureau will send parents 
+a letter within 6 -8 weeks of the test. If the baby screens positive for a condition 
+the parents will be contacted sooner [see sections 9.3 to 9.7]. 
+ 
+9.2.2 Parents should be advised that if they have not received their baby’s results 
+within 8 weeks, they should contact their health visitor whose responsibility it 
+is to follow up any missing results. 
+ 
+9.2.3 It is the health visitor’s responsibility to document screening results in the 
+PCHR. 
+ 
+9.2.4 Ensure parents understand results are not 100% accurate. 
+ 
+9.3 Results process when conditions suspected: CF suspected 
+ 
+9.3.1 CF is suspected in the following cases: 
+o Two genetic mutations are confirmed on screening 
+o One genetic mutation is confirmed on screening and 2 consecutive 
+samples show a raised IRT. 
+ 
+9.3.2 In these cases the newborn screening laboratory will inform the Regional Cystic 
+Fibrosis Unit at Kings College Hospital, London. The regional team at Kings then 
+contact the local CF team at the Royal Alexandra Children’s Hospital. A local CF 
+nurse specialist will then arrange to visit the family ideally with named HV to 
+inform the parents of the result and arranges for a diagnostic sweat test for 
+the following day. 
+ 
+9.3.3 The local CF nurse will inform the baby’s GP and HV of the sweat test result. 
+ 
+9.3.4 The laboratory will also send a copy of the result to the child health bureau. 
+ 
+9.4 Results process when conditions suspected: CF carrier suspected 
+ 
+9.4.1 The newborn screening test is not designed to detect carriers of CF but may 
+identify a small number of carriers during the process of screening. A CF carrier 
+is suspected when the first sample has a raised IRT and 1 genetic mutation is 
+identified, but the second sample has a normal IRT. 
+ 
+9.4.2 In such cases the newborn screening laboratory will inform the Regional Cystic 
+Fibrosis Unit at Kings College Hospital. The regional team at Kings then contact 
+the local CF team at the Royal Alexandra Children’s Hospital. A local CF nurse 
+specialist will then arrange to inform the parents of the result and implications Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 23 of 50 
+ of the result [for example: regarding inheritance and options for screening 
+parents for their carrier status]. In such cases a diagnostic sweat test may be 
+arranged to exclude a diagnosis of CF and reassure parents. 
+ 
+9.4.3 The local CF nurse will inform the baby’s GP and HV of the carrier result. 
+ 
+9.5 Results process when conditions suspected: Inherited metabolic disorders - PKU/ 
+MCADD/ MSUD/ HCU/ IVA/ GA1 
+ 
+9.5.1 In these cases the newborn screening laboratory will inform the Paediatric 
+Metabolic Consultant at the Evelina Children’s Hospital, St Thomas’s Hospital, 
+London. The consultant will then contact the parents direct [by phone usually] 
+and arrange confirmatory testing and follow -up as detailed below according to 
+the condition suspected: 
+ 
+MSUD/IVA/ MCADD – should be seen the same day as the result is 
+generated, ideally at the regional paediatric metabolic unit in London, 
+as these babies require immediate treatment 
+ 
+GA1/ PKU/ HCU – should be seen the same or next working day 
+following the result, ideally at the ideally at the regional paediatric 
+metabolic unit in London Inform GP of the results. 
+ 
+9.5.2 Where parents are unable to attend the regional IMD unit in London, the 
+consultant in London will liaise with local paediatric services with regard repeat 
+confirmatory samples, treatment and follow up. 
+ 
+9.5.3 The newborn screening laboratory will send a copy of the result to the local 
+CHB. 
+ 
+9.5.4 The consultant at the regional IMD unit will inform the baby’s GP, HV and 
+CMW as well as local paediatric services of the baby’s diagnosis. 
+ 
+9.5.5 The newborn screening laboratory will send a copy of the result to the local 
+CHB. 
+
+9.6 Results process when conditions suspected: Sickle cell disorders 
+ 
+9.6.1 The newborn screening laboratory will refer all suspected carrier and SCD 
+results to King’s Red Cell Lab for further testing [Contacts in appendix B]. The 
+King’s lab will then contact designated paediatrician at the Royal Alexandra 
+Children’s hospital who will arrange to see the parents and arrange follow up 
+as appropriate. This includes informing the baby’s GP and HV. 
+ 
+9.6.2 The newborn screening laboratory will send a copy of the result to the local 
+CHB. 
+ Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 24 of 50 
+ 9.7 Results process when conditions suspected: Carriers of haemoglobin variants 
+ 
+9.7.1 In addition to detecting babies with sickle cell disorders, newborn blood spot 
+screening may also detect carriers of haemoglobin variants. However carriers 
+of thalassaemia are NOT detected by screening. 
+ 
+9.7.2 Carrier results are given to parents by a specialist link HV. The newborn 
+screening laboratory will inform the specialist link HV who will then arrange to 
+inform the parents and advise regarding the implications of the result. 
+Specialist parent information leaflets, according to the type of carrier 
+identified, are available online: http://sct.screening.nhs.uk/leaflets 
+ 
+9.7.3 The link HV will also inform the baby’s named HV, GP and CHB of the carrier 
+status. 
+ 
+9.7.4 The newborn screening laboratory will inform the BSUH antenatal screening 
+co-ordinator of all carrier and affected babies. The ASC will ensure all women 
+with a carrier or affected baby were screened appropriately [according to 
+policy] during pregnancy and inform the laboratory lead at BSUH to enable the 
+lab to link parents and baby results in the future. 
+ 
+10.0 Repeat Samples 
+ 
+10.1 The process for repeat samples is summarised in Pathway 4 [Appendix A] 
+ 
+10.1.1 The laboratory will contact BSUH to request repeat samples by sending an 
+email to the trusts shared generic newborn screening email account: 
+undefined uhsussex.newbornscreening@nhs.net 
+ 
+10.1.2 The community midwife team leaders at both PRH and RSCH will nominate 
+someone on a daily basis [Monday to Friday inclusive] to check the shared 
+email account to action any request for repeat samples. 
+ 
+10.1.3 When taking a repeat sample, the sample taker must tick the ‘ repeat sample’ 
+box on the blood spot card. 
+ 
+10.1.4 Repeat samples are considered either to be unavoidable or avoidable. 
+ 
+10.2 Unavoidable repeat samples 
+ 
+10.2.1 Unavoidable repeat samples may be required from some babies due to 
+prematurity, borderline TSH results, inconclusive CF screening or having 
+received a blood transfusion. These samples should be taken as soon as 
+possible [certainly within 72 hours of receipt of the request] or at the age 
+directed by the screening laboratory. 
+ Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 25 of 50 
+ 10.2.2 A one week interval between samples is recommended for borderline TSH 
+results. In such cases the sample taker must take 4 blood spots and mark the 
+card ‘CHT borderline’ . 
+ 
+10.2.3 Where repeat samples are required for inconclusive CF screen or borderline 
+TSH results, the sample taker should inform the HV by phone so that the HV 
+can follow up results and offer additional support to the family whilst results 
+are awaited. 
+ 
+10.3 Avoidable repeat samples 
+ 
+10.3.1 Laboratories may also request a repeat sample due to any of the following 
+reasons. Table 10.1 lists the reasons considered to be avoidable reasons for 
+having to repeat a sample: 
+ 
+Table 10.1: 
+Reasons for avoidable 
+repeat samples Examples 
+Insufficient Insufficient blood / blood not soaked through the card or 
+circles not filled 
+Unsuitable Compression of the blood spot 
+Overlapping, multiple layered or multiple blood spots 
+Suspected contamination of the sample card [e.g. faeces] 
+Sample card expired 
+Pre-transfusion spot and day 5 spots on same card 
+Presence of adult blood 
+Diluted sample / squeezed heel 
+Insufficient or incorrect data on the card [e.g. incorrect date 
+of collection or date of birth] 
+NHS number not given or incorrect 
+Printed information on barcoded label misaligned 
+Clotted / congealed sample 
+Delay in sample reaching laboratory [> 14 days] 
+Wet card 
+ 
+Too young Sample taken too soon [e.g. before day 5] 
+Too soon post 
+transfusion Sample taken before donor blood cleared 
+ 
+10.3.2 When a repeat sample is requested for any of the above reasons, the sample 
+should be taken within 72 hours of receipt of the request. The only exception 
+to this is where a baby is receiving a blood transfusion [see section 12.5]. 
+ 
+10.3.3 All first repeat samples should be sent to the lab in prepaid envelopes [as for 
+first samples]. Second or subsequent repeats should be sent by courier as per 
+section 8.5. 
+ Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 26 of 50 
+ 10.3.4 The sample taker must discuss the reason for the repeat with the parents and 
+obtain consent as described in section 4.0. 
+ 
+10.3.5 The sample taker should give parents a copy of the national information 
+leaflet: 
+‘Your baby needs a repeat screening test –heel prick test. Information 
+sheet for parents & carers November 2013 (v1.1)’ [copy in Appendix 
+D]. 
+ 
+10.3.6 In such cases parents should be informed of the results process and how to 
+follow up the results with the health visitor if they have not heard by post. 
+
+10.4 Repeat samples on babies over 28 days [this section applies to babies living at 
+home] 
+ 
+10.4.1 It is the responsibility of maternity services to arrange a repeat sample on any 
+baby up to and including 28 days of age and living at home. 
+ 
+10.4.2 If a baby is over 28 days and a repeat sample is required because there was an 
+error in sample taking [e.g. due to avoidable reasons listed in section 10.3, 
+table 10.1] then maternity services are responsible for informing parents and 
+taking the repeat sample. 
+ 
+10.4.3 If a baby is over 28 days, and the reason for the repeat sample is due to an 
+unavoidable reason, then the health visitor should be informed and it is their 
+responsibility to arrange the repeat sample. Details on how health visitors can 
+arrange a repeat sample are given in section 11. In rare circumstances when 
+the midwife may continue visiting past 28 days, then it would be appropriate 
+for the midwife to take a repeat sample. 
+ 
+10.4.4 If the baby, of any age, is an in -patient under the care of neonatal or paediatric 
+services, then the team caring for the baby are responsible for arranging the 
+repeat sample. 
+ 
+11.0 Special Circumstances: Babies who have moved into the area. 
+ 
+11.1 Responsibility for arranging and taking samples on babies who have moved into the 
+area: 
+ 
+11.1.1 The process for taking samples on ‘movers -in’ is summarised in Pathway 5 – 
+appendix A. 
+ 
+11.1.2 Newborn blood spot screening is recommended on all babies up to one year of 
+age. 
+ Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 27 of 50 
+ 11.1.3 If a baby has moved into the area whilst still receiving routine postnatal 
+midwifery care, then it is the responsibility of maternity services to offer 
+screening and take the sample. 
+ 
+11.1.4 If a baby has moved into the area after discharge from midwife care, up to one 
+year of age, then the responsibility for offering and arranging screening lies 
+with the health visitor. 
+ 
+11.1.5 The health visitor visits the baby within 10 working days of being notified of a 
+new family, to ascertain whether the baby has been screened elsewhere. 
+ 
+11.1.6 If the baby has had screening elsewhere and there is written evidence of the 
+results then no further action is necessary. 
+ 
+11.1.7 In the following circumstances, it is the responsibility of the health visitor to 
+offer and arrange screening: 
+• the baby has not had any screening 
+• the baby was screened elsewhere [either in the UK or abroad] but 
+there are no written results 
+• the baby has had some screening tests but has not been tested for 
+all nine conditions currently screened for in England [listed in 
+section 1.0] 
+ 
+11.1.8 If there is any doubt about what tests a child has had or whether the child has 
+had screening, then screening should be re -offered. 
+ 
+11.1.9 It is not possible to offer screening for CF over the age of 8 weeks. Parents 
+should be advised as to whether screening for this condition has been possible 
+or not. 
+ 
+11.2 Health visitor referral process for screening 
+ 
+11.2.1 The health visitor is responsible for pre -test discussion and documentation of 
+acceptance or decline of screening. 
+ 
+11.2.2 Where parents decline screening, the HV should follow the guidance in section 
+5.0 and return a blank sample card to the laboratory by completing the form in 
+appendix F. 
+ 
+11.2.3 Where parents accept screening, the health visitor can arrange for the baby to 
+have a screening test as follows according to area: 
+ 
+11.3 How the HV organises repeats: Brighton and Hove area 
+ 
+11.3.1 The health visitor arranges an appointment in paediatric phlebotomy at the 
+Royal Alexandra Children’s Hospital. 
+ Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 28 of 50 
+ 11.3.2 The HV phones 01273 696955 x 62474 at the RSCH to arrange an 
+appointment. 
+ 
+11.3.3 The HV must complete all sections on the request form in appendix G and 
+faxes the request form to 01273 523120 and write: For The Attention of 
+Phlebotomists, level 5, RACH. 
+ 
+11.3.4 The HV should also give parents a hard copy of the request form to take along 
+to the appointment at phlebotomy. 
+ 
+11.3.5 The phlebotomy department cannot take the sample from the baby without a 
+request form or if the request form is incomplete. In such cases the 
+phlebotomy department will refer back to the requesting HV. 
+ 
+11.3.6 If the baby does not attend for blood spot sampling, the phlebotomy 
+department will inform the HV by phone on the day that the appointment was 
+scheduled. If the phlebotomy staffs are unable to contact the HV that day, they 
+will inform either their manager or the HV manager by phone or email to 
+arrange follow up with the named HV. 
+ 
+11.4 How the HV organises repeats: Mid Sussex area 
+ 
+11.4.1 The health visitor can arrange for blood spot screening at Princess Royal 
+Hospital at Haywards Heath via the on -call paediatric nurse. The nurse can be 
+contacted by phoning 01444 441 881 and asking switchboard to bleep the 
+paediatric nurse on bleep 6034 to arrange a time for parents to bring their 
+baby in and have the sample taken. 
+11.4.2 Within the Crawley area, the HV can refer babies to the Child Assessment Unit 
+at East Surrey Hospital for blood spot sampling. 
+ 
+11.4.3 It is the HV’s responsibility to ensure that all babies referred for screening 
+attended for the test and that a result has been received and documented in 
+the PCHR book and HV notes. 
+ 
+12.0 Special Circumstances: Babies born preterm or cared for in hospital specialist units 
+[summarised in Pathways 2 and 3 in appendix A] 
+ 
+12.1 Babies requiring care from neonatal or paediatric services should have screening 
+taken in accordance with the guidelines contained within this document. The following 
+section 12.2 describes additional measures to be considered when caring for these 
+babies. 
+ 
+12.2 Pre-test information and consent 
+ 
+12.2.1 The pre -test information and consent process should be the same as section 
+4.0. However in emergency situations there may be limited time to allow 
+discussion with parents. 
+ Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 29 of 50 
+ 12.2.2 Babies admitted to neonatal units are likely to have multiple blood samples 
+taken for medical reasons. Blood spot screening should be coordinated with 
+other tests where possible. 
+ 
+12.2.3 Venepuncture or venous / arterial sampling from an existing line is an 
+alternative method to collect the blood spot sample. This is providing the line 
+is cleared of infusate. EDTA, heparin or citrate tubes or capillaries should not 
+be used to collect blood as these anticoagulation reagents will affect the 
+assay [ NHS Newborn blood spot screening programme 2014]. 
+ 
+12.2.4 Alcohol, Vaseline or any antiseptic solutions for skin preparation should not 
+be used, as these can interfere with the results. Parafin solutions can increase 
+the risk of infection, can alter results of the test and may clog the equipment 
+used [Linger 2014]. 
+ 
+12.2.5 Sample cards should be completed as detailed in section 6.2. It is important 
+to include all details regarding the baby’s medical condition and any blood 
+transfusions received on the sample card as in some cases, the baby’s 
+condition and treatment may affect accuracy of screening results. In such 
+cases the lab will advise the unit of any baby that requires a repeat test. 
+ 
+12.2.6 Babies cared for in hospital specialist units will usually require additional 
+newborn blood spot screening samples in excess of the routine day 5 sample, 
+as detailed below. 
+ 
+12.3 Admission spot for SCD screening 
+ 
+12.3.1 All babies admitted to TMBU or SCBU should have a single circle blood spot 
+sample taken on admission or prior to transfusion to screen for SCD. The 
+sample taker must write ‘ Pre-Transfusion’ on the sample card. 
+ 
+12.3.2 The ‘ Pre-Transfusion’ blood spot card should be stored on the baby’s clip 
+board in the glassine envelope, kept dry and not compressed in any way. It 
+should be sent to the newborn screening laboratory together with the 
+routine day 5 sample. 
+ 
+12.3.3 If the baby is transferred to another unit or discharged home before the day 
+5 sample has been taken, the ‘pre -transfusion’ sample accompanies the 
+infant. Details of newborn sampling should be included in the transfer 
+information. 
+ 
+12.4 Day 5 routine screening 
+ 
+12.4.1 On day 5 of life [remember day of birth is day 0], a further sample card of 
+four full circles should be taken on all babies, regardless of the medical 
+condition, milk feeding or prematurity. The only exception to this is babies 
+who have received a blood transfusion [see section 12.5]. 
+ Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 30 of 50 
+ 12.4.2 A new sample card should be used for the routine day 5 sample containing 4 
+sample spots. Extra blood spots must NOT be added to the existing single 
+spot ‘pre -transfusion’ card taken on admission to the unit. 
+ 
+12.4.3 The ‘pre -transfusion’ card should be placed in a glassine envelope and 
+stapled to the glassine envelope containing the day 5 card. Details must be 
+fully completed on BOTH cards. Both cards should then be sent to the 
+laboratory together on day 5. 
+ 
+12.4.4 The single circle blood spot sample taken and marked as ‘Pre -transfusion’ can 
+be discarded if the baby does not receive a blood transfusion. However if 
+there is any uncertainty, for example if it is not possible to confirm in the 
+medical notes, then the ‘pre -transfusion’ spot should be sent in with the day 
+5 card. 
+ 
+12.5 Screening after blood transfusion [including intrauterine transfusion] 
+ 
+12.5.1 Blood transfusion should refer to the transfusion of any blood product that 
+will affect the circulating concentration of the metabolite being measured on 
+screening. In practice this refers to blood transfusions, exchange transfusions, 
+platelets and fresh frozen plasma. 
+ 
+12.5.2 For babies who have received an intrauterine transfusion, count the date of 
+birth as date of transfusion. 
+ 
+12.5.3 When a baby has had a blood transfusion, either intrauterine or in the 
+newborn period, before the day 5 blood spot, another sample [of four spots] 
+is required 72 hours after the last blood transfusion. There must be at least 3 
+days from the end of the transfusion before the blood spot is taken. 
+ 
+12.5.4 On reaching day 5, if 72 hours has not passed since transfusion, then wait 
+until this number of hours has been reached, but if you reach day 8 then a full 
+screen must be taken regardless. 
+ 
+12.5.5 In the event of multiple transfusions, a sample card of four spots must be 
+sent by day 8 at the latest. This ensures all babies are screened by day 8 
+regardless of blood transfusion status 
+ 
+12.5.6 The sample taker should record the date of the last blood transfusion before 
+the blood spot was taken on the sample card. 
+ 
+12.5.7 A pre -transfusion sample is the preferred option for sickle cell screening. 
+When a preterm baby has not has a pre -transfusion sample taken, the 
+laboratory may forward the routine 5 -8 day sample to the DNA laboratory for 
+analysis as a failsafe. The laboratory will advise if further specimens are 
+required in these circumstances. 
+ Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 31 of 50 
+ 12.5.8 If a baby who has been transfused has not had a pre-transfusion sample 
+taken, the laboratory will forward the routine day 5 sample to the DNA lab 
+for analysis as a failsafe. 
+ 
+12.6 CHT screening for preterm infants 
+ 
+12.6.1 Babies born at less than 32 weeks [equal to or less than 31weeks and 6 days] 
+require a second blood spot sample for CHT screening to be taken in addition 
+to the ‘pre -transfusion’ and day 5 sample. 
+ 
+12.6.2 These babies should be re -tested when they reach 28 days of age [counting 
+day of birth as day 0] or the day of discharge home, whichever is sooner. If 
+baby is discharged home before 28 days, write ‘discharged home’ on the 
+bloodspot form. 
+ 
+12.6.3 The sample taker must clearly write on the card if the baby has been 
+discharged or remains an in -patient 
+ 
+12.6.4 Only two blood spots are required for this sample. 
+ 
+12.6.5 The sample taker should write ‘CHT preterm’ and the gestational age on the 
+blood spot card. 
+ 
+12.6.6 The responsibility for taking the sample lies with the healthcare professional 
+responsible for clinical care at the time the sample is due. Where babies are 
+transferred before they reach 28 days of age, the responsibility is transferred 
+to the healthcare professional in the receiving unit. 
+ 
+13.0 Documentation 
+ 
+13.1 It is the sample taker’s responsibility to record all blood spot samples taken in the 
+baby’s hospital records and as follows: 
+ 
+• On the cot card which includes space to document when the admission spot and 
+day 5 spot have been taken. 
+• In the admission book held in each unit 
+• On Metavsion [neonatal electronic patient record] which records the dates the 
+samples are due and when they have been taken. Repeat samples are also 
+included on this system. [Note at time of writing policy, Metavision was not yet in 
+place at SCBU, PRH] Therefore the sample taker should record in the baby’s 
+notes that the baby has been screened] 
+ 
+13.2 Any transfer documentation should include details of blood spot samples taken. 
+
+14.0 Special Circumstances: Family history of any of the conditions screened for 
+ 
+ Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 32 of 50 
+ 14.1 Where there is a family history of any of the conditions that are screened for, this 
+should have been identified by the midwife at booking. The booking midwife should 
+refer the woman to the screening midwife team or obstetrician for further discussion 
+in the antenatal period. Such discussions may include options for prenatal and 
+postnatal diagnosis, taking specialist advice from the genetics and paediatric teams 
+where appropriate as to the risk to the baby in this pregnancy. 
+ 
+14.2 Where parents have opted for postnatal diagnosis, a plan should have been made 
+and agreed with parents as to the most appropriate method of testing after birth. 
+This should be agreed with the paediatric team and a copy of this plan should be in 
+the hospital file and maternal hand held notes. 
+ 
+14.3 In certain conditions, early screening may be indicated, for example with MSUD/IVA/ 
+MCADD, due to the potential for the baby to become symptomatic prior to screening 
+on day 5. Where the baby is at risk of inheriting a specific condition it should be 
+under paediatric care and not discharged before the result of screening is known or 
+without consultant paediatric review. Advice as to the best time to screen should be 
+sought from the paediatric team and/or newborn screening laboratory. 
+ 
+14.4 In all such cases, details of the family history should be written on the screening 
+sample card. In urgent cases, the lab should be informed by phone to alert them to 
+expect a sample card on a baby at risk or at higher risk of a condition. 
+ 
+15.0 Ensuring All Babies Have Been Offered Screening 
+ 
+15.1 The trust uses NORTHGATE Newborn Blood Spot Failsafe Solution – the national 
+web based software programme which lists all babies born at the trust along with 
+their blood spot screening result. Where parents have declined screening this is also 
+recorded. Northgate identifies and highlights any babies for whom there is no record 
+of a screening result or record of decline by day 17. 
+ 
+15.2 The designated Northgate lead at each site [ RSCH, PRH, TMBU, SCBU and RACH] [see 
+appendix B contacts], will check Northgate on each week day and action repeats on 
+any baby found not to have a screening result by day 17. See appendix H for 
+Standard Operating Procedure. 
+ 
+15.3 It is acceptable for the designated Northgate lead to nominate a named member of 
+staff to check Northgate, as long as the named member of staff has had training in 
+using the system. 
+ 
+15.4 The trust’s shared NHS net newborn screening email account has the following 
+address: uhsussex.newbornscreening@nhs.net 
+ 
+15.5 The newborn screening email account can be accessed by the key users, that is the 
+community midwife matron, CMW team leaders and antenatal screening co -
+ordinator. Other members of staff may have access to this account to check emails 
+with permission from key users. 
+ Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 33 of 50 
+ 15.6 The Newborn Screening Laboratory will send a list of all samples received from our 
+trust direct to the trust’s shared NHS net newborn screening email account on a daily 
+basis. Therefore it will be possible to cross check that samples sent have been 
+received. It is especially important to check that repeat or delayed samples have 
+been received by the laboratory. 
+ 
+16.0 Audit, training and performance management of sampling [including Key 
+Performance Indicators] 
+ 
+16.1 The newborn screening laboratory will notify the trust of the avoidable repeat rate 
+ on a quarterly basis. This forms the dataset for performance in the screening Key 
+ Performance Indicator [KPI]. 
+ 
+16.2 The antenatal screening co -coordinator will collate and submit the data required for 
+ the KPI and disseminate performance issues within the trust. 
+ 
+16.3 The Community Midwife Team Leader at each site will monitor all avoidable repeats 
+ and any sample taker with a high percentage of avoidable repeats will be required to 
+ undertake additional measures such as retraining and online learning. 
+ 
+16.4 Staff new to an area [for example new to the trust, new to working in the 
+ community, newly qualified or new in to taking blood spot samples etc] should 
+ ideally have their first ten samples second checked before sending to the laboratory 
+ [see appendix H for information about second checking samples]. This is at the 
+ manager’s discretion. 
+ 
+16.5 Staff involved in the newborn blood spot screening programme should ideally attend 
+ an annual update. 
+ 
+16.6 Staff new to the trust who will be involved in the newborn blood spot screening 
+ programme should attend an induction session covering this screening programme. 
+
+17.0 References 
+ 
+Arena, J., et al., Skin to calcaneus distance in the neonate. Arch Dis Child Fetal Neonatal Ed, 
+2005. 90(4): p. F328 -f331. 
+
+Linger A [2014] Clinical Guidelines: neonatal capillary blood sampling. 
+Great Ormond Street Hospital. Available at 
+www.gosh.nhs.uk/health -professionals/clinical -guidelines/blood -sampling -neonatal -
+capillary/ Accessed: 13/08/2014. 
+ 
+NHS England [2013] Public health functions to be exercised by NHS England: Service 
+specification No.19 NHS Newborn blood spot screening programme Available at: 
+https://www.gov.uk/government/publications/public -health -commissioning -in-the-nhs-
+2014 -to-2015 Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 34 of 50 
+ 
+NHS Newborn blood spot screening programme [2014] A Laboratory Guide to Newborn 
+Screening in the UK for cystic fibrosis. Available from: 
+http://newbornbloodspot.screening.nhs.uk/cf -supportingdocs [accessed 13/08/2014]. 
+
+NHS Newborn blood spot screening programme [2013] Newborn blood spot screening 
+pathway. Available at: 
+http://newbornbloodspot.screening.nhs.uk/pathways#fileid12534 [accessed 5/11/14] 
+
+UK Newborn Screening Programme Centre [2012] Guidelines for Newborn Blood Spot 
+Sampling. UK National Screening Committee, February 2012. 
+ 
+Abbreviations used within this document : 
+ 
+AN - anetenatal 
+CHRU – Child health record unit 
+CHT – congenital hypothyroidism 
+CF – cystic fibrosis 
+DNA – Did not attend 
+GA1 - Glutaric aciduria type 1 
+GP – general practitioner 
+HCU - Homocystinuria (pyridoxine unresponsive) 
+HV – health visitor 
+IMD – inherited metabolic disorder 
+IVA - Isovaleric acidaemia 
+MCADD – medium chain Acyl -CoA dehydrogenase deficiency 
+MSUD - Maple syrup urine disease (MSUD) 
+MSW – Maternity Support worker 
+MW – midwife 
+PCHR – personal child health record [red book] 
+PKU – Phenylketonuria 
+RACH – Royal Alexandra Children’s Hospital 
+SCD – sickle cell disorders 
+
+ Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 35 of 50 
+ Appendix A - Care Pathways 
+Pathway 1.1 Healthy term neonate: Information and testing process 
+
+All women given the information leaflet Screening tests for you and your baby’ at booking 
+ 
+Screening accepted: Arrange to take sample on 
+day 5 [day 5 -8 in exceptional circumstances]. Day 
+of birth counted as day 0. 
+ 
+Screening declined 
+Document decline in postnatal / 
+paediatric notes and PCHR. 
+ 
+Complete all details on a blood spot 
+sample card and send to the newborn 
+screening lab with blood spot circles left 
+blank. 
+Inform the following in writing: 
+- GP, HV, CHRU 
+- CMW team leader [if sample 
+taken in maternity] 
+Ask parent to sign decline form. 
+Ensure that parents are aware of how 
+to have their baby tested if they change 
+their minds about accepting screening 
+in the future. 
+ 
+Document that newborn bloodspot screening has 
+been discussed, booklet given and consent sought. 
+Record acceptance in postnatal / paediatric notes and 
+personal child health record [PCHR]. 
+Take test according to protocol, Fill all 4 circles 
+completely. Complete all details on bloodspot card. 
+Write clearly on form if one or more tests declined. 
+Ensure parents understand blood spots are retained 
+for at least 5 years – write ‘NO RESEARCH CONTACT’ 
+on form if parents don’t wish to be contacted about 
+this in future. 
+ 
+Send to card to laboratory immediately [within 24 
+hours of sample being taken] 
+At least 24 hours pre -test, ensure that parents have received the leaflet and understand which conditions 
+are being screened for. The p olicy is to RECOMMEND screening. Advise parents to prepare foot [by 
+keeping warm with socks] prior to test. 
+RESULT 
+ CONDITIONS NOT 
+SUSPECTED 
+ 
+All results are sent to the local 
+Child Health Record Unit who 
+notify the health visitor [HV] and 
+send a letter direct to the parents. 
+ 
+HV ensures results have been 
+received at the 6 -8 week check 
+and documents results in the 
+PCHR [ red book] 
+RESULTS: 
+CONDITION/S 
+SUSPECTED 
+See policy section 9.3 
+to 9.7 
+REPEAT 
+REQUIRED 
+ 
+See Pathway 
+4 
+‘Repeat 
+sample 
+pathway’ Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 36 of 50 
+ Pathway 1.2 Special considerat ions for premature infants and screening for CHT 
+
+ Baby born before 32 weeks gestation [31+6 or below] 
+ 
+Take routine sample on day 5 [4 spots required] 
+Take further sample wh en baby reaches 28 days of age (counting day of birth 
+as day 0) or the day of discharge, whichever is sooner. 
+ 
+Write ‘CHT preterm’ on the card (2 spots required) 
+ 
+Rationale: immaturity of the hypothalamic -pituitary axis in the premature baby 
+may mask congenital hypothyroidism 
+
+ Take ‘ pre-transfusion’ spot on admission to neonatal unit ( 1 spot requ ired) Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 37 of 50 
+ Pathway 1:3 Special considerations for newborn blood spot screening in babies admitted 
+to SCBU/ neonatal unit 
+
+ Offer routine screening day 5 
+for CHT, PKU, CF and 
+MCADD. 
+Note: This should be delayed 
+until 72 hours AFTER the last 
+transfusion is completed . If the 
+baby is having repeated 
+transfusions then the sample 
+should be taken on day 5 but 
+repeated again 72 hours after 
+the last transfusion . Baby admitted to NICU / SCBU (any gestation) 
+Take ‘ pre-transfusion’ spot on admission to neonatal unit (1 spot required) regardless 
+of reason for admission. 
+ 
+Rationale: When screening for sickle cell disorders [SCD], the blood spot sample 
+MUST be taken before a blood transfusion, even if this is before day 5. A screening 
+test after transfusion will test the donor blood for sickle cell disorders rather than the 
+baby’s own blood. Taking a single spot on admission will reduce the need to recall 
+babies at a later date for repeats. 
+ 
+NOTE: if admission to NICU / SCBU is anticipated antenatally , then consent 
+should be sought from parents prior to birth as appropriate 
+Sample card 
+should be clearly 
+marked ‘PRE -
+TRANSFUSION’. 
+Retain card and 
+send to the 
+laboratory with the 
+routine day 5 
+sample. 
+
+Also refe r to 
+Pathway 2 if born 
+before 32 weeks 
+ 
+ Admission 
+sample taken 
+(1 spot) Admission sample not taken 
+e.g. due to emergency or lack of time 
+to gain parental consent 
+Baby not 
+transfused Baby receives blood 
+transfusion 
+Offer routine 
+screening da y 5 
+for CHT, PKU, 
+CF, SCD and 
+MCADD 
+ 
+Also refe r to 
+Pathway 2 if 
+born before 32 
+weeks Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 38 of 50 
+ Pathway 1:4 Repeat sample pathway [RSCH/ Brighton and Hove] 
+
+Laboratory emails request for repeat sample to community 
+midwifery team leader and informs child health record unit [CHRU] 
+HV visits family. 
+Explains reason why a 
+repeat sample is required. 
+Documents discussion and 
+parental consent in PCHR. 
+ 
+Remember that it is not 
+possible to screen for CF 
+after 56 days [8 weeks] . 
+ 
+Brighton and Hove area: 
+Arrange appointment in 
+phlebotomy at RACH within 
+3 working days. 
+ 
+Mid Sussex area: 
+The parent would contact 
+PRH on 01444 441881 and 
+ask for the paediatric nurse 
+on bleep 6034 to arrange a 
+time to take their baby to 
+have the sample taken. 
+
+Baby 28 days or under 
+ 
+Repeat sample required 
+because the first sample by 
+midwifery or neonatal services 
+was an avoidable repeat. 
+Midwifery services to arrange repeat 
+within 72 hours [3 days] of request. If 
+the baby is still under care of 
+neonat al/ paediatric team, they will 
+be asked to take repeat sample. 
+ 
+Explain reason for repeat to parents. 
+Proceed with screening as per 
+protocol. 
+ 
+Repeat required – 
+unavoidable repeat 
+
+Health visitor’s responsibility 
+to ensure all parents have 
+received results and that 
+these are documented in the 
+PCHR. 
+Repeat sample 
+required for 
+any reason 
+ 
+Baby over 28 days 
+ 
+CHRU, lab or midwifery team 
+leader informs named health 
+visitor that repeat is required Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 39 of 50 
+ 
+Pathway 1:5 Movers -in pathway [includes arranging for samp le collection at RACH 
+phlebotomy by health visitors] 
+
+Give pre -test information [written and verbal]. The policy 
+is to actively recommend screening. Remember that it is 
+not possible to screen for CF after 8 weeks. 
+ 
+Document discussion and parental consent / decline for 
+screening in PCHR. 
+ 
+Phlebotomy returns 
+referral letter to HV via 
+post. HV follows -up and 
+arranges reappointment 
+Baby newly moved into a rea and is under 1 year of age. [HV 
+may be the first to identify family OR HV may be informed by 
+CHRU] 
+Within 10 working days of the HV being notified of new family, HV visits to ascertain 
+whether baby has had screening elsewhere 
+Baby has not 
+had any 
+screening 
+Baby screened elsewhere but 
+either: 
+No written result available 
+OR 
+Not tested for all the conditions 
+currently screened for locally 
+If in doubt offer re -screen 
+Baby screened 
+elsewhere and 
+written results 
+available for all the 
+conditions currently 
+screened for locally 
+Document in PCHR 
+and send copy of 
+results to CHRU to 
+be recorded on 
+database 
+Screening accepted: 
+Arrange appointment at phlebotomy, RACH within 3 
+working days. 
+ 
+HV faxes completed referral letter [see appendix G ] to 
+level 5 phlebotomy 
+ 
+Screening 
+declined : 
+ 
+Document in PCHR. 
+ 
+Complete decline 
+letter and copy to 
+CHRU, laboratory 
+and GP . 
+ 
+Ensure parents have 
+contact number in 
+case they change 
+their mind about 
+testing 
+ 
+Attend appointment 
+ DNA appointment 
+All results given back to 
+parents via health visitor 
+and documented in the 
+personal child health 
+record book. Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 40 of 50 
+ 
+Appendix B : C ontacts 
+ 
+Newborn Screening Laboratories [note: all sample cards are sent to St Thomas’s] 
+ 
+LABORATORIES 
+ 
+Laboratory for CF/ MACDD / PKU / CHT/ Additional metabolic disorders 
+ 
+Newborn Screening Laboratory 
+GSTS Pathology, 4th Floor North Wing, St Thomas Hospital, SE1 7EH 
+Tel: 0207 188 1267 All queries 
+Service Manager : 0207 188 5472 
+ 
+Director: Rachel Carling 
+Deputy: Rachelle Garstone 
+
+Laboratory for Sickle Cell Disorders 
+Sickle Cell Suspected or other haemoglobin suspected cases are dealt with by : 
+Consultant: Dr David Rees 
+Laboratory Operations Manager: Chris Lambert 
+Red Cell Centre 
+Kings College Hospital 
+Denmark Hill 
+LONDON SE5 9RS 
+ 
+Tel 020 3299 9000 ext 32455 
+
+Address to send the sample cards to [when using courier to transport specimens]: 
+ 
+Newborn Bloodspot Screening lab 
+C/O Central Specimen Reception 
+5th Floor 
+North wing 
+St Thomas Hospital 
+London 
+SE1 7EH 
+
+COURIER COLLECTION COMPANY 
+CITY SPRINT 
+ 
+Telephone: 01273 818 285 
+ 
+Newborn screening laboratory results line [for all results and queries] 
+ Phone: 0207 188 1267 Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 41 of 50 
+ Fax number: 02071881269 Gst-tr.selonbslab@nhs.net 
+ 
+MATERNITY UNIT 
+ 
+Shared email for newborn screening enquiries: 
+ bsu-tr.newbornscreening@nhs.net 
+ 
+Antenatal Screening C o-ordinator 
+Karen Gregory 
+karen.gregory12@nhs.net 
+ Mobile: 07876 357 423 
+Office: 01273 696955 X7477 
+ 
+Antenatal Screening Support Midwives [BSUH] 
+RSCH: Mobile: 07876 357 423 Office: 01273 696955 X7477 
+ 
+PRH: Office: 01444 441881 X 65404 
+ 
+Midwifery Liasion 
+ 
+Community Midwives Office, RSCH 01273 664794 X 64361 
+Bolney Ward, PRH: 01444 441881 X 68478 
+ 
+Lead for Northgate [failsafe web programme] 
+Alex Winstanley, Midwifery Team Leader 01273 664794 
+Rebecca Elms, Midwifery Team Leader 01444 448608 
+TMBU : Claire Hunt, Neonatal Matron 01273 696955 x 4377 
+ 
+Child Health Bureau 
+Brighton & Hove Children & Families Services, Child Records Unit – Office 3, Basement - E 
+Block, Brighton General Hospital , Elm Grove, Brighton, BN2 3EW 
+Telephone 01273 696011 Blood spot recording: X 4224 / 4227 
+Community Health Centre , Bicentennial Building , Terminus Road , Chichester , PO19 8EZ 
+Telephone 01243 793643 
+Blood Sp ot Recording: Lucy White x 65158, General ext x 65160 
+ 
+Cystic Fibrosis 
+ 
+Regional CF team at Kings College Hospital: 
+CF nurse specialist= Jo Dignan 020 3299 9000 ext 33342, bleep 876047 
+Email : jo.dignan @nhs.net 
+ Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 42 of 50 
+ CF team at Royal Alexandra Children’s Hospital, Eastern Road, Brighton. 
+ Level 4C, Cystic Fibrosis and Respiratory Nurse Specialists: 
+ Jason Lenton 07810 550433 
+ Phone: 01273 696955 Extension 62518 
+ 
+CF Paediatrician 
+Dr Paul Seddon [Consultant Paediatrician]: 
+Royal Alexandra Children’s Hospital, Brighton 01273 696955 
+paul.seddon@nhs.net 
+ 
+CF – Genetics Counselling: 
+North East Thames Regional Genetics Service - Clinical Genetics Department, Great Ormond 
+Street Hospital, Great Ormond Street, London, WC1N 3JH 
+Telephone number: 020 7762 6845/ 6831/ 6856 
+Fax number: 020 7813 8141 Email: gos-tr.clinicalgenetics@nhs.net 
+ 
+IMDs – Inherited Metabolic Disorders 
+[MCADD/ PKU/ MSUD/ HCU/ IVA/ GA1] 
+ 
+South Thames Metabolic Service is based at the Evelina Children’s Hospital 
+ Lead Consultant: Dr Mike Champion 
+ Metabolic Nurse Specialist Tanya Gill 020 7188 0855 
+ Email : paediatricmetabolicc ns@gstt.nhs.uk 
+
+Cogenital Hypothyroidsim - CHT 
+ 
+Dr Shankar Kanumakala [Consultant Paediatrician – Endocrinology] 
+Royal Alexandra Children’s Hospital, Brighton 
+01273 696955 ext 62341 
+s.kanumakala@nhs.net 
+ 
+Haemoglobinopathy [Sickle cell and thalassaemia] 
+ 
+ Paediatrician 
+ Dr Anne Davidson [Consultant Paediatrician - Haemoglobinopathy]: Royal 
+ Alexandra Children’s Hospital, Bri ghton 01273 696955 X 62324 
+ anne.davidson10@nhs.net 
+ 
+ Health Visitor S pecialist [RSCH babies] 
+ Hollingdean Childrens Centre, 8 Shenfiled Way, Brighton, BN1 7DY 
+ linda.gardner@nhs.net rachael.chatterje@nhs.net and hilda.beckford@nhs.net 
+
+Link Health Visitor Specialist [PRH - West Sussex babies] 
+ Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 43 of 50 
+ Claire Auston 
+Pound Hill Children and Family Centre 
+Crawley Lane, Pound Hill, Crawley, RH10 7EB 
+ 
+c.auston@nhs.net 
+ 
+01293 227809 
+07500 097442 
+
+ Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 44 of 50 
+ APPENDIX C : Newborn bloodspot screening [see following page] 
+Newborn bloodspot screening: Record of samples taken / sent 
+ 
+Name of sample taken: 
+ 
+Baby name /DOB / NHS no 
+ 
+Use barcoded label where available Date taken 
+Date posted Sample card serial number 
+Location of post box 
+
+ Taken: 
+
+Posted: 
+ 
+ Card serial no: 
+
+Post box: 
+
+ Taken: 
+
+Posted: 
+ 
+ Card serial no: 
+
+Post box: 
+ Taken: 
+
+Posted: 
+ 
+ Card serial no: 
+
+Post box: 
+ Taken: 
+
+Posted: 
+ 
+ Card serial no: 
+
+Post box: 
+ 
+ Taken: 
+
+Posted: 
+ 
+ Card serial no: 
+
+Post box: 
+
+ Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 45 of 50 
+ RETURN to community midwifery office every week 
+Appendix C – Patient Information Leaflet – Repeat Screening T est. 
+
+Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 46 of 50 
+
+Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 47 of 50 
+ 
+Appendix D – Letter to inform health professionals of screening decline: 
+Copy to GP, HV, CHRU, Screening Lab, CMW team leader. 
+
+Private and Confidential 
+ 
+TO 
+ 
+<INSERT GP name> 
+<INSERT GP address> 
+ <Insert your address > 
+<Insert your contact number> 
+
+<INSERT date> 
+ 
+DECLINE OF NEWBORN BLOOD SPOT SCREENING 
+ 
+Dear <GP name> 
+ 
+Re: <INSERT baby’s name> 
+< INSERT baby’s NHS number 
+<INSERT date of birth> 
+<INSERT Baby’s last known address> 
+ 
+I am writing to inform you that the parents of the child above have declined <all> <part, name tests declined> 
+newborn blood spot screening. 
+ 
+Newborn blood spot screening is offered to all babies up to one year of age and screens for the rare conditions 
+listed below: 
+ 
+Phenylketonuria 
+Congenital hypothyroidism 
+Sickle cell diseases 
+Cystic fibrosis (can only be tested for babies up to 56 days of age) 
+Medium -chain acyl -CoA dehydrogenase deficiency (MCADD) 
+Maple syrup urine disease (MSUD) 
+Homocystinuria (pyridoxine unresponsive) (HCU) 
+Isovaleric acidaemia (IVA) 
+Glutaric aciduria type 1 (GA1) 
+ 
+We are providing this information so that a record of decline is entered onto the medical record and to make 
+you aware should the child present with any symptoms of the conditions normally screened for. 
+Although not as satisfactory, screening for all conditions except cystic fibrosis would be available up to one 
+year old, if the parents should change their minds 
+ 
+Yours sincerely, 
+ 
+<INSERT signature > 
+<Insert your printed name and job title > 
+ 
+CC: Health Visitor <INSERT HV name> 
+ Child Health Record Unit 
+ Copy to maternal notes 
+ 
+Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 48 of 50 
+ 
+Appendix E Parental Decline Form 
+ National Newborn Bloodspot Screening Programme 
+Parental Decline Form 
+
+I have been informed about the National Newborn Bloodspot Screening Programme and 
+understand why the screening is recommended and what medical conditions are screened 
+for. 
+ 
+I have had the opportunity to discuss the newborn screen with 
+ 
+----------------------------------------------------------- (name) 
+ 
+------------------------------------------------------------ (profession) and all of my questions have 
+been answered to my satisfaction. 
+ 
+Please confirm below: 
+I do not want my baby to have a blood spot test to screen for the following conditions 
+which, if undiagnosed, could in some cases result in serious health problems, permanent 
+disability or death: Phenylketonuria, Hypothyroidism, MCADD, Sickle Cell disease and Cystic 
+Fibrosis (if under 8 weeks of age ), maple syrup urine disease (MSUD), homocystinuria 
+(pyridoxine unresponsive) (HCU), isovaleric acidaemia (IVA), glutaric aciduria type 1 (GA1) 
+ 
+Signed ------------------------------------------------------------------------- 
+ 
+Date ---------------------------------------------------- 
+ 
+C.C. G.P, H.V. records, Child record unit 
+SEND COMPLETED SAMPLE CARD TO LABORATORY 
+
+Parent/Carer ---------------------------- ----------------------------------------------- 
+ 
+Baby -------------------------------------------------------- ---------------- ----------- 
+ 
+Baby’s DOB -------------------------------------------------------------------------- 
+ 
+Baby’s NHS number ---------------------------------------------------------------- 
+Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 49 of 50 
+ 
+Surname 
+Fornames
+DDMMYY
+Postcode SEX [√]Is the baby in 
+hospital [√] NHS
+Comments [family history e.g. Mother's carrier status 
+[Antenatal HBO code, HBO outcome code]: Temporary address
+Name of person taking sample [PRINT] DATE OF 
+SPECIMEN
+DDMMYY
+Is this a 
+repeat [√]
+YES NO
+If yes, current hospital and ward:YES NO If yes, date 
+of last 
+transfusion DDMMYYHas the baby 
+had a blood 
+transfusion [√] YES NONEWBORN SCREENING BLOOD SPOT TEST
+GEST ……………………
+…………….…..….. /40
+Rank ……
+…….. /Ethnic 
+CodeBaby's NHS No
+M F Home 
+address
+GP Practice Name
+Mother's NHS number Mother's DOBMother's full nameBaby's DOB
+Birth weight [g]
+GP address
+Parent phone no.
+Alternative surname
+Tel no of person taking sample Hospital of birthMaternity code RXHGP practice code
+ 
+Appendix: F HV Referral Form t o Paediatric Phlebotom y 
+ 
+ To the Phlebotomy Department, ROYAL ALEXANDRA CHILDREN’S HOSPITAL 
+ I would like to refer the following client for a repeat bloodspot screening due to: 
+ 
+ Transfer in under 1 year old (no evidence of previous result) Post transfusion sample 
+ Lab. Request – inconclusive result Other –please state below 
+ Repeat due to prematurity – born before 35+2 wks. ………………………………………… 
+ Health Visitor to complete this form clearly in block capitals: 
+
+ Name of HV [PRINT] ………………………..…………………………………………… HV signature………………………………… 
+ HV Based at ………………………..……………………………………………………………………………………….…………….… 
+ HV Telephone………………………………………………………….. H.V. Fax no..……………………………………………… 
+ Date of referral ………………………………………………..………………………… 
+ To make appointment; Telephone 01273 696955 X 2474 and fax completed 
+ form to 01273 523120 FAO Phlebotomists, Level 5, RACH APPOINTMENT FOR BLOOD SPOT TEST 
+DATE……………………………………….……………………… ………………………… TIME…………………………………..…… Newborn Blood Spot Screening (RSCH PRH only ) MP079 
+ 
+University Sussex Hospital NHS Trust East Page 50 of 50 
+ Appendix G : Flow Chart: Performance Management Of Avoidable Repeats 
+
+ First avoidable repeat 
+Not to undertake further sampling until: 
+• Has seen team leader / line manager to discuss errors 
+• Has completed the elearning newborn screening module 
+and confirmed with manager that this has been 
+completed 
+Next ten samples to be checked for data completeness and 
+signed off by a second checker. If necessary the samples must 
+be brought back to the hospital for re -checking. 
+If the second checker considers that the bloodspots might be 
+rejected by the lab for being insufficient - the card must still 
+be sent to the lab but consider either taking a further sample 
+taken OR follow up with the laboratory to ensure sample is 
+sufficient 
+ 
+Not to undertake further sampling until: 
+• Discussion with supervisor / line manager 
+• One-to-one training session with 
+Antenatal Screening Co -ordinator Further avoidable repeat sample taken within 3 
+months from date of last avoidable repeat Subsequent 
+avoidable repeat: 
+ 
+Total of 2 avoidable 
+repeats within a 3 
+month period 
+ 
+or 
+ 
+Total of 4 avoidable 
+repeats within a 12 
+month period Sample taker informed by team leader / line manager and advised as to why the sample 
+required repeating. Asked to reflect on practice and make changes accordingly . 
+
+No further 
+avoidable 
+repeat 
+samples 
+within the 
+following 3 
+months 
+Further avoidable repeat sample taken within 3 
+months from last avoidable repeat Start 
+pathway 
+again at 
+next 
+avoidable 
+repeat 
+sample 
+• Not to undertake any further blo odspot sampling 
+• Discussion with both line manager/ supervisor and ASC. Only in exceptional 
+circumstances will staff member be allowed to sample again 
+• To consider redeployment to an area where newborn blood spot sampling is 
+not a part of the role [i.e. transfer from the community and work in hospital 
+setting] OR period of supervised practice

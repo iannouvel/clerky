@@ -1,0 +1,458 @@
+# Extracted from: CG11103 Recovery Post Regional and GA Anaesthesia.pdf
+# Guideline ID: cg11103-recovery-post-regional-and-ga-anaesthesia
+# Content length: 22842 characters
+# Processing date: 1750066899.8447485
+
+CG11103 Recovery Post Regional and General Anaesthesia Guideline v10.0 October 2021 
+Please check against Staffnet that this printout is the most recent version of this document. Page 1 of 13 
+
+Recovery following Regional and General Anaesthesia Guideline 
+(Maternity) 
+Summary statement: How does the 
+document support patient care? The purpose of this guideline is to provide good practice 
+evidence for staff recovering women/people following all 
+types of anaesthetic. 
+Staff/stakeholders involved in 
+development: Labour Ward Leads (Obstetric and Midwifery), Audit and 
+Clinical Effectiveness Midwife. 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Consultant Obstetrician and IT, Audit and Clinical 
+Effectiveness Midwife. 
+For use by: All medical and midwifery staff. 
+ 
+Purpose: To provide evidence based guidance on the post anaesthetic 
+care of women/people following caesarean section (CS) and 
+other obstetric procedures. 
+ 
+This document supports: NICE NG 192 Caesarean Birth (2021) 
+Guidelines for Obstetric Anaesthesia(2005), 
+Immediate post anaesthetic recovery (2002), 
+The Anaesthesia Team (2005) 
+
+Key related documents: UH Sussex (SRH&WH) Maternity Guidelines : CG12030 
+Caesarean Section Birth , CG1130 Assisted Vagina Birth , 
+CG1131 Perineal Trauma and Repair , CG1146 Retained 
+Placenta , CG1148 Recognition and Management of 
+Severely Ill Pregnant Women , Maternity Pressure Area 
+Care , CG1134 Postnatal Care 
+Approved by: Joint Obstetric Guideline Group 
+Approval date: 27th October 2021 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable – Divisional Ratification only required 
+Ratification Date: Not Applicable – Divisional Ratification only required 
+Expiry Date: October 2024 
+Review date: April 2024 
+If you require this document in another format such as Braille, large print, audio or 
+another language please contact the Trusts Communications Team 
+Reference Number: CG11103 CG11103 Recovery Post Regional and General Anaesthesia Guideline v10.0 October 2021 
+Please check against Staffnet that this printout is the most recent version of this document. Page 2 of 13 
+
+Version Date Author Status Comment 
+1.0 June 2010 Consultant Obstetrician 
+and IT, Audit and 
+Clinical Effectiveness 
+Midwife Archived New Trustwide guideline 
+2.0 February 2011 CNST Midwife Archived Administrative update 
+3.0 February 2012 Joint Obstetric 
+Guideline Group Archived Amendments made to oral 
+intake following anaesthesia 
+4.0 October 2012 CNST Midwife Archived Minor amendments to clarify 
+CNST requirements 
+4.1 August 2013 Joint Obstetric 
+Guideline Group Archived Version 4 expired -guideline 
+reviewed and extended for 1 
+year 
+5.0 August 2014 Consultant 
+Anaesthetists Archived Guideline expired -reviewed by 
+JOGG and anaesthetists, no 
+changes required at this time 
+6.0 Jan 2018 Consultant 
+Anaesthetists & JOGG Archived Extension for guideline pending 
+Anaesthetic Governance review 
+7.0 June 2018 Consultant 
+Anaesthetists & JOGG Archived Extension for guideline pending 
+Anaesthetic Governance review 
+8.0 February 2019 Consultant 
+Anaesthetists & JOGG Archived Extension whilst recovery 
+process mapping is undertaken 
+and quality improvement project 
+finalised. 
+9.0 November 2019 Consultant 
+anaesthetist Archived Minor amendments to reflect 
+enhanced recovery programme 
+9.1 July 2020 Clinical Effectiveness 
+Support Midwife – 
+S.Harris Archived Addition of maternity pressure 
+area guidance 
+10.0 October 2021 K. Ashpole, Consultant 
+Anaesthetist LIVE Updated to be in line with NICE 
+guideline NICE NG 192 
+Caesarean Birth (2021) . 
+Neurological monitoring: 
+Straight -leg raise assessment 
+added. 
+
+The interpretation and application of clinical guidelines will remain the responsibility 
+of the individual clinician. 
+ 
+If in doubt contact a senior colleague or expert. CG11103 Recovery Post Regional and General Anaesthesia Guideline v10.0 October 2021 
+Please check against Staffnet that this printout is the most recent version of this document. Page 3 of 13 
+
+Index 
+1.0 Aim ................................ ................................ ................................ ........................... 4 
+2.0 Scope ................................ ................................ ................................ ....................... 4 
+3.0 Responsibilities ................................ ................................ ................................ ........ 4 
+4.0 Abbreviations used in this guideline ................................ ................................ .......... 4 
+5.0 Equipment ................................ ................................ ................................ ................ 5 
+6.0 Monitoring and observations following general anaesthesia ................................ ...... 5 
+7.0 Monitoring and observations following regional anaesthesia ................................ ..... 6 
+7.1 Straight -leg raise ................................ ................................ ................................ ...... 7 
+8.0 Ongoing care in the recovery area ................................ ................................ ............ 8 
+9.0 Discharge and subsequent transfer to postnatal ward ................................ ............... 8 
+10.0 Pressure area care ................................ ................................ ................................ ... 9 
+11.0 Further postnatal care................................ ................................ ............................... 9 
+12.0 Training ................................ ................................ ................................ .................... 10 
+13.0 Audit/Monitoring ................................ ................................ ................................ ....... 11 
+References ................................ ................................ ................................ .......................... 12 
+Appendix 1: Neurological monitoring after spinal/epidural ................................ .................... 13 
+ CG11103 Recovery Post Regional and General Anaesthesia Guideline v10.0 October 2021 
+Please check against Staffnet that this printout is the most recent version of this document. Page 4 of 13 
+ Recovery following Regional and General Anaesthesia Guideline 
+(Maternity) 
+1.0 Aim 
+ 
+To provide clear guidance for all staff involved in the post anaesthetic recovery involving the 
+short term care required by pregnant women/people during their immediate post -operative 
+period until they are stable, conscious and orientated. 
+ 
+This will include care following any procedure undertaken under general or spinal 
+anaesthetic. 
+ 
+2.0 Scope 
+ 
+This guideline applies to: 
+ 
+• Midwives 
+• Obstetricians 
+• Anaesthetists 
+• Maternity recovery staff 
+• Operating Department Practitioners 
+• Maternity Assistants. 
+ 
+3.0 Responsibilities 
+ 
+A guideline is a set of measurable, objective standards to determine a course of action. 
+Professional judgement may be used in the application of a guideline. 
+ 
+Midwives & obstetricians: 
+ 
+• To access, read, understand and follow this guidance. 
+• To use their professional judgement in application of this guideline. 
+Management: 
+ 
+• To ensure the guideline is reviewed as required in line with Trust and National 
+recommendations. 
+• To ensure the guideline is accessible to all relevant staff. 
+ 
+4.0 Abbreviations used in this guideline 
+ 
+PCA – Patient Controlled Analgesia MEOWS - Maternity Early Obstetric Warning Score 
+ECG – Electrocardiography AVPU – Alert, voice, pain, unresponsive CG11103 Recovery Post Regional and General Anaesthesia Guideline v10.0 October 2021 
+Please check against Staffnet that this printout is the most recent version of this document. Page 5 of 13 
+ 5.0 Equipment 
+ 
+All women/people should be recovered in an appropriately equipped room by trained staff. 
+The minimum equipment required is: 
+ 
+• Blood pressure monitor (non-invasive) 
+• Oxygen saturation monitor 
+• Thermometer 
+• Oxygen and breathing system to supply 100% oxygen 
+• Suction equipment 
+• Infusion devices. 
+ 
+Devices for the management of post -operative pain control should also be available if 
+required; such as a patient controlled analgesia pump (PCA) and the facility to monitor ECG, 
+as well as access to resuscitation equipment. 
+ 
+6.0 Monitoring and observations following general anaesthesia 
+ 
+After any procedure involving a general anaesthetic, a healthcare professional with airway 
+skills should carry out continuous, one -to-one observation of the woman/person until they 
+have regained airway control , is haemodynamically stable , and is able to 
+communicate . 
+ 
+Unless exceptional circumstances dictate otherwise, this period of continuous observation 
+should be carried out in theatre by the obstetric anaesthetist responsible for the case. 
+ 
+Once the above criteria have been met, care may then be handed over to an appropriately 
+trained member of staff for ongoing care prior to discharge from the recovery area. 
+ 
+All observations carried out by the anaesthetist or theatre recovery staff should be recorded 
+on the anaesthetic chart. Once the woman/person’s care is handed over to the midwife, 
+observations should be recorded on the MEOWS chart. 
+ 
+As a minimum the following observations should be recorded every 5 minutes for the first 
+15 minutes , and recorded on the Maternity Early Obstetric Warning Score (MEOWS) chart. 
+The MEOWS instructions should be followed for abnormal observations (see Recognition 
+and Management of the Severely Ill Pregnant Woman guideline). 
+ 
+• Level of consciousness (using AVPU as per MEOWS chart). 
+• Heart rate. 
+• Blood pressure. 
+• Respiratory rate. 
+• Oxygen saturation by pulse oximetry. 
+• Verbal pain. 
+• Vaginal bleeding. 
+• Overall appearance (well or unwell). CG11103 Recovery Post Regional and General Anaesthesia Guideline v10.0 October 2021 
+Please check against Staffnet that this printout is the most recent version of this document. Page 6 of 13 
+ 
+These observations, if stable should then be recorded ½ hourly for 2 hours . Following this, 
+hourly observations should continue until the pre-discharge from recovery checklist criteria 
+within the Obstetric Theatre record is met, before commencing 4 hourly observations. This 
+pre-discharge checklist must be fully completed including date and time of assessment prior 
+to discharge to the Postnatal Ward. 
+ 
+Any red or 2 yellow MEOWS scores must be actioned according to MEOWS escalation 
+process. 
+ 
+The following observations should be closely monitored and documented: 
+ 
+• Nausea/vomiting. 
+• Wound -bleeding from operation site, wound drains. 
+• Uterine fundus . 
+ 
+Temperature should be recorded ½ hourly for the first 2 hours . 
+ 
+Urine output should be recorded hourly for the first 2 hours . The obstetrician and 
+anaesthetist should be informed if urinary output falls below 30mls per hour on 2 consecutive 
+occasions. 
+ 
+These observations, if stable for 2 hours can be reduced to 4 hourly. 
+ 
+7.0 Monitoring and observations following regional anaesthesia 
+ 
+After any procedure carried out under a spinal or epidural anaesthetic, a healthcare 
+professional should carry out continuous one-to-one observation of the woman/person until 
+they are haemodynamically stable (for example when pulse and blood pressure have 
+returned to baseline values). 
+ 
+As a minimum the following observations should be recorded every 5 minutes for the first 
+15 minutes , and recorded on the Maternity Early Obstetric Warning Score (MEOWS) chart. 
+The MEOWS instructions should be followed for abnormal observations (see ‘Recognition 
+and Management of the Severely Ill Pregnant Woman guideline). 
+ 
+• Level of consciousness (using AVPU as per MEOWS chart). 
+• Heart rate. 
+• Blood pressure. 
+• Respiratory rate. 
+• Oxygen saturation by pulse oximetry. 
+• Verbal pain. 
+• Vaginal bleeding. 
+• Overall appearance (well or unwell). CG11103 Recovery Post Regional and General Anaesthesia Guideline v10.0 October 2021 
+Please check against Staffnet that this printout is the most recent version of this document. Page 7 of 13 
+ These observations, if stable should then be recorded ½ hourly for 1 hour . Following this, 
+hourly observations should continue until the pre-discharge from recovery checklist criteria 
+within the Obstetric Theatre record is met, before commencing 4 hourly observations. This 
+pre-discharge checklist must be fully completed including date and time of assessment prior 
+to discharge to the Postnatal Ward. 
+ 
+Any red or 2 yellow MEOWS scores must be actioned according to MEOWS escalation 
+process. 
+ 
+The following observations should be closely monitored and documented: 
+ 
+• Nausea/vomiting. 
+• Wound -bleeding from operation site, wound drains. 
+• Uterine fundus . 
+Additional observations to be recorded hourly for the first two hours: 
+ 
+• Urine output - Obstetrician and Anaesthetist should be informed if urinary output 
+falls below 30mls per hour on 2 consecutive occasions. 
+• Temperature . 
+ 
+These observations, if stable for 2 hours can be reduced to 4 hourly. 
+ 
+A woman who has received spinal or epidural diamorphine who is deemed to be at a higher 
+risk of respiratory depression (for example, a significantly raised BMI, or diagnosed 
+obstructive sleep apnoea syndrome) should receive for the first 12 hours : 
+ 
+• Continuous pulse oximetry monitoring. 
+ 
+Hourly monitoring of: 
+ 
+• Respiratory rate. 
+• Heart rate. 
+• Blood pressure. 
+• Temperature. 
+• Pain. 
+• Sedation (AVPU). 
+ 
+If the woman remains stable, routine 4 hourly observations may continue after this point. 
+ 
+7.1 Straight -leg raise 
+ 
+Straight -leg raise should be used as a screening tool to assess motor block during recovery 
+from a spinal anaesthetic or epidural top -up. If the woman/person is unable to straight -leg 
+raise at 4 hours after the last dose of epidural/spinal local anaesthetic, the anaesthetist 
+should be urgently called to perform an assessment. (See Appendix 1 ) CG11103 Recovery Post Regional and General Anaesthesia Guideline v10.0 October 2021 
+Please check against Staffnet that this printout is the most recent version of this document. Page 8 of 13 
+ 
+An epidural haematoma can cause irreversible neurological damage if not evacuated within 
+8-12 hours. Delayed detection of symptoms and signs may be exacerbated by delay in 
+clinical diagnosis and referral for appropriate imaging which would be an MRI scan.7 
+ 
+Women/people should be informed of the likely timescale (3 to 5 hours ) for resolution of 
+their neuraxial block and encouraged to alert staff should this be delayed. 
+ 
+The anaesthetist should be called to assess the patient if there is any residual sensory loss 
+in the next 12 -24 hours of recovery. They should be called immediately if there is any 
+worsening of sensory loss or a return of motor weakness after a return of normal function.7 
+ 
+8.0 Ongoing care in the recovery area 
+ 
+• Care should be taken to ensure that intravenous cannulas are patent and that 
+intravenous fluids and other medications are administered and recorded as 
+prescribed. 
+• If the woman/person’s condition necessitates a return to theatre for such 
+procedures as laparotomy, the Obstetric Consultant on call must be asked to 
+attend. 
+• The woman/person must not be left unattended with the baby unless fully 
+conscious and alert. 
+• Additional support should be provided to help the woman/person in caring for and 
+feeding her baby. 
+• Recovery care after a general anaesthetic by the anaesthetist or recovery nurse 
+should be continued on the anaesthetic chart until full care is handed over to the 
+midwife. 
+• Recovery care for regional anaesthesia, and care after handover from recovery 
+staff following general anaesthesia, should be documented in the Obstetric 
+Theatre Care Record. 
+ 
+9.0 Discharge and subsequent transfer to postnatal ward 
+ 
+Before any woman/person is discharged from the recovery area on Labour Ward, the 
+midwife/nurse should satisfy themselves of the following points: 
+ 
+• The patient is conscious, can maintain a clear airway and protective reflexes are 
+present. 
+• Breathing and oxygenation are normal. 
+• The cardiovascular system is stable with no unexplained cardiac irregularity or 
+persistent bleeding and that the woman is haemodynamically stable. 
+• Adequate analgesia and anti-emetic provisions have been made. 
+• Pressure dressings must be removed prior to transfer to the postnatal ward. 
+• Dressings should be dry and intact and any drains should be secure and patent. 
+• Uterus should be well contracted and lochia normal. CG11103 Recovery Post Regional and General Anaesthesia Guideline v10.0 October 2021 
+Please check against Staffnet that this printout is the most recent version of this document. Page 9 of 13 
+ When the above criteria are met and documented in the Obstetric Theatre Record, the 
+patient should be transferred to the postnatal ward on a clean bed and accompanied by a 
+suitably trained health care professional. 
+ 
+Following anaesthesia, women/people should remain on clear fluids only until IV Syntocinon 
+is discontinued. 
+ 
+10.0 Pressure area care 
+ 
+Although pressure ulcers can occur in any patient, the biggest risk factor in maternity is 
+having limited mobility - i.e. those that have had regional or general anaesthesia. In order to 
+prevent this damage, the following post -natal care is recommended: 
+ 
+• Skin assessment and change of Inco pads at birth and then 2-3 hourly until woman is 
+mobilising independently and is scoring “green” on the Maternity PURPOSE T risk 
+assessment tool . 
+• If scoring “red” for having a previous pressure ulcer, once mobilising independently 
+(and otherwise scoring “green”), skin assessments should be performed 12 hourly 
+until home. Repositioning should continue 1 -2 hourly. 
+• Keep Moving: Encourage/assist to reposition 1-2 hourly - if able to stand, the woman 
+should be encouraged to do so for at least 2 minutes. 
+• Keep Moving: Once scoring “green”, women should be advised to mobilise/reposition 
+regularly and pressure areas should be assessed at every post -natal check by a 
+midwife (or earlier if reporting any signs of compromised peripheral perfusion on her 
+pressure areas). 
+• Keep Moving: Optimum maximum length of time spent in bed = up to 12 hours. 
+• Incontinence/Moisture: Protect the skin from moisture with a barrier cream when 
+required. 
+• Incontinence/Moisture: cleanse the skin promptly after episodes of incontinence. 
+ 
+For further information, please refer to the Trust ‘Maternity Pressure Area Care ’ guideline 
+and the intranet page for all resources. 
+ 
+11.0 Further postnatal care 
+ 
+Postnatal observations of temperature, pulse and blood pressure should be recorded 4 
+hourly for 24 hours and then if normal, every 12hours (once a shift) until discharge, unless 
+there is any deviation from the norm. 
+ 
+For women/people who have undergone a caesarean section refer to: CG12030 Caesarean 
+Section Birth Guideline . 
+ 
+Extra support to help establish breastfeeding/infant feeding and with care of the baby should 
+be offered. CG11103 Recovery Post Regional and General Anaesthesia Guideline v10.0 October 2021 
+Please check against Staffnet that this printout is the most recent version of this document. Page 10 of 13 
+ Women/people with problems thought to be attributable to a complication of their anaesthetic 
+should be referred to the obstetric anaesthetist for review. This might include headaches, 
+back pain, numbness or weakness in the legs, difficulty passing urine or opening bowels. 
+ 
+If symptoms persist for escalation to consultant obstetric anaesthetist. 
+ 
+Analgesia, anti-emetics and laxatives should continue as per trust guidelines determined by 
+the woman’s surgery, allergies and preferences. 
+ 
+For further guidance on routine postnatal care refer to: CG1134 Postnatal Care Guideline . 
+ 
+12.0 Training 
+ 
+Staff training for recovery care is evidenced in the Maternity Training Needs Analysis. CG11103 Recovery Post Regional and General Anaesthesia Guideline v10.0 October 2021 
+Please check against Staffnet that this printout is the most recent version of this document. Page 11 of 13 
+ 13.0 Audit/Monitoring 
+ 
+Suggested audit points: 
+ 
+• Regional anaesthesia: There is documented evidence of completion of the 
+following during recovery care - BP, Pulse, Respirations, O2 Saturations, Lochia, 
+AVPU, verbal pain score and overall appearance recorded on the MEOWS chart at 
+the following intervals: 
+o 5 minutely for the first 15 minutes. 
+o Half hourly for the first hour. 
+o Hourly until final recovery criteria met. 
+o Straight -leg raise assessed at 4 hours. 
+o Any concerns with MEOWS chart are escalated appropriately. 
+ 
+• General anaesthesia: There is documented evidence of completion of the following 
+during recovery care - BP, Pulse, Respirations, O2 Saturations, Lochia, AVPU, 
+verbal pain score and overall appearance recorded on the MEOWS chart at the 
+following intervals: 
+o 5 minutely for the first 15 minutes. 
+o Half hourly for the two hours. 
+o Hourly until final recovery criteria met. 
+o Any concerns with MEOWS chart are escalated appropriately. 
+ 
+• All recovery care: There is documented evidence of completion of the following: 
+o Hourly temperature recorded for the first two hours. 
+o MEOW score completed at each entry (red and yellow scoring). 
+o Fluid balance chart is completed with hourly urine outputs for first two hours 
+and then four hourly if within normal limits. CG11103 Recovery Post Regional and General Anaesthesia Guideline v10.0 October 2021 
+Please check against Staffnet that this printout is the most recent version of this document. Page 12 of 13 
+ References 
+ 
+1. Guidelines for Obstetric Anaesthesia (2005), the Association of Anaesthetists of 
+Great Britain and Ireland and Obstetric Anaesthetic Association, London. 
+ 
+2. The Anaesthesia Team - Revised Edition (2005), the Association of Anaesthetists of 
+Great Britain and Ireland, London. 
+ 
+3. Immediate post anaesthetic recovery (2002), The Association of Anaesthetists of 
+Great Britain and Ireland, London. 
+ 
+4. Obstetric Services Raising the Standard Section 8 RCOA (2000). 
+ 
+5. NICE guideline Caesarean Section (2021), Department of Health, London. 
+ 
+6. Pressure Area Care for Maternity Patients Guideline (2020), WSHFT. 
+ 
+7. Safety guideline: Neurological monitoring associated with obstetric neuraxial block 
+(2020) – Yentis et al. Association of Anaesthetists CG11103 Recovery Post Regional and General Anaesthesia Guideline v10.0 October 2021 
+Please check against Staffnet that this printout is the most recent version of this document. Page 13 of 13 
+
+Appendix 1: Neurological monitoring after spinal/epidural

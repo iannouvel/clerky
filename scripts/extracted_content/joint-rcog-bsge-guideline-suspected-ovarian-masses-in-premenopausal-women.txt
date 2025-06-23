@@ -1,0 +1,736 @@
+# Extracted from: Joint RCOG BSGE Guideline - Suspected Ovarian Masses in Premenopausal Women.pdf
+# Guideline ID: joint-rcog-bsge-guideline-suspected-ovarian-masses-in-premenopausal-women
+# Content length: 48021 characters
+# Processing date: 1733438984.0188286
+
+Green-top Guideline No. 62
+RCOG/BSGE Joint Guideline |November 2011
+Management of Suspected Ovarian
+Masses in Premenopausal WomenRCOG Green-top Guideline No. 62 2o f 1 4 © Royal College of Obstetricians and GynaecologistsManagement of Suspected Ovarian Masses in
+Premenopausal Women
+This is the first edition of this guideline.
+1. Purpose and scope
+This guideline has been produced to provide information, based on clinical evidence, to assist clinicians with
+the initial assessment and appropriate management of suspected ovarian masses in the premenopausal
+woman. It aims to clarify when ovarian masses can be managed within a ‘benign’ gynaecological service and
+when referral into a gynaecological oncological service should occur.
+The ongoing management of borderline ovarian tumours is outside the remit of this guideline. The
+laparoscopic management of highly suspicious or known ovarian malignancies is also outside the scope of
+this guideline. In addition, the guideline does not specifically address the acute presentation of ovarian cysts
+or the management of ovarian cysts in pregnant women.
+This guideline should be read in conjunction with Green-top Guideline No. 24 The Investigation and
+Management of Endometriosis .1The diagnosis of ovarian cysts has been addressed in the National Institute
+for Health and Clinical Excellence (NICE) Clinical guidelines on the recognition and initial management of
+ovarian cancer.2The American College of Obstetricians and Gynecologists and the Society of Obstetricians
+and Gynecologists of Canada have also produced guidelines for the management of women with an ovarian
+mass (see section 5.3).3,4
+2. Background and introduction
+Up to 10% of women will have some form of surgery during their lifetime for the presence of an ovarian mass.
+In premenopausal women almost all ovarian masses and cysts are benign. The overall incidence of a
+symptomatic ovarian cyst in a premenopausal female being malignant is approximately 1:1000 increasing to
+3:1000 at the age of 50.
+Preoperative differentiation between the benign and the malignant ovarian mass in the premenopausal
+woman can be problematic with no test or algorithm being clearly superior in terms of accuracy. Exceptions
+are germ cell tumours with elevations of specific tumour markers such as alphafetoprotein ( α-FP) and human
+chorionic gonadotrophin (hCG). 
+Ten percent of suspected ovarian masses are ultimately found to be non-ovarian in origin (Table 1).6
+The underlying management rationale is to minimise patient morbidity by:
+●conservative management where possible
+●use of laparoscopic techniques where appropriate, thus avoiding laparotomy where possible
+●referral to a gynaecological oncologist where appropriate.
+Many ovarian masses in the premenopausal woman can be managed conservatively. Functional or simple
+ovarian cysts (thin-walled cysts without internal structures) which are less than 50 mm maximum diameter
+usually resolve over 2–3 menstrual cycles without the need for intervention. 
+If surgery is indicated, a laparoscopic approach is generally considered to be the gold standard for the
+management of benign ovarian masses.6–10Laparoscopic management is also cost-effective because of the
+associated earlier discharge from hospital.11,12Mini-laparotomy may be considered for occasional very large© Royal College of Obstetricians and Gynaecologists 3o f 1 4 RCOG Green-top Guideline No. 62cysts of benign appearance. On rare occasions the laparoscopic approach may be specifically contraindicated
+in an individual patient.
+It is important to consider borderline ovarian tumours as a histological diagnosis when undertaking any
+surgery for ovarian masses and, when such a histological diagnosis is made or strongly suspected, referral to
+a gynaecological oncology unit is recommended. Preoperative diagnosis can be difficult with radiological and
+serum markers being relatively insensitive, especially in their differentiation from stage I ovarian epithelial
+cancers. Although up to 20% of borderline ovarian tumours appear as simple cysts on ultrasonography the
+majority of such tumours will have suspicious ultrasonographic finding.
+Mean survival time for women with ovarian malignancy is significantly improved when managed within a
+specialised gynaecological oncology service. Hence early diagnosis and referral is important.13
+3. Identification and assessment of the evidence
+This guideline was developed using standard methodology for developing RCOG Green-top Guidelines.14–16
+The Cochrane Library (including the Cochrane Database of Systematic Reviews, DARE and EMBASE), TRIP ,
+Medline and PubMed (electronic databases) were searched for relevant papers. The search was restricted to
+articles published between 1966 and May 2011 and performed by the British Society for Gynaecological
+Endoscopy (BSGE) using RCOG methodology. The databases were searched using the relevant medical subject
+heading terms including all subheadings and this was combined with a keyword search. The medical subject
+heading search included ‘adnexa’, ‘ovary’ and ‘management’. The search was limited to humans and papers in
+the English language. Relevant guidelines were also searched using the same criteria in the National
+Guidelines Clearinghouse, the National electronic Library for Health, the Organising Medical Networked
+Information (OMNI) and the Canadian Medical Association (CMA) Infobase.
+4. Preoperative assessment of women with ovarian masses
+4.1 What is the role of history and examination in the assessment of women with suspected ovarian masses?
+A thorough medical history should be taken from the woman with specific attention to risk factors or
+protective factors for ovarian malignancy and a family history of ovarian or breast cancer. Symptoms
+suggestive of endometriosis should be specifically considered17along with any symptoms suggesting possibleTable 1. Types of adnexal masses
+Benign ovarian Functional cysts
+Endometriomas
+Serous cystadenoma 
+Mucinous cystadenoma 
+Mature teratoma
+Benign non-ovarian Paratubal cyst 
+Hydrosalpinges 
+Tubo-ovarian abscess 
+Peritoneal pseudocysts
+Appendiceal abscess 
+Diverticular abscess 
+Pelvic kidney
+Primary malignant ovarian Germ cell tumour 
+Epithelial carcinoma 
+Sex-cord tumour
+Secondary malignant ovarian Predominantly breast and gastrointestinal carcinoma.ovarian malignancy: persistent abdominal distension, appetite change including increased satiety, pelvic or
+abdominal pain, increased urinary urgency and/or frequency.18,19
+A careful physical examination of the woman is essential and should include abdominal and vaginal
+examination and the presence or absence of local lymphadenopathy. In the acute presentation with pain the
+diagnosis of accident to the ovarian cyst should be considered (torsion, rupture, haemorrhage).
+Although clinical examination has poor sensitivity in the detection of ovarian masses (15–51%) its importance
+lies in the evaluation of mass tenderness, mobility, nodularity and ascites.19,20
+4.2 What blood tests should be performed?
+A serum CA-125 assay does not need to be undertaken in all premenopausal women when an
+ultrasonographic diagnosis of a simple ovarian cyst has been made.21–23
+Lactate dehydrogenase (LDH), α-FP and hCG should be measured in all women under age 40 with a
+complex ovarian mass because of the possibility of germ cell tumours.
+CA-125 is unreliable in differentiating benign from malignant ovarian masses in premenopausal
+women because of the increased rate of false positives and reduced specificity. This is as a result of
+CA-125 being raised in numerous conditions including fibroids, endometriosis, adenomyosis and
+pelvic infection. Consequently a raised serum CA-125 should be interpreted cautiously. However, it
+is important to note that only in stage III–IV endometriosis is it likely to be raised to several
+hundreds or thousands of units/ml.21It is also important to note that CA-125 is primarily a marker
+for epithelial ovarian carcinoma and is only raised in 50% of early stage disease.22
+●A serum CA-125 assay is not necessary when a clear ultrasonographic diagnosis of a simple ovarian cyst has
+been made.23–26
+●If a serum CA-125 assay is raised and less than 200 units/ml, further investigation may be appropriate to
+exclude/treat the common differential diagnoses (see Table 1).
+●When serum CA-125 levels are raised, serial monitoring of CA-125 may be helpful as rapidly rising levels are
+more likely to be associated with malignancy than high levels which remain static.3
+●If serum CA-125 assay more than 200 units/ml, discussion with a gynaecological oncologist is recommended.3
+Guidelines from the United Kingdom2and the USA3recommend that α-FP and hCG should be measured in all
+women under 40 with a complex ovarian mass because of the possibility of germ cell tumours. Guidelines
+from the USA also recommend measuring LDH in these women.
+4.3 What imaging should be employed in the assessment of suspected ovarian masses?
+4.3.1 What is the role of ultrasound in the assessment of suspected ovarian masses?
+A pelvic ultrasound is the single most effective way of evaluating an ovarian mass with transvaginal
+ultrasonography being preferable due to its increased sensitivity over transabdominal ultrasound.
+In some cases, a combination of the transvaginal and transabdominal routes may be appropriate for
+the assessment of larger masses and extra-ovarian disease.3The use of colour flow Doppler has
+generally not been shown to significantly improve diagnostic accuracy27–29but the combined use of
+the transvaginal route in combination with colour flow mapping and 3D imaging may improve
+sensitivity, particularly in complex cases.30,31‘Pattern recognition’ of specific ultrasound findings can
+produce sensitivity and specificity equivalent to logistic regression models, especially when
+performed by more experienced clinicians specialising in women’s imaging.32This could
+potentially reduce the number of ‘unnecessary’ staging laparotomies.33This evidence derives from
+centres with particular expertise in this field and the extent to which this can safely be
+extrapolated into other centres is not clear.
+RCOG Green-top Guideline No. 62 4o f 1 4 © Royal College of Obstetricians and GynaecologistsEvidence
+level 2++B
+BEvidence
+level 2++C5 of 14 RCOG Green-top Guideline No. 62 © Royal College of Obstetricians and GynaecologistsRepeating ultrasound assessment in the postmenstrual phase may be helpful in cases of doubt and
+endometrial views may contribute to diagnosis in cases of estrogen-secreting tumours of the ovary. It is
+important to note that no single ultrasound finding differentiates categorically between benign and malignant
+ovarian masses. 
+4.3.2 What is the role of the routine use of computed tomography and magnetic resonance
+imaging (MRI) in the assessment of suspected ovarian masses?
+At the present time the routine use of computed tomography and MRI for assessment of ovarian masses
+does not improve the sensitivity or specificity obtained by transvaginal ultrasonography in the detection
+of ovarian malignancy.
+There is no clear consensus regarding the need for further imaging beyond transvaginal ultrasound
+in the presence of apparently benign disease. However, these additional imaging modalities will
+have a place in the evaluation of more complex lesions (see section 6.1).34If, from the clinical
+picture and ultrasonographic findings, malignant disease is a possibility, onward referral to a
+gynaecological oncology multidisciplinary team is appropriate.
+5. What is the best way to estimate the risk of malignancy?
+An estimation of the risk of malignancy is essential in the assessment of an ovarian mass.
+At present the Risk of Malignancy Index (RMI) is the most widely used model but recent studies
+have shown a specific model of ultrasound parameters, the ultrasound ‘rules’ derived from the
+International Ovarian Tumor Analysis (IOTA) Group, to have increased sensitivity and specificity.26
+The simple rules have recently been externally validated in 1983 women from 19 ultrasound
+centres in 8 countries.35
+An estimation of the risk of malignancy is essential in the assessment of an ovarian mass. This has been
+assessed using over 80 different models.36
+Simple models involve using discrete cut-off values such as CA-125, pulsatility index, resistance index. 
+Intermediate models include morphology scoring systems and the risk of malignancy index.27,37
+Advanced models include artificial neural networks and multiple logistic regression models – a method for
+determining whether each of a set of independent variables has a unique predictive relationship to a
+dichotomous dependent variable.38
+Unfortunately, many studies do not look specifically at the premenopausal woman. As such, reported results
+may not be applicable to this specific patient group. The routine use of a CA-125 assay in the investigation of
+the premenopausal woman with an ovarian mass has not been shown to be useful because of its relatively
+poor specificity.38,39
+5.1 Which RMI should be used?
+A systematic review of diagnostic studies concluded that the RMI I is the most effective for women with
+suspected ovarian cancer.
+Risk of Malignancy Index
+The RMI was first described by Jacobs in 199040and has since evolved into RMI II,41RMI III42and RMI IV .43To
+date only RMI I and RMI II have been sufficiently validated. The RMI is simple to use and reproducible but its
+utility is negatively affected in the premenopausal woman. This is primarily because of the incidence ofBC
+Evidence
+level 2+
+Evidence
+level 2++
+Bendometriomas, borderline ovarian tumours, non-epithelial ovarian tumours and other pathologies increasing
+the level of CA-125 in this group.3
+A systematic review of diagnostic studies concluded that the RMI I was the most effective for
+women with suspected ovarian malignancy.36The NICE guideline on ovarian cancer2recommends
+that for women with suspected ovarian malignancy the RMI I score should be calculated and used
+to guide the woman’s management.
+Calculation of the RMI I
+RMI I combines three presurgical features: serum CA-125 (CA-125); menopausal status (M); and ultrasound
+score (U). The RMI is a product of the ultrasound scan score, the menopausal status and the serum CA-125
+level (IU/ml) as follows:
+RMI = U x M x CA-125.
+●The ultrasound result is scored 1 point for each of the following characteristics: multilocular cysts, solid areas,
+metastases, ascites and bilateral lesions. U = 0 (for an ultrasound score of 0), U = 1 (for an ultrasound score of
+1), U = 3 (for an ultrasound score of 2–5).
+●The menopausal status is scored as 1 = premenopausal and 3 = postmenopausal.
+●Postmenopausal can be defined as women who have had no period for more than one year or women over
+the age of 50 who have had a hysterectomy.
+●Serum CA-125 is measured in IU/ml and can vary between zero to hundreds or even thousands of units.
+A recent systematic review36showed the pooled sensitivities and specificities of an RMI I score of 200 in the
+detection of ovarian malignancies to be:
+RMI I sensitivity 78% (95% CI 71-85%), specificity 87% (95% CI 83-91%).44–50
+5.2 Is there another way to estimate accurately a risk of malignancy in premenopausal women without using
+a CA-125?
+There are simple ultrasound rules derived from the IOTA Group. The use of specific ultrasound
+morphological findings without CA-125 has been shown to have high sensitivity, specificity and
+likelihood ratios.26,35
+If not clearly classifiable from these rules, further investigation by a specialist in gynaecological
+ultrasound is appropriate.35
+The IOTA Group has published the largest study to date investigating the use of ultrasound in
+differentiating benign and malignant ovarian masses. Using data derived from the IOTA Group,38,51
+simple ultrasound rules were developed to help classify masses as benign (B-rules) or malignant (M-
+rules) (see Table 2). Using these rules the reported sensitivity was 95%, specificity 91%, positive
+likelihood ratio of 10.37 and negative likelihood ratio of 0.06.
+6 of 14 RCOG Green-top Guideline No. 62 © Royal College of Obstetricians and GynaecologistsTable 2. IOTA Group ultrasound ‘rules’ to classify masses as benign (B-rules) or malignant (M-rules)38,51
+B-rules M-rules
+Unilocular cysts Irregular solid tumour
+Presence of solid components where the largest solid component <7 mm Ascites
+Presence of acoustic shadowing At least four papillary structures
+Smooth multilocular tumour with a largest diameter <100 mm Irregular multilocular solid tumour with largest diameter ≥100 mm
+No blood flow Very strong blood flowEvidence
+level 1+
+B
+P
+Evidence
+level 2++RCOG Green-top Guideline No. 62 7o f 1 4 © Royal College of Obstetricians and GynaecologistsWomen with an ovarian mass with any of the M-rules ultrasound findings should be referred to a
+gynaecological oncological service.
+5.3. What other current guidelines are in use?
+The American College of Obstetricians and Gynecologists and the Society of Obstetricians and Gynaecologists
+of Canada have guidelines for the management of premenopausal women with a pelvic mass.3,4They consider
+the following features suspicious for ovarian malignancy and their presence would warrant referral to a
+gynaecological oncologist: serum CA-125 of more than 200 units/ml; ascites; evidence of abdominal or distant
+metastasis; a first-degree relative with breast or ovarian cancer. In the largest study validating these guidelines
+30% of premenopausal women with ovarian cancer would not have been regarded as high risk.49
+6. Management of ovarian masses presumed to be benign in non-emergency situations
+6.1 Can asymptomatic women with simple ovarian cysts be managed expectantly?
+Women with small (less than 50 mm diameter) simple ovarian cysts generally do not require follow-up
+as these cysts are very likely to be physiological and almost always resolve within 3 menstrual cycles.
+Women with simple ovarian cysts of 50–70 mm in diameter should have yearly ultrasound follow-up and
+those with larger simple cysts should be considered for either further imaging (MRI) or surgical
+intervention.
+With the widespread use of ultrasound in clinical practice incidental finding of simple ovarian cysts has
+become commonplace. In one study 4% of women, with a median age of 26 years, had an ovarian cyst greater
+than 30 mm in diameter in their luteal phase.52
+One generally accepted definition of an ovarian cyst is: ‘a fluid-containing structure more than 30
+mm in diameter’. Women with simple cystic structures less than 50 mm generally do not require
+follow-up as these cysts are very likely to be physiological and almost always resolve within 3
+menstrual cycles.53The Society of Radiologists in Ultrasound published a consensus statement
+concluding that asymptomatic simple cysts 30–50 mm in diameter do not require follow-up, cysts
+50–70 mm require follow-up, and cysts more than 70 mm in diameter should be considered for
+either further imaging (MRI) or surgical intervention due to difficulties in examining the entire cyst
+adequately at time of ultrasound.54
+6.2 How should persistent, asymptomatic ovarian cysts be managed?
+Ovarian cysts that persist or increase in size are unlikely to be functional and may warrant surgical
+management.
+Ovarian cysts that persist or increase in size after several cycles are unlikely to be functional.55–57
+Mature cystic teratomas (dermoid cysts) have been shown to grow over time,58–59increasing the risk
+of pain and ovarian accidents. Surgical management is therefore usually appropriate, with
+preoperative assessment using RMI 1 or ultrasound rules (IOTA Group). There is no evidence-based
+consensus on the size above which surgical management should be considered. Most studies have
+used an arbitrary maximum diameter of 50–60 mm among their inclusion criteria to offer
+conservative management.58–59
+6.3 Does the use of combined oral contraceptives help in the treatment of functional ovarian cysts?
+The use of the combined oral contraceptive pill does not promote the resolution of functional ovarian
+cysts.C
+Evidence
+level 4C
+Evidence
+level 4
+C
+AA recent Cochrane review of the effects of the oral contraceptive pill in the treatment of functional
+ovarian cysts concluded that there was no earlier resolution in the treatment group compared to
+the control group.60However, these trials were small with significant heterogeneity.
+6.4 Is the laparoscopic approach better for the elective surgical management of ovarian masses? 
+The laparoscopic approach for elective surgical management of ovarian masses presumed to be benign
+is associated with lower postoperative morbidity and shorter recovery time and is preferred to
+laparotomy in suitable patients.7–10
+Laparoscopic management is cost-effective because of the associated earlier discharge and return to
+work.11
+In the presence of large masses with solid components (for example large dermoid cysts) laparotomy
+may be appropriate.
+A systematic review of six randomised controlled trials compared the laparoscopic approach with
+laparotomy in a total of 324 women undergoing removal of ovarian cysts. Laparoscopy was
+associated with reduced febrile morbidity, less postoperative pain, lower rates of postoperative
+complications, earlier discharge from hospital and lower overall cost.61
+The maximum cyst size above which laparotomy should be considered is controversial. In one trial
+comparing mini-laparotomy with laparoscopy for the surgical management of benign ovarian tumours, cyst
+rupture occurred more often in the laparoscopy group, but only in a subgroup of women with cysts larger
+than 70 mm.9
+Although reports of successful laparoscopic management of very large or even ‘giant’ benign ovarian tumours
+exist in the literature,62,63there is currently insufficient evidence to recommend this approach. It is likely that
+drainage or removal of large ovarian cysts will require significant extension of the laparoscopic port incision,
+in which case the advantages of laparoscopic approach would be reduced. Some of these reports required a
+mini-laparotomy for drainage or removal of the cyst.64
+6.5 Who should perform laparoscopic surgery for a presumed benign ovarian cyst?
+Laparoscopic management of presumed benign ovarian cysts should be undertaken by a surgeon with
+suitable experience and appropriate equipment, whenever local facilities permit.
+The appropriate route for the surgical management of ovarian masses depends on several factors related to
+the woman (including suitability for laparoscopy and her wishes), the mass (size, complexity, likely nature)
+and the setting (including surgeon’s skills and equipment). A decision should be made after careful clinical
+assessment and counselling considering the above factors. Where appropriately trained staff and equipment
+are unavailable then consideration should be given to referral to another provider.
+6.6 Should an ovarian cyst be aspirated?
+Aspiration of ovarian cysts, either vaginally or laparoscopically, is less effective and is associated with
+a high rate of recurrence.
+Randomised controlled trials have shown the resolution rates of simple ovarian cysts to be similar
+whether expectant management or ultrasound guided needle aspirations were used (46% versus
+44.6% respectively).65The recurrence rates after laparoscopic needle aspiration of simple cysts
+range from 53% to as high as 84%.65,66
+8 of 14 RCOG Green-top Guideline No. 62 © Royal College of Obstetricians and GynaecologistsBEvidence
+level 1++
+A
+A
+C
+Evidence
+level 1++
+P
+Evidence
+level 2++RCOG Green-top Guideline No. 62 9o f 1 4 © Royal College of Obstetricians and GynaecologistsFor highly selected cases, following discussion between the woman and her clinician, transvaginal or
+laparoscopic aspiration may be an appropriate intervention.67
+6.7 Is it important to avoid unplanned rupture of the cyst?
+Spillage of cyst contents should be avoided where possible as preoperative and intraoperative
+assessment cannot absolutely preclude malignancy.
+Consideration should be given to the use of a tissue bag to avoid peritoneal spill of cystic contents
+bearing in mind the likely preoperative diagnosis.
+It is preferable to avoid spillage of cyst contents because the apparently benign characteristics of a cyst on
+preoperative and intraoperative assessment cannot absolutely preclude malignancy.68
+Chemical peritonitis due to spillage of dermoid cyst contents has been reported in different series to occur
+in less than 0.2% of cases.69–71If inadvertent spillage does occur, meticulous peritoneal lavage of the peritoneal
+cavity should be performed using large amounts of warmed fluid. Use of cold irrigation fluid may not only
+cause hypothermia, but it will also make retrieval of the contents more challenging by solidifying the fat-rich
+contents. Any solid content should be removed using an appropriate bag.
+The RCOG Green-top Guideline on the investigation and management of endometriosis1recommends in the
+case of endometrioma (greater than 30 mm in diameter) that histology should be obtained to identify
+endometriosis and to exclude rare cases of malignancy. Obtaining such histology using the standard surgical
+technique will inevitably cause peritoneal spill of cyst contents. There is always the potential to inadvertently
+upstage a tumour if the suspected endometrioma is actually a malignant tumour. This is rare: a leading centre
+reported no cases of malignancy in 814 women with consecutive endometriomas of greater than 30 mm in
+diameter.72As there is no effective preoperative discriminator between an endometrioma and some rare cases
+of ovarian cancer such upstaging may be inevitable. Consideration of the possibility of rare underlying
+malignancy should be managed on an individual basis through multidisciplinary team meetings.
+6.8 When should an oophorectomy be performed?
+The possibility of removing an ovary should be discussed with the woman preoperatively.
+This discussion should be in the context of it being either an expected or unexpected part of the procedure.
+The pros and cons of electively removing an ovary should be discussed, taking into consideration the
+woman’s preference and the specific clinical scenario. 
+6.9 How should an ovarian mass be removed?
+Where possible removal of benign ovarian masses should be via the umbilical port. This results in less
+postoperative pain and a quicker retrieval time than when using lateral ports of the same size.
+Various types of laparoscopic tissue retrieval bags have been described, both specifically designed
+products and innovatively used pre-existing equipment. The use of tissue retrieval bags is
+commonplace but there is no general consensus for their routine use.
+Removing tissue in a tissue retrieval bag via the umbilical port has been investigated in a
+randomised73and a large prospective trial.74Removal of benign ovarian masses via the umbilical
+port should be utilised where possible as this results in less postoperative pain and a quicker
+retrieval time. Avoidance of extending accessory ports is beneficial in reducing postoperative pain,
+as well as reducing incidence of incisional hernia and incidence of epigastric vessel injury. It also
+leads to improved cosmesis.PP
+P
+A
+Evidence
+level 2-
+Evidence
+level 1-7. Suggested audit topics
+●The percentage of women with unexpected malignancy after elective laparoscopic surgery for ovarian cysts.
+●Ultrasound reporting of ovarian cyst characteristics.
+●Laparotomy for ovarian cysts presumed to have an increased risk of malignancy preoperatively, where the
+ultimate diagnosis is benign.
+●The percentage of women with complications following laparoscopic surgery for ovarian cysts.
+10 of 14 RCOG Green-top Guideline No. 62 © Royal College of Obstetricians and GynaecologistsReferences
+1. Royal College of Obstetrics and Gynaecologists. The
+investigation and management of endometriosis . Green-top
+Guideline No. 24. London: RCOG; 2006.
+2. National Institute for Health and Clinical Excellence. Ovarian
+cancer: The recognition and initial management of ovarian
+cancer . NICE clinical guideline 122. London: NICE; 2011.
+3. American College of Obstetricians and Gynecologists.
+Management of adnexal masses. ACOG Practice Bulletin No.
+83. Washington DC: ACOG; 2007.
+4. Le T, Giede C, Salem S, Lefebvre G, Rosen B, Bentley J, et al;
+Society of Obstetricians and Gynaecologists of Canada. Initial
+evaluation and referral guidelines for management of pelvic/
+ovarian masses . J Obstet Gynaecol Can 2009;31:668–80.
+5. Office for National Statistics. Cancer registrations in England
+2008. London: ONS; 2010 [www.ons.gov.uk/ons/rel/vsob1/
+cancer-registrations-in-england/2008/index.html].
+6. Canis M, Botchorishvili R, Manhes H, Wattiez A, Mage G, Pouly
+JL, et al. Management of adnexal masses: role and risk of
+laparoscopy. Semin Surg Oncol 2000;19:28–35.
+7. Mais V , Ajossa S, Mallarini G, Guerriero S, Oggiano MP , Melis GB.
+No recurrence of mature ovarian teratomas after laparoscopic
+cystectomy. BJOG 2003;110:624–6.
+8. Yuen PM, Yu KM, Yip SK, Lau WC, Rogers MS, Chang A. A
+randomized prospective study of laparoscopy and laparotomy
+in the management of benign ovarian masses. Am J Obstet
+Gynecol 1997;177:109–14.
+9. Panici PB, Muzii L, Palaia I, Manci N, Bellati F , Plotti F , et al.
+Minilaparotomy versus laparoscopy in the treatment of benign
+adnexal cysts: a randomized clinical study. Eur J Obstet
+Gynecol Reprod Biol 2007;133:218–22.
+10. Fanfani F , Fagotti A, Ercoli A, Bifulco G, Longo R, Mancuso S, et
+al. A prospective randomised study of laparoscopy and
+minilaparotomy in the management of benign adnexal masses.
+Hum Reprod 2004;19:2367–71.
+11. Damiani G, Campo S, Dargenio R, Garcea N. Laparoscopic vs.
+laparotomic ovarian cystectomy in reproductive age women:
+an economic evaluation. Gynaecol Endoscopy 1998;7:19–23.
+12. Quinlan DJ, Townsend DE, Johnson GH. Safe and cost-effective
+laparoscopic removal of adnexal masses. J Am Assoc Gynecol
+Laparosc 1997;4:215–8.
+13. Vernooij F , Heintz P , Witteveen E, van der Graaf Y . The outcomes
+of ovarian cancer treatment are better when provided by
+gynecologic oncologists and in specialized hospitals: a
+systematic review. Gynecol Oncol 2007;105:801–12.
+14. Royal College of Obstetricians and Gynaecologists.
+Development of RCOG Green-top Guidelines: Policies and
+Processes . Clinical Governance Advice No. 1a. London: RCOG;
+2006.
+15. Royal College of Obstetricians and Gynaecologists.
+Development of RCOG Green-top Guidelines: Producing a
+Scope . Clinical Governance Advice No. 1b. London: RCOG;
+2006.
+16. Royal College of Obstetricians and Gynaecologists.
+Development of RCOG Green-top Guidelines: Producing a
+Clinical Practice Guideline . Clinical Governance Advice No.
+1c. London: RCOG; 2006.
+17. Ballard KD, Seaman HE, de Vries CS, Wright JT. Can
+symptomatology help in the diagnosis of endometriosis?
+Findings from a national case-control study – Part 1. BJOG
+2008;115:1382–91. 18. Department of Health. Key messages for ovarian cancer for
+health professionals . London: DH; 2009 [www.dh.gov.uk/en/
+Publicationsandstatistics/publications/publicationspolicyandgui
+dance/DH_110534]. 
+19. Ueland FR, Depriest PD, Desimone CP , Pavlik EJ, Lele SM,
+Kryscio RJ, et al. The accuracy of examination under anesthesia
+and transvaginal sonography in evaluating ovarian size.
+Gynecol Oncol 2005;99:400–3.
+20. Padilla LA, Radosevich DM, Milad MP . Accuracy of the pelvic
+examination in detecting adnexal masses. Obstet Gynecol
+2000;96:593–8.
+21. Kahraman K, Ozguven I, Gungor M, Atabekoglu CS. Extremely
+elevated serum CA-125 level as a result of unruptured
+unilateral endometrioma: the highest value reported. Fertil
+Steril 2007;88:968.e15–7.
+22. Zurawski VR Jr, Orjaseter H, Andersen A, Jellum E. Elevated
+serum CA 125 levels prior to diagnosis of ovarian neoplasia:
+relevance for early detection of ovarian cancer. Int J Cancer
+1988;42:677–80.
+23. Van Calster B, Timmerman D, Bourne T, Testa AC, Van Holsbeke
+C, Domali E, et al. Discrimination between benign and
+malignant adnexal masses by specialist ultrasound examination
+versus serum CA-125. J Natl Cancer Inst 2007;99:1706–14.
+24. Im SS, Gordon AN, Buttin BM, Leath CA 3rd, Gostout BS, Shah
+C, et al. Validation of referral guidelines for women with pelvic
+masses. Obstet Gynecol 2005;105:35–41.
+25. Timmerman D, Van Calster B, Jurkovic D, Valentin L, Testa AC,
+Bernard JP , et al. Inclusion of CA-125 does not improve
+mathematical models developed to distinguish between
+benign and malignant adnexal tumors. J Clin Oncol
+2007;25:4194–200.
+26. Timmerman D, Testa AC, Bourne T, Ameye L, Jurkovic D, Van
+Holsbeke C, et al. Simple ultrasound-based rules for the
+diagnosis of ovarian cancer. Ultrasound Obstet Gynecol
+2008;31:681–90.
+27. Sassone AM, Timor-Tritsch IE, Artner A, Westhoff C, Warren WB.
+Transvaginal sonographic characterization of ovarian disease:
+evaluation of a new scoring system to predict ovarian
+malignancy. Obstet Gynecol 1991;78:70–6.
+28. Vuento MH, Pirhonen JP , Mäkinen JI, Laippala PJ, Grönroos M,
+Salmi TA. Evaluation of ovarian findings in asymptomatic
+postmenopausal women with color Doppler ultrasound.
+Cancer 1995;76:1214–8.
+29. Stein SM, Laifer-Narin S, Johnson MB, Roman LD, Muderspach
+LI, Tyszka JM, et al. Differentiation of benign and malignant
+adnexal masses: relative value of gray-scale, color Doppler, and
+spectral Doppler sonography. AJR Am J Roentgenol
+1995;164:381–6.
+30. Dai SY , Hata K, Inubashiri E, Kanenishi K, Shiota A, Ohno M, et
+al. Does three-dimensional power Doppler ultrasound improve
+the diagnostic accuracy for the prediction of adnexal
+malignancy? J Obstet Gynaecol Res 2008;34:364–70.
+31. Guerriero S, Ajossa S, Piras S, Gerada M, Floris S, Garau N, et al.
+Three-dimensional quantification of tumor vascularity as a
+tertiary test after B-mode and power Doppler evaluation for
+detection of ovarian cancer. J Ultrasound Med 2007;26:1271–8.
+32. Levine D, Asch E, Mehta TS, Broder J, O'Donnell C, Hecht JL.
+Assessment of factors that affect the quality of performance
+and interpretation of sonography of adnexal masses. J
+Ultrasound Med 2008;27:721–8.RCOG Green-top Guideline No. 62 11 of 14 © Royal College of Obstetricians and Gynaecologists33. Yazbek J, Raju SK, Ben-Nagi J, Holland TK, Hillaby K, Jurkovic D.
+Effect of quality of gynaecological ultrasonography on
+management of patients with suspected ovarian cancer: a
+randomised controlled trial. Lancet Oncol 2008;9:124–31.
+34. van Trappen PO, Rufford BD, Mills TD, Sohaib SA, Webb JA,
+Sahdev A, et al. Differential diagnosis of adnexal masses: risk of
+malignancy index, ultrasonography, magnetic resonance
+imaging, and radioimmunoscintigraphy. Int J Gynecol Cancer
+2007;17:61–7.
+35. Timmerman D, Ameye L, Fischerova D, Epstein E, Melis GB,
+Guerriero S, et al. Simple ultrasound rules to distinguish
+between benign and malignant adnexal masses before surgery:
+prospective validation by IOTA group. BMJ2010;341:c6839.
+36. Geomini P , Kruitwagen R, Bremer GL, Cnossen J, Mol BW . The
+accuracy of risk scores in predicting ovarian malignancy: a
+systematic review. Obstet Gynecol 2009;113:384–94.
+37. Bourne TH, Campbell S, Reynolds KM, Whitehead MI, Hampson
+J, Royston P , et al. Screening for early familial ovarian cancer
+with transvaginal ultrasonography and colour blood flow
+imaging. BMJ1993;306:1025–9.
+38. Timmerman D, Testa AC, Bourne T, Ferrazzi E, Ameye L,
+Konstantinovic ML, et al. Logistic regression model to
+distinguish between the benign and malignant adnexal mass
+before surgery: a multicenter study by the International
+Ovarian Tumor Analysis Group. J Clin Oncol
+2005;23:8794–801.
+39. Dearking AC, Aletti GD, McGree ME, Weaver AL, Sommerfield
+MK, Cliby WA. How relevant are ACOG and SGO guidelines for
+referral of adnexal mass? Obstet Gynecol 2007;110:841–8.
+40. Jacobs I, Oram D, Fairbanks J, Turner J, Frost C, Grudzinskas JG.
+A risk of malignancy index incorporating CA 125, ultrasound
+and menopausal status for the accurate preoperative diagnosis
+of ovarian cancer. Br J Obstet Gynaecol 1990;97:922–9.
+41. Tingulstad S, Hagen B, Skjeldestad FE, Onsrud M, Kiserud T,
+Halvorsen T, et al. Evaluation of a risk of malignancy index
+based on serum CA-125, ultrasound findings and menopausal
+status in the pre-operative diagnosis of pelvic masses. Br J
+Obstet Gynaecol 1996;103:826–31. 
+42. Tingulstad S, Hagen B, Skjeldestad FE, Halvorsen T, Nustad K,
+Onsrud M. The risk-of-malignancy index to evaluate potential
+ovarian cancers in local hospitals. Obstet Gynecol
+1999;93:448–52. 
+43. Torres JC, Derchain SF , Faundes A, Gontijo RC, Martinez EZ,
+Andrade LA. Risk-of-malignancy index in preoperative
+evaluation of clinically restricted ovarian cancer. Sao Paulo
+Med J . 2002;120:72–6.
+44. Morgante G, la Marca A, Ditto A, De Leo V . Comparison of two
+malignancy risk indices based on serum CA125, ultrasound
+score and menopausal status in the diagnosis of ovarian
+masses. Br J Obstet Gynaecol 1999;106:524–7.
+45. Aslam N, Tailor A, Lawton F , Carr J, Savvas M, Jurkovic D.
+Prospective evaluation of three different models for the pre-
+operative diagnosis of ovarian cancer. BJOG
+2000;107:1347–53. 
+46. Mol BW , Boll D, De Kanter M, Heintz AP , Sijmons EA, Oei SG, et
+al. Distinguishing the benign and malignant adnexal mass: an
+external validation of prognostic models. Gynecol Oncol
+2001;80:162–7. 
+47. Manjunath AP , Pratapkumar, Sujatha K, Vani R. Comparison of
+three risk of malignancy indices in evaluation of pelvic masses.
+Gynecol Oncol 2001;81:225–9. 
+48. Ma S, Shen K, Lang J. A risk of malignancy index in preoperative
+diagnosis of ovarian cancer. Chin Med J (Engl) 2003;116:396–9.
+49. Andersen ES, Knudsen A, Rix P , Johansen B. Risk of malignancy
+index in the preoperative evaluation of patients with adnexal
+masses. Gynecol Oncol 2003;90:109–12. 
+50. Van Holsbeke C, Van Calster B, Valentin L, Testa AC, Ferrazzi E,
+Dimou I, et al. External validation of mathematical models to
+distinguish between benign and malignant adnexal tumors: a
+multicenter study by the International Ovarian Tumor Analysis
+Group. Clin Cancer Res 2007;13:4440–7. 51. Timmerman D, Valentin L, Bourne TH, Collins WP , Verrelst H,
+Vergote I; International Ovarian Tumor Analysis (IOTA) Group.
+Terms, definitions and measurements to describe the
+sonographic features of adnexal tumors: a consensus opinion
+from the International Ovarian Tumor Analysis (IOTA) Group.
+Ultrasound Obstet Gynecol 2000;16:500–5.
+52. Teichmann AT, Brill K, Albring M, Schnitker J, Wojtynek P , Kustra
+E. The influence of the dose of ethinylestradiol in oral
+contraceptives on follicle growth. Gynecol Endocrinol
+1995;9:299–305. 
+53. MacKenna A, Fabres C, Alam V , Morales V . Clinical management
+of functional ovarian cysts: a prospective and randomized
+study. Hum Reprod 2000;15:2567–9.
+54. Levine D, Brown DL, Andreotti RF , Benacerraf B, Benson CB,
+Brewster WR, et al. Management of asymptomatic ovarian and
+other adnexal cysts imaged at US: Society of Radiologists in
+Ultrasound Consensus Conference Statement. Radiology
+2010;256:943–54.
+55. Ben-Ami M, Geslevich Y , Battino S, Matilsky M, Shalev E.
+Management of functional ovarian cysts after induction of
+ovulation. A randomized prospective study. Acta Obstet
+Gynecol Scand 1993;72:396–7.
+56. Steinkampf MP , Hammond KR, Blackwell RE. Hormonal
+treatment of functional ovarian cysts: a randomized,
+prospective study. Fertil Steril 1990;54:775–7.
+57. Turan C, Zorlu CG, Ugur M, Ozcan T, Kaleli BG, Gökmen O.
+Expectant management of functional ovarian cysts: an
+alternative to hormonal therapy. Int J Gynaecol Obstet
+1994;47:257–60.
+58. Alcázar JL, Castillo G, Jurado M, Garcia GL. Is expectant
+management of sonographically benign adnexal cysts an
+option in selected asymptomatic premenopausal women?
+Hum Reprod 2005;20:3231–4.
+59. Caspi B, Appelman Z, Rabinerson D, Zalel Y , Tulandi T, Shoham
+Z. The growth pattern of ovarian dermoid cysts: a prospective
+study in premenopausal and postmenopausal women. Fertil
+Steril 1997;68:501–5.
+60. Grimes DA, Jones LB, Lopez LM, Schulz KF . Oral contraceptives
+for functional ovarian cysts. Cochrane Database Syst Rev
+2009;(2):CD006134.
+61. Medeiros LR, Stein AT, Fachel J, Garry R, Furness S. Laparoscopy
+versus laparotomy for benign ovarian tumor: a systematic
+review and meta-analysis. Int J Gynecol Cancer
+2008;18:387–99.
+62. Ghezzi F , Cromi A, Bergamini V , Uccella S, Siesto G, Franchi M, et
+al. Should adnexal mass size influence surgical approach? A
+series of 186 laparoscopically managed large adnexal masses.
+BJOG 2008;115:1020–7.
+63. Sagiv R, Golan A, Glezerman M. Laparoscopic management of
+extremely large ovarian cysts. Obstet Gynecol
+2005;105:1319–22.
+64. Dolan MS, Boulanger SC, Salameh JR. Laparoscopic
+management of giant ovarian cyst. JSLS2006;10:254–6.
+65. Zanetta G, Lissoni A, Torri V , Dalla Valle C, Trio D, Rangoni G, et
+al. Role of puncture and aspiration in expectant management
+of simple ovarian cysts: a randomised study. BMJ
+1996;313:1110–3.
+66. Marana R, Caruana P , Muzii L, Catalano GF , Mancuso S.
+Operative laparoscopy for ovarian cysts. Excision vs. aspiration.
+J Reprod Med 1996;41:435–8.
+67. Testa AC, van Holsbeke C, Mascilini F , Timmerman D. Dynamic
+and interactive gynecological ultrasound examination.
+Ultrasound Obstet Gynecol 2009;34:225–9.
+68. Maiman M, Seltzer V , Boyce J. Laparoscopic excision of ovarian
+neoplasms subsequently found to be malignant. Obstet
+Gynecol 1991;77:563–65.
+69. Koçak M, Dilbaz B, Ozturk N, Dede S, Altay M, Dilbaz S, Haberal
+A. Laparoscopic management of ovarian dermoid cysts: a
+review of 47 cases. Ann Saudi Med 2004;24:357–60.
+70. Nezhat CR, Kalyoncu S, Nezhat CH, Johnson E, Berlanda N,
+Nezhat F . Laparoscopic management of ovarian dermoid cysts:
+ten years' experience. JSLS1999;3:179–84.12 of 14 RCOG Green-top Guideline No. 62 © Royal College of Obstetricians and Gynaecologists71. Shawki O, Ramadan A, Askalany A, Bahnassi A. Laparoscopic
+management of ovarian dermoid cysts: potential fear of
+dermoid spill, myths and facts. Gynecol Surgery
+2007;4;255–60.
+72. Donnez J, Nisolle M, Gillet N, Smets M, Bassil S, Casanas-Roux F .
+Large ovarian endometriomas. Hum Reprod 1996;11:641–45.
+73. Chou LY , Sheu BC, Chang DY , Huang SC, Chen SY , Hsu WC, et
+al. Comparison between transumbilical and transabdominal
+ports for the laparoscopic retrieval of benign adnexal masses: a
+randomized trial. Eur J Obstet Gynecol Reprod Biol
+2010;153:198–202.
+74. Ghezzi F , Cromi A, Uccella S, Siesto G, Bergamini V , Bolis P .
+Transumbilical surgical specimen retrieval: a viable refinement
+of laparoscopic surgery for pelvic masses. BJOG 2008
+115:1316–20.13 of 14 RCOG Green-top Guideline No. 62 © Royal College of Obstetricians and GynaecologistsGrades of recommendations
+At least one meta-analysis, systematic review or
+randomised controlled trial rated as 1++ and
+directly applicable to the target population; or 
+A systematic review of randomised controlled
+trials or a body of evidence consisting
+principally of studies rated as 1+ directly
+applicable to the target population and
+demonstrating overall consistency of results
+A body of evidence including studies rated as
+2++ directly applicable to the target
+population, and demonstrating overall
+consistency of results; or 
+Extrapolated evidence from studies rated as
+1++ or 1+
+A body of evidence including studies rated as
+2+ directly applicable to the target population
+and demonstrating overall consistency of
+results; or 
+Extrapolated evidence from studies rated as
+2++
+Evidence level 3 or 4; or 
+Extrapolated evidence from studies rated as 2+
+Good practice point
+Recommended best practice based on the
+clinical experience of the guideline
+development groupClassification of evidence levels
+1++ High-quality meta-analyses, systematic
+reviews of randomised controlled trials
+or randomised controlled trials with a
+very low risk of bias
+1+ Well-conducted meta-analyses, systematic
+reviews of randomised controlled trials
+or randomised controlled trials with a
+low risk of bias
+1– Meta-analyses, systematic reviews of
+randomised controlled trials or
+randomised controlled trials with a high
+risk of bias
+2++ High-quality systematic reviews of
+case–control or cohort studies or high-
+quality case–control or cohort studies
+with a very low risk of confounding, bias
+or chance and a high probability that the
+relationship is causal
+2+ Well-conducted case–control or cohort
+studies with a low risk of confounding,
+bias or chance and a moderate
+probability that the relationship is causal
+2- Case–control or cohort studies with a
+high risk of confounding, bias or chance
+and a significant risk that the
+relationship is not causal
+3 Non-analytical studies, e.g. case reports,
+case series
+4 Expert opinionPC
+DBAAPPENDIX 
+Clinical guidelines are ‘systematically developed statements which assist clinicians and women in making
+decisions about appropriate treatment for specific conditions’. Each guideline is systematically developed
+using a standardised methodology. Exact details of this process can be found in Clinical Governance
+Advice No.1: Development of RCOG Green-top Guidelines (available on the RCOG website at
+http://www.rcog.org.uk/guidelines ). These recommendations are not intended to dictate an exclusive
+course of management or treatment. They must be evaluated with reference to individual patient needs,
+resources and limitations unique to the institution and variations in local populations. It is hoped that this
+process of local ownership will help to incorporate these guidelines into routine practice. Attention is
+drawn to areas of clinical uncertainty where further research might be indicated.
+The evidence used in this guideline was graded using the scheme below and the recommendations
+formulated in a similar fashion with a standardised grading scheme.DISCLAIMER
+The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical
+practice. They present recognised methods and techniques of clinical practice, based on published evidence, for
+consideration by obstetricians and gynaecologists and other relevant health professionals. The ultimate judgement
+regarding a particular clinical procedure or treatment plan must be made by the doctor or other attendant in the light
+of clinical data presented by the patient and the diagnostic and treatment options available within the appropriate
+health services. 
+This means that RCOG Guidelines are unlike protocols or guidelines issued by employers, as they are not intended to
+be prescriptive directions defining a single course of management. Departure from the local prescriptive protocols or
+guidelines should be fully documented in the patient’s case notes at the time the relevant decision is taken.The guideline review process will commence in 2014 unless evidence requires earlier review.This guideline has been produced on behalf of the Guidelines Committee of the Royal College of Obstetricians and
+Gynaecologists and the British Society of Gynaecological Endoscopy by:
+Mr PD Kaloo MRCOG, Cheltenham, Mr KA Louden FRCOG, Winchester, Mr S Khazali MRCOG, Winchester,
+Dr D Hoy MB, BS Cheltenham, Mr S Sadoon MRCOG, Gillingham.
+And peer reviewed by: 
+RCOG Consumers’ Forum
+British Medical Ultrasound Society (BMUS)
+Mr D Jurkovich MRCOG, London
+Professor IJ Jacobs FRCOG, London
+Dr U Menon FRCOG, London
+Dr NA Siddiqui FRCOG, Glasgow
+British Society for Gynaecological Endoscopy (BSGE)
+British Gynaecological Cancer Society (BGCS)
+Mr R Naik FRCOG, Newcastle
+Mrs SS Sundar MRCOG, Birmingham
+Dr KA Burton MRCOG, Glagow
+Royal College of Radiologists (RCR)
+International Society of Ultrasound in Obstetrics and Gynaecology
+The Guideline Committee lead reviewers were: Dr AJ Thomson MRCOG, Paisley, Scotland and Dr RG Ashe FRCOG,
+County Antrim, Northern Ireland.
+Conflicts of interest: none declared. 
+The final version is the responsibility of the Guidelines Committee of the RCOG and the BSGE.
+© Royal College of Obstetricians and Gynaecologists 14 of 14 RCOG Green-top Guideline No. 62

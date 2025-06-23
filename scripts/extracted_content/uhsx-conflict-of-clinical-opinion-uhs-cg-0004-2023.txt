@@ -1,0 +1,346 @@
+# Extracted from: UHSx Conflict of Clinical Opinion UHS-CG-0004-2023.pdf
+# Guideline ID: uhsx-conflict-of-clinical-opinion-uhs-cg-0004-2023
+# Content length: 16740 characters
+# Processing date: 1750066902.0849128
+
+Conflict of Opinion Guideline v1.1 UHS -CG-0004 -2023 Sept 2023 Page 1 of 11 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+Conflict of Clinical Opinion Guideline 
+Summary statement: How does the 
+document support patient care? Aim to manage conflicts of opinion during episode of 
+clinical care, keeping patient safety the focus of care 
+planning. 
+Staff/stakeholders involved in 
+development: Midwifery Leadership Team 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Claire Parr, Clinical Governance Lead 
+For use by: All maternity staff 
+Purpose: To be used during times of conflict when undertaking 
+clinical care 
+This document supports: Ockenden Report 2022 
+Key related documents: PAUSES Risk Assessment SOP 
+Approved by: Joint Obstetric Guideline Group 
+Date: 20th September 2023 
+Date uploaded: 20th September 2023 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable – Divisional Ratification only required 
+Ratification Date: Not Applicable – Divisional Ratification only required 
+Expiry Date: May 2026 
+Review date: Nov 2025 
+If you require this document in another format such as Braille, large print, audio or 
+another language please contact the Trusts Communications Team 
+Reference Number: UHS-CG-0004 -2023 Conflict of Opinion Guideline v1.1 UHS -CG-0004 -2023 Sept 2023 Page 2 of 11 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+Version Date Author Status Comment 
+1.0 May 2023 Claire Parr Clinical 
+Governance Lead Archived New UH Sussex maternity 
+guideline 
+1.1 Sept 2023 CE Team LIVE Merged approval with 
+Legacy East. 
+
+The interpretation and application of clinical guidelines will remain the 
+responsibility of the individual clinician. 
+If in doubt contact a senior colleague or expert . Conflict of Opinion Guideline v1.1 UHS -CG-0004 -2023 Sept 2023 Page 3 of 11 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+Contents 
+1.0 Aim ................................ ................................ ................................ ............................ 4 
+2.0 Scope ................................ ................................ ................................ ........................ 4 
+3.0 Responsibilities ................................ ................................ ................................ .......... 4 
+4.0 Abbreviations used within this SOP ................................ ................................ ............ 4 
+5.0 What constitutes a conflict of opinion ................................ ................................ ......... 5 
+6.0 Essential Principles ................................ ................................ ................................ .... 5 
+7.0 Supportive Tools ................................ ................................ ................................ ........ 6 
+7.1 Effective Communication ................................ ................................ ............................ 7 
+8.0 Escalation Process ................................ ................................ ................................ .... 8 
+9.0 Supporting a Resolution ................................ ................................ ............................. 8 
+10.0 References ................................ ................................ ................................ ................ 9 
+11.0 Monitoring ................................ ................................ ................................ .................. 9 
+Appendix 1: Resolving Conflicts of Clinical Opinion ................................ ............................ 10 
+Appendix 2: Resolving Conflicts of Clinical Opinion ................................ ............................ 11 Conflict of Opinion Guideline v1.1 UHS -CG-0004 -2023 Sept 2023 Page 4 of 11 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Conflict of Clinical Opinion Guideline 
+1.0 Aim 
+ 
+The aim of this guidance is to support staff members in being able to escalate their 
+clinical concerns regarding a woman and person’s care in case of disagreement 
+between healthcare professionals, as set as an essential action from the Ockenden 
+Report (2022). All members of the multidisciplinary team (MDT) must feel 
+psychologically safe and empowered to challenge a decision and seek conflict 
+resolution during patient care. 
+This guidance is intended to support escalation and resolution of differences of 
+opinion in any clinical situation and should be read in conjunction with the relevant 
+clinical practice guidance for the specific situation. 
+ 
+2.0 Scope 
+ 
+This guideline applies to all healthcare professionals working with women and 
+people within maternity at University Hospitals Sussex. 
+
+3.0 Responsibilities 
+ 
+Midwives & obstetricians: 
+ 
+• To access, read, understand and follow this guidance. 
+• To use their professional judgement in application of this guideline. 
+ 
+Management: 
+ 
+• To ensure the guideline is reviewed as required in line with Trust and 
+National recommendations. 
+• To ensure the guideline is accessible to all relevant staff. 
+ 
+4.0 Abbreviations used within this SOP 
+ 
+MDT - Multidisciplinary Team NEWTT - Newborn Early Warning Trigger & 
+Track 
+SOP - Standard Operating Procedure CTG - Cardiotocograph 
+MEOWS - Maternity Early Obstetric Warning 
+System MIS - Maternity Information system eg 
+Badgernet 
+PMA - Professional Midwifery Advocate Conflict of Opinion Guideline v1.1 UHS -CG-0004 -2023 Sept 2023 Page 5 of 11 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+5.0 What constitutes a conflict of opinion 
+ 
+In by far the majority of cases, teams work together, communicate well and escalate 
+effectively to achieve positive outcomes and birth experiences for women and people 
+and babies. 
+ 
+However, it is in the rare but devastating cases that we see common themes of poor 
+communication, failed escalation, or ineffective teamwork. This is particularly so 
+when individuals, teams, or the whole system are fatigued or under stress, often due 
+to a high workload. At times of immense pressure, we often see a rise in incivility, 
+which in turn has the potential to impact adversely on patient safety. 
+ 
+Conflict of clinical opinion may arise when: 
+ 
+• Endorsed clinical guidelines are not being followed, through clinical 
+judgement or woman and person choice. 
+• Concerns for the welfare of a woman and person held by one clinician are 
+not acknowledged by another. 
+• Intervention is deemed necessary by one clinician but not by the other. 
+• There is disagreement as to a diagnosis or the appropriate management of 
+a situation. 
+• There is a failure of professionalism and civility. 
+• There is conflicting research/best practice guidance to what is locally used 
+at the time. 
+
+6.0 Essential Principles 
+ 
+Time frame: 
+• Whether the situation allows time for a full discussion, or the woman and 
+person needs time critical care will influence the response taken. In every 
+situation the health professionals involved should be empowered to speak 
+up about any concerns they have. 
+MDT approach: 
+• An open discussion should take place with key members of the MDT which 
+focuses on providing safe care for the woman and person. 
+• MDT could involve anyone working within the maternity environment 
+including midwives, obstetricians, paediatricians, anaesthetists, theatre 
+staff, students, maternity support workers, nursery nurses. Conflict of Opinion Guideline v1.1 UHS -CG-0004 -2023 Sept 2023 Page 6 of 11 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Be objective: 
+• Differences in opinion can cause frustration and an emotional response. It 
+is important to take a holistic view of the situation, using assessment tools 
+where appropriate and communicating concerns clearly. 
+• The use of the risk assessment tool PAUSES will support fact finding and 
+present the case holistically, including staff well -being. Click here for 
+PAUSES SOP. 
+Involve the woman and person: 
+• In all situations it is best practice to sensitively involve the woman and 
+person and family (with consent) in decisions about their care. 
+• Where there is a conflict of clinical opinion, clinicians should have open and 
+honest discussions with the woman and person. This promotes shared 
+decision making and enables the woman and person’s preferences to be 
+included in any discussions about their care. 
+• Put the woman and person at the heart of the decision making and 
+information giving. 
+Communicate effectively: 
+• The key to escalating and resolving concerns is effective communication. 
+• Promote shared understanding of a clinical situations from different 
+clinicians’ perspectives. 
+Documentation: 
+• A summary should be documented on MIS including: the concerns raised; the 
+points discussed and who was involved; and a clear agreed plan. 
+Incident Reporting: 
+• The difference of clinical opinion should be reported formally via the Local 
+Incident Reporting System (Datix), so it can be reviewed independently which 
+supports learning both for the professionals involved and the clinical team. 
+ 
+7.0 Supportive Tools 
+ 
+There are many tools which support clinicians to be factual when raising their 
+concerns. For example, MEOWS, NEWTT, CTG stickers. 
+Assessment of the woman and person’s condition with a recognised tool should be 
+used in conjunction with professional judgement when communicating concerns. Conflict of Opinion Guideline v1.1 UHS -CG-0004 -2023 Sept 2023 Page 7 of 11 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+Clinical practice guidelines relevant to the situation can also be useful in presenting 
+your concerns. 
+
+7.1 Effective Communication 
+SBAR 
+The SBAR communication tool is designed to structure information sharing between 
+clinicians (NHSE 2021). 
+The SBAR tool also supports clinicians who are less confident or experienced in 
+escalating their concerns through the need to state their recommendations. 
+Communication will be most effective if it includes those who have the difference of 
+opinion. If it is not possible to leave the woman and person, the SBAR tool can 
+support escalation with accurate information. 
+Example: 
+ 
+PAUSES 
+This is an intrapartum tool which has been designed with the aim of supporting 
+effective and on-going holistic risk assessments during labour regardless of birth 
+environment and risk status of the individual at the start of labour. Conflict of Opinion Guideline v1.1 UHS -CG-0004 -2023 Sept 2023 Page 8 of 11 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+This tool has been developed to ensure that staff review the situation every two 
+hours and four hourly with another clinician. This supports a regular discussion of 
+risk between clinicians and can present facts and changing risk status in labour. 
+The last 2 letters of PAUSES, the ‘e’ and ‘s’ relates to the escalation and staff well - 
+being aspects of the risk assessment. This supports staff to consider if they need to 
+further escalate their concerns. 
+
+8.0 Escalation Process 
+ 
+The majority of situations will be resolved quickly at the time of the disagreement. 
+When required, the appropriate person to escalate to will depend on the clinicians 
+role and the clinical situation. 
+People you can escalate to for support in resolving differences of clinical opinion 
+include (but not exclusive to): 
+• Senior Midwife present in the clinical area 
+• Senior clinician present in the clinical area 
+• Bleep holder / Coordinator 
+• Matron / Head of Midwifery 
+• Consultant / Clinical Director 
+• Other members of the multidisciplinary team involved in the woman and 
+person’s care 
+• Professional Midwifery Advocate 
+• Midwifery Manager on Call 
+ 
+Note: Resolution is not about winning an argument; it is about understanding each 
+other’s clinical opinions and agreeing a safe plan of care for the woman and person. 
+It may be that both points of view offer safe care options resulting in an opportunity 
+to discuss choices with the woman and person. 
+Appendix 1 provides a flow chart for the advised escalation processes. 
+9.0 Supporting a Resolution 
+ 
+If you are asked to support staff to resolve a difference of clinical opinion, the key 
+skill is in facilitating a respectful discussion. 
+Essential principles: 
+ 
+➢ Use a quiet area away from the woman and person and where the 
+discussions cannot be overheard by other visitors. Conflict of Opinion Guideline v1.1 UHS -CG-0004 -2023 Sept 2023 Page 9 of 11 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+➢ Refocus on the best outcome for the woman and person and the need to 
+be objective. 
+➢ Remind those involved of the need to respect one another (Trust values). 
+Facilitate the conversation so everyone has the opportunity to express their 
+views and encourage them to listen and understand one another. 
+➢ Use open questioning to support those involved to describe their concerns. 
+➢ Invite others to join the conversation where appropriate. For example, a 
+specialist clinical opinion may be useful if not already involved. 
+➢ Be mindful of the well -being of those involved, signposting to additional 
+support such as PMA, clinical/educational supervisors, education team. 
+ 
+10.0 References 
+Humber and North Yorkshire Health and Care Partnership, LMNS (2022) Conflict of 
+Opinion Guideline. 
+NHS (online, updated annually) Patient Safety Strategy. 
+NHSE (2021) SBAR Communication Tool. 
+Ockenden (2022) The Independent Review into Maternity Services. 
+Royal Colleage of Obstetricians and Gynaecologists (online) Escalation toolkit. 
+
+11.0 Monitoring 
+ 
+Incident report outcomes. Appendix 1: Resolving Conflicts of Clinical Opinion 
+Conflict of Opinion Guideline v1.1 UHS -CG-0004 -2023 Sept 2023 Page 10 of 11 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+Remember 
+Tools 
+PAUSES/ 
+SBAR 
+ 
+Difference in clinical opinion occurs 
+Discussion with the clinicians who have a different 
+clinical opinion: 
+✓Clarify what the issue is, be objective 
+✓Listen 
+✓Ask questions to help understanding 
+✓Consider existing plan in patient records 
+✓Use professional judgement & knowledge of 
+women and people’s preferences 
+✓Be open to different point of view & compromise 
+if safe to do so 
+FOCUS ON SAFE CARE FOR THE WOMAN AND 
+PERSON 
+Support available from: 
+•Senior Midwife present in the clinical area 
+•Senior clinician present in the clinical area 
+•Bleep holder / Coordinator 
+•Consultant / Clinical Director 
+•Other members of the multidisciplinary team 
+involved in the woman and person’s care 
+•Midwifery Manager on Call 
+(not an exclusive list) 
+MDT discussion 
+➢What are the risks? 
+➢What is happening now? 
+➢What has changed? 
+➢What do we want to achieve 
+Issue is not resolved 
+ESCALATE 
+AGREE PLAN OF CARE 
+Document in medical records 
+Patient Safety: remember the ongoing clinical care needs of the woman and person while discussions take place Psychological Safety: respectful conversations, free to raise concerns and be heard & acknowledged Appendix 2: Resolving Conflicts of Clinical Opinion 
+Conflict of Opinion Guideline v1.1 UHS -CG-0004 -2023 Sept 2023 Page 11 of 11 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Clinician did not feel 
+respected or listened 
+to when discussing 
+difference of opinion Clinician still has 
+safety concerns 
+despite escalating 
+concerns 
+(appendix 1) 
+Seek support from: 
+• Your line manager 
+• PMA 
+• Matrons 
+• Maternity/Neonatal Safety 
+Champions 
+• Clinical/Educational 
+Supervisor 
+• Education Team 
+• Freedom to Speak Up 
+Guardian Seek support from someone 
+independent of the discussions which 
+have taken place. Their role is to 
+mediate further discussion supporting 
+professionals to agree a way forward. 
+Refocus on the best outcomes for 
+the woman and person 
+Support is available from: 
+• Clinical duty manager 
+• Chief of Service 
+• Clinical Governance Lead 
+• Head of Midwifery 
+• Director of Midwifery 
+(not an exclusive list) 
+Note: the on call consultant has 
+overall clinical and legal 
+accountability. This is particularly 
+relevant where a clinical decision 
+needs to be made quickly. 
+
+ PSYCHOLOGICAL 
+SAFETY CLINICAL SAFETY

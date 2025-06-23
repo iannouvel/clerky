@@ -1,0 +1,763 @@
+# Extracted from: MP035 Care of Women in Labour.pdf
+# Guideline ID: mp035-care-of-women-in-labour
+# Content length: 36591 characters
+# Processing date: 1750066901.385177
+
+Care of Women / 
+People in Labour 
+
+Maternity Protocol: MP035 
+ 
+Date Agreed: April 2022 
+
+Care of Women in Labour MP035 
+University Sussex Hospital NHS Trust East Page 2 of 22 
+
+ Guideline Reviewer: Hayley Stevenson & Sarah Robson 
+Manager responsible: Amanda Clifton 
+Version: 3.1 (placenta histology form updated) 
+Approval Committee: Women’s Safety and Quality Committee 
+Date agreed: 
+Amended Date: April 2022 (v3.1 – placenta histology form approved 17th April 2024) 
+Review date: April 2025 
+Cross reference: MP014 Perinatal Mental Health 
+MP031 Preterm Labour 
+MP039 Waterbirth 
+MP037 Fetal Heart monitoring 
+MP041 Delay in labour & use of Oxytocin 
+MP042 Epidurals in Labour 
+MP04 9 Assisted Vaginal Birth 
+MP050 Caesarean Section 
+MP052 Retained Placenta 
+MP053 Obstetric Haemorrhage 
+MP066 Neonatal Resuscitation 
+MP040 Bladder Care 
+ 
+ Care of Women in Labour MP035 
+University Sussex Hospital NHS Trust East Page 3 of 22 
+ Contents 
+Key Principles ................................ ................................ ................................ ........................ 4 
+Scope ................................ ................................ ................................ ................................ ... 4 
+Responsibilities ................................ ................................ ................................ ..................... 4 
+Objective Standards ................................ ................................ ................................ .............. 5 
+2 Definition of the stages of labour ................................ ................................ ................ 5 
+2.1 Definition 1st stage of labour ................................ ................................ ...................... 5 
+2.2 Definition 2nd stage of labour ................................ ................................ ..................... 5 
+2.3 Definition 3rd stage labour ................................ ................................ .......................... 5 
+3 Care of Women on Admission to Unit /Initial Assessment at Home .............................. 5 
+4 Pre-labour spontaneous rupture of membranes (SROM) at term >37 weeks ................ 7 
+5 Care in Established Labour ................................ ................................ ........................... 8 
+6 Observations during the established first stage of lab our ................................ ............. 8 
+7 Identification of delay in the first stage of labour ................................ ....................... 10 
+8 Observations of women and babies during the second stage of labour ...................... 10 
+9 Duration of the second stage and definition of delay ................................ ................. 11 
+10 Definition and duration of the third stage of labour ................................ ................... 13 
+11 Referral to Obstetric Care ................................ ................................ .......................... 16 
+12 Placenta ................................ ................................ ................................ .................... 17 
+Placental histology request form ................................ ................. Error! Bookmark not defined. 
+13 Care of the newborn baby ................................ ................................ ......................... 18 
+14 Care of the woman after birth ................................ ................................ ................... 18 
+15 References ................................ ................................ ................................ ................ 19 
+Appendix A – ................................ ................................ ................................ ....................... 20 
+
+ Care of Women in Labour MP035 
+University Sussex Hospital NHS Trust East Page 4 of 22 
+ Key Principles 
+ 
+A protocol is a set of measurable, objective standards to determine a course of action. 
+Professional judgment may be used in the application of a protocol. 
+ 
+Scope 
+ 
+This protocol applies to: 
+ Care of healthy pregnant women/people and their babies during labour and 
+immediately after the birth, in all care settings. 
+ Focusing on pregnant women/ people who give birth between 37/42 weeks of 
+pregnancy (‘term’). 
+ 
+Resp onsibilities 
+ 
+Midwives & Obstetricians: 
+ To access, read, understand and follow this guidance 
+ To use their professional judgement in application of this protocol 
+ 
+Management: 
+ To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations 
+ To ensure the protocol is accessible to all relevant staff 
+ To ensure the protocol is available to service users on request 
+
+ Care of Women in Labour MP035 
+University Sussex Hospital NHS Trust East Page 5 of 22 
+ Objective Standards 
+ 
+To ensure all stages of labour are managed correctly as per national guidance to achieve 
+optimal outcomes for low risk pregnant women and people in labour. People have the right 
+to be involved in discussions and make informed decisions about their care,(NICE 2017) and 
+it is essential to include them in the decision making process. 
+2 Definition of the stages of labour 
+ 
+The onset of labour is a complex physiological process and therefore it cannot be easily 
+defined by a single event. Although labour is a continuous process, it is convenient to 
+divide it into stages. Definitions of the stages of labou r need to be clear in order to 
+ensure that pregnant women /people and the staff providing their care have an 
+accurate and shared understanding of the concepts involved, enabling them to 
+communicate effectively. For the purpose of this guideline, the followi ng definitions of 
+labour are recommended: 
+2.1 Definition 1st stage of labour 
+2.1.1 Latent stage of labour / Early labour 
+ 
+A period of time, not necessarily continuous, when there are painful 
+contractions and there is some cervical change, including cervical 
+effacement and dilatation up to 4 cm. 
+2.1.2 Established labour 
+ 
+Established first stage of labour when there are regular, painful 
+contractions, with progressive cervical dilatation from 4 cm 
+2.2 Definition 2nd stage of labour 
+2.2.1 Passive second stage : Full dilation (10cm) of the cervix prior to or in 
+the absence of involuntary expulsive contractions effort. 
+2.2.2 Active second stage – Expulsive contractions and/ or active effort 
+with full dilation, or the baby is visible. 
+2.3 Definition 3rd stage labour 
+ 
+From the birth of the baby to the expulsion of the placenta and 
+membranes. 
+ 
+3 Care of Women on Admission to Unit /Initial Assessment at Home 
+ 
+On attendance MP026 BSOTS protocol should be initiated and be documented on the BSOTS 
+triage tab on BadgerNet 
+ Care of Women in Labour MP035 
+University Sussex Hospital NHS Trust East Page 6 of 22 
+ 3.1 If in the latent phase of labour: 
+ 
+Please referral to MP030 Latent Phase of Labour 
+3.2 If labour is confirmed: 
+ 
+ Cardiotocography (CTG) monitoring is not required, unless risk factors are 
+identified MP037 Fetal Heart Monitoring Offer vaginal examination (VE). 
+ Formulate a plan of care. For pregnant women/people at low risk of 
+complications, amniotomy and oxytocin do not reduce the incidence of caesarean 
+section, increase the incidence of spontaneous vaginal births or contribute to 
+improved neonatal outcomes. They are therefore unnecessary for women at low 
+risk of complications if labour is progressing normally. (NICE CG132 Caesarean 
+Section). 
+3.3 Risk assessment 
+ 
+ An initial risk assessment should be carried out on all women/people in labour on 
+each hospital admission or on attendance at home using the risk assessment page 
+within the Labour Record. 
+ If the Risk Assessment is completed on admission or at home and the 
+woman/person is subsequently discharged or if the midwife leaves the house not 
+in labour a new Risk Assessment should be completed on the next admission. 
+ Midwives providing intrapartum care for pregnant women/people, while raising 
+the profile of normal birth must be able to recognise deviations from normal 
+progress at all three stages of labour, recognising events that may be detrimental 
+to maternal and fetal wellbeing during labour. When new ri sks are identified 
+during any stage of labour, the midwife is responsible for making a timely referral 
+to the on -call obstetric Registrar or Consultant. This should be documented in the 
+health record. 
+ Pregnant women/people should be made aware of the iden tified risk factors (at 
+any time in the process) and referral, particularly women/people at home or in 
+the birth centre who should be advised of the need to transfer into the maternity 
+unit for obstetric review. 
+ 
+3.4 Initial labour risk assessment: 
+ 
+The initia l assessment to identify risk factors or potential complications should be 
+documented on SBAR form on badgernet following management of risk factors flow 
+chart (Appendix A) and should take into account any issues or plans of care identified 
+within the Antenatal Care Record. 
+This will include the following: 
+ Appropriate place of birth and the lead professional - midwife led or 
+consultant led care. 
+ Clinical picture - gravida, parity, gestation by scan and LMP. Care of Women in Labour MP035 
+University Sussex Hospital NHS Trust East Page 7 of 22 
+  Current and previous obstetric history - see Appendix B for conditions to be 
+considered/ referred 
+ Medical history –see Appendix B for conditions to be considered/ referred 
+ Anaesthetic history - see Appendix B for conditions to be considered/ referred 
+ Risk factors for venous thromboembolism and complete VTE assessment 
+form.  Social lifestyle history. 
+ Pressure area assessment 
+ Assessment of routine observations of the women/person and the fetus 
+including: palpation and auscultation. 
+ Listen to the woman, consider her birth plan and wishes 
+ Observe maternal behaviour and ask mother about contractions, fetal 
+movements and PV loss 
+3.5 Identified risk factors, care planning and referrals 
+3.5.1 Women in whom ris ks are identified during the clinical risk 
+assessment should be advised of this and a referral made to obstetric 
+care / for anaesthetic review (as appropriate) with clear 
+documentation and an individualised plan of care in the maternity 
+notes. Women at hom e with risk factors identified should be advised 
+to transfer into the maternity unit for obstetric review and an interim 
+individualised plan of care made. This should be clearly documented 
+in the maternal notes 
+3.5.2 When referral to obstetric staff the midwife should clearly document 
+in the maternal notes the name and grade of doctor consulted and 
+the time the referral was made. For births at home requiring referrals 
+the midwife should clearly document the name, designation and 
+grade of the person she discusses care and agreed plans of care in 
+maternal notes. 
+3.5.3 Referrals as a result of risk assessment and all referrals should be 
+documented in the maternal notes, referrals can be made in the 
+following ways 
+ 
+4 Pre-labour spontaneous rupture of membranes (SROM) at term 
+>37 weeks 
+If spontaneous rupture of membranes >37 weeks is reported without contractions the 
+pregnant woman/person should be assessed as soon as possible (home assessment or to 
+attend the hospital). Where pregnant women/people have additional risks conside r 
+immediate assessment. See protocol ‘MP032 Pre -Labour Rupture of Membranes’ 
+ Care of Women in Labour MP035 
+University Sussex Hospital NHS Trust East Page 8 of 22 
+ 
+5 Care in Established Labour 
+ 
+Support in labour 
+5.1 Provide a woman or person in established labour with supportive one to one 
+care. Do not leave women or people in established labour on her own except 
+for short periods or at the women or persons request. 
+5.2 The initial assessment of a woman by a midwife should include: 
+ 
+Listening 
+ Listening to her story, considering her emotional and psychological 
+needs and reviewing her clinical records including: scan reports to 
+identify placental location/ medical history. 
+Observations Physical observations – temperature, pulse, blood pressure, urinalysis 
+Contractions Frequency, strength, and length of contractions (NICE 2014) 
+Abdominal Palpation Fundal height, lie, presentation, position and engagement 
+Vaginal loss E.g. show, liquor, blood 
+Pain assessment Assessment of the woman’s pain, including her wishes for coping with 
+labour along with the range of options for pain relief. 
+Fetal heart IA or CTG depending on risk assessment. Do not perform CTG for low -
+risk women in suspected labour as part of the initial assessment. (NICE) 
+See Maternity protocol MP037: Fetal heart monitoring for further detail 
+and guidance. 
+Vaginal examination 
+ If the woman does not appear to be in established labour, after a 
+period of assessment a vaginal assessment is not required. If the 
+woman appears to be in established labour, a vaginal examination 
+should be offered 
+Fetal movements Ask the woman about the baby’s movements in the last 24 hours. (NICE 
+2021 ) 
+ 
+3.3.2 All care / procedures / discussions undertaken must be documented on 
+badgernet by the person who undertook them . 
+ 
+3.3.3 Transfer the woman to obstetric -led care if there are any risk factors that 
+indicate the need (See appendix B). If no risk factors, continue with 
+midwifery -led care unless the woman requests transfer to obstetric -led care. 
+If there are risk factors but birth is imminent, assess whether birth in the 
+current location is preferable to transferring to labour ward, and discu ss this 
+with the LWC. (NICE 2021 ) 
+6 Observations during the established first stage of labour 
+It is the responsibility of the midwife to ensure that there is continuous evidence of 
+care, support and assessment of the following on admis sion, throughout labour and 
+the immediate postnatal period. Care of Women in Labour MP035 
+University Sussex Hospital NHS Trust East Page 9 of 22 
+ 6.1 Recommendations from NICE: 
+ A pictorial record of labour (partogram) should be used once labour is 
+established. 
+ Observations by a midwife during the first stage of labour include (NICE1): 
+ 
+Temper ature 4 hourly (unless abnormal, or regional analgesia - BP). BP 
+Pulse 1 hourly 
+Contractions 1/2 hourly documentation of frequency 
+Bladder Frequency of voiding / bladder care 
+VE  Offered 4 hourly, 
+ or where there is concern about progress 
+ or in response to the woman or person’s wishes (after 
+abdominal palpation and assessment of vaginal loss) 
+Liquor Assessment if membranes are ruptured/ presence or absence of 
+significant meconium. 
+Fetal heart See Maternity protocol MP037: Fetal heart monitoring for 
+further detail and guid ance 
+Emotional and 
+psychological 
+needs Ongoing consideration should be given to the woman or 
+person’s emotional and psychological needs 
+Pain relief Women or person should be encouraged to communicate their 
+need for analgesia at any point during labour. All women or 
+people should be offered to use the birthing pool for labour and 
+birth (if it is available and the inclusion criterion is met. 
+ 
+6.2 Pain relief 
+Healthcare professionals should think about how their own values and beliefs 
+inform their attitude to coping with pain in labour and ensure their care 
+supports women and people’s choice. (2007) 
+6.2.1 Pain -relieving strategies 
+ Labouring women/people should be off ered support and 
+encouragement to help them cope with the pain of contractions. 
+ Advice should be given on breathing and relaxation techniques. 
+ Low risk pregnant women/people should be offered the opportunity 
+to labour and birth in water. The benefits of hydrotherapy for pain 
+relief should be explained to all women/people. 
+ Transcutaneous electrical nerve stimulation (TENS) should not be 
+offered to women/people in established labour. 
+ Midwives should feel confident to support women/people in 
+hypnobirthing . 
+ Pregnant women/people are to be informed of their choices 
+regarding all analgesia available to them. 
+ Care of Women in Labour MP035 
+University Sussex Hospital NHS Trust East Page 10 of 22 
+ 6.2.2 Pharmacological analgesia 
+ Oramorph 
+ Entonox: Ensure that entonox is available in all birth settings, 
+inform the women or person that it may make her nauseous and 
+light headed. 
+ Pethidine : undertake a full maternal and fetal assessment 
+including fetal heart (IA or CTG as per risk factors) and fetal 
+movements prior to administration. This can be given under 
+midwifery exempt ions (NMC 2011) u nless risk factors present then 
+a obstetric review is required. The pool or water should no t be 
+used within 2 hours of opiod administration. 
+6.2.3 Regional analgesia - for full guidance see protocol ‘MP042 Epidurals in 
+labour’ 
+ Epidural : For infor mation about epidurals please see MP042 Epidurals 
+in Labour All drugs used should be documented clearly in the 
+prescription chart and on badgernet. 
+ Provide information about epidural analegsia including known risks and 
+benefits, providing the epidural card from the epidural trolley. 
+6.2.4 Either H2- receptors antagonists or antacids should be considered for 
+women who receive opioids or who have or de velop risk factors that 
+make a general anaesthetic more likely. 
+ 
+7 Identification of delay in the first stage of labour 
+7.1 Where delay in the established first stage is suspected the following should be 
+considered: 
+ Parity 
+ Cervical dilation and rate of change 
+ Uterine contractions 
+ Station and position of presenting part 
+ The pregnant woman/person’s emotional state. 
+ Consider emptying bladder. 
+ Referral to the a ppropriate healthcare professional 
+ 
+See protocol MP041 Delay in Labour and Use of Oxytocin for full guidance 
+ 
+8 Observations of women and babies during the second stage of 
+labour 
+Second stage is confirmed either by full dilatation of the cervix on vaginal examination 
+or by a visible presenting part at the perineum. 
+ 
+Observations during the second stage 
+All observations should be documented on the partogram. 
+Observations by a midwife of a woman or person in the second stage of labour include: 
+ Care of Women in Labour MP035 
+University Sussex Hospital NHS Trust East Page 11 of 22 
+
+BP 1 hourly 
+Pulse Every 15 mins 
+Temperature 4 hourly 
+VE  Consider and offer 1 hourly, 
+ or in response to the woman or person’s wishes (after 
+abdominal palpation and assessment of vaginal loss) 
+Contractions 1/2 hourly documentation of frequency and strength 
+Bladder Frequency of voiding / bladder care 
+Liquor Assessment if membranes are ruptured 
+Fetal heart See Maternity protocol MP037: Fetal heart monitoring for 
+further detail and guidance 
+ 
+8.1 Ongoing consideration should be given to: 
+ the woman or person ’s position, hydration, coping strategies and pain 
+relief throughout the second stage 
+ the woman or person ’s emotional and psychological needs 
+8.2 Assessment of progress should include maternal behaviour, effectiveness of 
+pushing and fetal wellbeing, taking into account fetal position and station at 
+the onset of the second stage 
+8.3 All observations and assessments shoul d be documented, by the person 
+carrying them out, in the maternal notes (either in the partogram or the free 
+text pages where description is required) 
+8.4 These factors will assist in deciding the timing of further vaginal examination 
+and the need for obstetri c review. 
+ 
+9 Duration of the second stage and definition of delay 
+9.1 Guidance on duration of the second stage of labour 
+9.1.1 Nulliparous women : 
+ Birth would be expected to take place within 3 hours of the 
+start of the active second stage in most women. 
+ Suspect delay if progress (in terms of rotation and/or descent 
+of the presenting part) is inadequate after 1 hour of active 
+second stage. Offer vaginal examination and then offer 
+amniotomy if the membranes are intact. 
+ Diagnose delay in active stage when it has lasted 2 hours and 
+refer the woman or person healthcare professional trained to 
+undertake an operative vaginal birth if birth is not imminent Care of Women in Labour MP035 
+University Sussex Hospital NHS Trust East Page 12 of 22 
+ 9.1.2 Multip arous women: 
+ Birth would be expected to take place within 2 hours of the 
+start of active second stage in most women. 
+ Suspect delay if progress (in terms of rotation and/or descent 
+of the presenting part) is inadequate after 30 minutes of active 
+second stage. Offer vaginal examination and then offer 
+amniotomy if the membranes are intact. 
+ diagnose delay i n the active second stage when it has lasted 1 
+hour and refer the woman or person to a healthcare 
+professional trained to undertake an operative vaginal birth if 
+birth is not imminent. [2007] 
+9.1.3 If delay is suspected in a homebirth setting consider transfer i nto the 
+Maternity Unit and discuss with LWC, Obstetric team and family 
+ 
+9.2 Defining lack of progress 
+ 
+Lack of continuing progress in second stage of labour with adequate contractions can be 
+defined as follows: 
+
+9.3 Management of delay in progress in the secon d stage 
+ Pregnant women/people with intact membranes should be offered 
+amniotomy. 
+ Consider emptying the bladder. 
+ Consider commencing EFM. 
+9.4 Referral to obstetric team: 
+ In the absence of descent after one hour of ACTIVE pushin g, a referral to the 
+obstetric r egistrar should be considered for a review and plan. 
+Obstetric team referral is indicated if delivery not imminent: 
+ After 2 hours of active pushing for primiparous women/people. 
+ After 1 hour of active pushing for multiparous women/people. 
+ 
+See the following Maternity protocols for additional detail: 
+ MP041 Delay in Labour and Use of Oxytocin 
+ MP049 Operative Vaginal delivery 
+Care of Women in Labour MP035 
+University Sussex Hospital NHS Trust East Page 13 of 22 
+  MP050 Caesarean Section 
+ 
+9.5 The woman's position and pushing in the second stage 
+9.5.1 Discourage the woman from lying supine or semi -supine in the second 
+stage of labour and encourage her to adopt any other position that 
+she finds most comfortable. [2007] 
+9.5.2 If pushing is ineffective or if requested by the woman, offer strategies 
+to assist birth, such as support, change of position, emptying of the 
+bladder and encouragement . [2007] 
+9.6 Intrapartum interventions to reduce perineal trauma 
+ 
+9.6.1 Implement all 4 key principles of the O.A.S.I bundle: 
+ Discussion about OASI and reducing risk with women 
+ Manual perineal protection during birth - Hands on/poised, warm packs. 
+ Mediolateral episiotomy at 60 degrees from midline if indicated 
+ Systematic examination of vagina and ano -rectum after birth even if the 
+perineum appears intact. 
+9.7 Either the 'hands on' (guarding the perineum and flexing the baby's head) or 
+the 'hands poised' (with hands off the perineum and baby's head but in 
+readiness) 
+9.8 Inform any woman with a history of severe perineal trauma that her risk of 
+repeat severe perineal trauma is not increased in a subsequent birth, 
+compared with women having their first baby. [2007] 
+9.9 Inform a ny woman with infibulated genital mutilation of the risks of difficulty 
+with vaginal examination, catheterisation and application of fetal scalp 
+electrodes. Inform her of the risks of delay in the second stage and 
+spontaneous laceration together with the n eed for an anterior episiotomy and 
+the possible need for defibulation in labour. [2007 ] MP027 female genital 
+mutilation. 
+ 
+10 Definition and duration of the third stage of labour 
+Recognise that the time immediately after the birth is when the woman and her birth 
+companion(s) are meeting and getting to know the baby. Ensure that any care or 
+interventions are sensitive to this and minimise separation or disruption of the mother 
+and baby. [2014] 
+Information should be discussed with all women/people to enable them to make an 
+informed choice about their care for the third stage of la bour. Information given and 
+plans for third stage including delayed cord clamping should be documented in the 
+maternal notes. 
+
+ Care of Women in Labour MP035 
+University Sussex Hospital NHS Trust East Page 14 of 22 
+ 10.1 Delayed cord clamping 
+ 
+Delayed cord clamping in a well full term baby following birth for 
+approximately 3minutes (WHO, 2012) has been shown to be beneficial in 
+improving the neonatal iron stores and preventing neonatal anaemia. There is 
+some evidence that delayed cord clamping may increase the chance of 
+jaundice in the postnatal period. 
+ 
+ After birth the baby should be given to t he mother to hold, ideally skin to 
+skin on her chest (it is advised to keep baby at maternal chest level during 
+delayed cord clamping). The cord should be observed to ensure it is long 
+enough to allow the baby to be held by the mother and is still intact. PV 
+loss should be observed as usual, whilst maintaining the mother’s privacy 
+and dignity. 
+ 
+ If active management of the 3rd stage has been chosen by the mother: 
+ 
+ Do not clamp the cord earlier than 1 minute from the birth of the 
+baby unless there is concern about the integrity of the cord or the 
+baby has a heartbeat below 60 beats/min which is not improving. 
+ Clamp the cord before 5 minutes in order to perform contro lled 
+cord traction after signs of separation have been seen as part of 
+active management. If the woman requests that the cord is 
+clamped and cut later than 5 minutes, support her in her choice. 
+ Delayed cord clamping can take place for waterbirths. 
+ If cord blood is required (e.g. for rhesus negative women) this 
+should be done after the delayed cord clamping has been 
+completed 
+ Record the timing of cord clamping for both active and 
+physiological management of the 3rd stage in the maternal notes. 
+ For delayed co rd clamping during a caesarean section please see 
+MP050 Caes arean Section protocol 
+ For delayed cord clamping with preterm births please see the 
+MP031 Preterm protocol 
+ For delayed cord clamping with unwell b abies requiring 
+resuscitation please see the MP066 Neonatal Resuscitation protocol 
+ 
+10.2 Definition of the third stage 
+ 
+The third stage of labour is the time from the birth of the baby to the expulsion 
+of the placenta and membranes. 
+10.2.1 Physiological management of the third stage involves a package of 
+care that includes : 
+ 
+ No routine use of uterotonic drugs 
+ No clamping of the cord until pulsation has stopped 
+ Delivery of the placenta by maternal effort. [2014] Care of Women in Labour MP035 
+University Sussex Hospital NHS Trust East Page 15 of 22 
+ 10.2.2 Advise a change from physiological management to active 
+management if either of the following occur: 
+ Haemorrhage . Maternity protocol MP053 Obstetric 
+Haemorrhage 
+ The placenta is n ot delivered within 1 hour of the birth of the 
+baby. [2014] 
+ The woman wants to shorten the duration of the 3rd stage. 
+(NICE ) 
+10.2.3 The cord should be left alone until physiological separation occurs 
+unless there is an indication to intervene. If the woman or person 
+requests the cord to be clamped and cut, there should be a natural 
+cessation of cord pulsation before clamping and cutting to gain 
+equilibrium between baby and placenta. 
+10.2.4 Once signs of separation observed the following may assist 
+separation / expulsio n: 
+ Putting the baby to the breast. 
+ The mother adopting an upright position. 
+ Maternal expulsive efforts. 
+ Quiet, warm room. 
+ Emptying of bladder. 
+10.3 Active management of the third stage involves a package of care which 
+includes: 
+ clamping and cutting of the cord (this can be delayed in most 
+cases – see below) 
+ Routine use of uterotonic drugs - 10 iu oxytocin is 
+recommended as is associated with fewer side effects than 
+oxytocin and ergometrine (NICE). 
+ Controlled cord traction, after signs of separation of the 
+place nta. 
+10.4 Lotus Birth 
+Some women may request lotus births. This means the cord remains attached 
+to the placenta until the cord separates naturally, usually after several days. 
+Women who have made informed decisions should be supported to achieve 
+their wishes. Women would be asked to provide any materials required to 
+achieve a lotus birth. 
+ Care of Women in Labour MP035 
+University Sussex Hospital NHS Trust East Page 16 of 22 
+ 10.5 Prolonged third stage 
+Diagnose a prolonged third stage of labour if it is not completed within 30 
+minutes of the birth with active management or within 60 minutes of the birth 
+with physiological management. Please see MP052 Retained placenta 
+10.6 Birth at Home : the midwife should remain vigilant to maternal wellbeing 
+throughout the third s tage and consider the time required should transfer be 
+necessary for a prolonged third stage. Using the above timings as guidance, the 
+midwives should consider, and discuss with the mother the plans for the third 
+stage, including timings, and possible need to for transfer in. once the above 
+timings have been reached, the midwife should phone the labour ward and 
+speak to the LW coordinator for support and agree a plan. If women decline to 
+transfer in on midwifery advice, the midwife should discuss the ration ale for 
+transfer, risks and benefits clearly with the woman, documenting this in the 
+notes and inform the labour ward Co -ordinator. A woman should be supported 
+in her informed choices. 
+10.7 Observations in the third stage of labour (NICE 2014) by the Midwife 
+ 
+ General physical condition, as shown by her: 
+ Colour 
+ respiration 
+ her own report of how she feels 
+ Vaginal blood loss 
+ Any observations relating the above should be documented on 
+badgernet. 
+ In addition, in the presence of haemorrhage, retained placenta or 
+maternal collapse, frequent observations (pulse, blood pressure, 
+respirations) to assess the need for resuscitation are required 
+11 Referral to Obstetric Care 
+11.1 In recognising the parameters of what are considered to be evidence based 
+care and raising the profile of normal birth, a midwife must be able to identify 
+the following: 
+ Recognise deviations from normal progress as identified in all 3 stages of 
+labour. 
+ Recognise events that may be detrimental to maternal and fetal health 
+during labour 
+11.2 Referral to an obstetrician 
+ 
+The following situations indicate a referra l to an Obstetrician (list no 
+exhaustive): 
+ 
+ Delay in any stage of labour. 
+ Consideration should be given for referral in the pre sence of a non -
+reassuring CTG trace (see MP037 fetal heart monitoring ) 
+ All Abnormal CTGs Care of Women in Labour MP035 
+University Sussex Hospital NHS Trust East Page 17 of 22 
+  Abnormal bleed ing at any stage in labour 
+ Concerns over maternal or fetal condition at any stage in labour 
+ Identified risk factors. 
+11.3 Process for referral 
+The midwife should inform the LWC of the need for referral, contact the 
+obstetrician, document in the maternal notes when and who they have 
+informed/ called and the time that the obstetrician attends. 
+ 
+12 Placenta 
+ 
+Consider if you placenta needs to be sent to h istopathology on the list below : 
+ 
+ Stillbirth 
+ Miscarriage (14+1 -23+6 weeks) 
+ FGR <3rd centile or drop in growth velocity >50 percentiles 
+ Fetal hydrops 
+ UA Dopplers (absent/reversed end diastolic flow) 
+ Monochorionic twins with TTTS 
+ Preterm birth <32 weeks 
+ <32-week -onset severe PET 
+ Severe sepsis with maternal ITU admission and/or fetal sepsis requiring ventilation or level 3 
+NICU (placenta swabs taken at birth) 
+ Massive placental abruption with retroplacental clot 
+ Severe fetal distress pH<705 / BE≥ -12/scalp lactate >4.8mmol 
+ Caesarean paripartum hysterectomy for morbidity adherent placenta 
+ 
+See appendix B for Placental Histology Form. 
+ Care of Women in Labour MP035 
+University Sussex Hospital NHS Trust East Page 18 of 22 
+ 
+13 Care of the newborn baby 
+Initial assessment of the newborn baby and mother –baby bonding 
+13.1 Record the Apgar score routinely at 1 and 5 minutes for all births. 
+13.2 Record the time from bi rth to the onset of regular respirations. 
+13.3 If the baby is born in poor condition (on the basis of abnormal breathing, heart 
+rate or tone): follow on neonatal resuscitation and take paired cord -blood 
+samples for blood gas analysis, after clamping the cord using 2 clamps. 
+Continue to evaluate and record the baby's condition un til it is improved and 
+stable. 
+13.4 Do not take paired cord blood samples (for blood gas analysis) routinely. 
+13.5 Ensure that a second clamp to allow double -clamping of the cord is available in 
+all birth settings. 
+13.6 Encourage women to have skin -to-skin contact with their babies as s oon as 
+possible after the birth. 
+13.7 In order to keep the baby warm, dry and cover him or her with a warm, dry 
+blanket or towel while maintaining skin -to-skin contact w ith the woman. 
+13.8 Avoid separation of a woman and her baby within the first hour of the birth for 
+routine postnatal procedures, for example, weighing, measuring and bathing, 
+unless these measures are requested by the woman, or are necessary for the 
+immediate care of the baby. 
+13.9 Encourage initiation of breastfeeding as soon as possible after t he birth, ideally 
+within 1 hour. 
+13.10 Record, body temperature and birth weight 
+13.11 If resuscitation is needed see maternity protocol MP066 Neonatal 
+resuscitation . 
+14 Care of the woman after birth 
+Initial assessment 
+14.1 Carry out the following observations of the woman after birth: 
+14.2 Record her temperature, pulse and blood pressure. Transfer the woman (with 
+her baby) to obstetric -led care if any of the relevant indication s listed in 
+recommendation are met. 
+14.3 Uterine contraction and lochia 
+ Care of Women in Labour MP035 
+University Sussex Hospital NHS Trust East Page 19 of 22 
+ 
+14.4 Examine the placenta and membranes: assess their condition, structure, cord 
+vessels and completeness. Transfer the woman (with her baby) to obstetric -led 
+care if the placenta is incomplete. 
+14.5 Early assessment of the woman's emotional and psychological condition in 
+response to l abour and birth. 
+14.6 MP040 Bladder Care Pathway MP040 
+ 
+15 References 
+ 
+1) National Institute for Health and Clinical Excellence. (201 7). Intrapartum care: Care of 
+healthy women and their babies during childbirth . London: NICE. www.nice.org.uk 
+
+ Care of Women in Labour MP035 
+University Sussex Hospital NHS Trust East Page 20 of 22 
+ Appendix A – 
+Within the hospital : 
+ 
+Identified risk factor 
+Obstetric /anaesthetic emergency? 
+ YES 
+ NO 
+Emergency call – ‘2222’ 
+Inform LWC 
+ 
+Take emergency measures as 
+appropriate 
+Notify LW coordinator if not 
+already aware 
+Await emergency assistance 
+Consider location of woman 
+Does woman need to be moved 
+to LW / CDS? 
+Move woman if indicated 
+Implement action plan after review 
+Document decisions, findings, 
+actions and individual 
+management plans as 
+contemporaneously as possible 
+with accurate recording of timings 
+ 
+Obstetrician 
+ Anaesthetist 
+ Manager 
+Bleep MDT 
+Number via ward lists or 
+switchboard 
+Number via ward lists 
+/on-call rota 
+Await review of woman 
+Monitor situation for changes / 
+deterioration 
+Take actions as appropriate 
+according to clinical picture 
+ 
+Notify LWC 
+Discuss / decide to whom woman 
+should be referred Care of Women in Labour MP035 
+University Sussex Hospital NHS Trust East Page 21 of 22 
+ At home / GP surgery / clinic / community setting: 
+
+Discuss need for transfer to 
+hospital with woman 
+Notify LW of transfer using R 
+ 
+Obstetric /anaesthetic emergency? 
+ YES 
+ NO 
+Call 999 Cat 1 respons e 
+Inform LWC via red phone 
+Consider need for obstetric team to 
+be waiting in A&E on arrival 
+Discuss need for urgent transfer 
+and emergency measures with 
+woman 
+ 
+Await ambulance arrival 
+Take emergency measures as 
+appropriate 
+Document decisions, findings, 
+actions and action plans as 
+contemporaneously as possible with 
+accurate recording of timings 
+ 
+Monit or woman's condition en route to hospital 
+Continue emergency measures as appropriate 
+Handover to LW / obstetric / anaesthetic staff on arrival 
+ 
+Woman agrees to transfer 
+Arrange appropriate transfer by 
+either: 
+oAmbulance ( 999) Cat 2 
+response 
+oOwn transport 
+ 
+Monitor woman's condition en 
+route to hospital 
+Handover to LW / obstetric / 
+anaesthetic staff on arrival 
+ Identified risk factor Care of Women in Labour MP035 
+University Sussex Hospital NHS Trust East Page 22 of 22 
+ Appendix B – Placental Histology Form

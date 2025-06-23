@@ -1,0 +1,194 @@
+# Extracted from: MP038 Fetal Blood Sampling.pdf
+# Guideline ID: mp038-fetal-blood-sampling
+# Content length: 9030 characters
+# Processing date: 1750066901.4051282
+
+Fetal Blood Sampling 
+(FBS) 
+
+Maternity Protocol: MP038 
+Date Agreed: April 2022 
+Fetal Blood Sampling (RSCH PRH only ) MP038 
+Page 2 of 8 
+University Hospitals Sussex Foundation NHS Trust 
+
+Guideline Reviewer : Katie Fraser & Heather Brown 
+Manager responsible: Heather Brown 
+Version: 3 
+Approval Committee: Protocol Steering Group 
+First Date agreed: February 2016 
+Amended date: 
+Next Review date: 
+ April 2022 
+April 2025 
+Cross reference: MP037 Fetal Heart Monitoring 
+ Fetal Blood Sampling (RSCH PRH only ) MP038 
+Page 3 of 8 
+University Hospitals Sussex Foundation NHS Trust Contents 
+Key Principles ................................ ................................ ................................ ................. 3 
+Scope 3 
+Responsibilities ................................ ................................ ................................ .............. 4 
+1. Aims of FBS ................................ ................................ ................................ .......... 5 
+2. When FBS Should be Undertaken ................................ ................................ ....... 5 
+3. Contraindications for FBS ................................ ................................ ................... 5 
+4. Interpretation of FBS results: ................................ ................................ .............. 6 
+4.1. Normal FBS result ................................ ................................ ............................... 6 
+4.1.1. After a normal FBS result, repeat FBS after no more than 1 hour if abnormal 
+fetal heart rate pattern persists ................................ ................................ ..................... 6 
+4.1.2 A requirement and plan for repeating the FBS must be clearly documented in 
+the on Badgernet by the Obstetrician who took the FBS ................................ .............. 6 
+4.2. Borderline FBS result ................................ ................................ .......................... 6 
+4.3. Abnormal FBS result ................................ ................................ ........................... 6 
+4.4. Third FBS and process for referral to Consultant Obstetrician .......................... 7 
+5. Documentation ................................ ................................ ................................ ... 7 
+6. Paired Cord Blood Samples ................................ ................................ ................. 8 
+7. References ................................ ................................ ................................ .......... 8 
+
+Key Principles 
+ 
+A protocol is a set of measurable, objective standards to determine a course of 
+action. Professional judgement may be use d in the application of a protocol. 
+ 
+Scope 
+ 
+This protocol applies to: 
+• Any women in labour requiring a Fetal Blood Sample (FBS) 
+• Any newborn babies who require cord gas sample at birth 
+ Fetal Blood Sampling (RSCH PRH only ) MP038 
+Page 4 of 8 
+University Hospitals Sussex Foundation NHS Trust Responsibilities 
+ 
+Midwives & Obstetricians: 
+• To access, read, understand and follow this guidance 
+• To use their professional judgement in application of this protocol 
+Management: 
+• To ensure the protocol is reviewed as required in line with national 
+recommendations 
+• To ensure the protocol is accessible to all relevant staff 
+• To ensure the protocol is available to service users on request 
+ Fetal Blood Sampling (RSCH PRH only ) MP038 
+Page 5 of 8 
+University Hospitals Sussex Foundation NHS Trust 
+1. Aims of FBS 
+1.1. To clarify fetal status in situations where the FHR trace is showing cause 
+for concern, as pH estimation is far more accurate at assessing hypoxia than the 
+CTG alone 
+1.2. To provide baseline information about a fetus thought to be at risk of 
+hypoxia (i.e. meconium stained liquor with a abnormal CTG) 
+1.3. Fetal blood sampling requires the birthing woman / person ’s informed 
+consent and this must be documented in the maternity notes 
+1.4 If a fetal blood sample is needed it is best performed with the birthing 
+woman / person in the left lateral position . 
+ 
+2. When FBS Should be Undertaken 
+ 
+2.1. FBS should be advised in the presence of abnormal FHR trace, unless there is 
+already clear evidence of acute compromise . Offer FBS if non -reassuring 
+variable decelerations are still observed 30 minutes after conservative 
+measures, or accompanied by tachycardia and/or reduced baseline 
+variability. Also Offer FBS and/or expedite birth if late decelerations persist 
+for over 30 minutes and occur with over 50% of contractio ns. 
+2.2. Where there is clear evidence of acute fetal compromise (for example, 
+prolonged deceleration greater then 3mins), FBS should not be undertaken 
+and immediate preparations to expedite birth should be made . 
+ 
+3. Contraindications for FBS 
+ 
+3.1. Cervical dilatation of <3cm 
+3.2. Maternal infection (for example He patitis viruses, primary outbreak of 
+genital herpes ). In HIV positive cases, with an undetectable viral load, FBS is not 
+contraindicated (see HIV protocol MP009 ) 
+3.3. Fetal Bleeding disorders (for example haemophilia ) 
+3.4. Prematurity (less than 34 weeks) Fetal Blood Sampling (RSCH PRH only ) MP038 
+Page 6 of 8 
+University Hospitals Sussex Foundation NHS Trust 4. Interpretation of FBS results: 
+ 
+Measure either lactate or pH when performing FBS. Measure lactate if the necessary 
+equipment and suitable trained staff are available ; otherwise measure pH. 
+
+ pH Lactate 
+Normal 
+ ≥7.25 ≤4.1 mmol/l 
+Borderline 
+ 7.21 -7.24 4.2 to 4.8 mmol/l 
+Abnormal 
+ ≤7.20 ≥ 4.9 mmol/l 
+ 
+4.1. Normal FBS result 
+4.1.1. After a normal FBS result, repeat FBS after no more than 1 hour if 
+abnormal fetal heart rate pattern persists 
+4.1.2 A requirement and plan for rep eating the FBS must be clearly 
+documented in the maternity notes by the Obstetrician who took the FBS 
+ 
+4.2. Borderline FBS result 
+4.2.1. If the FBS result is borderline, offer repeat sampling no more than 30 
+minutes later if this is still indicated by the CTG 
+4.2.2. A requirement and plan for repeating the FBS must be clearly 
+documented in the maternity notes by the Obstetrician who 
+undertook the FBS 
+ 
+The time taken to actually perform a repeat FBS needs to be considered when planning 
+repeat samples. 
+4.3. Abnormal FBS result 
+4.3.1. inform a senior obstetrician and the neonatal team and 
+4.3.2. talk to the woman and birth partner(s) about what is happening and 
+take their preferences into account and 
+4.3.3. expedite the birth 
+ 
+All discussions and advice, with details of the name of the Consultant, should be 
+documented on Badgernet 
+ Fetal Blood Sampling (RSCH PRH only ) MP038 
+Page 7 of 8 
+University Hospitals Sussex Foundation NHS Trust 4.4. Third FBS and process for referral to Consultant Obstetrician 
+ 
+4.4.1. If a third FBS is considered necessary, the doctor undertaking the FBS 
+should seek a Consultant opinion first by contacting the on -call 
+Consultant . 
+4.4.2. Results of the FBS should be interpreted taking into account the 
+previous pH, the rate of progress of labour and the clinical condition of 
+the mother and baby. 
+4.4.3. If the CTG remains unchanged and the FBS result is stable (that is, 
+lactate or pH is unchanged) after a second test, further samples may be 
+deferred unless additional non-reassuring or abnormal features are 
+seen. 
+5. Documentation 
+ 
+5.1. The following must be documented on Badgernet by the person performing 
+the procedure: 
+• The date and time of the procedure 
+• The reason for the procedure 
+• Consent for the procedure from the woman 
+• The number of samples taken 
+• The results – pH and lactate 
+• A plan in relation to ongoing management including: 
+• The requirement for a repeated FBS 
+• When to repeat the FBS 
+
+ Fetal Blood Sampling (RSCH PRH only ) MP038 
+Page 8 of 8 
+University Hospitals Sussex Foundation NHS Trust 6. Paired Cord Blood Samples 
+ 
+6.1. Paired Cord Blood Samples should be taken in all cases where there has 
+been concern about the baby either in labour or immediately following birth . 
+Including: 
+• all emergency caesarean sections2 
+• instrumental births (where there has been suspected fetal 
+compromise)2 
+• if the baby is born in poor condition (the Apgar score at 1 minute is 
+≤5), then paired cord blood gases should be taken1 2 
+• premature births 
+• 
+6.2. If 1 or more FBS samples have been taken in labour, paired cord s amples 
+should be taken at birth 
+6.3. When cord blood is taken, a verbal explanat ion must be given to the mother 
+/ parents and informed consent gained. The parent/s must be informed of 
+the results and implications / further care. 
+6.4. The results gained - pH and Base excess for both arterial and venous 
+samples written by the person performing the procedure 
+
+7. References 
+ 
+1) National Institute for Health and Clinical Excellence (2014). Intrapartum care for 
+healthy women and babies. NICE guidelines [CG190] 
+Recommendations | Intrapartum care for healthy women and babies | Guidance 
+| NICE

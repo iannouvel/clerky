@@ -1,0 +1,374 @@
+# Extracted from: Uptodate - 2025 - Prelabor rupture of membranes at term.pdf
+# Guideline ID: uptodate-2025-prelabor-rupture-of-membranes-at-term
+# Content length: 29126 characters
+# Processing date: 1740261898.4173105
+
+Official reprint from UpToDate
+www.uptodate.com © 2025 UpToDate, Inc. and/or its affiliates. All Rights Reserved.
+Prelabor rupture of membranes at term: Management
+INTRODUCTION
+Prelabor rupture of the membranes (PROM) refers to rupture of the fetal membranes prior
+to the onset of regular uterine contractions. It may occur at term ( ≥ 37+0 weeks of gestation)
+or preterm (<37+0 weeks of gestation); the latter is designated preterm PROM (PPROM).
+Midtrimester PROM typically refers to PPROM at approximately 16 to 26 weeks of gestation;
+this is an arbitrary definition, which varies slightly among investigators. The frequencies of
+term, preterm, and midtrimester PROM are approximately 8, 3, and <1 percent of
+pregnancies, respectively. Why membranes rupture at term and whether different etiologies
+account for prelabor versus intrapartum membrane rupture is not well understood.
+The key issue in term PROM is whether to wait for spontaneous labor to begin or induce
+labor. Over 50 percent of expectantly managed patients will be in active labor within one day
+and 95 percent will be in active labor within three days, but they are at higher risk for
+developing maternal infection than those who are induced [1].  
+The management of term PROM will be reviewed here. Issues regarding midtrimester PROM
+and PPROM are discussed separately:
+INITIAL EVALUATION
+Pregnant people with term PROM should be evaluated by a clinician. Whether the patient
+should be evaluated as soon as possible or can remain at home for a few hours to see if®
+AUTHOR:William E Scorza, MD
+SECTION EDITOR:Charles J Lockwood, MD, MHCM
+DEPUTY EDITOR:Vanessa A Barss, MD, FACOG
+All topics are updated as new evidence becomes available and our peer review process is complete.
+Literature review current through: Jan 2025.
+This topic last updated: Jul 23, 2024.
+(See "Prelabor rupture of membranes before and at the limit of viability".) ●
+(See "Preterm prelabor rupture of membranes: Clinical manifestations and diagnosis".) ●
+(See "Preterm prelabor rupture of membranes: Management and outcome".) ●22/02/2025, 06:07 Prelabor rupture of membranes at term: Management - UpToDate
+https://www.uptodate.com/contents/prelabor-rupture-of-membranes-at-term-management/print 1/11labor begins has not been studied extensively. In the absence of high-quality data
+supporting the safety of delaying evaluation, the most prudent approach is for prompt
+assessment to confirm membrane rupture, determine fetal position, evaluate maternal and
+fetal status, and discuss options for further management. (See "Labor and delivery:
+Management of the normal first stage", section on 'Initial examination'.)
+ACTIVE OR EXPECTANT MANAGEMENT?
+Our approach — The key decision in managing uncomplicated term PROM is whether to
+initiate delivery or take an expectant approach. We suggest prompt delivery for patients withThe diagnosis of PROM is based upon a characteristic history (ie, leaking fluid per vagina)
+and confirmatory speculum examination in which fluid is seen flowing from the cervical os.
+If the diagnosis is uncertain, diagnostic testing is performed on fluid pooled in the
+posterior fornix. The clinical manifestations and diagnosis of PROM are the same across
+gestation and are discussed in detail separately. (See "Preterm prelabor rupture of
+membranes: Clinical manifestations and diagnosis", section on 'Diagnostic evaluation and
+diagnosis'.)●
+Digital cervicovaginal examination should be avoided before labor, as it has been
+associated with an increased risk of chorioamnionitis.
+Fetal well-being is evaluated with a nonstress test. (See "Nonstress test and contraction
+stress test".)●
+Fetal position is determined by transabdominal physical examination (Leopold's
+maneuvers) and/or with ultrasound examination (ultrasound dominates the modern
+evaluation of fetal presentation in the setting of PROM).●
+Maternal evaluation includes assessment for contractions, signs of infection (eg, fever,
+fetal tachycardia, maternal leukocytosis), and oligohydramnios (either single deepest
+pocket <2 cm or amniotic fluid index ≤ 5 cm), as well as review of the prenatal record and
+current maternal status for medical and obstetric complications that impact decision
+making regarding timing of delivery.●
+We obtain a baseline complete blood count, recognizing that leukocytosis is a nonspecific
+finding and can be associated with inflammation apart from infection. A marked elevation
+in the white blood cell count (greater than 20,000 per cubic millimeter) or a significant left
+shift suggests chorioamnionitis. In other cases, impending chorioamnionitis should be
+suspected when leukocytosis occurs with other premonitory signs or symptoms of
+infection or the white blood cell count is rising. (See "Clinical chorioamnionitis", section on
+'Diagnosis'.)22/02/2025, 06:07 Prelabor rupture of membranes at term: Management - UpToDate
+https://www.uptodate.com/contents/prelabor-rupture-of-membranes-at-term-management/print 2/11term PROM. Labor is induced as soon as feasible, unless there are contraindications to labor
+or vaginal birth, in which case cesarean birth is performed as soon as feasible.
+Our approach is based primarily on our concern about increased risks of maternal and
+newborn infection with expectant management, as well as our patients’ general preference
+for expedited delivery. Prompt intervention also reduces the risk for other serious but less
+common complications that may occur during expectant management, such as cord
+prolapse or abruption, and intervention was the most cost-effective approach in one model
+[2]. However, labor tends to be longer with induction than when labor begins spontaneously.
+For patients who decline prompt intervention, we suggest developing a time limit for
+expectant management through shared decision-making (see 'Duration of expectant
+management' below). Signs of infection or other pregnancy complications are an indication
+for termination of expectant management and delivery by the most appropriate method for
+the clinical situation.
+Our approach is supported by a 2021 meta-analysis of nine randomized trials including
+nearly 3800 patients with singleton gestations ≥ 36 weeks of gestation with PROM who were
+induced with oxytocin at ≤ 12 versus >12 hours after membrane rupture [3]. Compared with
+expectant management (ranging from 24 to 96 hours in most trials), induction at ≤ 12 hours
+resulted in:
+A subgroup analysis of induction of labor at ≤ 6 hours after membrane rupture showed
+similar results. The quality
+of evidence of the included trials was low to moderate, given that use of antibiotics was not
+clearly defined, some outcomes were not reported in some trials, and older trials included
+digital cervical examination.
+The significant reduction in risk of neonatal sepsis demonstrated in the analysis is
+particularly important because it can result in death. (See "Neonatal bacterial sepsis:Less neonatal sepsis (6.1 versus 11.8 percent; RR 0.46; 95% CI 0.27-0.79) ●
+Less chorioamnionitis (5.3 versus 9.9 percent; relative risk [RR] 0.62, 95% CI 0.40-0.97) ●
+Less endometritis (2.4 versus 4.2 percent; RR 0.59; 95% CI 0.40-0.87) ●
+Less admission to a neonatal intensive care unit (6.4 versus 12.0 percent; RR 0.54, 95% CI
+0.43-0.69)●
+Less time between PROM and delivery (-12.68 hours, 95% CI -16.15 to -9.21) ●
+A higher chance of giving birth within 24 hours of PROM (91 versus 46 percent; RR 1.93,
+95% CI 1.59-2.35)●
+No significant differences in the rate of cesarean birth (9.8 versus 10.1 percent; RR 0.97,
+95% CI 0.79-1.08)●22/02/2025, 06:07 Prelabor rupture of membranes at term: Management - UpToDate
+https://www.uptodate.com/contents/prelabor-rupture-of-membranes-at-term-management/print 3/11Treatment, prevention, and outcome in neonates ≥ 35 weeks gestation", section on
+'Outcome'.)
+The American College of Obstetricians and Gynecologists recommends delivery for patients
+with PROM at ≥ 37+0 weeks but also states that a short period of expectant management
+may be offered [4].
+ACTIVE MANAGEMENT (PREFERRED APPROACH)
+Oxytocin induction — For patients with no contraindications to labor and vaginal birth, we
+suggest induction with oxytocin, without preinduction cervical ripening. Oxytocin is easier to
+titrate than prostaglandins, and may be less expensive, depending on the prostaglandin
+preparation chosen. (See "Induction of labor with oxytocin", section on 'Oxytocin
+administration'.)
+Meta-analyses of randomized trials have not demonstrated a clear benefit from initial use of
+any prostaglandin rather than oxytocin in patients with prelabor rupture of the membranes
+(PROM), including those with unfavorable cervixes [5-8]; however, data for the latter
+subgroup are limited, as discussed below.
+Alternatives for patients with an unfavorable cervix
+Misoprostol or prostaglandin E2 — Although we do not perform preinduction cervical
+ripening in patients with term PROM, some clinicians may choose to use prostaglandin E1
+or E2 for this purpose if their assessment of the advantages and disadvantages for an
+individual patient favors use of a cervical ripening agent. Only a few small trials have
+evaluated preinduction cervical ripening in patients with term PROM and an unfavorable
+cervix [9,10], so the absence of a statistically significant benefit in these trials does not
+negate the possibility of a modest clinical effect, as observed in populations with intact
+membranes. These agents may also induce labor, obviating the need for oxytocin [11]. (See
+"Induction of labor: Techniques for preinduction cervical ripening", section on
+'Prostaglandins'.)
+Balloon catheter — We suggest not using balloon catheters for cervical ripening in the
+setting of PROM. High-quality data supporting safety and efficacy in these patients are not
+available, the risk for chorioamnionitis is increased [12], a benefit has not been
+demonstrated compared with using oxytocin alone [13], and both oxytocin and
+prostaglandins are safe and effective alternatives.
+In a meta-analysis of randomized trials (4 trials, 605 participants), patients with mostly
+term PROM managed with a balloon catheter had an increased risk of intraamniotic
+infection [12]:22/02/2025, 06:07 Prelabor rupture of membranes at term: Management - UpToDate
+https://www.uptodate.com/contents/prelabor-rupture-of-membranes-at-term-management/print 4/11The frequencies of other outcomes, including endometritis and suspected neonatal
+infection, were similar in both groups. More and larger trials are needed to improve the
+precision of these findings. (See "Induction of labor: Techniques for preinduction cervical
+ripening", section on 'Mechanical methods'.)  
+EXPECTANT MANAGEMENT
+Candidates — After weighing the risks and benefits of induction versus expectant
+management (see 'Active or expectant management?' above), patients with otherwise
+uncomplicated pregnancies who are averse to prompt intervention may choose to undergo a
+period of expectant management. These patients should have reassuring fetal testing, no
+contraindications to labor and vaginal birth, and no signs of clinical chorioamnionitis or
+other medical or obstetric complications that increase maternal/fetal risk if birth is deferred.
+(See "Clinical chorioamnionitis", section on 'Clinical findings' and "Clinical chorioamnionitis",
+section on 'Diagnosis'.)
+Meconium stained amniotic fluid has been associated with an increased risk of clinical
+chorioamnionitis and positive amniotic fluid cultures, nonreassuring intrapartum fetal heart
+rate patterns, and meconium aspiration syndrome [14-16]. However, there is no evidence
+that immediate induction of labor will reduce the risk of these complications; therefore, we
+believe amniotic fluid lightly stained with meconium is not a strong contraindication to
+expectant management if this is the approach that the patient chooses and antepartum fetal
+assessment is otherwise reassuring (reactive nonstress test with no variable decelerations).
+In some of these cases, meconium-like staining is residual hemoglobin pigment from
+decidual hemorrhage. By comparison and in the absence of data from randomized trials to
+guide practice recommendations, we believe induction and continuous fetal monitoring are
+reasonable when meconium is thick. Patients with meconium-stained amniotic fluid were
+excluded from the seminal trial that compared outcomes of labor induction with expectant
+management for term PROM [1].
+Duration of expectant management — There are no strong data on which to base a
+recommendation for the maximum duration of expectant management in patients with no
+pregnancy complications that warrant delivery. In the seminal term PROM trial, which limited
+expectant management to 96 hours post rupture, the risk of chorioamnionitis appeared to
+increase significantly after 24 hours [15], suggesting that 24 hours is a reasonable limit.
+However, waiting longer would increase the number of pregnant people who would begin toCompared with use of any pharmacologic agent alone (21 of 271 [7.7 percent] versus 15
+of 334 [4.5 percent]; RR 1.84, 95% CI 0.91-3.73).●
+Compared with use of oxytocin alone (15 of 154 [9.7 percent]) versus 5 of 174 [2.9
+percent]; RR 3.20, 95% CI 1.17-8.70).●22/02/2025, 06:07 Prelabor rupture of membranes at term: Management - UpToDate
+https://www.uptodate.com/contents/prelabor-rupture-of-membranes-at-term-management/print 5/11labor spontaneously. In the term PROM trial, 50 percent of patients with PROM managed
+expectantly were in active labor by approximately 17 hours and 95 percent were in active
+labor by approximately 75 hours after membrane rupture [1].
+Expectant management in hospital or at home? — We suggest hospitalizing patients with
+PROM. When the termPROM study group compared outcomes of expectant management at
+home with expectant management in the hospital, patients who were sent home were more
+likely to develop clinical chorioamnionitis (10.1 versus 6.4 percent) [17]. In multiple logistic
+regression analyses, patients managed at home had a higher risk of neonatal infection (odds
+ratio [OR] 1.97, 95% CI 1.00-3.90) and nulliparas managed at home more likely to receive
+antibiotics before giving birth (OR 1.52, 95% CI 1.04-2.24). Another risk of home
+management is the possibility of rapid labor and delivery before the patient can get to the
+hospital [18].
+For patients who request expectant management at home until labor or a complication
+ensues, we believe the following criteria are reasonable after initial evaluation on the labor
+and delivery unit (see 'Initial evaluation' above):
+Antibiotic prophylaxis — As discussed above, our approach to minimizing risk for infection
+is prompt induction of labor and use of intrapartum group B streptococcus (GBS) antibiotic
+prophylaxis when indicated by standard guidelines, rather than expectant management with
+(or without) use of broad-spectrum antibiotic prophylaxis. (See 'Our approach' above.)
+We believe use of prophylactic antibiotics for PROM at or near term should be avoided, given
+the unmeasured potential adverse effects of antibiotic use, the potential for development of
+resistant organisms, and the relatively low risk of maternal infection in untreated patients.
+There is no convincing evidence of maternal or neonatal benefit from use of prophylactic
+antibiotics for PROM at or near term [20,21]:Cephalic presentation ●
+No clinical suspicion of intrauterine infection (See 'Group B streptococcus colonization'
+below.)●
+Reassuring fetal heart rate tracing ●
+No oligohydramnios ●
+Patient understands and can adhere to instructions ●
+Assistance at home ●
+Dependable transportation ●
+Travel time to the hospital no more than 20 to 30 minutes [19] ●
+Ability to check pulse and temperature every six hours, with parameters for notifying their
+clinician (eg, pulse >100 beats per minute, temperature ≥ 100.4°F [38°C])●
+Willingness to perform daily fetal kick counts ●
+Ability to undergo a daily objective fetal assessment at the discretion of the care giver ●22/02/2025, 06:07 Prelabor rupture of membranes at term: Management - UpToDate
+https://www.uptodate.com/contents/prelabor-rupture-of-membranes-at-term-management/print 6/11The relative risks and benefits of antibiotic prophylaxis are different preterm. Available
+evidence, although limited, supports the use of antibiotic prophylaxis in preterm PROM
+(PPROM) because it prolongs latency, which is desirable in preterm gestations but not a goal
+in term PROM. (See "Preterm prelabor rupture of membranes: Management and outcome",
+section on 'Administer prophylactic antibiotic therapy'.)
+Group B streptococcus colonization — A positive screening culture for GBS (or other
+criteria for intrapartum GBS prophylaxis) does not necessarily preclude expectant
+management, but we agree with guidelines from those major organizations that have
+recommended induction for these patients [4,23,24]. In a secondary analysis, the termPROM
+trial evaluated the effect of induction of labor on neonatal infection in pregnant patients with
+PROM who were GBS-positive [25]. Induction with oxytocin was associated with a lower rate
+of neonatal infection than expectant management (2.5 versus >8 percent). However, prenatal
+GBS culture and chemoprophylaxis were performed at the discretion of the provider, which
+limits the generalizability of these results.
+We approach the issue of GBS in term PROM as follows:In a meta-analysis of five trials antibiotic prophylaxis for term or near-term involving a
+total of 2699 participants, compared with placebo or no treatment, use of broad-spectrum
+antibiotic prophylaxis resulted in no statistically significant reductions in chorioamnionitis
+(2.7 versus 3.7 percent), endometritis (0.4 versus 0.9 percent), or latency from PROM to
+delivery (mean difference 0.5 hours) [20]. Although no statistically significant difference in
+neonatal sepsis (1 versus 1.4 percent) or perinatal death (0.6 versus 0.3 percent) was
+observed, a clinically significant difference cannot be excluded given the even smaller
+number of these events. In the 37 percent of pregnancies in which latency was longer than
+12 hours, subgroup analysis revealed a lower rate of maternal infection with antibiotic
+prophylaxis, but no statistical improvement in neonatal outcomes. No data were available
+on potential harms.●
+A large retrospective cohort study including over 5300 patients with term PROM confirmed
+these finding. Administration of a cephalosporin within 6 hours, between 6 and 12 hours,
+or after 12 hours of PROM was not associated with a reduction in maternal or neonatal
+infections [22].
+Antepartum GBS culture result positive – In patients with ruptured membranes and a
+positive GBS culture, maternal intravenous antibiotic prophylaxis to reduce the risk for
+early onset neonatal GBS disease should be initiated as soon as possible after PROM,
+whether induction or expectant management is undertaken. (See "Prevention of early-
+onset group B streptococcal disease in neonates".)●22/02/2025, 06:07 Prelabor rupture of membranes at term: Management - UpToDate
+https://www.uptodate.com/contents/prelabor-rupture-of-membranes-at-term-management/print 7/11Maternal and fetal monitoring — There are no standards for maternal-fetal monitoring in
+expectantly managed term PROM and no data from randomized trials on which to base
+recommendations. However, there is consensus that digital vaginal examination and vaginal
+intercourse should be avoided to reduce the risk of intrauterine infection.
+We would advise patients who choose expectant management to do the following:
+Indications for delivery — Expectant management is terminated when the time limit
+defined by the clinician and patient is reached or any standard indication for delivery
+develops (eg, suspected chorioamnionitis, nonreactive nonstress test, low biophysical profile
+score, preeclampsia).
+MANAGEMENT OF THE NEWBORN
+(See "Neonatal bacterial sepsis: Clinical features and diagnosis in neonates ≥ 35 weeks
+gestation", section on 'Maternal risk factors'.)
+SOCIETY GUIDELINE LINKS
+Links to society and government-sponsored guidelines from selected countries and regions
+around the world are provided separately. (See "Society guideline links: Prelabor rupture ofAntepartum GBS culture result negative – In patients with ruptured membranes and a
+negative GBS culture, GBS prophylaxis is not indicated. Intrapartum fever is diagnosed and
+managed according to usual protocols, which may include antibiotic therapy. Diagnosis,
+evaluation, and management of intrapartum fever are reviewed separately. (See
+"Intrapartum fever".)●
+Antepartum GBS culture not performed or result unknown – In patients with ruptured
+membranes and unknown GBS status, the decision to initiate antibiotics after PROM is
+based on standard risk factor assessment. A detailed review of candidates for and
+management of GBS prophylaxis is available separately. (See "Prevention of early-onset
+group B streptococcal disease in neonates".)●
+Check temperature every six hours and notify the clinician if ≥ 100.4°F [38°C]). ●
+Report changes in color or odor of vaginal discharge. ●
+Undergo some type of fetal surveillance (eg, kick counts, nonstress tests, biophysical
+profile tests) to provide some assurance of fetal well-being, but none of these tests has
+good sensitivity for predicting fetal infection, even when performed daily. Cord prolapse or
+cord compression may be first suspected because of fetal heart rate decelerations.●
+Promptly notify the clinician of any developing concerns or complications. ●22/02/2025, 06:07 Prelabor rupture of membranes at term: Management - UpToDate
+https://www.uptodate.com/contents/prelabor-rupture-of-membranes-at-term-management/print 8/11membranes".)
+SUMMARY AND RECOMMENDATIONS
+Use of UpToDate is subject to the Terms of Use.
+REFERENCES
+1. Hannah ME, Ohlsson A, Farine D, et al. Induction of labor compared with expectant
+management for prelabor rupture of the membranes at term. TERMPROM Study Group.
+N Engl J Med 1996; 334:1005.
+2. Gafni A, Goeree R, Myhr TL, et al. Induction of labour versus expectant management for
+prelabour rupture of the membranes at term: an economic evaluation. TERMPROM
+Study Group. Term Prelabour Rupture of the Membranes. CMAJ 1997; 157:1519.
+3. Bellussi F, Seidenari A, Juckett L, et al. Induction within or after 12 hours of ≥ 36 weeks'
+prelabor rupture of membranes: a systematic review and meta-analysis. Am J Obstet
+Gynecol MFM 2021; 3:100425.
+4. Prelabor Rupture of Membranes: ACOG Practice Bulletin, Number 217. Obstet Gynecol
+2020; 135:e80. Reaffirmed 2023.Definition – Prelabor rupture of the membranes (PROM) refers to rupture of the fetal
+membranes prior to the onset of labor or regular uterine contractions. It occurs in 8
+percent of pregnancies at term. (See 'Introduction' above.)●
+Evaluation – The initial evaluation of all term pregnancies in which PROM is suspected
+should include confirmation of membrane rupture and assessment of maternal and fetal
+well-being. The need for group B streptococcal chemoprophylaxis should also be
+determined. (See 'Initial evaluation' above and 'Group B streptococcus colonization' above.)●
+Management ●
+We suggest prompt induction of labor in patients with term PROM (Grade 2C).
+Compared with expectant management, induction of labor is associated with a reduction
+in maternal and neonatal infection and lower treatment costs, with no increase in
+cesarean birth. (See 'Active or expectant management?' above.)•
+We suggest induction with oxytocin (Grade 2B). Oxytocin is as effective as
+prostaglandins, is easier to titrate, and may be less expensive, depending on the
+preparation. Data supporting the safety of balloon catheter use for cervical ripening in
+PROM are sparse. (See 'Active management (preferred approach)' above.)•22/02/2025, 06:07 Prelabor rupture of membranes at term: Management - UpToDate
+https://www.uptodate.com/contents/prelabor-rupture-of-membranes-at-term-management/print 9/115. Tan BP, Hannah ME. Prostaglandins versus oxytocin for prelabour rupture of
+membranes at term. Cochrane Database Syst Rev 2000; :CD000159.
+6. Lin MG, Nuthalapaty FS, Carver AR, et al. Misoprostol for labor induction in women with
+term premature rupture of membranes: a meta-analysis. Obstet Gynecol 2005; 106:593.
+7. Hofmeyr GJ, Gülmezoglu AM, Pileggi C. Vaginal misoprostol for cervical ripening and
+induction of labour. Cochrane Database Syst Rev 2010; :CD000941.
+8. Crane JM, Young DC. Induction of labour with a favourable cervix and/or pre-labour
+rupture of membranes. Best Pract Res Clin Obstet Gynaecol 2003; 17:795.
+9. Lange AP, Secher NJ, Nielsen FH, Pedersen GT. Stimulation of labor in cases of
+premature rupture of the membranes at or near term. A consecutive randomized study
+of prostaglandin E2-tablets and intravenous oxytocin. Acta Obstet Gynecol Scand 1981;
+60:207.
+10. McQueen D, Neilson JP, Whittle MJ. Pre-labour rupture of membranes with an unripe
+cervix: a random trial of management. J Obstet Gynaecol 1990; 10:495.
+11. Güngördük K, Asicioglu O, Besimoglu B, et al. Labor induction in term premature
+rupture of membranes: comparison between oxytocin and dinoprostone followed 6
+hours later by oxytocin. Am J Obstet Gynecol 2012; 206:60.e1.
+12. Mackeen AD, Quinn ST, Movva VC, et al. Intracervical balloon catheter for labor induction
+after rupture of membranes: a systematic review and meta-analysis. Am J Obstet
+Gynecol 2021; 224:624.
+13. Amorosa JMH, Stone J, Factor SH, et al. A randomized trial of Foley Bulb for Labor
+Induction in Premature Rupture of Membranes in Nulliparas (FLIP). Am J Obstet Gynecol
+2017; 217:360.e1.
+14. Romero R, Hanaoka S, Mazor M, et al. Meconium-stained amniotic fluid: a risk factor for
+microbial invasion of the amniotic cavity. Am J Obstet Gynecol 1991; 164:859.
+15. Seaward PG, Hannah ME, Myhr TL, et al. International Multicentre Term Prelabor
+Rupture of Membranes Study: evaluation of predictors of clinical chorioamnionitis and
+postpartum fever in patients with prelabor rupture of membranes at term. Am J Obstet
+Gynecol 1997; 177:1024.
+16. Seaward PG, Hannah ME, Myhr TL, et al. International multicenter term PROM study:
+evaluation of predictors of neonatal infection in infants born to patients with premature
+rupture of membranes at term. Premature Rupture of the Membranes. Am J Obstet
+Gynecol 1998; 179:635.
+17. Hannah ME, Hodnett ED, Willan A, et al. Prelabor rupture of the membranes at term:
+expectant management at home or in hospital? The TermPROM Study Group. Obstet
+Gynecol 2000; 96:533.22/02/2025, 06:07 Prelabor rupture of membranes at term: Management - UpToDate
+https://www.uptodate.com/contents/prelabor-rupture-of-membranes-at-term-management/print 10/1118. Ellestad SC, Swamy GK, Sinclair T, et al. Preterm premature rupture of membrane
+management--inpatient versus outpatient: a retrospective review. Am J Perinatol 2008;
+25:69.
+19. Örtqvist AK, Haas J, Ahlberg M, et al. Association between travel time to delivery unit and
+unplanned out-of-hospital birth, infant morbidity and mortality: A population-based
+cohort study. Acta Obstet Gynecol Scand 2021; 100:1478.
+20. Saccone G, Berghella V. Antibiotic prophylaxis for term or near-term premature rupture
+of membranes: metaanalysis of randomized trials. Am J Obstet Gynecol 2015;
+212:627.e1.
+21. Wojcieszek AM, Stock OM, Flenady V. Antibiotics for prelabour rupture of membranes at
+or near term. Cochrane Database Syst Rev 2014; :CD001807.
+22. Dan L, Lin W, Hailong L, et al. Timing of antibiotic prophylaxis in term prelabor rupture
+of membranes: A retrospective cohort study using propensity-score matching. Int J
+Gynaecol Obstet 2024; 164:741.
+23. https://www.ranzcog.edu.au/RANZCOG_SITE/media/RANZCOG-MEDIA/Women%27s%20
+Health/Statement%20and%20guidelines/Clinical-Obstetrics/Term-Prelabour-Rupture-of-
+Membranes-(Term-Prom)-(C-Obs-36)-Review-Mar-14.pdf?ext=.pdf (Accessed on April 12,
+2017).
+24. http://sogc.org/wp-content/uploads/2013/09/October2013-CPG298-ENG-Online_Final.pd
+f (Accessed on April 17, 2014).
+25. Hannah ME, Ohlsson A, Wang EE, et al. Maternal colonization with group B
+Streptococcus and prelabor rupture of membranes at term: the role of induction of
+labor. TermPROM Study Group. Am J Obstet Gynecol 1997; 177:780.
+Topic 6757 Version 42.0
+Contributor Disclosures
+William E Scorza, MDNo relevant financial relationship(s) with ineligible companies to
+disclose.Charles J Lockwood, MD, MHCMNo relevant financial relationship(s) with ineligible
+companies to disclose.Vanessa A Barss, MD, FACOGNo relevant financial relationship(s) with
+ineligible companies to disclose.
+Contributor disclosures are reviewed for conflicts of interest by the editorial group. When found, these
+are addressed by vetting through a multi-level review process, and through requirements for
+references to be provided to support the content. Appropriately referenced content is required of all
+authors and must conform to UpToDate standards of evidence.
+Conflict of interest policy
+22/02/2025, 06:07 Prelabor rupture of membranes at term: Management - UpToDate
+https://www.uptodate.com/contents/prelabor-rupture-of-membranes-at-term-management/print 11/11

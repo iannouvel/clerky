@@ -1,0 +1,2554 @@
+# Extracted from: MP073 Pregnancy Loss.pdf
+# Guideline ID: mp073-pregnancy-loss
+# Content length: 124362 characters
+# Processing date: 1750066901.706191
+
+Pregnancy Loss > 14 Weeks 
+
+Maternity Protocol: MP073 
+ 
+Date agreed: April 2022 
+
+Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 2 of 82 
+
+ Guideline Reviewer: Protocol Searing Group March 2022 l 
+Version: 4 
+Approval Committee: Women’s Services Safety and Quality Committee 
+Date agreed: 
+Amended Date: April 2022 
+ 
+Review date: October2022 
+Cross reference: MP035 : Care of Women in Labour 
+MP014 : Women with mental health problems 
+GP010 : Termination of Pregnancy (Under 14 Weeks) 
+GP001 : Early Pregnancy Unit Clinical Guidelines 
+Gynaecology - management of miscarriage Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 3 of 82 
+ Contents 
+Key Principles ................................ ................................ ................................ ................................ .................. 5 
+Scope ................................ ................................ ................................ ................................ ................................ ... 5 
+Responsibilities ................................ ................................ ................................ ................................ ............... 5 
+Introduction ................................ ................................ ................................ ................................ ..................... 6 
+Part One ................................ ................................ ................................ ................................ ............................. 7 
+Section One - Over 14 weeks ................................ ................................ ................................ ....................... 7 
+Section Two - Mode of delivery ................................ ................................ ................................ ................... 8 
+Section Three - Expectant Management ................................ ................................ ................................ .. 8 
+Section Four - Inducing labour ................................ ................................ ................................ ................... 8 
+Section Five - Mifepristone & misoprostol ................................ ................................ ............................. 9 
+Section Six - Previous Caesarean ................................ ................................ ................................ ............. 10 
+Section Seven - On Admission/during induction ................................ ................................ ............... 10 
+Section Eight - Care in labour ................................ ................................ ................................ ................... 11 
+Section Nine - Analgesia Options ................................ ................................ ................................ ............ 11 
+Section Ten - Birth/ Delivery ................................ ................................ ................................ .................... 12 
+Section Eleven - Third stage ................................ ................................ ................................ ...................... 12 
+Section Twelve - Postnatal ................................ ................................ ................................ ........................ 12 
+Section Thirteen – Placenta ................................ ................................ ................................ ...................... 13 
+Section Fourteen - Post mortem examination ................................ ................................ ................... 13 
+Section Fifteen – Funeral ................................ ................................ ................................ ........................... 14 
+Section Sixteen - Paper work ................................ ................................ ................................ .................... 14 
+Section Seventeen - Taking baby home ................................ ................................ ................................ 18 
+Section Eighteen - Follow up ................................ ................................ ................................ ..................... 18 
+Part Two ................................ ................................ ................................ ................................ ........................... 19 
+Contents: ................................ ................................ ................................ ................................ .......................... 19 
+Section A - Legal Definitions: Birth and Death Registration ................................ ......................... 21 
+Section B – Going home after Diagnosis ................................ ................................ ............................... 23 
+Section C - Understanding Grief ................................ ................................ ................................ ............... 24 
+Section D - Religious and Cultural Beliefs ................................ ................................ ............................ 25 
+Section E - Creating Memories ................................ ................................ ................................ ................. 26 
+Section F - Pregnancy Loss in Multiple Pregnancy ................................ ................................ ........... 28 
+Section G - Legal Entitlements ................................ ................................ ................................ .................. 29 
+Section H - Taking baby home ................................ ................................ ................................ .................. 29 
+Section I - Funeral arrangements ................................ ................................ ................................ ........... 29 Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 4 of 82 
+ Section J - Bereavement Support for Parents ................................ ................................ ..................... 31 
+Section K - Care of Family Members ................................ ................................ ................................ ...... 31 
+Section L - Support for Staff ................................ ................................ ................................ ...................... 32 
+Section M – Datix ................................ ................................ ................................ ................................ ........... 32 
+Appendix 1 - Pregnancy Loss Team Contact Details ................................ ................................ ......... 34 
+Appendix 2 - Chaplaincy & Spiritual Care ................................ ................................ ............................. 35 
+Appendix 3 - Support options for families ................................ ................................ ........................... 42 
+Appendix 4 - Support for Professionals ................................ ................................ ................................ .... 43 
+Appendix 5 - Histopathology ................................ ................................ ................................ ..................... 45 
+Appendix 6 - Post mortem consent ................................ ................................ ................................ ......... 46 
+Appendix 7 - Funeral Directors ................................ ................................ ................................ ................ 56 
+Appendix 8 - Taking baby home ................................ ................................ ................................ ............... 59 
+Appendix 9 - Taking products home ................................ ................................ ................................ ....... 61 
+Appendix 10 -Certificate of birth ................................ ................................ ................................ ............. 62 
+Appendix 11 - London perinatal request ................................ ................................ .............................. 63 
+Appendix 12 - Perinatal referral form ................................ ................................ ................................ ... 67 
+Appendix 13 - genetic specimen form ................................ ................................ ................................ .... 69 
+Appendix 14 - community midwife form - PRH & RSCH ................................ ................................ ... 71 
+Appendix 15 - Pregnancy loss information for secretaries ................................ ........................... 73 
+Appendix 16 - Coding form RSCH ................................ ................................ ................................ ............. 74 
+Appendix 16 - Coding form PRH ................................ ................................ ................................ ............... 75 
+Appendix 17 - Cremation form 9 ................................ ................................ ................................ .............. 76 
+Appendix 18 – Referring neonatal Deaths to the Coroner ................................ ............................. 77 
+Appendix 19 - Pregnancy Loss – Giving Birth ................................ ................................ ...................... 80 
+Appendix 20 - P2 form………………………………………. (Do not print this form) ............................. 81 
+Appendix 21 - Maternity Bereavement Audit Tool 2017 ................................ ............................... 82 
+
+ Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 5 of 82 
+ Key Principles 
+A protocol is a set of measurable, objective standards to determine a course of action. 
+Professional judgement may be used in the application of a protocol. 
+Scop e 
+This protocol applies to: 
+• Any woman experiencing a fetal loss (at any gestation after 14 weeks) including 
+TOPs, mid -trimester losses, stillbirths or neonatal death. 
+Responsibilities 
+Midwives, gynaecology staff and medical staff: 
+• To access, read, understand and follow this guidance 
+• To use their professional judgement in application of this protocol 
+ 
+Management Team: 
+• To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations 
+• To ensure the protocol is accessible to all relevant staff 
+
+ Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 6 of 82 
+ Introduction 
+ 
+This document provides guidance on maternity management of women and their families 
+through a pregnancy loss. The maternity service care for women after 14 weeks of 
+pregnancy - prior to that gestation, care is given by the gynaecology service , please refer to 
+management of miscarriage protocol for under 14 weeks. 
+ 
+The protocol has been divided into two parts to assist in the care for these women. Part one 
+outlines the clinical care; Part Two details the support and arrangements families may need. 
+
+Women can present in a variety of ways: 
+ 
+• Spontaneous miscarriage - non-viable fetus below 24 weeks 
+• Intrauterine death – >24 weeks no fetal heart detected . 
+• Termination of pregnancy 
+• Loss of one or more babies in a multiple pregnancy 
+ 
+This guideline combines and replaces maternity guidelines, 
+• MP073 Management of pregnancy losses above 14 weeks (2015 ) 
+• MP074 Sensitive handling disposal of products of conception and non -viable fetus 
+under 23+6 weeks of gestation (2012 ) 
+ 
+And should be read in conjunction with gynaecology guidelines, 
+ 
+• GP001 Early Pregnancy Unit Clinical Guidelines (2016 ) 
+• GP010 Termination of Pregnancy (Under 14 Weeks) (2016 ) 
+• GP001 M anagement of Miscarriage 
+
+ Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 7 of 82 
+ Part One 
+Section One - Over 14 weeks 
+ 
+Clinical and emotional care for pregnancy losses are primarily the same regardless of 
+gestation. The difference is with the paper work and registering baby. Therefore this guide is 
+laid out for all gestations over 14 weeks and breaks down the differenc es under the 
+paperwork section. 
+ 
+An unexpected intrauterine death over 14 weeks 
+1.0 Inform the Registrar / Consultant on call. 
+1.1 Perform or arrange an ultrasound scan to confirm no heart beat and presentation. 
+1.2 When diagnosing a fetal loss if practitioner is in any doubt a second opinion should 
+ be immediate this is to inc lude calling in a consultant. 
+1.3 Women should be prepared for the possibility of passive fetal movement. If the 
+woman reports passive fetal movement after the scan to diagnose IUD, a repeat 
+scan should be offered. 
+1.4 If the woman is unaccompanied, an immediate o ffer should be made to call her 
+ partner, relatives or friends. 
+1.5 Discussions should aim to support maternal/parental choice and should be 
+ supported with written information - give SANDS Bereavement Pack. 
+1.6 Obtain appropriate checklist (Under 24, Over 24 or TOP) and commence. 
+1.7 Laboratory blood tests to be taken as per relevant checklist, and documented. 
+1.8 As a minimum a kleihau er must be taken for all women and sent on the day of 
+ diagnosis. This is to identify if feto -maternal haemorrhage is the cause and enables 
+sufficient anti - D to be administered within 72 hours. If feto -maternal haemorrhage 
+is identified repeat kleihauer in 48 hours. 
+1.9 Inform pregnancy loss midwives by email on the day of diagnosis, this will enable 
+support for women prior to induction. 
+1.10 Discussions to be had with woman during this time 
+• Options available including expectant management ( Section Three ) 
+• Mode of delivery ( Section Two ) 
+• Induction of labour process (Section Four) 
+• Post Mortem – supported with written lit erature - SANDS deciding on 
+Post mortem (Section Fourteen ) 
+1.11 Ensure contact details for pregnancy loss midwives are given to parents. ( Appendix 1) Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 8 of 82 
+ Section Two - Mode of delivery 
+ 
+Recommendations about labour and birth should take into account the mother’s preferences as well 
+as her medical condition and previous intrapartum history. Vaginal birth is the recommended mode 
+of delivery for most women, but caesarean birth will need to be considered with some If the woman 
+is 24 weeks gestation or more and requests delivery by caesarean section, there should be a full 
+discussion about the risks of caesarean section and the impact on any future pregnancies. If after full 
+discussion of risks the woman wants to proceed with a caesarean section, her wishes should be 
+respected, after discussion with the consultant on -call. 
+Section Three - Expectant Management 
+ 
+3.0 If expectant management is chosen this should be supported as long as there are no signs of 
+complications such as sepsis, pre -eclampsia, abruption or ruptured membranes. 
+3.1 85% of women with an IUD labour spontaneously within three weeks of diagnosis. 
+3.2 She should be advised that she is at an increased risk o f complications if the delay is 
+prolonged (such as sepsis and disseminated intravascular coagulation DIC). 
+3.3 If the delay is more than 48 hours, the woman should be o ffered twice -weekly blood tests 
+for DIC and warned that the risk of developing DIC incr eases with continuing expectant 
+management: 10% within 4 weeks after the date of late IUFD, rising to 30% thereafter. 
+3.4 The woman should be told that she may continue to experience passive fetal movement 
+3.5 Women contemplating prolonged expectant manage ment should be advised that the 
+appearance of the baby may deteriorate, and the value of post mortem may be reduced. 
+Section Four - Inducing labour 
+4.0 For an intrauterine death above 14 weeks induction of labour should be arranged in 
+consultation with the woman and labour ward coordinator. 
+4.1 A full explanation should be given to ensure that the w oman is aware of the procedure, 
+details of when she should return to labour ward and th e contact number of labour ward 
+should she have any concerns. 
+4.2 Prescribe the misoprostol and mifepristone at same time, the drug chart needs to be sent to 
+Pharmacy for the misoprostol to be dispensed prior to returning for induction . The dosage 
+will depend on gestation and whether the woman has previ ously had a caesarean section. 
+(see flow charts below ) 
+4.3 Appropriate analgesia MUST be prescribed with the misoprostol ready for admission. 
+4.4 If the woman vomits within 30 minutes of taking mifepriston e give an antiemetic and repeat 
+mifepristone does 30 minutes later. 
+4.5 If gastrointestinal side effects occur with oral misoprostol doses can be administered 
+vaginally as side -effects are less with this route of administration. Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 9 of 82 
+ 
+100 micrograms MISOPROSTOL 
+ 
+One off dose 
++ 6 hours 
+ 100 micrograms MISOPROSTOL 
+ 
+PV 
+PO 
++ 6 hourly 
+intervals 
+Repeat doses of 100 micrograms 
+MISOPROSTOL 
+Until in established labour 
+ 
+PO 
+Maximum of 5x doses of 100 mcg 
+ 
+1st dose 
+HOME 
+RETURN AFTER 36 -48 HRS TO LABOUR WARD 
+200 mg MIFEPRISTONE 
+ PO Section Five - Mifepristone & misoprosto l 
+5.0 Flow chart for up to 23 +6 weeks 
+ 
+5.1 Flow chart for 24 to 26+6 
+
+800 micrograms MISOPROSTOL 
+ 
+One off dose 
++ 3 hours 
+ 400 micrograms MISOPROSTOL 
+ 
+PV 
+PO 
++ 3 hourly 
+intervals 
+Repeat doses of 400 micrograms 
+MISOPROSTOL 
+Until in established labour 
+ 
+PO 
+If after 24 hours abortion does not 
+occur, Mifepristone can be 
+repeated 3 hours after the last dose 
+of misoprostol and 12 hours later 
+misoprostol may be recommenced 
+1st dose 
+HOME 
+RETURN AFTER 36 -48 HRS TO LABOUR WARD 
+200 mg MIFEPRISTONE 
+ PO Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 10 of 82 
+ 5.2 Flow chart for 27 weeks and above 
+
+Section Six - Previous Caesarean 
+ 
+6.1 A discussion of the safety and benefits of induction of labour should be undertaken by a 
+consultant obstetrician. Options include the use of mifepristone alone, or the use of a lower 
+dose of misoprostol. Women undergoing VBAC should be closely monitored for features of 
+scar rupture. 
+6.2 Drug regim e should be discussed with the C onsultant on call and documented in maternity 
+notes. 
+6.3 Oxytocin augmentation can be used for VBAC, but the decision should be made by a 
+consultant obstetrician. 
+6.4 Women with 3 or more previous lower segment caesarean sections or a classical caesarean 
+section should be informed that a birth by LSCS is recommended . 
+6.5 If a Women chooses in line with her priorities and preferences a repeat LSCS a consultant 
+should attend for the procedure 
+Section Seven - On Admission/during induction 
+ 
+7.0 Prepare the room/bereavement room and remove unnecessary monitoring equipment and 
+ the cot. (Ideally the room is away from other pregnant women and babies) 
+7.1 Collect relevant bereavement pack and continue or commence checklist, start to complete 
+ (Master copy of checklist can be found on bereavement drive - all band 7 have access ). 
+50 micrograms MISOPROSTOL 
+ 
+One off dose 
++ 4 hours 
+ 50 micrograms MISOPROSTOL 
+ 
+PV 
+PO 
++ 4 hourly 
+intervals 
+Repeat doses of 50 micrograms 
+MISOPROSTOL 
+Until in established labour 
+ 
+PO 
+Maximum of 5x doses of 50 mcg 
+ 
+1st dose 
+HOME 
+RETURN AFTER 36 -48 HRS TO LABOUR WARD 
+200 mg MIFEPRISTONE 
+ PO Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 11 of 82 
+ 7.2 Ensure induction drug regime prescribed and ordered (Section five) commence induction. If 
+ TOP, prior to induction ensure relevant paperwork complete (See Flowchart) 
+7.3 Discuss process with parents ensure understanding and fully informed of options and have 
+ received SANDS information pack. 
+7.4 During the admission, the following must be discussed (w hen relevant) and documented on 
+ the checklist and in the maternity notes: 
+• Birthplan : Do they wish to see baby at birth, document and ensure verbal hand over 
+between professionals. 
+• Creating memories : parents’ wishes regarding seeing, holding and naming the baby. (For 
+more detail see Part Two -E) 
+• Post mortem : Although PM is recommended it is parents’ choice. Support discussion 
+with SANDS deciding on PM leaflet. If would like pm attempt to complete consent form 
+prior to delivery. (Section Thirteen) 
+• Funeral arrangement - Talk about options, ensure parents have received SANDS leaflet. 
+Explain the pregnancy loss midwives can assist with this. (Section 15 or Part Two - I) 
+• Chaplaincy services - offer even if non -religious ( Part Two - D and Appendix 2 ) 
+Section Eight - Care in labour 
+ 
+8.0 Refer to MP035: Care of Women in Labour - for routine labour care. 
+No fetal monitoring equipment, contractions to be manually palpated if necessary . 
+8.1 For women colonised with Group B Streptococcus prophylactic antibiotics are not required. 
+Section Nine - Analgesia Options 
+ 
+9.0 Patient should be wri tten up for liberal analgesia, as th ey may find labour and delivery 
+ insufferably harder. 
+9.1 Discuss with the anaesthetist on admission ensure they are aware of the situation and allow 
+ them to assess for coagulopathy and or sepsis. 
+9.2 Offer oral analgesia/ Entonox in the normal way if patient wishes 
+9.3 Diamorphine and morphine preferred over pethidine as they have greater analgesic qualities 
+ and longer duration of action. 
+9.4 Regional anaesthesia should be available - Epidural Analgesia as per MP042 Epidurals in 
+ Labour protocol 
+9.5 Patient Controlled Analgesia System 
+• Prescribed by the anaesthetist and prepared by recovery staff from level 5. Patients 
+with a PCA require nasal oxygen and hourly respiratory rate measurement - 
+commence PCA chart. 
+9.6 If labour ward anaesthetist not available 
+• RSCH - midwife to liaise with third on call on bleep 8224 . Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 12 of 82 
+ • PRH- Midwife to liaise with bleep holder 6442 ( this may not be covered by a n 
+anaesthetist but must be first point of call. ) 
+• For both sites i f the delay is anticipated to be more than one hour consultant 
+anaesthetist to be contact in line with anaesthetic protocol. 
+9.7 Birthing pool can be considered where no contraindications exist. 
+Section Ten - Birth/ Delivery 
+ 
+10.0 Ensure women’s wishes are respected - midwife prepared in situations such as where the 
+woman does not wish to see baby. 
+10.1 Baby tone is likely to be poor - carefully support parents when handling baby 
+10.2 Be cautious when identifying the sex of babies of early gestations. Ensure that parents are 
+aware if you are unsure. If parents opt for a post -mortem the sex will be confirmed within 
+the findings. 
+Section Eleven - Third stage 
+ 
+11.0 Active management is recommended 10 units Oxytocin IM for all women. 
+Section Twelve - Postnatal 
+ 
+12.0 Parents should be supported to see, hold, wash and dress their baby if that is their wish 
+12.1 The cold cot should be used for al l babies either in the Sunset room or with the parents 
+depending on the situation. 
+12.2 Parents should be offered to take their baby home and supported with their wishes 
+(Section Seventeen and Part T wo-H.) 
+12.3 Create memories with parents - give 4louis box and Oscars wish foundation bag. Take 
+hand/ foot prints, photos, cot cards all should be offered to parents and if decli ned stored 
+in hospital notes. ( Part two section E- for more details ). 
+12.4 Unless the mother’s health dictates otherwise, the length of stay should be flexible 
+according to her needs. 
+12.5 Inform relevant professionals of pregnancy loss 
+• Call GP 
+• Email - Pregnancy loss information sharing - this is a global distribution list (or 
+click this link and check names in outlook) and will inform pre gnancy loss 
+midwives, Postnatal team, antenatal clinic and sonographers, please 
+include: 
+- Mothers: Name, Hospital number 
+- Parity / gestation Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 13 of 82 
+ - NHS number (baby) if applicable 
+- short summary of events 
+• Email - For babies born with signs of life please email Child Health Information 
+Services to notify them of the death on sc-tr.cchis@nhs.net , please include: 
+- Mother’s/Parent’s: Name, Hospital number 
+- Parity/gestation 
+- NHS number (baby) 
+- Short summary of events 
+12.6 Offer Cabergoline 1mg orally following birth for suppression of lactation. It should not be 
+given to women with hypertension or pre -eclampsia. 
+12.7 Provide emotional support and relevant information about support groups/counselling to 
+parents in verbal and written format - pregnancy loss midwives can help with this. (Part 
+Two -J and Appendix 3 ) 
+12.8 Ensure parents cultural needs are met (Part two -D) 
+12.9 Complete a D atix- for reviewing purposes. (Part Two - M) 
+12.10 Ensure checklist complete and ‘fresh eyes’ check of the notes with labour ward 
+coordinator. 
+12.11 The notes should be placed in the pregnancy loss notes cupboard on the labour ward at 
+RSCH and in the hummingbird room at PRH. The pregnancy loss midwife will ensure the 
+paperwork is complete and send the notes to coding. 
+12.12 Ensure support is offered to staff (See Part Two - L and Appendix 4) 
+ 
+Section Thirteen – Placenta 
+ 
+13.0 If NOT for Post mortem - Send to histology dry in white pots - labelled with mothers details 
+attach histopathology for (Appendix 5 ) 
+13.1 If FOR Post mortem - send placenta dry in white pot with the baby to the mortuary - 
+labelled with mothers details attach histopathology 
+
+Section Fourteen - Post mortem examination 
+ 
+14.0 All women should be offered full post -mortem examination over 14 weeks to help explain 
+the cause of death. 
+14.1 The SANDS information leaflet ‘Deciding on Post mortem’ is to be given to the parents so 
+that they can decide about a post mortem prior to consent taking. Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 14 of 82 
+ 14.2 The post mortem consent form ( Appendix 6) must be completed in full and taken by a 
+member of staff trained in consent taking - senior midwife, registrar grade or above. Full 
+details of consent taker must be documented. 
+14.3 The c onsent taker must go through the consent checklist prior to taking consent and file in 
+the patients notes. 
+14.4 Results can take up to 8 weeks however it is important to inform women that baby will be 
+returned to mortuary within 7 -10 days - unless exceptional circumstances. T he pregnancy 
+loss midwives will inform parents when their baby is back. 
+14.5 Photoc opy consent form . One must be given to parent and one in notes. 
+Section Fifteen – Funeral 
+ 
+The options for funeral arrangements should be discussed with parents. The two options are 
+choice of hospital or arrangemen t of own funeral. Currently each site offer s slightly different 
+services ( see Part 2 -I) 
+ 
+15.0 Own Funeral 
+• Parents should be given list of funeral directors (Appendix 7 ). 
+• Pregnancy loss midwives can help with arrangements . 
+• There is no charge for cremation but there will be a small charge for 
+burial plot 
+• Parents should be informed that their funeral director should be in 
+touch with the hospital within 30 days to arrange collection of the 
+baby . 
+ 
+15.1 Hospital funeral - parents at both sites have 30 days to change their mind. 
+• RSCH - Parents need to understand there is no service or ashes with 
+hospital cremation at any gestation. 
+• PRH- Hospital cremations are able to offer parents ashes from 24/40. 
+
+Section Sixteen - Paper work 
+ 
+The flowcharts below outline the relevant paperwork for each gestation. Flowchart 15.1 is 
+the g eneric paperwork for all losses, and then they are split for specific paperwork. 
+ Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 15 of 82 
+ 16.1 16.2 
+
+Paperwork for all 
+pregnancy losses 
+Bounty suppression form - leave in external 
+mail tray. 
+Pregnancy loss information form - fax to 
+Obstetric secretary, leave pregnancy loss 
+midwife copy in purple folder 
+Blood Forms - complete relevant and send 
+to lab. 
+Histology form if not for PM - Send with 
+placenta to the Lab. 
+Genetics specimen form - if not for PM. 
+Sent with placenta to guys and St 
+Thomas’s 
+Community MW form - send to CMW 
+office. 
+Coding form - attach to front of brown 
+folder. 
+Post - Mortem Paperwork 
+Midwife to complete London perinatal 
+pathology network – PM request form - Original 
+with baby copy in notes 
+Doctor/trained MW to complete PM consent 
+checklist - file in notes. 
+Midwife to complete Perinatal/paediatric 
+PM Referral -Original with baby copy in 
+notes. 
+Post mortem consent Form 
+Complete DR, MW who are trained. 
+1. Original with baby 
+2. One for parents 
+3. Copy in notes 
+FAX- Pm Consent and referral form to guys and St 
+Thomas’s - 02071883927. 
+In Wallet/ envelope - addressed F.AO St 
+Thomas’s 
+•PM consent 
+•London perinatal Request form 
+•Photocopy of scans 
+Send with baby to the mortuary 
+Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 16 of 82 
+ 16.3 16.4 
+
+Under 24 weeks 
+NOT registerable 
+Doctor to complete P2 Form 
+If born with any signs of life follow - signs of life 
+pathway 
+4 copies 
+•Blue and white copy - in envelope 
+to mortuary with baby 
+•Yellow copy - to woman 
+•Pink copy - in maternal notes 
+Computing: 
+Smart - N/A 
+Oasis - Birth tab, enter date. 
+Smart - patient management - 
+ Outcome - Non-registerable 
+ birth 
+Over 24 weeks 
+Registerable birth - all babies must be 
+registered 
+Cremation form 9 - completed by doctor or 
+midwife. Only side 9 to be complete. Send 
+to mortuary with baby. Place a copy in 
+notes 
+If born with any signs of life follow - signs of 
+life pathway. 
+Stillbirth Certificate - completed by doctor. 
+Original to parents, copy in the notes. 
+Parents to register baby. A Certificate for 
+burial/cremation will be issued. Parents need 
+to give certificate to funeral director if own 
+funeral and mortuary if hospital funeral. 
+Computing 
+Spine - complete generate NHS number 
+Oasis - complete all 
+Smart - complete all. Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 17 of 82 
+ 16.5 16.6 
+
+TOP 
+Certificate A - Abortion Act 1967 
+Yellow abortion form: signed by 2 doctors 
+Under 24 weeks - complete relevant 
+paperwork in flow chart 
+If born with any signs of life follow - signs of 
+life pathway. 
+Over 24 weeks - complete relevant 
+paperwork in flow chart 
+If over 24 weeks - Parents to register baby. A 
+Certificate for burial/cremation will be issued. 
+Parents need to give certificate to funeral 
+director if own funeral and mortuary if hospital 
+funeral. 
+Computing 
+Follow relevant flow chart regarding gestation 
+ 
+ Complete Form A - Notification of Child Death 
+Email to CDOP 
+Child -Death.Overview -Panel@eastsussex.gcsx.gov.uk 
+Born Signs of life 
+(At any gestation) 
+Doctor to inform the coroner 
+Complete Cause of Death Certificate 
+Doctor must see baby 
+Death certificate to be faxed to coroner 
+following agreement 
+Woodvale Cremation Form 4 - for all gestations - 
+completed by same doctor as above. NOT part 5. 
+Send with baby to mortuary 
+ 
+Computing 
+Spine - complete generate NHS number 
+Oasis - complete all 
+Smart - complete all. 
+Parents to regist er birth and death . 
+A Certificate for burial/cremation will be issued. Parents 
+to give certificate to funeral director or mortuary . 
+Email Child Health Information Services to inform 
+them of the death 
+sc-tr.cchis@nhs.net 
+Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 18 of 82 
+ Section Seventeen - Taking baby home 
+ 
+17.1 Women should be offered to take baby home. (Part Two -H for more details on all areas 
+below) 
+17.2 Under 23 weeks plus 6 days (no signs of life) 
+▪ Property of the parents, parents can take home and do not need to return the fetus 
+▪ Complete letter (Appendix 9 ) 
+17.3 Over 24 weeks or born with signs of life under 24: 
+▪ Women can take their babies home - 
+▪ Need to complete ‘taking your baby home’ ( Appendix 8 ). 
+▪ Discussion around deterioration of baby should be discussed sensitively 
+▪ Cuddle (Cold) cot is available to be lent to parents from both sites. 
+Section Eighteen - Follow up 
+ 
+18.0 Pregnancy loss midwives will follow up women within the first week of discharge . Please 
+ensure they are informed using the information sheets provided in the packs and leaving 
+them in designated hummingbird cupboard (RSCH) or room (PRH). Please try to ensure 
+you obtain an email address for the parents as this is often the preferred method of 
+contact. 
+18.1 The wishes of the woman and her partner should be considered when arranging follow -up. 
+18.2 Community midwife care should continue - ideally with known antenatal midwife for 
+continuity - Carers should be vigilant for postpartum depression 
+18.3 An appointment will be made for around 8 -10 weeks following delivery regardless of 
+whether a Post Mortem is undertaken. 
+18.4 The consultant responsible for the follow up will be: 
+• Antenatal named consultant if one identified 
+• If no antenatal consultant then the consultant on call at the time of pregnancy loss 
+diagnosis. 
+18.5 If the consultant on -call at the time of diagnosis was a locum, follow -up will be made with 
+one of the pregnancy loss lead consultants (Jo Sinclair or David Utting) 
+
+ Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 19 of 82 
+ Part Two 
+Contents: 
+Part Two ................................ ................................ ................................ ................................ ........................... 19 
+Contents: ................................ ................................ ................................ ................................ .......................... 19 
+Section A - Legal Definitions: Birth and Death Registration ................................ ......................... 21 
+Section B – Going home after Diagnosis ................................ ................................ ............................... 23 
+Section C - Understanding Grief ................................ ................................ ................................ ............... 24 
+Section D - Religious and Cultural Beliefs ................................ ................................ ............................ 25 
+Section E - Creating Memories ................................ ................................ ................................ ................. 26 
+Section F - Pregnancy Loss in Multiple Pregnancy ................................ ................................ ........... 28 
+Section G - Legal Entitlements ................................ ................................ ................................ .................. 29 
+Section H - Taking baby home ................................ ................................ ................................ .................. 29 
+Section I - Funeral arrangements ................................ ................................ ................................ ........... 29 
+Section J - Bereavement Support for Parents ................................ ................................ ..................... 31 
+Section K - Care of Family Members ................................ ................................ ................................ ...... 31 
+Section L - Support for Staff ................................ ................................ ................................ ...................... 32 
+Section M – Datix ................................ ................................ ................................ ................................ ........... 32 
+Appendix 1 - Pregnancy Loss Team Contact Details ................................ ................................ ......... 34 
+Appendix 2 - Chaplaincy & Spiritual Care ................................ ................................ ............................. 35 
+Appendix 3 - Support options for families ................................ ................................ ........................... 42 
+Appendix 4 - Support for Professionals ................................ ................................ ................................ .... 43 
+Appendix 5 - Histopathology ................................ ................................ ................................ ..................... 45 
+Appendix 6 - Post mortem consent ................................ ................................ ................................ ......... 46 
+Appendix 7 - Funeral Directors ................................ ................................ ................................ ................ 56 
+Appendix 8 - Taking baby home ................................ ................................ ................................ ............... 59 
+Appendix 9 - Taking products home ................................ ................................ ................................ ....... 61 
+Appendix 10 -Certificate of birth ................................ ................................ ................................ ............. 62 
+Appendix 11 - London perinatal request ................................ ................................ .............................. 63 
+Appendix 12 - Perinatal referral form ................................ ................................ ................................ ... 67 
+Appendix 13 - genetic specimen form ................................ ................................ ................................ .... 69 
+Appendix 14 - community midwife form - PRH & RSCH ................................ ................................ ... 71 
+Appendix 15 - Pregnancy loss information for secretaries ................................ ........................... 73 
+Appendix 16 - Coding form RSCH ................................ ................................ ................................ ............. 74 Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 20 of 82 
+ Appendix 16 - Coding form PRH ................................ ................................ ................................ ............... 75 
+Appendix 17 - Cremation form 9 ................................ ................................ ................................ .............. 76 
+Appendix 18 – Referring neonatal Deaths to the Coroner ................................ ............................. 77 
+Appendix 19 - Pregnancy Loss – Giving Birth ................................ ................................ ...................... 80 
+Appendix 20 - P2 form ………………………………………………….. (Do not print this form) ............... 81 
+Appendix 21 - Maternity Bereavement Audit Tool 2017 ................................ ............................... 82 
+
+ Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 21 of 82 
+ This practice guidance is derived from statute and code of practice. 
+Section A - Legal Definitions : Birth and D eath 
+Registration 
+ 
+A stillborn baby is defined in law as “a child which has issued forth from its mother after the 
+twenty -fourth week of pregnancy and did not at any time after being completely expelled 
+from tis mother breathe or show any other signs of life.” (Births and Deaths Registration Act 
+1953 s 441, amended by Stillbirth Definition Act 1992) 
+ 
+● Stillbirth must be medically certified by a fully registered doctor or midwife; the 
+doctor or midwife must have been present at the birth or examined the baby after 
+birth. (Statute) 
+ 
+● HM Coroner must be contacted if there are signs of life or any doubt about signs of 
+life. (Statute) 
+ 
+● Police should be contacted if there is suspicion of deliberate action to cause 
+stillbirth. (Statute) 
+ 
+● Fetal deaths that had clearly occurred before the end of the 24th week but deliver 
+after 24 weeks do not have to be certified or registered. (Code of Practice) 
+ 
+● The baby can be registered as indeterminate sex if uncertain awaiting further 
+tests. (Code of Practice) 
+ 
+● The parents are responsible in law for registering the birth but can delegate the 
+task to a healthcare professional. (Statute) 
+ 
+In the 1990s there was an addition to practice, not a change in law, to avoid registration of 
+babies that might have died in early pregnancy (usually a multiple pregnancy). There is also 
+a discrepancy over babies born before 24 weeks who show signs of life, if recorded as a live 
+birth the parents must register the birth. 
+ 
+Non -Registerable Births 
+Any baby born below 24 weeks gestation and not showing any signs of life does not need to 
+be registered with the registry office. 
+ Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 22 of 82 
+ Parents may find it upsetting that they do not receive legal acknowledgment of their baby in 
+these circumstances. SANDS provide certificates of birth for these baby’s ( Appendix 10 ), and 
+many varieties can be found on their website www.sands.org , including those for single 
+parents and same sex parents. Copies are available across site, or may be printed onto 
+coloured pape r directly from this guideline. 
+ 
+Registering a Stillbirth 
+Any baby born dead over 24 weeks gestation must be registered as a stillbirth. At the time 
+of birth, a doctor of middle grade or above must complete the stillbirth certificate in full – to 
+include their GMC number. A sticker must be placed i n the notes and signed by the doctor 
+to confirm this has been filled out in full and instructions have been given to parents 
+(Stickers are kept with Stillbirth certificates at both sites – please inform pregnancy loss 
+midwives if unavailable). 
+ 
+Parents should be supported to understand that they are responsible for registering their 
+baby’s stillbirth within 42 days . Healthcare providers should check their understanding of 
+this before discharging from hospital. 
+ 
+When the parents have registered the stillbirth, they will be given a certificate which they 
+must give to their funeral director (If they’re having their own funeral) or the bereavement 
+office (if they are having a hospital cremation). This will allow the baby’s body to be released 
+from the hospital for funeral. 
+ 
+Registering a Neonatal Death – Including babies born wit h signs of life at ANY gestation 
+If a baby is born alive and lives for any period of time, the birth and death must be 
+registered, irrespective of the baby’s gestation. At the time of death, a doctor of middle 
+grade or above must complete the death certificate in full – to include their GMC number. A 
+sticker must be placed in the notes and signed by the doctor to confirm this has been filled 
+out in full and instructions have been given to parents (Stickers are kept with death 
+certificates at both sites – please inform pregnancy loss midwives if unavailable). 
+ 
+It is the doctors responsibility to inform the coroner of the death at the time of the event (A 
+coroner is on call 24/7 and available via switchboard at both sites). The hospital doctor and 
+the coroner must agree on the appropriate wording of the death certificate, this is usually 
+done verbally and confirmed by fax. 
+ 
+Parents should be advised that the death should be registered within five working days, 
+except in exceptional circumstances (e.g. if maternal condition prevents). The birth and 
+death may be registered at the same appointment. 
+ Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 23 of 82 
+ When the parents have registered the death , they will be given a certificate which they 
+must give to their funeral director (If they’re having their own funeral) or the bereavement 
+office (if they are having a hospital cremation). This will allow the baby’s body to be released 
+from the hospital for funeral. 
+Section B – Going home after Diagnosis 
+ 
+Most women will be advised to go home after their initial assessment and administration of 
+Mifepristone. Women should be given the leaflet “ Pregnancy loss – giving birth ” )Appendix 
+20) prior to this, and the midwife should ensure she has a clear understanding of when to 
+return. 
+The pregnancy loss midwives should be informed of the loss by email, and will endeavour to 
+contact the woman during this period to make introductions and offer support. This may 
+not always be possible; therefore it is advisable to offer advice to parents about how they 
+may cope with this difficult period of time, for example, arranging 
+clothing/blankets/keepsakes that they may like to bring in for their baby. Advise women to 
+bring snacks and home comforts if they wish. 
+Ensure women are encouraged to contact the maternity unit with any worries during this 
+time, and make them aware that they are welcome to return to the hospital if they feel they 
+cannot cope at home. 
+See section C – religious and cultural beliefs. It may a good time for families to access the 
+hospital chaplain for telephone support at home. The chaplain may be able to make plans 
+for a blessing if this is their wish, or may just be a listening ear. They are a very valuable 
+resource and are happy to be contacted in these circumstances. Ensure parents receive the 
+information leaflet and are advised that this service is available regardless of religious or 
+cultural beliefs. 
+The midwife should also ensure that the woman is advised to call the maternity unit if she 
+experiences any of the following: 
+• Onset of contractions 
+• Spontaneous rupture of membranes 
+• Feeling unwell 
+
+ Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 24 of 82 
+ Section C - Understanding Grief 
+ 
+Grief and mourning are powerful emotions and behaviours that can be disturbing both for 
+the bereaved person and for all midwives, doctors, and support staff. As with all human 
+emotions, grief is made up of a complex combination of feelings, physical sensations, 
+thoughts and behaviours 
+ 
+Understanding the ways in which grief manifests itself and how this changes over time can 
+be helpful. It can help normalise what might otherwise seem like unusual behaviour and 
+experiences. It can also be useful to have some idea about when and how things are likely to 
+change. 
+ 
+The course of grief has been broken down into different st ages or phases, and the process 
+involves a number of tasks for the mourner. This process is not smooth or predictable and 
+some people never reach acceptance. Many factors influence the course of grief but the 
+general path and direction is the same. 
+ 
+The four phases of Grief: 
+ 
+Phase Features Task 
+DENIAL 
+ Shock; disbelief; sense of 
+unreality, questioning 
+results and treatment 
+ To accept the reality of the 
+loss 
+Helped by: traditional 
+rituals, involvement of family 
+in care of baby after death. 
+ 
+PAIN/DISTRESS Hurt; anger; guilt; 
+searching; worthlessness 
+ To experience the pain of 
+grief 
+Helped by: understanding 
+that different people grieve 
+in different ways and for 
+different periods of time. 
+ 
+REALISATION Depression; apathy; 
+exhaustion; tearfulness; 
+experiencing the loved one: 
+smelling, hearing, seeing, 
+feeling 
+ To adjust to life without the 
+person 
+Helped by acceptance that 
+changeable emotional states 
+are normal. 
+ 
+ACCEPTANCE Readiness to engage in new To relocate emotional Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 25 of 82 
+ activities and relationships 
+ energy elsewhere 
+
+When parents leave the hospital following the death of their child they will have only just 
+started on their journey through grief. Staff can help prepare them for this by mentioning: 
+ 
+• Triggers – sights, sounds and smells associated with their pregnancy and baby may make 
+them unexpectedly distressed. This is very natural and thinking ahead can sometimes help 
+parents cope better. Families are often prepared for the difficulty of seeing unused baby 
+clothes and equipment but may not have thought about how they might be affected by 
+other things such as songs that were popular during their confinement or smells of toiletries 
+they used during pregnancy. Women who go on to try for another baby are often surprised 
+by how distressed they can become with the onset of a period. 
+ 
+• Anniversary effects – for parents who have lost a child the year is peppered with 
+meaningful dates. These include not only the baby’s date of birth and death but also special 
+times of year such as Christmas and Mother’s Day. It is helpful for parent to know that it is 
+not unusual to feel more upset around these times of year. 
+ 
+• Other losses and separations – routine experiences such as being left alone when a 
+partner returns to work or goes away for the first time following the death of a baby can 
+reawaken feelings of loss and abandonment. 
+ 
+• Differences -- in grieving and seeking comfort and consolation can be trying for some 
+relationships. Couples need to be aware that their way of dealing with their baby’s death 
+may not be the same as their partner’s. It does not mean that they do not feel as sad about 
+their loss. Similarly couples may differ in their need for physical comfort. On the one hand 
+they may want the comfort of being held closely and the reassurance of still being attractive 
+to their partner. On the other hand they may not want this to move onto intercourse. If 
+couples are not aware of these differences misunderstandings can occur and relationships 
+suffer 
+Section D - Religious and Cultural Beliefs 
+ 
+1. Patients admitted to the BSUH NHS Trust come from a variety of ethnic and religious 
+backgrounds. In the event of a death, grief may easily be increased if staff members do 
+not comply with the dictates or preferences of individual religious or cultural beliefs. 
+2. Muslim, Jewish and other religions’ relatives may request that the death be processed 
+immediately. Guidance for this is via the chaplaincy contact list or via switchboard 
+(Appendix 10) Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 26 of 82 
+ 3. The trust offers 24 hour access to an on -call chaplain, who may contacted via 
+switchboard. 
+4. Chaplaincy is an invaluable resource regardless of religious denomination, and should be 
+offered to all women/families affected by bereavement. 
+5. There is a Book of Remembrance in the chapel. This is accessible 24 hours a day and is 
+available to all parents. If parents complete the book of remembrance they will be 
+informed of memorial services arranged by the chaplaincy team. 
+6. See Appendix B. 
+Section E - Creating Memories 
+ 
+Many parents feel a strong desire to cherish and remember their baby and to preserve his 
+or her continuing presence in their lives. Physical items connected to their baby may help to 
+confirm the reality of his or her short existence and provide comfort as well as a fo cus for 
+their grief. (SANDS 2016 ) 
+Some parents may only wish to see or hold their baby for a short period of time; however 
+others may wish to hold or keep the baby in the room with them for long er or overnight. 
+Babies should be placed in cuddle cots (provided at each site) when they spend time w ith 
+their parents and family. Parents can take as long as they need with their baby and a cold 
+cot can be set up in their room. They will be placed into a casket when they are 
+subsequently taken to the mortuary. 
+Carers should avoid persuading parents to have contact with their stillborn baby, but should strongly 
+suppo rt and facilitate such desires when expressed. SANDS (2016) recommend that parents are 
+offered opportunities more than once, as they may change their mind at various stages. 
+Parents who are considering naming their baby should be advised that after registration a 
+name cannot be entered at a lat er date, nor can it be changed. If parents do decide to name 
+their baby, all carers should refer to the baby by name where possible , including at follow –
+up meetings. 
+ 
+Parents should be offered, but not persuaded, to retain artifacts of remembrance. 
+ 
+Verbal consent should be sought from the parents and information governance regulations 
+should be complied with for clinical photography and their storage in the notes . 
+ 
+Memory boxes are provided by SANDS and 4LOUIS. Smaller boxes are provided for losses < 
+24/40; however please use your discretion when deciding which box to offer. 
+ 
+A. Hand & Foot prints Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 27 of 82 
+ 
+Inkless wipes and paper are provided at both RSCH and PRH sites and are stored in the 
+pregnancy loss room on each labour ward. Please inform the pregnancy loss midwives if 
+any restocking is required. 
+ 
+It is easier to achieve good quality prints if ta ken by two people. One person should hold 
+the h and/foot steady and the other may ‘roll’ the paper onto it. 
+ 
+Please secure in an envelope with the woman’s hospital number in the hospital notes if 
+parents do not wish to have them, as may change their mind in future. 
+ 
+Our memory boxes are provided by SANDS and 4LOUIS. These contain clay impression 
+sets which can be used for hand and foot prints in addition to the paper prints. 
+ 
+B. Photographs 
+Cameras and colour printers are provided at both sites . Individual SD cards are provided 
+within the memory boxes. These can be given to parents in addition to prints. 
+ 
+Take as many photographs as you feel appropriate. Blankets, knitted nests, clothes and 
+hats are available in the pregnancy loss rooms at each site. Please inform the pregnancy 
+loss midwives if there is low stock of anything you need. 
+ 
+Offer to take photographs of parents with their baby if they are spending time with 
+them. These moments are precious and should be captured if possible. 
+ 
+Some, but not all Bounty photographers are able to assist with photography. During 
+working hours, approach bounty staff directly if they are on site. 
+ 
+C. Other Mementoes 
+• A lock of hair if possible – place in small jewelry box provided. 
+• Name bands 
+• Cot card 
+• Certificate of birth for non-registerable babies ( if born under 24 weeks) 
+• Teddy’s – give one to parents and one to stay with baby. 
+ 
+D. Chestnut Tree House Neonatal Services 
+Chestnut Tree House is a children’s charity providing hospice care services and community 
+support for children and young people with progressive life -shortening conditions 
+throughout East and West Sussex, Brighton and Hove and South East Hampshire. Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 28 of 82 
+ When a baby dies, families are offered the use of the bereavement suite, ’Stars’. There is a 
+cool room where their baby can remain for a period of time. Support is offered whilst 
+planning a funeral, in saying their goodbyes and continues with optional counselling and 
+remembrance events in the future. 
+Midwives may refer families to Chestnut Tree House in instances where parents and 
+extended family members would like to spend some extra time with their baby, but may not 
+wish to return to their own home or stay in hospital. 
+To make a referral, call the Community Nurse Manager on 01903 871803, or contact the 
+hospice via their switchboard on 01903 871800. 
+The hospice is located at: Dover Lane 
+Arundel 
+West Sussex 
+BN18 9PX 
+Nb: if the baby is over 24 weeks gestation, it will be necessary to liaise with the mortuary for 
+advice to arrange the release of the baby from our hospitals. 
+Below 24 weeks gestation (if not born showing signs of life), it is acceptable to release the 
+baby directly from the maternity unit using form ‘release of baby’s body to parents’ 
+The bereavement midwives will be able to help you with this. 
+Section F - Pregnancy Loss in Multiple Pregnancy 
+ 
+Families who have lost a baby from a twin/ triplet pregnancy face the difficult challenge of 
+dealing with the bereavement, while often simultaneously feeling anxious about the 
+prognosis for a surviving baby. 
+ 
+Parents generally appreciate it when staff recognise that their surviving baby is a twin. 
+Parents usually welcome the opportunity to discuss the loss of the twin who died. Parents 
+really value the empathy they receive from staff when one of their twins dies. Offer 
+memory making . Parents find comfort in mementoes of both their twins. Parents can find 
+the discharge from hospital of their surviving twin difficult. The neonatal team can provide 
+Butterfly stickers that can be placed on or next to the cot when a baby has died , to alert 
+staff that the baby is a survivor of a multiple pregnancy. These are available on TMBU and 
+SCBU on request. Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 29 of 82 
+ Section G - Legal Entitlements 
+ 
+Parents who have suffered a stillbirth above 24 weeks or a neonatal death at any gestation 
+are entitled to their full maternity/paternity rights, including maternity leave and pay. 
+ 
+Parents who have suffered a miscarriage before 24 weeks are only entitled to 
+maternity/paternity rights if there baby was born with signs of life and was registered as a 
+live birth and subsequent death. 
+ 
+Sick leave related to a miscarriage before 24 weeks is protected in the same way as sick 
+leave for a pr egnancy related illness, so women are not limited in how much they can take 
+and it must be recorded separately from oth er sick leave . 
+ 
+See the leaflet “Your entitlements following the loss of your baby ” for more information 
+from my pregnancy matters. This can be found in both bereavement rooms in hard copy, 
+and is in the SANDS packs. 
+Section H - Taking baby home 
+ 
+Som e parents find it comforting to have time with their baby outside of the clinical setting. 
+This may also be an opportunity for siblings and other relatives to see the baby and create 
+memories. Please use the form “ Taking baby home ” (Appendix 8 ) and ensure parents are 
+advised to keep baby cool. Parents should be loaned a cold cot and shown how to use it – 
+there are two at each site. Please contact the pregnancy loss midwives if you need advice. 
+There is no legal reason why the parents may not take the baby home unless the case has 
+been referred to the coroner. 
+Parents who do not wish to take their baby home should be offered the opportunity to stay in 
+hospital for long enough to spend time with their baby . Parents should not feel rushed to leave. 
+Section I - Funeral arrangements 
+ 
+According to the coroner products of conception below 23 weeks plus 6 days which at no 
+stage have shown signs of independent viability are the property of the parents and if 
+parents so wish they can remove them from the hospital. If parents wish to remove the 
+baby /products of conception then a copy of the letter (Appendix J) stating that they have 
+taken the baby can be signed before they leave the hospital. Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 30 of 82 
+ 
+By law, all babies born at or after 24 weeks gestation must be formally buried or cremated. 
+ 
+Private Funerals 
+ 
+Parents can arrange the funeral themselves and this should be supported . Most funeral 
+directors do not charge for babies and children, however parents should be advised to 
+check this when they make contact . A list of funeral directors for each site can be found in 
+Appendix 7 . 
+ 
+A list of local funeral directors should be given to parents with their SANDS information 
+pack. These are available at both sites, and are found in all folders regardless of gestation. 
+ 
+Parents should be aware that if they are having a post -mortem, the funeral can take place 
+when the baby is returned to the mortuary from St Thomas’s. This is usually no longer 
+than 10 days, but may be longer in some cases such as when an inquest is indicated. 
+ 
+Funeral directors will not usually charge for a basic funeral for a baby (of any gestation or 
+age). Parents should be encouraged to contact a funeral director as soon as they are ready, 
+as they are best placed to assist them with the process. 
+ 
+Parents have 30 days to instruct a funeral director, after which time the hospital will 
+arrange cremation. It is important that parents are aware of this. The pregnancy loss 
+midwives are able to help them with this. 
+ 
+Hospital Funerals 
+The trust will provide a funeral for parents if they choose. These are cremations; burials 
+cannot be arranged by the trust. 
+ 
+Currently at our hospitals there is no opportunity for parents to be invo lved in hospital 
+funerals. Thes e are communal service s which are not publically attended. Current 
+arrangements for ashes are as follows: 
+ 
+PRH – Crematorium will provide ashes for babies cremated above 24 weeks gestation if 
+parents would like them. The bereavement office will assist with these arrangements 
+ 
+RSCH – No ashes are made available regardless of gestation if the hospital is arranging the 
+cremation. If parents would like ashes they should be encouraged to use a funeral director. 
+They will not be under any obligation to arrange or attend a service if they do not wish to. 
+ 
+Local information for crematoriums can be found here: Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 31 of 82 
+ 
+http://www.brighton -hove.gov.uk/content/community -and-life-events/deaths -funerals -
+and-cemeteries/childrens -memorial -garden -0 
+ 
+http://www.brighton -hove.gov.uk/content/community -and-life-events/deaths -funerals -
+and-cemeteries/woodvale -crematorium 
+
+Section J - Bereavement Support for Parents 
+ 
+BSUH has responsibility to provide sensitive support at the time of death and immediately 
+following, as well as clear and accurate information to relatives and close friends. 
+In the maternity wards parents can be offered further support from the Chaplain by direct 
+referrals from the midwives or doctors 24/7 via switchboard . We can also offer parents 
+referral by the midwives/doctors to local support groups. 
+Parents need to be advised that bereavement support may also fall to voluntary and 
+religious organisations and staff in Pr imary health care, See appendix 3 for a comprehensive 
+list of leaflets & support group s. 
+There is currently no bereavement counselling provided by BSUH for pregnancy loss. The 
+pregnancy loss midwives are able to assist with signposting to local charities for counselling 
+and/or group support. 
+Section K - Care of Family Members 
+ 
+Fathers grieve too. Most fathers value the opportunity to be with the baby after death and 
+the chance to receive mementoes and say “goodbye”. The natural tendency for staff to 
+concentrate attention on the bereaved mother often leaves fathers feeling somewhat 
+neglected. They are expected and to take on the practical role of decision -making and 
+informing relatives and friends. Fathers may welcome that responsibility but they also need 
+the same concern and sympathy afforded to their partners. 
+ 
+In most families where there are other children, parents will have started to involve them in 
+the pregnancy. When the baby dies the parents may be unable to think about the effect on 
+the other children or how they might best help and support them. Children can mourn Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 32 of 82 
+ unseen if they do not have an adult to turn to and are not involved in the rites and rituals of 
+death. Children are aware of death from a very early age although their understanding 
+varies according to their personal development. By around the age of 7 most children have a 
+fairly good grasp of what death entails. Younger children are not so logical in their thinking. 
+They find it hard to understand that all functions and sensations cease when a person dies. 
+Parents and staff should be prepared when a young child says something that indicates they 
+do not fully appreciate what has happened, or the whereabouts of the baby. Young children 
+commonly feel guilty about the death of a sibling and the parents need to discuss this with 
+them. 
+Grandparents may feel distressed at the distress of their own children as well as their own 
+sadness at the loss of a new baby in the family. Leaflets are available in the SANDS packs, 
+and as separate booklets which are available in both Hummingbird rooms. 
+Section L - Support for Staff 
+ 
+Professionals involved in caring and supporting bereaved families are likely to need support 
+themselves. They may find it difficult to manage their personal reactions at the same time as 
+performing a professional role – particularly if the event brings up emotions to do with their 
+own experience of loss. 
+All staff involved with caring for a woman with pregnancy loss should be offered the 
+opportunity for a ‘debrief’ or After Action Review (AAR) may need to be considered in some 
+situations. Other colleagues, Supervisors of Midwives, Chaplains or the Occupational Health 
+staff may also be approached to allow opportunities to talk over the events. 
+The pregnancy loss midwives are available to support staff with any support or training 
+needs they may have on a one to one or group basis. Please contact them by email to 
+arrange a time if you feel you would benefit from this. 
+Some further resources for support for professionals can be found in in Appendix 4. 
+Section M – Datix 
+ 
+Ensure a Datix is completed (and document this number in the notes) to ensure the case is 
+reviewed in a multi -professional meeting using a standardized approach. 
+
+ Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 33 of 82 
+ Reference s 
+SANDS (2016) Pregnancy Loss and the Death of a Baby. Guidelines for Professionals SANDS: 
+London, 4th Edition 
+ 
+Late Intrauterine Fetal Death and Stillbirth (Green -top Guideline No. 55) 2010 
+Thomas.J (1993) Supporting Parents When Their Baby Dies The Child Bereavement Trust: 
+Buckinghamshire 
+ 
+Regan L (2001) Miscarriage: What every Woman needs to know 
+ 
+Lothrop.H (1999) Help, Comfort and Hope after Losing Your Baby in Pregnancy or the First 
+Year of Life. Element Books Ltd: Dorset. 
+ 
+RCOG 2011 The Care of Women Requesting Induced Abortion Evidence -based Clinical 
+Guideline Number 7. RCOG Press: London. 
+ 
+RCOG 2004 Good Practice No 4: Registration of Stillbirths and certification for pregnancy 
+loss before 24 weeks of gestation. RCOG Press: London 
+ 
+RCOG 2005 Good Practice No 4: Registration of Stillbirths and Certification for Pregnancy 
+Loss before 24 Weeks of Gestation. RCOG Press: London. 
+ 
+NHS England 2005, Saving Babies’ Lives - Care Bundle for reducing stillbirth and early 
+neonatal death 
+ 
+Embleton N (2016), Bereavement from a twin pregnancy - Guidelines for health 
+professionals, Newcastle 
+
+ Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 34 of 82 
+ Appendix 1 - Pregnancy Loss Team Contact Details 
+Pregnancy Loss Team Contact Details 
+ 
+Lead Consultants 
+Jo Sinclair - jo.sinclair@bsuh.nhs.uk 
+David Utting - david.utting@bsuh.nhs.uk 
+Secretary to both: Sam Flint Samantha.flint@bsuh.nhs.uk 
+ 
+Pregnancy Loss Midwives 
+Hayley Stevenson - Pregnancy loss lead midwife 
+Tel: 07825 967943 
+Email: hayley.stevenson@bsuh.nhs.uk 
+ 
+Shelley Trigwell - Pregnancy loss support midwife 
+Tel: 07387 257856 
+Email: shelley.trigwell@bsuh.nhs.uk 
+ 
+Mortuary 
+RSCH. 
+Tel: 01273 696955 ext 4144 
+RSCH.mortuary@bsuh.nhs.uk 
+Morticians 
+Darren Ponsford: Darren.ponsford@bsuh.nhs.uk 
+Mark Ayres: Mark.ayres@bsuh.nhs.uk 
+ 
+PRH 
+Tel: 01444 441881 ext 8449 
+Mortician 
+Michael Brown - Michael.brown@bsuh.nhs.uk 
+Bereavement officer 
+Sarah Gunaratne - Sarah.gunaratne@bsuh.nhs.uk 
+Tel:01444 441881 ext 8101 
+ Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 35 of 82 
+ Appendix 2 - Chaplaincy & Spiritual Care 
+ 
+CHAPLAINCY CONTACTS 
+A chaplain is on -call 24/7 
+FOR URGENT MATTERS 
+CONTACT THE SWITCHBOARD FOR THE DUTY CHAPLAIN 
+OR 
+LEAVE A MESSAGE : RSCH / RACH ext. 4122; PRH ext. 8232 
+If you require a chaplain of a specific faith, tradition, belief please consult below and phone direct. 
+If you are unable to make contact, phone the Switchboard and ask for the duty chaplain. 
+Faith/Denomination Name Phone Numbers 
+Christian: for a denomination not listed below please contact the Duty chaplain 
+Church of England Contact the Duty Chaplain via switchboard 
+Roman Catholic Contact switchboard, and ask them to page the 
+Roman Catholic chaplain for you. 
+(For the Polish Roman Catholic chaplain: 07789897003 & 01273 720069) 
+Baptist Dave Steell 01273 694746 
+Coptic Christian Church 
+(Egyptian, Sudanese, etc) Father John 01273 736636 (church) or 
+O7775782637 
+Eastern Orthodox Christian 
+Churches Fr. Nicodemus (Greek); 
+Fr Ian Wallis (Russian, etc.) 01273 675396; 07799 877299 
+01273 553230, 07792589317 
+Greek Orthodox Patre Gemanos Kourkounis 01273746653, 
+Methodist Revd Robin Selmes (Brighton) 
+Revd David Chapman(Haywards Heath) 01273 503348 (home)/ 605502 (Church) 
+01444 413498 
+Pentecostal Church - ELIM Paul Davies 07979334288 
+Salvation Army Majors Michael & Elizabeth Lloyd 01273 607095 
+United Reform Revd Alex Mabbs 01273 821512, 07715873932 
+AIDS, HIV Chaplaincy Revd Heather Leake Date 07867 773360 
+Bahai — The Bahai Centre Mona Hajatdoost 01273 505895 Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 36 of 82 
+ Buddhist Laura Shewan 07792981029 
+Brighton Buddhist Centre 
+Western Tradition Kalyanavati 01273 772090 
+07505 889949 
+Theravadan Buddhist Rory Singer 07739 556438 
+Buddhist: New Kadampa Tradition Bodhisattva Kadampa Centre 01273 732917 
+Christian Science Judith Weisz 01273 302705 
+Hindu Crawley Hindu Temple (for Brighton) 
+Ashwin Soni (Haywards Heath) 01293 530105 
+07833 252551 
+Humanist/Secular Society Fleur Jacot 01273 461404 
+Jehovah’s Witnesses Max Worden 
+Philip Warnett 01903 500511/07780 961961 
+01273 674117/07801 472984 
+Jewish Orthodox Rabbi Pesach Efune 
+JEWISH CHAPLAIN FOR BSUH 07885 538681 
+Jewish Reform Rabbi Andrea Zanardo (synagogue) 01273 735343 
+emergencies 07810648666 
+Jewish Progressive Rabbi Elli Sarah 01273 737223 / 07940797136 
+Mormon Bishop Alec Mitchell 01273 271843/07879493608 
+Muslim Imam Idris Naweb 
+MUSLIM CHAPLAIN FOR BSUH 
+Brighton & Hove Muslim Forum 07875 540605 
+01273 819806; 07958 771411 
+Pagan Lyn Baylis 01444 811756 
+Quaker Anne Howard 01273 241127 
+Sikh Baldev Singh Dedyal 
+Sukhdev Ahluwalia 07914 390091 
+01273 235486 
+Spiritualist Joan Bygrave 01273 683088 
+Unitarian Geoff jones 01273 696022 
+
+ Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 37 of 82 
+ Buddhism 
+ 
+Special considerations for Buddhist s 
+• Access to a day room or a single room may be required to provide the peace and quiet for 
+meditation and chanting. 
+• The Chapel can be used for visiting Buddhists to pray with the mother and/or the use of a side 
+room is valued. 
+• Hand washing facilities will be needed prior to meditation. 
+• The mother may wish to sleep on the floor. 
+• The image of a Buddha brings comfort together with flowers and an incense stick. These must be 
+handled respectfully. 
+• It is important to treat the scriptures and Spiritual Writings with respect. Do not place any books or 
+other objects on top of them. 
+• Many Buddhists are vegetarians. 
+ 
+Requirements following death 
+• When fetal or neonatal death is anticipated, the parent or a representative should contact the 
+Buddhist monk to pray or chant a blessing. 
+• After the death a Buddhist monk should attend before the baby is placed in the coffin. There are 
+no restrictions on who should handle the body and there is no objection, on religious grounds, to 
+post -mortem examination. 
+• There are no time requirements for the funeral however the bodies are cremated not buried. 
+
+Christianity 
+ 
+Special considerations for Christian s 
+• There are many branches of the Christian religion, sharing the same beliefs but with different 
+traditions and practices. 
+• The Hospital Chaplain, or the parents’ own Minister or Priest, can provide spiritual support. 
+• A Bible may be requested. 
+ 
+Requirements following death 
+• Parents may wish prayers to be said by the Chaplain or by their own Minister or Priest. 
+• There are no restrictions on who should handle the body and there is unlikely to be any objection 
+on religious grounds to a post -mortem. 
+ 
+Emergency Baptism Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 38 of 82 
+ • In the case of serious neonatal illness/prematurity, the possibility of emergency baptism should be 
+put to Christian parents. With their consent the Chaplain, or the parent’s local minister, should be 
+informed as soon as possible. In an emergency, any lay person may be the minister for Baptism, 
+preferably in the presence of at least one other member of staff. 
+
+Hinduism 
+ 
+Special considerations Hindu s 
+• Hinduism is defined by what people do rather than what they really think. Consequently there is 
+more uniformity of behaviour than belief. 
+• There is a preference for women to be cared for by women and to preserve modesty as far as 
+possible. 
+• Personal hygiene is very important, a bowl of water should be provided when a bedpan is to be 
+used. 
+• Many Hindus do not eat meat and some do not eat eggs. Most drink cows milk. Care must be 
+taken about using plates that have previously been used for serving meat. Single use plates may be 
+used. 
+ 
+Requirements following death 
+• Post -mortems are accepted but are disliked, particularly in the case of children and neonates. 
+• All procedures at death must be consulted with individual families. 
+• In general the midwives or other hospital staff take care of fetal deaths. It is common to bury the 
+fetus. It used to be the practice to bury all neonates and children up to 5 years of age but 
+increasingly in this country parents are opting for cremation. 
+• The family may wrap the body on a plain sheet brought from home. 
+• Funeral arrangements are organised through a specialist funeral director. If additional advice is 
+required the fun eral director can usually help. 
+
+Islam 
+ 
+Special considerations for Muslims 
+• Great importance is placed on cleanliness. A shower is preferred to a bath. A bowl of water should 
+always be provided when a bedpan is offered. 
+• Preservation of modesty may be very important and women will prefer to be cared for by female 
+staff. A woman may request that her husband or a female companion be present during a medical 
+examination. Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 39 of 82 
+ • Times of prayer are dawn, noon, mid afternoon, just before sunset and before retiring for sleep. 
+The mother needs to stand on clean ground or on a prayer mat facing Mecca (southeast in Britain). 
+Privacy is appreciated but not essential. 
+• During the time of Ramadan all healthy Muslims are required to fast. Ill patients and pregnant 
+women are exempt from this. Food should be made available before dawn and after sunset. 
+• Taking medication during the fast may cause problems, no undue pressure should be applied. The 
+local Mosque will provide advice and support in this situation. 
+• Pork and alcohol are forbidden 
+ 
+Requirements following death 
+• No part of the dead body should be cut out, harmed or donated. A coroner's PM is the only 
+exception. 
+• If it is unavoidable for a non -Muslim health worker to handle th e body they should wear gloves. 
+
+Judaism 
+ 
+Special considerations for Jews 
+• No particular religious observance is demanded for the stillborn or liveborn baby. 
+• Before stillbirth/death – no form of preparation is indicated (although the observant Jewish family 
+will constantly invoke the help and solace of the Almighty). 
+• Most Jews do not eat pork or offal and many will only eat kosher food. 
+ 
+Requirements following death 
+• Ideally only Jewish people should handle the body after death, but Jewish authorities recognise 
+that the staff must carry out a minimum of preparation of the body. Similarly, the body should be in 
+the presence of a Jew (the ‘wa tcher’) at all times until the burial. 
+• A post -mortem is not permitted, although a Coroner’s post -mortem cannot be refused. 
+• The burial should take place as soon as possible after death, although none are performed on the 
+Sabbath or religious festivals. Set prayers are said at the funeral. The immediate relatives often 
+undergo a seven day period of mourning (‘Shiva’) as for adults. 
+• Jewish Branch of SANDS – 020 8954 4912 
+
+Paganism 
+ 
+Special considerations for the Pagan 
+• Ensure that the religion is recorded correctly, not as ‘no religion’, or N/A Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 40 of 82 
+ • Most Pagans will not have any unusual needs, but during one of their festivals they may ask for 
+privacy during visiting hours to allow them to worship with their friends. 
+• Because of the diverse traditions within Paganism individuals should be asked how their needs can 
+best be met while in hospital. 
+• Their families may not be aware of their beliefs and most Pagans are wary of making their beliefs 
+known. Therefore this information must be treated as confidential. 
+• Pagans may wish to have a small white candle or a small figure of the Goddess on their locker. 
+• They may be vegetarian, vegan or on raw food diets 
+ 
+Requirements following death. 
+• It is important that Pagans have the name and telephone number of their Spiritual advisor to 
+attend them. The Chaplain would be inappropriate unless requested. 
+• Crem ation or burial are acceptable. 
+
+Rastafaranism 
+ 
+Special consideration for the Rastafarian 
+• Rastafarians may be reluctant to accept Western medicines, preferring to use alternative 
+therapies. They may be reluctant to answer questions. 
+• Fear of contaminating the body influences the attitude to transfusion. 
+• Many consider legal marriage to be unnecessary and extended families may be very complex. 
+• Rastafarians may be unwilling to wear hospital garments that have been worn by others, 
+disposable theatre gowns may be more acceptable. 
+• Visiting the sick is important and visitors often arrive in large groups. 
+• All forms of pig meat are forbidden. Some fish such as herring and sardines are not eaten. Only 
+natural food that has not been canned or chemically treated is eaten. Some Rastafarians are 
+vegetarian. 
+ 
+Requirements following death 
+• The family may pray at the bedside. 
+• There are no rites or rituals before or after death. 
+• Post -mortems and transplants are generally unacceptable. 
+• Burial is preferred, altho ugh cremation is not forbidden. 
+
+Sikhism 
+ Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 41 of 82 
+ Special consideration for the Sikh 
+• Women prefer to be treated by female staff 
+• Sikhs prefer to wash in flowing water before meals, after using the lavatory or bedpan 
+• Often vegetarian and may not eat eggs or fish. 
+ 
+Requirements following death 
+• The family may wish to say or sing prayers often using taped hymns or prayers. 
+• Sikhs are always cremated 
+
+ Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 42 of 82 
+ Appendix 3 - Support options for families 
+ 
+Support options available for families 
+ 
+Brighton and Hove 
+wellbeing Services 01273 
+560288 
+ http://www.bics.nhs.uk/patient -information/brighton -and-hove -
+wellbeing -service/ 
+Brighton Women’s 
+Centre Counselling 0300 002 
+0060 http://www.womenscentre.org.uk/services/counselling/ 
+ 
+As You are 
+Counselling 07952 
+754859 http://asyouarecentre.co.uk/ 
+ 
+MAPS - midwives 
+and parents support It is a group run by midwives and parents who offer support and /or 
+counselling to parents who have experienced a pregnancy loss. The 
+group meet on the first Friday of the month at 7.30pm at PRH, it is 
+informal and confidential 
+ALTERNATIVES 01273 
+207010 They are a service set up to support with pregnancy loss and offer 
+counselling to women and their partners, MW can refer or you can 
+access directly. http://www.alternatives -brighton.org 
+ 
+SANDS - local 
+ 07540 
+388044 http://www.brighton -eastbourne -worthing -sands.org.uk 
+Keepsakes 
+ http://www.neverlandcreations.co.uk/ 
+ 
+ http://www.brighton -hove.gov.uk/content/community -and-life-
+events/deaths -funerals -and-cemeteries/childrens -memorial -garden -0 
+ 
+ http://www.brighton -hove.gov.uk/content/community -and-life-
+events/deaths -funerals -and-cemeteries/woodvale -crematorium 
+ 
+Miscarriage 
+Association 
+ 01924 200 
+799 
+ www.miscarriageassociation.org.uk 
+Provides information and support on all aspects of miscarriage and 
+ectopic pregnancy 
+ 
+SANDS (Stillbirth 
+and Neonatal Death 
+Society) 
+ 020 7436 
+5881 
+ www.uk -sands.org email: support@uk -sands.org 
+Offers support, through self -help groups and befriending, to those 
+bereaved through pregnancy 
+loss, stillbirth and neonatal death. SANDS aims to encourage better 
+awareness of the distress 
+and grie f caused by the loss of a baby. 
+TAMBA (Twins and 
+multiple births) 
+ 01732 
+868000 
+ Gives encouragement and support to parents of twins, triplets or 
+more. There is a specialist sub-group for bereaved parents of twins or 
+more. 
+ 
+ARC (Antenatal 020 7631 Offers support and information to women and couples making Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 43 of 82 
+ Results and Choice) 
+ 0285 
+ decisions about antenatal testing 
+and throughout the testing process. ARC also provides support and 
+information to parents who 
+are told that their unborn baby has an abnormality to help them make 
+informed decisions about 
+the future of the pregnancy. 
+BLISS (Baby Life 
+Support System) Provides information for parents whose babies are or were in Neonatal 
+Units. www.bliss.org.uk email: information@bliss.org.uk 
+FSID (Foun dation 
+for Sudden Infant 
+Death) FSID runs a 24 hour cot death helpline to give personal support. FSID 
+also runs a support 
+programme for parents with their next child called CONI 
+Child Bereavement 
+Trust Offers specialist training in bereavement counselling skills for all 
+professionals. Also offers support to the professional career. 
+Tommy’s Campaign 
+ Research charity abo ut pregnancy and complications. 
+www.tommys.org 
+Abigail's Footsteps 
+ A charity dedicated to stillbirth bereavement 
+http://www.abigailsfootsteps.co.uk/ 
+Winston’s Wish Helpline: 
+0845 203 
+0405 www.winstonswish.org.uk 
+Help and support for bereaved young people up to the age of 18 
+Email: info@winstonswish.org.uk 
+4Louis A charity dedicated to Stillbirth 
+Oscars wish 
+foundation A charity dedicated to Stillbirth 
+
+ Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 44 of 82 
+ Appendix 4 - Support for Professionals 
+ 
+BSUH Occupational Health 
+https://nww.bsuh.nhs.uk/working -here/human -resources/occupational -health/ 
+ 
+BSUH Health, Employee Learning and Psychotherapy services (HELP) 
+https://nww.bsuh.nhs.uk/working -here/human -resources/advice -support -and-
+wellbeing/help -health -employee -learning -and-psychotherapy -services/ 
+ 
+RCM Bereavement Care Network 
+rcm.org.uk/bcn 
+ 
+BMA Useful links on your wellbeing 
+https://www.bma.org.uk/advice/work -life-support/your -wellbeing/useful -links 
+ 
+GMC Your health matters 
+http://www.gmc -uk.org/concerns/11542.asp 
+ 
+Online Health and Wellness Resource 
+http://ephysicianhealth.com/ 
+ 
+International Stress Management Association 
+http://isma.org.uk/ 
+ 
+Multimedia 
+https://www.youtube.com/watch?v=MQolbL6Qcq0 
+A film commissioned by the charity Abigail's Footsteps about stillbirth through the 
+eyes of a mother. Aimed at midwives and any other staff that work in a maternity 
+ward to help them better understand good and bad practice in relation to a stillbirth 
+or neo -natal death. 
+
+ Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 45 of 82 
+ 
+Appendix 5 - Histopathology 
+
+Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 46 of 82 
+
+Appendix 6 - Post mortem consent 
+
+Perinatal/Paediatric Post Mortem Consent Form 
+ 
+Your wishes about the post mortem examination of your baby /child 
+ 
+Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 47 of 82 
+ Your wishes about the post mortem examination of your baby /child 
+Mother Baby /Child 
+Last name Last name 
+First name(s) First name(s) 
+Address Date of birth 
+Date of death (if live born) 
+Hospital no. Hospital no. 
+NHS no. NHS no. 
+Date of birth Gender (if known) 
+Consultant Consultant 
+Father/Partner with parental responsibility Address (if different from the mother’ s) 
+ Last name 
+First name(s) 
+Preferred parent to contact, tel. no.: 
+Other, eg, religion, language, interpreter ……………………….………………………………….…... 
+…………………………………………………………………………………………………………………... 
+
+How to fill in this form: 
+• Please show what you agree to by writing YES in the relevant boxes. Write NO 
+where you do not agree. 
+• Record any variations, exceptions and special concerns in the Notes to the relevant section or in 
+Section 6. 
+• Sign and date the form. The person taking consent will also sign and date it. 
+ 
+Changing your mind 
+After you sign this form, there is a short time in which you can change your mind about anything you have 
+agreed to. Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 48 of 82 
+ If you want to change your mind, you must contact: 
+[Department ] Mortuary, St Thomas’ Hospital [Tel.] 020 7188 3925 
+Before [T ime] ……………………... on [ Day] …………..……. [ Date] ….………..………………. 
+ Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 49 of 82 
+ Please be assured that your baby /child will always be treated with care and respect. 
+Section 1: Your decisions about a post mortem examination Select one of these 3 options. 
+A complete post mortem This gives you the most information. It includes an external examination, 
+examining the internal organs, examining small samples of tissue under a microscope, and taking 
+x-rays (or other forms of imaging such as CT or MRI) and medical photographs. Tests may also be 
+done for infection and other problems and the placenta may also be examined. 
+If you think you may have another baby in the future and are worried that the problem might occur 
+again, a complete post mortem is the best way to try to find out. 
+ I/We agree to a complete post mortem examination. 
+OR 
+A limited post mortem This is likely to give less information than a complete post mortem. 
+A limited post mortem includes an external examination, examining the internal organs in the 
+area(s) of the body that you agree to, examining small samples of tissue under a 
+microscope, and taking x -rays (or other forms of imaging such as CT or MRI) and medical 
+photographs. Tests may also be done for infection and other problems and the placenta may 
+also be examined. 
+ I/We agree to a limited post mortem examination. 
+Please indicate what can be examined: 
+ Abdomen Chest and neck Head Other .................……. 
+OR 
+An external post mortem This may not give any new information. 
+An external post mortem includes a careful examinati on of the outside of the body, x -rays (or 
+other forms of imaging) and medical photographs. The placenta may also be examined. 
+ I/We agree to an external post mortem examination. 
+ 
+Section 2: Tissue samples Only if you consent to a complete or limited post mortem 
+With your agreement, the tissue samples taken for examination under a microscope will be kept as 
+part of the medical record (in small wax blocks and on glass slides). This is so that they can be 
+re-examined to try to find out more if new tests or new information become available. This could be 
+especially useful if you think you may have another baby in the future. 
+ I/We agree to the tissue samples being kept as part of the medical record for 
+ possible re-examination. If consent is not given, you must note below what should 
+ be done with the tissue samples. See Section 9 Item 6 for more information. 
+ Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 50 of 82 
+ Notes to Section s 1 and 2 if required …………………………………………………………………… …………………………… 
+…………………………………………………………………………………………………………............. ........ ................................ 
+Section 3 : Genetic testing 
+To examine the baby’s /child’s chromosomes or DNA for a possible genetic disorder or condition, the 
+pathologist takes small samples of skin, other tissue and/or samples from the placenta (afterbirth). 
+With your agreement, this material may be kept as part of the medical record so that it can be re -
+examined to try to find out more if new tests or new information become available. This could be 
+especially useful if you think you may have another baby in the future. 
+ I/We agree to genetic testing of samples of skin, other tissue and/or the placenta. 
+ If samples should not be taken from any of these, please note this below. 
+ I/We agree to the genetic material may be kept as part of the medical record for 
+ possible re -examination. See Section 9 Item 6 for more information. 
+ 
+Notes to Section 3 if required ………………………………… ……………………………... ………… ………………………………. 
+…………………………………………………………………………………………………….................. ........................................ 
+Section 4: Keeping tissue samples for training professionals and for research 
+Section 4 covers additional separate consent that you may decide to give. It will not affect what you 
+have already agreed to above, what is done during the post mortem, or the information you get 
+about your baby’s /child’s condition, but it may be helpful for others in the future. 
+With your agreement, the tissue samples may also be examined for quality assurance and audit of 
+pathology services to ensure that high standards are maintained. 
+ I/We agree to the tissue samples being kept and used for quality assurance 
+ and audit. 
+Tissue samples, medical images and other information from the post mortem can be important for 
+training health professionals. Identifying details are always removed when items are used for 
+training. 
+I/We agree to anonymised tissue samples, images and other relevant information 
+from the post mortem being kept and used for professional training. 
+Tissue samples, medical images and other relevant information from the post mortem can also be 
+useful in research into different conditions and to try to prevent more deaths in the future. All 
+research must be approved by a Research Ethics Committee. 
+ I/We agree to tissue samples, images and other relevant information from the post 
+ mortem being kept and used for ethically approved medical research. Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 51 of 82 
+ You can withdraw consent for any of the above at any time in the future. To do so, please contact 
+the hospital and ask fo r the histopathology department (see contact details at end of form). 
+ 
+Section 5 : Keeping one or more organs for diagnostic purposes 
+(This section is to be used if an organ is to be kept after the body has been released from 
+the mortuary, if an organ needs to be kept for a period longer than the standard 10 days 
+or if you wish to donate an organ for research or training). 
+ 
+In most cases, all the organs will be returned to your baby's/child’s body within 10 days after the 
+post mortem examination, before the body is released from the mortuary . But occasionally the 
+doctors may recommend keeping one or more organs for longer, to carry out further detailed 
+examination to try to find out more about why your baby/child died. This might take several more 
+days and so could affect the timing of your baby’s/child’s funeral. The person who discusses the post 
+mortem with you will tell you if it is likely ( see Section 9 Item 9 for more information ). 
+ 
+ I/We agree to further detailed examination of the organ(s) specified below: 
+ Any organ 
+ The following organ(s) ……………………………………………………………… …………………………………….. 
+ 
+If you agree to further detailed examination, you also need to decide what should be done with the 
+organ(s) after the examination: 
+ I/We want the hospital to dispose of the organ(s) respectfully as required by law. 
+ I/We want the organ(s) returned to the funeral director we appoint for separate 
+ cremation or burial. 
+ I/We want to delay the funeral until the organ(s) have been returned to my/our 
+ baby’s/child’s body. 
+ 
+Alternatively, after the further detailed examination, you may decide to donate the organ(s) for one 
+or both of the following purposes: 
+ I/We agree to donate the organ(s) to be used to train health professionals. 
+ I/We agree to donate the organ(s) to be used for ethically approved medical research. Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 52 of 82 
+ If you agree to donate one or more organ(s), they will be respectfully disposed of as required by the 
+Human Tissue Authority when they are no longer needed. 
+If you change your mind about this donation at any time in the future, and want to withdraw your 
+consent, please contact the hospital and ask for the histopathology department (see contact details 
+at the end of the form). 
+Notes to Section 5 if required 
+………………………………………………………………………………………………………………… …………………………………………. 
+Section 6: Any other requests or concerns 
+............................................................................................................................. ................... 
+………………………………………………………………………………………………………… ……………………………………. Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 53 of 82 
+ Section 7: Parental consent 
+ I/We have been offered written information about post mortems. 
+ I/We understand the possible benefits of a post mortem. 
+ My/Our questions about post mortems have been answered. 
+ 
+Mother’s name …………………………………… …… Signature …………………………………… …. 
+Father’s/Partner’s name ………………………….. Signature ………………………………………. 
+Date ……… ……………………………………………… ….. Time …………………………………………… … 
+Section 8: Consent taker’s statements To be completed and signed in front of the parents. 
+ I have read the written information offered to the parents. 
+ I believe that the parent(s) has/have sufficient understanding of a post mortem and (if 
+applicable) the options for what should be done with tissue and organs to give valid 
+consent. 
+ I have recorded any variations, exceptions and special concerns. 
+ I have checked the form and made sure that there is no missing or conflicting 
+ information. 
+ I have explained the time period within which parents can withdraw or change consent, 
+and have entered the necessary information at the beginning of this form. 
+Name ………………………………………… ... Position/Grade ………………………………… ….. 
+Department …………………………… ……. Contact details (Ext/Bleep ).….……………… 
+Signature …………………………………… … Date …………… ………. .Time . ……..…………… .. 
+Interpreter’s statement (if relevant) 
+I have interpreted the information about the post mortem for the parent(s) to the best of 
+my ability and I believe that they understand it. 
+Name …………………………………………… Contact details …….……………… …………… 
+Signature …………………………………… …. Date …………….. Time …………..…………… .. Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 54 of 82 
+ 
+Section 9 : Notes for the consent taker 
+1. “Anyone seeking consent for hospital PM examinations should have relevant experience and a good 
+understanding of the procedure. They should have been trained in dealing with bereavement and in the 
+purpose and procedures of PM examinations and they should have witnessed a PM examination” (Human 
+Tissue Authority, Code of Practice 3, 2009). 
+2. Written information about post mortems should be offered to all parents before you discuss the form 
+with them. 
+3. If the parents have a specific request that you are not sure about, contact the pathologist before the form 
+is completed . 
+4. Make sure that an appropriate time and date are entered in the Changing your mind section at the 
+beginning of the form, and the parent(s) understand what to do if they change their minds. The post 
+mortem should not begin unless this section is completed. It is your responsibility to ensure that, if the 
+parent(s) change their minds, they will be able to contact the person or department entered on this 
+form. If the parents do not want a copy of the form, they should still be given written information about 
+changing their minds. 
+5. Write the mother’s or the baby’s /child’s hospital number in the box at the foot of each page of the form. 
+For a baby who was born dead at any gestation use the mother’s hospital number; for a baby who was 
+born alive use the baby’s hospital number. 
+6. Sections 2 and 3: Tissue samples and genetic material If the parents do not want tissue samples or 
+genetic material kept as part of the medical record, explain the different options for disposal (below) and 
+note their decisions in the relevant section. 
+If disposal is requested, it will usually take place only after the full post mortem report has been 
+completed. The options are: disposal by a specialist hospital contractor; release to a funeral director of the 
+parents’ choice for burial; or release to the parents themselves. For health and safety reasons, blocks and 
+slides cannot be cremated. Genetic material is normally incinerated. 
+7. Send the completed form to the relevant pathology department, offer a copy to the parent(s), and put a 
+copy into the mother’s (for a stillbirth or miscarr iage) or the baby’s/child’s medical record. 
+8. Record in the clinical notes that a discussion about the post mortem examination has taken place, the 
+outcome, and any additional important information. 
+9. Possible further examination of one or more organs Very rarely, it may be recommended that an organ is 
+kept for more detailed examination after the baby /child is released from the mortuary (e.g. for complex 
+brain malformations and complex cardiac malformations, or for research purposes). In this case, Section 
+5 Keeping one or more organs for diagnostic purposes should be completed. 
+• If you already know that this is recommended, discuss it with the parents and also explain how it 
+might affect funeral arrangements. If they consent, Section 5 should be completed . 
+• If the pathologist recommends further examination after the post mortem has begun, they will 
+contact you or the unit. The parents should then be contacted as soon as possible to discuss their 
+wishes and to explain how keeping the organ might affect funeral arrangements. If they consent, 
+Section 5 should be completed. 
+ Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 55 of 82 
+
+Useful Contacts 
+St Thomas’ Hospital Guy’s Hospital 
+Mortuary Dept – Ext 83928 Mortuary Dept – Ext 83930 
+Bereavement Centre – Ext 83182 Bereavement Centre – Ext 83218 
+Pathology Dept – Ext 82947 
+Perinatal Pathologists Ext 82918 
+ 82917 
+ 82954 
+
+Lead Health Professionals for Consent Training – Ruby Stewart & Zoe Rutherford x 83928 
+ Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 56 of 82 
+ Appendix 7 - Funeral Directors 
+ 
+Find below a list of funeral directors, once chosen call the number and they will assist you in 
+all necessary arrangements. 
+
+Brighton area 
+Arka 39 Surrey Street 01273 766620 
+Attree & Kent 2 Hollingbury Place 01273 542454 
+Co-op 133 London Road 01273 607276 
+Co-op 44 Warren Road, Woodingdean 01273 693994 
+Christopher Stringer 67 High Street, Rottingdean 01273 306000 
+Derriman & Haynes 56 Ladies Mile Road 01273 540168 
+Denyers 18 Lewes Road 01273 681718 
+Grosvenors 110 Lewes Road 01273 671958 
+Newmans 3 Trafalgar Street 01273 681822 
+Skinners 145 Lewes Road 01273 607446 
+Wagstaffs 29 College Place 01273 603013 
+Wagstaffs 7a Longridge Avenue, Saltdean 01273 303065 
+
+Hove Area 
+ 
+Lewes 
+ 
+Newhaven / Peacehaven Attree & Kent 108 Church Road 01273 821985 
+Bungards 90 Sackville Road 01273 820018 
+Cornfords 100 Blatchington Road 01273 737005 
+Cornfords 8 Queens Parade 01273 726766 
+Dengates 4 Montefiore Road 01273 204410 
+Hanningtons 89 Old Shoreham Road 01273 778733 
+Mother & Daughter - Funeral 
+Directors. Teresa Baker & Melissa 
+Tanner 20 Blatchington Road. Hove 
+BN33YN 01273 734242 
+Coopers 42 High Street 01273 475557 
+Lewes Funeral Care 48a Malling Street 01273 480270 
+Richard Green 28 Western Road 01273 488121 
+Bennetts 13 Bridge Street 01273 611004 Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 57 of 82 
+ 
+Portslade 
+ 
+Jewish Faith 
+ 
+Funeral Directors MidSussex 
+RA Brooks and Son 35 Wivelsfield Road, 
+Haywards Heath RH16 4EN 01444 454391 
+P and S Gallagher Fraser House 
+20 Sussex Road , Haywards Heath 
+West Sussex 
+RH16 4EA 01444 451166 
+Co-Operative 6-8 South Road, 
+Haywards Heath, RH16 4LA 01444 448921 
+Masters and Son Masters House, Lewes Road 
+Lindfield, West Sussex 
+RH16 2LE 01444 482107 
+WM Collins and Son 43 Station Road, 
+Burgess Hill, RH15 9DE 01444 849563 
+Bowley Funeral Service 30 Keymer Road, 
+Hassocks, BN6 8AN 01273 841711 
+Ballard and Shortall 12 Hartfield Road, 
+Forest Row, RH18 5DN 01342 822120 
+ 
+The following funeral undertakers do not charge or services to bereaved parents, I have 
+included their telephone numbers to help give information to parents 
+ 
+Western Road cemetery in Hayward’s Heath do not charge for graves 
+Cuckfield Cemetery charge £12 Co-Operative 41 High Street, Newhaven 01273 515242 
+Wagstaffs 227 South Coast Road 01273 582188 
+Bakers 60 Church Road 01273 418464 
+Philip Evans 172 Old Shoreham Road, 
+Southwick 08453738574 
+Simon Jeffries Boundry Road, Portslade 01273 411622 
+Martin Gross 07801 599 771 Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 58 of 82 
+ Walstead / Lindfield charge £25 
+ 
+Please inform parents that although the above do not charge for services - such as coffins or 
+cars, if parents want extras such as head stones or extra limousines these services will incur 
+charges . 
+ Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 59 of 82 
+ Appendix 8 - Taking baby home 
+ 
+Form for parents who take their baby’s body home 
+TO WHOM IT MAY CONCERN 
+This is to confirm that (name(s) of parent(s)) 
+___________________________________________________________________________ 
+of (address)_________________________________________________________________ 
+__________________________________________________________________________ 
+ Have taken their baby’s body from (name and address of hospital) 
+ 
+___________________________________________________________________________ 
+ 
+______________________________________________ Date ______________________ 
+
+Name of staff member (please print) _________________________________ 
+ 
+Position (please print) _____________________________________________ 
+ 
+In case of need or concern please contact: 
+ 
+I / We, the parent(s), hereby take full responsibility for our baby whilst they are in our care. We will 
+(tick as appropriate): 
+ return our baby to the hospital on (date)__________________ 
+ make our own funeral arrangements. 
+
+Parent(s) Name(s) (please print): 
+ ____________________________ __________________________________ 
+ 
+Signature ____________________ Signature__________________________ 
+
+Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 60 of 82 
+ Staff member’s name ______________________ Job Title______________________ 
+ 
+Department direct line _______________ Signature____________________ 
+24-hour phone contact for support +44 1273 694373 
+ Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 61 of 82 
+ Appendix 9 - Taking products home 
+The Royal Sussex County Hospital 
+Eastern Road 
+Brighton BN2 5BE 
+Tel: 01273 696955 
+Date 
+ 
+Dear 
+ 
+We are sorry about your recent pregnancy loss. We understand you have asked if you may 
+take the products home to dispose of them yourself. 
+ 
+We would like to advise you of the possible risk of infection from the contents of the 
+container and, for this reason, we advise you not to open the container. Please be advised 
+of the following guidelines in regard to disposal: 
+ 
+- Advice on home burials and on alternative funeral practices that can minimise 
+environmental harm, can be obtained from a number of sources, including the Natural 
+Death Centre at www.naturaldeath.org.uk . 
+- People who want information on home burials must consult with your local council’s 
+Environmental Health Department and the Environment Agency who will be able to provide 
+advice. 
+ 
+If you change your mind, we will take back the container but the seal must be intact and not 
+broken. 
+ 
+The Trust agrees to you taking the container and its contents away from the hospital on 
+your discharge home. It does this on the basis that you agree: 
+ 
+1. To accept responsibility for the safe and appropriate storage and disposal of the 
+container and its contents, as soon as the Trust has passed them to you. 
+2. You will indemnify the Trust against any claims for loss, injury or damage 
+relating to the container and its contents. 
+ 
+Please sign and date both copies of this letter to confirm your agreement. 
+ 
+Signed (patient) ………………………………………………………… Date …………………. 
+ 
+Member of Staff…………………………………………………………………… (Print name) 
+ 
+Position……………………………………………………………………………………………… Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 62 of 82 
+ Appendix 10 -Certificate of birth 
+Original can be found on SANDS website or bereavement drive 
+ 
+Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 63 of 82 
+ Appendix 11 - London perinatal request 
+
+LONDON PERINATAL PATHOLOGY NETWORK 
+
+PERINATAL POST MORTEM REQUEST FORM 
+ 
+THIS FORM MUST BE SENT WITH THE BABY AND PLACENTA, ACCOMPANIED BY THE MOTHER’S SIGNED 
+CONSENT (& NEONATAL NOTES IF APPROPRIATE) 
+
+Please fill in all details below and enclose copies of reports of any antenatal ultrasound scans. 
+
+Name of Obstetrician 
+
+Referring Hospital 
+ 
+Ward 
+ 
+Mother’s case number 
+(Use Mother’s full addressograph label if required) 
+
+Mother’s name 
+
+Mother’s address 
+
+Post code 
+ 
+Mother’s DOB 
+
+Mother’s ethnicity 
+
+Attending midwife (+ extension) 
+
+Attending doctor (+ bleep number) 
+
+Consultant 
+
+Father’s name (if known) 
+
+Father’s ethnicity (if known) 
+
+Father’s age (if known) 
+ 
+Consanguinity: yes/no 
+
+Congenital anomalies in the family: 
+DEATH CLASSIFIED AS: (please ring) 
+Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 64 of 82 
+ 
+Fresh miscarriage 
+ 
+Missed miscarriage 
+ 
+TOP for fetal malformation 
+ 
+Neonatal death / death in 
+infancy 
+Stillbirth (> 24 weeks gestation) & death before labour 
+ 
+Stillbirth (>24 weeks gestation) & death during labour 
+ 
+TOP – other abnormality e.g. anhydramnios, Twin to Twin Transfusions ( Not just 
+IUD) 
+
+MOTHER’S MEDICAL DETAILS 
+
+Past Obstetric history: Gravida …………………………… Parity (prior to this delivery) ………………………………………….. 
+
+Previous deliveries: 
+ 
+Year: Gestation: Weight: Mode of delivery: Sex: 
+ 
+Outcome: 
+
+Medical, drug and family history 
+
+ANTENATAL DETAILS – RECENT PREGNANCY 
+
+LMP ……………………… EDD BY DATES ………………………. EDD BY USS ………………………………. 
+
+Gestation AT DELIVERY (or at fetocide) 
+
+CHECKLIST OF SPECIFIC PREGNANCY COMPLICATIONS: 
+ 
+Threatened miscarriage 
+Down Syndrome screen 
+Abnormal liquor volume 
+IUGR 
+Antepartum Haemorrhage 
+Pyrexia/increased WCC/raised CRP 
+HIV infections 
+Torch infections 
+ 
+If “yes” specify: 
+
+Yes / No 
+Yes / No 
+Yes / No 
+Yes / No 
+Yes / No 
+Yes / No 
+Yes / No 
+Yes / No 
+
+Retroplacental clot 
+Maternal drugs 
+Maternal diabetes 
+Maternal hypertension 
+Maternal smoking 
+Maternal alcohol 
+Maternal Proteinuria / Oedema 
+Syphilis infection 
+ 
+If “yes” specify: 
+
+Yes / No 
+Yes / No 
+Yes / No 
+Yes / No 
+Yes / No 
+Yes / No 
+Yes / No 
+Yes / No Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 65 of 82 
+ 
+ANTENATAL COURSE (including relevant findings from ultrasound scans, antenatal assessment or indication for 
+interruption of pregnancy/induction of labour) 
+
+Karotyping done? NO / CVS / Amnio / FBS. Indication and result – 
+
+LABOUR 
+
+Onset Spontaneous / induced 
+
+Augmented? If so, how? 
+
+Membrane rupture Spontaneous / artificial Date and time : 
+
+Presentation Cephalic / Breech / Transverse / Complex 
+
+Duration 1st Stage 2nd Stage 3rd Stage 
+
+Delivery of baby : Spontaneous / Instrumental / Caesarean section 
+ 
+Indicate relevant complications (e.g. fetal distress, haemorrhage, meconium etc.) 
+
+Delivery of placenta : Spontaneous / Manual after retention / At caesarean section 
+
+BABY’S DETAILS 
+
+Name 
+ 
+Hospital Number (if applicable) 
+ 
+Date of Birth 
+ 
+Date of Death (if known) 
+ 
+Birth Weight 
+Sex Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 66 of 82 
+
+If baby was born dead when was fetal heart last heard? 
+ 
+When were fetal movements last perceived by mother? 
+ 
+Date and time of fetocide (if applicable) 
+
+If fresh stillbirth or livebirth, was resuscitation attempted? Yes / No 
+
+Clinical diagnoses: 
+
+ADDITIONAL INFORMATION FOR NEONATAL DEATHS 
+ 
+(for stillbirths, miscarriages and TOPS please go to the bottom of the page) 
+
+Summary of clinical course after initial resuscitation: 
+
+Ventilation? 
+Yes / No 
+Type 
+Days 
+Max. pressures 
+ 
+Suspected 
+infection? 
+Yes / No 
+Details 
+ 
+Antibiotic therapy? 
+Yes / No 
+Details 
+ 
+Brain USS 
+Yes / No 
+Details 
+ 
+Fits? 
+Yes / No 
+Details 
+ 
+Episodes of 
+collapse? 
+Yes / No 
+Details 
+ 
+Pneumothoraces? 
+Yes / No 
+Details 
+ 
+Feeding: 
+Enteral/TPN 
+
+Other information: 
+
+ Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 67 of 82 
+
+Special points to be noted / answered at PM: 
+
+Date of post natal appointment: 
+
+ Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 68 of 82 
+ Appendix 12 - Perinatal referral form 
+
+Perinatal / Paediatric Post Mor tem Referral Form 
+Please ensure you phone St Thomas’ Mortuary on 020 7188 3928 to arrange the 
+date and time of the Post Mortem after sending this form. Thankyou. 
+Name of referring hospital / 
+Name of Baby / Mother: 
+NHS Number of Mother: Mum DOB: 
+Mums address: 
+GP Surgery and GP name: 
+Age / Gestation: Date of delivery: Date of death: 
+Brief outline: 
+
+Name of referring person: Job title: 
+Contact number: Email: 
+☐ Post mortem accepted by St Thomas’s 
+☐ Date and time arranged: 
+ Have you rang the above number to confirm the PM has been accepted 
+☐ Post Mortem consent form been completed correctly and signed? 
+☐ Request form completed? 
+☐ Post Mortem Checklist completed? 
+☐ Notes accompanying baby - scan reports. Photocopies acceptable 
+☐ No samples should be sent with the baby. Any samples taken at the referring 
+hospital must be processed in it’s own laboratories 
+☐ Fresh placenta should be sent with baby if applicable 
+X-Rays to be carried out at St Thomas’ Hospital Mortuary 
+ 
+Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 69 of 82 
+ Appendix 13 - genetic specimen form 
+
+Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 70 of 82 
+
+Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 71 of 82 
+ Appendix 14 - community midwife form - PRH & RSCH 
+ 
+Information for Community 
+M/W following a pregnancy 
+loss. 
+ 
+East Grinstead Amber South Downs 
+ 
+Hospital number 
+ 
+ Mums DOB 
+Name: Parity: 
+Address: Gestation: 
+SVD Em. LSCS 
+Assisted El. LSCS 
+Tel number: Baby: Male/Female 
+GP: Name: 
+CMW: Date of birth: 
+SW: Time: 
+Targeted Yes No Weight: 
+Medical/Obstetric Mental Health Multiple birth Post Mortem Yes/No 
+Domestic abuse Teen Funeral: 
+Parent education cancelled: Yes/No 
+Date of discharge: Form completed by: 
+History: 
+Postnatal visits to be completed by CMW office: 
+Date Day Comment Given out by Midwife 
+
+ Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 72 of 82 
+ Information for Community 
+M/W following a pregnancy 
+loss. 
+ 
+East West North 
+ 
+Hospital number 
+ 
+ Mums DOB 
+Name: Parity: 
+Address: Gestation: 
+SVD Em. LSCS 
+Assisted El. LSCS 
+Tel number: Baby: Male/Female 
+GP: Name: 
+CMW: Date of birth: 
+SW: Time: 
+Targeted Yes No Weight: 
+Medical/Obstetric Mental Health Multiple birth Post Mortem Yes/No 
+Domestic abuse Teen Funeral: 
+Parent education cancelled: Yes/No 
+Date of discharge: Form completed by: 
+History: 
+Postnatal visits to be completed by CMW office: 
+Date Day Comment Given out by Midwife 
+
+ Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 73 of 82 
+ Appendix 15 - Pregnancy loss information for secretaries 
+Pregnancy Loss Information - PRH 
+ 
+Type of loss 
+Please circle and indicate paper work completed. 
+Termination of Pregnancy? Y/N Abortion Form A Completed Y/N 
+ 
+12- 23+6 MISCARRIAGE 
+STILLBIRTH 
+BORN WITH SIGNS OF LIFE 
+ 
+P2 been completed Y/N Woodvale form 9 
+completed Y/N Woodvale form 4 
+completed Y/N 
+Sent to relevant places Y/N Stillbirth certificate 
+given to parents Y/N Coroner been informed 
+and death certificate given 
+to parents Y/N 
+
+Postmortem 
+ 
+YES NO 
+If yes, has the form been faxed to St Thomas’s Y/N 
+
+Funeral arrangements 
+ 
+Own Hospital 
+Form completed by: 
+ 
+ Mothers name: 
+ 
+DOB: 
+ Hospital No: 
+Telephone: 
+ Address: 
+Consultant: 
+
+Please fully complete this form: 
+• Original to bereavement office (Via internal mail) 
+• Copy to be filed in notes. Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 74 of 82 
+ Appendix 16 - Coding form RSCH 
+ 
+Please send these notes to 
+coding. 
+ 
+Once coded please track 
+notes to: 
+Sam Flint 
+Level 11 Obstetric secretary 
+as urgent - 
+ Thank you. 
+ 
+Consultant 
+Date of Delivery 
+PM Yes No 
+ 
+Follow up 
+Results back 
+Appointment Date Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 75 of 82 
+ Appendix 16 - Coding form PRH 
+ 
+Please send to coding. 
+Once coded please send notes to: 
+Gynae secretaries office PRH. 
+FAO - Bereavement midwife 
+ Thank you. 
+For bereavement MW use 
+Consultant 
+Date of Delivery 
+PM Yes No 
+
+Follow up 
+Results back 
+Appointment Date Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 76 of 82 
+ Appendix 17 - Cremation form 9 
+
+Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 77 of 82 
+ Appendix 18 – Referring neonatal Deaths to the Coroner 
+ 
+REPORT OF DEATH BY DOCTOR TO 
+THE SENIOR CORONER FOR WEST SUSSEX 
+ 
+Please type this form -the coroner’s officers will copy and paste your text onto another 
+document. 
+ 
+Complete every space –Omissions cause delay for bereaved relatives. 
+ 
+Then email to the relevant coroner’s officer at – 
+ 
+Horsham Office – west.sussex.coroner@sussex.pnn.police.uk 
+(Horsham, Crawley, Mid Sussex, Gatwick) 
+Worthing Office – WS.Coroners.Wor@sussex.pnn.police.uk 
+(Worthing, Chichester, Arun, Bognor Regis, Littlehampton, Midhurst, Petworth) 
+(Your own hospital bereavement office may be able to do that.) 
+ 
+As soon as a coroner’s officer is able, s/he will telephone the bereavement office / Surgery. If 
+there is sufficient information on the report of death form then, by the time of that call, the Senior 
+Coroner will usually have decided whether a post mortem examination is to take place. However, 
+further discussion with the reporting doctor and/or general practitioner may be necessary before 
+that decision can be made. 
+ 
+The reporting doctor may not issue an MCCD to a family until the coroner’s officer has indicated 
+the Senior Coroner’s agreement. Relatives should not be promised any time frame for this, as 
+court commitments take priority. 
+ 
+When a medical cause of death is agreed by the Senior Coroner, the doctor signing the MCCD 
+must indicate on it that the coroner has been informed, and must record the cause exactly as 
+finally agreed with the coroner’s officer, with no abbreviations. Otherwise, the bereaved family will 
+be unable to register. 
+ 
+Reports of death are dealt with during office hours only. 
+ Monday to Friday, 8am to 4pm 
+ 
+For out of hours queries re organ donation or homicides, 
+Call Sussex Police on 101, and a coroner’s officer will call you back. 
+Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 78 of 82 
+ Reason for referral to the Senior Coroner 
+*Those cases marked with an asterisk must also be referred to the police. 
+ the cause of death is unknown 
+ the deceased has not been seen by a Doctor within the last 14 days 
+ * death may have been caused or contributed to by assault or violence 
+ * death may have been caused or contributed to by non -violent trauma, whenever it 
+occurred (e.g. a fall at home or a road traffic collision) 
+ * death may have been caused or contributed to by poisoning, whether intentional or 
+accidental, but not food poisoning 
+ * death may have been caused or contributed to by the deceased’s actions e.g. by drug use, 
+self harm or self neglect 
+ * death may have been caused or contributed to by neglect 
+ * death occurred whilst in custody – police or prison or compulsory detention under section 
+of the Mental Health Act 
+ * death occurred shortly after police contact or may have been caused or contributed to by 
+police action or inaction 
+ death may have been caused or contributed to by the deceased’s employment 
+ death occurred during or immediately after an operation or within 24 hours of an anaesthetic 
+or occurred within 24 hours of admission to hospital 
+ death may have been caused or contributed to by a medical procedure or treatment, 
+whether invasive or not 
+ death may have been caused or contributed to by a lack of treatment 
+ there are other concerning features of the 
+death – please say what 
+ 
+Details of Deceased 
+Name of hospital / Surgery: Princess Royal Hospital Haywards Heath 
+ 
+Name of deceased: 
+Date of birth: 
+Address: 
+Place of death if different from above 
+Gender: 
+Hospital no: CAD no: 
+ 
+Date of death: Time: 
+Name of doctor recognising life extinct: 
+Grade and specialty: 
+Name of reporting doctor: 
+(who must have treated the deceased) 
+Grade and specialty: 
+Reporting doctor’s bleep number: 
+Name of treating consultant: 
+Date of admission to hospital: 
+ 
+GP name: 
+GP telephone: 
+GP surgery address: 
+ 
+Name of next of kin: 
+Relationship to deceased: 
+Telephone number(s) of next of kin: 
+Does next of kin know of death? 
+
+ Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 79 of 82 
+ Chronology of presenting complaint, treatment and death. 
+ 
+This must include past medical history; medication; reason for admission and incident 
+address (e.g. “unwitnessed, but remembers tripping on rug and falling downstairs at 
+home” or “passer -by described to ambulance team witnessing epileptic seizure on 
+platform at Seven Sisters Underground”);any family concerns regarding care; and 
+location where deceased currently lies. 
+
+If reporting doctor is able to issue MCCD, proposed cause of death: 
+
+1a 
+1b 
+1c 
+
+2 
+ 
+Remember, the medical cause of death ultimately accepted by the Senior Coroner must be 
+reproduced on the MCCD, with no abbreviations, exactly as agreed with the coroner’s officer . 
+Otherwise, the bereaved family will be unable to register. 
+
+ Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 80 of 82 
+ Appendix 19 - Pregnancy Loss – Giving Birth 
+ 
+The way that you give birth to your baby will depend on your individual circumstances. You 
+will be able to talk about your options with your midwife and a senior doctor. 
+It is usually recommended that your labour is induced, and that you aim to have a vaginal 
+birth. This may come as a shock for you. A normal birth is usually safer for you, allows you to 
+have a faster recovery and avoids added risks in future pregnancies if you were to have a 
+caesarean section. 
+We assure you that you will have dedicated one to one care from a midwife throughout, 
+and you will have access to effective pain relief of your choice. Your midwife and doctor will 
+talk you through this at every stage. 
+Induction of labour 
+If you agree to have your labour induced, you will usually be offered a tablet to take by 
+mouth in the first instance. This prepares your body to go into labour and takes some time 
+to work. We will usually suggest that you go home after taking this, and return to hospital 
+the next day or the day after. It is important that you call the labour ward if: 
+• You feel unwell or worried 
+• You think your waters may have broken, if they haven’t already 
+• You think that your labour has begun 
+During this time at home, many women feel very frightened about what is to come. Please 
+don’t hesitate to call the labour ward at any time, for any reason. If you feel that you would 
+prefer to stay as an in -patient, and that going home is too distressing, please speak to your 
+midwife as we can usually help you. 
+When you return to the hospital, we will usually use a vaginal pessary to continue your 
+induction. After this you will be given a tablet form of the same drug at regular intervals 
+until your labour is established. 
+Your midwife will available to support you and your partner or birth companion at all times. 
+You are not alone. 
+If you choose not to be induced If you are healthy, and would prefer to wait for labour to 
+begin naturally, we will support you with this. Due to the increased risk of you becoming 
+unwell, we recommend that you have regular blood tests and a check -up at the hospital 
+(usually twice a week). If there is a long wait before labour commences, your baby’s 
+condition may deteriorate in your womb. This may make it more difficult for a post -mortem 
+to provide useful information, if you would like to have one. 
+Remember, your midwife, doctor, or a member of the pregnancy loss team will be able to 
+help you make these important decisions. Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 81 of 82 
+ Appendix 20 - P2 form (Do not print this form) 
+
+Pregnancy Loss (RSCH PRH only ) MP073 
+University Hospital Sussex NHS Trust East Page 82 of 82 
+ Appendix 21 - Maternity Bereavement Audit Tool 2017 
+Age ________________ Parity _______________ Gestation _____+______ 
+ 
+Ethnicity:  White  Mixed  Asian  Black  Other 
+ 
+Weight < 10th Centile:  Yes  No 
+ 
+Mode of Delivery: ______________________ _______________________________ 
+ Yes No 
+2.8 Given 24 hr contact number 
+4.1 AN appointments cancelled 
+5.1 GP/ CMW informed within 1 working day 
+6.2 Not left alone in labour 
+6.4 Analgesia discussed, i.e. PCA 
+6.11 Record decisions about seeing and holding baby 
+6.13 Offered foot prints and photo 
+6.17 Tear Drop sticker 
+ Offered cabergoline 
+ Haematology/ Microbiology tests complete 
+7.5 Offered contract with member of parents’ faith 
+7.6 Post -natal Check 
+7.8 Given contact information when they leave 
+8.1 Offer to take body home 
+8.3 If they take the body home, are they given a form? 
+9.1 Offered PM 
+9.3 Written information on PM 
+ Accepted PM 
+9.6 Post -natal appointment within 12 weeks 
+10.1 Given information on registering stillbirth (if > 24 weeks) 
+11.1 Given information on funeral arrangements (if > 24 weeks) 
+12.2 Given details of Baby Mailing Preference Service 
+12.4 Given written information of support organisations 
+ Check list complete 
+14.1 Offered extra monitoring in future pregnancy 
+15.1 Was an interpreter/ signer needed? 
+18.1 Datix complete 
+*SANDS Au dit Tool for Maternity Services 
+Cause of IUD ________________________________________________________ 
+None Identified 

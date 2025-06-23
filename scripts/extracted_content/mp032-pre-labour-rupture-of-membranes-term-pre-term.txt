@@ -1,0 +1,705 @@
+# Extracted from: MP032 Pre Labour Rupture of Membranes Term & Pre-term.pdf
+# Guideline ID: mp032-pre-labour-rupture-of-membranes-term-pre-term
+# Content length: 32851 characters
+# Processing date: 1750066901.3425329
+
+MP032(i): Pre-Labour 
+Rupture of Membranes at 
+Term (PROM) 
+ 
+MP032(ii): Pre -Term Pre-
+Labour Rupture of 
+Membranes (PPROM) 
+
+Maternity Protocol: MP032 
+ 
+Date agreed: April 2022 
+
+Pre-term Labour Rupture of Membranes (RSCH PRH only ) MP032 
+ 
+University Hospitals Sussex NHS Trust East Page 2 of 21 
+Guideline Reviewer: Katie Fraser / Giulia Lorina 
+Ryan Watkins 
+Version: 3 
+Approval Committee: Maternity Protocol Steering Group 
+First Protocol : 
+Amended date: March 2016 
+April 2022 
+Next Review date: April 2025 
+Cross reference: MP008 Infections in pregnancy including GBS 
+MP009 Guidelines for the Management of HIV in Pregnancy and 
+ Neonatal period 
+MP026 BSOTS 
+MP031 Pre-term Labour 
+MP033 Induction of labour 
+MP034 Vaginal Birth After Caesarean Section (VBAC) 
+MP037 Fetal heart monitoring 
+MP046 Breech & ECV 
+MP045 Pyrexia in Labour and Sepsis 
+
+ Pre-term Labour Rupture of Membranes (RSCH PRH only ) MP032 
+ 
+University Hospitals Sussex NHS Trust East Page 3 of 21 Table of Contents 
+ 
+Term Pre -Labour Rupture Of Membranes (PROM) ................................ ................................ . 4 
+1 Definition ................................ ................................ ................................ .................... 4 
+2 Telephone assessment ................................ ................................ ................................ 4 
+3 Clinical Assessment ................................ ................................ ................................ ..... 5 
+4 Care Planning and Management after confirmation of PRoM ................................ ....... 7 
+5 Admission for Induction of Labour (IOL) ................................ ................................ ....... 9 
+6 Process for Induction of Labour (IOL): ................................ ................................ .......... 9 
+7 References ................................ ................................ ................................ ................ 10 
+ 
+Pre-term Pre -Labour Rupture Of Membranes (PPRoM) ................................ ........................ 11 
+1 Definition and Background ................................ ................................ ........................ 11 
+2 Phone Assessment ................................ ................................ ................................ .... 11 
+3 Clinical Assessment ................................ ................................ ................................ ... 11 
+4 Initial Care Planning and Management (all gestations) ................................ ............... 12 
+5 Magnesium Sulphate ................................ ................................ ................................ . 14 
+6 Pre-Term Pre -Labour Rupture of Membranes between 34 - 36+6 Weeks .................... 14 
+7 Pre-term Pre -labour Rupture of Membranes between 24 and 33+6 Weeks ................ 15 
+8 Pre-Term Pre -Labour Rupture of Membranes between 22 and 23+6 .......................... 17 
+9 Extreme pre -term pre -labour rupture of membranes before 22 -weeks ...................... 17 
+10 References ................................ ................................ ................................ ................ 18 
+A Guide for DAU Follow Up for Pre -Term Pre -Labour Rupture of Membranes ....................... 19 
+
+ Pre-term Labour Rupture of Membranes (RSCH PRH only ) MP032 
+ 
+University Hospitals Sussex NHS Trust East Page 4 of 21 Term Pre -Labour Rupture Of Membranes 
+(PROM) 
+1 Definition 
+Rupture of membranes (RoM) after completed 37 weeks of gestation before the onset 
+of labour (NICE) 
+2 Telephone assessment 
+2.1 When the pregnant woman / person p hone s into labour ward or triage a 
+midwife or obstetrician should undertake a verbal risk assessment by asking for 
+the following information in an open and sensitive manner: 
+• Routine demographics 
+• Gravida, parity and gestation (EDD by USS ) 
+• Any relevant medical, social or previous pregnancy issues 
+• Wellbeing and issues throughout the current pregnancy 
+• Reason for call 
+• Fetal movements (before and since rupture of membranes) 
+• Presentation and engagement of the baby (at last appointment) 
+• Time of RoM, colour, consistency and volume 
+• Pain/contractions/uterine activity 
+• General health & wellbeing 
+ 
+2.2 For term low risk pregnancies with suspected pre labour rupture of 
+ membranes the midwife can give the following options: 
+2.2.1 To attend for immediate assessment in DAU if between 9 -5pm or Triage 
+(or labour ward) if out of hours. 
+2.2.2 To attend for a DAU /Triage appointment later that day (or the following 
+morning if overnight), with the advice as per 2.6 and call labour ward if any 
+concerns 
+2.3 For term low risk pregnant women / people and their babies with s uspected 
+pre labour rupture of membranes and planning a home birth the midwife 
+should give them the following options: 
+2.3.1 To attend for immediate assessment in DAU if between 9 -5pm or Triage 
+(or labour ward) if out of hours. 
+ Pre-term Labour Rupture of Membranes (RSCH PRH only ) MP032 
+ 
+University Hospitals Sussex NHS Trust East Page 5 of 21 2.3.2 The midwife to arrange for a community midwife to assess women at 
+home as soon as possible (the following morning if overnight). 
+2.4 Pregnant women / people with risk factors identified and s uspected pre labour 
+rupture of membranes should be invite d for immediate assessment in the 
+maternity unit. 
+2.5 If women make an informed decision to decline to come into the unit the 
+midwife should discuss this wi th the labour ward co -ordinator. 
+2.6 All discussions should include: 
+• Explanation of the importance of attending the unit in order to confirm the 
+diagnosi s and the subsequent care plan 
+• Risks of any missed diagnosis of mec onium, malposition or infection and 
+subsequent delay in treatment 
+2.7 For those not attending immediately, or declining to attend should be advised to 
+monitor and call again if there is any change in the fetal movements, any vaginal 
+bleeding, any change in the colour of the liquor. 
+2.8 All advice, discussions and decisions need to be clearly documented in the 
+telephone log / on Badgernet . 
+ 
+3 Clinical Assessment 
+On presentation to the unit, the m idwife providing initi al care should undertake a risk 
+assessment using BSOTS MP026 that includes: 
+3.1 Detailed history 
+3.1.1 Medical, social/lifestyle, psychological and previous obstetric history 
+3.1.2 Confirm gestation and ED D, any problems in the c urrent pregnancy, 
+planned place of birth 
+3.1.3 Confirm suspected time of RoM, colour of liquor, presence of fetal 
+movements. Any other associated symptoms eg. pain. 
+3.1.4 Check Group B Strep status 
+3.1.5 For pregnant women/people with known blood born infectious diseases 
+(HBV/HIV) and herpes refer to MP009 Guidelines for the Management of 
+HIV in Pregnancy and Neonatal period / MP008 Infections in Pregnancy 
+ 
+3.2 After taking informed consent the midwife should : 
+ Pre-term Labour Rupture of Membranes (RSCH PRH only ) MP032 
+ 
+University Hospitals Sussex NHS Trust East Page 6 of 21 3.2.1 Take parent observations pulse, blood pressure, temperature, respiratory 
+rate 
+3.2.2 Perform full abdominal examination (SFH, fetal lie, presentation, 
+engagement) noticing any palpable tightenings. 
+3.2.3 Confirm presentation - using ultrasound if unsure. 
+3.2.4 Confirm fetal wellbeing - intermittent auscultation for low risk pregnant 
+women / people, or CTG for those with risk factors identified 
+3.3 Speculum examination if indicated: 
+3.3.1 A speculum is not necessary if there is a good history of PROM and there is 
+clear evidence of RoM on inspection of sanitary towel/underwear and the 
+baby’s head is engaged 
+3.3.2 Ensure to take verbal informed consent if a speculum examination is 
+required - confirm pooling of liquor in vagina and check for meconium or 
+cord prolapse. 
+3.3.3 Only s end an HVS or LVS for term PRoM if there are specific clinical 
+concerns or risk factors for chorioamnionitis 
+ 
+3.4 Use of Amnisure ® 
+3.4.1 The Amnisure ® test should not be used routinely to assess for RoM at 
+term. For the majority a speculum examination will be adequate to 
+confirm or refute RoM. 
+3.4.2 Amnisure ® can be used if the history given is strongly suggestive of RoM 
+and despite no liquor being seen on speculum the clinician has a high 
+suspicion that RoM has occurred ; or if there are repeated attendances for 
+suspected RoM not confirmed on speculum examination 
+3.4.3 No test is 100% sensitive or specific, so always use clinical judgement as to 
+whether the use of Amnisure is appropriate. 
+3.4.4 The following specific factors may lead to an inaccurate result: 
+ 
+POSSIBLE FALSE POSITIVE: 
+Significant amounts of blood in the vagina (trace amounts are fine) 
+Vaginal medication use within last 6 hours eg. Canesten pessary 
+Vaginal examination prior to test 
+Placenta praevia 
+ 
+POSSIBLE FALSE NEGATIVE: 
+More than 12 hours has elapsed between reported SROM and Amnisure test, or 
+from reported cessation of fluid loss. Pre-term Labour Rupture of Membranes (RSCH PRH only ) MP032 
+ 
+University Hospitals Sussex NHS Trust East Page 7 of 21 
+If an Amnisure result is negative in this situation, please use clinical judgement 
+based on the history. It would be appropriate to invite the woman back for 
+further review in the subsequent 48 hours if there is any doubt, or to discuss with 
+an obstetric consultant 
+3.5 Clinicians should not perform VE despite contractions unless: 
+3.5.1 The cervix is open on speculum examination and active labour is 
+suspected, or 
+3.5.2 There are other risk factors which require immediate intervention such as 
+meconium, abnormal FH or suspected chorioamnionitis 
+
+4 Care Planning and Management after confirmation of PRoM 
+4.1 Pregnant women / people with PRoM and no other risk factors 
+4.1.1 All pregnant women / people with rupture of membranes at term should 
+be offered induction of labour immediately, or at any time after 
+confirmation of rupture of membranes. 
+4.1.2 Where the pregnancy is low risk and no other acute concerning features 
+are identified , induction of labour is appropriate up to 24 hours after the 
+rupture of membranes. 
+4.1.3 Conservative management can be offered u pto 24 hours if: 
+• They are not in labour 
+• It is a singleton low risk pregnancy 
+• The fetal head engaged 
+ Clinical Features for C horioamnionitis: 
+Feeling unwell 
+Raised temperature (2x >37.5 -38c 1 hour apart or 30 minutes apart if meconium), 
+Maternal / parent tachycardia 
+Raised WBC and CRP 
+Uterine tenderness 
+Offensive liquor 
+Fetal tachycardia 
+ 
+NB: consider increased risk for chorioamnionitis if there have been repeated digital vaginal 
+examinations. 
+ Pre-term Labour Rupture of Membranes (RSCH PRH only ) MP032 
+ 
+University Hospitals Sussex NHS Trust East Page 8 of 21 • The liquor is clear 
+• The woman is apyrexial 
+• The fetal heart monitoring is normal 
+• No history of GBS 
+• There is no adverse past obstetric history 
+4.1.4 When making the decision about whether to consider immediate 
+induction or conservative management pregnant women / people should 
+be advised that: 
+• 60% of women with PROM will labour within 24 hours 
+• Risk of serious neonatal infection increases from 1 in 200, to 1 in 
+100 (doubles) after 24 hours of ruptured membranes (i.e. from 0.5% 
+to 1%). 
+4.1.5 For those opting for conservative management, they s hould be asked to 
+check their temperature 4 hourly when awake . 
+4.1.6 Inform the woman that bathing or showering is not associated with an 
+increase in infection, but that having sexual intercourse may be. 
+4.1.7 Advise to contact delivery suite if : 
+• Temperature exceeds 37.5 -38C (on 2 occasions, 1 hour apart) 
+• Liquor changes colour or becomes foul smelling 
+• Any bleeding 
+• Feels unwell 
+• Fetal movements are reduced 
+• Contractions or abdominal pain 
+• Any other concern 
+4.2 Pregnant women / people with PROM and other risks (as listed below) IOL 
+should be advised immediately after review by the obst etric registrar or 
+consultant: 
+• Meconium stained liquor 
+• Chorioamnionitis 
+• Concerns with fetal monitoring 
+• GBS positive - offer immediate induction and IV antibiotics 
+4.3 For pregnant women / people planning VBAC with pre -labour spontaneous 
+rupture of membranes please refer to MP034 Vaginal Birth after Caesarean 
+Section for details on care planning and processes. 
+ Pre-term Labour Rupture of Membranes (RSCH PRH only ) MP032 
+ 
+University Hospitals Sussex NHS Trust East Page 9 of 21 4.4 If the pregnant woman / person declines IOL after 24 hours of RoM: 
+• Advise close observation of fetal movements 
+• Advise FHR monitoring every 24 hours with a CTG with the information 
+that this does not guarantee fetal well being outside of that monitoring 
+window 
+• Advise a blood test (FBC and CRP) 
+4.5 If the pregnant woman / person wants to continue expectant management for 
+more than 72 hours after RoM, this should be discussed with a consultant 
+ 
+5 Admi ssion for Induction of Labour (IOL) 
+5.1 Where a pregnant woman / person has opted for conservative management 
+they should be booked for IOL as close to 24 hours (ideally before 24 -hours) 
+from the time of RoM. 
+5.2 Where SRoM is overnight, book as close to 24 -hours as possible – I,e, if at 
+midnight consider admission for 10PM the following evening, if at 4AM can bring 
+for 6AM the following day – or at 10PM same day as preferred by the pregnant 
+woman / person. 
+5.3 If known to be GBS positive in this pregnancy – give IV antibiotics in labour. 
+See maternity protocol MP008: Infections in pregnancy including GBS 
+5.4 Pregnant women / people with unknown GBS status and ROM > 24 hours, who 
+have no signs of infection, should be advised that routine IV antibiotics are NOT 
+required. 
+5.5 Pregnant women / people with ROM > 24 hours with no obvious signs of 
+infection but with inadvertent VEs before IOL should be advised to have blood 
+tests for F BC and CRP in case of subclinical chorioamnionitis 
+5.6 If there is clinical suspicion of sepsis, urgent bloods should be sent (FBC, CRP, 
+G&S, U&Es, cultures) and broad spectrum IV antibiotics should be started 
+immediately (Pyrexia in labour protocol) and r efer to the on -call obstetric 
+registrar 
+ 
+6 Process for Induction of Labour (IOL): 
+6.1 If Bishop score is <6 and mother and fetus are well, IOL manag ement can allo 1 x 
+Prostin PV (1 dose only) followed by Oxytocin augmentation 
+ Pre-term Labour Rupture of Membranes (RSCH PRH only ) MP032 
+ 
+University Hospitals Sussex NHS Trust East Page 10 of 21 6.2 Bishop score is >6 – direct augmentation with Oxytoxin 
+6.3 For further information on IOL see Maternity Protocol MP033: Induction of 
+Labour 
+ 
+7 References 
+ 
+• NICE guideline NG 207 : Inducing labour, November 2021 
+• NICE guideline CG 190 : Intrapartum care for healthy women and babies, updated February 2017 
+• RCOG Green Top Guideline No.73 Care of Women Presenting with Suspected Preterm Prelabour 
+Rupture of Membranes from 24+0 Weeks of Gestation , June 2019 
+ 
+ Pre-term Labour Rupture of Membranes (RSCH PRH only ) MP032 
+ 
+University Hospitals Sussex NHS Trust East Page 11 of 21 Pre-term Pre -Labour Rupture Of Membranes 
+(PPRoM) 
+1 Definition and Background 
+1.1 Rupture of membranes (RoM) before 37 weeks gestation and prior to onset of 
+labour 
+1.2 PPRoM complicates up to 3% of pregnancies and is associated with 30 –40% of 
+preterm births. 
+1.3 Risks associated with PPROM resulting in significant neonatal morbidity and 
+mortality include 
+• Those associated with prematurity 
+• Sepsis 
+• cord prolapse 
+• pulmonary hypoplasia 
+1.4 Risks associated with poor maternal outcome including chorioamnioitis and 
+sepsis. 
+1.5 The median latency after PPROM is 7 days and tends to shorten as the 
+gestational age at PPROM advances. 
+ 
+2 Phone Assessment 
+2.1 When the pregnant woman / person phones into labour ward or triage a 
+midwife or obstetrician should undertake a verbal risk assessment as per 
+MP0032 (i) Section 2. 
+2.2 All pregnant women / people reporting suspected PPRoM should be invited in 
+for assessment as soon as possible. 
+ 
+3 Clinical Assessment 
+3.1 On arrival the midwife should complete a thorough assessment using BSOTS 
+MP026 including history, confirm gestation and presence of fetal movements. 
+3.2 The attending midwife should check all baseline observations, and start CTG 
+monitoring if >26 -weeks gestation 
+ Pre-term Labour Rupture of Membranes (RSCH PRH only ) MP032 
+ 
+University Hospitals Sussex NHS Trust East Page 12 of 21 3.3 All pregnant women /people with suspected PPRoM should be reviewed by a 
+member of the obstetric team. 
+3.4 After confirming the history, and gaining informed consent the reviewing 
+obstetrician should 
+3.4.1 Undertake sterile speculum examination to confirm pooling of liquor in 
+vagina and rule out meconium or cord prolapse. 
+3.4.2 If an obstetrician is unavailable despite request and a speculum is required 
+urgently a senior midwife can undertake this procedure. 
+3.4.3 If on speculum examination, no amniotic fluid is observed, clinicians 
+should consider performing an Amnisure® test should be used to guide 
+further management 
+(the diagnosis of PPROM can be equivocal in 10 –20% of cases) 
+Refer to MP032(i) section 3.4 for information in using Amnisure ® 
+3.4.4 The role of ultrasound assessment of amniotic fluid volume is unclear 
+however persistent anhydramnios is associated with increaseed risk of 
+severe pulmonary hypoplasia. 
+3.4.5 Do not perform digital vaginal examination despite contractions unless 
+• the cervix appears to be dilated on speculum examination or 
+• there is an indication to start immediate augmentation of labour 
+i.e. meconium more than grade 1 or signs of chorioamnionitis 
+ 
+4 Initial Care Planning and Management (all gestations) 
+4.1 The ongoing care plan following the confirmation of PPRoM will depend on 
+gestation. 
+4.2 In the immediate management, it is important to rule out any current infection. 
+4.3 A combination of clinical assessment, parental inflammatory and infection 
+markers and fetal wellbeing should be used to diagnose chorioamnionitis: 
+4.3.1 Take FBC (WCC) and CRP * 
+4.3.2 Perform HVS 
+4.3.3 Review CTG assessment of fetus * 
+4.4 Where the situation is stable, there are no signs of infection or immediate 
+delivery: 
+ Pre-term Labour Rupture of Membranes (RSCH PRH only ) MP032 
+ 
+University Hospitals Sussex NHS Trust East Page 13 of 21 4.4.1 Admit to the ward for ongoing assessment for 48 -72 hours. 
+During admission, vital signs, including pulse, blood pressure, respiratory 
+rate and temperature, should be recorded on Badgernet. 
+4.4.2 Arrange fetal growth scan and assess liquor volume. 
+4.4.3 Inform neonatal team – all pregnant women / people with PPROM should 
+have the opportunity to meet with a neonatologist to discuss their baby’s 
+care 
+ 
+*Do not use WCC, CRP or CTG in isolation - if the results of the clinical assessment or any of 
+the tests are not consistent with each other, continue to observe the woman a nd consider 
+repeating the tests 
+4.5 Antibiotics (antenatal) 
+4.5.1 Offer all pregnant women / people with confirmed PPROM oral 
+erythromycin 250 mg 4 times a day for a maximum of 10 days or until in 
+established labour (whichever is sooner). 
+4.5.2 For those with PPROM who cannot tolerate erythromycin or in whom 
+erythromycin is contraindicated, use Amoxilciln 500mg TDS for a maximum 
+of 10 days or until in established labour (whichever is sooner). 
+4.5.3 Do not offer co -amoxiclav as prophylaxis for intrauterine infection for 
+PPROM. 
+4.6 Antibiotics (intrapartum) 
+4.6.1 Advise and prescribe IV benzylpenicillin to all women / people in 
+established pre -term labour refer to MP031 Pre -Term Labour for regimes. 
+4.7 Antenatal corticosteroids 
+4.7.1 Refer to MP031 Pre Term Labour Guideline 
+4.7.2 A single course of corticosteroids can be given to any women with 
+threatened pre -term labour from 23 - 34+6/40 gestation. 
+4.7.3 The recommended course of corticosteroids is: 
+Dexamethasone 12mg IM – 2 doses given 12 hours apart 
+ OR 
+Betamethasone 12mg IM – 2 doses given 12 hours apart 
+ Pre-term Labour Rupture of Membranes (RSCH PRH only ) MP032 
+ 
+University Hospitals Sussex NHS Trust East Page 14 of 21 4.7.4 Corticosteroids may sometimes be considered at gestations from 22+0 to 
+22+6, but this decision should be taken by the obstetric and neonatal 
+consultants after consideration of active management in line with the 
+BAPM framework 
+4.7.5 If antenatal corticosteroids have been given at gestations less than 26+0 
+weeks, then consideration should be given to a further course if there is 
+another admission with suspected preterm labour under 32+0 weeks if 
+delivery is considered highly likely to happen. More than 2 courses of 
+steroids is not recommende d 
+4.7.6 The optimum effect of a steroid course is seen if delivery occurs between 
+24 hours and 7 days after the last dose. A course of steroids can be 
+initiated if delivery is anticipated within 24 hours as there is still a 
+beneficial effect on neonatal death. 
+ 
+5 Magnesium Sulphate 
+ 
+Please refer to MP031 Pre -Term Labour 
+Administration of IV MgSO4 should be given to those in established preterm labour or 
+where preterm birth is expected / being planned within the following 24 hours. 
+ 
+5.1 Magnesium sulphate reduces cerebral palsy and motor dysfunction in the baby - 
+with greatest benefit before 30+0 weeks of gestation. 
+5.1.1 Offer MgSO4 to those between 24+0 and 29+6 weeks diagnosed with 
+PPROM and in established labour 
+5.1.2 Offer MgSO4 to those between 24+0 and 29+6 weeks with PPROM and 
+expecting / planning delivery within 24 hours 
+5.1.3 MGSO4 should be considered when preterm birth is anticipated between 
+30+0 and 33+6 weeks and should be discussed with the neonatal team and 
+the parents. 
+5.2 Tocolysis is not recommended for cases with PPROM. 
+5.3 Amnioinfusion is not recommended as part of routine clinical practice. 
+6 Pre-Term Pre -Labour Rupture of Membranes between 34 - 36+6 Weeks 
+6.1 If cephalic presentation, and in the absence of concerns for infection, or 
+meconium, discuss with the benefits and risks of induction of labour and 
+conservative management beyond 37 weeks. 
+ Pre-term Labour Rupture of Membranes (RSCH PRH only ) MP032 
+ 
+University Hospitals Sussex NHS Trust East Page 15 of 21 6.2 If breech presentation – recommend elective caesarean section at 37 weeks 
+after discussing risks and benefits of both IOL and conservative management as 
+well as options of LSCS and vaginal birth. See Breech Guideline MP046 
+6.3 Timing of birth and ongoing plan for care should be discussed with each 
+pregnant woman / person on an individual basis and in conjunction with the 
+neonatal team. It is important to consider the whole clinical picture including the 
+level of liquor seen on the USS. 
+6.4 All discussions should be clearly documented. It should also be clear that the 
+pathway may change in case of any deterioration in the clinical picture / fetal 
+wellbeing. 
+6.5 Conservative management until 37 -weeks, may reduce the risks of prematurity 
+and reduce the risk of respiratory support for the newborn. It may also reduce 
+the risk of caesarean section. However, there is increased risk of 
+chorioamnionitis. 
+6.6 Conservative management beyond 37 -weeks is not recommended. If a pregnant 
+woman / person wishes to extend the pregnancy please refer to the obstetric 
+consultant in ANC. 
+6.7 Expediting delivery – induction of labour reduces the risk of developing 
+chorioamniotnitis, but does not reduce the risk of neonatal infection. Risks 
+include increased risk of caesarean section. 
+6.8 For those opting to await delivery at 37 -weeks, on discharge from the 
+department: 
+6.8.1 Give Erythromycin TTO to continue for 10 -days in line with Section, 
+6.8.2 Organise weekly DAU follow up for repeat infection markers and fetal 
+monitoring 
+6.8.3 Fortnightly scans for fetal growth and assessment of amniotic fluid 
+6.8.4 Book a date for IOL – explain that date may be expedited if the clinical 
+picture changes. 
+6.8.5 Observations at home and other advice should be same as for term PROM 
+6.8.6 Advise that deterioration in the clinical picture may require expediting 
+delivery earlier than the planned 37 -weeks 
+ 
+7 Pre-term Pre -labour Rupture of Membranes between 24 and 33+6 Weeks 
+7.1 Admission and investigations should be carried out as per Section 4.1 - 4.7. 
+7.2 Offer antibiotics as per section 4.8 (an alternative in case of allergy) for 10 days . Pre-term Labour Rupture of Membranes (RSCH PRH only ) MP032 
+ 
+University Hospitals Sussex NHS Trust East Page 16 of 21 7.3 Offer a course of antenatal steroids as above Section 4.9 if labour appears likely 
+or planned within the next 7 -days. 
+7.4 6-hourly assessment of maternal observations, FHR monitoring as per the CTG 
+guideline (CTG should be attempted from 26 -weeks), colour of liquor and 
+uterine tenderness 
+7.5 If there is meconium, signs of chorioamnionitis, fetal distress, or maternal sepsis 
+delivery should be expedited with steroid, antibiotic and magnesium sulphate 
+cover as per Section 4 
+7.6 Where there is no indication for immediate delivery, aim to manage the 
+pregnant woman / person conservatively with regular reviews. 
+7.7 Upon discharge from the department: 
+7.7.1 Give Erythromycin TTO to continue for 10 -days in line with Section, 
+7.7.2 Organise weekly DAU follow up for repeat infection markers and fetal 
+monitoring 
+7.7.3 2-weekly scans for fetal growth / dopplers and assessment of amniotic 
+fluid 
+7.7.4 Observations at home and other advice should be same as for term PROM 
+7.7.5 Advise that deterioration in the clinical picture may require expediting 
+delivery 
+7.8 Timing of birth plans should be discussed with each pregnant woman / person 
+on an individual basis: 
+7.8.1 Whilst aiming to reach 37 -weeks of gestation, decisions around the timing 
+of delivery should be dynamic - based around the clinical picture, fetal 
+wellbeing and liquor volume. 
+7.8.2 Decisions around timing of delivery should involve the MDT with obstetric 
+and neonatal input and review in the obstetric ANC at least every 4 -weeks. 
+7.8.3 There is a recognised increased risk of lung hypoplasia where there is 
+prolonged reduced liquor volume. For this reason, it may not be in the 
+best interest of the baby to continue with conservative management even 
+in the absence of infection. 
+7.8.4 All discussions must be clearly documented in Badgernet and the MDT be 
+aware of the ongoing plan. Such patients may be referred to / discussed at 
+the Complex Care Meeting 
+ Pre-term Labour Rupture of Membranes (RSCH PRH only ) MP032 
+ 
+University Hospitals Sussex NHS Trust East Page 17 of 21 8 Pre-Term Pre -Labour Rupture of Membranes between 22 and 23+6 
+8.1 Please refer to the BAPM pathway and Pre -term pathway for decisions around 
+management at this gestation. It is imperative that decisions at this gestation are 
+made with complete involvement with the senior MDT and with involvement 
+from the pregnant person. 
+8.2 Where appropriate steroids, magnesium sulphate and antibiotics may be offered 
+and active management as per those with gestation >24 -weeks in Section 6. 
+ 
+9 Extreme pre -term pre -labour rupture of membranes before 22 -weeks 
+9.1 For those with PPRoM <24 -weeks, discussions around the ongoing management 
+must be based primarily on concerns for maternal wellbeing – eg. Signs of sepsis 
+9.2 Where there are concerns for maternal health, termination should be advised. 
+9.3 Where there are no concerns for maternal wellbeing, discussions with families 
+must be open and clear regarding the unknown likelihood of survival and the 
+likelihood of poor fetal / neonatal outcome. 
+9.4 In the absence of concerns for maternal wellbeing, options should still include 
+termination of pregnancy, or conservative management as per those with 
+PPRoM >24 weeks. 
+9.5 The pregnant woman / person must be informed that the clinical picture can 
+change and there may be changes to management plans at short notice. 
+9.6 Evidence is lacking for outcomes of babies where PPRoM occurs at these early 
+gestations and discussions should include: 
+• Increased risk of pulmonary hypoplasia – particularly where PPRoM 
+occurs <20 -weeks 
+• Increased risk of chorioamnionitis 
+• Low rates of neonatal survival (around 40%) for cases where PPRoM 
+occurs before 20 -weeks – irrespective of latency from RoM to delivery 
+• One study showed that 70% of pregnancies affected by PPROM prior to 
+24 weeks gestation resulted in live births with two -thirds of these live 
+births surviving to over a year of age. Concluding that there is better 
+prognosis than reported in similar literature. 
+
+ Pre-term Labour Rupture of Membranes (RSCH PRH only ) MP032 
+ 
+University Hospitals Sussex NHS Trust East Page 18 of 21 10 References 
+ 
+RCOG guideline No 73: Care of Women Presenting with Suspected Preterm Prelabour Rupture 
+of Membranes from 24+0 Weeks of Gestation 
+ 
+RCOG guideline No. 7: Antenatal corticosteroids to reduce neonatal morbidity and mortality. 
+October 2010 
+ 
+http://labguide.fairview.org/showtest.asp?testid=4104 
+ 
+NICE guideline CG 149: Neonatal infection (early onset): antibiotics for prevention and 
+treatment 
+ 
+Pregnancy Outcome for Membrane Rupture Before 24 Weeks Gestational Age 
+Newcastle University, Institute of Health and Society, 
+Anna Jackson*, Dr Martin Ward -Platt 
+ 
+J Perinatology . 2004 Oct;24(10):611 -6.Expectant management in spontaneous preterm 
+premature rupture of membranes between 14 and 24 weeks' gestation 
+Sandy J Falk 1, Laura J Campbell , Aviva Lee -Parritz , Amy P Cohen , Jeffrey Ecker , Louise 
+Wilkins -Haug , Ellice Lieberman 
+
+ Pre-term Labour Rupture of Membranes (RSCH PRH only ) MP032 
+ 
+University Hospitals Sussex NHS Trust East Page 19 of 21 Appendix A 
+ 
+A Guide for D AU Follow Up for Pre -Term Pre -Labour Rupture of Membranes 
+ 
+• Weekly review is advised but the pregnant woman / person must have open access to 
+call in for review where they have any concerns for raised temperature, change in 
+colour, odour, or consistency of PV loss, concerns for fetal movements, feeling unwell, 
+experiencing pain, or other concern. 
+• Confirm history and plan from notes 
+• Ask for any new symptoms, colour and smell of liquor, fetal movements 
+• Check parental observations, perform abdominal palpation observing for any uterine 
+tenderness 
+• CTG 
+• Check recent blood, swab and scan results 
+• Re-take FBC, CRP and organise a suitable time to speak to parent with results 
+• Discuss with doctor on call regarding ongoing plan. 
+
+ Pre-term Labour Rupture of Membranes (RSCH PRH only ) MP032 
+ 
+University Hospitals Sussex NHS Trust East Page 20 of 21 Appendix B : 
+Summary Table for management planning for conservative management PPRO M and 
+PROM 
+
+Gestation 
+at PPROM Admission Antbiotics 
+ 
+Erythromycin 10 days 
+or until labour 
+whichever sooner 
+ Steroids 
+ 
+Dexamethasone 
+12mg 12 -24hr 
+apart Scans 
+ 
+Growth, 
+dopplers, LV MDT review 
+ 
+<22 weeks RSCH TBC following 
+discussion with MDT / 
+neonatal team (BAPM 
+pathway) 
+ 
+ TBC by MDT At time or 
+PPROM and 4 -
+weekly thereafter 
+unless concerns 
+for fetal 
+movements At time of 
+PPRoM and 4 -
+weekly 
+thereafter 
+22-24+6 RSCH Recommended after 
+discussion with 
+neonatal team 
+ Recommended 
+after discussion 
+with neonatal 
+team 
+ 
+May consider 
+second dose upto 
+32 weeks of 
+suspected PTL At time or 
+PPROM and 4 -
+weekly thereafter 
+unless concerns 
+for fetal 
+movements At time of 
+PPRoM, 
+ 
+28-weeks 
+ 
+4-weekly 
+thereafter. 
+24+6 – 34-
+weeks RSCH Recommended Recommended At time or 
+PPROM and 4 -
+weekly thereafter 
+unless concerns 
+for fetal 
+movements 
+34 PRH / 
+RSCH Recommended Recommended 2- weekly scan 
+until delivery 
+
+ Pre-term Labour Rupture of Membranes (RSCH PRH only ) MP032 
+ 
+University Hospitals Sussex NHS Trust East Page 21 of 21 Appendix C: 
+Summary Table for management planning for those in established labour, or where pre -
+term delivery planned within 24 hours (i.e. meconium, or concerns for infection) 
+
+Gestation 
+at PPROM Admit Antibiotics 
+ 
+ Steroids 
+ 
+Dexamethasone 
+12mg 12 -24hr 
+apart Scans 
+ 
+ MgSO4 MDT review 
+ 
+<22 weeks RSCH 
+ N/A N/A N/A N/A 
+22-24+6 RSCH Recommended 
+after discussion 
+with neonatal 
+team where 
+actively managing 
+ Recommended 
+after discussion 
+with neonatal 
+team where 
+actively managing 
+ 
+May consider 
+second dose For EFW if 
+possible 
+Presentation Recommend
+ed after 
+discussion 
+with 
+neonatal 
+team where 
+actively 
+managing 
+ See BAPM 
+pathway 
+ 
+To establish 
+plans for 
+intrapartum 
+monitoring 
+and 
+resuscitation 
+ 
+24+6 – 
+33+6 RSCH Recommended Recommended For EFW / 
+presentation Recommend
+ed 
+34 – 36+6 PRH / 
+RSCH Recommended Recommended 
+upto 34+6 EFW / 
+Presentation N/A

@@ -1,0 +1,457 @@
+# Extracted from: CG22005 Management of Weight Loss in Neonates.pdf
+# Guideline ID: cg22005-management-of-weight-loss-in-neonates
+# Content length: 21764 characters
+# Processing date: 1750066900.6468089
+
+Manageme nt of Weight Loss in Neonates v1.1 November 2022 Page 1 of 12 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Management of Weight Loss in the N eonate 
+Summary statement: How does the 
+document support patient care? By providing evidence -based guidance to support and 
+assist the management of weight loss in neonates in 
+accordance with NICE guidelines and UNICEF Baby 
+Friendly Initiation standards . 
+Staff/stakeholders involved in 
+development: Midwives, maternity support workers, neonatal 
+nurses, consultant paediatricians, consultant 
+obstetrician s. 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Infant Feeding Lead 
+For use by: All Obstetric and Midwifery staff 
+Purpose: To provide clear evidence -based guidance on 
+managing weight loss in neonates 
+This document supports: 
+Standards and legislation NICE Jaundice in newborn babies under 28 days. 
+Clinical guideline NG98; NICE Postnatal Care . Clinical 
+guideline NG194; NICE Faltering growth: recognition 
+and management of faltering growth in children. 
+Clinical guideline NG75. 
+Key related documents: UH Sussex (SRH & WH) Maternity Guidelines 
+Postnatal Care Guideline , Management of Neonatal 
+Jaundice Guideline; Newborn Feeding Guideline. 
+Approved by: Maternity Joint Obstetric Guideline Group (JOGG) 
+(Neonatal and Maternity guideline review Meeting 21st 
+February 2023 ) 
+Approval date: 16TH November 2022 
+Date uploaded: 30TH March 2023 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors N/A 
+Ratification Date: N/A 
+Expiry Date: August 2025 
+Review date: February 2025 
+If you require this document in another format such as Braille, large print, 
+audio or another language please contact the Trusts Communications Team 
+Reference Number: CG22005 
+ 
+Manageme nt of Weight Loss in Neonates v1.1 November 2022 Page 2 of 12 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Version Date Author Status Comment 
+1.0 May 2022 F. Humberstone 
+(Infant Feeding 
+Lead) Archived New guideline 
+1.1 November 2022 F. Humberstone 
+(Infant feeding 
+Lead) LIVE 7.0 Volumes required 
+per kg in 24 hours 
+ 
+New appendix 1 - 
+Feeding plans for weight 
+loss stickers 
+2.0 
+
+The interpretation and application of clinical guidelines will remain the 
+responsibility of the individual clinician. 
+If in doubt contact a senior colleague or expert. 
+
+Manageme nt of Weight Loss in Neonates v1.1 November 2022 Page 3 of 12 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Contents 
+ 
+1.0 Rationale ................................ ................................ ................................ .................... 4 
+2.0 Scope ................................ ................................ ................................ ........................ 4 
+3.0 Abbreviations used in this guideline ................................ ................................ ........... 4 
+4.0 Postnatal weight management ................................ ................................ ................... 4 
+4.1 At Birth ................................ ................................ ................................ ....................... 4 
+4.2 Subsequent weights ................................ ................................ ................................ ... 4 
+4.3 Mothers/birthing parents requiring additional support: ................................ ................ 5 
+5.0 Feeding plans for weight loss ................................ ................................ ..................... 6 
+5.1 Weight loss less than 8% ................................ ................................ ........................... 6 
+5.2 Plan A: 8 -9.9% weight loss ................................ ................................ ........................ 7 
+5.3 Plan B: 10 -11.5% weight loss (or static weight from Day 5 = 8% -9.9%) ..................... 8 
+5.4 Plan C: more than 11.5% weight loss (or static weight loss = 10 -11.5%) ................... 9 
+5.5 How to calculate weight loss (%) ................................ ................................ ................ 9 
+6.0 Guideline for volumes required where top -ups are needed ................................ ........ 9 
+7.0 Guideline for volumes required per kg (in 24 hours) ................................ .................. 10 
+8.0 Audit ................................ ................................ ................................ ......................... 10 
+References ................................ ................................ ................................ ........................... 11 
+Appendix 1 – Feeding plan stickers ................................ ................................ ...................... 12 
+
+Manageme nt of Weight Loss in Neonates v1.1 November 2022 Page 4 of 12 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Management of weight loss in the neonate 
+
+1.0 Rationale 
+ 
+Fewer than 5% of babies lose more than 10% of their weight at any stage and only 1 in 50 
+loses 10% or more at 2 weeks. Recovery of birth weight is a sign that feeding is effective 
+and that the baby is thriving. 
+ 
+This guideline aims to standardise care of bab ies who are experiencing weight loss in the 
+postnatal period. It is an aim of this guideline to support and maximise breastfeeding and the 
+use of breast milk, with appropriate guidance on supplementation . 
+ 
+2.0 Scope 
+ 
+This guideline applies to all babies under midwifery care in the post -natal period and for any 
+health professionals involved in the care of these babies, including midwives, doctors 
+maternity support workers and nursery nurses. 
+ 
+3.0 Abbreviations used in this guideline 
+ 
+PCOS - Polycystic ovarian syndrome RPOC - Retained products of conception 
+BMI - Body Mass Index EBM - Expressed Breast Milk 
+ 
+4.0 Postnatal weight m anagement 
+4.1 At Bi rth 
+ 
+ All babies should be weighed at birth after optimum skin -to-skin has taken place 
+(at least an hour or un til first feed has taken place). 
+ The birth weight should be checked and documented by 2 members of staff or with 
+a parent (to ensure accuracy of documentation). 
+ If an early weight is required for medical/clinical reasons, then this should occur 
+close to birth and skin -to-skin commenced immediately afterwards. It is important 
+to remember however, that Low birth weight babies require early feeding, so 
+separation for weighing is more appropriate after the first feed. 
+ 
+4.2 Subsequent weights 
+ 
+For well , term infants f urther weight checks should occur on Day 5 and 10 as part of a full 
+feeding assessment. If there are concerns prior to this, then a weight can be perfo rmed to 
+assess the clinical picture fully, i.e. day 3 or 4. 
+ 
+Please check the weighing requirements for late preterm babies in CG21010 Care of the late 
+preterm newborn and babies with jaundice in CG12035 Neonatal jaundice . 
+ 
+Further guidance on weighing babies will be c overed in the management plans to follow. 
+Manageme nt of Weight Loss in Neonates v1.1 November 2022 Page 5 of 12 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Excessive weight loss generally results from: 
+1. Ineffective milk transfer 
+2. Poor positioning and attachment at the breast 
+3. Infrequent feeds. 
+ 
+On a rare occasion , weight loss may be due to a medical condition or physical abnormality in 
+the mother or baby. With this mind, in the majority of cases, excessive weight loss can be 
+avoided with effective feedin g support alongside full breast feeding assessments and early 
+intervention i f any issues are identified. 
+Factors relating to 
+breast feeding Psychological 
+factors Maternal medical 
+factors Neonatal factors 
+ Delayed initiation 
+ Interrupted skin to 
+skin prior to first 
+feed 
+ Inefficient suckling 
+ Poor positioning 
+and attachment 
+ Scheduled or 
+infrequent feeds 
+ Inappropriate use 
+of supplementary 
+feeds 
+ Inappropriate use 
+of dummies/nipple - 
+shields/teats  Lack of confidence 
+ Tiredness, anxiety 
+ Reluctance to feed 
+(Sore 
+nipples/exhaustion) 
+Rare: 
+ Dislike of breast 
+feeding 
+ Rejecti on of baby 
+ Separation of 
+mother and baby  Endocrine disorders 
+(PCOS/diabetes/ 
+thyroid) 
+ Breast surgery 
+ Inadequate breast 
+tissue 
+ Previous Gastric 
+bypass surgery 
+ RPOC 
+ Alcohol/smoking 
+ Postpartum 
+haemorrhage 
+ Extended artificial 
+oxytocin use in labour  Prematurity 
+ Infection in baby 
+ Congenital 
+abnormality 
+e.g. cleft palate 
+ Neurological 
+conditions 
+ Missed early 
+feeding cues 
+ Not rooming in 
+with baby 
+
+4.3 Mothe rs/birthing parents requiring additional support : 
+ 
+The following table identifies mothers /birthing parents who may require further assistance 
+and closer monitoring/support with feeding. 
+ 
+Manageme nt of Weight Loss in Neonates v1.1 November 2022 Page 6 of 12 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Pregnancy Birth related Postnatal factors 
+ Primigravida 
+ Raised BMI 
+ Medications that can 
+affect milk supply  Caesarean section 
+ Instrumental birth 
+ Haemorrhage 
+ Breech birth 
+ 3rd/4th degree tears 
+ Extended artificial oxytocin 
+use in labour 
+ Long labour 
+ Epidural / Spinal 
+ 
+  Pre-term and SGA babies 
+ Babies of diabetic 
+mothers /birthing parents 
+ Babies requiring 
+phototherapy 
+ Unwell babies 
+ Tongue tie or other 
+abnormalities affecting 
+feeding i .e. cleft 
+palate/chromosomal 
+abnormality 
+Separation of mother and 
+baby 
+Excessive pain or 
+unmanaged pain 
+
+5.0 Feeding plans for weight loss 
+ 
+A breastfeeding assessment should be carried out at least twice within the first week but can 
+be undertaken more regularly if required and should be completed if the mother/feeding 
+parent expresses concerns with feeding. Please use the stickers for these plans in the notes. 
+ 
+5.1 Weight loss less than 8% 
+ Confirm findings with parents . 
+ If the baby has lost up to 8% of the birth weight this is considered normal . The 
+mother /birthing parent should be reassured through a feeding assessment, pointing out 
+good milk transfer and signs of good intake. NB weighing should not replace 
+breastfeeding assessment. If the mother or healthcare professional has concerns with 
+feeding, a full assessment shou ld be completed. A feeding plan may still be required 
+even if weight loss is <8%. Early plans can help prevent larger weight losses later on. 
+ Direct mother /birthing parent to ‘How do I know breast feeding is going well’ in the baby 
+postnatal notes and en sure she has contact numbers should any concerns arise. Ask 
+parents to continue monitoring output on a daily basis. 
+ Baby should be weighed again prior to discharge from midwifery care. Discharge to the 
+health visitor should only occur at this time if weigh t gain is at a minimum of 20 -30g/day. 
+ Discuss local Milk! groups breastfeeding parents can attend for peer support and 
+advice. 
+ If formula feeding, observe a feed and encourage 8 feeds in 24 hours, discuss 
+responsive and paced bottle feeding. 
+
+Manageme nt of Weight Loss in Neonates v1.1 November 2022 Page 7 of 12 
+Please check against Staffnet that this printout is the most recent version of this document. 
+5.2 Plan A : 8-9.9% weight loss 
+ Confirm findings with parents 
+ Complete formal feeding assessment in the b aby postnatal notes. 
+ Midwife/MSW to observe a full breastfeed, observe positioning and attachme nt and look 
+for effective milk transfer. 
+ Take a breastfeeding history. Ensure a minimum of 8 -10 feeds in 24 hours. 
+ Ensure both breasts are offered at each feed – baby finishing one breast before offering 
+the second. 
+ Teach breast -compression and breast switching to increase milk transfer if signs that 
+baby tires at t he breast. 
+ Encourage skin to skin contact. This would be good for laid back feeding which takes up 
+less energy for the baby who may be tiring early. 
+ Monitor nappy output ensuring adequate urine and bowel movements, ask parents to 
+monitor feeds and output by using ‘How I Can Tell Feeding Is Going W ell and nappy 
+output’ chart on page 4 of baby postnatal notes. 
+ Review and weigh baby in 48 hours unless additional concerns arise (such as reduced 
+output or stools changing back to green/brown). If weight increas ing, continue to monitor 
+(minimum 20 -30g/day) . 
+ If no weight -gain after 48 hours or further weight loss after 24 hours, commence Plan B . 
+ If formula feeding, observe a feed and encourage 8 feeds in 24 hours, discuss 
+responsive and paced feeding . 
+ 
+Manageme nt of Weight Loss in Neonates v1.1 November 2022 Page 8 of 12 
+Please check against Staffnet that this printout is the most recent version of this document. 
+5.3 Plan B : 10-11.5% weight loss (or static weight from Day 5 = 8%-9.9%) 
+ Confirm findings with parents . 
+ The midwife must strip baby and perform a full set of observations: Temp, Resps, Heart 
+Rate, Colour, Tone (poor feeding can be a sign of sepsis especially after a period of 
+feeding well). 
+Take into account any of the following: 
+• Dehydration 
+• Reduced nappy output 
+(NB. It is not normal for a breastfed baby to not open their bowels every day) 
+• Jaundice 
+• Lethargy 
+• Pyrexia 
+• Hypothermia 
+ Complete f ormal feeding assessment in baby postnatal notes and take a full feeding 
+history – consider slow start to breastfeeding, fluid load during labour or delayed 
+lactation . 
+ Consider examining for tongue tie if there are concerns with possible tongue mobility 
+when performing feeding assessment. Refer to the Infant Feeding Clinic if appropriate. 
+ Liaise with on-call neonatal registrar on Bleep: SRH 6276 / Worthing 1358 to confirm 
+plan is satisfactory. 
+ Document a clear plan in the baby’s notes. 
+ Ensure a minimum of 8 feeds in 24 hours. Consider encouraging using a feed chart. 
+ Ensure both breasts are offered at each feed . 
+ Encourage switch feeding: Support mother /birthing parent to notice when suck/swallow 
+rhythm has slowed down, then switch baby to the other breas t a total of 2 times each 
+breast. This helps increase milk supply and let down. 
+ Teach breast compression to increase milk transfer . 
+ Monitor nappy output and direct towards ‘How I Can Tell Feeding Is going well’ in baby 
+postnatal notes and ask parent to mon itor daily . 
+ Express from both breasts and ensure that baby receives additional feeds of EBM (or 
+formula if necessary) . Use table and calculations as per below as a guide. Teach 
+parents responsive paced bottle feedi ng, emphasise that baby may not take the entire 
+top-up if there has been a good feed from both breasts . 
+ Midwife to rev iew and reweigh baby in 24 hours. R eassess using formal feeding 
+assessment in the baby postnatal notes . 
+ If adequate weight gain (20 -30 grams per 24hrs): 
+Continue with support – this may be in the form of additional visits, tel ephone follow ups, 
+referral to Infant Feeding T eam. Once breastfeeding has improved, Encourage parents 
+to reduce top -ups in a slow an d phased wa y, to avoid further weight -loss, and 
+encourage parents to continue to monitor nappy output while reducing top -ups and until 
+confident. 
+ Repeat feeding assessment at day 10 or discharge. 
+ Weigh again prior to discharge to Health Visitor and ensure plan of care is handed over. 
+ If no weight -gain after 24 hours refer to “P lan C ”. 
+ 
+Manageme nt of Weight Loss in Neonates v1.1 November 2022 Page 9 of 12 
+Please check against Staffnet that this printout is the most recent version of this document. 
+5.4 Plan C : more than 11.5% weight loss (or static weight loss = 10-11.5% ) 
+ Confirm findings with parents 
+ These babies will be admitted to an appropriate clinical area for further monitoring , 
+assessment and support. Inform on-call paediatric registrar on bleep SRH 6276 / 
+Worthing 1358 . 
+ Follow feeding management plan B . 
+ Inform parents regarding a possible admission to hospital. 
+ Baby to be assesse d for hypernatremia /dehydration. 
+ Confirm % of weight loss on admission to ward. 
+ Perform Blood gas, SBR, Glucose, U and E 
+ If concerns with condition of baby following paediatric assessment, consider: - 
+ Septic screen : FBC, Cultures, CRP and reassess if baby is in the correct clinical 
+environment 
+ Emphasise and protect breastfeeding by promoting breast milk first, and discuss EBM as 
+first line top -up with formula being a back -up, if required , following a discussion with 
+parents . 
+ Use table below to estimate amounts. 
+ Once in hospital highlight need for Infant Feeding Team support at earliest opportunity. 
+ Continue to support and assess breastfeeding /reduce top -up feeds as breast milk 
+increases. 
+ Ensur e regular follow -up and support in community. 
+ Weigh prior to discharge to Health Visitor. Weight gain must exceed 20g per day in 
+order to discharge from midwifery care. 
+
+5.5 How to calculate weight loss (%) 
+ 
+Birth weight minus weight lo ss divided by birth weight x 10 0 
+ 
+E.g. A baby born at 3500g is 32 00g on day 5 
+3500 -3200 =300 
+300 / 3500 x 100 = 8.5% 
+
+6.0 Guideline for volumes required where top -ups are needed 
+ 
+The following amounts are for both breast milk and formula. 
+ 
+TIME (hours) INTAKE ( mls per feed) 
+First 24 hours (DAY 0) 2-10 
+24-48 (DAY 1) 5-15 
+48-72 (DAY 2) 15-30 
+72-96 (DAY 3) 30-60 
+ 
+Manageme nt of Weight Loss in Neonates v1.1 November 2022 Page 10 of 12 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Boss et al (2018 ) found that mean milk production of lactating women by 8 days postpartum 
+is 650 mls/24 hours . 
+ 
+7.0 Guideline for volumes required per kg (in 24 hours) 
+ 
+Day 3 120mls/kg 
+Day 4 140mls/kg 
+Day 5 onwards 150mls/kg 
+ 
+This would equate to approximately 45 mls of milk per feed for a 3 kg baby on day 3, if feeding 
+3 hourly (120mls/kg). In cases of excessive weight loss, the feeds should be offered at the 
+higher quantity in the table, but feed responsively/pace bottle feed, to allow the baby to take 
+what it needs. 
+ 
+This supplement m ay also be given as 1 feed of 90 mls or more, approximately 6 hourly, 
+along with support of lactation and feeding. Larger supplements given less frequently may be 
+more protective for breastfeeding and lactation. 
+ 
+All feeds should be clearly documented on the feeding chart. 
+ 
+Feeds should not be more than 6 hours apart in this group of babies , and breastfeeding 
+and/or breastmilk should be given in between formula feeds as frequently as possible. 
+ 
+Breastmilk removal at night is important for lactation production. 
+ 
+Supplementation should reduce once breast milk yield increases, baby’s weight has 
+increased , and blood profile has normalised. 
+ 
+If the mother is continuing to use a breast -pump to express milk, consider an assessment to 
+ensure this is as optimal as possibl e i.e. flange size, discomfort, volume, frequency etc 
+ 
+8.0 Audit 
+ 
+Maternity notes are audited following Datix reports, following re -admissions for weight -loss 
+and/or feeding support. 
+
+Manageme nt of Weight Loss in Neonates v1.1 November 2022 Page 11 of 12 
+Please check against Staffnet that this printout is the most recent version of this document. 
+References 
+ 
+Academy of Breastfeeding Medicine Protocol Committee .(2017) ‘ABM Protocol # Hospital 
+Guidelines for the Use of Supplementary Feedings in the Healthy Term Breastfed Neonate. 
+Revised 2017’. 
+Breastfeeding Medicine Vol 12 (4) Boss, Melinda et al.(2018) ‘Normal Human Lactation: 
+closing the gap’ F1000Research vo l. 7 F1000 Faculty Rev -801. 20 Jun. 2018. 
+Neonatal Weight loss Guideline V1 2019 6 P D Macdonald, S R M Ross, L Grant, D Young 
+Neonatal weight loss in breast and formula fed infants Arch Dis Child Fetal Neonatal Ed 
+2003;88:F472 –F476 Dewey KG, Nommsen -Rivers LA. Heing J et al (2005). 
+Risk Factors for Suboptimal Infant Breastfeeding Behaviour, Delayed Onset of Lactation and 
+Excess Neonatal Weight Loss. Paediatrics: 112 607 – 619 Macdonald PD, Ross SR, Grant 
+et al (2003). 
+Neonatal weight loss in breast and f ormula fed infants. Arch Dischild Fetal Neonatal Ed: 88; 
+F472 -F476 Neifert MR (2004). 
+Breast milk transfer: positioning, latch -on and screening for problems in milk transfer. Clinical 
+Obstetrics and Gynaecology: 85; 318 -20 Oddy S, Richmond S, Coulthard M ( 2001). 
+Hypernatraemic dehydration and breastfeeding: A population study. Archives of Disease in 
+Childhood: 85; 318 -20 Sachs M, Oddy S (2002). 
+Breastfeeding – weighing in the balance: Reappraising the role of weighing babies in the 
+early days. MIDIRS 12; 296-300 
+UNICEF workbook: Course in Breastfeeding Management: Appendix 9 (information sheet 8) 
+La Leche League 2006 ‘Is it possible to breastfeed after a caesarean birth’ 
+http.//www.llli.org/faq/caesarianhtml Cecilia Jevitt CNM,PhD et al 2007 
+ Lactation co mplicated by overweight and obesity: Supporting the mother and newborn 
+http.//www.medscape.com/viewarticle/565627 3 Lisa Marasco MA,IBCLC, 2005 
+NICE Jaundice in newborn babies under 28 days. Clinical guideline NG98. 
+https://www.nice.org.uk/guidance/cg98 
+NICE Postnatal Care . Clinical guideline NG194. https://www.nice.org.uk/guidance/ng194 
+NICE Faltering growth: recognition and management of faltering growth in children . Clinical 
+guideline NG75. https://www.nice.org.uk/guidance/ng75 
+
+Manageme nt of Weight Loss in Neonates v1.1 November 2022 Page 12 of 12 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 1 – Feeding plan stickers

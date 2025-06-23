@@ -1,0 +1,1558 @@
+# Extracted from: CG1103 Antenatal Care & Patient Info.pdf
+# Guideline ID: cg1103-antenatal-care-patient-info
+# Content length: 75339 characters
+# Processing date: 1750066899.7892587
+
+CLINICAL GUIDELINE 
+Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information v9.5 
+For use at : SRH & WH 
+Page 1 of 38 
+ TRUST CLINICAL GUIDELINE 
+Antenatal Care & Patient Information Guideline 
+Overview 
+ 
+The purpose of this guideline is to provide good practice evidence for staff involved in 
+antenatal care. 
+ 
+To provide clear guidance on the provision of antenatal care for pregnant women and birthing 
+people including booking appointments, antenatal risk assessments. 
+ 
+For use by: All medical and midwifery staff involved in antenatal care. Please note, IF DOCUMENT IS PRINTED, IT MAY BECOME OUT OF DATE. 
+
+Owner S. Adamson 
+Author/further information Senior Midwifery Staff, Midwifery Matron – 
+Community & Outpatients 
+Guideline version 9.5 
+Related policies Safeguarding Children Policy 
+
+Related protocols/procedures Preterm Birth Risk Pathway , 
+Management of non -attendance for 
+maternity care guideline , Maternal Antenatal 
+Screening Tests Guideline , Screening for 
+Downs, Edwards and Pataus Syndrome 
+Guideline , Management of Infectious 
+Diseases , Perinatal Mental Health Guideline , 
+Domestic Abuse Guideline , FGM Guideline , 
+Maternity Smoking Cessation Guideline , 
+SGA / FGR guideline , Large for Gestational 
+Age guideline , Management of Hyperemesis 
+Guideline , Fetal D Group DNA Screening 
+and Routine Anti -D Prophylaxis , APH and 
+Intrapartum Haemorrhage 
+Standards NG201 Antenatal Care NICE 2021 
+Superseded documents N/A 
+Review due January 2025 
+Reference number CG1103 CLINICAL GUIDELINE 
+Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information v9.5 
+For use at : SRH & WH 
+Page 2 of 38 
+ 
+Approval 
+Joint Obstetric Guideline Group Date approved: 17th January 2024 
+Women & Children’s Clinical Effectiveness 
+Meeting Date approved: 21st March 2024 
+Medicines Governance Committee Date approved: 
+12th March 2023 
+Consultation as relevant 
+Other specialist teams (i.c IPC, H&S, Finance) Date approved: N/A 
+Ratification 
+Clinical Document Approval Group Date approved: 19th April 2024 
+ 
+Consultation 
+Please select any appropriate consultation groups/ committees: 
+Trust Wide Governance Group Tick as 
+required: 
+Medicines Governance Committee (MGC - replaces ‘Medicines Optimisation 
+Committee’ and ‘Drug and Therapeutics Committee’) 
+ 
+Antimicrobial Stewardship Group 
+Resuscitation Committee 
+Resuscitation Operational Management Group (ROMG) 
+Trust Transfusion Committee 
+Trust Infection Prevention Committee (Chief Nursing Officer) 
+Thrombosis Committee 
+Health Records Committee 
+BSUH Trauma Committee 
+Major Trauma Committee 
+Sussex Trauma Network 
+Children’s Safeguarding Strategy Committee 
+Radiation Safety Committee 
+Medical Devices & Equipment Committee 
+Patient Blood Management Committee 
+Patient Safety Committee 
+BSUH Diabetes In-Patient Care Committee 
+Carer and Patient Information Group (CPIG) 
+Women’s Safety and Quality Committee 
+Food Improvement Group 
+NIV Steering Group 
+NMAHP Board 
+Deteriorating Patient Group 
+Other (please specify) 
+Women & Children’s Clinical Effectiveness Meeting 
+ 
+CLINICAL GUIDELINE 
+Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information v9.5 
+For use at : SRH & WH 
+Page 3 of 38 
+ 
+Contents 
+1.0 Introduction ................................ ................................ ................................ ................. 5 
+2.0 Scope ................................ ................................ ................................ .......................... 6 
+3.0 Roles and responsibilities ................................ ................................ ............................ 6 
+4.0 Definitions and abbreviations used in this guideline ................................ ..................... 6 
+5.0 Antenatal referral pathway ................................ ................................ ........................... 7 
+6.0 Late referrals ................................ ................................ ................................ ............... 7 
+7.0 Initial antenatal risk assessment ................................ ................................ .................. 7 
+8.0 Booking appointment ................................ ................................ ................................ ... 7 
+8.1 Midstream urine (MSU) at booking appointment ................................ ........................ 10 
+8.1.1 MSU and urinalysis during pregnancy ................................ ................................ ....... 11 
+9.0 Documentation and on-going antenatal appointments ................................ ............... 11 
+10.0 Consultant led care ................................ ................................ ................................ ... 12 
+10.1 Specialist referrals ................................ ................................ ................................ ..... 13 
+11.0 Safeguarding concerns and vulnerabilities ................................ ................................ . 13 
+11.1 Raising a safeguarding concern ................................ ................................ ................ 13 
+11.2 Perinatal mental health service referrals ................................ ................................ .... 13 
+11.3 Domestic abuse ................................ ................................ ................................ ......... 14 
+11.4 Female Genital Mutilation (FGM) ................................ ................................ ............... 14 
+11.5 Smoking in pregnancy ................................ ................................ ............................... 14 
+11.6 Alcohol consumption and fetal alcohol syndrome ................................ ...................... 15 
+11.7 WBIP - Wellbeing in Pregnancy (previously Weight Management in Pregnancy) ....... 16 
+11.8 Symptomatic of Gestational Diabetes ................................ ................................ ........ 17 
+12.0 Monitoring fetal growth and wellbeing ................................ ................................ ........ 17 
+12.1 Symphysis Fundal Height measurement (SFH) ................................ ......................... 17 
+13.0 Common problems during pregnancy ................................ ................................ ........ 18 
+13.1 Nausea and vomiting ................................ ................................ ................................ . 18 
+13.2 Heartburn ................................ ................................ ................................ .................. 19 
+13.3 Symptomatic vaginal discharge ................................ ................................ ................. 19 
+13.4 Pelvic girdle pain ................................ ................................ ................................ ....... 19 
+13.5 Unexplained vaginal bleeding after 13 weeks ................................ ............................ 19 
+14.0 Pregnant women and birthing people from minority ethnic backgrounds and 
+deprived areas ................................ ................................ ................................ .......... 20 
+14.1 Migrant pregnant women and birthing people ................................ ............................ 20 
+14.2 Language support ................................ ................................ ................................ ..... 21 
+15.0 Key principles of communication and patient information ................................ ........... 21 
+16.0 Responsibilities of midwives and obstetricians ................................ ........................... 22 
+17.0 Previous pregnancy health records ................................ ................................ ........... 23 
+18.0 Location of antenatal appointments ................................ ................................ ........... 23 
+19.0 Monitoring ................................ ................................ ................................ ................. 24 
+Appendix 1: Clinical records request letter ................................ ................................ ............ 26 
+Appendix 2: Schedule of routine antenatal visits ................................ ................................ ... 27 
+Appendix 4: Excessive Weight and Abnormal Symptoms Pathway ................................ ....... 30 
+Appendix 5: Guidelines for BMIs ................................ ................................ ........................... 31 
+Appendix 6: Antenatal & postnatal emergency contact card ................................ .................. 32 
+Appendix 7: MSU in pregnancy flowchart ................................ ................................ .............. 33 CLINICAL GUIDELINE 
+Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information v9.5 
+For use at : SRH & WH 
+Page 4 of 38 
+ Appendix 8: Guideline Version Control Log ................................ ................................ ........... 34 
+Appendix 9: Due Regard Assessment Tool ................................ ................................ ........... 36 
+Appendix 10: Template Dissemination, Implementation and Access Plan ............................. 37 
+Appendix 11: Additional guidance and information ................................ ................................ 38 CLINICAL GUIDELINE 
+Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information v9.5 
+For use at : SRH & WH 
+Page 5 of 38 
+ Antenatal Care & 
+Patient Information Guideline 
+
+1.0 Introduction 
+ 
+The purpose of this guideline is to assist all professional groups involved in providing antenatal 
+care to pregnant women and birthing people. 
+ 
+It aims to promote a consistent, efficient and evidence -based approach to the provision of 
+antenatal care. It also provides a framework and schedule for the delivery of care in the 
+community and hospital setting. It does not however, replace individualised care and 
+management. 
+ 
+This guideline does not provide detail on managing medical conditions. This information can 
+be found under relevant UHSussex Maternity guidelines online. 
+ 
+The antenatal period is defined from conception to the birth of the baby. The purpose of 
+antenatal care is to maintain and improve the pregnant woman and birthing person’s health 
+and wellbeing by: 
+ 
+• Monitor maternal and birthing parent and fetal wellbeing to prevent and manage 
+health problems related to pregnancy. 
+• To provide education and advice on health and wellbeing during and after 
+pregnancy. 
+• A time for preparation for labour, the birth and preparation for parenthood. 
+ 
+Pregnancy is a normal physiological process and as such, any interventions offered should 
+have known benefits and be acceptable to the pregnant woman and birthing person. 
+ 
+Antenatal care provision is in an area local to the pregnant woman and birthing person by a 
+team of midwives. 
+ 
+All health professionals involved in providing care for pregnant women and birthing people 
+should work together to ensure the package of care offered to pregnant women and birthing 
+people is individualised and meets their needs as suggested in the report Better Births (2016) . 
+ 
+Each antenatal appointment should be structured and focused with adequate time for 
+discussion to enable the women and person to make informed choices and to discuss 
+concerns and anxieties. CLINICAL GUIDELINE 
+Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information v9.5 
+For use at : SRH & WH 
+Page 6 of 38 
+ 2.0 Scope 
+ 
+This guideline applies to: 
+ 
+• Midwives 
+• Obstetricians 
+• Specialist midwives 
+• Anaesthetists 
+• Maternity support workers 
+• Sonographers 
+ 
+3.0 Roles and responsibilities 
+ 
+Midwives & obstetricians: 
+ 
+• To access, read, understand, and follow this guideline. 
+• To use their professional judgement in application of this guideline. 
+ 
+Management: 
+ 
+• To ensure the guideline is reviewed as required in line with Trust and National 
+recommendations. 
+• To ensure the guideline is accessible to all relevant staff. 
+ 
+4.0 Definitions and abbreviations used in this guideline 
+ 
+AN Antenatal SFH Symphysis Fundal Height 
+MIS Maternity Information System eg 
+Badgernet SGA Small for Gestational Age 
+FGR Fetal Growth Restriction PKB Patient Knows Best 
+PCSP Personalised Care and Support Plan BMI Body Mass Index 
+GTT Glucose Tolerance Test FASD fetal alcohol spectrum disorder 
+WEPP - Wellbeing and Exercise in 
+Pregnancy Programme MSU Mid-stream Urine 
+WBIP - Wellbeing in Pregnancy VTE - Venous thromboembolism 
+ANC - Antenatal Clinic UTI - Urinary Tract Infection 
+ADAU - Antenatal Day Assessment Unit MASH - Multi Agency Safeguarding Hub 
+FGM - Female Genital Mutilation VBA - Very Brief Advice 
+CO - Carbon Monoxide FBC - Full Blood Count 
+BAC - Birth after Caesarean GBS - Group B streptococcus 
+SFP - Smokefree Pregnancy GI - Glycaemic Index CLINICAL GUIDELINE 
+Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information v9.5 
+For use at : SRH & WH 
+Page 7 of 38 
+ 5.0 Antenatal referral pathway 
+ 
+Referral can be made in the following ways: 
+ 
+• Self-referral via the Trust’s website: 
+https://www.westernsussexhospitals.nhs.uk/services/maternity/pregnancy/ 
+• Via Maternity Telephone Triage. 
+• GP referral letter to Antenatal Clinic (by post, online or email). 
+• Community midwife or other healthcare professional eg school nurse referral to 
+Antenatal Clinic. 
+• Self-referral by phone to Antenatal Clinic. 
+ 
+Antenatal Clinic clerical staffs are responsible for processing referrals quickly and ensuring 
+that the care records are open and accessible within MIS in order that the booking can take 
+place by 8 -10 weeks of pregnancy. 
+ 
+If a pregnant woman and birthing person contacts or are referred to maternity services later 
+than 9+0 weeks of pregnancy, a booking appointment should take place within 2 weeks if 
+possible. 
+ 
+When a pregnant woman and birthing person is referred and booked, a letter will be generated 
+from Maternity Information System (MIS) to the General Practitioner and to the Health Visiting 
+Team informing them of the pregnancy. 
+ 
+6.0 Late referrals 
+ 
+When an antenatal referral is received after 12 completed weeks of pregnancy the clerical staff 
+should make contact with the relevant community team within the same working day to ensure 
+that the booking can be undertaken as soon as possible. Refer to CG1125 Management of 
+non-attendance for maternity care guideline for further information. 
+ 
+7.0 Initial antenatal risk assessment 
+ 
+Pregnant women and birthing people with existing health problems/medical concerns, or 
+review of long-term medicines identified in the referral letter/form, may be reviewed by an 
+Obstetric Consultant or other relevant doctor prior to booking, in the Antenatal Clinic for 
+example pregnant women and birthing people with Type 1 Diabetes. 
+ 
+8.0 Booking appointment 
+ 
+The booking appointment is primarily a process of risk assessment, information giving and 
+health promotion. This appointment should occur between 8 -10 weeks of pregnancy and be 
+undertaken by the named midwife if possible. 
+ 
+A full medical, social and family history of both biological parents should be taken and 
+adequate time should be allocated to ensure an accurate history is taken. CLINICAL GUIDELINE 
+Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information v9.5 
+For use at : SRH & WH 
+Page 8 of 38 
+ Pregnant women and birthing people will have an antenatal risk assessment completed at 
+booking by the midwife. This contains all relevant medical, obstetric, psychiatric and social 
+history. This antenatal risk assessment also identifies anaesthetic risks and provides an initial 
+VTE assessment. It also risk assesses for risk factors for preterm birth and fetal growth 
+restriction. It is important that this risk assessment is completed as extensively as possible. 
+This is so that timely and appropriate consultant appointments can be made, if indicated, when 
+the risk assessment is reviewed by ANC Midwives. 
+ 
+Pregnant women and birthing people aged 24 and under should be offered Chlamydia & 
+Gonorrhoea Screening in every pregnancy. CG1199 Management of Infectious Diseases 
+ 
+The midwife must also explain and gain consent for other blood tests and urine tests and 
+document this on MIS. If booking blood tests are declined, this must be clearly documented 
+and the Screening Team notified. CG1105 Maternal Antenatal Screening Tests Guideline 
+ 
+Pregnant women and birthing people should be asked at booking whether they give consent to 
+receive blood and blood products. If they decline, they should be signposted to online 
+maternity information and an appointment should be made to discuss further with an 
+obstetrician in the antenatal clinic. It is the responsibility of the clinician ordering the tests to 
+arrange follow up and appropriate treatment / management plan. 
+ 
+The midwife should discuss antenatal screening for Downs’, Edwards and Patau’s Syndrome 
+as described in the national patient information leaflet “Screening tests for you and your Baby’’ 
+and record consent if test required or declined on MIS. This booklet should be made available 
+to the pregnant woman and birthing person prior to booking. (See CG1105 Maternal Antenatal 
+Screening Tests Guideline and CG1111 Screening for Downs, Edwards and Pataus Syndrome 
+Guideline ) 
+ 
+The maternity records include: 
+ 
+• Booking data and pre conception details as appropriate. 
+• Clinical test results including ultrasound scans, antenatal screening tests. 
+• Information regarding smoking cessation. 
+• Safeguarding assessment. 
+• Subsequent antenatal visits and examinations. 
+• Antenatal in-patient care, blood test results. 
+• Documented individualised antenatal risk assessment and care plan that is 
+regularly reviewed throughout pregnancy. 
+• Antenatal Infant feeding assessment. 
+• Birth preferences. 
+ 
+At the first antenatal (booking) appointment (and later if appropriate), discuss and give 
+information on: 
+ 
+• What antenatal care involves and why it is important. 
+• The planned number of antenatal appointments. 
+• Where antenatal appointments will take place. CLINICAL GUIDELINE 
+Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information v9.5 
+For use at : SRH & WH 
+Page 9 of 38 
+ • Which healthcare professionals will be involved in antenatal appointments. 
+• How to contact the midwifery team for non-urgent advice. 
+• How to contact the maternity service about urgent concerns, such as pain, 
+decreased fetal movements, rupture of membranes and bleeding. If a pregnant 
+woman and birthing person has difficulties with communication, for instance 
+language barriers, learning difficulties or are hearing impaired, a plan must be made 
+with them as to how they will contact the maternity unit in the event of an 
+unscheduled event in their pregnancy and avoiding delays in contacting the unit. 
+This should be clearly documented on MIS. The booking midwife should provide an 
+‘emergency contact card’ (see appendix 6 ) with the pregnant woman and birthing 
+person’s details filled out and explain that this information should be given when 
+calling Triage. The relevant Community Team contact details sticker should also be 
+placed on the reverse side. 
+• Screening programmes: what blood tests and ultrasound scans are offered and why. 
+Pregnant women and birthing people will be offered height and weight measurement 
+in the antenatal clinic post scanning for either combined screening or dating scan, 
+even if combined screening is declined, to obtain an accurate BMI measurement 
+and referral to the appropriate pathway. 
+• How the baby develops during pregnancy. 
+• What to expect at each stage of the pregnancy. 
+• Physical and emotional changes during the pregnancy. 
+• Mental health during the pregnancy. 
+• Relationship changes during the pregnancy. 
+• How the pregnant woman and birthing person and their partner can support each 
+other. 
+• Immunisation for flu, pertussis (whooping cough) and other infections (for example, 
+COVID 19) during pregnancy. 
+• Infections that can impact on the baby in pregnancy or during birth (such as group B 
+streptococcus, herpes simplex and cytomegalovirus). 
+• Reducing the risk of infections, for example, encouraging hand washing. 
+• Safe use of medicines, health supplements and herbal remedies during pregnancy. 
+• Resources and support for expectant and new parents. 
+• How to get in touch with local or national peer support services. 
+• Nutrition and diet. 
+• Physical activity. Signpost to the Wellbeing and Exercise in Pregnancy Programme 
+(WEPP) and WEPP patient information leaflet on MIS and QR code. 
+• Smoking cessation and recreational drug use in a non-judgemental, compassionate 
+and personalised way. 
+• CO monitoring. 
+• Request FW8 Prescription Exemption Certificate for Maternity and document on MIS 
+that this has been requested. Digital Maternity Exemption Service NHSBSA 
+ 
+A pregnant woman and birthing person can be supported by a partner during their pregnancy 
+so healthcare professionals should: CLINICAL GUIDELINE 
+Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information v9.5 
+For use at : SRH & WH 
+Page 10 of 38 
+ • Involve partners according to the pregnant woman and birthing person's wishes and 
+• Inform the pregnant woman and birthing person that they are welcome to bring a 
+partner to antenatal appointments and classes. 
+• Review regularly whether they would like their partner involved in discussions 
+regarding care. 
+ 
+The community midwife should ensure the pregnant woman and birthing person has accessed 
+and registered an account on the Patient Knows Best (PKB) platform and assigned the 
+Personalised Care and Support Plan (PCSP). If not, instructions or a printable copy should be 
+given if no digital means of accessing PKB and PCSP. 
+ 
+The community midwife should also signpost the pregnant woman and birthing person to 
+online maternity information on pregnancy, the postnatal period and early years. 
+
+8.1 Midstream urine (MSU) at booking appointment 
+(See appendix 7) 
+ 
+A midstream urine sample (MSU) should be taken and sent for culture and sensitivity in all 
+pregnant women and birthing people at high or intermediate risk of preterm birth. Culture 
+positive samples, even in symptom -free pregnant women and birthing people (asymptomatic 
+bacteriuria), should be promptly treated. Following any positive culture and treatment, a repeat 
+MSU to confirm clearance is recommended. Those who have a recurrent episode require 
+review by an obstetrician. ( SBLCBv3 2023) 
+ 
+Intermediate Risk High Risk 
+• Previous birth by caesarean section at full 
+dilatation. 
+• History of significant cervical excisional 
+event i.e., LLETZ where >15mm depth 
+removed, or >1 LLETZ procedure carried 
+out or cone biopsy (knife or laser, 
+typically carried out under general 
+anaesthetic). • Previous preterm birth or mid-trimester 
+loss (16 to 34 weeks gestation). 
+• Previous preterm pre-labour rupture of 
+membranes. 
+• Previous use of cervical cerclage. 
+• Known uterine variant (i.e., unicornuate, 
+bicornuate uterus or uterine septum). 
+• Intrauterine adhesions (Ashermann’s 
+syndrome). 
+• History of trachelectomy (for cervical 
+cancer). 
+
+Routine midstream urine sample for culture and sensitivity at Booking appointment for low risk 
+pregnant women and birthing people is no longer recommended UK National Screening 
+Committee - GOV.UK . CLINICAL GUIDELINE 
+Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information v9.5 
+For use at : SRH & WH 
+Page 11 of 38 
+ 8.1.1 MSU and urinalysis during pregnancy 
+(See appendix 7) 
+ 
+Urinalysis with a dip test to be performed at each antenatal appointment to check for 
+proteinuria as part of an assessment for potential pre-eclampsia (See Hypertensive Disorders 
+in Pregnancy for further information if positive for proteinuria) glucosuria and potential urinary 
+tract infection (UTI). 
+ 
+If a pregnant woman and birthing person is symptomatic for a urine infection: 
+ 
+• Refer to GP or obstetrician to consider antibiotics. 
+• If signs of preterm labour refer into ADAU or Labour Ward as appropriate. 
+• Send MSU sample for culture and sensitivity. 
+• Re-test post treatment by sending an MSU for culture and sensitivity to confirm 
+clearance. 
+ 
+If a pregnant woman and birthing person is asymptomatic for a urine infection but their 
+urinalysis shows potential urine infection: 
+ 
+• Send MSU sample for culture and sensitivity. 
+• If positive sample refer to GP or obstetrician for appropriate treatment. 
+• Re-test post treatment by sending an MSU for culture and sensitivity to confirm 
+clearance. 
+ 
+In all cases provide safety net advice regarding when to call Triage regarding signs of 
+pyelonephritis and preterm labour. 
+ 
+Recurrent UTIs should be reviewed by an obstetrician. 
+ 
+The community midwife or clinical area where the MSU was sent for sensitivity and culture is 
+responsible for reviewing results and arranging follow -up as indicated. 
+ 
+See Diabetes in Pregnancy guideline for management of glucosuria. 
+
+9.0 Documentation and on-going antenatal appointments 
+ 
+Information taken at the booking appointment is entered into MIS whilst the midwife conducts 
+the Booking appointment. 
+ 
+The schedule of routine antenatal care (see Appendix 2 ) should be followed with regards to 
+seeing pregnant women and birthing people at appropriate gestation and for appropriate care. 
+ 
+At every antenatal appointment, carry out a risk assessment and document as follows: CLINICAL GUIDELINE 
+Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information v9.5 
+For use at : SRH & WH 
+Page 12 of 38 
+ • Review and reassess the plan of care for the pregnancy this should include – 
+o A formal risk assessment so that they have continued access to care provision 
+by the most appropriately trained professional. 
+o An ongoing review of the intended place of birth, based on the developing 
+clinical picture. 
+• Provide a safe environment and opportunities for the pregnant woman and birthing 
+person to discuss topics such as concerns at home, domestic abuse, concerns 
+about the birth (for example, if they previously had a traumatic birth) or mental 
+health concerns. 
+• Discuss PCSP in case the pregnant woman and birthing person would like to 
+discuss anything that has come up in their pregnancy. 
+• Ask the pregnant woman and birthing person about their general health and 
+wellbeing or there are any concerns they would like to discuss. Ask if they have 
+used the Wellbeing and Exercise in Pregnancy Programme (WEPP) exercise videos 
+and resources. Signpost if needed. 
+• Complete Pelvic Health Questions on BadgerNet at 16/40 and refer to Antenatal 
+Pelvic Health Education Class or for one -to-one appointment as guided by the 
+questionnaire 
+• Ask the pregnant woman and birthing person about their alcohol consumption. (See 
+section 11.6 ). 
+ 
+At every antenatal contact, update the pregnant woman and birthing person's antenatal 
+records to include details of history, test results, examination findings, medicines and 
+discussions. 
+ 
+Each time a pregnant woman and birthing person is seen in the antenatal period it is 
+imperative that the Maternity Information system (MIS) is updated; this includes any telephone 
+or face to face consultation. 
+ 
+Community midwives have laptops to enable contemporaneous record keeping. 
+ 
+10.0 Consultant led care 
+ 
+Where a referral is required following identification of a new risk during the pregnancy, the 
+clinician is responsible for making the appropriate referral promptly and documenting this. The 
+obstetric review following this referral should include a documented revised management plan 
+as appropriate. 
+ 
+Dependant on the antenatal risk assessment, an appointment is sent to the pregnant woman 
+and birthing person, with the gestation of review agreed by the consultant. 
+ 
+During the first obstetrician review in the antenatal clinic (for pregnant women and birthing 
+people in whom risks have been identified), an individualised management plan for the 
+pregnancy should be made and documented on the Maternity Information System (MIS). 
+ 
+For pregnant women and birthing people with birth preferences that go against medical advice 
+for example, pregnant women and birthing people who have had a previous caesarean birth CLINICAL GUIDELINE 
+Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information v9.5 
+For use at : SRH & WH 
+Page 13 of 38 
+ requesting birth at home or at the birth centre, a consultant review should be undertaken and a 
+joint meeting with their named Midwife and a Senior Midwife (Community Matron or 
+Community Team Leader) should be encouraged to formulate a plan. An appointment with the 
+Consultant midwife can be made to discuss the pregnant woman and birthing person’s 
+options. This plan should be documented within MIS. 
+ 
+Where a transfer of care is required, this should be indicated on MIS. Where the care is 
+returned back to midwifery led care, this should be indicated on MIS and the pregnant woman 
+and birthing person should be asked to make an appointment with their midwife. 
+ 
+10.1 Specialist referrals 
+ 
+Other referrals that may be required following booking. 
+ 
+Where pregnant women and birthing people disclose a history of infectious diseases or 
+haemoglobinopathies the Antenatal Screening Team should be notified as early as possible to 
+enable referral to the specialist service required. (See CG1105 Maternal Antenatal Screening 
+Tests Guideline and CG1199 Management of Infectious Diseases ) 
+ 
+The pregnant woman and birthing person should be referred for a clinical cardiac assessment 
+where there is a cardiac concern based on the pregnant woman and birthing person’s 
+personal or family history. 
+ 
+Pregnant women and birthing people with high risk maternal medicine conditions such as 
+cardiac conditions or bleeding disorders should be cared for as per CG21008 Management of 
+High Risk Maternal Medicine Conditions Guideline . 
+ 
+11.0 Safeguarding concerns and vulnerabilities 
+ 
+11.1 Raising a safeguarding concern 
+ 
+To raise a safeguarding concern please go to the Maternity Safeguarding page on the intranet 
+– ‘Raise a safeguarding concern’ and select the link ‘Maternity Antenatal & Postnatal 
+Safeguarding Alert’. All alerts made are triaged by the safeguarding midwives and forwarded 
+onto MASH if appropriate. 
+ 
+A list of triggers for raising a concern can be found within P16007 Safeguarding Children 
+Policy under identification of vulnerabilities. 
+ 
+If your concern is urgent, please call the safeguarding midwives. 
+ 
+11.2 Perinatal mental health service referrals 
+ 
+At booking all pregnant women and birthing people should routinely be asked the mental 
+health questions (Whooley). 
+ 
+Please see CG22001 UH Sussex Perinatal Mental Health Guideline for referral processes. CLINICAL GUIDELINE 
+Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information v9.5 
+For use at : SRH & WH 
+Page 14 of 38 
+ 
+11.3 Domestic abuse 
+ 
+At booking all pregnant women and birthing people should routinely be asked about past and 
+current domestic abuse. If the pregnant woman and birthing person is accompanied at booking 
+then the midwife should return to these questions at the next appointment. Record within the 
+Maternity Information system that the routine enquiry question has been asked. (See 
+CG17013 Domestic Abuse Guideline ) 
+ 
+11.4 Female Genital Mutilation (FGM) 
+ 
+Pregnant women and birthing people at risk of FGM should be identified at the booking 
+appointment. This should then be recorded within the Maternity Information System so that 
+mandatory reporting can be completed by the maternity information analyst. 
+ 
+Pregnant women and birthing people identified as having FGM should be supported and 
+specialist care provided accordingly. (See CG14020 FGM ) 
+ 
+11.5 Smoking in pregnancy 
+ 
+At the first antenatal (booking) appointment discuss exposure to tobacco smoke and give very 
+brief advice (VBA) about the risks of smoking and the available support to quit 
+Explain that: 
+ 
+• There is no safe level of smoking. Smokers should quit smoking altogether rather 
+than cut down to minimise risks to the mother and birthing parent and baby 
+• Smoking during the pregnancy can lead to long -term harm to the baby 
+• Nicotine replacement combined with behavioural support is the most effective way 
+to stop smoking 
+• Vaping is at least 95% safer than cigarettes and should be supported if this is the 
+chosen quit method 
+• Rates of relapse are high particularly in the 12 weeks following cessation and 
+discussions about smoking dependency should continue throughout pregnancy 
+ 
+Continue VBA at every appointment and continue to discuss tobacco use in a sensitive, non - 
+judgemental way with the pregnant woman and birthing person throughout their pregnancy 
+and document changes to smoking status; this allows personalised discussions about the risks 
+of tobacco use as part of routine healthcare throughout pregnancy. This may reduce risks and 
+improve outcomes for the mother and birthing parent and baby. 
+ 
+CO Levels : 
+ 
+The most common reason for a raised CO level is smoking, however exposure may come 
+from other sources such as second -hand smoke, faulty boilers, faulty heating/cooking 
+appliances or car exhausts (and can happen at home or at the workplace). CLINICAL GUIDELINE 
+Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information v9.5 
+For use at : SRH & WH 
+Page 15 of 38 
+ Pregnant women and birthing people who wish to discuss their alcohol use should be asked If pregnant women and birthing people have raised CO levels and are non -smokers 
+environmental exposure from a source in the home should be considered and the pregnant 
+women and birthing people should be advised to contact the Gas Emergency Line on 0800 
+111 999 for further advice. 
+ 
+Referral for further medical advice should be sought if symptoms are consistent with CO 
+poisoning. For NICE guidance on air pollution and vulnerable groups see recommendation 
+1.7.7. in NICE guidance NG70 . 
+ 
+Carbon monoxide (CO) testing should be offered to all pregnant women and birthing people at 
+the antenatal booking appointment, with the smoking status recorded. 
+ 
+Referrals to smoke free pregnancy service are an opt -out. All current smokers, those who 
+stopped smoking within last 6 weeks or raised CO 4ppm or above must be referred. CG20021 
+Smoking and smoking cessation in pregnancy ) Smoking status should be updated at booking, 
+36/40 and birth. Additional CO testing should be offered to pregnant women and birthing 
+people as appropriate throughout pregnancy at every contact, with the outcome recorded. 
+ 
+11.6 Alcohol consumption and fetal alcohol syndrome 
+ 
+At the first antenatal (booking) appointment discuss alcohol consumption and follow the UK 
+Chief Medical Officers’ low -risk drinking guidelines. Explain that: 
+ 
+• There is no known safe level of alcohol consumption during pregnancy. 
+• Drinking alcohol during the pregnancy can lead to long-term harm to the baby. 
+• The safest approach is to avoid alcohol altogether to minimise risks to the baby. 
+ 
+Alcohol consumption should continue to be discussed in a sensitive, non -judgemental way 
+with the pregnant woman and birthing person throughout their pregnancy and documented; 
+this allows personalised discussions about the risks of alcohol use as part of routine 
+healthcare throughout pregnancy. It also gives opportunities to offer tailored support and 
+interventions if the pregnant woman and birthing person wishes to cut down or stop drinking. 
+This may reduce risks and improve outcomes for the mother and birthing parent and baby. 
+
+maternity records. This information may also help support early diagnosis and treatment for 
+children with fetal alcohol spectrum disorder (FASD). (NICE QS204 2022 ) 
+ 
+Anyone disclosing alcohol use should be referred to the drug and alcohol services 
+(CGL/Orion) details of which are on Maternity Safeguarding page on the intranet for support in 
+reducing/stopping their use in pregnancy. A referral to Children's Services should also be 
+made as for any substance misuse, for an assessment of risk to the baby. This should also 
+include the partner, if the concern is around their drinking. about the quantity, frequency and pattern of drinking, and this should be documented in their CLINICAL GUIDELINE 
+Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information v9.5 
+For use at : SRH & WH 
+Page 16 of 38 
+ 11.7 WBIP - Wellbeing in Pregnancy (previously Weight Management in 
+Pregnancy) 
+ 
+This section focuses on those pregnant women and birthing people who start their pregnancy 
+with a BMI <30. For pregnant women and birthing people who have a BMI ≥30 please refer to 
+CG1139 Obesity in Pregnancy Guideline . 
+ 
+At booking, discuss their eating habits and how physically active they are. Find out if they have 
+any concerns about diet and the amount of physical activity they do. 
+ 
+Pregnant women and birthing people should be advised of the following, on how to achieve 
+and maintain a healthy weight during pregnancy: 
+ 
+• Base meals on starchy foods such as potatoes, bread, rice and pasta, choosing 
+wholegrain where possible. 
+• Eat fibre-rich foods such as oats, beans, peas, lentils, grains, seeds, fruit and 
+vegetables, as well as wholegrain bread and brown rice and pasta. 
+• Eat at least five portions of a variety of fruit and vegetables each day, in place of 
+foods higher in fat and calories. 
+• Eat a low-fat diet and avoid increasing their fat and/or calorie intake. 
+• Eat as little as possible of fried food; drinks and confectionery high in added sugars 
+(such as cakes, pastries and fizzy drinks); and other food high in fat and sugar (such 
+as some take -away and fast foods). 
+• Eat breakfast. 
+• Watch the portion size of meals and snacks, and how often they are eating. 
+• Make activities such as walking, cycling, swimming, aerobics and gardening part of 
+everyday life and build activity into daily life – for example, by taking the stairs 
+instead of the lift or taking a walk at lunchtime. 
+• Minimise sedentary activities, such as sitting for long periods watching television, at 
+a computer or playing video games. 
+• Walk, cycle or use another mode of transport involving physical activity. 
+ 
+Offer practical and tailored information. This includes advice on how to use Healthy Start 
+vouchers to increase the fruit and vegetable intake of those eligible for the Healthy Start 
+scheme (pregnant women and birthing people under 18 years and those who are receiving 
+benefit payments). 
+ 
+Many pregnant women and birthing people ask health professionals for advice on what 
+constitutes appropriate weight gain during pregnancy. However, there are currently no 
+evidence -based UK guidelines on recommended weight -gain ranges during pregnancy. 
+ 
+The amount of weight a pregnant woman and birthing person may gain in pregnancy can vary 
+a great deal. Only some of it is due to increased body fat – the unborn child, placenta, amniotic 
+fluid and increases in maternal and birthing parent blood and fluid volume all contribute. CLINICAL GUIDELINE 
+Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information v9.5 
+For use at : SRH & WH 
+Page 17 of 38 
+ Pregnant women and birthing people should be routinely weighed at Booking Appointment, at 
+28 weeks and 34 weeks. See Appendix 4 for the recommended pathway for excessive weight 
+gain in pregnancy and Appendix 5 for care if raised BMI is calculated. 
+ 
+All pregnant women and birthing people are referred to Wellbeing in pregnancy for an official 
+appointment via healthy weight referral on MIS. The pregnancy risks and the pathway of care 
+will be discussed. Ongoing support with the weekly wellbeing group will offered. 
+ 
+11.8 Symptomatic of Gestational Diabetes 
+ 
+Where a pregnant woman and birthing person have the following symptoms, in the presence 
+of a normal Glucose Tolerance Test (GTT), they should be referred to the diabetic team for 
+discussion of possible 1 -2 weeks Blood Glucose Monitoring. 
+ 
+• Increased thirst 
+• Increased urination - rule out infection first 
+• Excessive lethargy - with a normal Full Blood Count (FBC) or improving anaemia. 
+ 
+If a GTT has not been carried out, please complete one. 
+ 
+Referrals should be made to uhsussex.diabetesmaternity@nhs.net 
+ 
+12.0 Monitoring fetal growth and wellbeing 
+ 
+There is strong evidence to suggest that Fetal Growth Restriction (FGR) is the biggest risk 
+factor for stillbirth. Therefore, antenatal detection of growth restricted babies is vital and has 
+been shown to reduce stillbirth risk significantly because it gives the option to consider timely 
+birth of the baby at risk. ( SBLCBv3.1 ) 
+ 
+A risk assessment for FGR should be performed at the Booking Appointment and again in the 
+second trimester at the 16 -17 week appointment. See Figure 1 of CG01191 SGA / FGR 
+guideline for FGR risk factors. 
+
+12.1 Symphysis Fundal Height measurement (SFH) 
+ 
+SFH is a widely used method of fetal growth surveillance for low risk pregnancies in the third 
+trimester. The cost effectiveness and non-invasive nature makes it a useful primary screening 
+tool. Saving babies’ lives Care Bundle v3 recommends that measurements are commenced 
+from 26 -28 weeks gestation. MIS allows for documentation of 0.5cm values when measuring 
+SFH. However if this half centimeter is the difference between referring or not referring for 
+growth scans or obstetric review, the preference is to refer to avoid missing a diagnosis such 
+as FGR. 
+ 
+The Intergrowth chart is automatically commenced on MIS. SFH should be entered in to MIS 
+at each appointment from 26 -28 weeks. If regular serial growth scans have been commenced, 
+SFH measurements should be stopped, however this is not the case for ad hoc growth scans CLINICAL GUIDELINE 
+Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information v9.5 
+For use at : SRH & WH 
+Page 18 of 38 
+ when SFH measurements should be continued. It should be documented on MIS that this is 
+the reason SFH measurement is not being performed. SBLCBv3.1 
+ 
+See Appendix 3 for recommended SFH measurement from the Perinatal Institute: 
+Perinatal.org.uk - Fetal Growth / Fundal Height 
+ 
+Refer to CG01191 SGA / FGR guideline for management if SFH is less than expected. 
+Refer to CG1192 Large for Gestational Age guideline for management if SFH is consistently 
+more than expected with other risk factors such as diabetes. 
+ 
+Referrals for growth scan should be arranged if: 
+ 
+• The first fundal height measurement plots below the 10th centile line. 
+• Consecutive measurements show SLOW or NO growth = growth rate between plots is 
+slower than the slope of the 10th centile line, over the same gestational age interval 
+(regardless of whether any of the measurements are above or below the 10th centile 
+line). 
+• Consecutive measurements show EXCESSIVE growth = growth rate between plots 
+faster/steeper than the slope of the 90th centile line, over the same gestational age 
+interval (regardless of whether any of the measurements are above or below the 90th 
+centile line). 
+ 
+NB measurements above the 90th centile with normal growth rate are NOT an indication for 
+scan, unless there is suspicion of polyhydramnios. 
+
+13.0 Common problems during pregnancy 
+ 
+13.1 Nausea and vomiting 
+ 
+• Reassure pregnant women and birthing people that mild to moderate nausea and 
+vomiting are common in pregnancy and are likely to resolve before 16 to 20 weeks. 
+• Recognise that by the time pregnant women and birthing people seek advice from 
+healthcare professionals about nausea and vomiting in pregnancy, they may have 
+already tried a number of different interventions. 
+• For pregnant women and birthing people with mild ‑to‑moderate nausea and 
+vomiting who prefer a non-pharmacological option, suggest that they try ginger. 
+• When considering pharmacological treatments for nausea and vomiting in 
+pregnancy, discuss the advantages and disadvantages of different antiemetics with 
+the pregnant woman and birthing person. Take into account their preferences and 
+their experience with treatments in previous pregnancies. See NICE 2021 Table 1: 
+Advantages and disadvantages of different pharmacological treatments for nausea 
+and vomiting in pregnancy 
+ 
+Refer to: CG13003 Management of Hyperemesis Guideline for pharmacological and in-patient 
+management. CLINICAL GUIDELINE 
+Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information v9.5 
+For use at : SRH & WH 
+Page 19 of 38 
+ 13.2 Heartburn 
+ 
+• Give information about lifestyle and dietary changes to pregnant women and birthing 
+people with heartburn including advice on healthy eating. 
+• Advise to avoid known precipitants such as chocolate, fatty foods. 
+• Smoking cessation and/or being overweight can also increase heartburn. If not 
+already done so, refer to Smoking Cessation or Weight Management in Pregnancy if 
+appropriate. 
+ 
+• Consider a trial of an antacid or alginate for pregnant women and birthing people 
+with heartburn. 
+ 
+13.3 Symptomatic vaginal discharge 
+ 
+• Advise pregnant women and birthing people who have vaginal discharge that this is 
+common during pregnancy, but if it is accompanied by symptoms such as itching, 
+soreness, an unpleasant smell or pain on passing urine, there may be an infection 
+that needs to be investigated and treated (see section 8.1.1 ). 
+• Consider carrying out a vaginal swab for pregnant women and birthing people with 
+symptomatic vaginal discharge if there is doubt about the cause. 
+• If a sexually transmitted infection is suspected, consider arranging appropriate 
+investigations. 
+• Offer vaginal imidazole (such as clotrimazole to treat vaginal candidiasis in pregnant 
+women and birthing people. (See Obstetric - genital tract (microguide.global) ). 
+• Consider oral or vaginal antibiotics to treat bacterial vaginosis in pregnant women 
+and birthing people. Refer to Obstetric - genital tract (microguide.global) and 
+CG20013 Preterm Birth Risk Pathway for further information on management. 
+
+13.4 Pelvic girdle pain 
+ 
+For pregnant women and birthing people with pregnancy -related pelvic girdle pain, signpost to 
+WEPP PGP section https://sussexlmns.org/wepp/ for initial information and advice. Advise re: 
+physiotherapy self -referral or refer during session if indicated. 
+
+13.5 Unexplained vaginal bleeding after 13 weeks 
+ 
+• Offer anti -D immunoglobulin to pregnant women and birthing people who present 
+with vaginal bleeding after 13 weeks of pregnancy if they are rhesus D-negative and 
+at risk of isoimmunisation. See CG01195 Fetal D Group DNA Screening and 
+Routine Anti -D Prophylaxis for further information on management. 
+• Refer pregnant women and birthing people with unexplained vaginal bleeding to 
+EPAC if under 16 weeks. Pregnant women and birthing people over 16 weeks 
+should be reviewed on labour ward. Refer to CG12004 APH and Intrapartum 
+Haemorrhage for further information on management. • Raising the head of the bed and having a main meal a few hours before going to 
+bed may help some pregnant women and birthing people. CLINICAL GUIDELINE 
+Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information v9.5 
+For use at : SRH & WH 
+Page 20 of 38 
+ 
+14.0 Pregnant women and birthing people from minority ethnic backgrounds 
+and deprived areas 
+ 
+Pregnant women and birthing people and babies from some minority ethnic backgrounds and 
+those who live in deprived areas have an increased risk of death and may need closer 
+monitoring and additional support. 2020 MBRRACE -UK reports showed that: 
+ 
+• Compared with white pregnant women and birthing people (8/100,000), the risk of 
+maternal and birthing parental death during pregnancy and up to 6 weeks after birth 
+is: 
+- 4 times higher in black pregnant women and birthing people (34/100,000) 
+- 3 times higher in pregnant women and birthing people with mixed ethnic 
+background (25/100,000) 
+- 2 times higher in Asian pregnant women and birthing people (15/100,000; 
+does not include Chinese pregnant women and birthing people) 
+• Compared with white babies (34/10,000), the stillbirth rate is 
+- more than twice as high in black babies (74/10,000) 
+- around 50% higher in Asian babies (53/10,000) 
+• Pregnant women and birthing people living in the most deprived areas (15/100,000) 
+are more than 2.5 times more likely to die compared with pregnant women and 
+birthing people living in the least deprived areas (6/100,000). 
+• The stillbirth rate increases according to the level of deprivation in the area the 
+mother lives in, with almost twice as many stillbirths for pregnant women and 
+birthing people living in the most deprived areas (47/10,000) compared with the 
+least deprived areas (26/10,000). 
+ 
+MBRRACE -UK 2020 
+ 
+Midwives and obstetricians should ensure that pregnant women and birthing people from 
+minority ethnic backgrounds feel supported to access the maternity service for any urgent 
+concerns. They may require additional reassurance that their concerns will be treated 
+appropriately. Staff should recognise that minority ethnic pregnant women and birthing people 
+may delay seeking help and as such when they do present via telephone or in person, ensure 
+any further delays from an organisational perspective are avoided where possible to make 
+certain there is equity in care. 
+ 
+14.1 Migrant pregnant women and birthing people 
+ 
+Migrant pregnant women and birthing people, who have not previously had a full medical 
+examination in the United Kingdom, should either be referred back to their GP or seen by an 
+obstetrician, to have a medical history taken and clinical assessment of their overall health. 
+ 
+Interpreting services must be used if necessary. Interpreters should be independent of the 
+pregnant woman and birthing person rather than using a family member or friend. During the 
+initial Risk Assessment undertaken at booking interpreting requirements should be assessed 
+and appropriate arrangements made. CLINICAL GUIDELINE 
+Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information v9.5 
+For use at : SRH & WH 
+Page 21 of 38 
+ 
+14.2 Language support 
+ 
+For providing help for patients requiring language support, staff can access interpreting 
+services by opening this this link: 
+ 
+Interpretation & Translation Toolkit 
+ 
+or: 
+ 
+CARDIMEDIC translation tool on work iPads. 
+ 
+The booking midwife should ensure that the pregnant woman and birthing person understands 
+how to contact Maternity Telephone Triage and provide an ‘emergency contact card’ (see 
+appendix 6 ) with the pregnant woman and birthing person’s details filled out. It should be 
+explained that this information should be given when calling Triage. The relevant Community 
+Team contact details sticker should be placed on the reverse side. 
+ 
+A referral to the overseas team should be considered if there are any questions regarding the 
+patients being eligible for NHS maternity care. 
+
+15.0 Key principles of communication and patient information 
+ 
+Pregnant women and birthing people and their partners should have access to unbiased 
+information which includes benefits, risks and alternatives (as appropriate) in order to make an 
+informed choice regarding their care and options. 
+ 
+Pregnant women and birthing people should be signposted to online maternity information. For 
+pregnant women and birthing people without internet access, hard copies of relevant leaflets 
+should be made available. 
+ 
+When giving pregnant women and birthing people (and their partners) information about 
+antenatal care, use clear language, and tailor the timing, content and delivery of information to 
+the needs and preferences of the pregnant woman and birthing person and their stage of 
+pregnancy. 
+ 
+Explore the knowledge and understanding that the pregnant woman and birthing person (and 
+their partner) has about each topic to individualise the discussion and how it relates to them. 
+Provide regular opportunities to ask questions, and set aside enough time to discuss any 
+concerns. 
+ 
+Information should support shared decision making between the pregnant woman and birthing 
+person and their healthcare team, and be: 
+ 
+• Offered on a one-to-one or couple basis. 
+• Supplemented by group discussions. CLINICAL GUIDELINE 
+Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information v9.5 
+For use at : SRH & WH 
+Page 22 of 38 
+ • Supplemented by written information in a suitable format, for example, digital, 
+printed, braille or Easy Read. 
+• Offered throughout the pregnant woman and birthing person's care. 
+• Individualised and sensitive. 
+• Supportive and respectful. 
+• Evidence -based and consistent. 
+• Translated into other languages if needed. 
+ 
+Pregnant women and birthing people should be signposted to online maternity information as 
+clinically relevant and it should be documented in the health record when this has been done. 
+Examples are: 
+ 
+• Birth after Caesarean (BAC) - to be given to pregnant women and birthing people 
+who have had a previous caesarean who are suitable for vaginal birth at booking or 
+during antenatal clinic consultation. 
+• Caesarean Section (EIDO) 
+• General Anaesthetic (EIDO) 
+• External Cephalic Version (EIDO & RCOG) 
+• Induction of Labour 
+• Screening for diabetes in Pregnancy 
+• Declining Blood and Blood Products 
+• Multiple Pregnancy 
+• Placenta Praevia (RCOG) 
+• Group B streptococcus (GBS) infection in newborn babies. 
+• Mother/birthing parent’s blood test to check their unborn baby’s blood group. 
+
+16.0 Responsibilities of midwives and obstetricians 
+ 
+Antenatal care should be provided by a small group of healthcare professionals with whom the 
+pregnant woman and birthing person feels comfortable. There should be continuity of carer 
+throughout the antenatal period. 
+ 
+Pregnant women and birthing people with complex pregnancies must have a named 
+consultant lead. 
+ 
+Health professionals who order blood/specimen tests are responsible for documenting this and 
+the follow up of results. They should ensure subsequent action/referrals are made promptly, 
+with efficient communication between healthcare professionals involved in the care of that 
+pregnant woman and birthing person. 
+ 
+Pregnant women and birthing people with complex medical problems involving multiple 
+specialties, the responsible consultant obstetrician or physician must show clear leadership 
+and be responsible for coordinating care and liaising with anaesthetists, midwives, other 
+physicians, and obstetricians and all other professionals who need to be involved in the care of 
+these pregnant women and birthing people. MBRRACE -UK 2023 CLINICAL GUIDELINE 
+Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information v9.5 
+For use at : SRH & WH 
+Page 23 of 38 
+ Throughout the pregnancy, the midwife should discuss and give information on: 
+ 
+• Physical and emotional changes during the pregnancy. 
+• Relationship changes during the pregnancy. 
+• How the pregnant woman and birthing person and their partner can support each 
+other. 
+• Resources and support for expectant and new parents. 
+• How the parents can bond with their baby and the importance of emotional 
+attachment. 
+• The results of any blood or screening tests from previous appointments. 
+• Start talking with the pregnant woman and birthing person about their birth 
+preferences and the implications, benefits and risks of different options from 16-18 
+weeks. 
+ 
+17.0 Previous pregnancy health records 
+ 
+The notes of pregnant women and birthing people who have previously birthed within this 
+Trust are available from Medical Records for review by clinicians. Clinicians should review the 
+previous obstetric notes of high risk pregnant women and birthing people. 
+ 
+For pregnant women and birthing people who have previously birthed in another Trust where 
+the pregnancy or birth was medically or socially complicated, a letter will be sent to the 
+relevant hospital(s) requesting obstetric/social details. The midwife is responsible for this (see 
+Appendix 1 ) and for notifying antenatal clinic . These notes will be reviewed in antenatal clinic 
+by a midwife/obstetrician and appropriate action taken regarding appointments. This should be 
+documented on MIS. 
+ 
+18.0 Location of antenatal appointments 
+ 
+Antenatal care is provided in a variety of settings such as GP surgeries, children’s centres, 
+hospital, the pregnant woman and birthing person’s home or in other community based 
+settings. 
+ 
+Wherever the care is provided it should be welcoming and accessible. The pregnant woman 
+and birthing person’s privacy and dignity should be maintained at all times and enabling them 
+to discuss sensitive issues such as domestic violence, sexual abuse, psychiatric illness and 
+recreational drug use. 
+ 
+The environment in which antenatal care is provided should be risk assessed to ensure safety 
+for the pregnant woman and birthing person and family. CLINICAL GUIDELINE 
+Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information v9.5 
+For use at : SRH & WH 
+Page 24 of 38 
+ 19.0 Monitoring 
+ 
+Suggested audit questions: 
+ 
+Booking appointment 
+ 
+• Has the booking appointment occurred between 8 -10 weeks of pregnancy and be 
+undertaken by the named midwife? 
+• If pregnancy referral occurred later than 9+0 weeks of pregnancy, has the booking 
+appointment taken place within 2 weeks? 
+• If the pregnant woman and birthing person is aged 24 and under, has Chlamydia & 
+Gonorrhoea Screening been offered? 
+• If consent for blood products is declined, has it been documented that the pregnant 
+woman and birthing person has been signposted to information on declining blood 
+products and an obstetric consultant appointment been offered to discuss further? 
+• Has antenatal screening for Downs’, Edwards and Patau’s Syndrome as described 
+in the national patient information leaflet “Screening tests for you and your Baby’’ 
+been discussed and documented on MIS as either accepted or declined. 
+• Has the pregnant woman and birthing person has accessed and registered with an 
+account on the Patient Knows Best (PKB) platform and assigned the Personalised 
+Care and Support Plan (PCSP)? 
+• Has the pregnant woman and birthing person been signposted to patient information 
+on MIS? 
+• Has the booking information has been fully completed including Risk Assessment 
+forms and VTE assessment? 
+• Have the mental health questions (Whooley) been asked? 
+• Has Carbon monoxide (CO) testing been offered and result recorded at every 
+contact? 
+• Have all current smokers been referred to SFP Team? 
+• Has a weight and BMI been performed and documented at the booking 
+appointment? Has the weight been measured and documented at 34 weeks? 
+ 
+High risk pregnancies and consultant led care 
+ 
+• Has the pregnant woman and birthing person with complex pregnancies a named 
+consultant lead? 
+• Has an individualised management plan for the pregnancy been made and 
+documented on Maternity Information System during first obstetrician review in the 
+antenatal clinic (for pregnant women and birthing people in whom risks have been 
+identified)? 
+• Where a transfer of care is required, has this been indicated on MIS? 
+• Where the care is returned back to midwifery led care, has this been indicated in the 
+notes and the pregnant woman and birthing person asked to make an appointment 
+with their midwife? 
+• Has a referral been made for clinical cardiac assessment where there is a cardiac 
+concern based on the pregnant woman and birthing person’s personal or family 
+history? CLINICAL GUIDELINE 
+Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information v9.5 
+For use at : SRH & WH 
+Page 25 of 38 
+ 
+Monitoring fetal growth 
+ 
+• Have SFH measurements been commenced from 26-28 weeks gestation and 
+recorded at each appointment? 
+• Has a referral for a growth scan been made if: 
+o The first fundal height measurement plots below the 10th centile line. 
+o Consecutive measurements show SLOW or NO growth = growth rate between 
+plots is slower than the slope of the 10th centile line, over the same gestational 
+age interval (regardless of whether any of the measurements are above or 
+below the 10th centile line). 
+o Consecutive measurements show EXCESSIVE growth = growth rate between 
+plots faster/steeper than the slope of the 90th centile line, over the same 
+gestational age interval (regardless of whether any of the measurements are 
+above or below the 90th centile line). CLINICAL GUIDELINE 
+Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information v9.5 
+For use at : SRH & WH 
+Page 26 of 38 
+ Appendix 1: Clinical records request letter 
+
+Date: ……………………………….. 
+
+To Whom It May Concern: …………………………………………………………… 
+At………………………………………………………………... 
+Re: ……………………………………………………………… 
+DOB: …………………….. 
+ 
+The above patient delivered their baby with you on: ………………………… 
+ 
+They are now pregnant again and planning to birth at Worthing Hospital / St Richards Hospital, 
+Chichester. 
+ 
+Please would it be possible for you to send or email a copy of the patient’s previous births and 
+social records to us. 
+ 
+For Worthing the Antenatal Clinic – uhsussex.wor.antenatalclinic@nhs.net 
+For Chichester the Antenatal Clinic – uhsussex.antenatal.clinic@nhs.net 
+ 
+Or, alternatively, send the records to the Antenatal Clinic choosing the appropriate address 
+above. 
+ 
+Thank you for your assistance with this matter. 
+
+Yours sincerely 
+
+Senior Midwife, 
+Antenatal Clinic, 
+Worthing Hospital / St Richards Hospital, Chichester CLINICAL GUIDELINE 
+Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information v9.5 
+For use at : SRH & WH 
+Page 27 of 38 
+ 
+Appendix 2: Schedule of routine antenatal visits CLINICAL GUIDELINE 
+Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information v9.5 
+For use at : SRH & WH 
+Page 28 of 38 
+
+CLINICAL GUIDELINE 
+Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information v9.5 
+For use at : SRH & WH 
+Page 29 of 38 
+ 
+Appendix 3: Symphysis Fundal Height Measurement 
+Source: Perinatal Institute 
+
+ Page 30 of 38 
+ 
+Body 
+Mass 
+Index 
+(BMI) 
+kg/m2 
+
+Classification 
+ 
+Weight 
+Gain 
+ 
+<18.5 
+Underweight 1-2 kgs 
+above 
+normal 
+BMI 
+ 
+18.5 - 
+24.9 
+Normal/Healthy 11.5-16 
+kgs (25- 
+35 lbs) 
+ 
+25 - 29.9 
+Overweight 
+<11.5 kgs 
+(25 lbs) 
+ 
+30 - 34.9 
+Obesity (I*) 4.5-9 kgs 
+(10- 
+25lbs) 
+ 
+35 - 39.9 
+Obesity (II*) 
+0-4 kgs 
+(0-9lbs) 
+ 
+>40 
+Obesity (III*) 
+0-4 kgs 
+(0-9lbs) 
+ 
+Weight measured at 
+28 or 34 weeks gestation 
+indicates an excessive weight 
+gain. 
+ 
+See chart. 
+If experiencing symptoms: 
+•Increased Thirst 
+•Increased Urination (with normal MSU) 
+•Excessive Lethargy (with normal FBC) 
+with normal previous GTT, refer to diabetes 
+team to discuss 1 -2 weeks Blood Glucose 
+Monitoring. 
+To discuss with Obstetric 
+Registrar/ Consultant: 
+ 
+•If >34 weeks 
+•To review any growth 
+USS/ consider growth 
+USS 
+If previous GTT normal: 
+ 
+•Refer to Diabetes Team 
+who will forward to 
+Diabetic Dietician for 
+advice on low glycaemic 
+index (GI) diet 
+uhsussex.diabetesmaternity@ 
+nhs.net 
+If no previous GTT & <34 
+weeks: 
+ 
+•Complete GTT. CLINICAL GUIDELINE Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information 
+For use at : SRH & WH 
+
+Appendix 4: Excessive Weight and Abnormal Symptoms Pathway 
+ 
+Please follow this pathway if you or the pregnant woman and birthing person, is concerned about excessive weight gain or abnormal symptoms 
+during pregnancy. 
+ CLINICAL GUIDELINE Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information 
+For use at : SRH & WH 
+Page 31 of 38 
+ Appendix 5: Guidelines for BMIs 
+BELOW 30 
+• Normal diet advice and discuss recommended weight gain pregnancy, plus check weight at 28 & 34 weeks. 
+• If more than recommended gained – refer to weight management team. 
+30-35 
+• Accurate height and weight at initial contact - workout BMI. 
+• Offer weighing at each contact. 
+• Refer to patient information ‘Wellbeing in Pregnancy Programme’. 
+• Discuss healthy diet, 2000 calories a day etc. 
+• Discuss recommended weight gain in pregnancy. 
+• Ensure 5milligrams of folic acid and 10micrograms of Vit D are being taken. 
+• At Booking refer to Wellbeing in Pregnancy Programme via MIS. Risks will be discussed, advice and support 
+given. Please encourage pregnant women and birthing people to attend. THIS IS AN OFFICIAL 
+APPOINTMENT! 
+• GTT at Booking and 26 weeks. 
+35-40 
+• Accurate height and weight at initial contact -workout BMI. 
+• Offer weighing at each contact. 
+• Refer to patient information ‘Wellbeing in Pregnancy Programme’. 
+• Discuss recommended weight gain in pregnancy. 
+• Ensure 5milligrams of folic acid and 10micrograms of Vit D are being taken. 
+• At Booking refer to Wellbeing in Pregnancy via MIS. Risks will be discussed, advice and support given 
+Please encourage pregnant women and birthing people to attend. THIS IS AN OFFICIAL APPOINTMENT! 
+• GTT at Booking and 26 weeks. 
+• Consultant appointment if there are added co-morbidities. 
+• Refer to anaesthetist if BMI 40 and above via MIS. 
+• Serial growth scans from 32 weeks which are generated from the risk assessment sheet by ANC. 
+ABOVE 40 
+• Accurate height and weight at initial contact -workout BMI. 
+• Offer weighing at each contact. 
+• Refer to patient information ‘Wellbeing in Pregnancy Programme’. 
+• Discuss healthy diet, 2000 calories a day etc. 
+• Discuss recommended weight gain in pregnancy. 
+• Ensure 5milligrams of folic acid and 10micrograms of Vit D are being taken. 
+• At Booking refer to Wellbeing in Pregnancy via MIS. Risks will be discussed, advice and support given. 
+Please encourage pregnant women and birthing people to attend. THIS IS AN OFFICIAL APPOINTMENT! 
+• GTT at booking and 26 weeks. 
+• Serial growth scans from 32 weeks which are generated from the risk assessment sheet by ANC. 
+• Refer to anaesthetist if BMI 40 and above via MIS. 
+• Consultant appointment. 
+• Weight management team/named midwife to complete birth plan and incorporate manual handling. CLINICAL GUIDELINE Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information 
+For use at : SRH & WH 
+Page 32 of 38 
+ 
+Appendix 6: Antenatal & postnatal emergency contact card 
+Do not print from guideline 
+
+ CLINICAL GUIDELINE Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information 
+For use at : SRH & WH 
+Page 33 of 38 
+ 
+Appendix 7: MSU in pregnancy flowchart CLINICAL GUIDELINE Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information 
+For use at : SRH & WH 
+Page 34 of 38 
+ Change Log – Antenatal Care and Patient Information Appendix 8: Guideline Version Control Log 
+ 
+This should be included for all updated guidelines, summarising the changes between the 
+current and previous version. (Earlier changes should be deleted from the list when the 
+guideline is updated.) 
+Do not list minor and stylistic changes or changes which do not alter the processes 
+described. 
+If the update includes a significant reorganisation of the material, indicate this and list the 
+main areas where the process itself has changed. 
+
+Version Date Author Status Comment 
+1.0 November 2010 Antenatal Clinic 
+Managers Archived New Trust wide guideline 
+2.0 February 2011 CNST Lead Midwife Archived Administrative update 
+3.0 January 2012 CNST Midwife Archived Interpreting information added 
+4.0 October 2012 CNST Midwife Archived Minor update 
+4.1 July 2013 CNST Midwife Archived Leaflet information updated 
+5.0 November 2013 CNST Midwife Archived 3 year review and update 
+6.0 May 2016 Midwife (H. Boiling) Archived Addition of management of 
+missed appointments and 
+update to patient information 
+section with regard to on-line 
+leaflets 
+7.0 June 2017 Midwifery Matron – 
+Community & 
+Outpatients 
+Fetal Medicine 
+Midwife Specialist 
+Antenatal Clinic 
+managers Archived Review and updated to remove 
+Midwifery Supervision 
+Addition of Fetal Echo Referral 
+8.0 September 2019 Midwifery Matron – 
+Community & 
+Outpatients Archived Full review of guideline 
+9.0 January 2022 J. Collard, Clinical 
+Effectiveness 
+Support Midwife Archived Full review in line with NG201 
+Antenatal Care NICE 2021 
+Guidance on management of 
+excessive weight gain added. 
+9.1 October 2022 J. Collard, Clinical 
+Effectiveness 
+Support Midwife Archived Antenatal discussion and 
+assessment of alcohol 
+consumption added in line with 
+NICE QS204 Fetal alcohol 
+spectrum disorder 2022 
+SFH to be from 26-28 weeks. 
+Signposting to FGA & Preterm 
+risk assessment forms added. 
+9.2 March 2023 H.Challen, Clinical 
+Effectiveness 
+Support Midwife Archived Appendix 2: added CO 
+Monitoring at every antenatal 
+appointment. CLINICAL GUIDELINE Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information 
+For use at : SRH & WH 
+Page 35 of 38 
+ 
+9.3 June 2023 CE Team Archived • Plan to be made of how to 
+contact the maternity unit if 
+the pregnant woman and 
+birthing person has 
+communication difficulties. 
+• MRSA no longer required at 
+36 weeks. 
+9.4 January 2024 E. Meadows, 
+Maternal Medicine 
+Midwife 
+K. Lundie, 
+Antenatal and 
+Newborn Screening 
+Midwife 
+ 
+CE Team Archived • SFH to be commenced at 28 
+weeks and can be stopped 
+once regular growth scans 
+have been commenced. 
+• Booking MSU for culture and 
+sensitivity only to be 
+performed with intermediate 
+or high risk women as per 
+SBLCBv3. 
+• Proof of cure repeat culture 
+and sensitivity to be sent post 
+treatment for asymptomatic 
+bacteria or confirmed UTI. 
+• Schedule of care reverted 
+back to follow NICE schedule 
+of care. 
+• Smoking in pregnancy 
+updated. 
+9.5 July 2024 Clinical Outcomes & 
+Effectiveness Team LIVE Transferred into guideline 
+template. 
+ 
+The interpretation and application of clinical guidelines will remain 
+the responsibility of the individual clinician. 
+If in doubt contact a senior colleague or expert. CLINICAL GUIDELINE Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information 
+For use at : SRH & WH 
+Page 36 of 38 
+ Appendix 9: Due Regard Assessment Tool 
+To be completed and attached to any guideline when submitted to the appropriate committee 
+for consideration and approval. 
+
+ Yes/No Comments 
+1. Does the document/guideline affect one group less 
+or more favourably than another on the basis of: 
+ Age no 
+ · Disability no 
+ · Gender (Sex) no 
+ · Gender Identity no 
+ · Marriage and civil partnership no 
+ · Pregnancy and maternity no 
+ · Race (ethnicity, nationality, colour) no 
+ · Religion or Belief no 
+ · Sexual orientation, including lesbian, gay and bisexual 
+people 
+2. Is there any evidence that some groups are affected 
+differently and what is/are the evidence source(s)? no 
+3. If you have identified potential discrimination, are 
+there any exceptions valid, legal and/or justifiable? no 
+4. Is the impact of the document likely to be negative? no 
+5. If so, can the impact be avoided? N/A 
+6. What alternative is there to achieving the intent of 
+the document without the impact? N/A 
+7. Can we reduce the impact by taking different action 
+and, if not, what, if any, are the reasons why the 
+guideline should continue in its current form? N/A 
+8. Has the document been assessed to ensure service 
+users, staff and other stakeholders are treated in 
+line with Human Rights FREDA principles (fairness, 
+respect, equality, dignity and autonomy)? yes 
+ 
+If you have identified a potential discriminatory impact of this guideline, please refer it to 
+Senior Midwifery Staff, Midwifery Matron – Community & Outpatients, together with any 
+suggestions as to the action required to avoid/reduce this impact. For advice in respect of 
+answering the above questions, please contact uhsussex.equality@nhs.net 01273 664685). CLINICAL GUIDELINE Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information 
+For use at : SRH & WH 
+Page 37 of 38 
+ Appendix 10: Template Dissemination, Implementation and Access Plan 
+ 
+To be completed and attached to any guideline when submitted to Corporate Governance for 
+consideration and TMB approval. 
+ Dissemination Plan Comments 
+1. Identify: 
+ Which members of staff or staff groups will be 
+affected by this guideline? Midwives and Obstetricians 
+ How will you confirm that they have received the 
+guideline and understood its implications? Dissemination of update to all 
+maternity staff is carried out 
+via work emails, notice 
+boards, social media, safety 
+huddles and Leading 
+Learning emails to 
+obstetricians. If indicated, it is 
+included in maternity 
+mandatory training. 
+ How have you linked the dissemination of the 
+guideline with induction training, continuous 
+professional development, and clinical supervision 
+as appropriate? All staff are shown how to 
+access maternity guidelines 
+on SharePoint when they join 
+the Trust. It is confirmed at 
+performance appraisals. 
+2. How and where will staff access the document (at 
+operational level)? Maternity clinical documents 
+are uploaded to SharePoint 
+which all maternity staff have 
+access to. 
+
+ Yes/No Comments 
+3. Have you made any plans to remove 
+old versions of the guideline or 
+related documents from circulation? Yes Archiving of previous version 
+is part of our process. 
+4. Have you ensured staff are aware 
+the document is logged on the 
+organisation’s register? Yes This is part of our 
+dissemination process – see 
+above. CLINICAL GUIDELINE Due for review : January 2025 
+Name of Guideline : Antenatal Care & Patient Information 
+For use at : SRH & WH 
+Page 38 of 38 
+ Appendix 11: Additional guidance and information 
+ 
+NHS England (2016) National Maternity Review: Better Births. Improving Outcomes of 
+Maternity Services in England. https://www.england.nhs.uk/wp - 
+content/uploads/2016/02/national -maternity -review -report.pdf 
+ 
+NHS England (2023) Saving Babies’ Lives Version Three. NHS England » Saving babies’ 
+lives version three: a care bundle for reducing perinatal mortality (accessed 06/09/23) 
+ 
+National Institute for Health and Clinical Excellence (2023) NG235 Intrapartum Care 
+(accessed 20/11/23) 
+ 
+Recommendations | Weight management before, during and after pregnancy | Guidance | 
+NICE 2010 
+ 
+NG201 Antenatal Care NICE 2021 
+ 
+NICE QS204 Fetal alcohol spectrum disorder 2022 
+ 
+MBRRACE -UK 2023 Lessons learned to inform maternity care from the UK and Ireland 
+confidential enquires into maternal deaths and morbidity 2019 -2021. 
+ 
+Gov.UK (2020) Asymptomatic bacteriuria - UK National Screening Committee (UK NSC) - 
+GOV.UK (view -health -screening -recommendations.service.gov.uk) (accessed 06/09/23)

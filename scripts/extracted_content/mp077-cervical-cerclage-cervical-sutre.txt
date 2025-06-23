@@ -1,0 +1,394 @@
+# Extracted from: MP077 Cervical Cerclage (Cervical Sutre).pdf
+# Guideline ID: mp077-cervical-cerclage-cervical-sutre
+# Content length: 20382 characters
+# Processing date: 1750066901.729892
+
+Cervical Cerclage 
+(Cervical Suture) 
+
+Maternity Protocol: MP077 
+ 
+Date agreed: May 2 021 
+ 
+ Cervical Cerclage (Cervical Suture) (RSCH PRH only ) MP077 
+Page 2 of 17 
+Brighton & Sussex University Hospitals 
+
+Guideline Reviewer : Tony Kelly 
+Version: 3 
+Approval Committee: Women’s Services Safety and Quality Committee 
+Date agreed: May 2021 
+Date Amended: May 2021 -Awaiting new national guidance prior to updating 
+Review date: May 2022 
+Cross reference: MP031 : Pre-term Labour 
+MP073 : Management of pregnancy losses above 14 weeks gestation 
+ Cervical Cerclage (Cervical Suture) (RSCH PRH only ) MP077 
+Page 3 of 17 
+Brighton & Sussex University Hospitals Contents 
+Key Principles ................................ ................................ ................................ ............................. 5 
+Scope ................................ ................................ ................................ ................................ ......... 5 
+Responsibilities ................................ ................................ ................................ .......................... 5 
+Introduction ................................ ................................ ................................ ............................... 6 
+1.0 Types of Cervical Sutures ................................ ................................ ............................... 6 
+1.1 History indicated ................................ ................................ ................................ ......... 6 
+1.2 USS indicated ................................ ................................ ................................ ............... 6 
+1.3 Rescue suture ................................ ................................ ................................ .............. 6 
+2.0 Other Terminology ................................ ................................ ................................ ......... 6 
+2.1 Trans -Vaginal (MacDonald) suture ................................ ................................ ............. 6 
+2.2 High Trans -vaginal (Shirodkar) suture ................................ ................................ ......... 7 
+2.3 Transabdominal suture ................................ ................................ ............................... 7 
+2.4 Occlusion sutures ................................ ................................ ................................ ........ 7 
+3.0 Referral to Hospital Antenatal Clinic: ................................ ................................ ............ 7 
+3.3 Review by Consultant in Clinic ................................ ................................ .................... 7 
+3.3.1 Main indications: ................................ ................................ ................................ .. 7 
+3.7 Contra -indication to all types of suture insertion: ................................ ...................... 8 
+4.0 Counselling Before All Types of Suture Insertion ................................ ..................... 8 
+5.0 Pre-Operative Management of all Types of Sutures: ................................ ............... 9 
+6.0 Operative Issues ................................ ................................ ................................ ..... 9 
+7.0 Post Suture Insertion ................................ ................................ .............................. 9 
+8.0 Suture Removal ................................ ................................ ................................ .... 10 
+9.0 PPROM and Sutures ................................ ................................ ............................. 10 
+10.0 Documentation ................................ ................................ ................................ .... 10 
+11.0 Consent ................................ ................................ ................................ ................ 10 Cervical Cerclage (Cervical Suture) (RSCH PRH only ) MP077 
+Page 4 of 17 
+Brighton & Sussex University Hospitals 12.0 History Indicated Suture ................................ ................................ ....................... 11 
+13.0 Ultrasound Screening of Cervical Length ................................ ............................... 11 
+13.5 Other risk factors: ................................ ................................ ................................ ....... 12 
+14.0 Rescue Suture ................................ ................................ ................................ ...... 12 
+15.0 References ................................ ................................ ................................ ........... 12 
+Appendix A: Patient Information Leaflet ................................ ................................ ................. 13 
+ 
+ Cervical Cerclage (Cervical Suture) (RSCH PRH only ) MP077 
+Page 5 of 17 
+Brighton & Sussex University Hospitals Key Principles 
+ 
+A protocol is a set of measurable, objective standards to determine a course of action. 
+Professional judgement may be us ed in the application of a protocol. 
+Scope 
+ 
+This guideline applies to all midwives and doctors 
+ 
+Responsibilities 
+ 
+Midwives & Obstetricians: 
+• To access, read, understand and follow this guidance 
+• To use their professional judgment in application of this protocol 
+ 
+Management Team 
+• To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations 
+• To ensure the protocol is accessible to all relevant staff 
+• To ensure the protocol is available to service users on request 
+ Cervical Cerclage (Cervical Suture) (RSCH PRH only ) MP077 
+Page 6 of 17 
+Brighton & Sussex University Hospitals Introduction 
+ 
+The terms cerclage and suture are inter -changeable 
+Cervical sutures have been used in the management of women who are high risk of mid -
+trimesters losses and premature labour often with little evidence -base. This protocol is 
+based on the RCOG Green -top guideline (No 60 , May 2011) and the more recent Preterm 
+Labour and Birth guideline (NICE Guideline 25, November 2015) and reflects the current 
+evidence base for this procedure. This protocol also includes local information about the 
+service provided at BSUH . 
+ 
+Prematurity is the leading cause of perinatal death and disability. Although preterm birth is 
+defined as delivery before completed 37 weeks, the majority of preterm -related adverse 
+outcomes relate to delivery before 33 weeks of gestation. Mortality increases from 2% for 
+infants born at 32 weeks of gestation to more than 90% for those born at 23 weeks. 
+1.0 Types of Cervical Sutures 
+ 
+1.1 History indicated 
+Insertion of a cerclage as a result of factors in a woman’s obstetric or gynaecological 
+history which increase the risk of spontaneous second -trimester loss or preterm 
+delivery. A history -indicated suture is performed as a prophylactic measure in 
+asymptomatic women and normally inserted electively at 12 –14 weeks of gestation. 
+ 
+1.2 USS indicated 
+Insertion of a cerclage as a therapeutic measure in cases of cervical length 
+shortening seen on transvaginal ultrasound. Ultrasound -indicated cerclage is 
+performed on asymptomatic women who do not have exposed fetal membranes in 
+the vagina. Sonographic assessment of the cervix is usually performed between 14 
+and 24 weeks of gestation. 
+ 
+1.3 Rescue suture 
+Insertion of cerclage as a salvage measure in the case of premature cervical 
+dilatation with exposed fetal membranes in the vagina. This may be discovered by 
+ultrasound examination of the cervix or as a result of a speculum/physical 
+examination performed for symptoms such as vaginal discharge, bleeding or 
+‘sensation of pressure’. 
+2.0 Other Terminology 
+ 
+2.1 Trans -Vaginal ( MacDonald ) suture 
+A transvaginal suture purse -string placed at the cervicovaginal junction, without 
+bladder mobilisation . 
+ Cervical Cerclage (Cervical Suture) (RSCH PRH only ) MP077 
+Page 7 of 17 
+Brighton & Sussex University Hospitals 2.2 High Trans -vaginal ( Shirodkar ) suture 
+A transvaginal suture purse -string placed at the cervicovaginal junction, with bladder 
+mobilisation to allow the suture to be inserted above the level of the cardinal 
+ligaments . 
+ 
+2.3 Transabdominal suture 
+A suture inserted via a laparotomy or laparoscopy, placing the suture at the 
+cervicoisthmic junction . 
+ 
+2.4 Occlusion sutures 
+Sutures placed at the external os aiming to close the external os and retain the 
+mucus plug . 
+ 
+3.0 Referral to Hospital Antenatal Clinic: 
+ 
+3.1 Referral from community midwives to Consultant ANC based on the following risk 
+ factors: 
+3.1.1 Cf Booking checklist 
+• See Maternity Protocol MP001 Provision and schedule of Antenatal Care 
+• All women with 2+ previous preterm births or preterm premature 
+rupture of the membranes and delivery before 35 weeks 
+• All women with a 2nd trimester losses or second trimester termination of 
+pregnancy 
+• All women who have had a previous elective or emergency suture 
+• All women with a history of multiple episodes of cervical surgery (LLETZ) 
+or a single knife cone biopsy 
+ 
+3.2 Women that have had a cervical sut ure inserted in a previous pregnancy should be 
+referred to a consultant antenatal clinic before 12 weeks in any subsequent 
+pregnancy to discuss whether a repeat cervical suture is indicated. 
+ 
+3.3 Review by Consultant in Clinic 
+The full history of previous labours should be reviewed and a decision made whether 
+an elective history indicated suture is indicated. 
+ 3.3.1 Main indications: 
+• RCOG states: Suture to be inserted if 3+ previous preterm births and /or 
+2nd trimester losses (RCOG) 
+• Previous history indicated suture 
+ 
+ Cervical Cerclage (Cervical Suture) (RSCH PRH only ) MP077 
+Page 8 of 17 
+Brighton & Sussex University Hospitals 3.4 Where possible/preferred women should be referred to the preterm labour 
+ clinic for counselling and assessment. Referrals in relation to the need for cervical 
+ suture insertion can be made using the criteria in above . 
+ 
+3.5 Definition of preterm delivery is less than 37 weeks. RCOG states that there isn’t 
+ enough evidence to state whether characteristics of the previous loss such as 
+ painless dilation of the cervix indicates a need for elective suture. For the purposes 
+of assessment of risk referral is only indicated for women who have delivered 
+ previously below 35 weeks of pregnancy. 
+ 
+3.6 The decision is an individualised decision made by the consultant. It may result in 
+ insertion of a history related suture, USS screening of cervical length . 
+ 
+3.7 Contra -indication to all types of suture insertion: 
+3.6.1 Active pre -term labour 
+3.6.2 Clinical evidence of chorioamnionitis 
+3.6.3 Continuing vaginal bleeding 
+3.6.4 PPROM 
+3.6.5 Evidence of fetal compromise 
+3.6.6 Lethal fetal defect 
+3.6.7 Fetal death 
+4.0 Counselling Before All Types of Suture Insertion 
+ 
+4.1 RCOG states that cervical suture insertion is not associated with an increased 
+premature delivery rate, mid - trimester losses, PPROM, induction of labour or 
+Caesarean section. 
+ 
+4.2 BSUH audit (small numbers) showed that one third of patients with an elective 
+cervical suture delivered at less than 37 weeks, but on average, eight out of ten 
+women delivered after 34 weeks gestation; the majority of women delivered at 39 
+weeks. 
+ 
+4.3 There is a small risk of bleeding during the procedure and in the BSUH audit three 
+out of ten of women experienced bleeding, but the majority only have minimal 
+bleeding on the day of suture insertion. 
+ 
+4.4 There is a small risk of bladder damage, cervical trauma and membrane rupture 
+during the procedure (less than 1%). 
+ 
+4.5 There is a doubling of the risk of pyrexia with a cervical suture but no evidence of 
+chorioamnionitis. 
+ 
+4.6 Women should be counselled regarding these risks and these should be documented 
+clearly in the maternal notes prior to insertion . 
+ Cervical Cerclage (Cervical Suture) (RSCH PRH only ) MP077 
+Page 9 of 17 
+Brighton & Sussex University Hospitals 4.7 The suture is removed before labour at 37 weeks gestation (see section below on 
+suture removal) . 
+5.0 Pre-Operative Management of all Types of Sutures: 
+ 
+5.1 Women should have been offered a first -trimester ultrasound scan and screening for 
+aneuploidy before suture insertion, to ensure viability and absence of lethal/major 
+fetal abnormality. 
+ 
+5.2 Women offered a rescue suture should have had an anomaly scan. 
+ 
+5.3 There is no indication to routinely do a WBC or CRP before insertion. 
+ 
+5.4 There is insufficient evidence to offer amnio -reduction prior to rescue suture 
+insertion. 
+ 
+5.5 There is insufficient evidence to routinely consider amniocentesis to diagnosis intra -
+amniotic infection. 
+ 
+5.6 RCOG guidelines say there is an absence of data to support GU tract screening 
+before insertion of suture, but if positive culture, a course of antibiotics before 
+suture insertion is recommended. 
+ 
+5.7 RCOG does not consider whether a MSU should be performed prior to insertion. 
+6.0 Operative Issues 
+ 
+6.1 There is no evidence to support the use of routine perioperative tocolysis in women 
+undergoing suture insertion. 
+ 
+6.2 Antibiotic prophylaxis at time of suture insertion should be at the discretion of the 
+operating team. Anaesthesia: most commonly regional anaesthesia is used, but the 
+decision is at the discretion of the operating team. 
+7.0 Post Suture Insertion 
+ 
+7.1 Bed rest and abstinence from sexual intercourse is not recommended following 
+suture insertion. 
+ 
+7.2 Serial sonographic surveillance of cervical length post suture insertion is not 
+recommended. 
+ 
+7.3 Elective suture can be safely performed as a day case procedure. If a transabdominal 
+suture was inserted, the woman should have an inpatient stay of at least 48 hours. Cervical Cerclage (Cervical Suture) (RSCH PRH only ) MP077 
+Page 10 of 17 
+Brighton & Sussex University Hospitals 8.0 Suture Removal 
+ 
+8.1 A transvaginal suture should be removed before labour, usually between 3 6+0 and 
+37+6 weeks gestation. This can be removed without anaesthesia on the labour ward. 
+If the woman is presenting in established preterm labour, the suture should be 
+removed to minimize potential trauma to the cervix. 
+ 
+8.2 If delivery is by elective caesarean section, suture removal should be delayed until 
+this time. 
+ 
+8.3 Removal of Shirodkar suture requires anaesthesia for removal. 
+ 
+8.4 All women with a transabdominal suture require delivery by caesarean section. The 
+abdominal suture can be left in place following delivery; discussion of this should be 
+carried out before caesarean section. 
+9.0 PPROM and Sutures 
+ 
+9.1 In women with PPRoM between 24 and 34 weeks gestation without evidence of 
+infection or preterm labour, delayed removal of suture for 48 hours can be 
+considered. This may result in sufficient latency that a course of prophylactic steroids 
+for fetal lung maturation is completed. 
+ 
+9.2 The decision about removal of suture must be made by a Consultant and the 
+timing of removal maybe influenced by the gestation of the pregnancy in the 
+absence of any signs of infection. 
+ 
+9.3 See Maternity Protocol MP031 Pre -term Labour 
+ 
+9.4 In women with PPRoM and evidence of preterm labour, suture removal should not 
+be delayed as there is an increased risk of maternal/fetal sepsis. 
+ 
+9.5 If there are signs of chorioamnionitis the suture must be removed immediately. 
+10.0 Documentation 
+ 
+10.1 All information given, discussions and choices offered must be clearly documented, 
+by the person giving it, in the maternal hand held notes (with signature and printed 
+name and designation). 
+10.2 Operation notes, consent form and anaesthesia notes should be clearly documented 
+in the antenatal notes . 
+11.0 Consent 
+ Verbal consent should be documented in the maternity hand held notes. Cervical Cerclage (Cervical Suture) (RSCH PRH only ) MP077 
+Page 11 of 17 
+Brighton & Sussex University Hospitals 12.0 History Indicated Suture 
+ 
+12.1 Elective suture should be inserted between 12 -14 weeks gestation (RCOG 
+guidelines). 
+ 
+12.2 Sutures should be inserted transvaginally, using either the MacDonald or Shirodkar 
+suture, at the discretion of the Obstetrician. 
+ 
+12.3 If the woman has had extensive cervical surgery or previous insertion of transvaginal 
+suture which has failed, they should be considered for a transabdominal suture, 
+either laparoscopically or by laparotomy. 
+13.0 Ultrasound Screening of Cervical Length 
+ 
+13.1 This service is currently offered through the Preterm Labour Clinic. 
+ 
+13.2 Ultrasound screening from 12 weeks onwards is indicated for the following groups of 
+women and cervical suture insertion considered if the cervical length falls below 
+25mm. 
+ 
+o Women with a history of a previous cervical suture in a previous pregnancy 
+who do not wish to have an elective suture in the index pregnancy 
+o Women with a history of a previous rescue suture but with no additional risk 
+factors 
+o History of cervical insufficiency (i.e. evidence of preterm delivery with 
+painless cervical dilatation: this requires detailed examination of previous 
+history) 
+o History of major cervical surgery (i.e. >10mm removed, repeat procedure, 
+Cone Biopsy under general anaesthetic) 
+o History of multiple procedures to the cervix (2 or more LLETZ procedures) 
+o Short cervix this pregnancy (<25mm) 
+ 
+13.3 Women with a history of one or more premature deliveries or mid -trimester losses 
+who are undergoing a transvaginal sonographic surveillance should be offered an 
+ultrasound indicated suture insertion if the cervix is 25mm or less . 
+ 
+13.4 Suture insertion is not offered for funnelling of the cervix in the absence of a short 
+cervix of 25mm or less . Cervical Cerclage (Cervical Suture) (RSCH PRH only ) MP077 
+Page 12 of 17 
+Brighton & Sussex University Hospitals 13.5 Other risk factors: 
+13.5.1 There is no evidence to support routine insertion of suture nor transvaginal 
+sonographic surveillance in multiple pregnancies or uterine abnormalities or 
+LETZ . 
+13.5.2 In the case of a previous radical trachelectomies the decision must be 
+individualised. 
+14.0 Rescue Suture 
+ 
+14.1 It is a salvage method in the case of premature dilatation with exposed fetal 
+membranes. 
+ 
+14.2 Each decision must be individualised and made by a Consultant and dependant on 
+gestation . 
+ 
+14.3 If the woman has advanced cervical dilatation (4cm or more) or membranes 
+prolapsed beyond the external os, the suture has a higher chance of failure (RCOG) 
+and confirmed with our audit . 
+ 
+14.4 Rescue cerclage should only be offered between 16+0 and 27+6 weeks of pregnancy . 
+ 
+14.5 Do not offer rescue cerclage if any of the following are present: 
+ 
+o Signs of infection 
+o Active bleeding or 
+o Uterine contractions 
+ 
+14.6 Insertion of the suture maybe associated with a prolongation of 5 weeks (RCOG), our 
+audit showed a prolongation of 4 weeks, but most delivering at 24 weeks. Only one 
+in ten births was after 37 weeks. 
+ 
+14.7 There is no data about a latency period between presentation and insertion of 
+suture. The RCOG calls for immediate insertion however our audit suggested a better 
+long term outcome if inserted after 48 hours. This maybe that the ones who 
+delivered very quickly after presentation and insertion were more likely to have 
+infection and be in labour. 
+15.0 References 
+ 
+1. Royal College of Obstetricians and Gynaecologists. Cervical cerclage. Green top 
+guideline No.60. London: RCOG; 2011 
+2. Drakeley A, Roberts D, Alfirevic Z. Cervical stitch (cerclage) for preventing 
+pregnancy loss in women (Review). The Cochrane Library, Issue 2, 2010. 
+Chichester, UK: John Wiley & Sons, Ltd. 
+3. NICE. Preterm Labour & Birth. NICE Guideline 25. November 2015. Cervical Cerclage (Cervical Suture) (RSCH PRH only ) MP077 
+Page 13 of 17 
+Brighton & Sussex University Hospitals 
+
+Appendix A: Patient Information Leaflet Cervical Cerclage (Cervical Suture) (RSCH PRH only ) MP077 
+Page 14 of 17 
+Brighton & Sussex University Hospitals 
+ 
+Cervical Cerclage (Cervical Suture) (RSCH PRH only ) MP077 
+Page 15 of 17 
+Brighton & Sussex University Hospitals 
+ 
+Cervical Cerclage (Cervical Suture) (RSCH PRH only ) MP077 
+Page 16 of 17 
+Brighton & Sussex University Hospitals 
+Cervical Cerclage (Cervical Suture) (RSCH PRH only ) MP077 
+Page 17 of 17 
+Brighton & Sussex University Hospitals

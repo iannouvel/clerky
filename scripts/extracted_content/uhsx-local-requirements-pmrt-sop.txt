@@ -1,0 +1,908 @@
+# Extracted from: UHSx Local Requirements PMRT SOP.pdf
+# Guideline ID: uhsx-local-requirements-pmrt-sop
+# Content length: 47263 characters
+# Processing date: 1750066902.1298616
+
+UHS-SP-0003-2023 Local Requirements for PMRT Investigations SOP v1.1 Dec 2023 Page 1 of 27 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+Local Requirements for PMRT Investigations SOP 
+Summary statement: How does the 
+document support patient care? To support the investigation process of stillbirth 
+and neonatal death via the Perinatal Mortality 
+Review Tool (PMRT). 
+Staff/stakeholders involved in 
+development: Clinical Governance Team 
+Division: 
+Department: Maternity 
+Responsible Person: Clinical Governance Lead 
+Author: Claire Parr- Clinical Governance Lead (SRH/WH) 
+Kate Hasson- 
+Lead (PRH/RSCH) 
+For use by: Clinical Governance Team, Matrons 
+Purpose: This pathway supports the communication and 
+processes required to completing an investigation 
+carried out via PMRT 
+This document supports: 
+ MBRRACE-UK, PMRT, CNST 
+Key related documents: CNST Year 4 
+Approved by: JOGG 
+Date: 20th December 2023 
+Date uploaded: 20th December 2023 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not applicable Divisional Ratification only 
+required 
+Ratification Date: Not applicable Divisional Ratification only 
+required 
+Expiry Date: January 2026 
+Review date: July 2025 
+If you require this document in another format such as Braille, large print, audio or 
+another language please contact the Trusts Communications Team 
+Reference Number: UHS-SP-0003-2023 
+ 
+UHS-SP-0003-2023 Local Requirements for PMRT Investigations SOP v1.1 Dec 2023 Page 2 of 27 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+Version Date Author Status Comment 
+1.0 Jan 2023 Claire Parr - Clinical 
+Governance Lead 
+ 
+Kate Hasson -
+Governance Lead DRAFT First edition 
+1.1 December 
+2023 Claire Parr - Clinical 
+Governance Lead LIVE Updated Patient Review 
+Letter in appendix 3. 
+
+UHS-SP-0003-2023 Local Requirements for PMRT Investigations SOP v1.1 Dec 2023 Page 3 of 27 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+Contents 
+ 
+1.0 Aim of this document ................................................................................................. 4 
+2.0 Scope ........................................................................................................................ 4 
+3.0 Abbreviations used within this document ................................................................... 4 
+4.0 Background ............................................................................................................... 4 
+4.1 PMRT Criteria ............................................................................................................ 5 
+4.2 Aim of PMRT approach ............................................................................................. 5 
+5.0 Clinical Negligence Scheme for Trusts (CNST) ......................................................... 6 
+6.0 Identification of Incident ............................................................................................. 6 
+7.0 Reporting to MBRRACE-UK ...................................................................................... 7 
+7.1 MBRRACE-UK Notification ........................................................................................ 7 
+7.2 MBRRACE-UK Surveillance ...................................................................................... 7 
+8.0 ............................................ 7 
+8.1 Verbal DOC ............................................................................................................... 8 
+8.2 Written DOC .............................................................................................................. 8 
+8.3 Communication needs ............................................................................................... 8 
+8.4 Anticipated or unexpected delays .............................................................................. 9 
+9.0 Initial review process ................................................................................................. 9 
+9.1 Healthcare Safety Investigation Branch (HSIB) ........................................................ 10 
+10.0 Multidisciplinary Review (MDT) ................................................................................ 10 
+10.1 External Panel Reviewers ........................................................................................ 11 
+10.2 PMRT Panel Review ................................................................................................ 11 
+10.3 Commencing and completing the PMRT online tool ................................................. 11 
+11.0 Staff support ............................................................................................................ 11 
+11.1 Individual support .................................................................................................... 11 
+11.2 Group support .......................................................................................................... 12 
+11.3 Coronial requirements ............................................................................................. 12 
+12.0 On-going support for family ...................................................................................... 12 
+12.1 Trust obligations ...................................................................................................... 13 
+12.2 Sources of support................................................................................................... 13 
+13.0 PMRT Report ........................................................................................................... 13 
+14.0 Monitoring ................................................................................................................ 14 
+Appendix 1: PMRT Tracker Template ................................................................................. 15 
+Appendix 2: PMRT Parent Engagement Flow Chart............................................................ 16 
+Appendix 3: Parents review letter after discharge ............................................................... 17 
+Appendix 4: Feedback form for parents following stillbirth ................................................... 18 
+Appendix 5: Feedback form for parents following neonatal death ....................................... 21 
+Appendix 6: When parents cannot be reached letter ........................................................... 23 
+Appendix 7: Keeping in touch letter or email ....................................................................... 25 
+Appendix 8: Disclosure of Records Checklist ...................................................................... 26 
+Appendix 9: PMRT Panel - Terms of Reference .................................................................. 27 
+
+UHS-SP-0003-2023 Local Requirements for PMRT Investigations SOP v1.1 Dec 2023 Page 4 of 27 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+Local Requirements for 
+PMRT Investigations SOP 
+ 
+1.0 Aim of this document 
+ 
+The aim of this standard operating procedure (SOP) is to support the investigation process 
+of stillbirth and neonatal death via the Perinatal Mortality Review Tool (PMRT). 
+ 
+2.0 Scope 
+ 
+This SOP applies to: 
+ 
+ Clinical Governance Team 
+ Matrons 
+ 
+3.0 Abbreviations used within this document 
+ 
+BSL - British Sign Language CNST - Clinical Negligence Scheme for 
+Trusts 
+CQC - Care Quality Commission DOC - Duty of Candour 
+EN - Early Notification HIMS - secure HSIB Investigation 
+Management System 
+HQIP - Healthcare Quality Improvement 
+Partnership HSIB - Healthcare Safety Investigation 
+Branch 
+HIE - Hypoxic Ischaemic Encephalopathy ICB - Integrated Care Board 
+LMNS - Local Maternity and Neonatal 
+System MDT - Multidisciplinary Review 
+MBRRACE -UK - Mothers and Babies: 
+Reducing Risk through Audit and 
+Confidential Enquiries MIS - Maternity Information System 
+MOC - Manager On-Call MRI - Magnetic Resonance Imaging 
+NHSR - NHS Resolution NND - Neonatal Deaths 
+PMA - Professional Midwifery Advocates PMRT - Perinatal Mortality Review Tool 
+SBAR - Situation, Background, Assessment 
+and Review SI - Serious Incident 
+SIRG - Serious Incident Review Group SOP - Standard Operating Procedure 
+STEIS - Strategic Executive Information 
+System TRiM - Trauma Risk Management 
+ 
+4.0 Background 
+ 
+A collaboration led by MBRRACE-UK was appointed by the Healthcare Quality Improvement 
+Partnership (HQIP) to develop and establish a national standardised Perinatal Mortality 
+Review Tool (PMRT). The PMRT was designed with user and parent involvement to support 
+high quality standardised perinatal reviews on the principle of 'review once, review well'. 
+ 
+UHS-SP-0003-2023 Local Requirements for PMRT Investigations SOP v1.1 Dec 2023 Page 5 of 27 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+4.1 PMRT Criteria 
+ 
+The PMRT has been designed to support the review of the following perinatal deaths: 
+ 
+ Late fetal losses where the baby is born between 22+0 and 23+6 weeks of 
+pregnancy showing no signs of life, irrespective of when the death occurred, or if 
+the gestation is not known, where the baby is over 500g; 
+ All stillbirths where the baby is born from 24+0 weeks gestation showing no signs 
+of life, or if the gestation is not known, where the baby is over 500g; 
+ All neonatal deaths where the baby is born alive from 22+0 but dies up to 28 days 
+after birth, or if the gestation is not known, where the baby is over 500g; 
+ Post-neonatal deaths where the baby is born alive from 22+0 but dies after 28 
+days following neonatal care; the baby may be receiving planned palliative care 
+elsewhere (including at home) when they die. 
+ 
+The PMRT is not designed to support the review of the following perinatal deaths: 
+ 
+ Termination of pregnancy at any gestation; 
+ Babies who die in the community 28 days after birth or later who have not 
+received neonatal care; 
+ Babies with brain injury who survive. 
+ 
+4.2 Aim of PMRT approach 
+ 
+ Systematic, multidisciplinary, high quality reviews of the circumstances and care 
+leading up to and surrounding each stillbirth and neonatal death, and the deaths of 
+babies who die in the post-neonatal period having received neonatal care; 
+ Active communication with parents to ensure they are told that a review of their 
+care and that of their baby will be carried out and how they can contribute to the 
+process; 
+ A structured process of review, learning, reporting and actions to improve future 
+care; 
+ Coming to a clear understanding of why each baby died, accepting that this may 
+not always be possible even when full clinical investigations have been 
+undertaken; this will involve a grading of the care provided; 
+ Production of a report for parents which includes a meaningful, plain English 
+explanation of why their baby died and whether, with different actions, the death of 
+their baby might have been prevented; 
+ Other reports from the tool which will enable organisations providing and 
+commissioning care to identify emerging themes across a number of deaths to 
+support learning and changes in the delivery and commissioning of care to 
+improve future care and prevent the future deaths which are avoidable; 
+ Production of national reports of the themes and trends associated with perinatal 
+deaths to enable national lessons to be learned from the nation-wide system of 
+reviews. 
+UHS-SP-0003-2023 Local Requirements for PMRT Investigations SOP v1.1 Dec 2023 Page 6 of 27 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Parents whose baby has died have the greatest interest of all in the review of their 
+baby's death. Alongside the national annual reports a lay summary of the main 
+technical report will be written specifically for families and the wider public. This 
+will help local NHS services and baby loss charities to help parents engage with 
+the local review process and improvements in care. 
+ 
+5.0 Clinical Negligence Scheme for Trusts (CNST) 
+ 
+Safety Action 1 outlines the requirements for local trusts in relation to MBRRACE-UK and 
+PMRT. This is to provide assurance that the national PMRT is being used to review perinatal 
+death to the required standard. 
+ 
+Within the Year 4 CNST document, deadlines for each component of the Safety Action are 
+given. 
+ 
+In response to lessons learned, PMRT will be included as a mandatory item on the monthly 
+divisional Governance agenda to align with the monthly reporting required by PMRT and 
+CNST. A tracker will support this process of which an example template can be seen in 
+Appendix 1 . Risk noted that if monthly governance meeting is postponed/stood down this 
+may impact on the ability to pick up on issues with reporting deadlines relating PMRT and 
+deadlines required of MBRRACE-UK - if this occurs SOP should address how this is 
+reported within the management team. 
+ 
+To further mitigate risk around potentially missed deadlines a PMRT item will be added to 
+the daily call collection sheet, review every Friday to positively ascertain any events which 
+relate to PMRT and escalate any issues which may impact on meeting PMRT reporting 
+deadlines. This should include the neonatal matrons from each site updating on any recently 
+deceased baby over the last 24-72 hours. 
+ 
+hold overall responsibility for the PMRT processes including 
+chairing the monthly MDT meetings. In their absence, a member of the Governance team or 
+Matron team will support the running of the meeting, ensuring deadlines continue to be 
+monitored. 
+ 
+The administrative processes should be supported by a dedicated administrator, as per 
+MBRRACE-UK recommendations. 
+ 
+6.0 Identification of Incident 
+ 
+Any death is reported by the health care professional to the online incident reporting system, 
+Datix and also via the Bereavement email group. The Clinical Governance team will pick up 
+reported incidents that meet the criteria for PMRT through this method. However, as a 
+failsafe, a report is run via the Maternity Information System (MIS) to pick up any eligible 
+cases that might not have been reported via Datix. This failsafe is carried out every week 
+and cases not reported are done so in retrospect. Additionally the Badgernet Data 
+UHS-SP-0003-2023 Local Requirements for PMRT Investigations SOP v1.1 Dec 2023 Page 7 of 27 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+Coordinator will inform the Clinical Governance team of any cases of neonatal deaths (NND) 
+at each month end. 
+ 
+Any cases which may not have been reported via the incident reporting method, are those 
+babies who die elsewhere. Local Clinical Governance teams do not have jurisdiction over 
+this notification, however the team communicate regularly with the Child Death team who 
+can also support notification of any deaths relevant to the trust should they become aware of 
+them. 
+ 
+7.0 Reporting to MBRRACE-UK 
+ 
+7.1 MBRRACE-UK Notification 
+ 
+The MBRRACE-UK online reporting form is a data collection tool for national surveillance. 
+Deaths should be reported to MBRRACE-UK via the online reporting form within 7 working 
+days of a death (in accordance with Safety Action 1 of CNST, year 4 standards). 
+ 
+The MBRRACE-UK reporting form is completed by the trust where the baby died. Therefore, 
+if a baby was transferred to another hospital outside of the trust whilst alive but they 
+subsequently died under their care, they are responsible for notification. The local trust will 
+support their PMRT review processes by completing the relevant questions around care 
+provided locally, once they are notified and the transfer of the PMRT has occurred. 
+ 
+Where this is not possible, due to delay in notification for example, surveillance should be 
+completed as soon as possible, once it is known and has been communicated to the Clinical 
+Governance team as described in section 5.0 . 
+ 
+7.2 MBRRACE-UK Surveillance 
+ 
+When a notification is complete the notification status will show whether surveillance (and 
+review) is required for each case. Surveillance information must be completed within one 
+month of the death. This is undertaken through the MBRRACE-UK reporting website. 
+ 
+8.0 Duty of Candour (DOC) and communication to p 
+ 
+Duty of Candour (DOC). The aim of this regulation is to ensure that health services are open 
+and transparent, and was introduced in direct response to recommendation 181 of the 
+Francis inquiry into Mid-Staffordshire NHS Foundation Trust. 
+ 
+The trust is responsible for carrying out DOC to the family. Engaging bereaved parents in the 
+review process and including their views and any concerns and questions they have about 
+their care will enhance the process and ensure that from the outset the review addresses 
+their questions. Parents, particularly mothers, are the only individuals who were present for 
+the whole of the pregnancy and therefore have a unique perspective on everything that 
+happened to them and their baby. 
+UHS-SP-0003-2023 Local Requirements for PMRT Investigations SOP v1.1 Dec 2023 Page 8 of 27 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+There is an expectation that DOC is completed within 72-hours where possible. 
+ 
+The standard from Safety Action 1 of the Year 4 CNST requires 95% of all deaths of babies 
+who have died within the local trust, the parents will have been told that a review of their 
+concerns about their care and that of their baby has been sought. 
+ 
+The flow chart for parent engagement during this process can be found in Appendix 2 . 
+ 
+8.1 Verbal DOC 
+ 
+As soon as reasonably possible, the Clinical Governance team will speak with the family, 
+preferably face-to-face to inform them that the will be investigated. The 
+person carrying out DOC will explain the perinatal mortality review process and the offer of 
+parent . 
+ 
+Should the family have been discharged prior to verbal DOC, a telephone call can be 
+attempted. Sensitivity must be ensured at all times and boundaries of the grieving parents 
+respected. Appendix 3 and outlines the letter for making contact with parents after discharge 
+and Appendix 4 and Appendix 5 are parent feedback forms which are designed to help 
+parents think about any questions or comments they may have about aspects of their care. 
+ 
+8.2 Written DOC 
+ 
+Following verbal DOC, a letter or email (dependent on family preference) will be sent to the 
+family outlining the discussion made. This will include written information leaflet about 
+perinatal reviews for the family. 
+ 
+Occasionally parents withdraw from any communication with the local trust. Their well-being 
+is paramount so liaison with their community midwife and/or GP regarding this should be 
+made to reassure the team that they remain as well as can be expected. A letter should be 
+sent to parents when they cannot be reached and no other communication has been 
+possible ( Appendix 6 ). 
+ 
+Parents should : 
+ 
+Information for bereaved parents | SHEER | NPEU > Perinatal Mortality Review Tool 
+(ox.ac.uk) 
+ 
+8.3 Communication needs 
+ 
+Families should receive high-quality services which meet their individual needs. This is at the 
+regime. For many patients, English is not their first language or they may have specific 
+communication needs because they are deaf, have a dual sensory loss or a learning 
+UHS-SP-0003-2023 Local Requirements for PMRT Investigations SOP v1.1 Dec 2023 Page 9 of 27 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+disability. We have a duty of care to these patients to provide appropriate support to aid their 
+communication when attending or liaising with our hospitals. 
+ 
+The Clinical Governance team should review booking information to determine any 
+communication difficulties for the family. If this is not easily apparent, the named community 
+midwife should be contacted to determine communication needs. 
+ 
+Easy access to appropriate British Sign Language (BSL) interpreters is available. This can 
+also be delivered virtually through Action Deafness and Sign Live. Textphone and SMS text 
+messaging are also available to help people with hearing and speech difficulties to 
+communicate over the phone. Face-to-face overseas language interpreters are available 
+from Sussex Interpreting Services, Language Line and Vandu Language Services. The 
+ReciteMe and CardMedic Services also help people when they have a sensory impairment, 
+learning disability or where English is not their first language. 
+ 
+Using the interactive toolkit will help staff to decide which service to use and how to access 
+it. 
+https://nww.bsuh.nhs.uk/EasysiteWeb/getresource.axd?AssetID=415664&servicetype=Attac
+hment 
+ 
+If a family cannot read English, the trust Communication team should be contacted to 
+translate any letters sent to the family. 
+ 
+8.4 Anticipated or unexpected delays 
+ 
+Whilst every effort is made to ensure the outlined timeframe for completing a review given 
+during the DOC process is adhered to, there are times where this may not be possible. This 
+could be due to the availability of an external panel member; business continuity; additional 
+information required to support the review process etc. Parents should be kept updated 
+when it becomes evident that a delay in finalising the review is apparent. Appendix 7 outlines 
+the letter template for this communication. 
+ 
+9.0 Initial review process 
+ 
+All bereavement cases that meet the criteria for PMRT review should be initially classified as 
+serious incident 
+review process. 
+ 
+1. The medical record should be scanned and saved into a secure folder as soon as 
+possible. Administration team will complete the disclosure of records check list 
+(Appendix 8 ) to ensure all records are available electronically. 
+2. An initial review of the case should be carried out within 72-hours where possible, 
+requesting opinion from appropriate multidisciplinary healthcare professionals, to 
+establish contributory factors and any immediate learning from the incident. 
+UHS-SP-0003-2023 Local Requirements for PMRT Investigations SOP v1.1 Dec 2023 Page 10 of 27 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+3. Complete Serious Incident Review Group (SIRG) Situation, Background, 
+Assessment and Review (SBAR) document to present at the weekly SIRG 
+meeting. 
+4. Presentation to the SIRG meeting will review the information provided to establish 
+an initial classification of harm. If there are concerns that the death was 
+preventable at this point, the incident trigger the formal serious incident notification 
+process. 
+5. Complete SI notification form and 72-hour document, sending to the Director of 
+Midwifery (or Head of Midwifery, if unavailable) for approval and submission by 
+the trust Patient Safety Team via the Strategic Executive Information System 
+(STEIS). 
+ 
+9.1 Healthcare Safety Investigation Branch (HSIB) 
+ 
+HSIB investigated cases of early neonatal deaths under the following criteria: 
+ 
+ Babies born at term (at least 37 weeks gestation). 
+ Early neonatal death, when the baby died within the first week of life (0-6 days) of 
+any cause. 
+ 
+Where cases meet the criteria for reporting to HSIB, the usual process for adding cases and 
+fulfilling the requirements with the Surveillance, Factual Questions should be completed. The 
+option should be chosen within the PMRT to ensure the deadlines for completion are 
+paused. 
+ 
+Once HSIB have completed their investigation, the lead investigator should complete the 
+PMRT in collaboration with the Governance team. 
+ 
+For detailed information on the HSIB reporting process, see Local Requirements for HSIB 
+Investigations SOP. 
+ 
+10.0 Multidisciplinary Review (MDT) 
+ 
+Safety Action 1 of Year 4 CNST standards, states that 50% of babies who have died who 
+are eligible for PMRT, including homebirths, will be reviewed by a MDT review team. Terms 
+of Reference for the PMRT panel should be agreed on a annual basis and shared to the 
+team, including any external panel members that are invited as part of their specialty. These 
+can be found in Appendix 9 . 
+ 
+Safety Action 1 of Year 4 CNST standards state that the team conducting the review should 
+include at least one and preferably two professionals relevant to the care of the woman and 
+her baby. This will include at least midwifery and obstetric representation. 
+
+UHS-SP-0003-2023 Local Requirements for PMRT Investigations SOP v1.1 Dec 2023 Page 11 of 27 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+10.1 External Panel Reviewers 
+ 
+Safety Action 1 of Year 4 CNST standards states that ideally the team should include a 
+member from a relevant professional group who is external to the unit who can provide peer 
+review as part of the PMRT review team. It may 
+member for all reviews and you may need to be selective as to which deaths are reviewed 
+by the team including an external member. Appendix 9 is the local LMNS, PMRT reporting 
+process. 
+ 
+It is recommended that the MDT PMRT panel involves an external member to provide a 
+ challenge. The external 
+member should be external to your trust with relevant clinical expertise. The Local Maternity 
+additional external specialists may be sought to attend of offer a review of the notes to give 
+their factual review and opinion of the case i.e. cardiologists; fetal medicine etc. 
+ 
+10.2 PMRT Panel Review 
+ 
+At least 1 week in advance of the meeting, scanned medical records will be provided to the 
+PMRT panel to review ahead of the meeting. 
+ 
+The important and relevant facts of the case will be presented via slide, along with sharing of 
+local guidance which would have been applicable to the case. This information should assist 
+the panel to explore causation and determine what learning there is to achieve from the 
+review. 
+ 
+10.3 Commencing and completing the PMRT online tool 
+ 
+Those professionals who attended the MDT review should be registered within the tool. 
+ 
+A review using PMRT should be made for 95% of all deaths of babies, suitable for review 
+using the PMRT, and have been started within two months of each death. This includes 
+deaths after home births where care was provided by the local trust. At a minimum all the 
+ed as 
+started. 
+ 
+Each of these reviews will have been completed to the point that at least a PMRT draft 
+report has been generated by the tool within four months of each death and the report 
+published within six months of each death. 
+ 
+11.0 Staff support 
+ 
+11.1 Individual support 
+ 
+Staff should be signposted to all possible support avenues that they may require. 
+UHS-SP-0003-2023 Local Requirements for PMRT Investigations SOP v1.1 Dec 2023 Page 12 of 27 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+can be contacted for immediate support. Their rota and telephone numbers are found in the 
+clinical areas. Anyone is able to contact the MOC and there is no requirement to go through 
+the labour ward coordinator to do this. 
+ 
+Information can be found in the Psychological Support for Staff leaflet which identifies 
+Trauma Risk Management (TRiM) practitioners in the trust. Support can also be obtained 
+from Professional Midwifery Advocates (PMA) which are identified in each clinical area as 
+well as the midwife counsellor. 
+ 
+Access to Mental Health Escalation for Managers can be found on the link below, which can 
+be used as a signposting resource for low mood and anxiety support as well as requirements 
+for immediate assistance, including the suicide risk protocol. 
+ 
+https://nww.uhsussex.nhs.uk/wp-content/uploads/2021/11/mental-health-info-sheet-Nov-
+10.pdf 
+ 
+11.2 Group support 
+ 
+Consideration by the senior team, PMA
+the benefit of a group debrief. This decision should be made on a case by case basis. 
+Should a debrief be required, then it is important to have a chairperson for the meeting who 
+was not directly involved in the incident or who is responsible for investigating the incident. 
+When planning a group debrief it is essential that all staff involved in the case are invited, 
+including those that may have cared for the individual during pregnancy. 
+ 
+At the time of 
+contacted for immediate support. Their rota and telephone numbers are found in the clinical 
+areas. 
+ 
+11.3 Coronial requirements 
+ 
+During the investigation staff may be asked for statements by the coroner. Support will be 
+provided by the Legal Services Manager for Inquests, alongside support from the senior 
+midwifery and obstetric team, during this process. 
+ 
+12.0 On-going support for family 
+ 
+As part of the DOC process, families are provided with 2 contacts from the Governance 
+team to liaise with should they wish to. The bereavement lead will support the family, 
+separate to the investigation process. etails are 
+also given too. 
+
+UHS-SP-0003-2023 Local Requirements for PMRT Investigations SOP v1.1 Dec 2023 Page 13 of 27 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+12.1 Trust obligations 
+ 
+The Governance team will keep in touch with the family should they wish contact from us. In 
+some cases, families wishes will be respected during the investigation process. 
+ 
+The trust will arrange a debrief appointment will the appropriate lead professional, usually 
+the consultant obstetrician. This is to ensure they are physically well and to discuss any 
+plans or concerns they may wish to consider should they want to get pregnant in the future. 
+ 
+12.2 Sources of support 
+ 
+ LMNS Sussex https://sussexlmns.org/after-the-birth/feeling-depressed/ 
+ Birth Trauma Association https://birthtraumaassociation.org.uk/ 
+ Making Birth Better https://www.makebirthbetter.org/ 
+ PANDAS PND Awareness & Support https://pandasfoundation.org.uk/what-is-
+pnd/birth-trauma/ 
+ Maternity Action https://maternityaction.org.uk/about-us/ 
+ Best Beginnings https://www.bestbeginnings.org.uk/ 
+ https://www.tommys.org/ 
+ Bliss https://www.bliss.org.uk/ 
+ Multiple Births Foundation https://www.multiplebirths.org.uk/ 
+ Twins Trust https://twinstrust.org/ 
+ Maternal Mental Health Alliance 
+https://maternalmentalhealthalliance.org/resources/mums-and-families/covid-19-
+looking-after-your-mental-health-during-pregnancy-and-after-birth/ 
+ Dad Matters https://dadmatters.org.uk/ 
+ 
+Bereavement specific: 
+ 
+ Child Bereavement https://www.childbereavementuk.org/ 
+ SANDS https://www.sands.org.uk/ 
+ Petals https://petalscharity.org/ 
+ 
+13.0 PMRT Report 
+ 
+The PMRT report is shared with the family. The preference is to share this face-to-face, 
+especially where there is learning. This is to ensure that the family is supported in person 
+when sharing information around findings. They may have further questions regarding the 
+findings which should be answered and the family should be encouraged to contact the 
+Governance team should questions arise some time later when they have had an 
+opportunity to digest the information provided. 
+ 
+The learning from the final report and action plan is shared at the Maternity Quality and 
+Safety to the multidisciplinary team and embedded within the report for dissemination. 
+ 
+UHS-SP-0003-2023 Local Requirements for PMRT Investigations SOP v1.1 Dec 2023 Page 14 of 27 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+The findings are summarised and shared on the Safety Boards within the clinical areas. 
+ 
+The actions are shared to the action tracker and monitored monthly for completion and to 
+evidence embedding or any safety recommendations. 
+ 
+14.0 Monitoring 
+ 
+Monitoring is carried out by quarterly audit in line with NHS Resolution (CNST) Safety Action 
+10 (Year 4) which states- 
+ 
+ All perinatal deaths eligible to be notified to MBRRACE-UK must be notified within 
+seven working days and the surveillance information where required must be 
+completed within one month of the death. 
+ A review using the Perinatal Mortality Review Tool (PMRT) of 95% of all deaths of 
+babies, suitable for review using the PMRT, will have been started within two months 
+of each death. This includes deaths after home births where care was provided by 
+your Trust. 
+ At least 50% of all deaths of babies (suitable for review using the PMRT) who were 
+born and died in your Trust, including home births, will have been reviewed using the 
+PMRT, by a multidisciplinary review team. Each of these reviews will have been 
+completed to the point that at least a PMRT draft report has been generated by the 
+tool within four months of each death and the report published within six months of 
+each death. 
+ For at least 95% of all deaths of babies who died in your Trust, the parents will have 
+perspectives and any questions and/or concerns they have about their care and that 
+of their baby have been sought. This includes any home births where care was 
+provided by your Trust staff and the baby died either at home or in your Trust. If 
+delays in completing reviews are anticipated parents should be advised that this is 
+the case and be given a timetable for likely completion. 
+ Quarterly reports will have been submitted to the Trust Board that include details of 
+all deaths reviewed and consequent action plans. The quarterly reports should be 
+discussed with the Trust maternity safety and Board level safety champions. 
+ 
+MIS-year-4-relaunch-guidance-May-2022-converted.pdf (resolution.nhs.uk) 
+UHS-SP-0003-2023 Local Requirements for PMRT Investigations SOP v1.1 Dec 2023 Page 16 of 27 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+Appendix 2: PMRT Parent Engagement Flow Chart 
+
+UHS-SP-0003-2023 Local Requirements for PMRT Investigations SOP v1.1 Dec 2023 Page 17 of 27 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+Appendix 3: Parents review letter after discharge 
+
+UHS-SP-0003-2023 Local Requirements for PMRT Investigations SOP v1.1 Dec 2023 Page 18 of 27 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+UHS-SP-0003-2023 Local Requirements for PMRT Investigations SOP v1.1 Dec 2023 Page 19 of 27 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+Appendix 4: Feedback form for parents following stillbirth 
+ 
+Feedback Form for Parents 
+ 
+This form is designed to help you think about any questions or comments you may 
+limit yourself to the spaces in these boxes. The form is just a way of triggering your 
+thoughts. 
+ 
+Any feedback you give us will help the hospital team to review your care and ensure 
+we address your questions as best as we can. 
+ 
+You can post the feedback form back to us, using the self-addressed envelope or call 
+us to discuss your questions or concerns using the details of your key contact. You 
+can also access the form online at [ insert link ]. 
+ 
+Care during pregnancy 
+ 
+ Please use this section for comments on and questions about the care you 
+received during your pregnancy 
+ 
+Care during the birth of your baby 
+ 
+ Please use this section for comments on and questions about the care you 
+received during the birth of your baby 
+
+The care of you, your family and your b aby after birth 
+ 
+ Please use this section for comments on and questions about how our maternity 
+team cared for you after the birth of your baby 
+
+Please use this section to tell us about the care you received from any other team. This 
+may include other medical teams, community midwives, your GP, counsellors, chaplains, 
+The Patient Advice and Liaison Service (PALS), Patient Experience Team, or a hospital 
+complaint system 
+ 
+UHS-SP-0003-2023 Local Requirements for PMRT Investigations SOP v1.1 Dec 2023 Page 20 of 27 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+Please use this section to tell us about any aspects of your care that were most supportive 
+
+Are there any other comments you would like to make? 
+
+UHS-SP-0003-2023 Local Requirements for PMRT Investigations SOP v1.1 Dec 2023 Page 21 of 27 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+Appendix 5: Feedback form for parents following neonatal death 
+ 
+Feedback Form for Parents 
+ 
+This form is designed to help you think about any questions or comments you may 
+limit yourself to the spaces in these boxes. The form is just a way of triggering your 
+thoughts. 
+ 
+Any feedback you give us will help the hospital team to review your care and ensure 
+we address your questions as best as we can. 
+ 
+You can post the feedback form back to us, using the self-addressed envelope, call us 
+to discuss your questions or concerns, using the details of your contact. You can 
+also access the form online at [ insert link ]. 
+ 
+Care during pregnancy 
+ 
+ Please use this section for comments on and questions about the care you 
+received during your pregnancy 
+
+Care during the birth of your baby 
+ 
+ Please use this section for comments on and questions about the care you 
+received when you were in labour and when your baby was born 
+
+The care of you, your family and your baby after bi rth 
+ 
+ Please use this section for comments on and questions about your care, and how 
+your baby was cared for after birth, including if your baby was admitted to a 
+neonatal unit 
+
+UHS-SP-0003-2023 Local Requirements for PMRT Investigations SOP v1.1 Dec 2023 Page 22 of 27 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+If you would like to comment on the support you received around the time your baby died, 
+please do so here 
+
+Please use this section to tell us about the care you received from any other team. This 
+may include other medical teams, community midwives, your GP, counsellors, chaplains, 
+The Patient Advice and Liaison Service (PALS), Patient Experience Team, or a hospital 
+complaint system 
+
+Please use this section to tell us about any aspects of your care that were most supportive 
+
+Are there any other comments you would like to make? 
+
+UHS-SP-0003-2023 Local Requirements for PMRT Investigations SOP v1.1 Dec 2023 Page 23 of 27 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+Appendix 6: When parents cannot be reached letter 
+ 
+ please read through again once 
+adapted for use] 
+
+Insert date 
+ 
+Dear [ ] 
+ 
+I am/We are [ delete as appropriate ] sorry for the death of your [ insert son/daughter, or name 
+if known]. I/We [delete as appropriate ] realise this letter comes at a very difficult time for you 
+and your family. We have tried to reach you by phone/email [ delete as appropriate ] but have 
+not been successful. 
+ 
+I want/We wanted [ delete as appropriate ] to be in touch to reassure you that we take the 
+death of a baby at [ insert name of Trust/Health Board ] seriously. It is important to find out as 
+much as we can about what happened and why your baby/babies [ delete as appropriate ] 
+has/have [ delete as appropriate ] died. In the coming weeks, a hospital team will hold a 
+meeting to review your care. 
+ 
+Reviewing your care 
+ 
+The hospital team discussing your care may include doctors who care for women in 
+pregnancy (obstetricians), doctors who look after newborn babies (neonatologists), midwives 
+and nurses. If there are any other health professionals specific to your care we will also 
+invite them. The aim of the review is to try to understand as much as possible about what 
+happened and why your baby/babies [ delete as appropriate ] died. The team will: 
+ 
+ Look at medical records, tests and results, including post mortem results if you have 
+consented to one 
+ Answer any questions you may have and address any concerns 
+ Talk to staff involved 
+ Look at guidance and policies to ensure the care you received was appropriate 
+ 
+The team will do this using a national review process developed by a group including the 
+parent charity Sands. The review may tell us that we need to change the way we do things 
+or that good and appropriate care was given to your family. 
+ 
+Involving you 
+ 
+As [insert the name/s of the baby/babies ] parent/s [ if addressing only one parent keep 
+singular], your thoughts and questions are important and it would be extremely helpful if you 
+felt able to share your experience or any questions you have about your care with us before 
+we carry out the review. You can do this through your key contact: 
+ 
+ Insert name and contact details of the key contact 
+UHS-SP-0003-2023 Local Requirements for PMRT Investigations SOP v1.1 Dec 2023 Page 24 of 27 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+I/We [delete as appropriate ] enclose a feedback form with this letter to help you think about 
+any aspects of your care you may want to share. These may be about: 
+ 
+ Your care during pregnancy 
+ Your care during the birth of your baby/babies [ delete as appropriate ] 
+ The care of you, your family and your baby/babies [ delete as appropriate ] after birth 
+ 
+You could post the feedback form back to us, using the self-addressed envelope, or call us 
+to discuss your views, using the details of your key contact above. 
+ 
+Keeping you informed 
+ 
+It may take up to [ insert number of weeks ] weeks for the review meeting to take place. This 
+is to ensure that all the information is available and that the right professionals can attend. 
+You will not be asked to attend the meeting in person. 
+ 
+We will write a report to summarise the review findings and try to address any questions and 
+comments you have made to the best of our ability. You will then have a meeting with a 
+consultant to discuss the findings of the review, or alternatively we can telephone, email or 
+write to you. 
+ 
+If you have any questions about this letter please do not hesitate to call your key contact on 
+the number or email [ adapt as appropriate ] in the box above. If you would like to know more 
+about the national review process we use you can go to: 
+https://www.npeu.ox.ac.uk/pmrt/information-for-bereaved-parents 
+ 
+I/We [delete as appropriate ] have included with this letter information about both local and 
+national support organisations should you like any further support. 
+ 
+If we do not hear back from you in the next few weeks, we will keep the review report with 
+your medical notes. You can receive a copy whenever you wish by contacting us on [ provide 
+admin contact telephone/email ] 
+ 
+Yours sincerely, 
+ 
+[Name] 
+Role 
+
+UHS-SP-0003-2023 Local Requirements for PMRT Investigations SOP v1.1 Dec 2023 Page 25 of 27 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+Appendix 7: Keeping in touch letter or email 
+ 
+ please read through again once adapted for 
+use] 
+
+Insert date 
+ 
+Dear [ ] 
+ 
+I/We [delete as appropriate ] are sorry that there has been a delay in finalising the review 
+report of your care. We understand that long waits can be distressing. 
+ 
+The reason for this delay is [ give clear reasons ] 
+ 
+I/We [delete as appropriate ] hope to be in touch with you in the next [ insert number of 
+weeks] weeks. If you have any questions please contact [ insert key contact details ]. 
+ 
+Yours sincerely, 
+
+Role 
+
+UHS-SP-0003-2023 Local Requirements for PMRT Investigations SOP v1.1 Dec 2023 Page 26 of 27 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+Appendix 8: Disclosure of Records Checklist 
+ 
+DISCLOSURE OF RECORDS CHECKLIST 
+ 
+ALL PAPER RECORDS / PATHWAYS (For Mother & Baby) 
+ 
+ AN Record (inc diabetes/ BMI pathway etc) 
+ Ultrasound scans 
+ Labour Record 
+ Theatre Record (inc instrumental/ OASIS etc) 
+ Baby Delivery Record 
+ Baby PN Record 
+ Maternal PN Record 
+ Baby Medical Record 
+
+MEDWAY JOURNALS/ Badgernet SEMA/ Outpatient/Admission dates 
+ 
+PDF 
+downloaded Saved to File 
+
+EVOLVE DOCUMENTS PDF OPTION INCUDING SEC LETTERS CTG 
+
+ACUITY DATA (Patient Safety Midwife PREGNANCY REFFERAL 
+or Band 7 to access) 
+
+AFINITY RESULTS / Lab tests TRIAGE Recordings/ Telephone logs (patient 
+safety midwives to access recordings) 
+Screen Shot Saved to 
+file 
+ Scanned Saved to File 
+ 
+Screen Shot Saved to 
+file 
+
+PDF or 
+screenshot Saved to File 
+ Copied and 
+Scanned Saved to File 
+ 
+Screen Shot Saved to file 
+ Scanned Saved to File 
+ 
+Copied and 
+Scanned Saved to File 
+ 
+UHS-SP-0003-2023 Local Requirements for PMRT Investigations SOP v1.1 Dec 2023 Page 27 of 27 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+Appendix 9: PMRT Panel - Terms of Reference 
+
+TEMPLATE FOR MODIFICATION 
+ 
+Perinatal Mortality Review Meeting Terms of Reference* 
+ 
+University Hospitals Sussex 
+ 
+The aims of our stillbirth and neonatal mortality review meetings include: 
+
+reviewing each case and the quality of care provided; 
+ Working through the care for each baby who died to identify contributory factors 
+where issues are identified and assessing whether different care may have made 
+a difference to the outcome (grading of care); 
+ Developing action plans that aim to address the contributory factors identified and 
+achieve organisational change and service improvements; 
+ 
+ any questions 
+and concerns they have; 
+ Providing parents with a robust explanation of why their baby died (accepting that 
+in all instances, despite full clinical investigations, it is not always possible to 
+determine this); 
+ Improving the care we provide for mothers, babies and families in the future. 
+ 
+The conduct of our stillbirth and neonatal mortality review meetings include: 
+ 
+ Making every effort to gather the relevant information/evidence about each death 
+in advance of the meeting; 
+ Attending and arriving on time to the meeting; 
+ Participating actively in discussions; 
+ 
+ Accepting robust discussion and disagreement; 
+ Agreeing to be comprehensive, open and transparent throughout; 
+ Trying as much as possible (recognising this can be challenging) to accept that 
+your own actions can be questioned; 
+ Respecting the confidentiality of the documents and discussions that take place 
+during the meetings and record/dispose of them appropriately; 
+ If gaps are identified in the information there may be a need to go away and 
+gather more information before completing the review; 
+ Using the national Perinatal Mortality Review Tool (PMRT) to support the conduct 
+of each review. 
+ Monitoring deadlines for each Safety Action to ensure these are met. 
+*Modified: World Health Organisation. Making Every Baby Count: audit and review of stillbirth and 
+neonatal death. Geneva: WHO, 2016.

@@ -1,0 +1,1622 @@
+# Extracted from: ESHRE - PCOS - 2023.pdf
+# Guideline ID: eshre-pcos-2023
+# Content length: 115409 characters
+# Processing date: 1742735692.9645073
+
+Recommendations from the 2023 international 
+evidence-based guideline for the assessment and 
+management of polycystic ovary syndrome
+Helena J. Teede,1,2,*
+Chau Thien Tay,1,2Joop J.E. Laven,2,3Anuja Dokras,4Lisa J. Moran,1,2
+Terhi T. Piltonen,5
+Michael F. Costello,2,6Jacky Boivin,7
+Leanne M. Redman,8
+Jacqueline A. Boyle,2,9Robert J. Norman,2,10Aya Mousa,1
+and Anju E. Joham1,2on behalf of the 
+International PCOS Network†
+1Monash Centre for Health Research and Implementation, Monash University and Monash Health, Melbourne, Victoria, Australia
+2National Health and Medical Research Council Centre for Research Excellence in Women’s Health in Reproductive Life, Australia
+3Division of Reproductive Endocrinology and Infertility, Department of Obstetrics and Gynaecology, Erasmus Medical Centre, Rotterdam, 
+The Netherlands
+4Obstetrics and Gynecology, University of Pennsylvania, Philadelphia, PA, United States
+5Department of Obstetrics and Gynaecology, Medical Research Center Oulu, Research Unit of Clinical Medicine, University of Oulu and Oulu 
+University Hospital, Oulu, Finland
+6University of New South Wales, New South Wales, Australia
+7Cymru Fertility and Reproductive Research, School of Psychology, Cardiff University, Cardiff, United Kingdom
+8Pennington Biomedical Research Center, Louisiana State University, Baton Rouge, LA, United States
+9Eastern Health Clinical School, Monash University, Melbourne, Victoria, Australia
+10Robinson Research Institute, University of Adelaide, Adelaide, South Australia, Australia
+*Corresponding author: Locked Bag 29, Clayton 3168, VIC, Australia. Email: helena.teede@monash.edu
+Abstract
+Study question: What is the recommended assessment and management of those with polycystic ovary syndrome (PCOS), based on the best 
+available evidence, clinical expertise, and consumer preference?
+Summary answer: International evidence-based guidelines address prioritized questions and outcomes and include 254 recommendations and 
+practice points, to promote consistent, evidence-based care and improve the experience and health outcomes in PCOS.
+What is known already: The 2018 International PCOS Guideline was independently evaluated as high quality and integrated multidisciplinary and 
+consumer perspectives from 6 continents; it is now used in 196 countries and is widely cited. It was based on best available, but generally very low- 
+to low-quality, evidence. It applied robust methodological processes and addressed shared priorities. The guideline transitioned from consensus- 
+based to evidence-based diagnostic criteria and enhanced accuracy of diagnosis, whilst promoting consistency of care. However, diagnosis is 
+still delayed, the needs of those with PCOS are not being adequately met, the evidence quality was low, and evidence-practice gaps persist.
+Study design, size, and duration: The 2023 International Evidence-based Guideline update re-engaged the 2018 network across professional 
+societies and consumer organizations with multidisciplinary experts and women with PCOS directly involved at all stages. Extensive evidence 
+synthesis was completed. Appraisal of Guidelines for Research and Evaluation II (AGREEII)-compliant processes were followed. The Grading of 
+Recommendations, Assessment, Development, and Evaluation (GRADE) framework was applied across evidence quality, feasibility, 
+acceptability, cost, implementation, and ultimately recommendation strength, and diversity and inclusion were considered throughout.
+Participants/materials, setting, and methods: This summary should be read in conjunction with the full guideline for detailed participants and 
+methods. Governance included a 6-continent international advisory and management committee, 5 guideline development groups, and paediatric, 
+consumer, and translation committees. Extensive consumer engagement and guideline experts informed the update scope and priorities. 
+Engaged international society-nominated panels included paediatrics, endocrinology, gynaecology, primary care, reproductive endocrinology, 
+obstetrics, psychiatry, psychology, dietetics, exercise physiology, obesity care, public health, and other experts, alongside consumers, project 
+management, evidence synthesis, statisticians, and translation experts. Thirty-nine professional and consumer organizations covering 71 countries 
+engaged in the process. Twenty meetings and 5 face-to-face forums over 12 months addressed 58 prioritized clinical questions involving 52 
+systematic and 3 narrative reviews. Evidence-based recommendations were developed and approved via consensus across 5 guideline panels, 
+modified based on international feedback and peer review, independently reviewed for methodological rigour, and approved by the Australian 
+Government National Health and Medical Research Council.
+This article is simultaneously published in Fertility and Sterility, Journal of 
+Clinical Endocrinology and Metabolism, European Journal of Endocrinology 
+and Human Reproduction.
+†Participants of the International PCOS Network are listed in the 
+Appendix.
+Received: July 28, 2023. Editorial Decision: July 28, 2023. Accepted: July 28, 2023 
+© The Author(s) 2023. Published by Oxford University Press on behalf of European Society of Endocrinology. 
+This is an Open Access article distributed under the terms of the Creative Commons Attribution-NonCommercial License (https://creativecommons.org/ 
+licenses/by-nc/4.0/ ), which permits non-commercial re-use, distribution, and reproduction in any medium, provided the original work is properly cited. For 
+commercial re-use, please contact journals.permissions@oup.comEuropean Journal of Endocrinology, 2023, 189, G43–G64 
+https://doi.org/10.1093/ejendo/lvad096
+Advance access publication 15 August 2023 
+Clinical Practice GuidelineDownloaded from https://academic.oup.com/ejendo/article/189/2/G43/7242362 by guest on 23 March 2025
+Main results and the role of chance: The evidence in the assessment and management of PCOS has generally improved in the past 5 years but 
+remains of low to moderate quality. The technical evidence report and analyses (∼6000 pages) underpin 77 evidence-based and 54 consensus 
+recommendations, with 123 practice points. Key updates include the following: (1) further refinement of individual diagnostic criteria, a simplified 
+diagnostic algorithm, and inclusion of anti-Müllerian hormone levels as an alternative to ultrasound in adults only; (2) strengthening recognition of 
+broader features of PCOS including metabolic risk factors, cardiovascular disease, sleep apnoea, very high prevalence of psychological features, 
+and high risk status for adverse outcomes during pregnancy; (3) emphasizing the poorly recognized, diverse burden of disease and the need for 
+greater healthcare professional education, evidence-based patient information, improved models of care, and shared decision-making to improve 
+patient experience, alongside greater research; (4) maintained emphasis on healthy lifestyle, emotional well-being, and quality of life, with 
+awareness and consideration of weight stigma; and (5) emphasizing evidence-based medical therapy and cheaper and safer fertility management.
+Limitations and reasons for caution: Overall, recommendations are strengthened and evidence is improved but remains generally low to moderate 
+quality. Significantly greater research is now needed in this neglected, yet common condition. Regional health system variation was considered and 
+acknowledged, with a further process for guideline and translation resource adaptation provided.
+Wider implications of the findings: The 2023 International Guideline for the Assessment and Management of PCOS provides clinicians and patients 
+with clear advice on best practice, based on the best available evidence, expert multidisciplinary input, and consumer preferences. Research 
+recommendations have been generated, and a comprehensive multifaceted dissemination and translation programme supports the guideline with 
+an integrated evaluation programme.
+Keywords: polycystic ovary syndrome, guideline, evidence based, assessment, management, GRADE
+What does this mean for those with polycystic 
+ovary syndrome?
+Building on the 2018 International Evidence-Based Guideline 
+for the Assessment and Management of Polycystic Ovary 
+Syndrome (PCOS), this guideline updates and expands clinical 
+questions, aiming to ensure that women with PCOS receive 
+optimal, evidence-based care that meets their needs and im-
+proves health outcomes. The guideline and translation pro-
+gramme were developed with full consumer participation at 
+all stages including priority topics and outcomes for those 
+with PCOS. The aim is to support women and their healthcare 
+providers to optimize diagnosis, assessment, and management 
+of PCOS. There is an emphasis on improved education and 
+awareness of healthcare professionals, partnership in care, 
+and empowerment of women with PCOS. Personal character -
+istics, preferences, culture, and values are considered, in add-
+ition to resource availability across different settings. With 
+effective translation, the guideline will address priorities iden-
+tified by women with PCOS, upskill healthcare professionals, 
+empower consumers, improve care and outcomes, identify key 
+research gaps, and promote vital future research.
+Introduction
+Polycystic ovary syndrome (PCOS) is the most common endo-
+crinopathy affecting reproductive-aged women, with impacts 
+across the lifespan from adolescence to post menopause. 
+PCOS prevalence is between 10% and 13% as confirmed in 
+the guideline process.1,2PCOS aetiology is complex; clinical 
+presentation is heterogeneous with reproductive, metabolic, 
+and psychological features.1,2Women internationally experi -
+ence delayed diagnosis and dissatisfaction with care.3-5
+Clinical practice in the assessment and management of PCOS re-
+mains inconsistent, with ongoing key evidence-practice gaps. 
+Following on from the 2018 International Evidence-based 
+Guideline for the Assessment and Management of Polycystic 
+Ovary Syndrome,6,7independently evaluated as high quality, 
+this extensive update integrates current literature with previous 
+systematic reviews and extends to new clinical questions priori -
+tized by consumers. Ultimately, we aim to update, extend and 
+translate rigorous, comprehensive evidence-based guidelines 
+for diagnosis, assessment and treatment, to improve the lives 
+of those with PCOS worldwide.
+To do so, the Guideline leverages substantive government 
+and society investment and brings together extensive consumer 
+engagement and international collaboration with leading societies and organizations, multidisciplinary experts, and pri-
+mary care representatives. This comprehensive evidence-based 
+Guideline is constructed from a rigorous, Appraisal of 
+Guidelines for Research and Evaluation-II (AGREEII)- 
+compliant, evidence-based guideline development process. It 
+provides a single source of international evidence-based rec-
+ommendations to guide clinical practice with the opportunity 
+for adaptation in relevant health systems. Together with an ex-
+tensive translation program, the aim is to reduce worldwide 
+variation in care and promote high quality clinical service pro-
+vision to improve health outcomes and quality of life in women 
+with PCOS. The Guideline is supported by a multifaceted 
+international translation programme with co-designed resour -
+ces to enhance the skills of healthcare professionals and to em-
+power women with PCOS, with an integrated comprehensive 
+evaluation program. Here, we summarize recommendations 
+from the 2023 International Evidence-based Guideline for 
+the Assessment and Management of PCOS.
+Materials and methods
+Best practice evidence-based guideline development methods 
+were applied and are detailed in the full Guideline and the 
+technical reports, which are available online (www.monash. 
+edu/medicine/mchri/pcos ).8In brief, extensive healthcare pro-
+fessional and consumer or patient engagement informed the 
+Guideline priority areas. International society-nominated pan-
+els from across 3 leading entities, 4 partner organizations and 
+32 collaborating entities included consumers and experts in 
+paediatrics, endocrinology, gynaecology, primary care, repro -
+ductive endocrinology, psychology, dietetics, exercise physi -
+ology, sleep, bariatric/metabolic surgery, public health, other 
+co-opted experts, project management, evidence synthesis 
+and translation. Governance included an international advis -
+ory and a management committee, 5 guideline development 
+groups (GDGs) with 56 members, and paediatric, consumer, 
+and translation committees. The 5 GDGs covered: 
+(1) Screening, diagnostic and risk assessment and life stage; 
+(2) Psychological features and models of care; (3) Lifestyle 
+management; (4) Management of nonfertility features; and 
+(5) Assessment and management of infertility. The leading en-
+tities; the Australian National Health and Medical Research 
+Council (NHMRC) Centres for Research Excellence in 
+Women’s Health in Reproductive Life and in Polycystic 
+Ovary Syndrome, led by Monash University, partnered with 
+the American Society for Reproductive Medicine, the 
+Endocrine Society, the European Society of Endocrinology G44 European Journal of Endocrinology, 2023, Vol. 189, No. 2Downloaded from https://academic.oup.com/ejendo/article/189/2/G43/7242362 by guest on 23 March 2025
+and the European Society of Human Reproduction and 
+Embryology and collaborated with 32 other entities. With international meetings over 12 months 55 prioritized clinical questions involved 52 systematic and 3 narrative reviews, gen
+-
+erating evidence-based and consensus recommendations with accompanying practice points. Committee members nomi
+-
+nated by partner and collaborator organizations provided international peer review, and independent experts reviewed methods which were then submitted to NHMRC for inde
+-
+pendent review. The target audience includes multidisciplin -
+ary healthcare professionals, consumers or patients, policy makers, and educators. The Guideline includes a focus on 
+equity, cultural and ethnic diversity, avoidance of stigma 
+and inclusivity (see full guideline for details).
+Processes aligned with all elements of the AGREEII tool for 
+quality guideline assessment,9with extensive evidence synthesis 
+and meta-analysis. Integrity assessment was integrated into guideline evidence synthesis processes and followed the Research Integrity in Guideline Development framework, with studies assessed against criteria from the Research Integrity 
+Assessment tool and the Trustworthiness in RAndomised 
+Controlled Trials checklist.
+10-12Evidence synthesis methods 
+are outlined in the full guideline and followed best practice9,13,14
+Guideline recommendations are presented by category, terms used, evidence quality and Grading of Recommendations, Assessment, Development, and Evaluation (GRADE) frame
+-
+work considerations. Category includes evidence-based (suffi -
+cient evidence in PCOS) or consensus (insufficient evidence in PCOS, also evidence in general or relevant populations was con
+-
+sidered) recommendations and accompanying practice points (implementation considerations) (
+Table 1).
+The terms include “should”, “could”, and “should not”, 
+which are informed by the nature of the recommendation (evidence or consensus), the GRADE framework and the evi
+-
+dence quality and are independent descriptors reflecting 
+GDG judgement. They refer to overall interpretation and 
+practical application of the recommendation, balancing bene -
+fits and harms. “Should” is used where benefits of the recom -
+mendation exceed harms and where the recommendation can be trusted to guide practice. Conditional recommendations are reflected using the terms “could” or “should/could con
+-
+sider” which are used where evidence quality was limited or available studies demonstrate little clear advantage of 1 ap
+-
+proach over another, or the balance of benefits to harms was unclear. “Should not” applies when there is a lack of appropri
+-
+ate evidence, or harms may outweigh benefits.
+Evidence quality was categorized according to the GRADE 
+framework, with judgments about the quality of the included studies and/or synthesized evidence incorporating risk of bias, inconsistency, indirectness, imprecision and any other consid
+-
+erations (eg, publication bias) that may influence evidence quality. These judgments considered study number and de
+-
+sign, statistical data and importance of outcomes ( Table 2 ). 
+The quality of evidence reflects the confidence that the esti -
+mate of the effect is adequate to support each recommenda -
+tion,13largely determined by the expert evidence synthesis 
+team. GRADE acknowledges that evidence quality is a con -
+tinuum; any discrete categorization involves some arbitrary decisions; nevertheless, the advantages of simplicity, transpar
+-
+ency, and clarity outweigh these limitations.13
+The GRADE framework enabled structured and transparent 
+consideration across evidence quality, feasibility, acceptability, cost, implementation, and ultimately recommendation strength
+13and was completed at face to face guideline group 
+meetings for all clinical questions (Table 3).15
+Notably, certainty of evidence varied across outcomes with -
+in each question. Here, evidence certainty reflects the lowest certainty for the critical outcomes. Evidence was often stron
+-
+ger for the top ranked outcome, and high quality randomized controlled trials (RCTs) were often present, despite overall 
+low quality of evidence. These nuances were considered by 
+the GDG for all question as per the technical report, with any apparent discrepancy between recommendation strength and evidence certainty justified in the full Guideline. Finally, we note that this is a living Guideline with annual evidence re
+-
+view in rapidly evolving areas.
+The recommendations (Table 4 ) apply the category, de -
+scriptive terms, GRADE of the recommendations and the quality of the evidence. The full Guideline, technical evidence, and administrative reports are available online (
+www. 
+monash.edu/medicine/mchri/pcos ). The Guideline outlines 
+the clinical need for the question, the clinical question, the evi -
+dence summary, the recommendations and practice points, and a summary of the justification developed by the GDGs us
+-
+ing the GRADE framework. Extensive international peer re -
+view from across the 39 organizations was then considered by each GDG and recommendations were reconsidered Table 1. Categories of PCOS guideline recommendations.
+EBR Evidence-based recommendations: evidence sufficient to inform 
+a recommendation made by the guideline development group.
+CR Consensus recommendations: In the absence of adequate 
+evidence, a consensus recommendation has been made by the 
+guideline development group, also informed by evidence from 
+the general population.
+PP Practice points: Evidence not sought. A practice point has been 
+made by the guideline development group where important 
+issues arose from discussion of evidence-based or consensus 
+recommendations.
+PCOS, polycystic ovary syndrome.Table 2. Quality (certainty) of evidence categories (adapted from GRADE).
+High ⊕⊕⊕⊕ Very confident that the true effect lies close to 
+that of the estimate of the effect.
+Moderate ⊕⊕⊕◯ Moderate confidence in the effect estimate. 
+The true effect is likely to be close to the 
+estimate of the effect, but there is a 
+possibility that it is different.
+Low ⊕⊕◯◯ Limited confidence in the effect estimate. 
+The true effect may be substantially 
+different from the estimate of the effect.
+Very Low ⊕◯◯◯ Very little confidence in the effect estimate. 
+The true effect is likely to be substantially different from the estimate of the effect.
+GRADE, Grading of Recommendations, Assessment, Development, and 
+Evaluation.
+Table 3. The Grading of Recommendations, Assessment, Development, 
+and Evaluation (GRADE) framework recommendation strength.
+❖ Conditional recommendation against the option.
+❖❖ Conditional recommendation for either the option or the 
+comparison.
+❖❖❖ Conditional recommendation for the option.
+❖❖❖❖ Strong recommendation for the option.Teede et al
+. G45Downloaded from https://academic.oup.com/ejendo/article/189/2/G43/7242362 by guest on 23 March 2025
+Table 4. Recommendations for the assessment and management of polycystic ovary syndrome (PCOS). © Monash University on behalf of the NHMRC 
+Centre for Research Excellence in Women’s Health in Reproductive Life, 2023.
+No. Type Recommendation Grade/quality
+1 Screening, diagnostic and risk assessment, and life stages
+General principles
+PP All diagnostic assessments are recommended for use in accordance with the diagnostic algorithm (Algorithm 1).
+1.1 Irregular cycles and ovulatory dysfunction
+1.1.1 CR Irregular menstrual cycles are defined as follows: 
+• Normal in the first year post menarche as part of the pubertal transition. 
+• 1 to <3 years post menarche: <21 or >45 days. 
+• 3 years post menarche to perimenopause: <21 or >35 days or <8 cycles per year. 
+• 1 year post menarche >90 days for any 1 cycle. • Primary amenorrhoea by age 15 or >3 years post thelarche (breast development). 
+When irregular menstrual cycles are present, a diagnosis of PCOS should be considered and assessed according to 
+these PCOS Guidelines.❖❖❖❖
+1.1.2 PP The mean age of menarche may differ across populations.
+1.1.3 PP In adolescents with irregular menstrual cycles, the value and optimal timing of assessment and diagnosis of PCOS 
+should be discussed with the patient and their parent/s or guardian/s, considering diagnostic challenges at this life 
+stage and psychosocial and cultural factors.
+1.1.4 PP For adolescents who have features of PCOS, but do not meet diagnostic criteria, an “increased risk” could be 
+considered and reassessment is advised at or before full reproductive maturity, 8 years post menarche. This includes 
+those with PCOS features before combined oral contraceptive pill (COCP) commencement, those with persisting 
+features, and those with significant weight gain in adolescence.
+1.1.5 PP Ovulatory dysfunction can still occur with regular cycles, and if anovulation needs to be confirmed, serum 
+progesterone levels can be measured.
+1.2 Biochemical hyperandrogenism
+1.2.1 EBR Healthcare professionals should use total and free testosterone to assess biochemical hyperandrogenism in the 
+diagnosis of PCOS; free testosterone can be estimated by the calculated free androgen index.❖❖❖❖ 
+⊕◯◯◯
+1.2.2 EBR If testosterone or free testosterone is not elevated, healthcare professionals could consider measuring 
+androstenedione and dehydroepiandrosterone sulfate (DHEAS), noting their poorer specificity and greater 
+age-associated decrease in DHEAS.❖❖❖ 
+⊕◯◯◯
+1.2.3 EBR Laboratories should use validated, highly accurate tandem mass spectrometry (LC-MS/MS) assays for measuring 
+total testosterone and if needed, for androstenedione and DHEAS. Free testosterone should be assessed by 
+calculation, equilibrium dialysis, or ammonium sulfate precipitation.❖❖❖❖ 
+⊕⊕◯◯
+1.2.4 EBR Laboratories should use LC-MS/MS assays over direct immunoassays (eg, radiometric and enzyme linked) for 
+assessing total or free testosterone, which have limited accuracy and demonstrate poor sensitivity and precision for 
+diagnosing hyperandrogenism in PCOS.❖❖❖❖ 
+⊕⊕◯◯
+1.2.5 PP For the detection of hyperandrogenism in PCOS, the assessment of biochemical hyperandrogenism is of greatest 
+value in patients with minimal or no clinical signs of hyperandrogenism (ie, hirsutism).
+1.2.6 PP It is very difficult to reliably assess for biochemical hyperandrogenism in women on the combined oral 
+contraceptive pill (COCP) as the pill increases sex hormone-binding globulin and reduces 
+gonadotrophin-dependent androgen production. If already on the COCP and assessment of biochemical 
+androgens is imperative, the pill should be withdrawn for a minimum of 3 months and contraception should be 
+managed otherwise during this time.
+1.2.7 PP Repeated androgen measures for the ongoing assessment of PCOS in adults have a limited role.
+1.2.8 PP In most adolescents, androgen levels reach adult ranges at 12-15 years of age
+1.2.9 PP If androgen levels are markedly above laboratory reference ranges, causes of hyperandrogenaemia other than 
+PCOS, including ovarian and adrenal neoplastic growths, congenital adrenal hyperplasia, Cushing’s syndrome, 
+ovarian hyperthecosis (after menopause), iatrogenic causes, and syndromes of severe insulin resistance, should be 
+considered. However, some androgen-secreting neoplasms are associated with only mild to moderate increases in 
+androgen levels. The clinical history of time of onset and/or rapid progression of symptoms is critical in assessing 
+for an androgen-secreting tumour.
+1.2.10 PP Reference ranges for different methods and laboratories vary widely and are often based on an arbitrary percentile 
+or variances of the mean from a population that has not been fully characterized and is highly likely to include 
+women with PCOS. Normal values should be determined either by the range of values in a well-characterized 
+healthy control population or by cluster analysis of general population values.
+1.2.11 PP Laboratories involved in androgen measurements in females should consider the following: 
+• Determining laboratory normal values either by the range of values in a well-characterized healthy control 
+population or by cluster analysis of the values of a large general population. 
+• Applying the most accurate methods where available. 
+• Using extraction/chromatography immunoassays as an alternative to mass spectrometry only where adequate 
+expertise is available. 
+(
+continued) G46 European Journal of Endocrinology
+, 2023, Vol. 189, No. 2Downloaded from https://academic.oup.com/ejendo/article/189/2/G43/7242362 by guest on 23 March 2025
+Table 4. Continued 
+No. Type Recommendation Grade/quality
+• Future improvements may arise from measurement of 11-oxygenated androgens and from establishing cut-off 
+levels or thresholds based on large-scale validation in populations of different ages and ethnicities.
+1.3 Clinical hyperandrogenism
+1.3.1 EBR The presence of hirsutism alone should be considered predictive of biochemical hyperandrogenism and PCOS in 
+adults.❖❖❖ 
+⊕◯◯◯
+1.3.2 EBR Healthcare professionals could recognize that female pattern hair loss and acne in isolation (without hirsutism) are relatively weak predictors of biochemical hyperandrogenism.❖❖❖ 
+⊕◯◯◯
+1.3.3 CR A comprehensive history and physical examination should be completed for symptoms and signs of clinical 
+hyperandrogenism, including acne, female pattern hair loss and hirsutism in adults, and severe acne and hirsutism 
+in adolescents.❖❖❖❖
+1.3.4 CR Healthcare professionals should be aware of the potential negative psychosocial impact of clinical 
+hyperandrogenism and should consider the reporting of unwanted excess hair growth and/or female pattern hair 
+loss as being important, regardless of apparent clinical severity.❖❖❖
+1.3.5 CR A modified Ferriman-Gallwey score (mFG) of 4-6 should be used to detect hirsutism, depending on ethnicity, 
+acknowledging that self-treatment is common and can limit clinical assessment.❖❖❖❖
+1.3.6 CR Healthcare professionals should consider that the severity of hirsutism may vary by ethnicity but the prevalence of 
+hirsutism appears similar across ethnicities.❖❖❖
+1.3.7 PP Healthcare professionals should 
+•Be aware that standardized visual scales are preferred when assessing hirsutism, such as the mFG scale in combination with a photographic atlas.
+•Consider the Ludwig or Olsen visual scales for assessing female pattern hair loss.
+•Note that there are no universally accepted visual instruments for assessing the presence of acne.
+•Recognize that women commonly treat clinical hyperandrogenism cosmetically, diminishing their apparent 
+clinical severity.
+•Appreciate that self-assessment of unwanted excess hair growth, and possibly acne and female pattern hair loss, 
+has a high degree of validity and merits close evaluation, even if overt clinical signs of hyperandrogenism are 
+not readily evident on examination.
+•Note that only terminal hairs need to be considered in defining hirsutism, and these can reach >
+5 mm if 
+untreated, vary in shape and texture, and are generally pigmented.
+•Note that new-onset severe or worsening hyperandrogenism, including hirsutism, requires further 
+investigation to rule out androgen-secreting tumours and ovarian hyperthecosis.
+•Monitor clinical signs of hyperandrogenism, including hirsutism, acne, and female pattern hair loss, for improvement or treatment adjustment during therapy.
+1.4 Ultrasound and polycystic ovarian morphology
+1.4.1 EBR Follicle number per ovary (FNPO) should be considered the most effective ultrasound marker to detect polycystic 
+ovarian morphology (PCOM) in adults.❖❖❖❖ 
+⊕⊕◯◯
+1.4.2 EBR Follicle number per ovary (FNPO), follicle number per cross-section (FNPS), and ovarian volume (OV) should be 
+considered accurate ultrasound markers for PCOM in adults.❖❖❖❖ 
+⊕⊕◯◯
+1.4.3 CR PCOM criteria should be based on follicle excess (FNPO, FNPS) and/or ovarian enlargement. ❖❖❖❖
+1.4.4 CR Follicle number per ovary (FNPO) ≥ 20 in at least 1 ovary should be considered the threshold for PCOM in adults. ❖❖❖❖
+1.4.5 CR Ovarian volume (OV) ≥ 10 mL or follicle number per section (FNPS) ≥ 10 in at least 1 ovary in adults should be 
+considered the threshold for PCOM if using older technology or image quality is insufficient to allow for an 
+accurate assessment of follicle counts throughout the entire ovary.❖❖❖❖
+1.4.6 PP There are no definitive criteria to define polycystic ovary morphology (PCOM) on ultrasound in adolescents; 
+hence, it is not recommended in adolescents.
+1.4.7 PP When an ultrasound is indicated, if acceptable to the individual, the transvaginal approach is the most accurate for 
+the diagnosis of PCOM.
+1.4.8 PP Transabdominal ultrasound should primarily report ovarian volume (OV) with a threshold of ≥10 mL or follicle 
+number per section (FNPS) ≥ 10 in either ovary in adults given the difficulty of assessing follicle counts throughout 
+the entire ovary with this approach.
+1.4.9 PP In patients with irregular menstrual cycles and hyperandrogenism, an ovarian ultrasound is not necessary for 
+PCOS diagnosis.
+1.4.10 PP Thresholds for PCOM should be revised regularly with advancing ultrasound technology, and age-specific cut-off 
+values for PCOM should be defined.
+1.4.11 PP There is a need for training in careful and meticulous follicle counting per ovary, and clear standardized protocols 
+are recommended for PCOM reporting on ultrasound including at a minimum the following: 
+•Last menstrual period (or stage of cycle).
+•Transducer bandwidth frequency.
+(
+continued) Teede et al
+. G47Downloaded from https://academic.oup.com/ejendo/article/189/2/G43/7242362 by guest on 23 March 2025
+Table 4. Continued 
+No. Type Recommendation Grade/quality
+•Approach/route assessed.
+•Total number of 2-9 mm follicles per ovary.
+•Measurements in 3 dimensions (in cm) or volume of each ovary.
+•Other ovarian features and/or pathology including ovarian cysts, corpus lutea, dominant follicles (
+≥10 mm) 
+(which should not be included in ovarian volume calculations).
+•Reliance on the contralateral ovary FNPO for diagnosis of PCOM, where a dominant follicle is noted.
+•Uterine features and/or pathology including endometrial thickness and pattern.
+1.5 Anti-Müllerian hormone in the diagnosis of PCOS
+1.5.1 EBR Serum anti-Müllerian hormone (AMH) could be used for defining PCOM in adults. ❖❖❖ 
+⊕⊕⊕◯
+1.5.2 EBR Serum AMH should only be used in accordance with the diagnostic algorithm, noting that in patients with irregular 
+menstrual cycles and hyperandrogenism, an AMH level is not necessary for PCOS diagnosis.❖❖❖❖ 
+⊕⊕⊕◯
+1.5.3 EBR We recommend that serum AMH should not be used as a single test for the diagnosis of PCOS. ❖❖❖❖ 
+⊕⊕⊕◯
+1.5.4 EBR Serum AMH should not yet be used in adolescents. ❖❖❖❖ 
+⊕⊕⊕◯
+1.5.5 PP Either serum AMH or ultrasound may be used to define PCOM; however, both tests should not be performed to 
+limit over-diagnosis.
+1.5.6 PP Laboratories and healthcare professionals need to be aware of factors that influence AMH in the general 
+population including the following: 
+•Age: Serum AMH generally peaks between the ages of 20-25 years in the general population.
+•Body mass index (BMI): Serum AMH is lower in those with higher BMI in the general population.
+•Hormonal contraception and ovarian surgery: Serum AMH may be suppressed by current or recent COCP use.
+•Menstrual cycle day: Serum AMH may vary across the menstrual cycle.
+1.5.7 PP Laboratories involved in AMH measurements in females should use population- and assay-specific cut-offs.
+1.6 Ethnic variation
+1.6.1 EBR Healthcare professionals should be aware of the high prevalence of PCOS in all ethnicities and across world regions, ranging from 10% to 13% globally using the Rotterdam criteria.❖❖❖❖ 
+⊕⊕◯◯
+1.6.2 EBR Healthcare professionals should be aware that PCOS prevalence is broadly similar across world regions but may be 
+higher in South East Asian and Eastern Mediterranean regions.❖❖❖❖ 
+⊕⊕◯◯
+1.6.3 PP Healthcare professionals should be aware that the presentation of PCOS may vary across ethnic groups.
+1.7 Menopause life stage
+1.7.1 CR A diagnosis of PCOS could be considered as enduring/lifelong. ❖❖❖
+1.7.2 CR Healthcare professionals could consider that both clinical hyperandrogenism and biochemical hyperandrogenism 
+persist in the post menopause for women with PCOS.❖❖❖
+1.7.3 CR PCOS diagnosis could be considered post menopause if there is a past diagnosis, or a long-term history of 
+oligo-amenorrhoea with hyperandrogenism and/or PCOM, during the earlier reproductive years (age 20-40).❖❖❖
+1.7.4 CR Further investigations should be considered to rule out androgen-secreting tumours and ovarian hyperthecosis in 
+postmenopausal women presenting with new-onset, severe, or worsening hyperandrogenism including hirsutism.❖❖❖
+1.8 Cardiovascular disease risk
+1.8.1 EBR Women with PCOS should be considered at increased risk of cardiovascular disease and potentially of cardiovascular mortality, acknowledging that the overall risk of cardiovascular disease in pre-menopausal women 
+is low.❖❖❖ 
+⊕◯◯◯
+1.8.2 EBR All women with PCOS should be assessed for cardiovascular disease risk factors. ❖❖❖❖ 
+⊕◯◯◯
+1.8.3 CR All women with PCOS, regardless of age and BMI, should have a lipid profile (cholesterol, low-density lipoprotein cholesterol, high-density lipoprotein cholesterol, and triglyceride levels) at diagnosis. Thereafter, the frequency of 
+measurement should be based on the presence of hyperlipidaemia and additional risk factors or global 
+cardiovascular risk.❖❖❖❖
+1.8.4 CR All women with PCOS should have blood pressure measured annually and when planning pregnancy or seeking 
+fertility treatment, given the high risk of hypertensive disorders in pregnancy and the associated comorbidities.❖❖❖❖
+1.8.5 CR Funding bodies should recognize that PCOS is highly prevalent with multi-system effects including 
+cardiometabolic disease and should diversify and increase research support accordingly.❖❖❖❖
+1.8.6 CR Cardiovascular general population guidelines could consider the inclusion of PCOS as a cardiovascular risk factor. ❖❖❖
+1.8.7 CR Healthcare professionals, women with PCOS, and other stakeholders should all prioritize preventative strategies to reduce cardiovascular risk.❖❖❖❖
+(
+continued) G48 European Journal of Endocrinology
+, 2023, Vol. 189, No. 2Downloaded from https://academic.oup.com/ejendo/article/189/2/G43/7242362 by guest on 23 March 2025
+Table 4. Continued 
+No. Type Recommendation Grade/quality
+1.8.8 PP Consideration should be given to the differences in cardiovascular risk factors and cardiovascular disease, across 
+ethnicities (see 1.6.1) and age, when determining frequency of risk assessment.
+1.9 Impaired glucose tolerance and type 2 diabetes risk
+1.9.1 EBR Healthcare professionals and women with PCOS should be aware that, regardless of age and BMI, women with 
+PCOS have an increased risk of impaired fasting glucose, impaired glucose tolerance, and type 2 diabetes.❖❖❖❖ 
+⊕⊕◯◯
+1.9.2 EBR Glycaemic status should be assessed at diagnosis in all adults and adolescents with PCOS. ❖❖❖❖ 
+⊕⊕◯◯
+1.9.3 CR Glycaemic status should be reassessed every 1-3 years, based on additional individual risk factors for diabetes. ❖❖❖❖
+1.9.4 CR Healthcare professionals, women with PCOS, and other stakeholders should prioritize preventative strategies to 
+reduce type 2 diabetes risk.❖❖❖❖
+1.9.5 CR Funding bodies should recognize that PCOS is highly prevalent, has significantly higher risk for diabetes, and 
+should be funded accordingly.❖❖❖❖
+1.9.6 CR Diabetes general population guidelines should consider the inclusion of PCOS as an independent risk factor for 
+diabetes.❖❖❖❖
+1.9.7 PP Healthcare professionals, adults, and adolescents with PCOS and their first-degree relatives should be aware of the 
+increased risk of diabetes and the need for regular glycaemic assessment.
+1.9.8 PP Women with type 1 and type 2 diabetes have an increased risk of PCOS, and screening should be considered in 
+individuals with diabetes.
+Glycaemic testing
+1.9.9 EBR Healthcare professionals and women with PCOS should recommend the 75-g oral glucose tolerance test (OGTT) 
+as the most accurate test to assess glycaemic status in PCOS, regardless of BMI.❖❖❖❖ 
+⊕◯◯◯
+1.9.10 EBR If an OGTT cannot be performed, fasting plasma glucose and/or glycated haemoglobin (HbA1c) could be 
+considered, noting significantly reduced accuracy.❖❖❖ 
+⊕◯◯◯
+1.9.11 EBR An OGTT should be considered in all women with PCOS and without pre-existing diabetes, when planning 
+pregnancy or seeking fertility treatment, given the high risk of hyperglycaemia and the associated comorbidities in 
+pregnancy. If not performed preconception, an OGTT could be offered at the first prenatal visit and all women with 
+PCOS should be offered the test at 24-28 weeks gestation.❖❖❖ 
+⊕◯◯◯
+1.9.12 PP Insulin resistance is a pathophysiological factor in PCOS; however, clinically available insulin assays are of limited 
+clinical relevance and are not recommended in routine care (refer to 3.1.10).
+1.10 Obstructive sleep apnoea
+1.10.1 EBR Healthcare professionals should be aware that women with PCOS have significantly higher prevalence of 
+obstructive sleep apnoea compared with women without PCOS, independent of BMI.❖❖❖❖ 
+⊕⊕⊕◯
+1.10.2 EBR Women with PCOS should be assessed for symptoms of obstructive sleep apnoea (ie, snoring in combination with 
+waking un-refreshed from sleep, daytime sleepiness, or fatigue) and if present, screen with validated tools or refer 
+for assessment.❖❖❖❖ 
+⊕⊕⊕◯
+1.10.3 PP Simple obstructive sleep apnoea screening questionnaires (such as the Berlin questionnaire, validated in the general 
+population) can assist in identifying obstructive sleep apnoea in women with PCOS, noting that diagnosis requires 
+a formal sleep study.
+1.10.4 PP Goals of treatment should target obstructive sleep apnoea-related symptom burden.
+1.11 Endometrial hyperplasia and cancer
+1.11.1 EBR Healthcare professionals should be aware that premenopausal women with PCOS have markedly higher risk of developing endometrial hyperplasia and endometrial cancer.❖❖❖❖ 
+⊕◯◯◯
+1.11.2 PP Women with PCOS should be informed about the increased risk of endometrial hyperplasia and endometrial 
+cancer, acknowledging that the overall chance of developing endometrial cancer is low; therefore, routine screening 
+is not recommended.
+1.11.3 PP Long-standing untreated amenorrhoea, higher weight, type 2 diabetes, and persistent thickened endometrium are 
+additional to PCOS as risk factors for endometrial hyperplasia and endometrial cancer.
+1.11.4 PP Women with PCOS should be informed of preventative strategies including weight management, cycle regulation, and regular progestogen therapy.
+1.11.5 PP When excessive endometrial thickness is detected, consideration of a biopsy with histological analysis and 
+withdrawal bleed is indicated.
+1.12 Risks in first-degree relatives
+1.12.1 EBR Healthcare professionals could consider that fathers and brothers of women with PCOS may have an increased 
+prevalence of metabolic syndrome, type 2 diabetes, and hypertension.❖❖❖ 
+⊕◯◯◯
+1.12.2 PP The cardiometabolic risk in female first-degree relatives of women with PCOS remains inconclusive.
+(
+continued) Teede et al
+. G49Downloaded from https://academic.oup.com/ejendo/article/189/2/G43/7242362 by guest on 23 March 2025
+Table 4. Continued 
+No. Type Recommendation Grade/quality
+2 Prevalence, screening, and management of psychological features and models of care
+General principles
+PP Psychological features are common and an important component of PCOS that all healthcare professionals should 
+be aware of.
+PP Funding bodies should recognize that PCOS is highly prevalent and has significantly higher psychological disorders 
+which should be prioritized and funded accordingly.
+2.1 Quality of life
+2.1.1 EBR Healthcare professionals and women should recognize the adverse impact of PCOS and/or PCOS features on 
+quality of life in adults.❖❖❖❖ 
+⊕⊕◯◯
+2.1.2 PP Women with PCOS should be asked about their perception of PCOS related-symptoms, impact on quality of life, 
+key concerns, and priorities for management.
+2.2 Depression and anxiety
+2.2.1 EBR Healthcare professionals should be aware of the high prevalence of moderate to severe depressive symptoms and 
+depression in adults and adolescents with PCOS and should screen for depression in all adults and adolescents with 
+PCOS, using regionally validated screening tools.❖❖❖❖ 
+⊕⊕⊕⊕
+2.2.2 EBR Healthcare professionals should be aware of the high prevalence of moderate to severe anxiety symptoms and 
+anxiety disorders in adults and should screen for anxiety in all adults with PCOS, using regionally validated 
+screening tools.❖❖❖❖ 
+⊕⊕⊕⊕
+2.2.3 CR If moderate or severe depressive or anxiety symptoms are detected, practitioners should further assess, refer 
+appropriately, or offer treatment.❖❖❖❖
+2.2.4 PP Severity of symptoms and clinical diagnosis of depression or anxiety should guide management. 
+The optimal interval for anxiety and depression screening is not known. A pragmatic approach could include 
+screening at diagnosis with repeat screening based on clinical judgement, risk factors, comorbidities, and life events, including the perinatal period. 
+Screening for mental health disorders comprises assessment of risk factors, symptoms, and risk of self-harm and 
+suicidal intent.
+2.3 Psychosexual function
+2.3.1 CR Healthcare professionals could consider the multiple factors that can influence psychosexual function in PCOS 
+including higher weight, hirsutism, mood disorders, infertility, and PCOS medications.❖❖❖
+2.3.2 CR Permission to discuss psychosexual function should be sought noting that the diagnosis of psychosexual 
+dysfunction requires both low psychosexual function combined with related distress.❖❖❖❖
+2.4 Body image
+2.4.1 EBR Healthcare professionals should be aware that features of PCOS can have a negative impact on body image. ❖❖❖❖ 
+⊕⊕◯◯
+2.5 Eating disorders
+2.5.1 EBR Eating disorders and disordered eating should be considered in PCOS, regardless of weight, especially in the 
+context of weight management and lifestyle interventions (see sections 2.4 and 3.6).❖❖❖ 
+⊕⊕◯◯
+2.5.2 PP If disordered eating or eating disorders are suspected, appropriately qualified practitioners should further assess via a full diagnostic interview. 
+If an eating disorder or disordered eating is detected, appropriate management and support should be offered.
+2.6 Information resources, models of care, and cultural and linguistic considerations
+2.6.1 Information needs
+2.6.1.1 EBR Tailored information, education, and resources that are high quality, culturally appropriate, and inclusive should be provided to all with PCOS.❖❖❖❖ 
+⊕⊕⊕◯
+2.6.1.2 EBR Information, education, and resources are a high priority for patients with PCOS and should be provided in a 
+respectful and empathic manner.❖❖❖❖ 
+⊕⊕⊕◯
+2.6.1.3 CR Entities responsible for healthcare professional education should ensure that information and education on PCOS 
+is systemically embedded at all levels of healthcare professional training to address knowledge gaps.❖❖❖❖
+2.6.1.4 PP The diversity of the population should be considered when adapting practice paradigms. 
+Healthcare professional education opportunities should be optimised at all stages of graduate and postgraduate 
+training and continuing professional development and in practice support resources.
+2.6.1.5 PP Women should be counselled on the risk of misinformation and guided to evidence-based resources.
+2.6.2 Models of care
+2.6.2.1 CR Models of care should prioritize equitable access to evidence-based primary care with pathways for escalation to 
+integrated specialist and multidisciplinary services as required.❖❖❖❖
+2.6.2.2 PP Strategies to deliver optimal models of care could include healthcare professional education, care pathways, virtual 
+care, broader health professional engagement (eg, nurse practitioners), and coordination tools.
+(
+continued) G50 European Journal of Endocrinology
+, 2023, Vol. 189, No. 2Downloaded from https://academic.oup.com/ejendo/article/189/2/G43/7242362 by guest on 23 March 2025
+Table 4. Continued 
+No. Type Recommendation Grade/quality
+2.6.3 Support to manage PCOS
+2.6.3.1 CR Public health actors should consider increasing societal awareness and education on PCOS to reduce stigma and 
+marginalization.❖❖❖
+2.6.3.2 PP Culturally appropriate resources and education on PCOS across the lifespan for families of those with the 
+condition should be considered.
+2.6.4 Patient care
+2.6.4.1 EBR Healthcare professionals should employ shared decision-making and support patient agency or ability to take 
+independent actions to manage their health and care.❖❖❖❖ 
+⊕⊕⊕◯
+2.6.4.2 EBR The importance of being knowledgeable about PCOS; of applying evidence-based practices when sharing news on 
+diagnosis, treatment, and health implications; and of ascertaining and focusing on patient priorities should be 
+recognized.❖❖❖❖ 
+⊕⊕⊕◯
+2.6.4.3 CR Healthcare system leaders should enable system-wide changes to support healthcare professional training, 
+knowledge and practice in sharing news optimally, shared decision-making, and patient agency, including ensuring 
+adequate consultation time and accessible resources.❖❖❖❖
+2.6.4.4 PP Evidence-based strategies for shared decision-making and for sharing news (such as the SPIKES framework) are 
+readily available and should be used to inform PCOS care. 
+All healthcare professionals partnering with women with PCOS should be knowledgeable in sharing news, in 
+shared decision-making, and in supporting patient self-management. 
+Evidence-based strategies and resources can be used to support patient activation, which refers to modifiable 
+knowledge, skills, ability, confidence, and willingness to self-manage one’s own health and care.
+2.7 Psychological therapy
+2.7.1 CR Women with PCOS diagnosed with depression, anxiety, and/or eating disorders should be offered psychological 
+therapy guided by regional general population guidelines and the preference of the woman with PCOS.❖❖❖❖
+2.7.2 CR Women with PCOS with disordered eating, body image distress, low self-esteem, problems with feminine identity, 
+or psychosexual dysfunction should be offered evidence-based treatments (eg, cognitive behaviour therapy) where 
+appropriate.❖❖❖❖
+2.8 Antidepressant and anxiolytic treatment
+2.8.1 CR Psychological therapy could be considered first-line management, and antidepressant medications are considered 
+in adults where mental health disorders are clearly documented and persistent, or if suicidal symptoms are present, 
+based on general population guidelines.❖❖❖
+2.8.2 PP Lifestyle intervention and other therapies (eg, COCP, metformin, and laser hair removal) that target PCOS features 
+should be considered, given their potential to improve psychological symptoms. 
+Where pharmacological treatment for anxiety and depression is offered in PCOS, healthcare professionals should 
+apply caution: 
+•To avoid inappropriate treatment with antidepressants or anxiolytics.
+•To limit use of agents that exacerbate PCOS symptoms, including weight gain.
+Healthcare professionals should be aware that not managing anxiety and depression may impact adherence to 
+PCOS treatment/management.
+3 Lifestyle management
+3.1 Effectiveness of lifestyle interventions
+3.1.1 EBR Lifestyle intervention (exercise alone or multicomponent diet combined with exercise and behavioural strategies) 
+should be recommended for all women with PCOS, for improving metabolic health including central adiposity and 
+lipid profile.❖❖❖❖ 
+⊕◯◯◯
+3.1.2 CR Healthy lifestyle behaviours encompassing healthy eating and/or physical activity should be recommended in all 
+women with PCOS to optimize general health, quality of life, body composition, and weight management 
+(maintaining weight, preventing weight gain, and/or modest weight loss).❖❖❖❖
+3.1.3 PP Healthcare professionals should be aware that lifestyle management is a core focus in PCOS management.
+3.1.4 PP Lifestyle management goals and priorities should be co-developed in partnership with women with PCOS and 
+value women’s individualized preferences.
+3.1.5 PP There are benefits to a healthy lifestyle even in the absence of weight loss.
+3.1.6 PP In those with higher weight, weight management can be associated with significant clinical improvements and the 
+following key points need to be considered including the following: 
+•A lifelong focus on prevention of further weight gain.
+•If the goal is to achieve weight loss, a tailored energy deficit could be prescribed for women, considering 
+individual energy requirements, body weight, and physical activity levels.
+•The value of improvement in central adiposity (eg, waist circumference and waist-hip ratio) or metabolic health.
+•The need for ongoing assessment and support.
+(
+continued) Teede et al
+. G51Downloaded from https://academic.oup.com/ejendo/article/189/2/G43/7242362 by guest on 23 March 2025
+Table 4. Continued 
+No. Type Recommendation Grade/quality
+3.1.7 PP Healthcare professionals should be aware of weight stigma when discussing lifestyle management with women 
+with PCOS (see 3.6).
+3.1.8 PP Healthy lifestyle and optimal weight management, in the context of structured, intensive, and ongoing clinical 
+support, appears equally effective in PCOS as in the general population.
+3.1.9 PP In those who are not overweight, in the adolescent and at key life points, the focus should be on healthy lifestyle and 
+the prevention of excess weight gain.
+3.1.10 PP Insulin resistance is a pathophysiological factor in PCOS; however, clinically available insulin assays are of limited clinical relevance and should not be used in routine care (refer to 1.9.12).
+3.2 Behavioural strategies
+3.2.1 CR Lifestyle interventions could include behavioural strategies such as goal setting, self-monitoring, problem solving, assertiveness training, reinforcing changes, and relapse prevention, to optimize weight management, healthy 
+lifestyle, and emotional well-being in women with PCOS.❖❖❖
+3.2.2 PP Behavioural support could include: goal setting, problem solving, self-monitoring and reviewing, or SMART goals 
+(specific, measurable, achievable, realistic, and timely).
+3.2.3 PP Comprehensive healthy behavioural or cognitive behavioural interventions could be considered to increase 
+support, engagement, retention, adherence, and maintenance of healthy lifestyle and improve health outcomes in 
+women with PCOS.
+3.3 Dietary intervention
+3.3.1 EBR Healthcare professionals and women should consider that there is no evidence to support any 1 type of diet 
+composition over another for anthropometric, metabolic, hormonal, reproductive, or psychological outcomes.❖❖❖ 
+⊕◯◯◯
+3.3.2 CR Any diet composition consistent with population guidelines for healthy eating will have health benefits and, within this, healthcare professionals should advise sustainable healthy eating tailored to individual preferences and goals.❖❖❖❖
+3.3.3 PP Tailoring of dietary changes to food preferences, allowing for a flexible, individual, and co-developed approach to 
+achieving nutritional goals, and avoiding unduly restrictive and nutritionally unbalanced diets are important, as 
+per general population guidelines.
+3.3.4 PP Barriers and facilitators to optimize engagement and adherence to dietary change should be discussed, including 
+psychological factors, physical limitations, socioeconomic and sociocultural factors, and personal motivators for 
+change. The value of broader family engagement should be considered. Referral to suitably trained allied 
+healthcare professionals needs to be considered when women with PCOS need support with optimizing their diet.
+3.4 Exercise intervention
+3.4.1 EBR Healthcare professionals and women could consider that there is a lack of evidence supporting any 1 type and 
+intensity of exercise being better than another for anthropometric, metabolic, hormonal, reproductive, or 
+psychological outcomes.❖❖❖ 
+⊕◯◯◯
+3.4.2 CR Any physical activity consistent with population guidelines will have health benefits and, within this, healthcare 
+professionals should advise sustainable physical activity based on individual preferences and goals.❖❖❖❖
+3.4.3 CR Healthcare professionals should encourage and advise the following in concordance with general population 
+physical activity guidelines: 
+•All adults should undertake physical activity as doing some physical activity is better than none.
+•Adults should limit the amount of time spent being sedentary (eg, sitting and screen time) as replacing sedentary time with physical activity of any intensity (including light intensity) provides health benefits.
+•For the prevention of weight gain and maintenance of health, adults (18-64 years) should aim for a minimum of 
+150-300 minutes of moderate-intensity activities or 75-150 minutes of vigorous-intensity aerobic activity per 
+week or an equivalent combination of both spread throughout the week, plus muscle strengthening activities 
+(eg, resistance/flexibility) on 2 non-consecutive days per week.
+•For promotion of greater health benefits including modest weight loss and prevention of weight regain, adults 
+(18-64 years) should aim for a minimum of 250 min/week of moderate-intensity activities or 150 min/week of 
+vigorous intensities or an equivalent combination of both, plus muscle strengthening activities (eg, resistance/ 
+flexibility) ideally on 2 non-consecutive days per week.
+•Adolescents should aim for at least 60 minutes of moderate- to vigorous-intensity physical activity per day, 
+including activities that strengthen muscle and bone at least 3 times per week.❖❖❖❖
+3.4.4 PP Physical activity is any bodily movement produced by skeletal muscles that requires energy expenditure. It includes 
+leisure-time physical activity, transportation (eg, walking or cycling), occupational activities (ie, work), household 
+chores, playing games, sports or planned exercise, or activities in the context of daily, family, and community 
+activities.
+3.4.5 PP Aerobic activity is best performed in bouts of at least a 10 minute duration, aiming to achieve at least 30 minutes 
+daily on most days.
+(
+continued) G52 European Journal of Endocrinology
+, 2023, Vol. 189, No. 2Downloaded from https://academic.oup.com/ejendo/article/189/2/G43/7242362 by guest on 23 March 2025
+Table 4. Continued 
+No. Type Recommendation Grade/quality
+3.4.6 PP Barriers and facilitators to optimize engagement and adherence to physical activity should be discussed, including 
+psychological factors (eg, body image concerns, fear of injury, fear of failure, and mental health), personal safety 
+concerns, environmental factors, physical limitations, socioeconomic factors, sociocultural factors, and personal 
+motivators for change. The value of broader family engagement should be considered. Referral to suitably trained 
+allied healthcare professionals needs to be considered for optimizing physical activity in women with PCOS.
+3.4.7 PP Self-monitoring, including with fitness tracking devices and technologies for step count and exercise intensity, 
+could be considered as an adjunct to support and promote active lifestyles and minimize sedentary behaviours.
+3.5 Factors affecting weight gain in PCOS
+3.5.1 EBR Healthcare professionals and women with PCOS could consider that there is a lack of consistent evidence of 
+physiological or behavioural lifestyle differences, related to weight, in women with PCOS compared to women 
+without PCOS.❖❖❖ 
+⊕◯◯◯
+3.5.2 PP Whilst the specific mechanisms are unclear, it is recognized that many women with PCOS will have underlying 
+mechanisms that drive greater longitudinal weight gain and higher BMI which may 
+•Underpin greater challenges with weight management.
+•Highlight the importance of lifelong healthy lifestyle strategies and prevention of excess weight gain.
+•Assist women with PCOS and healthcare professionals in forming realistic, tailored lifestyle goals.
+3.6 Weight stigma
+3.6.1 EBR Many women with PCOS experience weight stigma in healthcare and other settings and the negative biopsychosocial impacts of this should be recognized.❖❖❖❖ 
+⊕⊕◯◯
+3.6.2 CR Healthcare professionals should be aware of their weight biases and the impact this has on their professional 
+practice and on women with PCOS.❖❖❖❖
+3.6.3 CR Health policy makers, managers, and educators should promote awareness of weight stigma and invest in weight 
+stigma education and minimization strategies.❖❖❖❖
+3.6.4 PP Healthcare professionals should be aware of weight-inclusive practices which promote acceptance of and respect 
+for body size diversity and focus on improvement of health behaviours and health outcomes for people of all sizes. In PCOS, this includes the following: 
+•Acknowledging that whilst higher weight is a risk factor for PCOS and its complications, it is only 1 indicator of 
+health and broader factors should be assessed.
+•Asking permission to discuss and measure weight and using strategies to minimize discomfort (eg, blind 
+weighing).
+•Recognizing that the terms “overweight” and “obese/obesity” can be stigmatizing with suggested alternatives 
+including “higher weight.”
+•If weighing, explaining how weight information will be used to inform risks, prevention and treatment and how 
+not knowing may impact on recommendations.
+•Ensuring appropriate equipment is available for women of all sizes.
+•Offering options of weight-centric care (promoting intentional weight loss) or weight-inclusive care 
+(promoting healthy lifestyle change without focusing on intentional weight loss) tailored to individual goals 
+and preferences.
+•Offering all women best practice assessment, treatment, and support regardless of weight, acknowledging that 
+weight may be a non-modifiable risk factor when using lifestyle modification alone.
+3.6.5 PP Increasing awareness of weight stigma among family members of women and adolescents with PCOS should be considered.
+4 Management of non-fertility features
+4.1 Pharmacology treatment principles in PCOS
+PP Shared decision-making between the patient (and parent/s or guardian/s, if the patient is a child) and the healthcare 
+professional is required.
+PP An individual’s characteristics, preferences, and values must be elicited and considered when recommending any 
+intervention alone or in combination.
+PP Understanding how individual adults and adolescents value treatment outcomes is essential when prescribing 
+medications.
+PP Medical therapy is generally not approved for use specifically in PCOS, and recommended use is therefore evidence based, but off-label. Healthcare professionals need to inform adults, adolescents, and their parents/s or guardian/s 
+and discuss the evidence, possible concerns, and side effects. Regulatory agencies should consider approval of 
+evidence-based medications for use in PCOS.
+4.2 Combined oral contraceptive pills
+4.2.1 EBR Combined oral contraceptive pills (COCP) could be recommended in reproductive age adults with PCOS for 
+management of hirsutism and/or irregular menstrual cycles.❖❖❖ 
+⊕◯◯◯
+(
+continued) Teede et al
+. G53Downloaded from https://academic.oup.com/ejendo/article/189/2/G43/7242362 by guest on 23 March 2025
+Table 4. Continued 
+No. Type Recommendation Grade/quality
+4.2.2 EBR The COCP could be considered in adolescents at risk or with a clear diagnosis of PCOS for management of 
+hirsutism and/or irregular menstrual cycles.❖❖❖ 
+⊕◯◯◯
+4.2.3 EBR Healthcare professionals could consider that there is no clinical advantage of using high-dose ethinylestradiol 
+(
+≥30 μg) versus low-dose ethinylestradiol (<30 μg) when treating hirsutism in adults with PCOS.❖❖❖ 
+⊕◯◯◯
+4.2.4 EBR General population guidelines should be considered when prescribing COCP in adults and adolescents with PCOS 
+as specific types or doses of progestins, oestrogens, or combinations of COCP cannot currently be recommended.❖❖❖ 
+⊕◯◯◯
+4.2.5 EBR The 35 μg ethinyl oestradiol plus cyproterone acetate preparations should be considered as second-line therapy 
+over other COCPs, balancing benefits and adverse effects, including venous thromboembolic risks.❖❖❖ 
+⊕◯◯◯
+4.2.6 EBR Progestin only oral contraceptives may be considered for endometrial protection, based on general population 
+guidelines, acknowledging that evidence in women with PCOS is limited.❖❖❖ 
+⊕◯◯◯
+4.2.7 PP When prescribing COCPs in adults and adolescents with PCOS and adolescents at risk of PCOS 
+•It is important to address main presenting symptoms and consider other treatments such as cosmetic therapies.
+•Shared decision-making (including accurate information and reassurance on the efficacy and safety of COCP) 
+is recommended and likely to improve adherence.
+•Natural oestrogen preparations and the lowest effective oestrogen doses (such as 20-30 μg of ethinyl oestradiol 
+or equivalent) need consideration, balancing efficacy, metabolic risk profile, side effects, cost, and availability.
+•The relatively limited evidence on COCPs specifically in PCOS needs to be appreciated with practice informed 
+by general population guidelines.
+•The relative and absolute contraindications and side effects of COCPs need to be considered and be the subject 
+of individualized discussion.
+•PCOS-specific features, such as higher weight and cardiovascular risk factors, need to be considered.
+4.3 Metformin
+4.3.1 EBR Metformin alone should be considered in adults with PCOS and a BMI ≥ 25 kg/m2 for anthropometric and 
+metabolic outcomes including insulin resistance, glucose, and lipid profiles.❖❖❖ 
+⊕◯◯◯
+4.3.2 EBR Metformin alone could be considered in adolescents at risk of or with PCOS for cycle regulation, acknowledging 
+limited evidence.❖❖❖ 
+⊕◯◯◯
+4.3.3 CR Metformin alone may be considered in adults with PCOS and BMI < 25 kg/m2, acknowledging limited evidence. ❖❖❖
+4.3.4 PP Where metformin is prescribed, the following need to be considered: 
+•Shared decision-making needs to consider feasibility and effectiveness of active lifestyle intervention. Women 
+should be informed that metformin and active lifestyle intervention have similar efficacy.
+•Mild adverse effects, including gastrointestinal side-effects, are generally dose dependent and self-limiting.
+•Starting at a low dose, with 500 mg increments 1-2 weekly and extended-release preparations, may minimize side effects and improve adherence.
+•Suggested maximum daily dose is 2.5 g in adults and 2 g in adolescents.
+•Use appears safe long term, based on use in other populations; however, indications for ongoing requirement 
+need to be considered.
+•Use may be associated with low vitamin B12 levels, especially in those with risk factors for low vitamin B12 (eg, diabetes, post bariatric/metabolic surgery, pernicious anaemia, and vegan diet), where monitoring should be 
+considered.
+4.4 Metformin and combined oral contraceptive pills
+4.4.1 EBR COCP could be used over metformin for management of hirsutism in irregular menstrual cycles in PCOS. ❖❖❖ 
+⊕◯◯◯
+4.4.2 EBR Metformin could be used over COCP for metabolic indications in PCOS. ❖❖❖ 
+⊕◯◯◯
+4.4.3 EBR The combination of COCP and metformin could be considered to offer little additional clinical benefit over COCP 
+or metformin alone, in adults with PCOS with a BMI ≤ 30 kg/m
+2.❖❖❖ 
+⊕◯◯◯
+4.4.4. PP In combination with the COCP, metformin may be most beneficial in high metabolic risk groups including those 
+with a BMI > 30 kg/m2, diabetes risk factors, impaired glucose tolerance, or high-risk ethnic groups.
+4.4.5 PP Where COCP is contraindicated, not accepted, or not tolerated, metformin may be considered for irregular 
+menstrual cycles. For hirsutism, other interventions may be needed.
+4.5 Anti-obesity pharmacological agents
+4.5.1 CR Anti-obesity medications, including liraglutide, semaglutide, and both glucagon-like peptide-1 (GLP-1) receptor 
+agonists and orlistat, could be considered, in addition to active lifestyle intervention, for the management of higher 
+weight in adults with PCOS as per general population guidelines.❖❖❖
+4.5.2 PP Healthcare professionals should ensure concurrent effective contraception when pregnancy is possible for women 
+who take GLP-1 receptor agonists, as pregnancy safety data are lacking.
+4.5.3 PP Gradual dose escalation for GLP-1 receptor agonists is recommended to reduce gastrointestinal adverse effects.
+(
+continued) G54 European Journal of Endocrinology
+, 2023, Vol. 189, No. 2Downloaded from https://academic.oup.com/ejendo/article/189/2/G43/7242362 by guest on 23 March 2025
+Table 4. Continued 
+No. Type Recommendation Grade/quality
+4.5.4 PP Shared decision-making, when discussing GLP-1 receptor agonist use with women with PCOS, needs to consider 
+side effects and the potential need for long-term use in weight management, given the high risk for weight regain 
+after discontinuation and the lack of long-term safety data.
+4.6 Anti-androgen pharmacological agents
+4.6.1 EBR In combination with effective contraception, anti-androgens could be considered to treat hirsutism in women with 
+PCOS, if there is a suboptimal response after a minimum of 6 months of COCP and/or cosmetic therapy.❖❖❖ 
+⊕◯◯◯
+4.6.2 CR Given the negative psychological impact of female pattern hair loss, anti-androgens in combination with COCP 
+could be trialled, acknowledging the lack of evidence in the PCOS population.❖❖❖
+4.6.3 PP Whenever pregnancy is possible, healthcare professionals must educate and counsel women and adolescents, 
+parents/s or guardian/s, regarding the risks of incomplete development of external genital structures of male 
+foetuses (undervirilization) when anti-androgens are used. To prevent this, women who can get pregnant should be 
+strongly counselled to use effective contraception (eg, intrauterine device or COCPs).
+4.6.4 PP Anti-androgens could be considered to treat hirsutism, in the presence of another effective form of contraception, 
+for women with contraindications for COCP therapy or when COCPs are poorly tolerated.
+4.6.5 PP When prescribing anti-androgens, based on general population recommendations, healthcare professionals should 
+consider that 
+•Spironolactone at 25-100 mg/day appears to have lower risks of adverse effects.
+•Cyproterone acetate at doses ≥ 10 mg is not advised due to an increased risk including for meningioma.
+•Finasteride has an increased risk of liver toxicity.
+•Flutamide and bicalutamide have an increased risk of severe liver toxicity.
+•The relatively limited evidence on anti-androgens in PCOS needs to be appreciated with small numbers of 
+studies and limited numbers of participants.
+4.7 Inositol
+4.7.1 EBR Inositol (in any form) could be considered in women with PCOS based on individual preferences and values, noting limited harm, potential for improvement in metabolic measures, yet with limited clinical benefits including in 
+ovulation, hirsutism, or weight.❖❖❖ 
+⊕◯◯◯
+4.7.2 EBR Metformin should be considered over inositol for hirsutism and central adiposity, noting that metformin has more 
+gastrointestinal side effects than inositol.❖❖❖ 
+⊕◯◯◯
+4.7.3 PP Women taking inositol and other complementary therapies are encouraged to advise their healthcare professional.
+4.7.4 PP Specific types, doses, or combinations of inositol cannot currently be recommended in adults and adolescents with 
+PCOS, due to a lack of quality evidence.
+4.7.5 PP Shared decision-making should include discussion that regulatory status and quality control of inositol in any form 
+(like other nutrient supplements) can differ from those for pharmacological products and doses and qualities may 
+vary.
+4.7.6 PP Policy makers and healthcare professionals have a responsibility to ensure women have access to unconflicted, 
+evidence-based information to inform shared decision-making, whilst also acknowledging and respecting 
+individual values and preferences, including for complementary therapies.
+4.8 Mechanical laser and light therapies for hair reduction
+4.8.1 EBR Mechanical laser and light therapies should be considered for reducing facial hirsutism and for related depression, 
+anxiety, and quality of life in women with PCOS.❖❖❖ 
+⊕◯◯◯
+4.8.2 EBR A greater number of laser treatment sessions may be required in women with PCOS, compared with women with 
+idiopathic hirsutism, to achieve hair reduction.❖❖❖ 
+⊕◯◯◯
+4.8.3 CR Adverse effects appear limited in the hands of experienced and suitably qualified providers, and women should be 
+encouraged to seek hair reduction therapies from such providers.❖❖❖❖
+4.8.4 PP Where laser hair removal is prescribed, the following need to be considered: 
+•Wavelength and delivery of laser treatment vary by skin and hair colour.
+•Laser is relatively ineffective in women with blond, grey, or white hair.
+•The addition of combined oral contraceptive pills (COCP), with or without anti-androgens, to laser treatment 
+may provide greater hair reduction and maintenance compared to laser alone.
+•Low- and high-fluence lasers appear to have similar efficacy in reducing facial hair, while low-fluence laser has reduced associated pain.
+4.8.5 PP Mechanical hair removal with Intense Pulse Light (IPL) could be considered, albeit benefits may be less pronounced 
+compared to laser treatment. There is no evidence to support the efficacy of home-based IPL kits.
+4.8.6 PP Policy makers should consider funding this evidence-based effective therapy for women with PCOS to alleviate 
+distressing symptoms of hirsutism and related negative impact on quality of life, body image, and psychological 
+health.
+(
+continued) Teede et al
+. G55Downloaded from https://academic.oup.com/ejendo/article/189/2/G43/7242362 by guest on 23 March 2025
+Table 4. Continued 
+No. Type Recommendation Grade/quality
+4.9 Bariatric/metabolic surgery
+4.9.1 CR Bariatric/metabolic surgery could be considered to improve weight loss, hypertension, diabetes (prevention and 
+treatment), hirsutism, irregular menstrual cycles, ovulation, and pregnancy rates in women with PCOS.❖❖❖
+4.9.2 CR Bariatric/metabolic surgery in women with PCOS should be informed by general population guidelines. ❖❖❖❖
+4.9.3 CR PCOS is a metabolic condition and could be considered an indication at a lower BMI threshold for bariatric/ metabolic surgery similarly to other metabolic conditions including diabetes.❖❖❖
+4.9.4 CR Women should be strongly counselled on the likelihood of rapid return of fertility and the need to commit to 
+effective contraception, ideally prior to surgery. Even when pregnancy is desired, contraception should be 
+continued until a stable weight is achieved, usually after 1 year, to avoid significantly increased risk of growth 
+restriction, prematurity, small for gestational age, pregnancy complications, and prolonged hospitalization of the 
+infant.❖❖❖❖
+4.10 Pregnancy outcomes
+4.10.1 EBR Women with PCOS have higher risk pregnancies, and healthcare professionals should ensure that PCOS status is 
+identified during antenatal care, and appropriate monitoring and support are provided.❖❖❖❖ 
+⊕◯◯◯
+4.10.2 EBR Healthcare professionals should recognize that pregnant women with PCOS have an increased risk of the 
+following: 
+•Higher gestational weight gain.
+•Miscarriage.
+•Gestational diabetes.
+•Hypertension in pregnancy and preeclampsia.
+•Intrauterine growth restriction, small for gestational age babies, and low birth weight.
+•Preterm delivery.
+•Caesarean section.❖❖❖❖ 
+⊕◯◯◯
+4.10.3 EBR Assisted reproductive technology in women with PCOS should be considered as not conferring additional risk of miscarriage, preterm birth, impaired foetal growth, and caesarean section, over that observed in women without 
+PCOS.❖❖❖ 
+⊕◯◯◯
+4.10.4 EBR Women with PCOS should be considered as not having an increased risk of large for gestational age babies, 
+macrosomia, and instrumental delivery.❖❖❖ 
+⊕◯◯◯
+4.10.5 PP Early lifestyle intervention should be offered to pregnant women with PCOS, given the risk of higher baseline 
+weight, excess gestational weight gain, and pregnancy complications.
+4.10.6 PP Blood pressure measurement should be performed when planning pregnancy or seeking fertility treatment, given 
+the high risk of hypertensive disorders in pregnancy and the associated comorbidities in women with PCOS.
+4.10.7 PP An OGTT should be offered to all women with PCOS when planning pregnancy or seeking fertility treatment, 
+given the high risk of hyperglycaemia and the associated comorbidities in pregnancy. If not performed in the 
+preconception phase, an OGTT should be offered at the first antenatal visit and repeated at 24-28 weeks gestation.
+4.11 Metformin in pregnancy
+4.11.1 EBR Healthcare professionals should be aware that metformin in pregnant women with PCOS has not been shown to 
+prevent the following: 
+•Gestational diabetes.
+•Late miscarriage (12 weeks + 1 day to 21 weeks + 6 days gestational age).
+•Hypertension in pregnancy.
+•Preeclampsia.
+•Macrosomia or birthweight ≥ 4000 g.❖❖❖❖ 
+⊕⊕◯◯
+4.11.2 EBR Metformin could be considered in some circumstances (eg, risk for preterm birth) to reduce preterm delivery and 
+limit excess gestational weight gain, in pregnant women with PCOS.❖❖❖ 
+⊕⊕⊕◯
+4.11.3 PP Women should be counselled that the consequences of metformin exposure on long-term offspring health remain 
+unclear and there is a suggestion of increased childhood weight, although causality is not certain.
+4.11.4 PP Side effects of metformin are mostly mild, transient gastrointestinal symptoms and are not worse in pregnancy.
+5 Assessment and treatment of infertility
+General principles
+PP All fertility treatment in PCOS should be guided by the fertility treatment algorithm (Algorithm 2).
+PP Those with PCOS should be reassured that pregnancy can often be successfully achieved either naturally or with 
+assistance.
+PP Prenatal vitamin supplementation should be commenced with ovulation induction therapy aligned to routine 
+preconception care.
+PP Pregnancy should be excluded prior to ovulation induction therapy.
+(
+continued) G56 European Journal of Endocrinology
+, 2023, Vol. 189, No. 2Downloaded from https://academic.oup.com/ejendo/article/189/2/G43/7242362 by guest on 23 March 2025
+Table 4. Continued 
+No. Type Recommendation Grade/quality
+PP The use of ovulation induction agents, including letrozole, metformin, and clomiphene citrate, is off-label in many 
+countries. Where off-label use of ovulation induction agents is allowed, healthcare professionals need to inform 
+women and discuss the evidence, possible concerns, and side effects.
+PP There should be ongoing monitoring of patients for adverse effects and infants for congenital anomalies, in all 
+studies conducted with ovulation induction agents, and these should be reported in any published papers.
+5.1 Preconception risk factors
+5.1.1 EBR Women with PCOS should be counselled on the adverse impact of excess weight on clinical pregnancy, 
+miscarriage, and live birth rates, following infertility treatment.❖❖❖❖ 
+⊕◯◯◯
+5.1.2 CR Consistent with routine preconception care, in women with PCOS planning pregnancy, weight, blood 
+pressure, smoking, alcohol, diet and nutritional status, folate supplementation (higher dose in those with 
+BMI > 30 kg/m2), exercise, sleep, and mental, emotional, and sexual health should be considered and optimized to 
+improve reproductive and pregnancy outcomes and overall health.❖❖❖❖
+5.1.3 PP A reproductive life plan and age-appropriate education on optimizing reproductive health is recommended in 
+adolescents and women with PCOS, including healthy lifestyle, prevention of excess weight gain, and optimizing 
+preconception risk factors.
+5.1.4 PP Healthcare professionals are encouraged to seek permission and, if given, to assess weight and BMI and initiate a 
+dialogue on the importance of weight and lifestyle on women’s health before pregnancy. This requires caution to 
+avoid weight stigma and needs to consider the cultural, social, and environmental determinants of health (see 3.6).
+5.1.5 PP Chronic conditions, such as diabetes, high blood pressure, anxiety, depression, and other mental health conditions, 
+should be optimally managed, and women should be counselled regarding the risk of adverse pregnancy outcomes.
+5.2 Tubal patency testing
+5.2.1 CR In women with PCOS and infertility due to anovulation alone with normal semen analysis, the risks, benefits, costs 
+and timing, and techniques of tubal patency testing in relation to the cost and complexity of the treatment should be 
+considered on an individual basis, depending on personal history and population prevalence, prior to starting 
+ovulation induction with timed intercourse or intrauterine insemination.❖❖❖
+5.3 Letrozole
+5.3.1 EBR Letrozole should be the first-line pharmacological treatment for ovulation induction in infertile anovulatory 
+women with PCOS, with no other infertility factors.❖❖❖❖ 
+⊕⊕⊕⊕
+5.3.2 PP The use of letrozole is still off-label in many countries. 
+Where it is not allowed, clinicians could use other ovulation induction agents.
+5.3.3 PP Letrozole should not be given where there is any possibility of a pre-existing pregnancy, though there is no evidence 
+for increased teratogenicity compared to other ovulation induction agents.
+5.4 Clomiphene citrate and metformin
+5.4.1 Metformin versus placebo
+5.4.1.1 EBR Metformin could be used alone, in women with PCOS with anovulatory infertility and no other infertility factors, 
+to improve clinical pregnancy and live birth rates, whilst informing women that there are more effective ovulation 
+agents.❖❖❖ 
+⊕⊕◯◯
+5.4.1.2 PP Women should be counselled as to potential mild gastrointestinal side-effects with metformin.
+5.4.1.3 PP Healthcare and resource burden including monitoring, travel, and costs are lower with metformin.
+5.4.1.4 PP Consideration of age and screening for other fertility factors needs to be discussed before prescribing metformin.
+5.4.2 Clomiphene citrate versus metformin
+5.4.2.1 EBR Clomiphene citrate could be used in preference to metformin in women with PCOS with anovulatory infertility and no other infertility factors, to improve ovulation, clinical pregnancy, and live birth rates.❖❖❖ 
+⊕⊕◯◯
+5.4.2.2 PP The risk of multiple pregnancies is increased with clomiphene citrate use (alone or in combination with metformin), 
+and therefore, clomiphene cycles may require ultrasound monitoring.
+5.4.3 Clomiphene citrate and metformin versus clomiphene citrate alone
+5.4.3.1 EBR Clomiphene citrate combined with metformin could be used rather than clomiphene citrate alone in women with 
+PCOS with anovulatory infertility and no other infertility factors to improve ovulation and clinical pregnancy 
+rates.❖❖❖ 
+⊕⊕◯◯
+5.4.4 Clomiphene citrate and metformin versus metformin alone
+5.4.4.1 EBR Clomiphene citrate combined with metformin could be used rather than metformin alone in women with PCOS 
+with anovulatory infertility and no other infertility factors to improve live birth rates.❖❖❖ 
+⊕⊕◯◯
+5.4.4.2 PP Monitoring of combined cycles will need to be equivalent to clomiphene citrate alone.
+(
+continued) Teede et al
+. G57Downloaded from https://academic.oup.com/ejendo/article/189/2/G43/7242362 by guest on 23 March 2025
+Table 4. Continued 
+No. Type Recommendation Grade/quality
+5.4.5 Clomiphene citrate versus Letrozole
+5.4.5.1 EBR Letrozole should be used rather than clomiphene citrate in women with PCOS with anovulatory infertility and no 
+other infertility factors to improve ovulation, clinical pregnancy, and live birth rates.❖❖❖❖ 
+⊕◯◯◯
+5.4.5.2 PP Current evidence demonstrates no difference in foetal abnormality rates between letrozole or clomiphene citrate 
+ovulation induction or natural conception.
+5.5 Gonadotrophins
+5.5.1 EBR Gonadotrophins alone could be considered rather than clomiphene citrate in therapy naïve women with PCOS 
+with anovulatory infertility and no other infertility factors to improve ovulation, clinical pregnancy, and live birth 
+rates (refer to PP 5.5.6).❖❖❖ 
+⊕⊕◯◯
+5.5.2 EBR Gonadotrophins alone could be used over gonadotrophins combined with clomiphene citrate in women with PCOS who are anovulatory and infertile with clomiphene citrate resistance or failure and no other infertility 
+factors.❖❖❖ 
+⊕⊕◯◯
+5.5.3 EBR Gonadotrophins could be considered rather than the combination of clomiphene citrate and metformin in women 
+with PCOS who are anovulatory and infertile, with clomiphene citrate resistance and no other infertility factors.❖❖❖ 
+⊕◯◯◯
+5.5.4 EBR Either gonadotrophins or laparoscopic ovarian surgery could be used in women with PCOS who are anovulatory 
+and infertile, with clomiphene citrate resistance and no other infertility factors, following counselling on higher live 
+birth rate and higher multiple pregnancy rates with gonadotrophins.❖❖ 
+⊕⊕◯◯
+5.5.5 EBR Gonadotrophins could be second-line pharmacological therapy for women with PCOS who are anovulatory and 
+infertile, with no other infertility factors and who have failed first line oral ovulation induction.❖❖❖ 
+⊕⊕◯◯
+5.5.6 PP Where gonadotrophins are to be prescribed, the following should be considered: 
+•Cost of the intervention for ovulation induction.
+•Expertise required for the use of the intervention for ovulation induction.
+•The degree of intensive ultrasound monitoring that is required.
+•A low-dose step-up gonadotrophin protocol should be used to optimize the chance of monofollicular development.
+•Implications of potential multiple pregnancy.
+5.5.7 PP There appears to be no difference in the clinical efficacy of the available gonadotrophin preparations.
+5.5.8 PP When using gonadotrophins, the best clinical practice is to avoid multiple pregnancies. Considerations here include 
+cancelling cycles when there is more than a total of 2 follicles greater than 14 mm in diameter and advising 
+avoidance of unprotected intercourse.
+5.5.9 PP Live birth rate, clinical pregnancy rate per patient, and ovulation rate per cycle are higher with gonadotrophins than with clomiphene citrate.
+5.5.10 PP A low-dose gonadotrophin protocol should be used to optimize the chance of monofollicular growth and minimize 
+multiple pregnancies.
+5.5.11 PP Cycle monitoring and drug costs coupled with multiple injections will influence the choice in gonadotrophin use.
+5.6 Laparoscopic ovarian surgery
+5.6.1 EBR Laparoscopic ovarian surgery could be second-line therapy for women with PCOS who are anovulatory and 
+infertile, with clomiphene citrate resistance and no other infertility factors.❖❖❖ 
+⊕⊕◯◯
+5.6.2 PP When using laparoscopic ovarian surgery, the following should be considered: 
+•Comparative cost of the intervention for ovulation induction.
+•Expertise required for the safe use of the intervention for ovulation induction.
+•Both intraoperative and postoperative risks, which are higher in women who are above healthy weight.
+5.7 In vitro fertilization and in vitro maturation
+5.7.0.1 CR In the absence of an absolute indication for in vitro fertilization (IVF)/intracytoplasmic sperm injection (ICSI), IVF 
+could be offered in women with PCOS and anovulatory infertility, if first- or second-line ovulation induction 
+therapies have failed.❖❖❖
+5.7.0.2 PP In women with anovulatory PCOS, the use of IVF is effective and when elective single-embryo transfer is used, 
+multiple pregnancies can be minimized.
+5.7.0.3 PP Women with PCOS undergoing IVF/ICSI treatment should be counselled prior to starting treatment about the 
+increased risk of ovarian hyperstimulation syndrome and options to reduce the risk should be offered.
+5.7.1 Gonadotrophin releasing hormone protocol
+5.7.1.1 PP Gonadotrophin-releasing hormone (GnRH) antagonist protocol cannot be recommended over GnRH agonist long protocol for women with PCOS undergoing IVF/ICSI to improve clinical pregnancy or live birth rate.
+5.7.1.2 PP The use of a GnRH antagonist protocol for women with PCOS undergoing IVF/ICSI is recommended as it enables 
+the use of an agonist trigger, with the freezing of all embryos generated if required, without compromising the 
+cumulative live birth rate, to reduce the risk of significant ovarian hyperstimulation syndrome.
+(
+continued) G58 European Journal of Endocrinology
+, 2023, Vol. 189, No. 2Downloaded from https://academic.oup.com/ejendo/article/189/2/G43/7242362 by guest on 23 March 2025
+Table 4. Continued 
+No. Type Recommendation Grade/quality
+5.7.2 Trigger type
+5.7.2.1 CR Triggering final oocyte maturation with a GnRH agonist and freezing all suitable embryos are recommended, in an 
+IVF/ICSI cycle with a GnRH antagonist protocol, where a fresh embryo transfer is not intended or where there is an 
+increased risk of ovarian hyperstimulation syndrome.❖❖❖❖
+5.7.3 Choice of follicle stimulating hormone
+5.7.3.1 CR Either urinary or recombinant follicle stimulating hormone (FSH) could be used in women with PCOS undergoing 
+(controlled) ovarian (hyper) stimulation for IVF/ICSI, with insufficient evidence to recommend a particular type of FSH preparation.❖❖❖
+5.7.4 Exogenous luteinising hormone
+5.7.4.1 CR Exogenous recombinant luteinising hormone (LH) treatment should not be routinely used in combination with 
+FSH therapy in women with PCOS undergoing controlled ovarian hyperstimulation for IVF/ICSI.❖
+5.7.5 Adjunct metformin
+5.7.5.1 EBR Adjunct metformin therapy could be used before and/or during FSH ovarian stimulation in women with PCOS 
+undergoing IVF/ICSI treatment with GnRH agonist long protocol, to reduce the risk of developing ovarian 
+hyperstimulation syndrome and miscarriage.❖❖❖ 
+⊕⊕◯◯
+5.7.5.2 PP Good practice in PCOS and IVF is the use of a GnRH antagonist protocol as it gives the flexibility of using a GnRH 
+agonist trigger, freezeing all strategy to reduce the risk of ovarian hyperstimulation syndrome. However, if using a 
+GnRH agonist long protocol, then metformin could be considered. 
+If using metformin, the following could be considered: 
+•Commence metformin at the start of GnRH agonist treatment.
+•Gradually titrate metformin up to a dose of between 1000 and 2500 mg daily in order to minimize side effects.
+•Stopping metformin therapy at the time of the pregnancy test or period, unless the metformin therapy is 
+otherwise indicated.
+5.7.6 In vitro maturation
+5.7.6.1 EBR The use of in vitro maturation (IVM) and ICSI could be considered in women with PCOS as an alternative to a 
+stimulated IVF/ICSI cycle, where an embryo is frozen and replaced in a subsequent embryo transfer cycle, 
+acknowledging there is no risk of ovarian hyperstimulation syndrome, but a lower cumulative live birth rate.❖❖ 
+⊕⊕⊕◯
+5.7.6.2 CR The use of IVM and ICSI could be considered prior to stimulated IVF/ICSI cycles acknowledging both benefits and 
+limitations.❖❖
+5.7.6.3 PP IVM should only be considered in services with sufficient expertise, and advocacy is needed for regional or national 
+centres of expertise.
+5.7.6.4 PP IVM could be offered as an option in women with prior severe ovarian hyperstimulation syndrome and where the 
+risk of severe ovarian hyperstimulation syndrome is deemed unacceptably high, provided that expertise in IVM 
+techniques exists.
+5.7.6.5 PP Evidence suggests that IVM/ICSI is less effective than standard IVF/ICSI in terms of clinical pregnancy per patient 
+and live birth rate per patient.
+5.8 Inositol
+5.8.1 EBR Inositol in any form alone, or in combination with other therapies, should be considered experimental therapy in 
+women with PCOS with infertility, with benefits and risks currently too uncertain to recommend the use of these 
+agents as fertility therapies.❖❖❖ 
+⊕◯◯◯
+5.8.2 PP There is limited evidence with uncertain results, on the effect of inositol on ovulation, clinical pregnancy, and live 
+birth rates.
+5.8.3 PP Side effects and safety are not known for inositol.
+5.8.4 PP Women need to be aware that these agents can have limited regulation with variable dose, quality, consistency, and 
+combination with other agents.
+5.8.5 PP Women’s personal goals and preferences should be considered when discussing complimentary therapies.
+5.9 Anti-obesity pharmacological agents
+5.9.1 CR We recommend using anti-obesity agents in PCOS for reproductive outcomes only in research settings to establish the efficacy and safety.
+See Table 1 for the definition of CR, EBR, and PP. 
+© International evidence-based guideline for the assessment and management of polycystic ovary syndrome 2023, Helena Teede et al. Monash University 
+(monash.edu/medicine/mchri/pcos), 2023, by permission of Monash University, on behalf of the NHMRC Centre for Research Excellence in Women’s Health 
+in Reproductive Life. This image/content is not covered by the terms of the Creative Commons licence of this publication. For permission re reuse, please contact 
+the rights holder. Teede et al. G59Downloaded from https://academic.oup.com/ejendo/article/189/2/G43/7242362 by guest on 23 March 2025
+applying the GRADE framework if justified. The comprehen -
+sive evidence reviews, profiles, and GRADE frameworks sup -
+porting each recommendation can be found in the Technical 
+Report. The administrative report on guideline development, disclosure of interest process and declarations, peer review feedback and responses can also be found online. Here, we 
+present the evidence-based and consensus recommendations 
+and practice points (
+Table 4 ). This summary, the full 
+Guideline and technical reports are supported by a compre -
+hensive co-designed translation program to optimize dissem -
+ination and impact with resources freely available online (
+www.monash.edu/medicine/mchri/pcos).
+Two algorithms are provided to support recommendations 
+on diagnosis (Figure 1) and infertility management (Figure 2).
+Discussion
+The International Evidence-based Guideline for the Assessment and Management of PCOS and the related translation program aims to provide a high quality, reliable source of international evidence-based recommendations to guide consistent clinical practice and to empower women with evidence-based informa
+-
+tion. All recommendations were formulated after an assessment 
+of the best available evidence, multidisciplinary clinical expert -
+ise, consumer preferences and structured review by 5 GDGs. 
+The guideline provides 77 evidence-based and 54 consensus rec -
+ommendations, with 123 practice points underpinned by a technical report on evidence synthesis and GRADE detailed 
+considerations (
+∼6000 pages). The evidence has generally im -
+proved over the past 5 years but remains of low to moderate 
+quality, requiring significant research investment into this ne -
+glected, yet common condition.
+Key recommendations and updates include that PCOS 
+should be diagnosed using the 2018 International Evidence- 
+based Guideline criteria, which built on the consensus based 
+2003 Rotterdam criteria. This requires the presence of 2 of the following: (1) clinical/biochemical hyperandrogenism; (2) ovulatory dysfunction; and (3) polycystic ovaries on ultra
+-
+sound; and here in 2023, alternatively anti-Müllerian hormone 
+(AMH) can now be used instead of ultrasound. Exclusion of 
+other aetiologies is needed. Importantly, where irregular menstrual cycles and hyperandrogenism are present, diagnosis 
+is simplified and ultrasound or AMH are not required for diag -
+nosis. In adolescents, both hyperandrogenism and ovulatory 
+dysfunction are required, with ultrasound and AMH not rec -
+ommended due to poor specificity. AMH was highlighted as a rapidly evolving area in 2018 and evidence is now strong enough to make this new recommendation. This will signifi
+-
+cantly change practice and offers women a low cost, conveni -
+ent option, without evidence of overdiagnosis.
+Insulin resistance is recognized as a key feature of PCOS, 
+yet routinely available measures of insulin resistance are in -
+accurate and clinical measurement is not currently recom -
+mended. Once diagnosed, assessment and management 
+should address reproductive, metabolic, cardiovascular, der -
+matologic, sleep, and psychological features. A lifelong 
+health plan is recommended including a focus on healthy life -
+style, prevention of excess weight gain, optimization of fertil -
+ity and preconception risk factors, and prevention and 
+treatment of diverse clinical features. These include metabol -
+ic risk factors, diabetes, cardiovascular disease, and sleep dis -
+orders, which are all increased in PCOS. PCOS should be 
+considered a high-risk condition in pregnancy with women identified and monitored. An increased premenopausal risk of endometrial cancer should also be recognized, whilst abso
+-
+lute risks remain low.
+Symptoms of depression and anxiety are significantly in -
+creased and should be screened for in all women with PCOS, with psychological assessment and therapy as indi
+-
+cated. Greater awareness of psychological features including 
+eating disorders and impacts on body image and quality of 
+life is needed.
+Dissatisfaction with PCOS diagnosis and care is high and sig -
+nificant improvement in education and awareness is strongly recommended for women and healthcare professionals includ
+-
+ing high quality, evidence-based resources. Shared decision- 
+making and self-empowerment are fundamental and integrated 
+models of care should be codesigned, funded and evaluated.
+Supported healthy lifestyle remains vital throughout the life -
+span in PCOS, with a strong focus on overall health, prevention of weight gain and, if required, on weight management. Recognizing the benefits of many diet and physical activity 
+Figure 1. Algorithm 1—diagnostic algorithm for polycystic ovary syndrome (PCOS). *Exclusion of other causes = TSH, prolactin, 17-OH progesterone, 
+FSH or others if clinically indicated (eg, Cushing’s syndrome, adrenal tumours). For hypogonadotropic hypogonadism, usually due to low body fat or 
+intensive exercise, exclude clinically and with LH and FSH levels. PCOM, polycystic ovarian morphology on ultrasound; TSH, thyroid stimulating hormone. 
+© Monash University on behalf of the NHMRC Centre for Research Excellence in Women’s Health in Reproductive Life, 2023. © International evidence- 
+based guideline for the assessment and management of polycystic ovary syndrome 2023, Helena Teede et al. Monash University (monash.edu/medicine/ mchri/pcos), 2023, by permission of Monash University, on behalf of the NHMRC Centre for Research Excellence in Women’s Health in Reproductive Life. This image/content is not covered by the terms of the Creative Commons licence of this publication. For permission re reuse, please contact the 
+rights holder.G60 European Journal of Endocrinology, 2023, Vol. 189, No. 2Downloaded from https://academic.oup.com/ejendo/article/189/2/G43/7242362 by guest on 23 March 2025
+regimens, there is no 1 specific regimen that has benefits over 
+others in PCOS. Weight bias and stigma should be minimized 
+and healthcare professionals should seek permission to weigh 
+women, with explanation of weight-related risks.
+Combined oral contraceptive pills are the first line pharmaco -
+logical treatment for menstrual irregularity and hyperandrogen -
+ism, with no specific recommended preparation and a preference 
+for lower ethinyl estradiol dose preparations and those with less 
+side-effects. Metformin is recommended primarily for metabolic 
+features and has greater efficacy than inositol, which offers lim-
+ited clinical benefits in PCOS. Metformin is not routinely recom -
+mended for use in pregnant women with PCOS. Mechanical 
+laser therapy is effective for hair reduction in some subgroups, 
+whilst anti-androgens have a limited role where other therapies are ineffective or contraindicated. Anti-obesity agents and bari-
+atric/metabolic surgery may be considered based on general 
+population guidelines, balancing potential for benefits and side 
+effects.
+Letrozole is the preferred first line pharmacological infertil -
+ity therapy, with clomiphene in combination with metformin; 
+Gonadotrophins or ovarian surgery primarily having a role as 
+second line therapy. In vitro fertilization (IVF) could be of-
+fered, potentially with in vitro maturation, as third line ther-
+apy, where other ovulation induction therapies have failed 
+and in the absence of an absolute indication for IVF in women 
+with PCOS and anovulatory infertility. Given the underlying 
+risk for pregnancy complications in PCOS, single embryo 
+transfer should be preferred.
+Figure 2.Algorithm 2—infertility algorithm for polycystic ovary syndrome (PCOS). © Monash University on behalf of the NHMRC Centre for Research 
+Excellence in Women’s Health in Reproductive Life, 2023. © International evidence-based guideline for the assessment and management of polycystic 
+ovary syndrome 2023, Helena Teede et al. Monash University (monash.edu/medicine/mchri/pcos), 2023, by permission of Monash University, on behalf 
+of the NHMRC Centre for Research Excellence in Women’s Health in Reproductive Life. This image/content is not covered by the terms of the Creative 
+Commons licence of this publication. For permission re reuse, please contact the rights holder. Teede et al. G61Downloaded from https://academic.oup.com/ejendo/article/189/2/G43/7242362 by guest on 23 March 2025
+Overall, evidence in PCOS is low to moderate quality. Based 
+on high prevalence and significant health impact, greater pri-
+ority, education, models of care, funding, and research are rec-
+ommended. Guideline translation will be extensive including 
+multilingual education outputs and evidence-based resources 
+for consumers (the ASKPCOS app), healthcare professionals 
+and policy makers.
+The guideline recommendations are protected under copy-
+right, however a clear process for adaption of guideline recom -
+mendations to regional context is available by contacting the 
+author for correspondence online (www.monash.edu/ 
+medicine/mchri/pcos ). The translation program will be free 
+and internationally accessible, building on the existing range 
+of codesigned resources including the patient focused, 
+evidence-based PCOS APP (AskPCOS), used in 186 countries 
+and based on a rigorously developed question prompt list. 
+Multi-faceted patient codesigned resources will aim to en-
+hance health literacy with comprehensive PCOS-related 
+health information available in multiple formats and in 
+15-20 languages. Internationally accessible resources include 
+education modules for healthcare professionals at different 
+career stages and disciplines, healthcare professional accred -
+ited courses, practice resources and tools, webinars with inter-
+national expert panels, and e-health information resources 
+that will be available online (www.monash.edu/medicine/ 
+mchri/pcos ). Importantly, the Guideline and translation of 
+the Guideline is expected to improve patient experiences 
+through the provision of timely and accurate diagnosis, of ac-
+cessible evidence-based information and of improved multi- 
+disciplinary support. Ultimately, this international initiative 
+may serve as an exemplar for large scale collaborative engage -
+ment, pooling of resources, avoidance of duplication and in-
+consistency with consensus-based statements, and codesign 
+of best quality consistent guidelines with processes for local 
+adaption and healthcare impact. Key elements include exten -
+sive collaboration, broad stakeholder representation, con-
+sumer partnership, distributive leadership, adequate funding, 
+robust project management and governance, adherence to 
+best practice and integrated comprehensive translation, and 
+evaluation. We sincerely thank the partner and collaborating 
+organizations, consumer groups and members of the GDGs 
+for their substantive commitment to the international partner -
+ship to optimize health outcomes for women with this com-
+mon, heterogeneous, and much neglected condition.
+Acknowledgments
+We gratefully acknowledge contribution of our partners and 
+collaborating organizations:
+The Australian NHMRC Centre for Research Excellence in 
+Women’s Health in Reproductive Life (CRE WHiRL) 
+(APP1171592), Centre for Research Excellence in Polycystic 
+Ovary Syndrome (CRE PCOS) (APP1078444) and the mem -
+bers of these Centres who coordinated this international 
+guideline effort.
+Our partner and co-funding organizations are:
+American Society for Reproductive Medicine (ASRM)
+Endocrine Society (ENDO)
+European Society for Endocrinology (ESE)
+European Society of Human Reproduction and 
+Embryology (ESHRE)Collaborating and engaged societies and consumer groups 
+providing in-kind support include:
+Androgen Excess and Polycystic Ovary Syndrome Society 
+(AEPCOS)
+Asia Pacific Paediatric Endocrine Society (APPES)
+Asia Pacific Initiative on Reproduction (ASPIRE)
+Australia and New Zealand Society for Paediatric 
+Endocrinology and Diabetes (ANZSPED)
+Australian Diabetes Society (ADS)
+Brazilian Society of Endocrinology and Metabolism 
+(SBEM)
+British Fertility Society (BFS)
+Canadian Society of Endocrinology and Metabolism 
+(CSEM)
+Dietitians Association Australia (DA)
+Endocrine Society Australia (ESA)
+European Society for Paediatric Endocrinology (ESPE)
+Exercise and Sports Science Australia (ESSA)
+Fertility Society Australia and New Zealand (FSA)
+International Federation of Fertility Societies (IFFS)
+International Federation of Gynecology and Obstetrics 
+(FIGO)
+International Society of Endocrinology (ISE)—40 partner 
+societies
+Italian Society of Gynaecology and Obstetrics
+Japanese Society for Paediatric Endocrinology (JSPE)
+Latin American Society for Paediatric Endocrinology (SLEP)
+Nordic Federation of Societies of Obstetrics and 
+Gynaecology (NFOG)
+PCOS Challenge Inc: The National Polycystic Ovary 
+Syndrome Association
+PCOS Society of India
+PCOS Vitality
+Paediatric Endocrine Society (PES)
+Royal Australasian College of Physicians (RACP)
+Royal Australian New Zealand College of Obstetricians 
+and Gynaecologists (RANZCOG)
+Royal Australian and New Zealand College of Radiologists 
+(RANZCR)
+Royal College of Obstetricians and Gynaecologists 
+(RCOG)
+South African Society of Gynaecology and Obstetrics 
+(SASOG)
+Society for Endocrinology
+Verity UK
+Victorian Assisted Reproductive Technology Association 
+(VARTA)
+Other relevant organizations are welcome to apply to partner 
+in guideline translation.
+Funding
+This effort was primarily funded by the Australian 
+Government via the National Health Medical Research 
+Council (NHMRC) (APP1171592), supported by a partner -
+ship with American Society for Reproductive Medicine, 
+Endocrine Society, European Society for Human 
+Reproduction and Embryology, and the European Society 
+for Endocrinology. Collaborating organizations provided in- 
+kind support. The Commonwealth Government of Australia 
+also supported Guideline translation through the Medical 
+Research Future Fund (MRFCRI000266). H.J.T. and A.M. 
+are funded by NHMRC fellowships. C.T.T. is funded by a G62 European Journal of Endocrinology, 2023, Vol. 189, No. 2Downloaded from https://academic.oup.com/ejendo/article/189/2/G43/7242362 by guest on 23 March 2025
+Royal Australasian College of Physicians (RACP) fellowship. 
+Guideline development group members were volunteers. 
+Travel expenses were covered by the partnering organizations.
+Conflict of interest: Disclosures of interest were declared at 
+the outset and updated throughout the guideline process, 
+aligned with National Health Medical Research Council 
+(NHMRC) guideline processes. These are available online 
+(www.monash.edu/medicine/mchri/pcos ). Of named authors 
+H.J.T., C.T.T., A.D., L.M., L.R., J. Boyle, and A.M. have no 
+conflicts of interest to declare. J.L. declares grant from 
+Ferring and Merck; consulting fees from Ferring and Titus 
+Health Care; speaker’s fees from Ferring; unpaid consultancy 
+for Ferring, Roche Diagnostics and Ansh Labs; and sits on ad-
+visory boards for Ferring, Roche Diagnostics, Ansh Labs, and 
+Gedeon Richter. T.P. declares a grant from Roche; consulting 
+fees from Gedeon Richter and Organon; speaker’s fees from 
+Gedeon Richter and Exeltis; travel support from Gedeon 
+Richter and Exeltis; unpaid consultancy for Roche 
+Diagnostics; and sits on advisory boards for Roche 
+Diagnostics. M.C. declares travels support from Merck; and 
+sits on an advisory board for Merck. J. Boivin declares grants 
+from Merck Serono Ltd.; consulting fees from Ferring B.V; 
+speaker’s fees from Ferring Arzneimittell GmbH; travel sup-
+port from Organon; and sits on an advisory board for the 
+Office of Health Economics. R.J.N. has received speaker’s 
+fees from Merck and sits on an advisory board for Ferring. 
+A.J. has received speaker’s fees from Novo Nordisk and 
+Boehringer Ingelheim. The guideline was peer reviewed by 
+special interest groups across our 39 partner and collaborating 
+organizations, was independently methodologically assessed 
+against AGREEII criteria and was approved by all members 
+of the guideline development groups and by the NHMRC.
+Data availability
+All data extracted and analyzed in the guideline is available in 
+a repository and can be accessed via https:/ /doi.org/10.26180/ 
+23625288.v1
+Authors’ contribution
+H.J.T. led the guidelines from funding, engaging partners, 
+coordinating processes, prioritizing clinical questions, co- 
+chairing guideline meetings, coordinating peer review 
+responses and leading writing, approval and publication proc-
+esses. Listed authors held senior leadership roles as chair or 
+deputy chair of the 5 GDGs or leadership of the evidence 
+team with roles from the management committee, chair/co- 
+chair of GDG or the early career evidence network, involve -
+ment at all stages, responding to feedback, providing input 
+into and endorsing the guideline. All other included authors 
+were actively engaged as partner nominees and multidisciplin -
+ary GDG or consumer experts. The evidence synthesis net-
+work was led by C.T.T. and A.M., across search strategies, 
+training, Covidence processes, quality appraisal and 
+GRADE, meta-analysis, evidence integrity processes (with 
+BM) and preparing the technical report. The listed members 
+of this network led evidence synthesis across the clinical ques-
+tions and had input into the technical report.
+Appendix
+Members of the PCOS Network:The international advisory panel, guideline technical team, 
+paediatric, consumer and translation committees, the 
+Indigenous cultural advisor and the extended early career sup-
+port network who assisted with evidence synthesis, can be 
+found online (www.monash.edu/medicine/mchri/pcos ).
+Guideline development members and key 
+contributors (in addition to listed authors)
+Wiebke Arlt, University of Birmingham, UK
+Ricardo Azziz, University of Alabama at Birmingham, USA
+Adam Balen, Leeds Teaching Hospital; British Fertility 
+Society, UK
+Lisa Bedson, Repromed, Australia
+Lorna Berry, Polycystic Ovary Syndrome Association of 
+Australia, Australia
+Jacky Boivin, Cardiff University, UK
+Jacqueline Boyle, Monash University, Australia
+Leah Brennan, Latrobe University, Australia
+Wendy Brown, Monash University, Australia
+Tania Burgert, University Missouri—Kansas School of 
+Medicine, USA
+Maureen Busby, PCOS Vitality, Ireland
+Carolyn Ee, Western Sydney University, Australia
+Rhonda M. Garad, Monash University, Australia
+Melanie Gibson-Helm, Te Tātai Hauora o Hine, Victoria 
+University of Wellington; NZ
+Cheryce Harrison, Monash University, Australia
+Roger Hart, The University of Western Australia; City 
+Fertility, Australia
+Kim Hopkins, PCOS Challenge: National Polycystic Ovary 
+Syndrome Association, USA
+Angelica Lindén Hirschberg, Karolinska Institutet, 
+Karolinska University Hospital, Sweden
+Tuong Ho, HOPE Research Centre, My Duc Hospital, 
+Vietnam
+Kathleen Hoeger, University of Rochester, USA
+Cailin Jordan, Genea Hollywood Fertility, Australia
+Richard S. Legro, Penn State Clinical and Translational 
+Institute, USA
+Rong Li, Peking University Third Hospital, China
+Marla Lujan, Cornell University, USA
+Ronald Ma, Chinese University of Hong Kong, Hong Kong/ 
+China
+Darren Mansfield, Monash and Epworth Health, Monash 
+University, Australia
+Kate Marsh, Northside Nutrition & Dietetics, Australia
+Edgar Mocanu, Rotunda Hospital, Ireland
+Ben Mol, Monash University, Australia
+Rachel Mormon, Verity—PCOS Charity, UK
+Robert Norman, University of Adelaide, Australia
+Sharon Oberfield, Columbia University Medical Center, 
+USA
+Malika Patel, University of Cape Town; Groote Schuur 
+Hospital, South Africa
+Loyal Pattuwage, Cochrane Australia, Monash University, 
+Australia
+Alexia Peña, The Robinson Research Institute at the 
+University of Adelaide, Australia
+Leanne Redman, Pennington Biomedical Research Center, 
+USA
+Luk Rombauts, Monash University, Australia
+Daniela Romualdi, Fondazione Policlinico Universitario 
+Agostino Gemelli, ItalyTeede et al. G63Downloaded from https://academic.oup.com/ejendo/article/189/2/G43/7242362 by guest on 23 March 2025
+Duru Shah, PCOS Society of India; Centre for Women’s 
+Health and Fertility, India
+Poli Mara Spritzer, Federal University of Rio Grande Do 
+Sul, Brazil
+Elisabet Stener-Victorin, Karolinska Institutet, Sweden
+Fahimeh Ramezani Tehrani, Shahid Beheshti University of 
+Medical Sciences, Iran
+Shakila Thangaratinam, University of Birmingham, UK
+Mala Thondan, Harp Family Medical, Australia
+Eszter Vanky, Norwegian University of Science and 
+Technology; Norway
+Chandrika Wijeyaratne, University of Colombo, 
+Sri Lanka
+Selma Witchel, Children’s Hospital of Pittsburgh of UPMC, 
+University of Pittsburgh, USA
+Dongzi Yang, Reproductive Medical Centre, Sun Yat-Sen 
+Memorial Hospital, China
+Bulent Yildiz, Hacettepe University, Turkey
+International early career evidence synthesis network leads
+Simon Alesi, Monash University, Australia
+Snigdha Alur-Gupta, University of Rochester, USA
+Jodie Avery, University of Adelaide, Australia
+Mahnaz Bahri Khomami, Monash University, Australia
+Jamie Benham, University of Calgary, Canada
+Hugh Bidstrup, Australian Catholic University, Australia
+Su Jen Chua, Monash University, Australia
+Laura Cooney, University of Wisconsin, USA
+Thisara Coster, Monash University, Australia
+Carolyn Ee, Western Sydney University, Australia
+Victoria Fitz, Harvard University, USA
+Madeline Flanagan, Monash University, Australia
+Maria Forslund, University of Gothenburg, Sweden
+Geranne Jiskoot, Erasmus MC, Netherlands
+Maryam Kazemi, Icahn School of Medicine at Mount Sinai, 
+USA
+Punith Kempegowda, University of Birmingham, UK
+Yvonne Louwers, Erasmus MC, Netherlands
+Marla Lujan, Cornell University, USA
+Johanna Melin, University of Helsinki, Finland
+Eka Melson, University of Leicester, UK
+Yitayeh Belsti Mengistu, Monash University, Australia
+Negar Naderpoor, Monash University, Australia
+Adriana Neven, Monash University, Australia
+Hester Pastoor, Erasmus MC, Netherlands
+Thais Rocha, University of Birmingham, UK
+Angelo Sabag, Western Sydney University, Australia
+Anuradhaa Subramanian, University of Birmingham, UK
+Katrina Tan, Monash Health, Australia
+References
+1.Teede H, Deeks A, Moran L. Polycystic ovary syndrome: a 
+complex condition with psychological, reproductive and metabolic manifestations that impacts on health across the 
+lifespan. BMC Med. 2010;8(1):41. https:/ /doi.org/10.1186/1741- 
+7015-8-41
+2.Azziz R, Carmina E, Chen Z, et al. Polycystic ovary syndrome. Nat 
+Rev Dis Primers. 2016;2(1):16057. https:/ /doi.org/10.1038/nrdp. 
+2016.57
+3.Gibson-Helm M, Teede H, Dunaif A, Dokras A. Delayed diagnosis 
+and lack of information associated with dissatisfaction in women 
+with polycystic ovary syndrome. J Clin Endo & Metab. 
+2017;102:604-612.
+4.Dokras A, Saini S, Gibson-Helm M, Schulkin J, Cooney L, Teede H. 
+Gaps in knowledge among physicians regarding diagnostic criteria 
+and management of polycystic ovary syndrome. Fertil Steril. 
+2017;107(6):1380-1386.e1. https:/ /doi.org/10.1016/j.fertnstert. 
+2017.04.011
+5.Teede H, Gibson-Helm M, Norman RJ, Boyle J. Polycystic ovary 
+syndrome: perceptions and attitudes of women and primary health 
+care physicians on features of PCOS and renaming the syndrome. 
+J Clin Endocrinol Metab. 2014;99(1):E107-E111. https:/ /doi.org/ 
+10.1210/jc.2013-2978
+6.Helena TJ, Misso M, Costello M, et al. International evidence- 
+based guideline for the assessment and management of polycystic 
+ovary syndrome 2018. www.monash.edu/medicine/mchri/pcos
+7.Teede HJ, Misso ML, Costello MF, et al. Recommendations from 
+the international evidence-based guideline for the assessment and 
+management of polycystic ovary syndrome. Hum Reprod. 
+2018;33(9):1602-1618. https:/ /doi.org/10.1093/humrep/dey256
+8.Misso ML, Teede HJ. Evidence based guideline (EBG) develop -
+ment: A practical guide in knowledge transfer: practices, types 
+and challenges. In: Iliac D, ed. Knowledge Transfer: Practices, 
+Types and Challenges. New York: Nova Science Publishers, Inc; 
+2012:141-174.
+9.Brouwers MC, Kho ME, Browman GP, et al. AGREE II: advancing 
+guideline development, reporting and evaluation in health care. CMAJ. 
+2010;182(18):E839-E842. https:/ /doi.org/10.1503/cmaj.090449
+10.Mousa A, Tay CT, Teede H. Technical Report for the 2023 
+International Evidence-based Guideline for the Assessment and 
+Management of Polycystic Ovary Syndrome. Monash University. 
+Report; 2023. https://doi.org/10.26180/23625288.v1
+11.Weibel S, Popp M, Reis S, Skoetz N, Garner P, Sydenham E. 
+Identifying and managing problematic trials: a research integrity as-
+sessment tool for randomized controlled trials in evidence synthesis. 
+Res Synth Methods. 2023;14(3):357-369. https:/ /doi.org/10.1002/ 
+jrsm.1599
+12.Mol BW, Lai S, Rahim A, et al. Checklist to assess Trustworthiness 
+in RAndomised Controlled Trials (TRACT checklist): concept pro-
+posal and pilot. Res Integr Peer Rev. 2023;8(1):6. https:/ /doi.org/ 
+10.1186/s41073-023-00130-8
+13.National Health and Medical Research Council. NHMRC levels of 
+evidence and grades for recommendations for developers of guide -
+lines. Australia; 2009.
+14.National Health and Medical Research Council. NHMRC stand -
+ards and procedures for externally developed guidelines. 
+Australia; 2007.
+15.GRADE working group. Grading of Recommendations Assessment, 
+Development and Evaluation (GRADE) guidelines.G64 European Journal of Endocrinology, 2023, Vol. 189, No. 2Downloaded from https://academic.oup.com/ejendo/article/189/2/G43/7242362 by guest on 23 March 2025

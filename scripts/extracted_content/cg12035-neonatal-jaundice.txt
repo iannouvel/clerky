@@ -1,0 +1,926 @@
+# Extracted from: CG12035 Neonatal Jaundice.pdf
+# Guideline ID: cg12035-neonatal-jaundice
+# Content length: 40801 characters
+# Processing date: 1750066900.25412
+
+CG12035 Management of Neonatal Jaundice v5.1 November 2022 Page 1 of 24 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Management of Neonatal Jaundice Guideline 
+Summary statement: How does the 
+document support patient care? This guideline provides guidance on the recognition, 
+assessment and treatment of neonatal jaundice in 
+babies from birth to 28 days. 
+Staff/stakeholders involved in 
+development: Paediatric Consultants, Paediatric Registrars, Senior 
+Paediatric Nurses, Senior Midwifery staff. 
+Division: Women and Children’s 
+Department: Neonatology 
+Responsible Person: Chief of Service 
+Author: Community Midwifery Matron/ Consultant Paediatrician 
+For use by: All staff involved in the management of neonatal 
+jaundice. 
+Purpose: To provide evidence based guidance on neonatal 
+jaundice. 
+This document supports: NICE CG98 Jaundice in newborn babies under 28 days 
+(2016) 
+Key related documents: UH Sussex West Neonatal/Maternity Guidelines: 
+CG18006 NIPE SOP , CG1102 guideline for admission 
+to neonatal or transitional care -version , CG1134 
+postnatal care , CG1150 support for parents of babies - 
+with a poor prognosis 
+Approval by & date: Joint Obstetric Guideline Group – 16th November 2022 
+Neonatal and Maternity Guideline Review Meeting - 21st February 
+2023 
+Date uploaded: 30th March 2023 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable – Divisional Ratification only required 
+Ratification Date: Not Applicable – Divisional Ratification only required 
+Expiry Date: March 2025 
+Review date: September 2024 
+If you require this document in another format such as Braille, large print, audio or 
+another language please contact the Trusts Communications Team 
+Reference Number: CG12035 CG12035 Management of Neonatal Jaundice v5.1 November 2022 Page 2 of 24 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Version Date Author Status Comment 
+ 
+1.0 
+August 2012 N M Brennan, Adil 
+Siddiqui 
+Archived Amended section on exchange 
+to make it clearer that IVIG 
+should be considered. 
+2.0 July 2015 N M Brennan, Archived 
+3.0 June 2018 N Brennan. JOGG Archived Extension given to await 
+Paediatric Guideline Group. 
+ 
+4.0 
+March 2019 G. Addision 
+peer reviewed by N. 
+Brennan 
+Archived Addition of appendix 4. 
+
+5.0 
+
+March 2022 
+
+V. Sharp, 
+Consultant 
+Paediatrician 
+ 
+J. Collard, Clinical 
+Effectiveness 
+Support Midwife. 
+
+Archived • Antenatal review for 
+anticipated haemolytic 
+disease from maternal 
+antibodies. 
+• Midwife to perform 
+transcutaneous biliometer 
+reading in babies jaundiced 
+beteen 24-72 hrs and refer to 
+paed if indicated. 
+• Exchange transfusions to be 
+performed in tertiary unit. 
+• Guideline reassessed against 
+NICE CG98 
+• Reformatted to Trust 
+Standard and gender neutral 
+terms added. 
+ 
+5.1 
+November 2022 
+G. Thompson, 
+Clinical Educator 
+Live Inclusion of nursery nurses. 
+Clarification of ‘grey’ areas re- 
+written to be clearer 
+
+The interpretation and application of clinical guidelines will remain 
+the responsibility of the individual clinician. 
+ 
+If in doubt contact a senior colleague or expert CG12035 Management of Neonatal Jaundice v5.1 November 2022 Page 3 of 24 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Index 
+1.0 Aim of this document ................................ ................................ ................................ ... 4 
+2.0 Scope ................................ ................................ ................................ .......................... 4 
+3.0 Responsibilities ................................ ................................ ................................ ........... 4 
+4.0 Abbreviations used in this guideline ................................ ................................ ............. 4 
+5.0 Introduction ................................ ................................ ................................ ................. 4 
+6.0 Key priorities for implementation ................................ ................................ .................. 5 
+6.1 Antenatal ................................ ................................ ................................ ..................... 5 
+6.2 Postnatal ................................ ................................ ................................ ..................... 5 
+6.3 Risk factors for jaundice ................................ ................................ .............................. 6 
+6.4 Additional care ................................ ................................ ................................ ............. 6 
+6.5 Visual inspection for Jaundice ................................ ................................ ..................... 6 
+6.6 Jaundice within 24 hours of birth ................................ ................................ ................. 6 
+6.7 Jaundice between 24-72 hours of birth ................................ ................................ ........ 6 
+6.8 Measuring the bilirubin level ................................ ................................ ........................ 7 
+7.0 Use of Treatment Threshold Graphs ................................ ................................ ............ 7 
+7.1 Instructions ................................ ................................ ................................ .................. 7 
+7.2 Babies who have a bilirubin level below the treatment level ................................ ......... 8 
+8.0 Phototherapy ................................ ................................ ................................ ............... 8 
+8.1 Parental information ................................ ................................ ................................ .... 8 
+8.2 General care of the baby during phototherapy ................................ ............................. 9 
+8.3 Perform formal assessment ................................ ................................ ....................... 10 
+8.4 Consider ................................ ................................ ................................ .................... 10 
+8.5 Starting phototherapy ................................ ................................ ................................ 10 
+8.7 Type of phototherapy to use ................................ ................................ ...................... 11 
+8.8 Stopping Phototherapy ................................ ................................ .............................. 11 
+9.0 Indications for Exchange Transfusion and Immunoglobulin ................................ ........ 12 
+9.1 Factors that influence the risk of kernicterus ................................ .............................. 12 
+9.2 Use a double -volume exchange transfusion to treat babies: ................................ ...... 12 
+9.3 Intravenous immunoglobulin ................................ ................................ ...................... 12 
+10.0 Exchange transfusion ................................ ................................ ................................ 12 
+11.0 Care for babies with prolonged jaundice ................................ ................................ ..... 13 
+12.0 Audit ................................ ................................ ................................ .......................... 14 
+References ................................ ................................ ................................ ........................... 14 
+Appendix 1: Threshold table (babies 38 weeks or more gestational age) .............................. 15 
+Appendix 2: Investigation Pathway ................................ ................................ ........................ 16 
+Appendix 3: Phototherapy Pathway ................................ ................................ ...................... 17 
+Appendix 4: Exchange Transfusion Pathway ................................ ................................ ........ 18 
+Appendix 5: Investigation of unconjugated prolonged jaundice ................................ .............. 19 
+Appendix 6a: Investigation of Conjugated Jaundice ................................ .............................. 20 
+Appendix 6b: First Line Investigations ................................ ................................ ................... 21 
+Appendix 6c: Second Line Treatments ................................ ................................ .................. 23 
+Appendix 7: Neonatal referral pathway into hospital from community with 
+suspected jaundice ................................ ................................ ................................ .... 24 CG12035 Management of Neonatal Jaundice v5.1 November 2022 Page 4 of 24 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Management of Neonatal Jaundice Guideline 
+ 
+1.0 Aim of this document 
+ 
+To provide evidence -based guidance on the recognition and management of neonatal 
+jaundice in babies from birth to 28 days. 
+ 
+2.0 Scope 
+ 
+This guideline applies to: 
+ 
+• Midwives 
+• Neonatal staff 
+• Paediatricians 
+• Nursery nurses 
+ 
+3.0 Responsibilities 
+ 
+Midwives, neonatal staff & paediatricians: 
+ 
+• To access, read, understand and follow this guidance. 
+• To use their professional judgement in application of this guideline. 
+ 
+Management: 
+ 
+• To ensure the guideline is reviewed as required in line with Trust and National 
+recommendations. 
+• To ensure the guideline is accessible to all relevant staff. 
+ 
+4.0 Abbreviations used in this guideline 
+ 
+ETCOc - End-tidal carbon monoxide DAT - Direct Antiglobulin Test 
+PCV - Packed -Cell Volume IVIG - Intravenous Immunoglobulin 
+FBC - Full Blood Count SONet - Southampton Oxford Retrieval Team 
+TMBU - Trevor Mann Baby Unit DGH - District General Hospital 
+IVIG - Intravenous immunoglobulins 
+ 
+5.0 Introduction 
+ 
+• Jaundice is one of the most common conditions needing medical attention in 
+newborn babies. 
+• Approximately 60% of term and 80% of preterm babies develop jaundice in 
+the first week of life, and about 10% of breastfed babies are still jaundiced at 
+1 month of age. In most babies early jaundice is harmless. However, a few 
+babies will develop very high levels of bilirubin, which can be harmful if not CG12035 Management of Neonatal Jaundice v5.1 November 2022 Page 5 of 24 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ treated. 
+• Clinical recognition and assessment of jaundice can be difficult, particularly in 
+babies with dark skin tones. Once jaundice is recognised, there is uncertainty 
+about when to treat, and there is widespread variation in the use of 
+phototherapy and exchange transfusion. 
+• This guideline provides guidance on the recognition, assessment and 
+treatment of neonatal jaundice in babies from birth to 28 days and aligns with 
+NICE CG98: Jaundice in newborn babies under 28 days . 
+ 
+6.0 Key priorities for implementation 
+ 
+6.1 Antenatal 
+ 
+If there is anticipated haemolytic disease from maternal antibodies antenatally, these 
+antenatal women/people should always be discussed with local paediatrician if the plan is to 
+birth in a DGH. If born at a DGH, consider commencing phototherapy soon as possible after 
+birth while awaiting formal SBR results on the baby within 1 -2hrs of birth. 
+ 
+They are high risk for needing intravenous immunoglobulins (IVIG) and exchange transfusion 
+so the recommendation is to birth in a tertiary centre unless antibodies are felt to be minimal 
+and of low risk of inducing haemolysis. 
+ 
+6.2 Postnatal 
+ 
+Parents/carers should be given information about neonatal jaundice. This can be 
+written and /or verbal. 
+ 
+Information should include: 
+ 
+• Risk factors for developing jaundice. 
+• How to check the baby for jaundice. 
+• What to do if they suspect jaundice. 
+• The importance of recognising jaundice in the first 24 hours and of seeking 
+urgent medical advice. 
+• The importance of checking the baby’s nappies for dark urine or pale chalky stools. 
+• The fact that neonatal jaundice is common and reassurance that it is usually 
+transient and harmless. 
+• Reassurance that breastfeeding can usually continue. 
+• Encourage mothers of breastfed babies with jaundice to breastfeed frequently, and 
+to wake the baby for feeds if necessary. 
+• Provide lactation/feeding support to breastfeeding mothers whose baby is visibly 
+jaundiced. 
+• Please note that sunlight is not a treatment for hyperbilirubinaemia. CG12035 Management of Neonatal Jaundice v5.1 November 2022 Page 6 of 24 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 6.3 Risk factors for jaundice 
+ 
+• Gestational age under 38 weeks 
+• A previous sibling with neonatal jaundice requiring phototherapy 
+• Visible jaundice in the first 24 hours of life. 
+• Mother’s/birthing parent’s intention to breastfeed exclusively – ensure adequate 
+support is offered to all women/birthing parents that are intending to breastfeed 
+exclusively. 
+ 
+In all babies: 
+ 
+• Check whether there are risk factors. 
+• Examine the baby for jaundice at each contact, especially in the first 72 hours. 
+ 
+6.4 Additional care 
+ 
+Ensure babies with any of the above risk factors for jaundice receive an additional visual 
+inspection by a healthcare professional during the first 48 hours of life . 
+ 
+6.5 Visual inspection for Jaundice 
+ 
+Parents, carers and healthcare professionals should all look for jaundice (visual inspection) 
+in babies. When performing a visual inspection: 
+ 
+• Check the naked baby in bright and preferably natural light. 
+• Examination of the sclerae, gums and blanched skin is useful across all skin tones. 
+• Do not rely on visual inspection alone to estimate the bilirubin level in a baby with 
+suspected jaundice. 
+ 
+6.6 Jaundice within 24 hours of birth 
+ 
+• Babies who appear jaundiced on visual inspection pre 24hrs always need to 
+be assessed by a paediatrician. Refer for urgent Paediatric review (within 2 
+hours) to exclude pathological causes of jaundice. 
+• Measure and plot serum bilirubin immediately and repeat 6 hourly until the 
+level is both below the treatment threshold and stable and/or falling. 
+• Babies observations should be recorded in full on NEWTT 4 hourly 
+• Please note that measurement of jaundice levels using a transcutaneous 
+bilirubinometer is contraindicated in infants less than 24 hours age 
+
+6.7 Jaundice between 24-72 hours of birth 
+ 
+• Measure and record the bilirubin level urgently (within 6 hours) in all babies more 
+than 24 hours old with suspected or obvious jaundice. CG12035 Management of Neonatal Jaundice v5.1 November 2022 Page 7 of 24 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ • Between 24-72hrs to be seen and checked by a midwife first and a transcutaneous 
+biliorubinometer or heel prick reading taken if transcutaneous bilirubinometer not 
+available or infant less than 35 weeks. 
+• Refer for paediatric review if unwell and/or over phototherapy line or any other 
+concerns. 
+• A full set of observations should be performed and recorded 4 hourly on a NEWTT 
+chart 
+ 
+6.8 Measuring the bilirubin level 
+ 
+Babies who are not visibly jaundiced should not have bilirubin levels routinely measured. 
+ 
+When measuring the bilirubin level in babies that are visibly jaundiced: 
+ 
+• Use a transcutaneous bilirubinometer in babies with a gestational age of 35 
+weeks or more and postnatal age between 24 -72 hours. 
+• If a transcutaneous bilirubinometer is not available, the serum bilirubin level or gas 
+bilirubin level should be checked within 6 hours. 
+• If a transcutaneous bilirubinometer measurement indicates a bilirubin level 
+greater than 250 micromol/litre check the result by measuring the serum bilirubin 
+or gas bilirubin level. 
+• Always use serum bilirubin or gas bilirubin measurement as first line measurement 
+to determine the bilirubin level in babies: 
+o With jaundice in the first 24 hours of life. 
+o Less than 35 weeks gestational age. 
+o Babies at or above the relevant treatment thresholds according to 
+transcutaneous bilirubinometer reading for their postnatal age, and for all 
+subsequent measurements. 
+• Do not use an icterometer to measure bilirubin levels in babies. 
+ 
+The following should not be used to predict significant hyperbilirubinaemia: 
+ 
+• Umbilical cord blood bilirubin level. 
+• End-tidal carbon monoxide (ETCOc) measurement. 
+• Umbilical cord blood direct antiglobulin test (DAT) (Coombs' test). 
+ 
+7.0 Use of Treatment Threshold Graphs 
+ 
+7.1 Instructions 
+ 
+Treatment threshold graphs will help staff assess whether babies with jaundice should 
+be given phototherapy or exchange transfusion. Graphs relating to each gestational age 
+(from 23 - less than 38 weeks) can be accessed directly from the NICE website or are 
+available on the postnatal wards and Neonatal units. These graphs are only suitable for 
+babies up to 14 days of age. CG12035 Management of Neonatal Jaundice v5.1 November 2022 Page 8 of 24 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ The selected graph should be kept with the baby’s notes. Plot the baby’s bilirubin level on 
+the graph against the baby’s age. Each line on the horizontal (x) axis is equal to 6 hours 
+and each vertical line. 
+ 
+(y) is equal to 10 micromol/litre. Assess whether the threshold for either phototherapy or 
+exchange transfusion has been reached. Shade the single or multiple cells to show the type 
+of phototherapy that the baby is receiving on each day. 
+ 
+Note: The graph that reflects the baby’s gestational age at birth should always be used 
+i.e. not corrected when the baby reaches 7 days of age (e.g. for a baby born at 35 
+weeks, always use 35 week gestation chart). 
+ 
+Treatment threshold graphs showing bilirubin thresholds for phototherapy and exchange 
+transfusion in babies with hyperbilirubinaemia for different gestational ages are available in a 
+separate file from: 
+ 
+Tools and resources | Jaundice in newborn babies under 28 days | Guidance | NICE 
+ 
+Do not use the albumin/bilirubin ratio when making decisions about the management of 
+hyperbilirubinaemia. 
+ 
+Do not subtract conjugated bilirubin from total serum bilirubin when making decisions about 
+the management of hyperbilirubinaemia (see management thresholds in the threshold 
+table and the treatment threshold graphs). 
+ 
+7.2 Babies who have a bilirubin level below the treatment level 
+ 
+In babies who are clinically well, have a gestational age of 38 weeks or more and are more 
+than 24 hours old, and who have a bilirubin level that is below the phototherapy threshold but 
+within 50 micromol/litre of the threshold, repeat bilirubin measurement as follows: 
+ 
+• Within 18 hours for babies with risk factors for neonatal jaundice (those with a 
+sibling who had neonatal jaundice that needed phototherapy or a mother/birthing 
+parent who intends to exclusively breastfeed). 
+• Within 24 hours for babies without risk factors. 
+• If the bilirubin level that is below the phototherapy threshold by more than 
+50 micromol/litre, do not routinely repeat bilirubin measurement. 
+• If the bilirubin level remains within 50micromol/litre of the threshold continue to 
+monitor each serum bilirubin level every 18 -24 hours until more than 
+50micromol/litre below treatment line. 
+ 
+8.0 Phototherapy 
+ 
+8.1 Parental information 
+ 
+Offer parents or carers information about treatment for hyperbilirubinaemia, ensuring they 
+have a copy of the leaflet ‘Jaundice Information for Parents’. Discuss with the parents: CG12035 Management of Neonatal Jaundice v5.1 November 2022 Page 9 of 24 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+• Why phototherapy is being considered. 
+• Anticipated duration of treatment. 
+• Why phototherapy may be needed to treat significant hyperbilirubinaemia. 
+• The possible adverse effects of phototherapy. 
+• The need for eye protection and routine eye care. 
+• Reassurance that short breaks for feeding, nappy changing and cuddles will be 
+encouraged. 
+• Encourage mothers of breastfed babies with jaundice to breastfeed frequently, and 
+to wake the baby for feeds if necessary. 
+• Provide support with breastfeeding. 
+• What might happen if phototherapy fails. 
+• Rebound jaundice. 
+• Potential long-term adverse effects of phototherapy. 
+• Potential impact on breastfeeding and how to minimise this. 
+ 
+8.2 General care of the baby during phototherapy 
+ 
+• Place the baby in a supine position unless other clinical conditions prevent this. 
+• Ensure baby wearing nappy and eye protection only 
+• Perform routine eye care. 
+• Commence hotcot at 37oC alongside phototherapy treatment to support babies 
+thermoregulation. Maintain cot at 37oC provided babies temperature is 36.5-37.5oC. 
+Seek paediatric review if temperature outside of expected range. 
+• Discontinue hot cot once phototherapy treatment completed and infant fully dressed 
+• Use tinted head boxes as an alternative to eye protection in term babies 
+undergoing conventional ‘blue light’ phototherapy. 
+• Ensure treatment is applied to the maximum area of skin. 
+• Monitor hydration by monitoring feeding and assessing wet nappies. 
+• Weigh all babies daily. A baseline weight should be taken on commencement of 
+phototherapy. 
+• Support parents and carers and encourage them to interact with the baby. 
+
+8.3 Equipment: 
+ 
+• Ensure all phototherapy equipment is maintained and used according to the 
+manufacturers' guidelines. 
+• Phototherapy lamps should be placed directly above the cot/infant at a safe 
+distance (approximately 30cm above however exact measurement no longer 
+required). 
+• Use incubators or bassinets according to clinical need and availability. 
+• Do not use white curtains routinely with phototherapy as they may impair 
+observation of the baby. CG12035 Management of Neonatal Jaundice v5.1 November 2022 Page 10 of 24 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+8.4 Starting phototherapy 
+ 
+• Use serum bilirubin measurement and the treatment thresholds in the threshold 
+table (see Appendix 1 ) and treatment threshold graphs when considering the use 
+of phototherapy. 
+• In babies with a gestational age of 38 weeks or more whose bilirubin is in 
+the ‘consider phototherapy’ category in the threshold table, repeat the bilirubin 
+measurement in 6 hours regardless of whether or not phototherapy has 
+subsequently been started . 
+• During phototherapy repeat serum bilirubin measurement 4–6 hours after initiating 
+phototherapy then every 6 –12 hours when the serum bilirubin level is stable or 
+falling. 
+• Perform a full set of observations every 4 hours and record results on NEWTT 
+chart. Escalate any concerns to paediatric team when indicated. 
+ 
+8.5 During phototherapy: 
+ 
+• Using clinical judgement, encourage short breaks (of up to 30 minutes) for 
+breastfeeding, nappy changing and cuddles. 
+• Continue lactation/feeding support. 
+• Do not give additional fluids to babies who are breastfed. Maternal expressed milk 
+is the additional feed of choice if available, and when additional feeds are 
+indicated. 
+• Perform a full set of observations every 4 hours and record on NEWTT chart. 
+Escalate abnormal findings to paediatric team when indicated. 
+• Weigh infant daily and refer CG1129 Guideline for newborn feeding . 
+ 
+8.6 During intensified phototherapy: 
+ 
+• Do not interrupt phototherapy for feeding but continue administering 
+intravenous/enteral feeds. 
+• Continue lactation/feeding support so that breastfeeding can start again when 
+treatment stops. Maternal expressed milk is the additional feed of choice if 
+available, and when additional feeds are indicated. 
+ 
+Perform formal assessment: 
+ 
+• Clinical examination 
+• Serum bilirubin 
+• PCV 
+• Blood group of mother and baby 
+• Direct Antiglobulin Test (DAT) 
+ 
+Consider: 
+ 
+• FBC + blood film CG12035 Management of Neonatal Jaundice v5.1 November 2022 Page 11 of 24 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ • Blood glucose -6-phosphate taking account of ethnic origin 
+• In an unwell baby microbiological cultures of blood, urine and cerebrospinal fluid. 
+
+8.7 Type of phototherapy to use 
+ 
+(A) Single phototherapy treatment for term babies: 
+ 
+Use conventional ‘blue light’ phototherapy as treatment for jaundice in babies with a 
+gestational age of 37 weeks or more unless : 
+ 
+• The serum bilirubin level is rising rapidly (more than 8.5 micromol/litre per hour). 
+• When infant is more than 72 hours old and serum bilirubin level is within 50 
+micromol/litre below the threshold for which exchange transfusion (see the 
+threshold table). 
+ 
+Single phototherapy treatment for preterm babies: 
+ 
+Use either fibreoptic phototherapy or conventional ‘blue light’ phototherapy as 
+treatment for significant hyperbilirubinaemia in babies less than 37 weeks unless : 
+ 
+• The serum bilirubin level is rising rapidly (more than 8.5 micromol/litre per hour) 
+• When infant is more than 72 hours old and serum bilirubin level is within 50 
+micromol/litre below the threshold for which exchange transfusion (see the 
+threshold table). 
+ 
+(B) Continuous multiple phototherapy treatment for term and preterm babies: 
+ 
+Initiate continuous multiple phototherapy to treat all babies if any of the following apply: 
+ 
+• The serum bilirubin level is rising rapidly (more than 8.5 micromol/litre per hour). 
+• When infant is more than 72 hours old and serum bilirubin level is within 50 
+micromol/litre below the threshold for which exchange transfusion (see the 
+threshold table). 
+• The bilirubin level fails to respond to single phototherapy (serum bilirubin level 
+continues to rise or remains static) within 6 hours of starting single phototherapy. 
+ 
+8.8 Stopping Phototherapy 
+ 
+• Stop phototherapy once serum bilirubin has fallen to a level at least 50 
+micromol/litre below the phototherapy threshold (see threshold table and treatment 
+threshold graphs). 
+• Check for rebound of significant hyperbilirubinaemia with a repeat serum bilirubin 
+measurement 12–18 hours after stopping phototherapy. Babies do not 
+necessarily have to remain in hospital for this to be done. CG12035 Management of Neonatal Jaundice v5.1 November 2022 Page 12 of 24 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+9.0 Indications for Exchange Transfusion and Immunoglobulin 
+ 
+9.1 Factors that influence the risk of kernicterus 
+ 
+Babies with jaundice as being at increased risk of developing kernicterus if they have 
+any of the following: 
+ 
+• A serum bilirubin level more than 340 micromol/litre in term babies. 
+• A rapidly rising bilirubin level more than 8.5 micromol/litre per hour. 
+• Clinical features of acute bilirubin encephalopathy : lethargy, irritability, abnormal 
+muscle tone and posture, temporary cessation of breathing (apnoea) and 
+convulsions. 
+ 
+9.2 Use a double -volume exchange transfusion to treat babies: 
+ 
+• Whose serum bilirubin level indicates its necessity (see threshold table) 
+And/or 
+• With clinical features and signs of acute bilirubin encephalopathy. 
+ 
+9.3 Intravenous immunoglobulin 
+ 
+Use intravenous immunoglobulin (IVIG) (500 mg/kg over 4 hours) as an adjunct to continuous 
+multiple phototherapy in cases of Rhesus haemolytic disease or ABO haemolytic disease 
+when the serum bilirubin continues to rise by more than 8.5 micromol/litre per hour. 
+ 
+Offer parents or carers information on IVIG including: 
+ 
+• Why IVIG is being considered. 
+• Why IVIG may be needed to treat significant hyperbilirubinaemia. 
+• The possible adverse effects of IVIG. 
+• When it will be possible for parents or carers to see and hold the baby. 
+ 
+10.0 Exchange transfusion 
+ 
+This should be performed in a tertiary unit and at no point should it be considered in a 
+local DGH without (in the very least) clear conversations with tertiary centres first 
+(SONet or TMBU). 
+ 
+Offer parents or carers information on exchange transfusion including: 
+ 
+• The fact that exchange transfusion requires that the baby be admitted to an 
+intensive care bed. 
+• Why an exchange transfusion is being considered. 
+• Why an exchange transfusion may be needed to treat significant 
+hyperbilirubinaemia. CG12035 Management of Neonatal Jaundice v5.1 November 2022 Page 13 of 24 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ • The possible adverse effects of exchange transfusions. 
+• When it will be possible for parents or carers to see and hold the baby after 
+the exchange transfusion. 
+ 
+During exchange transfusion DO NOT: 
+ 
+• Stop continuous multiple phototherapy. 
+• Perform a single -volume exchange. 
+• Use albumin priming. 
+• Routinely administer intravenous calcium. 
+ 
+Following exchange transfusion: 
+ 
+• Maintain continuous multiple phototherapy. 
+• Measure serum bilirubin level within 2 hours and manage according to 
+threshold table and treatment threshold graphs. 
+ 
+11.0 Care for babies with prolonged jaundice 
+ 
+For babies who remain jaundiced at 10 days and are otherwise well and gaining weight, 
+the midwife should review on day 14 (for term) and day 21 (if received phototherapy 
+and/or preterm) and refer to the prolonged jaundice clinic if the jaundice persists (see 
+below). 
+ 
+In preterm and term babies with prolonged jaundice (jaundice lasting more than 14 days 
+in term babies and more than 21 days in preterm babies): 
+ 
+• Look for pale chalky stools and/or dark urine that stains the nappy. 
+• Measure the conjugated bilirubin. 
+• Carry out a FBC and a blood group determination (mother and baby) and DAT 
+(Coombs' test). Interpret the result taking account of the strength of reaction, and 
+whether mother/birthing parent received prophylactic anti-D immunoglobulin during 
+pregnancy. 
+• Carry out a urine culture. 
+• Ensure that routine metabolic screening has been performed. 
+• Follow expert advice about care for babies with a conjugated bilirubin 
+level more than 25 micromol/litre. 
+(See Appendix 2 and Appendix 3) CG12035 Management of Neonatal Jaundice v5.1 November 2022 Page 14 of 24 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 12.0 Audit 
+ 
+Suggested audit questions: 
+ 
+• Parents of infants identified at risk of neonatal jaundice were provided with 
+information and advice. 
+• Infants with jaundice appearing in the first 24 hours of life were referred for 
+immediate paediatric review. 
+• Parents of infants diagnosed with jaundice were provided with information and 
+advice on care and treatment for jaundice. 
+
+References 
+ 
+National Institute for Health and Clinical Excellence (NICE) (2010) Neonatal Jaundice. 
+London: NICE. Updated 2016. Available at: www.nice.org.uk CG12035 Management of Neonatal Jaundice v5.1 November 2022 Page 15 of 24 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Appendix 1: Threshold table (babies 38 weeks or more gestational age) 
+NICE CG98 Jaundice in newborn babies under 28 days - Threshold Table 
+ Appendix 2: Investigation Pathway 
+CG12035 Management of Neonatal Jaundice v5.1 November 2022 Page 16 of 24 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Appendix 3: Phototherapy Pathway 
+CG12035 Management of Neonatal Jaundice v5.1 November 2022 Page 17 of 24 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Appendix 4: Exchange Transfusion Pathway 
+CG12035 Management of Neonatal Jaundice v5.1 November 2022 Page 18 of 24 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Appendix 5: Investigation of unconjugated prolonged jaundice 
+CG12035 Management of Neonatal Jaundice v5.1 November 2022 Page 19 of 24 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+ Date 
+Performed 
+Specimen required 
+Result 
+Split Bilirubin and LFTs 
+INFECTIVE CAUSES 
+Urine Culture (clean catch) 
+Send to lab ONLY if 
+nitrites/leucocytes (+)ve Urine specimen in 
+sterile pot 
+ 
+Gal – 1- PUT if strong clinical 
+indication 
+(ie coagulopathy, profound 
+hypoglycaemia, mixed 
+hyperbilirubinemia, 
+consanguinity, dysmorphic 
+infant, non-pigmented stools) 
+
+D/w lab about 
+sending specimen 
+directly to the 
+Evelina for quick 
+HAEMOLYSIS 
+FBC + Film 
+BG + DAT 
+G6PD (for Mediterranean, 
+Asian, Chinese and 
+Afrocarribean) Appendix 6a: Investigation of Conjugated Jaundice 
+CG12035 Management of Neonatal Jaundice v5.1 November 2022 Page 20 of 24 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Introduction 
+ 
+This aid to current investigations of conjugated hyperbilirubinaemia is aimed at General 
+Paediatricians, who would typically perform the first line investigations of jaundiced babies 
+before/during discussion with a specialist unit. It is vital that sick infants and those with 
+pale stools are discussed early with a liver unit even while awaiting the results of first line 
+investigations. In some cases direct referral to a supra regional liver unit is appropriate to 
+exclude the diagnosis of biliary atresia as quickly as possible. 
+ 
+Guidelines 
+ 
+A split bilirubin (total and conjugated) should be checked on any baby who remains 
+jaundiced after 2 weeks of life (3 weeks for preterm infants). If the conjugated fraction is ≥ 
+25 (NICE Guideline) µmol/L and > 20% of total bilirubin then investigations for possible 
+liver disease should be instigated. Liver disease in the newborn can present as: 
+ 
+• An ill infant with liver failure (deranged clotting unresponsive to intravenous vitamin K). 
+• Neonatal hepatitis syndrome. 
+• Biliary obstruction (pale stools). 
+ 
+Early discussion with a supra regional liver unit is necessary for infants presenting with 
+neonatal liver failure or possible biliary obstruction . Do not delay discussion while waiting 
+for the results of all first line investigations. 
+ 
+It is particularly important to diagnose treatable causes of liver disease : 
+ 
+• Sepsis, galactosaemia, tyrosinaemia, endocrine disorders. 
+• Surgical causes - biliary atresia, choledochal cyst. 
+ 
+It is also important to prevent serious complications of cholestasis: 
+ 
+• Intracranial bleeding from malabsorption of vitamin K 
+• Hypoglycaemia 
+ 
+A table is provided below for the results of these investigations. This table can be appended 
+to any transfer/referral letter. 
+ 
+Contact Details for Supra regional Liver Units 
+Paediatric Liver Service 
+King’s College Hospital, London 
+Phone 020 3299 9000 Bleep 426 between 9 am and 5 pm 
+Fax 020 3299 3564 Bleep 235 between 5 pm and 9 am CG12035 Management of Neonatal Jaundice v5.1 November 2022 Page 21 of 24 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Appendix 6b: First Line Investigations 
+These refer to the well-baby with prolonged conjugated jaundice. 
+Haematology: 
+• Full blood count & reticulocyte count 
+• Group and Coomb’s 
+• INR, prothrombin time (if prolonged give IV vitamin K 300micrograms/kg and 
+repeat 12 hours later. If still prolonged contact a Liver Unit ) 
+• APTT, Fibrinogen 
+ 
+Biochemistry: 
+• Na, K, Urea, Creatinine, Bicarbonate 
+• Ca, Phosphate 
+• Total & conjugated bilirubin 
+• ALT/AST, Alk Phos, Gamma GT, Albumin 
+• Cholesterol, triglycerides 
+• Blood sugar &/or BM’s pre feed in the first 24 hours of admission 
+ 
+Infections: 
+• Blood cultures 
+• Urine culture and CMV 
+• Serology (IgM to Toxoplasma, rubella, CMV, Herpes) 
+• Hepatitis A, B, and C serology 
+ 
+Metabolic: 
+• Immunoreactive trypsin (up to 8 weeks) or sweat test 
+• Galactose -1-phosphate uridyl transferase 
+• Alpha 1-antitrypsin level and phenotype 
+• Plasma and urine amino acids 
+• Urine organic acids (succinyl acetone) 
+• Ward test urine for protein 
+ 
+Endocrine: 
+• Thyroid function tests 
+• Cortisol (preferably after 4 hour fast) ; if low, perform short synacthen test 
+ 
+Ultrasound scan of Abdomen after 4 hour fast: 
+• Presence of gall bladder 
+• Presence of choledochal cyst 
+Consultant to see stool colour (save specimen) CG12035 Management of Neonatal Jaundice v5.1 November 2022 Page 22 of 24 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Patient Details / Sticker Name: 
+
+Date of Birth: 
+Hospital Number: 
+ 
+Conjugated Hyperbilirubinaemia 
+First Line Invetigations 
+ 
+Lab 
+Investigation 
+Bottle Notes/ 
+Turnaround time Date 
+sent 
+Result 
+Blood Tests 
+
+Haematology 
+FBC & Reticulocytes 
+EDTA Hb: 
+WCC: 
+Plts: Retic Count: 
+Differential: 
+Clotting Citrate APTT: 
+Fibrinogen: PT: 
+DAT EDTA 
+Group and Save EDTA 
+
+Biochemistry LFTs (inc GGT & split 
+bilirubin) 
+Serum AST/ALT: 
+Alk Phos: 
+Total bili: GGT: 
+Albumin: 
+Conj Bili: 
+ 
+U&Es (inc Mg) 
+Serum Na: 
+Phos: 
+Creat: K: Ca: 
+Mg: Urea: 
+Bicarbonate Serum 
+Thyroid Function Serum 
+Alpha 1-antitrypsin Serum In house <7d 
+Cortisol (9:00am) Serum 
+Galactosaemia Screen Serum Guy’s 
+biochem 
+(020 718 
+Succinyl acetone 
+(tyrosinaemia screen) Blood 
+spot Wellchild 
+Lab (020 
+7188 0159) 
+IRT/Sweat test Blood 
+spot 
+
+Biochemistry 
+FASTING Glucose Fluoride 
+Lactate Fluoride 
+3-hydroxybutyrate Fluoride Bristol 
+(0117 3238383) 
+2 weeks 
+Free fatty acids Fluoride 
+Amino Acids Serum 
+Lipid profile Serum Chol: Trig: 
+Vitamin A&E Serum Southampt 
+on (0238 
+079 6438) 
+ 
+Serology/ 
+Microbiology Blood cultures Culture 
+TORCH screen (IgMs) Serum Toxo: 
+CMV: Rubella: 
+HSV: 
+Hep A/B/C Serum 
+Urine tests 
+ 
+Urine Organic acids In House 
+Amino acids (with blood sample) Bristol 
+(0117 3238383) 
+2 weeks 
+Protein:Creatinine 
+Reducing substances 
+MC&S 
+Other Tests 
+Radiology Liver/Abdo USS CG12035 Management of Neonatal Jaundice v5.1 November 2022 Page 23 of 24 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Appendix 6c: Second Line Treatments 
+ 
+As indicated by history, examination, results of first line investigations and/or following 
+discussion with a specialist consultant. 
+ 
+Hepatobiliary scintography: pretreat with phenobarbitone 5mg/kg nocte for at least 3 days 
+and continue to scan until 24 hours post isotope, if there has been no excretion before then. 
+Discuss with nuclear medicine early as isotope requires ordering. 
+ 
+Syphylis serology 
+Viral PCR (e.g. herpes, CMV) 
+ 
+Ophthalmology review: embryotoxon, chorioretinitis, septo -optic dysplasia 
+XR spine for butterfly vertebrae: Alagille syndrome 
+Cardiology opinion if murmur auscultated 
+Test for rare disorders: 
+• Ammonia, pyruvate 
+• Very long chain fatty acids 
+• Urine and serum for inborn errors of bile salt metabolism 
+• Acyl carnitines 
+• Alpha foetoprotein 
+• Isoelectric focusing of transferrin 
+• White cell enzymes for glycogen or lysosomal storage disease 
+• CSF for protein and lactate 
+• Tubular reabsorption of phosphate 
+• Ferritin and transferring saturation 
+• MRI head 
+• Muscle biopsy for mitochondrial cytopathy 
+• Bone marror for storage disorders 
+• Skin biopsy for fibroblast culture CG12035 Management of Neonatal Jaundice v5.1 November 2022 Page 24 of 24 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Appendix 7: Neonatal referral pathway into hospital from community with suspected jaundice 
+ 
+IF UNWELL - ANY AGE 
+and/or 
+MATERNAL SEPSIS WITHIN 72 
+HOURS OF BIRTH 
+
+If jaundice within 24 hrs of 
+age (any gestation) 
+NNU - SRH / Bluefin - WH 
+Within 2 hours for SBR 
+24- 72 hrs of age 
+If feeding concerns or 
+jaundice 
+Direct to TANGMERE or 
+BRAMBER Ward for 
+Babies over 72 hrs of age 
+Jaundice, feeding concerns, 
+excessive weight loss 
+Direct to TANGMERE or 
+BRAMBER Ward Paediatric middle grade to 
+decide location to be assessed 
+based on referral information: 
+A&E / CAU / Postnatal Ward 
+
+Liaise with Infant 
+Feeding Team Follow jaundice / 
+weight loss guidance 
+
+Regular Paediatric 
+Review (daily at least) 
+If observations normal 
+and issues is feeding or 
+weight loss related admit 
+to TANGMERE or 
+BRAMBER Ward 
+
+If no admission please If unwell admit to 
+Howard or Bluefin 
+Ward 
+
+Liaise with Infant 
+Feeding Team 
+Discharge from Any Clinical Area 
+Please liaise back to community midwife - inform them of plan +/ - 
+outstanding results via Postnatal Ward Clark (to place on discharge 
+spreadsheet) liaise back to 
+community midwife - 
+inform them of plan +/- 
+outstanding results 
+If baby unwell floppy, 
+unresponsive, hypothermic, 
+respiratory concerns 
+CALL 999

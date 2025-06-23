@@ -1,0 +1,230 @@
+# Extracted from: UHSx Retained Placenta protocol.pdf
+# Guideline ID: uhsx-retained-placenta-protocol
+# Content length: 11466 characters
+# Processing date: 1750066902.2711108
+
+CLINICAL PROTOCOL 
+Due for review: 21st August 2027 
+Name of Protocol : Retained Placenta v1.0 
+For use at: PRH, RSCH, SRH, WH 
+
+ Page 1 of 7 Retained Placenta Protocol 
+Table of Contents 
+ 
+1.0 Introduction ................................ ................................ ................................ ........................... 1 
+2.0 Responsibilities ................................ ................................ ................................ ..................... 1 
+3.0 Definitions and Abbreviations used within this protocol ................................ .......................... 2 
+5.0 Causes ................................ ................................ ................................ ................................ .. 2 
+6.0 Management ................................ ................................ ................................ ......................... 2 
+6.1 Immediate management if NOT bleeding ................................ ................................ .............. 2 
+6.2 Immediate management if actively bleeding ................................ ................................ .......... 3 
+6.3 Retained placenta in births under 24 weeks gestation ................................ ........................... 3 
+7.0 Post procedure observations and care ................................ ................................ .................. 3 
+Monitoring ................................ ................................ ................................ ................................ ......... 5 
+Additonal Guidance / Information ................................ ................................ ................................ ...... 5 
+See Also / Linked Documents ................................ ................................ ................................ ........... 5 
+Clinical protocol governance and approval ................................ ................................ ........................ 6 
+Protocol Version Control Log ................................ ................................ ................................ ............ 6 
+ 
+1.0 INTRODUCTION 
+This protocol provides evidence based guidance for all staff on the diagnosis and safe management 
+of retained placenta. It applies to obstetric, medical and midwifery staff. 
+A retained placenta is diagnosed when delivery of the placenta is not completed within 30 minutes 
+of the birth with active management or within 60 minutes of the birth with physiological 
+management. 
+• Incidence: 1:100 - 200 births. 
+• Recurrence rate of about 8 -10% 
+• Persistence atony is often caused by retained placental tissue or blood clots. 
+2.0 RESPONSIBILITIES 
+It is the responsibility of all midwifery and medical staff to: 
+• Access, read, understand and follow this guidance. 
+ 
+It is the responsibility of the division to: 
+• Ensure the guideline is reviewed as required in line with Trust and National 
+recommendations. 
+• Ensure the guideline is accessible to all relevant staff. CLINICAL PROTOCOL 
+Due for review: 21st August 2027 
+Name of Protocol : Retained Placenta v1.0 
+For use at: PRH, RSCH, SRH, WH 
+
+ Page 2 of 7 3.0 DEFINITIONS AND ABBREVIATIONS USED WITHIN THIS PROTOCOL 
+MEOWS - Modified Early Obstetric 
+Warning Score MIS - Maternity Information System eg 
+Badgernet 
+5.0 CAUSES 
+• Trapped separated or partially separated placenta . 
+• A full bladder 
+• Uterine atony 
+• A constriction ring 
+• A uterine abnormality 
+• A morbidly adherent placenta - in this relatively uncommon condition (1 in 1500 births), 
+the trophoblast has invaded the decidua and myometrium to varying degrees (placenta 
+accrete / increta) or has penetrated to the serosal coat (placenta percreta). 
+6.0 MANAGEMENT 
+6.1 IMMEDIATE MANAGEMENT IF NOT BLEEDING 
+• Inform the labour ward coordinator. 
+• If the mother or birthing parent has opted for physiological management active 
+management is recommended when there is a failure to deliver the placenta within 60 
+minutes. 
+• Consent for the commencement of active management should be obtained. 
+• Catheterise the bladder with an indwelling catheter and leave in situ to monitor output. 
+• Advise the mother or birthing person to latch the baby on to the breast to encourage a 
+uterine contraction. If the mother or birthing person has chosen not to breastfeed explain 
+the benefits of breastfeeding for the mother or birthing person and baby in this situation 
+(uterine contraction). Respect the mother or birthing person’s wishes ensuring provision of 
+informed choice. 
+• Support the mother or birthing person to sit upright (possibly on top of a bed pan or a walk 
+to the toilet) 
+• Unclamp the umbilical cord and allow blood to drain from the maternal birthing person 
+end. 
+• Once retained placenta is diagnosed at a homebirth, consider transfer via ambulance into 
+a hospital setting for further management. 
+• Inform the obstetric registrar of the situation. 
+• Site a 16G wide-bore venflon and take blood for group and save, full blood count and 
+U&Es. 
+• Consider IV infusion of crystalloid (Hartmann’s or sodium chloride 0.9%). 
+• Monitor the pulse and BP every 15 minutes . 
+• Observe closely for bleeding. 
+• Keep the mother or birthing person nil by mouth. 
+• Intravenous oxytocin infusion should not be used if there is no active bleeding. 
+ CLINICAL PROTOCOL 
+Due for review: 21st August 2027 
+Name of Protocol : Retained Placenta v1.0 
+For use at: PRH, RSCH, SRH, WH 
+
+ Page 3 of 7 If the placenta remains undelivered 30 minutes after active management or 1 hour following 
+physiological management (or sooner if there is concern about the woman or birthing person’s 
+condition) an assessment of the need to remove the placenta should be offered. 
+NB: Do not pull on the cord if the placenta fails to descend with gentle traction. 
+If manual removal of the placenta is required, this must be carried out under effective 
+regional anaesthesia (or general anaesthesia when necessary). 
+6.2 IMMEDIATE MANAGEMENT IF ACTIVELY BLEEDING 
+Follow the procedures outlined above and: 
+• Commence an oxytocin infusion 40 units in 50mls of sodium chloride 0.9% at 
+12.5mls/hour via a syringe driver. 
+• Prepare for manual removal of placenta in theatre. 
+• Obstetric registrar/SHO to obtain consent for procedure. 
+• Request crossmatch of 2 units of blood. 
+• Obstetric registrar to inform anaesthetist. 
+• Commence PPH proforma. See Maternity obstetric haemorrhage guidance. 
+• Labour ward coordinator to inform theatre team. 
+• Maintain an accurate fluid balance on MIS (including a running blood loss total). 
+• Give one dose of prophylactic intravenous Cefuroxime IV 1.5g and Metronidazole IV 
+500mg (unless in the case of IgE penicillin allergy in which case use Clindamycin IV 
+240mg and Gentamycin IV 900mg) - Refer to Adult Antimicrobial Guide ) 
+ 
+Further oxytocic can be considered to help contract the uterus after manual removal of the 
+placenta if there is ongoing blood loss. 
+ 
+6.3 RETAINED PLACENTA IN BIRTHS UNDER 24 WEEKS GESTATION 
+ 
+• Administer 10units oxytocin IM (5 iu IV if access in place and actively bleeding NICE 2023 ) 
+following the birth of baby unless the delivery of the placenta is imminent. 
+• If the placenta is not delivered within the next 30 minutes contact the on -call obstetric 
+team for review. 
+• Carboprost (eg Hemabate) 250 micrograms IM can be used if deemed appropriate by an 
+obstetrician. 
+• Surgical intervention should be undertaken if the placenta is not delivered within 2 hours 
+(max) after the birth of baby , unless there is a clinical indication to intervene sooner . 
+ 
+The timing and urgency of any intervention should be guided by the clinical picture at all times in 
+liaison with the senior obstetrician on -call. 
+7.0 POST PROCEDURE OBSERVATIONS AND CARE 
+Please follow recovery care guidance. Observations should include : CLINICAL PROTOCOL 
+Due for review: 21st August 2027 
+Name of Protocol : Retained Placenta v1.0 
+For use at: PRH, RSCH, SRH, WH 
+
+ Page 4 of 7 • Level of consciousness (using AVPU as per MEOW S chart ) 
+• Blood pressure 
+• Respiratory rate 
+• Oxygen saturation by pulse oximetry 
+• Verbal pain and nausea score 
+• Uterine fundus height 
+• Vaginal bleeding 
+• Overall appearance (well or unwell) 
+ 
+Ensure this is recorded on the correct type of MEOWS observation form on MIS that includes 
+consciousness. 
+Please note some pulse oximeters can underestimate or overestimate oxygen saturation levels, 
+especially if the saturation level is borderline. Overestimation has been reported in people with dark 
+skin so hypoxaemia may not be detected. (NICE 2024) 
+These observations, if stable, can then be recorded ½ hourly for 1 hour and then hourly until fit for 
+discharge from recovery. 
+Once fit for discharge from the recovery care 4 hourly observations should be recorded for the next 
+12 -24 hours as indicated . 
+• Maintain fluid balance. 
+• Maintain an oxytocin infusion for 4 hours post manual removal of placenta (patient to 
+remain on labour ward until this is completed). 
+• Promote mother or birthing person and baby cont act at the earliest opportunity, preferably 
+skin to skin when safe to do so and assist the mother or birthing person to breastfeed if 
+they have chosen this method of feeding. 
+• The mother or birthing person should remain on labour ward until their condition is stable. 
+• They should have a full obstetric review prior to transfer to the postnatal ward. 
+ 
+ CLINICAL PROTOCOL 
+Due for review: 21st August 2027 
+Name of Protocol : Retained Placenta v1.0 
+For use at: PRH, RSCH, SRH, WH 
+
+ Page 5 of 7 MONITORING 
+Issue being 
+monitored Monitoring 
+method Responsibility Frequency Reviewed by and 
+actions arising 
+followed up by 
+Retained 
+placenta that 
+resulted in PPH 
+>1500mls Case review Patient Safety As indicated by 
+DATIX Clinical Governance 
+Lead 
+ 
+ADDITONAL GUIDANCE / INFORMATION 
+NICE 2023 NG235 Intapartum Care 
+PROMPT Course Manual Third Edition 
+SEE ALSO / LINKED DOCUMENT S 
+Obstetric Haemorrhage 
+Care in Labour CLINICAL PROTOCOL 
+Due for review: 21st August 2027 
+Name of Protocol : Retained Placenta v1.0 
+For use at: PRH, RSCH, SRH, WH 
+
+ Page 6 of 7 CLINICAL PROTOCOL GOVERNANCE AND APPROVAL 
+OWNER S. Adamson, F. Usifo 
+AUTHOR/FURTHER INFORMATION D. Utting, Consultant Obstetrician 
+A. Davey, Consultant Obstetrician 
+PROTOCOL VERSION v1.0 
+RELATED POLICIES N/a 
+RELATED DOCUMENTS Maternity clinical document: 
+Obstetric Haemorrhage 
+Care in Labour 
+STANDARDS NICE 2023 NG235 Intapartum Care 
+SUPERSEDED DOCUMENTS CG1146 Retained Placenta 
+MP052 Retained Placenta 
+REVIEW DUE 21st August 2027 
+Approval 
+Joint Obstetric Guideline Group Date approved: 15th May 2024 
+W&C Clinical Effectiveness Group Date approved: 20th June 2022 
+Consultation 
+Medicines Governance Group Date approved: 12th March 2024 
+Antimicrobial Stewardship Group Date approved 11th March 2024 
+Ratification 
+Clinical Document Approval Group Date approved: 21st August 2024 
+PROTOCOL VERSION CONTROL LOG 
+ 
+Version Date Author(s) Comment 
+1.0 April 
+2024 D. Utting, Consultant 
+Obstetrician 
+A. Davey, Consultant 
+Obstetrician New Trust wide protocol replacing: 
+• CG1146 Retained Placenta 
+• MP052 Retained Placenta CLINICAL PROTOCOL 
+Due for review: 21st August 2027 
+Name of Protocol : Retained Placenta v1.0 
+For use at: PRH, RSCH, SRH, WH 
+
+ Page 7 of 7 
+*Protocol which includes any prescribing must include approval from UHSussex Medicines 
+Governance Committee (MGC)

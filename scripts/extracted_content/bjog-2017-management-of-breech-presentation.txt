@@ -1,0 +1,935 @@
+# Extracted from: BJOG - 2017 -  Management of Breech Presentation.pdf
+# Guideline ID: bjog-2017-management-of-breech-presentation
+# Content length: 94268 characters
+# Processing date: 1732953490.7739275
+
+Management of Breech Presentation
+Green-top Guideline No. 20b
+March 2017
+Please cite this paper as: Impey LWM, Murphy DJ, Grifﬁths M, Penna LK on behalf of the Royal College of Obstetricians
+and Gynaecologists. Management of Breech Presentation. BJOG 2017 ; 124: e151 –e177.
+DOI: 10.1111/1471-0528.14465
+Management of Breech Presentation
+This is the fourth edition of this guideline originally published in 1999 and revised in 2001 and 2006 under the same
+title.
+Executive summary of recommendations
+What information should be given to women with breech presentation at term?
+Women with a breech presentation at term should be offered external cephalic version (ECV)
+unless there is an absolute contraindication. They should be advised on the risks and bene ﬁts
+of ECV and the implications for mode of delivery. [ New 2017 ]A
+Women who have a breech presentation at term following an unsuccessful or declined offer of
+ECV should be counselled on the risks and bene ﬁts of planned vaginal breech delivery versus
+planned caesarean section./check
+What information about the baby should be given to women with breech presentation at term regarding mode of
+delivery?
+Women should be informed that planned caesarean section leads to a small reduction in
+perinatal mortality compared with planned vaginal breech delivery. Any decision to perform acaesarean section needs to be balanced against the potential adverse consequences that mayresult from this.A
+Women should be informed that the reduced risk is due to three factors: the avoidance ofstillbirth after 39 weeks of gestation, the avoidance of intrapartum risks and the risks ofvaginal breech birth, and that only the last is unique to a breech baby. [ New 2017 ]B
+Women should be informed that when planning delivery for a breech baby, the risk of
+perinatal mortality is approximately 0.5/1000 with caesarean section after 39+0weeks of
+gestation; and approximately 2.0/1000 with planned vaginal breech birth. This compares toapproximately 1.0/1000 with planned cephalic birth.C
+Selection of appropriate pregnancies and skilled intrapartum care may allow planned vaginalbreech birth to be nearly as safe as planned vaginal cephalic birth. [ New 2017 ]C
+RCOG Guideline No. 20b e152 of e177 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14465 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Women should be informed that planned vaginal breech birth increases the risk of low Apgar
+scores and serious short-term complications, but has not been shown to increase the risk oflong-term morbidity. [ New 2017 ]B
+Clinicians should counsel women in an unbiased way that ensures a proper understanding of
+the absolute as well as relative risks of their different options. [ New 2017 ] /check
+What information should women having breech births be given about their own immediate and future health?
+Women should be informed that planned caesarean section for breech presentation at term
+carries a small increase in immediate complications for the mother compared with plannedvaginal birth.A
+Women should be informed that maternal complications are least with successful vaginal birth;planned caesarean section carries a higher risk, but the risk is highest with emergencycaesarean section which is needed in approximately 40% of women planning a vaginal breechbirth. [ New 2017 ] B
+Women should be informed that caesarean section increases the risk of complications in future
+pregnancy, including the risks of opting for vaginal birth after caesarean section, the increasedrisk of complications at repeat caesarean section and the risk of an abnormally invasiveplacenta. [ New 2017 ]B
+Women should be given an individualised assessment of the long-term risks of caesarean
+section based on their individual risk pro ﬁle and reproductive intentions, and counselled
+accordingly. [ New 2017 ]/check
+What information should women having breech births be given about the health of their future babies?
+Women should be informed that caesarean section has been associated with a small increase
+in the risk of stillbirth for subsequent babies although this may not be causal. [ New 2017 ]C
+What factors affect the safety of vaginal breech delivery?
+Antenatal assessment
+Following the diagnosis of persistent breech presentation, women should be assessed for
+risk factors for a poorer outcome in planned vaginal breech birth. If any risk factor isidenti ﬁed, women should be counselled that planned vaginal birth is likely to be associated
+with increased perinatal risk and that delivery by caesarean section is recommended.[New 2017 ]/check
+RCOG Guideline No. 20b e153 of e177 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14465 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Women should be informed that a higher risk planned vaginal breech birth is expected where
+there are independent indications for caesarean section and in the following circumstances:C
+/C15Hyperextended neck on ultrasound.
+/C15High estimated fetal weight (more than 3.8 kg).
+/C15Low estimated weight (less than tenth centile).
+/C15Footling presentation.
+/C15Evidence of antenatal fetal compromise. [ New 2017 ]
+The role of pelvimetry is unclear. [ New 2017 ]C
+Skill and experience of birth attendant
+The presence of a skilled birth attendant is essential for safe vaginal breech birth.C
+Units with limited access to experienced personnel should inform women that vaginal breech
+birth is likely to be associated with greater risk and offer antenatal referral to a unit whereskill levels and experience are greater. [ New 2017 ]/check
+Intrapartum assessment and management of women presenting unplanned with breech presentation in labour
+Where a woman presents with an unplanned vaginal breech labour, management should
+depend on the stage of labour, whether factors associated with increased complications arefound, availability of appropriate clinical expertise and informed consent. [ New 2017 ]C
+Women near or in active second stage of labour should not be routinely offered caesarean
+section. [ New 2017 ] /check
+Where time and circumstances permit, the position of the fetal neck and legs, and the fetal
+weight should be estimated using ultrasound, and the woman counselled as with plannedvaginal breech birth. [ New 2017 ]/check
+All maternity units must be able to provide skilled supervision for vaginal breech birth where a
+woman is admitted in advanced labour and protocols for this eventuality should be developed.[New 2017 ]/check
+What is appropriate intrapartum management of the term breech?
+Are induction and augmentation appropriate?
+Women should be informed that induction of labour is not usually recommended.
+Augmentation of slow progress with oxytocin should only be considered if the contractionfrequency is low in the presence of epidural analgesia. [ New 2017 ]D
+RCOG Guideline No. 20b e154 of e177 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14465 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+What is the role of epidural analgesia?
+Women should be informed that the effect of epidural analgesia on the success of vaginal
+breech birth is unclear, but that it is likely to increase the risk of intervention. [ New 2017 ] /check
+What fetal monitoring should be recommended?
+Women should be informed that while evidence is lacking, continuous electronic fetal
+monitoring may lead to improved neonatal outcomes. [ New 2017 ]D
+Where should vaginal breech birth take place?
+Birth in a hospital with facilities for immediate caesarean section should be recommended with
+planned vaginal breech birth, but birth in an operating theatre is not routinely recommended.D
+What guidelines should be in place for the management of breech birth?
+Women should be informed that adherence to a protocol for management reduces the chancesof early neonatal morbidity. [ New 2017 ]C
+The essential components of planned vaginal breech birth are appropriate case selection,
+management according to a strict protocol and the availability of skilled attendants. [ New 2017 ]/check
+Management of the ﬁrst stage and passive second stage
+Adequate descent of the breech in the passive second stage is a prerequisite for
+encouragement of the active second stage. [ New 2017 ]D
+What position should the woman be in for delivery during a vaginal breech birth?
+Either a semirecumbent or an all-fours position may be adopted for delivery and should
+depend on maternal preference and the experience of the attendant. If the latter position isused, women should be advised that recourse to the semirecumbent position may becomenecessary. [ New 2017 ]/check
+What are the principles for the management of active second stage and vaginal breech birth?
+Assistance, without traction, is required if there is delay or evidence of poor fetal condition.
+[New 2017 ] /check
+All obstetricians and midwives should be familiar with the techniques that can be used to assist
+vaginal breech birth. The choice of manoeuvres used, if required to assist with delivery of thebreech, should depend on the individual experience/preference of the attending doctor ormidwife. [ New 2017 ]/check
+RCOG Guideline No. 20b e155 of e177 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14465 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Management of the preterm breech
+How should preterm singleton babies in breech presentation be delivered?
+Women should be informed that routine caesarean section for breech presentation in
+spontaneous preterm labour is not recommended. The mode of delivery should beindividualised based on the stage of labour, type of breech presentation, fetal wellbeing andavailability of an operator skilled in vaginal breech delivery.C
+Women should be informed that caesarean section for breech presentation in spontaneouspreterm labour at the threshold of viability (22 –25
++6weeks of gestation) is not routinely
+recommended.C
+Women should be informed that planned caesarean section is recommended for pretermbreech presentation where delivery is planned due to maternal and/or fetal compromise.[New 2017 ]/check
+How should labour with a singleton preterm breech be managed?
+Labour with a preterm breech should be managed as with a term breech. [ New 2017 ]C
+Where there is head entrapment, incisions in the cervix (vaginal birth) or vertical uterine
+incision extension (caesarean section) may be used, with or without tocolysis.D
+Management of the twin pregnancy with a breech presentation
+How should a ﬁrst twin in breech presentation be delivered?
+Women should be informed that the evidence is limited, but that planned caesarean sectionfor a twin pregnancy where the presenting twin is breech is recommended. [ New 2017 ]C
+Routine emergency caesarean section for a breech ﬁrst twin in spontaneous labour, however, is
+not recommended. The mode of delivery should be individualised based on cervical dilatation,station of the presenting part, type of breech presentation, fetal wellbeing and availability ofan operator skilled in vaginal breech delivery. [ New 2017 ]C
+How should a second twin in breech presentation be delivered?
+Routine caesarean section for breech presentation of the second twin is not recommended in
+either term or preterm deliveries.B
+RCOG Guideline No. 20b e156 of e177 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14465 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+What organisational and governance arrangements should be in place to support a routine vaginal
+breech delivery service?
+Simulation equipment should be used to rehearse the skills that are needed during vaginal
+breech birth by all doctors and midwives. /check
+Guidance for the case selection and management of vaginal breech birth should be developedin each department by the healthcare professionals who supervise such births. Adherence tothe guidelines is recommended to reduce the risk of intrapartum complications. [ New 2017 ]C
+Departments should consider developing a checklist to ensure comprehensive counselling of the
+woman regarding planned mode of delivery for babies presenting by the breech. [ New 2017 ]/check
+1. Purpose and scope
+The aim of this guideline is to provide up-to-date information on the modes of delivery for women with breech
+presentation. The scope is conﬁned to decision making regarding the route of delivery and choice of varioustechniques used during delivery. It does not include antenatal or postnatal care. External cephalic version (ECV) isthe topic of the separate Royal College of Obstetricians and Gynaecologists (RCOG) Green-top Guideline No. 20a:External Cephalic Version and Reducing the Incidence of Term Breech Presentation .
+1
+2. Introduction and background epidemiology
+Breech presentation occurs in 3 –4% of term deliveries and is more common preterm. It is associated with uterine
+and congenital abnormalities, has a signiﬁcant recurrence risk and is more common in nulliparous women.2Term
+babies presenting by the breech have worse outcomes than cephalic ones, irrespective of the mode of delivery.3
+Publication of the Term Breech Trial (TBT)4was followed by a large reduction in the incidence of planned vaginal
+birth. Nevertheless, vaginal breech births will continue, not merely because of failure to detect breech presentationand the limitations of ECV, but for reasons of maternal choice. Lack of experience has led to a loss of skills essentialfor these deliveries. Conversely, caesarean section can have serious long-term consequences.
+3. Identi ﬁcation and assessment of evidence
+This guideline was developed using standard methodology for developing RCOG Green-top Guidelines. The
+Cochrane Library (including the Cochrane Database of Systematic Reviews, the Database of Abstracts of Reviews ofEffects [DARE] and the Cochrane Central Register of Controlled Trials [CENTRAL]), EMBASE, MEDLINE and Tripwere searched for relevant papers. The search was inclusive of all relevant articles published between August 2005and April 2016. The databases were searched using the relevant Medical Subject Headings (MeSH) terms, including allsubheadings and synonyms, and this was combined with a keyword search. Search terms included ‘breech’, ‘breechnear presentation’, ‘breech presentation’, ‘breech near delivery’, ‘breech delivery’, ‘breech presentation and delivery’,‘breech near extraction’, ‘breech extraction’, ‘Mauriceau-Smellie-Veit’, ‘Burns-Marshall’, ‘after-coming head’ and‘external cephalic version’. The search was limited to studies on humans and papers in the English language. Relevantguidelines were also searched for using the same criteria in the National Guideline Clearinghouse and the NationalInstitute for Health and Care Excellence (NICE) Evidence Search.
+RCOG Guideline No. 20b e157 of e177 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14465 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Where possible, recommendations are based on available evidence. Areas lacking evidence are highlighted and
+annotated as ‘good practice points’. Further information about the assessment of evidence and the grading of
+recommendations may be found in Appendix I.
+4. What information should be given to women with breech presentation at term?
+Women with a breech presentation at term should be offered ECV unless there is an absolute
+contraindication. They should be advised on the risks and bene ﬁts of ECV and the implications
+for mode of delivery.A
+Women who have a breech presentation at term following an unsuccessful or declined offer of
+ECV should be counselled on the risks and bene ﬁts of planned vaginal breech delivery versus
+planned caesarean section./check
+Please refer to the RCOG Green-top Guideline No. 20a: External Cephalic Version and Reducing the Incidence of Term
+Breech Presentation .1
+4.1 What information about the baby should be given to women with breech presentation at
+term regarding mode of delivery?
+Women should be informed that planned caesarean section leads to a small reduction in
+perinatal mortality compared with planned vaginal breech delivery. Any decision to perform acaesarean section needs to be balanced against the potential adverse consequences that mayresult from this.A
+Women should be informed that the reduced risk is due to three factors: the avoidance ofstillbirth after 39 weeks of gestation, the avoidance of intrapartum risks and the risks ofvaginal breech birth, and that only the last is unique to a breech baby.B
+Women should be informed that when planning delivery for a breech baby, the risk ofperinatal mortality is approximately 0.5/1000 with caesarean section after 39
++0weeks of
+gestation; and approximately 2.0/1000 with planned vaginal breech birth. This compares toapproximately 1.0/1000 with planned cephalic birth.C
+Selection of appropriate pregnancies and skilled intrapartum care may allow planned vaginalbreech birth to be nearly as safe as planned vaginal cephalic birth.C
+Women should be informed that planned vaginal breech birth increases the risk of low Apgarscores and serious short-term complications, but has not been shown to increase the risk oflong-term morbidity.B
+Clinicians should counsel women in an unbiased way that ensures a proper understanding ofthe absolute as well as relative risks of their different options./check
+RCOG Guideline No. 20b e158 of e177 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14465 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Observational, usually retrospective, series have consistently favoured elective caesarean birth over vaginal
+breech delivery. A meta-analysis of 27 studies examining term breech birth,5which included 258 953 births
+between 1993 and 2014, suggested that elective caesarean section was associated with a two- to ﬁve-foldreduction in perinatal mortality when compared with vaginal breech delivery although the absolute risk ofperinatal mortality with vaginal delivery was 3/1000. This meta-analysis is limited by the retrospectivenature of many of the studies and the absence of complete intention to treat analysis. The increasedpractice of caesarean section accounts for only a small proportion (16%) of the decline in delivery-relatedperinatal death.
+6Evidence
+level 2 ++
+The TBT4randomised 2088 women to either planned caesarean section or planned vaginal birth at 121 centres
+in 26 countries. This trial was by far the major contributor to the Cochrane Review7which demonstrated
+a reduction in perinatal mortality with planned caesarean section (RR 0.29, 95% CI 0.10 –0.86) from
+1.3 to 0.3%. This trial also reported a reduction in the composite outcome of serious neonatal morbidity(RR 0.36, 95% CI 0.19 –0.65). A number of subanalyses examining operator experience, prolonged labour
+or augmentation, and national (high or low) perinatal mortality rates failed to identify a group for whommorbidity was not increased with planned vaginal delivery although they were underpowered to assessmortality rates.
+A 2-year follow-up of 923 out of 1159 children from the TBT
+8showed no difference in ‘death or
+neurodevelopmental delay’ (RR 1.09, 95% CI 0.52 –2.30). This renders the morbidity, but not mortality, ﬁndings
+(and therefore the ‘intention to treat’ analysis in the original trial paper) less important.Evidence
+level 1 +
+The TBT led to wide-scale elective caesarean section for breech presentation, with a corresponding
+reduction in perinatal mortality.9However, criticism of the trial followed,10–12particularly regarding case
+selection and intrapartum management. For instance, 31% had no ultrasound (to exclude an extendedneck), growth-restricted babies were included and a few women were randomised in violation of theprotocol and included in the ‘intention to treat’ analysis. A senior obstetrician was absent from 31.9% of birthsand any obstetrician was absent from 13% of births in the planned vaginal delivery group. Electronic fetalmonitoring (EFM) was not used in most and prolonged active second stage was not prohibited which, when itoccurred, was associated with increased morbidity.
+13‘Serious’ neonatal morbidity encompassed some
+frequently benign outcomes and was twice as common in countries with a low perinatal mortality rate(5.1% versus 2.5%). Both short-term morbidity and mortality (1.3%) in the planned vaginal delivery groupwere higher than subsequent series have reported.
+14,15Glezerman,10commenting on analysis by
+Su et al.,13argued that in only 16 of the 69 neonates with the primary composite outcome could this be
+related to mode of delivery. However, while some of the deaths may not be attributable to the vaginal breechbirth, it is still reasonable to assume some would not have happened if a caesarean section had beenperformed at 39 weeks of gestation. This highlights a fundamental issue: by eliminating the last1–3 weeks of pregnancy and labour, the perinatal death of at least 1/1000 babies,
+16cephalic or breech, could
+be prevented.Evidence
+level 2 +
+RCOG Guideline No. 20b e159 of e177 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14465 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+The limitations of the TBT meant planned vaginal breech birth continued, notably in Scandinavia, France
+and the Netherlands. As a result, further mortality and short-term morbidity data have becomeavailable. Vlemmix et al.
+15published a population-based cohort study of 58 320 nonanomalous term
+babies presenting by the breech delivered between 1997 and 2007 from the Netherlands PerinatalRegistry, evaluating the effect of increased elective caesarean following the TBT. The perinatal mortalityof babies presenting by the breech halved from 0.13 to 0.07% (OR 0.51, 95% CI 0.28 –0.93). For
+planned vaginal breech birth, however, it remained stable (OR 0.96, 95% CI 0.52 –1.76). More
+importantly, the perinatal mortality was 0.16% in the planned vaginal birth group and 0% in the electivecaesarean section group ( P<0.0001) post publication of the TBT report although this mortality rate
+with vaginal delivery was notably lower than that reported in the TBT (0.16% versus 1.3%). Electivecaesarean also reduced the risk of low Apgar scores (less than 7 at 5 minutes; OR 0.12, 95% CI 0.09 –0.16)
+and neonatal ‘trauma’ (OR 0.24, 95% CI 0.15 –0.37) compared with planned vaginal birth. The
+differences in mortality and morbidity persisted among different birth weights, with parity and with typeof breech. The authors estimated that 338 additional caesarean sections were performed for eachperinatal death prevented.Evidence
+level 2 ++
+More strict selection and management protocols than those employed in the TBT have been
+employed in smaller retrospective studies from individual institutions. These have limited statisticalpower to detect an effect on mortality, but most report reassuring results.
+17–21Indeed, the lower
+rates of short-term morbidity compared with those reported in either the TBT or the Dutchstudy
+4,15suggest that although evidence for the individual components is poor, the selection and
+management criteria employed were beneﬁcial. They might, therefore, reasonably be expected toimprove mortality.Evidence
+level 3
+Examining the effect of more strict selection and management was the intention of the much larger
+PREMODA study.14The outcomes of 2526 planned vaginal breech deliveries were compared with 5579
+planned caesarean deliveries in 174 units in France and Belgium over a 12-month period. The strictcriteria included ‘normal’ (deﬁnition unstated) radiological pelvimetry which was performed in 82.5% ofplanned vaginal births, continuous EFM and routine ultrasound. As with the TBT,
+4induction or
+augmentation with oxytocin was allowed. Only 0.2% had an active second stage of more than 60 minutes,while 18.1% had a passive second stage (60 minutes or longer) compared with 5 and 3.1%, respectively, inthe TBT.
+4Only 3.8% of vaginal deliveries had ‘failed to progress’ for more than 2 hours. Outcomes were
+analysed for neonates with no lethal congenital abnormality. In the planned vaginal delivery group, ofwhom 79% delivered vaginally, there were two deaths (0.08%); in the planned caesarean group, of whom0.16% delivered vaginally, there were seven deaths (0.12%) (OR 0.64, 95% CI 0.13 –3.06). Planned vaginal
+birth showed signiﬁcant increases in Apgar scores of less than 7 at 5 minutes (OR 3.20, 95% CI 1.93 –5.3) and
+total injuries, most of which were clavicular fractures or haematomata (OR 3.90, 95% CI 2.40 –6.34).
+However, there was no difference in neonatal unit admissions (OR 1.33, 95% CI 0.94 –1.86), or a composite
+measure of mortality or serious neonatal morbidity (OR 1.10, 95% CI 0.75 –0.61). This remained after
+adjustment for other factors associated with this outcome (adjusted OR 1.40, 95% CI 0.89 –2.23). The
+absolute risks for a 5-minute Apgar score of less than 7 (1.3%) and for perinatal mortality (0.08%) comparedfavourably to both the TBT and the Dutch cohort study.
+4,15Evidence
+level 2 ++
+RCOG Guideline No. 20b e160 of e177 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14465 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Although data were collected prospectively in each centre, participants were not registered at inclusion,
+potentially enabling accusations of bias; furthermore, classiﬁcation regarding the intended mode of deliverywas made retrospectively. In addition, demographic differences existed between the two groups: notably,the planned vaginal birth babies were smaller. The study does not enable an accurate comparison ofplanned caesarean with breech birth; with a later gestation at planned vaginal birth but all babies alive atinclusion, it examines the effect of strictly managed labour more than the effect of planned electivecaesarean delivery after 39
++0weeks of gestation.Evidence
+level 2 ++
+Elective caesarean section exerts a protective effect on perinatal mortality, as well as short-term, but
+probably not long-term, morbidity8although the effect is smaller than suggested by the TBT. Some of the
+risk is due to the earlier gestation at which elective caesarean section is performed, while some is due tothe elimination of labour which, even for a cephalic baby, can lead to mortality. The excess risk of breechcompared with cephalic labour is relatively small (1/1000), and implementation of strict selection andintrapartum management criteria, together with skilled support, may reduce it further.
+14Perinatal mortality
+is also slightly increased by vaginal birth after caesarean section (VBAC), which nevertheless remains acommon option.
+22Any beneﬁt from elective caesarean section must be viewed in the light of the small
+increase in complications associated with subsequent pregnancies. Furthermore, caesarean birth has beenassociated with long-term health issues in the offspring.
+23Evidence
+level 2 +
+4.2 What information should women having breech births be given about their own immediate
+and future health?
+Women should be informed that planned caesarean section for breech presentation at term
+carries a small increase in immediate complications for the mother compared with plannedvaginal birth.A
+Women should be informed that maternal complications are least with successful vaginal birth;planned caesarean section carries a higher risk, but the risk is highest with emergencycaesarean section which is needed in approximately 40% of women planning a vaginal breechbirth. B
+Women should be informed that caesarean section increases the risk of complications in futurepregnancy, including the risks of opting for VBAC, the increased risk of complications at repeatcaesarean section and the risk of an abnormally invasive placenta.B
+Women should be given an individualised assessment of the long-term risks of caesareansection based on their individual risk pro ﬁle and reproductive intentions, and counselled
+accordingly./check
+Maternal outcomes, particularly short term, depend on the category of lower segment caesarean section,
+with emergency carrying a higher risk than elective. Emergency caesarean section rates with plannedvaginal birth vary from 29%
+14to 45%.15Evidence
+level 2 +
+RCOG Guideline No. 20b e161 of e177 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14465 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+A modest short-term increase in maternal morbidity (RR 1.29, 95% CI 1.03 –1.61) is reported with planned
+caesarean section in a meta-analysis of randomised controlled trials.7Longer term morbidity in the TBT
+was similar24although other risks have been documented. The risks associated with caesarean section are
+documented in the RCOG patient information leaﬂet: Choosing to have a caesarean section .23Evidence
+level 1 +
+For subsequent pregnancies, having had a planned caesarean (compared with planned vaginal) birth causes
+a three-fold increase in uterine scarring; more than half of all women with at least one prior caesarean
+section have another.25The risks of blood transfusion, endometritis, hysterectomy and death are increased
+in women with a previous caesarean section (irrespective of whether they attempt a VBAC) whencompared with those who have previously delivered vaginally.
+22The risk of scar rupture during attempted
+vaginal birth after one caesarean section is approximately 0.5%.22,26,27In developing countries, particularly
+where birth outside hospital is usual and access to healthcare is poor, the effect on maternal outcomes islikely to be considerably greater.
+28
+A further maternal issue is that of placenta praevia and placenta accreta,29or abnormally invasive
+placentation, for which prior caesarean delivery is the principal risk factor. The risk of abnormally invasiveplacentation increases from 0.31% with one prior caesarean section to 2.33% with four
+30and the incidence
+is rising. The risk is higher after elective compared with emergency caesarean section.31This complication
+can lead to massive haemorrhage, hysterectomy, urinary tract injury and maternal death.Evidence
+level 2 +
+4.3 What information should women having breech births be given about the health of their
+future babies?
+Women should be informed that caesarean section has been associated with a small increase
+in the risk of stillbirth for subsequent babies although this may not be causal.C
+In a systematic review and meta-analysis, O’Neill et al.32compared the risk of stillbirth and miscarriage in
+a subsequent pregnancy with a previous caesarean or vaginal delivery. Examining data from 1 961 829pregnancies and 7308 events, they reported an increase in the risk of all stillbirths and unexplainedstillbirths (OR 1.47, 95% CI 1.20 –1.80). These ﬁndings have been disputed:
+33the indication for the
+caesarean may account for the increase.
+Future pregnancies are also at risk of uterine rupture when VBAC is attempted; the risk of delivery-related
+perinatal mortality after one caesarean is up to 12.9/10 000, much of which is attributable to uterinerupture. Please refer to the RCOG Green-top Guideline No. 45: Birth after previous caesarean birth.
+22Evidence
+level 2 ++
+5. What factors affect the safety of vaginal breech delivery?
+5.1 Antenatal assessment
+Following the diagnosis of persistent breech presentation, women should be assessed for risk
+factors for a poorer outcome in planned vaginal breech birth. If any risk factor is identi ﬁed,
+women should be counselled that planned vaginal birth is likely to be associated with increasedperinatal risk and that delivery by caesarean section is recommended./check
+RCOG Guideline No. 20b e162 of e177 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14465 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Women should be informed that a higher risk planned vaginal breech birth is expected where
+there are independent indications for caesarean section and in the following circumstances:C
+/C15Hyperextended neck on ultrasound.
+/C15High estimated fetal weight (more than 3.8 kg).
+/C15Low estimated weight (less than tenth centile).
+/C15Footling presentation.
+/C15Evidence of antenatal fetal compromise.
+The role of pelvimetry is unclear.C
+The safety of planned vaginal breech birth is dependent on case selection, operator skill and intrapartum
+management. There is, however, a paucity of good evidence regarding factors that increase the risks ofvaginal breech birth. Traditional contraindications and those which caused women to be ineligible for theTBT included an estimated fetal weight greater than 4 kg, footling breech presentation, an extended neck,‘obstructing’ fetal abnormalities and an existing indication for caesarean birth. The lower perinatal mortalityand morbidity in the PREMODA study
+14and in the post TBT population-based cohorts15are partly
+attributable to stricter case selection and management. The ﬁndings of these studies, therefore, have limitedapplicability where their inclusion criteria were not met or their management protocols were not followed.Indeed, in a French cohort, composite morbidity and mortality were lower (OR 0.27, 95% CI 0.09 –0.85)
+among units that applied the consensus guidelines.
+34
+Factors associated with increased perinatal morbidity at vaginal breech birth in the PREMODA cohortincluded non-European or African origin, gestational age of less than 39 weeks at birth, birthweight less thanthe tenth centile and annual number of maternity unit births less than 1500.
+35Molkenboer et al.36assessed
+183 children, born by vaginal breech delivery, at 2 years of age and, from multiple logistic regression,concluded that there was an increased risk of neurodevelopmental delay when the birthweight had beenmore than 3.5 kg. As the PREMODA study
+14used an estimated weight upper limit of 3.8 kg, the reassuring
+outcomes of the study cannot be extrapolated for larger babies.Evidence
+level 2 +
+The role of pelvimetry is unclear. Largely abandoned in the UK, it was employed in 82.5% of planned
+vaginal births in the PREMODA study14and van Loon et al.37reported that the use of pelvimetry reduced
+the emergency caesarean section rate. Further evidence is required to more clearly delineate the role ofpelvimetry in breech presentation.Evidence
+level 2 /C0
+5.2 Skill and experience of birth attendant
+The presence of a skilled birth attendant is essential for safe vaginal breech birth.C
+Units with limited access to experienced personnel should inform women that vaginal breech
+birth is likely to be associated with greater risk and offer antenatal referral to a unit where
+skill levels and experience are greater./check
+Although largely unproven, the availability of skilled personnel is likely to strongly inﬂuence perinatal
+outcomes. A senior obstetrician was present at 92.3% of all vaginal deliveries in the PREMODA series;14
+similar ﬁgures apply to the smaller consecutive case series describing successful vaginal breech birth.17–21,38Evidence
+level 2 +
+RCOG Guideline No. 20b e163 of e177 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14465 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+The decline in vaginal breech delivery in the UK has led to a widespread lack of experience which itself threatens
+the safety of planned, and the unplanned but inevitable, vaginal breech birth. An inability of a unit to reliably provide
+experienced personnel for the delivery is a contraindication to a recommendation of planned vaginal birth.
+5.3 Intrapartum assessment and management of women presenting unplanned with breech
+presentation in labour
+Where a woman presents with an unplanned vaginal breech labour, management should
+depend on the stage of labour, whether factors associated with increased complications arefound, availability of appropriate clinical expertise and informed consent.C
+Women near or in active second stage of labour should not be routinely offered caesareansection./check
+Where time and circumstances permit, the position of the fetal neck and legs, and the fetalweight should be estimated using ultrasound, and the woman counselled as with plannedvaginal breech birth./check
+All maternity units must be able to provide skilled supervision for vaginal breech birth where awoman is admitted in advanced labour and protocols for this eventuality should be developed./check
+UK data reported that breech presentation at term is not diagnosed until labour in about 25% of women.39
+In some women, labour will be so quick that vaginal breech birth is inevitable and assessment using
+ultrasound is impossible. Unplanned vaginal breech birth is associated with increased risk,13but the data on
+planned vaginal birth cannot be simply extrapolated to support routine late labour caesarean section.Evidence
+level 2 +
+Where labour is progressing rapidly, there is a balance of risks: attempting caesarean section where the breech is
+very low is likely to be associated with increased perinatal and maternal risk; assessment should include what isfeasible. Attempts at vaginal delivery in theatre with spinal anaesthesia or caesarean section with the breech on theperineum are likely to be associated with both increased perinatal and maternal risk.
+6. What is appropriate intrapartum management of the term breech?
+There is a paucity of evidence regarding the best management of the breech fetus in labour.Recommendations are based on physiology, best practice experience and the management protocols ofseries with low complication rates. The limited evidence and expert opinion broadly divides into twogroups: a more interventionist approach supported by data from the large PREMODA study
+14and a less
+medicalised approach21,40which is more traditional in the UK. Both strategies advocate close supervision
+and the not infrequent need for caesarean section or intervention during breech birth.Evidence
+level 4
+RCOG Guideline No. 20b e164 of e177 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14465 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+6.1 Are induction and augmentation appropriate?
+Women should be informed that induction of labour is not usually recommended.
+Augmentation of slow progress with oxytocin should only be considered if the contractionfrequency is low in the presence of epidural analgesia.D
+Both induction and augmentation of labour were used in the PREMODA study14in 8.9 and 74.1% of
+vaginal breech births, respectively. This very high rate of augmentation, coupled with a very low incidenceof ‘slow dilatation’, suggests a more prophylactic than a therapeutic role. As a means to treat dystocia,augmentation should usually be avoided as adequate progress may be the best evidence for adequatefetopelvic proportions. However, if epidural analgesia has been used and the contraction frequency is low,its use should not be excluded. Notably, labour augmentation is not supported by many experiencedadvocates of vaginal breech birth
+40who favour a less interventionist approach. Continuous support is
+known to reduce labour length and operative delivery with a cephalic presentation.41Evidence
+level 2 /C0
+6.2 What is the role of epidural analgesia?
+Women should be informed that the effect of epidural analgesia on the success of vaginal
+breech birth is unclear, but that it is likely to increase the risk of intervention. /check
+There is limited evidence addressing this. However, with a cephalic presentation, a Cochrane meta-
+analysis42concluded that epidural anaesthesia increases the risk of assisted vaginal delivery. As vaginal
+breech delivery cannot be expedited until its ﬁnal stages, epidural anaesthesia might increase the risk ofcaesarean section. Vaginal breech birth is usually easier if a mother is able to bear down effectively and anepidural may interfere with this. A less interventionist approach advocates a calm atmosphere withcontinuous support as a means to avoid epidural analgesia.
+41With a more interventionist approach,14
+seldom used in the UK, epidural analgesia is less likely to have a detrimental effect.Evidence
+level 2 /C0
+6.3 What fetal monitoring should be recommended?
+Women should be informed that while evidence is lacking, continuous EFM may lead to
+improved neonatal outcomes.D
+EFM was employed in the PREMODA study,14where excellent results of planned vaginal breech birth are
+documented. Breech presentation is associated with an increased risk of cord prolapse. During delivery,cord compression as the head enters the pelvis is common; this is likely to be better tolerated by a fetusthat is not hypoxic. Equally, good fetal tone enables easier breech birth and is more likely in a nonhypoxicfetus. While good evidence is lacking and higher intrapartum caesarean section rates should be expected,EFM is likely to improve neonatal outcomes.
+Evidence
+level 3
+Where EFM is declined, intermittent auscultation should be performed as for a cephalic fetus, with conversion to
+EFM if any abnormality is detected.
+RCOG Guideline No. 20b e165 of e177 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14465 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Where EFM is considered abnormal before the active second stage, caesarean delivery is recommended
+unless the buttocks are visible or progress is rapid. Fetal blood sampling of the buttocks althoughtechnically possible, is not recommended.Evidence
+level 4
+6.4 Where should vaginal breech birth take place?
+Birth in a hospital with facilities for immediate caesarean section should be recommended with
+planned vaginal breech birth, but birth in an operating theatre is not routinely recommended.D
+Labour complications, including the need for caesarean section in up to 45% of women, are more common
+with breech presentation.4,14Evidence
+level 2 /C0
+No studies have looked at the effect of delivery in theatre versus delivery in a labour room on the
+outcome of labour. However, transfer from the relative familiarity of the labour room to theatre is likelyto increase stress in the mother. Birth in water is not recommended due to the lack of gravity anddifﬁculty anticipated if intervention during breech delivery is required. Evidence
+level 4
+6.5 What guidelines should be in place for the management of breech birth?
+Women should be informed that adherence to a protocol for management reduces the chances
+of early neonatal morbidity.C
+The essential components of planned vaginal breech birth are appropriate case selection,management according to a strict protocol and the availability of skilled attendants./check
+Evidence from a number of retrospective studies shows that vaginal breech birth is more successful in
+women where strict guidelines for selection are used.34,43Evidence
+level 2 /C0
+A Cochrane review of expedited versus conservative approaches to breech delivery found no studies that
+address this issue.44Accepted principles, however, are established. These include assisted breech delivery
+rather than breech extraction and continuous support for and communication with the mother.Evidence
+level 3
+6.6 Management of the ﬁrst stage and passive second stage
+Adequate descent of the breech in the passive second stage is a prerequisite for
+encouragement of the active second stage.D
+The ﬁrst stage of labour should be managed according to the same principles as with a cephalic
+presentation. To reduce the risk of cord compression, amniotomy is reserved for deﬁnite clinicalindications. Where the progress is slow, caesarean section should be considered. In the presence ofepidural analgesia and a contraction frequency of fewer than four in ten, however, oxytocin may beconsidered. A passive second stage to allow the descent of the breech to the perineum prior to activepushing is recommended.
+14If the breech is not visible within 2 hours of the passive second stage,
+caesarean section should normally be recommended.Evidence
+level 2 /C0
+RCOG Guideline No. 20b e166 of e177 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14465 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+6.7 What position should the woman be in for delivery during a vaginal breech birth?
+Either a semirecumbent or an all-fours position may be adopted for delivery and should
+depend on maternal preference and the experience of the attendant. If the latter position isused, women should be advised that recourse to the semirecumbent position may becomenecessary./check
+There are limited data in relation to position and outcome of delivery in vaginal breech birth. Comparison
+of an upright position with historical data is favourable,45with the rate of maternal perineal injuries being
+lower. In a cephalic presentation, an upright position is associated with a shorter second stage.46
+Compared with the dorsal supine position, the all-fours position considerably increases pelvic dimensionson magnetic resonance imaging.
+47Delivery with the woman in a forward-facing position (squatting or all
+fours) is the position favoured by many experienced operators40claiming, particularly, that it is easier to
+observe for signs that the delivery will be more difﬁcult.Evidence
+level 3
+The principal difﬁculty with an all-fours position is when manoeuvres are required. Most obstetricians are
+more familiar with performing these in a difﬁcult breech birth with the woman in the dorsal position. If awoman chooses a forward-facing position, they should be made aware that if interventions are required,they may be given assistance to move into a dorsal recumbent position. Manoeuvres in an all-foursposition can be performed, however,
+40and if the operator has the skills of undertaking the manoeuvres
+with the mother in a forward position these should be performed without delay.Evidence
+level 4
+6.8 What are the principles for the management of active second stage and vaginal breech birth?
+Assistance, without traction, is required if there is delay or evidence of poor fetal condition./check
+All obstetricians and midwives should be familiar with the techniques that can be used to assist
+vaginal breech birth. The choice of manoeuvres used, if required to assist with delivery of thebreech, should depend on the individual experience/preference of the attending doctor ormidwife./check
+While involuntary pushing may occur earlier, encouragement of maternal effort should not start until the breech is
+visible. Once the buttocks have passed the perineum, signiﬁcant cord compression is common. Traction should alsobe avoided; a ‘hands-off’ approach is required, but with appropriate and timely intervention if progress is not madeonce the umbilicus has delivered or there is poor tone, extended arms or an extended neck. Tactile stimulation ofthe fetus may result in reﬂex extension of the arms or head, and should be minimised. Care must be taken in allmanoeuvres to avoid fetal trauma: the fetus should be grasped around the pelvic girdle (not soft tissues) and the
+neck should never be hyperextended. Selective rather than routine episiotomy is recommended.
+Signs that delivery should be assisted include lack of tone or colour, or delay, commonly due to extended arms or
+an extended neck. In general, intervention to expedite breech birth is required if there is evidence of poor fetalcondition or if there is a delay of more than 5 minutes from delivery of the buttocks to the head, or of more than3 minutes from the umbilicus to the head.
+RCOG Guideline No. 20b e167 of e177 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14465 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+The semirecumbent position
+There is little comparative evidence regarding techniques of assisted breech delivery. If the back starts to rotate
+posteriorly, gentle rotation without traction should be used to ensure that it remains anterior. Once the scapula isvisible, the arms can be hooked down by inserting a ﬁnger in the elbow and ﬂexing the arms across the chest or,if nuchal, Lovset’s manoeuvre is advised. Delivery is achieved either with the Mauriceau-Smellie-Veit manoeuvre orwith forceps. Suprapubic pressure will aid ﬂexion if there is delay due to an extended neck. Delivery using theBurns-Marshall technique is not advised due to concern of over extension of the fetal neck.
+An alternative is the routine use of the Bracht manoeuvre, a mode of delivery favoured in Europe and in
+the PREMODA study.
+14Following spontaneous delivery to the level of the umbilicus, the body is grasped
+in both hands keeping the legs ﬂexed against the baby’s abdomen and, without traction, is brought upagainst the symphysis pubis, frequently accompanied by suprapubic pressure.Evidence
+level 3
+The all-fours position
+The limited evidence suggests21,45that spontaneous delivery without assistance will occur more often. The
+technique and manoeuvres, if required, are described in detail in an article by Evans.40Evidence
+level 4
+7 Management of the preterm breech
+7.1 How should preterm singleton babies in breech presentation be delivered?
+Women should be informed that routine caesarean section for breech presentation in
+spontaneous preterm labour is not recommended. The mode of delivery should beindividualised based on the stage of labour, type of breech presentation, fetal wellbeing andavailability of an operator skilled in vaginal breech delivery.C
+Women should be informed that caesarean section for breech presentation in spontaneouspreterm labour at the threshold of viability (22 –25
++6weeks of gestation) is not routinely
+recommended.C
+Women should be informed that planned caesarean section is recommended for pretermbreech presentation where delivery is planned due to maternal and/or fetal compromise./check
+Breech presentation is more common preterm and most preterm deliveries are unplanned as a result of
+spontaneous preterm labour. Adequate high-quality evidence in relation to the management of pretermbreech birth has proved impossible
+48and the evidence regarding term breech should not be extrapolated
+directly to preterm breech delivery. Rates of perinatal morbidity and mortality are higher followingpreterm delivery, irrespective of the mode of delivery.Evidence
+level 3
+RCOG Guideline No. 20b e168 of e177 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14465 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+A Cochrane systematic review assessed the effects of planned immediate caesarean section versus
+planned vaginal birth for women thought to be in preterm labour with a singleton (cephalic or breechpresentation).
+49Data were very limited on clinically relevant outcomes and conﬁdence intervals were
+wide, but there were no signiﬁcant differences with respect to immediate outcomes and no signiﬁcantdifferences between the two groups for abnormal follow-up in childhood. Maternal puerperal pyrexiawas signiﬁcantly more likely in the caesarean section group (RR 2.98, 95% CI 1.18 –7.53), but there were
+no other signiﬁcant differences in maternal morbidity outcomes.
+A systematic review and meta-analysis of nonrandomised studies assessing vaginal delivery versus
+caesarean section in preterm breech delivery included seven studies involving a total of 3557 women.
+50
+The primary outcome was neonatal mortality. Preterm birth was deﬁned as a gestational age of25
++0up to 36+6weeks, and studies published before 1980 or deﬁned by low birthweight rather than
+gestational age were excluded. The weighted risk of neonatal mortality was 3.8% in the caesareansection group and 11.5% in the vaginal delivery group (pooled RR 0.63, 95% CI 0.48 –0.81). Mortality
+differences varied according to study setting with the largest study of 2674 women in Swedendemonstrating a halving of neonatal mortality with caesarean section.
+51
+Several retrospective cohort studies have evaluated the relationship between low birthweight and breechdelivery. Muhuri et al.
+52reported that very low birthweight breech or malpresenting fetuses delivered by
+a primary caesarean section had signiﬁcantly lower adjusted relative risks of neonatal death comparedwith those delivered vaginally. Demirci et al.
+53reported no difference in neonatal complications between
+vaginal delivery and caesarean section for babies with birthweights of less than 1000 g or more than1500 g, but reported an increased mortality associated with vaginal delivery for babies with birthweightsof 1000 –1500 g. A population-based study of preterm low birthweight (less than 2500 g) newborns in
+California reported signiﬁcantly increased neonatal mortality with vaginal delivery compared withcaesarean section in all birthweight groups and increased birth trauma in babies with birthweights of1500 –2500 g.
+54However, the caesarean section rate was 86%, suggesting that few vaginal breech
+deliveries are conducted and experience may be limited. A further study of survival and morbidity for thebreech fetus at the threshold of viability (23
++0to 24+6weeks of gestation and 400 –750 g birthweight) had
+similar proportions of vaginal and caesarean deliveries.55Caesarean delivery was associated with a survival
+beneﬁt across all birthweights, but morbidity was higher in the caesarean section group. It has beensuggested that the lower gestational age of breech babies in a preterm cohort may account for theapparently increased mortality and morbidity.
+56Evidence
+level 2 /C0
+Up to 25% of all preterm deliveries are iatrogenic due to antenatal complications, such as pre-eclampsia,
+fetal growth restriction and antepartum haemorrhage.57For women requiring planned delivery for
+maternal and/or fetal compromise with a viable fetus in breech presentation, elective caesarean section isrecommended.Evidence
+level 4
+Although the majority of obstetricians use caesarean section for the uncomplicated preterm breech, only a
+minority believe that there is sufﬁcient evidence to justify this policy.48There is general acknowledgement
+that the retrospective studies cited above which suggest that caesarean section confers a better outcomein this situation have been subject to selection bias.
+58,59The poor outcome for very low birthweight
+infants is mainly related to complications of prematurity and not the mode of delivery.60Evidence
+level 2 /C0
+RCOG Guideline No. 20b e169 of e177 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14465 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+In the absence of robust evidence that a preterm baby presenting by the breech needs to be delivered
+routinely by immediate caesarean section, the decision about mode of delivery should be made by anexperienced obstetrician following a thorough clinical evaluation, and in consultation with the woman andpartner.
+61The stage of labour is critical: the course of preterm labour may be protracted and
+unpredictable, immediate caesarean section may lead to earlier delivery than vaginal and might hinder theeffect of steroids or prevent the use of magnesium. Likewise, it is prudent to reassess the patient intheatre immediately prior to caesarean section in order to avoid the unfortunate situation where theuterus is found to be empty with the fetus already delivered vaginally.
+62Evidence
+level 4
+7.2 How should labour with a singleton preterm breech be managed?
+Labour with a preterm breech should be managed as with a term breech.C
+Where there is head entrapment, incisions in the cervix (vaginal birth) or vertical uterine
+incision extension (caesarean section) may be used, with or without tocolysis.D
+Evidence concerning the management of preterm labour with a breech presentation is lacking. Routine
+amniotomy should be avoided. A speciﬁc problem encountered during preterm breech delivery is deliveryof the trunk through an incompletely dilated cervix; this occurs in up to 14% of vaginal deliveries.
+63In this
+situation, lateral cervical incisions have been used to release the after-coming head. The RCOG StratOGprogramme recommends incisions at 2, 6 and 10 o’clock. Similar rates of head entrapment have beendescribed for vaginal and abdominal delivery.
+64For head entrapment at caesarean delivery, it may be
+necessary to extend the uterine incision to a J shape or inverted T.Evidence
+level 3
+8. Management of the twin pregnancy with a breech presentation
+8.1 How should a ﬁrst twin in breech presentation be delivered?
+Women should be informed that the evidence is limited, but that planned caesarean section
+for a twin pregnancy where the presenting twin is breech is recommended.C
+Routine emergency caesarean section for a breech ﬁrst twin in spontaneous labour, however, is
+not recommended. The mode of delivery should be individualised based on cervical dilatation,station of the presenting part, type of breech presentation, fetal wellbeing and availability ofan operator skilled in vaginal breech delivery.C
+RCOG Guideline No. 20b e170 of e177 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14465 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Almost half of all twin pregnancies will deliver preterm and decisions regarding mode of delivery need to
+be made in that context. If preterm delivery has not occurred, delivery from 37 weeks of gestation is nowrecommended.
+65Similar to preterm breech presentation, high-quality evidence is lacking in relation to the
+management of twin birth and breech presentation. In a systematic review of three cohort studies(1812 women) and one randomised controlled trial (120 women), twins with the ﬁrst twin presenting asbreech were less likely to have a low 5-minute Apgar score if they had a planned caesarean section(OR 0.33, 95% CI 0.17 –0.65).
+66A further study67compared the outcomes of breech presenting ﬁrst twins
+over two time periods, where the caesarean section rate increased from 21% to almost 95%. Nosigniﬁcant differences in neonatal morbidity or mortality were reported, but there was an increase inmaternal morbidity in association with caesarean delivery. In a retrospective cohort study of 195 termtwin pregnancies where the presenting twin was breech, Sentilhes et al.
+68compared the outcomes of the
+124 attempts at vaginal delivery (48% vaginal delivery rate) with elective caesarean. There was nodifference in the composite primary outcome. Steins Bisschop et al.
+69in a 2012 review concluded that
+there was no beneﬁt to the near routine practice of caesarean section if the ﬁrst twin was breech. Onecommon concern is the interlocking of twins. Although Cohen et al.
+70reported an incidence of 1 in 817,
+this is probably an underestimate.Evidence
+level 2 +
+Given the uncertain risks, the quality of the evidence, the continuing controversy with singletons and the
+exclusion of a nonvertex twin in the 2013 twin trial,71a change to the current practice of planned
+caesarean section is not recommended.Evidence
+level 1 +
+8.2 How should a second twin in breech presentation be delivered?
+Routine caesarean section for breech presentation of the second twin is not recommended in
+either term or preterm deliveries.B
+The second twin is nonvertex at the time of delivery in about 40% of twin pregnancies. One
+randomised study has been conducted of twin deliveries where the presentation of the second twinwas nonvertex.
+72The results showed no difference in 5-minute Apgar scores or in any other indices of
+neonatal morbidity between the two groups, but the power to detect differences was low as the studyonly included 60 women with twins. Barrett et al.
+71randomised 1398 women with a twin pregnancy at
+32 to 38+6weeks of gestation to planned caesarean section or planned vaginal birth. Outcomes of
+planned vaginal delivery included 507 women (36% of all planned vaginal births) whose second twin waspresenting as nonvertex. This trial concluded there was no difference in the composite primaryoutcome of mortality or serious morbidity. However, the caesarean section rate was almost 44%among planned vaginal births and a subgroup analysis of the second twins presenting nonvertex wasnot available.Evidence
+level 1 +
+The observational studies report conﬂicting results. Ginsberg and Levine73reported that with second
+twin deliveries, low Apgar scores were less frequent when delivery was by caesarean section. Apopulation-based cohort study
+74of twin deliveries in the USA, using birth certiﬁcates and reporting on
+infants weighing 1500 –4000 g, found a signiﬁcantly higher frequency of neonatal death, injury and
+perinatal morbidity when both twins of a vertex/nonvertex presentation were delivered vaginally thanwhen both twins were delivered by caesarean section.Evidence
+level 2 /C0
+RCOG Guideline No. 20b e171 of e177 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14465 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+In contrast, a study in France of 614 twins showed no signiﬁcant morbidity differences and concluded that
+the type of presentation should not inﬂuence the choice of mode of delivery.75In a retrospective cohort
+study76of 1038 twins in the UK, neonatal morbidity after vaginal delivery was similar for nonvertex-
+presenting and vertex second twins, particularly at lower gestational ages.Evidence
+level 2 /C0
+The presentation of the second twin at delivery is not always predictable. The chance of cephalic delivery may be
+improved by routinely guiding the head of the second twin towards the pelvis during and immediately after
+delivery of the ﬁrst twin. On the other hand, some attendants prefer to routinely expedite delivery of the second
+twin by internal version and breech extraction irrespective of the presentation. There is no evidence as to whichis safest.
+9. What organisational and governance arrangements should be in place to support a routine
+vaginal breech delivery service?
+Simulation equipment should be used to rehearse the skills that are needed during vaginal
+breech birth by all doctors and midwives. /check
+Guidance for the case selection and management of vaginal breech birth should be developedin each department by the healthcare professionals who supervise such births. Adherence tothe guidelines is recommended to reduce the risk of intrapartum complications.C
+Departments should consider developing a checklist to ensure comprehensive counselling of thewoman regarding planned mode of delivery for babies presenting by the breech./check
+The evidence discussed on vaginal breech birth supports the adherence to a strict management
+protocol14,34,43and the presence of skilled birth attendants.14Evidence
+level 3
+10. Recommendations for future research
+/C15Evaluation of all-fours position for vaginal breech birth.
+/C15Evaluation of the role of pelvimetry in planning of vaginal breech delivery.
+/C15Evaluation of the effect of epidural analgesia on vaginal breech birth.
+11. Auditable topics
+/C15Documentation of discussion regarding mode of delivery (100%).
+/C15Vaginal delivery rates in women planning vaginal breech delivery.
+/C15Rate of adverse neonatal and maternal outcomes following planned and actual breech birth.
+/C15Percentage of staff who have undergone training in vaginal breech delivery (100%).
+RCOG Guideline No. 20b e172 of e177 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14465 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+12. Useful links and support groups
+/C15NHS Choices. Baby positions in the womb. [http://www.nhs.uk/conditions/pregnancy-and-baby/pages/breech-birth.
+aspx].
+/C15Royal College of Midwives. Vaginal or caesarean delivery? How research has turned breech birth around. [https://www.
+rcm.org.uk/learning-and-career/learning-and-research/ebm-articles/vaginal-or-caesarean-delivery-how-research].
+/C15National Institute for Health and Clinical Excellence. Multiple pregnancy: antenatal care for twin and triplet
+pregnancies. NICE clinical guideline 129. Manchester: NICE; 2011. [https://www.nice.org.uk/guidance/cg129].
+/C15Royal College of Obstetricians and Gynaecologists. Caesarean Section . Consent Advice No. 7. London: RCOG;
+2009. [https://www.rcog.org.uk/globalassets/documents/guidelines/consent-advice/ca7-15072010.pdf].
+/C15Royal College of Obstetricians and Gynaecologists. A breech baby at the end of pregnancy. Information for you.
+London: RCOG; 2008. [https://www.rcog.org.uk/en/patients/patient-leaﬂets/breech-baby-at-the-end-of-pregnancy/].
+/C15Royal College of Obstetricians and Gynaecologists. Turning a breech baby in the womb (external cephalic version).
+Information for you .London: RCOG; 2008. [https://www.rcog.org.uk/en/patients/patient-leaﬂets/turning-a-breech-
+baby-in-the-womb/].
+/C15Royal College of Obstetricians and Gynaecologists. Birth options after previous caesarian section. Information for
+you.London: RCOG; 2016. [https://www.rcog.org.uk/en/patients/patient-leaﬂets/birth-after-previous-caesarean/].
+References
+1. Royal College of Obstetricians and Gynaecologists. External
+Cephalic Version and Reducing the Incidence of Term BreechPresentation . Green-top Guideline No. 20a. London: RCOG; 2017.
+2. Fruscalzo A, Londero AP, Salvador S, Bertozzi S, Biasioli A,
+Della Martina M, et al. New and old predictive factors for breechpresentation: our experience in 14 433 singleton pregnancies and
+a literature review. J Matern Fetal Neonatal Med 2014;27:167 –72.
+3. Danielian PJ, Wang J, Hall MH. Long-term outcome by method of
+delivery of fetuses in breech presentation at term: populationbased follow up. BMJ 1996;312:1451 –3.
+4. Hannah ME, Hannah WJ, Hewson SA, Hodnett ED, Saigal S,
+Willan AR. Planned caesarean section versus planned vaginal birthfor breech presentation at term: a randomised multicentre trial.Term Breech Trial Collaborative Group. Lancet 2000;356:
+1375 –83.
+5. Berhan Y, Haileamlak A. The risks of planned vaginal breech
+delivery versus planned caesarean section for term breech birth: a
+meta-analysis including observational studies. BJOG 2016;123:
+49–57.
+6. Pasupathy D, Wood AM, Pell JP, Fleming M, Smith GC. Time
+trend in the risk of delivery-related perinatal and neonatal death
+associated with breech presentation at term. Int J Epidemiol
+2009;38:490 –8.
+7. Hofmeyr GJ, Hannah M, Lawrie TA. Planned caesarean section for
+term breech delivery. Cochrane Database Syst Rev 2015;(7):
+CD000166.
+8. Whyte H, Hannah ME, Saigal S, Hannah WJ, Hewson S,
+Amankwah K, et al.; Term Breech Trial Collaborative Group.
+Outcomes of children at 2 years after planned cesarean birth
+versus planned vaginal birth for breech presentation at term: theInternational Randomized Term Breech Trial. Am J Obstet Gynecol
+2004;191:864 –71.
+9. Rietberg CC, Elferink-Stinkens PM, Visser GH. The effect of the
+Term Breech Trial on medical intervention behaviour andneonatal outcome in The Netherlands: an analysis of 35,453 termbreech infants. BJOG 2005;112:205 –9.10. Glezerman M. Five years to the term breech trial: the rise and fall of
+a randomized controlled trial. Am J Obstet Gynecol 2006;194:20 –5.
+11. Lawson GW. The term breech trial ten years on: primum non
+nocere? Birth 2012;39:3 –9.
+12. Gofﬁnet F, Azria E, Kayem G, Schmitz T, Deneux-Tharaux C.
+Re: the risks of planned vaginal breech delivery versus planned
+caesarean section for term breech birth: a meta-analysis including
+observational studies: Let’s avoid simplistic radicalism when realityis complex. BJOG 2016;123:145 –7.
+13. Su M, McLeod L, Ross S, Willan A, Hannah WJ, Hutton E, et al.;
+Term Breech Trial Collaborative Group. Factors associated with
+adverse perinatal outcome in the Term Breech Trial. Am J Obstet
+Gynecol 2003;189:740 –5.
+14. Gofﬁnet F, Carayol M, Foidart JM, Alexander S, Uzan S, Subtil D,
+et al.; PREMODA Study Group. Is planned vaginal delivery for
+breech presentation at term still an option? Results of anobservational prospective survey in France and Belgium. Am J
+Obstet Gynecol 2006;194:1002 –11.
+15. Vlemmix F, Bergenhenegouwen L, Schaaf JM, Ensing S, Rosman AN,
+Ravelli AC, et al. Term breech deliveries in the Netherlands: didthe increased cesarean rate affect neonatal outcome? A population-
+based cohort study. Acta Obstet Gynecol Scand 2014;93:888 –96.
+16. Smith GC. Life-table analysis of the risk of perinatal death at term
+and post term in singleton pregnancies. Am J Obstet Gynecol
+2001;184:489 –96.
+17. Hellsten C, Lindqvist PG, Olofsson P. Vaginal breech delivery: is it
+still an option? Eur J Obstet Gynecol Reprod Biol 2003;111:122 –8.
+18. Vistad I, Cvancarova M, Hustad BL, Henriksen T. Vaginal breech
+delivery: results of a prospective registration study. BMC Pregnancy
+Childbirth 2013;13:153.
+19. Toivonen E, Palom €aki O, Huhtala H, Uotila J. Selective vaginal
+breech delivery at term –still an option. Acta Obstet Gynecol Scand
+2012;91:1177 –83.
+20. Doyle NM, Riggs JW, Ramin SM, Sosa MA, Gilstrap LC 3rd.
+Outcomes of term vaginal breech delivery. Am J Perinatol
+2005;22:325 –8.
+RCOG Guideline No. 20b e173 of e177 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14465 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+21. Borbolla Foster A, Bagust A, Bisits A, Holland M, Welsh A.
+Lessons to be learnt in managing the breech presentation at term:
+an 11-year single-centre retrospective study. Aust N Z J Obstet
+Gynaecol 2014;54:333 –9.
+22. Royal College of Obstetricians and Gynaecologists. Birth after
+Previous Caesarean Birth . Green-top Guideline No. 45. London:
+RCOG; 2015.
+23. Royal College of Obstetricians and Gynaecologists. Choosing to
+have a Caesarean Section . Information for you. London: RCOG;
+2015 https://www.rcog.org.uk/en/patients/patient-leaﬂets/choosing-to-have-a-caesarean-section/.
+24. Hannah ME, Whyte H, Hannah WJ, Hewson S, Amankwah K,
+Cheng M, et al.; Term Breech Trial Collaborative Group.
+Maternal outcomes at 2 years after planned cesarean sectionversus planned vaginal birth for breech presentation at term: theinternational randomized Term Breech Trial. Am J Obstet Gynecol
+2004;191:917 –27.
+25. Uddin SF, Simon AE. Rates and success rates of trial of labor after
+cesarean delivery in the United States, 1990 –2009. Matern Child
+Health J 2013;17:1309 –14.
+26. Guise JM, Eden K, Emeis C, Denman MA, Marshall N, Fu R, et al.
+Vaginal Birth after Cesarean: New Insights . Evidence Report/
+Technology Assessment No. 191. Rockville, MD: AHRQ; 2010.
+27. Landon MB, Hauth JC, Leveno KJ, Spong CY, Leindecker S,
+Varner MW, et al.; National Institute of Child Health and HumanDevelopment Maternal-Fetal Medicine Units Network. Maternaland perinatal outcomes associated with a trial of labor after prior
+cesarean delivery. N Engl J Med 2004;351:2581 –9.
+28. Akaba GO, Onafowokan O, Ofﬁong RA, Omonua K, Ekele BA.
+Uterine rupture: trends and feto-maternal outcome in a Nigerian
+teaching hospital. Niger J Med 2013;22:304 –8.
+29. Royal College of Obstetricians and Gynaecologists. Placenta
+Praevia, Placenta Praevia Accreta and Vasa Praevia: Diagnosis andManagement . Green-top Guideline No. 27. London: RCOG; 2011.
+30. Silver RM, Landon MB, Rouse DJ, Leveno KJ, Spong CY, Thom EA,
+et al.; National Institute of Child Health and Human DevelopmentMaternal-Fetal Medicine Units Network. Maternal morbidityassociated with multiple repeat cesarean deliveries. Obstet Gynecol
+2006;107:1226 –32.
+31. Kamara M, Henderson JJ, Doherty DA, Dickinson JE, Pennell CE.
+The risk of placenta accreta following primary elective caesareandelivery: a case-control study. BJOG 2013;120:879 –86.
+32. O’Neill SM, Kearney PM, Kenny LC, Khashan AS, Henriksen TB,
+Lutomski JE, et al. Caesarean delivery and subsequent stillbirth ormiscarriage: systematic review and meta-analysis. PLoS One 2013;8:
+e54588.
+33. Wood S, Ross S, Sauve R. Cesarean Section and Subsequent
+Stillbirth, Is Confounding by Indication Responsible for theApparent Association? An Updated Cohort Analysis of a Large
+Perinatal Database. PLoS One 2015;10:e0136272.
+34. Vendittelli F, Pons JC, Lemery D, Mamelle N; Obstetricians of the
+AUDIPOG Sentinel Network. The term breech presentation:Neonatal results and obstetric practices in France. Eur J Obstet
+Gynecol Reprod Biol 2006;125:176 –84.
+35. Azria E, Le Meaux JP, Khoshnood B, Alexander S, Subtil D,
+Gofﬁnet F; PREMODA Study Group. Factors associated with
+adverse perinatal outcomes for term breech fetuses with planned
+vaginal delivery. Am J Obstet Gynecol 2012;207:285.e1 –9.
+36. Molkenboer JF, Roumen FJ, Smits LJ, Nijhuis JG. Birth weight and
+neurodevelopmental outcome of children at 2 years of age after
+planned vaginal delivery for breech presentation at term. Am J
+Obstet Gynecol 2006;194:624 –9.37. van Loon AJ, Mantingh A, Serlier EK, Kroon G, Mooyaart EL,
+Huisjes HJ. Randomised controlled trial of magnetic-resonance
+pelvimetry in breech presentation at term. Lancet 1997;350:1799 –
+804.
+38. Kessler J, Moster D, Albrechtsen S. Intrapartum monitoring with
+cardiotocography and ST-waveform analysis in breech
+presentation: an observational study. BJOG 2015;122:528 –35.
+39. Hemelaar J, Lim LN, Impey LW. The Impact of an ECV Service is
+Limited by Antenatal Breech Detection: A Retrospective Cohort
+Study. Birth 2015;42:165 –72.
+40. Evans J. Understanding physiological breech birth. Essentially
+MIDIRS 2012;3:17 –21.
+41. Hodnett ED, Gates S, Hofmeyr GJ, Sakala C. Continuous support
+for women during childbirth. Cochrane Database Syst Rev 2013;(7):
+CD003766.
+42. Jones L, Othman M, Dowswell T, Alﬁrevic Z, Gates S, Newburn M,
+et al. Pain management for women in labour: an overview of
+systematic reviews. Cochrane Database Syst Rev 2012;(3):CD009234.
+43. Michel S, Drain A, Closset E, Deruelle P, Ego A, Subtil D; Lille
+Breech Study Group. Evaluation of a decision protocol for type of
+delivery of infants in breech presentation at term. Eur J Obstet
+Gynecol Reprod Biol 2011;158:194 –8.
+44. Hofmeyr GJ, Kulier R. Expedited versus conservative approaches
+for vaginal delivery in breech presentation. Cochrane Database Syst
+Rev2012;(6):CD000082.
+45. Bogner G, Strobl M, Schausberger C, Fischer T, Reisenberger K,
+Jacobs VR. Breech delivery in the all fours position: a prospective
+observational comparative study with classic assistance. J Perinat
+Med 2015;43:707 –13.
+46. Gupta JK, Nikodem VC. Woman’s position in the second stage of
+labour. Cochrane Database Syst Rev 2000;(2):CD002006.
+47. Reitter A, Daviss BA, Bisits A, Schollenberger A, Vogl T,
+Herrmann E, et al. Does pregnancy and/or shifting positionscreate more room in a woman’s pelvis? Am J Obstet Gynecol
+2014;211:662.e1 –9.
+48. Penn ZJ, Steer PJ, Grant A. A multicentre randomised controlled trial
+comparing elective and selective caesarean section for the delivery ofthe preterm breech infant. BJOG 2014;121(Suppl 7):48 –53.
+49. Alﬁrevic Z, Milan SJ, Livio S. Caesarean section versus vaginal
+delivery for preterm birth in singletons. Cochrane Database Syst
+Rev2013;(9):CD000078.
+50. Bergenhenegouwen LA, Meertens LJ, Schaaf J, Nijhuis JG, Mol BW,
+Kok M, et al. Vaginal delivery versus caesarean section in preterm
+breech delivery: a systematic review. Eur J Obstet Gynecol Reprod Biol
+2014;172:1 –6.
+51. Herbst A, K €all/C19en K. Inﬂuence of mode of delivery on neonatal
+mortality and morbidity in spontaneous preterm breech delivery.Eur J Obstet Gynecol Reprod Biol 2007;133:25 –9.
+52. Muhuri PK, Macdorman MF, Menacker F. Method of delivery and
+neonatal mortality among very low birth weight infants in the
+United States. Matern Child Health J 2006;10:47 –
+53.
+53. Demirci O, Tu /C21grul AS, Turgut A, Ceylan S, Eren S. Pregnancy
+outcomes by mode of delivery among breech births. Arch Gynecol
+Obstet 2012;285:297 –303.
+54. Robilio PA, Boe NM, Danielsen B, Gilbert WM. Vaginal vs.
+cesarean delivery for preterm breech presentation of singleton
+infants in California: a population-based study. J Reprod Med
+2007;52:473 –9.
+55. Deutsch A, Salihu HM, Lynch O, Marty PJ, Belogolovkin V.
+Cesarean delivery versus vaginal delivery: impact on survival and
+morbidity for the breech fetus at the threshold of viability. J
+Matern Fetal Neonatal Med 2011;24:713 –7.
+RCOG Guideline No. 20b e174 of e177 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14465 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+56. Azria E, Kayem G, Langer B, Marchand-Martin L, Marret S, Fresson J,
+et al.; EPIPAGE study group. Neonatal Mortality and Long-Term
+Outcome of Infants Born between 27 and 32 Weeks of GestationalAge in Breech Presentation: The EPIPAGE Cohort Study. PLoS One
+2016;11:e0145768.
+57. Moutquin JM. Classiﬁcation and heterogeneity of preterm birth.
+BJOG 2003;110(Suppl 20):30 –3.
+58. Bowes WA Jr, Taylor ES, O’Brien M, Bowes C. Breech delivery:
+evaluation of the method of delivery on perinatal results and
+maternal morbidity. Am J Obstet Gynecol 1979;135:
+965–73.
+59. Gravenhorst JB, Schreuder AM, Veen S, Brand R,
+Verloove-Vanhorick SP, Verweij RA, et al. Breech delivery in very
+preterm and very low birthweight infants in The Netherlands. Br J
+Obstet Gynaecol 1993;100:411 –5.
+60. Cibils LA, Karrison T, Brown L. Factors inﬂuencing neonatal
+outcomes in the very-low-birth-weight fetus ( <1500 grams)
+with a breech presentation. Am J Obstet Gynecol 1994;171:
+35–42.
+61. Biswas A, Su LL, Mattar C. Caesarean section for preterm birth
+and, breech presentation and twin pregnancies. Best Pract Res Clin
+Obstet Gynaecol 2013;27:209 –19.
+62. Keirse MJ. Commentary: the freezing aftermath of a hot
+randomized controlled trial. Birth 2011;38:165 –7.
+63. Kayem G, Baumann R, Gofﬁnet F, El Abiad S, Ville Y, Cabrol D,
+et al. Early preterm breech delivery: is a policy of planned vaginaldelivery associated with increased risk of neonatal death? Am J
+Obstet Gynecol 2008;198:289.e1 –6.
+64. Robertson PA, Foran CM, Croughan-Minihane MS, Kilpatrick SJ.
+Head entrapment and neonatal outcome by mode of delivery in
+breech deliveries from 28 to 36 weeks of gestation. Am J Obstet
+Gynecol 1996;174:1742 –7; discussion 1747 –9.
+65. National Institute for Health and Clinical Excellence. Multiple
+pregnancy: antenatal care for twin and triplet pregnancies . NICE
+clinical guideline 129. Manchester: NICE; 2011.66. Hogle KL, Hutton EK, McBrien KA, Barrett JF, Hannah ME.
+Cesarean delivery for twins: a systematic review and meta-
+analysis. Am J Obstet Gynecol 2003;188:220 –7.
+67. Oettinger M, Ophir E, Markovitz J, Stolero E, Odeh M. Is
+caesarean section necessary for delivery of a breech ﬁrst twin?
+Gynecol Obstet Invest 1993;35:38 –43.
+68. Sentilhes L, Gofﬁnet F, Talbot A, Diguet A, Verspyck E, Cabrol D,
+et al. Attempted vaginal versus planned cesarean delivery in 195
+breech ﬁrst twin pregnancies. Acta Obstet Gynecol Scand
+2007;86:55 –60.
+69. Steins Bisschop CN, Vogelvang TE, May AM, Schuitemaker NW.
+Mode of delivery in non-cephalic presenting twins: a systematic
+review. Arch Gynecol Obstet 2012;286:237 –47.
+70. Cohen M, Kohl SG, Rosenthal AH. Fetal interlocking complicating
+twin gestation. Am J Obstet Gynecol
+1965;91:407 –12.
+71. Barrett JF, Hannah ME, Hutton EK, Willan AR, Allen AC,
+Armson BA, et al.; Twin Birth Study Collaborative Group. A
+randomized trial of planned cesarean or vaginal delivery for twinpregnancy. N Engl J Med 2013;369:1295 –305.
+72. Rabinovici J, Barkai G, Reichman B, Serr DM, Mashiach S.
+Randomized management of the second nonvertex twin: vaginaldelivery or caesarean section. Am J Obstet Gynecol 1987;156:52 –6.
+73. Ginsberg NA, Levine EM. Delivery of the second twin. Int J
+Gynaecol Obstet 2005;91:217 –20.
+74. Yang Q, Wen SW, Chen Y, Krewski D, Fung Kee Fung K, Walker M.
+Neonatal death and morbidity in vertex-nonvertex second twinsaccording to mode of delivery and birth weight. Am J Obstet Gynecol
+2005;192:840 –7.
+75. Sibony O, Touitou S, Luton D, Oury JF, Blot P. Modes of delivery
+of ﬁrst and second twins as a function of their presentation. Study
+of 614 consecutive patients from 1992 to 2000. Eur J Obstet
+Gynecol Reprod Biol 2006;126:180 –5.
+76. Caukwell S, Murphy DJ. The effect of mode of delivery and
+gestational age on neonatal outcome of the non-cephalic-
+presenting second twin. Am J Obstet Gynecol 2002;187:1356 –61.
+RCOG Guideline No. 20b e175 of e177 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14465 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Appendix I: Explanation of guidelines and evidence levels
+Clinical guidelines are: ‘systematically developed statements which assist clinicians and patients in making decisions
+about appropriate treatment for speciﬁc conditions’. Each guideline is systematically developed using a standardised
+methodology. Exact details of this process can be found in Clinical Governance Advice No.1 Development of RCOG
+Green-top Guidelines (available on the RCOG website at http://www.rcog.org.uk/green-top-development ). These
+recommendations are not intended to dictate an exclusive course of management or treatment. They must beevaluated with reference to individual patient needs, resources and limitations unique to the institution and variationsin local populations. It is hoped that this process of local ownership will help to incorporate these guidelines intoroutine practice. Attention is drawn to areas of clinical uncertainty where further research may be indicated.
+The evidence used in this guideline was graded using the scheme below and the recommendations formulated in a
+similar fashion with a standardised grading scheme.
+Classiﬁcation of evidence levels Grades of recommendations
+1++ High-quality meta-analyses, systematic reviews
+of randomised controlled trials or randomisedcontrolled trials with a very low risk of biasAAt least one meta-analysis, systematic reviews orRCT rated as 1 ++, and directly applicable to the
+target population; orA systematic review of RCTs or a bodyof evidence consisting principally of studiesrated as 1 +, directly applicable to the target
+population and demonstrating overallconsistency of results1+ Well-conducted meta-analyses, systematic
+reviews of randomised controlled trials or
+randomised controlled trials with a low risk ofbias
+1– Meta-analyses, systematic reviews of
+randomised controlled trials or randomisedcontrolled trials with a high risk of bias
+BA body of evidence including studies ratedas 2++directly applicable to the target
+population, and demonstrating overallconsistency of results; or
+Extrapolated evidence from studies
+rated as 1 ++or 1+2++ High-quality systematic reviews of case –control
+or cohort studies or high-quality case –control
+or cohort studies with a very low risk ofconfounding, bias or chance and a highprobability that the relationship is causal
+2+ Well-conducted case –control or cohort
+studies with a low risk of confounding, bias orchance and a moderate probability that therelationship is causal
+CA body of evidence including studies rated
+as 2+directly applicable to the target
+population, and demonstrating overallconsistency of results; orExtrapolated evidence from studiesrated as 2 ++
+2– Case –control or cohort studies with a high
+risk of confounding, bias or chance and asigniﬁcant risk that the relationship is notcausal
+3 Non-analytical studies, e.g. case reports,
+case series DEvidence level 3 or 4; orExtrapolated evidence from studies rated as 2 +
+4 Expert opinionGood practice point
+/checkRecommended best practice based on the
+clinical experience of the guideline developmentgroup
+RCOG Guideline No. 20b e176 of e177 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14465 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+This guideline was produced on behalf of the Guidelines Committee of the Royal College of Obstetricians and
+Gynaecologists by:
+Mr LWM Impey FRCOG, Oxford; Professor DJ Murphy FRCOG, Dublin; Mr M Grifﬁths FRCOG,Eaton Bray; and Dr LK Penna FRCOG, London
+and peer reviewed by:
+Mrs K Adamson, Registered Midwife, Woodchester; Dr G Akaba, University of Abuja Teaching Hospital, Gwagwalada,
+Nigeria; American College of Obstetricians and Gynaecologists; Dr E Azria, French Institute of Health and Medical
+Research, Paris, France; Dr JFR Barrett, Sunnybrook Health Sciences Centre, Toronto, Canada; Dr A Bisits, Royal Hospitalfor Women, Sydney, Australia; Mrs R Blum, Winchester; Dr JF Bodle MRCOG, Shefﬁeld; Dr G Bogner, Paracelsus Private
+Medical University of Salzburg, Austria; Dr M Burnett, The Society of Obstetricians and Gynaecologists of Canada, Ottowa,
+Ontario, Canada; Miss V Cochrane, St Mary’s Hospital, London; Dr PJ Danielian FRCOG, Aberdeen; Dr J Davidson,Maidstone and Tunbridge Wells NHS Trust; Dr M de Hundt, Medical Centre Alkmaar, the Netherlands;
+Mrs A Diyaf MRCOG, Barnstaple; Mrs H Dresner Barnes, Shefﬁeld Teaching Hospital; Mrs J Evans, Independent Midwife,
+Dorchester; Dr R Fernando, University College London; Dr SJ Fischbein, Obstetrics and Gynaecology, Los Angeles,California, USA; Mrs N Grace, Independent Midwife, Nottingham; Ms G Gyte, Cochrane Pregnancy and Childbirth Group,Liverpool; Dr HKS Hinshaw FRCOG, Sunderland; Mrs J Horner, Independent Midwife, Glastonbury; Mr B Kumar FRCOG,
+Wrexham; Mrs G Kumar FRCOG, Wrexham; Dr EG McGregor, Bedford; Ms E Prochaska, Founder of Birthrights, London;
+RCOG Women’s Network; Dr A Reitter FRCOG, Frankfurt, Germany; Royal College of Anaesthetists;Professor JG Thornton FRCOG, Nottingham; Dr SG Uddin, National Center for Health Statistics, Hyattsville, Maryland,
+USA; Dr F Vendittelli, French College of Gynecologists and Obstetricians, Bordeaux, France; Ms S Walker, Barts Health
+NHS Trust, London; Dr CF Weiniger, The Hebrew University of Jerusalem, Israel.
+Committee lead reviewers were: Dr M Gupta MRCOG, London and Miss P Sarkar FRCOG, Gerrards Cross.The chairs of the Guidelines Committee were: Dr M Gupta
+1MRCOG, London; Dr P Owen2FRCOG, Glasgow; and
+Dr AJ Thomson1MRCOG, Paisley.
+1co-chairs from June 20142until May 2014.
+All RCOG guidance developers are asked to declare any conﬂicts of interest. A statement summarising
+any conﬂicts of interest for this guideline is available from: https://www.rcog.org.uk/en/guidelines-
+research-services/guidelines/gtg20b/
+The ﬁnal version is the responsibility of the Guidelines Committee of the RCOG.
+The review process will commence in 2020, unless otherwise indicated.
+DISCLAIMER
+The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical practice.
+They present recognised methods and techniques of clinical practice, based on published evidence, for consideration byobstetricians and gynaecologists and other relevant health professionals. The ultimate judgement regarding a particular
+clinical procedure or treatment plan must be made by the doctor or other attendant in the light of clinical data presented
+by the patient and the diagnostic and treatment options available.
+This means that RCOG Guidelines are unlike protocols or guidelines issued by employers, as they are not intended to be
+prescriptive directions deﬁning a single course of management. Departure from the local prescriptive protocols orguidelines should be fully documented in the patient’s case notes at the time the relevant decision is taken.
+RCOG Guideline No. 20b e177 of e177 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14465 by Cochrane France, Wiley Online Library on [29/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License

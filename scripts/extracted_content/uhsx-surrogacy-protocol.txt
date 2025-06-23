@@ -1,0 +1,777 @@
+# Extracted from: UHSx Surrogacy protocol.pdf
+# Guideline ID: uhsx-surrogacy-protocol
+# Content length: 41778 characters
+# Processing date: 1750066902.278936
+
+Management of Surrogacy v1.1 UHS -CG-0005 -2023 Sept 2023 Page 1 of 20 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+Management of Surrogacy 
+Summary statement: How does the 
+document support patient care? To ensure good planning for surrogate parents and the 
+children of surrogate parents and a robust sensitive 
+plans in place for antenatal planning, labour and 
+postnatal period. 
+Staff/stakeholders involved in 
+development: Safeguarding midwives 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Safeguarding Midwife 
+For use by: All healthcare professionals irrespective of grade, level, 
+location or staff group involved in caring for patients 
+where a surrogacy is planned. 
+Purpose: To ensure there is a robust sensitive plan in place for 
+antenatal planning, labour and postnatal period for 
+surrogacy pregnancies. 
+This document supports: https://portal.hfea.gov.uk 
+Key related documents: Antenatal Care, Care in Labour. 
+Approved by & date: Joint Obstetric Guideline Group: 20th September 2023 
+Date uploaded: 20th September 2023 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable – Divisional Ratification only required 
+Ratification Date: Not Applicable – Divisional Ratification only required 
+Expiry Date: June 2026 
+Review date: December 2025 
+If you require this document in another format such as Braille, large print, 
+audio or another language please contact the Trusts Communications Team 
+Reference Number: UHS-CG-0005 -2023 Management of Surrogacy v1.1 UHS -CG-0005 -2023 Sept 2023 Page 2 of 20 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+Version Date Author Status Comment 
+1.0 June 2023 Sarah Barwick, 
+Safeguarding 
+Midwife 
+(SRH&WH) Archived New Trust wide guideline 
+adopted from Legacy East’s 
+Surrogacy Guideline. 
+1.1 September 
+2023 CE Team Live Merged approval with Legacy 
+East. Replaces: 
+• MP029 Management of 
+Surrogacy (Legacy East) 
+• CG15022 Surrogacy 
+(legacy West) 
+ 
+The interpretation and application of clinical guidelines will remain the 
+responsibility of the individual clinician. 
+If in doubt contact a senior colleague or expert. Management of Surrogacy v1.1 UHS -CG-0005 -2023 Sept 2023 Page 3 of 20 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+Contents 
+1.0 Aim ................................ ................................ ................................ ............................ 4 
+2.0 Scope ................................ ................................ ................................ ........................ 4 
+3.0 Responsibilities ................................ ................................ ................................ .......... 4 
+4.0 Abbreviations used within this guideline ................................ ................................ ..... 5 
+5.0 Principles ................................ ................................ ................................ ................... 5 
+6.0 Definitions ................................ ................................ ................................ .................. 5 
+6.1 Surrogacy ................................ ................................ ................................ .................. 5 
+6.2 Commissioning couple (Intended parents) ................................ ................................ .. 6 
+7.0 Accountabilities and responsibilities ................................ ................................ ............ 6 
+8.0 Surrogacy and the law ................................ ................................ ............................... 6 
+9.0 Parental responsibility: Who are the child’s legal parents? ................................ .......... 7 
+9.1 Same sex couples: ................................ ................................ ................................ ..... 7 
+9.2 Foreign commissioning parents and British Surrogate ................................ ................ 7 
+10.0 Procedures and actions to follow ................................ ................................ ................ 8 
+10.1 Community midwife ................................ ................................ ................................ .... 9 
+10.2 Medical Staff / Nursing and Midwifery ................................ ................................ ......... 9 
+11.0 Mental capacity of the surrogate mother to make decisions ................................ ...... 10 
+12.0 Termination of pregnancy ................................ ................................ ......................... 10 
+13.0 What if the surrogate mother changes her mind? ................................ ..................... 10 
+14.0 What if the intended parents change their mind? ................................ ...................... 10 
+15.0 What happens if there is a dispute between the intended parents 
+and the surrogate? ................................ ................................ ................................ ... 11 
+16.0 What if the child becomes ill and is in need of treatment? ................................ ......... 11 
+17.0 Further information and Support ................................ ................................ ............... 11 
+18.0 Monitoring ................................ ................................ ................................ ................ 12 
+References ................................ ................................ ................................ .......................... 12 
+Appendix 1: Staff responsibilities in surrogacy flowchart ................................ ...................... 13 
+Appendix 2: Surrogacy checklist ................................ ................................ ......................... 14 
+Appendix 3: Surrogacy inclusive language in perinatal services ................................ ........... 15 
+Appendix 4: Surrogacy and newborn screening consent (SRH&WH only) ........................... 18 Management of Surrogacy v1.1 UHS -CG-0005 -2023 Sept 2023 Page 4 of 20 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Management of Surrogacy 
+
+1.0 Aim 
+ 
+The purpose of this guideline is to ensure good planning for surrogate parents and the 
+children of surrogate parents and to ensure there is a robust sensitive plan in place for 
+antenatal planning, labour and postnatal period. 
+
+2.0 Scope 
+ 
+All healthcare professionals irrespective of grade, level, location or staff group involved in 
+caring for patients where a surrogacy is planned. 
+ 
+This guidance is relevant to: 
+ 
+• Obstetricians 
+• Gynaecologists 
+• Paediatricians 
+• IVF Practitioners 
+• Midwives 
+• Neonatal nurses. 
+
+3.0 Responsibilities 
+ 
+In the event of a request for surrogacy all staff should be aware of the law regarding 
+surrogacy, the Department of Health guidance and the rights of the parties involved. 
+ 
+Midwives and Obstetricians are expected: 
+ 
+• To access, read, understand and follow this guidance. 
+• To use their professional judgement in the application of this guideline. 
+ 
+Midwifery management are expected: 
+ 
+• To ensure the guideline is reviewed as required in line with Trust and National 
+Recommendations. 
+• To ensure the guideline is accessible to all relevant staff. Management of Surrogacy v1.1 UHS -CG-0005 -2023 Sept 2023 Page 5 of 20 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 4.0 Abbreviations used within this guideline 
+ 
+IPs - Intended Parents PO - Parental Order 
+HFEA - Human Fertilisation and 
+Embryology Authority PR - Parental Rights 
+NIPE - Newborn & Infant Physical 
+Examination NHSP - Newborn Hearing Screening 
+TMBU - Trevor Mann Baby Unit SCBU - Special Care Baby Unit 
+MIS - Maternity Information System eg 
+Badgernet 
+
+5.0 Principles 
+ 
+Offer care in a non-judgmental and supportive manner: with an overarching approach to 
+understand that surrogacy is unique maintain accurate and contemporaneous records of 
+discussions and decisions reached. 
+ 
+Confidentiality is vital and disclosure should be made on a need to know basis. Any 
+reference to the surrogacy arrangement in the medical notes should only be made after 
+discussion with and permission from the surrogate person. 
+ 
+The needs of the surrogate person should always be a priority and all (final) decisions rest 
+with them. Information requested by the commissioning parents must be sanctioned by the 
+surrogate and documented in the medical notes. 
+
+6.0 Definitions 
+6.1 Surrogacy 
+ 
+Surrogacy is the practice whereby one woman and person (the surrogate person) 
+becomes pregnant, carries and gives birth to a child for another person(s) (the 
+commissioning couple). This is as the result of an agreement prior to conception that the 
+child should be handed over to that person after birth. 
+ 
+There are two types: 
+ 
+• Straight Surrogacy: Also known as genetic or traditional surrogacy is when 
+the surrogate provides her own eggs to achieve the pregnancy. One of the IPs 
+provides her own eggs to achieve the pregnancy. One of the IPs provides a 
+sperm sample for conception either by home -insemination away from a 
+licenced setting or artificial insemination with the help of a fertility clinic. Home - 
+insemination does carry risks if the sperm has not been screened for 
+infections. Embryos may be created in vitro and transferred into the uterus of 
+the surrogate through a UK clinic. 
+• Full Surrogacy: Also known as host, gestational surrogacy is when the 
+surrogate doesn’t provide her own egg to achieve the pregnancy. In such Management of Surrogacy v1.1 UHS -CG-0005 -2023 Sept 2023 Page 6 of 20 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ pregnancies, embryos are created invitro and transferred into the uterus of the 
+surrogate using the gametes of at least one IP, plus the gametes of the other 
+IP or a donor, if required. 
+
+6.2 Commissioning couple (Intended parents) 
+ 
+The commissioning couple are the people who wish to bring up the child after his or her 
+birth. They may both be the genetic parents, or one of them may be, or neither of them 
+may be genetically related to the child. The woman and person for whom the child is to be 
+carried (the 'commissioning mother') may be the genetic mother in that she provides the 
+egg. The genetic father may be the husband or partner of the commissioning mother, or he 
+may be an anonymous donor. (DOH 1998). Intended parents who have no genetic 
+connection to the child are not able to access the parental order and therefore extinguish 
+the surrogate legal responsibility. It is therefore important for the surrogate/IP to seek legal 
+advice. 
+
+7.0 Accountabilities and responsibilities 
+ 
+Whilst the confidentiality of the commissioning and surrogate parents should be upheld 
+there will need to be certain communications to ensure staff are not complicit in any 
+illegal act and that all health staff, who need to know, are informed. Please see flowchart 
+in Appendix 1 . 
+
+8.0 Surrogacy and the law 
+ 
+The legal framework for surrogacy is the Surrogacy Arrangements Act of 1985, amended in 
+the Human Fertilisation and Embryology Bill of 2007. The intentions of the Surrogacy 
+Arrangement Act of 1985 are summarized below: 
+ 
+8.1 Surrogacy is an agreement arranged before the pregnancy begins, with intent 
+for another person to assume parental rights. Pregnancy is determined to begin 
+at the time of insemination or embryo transfer. 
+8.2 No person with any commercial interest in the surrogacy arrangement may 
+initiate or negotiate any part of the surrogacy proceedings. 
+8.3 It is illegal to advertise to seek or become a surrogate, through any form of 
+the UK media. 
+8.4 Any person breaching (8.2) and (8.3) above is liable for punishment, either a 
+fine or by imprisonment. 
+8.5 Should staff become suspicious that the parties are involved in a commercial 
+arrangement, they should contact the Lead for Safeguarding children for further 
+advice and guidance. 
+ 
+The 2007 amendments clarify that non -profit making organisations (such as the agencies 
+which have a strong prevalence in many agreements today) are allowed to take part in the Management of Surrogacy v1.1 UHS -CG-0005 -2023 Sept 2023 Page 7 of 20 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ negotiations necessary for a successful surrogate pregnancy. Non-profit making 
+organizations are allowed to advertise their services. 
+ 
+Surrogacy UK website provides detailed advice on all aspects of surrogacy: 
+http://www.surrogacyuk.org/ http://www.surrogacyuk.org/Downloads/Guide to Surrogacy 
+UK for Healthcare Professio nals.pdf 
+
+9.0 Parental responsibility: Who are the child’s legal parents? 
+ 
+The Human Fertilisation and Embryology Act 1990 (2) section 27, states that the legal 
+mother is always the surrogate mother regardless of genetic makeup and she is legally 
+responsible for the child until such time as the intended parents seek a parental order. 
+ 
+The surrogate has the legal right to keep the child, even if it is not genetically related to her. 
+Surrogacy arrangements are not legally enforceable, even if a contract has been signed and 
+the expenses of the surrogate have been paid. 
+ 
+The surrogate will be the legal mother of the child unless or until parenthood is transferred to 
+the intended person through a parental order. This is because, in law, the surrogate who 
+gives birth is always treated as the mother or person. 
+ 
+There are two methods through which parental responsibility may be transferred. 
+ 
+1. A parental order can be made if the case satisfies section 30 of the Human 
+Fertilisation and Embryology Act. The criteria for accessing the PO are based on 
+an enduring relationship not on marriage. It can also be accessed for solo parents 
+via a remedial order. 
+ 
+2. An application may be made to adopt the child under the Adoption Act 1976. 
+ 
+UH Sussex staff should ensure that if there is any cause for concern that they take advice 
+from the Safeguarding children’s named doctor or nurse / midwife. 
+
+9.1 Same sex couples: 
+ 
+Marriage (same sex Couples) Act 2013 set up a framework to allow same sex couples to 
+achieve legal recognition of their relationship. Therefore same sex couples are able to apply 
+for the parental order. 
+
+9.2 Foreign commissioning parents and British Surrogate 
+ 
+If neither commissioned parents is domiciled in the UK, they will not be eligible to apply for a 
+parental Order. It would be critical that the parents and the surrogate obtain legal advice as 
+adoption could contravene international adoption rules. Adoption would therefore be the only Management of Surrogacy v1.1 UHS -CG-0005 -2023 Sept 2023 Page 8 of 20 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ available option to obtain legal parenthood. It would be important to get legal advice on the 
+legal status of any child born through surrogacy by non -domiciled intended parents. 
+
+10.0 Procedures and actions to follow 
+ 
+The immediate postnatal period is a time of great emotional upheaval, which may be 
+compounded in a surrogacy arrangement and great sensitivity is required in handling 
+both the surrogate and commissioning parents. Where there is conflict the midwife must 
+focus their care on the surrogate person and baby. 
+ 
+• A child born to a surrogate must be registered as her child. 
+• The commissioning parents, having assumed care of the child, have no legal 
+relationship with it and no rights in law until a parental order has been made or 
+unless the commissioning father is named on the birth certificate. 
+• The HFEA advises that, until the parental order comes into force, strictly speaking 
+it is the legal surrogate who should give consent for screening of the newborn. 
+• Commissioning or intended parents will apply for a parental order (if the genetic 
+makeup of the baby comes from either or both of them) or an adoption order where 
+gametes from either of the commissioning parents have not been used. Until this 
+time (6 weeks – 6 months) the legal mother is the surrogate. 
+• Handing over the baby will take place following discussion and agreement with the 
+surrogate mother as the birth plan guide. 
+• The surrogate is cared for as per routine postnatal care guidelines. The woman 
+and person’s GP is notified of their discharge home. 
+• The commissioning mother/person and baby are notified to the appropriate 
+community midwife, health visitor and GP. They may be prescribed 
+Metoclopramide 10 mg tds from 27 weeks of the host surrogate pregnancy to be 
+able to breast feed the baby. The commissioning mother can also start to double 
+pump from 26 weeks of the host surrogate pregnancy. 
+ 
+As the Surrogate Mother and person is the legal mother at birth, the baby cannot be 
+removed from the hospital by the commissioning parent(s) without her consent. The 
+arrangements will have been made by the surrogate and IPs during the antenatal period and 
+ideally a birth plan is will be in place for staff to follow. This ensures that Staff should 
+consider whether the Duty Social Worker should be informed of the Surrogacy arrangement 
+to ensure that both the Surrogate Mother and the commissioning parent(s) are able to 
+receive support and advice in the post natal period where appropriate. 
+ 
+The commissioning parent(s) should not be admitted as a patient of the Trust. If the 
+surrogate mother requests that the commissioning parent(s) be permitted to stay with her 
+until the baby is discharged, this should be accommodated and recorded on MIS. 
+ 
+Where, following birth, the Surrogate Mother delegates responsibility for the child to the 
+Intended Parents, this should be written clearly in the medical notes. If this is the case, 
+wherever possible, the intended mother may be accommodated separately with the baby in Management of Surrogacy v1.1 UHS -CG-0005 -2023 Sept 2023 Page 9 of 20 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ a side room on the postnatal ward. Parenting support and advice will then be provided to the 
+commissioning parent(s) until the baby is discharged. This arrangement must be recorded in 
+the surrogate mothers notes on MIS and also the baby’s notes on MIS, stating that this is the 
+request of the surrogate mother. The commissioning parent(s) presence on the ward should 
+then be recorded in the ward day book. If this is not possible, owing to capacity, the baby will 
+be transferred for care in TMBU /SCBU where the commissioning parent(s) may visit in 
+place of the surrogate mother. 
+
+10.1 Community midwife 
+ 
+• The midwife should be informed of the status of the pregnancy this will be 
+documented on MIS. 
+• It is important for the midwife at booking to ascertain who are the baby’s biological 
+parents, including where relevant, details of the donor sperm and / or egg. This will 
+be relevant in order to assess relevant family history and risk assess for inherited 
+diseases. For combined screening and the quadruple test, risk assessment is 
+based on the age of the biological mother. 
+• The midwife should establish whether the surrogate mother is married. If she is 
+married then she and her husband hold parental responsibility until the legal 
+process of transfer PR is complete. 
+• If the surrogate mother is not married the midwife should establish that the 
+(commissioning donor) father is registered on the baby’s birth certificate when the 
+baby is born. Only then will he hold parental responsibility. 
+• The midwife should notify the health visitor and GP of the baby’s status as above 
+so that any consents required will be requested from the person holding parental 
+responsibility (see section 8 & section 9). This is particularly important for the early 
+immunisations which are due before the legal process may have been finalised or 
+if the baby requires immediate/ early surgery or treatments. 
+• It may be relevant for the midwife to complete safeguarding procedures. 
+• It is important to recognise that the Trust's duty of care is to the Surrogate Mother. 
+The Trust owes no duty to the commissioning parent(s). All applicable antenatal 
+care should be provided to the Surrogate Mother in the usual way. The 
+commissioning parent(s) can be involved in this process provided that the 
+Surrogate Mother consents to this” and “The Surrogate Mother has the right to 
+make all decisions relating to her antenatal care. It is important to remember that 
+the child is not recognised as a "person" until birth and therefore, the rights of the 
+mother should take precedence over the interests of the unborn child. 
+
+10.2 Medical Staff / Nursing and Midwifery 
+ 
+When a baby is to be discharged and transferred to the commissioning parents who live in 
+another part of the country, staff should ensure that the health staff in the new area are 
+aware of the status of the baby and that there is full communication with the new area 
+midwife and health visitor. Management of Surrogacy v1.1 UHS -CG-0005 -2023 Sept 2023 Page 10 of 20 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ If any staff identify that the due legal process has not been followed they should notify the 
+police. 
+ 
+If any staff have concerns for the safety or welfare of the baby they must follow the Sussex 
+Safeguarding and Child Protection Procedures and make a referral to the appropriate local 
+Children’s Social Care and notify the Safeguarding Children’s Named Doctor/ Nurse/Midwife. 
+ 
+The Consultant Midwife can be contacted for support and/or a referral made into the 
+Consultant Midwife Clinic for review, with complex care planning within pregnancy and birth. 
+
+11.0 Mental capacity of the surrogate mother to make decisions 
+ 
+Should staff have any concerns regarding the mental capacity of the Surrogate Mother to 
+make decisions about her pregnancy, a formal assessment of capacity should be performed 
+(staff are advised to follow the Trust's consent policy). 
+ 
+In the event that the Surrogate Mother lacks capacity to make a particular decision, 
+treatment should be given having regard to the best interests of the Surrogate Mother – 
+however, staff are advised to consult the Trust's Lead on the Mental Capacity Act prior to 
+administering non -emergency treatment in such circumstances. 
+
+12.0 Termination of pregnancy 
+ 
+A surrogate has the right to a termination. The intended parents have no right to prevent a 
+termination taking place. The intended parents should not be informed about a termination 
+unless the surrogate has given consent for this information to be shared. 
+
+13.0 What if the surrogate mother changes her mind? 
+ 
+If the Surrogate Mother changes her mind and wishes to keep the baby, the Trust must 
+respect her wishes. In this situation, the Courts will usually allow her to keep the baby. If 
+there is disagreement between the Surrogate Mother and the commissioning parent(s), the 
+Lead for Safeguarding Children should be contacted. 
+
+14.0 What if the intended parents change their mind? 
+ 
+If the intended parents change their mind about taking the child for whatever reason, the 
+surrogate (and her husband/wife) will be legally responsible. Management of Surrogacy v1.1 UHS -CG-0005 -2023 Sept 2023 Page 11 of 20 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 15.0 What happens if there is a dispute between the intended parents and the 
+surrogate? 
+ 
+The trust should attempt to work with the surrogate and the intended parents at all times. 
+Should a dispute arise, the surrogate’s wishes should be respected at all times and staff may 
+wish to consider contacting the Lead for Safeguarding children for further advice and 
+guidance. 
+ 
+If the intended parents attempt to remove the baby from trust premises against the surrogate 
+wishes, staff should consider informing the Police, subject to the consent of the surrogate. 
+ 
+Should staff have any concerns about the welfare of the baby staff should follow 
+standard safeguarding procedures. 
+
+16.0 What if the child becomes ill and is in need of treatment? 
+ 
+Where possible, decisions about the baby’s treatment should be made jointly, by the 
+Surrogate and the commissioning parent(s) in conjunction with the health professionals. In 
+most circumstances, the Surrogate will hand over responsibility to the Intended Parents on 
+an informal basis, at birth. However, the surrogate remains legally responsible for the baby 
+until a Parental Order has been confirmed or the baby has been legally adopted by the 
+commissioning parent(s). The commissioning parent(s) have no legal rights over the baby 
+until this time. 
+ 
+Therefore as a matter of law, even where the surrogate has delegated the care of the baby 
+to the intended parents, this does not mean that she relinquishes all legal rights or 
+responsibilities to the baby or that the intended parents automatically assume the legal right 
+to make decisions about the baby. 
+ 
+In the event of any dispute between the surrogate and the attended parents, it is the 
+surrogate mother who has parental responsibility in law to consent/refuse treatment on 
+behalf of the child. One of the intended parents may share parental responsibility if 
+registered on the child’s birth certificate. 
+ 
+Typically there is a good relationship between the surrogate and IPs and this will have been 
+discussed in the antenatal period (birth planning meeting) and the IPs will be part of that 
+decision making. 
+
+17.0 Further information and support 
+ 
+Further information for surrogates and intended parents is provided in the Department for 
+Health and Social Care guide - Surrogacy: legal rights of parents and surrogates: Overview - 
+GOV.UK (www.gov.uk) Management of Surrogacy v1.1 UHS -CG-0005 -2023 Sept 2023 Page 12 of 20 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Information on surrogacy, previous and current research and updates on the legal guidelines 
+for surrogacy is accessible via the Surrogacy Solicitors - Surrogacy Lawyers & Legal Advice 
+- NGA Law and Brilliant Beginnings - Surrogacy in the UK and abroad websites 
+
+18.0 Monitoring 
+ 
+To provide annual audit reviewing any surrogacy cases for the year to determine if correct 
+pathway was followed. 
+
+References 
+ 
+Arrangements for Payments And Regulation. DH 1998 
+Surrogacy guidance for intended parents: pre-surrogacy, pre-birth and post-birth - GOV.UK 
+(www.gov.uk) 
+ 
+Human Fertilisation and Embryology Authority. Code of Practice 
+https://portal.hfea.gov.uk 
+ 
+Surrogacy UK http://www.surrogacyuk.org/ Home - SurrogacyUK 
+ 
+www.hfea.gov.uk/399.html#guidanceSection3945: Legal parenthood: surrogacy Appendix 
+ 
+COTS Surrogacy in the UK. www.surrogacy.org.uk 
+The Adoption & Children Act 2002 
+ 
+Reame, N E & Parker, P J (1990) surrogate pregnancy: clinical features of 44 cases. 
+American Journal of Obstetrics and Gynecology 16(2): 1220 -1225 Civil partnership act 2004 
+ 
+Cafcass, G. T. (2021). Cafcass Parental Order Applications FOI. London: Cafcass. 
+ 
+NGA Law, Parenthood and parental orders . (2019). Retrieved from Nga Law: 
+https:// www.ngalaw.co.uk/knowledge -centre/parenthood -and-parental -orders -surrogacy -law 
+Protected Characteristics . (2020, December). Retrieved from Equality and Human Rights 
+Commission: https://www.equalityhumanrights.com/en/equality -act/protected -characteristics 
+Care in surrogacy: guidance for the care of surrogates and intended parents in surrogate 
+births in England and Wales - GOV.UK (www.gov.uk) Management of Surrogacy v1.1 UHS -CG-0005 -2023 Sept 2023 Page 13 of 20 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Surrogate books with midwife or 
+baby transfers in at birth. 
+Midwife (or health visitor for transfers in) to check surrogate and commissioning 
+family have full understanding of Parental Responsibility 
+Surrogate mother is married 
+Surrogate mother and 
+husband are legal parents, 
+have PR and can consent. 
+The surrogate and intended parent can 
+agree who will be nominated as second 
+parent on the birth certificate. This can 
+be done prior to conception. 
+Commissioning couple 
+cannot consent until legal 
+process completed. 
+(May take up to 6 months). 
+Biological father or surrogate 
+mother can give consent. His 
+partner may not consent until 
+legal process completed. 
+At any stage if there is cause for 
+concern for the baby’s welfare – refer 
+to children’s social care. 
+Midwife to notify Health Visitor and GP of PR status at birth. 
+Surrogate mother is unmarried 
+Surrogate conceives Appendix 1: Staff responsibilities in surrogacy flowchart 
+
+ Management of Surrogacy v1.1 UHS -CG-0005 -2023 Sept 2023 Page 14 of 20 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Appendix 2: Surrogacy checklist 
+ 
+Booking appointment or when clinician becomes aware of surrogacy 
+Date Documentation related to surrogacy commenced 
+Surrogate mother is married Yes No 
+Names of the commissioning parents 
+Who are the biological parents for screening purposes 
+Is there a children’s guardian allocated? Yes No 
+HV informed of the surrogacy Yes No 
+GP informed of the surrogacy Yes No 
+At birth & postnatal 
+The surrogate mother is cared for as per routine postnatal care guidelines. 
+As the Surrogate Mother is the legal mother at birth, the baby cannot be removed from the 
+hospital by the commissioning parent(s) without her consent. 
+Does the surrogate mother agree the commissioning parents can 
+visit/stay? (record in the notes) Yes No 
+Does the surrogate mother delegate responsibility for the child to the 
+commissioning parents … record on MIS Yes No 
+Staff should ensure they have written consent from the Surrogate 
+Mother before handing over the baby and that this is done, wherever 
+practicable, in the presence of the Surrogate Mother and the 
+commissioning parent(s). 
+ 
+Yes 
+No 
+ 
+If the surrogate is not married the midwife should establish that the 
+(commissioning donor) father is registered on the baby’s birth 
+certificate when the baby is born so he can have parental 
+responsibility. 
+ 
+Yes 
+No 
+HV informed of the birth Yes No 
+GP informed of the birth Yes No 
+Check address where baby is being taken to so the new HV/GP can 
+be alerted. Yes No 
+The commissioning mother/person and baby are notified to the 
+appropriate community midwife, health visitor and G.P. Yes No 
+New address 
+ 
+Once completed scan form into MIS Management of Surrogacy v1.1 UHS -CG-0005 -2023 Sept 2023 Page 15 of 20 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Appendix 3: Surrogacy inclusive language in perinatal services 
+ 
+Author Teresa Coote - Brilliant Beginnings 
+Internal reviewer Caro Townsend - BSUH Maternity Voices Partnership Chairperson 
+External reviewer Natalie Gamble - NGA Law Director/Brilliant Beginnings co-founder 
+ 
+Purpose of the Language Guide 
+This guide has been developed to accompany the trust policy for management of surrogacy. 
+The guide seeks to clarify the dynamics between a surrogate and intended parents, so that 
+perinatal care is inclusive for all, and acknowledges each person’s position with regards to 
+any child/children born through surrogacy under the trust. 
+ 
+Significance of the Different Pathways to Parenthood 
+Childbirth is a period of significant vulnerability and growth, and we value all the intersecting 
+identities that contribute to a person’s experience of this, including but not limited to race, 
+gender identity, sexuality, age, religion and ability. The people experiencing childbirth and 
+the transition into parenthood, either as the birthing person, or as an intended parent, require 
+care from midwives and fellow health professionals that is both inclusive and individualised, 
+reflecting the pathway they have followed to this point. 
+ 
+A key legal aspect of surrogacy is the application to the courts for a parental order, 
+completed by the intended parents of any child/children born. The parental order transfers 
+the legal parenthood for the child from the surrogate (and her spouse if married) to the 
+intended parents. (NGA Law, Parenthood and parental orders, 2019) 
+ 
+Parental order applications are one of the most reliable ways to track surrogacy births, both 
+in the UK and internationally. The data is managed by Cafcass (Child and Family Court 
+Advisory and Support Service), who are an independent advisory organisation that works 
+with families and courts to ensure the safety and wellbeing of children in the UK on a range 
+of cases, including surrogacy. 
+ 
+Since the Cafcass case management system was introduced in 2008, the number of 
+parental orders, for both domestic and international surrogacy has continued to increase. 
+During the first year of using the management system to record data, there were just 67 
+applications made. By 2018 this number had risen by four times the amount to around 280, 
+with the majority of them relating to domestic surrogacy within the UK (England having the 
+highest number of cases). Additionally, recent data shows that parental order numbers have 
+continued to grow to above 300 applications in 2020, including 100 applications from same - 
+sex couples and more than 20 from single parents who have pursued surrogacy as a route 
+to parenthood. (Cafcass, 2021) 
+ 
+Until 2018 Surrey and Sussex recorded the third highest number of surrogacies, exceeded 
+only by London and the Avon, Gloucestershire, Wiltshire and Thames Valley service area 
+group (both of which have higher population figures). For the past three years, Surrey and 
+Sussex have exceeded Surrogacy Inclusive Language in Perinatal Services the Avon, 
+Gloucestershire, Wiltshire and Thames Valley service area group in the number of parental 
+order applications granted by the courts. Management of Surrogacy v1.1 UHS -CG-0005 -2023 Sept 2023 Page 16 of 20 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Legal Frameworks in Relation to Perinatal Care 
+Equality Act 
+The Equality Act 2010 prohibits discrimination, harassment and victimisation of in the 
+workplace and in wider society. It is designed to ensure people with certain ‘protected 
+characteristics’ are not disadvantaged or subjected to unwanted conduct because of that 
+characteristic. Public bodies (such as local authorities and NHS trusts) have an active duty 
+to eliminate discrimination, harassment, and victimisation of anyone who is protected under 
+the Act, and foster good relations between persons who share a relevant protected 
+characteristic and persons who do not share it. 
+ 
+One of the characteristics protected by the Equality Act is pregnancy and maternity. The 
+care of any pregnant or birthing person should, at all times, meet standards as set out by 
+wider Government and internal guidance and should seek to acknowledge the individual 
+circumstances of the person being cared for. 
+ 
+Specific Language Replacements 
+The following examples have been sourced from current documentation relating to perinatal 
+care of surrogates and intended parents, and also from feedback on lived experiences from 
+care provided within Surrey and Sussex health trusts. 
+ 
+TABLE 1 when referring to the surrogate 
+Previous Term New Term Previous Example New Example 
+Surrogate mother Surrogate “The midwife must 
+focus her care on the 
+surrogate mother” “The midwife must 
+focus her care on the 
+surrogate” 
+ 
+TABLE 2 when talking to the surrogate 
+Previous Term New Term Previous Example New Example 
+Your baby The baby “Plans need to be 
+made for the birth of 
+your baby” “Plans need to be 
+made for the birth or 
+the baby” or “plans 
+need to be made for 
+your labour” 
+ 
+TABLE 3 when referring to the intended parent(s) (where a biological link is present) 
+Previous Term New Term Previous Example New Example 
+Sperm donor Biological father/dad “We are able to test 
+the sperm donor’s 
+blood” “We are able to test 
+the biological father’s 
+blood” 
+Egg donor Biological 
+mother/mum “...... details of this 
+surrogacy pregnancy 
+by egg donor” “…details of this 
+surrogacy pregnancy 
+using the mother’s 
+egg” Management of Surrogacy v1.1 UHS -CG-0005 -2023 Sept 2023 Page 17 of 20 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ TABLE 4 when referring to the intended parent(s) (where a biological link is not present) 
+Previous Term New Term Previous Example New Example 
+Intended 
+mother/intended 
+father 
+Commissioning 
+parent Mother/mum 
+Father/dad 
+parent “parenthood is 
+transferred to the 
+intended mother” “parenthood is 
+transferred to the 
+parent through a 
+parental order” 
+Note : the use of the collective term “intended parents” in documentation is acceptable. 
+ 
+TABLE 5 when speaking to the intended parent(s) 
+Previous Term New Term Previous Example New Example 
+The baby Your baby “post -natal checks 
+are recommended 
+for the baby” “post -natal checks 
+are recommended 
+for your baby” Management of Surrogacy v1.1 UHS -CG-0005 -2023 Sept 2023 Page 18 of 20 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Appendix 4: Surrogacy and newborn screening consent (SRH&WH only) 
+
+NEWBORN SCREENING CONSENT 
+ 
+Three newborn screens are offered, all details of these screens can be found in ‘Screening 
+Tests for you are your baby’ which was issued to you antenatally. This booklet can also be 
+found by scanning this QR code: 
+
+1. Newborn & Infant Physical Examination (NIPE). 
+ 
+The screening elements of the NIPE programme are: 
+ 
+• Eyes: approximately 2 or 3 in 10,000 babies have problems with their eyes that 
+require treatment. The prime purpose of screening is to identify congenital 
+cataracts. 
+• Heart: approximately 4-10 in 1,000 babies have a heart problem. 
+• Hips: approximately 1 or 2 in 1,000 babies have hip problems that require 
+treatment. 
+• Testes: approximately 1 in 100 baby boys have problems with their testes that 
+require treatment. 
+ 
+2. Newborn Blood Spot (NBS) 
+ 
+The screening elements of the NBS programme are: 
+ 
+• Sickle cell disease (SCD), 
+• Cystic fibrosis (CF), 
+• Congenital hypothyroidism (CHT) 
+• Phenylketonuria (PKU), 
+• Medium -chain acyl-CoA dehydrogenase deficiency (MCADD), 
+• Maple syrup urine disease (MSUD), 
+• Isovaleric acidaemia (IVA), 
+• Glutaric aciduria type 1 (GA1) 
+• Homocystinuria (pyridoxine unresponsive) (HCU) 
+• Severe combined immunodeficiency (SCID) Management of Surrogacy v1.1 UHS -CG-0005 -2023 Sept 2023 Page 19 of 20 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+3. Newborn Hearing Screening (NHSP) 
+ 
+The screening element of the NHSP programme is: 
+ 
+• Permanent Hearing Loss: 2 in 1000 babies are born with a permanent hearing loss. 
+This increases to 1 in 100 if baby has spent longer than 48hrs on a neonatal unit. No 
+Clear Responses can be obtained from this screening due to a hearing loss, 
+fluid/debris in the ear, baby was unsettled or it was too noisy. If a No Clear response 
+is obtained from the AABR screen baby will be referred to Audiology for further 
+testing. If there is a contraindication to screening, baby will be referred directly to 
+Audiology. Contraindications are: Microtia, atresia, confirmed cCMV, bacterial 
+meningitis, PVP shunt 
+• Information about your baby’s visit to the audiology clinic can be found by scanning 
+this QR code: 
+
+Consent 
+ 
+For each screening programme the details of baby, the screening results and, if required, 
+any tests following the screen will be kept on the NHS screening information system used by 
+the NHS Newborn Screening Programme. The information will be shared with babies doctor, 
+health visitor and other health professionals directly involved with the screening and with any 
+subsequent investigations and treatment if required. 
+ 
+All staff that work in or with the NHS are required as a matter of law to keep information 
+about you and your baby confidential. 
+ 
+An anonymised version of this information will be used for monitoring the success and 
+evaluating the benefits of the screening programmes. All requirements of the Data Protection 
+Act 2018 will be met during the storage and use of the data. 
+ 
+You may request and receive a copy of the information held about baby at any time. 
+ 
+If you choose not to take up this offer of screening, we will keep a record to show that we 
+have contacted you and that you have declined the screen, and we will let babies GP and 
+Health Visitor know that baby has not been screened. Management of Surrogacy v1.1 UHS -CG-0005 -2023 Sept 2023 Page 20 of 20 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Please complete 
+
+Surrogate Name 
+Surrogate 
+Hospital number 
+Estimated due 
+date 
+If completed 
+postnatally 
+ 
+Babies Name 
+Babies Hospital 
+number 
+Babies NHS 
+number 
+ YES/NO Signed Date 
+NIPE screen 
+consented 
+NBS screen 
+consented 
+NHSP screen 
+consented 
+
+Midwife/doctor completing form: 
+ 
+Date Printed Name Signed NMC/GMC Number 
+
+*If completed antenatally please email a copy of the form to the postnatal screening failsafe clerk.

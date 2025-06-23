@@ -1,0 +1,390 @@
+# Extracted from: CG14005 Water Birth guideline.pdf
+# Guideline ID: cg14005-water-birth-guideline
+# Content length: 19937 characters
+# Processing date: 1750066900.326839
+
+CG14005 Water Birth Guideline v5.0 August 2021 Page 1 of 12 
+Please check against Staffnet that this printout is the most version of this document. 
+
+Water Birth Guideline 
+Summary statement: How does the 
+document support patient care? By providing evidence based guidelines for staff supporting 
+pregnant women/people choosing water birth. 
+Staff/stakeholders involved in 
+development: Leads for Maternity Risk Management (Obstetric and 
+Midwifery), Labour Ward Leads (Obstetric and Midwifery), 
+Joint Obstetric Guidelines Group. 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Community Midwife Team Leaders 
+For use by: All staff caring for women/people who have chosen water 
+birth. 
+Purpose: To provide clear guidance for staff caring for women/people 
+who have chosen water birth 
+This document supports: NICE CG190 (2014, updated 2017) 
+Key related documents: UH Sussex (SRH &WH) guidelines: Care in Labour, 
+Management of Pregnant Women/People and Neonates with 
+Risk Factors for Early -Onset Neonatal Sepsis (including 
+GBS) 
+Trust policy: Meticillin resistant staphyloccus aureus 
+(MRSA) - INFECTION CONTROL POLICY 
+Approved by: Joint Obstetric Guideline Group (JOGG) 
+Approval date: 25th August 2021 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors: Not Applicable – Divisional Ratification only required 
+Ratification Date: Not Applicable – Divisional Ratification only required 
+Expiry Date: August 2024 
+Review date: Feb 2024 
+If you require this document in another format such as Braille, large print, audio or another language 
+please contact the Trusts Communications Team 
+Reference Number: CG14005 CG14005 Water Birth Guideline v5.0 August 2021 Page 2 of 12 
+Please check against Staffnet that this printout is the most version of this document. 
+
+Version Date Author Status Comment 
+1.0 November 2013 Community Midwife 
+Team Leader Archived New Trust Wide Guideline 
+2.0 January 2017 Community Midwife 
+Team Leader Archived Triannual review and update 
+3.0 May 2017 Community Midwife 
+Team Leader Archived Addition of pool cleaning advice 
+4.0 July Practice 
+Development Archived Addition for pool evacuation 
+5.0 August 2021 B. Corney, D.Tarrant, 
+K. Henton, 
+Community Team 
+leaders LIVE Triannual review and update. 
+Criteria for using pool updated. 
+Management of third stage in the 
+pool clarified. 
+
+The interpretation and application of clinical guidelines will remain the 
+responsibility of the individual clinician. 
+ 
+If in doubt contact a senior colleague or expert. CG14005 Water Birth Guideline v5.0 August 2021 Page 3 of 12 
+Please check against Staffnet that this printout is the most version of this document. 
+
+Index 
+1.0 Aim ................................ ................................ ................................ .............................. 4 
+2.0 Scope ................................ ................................ ................................ .......................... 4 
+3.0 Responsibilities ................................ ................................ ................................ ............ 4 
+4.0 Introduction ................................ ................................ ................................ .................. 4 
+5.0 Criteria for using pool for labour ................................ ................................ ................... 5 
+6.0 Labour Management ................................ ................................ ................................ .... 5 
+6.1 Risk Assessment ................................ ................................ ................................ .......... 5 
+6.2 Equipment needed ................................ ................................ ................................ ....... 6 
+6.3 Pool Preparation ................................ ................................ ................................ .......... 6 
+6.4 Midwife ................................ ................................ ................................ ........................ 6 
+6.5 Environment ................................ ................................ ................................ ................. 6 
+6.6 Latent phase ................................ ................................ ................................ ................ 6 
+6.7 First Stage of Labour ................................ ................................ ................................ .... 6 
+6.7.1 Documentation ................................ ................................ ................................ ............. 7 
+6.7.2 Analgesia ................................ ................................ ................................ ..................... 7 
+6.8 Second stage of labour ................................ ................................ ................................ 7 
+6.8.1 Documentation ................................ ................................ ................................ ............. 7 
+6.8.2 Care / management of delivery ................................ ................................ ..................... 7 
+6.9 Third stage of labour ................................ ................................ ................................ .... 8 
+6.10 Post Delivery ................................ ................................ ................................ ................ 8 
+7.0 Indications to leave pool at any time during labour ................................ ....................... 8 
+8.0 Emergency evacuation from the pool ................................ ................................ ........... 9 
+9.0 Audit ................................ ................................ ................................ .......................... 10 
+References ................................ ................................ ................................ ........................... 11 
+Appendix 1: Birthing pool evacuation ................................ ................................ .................... 12 
+ CG14005 Water Birth Guideline v5.0 August 2021 Page 4 of 12 
+Please check against Staffnet that this printout is the most version of this document. 
+ Water Birth Guideline 
+ 
+1.0 Aim 
+ 
+To provide clear guidance for all staff involved in all aspects of water birth. 
+ 
+2.0 Scope 
+ 
+• Midwives 
+• Obstetricians 
+• Health care assistants / maternity support workers 
+ 
+3.0 Responsibilities 
+ 
+Midwives & obstetricians have a responsibility to: 
+ 
+• To access, read, understand and follow this guidance. 
+• To use their professional judgement in application of this guideline. 
+ 
+Midwives also have a responsibility to: 
+ 
+• To feel competent to care for pregnant women/people in the pool. 
+• To be competent in the use of the net/hoist for emergency pool evacuation. 
+ 
+Management have a responsibility to: 
+ 
+• To ensure the guideline is reviewed as required in line with Trust and National 
+recommendations. 
+• To ensure the guideline is accessible to all relevant staff. 
+ 
+4.0 Introduction 
+ 
+The evidence shows that immersion in water provides effective pain relief. Encouraging the 
+pregnant woman/person to get into a warm bath or birthing pool will help reduce the pain of 
+the first stage of labour, and mean they are less likely to request an epidural. 
+ 
+The Winterton Report recommended all maternity units should provide pregnant 
+women/people with the opportunity to labour and give birth in water. A significant number of 
+retrospective and prospective observational studies have identified maternal benefits of 
+labouring and giving birth in water, including shorter labours, less pain relief, fewer 
+episiotomies and lower blood loss; with no increased risks of neonatal infection ( RCM 
+Professional briefing on water birth in the time of covid ) 
+ 
+Pregnant women/people who choose to labour in water feel a high sense of control and 
+satisfaction. Preserving women/people’s privacy and dignity whilst in the pool is important for 
+both cultural and personal reasons. CG14005 Water Birth Guideline v5.0 August 2021 Page 5 of 12 
+Please check against Staffnet that this printout is the most version of this document. 
+ There is no evidence that the use of water has any significant difference on adverse maternal 
+or neonatal outcomes. There is insufficient evidence on: 
+ 
+• Timing of use of water in labour. 
+• The use of water in the second stage, particularly its effect on neonatal outcomes. 
+ 
+Using a bath or a birthing pool for pain relief does not mean that the woman/person has to 
+remain in it for birth unless she wants to. Women/people can get out of the water at any time 
+if they do not like it or want to try another method of analgesia. 
+ 
+5.0 Criteria for using pool for labour 
+ 
+• Low risk pregnancy at time of onset of labour. 
+• Singleton pregnancy. 
+• Minimum of 37/40 gestation. 
+• Cephalic presentation. 
+• No significant medical history. 
+• No previous or current significant obstetric complications. 
+• Spontaneous onset of labour. 
+• Labour following postdates induction with balloon, vaginal prostaglandin or artificial 
+rupture of membranes and no requirement for oxytocin infusion as they are in 
+active labour and contracting regularly and strongly. Risks and benefits should be 
+discussed with any women/person who chooses to not follow this recommendation 
+and clearly documented. 
+• Maternal weight 100kg or less or BMI less than 35 at booking OR consider 
+implications if BMI over 35 at booking. 
+ 
+For pregnant women/people wishing to labour in water who do not meet the criteria, an 
+appointment should be made in the antenatal period to discuss this with consultant and / or 
+manager on call. An agreed individual plan should be documented in the Antenatal Record. 
+ 
+MRSA: Pregnant women/people who are MRSA positive at the time of delivery may labour 
+and birth in the pool. The room would need an infectious clean after use and linen sent to the 
+laundry in an infected linen bag. The standard pool cleaning used meet the required standard 
+as agreed by infection control and manufacturer guidelines. 
+ 
+Group B Strep (GBS): is not considered a contraindication to using the pool. But remember 
+to still administer the prophylactic antibiotics. 
+ 
+6.0 Labour Management 
+ 
+6.1 Risk Assessment 
+ 
+The Labour Risk Assessment within the Labour Care Record must be completed for all 
+women in labour whether planning to use pool or not. CG14005 Water Birth Guideline v5.0 August 2021 Page 6 of 12 
+Please check against Staffnet that this printout is the most version of this document. 
+ 6.2 Equipment needed 
+ 
+Ensure the following: 
+• Waterproof sonicaid, pool thermometer and sieve are available . 
+• The room is adequately ventilated and furnished for the comfort, health and safety 
+of parents and staff. 
+• Evacuation net is available . 
+ 
+6.3 Pool Preparation 
+ 
+• Clean pool daily and after each use according to UHSussex (SRH&WH) 
+Sterilisation and Disinfection Policy . Keep record of cleaning and ensure all staff 
+are aware of procedure. 
+• Fill pool deep enough to cover women/person’s abdomen when sitting, and should 
+be sufficient to facilitate mobility. 
+• No additives to be put into water 
+• Water temperature 36 - 37.5°C as comfortable for the woman for first stage of 
+labour. ( NICE 2017 ) 
+ 
+NB: If homebirth, the woman/person’s birthing partner should take responsibility for assembly 
+/ inflation, filling and emptying of the pool. 
+ 
+6.4 Midwife 
+ 
+• Wear comfortable clothing. 
+• Consider posture and positioning whilst caring for woman in pool. 
+• Maintain fluid intake. 
+• Midwives with skin abrasions / eczema to hands and arms should not undertake 
+water birth. 
+ 
+6.5 Environment 
+ 
+Water spillages should be dealt with immediately. 
+ 
+6.6 Latent phase 
+ 
+Labour should be established prior to entry to the pool. However, it is recognised that some 
+individuals have prolonged and painful latent phases which may result in invasive analgesia. 
+In these instances, should the woman/person desire, the pool may be used but be mindful 
+that this may slow progress in the latent phase. Mobilisation and diversional therapies should 
+also be encouraged. 
+ 
+6.7 First Stage of Labour 
+ 
+• Maintain adequate fluid intake to prevent dehydration – including isotonic fluids. 
+• Maintain pool temperature between 36 - 37.5°C. 
+• Ensure bladder care monitored. CG14005 Water Birth Guideline v5.0 August 2021 Page 7 of 12 
+Please check against Staffnet that this printout is the most version of this document. 
+ • Vaginal examination (VE) - 4 hourly unless slow progress (see CG1196 Care of 
+women in labour guideline ). 
+ 
+NB: Ideally VE should be undertaken out of the pool. If undertaken in pool; ensure position 
+of woman does not put midwife at risk of back strain. 
+ 
+6.7.1 Documentation 
+ 
+• Complete partogram with maternal / fetal observations as per care of all 
+women/people in normal labour. 
+• Record time of entry to pool. 
+• Record maternal and pool temperature hourly on partogram. 
+ 
+6.7.2 Analgesia 
+ 
+• Encourage simple methods, relaxation, and diversional therapy. 
+• Entonox may be used under supervision whilst in the pool. 
+ 
+If opioid analgesia is required intramuscularly the woman must leave the pool. The woman 
+/person may re-enter the pool 2-4 hours after administration if she is not adversely affected. 
+ 
+If the woman/person has required intramuscular opioid analgesia in early labour they may 
+still use the pool when labour is established providing administration was at least 2 hours 
+earlier. 
+ 
+6.8 Second stage of labour 
+ 
+• Increase / decrease and maintain water temperature to 37 – 37.5 degrees. If not 
+achievable, deliver out of pool. 
+• Aim for room temperature of 21-22oC. 
+• Record maternal and pool temperature 1/2 hourly and document on the partogram. 
+ 
+6.8.1 Documentation 
+ 
+Document maternal and fetal observations as per CG1196 Care of women in labour 
+guideline on the partogram / Active Second Stage labour page. 
+ 
+6.8.2 Care / management of delivery 
+ 
+• A hands -off birth, supported by verbal guidance by the midwife should be practiced 
+and if this is not feasible ask the woman/person to stand or empty the pool. 
+• There is no need to feel for the cord – evidence shows that baby will deliver 
+through and can be unravelled. 
+• Deliver baby totally submerged as cool air will initiate respiration. 
+• Following delivery of the head, the shoulders should deliver with the next 
+contraction. If this does not happen the mother/person should be asked to stand CG14005 Water Birth Guideline v5.0 August 2021 Page 8 of 12 
+Please check against Staffnet that this printout is the most version of this document. 
+ and lean over the poolside. In rare instances of needing to cut the cord or perform 
+an episiotomy, these procedures can be undertaken at this point, out of the water. 
+• If it is not possible to disentangle the baby from the cord it must not be clamped 
+and cut under water. Ask mother/person to stand. Clamping and cutting cord with 
+the baby undelivered or submerged may stimulate respiration. 
+• Guide the baby gently to the surface, face uppermost, leaving body submerged. 
+ 
+6.9 Third stage of labour 
+ 
+• Management and place of delivery depends on the woman/person’s wishes i.e. 
+physiological or active. 
+• Delivery of the placenta may take place in / or out of the water, the risk of water 
+embolism being theoretical as no actual case has been reported. 
+• For active management of third stage the woman is asked to leave the pool 
+promptly after delivery with the injection of Syntocinon or Syntometrine given 
+intramuscularly ideally within ten minutes. 
+ 
+6.10 Post Delivery 
+ 
+• Attention should be given to maternal and baby’s temperature in the immediate 
+postnatal period. If the mother/person remains in the pool, the baby’s head should 
+be dried and hat given. 
+• Examine perineum out of the pool as soon as possible. 
+• If suturing is required this should be delayed for up to one hour unless there is 
+concern re blood loss following exit from the pool. This allows the perineal tissues 
+time to revitalise from immersion in water (Garland, 2000). 
+ 
+7.0 Indications to leave pool at any time during labour 
+ 
+• Maternal pyrexia: 
+- If 37.3 – 37.9oC administer oral paracetamol 1g and review after 30 minutes. 
+- If 38 C or over, leave pool and inform on - call Obstetric Team. 
+• Hypertension blood pressure 140/90 or more. 
+• Meconium stained liquor. 
+• Maternal request. 
+• Significant blood loss. 
+• Concerns regarding fetal heart rate. Perform a cardiotocograph for 20 minutes. If 
+fetal heart rate is normal after this, the CTG can be discontinued. If on the Birth 
+Centre, the CTG can be performed on there in the expectation that it will be able to 
+be discontinued in 20 minutes, and normal care resumed including returning to the 
+pool if wanted. However if concerns persist, obstetric review and transfer to CLS 
+are indicated. 
+• Opioid analgesia (see point 6.7.2) or epidural. 
+• Prolonged first or second stage. 
+• Excessive contamination. CG14005 Water Birth Guideline v5.0 August 2021 Page 9 of 12 
+Please check against Staffnet that this printout is the most version of this document. 
+ 8.0 Emergency evacuation from the pool 
+ 
+In the event of an obstetric emergency which results in maternal collapse (i.e. the 
+woman/person is unable to leave the pool unaided or with assistance) the following steps 
+should be taken (see appendix 1 ): 
+ 
+• Call for assistance and pull the emergency bell. 
+• Consider need to raise water level to aid evacuation. 
+• Slide the net under the patient, supporting the head and airway. Ensure the red 
+end of the net goes to the head and feet of the patient. 
+• Move the bed alongside the pool. 
+• Ensuring adequate staffing, grip the edges of the net and move the patient onto 
+the bed. 
+ 
+Please note: It may be necessary for staff to enter the pool to support the patient during 
+evacuation. CG14005 Water Birth Guideline v5.0 August 2021 Page 10 of 12 
+Please check against Staffnet that this printout is the most version of this document. 
+ 9.0 Audit 
+ 
+Suggested questions: 
+ 
+• Pregnant women/people who wish to use the birthing pool, and who do not meet 
+the criteria to use the pool, have a documented antenatal discussion with obstetric 
+consultant or manager -on-call. 
+• Pool water temperature was recorded hourly in first stage and half hourly in 
+second stage. 
+ 
+• Pool maintained at correct temperature range for first stage (36-37.5oC) and 
+second stage (37 -37.5oC). 
+ 
+• Documentation to show any required perineal suturing was delayed for at least one 
+hour post exit from pool or documentation to show why this was not achieved (ie 
+bleeding excessively). CG14005 Water Birth Guideline v5.0 August 2021 Page 11 of 12 
+Please check against Staffnet that this printout is the most version of this document. 
+ References 
+ 
+National Institute for Health and Clinical Excellence (2014) Intrapartum Care for healthy 
+women and babies G9190. Last updated 2017. 
+ 
+House of Commons Health Committee. Second Report on Maternity Services (Winterton 
+Report) London HMSO;1992 
+ 
+Cluett ER, Nikodem VC, McCandlish RE, Burns EE. Cochrane Database of Systematic 
+Reviews. 2. Oxford Update Software; 2004. Immersion in water in pregnancy, labour and 
+birth. (Cochrane Review) CG14005 Water Birth Guideline v5.0 August 2021 Page 12 of 12 
+Please check against Staffnet that this printout is the most version of this document. 
+ Clear the room of equipment 
+One person takes the lead 
+Bed to be position foot end against the pool 
+Ready – steady - lift 
+Remember airway 
+Ready – steady - lift onto the bed Appendix 1: Birthing pool evacuation 
+ 
+Call for help and support the airway 
+ 
+Consider need to raise water 
+to aid evacuation 
+
+Prepare the bed and net 
+ 
+Position the net underneath the patient. 
+Red parts of net to patients head and feet.

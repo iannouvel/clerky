@@ -1,0 +1,756 @@
+# Extracted from: CG1122 Maternal Transfer & Onsite Handover of Care.pdf
+# Guideline ID: cg1122-maternal-transfer-onsite-handover-of-care
+# Content length: 32220 characters
+# Processing date: 1750066899.9221432
+
+CG1122 Maternal Transfer and Onsite Handover of Care v7. 1 Page 1 of 19 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Maternal Transfer and Onsite Handover of Care Guideline 
+Summary statement: How does the 
+document support patient care? The purpose of this guideline is to provide good practice 
+guidelines for staff involved in the transfer of women /people 
+and onsite handover . 
+Staff/stakeh olders involved in 
+development: Obstetric anaesthetists, obstetric consultants and senior 
+midwifery staff 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Practise Development Midwife 
+For use by: All Medical and Midwifery staff involved in the transfer of 
+antenatal, intrapartum and postnatal women and onsite 
+handover 
+Purpose: To provide clear guidan ce on the management, process and 
+documentation requirements when women require transfer 
+from one ward to another, to another hospital, from home or 
+to ITU. 
+This document supports: 
+ CNST Maternity Standards 2021 
+RCOG 2007 Safer Childbirth 
+Key related documents: UH Sussex West (SRH & WH) Maternity Guidelines: 
+Severely ill CG1148 Recognition and Management of 
+Severely Ill Pregnant Women , CG20013 Preterm Birth 
+Risk Pathway , UH Sussex External Transfer Policy 
+Approved by: 
+ Women and Child Health Integrated Performance Group 
+Joint Obstetric Guideline Group 
+Approval date: 21st June 2023 Date uploaded: 4th July 2023 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable – Divisional Ratification only required 
+Ratification Date: Not Applicable – Divisional Ratification only required 
+Expiry Date: October 2024 
+Review date: April 2024 
+If you require this document in another format such as Braille, large print, audio or another language 
+please contact the Trusts Communications Team 
+Reference Number: CG1122 
+CG1122 Maternal Transfer and Onsite Handover of Care v7. 1 Page 2 of 19 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Version Date Author Status Comment 
+1.0 January 2011 CNST Midwife Archived New Trust wide guideline 
+2.0 February 2011 CNST Midwife Archived Minor admin. amendment 
+3.0 June 2011 CNST Midwife Archived Guideline updated to include 
+handover of Obstetric Medical 
+staff and Midwife handover to 
+the Health Visitor 
+4.0 October 2012 Clinical Governance 
+(CNST Lead) 
+CNST Midwife Archived Updated to include Version 2 of 
+SBAR form 
+5.0 January 2013 CNST Midwife Archived Minor amendment 
+5.1 January 2014 Clinical Governance 
+(CNST Lead) 
+CNST Midwife Archived 3 year review -clarification of 
+process for medical handover 
+6.0 May 2017 Practice development 
+Midwife Archived Guideline updated with SBAR 
+7.0 October 2021 N. Beckley, Project 
+Midwife – Saving 
+Babies’ Lives Archived 3 yearly update. 
+ SBAR - form updated . 
+ Transfer checklist updated 
+following feedback from 
+usage and incident review . 
+ Wording changed to highlight 
+multidisciplinary discussion 
+and safe, timely transfer. 
+ Added the need for original 
+notes to remain on site. 
+7.1 June 2023 CE Team LIVE Transfer Checklist updated. 
+Transfer Letter Templates 
+(reverse) updated. 
+
+CG1122 Maternal Transfer and Onsite Handover of Care v7. 1 Page 3 of 19 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Index 
+
+1.0 Aim ................................ ................................ ................................ ............................ 4 
+2.0 Scope ................................ ................................ ................................ ....................... 4 
+3.0 Responsibilities ................................ ................................ ................................ .......... 4 
+4.0 Introduction ................................ ................................ ................................ ................ 4 
+4.1 Abbreviations used in this guideline ................................ ................................ ........... 5 
+5.0 In utero transfer ................................ ................................ ................................ .......... 5 
+5.1 Contacting the ambulance service ................................ ................................ ............. 5 
+5.2 From the community ................................ ................................ ................................ .. 5 
+5.3 From the hospital ................................ ................................ ................................ ....... 5 
+5.4 Process and documentation requirements for hospital transfers ................................ 6 
+5.5 Process and documentation requirements for transfers from the community ............. 7 
+6.0 Maternal transfer to ITU / HDU ................................ ................................ ................... 7 
+7.0 Transfers in the postnatal period ................................ ................................ ................ 7 
+7.1 Neonatal readmissions ................................ ................................ ............................... 8 
+8.0 Onsite handover of care ................................ ................................ ............................. 8 
+8.1 On site handover ................................ ................................ ................................ ........ 8 
+8.2 Midwife handover ................................ ................................ ................................ ....... 8 
+8.3 Medical handover ................................ ................................ ................................ ....... 8 
+9.0 Handover of care to the health visitor ................................ ................................ ......... 9 
+11.0 Monitoring / Audit ................................ ................................ ................................ ......10 
+References ................................ ................................ ................................ ........................... 11 
+Appendix 1: Maternity SBAR Transfer Form ................................ ................................ ......... 12 
+Appendix 2: Worthing Hospital telephone numbers to arrange transfer ................................ 13 
+Appendix 3: St Richards Hospital telephone numbers to arrange transfer ............................ 14 
+Appendix 4: Checklist prior to transfer ................................ ................................ .................. 16 
+Appendix 5: SBAR ................................ ................................ ................................ ................ 17 
+Appendix 6: SRH Transfer template letter (reverse side) ................................ ...................... 18 
+Appendix 7: Worthing Transfer templat letter (reverse side) ................................ ................. 19 
+ 
+CG1122 Maternal Transfer and Onsite Handover of Care v7. 1 Page 4 of 19 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Maternal Transfer and Onsite Handover of Care Guideline 
+ 
+1.0 Aim 
+ 
+ To provide guidance for staff in the Maternity Unit on the safe transfer of 
+women /people during the antenatal, intrapartum and postnatal periods. 
+ To provide information for staff to enable effective onsite handover of care 
+between health professionals involved in transferring women /people ’s care. 
+ 
+This guideline covers: 
+ 
+ Women /people being transferred during the antenatal, intrapartum and postpartum 
+periods. 
+ Women /people being transferred from home to hospital, from site to site and from 
+this Trust to another Trust. 
+ Handover of care to the intensive care unit (ITU)/ high dependency un it (HDU) . 
+ Onsite handover of care for obstetric medical and midwifery staff . 
+ 
+2.0 Scope 
+ 
+This guideline is for use by: 
+ 
+ Midwives 
+ Obstetric medical staff 
+ Maternity care assistants and support workers. 
+ 
+3.0 Responsibilities 
+ 
+Midwives & obstetricians: 
+ 
+ To access, read, understand and follow this guidance . 
+ To use their professional judgement in application of this guideline . 
+ 
+Management: 
+ 
+ To ensure the guideline is reviewed as required in line with Trust and National 
+recommendations . 
+ To ensure the guideline is accessible to all relevant staff . 
+ 
+4.0 Introduction 
+ 
+ It is essential that formal local multidisciplinary arrangements are in place to 
+ensure the safe transfer of women /people in the antenatal, intrapartum and 
+postnatal periods. 
+CG1122 Maternal Transfer and Onsite Handover of Care v7. 1 Page 5 of 19 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ An effective working relationship between the multi -disciplinary team and a clear 
+organisational structure for midwives and medical staff with explicit and 
+transparent lines of communication is crucial to ensure optimum care for 
+women /people and babies. 
+ A consistent approach to communication is required when transferring 
+women /people . 
+ In order to clarify documentation and verbal handover purposes when transferring 
+and handing over care, SBAR (see Appendix 1 ) a systematic approach has been 
+introduced. The transfer processes are consistent throughout a 24 hour period. 
+ 
+4.1 Abbreviations used in this guideline 
+ 
+ITU - Intensive Care Unit WH - Worthing Hospital 
+HDU - High dependency Unit SBAR - Situation /Background/ Assessment 
+/Recommend ation 
+SRH - St Richards Hospital AN - Antenatal 
+PN - Postnatal ANC - Antenatal Clinic 
+ 
+5.0 In utero transfer 
+ 
+5.1 Contacting the ambulance service 
+ 
+When transferring by ambulance , all cases will be classed as an emergency unless 
+otherwise stated. 
+ 
+5.2 From the community 
+ 
+The local agreement with the ambulance service for an emergency transfer from community 
+to hospital is that the midwife should: 
+ 
+ Dial 999 . 
+ State she is a midwife . 
+ State she requires a paramedic ambulance for transfer. 
+ The midwife may need to choose a family member to make this call on their behalf. 
+The midwife will ask the person to make the call in her presence to ensure the 
+family member requests a paramedic ambulance. 
+ 
+5.3 From the hospital 
+ 
+To arrange an ambulance transfer from SRH & WH labour ward s call: 
+ 
+ Ambulance Control on 0300 123 9163 
+ 
+The health professional should request a blue light / paramedic ambulance for transfer 
+(depending on clinical situation) . 
+ 
+CG1122 Maternal Transfer and Onsite Handover of Care v7. 1 Page 6 of 19 
+Please check against Staffnet that this printout is the most recent version of this document. 
+5.4 Process and documentation requirements for hospital transfers 
+ 
+Multidisciplinary discussion should be held to ensure a safe and timely transfer with the 
+woman/person involved in this discussion . 
+ 
+Where possible, a discussion should be held with the receiving unit prior to the decision for 
+transfer. The decision for transfer is made by obstetric registrar, following discussion with 
+obstetric consultant, paediatricians and the Neonatal Unit to ensure adequate labour ward 
+staffing and availability of a neonatal cot. 
+ 
+ Women /people should give informed consent for transfer and next of kin should be 
+informed . The woman can contact her next of kin directly or a staff member should 
+if she is unable to. 
+ Labo ur Ward co-ordinator and/or senior obstetric clinician should telephone other 
+south coa st units to find a neonatal cot and maternal bed ( see Appendix 2 for 
+Worthing and Appendix 3 for SRH) . 
+ Commence completion of the Transfer Checklist (Appendix 4 ). 
+ Inform woman/person of destination . 
+ Phone ambulance (see above) and request blue light / paramedic ambulance 
+depending on clinical situation . 
+ Summary of case including the reason for transfer should be documented in the 
+health record by the lead obstetrician. 
+ Midwife to complete SBAR transfer form ( Appendix 1 ). 
+ Obstetrician to write a transfer letter using an SBAR format with ‘Useful 
+Information: St Richard’s Hospital’ (Appendix 6) printed on the reverse, or, ‘Useful 
+Information: Worthing Hospital’ (appendix 7) printed on the reverse as appropriate. 
+ One copy of SBAR form and obstetrician letter to be left with receiving hospital, 
+other to be filed in UHS maternity hospital notes on return to hospital. 
+ Photocopy all relevant inpatient antenatal / labour notes . Originals should not be 
+transferred with the woman/person . 
+ Handheld antenatal record to be filed in the hospital notes and tracked to 
+community midwives office. Should the woman/person return to our care, 
+community midwives are to arrange the return of the notes to the woman/person at 
+next contact. 
+ Midwife to ens ure the information is completed in transfer folder and a copy of the 
+transfer checklist is kept in the folder on Labour Ward . 
+ The fetal heart should be auscultated immedi ately prior to transfer either via CTG 
+or IA depending on gestation. Fetal heart auscultation is not required during 
+transfer due to safety considerations whilst travelling in an ambulance. 
+ Verbal handover to ambulance staff . 
+ Midwife escorts patient and ta kes transfer / delivery box from labour ward (if 
+required) . 
+ Labour Ward co-ordinator should telephone receiving unit that ambulance has left . 
+ On arrival, midwife hands over to receiving midwife . Any notes taken during 
+transfer should be photocopied. One copy returns to UH Sussex West hospital 
+maternity notes and one is given to the receiving hospital. 
+CG1122 Maternal Transfer and Onsite Handover of Care v7. 1 Page 7 of 19 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Where the transfer involves a complicated case or the patient is unstable, the referral 
+should be consultant to consultant and this should be documented. 
+ 
+5.5 Process and documentation requirements for transfers from the community 
+ 
+Transfers into hospital should be arranged at the earliest indication of a developing 
+complication (see CG 12032 Homebirth Guideline ). 
+ 
+ The midwife should make a full assessment of mother /person and/ or baby. 
+ Women /people should give informed consent for transfer and next of kin should be 
+informed . 
+ The midwife should dial 999, state they are a midwife and ask for a paramedic 
+ambulance for transfer. 
+ The midwife may need to choose a family member to make this call on their behalf. 
+The midwife will ask the person to make the call in her presence to ensure the 
+family member requests a paramedic ambulance. 
+ The midwife must phone Labour Ward to ensure co-ordinator and obstetric 
+registrar informed of transfer. 
+ The midwife should ensure that the woman /person ’s birth partne r is kept fully 
+informed and that personal belongings accompany patient . 
+ A SBAR transfer form ( Appendix 1 ) should be completed by the midwife to be used 
+at the handover, and all antenatal and labour records should accompany the 
+patient . 
+ The midwife should escort the woman /person to Labour Ward where she should 
+perform verbal handover to the receiving midwife (if not remaining with the 
+woman /person ) and obstetrician as appropriate. 
+ The midwife should document the tr ansfer in the labour record and file the SBAR 
+form in the UH Sussex West hospital maternity notes following the handover. 
+ Complete DATIX. 
+ 
+6.0 Maternal transfer to ITU / HDU 
+ 
+ The most senior clinician is responsible for arranging the transfer 
+ Obstetric and anaesthetic teams should liaise with Critical Care unit ( ITU / HDU ) 
+and plan care that is appropriate to the individual patient. 
+ The Obstetric Consultant should write a clear plan of care in the hospital notes. 
+ See CG1148 Recognition and Management of Severely Ill Pregnant Women . 
+ 
+7.0 Transfers in the postnatal period 
+ 
+ For women /people who need to be transferred to another hospital or department in 
+the postnatal period, the midwife should determine whether the patient requires an 
+escort. 
+ If a woman /person is not fit for discharge and needs to be transferred between 
+sites, or to a differ ent Trust, in the postnatal period it should be by ambulance. 
+CG1122 Maternal Transfer and Onsite Handover of Care v7. 1 Page 8 of 19 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ If a woman /person is fit for discharge it is appropriate for them to go by car. 
+ The decision to transfer by ambulance should be made by the obstetric registrar 
+following discussion with the consultant if appropriate. 
+ For ambulance transfers the registrar must phone the receiving hospital with 
+details of the woman /person ’s condition and complete a referral letter outlining 
+reasons for transfer 
+ A SBAR transfer form is available for use by the mid wife. One copy returns to UH 
+Sussex West hospital maternity notes and one is given to the receiving hospital 
+ All relevant notes should be photocopied and sent with patient. Originals must 
+remain on site. 
+ 
+7.1 Neonatal readmissions 
+ 
+Please refer to Neonatal referral pathway into hospital from community <28 Days 
+(Readmission) - Appendix 4 of CG13019 Triage of Maternity Patie nts Guideline . 
+ 
+8.0 Onsite handover of care 
+8.1 On site handover 
+ 
+Handover is a critical time when information can be lost. A structured handover tool, SBAR 
+(Situation -Background -Assessment -Recommendation) has been introduced to improve 
+communication during onsite handover of care for all staff, with the aim of reducing the 
+number of patient safety incidents. 
+ 
+8.2 Midwife handover 
+ 
+The Midwife should document the handover of care by using either the SBAR sticker ( see 
+Appendix 5 ) and placing it in the health record or by using the M aternity SBAR Transfer Form 
+(Appendix 1 ) and the receiving midwife should sign receipt of this handover. This prin ciple 
+applies to: 
+ 
+ 1 to 1 handover at the change of shift . 
+ From Antenatal Ward to Labour Ward (this includes Triage if applicable) . 
+ From Labour Ward to the Postnatal Ward . 
+ 
+8.3 Medical handover 
+ 
+ On-call obstetric medical staff for both St Richards and Worthing hospitals , have 
+responsibility for the in -patient maternity unit i.e. Labour ward and the Antenatal / 
+Postnatal Ward. Therefore there is no care setting handover as the care givers 
+remain the same . 
+ On call obstetric medical staff from the outgoing night shift and incoming day shift; 
+along with senior midwifery staff, take part in a daily handover on the Labour Ward . 
+ Maternity information system ward map provides a ‘live’ record of current in -
+patients on Labour Ward. This is available alongside the white board during 
+handover to ensure a more robust system. 
+CG1122 Maternal Transfer and Onsite Handover of Care v7. 1 Page 9 of 19 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Obstetric medical clinicians are not expected to document this handover of care in 
+each individual patient health record. 
+ In line with Safer Childbirth, as a minimum this handover should include the 
+following clinicians: Labour Ward co-ordinator, on -call consultant and registrar. 
+ Evening handover on Labour Ward is between the outgoing day and incoming 
+night registrars and SHOs with consultant presence if indicated. 
+ 
+9.0 Handover of care to the health visitor 
+ 
+Following booking, the community midwife is responsible for informing the health visitor of 
+the pregnancy and any relevant social/ medical conditions. Any change of circumstances 
+during the pregnancy must be communicated to the health visitor. 
+ 
+Following delivery, at discharge from midwifery care, the midwife must ensure the health 
+visitor is aware if contact has not already been made. The midwife should complete the 
+discharge forms at the back of the postnatal notes and ensure a copy i s left with the mother 
+to pass to the health visitor. If there have been any concerns in the postnatal period, the 
+midwife must ensure the health visitor is kept informed (either by telephone or face -to-face). 
+ 
+If a baby remains in the special care baby un it after the mother has been discharged from 
+midwifery care, the liaison health visitor at the hospital will telephone the relevant health 
+visitor when the baby is discharged from the unit. 
+
+CG1122 Maternal Transfer and Onsite Handover of Care v7. 1 Page 10 of 19 
+Please check against Staffnet that this printout is the most recent version of this document. 
+11.0 Monitoring / Audit 
+ 
+Suggested audit questions: 
+ 
+For ho spital transfers: 
+ 
+ Summary of case including reason for transfer should be documented in the health 
+record by the lead obstetrician. 
+ 
+ Midwife has completed SBAR transfer form. 
+ 
+ Obstetrician has written a transfer letter using the SBAR template letter. 
+ 
+ Where the transfer involves a complicated case or the patient is unstable, the 
+referral should be consultant to consultant and this should be documented. 
+ 
+For transfers from the community: 
+ 
+ The midwife should make a full assessment of mother/person and/or baby. 
+ 
+ A SBAR transfer form has been completed by the community midwife. 
+ 
+ITU/HDU transfer: 
+ 
+ A clear plan of care is documented by an Obstetric Consultant in the hospital 
+notes. 
+ 
+ Documented evidence that o bstetric and anaesthetic teams have liaise d with 
+ITU / HDU . 
+ 
+On-site handover of care: 
+ 
+ SBAR sticker or the Maternity SBAR Transfer Form used in any transfer of care or 
+transfer between wards between midwifery staff. The receiving midwife should sign 
+receipt of this handover. 
+ 
+Handover to Health Visitor: 
+ 
+ Discharge forms at back of Postnatal Care Record should be fully completed and a 
+copy left with the mother for the health visitor. 
+CG1122 Maternal Transfer and Onsite Handover of Care v7. 1 Page 11 of 19 
+Please check against Staffnet that this printout is the most recent version of this document. 
+References 
+ 
+Confidential Enquiry into Maternity and Child Health. (2004). Why Mothers Die 2000 -2002 . 
+London: RCOG Press. Available at: www.cemach.org.uk 
+ 
+Ottewill M, Urben J, Elson D .Safe handover: Safe care. Midwives RCM December 2007 
+Volume 10 No 11 
+ 
+Royal College of Anaesthetists, Royal College of Midwives, R oyal College of Obstetricians 
+and Gynaecologists, Royal College of Paediatrics and Child Health. (2007). Safer Childbirth: 
+Minimum Standards for the Organisation and Delivery of Care in Labour. London: RCOG 
+Press. Available at: www.rcog.org.uk 
+ 
+NHS England. (2019) Saving Babies’ Lives Care Bundle v2. Available at: 
+https://www.engl and.nhs.uk/wp -content/uploads/2019/03/Saving -Babies -Lives -Care -Bundle -
+Version -Two-Updated -Final -Version.pdf 
+ 
+NHS Institute for Innovation and Improvement 2006 -2010 SBAR Handover Tool 
+
+CG1122 Maternal Transfer and Onsite Handover of Care v7. 1 Page 12 of 19 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 1: Maternity SBAR Transfer Form 
+Please complete or Affix Patient Label 
+ 
+Unit No: ………………………………………… 
+ 
+NHS No: ……………………………………….. 
+ 
+Surname ……………………………………….. 
+ 
+Forenames …………………………………….. 
+ 
+Current location: 
+ 
+Destination location: 
+ 
+Care handed over by (print name & s ign): 
+ 
+Care handed over to (print name): 
+ 
+Date: 
+Time: AN / Labour / PN (circle) 
+Gestation/PN day: Booking BMI: 
+Booking weight: 
+Age: Smoking at booking: yes/no 
+Current smoker: yes/no Booking B/P: 
+Situation 
+ 
+(reason for transfer) 
+ 
+Background 
+(Obstetric, medical, 
+social, other. 
+Blood group , allergies , 
+medication ) 
+
+Medicines: 
+Assessment 
+ 
+(Results, CTG 
+assessment, 
+observations, bladder 
+care, cannula care ) Most recent observations prior to transfer: 
+T: P: BP: RR: 
+SpO2: VTE: VIP score: 
+Pressure area assessment: (circle) Green Amber Red 
+ 
+Bladder care 
+Last void: TWOC due: TWOC status: 
+
+Risk assessment: LOW RISK HIGH RISK 
+(circle) 
+Recommendation 
+ 
+(medical transfer letter, 
+documented care plan, 
+CTG review due) 
+ 
+Specimen/test results outstanding: 
+ 
+Next obstetric review due : 
+ Neonatal 
+(Paediatrician required 
+at delivery, transitional 
+care, PN care plans, 
+screening, anomalies) 
+CG1122 Maternal Transfer and Onsite Handover of Care v7. 1 Page 13 of 19 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 2 : Worthing Hospital telephone numbers to arrange transfer 
+
+HOSPITAL TELEPHONE 
+NUMBER SPEED 
+DIAL LABOUR 
+WARD NEONATAL 
+UNIT 
+Emergency Cot line 0207 4077181 
+Wessex Cot line 02380798792 
+ 
+RSCH Brighton 2033 4373 4377 
+QA Portsmouth 2013 4546 3680 
+Southampton Princess Anne 2030 6337/8103 6001 
+Medway Kent 01634 830000 5880 
+St George’s 2017 1938 
+St Thomas’s – Guy (SCBU) 2002 88847 
+Chelsea & Westminster 02087 468000 2031 02088 467841/55 02088 467883 
+Kings College 2010 3553 
+Homerton 02085 107352 02085 107361 
+UCH 2089 02073876541 
+Northwick Park 02088 643232 
+St Hellier’s 02086 444343 2479 
+Kingston -upon -Thames 2126 2422/ 3117/ 3359 02089 745390 
+Pembury 1395 8500 3359 
+Royal London Hospital NO OBS UNIT 02073 777176 
+Hammersmith 02088 461234 2009 4230/ 3025 33908/ 33174 
+Hillingdon Hospital , Middlesex 01895 238282 3447 
+Lewisham 02083 333000 3026 02083 333139 
+Mayday 02084 013000 3219/ 3523 4476/ 4477 
+Queen Mary’s ,Sidcup 02083 022678 02083 083029 02083 083035 
+Royal Free Hospital, Hampstead 02077 940500 3849 
+St Mary’s , Paddington 02078 861060 02078 861103 
+Whipps Cross, London 02085 395522 02085 356602 02085 356513 
+St Peters, Chertsey 01932 872000 2019 2361 2015/ 2386 
+Winchester & Eastleigh NHS Trust 01962 863535 01962 824810 01962 824200 
+Kent & Canterbury (William Harvey) 01233 633331 2117 
+John Radcliffe 01865 221371 
+
+CG1122 Maternal Transfer and Onsite Handover of Care v7. 1 Page 14 of 19 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 3 : St Richards Hospital telephone numbers to arrange transfer 
+
+HOSPITAL TELEPHONE 
+NUMBER SPEED 
+DIAL LABOUR 
+WARD NEONATAL 
+UNIT 
+Emergency Bed Bureau 
+Emergency Cot line 0207 4077181 
+Wessex Cot line 02380798792 
+ 
+Basingstoke 01256 473202 
+Brompton #5150 
+Chelsea & Westminster #5472 
+Eastbourne #5732 N/A 
+East Surrey (Redhill) #5155 
+Frimley Park #5105 
+Great Ormond Street #5106 
+Guys #5107 
+Kings #5730 
+Mayday #5117 
+Nuffield Chichester #5128 
+Poole #5469 
+Princess Anne 
+Southampton #5137 
+Royal Surrey Guildford #5125 
+Royal Sussex County 
+Brighton #5126 
+St George’s #5130 1936 
+St Hellier’s #5131 
+St Mary’s Isle Of Wight #5175 
+QA, Portsmouth 02392 283287 #5123 3664/5 02392 866681 
+St Peter’s Chertsey #5134 
+St Thomas #5107 
+Salisbury District #5119 
+The Grange (Petersfield) 01730 266742 
+Winchester #5153 
+Worthing #5143 5230 
+
+CG1122 Maternal Transfer and Onsite Handover of Care v7. 1 Page 15 of 19 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 4 : Checklist prior to transfer 
+
+Version 2.1 June 2023 
+
+ Royal Sussex County 
+Hospital Brighton Time of call If refused, reason 
+Speed dial - 82033 
+Main Tel: 01273 696955 
+Labour Ward Ext. 64373 
+Tel: 01273 664793 
+Neonatal unit Ext. 64377 Accepted 
+Refused 
+Queen Alexandra Portsmouth Time of call 
+Speed dial - 82090 
+Main Tel: 02392 286000 
+Labour Ward Ext. 4500 or 
+3286 or 4504 
+Neonatal unit Tel: 02392 
+283231 Accepted 
+Refused 
+University Hospital 
+Southampton Time of call 
+Main Tel: 02380 777 222 
+Labour Ward Tel: 02381 
+206002 
+Neonatal unit Tel: 02381 
+06001 #1623 Accepted 
+Refused 
+Other units contacted Time of call Accepted/Refused 
+
+Date: 
+Receiving Hospital: 
+Reason for Transfer: 
+Hospital number: 
+Surname: 
+Forename(s): 
+D.O.B: 
+Address: 
+
+ Attach label 
+CG1122 Maternal Transfer and Onsite Handover of Care v7. 1 Page 16 of 19 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 4: Checklist prior to transfer 
+
+Name: Hospital number: NHS Number: 
+ 
+Task Initial Comments 
+Discussed with obstetric team 
+Discussed with neonatal team 
+Discussed with parents 
+ 
+Consent obtained? 
+Acceptance of receiving unit Name of accepting person 
+Role: 
+Time: 
+Obstetrician handover 
+Midwife escort arranged Name: Time: 
+Ambulance transfer arranged Time arranged: 
+Urgency: 
+Time arrived: 
+SBAR completed 
+Obstetrician care plan documented 
+Transfer letter completed 
+Create PDF from Badgernet of the 
+patients record and also include - 
+ Pathology results including 
+any outstanding tests from 
+affinity 
+ Medicine administration and 
+prescription history from 
+EPMA 
+Equipment checked 
+ Prior to transfer 
+ Post transfer 
+Email named Midwife to advise of 
+transfer 
+Email appropriate ANC to advise of 
+transfer WH: uhsussex.wor.antenatalclinic@nhs.net 
+SRH: antenatal.clinic1@nhs.net 
+Inform Safeguarding Midwives uhsussex.safeguardingmidwives@nhs.net 
+Transfer timings Time left: 
+Time arrived at receiving hosptial: 
+Handover completed: 
+Documentation completed on route 
+copied and filed in notes 
+Print Name: 
+ 
+ Signature: 
+
+Once checklist completed, please scan into MIS 
+and file in green handheld notes . 
+ 
+CG1122 Maternal Transfer and Onsite Handover of Care v7. 1 Page 17 of 19 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 5 : SBAR 
+
+CG1122 Maternal Transfer and Onsite Handover of Care v7. 1 Page 18 of 19 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 6: SRH Transfer templat e letter (reverse side) 
+ 
+Obstetrician to write transfer letter using SBAR format. With the following details printed on 
+the reverse side: 
+
+ Useful information: St Richard’s Hospital 
+Our Trust uses Badgernet Maternity and has the Single Pregnancy record. If your unit 
+also uses the same system, please search for the patient’s NHS number for full 
+information. 
+Alternatively we have provided you with a PDF copy of the record at the point of transfer. 
+On discharge of the woman/person, please email the Worthing Community Team with 
+discharge information including attachments if available at: 
+uhsussex.srhcommunityteamleaders@nhs.net 
+
+Please find below contact information should you need it. 
+ 
+Antenatal Clinic: Tel: 01243 788 122 ext. 32942 
+ Email: antenatal.clinic1@nhs.net 
+ 
+Community Midwives: 01243 788 122 ext. 32811 
+ Email: uhsussex.srhcommunityteamleaders@nhs.net 
+ 
+Labour Ward: 01243 788 122 ext. 32961/32962 
+ 
+Tangmere Ward: 01243 788 122 ext. 32942 
+ Email: srh.tangmere@nhs.net 
+ 
+Safeguarding : Email: WSHNT.SafeGuardingMidwives@nhs.net 
+
+If a baby sadly dies, please email wshnt.BereavementMultidisciplinaryTeam@nhs.net 
+immediately so that all relevant departments are informed. 
+CG1122 Maternal Transfer and Onsite Handover of Care v7. 1 Page 19 of 19 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 7: Worthing Transfer templat le tter (reverse side) 
+ 
+Obstetrician to write transfer letter using SBAR format. With the following deta ils printed on 
+the reverse side: 
+
+ Useful information: Worthing Hospital 
+Our Trust uses Badgernet Maternity and has the Single Pregnancy record. If your unit 
+also uses the same system, please search for the patient’s NHS number for full 
+information. 
+Alternatively we have provided you with a PDF copy of the record at the point of transfer. 
+On dischar ge of the woman/person, please email the Worthing Community Team with 
+discharge information including attachments if available at: 
+uhsussex.whcommunitydischarges @nhs.net 
+ 
+Please find below contact information should you need it. 
+ 
+Antenatal Clinic: 01903 205111 ext. 84371 
+ Email: uhsussex.wor.antenatalclinic@nhs.net 
+ 
+Community Midwives: 07775778166 
+ Email: uhsussex.whcommunitydischarges@nhs.net 
+ 
+Labour Ward: 01903 285138 
+ Email: wgh.deliverysuite@nhs.net 
+ 
+Bramber Ward: 01903 285144 
+ Email: wor.bramber@nhs.ne t 
+ 
+Safeguarding: Email: uhsussex.safeguardingmidwives@nhs.net 
+
+If a baby sadly dies, please email wshnt.BereavementMultidisciplinaryTeam@nhs.net 
+immediately so that all relevant departments are informed.

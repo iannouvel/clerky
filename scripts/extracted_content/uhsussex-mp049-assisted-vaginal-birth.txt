@@ -1,0 +1,824 @@
+# Extracted from: UHSussex - MP049 - Assisted Vaginal Birth.pdf
+# Guideline ID: uhsussex-mp049-assisted-vaginal-birth
+# Content length: 41374 characters
+# Processing date: 1741444685.142666
+
+University Hospitals Sussex Foundation Trust Page 1 
+ 
+Assisted 
+Vaginal Birth 
+
+Maternity Protocol: MP049 
+ 
+Date agreed: January 2022 
+
+Assisted Vaginal Birth (RSCH PRH only ) MP04 9 
+ 
+University Hospitals Sussex Foundation Trust Page 2 
+
+Guideline Reviewer: Amy Richardson, K atie Fraser 
+Manager responsible: Katie Fraser 
+Version: 3 
+Approval Committee: Women Safety and Quality Committee 
+Date agreed: January 2022 
+Review date: August 2024 
+Cross reference: MP035 Care of Women / people in Labour 
+MP037 Fetal Heart Monitoring 
+MP038 Fetal Blood Sampling 
+MP040 Bladder Care 
+MD084 BSUH Maternity & Obstetric Training Needs Analysis & Skills 
+and Drills 
+MP054 Perineal Trauma Repair 
+MD090 Fetal Pillow 
+ 
+ Assisted Vaginal Birth (RSCH PRH only ) MP04 9 
+ 
+University Hospitals Sussex Foundation Trust Page 3 Contents 
+Key Principles ................................ ................................ ................................ ......................... 5 
+Scope ................................ ................................ ................................ ................................ ....5 
+Responsibilities ................................ ................................ ................................ ...................... 5 
+1 Assisted Instrumental Vaginal Birth ................................ ................................ .............. 6 
+1.1 Interventions to reduce need for operative vaginal birth ................................ ............... 6 
+1.2 Classification for operative vaginal birth ................................ ................................ ....... 6 
+2 Indications for offering operative vaginal birth ................................ ............................. 7 
+3 Contraindications to Operative Vaginal Birth ................................ ................................ 7 
+4 Conditions and Pre -requisites for Safe Operative Vaginal Birth ................................ .....8 
+4.1 Who can perform the procedure, t he following clinicians can perform operative 
+vaginal birth: ................................ ................................ ................................ ............................. 8 
+4.2 Assessment ................................ ................................ ................................ ..................... 8 
+4.3 Choice of instrument ................................ ................................ ................................ ...... 9 
+5 Risks of Instrumental delivery ................................ ................................ .................... 10 
+5.1 Risks of Ventouse delivery ................................ ................................ .......................... 10 
+5.2 Risks of forceps delivery ................................ ................................ ............................. 10 
+5.3 Vacuum extraction compared with forceps is: ................................ ............................ 11 
+6 Preparation for operative vaginal delivery ................................ ................................ . 11 
+7 Ventouse/Kiwi Assisted Delivery ................................ ................................ ................ 13 
+8 Non -Rotational Forceps Assisted Delivery – Neville Barnes / Wrigleys ........................ 14 
+9 Rotational forceps delivery – Keilland ................................ ................................ ........ 15 
+10 Sequential instruments ................................ ................................ .............................. 16 
+11 Episiotomy / Perineal care ................................ ................................ ......................... 17 
+12 Abandoned Instrumental and Progression to Caesarean ................................ ............. 18 
+13 Prophylactic antibiotics ................................ ................................ .............................. 18 
+14 Aftercare Following Operative Vaginal Birth ................................ ............................... 18 
+15 Care of the bladder after birth ................................ ................................ ................... 19 
+16 Post -Delivery Documentation (see also Appendix A) ................................ .................. 20 
+17 Debriefing ................................ ................................ ................................ .................. 20 
+18 References ................................ ................................ ................................ ................. 21 
+Appendix A - Instrumental birth Proforma ................................ ................................ ............ 22 
+Appendix B: Difficulty delivering the head at caesarean section in advanced labour ............. 25 
+18.1 Preparation ................................ ................................ ................................ ............... 25 Assisted Vaginal Birth (RSCH PRH only ) MP04 9 
+ 
+University Hospitals Sussex Foundation Trust Page 4 18.2 Uterine incision ................................ ................................ ................................ ........ 25 
+18.3 Manipulation techniques ................................ ................................ .......................... 25 
+Appendix C: Placement of the Fetal Pillow ® ................................ ................................ ......... 27 
+
+ Assisted Vaginal Birth (RSCH PRH only ) MP04 9 
+ 
+University Hospitals Sussex Foundation Trust Page 5 Key Principles 
+ 
+A protocol is a set of measurable, objective standards to determine a course of action. 
+Professional judgement may be used in the application of a protocol. 
+ 
+Scope 
+This protocol applies to: 
+• Any woman or pregnant person in labour requiring assistance at birth 
+ 
+Responsibilities 
+ 
+Midwives & Obstetricians : 
+• To access, read, understand and follow this guidance 
+• To use their professional judgement in application of this protocol 
+ 
+Management: 
+• To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations 
+• To ensure the protocol is accessible to all relevant staff 
+ Assisted Vaginal Birth (RSCH PRH only ) MP04 9 
+ 
+University Hospitals Sussex Foundation Trust Page 6 1 Assisted Instrumental Vaginal Birth 
+ 
+ There will always be a need for assisted vaginal birth, but efforts need to be made to 
+minimize their incidence. The goal of operative vaginal birth is to mimic spontaneous 
+vaginal birth, thereby expediting birth with a minimum of maternal or neonatal 
+morbidity. Operative vaginal birth rates have remained stable at between 10% and 15% 
+(nationally. 1 in 3 nulliparous women / people or pregnant people will have an assisted 
+delivery. 
+1.1 Interventions to reduce need for operative vaginal birth 
+A variety of interventions can be considered in helping to reduce oper ative vaginal 
+birth, including: 
+1.1.1 All women / people and pregnant people should be encouraged to 
+have continuous emotional and physical support during labour from 
+their midwife and chosen birthing partners 
+1.1.2 Use of a partogram 
+1.1.3 Use of upright or lateral positions will reduce the need for operative 
+vaginal birth. 
+1.1.4 Avoiding epidural analgesia may also have an impact. If epidural 
+analgesia is used, lying -down lateral positions increase the rate of 
+spontaneous vaginal birth. 
+1.1.5 Delayed pushing for 1 -2 hours with an epidural, where appropriate, 
+may reduce the risk of rotational and mid -cavity births. 
+1.1.6 Extreme caution should be taken before using oxytocin for the second 
+stage in multiparous pregnant people. 
+1.2 Classification for operative vaginal birth 
+ 
+Outlet • Fetal scalp visible without separating the labia 
+• Sagittal suture is in the antero -posterior diameter or right or 
+left occiput anterior or posterior position (rotation does not 
+exceed 45 degrees) 
+• Fetal head is at or on the perineum 
+ 
+Low • Leading point of the skull (not caput) is at station plus 2 cm or 
+more and not on the pelvic floor. Two subdivisions: 
+(a) rotation of 45 degrees or less 
+(b) rotation more than 45 degrees 
+ Assisted Vaginal Birth (RSCH PRH only ) MP04 9 
+ 
+University Hospitals Sussex Foundation Trust Page 7 Mid 
+ • Fetal head is 1/5 palpable per abdomen 
+• Leading point of the skull is above station plus 2 cm but not 
+above the ischial spines. Two subdivisions: 
+(a) rotation of 45 degrees or less 
+(b) rotation more than 45 degrees 
+ 
+2 Indications for offering operative vaginal birth 
+ 
+No indication is absolute and each case should be considered individually. 
+
+Fetal 
+
+Maternal 
+
+ • Presumed fetal compromise 
+• Malposition 
+ 
+• Medical indications to avoid Valsalva (this should be 
+based on a shared decision between the woman or 
+pregnant person, obstetrician and medical specialist and 
+discussed in the antenatal period). 
+e.g. cardiac disease Class III or IV, hypertensive crisis, 
+cerebral vascular disease – particularly uncorrected 
+cerebral vascular malformations, myasthenia gravis, 
+spinal cord injury, proliferative retinopathy. 
+ 
+Inadequate 
+progress • Maternal fatigue or exhaustion. 
+ 
+Nulliparous women / people and pregnant people: lack of 
+continuing progress for 3 hours (total of active and passive 
+second stage labour) with regional anaesthesia, or 2 hours 
+without regional anaesthesia 
+ 
+Multiparous women / people and pregnant people : lack of 
+continuing progress for 2 hours with regional anaesthesia 
+(total of active and passive second stage labour), or 1 hour 
+without regional anaesthesia 
+3 Contraindications to Operative Vaginal Birth 
+3.1 Ventouse should not be performed on a face presentation, or on a baby under 
+34 weeks gestation. Forceps can be utilised in these instances. 
+3.2 Ventouse should not be used where there is confirmed or high probability of 
+fetal bleeding disorders e.g. maternal ITP 
+ Assisted Vaginal Birth (RSCH PRH only ) MP04 9 
+ 
+University Hospitals Sussex Foundation Trust Page 8 3.3 A predisposition to bony fracture e.g. history of osteogenesis imperfect 
+3.4 HIV and Hepatitis B positive status is not a contraindication provided the viral 
+load is undetectable. For both conditions, if the decision has been made to aim 
+for vaginal delivery, they should not be treated differently. Forceps rather than 
+ventouse should be considered to reduce the risk of trauma to fetal scalp. 
+ 
+4 Conditions and Pre -requisites for Safe Operative Vaginal Birth 
+ 
+4.1 Who can perform the procedure , the following clinicians can perform operative 
+vaginal birth: 
+4.1.1 Consultant obstetrician 
+4.1.2 Middle grade / specialty registrar obstetrician with demonstrated 
+competency (see 4.2) 
+4.1.3 SHO under full supervision by an appropriately trained doctor (see 4.2) 
+4.1.4 Expertise in the chosen procedure 
+4.1.4.1 The operator must have the knowledge, experience and skills 
+necessary to use the instruments and mana ge complications 
+that may arise 
+4.1.4.2 Obstetric trainees must receive appropriate training in vacuum 
+and forceps birth, including theoretical knowledge, simulation 
+training and clinical training under direct supervision. 
+4.1.4.3 Competency should be confirmed prior to conducting 
+unsupervised deliveries. 
+4.1.4.4 Complex assisted vaginal births / mid cavity / rotational 
+deliveries should only be performed by experienced operators 
+or under the direct supervision of an experienced operator. 
+4.2 Assessment 
+The following should be assessed and conf irmed by the clinician prior to 
+performing the procedure. This assessment should be clearly documented in the 
+maternal notes 
+ 
+4.2.1 Vertex presentation 
+4.2.2 Fetal head is ≤ 1/5 palpable per abdomen, and below ischi al spines on 
+vaginal examination 
+ Assisted Vaginal Birth (RSCH PRH only ) MP04 9 
+ 
+University Hospitals Sussex Foundation Trust Page 9 4.2.3 Cervix is fully dilated and the membranes ruptured 
+4.2.4 The exact position of the head can be determined – to ensure proper 
+placement of instrument 
+4.2.5 The maternal pelvis is deemed adequate – irreducible moulding may 
+indica te cephalo -pelvic disproportion 
+4.2.6 Assessment of any caput and/or moulding 
+ 
+4.3 Choice of instrument 
+4.3.1 The operator should choose the instrument most appropriate to the 
+clinical circums tances and their level of skill 
+4.3.2 Operators should be aware that forceps and vacuum extraction are 
+associated with different benefits and risks (section 5.5). Failure to 
+complete the birth with a single instrument is more likely with vacuum 
+extraction, but maternal perineal tra uma is more likely with forceps 
+4.3.3 Rotational births should be performed by experienced operators; the 
+choice of instrument depending on the clinical circumstances and 
+expertise of the individ ual 
+4.3.4 If there are concerns for fetal wellbeing / abnormal CTG, it is then up to 
+the obstetrician, after reviewing the CTG and the anticipated difficulty 
+of the operative delivery to decide whether to offer caesarean birth, or 
+instrumental birth straight away. 
+ 
+Instrument Optimal accepted conditions for use 
+Kiwi ™ cup 
+(ventouse) Occipito -anterior (OA), Occipito -transverse (OT) and Occipitial -posterior 
+(OP) positions. 
+Good maternal effort 
+Minimal caput 
+Anterior metal cup OA and OT positions - especially if there is moderate or severe caput 
+Also suitable for the slightly deflexed head. 
+Posterior metal 
+cup OP and OT positions where deflexion of the head is also usually present. 
+Ventouse Silicone 
+rubber cup OA and possibly for OT positions 
+Should not be used for OP position or in the presence of excessive caput. 
+Soft cup vacuum extractors have a higher rate of failure but a lower 
+incidence of neonatal scalp trauma. 
+Non -rotational 
+(Neville -Barnes) Most useful for direct OA, LOA, and ROA positions but can sometimes be 
+useful for direct OP positions. 
+Useful where maternal effort is suboptimal, or where there is caput Assisted Vaginal Birth (RSCH PRH only ) MP04 9 
+ 
+University Hospitals Sussex Foundation Trust Page 10 forceps Requires a spinal / epidural anaesthesia, or pudendal block 
+Wrigley’s forceps Delivery assistance during caesarean section. 
+Outlet delivery where ventouse is inappropriate. 
+Kielland forceps Rotational deliveries from OT and OP positions. 
+Keillands forceps have a sliding lock, which allows correction of asynclitism 
+to facilitate rotation in the pelvis. 
+Suspected fetal compromise is a relative contraindication, unless the 
+clinician expects an easy delivery. 
+5 Risks of Instrumental delivery 
+5.1 Risks of Ventouse delivery 
+ 
+ Maternal Fetal 
+Any extra procedures 
+which may become 
+necessary during the 
+procedure ● Episiotomy (5 –6 in 
+10 for vacuum 
+assisted delivery) 
+Serious risks ● Third - and fourth -
+degree perineal tear, 
+1–4 in 100 with 
+vacuum -assisted 
+delivery (common) 
+● extensive or 
+significant 
+vaginal/vulval tear, 1 
+in 10 with vacuum ● Subgaleal haematoma, 3 –6 in 1000 
+(uncommon) 
+● Intracranial haemorrhage, 5 –15 in 10 000 
+(uncommon) 
+ 
+Frequent risks ● Postpartum 
+haemorrhage, 1 –4 in 
+10 (very common) 
+● Vaginal 
+tear/abrasion (very 
+common) 
+● Anal sphincter 
+dysfunction/voiding 
+dysfunction. ● Chignon/cup marking on the scalp 
+(practically all cases of vacuum -assisted 
+delivery) (very common) 
+● Cephalhaematoma 1 –12 in 100 (common) 
+● Facial or scalp lacerations, 1 in 10 
+(common) 
+● Neonatal jaundice /hyperbilirubinaemia, 
+5–15 in 100 (common) 
+● Retinal haemorrhage 17 –38 in 100 (very 
+common). 
+
+5.2 Risks of forceps delivery 
+ 
+ Maternal Fetal 
+Any extra 
+procedures which ● Episiotomy (9 in 10 
+for forceps) Assisted Vaginal Birth (RSCH PRH only ) MP04 9 
+ 
+University Hospitals Sussex Foundation Trust Page 11 may become 
+necessary during 
+the procedure 
+Serious risks ● third - & fourth -
+degree perineal tear, 
+8–12 in 100 (very 
+common) 
+● extensive or 
+significant 
+vaginal/vulval tear, 1 in 
+5 ● Subgaleal haematoma, 3 –6 in 1000 
+(uncommon) 
+●Intracranial haemorrhage, 5 –15 in 10 
+000 (uncommon) 
+● facial nerve palsy (rare). 
+Frequent risks ● postpartum 
+haemorrhage, 1 –4 in 10 
+(very common) 
+● vaginal tear/abrasion 
+(very common) 
+● anal sphincter 
+dysfunction/voiding 
+dysfunction 
+ ● forceps marks on face (very 
+common) 
+● cephalhaematoma 1 –12 in 100 
+(common) 
+● facial or scalp lacerations, 1 in 10 
+(common) 
+● neonatal jaundice 
+/hyperbilirubinaemia, 5 –15 in 100 
+(common) 
+● retinal haemorrhage 17 –38 in 100 
+(very common). 
+ 
+5.3 Vacuum extraction compared with forceps is: 
+• more likely to fail delivery with the selected instrument (OR 1.7) 
+• more likely to be associated with cephalohaematoma (OR 2.4) 
+• more likely to be associated with retinal haemorrhage (OR 2.0) 
+• more likely to be associated with maternal worries about baby (OR 2.2) 
+• less likely to be associated with significant maternal perineal and vaginal 
+trauma (OR 0.4) 
+• no more likely to be associated with delivery by caesarean section (OR 0.6) 
+• no more likely to be associated with low 5 -minute Apgar scores (OR 1.7) 
+• no more likely to be associated with the need for phototherapy (OR 1.1) 
+6 Preparation for operative vaginal delivery 
+ 
+Communication 
+ • Clear communication with the pregnant woman / person and 
+other healthcare professionals involved is vital 
+• The indication, benefits and risks of the procedure should be 
+clearly explained to the woman or pregnant person (and 
+documented in the maternity notes) 
+Informed 
+Consent • The woman or pregnant person must have given informed 
+consent (and the same documented in the maternity notes) 
+• For operative deliveries performed in the delivery room, verbal 
+consent should be gained as a minimum prior to the procedure, Assisted Vaginal Birth (RSCH PRH only ) MP04 9 
+ 
+University Hospitals Sussex Foundation Trust Page 12 but written consent can also be gained if the situation allows. 
+Discussion of the conversation should be documented. 
+• For operative deliveries in theatre, written consent should be 
+obtained 
+Location 
+ • Operative vaginal births can be performed in the birth room if 
+deemed appropriate 
+• Non‐rotational low‐pelvic and lift out assisted vaginal births 
+have a low probability of failure and most procedures can be 
+conducted safely in a birth room. 
+• If adequate pain relief is not achievable in the room, patient 
+should be delivered in theatre with appropriate anaesthesia 
+• Operative vaginal births that have a higher rate of failure should 
+be considered a ‘trial’ and conducted in theatre, where 
+immediate recourse to caesarean birth can be undertaken. 
+Theatre staff should be immediately available to allow a 
+caesarean section to be performed without delay (less than 30 
+minutes). 
+• Higher rates of failure are associated with but are not complete 
+contra -indication to delivery in the room: 
+o Maternal body mass index >30 
+o Shorter maternal stature 
+o Estimated fetal weight >4000 g or head circumference > 
+95th percentile 
+o Occipito -posterior position 
+o Mid-cavity birth or when 1/5 head palpable abdominally 
+o Increased duration of second stage prior to delivery attempt 
+o Soft cup vacuum extractor use 
+ 
+Analgesia 
+ • Appropriate analgesia should be in place 
+• Options for analgesia: 
+o epidural/spinal analgesia 
+o pudendal block with local anaesthetic, vulval and perineal 
+infiltration 
+o If the head is distending the perineum then infiltration of 
+the perineum and vulva with local anaesthetic may be 
+acceptable 
+Bladder Care 
+ • An in -out catheter should be recommended prior to the 
+procedure, if an indwelling catheter is not in situ 
+• An indwelling catheter should be removed or the balloon 
+deflated prior to the procedure 
+Hygiene 
+ • Aseptic techniques should be employed 
+• Personal protective equipment should be used to protect 
+against splash injury (gown, gloves, eye protection etc) 
+Neonatal 
+Resuscitation • Personnel present who are trained in neonatal resuscitation 
+Pre-delivery • All of the above must be clearly documented in the Assisted Vaginal Birth (RSCH PRH only ) MP04 9 
+ 
+University Hospitals Sussex Foundation Trust Page 13 
+
+7 Ventouse/Kiwi Assisted Delivery 
+ 
+7.1 Application of Ventouse and Method of use 
+7.1.1 For Kiwi ™ and metal cups, lubricate and insert sideways. 
+For silicone cups, lubricate cup, fold and gently insert into the vagina. 
+7.1.2 Apply to the flexion point (3cm anterior to the posterior fontanelle on 
+the sagittal suture) 
+7.1.3 Ensure no maternal tissue is trapped under the cup. 
+7.1.4 Increase vacuum to 0.2 kg/cm2 and check again for entrapment of 
+maternal tissue. Increase vacuum to 0.8 kg/cm2. 
+7.1.5 Apply traction along the pelvic axis during contractions and helped by 
+maternal effort. With the posterior metal cup the first pull should be in 
+the direction required to flex the head followed by traction along the 
+pelvic axis. 
+7.1.6 Use the thumb of the non -pulling hand to apply counter traction to the 
+cup to avoid detachment, whilst assessing descent using the index and 
+middle finger of the same hand. 
+7.1.7 Mediolateral episiotomy may be necessary as the occiput distends the 
+vulva 
+7.1.8 Paired cord blood samples should be processed and recorded following 
+all attempts at operative vaginal birth 
+7.2 Indications for abandoning procedure 
+ 
+7.2.1 Discontinue vacuum‐assisted birth where there is no evidence of 
+progressive descent with moderate traction during each pull of a 
+correctly applied instrument i.e. with each contraction. 
+7.2.2 Delivery not imminent following three pulls 
+Complete vacuum‐assisted birth in the majority of cases with a 
+maximum of three pulls to bring the fetal head on to the perineum. 
+Three additional gentle pulls can be used to ease the head out of the 
+perineum. 
+ documentation labour and delivery notes to include e xamination 
+findings Assisted Vaginal Birth (RSCH PRH only ) MP04 9 
+ 
+University Hospitals Sussex Foundation Trust Page 14 7.2.3 The cup should not be reapplied more than twice – i.e. discontinue if 
+there have been two ‘pop‐offs’ of the instrument. 
+Less experienced operators should seek senior support after one ‘pop‐
+off’ to ensure the woman has the best chance of a successful assisted 
+vaginal birth. 
+8 Non -Rotational Forceps Assisted Delivery – Neville Barnes / Wrigleys 
+ 
+Non -rotational (Neville -Barnes) forceps are most for direct OA, LOA, an d ROA positions 
+but can sometimes be useful for direct OP positions. Wrigl ey’s forceps are used for cases 
+requiring assistance during caesarean section or outlet delivery where ventouse is 
+inappropriate. 
+8.1 Application of Forceps and Method of Use 
+8.1.1 Carefully check the pair of forceps match, fit together and lock before 
+application. 
+8.1.2 Apply the blades of the forceps to the fetal head between contractions. 
+Apply the left blade first, using the other hand to protect the maternal 
+tissues during application. Check correct application by: 
+• Ensuring sagittal suture is in midline of shanks 
+• No more than a finger -tip can be placed through the fenestration of 
+the blade and the fetal head 
+8.1.3 Traction 
+ 
+• Traction should be applied along the correct axis of birth canal and 
+exerted with each contraction in conjunction with maternal 
+expulsive efforts. 
+• Pajot’s manoeuvre should be used where dominant hand pulls in 
+axial direction and non -dominant hand exerts downwards pressure 
+on shank of forceps. 
+• The angle of traction is changed as the occiput appears at the vulva. 
+8.1.4 Forceps can be relaxed between contractions to reduce fetal cranial 
+compression. 
+8.1.5 Perform episiotomy as the occiput distends the vulva. 
+8.1.6 Disarticulate and remove the forceps as expulsion is certain, the jaw 
+visible, but before the widest diameter of the fetal head passes through 
+the introitus. Remove the blades - right blade followed by left. 
+8.1.7 Paired cord blood samples should be processed and recorded following 
+all attempts at operative vaginal birth 
+ Assisted Vaginal Birth (RSCH PRH only ) MP04 9 
+ 
+University Hospitals Sussex Foundation Trust Page 15 8.2 Indications for abandoning procedure 
+8.2.1 Forceps cannot be applied easily or do not lock. 
+8.2.2 No evidence of progressive descent with moderate traction. 
+8.2.3 Delivery not imminent following three pulls (i.e. with three 
+contractions) of a correctly applied instrument by an experienced 
+operator). 
+8.2.4 If there is minimal descent with the first one or two pulls of the forceps, 
+the operator should consider whether the application is suboptimal, 
+the position has been incorrectly diagnosed or there is cephalopelvic 
+disproportion. 
+Less experienced operators should stop and seek a second opinion. 
+Experienced operators should re‐evaluate the clinical findings and 
+either change approach or discontinue the procedure. 
+8.2.5 The operator should not be fixated on achieving a vaginal delivery. It is 
+essential that the operator be willing to abandon a planned or 
+attempted operative vaginal delivery and perform a caesarean section 
+if re-evaluation of the clinical status shows that an instrumental 
+delivery is not succeeding. 
+8.2.6 A DATIX incident report should be completed by the clinician following 
+birth if sequential instruments or instrumental birth abandoned. 
+8.2.7 Paired cord blood samples should be processed and recorded following 
+all attempts at operative vaginal birth 
+9 Rotational forceps delivery – Keilland 
+ 
+Kielland forceps are used for rotational deliveries from OT and OP positions. 
+The key difference between this instrument and straight forceps lies in the sliding lock, 
+which allows correction of asynclitism and the parallel axis of the blades and handles, 
+which facilitates rotation in the pelvis. 
+Suspected fetal compromise is a relative contraindication, unless the clinician expects an 
+easy delivery. 
+ 
+9.1 Application of Keilland Forceps 
+9.1.1 Keilland’s forceps delivery should take place theatre. 
+9.1.2 Check the pair of forceps match, fit together and lock before 
+application 
+9.1.3 Align the knobs on the handle towards the occiput. 
+9.1.4 Apply the blades in between contractions. 
+ Assisted Vaginal Birth (RSCH PRH only ) MP04 9 
+ 
+University Hospitals Sussex Foundation Trust Page 16 9.1.5 In OP positions, apply the blades as for non -rotational deliveries i.e. the 
+lower blade or posterior blade is applied followed by the anterior blade 
+and the knobs are facing downwards. Check that the forceps lock with 
+ease and that the suture lines are parallel with the long axis of the 
+blades. 
+9.1.6 In OT positions either blade can be applied first, but many obstetricians 
+prefer to apply the anterior blade first. 
+This blade is initially applied like non -rotational forceps using one of the 
+two methods: 
+• Wandering method: The blade is then guided over the fetal 
+face into position under the symphysis. 
+• Direct method: Slide anterior blade between the head and the 
+symphysis pubis. 
+9.1.7 Gently slide the posterior forceps blade into the posterior vagina, 
+guiding the heel of the blade into position where posterior blade is 
+directly along the concavity of the sacrum with your thumb. The handle 
+should follow in a downwards arc. 
+9.1.8 Engage handles and correct asynclitism 
+9.1.9 Disengage head and rotate head by shortest arc after depressing the 
+handles. 
+9.1.10 Effect rotation between contractions, using only light pressure 
+9.1.11 Check rotation of the fetal head has occurred by feeling for the sagittal 
+suture 
+9.1.12 Apply moderate traction with contractions initially downwards and 
+outwards, moving in an arc to finish with the handles positioned over 
+the symphysis pubis. 
+9.1.13 Perform mediolateral episiotomy as the head descends with traction. 
+ 
+9.2 Indication to abandon the procedure 
+9.2.1 Failure to insert or align forceps blades 
+9.2.2 Failure to rotate the head (Kielland) 
+9.2.3 As per section 8.2 
+10 Sequential instruments 
+ 
+The use of sequential instruments is associated with an increased risk of maternal and 
+neonatal morbidity Assisted Vaginal Birth (RSCH PRH only ) MP04 9 
+ 
+University Hospitals Sussex Foundation Trust Page 17 10.1 The operator must balance the risks of a caesarean section following failed 
+vacuum extraction with the risks of forceps birth following failed vacuum 
+extraction and discuss the consequences with the woman to help her make an 
+informed decision. 
+10.2 The use of outlet forceps following failed vacuum extraction may be judicious in 
+avoiding a potentially complex caesarean section. 
+10.3 A second type of instrument should be offered with agreement from the 
+Consultant Obstetrician on call if feasible (i.e. the time taken to discuss / agree 
+would potentially affect the outcome). If a discussion takes place this should be 
+documented in the maternal notes. 
+10.4 If forceps are applied and the blades do not ‘lock’ and hence no traction is 
+applied, ventouse could be considered. It would not be appropriate for the same 
+operator to fail to birth the baby using forceps and then to attempt a ventouse. 
+10.5 Due to the risk of neonatal morbidity following a failed instrumental or 
+sequential use of instruments, the neonatologist must be informed if this occurs 
+10.6 Any use of sequential instruments must be clearly documented in the delivery 
+notes and a DATIX incident report completed by the clinician following birth. 
+11 Episiotomy / Perineal care 
+ 
+11.1 Mediolateral episiotomy should be discussed with the woman as part of the 
+preparation for assisted vaginal birth and maternal informed consent should be 
+gained in case episiotomy is required 
+11.2 It is not mandatory to perform an episiotomy - the evidence to support use of 
+mediolateral episiotomy at assisted vaginal birth in terms of preventing OASI is 
+stronger for nulliparous women / people and for birth via forceps. 
+ 
+11.3 The person performing the procedure should consider whether an episiotomy 
+should be performed. The decision should be tailored to the circumstances at 
+the time and the preferences of the woman. 
+11.4 The person performing the procedure should ensure there is effective analgesia 
+prior to performing the episiotomy. 
+11.5 The rationale for performing an episiotomy should be documented in the 
+maternal notes along with maternal informed consent. 
+11.6 When performing a mediolateral episiotomy the cut should be at a 60 degree 
+angle initiated when the head is distending the perineum. 
+ Assisted Vaginal Birth (RSCH PRH only ) MP04 9 
+ 
+University Hospitals Sussex Foundation Trust Page 18 12 Abandoned Instrumental and Progression to Caesarean 
+ 
+12.1 Obstetricians should be aware of the potential neonatal morbidity following a 
+failed attempt at forceps birth and should inform the neonatologist when this 
+occurs to ensure appropriate care of the baby. 
+12.2 Obstetricians should be aware of the increased risk of fetal head impaction at 
+caesarean birth following a failed attempt at forceps birth and should be 
+prepared to disimpact the fetal head using recognised manoeuvres. 
+12.3 Consider the fetal pillow device prophylactically following a failed trial of 
+instrumental whilst the operator is still present vaginally and where appropriate 
+training has been undertaken 
+See Appendix B – Disimpaction of the fetal head and Appendix C Fetal Pillow 
+ 
+13 Prophylactic antibiotics 
+13.1 A single prophylactic dose of antibiotics should be given within 6 -hours flowing 
+assisted vaginal delivery. 
+This has been shown to reduce postpartum infections including perineal 
+infections/breakdown and UTIs 
+
+13.2 Good standards of hygiene and aseptic techniques are recommended 
+ 
+14 Aftercare Following Operative Vaginal Birth 
+ • No known penicillin allergy: Co -amoxiclav 1.2g IV 
+ 
+• Non -anaphylaxis penicinllin allergy: Cefuroxime 1.2g IV + Metronidazole 400mg IV 
+ 
+• True penicillin allergy: Clindamycin 600mg IV + Gentamycin 160mg IV 
+ Assisted Vaginal Birth (RSCH PRH only ) MP04 9 
+ 
+University Hospitals Sussex Foundation Trust Page 19 14.1 Thorough inspection of perineal and vaginal trauma should be completed by 
+operating obstetrician and appropriate repair undertaken according findings. 
+(MP054 Perineal Trauma Repair) 
+14.2 Paired cord blood samples should be processed and recorded following all 
+attempts at operative vaginal birth 
+14.3 Antibiotics should be given as per Section 13. 
+14.4 A stat PR suppository of Diclofenac 100mg should also be considered post -
+operative delivery if no contraindications – this lasts for 16 hours. 
+14.5 Regular analgesia , eg. paracetamol 1gram QDS and ibuprofen 400mg TDS, 
+should be considered after an operative vaginal birth in the absence of 
+contraindications. 
+14.6 Before and after instrumental vaginal birth a swab and instrument count must 
+be performed, in the same way as for intra -abdominal surgery 
+14.7 Provide information on how to maintain good perineal hygiene 
+14.8 Women / people should be reassessed after an operative birth for risk factors 
+for venous thromboembolism and prescribed thromboprophylaxis as required. 
+15 Care of the bladder after birth 
+ 
+15.1 The timing and volume of the first void of urine should be recorded in the 
+maternity notes for all women / people 
+15.2 Women / people should be educated about the risk of urinary retention so that 
+they are aware of the importance of bladder emptying in the postpartum 
+period. 
+15.3 A post void residual should be measured if urinary retention is suspected. 
+15.4 Women / people who have had spinal anaesthesia or epidural anaesthesia may 
+be at increased risk of retention and should be offered an indwelling catheter, to 
+be kept in place for at least 12 hours following birth to prevent asymptomatic 
+bladder overfilling. The obstetrician should document an individualised plan of 
+care regarding the catheter removal and review. Refer to Guideline 
+15.5 Offer physiotherapy‐directed strategies to reduce the risk of urinary 
+incontinence at 3 months. 
+ Assisted Vaginal Birth (RSCH PRH only ) MP04 9 
+ 
+University Hospitals Sussex Foundation Trust Page 20 16 Post -Delivery Documentation (see also Appendix A) 
+16.1 If not already done, documentation of the benefits and risks discussed, and 
+informed consent obtained pre -delivery must be made in the maternity notes 
+16.2 Full documentation of the indication for operative vaginal birth and the 
+procedure performed must be made in the proforma for operative vaginal birth 
+in the maternity notes 
+16.3 Documentation in the maternal notes that the clinician ensured the mother had 
+adequate analgesia prior to performing the procedure 
+16.4 Swab and instrument count documented and signed by both ‘counters’. 
+16.5 Documentation of any sequential instruments used, or if procedure abandoned 
+with clear rationale and explanation by the clinician performing the procedure. 
+In this scenario a Datix must be completed ideally by the person performing the 
+procedure. 
+16.6 Complete the perineal repair documentation 
+16.7 The decision to birth time interval must be recorded in the maternity notes 
+ 
+17 Debriefing 
+ 
+17.1 Review on the ward prior to discharge to discuss the indication for assisted 
+vaginal birth, management of any complications and advice for future births. 
+Where possible, best practice is where the woman is reviewed by the 
+obstetrician who performed the procedure. 
+17.2 Advice for future births - women / people should be encouraged to aim for a 
+spontaneous vaginal birth in a subsequent pregnancy, as there is a high 
+probability of success 
+17.3 Individualise care for women / people who have sustained a third‐ or fourth‐
+degree perineal tear, or who have ongoing pelvic floor morbidity. (cross ref to 
+the protocol for perineal trauma) 
+17.4 Ensure there is an opportunity for the woman to ask questions during the 
+postnatal period. 
+17.5 Offer advice and support to women / people who have had a traumatic birth 
+and wish to talk about their experience. The effect on the birth partner should 
+also be considered. 
+17.6 Offer debriefing / ‘birth stories’ service prior to discharge. 
+ Assisted Vaginal Birth (RSCH PRH only ) MP04 9 
+ 
+University Hospitals Sussex Foundation Trust Page 21 18 References 
+ 
+1) Royal College of Obstetricians and Gynaecologists. April 2020. Assisted Vaginal 
+Birth : Green -top Guideline No.26 . London: RCOG 
+ 
+2) NHS Digital. (2019). NHS Maternity Statistics , England 2018 -2019. London: NHS 
+Digital. 
+
+3) Healthcare Commission. (2008). Towards better births: A review of maternity 
+services in England . London: Commission for Healthcare Audit and Inspection. 
+ 
+4) King’s Fund. (2008). Safe Births: Everybody’s business - Independent Inquiry into 
+the Safety of Maternity Services in England . London: King’s Fund. 
+ 
+5) National Institute for Health and Clinical Excellence. (2006). Routine postnatal 
+care of women / people and their babies . London: NICE. 
+ 
+6) National Institute for Health and Clinical Excellence (NICE). (2014). Intrapartum 
+Care for Healthy Women / people and Babies. London: NICE. 
+ 
+7) Royal College of Anaesthetists, Royal College of Midwives, Royal College of 
+Obstetricians and Gynaecologists, Royal College of Paediatrics and Child Health. 
+(2007). Safer Childbirth: Minimum Standards for the Organisation and Delivery 
+of Care in Labour . London: RCOG Press. 
+ 
+8) Royal College of Obstetricians and Gynaecologists, Royal College of 
+Anaesthetists, Royal College of Midwives, Royal College of Paediatrics and Child 
+Health. (2008). Standards for Maternity Care: Report of a Working Party . 
+London: RCOG Press. 
+
+ Assisted Vaginal Birth (RSCH PRH only ) MP04 9 
+ 
+University Hospitals Sussex Foundation Trust Page 22 
+
+Appendix A - Instrumental birth Proforma (as appears on Badgernet 2021) 
+
+Assisted Vaginal Birth (RSCH PRH only ) MP04 9 
+ 
+University Hospitals Sussex Foundation Trust Page 23 
+
+Assisted Vaginal Birth (RSCH PRH only ) MP04 9 
+ 
+University Hospitals Sussex Foundation Trust Page 24 
+
+Assisted Vaginal Birth (RSCH PRH only ) MP04 9 
+ 
+University Hospitals Sussex Foundation Trust Page 25 
+Appendix B: Difficulty delivering the head at caesarean section in advanced labour 
+ 
+Caesarean section in the second stage of labour is associated with high maternal morbidity 
+and can be extremely difficult. Caesarean section at full dilatation should be decided and 
+conducted or supervised by a senior obstetrician with demonstrated competency. 
+ 
+18.1 Preparation 
+Flex and reduce the head for those who have had a failed trial of instrumental. 
+Consider the fetal pillow device following a failed trial of instrumental whilst the 
+operator is still present vaginally and where appropriate training has been 
+undertaken. 
+If not using a pillow, consider maintaining a modified lithotomy after a failed 
+instrumental – this can open the pelvis to aid delivery and allows for ease of access if 
+requiring pressure from below during delivery. 
+ 
+18.2 Uterine incision 
+When performing a caesarean section in the second stage of labour the lower uterine 
+segment will have stretched and its upper limit can extend much higher than 
+expected. Careful attention to the utero -vesicle fold should be made. Incision should 
+not be made too low as this may be the cervix and can lead to extensions involving the 
+vagina. 
+ 
+18.3 Manipulation techniques 
+Do not fight a contraction, wait for the uterus to relax before manipulating. 
+Struggling to manipulate the fetal head against uterine activity will prolong the uterine 
+contraction and is highly likely to fail and cause extension of the uterine angles. 
+Wait with the hand unmoving until the contraction eases off then proceed 
+with disimpaction, flexion, rotation and delivery. 
+It may be helpful to request administration of a tocolytic – e.g. 250mcg terbutaline IV, 
+with circulatory support and intensive monitoring. Or GTN 50mg (1 ampoule) into 1 
+litre saline (i.e. 50mcg/ml), with a bolus of 5ml every 5 minutes, takes 1 – 2 minutes to 
+work (contraindicated with hypovolaemia, raised intracranial pressure, or nitrate 
+sensitivity). 
+ 
+Pushing the head up from below should only be undertaken by a senior midwife or 
+doctor, using a cupped hand. 
+ 
+Pushing up the fetal shoulder by the surgeon or surgical assistant may also be of 
+benefit. 
+ 
+Uterine extension, usually with an inverted ‘T’ or ‘J’ can improve access if space is 
+inadequate. 
+ Assisted Vaginal Birth (RSCH PRH only ) MP04 9 
+ 
+University Hospitals Sussex Foundation Trust Page 26 Do not use any instruments - trying to apply one blade of the forceps to scoop the 
+head up is illogical and dangerous. 
+ 
+Patwardhan procedure can be used which involves delivering the fetal breech first. 
+The operators hand is passed upwards until a leg is reached and either the leg or 
+breech is delivered, the rest of the delivery is as for caesarean breech delivery. 
+ 
+An extremely premature infant in the transverse or breech position with absent liquor 
+may be best managed with a vertical incision of the uterus. 
+ 
+Be prepared for possible complications and expect the unexpected. Always ask for 
+support from a senior if expecting a difficult extraction. Maintain good exposure, 
+minimal tissue trauma, meticulous haemostasis, thoughtful surgical and anatomical 
+awareness. 
+
+ Assisted Vaginal Birth (RSCH PRH only ) MP04 9 
+ 
+University Hospitals Sussex Foundation Trust Page 27 
+Appendix C: Placement of the Fetal Pillow ® 
+ 
+Please refer to MD090 for full guidance on using the Fetal Pillow ®

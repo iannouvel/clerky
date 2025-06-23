@@ -1,0 +1,590 @@
+# Extracted from: Joint RCOG BASHH Guideline - Genital Herpes in Pregnancy.pdf
+# Guideline ID: joint-rcog-bashh-guideline-genital-herpes-in-pregnancy
+# Content length: 49969 characters
+# Processing date: 1732953490.983185
+
+Management of Genital Herpes 
+in Pregnancy
+October 2014
+2Management of Genital Herpes in Pregnancy
+Foley E, Clarke E, Beckett VA, Harrison S, Pillai A, FitzGerald M, Owen P , Low-Beer N, Patel R.
+Guideline date: October 2014
+Date of review: by 2018
+Guideline development group:
+Elizabeth Foley MB BS BSc FRCP FRCOG (lead author), 
+Consultant in Genitourinary and HIV Medicine, Solent NHS Trust
+Emily Clarke BSc BM MSc MRCP (UK) , 
+ST3 Genitourinary Medicine, Solent NHS Trust
+Virginia Beckett MB BS BSc FRCOG (lead author on behalf of RCOG), 
+Consultant Obstetrician and Gynaecologist, Bradford Teaching Hospitals NHS Foundation Trust,Honorary Senior Lecturer, University of Bradford
+Sam Harrison MRCOG , 
+ST6 Obstetrics and Gynaecology, Bradford Teaching Hospitals NHS Foundation Trust
+Anil Pillai MRCP , 
+Consultant Neonatologist, Bradford Teaching Hospitals NHS Foundation Trust
+Mark FitzGerald FRCP , 
+Lead Editor, BASHH guideline on Management of Genital Herpes (2014), BASHH Clinical Effectiveness Group, Consultant Physician in Genitourinary Medicine, Musgrove Park Hospital, Taunton
+Philip Owen MD FRCOG , 
+Chair (to May 2014), RCOG Guidelines Committee, Consultant Obstetrician and Gynaecologist, Princess Royal Maternity, Glasgow
+Naomi Low-Beer MBBS MD MRCOG MEd , 
+Consultant Gynaecologist, Chelsea and Westminster Hospital NHS Foundation Trust, Honorary Senior Clinical Lecturer, Imperial College London
+Rajul Patel FRCP , 
+Senior Lecturer, University of Southampton, Consultant in Genitourinary and HIV Medicine, Solent NHS Trust3Contents
+1. Objective and scope 4
+2. Search strategy 5
+3. Background 6
+4. Management of pregnant women with first episode genital herpes 85. Management of pregnant women with recurrent genital herpes 106. Management of women with primary or recurrent genital lesions at the onset of labour 117. Genital herpes in preterm prelabour rupture of membranes 13
+(before 37
++0weeks of gestation)
+8. Management of HIV-positive women with HSV infection 149. Management of the neonate 15
+10. Prevention of postnatal transmission 17
+11. Performance measures 18
+12. About this guideline 19
+References 21
+Appendix I 25
+Appendix II 26
+What’s new in the 2014 Management of Genital Herpes in Pregnancy
+guideline?
+This guideline has been written as a consensus guideline between the British Association for Sexual
+Health and HIV (BASHH) and the Royal College of Obstetricians and Gynaecologists (RCOG)where previously there were two separate guidelines which in part gave conflicting advice.
+Stronger recommendation to offer a vaginal delivery to women with recurrent 
+genital herpes in pregnancy.
+New section on genital herpes in preterm prelabour rupture of membranes.New section on the management of HIV-positive women with genital herpes.Flow chart for management of herpes in mother and neonate (Appendix 1).1.Objective and scope
+In 2007, the British Association for Sexual Health and HIV (BASHH) published its guidance on the
+management of genital herpes, including a section on management in pregnancy, and the RoyalCollege of Obstetricians and Gynaecologists (RCOG) published their Green-top Guideline on themanagement of genital herpes in pregnancy.
+1,2In 2010, a European guideline on the management of
+genital herpes was published, which included a section on management in pregnancy.3
+In order to achieve consensus, it was decided that a joint BASHH and RCOG guideline on themanagement of herpes in pregnancy should be written to update the previous guidance from the twoorganisations. For more detailed information on the general management of genital herpes infectionin nonpregnant patients, this guideline should be considered in conjunction with the 2014 BASHHguideline on the management of genital herpes (currently undergoing consultation).
+The scope of this guideline is the inpatient and outpatient management of genital herpes simplex
+virus infection in the antenatal, intrapartum and postnatal periods. For the prevention of genital herpesinfection in uninfected mothers during pregnancy, please see the transmission prevention advice inthe 2014 BASHH guideline on the management of genital herpes (currently undergoing consultation). 
+The population covered by this guideline includes pregnant women with a suspected or confirmed
+diagnosis of genital herpes simplex infection in primary or secondary care.
+This guideline is aimed at healthcare professionals working in maternity units and departments offering
+level 3 care in the management of sexually transmitted infections within the UK. However, theprinciples of the recommendations should be adopted across all services, including community care.
+Stakeholder involvement
+Clinicians from the Herpes Special Interest Group of BASHH and the RCOG Guidelines Committeehave been involved in writing this guideline. The draft guideline was sent for consultation to theHerpes Viruses Association (HVA) for patient involvement. The guideline was posted on the BASHHand RCOG websites for 3 months for consultation, with a direct request to the Royal College ofPaediatrics and Child Health (RCPCH) for external peer review. Management of Genital Herpes in Pregnancy
+4Management of Genital Herpes in Pregnancy
+52. Search strategy
+This document was produced in accordance with the guidance set out in the BASHH Clinical
+Effectiveness Group’s (CEG’s) document ‘Framework for guideline development and assessment’(available from: http://www.bashh.org/guidelines ). A literature search was performed using
+PubMed/MEDLINE, EMBASE, Google, The Cochrane Library and relevant guidelines from January1981 to January 2014. 
+A MEDLINE/PubMed and EMBASE search was carried out from January 1981 to January 2014 using
+the following search terms/Medical Subject Headings (MeSH): ‘HSV/herpes’, ‘genital ulcers’,‘HSV/herpes pregnancy’, ‘neonatal HSV/herpes’, ‘HSV/herpes drugs’, ‘pregnancy complications:infectious’, ‘Herpes genitalis’ and ‘Herpes simplex diagnosis’. The search was limited to humans andthe English language. For some specific recommendations, an additional MEDLINE/PubMed searchwas performed when necessary.
+A Google search was performed in January 2014 with the search term ‘HSV guideline(s)’ and all
+relevant documents of the first 150 search results were reviewed. A search of The Cochrane Libraryincluded the Cochrane Database of Systematic Reviews, Database of Abstracts of Reviews of Effectsand Cochrane Central Register of Controlled Trials. 
+The following guidelines were reviewed in detail: 2010 European guideline for the management of
+genital herpes; 2007 BASHH guidance on the management of genital herpes; and the 2007 RCOGGreen-top Guideline on the management of genital herpes in pregnancy. 
+The members of the guideline development group selected studies relevant to the scope of the
+guideline. Article titles and abstracts were reviewed and if relevant the full-text article obtained.Priority was given to randomised controlled trial and systematic review evidence and, where possible,recommendations were made and graded on the basis of the best available evidence (Appendix 2).In areas where evidence is lacking, recommendations based on consensus opinion within the writinggroup have been made. Management of Genital Herpes in Pregnancy
+63. Background
+Neonatal herpes is a very rare but serious viral infection with a high morbidity and mortality.4It is
+classified into three subgroups in the infant depending on the site of infection:
+●disease localised to skin, eye and/or mouth
+●local central nervous system (CNS) disease (encephalitis alone)
+●disseminated infection with multiple organ involvement.
+Disease localised to skin, eye and/or mouth
+Infants who present with symptoms localised to the skin, eye or mouth alone have the best prognosisand represent approximately 30% of neonatal herpes infections.
+5With appropriate antiviral treatment,
+neurological and/or ocular morbidity is less than 2%.6
+Local CNS disease and disseminated infection 
+70% of infants with neonatal herpes have disseminated and/or CNS infection and approximately 60%of infants with local CNS and/or disseminated disease will present without skin, eye and/or mouthinfection.
+5Infants with local CNS disease often present late (generally between 10 days and 4 weeks
+of age). With antiviral treatment, mortality from local CNS disease is around 6% and neurologicalmorbidity (which may be lifelong) is 70%. Disseminated disease carries the worst prognosis; withappropriate antiviral treatment, mortality is around 30% and 17% have long-term neurologicalsequelae. The poor outcomes of disseminated and local CNS disease have been attributed to delaysbetween symptom onset and treatment.
+6
+Neonatal infection occurs as the result of an infection at the time of birth; in contrast, congenitalherpes is extremely rare and occurs by transfer of infection in utero.
+Incidence
+Neonatal herpes is rare in the UK, in contrast to some other European countries and the USA. Activesurveillance by the British Paediatric Surveillance Unit (BPSU) between 1986 and 1991 found 76cases over the five-and-a-half-year surveillance period with an incidence of 1.65/100 000 live birthsannually (95% CI 1.3–2.0).
+7Subsequent surveillance from 2004 to 2006 showed an approximate
+doubling of incidence with 86 cases seen over the three-year surveillance period.5This increase may
+reflect the rise in the prevalence of sexually transmitted infections, demographic and social changeswithin the general population and improvements in diagnostic techniques.
+5Further published
+incidence data are awaited.
+The incidence in the UK is around 50% of that reported from other European countries.8In the USA,
+the average reported incidence is 1 in 15 000, but there is considerable variation between populationsand rates of up to 1 in 7500 have been reported in certain deprived inner-city populations.
+6,97Aetiology
+Neonatal herpes may be caused by herpes simplex virus type 1 (HSV-1) or herpes simplex virus type
+2 (HSV-2) as either viral type can cause genital herpes in the mother. Approximately 50% of neonatalherpes is due to HSV-1 and 50% due to HSV-2.
+5Most cases of neonatal herpes occur as a result of
+direct contact with infected maternal secretions, although in 25% of cases a possible source ofpostnatal infection was identified, usually a close relative of the mother.
+5,7Postnatal infection may
+occur as a result of exposure to oro-labial herpes infection.
+Transmission
+Factors associated with transmission include the type of maternal infection (primary or recurrent),the presence of transplacental maternal neutralising antibodies, the duration of rupture of membranesbefore delivery, the use of fetal scalp electrodes and the mode of delivery.
+6,9The risks are greatest
+when a woman acquires a new infection (primary genital herpes) in the third trimester, particularlywithin 6 weeks of delivery, as viral shedding may persist and the baby is likely to be born before thedevelopment of protective maternal antibodies.
+6,9
+Rarely, congenital herpes may occur as a result of transplacental intrauterine infection. Case reportssuggest that the skin, eyes and CNS may be affected and there may be fetal growth restriction or fetal death.
+10–12
+Disseminated herpes is more common in preterm infants and occurs almost exclusively as a result ofprimary infection in the mother.
+Although recurrent genital herpes is associated with a very low risk of neonatal herpes, recurrent herpes
+at the time of delivery, which is commonly asymptomatic or unrecognised, may cause the localisedforms of neonatal herpes: both local CNS disease and skin, eye and mouth infection. Transplacentallyacquired HSV antibodies do not prevent herpes virus spreading to the brain of the neonate.
+13
+Data from the USA suggest that around 2% of women acquire genital HSV infection in pregnancy4
+and most of these maternal infections are asymptomatic or unrecognised.4,9However, acquisition in
+the UK in pregnancy may vary markedly given differing rates of neonatal herpes between the UK andUSA. It may be difficult to distinguish clinically between recurrent and primary genital HSV infections,as many first episode HSV infections are not true primary infections.
+14
+Disseminated herpes infection in the mother
+Disseminated herpes, which may present with encephalitis, hepatitis, disseminated skin lesions or acombination of these conditions, is rare in adults. However, it has been more commonly reported inpregnancy, particularly in the immunocompromised. The maternal mortality associated with thiscondition is high.
+15All immunocompromised women, such as those infected with the HIV virus, are
+at increased risk of more severe and frequent symptomatic recurrent episodes of genital herpes duringpregnancy and of asymptomatic shedding of HSV at term.
+16,17As co-infection with HSV and HIV
+results in an increased replication of both viruses,18there are concerns that genital reactivation of
+HSV may increase the risk of perinatal transmission of both HIV and HSV,16,17although this has not
+been realised in practice in the UK.
+For more detailed information on the diagnosis and management of HSV infection in the mother,
+please refer to the 2014 BASHH guideline on the management of genital herpes.Management of Genital Herpes in Pregnancy
+84. Management of pregnant women
+with first episode genital herpes 
+First or second trimester acquisition (until 27+6weeks of gestation)
+●There is no evidence of an increased risk of spontaneous miscarriage with
+primary genital herpes in the first trimester.
+●Women with suspected genital herpes should be referred to a genitourinarymedicine physician who will confirm or refute the diagnosis by viralpolymerase chain reaction (PCR), advise on management of genital herpesand arrange a screen for other sexually transmitted infections.
+●Treatment, however, should not be delayed. Management of the womanshould be in line with her clinical condition and will usually involve theuse of oral (or intravenous for disseminated HSV) aciclovir in standard doses(400 mg three times daily, usually for 5 days). The use of aciclovir isassociated with a reduction in the duration and severity of symptoms and adecrease in the duration of viral shedding. Aciclovir is not licensed for usein pregnancy but is considered safe and has not been associated with anincreased incidence of birth defects. Transient neonatal neutropenia
+19–22has
+been reported but no clinically significant adverse maternal or neonataleffects have been reported. Aciclovir is well tolerated in pregnancy.For treatment courses no dose adjustment is necessary.
+23,24There is no
+evidence of an increased risk of birth defects with aciclovir, famcicloviror valaciclovir if used in the first trimester.
+22
+Safety data for aciclovir may be extrapolated to valaciclovir in latepregnancy, as it is the valine ester, but as there is less experience with theuse of valaciclovir or famciclovir, they are not recommended as a first-line treatment.
+22
+●The obstetrician should be informed
+●Paracetamol and topical lidocaine 2% gel can be offered as symptomatic relief.There is no evidence that either is harmful in pregnancy in standard doses.
+●Women with suspected genital herpes who are having midwifery-led careshould be referred for review by an obstetrician, ideally after review by agenitourinary medicine physician.
+●Providing that delivery does not ensue within the next 6 weeks, thepregnancy should be managed expectantly and vaginal deliveryanticipated. There is no evidence that HSV acquired in pregnancy isassociated with an increased incidence of congenital abnormalities.
+25
+●Following first or second trimester acquisition, daily suppressive aciclovir400 mg three times daily from 36 weeks of gestation reduces HSV lesionsat term and hence the need for delivery by caesarean section.
+26–31It has also
+been shown to reduce asymptomatic viral shedding (similar results havebeen seen with valaciclovir, although valaciclovir is not recommended foruse in pregnancy in view of lack of experience with its use).
+27,32,33Level of evidence
+III
+C
+Level of evidence
+IV
+Level of evidence
+III
+C
+Level of evidence
+III
+A
+Level of evidence
+Ib9Third trimester acquisition (from 28 weeks of gestation)
+●There is some evidence of increased perinatal morbidity (preterm labour and
+low birthweight), together with stillbirth,4,34however the data are conflicting4
+so no additional monitoring of such pregnancies is recommended. There isinsufficient evidence to suggest an association between HSV and stillbirthas a cause of fetal death
+35with some studies demonstrating no association.36
+●Treatment should not be delayed. Management of the woman should bein line with her clinical condition and will usually involve the use of oral(or intravenous for disseminated HSV) aciclovir in standard doses (400 mgthree times daily, usually for 5 days). In the third trimester, treatment willusually continue with daily suppressive aciclovir 400 mg three times dailyuntil delivery.
+●Caesarean section should be the recommended mode of delivery for allwomen developing first episode genital herpes in the third trimester,particularly those developing symptoms within 6 weeks of expected delivery,as the risk of neonatal transmission of HSV is very high at 41%.
+4,37–39
+●It can be difficult to distinguish clinically between primary and recurrentgenital HSV infections, as in up to 15% of cases where a woman presentswith a first episode of clinical HSV infection, it will actually be a recurrentinfection.
+14For women presenting with first episode genital herpes in the
+third trimester, particularly within 6 weeks of expected delivery, type-specific HSV antibody testing (immunoglobulin G [IgG] antibodies toHSV-1 and HSV-2) is advisable. For these women, characterising theinfection will influence the advice given regarding mode of delivery andrisk of neonatal herpes infection. The presence of antibodies of the sametype as the HSV isolated from genital swabs would confirm this episodeto be a recurrence rather than a primary infection and elective caesareansection would not be indicated to prevent neonatal transmission.However, it should be noted that it may take 2–3 weeks for the results ofthis test to become available. It is therefore recommended that an initialplan of delivery should be based on the assumption that all first episodelesions are primary genital herpes. This plan can then be modified if HSV antibody test results subsequently confirm a recurrent, rather than primary,infection. As interpretation of serology can be complicated, results shouldbe discussed with a virologist or genitourinary medicine physician.B
+Level of evidence
+III
+C
+B
+Level of evidence
+IIb
+C
+Level of evidence
+IVManagement of Genital Herpes in Pregnancy
+105. Management of pregnant women
+with recurrent genital herpes 
+●Women with recurrent genital herpes should be informed that the risk of
+neonatal herpes is low, even if lesions are present at the time of delivery(0–3% for vaginal delivery).
+●Although there is no evidence that aciclovir is unsafe in early pregnancy,the majority of recurrent episodes of genital herpes are short-lasting andresolve within 7–10 days without antiviral treatment. Supportive treatmentmeasures using saline bathing and analgesia with standard doses ofparacetamol alone will usually suffice.
+●Vaginal delivery should be anticipated in the absence of other obstetricindications for caesarean section. 
+●Daily suppressive aciclovir 400 mg three times daily should be consideredfrom 36 weeks of gestation.There is insufficient evidence to determine whether this reduces theincidence of neonatal herpes; however, it reduces viral shedding andrecurrences at delivery so may reduce the need for caesarean section.Limited information exists regarding the neonatal safety of prophylaxis.The risks, benefits and alternatives to daily suppressive therapy should bediscussed with women who have a history and prophylaxis initiated forwomen who desire intervention.
+33
+●This increase from the standard suppressive dose of 400 mg twice daily isrecommended in view of the greater volume of distribution of the drugduring pregnancy.
+26,40
+●Sequential PCR culture during late gestation to predict viral shedding atterm,
+17or at delivery to identify women who are asymptomatically shedding
+HSV, is not indicated. 
+●There is no increased risk of preterm labour, preterm prelabour rupture ofmembranes or fetal growth restriction associated with women seropositivefor HSV. The incidence of congenital abnormalities is not increased in thepresence of recurrent genital herpes infection.
+41BLevel of evidence
+III
+C
+C
+CLevel of evidence
+Ia
+B
+Level of evidence
+IIaManagement of Genital Herpes in Pregnancy
+116. Management of women with
+primary or recurrent genitallesions at the onset of labour 
+General management
+●Management of a woman with genital herpes at the onset of labour will
+be based on clinical assessment as there will not be time for confirmatorylaboratory testing. The clinician must take a history in order to ascertainwhether this is a primary or recurrent episode. A viral swab from thelesion(s) should nonetheless be taken, since the result may influencemanagement of the neonate.
+●The neonatologist should be informed. 
+Primary episode
+●Caesarean section should be recommended to all women presenting withprimary episode genital herpes lesions at the time of delivery, or within 6weeks of the expected date of delivery, in order to reduce exposure of thefetus to HSV which may be present in maternal genital secretions.
+9
+●There is some evidence to suggest that the benefit of caesarean sectionreduces if the membranes have been ruptured for greater than 4 hours.
+42
+However, there may be some benefit in performing a caesarean sectioneven after this time interval. 
+●Intravenous aciclovir given intrapartum to the mother (5 mg/kg every 8hours) and subsequently to the neonate (intravenous aciclovir 20 mg/kgevery 8 hours) may be considered for those mothers opting for vaginaldelivery.
+13,25It is unknown whether intrapartum aciclovir reduces the risk
+of neonatal HSV infection. 
+●Where primary episode genital herpes lesions are present at the time ofdelivery and the baby is delivered vaginally, the risk of neonatal herpes isestimated to be 41%.
+4,37–39
+●The risk of perinatal transmission depends on the timing of maternalacquisition of HSV, with the highest risk in infants born to women who havenot completed HSV seroconversion during pregnancy (most commonly inthe third trimester, within 6 weeks of delivery).
+●Although vaginal delivery should be avoided if possible, in women whodeliver vaginally in the presence of primary genital herpes lesions, invasiveprocedures (application of fetal scalp electrodes, fetal blood sampling,artificial rupture of membranes and/or instrumental deliveries) should be avoided.
+4,43–45C
+B
+Level of evidence
+IIIC
+Level of evidence
+IV
+Level of evidence
+III
+CManagement of Genital Herpes in Pregnancy
+12Recurrent genital herpes
+●Women presenting with recurrent genital herpes lesions at the onset of
+labour should be advised that the risk to the baby of neonatal herpes islow (0–3% for vaginal delivery).
+1,38
+●Evidence from the Netherlands shows that a conservative approach,allowing vaginal delivery in the presence of an anogenital lesion, has notbeen associated with a rise in the number of neonatal HSV cases.
+46
+●Vaginal delivery should be offered to women with recurrent genital herpeslesions at the onset of labour. A caesarean section delivery can beconsidered but the risk to the mother and future pregnancies should beset against the small risk of neonatal transmission of HSV with recurrentdisease (0–3% for vaginal delivery). The final choice of vaginal deliveryversus caesarean section should be made by the mother, who should baseher decision on the very low risk of transmission set against any otherobstetric risk factors and the risks associated with caesarean section. 
+●It has been reported that invasive procedures (fetal blood sampling,application of fetal scalp electrodes, artificial rupture of membranes and/orinstrumental deliveries) increase the risk of neonatal HSV infection.
+47
+However, given the small background risk (0–3%) of transmission in thisgroup, the increased risk associated with invasive procedures is unlikelyto be clinically significant so they may be used if required. 
+●Women should be managed in accordance with standard NationalInstitute for Health and Care Excellence (NICE) intrapartum guidelines.
+45
+●There is no evidence to guide the management of women withspontaneous rupture of membranes at term, but many clinicians willadvise expediting delivery in an attempt to minimise the duration ofpotential exposure of the fetus to HSV.B
+Level of evidence
+III
+Level of evidence
+IV
+Level of evidence
+III
+Level of evidence
+IVCCManagement of Genital Herpes in Pregnancy
+137. Genital herpes in preterm
+prelabour rupture of membranes(before 37
++0weeks of gestation)
+Primary genital herpes in preterm prelabour rupture of membranes (PPROM)
+●There is limited evidence to inform best obstetric practice when PPROM
+is complicated by primary HSV infection. Management should be guidedby multidisciplinary team discussion involving the obstetricians, neo-natologists and genitourinary medicine physicians and will depend on thegestation that PPROM occurred. If the decision is made for immediatedelivery then the anticipated benefits of caesarean section will remain. Ifthere is initial conservative management, the mother should berecommended to receive intravenous aciclovir 5 mg/kg every 8 hours.Prophylactic corticosteroids should be considered to reduce theimplications of preterm delivery upon the infant.
+48If delivery is indicated
+within 6 weeks of the primary infection, delivery by caesarean section maystill offer some benefit despite the prolonged rupture of membranes.
+49–51
+Recurrent genital herpes in PPROM
+●When PPROM is encountered in the presence of recurrent genital herpeslesions, the risk of neonatal transmission is very small and may be outweighedby the morbidity and mortality associated with premature delivery.
+●In the case of PPROM before 34 weeks there is evidence to suggest thatexpectant management is appropriate, including oral aciclovir 400 mgthree times daily for the mother.
+49After this gestation, it is recommended
+that management is undertaken in accordance with relevant RCOGguidelines on PPROM
+52and antenatal corticosteroid administration53to
+reduce neonatal morbidity and mortality and is not materially influencedby the presence of recurrent genital herpes lesions.
+49,54Level of evidence
+IV
+Level of evidence
+IVCManagement of Genital Herpes in Pregnancy
+148. Management of HIV-positive
+women with HSV infection 
+Primary HSV infection 
+●HIV-positive women with primary genital HSV infection in the last trimester
+of pregnancy should be managed according to the recommendations for allwomen with primary genital HSV infection. 
+Recurrent HSV infection 
+●There is some evidence that HIV antibody positive women with genitalHSV ulceration in pregnancy are more likely to transmit HIV infectionindependent of other factors.
+17,55However, this is not a consistent finding
+across all studies.56
+●Women who are HIV antibody positive and have a history of genital herpesshould be offered daily suppressive aciclovir 400 mg three times daily from32 weeks of gestation to reduce the risk of transmission of HIV infection,especially in women where a vaginal delivery is planned. Starting therapyat this earlier gestation than usual should be considered in view of theincreased possibility of preterm labour in HIV-positive women. 
+●The mode of delivery should be in line with the BHIVA HIV in pregnancyguideline recommendations according to obstetric factors and HIVparameters such as HIV viral load.
+42,57
+●There is currently no evidence to recommend daily suppressive treatmentof HSV for HIV antibody positive women who are HSV-1 or -2 seropositivebut have no history of genital herpes.
+56Level of evidence
+IVCLevel of evidence
+IIIManagement of Genital Herpes in Pregnancy
+159. Management of the neonate 
+General management
+●In all cases the neonatal team should be informed.
+Management of babies born by caesarean section in mothers with primary HSV
+infection in the third trimester 
+These babies are at low risk of vertically transmitted HSV infection so conservative
+management is recommended.
+●Liaise with the neonatal team.
+●Swabs from the neonate are not indicated.
+●No active treatment is required for the baby. 
+●Normal postnatal care of the baby is advised with a neonatal examinationat 24 hours of age, after which the baby can be discharged from thehospital if well and feeding is established.
+●Parents should be educated regarding good hand hygiene and due careto reduce risk of postnatal infection.
+●Parents should be advised to seek medical help if they have concernsregarding their baby. In particular, they should be advised to look for:– skin, eye and mucous membrane lesions, lethargy/irritability, poor feeding. 
+Management of babies born by spontaneous vaginal delivery in mothers with a primary
+HSV infection within the previous 6 weeks
+These babies are at high risk of vertically transmitted HSV infection.
+●Liaise with the neonatal team.
+If the baby is well:
+●Swabs of the skin, conjunctiva, oropharynx and rectum should be sent
+for herpes simplex PCR.
+●A lumbar puncture is not necessary.
+●Empirical treatment with intravenous aciclovir (20 mg/kg every 8 hours)should be initiated until evidence of active infection is ruled out. 
+●Strict infection control procedures should be put in place for bothmother and baby.
+●Breastfeeding is recommended unless the mother has herpetic lesionsaround the nipples.
+●Parents should be warned to report any early signs of infection such as poor feeding, lethargy, fever or any suspicious lesions.
+If the baby is unwell or presents with skin lesions:
+●Swabs of the skin, lesions, conjunctiva, oropharynx and rectum 
+should be sent for herpes simplex PCR. 
+●A lumbar puncture should be performed even if CNS features are not present.C
+C
+C
+C
+CManagement of Genital Herpes in Pregnancy
+16●Intravenous aciclovir (20 mg/kg every 8 hours) should be initiated until
+evidence of active infection is ruled out.
+Management of babies born to mothers with recurrent HSV infection in pregnancy with
+or without active lesions at delivery
+In the case of recurrent genital herpes infections in the mother, maternal
+IgG will be protective in the baby and hence the infection risk is low.Conservative management of the neonate is advised.
+55
+●Liaise with the neonatal team.
+●Surface swabs from the neonate are not indicated.
+●No active treatment is advised for the baby. 
+●Normal postnatal care of the baby is advised with a neonatal examinationat 24 hours of age, after which the baby can be discharged from thehospital if well and feeding is established.
+●Parents should be educated regarding good hand hygiene and due careto reduce risk of postnatal infection.
+●Parents should be advised to seek medical help if they have concernsregarding their baby. In particular, they should be advised to look for:– skin, eye and mucous membrane lesions, lethargy/irritability, poor feeding.
+In cases where there are concerns regarding the neonate (clinical evidence of sepsis,
+poor feeding) 
+Liaise with the neonatal team. In addition to considering bacterial sepsis, HSV infection
+should be considered.
+●Surface swabs and blood for HSV culture and PCR.
+●Intravenous aciclovir (20 mg/kg every 8 hours) should be given whileawaiting cultures.
+●Further management by the neonatal team according to condition of thebaby and test results.
+See Appendix 1 for flow chart of management.Level of evidence
+IIIB
+CManagement of Genital Herpes in Pregnancy
+1710. Prevention of postnatal
+transmission
+●In 25% of cases a possible source of postnatal infection is responsible,
+usually a close relative of the mother.2
+●Efforts to prevent postnatal transmission of HSV are therefore importantand advice should be given to the mother regarding this.
+●The mother and all those with herpetic lesions who may be in contactwith the neonate, including staff, should practice careful hand hygiene.
+●Those with oral herpetic lesions (cold sores) should not kiss the neonate. Level of evidence IVCManagement of Genital Herpes in Pregnancy
+1811. Performance measures
+1. When a herpes antiviral drug is used against a previously undiagnosed genital herpes
+episode, a swab for herpes PCR should be sent – target 100%.
+2. In order that a discussion on the mode of delivery is undertaken with an obstetrician,
+there must be documentation in the clinic notes that the obstetrician and/or GP havebeen advised of this need and that the patient has also been informed of this need –target 100%.
+3. For women with suspected primary genital herpes in pregnancy diagnosed in level 1/2
+services, primary care or obstetric services, referral to a genitourinary medicinephysician should be made (unless in labour) – target 100%. 
+4. Where a first episode diagnosis of genital herpes is made in the third trimester, the
+woman’s case should be discussed between the obstetrician and neonatologist withdocumentation of the agreed management – target 100%.
+5. Pregnant women with genital herpes should be provided with written information on
+genital herpes in pregnancy (e.g. the RCOG patient information leaflet) – target 90%.Management of Genital Herpes in Pregnancy
+1912. About this guideline
+Qualifying statement
+The recommendations in this guideline may not be appropriate for use in all clinical situations.
+Decisions to follow these recommendations must be based on the professional judgement of theclinician and consideration of individual patient circumstances and available resources. All possiblecare has been undertaken to ensure the publication of the correct dosage of medication and route ofadministration. However, it remains the responsibility of the prescribing clinician to ensure theaccuracy and appropriateness of the medication they prescribe.
+Editorial independence
+This guideline was commissioned, edited and endorsed by the BASHH CEG and the RCOG withoutexternal funding being sought or obtained.
+Declarations of interest
+All members of the guideline writing committee completed the BASHH conflict of interest declarationat the time that the guideline’s final draft was submitted to the CEG. 
+Dr Rajul Patel has received honoraria for talks and fees for consultancy from Novatis, Becton
+Dickinson and Roche pharmaceutical and diagnostic companies.
+Resource implications 
+The resource implications of this guideline will have little impact on current recommendations formanagement of herpes in pregnancy. There may be a cost saving if women with recurrent genitalherpes simplex virus infection elect to have a vaginal delivery when herpetic lesions are present atterm rather than undergoing a caesarean section. The cost of suppressive aciclovir (400 mg threetimes daily) for 1 month is £6.45*. 
+Membership of the writing group
+EF and EC drafted the initial document and redrafts, VAB and SH drafted the obstetric componentand AP drafted the neonatal section. PO, NLB and RP commented on the drafts and redrafts of the document. 
+Membership of the CEG 
+● Dr Keith Radcliffe (Chair), Consultant Physician in Genitourinary Medicine,Whittall Street Clinic 
+● Dr David Daniels, Sexual Health Clinic, West Middlesex UniversityHospital, West Middlesex University Hospital NHS Trust 
+● Dr Mark FitzGerald, Consultant Physician in Genitourinary Medicine,Musgrove Park HospitalManagement of Genital Herpes in Pregnancy
+20● Dr Deepa Grover, Consultant in Genitourinary/HIV Medicine, 
+Barnet Hospital/Royal Free Hospital 
+● Dr Stephen Higgins, Consultant Physician in Genitourinary Medicine, North Manchester General Hospital, Manchester
+● Dr Margaret Kingston, Consultant Physician in Genitourinary Medicine,Manchester Centre for Sexual Health
+● Dr Neil Lazaro, Associate Specialist in Genitourinary Medicine, Royal Preston Hospital 
+● Dr Louise Melvin, Faculty of Sexual & Reproductive Healthcare representative, Consultant Sexual Health, Glasgow 
+● Dr Ann Sullivan, Consultant Physician in Genitourinary Medicine, Chelsea and Westminster Hospital NHS Foundation Trust. 
+Timescale for next review: 2018.
+Acknowledgements
+BASHH National Audit Group for suggesting the performance measures.Dr Jolanta Bernatoniene and Dr Catherine O’Sullivan on behalf of the RCPCH for their expert review
+of the neonatal sections of the guideline.
+Marian Nicholson from the Herpes Viruses Association (HVA) for her invaluable input into this guideline.
+*Source of costing: British National Formulary September 2014 (different prices may be negotiated by NHS hospital trusts).58Management of Genital Herpes in Pregnancy
+21References
+1. Royal College of Obstetricians and Gynaecologists. Management of Genital Herpes in
+Pregnancy . Green-top Guideline No. 30. London: RCOG; 2007. 
+2. Clinical Effectiveness Group (British Association for Sexual Health and HIV). 2007 National
+Guideline for the Management of Genital Herpes . Macclesfield: BASHH; 2007.
+3. Patel R, Alderson S, Geretti A, Nilsen A, Foley E, Lautenschlager S, et al. 2010 European
+guideline for the management of genital herpes. [place unknown]; International Union
+against Sexually Transmitted Infections; 2010. 
+4. Brown ZA, Selke S, Zeh J, Kopelman J, Maslow A, Ashley RL, et al. The acquisition of herpes
+simplex virus during pregnancy. N Engl J Med 1997;337:509–15.
+5. British Paediatric Surveillance Unit. BPSU 21st Annual Report 2006-2007. London: British
+Paediatric Surveillance Unit/Royal College of Paediatrics and Child Health; 2007.
+6. Brown Z. Preventing herpes simplex virus transmission to the neonate. Herpes 2004;11
+Suppl 3:175A–186A. 
+7. Tookey P, Peckham CS. Neonatal herpes simplex virus infection in the British Isles. Paediatr
+Perinat Epidemiol 1996;10:432–42. 
+8. Hemelaar SJ, Poeran J, Steegers EA, van der Meijden WI. Neonatal herpes infections in The
+Netherlands in the period 2006-2011. J Matern Fetal Neonatal Med 2014 Jul 11 [Epub ahead
+of print].
+9. Brown ZA, Wald A, Morrow RA, Selke S, Zeh J, Corey L. Effect of serologic status and
+cesarean delivery on transmission rates of herpes simplex virus from mother to infant. JAMA
+2003;289:203–9. 
+10. Diguet A, Patrier S, Eurin D, Chouchene S, Marpeau L, Laquerrière A, et al. Prenatal
+diagnosis of an exceptional intrauterine herpes simplex type 1 infection. Prenat Diagn
+2006;26:154–7. 
+11. Vasileiadis GT, Roukema HW, Romano W, Walton JC, Gagnon R. Intrauterine herpes simplex
+infection. Am J Perinatol 2003;20:55–8. 
+12. Lee A, Bar-Zeev N, Walker SP, Permezel M. In utero herpes simplex encephalitis. Obstet
+Gynecol 2003;102:1197–9. 
+13. Nahmias AJ. Neonatal HSV infection Part 1: continuing challenges. Herpes 2004;11:33–7.
+14. Hensleigh PA, Andrews WW, Brown Z, Greenspoon J, Yasukawa L, Prober CG. Genital
+herpes during pregnancy: inability to distinguish primary and recurrent infections clinically.Obstet Gynecol 1997;89:891–5. 
+15. Young EJ, Chafizadeh E, Oliveira VL, Genta RM. Disseminated herpesvirus infection during
+pregnancy. Clin Infect Dis 1996;22:51–8. 
+16. Hitti J, Watts DH, Burchett SK, Schacker T, Selke S, Brown ZA, et al. Herpes simplex virus
+seropositivity and reactivation at delivery among pregnant women infected with humanimmunodeficiency virus-1. Am J Obstet Gynecol 1997;177:450–4. 
+17. Chen KT, Segú M, Lumey LH, Kuhn L, Carter RJ, Bulterys M, et al.; New York City Perinatal
+AIDS Collaborative Transmission Study (PACTS) Group. Genital herpes simplex virusinfection and perinatal transmission of human immunodeficiency virus. Obstet Gynecol
+2005;106:1341–8. 
+18. Heng MC, Heng SY, Allen SG. Co-infection and synergy of human immunodeficiency virus-1
+and herpes simplex virus-1. Lancet 1994;i:255–8.
+19. Andrews WW, Kimberlin DF, Whitley R, Cliver S, Ramsey PS, Deeter R. Valacyclovir therapy to
+reduce recurrent genital herpes in pregnant women. Am J Obstet Gynecol 2006;194:774–81. Management of Genital Herpes in Pregnancy
+2220. Stone KM, Reiff-Eldridge R, White AD, Cordero JF, Brown Z, Alexander ER, et al. Pregnancy
+outcomes following systemic prenatal acyclovir exposure: Conclusions from the internationalacyclovir pregnancy registry, 1984-1999. Birth Defects Res A Clin Mol Teratol 2004;70:201–7. 
+21. Ratanajamit C, Vinther Skriver M, Jepsen P, Chongsuvivatwong V, Olsen J, Sørensen HT.
+Adverse pregnancy outcome in women exposed to acyclovir during pregnancy: apopulation-based observational study. Scand J Infect Dis 2003;35:255–9. 
+22. Pasternak B, Hviid A. Use of acyclovir, valacyclovir, and famciclovir in the first trimester of
+pregnancy and the risk of birth defects. JAMA 2010;304:859–66. 
+23. Frenkel LM, Brown ZA, Bryson YJ, Corey L, Unadkat JD, Hensleigh PA, et al.
+Pharmacokinetics of acyclovir in the term human pregnancy and neonate. Am J Obstet
+Gynecol 1991;164:569–76. 
+24. Kimberlin DF, Weller S, Whitley RJ, Andrews WW, Hauth JC, Lakeman F, et al.
+Pharmacokinetics of oral valacyclovir and acyclovir in late pregnancy. Am J Obstet Gynecol
+1998;179:846–51.
+25. Ács N, Bánhidy F, Puhó E, Czeizel AE. No association between maternal recurrent genital
+herpes in pregnancy and higher risk for congenital abnormalities. Acta Obstet Gynecol
+Scand 2008;87:292–9. 
+26. Sheffield JS, Hollier LM, Hill JB, Stuart GS, Wendel GD Jr. Acyclovir prophylaxis to prevent
+herpes simplex virus recurrence at delivery: a systematic review. Obstet Gynecol
+2003;102:1396–403. 
+27. Watts DH, Brown ZA, Money D, Selke S, Huang ML, Sacks SL, et al. A double-blind,
+randomized, placebo-controlled trial of acyclovir in late pregnancy for the reduction of herpessimplex virus shedding and cesarean delivery. Am J Obstet Gynecol 2003;188:836–43.
+28. Scott LL, Hollier LM, McIntire D, Sanchez PJ, Jackson GL, Wendel GD Jr. Acyclovir suppression
+to prevent recurrent genital herpes at delivery. Infect Dis Obstet Gynecol 2002;10:71–7. 
+29. Brocklehurst P, Kinghorn G, Carney O, Helsen K, Ross E, Ellis E, et al. A randomised placebo
+controlled trial of suppressive acyclovir in late pregnancy in women with recurrent genitalherpes infection. Br J Obstet Gynaecol 1998;105:275–80. 
+30. Scott LL, Sanchez PJ, Jackson GL, Zeray F, Wendel GD Jr. Acyclovir suppression to prevent
+cesarean delivery after first-episode genital herpes. Obstet Gynecol 1996;87:69–73. 
+31. Braig S, Luton D, Sibony O, Edlinger C, Boissinot C, Blot P, et al. Acyclovir prophylaxis in
+late pregnancy prevents recurrent genital herpes and viral shedding. Eur J Obstet Gynecol
+Reprod Biol 2001;96:55–8. 
+32. Sheffield JS, Hill JB, Hollier LM, Laibl VR, Roberts SW, Sanchez PJ, et al. Valacyclovir
+prophylaxis to prevent recurrent herpes at delivery: a randomized clinical trial. Obstet
+Gynecol 2006;108:141–7. 
+33. Hollier LM, Wendel GD. Third trimester antiviral prophylaxis for preventing maternal genital
+herpes simplex virus (HSV) recurrences and neonatal infection. Cochrane Database Syst Rev
+2008;(1):CD004946. 
+34. Brown ZA, Benedetti J, Selke S, Ashley R, Watts DH, Corey L. Asymptomatic maternal
+shedding of herpes simplex virus at the onset of labor: relationship to preterm labor. Obstet
+Gynecol 1996;87:483–8. 
+35. Syridou G, Spanakis N, Konstantinidou A, Piperaki ET, Kafetzis D, Patsouris E, et al. Detection
+of cytomegalovirus, parvovirus B19 and herpes simplex viruses in cases of intrauterine fetaldeath: association with pathological findings. J Med Virol 2008;80:1776–82. 
+36. Eskild A, Jeansson S, Stray-Pedersen B, Jenum PA. Herpes simplex virus type-2 infection in
+pregnancy: no risk of fetal death: results from a nested case–control study within 35,940women. BJOG 2002;109:1030–5. Management of Genital Herpes in Pregnancy
+2337. Brown ZA, Vontver LA, Benedetti J, Critchlow CW, Sells CJ, Berry S, et al. Effects on infants of
+a first episode of genital herpes during pregnancy. N Engl J Med 1987;317:1246–51.
+38. Prober CG, Sullender WM, Yasukawa LL, Au DS, Yeager AS, Arvin AM. Low risk of herpes
+simplex virus infections in neonates exposed to the virus at the time of vaginal delivery tomothers with recurrent genital herpes simplex virus infections. N Engl J Med 1987;316:240–4.
+39. Brown ZA, Benedetti J, Ashley R, Burchett S, Selke S, Berry S, et al. Neonatal herpes simplex
+virus infection in relation to asymptomatic maternal infection at the time of labor. N Engl J
+Med 1991;324:1247–52. 
+40. Gardella C, Brown ZA, Wald A, Morrow RA, Selke S, Krantz E, et al. Poor correlation
+between genital lesions and detection of herpes simplex virus in women in labor. Obstet
+Gynecol 2005;106:268–74. 
+41. Kim ID, Chang HS, Hwang KJ. Herpes simplex virus 2 infection rate and necessity of screening
+during pregnancy: a clinical and seroepidemiologic study. Yonsei Med J 2012;53:401–7.
+42. Nahmias AJ, Josey WE, Naib ZM, Freeman MG, Fernandez RJ, Wheeler JH. Perinatal risk
+associated with maternal genital herpes simplex virus infection. Am J Obstet Gynecol
+1971;110:825–37.
+43. Kohelet D, Katz N, Sadan O, Somekh E. Herpes simplex virus infection after vacuum-assisted
+vaginally delivered infants of asymptomatic mothers. J Perinatol 2004;24:147–9.
+44. Amann ST, Fagnant RJ, Chartrand SA, Monif GR. Herpes simplex infection associated with
+short-term use of a fetal scalp electrode. A case report. J Reprod Med 1992;37:372–4. 
+45. National Institute for Health and Clinical Excellence. Intrapartum care: Care of healthy women
+and their babies during childbirth. NICE clinical guideline 55. Manchester: NICE; 2007.
+46. Singhal P, Naswa S, Marfatia YS. Pregnancy and sexually transmitted viral infections. Indian J
+Sex Transm Dis 2009;30:71–8.
+47. Parvey LS, Ch’ien LT. Neonatal herpes simplex virus infection introduced by fetal-monitor
+scalp electrodes. Pediatrics 1980;65:1150–3.
+48. Kimberlin DW, Baley J; Committee on Infectious Diseases; Committee on Fetus and
+Newborn. Guidance on management of asymptomatic neonates born to women with activegenital herpes lesions. Pediatrics 2013;131:e635–46. 
+49. Major CA, Towers CV, Lewis DF, Garite TJ. Expectant management of preterm premature
+rupture of membranes complicated by active recurrent genital herpes. Am J Obstet Gynecol
+2003;188:1551–4; discussion 1554–5. 
+50. Utley K, Bromberger P, Wagner L, Schneider H. Management of primary herpes in pregnancy
+complicated by ruptured membranes and extreme prematurity: case report. Obstet Gynecol
+1987;69(3 Pt 2):471–3. 
+51. Dietrich YM, Napolitano PG. Acyclovir treatment of primary herpes in pregnancy
+complicated by second trimester preterm premature rupture of membranes with termdelivery: case report. Am J Perinatol 2002;19:235–8. 
+52. Pinninti SG, Kimberlin DW. Management of neonatal herpes simplex virus infection and
+exposure. Arch Dis Child Fetal Neonatal Ed 2014;99:F240–4. 
+53. Royal College of Obstetricians and Gynaecologists. Antenatal Corticosteroids to Reduce
+Neonatal Morbidity and Mortality . Green-top Guideline No. 7. London: RCOG; 2010.
+54. Ehsanipoor RM, Major CA. Herpes simplex and HIV infections and preterm PROM. Clin
+Obstet Gynecol 2011;54:330–6.
+55. Drake AL, John-Stewart GC, Wald A, Mbori-Ngacha DA, Bosire R, Wamalwa DC, et al.
+Herpes simplex virus type 2 and risk of intrapartum human immunodeficiency virustransmission. Obstet Gynecol 2007;109:403–9. Management of Genital Herpes in Pregnancy
+2456. Chen KT, Tuomala RE, Chu C, Huang ML, Watts DH, Zorrilla CD, et al. No association
+between antepartum serologic and genital tract evidence of herpes simplex virus-2coinfection and perinatal HIV-1 transmission. Am J Obstet Gynecol 2008;198:399.e1–5.
+57. British HIV Association. British HIV Association guidelines for the management of HIV
+infection in pregnant women 2012 (2014 interim review) . London: BHIVA; 2014.
+58. NICE Evidence Services. British National Formulary September 2014. Aciclovir (Acyclovir)
+[http://www.evidence.nhs.uk/formulary/bnf/current/5-infections/53-antiviral-drugs/532-herpesvirus-infections/5321-herpes-simplex-and-varicellazoster-infection/aciclovir?q=ACICLOVIR] Accessed 2014 Sep 16.Management of Genital Herpes in Pregnancy
+25Appendix I
+Algorithm for the management of herpes in pregnancy and care of neonate
+Treat episodes with
+standard doses of
+aciclovir if necessaryTreat primary episode
+with standard doses
+of aciclovirTreat primary episode
+with standard doses
+of aciclovir
+Consider aciclovir 400 mg tds from 36/40 gestation
+Offer vaginal delivery
+Baby well Baby unwell Genital HSV lesions
+at delivery
+Perform
+lumbar
+puncture for
+HSV PCRNormal
+postnatal careIf vaginal delivery
+ensues inform
+neonatologistInform neonatologist
+Normal postnatal care
+Discharge home if
+baby well at 24 hours
+Advise parents
+regarding later
+management if
+any concernsConsider aciclovir
+400 mg tds until delivery
+Recommend planned CS
+especially if within
+6 weeks of deliveryRecurrent genital herpes Primary acquisition of
+genital herpes in first or
+second trimesterPrimary acquisition
+of genital herpes in
+third trimester
+Normal
+postnatal care
+Discharge home
+if baby well at
+24 hours
+Advise parents
+regarding later
+management if
+any concernsStart aciclovir 20 mg/kg tds for
+10 days while awaiting results
+Abbreviations – CS caesarean section; HSV herpes simplex virus; PCR polymerase chain reaction; 
+Abbreviations – tds three times dailyAppendix II
+Levels of evidence and grading of recommendations
+Levels of evidence
+Ia Meta-analysis of randomised controlled trials
+Ib At least one randomised controlled trialIIa At least one well-designed controlled study without randomisationIIb At least one other type of well-designed quasi-experimental studyIII Well-designed non-experimental descriptive studiesIV Expert committee reports or opinions of respected authorities
+Grading of recommendations
+A Evidence at level Ia or Ib
+B Evidence at level IIa, IIb or IIIC Evidence at level IVManagement of Genital Herpes in Pregnancy
+26

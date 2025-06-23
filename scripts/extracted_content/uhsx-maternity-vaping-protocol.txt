@@ -1,0 +1,997 @@
+# Extracted from: UHSx Maternity Vaping Protocol.pdf
+# Guideline ID: uhsx-maternity-vaping-protocol
+# Content length: 51027 characters
+# Processing date: 1750066902.1948574
+
+CLINICAL PROTOCOL 
+Due for review: May 2027 
+Name of Protocol : Maternity Vaping Protocol v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 1 of 24 UHSx Maternity Vaping 
+Integrating Nicotine Vape Products into the 
+UH Sussex Maternity Smoke Free Service 
+TABLE OF CONTENTS 
+ 
+1.0 Definitions and Abbreviations used within this protocol ................................ .......................... 3 
+1.0 Introduction ................................ ................................ ................................ ........................... 3 
+1.1 Why are nicotine vapes being disucssed as an option to aid smoking cessation ................... 4 
+1.2 What are e -cigarettes and how do they work? ................................ ................................ ....... 4 
+1.3 Is vaping harmful in pregnancy? ................................ ................................ ............................ 5 
+1.4 Risks from nicotine ................................ ................................ ................................ ................ 5 
+1.5 Is a nicotine vape an effective quit aid to stop smoking? ................................ ....................... 5 
+1.6 Inclusion Criteria ................................ ................................ ................................ .................... 6 
+1.7 Exclusion Criteria ................................ ................................ ................................ .................. 6 
+1.8 Cautions ................................ ................................ ................................ ................................ 6 
+1.9 Partners ................................ ................................ ................................ ................................ . 6 
+1.10 Service Del ivery Protocol ................................ ................................ ................................ ...... 7 
+2.0 First Appointment “Initial Assessment” (face to face) ................................ ............................. 7 
+2.1 Step 1: The client selects the Vape Starter Kit option ................................ ............................ 7 
+2.1.1 Exploring vape and e -liquid options available ................................ ................................ ........ 7 
+2.1.2 The delivery mechanism ................................ ................................ ................................ ........ 8 
+2.1.3 Highly nicotine dependent clients ................................ ................................ .......................... 8 
+2.2 Step 2: Creating a Nicotine Reduction Plan ................................ ................................ ........... 9 
+2.3 Step 3: Recording appointment details ................................ ................................ ................ 10 
+3.0 Second Appointment (on or around the Quit Date) (face to face) ................................ ......... 10 
+3.1 Step 1: Obtain client CO reading ................................ ................................ ......................... 10 
+3.2 Step 2: Confirm selected vape products and obtain voucher codes ................................ ..... 10 
+3.3 Step 3: Ongoing follow u p ................................ ................................ ................................ ... 10 
+3.4 Step 4: Allocate First Voucher Codes ................................ ................................ .................. 12 
+3.5 Step 5: Client Redeems Voucher via Totally Wicked Website ................................ ............. 12 
+3.6 Step 6: Record Intervention on MIS ................................ ................................ ..................... 12 
+4.0 Third, fourth and fifth appointments (Weeks 1 -3) Face to face, telephone, text or email. ..... 13 
+5.0 Sixth appointment “Outcome Appointment” (Week 4) face to face ................................ ....... 13 
+5.1 Step 1: Determine next steps ................................ ................................ .............................. 13 
+5.2 Step 2: Record the Intervention on MIS ................................ ................................ ............... 14 
+6.0 Ordering Vape Vouchers via council nominated procurement Platform ................................ 14 
+6.1 How to log in and process an order ................................ ................................ ..................... 14 
+6.1.1 Financial costs ................................ ................................ ................................ ..................... 14 
+6.1.2 Holding a stock of vape products ................................ ................................ ......................... 15 
+6.2 Totally Wicked Voucher Scheme and Client Order Process ................................ ................ 15 
+6.2.1 Totally Wicked Voucher Scheme ................................ ................................ ......................... 15 
+6.3 Nicotine Vaping Products and Important Information ................................ ........................... 16 CLINICAL PROTOCOL 
+Due for review: May 2027 
+Name of Protocol : Maternity Vaping Protocol v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 2 of 24 6.3.1 Vapes and oxygen therapy ................................ ................................ ................................ .. 17 
+6.3.2 Storage ................................ ................................ ................................ ................................ 17 
+6.3.3 Disposal of Rechargeable Vapes ................................ ................................ ......................... 18 
+6.3.4 Totally Wicked Customer Services ................................ ................................ ...................... 18 
+7.0 Training ................................ ................................ ................................ ............................... 19 
+8.0 Monitoring ................................ ................................ ................................ ........................... 20 
+Additional Guidance / Information ................................ ................................ ................................ ... 21 
+See Also / Linked Documents ................................ ................................ ................................ ......... 21 
+Clinical protocol governance and approval ................................ ................................ ...................... 22 
+Protocol Version Control Log ................................ ................................ ................................ .......... 24 
+
+ CLINICAL PROTOCOL 
+Due for review: May 2027 
+Name of Protocol : Maternity Vaping Protocol v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 3 of 24 Maternity Vaping Protocol 
+(Integrating Nicotine Vape Products into the 
+UH Sussex Maternity Smoke Free Service ) 
+1.0 DEFINITIONS AND ABBREVIATIONS USED W ITHIN THIS PROTOCOL 
+AN - Antenatal ANC - Antenatal Clinic 
+ASH - Action on Smoking and Health BSOTS - Birmingham Symptom -Specific 
+Obstetric Triage System 
+CMW - Community Midwife CO - Carbon Monoxide 
+DAU - Day Assessment Unit EC - Electronic Cigarettes 
+F2F - Face to Face HP - Health Practitioner 
+LTFU - Lost to Follow Up MHRA - Medicines and Healthcare products 
+Regulatory Authority 
+MIS - Maternity information System eg MIS NCSST - National Centre for Stop smoking 
+Training 
+NRT - Nicotine Replacement Therapy RCP - Royal College of Physicians 
+SATOB - smoking at time of booking SATOD - Smoking at time of delivery 
+SBLv3 - Saving Babies Lives version 3 SFT - Smoke free Team 
+SHS - Second Hand Smoking SOP - Standard Operating Procedure 
+TDSMs - Tobacco Dependency Specialist 
+Midwives USS - Ultrasound Scan 
+VBA - Very Brief Advice 
+1.0 INTRODUCTION 
+ 
+Trust wide: PRH, SRH, WH - Providers WSCC. RSCH provider BHCC 
+ 
+In April 2023, the government announced a commitment to support one million smokers to ‘swap to 
+stop’ . Under this new campaign, 1 in 5 smokers in England will be provided with a vape starter kit , 
+alongside stop smoking behavioural support. 
+ 
+To facilitate this campaign, the government have enlisted Crown Commercial Services to launch a 
+new vaping solution procurement framework. The framework offers Local Authorities access to 
+competitive pricing across a range of suppliers selling the Medicines and Healthcare products 
+Regulatory Agency approved nicotin e vaping products (e -cigarettes). 
+ 
+This document sets out the pathway for integrating access to regulated nicotine vapes as a smoking 
+cessation aid for maternity service users engaging with the smokefree pregnancy service. 
+ CLINICAL PROTOCOL 
+Due for review: May 2027 
+Name of Protocol : Maternity Vaping Protocol v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 4 of 24 The protocol is split into the following sections to guide Tobacco Dependency Treatment 
+Practitioners on how to provide funding for regulated vape starter kits as a quit aid into their service 
+delivery: 
+ 
+1) Key Background Information 
+2) Service Delivery Protocol 
+3) Ordering Vape Vouchers via the approved procurement platform 
+4)Totally Wicked Voucher Scheme and Client Order Process 
+5) Nicotine Vaping Products and Information 
+6) Training 
+7) Appointment Process Flowcharts 
+8) Supporting Resources 
+ 
+1.1 WHY ARE NICOTINE VAP ES BEING DISCUSSED AS AN OPTI ON TO AID SMOKING 
+CESSATION 
+ Nicotine vaping is substantially less harmful than smoking. It is also one of the most 
+effective tools for quitting smoking ( Nicotine vaping in England: 2022 evidence update 
+summar y (GOV.UK 29/9/22 ). 
+ Users are roughly twice as likely to quit smoking if they use a vape compared with other 
+nicotine replacement therapy medications such as: patches and chewing gum. 
+ Vaping is not recommended for non -smokers and young people (under 18) because it is 
+not completely harmless. 
+ From April 2024 smokers will be offered one of the following smoking cessation aids: 
+­ Nicotine replacement therapies (NRT): patches, gum, nasal spray, mouth spray, 
+inhalator and lozenges products 
+­ Nicotine vap e starter kit including 4 weeks of e -liquids and atomizer heads. 
+ Previously pregnant smokers have only been offered NRT alongside information about 
+vapes/e -cigarettes for them to purchase independently if they choose to do so . 
+ 
+1.2 WHAT ARE E -CIGARETTES AND HOW DO THEY WORK ? 
+ An e-cigarette is a device that allows the users to inhale nicotine in a vapour rather than 
+smoke. Using an e -cigarette is known as vaping ( E-cigarettes vs. Ciga rettes - YouTube ). 
+ E-cigarettes do not burn tobacco and do not produce tar or carbon monoxide; two of the 
+most harmful elements in tobacco smoke. 
+ They work by heating a liquid (called an e -liquid) that typically contains nicotine, 
+propylene glycol, vegetable glycerine, and flavourings. 
+ E-liquids come in different nicotine strengths, allowing the user control of the strength 
+required to control cravings and manage withdrawal symptoms including irritability and 
+low mood. 
+ This also allows users to gr adually reduce the strength of the nicotine, as required, in 
+order to become nicotine free. 
+ Nicotine itself is a relatively harmless chemical and has been effectively used for many 
+years in NRT medications to help people stop smoking. CLINICAL PROTOCOL 
+Due for review: May 2027 
+Name of Protocol : Maternity Vaping Protocol v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 5 of 24  Some people find vaping helps them because the hand -to-mouth action is like smoking, 
+giving similar sensations. 
+ 
+1.3 IS VAPING HARMFUL IN PREGNANCY? 
+ In the UK, e -cigarettes are tightly regulated for safety and quality ( E-cigarettes: 
+regulations for consumer products (GOV.UK 2/10/22 ) 
+ Experts agree vaping is substantially less harmful than smoking, but it is not risk -free. 
+Vaping exposes users to fewer toxins and at lower levels than smoking cigarettes (Vaping 
+Demystified - YouTube ). 
+ Switching to vaping significantly reduces the user’s exposure to toxins that can cause 
+cancer, lung disease, cardiovascular diseases and circulatory problems, and significantly 
+reduces the risk of heart attacks and stroke, compared to tobacco smokers. 
+ Little research exists regarding the safety of using e -cigarettes (vaping) during pregnancy, 
+however evidence f rom adult smokers in general suggests that they are likely to be 
+significantly less harmful to a pregnant woman and her baby than continuing to smoke. E -
+cigarettes do not contain carbon monoxide (CO) or many of the other harmful chemicals 
+found in cigarett es. CO is especially dangerous during pregnancy because it deprives the 
+baby of oxygen, slows its growth and development and results in the adverse outcomes 
+seen in pregnancy. 
+ Smoking or exposure to second -hand smoke during pregnancy is responsible for a n 
+increased rate of stillbirths, complications during labour, premature birth, miscarriages, 
+birth defects and sudden infant death syndrome (SIDS). (Ash. 2019) * 
+ Licensed Nicotine Replacement Therapy (NRT) products such as nicotine patches, 
+gum and inhalers are the recommended option . However, i f a pregnant woman or 
+birthing person chooses to use an e -cigarette and if that helps her to quit smoking 
+and stay smokefree, she should be supported to do so. (A SH 2019) * 
+ E-cigarettes do not produce tar or c arbon monoxide, two of the most harmful substances 
+in tobacco smoke ( Smokefree ‘Health Harms’ – Impact of smoking vs vaping 
+demonstration - YouTube ). 
+ 
+1.4 RISKS FROM NICOTINE 
+ While nicotine is the addictive substance in cigarettes, the harm from smoking comes 
+from the thousands of other toxic chemicals in tobacco smoke. 
+ NRT medicine has been widely used for many years to help people stop smoking and is a 
+safe treatment. 
+ 
+1.5 IS A NICOTINE VAPE AN EFFECTIVE QUIT AID TO STOP SMOKING? 
+ Thousands of people in the UK have already stopped smoking with the help of an e -
+cigarette. Vapes have been popular with people who smoke for over a decade and are 
+now the most common stop smoking aid in England. 
+ A 2021 review found people who used e -cigarettes to quit smoking, alongside support 
+from an Advisor, specialist or behaviour change suppor t, can be up to twice as likely to CLINICAL PROTOCOL 
+Due for review: May 2027 
+Name of Protocol : Maternity Vaping Protocol v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 6 of 24 succeed as people who used other nicotine replacement products, such as patches or 
+gum. 
+ Using an e -cigarette can help users manage their nicotine cravings. For it to be most 
+effective, ensure they are using it as often a s required, and with the appropriate strength 
+of nicotine in the e -liquid. 
+ Users will not get the full benefit from vaping unless they stop smoking cigarettes 
+completely. 
+ Please refer to the NCSCT Vaping Guide for Health and Social Care Professionals for 
+more details and evidence regarding why vaping is considered an effective quit aid – see 
+section “8 Supporting Resources”. 
+ 
+1.6 INCLUSION CRITERIA 
+ All pregnant people self -reporting to smoking tobacco. 
+ All smokers where risk/benefit of NRT and e -cigar ettes have been discussed. 
+ 
+1.7 EXCLUSION CRITERIA 
+ Any person under 18 years of age . 
+ Pregnant smokers after assessment of risk/benefit of pharmacotherapy have chosen to 
+quit with behavioural support only. 
+ Haemodynamically unstable patients hospitalised with cerebrovascular accident (unstable 
+blood pressure caused by blood clots or broken blood vessels in the brain, such as a 
+stroke) . 
+ Haemodynamically unstable patients hospitalised with myocardial infarction (unstable 
+blood pressure caused by a heart attack) . 
+ Haemodynamically unstable patients hospitalised with severe arrhythmias (unstable 
+blood pressure caused by abnormal heart rhythm) . 
+ Phaeochromocytoma (rare adrenal gland tumour) . 
+ 
+1.8 CAUTIONS 
+ Any persons with Diabet es mellitus – blood glucose concentration needs to be closely 
+monitored when initiating any treatment Vaping - Safety, Effect on Blood Glucose 
+(diabetes.co.uk) . 
+ Uncontrolled hyperthyroidism . 
+(BNF, 2023 https://bnf.nice.org.uk/drugs/nicotine/#cautions ) 
+ 
+If vape use is being considered by the pregnant person, but the individual has a history of any of the 
+listed conditions, please refer to an obstetrician, lead midwife for the smokefree pregnancy service 
+or GP for review. 
+ 
+1.9 PARTNERS 
+ 
+ As per Smoking in Pregna ncy protocol we offer behavioural support to partners and can 
+offer access to the Government approved Swap to Stop vouchers if they choose to use a CLINICAL PROTOCOL 
+Due for review: May 2027 
+Name of Protocol : Maternity Vaping Protocol v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 7 of 24 vape to stop smoking. Any offer of voucher codes will be given alongside an information 
+sheet detailing info rmation, contraindications and risks. Partners must take personal 
+responsibility for their use of these products. 
+ As partners do not fall under Smoke Free Pregnancy Service responsibility for ongoing 
+care, after the Swap to Stop 4 -week voucher is issued, they will be signposted to local 
+smoking cessation services for ongoing NRT/vape provision where available 
+ Behavioural support within the expectant family unit can continue to be provided by 
+Smoke Fre e Pregnancy to promote Smoke Free homes. 
+ 
+1.10 SERVICE DELIVERY PRO TOCOL 
+Issuing Nicotine Vape Starter Kits 
+ Advisors will continue to deliver the smokefree pregnancy pathway as specified in the UH 
+Sussex Maternity Smoking Cessation guideline based on th e NCSCT Standard 
+Treatment Programme. 
+ NCSCT maternity care v6 
+ This section outlines the service delivery guidance and protocol for the issuance of a vape 
+starter kit as a smoking cessation aid for adult smokers (18+) . 
+2.0 FIRST APPOINTMENT “I NITIAL ASSESSMENT” ( FACE TO FACE) 
+This is an opportunity to discuss the different forms of nicotine replacement products or medication 
+available to the pregnant smoker, and to assist them in determining the most suitable option. The 
+options available to the client are as follows: 
+ 
+ Behavio ural support alone 
+ Various options of NRT medication with behavioural support throughout pregnancy . 
+ Voucher codes for online redemption against a free regulated vape starter kit along with 
+ongoing supply of e -liquids and atomizers in pregnancy as required with behavioural 
+support. 
+ 
+2.1 STEP 1: THE CLIENT SELECTS THE VAPE STAR TER KIT OPTION 
+2.1.1 EXPLORING VAPE AND E-LIQUID OPTIONS AVAILABLE 
+If the pregnant smoker decides to select the vape starte r kit option, the Tobacco Dependency 
+Treatment Practitioner should demonstrate (using demo kits or video demonstrations) how to 
+operate a vape device and outline the distinct functions of each of the models available as part of 
+the free vape starter kit as outlined in Section 4 “Nicotine Vaping Products”. The Advisor should also 
+talk the client through the six different e -liquid choices available and determine the correct nicotine 
+strength according to the client’s smoking habits (Table 1 below ). 
+ 
+The below table offers the Advisor guidance on what may be an appropriate dosage for the Client 
+based on their current smoking behaviour. 
+ 
+Table 1: E -liquid nicotine strength chart according to cigarettes smoked 
+ CLINICAL PROTOCOL 
+Due for review: May 2027 
+Name of Protocol : Maternity Vaping Protocol v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 8 of 24 Dosage (mg) Strength Cigarettes smoked per day 
+6mg /0.6% Ultra -Low <5 
+10 mg / 1% Low – Medium 5-15 
+16mg /1.6% Medium High 15-20 
+16mg / 1.6% supported by 
+NRT patches if required High 20+ 
+ 
+2.1.2 THE DELIVERY MECHANISM 
+The delivery mechanism for the nicotine in a vape is quite different to that of NRT. NRT delivers a 
+slow, steady release of nicotine to the user, enabling them to reduce their level of nicotine addiction 
+over a 12 -week period. Whereas vapes supply nicotine in a ‘rush’ or ‘spike’ similar (but not the 
+same ) to that of a cigarette. The advisor should spend time explaining how vapes work in this 
+respect, so clients know what to expect. 
+ 
+Vaping is different to smoking and some clients will take longer to get used to it. Additional NRT is 
+less likely to be re quired when clients have the right vape kit and the correct strength of nicotine 
+content to alleviate nicotine withdrawal symptoms. It is important to offer ongoing expert support to 
+enable clients to vape effectively. 
+ 
+2.1.3 HIGHLY NICOTINE DEPENDENT CLIENTS 
+Highly nicotine dependent clients (more likely in clients with severe mental illness, learning disability 
+and those who use other substances) may benefit from a NRT patch in addition to the vape for the 
+first few weeks of a vape quit programme. Th e dosage and combination can be adjusted to help 
+mitigate the client’s experienced withdrawal symptoms. 
+The main aim of using NRT in addition to a vape in heavily addicted smokers, is to reduce the high 
+frequency of vaping that would be needed to avoid se vere nicotine withdrawal symptoms in these 
+smokers. If they do not have NRT, they might find they are constantly having to vape even when 
+utilising the highest possible dosage, which may be frustrating and inconvenient. 
+ 
+The preferred form of NRT would b e to use a low -level transdermal patch, as this would provide a 
+baseline level of nicotine throughout the day. It should not give the client the ‘highs’ and ‘lows’ that 
+they could get with other delivery mechanisms. The Advisor should issue a 10mg/15mg/25m g 16hr 
+patch. 
+ 
+If issuing a patch as well as a vape, the Advisor should advise the client to keep an eye out for 
+symptoms of receiving too much nicotine. They could experience this in the form of headaches, 
+heart racing, feeling clammy, feeling sick. Most people would describe it as feeling like they have 
+had one too many cigarettes. If they do experience these symptoms, they should either cut down on 
+the amount they are using the vape or remove the patch. 
+ CLINICAL PROTOCOL 
+Due for review: May 2027 
+Name of Protocol : Maternity Vaping Protocol v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 9 of 24 2.2 STEP 2: CREATING A N ICOTINE REDUCTION PL AN 
+When a client selects the ‘Vaping Starter Kit’ as their smoking cessation aid, it is important to work 
+with the client to create a Nicotine Reduction Plan that can help the client achieve their goal for the 
+12-week programme. 
+ 
+From the outset, the Advisor needs to develop an understanding of the client’s expectations of 
+becoming tobacco and nicotine free using a vape. This insight will help the Advisor to support the 
+client to develop a personalised nicotine reduction plan in on e of the following ways: 
+ 
+If the client’s goal is to become tobacco and nicotine free at the end of the 12 -week 
+programme, the adviser should work with the client to help them achieve this outcome . 
+ 
+ To achieve this the Advisor should educate the client on nicotine addiction and how the 
+use of vapes can help reduce dependency over time when used effectively and improve 
+their health. 
+ This Advisor should work with the client to develop a personalised plan to enable the 
+client to gradually reduce the frequency of vaping and, gradually reduce the strength of 
+the nicotine content of the e -liquid (reducing to zero) over the 12 -week programme. It is 
+important that the reduction is gradual to avoid any extreme withdrawal sympto ms or 
+cravings that could discourage the client. The plan should outline how the client can best 
+reduce the strength and frequency of their vaping over the 12 weeks as well as factoring 
+in any additional support they will need over the course of the progra mme (for example 
+follow up calls and any other support as per the standard behavioural support offering) 
+ When working with a client who wants to stop vaping, it can be useful to organise support 
+using the Ask, Advise, Act model, as outlined in the NCSCT g uidance on Supporting 
+clients who want to stop vaping (ncsct.co.uk) 
+ 
+If the pregnant person wishes to continue using the vape after the 12 -week programme, then 
+it is imp ortant for the Advisor to provide the client with the following information to 
+encourage the client to remain smokefree during pregnancy. 
+ 
+Vouchers for supply of e -liquids and atomizer heads will be provided for the duration of the 
+pregnancy and up to 28 days postnatal with CO verified quit at 28 days . 
+ 
+The quit must be CO verified 28 days after quit date and subsequent CO readings must be <4ppm. 
+If a relapse is identified, then voucher code issue will cease until the client confirms they are ready 
+to re-engage with a quit programme – a Face to Face appointment will be offered as soon as 
+possible following any relapse being identified . 
+ 
+ It would also be useful to provide information and guidance for the Client on what they 
+would need to consider if they did at some point choose to stop vaping. Many vapers get 
+to this stage after 12 months. 
+ A client can start to move towards being nicotine free by:  
+ reducing the frequency of vaping over time and  
+ gradually reducing the strength of nicotine contained in the e -liquid. 
+ CLINICAL PROTOCOL 
+Due for review: May 2027 
+Name of Protocol : Maternity Vaping Protocol v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 10 of 24 2.3 STEP 3: RECORDING APPOINTMENT DETAILS 
+The Advisor should add the details of the client’s chosen option to MIS. The client will need to refer 
+to this information when ordering their chosen starter kit via the voucher scheme. The Advisor will 
+issue the voucher codes to the client during their quit date and subsequent appointments. 
+3.0 SECOND APPOINTMENT ( ON OR AROUND THE QUI T DATE) (FACE TO FACE) 
+The purpose of the second appointment is to assist the client in getting started on the 12 -week 
+programme using vapes as smoke cessation aid. Below are the steps involved. 
+ 
+3.1 STEP 1: OBTAIN CLIENT CO READING 
+The Advisor should check the smoking status of the client by taking a CO reading to confirm they 
+are currently smoking tobacco; this should be recorded on the pregnant person ’s maternity 
+records. 
+ 
+3.2 STEP 2: CONFIRM SELECTED VAPE PRODUCTS AND OBTAIN VOUCHER CODES 
+ The Tobacco Dependency Treatment Practitioner will then need to confirm the vape 
+starter kit that the client selected during their first appointment and provide them with the 
+starter kit details (starter kit model, e -liquid strength, and flavour). 
+ The Tobacco Dependency Treatment Practitioner will then use this information to 
+determine if the service has the correct voucher available for allocation. Please refer to 
+section 4 ‘Totally Wicked Voucher Scheme and Client Order Process’ for a n overview of 
+voucher cod es. 
+ Voucher codes will be obtained in advance by the Specialist S mokefree Pregnancy 
+midwife via the approved procurement platform. For guidance on how to order, receive 
+and manage voucher codes please refer to section 3 “Ordering Vape Vouchers via 
+procu rement platform. 
+ Once the midwife has placed the order, Totally Wicked (who run the client voucher 
+scheme) will contact the midwife (via email) with the voucher code details that will be 
+required for the client to redeem their chosen products via the Tot ally Wicked website. 
+ The Advisor will need to record the client’s case reference number against the specific 
+voucher codes allocated on the services’ internal voucher management system (each 
+service should have their own system in place to record vouchers ordered and allocated), 
+as well as updating the notes section on MIS with the voucher details. 
+ These voucher codes will then be issued to the client in line with the below appointment 
+and issuance schedule. 
+ 
+3.3 STEP 3: ONGOING FOLL OW UP 
+ The Advisor should provide an overview of the 12 -week programme and schedule follow 
+up appointments in line with the smokefree pathway. When setting the appointments, it is 
+important that the Advisor is mindful of the timings to ensure that the voucher cod es are 
+released to the client in good time to enable the client to order required products and 
+avoid any disruption to their vaping programme. It may be useful to time the voucher code 
+release to coincide with follow up appointments. CLINICAL PROTOCOL 
+Due for review: May 2027 
+Name of Protocol : Maternity Vaping Protocol v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 11 of 24  The Advisor should lo ok to release the second voucher code ideally 8 -10 days after the 
+Quit Date Appointment so the second voucher (product type A) of the 4 -week starter kit 
+can be released to the client in good time for them to order their refill product. 
+ The Appointment and Voucher Issuance Schedule below outlines the required touch 
+points involved in the stop smoking behaviour support; the timings for issuing the different 
+types of voucher codes and the associated products that will need to be ordered. 
+ 
+Appointment and voucher issuance schedule : 
+ 
+Client Quit 
+Schedule Stop Smoking 
+Behavioural 
+Support 
+Appointment Voucher 
+type Product 
+Type to be 
+Issued Product Type in cluded Qty 
+Week 0 Quit Date (2nd) 
+Appointment 4-week 
+starter kit 
+voucher K Totally Wicked Vape kit 
+(Skope ,Air & Tornado 
+GTL) 1 
+USB Wall Adaptor 1 
+Atomizer Head 2 
+10ml Switz E -liquid 5 
+Week 1 -2* Follow Up (3rd -
+5th 
+Appointment) A Refill Atomizer Head 4 
+Week 3 -4 Refill 10ml Switz E -
+liquid 5 
+Week 4 -
+5** Outcome (6th) 
+Appointment 4-week 
+continuation 
+voucher L Refill 10ml Switz E -
+liquid 5 
+A Refill Atomizer Head 4 
+Week 6 -7 Refill 10ml Switz E -
+liquid 5 
+Week 8 -9 
+Follow Up (7th) 
+Appointment 4-week 
+continuation 
+voucher L Refill 10ml Switz E-
+liquid 5 
+A Refill Atomizer Head 4 
+Week 10 -
+12 Refill 10ml Switz E -
+liquid 5 
+* Voucher Code – 4-week starter, product type A to be released between week 1 -2 
+** Continuation Voucher Code to be released between week 4 -5 
+ CLINICAL PROTOCOL 
+Due for review: May 2027 
+Name of Protocol : Maternity Vaping Protocol v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 12 of 24 3.4 STEP 4: ALLOCATE FIRST VOUCH ER CODES 
+ 
+ At the Quit Date Appointment, the Tobacco Dependency Treatment Practitioner should 
+obtain the voucher codes for the 4 -week starter kit (including product type K – see above 
+schedule for product details), these should be recorded on the service’s internal voucher 
+management system and on MIS in ’smoking summary’ in additional notes. The correct 
+pharmacotherapy code needs to be updated. 
+ The Advisor should only release part 1 of the starter kit (product type “K”) at the Qui t Date 
+Appointment. See section ‘Totally Wicked Voucher Scheme and Client Order Process’ for 
+an overview of the Totally Wicked Voucher Codes. 
+ 
+3.5 STEP 5: CLIENT REDEE MS VOUCHER VIA TOTAL LY WICKED WEBSITE 
+ The client will be responsible for ordering thei r vape products via the Totally Wicked 
+Website using the voucher code supplied by the Advisor. 
+ The Advisor may choose to support the client to redeem their first voucher code from the 
+Totally Wicked Health Improvement landing page (See Section ‘Totally Wicked Voucher 
+Scheme’ for a step -by-step guidance.) 
+ The method of releasing voucher codes after the Quit Date Appointment will need to be 
+determined by Advisor and the client, in line with the behaviour support and appointment 
+schedule agreed. 
+ There are sample text message and email templates that the Advisor can use to issue 
+voucher codes: See Additional notes. 
+ 
+3.6 STEP 6: RECORD INTERVENTIO N ON MIS 
+ The Tobacco Dep endency Treatment Practitioner completes the smoking in pregnancy 
+page. The correct intervention should be selected. 
+ If a client has selected for vapes only select option below. 
+CLINICAL PROTOCOL 
+Due for review: May 2027 
+Name of Protocol : Maternity Vaping Protocol v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 13 of 24 . 
+
+4.0 THIRD, FOURTH AND FIFTH APPOINTMENTS (WEEKS 1 -3) FACE TO FACE, 
+TELEPHONE, TEXT OR E MAIL. 
+ These appointments (weeks one, two and three post quit date) offer an opportunity to 
+review the client’s usage, access smoking status, and troubleshoot any questions. 
+ During this appointment period, the Tobacco Dependency Treatment Practitioner will also 
+need to issue the client with the second part of the starter kit voucher to ensure the client 
+can order refill product type ‘A’ in good time and avoid any disruption in their 
+programme. 
+ Ideally the Tobacco Dependency Trea tment Practitioner will release this code to the client 
+8-10 days after their Quit Date Appointment – around week 1 -2 of the client’s quit 
+programme. This voucher code should have already been allocated to the client and 
+logged on their profile notes on MI S during the Quit Date Appointment. 
+ 
+Please note: A client has relapsed, if the client returns a CO reading of above 10 ppm or they 
+confirm that they have started smoking again at any stage. At this point, the Advisor should 
+stop issuing vaping products and ask the women to re -engage with the service when they 
+are ready to. 
+ 
+After the initial 4 week ‘swap to stop’ scheme, follow -up vouchers under the Smokefree 
+budget can be used. This will need be recorded on the voucher management system. 
+ 
+5.0 SIXTH APPOINTMENT “OUTCOME APPOINTMENT” (WEEK 4 ) FACE TO FACE 
+5.1 STEP 1: DETERMINE NEXT STEPS 
+ Following confirmation that the client has quit smoking (i.e., CO reading of below 4 ppm) 
+the Tobacco Dependency Treatment Practitioner should discuss with the client the level 
+and type of support required over the remaining pregnancy. Ideally contact should be 
+made 2 weekly initially then move to monthly for the reminder of the pregnancy. 
+CLINICAL PROTOCOL 
+Due for review: May 2027 
+Name of Protocol : Maternity Vaping Protocol v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 14 of 24  Option for code delivery: Issue the client with both sets of codes associated with the 4 -
+week continuation vouchers (product type L and product type A) . 
+ The second set of continuation codes will need to be issued to the client between week 7 
+and 8. 
+ The voucher codes will be ordered by tobacco dependenc y lead midwife weekly via the 
+procurement platform. The advisor will monitor levels of voucher codes and escalate if 
+codes are low. The codes will be located on the internal voucher management system. 
+ 
+5.2 STEP 2: RECORD THE I NTERVENTION ON MIS 
+ The Advisor should complete the relevant ‘smoking in pregnancy‘ in MIS. 
+ The Advisor should first comment in additional notes the ‘vape refill pack’ supplied to 
+confirm that the client has been issued with a set of continuation codes. 
+ 
+6.0 ORDERING VAPE VOUCHERS VIA COUNCIL NOMINATED PROCUREMEN T 
+PLATFORM 
+(Undertaken by midwife) 
+To order the Vaping Starter Kit and Continuation vouchers the Specialist midwife will order and add 
+codes to internal e -cigarette management system. This is done through the Procurement website 
+and outlined in SFP Teams channel files. 
+ 
+6.1 HOW TO LOG IN AND PROCES S AN ORDER 
+Each provider will be provided with a service account (including username and password) by county 
+council upon confirming a launch date. 
+ 
+How to place an order: 
+ 
+Video saved in Teams files demonstrates how to login to the Vape voucher procurement platform. 
+The video covers the transactional processes of placing an order via the platform. ( Insert video.) 
+The Midwife can order two types of vouchers from the Procurement platform: 
+1. The 4 -week vape starter kit voucher. 
+2. The 4 -week continuation voucher 
+ 
+It is important to note that Totally Wicked can only process voucher orders in quantities of 
+10 per voucher type. 
+ 
+After placing an order on the Procurement platform, the midwife will be contacted by Totally Wicked 
+within one working day with the voucher codes. 
+ 
+6.1.1 FINANCIAL COSTS 
+Any continued supply after the 4 -week starter kit programme will be conducted through the 
+Procurement platform and charged to UHSx Maternity Department Financial spending on the CLINICAL PROTOCOL 
+Due for review: May 2027 
+Name of Protocol : Maternity Vaping Protocol v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 15 of 24 platform and associated budgets will be closely monitored and reviewed by UHSX, BHCC and 
+WSCC. 
+ 
+6.1.2 HOLDING A STOCK OF VAPE PRODUCTS 
+The preferred method for ordering nicotine vape products into the service would be via the voucher 
+scheme. Each site location will have one Skope Air and Tornedo GTL for demonstration purposes. 
+No direct supply will be offered. 
+ 
+6.2 TOTALLY WICKED VOUCH ER SCHEME AND CLIENT ORDER PROCESS 
+ The client can only order their vape products once the Advisor has provided the client 
+with their voucher codes. Below outlines the steps involved to enable the client to redeem 
+their vouchers. 
+ At the Quit Date Appointment, the client needs to create an account on the Totally Wicked 
+Website. This is required to complete the age verification process for purchasing nicotine 
+vaping products. 
+ 
+6.2.1 TOTALLY WICKED VOUCH ER SCHEME 
+Totally Wicked is the website Health Improvement Partners 3 (totallywicked -eliquid.co.uk) where the 
+client can redeem the vouchers to order their chosen products for free. 
+ 
+The voucher scheme comprises of two types of quit vouchers that the Advisor will have allocated to 
+the Client: 
+ 
+4-week starter kit including the below: 
+
+4-week continuation voucher including the below: 
+ 
+Please note: Totally Wicked can support clients who are digitally excluded or lack digital skills to 
+redeem their voucher codes over the phone by calling: 01254 692244 . 
+ 
+The Advisor may choose to support the client to redeem their first voucher code from the Totally 
+Wicked Health Improvement landing page. By supporting the client in this wa y, the Advisor wil l be 
+reassured that the client has the knowledge to place future orders over the course of the 12 -week 
+programme. 
+ 
+CLINICAL PROTOCOL 
+Due for review: May 2027 
+Name of Protocol : Maternity Vaping Protocol v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 16 of 24 6.3 NICOTINE VAPING PROD UCTS AND IMPORTANT I NFORMATION 
+See the below table for the nicotine vaping products, accessories and e -liquids available to order 
+from the Totally Wicked platform as part of the 12 -week programme: 
+
+Skope -Air is a beginner friendly 
+vape pod. It is easy to use and 
+can feel just like smoking. There 
+is a button on the front that you 
+can press to vape. Alternatively 
+inhale on the e -cig and you can 
+vape that way too. Tornado GTL is a sleek, simple 
+and packed with features. The 
+Tornado GTL device has 3 
+power settings and adjustable 
+airflow to give you an airier or 
+tighter drag. 
+Suits low -medium level smokers 
+(up to 15 per day) Suits medium -high level 
+smokers 
+(15-20+ per day) 
+ 
+Training Video Training Video 
+Skope Air Replacement 
+Atomizer Heads x 2 1.2ohm Tornado GTL 
+Replacement Atomizer Heads x 
+2 1.2ohm 
+Skope Air Specifications: 
+ Pod capacity - 2mll 
+ Filling method – Side fill 
+ Battery capacity - 800mAh 
+ Airflow type – Bottom Tornado GTL Specifications: 
+ Pod capacity - 2.0ml 
+ Filling method - Sliding Top 
+fill. 
+ Battery capacity - 1600mAh 
+CLINICAL PROTOCOL 
+Due for review: May 2027 
+Name of Protocol : Maternity Vaping Protocol v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 17 of 24 adjustable 
+ Atomizer resistance - 0.8ohm 
+ Dimensions - 116.6mm 
+(length) x 22.5mm (width) x 
+12.7mm (depth) 
+ Device weight - 38g  Airflow type - Bottom 
+adjustable 
+ 3 Power Modes (Low, Med, 
+High) 
+ Dimensions -131mm (length) 
+x 20mm (diameter) 
+ Device weight - 64.5g 
+Kit Contents: 
+ 1 x Skope Air battery 
+ 1 x Skope Air pod 
+ 2 x EN 0.8ohm atomizer heads 
+ 1 x USB -C cable 
+ 1 x User manual Kit Contents: 
+ 1 x Tornado GTL Battery 
+ 1 x GTL Cartridge 
+ 2 x GTL 1.2ohm atomizer 
+heads 
+ 1 x USB -C cable 
+ 1 x User manual 
+ 
+ Switz E -liquid 
+- Mixed Fruit 
+available in 
+0.6%, 1.0% & 
+1.6% nicotine 
+strength Switz E -liquid 
+- Strawberry 
+available in 
+0.6%, 1.0% & 
+1.6% nicotine 
+strength Switz E -liquid 
+– Iced 
+Blackcurrant 
+available in 
+0.6%, 1.0% & 
+1.6% nicotine 
+strength 
+ 
+6.3.1 VAPES AND OXYGEN THERAPY 
+ 
+Vapes / electronic cigarettes include a power s ource, and this may be charged from a USB power 
+port or by using a separate battery charger. These items, when saturated with oxygen may ignite. It 
+has been reported that there could be a risk of an ignition of a vapes whilst a patient is undergoing 
+oxygen therapy. As a result, it is advised that clients should NOT vape whilst on oxygen 
+therapy . 
+ 
+Additionally, batteries of vapes should not be charged in the vicinity of a patient undergoing oxygen 
+therapy or the oxygen source itself. When using electronic cigarettes, the same safety principles 
+should be adopted as smoking burning cigarettes. 
+ 
+6.3.2 STORAGE 
+Nicotine vape products should be managed, recorded, and stored in line with your service’s current 
+guidelines for NRT products. Smoking cessation aid s should be safely stored in a locked storage 
+unit and must be: 
+ Kept in accordance with the manufacturer’s instructions (i.e., dry storage, stable 
+temperature) 
+ Kept in lockable storage units. CLINICAL PROTOCOL 
+Due for review: May 2027 
+Name of Protocol : Maternity Vaping Protocol v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 18 of 24  Kept out of the reach of clients and children. 
+ Transported from the direct supply unit in a lockable container. 
+ 
+6.3.3 DISPOSAL OF RECHARGE ABLE VAPES 
+Clients should be advised that vape devices should never be disposed of in household waste and 
+should instead be handed into an approved collector of waste such as electrical and electronic 
+equipment recycling waste. Larger vape stores, electronical retailers such as Currys and Recycling 
+Centres operate collection points, or alternatively clients can find their nearest collection point by 
+entering their postcode at https://www.recycleyourelectricals.org.uk/ . 
+All the District and Borough councils in West Sussex and Brighton and Hove City Council offer a 
+kerbside small electrical collections service. For more information on these collections visit your 
+local authority’s webpage: 
+Adur and Worthing Councils   
+Arun District Council    
+Chichester District Council   
+Crawley Borough Council   
+Horsham District Council   
+Mid Sussex District Council   
+Brighton & Hove City Council (brighton -hove.gov.uk) 
+ 
+6.3.4 TOTALLY WICKED CUSTO MER SERVICES 
+ In the first instance, we would recommend that you advise all clients to contact Totally 
+Wicked’s customer services directly on 01254 692244 (business hours) for expert advice 
+and guidance on troubleshooting technical problems. For other forms of communication, 
+such as ‘Live Chat’ and the email option, please refer them to the Totally Wicked ‘ contact 
+us’ webpage. 
+ Totally Wicked customer services will support our clients to resolve any technical 
+problems they are experiencing with a vaping product. If the customer services Advisor 
+deems the item in question to be faul ty, they will honour the warranty by sending out a 
+replacement item to the client via next day delivery. 
+ For more warranty & Safety information, please see the following link: 
+https://www.totallywicked -eliquid.co.uk/e -cigarette -warranty -safety -information 
+ Their customer service team are available to contact from Monday – Saturday, clients 
+have the choice to contact via e -mail, live chat or telephone. 
+Monday - Friday: 9am - 5pm 
+Saturday: 9am - 5pm 
+Sunday: Closed 
+Email: info@totallywicked.co.uk 
+Telephone: (+44)1254 692244 (not call and collect). 
+ 
+Faulty vapes disposal either follow the process as outlined in the ‘disposal advice for rechargeable 
+vapes' section o r contact Totally Wicked directly on 01254 692244 to arrange collection and 
+disposal of the faulty vape. CLINICAL PROTOCOL 
+Due for review: May 2027 
+Name of Protocol : Maternity Vaping Protocol v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 19 of 24 7.0 TRAINING 
+We recommended that Speciali st midwives and Tobacco Dependency Treatment 
+Practitioners undertake the following training to support the integrating of nicotine vape starter kits 
+into stop smoking service delivery: 
+ MS Teams Virtual Session (30mins) training on how to navigate and order vaping 
+products from the platform. 
+ Complete the free NCSCT ‘Vaping for healthcare professionals’ e -learning: 
+https://elearning.ncsct.co.uk/vaping 
+ MS Teams Virtual Session (90mins), Totally Wicked : led by Helen Astbury, Health 
+Improvement Partnership Lead and Smoking Cessation Lead . This training session will 
+cover: 
+­ Evidence base for switching to vaping. 
+­ Product demonstration of the chosen vapes kits including product features. 
+­ E-liquids strengths and popular flavours as well as how to reduce the nicotine 
+strength. 
+­ The difference between vape and smoking inhalation and air flow. 
+­ Difference in atomizer heads ohm rates and cleaning the vape. 
+­ Troubleshooting problems and warranty returns 
+­ Disposal of the vapes. 
+­ Q&A and Conclusion 
+ Watch each of the following demonstration videos for the two available vapes: 
+1. Skope Air click here to view 
+2. Tornado GTL click here to view 
+
+ CLINICAL PROTOCOL 
+Due for review: May 2027 
+Name of Protocol : Maternity Vaping Protocol v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 20 of 24 8.0 MONITORING 
+ 
+Team responsible for monitoring: Specialist Tobacco Dependenc y Midwives, Public Health Midwife, 
+Matrons, and team leaders. 
+ 
+Data will be reported monthly to the Tobacco Patient Level Data Collection . 
+ 
+Evidence of compliance with Saving Babies Lives is submitted quarterly to the implementation tool 
+provided by SBLV3.1 . 
+MISyear5 -update -July-2023.pdf 
+ 
+A highlight report with locally agreed KPIs will be presented at the bimonthly UHSx/NHS Sussex 
+TDT Facilitative and Partnership Meeting . 
+ 
+Minimum Quarterly report to be written and sent to Director and Heads of Midwifery and 
+disseminated as appropriate. 
+ 
+Reports and data to be presented as required to local and national Smokefree Pregnancy and 
+health improvement agencies. 
+Maternity services will provide a quarterly report to local councils with data regarding the Swap to 
+Stop Scheme and demographic data f or service users tha t choose to engage in this scheme. 
+In addition, progress monitoring and troubleshooting will take place through the regular public health 
+and maternity meeting: Maternity & Healthy Lifestyle Group - UHSussex & BHCC facilitated by 
+laura.mclaren4@nhs.net , for which a new standing agenda item should be created: Vaping 
+Partnership Update. 
+
+Issue being 
+monitored Monitoring 
+method Responsibility Frequency Reviewed by and 
+actions arising 
+followed up by 
+As above Audit Public health Midwife/ 
+Tobacco dependency 
+Midwife Monthly audits 
+and Quarterly 
+reports will be 
+produced Quality and Safety 
+Meeting 
+
+ CLINICAL PROTOCOL 
+Due for review: May 2027 
+Name of Protocol : Maternity Vaping Protocol v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 21 of 24 ADDITIONAL GUIDANCE / INFORMATI ON 
+Vapes disposal & Recycling Electricals: 
+Recycle Your Electricals - WEEE Recycling - Material Focus 
+Adur and Worthing Councils   
+Arun District Council    
+Chichester Dist rict Council   
+Crawley Borough Council   
+Horsham District Council   
+Mid Sussex District Council   
+Brighton & Hove City Council (brighton -hove.gov.uk) 
+ 
+Totally Wicked customer services: 
+Contact Totally Wicked Premier Vaping Supplier | Trust the Experts (totallywicked -eliquid.co.uk) 
+ 
+National centre for Stop Smoking Training (NCSST): 
+NCSCT e -learning 
+ 
+User guide on how to use Skope Air and Tornado GTL 
+How to use the Skope Air E -cigarette (youtube.com) 
+How to use your Totally Wicked Tornado GTL E -cigarette (vimeo.com) 
+SEE ALSO / LINKED DO CUMENT S 
+Maternity Smoking & Smoke Free Pregnancy Protocol 
+NRT Protocol CLINICAL PROTOCOL 
+Due for review: May 2027 
+Name of Protocol : Maternity Vaping Protocol v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 22 of 24 CLINICAL PROTOCOL GOVERNANCE AND APPRO VAL 
+ 
+OWNER Sebastian Adamson & Francis Usifo 
+AUTHOR/FURTHER INFORMATION West Sussex County Council (WSCC) 
+Brighton & Hove City Council (BHCC) 
+Caroline Thomas 
+Cara Henwood 
+Juliette Golding 
+PROTOCOL VERSION v1.0 
+RELATED POLICIES Maternity Smoking & Smoke Free Pregnancy 
+Policy 
+RELATED DOCUMENTS NRT Protocol 
+STANDARDS NCSCT. (2019) Stopping Smoking in 
+Pregnancy. A briefing for maternity providers. 
+NCSCT Standard Treatment Programme for 
+Pregnant Women. 
+NICE 2023: Tobacco: preventing uptake, 
+promoting quitting, and treating dependence 
+NCSCT. (2019) Stopping Smoking in 
+Pregnancy. A briefing for maternity providers. 
+NCSCT Standard Treatment Programme for 
+Pregnant Women. 
+NICE 2023: Tobacco: preventing uptake, 
+promoting quitting, and treating dependence 
+SUPERSEDED DOCUMENTS N/A 
+REVIEW DUE May 2027 
+REFERENCE NUMBER CDL 11592 
+ 
+Approval 
+JOGG Date approved 17th April 2024 
+Women & Children’s Clinical Effectiveness 
+Group Date approved 10th May 2024 
+Medicines Governance Committee Date approved 14th March 2024 
+ CLINICAL PROTOCOL 
+Due for review: May 2027 
+Name of Protocol : Maternity Vaping Protocol v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 23 of 24 Consultation 
+Tobacco Dependency Treatment Steering Group Date approved 25th April 2024 
+ 
+Ratification 
+Clinical Document Approval Group Date approved Chair’s Approval - 9th May 
+2023 
+ 
+Consultation 
+Please select any appropriate consultation groups/ committees: 
+Trust Wide Governance Group Tick as 
+required: 
+Medicines Governance Committee (MGC - replaces ‘Medicines 
+Optimisation Committee’ and ‘Drug and Therapeutics Committee’) 
+Antimicrobial Stewardship Group 
+Resuscitation Committee 
+Resuscitation Operational Management Group (ROMG) 
+Trust Transfusion Committee 
+Trust Infection Prevention Committee (Chief Nursing Officer) 
+Thrombosis Committee 
+Health Records Committee 
+BSUH Trauma Committee 
+Major Trauma Committee 
+Sussex Trauma Network 
+Children’s Safeguarding Strategy Committee 
+Radiation Safety Committee 
+Medical Devices & Equipment Committee 
+Patient Blood Management Committee 
+Patient Safety Committee 
+BSUH Diabetes In -Patient Care Committee 
+Carer and Patient Information Group (CPIG) 
+Women’s Safety and Quality Committee 
+Food Improvement Group 
+NIV Steering Group 
+NMAHP Board 
+Deteriorating Patient Group 
+Other (please specify) 
+Tobacco Dependency Treatment Steering Group  CLINICAL PROTOCOL 
+Due for review: May 2027 
+Name of Protocol : Maternity Vaping Protocol v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 24 of 24 Women & Children’s Clinical Effectiveness Group 
+ 
+PROTOCOL VERSION CON TROL LOG 
+Version Date Author(s) Approved 
+by Comment 
+1.0 April 
+2024 Caroline Thomas – 
+Public health 
+Midwife 
+Cara Henwood –
+Tobacco 
+Dependency 
+Specialist Midwife 
+Juliette Golding - 
+Tobacco 
+Dependency 
+Specialist Midwife JOGG New Trust wide vaping protocol for 
+maternity.

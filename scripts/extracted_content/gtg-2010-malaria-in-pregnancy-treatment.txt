@@ -1,0 +1,1104 @@
+# Extracted from: GTG 2010 - Malaria in Pregnancy - Treatment.pdf
+# Guideline ID: gtg-2010-malaria-in-pregnancy-treatment
+# Content length: 98372 characters
+# Processing date: 1735630883.9444761
+
+The diagnosis and treatment of malaria 
+in pregnancy
+Green–top Guideline No. 54b
+April 2010RCOG Green-top Guideline No. 54b 2 of 29 © Royal College of Obstetricians and GynaecologistsThe diagnosis and treatment of malaria in pregnancy
+This is the first edition of this guideline.
+1. Purpose and scope
+The aim of this guideline is to provide clinicians with up-to-date, evidence-based information on the diagnosis
+and treatment of malaria in pregnancy, in situations that are likely to be encountered in UK medical practice.For initial rapid assessment and management, see Appendix 1.
+2. Background
+Malaria is the most important parasitic infection in humans and is the tropical disease most commonlyimported into the UK, with approximately 1500 cases reported each year and rising, apart from 2008.
+1
+Approximately 75% of cases are caused by Plasmodium falciparum and there is an average of 5–15 deaths a
+year (mortality rate approximately 0.5–1.0%).1Immigrants and second- and third-generation relatives
+returning home assuming they are immune from malaria are by far the highest risk group. They may take noprophylaxis or may be deterred by the cost, may not adhere to advice, may receive poor advice or somecombination of these factors.
+2,3Prevention of malaria is covered in Green-top Guideline No. 54A.4
+In the UK, the prevalence of imported malaria in pregnancy is unknown. A review of the burden of malaria in pregnancy estimated that about one in four women in sub-Saharan Africa in areas of stabletransmission has malaria at the time of birth.
+5Online and telephone enquiries with the Health Protection
+Agency (www.hpa.org.uk) and Eurosurveillance archives (www.eurosurveillance.org) and reviews ofpublished reports failed to uncover a report of maternal death from malaria in UK for the past 10 years.
+6
+Maternal deaths from malaria are unlikely to be reported when they occur in endemic countries.
+Malaria in pregnancy is detrimental to the woman and her fetus and collective data demonstrate that the risk
+of adverse effects from untreated malaria in pregnancy outweigh those of treatment.5,6–10The protozoan
+parasites P . falciparum , P. v i v a x , P . malariae and P . ovale (extremely rarely P . knowlesi ),11are transmitted by
+the bite of a sporozoite-bearing female anopheline mosquito. After a period of pre-erythrocytic developmentin the liver, the blood stage infection, which causes the disease, begins. Parasitic invasion of the erythrocyteconsumes haemoglobin and alters the red cell membrane. This allows 
+P . falciparum infected erythrocytes to
+cytoadhere (or stick) inside the small blood vessels of brain, kidneys and other affected organs. Cytoadherenceand rosetting (adherence of uninfected red blood cells) interfere with microcirculatory flow and metabolismof vital organs. The hallmark of falciparum malaria in pregnancy is parasites sequestered in the placenta.Sequestered parasites evade host defence mechanisms: splenic processing and filtration. Sequestration is notknown to occur in the benign malarias due to 
+P. v i v a x , P. o v a l e and P . malariae . In pregnancy, the adverse
+effects of malaria infection result from:
+●the systemic infection, comparable to the effects of any severe febrile illness in pregnancy: maternal and fetal
+mortality, miscarriage, stillbirth and premature birth
+●the parasitisation itself: fetal growth restriction and low birth weight, maternal and fetal anaemia, interactionwith HIV , susceptibility of the infant to malaria.
+P . falciparum causes greater morbidity (maternal and fetal, principally low birth weight and anaemia) and
+mortality than non-falciparum infections5,7–10but there is mounting evidence that P. v i v a x is not as benign as
+had been previously thought.12–14Response to antimalarial treatment is multifactorial but is associated with
+the degree of prior immunity acquired from repeated exposures in childhood and the background level of
+drug resistance. The higher the transmission of malaria, the greater the degree of prior immunity and the morelikely the woman will respond favourably to a drug treatment.
+15,16RCOG Green-top Guideline No. 54b 3o f 2 9 © Royal College of Obstetricians and Gynaecologists3. Identification and assessment of the evidence
+A literature search was performed using Medline (November 2009). Keywords used were ‘severe malaria’,
+‘uncomplicated malaria’, ‘burden malaria’, ‘congenital malaria’, ‘anaemia malaria’, ‘pregnancy’, ‘treatment’,‘antimalarials’ ‘artesunate’, ‘artemether’, ‘artemether-lumefantrine’, ‘atovaquone-proguanil’, ‘chloroquine’,‘clindamycin’, ‘dihyroartemisinin-piperaquine’, ‘mefloquine’, ‘quinine’, ‘primaquine’, ’UK’, ‘epidemics’, ‘maternalmortality’, ‘pharmacokinetic’ and ‘pregnancy’. Reference lists of the articles identified were hand searched foradditional articles. Other sources used in the development of this guideline included UK malaria treatmentguidelines, published
+3and online at the Health Protection Agency, international guidelines from the World
+Health Organization17and websites covering malaria and pregnancy. Areas lacking evidence are highlighted
+and annotated as ‘good practice points’. Articles on intermittent preventive treatment were specificallyexcluded, as this practice is not recommended in the UK.
+4. Limitations of the data used in this guideline
+There is no published evidence of treatment efficacy for malaria in pregnant women in the UK or any othernon-endemic country.
+18,19There are no randomised controlled trials of antimalarials in the first trimester of
+pregnancy.18The evidence for best treatment in pregnancy is gained from endemic areas17,19,20and is not
+supported by the availability of drugs or licensing regulations within the UK. Treatment response in UKpregnant women can only be extrapolated from, and is likely to be worse than, treatment responses in semi-immune women. Treatment responses are likely to be closest to those observed in areas of low and unstablemalaria transmission, where malaria in pregnancy is usually symptomatic. Data on malaria in pregnancy,especially epidemic malaria, where the severe effects on pregnant women were recorded, is historical.
+21,22In
+this guideline, the best available evidence for treatment in pregnancy is published in parallel with UKtreatment guidelines,
+3with comments on the guidelines. Availability of drugs within the UK can change and
+this guideline promotes the use of evidence-based prescription choices in this vulnerable group.
+Overall, 13 randomised controlled trials on the treatment of uncomplicated P . falciparum in pregnancy were
+completed in the past 20 years in eight different countries (Africa and Asia) and have included 2254 women
+from high and low transmission areas and a total of 16 different antimalarial drug regimens.23–35Seventy-seven
+percent (10/13) of the trials followed the women post-treatment until delivery but 46% (6/13) attempted toevaluate the infants at 1 year of life. A 2009 Cochrane meta-analysis concluded that data on uncomplicatedmalaria in pregnancy were scant and, while some combinations appeared effective, data on safety were lacking.
+36
+5. Definition of terms used in this guideline
+5.1 Severe and complicated malaria
+The severe signs of malaria are non-specific and other causes must be excluded before assigning the signs andsymptoms to malaria (Box 1). The parasitaemia of severe malaria can be less than 2%. Pregnant women with2% or more parasitised red blood cells are at higher risk of developing severe malaria and should be treatedwith the severe malaria protocol.
+3
+5.2 Uncomplicated malaria
+Uncomplicated malaria in the UK is defined as fewer than 2% parasitised red blood cells in a woman with nosigns of severity and no complicating features.
+3
+5.3 Congenital malaria
+Congenital malaria in the very young infant or newborn results from the passage of parasites or infected redblood cells from the mother to the newborn while in utero or during delivery and not by the bite of thefemale anopheline mosquito.5 of 29 RCOG Green-top Guideline No. 54b © Royal College of Obstetricians and GynaecologistsMisdiagnosis has been reported to occur when the leading symptoms are jaundice or respiratory38–40and
+possibly gastrointestinal (certainly in children) in nature. Misdiagnosis and delay of treatment are the most
+common reasons cited for death from malaria in Europe41,42and the USA.43For the non-falciparum malarias,
+the history of travel may be more than 1 year before the onset of symptoms3,43and, for any woman who has
+taken prophylaxis, compliance does not rule out the diagnosis of malaria. In the only case series of importedmalaria in pregnant women in Europe (Marseille, France), the majority (14 of 18) had fever and the fourwomen who did not, had thrombocytopenia or anaemia associated with splenomegaly.
+44
+A history of travel to the tropics and the non-specific nature of the symptoms and signs will lead clinicians toconsider investigating other travel-related diagnoses, according to the region visited; for example, influenza-like illnesses including H1N1, severe acute respiratory syndrome, avian influenza, HIV , meningitis/encephalitisand viral haemorrhagic fevers, hepatitis, dengue fever, scrub and murine typhus and leptospirosis. However,for malaria diagnosis a blood film is vital.
+6.2 How should malaria in pregnancy be diagnosed?
+Microscopic diagnosis allows species identification and estimation of parasitaemia, so that appropriate
+antimalarials can be prescribed.
+Rapid detection tests may miss low parasitaemia, which is more likely in pregnant women, and rapid
+detections tests are relatively insensitive in P. v i va x malaria.
+Microscopy and rapid diagnostic tests are the standard tools available. The diagnosis of malaria in pregnancy,
+as in non-pregnant patients, relies on microscopic examination (the current gold standard) of thick and thinblood films for parasites (Appendix 2) or the use of rapid diagnostic tests which detect specific parasiteantigen or enzyme. Rapid diagnostic tests are less sensitive than malaria blood film.
+45,46A positive rapid
+diagnostic test should be followed by microscopy to quantify the number of infected red blood cells(parasitaemia) and to confirm the species and the stage of parasites. The rapid diagnostic tests should notreplace blood films, which should always be prepared, even if they cannot immediately be read (assistancecan be provided in the UK; Box 3).A
+CBox 2. Symptoms and signs of malaria
+Symptoms
+● Fever/chills/sweats
+● Headache
+● Muscle pain
+● Nausea
+● Vomiting
+● Diarrhea
+● Cough
+● General malaise
+Signs
+● Jaundice
+● Elevated temperature
+● Perspiration
+● Pallor
+● Splenomegaly
+● Respiratory distressIn a febrile patient, three negative malaria smears 12–24 hours apart rules out the diagnosis of malaria.
+In a case series of pregnant women from France, all women were identified as positive for malaria by
+microscopy.44There are occasions for suspicions to remain high and expert advice should be sought in such
+circumstances. Women who have taken prophylaxis may have their parasitaemia suppressed below the levelof microscopic detection (total biomass 108 parasites) and details of prophylaxis (name, where it was bought– in case of fake drug – dosing and adherence) should be sought. Stop prophylaxis on admission to hospital.Pregnant women with a high background immune level may have negative peripheral blood thick films butparasites sequestered in the placenta (for example, a recently arrived woman from a high malaria-endemiccountry with an unexplained anaemia).
+47
+Other important prognostic factors that should be reported on a peripheral blood smear result are:
+●the presence and count of mature trophozoites and schizonts of P . falciparum
+●finding malaria pigment in more than 5% of the polymorphonuclear leucocytes in the peripheral blood
+film.48,49
+6o f 2 9 RCOG Green-top Guideline No. 54b © Royal College of Obstetricians and GynaecologistsCBox 3. Assistance for reading malaria blood films sent urgently by courier or taxi
+HPA Malaria Reference Laboratory
+Website: www.hpa.org.uk/HPA
+For advice on laboratory diagnosis: tel: 020 7927 2427Send in the risk assessment template by fax and receive results within 3 days; fax: 020 7637 0248
+Patient data requirements (risk assessment template ‘Malaria Request Form’) available to download as a PDF file:
+www.hpa.org.uk/HPA/ProductsServices/InfectiousDiseases/LaboratoriesAndReferenceFacilities/1200660023262/
+Send samples to:
+HPA Malaria Reference Laboratory, London School of Hygiene and Tropical Medicine, Keppel Street, London WC1E 7HT
+For advice for health professionals over the phone, please contact the National Travel Health Network and Centre: tel: 0845 602 6712
+Hospital for Tropical Diseases, London
+Website information for doctors: www.thehtd.org/Fordoctors.aspx
+General practitioners or hospitals requiring information or clinical advice should telephone: 0845 1555 000 ext. 5414/5418
+Send films by courier or cab to:
+Hospital for Tropical Diseases, Department of Parasitology, Mortimer Market Centre, Capper St, London WC1E 6AU
+After 17:00 or at the weekend, the sample should be addressed to: 
+SHO on call, T8, University College Hospital, 253 Euston Road, London NW1 2BU
+Tel. 08451555000 bleep 5840
+Liverpool School of Tropical Medicine, Liverpool
+Patient data requirements (HPA risk assessment template ‘Malaria Request Form’) available to download as a PDF file :
+www.liv.ac.uk/lstm/travel_health_services/diagnos_lab.htm
+Sample requirements: original (EDTA) blood sample plus two unstained thick films and two unstained, methanol fixed, thin films. Samples
+should be sent by first class mail, or courier to:
+Clinical Diagnostic Parasitology Laboratory, Liverpool School of Tropical Medicine, Pembroke Place, Liverpool, L3 5QA
+or, if in the Hays DX scheme:
+Liverpool School of Tropical Medicine, Diagnostic Laboratory, DX 6966301, Liverpool 92L
+A charge is made for all laboratory services; for current prices please telephone laboratory staff on 0151 705 3220. Please note that the
+laboratory opening hours are 08.30–17.00 Monday to Friday. The laboratory is closed at weekends and on Bank Holidays. For technical adviceregarding samples/tests and for interpretation of results please contact the Diagnostic Laboratory 0151 705 3220/3290RCOG Green-top Guideline No. 54b 7 of 29 © Royal College of Obstetricians and Gynaecologists6.3 Is the severity of malaria a useful aid in managing the infection?
+Women with malaria in pregnancy should have the severity of their condition assessed and documented
+as an aid to management.
+The clinical condition is the most important indicator of severity and should be assessed promptly (Box 1). A
+helpful summary of the key points for use in the emergency department has been made available via theBritish Infection Society website (www.britishinfectionsociety.org). The severity of malaria determines thetreatment and predicts the case fatality rate. In uncomplicated malaria, fatality rates are low: approximately0.1% for 
+P . falciparum . In severe malaria, particularly in pregnancy, fatality rates are high (15–20% in
+nonpregnant women compared with 50% in pregnancy).17,38,50,51Brabin estimated mortality to be 2–10 times
+higher in pregnant women than in non-pregnant women in endemic areas.52The non-falciparum species are
+rarely fatal but caution should still be observed.12,53
+Once the disease has been classified as severe/complicated (as defined in Section 5.1 and Box 1 of thisguideline) or uncomplicated malaria (as defined in Section 5.2 of this guideline) prompt treatment should beinstituted.
+7. How is malaria infection treated during pregnancy?
+Treat malaria in pregnancy as an emergency.
+Admit pregnant women with uncomplicated malaria to hospital and pregnant women with severe and
+complicated malaria to an intensive care unit.
+Intravenous artesunate is the treatment of choice for severe falciparum malaria. Use intravenous
+quinine if artesunate is not available.
+Use quinine and clindamycin to treat uncomplicated P . falciparum (or mixed, such as P . falciparum and
+P. v i va x ).
+Use chloroquine to treat P. v i va x , P. ova l e or P . malariae .
+Primaquine should not be used in pregnancy.
+Seek advice from infectious diseases specialists, especially for severe and recurrent cases.Do not persist with oral therapy if vomiting is persistent.
+Treat the fever with antipyretics.
+Screen women with malaria for anaemia and treat appropriately.Write a management plan for follow-up, to ensure detection of relapse.
+7.1 Drug treatment
+Delay in diagnosis and treatment is associated with death from severe malaria.42,54–56Use the treatment
+guidelines shown in Table 1. For a summary of the published evidence see Appendix 3.PPP
+B
+A
+A
+B
+A
+BD
+AB7.2 Who should prescribe treatment for malaria infection in pregnancy? 
+In the UK, treatment prescription is limited to physicians. Treatment in pregnancy, particularly of severe and
+recurrent malaria, is best given with expert advice (Table 2).
+7.3 Where should treatment of uncomplicated malaria infection take place?
+In the UK, it is advisable to hospitalise all pregnant women with P . falciparum , as the clinical condition can
+deteriorate rapidly.3,59–62Blood films are usually monitored every 24 hours but clinical deterioration is an
+indication for a repeat blood film.
+8o f 2 9 RCOG Green-top Guideline No. 54b © Royal College of Obstetricians and GynaecologistsTable 1. UK treatment guidelines in pregnancy3
+Severity Indication Drug and dosage
+Severe or complicated Any species (for specific cases after Artesunate IV 2.4 mg/kg at 0, 12 and 24 hours, then daily thereafte r.
+malariaaexpert consultation; see Table 2) When the patient is well enough to take oral medication she can be
+switched to oral artesunate 2 mg/kg (or IM artesunate 2.4 mg/kg) 
+once daily, plus clindamycin. If oral artesunate is not available, use a 
+3-day course of Riamet® (GSK) or atovaquone-proguanil (Malarone®,Novartis) or a 7-day course of quinine and clindamycin at 450 mg 3 times a day 7 days.
+ALTERNATIVELY
+Any species Quinine IV 20 mg/kg loading dose (no loading dose if patient already
+taking quinine or mefloquine) in 5% dextrose over 4 hours and then 10 mg/kg IV over 4 hours every 8 hours plus clindamycin IV 450 mgevery 8 hours (max. dose quinine 1.4 g). When the patient is wellenough to take oral medication she can be switched to oral quinine600 mg 3 times a day to complete 5–7 days and oral clindamycin 450 mg 3 times a day 7 days (an alternative rapid quinine-loadingregimen is 7 mg/kg quinine dihyrochloride IV over 30 minutes using aninfusion pump followed by 10 mg/kg over 4 hours).
+Note: quinine dosing should be reduced to 12-hourly dosing if IV
+therapy extends more than 48 hours or if the patient has renal orhepatic dysfunction.
+56Quinine is associated with severe and 
+recurrent hypoglycaemia in late pregnancy.57
+Uncomplicated malariabP . falciparum Oral quinine 600 mg 8 hourly and oral clindamycin 450 mg 8 hourly 
+for 7 days (can be given together)orRiamet® 4 tablets/dose for weight >35 kg, twice daily for 3 days
+(with fat)oratovaquone-proguanil (Malarone®) 4 standard tablets daily for 
+3 days.
+Vomiting but no signs of severe or Quinine 10 mg/kg dose IV in 5% dextrose over 4 hours every 8 hours
+complicated malaria plus IV clindamycin 450 mg every 8 hours. When the patient is well
+enough to take oral medication she can be switched to oral quinine600 mg 3 times a day to complete 5–7 days and oral clindamycin can if needed be switched to 450 mg 3 times a day 7 days.
+Non-falciparum malaria
+cP. v i va x , P. ova l e , P . malariae Oral chloroquine (base) 600 mg followed by 300 mg 68 hours later.
+Then 300 mg on day 2 and again on day 3.
+Resistant P. v i va x As for uncomplicated malaria P . falciparum
+Preventing relapse DURING pregnancy Chloroquine oral 300 mg weekly until delivery
+Preventing relapse AFTER delivery Postpone until 3 months after delivery and G6PD testingP. ova l e Oral primaquine 15 mg single daily dose for 14 days
+P. v i va x Oral primaquine 30 mg single daily dose for 14 days
+G6PD (mild) for P. v i va x or P . ovale Primaquine oral 45–60 mg once a week for 8 weeks
+aSevere and complicated malaria published evidence, see Appendix 3.1; 
+bUncomplicated malaria published evidence, see Appendix 3.2; 
+cNon-falciparum malaria published evidence, see Appendix 3.3; IM = intramuscular, IV = intravenoushave directly addressed the question of routine iron and folate supplementation as part of uncomplicated
+malaria treatment. In P . falciparum malaria treatment trials in women with low premunition, 90% of women
+developed anaemia (haemoglobin less than 10 g/dl), either on admission or during follow-up.80Premunition
+is the degree of naturally acquired host immunity to malaria. It depends on repeated exposure to infectiousanopheline bites, so most UK-based residents will have low or no premunition. Mild and moderate malaria-associated anaemia is treated with ferrous sulphate and folic acid at the usual doses.
+7.6 Does pregnancy affect the efficacy of malaria treatments?
+Treatments in pregnancy may have lower efficacy than in non-pregnant patients but this apparent effect couldresult from lowered concentrations of antimalarials in pregnancy.
+26,30,32Women should be advised of the risk
+of recurrence and a suitable follow-up plan devised; for example, if symptoms or fever return, a repeat bloodfilm is necessary. Alternatively, weekly screening by blood film can provide early detection and treatment ofmalaria. This has been shown to reduce maternal death from malaria in Thailand.
+10There is no evidence of
+weekly blood film use in the UK but Thailand is a low endemic area so immune levels would not be muchhigher than those in women from the UK who were not immune.
+Malaria in pregnancy is unique and the ability of 
+P . falciparum to sequester in the placenta challenges the
+normal way antimalarial drug efficacy is assessed.37Polymerase chain reaction (PCR)-confirmed prolonged
+submicroscopic carriage with subsequent recurrence has been reported in pregnant women for months
+following drug treatment for uncomplicated P . falciparum . Most recurrence is around day 28–42 but late-
+reported recurrence, so far unique to pregnancy, has been reported to occur at 85 days with quinine,2898 days
+with artesunate, 63 days with artemether-lumefantrine30and 121 days with mefloquine.81Weekly screening by
+blood film until delivery allows these women to be detected positive before becoming symptomatic.10
+7.7 How should recurrence be treated?
+The treatment efficacy of antimalarials for recurrent malaria in pregnancy has been described in only a hand-ful of trials.
+30,82–84The cure rates for uncomplicated malaria with quinine fell from 77.0% to 61.0% ( P= 0.03)
+and for mefloquine from 72.0% to 62.5% ( P> 0.05) when these drugs were used to treat primary and
+recurrent infections.82The alternative regimen for recurrent malaria at that time (1995–1997) was artesunate
+monotherapy, which had a cure rate of 84%. In another study, the PCR-confirmed cure rates of women treatedin the second and third trimesters of pregnancy were highest when the infection on admission to the studywas primary (the first for the pregnancy) and lowest when the infection was recrudescent (failure of previousdrug treatment in pregnancy).
+82Infections that recur following treatment are likely to be intrinsically less
+sensitive to the drugs used against them. A highly effective 7-day treatment has more chance of curing thepatient. All the trials of recurrent malaria in pregnancy rely on artemisinin derivatives.
+Unfortunately, the options for treatment of recurrent infection in pregnancy in the UK are limited but, if
+quinine and clindamycin has failed as first-line treatment, an alternative should be considered. Atovaquone-proguanil-artesunate
+83and dihydroartemisinin-piperaquine84have been used in pregnant women with
+multiple recurrent infections with good effect. Atovaquone-proguanil (Malarone®, GlaxoSmithKline) isavailable in the UK and, as noted earlier, was highly effective against uncomplicated 
+P . falciparum malaria even
+when it was not combined with artesunate.85Note that oral artesunate can be obtained from IDIS Pharma
+(Table 2). The World Health Organization recommended regimen of 7 days of artesunate (2 mg/kg/day or 100 mg daily for 7 days) and clindamycin (450 mg three times daily for 7 days) could be given.
+8. How are pregnancy-related complications of severe malaria managed?
+Monitor for hypoglycaemia regularly, as it can be profound and persistent in malaria in pregnancy and
+can be exacerbated by quinine.
+10 of 29 RCOG Green-top Guideline No. 54b © Royal College of Obstetricians and GynaecologistsBRCOG Green-top Guideline No. 54b 11 of 29 © Royal College of Obstetricians and GynaecologistsPrevent mortality from pulmonary oedema and acute respiratory distress syndrome by clinical
+assessment of jugular venous or central venous pressure, aimed at keeping right arterial pressure lessthan 10 cm H2O.
+Women who are severely anaemic should be transfused slowly, preferably with packed cells and
+intravenous frusemide 20 mg. Alternatively, exchange transfusion may be considered in centres wherethis can be performed safely.
+Secondary bacterial infection should be suspected if the patient becomes hypotensive.
+Severe malaria in pregnancy is a medical emergency and women should be treated in a high-dependency or
+intensive care unit, according to their condition and without delay. The World Health Organization’s 2006malaria treatment guidelines detail the treatment of severe malaria and do not need to be repeated here.
+17
+Common clinical manifestations and management of severe malaria have been summarised (Table 3).17,50While
+hypoglycaemia, pulmonary oedema, severe anaemia and secondary bacterial infection can occur in severemalaria in non-pregnant patients, they are more common and severe in pregnant women.
+3,39,40,50,86
+Hypoglycaemia is commonly asymptomatic, although it may be associated with fetal bradycardiaand other signs of fetal distress. In the most severely ill women, it is associated with lactic acidosisand high mortality.
+68In patients who have been given quinine, abnormal behaviour, sweating and
+sudden loss of consciousness are the usual manifestations. The hypoglycaemia of quinine is causedby hyperinsulinaemia and remains the most common and important adverse effect of this drug.
+87
+The hypoglycaemia may be profound, recurrent and intractable in pregnancy73,87,88and regular
+monitoring of glucose is required while under quinine treatment. It may present late in the diseasewhen the patient appears to be recovering. Quinine at treatment doses does not induce abortionor labour.
+73,89B
+B
+C
+Evidence
+level 2
+Table 3. Supportive clinical care in severe malaria
+Manifestation or complication Management
+Coma (cerebral malaria) Monitor using Glasgow Coma Score. Maintain airway, place patient on her left side, exclude
+tr
+eatable causes of coma (e.g. hypoglycaemia, bacterial meningitis)
+Hyperpyrexia Administer tepid sponging, fanning and antipyretic drugs
+Convulsions Maintain airway; treat promptly with intravenous or rectal diazepam
+Hypoglycaemia Check blood glucose regularly, correct hypoglycaemia and maintain with glucose-containing
+(blood glucose < 2.2 mmol/l or infusion. Quinine induced hypoglycaemia can occur quite late in the course even after the 
+<40 mg/100 ml) patient appears to be recovering
+Severe anaemia Transfuse with packed red cells
+(haemoglobin <8 g/100 ml or 
+packed cell volume <24%)
+Acute pulmonary oedema Prevent by monitoring jugular venous pressure(JVP)/central venous pressure (CVP) to keep 
+(possible overlay of acute respiratory right arterial pressure <10 cm H2O. Treat by propping patient up at an angle of 45 degrees,
+distress syndrome) give oxygen, give a diuretic, stop intravenous fluids, intubate and add positive end-expiratory
+pressure/continuous positive airway pressure in life-threatening hypoxaemia
+Renal failure Exclude pre-renal causes, check fluid balance and urinary sodium; if in established renal failure,
+add haemofiltration or haemodialysis or, if unavailable, peritoneal dialysis. The benefits of
+diuretics/dopamine in acute renal failure are not proven
+Spontaneous bleeding and Transfuse with screened fresh whole blood (cryoprecipitate, fresh frozen plasma and platelets 
+coagulopathy if available); give Vitamin K by injection
+Metabolic acidosis Prevent by careful fluid balance; observation of JVP/CVP by central venous access helps 
+optimise fluid balance and avoids overfilling. Exclude or treat hypoglycaemia, hypovolaemia and septicaemia. If severe, add haemofiltration or haemodialysis
+Shock Suspect septicaemia, take blood for cultures; give parenteral broad-spectrum antimicrobials,
+correct haemodynamic disturbancesPulmonary oedema may be present on admission or may develop suddenly and unexpectedly. It
+may develop immediately after childbirth.38Pulmonary oedema is a grave complication of severe
+malaria, with a high mortality of over 50%.39,40,86,90–93The first indication of impending pulmonary
+oedema is an increase in the respiratory rate, which precedes the development of other chest signs.Ensure that the pulmonary oedema has not resulted from iatrogenic fluid overload and monitor thecentral venous pressure and urine output. In some women, acute respiratory distress syndrome canoccur in addition to the pulmonary oedema. Once this syndrome develops, the patient needs fluidrestriction.
+Severe anaemia is associated with maternal morbidity, an increased risk of postpartum
+haemorrhage and perinatal mortality.
+8,39,51,52,90,93–96Women who go into labour when severely anaemic
+or fluid-overloaded may develop acute pulmonary oedema after separation of the placenta. Monitorhaemoglobin and transfuse as necessary. Exchange transfusion may be considered but there is noclear evidence base.
+97
+Secondary bacterial infection, principally Gram-negative septicaemia, has been reported; the patientis collapsed with a systolic blood pressure less than 80 mmHg in the supine position.
+55,98,99Blood
+cultures should be taken if the patient shows signs of shock or fever returns after apparent feverclearance, Broad-spectrum antibiotics (such as ceftriaxone) should be started immediately. Oncethe results of blood culture and sensitivity testing are available, give the appropriate antibiotic.
+9. Obstetric management specific to malaria infection in pregnancy
+9.1 Common obstetric problems with acute symptomatic malaria
+Preterm labour, fetal growth restriction and fetal heart rate abnormalities can occur in malaria in
+pregnancy.
+In severe malaria complicated by fetal compromise, a multidisciplinary team approach (intensive care
+specialist, infectious disease specialist, obstetrician, neonatologist) is required to plan optimalmanagement of mother and baby.
+Stillbirth and premature delivery in malaria in pregnancy are best prevented with prompt and effective
+antimalarial treatment.
+Uncomplicated malaria in pregnancy is not a reason for induction of labour.
+Pharmacological thromboprophylaxis should be weighed up against the risk of haemorrhage and
+should be withheld if the platelet count is falling or less than 100, indicating thrombocytopenia.
+Peripartum malaria is an indication for placental histology and placenta, cord and baby blood films to
+detect congenital malaria at an early stage.
+Inform women of the risk of vertical transmission and, in the presence of positive placental blood films,
+that fever in the infant could indicate malaria; a blood film from the baby is required for confirmation.
+Commonsense obstetrics applies to the management of the adverse effects of malaria in pregnancy.
+Efficacious and prompt treatment of malaria in the woman reduces the systemic effects of parasitaemia andreduces the adverse effects on the fetus, such as fetal distress.
+In severe malaria, cardiotocograph monitoring may reveal fetal tachycardia, bradycardia or late
+decelerations in relation to uterine contractions, indicating fetal distress, particularly in the
+12 of 29 RCOG Green-top Guideline No. 54b © Royal College of Obstetricians and GynaecologistsCEvidence
+level 3
+D
+DCABEvidence
+level 2+
+Evidence
+level 2++
+C
+Evidence
+level 413 of 29 RCOG Green-top Guideline No. 54b © Royal College of Obstetricians and Gynaecologistspresence of fever.72Paracetamol 1 g every 4–6 hours (to a maximum of 4 g/day) is safe and effective
+and should be prescribed. Maternal hypoglycaemia should be excluded as the cause of fetal distress,
+particularly if treatment is with quinine. Tocolytic therapy and prophylactic steroid therapy at theusual obstetric doses should be considered if there are no contraindications.
+100
+Historic records indicate a high fetal loss rate with malaria in pregnancy.101,102In a more recent 
+study from the Kenyan coast, Dorman et al.103found that the risk of preterm delivery in women
+with histological evidence of past placental malaria infection compared with women withoutinfection was more than twice as high (relative risk [RR] 2.33; 95% confidence interval [CI]1.31–4.13; 
+P= 0.004).
+Abnormalities in fetal and placental circulation have been noted on Doppler studies. In one study,23 women with acute malaria reported that the umbilical artery resistance index increased by 5 to20% (
+P< 0.05), with evidence of cerebral redistribution.103,104In the second observational study in
+Kenya, malaria infection at 32–35 weeks of gestation was associated with abnormal uterine arteryflow velocity waveforms on the day of blood testing (RR 2.11; 95% CI 1.24–3.59; 
+P= 0.006).103
+In women with severe malaria, obstetric advice should be sought at an early stage. The paediatricianshould be alerted and the mother’s blood glucose checked frequently, particularly whenintravenous quinine is administered. Fetal distress is common and has been related to malaria fever:late (type II) decelerations of the fetal heart rate were recorded in six women before treatment but,in most women, signs of fetal distress diminished as the maternal temperature fell.
+73Standard
+obstetric principles apply: the life of the woman comes first. There are no formal studies butinstrumental birth in the second stage of labour in the presence of maternal or fetal distress isindicated, if there are no contraindications. In severe malaria, the role of early caesarean section forthe viable fetus is unproven.
+Acute malaria can cause thrombocytopenia in pregnancy.
+105Two studies have examined the effects
+on postpartum haemorrhage, which was reported to be higher in malarious areas compared with
+non-malarious areas of Papua New Guinea.106One further trial found an increased mean blood loss
+in women with malaria but no increased risk of postpartum haemorrhage.107
+In more than 3000 pregnant women who have participated in uncomplicated malaria treatmenttrials
+7,24,26–29,43,53,80,82–84,108–121and have been prospectively followed from diagnosis of malaria through
+treatment and birth, no routine induction of labour occurred unless it was indicated on obstetricgrounds.
+There is usually no need for pregnant women with malaria infection to receive thromboprophyl-
+axis. Acute malaria causes thrombocytopenia
+105and, in severe malaria, can cause disseminated
+intravascular coagulation.50Thrombocytopenia recovers with treatment: 90% by day 7 and 100% by
+day 14, irrespective of the type of antimalarial treatment.105
+Antimalarial drugs can clear peripheral parasitaemia more quickly than from the placenta.122
+Maternal malaria close to delivery can result in congenital malaria, which can cause significantmortality.
+123Congenital malaria may present in the first weeks to months of life. A negative placental
+blood film at delivery in a woman who has had malaria in pregnancy eliminates the risk ofcongenital malaria significantly. Placenta- and cord-positive blood films result in a higher chance ofcongenital malaria than placenta-positive, cord-negative blood films. Send the placenta forhistopathology, as it is more sensitive than microscopy for detection of placental parasites.
+124,125Evidence
+level 4
+Evidence
+level 2-
+Evidence
+level 3
+Evidence
+level 1++
+Evidence
+level 3
+Evidence
+level 2+15 of 29 RCOG Green-top Guideline No. 54b © Royal College of Obstetricians and Gynaecologists11. Disease reporting
+Does a case of malaria in pregnancy in the UK need reporting?
+In the UK, malaria in pregnancy must be reported to the public health authorities and the Health Protection
+Agency (www.hpa.org.uk) and slides, plus a blood aliquot, should be sent to the Malaria Reference Laboratoryfor confirmation, which is performed free of charge.
+3
+Health Protection Agency Central Office OR Health Protection Agency Centre for Infections7th Floor 61 Colindale AvenueHolborn Gate London NW9 5EQ330 High Holborn Tel: 020 8200 4400London, WC1V 7PP Fax: 020 8200 7868Tel: 020 7759 2700 / 2701 Email: infections@hpa.org.ukFax: 020 7759 2733 Email: webteam@hpa.org.uk
+References
+1. Health Protection Agency. Malaria imported into the United
+Kingdom in 2008: implications for those advising travellers.
+Health Protection Report 2009;3(16) [www.hpa.org.uk/hpr/
+archives/2009/news1609.htm#malaria08].
+2. Smith AD, Bradley DJ, Smith V , Blaze M, Behrens RH, Chiodini
+PL, et al. Imported malaria and high risk groups: observational
+study using UK surveillance data 1987–2006. BMJ
+2008;337:a120.
+3. Lalloo DG, Shingadia D, Pasvol G, Chiodini PL, Whitty CJ,
+Beeching NJ, et al. UK malaria treatment guidelines. J Infect
+2007;54:111–21.
+4. Royal College of Obstetricians and Gynaecologists. The
+Prevention of Malaria in Pregnancy . Green-top Guideline No.
+54A. London: RCOG; 2010.
+5. Desai M, ter Kuile FO, Nosten F , McGready R, Asamoa K, Brabin
+B, et al. Epidemiology and burden of malaria in pregnancy.
+Lancet Infect Dis 2007;7:93–104.
+6. Confidential Enquiries into Maternal and Child Health. Lewis G,
+editor. Saving Mothers' Lives: Reviewing Maternal Deaths to
+Make Motherhood Safer, 2003–2005. The Seventh Report onConfidential Enquiries into Maternal Deaths in the United
+Kingdom. London: CEMACH; 2007 [www.cmace.org.uk/
+getdoc/d9924786-88aa-46bb-b829-738117508d98/Why-Mothers-Die-2000-2002.aspx].
+7. Brabin BJ, Eggelte TA, Parise M, Verhoeff F . Dapsone therapy for
+malaria during pregnancy: maternal and fetal outcomes. Drug
+Saf 2004;27:633–48.
+8. Brabin BJ, Ginny M, Sapau J, Galme K, Paino J. Consequences of
+maternal anaemia on outcome of pregnancy in a malariaendemic area in Papua New Guinea. Ann Trop Med Parasitol
+1990;84:11–24.
+9. Nosten F , McGready R, Simpson JA, Thwai KL, Balkan S, Cho T, et
+al. Effects of Plasmodium vivax malaria in pregnancy. Lancet
+1999;354:546–9.
+10. Nosten F , ter Kuile F , Maelankirri L, Decludt B, White NJ. Malaria
+during pregnancy in an area of unstable endemicity. Trans R
+Soc Trop Med Hyg 1991;85:424–9.
+11. Jongwutiwes S, Putaporntip C, Iwasaki T, Sata T, Kanbara H.
+Naturally acquired Plasmodium knowlesi malaria in a human,Thailand. Emerg Inf Dis 2004;10:2211–13.
+12. Price RN, Douglas NM, Anstey NM. New developments in
+Plasmodium vivax malaria: severe disease and the rise ofchloroquine resistance. Curr Opin Infect Dis 2009;22:430–5.
+13. Tjitra E, Anstey NM, Sugiarto P , Warikar N, Kenangalem E,
+Karyana M, et al. Multidrug-resistant Plasmodium vivax
+associated with severe and fatal malaria: a prospective study inPapua, Indonesia. PLoS Med 2008;5:e128.14. Valecha N, Pinto RG, Turner GD, Kumar A, Rodrigues S,
+Dubhashi NG, et al. Histopathology of fatal respiratory distress
+caused by Plasmodium vivax malaria. Am J Trop Med Hyg
+2009;81:758–62.
+15. White NJ. The treatment of malaria. N Engl J Med
+1996;335:800–6.
+16. White NJ. Why is it that antimalarial drug treatments do not
+always work? Ann Trop Med Parasitol 1998;92:449–58.
+17. World Health Organization. Guidelines for the Treatment of
+Malaria. 2nd ed. Geneva: World Health Organization; 2006[www.who.int/malaria/publications/atoz/9241546948/en/index.html].
+18. White NJ, McGready RM, Nosten FH. New medicines for
+tropical diseases in pregnancy: catch-22. PLoS Med2008;5:e133.
+19. Nosten F , McGready R, Mutabingwa T. Case management of
+malaria in pregnancy. Lancet Infect Dis 2007;7:118–25.
+20. Putting malaria in pregnancy firmly on the agenda. Lancet
+Infect Dis 2007;7:79.
+21.
+Wickramasuriya GAW . Some observations of malaria occurring
+in association with pregnancy. J Obstet Gynaecol Br Emp
+1935;42:816–834.
+22. Wickramasuriya GAW . Malaria and ankylostomiasis in the
+pregnant woman. In: Wickramasuriya GAW , editor. Clinical
+Features of Malaria in Pregnancy. London: Oxford UniversityPress; 1936. p. 1–90.
+23. Adam I, Ibrahim MH, Alelbasit IA, Elbashir MI. Low-dose
+quinine for treatment of chloroquine-resistant falciparummalaria in Sudanese pregnant women. East Mediterr Health J2004;10:554–9.
+24. Bounyasong S. Randomized trial of artesunate and mefloquine
+in comparison with quinine sulfate to treat P . falciparum
+malaria pregnant women. J Med Assoc Thai 2001;84:1289–99.
+25. Kalilani L, Mofolo I, Chaponda M, Rogerson SJ, Alker AP , Kwiek
+JJ, et al. A randomized controlled pilot trial of azithromycin or
+artesunate added to sulfadoxine–pyrimethamine as treatmentfor malaria in pregnant women. PLoS ONE 2007;2:e1166.
+26. Keuter M, van Eijk A, Hoogstrate M, Raasveld M, van de Ree M,
+Ngwawe WA, et al. Comparison of chloroquine, pyrimethamine
+and sulfadoxine, and chlorproguanil and dapsone as treatmentfor falciparum malaria in pregnant and non-pregnant women,Kakamega District, Kenya. Br Med J 1990;301:466–70.
+27. McGready R, Ashley EA, Moo E, Cho T, Barends M, Hutagalung
+R, et al. A randomized comparison of artesunate-atovaquone-
+proguanil versus quinine in treatment for uncomplicatedfalciparum malaria during pregnancy. J Infect Dis2005;192:846–53.RCOG Green-top Guideline No. 54b 16 of 29 © Royal College of Obstetricians and Gynaecologists28. McGready R, Brockman A, Cho T, Cho D, van Vugt M,
+Luxemburger C, et al. Randomized comparison of mefloquine-
+artesunate versus quinine in the treatment of multidrug-
+resistant falciparum malaria in pregnancy. Trans R Soc TropMed Hyg 2000;94:689–93.
+29. McGready R, Cho T, Samuel, Villegas L, Brockman A, van Vugt M,
+et al. Randomized comparison of quinine–clindamycin versusartesunate in the treatment of falciparum malaria in pregnancy.Trans R Soc Trop Med Hyg 2001;95:651–6.
+30. McGready R, Tan SO, Ashley EA, Pimanpanarak M, Viladpai-
+Nguen J, Phaiphun L, et al. A randomised controlled trial of
+artemether-lumefantrine versus artesunate for uncomplicatedplasmodium falciparum treatment in pregnancy. PLoS Med2008;5:e253.
+31. Mutabingwa TK, Muze K, Ord R, Briceno M, Greenwood BM,
+Drakeley C, et al. Randomized trial of artesunate+amodiaquine,
+sulfadoxine-pyrimethamine+amodiaquine, chlorproguanal-dapsone and SP for malaria in pregnancy in Tanzania. PLoS
+ONE 2009;4:e5138.
+32. Naing T, Win H, Nwe YY . Falciparum malaria and pregnancy:
+relationship and treatment response. Southeast Asian J Trop
+Med Public Health 1988;19:253–8.
+33. Nosten F , ter Kuile F , Thwai KL, Maelankirri L, White NJ.
+Spiramycin does not potentiate quinine treatment offalciparum malaria in pregnancy. Trans R Soc Trop Med Hyg
+1993;87:305–6.
+34. Sowunmi A, Oduola AM, Ogundahunsi OA, Fehintola FA,
+Ilesanmi OA, Akinyinka OO, et al. Randomised trial of
+artemether versus artemether and mefloquine for thetreatment of chloroquine/sulfadoxine-pyrimethamine–resistantfalciparum malaria during pregnancy. J Obstet Gynecol1998;18:322–7.
+35. Tagbor H, Bruce J, Browne E, Randal A, Greenwood B,
+Chandramohan D. Efficacy, safety, and tolerability ofamodiaquine plus sulphadoxine–pyrimethamine used alone orin combination for malaria treatment in pregnancy: arandomised trial. Lancet 2006;368:1349–56.
+36. Orton LC, Omari AA. Drugs for treating uncomplicated malaria
+in pregnant women. Cochrane Database Syst Rev
+2008:CD004912.
+37. World Health Organization. Monitoring Antimalarial Drug
+Resistance. Geneva: WHO; 2001.
+38. Taylor WR, Canon V , White NJ. Pulmonary manifestations of
+malaria : recognition and management. Treat Respir Med
+2006;5:419–28.
+39. Saissy JM, Rouvin B, Koulmann P . [Severe malaria in intensive
+care units in 2003]. Med Trop (Mars) 2003;63:258–66.
+40. Hovette P , Camara P , Burgel PR, Mbaye PS, Sane M, Klotz F .
+[Pulmonary manifestations associated with malaria]. Rev
+Pneumol Clin 1998;54:340–5.
+41. Health Protection Agency. Foreign Travel Associated Illness:
+England, Wales and Northern Ireland, 2007 Report . London:
+HPA; 2007[www.hpa.org.uk/webw/HPAweb&HPAwebStandard/HPAweb_C/1204186178825?p=1249920576136].
+42. Bottieau E, Clerinx J, Schrooten W , Van den Enden E, Wouters R,
+Van Esbroeck M, et al. Etiology and outcome of fever after a
+stay in the tropics. Arch Intern Med 2006;166:1642–8.
+43. Moore TA, Tomayko JF Jr, Wierman AM, Rensimer ER, White AC
+Jr. Imported malaria in the 1990s. A report of 59 cases fromHouston, Tex. Arch Fam Med 1994;3:130–6.
+44. Botelho-Nevers E, Laurencin S, Delmont J, Parola P . Imported
+malaria in pregnancy: a retrospective study of 18 cases inMarseilles, France. Ann Trop Med Parasitol 2005;99:715–8.
+45. Chilton D, Malik AN, Armstrong M, Kettelhut M, Parker-Williams
+J, Chiodini PL. Use of rapid diagnostic tests for diagnosis ofmalaria in the UK. J Clin Pathol 2006;59:862–6.
+46. Ashley EA, Touabi M, Ahrer M, Hutagalung R, Htun K, Luchavez
+J, et al. Evaluation of three parasite lactate
+dehydrogenase–based rapid diagnostic tests for the diagnosisof falciparum and vivax malaria. Malar J 2009;8:241.47. Shulman CE, Dorman EK, Bulmer JN. Malaria as a cause of
+severe anaemia in pregnancy. Lancet 2002;360:494.
+48.
+Silamut K, White NJ. Relation of the stage of parasite develop-
+ment in the peripheral blood to prognosis in severe falciparummalaria. Trans R Soc Trop Med Hyg 1993;87:436–43.
+49. Nguyen PH, Day N, Pram TD, Ferguson DJ, White NJ.
+Intraleucocytic malaria pigment and prognosis in severemalaria. Trans R Soc Trop Med Hyg 1995;89:200–4.
+50. Dondorp AM, Day NP . The treatment of severe malaria. Trans R
+Soc Trop Med Hyg 2007;101:633–4.
+51. Luxemburger C, Ricci F , Nosten F , Raimond D, Bathet S, White
+NJ. The epidemiology of severe malaria in an area of lowtransmission in Thailand. Trans R Soc Trop Med Hyg
+1997;91:256–62.
+52. Brabin BJ. An analysis of malaria in pregnancy in Africa. Bull
+World Health Organ 1983;61:1005–16.
+53. Poespoprodjo JR, Fobia W , Kenangalem E, Lampah DA, Warikar
+N, Seal A, et al. Adverse pregnancy outcomes in an area where
+multidrug-resistant plasmodium vivax and Plasmodiumfalciparum infections are endemic. Clin Infect Dis2008;46:1374–81.
+54. Giao PT, Vries PJ, Binh TQ, Nam NV , Kager PA. Early diagnosis
+and treatment of uncomplicated malaria and patterns of healthseeking in Vietnam. Trop Med Int Health 2005;10:919–25.
+55. Munnur U, Karnad DR, Bandi VD, Lapsia V , Suresh MS,
+Ramshesh P , et al. Critically ill obstetric patients in an American
+and an Indian public hospital: comparison of case–mix, organdysfunction, intensive care requirements, and outcomes.Intensive Care Med 2005;31:1087–94.
+56. Zeidan Z, Kojal H, Habour A, Nowary K, Hashim F , Awadelkarim
+M. Clinical and epidemiological features of severe malaria inchildren in four hospitals in Sudan. East Mediterr Health J2006;12:783–91.
+57. Sukontason K, Karbwang J, Rimchala W , Tin T, Na-Bangchang K,
+Banmairuroi V , et al. Plasma quinine concentrations in
+falciparum malaria with acute renal failure. Trop Med IntHealth 1996;1:236–42.
+58. Looareesuwan S, White NJ, Silamut K, Phillips RE, Warrell DA.
+Quinine and severe falciparum malaria in late pregnancy. ActaLeiden 1987;55:115–20.
+59. Bunn A, Escombe R, Armstrong M, Whitty CJ, Doherty JF .
+Falciparum malaria in malaria-naive travellers and Africanvisitors. QJM 2004;97:645–9.
+60. D’Acremont V , Landry P , Mueller I, Pecoud A, Genton B. Clinical
+and laboratory predictors of imported malaria in an outpatientsetting: an aid to medical decision making in returningtravelers with fever. Am J Trop Med Hyg 2002;66:481–6.
+61. Melzer M. Outpatient treatment of falciparum malaria is
+possible. BMJ2006;333:397–8.
+62. Moore DA, Jennings RM, Doherty TF , Lockwood DN, Chiodini
+PL, Wright SG, et al. Assessing the severity of malaria. BMJ
+2003;326:808–9.
+63. Bunnag D, Karbwang J, Na–Bangchang K, Thanavibul A,
+Chittamas S, Harinasuta T. Quinine-tetracycline for multidrugresistant falciparum malaria. Southeast Asian J Trop Med
+Public Health 1996;27:15–18.
+64. Denis MB. Improving compliance with quinine + tetracycline
+for treatment of malaria: evaluation of health educationinterventions in Cambodian villages. Bull World Health Organ1998;76 Suppl 1:43–9.
+65. Fungladda W , Honrado ER, Thimasarn K, Kitayaporn D,
+Karbwang J, Kamolratanakul P , et al. Compliance with
+artesunate and quinine + tetracycline treatment ofuncomplicated falciparum malaria in Thailand. Bull World
+Health Organ 1998;76 Suppl 1:59–66.
+66. Lasserre R. [The treatment of multiresistant falciparum malaria
+in Southeast Asia]. Bull Soc Pathol Exot Filiales
+1989;82:94–100.
+67. Abdel-Hameed AA. Malaria case management at the community
+level in Gezira, Sudan. Afr J Med Med Sci 2001;30 Suppl:43–6.
+68. Boland ME, Roper SM, Henry JA. Complications of quinine
+poisoning. Lancet 1985;1:384–5.17 of 29 RCOG Green-top Guideline No. 54b © Royal College of Obstetricians and Gynaecologists69. Phillips-Howard PA, Wood D. The safety of antimalarial drugs in
+pregnancy. Drug Saf 1996;14:131–45.
+70. White NJ, Looareesuwan S, Warrell DA, Warrell MJ, Bunnag D,
+Harinasuta T. Quinine pharmacokinetics and toxicity in
+cerebral and uncomplicated Falciparum malaria. Am J Med
+1982;73:564–72.
+71. Matok I, Gorodischer R, Koren G, Sheiner E, Wiznitzer A, Levy A.
+The safety of metoclopramide use in the first trimester ofpregnancy. N Engl J Med 2009;360:2528–35.
+72. Luxemburger C, McGready R, Kham A, Morison L, Cho T,
+Chongsuphajaisiddhi T, et al. Effects of malaria during
+pregnancy on infant mortality in an area of low malariatransmission. Am J Epidemiol 2001;154:459–65.
+73. Looareesuwan S, Phillips RE, White NJ, Kietinun S, Karbwang J,
+Rackow C, et al. Quinine and severe falciparum malaria in late
+pregnancy. Lancet 1985;2:4–8.
+74. Agbolosu NB, Cuevas LE, Milligan P , Broadhead RL, Brewster D,
+Graham SM. Efficacy of tepid sponging versus paracetamol inreducing temperature in febrile children. Ann Trop Paediatr
+1997;17:283–8.
+75. Meremikwu M, Logan K, Garner P . Antipyretic measures for
+treating fever in malaria. Cochrane Database Syst Rev
+2000:CD002151.
+76. Krishna S, Supanaranond W , Pukrittayakamee S, ter Kuile F ,
+Supputamangkol Y , Attatamsoonthorn K, et al. Fever in
+uncomplicated Plasmodium falciparum infection: effects ofquinine and paracetamol. Trans R Soc Trop Med Hyg1995;89:197–9.
+77. Krishna S, Pukrittayakamee S, Supanaranond W , ter Kuile F ,
+Ruprah M, Sura T, et al. Fever in uncomplicated Plasmodium
+falciparum malaria: randomized ‘double-blind’ comparison ofibuprofen and paracetamol treatment. Trans R Soc Trop MedHyg1995;89:507–9.
+78. Wilairatana P , Looareesuwan S. Antipyretic efficacy of
+indomethacin and acetaminophen in uncomplicatedfalciparum malaria. Ann Trop Med Parasitol 1994;88:359–63.
+79. Guyatt HL, Snow RW . The epidemiology and burden of
+Plasmodium falciparum–related anemia among pregnantwomen in sub-Saharan Africa. Am J Trop Med Hyg
+2001;64:36–44.
+80. McGready R, Cho T, Keo NK, Thwai KL, Villegas L,
+Looareesuwan S, et al. Artemisinin antimalarials in pregnancy: a
+prospective treatment study of 539 episodes of multidrug-resistant Plasmodium falciparum. Clin Infect Dis2001;33:2009–16.
+81. Brockman A, Paul RE, Anderson TJ, Hackford I, Phaiphun L,
+Looareesuwan S, et al. Application of genetic markers to the
+identification of recrudescent Plasmodium falciparuminfections on the northwestern border of Thailand. Am J Trop
+Med Hyg 1999;60:14–21.
+82. McGready R, Cho T, Hkirijaroen L, Simpson J,
+Chongsuphajaisiddhi T, White NJ, et al. Quinine and mefloquine
+in the treatment of multidrug-resistant Plasmodium falciparummalaria in pregnancy. Ann Trop Med Parasitol 1998;92:643–53.
+83. McGready R, Keo NK, Villegas L, White NJ, Looareesuwan S,
+Nosten F . Artesunate-atovaquone-proguanil rescue treatment ofmultidrug-resistant Plasmodium falciparum malaria inpregnancy: a preliminary report. Trans R Soc Trop Med Hyg2003;97:592–4.
+84. Rijken MJ, McGready R, Boel ME, Barends M, Proux S,
+Pimanpanarak M, et al. Dihydroartemisinin-piperaquine rescue
+treatment of multidrug-resistant Plasmodium falciparummalaria in pregnancy: a preliminary report. Am J Trop Med
+Hyg 2008;78:543–5.
+85. van Vugt M, Leonardi E, Phaipun L, Slight T, Thway KL,
+McGready R, et al. Treatment of uncomplicated multidrug-
+resistant falciparum malaria with artesunate-atovaquone-proguanil. Clin Infect Dis 2002;35:1498–504.
+86. Adam I, Ali DM, Elbashir MI. Manifestations of falciparum
+malaria in pregnant women of Eastern Sudan. Saudi Med J
+2004;25:1947–50.87.
+White NJ, Warrell DA, Chanthavanich P , Looareesuwan S, Warrell
+MJ, Krishna S, et al. Severe hypoglycemia and hyperinsulinemia
+in falciparum malaria. N Engl J Med 1983;309:61–6.
+88. Davis TM, Suputtamongkol Y , Spencer JL, Wilson SG, Mekhton S,
+Croft KD, et al. Glucose turnover in pregnant women with
+acute malaria. Clin Sci (Lond) 1994;86:83–90.
+89. Taylor WR, White NJ. Antimalarial drug toxicity: a review. Drug
+Saf2004;27:25–61.
+90. Gregorakos L, Sakayianni K, Hroni D, Harizopoulou V ,
+Georgiadou F , Adamidou M. Management of severe andcomplicated malaria in the intensive care unit. Intensive CareMed 1999;25:744–7.
+91. Maitra N, Joshi M, Hazra M. Maternal manifestations of malaria
+in pregnancy: a review. Indian J Matern Child Health
+1993;4:98–101.
+92. Warrell DA. Pathophysiology of severe falciparum malaria in
+man. Parasitology 1987;94 Suppl:S53–76.
+93. Editorial: Severe anaemia in pregnancy in the tropics. Med J
+Zambia 1975;9:118.
+94. Armon PJ. Maternal deaths in the Kilimanjaro region of
+Tanzania. Trans R Soc Trop Med Hyg 1979;73:284–8.
+95. Granja AC, Machungo F , Gomes A, Bergstrom S, Brabin B.
+Malaria-related maternal mortality in urban Mozambique. Ann
+Trop Med Parasitol 1998;92:257–63.
+96. Kochar DK, Thanvi I, Joshi A, Shubhakaran, Agarwal N, Jain N.
+Mortality trends in falciparum malaria: effect of genderdifference and pregnancy. J Assoc Physicians India
+1999;47:774–8.
+97. Riddle MS, Jackson JL, Sanders JW , Blazes DL. Exchange
+transfusion as an adjunct therapy in severe Plasmodiumfalciparum malaria: a meta-analysis. Clin Infect Dis
+2002;34:1192–8.
+98. Severe falciparum malaria. World Health Organization,
+communicable diseases cluster. Trans R Soc Trop Med Hyg2000;94 Suppl 1:S1–90.
+99. Krishnan A, Karnad DR. Severe falciparum malaria: an
+important cause of multiple organ failure in Indian intensivecare unit patients. Crit Care Med 2003;31:2278–84.
+100. Steer PJ. The epidemiology of preterm labour: why have
+advances not equated to reduced incidence? BJOG 2006;113
+Suppl 3:1–3.
+101. Chiarleoni G. Malaria e atti funzionali della generazione nella
+donna. Annali Universali di Medicina e Chirurgia
+1886;275:249–305.
+102. Christophers SR. Malaria in the Punjab. Scientific Memoirs by
+Officers of the Medical and Sanitary Departments of the the
+Government of India 1911;(46):1–135.
+103. Dorman EK, Shulman CE, Kingdom J, Bulmer JN, Mwendwa J,
+Peshu N, et al. Impaired uteroplacental blood flow in
+pregnancies complicated by falciparum malaria. Ultrasound
+Obstet Gynecol 2002;19:165–70.
+104. Arbeille P , Carles G, Bousquet F , Body G, Lansac J. Fetal cerebral
+and umbilical artery blood flow changes during pregnancycomplicated by malaria. J Ultrasound Med 1998;17:223–9.
+105. Tan SO, McGready R, Zwang J, Pimanpanarak M, Sriprawat K,
+Thwai KL, et al. Thrombocytopaenia in pregnant women with
+malaria on the Thai–Burmese border. Malar J 2008;7:209.
+106. Piper C, Brabin BJ, Alpers MP . Higher risk of post-partum
+hemorrhage in malarious than in non–malarious areas of PapuaNew Guinea. Int J Gynecol Obstet 2001;72:77–78.
+107. Uddenfeldt Wort U, Hastings I, Bergstrom S, Massawe S, Lipingu
+C, Brabin BJ. Increased postpartum blood loss in pregnanciesassociated with placental malaria. Int J Gynecol Obstet
+2007;96:171–5.
+108.
+Harinasuta T, Kietinun S, Somlaw S, Bunnag D, Sheth UK,
+Wernsdorfer W . A clinical trial of mefloquine on multi–resistantfalciparum malaria in pregnant women in Thailand. Bulletin de
+la Societe Francaise de Parasitologie 1990:429.
+109. McGready R, Stepniewska K, Edstein MD, Cho T, Gilveray G,
+Looareesuwan S, et al. The pharmacokinetics of atovaquone
+and proguanil in pregnant women with acute falciparummalaria. Eur J Clin Pharmacol 2003;59:545–52.RCOG Green-top Guideline No. 54b 18 of 29 © Royal College of Obstetricians and Gynaecologists110. Na-Bangchang K, Manyando C, Ruengweerayut R, Kioy D,
+Mulenga M, Miller GB, et al. The pharmacokinetics and
+pharmacodynamics of atovaquone and proguanil for the
+treatment of uncomplicated falciparum malaria in third-trimester pregnant women. Eur J Clin Pharmacol2005;61:573–82.
+111. McGready R, Thwai KL, Cho T, Samuel, Looareesuwan S, White
+NJ, et al. The effects of quinine and chloroquine antimalarial
+treatments in the first trimester of pregnancy. Trans R Soc Trop
+Med Hyg 2002;96:180–4.
+112. Adam I, Elwasila E, Mohammed Ali DA, Elansari E, Elbashir MI.
+Artemether in the treatment of falciparum malaria duringpregnancy in eastern Sudan. Trans R Soc Trop Med Hyg
+2004;98:509–13.
+113. Bhattarai A, Maini–Thapar M, Ali AS, Bjorkman A. Amodiaquine
+during pregnancy. Lancet Infect Dis 2004;4:721–2.
+114. Adam I, Ali DM, Abdalla MA. Artesunate plus sulfadoxine-
+pyrimethamine in the treatment of uncomplicatedPlasmodium falciparum malaria during pregnancy in easternSudan. Trans R Soc Trop Med Hyg 2006;100:632–5.
+115. Massele AY , Mpundu MN, Hamudu NA. Utilisation of
+antimalarial drugs by pregnant women attending the antenatalclinic at Muhimbili Medical Centre, Dar es Salaam. East Afr
+Med J 1997;74:28–30.
+116. Nosten F , Vincenti M, Simpson J, Yei P , Thwai KL, de Vries A, et
+al. The effects of mefloquine treatment in pregnancy. ClinInfect Dis 1999;28:808–15.
+117. Schultz LJ, Steketee RW , Macheso A, Kazembe P , Chitsulo L,
+Wirima JJ. The efficacy of antimalarial regimens containingsulfadoxine-pyrimethamine and/or chloroquine in preventingperipheral and placental Plasmodium falciparum infectionamong pregnant women in Malawi. Am J Trop Med Hyg1994;51:515–22.
+118. Steketee RW , Wirima JJ, Slutsker L, Khoromana CO, Heymann
+DL, Breman JG. Malaria treatment and prevention in pregnancy:indications for use and adverse events associated with use ofchloroquine or mefloquine. Am J Trop Med Hyg 1996;55:50–6.
+119. Verhoeff FH, Brabin BJ, Chimsuku L, Kazembe P , Russell WB,
+Broadhead RL. An evaluation of the effects of intermittentsulfadoxine–pyrimethamine treatment in pregnancy onparasite clearance and risk of low birthweight in rural Malawi.Ann Trop Med Parasitol 1998;92:141–50.
+120. Adegnika AA, Breitling LP , Agnandji ST, Chai SK, Schutte D,
+Oyakhirome S, et al. Effectiveness of quinine monotherapy for
+the treatment of Plasmodium falciparum infection in pregnantwomen in Lambarene, Gabon. Am J Trop Med Hyg2005;73:263–6.
+121. Orton L, Garner P . Drugs for treating uncomplicated malaria in
+pregnant women. Cochrane Database Syst Rev
+2005:CD004912.122. Procop GW , Jessen R, Hyde SR, Scheck DN. Persistence of
+Plasmodium falciparum in the placenta after apparentlyeffective quinidine/clindamycin therapy. J Perinatol
+2001;21:128–30.
+123. Steketee RW , Nahlen BL, Parise ME, Menendez C. The burden of
+malaria in pregnancy in malaria-endemic areas. Am J Trop Med
+Hyg2001;64:28–35.
+124. Hamer DH, Mwanakasale V , Macleod WB, Chalwe V ,
+Mukwamataba D, Champo D, et al. Two-dose versus monthly
+intermittent preventive treatment of malaria with sulfadoxine-pyrimethamine in HIV-seropositive pregnant Zambian women.J Infect Dis 2007;196:1585–94.
+125. McGready R, Davison BB, Stepniewska K, Cho T, Shee H,
+Brockman A, et al. The Effects of Plasmodium falciparum and P.
+vivax infections on placental histopathology in an area of low
+malaria transmission. Am J Trop Med Hyg 2004;70:398–407.
+126. Brabin BJ, Johnson PM. Placental malaria and pre-eclampsia
+through the looking glass backwards? J Reprod Immunol
+2005;65:1–15.
+127. Royal College of Obstetricians and Gynaecologists.
+Investigation and Management of Small-for-Gestational-Age
+Fetus . Green-top Guideline No. 31. London: RCOG; 2002
+[www.rcog.org.uk/womens-health/clinical-guidance/
+investigation-and-management-small-gestational-age-fetus-green-top-3].
+128. Brabin BJ. Congenital malaria: a recurrent problem. Ann Trop
+Paediatr 2007;27:95–8.
+129. Singh N, Shukla MM, Sharma VP . Epidemiology of malaria in
+pregnancy in central India. Bull World Health Organ
+1999;77:567–72.
+130.
+Menendez C, Mayor A. Congenital malaria: the least known
+consequence of malaria in pregnancy. Semin Fetal Neonatal
+Med 2007;12:207–13.
+131. Pengsaa K. Congenital malaria in Thailand. Ann Trop Paediatr
+2007;27:133–9.
+132. Valecha N, Bhatia S, Mehta S, Biswas S, Dash AP . Congenital
+malaria with atypical presentation: a case report from lowtransmission area in India. Malar J 2007;6:43.
+133. Lesko CR, Arguin PM, Newman RD. Congenital malaria in the
+United States: a review of cases from 1966 to 2005. Arch
+Pediatr Adolesc Med 2007;161:1062–7.
+134. European Medicines Agency. Committee for Orphan Medicinal
+Products. Public Summary of Positive Opinion for Orphan
+Designation of Artesunate for the Treatment of Malaria .
+EMEA/COMP/486932/2007 Rev.1. London: EMA; 2008[www.ema.europa.eu/htms/human/orphans/opinions.htm].19 of 29 RCOG Green-top Guideline No. 54b © Royal College of Obstetricians and GynaecologistsAPPENDIX I: Initial rapid diagnosis, assessment and treatment of malaria in pregnancySuspect malaria
+Early diagnosis, assessment of severity and treatment is vital to avoid malaria deaths
+History and examination – no symptoms or sign can accurately predict malaria. Flu-like illness with fever/chills/sweats, headache, muscle pain, nausea, vomiting, diarrhea, cough, general malaise
+Urgent investigations: All women should have thick and thin blood films and malaria rapid antigen tests. Send to a laboratory immediately and ask for a result in 1 hour. FBC, blood glucose 
+(imparied consciousness or seizures), U&E, LFT, blood culture, urine dipstick; if indicated, stool test, chest X-ray (precautions apply), obstetric ultrasound (EGA)
+Blood film shows●Febrile or ill pregnant women with a history of travel or residence in a malaria area (tropics or 
+sub-tropics) should be assessed urgently (incubation for non-falciparum malaria may occasionally be >6 months)
+●Recent return (3 weeks): check infection control requirements with microbiologist e.g. viralhaemorrhagic fever, avian influenza or severe acute respiratory syndrome●Chemoprophylaxis is not 100% effective
+●Pregnant women with malaria can deteriorate very rapidly
+●Expert advice with a specialist with current experience in management of malaria is strongly advised
+●Notify all cases to the local health protection unit, send blood film to reference laboratory
+No evidence of malaria(Single negative test does not exclude malaria)
+Stop prophylaxis until malaria excluded
+Avoid empirical therapy unless severe illness: 
+seek expert advice
+Repeat blood film daily 2 daysMalaria unlikely if 3 negative blood films
+Finish chemoprohylaxisNon-falciparum malariaChloroquine (base) 600 mg orally followed by 300 mg 6–8 hours later. Then 300 mg day 2, andagain day 3
+To prevent relapse (P
+. vivax/ovale ) after treatment
+during pregnancy: chloroquine oral 300 mg weekly
+until delivery
+To prevent relapse after delivery: postpone until 
+3 months after delivery and G6PD testing. UseprimaquineFalciparum malaria(mixed or species not characterised)Admit to hospital; assess severity immediately
+Complicated malaria: one or more offollowing:
+●Impaired consciousness (measure GCS andNSQ) or seizures
+●Hypoglycaemia
+●Pulmonary oedema or ARDS
+●Hyperparasitaemia (≥ 2% parasitised RBC
+but can be lower in severe malaria)
+●Severe anaemia (Hb < 8.0 g/dl)●Abnormal bleeding/DIC
+●Haemoglobinuria (without G6PDdeficiency) 
+●Renal impairment/electrolyte disturbance(acidosis pH < 7.3)
+●Hyperlactataemia (correlates withmortality)
+●Shock (algid malaria) – consider Gram-negative septicaemia
+Expert advice/IV artesunate: local infectious unit or London 08451 555000; Liverpool 0151 706 2000; Oxford 08165 7418415; IDIS pharma 01932 824100.
+Useful information: www.hpa.org.uk/HPA/ProductsServices/InfectiousDiseases/LaboratoriesAndReferenceFacilities/1200660023262/ and www.who.int/malaria/publications/atoz/9241546948/en/index.html
+Key: ARDS = acute respiratory distress syndrome, BP = blood pressure, CVP = central venous pressure, DIC = disseminated intravascular coagulation, EGA = estimated gestational age, FBC = full blood count, 
+GCS = Glasgow Coma Score, Hb = haemoglobin, HDU = high-dependency unit, ICU = intensive care unit, JVP = jugular venous pressure, LFT = liver function test, NSQ = Neuroticism Scale Questionnaire, 
+RBC = red blood cells, RR = respiratory rate, SaO2 = oxygen saturation, U&E = urea and electrolytesManagement of malaria in pregnancy
+●Commence antimalarials immediately,
+according to species and severity
+●Admit to HDU or ICU and seek expert
+advice
+●Careful fluid balance avoid over-hydration
+and hypovolaemia; consider CVP line●Regular blood glucose monitoring
+●4-hourly observations (pulse, BP , RR, JVP ,
+SaO2, urine output, GCS)
+●Repeat daily: parasite count, FBC,
+clotting, U&E, LFT
+●Shock – treat for Gram-negative
+bacteraemiaUncomplicated malaria dosing:
+Quinine 600 mg orally 8-hourly and clindamycin450 mg orally 8-hourly for 7 days (drug of choiceEGA <13 weeks)
+Or
+Riamet 4 tablets/day for weight > 35 kg for 3 days
+OrProguanil with atovaquone (Malarone ®,
+GlaxoSmithKline) four standard tablets daily for 3 daysComplicated malaria dosing:Artesunate IV 2.4 mg/kg at 0, 12 and 24 hours
+& daily thereafter. Drug of choice regardless ofEGA
+OrQuinine IV 20 mg/kg loading dose (no loading
+dose if woman already taking quinine or
+mefloquine) in 5% dextrose over 4 hours andthen 10 mg/kg IV over 4 hours every 8 hours+
+Oral when the patient can swallow (see
+uncomplicated malaria dosing)RCOG Green-top Guideline No. 54b 20 of 29 © Royal College of Obstetricians and GynaecologistsAPPENDIX II: Preparing a blood film for malaria and taking a section of placenta for
+histopatholgy.
+Blood films are also commonly called ‘malaria slide’, ‘thick
+and thin films’, ‘malaria smear’ or ‘blood slide’. A few dropsof the patient’s blood are required for the test. A briefsummary is provided in Figure 1.
+There are many useful websites (including videos) on how
+to prepare a thick and thin blood film. For detailedinstructions, try: www.dpd.cdc.gov/dpdx/HTML/Malaria.htm or www.helid.desastres.net – select ‘Parasitic and VectorBorne Disease’ from the topic list (Basic Malaria Microscopy,Learning Unit 4) or see the laboratory handout from:www.shoklo-unit.com/lab.shoklo-unit.com/index.html.
+Cord blood film or placental blood films require a few drops
+of blood collected from those sites.
+Cord specimens can be obtained before delivery of the
+placenta. Hold the clamped end of the cord above the levelof the umbilicus. Wipe the cord clean, puncture the cordwith a syringe and needle (small gauge) and withdraw bloodfrom the vessel (0.2 ml is plenty) and reclamp the cordabove the puncture site. The blood obtained needs to godirectly onto the glass slide before it clots (see Figure 1).
+Placental blood can be obtained by placing the placenta
+maternal surface upward. Choose a site midway between theedge of the placenta and the cord, wipe it clean with gauze,make an incision about 1 cm deep and 3–4 cm in lengthwith a scalpel blade (do not pierce the fetal surface) and usea syringe and needle (or haematocrit tube) to withdrawblood that pools in the incised area. Place this blood onto theglass slide before it clots.
+Label all blood films clearly with the site from which they
+were obtained (for example, mother, cord, placenta or baby)before sending to the laboratory. This histopathologicalsection can be obtained from the same site on the placentaby cutting a 1 × 1 × 1 cm (or smaller) block from thematernal surface through to the fetal surface and placing itin fixative.
+Step 4. Allow the slide to dry before stainingStep 3. Stir the thick dropStep 1. Put 3 drops of blood onto the slide
+Step 2. Use another slide to spread the drop
+Figure 1. Summary of steps involved in making a blood film21 of 29 RCOG Green-top Guideline No. 54b © Royal College of Obstetricians and GynaecologistsSevere and complicated malaria.
+The first line of treatment in the UK for severe malaria in pregnancy is intravenous quinine1while the World
+Health Organization (WHO) and an increasing number of countries throughout the world recommend
+intravenous (IV) artesunate as the preferred first-line drug for all severe malaria in adults including pregnantwomen.
+2This recommendation was based partly on two WHO informal consultations on the safety of
+artemisinins in pregnancy.3The first of these reported normal pregnancy outcomes in 124 women exposed
+in the first trimester. The conclusions were that there was insufficient evidence to support the use ofartemisinin in the first trimester but that it should not be withheld if the life of the woman was endangeredor if other antimalarials were considered unsuitable. The recommendation also relied upon a meta-analysis ofartemisinins for severe malaria
+4and a large, multicentre, open-label randomised controlled trial (RCT) of
+severe malaria carried out mostly in adults (including pregnant women) in South East Asia, where the trial wasstopped prematurely because of a significantly increased risk of mortality in the intravenous quinine group(22% compared with 15% in the IV artesunate group).
+5Mortality was reduced by 34.7% (95% confidence
+interval 18.5–47.6; P= 0.002) when IV artesunate was used or, for every 13 people treated with IV artesunate
+rather than IV quinine, one death was averted. In the same trial, quinine use was associated withhypoglycaemia (relative risk 3.9, 
+P= 0.002). This is pertinent in pregnancy, since severe and recurrent
+hypoglycaemia associated with severe malaria pregnancy is exacerbated by quinine use, which stimulatesinsulin secretion.
+6,7These effects are more likely in the second and third trimesters of pregnancy and it is in
+these trimesters that the efficacy and safety data of use of artemisinin derivatives are reassuring.8A meta-
+analysis of all RCTs comparing parenteral quinine with artesunate indicated that artesunate was associatedwith a 35% reduction in mortality.
+4Artesunate kills circulating ring-stage parasites and so prevents
+sequestration, which quinine does not, and it is this mechanism of action,9not quinine resistance, that has
+been proposed for the significant reduction in mortality with IV artesunate compared when compared withIV quinine.
+5Every effort should be made to obtain IV artesunate (see Table 2 of the main report for contact
+details) for pregnant women with severe malaria, regardless of trimester, in an effort to prevent maternaldeath. Parenteral quinine should be given without delay if artesunate is unavailable but treatment should beswitched to artesunate as soon as possible.
+Parenteral artesunate is not currently licensed in the UK. The IV artesunate used in the multicentre study was
+not made to internationally recognised good manufacturing practice standards.
+5Good manufacturing practice
+IV artesunate is still not available and has not been licensed in the UK.1TropNetEurop has advocated strongly
+for the use of IV artesunate for severe malaria.10It can be made available in the UK from specialist tropical
+disease centres in London, Oxford and Liverpool or commercially from and Idis Pharma, who can send IV andoral artesunate to patients who need it (see Table 2 of the main report for contact details).
+Treatment of malaria should never be delayed (IV quinine should be used promptly while obtaining IV
+artesunate). The UK guidelines explain expert consultation is required before the artesunate will be issued.
+1
+Severe malaria in pregnancy provides an urgent and pressing reason for artesunate to be issued (although thisis not in the current guidelines).
+1IV clindamycin is a very slow-acting antimalarial and it is unlikely to add any
+additional value to IV artesunate, which is the fastest acting of all antimalarial drugs. In endemic countries, thetreatment course when the patient is well enough to eat and drink would be any artemisinin combinationtherapy.
+2The only artemisinin available in the UK is Riamet® (Novartis; also known as Coartem in some
+countries), which can be used at standard doses, alternatively, a treatment course of atovaquone-proguanil(Malarone®, GlaxoSmithKline), four standard tablets daily for 3 days could be prescribed. Artesunate can be given intramuscularly at 2.4 mg/kg/24 hours (or oral artesunate at 2 mg/kg when available) to complete7 days, with oral clindamycin for 7 days. Although not ideal, quinine and clindamycin can be given at thestandard dose for 7 days (see Table 1 of the main report) if the preferred treatment is not available.APPENDIX III: Summary of the published evidence on pregnancy treatment recommendationsRCOG Green-top Guideline No. 54b 22 of 29 © Royal College of Obstetricians and GynaecologistsUncomplicated malaria
+Quinine is not thought to be teratogenic.10–14There is no RCT on quinine efficacy in pregnancy from Africa,
+where most UK patients acquire their malaria infection. Quinine is assumed to be safe and efficacious, based
+on historical data15,16and on published trials, mostly from women from South East Asia.17Unacceptably high
+failure rates have been reported with quinine monotherapy when treatment has been given in the context ofan RCT. In six trials from Thailand and Burma,
+18–24in all except one,18there were 186 women who received
+quinine monotherapy and it is no longer recommended.2Clindamycin augments the efficacy of quinine
+significantly.22The single RCT on the effectiveness of 5 days of quinine in pregnancy resulted in failure rates
+greater than 30%.24As quinine is a rapidly eliminated antimalarial,25cure rates are improved with 7 day
+regimens, although they are poorly complied with. Note that the 5 day recommendation in the UK guidelinesis for non-pregnant adults and should not be used in pregnancy.
+1Patients may deteriorate under treatment, at
+which point, management should be upgraded to account for severity.
+The safety of clindamycin in pregnancy has been established in non-malaria studies.26–33It has been shown to
+be effective when used in combination against falciparum malaria in numerous settings,34–36including in
+pregnancy.22,37–39
+WHO recommends artemisinin-based combination therapy in the second and third trimesters,2,8ahead 
+of quinine and clindamycin, principally because of the adverse effects and risk of non-compliance with the 
+7-day regimen. There are now reassuring data on more than 2000 pregnancy outcomes with the use ofartemisinins,
+5,20–22,40,41–60principally for uncomplicated malaria in pregnancy. Most of these studies have been
+RCTs in pregnant women from Africa and Asia.20,21,40–44This means there is now more published evidence on
+artemisinins in pregnancy than there is for quinine. Only one of these highly effective therapies is available inthe UK (Riamet®, Novartis). For nonpregnant adults in the UK, malaria treatment guidelines prescribe threeoral regimens for uncomplicated malaria, including oral quinine and doxycycline; atovaquone-proguanil, fourstandard tablets daily for 3 days; and Riamet, four tablets/day for weight over 35 kg. While doxycycline can bereplaced with clindamycin and combined with quinine, the other two regimens have no alternatives but havebeen studied in the context of RCTs in the second and third trimesters of pregnancy.
+Atovaquone-proguanil alone (
+n= 26)61and atovaquone-proguanil-artesunate ( n= 100)20,47,49,61were safe and
+efficacious for uncomplicated P . falciprum in the second and third trimesters. Tinnitus was reported in 79.3%
+of those on quinine compared with 24.1% of those treated with atovaquone-proguanil-artesunate ( P< 0.001)
+in the RCT.20Of the 126 women treated, most were followed through until pregnancy outcome and no
+adverse effects for the mother or fetus were observed. The product information sheet for Malarone® says that,
+while there are no adequate and well-controlled studies of atovaquone and/or proguanil hydrochloride inpregnant women, Malarone ‘may be used if the potential benefit justifies the potential risk to the fetus’
+62. The
+same product information sheet also ignores the largest single site study ever performed on Malarone, whichincluded 1596 nonpregnant patients randomised to receive atovaquone-proguanil, atovaquone-proguanil-artesunate or artesunate-mefloquine for uncomplicated malaria and followed-up for 42 days.
+63Adding
+artesunate to atovaquone-proguanil reduced the risk of failure three-fold (95% CI 1.1–8.2) although the curerate of atovaquone-proguanil (without the addition of artesunate) was very high, 97.2% (95% CI 95.4–98.4).Atovaquone-proguanil (with or without artesunate) is likely to be a useful 3-day treatment in the treatment of
+P . falciparum in the second and third trimesters if it has not been used for prophylaxis (see Green-top
+Guideline No. 54A).64
+At the time of writing, there is only one published RCT on artemether-lumefantrine treatment in pregnancy(
+n= 125) and, while the drug was well tolerated with no adverse effects on the mother or fetus, the efficacy
+was disappointing, with a cure rate (by delivery or day 42 if later) of 82.0% (95% CI 74.8–89.3; P= 0.054).42
+Pharmacokinetic data demonstrated lowered concentrations of artemether and lumefantrine in pregnancy.57
+Polymerase chain reaction confirmed that failures were as early as day 14 and 53% (9/17) had occurred at 3weeks. Mathematical modelling has suggested an increase in the dose and length of treatment would result in23 of 29 RCOG Green-top Guideline No. 54b © Royal College of Obstetricians and Gynaecologistshigher cure rates.65Two abstracts presented at the American Society of Tropical Medicine and Hygiene Annual
+Meeting in December 2008 analysed:
+●1001 pregnant women (artemether and lumefantrine treated, n= 495 and sulfadoxine-pyrimethamine
+treated, n= 506) and their fetuses or newborns (artemether and lumefantrine treated, n= 470 and
+sulfadoxine-pyrimethamine, n= 477) and reported no adverse effects on the fetus55
+●preliminary results on 304 women who received artemether-lumefantrine or quinine as part of an RCT in
+Uganda on uncomplicated malaria in the second and third trimesters, which demonstrated high efficacy andno adverse effects on the fetus.
+The product information sheet applies the usual pharmaceutical safeguard statement that ‘it should not be
+withheld in life-threatening situations, where no other effective antimalarials are available. During the secondand third trimester, treatment should only be considered if the expected benefit to the mother outweighs therisk to the fetus’, until dose optimisation studies are completed.
+66However, given the reassuring data on nearly
+1000 pregnant women, and the fact that it is available in the UK, it can be recommended in second and thirdtrimesters.
+Chloroquine and sulfadoxine-pyrimethamine are no longer recommended for 
+P . falciparum treatment, owing
+to resistance,1with supporting data from poor efficacy in RCTs in pregnant women.41,43,67,68
+Non-falciparum malaria
+The first step in the treatment in the UK of the non-falciparum infections P. v i v a x , P. o v a l e and P . malariae (and
+P . knowlesi ) is chloroquine to treat the symptoms caused by blood-stage infection (see Table 1 of the main
+text).1For P. v i v a x and P. o v a l e , there is a second step: the treatment of the liver-stage hypnozoites (radical
+cure), which causes relapse, sometimes years later. In nonpregnant adults, a course of primaquine is normally
+prescribed.69In the UK, more than 10% of patients with imported P. v i v a x treated with chloroquine followed
+by unsupervised primaquine 15 mg/day for 14 days relapse70and higher-dose primaquine 30 mg/day for 14
+days has been found to be more effective.71,72Hence, there are different dosing schedules for P . ovale and P.
+vivax . Primaquine is contraindicated in pregnancy, as it could induce haemolysis and methaemo-globinaemia
+in the fetus.73,74Therefore, radical cure in pregnancy is not recommended until after delivery. There are no data
+on primaquine in breast milk. Fetal red blood cells are almost entirely replaced by adult red blood cells by 6months of life. It is advisable to wait for some replacement of fetal red blood cells with adult red blood cells,which are less sensitive to haemolysis, before radical cure with primaquine in the mother. There are nopublished data on the use of primaquine treatment in young infants, so a cut-off age cannot be recommended,but 3 months of age is likely to be safe. To prevent relapse of 
+P. v i v a x or P. o v a l e before delivery, weekly
+chloroquine (300 mg) can be given (see Table 1 of the main report). It is safe and effective and has beenstudied in a large RCT involving 1000 women. Infants were followed to 1 year of life and no adverse effectsfor the mother or fetus were observed.
+75
+Evidence from nonpregnant patients has demonstrated that chloroquine-resistant P. v i v a x should be treated
+in the same way as chloroquine resistant P . falciparum .45,76–79However, the UK guidelines recommend
+chloroquine and alternative treatment if there are persistent parasites or symptoms present. In pregnantwomen, this could result in the onset of premature labour, whereas effective first-line treatment can preventthis outcome. The combination of quinine and clindamycin is likely to have higher cure rates than chloroquinefor women with 
+P. v i v a x infection and a history of travel in Indonesia or Papua New Guinea.45,78,79
+Where blood or plasma concentrations of antimalarial drugs have been measured in late pregnancy, they haveusually been found to be reduced, indicating under-dosing. For artemether, dihyroartemisinin, atovaquone,proguanil and lumefantrine, the reductions have been substantial and are likely to have contributed to poortherapeutic responses.
+80,8125 of 29 RCOG Green-top Guideline No. 54b © Royal College of Obstetricians and Gynaecologists41. Kalilani L, Mofolo I, Chaponda M, Rogerson SJ, Alker AP , Kwiek
+JJ, et al. A randomized controlled pilot trial of azithromycin or
+artesunate added to sulfadoxine–pyrimethamine as treatment
+for malaria in pregnant women. PLoS ONE 2007;2:e1166.
+42. McGready R, Tan SO, Ashley EA, Pimanpanarak M, Viladpai-
+Nguen J, Phaiphun L, et al. A randomised controlled trial of
+artemether-lumefantrine versus artesunate for uncomplicatedplasmodium falciparum treatment in pregnancy. PLoS Med2008;5:e253.
+43. Mutabingwa TK, Muze K, Ord R, Briceno M, Greenwood BM,
+Drakeley C, et al. Randomized trial of artesunate+amodiaquine,sulfadoxine-pyrimethamine+amodiaquine, chlorproguanal-dapsone and SP for malaria in pregnancy in Tanzania. PLoS
+ONE 2009;4:e5138.
+44. Sowunmi A, Oduola AM, Ogundahunsi OA, Fehintola FA,
+Ilesanmi OA, Akinyinka OO, et al. Randomised trial of
+artemether versus artemether and mefloquine for thetreatment of chloroquine/sulfadoxine-pyrimethamine–resistantfalciparum malaria during pregnancy. J Obstet Gynecol1998;18:322–7.
+45. Poespoprodjo JR, Fobia W , Kenangalem E, Lampah DA, Warikar
+N, Seal A, et al. Adverse pregnancy outcomes in an area where
+multidrug-resistant plasmodium vivax and Plasmodiumfalciparum infections are endemic. Clin Infect Dis2008;46:1374–81.
+46. McGready R, Cho T, Keo NK, Thwai KL, Villegas L,
+Looareesuwan S, et al. Artemisinin antimalarials in pregnancy: a
+prospective treatment study of 539 episodes of multidrug-resistant Plasmodium falciparum. Clin Infect Dis2001;33:2009–16.
+47. McGready R, Keo NK, Villegas L, White NJ, Looareesuwan S,
+Nosten F . Artesunate-atovaquone-proguanil rescue treatment ofmultidrug-resistant Plasmodium falciparum malaria inpregnancy: a preliminary report. Trans R Soc Trop Med Hyg
+2003;97:592–4.
+48. Rijken MJ, McGready R, Boel ME, Barends M, Proux S,
+Pimanpanarak M, et al. Dihydroartemisinin–piperaquine rescue
+treatment of multidrug-resistant Plasmodium falciparummalaria in pregnancy: a preliminary report. Am J Trop Med
+Hyg 2008;78:543–5.
+49. McGready R, Stepniewska K, Edstein MD, Cho T, Gilveray G,
+Looareesuwan S, et al. The pharmacokinetics of atovaquone
+and proguanil in pregnant women with acute falciparummalaria. Eur J Clin Pharmacol 2003;59:545–52.
+50. Adam I, Elwasila E, Mohammed Ali DA, Elansari E, Elbashir MI.
+Artemether in the treatment of falciparum malaria duringpregnancy in eastern Sudan. Trans R Soc Trop Med Hyg
+2004;98:509–13.
+51. Adam I, Ali DM, Abdalla MA. Artesunate plus sulfadoxine-
+pyrimethamine in the treatment of uncomplicatedPlasmodium falciparum malaria during pregnancy in easternSudan. Trans R Soc Trop Med Hyg 2006;100:632–5.
+52. Adam I, Elhassan EM, Omer EM, Abdulla MA, Mahgoub HM,
+Adam GK. Safety of artemisinins during early pregnancy,assessed in 62 Sudanese women. Ann Trop Med Parasitol
+2009;103:205–10.
+53. Deen JL, von Seidlein L, Pinder M, Walraven GE, Greenwood
+BM. The safety of the combination artesunate andpyrimethamine-sulfadoxine given during pregnancy. Trans R
+Soc Trop Med Hyg 2001;95:424–8.
+54. Li GQ, Guo XB, Jin R, Wang ZC, Jian HX, Li ZY . Clinical Trials
+on Qinghaosu and its Derivatives . Guangzhou, People’s
+Republic of China: Guangzhou College of Traditional ChineseMedicine, Sanya Tropical Medicine Institute; 1990.
+55. Manyado C, Mkandawire R, Puma L, Sinkala M, Njunju E, Gomes
+M, et al. Safety profile of artemether-lumefantrine (AL:
+Coartem®) compared with sulfadoxine–pyrimethamine (SP) inpregnant women with symptomatic malaria: preliminaryresults of an observational study. Meeting of the AmericanSociety of Tropical Medicine and Hygiene, New Orleans,Louisiana, USA, 2008.56. McGready R, Cho T, Cho JJ, Simpson JA, Luxemburger C,
+Dubowitz L, et al. Artemisinin derivatives in the treatment offalciparum malaria in pregnancy. Trans R Soc Trop Med Hyg1998;92:430–3.
+57. McGready R, Stepniewska K, Lindegardh N, Ashley EA, La Y ,
+Singhasivanon P , et al. The pharmacokinetics of artemether and
+lumefantrine in pregnant women with uncomplicated
+falciparum malaria. Eur J Clin Pharmacol 2006;62:1021–31.
+58.
+McGready R, Stepniewska K, Ward SA, Cho T, Gilveray G,
+Looareesuwan S, et al. Pharmacokinetics of dihydroartemisinin
+following oral artesunate treatment of pregnant women withacute uncomplicated falciparum malaria. Eur J ClinPharmacol 2006;62:367–71.
+59. Piola P . Artemether Lumefantrine for the treatment of malaria
+in the 2nd and 3rd trimester pregnancy: a trial from Uganda.Am J Trop Med Hyg 2008;79:107.
+60. Wang TY . Follow-up observation on the therapeutic effects and
+remote reactions of artemisinin (Qinghaosu) and artemether intreating malaria in pregnant woman. J Tradit Chin Med
+1989;9:28–30.
+61. Na-Bangchang K, Manyando C, Ruengweerayut R, Kioy D,
+Mulenga M, Miller GB, et al. The pharmacokinetics and
+pharmacodynamics of atovaquone and proguanil for thetreatment of uncomplicated falciparum malaria in third-trimester pregnant women. Eur J Clin Pharmacol2005;61:573–82.
+62. GlaxoSmithKline. Prescribing Information: Malarone Tablets
+and Malarone Pediatric Tablets . Research Triangle Park, NC:
+GSK; 2009[http://us.gsk.com/products/assets/us_malarone.pdf].
+63. van Vugt M, Leonardi E, Phaipun L, Slight T, Thway KL,
+McGready R, et al. Treatment of uncomplicated multidrug-resistant falciparum malaria with artesunate-atovaquone-proguanil. Clin Infect Dis 2002;35:1498–504.
+64. Royal College of Obstetricians and Gynaecologists. Preventing
+Malaria in Pregnancy . Green-top Guideline No. 54A. London:
+RCOG; 2010.
+65. Tarning J, McGready R, Lindegardh N, Ashley EA, Pimanpanarak
+M, Kamanikom B, et al. Population pharmacokinetics oflumefantrine in pregnant women treated with artemether-lumefantrine for uncomplicated Plasmodium falciparummalaria. Antimicrob Agents Chemother 2009;53:3837–46.
+66. Novartis Pharmaceuticals UK Ltd. Riamet 20/120mg tablets.
+Summary of Product Characteristics. electronic MedicinesCompendium; 2009(http://emc.medicines.org.uk/medicine/9196/SPC/Riamet+20+120mg+tablets/#PREGNANCY).
+67. Keuter M, van Eijk A, Hoogstrate M, Raasveld M, van de Ree M,
+Ngwawe WA, et al. Comparison of chloroquine, pyrimethamine
+and sulfadoxine, and chlorproguanil and dapsone as treatmentfor falciparum malaria in pregnant and non-pregnant women,Kakamega District, Kenya. Br Med J 1990;301:466–70.
+68. Tagbor H, Bruce J, Browne E, Randal A, Greenwood B,
+Chandramohan D. Efficacy, safety, and tolerability ofamodiaquine plus sulphadoxine–pyrimethamine used alone orin combination for malaria treatment in pregnancy: arandomised trial. Lancet 2006;368:1349–56.
+69. Arnold J, Alving AS, Hockwald RS, Clayman CB, Dern RJ, Beutler
+E, et al. The effect of continuous and intermittent primaquine
+therapy on the relapse rate of Chesson strain vivax malaria. J
+Lab Clin Med 1954;44:429–38.
+70. Doherty JF , Day JH, Warhurst DC, Chiodini PL. Treatment of
+Plasmodium vivax malaria: time for a change? Trans R Soc Trop
+Med Hyg 1997;91:76.
+71. Fryauff DJ, Baird JK, Basri H, Sumawinata I, Purnomo, Richie TL,
+et al. Randomised placebo-controlled trial of primaquine forprophylaxis of falciparum and vivax malaria. Lancet
+1995;346:1190–3.
+72. Hill DR, Baird JK, Parise ME, Lewis LS, Ryan ET, Magill AJ.
+Primaquine: report from CDC expert meeting on malariachemoprophylaxis I. Am J Trop Med Hyg 2006;75:402–15.RCOG Green-top Guideline No. 54b 26 of 29 © Royal College of Obstetricians and Gynaecologists73. Phillips-Howard PA, Wood D. The safety of antimalarial drugs in
+pregnancy. Drug Saf 1996;14:131–45.
+74. Taylor WR, White NJ. Antimalarial drug toxicity: a review. Drug
+Saf 2004;27:25–61.
+75. Villegas L, McGready R, Htway M, Paw MK, Pimanpanarak M,
+Arunjerdja R, et al. Chloroquine prophylaxis against vivax
+malaria in pregnancy: a randomized, double–blind, placebo-
+controlled trial. Trop Med Int Health 2007;12:209–18.
+76. Baird JK, Basri H, Purnomo, Bangs MJ, Subianto B, Patchen LC,
+et al. Resistance to chloroquine by Plasmodium vivax in IrianJaya, Indonesia. Am J Trop Med Hyg 1991;44:547–52.
+77. Pukrittayakamee S, Clemens R, Chantra A, Nontprasert A,
+Luknam T, Looareesuwan S, et al. Therapeutic responses to
+antibacterial drugs in vivax malaria. Trans R Soc Trop Med Hyg
+2001;95:524–8.
+78. Ratcliff A, Siswantoro H, Kenangalem E, Wuwung M, Brockman
+A, Edstein MD, et al. Therapeutic response of multidrug-
+resistant Plasmodium falciparum and P. v i v a x to chloroquine
+and sulfadoxine-pyrimethamine in southern Papua, Indonesia.Trans R Soc Trop Med Hyg 2007;101:351–9.79. Ratcliff A, Siswantoro H, Kenangalem E, Maristela R, Wuwung
+RM, Laihad F , et al. Two fixed-dose artemisinin combinations for
+drug-resistant falciparum and vivax malaria in Papua, Indonesia:an open-label randomised comparison. Lancet2007;369:757–65.
+80. White NJ, McGready RM, Nosten FH. New medicines for
+tropical diseases in pregnancy: catch-22. PLoS Med
+2008;5:e133.
+81. Ward SA, Sevene EJ, Hastings IM, Nosten F , McGready R.
+Antimalarial drugs and pregnancy: safety, pharmacokinetics,and pharmacovigilance. Lancet Infect Dis 2007;7:136–44.27 of 29 RCOG Green-top Guideline No. 54b © Royal College of Obstetricians and GynaecologistsThe persistence of Plasmodium falciparum in the placenta after apparently adequate therapy with quinine
+has been described.1This phenomenon is described in the placenta of a 19-year-old woman with falciparum
+malaria, who was treated with a combination of quinidine and clindamycin. Although this therapy was
+effective and diminished (her peripheral blood parasitemia from 3% at presentation to almost undetectable atthe time of delivery) vast numbers of 
+P . falciparum -infected erythrocytes were present in the maternal
+sinusoids of the placenta. This sequestration of infected erythrocytes produced a local parasitaemia in theplacenta of 70–80%. Additionally, rare 
+Plasmodium -infected erythrocytes were also seen in the fetal blood of
+the placenta. Malaria in pregnancy and parasitic involvement of the placenta are reviewed and it isemphasised that 
+Plasmodium -infected erythrocytes may persist in the placenta even after clearance of
+parasites from the peripheral blood.
+Reference
+1. Procop GW , Jessen R, Hyde SR, Scheck DN. Persistence of Plasmodium falciparum in the placenta after apparently effective
+quinidine/clindamycin therapy. J Perinatol 2001;21:128–30.APPENDIX IV: Persistence of Plasmodium falciparum in the placenta after apparently
+effective quinidine-clindamycin therapyRCOG Green-top Guideline No. 54b 28 of 29 © Royal College of Obstetricians and GynaecologistsGrades of recommendations
+At least one meta-analysis, systematic reviews
+or randomised controlled trial rated as 1++and directly applicable to the targetpopulation; orA systematic review of randomised controlledtrials or a body of evidence consistingprincipally of studies rated as 1+, directlyapplicable to the target population anddemonstrating overall consistency of results
+A body of evidence including studies rated as
+2++ directly applicable to the targetpopulation and demonstrating overallconsistency of results; orExtrapolated evidence from studies rated as1++ or 1+
+A body of evidence including studies rated as
+2+ directly applicable to the target populationand demonstrating overall consistency ofresults; orExtrapolated evidence from studies rated as2++
+Evidence level 3 or 4; or
+Extrapolated evidence from studies rated as2+
+Good practice point
+Recommended best practice based on theclinical experience of the guidelinedevelopment groupClassification of evidence levels
+1++ High-quality meta-analyses, systematicreviews of randomised controlled trials orrandomised controlled trials with a very lowrisk of bias
+1+ Well-conducted meta-analyses, systematic
+reviews of randomised controlled trials
+or randomised controlled trials with alow risk of bias
+1– Meta-analyses, systematic reviews of
+randomised controlled trials orrandomised controlled trials with a highrisk of bias
+2++ High-quality systematic reviews of
+case–control or cohort studies or high-quality case–control or cohort studieswith a very low risk of confounding, biasor chance and a high probability that therelationship is causal
+2+ Well-conducted case–control or cohort
+studies with a low risk of confounding,bias or chance and a moderate prob-ability that the relationship is causal
+2– Case–control or cohort studies with a
+high risk of confounding, bias or chanceand a significant risk that therelationship is not causal
+3 Non-analytical studies; e.g. case reports,
+case series
+4 Expert opinion
+PC
+DBAAPPENDIX V
+Clinical guidelines are: ‘systematically developed statements which assist clinicians and patients in
+making decisions about appropriate treatment for specific conditions’. Each guideline is systematicallydeveloped using a standardised methodology. Exact details of this process can be found in ClinicalGovernance Advice No. 1: Development of RCOG Green-top Guidelines (available on the RCOG website
+at 
+www.rcog.org.uk/womens-health/clinical-guidance/development-rcog-green-top-guidelines-
+policies-and-processes ). These recommendations are not intended to dictate an exclusive course of
+management or treatment. They must be evaluated with reference to individual patient needs, resourcesand limitations unique to the institution and variations in local populations. It is hoped that this process oflocal ownership will help to incorporate these guidelines into routine practice. Attention is drawn to areasof clinical uncertainty where further research may be indicated within the appropriate health services.
+The evidence used in this guideline was graded using the scheme below and the recommendations
+formulated in a similar fashion with a standardised grading scheme. Once adapted for local use, theseguidelines are no longer representative of the RCOG.29 of 29 RCOG Green-top Guideline No. 54b © Royal College of Obstetricians and GynaecologistsThis Guideline was produced on behalf of the Guidelines Committee of the Royal College of Obstetricians and
+Gynaecologists by: Dr R McGready PhD Dip RANZCOG, Mae Sot, Thailand; Dr EA Ashley PhD, London; Professor FNosten MD PhD, Mae Sot, Thailand; Dr M Rijken MD PhD, Mae Sot, Thailand; A Dundorp MD PhD, Bangkok, Thailand.
+This guideline was peer reviewed by: Dr A Diaf MRCOG, Birmingham; RCOG Consumers’ Forum; Mr SA Walkinshaw
+MRCOG, Liverpool; Dr C Whitty FRCP , London; the Advisory Committee on Malaria Prevention in UK Travellers: Dr BABannister FRCP , London; Dr D Lalloo FRCP , Liverpool; Professor P Chiodini FRCP , London.
+The Guidelines Committee lead peer reviewers were: Dr ALM David MRCOG, London, and Professor F McAuliffe
+FRCOG, Dublin.
+The final version is the responsibility of the Guidelines Committee of the RCOG.
+The guideline review process will commence in 2013
+unless otherwise indicated
+DISCLAIMER
+The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical
+practice. They present recognised methods and techniques of clinical practice, based on published evidence, forconsideration by obstetricians and gynaecologists and other relevant health professionals. The ultimate judgementregarding a particular clinical procedure or treatment plan must be made by the doctor or other attendant in the lightof clinical data presented by the patient and the diagnostic and treatment options available within the appropriatehealth series.
+This means that RCOG Guidelines are unlike protocols or guidelines issued by employers, as they are not intended to
+be prescriptive directions defining a single course of management. Departure from the local prescriptive protocols orguidelines should be fully documented in the patient’s case notes at the time the relevant decision is taken. Onceadapted for local use, these guidelines no longer represent the views of the RCOG.

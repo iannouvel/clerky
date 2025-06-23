@@ -1,0 +1,720 @@
+# Extracted from: MP053 Obstetric Haemorrhage.pdf
+# Guideline ID: mp053-obstetric-haemorrhage
+# Content length: 37677 characters
+# Processing date: 1750066901.5428946
+
+University Sussex Hospital’s NHS Trust East (RSCH and PRH Only) Page 1 of 23 
+
+Obstetric 
+Haemorrhage 
+ 
+(RSCH PRH Only ) 
+ 
+Maternity Protocol: MP053 
+Date agreed: April 2022 
+Amendment : December 2023 
+v3.1 
+Obstetric Haemorrhage (RSCH PRH only ) MP053 
+University Sussex Hospital’s NHS Trust East Page 2 of 23 
+ 
+This protocol includes: 
+• Antepartum Hemorrhage 
+• Placental Abruption 
+• Placenta Praevia 
+• Postpartum Hemorrhage 
+• Women who decline blood products 
+
+Guideline Reviewer: Heather Brown 
+Version: 3.1 
+Approval Committee: Women’s Services Safety and Quality Committee 
+Date agreed: 
+Amendment: April 2022 
+December 2023 
+Review date: April 2025 
+Cross reference: C006 Administration of Blood and Blood Components 
+MP056 High Dependency Care (HDU) Obstetric Haemorrhage (RSCH PRH only ) MP053 
+University Sussex Hospital’s NHS Trust East Page 3 of 23 
+ Contents 
+Key Principles ................................ ................................ ................................ ........................ 4 
+Scope ................................ ................................ ................................ ................................ .... 4 
+Responsibilities ................................ ................................ ................................ ...................... 4 
+1 Agreed Definitions of Obstetric Haemorrhage ................................ .............................. 5 
+2 Antepartum Haemorrhage (APH) ................................ ................................ ................. 6 
+3 Placenta Praevia ................................ ................................ ................................ .......... 8 
+4 Postpartum Haemorrhage (PPH) ................................ ................................ .................. 9 
+5 Primary PPH ................................ ................................ ................................ .............. 11 
+6 MAJOR and MASSIVE Obstetric Haemorrhage (trigger phrases) ................................ .. 13 
+7 Management of secondary PPH ................................ ................................ ................. 16 
+8 Postnatal Care of Women who have had an Obstetric Haemorrhage .......................... 16 
+9 Women Who Decline Blood Products ................................ ................................ ......... 17 
+10 Intraoperative Cell Salvage ................................ ................................ ........................ 20 
+11 Interventional Radiology ................................ ................................ ............................ 20 
+12 Documentation ................................ ................................ ................................ ......... 21 
+13 Thromboprophylaxis ................................ ................................ ................................ .. 22 
+14 Debriefing ................................ ................................ ................................ ................. 22 
+15 DATIX A datix needs to be completed for all MOHs >1500ml ................................ ..... 22 
+16 References ................................ ................................ ................................ ................ 22 
+17 Appendix A – Refusal of Blood or Blood Products for any reason (Including 
+Jehovah’s Witness) ................................ ................................ ................................ ....................... 23 Obstetric Haemorrhage (RSCH PRH only ) MP053 
+University Sussex Hospital’s NHS Trust East Page 4 of 23 
+ Key Principles 
+ 
+A protocol is a set of measurable, objective standards to determine a course of action. 
+Professional judgement may be used in the application of a protocol. 
+ 
+Scope 
+ 
+This protocol applies to: 
+• All women who experience antepartum and/or postpartum haemorrhage 
+• Any women with Placenta Praevia 
+• Any woman with a diagnosis of placental abruption 
+• Any woman who declines blood or blood products 
+ 
+Responsibilities 
+ 
+Midwives, Anaesthetists & Obstetricians : 
+• To access, read, understand and follow this guidance 
+• To use their professional judgement in application of this protocol 
+Management : 
+• To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations 
+• To ensure the protocol is accessible to all relevant staff 
+• To ensure the protocol is available to service users on request Obstetric Haemorrhage (RSCH PRH only ) MP053 
+University Sussex Hospital’s NHS Trust East Page 5 of 23 
+ Agreed Definitions of Obstetric Haemorrhage 
+ 
+1.1 Minor Antepartum Haemorrhage 
+Episode of bleeding of less than 50mls from the genital tract during pregnancy 
+(after 24 weeks gestation) and prior to birth of the baby 
+1.2 Major Antepartum Haemorrhage 
+Episode of bleeding of more than 50mls from the genital tract during 
+pregnancy (after 24 weeks gestation) and prior to birth of the baby or when 
+clinical signs are suggestive of significant concealed bleeding (see below for 
+signs and symptoms) 
+1.3 Minor Primary Postpartum Haemorrhage 
+The loss of 500-1000mls of blood from the genital tract within 24 hours of the 
+birth of a baby 
+1.4 Major Primary Postpartum Haemorrhage 
+The loss of over 1000mls of blood from the genital tract within 24 hours of the 
+birth of a baby 
+1.5 Massive Primary Postpartum haemorrhage 
+The sudden and continuing blood loss of 2 litres or more 
+Or 
+50% blood volume loss within 3 hours or at a rate of 150ml/min 
+1.6 Secondary Postpartum Haemorrhage 
+Abnormal or excessive bleeding from the birth canal between 24 hours and up 
+to 12 weeks post -delivery. 
+1.7 Volume is a guide: 
+The mother’s individual weight and clinical situation, signs and symptoms will 
+need to be taken into consideration as to when to escalate for more 
+assistance, actions and procedures 
+1.8 Requirement to document fluid balance 
+All women who have an antenatal or postpartum haemorrhage must have fluid 
+balance monitoring commenced and documented on a chart which is secured 
+in the maternal notes. See individual charts below for details 
+Obstetric Haemorrhage (RSCH PRH only ) MP053 
+University Sussex Hospital’s NHS Trust East Page 6 of 23 
+ Antepartum Haemorrhage (APH) 
+2.1 Causes 
+2.1.1 Normal physiological changes to cervix 
+2.1.2 Local conditions of cervix, vagina and vulva including polyps and 
+erosions 
+2.1.3 Mild trauma caused by 
+Sexual intercourse 
+Cervical sweeps 
+2.1.4 Placental abruption 
+2.1.5 Placenta praevia 
+2.1.6 Vasa Praevia 
+2.2 Minor APH 
+A minor APH will usually present as mild bleeding from the genital tract with 
+no other clinical symptoms 
+2.3 Management 
+If a pregnant person experiences vaginal bleeding then they should be invited 
+into MAU for a clinical review which should include maternal observations, 
+fetal heart auscultation and abdominal palpation and an assessment of the 
+volume and appearance of the vaginal loss. Consider a CTG after 26 weeks as 
+per protocol. 
+2.4 Minor APH 
+ 
+2.4.1 Women presenting with spotting who are no longer bleeding and 
+where placenta praevia has been excluded can go home after a 
+reassuring initial clinical assessment. All women with APH heavier 
+than spotting and women with ongoing bleeding should be admitted 
+for observations 
+2.4.2 Tocolysis is contraindicated in placental abruption and is ‘relatively 
+contraindicated’ in ‘mild haemorrhage’ due to placenta praevia. 
+2.4.3 Anti-D Ig should be given to all non -sensitised RhD -negative women 
+after any presentation with APH, independent of whether routine 
+antenatal prophylactic anti -D has been administered. In the non - 
+sensitised RhD -negative woman in the event of recurrent vaginal 
+bleeding after 20+0 weeks of gestation, anti-D Ig should be given at a 
+minimum of 6 -weekly intervals. 
+2.5 Major APH 
+Obstetric Haemorrhage (RSCH PRH only ) MP053 
+University Sussex Hospital’s NHS Trust East Page 7 of 23 
+ 
+Actions: 
+Runner to take bloods to 
+lab 
+Commence MEOWS chart 
+Review placental site 
+Commence CTG 
+Assess fetal presentation 2.5.1 Placental abruption 
+The diagnosis is clinical and ultrasound is poor at confirming or 
+excluding the presence of a retro -placental clot. 
+2.5.2 Symptoms include severe abdominal pain and bleeding which is 
+variable in amount. The uterus is hard and tender on palpation with 
+no relaxation between contractions and may be large for dates. Pulse 
+and BP may suggest hidden blood loss, or remain normal. 
+ 
+2.5.3 The fetal heart should be electronically monitored – typically the CTG 
+will be abnormal, with signs of hyperstimulation and in some cases a 
+sinusoidal pattern. 
+2.6 Management of Major APH 
+ Obstetric Haemorrhage (RSCH PRH only ) MP053 
+University Sussex Hospital’s NHS Trust East Page 8 of 23 
+ 2.6.1 Oxytocin (10iu/IM) should be given for the third stage of labour, 
+followed by a Oxytocin infusion. 
+2.6.2 If the abruption has been severe, postnatal management should be 
+as described in the major haemorrhage protocol. 
+ 
+ Placenta Praevia 
+ 
+3.1 Antenatal 
+3.1.1 All women with placenta praevia confirmed at the 32 week scan 
+should be referred to the next available Consultant Obstetrician 
+Antenatal Clinic, or their named consultant if already under the care 
+of a Consultant. 
+3.1.2 The grade of placenta praevia or the distance between the leading 
+edge of the placenta to the internal os should be documented on the 
+USS report confirming the placenta praevia, the position of the 
+placenta should also be clearly stated e.g. anterior / posterior. 
+3.1.3 Women with asymptomatic placenta praevia or a low -lying 
+placenta in the third trimester should be counselled about the 
+risks of preterm delivery and obstetric haemorrhage. 
+3.1.4 Women with a known placenta praevia who experience any bleeding, 
+including spotting, contractions or pain should attend hospital for an 
+obstetric review. 
+3.1.5 Women with a history of previous caesarean section seen to 
+have an anterior Placenta praevia at 32 weeks should be 
+discussed with a consultant radiologist and obstetrician to 
+evaluate the risk of placenta accreta and to decide on the 
+need for an MRI. If there is a high risk of placenta accreta then 
+the responsible consultant obstetrician will initiate and 
+coordinate the multi disciplinary plans for delivery. 
+3.1.6 Women with asymptomatic placenta praevia should be offered an 
+elective caesarean at 38 weeks to avoid the spontaneous onset of 
+labour and subsequent risk of bleeding. 
+3.1.7 Women with placenta praevia with repeated episodes of bleeding 
+should be admitted and timing of delivery offered earlier than 38 to 
+avoid the risk of a major antenatal obstetric haemorrhage and 
+emergency caesarean section. Decisions on timing of delivery should 
+involve the wider MDT and include anaesthetics and neonatology. 
+3.1.8 Whilst an in-patient, regular* Group and Save samples should be 
+taken in case of acute bleed. 
+*For women who have never had a blood / blood product transfusion - every 7 
+days. For women with unusual antibodies in her blood or who has ever 
+Obstetric Haemorrhage (RSCH PRH only ) MP053 
+University Sussex Hospital’s NHS Trust East Page 9 of 23 
+ had a blood / blood product transfusion - seek advice from the 
+transfusion department (the sample can be valid for as little as 24 
+hours) 
+ 
+3.1.9 Caesarean sections for placenta praevia should be discussed with the 
+wider MDT including anaesthetics and neonatology, and should 
+consider whether the case should be on Level 13 or Level 5 theatres. If 
+the case requires Level 5 theatres then it should be booked using the 
+Complex Obstetric Delivery booking form in MP050 LSCS 
+ 
+3.2 Day of Delivery 
+3.2.1 For all LSCS for all major placenta praevia the Consultant Obstetrician 
+must be present in theatre, as the primary or secondary surgeon. 
+ 
+3.2.1.1 The Anaesthetist will ensure good venous access, cell salvage 
+and preparations for conversion to general anaesthetic. A 
+Neonatology Registrar should be present for delivery 
+3.2.1.2 Immediate bolus of oxytocin at delivery and oxytocin infusion 
+post -delivery. All other uterotonics to be readily available. 
+ 
+3.3 Emergency delivery 
+3.3.1 For emergency delivery of known placenta praevia cases the 
+Consultant Obstetrician covering labour ward should attend. . The 
+method of anaesthesia should be decided by the LW anaesthetist 
+after discussion with the on -call Consultant Anaesthetist. 
+3.3.2 A Neonatology Registrar should be present for delivery 
+ Postpartum Haemorrhage (PPH) 
+ 
+4.1 Antenatal risk assessment and care planning 
+Risk factors may present antenatally or intrapartum: care plans must be 
+modified when risk factors are present. Clinicians must be aware of the risk 
+factors for PPH and should take these into account when counselling women 
+about place of delivery. 
+4.2 At Booking: 
+Community midwives should be aware of the risk factors associated with a PPH: 
+4.2.1 Previous PPH (ascertain cause and EBL) 
+4.2.2 Previous LSCS 
+4.2.3 Parity >3 
+4.2.4 Obesity (>30BMI) 
+Obstetric Haemorrhage (RSCH PRH only ) MP053 
+University Sussex Hospital’s NHS Trust East Page 10 of 23 
+ 4.3 Document any identified risks clearly in the maternal notes and offer a referral 
+for an appointment with a Consultant Obstetrician during pregnancy. An 
+individualised care plan should be made following discussion with the woman 
+including recommendation for an actively managed 3rd stage of labour . 
+ 
+4.4 During pregnancy: 
+Clinicians should be aware of the following that are associated risk factors for a PPH: 
+4.4.1 Multiple pregnancy 
+4.4.2 Pre eclampsia 
+4.4.3 Placenta Praevia 
+4.4.4 Previous PPH 
+4.4.5 Should these occur during pregnancy this should be clearly 
+documented in the maternal notes and a referral made for an 
+appointment with a Consultant Obstetrician. An individualised care 
+plan should be made following discussion with the woman including 
+recommendation for an actively managed 3rd stage of labour. 
+4.5 Intrapartum: 
+Clinicians should be aware of the following that are associated risk factors for a PPH: 
+4.5.1 Emergency LSCS 
+4.5.2 Elective LSCS 
+4.5.3 Augmented labour 
+4.5.4 Prolonged / arrested labour (any stage) 
+4.5.5 Retained placenta 
+4.5.6 Episiotomy / Lacerations 
+4.5.7 Instrumental delivery 
+4.5.8 Should these occur during labour / birth a review by the on call 
+Registrar should be requested. An individualised care plan should be 
+made following discussion with the woman including 
+recommendation for an actively managed 3rd stage of labour. 
+ 
+4.6 Communication & Responsibilities 
+Effective communication is the key to management of an obstetric haemorrhage. 
+Clear lines of communication between the Consultant Obstetrician, Consultant 
+Anaesthetist, haematologist, blood transfusion personnel and Labour Ward co- 
+ordinator are vital; and all discussions should be documented in the maternal 
+notes. the PPH proforma on badgernet should be filled in with times ,people 
+present in attendance communication with team members ,events, drugs used, 
+use of cell saver and procedures undertaken to arrest bleeding Obstetric Haemorrhage (RSCH PRH only ) MP053 
+University Sussex Hospital’s NHS Trust East Page 11 of 23 
+ 4.7 The labour ward co -ordinator is responsible for ensuring basic information 
+about the relevant medical, social and obstetric history and events prior to the 
+haemorrhage are communicated clearly to the midwifery, obstetric and 
+anaesthetic staff arriving (use SBAR). 
+ 
+4.8 Once an initial assessment of major PPH has been made: 
+• The Obstetric Registrar is responsible for ensuring the Consultant 
+Obstetrician has been contacted, communicating with haematology/ 
+blood transfusion as required and commencing immediate emergency 
+resuscitative management 
+• The Anaesthetic Registrar is responsible for ensuring the Consultant 
+Anaesthetist has been contacted, communicating with haematology/ 
+blood transfusion as required and commencing immediate emergency 
+resuscitative management. When a haemorrhage is continuing the 
+anaesthetic team should request additional equipment from the main 
+theatre suite (via: RSCH ODP bleep 8180; PRH ODP bleep118); HEMAQ, 
+additional fluid warmer/rapid infuser {level I}, cell saver, USS (Sonosite) as 
+required 
+• The Labour Ward Co -ordinator is responsible for co -ordinating staff, 
+calling the blood transfusion lab with woman’s details (RSCH ext 4577 
+bleep 8286 & PRH ext 8218 bleep 103 with a summary of the clinical 
+scenario, woman’s name, DOB, Hospital number and woman’s weight), 
+ensuring blood samples are sent and considering needs of the partner 
+and relatives of the woman. This can be delegated to an appropriate 
+member of the team but the overall responsibility lies with the LW 
+coordinator . 
+4.9 Home birth & Haemorrhage: The Midwife is expected to: 
+4.9.1 Initiate immediate emergency resuscitative management and assess 
+the cause of the bleeding. 
+4.9.2 Call for help by phoning 999 asking for a cat 1 transfer with paramedic 
+ambulance. 
+4.9.3 Inform labour ward of events and ETA. 
+4.9.4 Use emergency drugs to stop bleeding in event of uterine atony and 
+consider bimanual compression 
+4.9.5 Cannulate using wide bore cannula and commence IV fluids 
+where/when possible 
+4.9.6 Transfer to maternity unit as soon as possible 
+ 
+ Primary PPH 
+Obstetric Haemorrhage (RSCH PRH only ) MP053 
+University Sussex Hospital’s NHS Trust East Page 12 of 23 
+ 
+5.1 Primary PPH involving an estimated blood loss of 500–1000 ml (and in the 
+absence of clinical signs of shock) should prompt basic measures (close 
+monitoring, intravenous access, full blood count, group and screen) to 
+facilitate resuscitation should it become necessary. 
+5.2 Management of a woman with a Primary PPH: 
+ Obstetric Haemorrhage (RSCH PRH only ) MP053 
+University Sussex Hospital’s NHS Trust East Page 13 of 23 
+ 
+ MAJOR and MASSIVE Obstetric Haemorrhage (trigger phrases) 
+ 
+Management of a woman with a Major Primary Postpartum haemorrhage 
+If a woman with primary PPH is continuing to bleed after an estimated blood loss of 
+1000ml (or has clinical signs of shock or tachycardia associated with a smaller 
+estimated loss), the emergency call should be made with the trigger phrase: ‘Major 
+Obstetric Haemorrhage’ which will summon the correct assistance and prompt a full 
+protocol of measures to achieve resuscitation and haemostasis. 
+6.1 Team summoned: Obstetric Registrar, obstetric anaesthetist, OPA on for 
+labour ward, LW coordinator, CCA / porter. Haematology department and 
+blood transfusion department will be made aware and on standby to provide 
+support. 
+6.2 When blood loss exceeds 1500mls and haemorrhage is continuing a blood loss 
+of over 2000mls may be anticipated and the massive haemorrhage protocol 
+may be triggered. 
+6.3 THE MOH CALL (Management of a woman with a Massive Primary Postpartum 
+haemorrhage) - 
+If a woman has a sudden and continuing blood loss of 2000mls or more 
+or 50% blood volume loss within 3 hours or at a rate of 150ml/min the 
+emergency call should be made with the trigger phrase: ‘Massive Obstetric 
+Haemorrhage’ 
+6.4 Call 2222 and state “Major Obstetric Haemorrhage ” giving location. 
+Switchboard will then generate a call out to the following: 
+Obstetric Consultant*(by telephone/LWC) 
+Anaesthetic Consultant* (by telephone/LWC) 
+Obstetric Registrars 
+Obstetric SHO 
+Anaesthetic Registrar* 
+ODA 
+Senior midwife (labour ward coordinator)* 
+Haematology BMS 
+Porter 
+Neonatal SHO 
+On call Haematologist 
+University Sussex Hospital’s NHS Trust East Page 14 of 23 
+ 6.5 Flowchart to show management of Major and Massive Obstetric Haemorrhage 
+Ergometrine 
+Carboprost 
+Consider initial drugs : 
+Oxytocin 
+Tranexamic Acid University Sussex Hospital’s NHS Trust East Page 15 of 23 
+ 6.6 Haematological targets whilst bleeding continues 
+ 
+6.6.1 Haemoglobin > 8 g/dl 
+6.6.2 PT and APTT (INR and KCR) <1.5 x control mean 
+6.6.3 Platelets >50 x 109/l or >100 x 109/l for multiple/CNS trauma 
+Fibrinogen greater than 2g/l 
+6.6.4 Blood can be sent for ROTEM (if available) analysis which will give a 
+quicker more accurate estimate of the need for clotting products 
+ 
+6.7 Procedure for urgent access to blood and blood products including portering 
+arrangements: 
+6.7.1 Senior team (Registrar, Anaesthetist or LW co -ordinator) should 
+communicate with each other about the need for requesting blood. 
+6.7.2 The labour ward coordinator is responsible for contacting the 
+Transfusion Laboratory/on -call haematologist informing that there is 
+a major (obstetric) haemorrhage, and providing the following 
+information 
+6.7.3 Women’s identity /approximate weight 
+6.7.4 Degree of urgency for red cells 
+• stat (2 units of O neg blood) 
+• 10 minutes (group specific) 
+• 40 minutes (cross matched) 
+ 
+7.4 Continue repeating FBC and coagulation hourly whilst blood loss is ongoing and always 
+following the transfusion of plasma components and/or platelets. ABG should be sent 
+every 45mins 
+7.5 Platelets will be issued after 12 units of red cells (or approximately 1.5 x blood volume) 
+have been transfused. Further FFP, cryoprecipitate and platelets will be issued in 
+accordance with coagulation results: 
+7.7.1 FFP (12 -15ml/kg) if PT or APTT/INR or KCR >1.5 
+7.7.2 cryoprecipitate (1.5 unit/10kg) if fibrinogen <1.0g/l 
+7.7.3 platelets, 1 or 2 pools, depending on count and target 
+ 
+7.8 Consider tranexamic acid 
+7.9 Recombinant factor VII a therapy should be based on the results of coagulation (90mcg/kg 
+responds within 15 – 30minutes provided there is fibrinogen) 
+ 
+7.10 Note: Good communication between the clinical team and the haematology staff and regular 
+haematological monitoring provides the basis for timely blood component support. All 
+communication must be documented in the maternal notes Obstetric Haemorrhage MP053 
+University Hospitals Sussex NHS Trust East Page 16 of 23 
+ Management of secondary PPH: 
+ 
+7.1 Secondary PPH is often associated with endometritis and antibiotics are 
+clinically indicated: 
+• Cefuroxime 1.5g IV TDS and metronidazole 500mg IV TDS switching to 
+oral, when able to co -amoxiclav 625mg PO TDs 
+• If penicillin allergic use: clindamycin 900mg IV TDS and gentamicin 5mg 
+/kg stat IV (maximum dose 450mg) 
+7.2 Surgical measures will be undertaken if there is excessive or continuing 
+bleeding despite antibiotic treatment, or if there are obvious retained 
+products. 
+7.3 A senior obstetrician will be involved in decisions and performance of any 
+evacuation of retained products of conception as these women have a high risk 
+of uterine perforation. Ultrasound directed removal of retained products can 
+be helpful. 
+ Postnatal Care of Women who have had an Obstetric Haemorrhage 
+ 
+8.1 Women who have had a PPH of 500-1000mls 
+ 
+8.1.1 Transfer to postnatal ward only when woman is stable 
+8.1.2 If a woman reports symptoms of bleeding or being unwell 
+observations (PV loss, uterine tone, temperature, blood pressure and 
+pulse) should be undertaken immediately. These should be 
+documented in the maternal notes. If observations are abnormal the 
+obstetric team should be asked to review the woman urgently. 
+8.1.3 If a woman has been commenced on a fluid balance chart this should 
+be continued 24 hours post -delivery. If output is abnormal the 
+obstetric team should be asked to review the woman urgently. 
+8.1.4 Women should have an FBC on day 2 or prior to discharge if discharge 
+before day 2. 
+8.1.5 Midwifery review and plan of care prior to discharge documented in 
+the maternal notes 
+8.2 Women who have had a PPH of over 1000mls (or are symptomatic) 
+ 
+8.2.1 Transfer to postnatal ward only when woman is stable and transfer is 
+agreed with the obstetric team 
+Obstetric Haemorrhage MP053 
+University Hospitals Sussex NHS Trust East Page 17 of 23 
+ 8.2.2 On postnatal ward women should have daily observations of PV loss, 
+uterine tone, temperature, blood pressure and pulse. If a woman 
+reports symptoms of bleeding or being unwell these observations 
+should be undertaken immediately. These should be documented in 
+the maternal notes. If observations are abnormal the obstetric team 
+should be asked to review the woman urgently. 
+8.2.3 A fluid balance chart should be continued for 24 hours post delivery. If 
+output is abnormal the obstetric team should be asked to review the 
+woman urgently. 
+8.2.4 Women should be informed about signs of bleeding, expected 
+amount of PV bleeding in the postnatal period and when they should 
+inform the midwife of concerns. 
+8.2.5 Women should have an FBC on day 2 or prior to discharge if discharge 
+before day 2. 
+8.2.6 Women should be given an opportunity to discuss their labour and 
+birth and events around their haemorrhage. Ideally the obstetrician or 
+midwife providing care during the haemorrhage should see the 
+woman prior to her discharge. If this is not possible the discussion can 
+be with a senior obstetrician or midwife familiar with the events (from 
+the documentation at the time). Implications for future pregnancies 
+and births should be discussed. All discussions should be documented 
+in the maternal notes. Women should be offered the ‘Birth Stories’ 
+service and this should be documented in the maternal postnatal 
+notes. 
+8.2.7 Women should be reviewed and plan of care prior to discharge; if 
+women’s observations are normal (and FBC within normal limits) this 
+can be undertaken by a midwife. If observations are abnormal, Hb 
+levels are under 10 or the woman remains symptomatic this review 
+should be undertaken by a member of the obstetric team. All reviews 
+and plan of care should be documented in the maternal notes 
+ 
+ Women Who Decline Blood Products 
+ 
+9.1 Please refer to Trust Policy on ‘Administration of Blood and Blood Products ’ 
+for further guidance. 
+9.2 Major obstetric haemorrhage is often unpredictable and can become life 
+threatening in a short time. In most cases blood transfusion can save the 
+woman’s life and very few women refuse blood transfusion in these 
+circumstances. If it is thought likely that a woman may do so, the management 
+of major haemorrhage should be considered in advance. 
+ 
+9.3 Booking 
+Obstetric Haemorrhage MP053 
+University Hospitals Sussex NHS Trust East Page 18 of 23 
+ 9.3.1 All women are normally asked their religious beliefs, and should also 
+be asked if they have any objections to blood transfusion. If a woman 
+is a Jehovah’s Witness or likely to refuse blood transfusion for other 
+reasons, this should be noted in the case notes 
+9.3.2 All women who are likely to refuse a blood transfusion should make 
+an informed choice with the risks clearly discussed and documented. 
+Advice should be that if major haemorrhage occurs there is an 
+increased risk that hysterectomy will be required. The woman should 
+understand other non blood products are often accepted by 
+Jehovah’s Witnesses but it is imperative that they understand, if all 
+else fails, and blood is needed, refusal at this stage could cost them 
+their life 
+9.3.3 Women making an informed choice to refuse a blood transfusion in 
+any circumstances should be advised to deliver in a unit which has all 
+facilities for prompt management of haemorrhage, including 
+hysterectomy 
+9.3.4 Women and their partners should be given written information about 
+refusing a blood transfusion 
+ 
+9.4 Antenatal Care 
+9.4.1 Consultant obstetric and anaesthetic involvement is necessary during 
+the antenatal period in order to develop an individualised care plan 
+together with the woman, her husband and family, and, if necessary, 
+religious advisors, should any difficulty occur 
+9.4.2 ALL WOMEN REFUSING BLOOD TRANSFUSION AT BOOKING MUST 
+BE REFERRED TO SEE A CONSULTANT OBSTETRICIAN AND 
+ANAESTHETIST 
+9.4.3 No absolute rules regarding blood products exist. Each woman / 
+Jehovah's Witness decides whether she wishes to accept the following 
+interventions as a matter of individual choice. It is therefore 
+important to discuss with each woman whether or not any of these 
+are acceptable: 
+9.4.3.1 Blood Cell salvage (intra and post -operative) 
+9.4.3.2 Blood ‘fractions’ of plasma or cellular components (e.g. 
+albumin, immunoglobulins, clotting factors, novoseven) 
+9.4.3.3 Epidural blood patch Obstetric Haemorrhage MP053 
+University Hospitals Sussex NHS Trust East Page 19 of 23 
+ 9.4.4 The woman’s blood group and antibody status should be checked in 
+the usual way and the haemoglobin and serum ferritin should be 
+checked regularly. Haematinics should be given throughout pregnancy 
+to maximise iron stores 
+9.4.5 An ultrasound scan should be carried out to identify the placental site 
+9.4.6 There are well -described procedures for elective surgery in Jehovah’s 
+Witness: some Witnesses will donate blood before surgery for 
+subsequent auto -transfusion if necessary though others consider that 
+this too is forbidden by their religion. Blood storage should not be 
+suggested to pregnant women, as the amounts of blood required to 
+treat major obstetric haemorrhage are far in excess of the amount 
+that could be donated during pregnancy 
+9.4.7 If any complication is noted during the antenatal period the 
+Consultant Obstetrician must be informed 
+9.4.8 A clear individual management plan should be documented in the 
+maternal notes where blood products will be declined. This should be 
+following a discussion with the consultant obstetrician and 
+anaesthetist (and senior midwife as required) where a fully informed 
+decision has been made by the woman. The woman must be 
+supported in her informed choice. 
+ 
+9.5 Labour and Birth 
+ 
+9.5.1 All women who are known to have stated a wish not to receive blood 
+products should be seen by a consultant obstetrician and anaesthetist 
+9.5.2 It is therefore important that, whenever possible, each woman in 
+labour should have a Consultant Obstetrician as the lead professional, 
+and that they are informed of and be involved in their care. Should an 
+elective caesarean section or other operative delivery be required, 
+this should be conducted by a Consultant Obstetrician and 
+Anaesthetist 
+9.5.3 Experienced staff should provide care as per for all labour and births 
+9.5.4 Oxytocic’s should be given when the baby is delivered (stat dose and 
+subsequent infusion). The woman should not be left alone for at least 
+an hour after delivery 
+ 
+9.6 Postnatal 
+9.6.1 An FBC should be performed prior to discharge home 
+9.6.2 When the mother is discharged from hospital, she should be advised 
+to report promptly if she has any concerns about bleeding during the 
+puerperium. Obstetric Haemorrhage MP053 
+University Hospitals Sussex NHS Trust East Page 20 of 23 
+ Intraoperative Cell Salvage 
+ 
+10.1 Early warning is required for set up and use during operative delivery. It can 
+usually be organised for elective delivery but is more difficult for emergency 
+procedures out of hours. 
+10.2 Cell salvage has a place for cases where major haemorrhage is predicted, when 
+there is time to set up the kit and staffs (familiar with its use) are at hand. 
+10.3 If cell salvage is being considered the senior anaesthetist should contact the 
+ODP on call or main theatre manager to discuss feasibility and availability of 
+trained staff. 
+10.4 Suction is used until baby and placenta are delivered The suction from the cell 
+saver is used for the rest of the procedure. Cell saved blood should be re - 
+infused through a leucocyte filter which minimises the risk of adverse reactions 
+due to fetal cells (almost all will be filtered out) 
+10.5 In an Rh negative mother, if the cell salvaged blood has been transfused 
+1500iu of anti D needs to be administered and a Kleihauer test needs to be 
+performed 1 hour post transfusion to confirm if further dosses are required. 
+Please document on blood request form that cell salvage has been used. 
+ 
+ Interventional Radiology 
+11.1 When it is used 
+Interventional radiology (IR) is used electively for women with suspected placenta 
+accreta or multiple previous CS and an anterior placenta. On an emergency basis the 
+cases would usually be PPH, peripartum hysterectomy and ongoing bleeding, or 
+perineal haematomas. There are also numerous other rarer scenarios of ongoing 
+bleeding where there is scope for using interventional radiology. This is always on a 
+case by case decision between the obstetrician and the interventional radiologists and 
+always at consultant level. 
+11.2 The process 
+It will always be consultant led decision and process and as there is no formal on call 
+service for obstetrics from the radiologists it is limited by availability. Consultant 
+obstetrician and interventional radiologist (via radiology dpt) must discuss each case 
+on an individual basis and agree a management plan. 
+11.3 Where it will happen 
+IR is only available at RSCH and can be carried out in the interventional 
+radiology suite in the Barry Building or in main theatre or in obstetric theatre 
+depending on the case. If it can be anticipated that IR may be used then PRH 
+women should ideally be delivered at RSCH with a multidisciplinary plan. In 
+some emergencies there may be scope to transfer a woman from PRH (if 
+Obstetric Haemorrhage MP053 
+University Hospitals Sussex NHS Trust East Page 21 of 23 
+ 
+woman is stable and after discussion with consultant obstetrician and 
+interventional radiologist) 
+11.4 Interventional radiology management flow chart: 
+
+ Documentation 
+ 
+Accurate documentation is essential. All staff involved should provide written 
+documentation of actions undertaken within the maternity notes. The Obstetric 
+haemorrhage form within the maternity notes should be used as a summary of events. 
+12.1 It is important to record: 
+12.1.1 The staff in attendance and the time they arrived 
+12.1.2 The sequence of events 
+Obstetric Haemorrhage MP053 
+University Hospitals Sussex NHS Trust East Page 22 of 23 
+ 12.1.3 The time of administration of different pharmacological agents given, 
+their timing and sequence 
+12.1.4 The time of surgical intervention, where relevant 
+12.1.5 The condition of the mother throughout the different steps 
+12.1.6 The timing of the fluid and blood products given 
+12.1.7 Fluid balance chart 
+12.2 Use the MEOWs chart to document maternal observations 
+
+ Thromboprophylaxis 
+ 
+Once the bleeding is arrested and the coagulopathy corrected, thromboprophylaxis is 
+essential due to the high risk of thrombosis. The timing of thromboprophylaxis 
+administration should be considered in conjunction with the anaesthetic team, with 
+consideration of the timing of removal of an epidural/spinal. Pneumatic compression 
+devices should be used in addition in the HDU/ITU setting, and where 
+thromboprophylaxis is contraindicated. 
+ 
+ Debriefing 
+ 
+This is recommended to be performed by a senior member of the team who was 
+involved at the time of events at the earliest opportunity. 
+Women should routinely be offered a 6 week follow -up appointment to discuss the 
+events in more detail, and to discuss any implications for future pregnancies. 
+ 
+ DATIX 
+A datix needs to be completed for all MOHs >1500ml 
+ 
+ References 
+Obstetric Haemorrhage MP053 
+University Hospitals Sussex NHS Trust East Page 23 of 23 
+ Appendix A – Refusal of Blood or Blood Products for any reason 
+(Including Jehovah’s Witness) 
+ 
+Unit Number: 
+Patient Surname: 
+First Names: 
+Date of Birth: 
+Address: 
+Postcode: 
+
+The following form is to be read and signed by the Woman (Patient): 
+1 The clinician is here to help you. Please ask any questions and seek any further information you want 
+2 You can refuse treatment. You have the right to change your mind at any time, including after you have 
+signed this form. 
+3 You may ask for a relative, friend or nurse to be present when you are talking to the clinician. 
+ 
+I am the Woman (Patient). I have told the Clinician that my consent: (* Delete as necessary) 
+A. EXCLUDES transfusion of blood or blood products such as fresh frozen plasma and platelets 
+B. EXCLUDES the use of cryoprecipitate, anti-D and human albumin solution (HAS*) 
+C. INCLUDES administration of non-blood volume expanders such as saline, dextran, Haemaccel, hetastarch and 
+Hartman’s solution* 
+D. INCLUDES re-infusion of my own blood or blood products* 
+I agree: to what is proposed, which has been explained to me by the clinician names on Consent Form 
+1, subject to the exclusions above. 
+I understand: that the procedure(s) I have excluded (i.e. that I do not wish to have carried out) as listed on 
+this form, will not be performed even if the clinician believes this is necessary to save my life or 
+prevent irreversible damage. 
+I acknowledge: a) that these restrictions on my consent will remain in force and bind those treating me unless 
+and until I expressly and formally revoke or modify it 
+b) that my express refusal will not be over -ridden by purported consent from a relative or 
+other person. My refusal will be regarded as remaining in force even though I am unconscious 
+and/or affected by medication, stroke or other conditions, rendering me incapable of 
+expressing my wishes. 
+I accept: full legal responsibility for my decisions and release Brighton & Sussex University Hospitals 
+NHS Trust and all those treating me from any liability for adverse consequences arising out of 
+these restrictions on my consent. 
+ 
+Woman / Person (patient) Signature:…………………………………………………………..……. Date: ………………………………………. 
+PLEASE ENSURE THIS REFUSAL IS REFERRED TO ON CONSENT FORM 1, WHICH YOU ARE ALSO ASKED TO SIGN IF YOU 
+ARE GOING TO HAVE A SURGICAL PROCEDURE 
+Countersigned by Health Professional: ……………………………………………………….……. Date: ……………………………………….. 
+
+Print Name: …………………………………………………….…………… Job Title: …………… …………………………………………………………

@@ -1,0 +1,1747 @@
+# Extracted from: CG1126 Multiple Pregnancy and Birth.pdf
+# Guideline ID: cg1126-multiple-pregnancy-and-birth
+# Content length: 84184 characters
+# Processing date: 1750066899.9339674
+
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 1 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+ 
+Multiple Pregnancy and Birth Guideline 
+Summary statement: How does the document 
+support patient care? By the p rovision of good practice evidence based 
+guidelines for all staff involved in the antenatal and 
+intrapartum care of pregnant women /people with a 
+multiple pregnancy 
+Staff/stakeholders involved in development: 
+ Obstetric Consultants, Senior Midwives, Joint Obstetric 
+Guidelines Group Members 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Obstetr ic Consultant , maternity team 
+For use by: Medical, Obstetric and Midwifery staff 
+Purpose: To provide high quality, evidence based care for 
+pregnant women /people a with multiple pregnancy 
+This document supports: 
+ RCOG (2016 ) Green -top guideline 51 
+NICE ( 2019) Caesarean Section 
+NICE (2019) NG137 Twin and Triplet Pregnancy 
+Key related documents: Antenatal and labour risk assessments. 
+UH Sussex (SRH&WH) Maternity Guidelines: 
+Antenatal C are and Patient Infor mation , Induction of 
+Labour, Antenatal Screening T ests, Fetal Fibronectin , 
+Antepartum Haemorrhage, Hypertensive Disorders of 
+Pregnancy 
+Approved by: Joint Obstetric Guidelines Group 
+Approval date: 15th June 2022 Date uploaded: 11th July 2022 
+Ratified by Board of Directors/ Committee of the 
+Board of Directors Not Applicable - Divisional Ratification only required 
+Ratification Date: Not Applicable - Divisional Ratification only required 
+Expiry Date: March 2024 
+Review date: September 2023 
+If you require t his document in another format such as Braille, large print, audio or 
+another language please contact the Trusts Communications Team 
+Reference Number: CG1126 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 2 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+
+Version Date Author Status Comment 
+1.0 January 2011 Obstetric Consultants Archived New Trust wide guideline 
+2.0 February 2011 CNST Lead Midwife Archived Administrative update 
+3.0 May 2012 Antenatal Clinic 
+manager and Fetal 
+Medicine Consultant Archived Guideline updated to include 
+NICE 2011 recommendations 
+3.1 January 2014 Obstetric Consultant Archived 3 Year review -minor update to 
+clarify care pathway 
+ Guideline given an extension 
+until February 2017 whilst still 
+under review. 
+4.0 Oct 2017 Obstetric Consultant Archived 3 year review – minor 
+amendment to pain relief 
+5 August 2018 Obstetric Consultant Archived MCDA antenatal schedule 
+updated in line with RCOG 
+guidance 
+6.0 March 2021 Clinical Effectiveness 
+Support Midwife (J. 
+Collard) with Twins 
+Working Party cross -
+site Archived Guideline update d in line with 
+NICE NG137 Twin and Triplet 
+Pregnancy 2019 
+MBRRACE -UK 2021 
+6.1 May 2022 R. Mason, Obstetric 
+Consultant 
+J. Co llard, Clinical 
+Effectiveness 
+Support Midwife LIVE  Further points added to 
+Postnatal Care: Special 
+Considerations section in 
+response to MBRRACE -UK 
+2021 
+ RCOG GTG no. 7 guidance 
+on counselling for 
+corticosteroids added. 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 3 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+
+Contents 
+ 
+1.0 Aim ................................ ................................ ................................ ............................ 5 
+2.0 Scope ................................ ................................ ................................ ........................ 5 
+3.0 Responsibilities ................................ ................................ ................................ .......... 5 
+4.0 Introduction ................................ ................................ ................................ ................ 5 
+5.0 Definitions ................................ ................................ ................................ .................. 6 
+5.1 Abbreviations used within this guideline ................................ ................................ ..... 6 
+6.0 Diagnosis and determination of chorionicity & amnionicity ................................ ......... 6 
+6.1 Ascertaining the chorionicity: ................................ ................................ ...................... 7 
+7.0 Antenatal care ................................ ................................ ................................ ............ 7 
+7.1 Planning for birth ................................ ................................ ................................ ........ 8 
+7.2 Screening, scans and antenatal appointments ................................ .......................... 10 
+7.3 Monochorionic diamniotic twins ................................ ................................ ................. 11 
+7.4 Dichorionic diamniotic twins ................................ ................................ ...................... 11 
+7.5 Triamniotic triplet pregnancy – trichorionic, diachorionic or monochorionic ............... 11 
+7.6 Dichorionic triamniotic or monochorionic triamniotic triplet pregnancies .................... 11 
+7.7 Monoamniotic twin or triplet pregnancies ................................ ................................ ..12 
+8.0 Indications for referral to tertiary centre or fetal medicine specialist ........................... 12 
+9.0 Monitoring for fetal growth restriction ................................ ................................ ........ 12 
+10.0 Twin to Twin Transfusion Syndrome (TTTS) also known as Feto -Fetal Transfusion 
+Syndrome ................................ ................................ ................................ ................. 13 
+10.1 Quintero Classification of TTTS ................................ ................................ ................ 14 
+10.2 Management of confirmed TTTS ................................ ................................ ............... 15 
+11.0 Single fetal demise in multiple pregnancy ................................ ................................ .15 
+12.0 Further complications of multiple pregnancy ................................ ............................. 15 
+12.1 Hypertension and pre -eclampsia ................................ ................................ ............... 15 
+12.2 Screening for prete rm labour ................................ ................................ ..................... 16 
+12.3 Postpartum haemorrhage ................................ ................................ ......................... 17 
+13.0 Mode of birth ................................ ................................ ................................ ............. 17 
+14.0 Unscheduled attendances to the maternity unit including threatened preterm labour 18 
+15.0 Labour and birth ................................ ................................ ................................ ........ 18 
+15.1 Fetal monitoring in labour ................................ ................................ .......................... 20 
+15.1.1 Review of CTGs ................................ ................................ ................................ ........ 20 
+15.1.2 Management based on CTGs in twin pregnancies ................................ .................... 20 
+15.2 Analgesia ................................ ................................ ................................ .................. 21 
+15.3 Second stage ................................ ................................ ................................ ............ 21 
+15.4 Birth of second twin ................................ ................................ ................................ ...22 
+15.5 Third stage ................................ ................................ ................................ ................ 22 
+15.6 Anticipation and prevention of infant hypoglycaemia ................................ ................. 23 
+16.0 Postnatal care: special considerations where one, both or all babies have died. .....23 
+17.0 Audit ................................ ................................ ................................ ......................... 24 
+References ................................ ................................ ................................ ........................... 25 
+Appendix 1: Schedule of appointments for monochorionic diamniotic twins .......................... 26 
+Appendix 2: Schedule of appointments for dichorionic diamniotic twins ................................ 27 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 4 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+Appendix 3: Schedule of appointments for triamniotic triplet pregnancy – trichorionic, 
+dichorionic, monochorionic ................................ ................................ ........................ 28 
+Appendix 4: Schedule of appointments for dichorionic triamniotic or monochorionic 
+triamniotic triplet pregnancy ................................ ................................ ...................... 29 
+Appendix 5: Multiple Pregnancy Care Pathway ................................ ................................ ....30 
+Appendix 6: Points of discussion at 28 week appointment ................................ .................... 31 
+Appendix 7: Placental Histology ................................ ................................ ........................... 34 
+Appendix 8: Pathology Request Form – Multiple Pregnancies ................................ .............. 35 
+ 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 5 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+Multiple Pregnancy and Birth Guideline 
+ 
+1.0 Aim 
+ 
+This document provides guidance on the management of twin and higher order multiple 
+pregnancies in University Hos pitals Sussex (SRH&WH NHS Foundation Trust . 
+ 
+2.0 Scope 
+ 
+ Obstetricians 
+ Midwives 
+ Ultrasonographers 
+ Anaesthetists 
+ 
+3.0 Responsibilities 
+ 
+Midwives & obstetricians are expected: 
+ 
+ To access, read, understand and follow this guidance . 
+ To use their professional judge ment in the application of this guideline . 
+ 
+Management teams are expected: 
+ 
+ To ensure the protocol is reviewed as required in line with Trust and 
+National Recommendations . 
+ To ensure the protocol is accessible to all relevant staff . 
+ 
+4.0 Introduction 
+ 
+Multiple pregnancies are reported in 15. 4 per 1000 births in the United Kingdom in 2018 . 
+This is the third annual decline in multiple births from 16.1 per 1000 births in 2015 (Office for 
+National Statistics 2018 ). 
+ 
+Twin and higher order multiple pregnancies are associated with increased risk of maternal 
+and fetal complications : 
+ 
+ Complications for pregnan t women/people include hyperemesis, anaemia, 
+hypertensive disorders (PIH, pre -eclampsia, eclampsia ), APH, increased risk of 
+operative deliveries including caesarean section and postpartum haemorrhage. 
+ Fetal complications include first and second trimeste r pregnancy loss, prematurity 
+due to preterm birth, growth restriction, fetal death (one or both twins), neurological 
+impairment, increas ed risk of congenital anomalies. 
+ 
+RCOG Study Group recommends that single embryo transfer should be considered in 
+assisted conception and parents of high order multiple pre gnancies (≥ 3) should be 
+counselled and offered multi -fetal pregnancy reduction to twins in specialist centres. 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 6 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+ 
+In addition monochorionic twins (constituting a third of all twin pregnancies) are associated 
+with a risk (10 -15%) of twin -to-twin transfusion syndrome. 
+ 
+Furthermore monochorionic monoamniotic twins are associated with the risk of cord 
+entanglement which is further associated with increased perinatal mortality. 
+ 
+5.0 Definitions 
+ 
+ A monochorionic (MC) twin pregnancy is one in which both babies are 
+dependent on a single, shared placenta. 
+ A dichorionic pregnancy is where the babies are supported by separate 
+placentae. 
+ Monochorionic monoamniotic pregnancy is where the babies are in a single 
+amniotic sac and are dependent on a single placenta. 
+ Dichorio nic diamniotic pregnancy is where the babies are in separate amniotic 
+sacs and are supported by separate placentae. 
+ Conjoined twins are twins whose body parts are joined up with each other due 
+varying degrees of incomplete separation. 
+ Twin to twin transfus ion syndrome (TTTS) only occurs in monochorionic 
+monozygotic twins (identical) and is the result of transfusion of blood from one fetal 
+twin to another twin. 
+ 
+5.1 Abbreviations used within this guideline 
+ 
+PIH - Pregnancy Induced Hypertension APH - Antepar tum Haemorrhage 
+MC - monochorionic TTTS - Twin to twin transfusion syndrome 
+EPAC - Early Pregnancy Assessment 
+Clinic NT - nuchal translucency 
+TRAP - Twin reverse art erial perfusion 
+sequence TAPS - Twin Anaemia -Polycythaemia 
+Sequence 
+FFTS - Feto-fetal transfusion syndrome EFW - Estimated fetal weight 
+DVP - Deepest vertical pocket MCA - Middle cerebral arterial 
+PSV - Peak systolic velocity MVP - Maximum vertical pocket (MVP 
+MCDA - Mono chorionic diamniotic DCDA - Dichorionic diamniotic 
+CTG - Cardiot ocograph IVF - In vitro fertilisation 
+IUI - Intrauterine insemination FGR - Fetal Growth Restriction 
+PAPP -A - Low Pregnancy Associated 
+Plasma Protein 
+ 
+6.0 Diagnosis and determination of chorionicity & amnionicity 
+ 
+ The diagnosis of a multiple pregnanc y is usually made at the time of the dating 
+scan in the first trimester of pregnancy. Some pregnant women/people may have 
+this identified at viability scans in Early Pregnancy Assessment Clinic (EPA C) or 
+on routine scans after assisted conception. 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 7 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+ Estimat e gestational age should be from the largest baby in a twin or triplet 
+pregnancy to avoid the risk of estimating it from a baby with early growth 
+pathology. 
+ Assign nomenclature to babies (for example, upper and lower, or left and right) in a 
+twin or triple t pregnancy, and document this clearly in the pregnant 
+woman/person ’s notes to ensure consistency throughout pregnancy. 
+ 
+6.1 Ascertaining the chorionicity: 
+ 
+ Presence of a thick intertwin septum with detection of a “lambda sign” is indicative 
+of dichorion ic pregnancy, whereas a thin septum with single continuous placental 
+mass is observed in monochorionic pregnancies. 
+ If there is doubt in the diagnosis of chorionicity, the pregnant woman/person 
+should be referred to a specialist without delay, as chorion icity is best determined 
+before 14 weeks. 
+ If it is difficult to determine chorionicity, even after referral (for example, because 
+the pregnant woman/person has booked late in pregnancy), manage the 
+pregnancy as a monochorionic pregnancy until proved otherw ise. 
+ If a pregnant woman/person with a twin or triplet pregnancy presents after 14+0 
+weeks, determine chorionicity and amnionicity at the earliest opportunity by 
+ultrasound using all of the following: 
+- The number of placental masses . 
+- The presence of amniot ic membrane(s) and membrane thickness . 
+- The lambda or T -sign. 
+- Discordant fetal sex. 
+ A photographic record should be retained, in the case notes, of the ultrasound 
+appearances of the membrane attachment to the placenta. 
+ Separate placentae and discordant geni talia are also signs of dichorionicity, 
+particularly in the mid -trimester. 
+ 
+7.0 Antenatal care 
+ 
+Pregnant women/people with a multiple pregnancy must be offered consultant led care, and 
+given information specific to twin and triplet pregnancies at their fir st contact after diagnosis. 
+ 
+Antenatal clinical care for pregnant women/people with a twin or triplet pregnancy should be 
+provided by a nominated multidisciplinary team consisting of: 
+ 
+• A core team of named specialist obstetricians, specialist midwives a nd 
+sonographers, all of whom have experience and knowledge of managing twin and 
+triplet pregnancies . 
+ 
+• An enhanced team for referrals, which should include: 
+- A perinatal mental health professional 
+- A women’s health physiotherapist 
+- An infant feeding speciali st 
+- A dietitian. 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 8 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+ 
+However d o not routinely refer all pregnant women/people with a twin or triplet pregnancy to 
+the enhanced team but base the decision to refer on each pregnant woman/person ’s needs. 
+ 
+Information should be given on antenatal nutrition, anaem ia, support groups, parent 
+education, breastfeeding, antenatal and postnatal mental health, and signs and symptoms of 
+preterm labour. 
+ 
+Although the majority their appointments will be at the Twins Clinic, the community midwife 
+should also offer separate ap pointments. How frequently they attend the community midwife 
+appointments can be discussed with the midwife and scheduled to suit their individual 
+circumstances. 
+ 
+7.1 Planning for birth 
+ 
+All discussions should involve the pregnant woman/person with the m ultiple preg nancy and 
+their family or carers if appropriate. 
+ 
+Pregnant women/people should be given information on the risks and benefits of different 
+modes of birth to support them in planning their birth. This information is included on the 
+Multiple Birt h Care Pathway ( Appendix 5 ) which is placed in the antenatal handheld record 
+for the pregnant woman/person to access during the ir pregnancy. 
+ 
+Following discussion, the agreed planned place, timing and mode of bir th should be 
+documented in the health record, preferably on the Multiple Pregnancy Care Pathway. 
+ 
+ From 24 weeks in a twin or triplet pregnancy, discuss with the pregnant 
+woman/person (and her family members or carers, as appropriate) their plans and 
+wishe s for the birth of their babies. 
+ Provide information that is tailored to each pregnant woman/person ’s pregnancy, 
+taking into account their needs and preferences. Revisit these conversations 
+whenever clinic ally indicated and whenever they want to. 
+ Ensure t he following has been discussed (appendix 6 ) and documented by 28 
+weeks at the latest: 
+- Place of birth and the possible need to transfer in case of preterm birth . 
+- Timing and possible modes of birth . 
+- Analgesia during labour : offer an epidural to pregnant women/people with a 
+twin or triplet pregnancy who choose to have a vaginal birth. Explain that 
+this is likely to improve the chance of success and optimal timing of 
+assisted vaginal birth of all the babies and enables a quicker birth by 
+emergency caesarean section if needed . 
+- Analgesia during caesarean birth: Offer regional anaesthesia to pregnant 
+women/people with a twin or triplet pregnancy that are having a caesarean 
+section. 
+- Management of the third stage of labour and postpartum haemorrhage . 
+(see section 12.3) 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 9 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+ At 28 weeks intrapartum fetal heart monitoring should be discussed and 
+documented . It should be explained that: 
+- Recommendations on cardiotocography (CTG) are bas ed on evidence from 
+pregnant women/people with a singleton pregnancy because there is a lack 
+of evidence specific to twin pregnancy or preterm babies. 
+- It allows simultaneous monitoring of both babies. 
+- It might restrict their mobility. 
+- Normal traces show t he babies are coping well with labour; if traces are not 
+normal, there will be less certainty about the babies’ condition. 
+- It is normal to see changes to the fetal heart rate pattern during labour and 
+this does not necessarily mean there is a problem. 
+- Findings from the CTG are used to help make decisions during labour and 
+birth, but these will also be based on her wishes, their condition and that of 
+their babies. 
+ 
+Pregnant women/people with multiple pregnancies should have the following discussed: 
+ Spontaneo us preterm birth and planned preterm birth are associated with an 
+increased risk of admission to a neonatal unit. 
+ About 60 in 100 twin pregnancies result in spontaneous birth before 37 weeks. 
+ 75 in 100 triplet pregnancies result in spontaneous birth before 35 weeks. 
+ 
+For an uncomplicated multiple pregnancy , discuss and offer planned birth as follows, after a 
+course of antenatal corticosteroids has been considered. The risks and benefits of 
+corticosteroids should be discussed and this discussion documented i n line with the RCOG 
+infographic in the CG20013 Preterm birth risk pathway . 
+ 
+The timing of birth should be individualised in each preg nancy and include considerations of 
+safety such as avoiding induction at weekends , aiming for birth of: 
+ 
+Dichorionic diamniotic twin pregnanc ies: 
+ Planned birth from 37+0 weeks does not appear to be associated with an 
+increased risk of serio us neonatal a dverse outcomes. 
+ Continuing the pregnancy beyond 37+6 weeks increases the risk of fetal death. 
+ Aim for birth of dichorionic diamniotic twins at 37 weeks. 
+ 
+Monochorionic diamniotic twin pregnancies: 
+ Planned birth from 36 weeks does not appear to be associa ted with an increased 
+risk of serious neonatal adverse outcomes. 
+ Continuing the pregnancy beyond 36+6 weeks increases the risk of fetal death. 
+ Aim for birth of monochorionic diamniotic twins at 36 weeks. 
+ 
+Monochorionic monoamniotic twin pregnancy : 
+ Planne d birth between 32+0 and 33+6 weeks does not appear to be associated 
+with an increased risk of serious neonatal adverse outcomes. 
+ Their babies will usually need to be admitted to the neonatal unit and have an 
+increased risk of respiratory problems . 
+ Contin uing the pregnancy beyond 33+6 weeks increases the risk of fetal death. 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 10 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+ Aim for birth of monochorionic monoamniotic twins between 
+32+0 and 33+6 weeks . 
+ 
+Trichorionic triamniotic or dichorionic triamniotic triplet pregnancies: 
+ Continuing the pregnancy beyon d 35+6 weeks increases the risk of fetal death. 
+ Aim for birth of trichorionic triamniotic or dichorionic triamniotic triplet at 
+35 weeks . 
+ 
+Monochorionic triamniotic triplet pregnancy or a triplet pregnancy that involves a 
+shared amnion : 
+ Timing of birth w ill be decided and discussed with each pregnant woman /person 
+individually. 
+ 
+In twin pregnancy induction of labour would be advised as for singleton pregnancy (refer to 
+Induction of Labour Guideline provided that the first twin is cephalic and no other risk factors 
+are present. 
+ 
+Inform paediatric consultant of planned birth date for triplet pregnancies in order that 
+resources and equipment can be organised. 
+ 
+For Pregnant women/people who decline planned birth at the recommended timing, offer 
+weekly appointments with the specialist obstetrician. At each appointment, offer an 
+ultrasound scan and perform a ssessments of amniotic fluid level and Doppler of the umbilical 
+artery flow for each baby in addition to fortnightly fetal growth scans. They should be made 
+aware that this enhanced surveillance cannot guarantee against a poor outcome. 
+ 
+7.2 Screening, sc ans and antenatal appointments 
+ 
+ Booking bloods : blood group and antibody, screening for infections e.g. Hepatitis 
+B, rubella immunity, HIV, screening f or asymptomatic bacteriuria etc. should be 
+performed as for all other pregnant women /people . 
+ Be aware of higher incidence of anaemia; consider the need for iron 
+supplementation . 
+ Pregnant women/people should be counselled before screening by appropriately 
+trained personnel regarding the implications of high risk results and antenatal 
+diagnosis in multiple pre gnancies. 
+ Scan at 10 -13 weeks gestation for viability, accurate dating, chorionicity, major 
+congenital malformation and nuchal translucency. 
+ Screening for Down’s syndrome: First trimester combined test (nuchal 
+translucency (NT) scan with serum screening ) can be offered to women /people 
+with twin pregnancies that opt for screening. For triplets and higher order multiple 
+pregnancies the screening is offered with NT and maternal age only (FASP 2019). 
+ Refer pregnant women/people with a dichorionic and monocho rionic triplet 
+pregnancy who want to have screening for Down's syndrome, Edwards’ syndrome 
+and Patau’s syndrome , to a tertiary level fetal medicine centre. 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 11 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+ All triplet pregnancies should be referred to internal fetal medicine at point of 
+diagnosis. If not available then they should be referred to tertiary service directly at 
+the earliest opportunity . 
+ Pregnant women/people with a triplet pregnancy should be given information 
+about: 
+- The greater likelihood of Down's syndrome, Edwards’ syndrome and 
+Patau’s syn drome in triplet pregnancy . 
+- The different options for screening . 
+- The increased false positive rate of screening tests in triplet pregnancy . 
+- Their greater likelihood of being offered invasive test and higher chance of 
+complications of invasive testing . 
+- The physical risks and psychological implications in the short and long term 
+relating to selective fetal reduction. 
+ Anomaly ultrasound at 20/40 with extended views of the heart for monochorionic 
+twins and triplets . 
+ Full blood count should be performed at 20 w eeks and at 28 weeks. 
+ Anaesthetic and paediatric antenatal appointments should be organised as 
+necessary on an individual basis. 
+ 
+7.3 Monochorionic diamniotic twins ( appendix 1 ) 
+ 
+Monochorionic diamniotic twin preg nancies should have 11 antenatal appointments 
+scheduled with a healthcare professional from the core team. At least 2 of these 
+appointments should be with the specialist obstetrician . 
+ 
+7.4 Dichorionic diamniotic twins (appendix 2 ) 
+ 
+Dichorionic diamniotic twin pregnancies 8 antenatal appointments scheduled with a 
+healthcare professional from the core team. At least 2 of these appointments should be with 
+the specialist obstetrician . 
+ 
+7.5 Triamniotic triplet pregnancy – trichorionic, diachorionic or monochorionic 
+(appendix 3 ) 
+ 
+These pregnancies should have 9 antenatal appointments scheduled with a healthcare 
+professional from the core team. At least 2 of these appointments sho uld be with the 
+specialist obstetrician. 
+ 
+7.6 Dichorionic triamniotic or monochorionic triamniotic triplet pregnancies 
+(appendix 4 ) 
+ 
+These pregnancies should have 11 antenatal appointments scheduled with a health care 
+professional from the core team. At least 5 of these appointments should be with the 
+specialist obstetrician. 
+ 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 12 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+7.7 Monoamniotic twin or triplet pregnancies 
+ 
+These pregnancies should have individualised care from a tertiary centre. 
+ 
+8.0 Indications f or referral to tertiary centre or fetal medicine specialist 
+ 
+ Monochorionic monoamniotic twins . 
+ All triplet pregnancies . 
+ If there is doubt in the diagnosis of chorionicity . 
+ Pregnancies complicated by any of the following: 
+- Fetal weight discordance (of 25% o r more) and an EFW of any of the 
+babies below the 10th centile for gestational age. 
+- Fetal anomaly (structural or chromosomal). 
+- Feto-fetal transfusion syndrome (FFTS) or suspected Twin Anaemia -
+Polycythaemia Sequence (TAPS). 
+- Twin reverse arterial perfusion sequence (TRAP). 
+- Conjoined twins or triplets. 
+ Referral to a tertiary centre is also advised in the event of intra uterine fetal demise 
+of one of the monochorionic twins. 
+ 
+9.0 Monitoring for fetal growth restriction 
+ 
+ Do not use abdominal palpation or symphy sis–fundal height measurements to 
+monitor for fetal growth. 
+ Monitoring for fetal weight discordance using 2 or more biometric parameters and 
+amniotic fluid levels at each ultrasound scan . 
+ Measure the deepest vertical pocket (DVP) on either side of the amni otic 
+membrane. 
+ 
+ Commence 
+monitoring 
+fetal weight Interval of 
+scanning Formula for calculating estimated fetal 
+weight ( EFW ) discordance 
+Dichorionic 
+twins From 
+24 weeks At least 
+every 
+28 days (EFW larger fetus − EFW smaller fetus) 
+÷ EFW larger fetus x 100 for percentage 
+Trichorionic 
+triplets From 
+24 weeks At least 
+every 
+14 days (EFW largest fetus − EFW smallest fetus) 
+÷ EFW largest fetus and (EFW largest fetus 
+− EFW middle fetus) ÷ EFW largest fetus x 
+100 for percentage 
+Monochorionic 
+twins From 
+16 weeks At least 
+every 
+14 days (EFW larger fetus − EFW smaller fetus) ÷ 
+EFW larger fetus x 100 for percentage 
+Monochorionic 
+triplets From 
+16 weeks At least 
+every 
+14 days The named specialist obstetrician should 
+review the EFW of dichorionic and 
+monochori onic triplets and calculate EFW 
+discordance based on their understanding 
+of the implications of chorionicity. 
+ 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 13 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+ Increase diagnostic monitoring in the second and third trimesters to at least 
+weekly, and include Doppler assessment of the umbilical artery flo w for each baby, 
+if: 
+- There is an EFW discordance of 20% or more and/or 
+- The EFW of any of the babies is below the 10th centile for gestational age. 
+ Refer the pregnant woman/person to a tertiary level fetal medicine centre if there is 
+an EFW discordance of 25% or more and the EFW of any of the babies is below 
+the 10th centile for gestational age because this is a clinically important indicator of 
+selective fetal growth restriction. 
+ 
+10.0 Twin to Twin Transfusion Syndrome ( TTTS ) also known as Feto -Fetal 
+Trans fusion Syndrome 
+ 
+ All pregnant women/people with monochorionic pregnancies should be made 
+aware of the following ‘red flag’ warning signs of TTTS and asked to call Triage if 
+they becomes aware of any of them: 
+- Sudden abdominal distension . 
+- Abdominal pain . 
+- Sudden breathlessness . 
+- Inability to lie on her back . 
+- Reduced fetal movements (MBRRACE -UK, 2021 ) 
+ Staff should also be aware of the following clinical signs of TTTS: 
+- Rapidly increased abdominal girth . 
+- Inability to feel fetal parts on abdominal palpation . 
+- Ultrasound changes based on Quintero criteria (MBRRACE -UK, 2021 ) 
+ TTTS occurs in abou t 10-15% of monochorionic twin and triplet pregnancies and is 
+characterised by oligohydramnios in one sac and pol yhydramnios in the other with 
+discordant appearance of bladders and abnormal umbilical artery Doppler in 
+severe case s. Monitoring with ultrasound must be targeted to assess all these 
+parameters . Umbilical artery Dopplers from 24 weeks . 
+ Screening for fetal growth restriction or Twin -To-Twin Transfusion Syndrome 
+(TTTS) should not be offered in the first trimester. 
+ Offer diagnostic monitoring for TTTS to women with a monochorionic twin or triplet 
+pregnancy. Monitor with ultrasound every 14 days from 16 weeks until birth. 
+ Explain that the relative likelihood of each complication changes with advancing 
+gestation but that they can all occur at any gestational age. 
+ Offer pregnant women/people simultaneous monitoring for TTTS , fetal growth 
+restriction and advanced -stage twin anaemia polycythaemia sequence (TAPS) at 
+every ultrasound. 
+ Offer weekly ultrasound monitoring for TAPS from 16 weeks of pregnancy using 
+middle cerebral artery peak systolic velocity (MCA PSV) to Pregnant 
+women/people whose pregnancies are compl icated by: 
+- Feto-fetal transfusion syndrome that has been treated by fetoscopic laser 
+therapy or 
+- Selective fetal growth restriction (defined by an EFW discordance of 25% or 
+more and an EFW of any of the babies below the 10th centile for 
+gestational age). 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 14 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+ Measure the DVP depths of amniotic fluid on either side of the amniotic 
+membrane. 
+ Increase the frequency of diagnostic monitoring in the second and third trimester to 
+at least weekly if there are concerns about differences between the babies' 
+amniotic fluid level (a difference in DVP depth of 4 cm or more). Include Doppler 
+assessment of the umbilical artery flow for each baby. 
+ For pregnant women/people with a monochorionic pregnancy showing any of the 
+following: 
+- Cardiovascular compromise (such as fetal hydrop s or cardiomegaly) or 
+- Unexplained isolated polyhydramnios or 
+- Abnormal umbilical artery . 
+Perform ultrasound MCA PSV measurements to help detect advanced -stage TAPS, 
+and seek management advice immediately from a tertiary level fetal medicine 
+specialist. 
+ 
+Where TTTS is diagnosed early referral to the regional tertiary centre or the fetal 
+medicine specialist is indicated. 
+ 
+ Refer the pregnant women/people to a tertiary level fetal medicine centre if TTTS 
+is diagnosed, based on the following: 
+- The amniotic sac o f 1 baby has a DVP depth of less than 2 cm and 
+- The amniotic sac of another baby has a DVP depth of: 
+Oover 8 cm before 20+0 weeks of pregnancy or 
+o Over 10 cm from 20+0 weeks. 
+ Further assessment and monitoring by the woman’s named Consultant is 
+indicated if: 
+- The amniotic sac of 1 baby has a DVP depth in the normal range and 
+- The amniotic sac of another baby has a DVP depth of: 
+o Less than 2 cm or 
+o 8 cm or more. 
+ 
+ 10.1 Quintero Classification of TTTS 
+ 
+Stage I There is a discrepancy in amniotic fluid volume with oligohydramnios of a 
+maximum vertical pocket (MVP) ≤ 2 cm in one sac and polyhydramnios in 
+other sac (MVP ≥ 8 cm). The bladder of the donor twin is visible and 
+Doppler studies are normal . 
+Stage II The bladder of the donor twin is not visible (during leng th of examination, 
+usually around 1 hour) but Doppler studies are not critically abnormal . 
+Stage III Doppler studies are critically abnormal in either twin and are characterised 
+as abnormal or reversed end -diastolic velocities in the umbilical artery, 
+reverse flow in the Ductus venosus or pulsatile umbilical venous flow . 
+Stage IV Ascites, pericardial or pleural effusion, scalp oedema or overt hydrops 
+present . 
+Stage V One or both babies are dead . 
+
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 15 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+ 
+10.2 Management of confirmed TTTS 
+ 
+ Where TTTS is diagn osed at gestations below 26 weeks, fetoscopic laser ablation 
+is the intervention of choice. 
+ Anastomoses may be missed at laser ablation and TTTS can recur later in up to 
+14% of pregnancies treated by laser ablation. Thus surveillance should continue. 
+ Lase r ablation can be performed in mono - and dichorionic triplet pregnancies. 
+ Some pregnant women/people request termination of pregnancy when severe 
+TTTS is diagnosed and this should be discussed as an option. 
+ Another option is to offer selective termination of pregnancy using bipolar 
+diatherm y of one of the umbilical cords , with inevitable sacrifice of that baby. This 
+may be appropriate if there is severe hydrops fetalis in the recipient or evidence of 
+cerebral damage in either twin . 
+ 
+11.0 Single f etal demis e in multiple pregnancy 
+ 
+When counselling those pregnant women/people who have suffered from a twin demise , it is 
+important to use the same statistics on each site. The timing of fetal demise does not affect 
+the incidence of neurodevelopmental delay, co -twin death or preterm birth in the surviving 
+twin but is different between MCDA and DCDA sets. Fetal brain imaging using MRI is offered 
+to the surviving twin in MCDA sets. 
+ 
+Outcome for survivor twin following co -twin demise in 2nd & 3rd trimesters: 
+ MCDA DCD A 
+Death of survivor twin 15% 3% 
+Preterm birth 68% 54% 
+Neurodevelopmental delay 26% 2% 
+Hillman et al Obstet Gynecol 2011;118:928 -40 
+ 
+ When a twin is lost during the first trimester there is no influence on the outcome of 
+the pregnancy. 
+ Where the fet al demise occurs after 12 weeks, the continuing pregnancy should 
+continue to be treated as a multiple pregnancy (i.e. scan and appointment 
+schedules). 
+ Even though there is risk to the surviving twin rapid birth is usually unwise unless 
+later in pregnanc y (>37 weeks)/CTG abnormality/abnormal MCA Doppler. 
+ 
+12.0 Further complications of multiple pregnancy 
+ 
+12.1 Hypertension and pre -eclampsia 
+ 
+Advise pregnant women/people that they should take Aspirin 150mg with food at night from 
+12 weeks until 36 weeks or birth if before 36 weeks they have any of the following additional 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 16 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+moderate risk factors for hypertension as multiple pregnancy compounds the risk of 
+hypertension . 
+ First Pregnancy . 
+ Age 40 or over . 
+ Pregnancy interval of more than 10 years . 
+ BMI of 35 or ov er at first visit . 
+ Family history of pre -eclampsia . 
+ 
+Additional moderate risk factors for recommending aspirin f rom Saving Babies Lives Care 
+Bundle: 
+ Assisted conception (IVF/ IUI) . 
+ Current smoker . 
+ 
+High risk factors for hypertension are: 
+ Chronic hypertensi on. 
+ Previous hypertensive disease during pregnancy – gestational hypertension and 
+pre-eclampsia . 
+ Chronic kidney disease . 
+ Autoimmune disease ie lupus or antiphospholipid syndrome . 
+ Type 1 or Type 2 Diabetes . 
+ 
+Additional high risk factors for recommending aspirin from Saving Babies Lives Care 
+Bundle: 
+ Low Pregnancy Associated Plasma Protein (PAPP -A) screening blood test . 
+ Previous Fetal Growth Restriction ( FGR) - either birth weight <2.5kg over 
+37 week’s gestation or <10th centile). 
+ Previous stillbirth . 
+ 
+For GP letter to pre scribe aspirin prophylaxis see A ppendix 3 of CG1198 Management of 
+hypertensive disorders of pregnan cy. 
+ 
+Measure blood pressure and test urine for proteinuria to screen for hypertensive disorders at 
+each antenatal appointment in a twin and triplet pregnancy. 
+ 
+12.2 Screening for preterm labour 
+ 
+ Explain to pregnant women/people and their family members o r carers (as 
+appropriate) that: 
+- They have a higher risk of spontaneous preterm birth than women with a 
+singleton pregnancy . 
+- This risk is further increased if they have other risk factors, such as a 
+spontaneous preterm birth in a previous pregnancy . 
+- They should be made aware of the signs and symptoms of preterm labour 
+and to call Triage if they experience any of these symptoms. 
+ They should be informed of the benefit of targeted corticosteroids. However do not 
+use single or multiple untargeted (routine) cours es of corticosteroids in twin or 
+triplet pregnancy as there is no benefit. 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 17 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+ Do not use fetal fibronectin testing alone to predict the risk of spontaneous preterm 
+birth in twin and triplet pregnancy. 
+ Do not use home uterine activity monitoring to predict th e risk of spontaneous 
+preterm birth in twin and triplet pregnancy. 
+ Do not offer intramuscular progesterone to prevent spontaneous preterm birth in 
+women with a twin or triplet pregnancy. 
+ Do not offer the following interventions (alone or in combination) ro utinely to 
+prevent spontaneous preterm birth in women with a twin or triplet pregnancy: 
+- Arabin pessary . 
+- Bed rest . 
+- Cervical cerclage . 
+- Oral tocolytics. 
+ 
+12.3 Postpartum haemorrhage 
+ 
+ Start assessing the risk of postpartum haemorrhage in pregnant women/peopl e 
+with a twin or triplet pregnancy in the antenatal period and continue throughout 
+labour and the third stage. 
+ Offer each pregnant woman/person an individualised assessment of their risk of 
+postpartum haemorrhage and explain that multiple pregnancy is a ri sk factor for 
+increased blood loss at birth. 
+ By 28 weeks of pregnancy, discuss options for managing the third stage of labour 
+with pregnant women/people with a twin or triplet pregnancy. 
+ Do not offer physiological management of the third stage to pregna nt 
+women/people with a twin or triplet pregnancy. 
+ Offer pregnant women/people with a twin or triplet pregnancy active management 
+of the third stage. Explain that it is associated with a lower risk of postpartum 
+haemorrhage and/or blood transfusion. 
+ Conside r active management of the third stage with additional uterotonics for 
+pregnant women/people who have 1 or more risk factors (in addition to a twin or 
+triplet pregnancy) for postpartum haemorrhage. 
+ By 28 weeks of pregnancy, discuss with women /people who ha ve a twin or triplet 
+pregnancy the potential need for blood transfusion, including the need for 
+intravenous access. Document this discussion in their notes. 
+ 
+13.0 Mode of birth 
+ 
+Explain to pregnant women/people with an uncomplicated twin pregnancy planning their 
+mode of birth, that giving birth after 32 weeks: 
+ Planned vaginal birth and planned caesarean section are both safe choices for 
+them and their babies if all of the following apply: 
+- The pregnancy remains uncomplicated and has progressed beyond 32 
+weeks. 
+- There are no obstetric contraindications to labour . 
+- The first baby is in a cephalic (head -first) presentation . 
+- There is no significant size discordance between the twins. 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 18 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+ More than a third of pregnant women/people who plan a vaginal birth go on to 
+have a caesarean section. 
+ Almost all pregnant women/people who plan a caesarean section do have one, but 
+a few will have a vaginal birth before caesarean section can be carried out. 
+ A small number of pregnant women/people who plan a vaginal birth will need a n 
+emergency caesarean section to deliver the second twin after vaginal birth of the 
+first twin. 
+ 
+Offer a caesarean section to pregnant women/people with a monochorionic monoamniotic 
+twin pregnancy : 
+ At the time of planned birth (between 32+0 and 33+6 weeks) or 
+ After any complication is diagnosed in her pregnancy requiring earlier birth or 
+ If they are in established preterm labour, and gestational age suggests there is a 
+reasonable chance of survival of the babies (unless the first twin is close to vagin al 
+birth and a senior obstetrician advises continuing to vaginal birth). 
+ 
+Offer a caesarean section to pregnant women/people with a triplet pregnancy : 
+ At the time of planned birth (35 weeks) or 
+ After any complication is diagnosed in their pregnancy requir ing earlier birth or 
+ If they are in established preterm labour, and gestational age suggests there is a 
+reasonable chance of survival of the babies. 
+ 
+14.0 Unscheduled attendances to the maternity unit including threatened 
+preterm labour 
+ 
+ All pregnant w omen/people with multiple pregnancies who attended the unit 
+outside of scheduled appointments should be assessed promptly by a senior 
+obstetrician. 
+ A clear plan should be documented for monitoring in labour, mode of birth and 
+when referral is required, pa rticularly in extremely preterm labour . 
+ There should be senior review at least daily. 
+ Where necessary ensure prompt review by senior neonatologist. 
+ All clinical staff working within a maternity triage or emergency assessment area 
+should be aware of the pat hophysiology and warning signs of extreme preterm 
+birth and of tw in-to-twin transfusion syndrome (see section 10.0 Twin to Twin 
+Transfusion ). 
+ Consider reduced fetal movements in a twin pregnancy as a ‘red -flag warning sig n’ 
+of TTTS, in addition to rapid maternal abdominal distension, abdominal pain, and 
+acute dyspnoea (MBRRACE -UK 2021 ) 
+ Consideration of corticosteroids and magnesium sulphate should be made in line 
+with CG20013 Preterm birth risk pathw ay. 
+ 
+15.0 Labour and birth 
+ 
+ All pregnant women/people with a multiple pregnanc y should be advised to give 
+birth on the Labour Ward . 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 19 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+ They should be assessed promptly by a senior obstetrician on admission. 
+ Ensure accurate estimation of gestational age when a pregnant woman/person 
+presents with threatened or established extreme preterm labour. This enables the 
+correct risk assessment for potential neonatal survival, and therefore directs the 
+optimal multidisciplinary care bundle. 
+ Intrapartum care should be provided by a multidisciplinary team of obstetricians 
+and midwives who have experience and knowledge of multiple pregnancies. 
+ A partogram should be started and completed for all pregnant women/people with 
+multiple births who are in labour. 
+ Offer caesarea n section to pregnant women/people if the first twin is not cephalic 
+at the time of planned birth. 
+ Offer caesarean section to pregnant women/people in established preterm labour 
+between 26 and 32 weeks if the first twin is not cephalic. 
+ Offer an individual ised assessment of mode of birth to pregnant women/people in 
+suspected, diagnosed or established preterm labour before 26 weeks. Take into 
+account the risks of caesarean section and the chance of survival of the babies. 
+ Where birth is anticipated between 2 2+0 and 26+6 weeks ensure prompt 
+discussions between the parents, obstetric and neonatal teams to guide whether 
+active resuscitation or palliative care should be undertaken. Care of the pregnant 
+woman/person and their baby/babies should reflect th eir wishe s and values and 
+those of their partner, informed and supported by joint discussion with obstetric 
+and neonatal professionals. 
+ Conversations with parents must be clearly documented and agreed management 
+plans carefully and clearly communicated between pro fessionals and staff shifts. 
+ The decisions on management should be regularly reviewed before and after birth 
+in conjunction with the parents and the plans reconsidered if the risk for the 
+baby/babies changes or if parental wishes change. Redirection of ca re, in the best 
+interests of the baby, should be discussed with the parents if deterioration occurs 
+despite maximum intensive care. 
+ Following spontaneous birth of Twin 1 at less than 24 weeks consider delaying the 
+birth of the surviving second twin, if the re are no contr aindications such as 
+infection, fetal compromise, bleeding or coagulopathy. 
+ Counsel parents prior to the birth of Twin 1, regarding the possible option of 
+delayed birth of Twin 2 including the maternal risks as well as the risk of Twin 2 
+being born at the extremes of prematurity. 
+ In cases where delayed birth of Twin 2 is an option, manage the pregnancy as 
+high risk in a tertiary centre, with close monitoring for signs of infection, clotting 
+abnormalities and fetal growth (MBRRACE -UK, 2021 ) 
+ The on -call obstetric consultant and on-call anaes thetic and paediatric teams 
+should be informed of admission in labour. 
+ IV access, FBC and Group and Save should be obtained early in labour so that 
+prompt blood transfusion and intravenous fluids can be given if needed . 
+ 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 20 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+15.1 Fetal monitoring in labour 
+ 
+ Perform a portable ultrasound scan when establis hed labour starts, to confirm 
+which twin is which, the presentation of each twin, and to locate the fetal hearts. 
+ For pregnant women/people between 23 +0 and 25 +6 weeks of pregnancy who are 
+in established labour, involve a senior obstetrician in discussions with the pregnant 
+woma n/person and their family members or carers about how to monitor the fetal 
+heart rates. 
+ Offer continuous CTG to pregnant women/people with a twin pregnancy who are in 
+established labour and are more than 26 weeks pregnant. Intermitte nt auscultation 
+should not be offered. Ensure: 
+- A dual channel CTG monitor is used to allow simultaneous monitoring of 
+both fetal hearts. 
+- Document on the CTG and in the clinical records which CTG trace belongs 
+to which baby. 
+- Monitor the maternal pulse elec tronically and display it simultaneously on 
+the same CTG trace. 
+- Consider separating the fetal heart rates by 20 beats/minute if there is 
+difficulty differentiating between them. 
+- Consider fetal scalp electrode on first twin once membranes have been 
+ruptured . 
+ 
+15.1.1 Review of CTGs 
+ 
+Classify and interpret cardiotocography in line with Fetal Monitoring Guideline taking into 
+accou nt that: 
+ 
+ Twin pregnancy should be considered a fetal clinical risk factor when classifying a 
+CTG trace as ‘abnormal’ versus ‘non -reassuring’. 
+ Fetal scalp stimulation should not be performed in twin pregnancy to gain 
+reassurance after a CTG trace that is c ategorised as ‘pathological’. 
+ Carry out systematic assessments of both CTGs at least hourly, and more 
+frequently if there are concerns. 
+- Document which CTG trace belongs to which baby. 
+- Be aware of the possibility of monitoring the same baby twice. At each C TG 
+review, ensure that twin synchronicity is not occurring. 
+ 
+15.1.2 Management based on CTGs in twin pregnancies 
+ 
+If abdominal monitoring is unsuccessful or there are concerns about synchronicity of the fetal 
+hearts: 
+ Involve a senior obstetrician and senio r midwife. 
+ Apply a fetal scalp electrode to the first baby (only after 34 weeks and if there are 
+no contraindications) while continuing abdominal monitoring of the second baby. 
+ Perform a bedside ultrasound scan to confirm both fetal heart rates. 
+ If monito ring remains unsatisfactory, consider a caesarean section. 
+ 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 21 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+If the cardiotocograph trace is categorised as ‘ suspicious ’ in the first baby during 
+established labour: 
+ Involve the senior obstetrician and senior midwife . 
+ Correct any reversible causes . 
+ Apply a fetal scalp electrode to the first baby (only after 34 weeks and if there are 
+no contraindications) while continuing abdominal monitoring of the second baby. 
+ 
+If the cardiotocograph trace is categorised as ' pathological ' in the first baby during 
+establish ed labour : 
+ Involve the senior obstetrician and senior midwife. 
+ Discuss with the pregnant women/people and their family members or carers the 
+possible use of fetal blood sampling of the first baby from 34 weeks if the benefits 
+are likely to outweigh the pot ential risks. They should be made aware that if a 
+blood sample cannot be obtained then they are likely to need a caesarean section. 
+ If the results of fetal blood sampling are not available within 20 minutes or fetal 
+blood sampling is contraindicated, offer an immediate caesarean. 
+ 
+If the CTG trace is categorised as ‘ pathological ’ in the first baby during the second stage of 
+labour : 
+ Involve the senior obstetrician and senior midwife. 
+ Assess whether an assisted vaginal birth is an option. 
+ If vaginal birth is not an option or cannot be achieved within 20 minutes, offer an 
+immediate caesarean section. 
+ 
+If the CTG trace of the second baby is categorised as ' suspicious ’ or ‘pathological ’ during 
+established labour before the first baby is born : 
+ Involve the senior o bstetrician and senior midwife. 
+ If vaginal birth of the second baby cannot be achieved within 20 minutes, discuss 
+performing a caesarean section with the pregnant woman/person and their family 
+members or carers. 
+ 
+Acute TTTS can occur in labour in MCDA twin s; therefore a low threshold for CS is 
+advisable if any CTG abnormalities occur . 
+ 
+15.2 Analgesia 
+ 
+Choice of analgesia should be discussed with the pregnant woman/person and taking no te of 
+their preference and should have been discussed antenatally at 28wee ks. 
+ 
+15.3 Second stage 
+ 
+ The anaesthetist, theatre team and labour ward coordinator should be informed 
+when the pregnant woman/person reaches second stage . 
+ Second stage events must be clearly documented by the clinician leading the birth. 
+ The f irst tw in may be delivered by a midwife, as for singleton birth, with the 
+obstetric registrar / consultant present in the room. 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 22 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+ Syntocinon infusion (r efer to Induction of Labour Guideline ) should be ready for 
+possible uterine inertia following birth of the first twin . 
+ 
+15.4 Birth of second twin 
+ 
+ Active management of the birth of tw in 2 has been reported as the major factor in 
+reducing morbidity and t he need for caesarean section. There is no definite 
+evidence about safe interval between the birth of first and second twins when there 
+is no suspected fetal compromise ; but there are reports of an increase in poor 
+outcome for the second twin if delayed beyond 45 minutes. 
+ Continuous electronic fetal monitoring should be continued and if there is 
+‘suspicious’ or ‘pathological’ CTG trace, and vaginal birth cannot be achieved 
+within 20 minutes, discuss performing a caesarean section with the pregnant 
+woman/person and their family members or carers. 
+ After birth of the first twin, a longitudinal lie should be maintained in the second 
+twin by holding the abdomen until the presenting part is fixed in the pelvis. 
+ The lie of the second twin should be assessed, by a senior experienced 
+practitioner , using abdominal palpation, vaginal examination if necessary and /or a 
+portable scan . 
+ If not longitudinal, the lie should be corrected either by external cephalic version 
+or by internal podalic version . Both of these manoeuvres are more successful 
+with epidural analgesia. 
+ Should birth not be imminent after 30 minutes, consider transferring the pregnant 
+woman/person to theatre to avoid unnecessar y delay of twin 2. 
+ A Syntocinon infusion can be used to augment uterine activity once the lie is 
+longitudinal if contractions are inadequate. This infusion should be made up and 
+ready to administer required in the room. 
+ Syntocinon should only be used if clinically indicated and not as a routine 
+procedure (MBRRACE -UK, 2021 ). 
+ When longitudinal lie and regular contractions have been established, pushing 
+should be recommenced when the presenting part is visible or there is an urge to 
+push . 
+ Artificial rupture of membranes should be performed only when the presenting part 
+is fixed in the pelvis. 
+ If breec h presentation – birth should be by a practitioner competent in breech 
+births/ obstetric registrar . The obstetric consultant should be informed or present. 
+ 
+15.5 Third stage 
+ 
+ Active management of third stage should be strongly advised . 
+ Syntocinon infu sion 40 units in 500ml 0.9%NaCl is recommended following birth of 
+the second twin, to be infused over 4 hours at 125mls/hr, to prevent uterine atony. 
+ Delayed/ deferred cord clamping is recommended by 1 -3 minutes after birth to 
+allow placental transfusion, un less the need for neonatal resuscitation is 
+recognised. The timing of cord clamping does not appear to have a major impact 
+on blood loss at the time of birth. Ensure that the cords are clearly differentiated, 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 23 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+for example one clamp at the cut end of the cor d for twin 1 and two clamps for 
+twin 2. 
+ Consider double clamping the cord to allow umbilical cord blood gases to be 
+sampled. Ensure that blood gas samples are correctly labelled for each baby. 
+ 
+15.6 Anticipation and prevention of infant hypoglycaemia 
+ 
+Neonatal Hypoglycaemia should be considered to establish risk factors for the babies in line 
+with Guideline for Neonatal Hypoglycaemia Including Reluctant Feeder . 
+ 
+16.0 Postnatal care : special considerations where one , both or all babies 
+ have died. 
+ 
+ If there has been a fetal loss of either or both twins or all triplets the Bereavement 
+Care Pathway should be followed as well as routine postnatal care (as ap propriate ) 
+and referral made to Birth Afterthoughts if wanted - CG1120 Intrauterine death 
+guideline 
+ For placental histology, ensure the pathologist is provided with a complete clinical 
+history when requesting post -mortem or placental examination. In cases of twin 
+pregnancy, this should be clea rly indicated on the request, including chorionicity and 
+details of the other twin should the examination be requested separately or if there is 
+a surviving sibling. 
+ Discussion regarding placental examination should be fully documented. 
+ If one twin survive s, ensure community midwives visiting in the community are 
+aware of the stillbirth or NND of the other twin. 
+ If indicated a six week follow -up an Obstetric Consultant appointment should be 
+made to discuss events and future pregnancies. This should be made a joint 
+Obstetric and Neonatal appointment if needed. (MBRRACE -UK, 2021 ). 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 24 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+17.0 Audit 
+ 
+Reasons for not adhering to this guideline must be documented in the patient’s notes 
+
+ Pregnant women/people with a multiple pregnancy have the chorionicity and 
+amnionicity of their pregnancy determined using ultrasound and recorded between 
+11+2 weeks and 14+1 weeks. 
+ 
+ Pregnant women/people with a multiple pregnancy have their fetuses labelled 
+using ultrasound and recorde d between 11+2 weeks and 14+1 weeks. 
+ 
+ Pregnant women/p eople with a multiple pregnancy are cared for by a 
+multidisciplinary core team. 
+ 
+ Pregnant women/people with a multiple pregnancy have a care plan that specifies 
+the timing of appointments with the multidisciplinary core team appropriate for the 
+chorionici ty and amnionicity of their pregnancy . 
+ 
+ Pregnant women/people with a multiple pr egnancy are monitored for fetal 
+complications according to the chorionicity and amnionicity of their pregnancy. 
+ 
+ Pregnant women/people with a higher -risk or complicated multiple pregnancy have 
+a consultant from a tertiary level fetal medicine centre involved in their ca re. 
+ 
+ Pregnant women/people with a multiple pregnancy have a discuss ion by 24 weeks 
+with one or more members of the multidisciplinary core team about the risks, signs 
+and symptoms of preterm labour and possible outcomes of preterm birth. 
+ 
+ Pregnant women/people with a multiple pregnancy have a discussion by 28 weeks 
+with one or more members of the multidisciplinary core team about the timing of 
+birth and possible modes of birth so that a birth plan can be agreed. 
+
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 25 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+References 
+
+Confidential Enquiry into Maternal and Child Health. (2009) Perinatal Mortality 2007. 
+London: CEMACH. 
+ 
+Crowther CA, (1999) Multiple Pregnancy in High Risk Pregnancy Management Options 2nd 
+editio n. Edited by James JK, Steer PJ, Weiner CP, Gonik B. London. WB Saunders. 
+ 
+Hillman et al (2011) 118:928 -40. Single intrauterine fetal death in twin pregnancies is 
+associated with increased risk of preterm birth and abnormal antenatal brain imaging in the 
+survival co -twin. BJOG Obstet Gynecol. 
+ 
+MBRRACE -UK 2021 Perinatal Confidential Enquiry: Stillbirths and Neonatal Deaths in Twin 
+Pregnancies. 
+ 
+National Institute for Health and Clinical Excellence. (2011) Caesarean Section. London: 
+NICE. 
+ 
+National Institute for Health and C linical Excellence. (2011) Multiple Pregnancy: The 
+Management of Twin and Triplet Pregnancies in the Antenatal Period. Scope of Guideline. 
+London: NICE. 
+ 
+NICE (2019) NG137 Twin and Triplet Pregnancy 
+ 
+NHS Litigation Authority. (2009) NHS Litigation Authority Study of Stillbirth Claims. London: 
+NHSLA. 
+ 
+RCOG (2016) green top guideline, no 51 
+ 
+Royal College of Obstetricians and Gynaecologists. (2006) Consensus Expert Review. 
+Multiple Pregnancy. London: RCOG. 
+ 
+Royal College of Obstetricians and Gynaecologists. (2008) Management of Monochorionic 
+Twin Pregnancy. London: RCOG. 
+ 
+RCOG (2022) Antenatal Corticosteroids to Reduce Neonatal Morbidity (Green -top Guideline 
+No. 7) | RCOG 
+ 
+Taylor M & Fisk N, (2000) Prenatal Diagnosis in Multiple Pregnancy. Baillieres Best Pract 
+Res Clin Obstet Gynaecol ., 14(4):663 -75. 
+ 
+TOG – Controversy in multiple pregnancy . 
+ 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 26 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+Appendix 1: Schedule of appointments for monochorionic diamniotic twins 
+ 
+ 11 antenatal appointments scheduled with a healthcare professional from the core team . 
+ At least 2 of these appointments s hould be with the specialist obstetrician . 
+11+2 – 14+1 weeks  Scan 
+ Determine chorionicity . 
+ Appointment with professional from Core Team . 
+ Screening information given . 
+ Consider iron supplementation . 
+ Commence on aspirin if high risk of hypertension . 
+16 weeks  Scan 
+ Appointment with Fetal Medicine Consultant. 
+ General and specific risks for this pregnancy discussed 
+including ‘red flag’ TTTS signs . MBRRACE -UK 2021 
+18 weeks  Scan 
+ Appointment with consultant . 
+20 weeks  Anomaly scan 
+ Appointment with a member of Core Team . 
+ FBC 
+22 weeks  Scan 
+ Appointment with a member of Core Team 
+24 weeks  Scan 
+ Appointment wit h a member of Core Team . 
+ Discuss plan for birth, risks & signs of preterm labour . 
+26 weeks  Scan 
+ Appointment with a member of Core Team . 
+28 weeks  28 week scan 
+ FBC 
+ Appointment with a member of Core Team . 
+ Discuss: 
+- Risks & signs of preterm labour 
+- Place and timing of birth 
+- Possible risk of transfer if very preterm 
+- Risk of admission to neonatal unit 
+- Analgesia 
+- Monitoring of fetal hearts 
+30 weeks  Scan 
+ Appointment with a member of Core Team . 
+32 weeks  Scan 
+ Appointment with a member of Core Team . 
+34 weeks  Scan 
+ Appointment with a member of Core Team . 
+Offer birth at 36 weeks . 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 27 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+Appendix 2: Schedule of appointments for dichorionic diamniotic twins 
+ 
+ 8 antenatal appointments scheduled with a healthcare professional from the core team . 
+ At least 2 of these appointme nts should be with the specialist obstetrician . 
+11+2 – 14+1 weeks  Scan 
+ Determine chorionicity . 
+ Appointment with professional from Core Team . 
+ Screening information given . 
+ Consider iron supplementation . 
+ Commence on aspirin if high risk of hypertension . 
+16 weeks  Appointment with Consultant . 
+ General and specific risks for this pregnancy discussed. 
+MBRRA CE-UK 2021 
+20 weeks  Anomaly scan 
+ Appointment with a member of Core Team . 
+ FBC 
+24 weeks  Scan 
+ Appointment with a member of Core Team . 
+ Discuss plan for birth, risks & signs of preterm labour . 
+28 weeks  Scan 
+ FBC 
+ Appointment with a member of Core Team . 
+ Discu ss: 
+- Risks & signs of preterm labour 
+- Place and timing of birth 
+- Possible risk of transfer if very preterm 
+- Risk of admission to neonatal unit 
+- Analgesia in labour and with caesarean section 
+- Intrapartum monitoring of fetal hearts . 
+32 weeks  Scan 
+ Appointment w ith a member of Core Team . 
+34 weeks  Appointment with a member of Core Team . 
+36 weeks  Scan 
+ Appointment with a member of Core Team . 
+Offer birth at 37 weeks . 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 28 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+Appendix 3: Schedule of appointments for triamniotic triplet pregnancy – 
+trichorionic, dichorion ic, monochorionic 
+ Antenatal appointments scheduled with a healthcare professional from the core team . 
+ At least 2 of these appointments should be with the specialist obstetrician . 
+ 
+11+2 – 14+1 weeks  Scan 
+ Determine chorionicity . 
+ Appointment with profession al from Core Team . 
+ Screening information given . 
+ Consider iron supplementation . 
+ Commence on aspirin if high risk of hypertension . 
+16 weeks  Consultant appointment . 
+ General and specific risks for this pregnancy discussed. 
+MBRRACE -UK 2021 
+20 weeks  Anomaly scan 
+ Appointment with a member of Core Team . 
+ FBC 
+24 weeks  Scan 
+ Appointment with a member of Core T eam. 
+ Discuss plan for birth, risks & signs of preterm labour . 
+26 weeks  Scan 
+ Appointment with a member of Core Team . 
+28 weeks  Scan 
+ Appointment with a member of Core Team . 
+ FBC 
+ Discuss: 
+- Risks & signs of preterm labour 
+- Place and timing of birth 
+- Possible ri sk of transfer if very preterm 
+- Risk of admission to neonatal unit 
+- Analgesia with caesarean section 
+- Monitoring of fetal hearts . 
+30 weeks  Scan 
+ Appointment with a member of Core Team . 
+32 weeks  Scan 
+ Appointment with a member of Core Team . 
+34 weeks  Scan 
+ Appo intment with a member of Core Team . 
+ Offer birth at 35 weeks . 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 29 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+Appendix 4: Schedule of appointments for dichorionic triamniotic or 
+monochorionic triamniotic triplet pregnancy 
+ 11 antenatal appointments scheduled with a healthcare professional from the core team . 
+ At least 5 of these appointments should be with the specialist obstetrician . 
+11+2 – 14+1 weeks  Scan 
+ Determine chorionicity . 
+ Appointment with professional from Core Team . 
+ Screening information given . 
+ Consider iron supplementation . 
+ Commence on aspir in if high risk of hypertension . 
+16 weeks  Scan 
+ Consultant appointment. 
+ General and specific risks for this pregnancy discussed. 
+MBRRACE -UK 2021 
+18 weeks  Scan 
+ Appointment with a member of Core Team . 
+20 weeks  Anomaly scan 
+ Appointment with a member of Core Team . 
+ FBC 
+22 weeks  Scan 
+ Appointment with a member of Core Team . 
+24 weeks  Scan 
+ Appointment wi th a member of Core Team . 
+ Discuss plan for birth, risks & signs of preterm labour . 
+26 weeks  Scan 
+ Appointment with a member of Core Team . 
+28 weeks  Scan 
+ Appointment with a member of Core Team . 
+ FBC 
+ Discuss: 
+- Risks & signs of preterm labour 
+- Place and timing of birth 
+- Possible risk of transfer if very preterm 
+- Risk of admission to neonatal unit 
+- Analgesia with caesarean section 
+- Monitoring of fetal hearts . 
+30 weeks  Scan 
+ Appointment with a member of Core Team . 
+32 weeks  Scan 
+ Appointment with a member of Core Team . 
+34 weeks  Scan 
+ Appointment with a member of Core Team . 
+ Offer birth at 35 weeks. 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 30 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+Appendix 5: Multiple Pregnancy Care Pathway 
+ 
+Type of multiple pregnancy 
+ 
+Dichorionic diamniotic (DCDA)  
+Monochorionic diamniotic (MCDA)  
+Monochorionic monoamniotic (MCMA)  
+Multiple Pregnancy leaflet given  
+Higher order multiples (specify): Gravida: Parity: 
+ 
+EDD: 
+ 
+Previous LSCS: Yes No 
+ 
+Named Consultant: 
+Any medical / obstetric risk factors / complications in this pregnancy? Yes / No 
+If yes, give details: 
+ 
+Information for pregnant women/people on the 
+risks and benefits of different modes of birth Please complete or Affix Patient Label 
+ 
+Unit No: ………………………………………… 
+ 
+NHS No: ……………………………………….. 
+ 
+Surname ……………………………………….. 
+ 
+Foren ames …………………………………….. 
+
+Multiple Pregnancy Care Pathway 
+PROPOSED ANTENATAL MANAGEMENT PLAN 
+Booked for Consultant -led care  
+DCDA: from 24 weeks at least every 28 days. Scans booked  
+MCDA: from 16 weeks at least every 14 days. Scans booked  
+MCMA: from 16 weeks at least every 14 days / 
+Fetal Med icine Consultant plan Scans booked  
+TCTA: from 24 weeks at least every 14 days / Fetal medicine 
+Consultant plan Scans booked  
+MCTA: from 16 weeks at least every 14 days / Fetal medicine 
+Consultant plan Scans booked  
+Antenatal cl inic appointments schedule 
+Anaesthetic referral required  Date of appt: 
+Tertiary Unit referral required  Date of appt: 
+Offered twin antenatal class  
+PROPOSED LABOUR MANAGEMENT 
+Agreed mode of birth : Vaginal  Caesarean  
+IOL Date: Elective CS Date: 
+(DCDA: aim for 37/40, MCDA: aim for 36/40, MCMA: deliver between 32+ 0 - 33+6/40. Triplets aim for 35/40 ) 
+Agreed place of birth: 
+Fetal monitoring: 
+Preferred pain relief: 
+Date plan made: Name, GMC no. and signature of Consultant: 
+ 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 31 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+Please read this information in conjunction with information on Family Assist on ‘Multiple Pregnancy’, 
+and discuss any q uestions you may have with your hospital doctor . From 24 -28 weeks your doctor or 
+midwife will begin to discuss your plans and wishes for the birth of your babies. 
+Appendix 6: Points of discussion at 28 week appointment 
+ 
+The following can be copy and pasted with non -relevant parts deleted by the 
+obstetrician as appropriate into consultation on the woman’s Medway : 
+ Discussion 
+Points Benefits / Risks 
+Risk of 
+Preterm 
+Birth  Spontaneous preterm birth (birth be fore 37 weeks) is associated with an increased risk 
+of admission to a neonatal unit. 
+ About 60 in 100 twin pregnancies result in spontaneous birth before 37 weeks. 
+ 75 in 100 triplet pregnancies result in spontaneous birth before 35 weeks. 
+ Discuss signs and symptoms of preterm labour and to call Triage if any concerns. 
+Mode of 
+Birth  Planned vaginal birth for twins and planned caesarean section are both safe choices if 
+your pregnancy is uncomplicated & is more than 32 weeks, the first twin is head down, 
+both babies are growing well and there are no obstetric contraindications to labour. 
+ More than a third of pregnant women/people who plan a vaginal birth go on to have a 
+caesarean section. 
+ Almost all pregnant women/people who plan a caesarean section do have one , but a 
+few will have a vaginal birth before caesarean section can be carried out. 
+ A small number of pregnant women/people who plan a vaginal birth will need an 
+emergency caesarean section to deliver the second twin after vaginal birth of the first 
+twin. 
+Vaginal 
+Birth  Lower risk of postpartum haemorrhage (PPH), infection and blood clots (VTE) if 
+successful. 
+ Less post -birth pain, improved recovery. 
+ Lower risk of breathing problems (RDS) for the baby. 
+ Risk of emergency caesarean section. 
+Elective 
+Caesare an 
+Section  Avoid the risks of emergency caesarean section . 
+ Higher risk of PPH, infection, VTE than vaginal birth . 
+ Risk of injury to adjacent organs (bladder etc) . 
+ Increased risk of RDS for the baby . 
+ Delayed recovery . 
+Labour 
+Information  Need for intraveno us access, bloods (FBC and G+S) in early labour . 
+ Need for continuous monitoring (CTG) of both twins -including FSE and benefits and 
+risks of CTG. 
+ Consider epidural for pain relief and enables quicker birth if ventouse / forceps or 
+emergency caesarean secti on is needed . 
+2nd stage  Possibility of needing syntocinon infusion for uterine inertia following birth of twin 1 . 
+ Possibility of caesarean for twin 2 birth (rare) . 
+ Scan for twin 2 . 
+ Stabilising lie following birth of twin 1 . 
+ Personnel required for the birth- Obstetrician, Midwives, Paediatricians . 
+3rd Stage  Active management followed by syntocinon infusion after birth of babies is associated 
+with a lower risk of postpartum haemorrhage and/or blood transfusion. 
+ The potential need for blood trans fusion, including the need for intravenous access to 
+manage postpartum hemorrhage . 
+Please record changes to proposed labour management plan or any further information here: 
+
+Date: Name, signature and GMC no. 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 32 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+Twins 
+ 
+Preterm birth affects 60 in 100 of twin pregnancy (SCBU > 32 weeks and >1.5kg, aim for 
+transfer in utero if presents in preterm labour, usually to Brighton). 
+ 
+Signs and symptoms of preterm labour and when to call Triage. 
+ 
+Increased risk of pre -eclampsia (BP & urine each apt) therefore advice to take Aspirin 150mg 
+at night, after food, until 36 weeks. 
+ 
+Increased risk of postpartum haemorrhage – advise active 3rd stage and Syntocinon infusion. 
+ 
+Increased risk of anaemia - PREGADAY commenced today (aware risk of constipation and 
+stool colour change). 
+ 
+Birth discusse d, vaginal birth not recommended if twin 1 is anything other than cephalic. 
+Epidural available if wishes, may make manipulation of twin 2 less uncomfortable , enables 
+quicker birth if, instrumental birth or emergency LSCS needed . 
+ 
+Potential for vaginal birt h / LSCS if concerns with twin 2 (affects 10% twin sets). 
+ 
+Delayed cord clamping routine if twins in good condition , as is skin to skin for both. 
+ 
+Colostrum harvesting recommended from 36 weeks onwards. 
+
+DCDA only 
+ 
+USS 4 weekly from 20 weeks. 
+ 
+DCDA aim fo r birth at 37 weeks. 
+
+MCDA only 
+ 
+USS – 2 weekly from diagnosis. 
+Twin to twin transfusion syndrome discussed - 10% of MCDA pairs, most commonly occurs 
+at 17 - 24 weeks, referred up to St Georges, option for laser ablation at stage 3 and above 
+(33% 2 tw in survival / 33% 1 twin survival / 33% no survival). 
+ 
+Symptoms: 
+Sudden abdominal distension, abdominal pain, breathlessness, inability to lie on back, 
+reduced fetal movements . 
+ 
+Aim to deliver at 36 weeks. 
+
+Mode of birth 
+ 
+Vaginal birth 
+ 
+Benefits : Less bl eeding, less infection, reduced risk of breathing difficulty in baby (TTN /RDS ), 
+protects uterus for future pregnancy, less pain after birth, can have epidural if wishes . 
+ 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 33 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+Risks : Unpredictable, induction can be a lengthy process and may not work, does not 
+remove risk of emergency Caesarean for either twin (10% will have SVD/LSCS) . 
+ 
+Method : Continuous monitoring of both fetal hearts (may need scalp electrode), after birth of 
+twin 1, twin 2 will be manually held in longitudinal lie, may need ECV, will have USS to 
+confirm presentation, will have Synto infusion for uterine inertia if needed, heart monitoring of 
+twin 2 . 
+ 
+Caesarean section 
+ 
+Benefits : Planned procedure, no pain during procedure, removes risk of twin 1 SVD / twin 2 
+LSCS . 
+ 
+Risks : Bleeding, infection, include injury to bladder / vessels / bowel / ureters/ fetal injury. 
+TTN and admission to SCBU (will be given corticosteroids to reduce risk), more pain 
+following birth, may labour prior to date, permanent scar to uterus . Higher risk of VTE. 
+ 
+Induction 
+ 
+Benefits : Reduce s risk of stillbirth, encourages vaginal birth . 
+ 
+Risks : Prolonged procedure, increased risk of emergency Caesarean compared with 
+spontaneous onset of labour . 
+ 
+Method : Ripen cervix, then ARM & Syntocinon drip . 
+ 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 34 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+Appendix 7: Placental Histolog y 
+
+□ Admission to NICU (>37/40) for >4hours 
+□ Apgar <7 at 5 minutes 
+□ Cord pH <7.0 
+□ Prematurity <34/40 
+□ IUGR <3rd centile (on GROW) 
+□ Suspected chorioamnionitis (pyrexia ≥38◦C) – 
+send swab to microbiology as well. 
+□ Placental abruption 
+□ Morbidly adherent placenta (not other MROP) 
+□ Abnormal appearance of placenta eg tumour 
+
+□ Stillbirth or early neonatal death 
+□ MTOP (if requested by screening) 
+ If yes to any of the above: 
+1. In a well ventilated area, select a large specimen container (bucket) and 
+ensure t he lid fits tightly. 
+2. Put the placenta in the bucket. 
+3. Pour formalin (10% formal saline) over it, covering it to about five times the 
+volume of the placenta. 
+4. Put the lid on. 
+5. Label the bucket only (not lid) with: 
+a. The patient’s name and date of birth and hosp ital number. 
+b. The nature of specimen – placenta. 
+c. The ward – labour ward. 
+d. Date of specimen. 
+e. Securely attach the specimen form - PLACENTAL HISTOLOLOGY 
+REQUEST FORM – to be completed by doctor or midwife. 
+6. Call porter to collect specimen. 
+In cases of Stillbir th or early neonatal death or MTOP: 
+7. Keep the placenta in a pot but do not add formalin until you have confirmed that 
+the placenta is to be sent for histology. 
+8. Remember that a live born baby at any gestation, who then dies, may require a 
+Coroner’s PM, so do not add formalin to the placenta, even if the parents do not 
+request a PM, until this has been discussed with the Coroner. 
+9. The placenta must be refrigerated in these cases. Stop! Does this placenta need to be sent for histology? 
+ 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 35 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+Appendix 8: Pathology Request Form – Multiple Pregnancies 
+UHSUSSEX (SRH &WH) PLACENTAL HISTOLOGY REQUEST FORM – Multiple Pregnancy 
+THIS FORM MUST BE SENT WITH THE PLACENTA FROM A BABY /BABIES 
+Named Consultant Obstetrician: 
+Referring Hospital: Ward: 
+(Use Mother’s full addressograph label if available) 
+Mother’s case number: Mother’s DOB: 
+Mother’s name: Mother’s ethnicity: 
+Mother’s address: 
+ 
+Post code 
+Doctor completing this form (+ bleep number): 
+Father’s name (if known) Consanguinity: yes/no 
+Father’s ethnicity (if known) Congenital anomalies in the family: 
+Father’s Age (if known) 
+MOTHER’S MEDICAL DETAILS 
+ 
+Past Obstetric History: Gravida…………….Parity (prior to this birth)……………… 
+Previous deliveries: 
+Year: Gestation: Weight: Mode of Birth: Sex: Outcome: 
+ 
+………………………………………………………………………………………………………………………………………………… 
+………………………………………………………………………………………………………………………………………………… 
+…………………………………………………………………………… …………………………………………………………………… 
+………………………………………………………………………………………………………………………………………………… 
+Medical, drug and family history: 
+
+ANTENATAL DETAILS 
+ 
+LMP ………………… EDD BY DATES…………. EDD BY USS ………………. 
+MCDA Twins  DCDA Twins  MCMA Twins  TA or MA Triplets  MA Twins or Triplets  
+Gestation AT BIRTH : 
+Details of other twin/triplets: 
+
+CHECKLIST OF SPECIFIC PREGNANCY COMPLICATIONS: 
+Threatened miscarriage 
+Down Syn drome screen 
+Abnormal liquor volume 
+IUGR 
+Antepartum Haemorrhage 
+Pyrexia/increased WCC/raised CRP 
+HIV Infection 
+Torch Infections 
+If “yes” specify: Yes / No 
+Yes / No 
+Yes / No 
+Yes / No 
+Yes / No 
+Yes / No 
+Yes / No 
+Yes / No Retroplacental Clot 
+Maternal drugs 
+Maternal diabetes 
+Maternal hypertension 
+Maternal smoking 
+Maternal alcohol 
+Maternal Proteinuria/Oedema 
+Syphilis Infection 
+If “yes” specify: 
+ Yes / No 
+Yes / No 
+Yes / No 
+Yes / No 
+Yes / No 
+Yes / No 
+Yes / No 
+Yes / No 
+ 
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 36 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+ANTENATAL COURSE (including relevant finding s from 1st trimester screening, ultrasound scans with growth discrepancy 
+detailed , specialist treatment eg laser ablation antenatal assessment or indication for interruption of pregnancy/induction of 
+labour) 
+ 
+ Karyotyping done? No / CVS / Amnio / FBS . Indication and result – 
+ 
+LABOUR 
+Onset : spontaneous / induced 
+Augmented? If so how? 
+Membrane rupture : Spontaneous / artificial. Date and Time … ….………. … 
+Presentation: Cephalic / Breech / Transverse / Complex 
+Duration : 1st stage - …….….. 2nd stage - …….….. 3rd stage - ………... 
+Birth of baby 1: Spontaneous / Instrumental / Caesarean section 
+Indicate relevant complications (e.g. fetal distress, haemorrhage, meconium, sepsis etc.) 
+
+Birth of baby 2: Spontaneous / Instrumental / Caesarean section 
+Indicate relevant complications (e.g. fetal distress, haemorrhage, meconium, sepsis etc.) 
+
+Birth of baby 3: Spontaneous / Instrumental / Caesarean section 
+Indicate relevant c omplications (e.g. fetal distress, haemorrhage, meconium, sepsis etc.) 
+
+Delivery of placenta: Spontaneous / Manual after retention / At caesarean section 
+BABY 1 DETAILS 
+ 
+Name: Twin 1 / Twin 2 / Triplet 1 / Triplet 2 / Triplet 3 (circle relevant one) 
+Hospital Number (if applicable): 
+Date of Birth: 
+Birth weight: Sex: 
+Was resuscitation requir ed? Yes / No 
+Details : 
+ 
+Summary of clinical course after initial resuscitation: 
+ 
+Ventilation 
+Suspected infection? 
+Antibiotic therapy? 
+Brain USS 
+Fits? 
+Episodes of collapse? Yes / No 
+Yes / No 
+Yes / No 
+Yes / No 
+ 
+ Type 
+Details 
+Details 
+Details 
+Details 
+Details 
+
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 37 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+Pneumothoraces? 
+Feeding: 
+Other information: 
+ 
+Enteral/TPN 
+ Details 
+Clinical diagnosis: 
+ 
+Specific questions to be answered: 
+
+BABY 2 DETAILS 
+ 
+Name: Twin 1 / Twin 2 / Tr iplet 1 / Triplet 2 / Triplet 3 (circle relevant one) 
+Hospital Number (if applicable): 
+Date of Birth: 
+Birth weight: Sex: 
+Was resuscitation required? Yes / No 
+Details : 
+ 
+Summary of clinical course after initial resuscitation: 
+ 
+Ventilation 
+Suspected infection? 
+Antibiotic therapy? 
+Brain USS 
+Fits? 
+Episodes of collapse? 
+Pneumothoraces? 
+Feeding: 
+Other information: 
+ Yes / No 
+Yes / No 
+Yes / No 
+Yes / No 
+
+Enteral/TPN 
+ Type 
+Details 
+Details 
+Details 
+Details 
+Details 
+Details 
+
+Clinical diagnosis: 
+ 
+Specific questions to be answered: 
+
+BABY 3 DETAILS 
+ 
+Name : Twin 1 / Twin 2 / Triplet 1 / Triplet 2 / Triplet 3 (circle relevant one) 
+Hospital Number (if applicable): 
+Date of Birth: 
+Birth weight: Sex: 
+Was resuscitation required? Yes / No 
+Details : 
+ 
+Summary of clinical course after initial resuscitation: 
+ 
+Ventilation 
+Suspected infection? 
+Antibiotic therapy? 
+Brain USS Yes / No 
+Yes / No 
+Yes / No 
+Yes / No Type 
+Details 
+Details 
+Details 
+
+CG1126 Multiple Pregnancy and Birth Guideline v6.1 June 2022 Page 38 of 38 
+Please ch eck against Staffnet that this printout is the most recent version of this document. 
+Fits? 
+Episodes of collapse? 
+Pneumothoraces? 
+Feeding: 
+Other information: 
+
+Enteral/TPN 
+ Details 
+Details 
+Details 
+
+Clinical diagnosis: 
+ 
+Specific questions to be answered:

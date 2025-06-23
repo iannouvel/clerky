@@ -1,0 +1,908 @@
+# Extracted from: UHSx Perineal Trauma & Repair Guideline.pdf
+# Guideline ID: uhsx-perineal-trauma-repair-guideline
+# Content length: 53049 characters
+# Processing date: 1750066902.260955
+
+CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline : Perineal Trauma & Repair v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ Page 1 of 29 Please note, IF DOCUMENT IS PRIN TED, IT MAY BECOME OUT OF DATE 
+ 
+TRUST CLINICAL GUIDELINE 
+ 
+Perineal Trauma & Repair 
+
+Overview 
+ 
+This guideline aims to provide guidance on the OASI care bundle and benefits of perineal warming, 
+on the recognition, classification and appropriate repair of perineal trauma, and the management of 
+wound infection/dehiscence. 
+ 
+This guideline applies to all staff involved with assessment and repair of perineal trauma following 
+childbirth. It covers: 
+ 
+• Assessing trauma 
+• Training and supervision 
+• Principles of repair 
+• OASI care bundle and perineal 
+warming 
+• Suture material 
+• Suture technique • Analgesia 
+• Aftercare 
+• Referral pathways 
+• Record keeping 
+• Perineal wound infection/dehiscence 
+
+Owner Clinical Director 
+Author/Further information Lorna Gisborne & Franciska Ambrus 
+Pelvic Health Midwives 
+Guideline version v1.0 
+Related policies None 
+Related documents SRH&WH: Care of Women and people in Labour, 
+Operative Vaginal Birth, Female Genital Mutilation 
+Shoulder Dystocia, Obstetric Haemorrhage, 
+Postnatal Care. 
+PRH&RSCH: Shoulder Dystocia, Obstetric 
+Haemorrhage, Care of women/people in labour, 
+Provision and schedule of postnatal care, Female 
+Genital Mutilation, Assisted Vaginal Birth. 
+Standards RCOG (2015) Green -top guideline 29 
+Management of 3rd and 4th Degree Tears 
+The OASI2 study | RCOG 
+Local SOP for Swabs, needle & instrument counts CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline : Perineal Trauma & Repair v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ Page 2 of 29 for invasive procedures in obstetric settings 
+(outside of theatre) (Legacy West) 
+Superseded documents CG1131 Perineal Trauma and Repair 
+MP054 Perineal Trauma Repair 
+Review due March 2027 
+Date uploaded 4th December 2024 
+ 
+Approval 
+JOGG Date approved 20th March 2024 
+Women & Children’s Clinical Effectiveness 
+Meeting Date approved 18th April 2024 
+Medicines Governance Committee Date approved 8th November 2024 
+Consultation 
+Antimicrobial Stewardship Group Date approved 7th October 2024 
+Ratification 
+Clinical Document Approval Group Date approved 29th November 2024 
+ 
+ CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline : Perineal Trauma & Repair v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ Page 3 of 29 Table of Contents 
+ 
+1.0 Introduction ................................ ................................ ................................ ................. 4 
+2.0 Definitions and abbreviations used in this document ................................ ................... 4 
+3.0 Duties and responsibilities ................................ ................................ .......................... 4 
+4.0 Background ................................ ................................ ................................ ................. 4 
+5.0 Prevention of obstetric anal sphincter injuries (OASI) and the OASI care bundle ........ 5 
+5.1 Elements of the OASI Care Bundle ................................ ................................ ............. 6 
+6.0 Perineal repair and training ................................ ................................ ......................... 9 
+7.0 Classification of perineal tears ................................ ................................ .................... 9 
+8.0 Assessing perineal trauma ................................ ................................ ........................ 10 
+9.0 First- and second -degree tears and episiotomies ................................ ...................... 11 
+9.1 Preparing the woman or birthing person for the procedure. ................................ ....... 11 
+9.2 Equipment ................................ ................................ ................................ ................. 11 
+9.3 Procedure preparation ................................ ................................ .............................. 11 
+9.4 Suture material and technique ................................ ................................ .................. 12 
+10.0 The management of labial and clitoral tears ................................ .............................. 13 
+11.0 Third - and fourth -degree tears (OASI) ................................ ................................ ....... 13 
+11.1 Antibiotics ................................ ................................ ................................ ................. 15 
+12.0 Post-repair for 3rd- and 4th- degree tears ................................ ................................ ... 15 
+12.1 Referral and follow -up ................................ ................................ ............................... 16 
+12.2 Prognosis and future births ................................ ................................ ....................... 17 
+13.0 Analgesia and laxatives ................................ ................................ ............................ 17 
+14.0 Record keeping ................................ ................................ ................................ ......... 18 
+14.1 Documentation of consent, repair and post -care ................................ ....................... 18 
+14.2 Documentation for OASI Care Bundle purposes ................................ ....................... 18 
+15.0 Perineal wound dehiscence (breakdown) ................................ ................................ .. 18 
+16.0 Incident reporting ................................ ................................ ................................ ...... 19 
+17.0 Monitoring ................................ ................................ ................................ ................. 19 
+Appendix 1: Images of manual perineal protection (RCOG 2017) ................................ ........ 20 
+Appendix 2: Repair of obstetric anal sphincter injury (OASI) proforma ................................ . 22 
+Appendix 3: Information for women and birthing people (RCOG) ................................ ......... 23 
+Appendix 4: OASI care bundle information for women and birthing people .......................... 23 
+Appendix 5: Referral to perineal tears clinic ................................ ................................ ......... 24 
+Appendix 6: 60 -degree mediolateral episiotomy diagram (RCOG 2020) ............................... 25 
+Appendix 7: Guideline version control log ................................ ................................ ............. 26 
+Appendix 8: Due regard assessment tool ................................ ................................ ............. 27 
+Appendix 9: Template dissemination, implementation and access plan ................................ 28 
+Appendix 10: Additional guidance and information ................................ ............................... 29 
+ 
+ CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline : Perineal Trauma & Repair v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ Page 4 of 29 
+Perineal Trauma & Repair 
+1.0 Introduction 
+This policy aims to provide guidance on the OASI care bundle and benefits of perineal 
+warming, on the recognition, classification and appropriate repair of perineal trauma, and the 
+management of wound infection/dehiscence. 
+2.0 Definitions and abbreviations used in this document 
+EAS External Anal Scanning EAUS Endoanal Ultrasound Scanning 
+FGM Female genital mutilation MAU Maternity Assessment Unit 
+MPP Manual Perineal Protection OASI Obstetric Anal Sphincter Injury 
+RCOG Royal College of Obstetricians and 
+Gynaecologists TNA Training Needs Analysis 
+VBAC Vaginal birth after caesarean section 
+3.0 Duties and responsibilities 
+All staff working in the 
+Trust • To access, read, understand and follow this guideline . 
+• To use their professional judgement in application of this 
+guideline . 
+Managers • To ensure the guideline is reviewed three yearly and aligns with 
+national standards. 
+• To ensure the guideline is accessible to all relevant staff. 
+4.0 Background 
+In England, the reported rate of detected obstetric anal sphincter injury (OASI) among 
+primiparous women and birthing people tripled over a ten -year period from 1.8% in 2000 to 
+5.9% in 2014. According to the 2019 clinical report from the National Maternity Perinatal 
+Audit (NMPA), the overall incidence of detected OASI in Great Britain between 2016 and 
+2017 was 3.5% (range 1.6 -7.5%). Although this increase is primarily associated with 
+improved detection at the time of birth Gurol -Urganci, et al (2013), some tears continue to be 
+undiagnosed, leading to a greater likelihood of developing anal and urinary incontinence 
+symptoms, which can have a devastating impact on quality of life. CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline : Perineal Trauma & Repair v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ Page 5 of 29 The main risk factor for anal incontinence amongst childbearing women and birthing people 
+is OASI. A systematic review demonstrated a wide variation in the prevalence (2.2 —36.7%) 
+of anal incontinence in the short term, which can get worse over time. 
+Short -term complications of OASI include pain, bleeding and infection, which can result in 
+urinary retention and constipation. These complications can lead to multiple attendances in 
+hospital or community services. Long -term complications of OASI include anal incontinence 
+(Faeces and Flatus), chronic pain, dyspareunia and urinary incontinence. The social, 
+psychological, emotional consequences of associated anal incontinence is a hidden taboo 
+which carries considerable morbidity Keighley et al (2016). In some circumstances, the 
+trauma of sustaining an OASI and its complications affects subsequent births where a 
+vaginal birth is forsaken for an elective caesarean, with associated additional costs. 
+Medico -legally, the total value of negligence claims relating to OASI during 2000 - 2010 was 
+estimated to be £31.2 million. The leading cause is misdiagnosing a tear. The specific 
+negligent acts related to failure to consider a caesarean section, failure to perform or extend 
+an episiotomy, failure to diagnose the true extent and grade of the injury, inadequacy of 
+repair and failure to perform a repair. 
+5.0 Prevention of obstetric anal sphincter injuries ( OASI ) and the OASI care 
+bundle 
+There is not a clear predictive method for OASI, however the following risk factors have 
+been shown to have a higher chance of sustaining OASI. 
+Risk factors of OASI: 
+• Asian Ethnicity birthing in high income countries only 
+• Nulliparity or first vaginal birth after caesarean birth 
+• Birth weight greater than 4kg 
+• Shoulder Dystocia 
+• Occipito -posterior position 
+• Prolonged second stage of labour 
+• Instrumental birth 
+• Previous OASI CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline : Perineal Trauma & Repair v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ Page 6 of 29 5.1 Elements of the OASI Care Bundle 
+There are four key elements: 
+ 
+1. Inform the pregnant woman or birthing person about OASI and what steps can 
+be taken to minimize their risk. 
+2. When indicated, episiotomy should be performed mediolaterally at a 60-degree 
+angle at crowning. 
+3. Documented use of manual perineal protection (MPP) : 
+- For spontaneous births , manual protection should be used unless the 
+woman or person objects, or their chosen position for birth doesn’t 
+allow MPP. 
+- For assisted births , manual perineal protection should be used. 
+4. 4. Following birth, the perineum should be examined and any tears graded 
+according to RCOG guidance. The examination should include a per rectum (PR) 
+check even when the perineum appears intact and this should be documented on 
+BadgerNet Maternity . 
+ 
+1. Inform the woman or birthing person about OASI and what steps can be taken to 
+minimise their risk 
+All pregnant women and birthing people shoul d receive a notification from BadgerNet 
+Maternity with a c opy of the OASI Care Bundle information leaflet from 34 weeks 
+onwards. Perineal massage is included in this leaflet and the benefits discussed. 
+Perineal massage reduces OASI risk, and the need for episiotomy as well as improving 
+wound healing and decreasing pain post repair Hajela (2021) Abedelkim (2020). If the 
+OASI care bundle has been implemented fully, it can reduce the chances of OASI by 
+20% ref OASI2. 
+ 
+If the pregnant woman or birthing person has not received information about the OASI 
+Care Bundle before the start of their labour, the clinician should explain the care bundle 
+at this time and address any questions or concerns the pregnant woman or birthing 
+person may have. Few instances where it may not be possible to use MPP is when the 
+pregnant woman or birthing person are labouring in water or, on a birthing stool (which 
+itself can increase the risk of OASI) or if in a birthing position which has been adopted 
+does not allow the midwife to place hands on the perineum. 
+Perineal warming: Recommend to the pregnant woman or birthing person that a warm 
+compress during the second stage of labour helps the perineal tissue to stretch and 
+reduces perineal discomfort. It can also help increase the incidence of intact Perineum 
+and reduces the incidence of perineal trauma. G Magona et al (2019). CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline : Perineal Trauma & Repair v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ Page 7 of 29 The warm compress can be a swab or sanitary towel in warm tap water placed against 
+the perineum, changed at regular intervals if soiled or cooled. The warm compresses 
+should be used up until the point that MPP should be carried out to ensure adequate 
+visualisation of the perineum. 
+2. When indicated, episiotomy should be performed mediolaterally at a 60 -degree 
+angle at crowning 
+There is little evidence to support the routine use of episiotomy for an unassisted birth; 
+however, there is some evidence that episiotomy reduces the risk of OASI during 
+instrumental birth. Episiotomy should never be a ‘routine’ intervention to reduce the risk 
+of OASI and should only be carried out after clinical assessment of the fetal and 
+maternal risks. The indication for an episiotomy should be recorded in the pregnant 
+woman or birthing person ’s BadgerNet Maternity . 
+ 
+Episiotomy is indicated in cases of fetal distress, instrumental birth . An episiotomy 
+should be used for all term forceps and ventouse/kiwi births in nulliparous women and 
+birthing people. In multiparous women and birthing people, an episiotomy should also 
+be used for all term forceps births but may occasionally be omitted with a ventouse birth 
+after considering and discussing the woman or birthing person’s risk of sustaining an 
+OASI. Use MPP for all instrumental births , even after an episiotomy has been 
+performed. 
+When a severe perineal tear is judged to be imminent, feel digitally for remaining 
+space/stretch and observe whether blood flow to the perineum appears 
+significantly reduced (ie pallor of the stretched skin). 
+If an episiotomy is indicated, it should be performed at a 60-degree angle on the 
+pregnant woman or birthing person ’s right as the baby’s head is crowning. 
+Evidence suggests that this will reduce the risk of OASI. All midwives and obstetricians 
+should be competent in performing this intervention. Studies have demonstrated that a 
+significant proportion of ‘mediolateral’ episiotomies are performed at an inappropriately 
+acute angle, perhaps due to the distorted anatomy at the time of crowning. To facilitate 
+achievement of the 60-degree angle, such as the use of scissors that indicate the 
+correct episiotomy angle, have been shown to be effective and may be considered. 
+Please see Appendix 6 for a diagram of the correct procedure for 60 -degree 
+mediolateral episiotomy. 
+Appropriate anaesthetic should be used prior to performing episiotomy. See section 9.3 
+for further information on dosage and administration . 
+It is important that the clinician communicates the indication(s) for which an episiotomy 
+is being considered with the pregnant woman or birthing person and gains their consent 
+before performing the procedure. CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline : Perineal Trauma & Repair v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ Page 8 of 29 3. Documented use of manual perineal protection (MPP) 
+Manual perineal protection (MPP) is a bimanual technique that requires support of the 
+posterior fourchette with one hand and cupping of the fetal head with the other to 
+prevent the head coming out with great force as it progresses at crowning (The Finnish 
+Grip, see Appendix 1 for details on technique). It can be performed in most birthing 
+positions that the pregnant woman or birthing person feels comfortable in. Support the 
+pregnant woman or birthing person to adopt a position which decreases the chance of a 
+deep tear such as all fours, kneeling or left lateral. 
+Important principles are: 
+a. Coaching the pregnant woman or birthing person to avoid sudden expulsive 
+pushing. 
+b. Maintaining gradual progress during the birth of the head . 
+c. No undue downward traction during birth of the shoulders . 
+d. Support the perineum throughout the whole birth . 
+ 
+Great care should be taken during the birth of the shoulders and MPP should be 
+continued as the shoulders are born. Depending on the woman or birthing person’s 
+position , the posterior shoulder may deliver first. The baby’s body should be born 
+following the direction of the curve of Carus using maternal or birthing parent effort and 
+gentle axial traction, if needed, avoiding undue downward traction. Video link Manual 
+perineal protection in left lateral 
+Note: Anyone who experienced an OASI -type tear in a previous pregnancy, and is 
+planning a vaginal birth, should ideally be supported at the time of birth by an 
+experienced member of staff (band 6 or above) confident in the use of the OASI2 care 
+bundle. 
+4. Perineal examination, including a per rectum examination, carried out following 
+all vaginal births 
+Following birth, a systematic examination of the perineum should be carried out. It is 
+recommended that a competent clinician assess the perineum following every vaginal 
+birth. This assessment must include a rectal examination as recommended by NICE 
+and should be carried out even when the perineum appears intact. This assessment 
+should include an examination of the ano -rectum and vagina using the pill -rolling 
+technique. The pill -rolling technique is to feel for the 'tone and bulk' of the sphincters. 
+Note that the woman or birthing person’s ability to squeeze is affected by whether they 
+have an epidural, but the bulk can just feel thinner anteriorly if an OASI sustained 
+('thinner at 12 o clock' than at '9' and '3'). 
+Any tears should be classified according to the RCOG as stated in section 7.0 and 
+documented on BadgerNet Maternity including a pictogram. CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline : Perineal Trauma & Repair v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ Page 9 of 29 If a woman or birthing person declines examination of the perineum following vaginal 
+birth, then the midwife must discuss fully the implications of undiagnosed perineal 
+trauma especially 3rd of 4th degree tears. This discussion must be documented on 
+BadgerNet Maternity . Please highlight, that an examination does not mean that suturing 
+must take place, but it will give the woman or birthing person the tools to make an 
+informed choice regarding suturing, once the extent of the trauma is identified. 
+6.0 Perineal repair and training 
+Qualified midwives and obstetric medical staff can perform perineal repair . Training for 
+midwives and doctors is evidenced in the Training Needs Analysis (TNA). 
+7.0 Classification of perineal tears 
+ 
+Buttonhole tear - Tear involves the anal mucosa with intact sphincter. If not recognised and 
+adequately repaired, there is risk of ano -vaginal fistula. 
+CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline : Perineal Trauma & Repair v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ Page 10 of 29 8.0 Assessing perineal trauma 
+Assessment of perineal trauma should be carried out immediately after completion of the 
+third stage (as above). 
+Before assessing genital trauma, healthcare professionals should: 
+• Explain to the woman or birthing person what they plan to do and why . 
+• Offer inhalational analgesia if required and regional anesthesia is not already 
+being used. 
+• Ensure good lighting. 
+• Position the woman or birthing person so that they are comfortable and so that the 
+genital structures can be seen clearly. This would normally be in the lithotomy 
+position, in a homebirth, a position which facilitates the best angle for 
+visuali sation. 
+ 
+Correct diagnosis and treatment of third/fourth degree tears can improve outcomes for 
+women and birthing people . A rectal examination following all vaginal births and before 
+commencing the repair is recommended and should be offered and documented. This is 
+recommended as obstetric anal sphincter injury or isolated rectal buttonhole tears are 
+possible with an intact perineum. Gloves should be changed prior to and following the rectal 
+examination. 
+If the midwife is in doubt about the extent of a tear, they should seek the advice of the labour 
+ward co -ordinator, and the registrar will be asked to review if necessary. All skin tears that 
+extend to the anal margin should be assessed by the obstetric registrar, to ensure that a 
+third-degree tear is not missed. This review, including timing, must be documented on 
+BadgerNet Maternity . 
+If there is any doubt in the grade of perineal trauma then the tear should be treated as a 
+higher rather than a lower degree. 
+Any woman or birthing person who is suspected to have a third - or fourth -degree tear should 
+have careful examination of the perineum by a senior obstetrician. 
+All perineal repairs should be performed as soon as possible to minimise the risk of infection 
+and bleeding. The reason for any delay (more than 2 hours from the end of the 3rd stage) 
+should be documented on BadgerNet Maternity . Repair of third - and fourth -degree tears 
+should be performed in the operating theatre under regional or general anaesthesia, with 
+good lighting and appropriate instruments. Repair of third -degree tears in the labour room 
+may be performed in certain circumstances after discussion with a senior obstetrician 
+(RCOG 2015) but this should not be the norm. CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline : Perineal Trauma & Repair v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ Page 11 of 29 For women and birthing people who birth in water, any tears actively bleeding should be 
+sutured as soon as possible. For tears not -actively bleeding, repair may be delay ed for one 
+hour if this is deemed appropriate. 
+9.0 First- and second -degree tears and episiotomies 
+Only tears confined to the skin may be left unsutured. Labial tears which are deep, bleeding 
+or bilateral, should be sutured. There is no evidence to suggest that leaving second -degree 
+tears unsutured is of any long -term benefit. 
+All tears where there has been a concern regarding previous female genital mutilation 
+(FGM) must be examined and repaired by an experienced obstetric trainee or consultant 
+owing to the possibility of distorted anatomy. 
+9.1 Preparing the woman or birthing person for the procedure. 
+Explain the procedure and gain verbal consent. Document accordingly. 
+If the woman or birthing person declines suturing, the reason should be clearly documented 
+along with the advice given on BadgerNet Maternity . In anything more than a first -degree 
+tear, the labour ward co -ordinator and/or obstetric registrar should see the woman or birthing 
+person to discuss the benefits of suturing. 
+9.2 Equipment 
+A suture trolley/sterile area (if at home) should be pre pared containing the following: 
+• Suture pack 
+• Sterile Gloves 
+• 20 ml syringe 
+• Green needle 
+• 2/0 rapidly absorbable suture (polyglactin suture such as Covidien Velosorb) 
+• 20ml 1% lidocaine 
+• Warm water 
+• Diclofenac 100mg suppository (if no contraindications) 
+• Swabs 
+9.3 Procedure preparation 
+Swabs, needles and instruments should be counted and verified by 2 health professionals 
+(one must be the operator) and documented prior to commencement of the suturing ( SRH & 
+WH see P19005 LocSOP for Obstetric Procedural Counts.pdf ). CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline : Perineal Trauma & Repair v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ Page 12 of 29 The woman or birthing person should be made comfortable for suturing in an appropriate 
+position; this may be in lithotomy or on the edge of the bed. The woman or birthing person 
+could maintain skin -to-skin contact with their baby throughout the procedure, or once they 
+feel comfortable, with support from their birthing partner. It is recommended that the partner 
+stays in the room whilst suturing takes place in case the woman or birthing person wishes 
+for the baby to be repositioned. 
+Once the woman or birthing person is ready, the perineal area should be cleaned with warm 
+water, and sterile towels used to create a sterile field. Tampons should not be used outside 
+of the theatres . No swabs should be inserted into the vagina. 
+If the woman or birthing person does not have an epidural, the area should then be 
+infiltrated with 1% lidocaine. Up to 20mls 1% lidocaine total may be used (including for 
+episiotomy). If an epidural is in situ, a top up may be required. 
+9.4 Suture material and technique 
+The use of rapidly absorbable synthetic material (polyglactin suture such as Covidien 
+Velosorb) or Vicryl ™ Rapide (Ethicon) for the repair of perineal trauma is associated with 
+less perineal pain, lower analgesic use, lower risk of dehiscence and re -suturing when 
+compared to PDS suture material. 
+The tensile strength of 2/0 polyglactin suture such as Covidien Velosorb or Vicryl ™ Rapide 
+(Ethicon) is reduced between 10 -14 days and fully absorbed by 35 -42 days. 
+The apex of the tear should be identified visually, and the first suture inserted 1 cm above 
+this. The repair should then proceed with a continuous suture to the posterior vaginal wall. 
+There is no need to knot this suture at the fourchette since a single continuous suture 
+causes less pain than leaving a knot at the fourchette and star ting again in the deep tissues. 
+The perineal muscle should then be repaired using a continuous suture. These sutures 
+should be continued to the fourchette, bringing the muscles into apposition. Again, there is 
+no need to tie the suture off here but continue directly with the skin stitch which minimises 
+pain. 
+The skin should then be closed using a continuous subcuticular suture. Continuous 
+subcuticular sutures are associated with less pain in the immediate post -partum period. The 
+final knot should be an Aberdeen knot (because it requires very little suture material and 
+hence minimises pain and scar formation) placed remotely from the fourchette since the 
+fourchette is the most sensitive part. The skin suture should not be too tight or use sutures 
+too close together, as this is associated with inc reasing the risk of dehiscence. 
+On completion of the repair the vagina should be checked for complete haemostasis then 
+the tampon removed if used in theatre. To highl ight a vaginal pack is in situ: CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline : Perineal Trauma & Repair v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ Page 13 of 29 • An identifiable wristband stating ‘Vaginal Pack inserted’ is placed on the woman or 
+birthing person’s arm. 
+ 
+This wristband should be removed at the same time as the pack is removed. 
+A digital rectal examination should be done to ensure that no sutures have penetrated the 
+rectal mucosa . If sutures are felt, refer the woman or birthing person for an obstetric review 
+– do not remove the sutures prior to this review. If penetrating sutures are confirmed by the 
+obstetrician, then the sutures will need removing before re -suturing. 
+Swabs, tampons, needles and instruments should be counted by 2 health professionals and 
+documented at the end of the procedure ( SRH & WH as per P19005 LocSOP for Obstetric 
+Procedural Counts.pdf ). 
+10.0 The management of labial and clitoral tears 
+If labial tears are bleeding, large or there is a likelihood of the labia fusing, repair with 3/0 
+Covidien Velosorb or Vicryl ™ Rapide (Ethicon) is recommended. Good analgesia is 
+required. The findings and management should be discussed with the woman or birthing 
+person. 
+Interrupted sutures may give a better cosmetic appearance. Consideration should be given 
+to the aesthetic result and the woman or birthing person ’s body image. 
+The area generally heals very well, so the minimum suturing required for haemostasis and 
+tissue apposition should be done, with the use of Aberdeen knots to minimise size of knot 
+and hence post -birth pain. 
+11.0 Third- and fourth -degree tears (OASI ) 
+• Written consent must be obtained prior to the repair (note: when consenting for 
+operative vaginal birth, include information regarding potential perineal trauma 
+and repair). 
+• Both partner and baby should accompany the woman or birthing person to theatre 
+in order to re -establish skin -to-skin contact as soon as possible and to offer the 
+opportunity of an early breastfeed. The benefits of breast milk and uninterrupted 
+skin-to-skin for the baby outweigh the historic practice of excluding partners and 
+babies from theatre. The only exception is where there is a need of an emergency 
+transfer due to haemorrhage or a general anaesthetic is required. 
+• The obstetric consultant should be notified of all 3rd degree tears, unless the 
+senior specialist trainee has been assessed as competent to undertake the repair 
+unsupervised. 
+• The obstetric consultant must attend for the repair of a 4th degree tear and repair 
+must be in theatre. CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline : Perineal Trauma & Repair v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ Page 14 of 29 • Third degree tears can be repaired in the labour room if this deemed acceptable 
+by the senior obstetrician taking into account adequate analgesia, adequate 
+lighting and acuity on labour ward: but this should not be the norm , as RCOG best 
+practice is to repair all OASI in theatre. 
+• A definite attempt should be made to recognise the internal anal sphincter, so that 
+this can be repaired as a separate layer, if necessary. The use of interrupted 3/0 
+PDS or 2/0 Polysorb (or equivalent) is recommended and should be repaired 
+using the end -to-end technique with interrupted mattress sutures. The internal 
+anal sphincter should not be repaired with an overlapping technique. Figure of 8 
+sutures should be avoided because they are haemostatic in nature and may 
+cause tissue ischaemia ( RCOG 2015 ). 
+• The use of 3/0 PDS is recommended in this unit for repair of the external anal 
+sphincter. Use of fine suture size such as 3 -0 PDS and 2 -0 Polysorb (or 
+equivalent) may cause less irritation and discomfort. The only randomised 
+controlled trial comparing braided and monofilament sutures reported no 
+significant difference in morbidity from anal incontinence, perineal pain or suture 
+migration with 12 months follow -up. 
+• If the external anal sphincter is completely divided , an overlap technique should 
+be considered. If the sphincter is not completely divided, there is insufficient 
+evidence to recommend an overlap technique (which would require division of the 
+remaining fibres), and an end-to-end repair should be used. 
+• When obstetric anal sphincter repairs are being performed, burying of surgical 
+knots beneath the superficial perineal muscles is recommended to prevent knot 
+migration to the skin . Women and birthing people should be warned of the 
+possibility of knot migration to the perineal surface, with long -acting and non -
+absorbable suture materials . 
+• In the event of a 4th degree tear, the rectal wall should be repaired in 1 layer using 
+3-0 Polysorb or equivalent (RCOG 2015). 
+• At the end of the repair a rectal and vaginal examination should be performed to 
+ensure that the anorectal mucosa is intact and that no sutures have penetrated 
+the wall. 
+• 100 milligrams diclofenac should be administered rectally at the end of the 
+procedure (contraindicated with asthma and with PPHs >1000ml) . Rectal 
+paracetamol (1 gram) can be used as an alternative if this has not been given in 
+the last 4 hours and the woman or birthing person has not already exceeded the 4 
+grams daily dose. 
+• The obstetric consultant should repair or assist in the repair of fourth degree 
+perineal tear and may discuss the management with a consultant colorectal 
+surgeon. A combined approach to repair may be appropriate. 
+• All details regarding the repair should be clearly documented on BadgerNet 
+Maternity by the obstetrician who performed the repair. The swab count, by two 
+healthcare professionals, and estimated blood loss must be included. CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline : Perineal Trauma & Repair v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ Page 15 of 29 • An Incident reporting (Datix) form must be completed, and the reference number 
+documented on the OASI proforma on BadgerNet Maternity . 
+11.1 Antibiotics 
+A minimum of 1 dose prophylactic IV antibiotics should be given at the time of the 
+procedure . 
+IV ANTIBIOTICS 
+ Antibiotic Dose Rate 
+First line Co-amoxiclav 1.2 grams 
+STAT Penicillin 
+allergy Cefuroxime + 
+Metronidazole 1.5 grams 
+500 milligrams 
+Severe 
+penicillin 
+Allergy Clindamycin + 
+Gentamicin 900 m illigrams 
+240 m illigrams 
+If known MRSA - add Teicoplanin 
+ 
+If switch to oral antibiotics indicated: 
+ORAL ANTIBIOTICS 
+ Antibiotic Dose Rate 
+First line Co-amoxiclav 625 milligrams TDS 
+Penicillin 
+allergy Cefalexin + 
+Metronidazole* 500 milligrams 
+400 milligrams TDS 
+Severe 
+penicillin 
+Allergy Discuss with microbiology as clindamycin alone will not 
+cover the gram -negative bacteria that could be 
+implicated in these types of infections . 
+• please note that metronidazole can taint the taste of breastmilk 
+ 
+12.0 Post-repair for 3rd- and 4th- degree tears 
+• Foley catheter should be inserted and remain in situ for 24 hours until the patient 
+is mobile. 
+• Consider a full blood count on day 1, depending on estimated blood loss and 
+maternal condition. CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline : Perineal Trauma & Repair v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ Page 16 of 29 • Regular analgesia must be prescribed (usually ibuprofen 400 milligrams TDS and 
+paracetamol 1 gram QDS (unless contra -indications). 
+• High Fiber diet is recommended. 
+• Macrogol s 1 Sachet taken 1 -3 times a day dissolved in 125 millilitres of water. 
+There is no evidence for the use of bulking agents (eg Fybogel) routinely following 
+3rd and 4th degree tears. Ideally the woman or birthing person should have a 
+normal bowel movement before discharge from hospital, but if this doesn’t happen 
+bowel action should be monitored and documented at each visit. 
+• A senior clinician or Pelvic Health Midwife should see the woman or birthing 
+person prior to discharge to explain the significance of the tear a nd follow up. The 
+woman or birthing person should be given information regarding the nature of the 
+injury and the importance of follow -up before they are discharged from hospital. 
+The RCOG (2019) patient information leaflet ‘ Care of a third - or fourth -degree tear 
+that occurred during childbirth (also known as obstetric anal sphincter injury – 
+OASI ’ should be given. 
+• The woman or birthing person’s GP is notified of the tear via the reports on 
+BadgerNet Maternity , this relies on midwifery staff completing the birth documents 
+and sending the report at the end of the process. 
+• Information on pelvic floor exercises should be provided. Signposting to the LMNS 
+Sussex website for further information and videos on the correct way to perform 
+pelvic floor exercises. Pelvic floor exercises are lifelong exercise to promote good 
+pelvic health and prevent pelvic organ prolapse throughout a woman and person’s 
+life. The Fit for the Future booklet published by the Pelvic Obstetric and 
+Gynaecological Physiotherapist should be given to the wom an or birthing person 
+prior to discharge or it is available via BadgerNet Maternity . 
+12.1 Referral and follow -up 
+The doctor performing the repair should complete all relevant documentation on BadgerNet 
+Maternity - Episiotomy, Tears and Perineal Trauma section with a filled pictogram of the 
+tear/episiotomy; as well as the Perineal Repair Note . 
+The health professional performing the OASI care bundle elements should complete the 
+section under Episiotomy, Tear and Perineal Trauma section. 
+The midwife assigned to the woman or birthing person should check that this has been 
+documented. They should complete the Perineal Tears Clinic referral form via BadgerNet 
+Maternity (the clinic pathway is outlined in appendix 5 ) and Datix prior to transfer to the 
+postnatal ward. CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline : Perineal Trauma & Repair v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ Page 17 of 29 12.2 Prognosis and future births 
+• Women and birthing people should be advised that the prognosis following repair 
+is good, with 60 -80% asymptomatic at 12 m onths. Most women and people who 
+remain symptomatic describe incontinence of flatus or faecal urgency. 
+• All women and birthing people who sustained an OASI in a previous pregnancy 
+should be counselled about the risk of developing anal incontinence or worsening 
+symptoms with subsequent vaginal birth. 
+• All women and birthing people who sustained an OASI in a previous pregnancy 
+should be advised that there is no evidence to support the role of prophylactic 
+episiotomy in subsequent vaginal births. 
+• All women and birthing people who have sustained an OASI in a previous 
+pregnancy and who are symptomatic or have abnormal endoanal ultrasonography 
+and/or manometry should have the opportunity to discuss elective caesarean 
+birth. 
+• Women and birthing people with previous history of a 3rd or 4th degree tear require 
+antenatal counselling by an obstetric consultant or senior registrar to agree a birth 
+plan and discuss the risk of recurrence (the recurrence rate can be up to 20% 
+depending on the extent of the previous tear). Post birth and prior to any repair, 
+perineal assessment including a digital rectal examination should be carried out 
+by a competent midwife who is confident of perineal trauma classification, to 
+exclude repeat obstetric anal sphincter injury, regardless of perineal trauma 
+sustained. Women and birthing people who birth at home, are recommended to 
+have a systematic examination of the perineum including PR examination. If the 
+attending midwife is confident of perineal trauma classification then there is no 
+need to transfer in to hospital providing there is no evidence of OASI. 
+• The highest risk of recurrence of OASI is with subsequent forceps births . 
+Accordingly, those caring for women and birthing people in labour who have had a 
+previous OASI should make every attempt to avoid using the forceps to deliver the 
+woman and birthing person unless absolutely necessary . If forceps are necessary 
+the birth should be performed by an experienced operator, preferably a 
+consultant. 
+13.0 Analgesia and laxatives 
+Administration of 100 milligrams diclofenac rectally immediately following any degree of 
+perineal repair should be strongly considered (diclofenac is contraindicated with asthma and 
+should not be given if there has been a PPH >1000ml). If diclofenac 100 milligrams PR has 
+been administered, ibuprofen should not commence until 18 hours later . 
+IV paracetamol (1 gram) can be used as an alternative if there is a contraindication to 
+diclofenac, if paracetamol has not been gi ven in the last 4 hours and the woman or birthing 
+person has not already exceeded the 4 grams daily dose. CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline : Perineal Trauma & Repair v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ Page 18 of 29 Consider prescribing laxatives (Lactulose/ macrogols ) in all women and birthing people , 
+especially women and birthing people on opiate based analgesia. All women and birthing 
+people with 3/4th degree tears should be discharged with laxatives and encouraged to carry 
+this on for the subsequent 4 weeks. 
+14.0 Record keeping 
+14.1 Documentation of consent, repair and post -care 
+All details regarding any repair (including the time in lithotomy) should be clearly 
+documented on BadgerNet Maternity including a pictogram . 
+The swab count and estimated blood loss must be recorded. The swab count (both pre and 
+post procedure) should be performed by two healthcare profess ionals (as per local 
+guideline ). 
+In a homebirth situation if only 1 midwife is present, they must carefully count and record the 
+swabs. Information given regarding support following the repair should be documented 
+within BadgerNet Maternity . 
+Following any perineal suturing the healthcare professional should offer perineal inspection 
+at each postnatal review and document if the woman or birthing person declines. If the 
+woman or birthing person declines, the importance of regular review should be explained. 
+Following readmission with perineal problems including infection, if still within the visiting 
+period the community midwife must ensure the perineum is inspected at each visit as above. 
+If they are no longer under community midwifery care, hospital staff caring for the woman or 
+birthing person should inform the woman or birthing person ’s GP of any complications to 
+ensure an effective aftercare plan is established. 
+14.2 Documentation for OASI Care Bundle purposes 
+All fields must be complet ed on BadgerNet Maternity including pictogram. 
+15.0 Perineal wound dehiscence (breakdown) 
+Perineal wound dehiscence occurs when healing of perineal trauma by the use of sutures 
+has failed. The repaired perineum gapes and can become infected. The condition can result 
+in significant physical and psychological problems if left untreated and so appropriate 
+management is necessary to prevent this. There is currently insufficient evidence available 
+to either support or refute secondary suturing for the management of broken -down perineal 
+wounds following childbirth, but these should be a ssessed on an individual basis. CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline : Perineal Trauma & Repair v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ Page 19 of 29 In the first instance, look for signs of infection. In case of suspected perineal wound infection 
+in community (oozing, foul discharge, redness, pain), women and birthing people should be 
+directed to their local Triage/MAU for swab, doctor review and broad -spectrum antibiotics 
+with minimal delay and explained rationale. If still an in -patient, the wound should be 
+swabbed, assessed by a doctor and broad -spectrum antibiotics prescribed. 
+Anti-inflammatory pain relief such as ibuprofen may help and is safe in breastfeeding. In the 
+presence of active perineal infection, the wound cannot be re - sutured and will heal by 
+secondary intention. 
+16.0 Incident reporting 
+For all women and birthing people who sustain a 3rd or 4th degree perineal tear, staff should 
+complete a Datix incident form. 
+All women and birthing people seen either through the maternity or gynecology service 
+following perineal repair dehiscence or with anal incontinence must have a Datix incident 
+form completed in order to monitor outcomes. 
+Any postnatal readmissions, staff should complete a Datix incident form. 
+17.0 Monitoring 
+Organisations should audit the recognition of OASI and institute a guideline for repair and 
+follow -up. Collected data should be audited against recom mended/locally agreed standards: 
+• Incidence of OASI compared with reported incidence of less than 3% in the UK. 
+• 100% evidence of adequate documentation of systematic examination of the 
+vagina, perineum and rectum prior to suturing of OASI . 
+• 100% of OASI repaired with documented evidence of type of analgesia, suture 
+material, and method of repair and grade of operator. 
+• 100% of women and people with OASI receiving postoperative advice as per local 
+guideline and follow -up appointment. 
+• 100% of doctors and midwives undertaking repair of OASI have attended 
+recognised training courses. 
+Issue being 
+monitored Monitoring 
+method Responsibility Frequency Reviewed by 
+and actions 
+arising 
+followed up 
+by 
+Incidence of 3rd 
+or 4th degree 
+tears Case review Patient Safety 
+Midwives On-going Maternity Q&S 
+Meeting CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline : Perineal Trauma & Repair v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ Page 20 of 29 APPENDIX 1: IMAGES OF MANUAL PERINEAL PROTECTION (RCOG 2017) 
+
+CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline : Perineal Trauma & Repair v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ Page 21 of 29 
+ 
+CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline : Perineal Trauma & Repair v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ Page 22 of 29 Appendix 2: Repair of obstetric anal sphincter injury (OASI) proforma 
+Proforma can now be found on BadgerNet Maternity . The woman or birthing person’s GP is 
+notified of the tear via the reports on BadgerNet Maternity , this relies on midwifery staff 
+completing the birth documents and sending the report at the end of the process.CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline : Perineal Trauma & Repair v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ Page 23 of 29 Appendix 3: Information for women and birthing people (RCOG) 
+Click on link below to print leaflet for women and birthing people: 
+• Care of a third - or fourth -degree tear that occurred during childbirth (also known as obstetric 
+anal sphincter injury – OASI) (RCOG, 2019) 
+
+Appendix 4: OASI care bundle information for women and birthing people 
+• Obstetric Anal Sphincter Injury Information for expectant mothers 
+ 
+ CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline : Perineal Trauma & Repair v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ Page 24 of 29 Appendix 5: Referral to perineal tears clinic 
+ 
+• All 3rd and 4th degree tears who birth at UH Sussex will need to be referred via BadgerNet 
+Maternity to the Perineal Tears Clinic . 
+• The clinic pathway will consist of a telephone consultation 3 weeks post birth from a 
+physio therapist or pelvic health midwife. This telephone call will discuss recovery and 
+pelvic floor exercises. 
+• At 6-8 weeks, a face -to-face consultation with a physio therapist and/or pelvic health 
+midwife will take place to assess perineal healing and to complete a pelvic floor 
+assessment. 
+• 3 months post birth a face-to-face appointment will be offered with a consultant and pelvic 
+health midwife or physiotherapist, to assess healing +/ - endo anal scanning. 
+Refer to the Perineal 
+Tear Clinic :
+In the 
+antenatal 
+period
+Anyone who 
+suffered 
+previous OASI 
+Immediate 
+postpartum -before 
+transfer to the ward
+Any OASI patients or 
+complex 
+tears/episiotomies 
+Community -
+postnatal 
+period
+Perineal wound 
+infection/
+breakdown
+Refer to MAU anyone 
+with signs of 
+infection* 
+*MAU should see anyone with signs of sepsis/pain/foul/ discharge/bleeding/gaping for swab, Dr review, +/ - 
+antibiotics after which refer for f/up – F2F in Perineal clinic . 
+**Explain healing by secondary intention, consider extending visits to >10 days, email Pelvic Health 
+Specialist Midwife if any concerns/advise needed. CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline : Perineal Trauma & Repair v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ Page 25 of 29 Appendix 6: 60 -degree mediolateral episiotomy diagram ( RCOG 2020) 
+
+CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline : Perineal Trauma & Repair v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ Page 26 of 29 Appendix 7: Guideline version control log 
+Change Log – Perineal Trauma & Repair 
+ 
+Version Date Author(s) Comment 
+1.0 Mar 2024 Lorna Gisborne & 
+Franciska Ambrus 
+Pelvic Health 
+Midwives New UH Sussex Maternity guideline replacing: 
+• CG1131 Perineal Trauma and Repair (Legacy 
+West) 
+• MP054 Perineal Trauma Repair (Legacy East) 
+ 
+ CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline : Perineal Trauma & Repair v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ Page 27 of 29 Appendix 8: Due regard assessment tool 
+To be completed and attached to any guideline when submitted to the appropriate committee for 
+consideration and approval. 
+ Yes/No Comments 
+1. Does the document/guidance affect one group less or 
+more favourably than another on the basis of: 
+ Age No 
+ · Disability No 
+ · Gender (Sex) No 
+ · Gender Identity No 
+ · Marriage and civil partnership No 
+ · Pregnancy and maternity No 
+ · Race (ethnicity, nationality, colour) No 
+ · Religion or Belief No 
+ · Sexual orientation, including lesbian, gay and bisexual 
+people No 
+2. Is there any evidence that some groups are affected 
+differently and what is/are the evidence source(s)? No 
+3. If you have identified potential discrimination, are there 
+any exceptions valid, legal and/or justifiable? NA 
+4. Is the impact of the document likely to be negative? No 
+5. If so, can the impact be avoided? NA 
+6. What alternative is there to achieving the intent of the 
+document without the impact? NA 
+7. Can we reduce the impact by taking different action 
+and, if not, what, if any, are the reasons why the 
+guideline should continue in its current form? NA 
+8. Has the document been assessed to ensure service 
+users, staff and other stakeholders are treated in line 
+with Human Rights FREDA principles (fairness, respect, 
+equality, dignity and autonomy)? Yes 
+ 
+If you have identified a potential discriminatory impact of this guideline , please refer it to [Insert 
+Name], together with any suggestions as to the action required to avoid/reduce this impact. For 
+advice in respect of answering the above questions, please contact uhsussex.equality@nhs.net 
+01273 664685). 
+
+ CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline : Perineal Trauma & Repair v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ Page 28 of 29 Appendix 9: T emplate dissemination, implementation and access plan 
+ 
+To be completed and attached to any guideline when submitted to Corporate Governance for 
+consideration and TMB approval. 
+ 
+ Dissemination Plan Comments 
+1. Identify: 
+ Which members of staff or staff groups will be affected 
+by this guideline ? Midwives, obstetricians 
+ How will you confirm that they have received the 
+guideline and understood its implications? Dissemination through the 
+usual Communication 
+channels and highlighted at 
+Safety Huddles. 
+ How have you linked the dissemination of the guideline 
+with induction training, continuous professional 
+development and clinical supervision as appropriate? All new members of staff 
+shown where to access 
+Clinical documents that are 
+relevant to their area of 
+practice. 
+2. How and where will staff access the document (at 
+operational level)? Accessed by staff via 
+Sharepoint 
+ 
+ Yes/No Comments 
+3. Have you made any plans to remove 
+old versions of the guideline or related 
+documents from circulation? Yes N/A 
+4. Have you ensured staff are aware the 
+document is logged on the 
+organisation’s register? Yes Dissemination plan includes 
+notifying staff via email, safety 
+noticeboards , Teams 
+notification s and newsletter . 
+
+ CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline : Perineal Trauma & Repair v1.0 
+For use at: PRH, RSCH, SRH, WH 
+ Page 29 of 29 Appendix 10: A dditional guidance and information 
+1. DeRidder , C.A., Berkowitz, C.D., Hicks, R.A. and Laskey, A.L., 2013. Subconjunctival 
+hemorrhages in infants and children: a sign of nonaccidental trauma. Pediatric emergency care, 
+29(2), pp.222 -226. 
+2. Li LH, Li N, Zhao JY, et al. Findings of perinatal ocular examination performed on 3573, healthy 
+full-term newborns. Br J Ophthalmol. 2013; 97(5):588 –591 
+3. Spitzer, S.G., Luorno, J. and Noël, L.P., 2005. Isolated subconjunctival hemorrhages in 
+nonaccidental trauma. Journal of American Association for Pediatric Ophthalmology and 
+Strabismus , 9(1), pp.53 -56. 
+4. Parikh , Alomi O. et al "Prevalence and Causes of Subconjunctival Hemorrhage in 
+Children." Pediatrics 146.1 MeetingAbstract (2020): 1-2. Web. 06 Jan. 2021. 
+5. Pan Sussex Child protection and safeguarding procedures 
+6. Royal College of Paediatrics and Child health Child Protection companion 2013, 
+updated 2021.

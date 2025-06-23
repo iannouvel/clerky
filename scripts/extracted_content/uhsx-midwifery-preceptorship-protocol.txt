@@ -1,0 +1,971 @@
+# Extracted from: UHSx Midwifery Preceptorship Protocol.pdf
+# Guideline ID: uhsx-midwifery-preceptorship-protocol
+# Content length: 50696 characters
+# Processing date: 1750066902.204461
+
+Midwifery Preceptorship Protocol v1.0 UHS -CG-0011 -2023 Sept 2023 Page 1 of 29 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+Midwifery Preceptorship Protocol 
+Summary statement: How does the 
+document support patient care? To ensure all newly qualified midwives at UHSussex 
+are supported to embed their knowledge into everyday 
+practice. 
+Staff/stakeholders involved in 
+development: Preceptorship Lead Midwives 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Preceptorship Lead Midwives 
+Author: Preceptorship Lead Midwives 
+For use by: Maternity staff who work with newly qualified midwives 
+and Preceptees. 
+Purpose: To provide guidance that outlines the support available 
+to newly qualified midwives (NMQ) at University 
+Hospitals Sussex. 
+This document supports: NHS England » NHS People Plan 
+NHS Long Term Plan » The NHS Long Term Plan 
+https://www.england.nhs.uk/long -read/national - 
+preceptorship -framework -for-midwifery/ 
+The Code (nmc.org.uk) 
+nmc-principles -for-preceptorship -a5.pdf 
+Key related documents: 
+Approved by & date: Joint Obstetric Guideline Group: 20th September 2023 
+Protocol Steering Group: 28th July 2023 
+Date uploaded: 20th September 2023 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable – Divisional Ratification only required 
+Ratification Date: Not Applicable – Divisional Ratification only required 
+Expiry Date: September 2026 
+Review date: March 2026 
+If you require this document in another format such as Braille, large print, audio or another 
+language please contact the Trusts Communications Team 
+Reference Number: UHS-CG-0011 -2023 Midwifery Preceptorship Protocol v1.0 UHS -CG-0011 -2023 Sept 2023 Page 2 of 29 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+Version Date Author Status Comment 
+1.0 September 
+2023 Preceptorship 
+Lead Midwives LIVE New UH Sussex maternity 
+protocol 
+ 
+The interpretation and application of clinical guidelines will remain the 
+responsibility of the individual clinician. 
+If in doubt contact a senior colleague or expert. Midwifery Preceptorship Protocol v1.0 UHS -CG-0011 -2023 Sept 2023 Page 3 of 29 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Contents 
+1.0 Aim ................................ ................................ ................................ ............................ 4 
+2.0 Scope ................................ ................................ ................................ ........................ 4 
+3.0 Responsibilities ................................ ................................ ................................ .......... 4 
+5.0 Abbreviations used within this protocol ................................ ................................ ....... 4 
+6.0 Introduction ................................ ................................ ................................ ................ 5 
+7.0 Definitions of roles & responsibilities ................................ ................................ .......... 5 
+7.1 Preceptee ................................ ................................ ................................ .................. 5 
+7.2 Preceptor ................................ ................................ ................................ ................... 6 
+7.3 Preceptorship Lead ................................ ................................ ................................ .... 7 
+7.4 Buddy ................................ ................................ ................................ ........................ 7 
+7.5 Professional midwifery advocate (PMA) ................................ ................................ ..... 8 
+7.6 Line Manager ................................ ................................ ................................ ............. 8 
+7.8 The Chief Nurse ................................ ................................ ................................ ......... 9 
+7.9 The Director of Midwifery ................................ ................................ ........................... 9 
+7.10 The Head of Midwifery ................................ ................................ ............................... 9 
+8.0 Model of preceptorship provision ................................ ................................ ................ 9 
+8.1 PRH & RSCH ................................ ................................ ................................ ........... 10 
+8.2 WH & SRH ................................ ................................ ................................ ............... 10 
+9.0 Programme of learning ................................ ................................ ............................. 10 
+10.0 Timeframes ................................ ................................ ................................ .............. 10 
+11.0 Supernumary period ................................ ................................ ................................ . 11 
+12.0 Protected time ................................ ................................ ................................ .......... 11 
+12.1 Preceptee’s ................................ ................................ ................................ ............................. 11 
+12.2 Preceptors ................................ ................................ ................................ ............... 11 
+13.0 Initial meeting ................................ ................................ ................................ ........... 11 
+14.0 Progress meetings ................................ ................................ ................................ ... 12 
+15.0 Record of progress ................................ ................................ ................................ .. 12 
+16.0 Information sharing ................................ ................................ ................................ .. 13 
+17.0 Standardised documentation ................................ ................................ .................... 13 
+18.0 Escalation process ................................ ................................ ................................ ... 13 
+18.1 Raising Concerns about a Preceptee ................................ ................................ ....... 13 
+19.0 Final sign-off ................................ ................................ ................................ ............ 14 
+20.0 Evaluation ................................ ................................ ................................ ................ 14 
+21.0 Monitoring ................................ ................................ ................................ ................ 15 
+References ................................ ................................ ................................ .......................... 15 
+Appendix 1: Midwifery Preceptorship Recommended, Core & Gold Standards 2023 .......... 16 
+Appendix 2: Meeting templates ................................ ................................ ............................ 20 
+Slot Analysis ................................ ................................ ................................ ........................ 21 
+Appendix 3: Preceptorship study days ................................ ................................ ................. 25 
+Appendix 4: Midwifery framework charter ................................ ................................ ............ 26 
+Appendix 5: preceptorship progress log ................................ ................................ ............... 27 
+Appendix 5: NMC reflective accounts form ................................ ................................ .......... 28 
+Appendix 7: Raising concerns about a Preceptee ................................ ................................ 29 Midwifery Preceptorship Protocol v1.0 UHS -CG-0011 -2023 Sept 2023 Page 4 of 29 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Midwifery Preceptorship Protocol 
+ 
+1.0 Aim 
+ 
+To provide guidance that outlines the support available to newly qualified midwives (NMQ) at 
+University Hospitals Sussex. 
+ 
+2.0 Scope 
+ 
+This protocol applies to: 
+ 
+• Maternity staff who work with newly qualified midwives 
+• Preceptees 
+ 
+This protocol applies to PRH, RSCH, WH and SRH sites. In acknowledgment that aligning 
+all clinical practice is a work in progress, where significant differences remain between sites, 
+this is clearly detailed. 
+ 
+3.0 Responsibilities 
+ 
+Maternity staff who work with newly qualified midwives: 
+• To access, read, understand and follow this protocol. 
+• To use their professional judgement in application of this protocol. 
+ 
+Management: 
+• To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations. 
+• To ensure the protocol is accessible to all relevant staff. 
+• To ensure this protocol is available to service users on request. 
+ 
+5.0 Abbreviations used within this protocol 
+ 
+NQM Newly Qualified Midwives PRH Princess Royal Hospital 
+RSCH Royal Sussex County Hospital SRH St Richards Hospital 
+WH Worthing Hospital NMC Nursing and Midwifery Council 
+CSF Clinical Skills Facilitator WTE Whole Time Equivalent 
+PMA Professional Midwifery Advocate RCM Royal College of Midwives 
+NIPE Newborn and Infant Physical 
+Examination SLOT Strengths, limitations, opportunities, 
+threats 
+MDT Multidisciplinary Team SMART Specific, measureable, realistic, time 
+bound 
+IV Intravenous FSE Fetal Scalp Electrode 
+PFIS Patient First Improvement System CPD Continuing Professional Development Midwifery Preceptorship Protocol v1.0 UHS -CG-0011 -2023 Sept 2023 Page 5 of 29 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 6.0 Introduction 
+ 
+Preceptorship is a period of structured support for newly qualified midwives (NQM). 
+The main aim is to welcome and integrate the NQM into their new team and place of work, 
+translate and embed their knowledge into everyday practice, help them to grow in 
+confidence and have the best possible start to their careers. 
+ 
+Preceptorship is a key, high impact intervention to support newly qualified staff. 
+Preceptorship is recognised as giving newly qualified midwives the best opportunity to get 
+their career off to a good start and supports retention. The NHS Long Term Plan 
+acknowledges that by better supporting and developing staff, NHS employers can make an 
+immediate difference to retaining the skills, expertise and care service users need, now and 
+in the future 
+ 
+Preceptorship is not designed to replace appraisals, substitute for a formal induction and 
+mandatory training or be a way to re -test or repeat any knowledge and skills that a 
+professional needs to qualify for the NMC register. 
+ 
+This document is based on the National Preceptorship Framework for Midwifery 2023 and 
+the Nursing and Midwifery Council (NMC) Principles for Preceptorship . It reflects the 
+workforce development plans in the Three year delivery plan for maternity and neonatal 
+services , NHS Long Term Plan and NHS People Plan . 
+ 
+This document also sets out the nationally recommended and auditable core standards and 
+gold standards for Preceptorship ( Appendix 1 ). 
+
+7.0 Definitions of roles & responsibilities 
+ 
+7.1 Preceptee 
+ 
+At UHSussex, a midwife would be considered a preceptee if they are: 
+ 
+• A NQM entering practice for the first time 
+ 
+Midwives who may also benefit from accessing part or the entire preceptorship programme 
+are: 
+ 
+• A midwife returning to practice after re-joining the register. 
+• A registered midwife coming to work in the UK from within or outside the EEA/EU 
+who requires support and guidance as part of their individualised support and 
+development package. Midwifery Preceptorship Protocol v1.0 UHS -CG-0011 -2023 Sept 2023 Page 6 of 29 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 7.2 Preceptor 
+A preceptor provides guidance to the preceptee by facilitating their transition from student to 
+registered midwife. This is done by gaining experience and applying learning in a clinical 
+setting during the preceptorship period. 
+ 
+At UHSussex preceptee’s are allocated a Clinical Skills Facilitator (CSF) midwife as their 
+preceptor by the preceptorship lead/s before they start employment (or in their first week in 
+exceptional circumstances). CSFs are experienced midwives who offer alongside support in 
+clinical practice with a vast range of clinical skills as well as supporting preceptee’s with their 
+emotional wellbeing and socialisation into the workplace. CSFs are a point of contact for 
+any concerns and learning needs and take an active role in Preceptorship study days. 
+ 
+Preceptors are responsible for: 
+ 
+• Possessing a good understanding of the preceptorship framework requirements 
+and communicating these to the preceptee clearly and concisely. 
+• Understanding the scope and boundaries of the roles of the preceptee. 
+• Acting as an advocate and professional friend; demonstrating insight and empathy 
+with the preceptee. 
+• Acting as a role model for professional practice by promoting organisational 
+values of compassion, communication, teamwork, respect, professionalism and 
+inclusion. 
+• Ensuring all induction has been completed and checked so that the preceptee is 
+fully aware of local ways of working and appropriate policies. 
+• Facilitating introductions for the newly registered midwife to colleagues, 
+multidisciplinary team, peers, and others (internal and external to the organisation 
+as appropriate). Promoting networking and development of effective working 
+relationships. 
+• Agreeing and documenting individual learning needs with the preceptee, co - 
+developing a learning plan with achievable goals with regular and confidential 
+review (see Appendix 2 and IRIS Preceptee page). 
+• Using coaching and mentoring skills to enable the preceptee to develop both 
+clinical and professionally and to develop confidence. 
+• Facilitating a supportive and inclusive learning environment by signposting 
+resources and actively planning learning opportunities for clinical, professional and 
+personal growth. 
+• Giving timely and appropriate feedback to the preceptee on a regular basis 
+• Liaising with the preceptee’s line manager to monitor progress, celebrate success 
+and address areas of poor performance or areas requiring further development 
+through objective setting and regular review. 
+• Participate in regular formal meetings with preceptee (see Initial Meeting & 
+Progress Meetings ). 
+• Completing the NHS England E-Learning for Healthcare Preceptorship module 
+and updating annually to maintain contemporary knowledge. 
+• Embracing principles of NMC Code . Midwifery Preceptorship Protocol v1.0 UHS -CG-0011 -2023 Sept 2023 Page 7 of 29 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+7.3 Preceptorship Lead 
+The preceptorship lead/s acts as the central point of contact and co -ordination for all 
+preceptorship matters within UHSussex. Currently there is 1 WTE preceptorship lead post 
+for PRH and RSCH and another WTE preceptorship lead post for Worthing and SRH. 
+ 
+The preceptorship lead/s are responsible for: 
+ 
+• Co-ordination, monitoring and evaluation of preceptorship programmes. 
+• Development and review of both programme and protocol. 
+• Ensuring the learning environment meets the needs of the preceptee. 
+• Ensuring a development programme is in place to prepare preceptors and 
+identifying further support or development needs. 
+• Identifying all NQM/midwives requiring preceptorship and allocating a preceptor in 
+time for their start date. 
+• Maintaining a register of preceptors and preceptees. 
+• Ensuring the preceptor/preceptee relationship is working satisfactorily. 
+• Ensuring adequate protected time is happening in line with policy (see 
+Supernumery Period and Protected Time ). 
+• Monitoring and tracking completion rates for all preceptees. 
+• Measuring the effectiveness and impact of the preceptorship programme in 
+retention and staff engagement by evaluating the programme after each cohort. 
+• Working alongside preceptee’s when required. 
+• Prioritising and supporting staff retention. 
+• Promoting the value of preceptorship within their organisation. 
+
+7.4 Buddy 
+ 
+A buddy is a registered midwife at band 6 or above with a minimum of 12 months’ 
+experience as a midwife. Buddies are a professional friend, a named person for whom the 
+preceptee can go to for advice and guidance in the absence of their preceptor. Buddies are 
+allocated per rotation by the preceptorship lead/s or chosen by the preceptee. Preceptee’s 
+may be allocated one or two buddies to meet their support needs. The aim of this role is to 
+ensure there is always a named person that a preceptee midwife can go to for support while 
+on shift. Preceptees are not expected to shadow or work directly with their buddy. All 
+buddies will communicate regularly with the preceptorship lead/s or named preceptor on the 
+progress of the Preceptee. 
+ 
+Buddies are responsible for: 
+ 
+• Facilitating reflection. 
+• Giving timely and appropriate feedback to newly registered midwife on a regular 
+basis. Midwifery Preceptorship Protocol v1.0 UHS -CG-0011 -2023 Sept 2023 Page 8 of 29 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ • Acting as a role model for professional practice by promoting organisational 
+values of compassion, communication, teamwork, respect, professionalism and 
+inclusion. 
+• Embracing principles of the NMC Code. 
+
+7.5 Professional midwifery advocate (PMA) 
+ 
+Professional midwifery advocates (PMAs) provide support to the preceptee and preceptor 
+throughout the preceptorship programme using the advocating and education for quality 
+improvement (A -EQUIP) model. This is made up of four functions: 
+ 
+1. Restorative 
+2. Normative 
+3. Personal action for quality improvement 
+4. Education and development to support the preceptee 
+ 
+The A-EQUIP model aims to contribute to the provision of high-quality care via: 
+ 
+• Facilitating continuous improvement 
+• Valuing the midwife 
+• Enhancing health and wellbeing 
+• Building personal resilience 
+ 
+A PMA can also offer restorative supervision: an evidence -based tool that enables midwives 
+to feel valued, recognises their strengths and challenges, and identifies ways for them to 
+progress, change and develop. This can be undertaken individually or in a group setting with 
+the remit to help staff understand and process thoughts. This will enable them to 
+contemplate different perspectives and inform decision making. 
+Currently, at PRH & RSCH midwives are allocated a named PMA. At Worthing & SRH 
+midwives have access to a pool of PMAs. 
+ 
+Preceptees are encouraged to meet with a PMA at least twice in the preceptorship period. 
+PMA’s are invited to attend on at least one of the Preceptorship study days when 
+Restorative Group Clinical Supervision is offered. 
+
+7.6 Line Manager 
+ 
+Preceptee’s are initially line managed by the inpatient midwifery matron at their hospital site. 
+The role of the line manager is to ensure the implementation of the preceptorship policy 
+within their own area including: 
+ 
+• Working closely with the Preceptorship Leads to ensure the completion of all 
+induction, mandatory and statutory training for the preceptee. 
+• Providing a minimum supernumerary period. Midwifery Preceptorship Protocol v1.0 UHS -CG-0011 -2023 Sept 2023 Page 9 of 29 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ • Ensuring protected time for meetings at the outset of the programme and every 
+three months. 
+• Working collaboratively with the preceptorship lead to ensure sufficient support 
+and development opportunities for preceptee’s. 
+• Participating in the final sign off process and arranging progression to Band 6. 
+
+7.8 The Chief Nurse 
+ 
+The chief nurse is the trust board member with overall responsibility for the delivery of the 
+trust’s preceptorship programmes for NMC registered professionals. 
+
+7.9 The Director of Midwifery 
+ 
+The director of midwifery is the trust board member with overall responsibility for the delivery 
+of the trust’s preceptorship programmes for midwives. 
+
+7.10 The Head of Midwifery 
+ 
+The head of midwifery (1 WTE for PRH & RSCH, 1 WTE for Worthing & SRH) are 
+responsible for operational direction and the provision of midwifery services management to 
+ensure the delivery of a consistently high standard of care, patient experience and 
+satisfaction. They have a responsibility to ensure any preceptorship programme meets the 
+needs of newly qualified midwives and all national and local policies. 
+
+8.0 Model of preceptorship provision 
+ 
+At UHSussex Model 1 of Preceptorship Provision as defined by the National Preceptorship 
+Framework (2023) is followed. 
+ 
+The preceptorship programme is the responsibility of the preceptorship lead/s, supported by 
+the Maternity Education Team/s, buddies and PMAs. 
+ 
+Preceptee’s are allocated a named CSF midwife as their preceptor prior to starting in post or 
+in their first week of employment as a NQM. 
+ 
+Preceptees are also assigned (or choose) a buddy/s who is a named midwife (B6 or above) 
+in clinical practice who is available to the preceptee for 50 per cent of rostered shifts where 
+possible, for at least the first six months in post and up to the entirety of their preceptorship 
+programme if they wish. 
+ 
+The preceptorship lead/s co-ordinates and monitors provision of preceptorship. Midwifery Preceptorship Protocol v1.0 UHS -CG-0011 -2023 Sept 2023 Page 10 of 29 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+8.1 PRH & RSCH 
+ 
+The named CSF (preceptor) undertakes formal meetings every three months with the 
+preceptee to track their progress from band 5 to band 6. This ensures competencies are 
+completed, confidence is grown, and pastoral support is provided until completion of the 
+preceptorship period. 
+ 
+Preceptee’s also have the opportunity to work with any of the CSFs in the Maternity 
+Education Team if a particular area of practice is identified, during clinical emergencies 
+attended by the CSF bleep holder or as part of in -situ skills drills. 
+
+8.2 WH & SRH 
+ 
+The preceptorship lead/s may work clinically alongside preceptees. The preceptorship 
+lead/s undertakes formal meetings every three months to track preceptee progress from 
+band 5 to band 6. This ensures competencies are completed, confidence is grown, and 
+pastoral support is provided until completion of the preceptorship period. 
+
+9.0 Programme of learning 
+ 
+Preceptee’s at UHSussex complete a structured programme of learning which includes: 
+• Trust Induction and orientation 
+• 5 Preceptorship study days (see Appendix 3) 
+• 5 Mandatory Training days 
+• Infant Feeding day 
+ 
+All days are rostered and are protected time for preceptorship. 
+
+10.0 Timeframes 
+ 
+The National Preceptorship Framework and RCM recommend a timeframe normally not less 
+than one year and not more than two years based on full time working hours. Preceptee’s 
+who work part time are anticipated to complete their programme at around 18months but 
+should also aim to to progress to B6 within 2 years. The National Preceptorship Lead 
+acknowledges that some preceptee’s may be ready to progress to a band 6 sooner than 12 
+months, and are supportive of earlier progression based on the individual achievement and 
+experience of the preceptee. This decision must be made as part of a formal process with 
+their preceptorship lead, preceptor, PMA and line manager (see Final Sign -Off). Midwifery Preceptorship Protocol v1.0 UHS -CG-0011 -2023 Sept 2023 Page 11 of 29 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 11.0 Supernumerary period 
+ 
+On commencement of the preceptorship period, all newly registered preceptees will have 
+supernumerary status for: 
+ 
+• A minimum of four weeks or 150 hours over a 12-month preceptorship period. 
+• This time can be used at the start of each rotation in a clinical area or at the start 
+of the preceptorship programme. 
+ 
+The Preceptee will be allocated a midwife to work with, will not be personally allocated a 
+caseload or patient, and will not be counted in the staffing numbers. 
+
+12.0 Protected time 
+ 
+12.1 Preceptee’s 
+ 
+In addition to the programme of learning and supernumerary time described above, 
+preceptee’s are allocated a minimum of 8 hours protected time per year for progress 
+meetings (see Initial and Progress Meetings) and PMA support. If meetings are undertaken 
+outside of working hours, this time can be claimed back as time in lieu. 
+ 
+Preceptee’s who have completed NIPE training as part of their Midwifery degree need to 
+complete 10 supervised NIPE check and 10 unsupervised NIPE checks (which have already 
+been completed by a signed off clinician or are re -checked by a signed off clinician) before 
+they can perform this skill independently. 
+Preceptees are encouraged to work a minimum of 30 per cent of their shifts (ideally one shift 
+a week) between Monday and Friday in day time hours. This is to enable them to access the 
+direct support of their named preceptor and the Education Team. 
+ 
+12.2 Preceptors 
+ 
+Preceptors are allocated a minimum of 8 hours protected time per named preceptee per 
+year to undertake progress meetings (see Initial and Progress Meetings) and meet support 
+needs. If meetings are undertaken outside of working hours, this time can be claimed back 
+as time in lieu. 
+ 
+In addition, Preceptor’s are allocated a minimum of 4 hours protected time per year to 
+ensure time for personal development such as attending national forums, workshops, 
+education and training. 
+
+13.0 Initial meeting 
+ 
+Initial meetings should take place between the preceptee and their named CSF preceptor 
+within the first week of preceptee employment as a NQM and no later than 2 weeks. Midwifery Preceptorship Protocol v1.0 UHS -CG-0011 -2023 Sept 2023 Page 12 of 29 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ The initial meeting will result in an individualised, personalised development plan, jointly 
+agreed by preceptee and preceptor, using strengths, limitations, opportunities, threats 
+(SLOT) model. 
+ 
+At the initial meeting UHSussex preceptee’s must complete the Midwifery Framework 
+Charter ( Appendix 4 ) where they commit to: 
+ 
+• Completing all organisation and local induction, statutory and mandatory training 
+• Attending study days and doing all required training to complete preceptorship 
+• Observing and adhering to the organisations values & behaviours 
+• Participating fully in the preceptorship programme by preparing for and attending 
+meetings as scheduled with their named preceptor 
+• Working collaboratively with their named preceptor to share reflections and 
+identify learning and development needs 
+• Seeking feedback from others to inform their progress 
+• Owning their learning and development plan 
+
+14.0 Progress meetings 
+ 
+Over the preceptorship programme, a minimum of four progress meetings should take place 
+at approximately three, six, nine and twelve months between preceptee and preceptor or 
+preceptorship lead. Meetings should last about an hour and are included as protected time 
+for both preceptee and preceptor. 
+ 
+At each meeting, a formal review of progress is completed, and expectations of the next 
+three months’ competencies are agreed. This is documented using the meeting template 
+(Appendix 2 ) and uploaded to the preceptee’s ePortfolio on IRIS. Any planned support to 
+help the midwife achieve their competencies should be documented. This should be 
+regularly discussed and reviewed with outcomes recorded by the preceptee and preceptor 
+throughout the preceptorship programme. 
+
+15.0 Record of progress 
+ 
+The preceptee will maintain an ePortfolio (record of progress) via IRIS that provides 
+reflective accounts and captures evidence that demonstrates working towards, or meeting, 
+the required standards, competencies, or outcomes of their role alongside regular practice 
+feedback and their completed eLearning tasks. Preceptee’s must also complete their “skills 
+passport” which captures completion of practical skills and clinical experiences. Any 
+registered member of the MDT can sign this document when witnessing skills and/or 
+experience. 
+ 
+Preceptor’s keep a record of alongside clinical support in the preceptee’s progress log 
+(Appendix 5) in their named electronic folder on the education drive. Entries should provide Midwifery Preceptorship Protocol v1.0 UHS -CG-0011 -2023 Sept 2023 Page 13 of 29 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ a brief description of the session alongside any concerns or actions completed in conjunction 
+and/or agreement with the preceptee. 
+
+16.0 Information sharing 
+ 
+Documentation of learning and development plans and progress meetings are jointly agreed 
+between preceptee and preceptor. These documents are stored electronically on the 
+preceptee’s IRIS account and in the Education Team drive. Preceptee’s may also choose to 
+retain a paper copy if they wish. These documents may be used for information sharing 
+within the Maternity Education Team to meet identified learning needs and/or with the 
+preceptee’s line manager. Information is only ever shared with the preceptee’s permission, 
+except in extraordinary circumstances. 
+
+17.0 Standardised documentation 
+ 
+Standard documentation for the preceptorship programme is used across UHSussex and 
+includes: 
+ 
+• Policy 
+• Charter (Appendix 4) 
+• Meeting templates (Appendix 2) 
+• Individual learning plan – SLOT Analysis (Appendix 2) 
+• NMC Reflection (Appendix 6) 
+• Escalation process (Appendix 7) 
+18.0 Escalation process 
+ 
+It is imperative at UHSussex that staff feel able to raise concerns and that these are acted 
+upon. In the first instance, all staff are encouraged to speak to the preceptorship lead/s 
+about any concerns relating to preceptorship. Midwives are also encouraged to raise 
+concerns with a PMA. If they are unable to for any reason, staff are encouraged to refer to 
+the UHS Sussex Speaking Up/Raising Concerrns toolkit and/or NMC guidance document: 
+Raising Concerns and follow the recommended steps. 
+
+18.1 Raising Concerns about a Preceptee 
+ 
+If there are concerns about a preceptee the flowchart in Appendix 7 should be followed. In 
+all but exceptional circumstances the concern should be directly raised with the preceptee 
+and a solution sought. Preceptee’s should be copied in to any resulting communication and 
+jointly agree next steps. If every reasonable effort has been made to raise concerns directly 
+with the preceptee, and a solution has not been found, it is important to give a clear 
+explanation of why when escalating further as per the flowchart in Appendix 7 . Midwifery Preceptorship Protocol v1.0 UHS -CG-0011 -2023 Sept 2023 Page 14 of 29 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 19.0 Final sign-off 
+ 
+The period of preceptorship ends after the preceptee has successfully acquired all 
+necessary clinical skills, competencies and performance requirements of their position. 
+ 
+A final sign off meeting should take place when the preceptee has completed their skills 
+passport and IRIS requirements and they have the confidence, competence and experience 
+to progress to a band 6 (see Timeframes ). 
+ 
+This is a formal process which includes progression from a band 5 to band 6. Staff present 
+at the meeting should as a minimum include the preceptee, preceptor and line manager. It 
+is recommended that the preceptee’s PMA is also invited. In the absence of the preceptor, 
+the preceptorship lead/s will attend. This will ensure the preceptee’s progress has been 
+satisfactory throughout, all competencies are achieved, the preceptee has gained sufficient 
+confidence and autonomous skills competence to fulfil a band 6 role. The meeting is also an 
+opportunity to celebrate the individual achievements of the preceptee during their 
+preceptorship programme. 
+ 
+There is a formal documented process for sign off for both: 
+ 
+• Completion of the preceptorship year (via IRIS) 
+• Completion of the “skills passport” 
+• Progression from band 5 to band 6 
+ 
+If the preceptee has not provided sufficient evidence that they have successfully met the 
+requirements of their position, the process outlined in the Trusts capability and poor 
+performance guidance may be followed. 
+
+20.0 Evaluation 
+ 
+Evaluation of the preceptorship programme should be completed annually by the 
+preceptorship lead/s. This will include: 
+ 
+• Evaluation of the preceptorship experience from preceptee feedback 
+questionnaires at the end point 
+• Feedback from preceptors 
+• Feedback from line managers 
+• Feedback from practice educators 
+• Course evaluations 
+• Analysis of retention statistics at 12 months and 24 months’ post registration/start 
+date with the organisation. Midwifery Preceptorship Protocol v1.0 UHS -CG-0011 -2023 Sept 2023 Page 15 of 29 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 21.0 Monitoring 
+ 
+See appendix 1. 
+ 
+References 
+ 
+NHS (2020) NHS People Plan. Online: NHS England » NHS People Plan (Accessed 
+01/05/2023) 
+ 
+NHS (2019) The NHS Long Term Plan. Online: NHS Long Term Plan » The NHS Long Term 
+Plan (Accessed 01/05/2023) 
+ 
+NHS England (2023) National Preceptorship Framework for Midwifery. Online: 
+https://www.england.nhs.uk/long -read/national -preceptorship -framework -for-midwifery/ 
+(Accessed 01/05/2023) 
+ 
+NHS England (2023) Three year delivery plan for maternity and neonatal services . Online: 
+NHS England » Three year delivery plan for maternity and neonatal services (Accessed 
+01/05/2023) 
+ 
+Nursing and Midwifery Council (2018) NMC Code. Online: The Code (nmc.org.uk) 
+(Accessed 01/05/2023) 
+ 
+Nursing and Midwifery Council (2022) Principles for Preceptorship . Online: nmc-principles - 
+for-preceptorship -a5.pdf (Accessed 01/05/2023) Midwifery Preceptorship Protocol v1.0 UHS -CG-0011 -2023 Sept 2023 Page 16 of 29 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+Appendix 1: Midwifery Preceptorship Recommended, Core & Gold Standards 2023 
+ 
+Core standards should be implemented and able to be evidenced by September 2023 
+Gold standards should be implemented or being worked towards 
+Standard Recommended Core Gold Evidence 
+Preceptorship Lead: 
+Band 7 midwife or midwifery manager in post as named lead X 12 month posts x2 WTE (E&W) 
+Oversees the preceptorship programme X 
+Maintains a register of preceptors and preceptees X Develop Spreadsheet 
+Promotes the value of preceptorship within their organisation Present at Maternity Assembly 
+Ensures there is a development programme to prepare preceptors 
+for their role X Protocol 
+Supports the preceptors as and when required X 
+Development of Preceptor’s training X Evaluation forms, archive 
+preceptorship days, map rationale 
+for changes 
+Reports into the SRO, director of midwifery or head of midwifery X 
+A Senior responsible officer (SRO) for preceptorship should be in 
+place at board level to mandate preceptorship across the 
+organisation, confirm supernumerary and protected time for 
+preceptees and preceptors, meeting templates and standard 
+documentation Director of Midwifery 
+Preceptor: 
+Named Preceptor (CSF) allocated to Preceptee within 1 week of 
+starting in post X Audit tool IRIS 
+Named Preceptor (CSF) allocated to Preceptee prior to them 
+starting in post with PIN X Audit 
+Preceptor’s allocated at least 8 hours protected time/year to 
+successfully undertake their role X Audit 
+Preceptor’s allocated at least 12 hours protected time/year for 
+personal development X Audit Midwifery Preceptorship Protocol v1.0 UHS -CG-0011 -2023 Sept 2023 Page 17 of 29 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Preceptorship Programme: 
+Timeframe: Normally not less than a year, not more than 2 years 
+(RCM) X Audit tool IRIS 
+Includes orientation to the trust and maternity service provider and 
+its values, objectives, policies, and procedures X Audit tool IRIS 
+Continuation of post-preceptorship year support over 12 months 
+and up to 3 years X Not started 
+Bespoke accelerated preceptorship programme for international 
+recruits X Not started 
+Formal sign -off process includes the preceptee, preceptor, 
+preceptorship lead, line manager, and professional midwifery 
+advocate to ensure the preceptee’s progress has been satisfactory 
+throughout, all competencies are achieved, the preceptee has 
+gained sufficient confidence and autonomous skills competence to 
+fulfil a band 6 role. X Audit tool IRIS 
+Documentation 
+Formal, individualised learning agreement to allow the line 
+manager, preceptor and preceptee to understand their roles and 
+responsibilities in the process and provide an audit and evaluation 
+of the preceptorship period X Learning charter IRIS Audit tool 
+IRIS 
+Standard documentation should be used across the organisation 
+including: 
+• Policy 
+• Charter 
+• Meeting templates X Policy 
+Development needs analysis (SLOT analysis: Strengths, Learning 
+needs, Opportunities and Threats) The SLOT model can assist in 
+developing an agreed programme of development between 
+preceptee and preceptor. 
+• Individual learning plan 
+• Reflection 
+• Escalation process X Audit tool IRIS Midwifery Preceptorship Protocol v1.0 UHS -CG-0011 -2023 Sept 2023 Page 18 of 29 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Protected time 
+Protected supernumerary time to allow orientation into all care 
+settings in which midwives provide care Audit/Evaluation 
+Protected learning time to develop skills/competencies and 
+become familiar with unit policies and procedures, including 
+multidisciplinary skills and drills training relating to 
+emergency/urgent and complex care situations Attendance D1 
+Protected time with named preceptor to reflect on practice and 
+receive constructive feedback on preceptorship programme 
+requirements Completes meetings within 
+timeframes Audit tool IRIS 
+Minimum of 4 weeks/150 hours of supernumary time - usually 
+two weeks at the start of each rotation or at the start of each new 
+clinical area. 
+Preceptees must be allocated a named midwife to work with during 
+supernumary time, will not be counted in the numbers or allocated 
+a personal caseload or patient X Audit/Evaluation 
+Meetings: 
+Initial meeting between named Preceptor and Preceptee takes 
+place within 2 weeks of joining organisation X Audit tool IRIS 
+Initial meeting between named Preceptor and Preceptee takes 
+place within 1 week of joining organisation X Audit tool IRIS 
+Individualised, personalised development plan jointly agreed at 
+initial meeting X Audit tool IRIS 
+Minimum of 4 progress meetings should take place around: 3, 6, 9 
+& 12 months X Audit tool IRIS 
+More frequent schedule of meetings between preceptor and 
+preceptee than 3, 6, 9 & 12 months X Audit tool IRIS 
+Progress meetings should last around an hour and be protected 
+time for both preceptee & preceptor X Audit/ Evaluation 
+The preceptee will maintain a portfolio or a record of progress that 
+provides reflective accounts and captures evidence that 
+demonstrates working towards, or meeting, the required standards, X E portfolio IRIS 
+Audit tool IRIS Midwifery Preceptorship Protocol v1.0 UHS -CG-0011 -2023 Sept 2023 Page 19 of 29 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ competencies, or outcomes of their role alongside regular practice 
+feedback 
+Policy: 
+Defines roles of Preceptorship Lead X Policy 
+Defines supernumary period X Policy 
+Defines protected time X Policy 
+Includes a formal structured programme of learning X Policy 
+Standardised documentation X Policy/IRIS 
+Evidence of Preceptor training X Audit 
+Audit compliance with framework X Audit/Live doc 
+Audit evaluation of programme X Audit/Evaluation 
+Audit feedback X Audit/Evaluation 
+Audit impact on recruitment & retention X Audit exit/retention at 12 & 24 
+months 
+Audit/Evaluation/Exit interview 
+(separate moving Trust/Leaving 
+profession) 
+Compliance 
+National preceptorship framework for midwifery (2023) X Policy/attend National forum 
+NMC principles of preceptorship (2020) X 
+RCM position statement on preceptorship (2022) X 
+(2022) X 
+Immediate and essential actions (EIAs) relating specifically to 
+midwifery preceptorship X 
+Annual Evaluation: 
+Analysis of course feedback forms X Feedback forms 
+Retention statistics at 12 and 24 months post-registration X Audit 
+Evaluation of preceptorship experience based on questionnaires 
+from preceptee’s X Feedback forms 
+Evaluation of preceptorship feedback from preceptor’s X Feedback forms 
+Feedback analysed after each workshop or training session X Feedback forms 
+Midpoint preceptee feedback X Evaluation 
+Midpoint preceptor/stakeholder feedback X Evaluation 
+Precetees involved in the design & development of the programme X Evaluation Midwifery Preceptorship Protocol v1.0 UHS -CG-0011 -2023 Sept 2023 Page 20 of 29 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Appendix 2: Meeting templates 
+Initial meeting 
+Preceptee Name: 
+Preceptor Name: 
+Date of meeting: 
+ 
+Expectations: 
+Induction checklist 
+Study days / e-learning planned 
+Development Plan: SMART objectives 
+(Specific, measurable, realistic, agreed, time bound) 
+Support to achieve objectives: 
+Comments /Notes 
+
+Next meeting date: 
+ 
+Preceptee signature Preceptor signature Midwifery Preceptorship Protocol v1.0 UHS -CG-0011 -2023 Sept 2023 Page 21 of 29 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Slot Analysis 
+This is a self-assessment tool to help you identify areas for discussion with your preceptor. 
+Complete this at your initial meeting with your preceptor. 
+ 
+STRENGTHS/SKILLS LEARNING NEEDS 
+What areas of practice do I already feel 
+competent/confident in? What area of practice do I need to know 
+more about? 
+OPPORTUNITIES THREATS 
+How can I exploit my strengths and meet my 
+learning needs? 
+What can my workplace include to do this? What is it that I am most worried about/ what 
+might hold me back/how can I overcome? Midwifery Preceptorship Protocol v1.0 UHS -CG-0011 -2023 Sept 2023 Page 22 of 29 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Date of Initial Meeting 
+Record of Discussion and agreed learning needs. 
+Plan of Action. 
+Agreed Date of next meeting: 
+Signature of Preceptor: 
+Signature of Preceptee: Midwifery Preceptorship Protocol v1.0 UHS -CG-0011 -2023 Sept 2023 Page 23 of 29 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Interim meetings 
+ 
+Preceptee Name: 
+Preceptor Name: 
+Date of meeting: 
+ 
+Review since last meeting, reflection of progress, what’s gone well and any challenges 
+Study days / e-learning planned 
+Development Plan: SMART objectives 
+(Specific, measurable, realistic, agreed, time bound) 
+Support to achieve objectives: 
+Comments /Notes 
+
+Next meeting date: 
+Preceptee signature Preceptor signature Midwifery Preceptorship Protocol v1.0 UHS -CG-0011 -2023 Sept 2023 Page 24 of 29 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Final meeting 
+ 
+Preceptee Name: 
+Preceptor Name: 
+Date of meeting: 
+ 
+Review since last meeting what’s gone well and any challenges 
+Study days / e-learning completed/ programme completed 
+Review of last meeting’s SMART objectives 
+(Specific, measurable, realistic, agreed, time bound) 
+Future development needs 
+Sign Off declaration 
+This is to confirm that I have completed all aspects of the preceptorship programme 
+satisfactorily 
+ 
+Preceptee signature 
+
+This is to confirm that has completed the preceptorship 
+programme and all competencies which are core to the preceptorship programme 
+Preceptor signature 
+Line Manager signature Midwifery Preceptorship Protocol v1.0 UHS -CG-0011 -2023 Sept 2023 Page 25 of 29 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Appendix 3: Preceptorship study days 
+ 
+The preceptorship Education Programme is updated annually based on feedback from 
+preceptee’s, presenting faculty and to reflect local and national themes. As an overview, the 
+days include: 
+ 
+Welcome & 
+Orientation Introduction to Preceptorship Programme 
+Introduction to role of PMA 
+Human Factors 
+Escalation & Speaking Up 
+Medicines Management Assessment 
+Cannulation & 
+Intravenous 
+Infusions Cannulating Workshop 
+Introduction & update from Trust IV Team 
+Suturing, 
+Speculums & FSEs Suturing Workshop 
+Speculums Workshop 
+Applying a fetal scalp electrode (FSE) 
+Physiological Birth 
+& Wellbeing Physiological Birth Refresher 
+Role of Consultant Midwife 
+Restorative Clinical Supervision 
+Staff Psychological Support Service 
+Moving Forward & 
+Next Steps Practice Supervisor and Practice Assessor 
+Quality Improvement Projects/PFIS 
+Utilising PMA 
+Evaluating Preceptorship Programme 
+Celebrating success Midwifery Preceptorship Protocol v1.0 UHS -CG-0011 -2023 Sept 2023 Page 26 of 29 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Appendix 4: Midwifery framework charter 
+
+Preceptee 
+ 
+I, commit to fulfilling my responsibilities as a newly 
+registered midwife and preceptee. This includes: 
+• Completing all organisation and local induction, statutory and mandatory training 
+• Attending study days and doing all required training to complete my preceptorship 
+• Observing and adhering to organisation values 
+• Participating fully in the preceptorship programme by preparing for and attending 
+meetings as scheduled with my preceptor 
+• Working collaboratively with my preceptor to share my reflections and identify 
+learning and development needs 
+• Seeking feedback from others to inform my progress 
+• Owning my learning and development plan 
+Signature: 
+Date: 
+
+Preceptor 
+ 
+I, commit to fulfilling my responsibilities as a 
+preceptor. 
+This includes: 
+• Providing support and guidance to the newly registered midwife 
+• Acting as a role model and critical friend 
+• Facilitating introductions and promoting good working relationships 
+• Participating in all preceptorship activities including completing required training, 
+preparing for, attending, and documenting regular scheduled meetings at 3,6,9 and 
+12 months 
+• Providing timely and appropriate feedback to the preceptee 
+• Liaising with manager and Preceptorship Lead about preceptee’s progress as 
+appropriate 
+• Advising on learning and development needs, facilitating a supportive learning 
+environment and signposting learning resources 
+Signature: 
+ 
+Date: Midwifery Preceptorship Protocol v1.0 UHS -CG-0011 -2023 Sept 2023 Page 27 of 29 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Appendix 5: preceptorship progress log 
+ 
+Name: 
+Telephone: 
+Email: 
+Site: 
+Start Date: 
+Hours: 
+CSF: 
+PMA: 
+ 
+Date: Information: Action Plan Sign 
+
+Midwifery Preceptorship Protocol v1.0 UHS -CG-0011 -2023 Sept 2023 Page 28 of 29 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+Appendix 5: NMC reflective accounts form 
+ 
+You must use this form to record five written reflective accounts on your CPD and/or practice -related 
+feedback and/or an event or experience in your practice and how this relates to the Code. Please fill in 
+a page for each of your reflective accounts, making sure you do not include any information that might 
+identify a specific patient, service user, colleague or other individuals. Please refer to our guidance on 
+preserving anonymity in the section on non-identifiable information in How to revalidate with the NMC . 
+ 
+Reflective account: 
+What was the nature of the CPD activity and/or practice -related feedback 
+and/or event or experience in your practice? 
+What did you learn from the CPD activity and/or feedback and/or event or 
+experience in your practice? 
+How did you change or improve your practice as a result? 
+How is this relevant to the Code? 
+Select one or more themes: Prioritise people – Practise effectively – Preserve safety – Promote 
+professionalism and trust 
+Midwifery Preceptorship Protocol v1.0 UHS -CG-0011 -2023 Sept 2023 Page 29 of 29 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Appendix 7: Raising concerns about a Preceptee 
+ 
+If on discussion with Preceptee the 
+issue is resolved, no further action 
+is required 
+Satisfactory Response 
+Encourage the Preceptee to 
+consider writing a reflective piece 
+for their portfolio and/or support 
+from their Preceptor CSF, Buddy, 
+PMA, and Preceptorship Lead as 
+appropriate 
+Raising Concerns about a Preceptee 
+Professionalism/Safety 
+ Wellbeing 
+ 
+Unable to discuss concern with Preceptee 
+Every reasonable opportunity should be taken to involve the Preceptee in the 
+first instance. When escalating, please note if Preceptee unaware of concern 
+ 
+Discuss concern with Preceptee 
+Consider location of conversation 
+ 
+Contact named CSF via email, with 
+brief summary of learning need. 
+Copy in Preceptee 
+Learning need identified 
+ 
+CSF to respond within 7 days 
+CSF to contact Preceptee, agree 
+learning plan and document in their 
+progress file 
+
+Preceptee to engage with services 
+as appropriate 
+Recommend Preceptee contact 
+PMA for restorative supervision 
+Consider HELP service referral 
+Direct to local Wellbeing resources 
+via intranet 
+
+Line Manager to contact Preceptee 
+and inform Education Team if 
+Learning needs identified 
+Contact Preceptee’s Line Manager 
+via email, with brief summary of 
+concern and actions. Copy in 
+Preceptee

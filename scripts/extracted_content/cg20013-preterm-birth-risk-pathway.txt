@@ -1,0 +1,1876 @@
+# Extracted from: CG20013 Preterm birth risk pathway.pdf
+# Guideline ID: cg20013-preterm-birth-risk-pathway
+# Content length: 93328 characters
+# Processing date: 1750066900.597046
+
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 1 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+ 
+Preterm Birth R isk Pathway (Guideline) 
+ 
+Summary statement: How does the 
+document support patient care? By providing information to ensure optimal outcomes 
+for mother /birthing parent and baby in cases of risk of 
+preterm labour , delivery, and late miscarriage and to 
+act as a resource for staff caring for pregnant women 
+and people whose needs fall within the scope of this 
+guideline. 
+Staff/stake holders involved in 
+development Consultant Obstetrician , midwives 
+ 
+Division Women and Children’s 
+Department Maternity 
+Responsible Person Chief of Service 
+Author Consultant Obstetrician , midwives 
+For use by Obstetricians, Midwives , and Paediatricians 
+Purpose: To provide gu idance for staff with regard to risk of 
+preterm labour and birth and late miscarriage 
+This document supports NICE CG55 2007 , NICE CG132 2011 , NICE NG25 
+2019 , NG207: Inducing Labour , RCOG GTG no.73 
+Key related documents This document replaces: Preterm Labour and Delivery 
+(Including Preterm Pre -labour Rupture of Membranes), 
+Fetal Fibronectin . Management of women at risk of 
+preterm birth. 
+UH Sussex (SRH&WH) maternity guidelines: Multiple 
+pregnancy and birth , Diabetes in pregnancy , Neonatal 
+Resuscitation, Maternal Transfe r and On -Site 
+Handover of Care, Management of Women and 
+Neonates with Risk Factors for Neonatal Sepsis 
+(including Group B Streptococcus) 
+Obstetrics antimicrobial formulary 
+Approved by Joint Obstetric Guideline Group - 19th October 2022 
+Medicines Governance Committee – 12th March 2024 
+Approval date 19th October 2022 Date uploaded : 13th March 2024 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable - Divisional Ratification only required 
+Ratification Date Not Applicable - Divisional Ratification only required 
+Expiry Date March 2025 
+Review date: September 2024 
+If you require this document in another format such as Braille, large print, 
+audio or another language please contact the Trusts Communications Team 
+Reference Number: CG20013 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 2 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+
+The interpretation and application of clinical guidelines will remain the responsibility 
+of the individual clinician. If in doubt contact a senior colleague or expert. 
+ Version Date Author Status Comment 
+1.0 January 2021 A. Vecsei , Consultant 
+O&G with special 
+interest in high -risk 
+obstetrics 
+
+N. Beckley , Project 
+Midwife SBLCB 
+ 
+J. Collard, Clinical 
+Effectiveness Support 
+Midwife Archived New Trust Maternity guideline 
+combining: 
+CG13001 Preterm labour and 
+Delivery. 
+CG20013 Management of 
+women at risk of preterm birth. 
+CG1115 Fetal fibronectin. 
+Reviewed to ensure NICE 
+NG25 Preterm labour and birth 
+and Saving Babies Lives Care 
+Bundle V2 compliance. 
+2.0 February 2022 A. Vecsei, Consultant 
+O&G with special 
+interest in high -risk 
+obstetrics 
+ 
+C. Robotin, Obstetric 
+Registrar 
+ 
+N. Beckley, Project 
+Midwife SBLCB 
+ 
+J. Collard, Clinical 
+Effectiveness Support 
+Midwife Archived Reviewed to ensure compliance 
+with: 
+ RCOG GTG no.73: Care of 
+Women Presenting with 
+Suspected Preterm Prelabour 
+Rupture of Membranes from 
+24+0 Weeks of Gestation 
+(rcog.org.uk) 
+ NG207: Inducing Labour 
+ RCOG (2022) GTG no.74 
+Antenatal Corticosteroids to 
+reduce neonatal morbidity 
+and mortality – appendix 10 
+added. 
+Reformatted to new Trust 
+Standard and gender neutral 
+pronouns added. 
+2.1 Oct 2022 A. Vecsei , Consultant 
+O&G with special 
+interest in high -risk 
+obstetrics 
+ 
+R. Mason, Fetal 
+Medicine Consultant 
+ 
+CE Team LIVE Updated in line with NICE NG25 
+Preterm Labour and Birth (June 
+2022) 
+Section 7.2 amended to align 
+with SBLCB 
+ 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 3 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+ 
+Contents 
+ 
+1.0 Background ................................ ................................ ................................ ............... 5 
+2.0 Aims ................................ ................................ ................................ .......................... 5 
+3.0 Scope ................................ ................................ ................................ ........................ 5 
+4.0 Responsibilities ................................ ................................ ................................ .......... 5 
+5.0 Definition ................................ ................................ ................................ ................... 6 
+5.1 Abbreviations used within this guideline ................................ ................................ ..... 6 
+6.0 Risk factors for preterm birth ................................ ................................ ...................... 7 
+6.1 Previous preterm birth ................................ ................................ ............................... 7 
+6.2 Abnormal vaginal flora ................................ ................................ ............................... 7 
+6.3 Urinary tract infection (UTI) ................................ ................................ ........................ 7 
+6.4 Systemic bacteraemia ................................ ................................ ............................... 7 
+6.5 Cervical incompetence ................................ ................................ .............................. 7 
+6.6 Uterine capacity ................................ ................................ ................................ ......... 8 
+6.7 Placentation ................................ ................................ ................................ ............... 8 
+7.0 Identif ication and care of pregnant women and people at risk of preterm birth .......... 8 
+7.1 Risk factors to be identified at booking visit ................................ ............................... 8 
+7.2 Risk factors requiring referral to the Preterm Prevention Clinic ................................ .. 9 
+8.0 Prevention of preterm birth in high risk women and people ................................ ...... 10 
+8.1 Pregnant women and people with a history of spontaneous preterm birth (up to 
+34+0 weeks) or late miscarriage (16+0 onwards) ................................ .................... 10 
+8.2 Pregnant women and people with a previous failed transvaginal suture .................. 11 
+8.3 Pregnant women and people with no history of spontaneous preterm birth or 
+mid-trimester loss in whom a transvaginal cervical length scan has been 
+carried out between 16+0 – 26+0 weeks of pregnancy and the cervix is 25mm 
+or less (or below the 5th centile) ................................ ................................ .............. 11 
+8.4 Quantitative fetal fibronectin ................................ ................................ .................... 11 
+8.4.1 Considerations before performing the test ................................ ................................ 13 
+8.4.2 The equipment ................................ ................................ ................................ .......... 13 
+8.4.3 Taking the swab ................................ ................................ ................................ ....... 13 
+8.4.4 Performing the analysis ................................ ................................ ............................ 14 
+8.4.5 Interpreting the results ................................ ................................ .............................. 14 
+9.0 Diagnosis of preterm labour ................................ ................................ ..................... 15 
+10.0 Emergency cervical cerclage ................................ ................................ ................... 16 
+11.0 Counselling the family ................................ ................................ .............................. 17 
+12.0 Corticosteroid prophylaxis ................................ ................................ ........................ 18 
+13.0 Tocolysis ................................ ................................ ................................ ................. 19 
+14.0 Magnesium Sulfate ................................ ................................ ................................ .. 21 
+14.1 Loading dose ................................ ................................ ................................ ........... 22 
+14.2 Maintenance dose ................................ ................................ ................................ ... 23 
+15.0 Preterm Prelabour Rupture of Membranes (P -PROM) ................................ ............. 25 
+16.0 Preterm labour management ................................ ................................ ................... 27 
+16.1 Main considerations: ................................ ................................ ................................ 27 
+16.2 Management: ................................ ................................ ................................ ........... 28 
+16.3 Fetal monitoring ................................ ................................ ................................ ....... 28 
+17.0 Management of preterm birth ................................ ................................ ................... 29 
+18.0 Mode of birth ................................ ................................ ................................ ............ 30 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 4 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+18.1 Counselling for vaginal birth versus caesarean birth ................................ ................ 30 
+18.2 Breech presentation ................................ ................................ ................................ . 30 
+18.3 Timing of cord clamping ................................ ................................ ........................... 31 
+19.0 In utero transfer ................................ ................................ ................................ ....... 31 
+20.0 Audit and monitoring compliance ................................ ................................ ............. 33 
+21.0 References ................................ ................................ ................................ .............. 34 
+Appendix 1: Actim PROM test indication flowchart ................................ .............................. 37 
+Appendix 2: Preterm labour presentation signs and symptoms flow chart ........................... 38 
+Appendix 3: Magnesium Sulfate in pre term labour flow chart ................................ .............. 39 
+Appendix 4: Sussex Preterm in -utero Transfer Process ................................ ...................... 40 
+Appendix 5: Further information ................................ ................................ .......................... 41 
+Appendix 6: Antenatal Corticosteroids to reduce neonatal morbidity and mortality .............. 42 
+
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 5 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+Preterm Birth Risk Pathway 
+
+1.0 Background 
+ 
+Around 8% ( approximately 60,000) babies are born p rematurely each year in England and 
+Wales . Preterm birth (PTB) is define d as delivery at less than 37 +0 weeks gestation. It is the 
+most important single determinant of adverse infant outcome s with regards to survival and 
+quality of life. Babies born preterm have high rates of early, late, and post -neonatal mortality 
+and morbidity. 
+ 
+Morbidity is inversel y correlated to gestational age. T he most significant adverse outcomes 
+are associated with very preterm birth, defined as occurring less than 32+0 weeks gestation. 
+These births account for 1.4% of all deliveries in the United Kingdom, affecting 13,500 
+individuals every year . In 2013 in England and Wales 0.1% of live births occurred at less 
+than 24 weeks. The infant mortality rate for these babies was 877. 2 deaths per 1000 live 
+births. Majority of these deaths (93%) occurred during the early neonatal period. BAPM has 
+published a Framework for Practice , which has been developed by a multidisciplinary 
+working group in the light of evidence of improving outcomes for babies born before 27 
+completed weeks of gestation. 
+ 
+The f inancial implications associated with preterm birth are significant. PTB is estimated to 
+cost health servi ces in England and Wales £3.4 billion per year. A recent economic analysis 
+has concluded that delaying preterm birth by a single week across all gesta tional categories 
+would reduce the total public sector cost of preterm birth (excluding any intervention costs) 
+from £2.946 billion to £1.952 billion ( an annual saving of £994 million). 
+ 
+2.0 Aims 
+ 
+ Improve the diagnosis and management of pregnant women and people at risk of 
+preter m birth between 22 - 36+6 weeks of pregnancy . 
+ Give foundation and support for the preterm birth prevention clinics in University 
+Hospitals Sussex (SRH&WH). 
+ Provide strategies to identify pregnant women and people at risk of sp ontaneous 
+preterm birth (sPTB) . 
+ Screening/prev entive options for pregnant women and people at risk of sPTB . 
+ Management of suspected preterm labour, preterm pre -labour rupture of 
+membranes (P -PROM) , and imminent preterm birth (PTB) . 
+ 
+3.0 Scope 
+ 
+This guideline ap plies to all medical, obstetric, and midwifery staff caring for pregnant 
+women and people presenting with risk factors for preterm delivery and / or with signs and 
+symptoms of preterm labour or delivery. 
+
+4.0 Responsibilities 
+ 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 6 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+It is the re sponsibility of all midwifery and medical staff to: 
+ 
+ Access, read, unde rstand , and apply this guidance . 
+ Attend any mandatory training pertaining to this guidance . 
+ 
+It is the responsibility of the division to: 
+ 
+ Ensure the guideline is reviewed as required in line with UH Sussex (SRH&WH) 
+and national recommendations . 
+ Ensure the guideline is a ccessible to all relevant staff . 
+ 
+5.0 Definition 
+ 
+Preterm labour is defined by the World Health Organisation (WHO) as the onset of regular 
+uterine contractions between vi ability and 37/40 weeks gestation associated with cervical 
+effacement and dilatation. Current guidelines describe a ‘thr eshold of viability’ between 22 
+and 26 weeks. 
+ 
+Preterm birth is defined as birth betw een 22 –23 weeks to 36+6 weeks gestation. 
+ 
+Preterm Pre -labour Rupture of Membranes (P -PROM) is defined as rupture of 
+membranes wi thout labour less than 37 +0 weeks gestation . 
+ 
+Incidence of preterm labour: 
+ 
+ 6.6% - approximately 40,000 per annum in the UK 
+ Mildly preterm (32+0 – 36+6 weeks ) = 5.5% 
+ Moderately preterm (28+0 – 31+6 weeks ) = 0.7% 
+ Extremely preterm (24+0 – 27+6 weeks ) = 0.4% 
+ 
+5.1 Abbreviations used within this guideline 
+ 
+APH - Antepartum Haemorrhage BV - Bacterial Vaginosis 
+CRP - C-reactive protein CTG - Cardiotocography 
+DAU - Day Assessment Unit DFM - Decreased Fetal Movements 
+FBC - Full Blood Count fFN - Fetal Fibronectin 
+FGR - Fetal Growth Restriction GBS - Group B Streptococcus 
+IGFBP -1 - Insulin -like Growth Factor -
+binding Protein 1 (IGFBP -1) IUGR - Intrauterine Growth Restriction 
+LLETZ - Large Loop Excision of the 
+Transformation Zone LVS - Low Vaginal Swab 
+MEOWS - Modified Early Obstetric Warning 
+Score MSU - Midstream Urine Sample 
+PAMG -1 - Placental Alpha Microglobulin -1 PET - Preeclampsia Toxaemia 
+P-PROM - Preterm Pre -labour Rupture of 
+Membranes PTB - Preterm birth 
+SCBU - Special Care Baby Unit sPTB - Spontaneous Preterm Birth 
+TV USS - Trans Vaginal Ultrasound Scan UH Sussex - University Hospitals Sussex 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 7 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+UTI - Urinary Tract Infection U&E’s - Urea & Electrolytes 
+WHO - World Health Organisation 
+ 
+6.0 Risk factors for preterm birth 
+ 
+The following conditions are associated with PTB and therefore history and examination 
+should be performed to identify or ru le out any of these conditions: 
+ 
+6.1 Previous preterm birth 
+ 
+Previous preterm birth is the most significant risk factor. This association is modified by three 
+risk factors: 
+ The number of prior preterm births . 
+ The gestational age at which the previous birth(s) occurred . 
+ The order in which the prior preterm birth(s) occurred . 
+ 
+For example: the risk with o ne previous preterm birt h is 15 –20%, after two preterm births is 
+35–40%, and with one preterm and a s ubsequent term birth is 10 –15%. 
+ 
+6.2 Abnormal vaginal flora 
+ 
+The imbalance of microbial subpopulations seen in Bacterial Vaginosis (BV - predominance 
+of anaerobes and deficiency of lactobacilli) is associated with an in creased risk of preterm 
+birth. P athogenic organisms such as Neisseria Gonorrhoeae and Chlamydia trachomatis 
+may also trigger an inappropriate inflammatory response leading to labour. Early screening 
+and treatment (b efore 20 weeks) is imperative. Group B Streptococcal colonisation is 
+norm ally seen in up to 25% of inner -city populations and is not an indication for antepartum 
+treatment unless accompanied by sympto matic discharge or bacteriuria. 
+ 
+6.3 Urinary tract infection (UTI) 
+ 
+UTI including asymptomatic bacteriuria, cystitis, and pyelon ephritis. Treatment as per 
+Microguide . 
+ 
+6.4 Systemic bacteraemia 
+ 
+Both acute (e.g. pye lonephritis, appendicitis, pneumonia and dental abscesses) and chronic 
+(cystic fibrosis) bacteraemia are associated with preterm birth. This is presumed to be either 
+due to direct blood -borne spread of infection to the uterine cavity or indirectly due to 
+chemical triggers such as accompanying endotoxins or cytokines. 
+ 
+6.5 Cervical incompetence 
+ 
+Cervical incompetence (due to length or strength) may arise following large loop excision of 
+the transformation zone (LLETZ), cone biopsy, multiple dilatations of the cervix, 
+hysteroscopic procedures where the cervix has been dilated up to or beyond Hegar 10, or in 
+conjunction with Mullerian variants (alterations in uterine size/shape such as uni cornuate or 
+bicornuate uterus). 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 8 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+ 
+6.6 Uterine capacity 
+ 
+Conditions that increase uterine distension or interfere with uterine capacity such as 
+polyhydramnios, multiple pregnancy or seen as a consequence of Mullerian vari ants. 
+ 
+6.7 Placentation 
+ 
+Antepartum haemorrhage and/or persisting extrachorionic haemorrhag e due to abnormal 
+placentation with chronic and repeated bleeding . 
+ 
+7.0 Identification and care of pregnant women and people at risk of 
+preterm birth 
+ 
+Prevention of preterm labour involves the screening of all pregnant women and people to 
+identify and initiate intervention tailored to specific risk factors. 
+ 
+7.1 Risk factors to be identified at booking visit 
+ 
+Smoking: doubles the risk of preterm birth. All pregnant women and people should be asked 
+their smoking status at booking and throughout their pregnancy . Please see maternity 
+Smoking Cessation guidance for further information . 
+ 
+Pregnant w omen and people who have experienced a previous preterm birth who stop 
+smoking early in pregnancy modify their risk back to that of a non - smoker. If smoking 
+cessation is delayed until the third trimester this modifiable benefit is lost. Therefore, the 
+importance o f promoting smoking cessation from booking is one of the most important 
+prevention strategies to implement. 
+ 
+Maternal age : young women and people (under 18 years) have an increased risk of preterm 
+birth. Appropriate referral to the Teenage Pregnancy team s hould be offered to provide 
+adequate support and advice throughout the pregnancy – this referral is organised by the 
+ANC or community midwife when someone under 20 years of age completes an online self -
+referral to the hospital at the beginning of their pre gnancy. 
+ 
+Domestic violence : Women and people experiencing domestic violence and/or other social 
+pressures should be directly counselled and referred for specific support through local 
+pathways. Please see Trust guidance on domestic abuse. 
+ 
+Vaginal infection : pathogens such as Neisseria Gonorrhoeae and Chlamydia T rachomatis 
+are associated with PTB, and screening should be offered to at -risk pregnant women and 
+people . The booking midwife in particular should inform each pregnant woman or person 
+under the age of 25 year s about the high prevalence of Chlamydia l infection in their age 
+group and of fer screening. The role of organisms found in Bacterial V aginosis (BV) remains 
+contr oversial. T he presence of BV is linked with preterm birth, but the varying me thods used 
+to ascertain its presence, and the timing and means of treatment in several studies have 
+meant that no consensus currently exists as to its screening and treatment in at -risk 
+women /people . The presence of Group B Streptococci in a vaginal swab i s not an indication 
+to treat until in labour unless also isolated from a midstream urine specimen. 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 9 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+ 
+7.2 Risk factors requiring referral to the Preterm Prevention Clinic 
+ 
+A further set of questions should be used to ascertain risk factors associated with preterm 
+birth at this appointment to appropriately identify at -risk women and people who may benefit 
+from preventive strategies and/or further assessment and more intensive monitoring within 
+the hospital setting. They can be then offered risk -tailored care as outlined below: 
+ 
+Risk factor Referral pathway 
+High Risk 
+ Previous preterm birth or mid -
+trimester loss (16 to 34 weeks 
+gestation). 
+ Previous preterm pre -labour rupture 
+of membranes. 
+ Previous use of cervical cerclage. 
+ Known uterine variant (i.e., 
+unicornuate, bicornuate uterus or 
+uterine septum). 
+ Intrauterine adhesions (Ashermann’s 
+syndrome). 
+ History of trachelectomy (for cervical 
+cancer).  Referral to Preterm Preventio n Clinic 
+by 12 weeks from Booking 
+appointment (or as soo n as possible if 
+late booking). 
+ All pregnant women/people to be 
+offered transvaginal scan for cervical 
+length every 2 -4 weeks between 16 -
+24 weeks. 
+ Additional use of quantitative fetal 
+fibronectin in asymptomatic women 
+may be considered where centres 
+have this expertise 
+ Clinician to determine individual plan 
+for when to be seen in Preterm 
+Prevention Clinic. 
+Intermediate 
+ Previous birth by caesarean section 
+at full dilatation. 
+ History of significant cervical 
+excisional event i.e., LLETZ where 
+>15mm depth removed, or >1 LLETZ 
+procedure carried out or cone biopsy 
+(knife or laser, typically carried out 
+under general anaesthetic). *  Referral to Preterm Prevention Clinic 
+by 12 weeks from Booking 
+appointment (or as soon as possible if 
+late booking). 
+ A single transvaginal scan for cervical 
+length between 18 -22 weeks (can be 
+part of the anomaly scan). 
+ Reassess at 24 weeks for 
+consideration of transfer of care to low 
+risk pathway. 
+ 
+* This can be found in the histopathology report, documenting the size of the tissue excised 
+(by convention the third measurement is always the depth if othe rwise not stated). If 
+uncertain contact the gynaecology department where the procedure was done and ask for 
+histo logy result. In the meanwhile, treat as it was more than 1 5mm. 
+ 
+Referrals to this clinic are organised by the ANC midwives when risk factors are identified on 
+the booking risk assessment. If an obstetrician feels it is appropriate, they too can make a 
+referral via the ANC midwives . 
+ 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 10 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+8.0 Prevention of preterm birth in high risk women and people 
+ 
+Transvaginal sonography may be used to assess cervical length and the anatomy o f the 
+internal os between 16 – 24 weeks . In low -risk women /people cervical length is a normally -
+distributed variable wi th a mean of 35 –40mm from 14 –30 weeks. The lower 10th percentile is 
+25mm. Cervical length is a good predictor of PTB for high risk women and people with 
+sensitivity of 60 –80% and PPV of 70% when cervical length is 25mm or less between 16 – 
+18 weeks. After 30 weeks of gestation the cervix progressively shortens physiologically in 
+preparation for labour and thus it is not usual to rely on cervical length measurement at this 
+gestation and beyond for the prediction of spontaneous preterm birth in asymptomatic 
+women and people . 
+ 
+The initial consultation and base -line assessment should include: 
+ 
+ MSU . 
+ LVS. 
+ Chlamydia risk assessment and if necessary screening . 
+ Lifestyle advice . 
+ Identify risk factors for FGR/PET/Sub optimal placentation and start aspirin 150mg 
+once per day orally if necessary . This should be discussed by a senior obstetrici an 
+and a letter sent to the GP to prescribe. An individualised pl an for gestation to stop 
+taking aspirin should be made and clearly communicated to the woman or person 
+and documented. 
+ 
+After assessment in the Preterm Birth Prevention Clinic, based on history and/or additional 
+screening, women and people may be offered treatment to prevent second trimester 
+miscarriage and preterm birth. 
+ 
+Several interventions have been assessed for women and people at high risk of preterm 
+birth: cervical cerclage, proge sterone and pessaries. Cervical cerclage is an established 
+procedure, progesterone * is recommended in certain situations by NICE such as preterm 
+pre-labour rupture of membranes (P -PROM) in a previous pregnancy or a history of cervical 
+trauma (NICE NG25 Preterm labour and birth ). There are randomised trials suggesting 
+benefit in the use of Arabin pessaries in at -risk women /people . 
+ 
+Based on current evidence at present we cannot determine precisely in which 
+women /people , and in what circumstances, each intervention will be most effective. 
+Therefore care must always be individualised, take into account the wo man/person ’s wishes, 
+and follow a discussion with a clinician able to discuss the potential risks and benefits of 
+each intervention and make a shared decision on which treatment is most suitable . 
+ 
+The following options will usually be discussed at the Preterm Birth Prevention Clinic: 
+ 
+8.1 Pregnant w omen and people with a history of spontaneous preterm b irth (up to 
+34+0 weeks) or late miscarriage (16 +0 onwards ) 
+ 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 11 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+ Prophylactic vaginal progesterone* or prophylactic cervical cerclage can be 
+offered to these women if on transvaginal ultrasound carried out between 16+0 
+and 24+0 weeks of pregnancy they have a cervical length of 25mm or less. 
+ 
+8.2 Pregnant w omen and people with a previous failed transvaginal suture 
+ 
+ The circumstances of the failed suture and other clinical factors wil l be considered 
+prior to placement and a Shirodkar (high vaginal) or transabdominal cerclage may 
+be considered . 
+ Transabdominal placement during pregnancy needs to be undertaken prior to 14 
+weeks . 
+ 
+8.3 Pregnant w omen and people with no history of spontaneous preterm birth or 
+mid-trimester loss in whom a transvaginal cervical length scan has be en 
+carried out between 16+0 – 26+0 weeks of pregnancy and the cerv ix is 25mm or 
+less (or below the 5th centile) 
+ 
+ Care for these women and people should be individualised - counselling should 
+include options of continued surveillance and consideration of prophylactic vaginal 
+progesterone*. 
+ 
+Pregnant w omen and people with an intervention (ce rclage, pessary or progesterone* ) will 
+usually remain under the care of the Preterm Birth Prevention Clinic until birth . If cerclage is 
+used ensure that a plan is in place for removal of the suture. 
+ 
+Women and people undergoing transvaginal cervical length screening u sually continue this 
+until 22 – 24 weeks; if no intervention is recommended, women /people may be transferred to 
+routine pathways of care. Midwifery -led care is appropriate if no other additional risk factors 
+are identified. 
+ 
+* Dose of progesterone: 
+ 400mg Cyclogest pessaries PV before bedtime until 32 -36 weeks . 
+ 250mg 17 -Alpha-Hydroxyprogestrone Caproate IM weekly between 16 – 36 weeks 
+gestation (currently not available in UH Sussex SRH&WH ). 
+ 
+8.4 Quantitative fetal fibronectin 
+ 
+The addition of second screening tool, quantitative fetal fibronectin (fFN) can be considered. 
+In asymptomatic women /people , this additional tool may be used from 18 +0 weeks to 
+ascertain risk of second trimester miscarriage or preterm birth in conjunction with cervical 
+length measurement and support discussions of potential interventions with pregnant women 
+and people . It can also be used in high risk women and people in late second/early third 
+trimester to determine timing and preparation for preterm birth , for example, administration of 
+steroids and magnesium sul fate. The use of quantitative fetal fibronectin should be at the 
+discretion of the lead clinicians. 
+ 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 12 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+Note: fFN test can be done from 18+0 weeks onwards - NICE guidance suggests the use of 
+cervical length measurement with TV USS if available and if the skill mix is appropriate. The 
+fFN in this case is the second best option if cervical length scanning is not available. 
+ 
+Please use below tables to interpret the quantitative fFN results if the QUiPP app are not 
+being used. 
+
+A negative result has a negative predictive value of 98.3% for birth within 14 days and 
+96.8% for birth before 34 weeks . 
+ 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 13 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+8.4.1 Considerations before performing the test 
+ 
+ The test may not be accurate if the patient has had se xual intercourse, digital 
+vaginal examination or a speculum vaginal examination using lubrication other 
+than plain water within the last 24 hours. In these circumstances consider taking 
+the swab and discussing with the consultant if analysis of the swab mi ght be 
+useful. 
+ Any patient with moderate or gross vaginal bleeding should not be tested. Any 
+patient with history or clinical signs of watery discharge should be tested for 
+ruptured membranes and amniotic fluid leakage should be excluded prior to a fFN 
+test. 
+ Any patient with history or clinical signs of watery discharge should be tested for 
+ruptured membranes and amniotic fluid leakage. If there are clinical or biochemical 
+signs of ruptured membranes, then do not do fFN test, but follow section 15.0 
+Prete rm pre -labour rupture of membran es. 
+ Any patient presenting with a “show” or light bleeding can have the test performed. 
+The risk is that more tests will be falsely positive but a negative test is still valid. 
+ 
+ 8.4.2 The equipment 
+ 
+ All the specific equipment required for performing a fetal fibronectin test is kept in 
+the delivery suite. 
+ The fFN testing machine and the printer must always be kept plugged in and 
+switched on. Daily quality control must be performe d on the machine and recorded 
+in the results diary. 
+ When a new supply of cassettes arrives the machine is recalibrated and retested. 
+ 
+8.4.3 Taking the swab 
+ 
+ The test is performed by use of swab to collect samples of cervico -vaginal 
+secretions during a spe culum examination. The correct polyester swab, kept next 
+to the testing machine, must be used. No other swab can be used to take the test. 
+ Care must be taken not to contaminate cervico -vaginal fluid with topical agents 
+such as lubricants, soap, disinfectan ts or creams. Water will be used as a lubricant 
+for a speculum examination. 
+ Rotate the correct sterile swab across the posterior fornix of vagina for 10 
+seconds. 
+ Remove the swab and immerse the tip in the buffer solution. 
+ Mix the swab in the buffer solutio n for 10 -15 seconds. 
+ Leave the swab in the tube; break the swab by snapping at the score, in line with 
+the top of the tube. 
+ Align the shaft with the hole inside the tube cap and push down tightly over the 
+shaft, sealing the tube for transfer to the analyser (Warning – the shaft must be 
+aligned to stop leakage). 
+ Take the tube and the patient’s hospital number to the treatment room. 
+
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 14 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+8.4.4 Performing the analysis 
+ 
+ Insert the rapid fFN cassette into the analyser and follow the on screen 
+instructions to run the test. 
+ Enter your user ID (any combination of numbers and letters). Please write your 
+user ID in the back of the diary next to the machine so that there is a record of who 
+is who. 
+ When asked to enter the patient ID use the Patient’s hospital numb er. 
+ Pipette 200μL (0.2ml) sample into the well of the rapid fFN cassette using a 1 ml 
+syringe. 
+ Keep the tube, labelled, in the box next to the machine in case you have to repeat 
+the test. 
+ Wait for the analyser to run the test. 
+ A print out of the results will be available in 23 minutes. 
+ Press enter to get a second print out. 
+ One result label should be placed in the patient’s notes. 
+ The second result label is put into the diary next to the machine. Sign the page 
+next to your result. 
+ 
+8.4.5 Interpreting the results 
+ 
+Note: a negative fFn is not helpful if there is cervical dilatation present. The patient should 
+then be treated as being in preterm labour. Clinical judgement must always be a part of the 
+assessment – in the presence of a negative test where there is still a high index of suspicion; 
+the case should be discussed with the consultant on call. 
+ 
+ A negative result has a negative predictive value of 98.3% for birth within 14 days 
+and 96.8% for delivery before 34 weeks. 
+ If the result is negative the consultant or middle grade will decide the management 
+of the case. This may include discharge home unless other obstetric indications 
+require admission. 
+ All pregnant women and people with a negative test will be given education on the 
+signs and symptoms of preterm labour and reassured that they can come back at 
+any time. 
+ Once a positive test has been confirmed on a pregnant woman or person who has 
+signs and symptoms of preterm labour the management will be in accordance with 
+section 9.0 Diagnosis of preterm labour and section 16.0 Preterm labour 
+management . 
+ Special Care Baby Unit will be notified of admission. If there are no cots available 
+it may be necessary to arrange intra-uterine transfer. 
+ Positive test patient should have steroids administered see section 12.0 
+Corticosteroid prophylaxis . 
+ The use of tocolysis should be considered in line with section 13.0 Tocolysis . 
+ If the woman or person has not birthed within 7 days, a plan of care will be 
+decided by the obstetric consultant/obstetric team. 
+
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 15 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+8.4.6 The QUiPP App 
+ 
+The use of the QUiPP app (for iOS or Android) or the browser based version at 
+https://quipp.org/ can be also considered in connection with the fFN test to interpret results 
+and therefore to predict the risk of preterm labour , plan care, and avoid unnecessary 
+interven tion in asymptomatic, but at -risk women /people . A risk of greater than 5% of giving 
+birth within 7 days may be used as a threshold for further care for symptomatic 
+women /people . 
+ 
+9.0 Diagnosis of preterm labour 
+ 
+Explain to pregnant women and people reporting symptoms of preterm labour who have 
+intact membranes (and their family members or carers as appropriate): 
+ 
+ The clinical assessment and diagnostic tests that are available. 
+ The clinical assessment and how diagnostic tests are carried out. 
+ What the benefits, risks and possible consequences of the clinical assessment 
+and diagnostic tests are, including the consequences of false positive and false 
+negative test results taking into account gestational age. 
+ 
+The diagnosis of preterm labour should be made based on the following examinations: 
+ 
+Regular contractions: 
+ Regular contractions >= 6 / 60 minutes, palpable or visible on CTG. 
+ Offer a clinical assessment to women /people reporting symptoms of preterm 
+labour who h ave intact membranes ( Appendix 2).This should include: 
+ 
+- Clinical history taking. 
+- Observations described for the initial assessment of a woman or person in 
+labour in the CG1196 Care in labour guideline . 
+- A speculum examination by the Obstetric Registrar or Consultant (followed 
+by a digital vaginal examination if the extent of cervical dilatation cannot be 
+assessed). 
+ 
+ If the clinical assessment suggests that the pregnant woman or person is in 
+suspected preterm labour and she is 29 +6 weeks pregnant or less – advis e 
+treatment for preterm labour . (Appendix 2 ) 
+ If the clinical assessment suggests that the pregnant woman or person is in 
+suspected preterm labour and they are 30+0 weeks pregnant or more, consider 
+transvaginal ultrasound measurement of cervical length or if it is not acceptable or 
+not available, then fetal Fibronectin testing (fFN) as a diagnostic test to determine 
+likelihood of birth within 48 hours. Act on the res ults as follows: 
+ 
+- If cervical length is more than 15 mm or the fFN test is negative (50ng/ml or 
+less), explain to the pregnant woman or person that it is unlikely that they are 
+in preterm labour and: 
+o Think about alternative diagnoses . 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 16 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+o Discuss with them the benefits and risks of going home compared with 
+continued monitoring and treatment in hospital . 
+o Advise them that if they do decide to go home, they should return if 
+symptoms suggestive of preterm labour persist or recur . 
+ 
+- If cervical length is 15 mm or less or the fFN test is positiv e (more than 
+50ng/ml), view the pregnant woman or person as being in diagnosed 
+preterm labour and offer treatment. 
+ 
+ If a pregnant woman or person in suspected preterm labour who is 30 +0 weeks 
+pregnant or more does not have transvaginal ultrasound measurement of cervical 
+length or fetal Fibronectin testing to exclude preterm labour, offer treatment 
+consistent with them being in diagnosed preterm labour. 
+ 
+Considerations: 
+ Do not use trans vaginal ultrasound measurement of cervical length and fetal 
+Fibronectin testing in combination to diagnose preterm labour. 
+ Ultrasound scans should be performed by healthcare professionals with training, 
+and experience of, transvaginal ultrasound measureme nt of cervical length. 
+ 
+Cervical changes: 
+ Cervical effacement, shortening or opening os on speculum +/ - internal 
+examination. 
+ If internal examination is considered then it should be carried out by experienced 
+examiner (SpR or Consultant) to avoid uncert ainty and therefore repeat 
+examination. 
+ 
+Fetal Fibronectin Test: 
+ See section 8.4 Quantitative fetal fibronectin 
+ A negative result has a negative predictive value of 98.3% for birth within 7 – 14 
+days and 96.8% for delivery before 34 weeks. 
+ If fetal Fibronectin test is negative, consider cervical length scan. This should 
+involve consultation with obstetric Consultan t. 
+ 
+10.0 Emergency cervical cerclage 
+ 
+Do not offer emergency cervical cerclage to pregnant women and people with: 
+ 
+ Signs of infection . 
+ Active vaginal bleeding . 
+ Uterine contractions . 
+ 
+If emergency cervical cerclage is used ensure there is a documented plan in place for 
+removal. 
+ 
+Consider emergency cervical cerclage for pregnant women and people between 16+0 
+and 27+6 weeks of pregnancy with a dilated cervix and exposed, unruptured fetal 
+membranes: 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 17 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+ 
+ Take into account gestational age (being aware that the benefits are likely to be 
+greater for earlier gestations) and the extent of cervical dilatation . 
+ Discuss with a consultant obstetrician and consultant paediatrician . 
+ 
+Explain to pregnant women and people for whom emergency cervical cerclage is 
+being considered (and their family members or carers as appropriate): 
+ 
+ Risks of the procedure . 
+ That it aims to delay the birth, and so increase the likelihood of the baby surviving 
+and of reducing serious neonatal morbidity. 
+ 
+11.0 Counselling the family 
+ 
+ The following points should be covered when counselling a pregnant woman or 
+person and their family: 
+- The neonatal care of preterm babies, including location of care. 
+- The immediate problems that can arise when a baby is born preterm. 
+- The possible long -term consequences of prematurity for the baby (how 
+premature babies grow and develop). 
+- Ongoing opportunities to talk about and state their wishes about 
+resuscitation of the baby. 
+- An opportunity to see the neonatal unit. 
+- An opport unity to speak to a neonatologist or paediatrician. 
+ When counselling pregnant women and people and families regarding morbidity 
+and mortality an experienced Paediatrician should be involved beyond 23 weeks 
+gestation and appropriate information should be gi ven. 
+ In situations where there is uncertainty about the gestation between 22 -23/40; and 
+the parents are requesting neonatal resuscitation, the Consultant Obstetrician 
+should discuss the case with the on -call Paediatric Consultant and formulate a 
+plan of c are (see UH Sussex SRH&WH leaflet “Having an Extremely Premature 
+Baby’ ’). 
+ The following table (from EPICure 2; 2006 -2011) describes the overall outcome 
+from different stages in the pregnancy and birth process from the start of labour or 
+delivery through birth to admission for neonatal care. In different hospitals survival 
+may vary from the figures shown but the chances of a normal outcome are likely to 
+be very sim ilar. 
+ 
+Gestational Age at Birth 
+Population 22 weeks 23 weeks 24 weeks 25 weeks 26 weeks 
+Alive at the onset of labour 272 416 495 550 594 
+Live birth 152 339 443 521 580 
+Live birth with intended care * 41 284 427 514 576 
+Admission for neonatal care 
+deaths in neonatal care deaths 
+after discharge home 19 
+16 
+0 217 
+151 
+3 382 
+204 
+1 498 
+152 
+5 571 
+123 
+1 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 18 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+Survivors to 3 years of age 
+survivors with severe disability 
+survivors with moderate disability 
+survivors without disability 3 
+1 
+1 
+1 63 
+17 
+14 
+32 177 
+37 
+33 
+107 341 
+57 
+48 
+236 447 
+45 
+54 
+348 
+Survival from onset of labour 1% 15% 36% 62% 75% 
+of live births with intended care * 
+of admissions for neonatal care 7% 
+16% 22% 
+29% 42% 
+46% 66% 
+69% 78% 
+78% 
+Survival without disability from onset 
+of labour 
+of live births with intended care * 
+of admissions for neonatal care 0.4% 
+ 
+2% 
+5% 8% 
+ 
+11% 
+14% 22% 
+ 
+25% 
+28% 43% 
+ 
+46% 
+47% 59% 
+ 
+60% 
+61% 
+ Key: * excluding those where a decision was recorded not to intervene after birth . 
+ 
+12.0 Corticosteroid prophylaxis 
+ 
+ An informed discussion should take place with the pregnant woman or person 
+(and their family members or carers as appropriate) about the potential risks and 
+benefits of a course of antenatal corticosteroids. Although antenatal corticosteroids 
+may reduce ad mission to the Special Care Baby Unit (SCBU ) or Neonatal Unit 
+(NNU) for respiratory morbidity, it is uncertain if there is any reduction in RDS, 
+transient tachypnoea of the newborn (TTN) or SCBU /NNU admission overall, and 
+antenatal corticosteroids may resu lt in harm to the neonate which includes 
+hypoglycaemia and potential developmental delay (see Appendix 6). RCOG 
+(2022) 
+ One course of antenatal Corticosteroids should be offered to all pregnant women or 
+people in suspected or established preterm labour, are having a planned preterm 
+birth or have P ‑PROM up to 34+6 weeks gestation: 
+- 22+0 – 23+6 weeks – discuss with the pregnant woman or person in the 
+context of their individual circumstances. 
+- 24+0 – 33+6 weeks – offer corticosteroids . 
+- 34+0 – 35+6 weeks – consider corticosteroids . 
+- Up to 38+6 weeks if there is an increased risk of requiring delivery by 
+caesarean birth in early labour (e.g. FGR, poor placental development, 
+polyhydramnios, etc.) – consider corticosteroids. 
+ 
+ Antenatal Corticosteroids should be offered to pregnant women and people for 
+whom an elective caesarean birth is planned under 39 weeks gestation. 
+ Consider a single repeat course of maternal or birthing parent 
+corticosteroids for pregnant women and p eople less than 24+0 weeks of 
+pregnancy , but take into account: 
+- Have they already had a course of corticosteroids more than 7 days 
+ago and 
+- Are they at very high risk of giving birth in the next 48 hours. 
+ Do not give more than 2 courses of maternal or birthing parent corticosteroids for 
+preterm birth. 
+
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 19 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+Regime for corticosteroid prophylaxis: 
+ 
+ In-patients/outpatients (except diabetic patients – see below): 
+Two doses of Dexamethasone sodium phosphate 12mg IM 24 hours apart . 
+ 
+ If preterm delivery is expected within 24 hours then give: 
+Two doses of Dexamethasone sodium phosphate 12mg 12 hours apar t. 
+ 
+Diabetic women /people (outpatients on insulin treatment or on diet) (refer to Diabetes 
+in Pregnancy guideline ) 
+ Should be admitted to labour ward or the antenatal ward and have 2 hourly blood 
+glucose monitoring . 
+ For intravenous sliding scale protocol refer to Diabetes in Pregnancy guideline . 
+ The pregnant woman or person should remain in hospital for monitoring until 24 
+hours after the last corticosteroid dose. 
+ In certain well controlled diabetic patients, cortico steroid administration may be 
+organised as outpatient. This decision is to be made by pregnancy diabetes team 
+only. 
+ 
+Corticosteroid prophylaxis for diabetic in -patients (refer to Diabetes in Pregnancy 
+guideline ) 
+ Four doses of Dexamethasone sodium phosphat e 6mg IM 12 hours apart 
+OR if Dexamethasone is not available: 
+ Four doses of Betamethasone sodium phosphate 6 mg IM 12 hours apart . 
+
+13.0 Tocolysis 
+ 
+Treatment of preterm labour aims to reduce the high perinatal morbidity and mortality rates 
+associated with early delivery. Tocolytic drugs aim to suppress uterine contractions and 
+prolong the duration of pregnancy. There is no clear evidence that tocolyti c drugs improve 
+outcome and therefore it is reasonable not to use them. However tocolysis should be 
+considered if the few days gained would be put to good use such as completing a course of 
+corticosteroids. Therefore as soon as the diagnosis of preterm lab our has been made and 
+the mother /birthing parent has not had corticosteroid prophylaxis since 26 weeks gestation 
+the tocolysis should be commenced unless contraindicated. 
+ 
+Take the following factors into account when making a decision about whether to sta rt 
+tocolysis: 
+ 
+ Whether the pregnant woman or person is in suspected or diagnosed preterm 
+labour. 
+ Other clinical features (for example, bleeding or infection) which may suggest that 
+stopping labour is contraindicated. 
+ Gestational age at presentation. 
+ Likely benefit of maternal corticosteroids. 
+ Availability of neonatal care or need for transfer to another unit. 
+ The preference of the pregnant woman or person . 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 20 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+ 
+For pregnant women and people who have intact membranes and ar e in suspected preterm 
+labour: 
+ Consider tocolysis between 24 +0 and 25+6 weeks . 
+ Offer tocolysis between 26+0 and 33+6 weeks . 
+ 
+The first choice of tocolysis is Nifedipine . The advised dose for Nifedipine is: 
+ 
+ Nifedipine capsules swallowed orally (use capsules for loading and maintenance 
+doses) . 
+ Loading dose: 20mg orally, followed by 10mgs every 15 minutes until good 
+tocolysis achieved to a maximum of 4 additional doses (maximum total loading 
+dose of 60mgs) . 
+ Maintenance dose: 10-20mgs (capsules) t hree to four times daily, adjusted 
+according to uterine activity, for up to 48 hours after the first dose of corticosteroid. 
+Maximum maintenance dose 60mgs daily. 
+ 
+Note: Pharmaceutical advice was sought regarding the optimum preparation of Nifedipine to 
+be used for the maintenance dose. The advice was that a quick acting dose enables 
+adjustment accordi ng to the contractions ( RCOG 2011 recommendation); there is no 
+difference otherwise between using quick acting vs. modified release for short term use. 
+ 
+Contraindications to tocolysis: 
+ 
+ Gestational age more than 33+6 weeks . 
+ Ruptured membranes . 
+ Cervix more than 4cm dilated . 
+ Signs/symptoms of chorioamnionitis . 
+ Abnormal CTG . 
+ IUGR . 
+ Placental abruption . 
+ Significant antepartum haemorrhage . 
+ Severe hypertension, pre -eclampsia or eclampsia . 
+ Intrauterine fetal death . 
+ Serious maternal cardiac or thyroid disease or other serious medical condition . 
+ Fetal anomaly not compatible with survival . 
+ 
+Contraindications to Nifedipine: 
+ 
+ Cardiac conducting defects . 
+ Hypotension . 
+ Left ventricular failure . 
+ Hepatic and renal failure are relative contraindications . 
+ 
+Cautions: 
+ 
+ Pregnant w omen and people taking medicines that may interact with Nifedipine . 
+ Avoid grapefruit segments and juice during Nifedipine t reatment . 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 21 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+ Tocolysis, in particular Nifedipine, may compromise cardiac function. In these 
+cases oxytocin receptor agonist is the preferred tocolytic (currently not in use in 
+UH Sussex SRH&WH ). 
+ Do not offer betamimetics for tocolysis. 
+ 
+Note: Nifedipine is n ot licensed to use as a tocolytic drug in the UK. The patient should be 
+informed regarding this and advised that according to the RCOG recommendation it is safe 
+to use in pregnancy and effective in prolonging the pregnancy and therefore reducing fetal 
+morb idity. 
+ 
+Nifedipine side effects: 
+ 
+Minor side effects (1 - 10% of cases) include hot flushes, nausea and vomiting, headaches 
+and fever. As well as a maternal /birthing parent and fetal tachycardia, the diastolic blood 
+pressure often falls. 
+ 
+Stop tocolytic therapy if: 
+ 
+ Maternal or birthing parent tachycardia (greater than 140 bpm) . 
+ Complicated CTG or fetal tachycardia > 180 bpm . 
+ Maternal or cirthing parent palpitations or chest pain . 
+ Labour progresses despite therapy . 
+ Maternal or birthing parent pyrexia . 
+ Vaginal bleeding . 
+ Hypokalaemia (low potassium, Nifedipine may worsen the hypokalaemia) 
+24 hours after last dose of corticosteroids . 
+ 
+Observations whilst receiving tocolysis: 
+ 
+ Maternal or birthing parent pulse – at least every 30 minutes . 
+ Blood pres sure – initially every 30 minutes . 
+ Recording of temperature 4 hourly . 
+ Fluid balance chart . 
+ Continuous CTG (26 +0 weeks gestation or over ) or intermittent auscultation ( less 
+than 26+0 weeks gestation) . 
+ Warn patient of expected side effects of tocolysis . 
+ Nurse in left -lateral position . 
+ 
+Speculum +/ - Vaginal examination must be performed prio r to transfer from Labour Ward. 
+ 
+14.0 Magnesium Sulfate 
+ 
+Introduction: 
+ 
+Babies born preterm are at increased risk of cerebral palsy with 25% of all cases occurring i n 
+children born before at less than 34 weeks gestation. Recent evidence suggests that the 
+administration of Magnesium Sulfate to mothers or birthing parents in preterm labour 
+reduces the incidence of cerebral palsy in their children. Before 30 weeks gestation it is 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 22 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+estimated that 46 women /people would need treatment to prevent one case of cerebral 
+palsy. Unlike steroids this protective effect occurs within a short time of the administration of 
+Magnesium Sulfate so magnesium can be administered later in the process when it is 
+clearer that the mother or birthing parent is in progressing labour. 
+ 
+Who and when to treat (Appendix 3) 
+ 
+When preterm birth is planned or expected within 24 hours, Magnesium Sulfate for 
+neuroprotection should be: 
+ 
+- 23+0 – 23+6 weeks - Discussed with the pregnant woman or person (and 
+their family members or carers as appropriate) in the context of their 
+individual circumstances. 
+- 24+0 – 29+6 weeks – Offered . 
+- 30+0 – 33+6 weeks – Considered . 
+ 
+Ideally Magnesium Sulfate should be administered at least four hours before birth but it is still 
+likely to confer benefit if given later than this . 
+ 
+Urgent birt h should not be delayed to administer Magnesium Sulfate . 
+ 
+Cautions: 
+ 
+ Magnesium Sulfate may interact with Nifedipine causing hypotension. If so, both 
+the Nifedipine and the Magnesium infusion should be discontinued and both an 
+obstetric and anaesthetic review undertaken. 
+ It may also cause muscle weakness in individuals with neuromuscular disorders. 
+ Because of the small risk of respiratory suppression Magnesium Sulfat e should 
+not be used during transfer between hospitals unless resuscitation and ventilatory 
+support are immediately available. 
+ Use with caution with H epatic impairment e.g. hepatic coma (not known to be 
+harmful for short term IV administration in eclampsi a). 
+ Excessive doses in third trimester can cause respiratory depression . 
+ 
+Adverse effects include: 
+ 
+ Nausea / vomiting . 
+ Thirst . 
+ Hypotension . 
+ Flushing . 
+ Respiratory depression . 
+ Loss of tendon reflexes . 
+ Muscle weakness . 
+ 
+14.1 Loading dose : 
+ 
+The dosage and administration rate is the same as for mothers or birthing parents with pre -
+eclampsia, with less frequent observations of blood pressure. For mothers or birthing parents 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 23 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+with pre -eclampsia the observations should be consistent with the UH Sussex SRH&W H 
+guideline: CG1112 Management of severe pre -eclampsia & eclampsia . 
+ 
+ Magnesium Sulfate should be given intravenously with a 4 gram loading dose 
+(slowly over 15 minutes) . 
+ For the 4g Magnesium Sulfate loading dose use a 4g in 20ml prefilled syringe and 
+run at 80ml per hour. 
+ 
+If the pre -filled syringe is unavailable, prepare the loading dose as follows: 
+ 
+ Draw up 4 X 10mls (1 gram (g) in 10mls) Magnesium Sulfate , giving 4 grams in 
+40mls . 
+ Administer at 1 60mls per hour via a syringe pump or by hand by an experienced 
+clinician (over 15 minutes) . 
+ 
+Maternal or birthing parent observations pre and post loading dose: 
+ 
+ Before loading dose check pulse, blood pressure, and respiratory rate and patella 
+reflexes . 
+ Repeat at 10mins and at end of loading dose (15 minutes). 
+
+14.2 Maintenance dose: 
+ 
+ Following the loading dose use a Magnesium Sulfate maintenance infusion. Use a 
+5g in 50ml pre -filled syringe and run at 10ml (1g) per hour. 
+ 
+If the pre -filled syringe is u navailable, prepare the maintenance infusion as follows: 
+ 
+ Draw up 5 X 10mls (1 g in 10mls) Magnesium Sulfate , giving 5 grams in 50mls . 
+ Administer at 10mls per hour via syringe pump (rate 1g per hour) . 
+ 
+Continue the infusion until birth or for 24 hours, whichever comes first. 
+ 
+ Maternal or birthing parent observations and management whilst on maintenance 
+dose : 
+ 
+ As a minimum record pulse, blood pressure, respiratory rate, PaO2 and deep 
+tendon (for example, patellar) reflexes every 4 hours , unless more frequent 
+observations are indicated by the clinical situation for instance premature labour or 
+severe pre -eclampsia requiring urgent delivery. 
+ Main tain MEOWS and fluid balance. 
+ During administration pregnant women and people should be regularly assessed . 
+Resuscitation and ventilatory support should be immediately available. 
+ Where hypotension or respiratory depression occur, prompt medical review is 
+recommended and the infusion may need to be stopped. 
+ Repeat electrolytes and creatinine every 12 hours if any concern about 
+maternal /birthing parent renal function. 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 24 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+ 
+The infusion should be stopped if: 
+ 
+ Respiratory rate decreases more than 4 breaths per minute below baseline, or is 
+less than 12 breaths per minute . (If respiratory rate less than 12 but SpO2 remains 
+normal and reflexes present this is unlikely to be caused by magnesium toxicity 
+and more likely to be related to opioid analgesia) . 
+ Diastolic blood pressure decreases more than 15 mm Hg below base line level . 
+ Urine output is less than 100 ml over 4 hours . 
+ 
+Fetal m onitoring and considerations : 
+ 
+ Alert Neonatal Team . 
+ Continuous CTG should be carried out , if appropriate , and the mother or birthing 
+parent is in premature labour see section 16.3 for further guidance on the use of 
+CTGs . 
+ Interpretation of the CTG should take into account the reduced variability that is 
+often seen with magnesium infusions. 
+ If preparing for elective caesarean section, CT G should be carried out if there are 
+clinical indications which would increase the risk of CTG abnormalities, such as 
+severe pre -eclampsia or growth restriction. 
+ 
+Repeat doses: 
+ 
+In the event that birth has not occurred after giving Magnesium Sulfate for neuroprotection of 
+the infant , and preterm birth (less than 30 weeks’ gestation) again appears imminent 
+(planned or definitely expected within 24 hours), a repeat loading dose of Magnesium Sulfate 
+may be considered if more than six hours after completing th e previous infusion. There is no 
+guidance on how many repeat doses can be given before 30 weeks and if repeated infusions 
+are considered this should be decided by the supervising team at the time. 
+ 
+Magnesium levels: 
+There is no need to measure magnesium levels routinely. If magnesium toxicity is suspected 
+then it is reasonable to check reflexes. Therapeutic magnesium levels are thought to be in 
+the range of 1.25 - 2.5 mmol/L. The abolition of kne e jerk reflex occurs a t 3.3 - 5mmol/L, 
+respiratory arrest at 5 - 7.5 mmol/L and cardiac arrest at 15 mmol/L. 
+
+Indications for measuring magnesium levels include: 
+ 
+ Reduced renal function (urine output less than 25mls/hour, creatinine above 90). 
+ Signs of toxicity (loss of reflexes) . 
+ Unexplained clinical symptoms or signs e.g. reduced level of consciousness. 
+ 
+If a pregnant woman or person has or develops oliguria or other evidence of renal failure 
+monitor more frequently for magnesium toxicity and reduce or stop the dose of magnesium 
+sulfate. 
+ 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 25 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+Toxicity: 
+ 
+Magnesium toxicity is unlikely with the regimens recommended in these guidelines and 
+serum magnesium concentrations do not need to be routinely measured (RCOG 2006). In 
+women /people with renal compromise, serum magnesium monitoring is recommended. 
+ 
+Magnesium antidote: 
+ 
+If loss of deep tendon reflexes and/or respiratory depression is observed, call obstetric and 
+anaesthetic registrar and: 
+ 
+ Administer 1g of Calcium Gluconate intravenously (10 ml of Calcium Gluconate 
+10% solution) over 5 -10 minutes . 
+ Rate should not exceed 2ml/min of undiluted solution . 
+ Check magnesium levels and stop magnesium infusion . 
+
+15.0 Preterm Prelabour Rupture of Membranes (P -PROM) 
+ 
+Identifying inf ection in women /people with P -PROM: 
+ 
+Use a combination of clinical assessment and tests (C-reactive protein, white blood cell 
+count and measurement of fetal heart rate using cardiotocography) to diagnose intrauterine 
+infection in pregnant women or people with P -PROM. See Appendix 1. 
+ 
+Do not use any one of the following in isolation to confirm or exclude intrauterine 
+infection in women /people with P -PROM: 
+ 
+ A single test of C -reactive protein . 
+ White blood cell count . 
+ Measurement of fetal heart rate using cardiotocography. 
+ 
+If the results of the clinical assessment or any of the tests are not consistent with each other, 
+continue to observe the pregnant woman or person and consider repeating the tests. 
+ 
+If, on speculum examination, no amniotic fluid is observed, clinicians should consider 
+performing an insulin -like growth factor -binding protein 1 (IGFBP -1) (Actim PROM Test) or 
+placental alpha microglobulin -1 (PAMG -1) test of vaginal fluid to guide further manage ment. 
+ 
+If the results of the insulin -like growth factor -binding protein -1 or placental alpha -
+microglobulin 1 test are negative and no amniotic fluid is observed, antenatal prophylactic 
+antibiotics should not be offered. It should be explained to the pregn ant woman or person 
+that it is unlikely they have P-PROM, but that they should return for reassessment if there are 
+any further symptoms suggestive of P -PROM or preterm labour. 
+ 
+Actim PROM for P ‑PROM should not be used if labour becomes established in a pregnant 
+woman or person reporting symptoms suggestive of P ‑PROM. 
+ 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 26 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+P-PROM less than 3 7+0 weeks : 
+ 
+ Offer admission for 24 -48 hours . 
+ Take FBC, CRP, HVS (to rule out GBS) . 
+ 4 hourly maternal or birthing parent observations . 
+ CTG twice daily . 
+ Ultrasound scan to check growth and amniotic fluid level as inpatient . 
+ Administer oral Erythromycin 250mg 4 times a day for a maximum of 10 days or 
+until established labour (whichever is sooner). If the patient is allergic to 
+Erythromycin then use oral Penicillin and discuss dosing or other alternatives with 
+on-call consultant microbiologist. 
+ Give IV Benzylpenicillin* in labour (3g loading dose, then 1.5g 4 hourly until birth). 
+* If the patient had non -IgE mediated allergy to penicillin (e.g. rash), then use I.V. 
+cefuroxime 1.5g STAT followed by 750mg every eight hours. In case of history of 
+severe allergic reaction (IgE mediated / anaphylaxis) to pencilling then use 
+vancomycin 1g STAT followed by 1g every twelve hours. 
+ Ensure named Consultant aware of clinical situation . 
+ 
+Outpatient monitoring: 
+ CTG 1 -2 times / week in DAU (frequency depends on clinical situation) . 
+ Weekly full blood count (FBC) and C -reactive protein (CRP) . 
+ Weekly LVS (low vaginal swab) . 
+ 4-8 hourly temperature (self -monitoring) . 
+ Monitor for abdominal pain, flu like symptoms and offensive vaginal discharge . 
+ Scan for fetal or maternal or birthing parental reasons only (e.g. IUGR, 
+oligohydramnios on initial scan, DFM) . 
+ 
+Pregnant w omen or peop le should be advised to contact DAU / Maternity Triage / Labour 
+Ward if they feel unwell, shivering, pyrexic, the draining liquor is no longer clear, or they 
+experience contractions. 
+ 
+If any signs of chorioamnionitis: 
+ 
+ Admission to maternity ward . 
+ Give broad spectrum antibiotics . 
+ Discuss with Consultant as soon as possible re: urgent birth. 
+ 
+Pregnant w omen or people with Penicillin allergy: 
+Women or people who are allergic to Penicillin should be given Cefuroxime 1.5g loading 
+dose followed by 750mg ev ery 8 hours providing the allergy is not severe (e.g. vomiting). 
+ 
+If the allergy to Penicillin is severe (e.g. anaphylaxis, angioedema, respiratory distress or 
+urticaria) then IV Vancomycin 1g every 12 hours should be given instead until delivery. 
+ 
+Induc tion of labour: 
+ 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 27 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+Pregnant w omen or people whose pregnancy is complicated by PPROM after 24+0 weeks’ 
+gestation and who have no contraindications to continuing the pregnancy , should be offered 
+expectant management until 37+0 weeks; timing of birth should be discussed with each 
+woman or person on an individual basis with careful consideration of patient preference and 
+ongoing clinical assessment. 
+ 
+If a pregnant woman or person has preterm prelabour rupture of membranes (PPROM) after 
+34+0 weeks, but before 37+0 weeks, discuss the options of expectant management until 
+37+0 weeks or induction of labour with them. When making a shared decision, take into 
+consideration the following factors: 
+ 
+ Risks to the pregnant woman or person (for example, sepsis, possible need for 
+caesarean birth) . 
+ Risks to the baby (for example, sepsis, problems relating to preterm birth) . 
+ Local availability of neonatal intensive care facilities . 
+ The woman or person ’s individual circumstances and their prefe rences. 
+ 
+If a woman or person has preterm prelabour rupture of membranes (PPROM) after 34+0 
+weeks (but before 37+0 weeks), and has had a positive group B streptococcus (GBS) test at 
+any time in their current pregnancy, offer immediate induction of labour o r caesarean birth. 
+
+16.0 Preterm labour management 
+(Appendix 2) 
+ 
+16.1 Main considerations: 
+ 
+ All suspected preterm labourers (under 37 +0 weeks) should be admitted directly to 
+Labour Ward . 
+ Prophylactic antibiotics should be given to established preterm labour irrespective 
+of GBS status. See CG11100 Management of pregnant women/people and 
+neonates with risk factors for early on -set neonatal sepsis . 
+ Inform Obstetric Registrar, Paediatric Regi strar and Special Care Baby Unit 
+(SCBU ) of gestation and ascertain management plan and the availability of SCBU 
+cots. 
+ Consultant Obstetrician needs to be informed less than 34+0 weeks gestation and 
+all preterm breech deliveries. 
+ Paediatric Registrar need s to be available at the birth especially those of earlier 
+gestations . 
+ Consultant Paediatrician must be routinely called for deliveries less than 29+0 
+weeks gestation . 
+ If there is strong suspicion of preterm labour (under 35 +0 weeks) the pregnant 
+woman or person should be reviewed and examined by the Obstetric Registrar or 
+Consultant . 
+ All premature breech labours must be discussed with the Obstetric Registrar and 
+Consultant on -call. 
+ Elective method and timing less than 35+0 weeks should always be discussed 
+with Consultant Obstetrician together with anaesthetic and paediatric colleagues . 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 28 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+ Delivery by caesarean birth of baby less than 34+0 weeks should be performed or 
+supervised by Consultant Obstetrician. 
+ 
+16.2 Management: 
+ 
+ High vaginal and cervical swabs required in each case and urine for microscopy 
+and culture . 
+ Take bloods for FBC, CRP, U&E’s, Kleihauer if blood group is Rh -negative . 
+ Temperature on admission and 4 hourly thereafter . 
+ If the cervix is more than 4cm dilated, allow to deliver, unless time r equired for 
+transfer or steroids, then consider tocolysis . 
+ Any evidence of infection / chorioamnionitis should be treated with antibiotics 
+(Cefuroxime 1.5g IV TDS or Clindamycin 900mg IV TDS) . 
+ Avoid Co -Amoxiclav (Augmentin) . 
+ Avoid Pethidine . 
+ 
+16.3 Fetal monitoring 
+ 
+ Cardiotocography and intermittent auscultation: 
+ 
+Discuss with pregnant women or people in suspected, diagnosed or established preterm 
+labour (and their family members or carers as appropriate): 
+ 
+ The purpose of fetal monitoring and what it invo lves. 
+ The clinical decisions it informs at different gestational ages . 
+ If appropriate, the option not to monitor the fetal heart rate (for example, at the 
+threshold of viability). 
+ Explain the different fetal monitoring options to the woman or person including: 
+- There is limited evidence about the usefulness of specific features to 
+suggest hypoxia or acidosis in preterm babies . 
+- The available evidence is broadly consistent with that for babies born at term 
+a normal cardiotocography trace is reassuring and indicates that the baby is 
+coping well with labour, but an abnormal trace does not necessarily indicate 
+that fetal hypoxia or acidosis is present . 
+ Offer women or people in established preterm labour but with no other risk factors 
+a choice of fetal heart rate monitoring using either cardiotocography using external 
+ultrasound or intermittent auscultation. 
+ Explain to the woman or person (and their family members or carers as 
+appropriate) that there is an absence of evidence that using cardiotocography 
+improves the outcomes of preterm labour for the woman or person , or the baby , 
+compared with intermittent auscultation. 
+ 
+Involve senior obstetrician in discussion about whether and how to monitor between 23+0 
+and 25+6 weeks pregnant. 
+
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 29 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+Fetal scalp elect rode: 
+ 
+Do not use a fetal scalp electrode for fetal heart rate monitoring if the pregnant woman or 
+person is less than 34+0 weeks pregnant unless all of the following apply: 
+ 
+ It is not possible to monitor the fetal heart rate using either external 
+cardiot ocography or intermittent auscultation . 
+ It has been discussed with a senior obstetrician . 
+ The benefits are likely to outweigh the potential risks . 
+ The alternatives (immediate birth, intermittent ultrasound and no monitoring) have 
+been discussed with the woman or person and are unacceptable to them . 
+ 
+Discuss the possible use of a fetal scalp electrode between 34+0 and 36+6 weeks of 
+pregnancy if it is not possible to monitor the fetal heart rate using either external 
+cardiotocography or intermittent auscultation. 
+ 
+Fetal blood sampling: 
+ 
+ Do not carry out fetal blood sampling if the pregnant woman or person is less 
+than 34+0 weeks pregnant. 
+ Discuss with the pregnant woman or person the possible use of fetal blood 
+sampling between 34+0 and 36+6 weeks of pregnancy if the benefits are likely 
+to outweigh the potential risks. 
+ When offering fetal blood sampling, discuss this with the pregnant woman or 
+person , and advise them that if a blood sample cannot be obtained a caesarean 
+birth is likely. 
+ 
+17.0 Management of preterm birth 
+ 
+General considerations: 
+ 
+ Inform Obstetric and Paediatric teams. 
+ Paediatrician present (under 35 +0 weeks ). 
+ Avoid ARM, unless strongly indicated. 
+ Avoid narcotic drugs (discuss with Paediatrician) . 
+ Episiotomy is indicated if there is delay due to the head pushing against a tight 
+perineum . 
+ Avoid vacuum extractions . 
+ Ensure resuscitaire is checked and on pre -warm . 
+ Plastic bag for baby should be used if less than 30+0 weeks . 
+ Adequate room temperature (26oC). 
+ Resuscitaire with O 2/air blender set to 21% O 2. 
+ Neonatal resuscitation/stabilisation trolley present and equipment checked 
+including PEEP circuit, transwarmer and O2 saturation monitor). 
+
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 30 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+18.0 Mode of birth 
+ 
+ 18.1 Counselling for vaginal birth vers us caesarean birth 
+ 
+ Explain to pregnant women or people in suspected, diagnosed or established 
+preterm labour and women with P ‑PROM about the benefits and risks of 
+caesarean birth that are specific to gestational age. In particular, highlight the 
+difficulti es associated with performing a caesarean birth for a preterm birth, 
+especially the increased likelihood of a vertical uterine (classical) incision and the 
+implications of this for future pregnancies. 
+ The type of caesarean section is important, as at less than 26 +0 weeks gestation 
+the lower uterine segment is not formed. The classical vertical incisions carry 
+greater risks for the mother and have implications for future pregnancies. When 
+the lower segment is not completely formed a lower segment incision wi th a 
+possible “J” extension on the side of the surgeon is a good alternative. 
+ Discuss the general benefits and risks of caesarean section and vaginal birth with 
+pregnant women or people in suspected, diagnosed or established preterm labour 
+and women or people with P -PROM (and their family members or carers as 
+appropriate). 
+ Explain to pregnant women or people in suspected, diagnosed or established 
+preterm labour that there are no known benefits or harms for the baby from 
+caesarean section, but the eviden ce is very limited. 
+ 
+18.2 Breech presentation 
+ 
+ The mode of delivery should be individualised based on the stage of labour, type 
+of breech presentation, fetal wellbeing and availability of an operator skilled in 
+vaginal breech delivery. 
+ Pregnant w omen and people should be informed that caesarean section for 
+breech presentation in spontaneous preterm labour at the threshold of viability 
+(22–25+6 weeks of gestation) is not routinely recommended. 
+ Consider caesarean section for pregnant women and people presenting in 
+suspected, diagnosed or established preterm labour between 26+0 and 36+6 
+weeks of pregnancy with breech presentation. 
+ The mode of delivery of the preterm breech presentation should be discussed on 
+an individual basis with a pregnant woman or person and their partner. Where 
+there is head entrapment during a preterm breech delivery, lateral incisions of the 
+cervix should be considered. 
+ 
+22–25+6 weeks: 
+ 
+ Pregnant w omen and people should be informed that caesarean section for 
+breech presentation in s pontaneous preterm labour is not routinely recommended 
+at this gestation. 
+ External Cephalic Version (ECV) or internal version can be used occasionally in 
+these situations. This decision should be made by a Consultant Obstetrician. 
+
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 31 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+26+0 and 36+6 weeks: 
+ 
+ Pregnant w omen and people should be informed that planned caesarean section 
+is recommended for preterm breech presentation where the birth is planned due to 
+maternal and/or fetal compromise. 
+ The mode of birth should be individualised based on the stage of labour, type of 
+breech presentation, fetal wellbeing and availability of an operator skilled in 
+vaginal breech birth. 
+ The mode of birth of the preterm breech presentation should be discussed on an 
+individual basis with a pregnant woman or person and their partner. 
+ 
+18.3 Timing of cord clamping 
+ 
+ Wait at least 60 seconds before clamping the cord of preterm babies unless there 
+are specific maternal (or birthing parent) or fetal conditions that need earlier 
+clam ping. 
+ Babies at risk of resuscitation (those that cannot wait 60 seconds after birth) 
+should have their cord clamped and cut and transferred to the resuscitaire for 
+further immediate assessment. The Resuscitation Council UK do not currently 
+recommend milki ng of the cord in those infants that require resuscitation. 
+ Vigorous term and preterm infants, who are not depressed at birth, should have 
+optimal (delayed) cord clamping: 
+o Wait at least 60 seconds, but no longer than 3 minutes, before clamping the 
+cord of preterm babies if the mother or birthing parent and baby are stable. 
+Skin to skin is invaluable and has evidenced benefits for preterm babies and 
+should be facilitated if baby and mother or birthing parent is stable. 
+o Position the baby at or below the level of the placenta before clamping the 
+cord. 
+ 
+It is imperative and critical that the infant is dried and kept warm at all times. 
+ 
+Refer to other relevant guidance for further support for the newborn after birth: 
+ 
+Newborn Feeding Guideline 
+Skin-Skin (Parent to baby) Contact Guideline 
+
+19.0 In utero transfer 
+ 
+ If preterm labour is suspected, the mother or birthing parent should be seen by the 
+on-call Obstetric Registrar or Consultant urge ntly as in utero transfer to another 
+obstetric unit may be necessary. 
+ The on -call Paediatric Registrar / Consultant and Neonatal Unit (NNU) or SCBU 
+must be contacted regarding NNU or SCBU cot availability. 
+ Speculum +/ - vaginal examination must be performed prior to transfer. 
+ A midwife experienced in managing preterm labour should ideally accompany the 
+mother during transfer. 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 32 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+ In utero transfer should be arranged as required following liaison with NNU or 
+SCBU and Paediatric Team for anticipated preterm labour when: 
+ 
+- St Richards Hospital and Worthing Hospital (Level 1 SCBU ): Gestational 
+age less than 31/40 discuss with on -call paediatric team to consider if 
+staffing for SCBU and Children’s ward adequate over the next 3 days. As a 
+general rule under 31/40 – as long as it is safe – arrange in utero transfer to 
+an obstetric unit with Level 2/3 neonatal unit. 
+- SCBU is closed . 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 33 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+ 
+20.0 Audit and monitoring c ompliance 
+ 
+Recommended auditabl e standards: 
+ 
+ The incidence of pregnant women and people with a singleton pregnancy giving 
+birth (liveborn and stillborn) as a % of all singleton births: 
+- In the late second trimester (from 16+0 – 23+6 weeks). 
+- preterm delivery from 24+0 – 36+6 weeks in three groups: 
+o 24+0 – 29+6 weeks . 
+o 30+0 – 33+6 weeks. 
+o 34+0 – 36+6 weeks . 
+ 
+ Pregnant w omen and people in pre -term labour have a documented evidence of 
+involvement with Paediatrician prior to delivery. 
+ Pregnant w omen and people in pre -term labour have a documented evidence of 
+involvement of the Consultant Obstetrician. 
+ 
+Pregnant w omen and p eople at risk of preterm birth should have documented evidence that 
+one course of antenatal Corticosteroids has been considered up to 34+6 weeks gestation: 
+ 
+ Pregnant w omen and people in suspected or established preterm labour, or 
+having a planned preterm birth or have P ‑PROM should have one course of 
+antenatal corticosteroids offered up to 34+6 weeks gestation: 
+- 22+0 – 23+6 weeks – discuss with the pregnant woman or person in the 
+context of their individual circumstances. 
+- 24+0 – 33+6 w eeks – offer corticosteroids. 
+- 34+0 – 35+6 weeks – consider corticosteroids . 
+ Up to 38+6 weeks if there is an increased risk of requiring delivery by caesarean 
+birth in early labour (e.g. FGR, poor placental development, polyhydramnios, etc.) 
+– consider corticosteroids. When preterm birth is planned or expected within 24 
+hours, Magnesium Sulfate for neuroprotection should be documented as having 
+been: 
+- Discussed with the pregnant woman or person in the context of their individual 
+circumstances if between 23+0 – 23+6 weeks 
+- Offered if between 24+0 – 29+6 weeks. 
+- Documented as considered at 30+0 – 33+6 weeks. 
+ Pregnant w omen and people with PROM and l ess tha n 37+0 weeks should be 
+prescribed oral Erythromycin 250mg 4 times a day for 10 days or until establishe d 
+labour (whichever is sooner). 
+ Pregnant women and people who are being offered antenatal corticosteroids have 
+a documented discussion of risks and benefits using appendix 6. 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 34 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+21.0 References 
+ 
+ACOG Committee Opinion No. 419 October (2008) Use of progesterone to reduce preterm 
+birth. Obstet Gynecol 2008; 112:963 -965. 
+ 
+Arias, F. et al. Maternal placental vasculopathy and infection: two distinct subgroups among 
+patients with preterm labour and pret erm ruptured membr anes. Am J Obstet Gynecol. (1993) 
+168(2): 585 -91. 
+ 
+Australian Research Centre for Health of Women and Babies. Antenatal Magnesium Sulfate 
+Prior to Preterm Birth for Neuroprotection of the Fetus, Infant and Child – National Clinical 
+Practi ce Guidelines. Adelaide: ARCH, (2011). 
+ 
+Beck, S., et al., The worldwide incidence of preterm birth: a systematic review of maternal 
+mortality and morb idity. Bull World Health Organ ( 2010 ) 88(1): 31-8. 
+ 
+Berghella, V. et al. Cervical ultrasonography compared with manual examination as a 
+predictor of preterm delivery. Am J Obstet Gynecol. (1997) 177(4): 723 -30. 
+ 
+Berghella V, Obido AO, To MS, et al. Cerclage for a short cervix on ultrasound: metaanalysis 
+of trials using individual patient -level data. Obstet Gynaecolo (2005 ); 106: 181 -189. 
+ 
+British Association of Perinatal Medicine Executive Committee. Memorandum – Fetuses and 
+newborn infants at the threshold of viability a framework for practice. (2000). 
+ 
+Dodd JM, Flenady V, Cincotta R, Crowther OA. Prenatal administration of progesterone for 
+preventing preterm birth. Cochrane Database System rev (2006 ); 3: CD004947. 
+ 
+Easmon CS. The carrier state: group B streptococcus. JAntimicrob Chemother. (1986 ) 18 
+Suppl A: 59–65. 
+ 
+EPICure 2 Study 2006 -2011 . 
+ 
+A Framework for Practice. Perinatal Management of Extreme Preterm Birth before 27 weeks 
+of gestation. October 2019. 
+ 
+Hooker J. Nifedipine for Acute Tocolysis. RWS Guideline. December 2005. 
+ 
+Hua, M. et al. Congenital uterine anomalies and adverse pregnancy outcomes. Am J Obstet 
+Gynecol. 2011. 205(6): 558 e1 -5. 
+ 
+Kyrgiou M, Kolipopulus G, Martin -Hirsch P et al. Obstetric outcomes after conservative 
+treatment for intraepithelial or early invasive cervical lesions: systematic review and 
+metaanalysis. Lancet 2006; 367:489 -498. 
+ 
+Lamont, R.F. et al. Treatment of abnormal vaginal flora in early pregnancy with clindamycin 
+for the prevention of spontaneous preterm birth: a systematic review and meta -analysis. Am 
+J Obstet Gynecol. 2011. 205(3): 177-90. 
+ 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 35 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+Lams, J.D. et al. The length of the cervix and in the risk of spontaneous premature delivery. 
+National Institute of Child health and Human Development Maternal -Fetal Medicine Unit 
+Network. N Eng J Med. 1996 . 334(9): 567 -72. 
+ 
+McManemy J, Cooke E, Amon E, Leet T. Recurrence risk for preterm delivery. Am J Obstet 
+Gynecol. 2007. 196(6): 576.e1 -6. 
+ 
+Meis, P.J. et al. The preterm prediction study: significance of vaginal infections. National 
+Institute of Child Heal th and Human Development Maternal -Fetal Medicine Units Network. 
+Am J Obstet Gynecl. 1995. 173(4): 1231 -5. 
+ 
+National Institute of Clinical Excellence. NG25: Preterm labour and birth . November 2015. 
+Updated 2019 
+ 
+National Institute of Clinical Excellence . CG132 Caesarean Section , November 2011 
+ 
+National Institute of Clinical Excellence. GC55 Intrapartum Care . 2007. 
+ 
+National Institute of Clinical Excellence. NG207: Inducing Labour . November 2021. 
+ 
+National Institute of Clinical Excellence. NG25 Preterm Labour and Birth June 2022 
+ 
+NHS England. Saving Babies’ Lives Version three : A care bundle for reducing perinatal 
+mortality March 20 23. 
+ 
+Offenbacher, S. et al. Progressive periodontal disease and risk of very preterm delivery. 
+Obstet Gynecol. 2006. 107(1): 29 -36. 
+ 
+Owen, J. et al. Mid -trimester endovaginal sonography in women at high risk for spontaneous 
+preterm birth. JAMA. 2001. 286(11): 1340 -8. 
+ 
+Poon, L.C. et al. Large loop excision of transfornation zone and cervical length in the 
+prediction of spontaneous preter m delivery. BJOG. 2012. 119(6): 692-8. 
+ 
+RCOG (2022) GTG no.74 Antenatal Corticosteroids to reduce neonatal morbidity and 
+mortality 
+ 
+RCOG. Green -top Guideline 73: Care of Women Presenting with Suspected Preterm Pre -
+labour Rupture of Membranes from 24+0 Weeks of Gestation 2019 
+ 
+RCOG. Green -top Guideline No. 20b: Management of Breech Presentation 2017 
+ 
+RCOG (2007) Safer Childbirth Working Party. Safer Childbirth – Minimum Standards for the 
+Organisation and Delivery of Care in Labour. 
+ 
+RCOG (2011) Magnesium sulfate to prevent cerebral palsy following preterm birth. Scientific 
+Advisory Co mmittee Opinion Paper 29, 2011. 
+ 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 36 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+Shah, P.S. et al. Induced termination of pregnancy and low birthweight and preterm birth: a 
+systematic review and meta -analyses. BJOG. 2009. 116(11): 1425 -42. 
+ 
+SHIP Preterm Birth Network. Regional Risk assessment and Management Tool. 2019. 
+ 
+Smaill, F. and Vazquez, J.C. Antibiotics for asymptomatic bacteriuria in pregnancy. 
+Cochrane Database Syst Rev. 2007 (2): pCD000490. 
+ 
+UK Preterm Clinical Network (2019) Reducing Preterm Birth: Guidelines for Commissioners 
+and Providers. 
+ 
+Wood NS, Marlow N, Costeloe K et al. Neurologic and developmental disability after 
+extremely preterm birth. EPICure study group. N Engl J Med 2000; 343: 378-384. 
+ 
+World Health Organization (2003) Managing complications in pregnancy and childbirth – 
+abdominal pain in later pregnancy . 
+ 
+Wren, B.G. Subclinical renal infection and prematurity. Med J Aust. 1969. 2(12): 596-600. 
+
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 37 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+Appendix 1: Actim PROM test indication flowchart 
+
+AF leakage within 
+the last 12 hours 
+□Suspected PPROM (<37 +0 weeks ) 
+□Suspected PROM + GBS positivity 
+□Suspect ed PROM + history of GBS -affected baby 
+Speculum 
+examination 
+PPROM/PROM 
+confirmed 
+Manage 
+accordingly 
+Inconclusive / unsure 
+Actim PROM test 
+Repeat DAU/LW attendance 
+for suspected PPROM 
+(<37+0 weeks) 
+POSITIVE 
+NEGATIVE 
+Discharge with 
+advice to return if 
+repeat episode 
+Please note that the following are NOT contraindications for the 
+Actim PROM test: 
+Sexual intercourse 
+Small amount of blood in the vagina 
+ 
+Actim PROM for should not be used if labour becomes established in a 
+woman or person reporting symptoms suggestive of P ‑PROM. 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 38 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+Appendix 2: Preterm labour presentation signs and symptoms flow chart 
+
+Key points: 
+□Urgent Obstetric SpR / 
+Consultant review 
+□Liaison with SCBU / 
+Paediatrics re: cots 
+□Consider in -utero transfer 
+and arrange if required 
+Further examination: 
+□Scan if unsure of presentation 
+□Speculum examination – if unsure call senior 
+help 
+□Take HVS 
+□Consider Actim PROM test if hist ory of 
+ruptured membranes (see section 15.0 ) 
+□Consider fetal Fibronectin test (see section 
+8.4) 
+□Consider Cervical Length Scan 
+□Vaginal examination by experienced 
+practitioner only (SpR / Consultant) 
+□Note : vaginal examination must not be 
+performed if membranes are ruptured unless 
+imminent delivery is expected by findings on 
+spec ulum 
+ 
+Discharge if no 
+other indications 
+for admission 
+YES 
+Corticosteroid prophylaxis for fetal 
+lung maturation : 
+Discuss if 22+0 – 23+6 weeks. 
+Offered if 24+0 – 33+6 weeks. 
+Consider if 34+0 – 35+6 weeks 
+Betamethasone sodium phosphate OR 
+Corticosteroid prophylaxis for fetal 
+lung maturation : 
+Discuss if 22+0 – 23+6 weeks. 
+Offered if 24+0 – 33+6 weeks. 
+Consider if 34+0 – 35+6 weeks 
+Pregnant women and people presenting with signs and symptoms of Preterm labour (less than 34+6weeks) 
+Initial action : 
+□Take history: ?P -PROM, ?APH, ?pain 
+□Abdominal examination – confirm presentation 
+□Commence CTG ( >26 weeks) OR fetal heart 
+check (<26 weeks) 
+□Palpate contractions 
+□Check urine, send MSU, FBC, CRP, U&E 
+Perform speculum 
+examination 
+Fetal Fibronectin Test 
+Established preterm labour? 
+Positive 
+ Negative 
+NO 
+Commence tocolysis 
+(Unless contraindicated) 
+Consider: 
+vaginal progesterone 
+cervical cerclage 
+Magnesium Sulfate for 
+neuroprotection: 
+Discuss if 23+0 – 23+6 weeks 
+Offer if 24+0 – 29+6 weeks 
+Consider if 30+0 – 33+6 weeks 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 39 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+Appendix 3: Magnesium Sulfate in preterm labour flow chart 
+
+ Is the mother or birthing parent in preterm 
+labour or about to be delivered electively? 
+Discuss MagS04 if 23+0 – 23+6 weeks. 
+Offered MagS04 if 24+0 – 29+6 weeks. 
+Consider MagS04 if 30+0 – 33+6 weeks 
+ Not indicated No 
+Are there contraindications to MgS04? 
+ Intrauterine transfer 
+ Use with caution with Nifedipine Use with caution. Stop during 
+transfer or if maternal blood 
+pressure drops . Yes 
+Aim to start at least 4 hours prior to delivery. 
+Give loading dose of MgS04 of 4g via a syringe pump or by hand 
+by an experienced clinician (over 15 minutes) followed by 
+infusion of 1g/hour. Continue until delivery or up to 24 hours 
+(whichever is sooner) . 
+If infusion stopped for more than 6 hours and delivery then 
+seems imminent give further loading dose and infusion . Check BP respiratory rate before loading dose, 10 and 30 
+minutes after starting . 
+Continue maternal or birthing parent observations 4 hourly, or 
+more often if indica ted by clinical circumstances . 
+Stop infusion if: 
+ Respiratory rate drops by more than 4 breaths per 
+minute or to less than 12 breaths per minute . 
+ Diastolic blood pressure drops more than 15 mmHg . 
+ Patellar reflexes absent, hypotensive or renal output 
+less than 100 ml over 4 hours . 
+Carry out CTG if indicated by clinical circumstances such as: 
+ Preterm labour 
+ Severe IUGR 
+ Severe pre -eclampsia 
+ 
+Magnesium levels indicated only if: 
+ Reduced renal function 
+ Signs of toxicity 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 40 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+Appendix 4: Sussex Preterm in -utero Transfer Process 
+
+Preterm In Utero 
+Transfer Pathway Sussex 2023 flowchart and SBARD.pdf
+
+kss-neonatal-network
+-infants-at-the-threshold-of-viability april-2022.pdf
+
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 41 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+Appendix 5: Further information 
+ 
+ QUiPP (click hyperlinks) 
+To access on a desktop 
+Google Play App Store 
+Apple App Store 
+
+ Perinatal Management of Extreme Preterm Birth Before 27 weeks of Gestation (2019) A 
+BAPM Framework for Practice 
+
+2020-10 SECAmb 
+Suspected Preterm Labour Guidance v0.0.1.pdf 
+CG20013 Preterm Birth Risk Pathway ( Guideline ) v2.1 Oct 2022 Page 42 of 42 
+Please check against the intranet that this printout is the most recent version of this document. 
+Appendix 6: Antenatal Corticosteroids to reduce neonatal morbidity and 
+mortality

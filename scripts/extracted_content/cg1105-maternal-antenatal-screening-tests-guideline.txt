@@ -1,0 +1,615 @@
+# Extracted from: CG1105 Maternal Antenatal Screening tests guideline.pdf
+# Guideline ID: cg1105-maternal-antenatal-screening-tests-guideline
+# Content length: 28987 characters
+# Processing date: 1750066899.7998974
+
+CG1105 Maternal and birth ing parent Antenatal Screening Tests Guideline v6.0 Sept 2023 Page 1 of 14 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+Maternal and Birthing Parent Antenatal Screening Tests Guideline 
+Summary statement: How does the 
+document support patient care? The purpose of this guideline is to provide evidence 
+based guidance for staff on antenatal screening tests 
+Staff/stakeholders involved in 
+development: 
+ Antenatal Screening Coordinator, Obstetric 
+Consultants, Senior Midwifery Staff , Joint Obstetric 
+Guidelines Group 
+Division: Women and Children’s 
+/Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Antenatal Scr eening Coordinator 
+For use by: Staff involved in maternal and birthing parent Antenatal 
+Screening Tests 
+Purpose: To provide evidence -based guidance on Maternal and 
+birthing parent Antenatal Screening Tests 
+This document supports: 
+ Screening tests for you and your baby (STFYAYB) 
+GOV.UK August 2022 
+Key related documents: UH Sussex (SRH & WH) Maternity Guidelines : 
+Refe rral when a Fetal Abnormality is Detected, 
+Antenatal Care and Patient Information, Antenatal 
+Screening for Down’s syndrome , Management of HIV, 
+Hepatitis B and Syphilis during Pregnancy, and sickle 
+cell and thalassaemia 
+Approved by: Joint Obstetric Guide line Group 
+Approval date: 20th September 202 3 
+Date uploaded : 20th September 2023 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable – Divisional Ratification only required 
+Ratification Date: Not Applicable – Divis ional Ratification only required 
+Expiry Date: September 202 6 
+Review date: March 2026 
+If you require this document in another format such as Braille, large print, 
+audio or another language please contact the Trusts Communications Team 
+Reference Number: CG1105 
+
+CG1105 Maternal and birth ing parent Antenatal Screening Tests Guideline v6.0 Sept 2023 Page 2 of 14 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+Version Date Author Status Comment 
+1.0 January 2011 Antenatal 
+Screening 
+Coordinator Archived New Trustwide guideline 
+2.0 February 2011 CNST Midwife Archived Administrative update 
+3.0 August 2012 Antenatal 
+Screening 
+Coordinator Archived Sexu ally Transmitted 
+Diseases and Rash 
+Illnesses removed and 
+made into stand alone 
+guidelines 
+3.1 April 23rd 2014 Antenatal 
+Screening 
+Coordinator Archived Minor update 
+3.2 July 2014 Consultant 
+microbiologist and 
+Consultant 
+obstetrician Archived Clarification of action to be 
+taken following GBS in 
+booking MSU 
+3.3 May 2015 Antenatal 
+Screening 
+Coordinator Archived Minor updates re. failsafes 
+and timescales 
+4.0 June 2016 Antenatal 
+Screening 
+Coordinator Archived Minor update – removal of 
+Rubella within the guida nce 
+5.0 November 2017 Antenatal 
+Screening 
+Coordinator Archived Addition of FOQ failsafe 
+5.1 February 2019 Antenatal 
+Screening 
+Coordinator Archived Addition of Quality 
+Monitoring Standards 
+5.2 October 2019 Antenatal 
+Screening 
+Coordinator Archived Additio n of process for 
+known booking results 
+5.3 September 2020 Antenatal 
+Screening 
+Coordinator (H. 
+Boiling) Archived Amendment made to 
+infectious diseases failsafe 
+6.0 September 2023 Karen Lundie , 
+Antenatal 
+Screening 
+Coordinator LIVE 3-year review 
+CG1105 Maternal and birth ing parent Antenatal Screening Tests Guideline v6.0 Sept 2023 Page 3 of 14 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Contents 
+ 
+1.0 Aim ................................ ................................ ................................ ................................ ...... 4 
+2.0 Scope ................................ ................................ ................................ ................................ .. 4 
+3.0 Responsibilities ................................ ................................ ................................ .................... 4 
+4.0 Abbreviations used within this guideline ................................ ................................ .............. 4 
+5.0 Maternal and birthing parent Antenatal Screening Tests ................................ ...................... 5 
+5.1 Timescales ................................ ................................ ................................ .......................... 5 
+5.2 Results ................................ ................................ ................................ ................................ 6 
+5.2.1 Normal Blood / Urine Screening Results ................................ ................................ .............. 6 
+5.2.2 Screen Positive Results ................................ ................................ ................................ ....... 6 
+5.2.3 Positive Syphilis, Hepatitis B and HIV Results: ................................ ................................ .... 6 
+5.3 Subsequent Miscarriages ................................ ................................ ................................ .... 6 
+6.0 Infectious Diseases and Sickle cell and Thalassaemia Testing (Screening Pathway) ......... 7 
+7.0 Screening for : ................................ ................................ ................................ ...................... 8 
+7.1 Anomaly Scan ................................ ................................ ................................ ..................... 8 
+7.2 Failsafe ................................ ................................ ................................ ................................ 8 
+7.3 Normal scan result ................................ ................................ ................................ ............... 8 
+7.4 Incomplete Scan ................................ ................................ ................................ .................. 8 
+7.5 Abnormal scan ................................ ................................ ................................ ..................... 8 
+8.0 Screening for SCT a nd other Haemoglobin Variants ................................ ........................... 9 
+8.1 Antenatal screening using Family Origin Questionnaire (FOQ) ................................ ............ 9 
+8.2 Screening Accepted ................................ ................................ ................................ ............ 9 
+8.3 Screening Declined ................................ ................................ ................................ ............. 9 
+8.4 Positive carrier results ................................ ................................ ................................ ......... 9 
+8.5 Baby’s bi ological father available for testing ................................ ................................ ...... 10 
+8.6 Baby’s biological father identified as carrier or is unavailable ................................ ............. 10 
+9.0 Screening f or HIV, Hepatitis B, Hepatitis C and Syphilis in Pregnancy .............................. 10 
+9.1 Screening ................................ ................................ ................................ .......................... 10 
+9.2 Declined ................................ ................................ ................................ ............................ 10 
+9.3 Accepted ................................ ................................ ................................ ........................... 11 
+9.4 Rejected samples ................................ ................................ ................................ .............. 11 
+10.0 Screening Failsafes ................................ ................................ ................................ ........... 11 
+11.0 Training ................................ ................................ ................................ ............................. 11 
+12.0 Quality Monitoring Standards ................................ ................................ ............................. 12 
+References ................................ ................................ ................................ ................................ ... 13 
+Appendix 1: Haemoglobinopathy & Infectious Diseases Failsafe ................................ .................. 14 
+
+CG1105 Maternal and birth ing parent Antenatal Screening Tests Guideline v6.0 Sept 2023 Page 4 of 14 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Maternal and Birthing Parent Antenatal 
+Screening Tests Guideline 
+
+1.0 Aim 
+ 
+To provide an evidence -based guideline fo r staff involved in offering, undertaking and reporting on 
+maternal and birthing parent antenatal screening tests. To ensure antenatal screening tests are 
+undertaken within the time scale set by the National Screening Committee (NSC) whenever 
+possible. 
+
+2.0 Scope 
+ 
+This guideline applies to midwives, obstetricians, student midwives and clerical staff involved in the 
+process of maternal and birthing parent and birthing parent antenatal screening . 
+
+3.0 Responsibilities 
+ 
+Midwives, Clerical staff and Obstetri cians are expected : 
+ 
+ To access, read, understand and follow this guidance 
+ To use their professional judgement in the application of this guideline 
+ 
+Manageme nt are expected: 
+ 
+ To ensure the guideline is reviewed as required in line with Trust and National 
+Recommendations . 
+ To ensure the guideline is accessible to all relevant staff . 
+
+4.0 Abbreviations used within this guideline 
+ 
+ANST - Antenatal screening team HIV - Human immunodeficiency virus 
+ASC - Antenatal screening co ordinator NHSE - National Health Ser vice England 
+SCT - Sickle cell and thalassaemia STFYB - Screening tests for you and your baby 
+IDPS - Infectious diseases of pregnancy 
+screening NSC - National Screening Committee 
+HA - Health advisor FOQ - Family origin questionnaire 
+MIS – Maternity Inf ormation System eg 
+Badgernet MIA - Maternity information systems 
+CMW - Community Midwife SG - Safeg uarding Team 
+PDF - Portable Document F ormat FASP - Fetal Anomaly Screening Programme 
+ICE - Integrated clinical Environment GP – General Practitioner 
+ 
+CG1105 Maternal and birth ing parent Antenatal Screening Tests Guideline v6.0 Sept 2023 Page 5 of 14 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+5.0 Maternal and birthing parent Antenatal Screening Tests 
+ 
+The designated lead for antenatal screening within the maternity service is the Trust Antenatal 
+Screening Coordinator. This position is cross site, between Worthing and St Richards , and involves 
+coordinating the antenatal screening programme for both hospitals and managing screen positive 
+results. 
+ 
+Within this guideline are descriptions of the processes to be followed for the following screening 
+tests: 
+ 
+ Screening for: 
+i. Down’s , Edward’s and Patau’s syndrome (see separate guideline) 
+ii. Fetal anomalies (see separate guideline) 
+ Infectious disease in pregnancy 
+i. Hepatitis B 
+ii. Human immunodeficiency virus (HIV) 
+iii. Syphilis 
+ Sickle Cell and Thalassaemia Screening 
+i. Sickle Cell and Thalassaemia 
+ 
+Screening tests for you and your baby (STFYAYB) GOV.UK August 2022 
+ 
+5.1 Timescales 
+ 
+The information – ‘Screening t ests for you and your baby ’ should be made available to the woman 
+and person as early as possible . This is available as a GOV.UK digital d ownload or leaflet. This 
+information includes details of all the routine screening offered during pregnancy and for the 
+newborn baby . The information is available in alternative languages via the digital download and 
+on the UK.GOV website . 
+ 
+All screening tests will be offered at the booking appointment, which ideally should be between 8-
+10 weeks to ensure detection of positive results and appropriate refer ral at the earliest opportunity. 
+ 
+For women and people who book late or transfer from another trust, all screening blood tests will 
+be offered at booking, regardless of gestation. 
+ 
+Unbooked women and people who present to the maternity unit in labour s hould be offered all 
+screening blood tests, with the HIV , Hep B and syphilis tests being fast tracked. 
+ 
+Women and people who decl ine any booking bloods will be contacted by letter to and inform them 
+that this will be re -offered by 20 weeks . 
+
+CG1105 Maternal and birth ing parent Antenatal Screening Tests Guideline v6.0 Sept 2023 Page 6 of 14 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+5.2 Result s 
+ 
+SCT results are to be reported by the labs by 3 working days after receipt of sample . IDPS bloods 
+results should be reported by 9 working days after receipt of sample. 
+ 
+These results should be acknowledged on MIS (Maternity Information System) and ac tioned 
+accordingly by the booking midwife within 10 days of taking the sample . 
+
+5.2.1 Normal Blood / Urine Screening R esults 
+ 
+Normal booking blood should be relayed to the woman and person at the next routine antenatal 
+appointment with the community midw ife, and documented on MIS. 
+
+5.2.2 Screen Positive R esults 
+ 
+Blood s creen positive results will be reported directly from the laboratory to the ANST via the 
+generic email address Uhsussex.screening@nhs.net . The ANST will notify and liaise with the 
+relevant specialist at the earliest opportunity. Details of this result and subsequent care plan will be 
+documented in the woman and person ’s MIS once the woman and person has been counselled 
+and the IDPS data ba se will be updated. 
+
+5.2.3 Positive Syphilis, Hepatitis B and HIV Results : 
+ 
+The ANST will liaise with the HA and an appointment will be made to discuss the result within 3 
+working days of ANST being notified . The result can be given in person at this app ointment or over 
+the phone . Following this, subsequent care will be arranged. 
+ 
+The HA will inform the GP and arrange an appointment with the Genito -urinary Consultant and/or 
+gastroenterologist . 
+ 
+Known IDPS and SCT carriers : 
+ 
+Following the booking appointm ent, known (disclosed) IDPS and SCT results should be notified by 
+emailing the ANST generic email address Uhsussex.screening@nhs.net in order for timely 
+referrals to be made. 
+
+5.3 Subsequent Miscarriages 
+ 
+Women and people , who miscarry, with normal screening results, should be sent a letter by their 
+community midwife informing them of their results. 
+ 
+Women and people , who miscarry following a positive blood screening result, must be referred for 
+specialist care by the ANST . 
+CG1105 Maternal and birth ing parent Antenatal Screening Tests Guideline v6.0 Sept 2023 Page 7 of 14 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+6.0 Infectious Diseases and Sickle cell and Thalassaemia Testing 
+(Screening Pathway) 
+
+Informed consent 
+Take samples and 
+request screenin g 
+tests 
+Check screening 
+test result within 
+10 days 
+Positive 
+Hep B / HIV / 
+Syphilis SC&T result SCT and IDPS in Pregnancy Screening Programme at UH Sussex 
+Hepatitis B HIV Syphyilis SCT 
+For process when 
+IDPS screening 
+declined see 
+section 9.2 
+Declined: 
+ANST to be 
+informed and who 
+will sent letter of re -
+offer 
+Declined 
+Document dates of 
+offer & declined 
+Result to ANST. 
+Rapid referral to appropriate specialist (see specific guideline) FOQ to be 
+requested on ICE. 
+When undertaking 
+10 day check of 
+results, ensure that 
+appropriate 
+screening (for 
+haemoglobinopathy) 
+has been 
+undertaken . 
+Immediate referral to 
+ANST if any 
+concerns. 
+All results given to 
+woman and person 
+to be authorised on 
+MIS and discussed 
+at next routine A/N 
+visit. Unacceptable 
+sample /inconclusive 
+test result: 
+Repeat to be taken 
+ASAP 
+ Offer Screening at Booking 
+Re-offer test by 20 
+weeks 
+CG1105 Maternal and birth ing parent Antenatal Screening Tests Guideline v6.0 Sept 2023 Page 8 of 14 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+7.0 Screening for: 
+ 
+1. Down’s , Edward’s and Patau’s syndrome - See separate g uideline 
+2. Fetal Anomalies 
+
+7.1 Anomaly Scan 
+ 
+All pregnant women and people will be offered fetal anomaly ultrasound screening at booking, 
+which will ideally be performed between 18 and 20 weeks and 6 days. 
+Information about the anomaly scan is contained within the national patient information leaflet 
+STFYAB . 
+ 
+7.2 Failsafe 
+ 
+The eligible population (i.e. anomaly screening requested by woman and person ) will be i dentified 
+using the MIS. The ANST will undertake a weekly check to identify women and people within this 
+eligible grou p who appear not to have had an anomaly scan. These cases will be checked in depth 
+and women and people who have not been scanned will be offered an urgent anomaly scan. If the 
+ANST are unable to contact a woman and person after they have missed a scan appointment, they 
+will arrange and send a repeat appointment to the woman and person either by email, post, call or 
+text. CMW and SG teams will be notified accordingly. 
+ 
+This will be used to provide denominator and numerator data for the quarterly and annual KPI data 
+reports. 
+ 
+7.3 Normal scan result 
+ 
+This will be reported to the woman and person at time of scan and documented on a report . A copy 
+of the report will be given to the woman and person. A PDF of the report will be interfaced to MIS. 
+ 
+7.4 Incomplete Scan 
+ 
+If the first anomaly scan is incomplete due to increased BMI or persistent fetal lie, one more scan 
+will be off ered by 23 weeks gestation . If this second attempt is also unsuccessful but a problem 
+hasn’t been detected, no further scans will be offered in line with the FASP standards . These 
+women and people should be referred to the ANST who will discuss and upload further supporting 
+information outlining the standard. 
+ 
+7.5 Abnormal scan 
+ 
+Women and people must be informed of an abnormal scan before they leave the ultrasound room 
+(11 physical conditions (20-week scan) Gov.UK 2022). 
+ 
+The Sonographer will inform the ANST . At this point, findings should be discussed and explained 
+to woman and person and their partner . 
+ 
+CG1105 Maternal and birth ing parent Antenatal Screening Tests Guideline v6.0 Sept 2023 Page 9 of 14 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Outcomes and statistics should not be discussed at this point or information outside of expertise 
+given to parents. 
+ 
+Note: For further management see UH Sussex Maternity guideline: ‘ Referral when a Fetal 
+Abnormality is Detected ’ 
+
+8.0 Screening for SCT and other Haemoglobin Variants 
+ 
+8.1 Ante natal screening using Family Origin Questionnaire (FOQ) 
+ 
+ Booking appointment should be between 8 -10weeks gestation 
+ Midwife should refer to baby’s biological father during interview not partner 
+ FOQ is completed by midwife completing all sections on ICE . 
+ Pregnant women and people should be asked about their own family origins and the 
+family origins of the baby's biological father – asking about two generations . 
+ Always ask about actual family origin (ancestry) rather than making assumptions based 
+on people’s appearance, presentation or perceived ethnicity. 
+ 
+8.2 Screening Accepted 
+ 
+ Full blood count taken (purple top bottle) 
+ When undertaking screening bloods tests, results are to be checked by the midwife 
+within 10 days . If there are any concerns, the ANST should be notified as soon as 
+possible and follow this up with the laboratory urgently 
+ Sample sent to laboratory 
+ NB The b aby’s biological father screening should not to be offered until mother and 
+birthing parent ’s status confirmed . 
+ 
+8.3 Screening Declined 
+ 
+ Select FOQ Screening accepted screening box ‘no’. 
+ Routine FBC taken and sent to laboratory . 
+ If still declined this should be recorded in hospital notes and link Health Visitor ANST 
+informed 
+ 
+8.4 Positive carrier results 
+ 
+ Positive carrier results and unk nown result (i.e. donor egg or both egg/sperm donor 
+pregnancy ) are emailed to the generic ANST uhsussex.screening@nhs.net . The se 
+details are also added to the paternal screening database by the laboratory. This can 
+also be accessed by the ANST to update pr ogress. 
+ The w oman and person is informed over the phone or face to face. Information for 
+fathers invited for a screening test for sickle cell disease and thalassaemia major - 
+GOV.UK (www.gov.uk) information is provided either in person, by email or uploading 
+CG1105 Maternal and birth ing parent Antenatal Screening Tests Guideline v6.0 Sept 2023 Page 10 of 14 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+copy to MIS. The partner is offered HBO screening and invited for the test at the earliest 
+opportunity . 
+ Full explanation of result given to woman and person and the baby’s biological father if 
+present with written material where available by a qualified genetic risk counsellor. 
+ If the woman and person is identified as a carrier of Beta Thalassaemia at the booking 
+appointment , blood should be taken for ferritin , vitamin B12 and folate levels prior to 
+appointme nt with Consultant Obstetrician. ANST will notify GP of positive result. 
+ It is recommen ded that women and people identified as having Beta thalassaemia trait 
+should take 5 milligrams Folic Acid for the duration of their pregnancy. 
+ Results to be entered on MIS with a linked neonatal alert . 
+ 
+8.5 Baby’s biological father available for testing 
+ 
+ FBC (purple top) taken and sent to laboratory 
+ Result emailed to ANST within 3 working days . 
+ Permission should be sought from both parents to upload biological father’s results on to 
+the woman and person ’s MIS. 
+ 
+8.6 Baby’s biological father identified as ca rrier or is unavailable 
+ 
+ Woman and person or couple offered appointment with ANST or genetic counselor to 
+discuss diagnostic testing . 
+ If diagnostic testing declined or unborn baby diagnosed as affected by HBO Consultant 
+Pediatrician informed. Alert to be entered on wom an and person ’s MIS. 
+ Newborn Bloodspot Screening Test performed routinely at 5 days, with relevant 
+information on card . 
+
+9.0 Screening for HIV , Hepatitis B, Hepatitis C and Syphilis in Pregnancy 
+ 
+9.1 Screening 
+ 
+ Offer HIV , Hepa titis B and syphilis screening at the booking appointment in each 
+pregnancy and on transfer of care from another provider as recommended in national 
+standards on screening (Gov .UK Feb 2023) 
+ If known positive please notify ANST to ensure early referral to s pecialist services. 
+ All test can be declined individually on ICE if the women and person chooses not to be 
+screened for individual infections. 
+ If the woman and person discloses she has a history of intravenous drug use or is 
+Hepatitis C positive, screenin g for Hepatitis C should be requested with full clinical 
+details (not routinely screened). Please notify ANSTof any known Hepatitis C positive. 
+ 
+9.2 Declined 
+ 
+ Documented in notes and o n the MIS as ‘declined ’ and create alert . Tests should be re-
+offered by 20 weeks and ANST informed. 
+CG1105 Maternal and birth ing parent Antenatal Screening Tests Guideline v6.0 Sept 2023 Page 11 of 14 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+ The woman and person will be sent a letter by the ANST outlining the reasons for 
+infectious diseases screening, and an appointment is offered with the ANST to discuss. 
+ Patient details added to ‘declines’ database by ANST to en able monitoring and reporting 
+of data to NHSE. 
+ 
+9.3 Accepted 
+ 
+ Blood taken and sent to laboratory . 
+ 
+9.4 Rejected samples 
+ 
+ If any antenatal sample is rejected in the laboratory (i ncorrect labeling, clotted etc .), the 
+ANST will be infor med immediately and w ill organis e a repeat sample 
+ 
+10.0 Screening Failsafes 
+ 
+The ANST carry out failsafe checking for SCT, IDPS, and FASP . These are changing due MIS 
+implementation and will be updated once failsafe officer in place . 
+
+11.0 Training 
+ 
+Training for staff working within the maternity service will be delivered in line with the Maternity 
+Training Needs Analysis document. 
+
+CG1105 Maternal and birth ing parent Antenatal Screening Tests Guideline v6.0 Sept 2023 Page 12 of 14 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+12.0 Quality Monitoring Standards 
+ 
+1. Antenatal Screening -normal results 
+
+Sample Size Audit 20 sets of MIS antenatal records on each site 
+Frequency of Audit Annual 
+Method for data collection Approved notes quality review tool 
+Standards GOV.UK 2018 
+Monitoring of compliance 
+by Antenatal & newborn steering and immunisations steering 
+group 
+Reports to Maternity safety and quality group 
+ 
+1. The n umber with documented consent for combined/quad/dating 
+2. The number with a documented combined/quad result? 
+3. The number where combined /quad result was given at the subsequent appointment 
+following booking 
+4. The number with the screening result on Medway 
+5. The nu mber sent their screening result within 10 days of the test 
+6. The number with date of booking bloods documented 
+7. The number with booking blood results documented 
+8. The number where booking blood results given at appointment subsequent to booking 
+9. a) The number w ith any booking bloods declined 
+b) If any declined, the number with documented re -offer by 20 weeks 
+
+2. Abnormal Haemoglobinopathy (HBO) result 
+
+Sample Size 5 cases on each site with abnormal haemoglobinopathy result 
+Frequency of Audit Annual 
+Method fo r data collection Approved notes quality review tool and /or paternal screening 
+database 
+Standards GOV.UK 2018 
+Monitoring of compliance 
+by Antenatal & newborn steering and immunisations steering 
+group 
+Reports to Maternity safety and quality group 
+ 
+1. The number where the result was available by 10 weeks 
+2. The number where partner testing was offered 
+3. The number where ‘tests for dads’ leaflet was given or offered 
+4. The number with an abnormal partner HBO result 
+5. The number where woman and partner had an abnorma l HBO result who had prenatal 
+diagnosis test by 12+6 
+ 
+CG1105 Maternal and birth ing parent Antenatal Screening Tests Guideline v6.0 Sept 2023 Page 13 of 14 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+References 
+ 
+Screening tests for you and your baby (STFYAYB) - GOV.UK (www.gov.uk 2022) 
+ 
+Screening tests in pregnancy - NHS (www.nhs.uk 2021) 
+ 
+Population screening programmes: NHS sickle cell and thalassaemia (SCT) screening programme 
+- detailed information - GOV.UK (www.gov.uk 202 3) 
+ 
+Sickle cell and thalassaemia (SCT) screening: programme overview - GOV.UK (www.gov.uk 2023) 
+ 
+Screening for sickle cell and thalassaemia - NHS (www.nhs.uk 2022) 
+ 
+SCT screening: handbook for antenatal labo ratories - GOV.UK (www.gov.uk 2022) 
+ 
+Population screening programmes: NHS infectious d iseases in pregnancy screening (IDPS) 
+programme - detailed information - GOV.UK (www.gov.uk 2021) 
+ 
+Infectious diseases in pregnancy screening: standards - GOV.UK (www.gov.uk 2023) 
+ 
+Screening for hepatitis B, HIV and syphilis - NHS (www.nhs.uk 2021) 
+ 
+Infectious diseases in pregnancy screening programme: laboratory handbook - GOV.UK 
+(www.gov.uk 2022) 
+ 
+NHS Fetal Anomaly Screening Programme (FASP): programme overview - GOV.UK (www.gov.uk 
+2021) 
+ 
+Fetal anomaly screening programme handbook - GOV.UK ( www.gov.uk 2023 
+ 
+Fetal anomaly screening programme: standards - GOV.UK (www.gov.uk 2021) 
+ 
+Screening for Down's syndrome, Edwards' syndrome and Patau's syndrome - NHS (www.nhs.uk 
+2021) 
+CG1105 Maternal and birth ing parent Antenatal Screening Tests Guideline v6.0 Sept 2023 Page 14 of 14 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Appendix 1: Haemoglobinopathy & Infectious Diseases Failsafe 
+ 
+Consent obtained Haemoglobinopathy & Infectious Diseases Failsafe 
+Record as ‘declined’ 
+on spreadsheet & 
+put declined alert on 
+MIS Check MIS 
+ Previous month’s list of missing booking bloods sent by Maternity Information Analyst, written 1st 
+week of the month. Save list in the failsafe folder on the server. 
+ 
+Microbiology lab and path lab send email at least weekly to antenatal screening team to info rm of 
+any booking bloods received and not tested (for any reason) 
+Record as ‘done’ on 
+spreadsheet No Check each hospital number to see if result is on 
+MIS 
+Yes 
+Declined 
+Email CMW and 
+team leaders to 
+inform and request 
+bloods are taken, or 
+info provide d to lab, 
+ASAP 
+Check previous month’s 
+lists and when complete 
+move lists to subfolder.

@@ -1,0 +1,978 @@
+# Extracted from: MP009 Management of HIV in pregnancy and Postpartum Period.pdf
+# Guideline ID: mp009-management-of-hiv-in-pregnancy-and-postpartum-period
+# Content length: 50882 characters
+# Processing date: 1750066901.1533976
+
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 1 
+
+MP009 Guidelines for the 
+Management of HIV in 
+Pregnancy and Neonatal 
+period 
+
+Maternity Protocol: MP009 
+Date agreed: December 2019 
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 2 
+
+Guideline Reviewer: David Utting 
+Author: Yvonne Gilleece, David Utting, Rob Bomont, Sarah Trotman, Mike Petit, Mark Shaw 
+Version: 4 .0 
+Approval Committee: Women’s Services Safety and Quality Committee 
+Date agreed: December 2019 
+Review date: December 2022 
+
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 3 
+
+Contents 
+Contents ................................ ................................ ...................... Error! Bookmark not defined. 
+Introduction ................................ ................................ ................................ ............................... 7 
+Preconception management ................................ ................................ ................................ ..... 7 
+Vitamin supplementation ................................ ................................ ................................ .. 7 
+Antiretroviral therapy ................................ ................................ ................................ ........ 7 
+Conception in serodifferent couples ................................ ................................ ................. 8 
+Screening and monitoring of pregnant women living with HIV ................................ ................ 8 
+Psychosocial care ................................ ................................ ................................ ............... 8 
+Sexual health screening ................................ ................................ ................................ ..... 8 
+Laboratory monitoring of pregnant women living with HIV ................................ ............. 9 
+Antenatal screening and diagnostic testing ................................ ................................ ....... 9 
+Antiretroviral therapy in pregnancy, intrapartum and postpartum ................................ ........ 10 
+Conceiving on ART ................................ ................................ ................................ ........... 10 
+Women not on treatment ................................ ................................ ............................... 10 
+Choice of ART when initiating therapy in pregnancy ................................ ...................... 12 
+ART when presenting in labour ................................ ................................ ....................... 12 
+Intrapartum IV zidovudine ................................ ................................ ............................... 12 
+Management of common symptoms in pregnancy ................................ ................................ . 14 
+Nausea and vomiting ................................ ................................ ................................ ....... 14 
+Anti-emetics in pregnancy ................................ ................................ ............................... 14 
+Managing diarrhoea as a side -effect of antiretrovirals ................................ ................... 15 
+Dyspepsia and reflux in pregnancy ................................ ................................ .................. 15 
+Pain Management in Pregnancy and labour ................................ ................................ ............ 16 
+Mode of delivery ................................ ................................ ................................ ...................... 18 
+Elective vaginal delivery ................................ ................................ ................................ ... 18 
+Elective pre -labour Caesarean section ................................ ................................ ............ 18 
+Management of spontaneous rupture of membranes (SROM) ................................ ...... 19 
+SROM at term (>37 weeks’ gestation) ................................ ................................ ............. 19 
+Preterm SROM (<37 weeks’ gestation) ................................ ................................ ............ 19 
+Neonatal management ................................ ................................ ................................ ............ 21 
+Neonatal post -exposure prophylaxis (PEP) ................................ ................................ ..... 21 
+Very low risk PEP – zidovudine monotherapy for 14 days ................................ .............. 21 
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 4 
+Low risk PEP – zidovudine monotherapy for 28 
+days ................................ ................................ ................................ ................................ .. 22 
+High risk PEP – Triple therapy for 28 days ................................ ................................ ....... 22 
+Drugs used in neonatal PEP ................................ ................................ ............................. 22 
+Pneumoncystis pneumonia (PCP) prophylaxis ................................ ................................ 22 
+Neonatal feeding ................................ ................................ ................................ .............. 22 
+Diagnosis of infant HIV status ................................ ................................ .......................... 24 
+HIV/Hepatitis B (HBV) co -infection ................................ ................................ .......................... 24 
+HIV/Hepatitis C (HCV) co -infection ................................ ................................ .......................... 25 
+Postpartum management of women ................................ ................................ ...................... 25 
+References ................................ ................................ ................................ ............................... 26 
+Appendix 1: Drug dosing for infants (BHIVA) ................................ ................................ ........... 28 
+Appendix 2: BSUH HIV and breastfeeding your baby ................................ .............................. 31 
+
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 5 
+ 
+BSUH Guidelines for the management of 
+HIV in pregnancy and postpartum 
+ 
+Multi -disciplinary team contact details 
+ 
+24-hour emergency HIV advice available on bleep 8075 (9-5pm) or via switchboard (5pm –
+9am) 
+ 
+Please refer all women diagnosed during antenatal screening to the Specialist Health 
+Advisor for Reproductive Health and Wellbeing ( SHA) ASAP . While most women with a 
+known diagnosis of HIV will have informed the Lawson Unit themselves, please contact the 
+SHA if this has not yet happened. When a woman attends in labour or for an ELCS and the 
+birth is following the individualised birth plans (in the brown folder on the maternity ward, 
+in the woman’s hand held notes and in the HIV T drive accessible by the HIV team) with no 
+additional concerns, please notify the HIV team via bleep 8075/switchboard between 8am – 
+10pm. 
+ 
+The following situations are emergencies. Please notify the HIV team via bleep 
+8075/switchboard when a woman presents with: 
+ 
+• In labour or with SROM and the HIV VL is detectable >40 copies/ml 
+• Premature onset of labour/SROM before or within 4 weeks of starting ART 
+• Presentation after 28 weeks gestation with untreated HIV HIV Service 
+Adult HIV Consultant Yvonne Gilleece y.gilleece@nhs.net via switchboard 
+Specialist Health Advisor for 
+Reproductive Health and 
+Wellbeing Karen Trainis karen.brown2 @nhs.net 07919627603 
+x64716 
+Sussex Beacon Health 
+Management Team Hattie Yannaghas hattie.yannaghas@sussexbeac
+on.org.uk 01273 694222 
+HIV Pharmacy Team bsuh.pharmacy.seh@nhs.net 01273 523078 
+Bleep 8825 
+ 
+Obstetric Service 
+Obstetric Consultant David Utting david.utting@nhs.net Via switchboard 
+Neonatal Service 
+Neonatal Consultant Rob Bomont r.bomont@nhs.net Via switchboard 
+Neonatal Administrator Emma Morris 
+Jane Battersby Emma.morris7@nhs.net 
+j.battersby@nhs.net x67691 
+Paediatric Pharmacist David Annandale D.annandale@nhs.net Via switchboard 
+Laboratory 
+Consultant Virologist Mohammed 
+Hassanibrahim m.hassanibrahim@nhs.net Via switchboard 
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 6 
+• Diagnosis of maternal HIV after delivery, where 
+the infant is less than 72 hours old 
+• Poor maternal adherence to ART with risk of resistance as well as lack of viral suppression 
+ 
+If a woman attends in labour or with SROM and her HIV status is unknown please discuss with 
+the on -call Microbiology/ Infectious Disease consultant with regards to a point of care test being 
+done by the laboratory. If the on -call microbiology/Infectious diseases consultant agrees that 
+immediate testing would impact on patient management they will then contact the Biomedical 
+Scientist ( BMS ) to arrange for the specimen to be processed. 
+For specimen s originating from RSCH and RACH 
+After obtaining the specimen contact the BMS on call via switchboard at RSCH. The specimen 
+must then be sent urgently to Pathology Reception. 
+This arrangement has been agreed with the virology consultant, Dr Mohammed Hassanibrahim . 
+
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 7 
+ 
+Introduction 
+ 
+The prevalence of HIV amongst women giving birth in the UK is increasing year on year (1). 
+Overall 2.2 per 1000 women giving birth in the UK are living with HIV, 3.5 per 1000 in 
+London (2). The proportion of women who are aware of their HIV diagnosis prior to delivery 
+has increased due to the Department of Health opt -out policy of routine antenatal HIV 
+testing at the booking appointment , which commenced in Brighton in June 2000 (3,4) . 
+Vertical transmission of HIV without any intervention is as high as 25 -30% (5). Interventions 
+such as antiretroviral therapy (ART), birth planning, infant post -exposure prophylaxis (PEP) 
+and avoidance of breastfeeding dramatically reduce vertical transmission of HIV . In 2016 the 
+rate of vertical transmission in the UK in women with a viral load <40 copies/ml (VL) was 
+0.14% (6). 
+At BSUH all women living with HIV who are pregnant should be managed by the HIV in 
+pregnancy specialist MDT at the Sunflower Clinic (contact details on page 1). 
+Communication between team members is essential and each delivery (by whatever mode) 
+should be planned. The mother will have a personal HIV birth plan which will be available in 
+her HIV, obstetric and antenatal hospital held notes. 
+ 
+These guidelines are based on the British HIV Association guidelines for the management of 
+HIV in pregnancy and postpartum 2018 ( 2020 third interim update). The full guideline is 
+available here: 
+ 
+https://www.bhiva.org/file/5f1aab1ab9aba/BHIVA -Pregnancy -guidelines -2020 -3rd-interim -
+update.pdf 
+ 
+Preconception management 
+ 
+All women living with HIV who are planning a pregnancy should be given advice regarding 
+smoking, alcohol, diet and exercise as per NICE recommendations (7). 
+ 
+Vitamin supplementation 
+All women should take folic acid supplementation of 400 micrograms when trying to 
+conceive or from the point they find out they are pregnant until the 13th week of pregnancy. 
+In women planning pregnancy or who conceive while taking co -trimoxazole or dolutegravir, 
+the dose of folic acid should be increased to 5mg (7,8). All pregnant and breastfeeding 
+women (see neonatal fe eding page 15 ) are advised to take vitamin D supplementation of 10 
+micrograms per day (400 units), increased to 1000 units in women with increased skin 
+pigmentation, reduced exposure to sunlight or obesity (7). 
+Antiretroviral therapy 
+In line with national guidelines, all people living with HIV are now advised to start and 
+continue ART indefinitely regardless of CD4 count. This follows the findings of the START 
+study which found a 57% increased relative risk in AIDS events, serious non -AIDS events and 
+death in those starting ART once their CD4 fell to <350 cells/mm3 compared to those 
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 8 
+starting ART immediately (9). Treatment 
+interruption is also associated with an increase in 
+all-cause mortality so women should be advised that ART should be lifelong (10). 
+ 
+Women planning a pregnancy should be advised to start ART prior to conception and where 
+possible aim for an undetectable viral load before trying to conceive . Zidovudine 
+monotherapy and Short Term Anti -Retroviral Therapy (START) for the prevention of vertical 
+transmission are no longer recommended due to the maternal benefits of lifelong ART. 
+ 
+The fertility needs of all women living with HIV should be taken into consideration when 
+starting ART and appropriate drugs with good safety data in pregnancy, selected (see page 
+8). 
+ 
+Conception in serodi fferent couples 
+ 
+If a woman is HIV negative but has a partner living with HIV who is undetectable and fully 
+adherent to HIV treatment there is no indication for her to be repeatedly tested for HIV. 
+This is because there is zero risk of HIV transmission during unprotected sex from anyone 
+who is taking effective HIV treatment. This is based on the PARTNER study of HIV discordant 
+couples, one of many such studies all of which have shown zero transmission . Undetectable 
+equals untransmi ssable in the context of unprotected sex. 
+Screening and monitoring of pregnant women living with HIV 
+ 
+Psychosocial care 
+HIV is associated with an increased risk of poor mental health and all pregnant women living 
+with HIV should be assessed for antenatal/postnatal depression at booking, 4 -6 weeks post -
+partum and 3 -6 months post -partum. The HIV team will also offer to link the woman in with 
+local HIV woman’s groups and peer -support. 
+ 
+Multiple Pregnancy 
+There is no increased risk of vertical transmission with multiple pregnancy. 
+ 
+Sexual health screening 
+All pregnant women living with HIV should be offered screening for sexually transmitted 
+infections and bacterial vaginosis (BV). This screening will be arranged by the HIV team at a 
+routine appointment. Treatment for any infection will follow BASHH guidelines (12). Women 
+found to have BV should be treated even if asymptomatic due to the association between 
+BV causing bacterial chorioamnionitis and vertical transmission. 
+ 
+Women with a history of genital HSV should be started on ac iclovir 400mg TDS from 32 
+weeks gestation with the dual aims of reducing the risk of HIV transmission and reducing 
+the risk of HSV recurrence or shedding at time of delivery. Women who present with a first 
+episode of genital HSV in labour should be managed as per BASHH guidelines (13). 
+ 
+Full guidelines from the British Association for Sexual Health and HIV can be found here: 
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 9 
+ 
+https://www.bashh.org/guidelines 
+
+Laboratory monitoring of pregnant women living with HIV 
+All pregnant women, including those living with HIV should be offered syphilis and hepatitis 
+B screening. Women living with HIV do not routinely require any additional laboratory 
+monitoring at their antenatal appointments. The HIV team will arrange monitoring of the 
+CD4 count , HIV viral load , FBC, U&E’s and LFTs as per the schedule below. 
+ 
+Maternal HIV viral load is the key determinant of the risk of transmission (14,15) with a 
+higher viral load increasing the risk, although transmission can occur even when HIV VL<40 
+copies/ml. 
+ 
+In women starting ART in pregnancy HIV viral load should be measured: 
+• At 2 -4 weeks after initiation of ART (a 2 -week VL may be useful for a rapid 
+assessment of adherence, particularly in late -presenters) 
+• Then every 4 weeks until undetectable 
+• Once every trimester once undetectable 
+• At 36 weeks to inform the birth plan 
+• At delivery 
+ 
+In women starting ART in pregnancy CD4 count should be measured: 
+• As per routine HIV care 
+• At delivery 
+ 
+In women established on ART prior to pregnancy HIV viral load should be measured: 
+• At 2-4 weeks following any changes to HIV treatment 
+• At least o nce every trimester 
+• At 36 weeks to inform the birth plan 
+• At delivery 
+ 
+A second assay using a different type of viral load test should be used where there are 
+discrepancies between viral load, CD4 count and clinical status. The majority of HIV vertical 
+transmission occurs perinatally but a small percentage of transmission may occur in utero 
+especially if the woman is seroconverting for HIV or has another infection such as 
+chorioamnionitis or syphilis . Other risk factors for transmission may be maternal or 
+obstetric. 
+ 
+Antenatal screening and diagnostic testing 
+Women should be offered routine ultrasound scanning and antenatal screening tests. If the 
+combined screening for trisomies returns a high -risk result, non -invasive prenatal testing 
+(NIPT) should be considered where possible to avoid invasive testing. 
+ 
+Invasive prenatal diagnostic testing (e .g., amniocentesis) should not be performed until the 
+HIV status is known and where positive, testing should be deferred until the HIV viral load is 
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 10 
+undetectable. When it is not possible to delay 
+testing the woman should be given her standard 
+ART with the addition of Raltegravir 400mg BD and a stat dose of Nevirapine 200mg 2 -4 
+hours pre -procedure . 
+Antiretroviral therapy in pregnancy, intrapartum and postpartum 
+ 
+Some women may be aware of their HIV status prior to pregnancy and may conceive on 
+ART. Other women will be newly diagnosed via antenatal testing. 
+ 
+Conceiving on ART 
+Most women who conceive on ART should be advised to continue their current regimen. 
+Women should have their ART modified or switched if: 
+• They are on D4T/DDI due to a risk of lactic acidosis 
+• They are on a non -standard regimen: 
+o PI monotherapy 
+• Pharmacokinetic data does not support use in pregnancy: 
+o Atazanavir/Cobicistat 
+o Darunavir/C obicistat 
+o Elvitegravir/C obicistat 
+• There is an absence of pharmacokine tic data in pregnancy: 
+o Raltegravir 1200mg OD (should be switched to 400mg BD) 
+o Modified release N evirapine (should be switched to 200mg BD) 
+• Safety data does not support use of: 
+o Tenofovir A lfenamide (TAF) in the first trimester of pregnancy 
+o Dolutegravir at conception and the first 8 weeks post conception 
+o Doravirine (contained in Delstrigo) 
+o Bictegravir (contained in Biktarvy) 
+
+If women conceive on ART, they should continue on their current combination until they are 
+seen by or discussed with the HIV Consultant for pregnancy (Dr Yvonne Gilleece) with the 
+exception of D4T/DDI which should be switched to other ARV s immediately (contact the HIV 
+team to arrange this). 
+ 
+Women not on treatment 
+All pregnant women including elite controllers should start combination ART and be advised 
+to continue lifelong (9). 
+ 
+Treatment should be started: 
+• Within the first trimester if the baseline VL >100,000 copies/mL or CD4<200 
+cells/mm3 
+• At the start of the second trimester if the baseline VL is between 30,000 and 100,000 
+copies/mL 
+• ASAP in the second trimester if the baseline VL 30,000 copies/mL 
+• All women should start by 20-24 weeks gestation 
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 11 
+ 
+Before starting treatment, it is important to test for 
+genotypic HIV resistance so that an effective antiretroviral regimen can be selected for the 
+patient. A resistance test should be performed and the results available before starting ART 
+unless the woman presents after 28 weeks gestation. A resistance test should be considered 
+if a woman fails to suppress and should be performed if a woman discontinues her ART. 
+ 
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 12 
+Choice of ART when initiating therapy in 
+pregnancy 
+ 
+Choice of antiretroviral therapy in pregnancy 
+ Recommended Alternative 
+NRTI backbone ABC/3TC 
+TDF/FTC AZT/3TC 
+TAF/FTC after first trimester 
+Third agent EFV 
+ATZ/r RPV 
+DAR/r 
+RAL BD 
+DTG if after 8 weeks 
+If VL >100,000 or failing to 
+suppress RAL 400mg BD (as part of/in 
+addition to a 3 -drug 
+containing regimen) 
+Avoid TDF/FTC with LPV/r ( 16) 
+Avoid bictegravir (bikt arvy), cobicistat, doravirine (delstrigo), elvitegravir/c, modified release nevirapine or OD 
+raltegravir due to pharmacokinetic data/absence of data 
+ 
+ABC: Abacavir; AZT: Zidovudine; ATZ/r: Atazanavir/ritonavir; DAR/r: Darunavir/ritonavir; 
+DTG: Dolutgeravir; EFV: Efavirenz; FTC: Emtricitabine; LPV/r: Lopinavir/ritonavir; RAL: 
+Raltegravir; RPV : Rilpivirine ; TAF: Tenofovir alafenamide; 3TC: Lamivudine; TDF: Tenofovir 
+disoproxil fum arate 
+ 
+Zidovudine monotherapy and Short Term Anti -Retroviral Therapy (START) for the 
+prevention of vertical transmission are no longer recommended. This is consistent with 
+national and international guidelines that recommend that all people living with HIV should 
+be started on ART regardless of CD4 count. 
+ 
+ART when presenting in labour 
+This is an emergency and the HIV team should be contacted immediately (see page 1). The 
+woman should be started on ART as follows: 
+• Nevirapine 200mg STAT 
+• Start Zidovidine 300mg BD + lamivudine 150mg BD (Combivir) 
+• Start Raltegravir 400mg BD 
+• IV Zidovudine 2mg/kg for 1 hour and then 1mg/kg /hour continuous infusion until 
+placental cord clamped 
+• If preterm and infant unlikely to absorb ent eral PEP give mother 2 doses of TDF: 
+Tenofovir disoproxil fumarate 
+• Infant should receive high -risk PEP (see below) 
+• If vaginal delivery not imminent proceed to caesarean section 
+ 
+Intrapartum IV zidovudine 
+Intrapartum IV zidovudine is recommended if the VL is known to be >1000 copies/mL or if 
+the VL is unknown in a woman not on HIV treatment. It should be started if the above 
+criteria are met in women who present in labour, present with spontaneous rupture of 
+membranes or those admitted for ELCS. There is no evidence of any additional benefit from 
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 13 
+IV intrapartum zidovudine where a woman is on 
+HIV treatment and the viral load is <1000 
+copies/mL. The dose of maternal IV ZDV is 2mg/kg for the first hour, followed by 
+1mg/kg/hour continuous infusion thereafter until the cord is clamped. When used at 
+elective CS the infusion should be started 4 hours before the procedure. 
+ 
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 14 
+Management of common symptoms 
+in pregnancy 
+ 
+Nausea and vomiting 
+Antiretrovirals may also increase the incidence of nausea and vomiting in pregnancy. To 
+avoid increasing pill burden, anti -emetics should only be used when other interventions 
+have failed to control nausea and vomiting. The following advice may aid adherence with 
+antiretrovirals if a pregnant woman is struggling with morning sickness: 
+• Adjust timings of antiretrovirals, to avoid the times when morning sickness is worst. 
+• Eat smaller meals and snack more frequently rather than eating just a few larger 
+meals. 
+• Try to eat more bland foods. Avoid foods that are spicy, greasy or strong smelling. 
+• Leave some dry crackers by your bed. Eat one or two before you get up in the 
+morning. 
+• Ginger is very helpful. It can be used in capsule or as ginger root powder. Fresh root 
+ginger peeled and steeped in hot water can help. 
+• Acupressure and acupuncture may help. Anti -nausea acupressure bands are 
+available from most chemists. 
+• Try not to drink with your meal or straight after. It is better to wait an hour and then 
+sip drinks. It is important for pregnant women not to become dehydrated though so 
+do remember to drink outside mealtimes. 
+• Peppermint is also useful. It can be taken in tea or in chewing gum. 
+ 
+If the risk of ART interruption is exceeded by the risk of failure due to intermittent ART 
+exposure as a consequence of vomiting, ARV should be temporarily withheld for the 
+minimum amount of ti me required. If on an NNRTI or R altegravir a resistance test should be 
+considered. 
+ 
+Anti -emetics in pregnancy 
+1st line: Cyclizine 50mg tds orally or IM 
+ 
+2nd line: Promethazine 25mg nocte orally and up to 25mg qds 
+
+or 
+ 
+Prochlorperazine 5mg orally up to three times each day or 25mg rectally twice each day. QT 
+caution with ATZ/r, DAR/r and Rilpivirine . 
+ 
+Try first line anti -emetic for 3 -4 days before prescribing second line anti -emetic. For patients 
+with persistent/severe nausea and vomiting, see RCOG green top guidance for Nausea and 
+Vomiting in Pregnancy: https://www.rcog.org.uk/globalassets/documents/guidelines/green -
+top-guidelines/gtg69 -hyperemesis.pdf 
+Domperidone should not be co -administered with a boosted PI. Concerns about drug 
+interactions can be discussed with our pharmacy team (see contact details page 1). 
+ 
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 15 
+Managing diarrhoea as a side -effect of 
+antiretrovirals 
+The following dietary interventions may help reduce the incidence of diarrhoea: 
+• Soluble fibre is particularly helpful when watery stools are a problem as they help to 
+absorb the excess water and bulk the stool. Soluble fibre can be found in white rice, 
+pasta. 
+• Replace lost fluids and electrolytes with dioralyte. 
+• Loperamide is not for routine use in pregnancy . 
+
+Dyspepsia and reflux in pregnancy 
+There are a number of important drug -drug interactions between gastric acid modifying 
+drugs and antiretrovirals. If in any doubt please contact the HIV pharmacy team or on -call 
+SpR (see page 1 for contact details). 
+ 
+Use of antacids e.g., calcium carbonate (Rennies) or alginates e.g., sodium alginate and 
+potassium bicarbonate (Gavison Advance) are recommended for use due to low side effect 
+profiles. Where symptoms persist or worsen, treatment escalation will reviewed on an 
+individual case basis and will depend on ART regimen. See table below for summary of 
+interactions between ART and gastric acid modifying drugs. 
+
+Summary of major drug -drug interactions between acid modifying agents and ART 
+ PPIs H2 antagonists Antacids 
+Atazanavir Contraindicated Caution: 
+Low dose H2A dosed once 
+daily 4-12 hours after 
+atazanavir may be 
+considered on an 
+individual basis (consider 
+risk/benefit/availability) Can be used 1 hour before 
+or 2 hours after atazanavir 
+Rilpivirine Contraindicated Caution: 
+Low dose H2A dosed once 
+daily 4 -12 hours after 
+rilpivirine may be 
+considered on an 
+individual basis (consider 
+risk/benefit/availability) Can be used 2 hours 
+before or 4 hours after 
+Rilpivirine 
+Raltegravir BD No interaction No interaction Aluminium and magnesium 
+antacids contraindicated. 
+Calcium carbonate 
+antacids can be used with 
+BD raltegravir . Separate if 
+by 4 hours if possible. 
+Dolutegravir No interaction No interaction Can be used 6 hours 
+before or 2 hours after 
+dolutegravir 
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 16 
+
+Pain Management in Pregnancy and labour 
+ 
+Summary of co -administration of ART with commonly used analgesia and potential 
+interactions: 
+
+ART ANALGESIA 
+BUPIV ACAINE FENTANYL MORPHINE / 
+DIAPMORPHINE PETHIDINE 
+bPI: 
+ 
+AZT/r 
+DAR/r Potentially 
+increase d levels of 
+bupivacaine. 
+Monitor and dose 
+adjust accordingly. Increased fentanyl 
+levels, prolonged 
+adverse effects 
+including respiratory 
+depression. Consider 
+dose reduction and 
+monitor carefully. 
+ Monitor for 
+efficacy and 
+toxicity 
+(potentiated CNS 
+effects) . Adjust 
+dose if required. Consider 
+alternative, 
+decreased 
+pethidine levels, 
+increased levels 
+of neurotoxic 
+metabolite. 
+INSTI: 
+ 
+DTG 
+RAL No interaction No interaction No interaction No interaction 
+NNRTI: 
+ 
+EFV 
+RPV 
+ EFV: Potentially 
+decreased levels 
+of bupivacaine. 
+Monitor for 
+efficacy. EFV: Potentially 
+decreased levels of 
+fentanyl. Monitor for 
+efficacy. EFV: Increased 
+levels of 
+diamorphine/mor
+phine. Consider 
+dose reduction 
+and monitor. EFV: Consider 
+alternative to 
+pethidine; 
+increased risk of 
+seizures due to 
+increased levels 
+of neurotoxic 
+metabolite. 
+NRTI: 
+ 
+AZT 
+FTC 
+3TC 
+TAF 
+TDF No interaction No interaction No interaction No interaction 
+ 
+Codeine / dihydrocodeine, diclofenac can be used orally for short courses following 
+appropriate dosing regimens. 
+ 
+Paracetamol and nitrous oxide (Entonox ®) do not interact with ARVs and can be used 
+
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 17 
+ Other commonly used medications in 
+labour/complications: 
+ Antihypertensives: 
+ Labetalol Nifedipine Methyldopa 
+bPI: 
+ 
+AZT/r 
+DAR/r Potentially decreased 
+levels labetalol, titrate to 
+effect Increased nifedipine 
+levels, adjust 
+dose/monitor for 
+toxicity, consider ECG 
+monitoring No interaction 
+INSTI: 
+ 
+DTG 
+RAL No interaction No interaction No interaction 
+NNRTI: 
+ 
+EFV 
+RPV 
+ EFV: Potentially 
+decreased levels 
+labetalol, titrate to effect EFV: Potentially 
+decreased levels 
+nifedipine, titrate to 
+effect No interaction 
+NRTI: 
+ 
+AZT 
+FTC 
+3TC 
+TAF 
+TDF No interaction No interaction No interaction 
+ 
+Tocolysis: 
+Nifedipine (see under antihypertensives above) 
+ 
+Preterm labour or pre -eclampsia: 
+Magnesium sulphate : no interaction with IV formulation , separate times from 
+raltegravir/dolutegravir if oral. 
+ 
+Obstetric haemorrhage: 
+Ergometrine, do not coadminister with bPI or EFV 
+Oxytocin QT caution with boosted PIs (bPI) ATV/r DAR/r and rilpivirine 
+Carboprost, misoprostol no interaction 
+ 
+Antibiotics in labour: 
+bPI may increase clindamycin, EFV may decrease clindamycin: consider dose adjustment, 
+monitor for toxicity/efficacy 
+No interaction with benzylpenicillin , cefuroxime, metronidazole 
+ 
+Interaction information taken from Liverpool HIV Drug Interaction website: 
+https://.hiv -druginteractions.org and Summary of Product Characteristics. 
+
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 18 
+Mode of delivery 
+A plan for mode of delivery should be made 
+between with the result of the 36 -week viral load taking the wishes of the woman and any 
+obstetric factors into consideration. An individualised birth plan will be written by Dr 
+Yvonne Gilleece and copies placed in the handheld antenatal notes and HIV T drive and HIV 
+notes (filed in patient objects on Millcare). 
+ 
+In the absence of an obstetric indication the 36 -week viral load should guide decision 
+making regarding mode of delivery as follows: 
+• If VL <40 copies/mL: plan for vaginal delivery (VBAC can be offered) 
+• If VL 40 – 399 copies/mL: elective CS should be considered (see below) 
+• If VL 400 copies/mL: elective CS at 38 weeks 
+ 
+Data from the N ational Surveillance for HIV in Pregnancy and Childhood has shown that 
+when the VL is undetectable there i s no difference in the rate of vertical transmission 
+between normal vaginal delivery and elective caesarean section. In women with an HIV VL 
+between 50 –399 copies/mL the transmission rate is 0.26% following CS vs 1.1% following 
+vaginal delivery, representing a 4 -fold increase in risk (6). It is therefore essential to make a 
+birth plan for those that fall in this bracket that considers the actual VL, trajectory of VL, 
+time on ARVs, adherence, obstetric issues and maternal wishes. 
+ 
+ECV and v aginal birth after CS (VBAC) can be offered to women with a documented viral 
+load <50 copies/mL. 
+ 
+Elective vaginal delivery 
+This may be considered for all women with an undetectable viral load. The cord should be 
+clamped early with no physiological 3rd stage of labour [38]. Labour should be managed as 
+for HIV negative women, apart from the following considerations based on the BHIVA HIV in 
+Pregnancy guidelines (updated 2019): 
+• Data from the pre -ART era has shown little or no risk of increased vertical 
+transmission with the use of amniotomy, fetal scalp electrodes and blood sampling, 
+instrumental delivery and episiotomy. These procedures should not be avoided 
+when there is an obstetric indication. 
+• In a woman with a VL<50 copies/mL it is unlikely that the type of instrument used in 
+an instrumental delivery will affect transmission and the instrument the operator 
+feels is most appropriate should be used as in the non -HIV population. 
+• There is scant safety evidence to support water births in women living with HIV; 
+however, women who choose a water birth should be supported to achieve this 
+where the viral load is<50 HIV RNA copies/mL 
+ 
+Elective pre -labour Caesarean section 
+If an elective CS is undertaken to reduce the risk of vertical transmission it should be booked 
+at 38 weeks gestation. If a n elective CS is undertaken for an obstetric reason then the timing 
+should be decided by the obstetr ic team (usually at 39 weeks gestation). 
+ 
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 19 
+Where the VL is >1000 copies/mL, maternal IV 
+intrapartum zidovudine should be sta rted four 
+hours before the procedure and continued until the cord is clamped. 
+Appropriate peri -operative antibiotics should be prescribed for all CS. Fundal pressure at CS 
+is no concern. 
+ 
+Management of spontaneous rupture of membranes (SROM) 
+In the pre -ART era, a number of studies suggested that prolonged rupture of membranes 
+(>4 hours) resulted in an increase in vertical transmission. This data was based on women 
+with either untreated HIV or women on zidovudine monotherapy, neither of which are 
+consistent with the standard of care today. A review by the National Surveillance of HIV in 
+Pregnancy and Childhood showed a vertical transmission rate of 0.12% (1/809) women with 
+SROM <4 hours and 0.15% (1/655) in women with SROM 4 hours in women on ART with an 
+undetectable viral load (17). Following the publication of this data BHIVA no longer 
+recommend delivery within 4 hours but instead recommend that in all cases of term pre -
+labour SROM in women with an undetectable viral load , delivery within 24 hours should be 
+the aim. 
+ 
+Acute and chronic chorioamnionitis are associated with perinatal as well as in utero 
+transmission of HIV. Routine antibiotics are no longer recommended for women following 
+SROM but there should be a low threshold to start antibiotics and expedite labour in 
+women with intrapartum pyrexia. 
+ 
+SROM at term (>37 weeks’ gestation) 
+• In all cases of term pre -labour SROM delivery should be within 24 hours. 
+• ART should be optimised where required 
+• If VL<40 copies/mL: immediate induction/augmentation of labour 
+• If VL 50 – 399 copies/mL: immediate CS (taking birth plan and the actual VL, 
+trajectory of VL, time on ART, adherence, obstetric issues and maternal wishes into 
+account after contacting HIV team via switchboard ) 
+• If VL >400 copies/mL: immediate CS (category 2) 
+ 
+ART should be reviewed by the HIV team in all cases where the presenting woman is known 
+or suspected to have a detectable viral load and optimised where appropriate. Intrapartum 
+IV Zidovudine is recommended in untreated women and in those with known VL>1000 
+copies/mL. It can be considered on a case -by-case basis in women with a VL <1000 
+copies/mL but there is no evidence of additional benefit, especially if intensive neonatal PEP 
+is given . 
+ 
+Preterm SROM (<37 weeks’ gestation) 
+• SROM >34 weeks should be managed as above (following consultation with 
+obstetrics and neonatology) with the addition of prophylaxis group B strep 
+prophylaxis 
+• IM corticosteroids should be administered as per national guidelines . 
+• SROM <34 weeks requires discussion between obstetrics, neonatology and HIV to 
+plan for timing and mode of delivery 
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 20 
+• ART should be optimised in all cases with 
+consideration of transplacental fetal loading 
+where an infant is unlikely to absorb PEP ent erally 
+
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 21 
+Neonatal management 
+ 
+Neonatal post -exposure prophylaxis (PEP) 
+All infants born to women living with HIV should receive PEP. The midwife responsible for 
+the woman should check that the neonatal drugs required are available prior to delivery. 
+The HIV pharmacist and paediatric pharmacists can help with this. In all cases neonatal PEP 
+should be started within four hours of delivery. The duration and drug regimen used 
+in neonatal PEP is determined by the maternal HIV viral load and duration of maternal ART. 
+The anticipated plan for neonatal PEP will be documented on the individualised birth plan 
+and confirmed by the HIV team. Neonatal PEP will be reviewed with the maternal HIV viral 
+load which should b e available ASAP and definitely within 72 hours. The HIV team will 
+arrange for this sample to be taken as soon as possible after birth and will liaise with the 
+paediatric team to ensure that paired samples are sent from the infant. 
+ 
+Choice of neonatal PEP should follow the algorithm below: 
+
+Very low risk PEP – zidovudine monotherapy for 14 days 
+Two weeks of neonatal zidovudine monotherapy (see below for dosing) is recommended if 
+ALL of the following criteria are met: 
+• The woman has been on ART for over 10 weeks 
+• There are two documented maternal HIV VL < 50 copies/mL during pregnancy at 
+least 4 weeks apart 
+• Maternal HIV VL <50 copies/mL at or after 36 weeks 
+ 
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 22 
+If the maternal VL from the day of delivery is found 
+to be >50 copies/mL, the zidovudine should 
+intensified to three drug PEP and the regimen extended to 4 weeks. 
+ 
+Low risk PEP – zidovudine monotherapy for 28 days 
+Neonatal zidovudine monotherapy should be extended to four weeks if: 
+• The criteria for very low risk PEP are not met but the maternal HIV VL is <50 
+copies/mL at 36 weeks or later 
+• If the infant is born prematurely (<34 weeks) but the most recent maternal HIV VL is 
+< 50 copies/mL 
+ 
+High risk PEP – Triple therapy for 28 days 
+In cases where the risk of vertical transmission is high, the infant should receive 
+combination PEP including zidovudine, lamivudine and nevirapine . Stop nevirapine after 2 
+weeks , in view of long half -life, continue other PEP agents for full 4 weeks . 
+Combination PEP is indicated if: 
+• Maternal birth HIV VL is known to be or likely to be > 50 copies/mL on the day of 
+birth 
+• If there is uncertainty about recent maternal adherence 
+• If the maternal VL is not known 
+ 
+Drugs used in neonatal PEP 
+Most infants will receive 2 -4 weeks of zidovudine monotherapy. This can be given orally by 
+syringe and the mother should be shown how to measure and administer this prior to 
+discharge. If there is a concern about the oral route, IV zidovudine can be given. 
+ 
+Where combination PEP is indicated the infant should receive nevirapine and lamivudine in 
+addition to zidovudine. Occasionally alternative combinations can be used but this should 
+only be on advice from the HIV team. 
+ 
+Pneumoncystis pneumonia (PCP) prophylaxis 
+Co-trimoxazole should not be prescribed routinely for HIV -exposed infants, even when the 
+maternal VL >50 copies/mL. Co -trimoxazole should be prescribed f rom 4 weeks of age to 
+any infant with a positive PCR screening test for HIV before 4 weeks of age. 
+ 
+For all drug dosing in infants please see appendix 1. 
+ 
+Neonatal feeding 
+Breastfeeding is a route for HIV transmission with a risk of between 10 -25% when the 
+mother has untreated HIV. Even with an undetectable HIV VL there is a small risk of 
+transmission. The PROMISE trial which looked at transmission as a consequence of 
+breastfeeding while women were on ART found a transmission rate of 0.3% at 6 months 
+and 0.6% at 12 months. In the UK and other high -income countries formula feeding is 
+recommended as this carries no risk of HIV transmission. This is different to World health 
+Organisation guidelines which recommend exclusive breast feeding as in many parts of the 
+world women are unable to afford infant formula or do not have access to clean water to 
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 23 
+mix formula, and the risk of malnutrition and 
+diarrhoeal disease outweighs the risk of vertical 
+transmission of HIV . The rationale for the conflicting guidelines should be explained to 
+women who may have had a previous child in a different setting. 
+ 
+A plan for infant feeding will be made prior to delivery at an HIV clinic appointment after 
+discussion with the woman . Women w ho choose to formula feed will be offered cabergoline 
+1mg stat within 24 hours of delivery to remove the discomfort of lactation without 
+breastfeeding. Abstaining from breastfeeding can have financial and psychological 
+repercussions and will require support from the MDT. The Sussex Beacon and SHA/RJ can 
+help women to access additional peer support and financial aid to assist with formula 
+feeding. 
+ 
+If a woman has an undetectable HIV viral load with good adherence to ART and chooses to 
+breastfeed they should be supported to do so. The risk of transmission should be discussed 
+and the woman informed of the need for additional monthly maternal and infant blood 
+monitoring. Maternal ART must be continued throughout and women advised to feed for as 
+short a time as possible, exclusively, for a maximum of 6 months. Solids must not be 
+introduced whilst breas tfeeding as this increases the transmission risk. Women should be 
+advised to stop feeding if there is any suggestion of mastitis or infant gastrointestinal 
+symptoms as per “The Safer Triangle”. 
+
+Written information should be provided and is available here: 
+BSUH ‘HIV and b reastfeeding your baby’ Leaflet (Appendix 2) 
+https://www.bhiva.org/file/5bfd3080d2027/BF -Leaflet -1.pdf 
+ 
+If a woman elects to breastfeed her baby with a detectable viral load it is essential that the 
+case is discussed with the MDT and a referral to social services considered. 
+ 
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 24 
+
+If breastfeeding assess compatibility of any medication ( https://www.sps.nhs.uk/ ) and 
+check ARV interactions with HIV pharmacy team 
+
+Diagnosis of infant HIV status 
+All infants should have a blood sample taken for an HIV DNA PCR as soon as is practical after 
+birth (within 48 hours maximum). This should be sent to the laboratory paired with a 
+maternal sample. The HIV team will liaise with the paediatric team to co -ordinate these 
+samples. 
+ 
+Non -breastfed infants should be tested: 
+• Within 48 hours of birth 
+• If high risk (see neonatal PEP) at 2 weeks 
+• At 6 weeks (or at least 2 weeks after cessation of neonatal PEP) 
+• At 12 weeks (or at least 8 weeks after cessation of neonatal PEP) 
+• On other occasions if additional risk 
+• HIV antibody testing for seroreversion should be checked at 22-24 months 
+ 
+Breastfed infants should be tested: 
+• Within 48 hours of birth 
+• Prior to discharge 
+• At 2 weeks 
+• Monthly during breastfeeding 
+• At 4 weeks after cessation of breastfeeding 
+• At 8 weeks following cessation of breastfeeding 
+• HIV antibody testing for seroreversion should be checked at 22-24 months 
+HIV/H epatitis B (HBV) co-infection 
+Due to overlapping epidemiological risk factors, hepatitis B infection is more common in 
+people living with HIV. Despite HIV co -infection being associated with increased HBV DNA 
+levels, there is no evidence that co -infection with HIV increases the risk of HBV vertical 
+transmission. 
+ 
+The majority of women co -infected with HIV and HBV will experience no worsening of their 
+liver function during pregnancy. However, hepatic exacerbations and cases of fulminant 
+hepatic failure have been reported. 
+ 
+ART which also treat HBV should be used as per national guidelines. Tenofovir, emtricitabine 
+and lamivudine are safe in pregnancy. TAF may used after the first trimester (REF IMPACT). 
+Entecavir is contraindicated in pregnancy due to the risk of teratogenicity. Nevirapine and 
+zidovudine should be avoided where possible due to hepatotoxicity. Vaginal delivery can be 
+considered. 
+ 
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 25 
+All infants born to HBV infected mothers should 
+receive neonatal HBV post -exposure prophylaxis: 
+• Hepatitis B vaccination within 24 hours of birth followed by the national vaccination 
+schedule 
+• + HBIg if: 
+o Maternal HBV DNA >106 IU/mL 
+o Mother is HBeAg positive or anti -HBeAb negative or “e” status unknown 
+ 
+HBV vertical transmission rates: 
+• HBeAg positive: 70 -90% 
+• HBeAg negative: 10 -40% 
+• With neonatal HBV PEP: 0 -14% 
+HIV/H epatitis C (HCV) co-infection 
+In HCV monoinfection vertical transmission is seen in 5% of cases. This is increased by up to 
+2.82 -fold in HIV/HCV co -infection but only in women where the HIV VL is detectable and she 
+is not receiving ART . Consequently, control of HIV virae mia is the priority in reducing vertical 
+transmission of both HIV and hepatitis C. 
+ 
+While data is variable, there is no clear effect of mode of delivery on vertical transmission in 
+HCV mono -infection. Vaginal delivery can be considered in women with HIV/HCV co -
+infection. Breastfeeding does not transmit HCV in monoinfection. 
+ 
+At present HCV treatment is not recommended in pregnancy. Those wishing to conceive 
+should be prioritised for treatment prior to conception. Please refer to Dr Yvonne Gilleece. 
+ 
+Postpartum management of women 
+All women are recommended to continue ART postpartum. Adherence can decline in the 
+post -partum period for wide range of factors and women should be reviewed within 4 -6 
+weeks by the HIV team. This appointment will be made by the HIV team prior to discharge 
+from hospital. All those providing care to the woman should be alert to the risk of post -natal 
+depression and access support where needed. 
+ 
+A plan for future contraception should be made antenatally and if required ART can be 
+changed to support a woman’s choice. This will be followed up in the Lawson Unit at the 6 
+week post -partum check and condom use advised in the interim. 
+ 
+Women living with HIV should be offered an annual cervical screen. 
+
+Where a woman has been newly diagnosed with HIV in pregnancy, testing of her partner 
+and other children should be completed if not already done. This will be arranged by the 
+Specialist Health Advisor for Reproductive Health and Wellbeing. 
+
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 26 
+References 
+1. Health Protection Agency. Focus on Prevention - HIV 
+and other sexually transmitted infections in the UK 2003: An update November 2003. 11 -25-2004. Ref 
+Type: Pamphlet. 
+2. Public Health England. HIV: surveillance, data and management. Updated October 
+2019. Available at https://www.gov.uk/government/collections/hiv -surveillance -
+data -and-management (accessed 27/01/2020) 
+3. UK Health Departments. Reducing mother to baby transmission of HIV. 1999. London, NHS Executive. 
+Ref Type: Pamphlet. 
+4. Tookey, P. National Study of HIV in Pregnancy. Newsletter 59. 2004. Ref Type: Pamphlet 
+5. Simpson BJ, Shapiro DE. Prospective cohort study of children born to HIV -infected mothers, 1985 
+through 1997: trends in the risk of vertical transmission, mortality and acquired immunodeficiency 
+syndrome indicator diseases in the era before highly active antiretroviral therapy. Pediatr Infect Dis J 
+2000;19:618 -24. 
+6. Townsend CL, Byrne L, Cortina -Borja M et al. Earlier initiation of ART and further decline in mother -to-
+child HIV transmission rates, 2000 -2011. AIDS 2014; 28: 1049 –1057. 
+7. NICE. Antenatal care for uncomplicated pregnancies. Updated Feb 2019. Available 
+at: https://www.nice.org.uk/guidance/cg62/chapter/key -priorities -for-
+implementation 
+8. BHIVA. BHIVA statement on potential safety signal in infants born to women 
+conceiving on Dolutegravir (on behalf of the BHIVA HIV in pregnancy guidelines). 
+May 2018. Available at: https://www.bhiva.org/BHIVA -statement -on-Dolutegravir 
+9. The INSIGHT START Study Group. Initiation of Antiretroviral Therapy in Early 
+Asymptomatic HIV Infection. N Engl J Med 2015; 373:795 -807 
+DOI: 10.1056/NEJMoa1506816 
+10. The Strategies for Management of Antiretroviral Therapy (SMART) Study Group. 
+Cd4+ Count -Guided Interruption of Antiretroviral Treatment. N Engl J Med 
+2006;355:2283 -96. 
+11. Rodger A et al. Risk of HIV transmission through condomless sex in gay couples with 
+suppressive ART: the PARTNER2 study expanded results in gay men. 22nd 
+International AIDS Conference, Amsterdam, abstract WEAX0104LB, 2018. 
+12. Hay, P. Patel, S and Daniels D. UK National Guideline for the management of 
+bacterial Vaginosis 2012. Available at: 
+https://www.bashhguidelines.org/media/1041/bv -2012.pdf 
+13. Foley, E. Clarke E, Beckett VA et al. Management of Genital Herpes in Pregnancy. 
+Available at: https://www.bashhguidelines.org/media/1060/management -genital -
+herpes.pdf 
+14. The European Collaborative Study. Maternal viral load and vertical transmission of 
+HIV-1: an important factor but not the only one. AIDS 1999;13:1377 -85. 
+15. Garcia PM, Kalish LA, Pitt J, Minkoff H, Quinn TC, Burchett SK, et al. Maternal levels 
+of Plasma Human Immunodeficiency Virus Type 1 RNA and the risk of perinatal 
+transmission. N Engl J Med 1999;341:394 -402. 
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 27 
+16. Fowler MG, Qin M, Fiscus SA , et al. Benefits 
+and Risks of Antiretroviral Therapy for 
+Perinatal HIV Prevention. N Engl J Med 2016;375:1726 –
+37.doi:10.1056/NEJMoa1511691 
+17. Peters H, Byrne L, De Ruiter A et al. Duration of ruptured membranes and mother -to-
+child HIV transmission: a prospective population -based surveillance study. Br J 
+Obstet Gynaecol 2016; 123: 975 –981. 
+18. British HIV Association guidelines for the management of HIV in pregnancy and 
+postpartum 2018 (2020 thirdinterim update) available at 
+https://www.bhiva.org/file/5f1aab1ab9aba/BHIVA -Pregnancy -guidelines -2020 -3rd-
+interim -update.pdf 
+
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 28 
+Appendix 1: Drug dosing for infants 
+(BHIVA) 
+
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 29 
+
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 30 
+
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 31 
+Appendix 2: BSUH HIV and 
+breastfeeding your baby 
+ 
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 32 
+
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 33 
+
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 34 
+
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 35 
+
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 36 
+
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 37 
+
+University Hospitals Sussex Foundation NHS Trust (RSCH PRH only ) 38

@@ -1,0 +1,1275 @@
+# Extracted from: CG1109 Diabetes in Pregnancy guideline.pdf
+# Guideline ID: cg1109-diabetes-in-pregnancy-guideline
+# Content length: 62403 characters
+# Processing date: 1750066899.8348331
+
+CG1109 Diabetes in pregnancy v10.1 July 202 2 Page 1 of 28 
+Please check against Staffnet that this printout is the most recent ver sion of this document. 
+Diabetes in Pregnancy Guideline 
+Summary statement: How does the document 
+support patient care? The purpose of this guideline is to provide good practice 
+evidence for staff in the care of pregnant women/people with 
+diabetes and gestational diabetes 
+Staff/stakeholders involved in development: 
+ Obstetric Anaesthetists, Obstetric Consultants , Diabetes 
+Consultants, Diabetes Specialist Nurses and Midwives and 
+Senior Midwifery Staff 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Consultant Obstetricians and Consultant Diabetologists 
+For use by: Medical, Obstetric and Midwifery staff 
+Purpose: To provide high quality, evidence based care to pregnant 
+women/people with diabetes and gestation diabetes 
+This d ocument supports: NICE NG3 Diabetes in pregnancy (updated 2020) 
+Key related documents: Care Record for Pregnancy with Diabetes 
+UH Sussex (SRH & WH) : Antenatal and Labour risk 
+assessments, Management of Neonatal Hypoglycaemia, 
+Induction of labour 
+Approved by: Joint Obstetric Guideline Group 
+Approval date: 20th July 2022 Date uploaded : 8th August 2022 
+Ratified by Board of Directors/ Committee of 
+the Board of Directors Not Applicable – Divisional Ratification only required 
+Ratification Date: Not Applicable – Divisional Ratification only required 
+Expiry Date: March 2024 
+Review date: September 2023 
+If you require this document in another format such as Braille, large print, audio or another 
+language please contact the Trusts Communications Team 
+Reference Number: CG1109 
+
+CG1109 Diabetes in pregnancy v10.1 July 202 2 Page 2 of 28 
+Please check against Staffnet that this printout is the most recent ver sion of this document. 
+The interpretation and application of clinical guidelines will remain the 
+responsibility of the individual clinician. 
+If in doubt contact a senior colleague or expert. 
+ Version Date Author Status Comment 
+1.0 January 2011 Consultant Endocrinologists 
+and Consultant Obstetrician Archived New Trustwide Guideline 
+2.0 February 2011 Clinical Governance (CNST 
+Lead) Archived Admin. amendment 
+3.0 May 2011 Consultant Endocrinologists Archived Minor amendments to guideline 
+4.0 November 
+2012 CNST Midwife Archived Guideline updated to match version 4 
+of Care Record - Pregnancy with 
+Diabetes 
+5.0 January 2013 CNST Midwife Archived Minor clarifications 
+5.1 December 
+2013 Consultant Endocrinologist, 
+Consultant Obstetrician and 
+Diabetes Specia list Nurse Archived 3 year update -minor updates 
+5.2 August 2014 Consultant Endocrinologist, 
+Consultant Obstetrician and 
+Diabetes Nurse Specialist Archived Updated to include management of 
+unwell diabetic women admitted in 
+pregnancy and use of Trust Adult 
+Insulin prescription chart for prescribing 
+insulin for in -patients. 
+6.0 April 2016 Consultant Diabetologist , 
+Consultant Obstetrician and 
+Diabetes Specia list Nurse Archived Guideline updated in accordance with 
+NICE 2015 (NG 3) 
+7.0 June 2016 Consultant Diabetologist , 
+Consultant Obstetrician and 
+Diabetes Specia list Nurse 
+(DSN) Archived Guideline updated in accordance with 
+NICE 2015 (NG 3) 
+Minor grammatical changes 
+8.0 June 2017 Consultant Diabetologist, 
+Consultant Obstetr ician and 
+DSN Archived Changes to the guideline and Glucose 
+Load Test 
+9.0 January 2019 Consultant obstetrician, 
+DSN Archived Change to pathway from GLT to GTT 
+in line with NICE recommendations 
+10.0 March 2021 Maternal Medicine 
+Consultant Obstetrician, 
+Diabetes specialist midwife, 
+Clinical Effectiveness 
+Support Midwife Archived Information about CGM or flash 
+glucose monitoring added. Guideline 
+reviewed and updated in line with NICE 
+NG3 Diabetes in pregnancy: 
+management from preconception to the 
+postnatal period (updated Dec 2020) . 
+10.1 July 2022 C. Goumalatsou, Obstetric 
+Registrar. 
+J. Collard, Clinical 
+Effectiveness Support 
+Midwife 
+ LIVE Updated regarding discussing risks 
+and benefits for corticosteroids and 
+connected appendix in line with RCOG 
+(2022) GTG no.74 Antenatal 
+Corticosteroids to reduce neonatal 
+morbidity and mortality 
+CG1109 Diabetes in pregnancy v10.1 July 202 2 Page 3 of 28 
+Please check against Staffnet that this printout is the most recent ver sion of this document. 
+
+Contents 
+
+1.0 Aim ................................ ................................ ................................ ................................ .......... 4 
+2.0 Scope ................................ ................................ ................................ ................................ ...... 4 
+3.0 Responsibilities ................................ ................................ ................................ ....................... 4 
+4.0 Abbreviations used within this guideline ................................ ................................ .................. 4 
+4.0 Antenatal care pathway at booking: ................................ ................................ ......................... 5 
+5.0 Pre-pregnancy counselling for women/people with pre -existing diabet es ................................ 5 
+6.0 Screening for gestational diabetes (GDM) ................................ ................................ ............... 7 
+7.0 Schedules of care ................................ ................................ ................................ ................... 9 
+7.1 Monitoring pathway ................................ ................................ ................................ ................ 9 
+7.2 Schedule for pregnant women/people with diabetes requiring medication ............................ 10 
+7.3 Schedule for pregnant women/people with current or previous gestational diabetes ............ 12 
+8.0 Antenatal expression of colostrum ................................ ................................ ........................ 14 
+9.0 Caring for a pregnant woman/person using CGM or flash blood glucose monitoring ........... 14 
+10.0 Antenatal Corticosteroids ................................ ................................ ................................ ..... 14 
+10.1 Risks and benefits of antenatal corticosteroids for planned caesarean birth 
+ between 37+0 and 38+6 weeks ................................ ................................ ............................ 14 
+10.2 Care during antenatal corticosteroid administration ................................ .............................. 15 
+11.0 Hyperemesis ................................ ................................ ................................ ......................... 16 
+12.0 Care during labour ................................ ................................ ................................ ................ 16 
+13.0 Planned caesarean birth (CS) ................................ ................................ ............................... 17 
+14.0 Postnatal care management plan ................................ ................................ .......................... 17 
+14.1 Pre-existing diabetes ................................ ................................ ................................ ............ 17 
+14.2 Gestational Diabetes ................................ ................................ ................................ ............ 18 
+14.3 Breastfeeding ................................ ................................ ................................ ....................... 18 
+15.0 Management of diabetic emergencies ................................ ................................ .................. 19 
+15.1 Ketoacidosis ................................ ................................ ................................ ......................... 19 
+15.2 Hypoglycaemia ................................ ................................ ................................ ..................... 19 
+16.0 Audit ................................ ................................ ................................ ................................ ..... 20 
+17.0 References ................................ ................................ ................................ ........................... 21 
+Appendix 1: Oral Glucose Tolerance Test Protocol ................................ ................................ .......... 22 
+Appendix 2: Variable Rate Intravenous Insulin Infusion (VRIII) ................................ ........................ 24 
+Appendix 3: Variable Rate Intravenous Insulin Infusion (VRIII) ................................ ........................ 25 
+Appendix 4: Management of Insulin pumps during labour or caesarean birth ................................ .. 26 
+Appendix 5: GP Letter – Gestational Diabetes test strip prescription request 
+ & covid -19 vaccination ................................ ................................ ................................ .......... 27 
+Appendix 6: Antenatal Corticosteroids to reduce neonatal morbidity and mortality ........................... 28 
+
+CG1109 Diabetes in pregnancy v10.1 July 202 2 Page 4 of 28 
+Please check against Staffnet that this printout is the most recent ver sion of this document. 
+Diabetes in Pregnancy Guideline 
+ 
+1.0 Aim 
+ 
+To ensure optimal outcomes for pregnant women /people with diabetes and to act as a resource for 
+staff caring for pregnant women/people whose needs fall with in the scope of this guideline. These 
+guidelines are intended to provide high quality, evidence based care to pregnant women/people and 
+babies under the care of the maternity units in University Hospitals Sussex (SRH & WH) . This 
+guideline has been register ed on the Trust Intra net Site. Clinical guidelines are guidelines only and 
+the interpretation and application of clinical guidelines will remain the responsibility of the individual 
+clinician. If in doubt contact a senior colleague or expert. 
+ 
+2.0 Scope 
+ 
+This guideline appli es to all medical, obstetric and midwifery staff caring for pregnant women/people 
+with pre -existing and gestational diabetes. 
+ 
+3.0 Responsibilities 
+ 
+It is the responsibility of all midwifery and medical staff to: 
+ Access, read, understand and apply this guidance. 
+ Attend any mandatory training pertaining to this guidance. 
+ 
+It is the responsibility of the division to: 
+ Ensure the guideline is reviewed as required in line with Trust and national 
+recommendations. 
+ Ensure the guideline is accessible to all relev ant staff. 
+ 
+4.0 Abbreviations used within this guideline 
+ 
+DAU - Day Assessment Unit mmol/L - Millimoles per litre 
+SRH - St Richards WH - Worthing 
+GDM - Gestational Diabetes ACE - Angiotensin -converting enzyme 
+ACR - Albumin to creatinine ratio GTT - Glucose Tolerance Test 
+OGTT - Oral Glucose Tolerance Test DSM - Diabetes Specialist Midwife 
+JDC - Joint Diabetic Clinic T1D - Type 1 Diabetes 
+T2D - Type 2 Diabetes CMW - Community Midwife 
+mg - Micrograms cms - Centimeters 
+BP - Blood Pressure ANC - Antenatal Clinc 
+SFH - Symphesis Funal Height IOL - Induction of Labour 
+DKA - Diabetic Ketoacidosis CBG - Continuous Blood Glucose 
+CGM - Continuous Glucose Monitoring KCI - Potassium Chloride 
+NaCI - Sodium Chloride IV - Intravenous 
+U&Es - Urea and Elec rolytes VRIII - Variable Rate Intravenous Insulin 
+Infusion 
+CCU - Critical Care Unit 
+CG1109 Diabetes in pregnancy v10.1 July 202 2 Page 5 of 28 
+Please check against Staffnet that this printout is the most recent ver sion of this document. 
+4.0 Antenatal care pathway at booking: 
+
+CONSIDER 
+GTT If less than 
+34 weeks and 
+glycosuria or 
+LGA or 
+polyhydramnio s. 
+ 
+Pre-existing 
+diabetes 
+(All types) 
+Gestational 
+Diabetes 
+ 
+Previous pregnancy 
+HIGH RISK 
+As identified by criteria 
+see page s 7-8 
+ 
+LOW RISK 
+ 
+Early referral to 
+diabetes team for 
+diabetes team to 
+review HBA1C, 
+glycaemic control, 
+medication. 
+ 
+HbA1c blood test at 
+booking . 
+Early referral to 
+diabetes team to start 
+monitoring. 
+ GTT at booking 
+POSITIVE 
+Refer to 
+diabetes 
+team . 
+NEGATIVE 
+Repeat 28 
+weeks or 
+before if 
+symptoms . 
+ 
+For both sites refer via email : 
+uhsussex.diabetesmaternity@nhs.net 
+SRH – 01243 788122 ext 3750 / mobile 
+07880 645514 or 07825 450268 (working 
+hours only) 
+WH – 01903 285044 / mobile 07799868506 
+(working hours only) 
+ 
+Positive result fasting 5.6mmol/l, 2hrs post 
+Polycal 7.8 mmol/L or above refer to diabetes 
+team for blood glucose monitoring initiation. 
+Dietitian session 
+Blood test 
+As outlined in schedule on pages 7-9 for pre -existing and GDM on treatment . 
+Diet controlled GDM to be reviewed and birth plan discussed by DSM at 34 weeks . 
+Review by dietician as required . 
+Individualised review and management . 
+All pregnant women/people with diabetes in pregnancy require ‘Diabetes in Pregnancy’ 
+booklet filed in their antenatal notes. 
+Care is individualised. 
+Plan for birth is completed at 36 week appointment. 
+ 
+CG1109 Diabetes in pregnancy v10.1 July 202 2 Page 6 of 28 
+Please check against Staffnet that this printout is the most recent ver sion of this document. 
+5.0 Pre-pregnancy counselling for women/people with pre -existing diabetes 
+
+Pre-pregnancy Counselling 
+ 
+Discuss risks and how 
+diabetes affects pregnancies 
+ 
+  Increased risk of congenital anomalies, perinatal mortality, 
+worsening of complications, risks of hypoglycaemia and 
+hypoglycaemia unawareness. 
+ Increased incidence of obstetric and neonatal complications and 
+need for good diabetes control to reduce these risks. 
+ Offer up to monthly measurement of HbA1c levels for 
+women/people with diabetes who are planning a pregnancy 
+(improving HbA1c reduces chance of congenital malformations in 
+the baby). 
+Aim for HbA1c: 
+ Less than 6.5% without problematic hypoglycaemia. 
+ More than 10% avoid unplanned pregnancy due to risk of 
+congenital malformations in the baby. 
+Aim blood glucose targets: 
+ Fasting 5 -7 mmol/L 
+ Pre-meal 4 -7 mmol/L 
+ 2hrs Post meal less than 7.8 mmol/L 
+ Offer blood glucose meters for self -monitoring. 
+ Arrange for ketone testing strips and a meter for women/people 
+with type 1 diabetes, with advice to test for ketonaemia if they 
+becom e hyperglycaemic or unwell. 
+Review medications  Stop ACE inhibitors and statins, review diabetes medications. 
+Stop oral hypoglycaemics and replace with insulin, pre -
+conceptually if required. Metformin may be continued. 
+ Discuss need to rotate insulin injection sites within the same body 
+area to avoid cutaneous amyloidosis. 
+Folic Acid 5mg daily Preconception until 12 weeks’ gestation. 
+Aspirin 150mg daily Start at booking to reduce risk of pre -eclampsia . Advise to take in 
+the evening with food from 12 to 36 weeks . (For GP letter to 
+prescribe aspirin prophylaxis see appendix 3 of CG1198 
+Management of hypertensive disorders of pregnancy .) 
+Dietician Global review of diet. 
+Weight Management Offer women/people who have a BMI above 27 kg/m2 advice on how 
+to lose weight. Refer them to Weight Management service if wanted. 
+Obstetrician All patients with previous complicated obstetric history, established 
+diabetic nephropathy or other past medical history. 
+Screen for complications 
+including diabetic retinopathy Renal function, Urine ACR, retinal screening if not carried out in the 
+past 6 months. 
+Information Provi de information about antenatal care pathway including contact 
+details for Diabetes Nurse/Midwife. 
+ 
+CG1109 Diabetes in pregnancy v10.1 July 202 2 Page 7 of 28 
+Please check against Staffnet that this printout is the most recent ver sion of this document. 
+6.0 Screening for gestational diabetes (GDM) 
+
+Screening criteria 
+
+Before screening for gestational diabetes discuss: 
+ 
+ That gestational diabetes can be controlled with in diet and exercise in some 
+women/people, but glucose -lowering medication or insulin may be required. 
+ If gestational diabetes is not detected and controlled, there is a small increase in the risk 
+of serious adverse birth complications such as shoulder dystocia. 
+ Women/people with gestational diabetes will need more monitoring, and may need more 
+interventions during pregnancy and labour. 
+ 
+Glucose Tolerance Test – 75g Glucose (Polycal) in GTT clinic at booking (see Appendix 1 ) if any of 
+following risk factors present and repeat at 28 weeks if negative at booking: 
+ 
+ BMI more than 30 kg/m 
+ Previous birth weight 4.5 kg or above 
+ Family history first degree relative 
+ Ethnic origin with high prevalence of diabetes 
+ Polycystic Ovarian Syndrome 
+ 
+Diagnose GDM if the pregnant woman/person has either fasting plasma glucose level of 5.6mmol/L 
+or above or a 2 -hour plasma glucose level of 7.8mmol/L or above. 
+ 
+Offer women/people with diagnosis of GDM a review with the Diabetes Pregnancy Team within 
+1 week. 
+ 
+Consider GTT in low risk pregnant women/people if less than 34 weeks gestation and 
+evidence of : 
+ 
+ Polyhydramnios . 
+ Macrosomia more than 97th centile . 
+ Glycosuria: 2+ or above on 1 occasion or 1+ or above on 2 or more occasions. 
+ Recurrent infection (especially thrush) . 
+ Anti-psychotic medication or anti -retroviral medication (consider testing at 28 weeks) . 
+ 
+After 34 weeks 
+ 
+After 34 weeks, a GTT or blood glucose monitoring is rarely indicated. If the pregnant 
+woman/person has had a previous normal OGTT in this pregnancy, they will not have significant 
+gestational diabetes and treatment at this late stage is unlikely to have significant effect. A repeat 
+OGTT is unlikely to be helpful and is often misle ading. Please discuss with the Diabetes Team. 
+ 
+No previous GTT but concerns about new diabetes – check random blood glucose 
+CG1109 Diabetes in pregnancy v10.1 July 202 2 Page 8 of 28 
+Please check against Staffnet that this printout is the most recent ver sion of this document. 
+(or capillary sample). 
+ 
+If less than 7mmol/L no significant diabetes (gestational or other), and no further action or tests are 
+required. If 7mmol/L or more, please discuss the result with Diabetes Pregnancy Team. 
+ 
+For pregnant women/people with gestational diabetes who have a fasting plasma glucose level 
+below 7mmol/L at diagnosis, offer a trial of diet and exercise changes. 
+ 
+Diagnosis of GDM without a GTT 
+ 
+ Any glucose (fasting or non -fasting) more than 11.0mmol/L . 
+ Fasting (true fasting i.e. overnight) glucose 5.6mmol/L or more. 
+ 
+If these occur, no need to perform an OGTT. Refer urgently to Diabetes Pregnancy Team. 
+ 
+CG1109 Diabetes in pregnancy v10.1 July 202 2 Page 9 of 28 
+Please check against Staffnet that this printout is the most recent ver sion of this document. 
+7.0 Schedules of care 
+7.1 Monitoring pathway 
+
+Foot note 1 
+Stickers on Notes : 
+Please note it is your responsibility to contact the Diabetes Team either by email/telephone every 2 weeks, or 
+sooner, if you have 2 consecutive high readings or 3 in 5 days. 
+ 
+Footnote 2 
+Email reminders to contact Diabetes Team. Provide contact details every 2 weeks. 
+ 
+Type I Type 2 
+DSM Contact 
+Previous 
+gestational and 
+new GDM 
+Group Education 
+BGM and Dietitian 
+Clear guidelines on 
+care and 
+management plan. 
+Blood glucose 
+targets . 
+Contact details. 
+ 
+See Footnote 1 & 2 
+ 
+REGULAR 
+Contact with DSM by 
+Sensyne/email/phone 
+every 2 weeks or 
+before if raised blood 
+glucose readings. 
+Early Referral to DSM 
+Viability USS and JDC 
+appointment wit h 
+Diabetes/Obstetric 
+Team 
+Offer all with T1D CGM 
+or flash if this is not 
+acceptable. 
+Consider CGM/flash in 
+T2D if hypoglycaemia 
+or unstable diabetes. 
+Failsafe 
+CMW to review BGM diaries 
+every AN visit & DSM review 
+via Sensyne app. 
+If within target range – continue 
+current management. 
+If 2 consecutive readings 
+and/or 3 in 5 days raised 
+(fasting above 5.3mmol/L, 1 hr 
+Post Meal above 7.8mmol/L), 
+refer to DSM. 
+uhsussex.diabetesmaternity@nhs.net 
+Refer to DSM 
+Review by phone / 1:1 clinic. 
+If medication required DSM 
+refers to JDC. 
+If no medication. 
+REGULAR 
+Contact with DSM by 
+email/phone, every 1 -2 
+weeks and appointments 
+with JDC/DSN/DSM/ 
+Dietitian Team and USS 
+for growth. 
+CG1109 Diabetes in pregnancy v10.1 July 202 2 Page 10 of 28 
+Please check against Staffnet that this printout is the most recent ver sion of this document. 
+7.2 Schedule for pregnant w omen /people with diabetes requiring medication 
+Antenatal care schedule 
+for pregnant women/people with diabetes requiring medication 
+Approx. 
+Gestation Diabetic & Obstetric review Scans 
+ 
+First 
+appointment 
+ Diabetes ANC 
+ Offer information, advice and support in relation to 
+optimising glycaemic control including advice on: 
+o Good control reduces risks to the pregnant 
+woman/person and baby. 
+o Blood glucose monitoring targets without increasing 
+hypoglycaemia. 
+o Hypoglycaemia and p ossible impaired awareness. 
+o Provide Glucagon Kit if required. 
+o Offer pregnant women/people with Type 1 diabetes 
+blood ketone testing meter and advise when to 
+test/seek medical help. 
+o Advise all pregnant women/people with pre -existing 
+diabetes to seek urgent medical advice if they become 
+hyperglycaemic or unwell. 
+o UK government advice on Diabetes and driving - 
+GOV.UK . 
+o Offer all pregnant women/people with type 1 diabetes 
+and all those with problematic hypoglycaemia or 
+unstable type 2 diabetes continuous glucose 
+monitoring (CGM, funding for 12 months only), or 
+flash if this is not acceptable to the woman. Signpost 
+to vide os 'Continuous Glucose Monitoring' . 
+ Establish the extent of diabetes related complications. 
+(Including neuropathy, renal and vascular disease and 
+consider specialist referral). 
+ Review insulin/medication with regard s to pregnancy. 
+Discontinue medication not suitable for pregnancy. 
+ Check taking folic acid 5 mg. 
+ Offer retinal assessment if not done in last 3 months. 
+ Discuss plans for pregnancy. 
+ Dietician referral. 
+ Discuss taking 150mg aspirin in the evening with foo d for 
+pre-eclampsia prophylaxis ( For GP letter to prescribe 
+aspirin prophylaxis see appendix 3 of CG1198 
+Manageme nt of hypertensive disorders of pregnancy .). Viability scan 
+Booking 
+8-10 weeks Refer to antenatal notes 
+Diabetes ANC 
+ HbA1c & micro albumin. 
+12 weeks Combined 
+USS/Bloods 
+16 weeks  BP & urinalysis – review test results. 
+ Give breastfeeding information and invite to parent 
+CG1109 Diabetes in pregnancy v10.1 July 202 2 Page 11 of 28 
+Please check against Staffnet that this printout is the most recent ver sion of this document. 
+education & infant feeding classes. 
+Diabetes ANC 
+ Offer retinal assessment if diabetic retinopathy was 
+present at 1st antenatal visit, book serial scans and refer 
+for anaesthetic review. 
+ Assess need for additional scans based on obstetric and 
+medical history. 
+18 to 22 weeks  BP & urinalysis, maternal and fetal wellbeing. 
+ Four chamber view and outflow tract views and 3 vessels 
+standard at University Hospitals Sussex West . Anomaly 
+scan+/ - 
+uterine artery 
+Doppler scan 
+Diabetes ANC 
+24 weeks  Measure and plot SFH in cms, BP & urinalysis. 
+ MAT B1, review parent education needs and ensure infant 
+feeding checklist completed. 
+28 weeks  FBC & antibodies, offer anti - D if Rh Neg. 
+ Measure and plot SFH/scan, weigh. 
+Diabetes ANC 
+ Offer retinal assessment if showed no diabetic retinopathy 
+previously. 
+ HbA1c. Growth & 
+liquor volume 
+30 weeks  BP & urinalysis, weigh. Measure and plot SFH/scan as 
+required. 
+32 weeks  BP and urinalysis, Measure and plot SFH/scan. 
+Diabetes ANC Growth & 
+liquor volume 
+34-36 weeks Diabetes ANC 
+ Discuss and provide information about timing, mode of 
+birth and management plan for hospital birth, and postnatal 
+contraception. 
+ Make and document changes to medication for intrapartum 
+and postpartum management. 
+ Discuss care of baby post -birth including initiation of 
+feeding and effect on neonatal blood glucose control. 
+ Discuss breastfeeding and effect on blood glucose control 
+(eg increased risk of hypoglycaemia in women/peop le with 
+pre-existing diabetes). 
+ Discuss contraception. 
+ Discuss colostrum harvesting. 
+ HbA1c. 
+ Timing of birth pre-existing diabetes 37 - 38+6 weeks. 
+ Gestational diabetes on treatment 38 - 39+6 weeks. 
+ Finalise need for insulin in labour or elective section in 
+Diabetes in Pregnancy care plan. 
+ Finalise postnatal treatment plan. 
+ MRSA screening. Growth & 
+liquor volume 
+ 
+No further 
+scans unless 
+clinically 
+indicated 
+CG1109 Diabetes in pregnancy v10.1 July 202 2 Page 12 of 28 
+Please check against Staffnet that this printout is the most recent ver sion of this document. 
+ BP & urinalysis, weigh. Measure and plot SFH/scan. 
+38 weeks  BP & urinalysis, Measure and plot SFH. 
+Diabetes ANC 
+39 weeks  BP & urinalysis, Measure and plot SFH. 
+40 weeks Diabetes ANC 
+ BP & urinalysis, Measure and plot SFH. 
+Steroid 
+Therapy  Individualised plan – may not be required for elective 
+LSCS more than 37 weeks or IOL more than 36 weeks. 
+Anaesthetic 
+review For pregnant women/people with diabetes and comorbidities 
+such as obesity or autonomic neuropathy, offer an 
+anaesthetic assessment in the third trimester of pregnancy. 
+Other 
+considerations  Provide an individualised approach to monitoring fetal 
+growth and wellbeing where there is a risk of fetal growth 
+restriction (macrovascular disease or nephropathy). 
+ Consider thromboprophylaxis if nephrotic range proteinuria 
+above 5 g/day ( albumin:creatinine ratio greater than 220 
+mg/mmol). 
+
+7.3 Schedule for pregnant women/people with current or previous gestational diabetes 
+ 
+Antenatal care schedule for pregnant women/people with previous or gestational 
+diabetes NOT requiring medication (previous or current pregnancy) 
+ 
+Approximate 
+Gestation Diabetic & Obstetric Review Scans 
+Pregnant women/people with gestational diabetes controlled by diet alone should receive 
+routine antenatal care but with the additional diabetic support detailed below. 
+HbA1c to be taken at time of diagnosis to identify pregnant women/people who may have 
+pre‑existing type 2 diabetes. 
+Booking and 
+first diabetes 
+appointment 
+(by 12+6 
+weeks) REFER TO GREEN ANTENATAL NOTES 
+Refer to Diabetes Nurse Specialist for care 
+Offer information, advice and support on: 
+ Recommended blood glucose targets. 
+ Good control reduces complications for than woman/person and their 
+baby. 
+ Implications both short and long term of diagnosis for them and their 
+baby. 
+ Plans for pregnancy and management of diabetes. That treatment 
+includes changes in diet and exercise, and could involve medicines. 
+ Teach blood glucose monitoring and target levels, establish follow up 
+arrangements (less than 5.3mmol/L before and less than 7.8mmol/L 
+1h after food). 
+ Dietician review for global review of diet. Pregnant women/people with diabetes should also receive routine care according to the 
+schedule of appointments in the NICE guideline on antenatal care, including appointments at 
+25 weeks (for nullipa rous women/people) and 34 weeks, but with the exception of the 
+appointment for nulliparous women/people at 31 weeks. 
+CG1109 Diabetes in pregnancy v10.1 July 202 2 Page 13 of 28 
+Please check against Staffnet that this printout is the most recent ver sion of this document. 
+ Based on glucose targets, regimen chosen individually by the 
+diabetes specialist team. 
+ Pregnant women/people needing treatment will undergo same 
+schedule of care as for pregnant women/person with pre -existing 
+diabetes. 
+ Diet controlled gestational diabetics will continue their care under 
+their named Obstetrician with regular review and advice by diabetes 
+specialist nurse/midwife. 
+ Advise pregnant women/people with gestational diabetes to seek 
+urgent medical advice if they become hyperglycaemic or unwell. 
+ Pregnant women/people with gestation al diabetes should be offered a 
+Covid -19 vaccination. The community midwife should notify the GP 
+as soon as possible after di agnosis of gestational diabetes (See 
+appendix 5 for GP letter). 
+16-20 weeks  Review screening tests to date, BP & urinalysis, maternal and fetal 
+wellbeing, invite to parent education & infant feeding classes, 
+breastfeeding information . 
+22 weeks Anomaly 
+scan 
+24 weeks  Measure and plot SFH in cms, BP & urinalysis . 
+ MAT B1, review parent education needs and ensure infant feeding 
+checklist completed . 
+28 weeks  FBC & antibodies, offer anti - D if Rh Neg . 
+ Measure and plot SFH+/ -scan, weigh . 
+30 weeks  BP and urinalysis, Measure and plot SFH . 
+32 weeks  BP and urinalysis, Measure and plot SFH . 
+Diabetic Multi -disciplinary Team Care 
+34 weeks  One off appointment at diabetic/obstetric clinic for discussion 
+recommending hospital birth, mode of birth and birth plan and 
+contraception. 
+ BP and urinalysis, Measure and plot SFH+/ -scan. 
+36 weeks  BP & urinalysis, weigh. Measure and plot SFH, FBC, MRSA 
+screening. 
+ Antenatal expression of colostrum. 
+38 weeks  BP & urinalysis, Measure and plot SFH . 
+39 weeks  BP & urinalysis, Measure and plot SFH . 
+40 weeks  BP & urinalysis, Measure and plot SFH . 
+ Aim for birth by 40+6 days . 
+GDM requiring treatment 
+Insulin or 
+Metformin if 
+needed  If blood glucose targets are not met with diet and exercise changes 
+within 1 –2 weeks, offer metformin. NB Metformin is an 0ff-label use 
+in pregnancy. 
+ If metformin is contraindicated or unacceptable to the woman, offer 
+insulin. 
+ If blood glucose targets are not met with diet and exercise changes 
+CG1109 Diabetes in pregnancy v10.1 July 202 2 Page 14 of 28 
+Please check against Staffnet that this printout is the most recent ver sion of this document. 
+plus metformin, offer insulin as well. 
+ If fasting plasma glucose is 7.0 mmol/L or above at diagnosis, offer 
+immediate treatment with insulin, with or without metformin and diet 
+and exercise changes. 
+ If fasting plasma glucose level is between 6.0 and 6.9 mmol/L and 
+complications such as macrosomia or hydramnios are present, 
+consider imm ediate treatment with insulin, with or without metformin 
+and diet and exercise changes. 
+ 
+8.0 Antenatal expression of colostrum 
+ 
+All pregnant women/people are advised to learn the skill of hand expressing and to collect any 
+colostrum from 36 weeks that may be present. This is especially important for babies born to a 
+diabetic birthing parent due to risk of newborn hypoglycaemia. Ple ase reassure that if colostrum 
+cannot be obtained then this is not a sign of milk supply once baby is born. 
+ 
+This ensures that colostrum is available immediately after the birth for the baby, which can help 
+maintain neonatal blood glucose and may reduce ne ed for prolonged stay in NNU. 
+ 
+9.0 Caring for a pregnant woman/person using CGM or 
+flash blood glucose monitoring 
+ 
+ There is a lag of up to 15 minutes between current blood glucose and the sensor reading. 
+ It is not reliable when there are large swings in glucose measurements eg corticosteroids, 
+hypoglycaemia, recovery from hypoglycaemia, DKA and labour or when the pregnant 
+woman/person is unwell. 
+ In any of the above situations CBG (fingerprick) testing MUST be carried out and the 
+sensor can remain in situ. 
+ Whenever VRII is required CBG testing MUST be carried out and the sensor can remain in 
+situ. 
+ Any CGM or flash technology is expensive and must be stored in a safe place if removed. 
+ 
+10.0 Antenatal Corticosteroids 
+10.1 Risks and benefits of antenatal cort icosteroids for planned caesarean birth 
+ between 37+0 and 38+6 weeks 
+ 
+Prior to the administration of steroids, t he risks and benefits of corticosteroids, should be discussed 
+with the pregnant woman /person (and their family members or carers as appropriate using the 
+RCOG info graphic in Appendix 6 . 
+ 
+This discussion should be documented in the woman/person’s notes. RCOG (2022) . Antenatal 
+corticosteroids may reduce admission to the neona tal unit for respiratory morbidity, but it is uncertain 
+if there is any reduction in RDS, TTN, or neonatal unit admission overall, and antenatal 
+corticosteroids may result in harm to the neonate which includes hypoglycaemia and potential 
+developmental dela y. 
+
+CG1109 Diabetes in pregnancy v10.1 July 202 2 Page 15 of 28 
+Please check against Staffnet that this printout is the most recent ver sion of this document. 
+ 
+10.2 Care during antenatal corticosteroid administration 
+ 
+ Patient to be admitted to Labour Ward /Antenatal Ward and may need to remain in hospital 
+for 24 hours after the last corticosteroid dose or until their blood glucose are stable . In 
+certain wel l controlled diabetic patients, corticosteroid administration may be organised as 
+outpatient, this decision is to be made by Pregnancy Diabetes Team only. 
+ Consider increasing long acting insulin by 30% on the evening after the first dose of steroid 
+is administered, increase short acting insulin before meals by 10%. Continue for next 48 
+hours then return to pre -steroid administration doses. Liaise with Diabetes Pregnancy 
+Team. 
+ Steroids are administered: Dexamethasone 12mg intramuscular (IM) x 2 doses 24 hours 
+apart – or betamethasone if dexamethasone not available. 
+ Measure blood glucose every 2 hours and start VRIII (variable rate intravenous insulin 
+infusion) once the capillary glucose (CBG) rises to 8 mmol/L or above on 2 readings 
+more than 1 hour apart or 1 CBG is 11mmol/L or above. 
+ Pregnant women/people on CGM or flash monitoring can leave their sensor in situ but 
+must still have capillary (fingerprick) glucose monitoring with or without VRII if admitted to 
+hospital following steroid administration. 
+ Make up a solution of insulin at 1 unit per ml (50 units Actrapid made up to 50ml with 
+Sodium Chloride 0.9%) in a 50 ml syringe that fits the insulin pump. 
+ Check U&Es prior to starting VRIII to monitor fluid balance and electrolyte abnormalities. 
+Repeat 24 h ourly . 
+ Intravenous fluids should be given to avoid hypoglycaemia, hyponatraemia and 
+hypokalaemia even if a patient is eating and drinking. 500mls 0.9% NaCl with 5% glucose 
+and 0.15% KCl at 50mls/hour is recommended but the fluid status of the patient needs to 
+be considered (a dditional fluids intravenously may be needed if the patient is not eating or 
+drinking reliably ). Fluids, particularly dextrose containing fluids, may have to be restricted 
+in patients who are at risk of or already have hyponatraemia. In some cases insulin without 
+substrate fluids ma y have to be used (difficult IV access, fluid overload states, 
+hyponatraemia or risk of hyponatraemia ). Please consult Diabetes T eam/senior obstetric 
+staff as needed. 
+ Mix the contents and connect the syringe pump via a 3 -way tap to the glucose infusion. 
+Make sure that the tubing is flushed with the insulin infusion solution as far as the cannula. 
+Start insulin infusion at the rate given by the sliding scale below for the measured capillary 
+blood glucose. 
+ Conti nue their normal basal -bolus insulin regime. 
+ Once the pregnant woman/person is on VRIII check blood glucose every hour and adjust 
+intravenous insulin according to blood glucose. Target blood glucose 4 -7.8mmol/L pre and 
+post meal. 
+ Both IV fluids and Actra pid infusions MUST be prescribed on the prescription chart and 
+charted on the fluid balance chart . Please see CG21009 Maternity fluid management as an 
+in-patient or in labour 
+ After the first hour adjust insulin infusion rates according to the sliding scale in Appendix 2 . 
+ Sliding scale can be stopped 12 hours after the last dose of steroids if CBG s are between 
+5-5.9mmol/L on two consecutive occasions if the woman is fasting, or 7 -8mmols/L 1 and 2 
+hours post -meal. 
+ 
+CG1109 Diabetes in pregnancy v10.1 July 202 2 Page 16 of 28 
+Please check against Staffnet that this printout is the most recent ver sion of this document. 
+11.0 Hyperemesis 
+ 
+ Pregnant w omen /people on insulin will need hospital admission for medical assessment 
+and insulin management . 
+ Early rehydration ensuring fluid management based on daily U&Es. 
+ Check urine for ketones to detect ketoacidosis early . 
+ Check blood ketone if type 1 diabetes (if more th an 1.5, refer to Trust DKA guideline). 
+ Check Thyroid Function Tests . 
+ Ultrasound scan to confirm normal pregnancy (if no scan done previously) . 
+ Pregnant woman/person to continue their normal insulin; contact Diabetes Team regarding 
+dose adjustment (do not s top normal insulin). 
+ Early liaison with Diabetic and Obstetric teams. 
+ Pregnant women/people on CGM or flash monitoring can leave their sensor in situ but 
+must still have capillary (fingerprick) glucose monitoring hourly if needing a VRII, large 
+swings in blood glucose or hypoglycaemia or suspected DKA. 
+ 
+12.0 Care during labour 
+ 
+ Inform the Diabetes Team of any diabetic pregnant woman/person admitted to labour ward 
+at an appropriate time. 
+ Refer to the intrapartum management plan in the diabetes handheld not es. 
+ Switch to hourly monitoring once established in labour. Aim for blood glucose 4 -7 mmols/L. 
+ Pregnant women/people on insulin may continue with their usual insulin until in established 
+labour. Continue long acting insulin (e.g.Humulin I, Levemir, Lantus, Insulatard) throughout 
+labour but stop short acting or mixed insulins (e.g. Novomix 30, Novorapid or Humalog). 
+ Consider intravenous dextrose and insulin infusion from the onset of established labour for 
+pregnant women/people with type 1 diabetes if diab etes unstable. 
+ Monitor glucose hourly and commence VRIII if at least 2 CBG 8.0mmol/L or above, more 
+than 1 hour apart, or 1 CBG 11mmol/L or above. 
+ Pregnant women/people on CGM or flash monitoring must still have capillary (fingerprick) 
+glucose monitoring h ourly but can leave their sensor in situ. 
+ Newly birthed women/people with a CGM or flash can recommence using their sensor 
+postnatally. 
+ Pregnant women/people with pre -existing or unstable diabetes should be considered for 
+continuous electronic fetal monito ring once labour is established. 
+ Pregnant women/people with GDM treated by diet alone can be managed as for normal 
+labour, but monitor blood glucose as above. 
+ Some women/people require a VRIII regardless of blood glucose levels. This will be clearly 
+docume nted in the notes. 
+ If a VRIII is required make up a solution of insulin at 1 unit per ml (50 units of actrapid 
+made up to 50ml with Sodium Chloride 0.9%) in a 50ml syringe that fits the insulin pump. 
+500mls 0.9% NaCl with 5% glucose and 0.15% KCl at 50mls /hour should run alongside 
+this in order to avoid hypoglycaemia, hyponatraemia and hypokalaemia (see Appendix 2 ). 
+ U&Es should be checked 4 -6hrly during labour when on VRIII to maintain potassium and 
+bicarbonate. 
+ Com mence fluid balance chart. Please see CG21009 Maternity fluid management as an 
+in-patient or in labour 
+CG1109 Diabetes in pregnancy v10.1 July 202 2 Page 17 of 28 
+Please check against Staffnet that this printout is the most recent ver sion of this document. 
+ Pregnant women /people with insulin pumps may continue to self -manage their diabetes 
+with the use of the pump. They do not require an insulin sliding scale. If they become 
+unable to manage the pump, then keep pump running on the basal (background) rate and 
+commence a VRI II according to antenatal notes (see Appendix 4 ). 
+ Inform the neonat al unit team at/ after birth. 
+ 
+13.0 Planned caesarean birth (CS) 
+ 
+ Plan to have the patient first on a morning list. 
+ If on long acting insulin (e.g. Levemir, Lantus, Insulatard) in the morning, instruct patient to 
+continue this, but omit short acting insulin (e.g. Novorapid, Humalog, Actrapid). 
+ Measure blood glucose on admission and hourly thereafter. VRIII only requir ed if glucose 
+remains 8.0mmol/L or above just prior to CS. 
+ If general anaesthesia is used, monitoring should be every half an hour from induction of 
+general anaesthesia until the baby is born and the newly birthed mother/person is fully 
+conscious. 
+ Contin ue monitoring blood glucose hourly post CS until ready to eat and drink. 
+ Women/people using CGM or flash can leave their sensor in situ during CS. 
+ Recommence pre -pregnancy treatment once ready to eat and drink (see postnatal care 
+section). 
+ 
+14.0 Postnat al care management plan 
+ 
+14.1 Pre-existing diabetes 
+ 
+Type 1 diabetes or type 2 diabetes on insulin: 
+ 
+ Following birth of the placenta the insulin infusion rate should be reduced by 50% and 
+stopped 30 -60mins after the first meal. Commence pre -pregnancy dose of insulin when 
+eating and drinking (up to 10% less if breast feeding). If pre -pregnancy dose is unclear, 
+reduce total daily dose in pregnancy by 25% of first trimester dose or contact diabetes 
+team. 
+ Continue hourly blood glucose monitoring until first meal. Subsequently test pre -meals and 
+pre-bedtime or as per usual practice and aim for 6 -10mmol/L to avoid hypoglycaemia. 
+ Monitor blood glucose levels at 01 .00 and 03 .00 during the first night after birth due to 
+increased risk of hypoglycaemia. Ensur e that the patient has Gluco -juice nearby for 
+possible hypoglycaemic episodes. 
+ Discuss/implement contraception and the importance of planning a subsequent pregnancy. 
+ 6-12 weeks postnatal: follow -up in Diabetes Centre and transfer off CGM / flash. 
+ 
+Type 2 diabetics on oral glucose lowering drugs before pregnancy: 
+ 
+ Stop VRIII when the placenta is delivered. 
+ Four hourly blood glucose monitoring until first meal. Subsequently test pre -meals and pre -
+bedtime or as per usual practice and aim for 6 -10mmol/L to avo id hypoglycaemia. 
+ For women/people with Type 2 diabetes, diabetes treatment management plan will have 
+been made and documented in the Diabetes Care Information Booklet. There is no 
+CG1109 Diabetes in pregnancy v10.1 July 202 2 Page 18 of 28 
+Please check against Staffnet that this printout is the most recent ver sion of this document. 
+contraind ication to breastfeeding if on m etformin or sulphonylureas (e.g. glibenclamide). 
+Contact the Diabetes Team if there are any concerns. NB metformin is an off -label use in 
+pregnancy. 
+ Discuss contraception and the importance of planning a subsequent pregnancy. 
+ 6-12 weeks postnatal: follow -up in Diabetes Centre and if rele vant transfer off CGM / flash. 
+ 
+14.2 Gestational Diabetes 
+ 
+ If on VRIII stop when the placenta is delivered. 
+ 4 hourly blood glucose monitoring until first meal. Continue to monitor blood glucose 
+before and 1 hour after meal for up to 24h after birth to capt ure pre -existing diabetes. 
+ Patients with pre -meal readings of more than 7mmol/L or post meal readings more than 
+11.1mmol/L need diabetes review as they may have pre -existing or new onset diabetes. 
+ Do not require medication unless indicated by Diabetes Team . 
+ Advise to have a fasting blood glucose test at 6 weeks postnatal at their GP surgery. 
+Advise annual fasting blood glucose test with GP due to increased risk of developing Type 
+2 diabetes. Remind the woman/person of the symptoms of hyperglycaemia. 
+ Advise early referral to diabetes team in subsequent pregnancy due to the risks of 
+recurrence, and offer them diabetes testing when planning future pregnancies. 
+ Offer lifestyle advice (including weight control, diet and exercise). Women/people with a 
+BMI of 25 or more should be informed that they can make a self -referral to West Sussex 
+Wellbeing - Healthy Eating Services if they would like support with managing their weight 
+and healthy eating (NICE (Updated 2015) PH42 . 
+ 
+14.3 Breastfeeding 
+ 
+ Breastfeeding people n eed to eat more to compensate for the calories utilis ed during 
+feeding. 
+ A snack of 10 -15g carbohydrate and a drink each time they feed or expres s milk, including 
+night feeds is recommended. 
+ Insulin requirements will be lower in breastfeeding women/people. Hypoglycaemia is 
+common and undesirable and should be avoided. 
+ Encourage women/people to check their blood glucose levels more frequently when 
+breastfeeding. 
+ Women/people should be advised that breastfeeding might cause thirst. This is not 
+necessarily a si gn of elevated blood glucose levels. 
+ Women/people taking metformin /glibenclamide /g licazide may continue / resume taking it 
+whilst breastfeeding – no other diabetic tablets are recommended whilst breastfeeding. 
+ 
+Neonatal care should follow CG1104 Neonatal hypoglycaemia guideline 
+
+CG1109 Diabetes in pregnancy v10.1 July 202 2 Page 19 of 28 
+Please check against Staffnet that this printout is the most recent ver sion of this document. 
+15.0 Management of diabetic emergencies 
+ 
+15.1 Ketoacidosis 
+ 
+(Please refer to hospital -wide guideline on the management of Management of Diabetic 
+Ketoacidosis in adults ). 
+ During pregnancy, women/people with Type 1 diabetes who become unwell must have 
+diabetic ketoacidosis excluded as a matter of urgency. It can also occur rarely in those with 
+T2DM. 
+ Pregnant women/people with gestational diabetes who have blood glucose reading more 
+than 10mmol/L and are unwell should have blood ketones tested to exclude diabetic 
+ketoacidosis. 
+ All pregnant women/people who are suspected of having diabetic ketoacidosis must be 
+admitted immediately for urgent medical and obstetric care in the most appropriate care 
+setting. 
+ Commence fluid balance chart. Please see CG21009 Maternity fluid management as an 
+in-patient or in labour . 
+ Early involvement of CCU team is required. 
+ Untreated ketoacidosis is associated with a 50 -80% fetal mortality. 
+ On call medical registrar should be contacted immediately if a diagnosis of Ketoacidosis is 
+suspected. 
+ Specialist help from consultant endocrinologists should be sought and they are 
+contactable via hospital switchboard if required. 
+ Pregnant women/people on CGM or flash monitoring can leave their sensor in situ but 
+must still have capillary (fingerprick) glucose monitoring hourly. 
+ 
+15.2 Hypoglycaemia 
+ 
+ Hypoglycaemia (less than 4mmol/L ) is undesirable during pregnancy and s hould be 
+avoided. Pregnant women/people with diabetes will be given advice regarding maintaining 
+glycaemic control in pregnancy at their first appointment with the Diabetic Team or for 
+pregnant women/people with gestational diabetes, at time of commencing insulin. 
+ If CGM or flash measures glucose less than 4mmol/L check with CBG. 
+ When in hospital, ensure that women/people with diabetes on insulin keep a bottle of 
+Gluco -juice on their locker. 
+ If hypoglycaemia suspected check blood glucose and if less than 4mmol/L follow trust 
+guidelines on management of hypoglycaemia . 
+ 
+Give Gluco -juice, check blood glucose after 10 minutes: 
+ 
+o If above 4mmol/L; give a slow acting carb ohydrate such as 2 biscuits or 1 slice of 
+toast . 
+o If less than 4mmol/L give further Gluco -juice, this can be given up to 3 times. 
+o Do not give carb oydrates until above 4mmol/L . 
+o Follow T rust guidelines for treatment of hypoglycaemia : Management of 
+Hypoglycaemia in Adults . 
+CG1109 Diabetes in pregnancy v10. 1 July 202 2 Page 20 of 28 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+16.0 Audit 
+ 
+ Pregnant women/people with pre -existing diabetes are seen by members of the joint 
+diabetes and antenatal care team within 1 week of their pregnancy being confirmed. 
+ 
+ Pregnant women/people with pre -existing diabetes are referred at their booking 
+appointment for retinal assessment. 
+ 
+ Pregnant women/people with pre -existing diabetes have their HbA1c levels measured at 
+their booking appointment. 
+ 
+ Pregnant women/people with pre -existing diabetes should have involvement of the multi -
+disciplinary team – obstetrician, midwife, diabetologist, diabetes nurse/ midwife specialist 
+and dietician (as appropriate) and this should been documented. 
+ 
+ Pregnant women/people with pre -existing diabetes should have a timetable of antenatal 
+appointments documented. 
+ 
+ Pregna nt women/people diagnosed with gestational diabetes are seen by members of 
+the joint diabetes and antenatal care team within 1 week of diagnosis. 
+ 
+ Pregnant women/people with pre -existing diabetes should be offered ultrasound 
+scanning and four chamber view of the fetal heart and outflow tracts and three vessels at 
+20 week anomaly Scan. 
+ 
+ Pregnant women/people with diabetes are supported to self -monitor their blood glucose 
+levels. 
+ 
+ Pregnant women/people who are being offered antenatal corticosteroids have a 
+documented discussion of risks and benefits using appendix 6 . 
+
+CG1109 Diabetes in pregnancy v10. 1 July 202 2 Page 21 of 28 
+Please check against Staffnet that this printout is the most recent version of this document. 
+17.0 References 
+ 
+Caroline A Crowther, Janet E Hiller, John R Moss, Andrew J McPhee, William S Jeffries, Jeffrey S 
+Robinso n. Effect of treatment of gestational diabetes mellitus on pregnancy outcomes: Australian 
+Carbohydrate Intolerance Study in Pregnant Women (ACHOIS) Trial Group. N Engl J Med 2005: 
+352: 2477 -86. 
+ 
+Confidential Enquiry into Maternal & Child Health: Pregnan cy in women with Type 1 and Type 2 
+Diabetes in 2002 -03, England, Wales & Northern Ireland. London: CEMACH: 2005. 
+ 
+Confidential Enquiry into Maternal & Child Health. Diabetes in Pregnancy; are we providing the best 
+care? Findings of a National Enquiry: En gland, Wales & Northern Ireland. CEMACH: London: 
+2007. 
+ 
+JBDS -IP. Management of glycaemic control in pregnant women with diabetes on obstetric wards 
+and delivery units May 2017 JBDS 12 www. diabetologistsabcd.org.uk/JBDS/JBDS.htm 
+
+NHS Diabetes April 2011 Management of adults with diabetes undergoing surgery and elective 
+procedures. www.diabetes.nhs.uk/our_work_areas/in patient_care/ 
+ 
+NICE. NG3 Diabetes in Pregnancy: Management of diabetes and its complications from pre -
+conception to the postnatal period. NICE Clinical Guidelines 3. Updated December 2020. NICE NG3 
+Diabetes in pregnancy (updated 2020) 
+ 
+RCOG (2022) GTG no.74 Antenatal Corticosteroids to reduce neonatal morbidity and mortality 
+
+CG1109 Diabetes in pregnancy v10. 1 July 202 2 Page 22 of 28 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 1 : Oral Glucose Tolerance Test Protocol 
+ 
+Purpose: The oral glucose tolerance test (GTT) is used, in this case, for the diagnosis of gestational 
+diabetes mellitus (GDM). 
+ 
+Indications: see above for indications and rationale. 
+ 
+Contraindications: Capillary bl ood glucose more than 10 mmol/L. 
+ 
+Patient preparation: Diet should be normal for at least 3 days and patient fasted for more than 8 
+hours but no more than 14 hours. No smoking the morning of the test and during the test and 
+preferably no alcohol for 48 hour s. During the test the patient must sit quietly in the department. 
+Equipment: measuring cylinder, measuring jug, drinking water, polycal. Venesection equipment and 
+grey bottles (fluoride oxalate tubes), vomit bowls, pens and paper, clocks (possibly a stop watch), 
+request forms. Chairs for patients and venepuncture area. 
+ 
+Procedure: 
+ 
+1. Prepare polycal – 113 ml of polycal must be measured out and diluted up to 200 ml with tap 
+water . 
+2. Confirm patient information and their fasting status. Check they haven’t smoked that 
+morning. 
+3. Check patient aware of protocol (two blood samples and a glucose drink). 
+4. Check capillary glucose, if above 10 mmol/L send a venous sample to the lab and 
+immediately contact diabetes pregnancy team by phone or email with patient details . DO 
+NOT GO AHEAD WITH OGTT If patient well, allow home to await appointment with diabetes 
+pregnancy team. If not well, refer to DAU for review . 
+5. Take fluoride oxalate (grey top) sample and label with time AND ‘0 min’. 
+6. Administer Polycal; all of it should b e drunk within 5 mins. Up to 300 ml of water is allowed 
+therefore a 100 ml of water can be drunk by patient if required after the 200 ml of Polycal. 
+7. Record the time Polycal given at the ‘start time’. 
+8. Two hours after the ‘start time’ collect a second grey t op sample, label fully including the time 
+and ‘120 mins’. 
+9. Test has finished so the patient may eat and drink and go home. Package both tubes up in 
+the sample bag with ‘pregnancy’ clear in the clinical details and ‘?GDM’. Request a ‘GTT’. 
+Samples can all co me up to laboratory together at the end of the clinic. 
+ 
+Interpretation: GDM = fasting glucose 5.6 mmol/L or above and/or 2 hours 7.8 mmol/L or above . 
+ 
+Actions: If normal, reassure patient, if high please contact the diabetes pregnancy team by email as 
+soon a s possible WSHNT.DiabetesMaternity@nhs.net with patient details . 
+ 
+Laboratory team to email to the diabetes pregnancy team all GTT test results at end of each week . 
+ 
+Contacts: SRH laboratory ext 33591 Worthing lab 85564. 
+
+CG1109 Diabetes in pregnancy v10. 1 July 202 2 Page 23 of 28 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Polycal is gluten, lactose and fat free. Just sugars and water i.e. vegan/vegetarian also. 
+ 
+Note when measuring please measure at the bottom of the meniscus, this should be read as 20 ml 
+for example. 
+
+CG1109 Diabetes in pregnancy v10. 1 July 202 2 Page 24 of 28 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 2: Variable Rate Intravenous Insulin Infusion (VRIII) 
+ 
+For use when administering antenatal corticosteroids if 2x CBGs 8mmol or more 1h apart , or 
+1 reading 11mmol or above. 
+ 
+ Make up a solution of insulin at 1 unit per ml (50 units Actrapid made up to 50ml wit h Sodium 
+Chloride 0.9%) in a 50 ml syringe that fits the insulin pump . 
+ Check U&Es prior to starting VRIII to monitor fluid balance and electrolyte abnormalities. Repeat 
+24 hourly . 
+ Prescribe VRIII on JAC . 
+ Prescribe 500mls 0.9% NaCl with 5% glucose and 0.15% KCl at 50mls/hour – IV fluids should 
+run with all VRIII’s to prevent hypoglycaemia, hyponatraemia and hypokalaemia . 
+ Continue background long acting insulin . 
+ 
+ DOSING ALGORITHM 
+Algorithm above 1 2 3 
+ For most pregnant 
+women/people For pregnant 
+women/people not 
+controlled on algorithm 
+1 or needing more 
+than 80units/day of 
+insulin For pregnant 
+women/people not 
+controlled on 
+algorithm 2 (after 
+specialist advise) 
+CBG levels (mmol/L) Infusion rate (units/hr=mls/hr) 
+Less than 4 STOP INSULIN FOR 20 MINUTES 
+(Treat as hypo as per guideline and re -check CBG in 10 mins) 
+4.0-5.5 0.2 0.5 1.0 
+5.6-7.0 0.5 1.0 2.0 
+7.1-8.5 1.0 1.5 3.0 
+8.6-11.0 1.5 2.0 4.0 
+11.1-14.0 2.0 2.5 5.0 
+14.1-17.0 2.5 3.0 6.0 
+17.1-20.0 3.0 4.0 7.0 
+Above 20.1 4.0 6.0 8.0 
+ 
+Algorithm 1 – Most women will start here . 
+ 
+Algorithm 2 – Use this algorithm for women who are likely to require more insulin (on more than 80 units of insulin 
+or those not achieving target on algorithm 1) . 
+ 
+Algorithm 3 – For those pregnant women/people not achieving target on algorithm 2 – only start in discussion with 
+Diabetes Team. 
+ 
+ Target CBG level = 4 -7.8 mmol/L 
+ Check CBG every hour while on VRIII and every half hour if under anaesthetic . 
+ Move to higher algorithm if CBG more than target range and not dropping . 
+ Move to lower algorithm if CBG falls below 4mmol/L or is dropping too fast . 
+ Maintain IV insulin infusion for 30minutes after re -starting original insulin regime – 
+IV insulin has a half -life of 5minutes. 
+
+CG1109 Diabetes in pregnancy v10. 1 July 202 2 Page 25 of 28 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 3: Variable Rate Intravenous Insulin Infusion (VRIII) 
+ 
+For use IN LABOUR if 2x CBGs 8.0mmol or more 1h apart , or 1 reading 11mmol or above. 
+ 
+ Make up a solution of insulin at 1 unit per ml (50 units Actrapid made up to 50ml wit h Sodium 
+Chloride 0.9%) in a 50 ml syringe that fits the insulin pum p. 
+ Prescribe VRIII on JAC/EPMA . 
+ Check U&Es prior to starting VRIII to monitor fluid balance and electrolyte abnormalities. 
+Repeat 24 hourly . 
+ Prescribe 500mls 0.9% NaCl with 5% glucose and 0.15% KCl at 50mls/hour – IV fluids should 
+run with all VRIII’s to prevent hypoglycaemia, hyponatraemia and hypokalaemia. 
+ Consider intravenous dextrose and insulin infusion from the onset of established labour for 
+women with type 1 diabetes if diabetes unstable. 
+ Continue background long acting insulin. 
+ 
+ DOSING ALGORITHM 
+Algorithm above 1 2 3 
+ For most pregnant 
+women/people For pregnant 
+women/people not 
+controlled on algorithm 
+1 or needing more 
+than 80units/day of 
+insulin For pregnant 
+women/people not 
+controlled on 
+algorithm 2 (after 
+specialist advise) 
+CBG levels (mmol/L) Infusion rate (units/hr=mls/hr) 
+Less than 4 STOP INSULIN FOR 20 MINUTES 
+(Treat as hypo as per guideline and re -check CBG in 10 mins) 
+4.0-5.5 0.2 0.5 1.0 
+5.6-7.0 0.5 1.0 2.0 
+7.1-8.5 1.0 1.5 3.0 
+8.6-11.0 1.5 2.0 4.0 
+11.1-14.0 2.0 2.5 5.0 
+14.1-17.0 2.5 3.0 6.0 
+17.1-20.0 3.0 4.0 7.0 
+Above 20.1 4.0 6.0 8.0 
+Algorithm 1 – Most women will start here . 
+Algorithm 2 – Use this algorithm for women who are likely to require more insulin (on more than 80 units of insulin 
+or those not achieving target on algorithm 1). 
+Algorithm 3 – For those pregnant women/people not achieving target on algorithm 2 – only start in discussion with 
+Diabetes Team. 
+ 
+ Target CBG level = 4 -7mmol/L. 
+ Check CBG every hour while on VRIII and every half hour if under anaesthetic. 
+ Move to higher algorithm if CBG more than target range and not dropping . 
+ Move to lower algorithm if CBG falls below 4mmol/L or is dropping too fast . 
+ Maintain IV insulin infusion for 30minutes after re-starting original insulin regime – IV 
+insulin has a half -life of 5minutes. 
+Postnatally: 
+ GDM – STOP VRIII and IV fluids when the placenta is delivered . 
+ T1DM and Insulin treated T2DM – Reduce the rate of the VRIII to HALF once the placenta is 
+delivered an d STOP 30 -60mins after the first meal. 
+
+CG1109 Diabetes in pregnancy v10. 1 July 202 2 Page 26 of 28 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 4: Management of Insulin pumps during labour or caesarean birth 
+
+For caesarean birth requiring general anaesthetic, follow instruction for major surgery 
+(above) 
+ 
+Contact numbers: 
+ Diabetes nurse specialists (Worthing): 01903 285044 / mobile 07799868506 (working hours 
+only) . 
+ Diabetes nurse specialists (Chichester): 01243 788122 ext 3750 / mobile 07880 645514 or 07825 
+450268 (working hours only) . 
+ Endocrinology Consultant or Registrar via switchboard. 
+Is the patient /partner happy 
+to manage pump during 
+labour or caesarean birth? 
+Switch to variable rate 
+intravenous insulin infusion 
+(VRIII) 
+No 
+Yes 
+Continue pump at current settings . 
+Insert cannula in case fluids/insulin required 
+later. 
+Check blood glucose (BG) every hour . 
+If BG more than 7 mmol/L on 2 
+consecutive occasions continue VRIII . 
+BG less than 
+4mmol/L? 
+BG 4 -
+7mmol/L? 
+BG more than 
+7mmol/L? 
+Treat as hypoglycaemia: 
+60ml Gluco -juice or 100mls of IV 10% 
+glucose over 10 minutes. 
+Check blood glucose every 10 minutes until 
+more than 4mmol/L and continue pump. 
+Continue pump 
+Patient or partner to 
+deliver correction dose. 
+If further hypo, reduce basal rate by 50% 
+throughout labour. 
+Consider IV 10% glucose @ 100ml/hr . 
+ 
+Post birth : 
+Return to pre -pregnancy basal rates 
+if pump was started during 
+pregnancy, to 50% of pregnancy 
+basal rate. 
+ 
+CG1109 Diabetes in pregnancy v10. 1 July 202 2 Page 27 of 28 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 5: GP Letter – Gestational Diabetes test strip prescription request 
+& covid -19 vaccination 
+
+DIAGNOSIS - GESTATIONAL DIABETES 
+I saw in the Diabetes Specialist Midwife clinic today, she had been referred from the 
+Midwife on the ……….. and is now …… week’s gestation with a history of gestational diabetes or 
+a raised GTT of mmols/L. 
+I have provided your pat ient with an AgaMatrix WaveSense JAZZ Blood Glucose Monitoring 
+System. I would be pleased if you could prescribe for her WaveSense JAZZ test strips, pack size 50 
+Pip code 340 -1619. Following the NICE Guidelines, patients are required to monitor their 
+blood sugars frequently in pregnancy (usually four times per day); therefore please can you 
+prescribe 4 boxes on repeat* . Please also prescribe some AgaMatrix Ultra -Thin 33g lancets, a box 
+of 200 Pip -Code 342 -0601. 
+I have advised her that we would aim to have her blood sugars between 4 – 5.3mmols/L, before 
+meals and 4 - 7.8mmols/L, one hour after her meals. She will test her blood sugars four times daily 
+and will liaise with the results. 
+I have advised that she is at risk of developing Type 2 Diabetes in late r life and to reduce or 
+postpone that risk, I have given her some lifestyle advice, to eat a healthy diet, take regular 
+exercise, to maintain a normal weight and to have an annual fasting blood sugar arranged at your 
+Surgery. In a future pregnancy we woul d like her to be referred here EARLY to advise about diet 
+and initiate blood glucose monitoring. 
+ 
+Yours sincerely 
+
+Sharon Howard Natasha Bailey Soraya Mole 
+Diabetes Specialist Midwife Diabetes Specialist Midwife Diabetes Specialist Midwife 
+ 
+URGENT - FOR ATTENTION OF THE GP: 
+All adults with underlying health conditions that put them at higher risk of serious disease and 
+mortality (group 6), as set out in Joint Committee on Vaccination and Immunisation (JCVI) guidance, 
+are being offered the COVID -19 vaccine . Conditions for eligibility have been specified in chapter 14a 
+of Public Health England’s Green Book (Table 3). Pregnant women /people will be among these 
+groups and should be offered a discussion around the risks and benefits of vaccination with a 
+clinici an, so they can make an informed choice about whether to receive it. Pregnant 
+women /people with Gestational Diabetes are at increased risk and should be offered a 
+vaccination as soon as possible. 
+
+CG1109 Diabetes in pregnancy v10. 1 July 202 2 Page 28 of 28 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 6: Antenatal Corticosteroids to reduce neonatal m orbidity and mortality

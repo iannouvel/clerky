@@ -1,0 +1,1739 @@
+# Extracted from: GTG 2016 - Epilepsy in Pregnancy.pdf
+# Guideline ID: gtg-2016-epilepsy-in-pregnancy
+# Content length: 111858 characters
+# Processing date: 1732953490.949075
+
+Epilepsy in Pregnancy 
+Green-top Guideline No. 68 
+June 2016 
+Endorsed by: 
+Epilepsy in Pregnancy 
+This is the first edition of this guideline, produced by the Royal College of Obstetricians and Gynaecologists 
+(RCOG) and endorsed by the following organisations: Association of British Neurologists, Epilepsy Action,
+Royal College of General Practitioners, Royal College of Midwives and the Royal College of Physicians.
+Executive summary of recommendations 
+Diagnosis of epilepsy 
+What aspects of diagnosis are specific to pregnancy and the puerperium, including the definition of
+seizures for the obstetrician? 
+The diagnosis of epilepsy and epileptiform seizures should be made by a medical practitioner with 
+expertise in epilepsy, usually a neurologist. 
+Women with a history of epilepsy who are not considered to have a high risk of unprovoked seizures 
+can be managed as low-risk women in pregnancy. 
+What is the importance of classifying seizure type and epilepsy syndrome? 
+Women with epilepsy (WWE), their families and healthcare professionals should be aware of the 
+different types of epilepsy and their presentation to assess the specific risks to the mother and baby. 
+What other conditions in pregnancy should be considered in the differential diagnosis of epileptic seizures? 
+In pregnant women presenting with seizures in the second half of pregnancy which cannot be clearly 
+attributed to epilepsy, immediate treatment should follow existing protocols for eclampsia 
+management until a definitive diagnosis is made by a full neurological assessment. 
+Other cardiac, metabolic and intracranial conditions should be considered in the differential diagnosis. 
+Neuropsychiatric conditions including non-epileptic attack disorder should also be considered. 
+Prepregnancy counselling and management 
+What are the risks of congenital malformations in the fetus of pregnant women with epilepsy (WWE) 
+exposed and not exposed to antiepileptic drugs (AEDs)? 
+WWE who are planning their pregnancy should have a clinician competent in the management of 
+epilepsy take responsibility for sharing decisions around choice and dose of AEDs, based on the risk 
+to the fetus and control of seizures. 
+WWE should be reassured that most mothers have normal healthy babies and the risk of congenital 
+malformations is low if they are not exposed to AEDs in the periconception period. 
+Women should be informed that the risk of congenital abnormalities in the fetus is dependent on the 
+type, number and dose of AEDs. 
+RCOG Green-top Guideline No. 68 2of 33 © Royal College of Obstetricians and Gynaecologists P
+P
+P
+P
+P
+P
+BCWhat are the long-term neurodevelopmental outcomes of exposure to AEDs and maternal seizure in infants 
+born to WWE? 
+WWE and their partners need to be informed about the possible adverse impact on long-term 
+neurodevelopment of the newborn following in utero exposure to sodium valproate. 
+Based on limited evidence, in utero exposure to carbamazepine and lamotrigine does not appear to 
+adversely affect neurodevelopment of the offspring. There is very little evidence for levetiracetam and 
+phenytoin. Parents should be informed that evidence on long-term outcomes is based on small 
+numbers of children. 
+To what extent can congenital abnormalities be minimised in WWE? 
+All WWE should be advised to take 5 mg/day of folic acid prior to conception and to continue the intake 
+until at least the end of the first trimester to reduce the incidence of major congenital malformation. 
+Prepregnancy folic acid 5 mg/day may be helpful in reducing the risk of AED-related cognitive deficits. 
+The lowest effective dose of the most appropriate AED should be used. 
+Exposure to sodium valproate and other AED polytherapy should be minimised by changing the 
+medication prior to conception, as recommended by an epilepsy specialist after a careful evaluation of 
+the potential risks and benefits. 
+What is the effect of pregnancy on seizures in WWE? 
+WWE should be informed that two-thirds will not have seizure deterioration in pregnancy. 
+Pregnant women who have experienced seizures in the year prior to conception require close 
+monitoring for their epilepsy. 
+How should risks be communicated to WWE? 
+WWE should be provided with verbal and written information on prenatal screening and its 
+implications, the risks of self-discontinuation of AEDs and the effects of seizures and AEDs on the fetus 
+and on the pregnancy, breastfeeding and contraception. 
+WWE should be informed that the introduction of a few safety precautions may significantly reduce 
+the risk of accidents and minimise anxiety. 
+Healthcare professionals should acknowledge the concerns of WWE and be aware of the effect of 
+such concerns on their adherence to AEDs. 
+Antepartum management 
+What are the recommended models for antenatal care of WWE and what are the benefits of joint obstetrics 
+and neurology clinics? 
+Pregnant WWE should have access to regular planned antenatal care with a designated epilepsy care 
+team. 
+© Royal College of Obstetricians and Gynaecologists 3of 33 RCOG Green-top Guideline No. 68 C
+P
+C
+B
+P
+C
+D
+DP
+P
+PCWWE taking AEDs who become unexpectedly pregnant should be able to discuss therapy with an 
+epilepsy specialist on an urgent basis. It is never recommended to stop or change AEDs abruptly 
+without an informed discussion. 
+All pregnant WWE should be provided with information about the UK Epilepsy and Pregnancy Register 
+and invited to register. 
+What is the optimum method and timing of screening for detection of fetal abnormalities? 
+Early pregnancy can be an opportunity to screen for structural abnormalities. The fetal anomaly scan 
+at 18 +0 –20 +6 weeks of gestation can identify major cardiac defects in addition to neural tube defects. 
+All WWE should be offered a detailed ultrasound in line with the National Health Service Fetal Anomaly 
+Screening Programme standards. 
+How should women taking AEDs be monitored to avoid worsening of seizures? For WWE taking AEDs, is 
+dose escalation better than expectant management? 
+Based on current evidence, routine monitoring of serum AED levels in pregnancy is not recommended 
+although individual circumstances may be taken into account. 
+What are the adverse effects of AEDs in pregnancy on the mother and how can they be minimised? 
+Healthcare professionals should be alert to signs of depression, anxiety and any neuropsychiatric 
+symptoms in mothers exposed to AEDs. 
+What are the risks of obstetric complications in pregnant WWE, including those taking AEDs? 
+Healthcare professionals need to be aware of the small but significant increase in obstetric risks to 
+WWE and those exposed to AEDs, and to incorporate this in the counselling of women and the planning 
+of management. 
+How should WWE be monitored in pregnancy? 
+In the antenatal period, WWE should be regularly assessed for the following: risk factors for seizures, 
+such as sleep deprivation and stress; adherence to AEDs; and seizure type and frequency. 
+If admission is required antenatally, WWE at reasonable risk of seizures should be accommodated in 
+an environment that allows for continuous observation by a carer, partner or nursing staff. 
+How should the fetus be monitored in pregnancy? What are the effects of AEDs on cardiotocography? 
+Serial growth scans are required for detection of small-for-gestational-age babies and to plan further 
+management in WWE exposed to AEDs. 
+There is no role for routine antepartum fetal surveillance with cardiotocography in WWE taking AEDs. 
+RCOG Green-top Guideline No. 68 4of 33 © Royal College of Obstetricians and Gynaecologists P
+D
+C
+D
+B
+P
+P
+B
+DP
+PWhat is the role of vitamin K in preventing haemorrhagic disease of the newborn and maternal
+haemorrhage in WWE taking AEDs? 
+All babies born to WWE taking enzyme-inducing AEDs should be offered 1 mg of intramuscular 
+vitamin K to prevent haemorrhagic disease of the newborn. 
+There is insufficient evidence to recommend routine maternal use of oral vitamin K to prevent 
+haemorrhagic disease of the newborn in WWE taking enzyme-inducing AEDs. 
+There is insufficient evidence to recommend giving vitamin K to WWE to prevent postpartum 
+haemorrhage. 
+What is the optimal timing and mode of delivery for WWE based on seizure control? 
+WWE should be reassured that most will have an uncomplicated labour and delivery. 
+The diagnosis of epilepsy per se is not an indication for planned caesarean section or induction of 
+labour. 
+How should women with non-epileptic attack disorder be counselled in pregnancy and how should their 
+non-epileptic seizures be managed? 
+Inappropriate medical intervention, including AED administration and iatrogenic early delivery, should 
+be avoided when there is a firm diagnosis of non-epileptic attack disorder. 
+Where required, what dose of antenatal corticosteroids should be given to WWE on enzyme-inducing 
+AEDs? 
+In WWE taking enzyme-inducing AEDs who are at risk of preterm delivery, doubling of the antenatal 
+corticosteroid dose for prophylaxis against respiratory distress syndrome in the newborn is not 
+recommended. 
+Intrapartum care 
+What are the risks and risk factors for seizures in labour in WWE and how can they be minimised? 
+Pregnant WWE should be counselled that the risk of seizures in labour is low. 
+Adequate analgesia and appropriate care in labour should be provided to minimise risk factors for 
+seizures such as insomnia, stress and dehydration. 
+Long-acting benzodiazepines such as clobazam can be considered if there is a very high risk of seizures 
+in the peripartum period. 
+AED intake should be continued during labour. If this cannot be tolerated orally, a parenteral alternative 
+should be administered. 
+What is the optimum management of epileptic seizures in labour? 
+Every obstetric unit should have written guidelines on the management of seizures in labour. 
+Seizures in labour should be terminated as soon as possible to avoid maternal and fetal hypoxia and 
+fetal acidosis. Benzodiazepines are the drugs of choice. 
+© Royal College of Obstetricians and Gynaecologists 5of 33 RCOG Green-top Guideline No. 68 P
+D
+D
+D
+C
+D
+DP
+P
+PD
+PPContinuous fetal monitoring is recommended in women at high risk of a seizure in labour, and following 
+an intrapartum seizure. 
+What are the recommended methods of analgesia in labour for WWE? 
+Pain relief in labour should be prioritised in WWE, with options including transcutaneous electrical 
+nerve stimulation (TENS), nitrous oxide and oxygen (Entonox ®), and regional analgesia. 
+Pethidine should be used with caution in WWE for analgesia in labour. Diamorphine should be used in 
+preference to pethidine. 
+What are the effects of induction of labour on WWE and do AEDs affect induction agents? 
+There are no known contraindications to use of any induction agents in WWE taking AEDs. 
+What is the most suitable place of delivery for WWE? 
+For WWE at risk of peripartum seizures delivery should be in a consultant-led unit with facilities for 
+one-to-one midwifery care and maternal and neonatal resuscitation. 
+The decision to use water for analgesia and birth should be made on an individual basis. WWE who are 
+not taking AEDs and who have been seizure free for a significant period may be offered a water birth 
+after discussion with their epilepsy specialist. 
+Postpartum management 
+What is the risk of seizure deterioration postpartum and how can this be minimised? 
+WWE and their caregivers need to be aware that although the overall chance of seizures during and 
+immediately after delivery is low, it is relatively higher than during pregnancy. 
+WWE should be advised to continue their AEDs postnatally. 
+Mothers should be well supported in the postnatal period to ensure that triggers of seizure 
+deterioration such as sleep deprivation, stress and pain are minimised. 
+Is there a need to modify the dose of AED after delivery? 
+If the AED dose was increased in pregnancy, it should be reviewed within 10 days of delivery to avoid 
+postpartum toxicity. 
+What are the effects of AED exposure on the newborn through placental transfer and from breast milk?
+How should babies of WWE taking AEDs be monitored? 
+Neonates born to WWE taking AEDs should be monitored for adverse effects associated with AED 
+exposure in utero. 
+WWE who are taking AEDs in pregnancy should be encouraged to breastfeed. 
+Based on current evidence, mothers should be informed that the risk of adverse cognitive outcomes is 
+not increased in children exposed to AEDs through breast milk. 
+RCOG Green-top Guideline No. 68 6of 33 © Royal College of Obstetricians and Gynaecologists P
+P
+P
+P
+P
+PC
+C
+C
+CP
+DPWhat advice should be given regarding safety strategies and care of the baby? 
+Postpartum safety advice and strategies should be part of the antenatal and postnatal discussions 
+with the mother alongside breastfeeding, seizure deterioration and AED intake. 
+Postnatal mothers with epilepsy at reasonable risk of seizures should be accommodated in single 
+rooms only when there is provision for continuous observation by a carer, partner or nursing staff. 
+How should depression be screened for in the postpartum period? 
+WWE should be screened for depressive disorder in the puerperium. Mothers should be informed about 
+the symptoms and provided with contact details for any assistance. 
+Contraception 
+What contraception can be safely offered to women taking AEDs? 
+WWE should be offered effective contraception to avoid unplanned pregnancies. 
+Copper intrauterine devices (IUDs), the levonorgestrel-releasing intrauterine system (LNG-IUS) and 
+medroxyprogesterone acetate injections should be promoted as reliable methods of contraception that 
+are not affected by enzyme-inducing AEDs. 
+Women taking enzyme-inducing AEDs (carbamazepine, phenytoin, phenobarbital, primidone, 
+oxcarbazepine, topiramate and eslicarbazepine) should be counselled about the risk of failure with 
+some hormonal contraceptives. 
+Women should be counselled that the efficacy of oral contraceptives (combined hormonal 
+contraception, progestogen-only pills), transdermal patches, vaginal ring and progestogen-only 
+implants may be affected if they are taking enzyme-inducing AEDs (e.g. carbamazepine, phenytoin, 
+phenobarbital, primidone, oxcarbazepine and eslicarbazepine). 
+All methods of contraception may be offered to women taking non-enzyme-inducing AEDs (e.g. sodium 
+valproate, levetiracetam, gabapentin, vigabatrin, tiagabine and pregabalin). 
+WWE taking enzyme-inducing AEDs should be informed that a copper IUD is the preferred choice for 
+emergency contraception. Emergency contraception pills with levonorgestrel and ulipristal acetate are 
+affected by enzyme-inducing AEDs. 
+Women taking lamotrigine monotherapy and oestrogen-containing contraceptives should be informed 
+of the potential increase in seizures due to a fall in the levels of lamotrigine. 
+What are the preferred contraceptive choices in WWE and what risks need to be conveyed to help them 
+make informed decisions? 
+The risks of contraceptive failure and the short- and long-term adverse effects of each contraceptive 
+method should be carefully explained to the woman. Effective contraception is extremely important 
+with regard to stabilisation of epilepsy and planning of pregnancy to optimise outcomes. 
+© Royal College of Obstetricians and Gynaecologists 7of 33 RCOG Green-top Guideline No. 68 P
+C
+PCCCCDPP
+DOther implications 
+What may affect the driving entitlements of WWE who are pregnant? 
+WWE should be informed of the effect of changing the dose of AED on seizures and its impact on driving 
+privileges. 
+What are the implications of disability legislation for WWE and health service providers? 
+Healthcare providers need to be aware of equality legislation in the UK that protects individuals with 
+a disability from discrimination. 
+1. Purpose and scope 
+This guideline summarises the evidence on maternal and fetal outcomes in women with epilepsy 
+(WWE). It provides recommendations on the care of WWE during the prepregnancy, antepartum,
+intrapartum and postpartum periods. This guideline does not cover the methods of diagnosis of
+epilepsy, detailed categorisation of seizures or strategies for the management of epilepsy. These are 
+addressed in detail in the national guidelines on epilepsy.1,2 
+2. Introduction and background epidemiology 
+Epilepsy is one of the most common neurological conditions in pregnancy, with a prevalence of
+0.5–1%.3An estimated 2500 infants are born to WWE every year in the UK.4About one-third of WWE 
+are in the reproductive age group.5The risk of death is increased ten-fold in pregnant WWE compared 
+with those without the condition.3Fourteen maternal deaths that occurred between 2009 and 2012 
+were attributed to epilepsy in the 2014 MBRRACE-UK (Confidential Enquiries into Maternal Deaths 
+and Morbidity) report.6Twelve of these 14 deaths were classified as SUDEP (sudden unexpected death 
+in epilepsy), with poorly controlled seizures being the main contributory factor. The report highlighted 
+the urgency for developing a multiagency guidance to standardise and improve the care of pregnant
+WWE.
+The risk of major congenital malformation in the fetus is increased in WWE taking antiepileptic drugs 
+(AEDs).7–13 Exposure to sodium valproate and potentially other AEDs may also have an adverse effect
+on the neurodevelopment of the newborn in the long term.14,15 Maternal concerns regarding the effects 
+of AEDs on the baby may lead to discontinuation or reduction in the dose of the AEDs, thereby 
+increasing the woman's risk of seizures and SUDEP. Seizure deterioration and AED exposure in 
+pregnancy have an enormous impact on the life of the mother. 
+Care of WWE continues to be fragmented. The need for better epilepsy review services, and 
+engagement with WWE during the preconception period and in pregnancy, has been a recurrent focus 
+of Confidential Enquiries into maternal and child health in the UK.6,16,17 Any service that cares for WWE 
+will need to provide evidence-based information on the risks to the mother and baby and the benefits 
+of appropriate treatment. Such a strategy will empower parents to make the right choices in their care.
+3. Identification and assessment of evidence 
+This guideline was developed in accordance with standard methodology for producing RCOG 
+Green-top Guidelines. MEDLINE, EMBASE and The Cochrane Library were searched from inception 
+until 2015 for relevant randomised trials, cohort studies, registry reports, case series and systematic 
+reviews. The following search terms were included: ‘epilepsy’, ‘pregnancy’, ‘seizures’, ‘preconception’,
+‘antenatal’, ‘intrapartum’, ‘postnatal’, ‘antiepileptic drugs’, ‘complications’ and ‘fetal.’ All relevant Medical
+RCOG Green-top Guideline No. 68 8of 33 © Royal College of Obstetricians and Gynaecologists PPSubject Headings (MeSH) terms and subheadings were included. The search was restricted to humans,
+and there were no language restrictions. 
+Where possible, recommendations are based on available evidence. In the absence of published 
+evidence, these have been annotated as ‘good practice points’. Further information about the 
+assessment of evidence and the grading of recommendations may be found in Appendix I.
+4. Diagnosis of epilepsy 
+4.1 What aspects of diagnosis are specific to pregnancy and the puerperium, including the 
+definition of seizures for the obstetrician? 
+The diagnosis of epilepsy and epileptiform seizures should be made by a medical practitioner with 
+expertise in epilepsy, usually a neurologist. 
+Women with a history of epilepsy who are not considered to have a high risk of unprovoked seizures 
+can be managed as low-risk women in pregnancy. 
+Health professionals working with WWE should be aware that the epilepsies are a heterogeneous group 
+of brain diseases with the common feature of seizure. A medical practitioner with specialist training in 
+epilepsy, usually a neurologist makes the diagnosis of epilepsy and its categorisation. Any assessment
+of the condition in pregnancy should include duration and severity, frequency and type of seizures, and 
+impact of epilepsy on the mother such as driving, accidents, family life and employment. A drug history 
+of effective and ineffective medications is relevant, including a history of adverse effects. 
+Women who have remained seizure-free for at least 10 years (with the last 5 years off AEDs) 
+and those with a childhood epilepsy syndrome who have reached adulthood seizure- and 
+treatment-free are considered no longer to have epilepsy.18 
+A medical practitioner with specialist training in epilepsy, usually a neurologist, should also make the 
+decision regarding the resolution of epilepsy on an individual basis. These women can be managed as 
+low-risk individuals in their pregnancy provided that there are no other risk factors.
+4.2 What is the importance of classifying seizure type and epilepsy syndrome? 
+Women with epilepsy (WWE), their families and healthcare professionals should be aware of the 
+different types of epilepsy and their presentation to assess the specific risks to the mother and baby. 
+The manifestation of epilepsy is highly varied. Classification of the epilepsy syndrome is required to 
+choose the appropriate AED, to determine prognosis in pregnancy and to identify and prevent the 
+factors of seizure deterioration. The most common seizure types reported in pregnancy and their 
+manifestations are detailed in Table 1.
+Accurate documentation of the type of seizures and their frequency will help to identify any 
+provoking factors, plan management and allow retrospective audit of epilepsy care. The rates 
+of seizure deterioration in pregnancy may be associated with the type of seizure.19 
+Uncontrolled tonic-clonic seizures are the strongest risk factor for SUDEP, which are the 
+main cause of death in pregnant WWE.20 SUDEP is defined as ‘sudden, unexpected, witnessed 
+or unwitnessed, nontraumatic and nondrowning death in patients with epilepsy, with or 
+without evidence for a seizure and excluding documented status epilepticus, in which 
+postmortem examination does not reveal a toxicologic or anatomic cause for death.21 
+© Royal College of Obstetricians and Gynaecologists 9of 33 RCOG Green-top Guideline No. 68 P
+P
+Evidence 
+level 2 –
+P
+Evidence 
+level 2 –
+Evidence 
+level 4 4.3 What other conditions in pregnancy should be considered in the differential
+diagnosis of epileptic seizures? 
+In pregnant women presenting with seizures in the second half of pregnancy which cannot be clearly 
+attributed to epilepsy, immediate treatment should follow existing protocols for eclampsia 
+management until a definitive diagnosis is made by a full neurological assessment. 
+Other cardiac, metabolic and intracranial conditions should be considered in the differential diagnosis. 
+Neuropsychiatric conditions including non-epileptic attack disorder should also be considered. 
+The National Institute for Health and Care Excellence (NICE) tertiary referral guidance 
+should be followed if there is diagnostic uncertainty or treatment failure.1An incorrect
+diagnosis exposes the mother and the unborn child to unnecessary and potentially harmful
+drug treatment in addition to a psychosocial burden, such as inappropriate loss of driving 
+privileges or employment restrictions.23,24 If there is diagnostic uncertainty, women who 
+present with seizures should have the involvement of a neurologist.25 
+The diagnosis may be dependent on past history of epilepsy or on risk factors for developing 
+pre-eclampsia.26,27 
+RCOG Green-top Guideline No. 68 10 of 33 © Royal College of Obstetricians and Gynaecologists Table 1. Clinical presentation of various seizures types and their effects on the mother and baby 
+Common types of Clinical presentation Effects on mother and baby 
+epilepsy/seizures 
+T0nic-clonic seizures Dramatic events with stiffening, then Sudden loss of consciousness with an 
+(previously known as bilateral jerking and a post-seizure state of uncontrolled fall without prior warning. 
+grand mal) confusion and sleepiness. Associated with a variable period of fetal
+hypoxia.22 This seizure type is associated 
+with the highest risk of SUDEP.
+Absence seizures Generalised seizures that consist of brief Effects mediated through brief loss of 
+blank spells associated with awareness although physiological effects 
+unresponsiveness, which are followed by are modest. Worsening absence seizures 
+rapid recovery. place the woman at high risk of tonic-clonic 
+seizures.
+Juvenile myoclonic Myoclonic jerks are the key feature of this Occurs more frequently after sleep 
+epilepsy form of epilepsy and often precede a deprivation and in the period soon after 
+tonic-clonic convulsion. These jerks present waking or when tired. The sudden jerks may 
+as sudden and unpredictable movements lead to falls or to dropping of objects, 
+and represent a generalised seizure. including the baby.
+Focal seizures Symptoms are variable depending on the Impairment of consciousness increases 
+(previously defined as regions and networks of the brain affected.risk of injury such as long bone fracture, 
+‘complex partial’ if Within an individual, the attacks are dental or head injury, electrocution or burns 
+seizures impair recognisable and stereotypical. Seizures compared with if consciousness is retained 
+consciousness and may impair consciousness. Primary focal(an epileptic aura only). They can be 
+‘simple partial’ if seizures can undergo secondary associated with a variable period of hypoxia 
+consciousness not generalisation. An aura is a primary focaland risk of SUDEP.
+impaired) seizure.
+P
+Evidence 
+level 4 P
+Evidence 
+level 3 Imaging modalities such as magnetic resonance imaging (MRI) and computerised 
+tomography (CT) scans are considered safe in pregnancy to assess women presenting with 
+seizures.28,29 The risk to the fetus from a single exposure is minimal.30 
+If there is doubt whether the seizure is secondary to epilepsy or eclampsia, magnesium 
+sulfate, which is the drug of choice for the treatment of eclamptic seizures, should be 
+administered until a definitive diagnosis is made.31 
+The other differential diagnoses for seizures in pregnancy include cerebral venous sinus 
+thrombosis, posterior reversible leucoencephalopathy syndrome, space-occupying lesions and 
+reversible cerebral vasoconstriction syndrome. Other conditions, such as syncope associated 
+with cardiac arrhythmia, aortic stenosis, carotid sinus sensitivity, vasovagal syncope and 
+metabolic conditions such as hypoglycaemia, hyponatraemia and Addisonian crisis will need to 
+be ruled out for first presentation of seizures in pregnancy.32 
+Non-epileptic attack disorder, also referred to as psychogenic non-epileptic seizures,
+dissociative seizures or pseudoseizures, forms an important differential diagnosis in 
+individuals with drug-resistant attacks.33 Non-epileptic attack disorder may co-exist with 
+epilepsy and pose complex diagnostic and therapeutic challenges that require 
+multidisciplinary management with access to psychological or psychiatric services. 
+5. Prepregnancy counselling and management 
+5.1 What are the risks of congenital malformations in the fetus of pregnant WWE exposed 
+and not exposed to AEDs? 
+WWE who are planning their pregnancy should have a clinician competent in the management of 
+epilepsy take responsibility for sharing decisions around choice and dose of AEDs, based on the risk 
+to the fetus and control of seizures. 
+WWE should be reassured that most mothers have normal healthy babies and the risk of congenital 
+malformations is low if they are not exposed to AEDs in the periconception period. 
+Women should be informed that the risk of congenital abnormalities in the fetus is dependent on the 
+type, number and dose of AEDs. 
+In WWE not exposed to AEDs, the incidence of major congenital malformations is similar to 
+the background risk for the general population.34 A prospective Finnish population-based 
+study reported a 2.8% (26/939) rate of congenital malformations in the offspring of WWE 
+who were not taking AEDs in the first trimester.7 
+In WWE who are taking AEDs, the risk of major congenital malformation to the fetus is 
+dependent on the type, number and dose of AED. Among AEDs, lamotrigine, and 
+carbamazepine monotherapy at lower doses have the least risk of major congenital
+malformation in the offspring.13 
+The most common major congenital malformations associated with AEDs are neural tube 
+defects, congenital heart disorders, urinary tract and skeletal abnormalities and cleft
+palate.9,11,13 Sodium valproate is associated with neural tube defects, facial cleft and 
+hypospadias; phenobarbital and phenytoin with cardiac malformations; and phenytoin and 
+carbamazepine with cleft palate in the fetus. 
+© Royal College of Obstetricians and Gynaecologists 11 of 33 RCOG Green-top Guideline No. 68 Evidence 
+level 3 
+Evidence 
+level 3 
+P
+Evidence 
+level 2+ 
+Evidence 
+level 2++ C
+BEvidence 
+level 1+ Reproductive decision-making in people with epilepsy can be influenced by an 
+overestimation of the risk of inheritance in their offspring.35 If there are known risk factors 
+for inheritance of epilepsy, or if there is a fear of inheritance, genetic counselling should be 
+offered.36 
+A systematic review and meta-analysis of 59 studies provided estimates of incidence of
+congenital malformation in fetuses born to women taking various AEDs.11 The risk was 
+highest for women taking sodium valproate (10.7 per 100, 95% CI 8.16–13.29) or AED 
+polytherapy (16.8 per 100, 95% CI 0.51–33.05) compared with the 2.3 per 100 (95% CI
+1.46–3.1) observed in mothers without epilepsy.11 
+Data from the EURAP study group 13 suggest that the lowest rates of malformation were 
+observed in women exposed to less than 300 mg per day of lamotrigine (2 per 100, 95% CI
+1.19–3.24) and to less than 400 mg per day of carbamazepine (3.4 per 100, 95% CI
+1.11–7.71).The rates of major congenital malformation in the UK and Ireland registers 10 
+were also lower in the levetiracetam monotherapy group (0.7 per 100; 95% CI 0.19–2.51) 
+than the polytherapy group (5.6 per 100, 95% CI 3.54–8.56).10 
+There is insufficient evidence to provide robust estimates of risk of major congenital malformation for 
+other AEDs in monotherapy such as eslicarbazepine, gabapentin, lacosamide, oxcarbazepine,
+perampanel, pregabalin, topiramate or zonisamide. 
+The risk of recurrence for major congenital malformation was increased (16.8 per 100) in 
+WWE with a previous child with major congenital malformation.37 There was no significant
+association between epilepsy type and tonic-clonic seizures in the first trimester and major 
+congenital malformations. 
+5.2 What are the long-term neurodevelopmental outcomes of exposure to AEDs and maternal
+seizure in infants born to WWE? 
+WWE and their partners need to be informed about the possible adverse impact on long-term 
+neurodevelopment of the newborn following in utero exposure to sodium valproate. 
+Based on limited evidence, in utero exposure to carbamazepine and lamotrigine does not appear to 
+adversely affect neurodevelopment of the offspring. There is very little evidence for levetiracetam and 
+phenytoin. Parents should be informed that evidence on long-term outcomes is based on small 
+numbers of children. 
+A 2014 Cochrane review showed that there were no significant differences in the 
+developmental quotient of children exposed to the AEDs carbamazepine, lamotrigine and 
+phenytoin when compared with infants of mothers without epilepsy or with offspring of
+mothers with epilepsy not taking AEDs.38 Children exposed to sodium valproate in utero 
+had a significantly lower developmental quotient when compared with those born to WWE 
+who were not taking AEDs, and to those born to women without epilepsy.38 
+The intelligence quotient (IQ), verbal IQ and performance IQ were lower in children 
+exposed to sodium valproate compared with women without epilepsy and with WWE not
+taking AEDs.14,38 Exposure to carbamazepine had no effect on the IQ, verbal IQ or 
+performance IQ of these children compared with the offspring of women without epilepsy 
+or WWE not on medication.38 
+RCOG Green-top Guideline No. 68 12 of 33 © Royal College of Obstetricians and Gynaecologists Evidence 
+level 2++ 
+Evidence 
+level 2+ 
+Evidence 
+level 2+ 
+C
+C
+Evidence 
+level 2++ Evidence 
+level 3 Children exposed to sodium valproate had lower IQ at 6 years of age compared with those 
+exposed to carbamazepine ( P = 0.0015), lamotrigine ( P= 0.0003) or phenytoin ( P=
+0.0006).15 They also performed poorly on measures of verbal and memory abilities compared 
+with children exposed to other AEDs, and had lower nonverbal and executive functions 
+compared with children exposed to lamotrigine (but not carbamazepine or phenytoin).15 
+High doses of sodium valproate were negatively associated with verbal ability, IQ, nonverbal
+ability, memory and executive function and this was not observed with other AEDs.15 
+In utero exposure to sodium valproate is associated with increased rates of childhood autism 
+(adjusted hazard ratio 2.9, 95% CI 1.4–6.0).39,40 
+Very few studies to date have assessed the cognitive abilities of children exposed to 
+levetiracetam, but initial outcomes based on limited numbers have been reassuring.41,42 
+Little is known about other new AEDs or combination therapies and the absence of data should not be 
+taken as an indication of fetal safety.
+5.3 To what extent can congenital abnormalities be minimised in WWE? 
+All WWE should be advised to take 5 mg/day of folic acid prior to conception and to continue the intake 
+until at least the end of the first trimester to reduce the incidence of major congenital malformation. 
+Prepregnancy folic acid 5 mg/day may be helpful in reducing the risk of AED-related cognitive deficits. 
+The lowest effective dose of the most appropriate AED should be used. 
+Exposure to sodium valproate and other AED polytherapy should be minimised by changing the 
+medication prior to conception, as recommended by an epilepsy specialist after a careful evaluation 
+of the potential risks and benefits. 
+Studies evaluating the effects of folic acid supplementation in pregnancy on major congenital
+malformation have shown varied results.43,44 Two studies have shown an association between 
+low folate levels 45 or no supplementation 46 and major congenital malformation. A further 
+two studies have failed to show a benefit with folic acid in reducing major congenital
+malformation.47,48 
+The long-term follow-up of children born to WWE taking lamotrigine, carbamazepine,
+phenytoin or sodium valproate monotherapies in pregnancy showed that compared with 
+unexposed children (101, 95% CI 98–104), the mean IQs were higher in children exposed to 
+periconceptional folate (108, 95% CI 106–111) ( P= 0.0009).15 Given the potential benefit of
+folate on long-term cognitive outcomes, the known safety of the supplement and the absence 
+of evidence of its ineffectiveness in preventing major congenital malformation, it is advised 
+that WWE are prescribed high-dose folic acid 5 mg daily from at least 3 months prior to 
+conception to the end of the first trimester.
+Women taking sodium valproate or other AED polytherapy should have a detailed discussion with the 
+epilepsy specialist on the risks and benefits of continuing or changing the AED prior to planning 
+pregnancy. Where possible, the aim will be to avoid sodium valproate and AED polytherapy. However,
+if the risk of maternal seizure deterioration from changing the AED is deemed to be high, women will
+need to be advised to continue the sodium valproate or AED polytherapy.
+© Royal College of Obstetricians and Gynaecologists 13 of 33 RCOG Green-top Guideline No. 68 Evidence 
+level 2+ 
+Evidence 
+level 2 –
+P
+C
+B
+P
+Evidence 
+level 2 –
+Evidence 
+level 2+ Evidence 
+level 2++ 5.4 What is the effect of pregnancy on seizures in WWE? 
+WWE should be informed that two-thirds will not have seizure deterioration in pregnancy. 
+Pregnant women who have experienced seizures in the year prior to conception require close 
+monitoring for their epilepsy. 
+The majority of women (67%) do not experience a seizure in pregnancy.19 The seizure-free 
+duration is the most important factor in assessing the risk of seizure deterioration.49 In 
+women who were seizure free for at least 9 months to 1 year prior to pregnancy, 74–92% 
+continued to be seizure free in pregnancy.49–51 
+The data from the EURAP (International Registry of Antiepileptic Drugs and Pregnancy) 
+study showed that pregnant women with idiopathic generalised epilepsies were more likely 
+to remain seizure free (74%) than those with focal epilepsies (60%).19 There is insufficient
+evidence to assess whether the rates of status epilepticus are increased in pregnant WWE 
+compared with nonpregnant women. Status epilepticus is defined as 30 minutes of continual
+seizure activity or a cluster of seizures without recovery. Currently, there are no tests to 
+predict the risk of seizure deterioration in pregnancy.
+5.5 How should risks be communicated to WWE? 
+WWE should be provided with verbal and written information on prenatal screening and its 
+implications, the risks of self-discontinuation of AEDs and the effects of seizures and AEDs on the fetus 
+and on the pregnancy, breastfeeding and contraception. 
+WWE should be informed that the introduction of a few safety precautions may significantly reduce 
+the risk of accidents and minimise anxiety. 
+Healthcare professionals should acknowledge the concerns of WWE and be aware of the effect of such 
+concerns on their adherence to AEDs. 
+WWE should be fully aware of the implications of future pregnancy on their epilepsy and the health 
+of their offspring in the short and long term. Any information on prenatal screening for major 
+congenital malformation should highlight the detection rates, limitations of the test performance and 
+the implications, such as termination of pregnancy. 
+Pregnant WWE tend to overestimate the risks of teratogenicity associated with intake of
+AEDs in pregnancy. Risk perception is likely to have an effect on adherence to AEDs in 
+pregnancy.52 
+An observational study on pregnant WWE taking levetiracetam or carbamazepine showed 
+that 15% (4/26) of mothers self-discontinued their AED in pregnancy.53 This rate may be 
+higher for WWE taking sodium valproate due to its high teratogenic potential. The 
+risk–benefit ratio for both mother and baby from seizures and exposure to AEDs should be 
+communicated by providing relevant estimates.
+Women have concerns regarding the effect of epilepsy and its treatment on motherhood. 
+This includes fear of harming the baby or not being able to fulfil the role of mother to 
+their expectations.54 Maternal and neonatal death from drowning is a known risk and 
+mothers should be advised to bathe themselves or their children in shallow water and with 
+assistance to minimise this risk.6
+RCOG Green-top Guideline No. 68 14 of 33 © Royal College of Obstetricians and Gynaecologists Evidence 
+level 2 –
+Evidence 
+level 2+ 
+P
+P
+D
+Evidence 
+level 3 C
+DWWE also feel that there is a lack of understanding among healthcare professionals about
+epilepsy and the specific issues related to pregnancy. A survey of WWE showed that 87% of
+women would like to be counselled about the risk of epilepsy and AEDs to their unborn 
+child, and about one-half of them would like a more proactive role in the discussions about
+treatment decisions.55 
+Both written and oral communications are important to WWE and women consider access 
+to the same care provider to be important.54 
+6. Antepartum management 
+6.1 What are the recommended models for antenatal care of WWE and what are the benefits
+of joint obstetrics and neurology clinics? 
+Pregnant WWE should have access to regular planned antenatal care with a designated epilepsy care 
+team. 
+WWE taking AEDs who become unexpectedly pregnant should be able to discuss therapy with an 
+epilepsy specialist on an urgent basis. It is never recommended to stop or change AEDs abruptly 
+without an informed discussion. 
+All pregnant WWE should be provided with information about the UK Epilepsy and Pregnancy Register 
+and invited to register. 
+Confidential Enquiry findings on maternal deaths due to epilepsy have identified the need 
+for collaborative working between obstetricians, midwives and epilepsy specialists in 
+pregnancy.17 Prompt establishment of pathways between primary care and obstetric units 
+will allow early referral of WWE to a joint clinic.
+The multidisciplinary setting should involve an obstetrician with a special interest in epilepsy, working 
+alongside a neurologist with specialist training in epilepsy or epilepsy specialist nurses. The team may 
+involve other specialists such as neuropsychiatrists where required. To increase normality where 
+appropriate, it is essential to include a midwife in the care of these women. Other models of care, such 
+as a clinic led by an obstetric physician, or by obstetricians with training in maternal medicine, with 
+input from the midwife and neurology team can also contribute to improved continuity of care.
+Such models will need to ensure that they are part of an integrated antenatal care pathway and take 
+into consideration the local resources. Local guidelines and clear mechanisms of communication need 
+to be in place for the care of WWE at all stages of their pregnancy until the postnatal period. There 
+are no studies on the evaluation of clinical effectiveness of joint obstetrics and neurology clinics 
+on maternal and fetal outcomes in WWE.
+In women with an unplanned pregnancy, an individualised management plan should be agreed 
+between the woman with epilepsy and the epilepsy specialist. This may include a change in the dose 
+or type of AED aimed at minimising the risk to the fetus. AEDs should not be abruptly stopped or 
+changed without appropriate discussion. Even high-risk drugs like sodium valproate are still the drugs 
+of choice for certain epilepsies and a discussion of risks and benefits is mandatory.
+© Royal College of Obstetricians and Gynaecologists 15 of 33 RCOG Green-top Guideline No. 68 Evidence 
+level 2 –
+Evidence 
+level 3 
+P
+P
+P
+Evidence 
+level 3 All pregnant women should be invited to join the UK Epilepsy and Pregnancy Register and 
+informed of the anonymity of the data collection and the value of the data for clinical
+practice and future research.4
+6.2 What is the optimum method and timing of screening for detection of fetal
+abnormalities? 
+Early pregnancy can be an opportunity to screen for structural abnormalities. The fetal anomaly scan 
+at 18 +0 –20 +6 weeks of gestation can identify major cardiac defects in addition to neural tube defects. 
+All WWE should be offered a detailed ultrasound in line with the National Health Service Fetal Anomaly 
+Screening Programme standards. 
+Biochemical screening with maternal serum alphafetoprotein when combined with 
+ultrasonography increases the detection rate for neural tube defects to 94–100%,56 thereby 
+offering the opportunity to detect these abnormalities in early gestation for WWE. 
+No studies have assessed the role of routine fetal echocardiography in detecting congenital heart disease 
+in babies of WWE taking AEDs compared with the 20-week detailed scan that is currently offered. 
+6.3 How should women taking AEDs be monitored to avoid worsening of seizures? For WWE 
+taking AEDs, is dose escalation better than expectant management? 
+Based on current evidence, routine monitoring of serum AED levels in pregnancy is not recommended 
+although individual circumstances may be taken into account. 
+The levels of most AEDs are known to fall in pregnancy due to the changes in the 
+pharmacokinetics of absorption, metabolism, haemodilution and excretion in pregnancy.57–59 
+The levels of lamotrigine are known to fall by up to 70% in pregnancy.60 
+Some have postulated that falling drug levels may contribute to worsening seizures, leading 
+some clinicians to prophylactically increase lamotrigine dosing during pregnancy. Other 
+clinicians have concerns about the potential harms of increasing drug doses in pregnancy 
+without clear evidence of benefit over risk. Current practice in AED monitoring is either 
+regular therapeutic drug monitoring 61 or monitoring based on clinical features to adjust
+the AED dose.1,2 There is no clear evidence to show that therapeutic drug monitoring 
+reduces the risk of seizure deterioration compared with monitoring based on clinical
+features. 
+The findings of a systematic review on the effectiveness of the above two monitoring 
+methods in pregnant women taking lamotrigine were limited due to the inclusion of poor 
+quality observational studies with small numbers of women.62 The systematic review 
+included five studies that were heterogeneous in population and intervention. Only one (a 
+case series of 15 patients) of the five studies directly compared the two strategies in WWE 
+taking lamotrigine. Given the paucity of evidence, there is no clear indication to undertake 
+therapeutic drug monitoring in pregnancy routinely. Clinicians will need to take into account
+other features such as suspicion of non-adherence, toxicity and intractable seizures in their 
+decisions on therapeutic drug monitoring.
+RCOG Green-top Guideline No. 68 16 of 33 © Royal College of Obstetricians and Gynaecologists D
+Evidence 
+level 2 –
+C
+Evidence 
+level 2 –
+Evidence 
+level 4 
+Evidence 
+level 2 –Evidence 
+level 4 
+P6.4 What are the adverse effects of AEDs in pregnancy on the mother and how can they be 
+minimised? 
+Healthcare professionals should be alert to signs of depression, anxiety and any neuropsychiatric 
+symptoms in mothers exposed to AEDs. 
+Clinicians caring for mothers with epilepsy taking AEDs should be aware of the effects of the 
+drugs, particularly those relating to cognitive and psychiatric problems.63 WWE should be 
+advised that certain epilepsies as well as particular AEDs carry an increased risk of depression 
+with features such as low mood, inability to plan and organise thoughts, poor concentration,
+tiredness, irritability or anger.64 Self-monitoring for these symptoms and early intervention 
+may improve quality of life.
+AEDs have the potential to affect maternal cognition, especially where high doses or 
+polytherapy are used. Additional factors such as psychosocial problems, low esteem and fear 
+of having seizures may have a negative impact on cognitive performance.65 Appropriate and 
+early referral to the perinatal mental health team is required if there are any concerns 
+regarding cognitive functions such as attention and memory in combination with mood 
+disturbance.
+6.5 What are the risks of obstetric complications in pregnant WWE, including those taking 
+AEDs? 
+Healthcare professionals need to be aware of the small but significant increase in obstetric risks to 
+WWE and those exposed to AEDs, and to incorporate this in the counselling of women and the planning 
+of management. 
+A 2015 systematic review 66 identified 38 studies (2 837 325 women) examining pregnancy 
+and reproductive outcomes in relation to epilepsy and pregnancy. In WWE compared with 
+women without epilepsy, the odds of spontaneous miscarriage (OR 1.54, 95% CI 1.02–2.32),
+antepartum haemorrhage (OR 1.49, 95% CI 1.01–2.20), hypertensive disorders (OR 1.37, 
+95% CI 1.21–1.55), induction of labour (OR 1.67, 95% CI 1.31–2.11), caesarean section (OR 
+1.40, 95% CI 1.23–1.58), any preterm delivery (less than 37 weeks; OR 1.16, 95% CI 1.01–1.34),
+fetal growth restriction (OR 1.26, 95% CI 1.20–1.33) and postpartum haemorrhage (OR 1.29,
+95% CI 1.13–1.49) were increased. There were no differences between the two groups in the 
+odds of gestational diabetes or perinatal death. 
+Compared with WWE not exposed to AEDs,66 those taking AEDs demonstrated higher odds 
+ratio of induction of labour (OR 1.40, 95% CI 1.05–1.85), fetal growth restriction (OR 3.51,
+95% CI 1.23–10.01) and postpartum haemorrhage (OR 1.33, 95% CI 1.16–1.54). The odds of
+admission to the neonatal intensive care unit were increased in the same group (OR 1.42,
+95% CI 1.13–1.78). There were no significant differences between the two groups for 
+hypertensive disorders, caesarean section, spontaneous miscarriage, antepartum 
+haemorrhage, preterm delivery, or fetal death. 
+In studies that compared WWE receiving monotherapy with those receiving polytherapy,66 
+the odds of caesarean section were increased in the polytherapy group (OR 1.47, 95% CI
+1.07–2.02). There were no differences in the odds of spontaneous miscarriage, preterm 
+delivery before 36 or 37 weeks of gestation, antepartum haemorrhage or postpartum 
+haemorrhage. The two groups showed no difference in the odds of fetal outcomes such as 
+small-for-gestational-age fetuses, stillbirths or admissions to the neonatal intensive care unit. 
+© Royal College of Obstetricians and Gynaecologists 17 of 33 RCOG Green-top Guideline No. 68 B
+Evidence 
+level 2++ D
+Evidence 
+level 2 –6.6 How should WWE be monitored in pregnancy? 
+In the antenatal period, WWE should be regularly assessed for the following: risk factors for seizures, 
+such as sleep deprivation and stress; adherence to AEDs; and seizure type and frequency. 
+If admission is required antenatally, WWE at reasonable risk of seizures should be accommodated in 
+an environment that allows for continuous observation by a carer, partner or nursing staff. 
+At subsequent visits after the booking appointment, the following need to be evaluated: the 
+mother’s wellbeing, including ability to cope, memory, concentration and sleep; symptoms such as 
+tiredness and dizziness; the AEDs being taken, including dose and dosing schedule; and seizure 
+frequency and type, including auras. 
+Early and appropriate discussion with the epilepsy specialist nurse or neurologist is required 
+if there is a deterioration in seizure control. Precipitants of seizures such as fasting, sleep 
+deprivation and stress should be identified and managed accordingly.67 Specialist advice 
+may include altering drug doses, addition of new drugs or recommending admission to 
+hospital. 
+In WWE with active seizures, advising on care to minimise the period of time they go 
+unobserved should be considered. Individuals with unwitnessed seizures are at high risk of
+SUDEP, with nocturnal seizures being an independent risk factor.68 This may include advising 
+WWE who are at reasonable risk of seizures to not to sleep alone at night. Inpatient nursing 
+should be in an environment in which continuous care from a partner or nursing 
+observations takes place.
+6.7 How should the fetus be monitored in pregnancy? What are the effects of AEDs on 
+cardiotocography? 
+Serial growth scans are required for detection of small-for-gestational-age babies and to plan further 
+management in WWE exposed to AEDs. 
+There is no role for routine antepartum fetal surveillance with cardiotocography in WWE taking AEDs. 
+The odds of having a small-for-gestational-age fetus are increased in WWE (OR 1.26, 95% CI
+1.20–1.33) compared with those without the condition. The odds are 3.5 times higher in 
+WWE exposed to AEDs (OR 3.51, 95% CI 1.23–10.01) compared with those not taking 
+AEDs.66 Given the increased risk in WWE exposed to AEDs, serial growth scans should be 
+offered from 28 weeks of gestation for detection of growth restriction.
+Fetal heart rate changes such as bradycardia and reduced variability during a seizure have 
+been reported due to possible fetal hypoxia.22,69,70 A small study comparing the cardio-
+tocography pattern in pregnant WWE taking AEDs did not show any difference in fetal 
+heart rate parameters such as baseline heart rate, number of accelerations or duration of
+high and low variation episodes.71 There is therefore no evidence for routine antepartum 
+fetal surveillance with cardiotocography in WWE taking AEDs .
+RCOG Green-top Guideline No. 68 18 of 33 © Royal College of Obstetricians and Gynaecologists Evidence 
+level 4 
+Evidence 
+level 3 
+B
+D
+Evidence 
+level 2++ 
+Evidence 
+level 2 –P
+P6.8 What is the role of vitamin K in preventing haemorrhagic disease of the newborn and 
+maternal haemorrhage in WWE taking AEDs? 
+All babies born to WWE taking enzyme-inducing AEDs should be offered 1 mg of intramuscular 
+vitamin K to prevent haemorrhagic disease of the newborn. 
+There is insufficient evidence to recommend routine maternal use of oral vitamin K to prevent 
+haemorrhagic disease of the newborn in WWE taking enzyme-inducing AEDs. 
+There is insufficient evidence to recommend giving vitamin K to WWE to prevent postpartum 
+haemorrhage. 
+Enzyme-inducing AEDs (carbamazepine, phenytoin, phenobarbital, primidone, oxcarbazepine,
+topiramate and eslicarbazepine) are considered to competitively inhibit the precursors of
+clotting factors and affect fetal microsomal enzymes that degrade vitamin K, thereby 
+increasing the risk of haemorrhagic disease of the newborn. A systematic review to assess 
+the effect of prenatal vitamin K in preventing haemorrhagic disease of the newborn in WWE 
+taking enzyme-inducing AEDs did not identify any randomised trials.72 Two observational
+studies failed to show a beneficial effect for prenatal vitamin K to prevent haemorrhagic 
+disease of the newborn,73,74 although it is worth noting that babies in these studies were 
+also routinely administered 1 mg of vitamin K injection at birth. Despite the lack of objective 
+evidence, however, it seems reasonable to offer parenteral vitamin K supplementation 
+routinely to all babies born to mothers on enzyme-inducing AEDs.
+No studies have evaluated the effectiveness of antenatal administration of oral vitamin K in preventing 
+postpartum haemorrhage.
+6.9 What is the optimal timing and mode of delivery for WWE based on seizure control? 
+WWE should be reassured that most will have an uncomplicated labour and delivery. 
+The diagnosis of epilepsy per se is not an indication for planned caesarean section or induction of 
+labour. 
+In WWE with no underlying obstetric risk factors whose seizures are well-controlled seizures, there is 
+no indication for early delivery. In a small proportion of women with significant deterioration of
+seizures, which are recurrent and prolonged, and who are at high risk of status epilepticus, elective 
+caesarean section may be considered. There is no evidence on the optimal timing and mode of 
+delivery in WWE. 
+6.10 How should women with non-epileptic attack disorder be counselled in pregnancy and 
+how should their non-epileptic seizures be managed? 
+Inappropriate medical intervention, including AED administration and iatrogenic early delivery, 
+should be avoided when there is a firm diagnosis of non-epileptic attack disorder. 
+Diagnostic awareness of non-epileptic attack disorder is an important first step in 
+management.75 Non-epileptic attack disorder is considered to have a psychological aetiology,
+most commonly dissociation. It is not caused by epileptiform electroencephalography (EEG) 
+discharge and will not respond to AEDs. Management of women with non-epileptic attack 
+disorder should include access to specialist psychiatric or psychological services.
+© Royal College of Obstetricians and Gynaecologists 19 of 33 RCOG Green-top Guideline No. 68 P
+D
+D
+Evidence 
+level 3 P
+D
+P
+Evidence 
+level 2+ Epilepsy and non-epileptic attack disorder have very different management strategies. In women with 
+known non-epileptic attack disorder presenting with seizure-like episodes in labour, obstetricians 
+will need to rely on the previous diagnosis, which was documented as non-epileptic attack disorder,
+and avoid emergency obstetric and medical interventions such as delivery, AEDs or diazepam. Close 
+liaison is required with the neurology and mental health teams for further management where 
+appropriate.
+6.11 Where required, what dose of antenatal corticosteroids should be given to WWE on 
+enzyme-inducing AEDs? 
+In WWE taking enzyme-inducing AEDs who are at risk of preterm delivery, doubling of the antenatal 
+corticosteroid dose for prophylaxis against respiratory distress syndrome in the newborn is not 
+recommended. 
+WWE taking enzyme-inducing AEDs, such as phenytoin, carbamazepine and phenobarbital,
+may increase their metabolism of corticosteroids, with reduced therapeutic effectiveness.76 
+No studies have assessed the effectiveness of higher or frequent doses of corticosteroids on 
+neonatal outcomes in WWE exposed to enzyme-inducing AEDs and at risk of preterm 
+delivery. In the absence of evidence of benefit with increased dose of steroids, and the 
+potential harm with high steroid doses, routine doubling of steroid is not recommended. 
+7. Intrapartum care 
+7.1 What are the risks and risk factors for seizures in labour in WWE and how can they be 
+minimised? 
+Pregnant WWE should be counselled that the risk of seizures in labour is low. 
+Adequate analgesia and appropriate care in labour should be provided to minimise risk factors for 
+seizures such as insomnia, stress and dehydration. 
+Long-acting benzodiazepines such as clobazam can be considered if there is a very high risk of seizures 
+in the peripartum period. 
+AED intake should be continued during labour. If this cannot be tolerated orally, a parenteral 
+alternative should be administered. 
+Tonic-clonic seizures occur in about 1–2% of WWE in labour and within 24 hours of delivery 
+in a further 1–2%.77 The EURAP registry reported the occurrence of seizures in 3.5% 
+(60/1956) of WWE in labour.78 
+Seizures in labour may lead to maternal hypoxia (due to apnoea during the seizure), and 
+fetal hypoxia and acidosis secondary to uterine hypertonus.22,79 
+Sleep deprivation and non-intake of AEDs are risk factors for seizures in labour, and it is 
+thought that pain, tiredness, stress and dehydration may be factors as well.80 Healthcare 
+professionals will need to ensure that doses of AEDs are not missed during labour and 
+delivery, and should consider parenteral alternatives in cases of excess vomiting. Adequate 
+hydration and pain relief with an epidural will minimise the risks of seizures in labour and 
+provides maximum safety in the event of a seizure. Avoidable delays should be minimised 
+for planned induction of labour or elective caesarean section.
+RCOG Green-top Guideline No. 68 20 of 33 © Royal College of Obstetricians and Gynaecologists C
+P
+D
+P
+Evidence 
+level 3 
+Evidence 
+level 2 –D
+Evidence 
+level 4 Women at a very high risk of seizures can be managed with an additional benzodiazepine 
+such as clobazam.81 Prophylactic clobazam is considered in the following circumstances:
+recent convulsive seizures, recent history of seizure provocation by stress or sleep 
+deprivation, or a history of seizures in previous labour. The risks from clobazam, such as 
+respiratory depression in the newborn, need to be balanced against the benefit due to seizure 
+prevention. 
+Women should be advised to continue taking regular AEDs orally during induction of labour and during 
+labour. If not tolerated orally,AEDs may be given parenterally (this includes phenytoin, phenobarbital,
+sodium valproate and levetiracetam).
+7.2 What is the optimum management of epileptic seizures in labour? 
+Every obstetric unit should have written guidelines on the management of seizures in labour. 
+Seizures in labour should be terminated as soon as possible to avoid mate rnal and fetal hypoxia and 
+fetal acidosis. Benzodiazepines are the drugs of choice. 
+Continuous fetal monitoring is recommended in women at high risk of a seizure in labour, and following 
+an intrapartum seizure. 
+Any seizure lasting more than 5 minutes is unusual and represents a high risk of progressing 
+to convulsive status epilepticus, a life-threatening medical emergency which affects around 
+1% of pregnancies in WWE.82 Treatment should be initiated as soon as reasonably possible 
+before status epilepticus and pharmacoresistance is established.83,84 
+Left lateral tilt should be established alongside maintenance of airway and oxygenation at all times. 
+There are no studies on the optimal management of epileptic seizures in labour. Outwith pregnancy,
+benzodiazepines are the drug of choice in status epilepticus: 
+GIn those with intravenous access, lorazepam given as an intravenous dose of 0.1 mg/kg (usually a 
+4 mg bolus, with a further dose after 10−20 minutes) is preferred. Diazepam 5 –10 mg administered 
+slowly intravenously is an alternative. 
+GIf there is no intravenous access, diazepam 10−20 mg rectally repeated once 15 minutes later if there 
+is a continued risk of status epilepticus, or midazolam 10 mg as a buccal preparation are suitable. 
+If seizures are not controlled, consider administration of phenytoin or fosphenytoin. The 
+loading dose of phenytoin is 10–15 mg/kg by intravenous infusion, with the usual dosage for 
+an adult of about 1000 mg. Guidance on the management of seizures is available in the NICE 
+guideline on epilepsy.1
+If there is persistent uterine hypertonus, consider administration of tocolytic agents. After the mother 
+is stabilised, continuous electronic fetal monitoring should be commenced. If the fetal heart rate does 
+not begin to recover within 5 minutes or if the seizures are recurrent, expedite delivery. This may 
+require caesarean delivery if vaginal delivery is not imminent.
+The neonatal team should be informed, as there is a risk of neonatal withdrawal syndrome 
+with the maternal use of benzodiazepines and AEDs.85 
+© Royal College of Obstetricians and Gynaecologists 21 of 33 RCOG Green-top Guideline No. 68 P
+Evidence 
+level 2 –
+Evidence 
+level 2++ 
+Evidence 
+level 2 –Evidence 
+level 4 
+P
+D7.3 What are the recommended methods of analgesia in labour for WWE? 
+Pain relief in labour should be prioritised in WWE, with options including transcutaneous electrical 
+nerve stimulation (TENS), nitrous oxide and oxygen (Entonox ®), and regional analgesia. 
+Pethidine should be used with caution in WWE for analgesia in labour. Diamorphine should be used in 
+preference to pethidine. 
+TENS, Entonox ®and regional analgesia (epidural, spinal, combined spinal epidural) are 
+suitable and safe methods of analgesia in labour.86 An epidural can be considered early to 
+minimise precipitating factors for seizures during labour such as overbreathing, sleep 
+deprivation, pain and emotional stress. 
+Diamorphine should be used in preference to pethidine for analgesia in labour. Pethidine is 
+metabolised to norpethidine, which is known to be epileptogenic when administered in 
+high doses to patients with normal renal function. Pethidine should therefore be avoided or 
+used with caution.87,88 
+If general anaesthesia becomes necessary, it is prudent to avoid anaesthetic agents such as 
+pethidine, ketamine and sevoflurane. The first two are known to lower seizure threshold and 
+the third may have epileptogenic potential.89–91 
+7.4 What are the effects of induction of labour on WWE and do AEDs affect induction agents? 
+There are no known contraindications to use of any induction agents in WWE taking AEDs. 
+Epilepsy per se is not an indication for induction of labour. The rates of induction of labour 
+are higher in WWE than in those without epilepsy.92 Healthcare professionals will need to 
+be aware that risk factors such as stress, insomnia and dehydration are high in women with 
+prolonged induction and aim to minimise them.
+There is no evidence that AEDs affect induction agents. 
+7.5 What is the most suitable place of delivery for WWE? 
+For WWE at risk of peripartum seizures delivery should be in a consultant-led unit with facilities for 
+one-to-one midwifery care and maternal and neonatal resuscitation. [GPP] 
+The decision to use water for analgesia and birth should be made on an individual basis. WWE who are 
+not taking AEDs and who have been seizure free for a significant period may be offered a water birth 
+after discussion with their epilepsy specialist. [GPP] 
+If seizure deterioration is anticipated in the peripartum period, delivery should take place 
+where there are facilities for maternal and neonatal resuscitation and treatment of maternal
+seizures.1Continuous electronic fetal monitoring is recommended in these mothers in 
+labour. This should be documented in the care plan. In women who are at low risk of
+intrapartum seizures, fetal monitoring may be carried out by intermittent auscultation. 
+One-to-one midwifery care is recommended to allow close monitoring ofWWE in labour and to 
+prevent known precipitants of seizure in labour such as overbreathing, poor control of pain,
+dehydration and omission of AED intake.
+RCOG Green-top Guideline No. 68 22 of 33 © Royal College of Obstetricians and Gynaecologists P
+Evidence 
+level 2+ 
+P
+P
+Evidence 
+level 4 P
+D
+Evidence 
+level 3 Evidence 
+level 4 The decision to use water for analgesia and birth must be made based on the seizure risk status of the 
+mother after discussion between the parents and team caring for the woman, with attention given to 
+how the risk of drowning can be minimised in the unlikely event of seizure. Appropriate safety 
+measures such as a hoist should be available. Healthcare professionals and parents will need to be 
+aware of the difficulties in managing a seizure in labour in this situation and the small potential risk of
+drowning.
+8. Postpartum management 
+8.1 What is the risk of seizure deterioration postpartum and how can this be minimised? 
+WWE and their caregivers need to be aware that although the overall chance of seizures during and 
+immediately after delivery is low, it is relatively higher than during pregnancy. 
+WWE should be advised to continue their AEDs postnatally. 
+Mothers should be well supported in the postnatal period to ensure that triggers of seizure 
+deterioration such as sleep deprivation, stress and pain are minimised. 
+The immediate postpartum period is a high-risk period for exacerbation of seizure frequency 
+due to increased stress, sleep deprivation, missed medication and anxiety. A prospective study 
+of 1297 pregnancies in WWE showed that the period of maximal seizure exacerbation was 
+the 3-day peripartum period in women with generalised and partial seizures. The risk was 
+highest in women who had seizures in the month prior to pregnancy compared with those 
+who were free of seizures during the same period (OR 3.7, 95% CI 2.4–5.9).93 
+Women should ensure that they take their AEDs as prescribed in the postnatal period. Nausea and 
+vomiting should be treated and if there is no oral intake, consideration should be given to parenteral
+administration of AEDs. Sleep deprivation-related seizures could be reduced by arranging help for the 
+mother, especially for night-time feeds. If the mother breastfeeds, storage of breast milk pumped during 
+the day might be beneficial. Reviewing the daily activities of the mother and identifying high-risk 
+situations can reduce the risks to the mother and baby due to seizures.
+8.2 Is there a need to modify the dose of AED after delivery? 
+If the AED dose was increased in pregnancy, it should be reviewed within 10 days of delivery to avoid 
+postpartum toxicity. 
+Many women are on higher doses of AEDs at the end of pregnancy compared with their 
+prepregnancy dose. In the postpartum period, the physiological changes that occurred in 
+pregnancy, such as increased renal and hepatic clearance and haemodilution, are reversed 
+and these women become at risk of toxicity from high AED doses.94,95 
+The increase in the dose of AED that occurred in pregnancy should be clearly documented in the notes,
+with a comprehensive plan to liaise with the neurological team to taper the dose in the first 10 days 
+after delivery. If symptoms of AED toxicity develop in the puerperium (e.g. drowsiness, diplopia or 
+unsteadiness), urgent neurological review is needed.
+© Royal College of Obstetricians and Gynaecologists 23 of 33 RCOG Green-top Guideline No. 68 Evidence 
+level 3 PPC
+P
+Evidence 
+level 2+ 8.3 What are the effects of AED exposure on the newborn through placental transfer and from 
+breast milk? How should babies of WWE taking AEDs be monitored? 
+Neonates born to WWE taking AEDs should be monitored for adverse effects associated with AED 
+exposure in utero. 
+WWE who are taking AEDs in pregnancy should be encouraged to breastfeed. 
+Based on current evidence, mothers should be informed that the risk of adverse cognitive outcomes is 
+not increased in children exposed to AEDs through breast milk. 
+The rates of transfer of AEDs to the neonate through the placenta and breast milk vary. Many 
+of the old generation AEDs, such as phenobarbital, carbamazepine and phenytoin, and the 
+new generation drugs, such as lamotrigine, oxcarbazepine and topiramate, have an umbilical
+cord to maternal serum AED concentration (U/S) that is close to one, suggesting free transfer 
+of AED across the placenta.96 The fetal accumulation is mildly increased for levetiracetam,
+sodium valproate and gabapentin.96 
+Babies born to mothers taking AEDs may have adverse effects such as lethargy, difficulty in 
+feeding, excessive sedation and withdrawal symptoms with inconsolable crying.
+Individualised assessment should be made for the level of post-delivery monitoring required 
+for withdrawal symptoms, and for any signs of toxicity. This is especially important in 
+premature babies, and serum levels of AEDs in the baby should be checked where 
+appropriate.97 
+The magnitude of AED transfer to the baby through breast milk that is required to affect
+neonatal and childhood outcomes is not known. The American Academy of Neurology/ 
+American Epilepsy Society panel considered an AED transfer rate of 0.6 (neonatal to maternal
+plasma concentration ratio or a milk to maternal serum [M/S] concentration ratio) or 
+increasing concentrations of AED in the neonate by 25% during the follow-up period (3 days 
+up to 1 month) to be clinically important.61 
+Lamotrigine (M/S 0.6), levetiracetam (M/S 1–3.09) and topiramate (M/S 0.66–1.1) transfer to 
+a larger extent to the child from breast milk compared with sodium valproate (M/S 0.01–0.1),
+carbamazepine (M/S 0.36–0.41) and phenytoin (M/S 0.06–0.19), which have minimal
+transfer.96 
+Breastfeeding has not been shown to affect the cognitive outcomes at 3 years of age in 
+children who were exposed in utero to lamotrigine, sodium valproate, phenytoin or 
+carbamazepine monotherapy.98 
+A prospective study on babies who were exposed to AEDs in utero showed that the 
+psychomotor development of the breastfed children was better at 6 and 18 months 
+compared with those who were not breastfed or were breastfed for less than 6 months.99 
+Other options such as alternating breast and bottle milk could be considered if there are 
+any concerns about AED exposure.
+RCOG Green-top Guideline No. 68 24 of 33 © Royal College of Obstetricians and Gynaecologists Evidence 
+level 3 
+Evidence 
+level 2+ 
+Evidence 
+level 2++ D
+C
+C
+Evidence 
+level 3 
+Evidence 
+level 4 8.4 What advice should be given regarding safety strategies and care of the baby? 
+Postpartum safety advice and strategies should be part of the antenatal and postnatal discussions 
+with the mother alongside breastfeeding, seizure deterioration and AED intake. 
+Postnatal mothers with epilepsy at reasonable risk of seizures should be accommodated in single 
+rooms only when there is provision for continuous observation by a carer, partner or nursing staff. 
+The safety of the mother and baby in the puerperium is the most important issue to be addressed.
+Generalised seizures, as well as partial seizures and myoclonic jerks, can result in accidental injuries to 
+the mother and the baby, such as drowning, falls, burns and electrocution. The discussions around 
+caring for the baby should be initiated in the preconception period, continued antenatally and 
+reinforced in the postnatal period.
+Safety strategies include nursing the baby on the floor, using very shallow baby baths, laying the baby 
+down if there is a warning aura, not bathing the baby unaccompanied, wearing identification tags, and 
+avoiding sleep deprivation, and alcohol if prone to myoclonic jerks. Women should ensure that family 
+and friends have knowledge of first aid and emergency contact procedures.
+8.5 How should depression be screened for in the postpartum period? 
+WWE should be screened for depressive disorder in the puerperium. Mothers should be informed about 
+the symptoms and provided with contact details for any assistance. 
+WWE are at an increased risk of depression in the postnatal period compared with mothers 
+without epilepsy. Rates of postpartum depression are higher in WWE than women 
+without epilepsy (29% versus 11% in controls),100 and in a prospective study of 56 WWE,
+risk factors for depression were found to be multiparity (OR 12.5, 95% CI 1.9–82.7) and 
+exposure to AED polytherapy (OR 9.3, 95% CI 1.5–58).101 Self-monitoring for these 
+symptoms and subsequent early intervention may improve quality of life. 
+9. Contraception 
+9.1 What contraception can be safely offered to women taking AEDs? 
+WWE should be offered effective contraception to avoid unplanned pregnancies. 
+Copper intrauterine devices (IUDs), the levonorgestrel-releasing intrauterine system (LNG-IUS) and 
+medroxyprogesterone acetate injections should be promoted as reliable methods of contraception that 
+are not affected by enzyme-inducing AEDs. 
+Women taking enzyme-inducing AEDs (carbamazepine, phenytoin, phenobarbital, primidone, 
+oxcarbazepine, topiramate and eslicarbazepine) should be counselled about the risk of failure with 
+some hormonal contraceptives. 
+Women should be counselled that the efficacy of oral contraceptives (combined hormonal 
+contraception, progestogen-only pills), transdermal patches, vaginal ring and progestogen-only 
+implants may be affected if they are taking enzyme-inducing AEDs (e.g. carbamazepine, phenytoin, 
+phenobarbital, primidone, oxcarbazepine and eslicarbazepine). 
+All methods of contraception may be offered to women taking non-enzyme-inducing AEDs (e.g. sodium 
+valproate, levetiracetam, gabapentin, vigabatrin, tiagabine and pregabalin). 
+© Royal College of Obstetricians and Gynaecologists 25 of 33 RCOG Green-top Guideline No. 68 P
+D
+C
+C
+CP
+P
+D
+Evidence 
+level 2 –WWE taking enzyme-inducing AEDs should be informed that a copper IUD is the preferred choice for 
+emergency contraception. Emergency contraception pills with levonorgestrel and ulipristal acetate are 
+affected by enzyme-inducing AEDs. 
+Women taking lamotrigine monotherapy and oestrogen-containing contraceptives should be informed 
+of the potential increase in seizures due to a fall in the levels of lamotrigine. 
+The expected failure rate of oral contraception is three times higher (3.1 per 100 woman-years) in 
+WWE taking enzyme-inducing AEDs compared with the normal population.102–104 A systematic review 
+of studies on WWE taking combined oral contraceptives reported that the levels of ethinylestradiol
+and levonorgestrel were reduced with carbamazepine, oxcarbazepine, felbamate and vigabatrin.105 
+There were no changes in the serum levels of hormones in women taking levetiracetam, gabapentin,
+zonisamide and tiagabine.105 Topiramate in therapeutic doses below 200 mg/day does not interact
+with oral contraceptives containing norethisterone and ethinylestradiol.106 Higher doses of topiramate 
+(200–800 mg/day) may modestly increase the clearance of ethinylestradiol.106 
+In women who are taking enzyme-inducers and choose to use oral contraception, the 
+contraceptive efficacy may be improved by increasing the oestrogen component to 
+50 micrograms (maximum 70 micrograms), reducing the pill-free interval from 7 days to 
+4 days and tricycling (taking three packs back to back).107 There are no data on the success 
+rates of such measures. 
+Barrier contraception should be additionally used if WWE taking enzyme-inducing AEDs 
+use oral contraceptives (combined hormonal contraception or progestogen-only pills),
+transdermal patches, vaginal rings or progestogen-only implants.108 
+For emergency contraception for WWE taking enzyme-inducing AEDs, only the copper IUD 
+is recommended. It is unclear whether a higher dose of levonorgestrel or ulipristal acetate 
+is a sufficiently effective strategy. A double dose of levonorgestrel (3 mg as a single dose 
+within 120 hours of unprotected sexual intercourse) may be used pragmatically. Ulipristal
+acetate should not be used.108 
+Oral hormonal contraceptives can alter the efficacy of some AEDs by increasing the 
+metabolism of glucuronidated drugs through induction of uridine diphosphate-glucuronosyl
+transferase (UGT1A4). Although lamotrigine is not an enzyme-inducer, oral contraceptive use 
+has been associated with a 25–70% decrease in lamotrigine trough levels, with a drop of
+more than 20% in the first 3 days after taking the pill.109 The fall in levels has the potential
+to increase seizure deterioration.110 Such a fall in lamotrigine levels is more likely to occur 
+in WWE taking lamotrigine monotherapy and oestrogen-containing contraception.
+Lamotrigine concentrations are not known to change in WWE receiving progestogen-only 
+pills, progestogen implants and injections and the LNG-IUS.105 
+There are no data available on the interaction between progestogen-only pills and 
+enzyme-inducing AEDs. Enzyme-inducing AED intake is associated with decreased oestrogen 
+and progesterone levels.102,111,112 There is insufficient evidence to recommend 
+progestogen-only pills to WWE taking enzyme-inducing AEDs.There are reports of true 
+contraceptive failures in women using AEDs and progestogen-only implants (Implanon ®,
+Nexplanon ®, Merck Sharp & Dohme Ltd., Hoddesdon, Hertfordshire).113,114 
+The medical eligibility criteria for use of a contraceptive are primarily based on the safety of the drug.
+These may not take into consideration the drug interactions which may affect ‘efficacy’ of the 
+contraceptive, rendering it less effective.
+RCOG Green-top Guideline No. 68 26 of 33 © Royal College of Obstetricians and Gynaecologists Evidence 
+level 3 C
+C
+Evidence 
+level 4 Table 2. Recommended methods of contraception in WWE taking AEDs 
+AED Combined Progestogen- Progestogen- Progestogen- LNG-IUS Copper 
+hormonal only pill only implant only injectable IUD 
+methods 
+Enzyme-inducing 3b3b2bDepot 11
+AEDs amedroxyprogesterone 
+acetate – 1 
+Norethisterone 
+enanthate – 2 b
+Non-enzyme-inducing 11 1 1 1 1
+AEDs c
+Non-enzyme-inducing 31 1 1 1 1
+AEDs: lamotrigine 
+Adapted from Faculty of Sexual and Reproductive Healthcare Clinical Effectiveness Unit. Antiepileptic Drugs and Contraception. 
+CEU Statement (January 2010). [London]: FSRH; 2010.107,115 
+aCarbamazepine, eslicarbazepine, oxcarbazepine, phenobarbital, phenytoin, primidone, rufinamide, topiramate.
+bThe consistent use of condoms is recommended.
+cBenzodiazepines, ethosuximide, gabapentin, lacosamide, levetiracetam, sodium valproate, tiagabine, vigabatrin, zonisamide. 
+UK Medical Eligibility Criteria A condition for which there is no restriction for the use of the contraceptive method with 
+(UK MEC) Category 1: the condition or in that circumstance.
+UKMEC Category 2: A condition where the advantages of using the method generally outweigh the theoretical or 
+proven risks.
+UKMEC Category 3: A condition where the theoretical or proven risks generally outweigh the advantages of using 
+the method. The provision of a method requires expert clinical judgement and/or referral to 
+a specialist provider, since use of the method is not usually recommended unless other 
+methods are not available or not acceptable.
+UKMEC Category 4: A condition that represents unacceptable health risk if the method is used.
+9.2 What are the preferred contraceptive choices in WWE and what risks need to be conveyed 
+to help them make informed decisions? 
+The risks of contraceptive failure and the short- and long-term adverse effects of each contraceptive 
+method should be carefully explained to the woman. Effective contraception is extremely important 
+with regard to stabilisation of epilepsy and planning of pregnancy to optimise outcomes. 
+A survey of 537 WWE showed that 85% were aware that some AEDs interact with 
+hormone-based contraceptives, 51% were given information that AEDs could make 
+hormone-based contraception less effective, only 9% were told that their AEDs would not
+interact with their hormone-based contraception and 25% were given no information.116 
+10. Other implications 
+10.1 What may affect the driving entitlements of WWE who are pregnant? 
+WWE should be informed of the effect of changing the dose of AED on seizures and its impact on driving 
+privileges. 
+The general driving regulations for individuals with epilepsy apply to pregnant WWE.
+Mothers will need to be informed that stopping or reducing the dose of AED in pregnancy 
+may result in seizure deterioration, including the first episode of seizures. This will have an 
+impact on driving privileges and may affect parenting and work plans.117 
+© Royal College of Obstetricians and Gynaecologists 27 of 33 RCOG Green-top Guideline No. 68 P
+Evidence 
+level 2 –
+P
+Evidence 
+level 4 10.2 What are the implications of disability legislation for WWE and health service providers? 
+Healthcare providers need to be aware of equality legislation in the UK that protects individuals with 
+a disability from discrimination. 
+Discrimination on the grounds of disability is illegal, with the relevant legislation being the Equality Act
+2010 in England, Scotland and Wales, and the Disability Discrimination Act 1995 in Northern Ireland.
+Pregnancy offers a unique opportunity to work closely with pregnant mothers with epilepsy. Support
+by healthcare professionals is crucial to WWE, including access to provisions such as water birth if
+appropriate. 
+11. Recommendations for future research 
+GIdentify the optimal monitoring strategy (therapeutic drug monitoring versus monitoring based on 
+clinical features) for pregnant WWE taking AEDs with regards to maternal and fetal outcomes by a 
+randomised trial.
+GDevelopment and validation of a prognostic model for seizure deterioration in pregnancy.
+GQualitative study on women’s views on epilepsy in pregnancy, their perceptions of risk and their 
+concerns regarding AED intake in pregnancy, and the views of partners and families.
+GThe role of vitamin K in preventing postpartum haemorrhage in WWE taking AEDs.
+GThe use of double dose steroids to induce fetal lung maturity in WWE taking enzyme-inducing AEDs.
+GEffects of AED exposure (for various types and doses) in utero and through breast milk on the 
+long-term neurodevelopment of the offspring and on later diagnosis of cardiac anomalies by a 
+prospective cohort study.
+GOptimal dose of AED that minimises the long-term adverse effect on the child.
+GEpigenetic effects of AEDs on fetal outcomes.
+GEffects of newer AEDs such as levetiracetam on the fetus in the short and long term.
+GNeuropsychiatric effects of epilepsy and AEDs as assessed by WWE and their families.
+12. Auditable topics 
+Standards for audit of practice should include the following:
+GProvision of written information on the effects of epilepsy and AEDs on pregnancy outcomes and 
+seizures (100%).
+GMultidisciplinary input into prepregnancy, antenatal, intrapartum and postnatal care of WWE 
+(100%).
+Standards for audit of documentation should include the following:
+GWritten protocols for management of status epilepticus in all obstetric units (100%).
+GDocumented discussion on risks to the mother and baby from epilepsy and AEDs in the short and 
+long term (100%).
+GProportion of women enrolled in the UK Epilepsy and Pregnancy Register (100%).
+13. Useful links and support groups 
+GEpilepsy Action. Epilepsy and having a baby [https://www.epilepsy.org.uk/info/women/ 
+having-baby].
+GEpilepsy Society. Pregnancy and parenting [http://www.epilepsysociety.org.uk/pregnancy-
+and-parenting].
+GUK Epilepsy and Pregnancy Register [http://www.epilepsyandpregnancy.co.uk/].
+RCOG Green-top Guideline No. 68 28 of 33 © Royal College of Obstetricians and Gynaecologists P1. National Institute for Health and Care Excellence. The 
+epilepsies: the diagnosis and management of the 
+epilepsies in adults and children in primary and 
+secondary care . NICE clinical guideline 137. [Manchester]:
+NICE; 2012.
+2. Scottish Intercollegiate Guidelines Network. Diagnosis
+and management of epilepsy in adults: A national
+clinical guideline.SIGN publication no. 143. Edinburgh:
+SIGN; 2015.
+3. Edey S, Moran N, Nashef L. SUDEP and epilepsy-related 
+mortality in pregnancy. Epilepsia 2014;55:e72–4.
+4. UK Epilepsy and Pregnancy Register [http://www.epilepsy 
+andpregnancy.co.uk/]. Accessed 2016 Jan 6.
+5. Adab N, Chadwick DW. Management of women with 
+epilepsy during pregnancy. The Obstetrician & 
+Gynaecologist2006;8:20–5.
+6. Knight M, Kenyon S, Brocklehurst P, Neilson J, Shakespeare 
+J, Kurinczuk JJ (Eds.) on behalf of MBRRACE-UK. 
+Saving Lives, Improving Mothers’ Care: Lessons learned 
+to inform future maternity care from the UK and 
+Ireland Confidential Enquiries into Maternal Deaths and 
+Morbidity 2009–12 . Oxford: National Perinatal
+Epidemiology Unit; 2014 [https://www.npeu.ox.ac.uk/ 
+mbrrace-uk/reports]. 
+7. Artama M, Auvinen A, Raudaskoski T, Isojärvi I, Isojärvi J.
+Antiepileptic drug use of women with epilepsy and 
+congenital malformations in offspring. Neurology 2005;
+64:1874–8.
+8.Hernández-Díaz S, Smith CR, Shen A, Mittendorf R, 
+Hauser WA, Yerby M, et al.; North American AED Preg-
+nancy Registry. Comparative safety of antiepileptic drugs 
+during preg nancy. Neurology 2012;78:1692–9.
+9.Hernández-Díaz S, Werler MM, Walker AM, Mitchell AA. 
+Folic acid antagonists during pregnancy and the risk of
+birth defects. N Engl J Med 2000;343:1608–14.
+10.Mawhinney E, Craig J, Morrow J, Russell A, Smithson WH,
+Parsons L, et al. Levetiracetam in pregnancy: results from 
+the UK and Ireland epilepsy and pregnancy registers.
+Neurology 2013;80:400–5.
+11. Meador K, Reynolds MW, Crean S, Fahrbach K, Probst C.
+Pregnancy outcomes in women with epilepsy: a systematic 
+review and meta-analysis of published pregnancy registries 
+and cohorts. Epilepsy Res2008;81:1–13.
+12. Morrow J, Russell A, Guthrie E, Parsons L, Robertson I,
+Waddell R, et al. Malformation risks of antiepileptic drugs 
+in pregnancy: a prospective study from the UK Epilepsy 
+and Pregnancy Register. J Neurol Neurosurg Psychiatry 
+2006;77:193–8.
+13. Tomson T, Battino D, Bonizzoni E, Craig J, Lindhout D, 
+Sabers A, et al.; EURAP study group. Dose-dependent risk 
+of malformations with antiepileptic drugs: an analysis of
+data from the EURAP epilepsy and pregnancy registry.
+Lancet Neurol2011;10:609–17.
+14. Banach R, Boskovic R, Einarson T, Koren G. Long-term 
+developmental outcome of children of women with 
+epilepsy, unexposed or exposed prenatally to antiepileptic 
+drugs: a meta-analysis of cohort studies. Drug Saf2010;33:
+73–9.
+15.Meador KJ, Baker GA, Browning N, Cohen MJ, Bromley RL,
+Clayton-Smith J, et al.; NEAD Study Group. Fetal
+antiepileptic drug exposure and cognitive outcomes at age 
+6 years (NEAD study): a prospective observational study.
+Lancet Neurol2013;12:244–52.
+16. Confidential Enquiry into Maternal and Child Health. Why 
+Mothers Die 2000–2002. The Sixth Report of the 
+Confidential Enquiries into Maternal Deaths in the 
+United Kingdom . London: RCOG Press; 2004.17. Centre for Maternal and Child Enquiries (CMACE). Saving 
+Mothers’ Lives: reviewing maternal deaths to make 
+motherhood safer: 2006–08. The Eighth Report on 
+Confidential Enquiries into Maternal Deaths in the United 
+Kingdom. BJOG 2011;118 Suppl 1:1–203.
+18. Fisher RS, Acevedo C, Arzimanoglou A, Bogacz A, Cross JH,
+Elger CE, et al. ILAE official report: a practical clinical
+definition of epilepsy. Epilepsia 2014;55:475–82.
+19. Battino D, Tomson T, Bonizzoni E, Craig J, Lindhout D, 
+Sabers A, et al.; EURAP Study Group. Seizure control and 
+treatment changes in pregnancy: observations from the 
+EURAP epilepsy pregnancy registry. Epilepsia 2013;54:
+1621–7.
+20. Shorvon S, Tomson T. Sudden unexpected death in epilepsy.
+Lancet2011;378:2028–38.
+21. Nashef L. Sudden unexpected death in epilepsy: termi -
+nology and definitions. Epilepsia 1997;38 Suppl s11:S6–8.
+22. Teramo K, Hiilesmaa V, Bardy A, Saarikoski S. Fetal heart rate 
+during a maternal grand mal epileptic seizure. J Perinat
+Med 1979;7:3–6.
+23. Chadwick D, Smith D. The misdiagnosis of epilepsy. BMJ
+2002;324:495–6.
+24. Chowdhury FA, Nashef L, Elwes RD. Misdiagnosis in 
+epilepsy: a review and recognition of diagnostic 
+uncertainty. Eur J Neurol 2008;15:1034–42.
+25. Edlow JA, Caplan LR, O’Brien K, Tibbles CD. Diagnosis of
+acute neurological emergencies in pregnant and 
+post-partum women. Lancet Neurol2013;12:175–85.
+26. Enye S, Ganapathy R, Braithwaite O. Proteinuria in status 
+epilepticus or eclampsia; a diagnostic dilemma. Am J
+Emerg Med 2009;27:625.e5–6.
+27. Pandey R, Garg R, Darlong V, Punj J, Khanna P. Recurrent
+seizures in pregnancy-epilepsy or eclampsia: a diagnostic 
+dilemma? A case report. AANA J2011;79:388–90.
+28. Gaillard WD, Cross JH, Duncan JS, Stefan H, Theodore WH;
+Task Force on Practice Parameter Imaging Guidelines for 
+the International League Against Epilepsy, Commission for 
+Diagnostics. Epilepsy imaging study guideline criteria:
+commentary on diagnostic testing study guidelines and 
+practice parameters. Epilepsia 2011;52:1750–6.
+29. Dineen R, Banks A, Lenthall R. Imaging of acute 
+neurological conditions in pregnancy and the puerperium.
+Clin Radiol2005;60:1156–70.
+30. ACOG Committee on Obstetric Practice. ACOG Committee 
+Opinion. Number 299, September 2004 (replaces No. 158,
+September 1995). Guidelines for diagnostic imaging during 
+pregnancy. Obstet Gynecol 2004;104:647–51.
+31. Altman D, Carroli G, Duley L, Farrell B, Moodley J, Neilson J,
+et al.; Magpie Trial Collaboration Group. Do women with 
+pre-eclampsia, and their babies, benefit from magnesium 
+sulphate? The Magpie Trial: a randomised placebo-
+controlled trial. Lancet2002;359:1877–90.
+32. Beach RL, Kaplan PW. Seizures in pregnancy: diagnosis and 
+management. Int Rev Neurobiol 2008;83:259–71.
+33. Reuber M, Baker GA, Gill R, Smith DF, Chadwick DW. 
+Failure to recognize psychogenic nonepileptic seizures 
+may cause death. Neurology 2004;62:834–5.
+34. Fairgrieve SD, Jackson M, Jonas P, Walshaw D, White K,
+Montgomery TL, et al. Population based, prospective study 
+of the care of women with epilepsy in pregnancy. BMJ
+2000;321:674–5.
+35. Helbig KL, Bernhardt BA, Conway LJ, Valverde KD, Helbig I,
+Sperling MR. Genetic risk perception and reproductive 
+decision making among people with epilepsy. Epilepsia 
+2010;51:1874–7.
+36. Shostak S, Ottman R. Ethical, legal, and social dimensions 
+of epilepsy genetics. Epilepsia 2006;47:1595–602.
+© Royal College of Obstetricians and Gynaecologists 29 of 33 RCOG Green-top Guideline No. 68 References 37. Campbell E, Kennedy F, Russell A, Smithson WH, Parsons L,
+Morrison PJ, et al. Malformation risks of antiepileptic drug 
+monotherapies in pregnancy: updated results from the UK 
+and Ireland Epilepsy and Pregnancy Registers. J Neurol
+Neurosurg Psychiatry 2014;85:1029–34.
+38. Bromley R, Weston J, Adab N, Greenhalgh J, Sanniti A, 
+McKay AJ, et al. Treatment for epilepsy in pregnancy:
+neurodevelopmental outcomes in the child. Cochrane 
+Database Syst Rev 2014;(10): CD010236.
+39. Bromley RL, Mawer GE, Briggs M, Cheyne C, Clayton-
+Smith J, García-Fiñana M, et al.; Liverpool and Manchester 
+Neurodevelopment Group. The prevalence of neuro-
+developmental disorders in children prenatally exposed 
+to antiepileptic drugs. J Neurol Neurosurg Psychiatry 
+2013;84:637–43.
+40. Christensen J, Grønborg TK, Sørensen MJ, Schendel D,
+Parner ET, Pedersen LH, et al. Prenatal valproate exposure 
+and risk of autism spectrum disorders and childhood 
+autism. JAMA 2013;309:1696–703.
+41. Shallcross R, Bromley RL, Irwin B, Bonnett LJ, Morrow J,
+Baker GA; Liverpool Manchester Neurodevelopment
+Group; UK Epilepsy and Pregnancy Register. Child 
+development following in utero exposure: levetiracetam vs 
+sodium valproate. Neurology 2011;76:383–9.
+42. Shallcross R, Bromley RL, Cheyne CP, García-Fiñana M, 
+Irwin B, Morrow J, et al.; Liverpool and Manchester 
+Neurodevelopment Group; UK Epilepsy and Pregnancy 
+Register. In utero exposure to levetiracetam vs valproate:
+development and language at 3 years of age. Neurology 
+2014;82:213–21.
+43. Morrow JI, Hunt SJ, Russell AJ, Smithson WH, Parsons L,
+Robertson I, et al. Folic acid use and major congenital
+malformations in offspring of women with epilepsy: a 
+prospective study from the UK Epilepsy and Pregnancy 
+Register. J Neurol Neurosurg Psychiatry 2009;80:506–11.
+44. Ogawa Y, Kaneko S, Otani K, Fukushima Y. Serum folic acid 
+levels in epileptic mothers and their relationship to 
+congenital malformations. Epilepsy Res1991;8:75–8.
+45. Kaaja E, Kaaja R, Hiilesmaa V. Major malformations in 
+offspring of women with epilepsy. Neurology 2003;60:
+575–9.
+46. Betts T, Fox C. Proactive pre-conception counselling for 
+women with epilepsy—is it effective? Seizure 1999;8:322–7.
+47. Vajda FJ, O’Brien TJ, Hitchcock A, Graham J, Cook M, 
+Lander C, et al. Critical relationship between sodium 
+valproate dose and human teratogenicity: results of the 
+Australian register of anti-epileptic drugs in pregnancy. 
+J Clin Neurosci 2004;11:854–8.
+48.Vajda FJ, O’Brien TJ, Hitchcock A, Graham J, Lander C. The 
+Australian registry of anti-epileptic drugs in pregnancy:
+experience after 30 months. J Clin Neurosci 2003;10:
+543–9.
+49. Vajda FJ, Hitchcock A, Graham J, O’Brien T, Lander C, 
+Eadie M. Seizure control in antiepileptic drug-treated 
+pregnancy. Epilepsia 2008;49:172–6.
+50. Gjerde IO, Strandjord RE, Ulstein M. The course of epilepsy 
+during pregnancy: a study of 78 cases. Acta Neurol Scand 
+1988;78:198–205.
+51. Tomson T, Lindbom U, Ekqvist B, Sundqvist A. Epilepsy and 
+pregnancy: a prospective study of seizure control in 
+relation to free and total plasma concentrations of
+carbamazepine and phenytoin. Epilepsia 1994;35:122–30.
+52. Boardman SG. Understanding the experiences of
+pregnancy in women with epilepsy [PhD dissertation].
+[Hull]: University of Hull; 2013.
+53. Williams J, Myson V, Steward S, Jones G, Wilson JF, Kerr MP,
+et al. Self-discontinuation of antiepileptic medication in 
+pregnancy: detection by hair analysis. Epilepsia 2002;43:
+824–31.54. Widnes SF, Schjøtt J, Granas AG. Risk perception and 
+medicines information needs in pregnant women with 
+epilepsy –a qualitative study. Seizure 2012;21:597–602.
+55. Crawford P, Hudson S. Understanding the information 
+needs of women with epilepsy at different lifestages:
+results of the ‘Ideal World’ survey. Seizure 2003;12:502–7.
+56. Nadel AS, Green JK, Holmes LB, Frigoletto FD Jr, 
+Benacerraf BR. Absence of need for amniocentesis in 
+patients with elevated levels of maternal serum alpha-
+fetoprotein and normal ultrasonographic examinations. 
+N Engl J Med 1990;323:557–61.
+57. Adab N. Therapeutic monitoring of antiepileptic drugs 
+during pregnancy and in the postpartum period: is it
+useful? CNS Drugs2006;20:791–800.
+58. Pennell PB. Antiepileptic drug pharmacokinetics during 
+pregnancy and lactation. Neurology 2003;61 Suppl 2:
+S35–42.
+59. Pennell PB, Hovinga CA. Antiepileptic drug therapy in 
+pregnancy I: gestation-induced effects on AED 
+pharmacokinetics. Int Rev Neurobiol2008;83:227–40.
+60.Miškov S, Gjergja-Juraški R, Cvitanovi´c-Šojat L, Bakuli´cTI,
+Fu čičA, Bošnjak-Paši´cM, et al. Prospective surveillance of
+Croatian pregnant women on lamotrigine monotherapy –
+aspects of pre-pregnancy counseling and drug monitoring.
+Acta Clin Croat2009;48:271–81.
+61. Harden CL, Pennell PB, Koppel BS, Hovinga CA, Gidal B,
+Meador KJ, et al.; American Academy of Neurology; American 
+Epilepsy Society. Practice parameter update: management
+issues for women with epilepsy—focus on pregnancy (an 
+evidence-based review): vitamin K, folic acid, blood levels,
+and breastfeeding. Neurology 2009;73:142–9.
+62. Pirie DA, Al Wattar BH, Pirie AM, Houston V, Siddiqua A, 
+Doug M, et al. Effects of monitoring strategies on seizures 
+in pregnant women on lamotrigine: a meta-analysis. 
+Eur J Obstet Gynecol Reprod Biol2014;172:26–31.
+63. Perucca P, Gilliam FG. Adverse effects of antiepileptic drugs.
+Lancet Neurol2012;11:792–802.
+64. Jackson MJ, Turkington D. Depression and anxiety in epilepsy.
+J Neurol Neurosurg Psychiatry 2005;76 Suppl 1:i45–7.
+65. Park SP, Kwon SH. Cognitive effects of antiepileptic drugs.
+J Clin Neurol2008;4:99–106.
+66. Viale L, Allotey J, Cheong-See F, Arroyo-Manzano D, 
+Mccorry D, Bagary M, et al.; EBM CONNECT Collaboration.
+Epilepsy in pregnancy and reproductive outcomes: a system -
+atic review and meta-analysis. Lancet 2015;386:1845–52.
+67. Malow BA. Sleep and epilepsy. Neurol Clin 2005;23:
+1127–47.
+68. Lamberts RJ, Thijs RD, Laffan A, Langan Y, Sander JW. 
+Sudden unexpected death in epilepsy: people with nocturnal
+seizures may be at highest risk. Epilepsia 2012;53:253–7.
+69. Hiilesmaa VK, Bardy A, Teramo K. Obstetric outcome in 
+women with epilepsy. Am J Obstet Gynecol1985;152:
+499–504.
+70. Hiilesmaa VK. Pregnancy and birth in women with epilepsy.
+Neurology 1992;42(4 Suppl 5):8–11.
+71. Nomura R, Bessa JF, Custódio MG, Galletta MA, Zugaib M.
+P24.11: Computerized cardiotocography and Doppler 
+velocimetry in fetuses exposed to antiepileptic drugs 
+[abstract]. Ultrasound Obstet Gynecol 2010;36 Suppl 1:262.
+72. Yamasmit W, Chaithongwongwatthana S, Tolosa JE. 
+Prenatal vitamin K1 administration in epileptic women to 
+prevent neonatal hemorrhage: is it effective? J Reprod Med 
+2006;51:463–6.
+73. Choulika S, Grabowski E, Holmes LB. Is antenatal vitamin 
+K prophylaxis needed for pregnant women taking 
+anticonvulsants? Am J Obstet Gynecol2004;190:882–3.
+74. Kaaja E, Kaaja R, Matila R, Hiilesmaa V. Enzyme-inducing 
+antiepileptic drugs in pregnancy and the risk of bleeding in 
+the neonate. Neurology 2002;58:549–53.
+RCOG Green-top Guideline No. 68 30 of 33 © Royal College of Obstetricians and Gynaecologists 75. Smith PE, Saunders J, Dawson A, Kerr MP. Intractable 
+seizures in pregnancy. Lancet1999;354:1522.
+76. Patsalos PN, Fröscher W, Pisani F, van Rijn CM. The 
+importance of drug interactions in epilepsy therapy.
+Epilepsia 2002;43:365–85.
+77. Bardy A. Epilepsy and pregnancy: a prospective study of
+154 pregnancies in epileptic women [thesis]. Helsinki,
+Finland, University of Helsinki; 1982.
+78. Pennell PB. EURAP outcomes for seizure control during 
+pregnancy: useful and encouraging data. Epilepsy Curr 
+2006;6:186–8.
+79. Nei M, Daly S, Liporace J. A maternal complex partial seizure in 
+labor can affect fetal heart rate. Neurology 1998;51:904–6.
+80. Schmidt D, Canger R, Avanzini G, Battino D, Cusi C,
+Beck-Mannagetta G, et al. Change of seizure frequency in 
+pregnant epileptic women. J Neurol Neurosurg Psychiatry 
+1983;46:751–5.
+81. Kevat D, Mackillop L. Neurological diseases in pregnancy. 
+J R Coll Physicians Edinb 2013;43:49–58.
+82. EURAP Study Group. Seizure control and treatment in 
+pregnancy: observations from the EURAP epilepsy 
+pregnancy registry. Neurology 2006;66:354–60.
+83. DeLorenzo RJ, Garnett LK, Towne AR, Waterhouse EJ, 
+Boggs JG, Morton L, et al. Comparison of status epilepti-
+cus with prolonged seizure episodes lasting from 10 to 29 
+minutes. Epilepsia 1999;40:164–9.
+84. Alldredge BK, Gelb AM, Isaacs SM, Corry MD, Allen F, 
+Ulrich S, et al. A comparison of lorazepam, diazepam, and 
+placebo for the treatment of out-of-hospital status epilep-
+ticus. N Engl J Med 2001;345:631–7.
+85. McElhatton PR. The effects of benzodiazepine use during 
+pregnancy and lactation. Reprod Toxicol1994;8:461–75.
+86. Kuczkowski KM. Labor analgesia for the parturient with 
+neurological disease: what does an obstetrician need to 
+know? Arch Gynecol Obstet2006;274:41–6.
+87. Daroff RB, Fenichel GM, Jankovic J, Mazziotta JC. Bradley’s
+Neurology in Clinical Practice . 6th ed. Philadelphia:
+Elsevier Saunders; 2012.
+88. Marinella MA. Meperidine-induced generalized seizures 
+with normal renal function. South Med J1997;90:556–8.
+89. Kuczkowski KM. Seizures on emergence from sevoflurane 
+anaesthesia for Caesarean section in a healthy parturient.
+Anaesthesia 2002;57:1234–5.
+90. Hsieh SW, Lan KM, Luk HN, Jawan B. Postoperative seizures 
+after sevoflurane anesthesia in a neonate. Acta 
+Anaesthesiol Scand 2004;48:663.
+91. Kuczkowski KM. Sevoflurane and seizures: déjà vu . 
+Acta Anaesthesiol Scand 2004;48:1216.
+92. Borthen I, Eide MG, Daltveit AK, Gilhus NE. Obstetric 
+outcome in women with epilepsy: a hospital-based,
+retrospective study. BJOG 2011;118:956–65.
+93. Thomas SV, Syam U, Devi JS. Predictors of seizures during 
+pregnancy in women with epilepsy. Epilepsia 2012;53:
+e85–8.
+94. Tran TA, Leppik IE, Blesi K, Sathanandan ST, Remmel R.
+Lamotrigine clearance during pregnancy. Neurology 
+2002;59:251–5.
+95. de Haan GJ, Edelbroek P, Segers J, Engelsman M, Lindhout D,
+Dévilé-Notschaele M, et al. Gestation-induced changes in 
+lamotrigine pharmacokinetics: a monotherapy study.
+Neurology 2004;63:571–3.
+96. Chen L, Liu F, Yoshida S, Kaneko S. Is breast-feeding of
+infants advisable for epileptic mothers taking antiepileptic 
+drugs? Psychiatry Clin Neurosci2010;64:460–8.
+97. Davanzo R, Dal Bo S, Bua J, Copertino M, Zanelli E,
+Matarazzo L. Antiepileptic drugs and breastfeeding. Ital J
+Pediatr 2013;39:50.
+98. Meador KJ, Baker GA, Browning N, Clayton-Smith J,
+Combs-Cantrell DT, Cohen M, et al.; NEAD Study Group.Effects of breastfeeding in children of women taking 
+antiepileptic drugs. Neurology 2010;75:1954–60.
+99.Veiby G, Engelsen BA, Gilhus NE. Early child development
+and exposure to antiepileptic drugs prenatally and through 
+breastfeeding: a prospective cohort study on children of
+women with epilepsy. JAMA Neurol2013;70:1367–74.
+100. Turner K, Piazzini A, Franza A, Fumarola C, Chifari R,
+Marconi AM, et al. Postpartum depression in women with 
+epilepsy versus women without epilepsy. Epilepsy Behav 
+2006;9:293–7.
+101. Galanti M, Newport DJ, Pennell PB, Titchner D, Newman M,
+Knight BT, et al. Postpartum depression in women with 
+epilepsy: influence of antiepileptic drugs in a prospective 
+study. Epilepsy Behav 2009;16:426–30.
+102. Zupanc ML. Antiepileptic drugs and hormonal
+contra ceptives in adolescent women with epilepsy.
+Neurology 2006;66(6 Suppl 3):S37–45.
+103. Beghi E, Cornaggia C; RESt-1 Group. Morbidity and 
+accidents in patients with epilepsy: results of a European 
+cohort study. Epilepsia 2002;43:1076–83.
+104. Coulam CB, Annegers JF. Do anticonvulsants reduce the 
+efficacy of oral contraceptives? Epilepsia 1979;20:519–25.
+105. Gaffield ME, Culwell KR, Lee CR. The use of hormonal
+contraception among women taking anticonvulsant
+therapy. Contraception 2011;83:16–29.
+106.Doose DR, Wang SS, Padmanabhan M, Schwabe S, Jacobs D,
+Bialer M. Effect of topiramate or carbamazepine on the 
+pharmacokinetics of an oral contraceptive containing 
+norethindrone and ethinyl estradiol in healthy obese and 
+nonobese female subjects. Epilepsia 2003;44:540–9.
+107.Faculty of Sexual and Reproductive Healthcare. Faculty of
+Sexual & Reproductive Healthcare Clinical Guidance:
+Combined Hormonal Contraception . [London]: FSRH;
+2011 (updated 2012).
+108. Faculty of Sexual and Reproductive Healthcare. Faculty of
+Sexual & Reproductive Healthcare Clinical Guidance:
+Drug Interactions with Hormonal Contraception .
+[London]: FSRH; 2011 (updated 2012). 
+109. Stodieck SR, Schwenkhagen AM. Lamotrigine plasma 
+levels and combined monophasic oral contraceptives (COC) 
+or a contraceptive vaginal ring. A prospective evaluation in 30 
+women [abstract]. Epilepsia 2004;45 Suppl 7:187.
+110. Wegner I, Edelbroek PM, Bulk S, Lindhout D. Lamotrigine 
+kinetics within the menstrual cycle, after menopause, and 
+with oral contraceptives. Neurology 2009;73:1388–93.
+111. World Health Organization. Medical eligibility criteria for 
+contraceptive use.4th ed. [Geneva]: WHO; 2010.
+112. Faculty of Sexual and Reproductive Healthcare [http:// 
+www.fsrh.org/]. Accessed 2016 Jan 06.
+113. Harrison-Woolrych M, Hill R. Unintended pregnancies with 
+the etonogestrel implant (Implanon): a case series from 
+postmarketing experience in Australia. Contraception 
+2005;71:306–8.
+114. Bensouda-Grimaldi L, Jonville-Béra AP, Beau-Salinas F, 
+Llabres S, Autret-Leca E; le réseau des centres régionaux de 
+pharmacovigilance. [Insertion problems, removal problems,
+and contraception failures with Implanon®]. Gynecol
+Obstet Fertil2005;33:986–90. [Article in French.] 
+115. Faculty of Sexual and Reproductive Healthcare Clinical
+Effectiveness Unit. Antiepileptic Drugs and Contraception.
+CEU Statement (January 2010). [London]: FSRH; 2010.
+116.Epilepsy Action. ‘An Ideal World For Women’ [http://www.
+epilepsy.org.uk/involved/campaigns/women/ideal-world].
+Accessed 2016 Jan 6.
+117.Driver and Vehicle Licensing Agency. Current medical
+guidelines: DVLA guidance for professionals - Neurological
+appendix [https://www.gov.uk/current-medical-guidelines-
+dvla-guidance-for-professionals-neurological-chapter-
+appendix]. Accessed 2016 Jan 6.
+© Royal College of Obstetricians and Gynaecologists 31 of 33 RCOG Green-top Guideline No. 68 Appendix I: Explanation of guidelines and evidence levels 
+Clinical guidelines are: ‘systematically developed statements which assist clinicians and patients in 
+making decisions about appropriate treatment for specific conditions’. Each guideline is systematically 
+developed using a standardised methodology. Exact details of this process can be found in Clinical
+Governance Advice No. 1 Development of RCOG Green-top Guidelines(available on the RCOG website 
+at http://www.rcog.org.uk/green-top-development). These recommendations are not intended to dictate 
+an exclusive course of management or treatment. They must be evaluated with reference to individual
+patient needs, resources and limitations unique to the institution and variations in local populations.
+It is hoped that this process of local ownership will help to incorporate these guidelines into routine 
+practice. Attention is drawn to areas of clinical uncertainty where further research may be indicated. 
+The evidence used in this guideline was graded using the scheme below and the recommendations 
+formulated in a similar fashion with a standardised grading scheme.
+RCOG Green-top Guideline No. 68 32 of 33 © Royal College of Obstetricians and Gynaecologists Grades of recommendations 
+At least one meta-analysis, systematic review or 
+randomised controlled trial rated as 1++, and 
+directly applicable to the target population; or 
+A systematic review of randomised controlled 
+trials or a body of evidence consisting 
+principally of studies rated as 1+, directly 
+applicable to the target population and 
+demonstrating overall consistency of results 
+A body of evidence including studies rated as 
+2++ directly applicable to the target
+population, and demonstrating overall
+consistency of results; or 
+Extrapolated evidence from studies rated as 
+1++ or 1+ 
+A body of evidence including studies rated as 
+2+ directly applicable to the target population 
+and demonstrating overall consistency of
+results; or 
+Extrapolated evidence from studies rated as 
+2++ 
+Evidence level 3 or 4; or 
+Extrapolated evidence from studies rated as 2+ 
+Good practice point 
+Recommended best practice based on the 
+clinical experience of the guideline 
+development group Classification of evidence levels 
+1++ High-quality meta-analyses, systematic 
+reviews of randomised controlled trials 
+or randomised controlled trials with a 
+very low risk of bias 
+1+ Well-conducted meta-analyses, systematic 
+reviews of randomised controlled trials 
+or randomised controlled trials with a 
+low risk of bias 
+1– Meta-analyses, systematic reviews of
+randomised controlled trials or 
+randomised controlled trials with a high 
+risk of bias 
+2++ High-quality systematic reviews of case– 
+control or cohort studies or high-quality 
+case–control or cohort studies with a 
+very low risk of confounding, bias or 
+chance and a high probability that the 
+relationship is causal
+2+ Well-conducted case–control or cohort
+studies with a low risk of confounding,
+bias or chance and a moderate 
+probability that the relationship is causal
+2– Case–control or cohort studies with a 
+high risk of confounding, bias or chance 
+and a significant risk that the 
+relationship is not causal
+3Non-analytical studies, e.g. case reports,
+case series 
+4Expert opinion PC
+DBA© Royal College of Obstetricians and Gynaecologists 33 of 33 RCOG Green-top Guideline No. 68 DISCLAIMER 
+The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical
+practice. They present recognised methods and techniques of clinical practice, based on published evidence, for 
+consideration by obstetricians and gynaecologists and other relevant health professionals. The ultimate judgement
+regarding a particular clinical procedure or treatment plan must be made by the doctor or other attendant in the 
+light of clinical data presented by the patient and the diagnostic and treatment options available.
+This means that RCOG Guidelines are unlike protocols or guidelines issued by employers, as they are not intended 
+to be prescriptive directions defining a single course of management. Departure from the local prescriptive 
+protocols or guidelines should be fully documented in the patient’s case notes at the time the relevant decision 
+is taken.This guideline was produced on behalf of the Royal College of Obstetricians and Gynaecologists by: 
+Professor S Thangaratinam PhD MRCOG, London; Dr F Fong MRCOG, London; Dr D McCorry MD FRCP,
+University Hospital Birmingham NHS Trust, Birmingham; Mr AM Pirie FRCOG, Birmingham; 
+Dr M Bagary PhD MRCPsych, Birmingham and Solihull Mental Health NHS Foundation Trust,
+Birmingham; and Mrs L Greenhill, Birmingham and Solihull Mental Health NHS Foundation Trust,
+Birmingham 
+and peer reviewed by: 
+Professor Z Alfirevic FRCOG, Liverpool; Association of British Neurologists; Dr IA Babarinsa MRCOG, Doha, Qatar;
+Dr AH Bardy, Eira Hospital, Helsinki, Finland; Dr E Beghi, ‘Mario Negri’ Institute for Pharmacological Research, 
+Milan, Italy; Dr D Bennett, Specialty Registrar in Public Health Medicine, Public Health Agency, Northern Ireland; 
+British Maternal and Fetal Medicine Society; Dr AR Davis, Columbia University, New York, USA; 
+Dr F Dawood MRCOG, Liverpool; Faculty of Sexual and Reproductive Healthcare; Dr F Kennedy MRCOG,
+Ballymena, Northern Ireland; Dr L Mackillop, Consultant Obstetric Physician, Oxford University Hospitals NHS 
+Trust, Oxford; Miss KK Mulbagal MRCOG, Bolton; Professor C Nelson-Piercy FRCOG, London; Royal College of
+Midwives; Royal College of Radiologists; Dr SV Thomas, Professor of Neurology and Head, R. Madhavan Nayar 
+Center for Comprehensive Epilepsy Care, Sree Chitra Tirunal Institute for Medical Sciences and Technology,
+Trivandrum, India; Dr JB Winterbottom, Epilepsy Nurse Specialist, The Walton Centre NHS Foundation Trust,
+Liverpool; and Women’s Health Patient Safety Expert Group.
+RCOG Committee lead reviewers were: Dr M Gupta MRCOG, London; and Dr BA Magowan FRCOG, Melrose,
+Scotland.
+The chairs of the RCOG Guidelines Committee were: Dr M Gupta 1MRCOG, London; Dr P Owen 2FRCOG, Glasgow,
+Scotland; and Dr AJ Thomson 1MRCOG, Paisley, Scotland. 
+1co-chairs from June 2014 2until May 2014.
+All RCOG guidance developers are asked to declare any conflicts of interest. A statement summarising any 
+conflicts of interest for this guideline is available from: https://www.rcog.org.uk/en/guidelines-research-services/ 
+guidelines/gtg68/ .
+The final version is the responsibility of the Guidelines Committee of the RCOG.
+The review process will commence in 2019, unless otherwise indicated.

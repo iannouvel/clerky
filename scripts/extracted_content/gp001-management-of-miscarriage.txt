@@ -1,0 +1,425 @@
+# Extracted from: GP001 - Management of Miscarriage.pdf
+# Guideline ID: gp001-management-of-miscarriage
+# Content length: 20871 characters
+# Processing date: 1750066900.7558353
+
+Management of Miscarriage 
+
+Maternity Protocol: GP001 
+Date agreed: January 2017 
+Management of Miscarriage GP001 
+Page 2 of 18 
+Brighton & Sussex University Hospitals 
+
+Guideline Reviewer : Tasneem Singhal 
+Version: 1 
+Approval Committee: Women’s Services Safety and Quality Committee 
+Date agreed: January 2017 
+Review date: January 2020 
+ 
+ Management of Miscarriage GP001 
+Page 3 of 18 
+Brighton & Sussex University Hospitals 
+Contents 
+ 
+Contents ................................ ................................ ................................ ............................... 3 
+Key Principles ................................ ................................ ................................ ........................ 4 
+Scope ................................ ................................ ................................ ................................ ... 4 
+Responsibilities ................................ ................................ ................................ ..................... 4 
+1 Introduction: ................................ ................................ ................................ ............... 5 
+2 Threatened Miscarriage ................................ ................................ .............................. 5 
+3 Using Ultrasound for Diagnosis ................................ ................................ .................... 5 
+4 Management of a confirmed miscarriage pregnancy ................................ .................... 7 
+5 Conservative Management ................................ ................................ .......................... 8 
+6 Medical Management ................................ ................................ ................................ . 8 
+7 Surgical Management ................................ ................................ ................................ .. 9 
+8 Anti -D rhesus prophylaxis ................................ ................................ .......................... 10 
+9 Follow up ................................ ................................ ................................ .................. 10 
+10 Terminology ................................ ................................ ................................ .............. 10 
+11 Paperwork to be completed ................................ ................................ ...................... 11 
+11.1 Form P1 Pregnancy Losses under 12 weeks Gestation (Appendix B) ............ 11 
+11.2 Pregnancy Losses 12 – 14 weeks (Appendix C) ................................ ............... 12 
+12 Appendix A - Patient Information Leaflet ‘Your Baby’ 12 -23 weeks ............................ 13 
+13 Appendix B - P1 Form ................................ ................................ ................................ 15 
+14 Appendix C - P2 Form ................................ ................................ ................................ 16 
+15 Appendix D - Release of baby’s body to parents ................................ ........................ 17 
+16 References ................................ ................................ ................................ ................. 18 
+
+ Management of Miscarriage GP001 
+Page 4 of 18 
+Brighton & Sussex University Hospitals 
+Key Principles 
+ 
+These guidelines and algorithms are aimed to assist in decision making. They are not 
+designed to be prescriptive and you are not expected to use them in exclusion of discussions 
+with senior colleagues. 
+ 
+Evidence used to inform these guidelines had been drawn from national/RCOG guidelines. 
+Where applicable other references are quoted. 
+ 
+These guidelines have been reviewed by all clinicians involved in early pregnancy care, 
+including consultants, trainees and specialist and senior nursing staff. 
+ 
+A protocol is a set of measurable, objective standards to determine a course of action. 
+Professional judgement may be used in the application of a protocol. 
+ 
+Scope 
+ 
+These guidelines apply to women who have a confirmed diagnosis of miscarriage. 
+ 
+Responsibilities 
+ 
+Nurses, Midwives & Gynaecologists & Obstetricians: 
+ 
+ To access, read, understand and follow this guidance 
+ To use their professional judgement in application of this guidance 
+ 
+Management Team 
+ 
+ To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations 
+ To ensure the protocol is accessible to all relevant staff 
+ To ensure protocols are available to service users on request 
+
+ Management of Miscarriage GP001 
+Page 5 of 18 
+Brighton & Sussex University Hospitals 1 Introduction: 
+ 
+Miscarriage is the spontaneous loss of a pregnancy before viability, ie before 
+22 weeks gestation 
+ 
+Common symptoms are bleeding PV and pelvic pain. This guideline is for the management 
+of women up to 14 weeks of gestation. 
+
+IMPORTANT 
+ 
+ If a woman comes in with bleeding PV 
+ with or without abdominal pain 
+ and then has an ultrasound scan, which s hows no intrauterine pregnancy 
+ In the absence of a previous scan in this pregnancy which has seen an intrauterine 
+pregnancy 
+ A diagnosis of a miscarriage CANNOT be made. 
+ 
+This is to be treated as a PUL. 
+ 
+2 Threatened Miscarriage 
+ 
+2.1 If the bleeding gets worse or persists beyond 14 days, she should return for 
+further assessment and an ultrasound scan 
+2.2 If the bleeding stops, she should start or continue antenatal care. 
+ 
+3 Using Ultrasound for Diagnosis 
+ 
+3.1 Offer women a trans -vaginal ultrasound scan to identify t he location of the 
+pregnancy and whether there is a fetal pole and heartbeat. 
+3.2 Consider a trans -abdominal ultrasound for women with an enlarged uterus or 
+other pelvic pathology, such as fibroids or an ovarian cyst. 
+ Management of Miscarriage GP001 
+Page 6 of 18 
+Brighton & Sussex University Hospitals 3.3 If a trans -vaginal ultrasound scan is una cceptable to the women, offer a trans -
+abdominal ultrasound scan and explain the limitations of this method of 
+scanning. 
+3.4 If the crown -rump length is less than 7.0 mm with a trans -vaginal ultrasound 
+scan and there is no visible heartbeat, perform a second sc an a minimum of 7 
+days after the first before making a diagnosis . Further scans may be neede d 
+before diagnosis can be made. 
+3.5 If the crown -rump length is 7.0 mm or more with a trans -vaginal ultrasound 
+scan and there is no visible heartbeat: 
+3.5.1 Seek a second opinion on the viability of the pregnancy and/or 
+3.5.2 Perform a second scan a minimum of 7 days after the first before 
+making a diagnosis 
+3.6 If there is no visible heartbeat when the crown -rump length is measured using 
+a trans -abdominal ultrasound scan: 
+3.6.1 Record the size of the crown -rump length and 
+3.6.2 Perform a second scan a minimum of 14 days after the first before 
+making a diagnosis 
+3.7 If the mean gestational sac diameter is less than 2.50mm with a trans -vaginal 
+ultrasound scan and there is no visible fetal pole, perfor m a second scan a 
+minimum of 7 days after the first before making a diagnosis. Further scans may 
+be needed before a diagnosis can be made. 
+3.8 If the mean gestational sac diameter is 25.0mm or more using trans -vaginal 
+ultrasound scan and there is no visible fe tal pole: 
+3.8.1 Seek a second opinion on the viability of the pregnancy and/or 
+3.8.2 Perform a second scan a minimum of 7 days after the first before 
+making a diagnosis. 
+3.9 If there is no visible fetal pole and the mean gestational sac diameter i s 
+measured using a trans -abdominal ultrasound scan 
+3.9.1 Record the size of the mean gestational sac diameter and 
+3.9.2 Perform a second scan a minimum of 14days after the first before 
+making a diagnosis Management of Miscarriage GP001 
+Page 7 of 18 
+Brighton & Sussex University Hospitals 3.10 Do not use gestational age from the last menstrual period alone to determine 
+whether a fe tal heartbeat should be visible. 
+3.11 Inform women that the date of their last menstrual period may not give an 
+accurate representation of gestational age because of variability in the 
+menstrual cycle. 
+3.12 Inform women what to expect while waiting for a repeat sca n and that waiting 
+for a repeat scan has no detrimental effects on the outcome of the pregnancy. 
+3.13 Provide women with a contact telephone number for the EPU. 
+ 
+4 Management of a confirmed miscarriage pregnancy 
+ 
+4.1 Verbal and written information needs to be given to patients with a 
+miscarriage 
+4.2 Send bloods: FBC and Group & Save 
+
+Management of Miscarriage GP001 
+Page 8 of 18 
+Brighton & Sussex University Hospitals 5 Conservative Management 
+5.1 Offered to women as a first line option in early first trimester miscarriage 
+5.2 Offer written and verbal infor mation about what to expect, where and when 
+to get help in an emergency. 
+5.3 Offer rescan in 3 weeks to confirm complete miscarriage if continues to bleed 
+or pregnancy test is positive. 
+5.4 If the rescan shows retained products, discuss individualised care depending 
+on the size of the products and clinical s igns and symptoms. 
+5.5 This is usually successful in up to 60% of women. 
+5.6 10-15% of Women may need to come in to hospital for heavy PV bleeding and 
+may need surgical evacuation. 
+5.7 Offer all women receiving expectant management of miscarriage pain relief 
+and anti -emetics as needed 
+6 Medical Management 
+6.1 Offer medical management to women when conservative management is not 
+appropriate, nor suitable ( i.e late first trimester, bleeding disorders) or not 
+acceptable, and to all women with missed miscarriage after 12 weeks gestation 
+by ultrasound. 
+6.2 Offer written and verbal infor mation about what to expect, where and when 
+to get help in an emergency. 
+6.3 Offer vaginal or oral misoprostol for the medical treatment of missed or 
+incomplete miscarriage. 
+6.4 Use a single dose of 800 micr ograms of misoprostol upto 12 weeks of 
+gestation . 
+6.5 Advise the woman that if bleeding has not started 24 -48 hours after 
+treatme nt, she should contact the EPU to determine on going individualised 
+care 
+6.6 A second dose of 800micrograms of misoprostol may be repe ated after 
+48hours if the sac has not been passed. 
+6.7 Offer all women receiving medical management of miscarriage pain relief and 
+anti-emetics as needed. Management of Miscarriage GP001 
+Page 9 of 18 
+Brighton & Sussex University Hospitals 6.8 Advise women to take a urine pregnancy test 3 weeks after medical 
+management of miscarriage unless they e xperience worsening symptoms, in 
+which case advise them to return to the EPU for providing their medical 
+management . 
+6.9 Advise women with a positive urine pregnancy test after 3 weeks to return for 
+a review in the EPU . 
+6.10 Be aware of the possibility of molar or ectopic pregnancy . 
+6.11 Women with a CRL>17mm or a gestationa l sac diameter of 30mm or more or 
+twin pregnancy should be offered in -patient management in view of increased 
+risk of bleeding. 
+6.12 For women with missed miscarriage 12 -14 weeks gestation by dates – admit 
+on gynaecology ward, send FBC and group and s ave, and administer 200 mcg of 
+Vaginal Misoprostol every 6 hours for a total of 4 doses.2 
+ 
+7 Surgical Management 
+ 
+7.1 Provide verbal and written information to all women undergoing surgical 
+management of miscarriage about the treatment options available and what to 
+expect during and after the procedure 
+7.2 Complete stage one consent and the fetal cremation form P1/P2 (Appendix 
+B/C) 
+7.3 Inform the women that the tissue is sent to the lab to confirm that this is 
+pregnancy tissue. - It does not test f or the cause of the mi scarriage (except 
+those having a Fetal karyotype after the 3rd miscarriage) . 
+7.4 If sending tissue for Fetal Karyotyping divide the tissue and send some to 
+histology and some to karyotyping. 
+
+ Management of Miscarriage GP001 
+Page 10 of 18 
+Brighton & Sussex University Hospitals 8 Anti -D rhesus prophylaxis 
+ 
+8.1 Offer anti -D rhesus prophylaxis at a dose of 250 IU (50 micrograms) to all 
+rhesus negative women who have a surgical procedure to manage an ectopic 
+pregnancy or a miscarriage 
+8.2 Do not offer anti -D rhesus prophylaxis to women who have a gestation of less 
+than 12 weeks and 
+• rece ive solely medical management for an ectopic pregnancy or miscarriage 
+or 
+• have a threatened miscarriage or 
+• have a complete miscarriage or 
+• have a pregnancy of unknown location 
+8.3 Offer all women Anti D rhesus prophylaxis to women who have a gestation of 
+more than 12 weeks . 
+8.4 Do not use a Kle ihauer test for quantifying fetal –maternal haemorrhage. 
+ 
+9 Follow up 
+ 
+9.1 For women with their third - first trimester miscarriage offer surgical 
+management of miscarriage so that the products can be sent for fetal 
+karyotype 
+9.2 Offer a follow - up appointment in gynae clinic to all women after their 1st 
+secon d trimester miscarriage or 3rd first trimester miscarriage. Wome n at PRH 
+to be referred to Miss T Singhal and Women at RS CH to be referred to Mr T 
+Ajala / Mr T Kelly 
+ 
+10 Termino logy 
+ 
+The clinical term “fetal remains” is used for a pregnancy loss if there is no recognisable 
+body, this term should not be used in discussion with parents. For most parents it is better 
+to use a phrase such as “the remains of your baby”. However, a fe w parents may not want 
+to think of their loss as a baby and may prefer the term fetus. The parents may wish to take 
+the remains of their baby themselves. If they do not, the hospital should ensure sensitive 
+disposal. 
+
+ Management of Miscarriage GP001 
+Page 11 of 18 
+Brighton & Sussex University Hospitals 11 Paperwork to be completed 
+ 
+11.1 Form P 1 Pregnancy Losses under 12 weeks Gestatio n (Appendix B ) 
+ If fully completed this form will be accepted by histopathology and the crematorium. 
+Doctors ONLY must complete the final section. Nurses and midwives can complete 
+the first section. 
+ The top copy of the form (blue) must be sent with the products of conception to the 
+Histopathology laboratory as it contains the original signatures. 
+ The second copy (white) to go to the Bereavement Office, the third copy (yellow) 
+handed to the parents a nd the fourth copy (pink) placed in the patient’s notes. 
+ The forms are available in A&E and at RSCH and on Level 11 Gynaecology Ward, and 
+at PRH on Horsted Keynes Ward. 
+ Ensure that the Your Baby – under 12 weeks leaflet is given to the parents. 
+ If parents request removing from the hospital products of conception below 12 
+weeks which at no time have shown signs of independent viability use appendix ##. 
+ Recommend all products of conception under 12 weeks gestation should be sent to 
+histopathology following wh ich the pathology department will arrange for the 
+products to be sent for communal cremation at Woodvale Crematorium via the 
+contracted funeral directors. 
+ In the case of parents consenting to histopathology but wanting to arrange disposal 
+themselves, this should be handwritten on the form and the specimen sent to the 
+histopathology with the top copy (blue). The second copy (white) must also be sent 
+to the Bereavement Office. It is important to point out that they have 30 days in 
+which to make arrangements t o collect the specimen after that date the hospital will 
+arrange a cremation without a service and that there will be no ashes. The parents 
+need to make arrangements with an undertaker of their choosing. 
+ In the case of parents declining histopathology and want to make their own 
+arrangements in regard to disposal, this should be handwritten on the form, and the 
+specimen sent to the mortuary with the top copy (blue). The second copy (white) 
+must also be sent to the Bereavement Office. It is important to poin t out that they 
+have 30 days in which to make arrangements to collect the specimen after that date 
+the hospital will arrange a cremation without a service and that there will be no 
+ashes. 
+ A label must be completed containing the following information: 
+ 
+The baby of: [complete mother’s details and add father’s details where possible] 
+Mother’s Trust ID number: 
+Was delivered on: [date of delivery] 
+On: [ward/department] 
+The label must be fixed securely to the outside of the container. 
+ Management of Miscarriage GP001 
+Page 12 of 18 
+Brighton & Sussex University Hospitals 
+11.2 Pregnancy Losses 12 – 14 weeks (Appendix C) 
+ 
+ As above, but use P2 form (Appendix C ) 
+ Ensure that the ‘Your Baby 12 - 23 weeks’ leaflet is given to the parents (Appendix A ) 
+ Use “Release and Return of Baby’s Body” letter stating parents have ta ken baby’s 
+body home (Appendix D ) 
+
+ Management of Miscarriage GP001 
+Page 13 of 18 
+Brighton & Sussex University Hospitals 12 Appendix A - Patient Information Leaflet ‘Your Baby’ 12 -23 weeks 
+
+Your Baby 
+ 
+A leaflet for you if you have lost your baby during 12 to 23 weeks of pregnancy 
+ 
+Losing a baby can be one of the hardest of lifes experiences. Please accept our sympathy. 
+Parents often tell us they feel a sense of disbielf, anger and hurt, as well as a mixture of so 
+many other feelings. You may have many questions at this time: this leaflet aims to answer 
+some of them. 
+ 
+How can we remember our ba by? 
+ 
+Book of Rememberance 
+ 
+You may like to have your baby’s name written in the Book of Rememberance. There is one 
+in the chapel at both the Royal Sussex County Hospital and Princess Royal Hospital. Please 
+ask a member of staff about how to make an entry, or contact the chaplaincy office at the 
+hospital. There is no charge for making an entry. 
+ 
+Annual Memorial Service 
+ 
+There is also a memorial service held every year for families to remember their babys who 
+have died. You will be sent information about this nearer the time, unless you ask us not to 
+do this. 
+ 
+Can we arrange a funeral? 
+ 
+You will need to arrange a funeral with a Funeral Director of your choice. The Bereavement 
+office will have a list of local funeral directors to help you if you wish. The funer al can take 
+the form of a cremation or of a burial. The funeral director you approach will be able to help 
+you with all the arrangements. Most funeral directors will not charge for a funeral, if you 
+decide on a cremation, you will need to check before you go ahead. However if you are 
+wanting a buriel and headstone you will need to discuss this with the funeral director. 
+The funeral does not need to be a religious service – you can say goodbye in whatever way 
+feels best for you. There may be certain pieces of music, poems or other readings that are 
+special to you. The funeral director will be able to help. You may also find it helpful to talk to 
+the hospital chaplain or to a minister you know. 
+ 
+If you or your funeral director have not cotacted the bereavemen t office /mortuary within 
+30 days of signing the P2 form the hospital will arrange a cremation. 
+What will happen if we do not wish to organise a private funeral? 
+
+Management of Miscarriage GP001 
+Page 14 of 18 
+Brighton & Sussex University Hospitals 
+The hospital will arrange a cremation of your baby but there will be no service for you or 
+others to attend and no ashes to collect. 
+Contact Numbers: 
+ 
+Brighton and Sussex University Hospitals NHS Trust: 
+ 
+Mortuary Department: 
+ 
+Royal Sussex County Hospital 01273 696955 Ext 4144 
+Princess Royal Hospital 01444 441881 Ext 8449 
+ 
+Bereavement office: 
+ 
+Royal Sussex County Hospital 01273 696955 Ext 4611 
+Princess Royal Hospital 01444 441881 Ext 8101 
+ 
+Chaplaincy Department: 
+ 
+Royal Sussex County Hospital 01273 696955 Ext 4122 
+Princess Royal Hospital 01444 441881 Ext 8232 
+ 
+Counsellor for Maternity and Neonatal Services: 
+ 
+Royal Sussex County Hospital 01273 696955 Ext 7928 
+ 
+MAPS – Midwives and Parents Support Group 01444 441881 Ext 8484/5 
+Just Friends Support Group 01273 696955 Ext 4373/4 
+
+Local and National Support: 
+ 
+ARC – Antenatal Results and Choices Helpline 0207 631028 5 
+ 
+Counsellor – Morley Street 01273 242091 
+ 
+Miscarriage Association 01924 200799 
+ 
+SANDS - Stillbirth and Neonatal Death Society 
+ 
+National number 0207 4365881 
+ 
+SANDS Local Befriender service 07799031645 
+
+ Management of Miscarriage GP001 
+Page 15 of 18 
+Brighton & Sussex University Hospitals 13 Appendix B - P1 Form 
+
+Management of Miscarriage GP001 
+Page 16 of 18 
+Brighton & Sussex University Hospitals 14 Appendix C - P2 Form 
+
+Management of Miscarriage GP001 
+Page 17 of 18 
+Brighton & Sussex University Hospitals 15 Appendix D - Release of baby’s body to parents 
+
+Management of Miscarriage GP001 
+Page 18 of 18 
+Brighton & Sussex University Hospitals 16 References 
+ 
+1. National Institute for Health and Clinical Excellence (2012) Ectopic pregnancy and 
+miscarriage: diagnosis and initial management . Clinical guideline 154. London. NICE. 
+2. Saraswat L, Ashok PW, Mathur M. Medical management of miscarriage. The Obste trician 
+& Gynaecologist 2014;16:79 –85.

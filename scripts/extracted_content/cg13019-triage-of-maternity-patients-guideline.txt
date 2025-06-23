@@ -1,0 +1,921 @@
+# Extracted from: CG13019 Triage of Maternity Patients Guideline.pdf
+# Guideline ID: cg13019-triage-of-maternity-patients-guideline
+# Content length: 40237 characters
+# Processing date: 1750066900.2917702
+
+CG13019 Triage of maternity patients guideline v5.1 July 2023 Page 1 of 25 
+ 
+Please check against the intranet that this printout is the most recent version of this document. 
+Triage of Maternity Patients Guideline 
+Summary statement: How does the document 
+support patient care? By providing guidance for all maternity staff 
+department involved in the non-elective admission of 
+maternity patients 
+Staff/stakeholders involved in development: Consultant Obstetricians, Labour Ward Leads, 
+Senior Midwives 
+Division: Women and people and Child ren’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Gail Addison 
+For use by: Obstetricians and Midwives 
+Purpose: To provid e guidance for staff to ensure maternity 
+admissions are seen in the most appropriate area 
+This document supports:  Antenatal Care and Pa tient Information 
+Guideline 
+ Care During the Latent Phase of Labour 
+Guideline 
+Key related documents: UH Sussex ( SRH & WH ) Maternity Guidelines: 
+ Reduced Fetal Movements 
+ Hypertensive Disorders During Pregnancy 
+ Non Obstetric Emergency Care 
+ Antepartum Haemorrhage 
+ Severe Pre-Eclampsia and Eclampsia 
+ Obstetric Cholestasis 
+ Preterm Labour 
+ Care of Women and people in Labour 
+ Maternal Sepsis 
+Approved by: Joint Obstetric guideline group 
+Approval date: 19th July 2023 Date uploaded: 24th July 2023 
+Ratified by Board of Directors/ Committee of the 
+Board of Directors Not Applicable - Divisional Ratification only required 
+Ratification Date: Not Applicable - Divisional Ratification only required 
+Expiry Date: Jan 202 5 
+Review date: July 202 4 
+If you require this document in another format such as Braille, large print, 
+audio or another language please contact the Trusts Communications Team 
+Reference Number: CG13019 
+
+CG13019 Triage of maternity patients guideline v5.1 July 2023 Page 2 of 25 
+ 
+Please check against the intranet that this printout is the most recent version of this document. 
+
+Version Date Author Status Comment 
+1.0 August 2013 CNST Midwife Archived Development of new 
+Trustwide guideline 
+2.0 August 2015 Gail Addiso n Archived 
+3.0 May 2018 S Griffi n Archived 3 yearly review 
+4.0 August 2021 Hannah Challen, 
+Clinical 
+Effectiveness 
+Support Midwife Archived 3 yearly review . Initial 
+telephone assessment 
+updated. Covid positive 
+calls pathway added. 
+Neonatal referral 
+pathway updated. Triage 
+of feeding concerns 
+updated. 
+5.0 January 2022 Gail Addison , 
+Acting HoM Archived Updated to include 
+BSOTS maternity Triage. 
+5.1 July 2023 CE Team LIVE Pathway added for 
+escalating concerns with 
+care raised by 
+women/people. 
+Flowchart fo r early 
+pregnancy bleeding 
+added. 
+
+CG13019 Triage of maternity patients guideline v5.1 July 2023 Page 3 of 25 
+ 
+Please check against the intranet that this printout is the most recent version of this document. 
+
+Contents 
+
+1.0 Aim ................................ ................................ ................................ ................................ ........ 4 
+2.0 Scope ................................ ................................ ................................ ................................ .... 4 
+3.0 Responsibi lities ................................ ................................ ................................ ..................... 4 
+4.0 Abbreviations used within this guideline ................................ ................................ ................ 4 
+5.0 Introduction and key points ................................ ................................ ................................ .... 5 
+6.0 Telephone Triage (Maternity Helpline) ................................ ................................ ................... 5 
+6.1 Pathway for managing Covid -19 positive tests on telephone triage ................................ ....... 6 
+6.2 Pathway for managing early pregnancy suspected miscarriage on telephone triage ............. 6 
+6.3 Pathway for managing concerns with care raised by women/people ................................ ..... 6 
+7.0 BSOTS Process ................................ ................................ ................................ .................... 6 
+7.1 Recommended BSOTs category and maximum time to treatment/next assessment ............. 7 
+7.2 BSOTs Process Flowchart ................................ ................................ ................................ ..... 7 
+7.3 The Initial Triage Assessment ................................ ................................ ............................... 8 
+7.4 Antenatal Triage Assessment Card ................................ ................................ ....................... 9 
+7.5 BSOTs Algorithms ................................ ................................ ................................ ................. 9 
+7.5 Subsequent immediate care (in main Triage area / Labour Ward) ................................ ......... 9 
+7.7 Communication with the woman ................................ ................................ .......................... 10 
+7.8 BSOTs Staffing requirements ................................ ................................ .............................. 11 
+8.0 Antenatal Day Assessment Unit (ADAU) ................................ ................................ ............. 11 
+9.0 Neonatal referrals from community ................................ ................................ ...................... 11 
+8.0 Audit ................................ ................................ ................................ ................................ .... 12 
+References ................................ ................................ ................................ ................................ ..... 12 
+Appendix 1: Referral criteria for telephone triage calls ................................ ................................ .... 13 
+Appendix 2: Maternity ward admissions sticker ................................ ................................ ............... 14 
+Appendix 3: Telephone Triage Assessment Card ................................ ................................ ........... 15 
+Appendix 4: Example of Algorithm & Assessment Card ................................ ................................ .. 16 
+Appendix 5: Triage of feeding concerns ................................ ................................ .......................... 18 
+Appendix 6: Neonatal referral pathway into hospital from community <28 Days (Readmission) ...... 19 
+Appendix 7: Covid positive calls pathway ................................ ................................ ....................... 20 
+Appendix 8: Escalation pathway when women/people raise concerns with their care ..................... 23 
+Appendix 9: Patient information poster for raising concerns ................................ ............................ 24 
+Appendix 10: Telephone triage of early pregna ncy vaginal bleeding ................................ ............... 25 
+ 
+CG13019 Triage of maternity patients guideline v5.1 July 2023 Page 4 of 25 
+ 
+Please check against the intranet that this printout is the most recent version of this document. 
+ 
+Triage of Maternity Patients Guideline 
+ 
+1.0 Aim 
+ 
+The aims of this guideline are: 
+ 
+ This operational policy will facilitate service for women /people requi ring an urgent non -
+scheduled obstetric assessment, usually when attending Maternity Triage. 
+ Assessment by using BSOTS© (Birmingham Symptom specific Obstetric Triage System ) 
+will standardise and clinically prioritise care, reduce time to initial assessment and reduce 
+need for inappropriate tests and treatments such as antibiotics. 
+ The use BSOTS© system enables an overview of the workload in Maternity Triage and 
+ensures appropriate escalation should that be required. It also ensures those who require 
+medical attention receive it in a timely way and that those women /people , for whom it is 
+appropriate, are discharged by the midwife. 
+
+2.0 Scope 
+ 
+This guideline is for use by: 
+ 
+ Midwives 
+ Obstetricians 
+ Maternity and Health Care Assistants 
+
+3.0 Responsibilities 
+ 
+It is the responsibility of all midwifery and medical staff to: 
+ 
+ Access, read, understand, and apply this guidance . 
+ Attend any mandatory training pertaining to this guidance . 
+ 
+It is the responsibility of the division to: 
+ 
+ Ensure the guideline is reviewed as required in line with Trust and National 
+recommendations . 
+ Ensure the guideline is accessible to all relevant staff . 
+
+4.0 Abbreviations used within this guideline 
+ 
+BSOTS - Birmingham Symptom specific 
+Obstetric Triage System MEOWS – Modified Early Obstetr ic 
+Warning Score 
+CG13019 Triage of maternity patients guideline v5.1 July 2023 Page 5 of 25 
+ 
+Please check against the intranet that this printout is the most recent version of this document. 
+TAC - Triage Assessment Card MIS – Maternity Information System 
+ADAU - Antenatal Day Assessment Unit APH – Antepartum Haemorrhage 
+SROM – Spontaneous Rupture of 
+Membranes ANC – Antenatal Clinic 
+IOL – Induction of Labour CMW – Community Midwife 
+
+5.0 Introduction and key points 
+ 
+Maternity Triage systems are designed to ensure the woman receives the level and quality of care 
+appropriate to their clinical needs and the resources available are used most effectively. 
+It involves a process of prioritising the order in which women /people receive obstetric and/or 
+midwifery attention on arrival to the Maternity Services, guiding treatment according to clinical need. 
+ 
+The Birmingham Symptom specific Obstetric Triage system (BSOTs) is based on the established 
+triage systems used in Emergency medicine and uses a uniform assessment and clinical 
+prioritisation of the common conditions that women /people present with in maternity triage. 
+ 
+BSOTS bundle includes: 
+ 
+ Completion of a standard clinical tri age assessment by a midwife within 15 minutes of the 
+woman /person ’s attendance. This includes taking a brief maternal /birthing parent history, 
+completion of baseline maternal /birthing parent observations (temperature, pulse, 
+respirations and blood pressure ), assessment of pain levels, abdominal palpation and 
+auscultation of the fetal heart rate (if the woman /person is antenatal) and should take 
+about 5 -10 minutes to undertake. 
+ This assessment is used to define a category of clinical urgency using symptom s pecific 
+algorithms, which guides timing of subsequent assessment and immediate care (by an 
+Obstetrician if required). 
+ Standardised symptom -specific algorithms are used for allocation of clinical priority and 
+the immediate care and further investigations o f the eight commonest reasons for 
+attendance (Abdominal pain, antenatal bleeding, hypertension, ruptured membranes, 
+reduced fetal movements, suspected labour, unwell/other and postnatal) The BSOTs 
+documentation supports and standardised the completion of t he clinical tasks required 
+and aids decision making. 
+
+6.0 Telephone Triage (Maternity Helpline) 
+ 
+Most attendances are preceded with either a self -referri ng phone call to the Maternity Helpline or 
+referral from another healthcare worker such as a Communit y Midwife or GP. 
+ 
+Women /people are then advised to attend Triage, ideally with a recommended timeframe. 
+If a woman /person phones the department, prior to arrival at Triage, a telephone assessment 
+should be undertaken using the BSOTs standardised Telephon e Triage Assessment proforma (see 
+Appendix 3 ). 
+ 
+CG13019 Triage of maternity patients guideline v5.1 July 2023 Page 6 of 25 
+ 
+Please check against the intranet that this printout is the most recent version of this document. 
+This directs the documentation of necessary informati on and the advice given to the woman /person , 
+it does not attempt to prioritise the woman /person ’s clinical urgenc y over the telephone. 
+ 
+Details of the phone call, advice g iven and plans made must be recorded on MIS. The phone book 
+is only to be used only in the event where MIS is offline or otherwise inaccessible. 
+ 
+Women /people and babies should be referred to the a ppropriate area, according to the history 
+given; using the ‘Referral Criteria for Maternity Calls’ ( see Appendix 1 ). The Triage Midwife is 
+responsible for liaising with the appropriate clinical area prior to the a dmission . 
+
+6.1 Pathway for managing Covid-19 positive tests on telephone triage 
+ 
+For women and people who are calling following a positive covid test – the ‘Covid Positive Calls 
+Pathway’ should be followed (see Append ix 7). 
+
+6.2 Pathway for managing early pregnancy suspected miscarriage on telephone triage 
+ 
+For women/people with early pregnancy vaginal bleeding please see appendix 10 for referral 
+pathway. 
+
+6.3 Pathway fo r managing concerns with care raised by women/people 
+ 
+For women/people who express a concern with their care , the Triage Midwife should follow the 
+flowchart in appendix 8 . 
+
+7.0 BSOTS Process 
+ 
+ Once the woman /perso n has presented to the department, the triage process is started. 
+And the time of attendance noted (see Appendix 4 ). 
+ Define appropriate symptom specific Triage Assessment Card (TAC) to be used fo r the 
+assessment (see Appendix 4 ). 
+ Undertake a standardised Initial Triage Assessment – within 15 minutes of arrival 
+ Define level of urgency using symptom specific algorithm (and complete immediate care 
+as per algorithm) Red or Orange Y ellow or Green . 
+o Red or Orange: Immediate/urgent care to be seen in Triage main area (Labour 
+Ward) for on -going care . 
+o Yellow or Green: Await further assessment in the Triage room 
+ Each symptom specific algorithm has a definition of maximum treatment threshol ds: 
+timeframes within which women and people were to be seen based on their level of 
+urgency. These timeframes determine the recommended interva l between initial triage 
+and on going assessment and care. 
+
+CG13019 Triage of maternity patients guideline v5.1 July 2023 Page 7 of 25 
+ 
+Please check against the intranet that this printout is the most recent version of this document. 
+7.1 Recommended BSOTs category and maximum time to tr eatment/next assessment 
+
+Alongside the time -limited thresholds are the performance indicators setting the bench mark of 
+achievement to maximise s afety. These defined time frames are also be used for local audit and 
+local assessment and allocation of midwifery and medical staff within the triage department (Labour 
+Ward) . 
+
+7.2 BSOTs Process Flowchart 
+
+BSOTS category Maximum time until 
+treatment 
+Red Immediate 
+Orange 15 minutes 
+Yellow 1 hour 
+Green 4 hours 
+CG13019 Triage of maternity patients guideline v5.1 July 2023 Page 8 of 25 
+ 
+Please check against the intranet that this printout is the most recent version of this document. 
+7.3 The Initial Triage Assessment 
+ 
+The initi al triage assessment to determine the urgency with which women / people will need to be 
+seen will be carried out in the Labour Ward Triage Room which i s the dedicated initial triage 
+assessment area . 
+ 
+All women /people attending will be seen and assessed qui ckly on enteri ng the department; the 
+initial triage assessment should be undertaken by a dedicated initial assessor midwife (“the BSOTs 
+Midwife”) in the designated room. 
+ 
+The BSOTs midwife will assess the woman /person ’s condition using a standardised ass essment. 
+This should take approximately 5 -10 minutes. 
+ 
+Following their initial triage assessment, women/ people will be seen in th e order of their clinical 
+need (not on arrival time) and should be informed when they are likely to be seen. 
+ 
+Standardised be spoke documentation is available for eac h of the 6 presenting symptoms and 
+contains initial assessment and immediate care and investigations. 
+ 
+Abdominal Pain Antenatal Bleeding 
+Hypertension Postnatal 
+Unwell/Other Ruptured Membranes 
+ 
+The initial assessm ent will allocate a level of urgency using the appropri ate symptom specific 
+algorithm and this will define which further assessment and investigations should take place. 
+ 
+This initial triage assessment will include: 
+ 
+ Discussion of reasons for attending (a nd selection of appropriate documentation) . 
+ Observing the woman /person ’s general appearance . 
+ MEOWS assessment (temperature, pulse, blood pressure, respirations, oxygen 
+saturation (if applicable), urine output, neurological response, amniotic fluid loss ( if 
+applicable), lochia (if applicable) . 
+ Abdominal palpation and auscultation of the fetal heart . 
+ Woman /person ’s perception of her pain . 
+ Level of urgency to prioritise care . 
+ Plan of immediate care . 
+ 
+The standard follow -on care and investigations (depen ding o n primary reason for attending and will 
+be symptom specific) will be done in a timely manner b y a midwife from the Labour Ward. 
+ 
+Women / people assigned a category of urgency requiring emergency or urgent care (red or orange) 
+should be kept in the Lab our Ward clinical area. 
+ 
+Women / people assigned a l ess urgent category (yellow or green) can return to the Triage room 
+(assessment room) to await further assessment as defined by their category. 
+ 
+CG13019 Triage of maternity patients guideline v5.1 July 2023 Page 9 of 25 
+ 
+Please check against the intranet that this printout is the most recent version of this document. 
+It is important that clinical staff can exercise their cli nical judgement when deciding on the 
+women/ people ’s category of urgency, but this should only be us ed to increase the category of 
+urgency. Clinical indicators (such as maternal /birthing parent BP o r pulse/MEOWS) should never be 
+overridden. 
+
+7.4 Antenatal T riage Assessment Card 
+ 
+The Antenatal Triage Assessment Card (TAC card) provides a concise summary of the triage 
+assessment and should include (see Appendix 4 ): 
+ 
+ Maternal /Birthing Parent name, DOB and Hospital number . 
+ The date and time arrival and initial assessment in triage, together with the midwi fe’s 
+name and PIN and/or stamp . 
+ The women /people ’s gestation, gravity/ parity and blood group . 
+ A summary of symptoms on arrival, relevant medical, obstetric, social and l ifestyle history, 
+together with current pregnancy, medications and allergies . 
+ Assessment, including temperature, pulse, respirations and blood pressure (ME OWS), 
+urinalysis and pain levels . 
+ Assessment of the fetus, including lie and presentation pattern of fetal movements and 
+fetal heart rate, including if necessary, a Reduced Fetal Movement checklist . 
+ Using the symptom specific algorithms and information from the initial triage, leads to 
+assessment of category of urgency (red, orange, yellow, green). The c ategory can be 
+raised as a result of clinical judgement but may not be lowered . 
+ The immediate plan of care is then summarised . 
+
+7.5 BSOTs Algorithms 
+ 
+Based on the presenting symptoms, maternal /birthing parent and fetal obs ervations, each algorithm 
+when followed gives the category of urgency to be determin ed for each of the reasons for 
+attendance (red/oran ge/yellow/green) (see Appendix 4 ). 
+ 
+It is important that clinical staff can exercise their clinical judgement when deciding on the 
+women/ people ’s category of urgency, but this should only be us ed to increase the category of 
+urgency. Clinical indicators such as maternal /birthing parent blood p ressure or pulse should not be 
+overridden. 
+ 
+The BSOTS algorithm also details the immediate subs equent care required, which is dependent on 
+the category of urgency and the presenting problem. 
+
+7.5 Subsequent immediate care (in main Triage area / Labour Ward ) 
+ 
+This details the immediate subsequent care required, which is dependent on the category of 
+urgency and the presenting reason and has been indi vidualised for each reason for attendance and 
+CG13019 Triage of maternity patients guideline v5.1 July 2023 Page 10 of 25 
+ 
+Please check against the intranet that this printout is the most recent version of this document. 
+category of urgency. It als o gives an opportunity for the midwife to request medical assessment, 
+should that be required. 
+
+7.6 Communication , Handover and Escalation 
+ 
+Handover and transfer of care should be from one health care professional (midwife or medical 
+staff) to another directly, ideally in person, but if this is not possible, by telephone. 
+ 
+Effective communication is central to promo ting maternity safet y. A structured and consistent 
+handover, handover of information and/or transfer of care be tween staff should be based on the 
+SBAR tool that covers details on the woman /person ’s Situatio n, Background, Assessment, and 
+Recommendations. 
+
+Any delays or breaches to BSOTs initial assessments or waiting times must be escalated to the 
+Labour Ward Co -ordinator and a DATIX completed. 
+
+7.7 Communication with the woman 
+ 
+The BSOTs midwife should: 
+ 
+ Communicate what is happening next, and who wi ll see them next . 
+ Re-assure that their information will be passed on to the next care provider. 
+ 
+The Assessment midwife should: 
+ 
+ Re-assure that their information has been passed on from their previous provider . 
+ Consider re -capping the history to reassure the woman /person that you have the 
+appropriate information . Ensure a holistic assessment of the woman /person ’s condition is 
+undertaken . 
+ Provide appropriate advice on discharge and arrange follow up appointments if 
+necessary . 
+
+CG13019 Triage of maternity patients guideline v5.1 July 2023 Page 11 of 25 
+ 
+Please check against the intranet that this printout is the most recent version of this document. 
+The Obstetrician should: 
+ 
+ Re-assure that their information has been passed on from their previous provider . 
+ Consider re -capping the history to reassure the woman /person that you have the 
+appropriate information . 
+ 
+An appropriate translation service should be used for non-English speaking patients 
+
+7.8 BSOTs Staffing requirements 
+ 
+Local midwifery and medical staffing numbers and skill mix will depend on how busy the maternity 
+triage department is and may vary with different shift times throughout the day. The priority must be 
+to undertake the initial triage within 15 minutes of arrival, and numbers of staff will therefore depend 
+on the numbers of women /people that attend. 
+
+8.0 Antenatal Day Assessment Unit ( ADAU ) 
+ 
+ The assessment of women and people requiring review in ADAU should be documented 
+within the free text pages of the handheld Antenatal record and on MIS. 
+ A medical obstetric review should be requested following the assessment if indicated. 
+ If admission is indicated, the ADAU midwife is responsib le for liaising with the relevant 
+clinicians. The Labour ward Co -ordinator should be informed of all admissions. 
+
+9.0 Neonatal referrals from community 
+ 
+Babies who require hospital review / admission should be advised to come to the most appropriate 
+area using the ‘Referral pathway from community’ (see Appendix 6 ). 
+
+CG13019 Triage of maternity patients guideline v5.1 July 2023 Page 12 of 25 
+ 
+Please check against the intranet that this printout is the most recent version of this document. 
+8.0 Audit 
+ 
+Monitoring Method Frequency 
+Number of women and people seen within 30 minutes Audit Annual 
+Number of women and people seen within t imeframe for red, 
+orange, yellow and green Audit Annual 
+Number of red flags – women and people not triaged within 
+30 minutes from time of arrival – due to midwifery staffing Audit Annual 
+
+References 
+ 
+BSOTs Training Manual 
+ 
+Imperial College Healthcare NHS Trust, London (2012) Triage in Maternity (Maternity Guideline) 
+ 
+East Lancashire NHS Trust (2011) Antenatal Triage Guidelines 
+
+CG13019 Triage of maternity patients guideline v5.1 July 2023 Page 13 of 25 
+ 
+Please check against the intranet that this printout is the most recent version of this document. 
+Appendix 1: Referral criteria for telephone triage calls 
+
+ A & E 
+ 
+ Less than 16 weeks with: severe pain +/- bleeding - Gynae review (see appendix 
+10) 
+ Non obstetric problem: i.e. asthma attack, severe chest pain (any gestation) 
+- Medics & Obstetric Team review 
+ Unwell neonate (see Appendix 6 ) 
+Labour Ward / Delivery Suite 
+ 
+ High risk women and people in labour / low risk labourers (choosing labour ward) 
+ APH (continuing) +/ - abdominal pain and /or associated risk factors 
+ No fetal movements 
+ Severe pre-eclampsia / eclampsia 
+ Sepsis 
+ SROM with meconium stained liquor 
+ Preterm SROM / Labour 
+ Postnatal review (where admission likely) 
+Community M/W visit 
+ 
+ Low risk latent labour 
+ SROM (clear) (over 37/40) 
+Day Assessment Unit (ADAU) - Mon-Fri 09.00 – 19.30 
+ 
+ Reduced fetal movements 
+ Raised blood pressure +/- proteinuria 
+ Administration medication e.g. corticosteroids 
+ Investigations not requiring admission e.g. obstetric cholestasis, CTG, 
+blood tests, presentation reviews 
+ Managing on -going surveillance of prolonged premature ROM 
+ No available ANC appointments - Consultant request only 
+ Declining IOL - management 
+ Out of hours to be seen on Labour Ward / Delivery Suite 
+ 
+CG13019 Triage of maternity patients guideline v5.1 July 2023 Page 14 of 25 
+ 
+Please check against the intranet that this printout is the most recent version of this document. 
+Appendix 2: Maternity ward admissions sticker 
+ 
+Date: Time: EDD: 
+Gestation: + Parity: 
+Admission No. Where seen: 
+Reason for admission: Yes No 
+Fetal Movements □ □ 
+Contractions □ □ 
+Pain □ □ 
+PV bleed □ □ 
+Show □ □ Obstetric complications: 
+Temp: 
+Pulse: 
+BP: 
+Resps: 
+Urinalysis: Protein 
+Ketones 
+Glucose 
+MSU □ PCR □ Palpation Fetal heart 
+Lie: Pinard □ 
+Presentation: Doptone □ 
+Position: CTG □ 
+Engagement: 
+Fundal height: 
+Print name: Signature: 
+
+CG13019 Triage of maternity patients guideline v5.1 July 2023 Page 15 of 25 
+ 
+Please check against the intranet that this printout is the most recent version of this document. 
+Appendix 3 : Telephone Triage Assessment Card 
+
+CG13019 Triage of maternity patients guideline v5.1 July 2023 Page 16 of 25 
+ 
+Please check against the intranet that this printout is the most recent version of this document. 
+Appendix 4 : Example of Algorithm & Assessment C ard 
+
+CG13019 Triage of maternity patients guideline v5.1 July 2023 Page 17 of 25 
+ 
+Please check against the intranet that this printout is the most recent version of this document. 
+Appendix 4 (cont): Example of Algorithm & Assessment Card 
+
+CG13019 Triage of maternity patients guideline v5.1 July 2023 Page 18 of 25 
+ 
+Please check against the intranet that this printout is the most recent version of this document. 
+
+Appendix 5 : Triage of feeding concerns 
+ 
+Infant Feeding Calls to Triage 
+
+ Babies born under 37 weeks (late preterm) or previously ‘at risk’ 
+ Review on PN Ward 
+/Paediatric review 
+(See Appendix 4) •Worsening or new jaundice 
+•Low temperature (under 36.6c) 
+•Signs of illness (think sepsis!) 
+•Sleepy and/or not feeding at least 8 times in 24 hours 
+•Reduced urine output 
+•Not stooling at least twice a day 
+Midwife face to face 
+visit ASAP •Feeding parent is suffering with sore/ cracked nipples 
+•Persistent feeding but baby otherwise well 
+Contact MSW via 
+Feeding Advice Line 
++ / - visit if required •Parent concerned about feeding but otherwise well Well babies born over 37 weeks (term) 
+ Review on PN Ward 
+/Paediatric review 
+(See Appendix 4) •Worsening or new jaudice 
+•Signs of illness including low temperature (under 36.5c) 
+•Baby sleepy or not feeding at least 8 times in 24 hours 
+despite safe skin to skin, hand expressing and offering 
+expressed breastmilk 
+Midwife face to face 
+visit ASAP •Not stooling at least twice a day 
+•Reduced urine output but baby otherwise well 
+•Feeding parent is suffering with sore/ cracked nipples 
+ 
+Contact MSW via 
+Feeding Advice Line 
++ / - visit if required •Persistent feeding but baby otherwise well 
+•Parent concerned about feeding but otherwise well MSW Feeding Advice Telephone Line : 
+Worthing Team: 07808 099816 St Richard’s Team: 07808 099829 
+CG13019 Triage of maternity patients guideline v5.1 July 2023 Page 19 of 25 
+ 
+Please check against the intranet that this printout is the most recent version of this document. 
+
+Appendix 6 : Neonatal referral pathway into hospital from community <28 Days (Readmission) 
+
+Follow jaundice / 
+weight loss guidance 
+If jaundice within 24 hrs of 
+age (any gestation) 
+NNU - SRH / Bluefin - WH 
+Within 2 hours for SBR 
+Babies over 72 hrs of age 
+Jaundice , feeding concerns, 
+excessive weight loss 
+Direct to TANGMERE or 
+BRAMBER Ward 
+ 
+Liaise with Infant 
+Feeding Team 
+Regular Paediatric 
+Review (daily at least) 
+If unwell admit to 
+Howard or Bluefin 
+Ward 
+Paediatric Referral Readmission 
+Paediatrician to be informed of any readmission 
+SRH - Bleep 6511 
+WH- Bleep 1 358 
+If observations normal 
+and issues is feeding or 
+weight loss related admit 
+to TANGMERE or 
+BRAMBER Ward 
+24- 72 hrs of age 
+If feedin g conce rns or jaund ice 
+Direct to TANGMERE or 
+BRAMBER Ward for 
+Midwife review 
+If baby unwell floppy, 
+unresponsive, hypothermic, 
+respiratory concerns 
+CALL 999 and inform 
+Paediatrician 
+IF UNWELL - ANY AGE 
+ 
+and/or 
+ 
+MATERNAL SEPSIS WITHIN 
+72 HRS OF BIRTH 
+ 
+ Paed iatric middle grade to 
+decide location to be assessed 
+based on referral information: 
+A&E / CAU / Postnatal Ward 
+ 
+Liaise with Infant 
+Feeding Team 
+ 
+ If no admission please 
+liaise back to 
+community midwife - 
+inform them of plan +/ - 
+outstanding results 
+Disc harge from Any Clinical Area 
+Please liaise back to community midwife - inform them of plan +/ - outstanding 
+results via Postnatal Ward Clark (to place on discharge spreadsheet) 
+ 
+CG13019 Triage of maternity patients guideline v5.1 July 2023 Page 20 of 25 
+ 
+Please check against the intranet that this printout is the most recent version of this document. 
+Appendix 7 : Covid positive calls pathway 
+ 
+A midwife will be allocated by SRH ANC Manager to make calls as part of the 10 day follow up of 
+covid positive result, these should be logged onto the Covid Positive spreadsheet in the Community 
+folder on the Maternity server and on MIS. 
+If a woman who is covid positive calls Triage and sounds unwell the following table can act 
+as a guide for assessing severity of illness and appropriate referral. 
+ 
+ Information Action 
+ 
+Risk Factors Age >45y/o, Ethnicity, BMI, other respiratory 
+conditions, smoker, any reason for 
+immunosuppression? Consider obstetric advice if 
+concerned of multiple risk 
+factors. 
+ 
+Obstetrics Gestation, are they booked under obstetric care for 
+any reason . 
+Are th ey happy with fetal movements? Any other 
+obstetric concerns? Usual action for obstetric 
+concerns – invite in to 
+dedicated COVID review 
+space in maternity . 
+ 
+COVID 
+Specifics: 
+ Gestation at diagnosis 
+ Were they symptomatic? 
+ Treatment received? 
+ Have they b een admitted – ward/HDU/ITU? 
+ Have they had anticoagulation – dose and 
+duration 
+ If admission was required, 
+please alert obstetric team 
+and arrange for ANC 
+follow up (virtual in the 
+first instance please) + 
+growth scans (see below) 
+If no thromboprophylaxis, 
+explore why and 
+commence for 10 -days . 
+Current 
+Symptoms: 
+To be checked 
+at ALL calls 
+
+Specific Qs. Are you suffering with shortness of breath? 
+Ask the patient to describe their breathing in their 
+own words - the longer they talk, the longer you 
+have t o assess SOB and ability to complete 
+sentences. 
+--------------------------------------------------------- 
+ Are you so breathless that you are unable to 
+speak more than a few words? 
+ Are you breathing harder or faster than usual 
+when doing nothing at all? 
+ Are you so ill that you’ve stopped doing all of 
+your usual daily activities? 
+ Have things changed in the last day or so e.g. 
+no longer able to lie flat, despite being able to 
+do so previously. A significant change for the 
+worse is a red flag. 
+ Ask about : Blue lips, audible wheeze, needing 
+to lean forwards and support themselves to 
+breathe 
+ Any GI symptoms?  Being unable to 
+complete a sentence at 
+rest is a red flag 
+requiring review – 
+advise 999 . 
+ If able to complete 
+sentence but appears 
+to be struggling or says 
+yes to any of the 
+specific questions, 
+advise to attend A+E, or 
+call 111 . 
+ Any change for the 
+worse advise to call 
+111. 
+ Any Red Flag 
+symptoms (below) 
+advise to dial 999. 
+ If patient is unable to 
+maintain adequate 
+CG13019 Triage of maternity patients guideline v5.1 July 2023 Page 21 of 25 
+ 
+Please check against the intranet that this printout is the most recent version of this document. 
+ High temperature 
+ Extreme fatigue hydration, di al 111 or 
+attend A+E . 
+ If persistently over 37.8, 
+advise to call 111 or 
+attend A+E . 
+ Call 111 if this is 
+getting worse . 
+Observations 
+(if pulse 
+oximeter 
+available)  Ask them to take their pulse . 
+ Ask them to check their saturations when 
+sitting and standing . 
+ 
+NB Supplies of pulse oximeters are held in DAU 
+and are either being delivered to the 
+woman/person by community midwives or posted. 
+If the woman/person does not have a pulse 
+oximeter, contact DAU to arrange for one to be 
+delivered or posted. 
+
+Decision for admission to labour ward should be made as an MDT including on call senior 
+Obstetrician, Midwifery Manager on call, Leads, Co -ordinator, on call Obstetric Anaesthetist, 
+NNU and A&E if required . 
+ 
+General Information for pregnant people with known COVID positive status 
+ 
+1. VTE RISK ASSESSMENT 
+ Antenatal : ALL COVID + pregnant people must be assessed for thrombo prophlaxis where 
+COVID -19 is an addition al risk factor (RCOG) . 
+ COVID infection should be considered as transient risk factor and trigger reas sessment - 
+if VTE risk score is 3 or more then of prophylactic (LMWH) should be recommended. 
+Continue thrombo prophylaxis until they have recovered from the acute illness (between 7 
+and 14 days), or for 7 -days if asymptomatic. (RCOG) 
+On-call Obs Reg to be c ontacted to prescribe. Prescriptions can be collected from the 
+hospital pharmacy by any friend or family member who is not isolating. If there are 
+RED FLAG SYMPTOMS AND SIGNS THAT REQUIR E PATIENT TO BE 
+REVIEWED 
+These symptoms require 999 response if unable to get to A+E quickly 
+ Being unable to complete a sentence at rest. 
+ (Reported by patient) Blue lips, audible wheeze. 
+ Needing to lean forward and support themselves to breathe. 
+ O2 Saturat ions <93%. 
+ Chest pain. 
+CG13019 Triage of maternity patients guideline v5.1 July 2023 Page 22 of 25 
+ 
+Please check against the intranet that this printout is the most recent version of this document. 
+logistical problems, alternative arran gements can be made by the GP / community team. 
+For women and people who are self -isolating at home, ensure they stay well hydrated 
+and are mobile throughout this period. 
+ Admission: All pregnant people, or those within 6 -weeks post -partum who have been 
+hospitalised and have had confirmed COV ID-19 should be offered 
+thrombo prophylaxis for 10 days following hospital discharge. This should be organised 
+by the discharging team. 
+ 
+2. GROWTH SCAN AND FOLLOW UP APPOINTMENT IN ANC 
+This is only required if required admission due to COVID illness / respiratory support : 
+ 
+ Beyond 28 -weeks: 2-3 weeks after symptoms started or positive swab 
+ From 20 weeks to 27 weeks: Scan at 28/40 (allowing for 2 -3 weeks as above) 
+ Under 20/40, routine screening scan (i.e. nuchal or anomaly) – must allow for 2 -3 weeks 
+as above 
+ 
+Please see the ‘Antenatal Ca re Guidance during COVID pandemic’ for re -scheduling of ANC 
+appointments or suitability for virtual consults. 
+ 
+For latest isolation rules please see: Coronavirus (COVID -19): guidance and support - GOV.UK 
+(www. gov.uk) 
+CG13019 Triage of maternity patients guideline v5.1 July 2023 Page 23 of 25 
+ 
+Please check against the intranet that this printout is the most recent version of this document. 
+Appendix 8: Escalation pathway when women/people raise concerns with their care 
+Consultant 
+O&G 
+Midwife 
+Junior 
+O&G 
+Doctor 
+Other 
+ANC appointment - Take details from the person and escalate to the ANC Manager / Lead 
+Midwife (Monday - Friday). Inform the person that someone will get back to them ASAP. 
+Labour ward review - Take details from the person and escalate to a Matron or labour ward 
+manager (Monday - Friday). Inform the person that someone will get back to them ASAP. 
+If concerns are regarding fetal and/or maternal well -being contact labour ward coordinator 
+immediately to discuss appropriate care plan. May nee d disc ussion with on call consultant. 
+Community midwife - Take details from the person and escalate to the Community Team 
+Leader (Monday - Friday). Inform the person that someone will get back to them ASAP. 
+Labour ward midwife - Take details from the person and escalate to the Coordinator or Matron 
+(Monday - Friday). Inform the person that someone will get back to them ASAP. 
+ANC midwife - Take details from the person and escalate to the ANC Manager / Lead Midwife 
+(Monday - Friday). Inform the person that someone will get back to them ASAP. 
+If concerns are regarding fetal and/or maternal well -being contact labour ward coordinator 
+immediately to discuss appropriate care plan. May need discussion with on call consultant. 
+Registrars; Foundation Year or Specialist Tr ainees (SHO) - Take details from the person and 
+escalate to the on -call Consultant. Inform the person that someone will get back to them ASAP. 
+If concerns are regarding fetal and/or maternal well -being contact labour ward coordinator 
+immediately to discuss appropriate care plan. May need discussion with on call consultant. 
+ 
+Any other Registered Professional (anaesthetists, nurses etc); and Support Workers, Nursery 
+Nurses etc - Take details from the person and escalate to the Matrons (Monday - Friday). Inform 
+the person that someone will get back to them ASAP. 
+If concerns are regarding fetal and/or maternal well -being contact labour ward coordinator 
+immediately to discuss appropriate care plan. May need discussion with on call consultant. 
+Woman/Person 
+contacts with 
+concern following 
+recent 
+professional 
+contact within 
+maternity 
+ 
+CG13019 Triage of maternity patients guideline v5.1 July 2023 Page 24 of 25 
+ 
+Please check against the intranet that this printout is the most recent version of this document. 
+Appendix 9: Patient information poster for raising concerns 
+
+CG13019 Triage of maternity patients guideline v5.1 July 2023 Page 25 of 25 
+ 
+Please check against the intranet that this printout is the most recent version of this document. 
+Appendix 10: Telephone triage of early pregnancy vaginal bleeding 
+ 
+Positive Pregnancy Test & 
+Last Menstrual Period 5 -14 weeks ago 
+Vaginal Bleeding 
+Less than /like 
+period bleeding 
+ 
+Bleeding in early pregnancy is understandably worrying. 
+Although bleeding is associated with early pregnancy loss it does not mean 
+that this will definitely happen to you. The EPAC is a specialist clinic run 
+by gynaecology nurses and trained ultrasound operators and is the best 
+place to assess you and your pregnancy however we understand that it is 
+upsetting to have to wait for a review. The team will receive your referral 
+and contact you with a plan. This may or may not include a scan. 
+Abdominal Pain 
+Other signs & symptoms 
+Dizziness, fainting, shoulder -
+tip pain, diarrhoea, pain on 
+defecation or difficulty 
+passing urine, shortness of 
+breath. 
+Unmanageable b leeding 
+associated with dizziness, 
+feeling unwell, clots the 
+size of a fist 
+ 
+Safety -net (A&E) & 
+refer to EPAC 
+ 
+Advise patient 
+to attend to A&E 
+Mild suprapubic with 
+bleeding 
+One sided pain 
++/- bleeding. 
+Feels unwell. 
+Advice simple analgesia 
+Safety -net (A&E) & 
+refer to EPAC 
+Advise 
+patient 
+to attend 
+to A&E 
+Advise patient to 
+attend to A&E 
+ 
+Referral to EPAC 
+WH 
+ 
+Phone GDU 85147 
+Mon-Fri - 07:30 -19:30 
+ 
+Outside of these hours email : 
+epac.wgh@nhs.net 
+SRH 
+Complete referral and e -mail to 
+epac.srh@nhs.net 
+or 
+Phone GOPD 32874 
+Mon-Fri - 08:00 -18:00 
+Outside of these hours email : 
+epac.srh@nhs.net or place referral in folder 
+on Labour Ward

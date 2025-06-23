@@ -1,0 +1,1684 @@
+# Extracted from: NICE - 2021 - Antenatal Care.pdf
+# Guideline ID: nice-2021-antenatal-care
+# Content length: 122101 characters
+# Processing date: 1732953490.983185
+
+Antena tal c are 
+NICE guideline 
+Published: 19 August 2021 
+www .nice.or g.uk/guidance/ng201 
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Your r esponsi bility 
+The r ecommendations in t his guideline r epresent t he view of NICE, arriv ed at aft er car eful 
+consideration of t he evidence a vailable. When e xercising t heir judgement, pr ofessionals 
+and practitioners ar e expect ed to tak e this guideline fully int o account, alongside t he 
+individual needs, pr eferences and v alues of t heir patient s or t he people using t heir ser vice. 
+It is not mandat ory to apply t he recommendations, and t he guideline does not o verride t he 
+responsibility t o mak e decisions appr opriat e to the cir cumstances of t he individual, in 
+consultation wit h them and t heir f amilies and car ers or guar dian. 
+All pr oblems (adv erse e vents) related to a medicine or medical de vice used f or treatment 
+or in a pr ocedur e should be r epor ted to the Medicines and Healt hcare product s Regulat ory 
+Agency using t he Yellow Car d Scheme . 
+Local commissioners and pr oviders of healt hcare have a responsibility t o enable t he 
+guideline t o be applied when individual pr ofessionals and people using ser vices wish t o 
+use it. The y should do so in t he cont ext of local and national priorities f or funding and 
+developing ser vices, and in light of t heir duties t o have due r egar d to the need t o eliminat e 
+unlawful discrimination, t o adv ance equality of oppor tunity and t o reduce healt h 
+inequalities. Not hing in t his guideline should be int erpreted in a wa y that w ould be 
+inconsist ent wit h complying wit h those duties. 
+Commissioners and pr oviders ha ve a responsibility t o promot e an en vironmentally 
+sustainable healt h and car e syst em and should assess and r educe t he en vironmental 
+impact of implementing NICE r ecommendations wher ever possible. Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 2 of
+63Contents 
+Overview .................................................................................................................................... 5 
+Who is it f or? ........................................................................................................................................ 5 
+Recommendations ..................................................................................................................... 6 
+1.1 Organisation and deliv ery of ant enatal car e ................................................................................ 6 
+1.2 Routine ant enatal clinical car e ..................................................................................................... 10 
+1.3 Information and suppor t for pr egnant w omen and t heir par tners ............................................ 19 
+1.4 Int erventions f or common pr oblems during pr egnancy ............................................................ 27 
+Terms used in t his guideline ............................................................................................................... 31 
+Recommendations f or resear ch ............................................................................................... 34 
+Key recommendations f or resear ch .................................................................................................. 34 
+Rationale and impact ................................................................................................................. 37 
+Starting ant enatal car e ....................................................................................................................... 37 
+Antenatal appointment s ..................................................................................................................... 38 
+Involving par tners ................................................................................................................................ 40 
+Taking and r ecording t he w oman's hist ory ....................................................................................... 41 
+Examinations and in vestigations ....................................................................................................... 44 
+Venous t hromboembolism .................................................................................................................. 44 
+Gestational diabet es ........................................................................................................................... 45 
+Pre-eclampsia and h yper tension in pr egnancy ................................................................................ 46 
+Monit oring f etal gr owth and w ellbeing ............................................................................................. 46 
+Breech pr esentation ............................................................................................................................ 48 
+Communication – k ey principles ........................................................................................................ 49 
+Information about ant enatal car e ...................................................................................................... 50 
+Antenatal classes ................................................................................................................................ 52 
+Peer suppor t ........................................................................................................................................ 53 
+Sleep position ...................................................................................................................................... 53 
+Nausea and v omiting .......................................................................................................................... 54 Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 3 of
+63Hear tburn ............................................................................................................................................. 57 
+Sympt omatic v aginal dischar ge ......................................................................................................... 57 
+Pelvic gir dle pain ................................................................................................................................. 59 
+Unexplained v aginal bleeding aft er 13 weeks .................................................................................. 60 
+Cont ext ....................................................................................................................................... 61 
+Finding mor e information and committ ee details ................................................................... 62 
+Updat e information ................................................................................................................... 63 Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 4 of
+63This guideline r eplaces CG62 and ES20 . 
+This guideline is t he basis of QS22, QS35 , QS98 , QS105 , QS204 and QS17 8. 
+This guideline should be r ead in conjunction wit h NG137 . 
+Overview 
+This guideline co vers t he routine ant enatal car e that w omen and t heir babies should 
+receiv e. It aims t o ensur e that pr egnant w omen ar e off ered regular check -ups, inf ormation 
+and suppor t. We have also published a guideline on postnatal car e, which co vers t he 
+topics of emotional attachment and bab y feeding. 
+The guideline uses t he terms 'w oman' or 'mot her' t hroughout. These should be tak en to 
+include people who do not identify as w omen but who ar e pregnant. Similarly , wher e the 
+term 'par ents' is used, t his should be tak en to include an yone who has main r esponsibility 
+for caring f or a bab y. 
+The Royal College of Obst etricians and Gynaecologist s has pr oduced guidance on 
+COVID-19 and ant enatal car e for all midwif ery and obst etric ser vices. 
+Who is i t for? 
+• Healt hcare professionals 
+• Commissioners of ant enatal car e ser vices 
+• Women using ant enatal ser vices, t heir par tners, t heir f amilies, and t he public Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 5 of
+63Recommenda tions 
+People ha ve the right t o be in volved in discussions and mak e informed decisions 
+about t heir car e, as described in NICE's inf ormation on making decisions about y our 
+care. 
+Making decisions using NICE guidelines explains ho w we use w ords to sho w the 
+strengt h (or cer tainty) of our r ecommendations, and has inf ormation about 
+prescribing medicines (including off -label use), pr ofessional guidelines, standar ds 
+and laws (including on consent and mental capacity), and saf eguar ding. 
+Suppor ting w omen t o mak e decisions about t heir car e is impor tant during pr egnancy . 
+Healt hcare professionals should ensur e that w omen ha ve the inf ormation t hey need 
+to mak e decisions and t o giv e consent in line wit h General Medical Council (GMC) 
+guidance , the Nursing and Midwif ery Council (NMC) Code and t he 2015 Mont gomer y 
+ruling . 
+Please not e that t he Royal College of Obst etricians and Gynaecologist s has pr oduced 
+guidance on CO VID-19 and pr egnancy for all midwif ery and obst etric ser vices. 
+1.1 Organisa tion and deli very of antena tal c are 
+Starting an tena tal c are 
+1.1.1 Ensur e that ant enatal car e can be star ted in a v ariety of straightf orward 
+ways, depending on w omen's needs and cir cumstances, f or example, b y 
+self-referral, r eferral b y a GP , midwif e or anot her healt hcare professional, 
+or through a school nurse, community centr e or r efugee host el. 
+1.1.2 At the point of ant enatal car e referral: 
+• Provide an easy-t o-complet e referral f orm. 
+• Offer early pr egnancy healt h and w ellbeing inf ormation bef ore the booking Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 6 of
+63appointment. This should include inf ormation about modifiable f actors t hat ma y 
+affect t he pr egnancy , including st opping smoking, a voiding alcohol, taking 
+supplement s, and eating healt hily. See also recommendation 1 .3.9 and t he 
+NICE guidelines on mat ernal and child nutrition , vitamin D, and smoking: 
+stopping in pr egnancy and aft er childbir th. 
+• Ensur e that t he mat erials ar e available in diff erent languages or f ormat s such 
+as digital, print ed, braille or Easy R ead. 
+1.1.3 The r eferral f orm f or women t o star t ant enatal car e should: 
+• enable healt hcare professionals t o identify w omen wit h: 
+－ specific healt h and social car e needs 
+－ risk f actors, including t hose t hat can pot entially be addr essed bef ore the 
+booking appointment, f or example, smoking 
+• include contact details about t he w oman's GP . 
+For a shor t explanation of wh y the committ ee made t he recommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on star ting ant enatal 
+care. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview F: 
+accessing ant enatal car e. 
+Antena tal appoin tmen ts 
+1.1.4 Offer a first ant enatal (booking) appointment wit h a midwif e to tak e place 
+by 10+0 weeks of pr egnancy . 
+1.1.5 If women contact or ar e referred to mat ernity ser vices lat er than 
+9+0 weeks of pr egnancy , offer a first ant enatal (booking) appointment t o 
+take place wit hin 2 weeks if possible. 
+1.1.6 If a w oman books lat e in pr egnancy , ask about t he reasons f or the lat e 
+booking because it ma y reveal social, psy chological or medical issues 
+that need t o be addr essed. Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 7 of
+631.1.7 Plan 10 routine ant enatal appointment s wit h a midwif e or doct or for 
+nullipar ous w omen. (See schedule of appointment s.) 
+1.1.8 Plan 7 routine ant enatal appointment s wit h a midwif e or doct or for 
+parous w omen. (See schedule of appointment s.) 
+1.1.9 Also see t he NICE guideline on pr egnancy and comple x social f actors for: 
+• women who misuse substances 
+• recent migrant s, asylum seek ers or r efugees, or w omen who ha ve difficulty 
+reading or speaking English 
+• young w omen aged under 20 
+• women who e xperience domestic abuse. 
+1.1.10 Offer additional or longer ant enatal appointment s if needed, depending 
+on the w oman's medical, social and emotional needs. Also see t he NICE 
+guidelines on pr egnancy and comple x social f actors, intrapar tum car e for 
+women wit h existing medical conditions or obst etric complications and 
+their babies , hyper tension in pr egnancy , diabet es in pr egnancy and twin 
+and triplet pr egnancy . 
+1.1.11 Ensur e that r eliable int erpreting ser vices ar e available when needed, 
+including British Sign Language. Int erpreters should be independent of 
+the w oman rat her t han using a f amily member or friend. 
+1.1.12 Those r esponsible f or planning and deliv ering ant enatal ser vices should 
+aim t o provide continuity of car er. 
+1.1.13 Ensur e that t here is eff ectiv e and pr ompt communication betw een 
+healt hcare professionals who ar e involved in t he w oman's car e during 
+pregnancy . Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 8 of
+63For a shor t explanation of wh y the committ ee made t he recommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on ant enatal 
+appointment s. 
+Full details of t he evidence and t he committ ee's discussion ar e in: 
+• evidence r eview H: timing of first ant enatal appointment 
+• evidence r eview I: number of ant enatal appointment s 
+• evidence r eview J: referral and deliv ery of ant enatal car e. 
+Involving par tner s 
+1.1.14 A woman can be suppor ted by a partner during her pr egnancy so 
+healt hcare professionals should: 
+• involve par tners accor ding t o the w oman's wishes and 
+• inform t he w oman t hat she is w elcome t o bring a par tner t o ant enatal 
+appointment s and classes. 
+1.1.15 Consider arranging t he timing of ant enatal classes so t hat t he pr egnant 
+woman's par tner can att end, if t he w oman wishes. 
+1.1.16 When planning and deliv ering ant enatal ser vices, ensur e that t he 
+environment is w elcoming f or par tners as w ell as pr egnant w omen b y, for 
+example: 
+• providing inf ormation about ho w par tners can be in volved in suppor ting t he 
+woman during and aft er pr egnancy 
+• providing inf ormation about pr egnancy f or par tners as w ell as pr egnant w omen 
+• displa ying positiv e images of par tner in volvement (f or example, on notice 
+boar ds and in waiting ar eas) 
+• providing seating in consultation r ooms f or bot h the w oman and her par tner Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 9 of
+63• considering pr oviding oppor tunities f or par tners t o att end appointment s 
+remot ely as appr opriat e. 
+For a shor t explanation of wh y the committ ee made t he recommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on in volving par tners . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview C: 
+involving par tners and evidence r eview B: appr oaches t o information pr ovision . 
+1.2 Routine an tena tal clinic al care 
+Taking and r ecording the w oman 's histor y 
+1.2.1 At the first ant enatal (booking) appointment, ask t he w oman about: 
+• her medical hist ory, obst etric hist ory and f amily hist ory (of bot h biological 
+parents) 
+• previous or curr ent mental healt h concerns such as depr ession, anxiety , severe 
+mental illness, psy chological trauma or psy chiatric tr eatment, t o identify 
+possible mental healt h problems in line wit h the section on r ecognising mental 
+healt h problems in pr egnancy and t he postnatal period and r eferral in t he NICE 
+guideline on ant enatal and postnatal mental healt h 
+• current and r ecent medicines, including o ver-the-count er medicines, healt h 
+supplement s and herbal r emedies 
+• allergies 
+• her occupation, discussing an y risks and concerns 
+• her f amily and home situation, a vailable suppor t netw ork and an y healt h or 
+other issues aff ecting her partner or family members t hat ma y be significant f or 
+her healt h and w ellbeing 
+• other people who ma y be in volved in t he car e of t he bab y 
+• contact details f or her par tner and her ne xt of kin Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 10 of
+63• factors such as nutrition and diet, ph ysical activity , smoking and t obacco use, 
+alcohol consumption and r ecreational drug use (see also recommendations 
+1.3.8 and 1 .3.9). 
+1.2.2 Consider r eviewing t he w oman's pr evious medical r ecords if needed, 
+including r ecords held b y other healt hcare providers. 
+1.2.3 Be awar e that, accor ding t o the 2020 MBRRA CE-UK r epor ts on mat ernal 
+and perinatal mor tality , women and babies fr om some minority et hnic 
+back grounds and t hose who liv e in depriv ed ar eas ha ve an incr eased risk 
+of deat h and ma y need closer monit oring and additional suppor t. The 
+repor ts sho wed that: 
+• compar ed wit h whit e women (8/100 ,000), t he risk of mat ernal deat h during 
+pregnancy and up t o 6 w eeks aft er bir th is: 
+－ 4 times higher in black w omen (34/100 ,000) 
+－ 3 times higher in w omen wit h mix ed et hnic back ground (25/100 ,000) 
+－ 2 times higher in Asian w omen (15/100 ,000; does not include Chinese 
+women) 
+• compar ed wit h whit e babies (34/10 ,000), t he stillbir th rat e is 
+－ more than twice as high in black babies (7 4/10,000) 
+－ around 50% higher in Asian babies (53/10 ,000) 
+• women living in t he most depriv ed ar eas (15/100 ,000) ar e mor e than 2. 5 times 
+more likely to die compar ed wit h women living in t he least depriv ed ar eas (6/
+100,000) 
+• the stillbir th rat e incr eases accor ding t o the le vel of depriv ation in t he ar ea the 
+mother liv es in, wit h almost twice as man y stillbir ths for women living in t he 
+most depriv ed ar eas (47/10 ,000) compar ed wit h the least depriv ed ar eas (26/
+10,000). 
+1.2.4 If the w oman or her par tner smok es or has st opped smoking wit hin the 
+past 2 weeks, off er a r eferral t o NHS St op Smoking Ser vices in line wit h 
+the NICE guideline on smoking: st opping in pr egnancy and aft er 
+childbir th. Also see t he NICE guideline on smok eless t obacco: Sout h Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 11 of
+63Asian communities . 
+1.2.5 Ask t he w oman about domestic abuse in a kind, sensitiv e manner at t he 
+first ant enatal (booking) appointment, or at t he earliest oppor tunity when 
+she is alone. Ensur e that t here is an oppor tunity t o have a priv ate, 
+one-t o-one discussion. Also see t he NICE guideline on domestic violence 
+and abuse and t he section on pr egnant w omen who e xperience domestic 
+abuse in t he NICE guideline on pr egnancy and comple x social f actors. 
+1.2.6 Assess t he w oman's risk of and, if appr opriat e, discuss f emale genital 
+mutilation (FGM) in a kind, sensitiv e manner . Take appr opriat e action in 
+line wit h UK go vernment guidance on saf eguar ding w omen and girls at 
+risk of FGM . 
+1.2.7 Refer the w oman f or a clinical assessment b y a doct or to det ect car diac 
+conditions if t here is a concern based on t he pr egnant w oman's personal 
+or family hist ory. See also t he section on hear t disease in t he NICE 
+guideline on intrapar tum car e for women wit h existing medical conditions 
+or obst etric complications and t heir babies . 
+1.2.8 Refer the w oman t o an obst etrician or ot her r elevant doct or if t here are 
+any medical concerns or if r eview of curr ent long-t erm medicines is 
+needed. 
+1.2.9 After discussion wit h and agr eement fr om t he w oman, contact t he 
+woman's GP t o shar e information about t he pr egnancy and pot ential 
+concerns or complications during pr egnancy . 
+1.2.10 At every ant enatal appointment, carr y out a risk assessment as f ollows: 
+• ask t he w oman about her general healt h and w ellbeing 
+• ask t he w oman (and her par tner, if pr esent) if t here are any concerns t hey 
+would lik e to discuss 
+• provide a saf e environment and oppor tunities f or the w oman t o discuss t opics 
+such as concerns at home, domestic abuse, concerns about t he bir th (for 
+example, if she pr eviously had a traumatic bir th) or mental healt h concerns Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 12 of
+63• review and r eassess t he plan of car e for the pr egnancy 
+• identify w omen who need additional car e. 
+1.2.11 At every ant enatal contact, updat e the w oman's ant enatal r ecords to 
+include details of hist ory, test result s, examination findings, medicines 
+and discussions. 
+For a shor t explanation of wh y the committ ee made t he recommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on taking and 
+recording t he w oman's hist ory. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview G: 
+content of ant enatal appointment s. 
+Examina tions and in vestig ations 
+1.2.12 At the first f ace-t o-face ant enatal appointment: 
+• offer to measur e the w oman's height and w eight and calculat e body mass 
+index 
+• offer a blood t est t o check full blood count, blood gr oup and rhesus D status. 
+1.2.13 At the first ant enatal (booking) appointment, discuss and shar e 
+information about, and t hen off er, the following scr eening pr ogrammes: 
+• NHS inf ectious diseases in pr egnancy scr eening pr ogramme (HIV, syphilis and 
+hepatitis B) 
+• NHS sickle cell and t halassaemia scr eening pr ogramme 
+• NHS f etal anomaly scr eening pr ogramme . 
+Inform t he w oman t hat she can accept or decline an y par t of an y of t he 
+screening pr ogrammes off ered. 
+1.2.14 Offer pr egnant w omen an ultrasound scan t o tak e place betw een 
+11+2 weeks and 14+1 weeks t o: Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 13 of
+63• determine gestational age 
+• detect multiple pr egnancy 
+• and if opt ed for, screen f or Do wn's syndr ome, Edwar ds' syndr ome and Patau's 
+syndr ome (see t he NHS f etal anomaly scr eening pr ogramme ). 
+1.2.15 Offer pr egnant w omen an ultrasound scan t o tak e place betw een 
+18+0 weeks and 20+6 weeks t o: 
+• screen f or fetal anomalies (see t he NHS f etal anomaly scr eening pr ogramme ) 
+• determine placental location. 
+1.2.16 At the ant enatal appointment at 28 weeks, off er: 
+• anti-D pr ophylaxis t o rhesus-negativ e women in line wit h NICE's t echnology 
+appraisal guidance on r outine ant enatal anti-D pr ophylaxis f or women who ar e 
+rhesus D negativ e (see also NICE's diagnostics guidance on high-t hroughput 
+non-in vasive prenatal t esting f or fetal RHD genotype ) 
+• a blood t est t o check full blood count, blood gr oup and antibodies. 
+1.2.17 If there are any une xpect ed result s from e xaminations or in vestigations, 
+offer referral accor ding t o local pat hways and ensur e appr opriat e 
+information pr ovision and suppor t. 
+For a shor t explanation of wh y the committ ee made t he recommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on e xaminations and 
+investigations . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview G: 
+content of ant enatal appointment s. 
+Venous thr omboembo lism 
+1.2.18 Assess t he w oman's risk f actors f or venous t hromboembolism at t he first 
+antenatal (booking) appointment, and aft er an y hospital admission or 
+significant healt h event during pr egnancy . Consider using guidance b y an Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 14 of
+63appr opriat e professional body , for example, t he Royal College of 
+Obst etricians and Gynaecologist s' guideline on r educing t he risk of 
+venous t hromboembolism during pr egnancy . 
+1.2.19 For pr egnant w omen who ar e admitt ed to a hospital or a midwif e-led 
+unit, see t he section on int erventions f or pr egnant w omen and w omen 
+who ga ve bir th or had a miscarriage or t ermination of pr egnancy in t he 
+past 6 weeks in t he NICE guideline on v enous t hromboembolism in 
+over 16s. 
+1.2.20 For women at risk of v enous t hromboembolism, off er referral t o an 
+obstetrician f or fur ther management. 
+For a shor t explanation of wh y the committ ee made t he recommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on v enous 
+thromboembolism . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview N: 
+risk f actors f or venous t hromboembolism in pr egnancy . 
+Gesta tional diabe tes 
+1.2.21 At the first ant enatal (booking) appointment, assess t he w oman's risk 
+factors f or gestational diabet es in line wit h the recommendations on 
+gestational diabet es risk assessment in t he NICE guideline on diabet es in 
+pregnancy . 
+1.2.22 If a w oman is at risk of gestational diabet es, off er referral f or an oral 
+glucose t olerance t est t o tak e place betw een 2 4+0 weeks and 
+28+0 weeks in line wit h the recommendations on gestational diabet es 
+risk assessment and t he recommendations on gestational diabet es 
+testing in the NICE guideline on diabet es in pr egnancy . Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 15 of
+63For a shor t explanation of wh y the committ ee made t he recommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on gestational 
+diabet es. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview G: 
+content of ant enatal appointment s. 
+Pre-eclam psia and h yper tension in pr egnanc y 
+1.2.23 At the first ant enatal (booking) appointment and again in t he second 
+trimest er, assess t he w oman's risk f actors f or pr e-eclampsia, and advise 
+those at risk t o tak e aspirin in line wit h the section on antiplat elet agent s 
+in the NICE guideline on h yper tension in pr egnancy . 
+1.2.24 Measur e and r ecord the w oman's blood pr essur e at e very routine f ace-
+to-face ant enatal appointment using a de vice v alidat ed for use in 
+pregnancy , and f ollowing t he recommendations on measuring blood 
+pressur e in t he NICE guideline on h yper tension in adult s. 
+1.2.25 For women under 20+0 weeks wit h hyper tension, f ollow the 
+recommendations on t he management of chr onic h yper tension in 
+pregnancy in t he NICE guideline on h yper tension in pr egnancy . 
+1.2.26 Refer women o ver 20+0 weeks wit h a first episode of h yper tension 
+(blood pr essur e of 140/90 mmHg or higher) t o secondar y car e to be seen 
+within 2 4 hours. See t he recommendations on diagnosing h yper tension 
+in the NICE guideline on h yper tension in adult s. 
+1.2.27 Urgent ly refer women wit h severe hyper tension (blood pr essur e of 160/
+110 mmHg or higher) t o secondar y car e to be seen on t he same da y. The 
+urgency of t he referral should be det ermined b y an o verall clinical 
+assessment. 
+1.2.28 Offer a urine dipstick t est for pr oteinuria at e very routine f ace-t o-face 
+antenatal appointment. Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 16 of
+63For a shor t explanation of wh y the committ ee made t he recommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on pr e-eclampsia and 
+hyper tension in pr egnancy . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview K: 
+identification of h yper tension in pr egnancy and evidence r eview G: cont ent of 
+antenatal appointment s. 
+Monitoring f etal gr owth and w ellbeing 
+1.2.29 Offer a risk assessment f or fetal gr owth restriction at t he first ant enatal 
+(booking) appointment, and again in t he second trimest er. Consider 
+using guidance b y an appr opriat e professional or national body , for 
+example, the Royal College of Obst etricians and Gynaecologist s' 
+guideline on t he in vestigation and management of t he small-f or-
+gestational-age f etus or the NHS sa ving babies' liv es car e bundle 
+version 2. 
+1.2.30 Offer symph ysis fundal height measur ement at each ant enatal 
+appointment aft er 24+0 weeks (but no mor e frequent ly than e very 
+2 weeks) f or women wit h a singlet on pr egnancy unless t he w oman is 
+having r egular gr owth scans. Plot t he measur ement ont o a gr owth char t 
+in line wit h the NHS sa ving babies' liv es car e bundle v ersion 2. 
+1.2.31 If there are concerns t hat t he symph ysis fundal height is lar ge for 
+gestational age, consider an ultrasound scan f or fetal gr owth and 
+wellbeing. 
+1.2.32 If there are concerns t hat t he symph ysis fundal height is small f or 
+gestational age, off er an ultrasound scan f or fetal gr owth and w ellbeing, 
+the ur gency of which ma y depend on additional clinical findings, f or 
+example, r educed f etal mo vement s or raised mat ernal blood pr essur e. 
+1.2.33 Do not r outinely off er ultrasound scans aft er 28 weeks f or uncomplicat ed 
+singlet on pr egnancies. 
+1.2.34 Discuss t he topic of babies' mo vement s wit h the w oman aft er Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 17 of
+6324+0 weeks, and: 
+• ask if she has an y concerns about her bab y's mo vement s at each ant enatal 
+contact aft er 24+0 weeks 
+• advise her t o contact mat ernity ser vices at an y time of da y or night if she has 
+any concerns about her bab y's mo vement s or she notices r educed f etal 
+movement s after 24+0 weeks 
+• assess t he w oman and bab y if there are any concerns about t he bab y's 
+movement s. 
+1.2.35 Service pr oviders should r ecognise t hat t he use of structur ed fetal 
+movement awar eness packages , such as t he one studied in t he AFFIRM 
+trial, has not been sho wn to reduce stillbir th rat es. 
+For a shor t explanation of wh y the committ ee made t he recommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on monit oring f etal 
+growth and w ellbeing . 
+Full details of t he evidence and t he committ ee's discussion ar e in: 
+• evidence r eview O: monit oring f etal gr owth 
+• evidence r eview P: fetal mo vement monit oring 
+• evidence r eview Q: routine t hird trimest er ultrasound f or fetal gr owth. 
+Breech pr esen tation 
+1.2.36 Offer abdominal palpation at all appointment s after 36+0 weeks t o 
+identify possible br eech pr esentation f or women wit h a singlet on 
+pregnancy . 
+1.2.37 If breech pr esentation is suspect ed on abdominal palpation, off er an 
+ultrasound scan t o det ermine t he pr esentation. 
+1.2.38 For women wit h an uncomplicat ed singlet on pr egnancy wit h breech Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 18 of
+63presentation confirmed aft er 36+0 weeks: 
+• discuss t he diff erent options a vailable and t heir benefit s, risks and implications, 
+including: 
+－ external cephalic v ersion (t o turn t he bab y from bott om to head do wn) 
+－ breech v aginal bir th 
+－ electiv e caesar ean bir th 
+• for women who pr efer cephalic (head-do wn) v aginal bir th, off er external 
+cephalic v ersion. 
+Also see t he recommendations on br eech pr esentation in t he NICE guideline on 
+caesar ean bir th, and t he recommendations on br eech pr esenting in labour in 
+the NICE guideline on intrapar tum car e for women wit h existing medical 
+conditions or obst etric complications and t heir babies . 
+For a shor t explanation of wh y the committ ee made t he recommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on br eech 
+presentation . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview L: 
+identification of br eech pr esentation and evidence r eview M: management of br eech 
+presentation . 
+1.3 Informa tion and suppor t for pr egnan t women 
+and their par tner s 
+Comm unic ation – k ey princip les 
+1.3.1 When caring f or a pr egnant w oman, list en to her and be r esponsiv e to 
+her needs and pr eferences. Also see t he NICE guideline on patient 
+experience in adult NHS ser vices , in par ticular t he sections on 
+communication and inf ormation , and t he NICE guideline on shar ed 
+decision making . Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 19 of
+631.3.2 Ensur e that when off ering an y assessment, int ervention or pr ocedur e, 
+the risks, benefit s and implications ar e discussed wit h the w oman and 
+she is awar e that she has a right t o decline. 
+1.3.3 Women's decisions should be r espect ed, e ven when t his is contrar y to 
+the views of t he healt hcare professional. 
+1.3.4 When giving w omen (and t heir partners ) information about ant enatal 
+care, use clear language, and tailor t he timing, cont ent and deliv ery of 
+information t o the needs and pr eferences of t he w oman and her stage of 
+pregnancy . Information should suppor t shared decision making betw een 
+the w oman and her healt hcare team, and be: 
+• offered on a one-to-one or couple basis 
+• supplement ed by group discussions (w omen only or w omen and par tners) 
+• supplement ed by writt en inf ormation in a suitable f ormat, f or example, digital, 
+print ed, braille or Easy R ead 
+• offered throughout t he w oman's car e 
+• individualised and sensitiv e 
+• suppor tive and r espectful 
+• evidence-based and consist ent 
+• translat ed int o other languages if needed. 
+For mor e guidance on communication, pr oviding inf ormation (including diff erent 
+format s and languages), and shar ed decision making, see t he NICE guideline 
+on patient e xperience in adult NHS ser vices and t he NHS Accessible 
+Information Standar d. 
+1.3.5 Explor e the kno wledge and understanding t hat t he w oman (and her 
+partner) has about each t opic t o individualise t he discussion. 
+1.3.6 Check t hat t he w oman (and her par tner) understands t he inf ormation 
+that has been giv en, and ho w it r elates to them. Pr ovide r egular 
+oppor tunities t o ask questions, and set aside enough time t o discuss an y Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 20 of
+63concerns. 
+For a shor t explanation of wh y the committ ee made t he recommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on communication – 
+key principles . 
+Full details of t he evidence and t he committ ee's discussion ar e in: 
+• evidence r eview B: appr oaches t o information pr ovision 
+• evidence r eview A: inf ormation pr ovision 
+• evidence r eview J: r eferral and deliv ery of ant enatal car e. 
+Informa tion abou t antena tal c are 
+1.3.7 At the first ant enatal (booking) appointment, discuss ant enatal car e wit h 
+the w oman (and her par tner) and pr ovide her schedule of ant enatal 
+appointment s. 
+1.3.8 At the first ant enatal (booking) appointment (and lat er if appr opriat e), 
+discuss and giv e information on: 
+• what ant enatal car e involves and wh y it is impor tant 
+• the planned number of ant enatal appointment s 
+• wher e ant enatal appointment s will tak e place 
+• which healt hcare professionals will be in volved in ant enatal appointment s 
+• how to contact t he midwif ery team f or non-ur gent advice 
+• how to contact t he mat ernity ser vice about ur gent concerns, such as pain and 
+bleeding 
+• screening pr ogrammes: what blood t ests and ultrasound scans ar e off ered and 
+why Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 21 of
+63• how the bab y develops during pr egnancy 
+• what t o expect at each stage of t he pr egnancy 
+• physical and emotional changes during t he pr egnancy 
+• mental healt h during t he pr egnancy 
+• relationship changes during t he pr egnancy 
+• how the w oman and her par tner can suppor t each ot her 
+• immunisation f or flu, per tussis (whooping cough) and ot her inf ections (f or 
+example, CO VID-19) during pr egnancy , in line wit h the NICE guideline on flu 
+vaccination and t he Public Healt h England Gr een Book on immunisation against 
+infectious disease 
+• infections t hat can impact on t he bab y in pr egnancy or during bir th (such as 
+group B str eptococcus, herpes simple x and cyt omegalo virus) 
+• reducing t he risk of inf ections, f or example, encouraging hand washing 
+• safe use of medicines, healt h supplement s and herbal r emedies during 
+pregnancy 
+• resour ces and suppor t for expectant and new par ents 
+• how to get in t ouch wit h local or national peer suppor t ser vices. 
+1.3.9 At the first ant enatal (booking) appointment, and lat er if appr opriat e, 
+discuss and giv e information about nutrition and diet, ph ysical activity , 
+smoking cessation and r ecreational drug use in a non-judgemental, 
+compassionat e and personalised wa y. See t he NICE guidelines on 
+maternal and child nutrition , vitamin D, weight management bef ore, 
+during and aft er pr egnancy , smoking: st opping in pr egnancy and aft er 
+childbir th, and t he section on pr egnant w omen who misuse substances 
+(alcohol and/or drugs) in t he NICE guideline on pr egnancy and comple x 
+social f actors. 
+1.3.10 At the first ant enatal (booking) appointment, and lat er if appr opriat e, 
+discuss alcohol consumption and f ollow the UK Chief Medical Officers' 
+low-risk drinking guidelines . Explain t hat: Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 22 of
+63• there is no kno wn saf e level of alcohol consumption during pr egnancy 
+• drinking alcohol during t he pr egnancy can lead t o long-t erm harm t o the bab y 
+• the saf est appr oach is t o avoid alcohol alt oget her t o minimise risks t o the bab y. 
+1.3.11 Throughout t he pr egnancy , discuss and giv e information on: 
+• physical and emotional changes during t he pr egnancy 
+• relationship changes during t he pr egnancy 
+• how the w oman and her par tner can suppor t each ot her 
+• resour ces and suppor t for expectant and new par ents 
+• how the par ents can bond with their bab y and t he impor tance of emotional 
+attachment (also see t he section on pr omoting emotional attachment in t he 
+NICE guideline on postnatal car e) 
+• the result s of an y blood or scr eening t ests from pr evious appointment s. 
+1.3.12 See t he NICE guideline on pelvic floor dysfunction f or guidance on: 
+• providing inf ormation about pelvic floor dysfunction (recommendation 1 .1.6) 
+• pelvic floor muscle training during and aft er pr egnancy . 
+1.3.13 After 24 weeks, discuss babies' mo vement s (see also recommendation 
+1.2.34). 
+1.3.14 Before 28 weeks, star t talking wit h the w oman about her bir th 
+preferences and t he implications, benefit s and risks of diff erent options 
+(see t he section on planning place of bir th in t he NICE guideline on 
+intrapar tum car e and t he section on planning mode of bir th in t he NICE 
+guideline on caesar ean bir th). 
+1.3.15 After 28 weeks, discuss and giv e information on: 
+• preparing f or labour and bir th, including inf ormation about coping in labour and 
+creating a bir th plan Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 23 of
+63• recognising activ e labour 
+• the postnatal period, including: 
+－ care of t he new bab y 
+－ the bab y's feeding 
+－ vitamin K pr ophylaxis 
+－ newborn scr eening 
+－ postnatal self -care, including pelvic floor e xercises 
+－ awar eness of mood changes and postnatal mental healt h. 
+Also see t he NICE guideline on postnatal car e. 
+1.3.16 From 28 weeks onwar ds, as appr opriat e, continue t he discussions and 
+confirm t he w oman's bir th preferences, discussing t he implications, 
+benefit s and risks of all t he options. 
+1.3.17 From 38 weeks, discuss pr olonged pr egnancy and options on ho w to 
+manage t his, in line wit h the NICE guideline on inducing labour . 
+1.3.18 See t he NICE guideline on pr eterm labour and bir th for women at 
+increased risk of , or wit h sympt oms and signs of , preterm labour (bef ore 
+37 weeks), and w omen ha ving a planned pr eterm bir th. 
+1.3.19 Provide appr opriat e information and suppor t for women whose bab y is 
+consider ed to be at an incr eased risk of neonatal admission. Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 2 4 of
+63For a shor t explanation of wh y the committ ee made t he recommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on inf ormation about 
+antenatal car e. 
+Full details of t he evidence and t he committ ee's discussion ar e in: 
+• evidence r eview A: inf ormation pr ovision 
+• evidence r eview B: appr oaches t o information pr ovision 
+• evidence r eview C: involving par tners 
+• evidence r eview D: peer suppor t 
+• evidence r eview G: cont ent of ant enatal appointment s 
+• evidence r eview J: referral and deliv ery of ant enatal car e 
+• evidence r eview P: f etal mo vement monit oring . 
+Antena tal classes 
+1.3.20 Offer nullipar ous w omen (and t heir par tners) ant enatal classes t hat 
+include t opics such as: 
+• preparing f or labour and bir th 
+• suppor ting each ot her t hroughout t he pr egnancy and aft er bir th 
+• common e vents in labour and bir th 
+• how to car e for the bab y 
+• how the par ents can bond wit h their bab y and t he impor tance of emotional 
+attachment (also see t he section on pr omoting emotional attachment in t he 
+NICE guideline on postnatal car e) 
+• planning and managing t heir bab y's feeding (also see t he section on planning 
+and suppor ting babies' f eeding in t he NICE guideline on postnatal car e). Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 25 of
+631.3.21 Consider ant enatal classes f or multipar ous w omen (and t heir par tners) if 
+they could benefit fr om att ending (f or example, if t hey have had a long 
+gap betw een pr egnancies, or ha ve never att ended ant enatal classes 
+before). 
+1.3.22 Ensur e that ant enatal classes ar e welcoming, accessible and adapt ed to 
+meet t he needs of local communities. Also see t he section on y oung 
+pregnant w omen aged under 20 in t he NICE guideline on pr egnancy and 
+comple x social f actors. 
+For a shor t explanation of wh y the committ ee made t he recommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on ant enatal classes . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview E: 
+antenatal classes and evidence r eview B: appr oaches t o information pr ovision . 
+Peer suppor t 
+1.3.23 Discuss t he pot ential benefit s of peer suppor t with pregnant w omen (and 
+their par tners), and e xplain ho w it ma y: 
+• provide practical suppor t 
+• help t o build confidence 
+• reduce f eelings of isolation. 
+1.3.24 Offer pr egnant w omen (and t heir par tners) inf ormation about ho w to 
+access local and national peer suppor t ser vices. 
+For a shor t explanation of wh y the committ ee made t he recommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on peer suppor t. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview D: 
+peer suppor t. Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 26 of
+63Sleep posi tion 
+1.3.25 Advise w omen t o avoid going t o sleep on t heir back aft er 28 weeks of 
+pregnancy and t o consider using pillo ws, f or example, t o maintain t heir 
+position while sleeping. 
+1.3.26 Explain t o the w oman t hat t here ma y be a link betw een going t o sleep on 
+her back and stillbir th in lat e pregnancy (aft er 28 weeks). 
+For a shor t explanation of wh y the committ ee made t he recommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on sleep position . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview W: 
+maternal sleep position during pr egnancy . 
+1.4 Interventions f or common pr oblems during 
+pregnanc y 
+Nausea and v omiting 
+1.4.1 Reassur e women t hat mild t o moderat e nausea and v omiting ar e 
+common in pr egnancy , and ar e likely to resolv e bef ore 16 to 20 weeks. 
+1.4.2 Recognise t hat b y the time w omen seek advice fr om healt hcare 
+professionals about nausea and v omiting in pr egnancy , they ma y have 
+already tried a number of diff erent int erventions. 
+1.4.3 For pr egnant w omen wit h mild-t o-moderat e nausea and v omiting who 
+prefer a non-pharmacological option, suggest t hat t hey try ginger . 
+1.4.4 When considering pharmacological tr eatment s for nausea and v omiting 
+in pregnancy , discuss t he adv antages and disadv antages of diff erent 
+antiemetics wit h the w oman. T ake into account her pr eferences and her 
+experience wit h treatment s in pr evious pr egnancies. See table 1 on t he 
+advantages and disadv antages of diff erent pharmacological tr eatment s 
+for nausea and v omiting in pr egnancy to suppor t shared decision making . Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 27 of
+631.4.5 For pr egnant w omen wit h nausea and v omiting who choose a 
+pharmacological tr eatment, off er an antiemetic (see table 1 on t he 
+advantages and disadv antages of diff erent pharmacological tr eatment s 
+for nausea and v omiting in pr egnancy ). 
+1.4.6 For pr egnant w omen wit h moderat e-to-se vere nausea and v omiting: 
+• consider intra venous fluids, ideally on an outpatient basis 
+• consider acupr essur e as an adjunct tr eatment. 
+1.4.7 Consider inpatient car e if v omiting is se vere and not r esponding t o 
+primar y car e or outpatient management. This will include w omen wit h 
+hyperemesis gra vidarum. F or mor e information on managing h yperemesis 
+gravidarum, see t he Royal College of Obst etricians and Gynaecologist s' 
+guideline on t he management of nausea and v omiting of pr egnancy and 
+hyperemesis gra vidarum . Also see t he section on v enous 
+thromboembolism . 
+For a shor t explanation of wh y the committ ee made t he recommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on nausea and 
+vomiting . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview R: 
+management of nausea and v omiting in pr egnancy . 
+Heartburn 
+1.4.8 Give information about lif estyle and dietar y changes t o pregnant w omen 
+with hear tburn in line wit h the section on common element s of car e in 
+the NICE guideline on gastr o-oesophageal r eflux disease and dyspepsia 
+in adult s. 
+1.4.9 Consider a trial of an antacid or alginat e for pr egnant w omen wit h 
+hear tburn. Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 28 of
+63For a shor t explanation of wh y the committ ee made t he recommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on hear tburn . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview S: 
+management of hear tburn in pr egnancy . 
+Symptoma tic v aginal dischar ge 
+1.4.10 Advise pr egnant w omen who ha ve vaginal dischar ge that t his is common 
+during pr egnancy , but if it is accompanied b y sympt oms such as it ching, 
+soreness, an unpleasant smell or pain on passing urine, t here ma y be an 
+infection t hat needs t o be in vestigat ed and tr eated. 
+1.4.11 Consider carr ying out a v aginal swab f or pr egnant w omen wit h 
+sympt omatic v aginal dischar ge if t here is doubt about t he cause. 
+1.4.12 If a se xually transmitt ed inf ection is suspect ed, consider arranging 
+appr opriat e investigations. 
+1.4.13 Offer vaginal imidaz ole (such as clotrimaz ole or econaz ole) t o treat 
+vaginal candidiasis in pr egnant w omen. 
+1.4.14 Consider oral or v aginal antibiotics t o treat bact erial v aginosis in 
+pregnant w omen in line wit h the NICE guideline on antimicr obial 
+stewar dship . 
+For a shor t explanation of wh y the committ ee made t he recommendations and ho w 
+they might practice, see t he rationale and impact section on sympt omatic v aginal 
+dischar ge. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview T: 
+management of sympt omatic v aginal dischar ge in pr egnancy . Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 29 of
+63Pelvic g irdle pain 
+1.4.15 For women wit h pregnancy-r elated pelvic gir dle pain, consider r eferral t o 
+physiot herap y ser vices f or: 
+• exercise advice and/or 
+• a non-rigid lumbopelvic belt. 
+For a shor t explanation of wh y the committ ee made t he recommendation and ho w it 
+might aff ect practice, see t he rationale and impact section on pelvic gir dle pain . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview U: 
+management of pelvic gir dle pain in pr egnancy . 
+Unexplaine d vaginal b leeding af ter 13 weeks 
+1.4.16 Offer anti-D immunoglobulin t o women who pr esent wit h vaginal 
+bleeding aft er 13 weeks of pr egnancy if t hey are: 
+• rhesus D-negativ e and 
+• at risk of isoimmunisation. 
+1.4.17 Refer pr egnant w omen wit h une xplained v aginal bleeding aft er 13 weeks 
+to secondar y car e for a r eview . 
+1.4.18 For pr egnant w omen wit h une xplained v aginal bleeding aft er 13 weeks, 
+assess whet her t o admit t hem t o hospital, taking int o account: 
+• the risk of placental abruption 
+• the risk of pr eterm deliv ery 
+• the extent of v aginal bleeding 
+• the w oman's ability t o att end secondar y car e in an emer gency . 
+1.4.19 For pr egnant w omen who pr esent wit h une xplained v aginal bleeding, Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 30 of
+63offer to carr y out placental localisation b y ultrasound if t he placental sit e 
+is not kno wn. 
+1.4.20 For pr egnant w omen wit h une xplained v aginal bleeding who ar e admitt ed 
+to hospital, consider cor ticost eroids f or fetal lung maturation if t here is 
+an incr eased risk of pr eterm bir th wit hin 48 hours. T ake into account 
+gestational age (see t he section on mat ernal cor ticost eroids in t he NICE 
+guideline on pr eterm labour and bir th). 
+1.4.21 Consider discussing t he incr eased risk of pr eterm bir th wit h women who 
+have une xplained v aginal bleeding. 
+For a shor t explanation of wh y the committ ee made t he recommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on une xplained 
+vaginal bleeding aft er 13 weeks . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview V: 
+management of une xplained v aginal bleeding in pr egnancy . 
+Terms use d in this guideline 
+This section defines t erms t hat ha ve been used in a par ticular wa y for this guideline. 
+Bonding and emotional a ttachmen t 
+Bonding is t he positiv e emotional and psy chological connection t hat t he par ent de velops 
+with the bab y. 
+Emotional attachment r efers t o the relationship betw een t he bab y and par ent, driv en by 
+innat e beha viour and which ensur es the bab y's pr oximity t o the par ent and saf ety. Its 
+development is a comple x and dynamic pr ocess t hat is dependent on sensitiv e and 
+emotionally attuned par ent int eractions suppor ting healt hy infant psy chological and social 
+development and a secur e attachment. Babies f orm attachment s wit h a v ariety of 
+caregivers but t he first, and usually most significant of t hese, will be wit h the mot her and/
+or father. Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 31 of
+63Continuity of carer 
+Having continuity of car er means t hat a trusting r elationship can be de veloped betw een 
+the w oman and t he healt hcare professional who car es for her . Better Bir ths, a repor t by 
+the National Mat ernity R eview , defines continuity of car er as consist ency in t he midwif ery 
+team (betw een 4 and 8 individuals) t hat pr ovides car e for the w oman and her bab y 
+throughout pr egnancy , labour and t he postnatal period. A named midwif e coor dinat es the 
+care and tak es responsibility f or ensuring t hat t he needs of t he w oman and her bab y are 
+met t hroughout t he ant enatal, intrapar tum and postnatal periods. 
+For the purpose of t his guideline, definition of continuity of car er in t he Better Bir ths repor t 
+has been adapt ed to include not just t he midwif ery team but an y healt hcare team in volved 
+in the car e of t he w oman and her bab y. It emphasises t he impor tance of eff ectiv e 
+information transf er betw een t he individuals wit hin the team. F or mor e information, see t he 
+NHS Implementing Bett er Bir ths: continuity of car er. 
+Partner 
+Partner r efers t o the w oman's chosen suppor ter. This could be t he bab y's father, the 
+woman's par tner, family member or friend, or an yone who t he w oman f eels suppor ted by 
+and wishes t o involve in her ant enatal car e. 
+Shared de cision making 
+Shar ed decision making is a collaborativ e process t hat in volves a person and t heir 
+healt hcare professional w orking t oget her t o reach a joint decision about car e. It could be 
+care the person needs straightawa y or car e in t he futur e, for example, t hrough adv ance 
+care planning. See t he full definition in t he NICE guideline on shar ed decision making . In 
+line wit h NHS England's personalised car e and suppor t planning guidance: guidance f or 
+local mat ernity syst ems, in mat ernity ser vices, t his ma y be r eferred to as 'inf ormed 
+decision making' . 
+Struc tured fetal mo vemen t awareness pack ages 
+The structur ed fetal mo vement awar eness package described in t he Awareness of f etal 
+movement s and car e package t o reduce f etal mor tality (AFFIRM) trial consist ed of: 
+• an e-learning education package f or all clinical staff about t he impor tance of a r ecent Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 32 of
+63change in t he fr equency of f etal mo vement s and ho w to manage r educed f etal 
+movement s 
+• a leaflet giv en to pregnant w omen at 20 weeks of pr egnancy t o raise awar eness of t he 
+impor tance of monit oring f etal mo vement s and r epor ting r educed mo vement s 
+• a structur ed management plan f or hospitals f ollowing r epor ting of r eduction in f etal 
+movement including car diotocograph y, measur ement of liquor v olume and a gr owth 
+scan (umbilical ar tery doppler was encouraged if a vailable). Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 33 of
+63Recommenda tions f or research 
+The guideline committ ee has made t he following r ecommendations f or resear ch. 
+Key recommenda tions f or research 
+1 Hospitalisa tion o f pregnan t women wi th une xplaine d vaginal 
+bleeding 
+What is t he clinical and cost eff ectiv eness of hospitalisation compar ed wit h outpatient 
+management f or pr egnant w omen wit h une xplained v aginal bleeding? 
+For a shor t explanation of wh y the committ ee made t his resear ch recommendation, 
+see t he rationale section on une xplained v aginal bleeding . 
+Full details of t he resear ch recommendation ar e in evidence r eview V: management of 
+unexplained v aginal bleeding in pr egnancy . 
+2 Medications f or mild to moder ate na usea and v omiting in 
+pregnanc y 
+What is t he clinical and cost eff ectiv eness of medication f or women wit h nausea and 
+vomiting in pr egnancy? 
+For a shor t explanation of wh y the committ ee made t his resear ch recommendation, 
+see t he rationale section on nausea and v omiting . 
+Full details of t he resear ch recommendation ar e in evidence r eview R: management of 
+nausea and v omiting in pr egnancy . Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 34 of
+633 Models o f antena tal c are 
+What is t he clinical and cost eff ectiv eness of diff erent models of ant enatal car e wit h 
+varying numbers and times of appointment, and should diff erent models be used f or 
+groups at risk of w orse out comes? 
+For a shor t explanation of wh y the committ ee made t his resear ch recommendation, 
+see t he rationale section on star ting ant enatal car e. 
+Full details of t he resear ch recommendation ar e in evidence r eview F: accessing 
+antenatal car e. 
+What is t he clinical and cost eff ectiv eness of diff erent models of ant enatal car e wit h 
+varying numbers and times of appointment, and should diff erent models be used f or 
+groups at risk of w orse out comes? 
+For a shor t explanation of wh y the committ ee made t his resear ch recommendation, 
+see t he rationale section on ant enatal appointment s. 
+Full details of t he resear ch recommendation ar e in evidence r eview F: accessing 
+antenatal car e. 
+4 Identification o f breech pr esen tation 
+What is t he clinical and cost eff ectiv eness of r outine ultrasound fr om 36+0 weeks 
+compar ed wit h selectiv e ultrasound in identifying br eech pr esentation? 
+For a shor t explanation of wh y the committ ee made t his resear ch recommendation, 
+see t he rationale section on br eech pr esentation . 
+Full details of t he resear ch recommendation ar e in evidence r eview L: identification of 
+breech pr esentation . Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 35 of
+635 Manag emen t of severe nausea and v omiting 
+What is t he clinical and cost eff ectiv eness of cor ticost eroids f or women wit h severe 
+nausea and v omiting in pr egnancy? 
+For a shor t explanation of wh y the committ ee made t his resear ch recommendation, 
+see t he rationale section on nausea and v omiting . 
+Full details of t he resear ch recommendation ar e in evidence r eview R: management of 
+nausea and v omiting in pr egnancy . Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 36 of
+63Rationale and im pact 
+These sections briefly e xplain wh y the committ ee made t he recommendations and ho w 
+they might aff ect practice. 
+Starting an tena tal c are 
+Recommendations 1 .1.1 to 1.1.3 
+Why the c ommi ttee made the r ecommenda tions 
+No relevant e vidence was identified and so t he committ ee made t he recommendations 
+based on t heir kno wledge and e xperience, and also made a resear ch recommendation 
+about ho w to star t ant enatal car e. The committ ee discussed t he wa ys in which w omen 
+should be able t o access ant enatal car e, but agr eed t hat t he configuration details w ould 
+depend on local arrangement s. 
+The committ ee agr eed t hat ant enatal ser vice planning should tak e into account w omen's 
+needs and cir cumstances, and should not discriminat e against, f or example, a limit ed 
+ability t o use and access online ser vices, limit ed skills in English language or in lit eracy , or 
+not being r egist ered wit h a GP sur gery. The committ ee w ere awar e that f or some w omen 
+in vulnerable situations or wit h limit ed English language skills, t here ma y be a dela y in 
+accessing and star ting ant enatal car e. 
+The booking appointment should occur b y 10 weeks of pr egnancy but t he initial contact 
+and r eferral might ha ve happened se veral w eeks earlier , so t he committ ee agr eed t hat t he 
+referral contact should include pr ovision of early pr egnancy inf ormation, f or example, 
+public healt h messages f or the w oman about f olic acid supplementation or st opping 
+smoking. It is also impor tant t o identify w omen wit h specific needs or risk f actors early on 
+so that appr opriat e car e can be pr ovided fr om t he beginning. 
+The committ ee agr eed t hat it is impor tant t o have the contact details f or the w oman's GP 
+to ensur e that inf ormation can be shar ed betw een primar y car e and mat ernity ser vices so 
+that car e is pr ovided accor ding t o the w oman's individual needs, and t o identify pot ential 
+safeguar ding issues. Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 37 of
+63How the r ecommenda tions mig ht affect practice 
+Ther e is v ariation in curr ent practice in ho w women access ant enatal car e and t he time 
+betw een w omen's first contact wit h a healt hcare professional and subsequent st eps. 
+Enabling w omen t o star t their ant enatal car e through v arious r outes, including t hrough 
+school nurses, community centr es or r efugee host els, ma y have some implications on 
+resour ces; ho wever, these should be outw eighed b y the benefit s of timely ant enatal car e. 
+The r ecommendations should impr ove timely access t o ant enatal car e for women in 
+various situations, and impr ove early r ecognition of specific needs and risk f actors so t hat 
+care can be planned. 
+Return t o recommendations 
+Antena tal appoin tmen ts 
+Recommendations 1 .1.4 to 1.1.13 
+Why the c ommi ttee made the r ecommenda tions 
+Ther e was no new e vidence t o suppor t changing fr om t he existing r ecommended practice 
+of women ha ving t heir first ant enatal (booking) appointment b y 10+0 weeks. 
+Some w omen only contact, or ar e referred to, mat ernity ser vices aft er 9+0 weeks. This 
+'late booking' ma y be par ticularly common among some socially vulnerable w omen or 
+women wit h limit ed English language skills. Based on t heir kno wledge and e xperience, t he 
+committ ee agr eed t hat w omen who contact, or ar e referred to, mat ernity ser vices aft er 
+9+0 weeks should ha ve a booking appointment ideally wit hin 2 weeks so t hat early 
+pregnancy car e, including inf ormation pr ovision and scr eenings, can happen wit hin the 
+right timeframe. The committ ee agr eed t hat it w ould be helpful t o identify an y underlying 
+factors t hat ma y have led t o the 'lat e booking' so t hat t he w oman's need f or pot ential 
+additional suppor t or car e can be consider ed and t hat an y pot ential inequality and 
+accessibility issues can be addr essed. 
+Ther e was no new e vidence t hat led t he committ ee to change fr om t he existing 
+recommended practice of arranging 10 appointment s for nullipar ous w omen and 
+7 appointment s for par ous w omen. Inst ead, t he committ ee made a resear ch 
+recommendation about t he ideal number and timing of ant enatal appointment s, including 
+consideration f or gr oups at higher risk of adv erse out comes. Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 38 of
+63The e vidence on w omen's e xperience and satisf action in r elation t o the number of 
+antenatal appointment s was mix ed, but t he committ ee agr eed t he impor tance of being 
+flexible t o meet w omen's needs. 
+Ther e was e vidence t hat w omen who needed t o use int erpreters found t he ser vice t o be 
+unreliable and inconsist ent, so t he committ ee made a specific r ecommendation 
+highlighting t hat int erpreters should alwa ys be a vailable when needed (including, f or 
+example, at scan appointment s) and t hat t hey should be independent of t he w oman and 
+not, f or example, a f amily member or a friend. 
+Ther e was good e vidence t hat w omen v alue ha ving t he same midwif e throughout t heir 
+antenatal car e, alt hough t he review did not look at t he benefit s and harms of continuity of 
+carer in r elation t o clinical- and cost -effectiv eness out comes. The NHS England's r epor t 
+Better Bir ths: impr oving out comes of mat ernity ser vices in England – a fiv e year f orward 
+view f or mat ernity car e recommends continuity of car er by 1 midwif e who is par t of a small 
+team of midwiv es based in t he community , so t hat t hey can get t o kno w the w oman and 
+provide suppor t to her t hroughout pr egnancy all t he wa y to the postnatal period. 
+Various healt h professionals or pr oviders ma y be in volved throughout t he pr egnancy , and 
+the committ ee emphasised t he need f or good communication betw een diff erent healt h 
+professionals and pr oviders. 
+How the r ecommenda tions mig ht affect practice 
+The timing of t he booking appointment and t he number of appointment s reflect s curr ent 
+clinical practice. The r ecommendation about w omen who do not ha ve a booking 
+appointment arranged b y 9+0 weeks ma y lead t o mor e women att ending booking 
+appointment s bef ore 11 weeks and it ma y also r educe ho w long it tak es to secur e a 
+booking appointment. Ho wever, this ma y also be challenging f or ser vices t o organise. 
+The r ecommendation about off ering additional or longer ant enatal appointment s 
+depending on need ma y lead t o a small incr ease in t he number of ant enatal appointment s, 
+but t his is lik ely to be negligible and pot entially ha ve benefit s later on. 
+The r ecommendation on t he use of int erpreters is not new but is not w ell implement ed in 
+all unit s, so ma y involve a change in practice. 
+In curr ent practice, pr oviding continuity of car er can be difficult t o achie ve and t here can Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 39 of
+63be significant r esour ce implications; ho wever, the recommendation r eflect s NHS England's 
+recommendations. 
+The committ ee agr eed t hat t he recommendations w ould not r esult in a major change in 
+practice but should r educe v ariation in practice and impr ove car e for women. 
+Return t o recommendations 
+Involving par tner s 
+Recommendations 1 .1.14 to 1.1.16 
+Why the c ommi ttee made the r ecommenda tions 
+The committ ee recognised t hat w omen's home and f amily cir cumstances v ary, and it is up 
+to the w oman t o decide who she ma y want t o involve in her ant enatal car e. Involving 
+partners is an impor tant par t of ant enatal car e, and t he W orld Healt h Organization has 
+emphasised t he impor tance of engaging wit h par tners during pr egnancy , childbir th and 
+postnatally . The committ ee discussed t he impact t hat a par tner's suppor t, lack of suppor t, 
+or their w ellbeing can ha ve on t he w ellbeing of t he pr egnant w oman. The committ ee 
+recognised t hat t he w oman's par tner is oft en also an e xpectant par ent and being in volved 
+in the ant enatal car e, if t he w oman so wishes, can pr ovide inf ormation and suppor t for 
+them as w ell. 
+The committ ee discussed t hat par tners can f ace man y types of barriers when engaging 
+with ant enatal ser vices. Ther e was good quality e vidence on par tners' views and 
+experiences of ant enatal car e that sho wed that w omen appr eciat e being able t o involve 
+their par tners in ant enatal car e, but t hat t his can be difficult, f or example, because of t he 
+partner's w ork patt erns. Ther efore, the committ ee agr eed t hat t he ser vices should 
+consider adapting when t o off er ant enatal classes (f or example, in t he evenings or at t he 
+weekends) t o enable par tners t o be in volved if t he w oman wishes. 
+Evidence sho wed that par tners can f eel lik e bystanders in appointment s if, for example, 
+there is no space f or them t o sit wit h their par tner. The committ ee agr eed wa ys that 
+antenatal ser vices could pr omot e par tner in volvement. The committ ee agr eed t hat 
+partners ar e not alwa ys giv en inf ormation, including on ho w par tners can suppor t the 
+woman during and aft er pr egnancy , and t he general pr egnancy inf ormation t hat w omen 
+receiv e. Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 40 of
+63Increased use of vir tual platf orms f or appointment s ma y also impr ove par tners' 
+involvement in ant enatal car e. For example, t his could enable t he par tner t o att end 
+remot ely if t he w oman has a f ace-t o-face appointment, or f or the couple t o att end 
+toget her if she has a video appointment. Ho wever, the committ ee recognised t hat 
+evidence on video consultations and appointment s was not r eview ed for this guideline, 
+and t he benefit s, harms and e xperiences r elated to them is impor tant t o consider when 
+planning ser vices. The committ ee also agr eed t hat it is impor tant t o car efully assess an y 
+potential inequalities issues t hat could be associat ed wit h video appointment s, for 
+example, among people wit h sensor y impairment s or language barriers, minority gr oups, or 
+in relation t o access t o devices or int ernet connection. 
+How the r ecommenda tions mig ht affect practice 
+The committ ee agr eed t hat t he recommendations ma y incr ease and pr omot e the 
+involvement of par tners, while r especting t he w oman's decisions. The r ecommendations 
+are not e xpect ed to have a lar ge resour ce impact or be difficult t o implement alt hough 
+there ma y be some or ganisational changes needed t o suppor t making t he timing of 
+antenatal classes mor e flexible. 
+Return t o recommendations 
+Taking and r ecording the w oman 's histor y 
+Recommendations 1 .2.1 to 1.2.11 
+Why the c ommi ttee made the r ecommenda tions 
+The r ecommendations w ere not de veloped b y the usual NICE guideline syst ematic r eview 
+process. A new e vidence r eview was not consider ed necessar y because t he issues ar e 
+covered by other NICE guidelines, or t here is no clinical uncer tainty or significant r esour ce 
+impact. Wher e there might be a pot ential limit ed resour ce impact, t his could be justifiably 
+offset b y impr oved out comes, a voidance of serious adv erse out comes or addr essing 
+inequalities. The r ecommendations w ere based on committ ee consensus on what is best 
+practice, as w ell as ot her e xisting NICE guidelines. 
+Asking t he w oman about her past and pr esent conditions and e xperiences in r elation t o 
+her ph ysical, obst etric, psy chological, emotional and social healt h enables pot ential risk Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 4 1 of
+63factors t o be identified and managed. The committ ee used t heir kno wledge and 
+experience t o list t he factors t hat should be discussed so t hat appr opriat e action can be 
+taken, and car e tailor ed to the w oman's needs. F or example, it is impor tant t o not e which 
+pharmacological and non-pharmacological r emedies t he w oman uses so t hat curr ent 
+medication can be r eview ed in light of pr egnancy . It is impor tant t hat w omen do not 
+automatically st op using t heir r egular medication wit hout consultation. This discussion also 
+allows for individualised advice on saf e medicine use during pr egnancy and can help wit h 
+identifying an y healt h issues t hat ma y have otherwise not come up. 
+The committ ee also agr eed t hat it is impor tant t o discuss t he w oman's home and f amily 
+situation and t he available suppor t she has. Ther e ma y be issues t hat can impact on her 
+wellbeing, f or example, lack of suppor t, illness in t he family or a par tner's substance use 
+issues. 
+Sometimes t here ma y be a r eason t o review t he w oman's pr evious medical r ecords, for 
+example, when her pr evious mat ernity car e has been in a diff erent or ganisation, she 
+cannot r ecall details of a pot entially significant issue, or t he discussion someho w triggers a 
+concern. 
+The committ ee agr eed t hat healt hcare professionals should be awar e of t he 
+dispr opor tionat e mat ernal mor tality and stillbir th rat es among w omen and babies fr om 
+black and Asian back grounds and t hose living in depriv ed ar eas, as highlight ed by the 
+2020 MBRRA CE-UK r epor ts on mat ernal mor tality and perinatal mor tality . This incr eased 
+risk of deat h indicat es that int erventions t o impr ove engagement, suppor t and closer 
+monit oring need t o be e xplor ed. F uture resear ch could help understand t he mechanisms 
+underlying t hese disparities and what int erventions could impr ove the out comes. In 
+general, action on t he wider det erminant s of healt h, including diff erent social, economic 
+and en vironmental f actors, is also needed t o overcome such inequalities. 
+The committ ee agr eed t hat domestic abuse put s bot h the w oman and her bab y at risk of 
+harm, so it is impor tant t hat all pr egnant w omen ar e ask ed about it in a kind, sensitiv e wa y. 
+Pregnancy can sometimes be a trigger f or domestic abuse or e xisting domestic abuse can 
+continue or w orsen during pr egnancy , so it is impor tant t hat w omen f eel that t hey can 
+disclose it saf ely so t hat t hey can be suppor ted, and int erventions put in place if needed. 
+Although par tner in volvement in ant enatal car e is w elcome, it is also impor tant t o ensur e 
+that t here is an oppor tunity t o discuss domestic issues priv ately wit h the w oman. 
+The committ ee recognised t he need t o identify w omen who ha ve under gone f emale Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 42 of
+63genital mutilation (FGM) or whose unborn bab y girl might be at risk of FGM so t hat 
+appr opriat e saf eguar ding can tak e place. In t he cont ext of t his guideline, t his could be t he 
+pregnant w oman, or t he unborn bab y when t here is a f amily hist ory or tradition of FGM. 
+Ther e is a mandat ory duty t o repor t suspect ed or kno wn FGM in under 18s. The 
+Depar tment of Healt h and Social Car e has pr oduced a quick guide f or healt hcare 
+professionals on FGM saf eguar ding and risk assessment , which includes inf ormation about 
+countries wher e FGM is practised, and practical advice on ho w to star t the con versation. 
+Identifying underlying car diac pr oblems is impor tant because car diovascular disease is t he 
+leading cause of deat h among w omen in t he UK during and aft er pr egnancy , accor ding t o 
+the 2019 r epor t MBRRA CE-UK: Sa ving liv es, impr oving mot hers' car e – lessons learned t o 
+inform mat ernity car e from t he UK and Ir eland Confidential Enquiries int o Mat ernal Deat hs 
+and Morbidity 2016–18 . Some w omen ar e at a higher risk of undiagnosed structural car diac 
+problems, such as w omen wit h a family hist ory of car diac abnormalities or w omen who 
+were brought up in a countr y wit h a high incidence of rheumatic f ever. Clinical assessment 
+cannot identify all car diac pr oblems t hat cause mat ernal mor tality , but it might pick up 
+structural hear t disease or concerns t hat warrant fur ther in vestigations. Early identification 
+of underlying car diac conditions allo ws these w omen t o receiv e appr opriat e car e during 
+their pr egnancy , childbir th and postnatal period, and pot entially a void poor out comes. 
+The committ ee also agr eed t he impor tance of inf ormation sharing betw een t he mat ernity 
+unit and t he GP , and agr eeing t his wit h the w oman. This is par ticularly impor tant if t he 
+woman has self -referred (because t he GP ma y be unawar e of her pr egnancy), and if 
+women ha ve a comple x medical, psy chological or social hist ory (because diff erent 
+agencies ma y need t o be in volved in her and her bab y's car e). 
+Antenatal appointment s are oppor tunities f or continued monit oring and risk assessment on 
+the healt h and w ellbeing of t he w oman and her bab y. The y also allo w for regular 
+reassessment s of w omen's ant enatal car e needs and plans. 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendations lar gely r eflect curr ent best practice. Clinical assessment f or car diac 
+conditions is not alwa ys done f or women who ma y be at an incr eased risk so t his 
+recommendation ma y change practice t o some e xtent. The number of w omen t his 
+recommendation applies t o is r elativ ely small and t he pot entially lif e-sa ving benefit of t his 
+simple e xamination outw eighs t he pot ential cost and r esour ce implications. Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 43 of
+63Return t o recommendations 
+Examina tions and in vestig ations 
+Recommendations 1 .2.12 to 1.2.17 
+Why the c ommi ttee made the r ecommenda tions 
+Most of t he issues ar e covered by national scr eening pr ogrammes or ot her NICE guidance, 
+so no new e vidence r eview was needed. The committ ee agr eed, b y consensus, an y other 
+recommendations wher e there is no clinical uncer tainty or significant r esour ce impact. 
+The timing of t he ultrasound scans aligns wit h the NHS f etal anomaly scr eening 
+programme . 
+It is impor tant t hat w omen understand t he pot ential implications of each of t he tests being 
+offered so t hat t hey have the oppor tunity t o accept or decline. 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendations r eflect curr ent practice and no change in practice is e xpect ed. 
+Return t o recommendations 
+Venous thr omboembo lism 
+Recommendations 1 .2.18 to 1.2.20 
+Why the c ommi ttee made the r ecommenda tions 
+The committ ee based t he recommendations on t he evidence on independent risk f actors 
+for venous t hromboembolism in pr egnancy , their kno wledge and e xperience, and t he NICE 
+guideline on v enous t hromboembolism in o ver 16s: r educing t he risk of hospital-acquir ed 
+deep v ein thrombosis or pulmonar y embolism . The e vidence on independent risk f actors 
+for venous t hromboembolism during pr egnancy did not assess t he accuracy of t ools used 
+to measur e the risk, so t he committ ee recommended t hat t ools should meet cer tain quality 
+criteria. The y agr eed t hat an e xample of a t ool that might be used is t he risk assessment Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 44 of
+63tool in t he Royal College of Obst etricians and Gynaecologist s' green-t op guideline on 
+reducing t he risk of v enous t hromboembolism during pr egnancy (2015), which is 
+commonly used in practice. 
+The committ ee highlight ed some risk f actors in t he evidence r eview (blood type A or B, 
+miscarriage aft er 10 weeks in t he curr ent pr egnancy and hist ory of pr evious blood 
+transfusion) t hat ar e not alwa ys incorporat ed int o commonly used v enous 
+thromboembolism t ools. Ho wever, they agr eed not t o include t hem specifically in t he 
+recommendations because it could giv e a false impr ession t hat t hese f actors w ere mor e 
+impor tant t han ot hers or lead t o overtreatment. 
+The committ ee agr eed t hat w omen assessed as being at an incr eased risk of v enous 
+thromboembolism should be off ered referral t o an obst etrician so t hat a risk management 
+plan can be made, f or example, star ting t hrombopr ophylaxis. 
+How the r ecommenda tion mig ht affect practice 
+The r ecommendation r eflect s curr ent practice and no change in practice is e xpect ed. 
+Return t o recommendations 
+Gesta tional diabe tes 
+Recommendations 1 .2.21 and 1 .2.22 
+Why the c ommi ttee made the r ecommenda tions 
+Guidance on risk assessment f or and identification of gestational diabet es is co vered by 
+the NICE guideline on diabet es in pr egnancy . 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendation r eflect s curr ent practice and no change in practice is e xpect ed. 
+Return t o recommendations Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 45 of
+63Pre-eclam psia and h yper tension in pr egnanc y 
+Recommendations 1 .2.23 t o 1.2.28 
+Why the c ommi ttee made the r ecommenda tions 
+Guidance on risk assessment and risk r eduction f or pr e-eclampsia is co vered by the NICE 
+guideline on h yper tension in pr egnancy . Although t he guideline implies t hat pr egnant 
+women will be r outinely t ested for pr oteinuria, it does not e xplicit ly recommend t his. 
+Ther efore, the committ ee agr eed t hat, in line wit h curr ent practice, urine t esting f or 
+proteinuria should be off ered at e very routine f ace-t o-face appointment. 
+Ther e was litt le evidence on t he setting and t echnique f or monit oring blood pr essur e 
+during pr egnancy , so t he committ ee made t he recommendations based on t heir 
+knowledge and e xperience and e xisting NICE guidance. The committ ee w ere awar e that 
+the British and Irish Hyper tension Society list s blood pr essur e measur ement de vices 
+validat ed for use in pr egnancy . This has also been not ed in t he NICE guideline on 
+hyper tension in adult s. 
+The committ ee agr eed t hat monit oring blood pr essur e and t esting f or pr oteinuria at e very 
+routine f ace-t o-face ant enatal appointment enables h yper tension and pr e-eclampsia t o be 
+identified and tr eated early , which is impor tant because t hey can ha ve severe 
+consequences. 
+Guidance on car e for pr egnant w omen wit h gestational or chr onic h yper tension is co vered 
+by the NICE guideline on h yper tension in pr egnancy . 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendation r eflect s curr ent practice and no change in practice is e xpect ed. 
+Return t o recommendations 
+Monitoring f etal gr owth and w ellbeing 
+Recommendations 1 .2.29 t o 1.2.35 Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 46 of
+63Why the c ommi ttee made the r ecommenda tions 
+Risk assessment star ting in early pr egnancy enables incr eased monit oring of babies who 
+are at an incr eased risk of f etal gr owth restriction, which is associat ed wit h fetal morbidity 
+and mor tality . The committ ee w ere awar e of a vailable risk assessment t ools, such as t hose 
+in the Royal College of Obst etricians and Gynaecologist s' guideline on t he in vestigation 
+and management of t he small-f or-gestational-age f etus or the NHS sa ving babies' liv es 
+care bundle v ersion 2. 
+Evidence sho wed that ultrasound scans and symph ysis fundal height measur ement do not 
+accurat ely pr edict a bab y being born small or lar ge for gestational age. Ho wever, the 
+committ ee agr eed t hat t he curr ent r outine practice of using symph ysis fundal height 
+measur ement t o monit or fetal gr owth should be used, because it is a simple and lo w-cost 
+intervention and can aler t to fur ther in vestigations when concerns arise about t he bab y 
+being eit her lar ger or smaller t han e xpect ed for gestational age. When t he symph ysis 
+fundal height measur ement is lar ge for gestational age, ultrasound scans could be used t o 
+assess t he siz e of t he bab y and t he volume of amniotic fluid. Small-f or-gestational-age 
+babies ar e at an incr eased risk of perinatal mor tality and morbidity; t herefore, when t his is 
+suspect ed, fur ther in vestigations should be done t o monit or the gr owth and w ellbeing of 
+the bab y, taking int o consideration t he full clinical pictur e. 
+The committ ee w ere awar e that man y women ma y request r outine ultrasound scans in lat e 
+pregnancy , but a vailable e vidence sho wed no benefit fr om routine ultrasound in lat e 
+pregnancy (fr om 28 weeks) f or uncomplicat ed singlet on pr egnancies. Ho wever, the 
+absence of eff ect f ound in t he evidence does not mean t hat t here is definit ely no eff ect. 
+Ther e was also no e vidence on mat ernal anxiety in r elation t o routine ultrasound scanning. 
+The committ ee w ere in f avour of r esear ch on t his in t he futur e; ho wever, a resear ch 
+recommendation was not prioritised because t here is a good amount of e vidence on ot her 
+key out comes. 
+The committ ee w ere awar e that cases of stillbir th have been link ed to reduced f etal 
+movement s. Ther efore, structur ed fetal mo vement awar eness packages ha ve been trialled. 
+Evidence on t he use of a structur ed fetal mo vement awar eness package , such as t he one 
+described in t he UK trial A wareness of f etal mo vement s and car e package t o reduce f etal 
+mortality (AFFIRM), did not det ect a r eduction in stillbir ths or perinatal mor tality but did 
+find t hat t here were mor e interventions at bir th, including mor e caesar ean bir ths and 
+inductions of labour , and f ewer spontaneous v aginal bir ths. Anot her study fr om Sw eden 
+compar ed giving a leaflet t o pregnant w omen t eaching t hem a met hod of being awar e of Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 47 of
+63fetal mo vement s, wit h usual car e. No clinically impor tant benefit s or harms w ere det ected, 
+including no diff erence in perinatal mor tality , although t here was a small, but statistically 
+significant, r eduction in bir ths aft er 41+6 weeks and f ewer caesar ean bir ths. Healt h 
+economic e valuation did not establish cost eff ectiv eness f or eit her of t hese structur ed 
+awar eness packages. 
+Although t he available e vidence did not suppor t the use of structur ed packages, t he 
+committ ee agr eed t hat f etal mo vement s should be discussed r outinely and w omen's 
+concerns should be tak en seriously . The committ ee agr eed t hat t here is no agr eed 
+definition of normal f etal mo vement s. Discussing t he topic of babies' mo vement s in t he 
+womb and ho w they change t hroughout t he pr egnancy can help w omen r ecognise 
+changes t o their o wn bab y's mo vement patt erns. When t here are concerns, an assessment 
+of the w oman's w ellbeing and t he bab y's w ellbeing and siz e should be done. 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendations on f etal gr owth monit oring lar gely r eflect curr ent practice, alt hough 
+in some mat ernity unit s it is common t o off er women wit h uncomplicat ed singlet on 
+pregnancies ultrasound scans aft er 28 weeks t o monit or the bab y, so t here might be a 
+change of practice f or these unit s and some pot ential cost sa vings. On t he ot her hand, 
+there ma y be some mor e scans due t o suspect ed lar ge for gestational age. 
+Current practice f or managing r educed f etal mo vement s is t o follow the NHS sa ving 
+babies' liv es car e bundle v ersion 2. The r ecommendations in t his guideline similarly 
+emphasise t he impor tance of r ecognising and r epor ting concerns on f etal mo vement s and 
+acting on t hose concerns b y assessing t he w oman and t he bab y. 
+Return t o recommendations 
+Breech pr esen tation 
+Recommendations 1 .2.36 to 1.2.38 
+Why the c ommi ttee made the r ecommenda tions 
+Ther e was not enough e vidence t o suppor t routine ultrasound at 36+0 weeks t o 
+39+0 weeks t o identify br eech pr esentation, so t he committ ee did not change t he curr ent Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 48 of
+63standar d practice of off ering abdominal palpation wit h selectiv e ultrasound when br eech is 
+suspect ed. 
+Because of t he lack of e vidence, t he committ ee made a resear ch recommendation t o 
+compar e routine ultrasound scans fr om 36+0 weeks wit h selectiv e ultrasound scans . 
+In the case of br eech pr esentation, t he committ ee agr eed t hat a discussion about t he 
+different options and t heir pot ential benefit s, harms and implications is needed t o ensur e 
+an inf ormed decision. Ext ernal cephalic v ersion is standar d practice f or managing br eech 
+presentation in uncomplicat ed singlet on pr egnancies at or aft er 36+0 weeks. Head-do wn 
+vaginal bir th is pr eferred by man y women and t he evidence suggest s that e xternal 
+cephalic v ersion is an eff ectiv e wa y to achie ve this. 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendations r eflect curr ent clinical practice and no change in practice is 
+expect ed. 
+Return t o recommendations 
+Comm unic ation – k ey princip les 
+Recommendations 1 .3.1 to 1.3.6 
+Why the c ommi ttee made the r ecommenda tions 
+The committ ee agr eed t hat t he key principles of car e in t he ant enatal period ar e to list en 
+to women and be r esponsiv e to their needs, in line wit h the findings of t he Ockenden 
+repor t on mat ernity ser vices at t he Shr ewsbur y and T elford hospital NHS trust , and t o 
+enable w omen t o mak e informed decisions about t heir car e, in line wit h the Mont gomer y 
+ruling . The committ ee emphasised t hat w omen should be suppor ted in t heir decision 
+making e ven when t heir pr eferences and v alues diff er from t hose of t he healt hcare 
+professionals. 
+The e vidence did not sho w a par ticular benefit fr om an y one specific appr oach t o giving 
+information, alt hough 1 study f ound t hat supplementing inf ormation pr ovided f ace-t o-face 
+with online inf ormation incr eased kno wledge. The committ ee based t he recommendations Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 49 of
+63on their kno wledge and e xperience. 
+The committ ee agr eed t hat inf ormation should meet t he needs of t he w oman, f or example, 
+taking int o account an y language barriers, learning disabilities or ot her needs. Most 
+antenatal car e information is giv en in a one-t o-one or couple discussion. Off ering ot her 
+format s to supplement t his can help impr ove understanding and engagement, including 
+writt en mat erials and gr oup discussions in ant enatal classes or , in some cases, gr oup 
+antenatal appointment s. 
+Ther e was e vidence t hat w omen v alue inf ormation t hat is r elevant t o their o wn 
+circumstances. The committ ee agr eed t hat healt hcare professionals should e xplor e the 
+level and accuracy of t he w oman's (and her par tner's) e xisting kno wledge and 
+understanding of t he topic. The committ ee discussed t he impor tance of allo wing sufficient 
+time f or discussions. 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendations lar gely r eflect curr ent practice. 
+Return t o recommendations 
+Informa tion abou t antena tal c are 
+Recommendations 1 .3.7 to 1.3.19 
+Why the c ommi ttee made the r ecommenda tions 
+The committ ee agr eed, based on t he evidence and t heir kno wledge and e xperience, t hat if 
+women ar e giv en inf ormation about ant enatal car e, their schedule of appointment s and 
+what happens at diff erent appointment s and stages of pr egnancy , they are mor e likely to 
+be engaged, f ollow advice and shar e their concerns wit h healt hcare professionals. 
+Ther e was no e vidence identified t o inform t he timing of inf ormation pr ovision, but t he 
+committ ee agr eed t hat it is impor tant t o have a staged appr oach and co ver topics r elevant 
+to each stage of pr egnancy . 
+The first ant enatal (booking) appointment is an oppor tunity t o discuss and shar e Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 50 of
+63information about v arious practical issues r elated to pregnancy and ant enatal car e so t hat 
+the w oman kno ws what t o expect and ho w to get suppor t. The e vidence sho wed that 
+partners also v alue practical inf ormation t hroughout t he pr egnancy . For example, in 
+relation t o saf e use of medicines in pr egnancy , the committ ee w ere awar e of t he UK 
+Teratology Inf ormation Ser vice's inf ormation r esour ces on best use of medicines in 
+pregnancy (bumps) . 
+The e vidence suggest ed that w omen want inf ormation on ho w beha vioural f actors, such 
+as smoking, alcohol, diet and ph ysical activity ma y affect t hem and t heir bab y's healt h. 
+The e vidence also highlight ed ho w emotional t hese t opics could be f or women and t hat 
+women ma y feel judged or patr onised. The committ ee agr eed t hat it is impor tant t o have 
+these discussions in a sensitiv e manner t hat suppor ts individual w omen. Guidance on all 
+these issues is co vered by other NICE guidelines or go vernment document s. 
+The committ ee recognised t hat pr egnant w omen and t heir par tners oft en look f or 
+information and suppor t from v arious sour ces, such as w ebsit es, and not all of t hem ar e 
+necessarily e vidence-based, so signposting t o trust ed resour ces ma y be helpful. 
+Ther e was some e vidence t hat w omen and t heir par tners v alued inf ormation and 
+discussion ar ound t he transition t o par enthood, and t he changes t hat pr egnancy and 
+becoming a par ent will bring t o their lif e and r elationship. The committ ee w ere awar e of 
+various a vailable r esour ces t hat could be helpful f or par ents, par ticularly new par ents. 
+The e vidence sho wed that w omen want inf ormation on t heir options f or giving bir th. The 
+committ ee agr eed t hat t hese discussions should star t, at t he lat est, ar ound t he star t of t he 
+third trimest er, depending on t he w oman's pr eferences and cir cumstances. The committ ee 
+agreed, in line wit h the Mont gomer y ruling , that discussing t he implications, benefit s and 
+risks is fundamental t o making shar ed and inf ormed decisions. Guidance on making 
+decisions about place of bir th, mode of bir th and pr olonged pr egnancy ar e also co vered 
+by other NICE guidelines. 
+Considering t he amount of new inf ormation giv en at t he beginning of ant enatal car e, 
+discussions ar ound practical aspect s related to labour , childbir th and postnatal car e are 
+often mor e appr opriat e later on in pr egnancy . Ther e was some e vidence t hat healt hcare 
+professionals t hought t hat pr oviding inf ormation on emotional attachment and bonding 
+could impr ove women's confidence and incr ease t heir pr epar edness f or bir th. Further 
+recommendations about pr omoting emotional attachment and bonding, as w ell as planning 
+and managing inf ant f eeding, ar e covered by the NICE guideline on postnatal car e. Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 51 of
+63How the r ecommenda tions mig ht affect practice 
+The r ecommendations will impr ove consist ency of car e and r einforce best practice. 
+Return t o recommendations 
+Antena tal classes 
+Recommendations 1 .3.19 to 1.3.21 
+Why the c ommi ttee made the r ecommenda tions 
+Evidence among nullipar ous w omen sho wed that w omen who w ent t o ant enatal classes 
+were mor e likely to have their cer vix dilat ed by 3 cm or mor e on admission t o labour . A 
+dilated cer vix on admission ma y reduce t he need f or int erventions. This ma y indicat e that 
+women who att ended ant enatal classes ha ve bett er coping strat egies and t he confidence 
+to deal wit h pain at home in t he early stages of labour . Ther e was no e vidence about t he 
+most eff ectiv e cont ent f or ant enatal classes, so t he committ ee made t he 
+recommendations based on t heir e xperience. 
+The committ ee recognised t hat t here ma y be multipar ous w omen who could also 
+particularly benefit fr om ant enatal classes, so pr oviding t hem f or these w omen should be 
+consider ed. 
+The committ ee recognised t hat some gr oups of w omen ma y be less lik ely to att end 
+antenatal classes (f or example, some w omen fr om lo w income or disadv antaged 
+back grounds or minority et hnic gr oups, or t hose f or whom English is not t heir first 
+language). The committ ee agr eed t hat in or der t o incr ease engagement wit h ant enatal 
+classes, ser vice pr oviders should ensur e that classes ar e accessible, w elcoming and 
+adapt ed to meet t he needs of local communities. 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendations r eflect curr ent practice. Ho wever, adapting classes t o the needs of 
+the local communities might in volve some r eorganising of practices. 
+Return t o recommendations Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 52 of
+63Peer suppor t 
+Recommendations 1 .3.22 and 1 .3.23 
+Why the c ommi ttee made the r ecommenda tions 
+The e vidence sho wed that peer suppor t could off er helpful and v aluable car e and 
+guidance during t he ant enatal period. Ther e was e vidence among w omen fr om par ticular 
+subpopulations, such as migrant w omen, w omen of lo wer socioeconomic status, w omen 
+with intellectual disabilities, or y ounger w omen, and t he committ ee agr eed t hat peer 
+suppor t groups among w omen in similar cir cumstances might be par ticularly helpful. 
+The committ ee discussed t hat peer suppor t, including gr oup peer suppor t, volunt eer peer 
+suppor t, doula suppor t and online suppor t, is usually pr ovided t hrough 't hird sect or' 
+services, and t hey agr eed t hat healt hcare professionals should giv e women inf ormation 
+about ho w to contact local and national ser vices. Alt hough t here was litt le evidence on 
+partners' e xperiences of peer suppor t, in t he committ ee's e xperience, some par tners find 
+peer suppor t ser vices f or par tners helpful. 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendations r eflect curr ent best practice. 
+Return t o recommendations 
+Sleep posi tion 
+Recommendations 1 .3.24 and 1 .3.25 
+Why the c ommi ttee made the r ecommenda tions 
+The e vidence suggest ed that t here is an incr eased risk of stillbir th and babies being born 
+small f or gestational age aft er 28 weeks if w omen f all asleep on t heir backs. The 
+committ ee agr eed t hat t here is some uncer tainty about t his risk because t he evidence 
+was fr om relativ ely small studies whose design made it difficult t o assume t hat sleep 
+position caused t he adv erse out comes. The committ ee recognised t hat fur ther r esear ch is 
+unlik ely because conducting sufficient ly po wered pr ospectiv e cohor t studies is not Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 53 of
+63feasible giv en the relativ ely lo w incidence of stillbir th (1 in every 244 births in England and 
+Wales accor ding t o 2018 Office f or National Statistics [ONS] data ). The committ ee also 
+noted that not all t he included studies used t he same definition of stillbir th and t hat only 
+1 study r epor ted data accor ding t o whet her t he stillbir th occurr ed at t erm or at pr eterm. 
+On balance, t he committ ee agr eed t hat t he evidence was str ong enough t o advise w omen 
+to try to avoid going t o sleep on t heir back aft er 28 weeks. 
+The committ ee knew fr om t heir e xperience t hat pr oviding practical advice about risk 
+reduction is e xtremely impor tant f or pr egnant w omen. They discussed r eassuring w omen 
+about sleep positions, aids t hat could mak e it easier f or pr egnant w omen not t o go t o sleep 
+on their backs and maintain t his position when sleeping, f or example, b y using pillo ws. 
+The committ ee also agr eed t hat t he reason f or this advice should be e xplained, and t hey 
+recognised t he pot ential anxiety and f eelings of guilt t hat w omen ma y experience, f or 
+example, if t hey wak e up on t heir backs. 
+How the r ecommenda tions mig ht affect practice 
+Healt hcare professionals ma y need t o spend mor e time talking t o women about sleep 
+position in pr egnancy , but t he recommendations ar e not e xpect ed to have a significant 
+cost or r esour ce impact. 
+Return t o recommendations 
+Nausea and v omiting 
+Recommendations 1 .4.1 to 1.4.7 
+Why the c ommi ttee made the r ecommenda tions 
+Nausea and v omiting in pr egnancy can aff ect daily functioning and quality of lif e, and can 
+cause significant w orry and upset. Based on t heir kno wledge and e xperience, t he 
+committ ee agr eed t hat it is impor tant t o reassur e pregnant w omen who e xperience 
+mild-t o-moderat e nausea and v omiting t hat t hese ar e common sympt oms in early 
+pregnancy and will usually sett le lat er in t he second trimest er. 
+However, the committ ee recognised t hat man y pregnant w omen e xpect nausea and Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 54 of
+63vomiting in pr egnancy and might e ven tolerat e significant sympt oms and tr y various self -
+help appr oaches bef ore seeking medical advice. It is t herefore impor tant t o tak e it 
+seriously when w omen do seek help. 
+Some w omen pr efer to use non-pharmacological tr eatment s wher eas ot hers ma y prefer 
+pharmacological tr eatment s, so bot h options ar e recommended. 
+Ther e was some e vidence t hat ginger is eff ectiv e in tr eating mild-t o-moderat e nausea and 
+vomiting in pr egnancy compar ed wit h placebo, and t his ma y be an option par ticularly f or 
+women who want t o try a non-pharmacological option. 
+Ther e was e vidence on a wide v ariety of pharmacological tr eatment s, man y of which ar e 
+commonly used in curr ent practice. The e vidence on t he medicines v aried in quality and 
+for some medicines, no e vidence was f ound. Met oclopramide h ydrochloride was 
+suppor ted by good quality e vidence sho wing t hat it was eff ectiv e in impr oving sympt oms. 
+Ondansetr on was also f ound t o be eff ectiv e in impr oving sympt oms. A combination drug 
+with pyrido xine and do xylamine is curr ently the only drug licensed f or this indication, but 
+the evidence is v ery old and of lo w quality and did not sho w a con vincing eff ect on 
+sympt om impr ovement. Evidence on histamine H1 r ecept or antagonist s was of v ery low 
+quality and not par ticularly con vincing. Studies on p yrido xine h ydrochloride sho wed 
+differing r esult s, wit h larger trials sho wing no impr ovement in sympt oms. No e vidence was 
+identified on t he eff ectiv eness of cy clizine h ydrochloride alone in pr egnant w omen, so t he 
+committ ee made a resear ch recommendation on t he eff ectiv eness of medication f or 
+women wit h nausea and v omiting in pr egnancy . 
+The tr eatment options ha ve diff erent adv antages and disadv antages, including 
+effectiv eness in r elieving sympt oms, saf ety and ot her considerations, which ha ve been 
+summarised in a table t o help wit h decision making. The committ ee used inf ormation 
+available fr om t he British National F ormular y (BNF), t he UK T eratology Inf ormation Ser vice 
+monographs and patient inf ormation leaflet s, and t he manuf actur ers' summaries of 
+product charact eristics t o inform w omen about t he pot ential eff ects on t he bab y. The 
+committ ee recognised t hat w omen ar e oft en concerned about t he possible adv erse 
+effects of medicines on t he bab y and t hat t hese should be discussed in t he cont ext of 
+understanding t he small risk of adv erse out comes unr elated to medicine use. 
+The e vidence f or treating t he mor e severe form of nausea and v omiting in pr egnancy did 
+not generally suppor t any diff erent tr eatment options fr om t hose used f or mild and 
+moderat e nausea and v omiting in pr egnancy . An e xception was f or acupr essur e combined Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 55 of
+63with standar d car e wher e the evidence sho wed benefit s in r elieving sympt oms in w omen 
+with moderat e-to-se vere nausea and v omiting in pr egnancy , which was not sho wn for 
+women wit h mild and moderat e nausea and v omiting. Ther efore, the committ ee 
+recommended t hat acupr essur e could be consider ed for women wit h moderat e-to-se vere 
+nausea and v omiting as an additional tr eatment. 
+No recommendation was made on t he use of cor ticost eroids as a tr eatment f or se vere 
+nausea and v omiting in pr egnant w omen because, despit e resear ch in t his ar ea, no 
+evidence was f ound t o suppor t its use. The committ ee discussed t hat alt hough 
+corticost eroids ha ve well-kno wn harms, t he benefit s can outw eigh t hem so t hat some 
+units use cor ticost eroids in se vere cases of nausea and v omiting in pr egnancy , and so a 
+resear ch recommendation on t he eff ectiv eness of cor ticost eroids f or women wit h severe 
+nausea and v omiting in pr egnancy was made. 
+Some w omen wit h moderat e-to-se vere nausea and v omiting in pr egnancy might need 
+intravenous fluids. The e vidence sho wed no diff erence in most out comes betw een off ering 
+intravenous fluids in an inpatient or outpatient setting. Off ering t hem t o an outpatient is 
+less e xpensiv e, reduces time spent in hospital and, in t he committ ee's e xperience, is 
+generally pr eferred by women. Inpatient car e ma y be needed when se vere nausea and 
+vomiting persist s despit e treatment. Hyper emesis gra vidarum can ha ve serious harmful 
+consequences, and tr eatment and car e in hospital ma y be needed. It should be not ed that 
+this guideline only co vers tr eatment s to manage nausea and v omiting in pr egnancy , and 
+compr ehensiv e management of h yperemesis gra vidarum, which ma y include nutritional 
+interventions, is not co vered by this guideline on r outine ant enatal car e. 
+How the r ecommenda tions mig ht affect practice 
+The tr eatment options ar e all used in curr ent practice but t here ma y be a change in 
+practice in encouraging shar ed decision making f or diff erent options. This ma y mean t hat 
+those pr escribing medicines ma y need t o spend mor e time discussing t he options wit h the 
+woman. 
+An incr ease in giving intra venous fluids as an outpatient ser vice inst ead of an inpatient 
+service could bring cost sa vings. 
+Return t o recommendations Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 56 of
+63Heartburn 
+Recommendations 1 .4.8 and 1 .4.9 
+Why the c ommi ttee made the r ecommenda tions 
+Ther e was no e vidence on whet her giving lif estyle and diet inf ormation t o pregnant w omen 
+with hear tburn is eff ectiv e, but t he committ ee agr eed, based on t heir o wn kno wledge and 
+experience, t hat it ma y help. This is suppor ted by guidance f or the general adult 
+population in t he NICE guideline on gastr o-oesophageal r eflux disease and dyspepsia . 
+The committ ee recommended considering eit her antacid or alginat e therap y for women 
+with hear tburn in pr egnancy because t here is e vidence t hat t hey are equally eff ectiv e. 
+These medicines ar e available o ver the count er. Because t he studies e xamined v arious 
+antacid and alginat e remedies, t he committ ee agr eed t hat t hey could not mak e a mor e 
+specific r ecommendation. 
+The committ ee did not mak e any recommendations about acupunctur e or pr oton pump 
+inhibit ors (PPIs) because, alt hough t here was some e vidence t hat acupunctur e is eff ectiv e 
+in alle viating hear tburn and t hat PPI use in t he first trimest er is not harmful t o the bab y, it 
+was of v ery low quality and not good enough t o suppor t recommending t hem t o be used 
+routinely . In addition, t here was no e vidence on H2 recept or antagonist (H2RA) t herap y to 
+treat hear tburn in pr egnancy . 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendations r eflect curr ent clinical practice. 
+Return t o recommendations 
+Symptoma tic v aginal dischar ge 
+Recommendations 1 .4.10 to 1.4.14 
+Why the c ommi ttee made the r ecommenda tions 
+Ther e was limit ed evidence on t he eff ectiv eness of tr eatment s for sympt omatic v aginal Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 57 of
+63dischar ge in pr egnant w omen, so t he committ ee used t heir kno wledge and clinical 
+experience t o mak e the recommendations. The committ ee agr eed t hat some w omen can 
+find an incr ease in v aginal dischar ge distr essing or uncomf ortable, so it is impor tant t o 
+reassur e women t hat it is a normal f eatur e of pr egnancy . However, women should also be 
+made awar e of t he sympt oms and signs of inf ection t hat ma y need fur ther action, because 
+there is a small chance t hat some inf ections could lead t o complications. 
+Candidiasis (t hrush) is oft en an easily identifiable cause of sympt omatic v aginal dischar ge 
+and ma y not need a f ormal in vestigation. Ho wever, if there is doubt about t he cause, a 
+vaginal swab could be used. It is impor tant t hat possible se xually transmitt ed inf ections 
+are appr opriat ely in vestigat ed so t hat t hey can be tr eated, because t hey could ha ve an 
+impact on t he bab y. 
+The e vidence on antifungal tr eatment t o treat sympt omatic v aginal dischar ge because of 
+vaginal candidiasis was v ery limit ed, imidaz ole being t he only drug class being studied. 
+However, imidaz ole (f or example, clotrimaz ole or econaz ole) was consist ently sho wn to be 
+effectiv e. 
+The e vidence on t he benefit s and harms of antibiotics t o treat sympt omatic v aginal 
+dischar ge due t o bact erial v aginosis was also v ery limit ed. Ther e was only e vidence on 
+oral amo xicillin (which is not commonly pr escribed in curr ent practice f or this indication) 
+and oral metr onidaz ole. The committ ee w ere awar e of e vidence among asympt omatic 
+populations t hat antibiotics ar e eff ectiv e in tr eating t he underlying inf ection, but t he 
+committ ee agr eed t hat it cannot be assumed t hat t hey would be eff ectiv e in r elieving 
+sympt omatic v aginal dischar ge. The committ ee not ed that it is common practice t o 
+prescribe v aginal rat her t han oral antibiotics f or this indication – in par ticular , clindam ycin 
+or metr onidaz ole. Combining t his wit h their kno wledge and e xperience, t hey 
+recommended t hat eit her oral or v aginal antibiotics could be consider ed. The NICE 
+guideline on antimicr obial st ewar dship gives guidance on good practice in pr escribing 
+antimicr obials. 
+No e vidence was identified on t he eff ectiv eness of metr onidaz ole to treat sympt omatic 
+vaginal dischar ge because of v aginal trichomoniasis, t herefore no r ecommendations w ere 
+made. 
+How the r ecommenda tions mig ht affect practice 
+The committ ee agr eed t hat t he recommendations will r einforce curr ent best practice and Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 58 of
+63standar dise car e. 
+Return t o recommendations 
+Pelvic g irdle pain 
+Recommendation 1 4 .15 
+Why the c ommi ttee made the r ecommenda tion 
+Ther e was e vidence of v arying quality fr om se veral randomised contr olled trials t hat 
+exercise advice fr om a ph ysiot herapist ma y reduce pain int ensity and pelvic-r elated 
+functional disability . The committ ee recommended r eferral t o physiot herap y ser vices 
+rather t han t o a ph ysiot herapist because, in some cases, inf ormation and advice could be 
+given over the telephone or in an email or lett er rat her t han in a f ace-t o-face appointment. 
+Moderat e quality e vidence fr om 1 randomised contr olled trial sho wed that a non-rigid 
+lumbopelvic belt t oget her wit h general inf ormation about anat omy, body postur e and 
+ergonomic advice r educed pelvic gir dle pain int ensity , compar ed wit h exercise advice and 
+information, and inf ormation only . However, it did not ha ve an impact on functional status 
+in daily activities. No e vidence was identified about adv erse eff ects of using a lumbopelvic 
+belt. Pr oviding a non-rigid lumbopelvic belt was also f ound t o be cost eff ectiv e based on 
+an economic e valuation, but because t he clinical e vidence base was limit ed, t he 
+committ ee agr eed not t o mak e a str ong r ecommendation. 
+The committ ee agr eed t hat t here was not enough e vidence t o sho w that manual t herap y 
+alone had an y benefit s for women wit h pelvic gir dle pain, so did not mak e a 
+recommendation. The committ ee agr eed t hat t he evidence f or acupunctur e to treat pelvic 
+girdle pain was mix ed, of poor quality and t herefore not adequat e enough t o justify a 
+recommendation t hat w ould ha ve a substantial r esour ce impact. 
+How the r ecommenda tion mig ht affect practice 
+Current practice f or pr egnancy-r elated pelvic gir dle pain is t o off er analgesics (f or 
+example, paracetamol) and pr ovide inf ormation about lif estyle and healt h changes. Some 
+hospitals also ha ve access t o physiot herap y ser vices. Pr oviding a lumbopelvic belt is not 
+current practice in all unit s, so t he committ ee recognised t hat t he recommendation ma y Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 59 of
+63have cost implications. Ho wever, healt h economic modelling sho wed that it is cost 
+effectiv e even if w omen ar e referred for ph ysiot herap y. The r ecommendation ma y incr ease 
+the number of pr egnant w omen seeking r eferral t o physiot herap y ser vices. 
+Return t o recommendation 
+Unexplaine d vaginal b leeding af ter 13 weeks 
+Recommendations 1 .4.16 to 1.4.21 
+Why the c ommi ttee made the r ecommenda tions 
+Ther e was v ery little evidence, so t he committ ee used t heir kno wledge and e xperience t o 
+make recommendations. The y took int o account t he risks associat ed wit h a dela y in 
+assessing and tr eating une xplained v aginal bleeding in pr egnancy , the possibility t hat 
+anti-D injections ma y be needed f or women who ar e rhesus D-negativ e, the need t o 
+exclude a lo w-lying placenta (placenta prae via) and t hat cor ticost eroids ma y be needed if 
+there is a risk of pr eterm bir th. 
+The committ ee agr eed t hat a r eview in secondar y car e is needed when une xplained 
+vaginal bleeding occurs aft er 13 weeks of pr egnancy . Evidence on t he eff ectiv eness of 
+hospitalisation was limit ed, wit h only 1 retrospectiv e study t hat sho wed no diff erence in 
+the number of f etal deat hs whet her w omen w ere admitt ed to hospital or dischar ged on t he 
+day they present ed. Because of limit ed evidence, t he committ ee made a resear ch 
+recommendation on t he eff ectiv eness of hospitalisation compar ed wit h outpatient 
+management f or pr egnant w omen wit h une xplained v aginal bleeding . 
+The committ ee agr eed t hat hospitalisation should be consider ed for monit oring, 
+administ ering cor ticost eroids and neonatal unit car e if t he bab y is born pr eterm. 
+Discussion wit h the w oman about t he possibility of pr eterm bir th ma y also be helpful. 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendations r eflect curr ent practice. 
+Return t o recommendations Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 60 of
+63Context 
+Around 660 ,000 w omen giv e bir th in England and W ales each y ear. The ant enatal period is 
+an excellent oppor tunity t o not only pr ovide suppor t and inf ormation t o women (and t heir 
+families) about pr egnancy , birth and t he postnatal period, but also t o assess t heir risk of 
+complications. Ev en in fit and healt hy women, concerns and complications can still arise, 
+and good quality ant enatal car e is vital t o identify and deal wit h pot ential pr oblems and 
+reduce t he chance of poor out comes f or bot h the w oman and t he bab y. 
+Antenatal ser vice deliv ery and pr ovision of car e have changed o ver time and t his guideline 
+updat es and r eplaces t he version of t he NICE guideline on ant enatal car e (first published 
+in 2008). 
+This guideline co vers r outine ant enatal car e for all w omen. Ho wever, it does not co ver 
+specialised car e for women wit h underlying medical conditions or obst etric complications 
+(once diagnosed) but r efers t o other NICE guidelines. 
+This guideline co vers t he or ganisation and deliv ery of ant enatal car e, in par ticular , how to 
+initially access ant enatal car e and ant enatal appointment s, and t he in volvement of 
+partners in ant enatal car e. Routine car e and monit oring during pr egnancy is co vered and 
+the guideline mak es references t o other guidance on risk assessment and scr eening. This 
+guideline also co vers pr oviding inf ormation and suppor t during ant enatal car e, and 
+managing some of t he common pr oblems during pr egnancy . 
+Throughout t he de velopment of t his guideline, t he committ ee has consider ed ho w 
+antenatal car e could be made accessible, f air and high quality f or all w omen, r egar dless of 
+their back ground or situation. Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 61 of
+63Finding mor e inf orma tion and c ommi ttee 
+details 
+To find NICE guidance on r elated topics, including guidance in de velopment, see t he NICE 
+topic page on pr egnancy . 
+For full details of t he evidence and t he guideline committ ee's discussions, see t he 
+evidence r eviews . You can also find inf ormation about how the guideline was de veloped , 
+including details of t he committ ee. 
+NICE has pr oduced tools and r esour ces t o help y ou put t his guideline int o practice . For 
+general help and advice on putting our guidelines int o practice, see resour ces t o help y ou 
+put NICE guidance int o practice . Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 62 of
+63Update inf orma tion 
+August 2021: This guideline updat es and r eplaces NICE guideline CG62 (published Mar ch 
+2008). 
+Minor changes since publication 
+October 2023: We updat ed link t o the NICE guideline on intrapar tum car e, which has been 
+updat ed. 
+August 2023: In our recommendations on managing nausea and v omiting we link ed to 
+information on h yperemesis gra vidarum in t he Royal College of Obst etricians and 
+Gynaecologist s' guideline on t he management of nausea and v omiting of pr egnancy and 
+hyperemesis gra vidarum . 
+December 2021: We have added links t o our guideline on pelvic floor dysfunction 
+(recommendation 1 .3.12). 
+ISBN: 9 78-1-47 31-4227-5 
+Accreditation Antenatal car e (NG201)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 63 of
+63

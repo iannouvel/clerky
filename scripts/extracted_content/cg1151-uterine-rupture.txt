@@ -1,0 +1,540 @@
+# Extracted from: CG1151 Uterine Rupture.pdf
+# Guideline ID: cg1151-uterine-rupture
+# Content length: 25956 characters
+# Processing date: 1750066900.106507
+
+Uterine Rupture Guideline v4.0 Jan 2023 Page 1 of 13 
+Please check on the intranet that this printout is the most recent version of this document. 
+ 
+Uterine Rupture Guideline 
+Summary statement: How does the 
+document support patient care? By providing evidence based guidance with regard to 
+diagnosis and management of uterine rupture 
+Staff/stakeholders involved in 
+development: Obstetric Anaesthetists, Obstetric Consultants and Senior 
+Midwifery Staff 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Obstetric Consultant/specialist trainee 
+For use by: All staff involved in the management of uterine rupture 
+Purpose: To provide evidence -based guidance in the recognition and 
+management of uterine rupture 
+This document supports: RCOG 2015 Green top guideline 45 
+NICE 2007 
+Key related documents: UH Sussex (WH & SRH) Maternity Guidelines : Vaginal 
+Birth After Caesarean, Care of Women in Labour , Fetal 
+Surveillance, Caesarean Section , Postpartum 
+Haemorrhage 
+Recognition and management of the severely ill woman 
+(including HDU/ITU care) 
+Approved by: Joint Obstetric Guideline Group (JOGG) 
+Approval date: 18th January 2023 Date uploaded: 25th January 2023 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable - Divisional Ratification only required 
+Ratification Date: Not Applicable - Divisional Ratification only required 
+Expiry Date: January 2026 
+Review date: July 2025 
+If you require this document in another format such as Braille, large print, audio or 
+another language please contact the Trusts Communications Team 
+Reference Number: CG1151 
+Uterine Rupture Guideline v4.0 Jan 2023 Page 2 of 13 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+
+Version Date Author Status Comment 
+1.0 June 2011 R. Mason Archived New Trust Wide Guideline 
+1.1 June 2014 JOGG Archived 3 year review -no changes 
+2.0 July 2017 N Maguire Archived 3 yearly review – 
+minor amendments 
+3.0 January 2020 M. Lugein Archived 3 yearly review – 
+minor amendments 
+4.0 January 2023 B. Middleton , 
+Obstetric 
+Consultant LIVE 3 year review. Risk 
+factors reordered, 
+new table on 
+managing uterine 
+rupture added. 
+Incidence section 
+updated. 
+
+The interpretation and application of clinical guidelines will remain the 
+responsibility of the individual clinician. 
+If in doubt contact a senior colleague or expert . 
+Uterine Rupture Guideline v4.0 Jan 2023 Page 3 of 13 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+
+Contents 
+ 
+1.0 Aim ................................ ................................ ................................ ................................ 4 
+2.0 Scope ................................ ................................ ................................ ............................ 4 
+3.0 Responsibilities ................................ ................................ ................................ ............. 4 
+4.0 Abbreviations used within thi s guideline ................................ ................................ ........ 4 
+5.0 Introduction ................................ ................................ ................................ .................... 4 
+5.1 Definition ................................ ................................ ................................ .......................... 4 
+5.2 Incidence ................................ ................................ ................................ .......................... 5 
+5.3 Prognosis ................................ ................................ ................................ ......................... 5 
+6.0 Risk factors for uterine rupture ................................ ................................ ....................... 5 
+6.1 Risks during pregnancy ................................ ................................ ................................ .... 6 
+6.2 Risks during labour ................................ ................................ ................................ ........... 6 
+6.3 Risks post -birth ................................ ................................ ................................ ................. 7 
+6.4 Traumatic or spontaneous risk factors ................................ ................................ .............. 7 
+6.5 Spontaneous ................................ ................................ ................................ .................... 7 
+7.0 Management of women/people with a previous uterine scar ................................ .......... 7 
+7.1 Intrapartum care ................................ ................................ ................................ ............... 8 
+8.0 Signs and symptoms of uterine rupture ................................ ................................ .......... 8 
+8.1 Prior to rupture ................................ ................................ ................................ .................. 8 
+8.2 Following rupture ................................ ................................ ................................ .............. 9 
+9.0 Management of suspected uterine rupture ................................ ................................ ..... 9 
+9.1 Surgery ................................ ................................ ................................ ........................... 10 
+9.2 Post birth ................................ ................................ ................................ ........................ 11 
+References ................................ ................................ ................................ ............................. 12 
+ 
+Uterine Rupture Guideline v4.0 Jan 2023 Page 4 of 13 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+Uterine Rupture Guideline 
+
+1.0 Aim 
+ 
+To provide guidance on the diagnosis and management of uterine rupture during pregnancy 
+and labour. 
+ 
+2.0 Scope 
+ 
+The objectives of this guideline are: 
+ 
+ To support staff in the diagnosis and management of uterine rupture. 
+ To ensure the safety of patients and optimal outcome for women/people and babies. 
+ 
+3.0 Responsibilities 
+ 
+Midwives and obstetricians : 
+ 
+ To access, read, understand and follow this guidance. 
+ To use their professional judgement in the application of this guideline. 
+ 
+Management : 
+ 
+ To ensure the guideline is reviewed as required in line with the Trust and 
+National recommendations. 
+ To ensure the guideline is accessible to all relevant staff. 
+ 
+4.0 Abbreviations used within this guideline 
+ 
+VBAC - Vaginal Birth After Caesarean Section CCU - Critical Care Unit 
+MEOWS - Maternal Early Obstetric Warning 
+System ERCS - Elective Repeat Caesarean Section 
+FBC - Full Blood Count G&S - Group and Save 
+Us&Es - Urea and Electrolytes 
+
+5.0 Introduction 
+ 
+5.1 Definition 
+ 
+Uterine rupture is a rare, but potentially catastrophic, obstetric emergency. It is associated with 
+a high rate of maternal /birthing parent and fetal morbidity such as haemorrhagic shock, need 
+for peripartum hysterectomy, hypoxic ischaemic encephalopathy permanent brain damage and 
+even death, mainly due to substantial maternal/birthing parent haemorrhage. 
+Uterine Rupture Guideline v4.0 Jan 2023 Page 5 of 13 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+ 
+Uterine rupture is defined as a full thickness separation of the uterus leading to significant 
+haemorrhage and/or fetal distress, and/or extrusion of fetal parts and intra-amniotic contents 
+into the peritoneal cavity requiring surgical repair. 
+ 
+By contrast, incomplete rupture or uterine scar dehiscence is where a surgical scar breaks 
+down but the visceral peritoneum remains intact, defined as a disruption of the uterine muscle 
+with intact serosa. It is usually asymptomatic, although labour may slow down. It may only be 
+found in retrospect at caesarean birth. 
+ 
+5.2 Incidence 
+ 
+Uterine rupture is a rare event, occurring in just 2 per 10 000 pregnancies. However, when it 
+does occur it frequently results in life threatening maternal /birthing parent and/or fetal 
+compromise. In a UK study, 87% of uterine ruptures occurred in women /people who had a 
+uterine scar, with just 13% occurring in women/people with an unscarred uterus. 
+ 
+The incidence among women /people who have had a previous caesarean birth and plan to 
+have a normal birth is 21 per 10,000 pregnancies, which is higher than in those who elect for 
+another caesarean birth, where the incidence is 3 per 10,000 births. 
+ 
+ The risk increases with the number of caesarean births ; with two previous caesarean births 
+carrying a three to five -fold increase in risk compa red to one previous caesarean birth. Uterine 
+rupture in an unscarred uterus is mainly confined to multiparous women /people in labour. 
+However, uterine rupture can occur without any predisposing factors. 
+ 
+The rate of uterine rupture causing maternal death in the UK is 1.4 per million maternities. The 
+true incidence of incomplete rupture is unknown. 
+ 
+5.3 Prognosis 
+ 
+ 4.2% maternal /birthing parent mortality 
+ 46% perinatal mortality and morbidity 
+ 
+6.0 Risk factors for uterine rupture 
+ 
+Uterine rupture in an unscarred uterus is extremely rare (0.5 – 2 per 10000) and mainly occurs 
+in multiparous women/people in labour. 
+ 
+The most common risk factor in the developed world is previous caesarean birth . The 
+incidence of uterine rupture rises to 5 in 1000 in the presence of a uterine scar following 
+previous caesarean birth. The incidence is 3 per 10000 (0.2%) in elective repeat caesarean birth 
+ERCS. 
+ 
+The classical vertical caesarean incision and inverted T or J incisions confer a much higher risk 
+of future uterine rupture than the more common transverse lower segment approach. 
+ 
+Uterine Rupture Guideline v4.0 Jan 2023 Page 6 of 13 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+This risk is further increased in women /people who have never given birth vaginally and in those 
+whose labour is induced with prostaglandins when attempting vaginal birth after caesarean birth 
+(VBAC). Induction of labour either with oxytocin or prostaglandins is an independent risk factor. 
+Cervical ripening with trans -cervical Foleys catheters is not associated with increased risk of 
+uterine rupture. 
+ 
+Rates of uterine rupture differ according to whether VBAC labour is spontaneous (0.15 – 0.4%), 
+induced (0.54 – 1.4%) or augmented (0.9 – 1.91%). 
+ 
+The r isk of uterine rupture increases if women /people with a uterine scar also have the following 
+factors: 
+ 
+ Short inter -delivery interval (< 12 months) 
+ Post-dates pregnancy 
+ Maternal /birthing parent age over 40 
+ Obesity 
+ Low pre -labour Bishop score 
+ Macrosomia 
+ Multiple pregnancy 
+ Polyhydramnios 
+ 
+The perinatal mortality is ten times greater than the maternal /birthing parent mortality. 
+ 
+6.1 Risks during pregnancy 
+ 
+ Previous classical caesarean birth 
+ Previous hysterotomy (very rare) 
+ Previous hysteroscopic metroplasty 
+ Placenta accreta 
+ Mullerian anomalies of uterus 
+ Previous difficult curettage for miscarriage 
+ 
+Rare causes described in primigravida women /people : 
+ 
+ Ehler -Danlos syndrome 
+ Chronic steroid use 
+ Use of cocaine 
+ 
+6.2 Risks during labour 
+ 
+ Previous caesarean birth 
+ Previous myomectomy 
+ Grand multiparity 
+ Mal-presentation: unrecognised brow, face and shoulder presentation 
+ Unrecognised cephalopelvic disproportion 
+ Obstructed labour 
+Uterine Rupture Guideline v4.0 Jan 2023 Page 7 of 13 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+ Prostaglandin and oxytocin augmentation in women /people with high parity and 
+previous caesarean birth 
+ Use of high doses of misoprostol in parous women /people 
+ Instrumental birth (injudicious use of Kielland forceps) 
+ Assisted breech deliveries , external cephalic version, internal podalic version 
+ Manoeuvres to relieve shoulder dystocia 
+ Precipitate labour 
+ 
+Rare causes: 
+ 
+ Tumour obstructing the birth canal 
+ Pelvic deformity 
+ 
+6.3 Risks post -birth 
+ 
+ Manual removal of placenta 
+ Uterine manipulation (intrauterine balloon) 
+ Placenta accreta 
+ 
+6.4 Traumatic or spontaneous risk factors 
+ 
+ Blunt or direct trauma e.g. motor vehicle accident 
+ 
+6.5 Spontaneous 
+ 
+ Previous uterine rupture 
+ Previous uterine or cervical surgery (e.g. caesarean sbirth, cornual ectopic 
+pregnancy, manual removal of placenta, previous iatrogenic uterine perforation) 
+ Grand multiparity 
+ Unrecognised obstructed labour 
+ Hypertonic uterine contractions 
+ Congenital uterine anomalies (e.g. undeveloped uterine horn) 
+ Placenta accreta spectrum 
+ Multiple pregnancy 
+ Mal-presentation (brow or face) 
+ Macrosomia and fetal anomaly (e.g. hydrocephalus) 
+ 
+7.0 Management of women /people with a previous uterine scar 
+ 
+Birth plans should be discussed antenatally by a senior registrar or consultant and 
+documented clearly in the notes . This will facilitate best practice in antenatal counselling, 
+shared decision making and documentation. (Please refer to CG1152 Birth After 
+Caesarean Section (BAC) Guideline ). 
+ 
+Uterine Rupture Guideline v4.0 Jan 2023 Page 8 of 13 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+In women /people with co mplicated uterine scars, caution should be exercised and 
+decisions should be made on a case -by-case basis by a senior obstetrician with access 
+to the details of previous surgery. 
+ 
+Women /people should be advised that planned VBAC should be conducted in a su itably 
+staffed and equipped delivery suite with continuous intrapartum care and monitoring with 
+resources available for immediate caesarean birth and advanced neonatal resuscitation. 
+ 
+7.1 Intrapartum care 
+ 
+IV cannula sited in established labour or at the discretion of the senior midwife / registrar on 
+call and blood sent for FBC, G&S and U&E ’s. 
+ 
+Women /people should be advised to have continuous electronic fetal monitoring for the 
+duration of planned VBAC, commencing at the onse t of regular uterine contractions. 
+ 
+Staff caring for these women /people should be vigilant for the signs and symptoms of uterine 
+rupture. Uterine rupture can occur before the woman is considered to be in established labour, 
+and a high index of suspicion is required, especially if the woman /person requires analgesia. 
+ 
+Note: In all cases of surgical delivery, especially where there are risk factors for uterine rupture, 
+a thorough examination of uterus and birth canal is required. 
+ 
+8.0 Signs and symptoms of uterine rupture 
+ 
+Warning signs and symptoms are inconsistent; vigilance by staff and early detection are vital to 
+ensure best possible outcomes. 
+ 
+8.1 Prior to rupture 
+ 
+Women /people may exhibit restlessness, constant pain in the lower part of the uterus. 
+ 
+ Contractions may become longer, stronger and more frequent in an effort to 
+overcome the obstruction, this can eventually lead to tonic contractions and the 
+uterus becoming continuously hard. 
+ There may be poor progress in labour (i.e. less than 0.5 cm per hour) . 
+ The mother /birthing parent is often in significant, continuous pain and may 
+complain of scar pain or tenderness . 
+ Maternal /birthing parent pyrexia, tachycardia, vomiting +/- signs of dehydration may 
+occur . 
+ The uterus may appear closely moulded around the fetus . 
+ The presentation usually remains high. 
+ The fetus may show signs of severe compromise . 
+ 
+These signs are poor indicators and rupture can occur suddenly and without warning. 
+ 
+Uterine Rupture Guideline v4.0 Jan 2023 Page 9 of 13 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+
+8.2 Following rupture 
+ 
+Women /people may describe a sudden feeling of something giving way with complete 
+cessation of uterine activity. 
+ 
+ An abnormal CTG (e.g. tachycardia, variable or late decelerations or bradycardia) 
+is the most consistent finding in uterine rupture (present in 55-87% of these 
+events) with bradycardia being the most common felt heart rate abnormalities. 
+ Severe tearing abdominal pain and tenderness, persisting between 
+contractions . 
+ Breakthrough persistent pain with an apparently functional epidural block . 
+ Acute onset of scar tenderness or crepitus over the lower uterine segment . 
+ Fresh vaginal bleeding, blood stained liquor or haematuria (because the bladder is 
+often adherent to a previous uterine scar). 
+ Signs of maternal /birthing parent shock: tachycardia, hypotension , fainting . 
+ Sudden onset of dyspnoea, chest pain or shoulder tip pain. 
+ Intrauterine fetal death . 
+ Cessation of labour / contractions . 
+ Loss of station of the presenting part. 
+ Change in the abdominal contour and inability to pick up fetal heart rate at the old 
+transducer site . 
+ In some cases the fetus may be palpable outside the uterus . 
+ 
+Note : epidural analgesia is not thought to mask the pain/tenderness of uterine rupture as 
+abdominal pain alone is not a reliable indicator. However if a sudden increase in analgesia 
+requirements is noted then close observation for other signs of rupture is needed. 
+ 
+9.0 Management of suspected uterine rupture 
+ 
+This is an obstetric emergency. It is imperative that surgical delivery is achieved quickly as 
+response time is critical to outcome. Early diagnosis of uterine dehiscence or rupture followed 
+by expeditious laparotomy and neonatal resuscitation are essential to reduce associated 
+morbidity and mortality. 
+ 
+It is important to note that scar dehiscence may be asymptomatic in up to 48% of 
+women /people , and the classic triad of complete uterine rupture (pain, vaginal bleeding, and 
+FHR abnormalities) maybe present in less than 10% of cases. 
+ 
+The best results are attained where surgical delivery is achieved as soon as diagnosis is 
+made. 
+ 
+Once the emergency has been declared and the emergency call 2222 is made, staff should 
+follow CG1148 Recognition and management of severely ill pregna nt woman/person guideline. 
+ 
+Uterine Rupture Guideline v4.0 Jan 2023 Page 10 of 13 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+Give a brief explanation to the woman /person and their partner and obtain consent for 
+emergency LSCS including that surgery may involve the need for hysterectomy. 
+ 
+Category 1 caesarean birth should be performed by an experienced obstetrician, while the 
+consultant is on their way if not already present. As this is a rare obstetric emergency, a second 
+consultant presence is recommended. Ensure that accurate notes are made 
+contemporaneously with timings recorded. 
+ 
+A Datix form must be completed if uterine rupture is confirmed. 
+ 
+Communication: Clinical actions : 
+ Call for help – Activate 
+emergency buzzer. 
+ Put out an emergency 
+2222 plus contact the on -
+call consultant via 
+switchboard . 
+ Liaise with haematologist 
+regarding blood products – 
+it may be necessary to 
+initiate the major 
+haemorrhage protocol. 
+ Alert theatre staff to 
+prepare for laparotomy. 
+ Inform paediatrician and 
+the neonatal team. 
+  Check Airway, Breathing an d Circulation 
+(ABC) and maternal/birthing parent 
+observations and level of consciousness. 
+ Administer oxygen via face mask at 15L per 
+minute. 
+ Commence/maintain continuous electronic 
+fetal monitoring. 
+ If the labour is being augmented – turn off the 
+oxytocin. 
+ Gain IV access for FBC, G&S, U &E’s and 
+coagulation screen. 
+ Commence IV infusion of a crytalloid solution. 
+Infuse rapidly to attempt to maintain 
+circulatory volume until blood available. 
+ Nurse the woman/person in left lateral. 
+ Perform catheterisation . 
+ Transfer to theatre as soon as possible where 
+management will be dependent upon 
+individual findings at the time. (Repair will be 
+performed by a consultant obstetrician or 
+supervised registrar). 
+ 
+9.1 Surgery 
+ 
+ Have cell salvage available where possible. 
+ Deliver the uterus through the wound and examine for lacerations. An assistant can 
+hold the uterus up from behind and occlude the uterine vessels manually to 
+diminish uterine vascularity and improve visibility. 
+ When future child bearing important and risks acceptable, rupture repair can be 
+attempted. 
+ Repair lacerations and ligate bleeding points. 
+ Use several layer closure of uterus and any lacerations. 
+Uterine Rupture Guideline v4.0 Jan 2023 Page 11 of 13 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+ Inspect carefully for other visceral damage (esp. bladder, broad ligaments and 
+fallopian tubes). 
+ Consider the use of interventional radiology if appropriate. 
+ Early recourse to hysterectomy: risk of hysterectomy is 3.4/10000 women /people 
+choosing VBAC and 4 – 13% following uterine rupture in women /people with a 
+previous caesarean birth. 
+ Give antibiotic cover. 
+ If there is suspicion of uterine rupture after successful vaginal birth, 
+laparotomy may be required to assess damage and control bleeding . 
+ 
+9.2 Post birth 
+ 
+ Manage the woman /person in the Recovery or Critical Care Unit (CCU) initially with 
+careful monitoring of clinical state using modified early obstetric warning score 
+(MEOWS). 
+ Check full blood count postnatally and consider need for transfusion/iron therapy. 
+ Discuss events and management with woman /person and their family and debrief staff. 
+ Involve neonatal unit staff and chaplaincy as appropriate. 
+ Complete Incident Report form via Datix. 
+ 
+Women /people who have had a previous uterine rupture should be advised to have future 
+elective caesarean births. 
+ 
+10.0 Monitoring/ audit uterine rupture 
+ 
+Incidence of uterine rupture are reviewed and audited (including presence of obstetric consultant) 
+via Datix reporting. 
+Uterine Rupture Guideline v4.0 Jan 2023 Page 12 of 13 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+References 
+ 
+Al-Zirqi I, Stray -Pedersen B, Forsén L, Vangen S. 2010. Uterine rupture after previous 
+caesarean section. BJOG 117: 809 – 820. 
+ 
+Bujold E, Gauthie r RJ. 2002. Neonatal morbidity associated with uterine rupture: what are 
+the risk factors? American Journal of Obstetrics and Gynecology 186(2): 311 – 4. 
+ 
+Confidential Enquiry into Maternal Deaths. 2007. Saving Mothers’ Lives: Reviewing maternal 
+deaths to make motherhood safer 2003 -2005. Department of Health . 
+ 
+Duff P, Southmayd K, Read JA. 1988. Outcome of trial of labour in patients with a single 
+previous low transverse caesarean section for dystocia. Obstetrics & Gynecology 71: 380 – 
+4. 
+ 
+Flamm BL et al. 1988. Vaginal birth after caesarean section: results of a multicentre study. 
+American Journal of Obstetrics and Gynecology 158:1079 – 84. 
+ 
+Grossetti E et al. 2007. Rupture of the scarred uterus. Acta Obstetricia et Gynecologica 
+Scandinavica 86: 572 – 8. 
+ 
+Guise JM et al. 2004. Systematic review of the incidence and consequences of uterine 
+rupture in women with previous caesarean section. BMJ 329: 19 – 25. 
+ 
+Kayani S, Alﬁrevic Z. 2005. Uterine rupture after induction of labour in women with previous 
+caesarean section. BJOG 112: 451 – 5. 
+ 
+Kwee A et al. 2007. Obstetric management and outcome of pregnancy in women with a 
+history of caesarean section in the Netherlands. European Journal of Obstetrics & 
+Gynaecology and Reproductive Biology 132: 171 – 6. 
+ 
+Landon MB et al. 2004. Maternal and perinatal outcomes associated with a trial of labor after 
+prior cesarean delivery. New England Journal of Medicine 351(25): 2581 – 9. 
+ 
+Landon MB et al. 2005. The MFMU Caesarean Registry: Impact of fetal size on trial of labour 
+success for patients with previous caesarean for dystocia. American Journal of Obstetrics 
+and Gynecology 195(4): 1127 – 31. 
+ 
+Leung AS, Leung EK, Paul RH. 1993. Uterine rupture after previous cesarean delivery: 
+maternal and fetal consequences. American Journal of Obstetrics and Gynecology 169(4): 
+945 – 50. 
+ 
+Locatelli A et al. 2006. Induction of labour: comparison of a cohort with uterine scar from 
+previous caesarean section vs a cohort with intact uterus. Journal of Maternal -Fetal and 
+Neonatal Medicine 19: 471 – 5. 
+ 
+Manoharan M, Wuntakal R, Erskine K. 2011. Uterine rupture: a revisit. The Obstetrician and 
+Gynaecologist 12: 223 – 230. 
+Uterine Rupture Guideline v4.0 Jan 2023 Page 13 of 13 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+ 
+McMahon MJ et al. 1996. Comparison of a trial of labour with an elective caesarean section. 
+New England Journal of Medicine 335: 689 – 95. 
+ 
+NICE Guidance. 2004. Caesarean Section. NICE . 
+ 
+NICE Guidance. 2007. Intrapartum care. NICE . 
+ 
+RCOG (2015) Birth after caesarean section (Green Top Guideline 45). RCOG . 
+ 
+Smith GC et al. 2004. Factors predisposing to perinatal death related to uterine rupture 
+during attempted vaginal birth after caesarean section: retrospective cohort study. BMJ 329: 
+375 – 7. 
+ 
+Waterstone M, Bewley S, Wolfe C. 2001. Incidence and predictors of severe obstetric 
+morbidity: case -control study. BMJ 322: 1089 – 1094. 
+ 
+Yogev Y et al. 2004. Induction of labour with prostaglandin E2 in women with previous 
+caesarean section and unfavourable cervix. European Journal of Obstetrics & Gynaecology 
+and Reproductive Biology 116: 173 – 6. 
+ 
+Zwart JJ et al. 2008. Severe maternal morbidity during pregnancy, delivery and puerperium 
+in the Netherlands: a nationwide population -based study of 371,000 pregnancies. BJOG 
+115(7): 842 – 50.

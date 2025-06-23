@@ -1,0 +1,611 @@
+# Extracted from: MP051 Recovery Care.pdf
+# Guideline ID: mp051-recovery-care
+# Content length: 28732 characters
+# Processing date: 1750066901.5260117
+
+Recovery Care 
+
+Maternity Protocol: MP051 
+ 
+Date agreed September 2018 
+Recovery Care (RSCH PRH only ) MP051 
+University Hospitals Sussex NHS Trust Page 2 of 18 
+
+Author: Dr Richard Stoddart 
+Manager responsible: Abby Medniuk 
+Version: 4.1 
+Approval Committee: Women’s Safety and Quality Committee 
+Date agreed: January 2022 
+Review date: December 2023 
+Cross reference: MP012 Venous thrombosis (VTE) 
+MP050 Caesarean section (LSCS) 
+MP056 High Dependency Care 
+MP040 Bladder care Recovery Care (RSCH PRH only ) MP051 
+University Hospitals Sussex NHS Trust Page 3 of 18 
+ Contents 
+Key Principles ................................ ................................ ................................ ................................ .. 4 
+Scope ................................ ................................ ................................ ................................ .............. 4 
+Responsibilities ................................ ................................ ................................ ............................... 4 
+Recovery Practitioners, Midwives & Obstetricians: ................................ ................................ ....... 4 
+Management: ................................ ................................ ................................ ................................ .. 4 
+1 Objective Standards Recovery ................................ ................................ ............................. 5 
+2 Resources ................................ ................................ ................................ ............................. 5 
+3 Roles and responsibilities for staff in obstetric recovery: ................................ ................... 5 
+4 Equipment that should be available: ................................ ................................ ................... 8 
+5 Criteria for transfer to the Recovery Area: ................................ ................................ .......... 8 
+6 Hand -Over to the Recovery Area ................................ ................................ ......................... 9 
+7 Care of mother in Recovery (following any procedures including LSCS) ........................... 10 
+8 Referrals ................................ ................................ ................................ ............................. 12 
+9 Discharge and Transfer Criteria from Recovery ................................ ................................ . 13 
+10 Discharge and Transfer Criteria from Recovery Flowchart ................................ ............... 14 
+11 Care of Mothers in the 24 Hours Following Delivery Post Recovery ................................ . 15 
+12 Pain Scores and Pain Relief ................................ ................................ ................................ 15 
+13 Laxatives for Constipation ................................ ................................ ................................ . 16 
+14 Complications of Anaesthesia ................................ ................................ ............................ 16 
+15 Training ................................ ................................ ................................ .............................. 16 
+16 Monitoring Compliance ................................ ................................ ................................ ..... 16 
+17 References ................................ ................................ ................................ ......................... 17 
+
+ Recovery Care (RSCH PRH only ) MP051 
+University Hospitals Sussex NHS Trust Page 4 of 18 
+ Key Principles 
+ 
+A protocol is a set of measurable, objective standards to determine a course of action. 
+Professional judgement may be used in the application of a protocol. 
+ 
+Scope 
+ 
+This protocol applies to: 
+• Any woman following regional block/general anaesthetic for caesarean section or 
+any other operative obstetric procedure. 
+ 
+Responsibilities 
+ 
+Recovery Practitioners, Midwives & Obstetricians: 
+• To access, read, understand and follow this guidance 
+• To use their professional judgement in application of this protocol 
+ 
+Management: 
+• To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations 
+• To ensure the protocol is accessible to all relevant staff 
+• To ensure the protocol is available to service users on request 
+
+ Recovery Care (RSCH PRH only ) MP051 
+University Hospitals Sussex NHS Trust Page 5 of 18 
+ 1 Objective Standards Recovery 
+ 
+1.1 Post anaesthetic recovery involves the short term critical care required by 
+patients during their immediate postoperative period until they are stable, 
+conscious and orientated, and the recovery nurse deems that discharge 
+criteria have been met. 
+1.2 All women require the same high standard of anaesthetic care in recovery. 
+The principles of recovering any woman undergoing regional anaesthesia are 
+the same as women having general anaesthesia; postoperative complications 
+can still occur. 
+ 
+2 Resources 
+2.1 All patients should be recovered in a designated recovery area 
+2.2 All patients should be recovered by recovery -trained staff1 
+2.3 Continuous one -to-one care (where the patient is continually monitored with 
+staff member present) should be available immediately following GA or 
+regional anaesthesia until the patient has regained airway control and 
+cardiovascular stability and is able to communicate1. 
+2.4 Some patients require longer continuous care, for example those requiring 
+on-going blood/blood product transfusion after major post -partum 
+haemorrhage. 
+2.5 Staff should be trained in recovery skills1 
+2.6 Anaesthetic and obstetric on call rotas should be readily available 
+3 Roles and responsibilities for staff in obstetric recovery: 
+ 
+ Communicates / Liaises with Responsible for 
+Scrub nurse Obstetrician (surgeon) 
+Recovery nurse 
+ Handover details of surgery, 
+estimated blood loss, type and 
+location of drains and other 
+devices, vaginal pack and any 
+other important information to 
+recovery staff 
+Recovery nurse Mother (patient) 
+Midwife allocated to 
+recovery 
+Anaesthetist from surgery 
+Obstetrician (surgeon) 
+LW co -ordinator 
+ Providing recovery care to 
+patient whilst on LW: 
+Observations 
+Analgesia 
+Hygiene needs 
+Communication and handover 
+of care to maternity team Recovery Care (RSCH PRH only ) MP051 
+University Hospitals Sussex NHS Trust Page 6 of 18 
+ Documentation in theatre 
+pathway and maternal notes 
+Midwife providing care Mother (patient) 
+Recovery nurse 
+Anaesthetist from surgery 
+Obstetrician (surgeon) 
+LW co -ordinator Providing care for the newborn 
+and support for infant feeding. 
+Working with the recovery 
+nurse to provide midwifery 
+care for the mother and 
+support to the recovery nurse 
+if the mother’s or birth 
+person’s condition is unstable, 
+requiring more intensive 
+input/observation 
+LW co -ordinator Mother (patient) 
+Birth Person 
+Anaesthetist from surgery 
+Obstetrician (surgeon) 
+Midwifery Matron Co-ordinating labour ward to 
+ensure staff and women are 
+safe and care is provided 
+appropriately. Providing 
+support for staff and being a 
+point of reference as and when 
+required. To be aware of any 
+woman giving cause for 
+concern and facilitate extra 
+support or 
+anaesthetic/obstetric review Recovery Care (RSCH PRH only ) MP051 
+University Hospitals Sussex NHS Trust Page 7 of 18 
+ 
+Anaesthetist from surgery Mother (patient) 
+Obstetrician (surgeon) 
+Recovery nurse 
+Midwife allocated to 
+recovery 
+LW co -ordinator 
+HDU/ITU team if care on 
+either unit is required 
+ Handover to the recovery nurse. 
+Provide advice and support to the 
+recovery nurse. Liaise with the LW 
+co-ordinator if there are any 
+issues or concerns about a 
+patient. Arrange care for the 
+patient on the HDU or ITU if 
+required. Facilitate safe transfer 
+of the patient to the HDU or ITU. 
+Obstetrician from surgery Mother (patient) 
+Recovery nurse 
+Midwife allocated to 
+recovery 
+Anaesthetist from surgery 
+LW co -ordinator Handover any surgical instructions 
+to the recovery nurse. Provide 
+advice and support to the 
+recovery nurse about any 
+obstetric/surgical issues. Liaise 
+with the LW co -ordinator if there 
+are any issues or concerns about a 
+patient. Complete a post -
+operative VTE assessment and 
+prescribe the necessary 
+thromboprophylaxis. 
+ Recovery Care (RSCH PRH only ) MP051 
+University Hospitals Sussex NHS Trust Page 8 of 18 
+ 
+4 Equipment that should be available: 
+ 
+For each 
+bed area • Oxygen outlet and breathing system for 100% oxygen 
+• Electrical sockets 
+• Pulse oximetry 
+• Suction unit (checked daily to ensure working) 
+• Non -invasive Blood pressure measurement 
+In close 
+proximity 
+to recovery 
+area 
+ • IV cannula (+dressing, alcohol wipes and local anaesthetic) 
+• IV fluids 
+• ECG 
+• Nerve stimulator (available in obstetric theatre) 
+• Thermometer - tempo -dots (LW) or thermometers available in 
+obstetric theatre) 
+• Capnography (to measure end -tidal carbon dioxide 
+concentration). –available on monitors in theatre, recovery and 
+as a device in the resuscitation trolley. 
+• Blood bottles/syringes/needles/sharps bin 
+• Defibrillator 
+• Resuscitation equipment and emergency drug box 
+• Emergency bell (to summon immediate help) 
+• Telephone 
+• Haemocue (Main theatres)/ Blood gas machine 
+(theatres/ITU/NNU) 
+• Storage areas for equipment 
+AAGBI Guideline: Immediate post -anaesthesia recovery March 20138 
+5 Criteria for transfer to the Recovery Area: 
+ 
+5.1 Women must be: 
+5.1.1 Extubated 
+5.1.2 Self-ventilating with an adequate respiratory effort and a 
+respiratory rate >8 per minute 
+5.1.3 Oxygenated with oxygen sats >94% 
+5.1.4 Demonstrating a cough/gag reflex 
+ Recovery Care (RSCH PRH only ) MP051 
+University Hospitals Sussex NHS Trust Page 9 of 18 
+ 5.1.5 Cardiovascularly stable 
+5.1.6 Fully reversed with respect to neuromuscular blockade (i.e. drugs 
+which cause paralysis should have been reversed) 
+ 
+5.2 If the patient’s general condition is poor or the patient is returning to labour 
+ward recovery from main theatres/Level 5 recovery, adequate mobile 
+monitoring will be needed during transfer. The anaesthetist is responsible for 
+ensuring that this transfer is accomplished safely. 
+6 Hand -Over to the Recovery Area 
+ 
+6.1 Procedure performed and why (e.g. reason for caesarean section), any 
+complications during surgery 
+6.2 Type of anaesthesia used 
+6.3 Any pre -existing medical disorders or allergies 
+6.4 Perioperative blood loss and any important intra -operative events / 
+abnormalities 
+6.5 The present cardio -vascular state 
+6.6 Position and nature of drains, infusions, cannula or arterial devices & vaginal 
+pack 
+6.7 Intraoperative analgesia and analgesics for post -operative period. If NSAIDS 
+or Paracetamol have been given intra -operatively, inappropriate duplicate 
+doses of similar prescriptions should be avoided by documenting on the drug 
+chart. 
+6.8 Instructions for intravenous infusions including oxytocin & Magnesium (such 
+infusions are the responsibility of the obstetric & midwifery staff) 
+ 
+6.9 Throm boprophylaxis 
+ 
+6.9.1 The VTE assessment algorithm on the drug chart should be 
+complete d 
+6.9.2 If LMWH is indicated, Enoxaparin should be prescribed on the drug 
+chart acc ording to the dosing algorithm 
+6.9.3 The first dose of enoxaparin should be prescribed on the ‘ONCE 
+ONLY’ part of the drug chart at a time no sooner than four hours 
+AFTER insertion of spinal anaesthetic, epidural cathet er OR removal 
+of said catheter 
+ Recovery Care (RSCH PRH only ) MP051 
+University Hospitals Sussex NHS Trust Page 10 of 18 
+ 6.9.4 Subsequent doses should be prescribed at 1800hours in the regular 
+part of the drug chart. 
+6.9.4.1 If the 1st dose has been given 12 or more hours (ie. Up to 
+06.00) before the 18:00 dose is due, then give the regular 
+dose as prescribed 
+6.9.4.2 If the 1st dose has been given within 12 hours of 18:00, omit 
+that dose until the next day 
+6.9.5 If the re are any doubts regarding timings the anaesthetist should 
+be consulted. 
+6.9.6 Any deviation from the algorithm needs to be fully documented in 
+the maternal notes, together with the reasons. (see MP012 Venous 
+Thrombosis protocol) 
+ 
+6.10 Any special instructions and analgesia for post -operative period prescribed 
+6.11 Provided that there is no expectation/possibility of further surgery all women 
+should be allowed to eat and drink following LSCS or instrumental delivery. 
+There is no need to delay oral intake for any specified time period, or until 
+bowel sounds are heard. This is unnecessary and may delay recovery. 
+ 
+7 Care in Recovery (following any procedures including LSCS) 
+ 
+7.1 Following an operative procedure in obstetric theatre, the patient will be 
+transferred to the designated recovery area when stable to do so. 
+7.2 7.2 One -to-one care will be provided on labour ward by an appropriately 
+trained practitioner for the following minimum duration of time according to 
+the procedure and risk category of the patient: 
+ 
+Procedure Low Risk* High Risk* 
+Cervical suture (insertion/removal) Min. 30 mins Min. 30 mins 
+Manual removal of placenta Min 30 mins Min. 1 hr 
+Perineal repair (tear) Min. 30 mins Min. 1hr 
+EUA for haemorrhage Min. 1 hr Min. 2 hrs 
+Instrumental delivery (spinal) Min. 1 hr 2 hrs minimum 
+Instrumental (epidural top up) Min. 30 mins 2hrs minimum 
+Caesarean 1 hour minimum 2 hours minimum 
+*See table below for low and high risk categories. Recovery Care (RSCH PRH only ) MP051 
+University Hospitals Sussex NHS Trust Page 11 of 18 
+ 7.3 Initial observations and care will be provided by a trained recovery nurse, 
+when the patient is stable and relevant criteria are met (2.3, 2.4) the recovery 
+nurse may hand over to trained maternity staff for the remainder of one -to-
+one care duration, in agreement with LW co -ordinator. 
+7.4 Any staff providing caring for post -operative patients immediately after 
+surgery on labour ward should have no other patient r esponsibility at the 
+same time and have received training in post -operative monitoring. 
+ 
+Low Risk High Risk 
+ASA 1 -2 ASA 3+ 
+Cardiovascular & respiratory 
+systems entirely stable significant co -morbidity e g. morbid obesity, poorly 
+controlled DM, OSA, severe PET (not an exhaustive list) 
+uncomplicated procedure total EBL ≥ 1000mls (PPH) 
+ GA case/ other anaesthetic reason (explain to staff) 
+ Cardiovascular / respiratory instability or potential for 
+ Ongoin g pain / post -op nausea & vomiting 
+ Any patient receiving intrathecal morphine 
+ 
+Observations: 
+7.5 Frequency in the immediate post -operative period: 
+ 
+Frequency Number of readings Comment 
+Every 10 minutes 7 (up to 60 minutes) Once discharge criteria met, & following 
+minimum 1:1 care timeline, progress on 
+to postnatal monitoring template. Every 15 minutes 2 (up to 90 minutes) 
+Every 30 minutes Until discharge to postnatal 
+ 
+7.6 The following observations will be recorded in the relevant format (MEOWS 
+chart/ e -obs) at the intervals indicated above: 
+ i) Blood pressure 
+ ii) Heart rate 
+ iii) Oxygen saturations and, if O 2 being given, the relevant flow -rate 
+ iv) Respiratory rate 
+7.7 Temperature should be recorded with the 1st set of recovery observations 
+and every 4 hours thereafter; if abnormal (<36oC or > 37.5oC) then a plan 
+should be made with the anaesthetist &/or obstetrician to follow this up . 
+7.8 Urine output (hourly urometer only needed if high risk and requested by 
+obstetrician / anaesthetist) should be documented on a fluid balance chart. 
+7.9 Level of consciousness (neuro response) – using the AVPU scale 
+(Alert/responsive to Voice/responsive to Pain/Unresponsive) 
+ Recovery Care (RSCH PRH only ) MP051 
+University Hospitals Sussex NHS Trust Page 12 of 18 
+ 7.10 Pain score – using the numeric rating scale (NRS) – rating pain between 0 (no 
+pain at all) and 10 (the worst pain imaginable). 
+7.11 Blood loss from vagina, wound or drain 
+7.12 IV running correctly, if applicable (ie. fluids are connected) 
+7.13 All observations should be documented by the person undertaking them in 
+the relevant documentary format (theatre pathway MEOWS chart / 
+Patienttrack e -obs). The time of observations should be documented. 
+7.14 If the patient’s condition is unstable or deteriorates, these observations may 
+need to be taken more frequently and/or for a longer period of time than 
+indicated. 
+7.15 For all CS patients and those receiving epidural/spinal morphine or 
+diamorphine for any other procedure follow ‘POM POM ’ when re ady for 
+discharge to postnatal care: 
+ 
+Post Operative Monitoring Protocol fOr Maternity (POM POM) protocol 
+ 
+8 Referrals 
+ 
+The recovery staff are experienced within their scope of practice and perform post 
+anaesthesia care across a range of surgical specialties, but to be specific to maternity: 
+8.1 Moderate PV bleeding : If recovery nurses have concerns about maternal 
+blood loss during the recovery period they should ask the midwife assigned to 
+recovery area to check the PV blood loss and uterine tone or refer directly to 
+the obstetrician. 
+8.2 Heavy PV bleeding : If the woman is bleeding heavily and/or showing signs of 
+hypovolaemic shock the recovery nurse/midwife should pull the emergency 
+bell and trigger the Obstetric Haemorrhage emergency pathway 
+8.3 If MEOWS chart triggers a review then an Obstetric and Anaesthetic review is 
+required 
+ 
+8.4 If a woman’s pain is not managed with the drugs prescribed the anaesthetist 
+should be asked to review 
+8.5 If recovery nurses/midwives have any concerns about the woman’s condition 
+they should immediately ask for an Obstetric and Anaesthetic review 
+8.6 An anesthetist, preferably the one who performed the anaesthesia , should be 
+informed if the patient does not meet the discharge criteria. 
+ Recovery Care (RSCH PRH only ) MP051 
+University Hospitals Sussex NHS Trust Page 13 of 18 
+ 9 Discharge and Transfer Criteria from Recovery 
+ 
+The following criteria should be met before women are discharged and transferred from the 
+recovery area: 
+9.1 The patient should be fully conscious with the presence of protective airway 
+reflexes 
+9.2 Patients should be self -ventilating and oxygen saturation ≥95% in room air 
+9.3 Cardiovascular system should be stable with no unexplained cardiac 
+irregularity. 
+9.4 Vital signs should reflect preoperative norms, allowing for deviations of ±20% 
+9.5 Pain, nausea and vomiting should be controlled and suitable analg esia and 
+anti-emetic prescribed 
+9.6 Temperature should be within normal range (36.5 – 37.5 degrees) 
+9.7 Oxygen and IV therapy should be prescribed if required 
+9.8 All dressings should be dry and intact. If used, drains should be secure and 
+patent. Pressure dressings should not be removed as their purpose is to 
+improve or maintain haemostasis. 
+9.9 Uterus should be well contracted and lochia documented by midwife 
+9.10 Women on oxytocin infusions should be reviewed by obstetricians after two 
+hours. If the oxytocin infusion was commenced as prophylaxis rather than 
+treatment of PPH and if there are no concerns regarding bleeding or uterine 
+tone, the infusion can be discontinued allowing for discharge from recovery. 
+9.11 A plan for VTE prophylaxis should be in place and documented on the drug 
+chart appropriately. Any deviation from the algorithm needs to be fully 
+documented in the maternal notes. (see MP012 Venous Thrombosis protocol ) 
+ Recovery Care (RSCH PRH only ) MP051 
+University Hospitals Sussex NHS Trust Page 14 of 18 
+ 9.12 When the mother or person who birthed is ready to be transferred to 
+postnatal care she should be returned to the ward with clean pads, on a neat, 
+clean and dry bed. 
+9.13 A qualified midwife or nurse should give handover to the midwife who will be 
+taking over that patient’s care, with completed documentation by the 
+midwife (checklist completed and signed). A full set of pre -transfer 
+observations (7.6 -7.12) should be taken. The Post -Operative Monitoring 
+Protocol fOr Maternity profile on Patienttrack should be initiated with this set 
+of observations entered as the 1st set. Thereafter, observation frequency will 
+be as per this profile (see below) 
+9.14 An anaesthetist, preferably the one who performed the anaesthesia, should 
+be informed if the patient does not meet the discharge criteria. 
+9.15 If Oxygen saturation <95% in air patient requires oxygen therapy and the 
+anaesthetist should be notified 
+9.16 If temperature outside normal range doctor should be informed 
+9.17 When assessing if a woman is fit for discharge or transfer the attending staff must 
+document their assessment in the Obstetric Theatre and Recovery Care Pathway 
+10 Discharge and Transfer Criteria from Recovery Flowchart 
+ 
+1 
+Observations In Recovery 
+ 
+Duration indicated 
+by procedure/risk 
+(see table, 7.2) 
+Every 10 minutes 
+for 1st 60 mins 
+Every 15 minutes up to 90 mins 
+ 
+Every 30 minutes 
+thereafter 
+2 
+Is the patient stable? 
+No Yes 
+↓ ↓ 
+ 
+1) Prolonged stay in Recovery until 
+stable 
+2) Frequent observations using the 
+MEOWS Chart; to include: 
+• BP and heart rate (pulse) 
+• Resp rate, SpO 2 and if O 2 given 
+• Sedation scores 
+• Pain scores 
+• Urine output 
+When fit for discharge from Recovery/LW: 
+ALL women who have had spinal/epidural 
+morphine OR diamorphine, or a CS must 
+have: 
+• Full set of obs just before transfer 
+• Full set of obs 2hrs & 4hrs after 
+transfer 
+• 4 hourly observations thereafter 
+until 24hrs post op 
+• Obs must include SpO 2, resp rate & Recovery Care (RSCH PRH only ) MP051 
+University Hospitals Sussex NHS Trust Page 15 of 18 
+ • Blood loss: per 
+vagina/wound,drain 
+3) Anaesthetic review 
+4) Obstetric review 
+ sedation score (AVPU). 
+• Record on post -op monitoring profile 
+on patienttrack 
+Then… 
+Pulse, B/P, temp and respirations every 12 
+hours whilst in patient on ward (up to 
+48hours) 
+11 Care of Mothers in the 24 Hours Following Delivery Post Recovery 
+11.1 Post -operative period: 
+11.1.1 Defined as the first 12 hour period f ollowing surgical intervention. 
+11.1.2 Women should be observed for post -operative complications. 
+ 
+11.2 Observation regime: Women should not be transferred to the postnatal ward 
+until the minimum duration of 1:1 care has elapsed (table 7.2). On occasions 
+where there is no space in recovery and the caregiver feels it is safe, earlier 
+discharge must be discussed with anaesthetist, obstetrician and midwife in 
+charge and rarely this may be deemed appropriate; consideration of early 
+discharge is not applicable to any patient who has received preservative free 
+morphine by spinal/epidural route. 
+ 
+11.3 Urinary Catheter : 
+ 
+ Removal of the urinary bladder catheter should be carried out once a 
+woman is mobile after a regional anaesthetic, and able to mobilise to 
+the toilet. Typically this is 12 hours after a spinal anaesthetic or the last 
+epidural ‘top up’ dose1, but it may be sooner. See MP040 Bladder Care 
+for further information. Also see MP050 Caesarean section (LSCS). 
+12 Pain Scores and Pain Relief 
+12.1 Inadequate pain relief after surgery may contribute to negative perceptions 
+of birth, chronic pain, and depression. Severe acute post -partum pain is 
+associated with a 2.5 -fold increased risk of persistent pain and a three -fold 
+increased risk of post -partum depression compared to those with mild post -
+partum pain (11). Persistent post -surgical pain can be defined as pain which 
+persists for more than two months after surgery (and may persist for years) 
+and is reported to occur in up to 18% of wome n after caesarean section (12). 
+12.2 Pain scores should be measured regularly as part of the post -operative 
+observations. The numerical rating scale (NRS) should be used. This allows 
+patients to quantify the severity of their pain on a scale between 0 (no pain) 
+and 10 (the worst pain imaginable). 
+ Recovery Care (RSCH PRH only ) MP051 
+University Hospitals Sussex NHS Trust Page 16 of 18 
+ 12.3 All patients should receive regular analgesic drugs as prescribed on the drug 
+chart post -operatively. The reason for any omission should be documented, 
+and provisions should be made for alternative analgesia if required. 
+12.4 Paracetamol or ibuprofen may be given outside the prescribed times as long 
+as there has been at least 4 hours since the last dose (this interval may be 
+longer if intra -operative diclofenac has been given – and should be clearly 
+indicated on the drug chart) 
+12.5 BSUH Guideline for Postoperative Analgesia in Obstetrics is available on the 
+intranet 
+12.6 If it is difficult to achieve adequate pain relief in a mother she should be 
+referred to the obstetric anaesthetist for review. 
+ 
+ Also see Maternity Protocol MP050 Caesarean section (LSCS ). 
+13 Laxatives for Constipation 
+13.1 Constipation is common in women after childbirth, and can be distressing for 
+the mother. It has been reported to occur in up to 49% of women after 
+caesarean delivery (13). The use of strong or weak opiates (dihydrocodeine, 
+morphine, morphine sulphate immediate release oral solution oramorph) is 
+usually necessary for pain relief, but this increases the risk of constipation. 
+Simple measures to prevent constipation are unlikely to be effective, so the 
+early use of re gular laxatives is recommended. 
+13.2 All patients who have received opiates should receive regular laxative (BD) 
+post -operatively unless there are concerns about bowel injury or an ileus. 
+ 
+14 Complications of Anaesthesia 
+14.1 Women with problems thought to be attributable to a complication of their 
+anaesthetic should be referred to the obstetric anaesthetist for review. This 
+might include headaches, back pain, numbness or weakness in the legs, 
+difficulty passing urine or opening bowels. 
+ 
+15 Training 
+ 
+Please refer to the Training Needs Analysis document for details on staff training in relation 
+to this protocol. 
+ 
+16 Monitoring Compliance 
+ 
+Please refer to the Monitoring and Auditing document for details on monitoring compliance 
+for this protocol. 
+ Recovery Care (RSCH PRH only ) MP051 
+University Hospitals Sussex NHS Trust Page 17 of 18 
+
+17 References 
+ 
+1) National Institute for Health and Clinical Excellence. (2011). Caesarean Section. London: 
+NICE www.nice.org.uk 
+ 
+2) Confidential Enquiry into Maternity and Child Health. (2004). Why Mothers Die 2000 -
+2002. London: RCOG Press. www.cemach.org.uk 
+ 
+3) National Confidential Enquiry into Patient Outcome and Death. (2001). Changing the 
+Way We Operate: The 2001 Report of the National Confidential Enquiry into 
+Perioperative Deaths . London: NCEPOD. www.ncepod.org.uk 
+ 
+4) Royal College of Anaesthetists, Royal College of Midwives, Royal College of Obstetricians 
+and Gynaecologists, Royal College of Paediatrics and Child Health. (2007). Safer 
+Childbirth: Minimum Standards for the Organisation and Delivery of Care in Labour . 
+London: RCOG Press. www.rcog.org.uk 
+ 
+5) The Association of Anaesthetists of Great Britain and Ireland, and the Obstetric 
+Anaesthetists’ Association. (2013). OAA/AAGBI Guidelines for Obstetric Anaesthetic 
+Services (Revised edition) . London: AAGBI/OAA. www.aagbi.org.uk and www.oaa -
+anaes.ac.uk 
+ 
+6) The Association of Anaesthetists of Great Britain and Ireland. (2007 ). Recommendations 
+for Standards of Monitoring During Anaesthesia and Recovery (4th edition) . London: 
+AAGBI. www.aagbi.org.uk 
+ 
+7) The Association of Anaesthetists of Great Britain and Ireland. (2005 ). The Anaesthetic 
+Team (Revised edition) . London: AAGBI. www.aagbi.org.uk 
+ 
+8) The Association of Anaesthetists of Great Britain and Ireland. (2013). Immediate 
+Postanaesthesia Recovery . London: AAGBI. www.aagbi.org.uk 
+ Recovery Care (RSCH PRH only ) MP051 
+University Hospitals Sussex NHS Trust Page 18 of 18 
+ 9) The Royal College of Anaesthetists. (2006). Raising the Standard: A Compendium of Audit 
+Recipes. 
+ 
+10) The Royal College of Anaesthetists. (2000). Raising the Standard: Guidelines for the 
+Provision of Anaesthetic Services. 
+ 
+11) Eisenach JC, Pan PH, Smiley R, Lavand’homme P, Landau R, Houle TT. Severity of acute 
+pain after childbirth, but not type of delivery, predicts persistent pain and post -partum 
+depression. Pain 2008 Nov 15; 140(1): 87 -94 
+ 
+12) J.P. Kainu, J. Sarvela, E. Tiippana, E. Halmesmaki, K.T. Korttila. Persistent pain after 
+caesarean section and vaginal birth: a cohort study , International Journal of Obstetric 
+Anaesthesia (2010) 19, 4 -9. 
+ 
+13) Hillan EM, Short -term morbidity associated with cesarean delivery . Birth 1992 Dec; 
+19(4): 190 -4. 
+ 
+14) Ramkumar D, Rao S S. Efficacy and safety of traditional medical therapies for chronic 
+constipation: systematic review. American Journal of Gastroenterology 2005; 100(4): 
+936-971.

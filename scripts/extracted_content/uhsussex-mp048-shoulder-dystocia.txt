@@ -1,0 +1,353 @@
+# Extracted from: UHSussex - MP048 - Shoulder Dystocia.pdf
+# Guideline ID: uhsussex-mp048-shoulder-dystocia
+# Content length: 17454 characters
+# Processing date: 1741733976.2930138
+
+Shoulder Dystocia 
+
+Maternity Protocol: MP048 
+Date agreed: August 2014 
+
+Shoulder Dystocia (RSCH PRH only ) MP048 
+Page 2 of 12 
+Brighton & Sussex University Hospitals 
+ 
+Update process 
+ 
+Prior to the review of this guideline a structured search and appraisal of the evidence was 
+undertaken by the lead author (TK) with the library services in the Trust (in May 2014, available 
+on request). The most recent national guidance from the RCOG is still current at the time of this 
+update and no additional evidence was found that added to the recommendations in this 
+document. 
+
+Guideline Reviewer : Tony Kelly 
+Manager responsible: Heather Brown 
+Version: 3 
+Approval Committee: Women’s Safety and Quality Committee 
+Date agreed: August 2014 
+Review date: August 2017 
+Cross reference: MP035 Care of Women in Labour 
+MP066 Neonatal Resuscitation (term and pre -term) 
+MP069 Care of the Newborn Immediately after Birth 
+ Shoulder Dystocia (RSCH PRH only ) MP048 
+Page 3 of 12 
+Brighton & Sussex University Hospitals Contents 
+Key Principles ................................ ................................ ................................ ................................ ........ 4 
+Scope ................................ ................................ ................................ ................................ ..................... 4 
+Responsibilities ................................ ................................ ................................ ................................ ..... 4 
+1.0 Shoulder Dystocia ................................ ................................ ................................ ...................... 5 
+1.1 Definition ................................ ................................ ................................ ................................ 5 
+1.2 Identification of risk factors associated with Shoulder dystocia ................................ ........... 5 
+2.0 Prevention ................................ ................................ ................................ ................................ . 5 
+3.0 Diagnosis: ................................ ................................ ................................ ................................ ... 5 
+3.2 Other features suggesting shoulder dystocia: ................................ ................................ ....... 5 
+4.0 Shoulder Dystocia: Systematic Emergency Management ................................ ................... 6 
+5.0 Documentation ................................ ................................ ................................ ................. 7 
+5.1 Standards of record keeping: ................................ ................................ ................................ . 7 
+6.0 Post Delivery Care ................................ ................................ ................................ ............. 8 
+7.0 Training ................................ ................................ ................................ ............................ 9 
+8.0 References ................................ ................................ ................................ ........................ 9 
+Appendix A: Shoulder Dystocia Flowchart ................................ ................................ ......................... 10 
+Appendix B - Other helpful Training aids: ................................ ................................ ........................... 10 
+Appendix C - Shoulder Dystocia Proforma ................................ ................................ ......................... 12 
+
+ Shoulder Dystocia (RSCH PRH only ) MP048 
+Page 4 of 12 
+Brighton & Sussex University Hospitals 
+Key Principles 
+ 
+A protocol is a set of measurable, objective standards to determine a course of action. 
+Professional judgement may be use d in the application of a protocol 
+Scope 
+ 
+♦This protocol applies to: 
+o Obstetric Emergency Shoulder Dystocia. 
+ 
+Responsibilities 
+ 
+• Midwives & Obstetricians: 
+o To access, read, understand and follow this guidance 
+o To use their professional judgement in application of this protocol 
+ 
+• Management: 
+o To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations 
+o To ensure the protocol is accessible to all relevant staff 
+ Shoulder Dystocia (RSCH PRH only ) MP048 
+Page 5 of 12 
+Brighton & Sussex University Hospitals 1.0 Shoulder Dystocia 
+ 
+1.1 Definition 
+Shoulder dystocia is defined as a delivery that requires additional obstetric manoeuvres to 
+release the shoulders after gentle downward traction has failed. 
+Shoulder dystocia occurs when either the anterior or, less commonly, the posterior fetal 
+shoulder impacts on the maternal symphysis or sacral promontory. 
+This is often an unpredictable event and an obstetric emergency. 
+ 
+1.2 Identification of risk factors associated with Shoulder dystocia 
+A risk assessment should be undertaken at booking, throughout pregnancy, at the onset 
+of labour and during labour. If any of the following risk factors are identified then they 
+should be documented and a referral made to an obstetrician. An individual plan of care 
+should be agreed and document in the maternal notes . 
+1.2.1 Previous shoulder dystocia 
+1.2.2 Macrosomia 
+1.2.3 Maternal diabetes - IDDM & Gestational 
+1.2.4 Maternal BMI > 30 
+1.2.5 Induction of labour 
+1.2.6 Prolonged labour 
+1.2.7 Prolonged second stage 
+1.2.8 Oxytocin augmentation 
+1.2.9 Assisted vaginal delivery 
+2.0 Prevention 
+ 
+2.1 There is no evidence to support early induction of labour or elective caesarean section to 
+prevent shoulder dystocia for suspected macrosomia in non -diabetic women. 
+ 
+2.2 Induction of labour from 38 weeks may reduce the incidence of shoulder dystocia in 
+pregnancies complicated by gestational diabetes. 
+ 
+2.3 Caesarean section should be considered for suspected macrosomia in 
+ pregnancies associated with maternal diabetes mellitus (where EFW is greater than 
+4.5kg). 
+ 
+2.4 Caesarean section or vaginal delivery is appropriate after a previous 
+ shoulder dystocia. An informed choice should be made by the woman and documented in 
+the maternity notes (recurrence rates are between 1 -25%) 
+3.0 Diagnosis: 
+ 
+3.1 Gentle traction in an axial direction may be employed to diagnose shoulder dystocia. 
+ 
+3.2 Other features suggesting shoulder dystocia: 
+3.1.1 difficulty delivering the face and chin 
+3.1.2 head remains tightly applied to vulva or even retracts 
+3.1.3 failure of restitution of fetal head Shoulder Dystocia (RSCH PRH only ) MP048 
+Page 6 of 12 
+Brighton & Sussex University Hospitals 
+3.1.4 failure of shoulders to descend 
+ 
+3.3 Lateral and downward traction should be avoided in the management of shoulder 
+ dystocia. 
+ 
+4.0 Shoulder Dystocia: Systematic Emergency Management 
+ Shoulder Dystocia should be managed systematically – see appendix A 
+ 
+4.1 National guidelines recommend that use of McRoberts Manoeuvre as a prophylactic 
+manoeuvre to attempt to prevent shoulder dystocia is ineffective. It has been noted to be 
+used at the time of instrumental delivery and it use in this setting should be discouraged. 
+ 
+4.2 Immediately after recognition of shoulder dystocia, extra help should be called. 
+ Call 2222 and ask for: ‘obstetric & neonatal emergency’ 
+ teams. Ensure a resuscitaire is in the room - checked and 
+ working. 
+ 
+4.3 McRoberts ’ manoeuvre is the single most effective 
+ intervention and should be performed first. 
+ Place woman in supine position, hips hyperflexed and 
+ abducted. (its effectiveness is improved with the use of 
+ suprapubic pressure (see below)). 
+ 
+4.4 Suprapubic pressure . Suprapubic pressure is applied in a 
+ downward and lateral direction to push the posterior aspect of 
+ the anterior shoulder towards the fetal chest. It is advised that 
+ this is applied for 30 seconds. Operator should not apply excessive 
+traction and should avoid excessive lateral flexion to head. 
+ 
+4.5 The woman should be encouraged NOT to push whilst maneuvers are being 
+ performed and fundal pressure is not recommended 
+ 
+4.6 The sequential use of McRoberts’ manoeuvre followed by the use of suprapubic 
+pressure is associated with increased success in cases of should dystocia compared to the 
+use of the individual manoeuvres. 
+ 
+4.7 Episiotomy is not necessary for all cases. The role of an episiotomy in cases of shoulder 
+dystocia is to allow access of the operators hand into the vagina. It does not itself provide 
+additional room for delivery of the baby. 
+ 
+4.8 There is no advantage between delivery of the posterior arm and internal rotation 
+ manoeuvres and therefore clinical judgement and experience can be used to decide 
+their order. 
+ 
+4.9 The majority of cases of shoulder dystocia cases resolve with external manoeuvres 
+alone (70 -80% according to local and national data) 
+ 
+Shoulder Dystocia (RSCH PRH only ) MP048 
+Page 7 of 12 
+Brighton & Sussex University Hospitals 
+ 
+4.10 Internal manoeuvres : 
+4.8.1 Delivery of the fetal shoulders may be facilitated by rotation into an oblique 
+diameter or by a full 180 -degree rotation of the fetal trunk. 
+4.8.2 Pass hand into sacral hollow to identify posterior humerus. This is followed until 
+elbow reached: this is then flexed. Forearm brought into reach and grasp wrist. 
+Traction on wrist will deliver arm over fetal chest. The arm can be used to rotate 
+the fetal trunk to facilitate delivery. 
+
+4.11 Persistent failure of first - and second -line manoeuvres 
+The following have been described for those cases resistant to all simple measures: 
+4.9.1 cleidotomy (bending the clavicle with a finger or surgical division) 
+4.9.2 symphysiotomy (dividing the symphyseal ligament) 
+4.9.3 the Zavanelli manoeuvre 
+ 
+4.12 It is rare that these are required. These interventions should only be considered if the 
+practitioners are appropriately trained. It is likely that the baby may have sustained 
+significant hypoxic injury by the time these are considered and the effect on the mothers 
+wellbeing are significant. 
+ 
+5.0 Documentation 
+ 
+5.1 Standards of record keeping: 
+The lead clinician for the management of the shoulder dystocia should complete the 
+shoulder dystocia proforma and secure in the maternal notes. This page contains the 
+RCOG minimum dataset and acts as the reporting form which will provide basis for review 
+and audit of management and includes: 
+5.1.1 the time of delivery of the head 
+5.1.2 the direction the head is facing after restitution 
+5.1.3 the manoeuvres performed, their timing and sequence 
+5.1.4 the time of delivery of the body 
+5.1.5 the staff in attendance and the time they arrived 
+5.1.6 the condition of the baby (Apgar score) 
+5.1.7 umbilical cord blood acid -base measurements 
+ 
+5.2 The shoulder dystocia must be reported through the Datix risk management system and 
+ include any injury to the woman or child as a result of the incident. 
+5.3 Audit information from the Trust over the last 4 years has shown poor levels of 
+ documentation. There is a consistent lack of information recorded regarding the direction 
+Shoulder Dystocia (RSCH PRH only ) MP048 
+Page 8 of 12 
+Brighton & Sussex University Hospitals the head is facing at the time of the delivery. This information is key to determine which was 
+the anterior shoulder at the time of the delivery. 
+ 
+6.0 Post Delivery Care 
+ 
+6.1 There is an increased risk of post partum haemorrhage (greater than 1 in 10 cases) and 
+there should be a low threshold for the use of intravenous syntocinon infusions in these 
+cases. 
+ 
+6.2 The likelihood of significant vaginal tears is also increased (up to 1 in 25 cases complicated 
+by 3rd or 4th degree tears) and hence careful vaginal examination after delivery to exclude 
+trauma is required 
+ 
+6.3 Actions in the case of any suspected / confirmed injury following shoulder dystocia: 
+6.3.1 Routine first check of the neonate should be performed in line with normal 
+practice (within 4 hours of birth – see Maternity protocol MP069: Care of the 
+Newborn immediately after birth ) 
+6.3.2 Documentation of any findings, including an suspected or confirmed injuries by the 
+examining midwife 
+6.3.3 The examining midwife to refer to the Neonatal team to review the baby (timing of 
+the review will depend on clinical condition and suspected/confirmed injury) 
+6.3.4 Full neonatal examination by neonatologist/ANNP following delivery within 24hours 
+6.3.5 Discussion with parents and individualised care plan to be made and documented 
+in the neonatal notes following review 
+6.3.6 The clinicians who refers or examines a baby with suspected or actual injury 
+should complete a DATIX report as soon as possible 
+6.3.7 Any baby with a suspected/actual injury should have the baby record photocopied 
+prior to discharge and the photocopy given to the mother to take home. The 
+retained baby record should then be made up into proper baby notes and 
+subsequently be sent for coding. 
+ 
+6.4 Follow up process for suspected / actual brachial plexus injuries or any other injury 
+associated with the complications of delivery: 
+6.4.1 Review/referral as above 
+6.4.2 Chest x -ray may be indicated if clavicular fracture is suspected. This should be 
+ordered and arranged by the examining neonatologist/ANNP and documented in 
+the neonatal notes. 
+6.4.3 A follow appointment may be indicated (as per individualised care plan) – to be 
+organised by the neonatologist/ANNP performing the examination. Any 
+appointments should be discussed with parents and documented in the neonatal 
+notes (see 6.3.7 regarding notes and photocopying prior to discharge) 
+ 
+ Shoulder Dystocia (RSCH PRH only ) MP048 
+Page 9 of 12 
+Brighton & Sussex University Hospitals 7.0 Training 
+ 
+7.1 It is the responsibility of all practitioners to maintain their skills in dealing with shoulder 
+dystocia. There is good evidence that appropriately trained practitioners and teams deliver 
+babies quicker and with fewer complications. 
+ 
+7.2 Please refer to the Training Needs Analysis document for details on staff training in relation to 
+this protocol. 
+ 
+7.3 Effective training of all staff who may be involved in the birth of women whose labour are 
+complicated by shoulder dystocia is associated with a reduction in maternal and neonatal 
+morbidity. 
+ 
+ 8.0 References 
+ 
+ Confidential Enquiry into Stillbirths and Deaths in Infancy. (1998). 5th Annual Report . 
+London: Maternal and Child Health Research Consortium. www.cemach.org.uk 
+ Confidential Enquiry into Stillbirths and Deaths in Infancy. (1999). 6th Annual Report . 
+London: Maternal and Child Health Research Consortium. www.cemach.org.uk 
+ King’s Fund. (2008). Safe Births: Everybody’s business - Independent Inquiry into the Safety 
+of Maternity Services in England . London: King’s Fund. Available at: www.kingsfund.org.uk 
+ Royal College of Anaesthetists, Royal College of Midwives, Royal College of Obstetricians 
+and Gynaecologists, Royal College of Paediatrics and Child Health. (2007). Safer Childbirth: 
+Minimum Standards for the Organisation and Delivery of Care in Labour . London: RCOG 
+Press. www.rcog.org.uk 
+ Royal College of Obstetricians and Gynaecologists, Royal College of Anaesthetists, Royal 
+College of Midwives, Royal College of Paediatrics and Child Health. (2008). Standards for 
+Maternity Care: Report of a Working Party . London: RCOG Press. www.rcog.org.uk 
+ Royal College of Obstetricians and Gynaecologists. (2012). Shoulder Dystocia. London: 
+RCOG. www.rcog.org.uk 
+
+ Shoulder Dystocia (RSCH PRH only ) MP048 
+Page 10 of 12 
+Brighton & Sussex University Hospitals 
+Appendix A: Shoulder Dystocia Flowchart 
+ 
+The order in which these manoeuvres are done depends on the individual case & clinical 
+judgement, however McRoberts and Suprapubic pressure are recommended as first line 
+management 
+ 
+Identify shoulder dystocia 
+Call for help • senior MW, Registrar, paediatrician 
+ • prepare for neonatal resuscitation 
+ • communicate and reassure parents 
+ • commence timing + documentation 
+McRoberts • lie flat 
+ • elevate legs 
+ • Attempt to delivery baby 
+ 
+Supra pubic • 30 seconds continuous OR 30 seconds rocking pressure 
+pressure • Attempt to delivery baby 
+ 
+Evaluate for episiotomy 
+ 
+Internal manoeuvres 
+1. pressure on posterior aspect of anterior shoulder – 
+adduct shoulders & push baby into oblique (attempt 
+to deliver baby) 
+2. pressure on posterior aspect of anterior shoulder & 
+anterior aspect of posterior shoulder – rotate 180 º 
+(attempt to deliver baby) 
+3. pressure on posterior aspect of posterior shoulder – 
+rotate 180 º in other direction (attempt to deliver 
+baby) Remove posterior arm 
+Attempt to delivery baby 
+ 
+Roll onto all 4’s 
+• Change position of 
+mother 
+• Attempt to delivery 
+baby 
+ 
+If unsuccessful consider: 
+• Repeat all manoeuvres 
+• Cleidotomy or Zavenelli manoeuvre or symphysiotomy 
+NEVER apply excessive traction or flexion to fetal head 
+ Shoulder Dystocia (RSCH PRH only ) MP048 
+Page 11 of 12 
+Brighton & Sussex University Hospitals Appendix B - Other helpful Training aids: 
+
+“HELPERR” acronym 
+ 
+H Call for help 
+E Evaluate for episiotomy 
+L Legs (McRobert’s manoeuvre) 
+P Suprapubic pressure 
+E Enter the vagina 
+R Remove posterior arm 
+R Rollover to all fours and repeat if unsuccessful 
+ 
+ Shoulder Dystocia (RSCH PRH only ) MP048 
+Page 12 of 12 
+Brighton & Sussex University Hospitals Appendix C - Shoulder Dystocia Proforma (taken from the approved proof of the new labour notes 2013)

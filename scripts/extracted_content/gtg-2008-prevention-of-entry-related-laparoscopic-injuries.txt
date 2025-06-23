@@ -1,0 +1,523 @@
+# Extracted from: GTG 2008 - Prevention of Entry-Related Laparoscopic Injuries.pdf
+# Guideline ID: gtg-2008-prevention-of-entry-related-laparoscopic-injuries
+# Content length: 35926 characters
+# Processing date: 1733445840.3963306
+
+RCOG Green-top Guideline No. 49 1o f 1 0PREVENTING ENTRY-RELATED GYNAECOLOGICAL LAPAROSCOPIC INJURIES
+This is the first edition of this guideline.
+1. Purpose and scope
+Approximately 250 000 women undergo laparoscopic surgery in the UK each year. The majority are without
+problems but serious complications occur in about one in 1000 cases. Laparoscopic injuries frequently occur
+during the blind insertion of needles, trocars and cannulae through the abdominal wall and, hence, the period
+of greatest risk is from the start of the procedure until visualisation within the peritoneal cavity has been
+established. This guideline aims to highlight strategies to reduce these complications.
+2. Background
+Over the past 50 years, developments in electronic and optical technologies have meant that it has become
+possible to perform many gynaecological operations laparoscopically. The unique feature distinguishing
+laparoscopic from open abdominal or vaginal surgery is the need to insert needles, trocars and cannulae for
+initial entry into the abdomen. This may result in bowel or vascular injury. There is wide variation in the
+techniques used by laparoscopic surgeons and this guideline concentrates the evidence for different entry
+techniques.
+One of the difficulties of bowel damage associated with laparoscopic surgery is the likelihood that it may not
+be immediately recognised and could present some time later, often after discharge from hospital. This
+potentially serious complication may require major abdominal reparative surgery and sometimes a temporary
+colostomy.1It is essential, therefore, that women and attending staff understand that the recovery from
+laparoscopic procedures is usually rapid and, where this is not the case, that early diagnosis and treatment are
+essential and should involve senior medical staff . The relative infrequency of these accidents prevents any
+individual laparoscopic surgeon from gaining a true appreciation of their importance or frequency.
+3. Incidence of complications
+The incidence of complications associated with laparoscopic procedures varies considerably
+between reports, depending on the experience of the surgeons and the complexity of operations
+undertaken; figures range between 1.0/1000 and 12.5/1000 for all complications. In Finland, 256
+complications were reported to the National Patient Insurance Association following 70 607
+laparoscopic procedures (3.6/1000). The rate of major complications was 1.4/1000 procedures
+comprising intestinal injuries (0.6/1000), urological injuries (0.3/1000) and vascular injuries
+0.1/1000).2Jansen et al. reported the results of a prospective multicentre study of 72 hospitals in
+the Netherlands in which there were 145 complications from 25 764 laparoscopies (5.7/1000).3
+There were two fatalities and 84 women (3.3/1000) required a laparotomy because ofGreen-top Guideline 
+No. 49
+May 2008
+Evidence
+level 
+IIb-IIIcomplications. There were 29 cases of gastrointestinal damage (1.13/1000) and 27 lesions of intra-
+abdominal vessels (1.05/1000); 57% of the injuries were attributed to problems with laparoscopic
+entry. Women with a previous laparotomy were also found to be particularly at risk.
+In a French prospective study, the rate of severe complications was 12.5/1000 cases after advanced
+laparoscopic surgery.4This study, which was a snapshot of laparoscopic surgery over a 2-week
+period throughout all French hospitals, reported the rate of major complications to be two to three
+times higher than in a previous study from France, which reported only complications from
+specialised referral centres.5
+Although the RCOG instigated a confidential inquiry in the early days of laparoscopy,6there has not
+been a recent national audit of complications of laparoscopic surgery in the UK. A prospective
+observational study of all gynaecological laparoscopies performed by all grades of staff during a
+calendar year in a teaching hospital reported bowel damage three times in 836 laparoscopies
+(3.6/1000).7In a similar study from a district general hospital of 470 patients operated during a
+single calendar year there were two bowel injuries (4.3/1000).8The bowel injuries in these studies
+occurred during procedures for diagnostic or sterilisation purposes where the pressure method
+recommended for safe entry in the Middlesbrough Consensus was not employed.9
+4. Identification and assessment of evidence
+The Cochrane Library (including the Cochrane Database of Systematic Reviews, DARE and EMBASE), HTA,
+TRIP , Medline and PubMed (electronic databases) were searched for relevant randomised controlled trials,
+systematic reviews and meta-analyses. The search was restricted to articles published in English from 1966 to
+January 2006. The databases were searched using the relevant MeSH terms, including all subheadings, and this
+was combined with a keyword search. Main keywords included: ‘laparoscopic injury’, ‘laparoscopic entry’,
+‘laparoscopic complications’, ‘closed laparoscopy’, ‘open laparoscopy’ and ‘direct-entry laparoscopy’.
+Additionally, enquires were made with researchers and Council members of the British Society for
+Gynaecological Endoscopy (BSGE) and our suggestions were critically appraised at a 1-day study meeting
+entitled ‘Avoiding complications of laparoscopic surgery’ held on 7 July 2006 at the University of Surrey
+Postgraduate Medical School.
+5. Assessment, counselling and consent
+How should women be counselled prior to laparoscopic surgery?
+Women must be informed of the risks and potential complications associated with laparoscopy. This
+should include discussion of the risks of the entry technique used: specifically, injury to the bowel,
+urinary tract and major blood vessels, and later complications associated with the entry ports:
+specifically, hernia formation.
+Surgeons must be aware of the increased risks in women who are obese or significantly underweight
+and in those with previous midline abdominal incisions, peritonitis or inflammatory bowel disease.
+These factors should be included in patient counselling where appropriate.
+Most laparoscopic procedures in gynaecology are performed electively for benign conditions. The
+understanding and acceptance of the risk associated with the procedure may be different from that of women
+having procedures for life-threatening conditions.10Women must be informed of the associated risks with
+laparoscopy. Evidence from women undergoing laparoscopy for pelvic pain suggests that they do want to
+know all complications.11Potential complications should be discussed according to the principles of
+counselling described in the RCOG Clinical Governance Advice No. 6 Obtaining Valid Consent.Evidence
+level III
+RCOG Green-top Guideline No. 49 2o f 1 0C/checkEvidence
+level 
+IIb-III6. Safe surgical techniques and training
+How should surgeons be trained in safe laparoscopic techniques?
+Surgeons intending to perform laparoscopic surgery should have appropriate training, supervision and
+experience.
+Surgeons undertaking laparoscopic surgery should be familiar with the equipment, instrumentation
+and energy sources they intend to use.
+Surgeons undertaking laparoscopic surgery should ensure that nursing staff and surgical assistants are
+appropriately trained for the roles they will undertake during the procedure.
+The safe practice of any surgical technique lies in effective structured training and supervised practice. The
+basic elements of this training are covered in the RCOG core training portfolio ( www.rcog.org.uk/index.
+asp?PageID=1959 ).
+For surgeons intending a career with a significant gynae cological surgical role, including intermediate level
+laparoscopic procedures, the Advanced Training Skills Module (ATSM) on benign gynaecological surgery –
+laparoscopy would also be an essential requirement. ( www.rcog.org.uk/resources/public/pdf/ATSM_
+Benign_gynae_surg_laparoscopy_010807.pdf ). For those surgeons intending to undertake even more
+complex laparoscopic procedures, this training will need to be supplemented by a process of mentorship,
+performing surgery of increasing complexity with the support of an experienced laparoscopic surgeon.
+7. Laparoscopic entry techniques
+The most effective way to reduce complications of laparoscopic entry is to optimise insertion of
+the primary trocar and cannula, although there is controversy as to the safest technique for
+achieving this. Gynaecologists have tended to favour the closed or Veress needle entry technique,
+whereby the abdominal cavity is insufflated with carbon dioxide gas before introduction of the
+primary trocar and cannula. The Royal College of Surgeons of England recommends that the open
+(Hasson) approach be used in all circumstances.12This latter method uses a small incision to enter
+the peritoneal cavity under direct vision.
+In a meta-analysis of over 350 000 closed laparoscopic procedures, the risk of bowel damage was
+0.4/1000 and of major vessel injuries was 0.2/1000.13It might be anticipated that the open (Hasson)
+technique would be less likely to cause major vessel injury than the closed method: if a segment of
+adherent bowel were injured, it might be more likely that this would be recognised at the time,
+allowing immediate repair. However, a study of 10 840 open procedures found six cases of bowel
+damage (0.6/1000), four of which were recognised immediately but, in two of them, the diagnosis
+was later and reparative surgery was delayed.14
+Hasson reviewed a number of series using the open method and found no cases of major vessel
+injury and a rate of bowel injury of only 0.1%.15The most authoritative comparative review of the
+safety of open and closed methods of laparoscopic entry was conducted by the Australian College
+of Surgeons,16which found a higher risk of bowel injury associated with open access (relative risk
+2.17; 95% CI 1.57–4.63). The risk of vessel damage was so low in both groups that no statistical
+difference was observed.17
+Two randomised trials have compared the open and closed entry techniques. A meta-analysis does
+not indicate a significant safety advantage to either technique.18-20
+3o f 1 0 RCOG Green-top Guideline No. 49Evidence
+level IV/check
+/check
+/check
+Evidence
+level III
+Evidence
+level 
+IIa-III
+Evidence
+level Ia7.1 Veress needle (closed) laparoscopic entry technique
+How should the closed laparoscopic entry technique be performed?
+In most circumstances the primary incision for laparoscopy should be vertical from the base of the
+umbilicus (not in the skin below the umbilicus). Care should be taken not to incise so deeply as to enter
+the peritoneal cavity.
+The Veress needle should be sharp, with a good and tested spring action. A disposable needle is
+recommended, as it will fulfil these criteria.
+The operating table should be horizontal (not in the Trendelenburg tilt) at the start of the procedure. The
+abdomen should be palpated to check for any masses and for the position of the aorta before insertion
+of the Veress needle.
+The lower abdominal wall should be stabilised in such a way that the Veress needle can be inserted at
+right angles to the skin and should be pushed in just sufficiently to penetrate the fascia and the
+peritoneum. Two audible clicks are usually heard as these layers are penetrated.
+Excessive lateral movement of the needle should be avoided, as this may convert a small needlepoint
+injury in the wall of the bowel or vessel into a more complex tear.
+A consensus document on safe laparoscopic entry was made in 1999, following an international
+meeting of gynaecologists and general surgeons with a special interest in laparoscopic surgery to
+critically evaluate the available published evidence on entry techniques.9
+In a review by the Council of the Association of Surgeons it was suggested that, after two failed attempts to
+insert the Veress needle, either the open Hasson technique or Palmer’s point entry should be used.
+A single randomised trial has investigated elevating and not elevating the abdominal wall before
+insertion of the Veress needle. The latter was associated with a reduced rate of failed entry.20,21
+Several tests have been advocated to check that the tip of the needle is free in the peritoneal cavity
+and has not penetrated the omentum or any other organ. There is no evidence that these tests are
+100% accurate and, indeed, a recent study evaluated some of these tests and concluded that it is
+probably of most value to observe that the initial insufflation pressure is relatively low (less than 8
+mmHg) and is flowing freely.22
+What intra-abdominal pressure should be achieved to safely insert the primary trocar?
+An intra-abdominal pressure of 20–25 mmHg should be used for gas insufflation before inserting the
+primary trocar.
+The distension pressure should be reduced to 12–15 mmHg once the insertion of the trocars is complete.
+This gives adequate distension for operative laparoscopy and allows the anaesthetist to ventilate the
+patient safely and effectively.
+It is necessary to achieve a pressure of 20–25 mmHg before inserting the trocar, as this results in
+increased splinting and allows the trocar to be more easily inserted through the layers of the
+abdominal wall. The increased size of the ‘gas bubble’ and this splinting effect has been shown to
+be associated with a lower risk of major vessel injury. If a constant force of 3 kg is applied to the
+abdominal wall at the umbilicus to an abdominal cavity insufflated to a pressure of 10 mmHg, the
+depth under the ‘indented’ umbilicus is only 0.6 cm. When the same force is applied to an abdomen
+4o f 1 0 RCOG Green-top Guideline No. 49Evidence
+level IVCCC
+C
+C
+B
+BEvidence
+level Ib
+Evidence
+level IIbdistended to 25 mmHg, the depth is 5.6 cm (range 4–8 cm). The mean volume of CO 2required to
+reach this pressure was 5.58 litres.23No adverse effect on circulation or respiratory function was
+observed as long as the patient is lying flat.24It is suggested that all gynaecologists should consider
+using the pressure technique , insufflating the abdomen to 20–25 mmHg before inserting the primary
+trocar. Further evidence to support this practice is awaited from randomised controlled trials.
+Where should the primary trocar be inserted ?
+The primary trocar should be inserted in a controlled manner at 90 degrees to the skin, through the
+incision at the thinnest part of the abdominal wall, in the base of the umbilicus. Insertion should be
+stopped immediately the trocar is inside the abdominal cavity.
+Once the laparoscope has been introduced through the primary cannula, it should be rotated through
+360 degrees to check visually for any adherent bowel. If this is present, it should be closely inspected
+for any evidence of haemorrhage, damage or retroperitoneal haematoma.
+If there is concern that the bowel may be adherent under the umbilicus, the primary trocar site should
+be visualised from a secondary port site, preferably with a 5-mm laparoscope.
+On completion of the procedure, the laparoscope should be used to check that there has not been a
+through-and-through injury of bowel adherent under the umbilicus by visual control during removal.
+7.2 Hasson (open) entry technique
+How should the open entry technique be performed?
+When the Hasson open laparoscopic entry is employed, confirmation that the peritoneum has been
+opened should be made by visualising bowel or omentum before inserting the blunt tipped cannula.
+The Hasson technique of open laparoscopic entry is an alternative to closed laparoscopy that avoids the use of
+sharp instruments after the initial skin incision. It allows the insertion of a blunt-ended trocar under direct vision.
+Once the fascial edges are incised, they should be held by a lateral stay suture on either side of the
+incision. Once the peritoneum is opened, the fascial sutures are then pulled firmly into the suture
+holders on the cannula to produce an airtight seal with the cone of the cannula. Gas is insufflated
+directly through the cannula to produce the pneumoperitoneum. The blunt trocar is withdrawn
+only after the abdomen is partially distended. At the end of the procedure, the fascial defect should
+be closed using the stay sutures (and possibly additional sutures) to minimise the risk of herniation.
+8. Alternative entry techniques
+What alternative entry techniques are available?
+8.1 Direct trocar insertion
+Direct trocar insertion is an acceptable alternative trocar insertion method.
+This technique was developed to overcome the difficulty associated with grasping the abdominal
+wall already distended by the pneumoperitoneum.25Although in experienced hands it is the most
+rapid method of entry and can be safely used if the cases are carefully selected, it is not widely used
+within gynaecological practice. Six randomised controlled trials have compared Veress needle with
+direct trocar entry.19,26–30Meta-analysis does not show any safety disadvantage from using direct
+RCOG Green-top Guideline No. 49 5o f 1 0CEvidence
+level IIb
+Evidence
+level IVC
+AC
+C
+C
+Evidence
+level Iaentry in terms of major complications. There may be an advantage when considering minor
+complications.20
+8.2 Alternative entry devices
+There are several ingenious devices that have been introduced during the last decade to try to minimise the
+risk during primary trocar insertion. These include visual access systems,31radially expanding trocars32and
+second-generation Endotip® (Karl Storz, Tutlingen, Germany) systems. A number of randomised controlled
+trials have demonstrated safety advantage in terms of reduced trocar site bleeding with radially expanding
+trocars.20,33–35
+Further miniaturisation of optical systems has resulted in the invention of an optical Veress needle
+but despite the theoretical advantages of such a device there is no evidence to demonstrate the
+superiority of this approach over the conventional Veress needle.36
+8.3. Alternative sites for primary trocar or Veress needle insertion
+What alternative sites can be safely used for primary trocar or Veress needle insertion?
+Palmer’s point is the preferred alternative trocar insertion site, except in cases of previous surgery in
+this area or splenomegaly.
+The rate of adhesion formation at the umbilicus may be up to 50% following midline laparotomy
+and 23% following low transverse incision.37The umbilicus may not, therefore, be the most
+appropriate site for primary trocar insertion following previous abdominal surgery. The most usual
+alternative site is in the left upper quadrant, where adhesions rarely form, although even this may
+be inappropriate if there had been previous surgery in this area or splenomegaly. The preferred
+point of entry is 3 cm below the left costal margin in the mid-clavicular line (Palmer’s point). A small
+incision is made and a sharp Veress needle inserted vertically. Testing for correct placement using
+the pressure/flow test is performed. CO 2is then instilled to 25 mmHg pressure and a 2–5 mm
+endoscope is used to inspect the undersurface of the anterior abdominal wall in the area beneath
+the umbilicus. If this is free of adhesions, the trocar and cannulae can be inserted under direct
+laparoscopic vision. If there are many adhesions present, it is possible to dissect these free via
+secondary ports in the lower left abdomen or an alternative entry site can be selected visually.
+Other sites have been tried but, in general, are to be avoided. Suprapubic insertion of the Veress
+needle puts the bladder at risk of damage and is associated with the highest rate of failure due to
+preperitoneal insufflation of gas.9Instillation of gas through the uterine fundus with the Veress
+needle carries the possibility of introducing infection and can be dangerous if bowel is adherent to
+the fundus. Similarly, entry through the posterior fornix could cause serious problems if the woman
+was found to have deep infiltrating endometriosis with obliteration of the cul-de-sac and the rectum
+adherent to the back of the cervix. A low rectal perforation at this site could be particularly
+dangerous and it should only be used when imaging techniques have clearly shown that the
+posterior cul-de-sac is free from deep infiltrating endometriosis and adherent bowel.
+9. Secondary ports
+How should secondary ports be inserted?
+Secondary ports must be inserted under direct vision perpendicular to the skin, while maintaining the
+pneumoperitoneum at 20–25 mmHg.
+6o f 1 0 RCOG Green-top Guideline No. 49Evidence
+level III
+Evidence
+level IIIB
+CEvidence
+level IaDuring insertion of secondary ports, the inferior epigastric vessels should be visualised
+laparoscopically to ensure the entry point is away from the vessels.
+During insertion of secondary ports, once the tip of the trocar has pierced the peritoneum it should be
+angled towards the anterior pelvis under careful visual control until the sharp tip has been removed.
+Secondary ports must be removed under direct vision to ensure that any haemorrhage can be observed
+and treated, if present.
+Before placing the lateral ports, it is essential that the inferior epigastric vessels are visualised from within the
+peritoneal cavity by the laparoscope and the entry point of the port is away from these vessels. The deep
+epigastric arteries and the venae comitantes running beside them can be visualised just lateral to the lateral
+umbilical ligaments (the obliterated hypogastric arteries) in all but the most obese patient. In the woman who
+is obese, the incision should be made well lateral to the edge of the rectus sheath, taking care to avoid injury
+to vessels on the pelvic side wall.
+It is recommended that removal of the ports is also under direct vision in order that any haemorrhage
+can be observed and treated if present. Any non-midline port over 7 mm and any midline port greater
+than 10 mm requires formal deep sheath closure to avoid the occurrence of port site hernia.
+10. The woman who is obese
+What specific measures are required for laparoscopic surgery in the obese woman?
+The open (Hasson) technique or entry at Palmer’s point are recommended for the primary entry in
+women with morbid obesity. If the Veress needle approach is used, particular care must be taken to
+ensure that the incision is made right at the base of the umbilicus and the needle inserted vertically into
+the peritoneum.
+Women who are grossly obese are at a significantly greater risk of complications when undergoing
+laparotomy. Laparoscopic surgery may therefore be of particular benefit to these individuals. It is
+generally recommended that an open (Hasson) technique should be performed for primary entry
+in women who are morbidly obese, although even this technique may be difficult. If a Veress needle
+approach is used in the woman who is morbidly obese, it is important to make the vertical incision
+as deep as possible in the base of the umbilicus, since this is the area where skin, deep fascia and
+parietal peritoneum of the anterior abdominal wall will meet. In this area, there is little opportunity
+for the parietal peritoneum to tent away from the Veress needle and allow preperitoneal
+insufflation and surgical emphysema. If the needle is inserted vertically, the mean distance from the
+lower margin of the umbilicus to the peritoneum is 6 cm (± 3 cm). This allows placement of a
+standard length needle even in extremely obese women.38Insertion at 45 degrees, even from within
+the umbilicus, means that the needle has to traverse distances of 11–16 cm, which is too long for
+a standard Veress needle.39
+11. The woman who is very thin
+What specific measures are required for laparoscopic surgery in the woman who is very thin?
+The Hasson technique or insertion at Palmer’s point is recommended for the primary entry in women
+who are very thin.
+Women at highest risk of vascular injury are the young, thin, nulliparous women with well-
+developed abdominal musculature; patients with severe anorexia are at particular risk. The aorta
+RCOG Green-top Guideline No. 49 7o f 1 0Evidence
+level IVC
+C
+CCC
+Evidence
+level IV
+Evidence
+level IV1. Garry R. Complications of laparoscopic entry. Gynaecol Endosc
+1997;6:319–9.
+2. Harkki-Siren P , Kurki T. A nationwide analysis of laparoscopic
+complications. Obstet Gynecol. 1997;89:108–12.
+3. Jansen FW , Kapiteyn K, Trimbos-Kemper T, Hermens J, Trimbos
+JB. Complications of laparoscopy: a prospective multi-centre
+observational study. Br J Obstet Gynaecol 1997;104:595–600.
+4. Pierre F , Chapron C, de Poncherville L, Harchaui Y , Dognon L.
+French Survey on Gynaecological Major Laparoscopic Surgery
+Complications in Unselected Population of Operators. ISGE
+Meeting, Birmingham, UK. 8–10 December 1997.
+5. Querleu D, Chevallier L, Chapron C. Bruhat MA. Complications
+of gynaecological laparoscopic surgery- A French Collaborative
+Study. N Eng J Med 1993;328:1355.
+6. Chamberlain GVP , Brown JC. Gynaecological Laparoscopy –
+The Report of the Working Party of the Confidential Inquiry
+into Gynaecological laparoscopy. London: Royal College of
+Obstetricians and Gynaecologists; 1978.
+7. Richardson RE, Sutton CJG. Complications of first entry. A
+prospective laparoscopy audit. Gynaecol Endosc 1999;8:327–34.
+8. Jones KD, Fan A, Sutton CJG. Safe entry during laparoscopy: a
+prospective audit in a district general hospital. Gynaecol Endosc
+2002;11:85–9.
+9. A consensus document concerning laparoscopic entry
+techniques: Middlesborough, March 19–20 1999. Gynaecol
+Endosc 1999;8:403–6.
+10. Beresford N, Seymour L, Vincent C, Moat N. Risks of elective
+cardiac surgery: what do patients want to know? Heart 2001;
+86:626–31.
+11. Moore J, Ziebald S, Kennedy S. ‘People sometimes react funny if
+they’re not told enough’: women’s views about the risks of
+diagnostic laparoscopy. Health Expect 2002;5:302–9.
+12. Thomas WGE. Minimal access surgery. In: The Intercollegiate
+Basic Surgical Skills Course: Participant Handbook. London:
+Royal College of Surgeons of England; 1996. p. 43–65.
+13. Garry R. Towards evidence-based laparoscopic entry
+techniques: clinical problems and dilemmas. Gynaecol Endosc
+1999;8:315–26.
+14. Penfield AJ. How to prevent complications of open laparoscopy.
+J Reprod Med 1985;30:660–3.
+15. Hasson HM. Open laparoscopy as a method of access in
+laparoscopic surgery. Gynaecol Endosc 1999;8:353–62.
+16. Australian Safety and Efficacy Register of New Interventional
+Procedures – Surgical (ASERNIP-S) A Systematic Review of the
+Methods used to Establish Laparoscopic Pneumoperitoneum.
+ASERNIP-S Report No. 13. Adelaide, South Australia. ASERNIP-S;
+October 2001.
+17. Garry R. Laparoscopic surgery. Best Pract Res Clin Obstet
+Gynaecol 2006;20:89–104.
+18. Cogliandolo A, Manganaro T, Saitta FP , Micali B. Blind versus open
+approach to laparoscopic cholecystectomy: a randomised study.
+Surg Laparosc Endosc 1998;8:353–5.
+19. Bemelman WA, Dunker MS, Busch OR, Den Boer KT, de Wit LT,
+Gouma DJ. Efficacy of establishment of pneumoperitoneum
+with Veress needle, Hasson Trocar, and modified blunt trocar
+(TrocDoc):a randomized study. J Laparoendosc Adv Surg Tech A
+2000;10:325–30.20. Ahmad G, Duffy JMN, Phillips K, Watson A. Laparoscopic entry
+techniques (protocol). Cochrane Database Syst Rev 2007;(3):
+CD006583. DOI: 10.1002/14651858.CD006583.
+21. Briel JW , Plaisier PW , Meijer WS, Lange JF . Is it necessary to lift the
+abdominal wall when preparing a pneumoperitoneum? A
+randomised study. Surg Endosc 2000;14:862–4.
+22. Teoh B, Sen R, Abbot J. An evaluation of 4 tests used to ascertain
+Veres needle placement at closed laparoscopy. J Minim
+Invasive Gynecol 2005;12:153–8.
+23. Phillips G. Garry R. Kumar C, Reich H. How much gas is required
+for initial insufflation at laparoscopy? Gynaecol Endosc 1999;
+8:369–74.
+24. Tsaltas J, Pearce S, Lawrence A, Meads A, Mezzatesta J, Nicolson S.
+Safer laparoscopic trocar entry: it is all about pressure. Aust N Z
+J Obstet Gynaecol 2004;44:349–50.
+25. Dingfelder JR. Direct laparoscopic trocar insertion without prior
+pneumoperitoneum. J Reprod Med 1978;21:45–7.
+26. Agresta F , De Simone P , Ciardo LF , Bedin N. Direct trocar insertion
+versus veress needle in nonobese patients undergoing
+laparoscopic procedures: a randomised prospective single
+centre study. Surg Endosc 2004;18:1778–81.
+27. Borgatta L, Gruss L, Barad D, Kaali SG. Direct trocar insertion vs.
+verres needle use for laparoscopic sterilisation. J Reprod Med
+1990;35:891.
+28. Byron JW , Markenson G, Miyazawa K. Randomized comparison
+of verres needle and direct trocar insertion for laparoscopy. Surg
+Gynecol Obstet 1993;177:259.
+29. Gunenc MZ, Yesilgedlar N, Bingöl B, Onalan G, Tabak S, Gökmen
+B. The safety and efficacy of direct trocar insertion with elevation
+of the rectus sheath instead of the skin for pneumoperitoneum.
+Surg Laparosc Endosc Percutan Tech 2005;15:80-1.
+30. Tansatit T, Wisawasukmonchol W , Bunyavejchevin S. A randomized,
+prospective study comparing the use of the missile trocar and the
+pyramidal trocar for laparoscopy. J Med Assoc Thai 2006;89:941–7.
+31. Mettler L, Schmit EH, Frank B, Semm K. Optical trocar systems:
+laparoscopic entry and its complications.(a study of cases in
+Germany.) Gynaecol Endosc 1999;8:383–9.
+32. Turner DJ. Making the case for radially xxpanding access system.
+Gynaecol Endosc 1999;8:391–5.
+33. Bhoyrul S, Payne J, Steffes B, Swanstrom L, Way W . Randomized
+prospective study of radially expanding trocars in laparoscopic
+surgery. J Gastrointest Surg 2000;4:392–7.
+34. Feste JR, Bojahr B, Turner DJ. Randomized trial comparing a
+radially expandable needle system with cutting trocars. J Soc
+Laparoendosc Surg 2000;4:11–15.
+35. Mettler L, Maher P . Investigation of the effectiveness of the
+radially-expanding needle system, in contrast to the cutting
+trocar in enhancing patient recovery. Minimally Invasive
+Therapy and Allied Technology 2000;9:397–402.
+36. McGurgan P , O’Donovan P . Optical Veress as an entry technique.
+Gynaecol Endosc 1999;8:379–82.
+37. Audebert AJ, Gomel V . Role of microlaparoscopy in the diagnosis
+of peritoneal and visceral adhesions and in the prevention of
+bowel injury associated with blind trocar insertion. Fertil Steril
+2000;73:631–5.
+38. Holtz G. Insufflation of the obese patient. In: Diamond MP ,
+Corfman RS, DeCherney AH, editors. Complication of
+8o f 1 0 RCOG Green-top Guideline No. 49may lie less than 2.5 cm below the skin in these women.40Great care, therefore, must be taken
+when performing first entry and a Hasson approach or insertion at Palmer’s point is preferable in
+this situation.
+12. Auditable standards
+1. Documentation of appropriate counselling.
+2. Clinical incident reporting of all adverse events or complications.
+ReferencesEvidence
+level IVLaparoscopy and Hysteroscopy. 2nd ed. Oxford: Blackwell
+Science; 1997. p. 22–5.
+39. Hurd WH, Bude RO, DeLancey JO, Gauvin JM, Aisen AM.
+Abdominal wall characteristics with magnetic resonance
+imaging and computed tomography. The effect of obesity on the
+laparoscopic approach. J Reprod Med 1991;36:473–6.
+40. Levy BS. Perforation of large vascular structures. In: Diamond MP ,
+Corfman RS, DeCherney AH, editors. Complications of
+Laparoscopy and Hysteroscopy. 2nd ed. Oxford; Blackwell
+Science; 1997. p. 26–9
+RCOG Green-top Guideline No. 49 9o f 1 0This Guideline was produced on behalf of the Guidelines and Audit Committee of the Royal College of Obstetricians
+and Gynaecologists by:
+Professor CJG Sutton FRCOG, Guildford, and Mr K Philips FRCOG, Cottingham
+and peer reviewed by:
+Mr KA Abaoub, Princess Royal Hospital, Haywards Heath; Dr GF Ahmad, Arrowe Park Hospital, Wirral; Dr T Appleyard,
+SpR O&G, Bath; British Society of Gynaecological Endoscopy, Mr JMN Duffy, Salford Royal NHS Trust; Dr R Faraj MRCOG,
+Royal Blackburn Hospital; Dr. P Fogarty FRCOG, Belfast, N Ireland; Professor R Garry FRCOG, Perth, Australia; Dr AN
+Griffiths MRCOG, Cardiff, Wales; Professor J Gupta FRCOG, Birmingham; Miss CM Holland MRCOG, Manchester; Mr DI
+Fraser MRCOG, Norwich; Dr SIMF Ismail, MRCOG, Yeovil; Dr PD Kaloo MRCOG, Cheltenham; Dr PJ Maher FRCOG,
+Australia, President, International Society of Gynecological Endoscopy; Dr CW Martin MRCOG, Edinburgh, Scotland; Mr
+B Ribeiro PRCS, Royal College of Surgeons ; Dr ARB Smith FRCOG, British Society of Urogynaecology; Dr L
+Shanmugasundaram MRCOG, Harrogate; Mr R Varma MRCOG, Birmingham; Mr AJS Watson MRCOG, Ashton-Under-Lyne.
+The Guidelines and Audit lead reviewers were: Dr DE Parkin FRCOG, Aberdeen, Scotland; Mr MC Slack FRCOG,
+Cambridge; and Mr P Hilton FRCOG, Newcastle-Upon-Tyne.
+The final version is the responsibility of the Guidelines and Audit Committee of the RCOGRCOG Green-top Guideline No. 49 10 of 10Grades of recommendations
+Requires at least one randomised
+controlled trial as part of a body of
+literature of overall good quality and
+consistency addressing the specific
+recommendation. (Evidence levels Ia, Ib)
+Requires the availability of well controlled
+clinical studies but no randomised clinical
+trials on the topic of recommendations.
+(Evidence levels IIa, IIb, III)
+Requires evidence obtained from expert
+committee reports or opinions and/or
+clinical experiences of respected
+authorities. Indicates an absence of directly
+applicable clinical studies of good quality.
+(Evidence level IV)
+Good practice point
+Recommended best practice based on the
+clinical experience of the guideline
+development group.Classification of evidence levels
+Ia Evidence obtained from meta-analysis of
+randomised controlled trials.
+Ib Evidence obtained from at least one
+randomised controlled trial.
+IIa Evidence obtained from at least one
+well-designed controlled study without
+randomisation.
+IIb Evidence obtained from at least one
+other type of well-designed quasi-
+experimental study.
+III Evidence obtained from well-designed
+non-experimental descriptive studies,
+such as comparative studies, correlation
+studies and case studies.
+IV Evidence obtained from expert
+committee reports or opinions and/or
+clinical experience of respected
+authorities./checkCBAAPPENDIX
+Clinical guidelines are: ‘systematically developed statements which assist clinicians and patients in
+making decisions about appropriate treatment for specific conditions’. Each guideline is systematically
+developed using a standardised methodology. Exact details of this process can be found in Clinical
+Governance Advice No. 1: Guidance for the Development of RCOG Green-top Guidelines (available on
+the RCOG website at www.rcog.org.uk/clingov1 ). These recommendations are not intended to dictate
+an exclusive course of management or treatment. They must be evaluated with reference to individual
+patient needs, resources and limitations unique to the institution and variations in local populations. It is
+hoped that this process of local ownership will help to incorporate these guidelines into routine
+practice. Attention is drawn to areas of clinical uncertainty where further research may be indicated.
+The evidence used in this guideline was graded using the scheme below and the recommendations
+formulated in a similar fashion with a standardised grading scheme.
+The Guidelines review process will commence in May 2011
+unless otherwise indicatedDISCLAIMER
+The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical
+practice. They present recognised methods and techniques of clinical practice, based on published evidence, for
+consideration by obstetricians and gynaecologists and other relevant health professionals. The ultimate judgement
+regarding a particular clinical procedure or treatment plan must be made by the doctor or other attendant in the light
+of clinical data presented by the patient and the diagnostic and treatment options available.
+This means that RCOG Guidelines are unlike protocols or guidelines issued by employers, as they are not intended to
+be prescriptive directions defining a single course of management. Departure from the local prescriptive protocols or
+guidelines should be fully documented in the patient’s case notes at the time the relevant decision is taken.

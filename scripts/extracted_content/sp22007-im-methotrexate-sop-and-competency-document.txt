@@ -1,0 +1,460 @@
+# Extracted from: SP22007 IM Methotrexate SOP and Competency document.pdf
+# Guideline ID: sp22007-im-methotrexate-sop-and-competency-document
+# Content length: 21465 characters
+# Processing date: 1750066901.935222
+
+SP22007 IM Methotrexate Clinical SOP and Competency Document v1.0 Oct 2022 Page 1 of 14 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+ Intramuscular Methotrexate Clinical SOP and Competency Document 
+for Medical Management of Ectopic Pregnancy or Persistent Gestational 
+Trophoblastic Disease 
+Summary statement: How does the 
+document support patient care? To ensure that Methotrexate (via intramuscular injection (IM)) 
+for the management of ectopic pregnancies and persistent 
+gestational trophoblastic disease is administered safely. 
+Staff/stakeholders involved in 
+development: Gynaecology Matrons 
+Division: Women and Children’s 
+Department: Gynaecology 
+Responsible Person: Chief of Service 
+Author: Gynaecology Matrons 
+For use by: Gynaecology Nursing Staff 
+Purpose: The purpose of this competency is to ensure that staff who 
+are administering Methotrexate (via intramuscular injection 
+(IM)) have sufficient knowledge and competence in order to 
+do so safely. 
+This document supports: 
+ UHS Standard Infection Prevention and Control Precautions 
+V5, 2018. 
+uhsic002 -standard -infection -prevention -control -precautions 
+UHS Waste Management Policy, V4, 2021. uhsfe006 -waste -
+management 
+Key related documents: UH Sussex (SRH&WH) CG12018 Ectopic Pregnancy 
+Approved by: JOGG: 19th Oct 2022 
+MGC : 13TH December 2022 
+Approval date: 19th October 2022 Date uploaded: 4th January 2023 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable – Divisional Ratification only required 
+Ratification Date: Not Applicable – Divisional Ratification only required 
+Expiry Date: December 2024 
+Review date: June 2024 
+If you require this document in another format such as Braille, large print, audio or 
+another language please contact the Trusts Communications Team 
+Reference Number: SP22007 
+SP22007 IM Methotrexate Clinical SOP and Competency Document v1.0 Oct 2022 Page 2 of 14 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Version Date Author Status Comment 
+1.0 October 2022 J Birrell and J Chrimes 
+Gynaecology Matrons Live New SOP for UH 
+Sussex (SRH&WH) 
+2.0 
+ 
+The interpretation and application of clinical guidelines will remain the 
+responsibility of the individual clinician. 
+If in doubt contact a senior colleague or expert. 
+
+SP22007 IM Methotrexate Clinical SOP and Competency Document v1.0 Oct 2022 Page 3 of 14 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Contents 
+ 
+1.0 Introduction ................................ ................................ ................................ ................ 4 
+2.0 Rationale and background ................................ ................................ ......................... 4 
+2.1 Ectopic Pregnancy ................................ ................................ ................................ ..... 4 
+2.2 Persistent Gestational Trophoblastic Disease (PGTD) ................................ ............... 4 
+3.0 Responsibilities ................................ ................................ ................................ .......... 5 
+4.0 Abbreviations used within this document ................................ ................................ ... 5 
+5.0 Principles ................................ ................................ ................................ ................... 5 
+5.1 Ectopic Pregnancy ................................ ................................ ................................ ..... 6 
+5.2 Persistent Gestational Trophoblastic Disease ................................ ............................ 6 
+5.3 Authority to proceed ................................ ................................ ................................ ... 6 
+5.4 Contraindications ................................ ................................ ................................ ....... 7 
+5.5 Spec ial warnings and precautions for use ................................ ................................ .. 7 
+5.6 Undesirable effects of Methotrexate ................................ ................................ .......... 7 
+6.0 Monitoring and audit ................................ ................................ ................................ .. 7 
+References ................................ ................................ ................................ ........................... 8 
+Appendix 1: Compet ency framework for the safe administration of IM Methotrexate ............. 9 
+Appendix 2: Equipment and procedure for the administration of IM M ethotrexate ............... 12 
+Appendix 3: Z -track technique ................................ ................................ ............................. 14 
+
+SP22007 IM Methotrexate Clinical SOP and Competency Document v1.0 Oct 2022 Page 4 of 14 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Intramuscular Methotrexate Clinical SOP and Competency 
+Document for Medical Management of Ectopic Pregnancy or 
+Persistent Gestational Trophoblastic Disease 
+(following referral from Charing Cross Hospital) 
+ 
+1.0 Introduction 
+ 
+The purpose of this competency is to ensure that staff who are administering Methotrexate 
+(via intramuscular injection (IM)) have sufficient knowledge and competence in order to do 
+so safely. 
+ 
+Methotrexate is a type of medicine called an immunosuppressant. It slows down the body’s 
+immune system and helps reduce inflammation. 
+ 
+It is used to treat many conditions such as: 
+ 
+ Rheumatoid Arthritis 
+ Psoriasis (including psoriatic arthritis) 
+ Crohn’s Disease 
+ Sarcoidosis 
+ 
+It is also used to medically resolve an ectopic pregnancy and as a treatment regime for 
+patients with persistent trophoblastic disease following diagnosis of a molar pregnancy. 
+ 
+It works by destroying rapidly dividing cells such as cancer cells or tropho blastic tissue cells. 
+ 
+2.0 Rationale and background 
+2.1 Ectopic Pregnancy 
+ 
+Methotrexate is only prescribed following discussion with a Consultant following diagnosis of 
+an ectopic pregnancy or persistent pregnancy of unknown location (PUL) . There is a clear 
+criteria for patient selection to ensure patient safety. The Methotrexate dosage is calculated 
+on body surface area and prescribed as 50 mgs per m2, therefore height and weight must be 
+taken within the clinic to support accurate dosage . Please refer to the Standard Operating 
+Procedure for “The Administration of Intra Muscular Methotrexate for the management of 
+Ectopic Pregnancy and Persistent Gestational Trophoblastic Disease”. 
+ 
+2.2 Persistent Gestational Trophoblastic Disease (PGTD ) 
+ 
+Patients that have been diagnosed with a molar pregnancy are referred to Charing Cross 
+Gestational Trophoblastic Disease Service (CXH) for follow up and ongoing monitoring. 
+ 
+Partial molar pregnancies usually resolve spontaneously, however in 0.5% of th ese cases 
+malignant disease will develop and require chemotherapy. 
+SP22007 IM Methotrexate Clinical SOP and Competency Document v1.0 Oct 2022 Page 5 of 14 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Complete molar pregnancy patients usually have their bloods monitored for 6 months and 
+then following any subsequent pregnancies. 
+ 
+In contrast to a partial molar pregnancy a complete molar pregnancy frequently proceeds to 
+invasive disease with 8 -20% of these patients requiring chemotherapy. 
+ 
+Occasionally these patients require ongoing management with chemotherapy (Methotrexate) 
+and a smaller minority of these patients may require a reg ime which following initial 
+management at CXH is then continued at the patient’s local hospital. 
+ 
+3.0 Responsibilities 
+ 
+Departmental Matrons have a responsibility to: 
+ 
+ Ensure the operation and implementation of this competency. 
+ Ensure that all nurses to who will be required to administer IM Methotrexate have 
+adequate training made available and undergo an appropriate assessment to gain 
+competency . 
+ 
+Clinical Staff have a responsibility to: 
+ 
+ Clinical staff are responsible for ensuring they have read, understood and are 
+capable of discussing and implementing the Standard Operating Procedure for 
+“The Administration of Intra Muscular Methotrexate for the management of Ectopic 
+Pregnancy and Persistent Gestational T rophoblastic Disease”. 
+ Clinical staff are responsib le and accountable for their own actions and must 
+ensure that they exercise their own professional judgement in the administration of 
+IM Methotrexate . 
+ Clinical staff must ensure that they are competen t to carry out the administration 
+and disposal of IM Methotrexate prior to taking on the task. 
+ Deviations to the agreed policy and competency must be rationalised and 
+accurately recorded. 
+ 
+4.0 Abbreviations used within this document 
+ 
+IM Intramuscular injection PUL Pregnancy of unknown location 
+CXH Charing Cross Gestational 
+Trophoblastic Disease Service PGTD or GTD Persistent Gestational 
+Trophoblastic Disease 
+ 
+5.0 Principles 
+ 
+Patients must be provided with adequate information and time to review this information prior 
+to providing informed consent for the administration of IM Methotrexate . 
+ 
+SP22007 IM Methotrexate Clinical SOP and Competency Document v1.0 Oct 2022 Page 6 of 14 
+Please check against Staffnet that this printout is the most recent version of this document. 
+5.1 Ectopic Pregnancy 
+ 
+IM Methotrexate will be obtained from Pharmacy following its prescription prior to its 
+administration. This will need to be ordered by the nursing or medical team following 
+documentation of a discussion with the consultant and confirmation that the patient will be 
+able to adhere to the monitoring and treatment plan which can continue for several weeks. 
+ 
+5.2 Persistent G estational Trophoblastic Disease 
+ 
+Patients will be discharged from CXH with a full treatment course of Methotrexate injections, 
+along with sharps bins and a cytotoxic spill kit. Prior to accepting patients , CXH should send 
+through patient information, administration booklets, treatment plan and signed prescriptions. 
+ 
+The administrating team should the n ensure that the Methotrexate prescri ption is 
+photocopied and a copy is retained : 
+ 
+ Within the patients’ medical records 
+ By the patient 
+ 
+so that it is evident to teams outside of the Gynaecology department should the patient 
+present in an emergency. (Both copies require signing on administration). 
+ 
+ IM Methotrexate is to be administered in accordance with the Trust Injectable 
+Medicines Policy and the Trust Chemotherapy Policy further information can be 
+found at 12009 -injectable -medicines -policy . 
+ Sharps must be handled and disposed of in accordance with the Trust Standard 
+Infection Prevention and Control Precautions uhsic002 -standard -infection -
+prevention -control -precautions . 
+ Methotrexate needles and syringes must be disposed of in the purple top Sharps 
+Bins uhsfe006 -waste -management . 
+ Methotrexate is usually given for a set period of time in line with rationale for 
+treatment. 
+ 
+5.3 Authority to proceed 
+ 
+ Patients must have been given adequate information during consultation to allow 
+them to provide informed consent. 
+ A clear and accurate prescription (or equivalent outpatient documentation) with a 
+documented rationale is required prio r to the administration of IM Methotrexate . 
+ The patients’ blood results have been checked are within the appropriate margins 
+for administration of Methotrexate. Any concerns must be discussed with a 
+Consultant. 
+ The administration of IM Methotrexate may on ly be performed by a trained 
+member of the clinical staf f who has been deemed competent (Appendix 1 & 2). 
+ 
+SP22007 IM Methotrexate Clinical SOP and Competency Document v1.0 Oct 2022 Page 7 of 14 
+Please check against Staffnet that this printout is the most recent version of this document. 
+5.4 Contraindications 
+ 
+ Patients with a known allergy or hypersensitivity to any of the components of a 
+Methotrexate injection should not receiv e a dose . 
+ Patients with significant pain/bleeding with a known ectopic pregnancy should be 
+further reviewed. 
+ Patients with abnormal renal and liver function tests. These patients require a 
+senior review. Those being treated for GTD by CXH will need to be discussed 
+with them. 
+ 
+5.5 Special warnings and precautions for use 
+ 
+ Staff administering Methotrexate should not be pregnant or considering trying for a 
+pregnancy. Should a member of staff fit one of these categories, this should 
+discreetly be discussed with a line manager. 
+ All Methotrexate inject ions should be disposed of in a p urple lidded (cytotoxic) 
+sharps bin. 
+ A Cytotoxic spill kit must be available at all times in areas where cytotoxic 
+medication is being prepared and administered. 
+ The ‘Z’ tracking technique should be used for the administration of Methotrexate 
+(Appendix 3 ). 
+ 
+5.6 Undesirable effects of Methotrexate 
+ 
+ The most commonly observed adverse reactions include injection site reactions , 
+lip and gum ulceration, vaginal bleeding, eye reactions and photo -sensitivity . 
+ If a patient has concerns they should be discussed with the prescribing clinician. 
+ 
+6.0 Monitoring and audit 
+ 
+ Numbers of trained staff within the gynaecology areas should be monitored to 
+ensure adequate staff are available with the skills to administer IM Methotrexate . 
+ Staff who have undergone training are expected to complete their IM Methotrexate 
+competency document within 6 months of commencement within the service , 
+however it is accepted that there may not always be adequate patient numbers to 
+enable this. 
+ Incidents relating to IM Methotrexate administration will be monitored through the 
+Trust incident reporting (Datix) database and appropriate actions will then be put 
+in place. 
+
+SP22007 IM Methotrexate Clinical SOP and Competency Document v1.0 Oct 2022 Page 8 of 14 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Reference s 
+ 
+WSHT Injectable Medicines Policy V6, 2020. p12009 -injectable -medicines -policy 
+ 
+UHS Standard Infection Prevention and Control Precautions V5, 2018. 
+uhsic002 -standard -infection -prevention -control -precautions 
+ 
+UHS Waste Management Policy, V4, 2021. uhsfe006 -waste -management 
+
+SP22007 IM Methotrexate Clinical SOP and Competency Document v1.0 Oct 2022 Page 9 of 14 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 1 : Competency framework for the safe administration of IM 
+Methotrexate 
+Aim: 
+ 
+This competency will be completed through self -assessment and discussion with a 
+recognised competent supervising practitioner . 
+ 
+“I the qualified healthcare professional can confirm that I have read and understood 
+the Standard Operating Procedure and Competency for the Administration and 
+disposal of Intramuscular Methotrexate. I can confirm that I understand the rationale 
+for treatment, preparation, administration and disposal of IM Methotrexate 
+injections.” 
+ 
+I have read the Trust Policies related the aforementioned documents. 
+ 
+Practitioner Name 
+Practitioner Signature 
+Date 
+
+ Competency Assessment and 
+evidence of 
+discussion for 
+competencies Date Supervisor 
+Signed Practitioner 
+Signed 
+ The supervising practitioner must be confident that the individual has an adequate 
+understanding of the theory and rationale behind administration. Additional 
+observations can be assessed as required. 
+1. Understanding of the theory 
+and rationale behind the 
+administration of IM 
+Methotrexate including: 
+ Indications (Ectopic or 
+PGTD) 
+ Effect of Methotrexate 
+on the body 
+2. Demonstrates an 
+understanding of the 
+rationale behind giving 
+Methotrexate. 
+3. Demonstrates an 
+understanding of the contra -
+indications of Methotrexate. 
+4. Ensures patients have 
+adequate knowledge 
+regarding rationale for 
+SP22007 IM Methotrexate Clinical SOP and Competency Document v1.0 Oct 2022 Page 10 of 14 
+Please check against Staffnet that this printout is the most recent version of this document. 
+administration of 
+Methotrexate thereby able 
+to provide informed 
+consent. 
+5. Checks patients 
+understanding regarding 
+ongoing treatment plans 
+following administration of 
+Methotrexate. 
+6. Informs patients about the 
+side effects/adverse 
+reactions associated with 
+Methotrexate. 
+7 Demonstrates knowledge of 
+appropriate administration 
+sites and techniques. 
+8. Understands there is a 
+need for continued 
+monitoring and treatment. 
+9. Prepares appropriately for 
+the administration of 
+Methotrexate. 
+10. Checks recent blood results 
+and confirmation (for PGTD 
+patients from CXH) for 
+patients to continue with 
+treatment. 
+11. Advises patient as 
+appropriate on use of 
+barrier contraception 
+12. Carries out the patient 
+safety checks according to 
+the Trust’s medication 
+administration policy. 
+13. Administers (using Z Track 
+technique) and disposes of 
+the Methotrexate syringe in 
+a purple lidded sharps bin. 
+14. Described/demonstrates the 
+use of a Cytotoxic spill kit. 
+14. Records the administration 
+of Methotrexate. 
+15. Ensure patient aware of any 
+necessary follow up. 
+ 
+SP22007 IM Methotrexate Clinical SOP and Competency Document v1.0 Oct 2022 Page 11 of 14 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+____________________________________________ has demonstrated an 
+Understanding of the rationale, preparation, administration and disposal of IM 
+Methotrexate Injections. 
+They have read and understood the standard operating procedure for the 
+administration and disposal of IM Methotrexate Injections, including the associated 
+Trust Policies and have been deemed as competent. 
+ Comments: 
+
+ Supervisor Name and 
+Signature 
+ Date: 
+ Practitioner Name and 
+Signature Date: 
+ 
+A copy of this competency should be kept in the practitioner’s competency folder and a copy 
+should be retained by the Departmental Manager or Practice Development Nurse. 
+SP22007 IM Methotrexate Clinical SOP and Competency Document v1.0 Oct 2022 Page 12 of 14 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 2: Equipment and procedure for the administration of IM 
+Methotrexate 
+ 
+Equipment 
+ 
+ Prescription or documented evidence of rationale for administration 
+ Prescribed Methotrexate 
+ 70% Alcohol swab 
+ Needle – length 25mm (21G although 23G may be used on a thin patient) 
+ Syringe containing prepared intramuscular (IM) medication 
+ Non-sterile gloves 
+ Plastic Apron 
+ Small plaster 
+ Cytotoxic sharps bin 
+ Cytotoxic spill kit 
+ Clinical tray or receiver containing the prepared drug 
+ 
+Pre-procedure 
+ 
+ Introduce yourself to the pati ent, explain and discuss the procedure with them and 
+gain their consent to proceed. 
+ Before administration check the following in line with the prescription chart: 
+o Patient details 
+o Drug 
+o Dose 
+o Date, time and route of administration 
+o Validity of prescription 
+o The prescription is legible 
+o Signature of the prescriber 
+ 
+Procedure/Administration of Methotrexate 
+ 
+1. Apply apron and gloves, close curtains or door, assist patient to lay on the left or right 
+lateral side in order to administer into the gluteus maximus muscle . 
+2. Expose the injection site . 
+3. Assess the injection site for inflammation, infection, oedema and skin lesions . 
+4. Clean the injection site for 30 seconds and allow to dry for 30 seconds . 
+5. With the non -dominant hand, pull the skin 2 -3 cm sideways or downwards fro m the 
+injection site (Z -track) and insert the needle. 
+6. Pull back the plunger, if no blood is aspirated, depress the plunger at approx. 1 ml 
+every 10 seconds and inject the drug slowly. If blood appears, withdraw the needle 
+completely, replace it and begin a gain. Explain to the patient what has happened. 
+7. Wait 10 seconds before withdrawing the needle . 
+8. Withdraw the needle the needle rapidly and release the tension on the skin but do 
+not massage the site. 
+SP22007 IM Methotrexate Clinical SOP and Competency Document v1.0 Oct 2022 Page 13 of 14 
+Please check against Staffnet that this printout is the most recent version of this document. 
+9. Apply gentle pressure to any bleeding point and then appl y a small plaster over the 
+picture site. 
+ 
+Post -procedure 
+ 
+ Ensure that all sharps and non -sharps waste are disposed of safely in a cytotoxic 
+sharps bin. 
+ Record admin istration on appropriate charts. 
+ 
+Accidental Spillage 
+In the event of an accidental spilla ge: 
+ 
+ Use the cytotoxic spillage kit . 
+ Wear polyvinyl gloves . 
+ Place paper towels over the liquid to blot up as much of the drug as possible avoid 
+spreading the methotrexate to a larger area . 
+ Clean the area with additional paper towels. Work from the outside to the middle . 
+ Wash the area with plenty of detergent and water . 
+ Dispose of plastic gloves and any used paper towels in the cytotoxic waste bin . 
+
+SP22007 IM Methotrexate Clinical SOP and Competency Document v1.0 Oct 2022 Page 14 of 14 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 3 : Z-track technique 
+
+(nursingtimes.net/clinical -archive/assessment -skills/injection -technique )

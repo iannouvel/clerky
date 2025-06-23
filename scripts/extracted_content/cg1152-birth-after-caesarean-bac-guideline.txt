@@ -1,0 +1,754 @@
+# Extracted from: CG1152 Birth After Caesarean (BAC) Guideline.pdf
+# Guideline ID: cg1152-birth-after-caesarean-bac-guideline
+# Content length: 37116 characters
+# Processing date: 1750066900.1267843
+
+Page 1 of 17 
+CG01152 Birth after Caesarean Section V6.1 Jan 2021 
+
+Birth after Caesarean Section ( BAC) Guideline 
+Summary statement: How does the document 
+support patient care? The purpose of this guideline is to provide good practice 
+evidence for staff caring for women who have previously had 
+a caesarean section 
+Staff/ stakeholders involved in development: Obstetric Anaesthetists, Obstetric Consultants and Senior 
+Midwifery Staff 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Obstetric Consultant /trainee /midwife 
+For use by: All staff involved in the management of Birth a fter Caesarean 
+Section ( BAC) 
+Purpose: To provide evidence -based guidance the management of 
+women choosing Birth after caesarean 
+This document supports: 
+ NICE g uideline Caesarean Section CG132 (2011 ) (Last 
+updated September 2019 ). 
+RCOG Birth After Previous Caesarean Birth (Green Top 45) 
+(2015). 
+Health and Socia l Care Act Regulations 
+Key related documents: Maternity Guidelines : Care of Women in La bour, Fetal 
+Surveillance , Caesarean Section , Induction of Labour and 
+Use of Oxytocin , Antenatal Risk Assessment, Labour Risk 
+Assessment 
+Approved by: Joint Obstetric G uideline Group (JOGG ) 
+Approval date: 27th January 2021 
+Ratified by Board of Directors/ Committee of 
+the Board of Directors Not Applicable – Divisional Ratification only required 
+Ratification Date: Not Applicable – Divisional Ratification only required 
+Expiry Date: January 2024 
+Review date: July 2023 
+If you require this document in another format such as Braille, large print, audio or another language 
+please contact the Trusts Communications Team 
+Reference Number: CG01152 
+
+Page 2 of 17 
+CG01152 Birth after Caesarean Section V6.1 Jan 2021 
+
+Version Date Author Status Comment 
+1.0 July 2010 Consultant 
+Obstetricians & BAC 
+Midwife Archived New Trustwide guideline 
+2.0 February 2011 CNST Midwife Archived Minor Administrative amendment 
+3.0 March 2012 Consultant 
+Obstetrician, BAC 
+Midwife & CNST 
+Midwife Archived Amend ments to guideline and 
+VBAC Care pathway as a result 
+of RCA recommendations 
+4.0 August 2013 Consultant 
+Obstetrician & CNST 
+Midwife Archived Version 3 expired -minor updates 
+only required 
+5.0 September 2016 Consultant 
+obstetrician, BAC 
+midwife, Clinical 
+Effectiveness 
+midwife, Patient 
+Safety midwife and 
+Practice 
+Development input. Archived Update as required as version 4 
+expired. 
+ 
+Another review will be required 
+in November 2017 when next 
+documents from NICE are 
+released. 
+6.0 May 2019 initial 
+review. Ja n 2020 
+consultant review Obstetric trainee, 
+Consultant 
+obstetrician Archived Reviewed in line with NICE 
+(2011) and RCOG (2015) 
+6.1 January 2021 Midwife (J. Collard) , 
+Consultant (Matthew 
+Jolly), 
+G. Addison, 
+A. Hamilton Live Additions from NICE CG132 
+Caesarean Section and NICE 
+NG121 Intrapartum Care of 
+Women with Existing Medical 
+Conditions or Obstetric 
+Complications and their Babies 
+Additions regard ing homebirths 
+and water births after CS . 
+
+The interpretation and application of clinical guidelines will remain the responsibility of the 
+individual clinician. If in doubt contact a senior colleague or expert 
+
+Page 3 of 17 
+CG01152 Birth after Caesarean Section V6.1 Jan 2021 
+ 
+Index 
+ 
+1.0 Aim ................................ ................................ ................................ ................... 4 
+2.0 Scope ................................ ................................ ................................ ............... 4 
+3.0 Responsibilities ................................ ................................ ................................ . 4 
+4.0. Introduction ................................ ................................ ................................ ....... 4 
+5.0. Antenatal Management ................................ ................................ ..................... 5 
+5.1 Referral pathway (See Appendix 1) ................................ ................................ ... 5 
+5.2 Antenatal Counselling ................................ ................................ ........................ 5 
+5.3 Special circumstances: ................................ ................................ ...................... 6 
+6.0. Intrapartum Management: ................................ ................................ ................ 7 
+6.1 Diagnosis of labour ................................ ................................ ............................ 7 
+6.2 Admission and ongoing management in labour ................................ ................. 8 
+6.3 Di et and prophylactic antacids ................................ ................................ ........... 8 
+6.4 Electronic fetal monitoring in labour (EFM) ................................ ........................ 8 
+6.5 Mobility in labour ................................ ................................ ................................ 9 
+6.6 Analgesia in labour ................................ ................................ ............................ 9 
+6.7 First stage ................................ ................................ ................................ .......... 9 
+6.8 Inducti on or Augmentation in labour ................................ ................................ 10 
+6.9. Second stage of labour ................................ ................................ ................... 10 
+6.10 Third stage of labour ................................ ................................ ...................... 11 
+7.0. Induction and augm entation of labour with VBAC ................................ ........... 11 
+7.1 Key points ................................ ................................ ................................ ........ 11 
+8.0. Uterine Rupture ................................ ................................ .............................. 11 
+9.0. Women requesting care outside of Guidelines ................................ ............... 12 
+9.0 Audit ................................ ................................ ................................ ............... 13 
+10.0. References ................................ ................................ ................................ ...... 14 
+Appendix 1 Flow chart for women with one previous caesarean section ................... 15 
+Appendix 2 BAC Pathway form ................................ ................................ ................ 16 
+
+Page 4 of 17 
+CG01152 Birth after Caesarean Section V6.1 Jan 2021 
+
+Birth after caesarean Section ( BAC) Guideline 
+ 
+1.0 Aim 
+ 
+To provide guidance on the management of women during pregnancy and in chil dbirth who 
+have had a previous c aesarean section. 
+ 
+2.0 Scope 
+ 
+The objectives of this guideline are: 
+ 
+ To support staff in the management of pregnant women wh o have had a previous 
+caesarean section. 
+ To ensure the safety of patients throughout the process. 
+ To ensure woman are supported throughout their pregnancy and labour and at the 
+time of birth. 
+ To ensure that women receive appropriate and consistent info rmation to support 
+them in making an informed decision about mode of birth. 
+ 
+3.0 Responsibilities 
+ 
+Midwives & obstetricians are expected : 
+ To access, read, understand and follow this guidance . 
+ To use their professional judgement in the application of this guideline . 
+ 
+Manageme nt are expected: 
+ To e nsure the protocol is reviewed as required in line with Trust and National 
+recommendations . 
+ To ensure the protocol is accessible to all relevant staff . 
+ 
+4.0. Introduction 
+ 
+Vaginal birth after caesarean (VBAC) v ersus elective repeat caesarean section (ERCS ) 
+clinical care pathway is recommended for best practice in antenatal counselling, shared 
+decision making and documentation. Planned VBAC is appropriate for and may be offered to 
+the majority of women with a singleton pregnancy of cephalic presentation at 37 weeks or 
+beyond who have had a single previous lower segment caesarean delivery, with or without a 
+history of previous vaginal birth. Birth after caesarean (BAC) is the term used to refer to the 
+discussion required when women have had a previous caesarean and can include a vaginal 
+birth or repeat caesarean. 
+Page 5 of 17 
+CG01152 Birth after Caesarean Section V6.1 Jan 2021 
+
+5.0. Antenatal Management 
+ 
+5.1 Referral pathway (See Appendix 1 ) 
+ 
+Women who have had one uncomplicated lower segm ent caesarean s ection (LSCS) for a 
+non-recurring factor (e.g. breech; placenta praevia; suspected fetal compromise) and who in 
+this pregnancy have no other risk factors, can receive the majority of their antenatal care 
+from the named midwife. If the woman request s a VBAC at booking or is unsure about her 
+preferred mode of birth , she should directed to Family Assist: Birth after caesa rean section 
+this contains a link to patient information leaflet RCOG Birth options after pr evious caesarean 
+section , or given a copy of the RCOG leaflet. The BAC Care Pathway (Appendix 2 ) should 
+be commenced for all women regardless of their preferred mode of birth since it allows 
+consistent documentation of plans for vaginal birth in case this occurs before an elective 
+repeat section date. 
+ 
+Referral to the BAC coun selling midwife should be made as early as possible . A consultant 
+appointment should be arranged shortl y after the counselling session (by 32 wee ks 
+gestation) . 
+ 
+5.2 Antenatal Counselling 
+ 
+Antenatal counselling must be documented in the notes using the BAC Care Pathway since 
+this facilitates and captures shared decision making (RCOG 2015) . 
+ 
+Successful VBAC has t he fewest complications, and the success rate of planned VBAC is 
+approximately 72- 75%. 
+ 
+Planned VBAC is contraindicated in women with previous uterine rupture or classical 
+caesarean scar (NB this is a vertical scar on the uterus, not the anterior abdomin al wall), and 
+in women who have other absolute contraindications to a vaginal birth that apply irrespective 
+of the presence or absence of a scar ( e.g. Major Placenta Previa ). 
+ 
+All women following previous CS should be reviewed by BAC counselling midwife a s early as 
+possible in the pregnancy . The BAC pathway should be commenced. 
+ 
+Obstetric n otes from the previous LSCS should be reviewed wherever possible to help in the 
+decision making process and to rule out any potential risks / contra -indications. If the woman 
+has had a CS in another hospital we need to request notes to see if she is suitable for a 
+VBAC. In women with complicated uterine scars, caution should be exercised and decisions 
+should be ma de on a case -by-case basis by an Obstetric Consultant with access to the 
+details of the previous surgery . 
+ 
+Women with one or more previous vaginal births should be informed that the previous 
+vaginal birth , particularly previous VBAC, is the single best predictor of successful VBAC and 
+is associated with a planned VBAC success rate of 85 -90%. Previous vaginal delivery is also 
+independently associated with a reduced risk of uterine rupture. 
+Page 6 of 17 
+CG01152 Birth after Caesarean Section V6.1 Jan 2021 
+
+Women should be made aware that the greatest risk of adverse outcome occurs in a trial of 
+VBAC resulting in emergency caesar ean delivery. They should be informed that planned 
+VBAC is associated with an approximate 1:200 risk of uterine rupture (although this risk 
+assessment will vary depending on prior medical and obstetric history). 
+ 
+This small risk of uterine rupture with va ginal birth should be discussed again with women 
+when in labour. It should also be discussed that an emergency caesarean sectio n may mean 
+a higher chance of: 
+ 
+ Heavy bleeding needing a blood transfusion. 
+ Infection, for exam ple, intrauterine infection. 
+ A longer hospital stay. 
+ 
+(NICE NG121 Intrapartum Care of Women with Existing Medical Conditions or Obstetric 
+Complications and their Babies ) 
+ 
+Women should be advised that preterm VBAC is as successful as term VBAC and the risk of 
+uterine rupture is lower. 
+ 
+5.3 Special circumstances: 
+ 
+Clinicians should be aware that there is uncertainty about the safety and efficacy of planned 
+VBAC in pregnancies complicated by postdates, twin gestation, fetal macrosomia, 
+antepartum stillbirth or maternal age of 40 years or more. Hence, a cautious approach is 
+advised if VBAC is being considered in such circumstances. Care should be individualised as 
+per discussion with women and her obstetrician and documented in the woman’s records 
+(including the maternity information system) . 
+ 
+Women who are preterm should be informed that planned preterm VBAC has similar 
+success rates to planned term VBAC but with a lower risk of uterine rupture. 
+ 
+Women who have had two or more LSCS, reques ting a VBAC may be supported after 
+detailed counselling by a senior obstetrician. This should include the risk of uterine rupture 
+and maternal morbidity, and the individual likelihood of a successful VBAC. These women 
+should be recommended to labour on the labour ward because there is recourse to 
+immediate surgical delivery ( RCOG 2015 ). 
+ 
+Clinically there is little or no difference in the risk associated with a planned caesar ean 
+section and a planned vaginal birth in women who have had up to 4 previous caesarean 
+sections. The risk of fever, bladder injuries and surgical injuries does not vary with planned 
+mode of birth. The risk of uterine rupture, although higher for planned vaginal birth, is rare. If 
+a woman chooses to plan a vaginal birth after she has previously given birth by caesarean 
+section, she should be fully supported in her choice. (NICE CG132 Caesarean Section ) 
+ 
+The absolute risk for birth -related perinatal death associated with VBAC is extremely low and 
+comparable to the risk for nulliparous women in labour (0.1%) . There is a small increase in 
+Page 7 of 17 
+CG01152 Birth after Caesarean Section V6.1 Jan 2021 
+ 
+neonatal respiratory morbidity when ERCS is performed before 39+0 gestation (3-4% at 
+39/40, 6% at 38/40) , which can be reduced with a preoperative course of antenatal 
+corticosteroids. It is advisable to book ERCS ≥39 weeks unless clinically indicated. 
+ 
+Women should be informed that ERCS is associated with a small increased risk o f placenta 
+previa and/or accreta in future pregnancies and of pelvic adhesions complicating any future 
+abdominopelvic surgery. 
+ 
+If VBAC i s appropriate the management of prolonged gestation should be discussed ; 
+including membrane sweeps, delaying elective LSCS to 41+ weeks or induction of labour 
+(see Induction of labour guideline ). Induction for pro longed gestation should be between 41 
+and 42 weeks gestation and the woman should either have been reviewed by a consultant in 
+clinic or reviewed by a c onsultant on admission for induction. In the case of a woman booked 
+for elective caesarean section, there should be a clear plan documented in the notes should 
+she labour prior to birth . 
+ 
+A discussion between the wo man and consultant obstetrician should take place regarding an 
+agreed plan for mode , timing and place of birth . This should be documented in the handheld 
+and hospital notes by 32 weeks. This discussion should include an individualised plan for 
+birth. 
+ 
+If the discussion reveals that the woman would like to labour in water or avoid continuous 
+monitoring, this plan should be documented in the BAC Care Pathway along with clear 
+documentation of the risks and benefits of choos ing these options. However water birth is not 
+contraindicated if using continuous waterproof telemetry. 
+ 
+A homebirth is not recommended but if requested (against medical advice) the guid ance to 
+support the individualis ed plan of care can be found in the Homebirth Guideline . There 
+should be an individual ised plan for those women who request a homebirth with previous 
+uterine scar . It is recommended that this involves a discussion between the woman, a 
+consultant obstetrician an d a senior community midwife regarding risks and benefits of this 
+option for birth. All discussions should be documented fully and clearly. 
+ 
+6.0. Intrapartum Management: 
+ 
+6.1 Diagnosis of labour 
+ 
+The diagnosis of labour should be made in the same way as fo r women without a uterine 
+scar (see Care of Wom en in Labour guideline ). 
+ 
+Women can be triaged on the phone in the usual way with the same advice given for 
+mobilising, eating and drinking and pain management at home however there should be a 
+lower threshold for admission and assessment given the diffi culties of diagnosing labour over 
+the phone. All telephone conversation s should be documented on the electronic maternity 
+information system to enable those triaging repeated calls to access previous history and 
+advice and act on a suspected long latent ph ase. 
+ 
+Page 8 of 17 
+CG01152 Birth after Caesarean Section V6.1 Jan 2021 
+ 
+If, on admission, the woman is diagnosed as bein g in the latent phase of labour, a senior 
+obstetrician should be informe d and consulted . The woman may either be admitted to the 
+antenatal ward or sent home, to ret urn when labour has established if deemed suitable to do 
+so. 
+ 
+6.2 Admission and ongoing m anagement in labour 
+ 
+It is recommended that women who wish to have a VBAC should be ad mitted and cared for 
+on labour ward to ensure the best availability of resources for immediate caesarean delivery 
+and advanced neonatal resuscitation if required. 
+ 
+Women with an unplanned labour onset and a history of previous caesarean delivery should 
+have a discussion with an experience d obstetrician t o determine feasibility of VBAC, if n ot 
+already done so antenata lly (RCOG 2015 ). 
+ 
+Following an initial assessment by the midwife, the o bstetric team on duty must be informed 
+of the admission and review the antenatal plan. This can be fo und on the BAC Care 
+Pathway . 
+ 
+Epidural analgesia is not contraindicated in a planned VBAC, although an increasing 
+requirement for pain relief in labour should raise awar eness of the possibility of potential scar 
+dehisce nce. 
+ 
+Women should be advised to have continuous electronic fetal monitoring (CEFM) for the 
+duration of planned VBAC including the risks and benefits , commencing at the onset of 
+regular uterine contractions (active labour) . If this is declined, document th is discussion and 
+decision in the records. 
+ 
+If there are any concerns or deviations from normal progress throughout the labour the 
+obstetric team should be notified immediately and a management plan must be documented. 
+ 
+As a minimum, labouring women who ha ve had a previ ous caesarean section should have a 
+documented review by the o bstetric t eam every 4 hours. 
+ 
+6.3 Diet and prophylactic antacids 
+ 
+Women may drink during labour and should be informed that non f izzy isotonic drinks may 
+be beneficial. Food and n on-clear drinks should be avoided once labour has established. 
+ 
+Prophylactic antacids should be commenced once labour has established . 
+ 
+6.4 Electronic fetal monitoring in labour (EFM) 
+ 
+Continuous E lectronic Fetal Monitoring (cEFM) is recommended for women having a VBAC , 
+commencing at the onset of regular uterine contractions. 
+ 
+If the woma n has requested intermittent auscultation , this should have been discussed 
+antenatally with the o bstetric c onsul tant and be documented on the BAC Care Pathway . 
+Page 9 of 17 
+CG01152 Birth after Caesarean Section V6.1 Jan 2021 
+
+6.5 Mobility in labour 
+ 
+Women should be encouraged to remain mobile and adopt upright positions during labour. 
+Where women have continuous EFM the use of telemetry (where available) is encouraged to 
+aid mobility . 
+ 
+6.6 Analgesi a in labour 
+ 
+The indications for analgesia in women having a VBAC are the same as for any woman in 
+labour. 
+ 
+The use of the birthing pool for analgesia requires prior antenatal discussion wit h VBAC 
+counselling midwife and consultant o bstetrician and shoul d be documented in the VBAC 
+Care Pathway . Water birth is not contraindicated if using continuous waterproof telemetry. 
+ 
+Epidural analgesia is not contraindicated in women having a VBAC, as it does not hinder the 
+diagnos is of uterine rupture; pain alone is not a reliable indicator. However, a n increasing 
+requirement for pain relief in labour with previously g ood working epidural analgesia should 
+raise the alarm of the possibility of an impending scar dehiscence . Women s hould be aware 
+that epidura l analgesia might not rule out the need for a general anaesthetic in the unlikely 
+event of sudden fetal or maternal compromise. 
+ 
+It should also be discussed with women in labour who have had a previous caesarean 
+section that regi onal analgesia is associated with: 
+ A reduced chance of another caesarean section 
+ An increased chance of an instrumental birth. 
+(NICE NG121 Intrapartum Care of Women with Existing Medical Conditions or 
+Obstetric Complications and their Babies .) 
+ 
+6.7 First stage 
+ 
+Once a diagnosis of labour has been made the partogram must be commenced. 
+ 
+Vaginal examinations should be undertaken in accordance with the Care of Women in 
+Labour guideline . 
+ 
+Do not routinely offer amniotomy to women in labour who have had a previous caesarean 
+section only if there is clinical need such as induction of labour or ‘slow progress’ (NICE 
+NG121 Intrapartum Care of Women with Existing Medical Conditions or Obstetric 
+Complications and their Babies ). 
+ 
+If a diagnosis of ‘slow progress ’ is made (i.e. less tha n 0.5 cm per hour) a review should be 
+undertaken by an obstetrician and a man agement plan must be discussed with the woman 
+and documented accordingly. If ‘slow progress ’ is diagnosed and IV access has not already 
+been established, this is an appropriate ti me for cannulation. 
+ 
+Page 10 of 17 
+CG01152 Birth after Caesarean Section V6.1 Jan 2021 
+
+6.8 Induction or Augmentation in labour (see induction of labour guideline ) 
+ 
+Women should be informed that there is a 2-3 fold increased risk of u terine rupture and 
+around a 1.5 fold increased risk of caesarean delivery in induced and/or augmented labour 
+compared with spontaneous VBAC labour. T he ab solute increase in risk rem ains small . 
+ 
+A senior obstetrician should discuss the following with the woman: the decision to induce 
+labour, the proposed method of induction, the decision to augment labour with oxytocin, the 
+time intervals for serial vaginal examination and the selected parameters of progress that 
+would necessitate discontinuing VBAC. 
+ 
+The decision to undertake augme ntation must only be made by a consultant o bstetrician who 
+has either reviewed the woman in person, or dis cussed the plan fully with the r egistrar . It 
+should be clearly documented that the use of oxytocin is recommended for induction / 
+augmentation but not for secondary arrest. 
+ 
+There must be clear documentation in the notes to support the diagnosis of dysfunctional 
+uterine activi ty and the absence of mechanical obstruction. 
+ 
+The oxytocin infusion shou ld be titrated so that contractions do not exceed the maximum rate 
+of 3-4 in 10 minutes. If contractions exceed 4 in 10 minutes, stop the s yntocinon infusion and 
+consider tocolysis i n the form of subcutaneous injection of Terbutaline 0.25 mgs. 
+ 
+6.9. Second stage of labour 
+ 
+Although there is no high -quality data on the optimum length of the second stage of labour in 
+the presence of a uterine scar, it is accepted practice that the lengt h of the second stage 
+should be limite d to one hour of active pushing before being reviewed by a n obstetrician, 
+unless there are additional concerns. 
+ 
+In women with an epidural there is evidence that delayed active pushing may help reduce the 
+risk of inst rumental delivery. Therefore, pushing can be delayed for one hour, assuming there 
+are no concerns regarding maternal and /or fetal wellbeing. 
+ 
+An obstetrician should review the active phase of the second stage of labour in all VBAC 
+women who have not achi eved sponta neous delivery within one hour and an individualised 
+plan made. 
+ 
+Women birthing at home or on the birth centre: 
+ 
+Women must be advised in the antenatal period that when birthing at home any obstetric 
+review and / or intervention will be delayed. If the woman is birthing in the home then 
+guidance on the second stage must follow the guidance within the hospital setting. Should 
+birth not be achieved within the one hour time frame, then the community midwife must call 
+the delivery suite and discuss t he case with the co -ordinator. As if in a hospital setting, a plan 
+should be made with the community midwife, the co -ordinator and the obstetrician. 
+ 
+Page 11 of 17 
+CG01152 Birth after Caesarean Section V6.1 Jan 2021 
+
+6.10 Third stage of labour 
+ 
+Active management of the third stage is recommended for women who have had a 
+successful VBAC. 
+ 
+7.0. Induction and augmentation of labour with VBAC (see Induction of labour 
+guideline ) 
+ 
+7.1 Key points 
+ 
+There is only a small amount of randomised data relating to induction of labour after 
+caesarean section. It is therefore difficult to evaluate risks associated with induction on the 
+basis of the data avai lable. The rate of vaginal birth following induction is the same as for 
+spontaneous labour and the rate of scar dehiscence or rupture in the largest observational 
+studies ranges from 0.1 -2.1% (mean 1.1%). There are a number of case reports of uterine 
+rupture following prostaglandin administration and data from the American and Canadian 
+observational studies suggested a higher rate of uterine rupture following induction of labour 
+after caesarean section with the highest rate associated with the use of pros taglandins. The 
+RCOG guideline states that clinicians should be aware that induction of labour using 
+mechanical methods (amniotomy or Foley catheter) is associated with a lower risk of scar 
+rupture compared with induction using prostaglandins. 
+ 
+The decis ion to induce l abour shoul d only be made by a consultant o bstetrician in 
+collaboration with the woman. The method of induction need s to be made by the c onsultant 
+obstetrician on an individual basis depending on the woman’s past obstetric history, current 
+situation and wishes. Review of the past o bstetric history should be documented in the 
+maternity notes. 
+ 
+All VBAC inductions are high risk and it remains the consultant’s decision where the 
+induction is carried out. A clear handover must take place with the on-call consultant at each 
+multi -disciplinary handover. This should include any decision to delay the induction due to 
+capacity or staffing issues and should initiate appropriate escalation 
+ 
+7.2 Methods of induction /augmentation 
+ 
+The Trust protocol for ‘Induction of Labour ’ should be adhered to ( see Induction of labour 
+guideline ). 
+ 
+8.0. Uterine Rupture 
+ 
+If uterine rupture is suspected, t he consultant o bstetrician on call should be informed 
+immediately and the obstetric emergency protocol followed (calling 2222). 
+All women with a previous scar should be carefully monitored for s ymptoms and signs of 
+uterine rupture. 
+Warning signs include: - 
+ Poor progress in labour (i.e. less than 0.5 cm per hour) 
+ Suspicious or pathological CTG 
+Page 12 of 17 
+CG01152 Birth after Caesarean Section V6.1 Jan 2021 
+ 
+ Severe abdominal pain, especially persisting between contractions or 
+breakthrough pain with a previously good working epidural 
+ Chest or shoulder -tip pain 
+ Sudden onset of shortness of breath 
+ Acute onset scar tenderness 
+ PV bleed or haematuria 
+ Cessation of previously effective uterine contractions 
+ Maternal tachycardia, hypotension or shock 
+ Loss of station of th e presenting part. 
+ 
+However, these are poor indicators and scar ruptures can occur suddenly and without 
+warning and all staff should remain vigilant. In the event of a suspected uterine rupture 
+Immediate (category 1) LSCS should be performed. 
+9.0. Women reque sting care outside of guidelines 
+ 
+How women determine risk during pregnancy is a complex process influenced by social and 
+cultural factors. Women deemed medically ‘high risk’ will also make an assessment of how 
+‘at risk ’ they feel. Previous birth experienc e or trauma can play a role in the decisions women 
+make. 
+It is often those who have had previous negative experiences with maternity or healthcare 
+that can decline nationally recommended care. Typical requests include refusal for induction 
+of labour, VBAC against advice, home birth or birth in birth centre, intermittent m onitoring 
+when CTG recommended or water birth. 
+Ideally we should be able to plan individualised care in the antenatal period. Professionals 
+must provide sufficient, objective and unbiased i nformation for the woman to make an 
+informed choice. Referral must be made to the counselling midwife at earliest opportunity if 
+women report previous negative birth experiences and/or decline care. 
+For women who request homebirth after caesarean (HBAC) t he counselling midwife will 
+inform both the named midwife and the team midwife so that the named midwife can arrange 
+to accompany the woman at her consultation. 
+Women should be able to make decisions about their care during pregnancy, birth and 
+postnatal t hrough an ongoing dialogue with professionals that empowers them. They should 
+be supported to make well informed decisions through a relationship of mutual trust and 
+respect with health professionals and their informed choices should be respected . 
+Women s hould be fully informed of the benefits and risks of an intended procedure, 
+alternative options, and implications of not undergoing the proposed treatment. They should 
+get enough time to reflect and ask questions. 
+Antenatal care planning is paramount . Wome n should have an appointment with a consultant 
+(and the counselling midwife as required) . There should be a personalised care plan in her 
+notes (electronic maternity information system) . A multidisciplinary team discussion is 
+recommended if women opt for o ut of guidance management. 
+If women arrive on the delivery suite unknown to the service with a high risk pregnancy, then an 
+immediate review should be undertaken. Midwives and doctors should work together to support 
+Page 13 of 17 
+CG01152 Birth after Caesarean Section V6.1 Jan 2021 
+ 
+women’s choices. There should be honest and open conversations when risks change and clear 
+documentation. 
+ 
+9.0 Audit 
+ 
+Suggested auditable standards for compliance with this guideline: 
+ 
+ Rate of successful VBAC in women opting for vaginal birth . 
+ Women who have had 1 or more previous caesarean se ctions should have a 
+documented discussion of the option to plan a vaginal birth. 
+ Women opting for vaginal birth should have a documented individual management 
+plan for labour by obstetrician. This should include: 
+ Monitoring the fetal heart in labour. 
+ Induction or augmentation of labour: 
+ Analgesia in labour. 
+
+Page 14 of 17 
+CG01152 Birth after Caesarean Section V6.1 Jan 2021 
+ 
+10.0. R eferences 
+ 
+Guise JM, McDonagh MS, Osterweil P, Nygren P, Chan BK, Helfand M. 2004. Systematic 
+review of the incidence and consequences of uterine rupture in women with previous 
+caesarea n section. British Medical Journal. Volume 329. Pages 19 -25. 
+ 
+Landon MB, Spong C, Thom E, Hauth JC, Bloom SL, Varner MW. 2006. Risk of uterine 
+rupture with a trial of labour in women with multiple and single prior caesarean delivery. 
+Obstetrics and Gynae cology. Vol 108. Pages 12 -20. 
+ 
+Landon MB, Spong C, Leveno K, Varner M , Rouse D, Moawad A, Caritis S, Harper M, 
+Peaceman A, Gersnoviez M. 2005. The MFMU Caesarean Registry: Impact of fetal size on 
+trial of labour success for patients with previous caesarea n for dystocia. American Journal of 
+Obstetrics and Gynaecology. Volume 195, Issue 4. Pages 1127 – 1131 . 
+ 
+Lydon -Rochelle M, Holt V, Easterling T, Martin D. 2001. Risk of uterine rupture during labour 
+among women with a prior caesarean delivery. The New Engl and Journal of Medicine. Vol 
+345, issue 1. Pages 3 -8. 
+ 
+NICE (2011 ) Caesarean Section CG132 . RCOG Press. Updated September 2019. NICE 
+CG132 
+ 
+NICE (2019) Intrapartum Care of Women with Existing Medical Co nditions or Obstetric 
+Complications and their Babies NICE NG121 
+ 
+RCOG (20 15) Birth after Previous Caesarean Bi rth, Green Top Guideline No 45. 
+https://www.rcog.org.uk/globalassets/documents/guidelines/gtg_45.pdf 
+
+Page 15 of 17 
+CG01152 Birth after Caesarean Section V6.1 Jan 2021 
+ 
+Appendix 1 Flow chart for women with one previous caesarean section 
+
+ Women planning a V BAC 
+CMW discuss at booking BAC information on Family 
+Assist which contains link to RCOG patient 
+information leaflet. Write on risk form for an 
+appointment to be made with consultant. 
+ Uncertainty regarding plan for birth 
+Discuss at booking BAC information on Family Assist 
+which contains link to RCOG patient information 
+leaflet. 
+Consultant appointment ideally shortly a fter the 
+anomaly scan and certainly by 32/40 
+Offer sweeps and IOL at 41 /40 and arrange induction 
+as per consultant plan in the notes . 
+ BAC midwife clinic at 14 -18/40 
+If opting for care o n the birth centre/ senior community 
+midwife. 
+ 
+If Elective Caesarean 
+Section Requested Request V BAC Consultant agreed 
+medical contraindication 
+to VBAC or request EL 
+LSCS. 
+32/40 ANC appointment to book 
+Caesarean Section at 39 +/40 
+VBAC 
+Page 16 of 17 
+CG01152 Birth after Caesarean Section V6.1 Jan 2021 
+ 
+Appendix 2 BAC Pathway form 
+ 
+G: P: EDD: No of previous C/S: No of previous vaginal births: 
+WSHT BAC Leaflet given  Referred to VBAC clinic  
+Previous obstetric notes reviewed  
+ 
+Presence of any of the fo llowing contra -indications for BAC: 
+ Three / more previous CS  Previous uterine dehiscence / rupture 
+ Any uterine CS incision  Previous non -birth related uterine 
+ other than low transverse surgery / damage 
+ Recurring cause for CS 
+Woman's preferences regarding mode of birth 
+At 
+booking : Keen for VBAC 
+Unsure 
+Wishing ERCS At VBAC 
+clinic: Keen for VBAC 
+Unsure 
+Wishing ERCS At 
+36/40: Keen for VBAC 
+Wishing ERCS 
+
+Management Plan for labour (Doctor to discuss with woman and sign below) * offer referral to senior CMW 
+ 
+Place of Birth: Labour Ward □ Birth Centre * □ Home * □ 
+Fetal Monitoring: Continuous monitoring □ Intermittent Auscultation □ 
+ Telemetry favourable □ 
+ 
+Management Plan in the event of (Doctor to discuss with woman and sign below) 
+Preterm labour (<37/40)  VBAC  ERCS 
+Spontaneou s labour 
+before ERCS date  VBAC  CS  N/A 
+No spontaneous labour 
+by 41 weeks  Sweep  IOL with ARM or balloon 
+catheter ± synto  ERCS 
+ IOL with prostaglandin (consultant decision only )  Balloon induction 
+Cannulation  on admission  as requir ed 
+Additional Information: 
+
+Date: Name, GMC no. & signature of doctor: 
+
+Labour management must be discussed between woman and Consultant Obstetrician. 
+Unit No: ………………………………………… 
+ 
+NHS No: …… ………………………………….. 
+ 
+Surname ……………………………………….. 
+ 
+Forenames …………………………………….. 
+Please complete or Affix Patient Label 
+ 
+Birth After Caesarean Section 
+Pathway 
+ 
+BAC = Birth after caesarean Section 
+ERCS = Elective Repeat Caesarean Section 
+Page 17 of 17 
+CG01152 Birth after Caesarean Section V6.1 Jan 2021 
+ 
+The decision for all types of IOL and augmentation must be made by the Consultant and 
+documented above. 
+Information to be discussed: VBAC versus ERCS (Information Source - RCOG) 
+
+Chance of Overall Incidence VBAC Incidence 
+ERCS 
+Successful VBAC (single previous CS) 
+dependent on indication for previous CS 3 out of 4 72-76% 
+Successful VBAC (at leas t 1 previous 
+vaginal birth + previous CS) Almost 
+9 out of 10 Up to 87 -90% 
+Uterine rupture 5 per 1 in 200 
+0.5% 1 per 1,000 / 
+0.1% 
+Baby developing breathing problems 
+after birth 25 per 1,000 / 
+2-3% 35 per 1,000 / 
+3-4% 
+Infant de veloping hypoxic ischaemic 
+encephalopathy 8 per 10,000 / 
+0.08% * 
+Birth-related perinatal death 10 per 10,000 / 
+0.1% ** 1 per 10,000 / 
+0.01% 
+Blood transfusion / endometritis 1% additional risk 
+Induction of labour using pge2 uterine 87 per 10 000 [0.87%] versus 29 per 10 000 [0.29%] 
+Rupture risk 
+* National rate 1.9 per 1000 births (0.19%) 
+** Equivalent to the risk for a woman having a normal birth of her first child 
+Other information 
+ Risks of anaesthetic complications low with both VBAC and ERCS . 
+ ERCS may increase the risk of serious complications in future pregnancies . 
+ Emergency CS may mean a higher chance of heavy bleeding needing a blood transfusion, infection 
+e.g. intrauterine infection, a longer hospital stay. 
+Risk factors for uns uccessful VBAC are: 
+ Induced labour  No previous vaginal birth  BMI >30  Previous CS for dystocia 
+When all these factors are present, successful VBAC is achieved in only 40% of cases 
+ 
+Date of discussion: Name of clinician: Signature: 
+
+Please add any fu rther information or changes to the plan here: 
+
+Name, GMC no. & signature of doctor: 
+Date:

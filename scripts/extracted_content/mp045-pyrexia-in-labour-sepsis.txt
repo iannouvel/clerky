@@ -1,0 +1,726 @@
+# Extracted from: MP045 Pyrexia in Labour & Sepsis.pdf
+# Guideline ID: mp045-pyrexia-in-labour-sepsis
+# Content length: 37129 characters
+# Processing date: 1750066901.4678135
+
+Pyrexia & Sepsis in 
+Pregnancy , Labour and in 
+Postnatal Period 
+
+Maternity Protocol MP045 
+ 
+Date agreed: April 2022 
+ 
+Pyrexia & Sepsis in Pregnancy, Labour and in the postnatal period MP045 
+University Hospitals Sussex NHS Trust East Page 2 of 19 
+
+Guideline Reviewer : Ehab Kelada 
+Version: 4 
+Approval Committee: Women’s Services Safety and Quality Committee 
+Date agreed: April 2022 (MGC 2023) 
+Review date: April 20 25 
+Cross reference: MP008 Infections in Pregnancy 
+MP068 Admissions to Neonatal Unit (NICU SCBU) 
+ 
+ Pyrexia & Sepsis in Pregnancy, Labour and in the postnatal period MP045 
+University Hospitals Sussex NHS Trust East Page 3 of 19 
+ Contents 
+Key Principles ................................ ................................ ................................ ................. 4 
+Scope ................................ ................................ ................................ ............................. 4 
+Responsibilites ................................ ................................ ................................ ............... 4 
+1.0 Sepsis ................................ ................................ ................................ ......... 5 
+2.0 Sepsis in Pregnancy ................................ ................................ .................... 5 
+3.0 Management of Pyrexia in Labour ................................ .............................. 8 
+4.0 Sepsis in the Puerperium ................................ ................................ ............ 9 
+5.0 Other Likely Causes of Sepsis Outside the Genital Tract following Pregnancy . 
+ ................................ ................................ ................................ .................. 11 
+6.0 Management of Sepsis in the Puerperium ................................ .................. 12 
+7.0 Prophylactic Measures Against Spread Of Infection ................................ .... 16 
+8.0 Neonatal Issues In Puerperal Sepsis ................................ ........................... 16 
+9.0 Suspected Infection in the Community Setting ................................ ........... 16 
+10.0 References ................................ ................................ ................................ . 17 
+Appendix A - Diagnostic criteria for sepsis ................................ ................................ .. 18 
+Appendix B - Staphylococcal and Streptococcal Toxic Shock Syndrome: .............. Error! 
+Bookmark not defined. 
+Clinical Disease Definition. ................................ .............. Error! Bookmark not defined. 
+Appendix C: Suggested Empirical Antimicrobials for use in Bacterial Sepsis after 
+Pregnancy ................................ ................................ ........ Error! Bookmark not defined. 
+Appendix D - BSUH Severe Sepsis Tool ................................ ................................ ........ 19 
+ Pyrexia & Sepsis in Pregnancy, Labour and in the postnatal period MP045 
+University Hospitals Sussex NHS Trust East Page 4 of 19 
+ 
+Key Principles 
+ 
+A protocol is a set of measurable, objective standards to determine a course of 
+action. Professional judgement may be us ed in th e application of a protocol. 
+ 
+Scope 
+ 
+Recognition and management of serious bacteri al illness arising in the genital tract 
+or elsewhere in the antenatal, intrapartum periods or following pregnancy , and its 
+management in primary and secondary care 
+♦ This pro tocol applies to: 
+o Pregnant women 
+o Women in labour 
+o Women following pregnancy suspected of, or diagnosed with, serious 
+bacterial sepsis. 
+ 
+Responsibilites 
+ 
+• Midwives & Obstetricians : 
+o To access, read, understand and follow this guidance 
+o To use their professional judgement in application of this protocol 
+ 
+• Management Team : 
+o To ensure the protocol is reviewed as required in line with Trust and 
+National recommendations 
+o To ensure the protocol is accessible to all relevant staff 
+o To ensure the protocol is available to service users on request 
+ Pyrexia & Sepsis in Pregnancy, Labour and in the postnatal period MP045 
+University Hospitals Sussex NHS Trust East Page 5 of 19 
+ 1.0 Sepsis 
+ 
+Sepsis may be defined as infection plus systemic manifestations of infection. 
+Severe sepsis may be defined as sepsis plus sepsis -induced organ dysfunction 
+or tissue hypoperfusion. 
+Septic shock is defined as the persistence of hypoperfusion despite adequate 
+fluid replacement therapy . 
+ 
+1.1 Definition (see Appendix A for diagnosis criteria for sepsis) : 
+Temperature of 38°C or above on a single reading, or 37.5°C or above on 2 
+consecutive readings 1 hour apart 
+1.2 Clinical signs suggestive of sepsis include one or more of the following: 
+pyrexia, hypothermia, tachycardia, tachypnoea, hypoxia, hypotension, 
+oliguria, impaired consciousness and failure to respond to treatment. These 
+signs, including pyrexia, may not always be present and are not necessarily 
+related to the severity of sepsis. 
+ 
+2.0 Sepsis in Pregnancy 
+ 
+2.1 Special attention should be paid to higher risk pregnant women 
+2.1.1 Risk factors for sepsis during pregnancy and labour are: 
+• Obesity 
+• Impaired glucose tolerance / diabetes 
+• Impaired immunity/ immunosuppressant medication 
+• Anaemia 
+• Abnormal vaginal discharge 
+• History of pelvic infection 
+• History of group B streptococcal infection 
+• Amniocentesis and other invasive procedures 
+• Cervical cerclage 
+• Prolonged spontaneous rupture of membranes 
+• Group A Strep ( GAS) infection in close contacts / family members 
+(pharyngitis, impetigo, celliulitis) 
+• Woman of black or other minority ethnic group origin 
+• Intravenous drug misusers 
+ 
+2.2 When community midwives su spect the development of sepsis based on the criteria 
+below, they should refer the woman to the labour ward immediately informing the 
+labour ward co -ordinator and Obstetric Regis trar. 
+ 
+2.3 Maternal tachycardia, constant severe abdominal pain and tenderness, fever 
+(greater than 38˚C) are important early features of genital tract sepsis that 
+should prompt urgent senior obstetric review and administration of 
+intravenous antibiotics. 
+ Pyrexia & Sepsis in Pregnancy, Labour and in the postnatal period MP045 
+University Hospitals Sussex NHS Trust East Page 6 of 19 
+ 2.4 Clinical signs suggestive of sepsis include one or more of the following: 
+pyrexia, hypothermia (<36˚), tachycardia (>100BPM), tachypnoea (>20 breath 
+per minute) , hypoxia, hypotension, oliguria, impaired consciousness and 
+failure to respond to treatment. These signs, including pyrexia, may not 
+always be present and are not necessarily related to the severity of sepsis . 
+ 
+2.5 All health professionals must be aware of the symptoms and signs of 
+maternal sepsis and critical illness and of the rapid, potentially lethal course 
+of severe sepsis and septic shock. 
+ 
+2.6 The presence of the following should be regarded as ‘red flags’ for the 
+diagnosis of sepsis: 
+2.6.1 Temperature >38 degrees Celsius 
+2.6.2 Persistent tachycardia >100 bpm 
+2.6.3 Respiratory rate greater than 20/min 
+2.6.4 Abdominal/chest pain and tenderness 
+2.6.5 Diarrhoea/vomiting may indicate exotoxin production (early toxic shock) 
+2.6.6 Decreased FM/absent FH 
+2.6.7 Pre-labour SROM/vaginal discharge 
+2.6.8 Uterine/renal angle tenderness 
+2.6.9 Woman generally unwell 
+ 
+2.7 Other clinical features suggestive of sepsis: 
+• Offensive vaginal discharge (smelly suggests anaerobes; 
+serosanguinous suggests streptococcal infection) 
+• Rigors 
+• Diarrhoea or vomiting (toxic shock syndrome) 
+• Rash (generalised streptococcal maculopapular rash) 
+• Abdominal/pelvic pain and tenderness 
+ 
+2.7.1 Productive cough 
+2.7.2 Urinary symptoms 
+See also diagnostic criteria of sepsis (Table A). 
+ 
+2.8 If sepsis is suspected, regular frequent observations should be made and use of 
+the Modified Early Obstetric Warning core (MEOWS) is crucial. The Obstetrician 
+should make a clear plan in the notes how often these observations are 
+required, but they should be at least hourly. 
+ 
+2.9 Severe sepsis requires multidisciplinary involvement of consultant 
+obstetrician, labour ward co -ordinator (or midwife providing care) critical 
+care specialists/anaesthetists and consultant microbiologist or infectious 
+disease physician and others as required. 
+ 
+2.10 It is the responsibility of the Obstetric Registrar to inform the other members 
+of this team 
+ Pyrexia & Sepsis in Pregnancy, Labour and in the postnatal period MP045 
+University Hospitals Sussex NHS Trust East Page 7 of 19 
+ 2.11 Establish IV access and take bloods for culture, lactate, FBC / CRP , U&E. 
+ 
+2.12 Take blood cultures and other samples as guided by clinical suspicion of the 
+focus of infection (e.g. mid -stream urine, high vaginal swab, throat swabs) 
+should be obtained prior to starting antibiotic therapy as they may become 
+uninformative within a few hours of commencing antibiotics but must not 
+delay antibiotic therapy. High -dose broad -spectrum antibiotics should be 
+given within one hour after diagnosis as this reduces the mortality rate to a 
+significant degree. 
+ 
+2.13 Fluid resuscitation: Infuse initial minimum 20 ml/kg normal saline or 
+Hartmann’s solution. 
+ 
+2.14 Use IV Cefuroxime IV and Metronidazole IV as first choice antibiotics if genital 
+tract sepsis is suspected. Co-amoxiclav does not cover MRSA or 
+Pseudomonas , and there is concern about an increase in the risk of 
+necrotising enterocolitis in neonates exposed to co -amoxiclav in utero. 
+ 
+2.15 The most common organisms identified in pregnant women dying from 
+sepsis are group A beta -haemolytic Streptococcus and E.Coli 
+ 
+2.16 Mixed infections with both Gram -positive and Gram -negative organisms are 
+common, especially in chorioamnionitis. Coliform infection is particularly 
+associated with urinary sepsis, preterm premature rupture of membranes, 
+and cerclage. Anaerobes such as Clostridium perfringens (the cause of gas 
+gangrene) are less commonly seen nowadays, with Peptostreptococcus and 
+Bacteroides spp . predominating. 
+ 
+2.17 Any relevant imaging studies should be performed promptly in an attempt to 
+confirm the source of infection and should not be deferred on the grounds of 
+pregnancy. 
+ 
+2.18 If preterm delivery is anticipated, cautious consideration should be given to 
+the use of antenatal corticosteroids for fetal lung maturity in the woman with 
+sepsis and warrants discussion with Consultant Obstetrician on call. 
+ 
+2.19 Transfer to I CU should be discussed critical care /anaesthesia / on-call 
+consultant if: 
+2.18.1 Hypotension or raised serum lactate persisting despite fluid 
+resuscitation, suggesting the need for inotrope support 
+2.18.2 If cardiac output monitoring,ventilatory support requiring 
+intubation, and renal support is necessary 
+2.18.3 If conscious level of the patient is significantly decreased 
+2.18.4 And in presence of multi -organ failure, uncorrected acidosis or 
+hypothermia 
+ Pyrexia & Sepsis in Pregnancy, Labour and in the postnatal period MP045 
+University Hospitals Sussex NHS Trust East Page 8 of 19 
+ 3.0 Management of Pyrexia in Labour 
+ 
+3.1 Complete full set of maternal observations (including temperature, pulse , 
+blood pressure (BP), oxygen saturation, and respiratory rate (RR) and 
+document on a MEOWS chart. Repeat all observations hourly. R eview 
+medical and obstetric history and any outstanding blood/urine/swab results. 
+Inform and discuss your care and plans with the woman. A single 
+temperature over 37.5C should prompt 1g paracetamol PO and hydration. 
+ 
+3.2 Inform doctor. A woman who develops a fever and tachycardia or other signs 
+of sepsis should be assessed by senior medical staff. 
+ 
+3.3 Take LVS, MSU , FBC/ CRP, and blood cultures with informed consent . Blood 
+cultures should be obtained prior to antibiotic administration if within 1 hour . 
+ 
+3.5 Administer broad -spectrum antibiotic within one hour of recognition of 
+severe sepsis . Commence treatment if maternal temperature of 38°C or 
+above on a single reading, or 37.5°C or above on 2 consecutive readings , 1 
+hour apart . Use IV Cefuroxime IV and Metronidazole IV as first choice 
+antibiotics if genital tract sepsis is suspected. 
+ 
+3.6 Rehydrate with IV fluids. In the event of hypotension and/or a serum lactate 
+>4mmol/l administer an initial minimum 20ml/kg of crystalloid . 
+ 
+3.7 During the intrapartum period, continuous electronic fetal monitoring is 
+recommended. In the presence of maternal pyrexia (defined as a 
+temperature of 38°C or above on a single reading, or 37.5°C or above on 2 
+consecutive readings 1 hour apart ) and this should also apply to sepsis 
+without pyrexia. 
+3.7.1 If new changes in baseline variability or new ons et decelerations, reassess 
+maternal mean arterial pressure, saturation and blood gases . 
+3.7.2 If CTG becomes pathological, the baby should be delivered. Evidence of 
+intrauterine infection is associated with abnormal fetal heart monitoring; 
+however, electronic fetal monitoring is not a sensitive predictor of early 
+onset neonatal sepsis 
+3.7.3 There is insufficient evidence regarding fetal blood sampling in the 
+presence of maternal sepsis to guide practice. 
+3.7.4 The effects of maternal sepsis on fetal wellbeing include the direct effect of 
+infection in the fetus, the effect of maternal illness/shock and the effect of 
+maternal treatment. The risk of neonatal encephalopathy and cerebral 
+palsy is increased in the presence of intrauterine infection. 
+ 
+3.8 In a critically ill pregnant woman, birth of the baby may be considered if it 
+would be beneficial to the mother or the baby or to both. A decision on the 
+timing and mode of birth should be made by a senior obstetrician follow ing 
+discussion with the woman as her condition allows. 
+ Pyrexia & Sepsis in Pregnancy, Labour and in the postnatal period MP045 
+University Hospitals Sussex NHS Trust East Page 9 of 19 
+ 3.9 If preterm delivery is anticipated, cautious consideration should be given to 
+the use of antenatal corticosteroids for fetal lung maturity in the woman with 
+sepsis and warrants discussion with Consultant Obstetrician on call. Women 
+and her partner should be kept informed at all times and the neonatal team 
+should come and discuss possible scenarios with the parents in preparation. 
+ 
+3.10 Attempting delivery in the setting of maternal instability increases the maternal and 
+fetal mortality rates unless the source of infection is intrauterine. 
+ 
+3.11 Epidural/spinal anaesthesia should be avoided in women with sepsis and a general 
+anaesthetic will usually be required for caesarean section. 
+ 
+3.12 Disseminated intravascular coagulation and uterine atony are common in 
+genital tract sepsis and often cause life -threatening postpartum 
+haemorrhage. Treatment, including delivery, should not be delayed once 
+septicaemia has developed because deterioration can be extremely rapid. 
+ 
+3.13 Inform Neonatal SpR to review baby at delivery. 
+ 
+If temperature is less than 37.3C within 6 hours postnatal stop antibiotics. 
+ 
+If temperature if more than 37.3C after delivery treat for a total of 5 days. 
+Switch IV to oral when temperature is less than 37.5C for 24 hours. 
+ 
+4.0 Sepsis in the Puerperium 
+ 
+4.1 Those caring for pregnant and post -partum women need to inform them of 
+risks of infection along with symptoms and signs and the need to seek advice 
+early if concerned . They should also inform them of how infections spread 
+and how they may be prevented as well as the importance of good personal 
+hygiene. This includes avoiding contamination of the perineum by washing 
+hands before and after using the lavatory or changing sanitary towels. It is 
+especially necessary when the woman or her family or close contacts have a 
+sore throat or upper respiratory tract infection This information should be 
+imparted bot h verbally and in written form and documented in the maternal 
+notes . 
+ 
+4.2 Postnatal observations of pulse, temperature, BP, respira tory rate , and lochia 
+should be done within 6 hours of birth . Women who have had complications 
+during labour and birth, assisted delivery, PPH, perineal trauma or other 
+higher risk interventions then observations should be considered daily. In the 
+community observations should be considered on women who have h ad a 
+LSCS or other higher risk interventions during community visi ts by midwives. 
+ 
+4.3 Any problems noted during a woman’s hospital stay should be reported directly to 
+her community carers (GP, midwives MSWs and health visitors) when she is Pyrexia & Sepsis in Pregnancy, Labour and in the postnatal period MP045 
+University Hospitals Sussex NHS Trust East Page 10 of 19 
+ discharged in order that appropriate follow up visits may be arranged and the 
+significance of developing symptoms recognised. 
+ 
+4.4 Some women will develop complications at home (after discharge if hospital 
+birth) . Observations of pulse, BP, temperature, respiratory rate, and lochia should 
+always be undertaken taken where sepsis is suspected. 
+ 
+4.5 Community carers should be aware of the importance of early referral to 
+hospital of recently delivered women who feel unwell and have pyrexia. 
+ 
+4.6 Symptoms of sepsis may be less distinctive than in the non -pregnant 
+population and are not necessarily present in all cases; therefore, a high 
+index of suspicion is necessary. Sepsis is often insidious in onset with a 
+fulminating course. The severity of illness should not be underestimated. 
+Community midwives and GPs need to be vigilant and visit regularly. Early 
+referral to hospital may be life saving. 
+ 
+4.7 Risk factors for puerperal sepsis are these mentioned above for sepsis in 
+pregnancy plus vaginal trauma, caesarean section, wound haematoma , 
+retained products of conception should be noted. 
+ 
+4.8 Common symptoms of sepsis in the puerperium : 
+4.8.1 Progression of symptoms can be very rapid in puerperal sepsis and 
+requires and equally rapid response 
+• Fever (>38˚) , rigors 
+• Sustained tachycardia more than 90 beats/minute 
+• Breathless ness (respiratory rate more than 20 breaths/minute) 
+• Abdominal or chest pain 
+• Uterine or renal angle pain and tenderness 
+• Diarrhoea or vomiting 
+• Breast engorgement/ redness ( 
+• Rash (generalised and usually maculopapular) 
+• Wound infection – spreading cellulitis or discharge 
+• Offensive vaginal discharge 
+• Productive cough 
+• Urinary symptoms 
+• Delay in uterine involution, heavy lochia 
+• General – non-specific signs such as lethargy, reduced appetite. 
+ 
+4.9 The major pathogens causing sepsis in the puerperium are: 
+4.9.1 Group A Strep ( GAS), also known as Streptococcus pyogenes (causing 
+30-40% of maternal death) 
+4.9.2 Escherichia coli 
+4.9.3 Staphylococcus aureus 
+4.9.4 Streptococcus pneumoniae 
+4.9.5 Meticillin -resistant S. aureus (MRSA), Clostridium septicum and 
+Morganella morganii . Pyrexia & Sepsis in Pregnancy, Labour and in the postnatal period MP045 
+University Hospitals Sussex NHS Trust East Page 11 of 19 
+ 4.9.6 Gram -negative bacteria that produce extended -spectrum beta -
+lactamases (ESBL) are an increasingly common (> 12% of coliform 
+bacteria) cause of co -amoxiclav - and cephalosporin -resistant urinary 
+tract infections 
+4.9.7 Early presentation of sepsis (less than 12 hours post -birth) is more 
+likely to be caused by streptococcal infection, particularly Group A 
+Streptococcus 
+ 
+5.0 Other Likely Causes of Sepsis Outside the Genital Tract following Pregnancy 
+• Mastitis 
+• Urinary tract infection, 
+• Pneumonia, 
+• Skin and soft -tissue infection, 
+• Gastroenteritis and pharyngitis are likely causes of sepsis other than the genital 
+tract. 
+• Rarer causes include bacterial meningitis , bacterial endocarditis . 
+ 
+5.1 Mastitis if complic ated may lead to bre ast abscesses, necrotiz ing fasciitis and 
+toxic shock sy ndrome. Immediate referral to hospital is indicated if the 
+woman with mastitis is clinically unwell, if there is no response to oral 
+antibiotics within 48 hours or if mastitis recurs or if there are very severe or 
+unusual symptoms . 
+ 
+5.2 Urinary tract infection 
+ See MP028 Infections in Pregnancy 
+ 
+5.3 Pneumonia 
+5.3.1 Identification of the cause of pneumonia is by submitting a sample of 
+sputum to the laboratory for culture . 
+5.3.2 Severe pneumonia should be managed in consultation with a 
+respiratory physician and a medical microbiologist. 
+5.3.3 A beta -lactam antibiotic together with a macrolide antibiotic is used 
+to cover typical and atypical organisms as per Medical Registrar advise 
+ 
+5.4 Skin and soft -tissue infection 
+5.4.1 Infection sites: Intravenous cannulae , Injection sites , Caesarean 
+section wound , Episiotomy wounds 
+5.4.2 Swabs should be taken of any discharge. 
+5.4.3 If drains, vascular access devices or other indwelling devices are 
+suspected as the source of infection, they should be removed as soon 
+as is practicable. 
+5.4.4 The location of intravenous cannula sites should be recorded and 
+inspected twice daily. 
+5.4.5 Skin and soft -tissue infections are particularly associated with toxic 
+shock syndromes . Pyrexia & Sepsis in Pregnancy, Labour and in the postnatal period MP045 
+University Hospitals Sussex NHS Trust East Page 12 of 19 
+ 5.4.6 Cellulitis first line Fluclox 500mg QDS or clindamycin 450mg QDS in penicillin 
+allergic patient 
+ 
+5.5 Necrotising fasciitis 
+5.5.1 The c linical feature of necrotising fasciitis is of agonising pain, typically 
+necessitating increasing amounts of strong analgesia culminating in use of 
+opaites . 
+5.5.2 Early necrotising fasciitis occurs deep in the tissues; therefore, in early 
+necrotising fasciitis there may be no visible skin changes. 
+5.5.3 As the necrotising process ascends to the skin, late infection produces 
+blisters and obvious necrosis 
+5.5.4 Septicaemic seeding of streptococci from a uterine focus may give rise to a 
+secondary focus in a limb, simulating a venous thrombosis. 
+5.5.5 Necrotising fasciitis ceftriaxone/clindamycin (no gent) and severe Pen allergy 
+teic/clind/gent 
+ 
+5.6 Gastroenteritis 
+5.6.1 C. difficile is rare but increasingly found in obstetric patients . 
+5.6.2 If diarrhoea is particularly offensive following antimicrobial therapy, a stool 
+sample should be submitted for C. difficile toxin testing. 
+5.6.3 A history of diarrhoea warrants routine culture (e.g. Salmonella , 
+Campylobacter ). 
+5.6.4 The laboratory should be informed if there is a clinical indication for 
+investigations for unusual pathogens such as Listeria monocytogenes 
+(consumption of soft cheese or cured meats) or if there is a history of 
+foreign travel (parasites, typhoid or cholera) 
+. 
+5.7 Pharyngitis 
+5.7.1 Most cases of pharyngitis are viral, but approximately 10% of cases in 
+adults are attributable to GAS 
+5.7.2 If 3 of the following criteria: fever, tonsillar exudate, no cough, tender 
+anterior cervical lymphadenopathy) are present, treatment with an 
+antibiotic is appropriate . 
+ 
+5.8 Infection related to regional anaesthesia 
+5.8.1 Spinal abscess is a very rare complication after regional anaesthesia in 
+obstetric patients. 
+5.8.2 The usual organism responsible is S. aureus 
+ 
+6.0 Management of Sepsis in the Puerperium 
+ 
+6.1 A general history and examination to identify the source of sepsis 
+Women should be assessed clinically and if unwell or with dehydration or 
+vomiting admission should be considered . Women should be fully informed 
+about their condition, the treatement recommened and involved in the plans 
+of care made. Pyrexia & Sepsis in Pregnancy, Labour and in the postnatal period MP045 
+University Hospitals Sussex NHS Trust East Page 13 of 19 
+ 
+6.2 Initial Measures 
+6.2.1 Establish IV access and take blood for culture, lactate, FBC, U& E, CRP 
+6.2.2 Administer broad spectrum I V antibiotics to cover aerobes and 
+anaerobes within one hour ; 
+6.2.3 Contact microbiologist and discuss antibiotic treatment 
+6.2.4 Fluid resuscitation : Infuse initial minimum 20 ml/kg normal saline or 
+Ringer’s Lactate 
+6.2.5 Call for help from critical care/anaesthesia/on -call consultant 
+6.2.6 Transfer to ICU should be discussed if: 
+• Hypotension or raised serum lactate persisting despite fluid 
+resuscitation, suggesting the need for inotrope support 
+• If cardiac output monitoring,ventilatory support requiring 
+intubation, and renal support is necessary 
+• If conscious level of the patient is significantly decreased 
+• And in presence of multi -organ failure, uncorrected acidosis or 
+hypothermia 
+ 
+6.3 Tasks to be performed within the first 6 hours of the identification of severe 
+sepsis 
+6.3.1 Obtain blood cultures prior to antibiotic administration 
+6.3.2 Administer broad -spectrum antibiotic within 1 hour of recognition of 
+severe sepsis 
+6.3.3 Measure serum lactate 
+6.3.4 In the event of hypotension and/or a serum lactate greater than 4 mmol/l: 
+6.3.5 Deliver an initial minimum 20 ml/kg of crystalloid or an equivalent 
+6.3.6 Apply vasopressors for hypotension not responding to initial fluid 
+resuscitation to maintain mean arterial pressure a bove 65 mmHg 
+6.3.7 In the event of persistent hypotension despite fluid resuscitation (septic 
+shock) and/or serum lactate greater than 4 mmol/l: 
+6.3.8 Achieve a central venous pressure of ≥8 mmHg 
+6.3.9 Achieve a central venous oxygen saturation ≥70% or mixed venous oxygen 
+saturation ≥65% 
+
+6.4 Tests and investigations 
+6.4.1 Do not delay in giving antibiotics but i f possible take blood cultures 
+ ideally befor e administration of antibiotics and perform the following 
+ investigations : 
+• HVS 
+• Urine 
+• CSF (as required) 
+• Wound swab 
+• Respi ratory tract 
+ 
+6.4.2 Any injection -site lesions should be swabbed and an MRSA screen 
+performed. If the methicillin -resistant Staphylococcus aureus (MRSA) Pyrexia & Sepsis in Pregnancy, Labour and in the postnatal period MP045 
+University Hospitals Sussex NHS Trust East Page 14 of 19 
+ status is unknown, a pre -moistened nose swab may be sent for rapid 
+MRSA screening 
+6.4.3 A history of intravenous drug use and features of sepsis of unknown 
+site requires a search for bacterial endocarditis or abscesses spread 
+via the bloodstream. Any injection -site lesions should be swabbed and 
+an MRSA screen performed . 
+6.4.4 Rapid antigen tests are available for some infections including group A 
+beta -haemolytic streptococcus (GAS) 
+ 
+6.5 Antibiotics 
+Administration of intravenous broad spectrum antibiotics is recommended within 
+one hour of suspicion of severe sepsis, with or without septic shock . The obstetric 
+SpR should discuss with microbiologist. 
+6.5.1 Use IV Cefuroxime IV and Metronidazole IV as first choice antibiotics . 
+6.5.2 Prior carriage of or infection with multiresistant organisms such as ESBL -
+producing Gram -negative bacteria, vancomycin -resistant enterococci and 
+MRSA should be noted on admission. 
+6.5.3 In ESBL infection, piperacillin/ tazobactam is likely to be ineffective 
+6.5.4 If genital tract sepsis is suspected, prompt early treatment with a 
+combination of high -dose broad spectrum intravenous antibiotics may be 
+life saving. 
+6.5.5 A combination of either piperacillin/tazobactam or a carbapenem plus 
+clindamycin provides one of the broadest ranges of treatment for severe 
+sepsis. 
+6.5.6 MRSA may be resistant to clindamycin, hence if the woman is or is highly 
+likely to be MRSA -positive, a glycopeptide such as vancomycin or 
+teicoplanin may be added until sensitivity is known. Clindamycin covers 
+most streptococci and staphylococci, including many MRSA, and switches 
+off exotoxin production with significantly decreased mortality. Not renally 
+excreted or nephrotoxic. Can be an option in penicillin allergy cases 
+6.5.7 Breastfeeding limits the use of some antimicrobials, hence the advice of a 
+consultant microbiologist should be sought at an early stage. 
+6.5.8 Gentamicin (as a single dose of 3 –5mg/kg) poses no problem in normal 
+renal function but if doses are to be given regularly serum levels must be 
+monitored. 
+6.5.9 See Appendix C for antimicrobial use for puerperal sepsis. 
+6.5.10 IVIG is recommended for severe invasive streptococcal or staphylococcal 
+infection if other therapies have failed. 
+6.5.11 Non -steroidal anti -inflammatory drugs (NSAIDs) should be avoided for pain 
+relief in cases of sepsis as they impede the ability of polymorphs to fight 
+GAS infection 
+6.5.12 Any relevant imaging studies should be performed promptly in an attempt 
+to confirm the source of infection and should not be deferred on the 
+grounds of pregnancy. This could include a chest X -ray, pelvic ultrasound 
+scan or computed tomography scan if pelvic abscess is suspected in 
+postnatal period. 
+ Pyrexia & Sepsis in Pregnancy, Labour and in the postnatal period MP045 
+University Hospitals Sussex NHS Trust East Page 15 of 19 
+ 6.6 Source control 
+6.6.1 The focus of infection should be sought and dealt with. This may be by 
+uterine evacuation or by drainage of a breast, wound or pelvic 
+abscess. Broad -spectrum antibiotics should be given to cover these 
+procedures . It may be necessary to consider radical surgical 
+interventions such as h ysterectomy in case of invasive endometrial 
+infection or infarction due to group A streptococcal infection. 
+6.6.2 Thrombocytosis (high platelet count) with a rising CRP and a swinging 
+pyrexia usually indicates a collection of pus or an infected haematoma 
+in the woman. 
+6.6.3 Suspicion of necrotising fasciitis should prompt involvement of 
+intensive care physicians and referral for surgical opinion, ideally from 
+plastic and reconstructive surgeons if available. 
+ 
+6.7 Fluids 
+6.7.1 The treatment of hypotension and oliguria in non -pregnant septic 
+patients involves aggressive fluid replacement. 
+6.7.2 However, postpartum women may be more susceptible to the 
+development of pulmonary oedema than non -pregnant patients after 
+circulatory fluid overload. 
+• Any IV fluid except dextrose 
+• Give IV fluids aim ing for CVP of > 8 mm Hg (12 mm Hg, if ventilated ). 
+• Give 20 mls/kg of crystalloid over 30 minutes and re -assess 
+6.7.3 Achieving the correct balance between these potentially conflicting aims is 
+exceedingly difficult, and central venous pressure monitoring and 
+vasopressor treatment are likely to be required on the ICU. It is important 
+to involve the anaesthetic and critical care teams early to advise on early 
+management and subsequent transfer. 
+6.7.4 If woman remains hypoten sive despite fluid therapy and v asopressors are 
+necessary seek the critical care specialist review and discuss transfer to 
+ICU. 
+6.7.5 If the woman is unstable/ severely septic she should be transferred to 
+HDU/ ITU where the following measures may be considered: 
+6.7.6 Inotrope support if hypotension or raised serum lactate persist despite 
+fluid resuscitation 
+6.7.7 Mechanical ventilation & airway protection in cases of pulmonary oedema 
+or ARDS 
+6.7.8 Renal dailysis in cases of renal failure 
+ 
+6.8 Blood products 
+6.8.1 Aim to keep Hb in range of 7 -9 g/dl 
+6.8.2 Keep platelet count above 50 x 108/l 
+6.8.3 If significant risk of bleeding aim for platelet count > 100 x 109/l 
+6.8.4 There is no evidence to support the use of fresh frozen plasma 
+6.8.5 Intravenous immunoglobulins for severe invasive streptococcal and 
+staphylococcal infection 
+ Pyrexia & Sepsis in Pregnancy, Labour and in the postnatal period MP045 
+University Hospitals Sussex NHS Trust East Page 16 of 19 
+ 6.9 Glucose contro l: Aim for blood sugar of 6 -8 mmol/l 
+ 
+6.10 DVT prophylaxis : LMWH heparin should be administered at prophylactic 
+dosage 
+ 
+6.11 Stress ulcer prophylaxis should be administered 
+ 
+7.0 Prophylactic Measures Against Spread Of Infection 
+ Infection prevention 
+. 
+8.0 Neonatal Issues In Puerperal Sepsis 
+ 
+8.1 Inform neonatology team in all cases of suspected puerperal sepsis. 
+ 
+8.2 The baby has increased risk of streptococcal and staphylococcal infection 
+during birth and during breastfeeding. 
+ 
+8.3 The umbilical area should be examined and a paediatrician consulted in the 
+event of sepsis in the puerperium. 
+ 
+8.4 If either the mother or the baby is infected with invasive GAS in the 
+postpartum period, both should be treated with antibiotics 
+ 
+9.0 Suspected Infection in the Community Setting 
+ 
+9.1 The community midwife should undertake a full review of the woman and 
+her maternity notes to assess the risk and possible causes of infection. 
+ 
+9.2 A full set of observations should be undertaken and documented where 
+sepsis is suspected (Signs of sepsis are referred to in Appendix A) 
+9.2.1 Temperatur e, blood pressure , pulse, respiration rate 
+9.2.2 Any wound sites should be carefully inspected for signs of infection 
+9.2.3 The woman should be asked about how she feels, pain and changes to 
+her perceived wellbeing. 
+ 
+9.3 After full assessment : 
+9.3.1 if the woman is well , observations are within normal limits and the 
+signs indicate a minor infection (slight redness / tenderness / oozing) 
+then 
+• The woman should be advised to see her GP at the surgery within 
+the same day (midwife should ensure the appointment has been 
+made where possible) . Pyrexia & Sepsis in Pregnancy, Labour and in the postnatal period MP045 
+University Hospitals Sussex NHS Trust East Page 17 of 19 
+ • A wound swab should be taken and sent to the laboratory (the 
+same day it was taken) to commence screening; this should be 
+documented in the maternal notes. 
+• Where a swab has been taken the woman should be asked to 
+inform the GP that this has been done. 
+• The midwife is responsible for ensuring the postnatal record in the 
+community midwives office has been updated with details of the 
+investigations undertaken in order that the results can be 
+followed up within 48 hours by the community midwife on that 
+shift. 
+• A follow up visit should be arranged within 48 hours. 
+ 
+9.3.2 If the woman is unwell and / or observations are outside normal 
+limits and /or the signs indicate a moderate or significant infection 
+(significant redness / tenderness / oozing ) then 
+• the midwife should call the labour ward and discuss the woman 
+and her condition wi th the on call registrar . 
+• Women required to be reviewed by the obstetric team should be 
+seen on labour ward within the same day. 
+• If the woman is unwell and the midwife is concerned she should 
+advice immediate transfer to the unit, by ambulance if necessary. 
+• The community midwife should ensure the woman has transport 
+to attend the unit and follow up that they have attended and been 
+reviewed. 
+• If on conta cting the unit, the woman has n ot attended for review 
+she should contact the woman by telephone to ascertain the 
+reason for non attendance and advice as appropriate. This should 
+be documented in the postnatal record sheet in the midwives 
+office. 
+ 
+10.0 References 
+ 
+RCOG (2012), Bacterial S epsis in Pregnancy , Green Top Guideline 64a 
+ 
+RCOG (2012), Bacterial Sepsis Following P regnancy , Green Top Guideline 64b 
+ 
+MBRRACE (2015), Saving Lives, Improving Mothers’ Care: Surveillance of maternal 
+deaths in the UK 2011 -13 and lessons learned to inform maternity care from the UK 
+and Ireland Confidential Enquiries into Maternal Deaths and Morbidity 2009 -13, 
+London 
+ 
+Obstetrician and gynaecologists 2012:14: 9 -16; Group A streptococcal puerperal 
+sepsis: management and prevention (review). Nithiya Palaniappan, Maria Menezes, 
+Penny Willson. Pyrexia & Sepsis in Pregnancy, Labour and in the postnatal period MP045 
+University Hospitals Sussex NHS Trust East Page 18 of 19 
+ Appendix A - Diagnostic criteria for sepsis 
+ 
+General variables: 
+• Fever (>38˚C) 
+• Hypothermia (core temperature <36˚C) 
+• Tachycardia (>100 beats per minute) 
+• Tachypnoea (>20 breaths per minute) 
+• Impaired mental state 
+• Significant oedema or positive fluid balance (>20ml/kg over 24 hours) 
+• Hyperglycaemia in the absence of diabetes (plasma glucose >7.7 mmol/l) 
+ 
+Inflammatory variables: 
+• White blood cell (WBC) count >12 x 109/l (note that a transient leucocytosis 
+is common in labour) 
+• Leucopenia (WBC count <4 x 109/l) 
+• Normal WBC count with >10% immature forms 
+• Plasma C -reactive protein >7mg/l/ 
+ 
+Tissue perfusion variables: 
+• Raised serum lactate ≥4 mmol/l 
+• Decreased capillary refill or mottling 
+ 
+Organ dysfunction variables: 
+• Arterial hypoxaemia (PaO2 (arterial oxygen partial pressure) /FIO2 (fraction 
+of inspired oxygen) >40kPa). Sepsis is severe if >33.3kPa in the absence of 
+pneumonia or >26.7kPa in the presence of pneumonia. 
+• Oliguria (urine output >0.5ml/kg/hr for at least two hours, despite adequate 
+fluid resuscitation) 
+• Creatinine rise of >44.2 µmol/l. Sepsis is severe if creatinine level >176 µmol/l 
+• Coagulation abnormalities (International Normalised Ratio [INR] >1.5 or 
+activated partial thromboplastin time [APTT] >60s) 
+• Thrombocytopaenia (platelet count <100 x 109/l) 
+• Hyperbilirubinaemia (plasma total bilirubin
+ 70 µmol/l) 
+• Ileus (absent bowel sounds) 
+ Pyrexia & Sepsis in Pregnancy, Labour and in the postnatal period MP045 
+University Hospitals Sussex NHS Trust East Page 19 of 19 
+ Appendix B- Severe Sepsis Tool

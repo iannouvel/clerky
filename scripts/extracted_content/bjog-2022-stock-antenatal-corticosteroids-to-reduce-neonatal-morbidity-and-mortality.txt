@@ -1,0 +1,1067 @@
+# Extracted from: BJOG - 2022 - Stock - Antenatal corticosteroids to reduce neonatal morbidity and mortality.pdf
+# Guideline ID: bjog-2022-stock-antenatal-corticosteroids-to-reduce-neonatal-morbidity-and-mortality
+# Content length: 89983 characters
+# Processing date: 1732953490.8492582
+
+Antenatal corticosteroids to reduce
+neonatal morbidity and mortality
+Green-top Guideline No. 74
+July 2022
+Please cite this paper as: Stock SJ, Thomson AJ, Papworth S; the Royal College of Obstetricians, Gynaecologists. Antenatal
+corticosteroids to reduce neonatal morbidity and mortality. BJOG 2022 ;
+DOI: 10.1111/1471-0528.17027 RCOG Green-top Guideline
+Antenatal corticosteroids to reduce neonatal morbidity and mortality
+SJ Stock, AJ Thomson, S Papworth, on behalf of the Royal College of Obstetricians and
+Gynaecologists
+Correspondence: Royal College of Obstetricians and Gynaecologists, 10-18 Union Street, London SE1 1SZ, UK.
+Email: clinicaleffectiveness@rcog.org.uk
+This guideline will supplement NICE guideline [NG25] Preterm labour and birth (November 2015, updated 2019)
+and the archived RCOG Green-top Guideline No. 7 Antenatal corticosteroids to reduce neonatal morbidity and mortality
+(October 2010).
+1. Key recommendations
+/C15 A course of antenatal corticosteroids given within the seven days prior to preterm birth reducesperinatal and neonatal death and respiratory distress syndrome. [Grade A]
+/C15 For women undergoing planned caesarean birth between 37+0and 38+6weeks an informed
+discussion should take place with the woman about the potential risks and beneﬁts of a courseof antenatal corticosteroids. Although antenatal corticosteroids may reduce admission to theneonatal unit for respiratory morbidity, it is uncertain if there is any reduction in respiratorydistress syndrome, transient tachypnoea of the newborn or neonatal unit admission overall,and antenatal corticosteroids may result in harm to the neonate which includes hypoglycaemiaand potential developmental delay. [Grade B]
+/C15 Corticosteroids should be offered to women between 24+0and 34+6weeks’ gestation in whom
+imminent preterm birth is anticipated (either due to established preterm labour, preterm prelabourrupture of membranes [PPROM] or planned preterm birth). [Grade A]
+/C15 Women with twins and triplets should be offered targeted antenatal corticosteroids for early birth in linewith recommendations for singletons. [Grade D]
+/C15 Birth should not be delayed for antenatal corticosteroids if the indication for birth is impacting the healthof the woman or her baby. [Grade GPP]
+/C15 Antenatal corticosteroids should be offered to women with PPROM, who are at increased risk ofpreterm birth. [Grade A]
+/C15 Antenatal corticosteroid use reduces neonatal death when the ﬁrst dose is given within the 48 hoursprior to birth. [Grade D]
+/C15 Beneﬁts are also seen when the ﬁrst dose is given within 24 hours of birth and antenatal corticosteroidsshould still be given if birth is expected within this time. [Grade D]
+RCOG Green-top Guideline No. 129 e36 of e60 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 8, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17027 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+2. Background and scope
+Maternal administration of antenatal corticosteroids before anticipated preterm birth is one of the most important
+interventions to improve neonatal outcomes.1They are effective in reducing neonatal respiratory morbidity and
+other complications of prematurity. The aim of this guideline is to provide evidence-based recommendations on theuse of antenatal corticosteroids in women at risk of preterm birth or undergoing caesarean birth at term.
+This guideline replaces the Royal College of Obstetricians and Gynaecologists (RCOG) Green-top guideline No. 7,
+Antenatal corticosteroids to reduce neonatal morbidity and mortality (published October 2010 and archived in 2016) and
+supplements NICE guideline [NG25], Preterm labour and birth (published November 2015, updated 2019).
+2Relevant
+recommendations can also be found in:
+/C15RCOG Green-top Guideline No. 73, Care of women presenting with suspected preterm, prelabour rupture of
+membranes from 24+0weeks of gestation3
+/C15RCOG Green-top Guideline No. 31, Investigation and management of the small-for-gestational-age fetus4
+/C15RCOG Green-top Guideline No. 27a, Placenta Praevia and Placenta Accreta: diagnosis and management5
+/C15NICE NG133, Hypertension in pregnancy: diagnosis and management6
+/C15NICE NG137, Twin and triplet pregnancy .7
+Within this document we use the terms woman and women’s health. However, it is important to acknowledge that
+it is not only people who identify as women for whom it is necessary to access women’s health and reproductiveservices in order to maintain their gynaecological health and reproductive wellbeing. Gynaecological and obstetricservices and delivery of care must therefore be appropriate, inclusive and sensitive to the needs of those individualswhose gender identity does not align with the sex they were assigned at birth.
+3. Identi ﬁcation and assessment of evidence
+The Cochrane Library and electronic databases (DARE, EMBASE, Trip, MEDLINE and PubMed) were searched
+looking for the following terms in the title or abstract ‘corticosteroids’, ‘glucocorticoids’, ‘pregnancy’, ‘obstetrics’,
+‘antenatal’ and ‘fetal’. The search was restricted to articles published until January 2021. The full search strategy isavailable to view online as supporting information (Appendix S1 and S2).
+This guideline was developed using the standard methodology for developing Green-top Guidelines. The
+recommendations have been graded according to the SIGN hierarchy of evidence.
+8
+4. The bene ﬁts of antenatal corticosteroids
+4.1. What are the beneﬁts of corticosteroids in preterm labour and birth?
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+A course of antenatal corticosteroids
+given within the seven days prior topreterm birth reduces perinatal and1++ A Corticosteroids recommended by a
+Cochrane systematic review of randomised
+RCOG Green-top Guideline No. 129 e37 of e60 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 8, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17027 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+(Continued)
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+neonatal death and respiratory distress
+syndromecontrolled trials and supported by NICE
+NG25.2
+A Cochrane systematic review (including 27 studies with 11 272 women and 11 925 babies) investigating
+the effects of corticosteroids administered prior to anticipated preterm birth found high certainty of thebeneﬁt of antenatal corticosteroids for the neonate.
+9These beneﬁts include reductions in perinatal death
+(risk ratio [RR] 0.85, 95% conﬁdence interval [CI] 0.77 –0.93), neonatal death (RR 0.78, 95% CI 0.70 –0.87)
+and respiratory distress syndrome (RDS) (RR 0.71, 95% CI 0.65 –0.78). There was moderate certainty
+evidence that antenatal corticosteroids reduce intraventricular haemorrhage (IVH) (RR 0.58, 95% CI 0.45 –
+0.75), and reduce developmental delay in childhood (RR 0.51, 95% CI 0.27 –0.97)Evidence
+level 1 ++
+No studies were identiﬁed that showed direct beneﬁcial effects of antenatal corticosteroids for the woman.
+4.2. What are the beneﬁts of corticosteroids in planned caesarean birth at term?
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+NICE CG132 recommends that planned
+caesarean birth should not routinely becarried out before 39
++0weeks ’gestation4D Recommended by NICE CG132.10
+For women undergoing planned caesarean
+birth between 37+0and 38+6weeks an
+informed discussion should take place withthe woman (and her family members orcarers as appropriate) about the potentialrisks and bene ﬁts of a course of antenatal
+corticosteroids. Although antenatal
+corticosteroids may reduce admission tothe neonatal unit (NNU) for respiratorymorbidity, it is uncertain if there is anyreduction in RDS, transient tachypnoea ofthe newborn (TTN) or NNU admissionoverall, and antenatal corticosteroids mayresult in harm to the neonate which
+includes hypoglycaemia and potential
+developmental delay (see table 1)2+ B Supported by a Cochrane systematic
+review that found that steroids mayreduce admission to the neonatal unit forrespiratory morbidity, but the quality ofevidence was low to moderate and camefrom a single trial
+Compared with vaginal birth, infants born by caesarean birth are at greater risk of RDS, TTN, and
+admission to the neonatal intensive care unit (NICU).
+11The risk of respiratory morbidity at term is low
+(~5%) and decreases with advancing gestational age.12Ideally, planned caesarean births should be
+undertaken at or after 39+0weeks’ gestation.10Evidence
+level 4
+RCOG Green-top Guideline No. 129 e38 of e60 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 8, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17027 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+When a planned caesarean birth is being undertaken before 39+0weeks’ gestation, corticosteroids may be
+considered to reduce the risk of neonatal respiratory morbidity. A Cochrane systematic review hasassessed the effects of antenatal corticosteroid administration given before planned caesarean birth at term(at or after 37
++0weeks’ gestation).13A previous version of this review14included data from four trials, but
+in the updated version data from three trials were removed as trials did not meet pre-specifedtrustworthiness criteria.
+13The updated review includes only one multicentre randomised controlled trial of
+998 women and infants, of whom 943 were analysed. As the trial was not placebo controlled and so bothparticipants and personnel knew whether or not antenatal corticosteroids were given, the trial wasclassiﬁed as having high risk of performance and detection bias. There was uncertainty if antenatalcorticosteroid administration decreased the risk of RDS (RR 0.34 95% CI 0.07 –1.65; low certainty evidence)
+or TTN, (RR 0.52, 95% CI 0.25 –1.11; low certainty evidence). Antenatal corticosteroids probably reduced
+admission to NNU or NICU for respiratory morbidity (all levels of care; RR 0.45, 95% CI 0.22 –0.90) with
+an absolute reduction of NNU admission for respiratory morbidity from 5.1 to 2.3% (moderate certaintyevidence). However, it was uncertain if overall admissions to NNU were reduced (RR 0.81, 95% CI 0.49 –
+1.33). The authors of this Cochrane review concluded that there is currently insufﬁcient evidence to drawany deﬁnite conclusions and that further studies of higher quality and larger sample sizes are required.There are several ongoing trials of antenatal corticosteroids that may inform future guidelines.Evidence
+level 2 –
+There is a paucity of evidence on the balance of beneﬁts versus harms when corticosteroids are administered in late
+pregnancy. Antenatal corticosteroids may increase the risk of neonatal hypoglycaemia in term neonates(extrapolating data from trials of corticosteroids in the late preterm period
+15and observational data16,17) and there
+is some evidence that they may be associated with developmental delay (based on limited and incomplete trialfollow-up
+18and observational studies;19see section 9.2). As the risk of respiratory distress at term is low ( ~5%), and
+it is usually mild and transient, and there is low certainty of beneﬁt, clinicians should discuss these factors with thewoman when considering the administration of corticosteroids prior to caesarean birth at term (See Table 1).
+5. At what gestation should antenatal corticosteroids be discussed and offered?
+Recommendation Evidence
+qualityStrength Rationale for the
+recommendation
+Corticosteroid administration has bene ﬁts when
+administered to women in whom imminentpreterm birth is anticipated (either due toestablished preterm labour, PPROM or plannedpreterm birth) before 24
++0weeks ’gestation. The
+obstetric and neonatal team should discuss the
+administration of corticosteroids at these earlygestations with the woman in the context of herindividual circumstances and preferences2+ B The bene ﬁts of corticosteroids at
+the threshold of viability aresupported by a systematic reviewand meta-analysis of observationalstudies, and recommended by
+guidance from the British
+Association of PerinatalMedicine.
+20
+Corticosteroids should be offered to womenbetween 24
++0and 34+6weeks ’gestation in whom
+imminent preterm birth is anticipated (either dueto established preterm labour, PPROM or plannedpreterm birth)1++ A Corticosteroids recommended by a
+Cochrane systematic review ofrandomised controlled trials andsupported by NICE NG25.
+2
+RCOG Green-top Guideline No. 129 e39 of e60 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 8, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17027 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Table 1. Risks and bene ﬁts of antenatal corticosteroids to inform discussions with the woman (and her family
+members or carers as appropriate)
+Bene ﬁts Harms Uncertainties
+22+0*to 34+6weeks
+(*when the woman, in
+discussion with the perinatalcare team, has made aninformed decision that activecare for the baby isappropriate)Highly likely to reduce:
+/C15perinatal mortality
+(RR 0.85, 95% CI 0.77–0.93; 2.3% fewer,
+95% CI 1.1% –3.6%
+fewer).
+9
+NNT 43.5 (95% CI
+27.8–100)
+/C15neonatal death (RR
+0.78, 95% CI 0.70 –
+0.87; 2.6% fewer, 95%CI 1.5% –3.6% fewer).
+9
+NNT 38.5 (95% CI 27.8 –
+62.5)
+/C15neonatal respiratory
+distress (RR 0.71,
+95% CI 0.65 –0.78;
+4.3% fewer, 95% CI3.2% –5.2% fewer).
+9
+NNT 23.3 (95% CI
+19.2–30.3)
+Likely to reduce:
+/C15intraventricular
+haemorrhage (RR
+0.58, 95% CI 0.45 –
+0.75; 1.4% fewer, 95%CI 0.8% –1.8% fewer).
+9
+NNT 71.4 (95% CI
+55.6–125)
+/C15developmental delay
+in childhood (RR
+0.51, 95% CI 0.27 –
+0.97; 95% CI 0.2% –
+5.7% fewer).9
+NNT 27 (95% CI
+17.9–500)
+Reductions in the aboveconditions are most likely tobe seen if birth is 24–
+48 hours after starting
+treatment.
+1
+A reduction in respiratory
+morbidity (but notmortality
+or interventricularhaemorrhage) likely to beseen if birth is within 7 days
+of starting treatment.
+1Likely to affect maternal
+glucose tolerance for up to5 days after administration(with higher risk in diabeticwomen).
+28
+Likely to reduce birthweight
+if birth more than 7 daysafter steroids (MD/C0147.01 g, 95% CI /C0291.97
+to/C02.05).
+1
+No bene ﬁts are likely to be
+seen if birth is more than
+7 days after starting
+treatment.1
+May increase psychiatric and
+behavioural diagnoses ifchildren born at termNNH 38.8 (95% CI30–52.4)
+19There is less evidence for
+women with multiplepregnancy.
+9
+Effects of unnecessaryantenatal corticosteroids (i.e.if birth more than 7 daysafter steroids) are not well
+described.
+While no long term harmshave been proven, large scaleobservational studiesnecessary forpharmacovigilance are lacking
+RCOG Green-top Guideline No. 129 e40 of e60 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 8, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17027 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Table 1. (Continued)
+Bene ﬁts Harms Uncertainties
+35+0to 36+6weeks Likely to reduce:
+/C15respiratory support
+(reduction from 146/1000 to 116/1000, RR
+0.80 [0.66 –0.97]) *.
+15
+NNT 33.3 (95% CI 21.5 –
+76.9)Likely to increase neonatal
+hypoglycaemia (150/1000 to240/1000, RR 1.60 [1.37 –
+1.87]) **.
+15
+NNH 11.1 (95% CI 8.8 –14.7)
+May increase psychiatric and
+behavioural diagnoses ifchildren born at term.NNH 38.8 (95% CI 30.5 –
+52.4)
+19While no long term harmshave been proven, large scaleobservational studiesnecessary for
+pharmacovigilance are
+lacking.Bene ﬁts seem unlikely if birth
+is more than 7 days afterstarting treatment, but thishas not been studied inwomen at this gestation
+Before planned caesarean
+birth at term 37 –39 weeksMay decrease:
+/C15admission to NNU
+with respiratorymorbidity (reductionfrom 51 per 1000 to23 per 1000 RR 0.45[0.22 to 0.90]).
+13
+NNT 35.7 (95% CI 25.1 –
+196.1)May reduce educational
+attainment at school age
+(increase in the proportionof children ranked byteachers as being in lowerquartile of academic abilityfrom 9 to 18%; andreduction in proportion ofchildren obtaining English
+proﬁciency from 13 to 7%).
+18There is uncertainty as to
+whether there is any
+reduction in RDS, TTN or NNUadmission overall. Risk of biasin the single centre studymeans there is low certaintyaround estimates.Short term complicationssuch as hypoglycaemia have
+not been rigorously studied,
+but are likely to also apply atthese gestational ages
+16as
+well as at late pretermgestations.Bene ﬁts seem unlikely if birth
+is more than 7 days afterstarting treatment, but this
+has not been studied in
+women at this gestation.While no long term harmshave been proven, large scaleobservational studiesnecessary forpharmacovigilance are lacking
+Rescue Course if treatment
+more than 7 days agoLikely to reduce need for
+respiratory support (reduction
+from 395 per 1000 to 311per 1000 RR 0.91 [0.85 –
+0.97]).NNT 11.9 (95% CI 9.9 –14.9)
+64Likely to reduce birthweight
+(mean difference 80g), head
+circumference and length,and neonatal bloodpressure.
+64Dose effects are seen for
+harms
+NNH, number needed to harm; NNT, Number needed to treat; MD, mean difference.
+*Figures include women 34 –36+5weeks ’gestation.
+**Figures include women 34 –36+5weeks ’gestation. ‘Highly likely ’indicates high certainty evidence; ‘Likely ’indicates moderate
+certainty evidence and ‘May ’indicates low certainty evidence. Certainty of evidence was aligned to the Grading of
+Recommendations, Assessment, Development and Evaluations (GRADE) system.75
+RCOG Green-top Guideline No. 129 e41 of e60 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 8, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17027 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+(Continued)
+Recommendation Evidence
+qualityStrength Rationale for the
+recommendation
+Clinicians and women should consider the balance
+of risks and bene ﬁts of corticosteroids in women
+in whom imminent preterm birth is anticipatedfrom 35
++0to 36+6weeks ’gestation4D In late preterm birth, steroids have
+short term respiratory bene ﬁts for
+the neonate but increase thelikelihood of neonatalhypoglycaemia. This is addressedin the Cochrane systematic reviewand in NICE NG25.
+2
+The gestational age range at which antenatal corticosteroids provide beneﬁt and should therefore be
+considered or offered, remains controversial.21NICE NG25 addresses the administration of
+corticosteroids to women at risk of preterm birth, recommending that when offering or consideringcorticosteroids a discussion should take place with the woman about how steroids may help and thepotential risks associated with their administration.
+2Evidence
+level 4
+There is evidence that corticosteroid administration has beneﬁts when given prior to birth at the
+threshold of viability (before 24+0weeks’ gestation).22–24A systematic review and meta-analysis
+investigating corticosteroid administration before 25+0weeks’ gestation, (nine observational studies and a
+total of 13 443 neonates) found that compared with controls, corticosteroid administration wasassociated with reduced mortality (odds ratio [OR] 0.48, 95% CI 0.42 –0.55), and reduced IVH/
+periventricular leukomalacia (PVL) (OR 0.70, 95% CI 0.63 –0.79).
+25In this study, antenatal corticosteroids
+were associated with signiﬁcantly reduced neonatal mortality at 22, 23 and 24 weeks; the beneﬁt forsevere IVH/PVL was signiﬁcant only at 23 and 24 weeks.Evidence
+level 2 +
+The British Association of Perinatal Medicine recommends that neonatal stabilisation and resuscitation
+may be considered for babies born from 22+0weeks’ gestation.20When a woman has made an informed
+decision, that active care for the baby is appropriate, then active obstetric management, including theadministration of corticosteroids, is important.Evidence
+level 4
+The 2020 Cochrane systematic review looked at outcomes in two gestational age subgroups at trial entry:
+up to 35 weeks+0days and from 34 weeks+0days.9No differences between subgroups for the outcomes
+of perinatal death, neonatal death, fetal death, RDS, IVH, birthweight or chorioamnionitis were seen.Evidence
+level 1 ++
+The subgroup analysis of antenatal corticosteroids from 34+0weeks gestation included in the Cochrane
+review9was dominated by a single trial which assessed the effects of corticosteroids in 2831 woman at
+risk of late preterm birth (34+0until 36+5weeks’ gestation).15In this trial the administration of
+corticosteroids signiﬁcantly reduced the requirement for respiratory support in the ﬁrst 72 hours of life(11.6% versus 14.4%; RR 0.80, 95% CI 0.66 –0.97). Neonatal hypoglycaemia was more common in the
+betamethasone group than in the placebo group (24.0 versus 15.0%; RR 1.6, 95% CI 1.37 –1.87).Evidence
+level 1 +
+RCOG Green-top Guideline No. 129 e42 of e60 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 8, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17027 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+There are currently insufﬁcient data to assess on long-term effects of late preterm antenatal corticosteroids for the
+child.9
+In very late preterm gestation women (from 35+0weeks’) the use of antenatal corticosteroids should be
+considered in light of the balance of risks and beneﬁts.Evidence
+level 4
+6. In what particular circumstances should antenatal corticosteroids be discussed with and offered
+to women?
+6.1. Multiple pregnancy
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+Women with twins and triplets should be
+offered targeted antenatal corticosteroidsfor early birth in line withrecommendations for singletons3D There is little direct evidence of bene ﬁti n
+twins, but no indication that the effects ofcorticosteroids are different in multiplepregnancies than in singletons in a
+Cochrane systematic review of randomised
+controlled trials
+Uncertainties around the bene ﬁts and
+risks of antenatal corticosteroids in twins
+and triplets should be discussed with
+women4 GPP This is regarded as good practice
+Single or multiple untargeted (routine)
+courses of corticosteroids should not be
+used in twin or triplet pregnancy. Womenshould be informed that there is noevidence of bene ﬁt in using untargeted
+administration of corticosteroids4D Recommendation from NICE NG137 on
+basis of no evidence of bene ﬁt.
+7
+The majority of antenatal corticosteroid trials has excluded women with multiple pregnancy so there is
+little evidence regarding use in twins or higher order multiple pregnancies. Eleven trials included in theCochrane Systematic Review of Antenatal Corticosteroids for lung maturity included some women withmultiple pregnancies, but outcomes were only reported separately for twins in four included studies.
+9In a
+prespeciﬁed subgroup analysis of these studies there were no statistically signiﬁcant differences in thematernal or perinatal outcomes of multiple pregnancies that received antenatal corticosteroids comparedto those that did not. However, the analyses included a limited number of cases so these ﬁndings shouldbe interpreted with caution.Evidence
+Level 3
+A secondary analysis of data from a trial of progesterone to prevent preterm birth in multiple pregnancy
+suggested there may be harm associated with antenatal corticosteroid use (432 women; 850 neonates).Babies of women who received antenatal corticosteroid treatment were more likely to be admitted to aneonatal intensive care unit (235 [78%] versus 322 [59%]) and receive mechanical ventilation (70 [23%] Evidence
+level 2 –
+RCOG Green-top Guideline No. 129 e43 of e60 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 8, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17027 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+versus 66 [12%]) with no apparent improvement in RDS or neonatal morbidity compared with babies of
+women who did not receive treatment.26
+NICE guideline NG137 recommends the targeted use of antenatal corticosteroids in women with multiplepregnancy based on a presumption of similar effects in multiple pregnancies as in singletons.
+7Evidence
+level 4
+NICE guideline NG137 recommends against the use of single or repeat doses of untargeted steroids due
+to limited, low quality evidence.7Evidence
+level 4
+6.2. Women with diabetes mellitus
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+Diabetes should not be considered an
+absolute contraindication to antenatal
+corticosteroids for fetal lung maturation4D NICE NG3 addresses the use of
+antenatal corticosteroids in women with
+diabetes.27
+In women with diabetes who are receiving
+corticosteroids, additional insulin should begiven according to an agreed protocol and
+close monitoring should be undertaken4D NICE NG3 addresses the use of
+antenatal corticosteroids in women withdiabetes.
+27
+For women with diabetes undergoingplanned caesarean birth between 37
++0and
+38+6weeks an informed discussion should
+take place with the woman (and her family
+members or carers as appropriate) about thepotential risk and bene ﬁts of a course of
+corticosteroids. Corticosteroid administrationis associated with increased rates ofneonatal hypoglycaemia2+ C The administration of corticosteroids has
+been shown to increase rates ofneonatal hypoglycaemia in retrospective
+cohort studies
+Women with diabetes mellitus have been excluded from most randomised controlled trials of antenatal
+corticosteroids because of concerns about their potential effects on glycaemic control. Maternal blood glucose levelsrise shortly after administration of corticosteroids and can remain elevated for up to 5 days.
+28,29One systematic
+review and meta-analysis identiﬁed no eligible studies on preterm birth outcomes following corticosteroid therapy inpregnancies complicated by diabetes.
+30
+Guidance from NICE recommends that diabetes should not be considered a contraindication to antenatalcorticosteroids for fetal lung maturation.
+27Evidence
+level 4
+RCOG Green-top Guideline No. 129 e44 of e60 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 8, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17027 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+In view of the effects of corticosteroids on glycaemic control, NICE recommends that in women with
+insulin-treated diabetes who are receiving steroids for fetal lung maturation, additional insulin should begiven according to an agreed protocol and the women should be monitored closely. Guidelines on themanagement of glycaemic control in pregnant women with diabetes during antenatal steroid administrationhave been produced by the Joint British Diabetes Societies for Inpatient Care.
+31Evidence
+level 4
+Retrospective cohort studies have shown that the administration of corticosteroids prior to caesarean
+section at term (after 37+0weeks’ gestation) in women with diabetes (gestational and pre-existing), is
+associated with increased rates of neonatal hypoglycaemia.32Evidence
+level 2 +
+Ideally the risks and beneﬁts of corticosteroids, and the potential adverse effects of a variable rate intravenous insulin
+infusion if required, should be discussed with the woman (and her family members or carers as appropriate) prior tothe administration of steroids.
+6.3. Pregnancies complicated by fetal growth restriction, pre-eclampsia or antepartum
+haemorrhage
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+Birth should not be delayed for antenatal
+corticosteroids if the indication for birth isimpacting the health of the woman orher baby4 GPP This is considered good practice
+NICE guidance NG25 recommends a
+course of antenatal corticosteroids shouldbe offered if planned early birth isnecessary for hypertension in pregnancy1+ B There is limited direct evidence of bene ﬁt
+in women with hypertensive syndromes.The use of antenatal corticosteroids and isendorsed by NICE NG25.
+2
+If imminent preterm birth is likely, acourse of antenatal corticosteroids shouldbe offered to women whose babies arethought to be either small-for-gestational-age (SGA) or to have fetal growth
+restriction, but women should be
+counselled about the lack of evidence toguide care2++ C There is little direct evidence of bene ﬁti n
+SGA babies, but equally there is littleevidence that antenatal corticosteroidsperform differently in babies with growthrestriction compared to the overall preterm
+population. The use of corticosteroids in this
+situation is recommended by RCOG Green-top Guideline No. 31.
+4
+Trials of antenatal corticosteroids include a diverse number of sub-populations of women whose response to
+corticosteroids may vary. However, in general sub-group analyses have been underpowered to provide preciseestimates of the beneﬁts and risks of antenatal corticosteroids for speciﬁc indications. NICE NG25recommendations for antenatal corticosteroid administration were thus made regardless of any speciﬁc indication
+for preterm birth.
+2
+RCOG Green-top Guideline No. 129 e45 of e60 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 8, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17027 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+In the Cochrane Systematic Review of antenatal corticosteroids prespeciﬁed subgroup analyses were
+performed in women with hypertension syndromes.9There were no differences in corticosteroid effects
+on perinatal mortality, neonatal mortality and fetal death seen between women with and without
+hypertension syndromes. Heterogeneity of effects were seen for RDS in the subgroup analyses, withpotentially a larger reduction in RDS seen in hypertensive mothers than other groups, but there isconsiderable uncertainty around these estimates. There were insufﬁcient data to perform subgroupanalyses for many other outcomes. NICE guidance recommends that a course of antenatal corticosteroidsis offered if planned early birth is necessary for hypertension in pregnancy.
+2,6Evidence
+level 1 +
+A systematic review identiﬁed no randomised controlled trials of antenatal corticosteroids in pregnancies
+complicated by fetal growth restriction.30A meta-analysis of eight observational studies of women with
+SGA or fetal growth restricted babies (2846 women and babies) found no statistically signiﬁcant beneﬁtsassociated with antenatal corticosteroids. No differences in neonatal mortality were associated withantenatal corticosteroid administration in babies that were SGA (pooled OR 0.78, 95% CI 0.58 –1.04;
+six studies, 958 infants) or those that had fetal growth restriction (pooled OR 0.81, 95% CI 0.58 –1.14;
+four studies, 504 infants). Antenatal corticosteroids were not associated with any statistically signiﬁcantreductions in morbidities either. One small study included in the meta-analysis found signiﬁcantly higherrates of survival without disability at two years’ corrected age in infants born with fetal growth restrictionwho were exposed to antenatal corticosteroids compared to those that were not exposed (115 infant;OR 2.55, 95% CI 1.11 –5.87], 82 versus 65%).
+33A subsequent systematic review of 13 observational,
+cohort and case-control studies including 6387 preterm SGA infants found that neonatal mortality wassigniﬁcantly lower among infants whose mothers had received antenatal corticosteroids than those whohad not (12 studies: 12.8 versus 15.1%; pooled OR 0.63; 95% CI 0.46 –0.86). There was no apparent effect
+on neonatal morbidity.
+34Evidence
+level 2 ++
+Children who are born preterm and growth restricted are at increased risk of adverse long-term
+neurodevelopmental outcomes. However, a secondary analysis of data from the multicentre AustralasianCollaborative Trial of Repeated Doses of Corticosteroids (ACTORDS), found that repeated antenatalbetamethsone treatment compared with placebo was not associated with adverse effects onneurocognitive function at 6 –8 years of age, even in the presence of fetal growth restriction.
+35Evidence
+level 1 –
+There is however, little evidence to suggest that steroids will perform differently in babies with growth
+restriction compared to the overall preterm population.1RCOG guidance on SGA babies recommends
+that women with a SGA baby should receive antenatal corticosteroids to accelerate fetal lung maturationand reduce neonatal death and morbidity in a similar way to those with a SGA baby.
+4Evidence
+level 4
+Additional recommendations on antenatal corticosteroids for women with Placenta Praevia and Placenta
+Accreta are given in RCOG Green-top Guideline No. 27a.5Evidence
+level 4
+RCOG Green-top Guideline No. 129 e46 of e60 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 8, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17027 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+7.4. Preterm, prelabour rupture of the membranes (PPROM)
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+Antenatal corticosteroids should be offered
+to women with PPROM who are atincreased risk of preterm birth1++ A A meta-analysis of randomised controlled
+trials supports the use of antenatalcorticosteroids in this situation
+There is currently limited evidence to
+recommend repeat courses of antenatalcorticosteroids if a woman remains atimminent risk of preterm birth seven daysafter administration of antenatalcorticosteroids. However, a further coursemay reduce the need for neonatalrespiratory support1+ B The administration of one or more repeat
+courses of corticosteroids is addressed insection 10.
+The role of antenatal corticosteroids in women presenting with suspected PPROM from 24
++0weeks’
+gestation is addressed in RCOG Green-top Guideline no. 73 and in NICE NG25.2,3The World Health
+Organization recommends that corticosteroids are appropriate for women with PPROM who have noclinical signs of infection.
+1Evidence
+level 4
+PPROM complicates up to 3% of pregnancies and is associated with 30 –40% of preterm births.36The
+median latency after PPROM is seven days and tends to shorten as the gestational age at PPROMadvances.
+37,38A meta-analysis of 17 randomised controlled trials has demonstrated that the administration
+of corticosteroids to women with PPROM reduces the risks of RDS (RR 0.81, 95% CI 0.67 –0.98) and IVH
+(RR 0.49, 95% CI 0.25 –0.96). No difference was observed between steroid and control groups concerning
+the risk for necrotising enterocolitis, neonatal sepsis and Apgar score of less than 7 at 5 minutes. Perinatalmortality was similar between steroid and control groups.
+39Evidence
+level 1 ++
+The administration of a repeat course of corticosteroids is addressed in section 10. In women with PPROM,
+concerns have been raised that multiple courses of corticosteroids may increase the risk of chorioamnionitis andneonatal sepsis.
+40–42
+A secondary analysis of the Beneﬁcial Effects of Antenatal Magnesium (BEAM) randomised controlled
+trial43investigated 1641 women with PPROM who received either one or two courses of antenatal
+corticosteroids.44The rate of neonatal sepsis was similar whether the woman had received one compared
+with two courses of steroids (16.2 versus 17.2%).44A further secondary analysis of the BEAM dataset
+found no increased risk of chorioamnionitis between the groups (single course incidence 12.3% and repeatcourse, 11.0%).
+45Evidence
+level 2 +
+RCOG Green-top Guideline No. 129 e47 of e60 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 8, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17027 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+7. What is the optimum dose and route of administration for a course of antenatal
+corticosteroids?
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+In the UK it is recommended that 24mg
+dexamethasone phosphate is givenintramuscularly in two divided doses of12 mg 24 hours apart or four divideddoses of 6 mg 12 hours apart2+ B A Cochrane systematic review, found that
+dexamethasone, compared withbetamethasone, reduced the risk ofintraventricular haemorrhage
+An alternative is 24 mg betamethasone
+sodium phosphate/acetate mix givenintramuscularly in two divided doses of12 mg 24 hours apart2++ B Betamethasone acetate/phosphate is the
+formulation of betamethasone which ismost trialled. Compared todexamethasone, betamethasone sodiumphosphate/acetate may reduce the risk of
+chorioamnionitis
+Clinicians should be aware that
+betamethasone phosphate, the preparation
+widely available in the United Kingdom,
+has different pharmacokinetics frombetamethasone sodium phosphate/acetatemix and there is little evidence to guidethe effective dosage regimen for thisformulationGPP This is considered good practice
+Oral or transplacental administration is not
+recommended2++ B There is insuf ﬁcient evidence to support
+administration by these routes
+Antenatal corticosteroids are designed to cross the placenta. They are given at high doses that have been unchanged
+since Liggins’ and Howie’s original experiments in the 1970s and have not been optimised for human pregnancy.
+46
+Two types of antenatal corticosteroid have been widely tested and used in clinical practice –betamethasone and
+dexamethasone. These are synthetic ﬂuorinated corticosteroids, with similar activities.46
+Betamethasone
+Betamethasone is available in two formulations. Betamethasone sodium phosphate is soluble with a short
+half-life, while betamethasone sodium acetate is insoluble and has a long half-life.47In many countries the
+two preparations are available in a 50:50 mixture (as a generic preparation or under the trade nameCelestone Chronodose
+/C226). This mixed soluble/insoluble preparation is similar to one used in the original
+studies performed by Liggins and Howie and has been most widely used in trials of antenatalcorticosteroids for fetal lung maturity.
+46,47This formulation is used in North America, Australia and most
+of Europe. It is an opaque white liquid that requires refrigeration. The most commonly trialled andrecommended dosage regimen is two 12 mg boluses given intramuscularly 24 hours apart (total 24 mg).Evidence
+level 2 ++
+RCOG Green-top Guideline No. 129 e48 of e60 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 8, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17027 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Betamethasone sodium phosphate, the soluble form of betamethasone, is used in some countries,
+including the United Kingdom, where the mixed formulation is not widely available. This is a clear liquid,
+has a short half-life and has been less widely tested in clinical trials. The difference between the two
+formulations of betamethasone and their very different pharmacokinetics has not been widely recognisedand many trial publications do not specify the formulation used. The optimum dosage strategy forbetamethasone sodium phosphate is not clear; however, given the short half-life a similar dosage scheduleto dexamethasone may be pragmatic.Evidence
+level 4
+Dexamethasone
+Dexamethasone phosphate is a soluble preparation, which is slightly cheaper than betamethasone sodium
+phosphate/acetate mix and does not require refrigeration. Dexamethasone is included in the WorldHealth Organisation Essential Medicine List , the World Health Organisation Managing complications in
+pregnancy and childbirth: a guide for midwives and doctors and is more commonly used in low and middle
+income countries.
+48,49The most commonly used dosage schedule in trials is four doses of 6 mg given
+intramuscularly 12 hours apart (total 24 mg).Evidence
+level 2 +
+In the Cochrane Systematic review on antenatal corticosteroids for fetal lung maturity a prespeciﬁed
+subgroup analysis was performed comparing the formulation of antenatal corticosteroid used.9Sixteen
+trials used ‘betamethasone’, and eight used dexamethasone. No distinction was made betweenbetamethasone sodium phosphate/acetate mix or betamethasone phosphate in the review, but themajority of betamethasone studies were carried out in countries where betamethasone sodiumphosphate/acetate mix is recommended. In this analysis betamethasone resulted in less maternalchorioamnionitis than dexamethasone, although there was uncertainty regarding these estimates. Littledifference between formulations was seen in other outcomes.
+Evidence
+level 2 +
+Another Cochrane systematic review assessed the use of different corticosteroids and regimens for
+accelerating fetal lung maturation and included a total of 12 trials (1557 women and 1661 infants).50No
+distinction was made in the review between betamethasone sodium phosphate/acetate mix orbetamethasone phosphate. Six of the included trials had a primary outcome of a fetal biophysicalparameter or maternal blood parameter rather than a morbidity outcome. On analysis of the remainingtrials, no differences were seen in respiratory distress syndrome (ﬁve trials, 753 babies) or perinatal death(four trials, 596 babies) between the two formulations. Dexamethasone resulted in a lower risk of
+interventricular haemorrhage (four trials, 549 babies).Evidence
+level 2 +
+More recently, a randomised control trial (1346 women, 1509 babies, 79 with follow up to two years)
+found no differences in the incidence of death or neurosensory disability at two years betweendexamethasone and betamethasone phosphate/acetate mix (198 [33%] of 603 infants receivingdexamethasone versus 192 [32%] of 591 infants receiving betamethasone phosphate/acetate mix; adjustedrelative risk [adjRR] 0.97, 95% CI 0.83 –1.13; P=0.66). Both drugs were given in two divided doses
+24 hours apart. Side effects of the two preparations were similar, although more women experienceddiscomfort at the injection site with betamethasone phosphate/acetate mix.
+51Evidence
+level 1 +
+RCOG Green-top Guideline No. 129 e49 of e60 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 8, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17027 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+There is insufﬁcient evidence to recommend use of other antenatal corticosteroids that may cross the
+placenta (including hydrocortisone), the use of oral preparations or direct fetal administration.50,52Evidence
+level 2 ++
+8. How long after administration is a course of antenatal corticosteroids most effective?
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+Antenatal corticosteroid use reduces
+neonatal death when the ﬁrst dose is given
+within the 48 hours prior to birth4D Discussed in WHO guidance, that cites
+an archived Cochrane review of
+randomised controlled trials.1
+Bene ﬁts are also seen when the ﬁrst dose is
+given within 24 hours of birth and antenatalcorticosteroids should still be given if birth is
+expected within this time4D Discussed in WHO guidance that cites
+an archived Cochrane review ofrandomised controlled trials.
+1
+Antenatal corticosteroids are most effectivein reducing RDS in pregnancies that birthbetween 24 hours and 7 days of
+administration of the second dose of
+antenatal corticosteroids4D Discussed in WHO guidance, that cites
+an archived Cochrane review ofrandomised controlled trials.
+1
+The WHO recommendations on interventions to improve preterm birth outcomes cites the (now
+archived) 2006 Cochrane review where subgroup analyses were performed according to the intervalbetween corticosteroid administration and preterm birth.
+1,53There was a signiﬁcant reduction in cases of
+RDS among babies born before 48 hours (RR 0.67, 95% CI 0.49 –0.93; three studies, 374 infants) and
+between one and seven days (RR 0.46, 95% CI 0.35 –0.60; nine studies, 1110 infants), but not among those
+born before 24 hours (RR 0.87, 95% CI 0.66 –1.15; nine studies, 517 infants) or those born more than
+seven days after the ﬁrst dose of antenatal corticosteroids (RR 0.82, 95% CI 0.53 –1.28; eight studies, 988
+infants). Signiﬁcant reductions were also observed in cases of cerebroventricular haemorrhage amonginfants born within 48 hours of the ﬁrst dose of steroids (RR 0.26, 95% CI 0.09 –0.75; one study, 339
+infants) but not in any of the other subgroups.Evidence
+level 4
+There was a signiﬁcant reduction in fetal and neonatal death for birth within 24 hours of administration
+(RR 0.60, 95% CI 0.39 –0.94; three studies 293 infants) and within 48 hours (RR 0.59, 95% CI 0.41 –0.86;
+one study, 373 infants) but not those born between one and seven days (RR 0.81, 95% CI 0.60 –1.09;
+three studies, 606 infants) or those born after seven days (RR 1.42, 95% CI 0.91 –2.23; three studies, 598
+infants). This difference was due to reduction in neonatal but not fetal deaths.Evidence
+level 4
+However, caution should be exercised in the interpretation of the data due to the limitations and potential bias of
+the subgroup analyses in the original 2006 review. The question as to whether the effects of antenatalcorticosteroids change with time to delivery would require re-analysis of individual patient data to clarify whetherthe association is real.
+54This re-analysis was not undertaken in the 2017 or 2020 updates of the Cochrane review
+and therefore the need for caution remains.9,55
+RCOG Green-top Guideline No. 129 e50 of e60 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 8, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17027 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Accumulation of data from population based cohort studies including large numbers of infants supports
+the early effects of antenatal corticosteroids. The EPICE group demonstrated that any antenatal
+corticosteroid was associated with reduced mortality with the largest effect 24 hours to seven days after
+ﬁrst injection (adjRR 0.5; 95% CI 0.4 –0.6).56Further analysis demonstrated a signiﬁcant risk reduction in
+mortality of 50% with a time of administration to birth interval of 18 –36 hours (4594 infants 24 –
+31 weeks, 11 countries) compared with no antenatal steroids, though the signiﬁcant reduction in severebrain injury was associated with longer administration to birth intervals (more than 48 hours). Alloutcomes had an increased risk after the interval had increased beyond seven days.Evidence
+Level 2 +
+A population based cohort study in Sweden of infants born at 22 –26 completed weeks’ gestation,
+demonstrated that survival was lower in infants not exposed to antenatal corticosteroids (Hazard ratio[HR] 0.26; 95% CI 0.15 –0.43), in infants born less than 24 hours [HR 0.53 (0.33 –0.87)] and more than
+7 days after steroid administration [HR 0.56 (0.32 –0.97)], but not in infants born 24 –47 hours after
+steroids [HR 1.60 (0.73 –3.50)], as compared with infants born 48 hours to seven days after
+administration.
+57Evidence
+Level 2 +
+A Canadian retrospective cohort study of 6870 infants born at 24 –33 weeks’ gestation concluded
+antenatal corticosteroids had maximal effect when given between one and seven days before birth. The
+odds of the composite adverse outcome were signiﬁcantly higher in all groups compared with neonates
+who received antenatal corticosteroids one to seven days before birth (no antenatal corticosteroids:adjusted OR 2.12, 95% CI 1.69 –2.65; partial antenatal corticosteroids: adjusted OR 1.48, 95% CI 1.22 –1.80;
+and antenatal corticosteroids at greater than seven days: adjusted OR 1.46, 95% CI 1.20 –1.77). Similar
+ﬁndings were observed with respect to neonatal mortality (no antenatal corticosteroids: adjusted OR 2.56,95% CI 1.83 –3.59; partial antenatal corticosteroids: adjusted OR 1.59, 95% CI 1.16 –2.18; and antenatal
+corticosteroids at greater than seven days: adjusted OR 1.40, 95% CI 1.00 –1.97).
+58Evidence
+Level 2 +
+A secondary analysis of two prospective studies including 2259 babies found that neonates exposed to
+antenatal corticosteroids between two and up to seven days prior to birth had the lowest risk ofrespiratory distress syndrome (51.3%), when compared to babies who received antenatal corticosteroidsbefore two days, seven to before 14 days, and from 14 days prior to birth (62.7%, 55.9, and 57.6%,respectively, P<0.001). There odds of respiratory distress syndrome with antenatal corticosteroids
+before two days and from 14 days prior to birth was increased when compared to antenatalcorticosteroids given between two and up to seven days before birth (aOR 2.07, 95%CI 1.61 –2.66 up to
+2 days and aOR 1.40, 95% CI 1.07 –1.83 for from 14 days). Babies exposed to antenatal corticosteroids
+from 14 days prior to birth were at increased odds for severe neonatal morbidity (aOR 1.57, 95% CI1.12–2.19) and early childhood morbidity (aOR 1.74, 95% CI 1.02 –2.95), compared to those exposed
+between two and up to seven days before birth.
+59Evidence
+Level 2 +
+RCOG Green-top Guideline No. 129 e51 of e60 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 8, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17027 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+9. What are the risks associated with the administration of antenatal corticosteroids?
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+Women should be counselled regarding the
+risks and uncertainties surrounding theevidence of antenatal corticosteroidtreatmentGPP This is considered good practice
+Institutions should use standard guidelines
+for the assessment and management ofneonatal hypoglycemia in late preterm orearly term newborns who have receivedrecent antenatal corticosteroidsGPP This is considered good practice. In a large
+RCT, antenatal corticosteroids increasedthe risk of hypoglycaemia in babies bornlate preterm
+9.1. What are the risks to the woman?
+In the Cochrane systematic review on antenatal corticosteroids for fetal lung maturity there was no
+evidence that antenatal corticosteroids increased rates of maternal infection.9Although the majority of
+data within the meta-analysis was from high income settings, the meta-analysis did include data from alarge randomised control trial of 2852 women at risk of early preterm birth (26
++0to 33+6weeks’
+gestation) at sites with maternal and neonatal hospital services meeting the WHO criteria for antenatalcorticosteroid treatment in ﬁve low and middle income countries.
+60Evidence
+level 1 +
+As described above corticosteroids are known to increase maternal blood glucose levels.29One trial
+included in the Cochrane systematic review on antenatal corticosteroids for fetal lung maturity reportedeffects on glucose tolerance.
+9In this small trial women treated with antenatal corticosteroids were more
+likely to have an abnormal glucose tolerance test (performed from 72 hours after steroid administration)compared to controls (123 women; RR 2.71, 95% CI 1.14 –6.46).
+61Evidence
+level 1 –
+9.2. What are the risks to the baby?
+Antenatal corticosteroid administration affects fetal growth. Babies who receive antenatal corticosteroids
+have a lower birth weight than those that received placebo.1,62,63A dose response is seen, and babies that
+receive multiple courses of antenatal corticosteroids are most affected with reductions in weight, headcircumference and length.
+64Evidence
+level 1 +
+As discussed above, late preterm babies who receive antenatal corticosteroids have higher rates of
+neonatal hypoglycaemia.15A retrospective cohort study including 99 neonates whose mother had received
+antenatal corticosteroids, found that the occurrence of neonatal hypoglycaemia was independent from theEvidence
+level 2 +
+RCOG Green-top Guideline No. 129 e52 of e60 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 8, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17027 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+time interval between steroid administration and birth.17Neonatal hypoglycaemia has also been
+demonstrated in women with diabetes who have received steroids prior to caesarean birth at term.32
+The long-term metabolic and neurological consequences of neonatal hypoglycaemia are uncertain; a
+follow-up cohort (at 4.5 years) from the Children With Hypoglycemia and Their Later Development
+(CHYLD) Study found that neonatal hypoglycaemia was associated with a dose-dependent increased riskof poor executive function and visual motor function and may therefore impact on later learning.
+65Evidence
+level 2 +
+Concerns have been raised that antenatal corticosteroids may have long lasting effects on the cardiovascular
+system and metabolic proﬁle. A 30-year follow up of 534 surviving participants of a randomised controlledtrial of antenatal corticosteroids, found no statistically signiﬁcant differences in growth, blood pressure,blood lipids, plasma cortisol, prevalence of diabetes, or history of cardiovascular disease in the groupexposed to antenatal corticosteroids compared to placebo.
+66However, participants exposed to antenatal
+corticosteroids were more insulin resistant and had higher plasma insulin concentrations in response to aglucose tolerance test than those exposed to placebo (60.5 versus 52.0 mIU/L; P=0.02). Cohort studies
+have shown young adults (23 –28 years) who were exposed to antenatal corticosteroids had decreased
+aortic distensibility and altered glucose metabolism compared to controls
+67and 14-year-olds exposed to
+antenatal corticosteroids had higher blood pressure than unexposed children.68Evidence
+level 2 +
+Another concern is that antenatal corticosteroids may have effects on brain development. An individual
+patient data meta-analysis of the effects of repeat antenatal corticosteroids is reassuring in that nodifferences were seen on death or neurodevelopment in follow up studies (six trials; 4557 children).
+64Evidence
+level 1 +
+However, emerging evidence suggested that there may be detrimental effects on long term development
+particularly in term born infants who were exposed to antenatal corticosteroids. A population cohort studyof nearly 70 000 school age children in Finland found antenatal corticosteroid exposure, compared withnon-exposure, was associated with higher risk of psychiatric and behavioural disorders (12.01% versus6.45%; adjusted hazard ratio [aHR], 1.33 [95% CI 1.26 –1.41]) especially in term-born children (8.89 versus
+6.31%; HR, 1.47 [95% CI, 1.36 –1.69]; NNH 38.8 [95% CI 30.5 –52.4]).
+19Evidence
+level 2 +
+A Canadian population cohort study found a similar association among term born infants exposed to
+antenatal corticosteroids during pregnancy with healthcare utilisation during childhood related tosuspected neurocognitive and neurosensory disorders (audiometry testing, visual testing or physicianservice claim with a diagnosis code related to a suspected neurocognitive disorder; 61.7% incorticosteroid exposed children (3346/5423) compared to 57.8% (302 520/523 782) in non-steroidexposed children; aHR 1.12, 95% CI 1.08 –1.16; P<0.001; NNH 25 (95% CI 19 –38).
+69Evidence
+level 2 –
+A cohort study has shown an increased cortisol response to psychological stress in term born 6 –11 year
+old girls and term born 14 –18 year olds exposed to antenatal corticosteroids preterm, compared to non-
+exposed children.70,71Further analysis of this cohort found effects on the development of fronto-parietal
+brain functions during adolescence, affecting multiple facets of adaptive cognitive and behavioural controlassociated with antenatal corticosteroid exposure.
+72Evidence
+level 2 +
+RCOG Green-top Guideline No. 129 e53 of e60 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 8, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17027 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Follow up of 407 of the original 998 participants of a trial of antenatal corticosteroids prior to term
+planned caesarean birth at 8 –15 years of age found that children exposed to antenatal betamethasone
+prior to planned caesarean birth were more likely to be in the lower quartile of academic ability
+(8.5 versus 17.7%; P=0.03); although no other differences in outcome were detected.18These ﬁndings
+must be interpreted with caution due to the low follow-up rates. In a cohort of 179 surviving adults,29–36 years old, who were born at extremely low birthweight (below 1 kg), exposure to antenatal
+corticosteroid was associated with clinically signiﬁcant anxiety (OR 3.34 [95% CI 1.03 –10.81]).
+73Evidence
+level 2 –
+WHO recommend antenatal corticosteroids should only be offered when a minimum standard of maternal
+and neonatal hospital services are available.1In a cluster randomised control trial in low- and middle-income
+settings of a strategy to scale up use of antenatal corticosteroids,74there was a very unexpected increase in
+neonatal mortality (RR 1.12, 1.02 –1.22) and stillbirth (RR 1.11, 1.02 –1.22) in clusters with increased
+antenatal corticosteroid use. Only 16% of the women who received antenatal corticosteroids gave birth to aless-than-ﬁfth-percentile newborn (which was used as a surrogate for preterm birth, due to difﬁculties inestablishing gestation) suggesting signiﬁcant over diagnosis of imminent preterm birth and overtreatmentwith antenatal corticosteroids. The increased mortality was driven by increases in infants above the 25
+th
+percentile for birthweight (i.e. likely term born). Reassuringly however, a subsequent large randomisedcontrol trial of 2852 women at risk of early preterm birth (26
++0to 33+6weeks’ gestation) attending sites
+with maternal and neonatal hospital services meeting the WHO criteria for antenatal corticosteroidtreatment in ﬁve low and middle income countries, found that, compared to placebo, dexamethasonephosphate reduced neonatal death (RR 0.84; 95% CI 0.72 –0.97; P=0.03) and perinatal mortality (RR 0.88;
+95% CI 0.78 –0.99; P=0.04) without increasing maternal infection (RR, 0.76; 95% CI 0.56 –1.03).
+60Evidence
+level 1 –
+10. What are the contraindications to the use of antenatal corticosteroids?
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+Birth should not be delayed to administer
+antenatal corticosteroids when there areserious concerns about maternal or fetalcondition that will be alleviated by
+expedited birth4 GPP This is considered good practice
+In the presence of systemic infection, the
+potential bene ﬁcial effects of antenatal
+corticosteroids intended for the baby are
+balanced against the effect of exacerbatingthe severity of systemic infection both forthe woman and her baby4D Addressed in guidance from the WHO.
+Corticosteroids cause immune
+suppression, so there is a potential risk of
+worsening systemic infection
+RCOG Green-top Guideline No. 129 e54 of e60 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 8, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17027 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Corticosteroids suppress the immune system, so there is a risk that their use may activate latent
+infections or exacerbate fungal infections. In a woman with systemic infection, it may theoretically
+suppress the immune response to infection. There is no evidence to suggest that a single course of
+corticosteroids increase infections or antibiotic use but caution should be exercised when there issystemic infection.
+1,9Evidence
+level 4
+11. In what circumstances should an antenatal course of corticosteroids be repeated?
+Recommendation Evidence
+qualityStrength Rationale for the
+recommendation
+Women should be informed that no reduction in
+serious morbidity or long-term bene ﬁts have been
+seen with repeat corticosteroids but babies whoreceive repeat doses of antenatal corticosteroidsare smaller (lower birthweight and reducedlength)1+ B These are the ﬁndings from an
+individual participant data meta-analysis of RCTs
+There is currently limited evidence to recommend
+repeat courses of antenatal corticosteroids if awoman remains at imminent risk of preterm birthseven days after administration of antenatal
+corticosteroids. However, a further course may
+reduce the need for neonatal respiratory support1+ B These are the ﬁndings from an
+individual participant data meta-analysis of RCTs
+The maximum number of corticosteroid courses
+given in any one pregnancy should not exceed
+three4 GPP Authors expert opinion from an
+individual participant data meta-
+analysis of RCTs
+An individual participant data meta-analysis included data from 11 randomised trials of repeat doses of
+corticosteroids (4857 women; 5915 babies; 4557 children) compared to single dose.
+64There was a statistically
+signiﬁcant reduction in the use of respiratory support in babies who had repeat antenatal corticosteroidscompared with infants who received a single dose (RR 0.91, 95% CI 0.85 –0.97). However, there was no effect
+of repeat corticosteroids on serious morbidity or mortality outcomes for the baby. No differences were seenin childhood outcomes of death, neurosensory impairment or disability or respiratory disease. Babies exposedto repeat antenatal corticosteroids had a lower birth weight than those exposed to a single course and a doseresponse was seen. Children who received repeat doses of antenatal corticosteroids had lower systolic,diastolic, and mean arterial blood pressures. The clinical relevance of this is unclear. The authors concluded thattotal dose of repeat antenatal corticosteroids to reduce the need for neonatal respiratory support should belimited to 24 –48 mg and a maximum of three courses to minimise side effects.
+Evidence
+level 1 +
+The World Health Organisation systematic review and guidance recommends a single rescue course of
+antenatal corticosteroids if women remain at high risk of preterm birth and more than seven days haselapsed since previous treatment.
+1Evidence
+level 4
+RCOG Green-top Guideline No. 129 e55 of e60 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 8, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17027 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+12. Recommendations for future research
+/C15Studies are required to determine whether antenatal corticosteroids are effective in reducing neonatal morbidity
+when administered prior to elective caesarean birth at term.
+/C15The gestational age range at which antenatal corticosteroids provide beneﬁt and should therefore be considered
+or offered, remains controversial and requires further investigation.
+/C15The safety and effectiveness of steroids in multiple pregnancy, women with diabetes and in women withchorioamnionitis requires further investigation.
+/C15Research is needed to investigate the effectiveness of lower doses of corticosteroids, compared with currentregimens, and the potential off-target effects of different formulations and dosing schedules of antenatalcorticosteroids.
+/C15Follow up studies are required to determine the long term effects of antenatal corticosteroids including oncardiovascular function and neurodevelopment.
+/C15Research is needed to investigate sexual dimorphism in response to antenatal corticosteroids.
+13. Auditable topics
+/C15Proportion of women undergoing planned caesarean birth between 37+0and 38+6weeks’ who have a
+documented discussion about the risks and beneﬁts of a course of corticosteroids. (ideally 100%)
+/C15Proportion of women who are considered to be at high risk of imminent preterm birth between 24+0and
+34+6weeks’ who are offered corticosteroids. (ideally 100%)
+/C15Proportion of women with twin or triplet pregnancy who receive single or multiple untargeted (routine)
+courses of corticosteroids. (0%)
+/C15Proportion of women who were deemed to be at high risk of imminent preterm birth, who give birth eightdays or more after administration of antenatal corticosteroids. (ideally 0%)
+/C15Proportion of women who receive antenatal corticosteroids unnecessarily –women who birth at term after
+preterm administration of steroids. (ideally 0%)
+14. Useful links and support groups
+/C15RCOG Information for you https://www.rcog.org.uk/en/patients/patient-leaﬂets/corticosteroids-in-pregnancy-to-reduce-complications-from-being-born-prematurely/
+/C15Bliss https://www.bliss.org.uk
+/C15Little Heartbeats https://www.little-heartbeats.org.uk
+/C15Tommy’s Premature birth –information and support https://www.tommys.org/pregnancy-information/pregnancy-
+complications/premature-birth-information-and-support
+/C15RCOG Information for you –When your waters break prematurely https://www.rcog.org.uk/en/patients/patient-
+leaﬂets/when-your-waters-break-prematurely/
+/C15NICE NG25, Preterm labour and birth http://www.nice.org.uk/guidance/ng25
+/C15SANDS http://www.sands.org.uk/
+/C15Birthrights Maternal request caesarean https://www.birthrights.org.uk/campaigns-research/maternal-request-caesarean/
+RCOG Green-top Guideline No. 129 e56 of e60 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 8, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17027 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+/C15Better Births Improving outcomes in maternity services in England https://www.england.nhs.uk/wp-content/
+uploads/2016/02/national-maternity-review-report.pdf
+/C15Caesarean Birth - Your Baby, Your Body, Your Life, Your Choice https://caesareanbirth.org/
+Disclosure of interests
+AJ and SP have declared no conﬂicts of interest. SJS has received grant funding from the Welcome trust for researchinto antenatal corticosteroids, paid to their institution, grant funding from the National Institute for Health Research,the Chief Scientist Ofﬁce Scotland, Tommy’s and HDR UK, paid to their institution and honoraria for a research talkfrom Hologic, paid to their institution. Full disclosure of interests are available to view online as supporting information.
+Funding
+All those involved in the development of the Green-top Guidelines, including the Guidelines Committee, GuidelinesCommittee co-chairs, guideline developers, peer reviewers and other reviewers, are unpaid volunteers and receive nodirect funding for their work in producing the guideline. The exception to this are the RCOG staff involved who aresalaried employees of the College and Guidelines Committee members who receive reimbursement for expenses forattending Guidelines Committee meetings. Please see more information on travel expense rules on the RCOG website.
+Supporting Information
+Additional supporting information may be found online in the Supporting Information section at the end of thearticle.
+Appendix S1 . Corticosteroids literature search strategy.
+Appendix S2 . Corticosteroids search strategy top up.
+References
+1.WHO Recommendations on Interventions to Improve Preterm Birth
+Outcomes ; 2015.
+2. National Institue for Health and Care Excellence. Preterm labour and
+birth. NICE guideline NG25 . London: NICE; 2015. updated 2019.
+3. Thomson AJ, on behalf of Royal College of Obstetricians and
+Gynaecologists. Care of women presenting with suspected preterm
+prelabour rupture of membranes from 24. BJOG 2019;126:e152-66.
+4. Royal College of Obstetricians and Gynaecologists. Investigation
+and Management of Small-for-gestational-age fetus . RCOG Green-
+top Guideline no. 31. London: RCOG; 2013.
+5. Jauniaux E, Alﬁrevic Z, Bhide AG, Belfort MA, Burton GJ, Collins
+SL, et al. Placenta praevia and placenta accreta: diagnosis and
+management: green-top guideline No. 27a. BJOG 2019;126:e1-e48.
+6. National Institue for Health and Care Excellence. Hypertension in
+pregnancy: diagnosis and management . NICE Guideline NG133.
+London: NICE; 2019.
+7. National Institue for Health and Care Excellence. Twin and Triplet
+Pregnancy . NICE Guideline NG137. London: NICE; 2019.
+8. Royal College of Obstetricians and Gynaecologists. Development of
+RCOG Green-top Guidelines . Clinical Governance Advice No. 1.
+London: RCOG; 2015.
+9. McGoldrick E, Stewart F, Parker R, Dalziel SR. Antenatal
+corticosteroids for accelerating fetal lung maturation for women atrisk of preterm birth. Cochrane Database Syst Rev 2021;12:
+CD004454.10. NICE. National Institue for Health and Care Excellence Caesarean Section .
+NICE clinical guideline 132. London: NICE; 2011. updated 2019.
+11. Gerten KA, Coonrod DV, Bay RC, Chambliss LR. Cesarean
+delivery and respiratory distress syndrome: does labor make adifference? Am J Obstet Gynecol 2005;193(3 Pt 2):1061 –4.
+12. Vidic Z, Blickstein I, /C20Stucin Gantar I, Verdenik I, Tul N. Timing of
+elective cesarean section and neonat al morbidity: a population-based
+study. J Matern Fetal Neonatal Med 2016;29:2461 –3.
+13. Sotiriadis A, Makrydimas G, Papatheodorou S, et al. Antenatal
+corticosteroids prior to planned caesarean at term on maternal and
+neonatal outcomes. Cochrane Database Syst Rev 2021;12:CD006614.
+14. Sotiriadis A, Makrydimas G, Papatheodorou S, Ioannidis JP,
+McGoldrick E. Corticosteroids for preventing neonatal respiratory
+morbidity after elective caesarean section at term. Cochrane
+Database Syst Rev 2018;8:CD006614.
+15. Gyamﬁ-Bannerman C, Thom EA, Blackwell SC, Tita ATN, Reddy
+UM, Saade GR, et al. Antenatal betamethasone for women at risk
+for late preterm delivery. N Engl J Med 2016;374:1311 –20.
+16. Gupta K, Rajagopal R, King F, Simmons D. Complications of
+antenatal corticosteroids in infants born by early term scheduled
+cesarean section. Diabetes Care 2020;43:906-8.
+17. di Pasquo E, Saccone G, Angeli L, Dall’Asta A, Borghi E, Fieni S, et al.
+Determinants of neonatal hypoglycemia after antenatal administrationof corticosteroids (ACS) for lung maturation: data from two referral
+centers and review of the literature. Early Hum Dev 2020;143:104984.
+RCOG Green-top Guideline No. 129 e57 of e60 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 8, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17027 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+18. Stutchﬁeld PR, Whitaker R, Gliddon AE, Hobson L, Kotecha S,
+Doull IJ. Behavioural, educational and respiratory outcomes of
+antenatal betamethasone for term caesarean section (ASTECStrial). Arch Dis Child Fetal Neonatal Ed 2013;98:F195 –200.
+19. R €aikk€onen K, Gissler M, Kajantie E. Associations between
+maternal antenatal corticosteroid treatment and mental and
+behavioral disorders in children. JAMA 2020;323:1924-33.
+20. British Association for Perinatal Medicine. Perinatal Management of
+Extreme Preterm Birth Before 27 Weeks of Gestation: A Framework
+for Practice . London: BAPM; 2019.
+21. Shanks AL, Grasch JL, Quinney SK, Haas DM. Controversies in
+antenatal corticosteroids. Semin Fetal Neonatal Med 2019;24:182-8.
+22. Park CK, Isayama T, McDonald SD. Antenatal corticosteroid
+therapy before 24 weeks of gestation: a systematic review andmeta-analysis. Obstet Gynecol 2016;127:715 –25.
+23. Travers CP, Clark RH, Spitzer AR, Das A, Garite TJ, Carlo WA.
+Exposure to any antenatal corticosteroids and outcomes in
+preterm infants by gestational age: prospective cohort study. BMJ
+2017;356: j1039.
+24. Ehret DEY, Edwards EM, Greenberg LT, Bernstein IM, Buzas JS,
+Soll RF, et al. Association of antenatal steroid exposure withsurvival among infants receiving postnatal life support at 22 to 25weeks’ gestation. JAMA Netw Open 2018;1:e183235.
+25. Deshmukh M, Patole S. Antenatal corticosteroids in impending
+preterm deliveries before 25 weeks’ gestation. Arch Dis Child Fetal
+Neonatal Ed 2018;103:F173 –6.
+26. Viteri OA, Blackwell SC, Chauhan SP, Refuerzo JS, Pedroza C,
+Salazar XC, et al. Antenatal corticosteroids for the prevention of
+respiratory distress syndrome in premature twins. Obstet Gynecol
+2016;128:583 –91.
+27. National Institue for Health and Care Excellence. Diabetes in
+Pregnancy: Management from Preconception to the Postnatal Period .
+NICE guideline NG3. London: NICE; 2015. updated 2020.
+28. Jolley JA, Rajan PV, Petersen R, Fong A, Wing DA. Effect of
+antenatal betamethasone on blood glucose levels in women with
+and without diabetes. Diabetes Res Clin Pract 2016;118:98 –104.
+29. Itoh A, Saisho Y, Miyakoshi K, , Fukutake M, Kasuga Y, Ochiai D, et al.
+Time-dependent changes in insulin requirement for maternal glycemic
+control during antenatal corticosteroid therapy in women with
+gestational diabetes: a retrospective study. Endocr J 2016;63:101 –4.
+30. Amiya RM, Mlunde LB, Ota E, Swa T, Oladapo OT, Mori R.
+Antenatal corticosteroids for reducing adverse maternal and child
+outcomes in special populations of women at risk of imminent
+preterm birth: a systematic review and meta-analysis. PLoS One
+2016;11:e0147604.
+31. Dashora U, Murphy HR, Temple RC, Stanley KP, Castro E,
+George S, et al. Managing hyperglycaemia during antenatal steroidadministration, labour and birth in pregnant women with diabetes.Diabet Med 2018;35:1005 –10.
+32. Paul R, Murugesh C, Chepulis L, Tamatea J, Wolmarans L. Should
+antenatal corticosteroids be considered in women with gestationaldiabetes before planned late gestation caesarean section. Aust N Z
+J Obstet Gynaecol 2019;59:463-6.
+33. Schaap AH, Wolf H, Bruinse HW, Smolders-De Haas H, Van
+Ertbruggen I, Treffers PE. Effects of antenatal corticosteroidadministration on mortality and long-term morbidity in early
+preterm, growth-restricted infants. Obstet Gynecol 2001;97:954 –60.
+34. Blankenship SA, Brown KE, Simon LE, Stout MJ, Tuuli MG.
+Antenatal corticosteroids in preterm small-for-gestational ageinfants: a systematic review and meta-analysis. Am J Obstet Gynecol
+MFM
+2020;2:100215.
+35. Cartwright RD, Crowther CA, Anderson PJ, Harding JE, Doyle
+LW, McKinlay CJD. Association of fetal growth restriction withneurocognitive function after repeated antenatal betamethasone
+treatment vs placebo: secondary analysis of the ACTORDS
+randomized clinical Trial . JAMA Netw Open 2019;2:e187636.
+36. Mercer BM. Preterm premature rupture of the membranes.
+Obstet Gynecol 2003;101:178 –93.
+37. Peaceman AM, Lai Y, Rouse DJ, Spong CY, Mercer BM, Varner MW,
+et al. Length of latency with preterm premature rupture ofmembranes before 32 weeks’ gestation. Am J Perinatol 2015;32:57 –62.
+38. Dale PO, Tanbo T, Bendvold E, Moe N. Duration of the latency
+period in preterm premature rupture of the membranes. Maternaland neonatal consequences of expectant management. Eur J Obstet
+Gynecol Reprod Biol 1989;30:257 –62.
+39. Magann EF, Haram K, Ounpraseuth S, Mortensen JH, Spencer HJ,
+Morrison JC. Use of antenatal corticosteroids in specialcircumstances: a comprehensive review. Acta Obstet Gynecol Scand
+2017;96:395 –409.
+40. Lee MJ, Davies J, Guinn D, Wendy Atkinson M, McGregor S,
+Parilla BV, et al. Single versus weekly courses of antenatalcorticosteroids in preterm premature rupture of membranes.
+Obstet Gynecol 2004;103:274 –81.
+41. Yang SH, Choi SJ, Roh CR, Kim JH. Multiple courses of antenatal
+corticosteroid therapy in patients with preterm prematurerupture of membranes. J Perinat Med 2004;32:42 –8.
+42. Vermillion ST, Soper DE, Chasedunn-Roark J. Neonatal sepsis
+after betamethasone administration to patients with pretermpremature rupture of membranes. Am J Obstet Gynecol
+1999;181:320 –7.
+43. Rouse DJ, Hirtz DG, Thom E, Varner MW, Spong CY, Mercer BM,
+et al. A randomized, controlled trial of magnesium sulfate for theprevention of cerebral palsy. N Engl J Med 2008;359:895 –905.
+44. Gyamﬁ-Bannerman C, Son M. Preterm premature rupture of
+membranes and the rate of neonatal sepsis after two courses ofantenatal corticosteroids. Obstet Gynecol 2014;124:999 –1003.
+45. Brookﬁeld KF, El-Sayed YY, Chao L, Berger V, Naqvi M, Butwick
+AJ. Antenatal corticosteroids for preterm premature rupture of
+membranes: single or repeat course? Am J Perinatol 2015;32:537 –
+44.
+46. Kemp MW, Newnham JP, Challis JG, Jobe AH, Stock SJ. The
+clinical use of corticosteroids in pregnancy. Hum Reprod Update
+2016;22:240 –59.
+47. Jobe AH, Goldenberg RL. Antenatal corticosteroids: an
+assessment of anticipated beneﬁts and potential risks. Am J Obstet
+Gynecol 2018;219:62-74.
+48. World Health Organisation. WHO Model Lists of Essential
+Medicines. [https://www.who.int/groups/expert-committee-on-
+selection-and-use-of-essential-medicines/essential-medicines-lists].
+Accessed 25 November 2019.
+49. World Heath Organisation, UNICEF, Fund UNP. Managing
+Complications in Pregnancy and Childbirth: A Guide for Midwives and
+Doctors , 2nd edn. Geneva: WHO; 2015.
+50. Brownfoot FC, Gagliardi DI, Bain E, Middleton P, Crowther CA.
+Different corticosteroids and regimens for accelerating fetal lungmaturation for women at risk of preterm birth. Cochrane Database
+Syst Rev 2013;(8):CD006764.
+51. Crowther CA, Ashwood P, Andersen CC, Middleton PF, Tran T,
+Doyle LW, et al. Maternal intramuscular dexamethasone versus
+betamethasone before preterm birth (ASTEROID): a multicentre,
+double-blind, randomised controlled trial. Lancet Child Adolesc
+Health 2019;3:769-80.
+52. Utama DP, Crowther CA. Transplacental versus direct fetal
+corticosteroid treatment for accelerating fetal lung maturation
+where there is a risk of preterm birth. Cochrane Database Syst Rev
+2018;6:CD008981.
+RCOG Green-top Guideline No. 129 e58 of e60 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 8, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17027 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+53. Roberts D, Dalziel S. Antenatal corticosteroids for accelerating
+fetal lung maturation for women at risk of preterm birth.
+Cochrane Database Syst Rev 2006;(3):CD004454.
+54. Gates S, Brocklehurst P. Decline in effectiveness of antenatal
+corticosteroids with time to birth: real or artefact? BMJ
+2007;335:77 –9.
+5 5 . R o b e r t sD ,B r o w nJ ,M e d l e yN ,D a l z i e lS R .A n t e n a t a lc o r t i c o s t e r o i d s
+for accelerating fetal lung matura tion for women at risk of preterm
+birth. Cochrane Database Syst Rev 2017;3:CD004454.
+56. Norman M, Piedvache A, Børch K, Huusom LD, Bonamy A-KE,
+Howell EA, et al. Association of short antenatal corticosteroidadministration-to-birth intervals with survival and morbidity
+among very preterm infants: results from the EPICE cohort. JAMA
+Pediatr 2017;171:678-86.
+57. Norberg H, Kowalski J, Mar /C20s/C19al K, Norman M. Timing of antenatal
+corticosteroid administration and survival in extremely preterm
+infants: a national population-based cohort study. BJOG
+2017;124:1567 –74.
+58. Melamed N, Shah J, Soraisham A, Yoon EW, Lee SK, Shah PS,
+et al. Association between antenatal corticosteroid administration-
+to-birth interval and outcomes of preterm neonates. Obstet
+Gynecol 2015;125:1377 –84.
+59. Battarbee AN, Ros ST, Esplin MS, Biggio J, Bukowski R, Parry S,
+et al. Optimal timing of antenatal corticosteroid administration
+and preterm neonatal and early childhood outcomes. Am J Obstet
+Gynecol MFM 2020;2:100077.
+60. Oladapo OT, Vogel JP, Piaggio G, The WHO ACTION Trial
+Collaborators. Antenatal dexamethasone for early preterm birth
+in low-resource countries. N Engl J Med 2020;383:2514-25.
+61. Amorim MM, Santos LC, Fa /C19undes A. Corticosteroid therapy for
+prevention of respiratory distress syndrome in severe
+preeclampsia. Am J Obstet Gynecol 1999;180:1283 –8.
+62. Rodriguez A, Wang Y, Ali Khan A, Cartwright R, Gissler M,
+J€arvelin MR. Antenatal corticosteroid therapy (ACT) and size at
+birth: a population-based analysis using the Finnish medical birth
+register. PLoS Med. 2019;16:e1002746.
+63. Krispin E, Borovich A, Hochberg A, Salman L, Chen R, Wiznitzer
+A, et al. Neonatal outcomes in term pregnancies treated with
+antenatal corticosteroids for suspected pre-term labor. Arch
+Gynecol Obstet 2019;299:403-9.
+64. Crowther CA, Middleton PF, Voysey M, Askie L, Zhang S,
+Martlow TK, et al. Effects of repeat prenatal corticosteroids given
+to women at risk of preterm birth: an individual participant data
+meta-analysis. PLoS Med. 2019;16:e1002771.65. McKinlay CJD, Alsweiler JM, Anstice NS, Burakevych N, Arijit
+Chakraborty J, Chase G, et al. Association of neonatal glycemia
+with neurodevelopmental outcomes at 4.5 years. JAMA Pediatr
+2017;171:972-83.
+66. Dalziel SR, Walker NK, Parag V, Mantell C, Rea HH, Rodgers A,
+et al. Cardiovascular risk factors after antenatal exposure to
+betamethasone: 30-year follow-up of a randomised controlledtrial. Lancet 2005;365:1856-62.
+6 7 . K e l l yB A ,L e w a n d o w s k iA J ,W o r t o nS A ,D a v i sE F ,L a z d a mM ,F r a n c i sJ ,
+et al. Antenatal glucocorticoid exposure and long-term alterations inaortic function and glucose metabolism. Pediatrics 2012;129:e1282 –90.
+68. Doyle LW, Ford GW, Davis NM, Callanan C. Antenatal
+corticosteroid therapy and blood pressure at 14 years of age in
+preterm children. Clin Sci (Lond)
+2000;98:137 –42.
+69. Melamed N, Asztalos E, Murphy K, Zaltz A, Redelmeier D, Shah
+BR, et al. Neurodevelopmental disorders among term infants
+exposed to antenatal corticosteroids during pregnancy: a
+population-based study. BMJ Open 2019;9:e031197.
+70. Alexander N, Rosenl €ocher F, Stalder T, Linke J, Distler W,
+Morgner J,, et al. Impact of antenatal synthetic glucocorticoid
+exposure on endocrine stress reactivity in term-born children. J
+Clin Endocrinol Metab 2012;97:3538 –44.
+71. Ilg L, Kirschbaum C, Li SC, Rosenl €ocher F, Miller R, Alexander N.
+Persistent effects of antenatal synthetic glucocorticoids on
+endocrine stress reactivity from childhood to adolescence. J Clin
+Endocrinol Metab 2019;104:827-34.
+72. Ilg L, Klados M, Alexander N, Kirschbaum C, Li SC. Long-term
+impacts of prenatal synthetic glucocorticoids exposure on
+functional brain correlates of cognitive monitoring in adolescence.Sci Rep 2018;8:7715.
+73. Savoy C, Ferro MA, Schmidt LA, Saigal S, Van Lieshout RJ.
+Prenatal betamethasone exposure and psychopathology risk inextremely low birth weight survivors in the third and fourthdecades of life. Psychoneuroendocrinology 2016;12:278 –85.
+74. Althabe F, Beliz /C19an JM, McClure EM, Hemingway-Foday J, Berrueta
+M, Mazzoni A, et al. A population-based, multifaceted strategy toimplement antenatal corticosteroid treatment versus standardcare for the reduction of neonatal mortality due to preterm birth
+in low-income and middle-income countries: the ACT cluster-
+randomised trial. Lancet 2015;385:629 –39.
+75. Guyatt GH, Oxman AD, Vist GE, Kunz R, Falck-Ytter Y, Alonso-
+Coello P, et al. GRADE: an emerging consensus on rating
+quality of evidence and strength of recommendations. BMJ 2008;
+336:924 –6.
+RCOG Green-top Guideline No. 129 e59 of e60 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 8, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17027 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+This guideline was produced on behalf of the Royal College of Obstetricians and Gynaecologists by: Dr SJ Stock
+FRCOG, Edinburgh; Dr A J Thomson MRCOG, Paisley and Dr S Papworth FRCPCH, Newport .
+and peer reviewed by: Professor DA Giussani FRCOG, Cambridge; Mr D Fraser FRCOG, Norwich; Dr T Watts MBBS,
+MD, FRCPCH, London; Dr G Ng FRCPCH, London; Professor JE Norman FRCOG, Bristol; Dr HS Salama MRCOG,
+Benghazi, Libya; Dr F S Malik MRCOG, Lincoln; British Intrapartum Care Society; UK National Screening Committee; DrEA Bonney MD MRCOG, Leeds; Dr R Curry MRCOG, Oxford.
+Committee lead reviewers were: Dr A McKelvey MRCOG, Norwich and Dr S Karavolos MRCOG, ManchesterThe Co-Chairs of the Guidelines Committee were: Dr MA Ledingham FRCOG, Glasgow and Dr B Magowan FRCOG,
+Melrose
+All RCOG guidance developers are asked to declare any conﬂicts of interest. A statement summarising
+any conﬂicts of interest for this guideline is available from: https://www.rcog.org.uk/en/
+guidelinesresearch-services/guidelines/gtg74
+The ﬁnal version is the responsibility of the Guidelines Committee of the RCOG.
+The guideline will be considered for update 3 years after publication, with an intermediate assessment of the need to update
+2 years after publication.
+DISCLAIMER
+The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical practice.They present recognised methods and techniques of clinical practice, based on published evidence, for consideration byobstetricians and gynaecologists and other relevant health professionals. The ultimate judgement regarding a particular
+clinical procedure or treatment plan must be made by the doctor or other attendant in the light of clinical data presented
+by the patient and the diagnostic and treatment options available.
+This means that RCOG Guidelines are unlike protocols or guidelines issued by employers, as they are not intended to be
+prescriptive directions deﬁning a single course of management. Departure from the local prescriptive protocols orguidelines should be fully documented in the patient’s case notes at the time the relevant decision is taken.
+RCOG Green-top Guideline No. 129 e60 of e60 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 8, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17027 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License

@@ -1,0 +1,1040 @@
+# Extracted from: MP007 Antenatal Screening Infectious Diseases Syphilis.pdf
+# Guideline ID: mp007-antenatal-screening-infectious-diseases-syphilis
+# Content length: 49664 characters
+# Processing date: 1750066901.1219046
+
+Antenatal Screening 
+Infectious Diseases: 
+Syphilis 
+
+Maternity Protocol: MP007 
+ 
+Date agreed: December 2019 
+ Antenatal Screening MP007 
+Infectious Diseases: Syphilis (RSCH PRH only ) 
+
+Brighton & Hove University Hospital Page 2 of 31 
+
+Guideline Reviewer: Karen Gregory and Helen Green 
+Manager responsible: Heather Brown 
+Version: 6.0 
+Approval Committee: Women’s Safety and Quality Committee 
+Date agreed: December 2019 
+Review date: December 2022 
+Cross reference: MP001 Provision & Schedule of Care - Booking, Antenatal & 
+Information 
+Neonatal Department - Medical guidelines : Management of Infants 
+Born to Mothers with Positive Screening for Syphilis in Pregnancy 
+[Department of Neonatology 2018] 
+ Antenatal Screening MP007 
+Infectious Diseases: Syphilis (RSCH PRH only ) 
+
+Brighton & Hove University Hospital Page 3 of 31 
+ Contents 
+Key Principles ................................ ................................ ................................ ........................ 5 
+Scope 5 
+Responsibilities ................................ ................................ ................................ ..................... 5 
+Antenatal Screening for Syphilis ................................ ................................ ............................ 6 
+Aims 6 
+Objectives ................................ ................................ ................................ ............................. 6 
+• To ensure that women with syphilis are identified early in pregnancy to facilitate 
+appropriate assessment and management for their health ................................ ........................ 6 
+• To reduce the risk of mother -to-child transmission of syphilis ................................ ........ 6 
+• To facilitate appropriate neonatal referral and management ................................ ............ 6 
+Expected Health Outcomes ................................ ................................ ................................ .... 6 
+1 Screening for Syphilis in Pregnancy ................................ ................................ .............. 6 
+1.1 Pre-Screening Information enabling informed choice ................................ ................ 7 
+1.2 Offering Screening in Pregnancy ................................ ................................ .................. 7 
+1.2.1 The Eligible Population ................................ ................................ ......................... 7 
+1.2.2 The midwife or doctor should discuss the reasons why screening for syphilis is 
+recommended, the results process and follow -up if the screening result is positive. .......... 8 
+2 Women Booking Late ................................ ................................ ................................ .. 8 
+3 Women who arrive un -booked or without screening results in labour ......................... 9 
+4 Declining Screening ................................ ................................ ................................ ... 10 
+5 Taking the Sample ................................ ................................ ................................ ..... 11 
+6 Unacceptable samples ................................ ................................ ............................... 11 
+7 Results Processes ................................ ................................ ................................ ...... 12 
+8 Missing results ................................ ................................ ................................ .......... 13 
+9 Negative result ................................ ................................ ................................ .......... 13 
+10 Positive Result ................................ ................................ ................................ ........... 14 
+11 If treatment is required: ................................ ................................ ............................ 15 
+11.8 The SMRHW /HA will document all consultations, care and treatment decision in 
+the GUM notes also. ................................ ................................ ................................ .............. 16 
+12 Care Pathways: ................................ ................................ ................................ ......... 17 
+12.1 Antenatal Screening for Infectious Diseases: Syphilis Screening ........................... 17 
+12.2 Antenatal Screening for Infectious Diseases: Syphilis – Positive Results Pathway 18 Antenatal Screening MP007 
+Infectious Diseases: Syphilis (RSCH PRH only ) 
+
+Brighton & Hove University Hospital Page 4 of 31 
+ 13 Training ................................ ................................ ................................ ..................... 19 
+14 Minimum auditable standards ................................ ................................ ................... 19 
+15 Governance ................................ ................................ ................................ ............... 20 
+16 Further information ................................ ................................ ................................ .. 20 
+16.1 Patient information ................................ ................................ ................................ .. 20 
+16.2 NHS information ................................ ................................ ................................ ..... 20 
+17 References ................................ ................................ ................................ ................ 20 
+Appendix A – Key Personnel and Contact Information ................................ .......................... 22 
+Appendix B - Background Information: Antenatal Screening for syphilis. .............................. 24 
+Appendix C: Blood Test Declined Form ................................ ................................ ................. 25 
+Appendix D - Syphilis in Pregnancy ................................ ................................ ...................... 26 
+APPENDIX F – Proforma for recording results at 10 days ................................ ...................... 30 
+
+ Antenatal Screening MP007 
+Infectious Diseases: Syphilis (RSCH PRH only ) 
+
+Brighton & Hove University Hospital Page 5 of 31 
+ Key Principles 
+ 
+A protocol is a set of measurable, objective standards to determine a course of action. 
+Professional judgement may be used in the application of a protocol. 
+ 
+Scope 
+ 
+This protocol applies to: 
+• All pregnant women 
+ 
+Responsibilities 
+ 
+Midwives & Obstetricians 
+ 
+• To access, read, understand and follow this guidance 
+• To use their professional judgement in application of this protocol 
+ 
+Management 
+• To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations 
+• To ensure the protocol is accessible to all relevant staff 
+ Antenatal Screening MP007 
+Infectious Diseases: Syphilis (RSCH PRH only ) 
+
+Brighton & Hove University Hospital Page 6 of 31 
+
+Antenatal Screening for Syphilis 
+ 
+Background to the screening program is given in Appendix B . 
+ 
+For Designated programme lead for maternity services and Link speciality staff please 
+see Appendix A 
+
+Aims 
+ 
+The NHS Infectious Diseases in Pregnancy Screening Programme ensures that all 
+pregnant women are offered and recommended screening for syphilis [Public Health 
+England (PHE) 2018b] 
+ 
+Objectives 
+ 
+• To ensure that women with syphilis are identified early in pregnancy to 
+facilitate appropriate assessment and management for their health 
+• To reduce the risk of mother -to-child transmission of syphilis 
+• To facilitate appropriate neonatal referral and management 
+ 
+Ref: Public Health England 2018 
+
+Expected Health Outcomes 
+ 
+The expectation of the antenatal screening programme is to safeguard the woman’s own 
+health and reduce the risk of mother -to-child transmission of syphilis infection [Public 
+Health England 2018 ]. 
+
+1 Screening for Syphilis in Pregnancy 
+ Antenatal Screening MP007 
+Infectious Diseases: Syphilis (RSCH PRH only ) 
+
+Brighton & Hove University Hospital Page 7 of 31 
+ 1.1 Pre-Screening Information enabling informed choice 
+ 
+1.1.1 At the first antenatal contact with the midwife, the woman should be 
+given verbal and written information about syphilis. This should include 
+the benefits of screening for both the woman and her unborn baby [NICE 
+2008, PHE 2018b; UK NSC 2013] 
+ 
+1.1.2 The trust uses the NHS Screening Programmes information booklet: 
+‘Screening tests for you and your baby’. This includes the section 
+‘Infectious Diseases’. This leaflet may be sent to the woman by post prior 
+to the first appointment or given out at the first appointment. The midwife 
+must document in the hand held notes that the leaflet has been received 
+by the woman. 
+1.1.3 Copies of ‘Screening tests for you and your baby’ are available in some 
+other languages and can be downloaded via the Public Health England 
+website: https://www.gov.uk/government/publications/screening -
+tests -for-you-and-your -baby -description -in-brief. If the leaflet is not 
+available in the language required from the national website, it is 
+possible to ask for the leaflet to be translated via the trust’s Equality 
+and Diversity Team . 
+1.1.4 Interpreting services [including sig n language] should be used for 
+communicating with parents who are not fluent in English at all stages 
+of the screening pathway. 
+ 
+1.1.5 If the midwife or doctor feels unable to answer all questions or the 
+woman requests further advice/information about any aspect of 
+syphilis, then a direct referral can be made to the Specialist Midwife for 
+Reproductive Health and Wellbeing (SMRHW) for specialist counselling 
+[see contact list Appendix A ]. 
+
+1.2 Offering Screening in Pregnancy 
+ 
+1.2.1 The Eligible Population 
+ 
+All women should be offered screening for syphilis early in each 
+pregnancy regardless of the results of syphilis screening in previous 
+pregnancies [NICE 2018, PHE 2016b, PHE 2018b] 
+ Antenatal Screening MP007 
+Infectious Diseases: Syphilis (RSCH PRH only ) 
+
+Brighton & Hove University Hospital Page 8 of 31 
+ 1.2.2 The midwife or doctor should discuss the reasons why screening for 
+syphilis is recommended, the results process and follow -up if the 
+screening result is positive. 
+ 
+1.2.3 Screening should be offered early in pregnancy, ideally by 10 weeks 
+[NICE 2008]. The aim is to screen all women by 10 weeks, however 
+screening can be offered at any point during the pregnancy. 
+1.2.4 Testing should also be available on request at any stage of pregnancy 
+should a woman consider herself to be at risk of infection [Public Health 
+England 2018 ] 
+1.2.5 Women booking late or who arrive unbooked in labour should be 
+offered screening at t he first available opportunity 
+ 
+1.2.6 Women who have booked elsewhere and transferred care to BSUH NHS 
+TRUST should be offered repeat screening. This ensures a result is 
+available in -house for all staff to access electronically if the hand held 
+notes are not available and for completion of cohort data. If a woman 
+declines repeat testing having been screened elsewhere, then a copy of 
+the original result from the previous booking unit must be inserted in 
+the hand held notes and a further copy sent to the Ant enatal Screening 
+Co-ordinator and SMRHW . A booking test declined for (appendix C) 
+should be completed and the declines process should be implemented) 
+ 
+1.2.7 The midwife should document in the hand held notes that discussion 
+has taken place and the woman’s decision to accept [consent to screen] 
+or decline screening. Screening should only be performed after 
+documented informed consent; this does not require a signature from 
+the woman. 
+ 
+2 Women Booking Late 
+ 
+2.1 Women booking late must be offered screening at the first appointment with 
+the midwife. Where women book at 24 weeks gestation or later, the blood 
+specimens should be marked urgent and positive results reported [as per 
+positive results pathway section 5] within 24 hours [1 working day] of the 
+sample being received in the laboratory [The Royal College of Pathologists (RCP) 
+2013]. 
+ Antenatal Screening MP007 
+Infectious Diseases: Syphilis (RSCH PRH only ) 
+
+Brighton & Hove University Hospital Page 9 of 31 
+ 2.2 In such cases it is the responsibility of the midwife booking the woman to follow 
+up results within 5 working days of the sample being taken. The midwife must 
+agree a plan with the woman to communicate the results to her. This plan must 
+be documented in the hand held notes [RCP 2013]. 
+ 
+3 Women who arrive un -booked or without screening results in labour 
+ 
+3.1 Women who arrive un -booked or without screening results in labour must be 
+offered screening on admission by the midwife responsible for care. 
+Consideration should be given to the stage of labour, woman’s condition and 
+specific risk factors for syphilis. The midwife should document all discussions 
+that have taken place in the hand held notes. PHE 2018 
+3.2 If the woman is considered to be at increased risk of syphilis infection and 
+delivery is imminent it may be necessary to consider urgent screening. Results 
+can normally be obtained within an hour from the laboratory during normal 
+working hours. In these cases the midwife should liaise with staff in the virology 
+laboratory regarding timely processing of the sample and results turnaround 
+time [PHE 2016a, PHE2018b ]. 
+3.3 If consent is withheld for screening during labour, the midwife caring for the 
+woman should re -offer screening after delivery and document discussions/ 
+decisions in handheld notes [PHE 2018 ]. In these cases the midwife must alert 
+the on -call neon atal doctor prior to the birth. 
+3.4 
+In all cases, blood results must be obtained prior to discharge from the hospital / 
+maternity services and documented in the hand held notes by the midwife responsible 
+for the woman or person ’s care. Positive results will be actioned accordingly [PHE 
+2016a; PHE 2018b]. 
+3.5 If the baby is born before the results are available, the midwife should alert the 
+neonatal team that results are outstanding. 
+ Antenatal Screening MP007 
+Infectious Diseases: Syphilis (RSCH PRH only ) 
+
+Brighton & Hove University Hospital Page 10 of 31 
+ 4 Declining Screening 
+4.1 Screening is optional. All women have the right to decline screening. In these 
+cases the midwife should complete a booking test declined form [see Appendix 
+C] and return to the Specialist Midwife for Reproductive Health and Wellbeing 
+(SMRHW). 
+4.2 The decision to decline screening must be clearly documented by the midwife in 
+the l hand held notes. The ‘decline’ box must also be ticked on the booking 
+blood request form. 
+4.3 The woman should also be informed that as she has declined syphilis screening, 
+she will be contacted by the SMRHW to further discuss their choices. This 
+contact will usually be within 10 working days of receipt of the decline form and 
+ideally by 20 weeks. Ideally this discussion takes place in person. At this contact 
+the SMRHW will: 
+• discuss the woman’s decision to decline and ensure that they are 
+fully aware of the benefits of screening for both themselves and 
+their baby 
+• reoffer the screening test and where this is accepted arrange 
+testing and follow up of the result [PHE 2018b] 
+ 
+4.4 If the woman remains unscreened at 28 weeks the midwife should re -offer 
+screening at the 28 week visit along with the other blood test routinely offered 
+at this appointment. The midwife should document in the hand held notes any 
+discussions that take place and the woman’s decision to accept or decline 
+screening after re -offer. 
+ 
+4.5 The SMRHW will follow up at 32 weeks and if the woman remains unscreened, 
+the SMRHW will inform the following staff by email: 
+• Link Neonatal Consultant 
+• Link GUM consultant 
+• Link Obstetric Consultants 
+• Consultant Virologist 
+• Antenatal Screening Co -ordinator 
+• Neonatal secretary 
+• Consultant Neonatologist (who will co -ordinate a team meeting to 
+formulate a postnatal management plan individual to the woman’s 
+circumstances) [PHE 2018b] 
+ 
+4.6 Where women decline screening, the midwife should ensure the woman is 
+aware she can opt for screening later in her pregnancy and is aware how to 
+arrange this. PHE 2018 
+ Antenatal Screening MP007 
+Infectious Diseases: Syphilis (RSCH PRH only ) 
+
+Brighton & Hove University Hospital Page 11 of 31 
+ 5 Taking the Sample 
+5.1 The sample may be taking at booking by th e midwife or practice nurse or 
+phlebotomist according to local arrangements: 
+ 
+• A 5 ml sample of blood is required in a gold topped [clotted] bottle. 
+This same sample can be used for HIV, Hep B and syphilis screening. 
+• The requestor [midwife or doctor] should complete all fields on the 
+Antenatal Booking Blood Request Form. The request from is in 
+triplicate, and the requestor must ensure that all hand writing has 
+transferred through and is legible on all three sheets of the form. 
+Where adhesive patient labels are used, a label must be affixed onto 
+each of the three sheets of the request form. The form includes tick 
+boxes for ‘accept’ or ‘decline’ of syphilis screening as well as boxes to 
+indicate whether this is a ‘first booking’, ‘urgent’ or ‘repeat’ sample. 
+5.2 The sample must be labelled according to laboratory guidelines. The minimum 
+acceptable identifiers include forename, surname [no abbreviations], plus date 
+of birth and NHS number or hospital ID number. The NHS number is the 
+preferred number to use [PHE 2016a]. 
+5.3 If a woman discloses previous syphilis infection and treatment, include details 
+on the request form. In these cases the woman should be made aware that the 
+result will show ‘syphilis positive’ even if she has received appropriate treatment 
+in the past, and that the SMRHW will contact her to discuss 
+5.4 Additional information should be included on the request for m if relevant: 
+Including family origins, recent immigration (if lived in an area of world where 
+syphilis is endemic) and first language (if not English) to assist the SMRHW in 
+follow -up of positive results 
+5.5 Samples are sent to Brighton Pathology for processing and should arrive within 
+one working day of sample collection. 
+6 Unacceptable samples 
+6.1.1 Where the sample is deemed to be unacceptable by the laboratory 
+because of insufficient blood, incomplete data on the request form or 
+for any other reason, the laboratory will inform the sample requestor 
+to request a repeat. In such cases, a repeat sample should ideally be 
+taken within 10 working days of the request being received by the 
+maternity unit [PHE 2016a; PHE 2018b] 
+ Antenatal Screening MP007 
+Infectious Diseases: Syphilis (RSCH PRH only ) 
+
+Brighton & Hove University Hospital Page 12 of 31 
+ 6.1.2 Where repeat samples take longer than 10 working days to arrange [for 
+example the woman is away or declines to attend for repeat sampling 
+within 10 days], the midwife should document reasons why there has 
+been a delay. 
+6.1.3 The midwife must always follow up the results of repeated samples and 
+arrange a plan [documented in the hand held notes] being mindful that 
+there has already been a delay in obtaining a result because of the need 
+to repeat. 
+7 Results Processes 
+Accessing results [including fail -safes to ensure all women who accept screening 
+receive a result] 
+7.1 Results will be available to staff within 5 working days on ICE [the electronic 
+results reporting programme] or by phoning the virology laboratory at RSCH on 
+01273 696955 x4627 [PHE 2016a] 
+7.2 It is the responsibility of the sample requestor to follow up results within 10 
+working days of the sample being taken [see also 8.1.3 for situations where this 
+is not possible] [PHE 2016a; PHE 2018b]. The sample requestor should ensure 
+positive results have been acted upon and follow up missing results or 
+laboratory requests for a repeat sample. The sample requestor must document 
+that results were followed up and acted on. An example proforma that can be 
+used for recording that results were followed up is given in appendix F. 
+7.3 It is recognised that some community clinics do not have facilities for 
+venepuncture and therefore women attend hospital phlebotomy to have bloods 
+taken. In such cases, the sample requestor will not know when the bloods were 
+actually taken and so cannot follow up results at 10 days. In such cases it is 
+essential that the requestor follows up results as per 8.1.4. 
+7.4 It is the responsibility of the health professional (midwife or doctor) providing 
+care at the next antenatal appointment (usually at the 16 weeks of pregnancy 
+appointment) to check the results, document results [with informed maternal 
+consent] in the maternal hand held notes and inform the woman of the results 
+during the appointment [PHE 2018b]. 
+ Antenatal Screening MP007 
+Infectious Diseases: Syphilis (RSCH PRH only ) 
+
+Brighton & Hove University Hospital Page 13 of 31 
+ 7.5 As an additional failsafe, the Screening Maternity Support Worker (MSW) will 
+ensure a full set of booking blood results are available at the time women attend 
+dating scan. This allows early identification of missing results. With consent, 
+missing bloods will be repeated at this point of contact by the MSW. The MSW 
+will then inform, via email, the Antenatal Screening Team and named 
+community midwife. It is then the responsibility of the named Community 
+Midwife to follow up results within 10 working days and inform the woman as 
+per 8.1.2. All women should be notified of their results following testing and this 
+includes women who terminate or miscarry following screening. This is 
+especially important with screen positive results to ensure women are referred 
+and seen for specialist follow up within the timeframe detailed in section 9.0 
+[PHE 2016a; PHE 2018b] 
+ 
+8 Missing results 
+ 
+8.1 Results should be documented in all cases at the next antenatal appointment 
+[PHE 2018b] . In rare circumstances, a result may not be available at the next 
+appointment. The midwife or doctor should phone the laboratory to try and 
+ascertain how long results will take and agree with the woman, a plan to 
+communicate the results to her. 
+8.2 If having phoned the laboratory it is apparent that there is no result, then a 
+repeat screening test should be recommended and where accepted, taken that 
+day or within 10 working days maximum [PHE 2016a; PHE 2018b]. 
+ 
+8.3 Where a repeat sample is taken, a plan must be agreed with the woman as to 
+relaying the result to her within a specified time frame. 
+ 
+8.4 Full documentation of the above should be made in the hand held notes by the 
+midwife or doctor. 
+ 
+9 Negative result 
+ 
+Where a syphilis result is negative, the health professional (midwife or doctor) informing 
+the woman of the result should explain the following: 
+ Antenatal Screening MP007 
+Infectious Diseases: Syphilis (RSCH PRH only ) 
+
+Brighton & Hove University Hospital Page 14 of 31 
+ 9.1 A negative test does not confer protection on the woman. If a woman (or her 
+partner) engages in high risk behaviour there is a risk of acquiring syphilis during 
+pregnancy [PHE 2018a]. 
+9.2 Women can request repeat screening at any stage of the pregnancy if she 
+deems herself at risk or changes her sexual partner [PHE 2018b] 
+ 
+10 Positive Result 
+10.1 All confirmatory testing is performed in Brighton pathology laboratory. 
+10.2 The virology laboratory staff will inform the SMRHW and designated Health 
+Advisors [HA - who provide cover if the SMRHW is absent] by email of a syphilis 
+positive or equivocal result. This email is sent to a dedicated email account 
+(bsuh.womens.health.advisor@nhs.net ) which is checked daily by the 
+designated specialist staff ( SMRHW /HAs). This failsafe ensures results are 
+communicated and actioned within the appropriate timeframe as per 9.6. 
+10.3 All positive results will be actioned within 2 working days of the result being 
+received by the Health Advisor team. 
+10.4 The SMRHW/HA will first check to see if the woman is known to local GUM 
+services [to confirm previous testing /treatment] and check the EDD to see if 
+birth is imminent. 
+10.5 The SMRHW/HA attempt to contact the woman by phone. If contact is not made 
+by phone then a letter will be sent to the woman that same working day. 
+10.6 Once contact is made with the woman, an appointment is offered within 5 
+working days to inform the woman of the result and ascertain previous history 
+of syphilis infection and previous treatment. Initial discussion with the woman 
+would i deally take place in person but may take place over the phone according 
+to the woman’s preference [PHE 2018b]. Discussion should take into account 
+the following: 
+10.7 A positive result does not necessarily mean that a woman has syphilis [PHE 
+2016a, PHE 2 016c, NICE 2008]. A significant number of non -syphilis reactive 
+tests may be found in certain populations because serology cannot distinguish 
+between different treponematoses [e.g syphilis, yaws, pinta and bejel] [PHE 
+2016c]. A positive result will therefore be interpreted in relation to clinical signs 
+and patient history. 
+ Antenatal Screening MP007 
+Infectious Diseases: Syphilis (RSCH PRH only ) 
+
+Brighton & Hove University Hospital Page 15 of 31 
+ 10.8 Women who have previously been treated for syphilis infection will test positive 
+on subsequent tests. Even if the woman reports that treatment was completed 
+it will be necessary to determine whether this treatment was adequate [PHE 
+2016c]. 
+10.9 Once the woman’s history has been obtained, the SMRHW/HA will liaise with 
+the link GUM consultant for antenatal syphilis screening [please see Appendix A 
+for contact details] for specialist assessment and possible treatment. The 
+SMRHW documents all discussions with the woman and outcome of assessment 
+in the GUM notes on MILL care system at the Claude Nicol Centre. 
+10.10 Syphilis positive results are available on ICE - the laboratory results reporting 
+system. The result will include the following message to alert GPs and other staff 
+that the result has been actioned and no further action on their part is 
+necessary: 
+ 
+Please note that any positive patient’s result for Syphilis will be actioned by the Specialist 
+Midwife for Reproductive Health and Wellbeing at Claude Nicol Clinic who will be 
+contacting the patient. 
+ 
+11 If treatment is required: 
+11.1 The woman will be offered an appointment with a senior doctor in the GUM 
+clinic by the SMRHW within 5 working days to commence treatment. If there is 
+any doubt about the woman’s previous history or treatment then retreatment 
+will be recommended. 
+11.2 Women who are greater than 20 weeks gestation and require antibiotic 
+treatment are at risk of experiencing a J -H reaction to the first injection. This 
+could cause premature labour and so requires close monitoring. These women 
+will require admission to the Maternity Day Assessment Unit for first injection to 
+observe for signs of premature labour for a minimum 6 hours. Follow -up doses 
+can be administered at the Claude Nicol Centre. See Appendix D for copy of 
+GUM team policy. 
+11.3 The SMRHW will also arrange, where indicated, contact tracing and screening of 
+partners and older children according to GUM policy. Children are referred to 
+the Paediatric Consultant for testing and follow up treatment. 
+11.4 Once maternal assessment and treatment is completed, the following health 
+professionals are informed: 
+• The GUM consultant responsible for the woman’s care informs the link 
+paediatric consultant for syphilis in writing to initiate paediatric review 
+after birth with a copy to the woman’s GP 
+• The SMRHW contacts the woman’s community midwife by phone. Antenatal Screening MP007 
+Infectious Diseases: Syphilis (RSCH PRH only ) 
+
+Brighton & Hove University Hospital Page 16 of 31 
+ • The SMRHW informs the Antenatal Screening Co -ordinator by email 
+which the ASC files in the hospital handheld notes. 
+11.5 Confirmatory testing, treatment and follow -up is organised by GUM 
+ consultant/Health Advisor according to local GUM guidelines. 
+11.6 Babies born to any woman with a syphilis positive result require paediatric 
+follow -up after birth according to local protocol. The midwife caring for the 
+woman in labour should inform the paediatricians on admission. For further 
+information please refer to the BSUH neonatal department policy: Management 
+of Infants Born to Mothers [Parents] with Positive Screening for Syphilis in 
+Pregnancy [Department of Neonatology 2018] 
+11.7 In most cases, women with a syphilis positive resu lt will have been assessed by 
+the GUM team by the time of the next antenatal visit [usually 16 weeks]. It is the 
+health professional’s [doctor or midwife] responsibility at this visit to ensure 
+that the woman has received her result and that this has been documented in 
+the hand held notes with the woman’s consent [as per section 8.1.4]. If the 
+woman declines documentation of a screen positive result in her hand -held 
+notes, the result should be documented in th e hospital notes. In such cases the 
+woman should be advised of the importance of informing staff on admission in 
+labour of the diagnoses and treatment so that her baby can be followed up 
+appropriately after birth. 
+11.8 The SMRHW /HA will document all consultations, care and treatment decision in 
+the GUM notes also. 
+ Antenatal Screening MP007 
+Infectious Diseases: Syphilis (RSCH PRH only ) 
+
+Brighton & Hove University Hospital Page 17 of 31 
+ 12 Care Pathways: 
+12.1 Antenatal Screening for Infectious Diseases: Syphilis Screening 
+
+Prior to booking [by 10 weeks] : All women to be given national information booklet 
+‘Screening tests for you and your baby’ which contains the section ‘Infectious Diseases’. 
+Booking – discuss screening for syphilis and offer test along with routine booking bloods. 
+Blood should ideally be taken by 10 weeks. The policy is to recommend screening for 
+syphilis. 
+ 
+ Screening accepted 
+ Screening declined 
+Document in hand held 
+notes. 
+ 
+Midwife completes the 
+‘BLOOD TESTS 
+DECLINED FORM’ and 
+returns to SMRHW via 
+email 
+(rosie.jennings@nhs.net) 
+Document in hand held notes that 
+screening has been accepted. 
+ 
+Sample taken. 
+
+Syphilis negative 
+ EIA positive: lab performs RPR 
+VDRL and TPHA testing 
+Woman or person informed at NEXT 
+routine antenatal check [usually 16 
+weeks]. Document result in hand held 
+notes with informed consent. 
+ 
+Insufficient blood: lab 
+sends out request for 
+repeat sample to 
+requesting clinician 
+See Antenatal Screening for Syphilis: 
+positive results pathway 
+ 
+Clinician requesting sample to check 
+results by 10 working days Antenatal Screening MP007 
+Infectious Diseases: Syphilis (RSCH PRH only ) 
+
+Brighton & Hove University Hospital Page 18 of 31 
+ 12.2 Antenatal Screening for Infectious Diseases: Syphilis – Positive Results Pathway 
+
+EIA [enzyme immunoassay] positive: laboratory performs VDRL and TPHA 
+testing 
+Lab informs Specialist Midwife for Reproductive Health and Wellbeing by phone AND 
+email of all EIA screen positive results with 5 working days of sample being taken. 
+The SMRHW contacts the woman to inform her of the result and ascertain past history 
+of syphilis infection and previous treatment. The SMRHW then discusses with the GUM 
+consultant who will arrange treatment as necessary. 
+ 
+Assessment and treatment completed: GUM consultant sends treatment summary 
+letter to Neonatology link consultant to initiate paediatric review after birth with copy to 
+GP. 
+SMRHW informs CMW by phone. Email to ASC who files copy in hospital maternity 
+notes. 
+
+Paediatric follow up of newborn after birth: refer to neonatal protocol. 
+
+Treatment organised by GUM consultant according to local guidelines. 
+ 
+Note: if > 20/40 - admission to MaternityAssessment Unit required for first injection. 
+Observe for minimum 6 hours for signs of premature labour. Subsequent treatment at 
+CNC. Antenatal Screening MP007 
+Infectious Diseases: Syphilis (RSCH PRH only ) 
+
+Brighton & Hove University Hospital Page 19 of 31 
+ 13 Training 
+ 
+13.1 All midwives must attend a yearly update on antenatal screening for infectious 
+diseases as part of their mandatory education update sessions 
+13.2 All midwives / screening MSWs new to the trust should: 
+• attend an induction session where the screening programmes will be 
+explained 
+• complete the Antenatal & Newborn Screening eLearning 
+• Module [National Screening Committee’s e -learning module on screening] 
+which includes a section on screening for infectious diseases 
+ 
+13.3 All band 5 midwives must complete the UK NSC e -learning screening module as 
+part of their competencies before they can apply for a band 6. 
+ 
+14 Minimum auditable standards 
+Public Health England requires that the following data is collected on a quarterly basis 
+[PHE 2016b] : 
+14.1 Number of bookings 
+14.2 Number of women tested 
+14.3 Number of women declining screening 
+14.4 Number of women screening positive for syphilis 
+ 
+14.5 The above data is returned to the following organisations [see contact list in 
+Appendix A ]: 
+• Regional Public Health England lead 
+• Regional Screening and Immunisation Lead 
+• Regional Quality Assurance Screening Lead 
+14.6 Key Performance Indicators [KPI] for screening. There are currently no KPIs for 
+syphilis screening 
+14.7 Data and audit findings will be included in the Annual Screening Report compiled 
+by the Antenatal Screening Co -ordinator. 
+
+ Antenatal Screening MP007 
+Infectious Diseases: Syphilis (RSCH PRH only ) 
+
+Brighton & Hove University Hospital Page 20 of 31 
+ 15 Governance 
+15.1 All incidents related to fetal anomaly screening are reported via the trusts 
+internal reporting system known as DATIX. 
+ 
+15.2 All incidents related to screening for syphilis should also be reported to the 
+Antenatal Screening Co -ordinator who will liaise with the Maternity Risk 
+Manager and where necessary complete a SIAF [Screening Incident 
+Assessment Form] in order to notify the Regional QA screening team and the 
+Screening and Immunisations lead. 
+15.3 For further information relating to management of incidents please refer to the 
+protocol: MD085 Women’s Services Risk Management Strategy. 
+15.4 The Antenatal Screening Steering Group meets quarterly and will address all 
+issues pertaining to syphilis screening. 
+ 
+16 Further information 
+16.1 Patient information 
+Public Health England [2017] ‘ Screening Tests for You and Your Baby’. Click on 
+this link to view/download a copy of the information leaflet including the section 
+‘Infectious Diseases’. Patient information: 
+https://www.gov.uk/government/publications/screening -tests -for-you-and-
+your -baby -description -in-brief 
+ 
+16.2 NHS information 
+Further information about the NHS Infectious Diseases in Pregnancy Screening 
+Programme is available from: https://www.gov.uk/topic/population -screening -
+programmes/infectious -diseases -in-pregnancy 
+
+17 References 
+ 
+Department of Neonatology, Brighton and Sussex University Hospitals NHS Trust. 
+Management of infants born to mothers with positive screening for syphilis in pregnancy. 
+2018. Available from: https://www.bsuh.nhs.uk/wp -
+content/uploads/sites/5/2016/09/Congenital -syphilis -2018_amended.pdf 
+ 
+National Institute for Health and Care Excellence -NICE [2008] Clinical guideline 62 -Antenatal 
+care for uncomplicated pregnancies. 2008 March. Available from: 
+https://www.nice.org.uk/guidance/cg62/resources/antenatal -care -for-uncomplicated -
+pregnancies -pdf-975564597445 Antenatal Screening MP007 
+Infectious Diseases: Syphilis (RSCH PRH only ) 
+
+Brighton & Hove University Hospital Page 21 of 31 
+ 
+Public Health England. NHS Infectious Diseases in Pregnancy Screening Programme: 
+Laboratory Handbook 2016 to 2017. 2016 July (2016a). Available from: 
+https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_d
+ata/file/539828/NHS_Infectious_Diseases_in_Pregnancy_Screening_Programme_Laboratory_
+Handbook_2016_2017_with_gateway_number.pdf 
+ 
+Public Health England. NHS Infectious Diseases in Pregnancy Screening Programme: Standards 
+2016 -2017. 2016 March (2016b). Available from: 
+https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_d
+ata/file/733044/IDPS_Programme_Standards_2016_to_2017.pdf 
+ 
+Public Health England. NHS Infectious Diseases in Pregnancy Screening Programme 
+Handbook. 2016 July (2016c). Available from: 
+https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_d
+ata/file/542492/NHS_IDPS_Programme_Handbook_2016_to_2017.pdf 
+ 
+Public Health England [Internet]. Antenatal and Newborn Screening Resource. 2018 
+December (2018a). Available from: https://www.gov.uk/guidance/nhs -population -screening -
+education -and-training 
+ 
+Public Health England. NHS public health functions agreement 2018 -19: Service specification 
+no.15: NHS Infectious Diseases in Pregnancy Screening Programme. 2018 September (2018b). 
+Available from: https://www.england.nhs.uk/wp -content/uploads/2017/04/Gateway -ref-
+07836 -180913 -Service -specification -No.-15-NHS -IDPS.pdf 
+ 
+The Royal College of Pathologists. Key performance indicators -proposals for implementation. 
+2013 July. Available from: https://www.rcpath.org/asset/A428B2AF -7AE9 -42DA -
+BF9343E184EE05CF.2DBFC9CA -A72A -479B -ACE8B1150A7C1BC2/ 
+ 
+UK National Screening Committee. Screening for syphilis in pregnancy: External review 
+against programme appraisal criteria for the UK National Screening Committee (UK NSC). 
+Version: 1. 2013. Available from: https://legacyscreening.phe.org.uk/syphilis 
+ 
+ Antenatal Screening MP007 
+Infectious Diseases: Syphilis (RSCH PRH only ) 
+
+Brighton & Hove University Hospital Page 22 of 31 
+ Appendix A – Key Personnel and Contact Information 
+ 
+Designated programme lead for maternity services 
+Karen Gregory - Antenatal Screening Co -ordinator 
+ 
+Link speciality staff 
+Heather Brown/David Utting/Jo Sinclair 
+ Consultant Lead for Obstetrics 
+Win Khine Fetal Medicine Consultant 
+Debbie Williams Consultant Lead for GUM 
+Rob Bomont Consultant Lead for Neonatology 
+Karen Gregory Antenatal Screening Co -ordinator 
+ 
+Laboratory Team 
+Dr Mohammed Osman Hassan -Ibrahim Consultant Virologist 
+Jackie Armitage Head BMS, Blood Science 
+Sarah Bastow Deputy Head BMS, Blood Science 
+Clare Reynolds Head of Service, Microbiology and 
+Infection 
+Jackie Longbone Deputy Head of Service, Microbiology and 
+Infection 
+John McBride Pathology Quality Manager 
+ 
+Antenatal Screening 
+Coordinator at BSUH 
+[cross site] Karen Gregory karen.gregory12@nhs.net Mobile: 07876 357 423 
+Office: 01273 696955 x67477 and x62755 
+Antenatal Screening 
+Support Midwives [BSUH] RSCH: Marion 
+McPolin [PT] 
+ marion.mcpolin@nhs.net 
+Mobile: 07876 357 423 
+Office: 01273 696955 x67477 and x62755 
+PRH: Melanie 
+Sanders[PT] 
+ melanie.Sander1@nhs.net 
+Mobile: 07876 357 423 
+Office: 01444 441881 x5404 
+Fetal Medicine 
+Consultant at BSUH RSCH: 
+Win Khine 
+ w.khine@nhs.net 
+Sec: Sam Flint 01273 696955 x64031 
+ 
+Laboratory Service Leads 
+for Virology/Microbiology 
+Dr Mohammed 
+Osman Hassan -
+Ibrahim 
+Lead Consultant, 
+Virology m.hassanibrahim@nhs.net 
+Virology Section 
+Department of Microbiology & Infection 
+Tel: 01273696955 x3584 
+Pager: 07623809015 
+Mobile: 07940 933 197 Antenatal Screening MP007 
+Infectious Diseases: Syphilis (RSCH PRH only ) 
+
+Brighton & Hove University Hospital Page 23 of 31 
+ Jackie Armitage 
+Head BMS, Blood 
+Science jacqueline.armitage3@nhs.net 
+RSCH x7422PRH x8216 
+Link Neonatal Consultant Rob Bomont, 
+Consultant 
+Neonatologist r.bomont@nhs.net 
+Trevor Mann Baby Unit, RSCH 
+Tel: 01273 696955 x4195 
+Specialist Midwife for 
+Reproductive Health and 
+Wellbeing Rosie Jennings Rosie.jennings@nhs.net 
+Tel: 01273 664716 x4716 and 4725 
+Mobile: 07919627603 
+Link GUM Consultant Yvonne Gilleece Y.Gilleece@nhs.net 
+Claude Nicol Centre, RSCH 
+Tel: 01273 696955 x67710 
+Antenatal and Newborn 
+Screening Programmes 
+(South East) 
+Quality Assurance Service Emma Proctor 
+Quality Assurance 
+Advisor 
+ emmaproctor@nhs.net 
+Mobile: 07919691456 
+ 
+Public Health England 
+South East Link Angela Partridge 
+Screening and 
+Immunisations 
+Manager (Surrey & 
+Sussex) 
+ Public Health England South East 
+York House, Massetts Road, 
+Horley, Surrey, RH6 7DE 
+ 
+Mobile: 07710152678 
+Tel: 01138 251248 
+
+ Antenatal Screening MP007 
+Infectious Diseases: Syphilis (RSCH PRH only ) 
+
+Brighton & Hove University Hospital Page 24 of 31 
+ Appendix B - Background Information: Antenatal Screening for 
+syphilis. 
+ 
+Syphilis is a bacterial infection that is typically passed through sexual contact. 
+However, it can be passed on by intravenous drug use (injecting drugs directly into the vein), 
+blood transfusions and from an infected mother or birthing parent to unbor n child. The latter 
+is known as 
+congenital syphilis [PHE 2016c]. 
+ 
+Syphilis infection is staged according to the duration of infection – the time from acquisition of 
+primary infection. The risk of transmission from mother to bab y declines as maternal syphilis 
+infection progresses. Risk ranges from 70 -100% in primary syphili s, 40% in early latent syphilis 
+and 10% in late latent syphilis [PHE 2016c]. 
+ 
+Maternal syphilis infection can result in a range of adverse p regnancy and neonatal outcomes. 
+These include miscarriage, pre -term labour, stillbirth, and congenital syphilis [PHE 2016c] ]. 
+Untreated syphilis will also lead to serious long term sequela e for the mother and her sexual 
+partners. 
+ 
+Treatment for syphilis is beneficial for mother and baby [NICE 20 08]. Screening for syphilis in 
+pregnancy identifies women who are infected so that trea tment can be offered which will 
+reduce the risks of the baby developing congenital syphilis. 
+ Antenatal Screening MP007 
+Infectious Diseases: Syphilis (RSCH PRH only ) 
+
+Brighton & Hove University Hospital Page 25 of 31 
+ Appendix C: Blood Test Declined Form 
+
+Antenatal Screening MP007 
+Infectious Diseases: Syphilis (RSCH PRH only ) 
+
+Brighton & Hove University Hospital Page 26 of 31 
+ Appendix D - Syphilis in Pregnancy 
+ 
+• Pregnant women with documented adequate treatment do not necessarily need re -
+treatment for the current pregnancy or future pregnancies. If there is no clinical 
+evidence of syphilis and the VDRL is negative o r low serofast do not re -treat. 
+• Re-treatment for all new cases and subsequent pregnancies should be discussed 
+jointly with the patient and a consultant - see below. 
+• All pregnant women should be re -treated when the treatment history is uncertain or 
+the treatment schedule is in doubt. 
+• A CXR is only indicated where there is clinical suspicion of aortic regurgitation. 
+• All pregnant women with positive syphilis serology should be discussed with a GUM 
+consultant. 
+• All pregnant women with positive syphilis serology (even with a clear history of 
+treatment) should be referred to Dr Rob Bomont Consultant Neonatologist so the 
+babies can be reviewed. 
+• Any older siblings who may have been affected by congenital syphilis should be 
+referred to Dr Katie Fiddler, Paediatric Infectious Diseases consultant. N.B some 
+features of congenital syphilis may not be apparent for 2 years or more. All cases of 
+suspected congenital syphilis diagnosed in childhood should be managed jointly with 
+the paediatric team. 
+• Treatment of sexual partners should be considered discussed with a GUM consultant. 
+Respect confidentiality of patient. 
+• A letter to obstetrics (Heather Brown/David Utting/Jo Sinclair) & Karen Gregory 
+Antenatal Screening Co -ordinator containing the below information 
+
+ Antenatal Clinic 
+Sussex House 
+Abbey Road 
+Brighton 
+BN2 1ES 
+ 
+01273 696955 x67477 and x62755 
+07876 357 423 The following should be included in the referral 
+letter 
+1. Gestation & EDD 
+2. Information on previous pregnancies & 
+miscarriage etc 
+3. Booking serology 
+4. GUM treatment/ management plan. 
+Dr Bomont will write back to GUM once the baby 
+has been reviewed at 12 weeks of age so we can 
+file in the patients notes. Antenatal Screening MP007 
+Infectious Diseases: Syphilis (RSCH PRH only ) 
+
+Brighton & Hove University Hospital Page 27 of 31 
+ 
+HIV Positive Treatment 
+• Procaine penicillin G 1,800,000 units [as 9 mls – 4.5mls per buttock - of Farmaproina] 
+IM x 17/7 plus Probenecid 500mg qds PO x 17/7 
+ 
+HIV negative Treatment 
+ 
+Early syphilis in pregnancy 
+Trimesters one and two (up to and including 27 weeks): 
+• Benzathine penicillin G 2.4 MU IM. Single dose 
+Trimester three (from week 28 to term): 
+• Benzathine penicillin G 2.4 MU IM, on days 1 and 8 
+Alternative regimens (all three trimesters) 
+• Procaine penicillin G 600,000 unit IM. Daily for 10 days: 
+• Amoxycillin 500mg PO q.d.s. plus probenecid 500mg PO q.d.s for 14 days 
+• Ceftriaxone 500mg IM daily for 10 days: 
+• Erythromycin 500mg PO q.d.s for 14 days: ('Caution re: macrolide therapy for syphilis') 
+• Azithromycin 500mg PO daily for 10 days: ('Caution re: macrolide therapy for syphilis') 
+Late syphilis in pregnancy 
+Late latent, cardiovascular and gummatous syphilis (all three trimesters): 
+If cardiovascular involvement, inpatient management is advisable. 
+• Benzathine penicillin G 2.4 MU IM weekly on days 1, 8 and 15 (three doses): 
+ 
+Steroids should be given with all anti -treponemal antibiotics for cardiovascular syphilis; 40 –
+60mg prednisolone OD for three days starting 24h before the antibiotics. 
+Alternative regimens 
+• Procaine penicillin G 600,000 units IM OD for 14 days: 
+• Amoxycillin 2g PO t.d.s. plus probenecid 500mg q.d.s for 28 days: 
+Neurosyphilis in pregnancy 
+If neurological involvement including optic neuritis, inpatient management is advisable. Antenatal Screening MP007 
+Infectious Diseases: Syphilis (RSCH PRH only ) 
+
+Brighton & Hove University Hospital Page 28 of 31 
+ • Procaine penicillin G 1.8 –2.4 MU IM o.d. plus pro -benecid 500mg PO q.d.s. for 14 
+days:. 
+• Benzylpenicillin 10.8 –14.4g daily, given as 1.8 –2.4g IV every 4h for 14 days: 
+Alternative regimens 
+• Amoxycillin 2g PO t.d.s. plus probenecid 500mg PO q.d.s. for 28 days:. 
+• Ceftriaxone 2g IM (with lidocaine as diluent) or IV (with water for injections as diluent, 
+NOT Lidocaine) for 10 –14 days 
+Steroids should be given with all anti -treponemal antibiotics for neurosyphilis; 40 –60mg 
+prednisolone OD for three days starting 24h before the antibiotics. 
+Penicillin allergy: 
+ 
+• Many people reporting penicillin allergy will not display hypersensitivity on re -
+exposure to penicillin either because the hypersensitivity has resolved or they were 
+never allergic to penicillin. A careful history may help to identify the latter group. All 
+patients with penicillin allergy should be discussed with the wider team 
+• Consider penicillin desensitisation. Skin testing to confirm allergy should precede 
+desensitisation. Skin testing and desensitisation do carry risks of =anaphylaxis and 
+should be carried out with immediate access to resuscitation equipment and expertise 
+• Non -penicillin therapies should be used only in conjunction with close serologic and 
+clinical follow -up. 
+ 
+Possible regimens 
+• Ceftriaxone based treatment 
+• Erythromycin 500mg q.d.s PO x 14/7 ('Caution re: macrolide therapy for syphilis') 
+• Azithromycin 500mg o.d PO x 10/7 ('Caution re: macrolide therapy for syphilis' 
+Congenital syphilis 
+Should be discussed with Link Neonatal Consultant 
+• All cases of suspected congenital syphilis diagnosed in childhood should be managed 
+jointly with the paediatric team 
+• Benzyl penicillin sodium 60 –90 mg/kg daily IV (in divided doses given as – 30 mg/kg 12 
+hourly) in the first seven days of life and 8 hourly thereafter for a further 3 days for a 
+total of 10 days: 1C 
+ Alternative regimens Antenatal Screening MP007 
+Infectious Diseases: Syphilis (RSCH PRH only ) 
+
+Brighton & Hove University Hospital Page 29 of 31 
+ • Procaine penicillin 50,000 units/kg daily IM 10 days. 
+• In children, IV therapy (option one here) is preferable due to the pain associated with 
+IM injections: 
+
+Reference https://www.bashh.org/guidelines https://www.bashhguidelines.org/media/1148/uk -syphilis -
+guidelines -2015.pdf 
+SHAC handbook (Lawson unit) APPENDIX F – Proforma for recording results at 10 days 
+BOOKING BLOOD RESULTS TO BE CHECKED 2 WEEKS AFTER TAKEN: Clinic ______________________________[surgery / children’s centre] 
+ 
+Name, DOB, ID number 
+
+ Accepted 
+/declined Result Date 
+result MW 
+checking 
+Group & Rhesus 
+Hb 
+Sickle and thal 
+Rubella 
+Syphilis 
+HIV 
+Hep B 
+ 
+Downs screen Accepted / Declined Tick if transfer 
+booking: Anomaly scan Accepted / Declined 
+ Comments: results missing/ 
+repeat required/ decline 
+form sent/ referrals made? 
+
+ Gest at 
+booking MW at 
+booking 
+Date booked Date booking 
+bloods taken 
+Name, DOB, ID number 
+
+ Accepted 
+/declined Result Date 
+result MW 
+checking 
+Group & Rhesus 
+Hb 
+Sickle and thal 
+Rubella 
+Syphilis 
+HIV 
+Hep B 
+ 
+Downs screen Accepted / Declined Tick if transfer 
+booking: Anomaly scan Accepted / Declined 
+ Comments: results missing/ 
+repeat required/ decline 
+form sent/ referrals made? 
+
+ Gest at 
+booking MW at 
+booking 
+Date booked Date booking 
+bloods taken pregnancy MP… 
+Page 31 of 31 
+Brighton & Sussex University Hospitals 
+Name, DOB, ID number 
+
+ Accepted 
+/declined Result Date 
+result MW 
+checking 
+Group & Rhesus 
+Hb 
+Sickle and thal 
+Rubella 
+Syphilis 
+HIV 
+Hep B 
+ 
+Downs screen Accepted / Declined Tick if transfer 
+booking: Anomaly scan Accepted / Declined 
+ Comments: results missing/ 
+repeat required/ decline 
+form sent/ referrals made? 
+
+ Gest at 
+booking MW at 
+booking 
+Date booked Date booking 
+bloods taken

@@ -1,0 +1,617 @@
+# Extracted from: UHSx Maternal Death Protocol.pdf
+# Guideline ID: uhsx-maternal-death-protocol
+# Content length: 38915 characters
+# Processing date: 1750066902.1397562
+
+CLINICAL PROTOCOL 
+Due for review: TBC 
+Protocol Name : Maternal or Birthing Parent Death v1.0 
+For use at: PRH, RSCH, SRH, WH 
+Page 1 of 16 
+ Maternal or Birthing Parent Death 
+ 
+Contents 
+ 
+1.0 Introduction ................................ ................................ ................................ ........................... 2 
+2.0 Abbreviation used within this clinical document ................................ ................................ ..... 2 
+3.0 Immediate actions following an unanticipated death ................................ .............................. 2 
+4.0 Actions within 24 hours ................................ ................................ ................................ .......... 4 
+5.0 Actions within the first week ................................ ................................ ................................ ... 5 
+6.0 Actions required when the death occurs outside the maternity or gynaecology department ... 5 
+7.0 Actions required following anticipated deaths ................................ ................................ ........ 6 
+8.0 Postmortem and death certification ................................ ................................ ....................... 6 
+9.0 Ockenden requirements following maternal or birthing parent death ................................ ..... 7 
+10.0 Registering death ................................ ................................ ................................ .................. 7 
+11.0 Baby born alive ................................ ................................ ................................ ...................... 7 
+12.0 Stillbirth / neonatal death ................................ ................................ ................................ ....... 8 
+13.0 Family support and bereavement care ................................ ................................ ................... 8 
+14.0 Organ donation ................................ ................................ ................................ ...................... 9 
+15.0 Follow -up support for the partner and family ................................ ................................ .......... 9 
+16.0 Staff support ................................ ................................ ................................ ........................ 10 
+17.0 Media involvement ................................ ................................ ................................ ............... 11 
+18.0 Reflections, feedback and shared learning ................................ ................................ .......... 11 
+19.0 Audit & monitoring ................................ ................................ ................................ ............... 11 
+References ................................ ................................ ................................ ................................ ..... 11 
+Appendix 1: Contacts and actions: IMMEDIATE ................................ ................................ ............. 12 
+Appendix 2: Contacts and Actions: WITHIN 24 HOURS (1 working day) ................................ ........ 13 
+Appendix 3: Template letter for communicating with GP ................................ ................................ . 14 
+Clinical protocol governance and approval ................................ ................................ ...................... 15 
+Protocol version control log ................................ ................................ ................................ ............. 16 
+
+ CLINICAL PROTOCOL 
+Due for review: TBC 
+Protocol Name : Maternal or Birthing Parent Death v1.0 
+For use at: PRH, RSCH, SRH, WH 
+Page 2 of 16 
+ Maternal or Birthing Parent Death 
+1.0 Introduction 
+The purpose is to provide operational guidance for all healthcare professionals supporting partners, 
+families and staff following a maternal or birthing parent death. 
+This is for deaths during and up to 1 year after the end of the pregnancy, whether the death is 
+anticipated or unanticipated, and regardless of where the death occurs. 
+It outlines the practical procedures that need to be followed, who should be contacted, who requires 
+support and how this can be managed across the various settings in which a maternal death might 
+occur. 
+The intention is to make the process as compassionate and straightforward as possible for families 
+and staff. 
+2.0 Abbreviation used within this clinical document 
+DoM Director of Midwifery HoM Head of Midwifery 
+ICU/CCU Intensive Care Unit / Critical Care Unit ICU/CCU Intensive Care Unit / Critical Care Unit 
+MBRRACE -UK Mothers and Babies: Reducing 
+Risks through Audit and Confidential Enquiries MCCD medical certificate of the cause of death 
+MNSI Maternity and Newborn Safety 
+Investigations PSIRF Patient Safety Incident Response 
+Framework 
+3.0 Immediate actions following an unanticipated death 
+In the event of an unanticipated maternal death, the following should be informed as soon as 
+possible: 
+• Obstetric Consultant -on-Call 
+• Anaesthetic Consultant -on-Call 
+• Head of Midwifery (or deputy) 
+• Director of Midwifery 
+• Senior / Midwifery Manager on -Call 
+• And a representative of the senior management for the hospital. 
+• Patient Safety Team 
+Staff involved in the death should ensure they write up their notes before going off duty with clear, 
+legible, factual details of their actions and events. The notes should also include what the 
+partner/family members have been told, and what they understand of the events surrounding the 
+death. CLINICAL PROTOCOL 
+Due for review: TBC 
+Protocol Name : Maternal or Birthing Parent Death v1.0 
+For use at: PRH, RSCH, SRH, WH 
+Page 3 of 16 
+ At this early stage, ahead of postmortem findings and any review or investigation, only factual 
+information about the circumstances of the death should be discussed and recorded in the notes. 
+Speculation as to the cause of death should be avoided. 
+It is important to make it clear that the cause of death is not yet known and cannot be 
+confirmed until the postmortem results are available. 
+This is to avoid apparently conflicting information being given at different stages, which can cause 
+distress to the family. 
+The senior clinicians (consultants on call for obstetrics and anaesthetics) and Head of Midwifery 
+should attend and meet with the staff involved to ensure they are fully briefed regarding the 
+circumstances surrounding the death. 
+They should then meet with the next of kin to start the process of discussions with them, and to 
+understand their perspectives of the care received by the woman or birthing person , as well as deal 
+with any questions they have where this is possible with the information available at this stage. 
+Bereavement support for the partner and family should be initiated as soon as possible. 
+At this point it is important to verify which member(s ) of the family have been identified as next of kin 
+on BadgerNet Maternity and, thus, have a right to be kept informed; this is not always 
+straightforward, especially if the woman or birthing person and their partner were not married or in a 
+civil partnership. Please see Code A - Guiding principles and the fundamental principle of 
+consent.pdf (hta.gov.uk) for further guidance. 
+The Lead Medical Examiner and the Senior Coroner have confirmed that all tubes and lines can be 
+removed from the deceased, even if there is the need for a postmortem examination. The only 
+exception to this is where there is a concern that they may be implicated in the cause of death. The 
+anaestheti c team involved in the case is responsible for making the decision to remove any tubes or 
+lines. 
+The Site Manager will be able to give advice regarding preparing the body and might help 
+coordinate communication with the mortuary staff. (Where the death is unanticipated, consideration 
+should be given to forensically preserving materials connected with the care of the woman or 
+birthing person , including but not limited to drug ampules, syringes, monitors, etc.) 
+The need to refer the case to the coroner or procurator fiscal (in Scotland), and for a local review 
+and possible investigation should be conveyed to the partner/family. 
+As part of the Statutory Duty of Candour t he family should be informed that the Maternity and 
+Newborn Safety Investigations (MNSI) programme will, with their consent, be conducting an 
+investigation of all maternal deaths up to 42 days after the end of the pregnancy except where the 
+death was by suicide. 
+The following individuals should be notified by the midwifery coordinator immediately, within 2 –3 
+hours after the death, regardless of when the death occurred: 
+• Relatives/next of kin . 
+• Consultant Neonatologist -on-Call (if the baby has been born and transferred to the 
+neonatal unit) . CLINICAL PROTOCOL 
+Due for review: TBC 
+Protocol Name : Maternal or Birthing Parent Death v1.0 
+For use at: PRH, RSCH, SRH, WH 
+Page 4 of 16 
+ • Director of Midwifery to be informed. 
+• Patient Safety Team. 
+• Clinical Director (or deputy) . 
+• Board member or senior member of the hospital management team . 
+• Site Nurse Practitioner 
+• Mortuary Technician via switchboard . 
+The following individuals should be notified by the midwifery coordinator immediately, within 2 –3 
+hours after the death, regardless of when the death occurred and attend the unit if not already 
+present: 
+• Consultant Obstetrician -on-Call. 
+• Consultant Anaesthetist -on-Call. 
+• Head of Midwifery (or deputy) or senior nurse in charge of the non -maternity setting. 
+4.0 Actions within 24 hours 
+Two individuals (obstetric and midwifery) should be nominated as named contacts for the family 
+going forward and their contact details should be provided. 
+The role of the key contacts with the partner and family is to: 
+• Offer condolences . 
+• Be the regular point of contact and to provide continuity . 
+• Act as the main point of information to avoid conflicting information being given . 
+• Be available after the partner and family have left the hospital . 
+• Provide written information following any meetings . 
+• Be able to allow adequate time to talk to the partner and family which will require good 
+listening skills . 
+• Absorb and listen to the partner’s and family’s questions and distress . 
+• Expect and allow expressions of anger and other emotions while not taking these 
+personally . 
+• Facilitate practical arrangements, such as writing any letters which are required and 
+organising free or reduced cost parking for visiting) ie outlining the need for additional 
+time off work for relatives . 
+• Ask the partner and family if they would accept staff members attending the funeral . 
+• A letter written to the GP, community midwife and health visitor, copied to the partner and 
+family which sets out who is their point of contact, what will happen next, and 
+arrangements for the care of the baby will help to ensure a coordinated and well 
+communicated approach to the immediate and longer -term support . 
+The consultant obstetrician should discuss all maternal or birthing parent deaths with the coroner 
+within the first 24 hours of the death. If the death has been anticipated for some time a postmortem 
+may not be required. 
+If a coroner -requested postmortem is not going to be carried out, the option of a hospital 
+postmortem should be discussed and offered to the next of kin as their consent will be required. CLINICAL PROTOCOL 
+Due for review: TBC 
+Protocol Name : Maternal or Birthing Parent Death v1.0 
+For use at: PRH, RSCH, SRH, WH 
+Page 5 of 16 
+ Service user/patient documentation should be downloaded/scanned and stored securely in the 
+Patient Safety digital folders. It should be made available to the investigating team, those writing 
+accounts of events, the coroner, MBRRACE -UK and the family on request . When families consent , 
+for an MNSI referral , the investigators will also require a copy of the notes. 
+The following individuals should be notified within 24 hours of the death or the next working day: 
+• Woman or birthing person ’s GP . 
+• Woman or birthing person ’s named midwife/team/booking unit . 
+• Woman or birthing ’s named health visitor/team if appropriate . 
+• Hospital bereavement services . 
+• Other specialist medical staff involved in the woman or birthing person ’s care, e.g. cardiac 
+services . 
+• Trust/health board risk manager, who will inform commissioners and any other bodies to 
+which the trust or health board is accountable . 
+• Maternity unit risk manager who will liaise with MNSI . 
+• Director of nursing . 
+• Coroner . 
+• Social services (if appropriate) . 
+• Trust/health board communications officer . 
+• Head of litigation and complaints . 
+5.0 Actions within the first week 
+An experienced senior member of obstetric or midwifery staff not involved in the care of the woman 
+or birthing person should be nominated to coordinate a case review as ear ly as possible. 
+All deaths during pregnancy and up to 1 year following the end of the pregnancy, regardless of how 
+the pregnancy ended and the cause of death, should be reported to the national Confidential 
+Enquiry into Maternal Deaths (MBRRACE -UK) within 7 days. 
+Verbal and written Statutory Duty of Candour must be completed as per Trust DOC policy and CQC 
+regulation 20. Duty of Candour Regulation 20 
+6.0 Actions required when the death occurs outside the maternity or gynaecology 
+department 
+When a maternal or birthing parent death occurs in early pregnancy, or a pregnant woman or 
+birthing person collapses in the community and is brought to the emergency department, maternity 
+and gynaecology personnel may not be involved in the immediate care. 
+Nevertheless, all staff should be encouraged to seek advice from maternity and gynaecology staff to 
+ensure the correct processes in relation to a maternal death are followed; this can be facilitated by 
+contact with the Head of Midwifery or the Director of Midwifery . 
+Many women or birthing people who die do so following a period in ICU /CCU . If the death occurs 
+shortly after admission without the prior involvement of maternity staff, then the Head of Midwifery 
+should be contacted. CLINICAL PROTOCOL 
+Due for review: TBC 
+Protocol Name : Maternal or Birthing Parent Death v1.0 
+For use at: PRH, RSCH, SRH, WH 
+Page 6 of 16 
+ Where admission for care has been to another hospital, for example, for specialist care, it is 
+important that the referring and booking teams are kept informed of the woman or birthing person ’s 
+progress and death when it occurs, especially if the baby is still at the referring hospital. The 
+referring hospital will need to co -ordinate the future care of the baby if the baby is still under their 
+care, the case review and the investigation if one is required, as well as family and staff support. 
+7.0 Actions required following anticipated deaths 
+In women and birthing people with significant pre -existing morbidity where death is a possibility, a 
+plan should be put in place with regard to who should be informed in the event the woman or 
+birthing person dies. Measures to support the partner and family may already be in place for such 
+anticipated deaths, but where they are not these should not differ from the actions following an 
+unanticipated death and bereavement care should be initiated early. 
+When the woman or birthing person has been unwell for some time prior to their death, or death is 
+anticipated because of underlying ill health, consideration about legal guardianship for the baby 
+should be discussed and formally agreed while the woman or birthing person can still be involved in 
+the decision making. 
+Anticipated deaths can still be traumatic for staff and will require the same level of documentation 
+and staff support as for unanticipated deaths. 
+Where a coronial/procurator fiscal postmortem is not required the option of a hospital postmortem 
+should be discussed and offered to the next of kin. 
+It is best practice to review the whole pathway of the woman or birthing person ’s care to consider if 
+there were any patient safety issues, and other aspects of care earlier in the woman’s journey, 
+which affected the quality of their care and the outcome, and to improve care for future women and 
+birthing people with the same condition. 
+8.0 Postmortem and death certification 
+Following discussion with the coroner, it may be agreed that the coroner need not be involved and a 
+medical certificate of the cause of death (MCCD) can be issued by the qualified attending medical 
+doctor. In the event that a medicolegal postmortem is not required, a sensitive discussion with the 
+family will be needed to seek consent for a postmortem, as this may add to the evidence about the 
+cause and circumstances of the death, identify hereditary factors, which may have implications for 
+other family members, or to advance medical research. 
+A death certificate cannot be issued if a coroner postmortem is going to be carried out. In this event, 
+the death certificate will be issued by the coroner/procurator fiscal once the pathologist has 
+reported. 
+If an inquest is going to be held, there will be a longer delay. CLINICAL PROTOCOL 
+Due for review: TBC 
+Protocol Name : Maternal or Birthing Parent Death v1.0 
+For use at: PRH, RSCH, SRH, WH 
+Page 7 of 16 
+ 9.0 Ockenden requirements following maternal or birthing parent death 
+LEARNING FROM MATERNAL DEATHS 
+Essential action Nationally all maternal post-
+mortem examinations must be conducted by a 
+pathologist who is an expert in maternal 
+physiology and pregnancy related pathologies. 
+In the case of a maternal death a joint review 
+panel/investigation of all services involved in the 
+care must include representation from all 
+applicable hospitals/clinical settings • NHS England and Improvement must work 
+together with the Royal Colleges and the 
+Chief Coroner for England and Wales to 
+ensure that this is provided in any case of a 
+maternal death. 
+• This joint review panel/investigation must 
+have an independent chair, must be aligned 
+with local and regional staff and seek external 
+clinical expert opinion where required. 
+• Learning from this review must be introduced 
+into clinical practice within 6 months of the 
+completion of the panel. The learning 
+Ockenden Report Final 2022 
+External clinical specialist opinion from outside the Trust (but from within the region), must be 
+mandated for cases of intrapartum fetal death, maternal death, neonatal brain injury and neonatal 
+death. Ockenden Report Final 2022 
+10.0 Registering death 
+The family need to register the death with the local register office who will issue the death 
+certificate. The funeral can be held once a death certificate has been issued. 
+If there is going to be delay, either owing to complexity of pathological analysis and/or an inquest, 
+the coroner can issue a certificate granting release of the body without the cause of death to allow 
+the funeral to proceed. 
+Once the coroner is involved the family should be put in touch with their office, and all advice 
+concerning death certification, release of the body and timing of the funeral (cremation or 
+repatriation) will be provided via this route. The hospital bereavement office and patient services 
+should be able to provide written information. 
+Staff should be sensitive to the faith needs of the family. Where a requirement to urgently release 
+the body for immediate burial (e.g. for religious reasons) cannot be met this should be sensitively 
+explained. 
+11.0 Baby born alive 
+In many cases of maternal or birthing parent death there will be a surviving baby. The baby might be 
+admitted to the neonatal unit because they require clinical care or simply as a place of refuge in the 
+circumstances. If the baby has been admitted to the neonatal unit, the neonatal team must be made 
+aware of the maternal or birthing parent death as a matter of urgency. CLINICAL PROTOCOL 
+Due for review: TBC 
+Protocol Name : Maternal or Birthing Parent Death v1.0 
+For use at: PRH, RSCH, SRH, WH 
+Page 8 of 16 
+ It is important for the neonatal team to establish who has legal parental responsibility for the baby, 
+particularly if the parents were not married or in a civil partnership. 
+The safeguarding team should be involved in these discussions. 
+Once parental responsibility has been established every effort must be made to involve the father or 
+person with parental responsibility, and family, in the baby’s care, progress and decision making. 
+It is important to involve the community team ( GP, midwife, health visitor and relevant social 
+agencies ) in the plans to support the person with parental responsibilities and those caring for the 
+baby and any siblings, especially in those circumstances where there is little family support. 
+12.0 Stillbirth / neonatal death 
+In the event that the baby was born (including by perimortem or postmortem caesarean birth) and 
+did not survive, consideration needs to be given to managing the perinatal bereavement alongside 
+the maternal bereavement. 
+The involvement of the Perinatal Bereavement Midwife will ensure that the baby’s body is cared 
+for appropriately (for example with the provision of a cold cot ), the partner and family are involved if 
+they wish to be and activities such as spending time with the baby , taking photographs and 
+memory -box making are not forgotten. 
+The bereavement checklist should be completed to ensure that all relevant professionals are 
+informed about the baby as well as maternal death. Providing information about the local support 
+groups, for example, the stillbirth and neonatal death charity Sands may prove helpful for families 
+later. 
+The practicalities of registering the stillbirth/neonatal death and maternal death will also need to be 
+discussed with the partner and family, along with information about arranging a funeral. The 
+bereavement midwife will be able to provide information and support as these decisions are made. 
+If still in utero, they do not have to be buried separately. Some families decide that they want to 
+honour their baby's memory by arranging a separate burial or cremation. 
+All eligible neonatal death s and stillbirths will be notified to MBRRACE and taken through the 
+Perinatal Mortality Review Tool process. Refer to PMRT SOP for further information. 
+13.0 Family support and bereavement care 
+There is some evidence which suggests that the presence of family members at the resuscitation, 
+while stressful for staff, may help family members accept the reality of the death. 
+The family will need access to nonclinical emotional and psychological support and, in many 
+instances, the chaplaincy unit in the hospital can help with this in the first instance or provide advice. 
+Enable the family members, if they wish, to see and spend time with the woman prior to transfer to 
+the mortuary. Information should also be provided as to how family members can see the woman or CLINICAL PROTOCOL 
+Due for review: TBC 
+Protocol Name : Maternal or Birthing Parent Death v1.0 
+For use at: PRH, RSCH, SRH, WH 
+Page 9 of 16 
+ birthing person once they has been transferred to the mortuary. Each trust or health board should 
+have a local guideline covering this which applies to the hospital in general. 
+Private space should be found for the family away from the main birth unit, such as in the 
+bereavement suite. This should allow for access to toilets and shower facilities where possible and 
+access to food and drinks. It should be away from the sounds of other women and families where 
+possible. Be sensitive that contact with other new parents or their visitors may be distressing, for 
+example, at a vending machine, on a neonatal unit or in a waiting room. 
+As part of the on -going discussions with the partner/family, it will be important to ascertain to what 
+extent they wish to be involved/ informed about the review/investigation as it progresses. 
+It is also important to ensure that they are able to ask any questions they may have about what 
+happened and why. Plans as to who and how to communicate the results of a hospital postmortem 
+to the partner/family should be made ahead of the findings being available; the communication of 
+findings from coroner postmortem are the responsibility of the coroner. 
+14.0 Organ donation 
+During the course of these early discussions, the partner and family may raise the possibility of 
+organ donation. If the woman or birthing person died on the ICU /CCU , staff will be familiar with the 
+procedures and able to deal with this request and, where appropriate, may themselves raise this 
+possibility with the partner and family. 
+If the woman or birthing person died elsewhere, advice from ICU/CCU staff would be helpful. 
+Specialist nurses for organ donation (SNOD) should also be involved if donation is being 
+considered. If the death is likely to be dealt with by the coroner and may not grant permission. 
+15.0 Follow -up support for the partner and family 
+The nominated key contacts should stay in touch with the partner and family to keep them informed 
+about the progress of the cas e review and any investigation. In cases of unanticipated death, the 
+probable cause of death is often altered by the findings of the postmortem which may not be 
+available for some months. While it is very important that the partner and family are not given 
+conflicting information, ‘Duty of Candour’ in England and Scotland is a legal duty for hospitals to 
+inform and apologise to patients and their families if there have been mistakes in their care that 
+have led to significant harm. 
+Communication with the partner and family in an open and transparent way regarding the care and 
+treatment provided is the appropriate action in every setting. However, care should be taken to 
+ensure that they do not receive conjecture or assumptions about the cause of death until evidence 
+is established. 
+Following discussions and meetings with the partner and family members, it is important to keep 
+records of all conversations and what the partner and family have been told regarding the 
+circumstances surrounding the death and eventually the cause of death. It is best practice to follow 
+up every meeting with a letter to the partner and family members copied to the GP. CLINICAL PROTOCOL 
+Due for review: TBC 
+Protocol Name : Maternal or Birthing Parent Death v1.0 
+For use at: PRH, RSCH, SRH, WH 
+Page 10 of 16 
+ 16.0 Staff support 
+Consider the shift being completed by other medical and midwifery staff; the unit should call on its 
+escalation policy to keep the unit safe for other women and birthing people and to ensure that staff 
+are provided with appropriate support. 
+An immediate team checkout (hot debrief) should be performed including the support and clerical 
+staff, the porters and the laboratory technicians. One of the purposes of such as debrief is to enable 
+staff to freely speak about the level of distress they are feeling. 
+Staff should be reminded that the case should not be discussed with other parents or families or on 
+social media. 
+The line manager of all staff directly involved should be informed of the event so individualised 
+support can be given, including for senior as well as junior staff; consider appointing someone to 
+stay in touch with staff members when they are off duty with a further clinical debrief arranged at a 
+later date . 
+All staff should be reminded of how to access hospital counselling services. Line managers or HoMs 
+can assist with access to support. 
+The Professional Midwifery Advocate ( PMA ) team should be informed of all staff that have been 
+either directly or indirectly involved, to offer further and on -going individual support. 
+Consider moving the directly affected staff to less acute areas of work over the short or medium 
+term and/or modifying working patterns if they wish. Support for staff before they return to work 
+should also be offered. If this is not possible, offer support when they next come to work or work in 
+that area. 
+Liaison between midwifery, nursing and medical student tutors and educational supervisors is 
+important to ensure ongoing support. 
+The educational supervisors of all trainee doctors should also be informed of their involvement, 
+however superficial. Most cases will need to be recorded on the ‘Enhanced Form R’ as part of the 
+annual review of competence progression and appraisal process. 
+The confidence of all staff may be affected and therefore it should be ensured, where possible, that 
+the consultant on call and Head of Midwifery is available rapidly at all times. 
+Staff may need additional support if there is media involvement (see below). 
+Staff may at a later stage be asked to provide written statements regarding their involvement in the 
+care of the women and the events leading to the death, for example prior to an MNSI investigation 
+and an inquest. 
+Advice should be provided as to how these statements should be drafted (e.g. stating only the facts, 
+avoiding speculation, drawing on their contemporaneous notes). Support and review of the 
+statements should be offered by a senior clinician not involved in the death prior to their statement 
+being submitted. CLINICAL PROTOCOL 
+Due for review: TBC 
+Protocol Name : Maternal or Birthing Parent Death v1.0 
+For use at: PRH, RSCH, SRH, WH 
+Page 11 of 16 
+ 17.0 Media involvement 
+Any media involvement should be channelled through the trust/health board communications team; 
+the trust/health board should have a communications policy that should be followed in all 
+circumstances to protect patient, partner and family confidentiality which is paramount. Only staff 
+nominated by the trust/health board should speak to the media on behalf of the trust/health board. 
+If there is likely to be media involvement, all staff should be made aware of the possibility of covert 
+media enquiries. 
+Staff involved in the death may need additional future support, particularly if the event is covered in 
+the media sometime after the event, for example, if an inquest is held. 
+18.0 Reflections, feedback and shared learning 
+At an appropriate point after the death, invite all the staff across the unit, those involved across the 
+hospital and any staff external to the hospital who were involved (for example, paramedics and 
+ambulance staff) to a debrief and discussion of the case. 
+This will help disseminate the lessons to be learned, reduce potentially ill -informed discussions and 
+ensure the staff believe they can rely on the local review and any investigation to be open, honest 
+and useful. 
+19.0 Audit & monitoring 
+All maternal or birthing parent deaths are investigated locally via datix and the patient safety incident 
+response framework (PSIRF), externally via MNSI if within set criteria, coroner and nationally via 
+MBBRACE. 
+References 
+RCOG Managing Events Surrounding a Maternal Death and Supporting the Family and Staff ; Good 
+Practice Paper No. 18 February 2024 
+Ockenden Report Final 2022 
+https://www.cqc.org.uk/guidance -providers/regulations -enforcement/regulation -20-duty-candour 
+ 
+ CLINICAL PROTOCOL 
+Due for review: TBC 
+Protocol Name : Maternal or Birthing Parent Death v1.0 
+For use at: PRH, RSCH, SRH, WH 
+Page 12 of 16 
+ Appendix 1: Contacts and actions: I MMEDIATE 
+Contact Name/ Number Date By whom? 
+Next of kin 
+Consultant obstetrician on 
+call (to attend hospital) 
+Consultant Anaesthetist (to 
+attend hospital) 
+Head of Midwifery (or 
+Deputy) (to attend hospital) 
+Senior/ Midwifery Manager 
+on-Call (to attend hospital) 
+Patient Safety Team 
+Clinical Director (or deputy) 
+Board Member 
+Site Nurse Practitioner 
+Mortuary 
+(technician on call - if out of 
+hours) 
+Staff Nominated to act as relatives’ main point of contact: 
+ 
+Name : ………………………………………………………………………………………………… 
+ 
+Name : ………………………………………………………………………………………………… 
+ 
+Maternal records : 
+• Ensure ALL records completed (try to write as complete an account as possible from 
+as many people as possible). 
+• List ALL personnel present (and their job title). 
+• Crash call record to be kept. 
+ 
+ Notes photocopied ASAP x2 –3: 
+• If for postmortem – copy to go with mother to mortua ry/coroner 
+• Copy to go the MBRRACE -UK reporter 
+• Copy to go to MNSI if a relevant death and when consent has been obtained 
+Investigations (as discussed with consultant): 
+ Swabs 
+ Cultures 
+ Placenta: in situ / histology / with mother for postmortem 
+ Blood from central venous access for fetal squamous cells ‘squames’ (test for 
+ amniotic fluid embolism) 
+ Other …………………………………………………………………………………….. 
+ CLINICAL PROTOCOL 
+Due for review: TBC 
+Protocol Name : Maternal or Birthing Parent Death v1.0 
+For use at: PRH, RSCH, SRH, WH 
+Page 13 of 16 
+ Appendix 2: Contacts and Actions: WITHIN 24 HOURS (1 working day) 
+Contact Name & contact number Date 
+notified Print name 
+Woman or birthing person ’s 
+Link Consultant (maternity) 
+Director of Public Health 
+Integrated Care Board 
+Officer 
+Woman or birthing person’s 
+GP - 
+Woman or birthing person’s 
+named midwife 
+Woman or birthing person’s 
+health visitor 
+Trust/health board risk 
+manager 
+Maternity unit risk manager 
+Director of Nursing 
+Coroner Contact by coroner’s office 
+Social services if appropriate 
+Communications officer Contact by trust risk manager 
+Head of Litigations & 
+Complaints Contact by trust risk manager 
+Corone r /postmortem/death certificate 
+Name of coroner informed/discussed case ………………………………………………………… 
+Postmortem to be performed by :  Coroner ( or Procurator fiscal )  Hospital 
+Death certification provided by :  Coroner ( or Procurator fiscal )  Hospital 
+Other hospital doctors informed (e.g. SLE, diabetes, renal, cardiology) 
+By name ……………………………………………………………………………………………….. 
+ Maternity risk manager informed 
+ Received copy of notes 
+ Incident form completed and sent to risk manager 
+Baby care 
+If baby born dead – use baby checklists 
+If baby alive – name of next of kin: …………………………………………………………………. 
+Location of baby or fetus: ……………………………………………………………………………. 
+Registration required (please circle) Yes / No 
+ Relatives referred to hospital bereavement office 
+ Counselling offered (please circle) Accepted / Declined 
+ Meeting with consultant arranged 
+ Postmortem result discussed 
+ CLINICAL PROTOCOL 
+Due for review: TBC 
+Protocol Name : Maternal or Birthing Parent Death v1.0 
+For use at: PRH, RSCH, SRH, WH 
+Page 14 of 16 
+ Appendix 3: Template letter for communicating with GP 
+Dear [insert name] 
+It is with sadness that I write to tell you of the recent death in our unit of [ insert name ]. [Insert name ] 
+had been admitted on the [ insert date ] for birth/with symptoms of [ insert symptoms ] and was 
+managed under the care of [ insert consultant name ]. [insert name ] died on [ insert date ]. 
+Provide a brief synopsis of the clinical problems and the actions taken, including any transfer 
+of care to another unit such as CCU/ ICU or to another hospital. 
+I have met with the partner [ insert name and address ] and/or family [na me and address and nature 
+of relationship ] and explained the events that we believe led to their death. 
+i) We have reported the death to the coroner and have been able to issue a death certificate and 
+this gives the cause of death as [ insert details ]. 
+OR 
+ii) We have been unable to issue a death certificate at present until the cause of death is confirmed 
+by postmortem, which is being done under the coroner’s instruction. 
+iii) Give any information about organ donation, etc. 
+As [insert name ] death was associated with pregnancy, we have informed the MBRRACE -UK, the 
+national Confidential Enquiry team, who record and review all pregnancy -related deaths; they may 
+be in touch to request copies of notes relating to the mother’s care. [ If the death has been reported 
+to an investigatory body e.g. Maternity and Newborn Safety Investigations, England, insert the 
+details here ]. 
+The baby [ insert the baby’s name ] [provide clinical information about the baby’s outcome, sex, 
+weight and state of health, and plans for discharge if known ]. 
+This has been a very difficult time for [ insert partner’s name ] and the family, and I would be grateful 
+if you would ensure that any necessary compassionate leave or absence from work is supported. 
+The trust is committed to ensuring we learn the necessary lessons from all unexpected outcomes 
+and we will be holding a review of events on [a date to be arranged ]. You would be welcome to 
+participate in this review if you are able to attend. 
+A follow up visit with myself has been arranged for [ insert partner’s name ] on [ insert date ]. It may be 
+that all the information is still not available at that time, or events are still too painful to review at that 
+date and we will schedule any further follow -up at a time and place that is comfortable for them. 
+[Insert partner’s name ] who is [ name ] partner has my contact details and the contact details of my 
+colleague [ inset name and position ] and I have indicated that we will do our best to answer any 
+questions that they or you may have. 
+I will be in touch again when we have any further information about the cause of death, the outcome 
+of the local review/investigation of care and in the event that an inquest is called. 
+Yours sincerely 
+[insert name ] 
+[insert title ] [insert contact details ] CLINICAL PROTOCOL 
+Due for review: TBC 
+Protocol Name : Maternal or Birthing Parent Death v1.0 
+For use at: PRH, RSCH, SRH, WH 
+Page 15 of 16 
+ Clinical protocol governance and approval 
+Owner Seb Adamson, Frank Usifo 
+Author/further information David Utting, Consultant Obstetrician 
+Protocol version v1.0 
+Related policies None 
+Related documents None 
+Standards RCOG Managing Events Surrounding a Maternal Death and 
+Supporting the Family and Staff ; Good Practice Paper No. 
+18 February 2024 
+MNSI Maternity and Newborn Safety Investigations 
+MBRRACE (Mothers and Babies: Reducing Risks through 
+Audit and Confidential Enquiries) 
+Ockenden Report Final 2022 
+https://www.cqc.org.uk/guidance -providers/regulations -
+enforcement/regulation -20-duty-candour 
+Superseded documents CG1190 Maternal Death 
+MP076 Maternal Death 
+Review due 1st April 2028 
+Date uploaded 1st April 2025 
+Approval 
+JOGG Date approved: 26th February 2025 
+W&C Clinical Effectiveness Group Date approved: 20th March 2025 
+Consultation 
+Head of Mortuary Date approved: 23rd October 2024 
+Ratification 
+Clinical Document Approval Group Date approved: 1st April 2025 
+ CLINICAL PROTOCOL 
+Due for review: TBC 
+Protocol Name : Maternal or Birthing Parent Death v1.0 
+For use at: PRH, RSCH, SRH, WH 
+Page 16 of 16 
+ Protocol version control log 
+Version Date Author(s) Comment 
+1.0 May 2024 David Utting , 
+Obstetric 
+Consultant New Trust wide clinical document replacing: 
+• CG1190 Maternal Death 
+• MP076 Maternal Death

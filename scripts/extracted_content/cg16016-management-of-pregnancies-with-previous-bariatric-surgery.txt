@@ -1,0 +1,811 @@
+# Extracted from: CG16016 Management of pregnancies with previous Bariatric Surgery.pdf
+# Guideline ID: cg16016-management-of-pregnancies-with-previous-bariatric-surgery
+# Content length: 35753 characters
+# Processing date: 1750066900.390718
+
+CG16016 Management of pregnant w omen/people who have undergone Page 1 of 19 
+previous bariatric surgery v3. 1 Oct 2022 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Management of pregnant women /people who have undergone 
+previous bariatric surgery 
+Summary statement: How does the 
+document support patient care? To provide clear guidance for staff in the management 
+of women /people who are pregnant and have 
+undergone gastric bypass/gastric band or sleeve 
+gastrectomy 
+Staff/stakeholders involved in 
+development: Obstetric Consultants, Senior Midwifery Staff and 
+Anaesthetists. 
+Division: Women and Child ren’s 
+Department: Maternity 
+Responsible Person: Chief of Services 
+Author: Consultant obstetrician 
+For use by: All Medical and Maternity staff involved in the care 
+and subsequent management of pregnant 
+women /people who have undergone gastric 
+bypass/gastric band or sleeve gastrectomy 
+Purpose: To provide clear guidance in the recognition of 
+women /people who have undergone gastric 
+bypass/gastric band or sleeve gastrectomy and the 
+care during pregnancy, labour and post -natal period. 
+This document supports: 
+Standards and legislation NICE 2010 Weight Management before during and 
+after pregnancy PH27 
+NICE 2014 Obesity 
+National Bariatric Surgery Register, BOMSS BOMSS 
+2020 Guidelines .Pregnancy after BS: Consensus 
+recomm endations for periconception, antenatal and 
+postnatal care Shawe et al 2019 Obesity review 
+Key related documents: UH Sussex (SRH&WH) Maternity guidelines 
+Approved by: Joint Obstetric Guideline Group 
+Approval date: 19th October 2022 Date uploaded:19th October 2022 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not applicable – Divisional ratification only required 
+Ratification Date: N/A 
+Expiry Date: August 202 5 
+Review date: February 202 5 
+If you require this document in another format such as Braille, large print, 
+audio or another language please contact the Trusts Communications Team 
+Reference Number: CG16016 
+
+CG16016 Management of pregnant w omen/people who have undergone Page 2 of 19 
+previous bariatric surgery v3. 1 Oct 2022 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Version Date Author Status Comment 
+1.0 10/05/2016 G Barns , Miss S Stone 
+and ASPH Guideline 
+Team Archived New Trust wide guideline 
+2.0 20/08 /2019 Dr S.Attersley -Smith, Dr 
+S. Stone, Dr L. Albon , Dr 
+K Shipman and E. 
+Mathews Archived Minor updates. No major 
+new national guidance 
+updates released since 
+previous version. 
+3.0 August 
+2022 Dr S.Attersley -Smith, E. 
+Mathews, 
+Dr S. Stone, Obstetric 
+Consultant 
+Dr K Shipman, 
+Consultant Chem Path Archived 3 year review . Main updates 
+in: 
+ Blood tests 
+ Supplementation and 
+replacement of 
+deficiency 
+ Screening for diabetes 
+ Checklists added to 
+appendices 
+3.1 Oct 2022 N. Bailey , Diabetes 
+Specialist Midwife LIVE Correction to point 13.0. 
+GDM fasting blood glucose 
+level 5.3mmol/L. 
+
+The interpretation and application of clinical guidelines will remain the 
+responsibility of the individual clinician. 
+If in doubt contact a senior colleague or expert. 
+
+CG16016 Management of pregnant w omen/people who have undergone Page 3 of 19 
+previous bariatric surgery v3. 1 Oct 2022 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Contents 
+ 
+1.0 Aim ................................ ................................ ................................ ............................... 4 
+2.0 Scope ................................ ................................ ................................ ........................... 4 
+3.0 Responsibilities ................................ ................................ ................................ ............. 4 
+4.0 Abbreviations used in this guideline ................................ ................................ .............. 4 
+5.0 Introduction ................................ ................................ ................................ ................... 4 
+6.0 Booking antenatal appointment ................................ ................................ ..................... 6 
+7.0 Antenatal Care ................................ ................................ ................................ .............. 7 
+7.1 Overview of care ................................ ................................ ................................ ........... 7 
+8.0 Blood tests ................................ ................................ ................................ .................... 7 
+9.0 Supplementation ................................ ................................ ................................ ........... 8 
+9.1 Replacement of deficiency ................................ ................................ .......................... 10 
+10.0 Ultrasound surveillance ................................ ................................ ............................... 11 
+11.0 Gestational weight gain ................................ ................................ ............................... 11 
+12.0 Anaesthetic review ................................ ................................ ................................ ...... 11 
+13.0 Screening for diabetes ................................ ................................ ................................ 11 
+14.0 Procedure specific care ................................ ................................ ............................... 12 
+14.1 Non-standard procedures (e.g. BPD/duodenal switch) ................................ ................ 12 
+15.0 Antenatal admissions ................................ ................................ ................................ .. 12 
+15.1 Internal hernia ................................ ................................ ................................ ............. 12 
+15.2 Hyperemesis/vomiting in pregnancy ................................ ................................ ............ 13 
+16.0 Labour and birth ................................ ................................ ................................ .......... 13 
+17.0 Postnatal care of the mother/birthing parent ................................ ................................ 13 
+18.0 Baby ................................ ................................ ................................ ........................... 13 
+Audit ................................ ................................ ................................ ................................ ... 14 
+References ................................ ................................ ................................ ............................. 15 
+Appendix 1: Letter to bariatric surgeon ................................ ................................ ................... 16 
+Appendix 2: Gastric Band checklist ................................ ................................ ........................ 17 
+Appendix 3: Gastric Sleeve checklist ................................ ................................ ...................... 18 
+Appendix 4: Gastric Bypass checklist ................................ ................................ ..................... 19 
+
+CG16016 Management of pregnant w omen/people who have undergone Page 4 of 19 
+previous bariatric surgery v3. 1 Oct 2022 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Management of pregnant women/people who have undergone 
+previous bariatric surgery 
+
+1.0 Aim 
+ 
+To minimise complications and ensure optimal care for pregnant women /people who have 
+undergone bariatric surgery. To act as a resource for staff caring for these women /people . 
+ 
+2.0 Scope 
+ 
+This guideline is intended for use by midwives, medical and support staff. 
+ 
+3.0 Responsibilities 
+ 
+Midwives & Obstetricians have a responsibility to: 
+ 
+ Access, read, understand and follow this guidance . 
+ Use their professional judgement in application of this guideline . 
+ 
+Management have a responsibility to ensure : 
+ 
+ The guideline is reviewed as required in line with Trust and National 
+recommendations . 
+ The guideline is accessible to all relevant staff . 
+ 
+4.0 Abbreviations used in this guideline 
+ 
+BMI - Body Mass Index GTT - Glucose Tolerance Test 
+LFTs - Liver Function Tests U&E -Urea and Electrolytes 
+FBC - Full Blood Count BD - Twice daily 
+mg - Milligrams mcg - Microgram 
+IM - Intramuscular Injection IU - International Unit 
+mmol/L - millimoles per litre BS - Bariatric Surgery 
+RYGB - Roux -en-Y Gastric Bypass 
+ 
+5.0 Introduction 
+ 
+NICE recommends that patients with a BMI >40 kg/m2 or BMI>35 kg/m2plus co -morbidity 
+should be considered for bariatric surgery, where lifestyle modifications alone or in 
+combination with drug therapies have not been effective in providing significant and sustained 
+weight loss .1 It is also recommend ed that a follow up care package to be offered to NHS 
+patients undergoing bariatric surgery for a minimum of 2 years . Further follow up is 
+recommended annually with the GP.1 
+ 
+CG16016 Management of pregnant w omen/people who have undergone Page 5 of 19 
+previous bariatric surgery v3. 1 Oct 2022 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Adherence to this can be variable and there is no such provision for individuals having bariatric 
+procedures performed privately. 
+ 
+The main bariatric procedures undertaken on women /people in the UK are the gastric band, 
+Gastric Sleeve and Gastric bypass – outlined below. 
+
+Images taken from NHS.uk website bariatric procedures types - 
+https://www.nhs.uk/conditions/weight -loss-surge ry/types/ accessed 11/7/2022. 
+
+Gastric band 
+Cuff placed around upper 
+section of stomach to create 
+small pouch 
+Cuff can be inflated and 
+deflated 
+Sleeve Gastrectomy 
+Large portion of stomach 
+removed surgically 
+Gastric Bypass 
+Small stomac h pouch created, 
+small bowel brought up and 
+attached to this pouch 
+Therefore large portion of 
+stomach and some small 
+bowel “bypassed” 
+CG16016 Management of pregnant w omen/people who have undergone Page 6 of 19 
+previous bariatric surgery v3. 1 Oct 2022 
+Please check against Staffnet that this printout is the most recent version of this document. 
+The most common procedures performed in the NHS are the gastric bypass and sleeve 
+gastrectomy . 
+ 
+Weight loss with bariatric surgery should not be assumed to mean patients have a nutritionally 
+improved diet. 
+ 
+Patients are no longer provided with vitamin supplements on prescription after bariatric 
+surgery; therefore access or adherence to necessary vitamins and mineral supplementation 
+cannot be assumed. 
+ 
+All procedures have the potential to cause women /people to experience vomiting or 
+regurgitation. 
+ 
+Patients after bariatric surgery have increased risk to develop nutrient deficiencies notably 
+iron, vitamin B12, calcium, vitamin D, folic acid, zinc, copper, selenium and thiamine 
+ 
+Consensus guidelines recommend s postponing pregnancy until stable weight is achieved after 
+bariatric surgery. Typically this is 1 year after sleeve and bypass and 2 years after band. 
+ 
+6.0 Booking antenatal appointment 
+ 
+Antenatal patients that have undergone bariatric surgery must be asked the following 
+questions by the booking midwife, and the an swers documented in their notes: 
+ 
+1. What type of bariatric surgery has been performed ? 
+ 
+2. Confirm adherence to recommended vitamin / mineral supplements . 
+ 
+3. Further details re surgery - Year perfor med/Name of surgeon/Name of centre . 
+ 
+4. Does the woman /person have their discharge paperwork from bariatric surgery? 
+ If the woman /person does not have a copy of her discharge paperwork (indicating 
+the details of their surgery) they should be asked to get a copy from their bariatric 
+team and should bring this to the first consultant antenatal clinic and to all 
+appointments. 
+ 
+5. Have they attended follow up , is it still ongoing and do they have leaflet ‘Dietary 
+Advice during Pregnancy f ollowing Weight loss Surgery ’? Most up to date version of 
+leaflet available from Bariatric surgery FAQs 
+(Dietitian, Bariatric Surgery Service St Richards Hospital 01243 831655 or Ext 
+35201) . 
+ 
+6. Who is current follow -up with – for instance Bariatric Team, G P or 
+metabolic/endocrine clinic. 
+ 
+All these details must be on the antenatal summary sheet. 
+ 
+CG16016 Management of pregnant w omen/people who have undergone Page 7 of 19 
+previous bariatric surgery v3. 1 Oct 2022 
+Please check against Staffnet that this printout is the most recent version of this document. 
+7.0 Antenatal Care 
+ 
+If at the first consultant antenatal appointmen t the team have not seen written confirmation of 
+the type of bariatric surgery that the woman /person has undergone, the doctor who reviews 
+them should use Appendix 1 to contact the patient ’s bariatric team asking them to send the 
+required details. This must be documented in the woman /person ’s notes. 
+ 
+To try and avoid confusion general concepts for care will be discussed , checklist have been 
+created by type of procedure – it is suggested the relevant checklist is printed and attached to 
+the patients maternity notes . (See Appendix 2: Gastric Band , Appendix 3: Gastric Sleeve , 
+Appendix 4: Gastric Bypass ) 
+ 
+7.1 Overview of care 
+ 
+All patient s with a history of bariatric surgery require: 
+ 
+ Referral to consultant antenatal clinic . 
+ Referral to the anaesthetic team . 
+ To follow the BMI pathway if BMI>30 (despite surgery BMI may still be raised ). 
+ Supplements – all women /people should be taking a minimum of a pregnancy 
+multivitamin . see section 9 for full list of supplements per procedure . 
+ Additional screening for nutritional deficiencie s. 
+ Additional growth sca ns to ensure no evidence of intrauterine growth restriction. 
+ Screening for diabetes – Consensus document recommends all patients who have 
+had bariatric surgery to be screened for GDM , but refer to diabetes specialist 
+midwives for monitoring instead of GTT . 
+ 
+8.0 Blood tests 
+ 
+Nutritional deficiencies are the area of greatest concern in women /people with a history of 
+Bariatric Surgery ( BS). They are both detrimental to the woman /person ’s health and can also 
+lead to in -utero growth restriction in the foetus. The challenge comes in monitoring and 
+responding to nutritional deficiencies in the pregnancy due to the lack of normal ranges for 
+many of the nutrients in pregnancy and the lack of guidance on replacemen t. 
+Due to the above challenges a standardised regime cannot be provided. 
+ 
+Ideally women /people with a history of BS would attend pre -conception counselling and any 
+nutritional deficiencies would be addressed prior to conception. 
+ 
+Important factors to establish during first antenatal contact are: 
+ What supplementation they have been recommended and are they taking it all as 
+prescribed ? 
+ Have they ever had (do they have) any known micronutrient deficiencies ? 
+ When did they last have mi cronutrient levels checked ? 
+ Do they have any additional factors likely to hinder absorption of micronutrient 
+supplementation either pregnancy specific , e.g. hyperemesis , or pre -existing , e.g. fat 
+malabsorption? 
+CG16016 Management of pregnant w omen/people who have undergone Page 8 of 19 
+previous bariatric surgery v3. 1 Oct 2022 
+Please check against Staffnet that this printout is the most recent version of this document. 
+The following BAR bloods should be performed at the Booking appointment: 
+ 
+BAR Bloods 
+Blood test Bottle colour 
+FBC Purple 
+LFTs Yellow 
+Ferritin Yellow 
+U&Es Yellow 
+Folate Yellow 
+B12* Yellow 
+Calcium** Yellow 
+ 
+Additional blood tests may be required and will be determined by the maternal medicine 
+consultant at their first appointment when an individualised plan for nutritional screening for the 
+remainder of the pregnancy will be made. 
+ 
+*NB If woman/person is having regular IM Vitamin B12 every 3 months then screening for B12 
+not required. 
+ 
+**Check PTH if corrected calcium is abnormal. 
+ 
+Consider checking Vitamin A in gastric bypass or sleeve. Vitamin A is unstable and light 
+sensitive therefore patient must be bled in hospital. 
+ 
+Selenium, zinc, copper and Vit D can be checked annually unless any concerns . 
+ 
+Patients who have had DS/BPD may need serum vitamin E, Vitamin A, Vitamin K1 and 
+PIVKA -II levels monitored. These women /people will require dietician input . 
+ 
+Please use ICE order comms to request blood tests which will provide instructions on tube 
+type and specimen stability. Blood reference s and containers can also be found here : 
+Table of some of the tests and turnaround times.pdf 
+ 
+9.0 Supplementation 
+ 
+The table below highlights the recommended supplements (as per British Obesity and 
+Metabolic Society 2020 ) to be taken by women /people who are pregnant or planning 
+pregnancy after bariatric surgery . These have been divided by procedure. This 
+recommendation is irrespective of time since surger y or current BMI. 
+ 
+CG16016 Management of pregnant w omen/people who have undergone Page 9 of 19 
+previous bariatric surgery v3. 1 Oct 2022 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Band Sleeve Bypass 
+Multivitamin 
+and mineral * Yes Yes Yes 
+Folic Acid 5mg 5mg 5mg 
+B12 Not routinely Injection every 3/12 Injection every 3/12 
+Iron Not routinely Ferrous fuma rate 
+(210mg) tablet BD Ferrous fuma rate 
+(210mg) tablet BD 
+Calcium and 
+Vitamin D Not routinely 
+above 
+multivitamin Encourage dietary 
+sources of calcium. 
+Take calcium tablet 
+providing 500 -
+1000mg (take with 
+food) and vitamin D 
+supplement providing 
+2000 -4000 IU (50 -
+100mcg) per day Encourage dietary 
+sources of calcium. 
+Take calcium tablet 
+providing 500 -1000mg 
+(take with food) and 
+vitamin D supplement 
+providing 2000 -4000 
+IU (50 -100mcg) per 
+day 
+ 
+It is recommended that all pregnant women /people take a pregnancy specific multivitamin . The 
+retinol form of Vitamin A should be avoided during pregnancy due to teratogenicity risk . It is 
+especially important to ensure that women /person who have undergone any form of bariatric 
+surgery are taking pregnancy multivitamins . The multivitamin preparations recommended for 
+pregnancy after bariatric surgery are: 
+ 
+ Pregnacare OD 
+ Seven seas Pre gnancy OD 
+ Forceval Capsule OD (not soluble) 
+ 
+Note: although P regaday can be used for iron supplementation as only contain 350mcg of 
+folate is not adequate supplementation of folic acid in those requiring 5mg folic acid . 
+ 
+Women /people taking calcium/vitamin D/iron /B12 supplements prior to pregnancy should be 
+encouraged to continue them . 
+ 
+Encourage dietary calcium intake. Calcium Food Fact Sheet, British Dietetic Association 
+(bda.uk.com) 
+ 
+Folate 
+Women/people with a history of bariatric surgery and BMI>30 or T2DM should be prescribed 
+folate 5mg daily, ideally pre -conceptually or as early in pregnancy as possible. 
+ 
+CG16016 Management of pregnant w omen/people who have undergone Page 10 of 19 
+previous bariatric surgery v3. 1 Oct 2022 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Check B12 level before starting folic acid supplementation (if not on B12 injections regularly or 
+had assessment up to 6 mont hs before ). 
+ 
+9.1 Replacement of deficiency 
+ 
+Vitamin or 
+mineral Definition of 
+deficiency First -line treatment Escalation of 
+treatment 
+Iron 
+ Ferritin < 30 7 Oral iron 
+(ferrous fumarate, 
+pregaday) max 1 tablet BD Iron infusion 
+(consider as f irst-line if 
+late 3rd trimester) 
+Folate <3.4 ug/L 6 5mg Folic Acid daily 
+B12* <130 ng/L 6 
+If low normal i.e 130 -
+350 MMA level is 
+checked by lab at 
+Worthing/SRH IM B12, every other day (5 
+doses total) Maintenance dose 
+every 3/12 
+Vitamin D < 37.5nmols 4 Colecalciferol 50,000IU 
+weekly for 6 weeks and 
+then maintenance of 800 – 
+2000 IU daily 4 Consider IM Vit D if no 
+improvement with high 
+dose oral 
+supplementation (after 
+12/40) ergocalciferol 
+7.5mg IM . 
+D/w Maternal Medicine 
+prior to prescribing 
+Calcium 2.2 – 2.6 mmol/L 
+Check PTH if 
+abnormal Encourage dietary sources 
+of calcium, take calcium 
+tablet with food providing 
+500-1000mg calcium and 
+Vitamin D tablet providing 
+2000 -4000IU (50 -100mcg) 
+ 
+Adcal D3 chewable, Cacit 
+D3 or calc ichew D3 forte – 
+all bd If calcium is low despite 
+taking the usual 
+recommendation of 
+supplements trigger 
+more investigations 
+with endocrinology . 
+Copper < 20 umol/L 6 Seek input from Bariatric 
+Dietitians for advice 
+Zinc < 8 umol/L 6 seek input from Bariatric 
+Dietitians for advice 
+Selenium < 1.4 umol/L in 1st 
+trimester6 
+< 0.9 in 2nd and 3rd 6 2-3 brazil nuts daily 5 
+Vitamin A Vitamin A Treat with 10,000 
+– 25,000 IU oral daily for 1 -
+2 weeks until clinical 
+improvement. D/W Maternal 
+medicine before pre scribing 
+*Thiamine If suspicious of thiamine deficiency (e.g hyperemesis) do not wait for a blood 
+CG16016 Management of pregnant w omen/people who have undergone Page 11 of 19 
+previous bariatric surgery v3. 1 Oct 2022 
+Please check against Staffnet that this printout is the most recent version of this document. 
+test. Prescribe Thiamine 100mg tds and Vitamin B Co -Strong 1- 2 tds 
+For those unable to tolerate thiamine orally or clinical suspicion of acute 
+deficiency IV Pabrinex S HOULD BE GIVEN. 
+ 
+*Seek urgent specialist advice if there is neurological involvement such as unexplained 
+sensory and/or motor and gait symptoms 
+ 
+10.0 Ultrasound surveillance 
+ 
+Due to changes in absorption of nutrients following bariatric surgery, babies are theoretically at 
+increased risk of growth restriction in the pregnancy. The degree of concern is dependent on 
+type of surgery and interval between surgery and conception but additional antenatal growth 
+ultrasound scans s hould be considered for patient s with a history of bariatric surgery . 
+ 
+The minimum recommende d in all women /people with a history of bariatric surgery is 4 
+weekly scans from 32 weeks gestation . Increased surveillance may be required for other 
+maternal/fetal reasons or if growth restriction is suspected. 
+ 
+11.0 Gestational weight gain 
+ 
+Women /people after Bariatric surgery are advised as to what is a healthy weight gain in 
+pregnancy based on their BMI at booking (alongside general population)2. Energy needs 
+increase by 200 kcal only in the 3rd trimester . 
+ 
+BMI start pregnancy Guide during pregnancy Average weekly gain rate in 
+second and 3rd trimesters 
+< 18.5 12.5-18 0.5 kg/wk 
+18.5-24.9 11.5-16 0.4 kg/wk 
+25 – 29.9 7-11.5 0.3 kg/wk 
+30 and over 5-9 0.2 kg/wk 
+ 
+12.0 Anaesthetic review 
+ 
+All women /people who have undergone any type of bariatric surgery irrespective of booking 
+BMI should be referred for an anaesthetic assessment in the third trimester. 
+ 
+13.0 Screening for diabetes 
+ 
+Women /people with a history of bariatric surgery requir e screening for gestational diabetes . 
+ 
+Screening for gestational diabetes in patients who have undergone Gastric bypass/Sleeve 
+gastrectomy should be performed by carrying out blood glucose profiles for a week between 
+26-28 weeks’ gestation. Refer to the pregnancy diabetic team to arrange by email: 
+uhsussex.diabetesmaternity@nhs.net . This should include a fasting glucose level and 1hr post 
+prandial blood glucose level to be carried out with every meal for one week. The patient will 
+have these profiles reviewed by the diabetes specialist midwives . 
+ 
+CG16016 Management of pregnant w omen/people who have undergone Page 12 of 19 
+previous bariatric surgery v3. 1 Oct 2022 
+Please check against Staffnet that this printout is the most recent version of this document. 
+A diagnosis of gestational diabetes ma de if the fasting glucose is 5. 3mmols or more, or the 1 
+hour post prandial glucose is >7.8mmol/L. These patients will then be managed regarding their 
+gestational diabetes vi a the diabetic antenatal clinic. 
+ 
+Screening for gestational diabetes in patients w ho have undergone gastric band can be 
+performed using the standard glucose tolerance test unless the woman/person has a past 
+history of dumping syndrome . 
+ 
+14.0 Procedure specific care 
+ 
+If the woman /person has had bariatric surgery less than 1 years ago th ey require special 
+consideration due to concern about rapid weight loss, reduced nutritional intake and poorer 
+pregnancy outcome . 
+ 
+For ease of implementation and clarity on the a ntenatal schedule for each woman /person a 
+checklist has been prepared by procedure, these can be found in appendix II . These checklist s 
+are not intended to be prescriptive but cover the salient aspect s of antenatal care which should 
+be considered in women /people with a history of bariatric surgery. 
+ 
+14.1 Non-standard procedures (e.g. BPD/duodenal switch) 
+ 
+Senior obstetrician to formulate individual schedule of care. Increased risk of nutritional 
+deficiencies. Recommend specialist dietetic input from booking, please contact team via Ext 
+31655 
+ 
+15.0 Antenatal admissions 
+ 
+The main potential complications of bariatric surgery to be familiar with are listed below, they 
+are uncommon, but can be serious . Please liaise with bariatric surgery department for 
+management. 
+ 
+ Gastric band – band migration, band sl ippage, gastric prolapse, stomal obstruction, 
+pouch dilatation, gastric erosion and necrosis. 
+ Sleeve gastrectomy - gastric erosion and necrosis , obstruction . 
+ Gastric bypass – internal hernia (8% in pregnancy)3 leading to intestinal obstruction, 
+perforation , maternal death and intrauterine death. 
+ Reactive hypoglycaemia . 
+ 
+15.1 Internal hernia 
+ 
+Any patient presenting with abdominal pain and/or vomiting with a history of bariatric surgery 
+(particularly gastric bypass) , should be managed with extreme caution. Obstetric consultant 
+review within the first 24hrs of admission is mandatory. Blood tests and ultrasound are unlikely 
+to help make the diagnosis. Urgent surgical referral will reduce the chance of misdiagnosis. 
+ 
+The incidence of internal hernia after RYGB (Roux -en-Y Gastric Bypass) during pregnancy is 
+8%. One third of patients who have had a RYGB and present with abdominal pain have an 
+CG16016 Management of pregnant w omen/people who have undergone Page 13 of 19 
+previous bariatric surgery v3. 1 Oct 2022 
+Please check against Staffnet that this printout is the most recent version of this document. 
+internal hernia diagnosed and has a high incidence of maternal and foetal death. Care 
+providers should assume small bowel obstruction unless otherwise advised. We recommend 
+all women /people with RYGB are counselled on risks and symptoms of internal hernia and 
+seek medical assistance without delay. 
+ 
+15.2 Hyperemesis /vomiting in pregnan cy 
+Please be aware that due to nutritional deficiencies women /people with a history of b ariatric 
+surgery may become unwell more quickly if the y have hyperemesis or severe vomiting at any 
+point in pregnancy. Of particular concern is thiamine deficiency and subsequent Wernicke ’s 
+Encephalopathy . Prescribe vitamin B Co -Strong 2 TDS and Thiamine 100mg TDS for any 
+patient with chronic vomiting. There s hould be a l ow threshold for escalating to a Pabrinex 
+infusion . Refer to CG13003 Management of hyperemesis guideline . 
+ 
+Gastric Band and vomiting : 
+Patient should be counselled on risks and symptoms of band slippage due to vomiting and 
+increased intraabdominal pressure during pregnancy. The patient should be directed to 
+contact the Bariatric Surgery Service 31655 for advice re defiling t he band . 
+ 
+16.0 Labour and birth 
+ 
+There is no medical reason that pregnant women /people with previous bariatric surgery 
+require different management with induction, labour or birth. 
+ 
+Women /people with BMI >30 kg/m2 should be managed in line with the BMI pathway and their 
+individualised needs. 
+ 
+17.0 Postnatal care of the mother /birthing parent 
+ 
+ Routine post -natal care 
+ No special diet is required 
+ Thrombopro phylaxis as indicated according to the VTE risk assessment 
+ Post-natal contraception advice 
+o Avoid CHC 
+o POP may not be fully absorbed , therefore only recommend if no other method 
+Sade/acceptable 
+o Encourage use of LARC 
+ 
+18.0 Baby 
+ 
+The baby should stay with the mother /birthing parent unless additional neonatal care is 
+required. The diabetes pathway must be followed for babies of mothers /birthing parents with 
+diabetes antenatally. Breastfeeding should be encouraged and ensure a feeding assessment 
+is completed and documented. 
+CG16016 Management of pregnant w omen/people who have undergone Page 14 of 19 
+previous bariatric surgery v3. 1 Oct 2022 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Audit 
+ 
+Suggested auditable points: 
+ 
+Booking antenatal appointment – is the following documented on the Antenatal Summary 
+sheet: 
+ What type of bariatric surgery has been performed? 
+ Confirm adherence to recommended vitamin / mineral supplements. 
+ Further details re surgery - Year performed/Name of surgeon/Name of centre. 
+ Does the woman/person have their discharge paperwork from bariatric 
+surgery. 
+ Have they attended follow up, is it still ongoing and do they have leaflet 
+‘Dietary Advice during Pregnancy following Weight loss Surgery’? 
+ Who is current follow -up with – Bariatric Team, GP or metabolic/endocrine 
+clinic? 
+ 
+Antenatal Care – has the following been performed: 
+ Referral to consultant antenatal clinic. 
+ Referral to the anaesthetic team. 
+ Screening for diabetes. 
+ Have the re levant blood tests been performed at Booking, 28 weeks and 34 
+week? 
+ Has the correct supplementation been advised? 
+ Have growth scans been performed 4 weekly from 32 weeks? 
+ 
+CG16016 Management of pregnant w omen/people who have undergone Page 15 of 19 
+previous bariatric surgery v3. 1 Oct 2022 
+Please check against Staffnet that this printout is the most recent version of this document. 
+References 
+ 
+1. NICE (2014) Obesity: identification, assessment and management of overweight and 
+obesity in children, young people and adults. November 2014. 
+ 
+2. NICE ( 2010 ) guideline Weight management before, during and after pregnancy 
+PH27 . 
+3. Internal Herniation in Pregnancy After Ga stric Bypass: A Systematic Review, V 
+Vannevel et al, Obstetrics & Gynecology. 127(6):1013 –1020, JUN 2016 
+ 
+4. RCOG (2014) Vitamin D in pregnancy, scientific impact paper No 43, June 2014, 
+Royal college of Obstetrcis and gynaecology . 
+ 
+5. BOMSS Guidelines on periop erative and postoperative biochemical monitoring and 
+micronutrient replacement for patients undergoing bariatric surgery September 2014 . 
+ 
+6. Pregnancy and laboratory studies: a reference table for clinicians. Obstet Gynecol 
+2009 Dec 114(6): 1326 -31 
+ 
+7. BSH guide lines advise Rx when ferritin <30 in pregnancy UK guidelines on the 
+management of iron deficiency in pregnancy - Pavord - 2020 - British Journal of 
+Haematology - Wiley Online Library 
+ 
+8. R. Khan, B. Dawlatly, O. Chappatte. 2013;15;37 -43.TOG Article. Pregnancy 
+outcome following bariatric surgery. 
+ 
+9. National Bariatric s urgery Register, BOMS 
+ 
+10. Pregnancy after Bariatric Surgery: Balancing Risks and Benefits A-M Carreau E.T. 
+al, Canadian Journal of Diabetes, 2017 -08-01, Vol ume 41, Issue 4, Pages 432 -438 
+ 
+11. RCOG (2018) G reen top guideline 72: Care of women with obesity in pregnancy. 
+Published November 2018 
+ 
+12. Consensus recommedations for periconception, antenatal and postnatal care Shawe 
+et al 2019 Obesity revie w 
+
+CG16016 Management of pregnant w omen/people who have undergone Page 16 of 19 
+previous bariatric surgery v3. 1 Oct 2022 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 1 : Letter to bariatric surgeon 
+ 
+Address 
+
+Date : 
+
+Dear 
+ 
+Re: 
+
+This women /person is currently……weeks pregnant and has undergone a weight loss 
+procedure in your centre prior to pregnan cy. I would be grateful if you could provide me 
+with the details of her previous surgery, in particular the following : 
+ 
+Date of bariatric procedure: 
+ 
+Type of operation: Gastric band 
+ Sleeve gastrectomy 
+ Gastric bypass 
+ Other (with details) 
+ 
+Weight and BMI prior to surgery: 
+ 
+Any known complications or nutritional problems: 
+
+Regards 
+ 
+CG16016 Management of pregnant w omen/people who have undergone Page 17 of 19 
+previous bariatric surgery v3. 1 Oct 2022 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 2: Gastric Band checklist 
+ 
+Gastric Band 
+ 
+When caring for women/people who have had a gastric band please consider the following 
+schedule of care: if any items are being omitted please document this and the reasons why 
+ 
+Action Done/not done & 
+why 
+Referral to consultant antenatal clinic. 
+ 
+Referral to the anaesthetic team. 
+ 
+Referral to Bariatric Surgery Centre. Contact Ext 31655. 
+Gastric bands may be deflated during pregnancy if required. If having 
+problems with eating enough – band should be deflated 
+ 
+To follow the BMI pathway as appropriate including folic acid 
+Supplements – Should be taking a multivitamin and mineral safe for 
+pregnancy (see section 9.0 ) and any other pre -pregnancy supplements as 
+long as deemed safe. 
+Blood tests – FBC and ferritin at booking, other tests on an individualised 
+basis only 
+
+4 weekly growth scans from 32/40. 
+
+Screening for diabetes – GTT safe 
+
+CG16016 Management of pregnant w omen/people who have undergone Page 18 of 19 
+previous bariatric surgery v3. 1 Oct 2022 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 3: Gastric Sleeve checklist 
+ 
+Gastric Sleeve 
+ 
+When caring for w omen/people who have had a gastric sleeve please consider the following 
+schedule of care : if any items are being omitted please document this and the reasons why 
+ 
+Action Done/not done & 
+why 
+Referral to consultant antenatal clinic. 
+ 
+Referral to the anaesthetic team. 
+ 
+To follow the BMI pathway as appropriate including folic acid 
+Supplements: 
+ 
+ Multivitamin safe for pregnancy section 9.0 ) 
+ Iron 
+ B12 injection (frequency as per pre -pregnancy) 
+ Any other pre-pregnancy supplements as long as deemed safe 
+
+Blood tests: 
+Booking 
+28 weeks 
+34 weeks 
+
+4 weekly growth scans from 32/40. 
+
+Screening for diabetes – refer to diabetes specialist midwife to organise BM 
+monitoring 
+
+CG16016 Management of pregnant w omen/people who have undergone Page 19 of 19 
+previous bariatric surgery v3. 1 Oct 2022 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 4: Gast ric Bypass checklist 
+ 
+Gastric Bypass 
+ 
+When caring for women/people who have had a gastric bypass please consider the following 
+schedule of care: if any items are being omitted please document this and the reasons why 
+ 
+Action Done/not done & 
+why 
+Referral to consultant antenatal clinic. 
+ 
+Referral to the anaesthetic team. 
+ 
+To follow the BMI pathway as appropriate including folic acid 
+Supplements: 
+ 
+ Multivitamin safe for pregnancy section 9.0 ) 
+ Iron 
+ B12 injection (frequency as per pre -pregnancy) 
+ Any other pre -pregnancy supplements as long as deemed safe 
+
+Blood tests: 
+Booking 
+28 weeks 
+34 weeks 
+
+4 weekly growth scans from 32/40. 
+ 
+NB if gastric bypass performed with 2 years of conception additional scans 
+may be required (proposed schedule every 4 weeks from 28/40). 
+ 
+Screening for diabetes – refer to diabetes specialist midwife to organise BM 
+monitoring

@@ -1,0 +1,612 @@
+# Extracted from: NICE Guidance - 2024 - Endometriosis.pdf
+# Guideline ID: nice-guidance-2024-endometriosis
+# Content length: 44281 characters
+# Processing date: 1733443730.1352377
+
+Endome triosis: diagnosis 
+and manag emen t 
+NICE guideline 
+Published: 6 Sept ember 2017 
+Last updat ed: 16 April 202 4 
+www .nice.or g.uk/guidance/ng7 3 
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Your r esponsi bility 
+The r ecommendations in t his guideline r epresent t he view of NICE, arriv ed at aft er car eful 
+consideration of t he evidence a vailable. When e xercising t heir judgement, pr ofessionals 
+and practitioners ar e expect ed to tak e this guideline fully int o account, alongside t he 
+individual needs, pr eferences and v alues of t heir patient s or t he people using t heir ser vice. 
+It is not mandat ory to apply t he recommendations, and t he guideline does not o verride t he 
+responsibility t o mak e decisions appr opriat e to the cir cumstances of t he individual, in 
+consultation wit h them and t heir f amilies and car ers or guar dian. 
+All pr oblems (adv erse e vents) related to a medicine or medical de vice used f or treatment 
+or in a pr ocedur e should be r epor ted to the Medicines and Healt hcare product s Regulat ory 
+Agency using t he Yellow Car d Scheme . 
+Local commissioners and pr oviders of healt hcare have a responsibility t o enable t he 
+guideline t o be applied when individual pr ofessionals and people using ser vices wish t o 
+use it. The y should do so in t he cont ext of local and national priorities f or funding and 
+developing ser vices, and in light of t heir duties t o have due r egar d to the need t o eliminat e 
+unlawful discrimination, t o adv ance equality of oppor tunity and t o reduce healt h 
+inequalities. Not hing in t his guideline should be int erpreted in a wa y that w ould be 
+inconsist ent wit h complying wit h those duties. 
+Commissioners and pr oviders ha ve a responsibility t o promot e an en vironmentally 
+sustainable healt h and car e syst em and should assess and r educe t he en vironmental 
+impact of implementing NICE r ecommendations wher ever possible. Endometriosis: diagnosis and management (NG7 3)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 2 of
+26Contents 
+Overview ..................................................................................................................................... 4 
+Who is it f or? .......................................................................................................................................... 4 
+Recommendations ...................................................................................................................... 5 
+1.1 Organisation of car e ......................................................................................................................... 5 
+1.2 Endometriosis inf ormation and suppor t ........................................................................................ 7 
+1.3 Endometriosis sympt oms and signs .............................................................................................. 8 
+1.4 Referral f or women wit h suspect ed or confirmed endometriosis .............................................. 9 
+1.5 Diagnosing endometriosis .............................................................................................................. 9 
+1.6 Staging syst ems .............................................................................................................................. 11 
+1.7 Monit oring f or women wit h confirmed endometriosis ................................................................. 11 
+1.8 Pharmacological pain management ............................................................................................... 12 
+1.9 Non-pharmacological management .............................................................................................. 13 
+1.10 Sur gical management .................................................................................................................... 13 
+1.11 Management if f ertility is a priority ............................................................................................... 15 
+Terms used in t his guideline ................................................................................................................. 17 
+Recommendations f or resear ch ................................................................................................ 18 
+1 Pain management pr ogrammes ........................................................................................................ 18 
+2 Lapar oscopic tr eatment of perit oneal endometriosis ( excision or ablation) ................................ 18 
+3 Lifestyle int erventions ( diet and e xercise) ...................................................................................... 19 
+4 Inf ormation and suppor t .................................................................................................................... 20 
+5 Hormonal tr eatment s for people wit h endometriosis wher e fertility is a priority ........................ 20 
+Rationale and impact .................................................................................................................. 21 
+Treatment of endometriosis when f ertility is a priority ..................................................................... 21 
+Cont ext ........................................................................................................................................ 23 
+Finding mor e information and committ ee details .................................................................... 25 
+Updat e information .................................................................................................................... 26 Endometriosis: diagnosis and management (NG7 3)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 3 of
+26This guideline is t he basis of QS172. 
+Overview 
+This guideline co vers diagnosing and managing endometriosis. It aims t o raise awar eness 
+of the sympt oms of endometriosis, and t o provide clear advice on what action t o tak e 
+when w omen and people wit h signs and sympt oms first pr esent in healt hcare settings. It 
+also pr ovides advice on t he range of tr eatment s available. 
+This guideline updat es and r eplaces t he recommendations on endometriosis in NICE's 
+guideline on f ertility pr oblems , which includes r ecommendations on f ertility t ests and 
+treatment s such as assist ed reproduction. 
+Who is i t for? 
+• Healt hcare professionals 
+• Commissioners and pr oviders 
+• Women and people wit h suspect ed or confirmed endometriosis, t heir f amilies and 
+carers Endometriosis: diagnosis and management (NG7 3)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 4 of
+26Recommenda tions 
+People ha ve the right t o be in volved in discussions and mak e informed decisions 
+about t heir car e, as described in NICE's inf ormation on making decisions about y our 
+care. 
+Using inclusiv e language in healt hcare is impor tant f or saf ety, and t o promot e equity , 
+respect and eff ectiv e communication wit h everyone. This guideline does not use 
+inclusiv e language in whole or in par t because: 
+• the evidence has not been r eview ed, and it is not cer tain fr om e xper t opinion 
+which gr oups t he advice co vers, or 
+• the evidence has been r eview ed, but t he inf ormation a vailable f or some gr oups 
+was t oo limit ed to mak e specific r ecommendations, or 
+• only a v ery limit ed number of r ecommendations ha ve been updat ed in dir ect 
+response t o new e vidence or t o reflect a change in practice. 
+Healt hcare professionals should use t heir clinical judgement when implementing 
+recommendations, taking int o account t he individual's cir cumstances, needs and 
+preferences, and ensuring all people ar e treated wit h dignity and r espect t hroughout 
+their car e. 
+Making decisions using NICE guidelines explains ho w we use w ords to sho w the 
+strengt h (or cer tainty) of our r ecommendations, and has inf ormation about 
+prescribing medicines (including off -label use), pr ofessional guidelines, standar ds 
+and laws (including on consent and mental capacity), and saf eguar ding. 
+NICE has also pr oduced a patient decision aid on hormonal tr eatment f or 
+endometriosis . 
+1.1 Or ganisa tion o f care 
+1.1.1 Set up a managed clinical netw ork for women wit h suspect ed or confirmed Endometriosis: diagnosis and management (NG7 3)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 5 of
+26endometriosis, consisting of community ser vices (including GPs, practice nurses, 
+school nurses and se xual healt h ser vices), gynaecology ser vices (see t he 
+recommendation on gynaecology ser vices ) and specialist endometriosis ser vices 
+(see t he recommendation on specialist endometriosis ser vices [ endometriosis 
+centr es]). 
+1.1.2 Community , gynaecology and specialist endometriosis ser vices ( endometriosis 
+centr es) should: 
+• provide coor dinat ed car e for women wit h suspect ed or confirmed 
+endometriosis 
+• have processes in place f or pr ompt diagnosis and tr eatment of 
+endometriosis, because dela ys can aff ect quality of lif e and r esult in disease 
+progression. 
+Gynae cology ser vices for w omen wi th suspe cted or c onfirme d 
+endome triosis 
+1.1.3 Gynaecology ser vices f or women wit h suspect ed or confirmed endometriosis 
+should ha ve access t o: 
+• a gynaecologist wit h exper tise in diagnosing and managing endometriosis, 
+including training and skills in lapar oscopic sur gery 
+• a gynaecology specialist nurse wit h exper tise in endometriosis 
+• a multidisciplinar y pain management ser vice 
+• a healt hcare professional wit h an int erest in gynaecological imaging 
+• fertility ser vices. 
+Specialist endome triosis ser vices (endome triosis c entres) 
+1.1.4 Specialist endometriosis ser vices ( endometriosis centr es) should ha ve access t o: Endometriosis: diagnosis and management (NG7 3)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 6 of
+26• gynaecologist s wit h exper tise in diagnosing and managing endometriosis, 
+including adv anced lapar oscopic sur gical skills 
+• a color ectal sur geon wit h an int erest in endometriosis 
+• a urologist wit h an int erest in endometriosis 
+• an endometriosis specialist nurse 
+• a multidisciplinar y pain management ser vice wit h exper tise in pelvic pain 
+• a healt hcare professional wit h specialist e xper tise in gynaecological imaging 
+of endometriosis 
+• advanced diagnostic f acilities (f or example, radiology and hist opat hology) 
+• fertility ser vices. 
+1.2 E ndome triosis inf orma tion and suppor t 
+1.2.1 Be awar e that endometriosis can be a long-t erm condition, and can ha ve a 
+significant ph ysical, se xual, psy chological and social impact. W omen ma y have 
+comple x needs and r equir e long-t erm suppor t. 
+1.2.2 Assess t he individual inf ormation and suppor t needs of w omen wit h suspect ed or 
+confirmed endometriosis, taking int o account t heir cir cumstances, sympt oms, 
+priorities, desir e for fertility, aspect s of daily living, w ork and study , cultural 
+back ground, and t heir ph ysical, psy chose xual and emotional needs. 
+1.2.3 Provide inf ormation and suppor t for women wit h suspect ed or confirmed 
+endometriosis, which should include: 
+• what endometriosis is 
+• endometriosis sympt oms and signs 
+• how endometriosis is diagnosed 
+• treatment options Endometriosis: diagnosis and management (NG7 3)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 7 of
+26• local suppor t groups, online f orums and national charities, and ho w to access 
+them. 
+1.2.4 If women agr ee, in volve their par tner (and/or ot her f amily members or people 
+impor tant t o them) and include t hem in discussions. F or mor e guidance on 
+providing inf ormation t o people and in volving f amily members and car ers, see t he 
+NICE guideline on patient e xperience in adult NHS ser vices . 
+1.3 E ndome triosis sym ptoms and signs 
+1.3.1 Suspect endometriosis in w omen (including y oung w omen aged 17 and under) 
+presenting wit h 1 or mor e of t he following sympt oms or signs: 
+• chronic pelvic pain 
+• period-r elated pain ( dysmenorrhoea) aff ecting daily activities and quality of 
+life 
+• deep pain during or aft er se xual int ercourse 
+• period-r elated or cy clical gastr ointestinal sympt oms, in par ticular , painful 
+bowel mo vement s 
+• period-r elated or cy clical urinar y sympt oms, in par ticular , blood in t he urine or 
+pain passing urine 
+• infertility in association wit h 1 or mor e of t he abo ve. 
+1.3.2 Inform w omen wit h suspect ed or confirmed endometriosis t hat k eeping a pain 
+and sympt om diar y can aid discussions. 
+1.3.3 Offer an abdominal and pelvic e xamination t o women wit h suspect ed 
+endometriosis t o identify abdominal masses and pelvic signs, such as r educed 
+organ mobility and enlar gement, t ender nodularity in t he post erior v aginal f ornix, 
+and visible v aginal endometriotic lesions. 
+1.3.4 If a pelvic e xamination is not appr opriat e, off er an abdominal e xamination t o Endometriosis: diagnosis and management (NG7 3)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 8 of
+26exclude abdominal masses. 
+1.4 R eferral for w omen wi th suspe cted or c onfirme d 
+endome triosis 
+1.4.1 Consider r eferring w omen t o a gynaecology ser vice (see t he recommendation on 
+gynaecology ser vices ) for an ultrasound or gynaecology opinion if: 
+• they have severe, persist ent or r ecurr ent sympt oms of endometriosis 
+• they have pelvic signs of endometriosis or 
+• initial management is not eff ectiv e, not t olerat ed or is contraindicat ed. 
+1.4.2 Refer women t o a specialist endometriosis ser vice (see t he recommendation on 
+specialist endometriosis ser vices [ endometriosis centr e]) if they have suspect ed 
+or confirmed: 
+• deep endometriosis in volving t he bo wel, bladder or ur eter, or 
+• endometriosis out side t he pelvic ca vity. 
+1.4.3 Consider r eferring y oung w omen (aged 17 and under) wit h suspect ed or 
+confirmed endometriosis t o a paediatric and adolescent gynaecology ser vice, 
+gynaecology ser vice or specialist endometriosis ser vice ( endometriosis centr e), 
+depending on local ser vice pr ovision. 
+1.5 D iagnosing endome triosis 
+1.5.1 Do not e xclude t he possibility of endometriosis if t he abdominal or pelvic 
+examination, ultrasound or MRI ar e normal. If clinical suspicion r emains or 
+sympt oms persist, consider r eferral f or fur ther assessment and in vestigation. Endometriosis: diagnosis and management (NG7 3)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 9 of
+26Ultrasound 
+1.5.2 Consider transv aginal ultrasound: 
+• to investigat e suspect ed endometriosis e ven if t he pelvic and/or abdominal 
+examination is normal 
+• to identify endometriomas and deep endometriosis in volving t he bo wel, 
+bladder or ur eter. 
+1.5.3 If a transv aginal scan is not appr opriat e, consider a transabdominal ultrasound 
+scan of t he pelvis. 
+Serum C A125 
+1.5.4 Do not use serum CA 125 t o diagnose endometriosis. 
+1.5.5 If a coincidentally r epor ted serum CA 125 le vel is a vailable, be awar e that: 
+• a raised serum CA 125 (t hat is, 35 IU/ml or mor e) ma y be consist ent wit h 
+having endometriosis 
+• endometriosis ma y be pr esent despit e a normal serum CA 125 (less t han 
+35 IU/ml). 
+MRI 
+1.5.6 Do not use pelvic MRI as t he primar y investigation t o diagnose endometriosis in 
+women wit h sympt oms or signs suggestiv e of endometriosis. 
+1.5.7 Consider pelvic MRI t o assess t he extent of deep endometriosis in volving t he 
+bowel, bladder or ur eter. 
+1.5.8 Ensur e that pelvic MRI scans ar e interpreted by a healt hcare professional wit h 
+specialist e xper tise in gynaecological imaging. Endometriosis: diagnosis and management (NG7 3)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 10 of
+26Diagnostic lapar oscopy 
+Also r efer to the section on sur gical management and t he section on management if 
+fertility is a priority . 
+1.5.9 Consider lapar oscop y to diagnose endometriosis in w omen wit h suspect ed 
+endometriosis, e ven if t he ultrasound was normal. 
+1.5.10 For women wit h suspect ed deep endometriosis in volving t he bo wel, bladder or 
+ureter, consider a pelvic ultrasound or MRI bef ore an operativ e lapar oscop y. 
+1.5.11 During a diagnostic lapar oscop y, a gynaecologist wit h training and skills in 
+lapar oscopic sur gery for endometriosis should per form a syst ematic inspection of 
+the pelvis. 
+1.5.12 During a diagnostic lapar oscop y, consider taking a biopsy of suspect ed 
+endometriosis: 
+• to confirm t he diagnosis of endometriosis (be awar e that a negativ e 
+histological r esult does not e xclude endometriosis) 
+• to exclude malignancy if an endometrioma is tr eated but not e xcised. 
+1.5.13 If a full, syst ematic lapar oscop y is per formed and is normal, e xplain t o the w oman 
+that she does not ha ve endometriosis, and off er alt ernativ e management. 
+1.6 Staging systems 
+1.6.1 Offer endometriosis tr eatment accor ding t o the w oman's sympt oms, pr eferences 
+and priorities, rat her t han t he stage of t he endometriosis. 
+1.6.2 When endometriosis is diagnosed, t he gynaecologist should document a detailed 
+description of t he appearance and sit e of endometriosis. 
+1.7 Monitoring f or w omen wi th confirme d Endometriosis: diagnosis and management (NG7 3)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 11 of
+26endome triosis 
+1.7.1 Consider outpatient f ollow-up (wit h or wit hout e xamination and pelvic imaging) 
+for women wit h confirmed endometriosis, par ticularly w omen who choose not t o 
+have sur gery, if they have: 
+• deep endometriosis in volving t he bo wel, bladder or ur eter or 
+• 1 or mor e endometrioma t hat is lar ger t han 3 cm. 
+1.8 P harmac ological pain manag emen t 
+Analg esics 
+1.8.1 For women wit h endometriosis-r elated pain, discuss t he benefit s and risks of 
+analgesics, taking int o account an y comorbidities and t he w oman's pr eferences. 
+1.8.2 Consider a shor t trial (f or example, 3 mont hs) of paracetamol or a non-st eroidal 
+anti-inflammat ory drug (NSAID) alone or in combination f or first -line management 
+of endometriosis-r elated pain. 
+1.8.3 If a trial of paracetamol or an NSAID (alone or in combination) does not pr ovide 
+adequat e pain r elief, consider ot her f orms of pain management and r eferral f or 
+further assessment. 
+Neuromodula tors and neur opathic pain tr eatmen ts 
+1.8.4 For recommendations on using neur omodulat ors t o treat neur opat hic pain, see 
+the NICE guideline on neur opat hic pain . 
+Hormonal tr eatmen ts 
+NICE has pr oduced a patient decision aid on hormonal tr eatment f or endometriosis . Endometriosis: diagnosis and management (NG7 3)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 12 of
+261.8.5 Explain t o women wit h suspect ed or confirmed endometriosis t hat hormonal 
+treatment f or endometriosis can r educe pain and has no permanent negativ e 
+effect on subsequent f ertility. 
+1.8.6 Offer hormonal tr eatment (f or example, t he combined oral contraceptiv e pill or a 
+progest ogen) t o women wit h suspect ed, confirmed or r ecurr ent endometriosis. 
+In Sept ember 2017 , this was off -label use f or some combined oral contraceptiv e 
+pills or pr ogest ogens. See NICE's inf ormation on pr escribing medicines . 
+1.8.7 If initial hormonal tr eatment f or endometriosis is not eff ectiv e, not t olerat ed or is 
+contraindicat ed, r efer the w oman t o a gynaecology ser vice (see t he 
+recommendation on gynaecology ser vices ), specialist endometriosis ser vice (see 
+the recommendation on specialist endometriosis ser vices [ endometriosis 
+centr es]) or paediatric and adolescent gynaecology ser vice for investigation and 
+treatment options. 
+1.9 N on-pharmac ological manag emen t 
+1.9.1 Advise w omen t hat t he available e vidence does not suppor t the use of traditional 
+Chinese medicine or ot her Chinese herbal medicines or supplement s for treating 
+endometriosis. 
+1.10 S urgical manag emen t 
+1.10.1 Ask w omen wit h suspect ed or confirmed endometriosis about t heir sympt oms, 
+preferences and priorities wit h respect t o pain and f ertility, to guide sur gical 
+decision-making. 
+1.10.2 Discuss sur gical management options wit h women wit h suspect ed or confirmed 
+endometriosis. Discussions ma y include: 
+• what a lapar oscop y involves 
+• that lapar oscop y ma y include sur gical tr eatment (wit h prior patient consent) Endometriosis: diagnosis and management (NG7 3)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 13 of
+26• how lapar oscopic sur gery could aff ect endometriosis sympt oms 
+• the possible benefit s and risks of lapar oscopic sur gery 
+• the possible need f or fur ther sur gery (for example, f or recurr ent 
+endometriosis or if complications arise) 
+• the possible need f or fur ther planned sur gery for deep endometriosis 
+involving t he bo wel, bladder or ur eter. 
+1.10.3 Perform sur gery for endometriosis lapar oscopically unless t here are 
+contraindications. 
+1.10.4 During a lapar oscop y to diagnose endometriosis, consider lapar oscopic tr eatment 
+of the following, if pr esent: 
+• perit oneal endometriosis not in volving t he bo wel, bladder or ur eter 
+• uncomplicat ed ovarian endometriomas. 
+1.10.5 As an adjunct t o sur gery for deep endometriosis in volving t he bo wel, bladder or 
+ureter, consider 3 mont hs of gonadotr ophin-r eleasing hormone agonist s bef ore 
+surgery. 
+In Sept ember 2017 , this was off -label use f or some gonadotr ophin-r eleasing 
+hormone agonist s. See NICE's inf ormation on pr escribing medicines . 
+1.10.6 Consider e xcision rat her t han ablation t o treat endometriomas, taking int o 
+account t he w oman's desir e for fertility and her o varian r eserve. Also see t he 
+section on o varian r eserve testing in t he NICE guideline on f ertility pr oblems . 
+Combina tion tr eatmen ts 
+1.10.7 After lapar oscopic e xcision or ablation of endometriosis, consider hormonal 
+treatment (wit h, for example, t he combined oral contraceptiv e pill), t o prolong t he 
+benefit s of sur gery and manage sympt oms. Endometriosis: diagnosis and management (NG7 3)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 14 of
+26In Sept ember 2017 , this was off -label use f or some hormonal tr eatment s 
+(including some combined oral contraceptiv e pills). See NICE's inf ormation on 
+prescribing medicines . 
+Hyster ectomy in c ombina tion wi th sur gical manag emen t 
+1.10.8 If hysterectomy is indicat ed (f or example, if t he w oman has adenom yosis or 
+heavy menstrual bleeding t hat has not r esponded t o other tr eatment s), excise all 
+visible endometriotic lesions at t he time of t he hysterectomy. 
+1.10.9 Perform h ysterectomy (wit h or wit hout oophor ectomy) lapar oscopically when 
+combined wit h sur gical tr eatment of endometriosis, unless t here are 
+contraindications. 
+1.10.10 For women t hinking about ha ving a h ysterectomy, discuss: 
+• what a h ysterectomy involves and when it ma y be needed 
+• the possible benefit s and risks of h ysterectomy 
+• the possible benefit s and risks of ha ving oophor ectomy at t he same time 
+• how a h ysterectomy (wit h or wit hout oophor ectomy) could aff ect 
+endometriosis sympt oms 
+• that h ysterectomy should be combined wit h excision of all visible 
+endometriotic lesions 
+• endometriosis r ecurr ence and t he possible need f or fur ther sur gery 
+• the possible benefit s and risks of hormone r eplacement t herap y aft er 
+hysterectomy wit h oophor ectomy (also see t he NICE guideline on 
+menopause ). 
+1.11 M anag emen t if fertility is a priori ty 
+The r ecommendations in t his section should be int erpreted wit hin the cont ext of NICE's 
+guideline on f ertility pr oblems . The management of endometriosis-r elated subf ertility Endometriosis: diagnosis and management (NG7 3)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 15 of
+26should ha ve multidisciplinar y team in volvement wit h input fr om a f ertility specialist and 
+access t o fertility ser vices. Depending on t he se verity of t he endometriosis t his ma y be in 
+a secondar y car e gynaecology ser vice or a t ertiary car e specialist endometriosis ser vice. 
+This should include t he recommended diagnostic f ertility t ests or pr eoperativ e tests, as 
+well as ot her r ecommended f ertility tr eatment s such as assist ed reproduction t hat ar e 
+included in t he NICE guideline on f ertility pr oblems . 
+1.11.1 Offer excision or ablation of endometriosis plus adhesiolysis f or endometriosis 
+not in volving t he bo wel, bladder or ur eter, because t his impr oves the chance of 
+spontaneous pr egnancy . 
+1.11.2 Offer lapar oscopic ovarian cyst ectomy with excision of t he cyst wall, or 
+lapar oscopic drainage and ablation, t o women or people wit h endometriomas, 
+because t his impr oves the chance of spontaneous pr egnancy . Take into account: 
+• the possible impact on o varian r eserve 
+• that ablation and drainage ma y preserve ovarian r eserve mor e than 
+cystectomy (also see t he section on o varian r eserve testing in t he NICE 
+guideline on f ertility pr oblems ). [2017 , amended 202 4] 
+1.11.3 Discuss t he benefit s and risks of lapar oscopic sur gery as a tr eatment option wit h 
+women or people who ha ve deep endometriosis (including endometriosis t hat 
+involves the bo wel, bladder or ur eter) and who ar e trying t o conceiv e so t hey can 
+make an inf ormed decision on it s use. T opics t o discuss ma y include: 
+• the possible impact of deep endometriosis on pr egnancy out comes 
+• whet her lapar oscopic sur gery ma y alter the chance of futur e pregnancy 
+• the possible impact on f ertility if complications arise 
+• alternativ es to sur gery 
+• other f ertility f actors. [2017 , amended 202 4] 
+1.11.4 Do not off er hormonal tr eatment alone or in combination wit h sur gery to women 
+or people wit h endometriosis who ar e trying t o conceiv e, because it does not 
+improve spontaneous pr egnancy rat es. [2017 , amended 202 4] Endometriosis: diagnosis and management (NG7 3)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 16 of
+26For a shor t explanation of wh y the committ ee made t he updat ed 202 4 
+recommendations and ho w they might aff ect practice, see t he rationale and impact 
+section on tr eatment of endometriosis when f ertility is a priority . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview A: 
+treatment of endometriosis when f ertility is a priority . 
+Terms use d in this guideline 
+Chronic pel vic pain 
+Defined as pelvic pain lasting f or 6 mont hs or longer . 
+Paediatric and ado lescent gynae cology ser vice 
+Paediatric and adolescent gynaecology ser vices ar e hospital-based, multidisciplinar y 
+specialist ser vices f or girls and y oung w omen (usually aged under 18). 
+Ovarian c ystectomy 
+Ovarian cyst ectomy is a sur gical e xcision of an o varian endometriotic cyst. An o varian 
+endometrioma is a cystic mass arising fr om ect opic endometrial tissue wit hin the ovary. 
+Manag ed clinic al ne tworks 
+Linked gr oups of healt hcare professionals fr om primar y, secondar y and t ertiary car e 
+providing a coor dinat ed patient pat hway. Responsibility f or setting up t hese netw orks will 
+depend on e xisting ser vice pr ovision and location. Endometriosis: diagnosis and management (NG7 3)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 17 of
+26Recommenda tions f or research 
+The guideline committ ee has made t he following r ecommendations f or resear ch. 
+1 Pain manag emen t programmes 
+Are pain management pr ogrammes a clinically and cost -effectiv e intervention f or women 
+with endometriosis? 
+Why this is im portant 
+Pain is one of t he most debilitating sympt oms of endometriosis. Endometriosis-r elated 
+pain can be acut e or chr onic, and can adv ersely aff ect t he w oman's quality of lif e, ability t o 
+work, and can aff ect par tners and t heir f amilies. 
+Pain management pr ogrammes ha ve been f ound t o be eff ectiv e in managing chr onic pelvic 
+pain, and can impr ove quality of lif e. Ho wever, it is unclear ho w much of t his small 
+evidence base can be generalised t o women wit h endometriosis f or which e vidence is 
+lacking. F urthermor e, pain management pr ogrammes ha ve not been compar ed wit h other 
+treatment s available f or endometriosis. Pain management pr ogrammes pr omot e self -
+management and ar e oft en pr ovided in t he community . 
+If found t o be eff ectiv e for endometriosis, pain management pr ogrammes w ould pr ovide an 
+additional or alt ernativ e treatment option f or women e xperiencing endometriosis-r elated 
+pain. Gr oups of par ticular int erest ar e women f or whom hormonal and sur gical options 
+have been e xhaust ed, w omen who w ould pr efer an alt ernativ e to a pharmacological or 
+surgical appr oach, and w omen who ma y be prioritising tr ying t o conceiv e. 
+2 Lapar oscopic tr eatmen t of peri tone al 
+endome triosis ( excision or ab lation) 
+Is lapar oscopic tr eatment ( excision or ablation) of perit oneal disease in isolation eff ectiv e 
+for managing endometriosis-r elated pain? Endometriosis: diagnosis and management (NG7 3)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 18 of
+26Why this is im portant 
+Isolat ed perit oneal endometriosis can be an incidental finding in w omen who ma y or ma y 
+not e xperience pain or ot her sympt oms. 
+Resear ch is needed t o det ermine whet her lapar oscopic tr eatment of isolat ed perit oneal 
+endometriosis in w omen wit h endometriosis-r elated pain r esult s in a clinical and cost -
+effectiv e impr ovement in sympt oms. 
+The curr ent lit eratur e does not pr ovide a clear answ er because t he stage of endometriosis 
+is oft en not sufficient ly clearly defined in r esear ch studies, and t he tr eatment modalities 
+used ar e multiple and v aried. The r esultant amalgamation of v arious stages of 
+endometriosis and v ariable tr eatment modalities leads t o loss of cer tainty of out come in 
+this specific gr oup of w omen. 
+Establishing whet her tr eating isolat ed perit oneal endometriosis is cost eff ectiv e is 
+impor tant, because t his forms a lar ge par t of t he w orkload in general gynaecology , and 
+uses considerable r esour ces. 
+3 Lif estyle in terventions ( diet and e xercise) 
+Are specialist lif estyle int erventions ( diet and e xercise) eff ectiv e, compar ed wit h no 
+specialist lif estyle int erventions, f or women wit h endometriosis? 
+Why this is im portant 
+Endometriosis is a long-t erm condition t hat can cause acut e and chr onic pain, and f atigue. 
+It has a significant and sometimes se vere impact on t he w oman's quality of lif e and 
+activities of daily living, including r elationships and se xuality , ability t o work, f ertility, 
+fitness and mental healt h. 
+Suppor ting self -management is critical t o impr oving quality of lif e for women living wit h 
+endometriosis. In or der t o successfully self -manage t he condition, w omen need e vidence-
+based, easily accessible inf ormation about t he condition and wa ys of managing it t hat 
+suppor t surgical and medical tr eatment. Ho wever, no high-quality r esear ch was identified 
+on the eff ectiv eness of lif estyle int erventions such as diet or e xercise and ot her non-
+medical tr eatment s in r educing pain, f atigue and ot her sympt oms. Endometriosis: diagnosis and management (NG7 3)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 19 of
+26Studies should aim t o provide e vidence-based options t o suppor t self -management of 
+endometriosis. This w ould impr ove the quality of lif e of w omen wit h endometriosis, 
+enabling t hem t o manage pain and f atigue, and r educing t he negativ e impact on t heir 
+career, relationships, se x lives, fertility, and ph ysical and emotional w ellbeing. 
+4 Informa tion and suppor t 
+What inf ormation and suppor t interventions ar e eff ectiv e to help w omen wit h 
+endometriosis deal wit h their sympt oms and impr ove their quality of liv es? 
+Why this is im portant 
+This guideline has identified t hat w omen wit h endometriosis and t heir par tners f eel that 
+information and suppor t is not alwa ys pr ovided in t he wa y that best meet t heir needs. 
+However, the dir ect eff ectiv eness of diff erent types or f ormat s of inf ormation and suppor t 
+interventions on measurable out comes such as healt h-related quality of lif e and le vel of 
+function (f or example, activities of daily living) ha ve not been t ested. Good practice in t his 
+area in non-specialist and specialist settings can impr ove satisf action wit h the car e 
+provided. It ma y also impr ove quality of lif e and positiv ely aff ect r elationships betw een 
+healt hcare professionals and t he w oman wit h endometriosis, as w ell as t he w oman's 
+personal f amily r elationships. 
+5 Hormonal tr eatmen ts for pe ople wi th 
+endome triosis w here fertility is a priori ty 
+What is t he eff ect of diff erent doses and durations of hormonal tr eatment s giv en eit her 
+before, aft er, or bot h bef ore and aft er sur gery on f ertility out comes in people wit h 
+endometriosis wher e fertility is a priority? 
+For a shor t explanation of wh y the committ ee made t he recommendation f or resear ch, 
+see t he rationale section on tr eatment of endometriosis when f ertility is a priority . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview A: 
+treatment of endometriosis when f ertility is a priority . Endometriosis: diagnosis and management (NG7 3)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 20 of
+26Rationale and im pact 
+This section briefly e xplains wh y the committ ee made t he recommendations and ho w they 
+might aff ect practice. The y link t o details of t he evidence and a full description of t he 
+committ ee's discussion. 
+Treatmen t of endome triosis w hen f ertility is a 
+priori ty 
+Recommendations 1 .11.2 to 1.11.4 
+Why the c ommi ttee made the r ecommenda tions 
+Ther e was no e vidence of an impor tant diff erence in t he pr egnancy rat e betw een 
+lapar oscopic cyst ectomy and lapar oscopic ablation and drainage of o varian 
+endometriomas lar ger t han 3 cm, but drainage and ablation ma y lead t o incr eased o varian 
+reserve (measur ed in t erms of anti-Mullerian hormone le vels, o varian v olume and antral 
+follicle count) compar ed to lapar oscopic cyst ectomy, so ablation and drainage has been 
+included as an option if o varian r eserve is a priority . 
+Based on t he committ ee's kno wledge and e xperience and stak eholder f eedback, t he 
+definition of deep endometriosis has been clarified t o stat e that it includes endometriosis 
+involving t he bo wel, bladder or ur eter but is not limit ed to these sit es, so t hat people ar e 
+not e xcluded fr om tr eatment inappr opriat ely. The need t o discuss t hat deep endometriosis 
+can impact on pr egnancy out comes has been added t o the topics t o discuss t o provide a 
+broader consideration of t he benefit s and risks of sur gery. 
+Ther e was some limit ed evidence of incr eased rat es of clinical pr egnancy and liv e bir th 
+with combinations of hormonal tr eatment s wit h lapar oscopic sur gery compar ed to sur gery 
+alone, but t he evidence was mix ed, wit h other e vidence sho wing no diff erence. As t here 
+was mix ed evidence, t he committ ee made a recommendation f or resear ch on hormonal 
+treatment s. The committ ee clarified t hat t his recommendation applied t o hormonal 
+treatment alone or in combination wit h sur gery. Endometriosis: diagnosis and management (NG7 3)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 21 of
+26How the r ecommenda tions mig ht affect practice 
+The inclusion of ablation and drainage as a tr eatment option is not e xpect ed to have a 
+resour ce impact as t he cost of t he 2 tr eatment options ( cystectomy and ablation/drainage) 
+are similar . This change will allo w the option of a tr eatment which ma y have less of an 
+impact on o varian r eserve. 
+Return t o recommendations Endometriosis: diagnosis and management (NG7 3)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 22 of
+26Context 
+Endometriosis is one of t he most common gynaecological diseases needing tr eatment. It is 
+defined as t he gr owth of endometrial-lik e tissue (t he w omb lining) out side t he ut erus 
+(womb). Endometriosis is mainly a disease of t he reproductiv e years and, alt hough it s 
+exact cause is unkno wn, it is hormone mediat ed and is associat ed wit h menstruation. 
+Endometriosis is typically associat ed wit h sympt oms such as pelvic pain, painful periods 
+and subf ertility. Endometriosis is also associat ed wit h a lo wer quality of lif e. Women wit h 
+endometriosis r epor t pain, which can be fr equent, chr onic and/or se vere, as w ell as 
+tiredness, mor e sick da ys, and a significant ph ysical, se xual, psy chological and social 
+impact. Endometriosis is an impor tant cause of subf ertility and t his can also ha ve a 
+significant eff ect on quality of lif e. 
+Women ma y also ha ve endometriosis wit hout sympt oms, so it is difficult t o kno w ho w 
+common t he disease is in t he population. It is also unclear whet her endometriosis is 
+alwa ys pr ogressiv e or can r emain stable or impr ove wit h time. 
+Delayed diagnosis is a significant pr oblem f or women wit h endometriosis. Patient self -help 
+groups emphasise t hat healt hcare professionals oft en do not r ecognise t he impor tance of 
+sympt oms or consider endometriosis as a possibility . In addition, w omen can dela y 
+seeking help because of a per ception t hat pelvic pain is normal. Dela ys of 4 to 10 years 
+can occur betw een first r epor ting sympt oms and confirming t he diagnosis. Man y women 
+repor t that t he dela y in diagnosis leads t o incr eased personal suff ering, pr olonged ill 
+healt h and a disease stat e that is mor e difficult t o treat. 
+Diagnosis can only be made definitiv ely b y lapar oscopic visualisation of t he pelvis, but 
+other, less in vasive met hods ma y be useful in assisting diagnosis, including ultrasound. 
+Management options f or endometriosis include pharmacological, non-pharmacological and 
+surgical tr eatment s. Endometriosis is an oestr ogen-dependent condition. Most drug 
+treatment s for endometriosis w ork b y suppr essing o varian function, and ar e contraceptiv e. 
+Surgical tr eatment aims t o remove or destr oy endometriotic lesions. The choice of 
+treatment depends on t he w oman's pr eferences and priorities in t erms of pain 
+management and/or f ertility. 
+Endometriosis can be a chr onic condition aff ecting w omen t hroughout t heir r eproductiv e 
+lives (and sometimes be yond). W omen's priorities and pr eferences ma y change o ver time, Endometriosis: diagnosis and management (NG7 3)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 23 of
+26and management strat egies should change t o reflect t his. 
+Women wit h endometriosis typically pr esent t o community ser vices (including GPs, 
+practice nurses, school nurses and se xual healt h ser vices) wit h pain, and ma y then be 
+referred to gynaecology ser vices f or diagnosis and management. Some w omen ma y 
+present t o fertility ser vices. Comple x sur gical tr eatment is carried out in specialist 
+endometriosis ser vices ( endometriosis centr es), which incorporat e a multidisciplinar y 
+team. 
+This guideline mak es recommendations f or the diagnosis and management of 
+endometriosis in community ser vices, gynaecology ser vices and specialist endometriosis 
+services ( endometriosis centr es). 
+The guideline also co vers t he car e of w omen wit h confirmed or suspect ed endometriosis, 
+including r ecurr ent endometriosis. It includes w omen who do not ha ve sympt oms but ha ve 
+endometriosis disco vered incidentally . Special consideration was giv en to young w omen 
+(aged 17 and under). The guideline does not co ver the in vestigation of f ertility pr oblems 
+related to endometriosis, car e of w omen wit h endometriosis occurring out side t he pelvis, 
+nor postmenopausal w omen. Endometriosis: diagnosis and management (NG7 3)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 2 4 of
+26Finding mor e inf orma tion and c ommi ttee 
+details 
+To find NICE guidance on r elated topics, including guidance in de velopment, see t he NICE 
+topic pages on gynaecological conditions and fertility. 
+For full details of t he evidence and t he guideline committ ee's discussions, see t he full 
+guideline and evidence r eview . You can also find inf ormation about how the guideline was 
+developed , including details of t he committ ee. 
+NICE has pr oduced tools and r esour ces t o help y ou put t his guideline int o practice . For 
+general help and advice on putting NICE guidelines int o practice, see resour ces t o help 
+you put guidance int o practice . Endometriosis: diagnosis and management (NG7 3)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 25 of
+26Update inf orma tion 
+April 202 4: We have review ed the evidence and updat ed some r ecommendations, and 
+made a r ecommendation f or resear ch, on tr eatment of endometriosis when f ertility is a 
+priority . These r ecommendations ar e mark ed [2017 , amended 202 4]. We have also 
+amended t he heading 'Sur gical management when f ertility is a priority' t o 'Management if 
+fertility is a priority' t o recognise t hat t his section also co vers non-sur gical options. 
+Minor changes since publication 
+December 2021: We amended t he recommendations on r eferral to clarify t hat w omen wit h 
+endometriosis out side t he pelvic ca vity should be r eferred to a specialist endometriosis 
+centr e. We will not mak e fur ther changes t o the guideline. F or mor e information, see t he 
+surveillance r epor t. 
+December 2019: We added links t o our patient decision aid on hormonal tr eatment f or 
+endometriosis. 
+ISBN: 9 78-1-47 31-5918-1 
+Accreditation Endometriosis: diagnosis and management (NG7 3)
+© NICE 202 4. All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 26 of
+26

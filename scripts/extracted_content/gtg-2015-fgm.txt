@@ -1,0 +1,1248 @@
+# Extracted from: GTG 2015 - FGM.pdf
+# Guideline ID: gtg-2015-fgm
+# Content length: 79892 characters
+# Processing date: 1732953490.9407358
+
+Female Genital Mutilation 
+and its Management
+Green-top Guideline No. 53
+July 2015
+RCOG Green-top Guideline No. 53 © Royal College of Obstetricians and Gynaecologists2 of 26Female Genital Mutilation and its Management
+This is the second edition of this guideline, which was previously published under the same title in 
+2009. Prior to this, an RCOG statement with the same title was published in 2003.
+Executive summary of recommendations 
+Complications of female genital mutilation (FGM)
+Clinicians should be aware of the short- and long-term complications of FGM.
+The legal and regulatory responsibilities of health professionals
+FGM and UK law
+All health professionals must be aware of the Female Genital Mutilation Act 2003 in England, 
+Wales and Northern Ireland and the Prohibition of Female Genital Mutilation (Scotland) Act 2005 
+in Scotland. Both Acts provide that: 
+1. FGM is illegal unless it is a surgical operation on a girl or woman irrespective of her age: 
+(a) which is necessary for her physical or mental health; or 
+(b) she is in any stage of labour, or has just given birth, for purposes connected with the 
+ labour or birth. 
+2. It is illegal to arrange, or assist in arranging, for a UK national or UK resident to be taken 
+overseas for the purpose of FGM.
+3. It is an offence for those with parental responsibility to fail to protect a girl from the risk 
+of FGM. 
+4. If FGM is confirmed in a girl under 18 years of age (either on examination or because the 
+patient or parent says it has been done), reporting to the police is mandatory and this 
+must be within 1 month of confirmation. [ New 2015 ]
+Female genital cosmetic surgery (FGCS) may be prohibited unless it is necessary for the patient’s 
+physical or mental health. All surgeons who undertake FGCS must take appropriate measures to 
+ensure compliance with the FGM Acts. [ New 2015 ]
+Re-infibulation is illegal; there is no clinical justification for re-infibulation and it should not be 
+undertaken under any circumstances. [ New 2015 ]
+What are the legal and regulatory responsibilities of health professionals in their evaluation of women 
+with FGM?
+When a woman with FGM is identified: 
+The health professional must explain the UK law on FGM. [ New 2015 ]
+The health professional must understand the difference between recording (documenting FGM in 
+the medical records for data collection) and reporting (making a referral to police and/or social 
+services) and their responsibilities with regards to these (Appendix I). [ New 2015 ]
+The health professional must be familiar with the requirements of the Health and Social Care 
+Information Centre (HSCIC) FGM Enhanced Dataset and explain its purpose to the woman. The 
+requirement for her personal data to be submitted without anonymisation to the HSCIC, in order 
+to prevent duplication of data, should be explained. However, she should also be told that all 
+personal data are anonymised at the point of statistical analysis and publication. [ New 2015 ]P
+D
+D
+D
+D
+DDRCOG Green-top Guideline No. 53 © Royal College of Obstetricians and Gynaecologists3 of 26The health professional should be aware that it is not mandatory to report all pregnant women to 
+social services or the police. An individual risk assessment should be made by a member of the 
+clinical team (midwife or obstetrician) using an FGM safeguarding risk assessment tool (an example 
+of such a tool can be found at https://www.gov.uk/government/publications/safeguarding-women-
+and-girls-at-risk-of-fgm). If the unborn child, or any related child, is considered at risk then a report 
+should be made. [ New 2015 ]
+What are the principles of FGM management in obstetric and gynaecological practice? 
+All acute trusts/health boards should have a designated consultant and midwife responsible for 
+the care of women with FGM (Appendix II).
+All gynaecologists, obstetricians and midwives should receive mandatory training on FGM and its 
+management, including the technique of de-infibulation. They should complete the programme of 
+FGM e-modules developed by Health Education England. [ New 2015 ]
+Specialist multidisciplinary FGM services should be led by a consultant obstetrician and/or 
+gynaecologist and be accessible through self-referral. These services should offer: information and 
+advice about FGM; child safeguarding risk assessment; gynaecological assessment; de-infibulation; 
+and access to other services.
+Health professionals should ensure that, in consultations with women affected by FGM, the 
+consultation and examination environment is safe and private, their approach is sensitive and 
+nonjudgemental and professional interpreters are used where necessary. Family members should 
+not be used as interpreters.
+How should recent FGM be managed? 
+Healthcare professionals should be vigilant and aware of the clinical signs and symptoms of recent 
+FGM, which include pain, haemorrhage, infection and urinary retention. [ New 2015 ]
+Examination findings should be accurately recorded in the clinical records. Some type 4 FGM, 
+where a small incision or cut is made adjacent to or on the clitoris, can leave few, if any, visible 
+signs when healed. Consideration should be given to photographic documentation of the findings 
+at acute presentation. [ New 2015 ]
+Legal and regulatory procedures must be followed (Appendix I); all women and girls with acute or 
+recent FGM require police and social services referral. [ New 2015 ]
+How should FGM be managed in gynaecological practice? 
+What should the referral pathway be for women with FGM?
+Women may be referred by their general practitioner (GP) to a hospital gynaecology clinic. The 
+referral should be directed to FGM services, if available, or to the designated consultant obstetrician 
+and/or gynaecologist responsible for the care of women and girls with FGM.
+Women should be able to self-refer. [ New 2015 ]
+All children with FGM or suspected FGM should be seen within child safeguarding services. 
+[New 2015 ]
+How should women with FGM be assessed in gynaecological practice?
+Women with FGM may present with symptoms directly attributable to their FGM or with 
+co-existing gynaecological morbidity. Gynaecologists should ask all women from communities 
+that traditionally practise FGM whether they have had the procedure. [ New 2015 ]P
+P
+P
+D
+D
+D
+P
+PP
+P
+PPRCOG Green-top Guideline No. 53 © Royal College of Obstetricians and Gynaecologists4 of 26Clinicians should be aware that psychological sequelae and impaired sexual function can occur 
+with all types of FGM.
+Examination should include inspection of the vulva to determine the type of FGM and whether 
+de-infibulation is indicated, as well as to identify any other FGM-related morbidities, e.g. 
+epidermoid inclusion cysts. [ New 2015 ]
+All women should be offered referral for psychological assessment and treatment, testing for HIV, 
+hepatitis B and C and sexual health screening. Where appropriate, women should be referred to 
+gynaecological subspecialties, e.g. psychosexual services, urogynaecology, infertility. [ New 2015 ] 
+Gynaecologists should be aware that narrowing of the vagina due to type 3 FGM can preclude 
+vaginal examination for cervical smears and genital infection screens. De-infibulation may be 
+required prior to gynaecological procedures such as surgical management of miscarriage (SMM) 
+or termination of pregnancy (TOP).
+What is the role of de-infibulation in gynaecological practice?
+Women who are likely to benefit from de-infibulation should be counselled and offered the 
+procedure before pregnancy, ideally before first sexual intercourse.
+Women offered de-infibulation should have the option of having the procedure performed under 
+local anaesthetic in the clinic setting in a suitable outpatient procedures room (Appendix III).
+What is the role of clitoral reconstruction?
+Clitoral reconstruction should not be performed because current evidence suggests unacceptable 
+complication rates without conclusive evidence of benefit. [ New 2015 ]
+How should FGM be managed in pregnancy? 
+What level of care do women with FGM require?
+Women with FGM are more likely to have obstetric complications and consultant-led care is 
+generally recommended. However, some women with previous uncomplicated vaginal deliveries 
+may be suitable for midwifery-led care in labour.
+How should women with FGM be identified in pregnancy?
+All women, irrespective of country of origin, should be asked for a history of FGM at their booking 
+antenatal visit so that FGM can be identified early in the pregnancy. This should be documented in 
+the maternity record. [ New 2015 ]
+Women identified as having FGM should be referred to the designated consultant obstetrician or 
+midwife with responsibility for FGM patients. Local protocols will determine which elements of care 
+should be undertaken by these individuals and which may be undertaken by other appropriately 
+trained midwives or obstetricians (Appendix IV).
+What antenatal documentation is required to demonstrate that legal and regulatory processes have been 
+adhered to? 
+The midwife or obstetrician should ensure that all relevant information is documented in the 
+clinical records (Appendix I). [ New 2015 ]
+How should antenatal care be managed?
+Referral for psychological assessment and treatment should be offered.P
+P
+P
+P
+P
+P
+P
+P
+PDPCRCOG Green-top Guideline No. 53 © Royal College of Obstetricians and Gynaecologists5 of 26The vulva should be inspected to determine the type of FGM and whether de-infibulation is 
+indicated. If the introitus is sufficiently open to permit vaginal examination and if the urethral 
+meatus is visible, then de-infibulation is unlikely to be necessary.
+Screening for hepatitis C should be offered in addition to the other routine antenatal screening 
+tests (hepatitis B, HIV and syphilis). [ New 2015 ]
+De-infibulation may be performed antenatally, in the first stage of labour or at the time of delivery 
+and can usually be performed under local anaesthetic in a delivery suite room. It can also be 
+performed perioperatively after caesarean section (Appendix III).
+The midwife or obstetrician should discuss, agree and record a plan of care (see Appendix IV). This 
+may be documented in a preformatted sheet.
+Women should be informed that re-infibulation will not be undertaken under any circumstances. 
+[New 2015 ]
+How should intrapartum care be managed?
+If a woman requires intrapartum de-infibulation, the midwife and obstetrician caring for her should 
+have completed training in de-infibulation or should be supervised appropriately.
+If de-infibulation planned for the time of delivery is not undertaken because of recourse to caesarean 
+section, then the option of perioperative de-infibulation (i.e. just after caesarean section) should 
+be considered and discussed with the woman. [ New 2015 ]
+Labial tears in women with FGM should be managed in the same manner as in women without 
+FGM. Repairs should be performed where clinically indicated, after discussion with the woman and 
+using appropriate materials and techniques.
+How should intrapartum care be managed for women identified as having FGM in pregnancy for whom 
+there has been no agreed documented plan of care?
+The impact of FGM on labour and delivery should be sensitively discussed and a plan of care 
+agreed. [ New 2015 ]
+How should postnatal care be managed?
+A woman whose planned de-infibulation was not performed because of delivery by caesarean 
+section should have follow-up in a gynaecology outpatient or FGM clinic so that de-infibulation 
+can be offered before a subsequent pregnancy. [ New 2015 ]
+The discharging midwife should ensure that all legal and regulatory processes have been adhered 
+to prior to discharge (Appendix I). [ New 2015 ]
+1. Purpose and scope
+The purpose of this guideline is to provide evidence-based guidance on the management of women with 
+female genital mutilation (FGM) and those who are considered to be at risk. It covers the clinical care of 
+women before, during and after pregnancy, including the legal and regulatory responsibilities of health 
+professionals. The focus of this guideline is on practice in the UK. Although much of the content is 
+applicable to all four constituent countries, the regulatory framework in Scotland and Northern Ireland 
+differs to that described here; further information is available elsewhere.1,2
+For a global perspective on FGM, further information is available from other sources.3,4P
+D
+DP
+P
+P
+P
+PPPPRCOG Green-top Guideline No. 53 © Royal College of Obstetricians and Gynaecologists6 of 262. Introduction and background epidemiology
+2.1 Definition and classification
+Female genital mutilation, also known as ‘female genital cutting’, ‘female genital mutilation/cutting’ or 
+‘cutting’, refers to ‘all procedures involving partial or total removal of the external female genitalia or 
+other injury to the female genital organs for non-medical reasons’.3,5 The widely accepted classification 
+of FGM developed by the World Health Organization (WHO) in 1995 and updated in 2007 is shown in 
+Table 1. FGM is practised for a variety of complex reasons, usually in the belief that it is beneficial for the 
+girl.4 It has no health benefits and harms girls and women in many ways. FGM is a human rights violation 
+and a form of child abuse, breaching the United Nations Convention on the Rights of the Child,4 and is a 
+severe form of violence against women and girls.6
+Table 1. WHO FGM classification3
+Type 1: Partial or total removal of the clitoris and/or the prepuce (clitoridectomy). 
+Type 2: Partial or total removal of the clitoris and the labia minora, with or without excision of the labia majora 
+(excision). 
+Type 3: Narrowing of the vaginal orifice with creation of a covering seal by cutting and appositioning the labia minora 
+and/or the labia majora, with or without excision of the clitoris (infibulation).
+Type 4: All other harmful procedures to the female genitalia for non-medical purposes, for example: pricking, piercing, 
+incising, scraping and cauterization.
+2.2 Global epidemiology
+UNICEF estimates that worldwide over 125 million women and girls have undergone FGM.4 It is a 
+traditional cultural practice in 29 African countries. FGM prevalence by country is shown in Figure 1. 
+Outside Africa, FGM is also practised in Yemen, Iraqi Kurdistan and parts of Indonesia and Malaysia. Far 
+smaller numbers have been recorded in India, Pakistan, Sri Lanka, the United Arab Emirates, Oman, Peru 
+and Colombia.
+The type of FGM varies between countries. FGM type 3 (infibulation) is practised almost exclusively in 
+Africa, with the highest prevalence in northeastern Africa, including Somalia, Sudan, Ethiopia, Eritrea 
+and Djibouti. FGM prevalence also varies within countries, where it may be associated with particular 
+ethnic groups. FGM is almost always carried out on girls between infancy and the age of 15, but the age 
+at which girls are mutilated varies considerably between countries. It is estimated that in over half of 
+countries practising FGM, girls are cut under the age of 5 years. In some communities adult women may 
+undergo re-infibulation following childbirth.
+Those performing FGM are usually traditional practitioners with no formal medical training, who practise 
+without anaesthetics using crude instruments such as knives, scissors or razor blades. However, in some 
+countries health professionals undertake a substantial number of FGM procedures. These include Egypt, 
+where doctors undertake the majority of FGM procedures, Sudan and Kenya. Globally, the trend towards 
+medicalisation of FGM is increasing.4
+As a result of migration, there has been a substantial increase in the number of girls and women with 
+FGM living in North America, Australia, New Zealand and Europe.4
+2.3 UK epidemiology
+It has been estimated that 137 000 women and girls in England and Wales, born in countries where 
+FGM is traditionally practised, have undergone FGM, including 10 000 girls aged under 15 years. 
+These provisional interim estimates were derived by combining published data on FGM prevalence 
+in FGM-practising countries with census and birth registration data in England and Wales.7 There are RCOG Green-top Guideline No. 53 © Royal College of Obstetricians and Gynaecologists7 of 26no published studies on the prevalence of FGM in Scotland or Northern Ireland. There is anecdotal 
+evidence that girls are taken from the UK to their country of origin to undergo FGM and that FGM also 
+takes place in the UK.8
+In order to capture data about numbers of women with FGM receiving care from the National Health 
+Service in England, the Department of Health implemented an FGM data set in 2014. In April 2015, an 
+enhanced data set was introduced, requiring all acute trusts, general practices and mental health trusts 
+to record FGM data and return patient-identifiable data to the Health and Social Care Information Centre 
+(HSCIC). Information can be found on the HSCIC website: http://www.hscic.gov.uk/fgm.
+3. Identification and assessment of evidence
+This guideline was developed in accordance with standard methodology for producing RCOG Green-top 
+Guidelines. MEDLINE, EMBASE and the Cochrane Library were searched. The search was restricted to 
+articles published between 2007 and January 2014 and limited to humans and the English language. A 
+top-up literature search was performed in April 2015. The databases were searched using the relevant 
+Medical Subject Headings (MeSH) terms, including all subheadings, and this was combined with 
+a keyword search. Search terms included ‘FGM’, ‘female genital cutting’, ‘female genital mutilation’, 
+‘circumcision’, ‘infibulation’, ‘deinfibulation’, ‘de-infibulation’, ‘clitoridectomy’ and ‘defibulation’. The 
+National Guideline Clearinghouse, National Institute for Health and Care Excellence (NICE) Evidence 
+Search, Trip, Guidelines International Network and the Geneva Foundation for Medical Education and 
+Research website were also searched for relevant guidelines. The websites of the WHO, UNICEF, United 
+Nations Population Fund (UNFPA), the Population Council, the Population Reference Bureau, FORWARD Figure 1. Prevalence of FGM. Percentage of girls and women aged 15–49 who have undergone FGM, by region/
+country. Source: UNICEF4
+Somalia
+Guinea
+Djibouti
+Egypt
+Eritrea
+Mali
+Sierra Leone
+Sudan
+Gambia
+Burkina Faso
+Ethiopia
+Mauritania
+Liberia
+Guinea-Bissau
+Chad
+Côte d’Ivoire
+Kenya
+Nigeria
+Senegal
+Central African Republic
+Yemen
+United Republic of Tanzania
+Benin
+Iraq
+Ghana
+Togo
+Niger
+Cameroon
+Uganda98%
+96%
+93%
+91%
+89%
+89%
+88%
+88%
+76%
+76%
+74%
+69%
+66%
+50%
+44%
+38%
+27%
+27%
+26%
+24%
+23%
+15%
+13%
+8%
+4%
+4%
+2%
+1%
+1%This map is 
+stylized and 
+not to scale. It 
+does not reflect 
+a position by 
+UNICEF on the 
+legal status of 
+any country or 
+territory or the 
+delimitation of 
+any frontiers. 
+The final 
+boundary 
+between the 
+Republic of the 
+Sudan and the 
+Republic of 
+South Sudan 
+has not yet been 
+determined.Above 80%
+51% – 80%
+26% – 50%
+10% – 25%
+Less than 10%
+FGM/C is not 
+concentrated in 
+these countries
+FGM/C female genital mutilation/cuttingRCOG Green-top Guideline No. 53 © Royal College of Obstetricians and Gynaecologists8 of 26(Foundation for Women’s Health Research and Development), Rainbo and the UK Government were 
+searched for relevant reports. Where possible, recommendations are based on available evidence. Areas 
+lacking evidence are highlighted and annotated as ‘good practice points’.
+4. Complications of FGM 
+Clinicians should be aware of the short- and long-term complications of FGM.
+4.1 Short-term complications
+A systematic review by Berg9 found that the most common immediate complications from 
+FGM were haemorrhage (5–62%), urinary retention (8–53%) and genital swelling (2–27%), 
+although there were additional studies reporting infection and fever, and three deaths directly 
+attributed to FGM. The methodological quality of these studies was generally poor.
+There is concern that some type 4 FGM procedures, where a small cut is made adjacent to the clitoris, 
+may now be performed more frequently.4 This may leave little in the way of long-term scarring and so 
+contemporaneous recording of all findings is crucial.
+4.2 Long-term complications
+Reported long-term complications of FGM are listed below. The systematic review by Berg9 demonstrated 
+an association of FGM with urinary tract infection, dyspareunia and bacterial vaginosis. Cohort 
+studies and case reports have also found associations with other sequelae. Most studies are of poor 
+methodological quality.
+Genital scarring
+Genital scarring after FGM can be unsightly and painful. Keloid scarring has been reported 
+in up to 3% of women. Epidermoid inclusion cysts and sebaceous cysts may need surgical 
+excision.10 Neuroma of the clitoris causing pain has been described.11–13
+Urinary tract complications
+Lower urinary tract symptoms are more common in women with FGM, particularly those 
+with type 2 or type 3 FGM.14 Poor urinary flow beneath the infibulation scar may result in 
+symptoms of urinary obstruction, and stasis of urine may lead to recurrent urinary tract 
+infection (relative risk [RR] 3.01, CI 1.42–6.38)9 and to urinary or vaginal calculi.15 The 
+recommended treatment is de-infibulation.
+Damage to the urethra during FGM of any type may result in a urinary stricture or fistulae. These require 
+assessment by a urologist or urogynaecologist. 
+There is no evidence that FGM directly increases the long-term risk of genital prolapse or 
+incontinence.16 However, vaginal narrowing may hamper urodynamic investigation. 
+Dyspareunia, apareunia and impaired sexual function
+Dyspareunia may occur as a result of vaginal narrowing and painful scar tissue (RR 1.53, 95% 
+CI 1.20–1.97). Apareunia and vulvovaginal lacerations during sexual intercourse have also 
+been reported.9
+The removal of sexually sensitive tissue such as the clitoris and labia minora may reduce 
+sexual sensation, while scarring over the clitoris may be painful. Numerous reports exist of Evidence 
+level 4
+Evidence 
+level 2+
+Evidence 
+level 3
+Evidence 
+level 2+Evidence 
+level 2+PRCOG Green-top Guideline No. 53 © Royal College of Obstetricians and Gynaecologists9 of 26various sexual consequences of FGM, including a reduction in desire and arousal, reduced 
+frequency of orgasm or anorgasmia, decreased lubrication and poorer sexual satisfaction.17–19 
+Psychological sequelae
+It is accepted that FGM has psychological effects, and flashbacks, anxiety20 and post-traumatic 
+stress disorder have been reported.21 FGM has been linked to an increased incidence of 
+domestic violence in Africa22,23 but there are no European or UK data on this.
+Menstrual difficulties
+Haematocolpos due to FGM has been reported. Dysmenorrhoea has also been reported among 
+women with FGM, although the underlying mechanisms are unclear.13
+Genital infection and pelvic inflammatory disease
+FGM has been associated with an increased risk of bacterial vaginosis9 and herpes simplex 
+virus type 2.24 However, currently there is no conclusive epidemiological evidence to support 
+an increased risk of pelvic inflammatory disease as a consequence of FGM. One case–control 
+study from Sudan showed similar rates of chlamydia, gonorrhoea and syphilis in women with 
+and without FGM.25
+Infertility
+At present, there are no well-planned studies that confirm whether or not FGM leads to 
+infertility. Potential factors could include lack of sexual intercourse (apareunia, dyspareunia, 
+impaired sexual function) and ascending infections caused by the FGM procedure. One case–
+control study showed an association between primary infertility and FGM.26
+HIV and hepatitis B infection
+Many FGM-practising countries are hepatitis B endemic27 and some have a high prevalence of HIV.28 
+Although mechanisms by which FGM may increase the risk of transmission of hepatitis B, hepatitis C 
+and HIV have been proposed (i.e. sharing of non-sterile instruments and cutting in groups), there is 
+currently no conclusive epidemiological evidence to support this.
+Obstetric complications 
+Research into the obstetric complications of FGM has been hampered by patchy methodology and the 
+fact that in Africa, where FGM is typically practised, maternal and perinatal mortality and morbidity are 
+already high due to other factors. Obstetric complications have been described with all types of FGM. 
+However, the risks are greater with greater tissue damage. 
+Maternal complications associated with FGM have been described in Africa, North America 
+and Europe. One large prospective study by the WHO investigated both maternal and 
+perinatal outcomes in 28 000 women in six African countries.29 A meta-analysis by Berg et al.30 
+reviewed maternal outcomes and included some studies from Western countries (USA and 
+Europe), although the majority were from Africa. The meta-analysis reported an increased 
+risk of prolonged labour, postpartum haemorrhage and perineal trauma. The WHO study also 
+found an increased risk of caesarean section and demonstrated an increased need for neonatal 
+resuscitation and risk of stillbirth and early neonatal death.
+There are no good quality European or UK studies investigating FGM and perinatal outcomes. 
+However, evidence from epidemiological studies of non-European migrants in Europe has Evidence 
+level 2+
+Evidence 
+level 2–
+Evidence 
+level 2–Evidence 
+level 2+
+Evidence 
+level 3
+Evidence 
+level 3RCOG Green-top Guideline No. 53 © Royal College of Obstetricians and Gynaecologists10 of 26shown a higher incidence of stillbirth31,32 and neonatal death,31 so women in the UK from FGM-
+practising countries may be at higher risk.
+Although fistulae have been associated with FGM, studies have not demonstrated that a history 
+of FGM increases the risk of subsequent obstetric fistulae due to obstructed labour.33
+Other obstetric consequences that have been described include fear of childbirth, difficulty 
+in intrapartum monitoring (including application of fetal scalp electrodes and fetal blood 
+sampling), difficulty in catheterisation during labour, wound infection and retention of lochia.29
+5. The legal and regulatory responsibilities of health professionals
+5.1 FGM and UK law
+All health professionals must be aware of the Female Genital Mutilation Act 2003 in England, 
+Wales and Northern Ireland and the Prohibition of Female Genital Mutilation (Scotland) Act 2005 
+in Scotland. Both Acts provide that: 
+1. FGM is illegal unless it is a surgical operation on a girl or woman irrespective of her age: 
+(a) which is necessary for her physical or mental health; or 
+(b) she is in any stage of labour, or has just given birth, for purposes connected with the 
+ labour or birth. 
+2. It is illegal to arrange, or assist in arranging, for a UK national or UK resident to be taken 
+overseas for the purpose of FGM.
+3. It is an offence for those with parental responsibility to fail to protect a girl from the risk 
+of FGM. 
+4. If FGM is confirmed in a girl under 18 years of age (either on examination or because the 
+patient or parent says it has been done), reporting to the police is mandatory and this 
+must be within 1 month of confirmation.
+Female genital cosmetic surgery (FGCS) may be prohibited unless it is necessary for the patient’s 
+physical or mental health. All surgeons who undertake FGCS must take appropriate measures to 
+ensure compliance with the FGM Acts.
+Re-infibulation is illegal; there is no clinical justification for re-infibulation and it should not be 
+undertaken under any circumstances.
+Health professionals must have a clear understanding of the law on FGM so that they can 
+explain it to their patients and so that they understand the basis for reporting concerns to the 
+police and/or social care.34
+FGM is illegal in England, Wales and Northern Ireland under the Female Genital Mutilation Act 2003 and 
+in Scotland under the Prohibition of Female Genital Mutilation (Scotland) Act 2005. Both Acts make it 
+an offence for any person:
+(a) to excise, infibulate or otherwise mutilate the whole or any part of a person’s labia majora, labia 
+minora or clitoris; or
+(b) to aid, abet, counsel or procure the performance by another person of any of those acts on that 
+other person’s own body, or
+(c) to aid, abet, counsel or procure a person to excise, infibulate or otherwise mutilate the whole or 
+any part of her own labia majora, labia minora or clitoris. 
+Both Acts also make it a criminal offence to carry out FGM abroad, and to aid, abet, counsel or procure 
+the carrying out of FGM abroad, including in countries where the practice is legal. Both Acts permit DDD
+Evidence 
+level 4Evidence 
+level 4
+Evidence 
+level 2+Evidence 
+level 2–RCOG Green-top Guideline No. 53 © Royal College of Obstetricians and Gynaecologists11 of 26surgical procedures that may fall within these categories (carried out by an appropriately registered 
+practitioner) if necessary for the physical or mental health of the woman or if performed during labour 
+or immediately postpartum ‘for purposes connected with the labour or birth’. It should be noted that 
+the FGM Acts apply to adult women as well as children.
+The Serious Crime Act 2015 reinforced existing FGM legislation and introduced mandatory reporting of 
+FGM in girls under 18 years by healthcare workers, teachers and social workers to the police.35 
+All health professionals should be aware of the Department of Health’s guidance on FGM risk assessment 
+and safeguarding.5
+FGCS refers to non-medically indicated cosmetic surgical procedures, which change the 
+structure and appearance of the healthy external genitalia of women (or internally in the case 
+of vaginal tightening). UK guidance on FGCS is available and this includes the recommendation 
+that FGCS should not normally be carried out on those under 18.36 The legal status of some 
+FGCS procedures has been called into question and it is likely to be illegal unless necessary to 
+safeguard the patient’s physical or mental health (the section 1(2)(a) exemption).
+Re-infibulation refers to the resuturing (usually after childbirth) of the incised scar tissue in a 
+woman with FGM type 2 or 3. Previously there was uncertainty as to whether re-infibulation 
+was covered by the FGM Acts.6 However, it is now accepted that re-infibulation is illegal and 
+should not be performed in any circumstances.
+5.2 What are the legal and regulatory responsibilities of health professionals in their 
+evaluation of women with FGM?
+When a woman with FGM is identified: 
+The health professional must explain the UK law on FGM.
+The health professional must understand the difference between recording (documenting FGM in 
+the medical records for data collection) and reporting (making a referral to police and/or social 
+services) and their responsibilities with regards to these (Appendix I).
+The health professional must be familiar with the requirements of the HSCIC FGM Enhanced Dataset 
+and explain its purpose to the woman. The requirement for her personal data to be submitted 
+without anonymisation to the HSCIC, in order to prevent duplication of data, should be explained. 
+However, she should also be told that all personal data are anonymised at the point of statistical 
+analysis and publication.
+The health professional should be aware that it is not mandatory to report all pregnant women to 
+social services or the police. An individual risk assessment should be made by a member of the 
+clinical team (midwife or obstetrician) using an FGM safeguarding risk assessment tool (an example 
+of such a tool can be found at https://www.gov.uk/government/publications/safeguarding-women-
+and-girls-at-risk-of-fgm). If the unborn child, or any related child, is considered at risk then a report 
+should be made.
+To assist health professionals in explaining the law on FGM to their patients, women should be referred 
+to information provided in the Health Passport.38 This document is available in a range of languages.39
+The legal and regulatory responsibilities of health professionals are summarised in Appendix I.Evidence 
+level 4
+D
+DD
+PRCOG Green-top Guideline No. 53 © Royal College of Obstetricians and Gynaecologists12 of 26Recording (see Appendix I)
+Recording must be in accordance with the requirements of the HSCIC FGM Enhanced Dataset, which 
+was implemented primarily to improve services for those with FGM. It requires all acute trusts, general 
+practices and mental health trusts to record demographic, clinical and family information for all women 
+with FGM and for these data to be submitted, without anonymisation, to the HSCIC. This should be 
+explained to the woman. However, she should also be told that all personal data are anonymised at 
+the point of statistical analysis and publication. According to Department of Health guidance (http:// 
+www.nhs.uk/NHSEngland/AboutNHSservices/sexual-health-services/Documents/2903740%20DH%20 
+FGM%20Leaflet%20Acessible%20-%20English.pdf), women who object to use of their data in this way 
+should go to http://www.hscic.gov.uk/patientconf for more details. 
+In accordance with the Enhanced Dataset, when a patient with FGM is identified, the fact that they 
+have had FGM must be documented in the medical records regardless of whether FGM is the reason for 
+presentation. A clinical examination may be indicated to determine the type of FGM and clinicians are 
+required to use the WHO FGM classification (Table 1). For this reason genital piercings must be included 
+as type 4 FGM. The woman should be informed that her personal data will be transmitted to the HSCIC 
+for the purpose of FGM prevalence monitoring and that the data will not be anonymised. Some services, 
+such as sexual health services, are likely to be exempt from returning identifiable FGM data on adult 
+women due to their specific legal obligations regarding confidentiality.
+Reporting (see Appendix I)
+Reporting means making a referral to the police or social services and guidance from the Department 
+of Health is available.5
+The requirement to report depends on whether an adult or a child is affected. FGM is child abuse and 
+any child with confirmed or suspected FGM, or a child considered to be at risk of FGM, must be reported, 
+if necessary without the consent of the parents. Information should also be shared with the general 
+practitioner (GP) and health visitor. This is in accordance with section 47 of the Children Act 1989. 
+Local Safeguarding Children Boards (LSCBs) have responsibility for developing inter-agency protocols 
+and procedures for safeguarding. If in any doubt, health professionals must contact their named lead for 
+safeguarding who will advise. The urgency of the referral will vary depending on the type of risk. 
+There is no requirement to report a nonpregnant adult woman aged 18 or over to the police or social 
+services unless a related child is at risk. The patient’s right to confidentiality must be respected if they do 
+not wish any action to be taken. No reports to social care or the police should be made in these cases.5,34
+It is not mandatory to report every pregnant woman identified as having had FGM to social services or 
+the police. An individual risk assessment must be made by a member of the clinical team caring for the 
+woman during her pregnancy. If the unborn child, or any related child, is considered to be at risk of 
+FGM, then a report must be made to children’s social care or the police.
+Healthcare professionals must record identified FGM in antenatal notes, screening returns and 
+immunisation notes. Notes should also include whether the woman has been de-infibulated and, where 
+appropriate, referred to further specialist care. A list of specialist FGM clinics is available (please note 
+that this list only covers England).40
+Following birth, relevant information about the mother’s FGM should be recorded in the maternity 
+discharge documentation so that GPs and health visitors are aware of the mother’s history. The family 
+history of FGM should also be recorded in the baby’s personal child health record (‘Red Book’).41 RCOG Green-top Guideline No. 53 © Royal College of Obstetricians and Gynaecologists13 of 26Where appropriate, healthcare professionals should educate women on how FGM is illegal in the UK 
+and how the practice has serious long-term physical, psychological and emotional consequences.4
+6. What are the principles of FGM management in obstetric and gynaecological practice? 
+All acute trusts/health boards should have a designated consultant and midwife responsible for 
+the care of women with FGM (Appendix II).
+All gynaecologists, obstetricians and midwives should receive mandatory training on FGM and its 
+management, including the technique of de-infibulation. They should complete the programme of 
+FGM e-modules developed by Health Education England.
+Specialist multidisciplinary FGM services should be led by a consultant obstetrician and/or 
+gynaecologist and be accessible through self-referral. These services should offer: information and 
+advice about FGM; child safeguarding risk assessment; gynaecological assessment; de-infibulation; 
+and access to other services.
+Health professionals should ensure that, in consultations with women affected by FGM, the 
+consultation and examination environment is safe and private, their approach is sensitive and 
+nonjudgemental and professional interpreters are used where necessary. Family members should 
+not be used as interpreters.
+Each trust/health board should have a designated obstetrician and/or gynaecologist responsible for FGM 
+care. These individuals should be aware of local and/or regional specialist multidisciplinary FGM services. 
+They should remain competent and up to date in all aspects of FGM (including child safeguarding protocols). 
+The programme of FGM e-modules developed by Health Education England is available free to 
+all healthcare professionals (http://www.e-lfh.org.uk/programmes/female-genital-mutilation). Use of a 
+de-infibulation bench-top trainer as an aid to learning may be considered. 
+Most UK specialist FGM services are in major cities and may be located in a hospital or 
+community clinic (e.g. GP surgery or sexual health clinic). All FGM specialist services should 
+offer information and advice regarding FGM as well as gynaecological assessment and access 
+to de-infibulation. Some may also offer antenatal care. Specialist FGM services should offer 
+access to psychological assessment and treatment, sexual health screening and treatment and 
+gynaecological subspecialties such as urogynaecology, psychosexual services and infertility. 
+They should work collaboratively with other healthcare providers, including GPs and acute 
+trusts, voluntary sector organisations, the police, social services and schools. Currently referral 
+pathways, clinic hours and service provision vary and there is a need to develop national 
+minimum quality assurance standards for establishing and operating these services.42
+Guidance about the professional approach to take when women with FGM attend for 
+consultation is available.34 Health professionals should be nonjudgemental, pointing out the 
+illegality and health risks of the practice without appearing to blame the woman. Appropriate 
+language should be used. Although the term ‘FGM’ may be understood and accepted by some, 
+referring to being ‘cut’, ‘closed’ or ‘circumcised’ may be more acceptable to many women.34 A 
+list of local/traditional terms for FGM is available in the Department of Health Female Genital 
+Mutilation Risk and Safeguarding guidance.5
+7. How should recent FGM be managed?
+Healthcare professionals should be vigilant and aware of the clinical signs and symptoms of recent 
+FGM, which include pain, haemorrhage, infection and urinary retention.P
+Evidence 
+level 4
+DP
+P
+DEvidence 
+level 4RCOG Green-top Guideline No. 53 © Royal College of Obstetricians and Gynaecologists14 of 26Examination findings should be accurately recorded in the clinical records. Some type 4 FGM, 
+where a small incision or cut is made adjacent to or on the clitoris, can leave few, if any, visible 
+signs when healed. Consideration should be given to photographic documentation of the findings 
+at acute presentation.
+Legal and regulatory procedures must be followed (Appendix I); all women and girls with acute or 
+recent FGM require police and social services referral.
+Healthcare professionals should be aware of the clinical signs and symptoms of FGM and record their 
+examination findings accurately in the clinical records. The legal and regulatory procedures are outlined 
+in Appendix I.
+8. How should FGM be managed in gynaecological practice? 
+8.1 What should the referral pathway be for women with FGM?
+Women may be referred by their GP to a hospital gynaecology clinic. The referral should be directed 
+to FGM services, if available, or to the designated consultant obstetrician and/or gynaecologist 
+responsible for the care of women and girls with FGM.
+Women should be able to self-refer.
+All children with FGM or suspected FGM should be seen within child safeguarding services.
+All hospitals are expected to identify women with FGM and assess appropriately. In areas of low 
+prevalence there must be clear pathways for referral to FGM services, including self-referral. 
+8.2 How should women with FGM be assessed in gynaecological practice?
+Women with FGM may present with symptoms directly attributable to their FGM or with co-
+existing gynaecological morbidity. Gynaecologists should ask all women from communities that 
+traditionally practise FGM whether they have had the procedure.
+Clinicians should be aware that psychological sequelae and impaired sexual function can occur 
+with all types of FGM.
+Examination should include inspection of the vulva to determine the type of FGM and whether de-
+infibulation is indicated, as well as to identify any other FGM-related morbidities, e.g. epidermoid 
+inclusion cysts.
+All women should be offered referral for psychological assessment and treatment, testing for HIV, 
+hepatitis B and C and sexual health screening. Where appropriate, women should be referred to 
+gynaecological subspecialties, e.g. psychosexual services, urogynaecology, infertility.
+Gynaecologists should be aware that narrowing of the vagina due to type 3 FGM can preclude 
+vaginal examination for cervical smears and genital infection screens. De-infibulation may be 
+required prior to gynaecological procedures such as surgical management of miscarriage (SMM) 
+or termination of pregnancy (TOP).
+The clinical management of women with FGM in gynaecological practice is summarised in Appendix II. 
+8.3 What is the role of de-infibulation in gynaecological practice?
+Women who are likely to benefit from de-infibulation should be counselled and offered the 
+procedure before pregnancy, ideally before first sexual intercourse.C
+PPP
+PP
+P
+P
+PP
+DRCOG Green-top Guideline No. 53 © Royal College of Obstetricians and Gynaecologists15 of 26Women offered de-infibulation should have the option of having the procedure performed under 
+local anaesthetic in the clinic setting in a suitable outpatient procedures room (Appendix III).
+De-infibulation is a minor surgical procedure to divide the scar tissue sealing the vaginal introitus in 
+type 3 FGM. The need for de-infibulation can be determined on inspection of the external genitals by an 
+experienced health professional. De-infibulation is sometimes termed a ‘reversal’ of FGM; however, this 
+is incorrect as it does not replace genital tissue or restore normal genital anatomy and function.
+De-infibulation is recommended if the introitus is not sufficiently open to permit normal urinary and 
+menstrual flow, vaginal examination, comfortable sexual intercourse and safe vaginal delivery. It may also 
+be necessary to permit cervical smears, sexual health screens and gynaecological surgery (e.g. SMM, TOP). 
+In practice it will be required for most women with type 3 FGM, as the vaginal introitus will be narrowed.
+De-infibulation can usually be performed under local anaesthetic in an appropriately equipped room for 
+minor procedures or in a delivery suite room. Occasionally a spinal or general anaesthetic is required. 
+One recommended method of de-infibulation is shown in Appendix III.
+8.4 What is the role of clitoral reconstruction?
+Clitoral reconstruction should not be performed because current evidence suggests unacceptable 
+complication rates without conclusive evidence of benefit.
+Several publications, including a large retrospective study,43 claim that reconstructive clitoral 
+surgery can restore clitoral function. However, surgery cannot replace clitoral tissue removed 
+at FGM and it is also possible that surgical exploration of the clitoral area may result in further 
+damage to the clitoral nerves and vasculature and loss of sensation. It is debatable that these 
+procedures improve clitoral sensation, although improving the genital appearance may have 
+benefits for some women. Existing studies are retrospective with poor follow-up and they lack 
+standardised assessment of sexual function. In the study by Foldès,43 2938 women underwent 
+surgery but only 29% attended for follow-up and 4% required hospital readmission because of 
+surgical complications. There is a need for well-designed clinical trials to investigate the safety 
+and effectiveness of this procedure.
+9. How should FGM be managed in pregnancy? 
+9.1 What level of care do women with FGM require?
+Women with FGM are more likely to have obstetric complications and consultant-led care is 
+generally recommended. However, some women with previous uncomplicated vaginal deliveries 
+may be suitable for midwifery-led care in labour.
+Women with FGM are more likely to have obstetric complications and consultant-led care is generally 
+recommended. However, some women who have previously had one or more uncomplicated pregnancies 
+and have delivered vaginally may be considered low risk, provided that they have no history of post-
+delivery re-infibulation.
+9.2 How should women with FGM be identified in pregnancy?
+All women, irrespective of country of origin, should be asked for a history of FGM at their booking 
+antenatal visit so that FGM can be identified early in the pregnancy. This should be documented in 
+the maternity record.P
+D
+Evidence 
+level 3
+P
+PRCOG Green-top Guideline No. 53 © Royal College of Obstetricians and Gynaecologists16 of 26Women identified as having FGM should be referred to the designated consultant obstetrician or 
+midwife with responsibility for FGM patients. Local protocols will determine which elements of care 
+should be undertaken by these individuals and which may be undertaken by other appropriately 
+trained midwives or obstetricians (Appendix IV).
+Pregnancy is a time when the majority of women engage with healthcare services. It presents 
+a key opportunity to identify women with FGM, provide information and advice, address 
+healthcare needs and assess the risk to the unborn child and to other female family members. 
+In the UK, it is normal practice to defer vaginal examination of pregnant women until the 
+onset of labour, unless there is a clinical indication. For this reason, early identification of FGM 
+in pregnancy is best achieved by asking all women booking for antenatal care whether they 
+have a history of FGM.41 It is good practice if possible to obtain such a clinical history from the 
+patient in the absence of a partner or other family member. It might be important to consider 
+that some women may not know if they have been exposed to FGM.
+The clinical management of pregnant women is summarised in Appendix II. 
+9.3 What antenatal documentation is required to demonstrate that legal and regulatory 
+processes have been adhered to? 
+The midwife or obstetrician should ensure that all relevant information is documented in the 
+clinical records (Appendix I).
+The information in the clinical records should include documentation that FGM has been recorded in 
+accordance with the HSCIC Enhanced Dataset, as well as other information as shown in Appendix I.
+9.4 How should antenatal care be managed?
+Referral for psychological assessment and treatment should be offered.
+The vulva should be inspected to determine the type of FGM and whether de-infibulation is 
+indicated. If the introitus is sufficiently open to permit vaginal examination and if the urethral 
+meatus is visible, then de-infibulation is unlikely to be necessary.
+Screening for hepatitis C should be offered in addition to the other routine antenatal screening 
+tests (hepatitis B, HIV and syphilis).
+De-infibulation may be performed antenatally, in the first stage of labour or at the time of delivery 
+and can usually be performed under local anaesthetic in a delivery suite room. It can also be 
+performed perioperatively after caesarean section (Appendix III).
+The midwife or obstetrician should discuss, agree and record a plan of care (see Appendix IV). This 
+may be documented in a preformatted sheet.
+Women should be informed that re-infibulation will not be undertaken under any circumstances.
+For women with type 3 FGM, where adequate vaginal assessment in labour is unlikely to be possible, 
+de-infibulation should be recommended antenatally, usually in the second trimester, typically at around 
+20 weeks of gestation. Antenatal de-infibulation as an elective procedure ensures that the procedure 
+is performed by an appropriately trained midwife or obstetrician. However, women may prefer 
+de-infibulation during labour, as this is the usual practice in some countries where FGM is prevalent. 
+There have been no randomised trials conducted on measures that may improve outcomes for pregnant 
+women with a history of FGM.44 However de-infibulation (when the introitus is narrowed) and selective 
+episiotomy (depending on assessment at the time of delivery) may improve clinical outcomes. DP
+P
+P
+P
+P
+PEvidence 
+level 4PRCOG Green-top Guideline No. 53 © Royal College of Obstetricians and Gynaecologists17 of 26Women should be informed that re-infibulation will not be undertaken under any 
+circumstances.37 They should also be informed of the health consequences of re-infibulation 
+and the benefits of not re-infibulating.
+9.5 How should intrapartum care be managed?
+If a woman requires intrapartum de-infibulation, the midwife and obstetrician caring for her should 
+have completed training in de-infibulation or should be supervised appropriately.
+If de-infibulation planned for the time of delivery is not undertaken because of recourse to caesarean 
+section, then the option of perioperative de-infibulation (i.e. just after caesarean section) should 
+be considered and discussed with the woman.
+Labial tears in women with FGM should be managed in the same manner as in women without 
+FGM. Repairs should be performed where clinically indicated, after discussion with the woman and 
+using appropriate materials and techniques.
+Women with FGM should generally be delivered in units with immediate access to emergency obstetric 
+care and should have intravenous access established in labour and blood taken for full blood count and 
+group and save. However, in certain circumstances women with FGM may be considered low risk and 
+midwifery-led care in labour may be appropriate (see section 9.1).
+The technique of de-infibulation at delivery is similar in principle to de-infibulation performed at other 
+times (see Appendix III). However, in contrast to de-infibulation prepregnancy, antenatally or in the first 
+stage of labour, when either a scalpel or scissors may be used, at delivery the incision should be made 
+with scissors (rather than a scalpel) just before crowning of the fetal head. Lidocaine without adrenaline 
+(epinephrine) should be used. Once the procedure has been performed, the need for episiotomy should 
+be assessed; this is commonly required (irrespective of FGM type) due to scarring and reduced skin 
+elasticity of the introitus. 
+In women for whom intrapartum de-infibulation was planned to permit safe vaginal delivery, emergency 
+caesarean section may result in the woman having an ongoing need for de-infibulation during a subsequent 
+pregnancy. If feasible from the perspective of maternal and fetal wellbeing, the option of perioperative 
+de-infibulation, after safe caesarean delivery of the baby, should be discussed with the woman prior to 
+transfer to theatre. This scenario may be discussed with women antenatally. 
+Guidance for repair of perineal and genital trauma is available45 and should be followed for 
+women with FGM, for example, in the case of labial tears.
+9.6 How should intrapartum care be managed for women identified as having FGM in 
+pregnancy for whom there has been no agreed documented plan of care?
+The impact of FGM on labour and delivery should be sensitively discussed and a plan of care agreed.
+If vaginal examination is not possible or intrapartum procedures and urinary catheterisation are not 
+feasible, then de-infibulation in the first stage of labour should be recommended. An epidural should be 
+offered to cover the procedure and for subsequent examinations and delivery. If vaginal access is adequate 
+then de-infibulation can be performed at the time of delivery under local anaesthetic (see section 9.5).
+9.7 How should postnatal care be managed?
+A woman whose planned de-infibulation was not performed because of delivery by caesarean 
+section should have follow-up in a gynaecology outpatient or FGM clinic so that de-infibulation 
+can be offered before a subsequent pregnancy.P
+D
+P
+PEvidence 
+level 4PEvidence 
+level 4RCOG Green-top Guideline No. 53 © Royal College of Obstetricians and Gynaecologists18 of 26The discharging midwife should ensure that all legal and regulatory processes have been adhered 
+to prior to discharge (Appendix I).
+The designated consultant obstetrician or named specialist midwife may consider a postnatal debrief 
+with the patient and her partner, regardless of whether intrapartum procedures were undertaken or 
+not. This represents a further opportunity to educate the family on FGM. All the appropriate legal and 
+regulatory processes should be documented as shown in Appendix I. The discharging midwife should 
+ensure that the documentation is complete. 
+10. Recommendations for future research
+l The rates of stillbirth and neonatal death in women with FGM.
+l Interventional trials to assess the role of de-infibulation in improving pregnancy outcomes and the 
+optimal timing of de-infibulation. 
+l Clinical trials to investigate the safety and effectiveness of clitoral reconstruction.
+l The role of psychological assessment and treatment in the antenatal care of women with FGM. 
+11. Auditable topics
+l The proportion of women asked about FGM at booking (100%).
+l The proportion of healthcare professionals who are familiar with the HSCIC FGM Enhanced 
+Dataset (100%).
+l The proportion of healthcare workers (gynaecologists, obstetricians and midwives) who have 
+received training on FGM and its management (100%).
+l The proportion of pregnant women identified as having FGM who are referred to a designated 
+consultant obstetrician or specialist midwife with responsibility for FGM patients (100%).
+l The proportion of women identified as having FGM who are offered screening for hepatitis B, 
+hepatitis C, HIV and syphilis (100%).
+l The quality of documentation of FGM in the medical records, including ensuring information is 
+transferred to the community.
+l Number of referrals made to social services and/or police.
+12. Useful links and support groups
+l Department of Health. Commissioning services to support women and girls with female genital 
+mutilation . London: DH; 2015 [https://www.gov.uk/government/publications/services-for-women-
+and-girls-with-fgm].
+l Department of Health. Female Genital Mutilation Risk and Safeguarding. Guidance for 
+professionals . London: DH; 2015 [https://www.gov.uk/government/publications/safeguarding-
+women-and-girls-at-risk-of-fgm].
+l Patient information leaflets may be ordered from the Department of Health [https://www.orderline.
+dh.gov.uk/ecom_dh/public/saleproduct.jsf?catalogueCode=2903740].
+l FORWARD (Foundation for Women’s Health Research and Development) [http://www.forwarduk.
+org.uk].
+l Multi-agency practice guidelines have been produced by the Home Office and the Department for 
+Education to support front-line professionals to prevent FGM [https://www.gov.uk/government/
+publications/female-genital-mutilation-guidelines].
+l NHS Choices. Female genital mutilation
+ m For patients: [http://www.nhs.uk/Conditions/female-genital-mutilation/Pages/Introduction.aspx].
+ m For professionals: [http://www.nhs.uk/nhsengland/aboutnhsservices/sexual-health-services/
+pages/fgm-for-professionals.aspx].
+l Orchid Project (a charity dedicated to ending female genital cutting) [http://orchidproject.org/].PRCOG Green-top Guideline No. 53 © Royal College of Obstetricians and Gynaecologists19 of 26References
+1. Baillot H, Murray N, Connelly E, Howard N; Scottish 
+Refugee Council; London School of Hygiene and Tropical 
+Medicine. Tackling Female Genital Mutilation in 
+Scotland. A Scottish model of intervention . Glasgow: 
+Scottish Refugee Council; 2014.
+2. [Department of Finance and Personnel, Northern 
+Ireland]. Multi-agency practice guidelines: female 
+genital mutilation . [Bangor, Northern Ireland]: [DFP]; 
+[2014] [http://www.dfpni.gov.uk/multi-agency-practice-
+guidelines-on-female-genital-mutilation.pdf]. Accessed 
+2015 May 29.
+3. World Health Organization. Eliminating female genital 
+mutilation: an interagency statement . Geneva: World 
+Health Organization; 2008.
+4. United Nations Children’s Fund. Female Genital Mutilation/
+Cutting: A statistical overview and exploration of the 
+dynamics of change . New York: UNICEF; 2013.
+5. Department of Health. Female Genital Mutilation Risk 
+and Safeguarding. Guidance for professionals . London: 
+DH; 2015.
+6. Royal College of Midwives, Royal College of Nursing, Royal 
+College of Obstetricians and Gynaecologists, Equality 
+Now, Unite. Tackling FGM in the UK: Intercollegiate 
+recommendations for identifying, recording and 
+reporting . London: RCM; 2013. 
+7. Macfarlane A, Dorkenoo E. Female Genital Mutilation in 
+England and Wales. Updated statistical estimates of the 
+numbers of affected women living in England and Wales 
+and girls at risk. Interim report on provisional estimates . 
+London: City University London; 2014.
+8. House of Commons Home Affairs Committee. Female 
+genital mutilation: the case for a national action plan. 
+Second Report of Session 2014–15 Report, together 
+with formal minutes relating to the report . HC 201 
+[Incorporating HC 1091, 2013–14]. London: The Stationery 
+Office; 2014.
+9. Berg RC, Underland V, Odgaard-Jensen J, Fretheim A, Vist 
+GE. Effects of female genital cutting on physical health 
+outcomes: a systematic review and meta-analysis. BMJ 
+Open 2014;4:e006316.
+10. Asante A, Omurtag K, Roberts C. Epidermal inclusion cyst 
+of the clitoris 30 years after female genital mutilation. Fertil 
+Steril 2010;94:1097.e1–3.
+11. Abdulcadir J, Pusztaszeri M, Vilarino R, Dubuisson JB, 
+Vlastos AT. Clitoral neuroma after female genital mutilation/
+cutting: a rare but possible event. J Sex Med 2012;9:1220–5.
+12. Fernández-Aguilar S, Noël JC. Neuroma of the clitoris after 
+female genital cutting. Obstet Gynecol 2003;101:1053–4.
+13. Kaplan A, Forbes M, Bonhoure I, Utzet M, Martín M, 
+Manneh M, et al. Female genital mutilation/cutting in The 
+Gambia: long-term health consequences and complications 
+during delivery and for the newborn. Int J Womens Health 
+2013;5:323–31.
+14. Amin MM, Rasheed S, Salem E. Lower urinary tract 
+symptoms following female genital mutilation. Int J 
+Gynaecol Obstet 2013;123:21–3.
+15. Yusuf L, Negash S. Vaginal calculus following severe form 
+of female genital mutilation: a case report. Ethiop Med J 
+2008;46:185–8.
+16. Peterman A, Johnson K. Incontinence and trauma: sexual 
+violence, female genital cutting and proxy measures of 
+gynecological fistula. Soc Sci Med 2009;68:971–9.
+17. Berg RC, Denison E. Does female genital mutilation/cutting 
+(FGM/C) affect women’s sexual functioning? A systematic 
+review of the sexual consequences of FGM/C. Sex Res 
+Social Policy 2012;9:41–56.
+18. Andersson SH, Rymer J, Joyce DW, Momoh C, Gayle CM. 
+Sexual quality of life in women who have undergone 
+female genital mutilation: a case–control study. BJOG 
+2012;119:1606–11.19. Alsibiani SA, Rouzi AA. Sexual function in women with 
+female genital mutilation. Fertil Steril 2010;93:722–4.
+20. Vloeberghs E, van der Kwaak A, Knipscheer J, van den 
+Muijsenbergh M. Coping and chronic psychosocial 
+consequences of female genital mutilation in The 
+Netherlands. Ethn Health 2012;17:677–95.
+21. Behrendt A, Moritz S. Posttraumatic stress disorder and 
+memory problems after female genital mutilation. Am J 
+Psychiatry 2005;162:1000–2.
+22. Salihu HM, August EM, Salemi JL, Weldeselasse H, Sarro YS, 
+Alio AP. The association between female genital mutilation 
+and intimate partner violence. BJOG 2012;119:1597–605.
+23. Peltzer K, Pengpid S. Female genital mutilation and intimate 
+partner violence in the Ivory Coast. BMC Womens Health 
+2014;14:13.
+24. Morison L, Scherf C, Ekpo G, Paine K, West B, Coleman R, 
+et al. The long-term reproductive health consequences of 
+female genital cutting in rural Gambia: a community-based 
+survey. Trop Med Int Health 2001;6:643–53.
+25. Elmusharaf S, Elkhidir I, Hoffmann S, Almroth L. A case–
+control study on the association between female genital 
+mutilation and sexually transmitted infections in Sudan. 
+BJOG 2006;113:469–74.
+26. Almroth L, Elmusharaf S, El Hadi N, Obeid A, El Sheikh MA, 
+Elfadil SM, et al. Primary infertility after genital mutilation 
+in girlhood in Sudan: a case-control study. Lancet 
+2005;366:385–91.
+27. Hwang EW, Cheung R. Global epidemiology of hepatitis B 
+virus (HBV) infection. N Am J Med Sci (Boston) 2011;4:7–13.
+28. Duri K, Stray-Pedersen B. HIV/AIDS in Africa: trends, missing 
+links and the way forward. J Virol Antivir Res 2013;2(1).
+29. WHO study group on female genital mutilation and 
+obstetric outcome, Banks E, Meirik O, Farley T, Akande 
+O, Bathija H, et al. Female genital mutilation and obstetric 
+outcome: WHO collaborative prospective study in six 
+African countries. Lancet 2006;367:1835–41.
+30. Berg RC, Odgaard-Jensen J, Fretheim A, Underland V, Vist 
+G. An updated systematic review and meta-analysis of 
+the obstetric consequences of female genital mutilation/
+cutting. Obstet Gynecol Int 2014;2014:542859. 
+31. Gissler M, Alexander S, Macfarlane A, Small R, Stray-
+Pedersen B, Zeitlin J, et al. Stillbirths and infant deaths 
+among migrants in industrialized countries. Acta Obstet 
+Gynecol Scand 2009;88:134–48.
+32. Small R, Gagnon A, Gissler M, Zeitlin J, Bennis M, Glazier 
+R, et al. Somali women and their pregnancy outcomes 
+postmigration: data from six receiving countries. BJOG 
+2008;115:1630–40.
+33. Browning A, Allsworth JE, Wall LL. The relationship 
+between female genital cutting and obstetric fistulae. 
+Obstet Gynecol 2010;115:578–83.
+34. HM Government. Multi-Agency Practice Guidelines: Female 
+Genital Mutilation . [London]: HM Government; 2014.
+35. Ministry of Justice, Home Office. Serious Crime Act 2015. 
+Factsheet – female genital mutilation . [London]: Ministry 
+of Justice; 2015 [https://www.gov.uk/government/uploads/ 
+system/uploads/attachment_data/file/416323/Fact_
+sheet_-_FGM_-_Act.pdf]. Accessed 2015 May 29.
+36. Royal College of Obstetricians and Gynaecologists. Ethical 
+considerations in relation to female genital cosmetic 
+surgery (FGCS) . Ethical opinion paper. London: RCOG; 2013.
+37. World Health Organization. Global strategy to stop health-
+care providers from performing female genital mutilation 
+UNAIDS, UNDP, UNFPA, UNHCR, UNICEF, UNIFEM, WHO, 
+FIGO, ICN, IOM, MWIA, WCPT, WMA . Geneva: WHO; 2010.
+38. HM Government. A Statement Opposing Female Genital 
+Mutilation . [London]: HM Government; 2014. 
+39. Statement opposing female genital mutilation [https://
+www.gov.uk/government/publications/statement-
+opposing-female-genital-mutilation]. Accessed 2015 Apr 20. RCOG Green-top Guideline No. 53 © Royal College of Obstetricians and Gynaecologists20 of 2640. Department of Health. NHS Specialist Services for Female 
+Genital Mutilation . [London]: DH; 2014 [http://www.
+nhs.uk/NHSEngland/AboutNHSservices/sexual-health-
+services/Documents/List%20of%20FGM%20Clinics%20
+Mar%2014%20FINAL.pdf]. Accessed 2015 Apr 20.
+41. Health and Social Care Information Centre. Female Genital 
+Mutilation (FGM) Enhanced Dataset. Requirements 
+Specification . [Leeds]: HSCIC; 2015. 
+42. FORWARD. Reviewing Access to FGM Specialist Services 
+in England (2011) . Research Brief No. 2. London: 
+FORWARD; 2011.43. Foldès P, Cuzin B, Andro A. Reconstructive surgery after 
+female genital mutilation: a prospective cohort study. 
+Lancet 2012;380:134–41.
+44. Balogun OO, Hirayama F, Wariki WM, Koyanagi A, Mori R. 
+Interventions for improving outcomes for pregnant women 
+who have experienced genital cutting. Cochrane Database 
+Syst Rev 2013;(2):CD009872.
+45. National Institute for Health and Care Excellence. 
+Intrapartum care: care of healthy women and their 
+babies during childbirth . NICE clinical guideline 190. 
+[Manchester]: NICE; 2014.RCOG Green-top Guideline No. 53 © Royal College of Obstetricians and Gynaecologists21 of 26Appendix I: Legal and regulatory responsibilities of health professionals 
+1. Data recording ( http://www.hscic.gov.uk/fgm )
+l Data recording is mandatory for all women identified as having FGM.
+l Document FGM diagnosis in medical records (even if FGM is not the reason for presentation).
+l If genital examination is performed and type of FGM is identified, record FGM type (WHO 
+classification).*
+l Document further details in accordance with the HSCIC FGM Enhanced Dataset.
+l Explain to the woman that her personal data will be transmitted to the HSCIC for the purpose of 
+FGM prevalence monitoring and that the data will not be anonymised.
+2. Reporting to police and/or social services in the event of risk to a child 
+(https://www.gov.uk/government/publications/safeguarding-women-and-girls-at-risk-of-fgm ) 
+l Children under 18:
+ m If FGM is confirmed (on examination or if the patient or parent says it has been done), refer as 
+a matter of urgency to the police and this should be done within 1 month of confirmation.
+ m If FGM is suspected (but not confirmed) or the girl is at risk (but has not had FGM), refer to 
+social services or the police. The urgency of the referral depends on the degree of risk. 
+l Nonpregnant women with FGM: no requirement to report unless a related child is at risk.
+l Pregnant women:
+ m A member of the clinical team (midwife or obstetrician) must make an individual risk 
+assessment using an FGM safeguarding risk assessment tool and if the unborn child, or any 
+other child in the family, is considered to be at risk of FGM then reporting to social services or 
+the police must occur.
+ m Document maternal history of FGM in the personal child health record (‘Red Book’) prior to 
+postnatal discharge.
+ m If delivery of a baby girl, notify the designated child protection midwife, who should inform 
+the GP and health visitor.
+*Genital piercings should be classified as type 4 FGM in accordance with the WHO FGM classification.RCOG Green-top Guideline No. 53 © Royal College of Obstetricians and Gynaecologists22 of 26Appendix II: Clinical management of adult women with FGM in obstetric and gynaecological practice 
+1. All acute trusts/health boards should have a designated consultant and midwife responsible for the 
+care of women with FGM 
+2. All women in obstetric and gynaecological practice
+l Explain law on FGM, documenting the discussion and referring her to information provided in the 
+Health Passport ( https://www.gov.uk/government/publications/statement-opposing-female-genital-
+mutilation ).
+l Provide interpreter if required (not a family member).
+l Offer referral for psychological assessment and treatment.
+l Offer specialist referral as appropriate, e.g. sexual health, urology.
+l Make a clinical assessment of FGM (symptoms, examination) and need for de-infibulation.
+l Record data in accordance with the HSCIC FGM Enhanced Dataset. These include age at FGM, 
+country where FGM was performed, date of entry to UK (if applicable) and past history of 
+de-infibulation and/or re-infibulation.
+l If de-infibulation is indicated, offer before pregnancy – it can usually be performed on an 
+outpatient basis.
+l Reporting to social services or the police is only required if a related child is considered to be at 
+risk.
+3. Additional management in pregnant women
+l Refer to designated consultant obstetrician or specialist midwife with responsibility for women 
+with FGM. 
+l Local protocols will determine which elements of care (child safeguarding risk assessment, data 
+recording, clinical management) should be undertaken by the designated midwife or obstetrician 
+and which may be undertaken by other appropriately trained midwives or obstetricians.
+l Discuss and clearly document a plan of care – preformatted pro formas may be used.
+l Make an individual risk assessment using an FGM safeguarding risk assessment tool (an example 
+of such a tool can be found at https://www.gov.uk/government/publications/safeguarding-women-
+and-girls-at-risk-of-fgm ). If the unborn child or any related child is considered to be at risk then 
+reporting to social services or the police must occur.
+l Offer screening for hepatitis C in addition to routine screening for hepatitis B, HIV and syphilis. 
+l If de-infibulation is indicated, discuss, agree and document the timing (antenatal or intrapartum). 
+Inform the woman that re-infibulation after delivery will not be performed under any 
+circumstances.
+l Manage as high obstetric risk (increased risk of haemorrhage, perineal trauma and caesarean 
+section), except for women who have had previous pregnancies with uncomplicated vaginal 
+deliveries and no history of post-delivery re-infibulation.
+l Document maternal history of FGM in the personal child health record (‘Red Book’) prior to 
+postnatal discharge.
+l If delivery of a baby girl, notify the designated child protection midwife, who should inform the GP 
+and health visitor.
+l Offer postnatal follow-up if de-infibulation performed intrapartum or if planned de-infibulation did 
+not occur because of delivery by caesarean section.RCOG Green-top Guideline No. 53 © Royal College of Obstetricians and Gynaecologists23 of 26Appendix III: One recommended method of performing de-infibulation 
+2) Infiltration of midline scar with 
+local anaesthetic1) Type 3 FGM (infibulation)
+3) Incision of midline scar 4) Suturing of cut edges with 
+absorbable sutureInfiltration of the 
+infibulation scar with 
+local anaesthetic should 
+be undertaken with surgical 
+forceps placed behind the 
+scar to prevent injury to 
+underlying tissues.
+The incision should be made either with scissors or 
+a knife and extended anteriorly until the external 
+urethral meatus is visible.The cut edges may be oversewn with a fine 
+absorbable suture and a paraffin gauze 
+dressing applied.RCOG Green-top Guideline No. 53 © Royal College of Obstetricians and Gynaecologists24 of 26Appendix IV: Plan of care for women with FGM in pregnancy
+Woman with FGM in pregnancy:
+Referral to designated midwife and/or 
+obstetrician with responsibility for FGM*
+Consultant-led care
+Child safeguarding risk 
+assessment by midwife or 
+obstetrician:
+Use risk assessment tool
+Explain law on FGM
+Report to social services or the 
+police if unborn child or related 
+child at risk
+Antenatal
+1. Use professional interpreter if 
+required (not family member) 
+and explain law on FGM
+2. Offer referral for 
+psychological assessment 
+and screening for hepatitis 
+C, in addition to routine 
+antenatal screening
+3. Make clinical assessment 
+of FGM. If de-infibulation is 
+required, agree timing and 
+explain that re-infibulation 
+will not be performed
+4. Assess other obstetric 
+risk factors and action 
+appropriately
+5. Agree and document plan for 
+antenatal, intrapartum and 
+postpartum careClinical management plan:
+Ensure clear documentation
+Preformatted pro formas may 
+be used
+Postpartum
+1. Document maternal history of 
+FGM in personal child health 
+record (‘Red Book’)
+2. If delivery of baby girl, notify 
+safeguarding midwife who 
+should inform the GP and 
+health visitor
+3. Offer postnatal follow-up 
+if de-infibulation performed 
+intrapartum or if planned 
+de-infibulation did not occur 
+because of delivery by 
+caesarean section
+4. Ensure all data required for 
+HSCIC Enhanced Dataset 
+have been recordedData recording:
+Ensure compliance with HSCIC 
+Enhanced Dataset
+Document FGM diagnosis, 
+including FGM type 
+(WHO classification)
+Intrapartum
+1. Generally manage as high 
+risk for caesarean section, 
+haemorrhage and perineal 
+trauma
+2. Some women may be 
+considered low risk and 
+suitable for midwifery-led 
+care if history of previous 
+uncomplicated vaginal 
+delivery 
+3. If de-infibulation is required, 
+ensure that the midwife 
+and obstetrician caring for 
+the woman have received 
+appropriate training
+4. Perineal tears in women with 
+FGM should be managed 
+in the same manner as in 
+women without FGM
+* Local protocols will determine which elements of care (child safeguarding risk assessment, data recording, clinical manage -
+ment plan) should be undertaken by the designated midwife or obstetrician responsible for women with FGM and which may be 
+undertaken by other appropriately trained midwives or obstetriciansRCOG Green-top Guideline No. 53 © Royal College of Obstetricians and Gynaecologists25 of 26Appendix V: Explanation of guidelines and evidence levels
+Clinical guidelines are: ‘systematically developed statements which assist clinicians and patients in 
+making decisions about appropriate treatment for specific conditions’. Each guideline is systematically 
+developed using a standardised methodology. Exact details of this process can be found in Clinical 
+Governance Advice No. 1 Development of RCOG Green-top Guidelines (available on the RCOG website 
+at http://www.rcog.org.uk/green-top-development ). These recommendations are not intended to dictate 
+an exclusive course of management or treatment. They must be evaluated with reference to individual 
+patient needs, resources and limitations unique to the institution and variations in local populations. 
+It is hoped that this process of local ownership will help to incorporate these guidelines into routine 
+practice. Attention is drawn to areas of clinical uncertainty where further research may be indicated. 
+The evidence used in this guideline was graded using the scheme below and the recommendations 
+formulated in a similar fashion with a standardised grading scheme.
+At least one meta-analysis, systematic review or 
+randomised controlled trial rated as 1++, and 
+directly applicable to the target population; or 
+A systematic review of randomised controlled 
+trials or a body of evidence consisting 
+principally of studies rated as 1+, directly 
+applicable to the target population and 
+demonstrating overall consistency of results
+A body of evidence including studies rated 
+as 2++ directly applicable to the target 
+population, and demonstrating overall 
+consistency of results; or 
+Extrapolated evidence from studies rated as 
+1++ or 1+
+A body of evidence including studies rated as 
+2+ directly applicable to the target population, 
+and demonstrating overall consistency of 
+results; or 
+Extrapolated evidence from studies rated as 
+2++
+Evidence level 3 or 4; or 
+Extrapolated evidence from studies rated as 2+1++ High-quality meta-analyses, systematic 
+reviews of randomised controlled trials or 
+randomised controlled trials with a very 
+low risk of bias
+1+ Well-conducted meta-analyses, systematic 
+reviews of randomised controlled trials 
+or randomised controlled trials with a 
+low risk of bias
+1– Meta-analyses, systematic reviews of 
+randomised controlled trials or 
+randomised controlled trials with a high 
+risk of bias
+2++ High-quality systematic reviews of 
+case–control or cohort studies or high-
+quality case–control or cohort studies 
+with a very low risk of confounding, bias 
+or chance and a high probability that the 
+relationship is causal
+2+ Well-conducted case–control or cohort 
+studies with a low risk of confounding, 
+bias or chance and a moderate 
+probability that the relationship is causal
+2– Case–control or cohort studies with a 
+high risk of confounding, bias or chance 
+and a significant risk that the 
+relationship is not causal
+3 Non-analytical studies, e.g. case reports, 
+case series
+4 Expert opinionClassification of evidence levels Grades of recommendations
+Good practice point
+Recommended best practice based on the 
+clinical experience of the guideline 
+development groupDCBA
+PRCOG Green-top Guideline No. 53 © Royal College of Obstetricians and Gynaecologists26 of 26This guideline was produced on behalf of the Royal College of Obstetricians and Gynaecologists by: 
+Dr NM Low-Beer MRCOG, London and Professor SM Creighton FRCOG, London
+and peer reviewed by: 
+Dr J Abdulcadir, University Hospitals of Geneva, Geneva, Switzerland; Dr F Abu Amna MRCOG, Preston; 
+Ms J Albert, London; Dr MM Amin, Kobe University Graduate School of Medicine, Kobe, Japan; 
+Dr IA Babarinsa MRCOG, Doha, Qatar; Ms O Balogun, National Center for Child Health and Development, Tokyo, 
+Japan; Dr RC Berg, Norwegian Knowledge Centre for the Health Services, Oslo, Norway; Miss P Buck FRCOG, 
+Lancashire; Crown Prosecution Service; Department of Health; Professor A Macfarlane, City University London; 
+Dr R Mori, National Center for Child Health and Development, Tokyo, Japan; RCOG Women’s Network; 
+Professor AA Rouzi, King Abdulaziz University Hospital, Jeddah, Saudi Arabia; Royal College of Midwives; 
+Dr SMA Saad MRCOG, Paisley; Mr E Vloeberghs, Pharos, Utrecht, The Netherlands; Dr AL Wright FRCOG, London; 
+Dr AEA Yagoub MRCOG, Blackpool; and Professor L Yusuf, Addis Ababa University College of Health, Addis Ababa, 
+Ethiopia. 
+Committee lead reviewers were: Dr M Gupta MRCOG, London; Dr M Ledingham MRCOG, Glasgow; 
+Dr AJ Thomson MRCOG, Paisley; and Mr RC Wimalasundera FRCOG, London.
+The chairs of the Guidelines Committee were: Dr M Gupta1 MRCOG, London; Dr P Owen2 FRCOG, Glasgow; 
+and Dr AJ Thomson1 MRCOG, Paisley. 
+1 co-chairs from June 2014 2 until May 2014. 
+All RCOG guidance developers are asked to declare any conflicts of interest. A statement summarising any 
+conflicts of interest for this guideline is available from: https://www.rcog.org.uk/en/guidelines-research-services/
+guidelines/gtg53/ .
+The final version is the responsibility of the Guidelines Committee of the RCOG. 
+The review process will commence in 2018, unless otherwise indicated.
+DISCLAIMER 
+The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical 
+practice. They present recognised methods and techniques of clinical practice, based on published evidence, for 
+consideration by obstetricians and gynaecologists and other relevant health professionals. The ultimate judgement 
+regarding a particular clinical procedure or treatment plan must be made by the doctor or other attendant in the light 
+of clinical data presented by the patient and the diagnostic and treatment options available.
+This means that RCOG Guidelines are unlike protocols or guidelines issued by employers, as they are not intended to 
+be prescriptive directions defining a single course of management. Departure from the local prescriptive protocols 
+or guidelines should be fully documented in the patient’s case notes at the time the relevant decision is taken.

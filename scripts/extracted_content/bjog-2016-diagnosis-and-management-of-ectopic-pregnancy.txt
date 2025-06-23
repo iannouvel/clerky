@@ -1,0 +1,1621 @@
+# Extracted from: BJOG - 2016 - Diagnosis and Management of Ectopic Pregnancy.pdf
+# Guideline ID: bjog-2016-diagnosis-and-management-of-ectopic-pregnancy
+# Content length: 139429 characters
+# Processing date: 1732953490.7485108
+
+Diagnosis and Management of Ectopic
+Pregnancy
+Green-top Guideline No. 21
+RCOG/AEPU Joint Guideline | November 2016
+Please cite this paper as: Elson CJ, Salim R, Potdar N, Chetty M, Ross JA, Kirk EJ on behalf of the Royal College of
+Obstetricians and Gynaecologists. Diagnosis and management of ectopic pregnancy. BJOG 2016 ;.123:e15 –e55.
+DOI: 10.1111/1471-0528.14189
+Diagnosis and Management of Ectopic Pregnancy
+This guideline replaces The Management of Tubal Pregnancy , which was published in 2004.
+Executive summary of recommendations
+Diagnosis of ectopic pregnancy
+How is a tubal pregnancy diagnosed?
+What are the ultrasound criteria?
+Transvaginal ultrasound is the diagnostic tool of choice for tubal ectopic pregnancy. [ New 2016 ]B
+Tubal ectopic pregnancies should be positively identi ﬁed, if possible, by visualising an adnexal
+mass that moves separate to the ovary. [ New 2016 ]D
+What biochemical investigations should be carried out?
+A serum progesterone level is not useful in predicting ectopic pregnancy. [ New 2016 ]B
+A serum beta-human chorionic gonadotrophin ( b-hCG) level is useful for planning the
+management of an ultrasound visualised ectopic pregnancy. [ New 2016 ]C
+How is a cervical pregnancy diagnosed?
+What are the ultrasound criteria?
+The following ultrasound criteria may be used for the diagnosis of cervical ectopic pregnancy:
+an empty uterus, a barrel-shaped cervix, a gestational sac present below the level of theinternal cervical os, the absence of the ‘sliding sign ’and blood ﬂow around the gestational sac
+using colour Doppler. [ New 2016 ]D
+What biochemical investigations should be carried out?
+A single serum b-hCG should be carried out at diagnosis. [ New 2016 ]D
+RCOG Green-top Guideline No. 21 e16 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+How is a caesarean scar pregnancy diagnosed?
+What are the ultrasound criteria?
+Clinicians should be aware that ultrasound is the primary diagnostic modality, using a
+transvaginal approach supplemented by transabdominal imaging if required. [ New 2016 ]D
+Deﬁned criteria for diagnosing caesarean scar pregnancy on transvaginal scan have been
+described. [ New 2016 ]D
+Magnetic resonance imaging (MRI) can be used as a second-line investigation if the diagnosis
+is equivocal and there is local expertise in the MRI diagnosis of caesarean scar pregnancies.[New 2016 ]D
+What biochemical investigations should be carried out?
+No biochemical investigations are needed routinely. [ New 2016 ]/check
+How is an interstitial pregnancy diagnosed?
+What are the ultrasound criteria?
+The following ultrasound scan criteria may be used for the diagnosis of interstitial pregnancy:
+empty uterine cavity, products of conception/gestational sac located laterally in the interstitial(intramural) part of the tube and surrounded by less than 5 mm of myometrium in all imagingplanes, and presence of the ‘interstitial line sign ’.[New 2016 ]D
+Sonographic ﬁndings in two-dimension can be further con ﬁrmed using three-dimensional
+ultrasound, where available, to avoid misdiagnosis with early intrauterine or angular(implantation in the lateral angles of the uterine cavity) pregnancy. [ New 2016 ]D
+Supplementation with MRI can also be helpful in the diagnosis of interstitial pregnancy.
+[New 2016 ]D
+What biochemical investigations should be carried out?
+A single serum b-hCG should be carried out at diagnosis to help with management. In some
+cases, a repeat serum b-hCG in 48 hours may be useful in deciding further management.
+[New 2016 ]/check
+RCOG Green-top Guideline No. 21 e17 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+How is a cornual pregnancy diagnosed?
+What are the ultrasound criteria?
+The following ultrasound scan criteria may be used for the diagnosis of cornual pregnancy:
+visualisation of a single interstitial portion of fallopian tube in the main uterine body,gestational sac/products of conception seen mobile and separate from the uterus andcompletely surrounded by myometrium, and a vascular pedicle adjoining the gestational sac tothe unicornuate uterus. [ New 2016 ]D
+What biochemical investigations should be carried out?
+A single serum b-hCG should be carried out at diagnosis to help with management. In some
+cases, a repeat serum b-hCG in 48 hours may be useful in deciding further management.
+[New 2016 ]/check
+How is an ovarian pregnancy diagnosed?
+What are the ultrasound criteria?
+There are no speci ﬁc agreed criteria for the ultrasound diagnosis of ovarian ectopic pregnancy.
+[New 2016 ]D
+What biochemical investigations should be carried out?
+A single serum b-hCG should be carried out at diagnosis to help with management. In some
+cases, a repeat serum b-hCG in 48 hours may be useful in deciding further management.
+[New 2016 ]/check
+How is an abdominal pregnancy diagnosed?
+What are the ultrasound criteria?
+Deﬁned ultrasound criteria can be used to diagnose an abdominal pregnancy. [ New 2016 ]D
+MRI can be a useful diagnostic adjunct in advanced abdominal pregnancy and can help to plan
+the surgical approach. [ New 2016 ]D
+What biochemical investigations should be carried out?
+A high index of suspicion is based upon an elevated serum b-hCG level in combination with
+ultrasound ﬁndings. [ New 2016 ]D
+RCOG Green-top Guideline No. 21 e18 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+How is heterotopic pregnancy diagnosed?
+What are the ultrasound criteria?
+A heterotopic pregnancy is diagnosed when the ultrasound ﬁndings demonstrate an
+intrauterine pregnancy and a coexisting ectopic pregnancy. [ New 2016 ]D
+What biochemical investigations should be carried out?
+A serum b-hCG level is of limited value in diagnosing heterotopic pregnancy. [ New 2016 ]D
+Management options
+What are the surgical, pharmacological or conservative treatment options for tubal pregnancy?
+A laparoscopic surgical approach is preferable to an open approach.A
+In the presence of a healthy contralateral tube, salpingectomy should be performed in
+preference to salpingotomy. [ New 2016 ]B
+In women with a history of fertility-reducing factors (previous ectopic pregnancy, contralateral
+tubal damage, previous abdominal surgery, previous pelvic in ﬂammatory disease), salpingotomy
+should be considered. [ New 2016 ]C
+If a salpingotomy is performed, women should be informed about the risk of persistent
+trophoblast with the need for serum b-hCG level follow-up. They should also be counselled that
+there is a small risk that they may need further treatment in the form of systemicmethotrexate or salpingectomy./check
+Systemic methotrexate may be offered to suitable women with a tubal ectopic pregnancy. Itshould never be given at the ﬁrst visit, unless the diagnosis of ectopic pregnancy is absolutely
+clear and a viable intrauterine pregnancy has been excluded. [ New 2016 ]B
+Expectant management is an option for clinically stable women with an ultrasound diagnosis of
+ectopic pregnancy and a decreasing b-hCG level initially less than 1500 iu/l.B
+What are the surgical, pharmacological or conservative treatment options for cervical pregnancy?
+Medical management with methotrexate can be considered for cervical pregnancy. [ New 2016 ]D
+Surgical methods of management are associated with a high failure rate and should be
+reserved for those women suffering life-threatening bleeding. [ New 2016 ]D
+RCOG Green-top Guideline No. 21 e19 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+What are the surgical, pharmacological or conservative treatment options for caesarean scar pregnancy?
+Women diagnosed with caesarean section scar pregnancies should be counselled that such
+pregnancies are associated with severe maternal morbidity and mortality. [ New 2016 ]D
+Medical and surgical interventions with or without additional haemostatic measures should be
+considered in women with ﬁrst trimester caesarean scar pregnancy. [ New 2016 ]D
+There is insuf ﬁcient evidence to recommend any one speci ﬁc intervention over another for
+caesarean scar pregnancy, but the current literature supports a surgical rather than medicalapproach as the most effective. [ New 2016 ]D
+What are the surgical, pharmacological or conservative treatment options for interstitial pregnancy?
+Nonsurgical management is an acceptable option for stable interstitial pregnancies. [ New 2016 ]D
+Expectant management is only suitable for women with low or signi ﬁcantly falling b-hCG levels
+in whom the addition of methotrexate may not improve the outcome. [ New 2016 ]D
+A pharmacological approach using methotrexate has been shown to be effective, although,
+there is insuf ﬁcient evidence to recommend local or systemic approach. [ New 2016 ]D
+Surgical management by laparoscopic cornual resection or salpingotomy is an effective option.
+[New 2016 ]D
+Alternative surgical techniques could include hysteroscopic resection under laparoscopic or
+ultrasound guidance. [ New 2016 ]D
+There is insuf ﬁcient evidence on safety and complications in future pregnancies to recommend
+other nonsurgical methods. [ New 2016 ]D
+What are the surgical, pharmacological or conservative treatment options for cornual pregnancy?
+Cornual pregnancies should be managed by excision of the rudimentary horn via laparoscopy or
+laparotomy. [ New 2016 ]D
+What are the surgical, pharmacological or conservative treatment options for ovarian pregnancy?
+Deﬁnitive surgical treatment is preferred if laparoscopy is required to make the diagnosis of
+ovarian ectopic pregnancy. [ New 2016 ]D
+Systemic methotrexate can be used to treat ovarian ectopic pregnancy when the risk of surgery
+is high, or postoperatively in the presence of persistent residual trophoblast or persistentlyraised b-hCG levels. [ New 2016 ]D
+RCOG Green-top Guideline No. 21 e20 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+What are the surgical, pharmacological or conservative treatment options for abdominal pregnancy?
+Laparoscopic removal is an option for treatment of early abdominal pregnancy. [ New 2016 ]D
+Possible alternative treatment methods would be systemic methotrexate with ultrasound-
+guided fetocide. [ New 2016 ]D
+Advanced abdominal pregnancy should be managed by laparotomy. [ New 2016 ]D
+What are the surgical, pharmacological or conservative treatment options for heterotopic pregnancy?
+The intrauterine pregnancy must be considered in the management plan. [ New 2016 ]B
+Methotrexate should only be considered if the intrauterine pregnancy is nonviable or if the
+woman does not wish to continue with the pregnancy. [ New 2016 ]D
+Local injection of potassium chloride or hyperosmolar glucose with aspiration of the sac
+contents is an option for clinically stable women. [ New 2016 ]D
+Surgical removal of the ectopic pregnancy is the method of choice for haemodynamically
+unstable women and is also an option for haemodynamically stable women. [ New 2016 ]D
+Expectant management is an option in heterotopic pregnancies where the ultrasound ﬁndings
+are of a nonviable pregnancy. [ New 2016 ]D
+Do rhesus D (RhD)-negative women with an ectopic pregnancy require anti-D immunoglobulin?
+Offer anti-D prophylaxis as per national protocol to all RhD-negative women who have surgical
+removal of an ectopic pregnancy, or where bleeding is repeated, heavy or associated withabdominal pain. [ New 2016 ]D
+What are the long-term fertility prospects following an ectopic pregnancy?
+In the absence of a history of subfertility or tubal pathology, women should be advised that
+there is no difference in the rate of fertility, the risk of future tubal ectopic pregnancy or tubalpatency rates between the different management methods. [ New 2016 ]D
+Women with a previous history of subfertility should be advised that treatment of their tubal
+ectopic pregnancy with expectant or medical management is associated with improvedreproductive outcomes compared with radical surgery. [ New 2016 ]C
+Women receiving methotrexate for the management of tubal ectopic pregnancy can be advised
+that there is no effect on ovarian reserve. [ New 2016 ]D
+RCOG Green-top Guideline No. 21 e21 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Women undergoing treatment with uterine artery embolisation and systemic methotrexate for
+nontubal ectopic pregnancies can be advised that live births have been reported in subsequentpregnancies. [ New 2016 ]D
+Women undergoing laparoscopic management of ovarian pregnancies can be advised that their
+future fertility prospects are good. [ New 2016 ]D
+What support and counselling should be offered to women undergoing treatment for ectopic
+pregnancy?
+Women should be advised, whenever possible, of the advantages and disadvantages associated
+with each approach used for the treatment of ectopic pregnancy, and should participate fully inthe selection of the most appropriate treatment.D
+Women should be made aware of how to access support via patient support groups, such asthe Ectopic Pregnancy Trust, or local bereavement counselling services. [ New 2016 ]D
+Muscle relaxation training may be of use to women undergoing treatment for ectopic
+pregnancy with methotrexate. [ New 2016 ]C
+It is recommended that women treated with methotrexate wait at least 3 months before trying
+to conceive again. [ New 2016 ]D
+Service and training
+What is the most appropriate setting for management of women with an ectopic pregnancy?
+Providers of early pregnancy care should provide a 7-day early pregnancy assessment service
+with direct access for women referred by general practitioners and accident and emergencydepartments, i.e. along current NHS recommendations. Available facilities for the managementof suspected ectopic pregnancy should include diagnostic and therapeutic algorithms,transvaginal ultrasound and serum b-hCG estimations./check
+Women should have access to all appropriate management options for their ectopic pregnancy.
+If local facilities do not provide all options, then clear referral pathways should exist to allowthem to access appropriate care. [ New 2016 ]/check
+What are the training implications for those managing women with ectopic pregnancy?
+Clinicians undertaking the surgical management of ectopic pregnancy must have received
+appropriate training. Laparoscopic surgery requires appropriate equipment and trained theatrestaff./check
+Clinicians undertaking ultrasound for the diagnosis of ectopic pregnancy must have receivedappropriate training. [ New 2016 ]/check
+RCOG Green-top Guideline No. 21 e22 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Clinicians undertaking medical management via ultrasound-guided needle techniques must have
+received appropriate training. [ New 2016 ] /check
+If clinicians undertaking surgical management of ectopic pregnancy cannot carry out the full
+range of surgical procedures, appropriately experienced support must be available if necessary.[New 2016 ]/check
+Virtual reality simulators can be used as a training tool for salpingectomy. [ New 2016 ]D
+1. Purpose and scope
+The purpose of this guideline is to provide evidence-based guidance on the diagnosis and management of ectopic
+pregnancies. This guideline will cover the following ectopic pregnancies: tubal, cervical, caesarean scar, interstitial,cornual, ovarian, abdominal and heterotopic. The diagnosis and management of pregnancy of unknown location (PUL)will not be covered.
+The management of PUL is discussed in the National Institute for Health and Care Excellence (NICE) guideline.
+1
+2. Introduction and background epidemiology
+An ectopic pregnancy is any pregnancy implanted outside of the endometrial cavity. In the UK, the incidence is
+approximately 11/1000 pregnancies, with an estimated 11 000 ectopic pregnancies diagnosed each year.2The
+incidence of ectopic pregnancy in women attending early pregnancy units is 2 –3%.3,4Unfortunately, women still die
+from ectopic pregnancy, with six maternal deaths reported between 2006 and 2008. However, the case fatality ratehas decreased over recent years, suggesting that earlier diagnosis and treatment may have made an impact.
+2
+Risk factors for ectopic pregnancy include tubal damage following surgery or infection, smoking and in vitrofertilisation.
+5–9However, the majority of women with an ectopic pregnancy have no identiﬁable risk factor.
+3. Identi ﬁcation and assessment of evidence
+This guideline was developed in accordance with standard methodology for producing Royal College of Obstetricians
+and Gynaecologists (RCOG) Green-top Guidelines. MEDLINE, EMBASE and the Cochrane Library were searched.The search was restricted to articles published between 1995 and July 2015 and limited to humans and the Englishlanguage. The databases were searched using the relevant Medical Subject Headings (MeSH) terms and this wascombined with a keyword search. Search terms included ‘ectopic pregnancy’, ‘tubal pregnancy’, ‘interstitialpregnancy’, ‘cornual pregnancy’, ‘cervical pregnancy’, ‘caesarean scar pregnancy’, ‘ovarian pregnancy’, ‘abdominalpregnancy’, ‘heterotopic pregnancy’, ‘pregnancy of unknown location’ and ‘extrauterine pregnancy’. The NationalGuideline Clearinghouse, NICE Evidence Search and Trip were also searched for relevant guidelines. Where possible,recommendations are based on available evidence. Areas lacking evidence are highlighted and annotated as ‘goodpractice points’ (GPP).
+Further information about the assessment of evidence and the grading of recommendations may be found in
+Appendix I.
+RCOG Green-top Guideline No. 21 e23 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+4. Diagnosis of ectopic pregnancy
+4.1 How is a tubal pregnancy diagnosed?
+4.1.1 What are the ultrasound criteria?
+Transvaginal ultrasound is the diagnostic tool of choice for tubal ectopic pregnancy.B
+Tubal ectopic pregnancies should be positively identi ﬁed, if possible, by visualising an adnexal
+mass that moves separate to the ovary.D
+The majority of tubal ectopic pregnancies should be visualised on transvaginal ultrasound. Transvaginal
+ultrasound has reported sensitivities of 87.0 –99.0% and speciﬁcities of 94.0 –99.9% for the diagnosis of
+ectopic pregnancy.3,10–13The majority of ectopic pregnancies will be visualised on the initial ultrasound
+examination.14–18The remainder will initially be classiﬁed as a PUL. Not all ectopic pregnancies initially
+classiﬁed as a PUL are ‘missed’ on the initial scan. Some of these ectopic pregnancies are just too smalland too early in the disease process to be visualised on the initial ultrasound examination.
+19Laparoscopy is
+no longer the gold standard for diagnosis. False-negative laparoscopies (3.0 –4.5%) have been reported
+when the procedure is performed too early in the development of an ongoing ectopic pregnancy.20,21Evidence
+level 2++
+An inhomogeneous or noncystic adnexal mass is the most common ﬁnding in around 50 –60% of
+cases.4,10,12,13,19An empty extrauterine gestational sac will be present in around 20 –40% of cases.4,10,19
+While an extrauterine gestational sac containing a yolk sac and/or embryonic pole that may or may not
+have cardiac activity will be present in around 15 –20% of cases.4,10,19
+There is no speciﬁc endometrial appearance or thickness to support a diagnosis of tubal ectopic
+pregnancy. In up to 20% of cases, a collection of ﬂuid may be seen within the uterine cavity, classicallyreferred to as a ‘pseudosac’.
+22–24The key is to distinguish this from an early intrauterine gestational sac.
+The intradecidual and double decidual signs can be used to diagnose an early intrauterine pregnancy. Theintradecidual sign is described as a ﬂuid collection with an echogenic rim located ‘within a markedlythickened decidua on one side of the uterine cavity’.
+25The double decidual sign is described as an
+intrauterine ﬂuid collection surrounded by ‘two concentric echogenic rings’.26However, in practice, it can
+be very difﬁcult to distinguish a ‘pseudosac’ which is just a collection of ﬂuid in the endometrial cavityfrom an early intrauterine sac. The presence of a ‘pseudosac’ alone cannot be used to diagnose an ectopicpregnancy and in fact, a small anechoic cystic structure is more likely to be an early sac rather than a‘pseudosac’. A study
+27has shown that a woman with a positive pregnancy test, an intrauterine smooth-
+walled anechoic cystic structure and no adnexal mass has a 0.02% probability of ectopic pregnancy, whilethe probability of intrauterine pregnancy in such a patient is 99.98%.
+Free ﬂuid is often seen on ultrasound, but is not diagnostic of ectopic pregnancy. A small amount of
+anechoic ﬂuid in the pouch of Douglas may be found in both intrauterine and ectopic pregnancies.Echogenic ﬂuid has been reported in 28 –56% of ectopic pregnancies.
+28,29It may signify tubal rupture, but
+most commonly is due to blood leaking from the ﬁmbrial end of the fallopian tube.Evidence
+level 3
+RCOG Green-top Guideline No. 21 e24 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+4.1.2 What biochemical investigations should be carried out?
+A serum progesterone level is not useful in predicting ectopic pregnancy.B
+A serum beta-human chorionic gonadotrophin ( b-hCG) level is useful for planning the
+management of an ultrasound visualised ectopic pregnancy.C
+A meta-analysis30has conﬁrmed that a single b-hCG level cannot be used in isolation to predict an ectopic
+pregnancy.Evidence
+level 1 –
+There is a common misconception that a single low serum b-hCG level (e.g. less than 1000 iu/l) means
+that an ectopic pregnancy is unlikely. However, this is a false assumption and in modern practice manyectopic pregnancies have a b-hCG value below this level.
+31Evidence
+level 2+
+The initial serum b-hCG level is a key prognostic indicator for the success of conservative management
+(expectant and medical) in cases of ultrasound visualised tubal ectopic pregnancies.32Evidence
+level 2 –
+4.2 How is a cervical pregnancy diagnosed?
+4.2.1 What are the ultrasound criteria?
+The following ultrasound criteria may be used for the diagnosis of cervical ectopic pregnancy:
+an empty uterus, a barrel-shaped cervix, a gestational sac present below the level of theinternal cervical os, the absence of the ‘sliding sign ’and blood ﬂow around the gestational sac
+using colour Doppler.D
+Cervical pregnancies are rare, accounting for less than 1% of all ectopic gestations.33Deﬁned criteria have
+been described for diagnosing cervical ectopic pregnancies.34,35
+The following ultrasound criteria have been described in the diagnosis of cervical ectopic pregnancy:
+1. Empty uterine cavity.
+2. A barrel-shaped cervix.3. A gestational sac present below the level of the internal cervical os.4. The absence of the ‘sliding sign’.5. Blood ﬂow around the gestational sac using colour Doppler.
+The ‘sliding sign’ enables cervical ectopic pregnancies to be distinguished from miscarriages that are within
+the cervical canal. When pressure is applied to the cervix using the probe, in a miscarriage, the gestationalsac slides against the endocervical canal, but it does not in an implanted cervical pregnancy.
+34Evidence
+level 3
+RCOG Green-top Guideline No. 21 e25 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+4.2.2 What biochemical investigations should be carried out?
+A single serum b-hCG should be carried out at diagnosis.D
+A single serum b-hCG carried out at the time of ultrasound diagnosis is useful in deciding management
+options. A serum b-hCG level greater than 10 000 iu/l is associated with a decreased chance of successful
+methotrexate treatment.36Evidence
+level 3
+4.3 How is a caesarean scar pregnancy diagnosed?
+4.3.1 What are the ultrasound criteria?
+Clinicians should be aware that ultrasound is the primary diagnostic modality, using a
+transvaginal approach supplemented by transabdominal imaging if required.D
+Deﬁned criteria for diagnosing caesarean scar pregnancy on transvaginal scan have been
+described.D
+Magnetic resonance imaging (MRI) can be used as a second-line investigation if the diagnosis isequivocal and there is local expertise in the MRI diagnosis of caesarean scar pregnancies.D
+Caesarean scar pregnancy is deﬁned as implantation into the myometrial defect occurring at the site of the
+previous uterine incision. The prevalence of caesarean scar pregnancy is estimated to be approximately1 in 2000 pregnancies and these pregnancies may be ongoing potentially viable pregnancies or miscarriageswithin the scar.
+37
+The diagnostic criteria described for diagnosing caesarean scar implantation on transvaginal ultrasoundinclude:
+1. Empty uterine cavity.
+38
+2. Gestational sac or solid mass of trophoblast located anteriorly at the level of the internal os
+embedded at the site of the previous lower uterine segment caesarean section scar.39
+3. Thin or absent layer of myometrium between the gestational sac and the bladder.38,40
+4. Evidence of prominent trophoblastic/placental circulation on Doppler examination.41
+5. Empty endocervical canal.38
+Thirteen percent of reported cases of caesarean scar pregnancy were misdiagnosed as intrauterine orcervical pregnancies at presentation.
+42The true prevalence of caesarean scar pregnancies is likely to be
+somewhat higher than estimated in the literature as some cases will end in the ﬁrst trimester,
+either by miscarriage or termination, and go unreported and undiagnosed. There is a spectrum of severityEvidence
+level 3
+RCOG Green-top Guideline No. 21 e26 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+associated with pregnancies implanted into caesarean section scars and the natural history is uncertain.
+Vial et al.43proposed that there are two different types of pregnancies implanted in a caesarean scar: the
+ﬁrst type progressing into the uterine cavity as the gestational sac grows and develops, so with thepotential to reach a viable gestational age, but with the risk of massive bleeding from the implantationsite; and the second with progression deeper towards the serosal surface of the uterus with the risk ofﬁrst trimester rupture and haemorrhage. Given that there are also varying appearances of caesareansection scars on the uterus and that placental development evolves over time as the pregnancyprogresses, all of these factors can cause difﬁculty in the diagnosis of caesarean scar pregnancy. Thediagnostic criteria have not been subject to validation and are derived from descriptive case series,
+38–44
+so to minimise the risk of false-positive diagnosis, we recommend that all nonemergency cases of
+suspected scar pregnancy are referred to a regional centre to conﬁrm the diagnosis.
+The MRI features of caesarean scar pregnancy are essentially the same as those described on ultrasound,
+but ultrasound is more readily available and cheaper.44,45Evidence
+level 3
+4.3.2 What biochemical investigations should be carried out?
+No biochemical investigations are needed routinely./check
+A serum b-hCG level may be useful as a baseline prior to monitoring if conservative treatment is contemplated, but
+it does not have a role in the diagnosis of caesarean scar pregnancy.
+4.4 How is an interstitial pregnancy diagnosed?
+4.4.1 What are the ultrasound criteria?
+The following ultrasound scan criteria may be used for the diagnosis of interstitial pregnancy:
+empty uterine cavity, products of conception/gestational sac located laterally in the interstitial(intramural) part of the tube and surrounded by less than 5 mm of myometrium in all imagingplanes, and presence of the ‘interstitial line sign ’.D
+Sonographic ﬁndings in two-dimension can be further con ﬁrmed using three-dimensional
+ultrasound, where available, to avoid misdiagnosis with early intrauterine or angular(implantation in the lateral angles of the uterine cavity) pregnancy.D
+Supplementation with MRI can also be helpful in the diagnosis of interstitial pregnancy.D
+Interstitial pregnancy occurs when the ectopic pregnancy implants in the interstitial part of the fallopian
+tube. The reported incidence varies between 1.0% and 6.3% of ectopic pregnancies.46–48The interstitial
+part of the fallopian tube is about 1 –2 cm in length and traverses the muscular myometrium of the uterine
+wall, opening via the tubal ostium into the uterine cavity.49Evidence
+level 3
+RCOG Green-top Guideline No. 21 e27 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Ultrasound criteria have been described for the diagnosis of interstitial pregnancy.50These include:
+1. Empty uterine cavity.
+2. Products of conception/gestational sac located laterally in the interstitial (intramural) part of the tube
+and surrounded by less than 5 mm of myometrium in all imaging planes.
+3. The ‘interstitial line sign’, which is a thin echogenic line extending from the central uterine cavity echo
+to the periphery of the interstitial sac. The ‘interstitial line sign’ has been shown to have a sensitivity
+of 80% and a speciﬁcity of 98% for the diagnosis of interstitial ectopic pregnancy.51
+In the three-dimensional coronal view of the uterus, a connection between the endometrial cavity and
+interstitial part of the tube can be visualised.52,53
+On MRI examination, a gestational sac-like structure is seen lateral to the cornua surrounded by themyometrium. The presence of the intact junctional zone (endomyometrial junction) between the uterinecavity and the gestational sac-like structure also supports the diagnosis.
+54,55Evidence
+level 3
+4.4.2 What biochemical investigations should be carried out?
+A single serum b-hCG should be carried out at diagnosis to help with management. In some
+cases, a repeat serum b-hCG in 48 hours may be useful in deciding further management. /check
+At presentation, based on clinical symptoms and ultrasound scan, if there is suspicion of interstitial pregnancy, a
+single serum b-hCG should be carried out. This does not contribute to the diagnosis, but can be useful in deciding
+management options, such as surgical, medical or expectant treatment. The overall decision regarding managementoptions depends upon clinical presentation, size of the interstitial pregnancy, presence of fetal cardiac activity and theserum b-hCG level. In some cases with a small interstitial pregnancy identiﬁed on an ultrasound scan, a repeat serum
+b-hCG in 48 hours may be helpful in deciding management options.
+4.5 How is a cornual pregnancy diagnosed?
+4.5.1 What are the ultrasound criteria?
+The following ultrasound scan criteria may be used for the diagnosis of cornual pregnancy:
+visualisation of a single interstitial portion of fallopian tube in the main uterine body,gestational sac/products of conception seen mobile and separate from the uterus andcompletely surrounded by myometrium, and a vascular pedicle adjoining the gestational sac tothe unicornuate uterus.D
+One of the initial reports56deﬁned cornual pregnancy as being ‘in one horn of a bicornuate uterus, or, by
+extension of meaning, in one lateral half of a uterus of biﬁd tendency’. Subsequently, the two terms‘interstitial’ and ‘cornual’ pregnancy have been used synonymously by some authors,
+57,58while others have
+advocated the original deﬁnition of implantation in the congenitally abnormal uterus.59–61Evidence
+level 3
+RCOG Green-top Guideline No. 21 e28 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Deﬁned in this way, cornual pregnancy is the rarest form of ectopic pregnancy with a reported incidence
+of 1 in 76 000 pregnancies.61The following ultrasound scan criteria described in the literature can be used
+for the diagnosis of cornual pregnancy:62
+1. Visualisation of a single interstitial portion of fallopian tube in the main uterine body.2. Gestational sac/products of conception seen mobile and separate from the uterus and completely
+surrounded by myometrium.
+3. A vascular pedicle adjoining the gestational sac to the unicornuate uterus.
+4.5.2 What biochemical investigations should be carried out?
+A single serum b-hCG should be carried out at diagnosis to help with management. In some
+cases, a repeat serum b-hCG in 48 hours may be useful in deciding further management. /check
+Based on clinical symptoms and ultrasound scan, if there is suspicion of cornual pregnancy, single serum b-hCG is
+useful for planning management. The overall decision regarding management options (surgical, medical or expectant
+treatment) depends upon the clinical presentation, size of the cornual pregnancy and the serum b-hCG level. In
+some cases with a small cornual pregnancy identiﬁed on an ultrasound scan, a repeat serum b-hCG in 48 hours may
+be helpful in deciding management options.
+4.6 How is an ovarian pregnancy diagnosed?
+4.6.1 What are the ultrasound criteria?
+There are no speci ﬁc agreed criteria for the ultrasound diagnosis of ovarian ectopic pregnancy.D
+Findings suggestive of an ovarian ectopic pregnancy on transvaginal ultrasound with an empty uterus are a
+wide echogenic ring with an internal anechoic area on the ovary. A yolk sac or embryo is seen lesscommonly.
+63,64It is not possible to separate the cystic structure or gestational sac from the ovary on
+gentle palpation (negative sliding organ sign). The corpus luteum should be identiﬁed separate from thesuspected ovarian pregnancy. Colour Doppler may aid detection of a fetal heart pulsation within the ovary.A complex echogenic adnexal mass with free ﬂuid in the pouch of Douglas can represent a rupturedovarian ectopic pregnancy.Evidence
+level 3
+As it can be difﬁcult to distinguish ovarian ectopic pregnancies from corpus luteal cysts, tubal ectopic pregnancy
+stuck to the ovary, a second corpus luteum, ovarian germ cell tumours and other ovarian pathologies, diagnosis isusually conﬁrmed surgically and histologically.Evidence
+level 3
+RCOG Green-top Guideline No. 21 e29 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+4.6.2 What biochemical investigations should be carried out?
+A single serum b-hCG should be carried out at diagnosis to help with management. In some
+cases, a repeat serum b-hCG in 48 hours may be useful in deciding further management. /check
+Ovarian ectopic pregnancy can be difﬁcult to diagnose with certainty preoperatively, so the diagnosis
+should be considered whenever ultrasound ﬁndings are suspicious. After surgical treatment, thehistopathology result will conﬁrm the diagnosis of ovarian ectopic pregnancy.
+65,66Evidence
+level 3
+4.7 How is an abdominal pregnancy diagnosed?
+4.7.1 What are the ultrasound criteria?
+Deﬁned ultrasound criteria can be used to diagnose an abdominal pregnancy.D
+MRI can be a useful diagnostic adjunct in advanced abdominal pregnancy and can help to plan
+the surgical approach.D
+The following ultrasound criteria have been suggested by Gerli et al.67as being diagnostic of an early
+abdominal pregnancy:
+1. Absence of an intrauterine gestational sac.
+2. Absence of both an evident dilated tube and a complex adnexal mass.
+3. A gestational cavity surrounded by loops of bowel and separated from them by peritoneum.
+4. A wide mobility similar to ﬂuctuation of the sac, particularly evident with pressure of the transvaginal
+probe toward the posterior cul-de-sac.
+In a clinically stable patient where abdominal pregnancy is identiﬁed or strongly suspected on ultrasound,
+MRI can help to conﬁrm the diagnosis and to identify placental implantation over vital structures, such asmajor blood vessels or bowel.
+68This can help to guide perioperative considerations, such as the surgical
+team, blood products, preoperative angiographic embolisation, bowel preparation and insertion of ureteral
+catheters. Ultrasound and/or MRI can be used to precisely map the location of the placenta prior tolaparotomy so as to avoid incising the placenta and the associated risk of uncontrollable haemorrhage.
+69
+4.7.2 What biochemical investigations should be carried out?
+A high index of suspicion is based upon an elevated serum b-hCG level in combination with
+ultrasound ﬁndings.D
+An early abdominal pregnancy is usually diagnosed at laparoscopy during investigation for a persistently elevated
+serum b-hCG level.70Evidence
+level 3
+RCOG Green-top Guideline No. 21 e30 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+4.8 How is heterotopic pregnancy diagnosed?
+4.8.1 What are the ultrasound criteria?
+A heterotopic pregnancy is diagnosed when the ultrasound ﬁndings demonstrate an
+intrauterine pregnancy and a coexisting ectopic pregnancy.D
+Heterotopic pregnancy should be considered in all women presenting after assisted reproductive
+technologies, in women with an intrauterine pregnancy complaining of persistent pelvic pain and in thosewomen with a persistently raised b-hCG level following miscarriage or termination of pregnancy.
+50,71Evidence
+level 3
+4.8.2 What biochemical investigations should be carried out?
+A serum b-hCG level is of limited value in diagnosing heterotopic pregnancy.D
+A higher than expected level of serum b-hCG in relation to gestational age may be suspicious of
+heterotopic gestations, although, the presence of a complete or partial mole must also be considered.However, in a case series
+72of 20 heterotopic pregnancies following assisted reproductive technology, the
+mean b-hCG level at the time of pregnancy test was no higher than in nonheterotopic pregnancies.Evidence
+level 3
+5. Management options
+5.1 What are the surgical, pharmacological or conservative treatment options for tubal pregnancy?
+A laparoscopic surgical approach is preferable to an open approach.A
+In the presence of a healthy contralateral tube, salpingectomy should be performed in
+preference to salpingotomy.B
+In women with a history of fertility-reducing factors (previous ectopic pregnancy, contralateraltubal damage, previous abdominal surgery, previous pelvic in ﬂammatory disease), salpingotomy
+should be considered.C
+If a salpingotomy is performed, women should be informed about the risk of persistenttrophoblast with the need for serum b-hCG level follow-up. They should also be counselled that
+there is a small risk that they may need further treatment in the form of systemicmethotrexate or salpingectomy./check
+Systemic methotrexate may be offered to suitable women with a tubal ectopic pregnancy. Itshould never be given at the ﬁrst visit, unless the diagnosis of ectopic pregnancy is absolutely
+clear and a viable intrauterine pregnancy has been excluded.B
+Expectant management is an option for clinically stable women with an ultrasound diagnosis ofectopic pregnancy and a decreasing b-hCG level initially less than 1500 iu/l.B
+RCOG Green-top Guideline No. 21 e31 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+5.1.1 Surgical management
+The majority of tubal ectopic pregnancies are managed surgically. Laparoscopy is preferable to laparotomy
+due to its many advantages, such as shorter operation time, less intraoperative blood loss, shorter hospitalstay, lower cost, lower analgesic requirements and less adhesion formation.
+73–75Evidence, however,
+suggests that there is no difference in terms of health beneﬁts between laparoscopy and laparotomy,including the key outcome of subsequent successful pregnancy.
+1
+A multicentre randomised controlled trial (RCT) on 446 women with a laparoscopically conﬁrmedtubal ectopic pregnancy and a healthy contralateral tube
+76has found that the cumulative ongoing
+pregnancy rate was 60.7% after salpingotomy and 56.2% after salpingectomy. Persistent trophoblastoccurred more frequently in the salpingotomy group (14 [7%] versus 1 [less than 1%]; relative risk[RR] 15.0, 95% CI 2.0 –113.4). Repeat ectopic pregnancy occurred in 18 women (8%) in the
+salpingotomy group and 12 (5%) in the salpingectomy group (RR 1.6, 95% CI 0.8 –3.3). It was
+concluded that in women with a tubal ectopic pregnancy and a healthy contralateral tube, salpingotomydoes not signiﬁcantly improve fertility prospects compared with salpingectomy.Evidence
+level 1+
+Higher rates of subsequent intrauterine pregnancy have been found if salpingotomy is performed rather
+than salpingectomy in women with a history of fertility-reducing factors (previous ectopic pregnancy,contralateral tubal damage, previous abdominal surgery, previous pelvic inﬂammatory disease). One study
+77
+found subsequent intrauterine pregnancy rates of 75% with salpingotomy and 40% with salpingectomy insuch women. However, subsequent intrauterine pregnancy rates were greater than 90% in both groups inwomen without fertility-reducing factors.Evidence
+level 2 –
+Persistent trophoblast is detected by the failure of serum b-hCG levels to fall as expected after initial
+treatment. It is primarily a problem occurring after salpingotomy rather than following salpingectomy.Although, even in the presence of persistent trophoblast, b-hCG levels may return uneventfully to
+normal,
+78this provides the rationale for following women with serial b-hCG measurements after
+treatment and administering methotrexate if levels plateau or start to rise. NICE1recommends that
+women undergoing salpingotomy have a serum b-hCG level taken 7 days after surgery and then weekly
+until a negative result is obtained.
+Studies have reported persistent trophoblast rates of 3.9 –11.0% after salpingotomy.79–82Factors that have
+been suggested as increasing the risk of developing persistent trophoblast include higher preoperativeserum b-hCG levels, a rapid preoperative rise in serum b-hCG and larger tubal masses. However, there is
+no convincing evidence for this and, at present, no deﬁnitive risk factors have been identiﬁed for predictingit after salpingotomy.
+82Evidence
+level 3
+5.1.2 Pharmacological management
+Methotrexate at a dose of 50 mg/m2has been widely used as a single dose instead of a repeat surgical
+procedure, although, no formal comparative studies have been performed. The use of prophylacticmethotrexate at the time of laparoscopic salpingotomy has also been reported and in one randomisedtrial,
+83when compared with simple salpingotomy alone, there was a signiﬁcant reduction in the rate of
+persistent trophoblast (1.9% versus 14.5%; RR 0.13, 95% CI 0.02 –0.97).Evidence
+level 1 –
+RCOG Green-top Guideline No. 21 e32 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Systemic methotrexate is the most commonly used drug for the pharmacological treatment of tubal
+ectopic pregnancy. RCTs comparing methotrexate with laparoscopic surgery84,85have shown
+methotrexate to be equally successful to surgery in certain cases of tubal ectopic pregnancy.Evidence
+level 1 –
+While it can be given in a multiple dose regimen, methotrexate is most commonly given as a single
+intramuscular dose of 50 mg/m2(see Appendix II).86Serum b-hCG levels are measured on days 4 and 7
+post methotrexate. If the b-hCG level decreases by more than 15% between days 4 and 7, b-hCG levels
+are then measured weekly until less than 15 iu/l. If the level does not decrease by 15%, a repeattransvaginal ultrasound should be considered to exclude ectopic fetal cardiac activity and the presence ofsigniﬁcant haemoperitoneum. Consideration may then be given to administration of a second dose ofmethotrexate .
+86
+Overall, success rates of single-dose methotrexate for tubal ectopic pregnancy range from 65 –95%, with
+3–27% of women requiring a second dose.87Success rates vary considerably due to different inclusion
+criteria. In the review by Kirk et al.,87some studies included PULs and presumed, but did not sonically
+visualise, ectopic pregnancies. Other studies87have included cases with already decreasing serum b-hCG
+levels that would have certainly resolved without any intervention. The largest single study to date88has been
+on 559 cases of ectopic pregnancy, where the success of methotrexate was found to be 90.7% (507/559).
+There are a number of predictors of success:
+/C15Initial serum b-hCG level
+Success rates are higher with lower b-hCG levels. Success rates of 81 –98% have been reported if
+serum b-hCG levels are less than 1000 iu/l, compared with only 38% if b-hCG levels are greater than
+5000 iu/l.32,89,90
+/C15Ultrasound appearance of the ectopic pregnancy
+The presence of a yolk sac, fetal pole and/or fetal cardiac activity are signiﬁcant predictors offailure.
+32,88,91 –93Success rates are higher when no gestational sac is visualised.
+/C15Pretreatment changes in serum b-hCG levels
+The smaller the increase in b-hCG level prior to administration of methotrexate, the higher the chance
+of successful medical management. A b-hCG increase of up to 11 –20% over 48 hours prior to the
+administration of methotrexate has been associated with higher rates of success.89,94
+/C15Decrease in b-hCG levels from day 1 to day 4 after methotrexate
+Success rates of 88 –100% have been reported if the serum b-hCG level decreases from day 1 to day 4
+post administration of methotrexate, compared with only 42 –62% if the serum b-hCG level increases.95,96Evidence
+level 3
+RCOG Green-top Guideline No. 21 e33 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+During treatment with methotrexate women should be advised to avoid alcohol and folate-containing
+vitamins.86
+There are adverse effects, which include marrow suppression, pulmonary ﬁbrosis, nonspeciﬁc pneumonitis,liver cirrhosis, renal failure and gastric ulceration. The most common adverse effects are excessiveﬂatulence and bloating due to intestinal gas formation, a transient mild elevation in liver enzymes andstomatitis.
+97The contraindications to methotrexate are listed in Appendix III.
+A good candidate for methotrexate has the following characteristics:
+/C15haemodynamic stability
+/C15low serum b-hCG, ideally less than 1500 iu/l but can be up to 5000 iu/l
+/C15no fetal cardiac activity seen on ultrasound scan
+/C15certainty that there is no intrauterine pregnancy
+/C15willingness to attend for follow-up
+/C15no known sensitivity to methotrexate.
+NICE1recommends that methotrexate should be the ﬁrst-line management for women who are able to
+return for follow-up and who have:
+/C15no signiﬁcant pain
+/C15an unruptured ectopic pregnancy with a mass smaller than 35 mm with no visible heartbeat
+/C15a serum b-hCG between 1500 and 5000 iu/l
+/C15no intrauterine pregnancy (as conﬁrmed on ultrasound scan).
+However, before administering methotrexate, it is essential that the diagnosis of ectopic pregnancy is
+correct. As the majority of ectopic pregnancies are visualised as inhomogeneous masses, it is prudent torepeat the serum b-hCG in such cases in 48 hours. In the event of the serum b-hCG dropping, then
+expectant management may be appropriate. Should the serum b-hCG be rising at a rate that may be
+consistent with a viable intrauterine pregnancy, then a repeat scan to check the diagnosis beforeadministering methotrexate is advisable. There are many well-documented cases of women withintrauterine pregnancies treated for suspected ectopic pregnancy with methotrexate.
+98Methotrexate
+should, therefore, never be given at the ﬁrst visit, unless the diagnosis of ectopic pregnancy is absolutelyclear and a viable intrauterine pregnancy has been excluded.
+99
+5.1.3 Expectant management
+Expectant management is a reasonable option for appropriately selected and counselled women. They
+must be willing and able to attend for follow-up, have minimal pain, and have low or declining serumb-hCG levels. Reported success rates range from 57 –100% and are very dependent on case selection.
+100Evidence
+level 3Evidence
+level 3
+RCOG Green-top Guideline No. 21 e34 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Success rates are inversely proportional to serum b-hCG levels, with lower success rates associated with
+higher initial serum b-hCG levels. One study101reported success rates of 96% with serum b-hCG levels of
+less than 175 iu/l and 66% if serum b-hCG levels were 175 –1500 iu/l. Other studies102,103have reported
+success rates of 80 –90% if the serum b-hCG levels are less than 1000 iu/l and 60 –67% if b-hCG levels are
+less than 2000 iu/l.
+A prospective observational study4on women with tubal ectopic pregnancies found that over 30% of them
+could be successfully managed expectantly: 146/333 ectopic pregnancies were managed expectantly with asuccess rate of 71.2% (104/146). Selection criteria for expectant management were clinical stability with noabdominal pain, no evidence of signiﬁcant haemoperitoneum on ultrasound scan, an ectopic pregnancymeasuring less than 30 mm in mean diameter with no evidence of embryonic cardiac activity, a serumb-hCG level of less than 1500 iu/l and the woman’s consent. All women were followed up until the serum
+b-hCG level was less than 20 iu/l. The protocol was individualised in each case, so that the interval of
+repeat b-hCG tests varied between 2 and 7 days. Expectant management was discontinued if the woman
+opted out, had signiﬁcant pain, or if the serum b-hCG level showed a sustained increase or increased to
+greater than 2000 iu/l during follow-up.
+A decreasing serum b-hCG level is also a good predictor of success. One study
+89proposed that the
+pretreatment b-hCG ratio (serum b-hCG at 48 hours/serum b-hCG at 0 hours) could be used to
+predict the likely success of expectant and medical management. It was found that if the b-hCG ratio is
+less than 0.8, expectant management is likely to succeed. The overall success rate of expectantmanagement in this study was 72%.Evidence
+level 2+
+One question that is often raised is whether there is a beneﬁt in giving methotrexate rather than managing
+expectantly. A multicentre RCT104was performed to assess the treatment success rate of systemic
+methotrexate compared with expectant management in women with an ectopic pregnancy or a PUL withlow or plateauing serum b-hCG levels (less than 1500 iu/l and less than 2000 iu/l for ectopic pregnancy
+and PUL, respectively). They found that there was no difference in the primary treatment success rate ofsingle-dose methotrexate versus expectant management, with success rates of 31/41 (76%) and 19/32 (59%),respectively. However, the majority of the cases were PULs with only 15 (15/73; 21%) visualised ectopicpregnancies included.Evidence
+level 1+
+5.2 What are the surgical, pharmacological or conservative treatment options for cervical
+pregnancy?
+Medical management with methotrexate can be considered for cervical pregnancy.D
+Surgical methods of management are associated with a high failure rate and should be
+reserved for those women suffering life-threatening bleeding.D
+Early, accurate diagnosis is the key factor in the conservative management of cervical pregnancies.
+Gestational age less than 12+0weeks, absence of fetal cardiac activity and lower serum b-hCG levels
+are associated with more successf ul conservative management.105,106A variety of methods have beenEvidence
+level 2 –
+RCOG Green-top Guideline No. 21 e35 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+described in the literature (dilatation and curettage, systemic methotrexate, local injection with potassium
+chloride or methotrexate).107A retrospective review108of 62 cases of cervical ectopic pregnancy
+estimated the efﬁcacy of systemic methotrexate administration in the treatment of cervical ectopicpregnancy to be approximately 91%. There was, however, no standard protocol of methotrexate used andsuccessful cases required surgical debulking or local injection with methotrexate in addition to systemictherapy. Gestational age more than 9
++0weeks, b-hCG levels greater than 10 000 iu/l, crown –rump length
+greater than 10 mm and fetal cardiac activity were shown to be associated with a higher risk of primaryfailure of the treatment of cervical ectopic pregnancy with systemic methotrexate. In addition, combinationtherapy with intra-amniotic injection seemed to increase the chance of successful treatment in thisretrospective study.Evidence
+level 2 –
+A number of adjunctive methods to control haemorrhage in the treatment of cervical ectopic pregnancy
+have been described; these include uterine artery ligation and uterine artery embolisation (UAE).109
+Case series110report success with these methods in combination with intracervical or systemic
+methotrexate, but the number of cases reported are small and associated complications include infection,uterine infarction, sciatic nerve injury, and necrosis of the bladder or rectum.
+Traditionally, cervical ectopic pregnancies were managed with dilatation and curettage with additional
+measures designed to reduce the amount of haemorrhage.
+107However, rates of excessive bleeding
+necessitating hysterectomy were high and therefore, its use should be restricted to those women forwhom alternative measures are unsuitable.
+34
+More recently, a small case series111of ﬁve women with cervical ectopic pregnancies treated with
+hysteroscopic resection and UAE has been described. None of the women required blood transfusion oradditional techniques. However, UAE is associated with complications and there have been no long-termfollow-up studies of these women.Evidence
+level 3
+5.3 What are the surgical, pharmacological or conservative treatment options for caesarean scar
+pregnancy?
+Women diagnosed with caesarean section scar pregnancies should be counselled that such
+pregnancies are associated with severe maternal morbidity and mortality.D
+Medical and surgical interventions with or without additional haemostatic measures should beconsidered in women with ﬁrst trimester caesarean scar pregnancy.D
+There is insuf ﬁcient evidence to recommend any one speci ﬁc intervention over another for
+caesarean scar pregnancy, but the current literature supports a surgical rather than medical
+approach as the most effective.D
+To date, there are 35 cases of ongoing caesarean section scar pregnancies that were diagnosed in the ﬁrst
+trimester where the women chose to continue with the pregnancy.112–115There were 27 live births and
+22 pregnancies ended with emerge ncy hysterectomy, at gestational ages ranging from 15 to 38 weeks,Evidence
+level 3
+RCOG Green-top Guideline No. 21 e36 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+due to haemorrhage and morbidly adherent placentas. There have also been numerous small case series
+and case reports42of intra-abdominal rupture and severe vaginal haemorrhage at the point of diagnosis or
+following intervention. There were six maternal deaths due to haemorrhage in women with a history ofcaesarean section in the 2006 –08 Centre for Maternal and Child Enquiries report,
+116although, the site of
+implantation was not always identiﬁed.
+There have been very few small randomised studies of the treatment of caesarean scar pregnancy.117As
+expected for an uncommon condition, the body of evidence otherwise consists of case series and reviewsthereof.
+37,39,40,118 –120There has been one systematic review of studies reporting outcomes on ﬁve or
+more patients.121
+Primary medical treatment consists of using methotrexate, which may be administered by local injectioninto the gestational sac under ultrasound guidance or systemically by intramuscular injection. Localinjection seems to be a more effective means of terminating the pregnancy.
+40The disadvantage of using
+medical treatment is that the trophoblast remains in situ; there is a risk of haemorrhage as the retained,often very vascular, placental tissue degenerates, so some authors have advocated using suction evacuationin addition to methotrexate to hasten resolution and reduce the risk of unpredictable haemorrhage in thefollow-up period.
+122Surgical treatment consists of either evacuation of the pregnancy (using suction or
+hysteroscopic resection)123or excision of the pregnancy as an open,124laparoscopic125or transvaginal
+procedure.126,127Suction evacuation is probably the most frequently described procedure and has been
+combined with cervical cerclage, Foley catheter insertion or UAE as additional haemostaticmeasures.
+39,117,128 –130Excisional techniques have the advantage of incorporating a repair of the scar, but
+these procedures are technically more difﬁcult and invasive, and it is not known whether scar repairreduces the risk of recurrent caesarean scar pregnancy or scar rupture in future pregnancies.
+Expectant management may be suitable for women with small, nonviable scar pregnancies and may be
+considered if the pregnancy is partially implanted into the scar and grows into the uterine cavity, providedthat the woman is counselled regarding the associated potential risks, haemorrhage and morbidly adherentplacentation, and she declines termination of the pregnancy.
+114,119Evidence
+level 3
+The management of ongoing second trimester scar pregnancies is challenging with a high risk of maternal morbidity
+and hysterectomy whichever approach is taken. In these cases, the risk of surgical intervention must be balancedwith the risks of allowing the pregnancy to continue with the aim of reaching a potentially viable gestational age.Women with such pregnancies should have a care package put in place for morbidly adherent placenta, with a planfor emergency intervention should haemorrhage or rupture occur.
+131,132
+5.4 What are the surgical, pharmacological or conservative treatment options for interstitial
+pregnancy?
+Nonsurgical management is an acceptable option for stable interstitial pregnancies.D
+Expectant management is only suitable for women with low or signi ﬁcantly falling b-hCG levels
+in whom the addition of methotrexate may not improve the outcome.D
+RCOG Green-top Guideline No. 21 e37 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+A pharmacological approach using methotrexate has been shown to be effective, although,
+there is insuf ﬁcient evidence to recommend local or systemic approach.D
+Surgical management by laparoscopic cornual resection or salpingotomy is an effective option.D
+Alternative surgical techniques could include hysteroscopic resection under laparoscopic or
+ultrasound guidance.D
+There is insuf ﬁcient evidence on safety and complications in future pregnancies to recommend
+other nonsurgical methods.D
+The likely success of conservative management is determined by the initial level of serum b-hCG.133The
+options for conservative management include expectant management or a pharmacological approach usinglocal or systemic methotrexate.
+In a case series of 42 women with interstitial pregnancy,
+133women with a successful outcome following
+expectant and medical management134were found to have lower levels of initial b-hCG than those that
+were unsuccessful (3216 iu/l versus 15 900 iu/l; P< 0.05). A success rate of 89.5% was found in another
+case series of 19 women managed expectantly.134
+No complications were reported in an observational study135of 17 women diagnosed with interstitial
+pregnancy and treated with systemic methotrexate 50 mg/m2, while another study133reported adverse
+effects in 40% of women who received systemic methotrexate. In an Australian case series136of
+13 interstitial pregnancies, a single-dose intravenous methotrexate and oral folinic acid rescue regimen wasshown to be successful (91% success rate). Other described methods include transvaginal ultrasound-guided aspiration of the exocoelomic ﬂuid from the gestational sac, followed by intrasaccular injection of25 mg of methotrexate with/without 0.2 –0.4 mEq of potassium chloride.
+137This is reported to have a 91%
+success rate, with the advantages of fewer adverse effects and the ability to perform embryocide at thesame time if required. The disadvantage is that it is a technically more challenging procedure. Embryocide
+has been shown to improve the success rate of the procedure.
+36,92,137
+Various endoscopic approaches have been reported, such as electrocauterisation, endoloop application or
+the encircling suture before evacuation of the conceptus.138Moon et al.139described a technique of using
+highly diluted vasopressin for haemostasis during laparoscopic surgery (1 ampoule [20 U] of vasopressindiluted in 1000 ml of normal saline [1000-fold] and 150 –250 ml [0.02 U/ml] of diluted vasopressin injected
+in the uterus below the interstitial pregnancy). Others have reported laparoscopic haemostatic suturingtechniques
+140and laparoscopic resection using the ‘purse-string’ technique.141
+Successful hysteroscopic resection of interstitial pregnancies under laparoscopic vision and ultrasoundguidance has also been reported.
+142In a small case series143(n=3) the technique of ultrasound-guided
+dilatation and evacuation using polypectomy forceps, followed by single-dose systemic methotrexate, wasdescribed.Evidence
+level 3
+RCOG Green-top Guideline No. 21 e38 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Other reported nonsurgical techniques include selective UAE used in conjunction with methotrexate to
+reduce haemorrhage.144–146The disadvantages with this technique are uncertainty about the safety and
+complications in future pregnancies. In a case of a 12-week interstitial pregnancy with failed systemicmethotrexate,
+147successful treatment was reported with use of intra-amniotic injection of etoposide, a
+topoisomerase II inhibitor used in the treatment of gestational trophoblastic disease.Evidence
+level 3
+5.5 What are the surgical, pharmacological or conservative treatment options for cornual
+pregnancy?
+Cornual pregnancies should be managed by excision of the rudimentary horn via laparoscopy or
+laparotomy.D
+Conservative, laparoscopic and open surgical methods of management have all been described. There are
+several reported cases of methotrexate and potassium chloride injection prior to later laparoscopicrudimentary horn excision.
+148However, to avoid recurrence, excision of the rudimentary horn seems to
+be the best approach. The laparoscopic technique is safe, but attention needs to be paid to the possibilityof urinary tract anomalies, which can be associated with unicornuate uteri. The technique involves excisionof the ﬁbrous band that attaches the rudimentary horn to the unicornuate uterus with removal of therudimentary horn through the secondary port.
+149Evidence
+level 3
+5.6 What are the surgical, pharmacological or conservative treatment options for ovarian
+pregnancy?
+Deﬁnitive surgical treatment is preferred if laparoscopy is required to make the diagnosis of
+ovarian ectopic pregnancy.D
+Systemic methotrexate can be used to treat ovarian ectopic pregnancy when the risk of surgeryis high, or postoperatively in the presence of persistent residual trophoblast or persistentlyraised b-hCG levels.D
+Minimal access surgery is now the treatment of choice for ovarian ectopic pregnancy. Removal of the
+gestational products by enucleation or wedge resection (in the presence of a large ectopic mass) ispreferred.
+150Enucleating the products of conception bluntly from the ovary minimises damage to the
+surrounding ovarian tissue. Haemostasis can be achieved by electrocautery or suturing. Oophorectomyis occasionally required when there is coexisting ipsilateral ovarian pathology or excessive bleeding.
+150
+A number of successful and unsuccessful attempts have been made to treat ovarian ectopic pregnancywith systemic methotrexate. In one series,
+151there was a failure rate of 40% using methotrexate
+alone. However, all the cases successfully treated with methotrexate were diagnosed laparoscopically.There are no deﬁned selection criteria, or treatment or follow-up regimens.Evidence
+level 3
+RCOG Green-top Guideline No. 21 e39 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+5.7 What are the surgical, pharmacological or conservative treatment options for abdominal
+pregnancy?
+Laparoscopic removal is an option for treatment of early abdominal pregnancy.D
+Possible alternative treatment methods would be systemic methotrexate with ultrasound-
+guided fetocide.D
+Advanced abdominal pregnancy should be managed by laparotomy.D
+Laparoscopic treatment is a safe and effective option for the management of abdominal pregnancy when
+the diagnosis is made early and the site of implantation does not involve a vascular area. Laparoscopicmanagement has been associated with reduced operative time, blood loss and length of hospital stay whencompared with laparotomy.
+152
+Very few cases of nonsurgical management of early abdominal pregnancy have been reported. Theseinclude cases managed with intramuscular methotrexate alone and in combination with intrasaccularinjection with methotrexate.
+137,153
+Methotrexate has also been used as an adjunctive treatment to surgery.70
+Advanced abdominal pregnancy is associated with signiﬁcant maternal and fetal morbidity and mortality,154
+and once diagnosed, a laparotomy should be undertaken promptly.68,152The surgical approach should be
+planned to avoid incision of the placenta. The placenta may be left in situ if the vascular attachmentinvolves major vessels or vital structures, and spontaneous resorption awaited.
+155Preserving the placenta
+(or ‘its retention’) is associated with signiﬁcant morbidity (ileus, bowel obstruction, ﬁstula formation,haemorrhage, peritonitis), but the mortality is lower than with its removal.
+156Adjuvant treatments with
+methotrexate157and selective arterial embolisation152have been described.Evidence
+level 3
+5.8 What are the surgical, pharmacological or conservative treatment options for heterotopic
+pregnancy?
+The intrauterine pregnancy must be considered in the management plan.B
+Methotrexate should only be considered if the intrauterine pregnancy is nonviable or if the
+woman does not wish to continue with the pregnancy.D
+Local injection of potassium chloride or hyperosmolar glucose with aspiration of the saccontents is an option for clinically stable women.D
+Surgical removal of the ectopic pregnancy is the method of choice for haemodynamicallyunstable women and is also an option for haemodynamically stable women.D
+RCOG Green-top Guideline No. 21 e40 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Expectant management is an option in heterotopic pregnancies where the ultrasound ﬁndings
+are of a nonviable pregnancy.D
+The management approach adopted for heterotopic pregnancy should incorporate the prognosis of the
+intrauterine pregnancy and the wishes of the woman regarding its ﬁnal outcome.158Evidence
+level 2++
+Methotrexate is not an option for the treatment of women with a heterotopic pregnancy who have a
+viable intrauterine pregnancy or wish to continue with the pregnancy. Methotrexate, therefore, needs tobe given only with very careful consideration, as even local injection will affect the intrauterinepregnancy.
+159In women with a viable pregnancy who do not wish to continue with the pregnancy, the
+Abortion Act regulations will apply.Evidence
+level 4
+Medical management using local injection of hyperosmolar glucose into the extrauterine sac, or potassium
+chloride into either the fetal pole if possible or the sac if not, alongside aspiration of the sac contents,
+minimises the risks posed to the coexisting intrauterine pregnancy by surgical approaches. Ultrasound
+follow-up is necessary in these women to ensure resolution of the ectopic pregnancy as b-hCG levels
+cannot be used. This approach has been described for interstitial, caesarean scar and cervical heterotopicpregnancies.
+160,161
+In those women presenting with heterotopic pregnancy who are haemodynamically unstable, surgicalmanagement should be carried out.
+162In those haemodynamically stable women with an easily accessible
+ectopic pregnancy, such as a tubal, cervical or interstitial heterotopic pregnancy, surgical removal is also anoption.
+163,164Care should be taken at the time of laparoscopy to avoid cannulation or manipulation of the
+uterus.165,166
+Expectant management of an interstitial heterotopic pregnancy in a symptom-free woman with ultrasoundevidence that the interstitial pregnancy was not ongoing has been described.
+167,168Evidence
+level 3
+6. Do rhesus D (RhD)-negative women with an ectopic pregnancy require anti-D
+immunoglobulin?
+Offer anti-D prophylaxis as per national protocol to all RhD-negative women who have surgical
+removal of an ectopic pregnancy, or where bleeding is repeated, heavy or associated withabdominal pain.D
+Alloimmunisation has been reported following ectopic pregnancy and 25% of cases of ruptured tubal
+ectopic pregnancy are associated with a signiﬁcant number of fetal cells in the maternal circulation.169Evidence
+level 2 –
+However, there are no studies evaluating the use of anti-D prophylaxis in women with an ectopic pregnancy.
+RCOG Green-top Guideline No. 21 e41 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Women who undergo surgical management of ectopic pregnancy may be at higher risk of sensitisation due
+to mixing of fetal and maternal blood.1
+There is a paucity of evidence regarding the risk of alloimmunisation associated with medical and expectantmanagement of ectopic pregnancy. However, the risk of mixing of fetal and maternal blood followingconservative or medical management is thought to be low.
+1NICE1recommend only offering anti-D
+prophylaxis to those undergoing surgical management, but this is contrary to the British Committee forStandards in Haematology guidance.
+170Evidence
+level 4
+7. What are the long-term fertility prospects following an ectopic pregnancy?
+In the absence of a history of subfertility or tubal pathology, women should be advised that
+there is no difference in the rate of fertility, the risk of future tubal ectopic pregnancy or tubalpatency rates between the different management methods.D
+Women with a previous history of subfertility should be advised that treatment of their tubal
+ectopic pregnancy with expectant or medical management is associated with improvedreproductive outcomes compared with radical surgery.C
+Women receiving methotrexate for the management of tubal ectopic pregnancy can be advisedthat there is no effect on ovarian reserve.D
+Women undergoing treatment with UAE and systemic methotrexate for nontubal ectopicpregnancies can be advised that live births have been reported in subsequent pregnancies.D
+Women undergoing laparoscopic management of ovarian pregnancies can be advised that theirfuture fertility prospects are good.D
+Several studies comparing surgical methods, medical and surgical management, and surgical and expectant
+management have conﬁrmed that there are no statistical differences in the rate of recurrent ectopicpregnancy, with most long-term follow-up studies quoting a rate of around 18.5%.
+171,172Evidence
+level 1+
+There is no difference in the tubal patency rates as examined by hysterosalpingography in women whose
+tubal ectopic pregnancies were managed expectantly or medically in the ipsilateral tube, or among thosemanaged expectantly, medically or surgically in the contralateral tube.
+173
+In women with a history of subfertility, especially those over the age of 35 years, radical surgery has beenshown to be associated with lower rates of subsequent intrauterine pregnancy compared withconservative surgical or medical management.
+77,174Evidence
+level 2 –
+RCTs have found that future fertility outcomes are no different for women managed with medical treatment,
+conservative or radical surgery,175or conservative versus radical surgery.171Other case series172have also
+shown no difference in future fertility with expectant management versus radical surgery.Evidence
+level 1 –
+RCOG Green-top Guideline No. 21 e42 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Several studies176–178have examined various measures of ovarian reserve following medical management of
+tubal ectopic pregnancy and concluded that there is no effect on antim €ullerian hormone, antral follicle
+counts or ovarian responsiveness. There is some evidence that if fertility treatment is recommenced within180 days of methotrexate, the oocyte yield is lower, but the study size was small.
+179
+A small case series180looking at the future fertility of women undergoing treatment with UAE and
+systemic methotrexate for nontubal ectopics found that in the 12 women who tried to conceive followingtreatment, 83% conceived and 58% had a live birth.
+The future fertility outcomes of women undergoing laparoscopic surgery for ovarian ectopic pregnancy
+were examined in a small case series
+181which showed that 100% went on to conceive again with 83%
+achieving a live birth.Evidence
+level 3
+8. What support and counselling should be offered to women undergoing treatment for ectopic
+pregnancy?
+Women should be advised, whenever possible, of the advantages and disadvantages associated
+with each approach used for the treatment of ectopic pregnancy, and should participate fully inthe selection of the most appropriate treatment.D
+Women should be made aware of how to access support via patient support groups, such asthe Ectopic Pregnancy Trust, or local bereavement counselling services.D
+Muscle relaxation training may be of use to women undergoing treatment for ectopicpregnancy with methotrexate.C
+It is recommended that women treated with methotrexate wait at least 3 months before tryingto conceive again.D
+The psychological impact of early pregnancy loss may seriously affect a signiﬁcant proportion of women,
+their partners and families.182,183
+Plans for follow-up should be clearly recorded in the discharge letter from the early pregnancy clinic.Women should be provided with written information concerning their treatment options, follow-up, andthe availability of local and national support services.
+184Evidence
+level 2 –
+A study looking at psychological outcomes85has suggested that there is little difference when comparing
+surgical and medical methods of managing ectopic pregnancy.
+Around half of women with an ectopic pregnancy suffer a signiﬁcant grief reaction, with those women
+without a child scoring higher on the perinatal grief score.185Patient support may also be of beneﬁt for
+women in their subsequent pregnancies whom are more likely to be anxious about their pregnancyoutcome.
+186Evidence
+level 3
+RCOG Green-top Guideline No. 21 e43 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+An RCT187of women undergoing methotrexate treatment for ectopic pregnancy given adjuvant muscle
+relaxation training using the Bernstein and Borkovec technique188showed that those women in the muscle
+relaxation group had less anxiety and improved health-related quality of life on discharge from hospitalthan the control group who had had no adjuvant muscle relaxation.Evidence
+level 1 –
+The manufacturers of methotrexate recommend a 3-month window after use before conception due to
+the length of time that it may remain present in some organs and because of concern for subsequent
+pregnancy and fetal development. A small cohort study189which examined the malformation rate in those
+women who conceived within 3 months of methotrexate exposure showed a higher than expected majormalformation rate. However, conception within 3 months of methotrexate should not be considered anindication for a termination.
+190Evidence
+level 2 –
+9. Service and training
+9.1 What is the most appropriate setting for management of women with an ectopic pregnancy?
+Providers of early pregnancy care should provide a 7-day early pregnancy assessment service
+with direct access for women referred by general practitioners and accident and emergencydepartments, i.e. along current NHS recommendations. Available facilities for the managementof suspected ectopic pregnancy should include diagnostic and therapeutic algorithms,transvaginal ultrasound and serum b-hCG estimations./check
+Women should have access to all appropriate management options for their ectopic pregnancy.
+If local facilities do not provide all options, then clear referral pathways should exist to allowthem to access appropriate care./check
+In line with NICE recommendations from guidelines on the management of early pregnancy complications
+and RCOG study groups,1,182women with suspected ectopic pregnancy should be managed in dedicated
+early pregnancy clinics.
+Ideally, these clinics should be sited in a dedicated area with appropriate stafﬁng and should be available on
+a daily basis, 7 days a week. If the facility to refer women for attendance within 24 hours is not available,then there should be the facility to refer women to attend elsewhere for specialist clinical assessment andscanning, that is the gynaecology ward or accident and emergency with specialist gynaecology support.
+1,191
+Laparoscopic salpingotomy is not part of the core training of gynaecologists and a survey suggested that51% of trainees did not possess the skills necessary to perform salpingotomy if needed.
+192Services must
+be designed so that appropriate support is available from senior staff trained in all surgical techniques.Evidence
+level 4
+Given that caesarean scar pregnancy is uncommon, potentially difﬁcult to diagnose and has many different treatment
+options, clinically stable women should be managed by a multidisciplinary team with expertise in this area.
+RCOG Green-top Guideline No. 21 e44 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+9.2 What are the training implications for those managing women with ectopic pregnancy?
+Clinicians undertaking the surgical management of ectopic pregnancy must have received
+appropriate training. Laparoscopic surgery requires appropriate equipment and trained theatrestaff./check
+Clinicians undertaking ultrasound for the diagnosis of ectopic pregnancy must have receivedappropriate training./check
+Clinicians undertaking medical management via ultrasound-guided needle techniques must havereceived appropriate training./check
+If clinicians undertaking surgical management of ectopic pregnancy cannot carry out the fullrange of surgical procedures, appropriately experienced support must be available if necessary./check
+Virtual reality simulators can be used as a training tool for salpingectomy.D
+Clinical staff should be trained as required by the RCOG curriculum or equivalent to undertake both the
+open and laparoscopic management of ectopic pregnancy.193This should include the safe use of monopolar
+and bipolar diathermy. They should also be supported with suitable efﬁcient modern equipment tofacilitate safe surgery.Evidence
+level 4
+Staff using ultrasound for the diagnosis of ectopic pregnancy should have completed the RCOG ultrasound module in
+intermediate ultrasound of early pregnancy complications or be able to show equivalent training.
+Completion of the RCOG Advanced Training Skills Module in acute gynaecology and early pregnancy does not cover
+independent competency in ultrasound-guided needle techniques. Clinicians undertaking such techniques should beable to provide evidence of training and a log of ongoing cases and complications thereof.
+Ideally, the operating clinician should have the skills to carry out the appropriate surgical treatment, i.e.
+salpingectomy and salpingotomy. If they do not, then there should be on-call support available should otherprocedures be necessary and to provide on-the-job training.
+Studies have shown that virtual reality simulators offer realistic training for surgical procedures, such as
+salpingectomy.
+194,195Evidence
+level 3
+RCOG Green-top Guideline No. 21 e45 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+10. Recommendations for future research
+/C15The need for anti-D in women with nontubal ectopic pregnancies.
+/C15Methotrexate for the treatment of ovarian ectopic pregnancy.
+/C15Long-term fertility following management of nontubal ectopic pregnancies.
+/C15Diagnostic test studies for interstitial and caesarean scar pregnancies.
+/C15The long-term behaviour of pregnancies implanted at, in or into the caesarean scar.
+/C15Optimal management of caesarean scar pregnancy.
+/C15Validation studies of expectant management of ectopic pregnancy.
+/C15Novel biomarkers to predict success from methotrexate or expectant management.
+/C15Understanding the psychological impact of ectopic pregnancy and its treatment.
+/C15Multidose versus single-dose methotrexate in nontubal ectopic pregnancies.
+11. Auditable topics
+/C15Proportion of tubal ectopic pregnancies identiﬁed on initial scan (90%).
+/C15Negative laparoscopy rate following an ultrasound diagnosis of tubal ectopic pregnancy (0%).
+/C15Proportion of women with ectopic pregnancy offered all relevant management options (100%).
+/C15Percentage of women suitable for laparoscopic management of ectopic pregnancy managed
+laparoscopically (100%).
+/C15Number of cases where methotrexate given for a false-positive diagnosis of ectopic pregnancy (0%).
+/C15Number of nonemergency cases having surgery between 8 p.m and 8 a.m. (0%).
+/C15Percentage of women provided with information containing support group details (100%).
+12. Useful links and support groups
+/C15Association of Early Pregnancy Units [www.earlypregnancy.org.uk].
+/C15The Ectopic Pregnancy Trust [www.ectopic.org.uk].
+/C15Infertility Network UK [www.Infertilitynetworkuk.com].
+/C15Miscarriage Association [www.miscarriageassociation.org.uk].
+/C15Royal College of Obstetricians and Gynaecologists. An ectopic pregnancy: Information for you. London: RCOG;
+2010 [https://www.rcog.org.uk/en/patients/patient-leaﬂets/ectopic-pregnancy/].
+References
+1. National Institute for Health and Care Excellence. Ectopic
+pregnancy and miscarriage. diagnosis and initial management in earlypregnancy of ectopic pregnancy and miscarriage . NICE clinical
+guideline 154. Manchester: NICE; 2012.
+2. O’Herlihy C; Centre for Maternal and Child Enquiries. Deaths in
+early pregnancy. Saving mothers’ lives: reviewing maternal deathsto make motherhood safer: 2006 –2008. The Eighth Report of
+the Conﬁdential Enquiries into Maternal Deaths in the United
+Kingdom. BJOG 2011;118 Suppl 1:81 –4.
+3. Kirk E, Papageorghiou AT, Condous G, Tan L, Bora S, Bourne T.
+The diagnostic effectiveness of an initial transvaginal scan in
+detecting ectopic pregnancy. Hum Reprod 2007;22:2824 –8.4. Mavrelos D, Nicks H, Jamil A, Hoo W, Jauniaux E, Jurkovic D.
+Efﬁcacy and safety of a clinical protocol for expectantmanagement of selected women diagnosed with a tubal ectopic
+pregnancy. Ultrasound Obstet Gynecol 2013;42:102 –7.
+5. Ankum WM, Mol BW, Van der Veen F, Bossuyt PM. Risk factors
+for ectopic pregnancy: a meta-analysis. Fertil Steril 1996;65:1093 –9.
+6. Tay JI, Moore J, Walker JJ. Ectopic pregnancy. West J Med
+2000;173:131 –4.
+7. Bouyer J, Coste J, Shojaei T, Pouly JL, Fernandez H, Gerbaud L,
+et al. Risk factors for ectopic pregnancy: a comprehensiveanalysis based on a large case-control, population-based study in
+France. Am J Epidemiol 2003;157:185 –94.
+RCOG Green-top Guideline No. 21 e46 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+8. Shaw JL, Oliver E, Lee KF, Entrican G, Jabbour HN, Critchley HO,
+et al. Cotinine exposure increases Fallopian tube PROKR1
+expression via nicotinic AChR a-7: a potential mechanism
+explaining the link between smoking and tubal ectopic pregnancy.Am J Pathol 2010;177:2509 –15.
+9. Shaw JL, Wills GS, Lee KF, Horner PJ, McClure MO, Abrahams VM,
+et al. Chlamydia trachomatis infection increases fallopian tube
+PROKR2 via TLR2 and NF jB activation resulting in a
+microenvironment predisposed to ectopic pregnancy. Am J Pathol
+2011;178:253 –60.
+10. Condous G, Okaro E, Khalid A, Lu C, Van Huffel S, Timmerman D,
+et al. The accuracy of transvaginal ultrasonography for the
+diagnosis of ectopic pregnancy prior to surgery. Hum Reprod
+2005;20:1404 –9.
+11. Atri M, Valenti DA, Bret PM, Gillett P. Effect of transvaginal
+sonography on the use of invasive procedures for evaluating
+patients with a clinical diagnosis of ectopic pregnancy. J Clin
+Ultrasound 2003;31:1 –8.
+12. Braffman BH, Coleman BG, Ramchandani P, Arger PH, Nodine CF,
+Dinsmore BJ, et al. Emergency department screening for ectopic
+pregnancy: a prospective US study. Radiology 1994;190:797 –802.
+13. Shalev E, Yarom I, Bustan M, Weiner E, Ben-Shlomo I.
+Transvaginal sonography as the ultimate diagnostic tool for the
+management of ectopic pregnancy: experience with 840 cases.
+Fertil Steril 1998;69:62 –5.
+14. Hahlin M, Thorburn J, Bryman I. The expectant management of
+early pregnancies of uncertain site. Hum Reprod 1995;10:1223 –7.
+15. Banerjee S, Aslam N, Zosmer N, Woelfer B, Jurkovic D. The
+expectant management of women with early pregnancy ofunknown location. Ultrasound Obstet Gynecol 1999;14:231 –6.
+16. Banerjee S, Aslam N, Woelfer B, Lawrence A, Elson J, Jurkovic D.
+Expectant management of early pregnancies of unknownlocation: a prospective evaluation of methods to predictspontaneous resolution of pregnancy. BJOG 2001;108:158 –63.
+17. Condous G, Van Calster B, Kirk E, Haider Z, Timmerman D,
+Van Huffel S, et al. Prediction of ectopic pregnancy in womenwith a pregnancy of unknown location. Ultrasound Obstet Gynecol
+2007;29:680 –7.
+18. Kirk E, Condous G, Van Calster B, Van Huffel S, Timmerman D,
+Bourne T. Rationalizing the follow-up of pregnancies of unknownlocation. Hum Reprod 2007;22:1744 –50.
+19. Kirk E, Daemen A, Papageorghiou AT, Bottomley C, Condous G,
+De Moor B, et al. Why are some ectopic pregnancies characterized
+as pregnancies of unknown location at the initial transvaginalultrasound examination? Acta Obstet Gynecol Scand 2008;87:1150 –4.
+20. Li TC, Tristram A, Hill AS, Cooke ID. A review of 254 ectopic
+pregnancies in a teaching hospital in the Trent Region, 1977-1990. Hum Reprod 1991;6:1002 –7.
+21. Atri M, Leduc C, Gillett P, Bret PM, Reinhold C, Kintzen G, et al.
+Role of endovaginal sonography in the diagnosis and management
+of ectopic pregnancy. Radiographics 1996;16:755 –74.
+22. Marks WM, Filly RA, Callen PW, Laing FC. The decidual cast of
+ectopic pregnancy: a confusing ultrasonographic appearance.
+Radiology 1979;133:451 –4.
+23. Frates MC, Laing FC. Sonographic evaluation of ectopic
+pregnancy: an update. Am J Roentgenol 1995;165:251 –9.
+24. Benson CB, Doubilet PM, Peters HE, Frates MC. Intrauterine
+ﬂuid with ectopic pregnancy: a reappraisal. J Ultrasound Med
+2013;32:389 –93.
+25. Yeh HC, Goodman JD, Carr L, Rabinowitz JG. Intradecidual sign:
+a US criterion of early intrauterine pregnancy. Radiology
+1986;161:463 –7.26. Bradley WG, Fiske CE, Filly RA. The double sac sign of early
+intrauterine pregnancy: use in exclusion of ectopic pregnancy.
+Radiology 1982;143:223 –6.
+27. Doubilet PM, Benson CB. Double sac sign and intradecidual sign
+in early pregnancy: interobserver reliability and frequency of
+occurrence. J Ultrasound Med 2013;32:1207 –14.
+28. Fleischer AC, Pennell RG, McKee MS, Worrell JA, Keefe B,
+Herbert CM, et al. Ectopic pregnancy: features at transvaginal
+sonography. Radiology 1990;174:375 –8.
+29. Nyberg DA, Hughes MP, Mack LA, Wang KY. Extrauterine
+ﬁndings of ectopic pregnancy of transvaginal US: importance ofechogenic ﬂuid. Radiology 1991;178:823 –6.
+30. van Mello NM, Mol F, Opmeer BC, Ankum WM, Barnhart K,
+Coomarasamy A, et al. Diagnostic value of serum b-hCG on the
+outcome of pregnancy of unknown location: a systematic reviewand meta-analysis. Hum Reprod Update 2012;18:603 –17.
+31. Condous G, Kirk E, Lu C, Van Huffel S, Gevaert O, De Moor B,
+et al. Diagnostic accuracy of varying discriminatory zones for theprediction of ectopic pregnancy in women with a pregnancy of
+unknown location. Ultrasound Obstet Gynecol 2005;26:770 –5.
+32. Potter MB, Lepine LA, Jamieson DJ. Predictors of success with
+methotrexate treatment of tubal ectopic pregnancy at GradyMemorial Hospital. Am J Obstet Gynecol 2003;188:1192 –4.
+33. Ushakov FB, Elchalal U, Aceman PJ, Schenker JG. Cervical
+pregnancy: past and future. Obstet Gynecol Surv 1997;52:45 –59.
+34. Jurkovic D, Hacket E, Campbell S. Diagnosis and treatment of
+early cervical pregnancy: a review and a report of two
+cases treated conservatively. Ultrasound Obstet Gynecol
+1996;8:373 –80.
+35. Timor-Tritsch IE, Monteagudo A, Mandeville EO, Peisner DB,
+Anaya GP, Pirrone EC. Successful management of viable cervical
+pregnancy by local injection of methotrexate guided bytransvaginal ultrasonography. Am J Obstet Gynecol 1994;170:737 –9.
+36. Hung TH, Shau WY, Hsieh TT, Hsu JJ, Soong YK, Jeng CJ.
+Prognostic factors for an unsatisfactory primary methotrexate
+treatment of cervical pregnancy: a quantitative review. Hum
+Reprod 1998;13:2636 –42.
+37. Rotas MA, Haberman S, Levgur M. Cesarean scar ectopic
+pregnancies: etiology, diagnosis, and management.
+Obstet Gynecol
+2006;107:1373 –81.
+38. Godin PA, Bassil S, Donnez J. An ectopic pregnancy
+developing in a previous caesarian section scar. Fertil Steril
+1997;67:398 –400.
+39. Jurkovic D, Hillaby K, Woelfer B, Lawrence A, Salim R, Elson CJ.
+First-trimester diagnosis and management of pregnancies
+implanted into the lower uterine segment Cesarean section scar.
+Ultrasound Obstet Gynecol 2003;21:220 –7.
+40. Timor-Tritsch IE, Monteagudo A, Santos R, Tsymbal T, Pineda G,
+Arslan AA. The diagnosis, treatment, and follow-up of cesarean
+scar pregnancy. Am J Obstet Gynecol 2012;207:44.e1 –13.
+41. Seow KM, Hwang JL, Tsai YL. Ultrasound diagnosis of a
+pregnancy in a Cesarean section scar. Ultrasound Obstet Gynecol
+2001;18:547 –9.
+42. Timor-Tritsch IE, Monteagudo A. Unforeseen consequences of
+the increasing rate of cesarean deliveries: early placenta accretaand cesarean scar pregnancy. A review. Am J Obstet Gynecol
+2012;207:14 –29.
+43. Vial Y, Petignat P, Hohlfeld P. Pregnancy in a cesarean scar.
+Ultrasound Obstet Gynecol 2000;16:592 –3.
+44. Osborn DA, Williams TR, Craig BM. Cesarean scar pregnancy:
+sonographic and magnetic resonance imaging ﬁndings,
+complications, and treatment. J Ultrasound Med 2012;31:1449 –56.
+RCOG Green-top Guideline No. 21 e47 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+45. Peng P, Gui T, Liu X, Chen W, Liu Z. Comparative efﬁcacy and
+safety of local and systemic methotrexate injection in cesarean
+scar pregnancy. Ther Clin Risk Manag 2015;11:137 –42.
+46. Felmus LB, Pedowitz P. Interstitial pregnancy. A survey of 45
+cases. Am J Obstet Gynecol 1953;66:1271 –9.
+47. Eddy CA, Pauerstein CJ. Anatomy and physiology of the fallopian
+tube. Clin Obstet Gynecol 1980;23:1177 –93.
+48. Tulandi T, Saleh A. Surgical management of ectopic pregnancy.
+Clin Obstet Gynecol 1999;42:31 –8; quiz 55 –6.
+49. Moore KL, Dalley AF, Agur AM. Clinically Oriented Anatomy , 6th
+ed. Baltimore, MD: Lippincott Williams & Wilkins, 2010.
+50. Lin EP, Bhatt S, Dogra VS. Diagnostic clues to ectopic pregnancy.
+Radiographics 2008;28:1661 –71.
+51. Ackerman TE, Levi CS, Dashefsky SM, Holt SC, Lindsay DJ.
+Interstitial line: sonographic ﬁnding in interstitial (cornual)ectopic pregnancy. Radiology 1993;189:83 –7.
+52. Araujo J /C19unior E, Zanforlin Filho SM, Pires CR, Guimar ~aes Filho HA,
+Massaguer AA, Nardozza LM, et al. Three-dimensional transvaginalsonographic diagnosis of early and asymptomatic interstitial
+pregnancy. Arch Gynecol Obstet 2007;275:207 –10.
+53. Rastogi R, Meena GL, Rastogi N, Rastogi V. Interstitial ectopic
+pregnancy: A rare and difﬁcult clinicosonographic diagnosis.J Hum Reprod Sci 2008;1:81 –2.
+54. Filhastre M, Dechaud H, Lesnik A, Taourel P. Interstitial
+pregnancy: role of MRI. Eur Radiol 2005;15:93 –5.
+55. Tamai K, Koyama T, Togashi K. MR features of ectopic
+pregnancy. Eur Radiol 2007;17:3236 –46.
+56. Johnston LW, Moir JC. A case of angular pregnancy complicated
+by gas-gangrene infection of the uterus. J Obstet Gynaecol Br EMP
+1952;59:85 –7.
+57. Maher PJ, Grimwade JC. Cornual pregnancy -diagnosis before
+rupture a report of 2 cases. Aust N Z J Obstet Gynaecol
+1982;22:172 –4.
+58. Ng S, Hamontri S, Chua I, Chern B, Siow A. Laparoscopic
+management of 53 cases of cornual ectopic pregnancy. Fertil Steril
+2009;92:448 –52.
+59. Lau S, Tulandi T. Conservative medical and surgical management
+of interstitial ectopic pregnancy. Fertil Steril 1999;72:207 –15.
+60. Alves JA, Alves NG, Alencar J /C19unior CA, Feitosa FE, da Silva Costa F.
+Term angular pregnancy: successful expectant management.J Obstet Gynaecol Res 2011;37:641 –
+4.
+61. Nahum GG. Rudimentary uterine horn pregnancy. The
+20th-century worldwide experience of 588 cases. J Reprod Med
+2002;47:151 –63.
+62. Mavrelos D, Sawyer E, Helmy S, Holland TK, Ben-Nagi J,
+Jurkovic D. Ultrasound diagnosis of ectopic pregnancy in the
+non-communicating horn of a unicornuate uterus (cornualpregnancy). Ultrasound Obstet Gynecol 2007;30:765 –70.
+63. Comstock C, Huston K, Lee W. The ultrasonographic appearance
+of ovarian ectopic pregnancies. Obstet Gynecol 2005;105:42 –5.
+64. Shiau CS, Hsieh CL, Chang MY. Primary ovarian pregnancy. Int J
+Gynaecol Obstet 2007;96:127.
+65. Bontis J, Grimbizis G, Tarlatzis BC, Miliaras D, Bili H.
+Intrafollicular ovarian pregnancy after ovulation induction/
+intrauterine insemination: pathophysiological aspects anddiagnostic problems. Hum Reprod 1997;12:376 –8.
+66. Sergent F, Mauger-Tinlot F, Gravier A, Verspyck E, Marpeau L.
+[Ovarian pregnancies: revaluation of diagnostic criteria]. J Gynecol
+Obstet Biol Reprod (Paris) 2002;31:741 –6. French.
+67. Gerli S, Rossetti D, Baiocchi G, Clerici G, Unfer V, Di Renzo GC.
+Early ultrasonographic diagnosis and laparoscopic treatment of
+abdominal pregnancy. Eur J Obstet Gynecol Reprod Biol
+2004;113:103 –5.68. Worley KC, Hnat MD, Cunningham FG. Advanced extrauterine
+pregnancy: diagnostic and therapeutic challenges. Am J Obstet
+Gynecol 2008;198:297.e1 –7.
+69. Aliyu LD, Ashimi AO. A multicentre study of advanced
+abdominal pregnancy: a review of six cases in low resource
+settings. Eur J Obstet Gynecol Reprod Biol 2013;170:33 –8.
+70. Poole A, Haas D, Magann EF. Early abdominal ectopic
+pregnancies: a systematic review of the literature. Gynecol Obstet
+Invest 2012;74:249 –60.
+71. Li XH, Ouyang Y, Lu GX. Value of transvaginal sonography in
+diagnosing heterotopic pregnancy after in-vitro fertilization with
+embryo transfer. Ultrasound Obstet Gynecol 2013;41:563 –9.
+72. Marcus SF, Macnamee M, Brinsden P. Heterotopic pregnancies
+after in-vitro fertilization and embryo transfer. Hum Reprod
+1995;10:1232 –6.
+73. Vermesh M, Silva PD, Rosen GF, Stein AL, Fossum GT, Sauer MV.
+Management of unruptured ectopic gestation by linear
+salpingostomy: a prospective, randomized clinical trial of laparoscopyversus laparotomy. Obstet Gynecol 1989;73:400 –4.
+74. Lundorff P, Thorburn J, Hahlin M, K €allfelt B, Lindblom B.
+Laparoscopic surgery in ectopic pregnancy. A randomized trialversus laparotomy. Acta Obstet Gynecol Scand 1991;70:343 –8.
+75. Gray DT, Thorburn J, Lundorff P, Strandell A, Lindblom B. A cost-
+effectiveness study of a randomised trial of laparoscopy versus
+laparotomy for ectopic pregnancy. Lancet 1995;345:1139
+–43.
+76. Mol F, van Mello NM, Strandell A, Strandell K, Jurkovic D, Ross J,
+et al.; European Surgery in Ectopic Pregnancy (ESEP) study group.
+Salpingotomy versus salpingectomy in women with tubal
+pregnancy (ESEP study): an open-label, multicentre, randomisedcontrolled trial. Lancet 2014;383:1483 –9.
+77. Becker S, Solomayer E, Hornung R, Kurek R, Banys M, Aydeniz B,
+et al. Optimal treatment for patients with ectopic pregnancies anda history of fertility-reducing factors. Arch Gynecol Obstet 2011;
+283:41 –5.
+78. Kelly RW, Martin SA, Strickler RC. Delayed hemorrhage in
+conservative surgery for ectopic pregnancy. Am J Obstet Gynecol
+1979;133:225 –6.
+79. Yao M, Tulandi T. Current status of surgical and nonsurgical
+management of ectopic pregnancy. Fertil Steril 1997;67:421 –33.
+80. Sowter MC, Frappell J. The role of laparoscopy in the
+management of ectopic pregnancy. Reviews in gynaecological
+practice 2002;2:73 –82.
+81. Hajenius PJ, Mol BW, Ankum WM, van der Veen F, Bossuyt PM,
+Lammes FB. Clearance curves of serum human chorionicgonadotrophin for the diagnosis of persistent trophoblast. Hum
+Reprod 1995;10:683 –7.
+82. Lund CO, Nilas L, Bangsgaard N, Ottesen B. Persistent ectopic
+pregnancy after linear salpingotomy: a non-predictablecomplication to conservative surgery for tubal gestation. Acta
+Obstet Gynecol Scand 2002;81:1053 –9.
+83. Graczykowski JW, Mishell DR Jr. Methotrexate prophylaxis for
+persistent ectopic pregnancy after conservative treatement bysalpingostomy. Obstet Gynecol 1997;89:118 –22.
+84. Saraj AJ, Wilcox JG, Najmabadi S, Stein SM, Johnson MB,
+Paulson RJ. Resolution of hormonal markers of ectopic gestation:a randomized trial comparing single-dose intramuscular
+methotrexate with salpingostomy. Obstet Gynecol 1998;92:989 –94.
+85. Sowter MC, Farquhar CM, Petrie KJ, Gudex G. A randomised
+trial comparing single dose systemic methotrexate andlaparoscopic surgery for the treatment of unruptured tubal
+pregnancy. BJOG 2001;108:192 –203.
+86. Stovall TG, Ling FW, Gray LA. Single-dose methotrexate for
+treatment of ectopic pregnancy. Obstet Gynecol 1991;77:754 –7.
+RCOG Green-top Guideline No. 21 e48 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+87. Kirk E, Condous G, Bourne T. The non-surgical management of
+ectopic pregnancy. Ultrasound Obstet Gynecol 2006;27:91 –100.
+88. Lipscomb GH, Gomez IG, Givens VM, Meyer NL, Bran DF. Yolk
+sac on transvaginal ultrasound as a prognostic indicator in thetreatment of ectopic pregnancy with single-dose methotrexate.
+Am J Obstet Gynecol 2009;200:338.e1 –4.
+89. Kirk E, Van Calster B, Condous G, Papageorghiou AT, Gevaert O,
+Van Huffel S, et al. Ectopic pregnancy: using the b-hCG ratio to
+select women for expectant or medical management. Acta Obstet
+Gynecol Scand 2011;90:264 –72.
+90. Dudley PS, Heard MJ, Sangi-Haghpeykar H, Carson SA, Buster JE.
+Characterizing ectopic pregnancies that rupture despite
+treatment with methotrexate. Fertil Steril 2004;82:1374 –8.
+91. Trio D, Strobelt N, Picciolo C, Lapinski RH, Ghidini A.
+Prognostic factors for successful expectant management ofectopic pregnancy. Fertil Steril 1995;63:469 –72.
+92. Lipscomb GH, McCord ML, Stovall TG, Huff G, Portera SG,
+Ling FW. Predictors of success of methotrexate treatment inwomen with tubal ectopic pregnancies. N Engl J Med 1999;341:
+1974 –8.
+93. Bixby S, Tello R, Kuligowska E. Presence of a yolk sac on
+transvaginal sonography is the most reliable predictor ofsingle-dose methotrexate treatment failure in ectopic pregnancy.
+J Ultrasound Med 2005;24:591 –8.
+94. da Costa Soares R, Elito J Jr, Camano L. Increment in b-hCG in
+the 48-h period prior to treatment: a new variable predictive oftherapeutic success in the treatment of ectopic pregnancy with
+methotrexate. Arch Gynecol Obstet 2008;278:319 –24.
+95. Nguyen Q, Kapitz M, Downes K, Silva C. Are early human
+chorionic gonadotropin levels after methotrexate therapy a
+predictor of response in ectopic pregnancy? Am J Obstet Gynecol
+2010;202:630.e1 –5.
+96. Skubisz MM, Li J, Wallace EM, Tong S. Decline in hCG levels
+between days 0 and 4 after a single dose of methotrexate for
+ectopic pregnancy predicts treatment success: a retrospective
+cohort study. BJOG 2011;118:1665 –8.
+97. Lipscomb GH. Medical management of ectopic pregnancy. Clin
+Obstet Gynecol 2012;55:424 –32.
+98. Doubilet PM, Benson CB, Bourne T, Blaivas M; Society of
+Radiologists in Ultrasound Multispecialty Panel on Early FirstTrimester Diagnosis of Miscarriage and Exclusion of a ViableIntrauterine Pregnancy. Diagnostic criteria for nonviable pregnancy
+early in the ﬁrst trimester. N Engl J Med 2013;369:1443 –51.
+99. Bourne T, Barnhart K, Benson CB, Brosens J, Van Calster B,
+Condous G, et al. NICE guidance on ectopic pregnancy and
+miscarriage restricts access and choice and may be clinically
+unsafe. BMJ 2013;346:f197.
+100. Craig LB, Khan S. Expectant management of ectopic pregnancy.
+Clin Obstet Gynecol 2012;55:461 –70.
+101. Elson J, Tailor A, Banerjee S, Salim R, Hillaby K, Jurkovic D.
+Expectant management of tubal ectopic pregnancy: prediction ofsuccessful outcome using decision tree analysis. Ultrasound Obstet
+Gynecol 2004;23:552
+–6.
+102. Shalev E, Peleg D, Tsabari A, Romano S, Bustan M. Spontaneous
+resolution of ectopic tubal pregnancy: natural history. Fertil Steril
+1995;63:15 –9.
+103. Cohen MA, Sauer MV. Expectant management of ectopic
+pregnancy. Clin Obstet Gynecol 1999;42:48 –54.
+104. van Mello NM, Mol F, Verhoeve HR, van Wely M, Adriaanse AH,
+Boss EA, et al. Methotrexate or expectant management in women
+with an ectopic pregnancy or pregnancy of unknown location and
+low serum hCG concentrations? A randomized comparison Hum
+Reprod 2013;28:60 –7.105. Spitzer D, Steiner H, Graf A, Zajc M, Staudach A. Conservative
+treatment of cervical pregnancy by curettage and local
+prostaglandin injection. Hum Reprod 1997;12:860 –6.
+106. Cosin JA, Bean M, Grow D, Wiczyk H. The use of methotrexate
+and arterial embolization to avoid surgery in a case of cervical
+pregnancy. Fertil Steril 1997;67:1169 –71.
+107. Benson CB, Doubilet PM. Strategies for conservative treatment of
+cervical ectopic pregnancy. Ultrasound Obstet Gynecol 1996;8:371 –2.
+108. Kung FT, Chang SY. Efﬁcacy of methotrexate treatment in viable
+and nonviable cervical pregnancies. Am J Obstet Gynecol
+1999;181:1438 –44.
+109. Trambert JJ, Einstein MH, Banks E, Frost A, Goldberg GL.
+Uterine artery embolization in the management of vaginal
+bleeding from cervical pregnancy: a case series. J Reprod Med
+2005;50:844 –50.
+110. Fylstra DL, Coffey MD. Treatment of cervical pregnancy with
+cerclage, curettage and balloon tamponade. A report of three
+cases. J Reprod Med 2001;46:71 –4.
+111. Scutiero G, Nappi L, Matteo M, Balzano S, Macarini L, Greco P.
+Cervical pregnancy treated by uterine artery embolisation
+combined with ofﬁce hysteroscopy. Eur J Obstet Gynecol Reprod
+Biol2013;166:104 –6.
+112. Timor-Tritsch IE, Khatib N, Monteagudo A, Ramos J, Berg R,
+Kov/C19acs S. Cesarean scar pregnancies: experience of 60 cases.
+J Ultrasound Med 2015;34:601 –10.
+113. Cheng LY, Wang CB, Chu LC, Tseng CW, Kung KT. Outcomes
+of primary surgical evacuation during the ﬁrst trimester in
+different types of implantation in women with cesarean scar
+pregnancy. Fertil Steril 2014;102:1085 –90.e2.
+114. Michaels AY, Washburn EE, Pocius KD, Benson CB, Doubilet PM,
+Carusi DA. Outcome of cesarean scar pregnancies diagnosed
+sonographically in the ﬁrst trimester. J Ultrasound Med 2015;34:
+595–9.
+115. Zosmer N, Fuller J, Shaikh H, Johns J, Ross JA. Natural history
+of early ﬁrst-trimester pregnancies implanted in Cesarean scars.
+Ultrasound Obstet Gynecol 2015;46:367 –75.
+116. Centre for Maternal and Child Enquiries (CMACE). Saving
+Mothers’ Lives: reviewing maternal deaths to make motherhood
+safer: 2006 –08. The Eighth Report on Conﬁdential Enquiries into
+Maternal Deaths in the United Kingdom. BJOG 2011;118 Suppl 1:
+1–203.
+117. Zhuang Y, Huang L. Uterine artery embolization compared with
+methotrexate for the management of pregnancy implanted within
+a cesarean scar. Am J Obstet Gynecol 2009;201:152.e1 –3.
+118. Ash A, Smith A, Maxwell D. Caesarean scar pregnancy. BJOG
+2007;114:253 –63.
+119. Litwicka K, Greco E. Caesarean scar pregnancy: a review
+of management options. Curr Opin Obstet Gynecol 2011;23:415 –21.
+120. Uysal F, Uysal A, Adam G. Cesarean scar pregnancy: diagnosis,
+management, and follow-up. J Ultrasound Med 2013;32:1295 –300.
+121. Birch Petersen K, Hoffmann E, Rifbjerg Larsen C, Nielsen HS.
+Cesarean scar pregnancy: a systematic review of treatmentstudies. Fertil Steril 2016;105:958 –67.
+122. Wu R, Klein MA, Mahboob S, Gupta M, Katz DS. Magnetic
+resonance imaging as an adjunct to ultrasound in evaluatingcesarean scar ectopic pregnancy. J Clin Imaging Sci 2013;3:16.
+123. Yang Q, Piao S, Wang G, Wang Y, Liu C. Hysteroscopic surgery
+of ectopic pregnancy in the cesarean section scar. J Minim
+Invasive Gynecol 2009;16:432 –6.
+124. Halperin R, Schneider D, Mendlovic S, Pansky M, Herman A,
+Maymon R. Uterine-preserving emergency surgery for cesarean
+scar pregnancies: another medical solution to an iatrogenicproblem. Fertil Steril 2009;91:2623 –7.
+RCOG Green-top Guideline No. 21 e49 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+125. Wang HY, Zhang J, Li YN, Wei W, Zhang DW, Lu YQ, et al.
+Laparoscopic management or laparoscopy combined with
+transvaginal management of type II cesarean scar pregnancy. JSLS
+2013;17:263 –72.
+126. He M, Chen MH, Xie HZ, Yao SZ, Zhu B, Feng LP, et al.
+Transvaginal removal of ectopic pregnancy tissue and repair of
+uterine defect for caesarean scar pregnancy. BJOG
+2011;118:1136 –9.
+127. Le A, Shan L, Xiao T, Zhuo R, Xiong H, Wang Z. Transvaginal
+surgical treatment of cesarean scar ectopic pregnancy. Arch
+Gynecol Obstet 2013;287:791 –6.
+128. Jurkovic D, Ben-Nagi J, Oﬁlli-Yebovi D, Sawyer E, Helmy S,
+Yazbek J. Efﬁcacy of Shirodkar cervical suture in
+securing hemostasis following surgical evacuation of Cesarean scarectopic pregnancy. Ultrasound Obstet Gynecol 2007;30:95 –100.
+129. Zhang XB, Zhong YC, Chi JC, Shen JL, Qiu XX, Xu JR, et al.
+Caesarean scar pregnancy: treatment with bilateral uterine
+artery chemoembolization combined with dilation and curettage.J Int Med Res 2012;40:1919 –30.
+130. Jurkovic D, Knez J, Appiah A, Farahani L, Mavrelos D, Ross JA.
+Surgical treatment of Cesarean scar ectopic pregnancy: efﬁcacyand safety of ultrasound-guided suction curettage. Ultrasound
+Obstet Gynecol 2016;47:511 –17.
+131. Smith A, Ash A, Maxwell D. Sonographic diagnosis of cesarean
+scar pregnancy at 16 weeks. J Clin Ultrasound 2007;35:212 –15.
+132. Timor-Tritsch IE, Monteagudo A, Cali G, Vintzileos A, Viscarello R,
+Al-Khan A, et al. Cesarean scar pregnancy is a precursor of
+morbidly adherent placenta. Ultrasound Obstet Gynecol 2014;44:
+346–53.
+133. Cassik P, Oﬁli-Yebovi D, Yazbek J, Lee C, Elson J, Jurkovic D.
+Factors inﬂuencing the success of conservative treatment of
+interstitial pregnancy. Ultrasound Obstet Gynecol 2005;26:279 –82.
+134. Poon LC, Emmanuel E, Ross JA, Johns J. How feasible is
+expectant management of interstitial ectopic pregnancy?
+Ultrasound Obstet Gynecol 2014;43:317 –21.
+135. Jermy K, Thomas J, Doo A, Bourne T. The conservative
+management of interstitial pregnancy. BJOG 2004;111:1283 –8.
+136. Tang A, Baartz D, Khoo SK. A medical management of
+interstitial ectopic pregnancy: a 5-year clinical study. Aust N Z J
+Obstet Gynaecol 2006;46:107 –11.
+137. Andr /C19es MP, Campillos JM, Lapresta M, Lahoz I, Crespo R,
+Tobajas J. Management of ectopic pregnancies with poor
+prognosis through ultrasound guided intrasacular injection of
+methotrexate, series of 14 cases. Arch Gynecol Obstet
+2012;285:529 –33.
+138. Moon HS, Choi YJ, Park YH, Kim SG. New simple endoscopic
+operations for interstitial pregnancies. Am J Obstet Gynecol
+2000;182:114 –21.
+139. Moon HS, Kim SG, Park GS, Choi JK, Koo JS, Joo BS. Efﬁcacy of
+bleeding control using a large amount of highly diluted
+vasopressin in laparoscopic treatment for interstitial pregnancy.Am J Obstet Gynecol 2010;203:30.e1
+–6.
+140. Huang MC, Su TH, Lee MY. Laparoscopic management of
+interstitial pregnancy. Int J Gynaecol Obstet 2005;88:51 –2.
+141. Cucinella G, Rotolo S, Calagna G, Granese R, Agrusa A, Perino A.
+Laparoscopic management of interstitial pregnancy: the “purse-
+string” technique. Acta Obstet Gynecol Scand 2012;91:996 –9.
+142. Katz DL, Barrett JP, Sanﬁlippo JS, Badway DM. Combined
+hysteroscopy and laparoscopy in the treatment of interstitialpregnancy. Am J Obstet Gynecol 2003;188:1113 –4.
+143. Wright SD, Busbridge RC, Gard GB. A conservative and fertility
+preserving treatment for interstitial ectopic pregnancy. Aust N Z
+J Obstet Gynaecol 2013;53:211 –3.144. Ophir E, Singer-Jordan J, Oettinger M, Odeh M, Tendler R,
+Feldman Y, et al. Uterine artery embolization for management of
+interstitial twin ectopic pregnancy: case report. Hum Reprod
+2004;19:1774 –7.
+145. Deruelle P, Lucot JP, Lions C, Robert Y. Management of
+interstitial pregnancy using selective uterine artery embolization.
+Obstet Gynecol 2005;106:1165 –7.
+146. Gong W, Li X, Ren H, Han C, Li Y, Wu Z. Superselective
+uterine arterial embolization combined with transcatheter intra-
+arterial methotrexate infusion in 40 cases with fallopian tubeectopic pregnancy. Clin Exp Obstet Gynecol 2013;40:222 –6.
+147. Chen CL, Wang PH, Chiu LM, Yang ML, Hung JH. Successful
+conservative treatment for advanced interstitial pregnancy. A
+case report. J Reprod Med 2002;47:424 –6.
+148. Park JK, Dominguez CE. Combined medical and surgical
+management of rudimentary uterine horn pregnancy. JSLS
+2007;11:119 –22.
+149. S €onmezer M, Taskin S, Atabeko /C21glu C, G €ung€or M, €Unl€uC .
+Laparoscopic management of rudimentary uterine horn pregnancy:
+case report and literature review. JSLS2006;10:396 –9.
+150. Joseph RJ, Irvine LM. Ovarian ectopic pregnancy: aetiology,
+diagnosis, and challenges in surgical management. J Obstet
+Gynaecol 2012;32:472 –4.
+151. Su WH, Cheung SM, Chang SP, Chang WH, Cheng MH. Is
+ovarian pregnancy a medical illness? Methotrexate treatmentfailure and rescue by laparoscopic removal. Taiwan J Obstet
+Gynecol 2008;47:471 –3.
+152. Shaw SW, Hsu JJ, Chueh HY, Han CM, Chen FC, Chang YL,
+et al. Management of primary abdominal pregnancy: twelve yearsof experience in a medical centre. Acta Obstet Gynecol Scand
+2007;86:1058 –62.
+153. Cobellis L, Stradella L, Messalli EM. Contribution to the choice
+of therapy in abdominal pregnancy. Panminerva Med 2000;42:
+159–61.
+154. Nkusu Nunyalulendho D, Einterz EM. Advanced abdominal
+pregnancy: case report and review of 163 cases reported since1946. Rural Remote Health 2008;8:1087.
+155. Sunday-Adeoye I, Twomey D, Egwuatu EV, Okonta PI. A 30-year
+review of advanced abdominal pregnancy at the Mater
+Misericordiae Hospital, Aﬁkpo, southeastern Nigeria (1976 –2006).
+Arch Gynecol Obstet 2011;283:19 –24.
+156. Opare-Addo HS, Deganus S. Advanced abdominal pregnancy: a
+study of 13 consecutive cases seen in 1993 and 1994 at Komfo
+Anokye Teaching Hospital, Kumasi, Ghana. Afr J Reprod Health
+2000;4:28 –39.
+157. Dubinsky TJ, Guerra F, Gormaz G, Maklad N. Fetal survival in
+abdominal pregnancy: a review of 11 cases. J Clin Ultrasound
+1996;24:513 –17.
+158. Talbot K, Simpson R, Price N, Jackson SR. Heterotopic
+pregnancy. J Obstet Gynaecol 2011;31:7 –12.
+159. Habana A, Dokras A, Giraldo JL, Jones EE. Cornual heterotopic
+pregnancy: contemporary management options. Am J Obstet
+Gynecol 2000;182:1264 –70.
+160. Wang Y, Ma CH, Qiao J, Chen XN, Liu P. Efﬁcacy of local
+aspiration in the conservative treatment of live interstitialpregnancy coexisting with live intrauterine pregnancy after
+in vitro fertilization and embryo transfer. Chin Med J (Engl)
+2012;125:1345 –8.
+161. Gungor Ugurlucan F, Bastu E, Dogan M, Kalelioglu I, Alanya S,
+Has R. Management of cesarean heterotopic pregnancy with
+transvaginal ultrasound –guided potassium chloride injection and
+gestational sac aspiration, and review of the literature. J Minim
+Invasive Gynecol 2012;19:671 –3.
+RCOG Green-top Guideline No. 21 e50 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+162. Cengiz H, Kaya C, Ekin M, Karakas /C223S, Yasar L. Is laparoscopic
+surgery safe in patients with an elevated shock index due to
+ruptured ectopic pregnancy? Clin Exp Obstet Gynecol
+2013;40:418 –20.
+163. Moragianni VA, Hamar BD, McArdle C, Ryley DA. Management of
+a cervical heterotopic pregnancy presenting with ﬁrst-trimester
+bleeding: case report and review of the literature. Fertil Steril 2012;
+98:89 –94.
+164. Qin L, Li S, Tan S. Laparoscopic loop ligature for selective
+therapy in heterotopic interstitial and intrauterine pregnancyfollowing in-vitro fertilization and embryo transfer. Int J Gynaecol
+Obstet 2008;101:80 –1.
+165. Louis-Sylvestre C, Morice P, Chapron C, Dubuisson JB. The role
+of laparoscopy in the diagnosis and management of heterotopicpregnancies. Human Reprod 1997;12:1100 –2.
+166. Pschera H, Kandemir S. Laparoscopic treatment of heterotopic
+pregnancies: beneﬁts, complications and safety aspects. J Turkish
+German Gynecol Assoc 2005;6:90 –4.
+167. Fernandez H, Lelaidier C, Doumerc S, Fournet P, Olivennes F,
+Frydman R. Nonsurgical treatment of heterotopic pregnancy: a
+report of six cases. Fertil Steril 1993;60:428 –32.
+168. Wang YL, Yang TS, Chang SP, Ng HT. Heterotopic pregnancy
+after GIFT managed with expectancy: a case report. Zhonghua Yi
+Xue Za Zhi (Taipei) 1996;58:218 –22.
+169. Hartwell EA. Use of Rh immune globulin: ASCP practice
+parameter. American Society of Clinical Pathologists. Am J Clin
+Pathol 1998;110:281 –92.
+170. Qureshi H, Massey E, Kirwan D, Davies T, Robson S, White J,
+et al.; British Society for Haematology. BCSH guideline for theuse of anti-D immunoglobulin for the prevention of haemolytic
+disease of the fetus and newborn. Transfus Med 2014;24:8 –20.
+171. van Mello NM, Mol F. Salpingotomy versus salpingectomy in
+women with tubal ectopic pregnancy, a randomised controlledtrial. Hum Reprod 2012;27 Suppl 2:ii73 –4.
+172. Helmy S, Sawyer E, Oﬁli-Yebovi D, Yazbek J, Ben Nagi J,
+Jurkovic D. Fertility outcomes following expectant managementof tubal ectopic pregnancy. Ultrasound Obstet Gynecol
+2007;30:988 –93.
+173. Elito Junior J, Han KK, Camano L. Tubal patency following
+surgical and clinical treatment of ectopic pregnancy. Sao Paulo
+Med J 2006;124:264 –6.
+174. de Bennetot M, Rabischong B, Aublet-Cuvelier B, Belard F,
+Fernandez H, Bouyer J, et al. Fertility after tubal ectopic
+pregnancy: results of a population-based study. Fertil Steril
+2012;98:1271 –6.e1–3.
+175. Fernandez H, Capmas P, Lucot JP, Resch B, Panel P, Bouyer J;
+GROG. Fertility after ectopic pregnancy: the DEMETERrandomized trial. Hum Reprod 2013;28:1247 –53.
+176. Oriol B, Barrio A, Pacheco A, Serna J, Zuzuarregui JL,
+Garcia-Velasco JA. Systemic methotrexate to treat ectopic
+pregnancy does not affect ovarian reserve. Fertil Steril
+2008;90:1579 –82.
+177. Boots CE, Gustofson RL, Feinberg EC. Does methotrexate
+administration for ectopic pregnancy after in vitro fertilization
+impact ovarian reserve or ovarian responsiveness? Fertil Steril
+2013;100:1590 –3.
+178. Singer T, Koﬁnas J, Huang JY, Elias R, Schattman GL, Rosenwaks Z.
+Anti mullerian hormone serum levels and reproductiveoutcome are not affected by neither methotrexate norlaparoscopic salpingectomy for the treatment of ectopic
+pregnancy in IVF patients. J Minim Invasive Gynecol 2011;18
+Suppl 1:S46.179. McLaren JF, Burney RO, Milki AA, Westphal LM, Dahan MH,
+Lathi RB. Effect of methotrexate exposure on subsequent
+fertility in women undergoing controlled ovarian stimulation.Fertil Steril 2009;92:515 –9.
+180. Krissi H, Hiersch L, Stolovitch N, Nitke S, Wiznitzer A, Peled Y.
+Outcome, complications and future fertility in women treated with
+uterine artery embolization and methotrexate for non-tubalectopic pregnancy. Eur J Obstet Gynecol Reprod Biol 2014;182:172 –6.
+181. Sagiv R, Debby A, Keidar R, Kerner R, Golan A. Laparoscopic
+conservative treatment of ovarian pregnancy and subsequentfertility outcome. J Gynecol Surg 2014;30:12 –14.
+182. 33rd RCOG Study Group. Recommendations arising from the
+33rd RCOG Study Group: Problems in Early Pregnancy –Advances
+in Diagnosis and Management. In: Grudzinskas JG, O’Brien PM,editors. Problems in Early Pregnancy: Advances in Diagnosis and
+Management . London: RCOG Press; 1997. p. 327 –31.
+183. Engelhard IM, van den Hout MA, Arntz A. Posttraumatic stress
+disorder after pregnancy loss. Gen Hosp Psychiatry 2001;23:62 –6.
+184. Deepa J, Oladimeji O, Funlayo O. Factors that determine patient
+satisfaction after surgical treatment of ectopic pregnancy:
+improving the patient journey !Eur J Obstet Gynecol Reprod Biol
+2014;178:60 –5.
+185. Purandare N, Ryan G, Ciprike V, Trevisan J, Sheehan J, Geary M.
+Grieving after early pregnancy loss - a common reality. Ir Med J
+2012;105:326 –8.
+186. Lamb EH. The impact of previous perinatal loss on subsequent
+pregnancy and parenting. J Perinat Educ 2002;11:33 –40.
+187. Pan L, Zhang J, Li L. Effects of progressive muscle relaxation
+training on anxiety and quality of life of inpatients with ectopicpregnancy receiving methotrexate treatment. Res Nurs Health
+2012;35:376 –82.
+188. Bernstein DA, Borkovec TD. Progressive relaxation training: A
+Manual for the Helping Profession . Champaign, IL: Research Press,
+1973.
+189. Lagarce L, Bernarnd-Phalippon N, Carlier P, Phelipot-Lates S,
+Perault-Pochate MC, Bourneau-Martin D. Pregnancy outcomesafter preconceptual exposure to methotrexate for ectopicpregnancy. Abstracts of the 19th Annual Meeting of French Society
+of Pharmacology and Therapeutics, 36th Pharmacovigilance
+Meeting, 16th APNET Seminar, 13th CHU CIC Meeting, 21 –23
+April 2015, Caen, France. Abstract CO-011.
+190. Hackmon R, Sakaguchi S, Koren G. Effect of methotrexate
+treatment of ectopic pregnancy on subsequent pregnancy. Can
+Fam Physician 2011;57:37 –9.
+191. Royal College of Obstetricians and Gynaecologists. Standards for
+Gynaecology: Report of a Working Party
+. London: RCOG Press;
+2008.
+192. Bharathan R, Merritt S, Ahmed H. Laparoscopic tubal surgery for
+ectopic pregnancy: trainees’ perspective in the UK. Gynecol Surg
+2012;9:223 –9.
+193. Royal College of Obstetricians and Gynaecologists. Core Module 16:
+Early Pregnancy Care . London: RCOG; 2013. [https://www.rcog.org.
+uk/globalassets/documents/careers-and-training/core-curriculum/
+2013-05-16_core_module_16.pdf].
+194. Hessel M, Buzink SN, Schoot D, Jakimowicz JJ. Face and
+construct validity of the SimSurgery SEP VR simulator for
+salpingectomy in case of ectopic pregnancy. J Gynecol Surg
+2012;28:411 –17.
+195. Aggarwal R, Tully A, Grantcharov T, Larsen CR, Miskry T,
+Farthing A, et al. Virtual reality simulation training can improve
+technical skills during laparoscopic salpingectomy for ectopic
+pregnancy. BJOG 2006;113:1382 –7.
+RCOG Green-top Guideline No. 21 e51 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Appendix I: Explanation of guidelines and evidence levels
+Clinical guidelines are: ‘systematically developed statements which assist clinicians and patients in making decisions
+about appropriate treatment for speciﬁc conditions’. Each guideline is systematically developed using a standardised
+methodology. Exact details of this process can be found in Clinical Governance Advice No.1 Development of RCOG
+Green-top Guidelines (available on the RCOG website at http://www.rcog.org.uk/green-top-development ). These
+recommendations are not intended to dictate an exclusive course of management or treatment. They must beevaluated with reference to individual patient needs, resources and limitations unique to the institution and variationsin local populations. It is hoped that this process of local ownership will help to incorporate these guidelines intoroutine practice. Attention is drawn to areas of clinical uncertainty where further research may be indicated.
+The evidence used in this guideline was graded using the scheme below and the recommendations formulated in a
+similar fashion with a standardised grading scheme.
+Classiﬁcation of evidence levels Grades of recommendations
+1++ High-quality meta-analyses, systematic reviews
+of randomised controlled trials or randomisedcontrolled trials with a very low risk of biasAAt least one meta-analysis, systematic review orRCT rated as 1 ++, and directly applicable to the
+target population; orA systematic review of RCTs or a bodyof evidence consisting principally of studiesrated as 1 +, directly applicable to the target
+population and demonstrating overallconsistency of results1+ Well-conducted meta-analyses, systematic
+reviews of randomised controlled trials or
+randomised controlled trials with a low risk ofbias
+1– Meta-analyses, systematic reviews of
+randomised controlled trials or randomisedcontrolled trials with a high risk of bias
+BA body of evidence including studies ratedas 2++directly applicable to the target
+population, and demonstrating overallconsistency of results; or
+Extrapolated evidence from studies
+rated as 1 ++or 1 +2++ High-quality systematic reviews of case –control
+or cohort studies or high-quality case –control
+or cohort studies with a very low risk ofconfounding, bias or chance and a highprobability that the relationship is causal
+2+ Well-conducted case –control or cohort
+studies with a low risk of confounding, bias orchance and a moderate probability that therelationship is causal
+CA body of evidence including studies rated
+as 2+directly applicable to the target
+population, and demonstrating overallconsistency of results; orExtrapolated evidence from studiesrated as 2 ++
+2– Case –control or cohort studies with a high
+risk of confounding, bias or chance and asigniﬁcant risk that the relationship is notcausal
+3 Non-analytical studies, e.g. case reports,
+case seriesDEvidence level 3 or 4; orExtrapolated evidence from studies rated as 2 +
+4 Expert opinionGood practice point
+/checkRecommended best practice based on the
+clinical experience of the guideline developmentgroup
+RCOG Green-top Guideline No. 21 e52 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Appendix II: Single-dose protocol for intramuscular methotrexate
+Day Therapy
+1 Serum b-hCG, U&E, LFTs, FBC, blood group, 50 mg/m2intramuscular methotrexate
+4 Serum b-hCG
+7 Serum b-hCG
+/C15Ifb-hCG decrease less than 15% days 4 –7, for repeat TVS & methotrexate 50 mg/m2if still ful ﬁls
+criteria for medical management.
+/C15Ifb-hCG decrease greater than 15% days 4 –7, for repeat b-hCG weekly until levels less than 15 iu/l.
+Abbreviations: b-hCG beta-human chorionic gonadotrophin; FBC full blood count; LFTs liver function tests; TVS
+transvaginal scan; U&E urea and electrolytes.
+Adapted from Stovall TG, Ling FW, Gray LA. Single-dose methotrexate for treatment of ectopic pregnancy. Obstet
+Gynecol 1991;77:754 –7.
+RCOG Green-top Guideline No. 21 e53 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Appendix III: Contraindications to methotrexate
+/C15Haemodynamic instability
+/C15Presence of an intrauterine pregnancy
+/C15Breastfeeding
+/C15If unable to comply with follow-up
+/C15Known sensitivity to methotrexate
+/C15Chronic liver disease
+/C15Pre-existing blood dyscrasia
+/C15Active pulmonary disease
+/C15Immunodeﬁciency
+/C15Peptic ulcer disease
+RCOG Green-top Guideline No. 21 e54 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+This guideline was produced on behalf of the Royal College of Obstetricians and Gynaecologists by:
+Ms CJ Elson FRCOG, London; Mr R Salim MRCOG, London; Ms N Potdar MRCOG, Leicester; Ms M Chetty
+MRCOG, Edinburgh, Scotland; Ms JA Ross FRCOG, London; and Ms EJ Kirk MRCOG, London
+and peer reviewed by:
+Dr LD Aliyu, Abubakar Tafawa Balewa University Teaching Hospital, Bauchi, Nigeria; Dr WM Ankum, University ofAmsterdam, the Netherlands; Dr S Bobdiwala, Queen Charlotte’s & Chelsea Hospital, London; Professor T Bourne
+FRCOG, London; Dr P Capmas, Paris –Sud University, France; Mr P Carroll, Pension and Population Research Institute,
+London; Dr AHD Diyaf MRCOG, Barnstaple; Mr WEMG Elgonaid FRCOG, Doha, Qatar; Dr J Elito Jr, UniversidadeFederal de S ~ao Paulo, Brazil; Dr AC Fleischer, Vanderbilt University Medical Center, Nashville, Tennessee, USA;
+Dr I Gallos MRCOG, Birmingham; Dr J Garcia-Velasco, Rey Juan Carlos University, Madrid, Spain; Professor R Garry
+FRCOG, Perth, Australia; Dr S Gerli, Universit /C18a degli Studi di Perugia, Italy; Dr AW Horne MRCOG, Edinburgh;
+Miss SS Iyengar MRCOG, Great Missenden; Dr VA Mackay MRCOG, Glasgow; Dr E Magann, University of Arkansas forthe Medical Sciences, Little Rock, Arkansas, USA; Dr PJ Maher FRCOG, Melbourne, Australia; Mr S Maiti FRCOG,
+Manchester; Dr PI Okonta, Delta State University, Abraka, Nigeria; RCOG Women’s Network; Dr MM Renzini, Istituti
+Clinici Zucchi, Monza, Italy; Royal College of General Practicioners; Royal College of Midwives; Mrs P Sinha FRCOG,Al Ain, Abu Dhabi; Society of Diagnostic Medical Sonography; Dr MC Sowter FRCOG, Auckland, New Zealand;
+Dr KN Talbot MRCOG, Nairobi, Kenya; Professor S Tong, University of Melbourne, Australia; Dr D Trio, Istituti Clinici Zucchi,
+Monza, Italy; Professor T Tulandi, Royal Victoria Hospital, Montreal, Canada; Dr MJ Weston, St James’s University Hospital,Leeds.
+Committee lead reviewers were: Mrs G Kumar FRCOG, Wrexham, Wales; and Dr M Ledingham MRCOG, Glasgow,
+Scotland.
+The chairs of the Guidelines Committee were: Dr M Gupta
+1MRCOG, London; Dr P Owen2FRCOG, Glasgow, Scotland;
+and Dr AJ Thomson1MRCOG, Paisley, Scotland.
+1co-chairs from June 20142until May 2014.
+All RCOG guidance developers are asked to declare any conﬂicts of interest. A statement summarising any conﬂicts
+of interest for this guideline is available from:
+https://www.rcog.org.uk/en/guidelines-research-services/guidelines/gtg21/.
+The ﬁnal version is the responsibility of the Guidelines Committee of the RCOG.
+The review process will commence in 2019, unless otherwise indicated.
+DISCLAIMER
+The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical practice.
+They present recognised methods and techniques of clinical practice, based on published evidence, for consideration byobstetricians and gynaecologists and other relevant health professionals. The ultimate judgement regarding a particular
+clinical procedure or treatment plan must be made by the doctor or other attendant in the light of clinical data presented
+by the patient and the diagnostic and treatment options available.
+This means that RCOG Guidelines are unlike protocols or guidelines issued by employers, as they are not intended to be
+prescriptive directions deﬁning a single course of management. Departure from the local prescriptive protocols orguidelines should be fully documented in the patient’s case notes at the time the relevant decision is taken.
+RCOG Green-top Guideline No. 21 e55 of e55 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2016, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14189 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License

@@ -1,0 +1,557 @@
+# Extracted from: BJOG - 2021 - Navaratnam - Amniocentesis and chorionic villus sampling.pdf
+# Guideline ID: bjog-2021-navaratnam-amniocentesis-and-chorionic-villus-sampling
+# Content length: 50975 characters
+# Processing date: 1732953490.8331563
+
+Amniocentesis and chorionic villus
+sampling
+Green-top Guideline No. 8
+October 2021
+Please cite this paper as: Navaratnam K, Alﬁrevic Z; the Royal College of Obstetricians and Gynaecologists. Amniocentesis
+and chorionic villus sampling: Green-top Guideline no. 8. BJOG 2022; 129:e1 –e15.
+DOI: 10.1111/1471-0528.16821 RCOG Green-top Guideline
+Amniocentesis and chorionic villus sampling
+K Navaratnam, Z Alﬁrevic on behalf of the Royal College of Obstetricians and Gynaecologists
+Correspondence: Royal College of Obstetricians and Gynaecologists, 10-18 Union Street, London SE1 1SZ, UK. Email:
+clinicaleffectiveness@rcog.org.uk
+This is an update of the 2010 version of this guideline in the new format. It is the ﬁfth edition, which was previously
+published in October 1996, February 2000, January 2005 and June 2010.
+1. Key recommendations
+/C15 Women should be informed that the additional risk of miscarriage following amniocentesis or CVSperformed by an appropriately trained operator is likely to be below 0.5%. [Grade B]
+/C15 Amniocentesis should not be performed prior to 15+0weeks’ gestation. [Grade A]
+/C15 CVS should not be performed prior to 10+0weeks’ gestation. [Grade D]
+/C15 Where possible, to reduce the risk of technical challenges, CVS should be performed from 11+0weeks’
+gestation onwards. [Good Practice Point]
+/C15 Women with multiple pregnancies should be informed that the additional risk of miscarriage for twinpregnancy following CVS or amniocentesis performed by an appropriately trained operator is around 1%.[Grade B]
+/C15 Screening results for blood borne viruses, viral load and antigen test results should be reviewed when aninvasive test is considered and individualised risk of viral transmission should be discussed. [Grade C]
+2. Aim
+The aim of this guideline is to provide a concise set of evidence-based standards for provision and performance ofamniocentesis and chorionic villus sampling (CVS) used for prenatal diagnosis.
+An infographic (Inforgrpahic S1) of this guideline is available as supplemental information, and an audio version at
+www.rcog.org.uk/gtg8.
+3. Background
+Pregnant women are offered amniocentesis or CVS for prenatal diagnosis for a variety of reasons including a higherchance aneuploidy screening result, fetal structural anomaly, or a known risk of inherited genetic disease.
+RCOG Green-top Guideline No. 8 e2 of e15 ª2021 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16821 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Implementation of national combined aneuploidy screening and increasing use of cell free DNA testing from maternal
+blood has resulted in a signiﬁcant decline in screen positive results and therefore fewer invasive prenatal tests are
+being carried out. However, both CVS and amniocentesis remain, at present, the only deﬁnitive diagnostic tests foraneuploidy in pregnancy.
+CVS, carried out to obtain placental villi for analysis, is usually performed between 11
++0and 13+6weeks of gestation.
+If required, CVS can be performed between 14+0and 14+6weeks’ gestation. Individualised counselling of the merits
+of CVS versus amniocentesis should be provided for women considering CVS during this time period; a video
+demonstrating the recommended technique for transabdominal CVS is available online at www.rcog.org.uk/gtg8.
+Amniocentesis, performed to obtain amniotic ﬂuid for analysis, is usually offered from 15+0weeks; a video
+demonstrating the recommended technique for amniocentesis is available online at www.rcog.org.uk/gtg8. Informedwritten consent is advised prior to either procedure, and should be in line with existing consent advice from theGMC and Royal College of Obstetricians and Gynaecologists recommendations.
+1,2The consent process must include
+procedure risks, timing and method of communicating results, sample/tissue storage, beneﬁts, alternatives and optionto opt out. Wherever possible contemporaneous local data for procedure related complications should be quoted.Women should receive information on aftercare including, where appropriate, the need for prophylactic anti D innon-sensitised rhesus negative women and indications to seek medical advice following the procedure.
+4. Identi ﬁcation and assessment of evidence
+The Cochrane Library (including the Cochrane Database of Systematic Reviews), EMBASE, Medline and PubMed
+electronic databases were searched for relevant meta-analyses, systematic reviews, randomised controlled trials(RCTs), and cohort studies. TRIP, NICE evidence and the Guideline International Network were searched to identifyrelevant guidelines. Databases were searched for the terms ‘amniocentesis’ and ‘chorionic villus sampling’ appearingin the title or abstract. The search was limited to humans and the English language. The search was restricted toarticles published until October 2019. The full search strategy is available to view online as supporting information(Appendix S1 and S2).
+The recommendations given in this guideline have been graded according to the guidance for the development of
+RCOG Green-top Guideline.
+3
+5. How should care be organised in providing amniocentesis and CVS?
+The scope of this guideline is conﬁned to technical aspects of the two procedures. For the woman and her family,good care in these circumstances encompasses more than the procedure. Women facing either procedure areusually anxious and clinicians should bear this in mind. The RCOG, Royal College of Midwives (RCM) and Societyand College of Radiographers have produced a consensus statement on supporting women and their partnersthrough prenatal screening which,
+4while developed to support the evaluative roll-out of non-invasive prenatal testing
+(NIPT) for Down’s syndrome, Edwards’ syndrome and Patau’s syndrome within the NHS fetal anomaly screeningprogramme, is also relevant to the provision of amniocentesis and CVS.
+Care for women who consent to have CVS or amniocentesis should be organised in accordance with
+Fetal Anomaly Screening Programme guidance.
+5This includes an appropriate environment, skilled staff,
+access to allied specialties and appropriate support for continuation of pregnancy or termination ofpregnancy, depending on the choices made by the woman and her partner where chromosomal or geneticanomalies are identiﬁed.Evidence
+level 4
+RCOG Green-top Guideline No. 8 e3 of e15 ª2021 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16821 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+It is important to remember that most women will not have expected screening to result in unexpected
+news about their baby, and that this is therefore a very stressful time. A sensitive approach is extremely
+important and choice of words, such as the use of ‘difference’ rather than ‘abnormality’ in
+certain situations, is really important. All options should be presented in an unbiased manner so that thewoman and her partner can make a personal, informed choice. These options should include continuing thepregnancy with a view to keeping the baby; continuing the pregnancy with a view to having the babyadopted; continuing the pregnancy with a view to palliative care in the case of severely life limitingconditions; and ending the pregnancy at that point. It may also be appropriate to discuss religious aspects ofcare as well. Women should be given time to discuss this decision with their partner and friends if theywish, to meet with a paediatrician or learning disability nurse used to caring for people with the condition ifappropriate, or to meet with families who have a child with the identiﬁed condition if they wish eitherthrough local or national support groups for those with the condition (e.g. Antenatal Results and Choices[ARC, www.arc-uk.org] or Support Organisation for Trisomy 13 and Trisomy 18 [SOFT, www.soft.org.uk)].
+Evidence
+level 4
+6. What are the additional risks associated with invasive testing?
+6.1. What is the additional risk of miscarriage associated with amniocentesis and CVS?
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+Women should be informed that the
+additional risk of pregnancy loss following
+transabdominal CVS performed by an
+appropriately trained operator is likely tobe below 0.5%2++ B It is important to be aware that the risk
+may be higher with less skilled operators
+or units carrying out fewer procedures. The
+risk is also likely to be higher where thefetus has a chromosomal, genetic orstructural abnormality
+Women should be informed that the
+additional risk of pregnancy loss followingan amniocentesis performed by anappropriately trained operator is likely tobe below 0.5%2++ B It is important to be aware that the risk
+may be higher with less skilled operatorsor units carrying out fewer procedures. Therisk is also likely to be higher where thefetus has a chromosomal, genetic orstructural abnormality
+If amniotic ﬂuid appears cloudy or
+purulent or there are clinical features ofintra-amniotic infection consider microbialanalysis and antibiotic treatment4 GPP Maternal sepsis is a rare but potentially
+serious complication of amniocentesis andCVS
+The only RCT on which previous estimate of additional risk of pregnancy loss following amniocentesis has
+been based was published in 1986.
+6The trial reported a 1% additional risk of pregnancy loss, but the
+estimate was rather imprecise with 95% conﬁdence intervals including both no additional risk and 2%risk.
+6It is now unlikely that an appropriately sized, high quality RCT trial will ever be repeated. Two
+RCTs published in 1991 and 1993 compared CVS carried out either transabdominally (TA) ortransvaginally (TV) with midtrimester amniocentesis and found an increase in overall pregnancy lossEvidence
+level 1 +
+RCOG Green-top Guideline No. 8 e4 of e15 ª2021 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16821 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+following CVS (11.1% versus 8.2%; RR 1.43, 95% CI 1.22 –1.67) which was attributed to increased
+spontaneous pregnancy loss after CVS (7.1% versus 5.0%; RR 1.51, 95% CI 1.23 –1.85).7–9
+Since then many observational studies, including large national registry-based studies, have reported much
+lower complications rates for both amniocentesis and CVS, including no signiﬁcant increase in pregnancylosses above the background rate.
+10Ideally, these studies should attempt to estimate the procedure-
+related risk for structurally and genetically normal fetuses. Such estimates should come from cohorts withgenetic testing of all pregnancy losses, irrespective of whether they had a prior invasive test or not andinclude control groups matched for all important confounders including maternal age. These factorsshould be taken into account for future studies. Even with all these criteria fulﬁlled, in the absence ofrandomization, clinically important differences between women undergoing invasive testing and those whodo not undergo testing will remain. Nevertheless, it is plausible that lower pregnancy loss rates reportedin more recent studies reﬂect improvements in technology, techniques and experience.Evidence
+level 2 ++
+A systematic review including data from observational studies published between 2000 and 2014 with a
+minimum of 1000 women per study reported weighted pooled procedure-related risk of pregnancy loss of0.11% (95% CI 0.04 –0.26) for amniocentesis and 0.22% for CVS (95% CI 0.71 –1.16).
+11The authors
+published an update including studies up to September 2017 with data from 10 studies of amniocentesiswith 64 901 procedures and 6 studies of CVS with 19 000 procedures and performed a meta-analysis.
+12
+The weighted pooled procedure-related risk of pregnancy loss was 0.35% for both procedures(amniocentesis 95% CI 0.07 –0.63, CVS 95% CI /C00.31 to 1.00).
+12However, the pregnancy loss rates in
+included studies show large variations. For amniocentesis, two studies reported higher pregnancy loss ratein the control group than after amniocentesis,
+13,14while in others the excess risk following amniocentesis
+varied from 0.06 to 1.24%.10,15 –21Similarly for CVS, two studies reported higher numbers of pregnancy
+losses in their control groups,10,15while in the remainder reported excess pregnancy loss rates after CVS
+ranged from 0.2 to 1.5%.16,22 –24It is worth noting that six out 10 studies reported amniocentesis-related
+risk of 0.2% or less and three out six studies reported no additional risk from CVS.Evidence
+level 2 ++
+A recently updated Cochrane Review of amniocentesis and CVS for prenatal diagnosis reported low
+quality randomised evidence comparing transabdominal and transvaginal CVS.9A retrospective cohort
+study published in 2008 reported outcomes for 5148 CVS, 96% of which were transcervical procedures
+using a catheter method.15Pregnancy losses were below the background rate regardless of CVS route
+(TA/C00.2%, TC /C00.5%).15A retrospective cohort study published in 2017 reported outcomes following
+4862 CVS procedures, 2833 of which were transcervical (1787 using forceps and 1046 using cannulae).16
+The procedure-related pregnancy loss rate was 1.4% for transcervical CVS and 1.0% for transabdominalCVS.
+16However, the risk of pregnancy loss after transcervical CVS was only 0.27% when forceps was
+used and 3.12% for those done with cannula, suggesting that forceps may offer a safety advantage.16See
+Table 1 for an overview of other risks associated with amniocentesis and CVS.Evidence
+level 4
+Procedure-related risks may be increased when procedures are performed by less skilled operators, as
+there is an inverse association between experience and procedure-related pregnancy loss.15,26Recently,
+Bakker et al.16stratiﬁed fetal losses by operator experience, according to number of procedures
+performed and conﬁrmed lower losses with increasing experience for both transabdominal CVS and foramniocentesis. There is no evidence to specify the optimal number of procedures for trained operators toEvidence
+level 4
+RCOG Green-top Guideline No. 8 e5 of e15 ª2021 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16821 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+maintain their skills. It is advised that appropriately trained operators complete, or supervise, ideally at
+least 20 amniocentesis or CVS procedures annually. See Table 2 for requirements for training to carry outamniocentesis and CVS and advice on maintaining good practice.
+Women should be aware that the results of CVS can be affected by conﬁned placental mosaicism in 1 –2% of cases. If
+there is a fetal structural anomaly, it is reasonable to move forward with discussions regarding ongoing care,including the option of termination of pregnancy if the woman or couple wish to consider this. If there are nostructural anomalies, and QFPCR results following CVS suggest a chromosomal anomaly, a full karyotype should beawaited before any decisions are made. Discussions under these circumstances should reﬂect the RCOG, RCM andSociety and College of Radiographers consensus statement on prenatal testing.
+4Table 1. What other risks are associated with amniocentesis and CVS?
+Amniocentesis CVS
+Second sampling/repeat procedure Up to 6% Up to 6%
+Blood stained sample 0.8% Not applicableConﬁned placental mosaicism Not applicable <2%
+Maternal cell contamination 1 –2% 1 –2%
+Rapid test failure 2% 2%Failed cell culture 0.5 –1% 0.5 –1%
+Severe infection Rare RareFetal injury Rare Rare
+Maternal visceral injury Rare Rare
+Table 2. What is required for training and maintaining good practice for amniocentesis and CVS?
+Training Maintaining good practice
+Achieved competency with Maternal Fetal Medicine
+subspecialty training, fetal medicine Advanced Skills TrainingModules or equivalent international quali ﬁcationMaintain competency by completing or supervising, ideally, a
+minimum of 20 amniocentesis or CVS procedures annually
+Simulation training and directly supervised procedures are
+integralCommunications skills training
+Continuous audit; multiple insertions, failures, bloody taps and
+procedure-related losses/PPROM/PTB within 14 days ofprocedure
+Seek support from a more experienced operator if
+anticipated/encountered dif ﬁculties
+Review practice where an operator ’s annual loss rate of
+normal babies exceeds 3% for either amniocentesis or CVS
+RCOG Green-top Guideline No. 8 e6 of e15 ª2021 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16821 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+6.2. What are the additional risks associated with invasive testing?
+Severe maternal sepsis is a very rare complication. Infection may arise from organisms present on the skin,
+ultrasound probe, gel or via needle puncture of the bowel. Skin decontamination, use of separate sterilegel sachet, enclosing the ultrasound probe in a sterile bag and continuous ultrasound are recommendedprior to amniocentesis and CVS. If, on inspection, amniotic ﬂuid has a cloudy or purulent appearance orthe woman shows clinical features to suggest intra-amniotic infection, the operator should considersending a small quantity of amniotic ﬂuid for microbiological analysis and consider antibiotic treatment.
+Evidence
+level 4
+7. At what gestation should amniocentesis and CVS be carried out?
+7.1. At what gestation should amniocentesis be carried out?
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+Amniocentesis should be
+performed after 15+0weeks ’gestation1+ A This trial compared amniocentesis after
+15+0weeks to early amniocentesis and
+found an increased risk of talipes
+equinovarus in the earlier group
+There is good evidence that amniocentesis should not be performed before 15+0weeks’ gestation owing
+to the higher risk of pregnancy loss and the potential for talipes equinovarus.9,27A Canadian multicentre
+trial published in 1998 reported 24/2612 cases of talipes equinovarus with early amniocentesis comparedto 5/2693 cases with CVS.
+25Early amniocentesis also resulted in an increase of 3% in requirement for
+multiple needle insertions (4.7% versus 1.7%; RR 2.79, 95% CI 1.92 –4.04).27Early amniocentesis has
+cytogenetic implications, with increased risk of failed culture of 1.8% compared to 0.2% with midtrimesteramniocentesis and potential for false negative results (3 versus 0, 0.05% versus 0.0%; RR 3.00,95% CI 0.12 –73.67) when compared to midtrimester amniocentesis.
+28Evidence
+level 1 +
+Individual laboratories have reported increased risk of obtaining low quantities of DNA from direct extraction when
+amniocentesis is performed before 16+0weeks. Clinicians should be aware of the potential for impact on turn-around-
+time for results to allow informed discussions during the consent process for procedures carried out before 16+0weeks.
+7.2. When should CVS be carried out?
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+CVS should not be performed before
+10+0weeks ’gestation3D With CVS before 10+0weeks ’gestation
+there is a possible association withoromandibular and limb defects
+RCOG Green-top Guideline No. 8 e7 of e15 ª2021 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16821 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+(Continued)
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+Where possible, CVS should be performed
+from 11+0weeks ’gestation to reduce the
+risk of technical challenges4 GPP CVS before 11+0weeks ’gestation can be
+more technically challenging
+Possible associations between CVS and both oromandibular disruption and limb reduction defects were
+ﬁrst reported in 1991 following procedures carried out between 8+0and 9+3weeks’ gestation.29Since
+then, reports have emerged refuting the association, though most procedures were performed after10
++0weeks.30It is possible that any potential risk is gestation dependent and as a result most guidelines
+discourage performing CVS before 10+0weeks.9,11Additionally, CVS prior to 11+0weeks’ gestation can
+be more technically challenging due to access and thinner, less developed placental tissue.Evidence
+level 3
+8. What are the considerations when performing amniocentesis or CVS for multiple pregnancy?
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+Women considering amniocentesis or CVS
+should receive detailed counselling andpregnancy mapping by suitably trainedhealthcare professionals4 GPP Mapping of the pregnancy is essential to
+ensure accurate sampling
+In multiple pregnancies amniocentesis or
+CVS should be performed by an operatorwith the skills to perform selectivetermination of pregnancy if required4 GPP This provides reassurance of accurate fetal
+identi ﬁcation to the woman and operator,
+should termination of pregnancy berequested
+Women with multiple pregnancies should
+be informed that the additional risk ofpregnancy loss for twin pregnancy
+following CVS or amniocentesis performed
+by a skilled operator is around 1%2++ B It is important to be aware that the overall
+risk of pregnancy loss is higher in twinpregnancies due to an increased
+background risk of pregnancy loss
+Women with multiple pregnancies and a
+conﬁrmed diagnosis of anomaly from
+amniocentesis or CVS should be providedwith information and supported in anondirective way, including referral tospecialist counselling services if required4 GPP It is important support women to make
+the decisions that are appropriate for
+them and their families
+RCOG Green-top Guideline No. 8 e8 of e15 ª2021 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16821 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+A high level of expertise in ultrasound scanning is essential for operators undertaking amniocentesis or
+CVS in multiple pregnancies, because the pregnancy needs to be mapped with great care.31Mapping is
+essential prior to any invasive testing to ensure each fetus is identiﬁed and sampled appropriately withsamples labelled correctly for analysis. As some women and couples may choose a selective termination oftheir pregnancy based on the results of amniocentesis or CVS, it is recommended that an operator skilledin performing selective termination conducts fetal mapping as it is unlikely that any operator would becomfortable performing selective termination based on labelling performed by a referring doctor. Labellingby assigning numbers should be avoided. It is more reproducible to map by lateral orientation, as maternalleft and maternal right twins or vertical orientation, as upper and lower twins, this approach isrecommended by NICE.
+31Labelling is assisted in the presence of a discordant fetal structural anomaly or
+discordant fetal sex, but extra care must be taken where there is no clearly identiﬁable ultrasounddifference. In such cases it is advised that two operators conﬁrm labelling.Evidence
+level 4
+Two systematic reviews have assessed the risks of mid-trimester pregnancy loss following amniocentesis,
+with no RCTs identiﬁed in either systematic review.32,33There was considerable variation in how individual
+studies deﬁned fetal loss (a single twin or both twins) and several studies did not provide any deﬁnition offetal loss. Agarwal et al. reported pregnancy loss rate following amniocentesis of 3.07%(95% CI 1.83 –4.61) and estimated procedure-related risk of pregnancy loss before 24 weeks’ gestation at
+1% (2.59% versus 1.53% RR 1.81; 95% CI 1.02 –3.19). This estimate was derived from four cohort studies
+with 695 procedures and 18 pregnancy losses.
+34–37Vink et al.33captured publications over a longer time
+period between 1970 and 2010. The pooled odds ratio for total pregnancy loss after amniocentesis was 1.8(95% CI 1.2 –2.7), derived from seven controlled studies with 1530 procedures and 73 fetal losses.
+35–40Evidence
+level 2 ++
+It is also possible that the true amniocentesis-related risk of pregnancy loss in twins may be less than 1%
+as several studies published in the last 5 years have reported no increase in pregnancy losses abovebackground risk.
+41,42Evidence
+level 2 +
+Data for procedure-related pregnancy losses following CVS are more limited. Agarwal et al.32meta-
+analysed data from four observational studies of CVS in twin pregnancies (632 procedures) and reportedan overall pregnancy loss rate of 3.8% (95% CI 2.5 –5.5) following CVS. It was not possible to estimate risk
+of pregnancy loss less than 24 weeks with CVS due to heterogeneity of the data.
+32For both
+amniocentesis and CVS, the majority of studies have not stratiﬁed their outcomes by chorionicity and it istherefore not possible to accurately determine procedure-related losses separately for monochorionicdiamniotic and dichorionic diamniotic twins.Evidence
+level 2 ++
+Most operators use double uterine entry when performing amniocentesis or CVS in multiple pregnancies.
+However, the limited data available suggest no signiﬁcant difference in risk for amniocentesis performedwith single or double uterine entry.
+32Similarly for CVS, there appears to be no signiﬁcant differences in
+pregnancy loss with transabdominal versus transcervical CVS, or with use of a single versus double needletechnique, or single versus double uterine entry.
+32The risk of cross-contamination during CVS is
+approximately 1% and may be mitigated by using a double uterine entry technique.32Based on currently
+available evidence, operators should use the technique with which they are most comfortable.Evidence
+level 2 ++
+There are insufﬁcient data available to comment on procedure-related risks for higher order multiple pregnancies.
+RCOG Green-top Guideline No. 8 e9 of e15 ª2021 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16821 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+9. What is the role of third trimester amniocentesis?
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+The risks associated with third-trimester
+diagnostic amniocentesis, including the riskof pre-term labour, are likely to be low2+ D The risk of preterm labour before
+34 weeks is in the region of 3 –4% based
+on limited studies
+Women should be informed that there is a
+higher risk of cell culture failure withamniocentesis performed in the third-trimester2++ C Overall there is a 10% risk of culture
+failure for third trimester amniocentesis,but the risk is higher with advancinggestation
+Third trimester amniocentesis may be offered for newly identiﬁed fetal structural anomalies, suspected fetal
+infection and fetal growth restriction. Serious complications, requiring emergency birth are unusual followingthird trimester amniocentesis. Two retrospective cohorts have reported preterm labour before 37 weeks of4–8% and before 34 weeks of 3 –4%.
+43,44There is an increased risk of requiring more than one needle
+insertion (5% of procedures), with bloodstained samples reported in 5 –10% of procedures.45,46There is an
+increased risk of culture failure following third trimester amniocentesis, with a rate of 9.7% overall reported in2007.
+47A retrospective database analysis of amniocentesis procedures performed between 24+0and
+39+0weeks between 2002 and 2014 reported increased overall culture failure rate of 10.2% that increased
+with gestational age from 2.1% between 24+0and 27+0weeks to 40.6% between 36 and 40 weeks.48Evidence
+level 2 +
+10. What are the risks of mother to child transmission of infection?
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+Screening results for blood borne viruses,
+viral load and antigen test results shouldbe reviewed when an invasive test isconsidered and individualised risk of viraltransmission should be discussed4 GPP Operators should be aware of screening
+results to appropriately weigh theindication for testing and individual risk ofmother to child transmission of viralinfection
+Where screening results for blood borne
+viruses are not known, testing should bedelayed until HIV status can be determined4 GPP The risk of mother to child transmission
+of HIV is higher for women not on highlyactive antiretroviral therapy and withhigher viral loads
+The risk of mother to child transmission of
+HIV for women on highly activeantiretroviral therapy is very low2++ C Several large retrospective cohorts
+reported no cases of mother to childtransmission for women on highly activeantiretroviral therapy with undetectableviral loads
+RCOG Green-top Guideline No. 8 e10 of e15 ª2021 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16821 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+(Continued)
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+Antiretroviral treatment should be
+optimised to aim for an undetectable viralload prior to amniocentesis or CVS2++ C The risk of mother to child transmission is
+very low once viral load is undetectable
+The risk of mother to child transmission of
+Hepatitis B is low with viral load less than
+6.99 log
+10copies/ml but increases with
+higher viral loads2+ C A retrospective analysis indicated no
+signiﬁcant difference in mother to child
+transmission of Hepatitis B below a viralload of 7log
+10
+There is no evidence of risk of mother tochild transmission of Hepatitis C based on
+limited data available2+ C Limited available studies have not
+reported mother to child transmission of
+Hepatitis C
+Recent studies demonstrate a very low risk of mother to child transmission (MTCT) of HIV for women
+on highly active antiretroviral therapy (HAART) with undetectable viral loads. Four retrospectivecohorts with 317 procedures spanning 1985 to 2015 contained no cases of MTCT in women onHAART.
+49–52Conversely, a retrospective cohort study published in 2017 reported 2.3% MTCT of HIV
+for women not on HAART, performed prior to 2005 arising from 113 total CVS and amniocentesisprocedures.
+49Evidence
+level 2 ++
+A multicentre retrospective case-control study including 166 amniocentesis procedures published in 2009
+reported a non-signiﬁcant increase in MTCT for women without antiretroviral therapy (25.0% versus 16.2%)and for those treated with zidovudine monotherapy or a double-nucleoside reverse transcriptase inhibitorcombinations (6.1% versus 3.3%).
+51The same study found no cases of MTCT in 81 women on HAART.51
+Operators need to be aware and inform women that the vast majority of evidence is based onamniocentesis and that data on CVS are limited. Where screening results for blood borne viruses are notknown, testing should be delayed until HIV status can be determined. Where screening is declined,informed consent should include discussion of the risk of MTCT and that this is increased for womenwith higher viral load and not on antiretroviral treatment.Evidence
+level 2 +
+The overall risk of MTCT for Hepatitis B is low, but increased viral load is a risk factor for transmission.53
+A small retrospective case-control study of infants of HBsAg +women of whom 63/642 has amniocentesis
+demonstrated a signiﬁcant increase in MTCT when the HBV DNA was over 500 copies/ml (4.2% versus17.4%; OR 4.76 [95% CI 1.17 –19.33]).
+54There is an absence of high quality data on the risk of MTCT
+with Hepatitis C, but currently no evidence of risk of MTCT following amniocentesis.55Evidence
+level 2 +
+11. Recommendations for future research
+/C15Rates of procedure related pregnancy loss in multiple pregnancies based on chorionicity.
+/C15Risk of mother to child transmission following procedures during acute infections (e.g. Hepatitis C).
+RCOG Green-top Guideline No. 8 e11 of e15 ª2021 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16821 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+12. Auditable topics
+/C15Rate of pregnancy loss of fetuses (with and without chromosomal or genetic anomaly) within 14 days
+of procedure. These data should be quoted on local consent forms ( <0.5%).
+/C15Local cytogenetic laboratory culture failure rates for amniocentesis and CVS ( <0.5%).
+/C15Operator speci ﬁc proportion of procedures requiring more than one needle insertion.
+/C15Operator speci ﬁc proportion of procedures with failure to obtain an adequate sample.
+/C15Rate of anti –D prophylaxis for women who are RhD-negative (with Rh positive fetus) undergoing
+invasive procedures (100%).
+/C15Maintenance of a register of invasive diagnostic procedures to facilitate audit (100%).
+/C15Local audit should be performed annually and the results available for external assessment (100%).
+13. Useful links and support groups
+/C15Public Health England Screening in pregnancy: CVS and amniocentesis information for parents [www.
+gov.uk/government/publications/cvs-and-amniocentesis-diagnostic-tests-description-in-brief/nhs-fetal-anomaly-screening-programme-chorionic-villus-sampling-cvs-and-amniocentesis-information-for-parents]
+/C15Antenatal Results and Choices [www.arc-uk.org]
+/C15Support Organisation for Trisomy 13 and Trisomy 18 www.soft.org.uk
+Disclosure of interests
+KN has declared no conﬂicts of interest. ZA has declared no conﬂicts of interest. Full disclosure of interests are
+available to view online as supporting information.
+Funding
+All those involved in the development of the Green-top Guideline, including the Guideline Committee, GuidelineCommittee co-chairs, guideline developers, peer reviewers and other reviewers, are unpaid volunteers andreceive no direct funding for their work in producing the guideline. The exception to this are the RCOG staffinvolved who are salaried employees of the College and Guideline Committee members who receive reimbursementfor expenses for attending Guideline Committee meetings. See more information on travel expense rules on theRCOG website.
+Supporting Information
+Additional supporting information may be found online in the Supporting Information section at the end of thearticle.
+Appendix S1. Amniocentesis and CVS literature search strategy.
+Appendix S2. Amniocentesis and CVS search strategy top up.
+Infographic S1. Infographic version of the guideline.
+RCOG Green-top Guideline No. 8 e12 of e15 ª2021 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16821 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+References
+1. General Medical Council. Consent: Patients and Doctors Making
+Decisions Together . London: GMC; 2008.
+2. Royal College of Obstetricians and Gynaecologists. Obtaining Valid
+Consent . Clinical Governance Advice No. 6. London: RCOG; 2015.
+3. Royal College of Obstetricians and Gynaecologists. Development of
+RCOG Green-top Guideline . Clinical Governance Advice No. 1.
+London: RCOG; 2015.
+4. Supporting women and their partners through prenatal screening
+for Down’s syndrome, Edwards’ syndrome and Patau’s syndrome
+[www.rcog.org.uk/en/guidelines-research-services/guidelines/consensus-statement-prenatal-screening/]. Accessed 20 April 2020.
+5.NHS FASP Programme Handbook . London: Public Health England;
+2018.
+6. Tabor A, Philip J, Madsen M, Bang J, Obel EB, Norgaard-Pedersen
+B. Randomised controlled trial of genetic amniocentesis in 4606
+low-risk women. Lancet 1986;1:1287 –93.
+7. Medical Research Council. Medical Research Council European
+trial of chorion villus sampling. MRC working party on theevaluation of chorion villus sampling. Lancet 1991;337:1491 –9.
+8. Smidt-Jensen SL, Permin M, Philip J, Lundsteen C, Gruning LK,
+Zachary JM, et al. [Randomized comparison of transabdominal,transcervical chorionic villi sampling and amniocentesis]. Ugeskr
+Laeger 1993;155:1446 –56.
+9. Alﬁrevic Z, Navaratnam K, Mujezinovic F. Amniocentesis and
+chorionic villus sampling for prenatal diagnosis. Cochrane Database
+Syst Rev 2017;9:CD003252.
+10. Wulff CB, Gerds TA, Rode L, Ekelund CK, Petersen OB, Tabor A. Risk
+of fetal loss associated with invasive testing following combined ﬁrst-
+trimester screening for Down syndrome: a national cohort of 147,987singleton pregnancies. Ultrasound Obstet Gynecol 2016;47:38 –44.
+11. Akolekar R, Beta J, Picciarelli G, Ogilvie C, D’Antonio F.
+Procedure-related risk of miscarriage following amniocentesis andchorionic villus sampling: a systematic review and meta-analysis.Ultrasound Obstet Gynecol 2015;45:16 –26.
+12. Beta J, Lesmes-Heredia C, Bedetti C, Akolekar R. Risk of
+miscarriage following amniocentesis and chorionic villus sampling: asystematic review of the literature. Minerva Ginecol 2018;70:215 –9.
+13. Kong CW, Leung TN, Leung TY, Chan LW, Sahota DS, Fung TY,
+et al. Risk factors for procedure-related fetal losses after mid-
+trimester genetic amniocentesis. Prenat Diagn 2006;26:925 –30.
+14. Towner D, Currier RJ, Lorey FW, Cunningham GC, Greve LC.
+Miscarriage risk from amniocentesis performed for abnormal
+maternal serum screening. Am J Obstet Gynecol 2007;196:608.e1 –5;
+discussion.e5.
+15. Odibo AO, Dicke JM, Gray DL, Oberle B, Stamilio DM, Macones GA,
+et al. Evaluating the rate and risk factors for fetal loss after chorionic
+villus sampling. Obstet Gynecol 2008;112:813 –9.
+16. Bakker M, Birnie E, Robles de Medina P, Sollie KM, Pajkrt E,
+Bilardo CM. Total pregnancy loss after chorionic villus sampling
+and amniocentesis: a cohort study. Ultrasound Obstet Gynecol
+2017;49:599 –606.
+17. Eddleman KA, Malone FD, Sullivan L, Dukes K, Berkowitz RL,
+Kharbutli Y, et al. Pregnancy loss rates after midtrimester
+amniocentesis. Obstet Gynecol 2006;108:1067 –72.
+18. Pitukkijronnakorn S, Promsonthi P, Panburana P, Udomsubpayakul U,
+Chittacharoen A. Fetal loss associated with second trimester
+amniocentesis. Arch Gynecol Obstet 2011;284:793 –7.
+19. Theodora M, Antsaklis A, Blanas K, Antsaklis P, Daskalakis G,
+Sindos M, et al. Risk for fetal loss and prematurity after 12,413second trimester amniocenteses in a single center. J Perinat Med
+2015;43:347 –51.20. Corrado F, Cannata ML, Galia TL, Magliarditi M, Imbruglia L,
+D’anna R, et al. Pregnancy outcome following mid-trimester
+amniocentesis. J Obstet Gynaecol 2012;32:117 –9.
+21. Muller F, Thibaud D, Poloce F, Gelineau M-C, Bernard M, Brochet C,
+et al. Risk of amniocentesis in women screened positive for Down
+syndrome with second trimester maternal serum markers. Prenat
+Diagn 2002;22:1036 –9.
+22. Wah YM, Leung TY, Cheng YKY, Sahota DS. Procedure-related
+fetal loss following chorionic villus sampling after ﬁrst-trimester
+aneuploidy screening. Fetal Diagn Ther 2017;41:184 –90.
+23. Lau KT, Leung YT, Fung YT, Chan LW, Sahota DS, Leung NT.
+Outcome of 1,355 consecutive transabdominal chorionic villus
+samplings in 1,351 patients. Chin Med J (Engl) 2005;118:1675 –81.
+24. Akolekar R, Bower S, Flack N, Bilardo CM, Nicolaides KH.
+Prediction of miscarriage and stillbirth at 11 –13 weeks and the
+contribution of chorionic villus sampling. Prenat Diagn 2011;31:
+38–45.
+25. Tabor A, Vestergaard CH, Lidegaard O. Fetal loss rate after
+chorionic villus sampling and amniocentesis: an 11-year national
+registry study. Ultrasound Obstet Gynecol 2009;34:19 –24.
+26. Wijnberger LD, van der Schouw YT, Christiaens GC. Learning in
+medicine: chorionic villus sampling. Prenat Diagn 2000;20:241 –6.
+27. Farrell SA, Summers AM, Dallaire L, Singer J, Johnson JA, Wilson RD.
+Club foot, an adverse outcome of early amniocentesis: disruption or
+deformation? CEMAT. Canadian Early and Mid-TrimesterAmniocentesis Trial. JM e dG e n e t 1999;36:843 –6.
+28. Winsor EJT, Tomkins DJ, Kalousek D, Farrell S, Wyatt P, Fan Y-S,
+et al. Cytogenetic aspects of the Canadian early and mid-trimester
+amniotic ﬂuid trial (CEMAT). Prenat Diagn 1999;19:620 –7.
+29. Firth HV, Boyd PA, Chamberlain P, MacKenzie IZ, Lindenbaum RH,
+Huson SM. Severe limb abnormalities after chorion villus sampling
+at 56 –66 days’ gestation. Lancet 1991;337:762 –3.
+30. NICHD. Report of National Institute of Child Health and Human
+Development Workshop on chorionic villus sampling and limb and
+other defects, October 20, 1992. Am J Obstet Gynecol 1993;169:1 –6.
+31. National Institute for Health and Care Excellence. Multiple
+Pregnancy: Antenatal Care for Twin and Triplet Pregnancies ClinicalGuideline (CG129) . London: NICE; 2011.
+32. Agarwal K, Alﬁrevic Z. Pregnancy loss after chorionic villus
+sampling and genetic amniocentesis in twin pregnancies: asystematic review. Ultrasound Obstet Gynecol 2012;40:128
+–34.
+33. Vink J, Fuchs K, D’Alton ME. Amniocentesis in twin pregnancies:
+a systematic review of the literature. Prenat Diagn 2012;32:
+409–16.
+34. Cahill AG, Macones GA, Stamilio DM, Dicke JM, Crane JP, Odibo AO.
+Pregnancy loss rate after mid-trimester amniocentesis in twin
+pregnancies. Am J Obstet Gynecol 2009;200:257.e1 –6.
+35. Toth-Pal E, Papp C, Beke A, Ban Z, Papp Z. Genetic amniocentesis
+in multiple pregnancy. Fetal Diagn Ther 2004;19:138 –44.
+36. Ko TM, Tseng LH, Hwa HL. Second-trimester genetic amniocentesis
+in twin pregnancy. Int J Gynaecol Obstet 1998;61:285 –7.
+37. Ghidini A, Lynch L, Hicks C, Alvarez M, Lockwood CJ. The risk of
+second-trimester amniocentesis in twin gestations: a case-control
+study. Am J Obstet Gynecol 1993;169:1013 –6.
+38. Kidd SA, Lancaster PAL, Anderson JC, Boogert A, Fisher CC,
+Robertson R, et al. A cohort study of pregnancy outcome after
+amniocentesis in twin pregnancy. Paediatr Perinat Epidemiol 1997;
+11:200 –13.
+39. Yukobowich E, Anteby EY, Cohen SM, Lavy Y, Granat M, Yagel S.
+Risk of fetal loss in twin pregnancies undergoing second trimester
+amniocentesis(1). Obstet Gynecol 2001;98:231 –4.
+RCOG Green-top Guideline No. 8 e13 of e15 ª2021 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16821 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+40. Millaire M, Bujold E, Morency AM, Gauthier RJ. Mid-trimester
+genetic amniocentesis in twin pregnancy and the risk of fetal loss.
+J Obstet Gynaecol Can 2006;28:512 –8.
+41. Pertusio A, Viora E, Bastonero S, Sciarrone A, Gaglioti P,
+Errante G, et al. Amniocentesis in dichorionic twin pregnancies:
+which risk of fetal loss? J Matern Fetal Neonatal Med 2014;27
+(Suppl 1):1 –437.
+42. Lenis-Cordoba N, S /C19anchez M /C19A, Bello-Mu ~noz JC, Sagal /C19a-Martinez J,
+Campos N, Carreras-Moratonas E, et al. Amniocentesis and the
+risk of second trimester fetal loss in twin pregnancies: resultsfrom a prospective observational study. J Matern Fetal Neonatal
+Med 2013;26:1537 –41.
+43. Picone O, Senat MV, Rosenblatt J, Audibert F, Tachdjian G,
+Frydman R. Fear of pregnancy loss and fetal karyotyping: a placefor third-trimester amniocentesis? Fetal Diagn Ther 2008;23:
+30–5.
+44. Gabbay R, Yogev Y, Melamed N, Ben-Haroush A, Meizner I, Pardo J.
+Pregnancy outcome after third trimester amniocentesis: a singlecenter experience. J Matern Fetal Neonatal Med 2012;25:666 –8.
+45. Gordon MC, Narula K, O’Shaughnessy R, Barth WH Jr.
+Complications of third-trimester amniocentesis using continuousultrasound guidance. Obstet Gynecol 2002;99:255 –9.
+46. Stark CM, Smith RS, Lagrandeur RM, Batton DG, Lorenz RP.
+Need for urgent delivery after third-trimester amniocentesis.
+Obstet Gynecol 2000;95:48 –50.
+47. O’Donoghue K, Giorgi L, Pontello V, Pasquini L, Kumar S.
+Amniocentesis in the third trimester of pregnancy. Prenat Diagn
+2007;27:1000 –4.48. Lawin O’Brien A, Dall’Asta AA, Tapon D, Ellis R, Lees C.
+OC20.06: late amniocentesis: is our counselling up to date?
+Ultrasound Obstet Gynecol 2015;46 (S1):44 –5.
+49. Floridia M, Masuelli G, Meloni A, Cetin I, Tamburrini E, Cavaliere
+AF, et al. Amniocentesis and chorionic villus sampling in HIV-infected
+pregnant women: a multicentre case series. BJOG 2017;124:1218 –23.
+50. Sim ~oes M, Marques C, Gonc /C223alves A, Pereira AP, Correia J,
+Castela J, et al. Amniocentesis in HIV pregnant women: 16 years
+of experience. Infect Dis Obstet Gynecol 2013;2013:914272.
+51. Mandelbrot L, Jasseron C, Ekoukou D, Batallan A, Bongain A,
+Pannier E, et al. Amniocentesis and mother-to-child humanimmunodeﬁciency virus transmission in the Agence Nationale de
+Recherches sur le SIDA et les Hepatites Virales French Perinatal
+Cohort. Am J Obstet Gynecol 2009;200:160.e1 –9.
+52. Ekoukou D, Khuong-Josses MA, Ghibaudo N, Mechali D, Rotten D.
+Amniocentesis in pregnant HIV-infected patients. Absence of
+mother-to-child viral transmission in a series of selected patients.
+Eur J Obstet Gynecol Reprod Biol 2008;140:212 –7.
+53. Davies G, Wilson RD, Desilets V, Reid GJ, Shaw D, Summers A,
+et al. Amniocentesis and women with hepatitis B, hepatitis C, or
+human immunodeﬁciency virus.
+J Obstet Gynaecol Can 2003;25:145 –
+8, 9–52.
+54. Yi W, Pan CQ, Hao J, Hu Y, Liu M, Li LI, et al. Risk of vertical
+transmission of hepatitis B after amniocentesis in HBs antigen-
+positive mothers. J Hepatol 2014;60:523 –9.
+55. Delamare C, Carbonne B, Heim N, Berkane N, Petit JC, Uzan S,
+et al. Detection of hepatitis C virus RNA (HCV RNA) in amniotic
+ﬂuid: a prospective study. J Hepatol 1999;31:416 –20.
+RCOG Green-top Guideline No. 8 e14 of e15 ª2021 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16821 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+This guideline was produced on behalf of the Royal College of Obstetricians and Gynaecologists by:
+Dr Kate Navaratnam MRCOG, Liverpool and Professor Zarko Alﬁrevic FRCOG, Liverpool
+and peer reviewed by:Mr D Fraser FRCOG, Norwich; Dr N Potdar FRCOG, Leicester; Dr E S Cooper FRCOG, Edinburgh; Dr G Kumar
+FRCOG, Wrexham; Dr A Pickersgill, FRCOG, Manchester; Mr B Kumar FRCOG, Wrexham; Sabrina O’Dwyer MRCOG,London; Ms C Lloyd, Oxford; Dr M Casillas Barrera COMEGO, M /C19exico; Mr S Karavolos MRCOG, Salford; G Salsi,
+University of Bologna, Italy; UK National Screening Committee; British Maternal & Fetal Medicine Society.
+Committee lead reviewers were: Mr S Karavolos MRCOG, Manchester and Mr A McKelvey MRCOG, Norwich.
+The Co-Chairs of the Guideline Committee were: Dr MA Ledingham FRCOG, Glasgow and Dr B Magowan FRCOG,
+Melrose.
+All RCOG guidance developers are asked to declare any conﬂicts of interest. A statement summarising any
+conﬂicts of interest for this guideline is available from: https://www.rcog.org.uk/en/guidelinesresearch-
+services/guidelines/gtg8/
+The ﬁnal version is the responsibility of the Guideline Committee of the RCOG.
+The guideline will be considered for update 3 years after publication, with an intermediate assessment of the need to update
+2 years after publication.
+DISCLAIMER
+The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical practice.
+They present recognised methods and techniques of clinical practice, based on published evidence, for consideration byobstetricians and gynaecologists and other relevant health professionals. The ultimate judgement regarding a particular
+clinical procedure or treatment plan must be made by the doctor or other attendant in the light of clinical data presented
+by the patient and the diagnostic and treatment options available.
+This means that RCOG Guideline are unlike protocols or guidelines issued by employers, as they are not intended to be
+prescriptive directions deﬁning a single course of management. Departure from the local prescriptive protocols orguidelines should be fully documented in the patient’s case notes at the time the relevant decision is taken.
+RCOG Green-top Guideline No. 8 e15 of e15 ª2021 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16821 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License

@@ -1,0 +1,222 @@
+# Extracted from: P19011 Referral for low platelets in pregnancy protocol.pdf
+# Guideline ID: p19011-referral-for-low-platelets-in-pregnancy-protocol
+# Content length: 8324 characters
+# Processing date: 1750066901.7763455
+
+P19011 Referral for low platelets in pregnancy v2.0 May 2022 Page 1 of 6 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Referral for Low Platelets in Pregnancy Protocol 
+Summary statement: How does the 
+document support patient care? To provide clearly the process of referral for low 
+platelets in pregnancy . 
+Staff/stakeholders involved in 
+development: Antenatal clinic managers, haematology, 
+consultant obstetricians, clinical effectiveness 
+midwife 
+Division: Women and Child rens 
+Department: Maternity Department 
+Responsible Person: Chief of Service 
+Author: Antenatal clinic manager 
+For use by: All staff who care and make clinical judgements for 
+pregnant women /people. 
+Purpose: To provide staff with a clear process for referral of 
+women /people with a low platelet count during 
+pregnancy. 
+This document supports: UH Sussex West maternity guidelines 
+Key related documents: UN Sussex West maternity guidelines 
+Approved by: Joint Obstetric Guideline Group (JOGG) 
+Approval date: 18th May 2022 Date uploaded: 24th May 2022 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors : Not Applicable 
+Ratification Date: Not Applicable 
+Expiry Date: May 2025 
+Review date: November 2024 
+If you require this document in another format such as Braille, large print, audio or 
+another language please contact the Trusts Communications Team 
+Reference Number: P19011 
+P19011 Referral for low platelets in pregnancy v2.0 May 2022 Page 2 of 6 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Version Date Author Status Comment 
+1.0 June 2019 Jane Milner, 
+Sophia Stone, 
+Haematology 
+both sites, 
+Lavanya Buddha Archived Developed to ensure 
+process of referral clear 
+and timely 
+2.0 May 2022 Ian Nouvel, 
+Obstetric 
+Registrar 
+ 
+Jo Collard, 
+Clinical 
+Effectiveness 
+Support Midwife LIVE  3 year review. 
+ Platelets >50 email 
+escalation added. 
+ Ensure 
+comprehensive 
+history is taken when 
+referring to 
+anaesthetists and 
+JHOC. 
+ Middle threshold 
+changed to 50 -99 
+(from 51 -99) 
+ Urgent Anaesthetic 
+referral is platelets 
+below 70 
+ 
+The interpretation and application of clinical protocols will remain the 
+responsibility of the individual clinician. 
+If in doubt contact a senior colleague or expert . 
+P19011 Referral for low platelets in pregnancy v2.0 May 2022 Page 3 of 6 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Contents 
+
+1.0 Aim of this document …………………………………………………………………………. 4 
+2.0 Scope ………………………………………………………………………………………….. 4 
+3.0 Introduction ……………………………………………………………………………………. 4 
+4.0 Abbreviations used within this protocol …………………………………………………….. 5 
+5.0 Responsibilities ………………………………………………………………………………... 5 
+6.0 Referral process for low platelets / thrombocytopenia in pregnancy ……………………. 5 
+7.0 Audit ……………………………………………………………………………………………. 5 
+References …………………………………………………………………………………………….. 5 
+Appendix 1: Referral for Low Platelets in Pregnancy Protocol …………………………………... 6 
+
+P19011 Referral for low platelets in pregnancy v2.0 May 2022 Page 4 of 6 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Referral for Low Platelets in Pregnancy Protocol 
+
+1.0 Aim of this document 
+ 
+To provide staff with a clear process for referral of women/people with a low platelet count 
+during pregnancy. 
+ 
+2.0 Scope 
+ 
+This guideline applies to all staff who care and make clinical judgements for pregnant women/people 
+including: 
+ 
+ Midwives 
+ Obstetricians 
+ Anaesthetists 
+ Haematologists 
+ 
+3.0 Introduction 
+ 
+ Thrombocytopenia occurs in 8 –10% of all pregnancies. 
+ In pregnancy it is usually mild and benign. 
+ Rare causes can be associated with severe complications for mother and bab y. 
+ 
+During pregnancy there is a general downward drift in platelet count, particularly during the 
+last trimester. This results at term in a level that is approximately 10% less than the pre -
+pregnancy level. The mechanisms for this are thought to be a combination of dilutional effects 
+and acceleration of platelet destruction across the placenta. 
+ 
+Most pregnant women /people still have platelet counts within the normal range; however, if the 
+starting count is at the lower end of the normal range, or there is a more severe drop, 
+thrombocytopenia occurs. Hence thrombocytopenia is a common finding in pregnancy. Most 
+cases are mild and have no significance for mother or fetus but, in some instances, where 
+thrombocytopenia is part of a complex clinical disorder, there can be profound and even life -
+threatening results for both mother /birthing parent and baby. The effect of pregnancy on the 
+disorder and, conversely, of the disorder on the pregnancy, mus t be taken into account. In 
+some instances, the aetiology is unique to pregnancy and the puerperium. ( RCOG 2009 ) 
+ 
+This protocol is to set out a clear referral pathway to manage new onset thrombocytopenia in 
+pregnancy. Please see CG21008 Management of high risk mate rnal medicine conditions for 
+management of pre-existing thrombocytopenia during pregnancy. 
+
+P19011 Referral for low platelets in pregnancy v2.0 May 2022 Page 5 of 6 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+4.0 Abbreviations used within this protocol 
+ 
+HELLP - Haemolysis, Elevated Liver 
+Enzymes and Low Platelet count JHOC - Joint Obstetric/Haematology Clinic 
+ANC - Antenatal Clinic FBC - Full Blood Count 
+LW - Labour Ward 
+ 
+5.0 Responsibilities 
+ 
+Midwives & Obstetricians: 
+ 
+ To access, read, understand and follow this protocol. 
+ To use their professional judgement in application of this protocol. 
+ 
+Management: 
+ 
+ To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations. 
+ To ensure the protocol is accessible to all relevant staff. 
+ 
+6.0 Referral process for low platelets / thrombocytopenia in preg nancy 
+ 
+See appendix 1 for referral flowchart. 
+ 
+7.0 Audit 
+ 
+Audit for thrombocytopenia in pregnancy will come under the scope of audit for: CG21008 
+Management of high risk maternal medicine conditions . 
+ 
+References 
+ 
+B. Myers. 2009. Review: Thrombocytopenia in pregnancy TOG11_3_177 -183.qxd 
+(rcog .org.uk) RCOG (accessed 26/04/22) 
+P19011 Referral for low platelets in pregnancy v2.0 May 2022 Page 6 of 6 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 1: Referral for Low Platelets in Pregnancy Protocol 
+Joint Haematology and Obstetric Clinic (JHOC ) 
+
+Platelets <150 but >100 9/L 
+
+ Rule out Pre -eclampsia/HELLP 
+syndrome 
+Check - B12, folate, blood film, 
+Hepatitis C and HIV 
+(If not checked at booking) 
+Take FBC 4 weekly until 32/40 
+then 2 weekly thereafter 
+Rule out Pre -eclampsia/HELLP 
+syndrome 
+Check - B12, folate, blood film, 
+Hepatitis C and HIV 
+(If not checked at booking) 
+Take FBC 4 weekly until 32/40 
+then 2 weekly thereafter 
+Anaesthetic referral - 
+Urgently if platelets < 70 9/L Platelets 50-99 9/L 
+(At any point in the pregnancy) 
+ 
+Refer routinely to JHOC via ANC 
+for review and management plan 
+Platelets <50 9/L 
+(At any point in the pregnancy ) 
+ 
+Refer urgently to JHOC, email 
+both Dr John Laurie and either 
+Miss Buddha (if Worthing) or 
+Miss Stone (if Chichester) and 
+anaesthetics via ANC/LW for 
+review and management plan. Rule out Pre -eclampsia/HELLP 
+syndrome and assess urgently 
+for bleeding / bruising symptoms 
+Check - B12, folate, blood film, 
+Hepatitis C and HIV 
+(If not checked at previously ) 
+Take FBC 4 weekly until 32/40 
+then 2 weekly thereafter 
+For EITHER any low platelets with significant bleeding OR 
+if platelets < 30 discuss with on call haematologist 
+ 
+ Urgent obstetric, haematology and anaesthetic review required for platelets <50 9/L. Contact 
+ANC or labour ward as soon as possible to arrange. 
+ All referrals to JHOC are made by calling ANC (both sites). 
+ Discuss urgently with ANC/LW and on-call obstetric doctor if there are any bleeding symptoms. 
+ Liaise with Haematologist if JHOC appointment cannot be offered in a timely manner. 
+ 
+When referring - please include a brief medical background including recent medication changes 
+and previous haematological investigations.

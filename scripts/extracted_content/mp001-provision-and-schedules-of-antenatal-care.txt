@@ -1,0 +1,1317 @@
+# Extracted from: MP001 Provision and Schedules of Antenatal Care.pdf
+# Guideline ID: mp001-provision-and-schedules-of-antenatal-care
+# Content length: 66215 characters
+# Processing date: 1750066901.042272
+
+Provision and Schedules of Antenatal Care (RSCH PRH only ) 
+MP001 
+University Hospitals Sussex NHS Foundation Page 2 of 33 
+
+Provision and 
+Schedules of 
+Antenatal Care 
+
+Maternity Protocol : MP001 
+ Date agreed: April 2022 
+
+Provision and Schedules of Antenatal Care (RSCH PRH only ) 
+MP001 
+University Hospitals Sussex NHS Foundation Page 3 of 33 
+
+Guideline Reviewer: Kate Morgan, Maria Stafford, Rebecca Elms 
+Version: 4.4 
+Approval Committee: Service users ’s Services Safety and Quality Committee 
+Date agreed: 
+Amended Date: April 2022 
+February 2019, July 2019, December 2019, May 2020, August 2020, 
+November 2020 , March 2022 
+Review date: April 2025 
+Cross reference: CO16 Domestic Abuse Policy 
+MP011 Obesity 
+MP010 Anti D and Rhesus Negative 
+MP013 Safeguarding Children and Child Protection 
+MP014 with Mental Health Problems 
+MP017 DNA Appointments 
+MP033 Induction of Labour 
+MP046 Breech & ECV 
+Antenatal Screening Protocols: 
+MP002 Fetal Anomaly Screening Programme 
+MP003 Sickle Cell & Thalassaemia 
+MP004 Infections in Pregnancy - HIV 
+MP005 Infectious Diseases – Rubella Antibody 
+MP006 Infectious Diseases – Hepatitis B 
+MP007 Infectious Diseases – Syphilis 
+MP008 Infections in Pregnancy Provision and Schedules of Antenatal Care (RSCH PRH only ) 
+MP001 
+University Hospitals Sussex NHS Foundation Page 4 of 33 
+
+Contents 
+Key Principles ................................ ................................ ................................ ................................ .. 4 
+Scope ................................ ................................ ................................ ................................ ............... 4 
+Responsibilities ................................ ................................ ................................ ............................... 4 
+1 Booking and Antenatal ................................ ................................ ................................ ......... 5 
+2 Process and responsibilities of staff groups for initial contact and booking ....................... 5 
+3 Late Bookers ................................ ................................ ................................ ......................... 5 
+4 Concealed Pregnancy ................................ ................................ ................................ ........... 7 
+5 For Service users coming in from Outside the UK (Migrant Service users ) ......................... 7 
+6 Communication and Language Support ................................ ................................ .............. 8 
+7 Identification of Service users with Risk Factors and Reviewing Previous Notes ................ 9 
+8 Missed Appointments ................................ ................................ ................................ ........ 11 
+9 The Notes and Antenatal Booking Visit ................................ ................................ ............. 11 
+10 Calculating the EDD (Estimated Delivery Date) ................................ ................................ . 12 
+11 Responsibilities of Relevant Staff Groups at Booking ................................ ........................ 13 
+12 Responsibilities of all Health professionals ................................ ................................ ....... 13 
+13 Paperwork to be Completed at Booking Visit ................................ ................................ .... 13 
+14 Schedule of Care ................................ ................................ ................................ ................ 14 
+15 Named Midwife, choice of care and continuity of care ................................ .................... 16 
+16 Notes ................................ ................................ ................................ ................................ .. 17 
+17 Symphysis Fundal Height (SFH) measurement ................................ ................................ .. 17 
+18 Referral of Service users for additional care ................................ ................................ ...... 19 
+19 Process of Referral of Service users in whom risks are identified during the 
+clinical assessment 
+20 Process for referral back to Midwifery Led Care ................................ ............................... 20 
+21 References ................................ ................................ ................................ ......................... 20 
+Appendix A - Antenatal Care Schedule in Uncomplicated Pregnancy ................................ .......... 22 
+Appendix B - Calculating the EDD ................................ ................................ ................................ . 26 
+Appendix C - Calculating the EDD flow chart ................................ ................................ ................ 27 
+Appendix D - Types of Referrals ................................ ................................ ................................ .... 29 
+Appendix E - Calculating Symphysis Fundal Height Measurement ................................ .............. 32 
+Appendix F – Criteria for Booking Growth Scans ................................ ................................ .......... 33 Provision and Schedules of Antenatal Care (RSCH PRH only ) 
+MP001 
+University Hospitals Sussex NHS Foundation Page 5 of 33 
+
+Key Principles 
+ 
+A protocol is a set of measurable, objective standards to determine a course of action. 
+Professional judgement may be used in the application of a protocol. 
+
+Scope 
+ 
+This protocol applies to: 
+• All childbearing service users 
+ 
+Responsibilities 
+ 
+Midwives & Obstetricians : 
+• To access, read, understand and follow this guidance 
+• To use their professional judgement in application of this protocol 
+ 
+This guidance is for midwives and doctors working in and with Brighton & Sussex 
+University Hospitals Trust Maternity Services. The guidance is not rigid and should be 
+tailored to the individual circumstances of each pregnant person . If the guidance is 
+not being followed, documentation of the reasoning and/or justification is essential, 
+with clear documentation of alternative plans and discussions 
+ 
+Management Team : 
+• To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations 
+• To ensure the protocol is accessible to all relevant staff 
+• To ensure the protocol is available to service users on request Provision and Schedules of Antenatal Care (RSCH PRH only ) 
+MP001 
+University Hospitals Sussex NHS Foundation Page 6 of 33 
+
+1 Booking and Antenatal: 
+The process for ensuring that service users have their first full booking visit and 
+Badger Net record completed by 10 completed weeks of pregnancy. 
+The following points need to be reviewed and discussed at each point of contact in 
+the antenatal period : 
+• Risk assessment 
+• Place of Birth 
+• Personalised care plans 
+
+2 Process and responsibilities of staff groups for initial contact and 
+booking: 
+ 
+2.1 Newly pregnant women and people will self -refer via the e -referral system 
+on the UH Sussex website . The GP surgeries sign post them to this process. 
+The Maternity Office will generate a scan appointment and apply the 
+named community midwife who is linked to their GP surgery. 
+2.2 Pregnant women and people will be informed prior to their booking 
+appointment that they need to download the Badgernet app and to 
+complete the pre booking questionnaire prior to attending their booking 
+appointment. The midwife should ensure women and people have access to 
+the app at their first contact with the woman and pregnant person . 
+2.3 At the booking appointment a booking questionnaire is completed on 
+BadgerNet by the midwife with the woman and person (demographics, 
+medical, social, psychological, obstetric history). The midwife then needs 
+to refer all women and people to the Antenatal Clinic Lead Midwife via 
+BadgerNet . 
+2.4 The booking visit and the completion of the BadgerNet records should 
+be completed by the midwife by the 10th completed week of pregnancy. 
+ 
+3 Late bookers: 
+A late booking is defined as presenting for maternity services after 20 weeks of 
+pregnancy. 
+3.1 Pregnant women and people over >12 weeks and un -booked: Midwife to 
+complete a late booking form when online e -referral received and ensure a 
+woman and person has been booked within 2 weeks of initial referral. The 
+process is followed as above with the community midwife responsible for 
+ensuring referrals are actioned urgently. A pre-booking appointment is not 
+required. Provision and Schedules of Antenatal Care (RSCH PRH only ) 
+MP001 
+University Hospitals Sussex NHS Foundation Page 7 of 33 
+ 3.2 Scans: 
+If <20 weeks maternity office at PRH will do a scan referral to scan department, 
+if >20 weeks it is the booking midwife’s responsibility to refer for scan. 
+ 
+In relation to fetal anomaly screening please refer to Maternity Protocol: 
+MP002 Antenatal screening: Fetal Anomaly Screening Programme Provision and Schedules of Antenatal Care (RSCH PRH only ) 
+MP001 
+University Hospitals Sussex NHS Foundation Page 8 of 33 
+
+3.3 Women and people who have received A/N care during this pregnancy, but 
+from another Trust should be seen by a community midwife within 2 weeks 
+but will not usually require a scan unless clinically indicated . 
+3.4 Where a midwife appointment is not available in the midwives own clinic the 
+midwife will make arrangements for the woman and person to be seen for 
+booking at another available clinic as soon as possible. 
+3.5 The community midwife should undertake a booking appointment and 
+complete the BadgerNet smart booking form . The reason for late 
+booking should be documented on BadgerNet and on the antenatal 
+lead midwife referral . 
+3.6 Where women and people have booked at another trust and are transferring 
+care to UH SUSSEX , the booking midwife should recommend that all booking 
+bloods [to include blood tests for screening: Infectious diseases and sickle cell 
+and thalassaemia] are repeated. This ensures a result is held within this NHS 
+trust . Where women and people decline to have bloods repeated the 
+booking midwife should ensure the following: 
+ 
+• Advise the woman and person to have FBC and blood group 
+repeated as a minimum 
+• Scan and upload hard copies of blood results from the previous trust 
+to BadgerNet 
+• Hand written results from another trust are not acceptable. Where 
+there are no hard copies of previous results attempts should be made 
+to access the results from the previous trust. Where no hard copies 
+are available and the pregnant person continues to decline screening 
+bloods, a 
+blood decline form should be sent to the Service users ’s Health 
+Advisor [See Antenatal Screening policies for HIV, Hep B and 
+Syphilis and sickle cell and thalassaemia for more information]. 
+• The service users ’s decision to decline repeat screening should be 
+clearly documented on BadgerNet 
+3.7 If booking is late due to a transfer from another area, the midwife transfers 
+previous antenatal information from service users ’s hand held notes to this 
+Trust’s maternity notes. Where risk factors are identified midwife to consider 
+(following discussion with the obstetric team) requesting copies of any 
+previous notes from the relevant Trust. If a pregnant person has had a 20/40 
+scan in the UK she does not need a repeat, but booking bloods need repeating. 
+3.8 If the booking falls on or after 20 weeks and there is no history of antenatal 
+care, the pregnant person should be advised to see a Consultant 
+Obstetrician. The referral by the midwife can be made for the next 
+available Consultant appointment in ANC via BadgerNet or by phone /email 
+to the Maternity Office . Provision and Schedules of Antenatal Care (RSCH PRH only ) 
+MP001 
+University Hospitals Sussex NHS Foundation Page 9 of 33 
+
+3.9 If there are concerns for the pregnant person and her unborn baby’s welfare, 
+a referral to be sent to children’s services electronically via the PANDA Portal , 
+copying in community team leaders and safe guarding team . See Maternity 
+Protocol: MP013 Safeguarding Children and Child Protection for further 
+information. 
+
+4 Concealed Pregnancy: 
+ 
+A concealed pregnancy is when a pregnant person knows she is pregnant but 
+does not tell anyone; or a pregnant person appears genuinely not to be aware 
+she is pregnant. 
+ 
+Concealment may be an active act or a form of denial where support from 
+appropriate carers and health professionals is not sought. This can become apparent 
+at any stage of the pregnancy. Concealment of pregnancy may be revealed late in 
+pregnancy; in labour; or following delivery. The birth may be unassisted and may 
+carry additional risks to the child and mother's welfare. 
+ 
+In all cases where a young person /pregnant person arrives at the hospital in labour 
+or following an unassisted delivery, which has been the result of a concealed 
+pregnancy, an immediate referral must be made to Children's Social Care. Please see 
+Maternity Protocol: MP013 Safeguarding Children and Child Protection for further 
+information. 
+ 
+The baby should not be discharged until a Strategy Meeting has been held and 
+relevant assessments undertaken. This Strategy Meeting must consider the initiation 
+of a psychiatric assessment. 
+ 
+Where the referral is received out of hours in relation to a baby born as the result of 
+a concealed pregnancy, the Emergency Out of Hours Service will take steps to 
+prevent the baby being discharged from hospital until Children's Social Care have 
+been informed and given their approval for discharge, in most instances this would 
+be after a Child and Family Assessment has been undertaken. The baby should not 
+be discharged out of hours. 
+
+5 For Service users coming in from Outside the UK (Migrant Service users ): 
+ 
+If a pregnant person has had no previous full medical examination in the UK the 
+midwife should make an urgent referral for a full medical examination with the GP 
+in order that a full medical history can be undertaken and clinical assessment 
+made of their overall health using an interpreter if necessary. The referral date and 
+GP appointment date and time must be documented on the pregnant person ’s 
+BadgerNet record . Provision and Schedules of Antenatal Care (RSCH PRH only ) 
+MP001 
+University Hospitals Sussex NHS Foundation Page 10 of 33 
+
+6 Communication and Language Support: 
+6.1 Service users for whom English is not their first language 
+6.1.1 The Midwife should assess the need for an interpreter at the first 
+booking appointment and if required make arrangements with the 
+interpreting service for the booking appointment. 
+6.1.2 It is not acceptable for a family member to act as the interpreter 
+because there can be confusion about medical terminology or the 
+potential for misrepresentation of information. 
+6.1.3 The use of an interpreter needs to be documented on BadgerNet 
+and a plan made for future antenatal visits, labour and birth and the 
+postnatal period. If referral to the hospital is necessary the 
+interpreting service should be arranged for the time of the 
+appointment. 
+6.1.4 The interpreting service can be arranged by midwives and doctors or 
+delegated to support staff. Reception staff should also be made aware 
+of the importance of the need to plan for future visits. 
+6.1.5 48 hours ‘notice is required to arrange the attendance of an 
+interpreter. 
+6.1.6 Contact the service either on line at www.sussexinterpreting.org.uk or 
+through the relevant community midwives office stating the language 
+you require. Please give as much detail of the specific language or 
+dialect as possible. 
+6.1.7 If there needs to be more than one session booked please complete 
+the booking form (available on the UHSUSSEX Intranet). 
+ 
+RSCH & PRH Sussex Interpreter service 
+Office hours Out of office hours & Sat/Sun 
+01273 702 005 07811 459 315 
+01273 380013 
+Fax 01273 234 787 
+
+6.2 Service users with other communication difficulties 
+BSL: British Sign Language 
+Non Emergency: 08445 938443 
+Emergency: 07947 714040 
+Online booking: www.actiondeafness.org.uk 
+6.3 For service users with mental health difficulties please see Maternity 
+Protocol MP014: Service users with Mental Health Problems . Provision and Schedules of Antenatal Care (RSCH PRH only ) 
+MP001 
+University Hospitals Sussex NHS Foundation Page 11 of 33 
+ 
+7 Identification of Service users with Risk Factors and Reviewing 
+Previous Notes: 
+7.1 Timing of risk assessments: Risk assessment should be undertaken at booking 
+by the midwife. At each point of contact with a health professional this initial 
+risk assessment should be reviewed and risk status altered accordingly with 
+appropriate referrals and individual plan of care as required. This should be 
+clearly documented on BadgerNet . 
+ 
+7.2 Following booking the community midwife should complete an Antenatal 
+Clinic Lead Midwife referral on BadgerNet . This referral has details of medical, 
+social, psychiatric and previous and current obstetric history that will have 
+been gathered from communication between the midwife and pregnant 
+person at the booking appointment. A risk assessment will be made based on 
+the information given. A list of the medical conditions to be considered 
+(including anesthetic and psychiatric history), factors from previous 
+pregnancies, lifestyle history as part of the risk assessment are in Appendix D. 
+
+7.3 The referral will be reviewed by the A/N lead midwife who will identify risk 
+factors (see Appendix D for list) and offer service users appointments in 
+antenatal clinic to meet with the obstetric team, or specialist midwife as 
+appropriate (see Appendix D for list of types of referrals). An appointment will 
+be generated by the ward clerks, put on the maternity computer system and 
+sent to service users by post with an appointment time, date and location. 
+ 
+7.4 The process for arranging the availability of health notes from previous 
+pregnancies that are required for review by clinicians: all service users notes 
+from previous pregnancies are requested from the main medical library and 
+sent to the maternity unit storage for easy access. 
+7.4.1 At RSCH the ward clerks input the booking data and request the 
+previous obstetric notes to be sent to L13 RSCH 
+7.4.2 At PRH the midwife or ward clerk inputs the booking data and request 
+the previous obstetric notes to be sent to the maternity office 2nd 
+Floor PRH 
+7.5 Identification which service users ’s health notes from previous pregnancies 
+are required for review by clinicians: If service users are referred to ANC (i.e. 
+service users that have been referred to the obstetric antenatal clinic for an 
+obstetric or anaesthetic review due to identified risk factors during the 
+booking process) the previous obstetric notes will be pulled by the ward clerks 
+ready for their clinical appointment where they will be reviewed by the 
+clinician. Should risk factors occur during pregnancy the notes can be accessed 
+by clinicians or ward clerks internally within the maternity unit. Provision and Schedules of Antenatal Care (RSCH PRH only ) 
+MP001 
+University Hospitals Sussex NHS Foundation Page 12 of 33 
+
+7.6 If service users have identified neonatal risk factors e.g. family history or 
+inherited metabolic disorders such as MCADD, a referral to a Neonatal 
+Consultant should be generated for care planning and discussion regarding 
+the implications of this risk factor (in line with NPSA - rapid response alert 
+NPSA/2011/RRR002) 
+7.7 If service users have identified Child Protection issues the previous obstetric 
+notes will be reviewed by the Child Protection Lead during the antenatal 
+period (see MP013: Safeguarding Children and Child protection for more 
+detail on process). 
+7.8 If service users arrive on labour ward or DAU with complications clinicians 
+can access and review the previous obstetric notes by asking the ward 
+clerk to identify and pull the notes for review (daytime) or by accessing 
+the notes themselves (night -time). 
+7.9 If previous pregnancy/birth has occurred in another maternity unit (and there 
+is an indication to review them during the current pregnancy) clinicians should 
+attempt to request a copy of them from the unit where they are held. This 
+attempt should be documented on BadgerNet . 
+7.10 Risk assessment for pre-eclampsia : 
+A risk assessment relating to pre -eclampsia should be undertaken by 
+midwives at booking. (NICE 2013). Service users will be deemed to be high, 
+moderate or low risk of developing pre -eclampsia. Community midwives will 
+advise the service users on their risk assessment outcome. This will be 
+documented on BadgerNet . 
+ 
+Risk assessment in relation to prevention of developing pre- eclampsia: 
+ 
+Service users at high risk of developing pre-eclampsia 
+Risk Factors (any of the following) Plan of care 
+ Hypertensive disease during a previous 
+pregnancy If any of these risk factors 
+present: 
+1. Advise to take 150mg 
+aspirin daily in the evening 
+from 12 weeks gestation 
+until 36 weeks of 
+pregnancy. 
+2. Advise consultant review in 
+ANC at 16 weeks Chronic hypertension 
+ Chronic kidney disease 
+ Autoimmune disease 
+(e.g. systemic lupus erythematosis or 
+antiphospholipid syndrome) 
+ Type 1 or 2 Diabetes 
+
+Service users at moderate risk of developing pre-eclampsia 
+Risk Factors (any 2 of the following) Plan of care 
+ First pregnancy If any 2 of these risk factors 
+present 
+1. Advise to take 150mg Aged 40 or over 
+ Pregnancy interval of more than 10 years Provision and Schedules of Antenatal Care (RSCH PRH only ) 
+MP001 
+University Hospitals Sussex NHS Foundation Page 13 of 33 
+
+ BMI of 35 kg/m² or more at first visit 
+(offer referral to Consultant ANC at 34/40 as 
+per protocol) aspirin daily in the evening 
+from 12 weeks gestation 
+until 36 weeks of pregnancy. 
+2. Continue usual care 
+pathways (refer to ANC 
+should signs / symptoms of 
+pre-eclampsia become 
+apparent) Family history of pre-eclampsia 
+ Multiple pregnancy 
+(offer referral to Consultant ANC at 16/40 as 
+per protocol) 
+
+Service users who are deemed high risk or with 2 moderate risk factors 
+Community midwives will provide both verbal and written information 
+recommending service users to take 150mg aspirin daily in the evening 
+from 12 weeks gestation until 36 weeks of pregnancy. 
+7.10.1 Service users will be given 2 choices that will be clearly outlined 
+in the leaflet: 
+• To buy the aspirin themselves and self -medicate appropriately as 
+instructed (packet of Aspirin costs about 25p) 
+• Use tear off slip in Aspirin leaflet to be collected from any pharmacy, 
+needs to be signed by community Midwife 
+7.10.2 Service users at high risk of developing pre eclampsia will also be 
+offered a referral to a consultant ANC by 16 weeks for a review and 
+plan of care. 
+7.10.3 Service users at moderate risk can continue with the usual care 
+pathway unless there is a deviation from the norm and a referral is 
+indicated. 
+7.10.4 A plan of care outlining the above will be clearly documented on 
+BadgerNet . 
+ 
+8 Missed Appointments: 
+Please refer to Maternity protocol MP017: DNA appointments 
+ 
+9 The notes and antenatal booking visit: 
+ 
+9.1 The first antenatal contact or 'booking' visit is the most important and detailed 
+of all visits and gives an opportunity to assess general health and to start 
+making forward -looking plans for pregnancy, birth and parenthood. It is 
+considered to be part of the clinical risk assessment process. The following 
+should be considered and documented as part of the risk assessment: 
+ 
+9.1.1 Medical conditions - see Appendix D for conditions to be considered / 
+referred Provision and Schedules of Antenatal Care (RSCH PRH only ) 
+MP001 
+University Hospitals Sussex NHS Foundation Page 14 of 33 
+
+9.1.2 Anaesthetic risks - see Appendix D for conditions to be considered / 
+referred 
+9.1.3 Psychiatric history - see Appendix D for conditions to be considered / 
+referred 
+9.1.4 Factors from previous pregnancies - see Appendix D for conditions to 
+be considered / referred 
+9.1.5 Lifestyle factors - see Appendix D for conditions to be considered / 
+referred 
+9.1.6 Identification of service users who will decline blood / blood 
+products ref MP053: Obstetric Haemorrhage ) 
+9.1.7 Appropriateness of place of birth (based on risk assessment) 
+9.1.8 Following the risk assessment there should be the development of an 
+individual management plan for service users in whom risks are 
+identified. The Midwife should document the risk assessment and 
+individual management plan and make the appropriate referrals, 
+recording dates / times of appointments on the pregnant person ’s 
+BadgerNet record . 
+ 
+9.2 All maternity care will be documented on the BadgerNet system. All service 
+users will have access to their own maternity record via the badgernotes 
+app. Service users can access their maternity notes via the app on their 
+phones or on a computer via the internet. 
+9.3 The Maternity BadgerNet records are designed to be multi -disciplinary. All 
+professionals who provide maternity care should document this within the 
+BadgerNet records. 
+9.4 For service users who do not have access to the internet or a mobile 
+phone, all information entered onto BadgerNet should be printed and 
+given to the pregnant person to carry as a handheld record. 
+9.5 The BadgerNet maternity records include: 
+9.4.1 booking data and pre conception details as appropriate 
+9.4.2 clinical test results including ultrasonic scans, antenatal screening 
+tests 
+9.4.3 subsequent antenatal visits and examination 
+9.4.4 antenatal in-patient summaries, blood test report 
+9.4.5 Documented individualised antenatal risk assessment that is regularly 
+reviewed throughout pregnancy 
+9.4.6 Development of an individualised management plan for service 
+users in whom risks are identified during the clinical risk 
+assessment. 
+
+10 Calculating the EDD (Estimated Delivery Date) Provision and Schedules of Antenatal Care (RSCH PRH only ) 
+MP001 
+University Hospitals Sussex NHS Foundation Page 15 of 33 
+ Refer to Appendix B 
+
+11 Responsibilities of relevant staff groups at booking: 
+ 
+11.1 It is the responsibility of the midwife undertaking the booking assessment to 
+ensure that: - 
+11.1.1 The midwife completes antenatal booking form on BadgerNet . If a 
+pregnant person has completed some of the data on the form prior 
+to the appointment, the midwife must check all details on the form 
+with the pregnant person to ensure full and accurate completion. 
+11.1.2 An accurate history is taken and documented using the 
+BadgerNet system. 
+11.1.3 A full risk assessment must be recorded and referrals made 
+appropriately. The risk factors will be reviewed at subsequent 
+antenatal appointments and at the onset of labour. 
+11.1.4 Give the pregnant person an overview of the antenatal schedule 
+(Appendix A ) and how the information & notes are intended to be 
+used. 
+11.1.5 Ensure the pregnant person knows who their named midwife is and 
+that this is documented on BadgerNet , how to contact a midwife and 
+is aware of the correct urgent/non urgent contact numbers. 
+11.1.6 Give the leaflets (or information about accessing leaflets) and discuss 
+the information contained therein in line with the schedule of care 
+(below). All discussions should be documented fully on BadgerNet . 
+11.1.7 Encourage the pregnant person to read the information and guidance 
+information within their BadgerNet records and to consider and 
+document their preferences for labour and birth and to document any 
+questions she wishes to discuss. This should be reviewed and actioned 
+at every subsequent point of contact. 
+11.1.8 Ensure service users are signposted to Trust website and social 
+media pages for further information. 
+
+12 Responsibilities of all Health Professionals: 
+12.1 Give the leaflets (or information about accessing leaflets) and discuss the 
+information contained therein in line with the schedule of care (below). All 
+discussions should be documented fully in the handheld notes. 
+12.2 Health professionals who take blood/specimen tests are responsible for full 
+documentation, the follow up of results within 10 days and subsequent 
+action/referrals are made where appropriate. Health professionals who 
+provide care to service users at any point are responsible to ensure all 
+blood/specimen tests are followed up, documented, reviewed and action 
+taken where appropriate. 
+ 
+13 To be completed at booking visit: Provision and Schedules of Antenatal Care (RSCH PRH only ) 
+MP001 
+University Hospitals Sussex NHS Foundation Page 16 of 33 
+
+Antenatal Booking 
+Assessment • Completed at the time of booking by the midwife on the pregnant person ’s 
+BadgerNet record 
+• This includes the pregnant person ’s social, medical (including anaesthetic), 
+obstetric history and an assessment of mental health 
+• This includes documentation of the booking and risk assessment. It 
+also provides a structured approach for ongoing care provision both 
+antenatally and in labour. 
+• A referral to the Antenatal Clinic Lead Midwife via BadgerNet on 
+completion of the booking assessment which will be reviewed to 
+generate appointments with obstetric and anaesthetic teams. 
+ 
+Maternity Risk 
+Assessment • The booking documentation on the BadgerNet system offers a 
+thorough risk assessment of a pregnant person 's social, lifestyle, 
+medical (including anaesthetic), obstetric and mental health risk 
+factors 
+• If any risk factors are identified an individualised management plan should 
+be formulated and documented clearly on BadgerNet . A referral may be 
+indicated as part of this management plan and this need should be clearly 
+communicated via ANC Lead Midwife referral on completion of the 
+booking assessment . 
+• The risk assessment and management plan should be reviewed at each visit 
+and adjusted if indicated 
+Appropriate 
+Screening Referral 
+Form • UHSUSSEX Scan request form 
+• Quadruple Test Form 
+• UHSUSSEX combined screening form 
+Blood Test Forms • For all tests obtained with consent 
+• Ensure family origin details are included on antenatal screening booking 
+blood form 
+ 
+Other Referrals that 
+may be required at 
+booking • Antenatal Screening Coordinator 
+• Smoking Cessation Referral Form 
+• If risk factors identified refer to ANC 
+• Dietician & DAU for GTT (as per Obesity Protocol) 
+• One Stop Clinic (if substance use disclosed) 
+• Young person’s pregnancy 
+• Mental Health Team 
+• Claude Nicole Clinic 
+• Social Services Referral Form 
+
+14 Schedule of Care: 
+The schedule of antenatal care should be holistic and encompass the needs and wishes 
+of the pregnant person . It should be stressed that these are the minimum and if 
+service users require additional consultations they should be encouraged to make the 
+appointments. ( See Appendix A for detail ) Provision and Schedules of Antenatal Care (RSCH PRH only ) 
+MP001 
+University Hospitals Sussex NHS Foundation Page 17 of 33 
+
+14.1 Leaflets, information and discussion 
+Leaflets can be accessed via the badgernotes app or service users can be advised to 
+access them via the trust Website where they can be downloaded. Service users 
+who do not have access to the internet should be given paper copies of the leaflets. 
+This should be documented on BadgerNet 
+14.2 Leaflets (or information about accessing leaflets) should be given routinely at 
+the times identified (see Appendix A) and documented in the maternal notes. 
+14.2.1 The following leaflets (or information about accessing leaflets) should 
+be given as follows (where clinically indicated) alongside a verbal 
+discussion. This should be documented in the maternal notes: Vaginal 
+Birth After Caesarean (VBAC) Leaflet – to be given post -natally to 
+service users who have has a first LSCS when discharged home. To be 
+given to all service users who have had a previous LSCS when booking 
+for subsequent pregnancies at booking. 
+14.2.2 Aspirin In Pregnancy leaflet 
+14.2.3 Fetal Movements leaflet / Information 
+14.2.4 Homebirth leaflet 
+14.2.5 Caesarean Section leaflet – to be given to service users at time of 
+booking a planned LSCS 
+14.2.6 External Cephalic Version (ECV) leaflet – to be given to service users 
+when a breech presentation is discovered any time after 34 weeks of 
+pregnanc y: With a discussion of options 
+14.2.7 Declining Blood and Blood products leaflet – at the time this issue is 
+identified 
+14.2.8 General Anaesthetic leaflet: 
+All service users having a planned LSCS when this is 
+decided and booked 
+All service users with known Placenta Praevia as soon as identified 
+All service users with known factors that will make them at 
+high risk of requiring a general anaesthetic 
+14.2.9 Care of the Perineum leaflet (perineal repair) – given to all service 
+users who suffer a 3rd and 4th degree tear during the initial postnatal 
+period prior to discharge home 
+ 
+14.3 Responsibility of staff groups about information giving and leaflets: Provision and Schedules of Antenatal Care (RSCH PRH only ) 
+MP001 
+University Hospitals Sussex NHS Foundation Page 18 of 33 
+
+14.3.1 Midwife providing care should ensure that all leaflets and information 
+that is required has been given (or directed to via the website) at the 
+appropriate time and format. If this has not occurred the midwife is 
+responsible for providing the information when possible. Any leaflets 
+/ information given should be documented by the midwife in the 
+BadgerNet notes. 
+14.3.2 Other health professionals such as obstetricians, phlebotomists and 
+physiotherapists are responsible for giving leaflets relevant to the 
+specific care they are providing at the time. Any leaflets / information 
+given should be documented by the health professional in the 
+BadgerNet notes. 
+ 
+14.4 Process for providing information to service users who have 
+communication or language support needs: 
+ 
+14.4.1 Leaflets in other languages are available viaTrust website ”. 
+14.4.2 Leaflet can also be explained using an interpreter at an appointment. 
+14.4.3 Service users with other communication difficulties: midwives should 
+make an individual assessment of their requirements and 
+provideinformation in a format that is acceptable for the pregnant 
+person . A Team leader can provide support and advice for midwives 
+and service users about information giving and care planning. 
+14.4.4 Health professionals should document fully all discussions and 
+information given, including any leaflets, in the BadgerNet notes. 
+
+15 Named Midwife, choice of care and continuity of care: 
+15.1 It is the midwife’s responsibility, at initial contact, to inform the pregnant 
+person of the name of the midwife who will have overall responsibility for her 
+community based care. The name of the midwife and the community team 
+should be documented on BadgerNet at this first contact. The service users 
+will be able to view this on the badgernotes app. 
+15.2 Midwives in GP surgeries can only see service users registered to that practice. 
+15.3 If a pregnant person requests to be transferred to another named midwife she 
+can contact the community manager via the community midwives office (each 
+site) for discussion. Provision and Schedules of Antenatal Care (RSCH PRH only ) 
+MP001 
+University Hospitals Sussex NHS Foundation Page 19 of 33 
+
+15.4 Continuity of care is what we ideally want to provide at UHSUSSEX NHS Trust. 
+In order to achieve this each community midwife is attached to a GP surgery 
+and will be the named midwife there. This midwife will, with the exception of 
+annual leave, sickness or mandatory training, provide regular antenatal care 
+for the service users linked to that GP surgery. Cover will be provided by 
+another community midwife in the same team when required. Where service 
+users request more flexibility with antenatal appointments in the community, 
+continuity of the named midwife will be affected, and service users may be 
+seen by a number of different midwives in that community team. 
+ 
+16 Notes: 
+The schedule is a guide for the minimum standard of care in an uncomplicated 
+pregnancy. The recommended number of appointments is between 6 and 11 and 
+multiparous service users are likely to need less than primiparous service users . A 
+function for each appointment should be identified. 
+
+17 Symphysis Fundal Height (SFH) measurement: 
+From 24 weeks gestation the Symphysis Fundal Height (SFH) measurement (See 
+Appendix E ) should be used to assess fetal growth. The SFH measurement should be 
+entered into BadgerNet during documentation of the antenatal assessment. The 
+measurement will be automatically plotted on the intergrowth chart which is 
+available to view on BadgerNet . 
+17.1 Service users with a single SFH which plots BELOW the 10th centile or serial 
+measurements which demonstrate slow or static growth by crossing lower 
+centiles (a distance of approx. 3cms) should be referred ultrasound (USS) 
+measurement of fetal growth via the PANDA Portal (RCOG, 2013). 
+17.2 Service users with a SFH measurement of ≥ 3cm MORE than gestation in 
+weeks should NOT be referred for an USS providing there are no other risk 
+factors (NICE, 2008). The midw ife is to check for glycosuria : If positive refer for 
+GTT. If negative continue with normal A/N care pathway. 
+17.3 Service users in whom measurement of SFH is inaccurate (for example: BMI 
+> 35, large fibroids, hydramnios) should be referred for serial assessment of 
+fetal size using ultrasound (RCOG, 2013). 
+17.4 If polyhydramnios is suspected from clinical review and abdominal palpation 
+service users should be referred in to DAU for an urgent obstetric review and 
+ultrasound scan (ideally the scan should be performed within 48hours of 
+referral being received). 
+17.5 Routine listening in or auscultation is unlikely to have any predictive value and 
+is not recommended. However, it is acknowledged that many service users 
+will 
+request FH auscultation and this should be discussed and service users ’s 
+informed choice supported and documented. 
+ 
+18 Referral of service users for additional care Provision and Schedules of Antenatal Care (RSCH PRH only ) 
+MP001 
+University Hospitals Sussex NHS Foundation Page 20 of 33 
+
+18.1 Service users should have the opportunity to discuss any screening tests and 
+their consent must be documented. All service users should be offered a 
+dating scan before 13 weeks. See Maternity Protocol: MP002 Antenatal 
+screening: Fetal Anomaly Screening Programme 
+ 
+18.2 If service users have identified neonatal risk factors e.g. family history or 
+inherited metabolic disorders such as MCADD, a referral to a Neonatal 
+Consultant should be generated by the midwife providing care for care 
+planning and discussion regarding the implications of this risk factor (in line 
+with NPSA - rapid response alert NPSA/2011/RRR002). 
+18.3 Service users who have had previous gastric band surgery should be referred in 
+to see a Consultant Obstetrician in Antenatal Clinic to discuss the implications 
+and plan pregnancy and delivery care. 
+18.4 Service users who have IVF pregnancies should be offered a referral to be 
+seen at a Consultant led antenatal clinic by 16 weeks gestation. The referral 
+should be made by the midwife with the pregnant person ’s consent. 
+18.5 All service users to be weighed again, using calibrated scales, at 34 -36/40 
+gestation to enable correct weight for drug calculation around the time of 
+birth should it be thought necessary. This should be documented in the 
+maternity notes. 
+18.6 CO monitoring should be offered at booking and at 36/40 for non smokers and 
+at every appointment for smokers (appendix G). 
+18.7 Mental health issues should be discussed using the recognised guidelines. See 
+Maternity Protocol: MP014 Service users with Mental Health problems . 
+ 
+18.8 Domestic violence should be sensitively discussed with all service users 
+during an unaccompanied visit. See Domestic Abuse UHSUSSEX Trust policy . 
+ 
+18.9 From 42 weeks, service users who decline IOL should be offered increased 
+antenatal monitoring consisting of at least twice weekly CTGs and ultrasound 
+examination of maximum amniotic pool depth. See Maternity Protocol: MP033 
+Induction of Labour . 
+ 
+18.10 All service users who have an uncomplicated singleton breech pregnancy at 
+36 weeks in primigravida and 37 weeks in a multiparous should be offered 
+ECV. See Maternity Protocol: MP046 Breech & ECV. 
+ 
+18.11 If service users with risk factors make informed choice to plan labour and 
+birth at home the community midwife should inform the Maternity Care 
+Choices Midwife maternity.care.choices@UHSussex.nhs.net who will make 
+contact with the service users and offer a meeting/discussion to plan care. Provision and Schedules of Antenatal Care (RSCH PRH only ) 
+MP001 
+University Hospitals Sussex NHS Foundation Page 21 of 33 
+
+19 Process of referral of service users in whom risks are identified 
+during the clinical risk assessment: 
+19.1 A referral should be made for an obstetric review if risk factors ( Appendix D ) 
+are identified at booking or at any point during pregnancy. The reason for the 
+referral and the appointment time/date should be documented clearly in the 
+maternal notes. 
+19.2 This can be done via the BadgerNet Antenatal Clinic Lead Midwife referral 
+on completion of the booking assessment . If referral is urgent telephone ANC 
+directly and ask to speak to the AN lead midwife to prioritise 
+appointment. 
+19.3 The Antenatal Clinic lead midwife referral should be reviewed by the A/N 
+lead midwife who will arrange for an appropriate appointment to be made 
+for the service users in an obstetric clinic. A letter will be sent with the ANC 
+appointment details to the pregnant person at her home address in the 
+post. 
+19.4 During antenatal period (after booking) 
+This can be done by the midwife or GP telephoning the Antenatal clinic to 
+make an appointment at the next available appropriate consultant led clinic. 
+The reason for the referral and the appointment time/date should be 
+documented clearly on BadgerNet . 
+
+20 Reasons for Referral: 
+ 
+20.1 If a risk factor is detected during completion of the risk assessment or at any 
+review of that assessment, a referral should be offered if appropriate; the risk 
+factor should also be discussed in relation to her antenatal care, intrapartum 
+care planning (including place of birth) and potentially postnatal care planning 
+to produce an individualised care plan. 
+20.2 All referrals, risk assessment and individualised management plans should be 
+clearly documented on BadgerNet by the health professional making the 
+plan with the pregnant person . 
+20.3 Please ensure these service users are booked prior to their hospital 
+appointment. Some of the reasons for referral are listed in the Appendix D. Provision and Schedules of Antenatal Care (RSCH PRH only ) 
+MP001 
+University Hospitals Sussex NHS Foundation Page 22 of 33 
+
+21 Process for referral back to Midwifery Led Care: 
+21.1 Service users who are reviewed by the obstetric team and then deemed to 
+be low risk should be referred back to MLC. 
+21.2 The obstetric review should be documented on BadgerNet with an 
+individualised plan of care in to include written instructions that the 
+pregnant person should receive midwifery led care. 
+21.3 Service users should be asked to make an appointment with her 
+community midwife within a specified period of time and documented in 
+the maternal notes. 
+
+22 References: 
+ 
+Nursing and midwifery council (2004) Midwives rules and standards. NMC, London 
+Department of Health 2007 Choice , access and continuity of care in a safe service. 
+ 
+Maternity Matters DoH, London 
+ 
+NICE (2008) Antenatal Care – routine care for the healthy pregnant pregnant 
+person . RCOG: London 
+ 
+Loughna P, Chitty L, Evans T, Chudleigh T (2009) Fetal Size and Dating: charts 
+recommended for clinical obstetric practice. Ultrasound , 17(3):161 -167 < 
+http://www.bmus.org/policies -guides/pg -fetalmeas.asp > 
+ 
+NHS Antenatal and Newborn Screening Programmes (2007) Antenatal Screening – 
+Working Standards for Down’s Syndrome Screening . Exeter, pg.50. < 
+http://fetalanomaly.screening.nhs.uk/standardsandpolicies > 
+ 
+NHS Fetal Anomaly Screening Programme (2010a) CRL Recommended Criteria for 
+Measurement of Fetal Crown Rump Length as part of Combined Screening for Trisomy 
+21 within the NHS in England 
+http://fetalanomaly.screening.nhs.uk/standardsandpolicies > 
+ 
+NHS Fetal Anomaly Screening Programme & Kirwan D (2010b) 18+0 to 20+6 Weeks Fetal 
+Anomaly Scan National Standards and Guidance for England . Exeter, pg 13. < 
+http://fetalanomaly.screening.nhs.uk/standardsandpolicies > 
+ 
+NICE [2008] Antenatal Care: Routine care for the healthy pregnant woman. Clinical 
+Guideline 62. RCOG, London 
+http://www.nice.org.uk/nicemedia/live/11947/40145/40145.pdf Provision and Schedules of Antenatal Care (RSCH PRH only ) 
+MP001 
+University Hospitals Sussex NHS Foundation Page 23 of 33 
+
+PanSussex Child Safeguarding Document 
+http://pansussexscb.proceduresonline.com/chapters/p_concealed_preg.html?printMe.x 
+=16&printMe.y=14 
+ 
+Royal College of Obstetricians and Gynaecologists. (2013). Small -for-Gestational -Age 
+Fetus, Investigation and Management. Green -top Guideline No. 31. 
+Published: 22/03/2013 Available online at: 
+https://www.rcog.org.uk/globalassets/documents/guidelines/gtg_31.pdf Provision and Schedules of Antenatal Care (RSCH PRH only ) 
+MP001 
+University Hospitals Sussex NHS Foundation Page 24 of 33 
+
+Appendix A - Antenatal Care Schedule in Uncomplicated Pregnancy 
+1 Timings of risk assessments 
+2 Development of individualised management plan 
+3 Appropriate and process of referral 
+4 All discussions & leaflets provided should be documented by the person giving them in 
+the maternal hand held notes 
+
+All 
+service 
+users 
+ 
+Booking 
+By 10 
+weeks 
+following 
+e-referral • Establish relationship with pregnant person through effective, sensitive 
+and open communication 
+• Discuss diet and lifestyle – folic acid, food hygiene etc. 
+• Smoking cessation referral if necessary 
+• Record weight, height, BMI 
+• Give booking form to complete before next appointment 
+• Give Maternity Services Guide 
+• Discuss, document and enable access to information and leaflets on: 
+o NSC ‘Screening Tests For You and Your Baby’ (antenatal screening 
+tests) booklet 
+o Combined screening in pregnancy 
+• Risk assessment: 
+o Medical history/conditions (including anaesthetic & psychiatric 
+history) 
+o Previous pregnancies 
+o Lifestyle history 
+o Identification of service users who will decline blood & blood products 
+• Identify service users that may need referral to specialist midwife, 
+obstetric or other care – See Appendix D 
+• Complete risk assessment & action/refer for further care as required 
+• NB at PRH there is no 8 week appointment – all information is given at 
+booking appointment around 10 weeks 
+• Complete BadgerNet notes & action /refer for further care as required 
+if not already undertaken 
+• Ascertain gestation and estimated due date (EDD) by last menstrual period 
+(LMP) 
+• Highlight any communication barriers and ensure appropriate measures are 
+taken to ensure accurate communications can take place at all appointments 
+• Identify service users who will decline blood and blood products. 
+Document clearly and offer referral to obstetrician in ANC 
+• Booking blood tests should be taken by ten weeks – blood group, Rh status, 
+screening for anaemia, haemoglobinopathies (according to Family Origin 
+Questionnaire), red-cell alloantibodies, hepatitis B, HIV, syphilis 
+• Hepatitis C Screening for the following service users : 
+• Recreational drug use which includes snorting and decl ines referral to One 
+Stop Provision and Schedules of Antenatal Care (RSCH PRH only ) 
+MP001 
+University Hospitals Sussex NHS Foundation Page 25 of 33 
+
+ • IVDU / Ex – IVDU (including steroids) and declines referral to One Stop 
+• Contact of Hepatitis C (partner or sharing home with) 
+• Sex worker 
+• Ex-prisoner 
+• Sexual assault 
+• Booking Midwife to check ALL results within 10 days and action abnormal 
+findings OR repeat samples . Results to be promptly documented on 
+BadgerNet and published to maternity notes 
+• GTT for high risk service users (refer MP018 Diabetes in Pregnancy) 
+• Offer MSU 
+• Offer Chlamydia screening if pregnant person <25 
+• Discuss: 
+➢ Issues surrounding depression and mental health issues in pregnancy (see 
+UHSUSSEX mental health guidance) 
+➢ Domestic abuse if alone (see UHSUSSEX guidance). Give leaflet 
+➢ Antenatal care schedule 
+➢ Place of birth options 
+➢ Maternity benefits 
+➢ Medications in pregnancy – provide with Prescription Exemption form if not 
+already provided by GP 
+➢ Risk assessment for service users at risk of pre -eclampsia and 
+appropriate information and advice give and documented 
+➢ Nutrition including Vit D, Healthy Start vitamins 
+➢ A/N Screening 
+▪ Offer and arrange screening for Downs syndrome, Adwards & Pataus 
+▪ Offer and document consent and arrange 20 week structural anomaly scan 
+• Consider social or CP issues 
+• Risk assessment of VTE documented 
+• Calculate BMI and offer referrals where required (see MP011 Obesity ) 
+• Offer Carbon Monoxide screening to all service users . Offer smoking cessation 
+referral to all service users with reading of >3ppm. Direct all service users to 
+UHSUSSEX maternity website for more information about smoking in pregnancy 
+• Discuss, risk assess, document and enable access to information/ leaflets 
+on: 
+➢ Where the baby will be born (place of birth options) 
+Inform service users that we are a cross site and she may be asked to attend 
+another unit at busy times 
+➢ Types of delivery (how the baby will be born) 
+• Develop Individual care plan with the pregnant person and document in 
+BadgerNet records 
+
+16 weeks 
+All • Review risk assessment & action/refer if required 
+• Review individual care plan 
+• Fetal Movement Leaflet and advise 
+• A/N Screening: 
+• If Quad test required – make an appointment with the AN screening team / 
+DAU. Test to be carried out in DAU 
+• If undertaken, check the service users has received her combined screening 
+result 
+– follow up if not received 
+• Review and document booking blood results Provision and Schedules of Antenatal Care (RSCH PRH only ) 
+MP001 
+University Hospitals Sussex NHS Foundation Page 26 of 33 
+
+ • If Hb <11 investigate and consider iron supplement. (Haematology Protocol 
+TBC) 
+• If Rh –ve, discuss implications. Give forms for 28 week blood tests 
+• Discuss and enable access to information and leaflets on: 
+➢ Anti D in pregnancy (ensure appointment has been booked) 
+• BP & proteinuria check. 
+ 
+25 weeks 
+Primips 
+only • Review risk assessment & action/refer if required 
+• Review individual care plan 
+• BP & proteinuria check 
+• Measure Symphysis -Fundal Height 
+• Discuss: Fetal Movements 
+Birth options 
+• Review Diabetic Screening for high risk service users 
+ 
+28 weeks 
+All • Review risk assessment & action/refer if required 
+• Review individual care plan 
+• Check BP, proteinuria, SFH, FM 
+• Offer screening for: 
+➢ Anaemia and antibodies 
+• Ensure appointment made if necessary for anti-D 
+• GTT for high risk service users refer to (MP018 Diabetes in Pregnancy) 
+• Give Mat B1 form (from 20 weeks onwards) 
+• Follow up Safeguarding referral if appropriate/required 
+• Consider Place of Birth (offer Home Birth option for low risk service users ) 
+• Discuss and enable access to information and leaflets on: 
+➢ Home birth (as appropriate) 
+➢ Water birth (as appropriate) 
+• Give information about parentcraft classes 
+• Follow up any Safeguarding referral’s if appropriate/indicated 
+ 
+31 weeks 
+Primips 
+only 
+(MW) • Review risk assessment & action/refer if required 
+• Review individual care plan 
+• Check BP, proteinuria, SFH, FM 
+• Discuss and document 28 week blood results – if Hb <110g investigate and 
+consider iron supplement (refer to Haematology Protocol TBC) 
+• Has Anti D appointment happened if rhesus negative? 
+ 
+34 weeks 
+All • Review risk assessment & action/refer if required 
+• Review individual care plan 
+• Check BP, proteinuria, SFH, FM 
+• Document blood results for multips 
+• Discuss labour, birth plan, coping with pain 
+• Follow up Safeguarding referral if appropriate/required 
+• Discuss, document and enable access to information and leaflets on: 
+➢ Fetal heart monitoring in labour 
+➢ Coping with pain / labour (pain management in labour including regional 
+anaesthesia) 
+➢ Perineal massage/ care in preparation for birth Provision and Schedules of Antenatal Care (RSCH PRH only ) 
+MP001 
+University Hospitals Sussex NHS Foundation Page 27 of 33 
+
+ ➢ Breastfeeding 
+• Follow up any Safeguarding referral’s if appropriate/indicated 
+• If the pregnant person is wanting a homebirth a chat/risk assessment to 
+be booked preferably by named midwife 
+➢ Complete home birth form on BadgerNet 
+➢ For service users with risk factors planning a home birth: send summary of 
+home 
+Birth risk assessment to PMA 
+ 
+36 weeks 
+All • Review risk assessment & action/refer if required 
+• Review individual care plan 
+• Check BP, proteinuria, SFH, FM 
+• Palpate for presentation and refer if suspected malpresentation 
+• Re-weigh using calibrated scales and document in maternal notes 
+• Discuss: 
+o Breastfeeding o newborn screening 
+o care of the newborn o postnatal self-care 
+o vitamin k o baby -blues 
+o postnatal depression 
+• If CP issues, check care plan in notes 
+• Offer Carbon Monoxide screening to all service users . Offer smoking 
+cessation referral to all service users with reading of >3ppm. Direct all 
+service users to UHSUSSEX maternity website for more information 
+about smoking in pregnancy 
+ 
+38 weeks 
+All • Review risk assessment & action/refer if required 
+• Review individual care plan 
+• Check BP, proteinuria, SFH, FM 
+• Discuss options for management of prolonged pregnancy 
+ 
+40 weeks 
+ 
+Primips 
+only • Review risk assessment & action/refer if required 
+• Review individual care plan 
+• Check BP, proteinuria, SFH, FM 
+• Further discussion of management of prolonged pregnancy 
+• Discuss, document and enable access to information and leaflets on: 
+o Induction of Labour 
+• Offer membrane sweep for low risk service users and VBAC service 
+users with no additional risk factors 
+41 
+All not yet 
+delivered • Review risk assessment & action/refer if required 
+• Review individual care plan 
+• Check BP, proteinuria, SFH, FM 
+• Offer membrane sweep 
+• Offer and arrange IOL Provision and Schedules of Antenatal Care (RSCH PRH only ) 
+MP001 
+University Hospitals Sussex NHS Foundation Page 28 of 33 
+
+Appendix B - Calculating the EDD: 
+ 
+1. EDD should be calculated by USS performed at UHSUSSEX (CRL is the gold standard 
+[up to 14+1 weeks]) rather than LMP1,6. This is for all pregnancies including IVF / ICSI 
+pregnancies. 
+ 
+2. However where service users conceived by IVF/ICSI and there is a discrepancy 
+between the scan date and IVF date, the pregnant person should be referred to a 
+consultant obstetrician for a final decision about EDD. The agreed EDD should be 
+clearly documented in the pregnant person ’s notes by the consultant. 
+ 
+3. Service users who decline all scans should have the EDD calculated by LMP. In these 
+cases the potential problems of using an EDD calculated by LMP should be discussed. 
+Using an EDD calculated by LMP increases the likelihood of induction for post 
+maturity. In addition it creates difficulties when advising on management / prognosis 
+where labour occurs prematurely, especially around the limits of viability 
+ 
+4. The optimal time for calculating EDD by scan is between 10+0 and 14+1 weeks. EDD 
+calculated by scan between these gestational limits supersedes EDD calculated from 
+LMP and scans before 10+0 weeks. In practice the dating scan is usually performed 
+between 11+2 and 14+1 weeks [i.e. at the time of the NT scan] 
+ 
+5. If a pregnant person has two scans between 10 and 14 weeks, the scan at the time 
+of the NT should be used 
+ 
+6. If a pregnant person has a scan before 10+0 weeks, an EDD is given but this is 
+recalculated at the NT/dating scan [11+2 to 14+1 weeks] 
+ 
+7. If a pregnant person declines combined screening, a dating scan is offered ideally at 
+12 weeks, although a scan at any gestation between 10+0 and 14+1 will provide an 
+accurate EDD 
+ 
+8. Service users booking later than 14 weeks or who are found to be over 14 weeks 
+at the time of the first scan will have their EDD calculated by head circumference 
+[HC] at their first scan 
+ 
+9. NB In expected peri-viable deliveries EDD should be agreed between obstetric, 
+midwifery and neonatal teams. This discussion and plan should be clearly 
+documented in the maternity notes and signed by the lead professionals present for 
+the discussion 
+Brighton & Sussex University Hospitals Page 29 of 33 
+ Use EDD from NT scan Offer 
+scan 
+YES Offer accepted? NO 
+Use EDD generated by 
+earliest scan 
+(Using head 
+circumference) Use EDD from USS between 10 & 14 
+weeks 
+If a pregnant person has had 2 scans 
+in this time frame then use the EDD 
+generated at the NT scan Use EDD 
+by LMP Gestation >14 weeks Gestation between 10–14 weeks 
+NB If delivery is likely around 22-25 weeks 
+• Discussion may be indicated between maternity / neonatal services and family 
+regarding action plan and agreed EDD 
+• This discussion must be clearly documented in the records and signed by the 
+lead professional Provision and Schedules of Antenatal Care 
+
+Appendix C - Calculating the EDD flow chart 
+
+USS performed between 10 & 14 weeks? 
+YES NO 
+
+ Has had scan in pregnancy? 
+NO YES 
+ NT scan performed? 
+ 
+YES NO 
+ 
+MP001 
+Provision and Schedules of Antenatal Care MP001 
+Brighton & Sussex University Hospitals Page 30 of 33 
+
+References 
+• Loughna P, Chitty L, Evans T, Chudleigh T (2009) Fetal Size and Dating: charts 
+recommended for clinical obstetric practice. Ultrasound , 17(3):161 -167 < 
+http://www.bmus.org/policies -guides/pg -fetalmeas.asp > 
+ 
+• NHS Antenatal and Newborn Screening Programmes (2007) Antenatal Screening – 
+Working Standards for Down’s Syndrome Screening . Exeter, pg.50. < 
+http://fetalanomaly.screening.nhs.uk/standardsandpolicies > 
+ 
+• NHS Fetal Anomaly Screening Programme (2010a) CRL Recommended Criteria for 
+Measurement of Fetal Crown Rump Length as part of Combined Screening for 
+Trisomy 21 within the NHS in England < 
+http://fetalanomaly.screening.nhs.uk/standardsandpolicies > 
+ 
+• NHS Fetal Anomaly Screening Programme & Kirwan D (2010b) 18+0 to 20+6 Weeks 
+Fetal Anomaly Scan National Standards and Guidance for England . Exeter, pg 13. < 
+http://fetalanomaly.screening.nhs.uk/standardsandpolicies > 
+ 
+• NICE [2008] Section 4.6 Gestational age assessment p73-77 in Antenatal Care: 
+routine care for the healthy pregnant woman.[Guideline CG62] RCOG, London 
+http://www.nice.org.uk/nicemedia/live/11947/40145/40145.pdf 
+ 
+• NHS England 2019 Saving Babies’ Lives v.2 Provision and Schedules of Antenatal Care MP001 
+Brighton & Sussex University Hospitals Page 31 of 33 
+
+Appendix D - Types of Referrals: 
+ 
+Medical – refer to obstetric clinic and relevant specialist midwife (MW) 
+• Diabetes & endocrine disorders 
+• Epilepsy 
+• Cystic fibrosis 
+• Severe asthma 
+• Transplant 
+• Kidney disease 
+• Cardiac conditions 
+• Autoimmune disorders inc lupus 
+• Haemoglobinopathies 
+• Chronic hypertension 
+• Antiphospholipid syndrome 
+• Metabolic disorders 
+• Previous thrombo -embolic disease / high or intermediate risk of VTE at booking or at 
+any stage risks are identified or changed during pregnancy (via the VTE risk assessment 
+form) 
+• Psychiatric disorders (see MP014 Mental Health Protocol for further guidance) 
+• HIV/Hepatitis B/Hepatitis C 
+• Female Genital Mutilation 
+• Obesity (BMI of 30 or above) or low weight (BMI of 17 or below) 
+• Previous malignant disease 
+• Adverse or allergic reactions to anaesthesia 
+• Spinal problems (eg scoliosis) 
+• Service users who have made an informed decision to decline blood products 
+• Anaesthetic issues / any problems that may affect the ability to administer general or 
+regional anaesthetic 
+• Service users at high risk of pre-eclampsia 
+ 
+Pregnancy -related (previous or current) – refer to obstetric clinic and relevant specialist MW 
+• IVF pregnancy (refer to be seen by 16 weeks) 
+• PIH 
+• Oligohydramnios / Polyhydramnios 
+• IUGR (below 5th centile or below 2.5kg) 
+• Previous large baby (above 95th centile or above 4.5kg) 
+• Previous uterine surgery including caesarean section 
+• Previous shoulder dystocia 
+• Previous LSCS 
+• Previous PPH (see MP53 Obstetric Haemorrhage for detail) 
+• Multiple gestation 
+• Previous stillbirth or neonatal death 
+• Malpresentation from 36 weeks 
+• Previous preterm birth 
+• Severe pre-eclampsia, HELLP or eclampsia Provision and Schedules of Antenatal Care MP001 
+Brighton & Sussex University Hospitals Page 32 of 33 
+
+• Three or more recurrent miscarriages 
+• Puerperal psychosis 
+• Rhesus immunisation or other blood group antibodies 
+• Grandmultiparity (more than 6 pregnancies) 
+• Baby with congenital or structural abnormality 
+ 
+Social / lifestyle related – refer to appropriate specialist midwives 
+• Substance misuse 
+• Homelessness 
+• Teenage pregnancy 
+• Domestic violence 
+• Mental health or Learning difficulties 
+• Disability 
+ 
+Referral to Anaesthetic Clinic: 
+ 
+A past medical history of any anaesthetic 
+problems Have had previous difficulties with, or 
+complications of, spinal/epidural anaesthesia or 
+general anaesthesia Allergy to suxamethonium; 
+Known suxamethonium apnoea. History or family 
+history of malignant hyperpyrexia 
+Respiratory Problems Severe asthma; cystic fibrosis; pulmonary 
+embolus on anticoagulants; history of 
+pneumothoraxes 
+Neurological Problems Any neuromuscular disease e.g. muscular 
+dystrophy; multiple sclerosis; focal neurological 
+signs; Poorly controlled epilepsy; Spina Bifida 
+Muscular -skeletal Problems Scoliosis; Harrington rods; Rheumatoid arthritis / 
+Still’s Disease. Connective tissue disorders 
+associated with cardiac abnormalities eg 
+Marfans, Ehlors Danlos 
+Endocrine problems Unstable thyroid disease 
+Haematological problems Idiopathic thrombocytopaenia purpura (ITP); 
+sickle cell disease; congenital spherocytosis; Von 
+Willibrand’s Disease 
+Renal Disease Renal transplant 
+Allergies/ Drug sensitivities / Drug abuse Multiple allergy syndromes; allergies to local 
+anaesthetics; Known scoline apnoea, history of 
+intravenous drug abuse 
+Airway Problems Known difficult intubation; obvious anatomical 
+features suggestive of a difficult intubation e.g. 
+bucked teeth, receding jaw; reduced neck 
+movement 
+Rare But Serious Medical Conditions Malignant disease Provision and Schedules of Antenatal Care MP001 
+Brighton & Sussex University Hospitals Page 33 of 33 
+
+Known Obstetric Conditions That Pose An 
+Increased Risk Placenta praevia 
+Raised BMI above 50 Provision and Schedules of Antenatal Care MP001 
+Brighton & Sussex University Hospitals Page 34 of 33 
+
+Appendix E: Calculating Symphysis Fundal Height Measurement: 
+
+Definition: 
+ 
+Symphysis -fundal height (SFH) measurement refers to the distance (measured in 
+centimetres) over the abdominal wall from the top of the uterus (fundus) to the upper 
+border of the symphysis pubis. This measurement is taken along the longitudinal axis of the 
+uterus without any correction of the tape measure to the midline of the abdomen, using a 
+non-stretch tape measure which remains in continuous contact with the skin surface of the 
+abdomen. 
+ 
+Process for SFH measurement: 
+ 
+1. Ensure pregnant person has an empty bladder 
+2. Ensure that the pregnant person has given her consent, is comfortable and lying 
+in a semi - recumbent position 
+3. Prior to SFH measurement, the midwife should palpate the pregnant person ’s pregnant 
+abdomen to check the baby’s size, its position and presentation, the volume of amniotic 
+fluid around the fetus, and to identify the uterine fundus 
+4. The (metric) measurement scale on the tape measure should always be placed face 
+downwards against the pregnant person ’s abdomen to prevent the practitioner from 
+making a subjective or biased assessment. 
+Provision and Schedules of Antenatal Care MP001 
+
+Appendix F – Criteria for Booking Growth Scans 
+ 
+General growth scans at 30 and 34 weeks . Previous IUGR 
+Previous Stillbirth Uterine anomalies 
+Anti-phospholipid syndrome/ Thrombophilia Maternal age over 40 years at booking Service 
+users on anti-epileptic medication 
+ 
+Conditions with different schedule of care 
+Parvovirus B19 infection – 2-3 weekly from 10 weeks until 10 weeks post infection. After 18 weeks gestation, refer for MCA velocities 
+Pre-existing Diabetic – 24, 28, 32, 36 weeks Essential Hypertension - 28 and 32 weeks 
+Substance misuses - Growth scan and review at 30 weeks gestation BMI ≥35 - single scan with clinic appointment at 34 
+weeks gestation 
+Mild fetal hydronephrosis at the anomaly scan – Repeat scan at 34 weeks gestation Mild/moderate PIH diagnosed before 34/40 - single growth 
+scan, AFI and UA at 34 weeks. No need to repeat if normal 
+Severe PIH – Growth scan, AFI and UA repeated not less than fortnightly SROM – Only if evidence on speculum 
+Post Dates – AFI only 
+Reduced Fetal movements – After 2nd episode 
+Maternal Medical conditions – as requested by consultant Gestational Diabetes – as requested by 
+Consultant Suspected polyhydramnios 
+ 
+Multiple pregnancies: 
+Monochorionic twins: 16, 18, 20, 22, 24, 28, 32, 36 weeks 
+Dichorionic twins: 24, 28, 32, 36 weeks 
+Trichorionic triplets: 24, 28, 32, 34 
+Triplets with monochorionicity: 2 weekly from 16 weeks to 34 weeks. 
+ 
+Growth scans NOT indicated routinely. IVF 
+Single episode of PV bleeding Obstetric cholestasis 
+Mild/moderate PIH diagnosed after 34/40 Previous large baby/ traumatic delivery Larges for 
+dates 
+Anxiety/ maternal reassurance 
+Fibroids unless close to cervix then single follow -up scan at 36 weeks Increased NT in early pregnancy 
+Unexplained recurrent miscarriage Presentation – refer to DAU for scan 2 vessel cord 
+Previous premature labour where the size was normal for gestation Provision and Schedules of Antenatal Care MP001 
+ APPENDIX G

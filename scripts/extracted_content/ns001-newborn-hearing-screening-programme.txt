@@ -1,0 +1,415 @@
+# Extracted from: NS001 Newborn Hearing Screening Programme.pdf
+# Guideline ID: ns001-newborn-hearing-screening-programme
+# Content length: 19123 characters
+# Processing date: 1750066901.761722
+
+Newborn Hearing 
+Screening 
+Programme 
+
+NHSP Protocol: NS001 
+ 
+Date agreed: December 2019 
+ 
+Newborn Hearing Screening Programme (RSCH PRH only ) NS001 
+ 
+Page 2 of 12 
+Brighton & Sussex University Hospitals 
+
+Guideline Reviewer: Dr. Rob Low 
+Version: 2 
+Approval Committee: NHSP Services Safety and Quality Committee 
+Date agreed: December 2019 
+Review date: December 2022 
+Cross reference: MP069 Care of the Newborn immediately after birth Newborn Hearing Screening Programme (RSCH PRH only ) NS001 
+ 
+Page 3 of 12 
+Brighton & Sussex University Hospitals 
+ Contents 
+Newborn Hearing Screening Programme ................................ ................................ ............... 1 
+Key Principles: ................................ ................................ ................................ ....................... 4 
+Scope: ................................ ................................ ................................ ................................ ... 4 
+1 Pathways ................................ ................................ ................................ .................... 5 
+2 Newborn Hearing Screening Programme ................................ ................................ ..... 7 
+3 Referral Criteria ................................ ................................ ................................ ........... 8 
+3.1 Babies excluded from screen - Refer for ABR ................................ ............................. 8 
+3.2 The following must be adhered to for all referrals ................................ ........................ 8 
+3.3 Babies included in the screen ................................ ................................ ........................ 8 
+4 Key Performance indicators ................................ ................................ ......................... 9 
+4.1 Performance thresholds ................................ ................................ ............................... 10 
+4.2 Reporting ................................ ................................ ................................ ..................... 10 
+5 Targeted Follow up ................................ ................................ ................................ ... 10 
+5.1 Syndromes associated with Hearing loss (including Down’s) ................................ .... 10 
+5.2 Cranio -facial abnormalities including cleft palate ................................ ...................... 10 
+5.3 Confirmed congenital infection (toxoplasmosis, rubella or CMV) ............................. 10 
+5.4 SCBU/NICU over 48hr with no clear response OAE both ears but clear response on 
+AABR ................................ ................................ ................................ ................................ .... 10 
+6 Failsafe Procedures ................................ ................................ ................................ ... 11 
+
+ Newborn Hearing Screening Programme (RSCH PRH only ) NS001 
+ 
+Page 4 of 12 
+Brighton & Sussex University Hospitals 
+ Key Principles: 
+• A protocol is a set of measurable, objective standards to determine a course of action. 
+Professional judgement may be used in the application of a protocol. 
+Scope: 
+• This protocol applies to all babies born within BSUH maternity departments or home 
+deliveries supported by BSUH. It includes babies born to parents living outside BSUH 
+but who delivered whilst in an area supported by BSUH. 
+• These standards cover the screening journey up to and including the point of referral 
+to audiology and entry into Audiological assessment. 
+• BSUH is responsible for obtaining informed consent from babies’ parent(s) to permit 
+inclusion of the baby within the NHSP screen. 
+
+ Newborn Hearing Screening Programme (RSCH PRH only ) NS001 
+ 
+Page 5 of 12 
+Brighton & Sussex University Hospitals 
+ 1 Pathways 
+One of two protocols is delivered to every baby, subject to parental consent for inclusion 
+ 
+➢ Babies spending more than 48 hours on SCBU or NICU 
+➢ All other babies 
+ 
+• BSUH is financially responsible under national Maternity Pathway Payment rules for all 
+babies born to residents of Brighton and Hove and surrounding areas delivered at 
+Brighton & Sussex University Hospitals but can claim back from host residencies for 
+any babies born in BSUH hospitals from out of area. 
+NHSP has responsibility for implementing this policy. The service specification (No. 20) 
+for the NHS providers is available as part of the public health functions exercised by 
+NHS England https://www.england.nhs.uk/wp -content/uploads/2017/04/Gateway -
+ref-07841 -180913 -Service -specification -No.-20-NHS -Newborn -Hearing -Screening.pdf 
+ 
+• The effectiveness of the Newborn Hearing screen is assessed at a national level 
+https://www.gov.uk/government/publications/newborn -hearing -screening -
+programme -quality -standards/newborn -hearing -screening -programme -standards -
+2018 -to-2019 on the basis of two measured thresholds, approved by the UK NSC Data 
+Analysts Quality Assurance (DAQA) group , these are 
+ 
+• The acceptable threshold is the lowest level of performance which programmes are 
+expected to attain to ensure patient safety and programme effectiveness. All 
+programmes are expected to exceed the acceptable threshold and to agree service 
+improvement plans that develop performance towards an achievable level. 
+Programmes not meeting the acceptable threshold are expected to implement 
+recovery plans to ensure rapid and sustained improvement. 
+ 
+• The achievable threshold represents the level at which the programme is likely to be 
+running optimally; screening programmes should aspire towards attaining and 
+maintaining performance at this level. 
+ 
+2 Exclusions 
+ 
+Two types of standards are not included here: 
+ 
+2.1 Structural standards: 
+These describe the structure of the programme and must be fully met. Examples 
+of structural standards are “provision of information to all participants” and 
+“Providers will ensure that there are adequate numbers of appropriately trained Newborn Hearing Screening Programme (RSCH PRH only ) NS001 
+ 
+Page 6 of 12 
+Brighton & Sussex University Hospitals 
+ staff in place to deliver the screening programme in line with best practice 
+guidelines and NHSP national policy.” Structural standards are included in 
+screening service specifications and monitored through commissioning and 
+other quality assurance routes. The service specifications should be reviewed by 
+providers and commissioners to ensure structural standards are met by all 
+screening programmes. 
+ 
+2.2 Outcome standards: 
+Outcomes of the screening pathway are influenced by screening as well as 
+factors beyond the screening programme. The NHSP national programme 
+collects data and reports on outcomes including the number of cases of 
+Permanent Childhood Hearing Impairment (PCHI) and the age at confirmation. 
+Audiology services should record on the national software solution for newborn 
+hearing screening the audiology follow -up data on babies that refer from the 
+screen as well as any children with later identified PCHI. 
+ 
+Responsibilities 
+ 
+Midwives 
+• To provide antenatal information to all parent(s) regarding the NHSP process. 
+ 
+Newborn Hearing Screeners 
+• To access, read, understand and follow this guidance 
+ 
+Management Team 
+• To ensure the protocol is reviewed as required in line with Trust and national 
+recommendations 
+• To ensure the protocol is accessible to all relevant staff 
+• To ensure the protocol is aligned with the national guidance on the delivery of 
+Newborn Hearing Screening. 
+• To ensure the protocol and procedures are compliant with Caldicott guidance and 
+information sharing governance 
+
+ Newborn Hearing Screening Programme (RSCH PRH only ) NS001 
+ 
+Page 7 of 12 
+Brighton & Sussex University Hospitals 
+ 3 Newborn Hearing Screening Programme 
+ 
+3.1 The aim of the Newborn Hearing Screening Programme (NHSP) is to identify all 
+newborn babies who have a moderate, severe or profound degree of Permanent 
+Childhood Hearing Impairment. 
+3.2 The NHSP is delivered to all newborn babies by dedicated Newborn Hearing 
+Screeners, provided that the babies’ parent(s) have given verbal consent for 
+inclusion in the Programme. 
+3.3 The Newborn Hearing Screening Programme was introduced in the UK in 2008. 
+ 
+3.4 The key details of Newborn Hearing Screening Programme are 
+• Each baby born within BSUH maternity units should be offered a 1st screen 
+using Otoacoustic Emissions (OAE1) prior to discharge from maternity 
+unless transferring to SCBU or NICU. 
+• If consent is declined then the parents receive a letter offering the screen 
+any time up to 3 months of age should they change their mind. In addition 
+the Hearing sounds checklists are given to the parents and they are 
+encouraged to speak to their GP or HV if they develop any concerns. 
+• For those undergoing the screen the flow diagram summarises the 
+remaining key details. 
+• Timing of first screen on maternity unit on day 3 or just prior to discharge, 
+whichever occurs first. 
+• For births at home, the OAE1 is offered if baby attends the hospital or clinic 
+for the Newborn and Infant Physical Examination (NIPE) clinic within 72 
+hours of birth. If NIPE is completed at home or if screening is not completed 
+at the NIPE clinic then we would invite into clinic day 7 -10 taking into 
+account parental preference. 
+• For babies spending ≥ 48 hours within the SCBU or NICU then a 
+combination of both OAE1 and Automated ABR (AABR) is delivered as a 
+combination screen. 
+• This combination screen is timed to take place within 24 hours of discharge. 
+This time is chosen to ensure that all treatment which might have ototoxic 
+effect has been completed prior to screen. 
+• For babies who have just received an OAE1 screen on the maternity unit 
+and a ‘No Clear Response’ is recorded for either ear, a second OAE screen is 
+offered at outpatient clinic at approximately day 7 -10. Out of area babies 
+are transferred to responsible sites for follow -up. Occasionally OAE2 is 
+performed on the ward at parents’ request – allowing a minimum of 5 
+hours between AOAE1 and OAE 2. 
+• If the outcome for OAE2 is ‘No Clear Response’ for either ear then a third 
+screen -Automated Auditory Brainstem Response (AABR) - is usually offered 
+immediately following the OAE 2 or is provided no later than 28 days 
+following expected date of delivery. Newborn Hearing Screening Programme (RSCH PRH only ) NS001 
+ 
+Page 8 of 12 
+Brighton & Sussex University Hospitals 
+ • Should the outcome of the AABR screen be ‘No Clear Response’ for either 
+ear, or the OAE screen for babies on SCBU or NICU for > 48 hours, then a 
+referral is made to the tertiary Audiology department at RSCH for 
+diagnostic Audiology, FAO of Jennifer Lawrence (email 
+audiology.bsuh@nhs.net ). 
+• All screening outcomes are recorded in the Personal Child Health Record 
+(PCHR) book using the dedicated NHSP carbonated slip and a copy for 
+hospital records. 
+3.5 The entire screening process must complete within 4 weeks (or from expected 
+date of delivery for NICU babies) unless there exist exceptional circumstances 
+which can be reported, assuming parental consent. 
+3.6 At each stage of screening, the summary outcome must be contemporaneously 
+recorded on the central database: - SMART for Hearing 
+(https://nww.smsnhsp.nhs.uk/eSP/Index.aspx ). Any changes in demography 
+should be updated at this point also. 
+3.7 Babies screened by BSUH, but resident outside the BSUH area require an audit 
+trail of transfer back to their host screening programme and their eSP (Smart for 
+Hearing) record exported to that site. 
+3.8 On completion of the screen all parents are directed to the Hearing/Sound 
+checklist in the Child Health Record Book. For all babies referred on for 
+diagnostic audiology all parents are provided with a ‘Your baby’s visit to the 
+Audiology Clinic’ leaflet and the ‘Brighton ABR letter’, and also be provided with 
+the audiology contact number 0300 3038360 Option 1. 
+ 
+4 Referral Criteria 
+4.1 Babies excluded from screen - Refer for ABR 
+ 
+4.1.1 Confirmed congenital cytomegalovirus (cCMV) 
+4.1.2 Microtia / external ear canal atresia 
+4.1.3 Neonatal bacterial meningitis or meningococcal septicaemia 
+4.1.4 Programmable ventriculo -peritoneal (PVP) shunt in place 
+4.2 The following must be adhered to for all referrals 
+4.3 Babies included in the screen 
+4.3.1 Referrals must be made electronically on the agreed referral form 
+(Appendix A) within 72 hours to the RSCH Audiology Dept. 
+4.3.2 Referrals must be complete or they will be returned by the service 
+provider 
+ Newborn Hearing Screening Programme (RSCH PRH only ) NS001 
+ 
+Page 9 of 12 
+Brighton & Sussex University Hospitals 
+ 4.3.3 Only one referral can be sent in an email 
+4.3.4 The initials for the baby and DOB must be in the email Subject box 
+4.3.5 Record on the database that receipt of referral has been acknowledged 
+4.4 Various drugs are potentially ototoxic. The main group is aminoglycosides and 
+these are very commonly used prophylactically in babies. Unless a baby is 
+suspected or known to have the A1555G mitochondrial mutation f (see below), 
+the baby should be screened in the normal way and followed up if required as 
+per standard screening protocol. The responsibility for monitoring of children 
+receiving ototoxic drugs and appropriate referral for audiological assessment lies 
+with the Paediatrician and medical team. In deciding whether to make a referral 
+for follow up beyond the screen one factor will be whether the monitored 
+aminoglycoside levels have exceeded the therapeutic range: see also national 
+guidance on use of gentamicin for neonates (NPSA 2010). 
+ 
+However, any baby that is suspected or known to have the A1555G 
+mitochondrial mutation and has received aminoglycosides (irrespective of 
+whether blood levels are within the therapeutic range) should be referred for 
+immediate follow -up and audiological monitoring irrespective of screen 
+outcome . 
+Responsibility for making the referral and communication with family - 
+Paediatrician 
+Responsibility for making appointment – Audiology 
+ 
+5 Key Performance indicators 
+ 
+Key Performance Indicators (KPIs) are a subset of standards that are collated and usually 
+reported quarterly (unless numbers are small, in which case aggregate data is reported 
+annually) compared to annual reporting for standards. There are 2 -3 KPIs per screening 
+programme. The KPIs focus on areas of particular concern. Once a KPI consistently 
+reaches the achievable level, the KPI will revert to being a standard and allow entry of 
+another KPI to focus on additional areas of concern or a change to the threshold of the 
+existing standard to promote continuous improvement. Standards 1 and 5 are the 
+current NHSP KPIs https://www.gov.uk/government/publications/nhs -population -
+screening -reporting -data -definitions 
+
+ Newborn Hearing Screening Programme (RSCH PRH only ) NS001 
+ 
+Page 10 of 12 
+Brighton & Sussex University Hospitals 
+ 5.1 Performance thresholds 
+
+Standard 1 Coverage Acceptable: ≥ 98.0% 
+Achievable: ≥ 99.5% 
+Standard 2 Test Performance OAE1 Acceptable: ≤ 27.0% 
+Achievable : ≤ 22.0% 
+Standard 3 Referral rate to diagn ostic 
+Audiology Acceptable: ≤ 3% 
+Achievable : ≤ 2.0% 
+Standard 4 Time from screening to diagnostic 
+Audiology offer Acceptable: ≥ 97% 
+Achievable: ≥ 99% 
+Standard 5 Time from screening to diagnostic 
+Audiology attendance Acceptable: ≥ 90 % 
+Achievable: ≥ 95 % 
+ 
+5.2 Reporting 
+ 
+Standards will be reported annually unless they are also a key performance 
+indicator in which case they are usually reported on quarterly and annual figures 
+are aggregated. Performance reports are produced by NHSP using information 
+from the national information solution. National reports are produced between 
+two and three months after fiscal year (April -March) end with a submission 
+deadline of 30 June. 
+6 Targeted Follow up 
+ 
+These following conditions in children trigger an automatic requirement to conduct a 
+targeted follow up (behavioural testing around 8 months), or sooner if local protocol in 
+place 
+ 
+6.1 Syndromes associated with Hearing loss (including Down’s) 
+6.2 Cranio -facial abnormalities including cleft palate 
+6.3 Confirmed congenital infection (toxoplasmosis, rubella or CMV) 
+6.4 SCBU/NICU over 48hr with no clear response OAE both ears but clear response 
+on AABR 
+ 
+Note that although family history (of permanent SNHL from childhood in 
+parents/siblings) has been removed as a risk factor requiring routine targeted follow 
+up, any parent who still expresses concern about hearing, despite the screen, should 
+always be directly referred to Audiology. 
+ 
+Responsible for identifying child – Screening team 
+Responsible for arranging appointment – Audiology. 
+
+ Newborn Hearing Screening Programme (RSCH PRH only ) NS001 
+ 
+Page 11 of 12 
+Brighton & Sussex University Hospitals 
+ 7 Failsafe Procedures 
+ 
+NHSP Local Co -ordinator runs a monthly failsafe search on eSP (Smart for Hearing) and 
+liaises with Community Child Health Information Service to identify babies under 1 year 
+old who are born in/moved in/transferred in/moved out of the Brighton Hove and Mid -
+Sussex area who require screening, have outstanding follow -up appointments or PCHI 
+and follows up as required. 
+ 
+Process for babies at behavioural testing age without full screen results 
+
+Update case note on eSP 
+- DO NOT overwrite or 
+set as targeted FU 
+Declined/ incomplete/ missed 
+screen 
+Referral to 
+Paediatric 
+Audiology 
+Letter sent to parents at 8 
+months for FU – request parent 
+to make contact within 6 weeks 
+No contact 
+ Contact made 
+Discharge and 
+inform GP/HV 
+Appointment 
+booked and 
+relevant pathway 
+followed 
+cc GP and HV 
+Letter to parent 
+re. importance of 
+screening and offering 
+screen up to 3 months 
+Parent contact for 
+screen <3mnths 
+Complete screen 
+and follow relevant 
+pathway 
+Advise Paediatric 
+Audiology, GP and HV of 
+screen completion 
+ 
+NHSP 
+Audiology cc GP and HV Newborn Hearing Screening Programme (RSCH PRH only ) NS001 
+ 
+Page 12 of 12 
+Brighton & Sussex University Hospitals 
+ 
+Baby receives OAE1 
+at hospital prior to 
+discharge
+No
+Baby receives OAE2
+NoBrighton & Sussex University Hospitals
+Newborn Hearing Screening – Well Baby Pathway – Babies born at BSUH hospitals
+Baby born at RSCH 
+or PRH
+Guidance ref 
+number of hours 
+post birth
+YesBilateral clear 
+responses obtained
+Bilateral clear 
+responses obtained
+AABR completed in 
+clinicBaby receives OAE2 
+prior to discharge
+Must be min. 5+ 
+hours post OAE1Make a clinic appt 
+for baby prior to 
+discharge
+Standard for 
+booking appts
+Must be completed 
+by Day 28
+Referral to 
+Audiology for 
+Diagnostic 
+AudiologyBilateral clear 
+responses obtainedTransfer to ESHT 
+NHSP service for 
+East Sussex babiesBabies in other 
+NHSP site
+See separate 
+pathwayScreening result to be recorded in 
+PCHR (Red Book) if available 
+otherwise on PCHR insert form.
+- One copy for parents/in red book
+- one copy in hospital record
+Patient information
+- Screening leaflet
+- Info Sheet for parent

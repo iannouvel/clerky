@@ -1,0 +1,351 @@
+# Extracted from: CG1118 Neonatal hypothermia.pdf
+# Guideline ID: cg1118-neonatal-hypothermia
+# Content length: 16477 characters
+# Processing date: 1750066899.889394
+
+CG1118 Prevention and managem ent of neonatal hypothermia v4.3 December 2022 Page 1 of 10 
+Please check against S taffnet that this printout is the most recent version of this document. 
+ 
+Neonatal Hypothermia Guideline 
+Summary statement: How does the 
+document support patient care? By providing evidence based guidance for staff in the 
+management of neonatal hypothermia 
+Staff/stakeholders involved in 
+development: Leads for Maternity Risk Management (Paediatric, Obstetric 
+and Midwifery), Labour Ward Leads, (Obstetric and 
+Midwifery), Neonatal Leads, Joint Obstetric Guideline s 
+Group 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Neonatal Matrons 
+For use by: All Paediatric and Midwifery staff involved in the care of 
+newborns. 
+Purpose: To provide clear evidence -based guidance on prevention, 
+detection and management of neonatal hypothermia 
+This document supports: CNST Maternity Standards 
+ 
+Care Quality Commission 
+Key related documents: UH Sussex (SRH&WH) Maternity / Neonatal Guidelines: 
+Newborn Feeding, Examination of the Newborn, Support for 
+Parents, Neonatal Hypoglycaemia, Admission to Neonatal 
+Unit 
+Approved by: Joint Obstetric Guideline Group 
+Neonatal & Maternity Guideline review meeting (21st February 
+2023) 
+Approval date: 21ST December 2022 Uploaded date: 29th March 2023 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable – Divisional Ratification only required 
+Ratification Date: Not Applicable – Divisional Ratification only required 
+Expiry Date: September 2023 
+Review date: March 2023 
+If you require this document in another format such as Braille, large print, audio or 
+another language please contact the Trusts Communications Team 
+Reference Number: CG1118 
+CG1118 Prevention and management of neonatal hypothermia v4.3 December 2022 Page 2 of 10 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Version Date Author Status Comment 
+1.0 November 2010 Neonatal Matrons Archived New Trustwide guideline 
+2.0 February 2011 Lead CNST Midwife Archived Administrative update 
+3.0 May 2012 Neonatal Matron Archived Actions for initial temperature of 
+36.5oC and referral criteria to 
+Paediatric team updated 
+4.0 April 2013 Consultant 
+Paediatricians Archived Updated to reflect HRG changes 
+4.1 November 2013 Consultant 
+Paediatricians Archived 3 year review -no changes 
+4.2 September 2020 Neonatal Matron Archived Updated and reviewed 
+4.3 December 2022 G. Thomson, Clinical 
+Educator LIVE Updated in line with: Newborn 
+resuscitation and support of 
+transition of infants at birth 
+Guidelines | Resuscitation 
+Council UK 2021 
+To provide clarification and 
+elaboration on existing 
+recommendations 
+To accommodate community 
+settings and nursery nurses 
+
+CG1118 Prevention and management of neonatal hypothermia v4.3 December 2022 Page 3 of 10 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Contents 
+ 
+1.0 Aim ................................ ................................ ................................ .............................. 4 
+2.0 Scope ................................ ................................ ................................ .......................... 4 
+3.0 Responsibilities ................................ ................................ ................................ ............ 4 
+4.0 Abbreviations used within this guideline ................................ ................................ .......4 
+5.0 Key points ................................ ................................ ................................ .................... 4 
+6.0 Midwife responsibilities ................................ ................................ ................................ 5 
+7.0 Immediately after birth ................................ ................................ ................................ .5 
+8.0 Procedure when temperature is less than 36.5oC ................................ ........................ 6 
+9.0 Procedure when temperature is less than 36oC ................................ ........................... 6 
+10.0 Skin to skin contact ................................ ................................ ................................ ......6 
+11.0 Correct use of the hot cot ................................ ................................ ............................. 6 
+12.0 Continuing care ................................ ................................ ................................ ............ 7 
+13.0 Patient Information ................................ ................................ ................................ .......7 
+14.0 Monitoring/Audit ................................ ................................ ................................ ........... 7 
+References ................................ ................................ ................................ ............................. 8 
+Appendix 1: Neonatal Observation Chart ................................ ................................ ............... 9 
+Appendix 2: Monitoring for neonatal hypothermia flowchart ................................ .................. 10 
+
+CG1118 Prevention and management of neonatal hypothermia v4.3 December 2022 Page 4 of 10 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Neonatal Hypot hermia Guideline 
+
+1.0 Aim 
+ 
+The aim of this guideline is to provide clear guidance for staff on the detection and 
+management of newborn babies with or at risk of neonatal hypothermia. 
+ 
+2.0 Scope 
+ 
+This guideline applies to all staff caring for newborn babies. 
+ 
+3.0 Responsibilities 
+ 
+Midwives, health care assistants, maternity care assistants , nursery nurses & paediatricians : 
+ 
+ To access, read, understand and follow this guidance . 
+ To use their professional judgment in application of this guideline . 
+ 
+This guidance is for staff employed by University Hospital Sussex (SRH&WH) . The guidance 
+is not rigid and should be tailored to the individual circumstances of each woman /person . If 
+the guidance is not being followed, documentation of the reasoning and/or justification is 
+essential, with clear documentation of alternative plans and discussions. 
+ 
+Managemen t: 
+ 
+ To ensure the guideline is reviewed as required in line with Trust and National 
+recommendations . 
+ To ensure the guideline is accessible to all relevant staff. 
+ 
+4.0 Abbreviations used within this guideline 
+ 
+NEWTT - Newborn Early Warning Trigger & 
+Track KG- Kilograms 
+LSCS - Lower segment Caesarean section GA- General anaesthetic 
+ 
+5.0 Key points 
+ 
+Anticipate and prevent hypothermia in the following risk groups by me asuring temperature . 
+Perform neonatal observations at birth followed by 2 hourly for the first 12 hours, and then 4 
+hourly between 12 -24 hours following birth : 
+ 
+ Gestation less than 36 weeks Please follow late preterm guidance 
+ 
+ Birth weight <2.2 kg 
+ 
+CG1118 Prevention and management of neonatal hypothermia v4.3 December 2022 Page 5 of 10 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Requiring resuscitation at delivery 
+ 
+ Ill babies (excluding babies requiring cooling) 
+ 
+ Post LSCS if carried out under GA 
+ 
+An NEWTT observation chart should be commenced recording temperature, heart rate, 
+respiratory rate and blood sugar (see Appendix 1). 
+ 
+If a baby has abnormal observations at any time, a spot oxygen saturat ion check 
+should be carried out and observations repeated in 30 minutes following the 
+abnormal result. A neonatal team review should be requested if abnormal 
+observations remain after 30 minutes or other concerning signs - use NEWTT chart 
+scoring for support when identifying need for and timing of review. 
+ 
+If in the community setting, i.e. homebirth/BBA, and any risk factors are identified or 
+abnormal observations remain after 30 minutes then transfer to the hospital for 
+neonatal revie w. 
+ 
+6.0 Midwife responsibilities 
+ 
+All midwives should be aware of the risk factors for hypothermia (see above) and are 
+individually responsible for the mothers and babies in their care. 
+ 
+Before the birth of the baby, it is recommended that the win dows and doors should be closed 
+and fans turned off to prevent drafts. In cold weather it would be advisable to ensure that the 
+room is adequately heated. The environment in which the neonate is cared for should be 
+kept approx imately 23-25oC as per Resusci tation Council 2021 guidance. For premature 
+infants less than 36 weeks gestation , the environment should be kept above 25oC as per 
+Resuscitation Council 2021 guidance. 
+ 
+7.0 Immediately after birth 
+ 
+Immedi ate drying of the baby to reduce evaporative heat loss followed by skin to skin 
+contact and attention to the baby’s thermoregulation sho uld be encouraged from delivery. 
+The importance of prompt feeding , whether breast or bottle feeding within 1 hour , followed 
+by regular feeds, should be emphasised to women /people and their birth partners . If skin to 
+skin is risk assessed as inappropriate (consider safe skin to skin and positioning of baby) or 
+not to the mother’s /birthing parent’s wishes then the baby s hould be dried and wrapped in 
+warm dry towels and blankets. The birth partner can instead/also perform skin to skin if the 
+mother /birthing parent wishes. 
+ 
+Within the first hour of life an axilla temperature should be taken. Normal axilla temperature 
+is 36. 5- 37.5˚C (Resuscitation Council 2021 Guidance) . When the initial temperature is 
+36.5◦C or less , the baby should be placed skin -to- skin with the mother /birthing parent (or 
+birth partner ); or dressed warmly including a hat, and encouraged to feed and the 
+temperature should be re -checked after 30 minutes to ensure it is improving. 
+CG1118 Prevention and management of neonatal hypothermia v4.3 December 2022 Page 6 of 10 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Any baby who has a temperature persistently below 36.5 ◦C will require a review and a 
+written plan of care documented in their notes by the paediatric SHO . This plan should be re -
+evaluated appropriately by the paediatric SHO and baby reviewed when deemed necessary. 
+ 
+8.0 Procedure when temperature is less than 36.5oC 
+ 
+If the temperature is less than 36.5oC, the baby should be placed skin to skin and covered by 
+a blanket or dressed, including a hat . The infant should also be encouraged to feed, if it has 
+not already done so. The temperature should be rechecked after half an hour. If a repeat 
+temperature remains below 36.5 ˚C, a blood sugar test should be performed and the neonatal 
+hypoglycaemia protocol followed accordingly. 
+ 
+If temperature remains below 36.5 ˚C despite previou s measures th en a hot cot should be 
+introduced . Furthermore 4 hourly observation s should be commenced and documented on a 
+NEWTT observation chart. This should include the monitoring of neonatal temperature, heart 
+rate, respiratory rate, blood sugar and a s pot oxygen saturation check. 
+ 
+9.0 Procedure when temperature is less than 36oC 
+ 
+If the temperature is less than 36oC, a blood glucose test should be performed (see 
+neonatal hypoglycaemia guideline). The baby should be dressed, including a hat and 
+returned to the mother /birthing parent to encourage the baby to feed. The use of a hot cot 
+may be required. 
+ 
+The temperature should be rechecked after half an hour , if the temperature remains low 
+after this, they should be reviewed by the paediatric SHO and a plan of care formulated . 
+ 
+10.0 Skin to skin contact 
+ 
+Frequent and prolonged skin to skin contact throughout the immediate postnatal period 
+will stabilise heart rate and respirations, reduce stress and maintain the baby’s 
+temperature thereby helping to maintain normoglycaemia. Skin to skin contact also 
+stimulates a baby’s feeding refle xes and may help to facilitate spontaneous frequent 
+feeds. 
+ 
+11.0 Correct use of the hot cot 
+ 
+ Always make sure the hot cot is kept switched on at all times so it is available for 
+immediate use. It takes 4 hours for the cot to warm up once it has been turned off. 
+ 
+ The cot should always be initially set at 37oC. 
+ 
+ Place a blue hot cot cover over the water bed, plus one thin sheet. There should 
+be no other layers between the baby and the mattress. 
+ 
+ Baby should wear only a vest and baby grow whilst being nursed in the warming 
+cot. This is so that the warmth of the mattress reaches the baby. Never wrap the 
+CG1118 Prevention and management of neonatal hypothermia v4.3 December 2022 Page 7 of 10 
+Please check against Staffnet that this printout is the most recent version of this document. 
+baby in towels or use a cardigan. Cover the baby with 2 – 3 blankets. 
+ 
+ Recheck the baby’s temperature on a 4 hourly basis 
+ 
+ As the baby’s temperature reaches 36.5oC or above, the warming cot temp may be 
+gradually reduced by 0.5oC. Provided the baby’s temperature remains 36 .5oC or 
+more, then the hot cot temp should be continued to be reduced by 0.5oC at each 4 
+hourly check until the cot reaches 35oC. If the baby’s temperature is stable, the 
+baby may be transferred to a normal cot. 
+ 
+ Once the hot cot is discontinued ensure the baby is warmly dressed as they may 
+need additional clothing to maintain the ir temperature following transfer to a normal 
+cot. Recheck the baby’s temperature when they have been transferred to a normal 
+cot after 1 hour. 
+ 
+12.0 Continuing care 
+ 
+When the temperature is more than 36. 5 or more for 2 consecutive readings, observations 
+can be discontinued. 
+ 
+The Care Summary sheet in the baby’s notes should be completed appropriately. 
+ 
+Staff must also focus on providing supporting and assessing feeding to ensure the neonates 
+continued wel lbeing, particularly those with pre -existing risk factors. 
+ 
+13.0 Patient Information 
+ 
+Midwives and paediatric medical staff are responsible for explaining to parents the reasons 
+for monitoring and any management that takes place. 
+
+14.0 Monitoring/Audit 
+ 
+The process for audit and monitoring of this guideline is contained within the Maternity Audit 
+Document . 
+CG1118 Prevention and management of neonatal hypothermia v4.3 December 2022 Page 8 of 10 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Refe rences 
+ 
+Neonatal Thermoregulation. Newborn Guideline (2013) British Columba Reproductive Care 
+Program. 2. pg1 -6 
+ 
+CESDI project 27/28. 2004 
+ 
+Johanson, R & Spencer, A (2009). Temperature changes during the first 24 hours of Life. 
+Midwifery. 8. (2): 82 -8 June 
+ 
+Resuscitation Council UK (2021). Newborn resuscitation and support of transition of infants 
+at birth Guidelines 
+CG1118 Prev ention and management of neonatal hypothermia v4. 3 December 2022 Page 9 of 10 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 1 : Neonatal Observation Chart 
+ DO NOT PRINT FROM GUIDELINE 
+
+CG1118 Prev ention and management of neonatal hypothermia v4. 3 December 2022 Page 10 of 10 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Measure axilla 
+temperature 
+Temperature 
+36.5-37.5oC Temperature 
+less than 
+36.5oC 
+Normal 
+temperature 
+No additional 
+action required Place baby skin to skin 
+or fully dressed with hat 
+and covered with blanket 
+Encourage feeding Recheck 
+temperature 30 
+minutes later 
+Temperature 
+36.5oC or more Temperature 
+less than 
+36.5oC 
+Normal temperature 
+No sp ecial follow up 
+required Blood glucose level - 
+follow hypoglycaemic 
+protocol 
+Encourage feeding 
+ 
+Commence hot cot at 
+37oC if temp remains 
+less than 36.5oC 
+Perform 4 hourly 
+observations Re-check 
+temperature 30 
+minutes later 
+Temperature 
+36.5-37.5oC 
+Reduce hot cot by 
+0.5oC 
+Recheck 
+observations 4 hourly If temperature remains 
+36.5oC or more then continue 
+to reduce hot co t by 0.5oC 
+Discontinue hot cot when at 
+35oC Temperature 
+less than 
+36.5oC 
+Refer to paediatric 
+team for review and 
+plan of care 
+Once hot cot discontinued: 
+ Transfer to normal cot 
+ Dress baby warmly 
+ Recheck temperature 1 hour post transfer 
+ Discontinue monitoring once two consecutive 
+readings 36.5oC or more. Appendix 2: Monitoring for neonatal hypothermia flowchart

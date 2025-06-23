@@ -1,0 +1,965 @@
+# Extracted from: MP004 Antenatal Screening - Infectious Diseases HIV.pdf
+# Guideline ID: mp004-antenatal-screening-infectious-diseases-hiv
+# Content length: 48651 characters
+# Processing date: 1750066901.0807588
+
+Antenatal screening for infectious 
+diseases: Human 
+Immunodeficiency Virus ( HIV) 
+
+Maternity Protocol: MP004 
+ 
+Date Agreed: November 2019 
+
+Antenatal screening for infectious diseases: MP004 
+Human Immunodeficiency Virus ( HIV) (RSCH PRH only ) 
+ 
+Brighton and Sussex Universities Hospital NHS Trust Page 2 of 31 
+
+Guideline Reviewer: Helen Green 
+Manager Responsible Karen Gregory 
+Version: 4.0 
+Approval Committee: Women’s Services Safety and Quality Committee 
+Date agreed: November 2019 
+Amended Date 
+Review date: November 2022 
+Cross reference: MP001 Provision & Schedule of Antenatal Care 
+MP008 Infections in pregnancy 
+MP009 Management of HIV in pregnancy and Neonatal Period 
+MP019 Hypertensive Disease 
+BSUH neonatal department – medical guidelines: HIV (2009): 
+Management of infants born to HIV positive mothers. 
+BSUH neonatal department – medical guidelines: HIV testing of babies 
+untested mothers (2010) 
+ Antenatal screening for infectious diseases: MP004 
+Human Immunodeficiency Virus ( HIV) (RSCH PRH only ) 
+ 
+Brighton and Sussex Universities Hospital NHS Trust Page 3 of 31 
+ 
+Contents 
+Antenatal screening for infectious diseases: Human Immunodeficiency Virus ( HIV) ................ 1 
+Key Principles ................................ ................................ ................................ ........................ 5 
+Scope ................................ ................................ ................................ ................................ ... 5 
+Responsibilities ................................ ................................ ................................ ..................... 5 
+1 Antenatal Screening for HIV ................................ ................................ ........................ 6 
+1.1 Aims ................................ ................................ ................................ .............................. 6 
+1.2 Objectives ................................ ................................ ................................ ...................... 6 
+1.3 Expected Health Outcomes ................................ ................................ ........................... 6 
+2 Screening for HIV In Pregnancy ................................ ................................ .................... 7 
+3 Offering Screening in Pregnancy ................................ ................................ .................. 8 
+3.1 The Eligible Population ................................ ................................ ................................ . 8 
+4 Women Booking Late ................................ ................................ ................................ .. 9 
+5 Women Who Arrive Un -booked or Without Screening Results in ................................ . 9 
+5.1 Labour ................................ ................................ ................................ ........................... 9 
+6 Women Known To Be Living with HIV Prior To Screening ................................ ........... 11 
+7 7.0 Declining Screening ................................ ................................ ............................. 11 
+8 Taking the Sample ................................ ................................ ................................ ..... 12 
+9 Unacceptable Samples ................................ ................................ .............................. 13 
+10 Results Processes ................................ ................................ ................................ ...... 13 
+10.1 Accessing result ................................ ................................ ................................ ....... 13 
+10.1.2 Failsafe - 10 day check: ................................ ................................ ....................... 14 
+10.1.4 Failsafe - check at follow up antenatal appointment: ................................ ...... 14 
+10.1.5 Failsafe - Check at time of dating scan ................................ ............................. 15 
+10.1.7 Women who terminate or miscarry : ................................ ................................ 15 
+10.1.8 Missing Antenatal Screening Results: ................................ .............................. 15 
+11 Negative Result ................................ ................................ ................................ ......... 16 
+12 Follow Up For Women with an HIV Positive Result ................................ .................... 16 
+13 Documentation/ Liaison with Other Members of the Healthcare Team ...................... 18 
+14 On-Going Care of Women Living With HIV In Pregnancy ................................ ............. 18 Antenatal screening for infectious diseases: MP004 
+Human Immunodeficiency Virus ( HIV) (RSCH PRH only ) 
+ 
+Brighton and Sussex Universities Hospital NHS Trust Page 4 of 31 15 Audit and monitoring ................................ ................................ ................................ 19 
+16 Training ................................ ................................ ................................ ..................... 20 
+17 Governance ................................ ................................ ................................ ............... 20 
+18 Care Pathway: Antenatal screening for infectious diseases HIV screening .................. 21 
+19 References ................................ ................................ ................................ ................ 22 
+20 Patient information ................................ ................................ ................................ ... 23 
+21 Appendix A – Key Personnel and Contact Information ................................ ............... 24 
+22 Appendix B - Background to Antenatal screening for HIV ................................ ........... 27 
+23 Appendix C: Blood Test Declined Form ................................ ................................ ...... 28 
+24 Appendix D – Hepatitis B Notification form ................................ ................................ 29 
+25 Appendix E– Proforma for recording results at 10 days ................................ .............. 30 
+
+ Antenatal screening for infectious diseases: MP004 
+Human Immunodeficiency Virus ( HIV) (RSCH PRH only ) 
+ 
+Brighton and Sussex Universities Hospital NHS Trust Page 5 of 31 Key Principles 
+ 
+A protocol is a set of measurable, objective standards to determine a course of action. 
+Professional judgement may be used in the application of a protocol. 
+ 
+Scope 
+ 
+This protocol applies to: 
+All women booking at any stage of pregnancy 
+ 
+Responsibilities 
+ 
+Midwives & Obstetricians: 
+• To access, read, understand and follow this guidance. 
+• To use their professional judgement in application of this protocol. 
+ 
+Management: 
+• To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations. 
+• To ensure the protocol is accessible to all relevant staff. 
+
+ Antenatal screening for infectious diseases: MP004 
+Human Immunodeficiency Virus ( HIV) (RSCH PRH only ) 
+ 
+Brighton and Sussex Universities Hospital NHS Trust Page 6 of 31 1 Antenatal Screening for HIV 
+ 
+Background to the screening programme is given in Appendix B . 
+ 
+For Designated programme lead for maternity services and Link speciality staff please see 
+Appendix A 
+ 
+1.1 Aims 
+ 
+The NHS infectious Disease in Pregnancy Screening Programme ensures that all 
+pregnancy women are offered and recommended screening for HIV [public 
+Health England (PHE) 2018b] 
+ 
+1.2 Objectives 
+1.2.1 To ensure that women with HIV are identified early in pregnancy to 
+facilitate appropriate assessment and management for their health 
+1.2.2 To reduce the risk of mother -to-child transmission of HIV 
+1.2.3 To facilitate appropriate neonatal referral and management [PHE 
+2018b] 
+1.3 Expected Health Outcomes 
+ 
+Our aim is to reduce the risk of a mother -to-child transmission of HIV and 
+safeguard the woman own health [PHE 2018b . 
+ Antenatal screening for infectious diseases: MP004 
+Human Immunodeficiency Virus ( HIV) (RSCH PRH only ) 
+ 
+Brighton and Sussex Universities Hospital NHS Trust Page 7 of 31 2 Screening for HIV In Pregnancy 
+2.1 Pre-Screening information: enabling informed choice 
+2.1.1 At the first antenatal contact with the midwife, the woman should be 
+given verbal and written information about HIV. This should include the 
+benefits of screening for both the woman and unborn baby [National 
+Institute for Health and Care Excellence (NICE) 2008, PHE 2018b] . 
+2.1.2 Screening should be offered and recommended. 
+2.1.3 Trust uses the NHS Screening Programmes information booklet: 
+‘Screening tests for you and your baby’. This includes the section 
+‘Infectious Diseases’ This leaflet may be sent to the woman by post 
+prior to the first appointment or given out at the first appointment. The 
+midwife must document in the hand held notes that the leaflet has 
+been received by the woman. 
+2.1.4 Copies of ‘Screening tests for you and your baby’ are available in some 
+other languages and can be downloaded via the Public Health England 
+website: https://www.gov.uk/government/publications/screening -
+tests -for-you-and-your -baby -description -in-brief If the leaflet is not 
+available in the language required from the national website, it is 
+possible to ask for the leaflet to be translated via the trust’s Equality 
+and Diversity Team. 
+ 
+2.1.5 Interpreting services (including sign language) should be used for 
+communicating with parents who are not fluent in English at all stages 
+of the screening pathway. 
+ 
+2.1.6 Where there are specific communication requirements (e.g. English is 
+not the woman’s first language, visual/ hearing impairment ) 
+appropriate interpretation services should be used at booking and all 
+subsequent stages in the screening pathway. For further guidance see 
+also the trusts Accessible Communications Guidelines via the Equality 
+and Diversity team. 
+ 
+2.1.7 If the midwife or doctor feels unable to answer all questions or the 
+woman requests further advice/information about any aspect of HIV, 
+then a direct referral can be made to the Specialist Midwife for 
+Reproductive Health and Wellbeing (SMRHW) for specialist counselling 
+[See contact list Appendix A . 
+ Antenatal screening for infectious diseases: MP004 
+Human Immunodeficiency Virus ( HIV) (RSCH PRH only ) 
+ 
+Brighton and Sussex Universities Hospital NHS Trust Page 8 of 31 3 Offering Screening in Pregnancy 
+3.1 The Eligible Population 
+All women and people should be offered screening for HIV early in each 
+pregnancy regardless of the results of HIV screening in previous pregnancies 
+[NICE 2008, PHE 2018b, PHE 2019] 
+ 
+3.2 The midwife or doctor should discuss the reasons why screening for HIV is 
+recommended, the results process and follow -up if diagnosed with HIV 
+infection. 
+ 
+3.3 Screening should be offered early in pregnancy, ideally by 10 weeks [NICE 
+2008 ]. The aim is to offer and screen all women before 10 weeks, however, 
+screening can be offered at any point during the pregnancy. 
+ 
+3.4 Women booking late or who arrive unbooked in labour should still be offered 
+screening at the first available opportunity (see sections 4.0 and 5.0). 
+ 
+3.5 Testing should also be available on request at any stage of pregnancy should a 
+woman consider herself to be at risk of infection [PHE 2018b] . However advice 
+should be sought immediately from the GUM team if a woman thinks she have 
+been in contact with HIV infection during pregnancy. 
+ 
+3.6 Women who have booked elsewhere and transferred care to BSUH NHS TRUST 
+should be offered repeat screening. This ensures a result is available in -house 
+for all staff to access electronically if the hand held notes are not available and 
+for completion of cohort data. If a woman or person declines repeat testing 
+having been screened elsewhere, then a copy of the original result from the 
+previous booking unit must be inserted in the hand held notes and a further 
+copy sent to the Antenatal Screening Co -ordinator and SMRHW. A booking 
+test declined form (Appendix C) should be completed and the declines process 
+should be implemented) 
+ 
+3.7 The midwife should document in the hand held notes that discussion has taken 
+place and the woman’s decision to accept or decline screening. Screening 
+should only be performed after documented informed consent; this does not 
+require a signature from the woman. 
+ 
+3.8 There is currently no national policy to offer repeat HIV screening later in 
+pregnancy . However, in the following circumstances, the midwife should 
+consider a repeat test at 28 weeks if: 
+ Antenatal screening for infectious diseases: MP004 
+Human Immunodeficiency Virus ( HIV) (RSCH PRH only ) 
+ 
+Brighton and Sussex Universities Hospital NHS Trust Page 9 of 31 • If a woman or person changes their sexual partner/s or continues to 
+engage in at risk behaviour during the pregnancy including injecting 
+recreational drugs, sex work, having a partner that is known to be 
+bisexual, having a partner that is known to have HIV, or if either partner 
+is diagnosed with an STI 
+• If the woman is from a high risk group and/ or her partner is from a 
+high risk group with HIV status is unknown. E.g. if they are from a sub -
+Saharan country 
+• If symptomatic for sero -conversion (rash, flu -like symptoms, sore 
+throat, diarrhoea) at any stage 
+• If the woman discloses that her partner is HIV positive [PHE 2018b] 
+ 
+These cases should be considered on an individual basis. Advice can be sought from the 
+SMRHW as necessary (see Appendix A ). 
+4 Women Booking Late 
+ 
+4.1 Women booking late must be offered screening at the first appointment with 
+the midwife. Short interval between treatment for maternal infection and 
+delivery are associated with an increased risk of vertical transmission. 
+Therefore for women booking at 24 weeks gestation or later, the blood 
+specimens should be marked urgent and positive results reported within 24 
+hours (1 working day) of the sample being received in the laboratory [Royal 
+College of Pathologists (RCP) 2013] 
+ 
+4.2 In such cases it is the responsibility of the midwife booking the woman to 
+follow up results within 5 working days of the sample being taken. The midwife 
+must agree a plan with the woman to communicate the results to her. This 
+plan must be documented in the maternal hand held notes [RCP 2013] . 
+ 
+5 Women Who Arrive Un -booked or Without Screening Results in 
+5.1 Labour 
+5.1.1 Women who arrive unbooked or without screening results in labour 
+must be offered screening on admission by the midwife responsible for 
+her care. Consideration should be given to the stage of labour, woman’s 
+condition and specific risk factors for HIV. The midwife should 
+document all discussions that have taken place in the hand held notes 
+[PHE 2018b] . 
+ Antenatal screening for infectious diseases: MP004 
+Human Immunodeficiency Virus ( HIV) (RSCH PRH only ) 
+ 
+Brighton and Sussex Universities Hospital NHS Trust Page 10 of 31 5.1.2 If the woman is considered to be at increased risk of HIV infection and 
+delivery is imminent or maternal health compromised then it may be 
+necessary to consider urgent or rapid screening. If in doubt as to 
+whether urgent screening is necessary, discuss with the SMRHW or on-
+call doctor for HIV. 
+5.1.3 During normal working hours results can normally be obtained within 
+an hour from the laboratory. These cases should be discussed with 
+laboratory staff BEFORE the sample is taken, informing them that the 
+result is urgent. Out of normal working hours, the case should be 
+discussed with the on -call microbiologist and on -call doctor for HIV [PHE 
+2016a, PHE 2018b] . 
+5.1.4 Where a rapid test is required at the point of care (POCT – point of care 
+test) in urgent cases (for example if delivery is imminent or baby has 
+been born before maternal HIV testing), the case must be discussed 
+with the on -call microbiology consultant and SMRHW or on call doctor 
+for HIV. Where it is agreed that a POCT is appropriate, this will be 
+carried out by either the on -call doctor for HIV, SMRHW or laboratory 
+staff. 
+5.1.5 Presumptive action should be taken on a preliminary positive result 
+taken on a woman in labour until such time as the result is confirmed . 
+5.1.6 If consent is withheld for screening during labour the midwife caring for 
+the woman should re -offer screening after delivery and document 
+discussions/ decisions in hand held maternity notes , and refer to the 
+SMRHW for follow up [PHE 2018b] (DoH 2003). 
+5.1.7 The midwife caring for the woman in labour should inform the on -call 
+neonatal d octor when either: 
+• consent to screening is withheld during labour 
+• a woman has been screened but delivery is likely before 
+the result is available 
+In either of these situations, the midwife should alert the on -call 
+neonatal consultant who, in conjunction with the on -call HIV doctor, 
+will consider screening the infant. Breast feeding should be avoided 
+until an HIV negative result is obtained. For further information refer 
+to BSUH neonatal policy: HIV testing of babies of untested mothers. 
+5.1.8 In all cases blood results must be obtained before discharge from the 
+hospital / maternity services and documented in the hand held notes by 
+the midwife responsible for the woman’s care [PHE2018b] 
+ Antenatal screening for infectious diseases: MP004 
+Human Immunodeficiency Virus ( HIV) (RSCH PRH only ) 
+ 
+Brighton and Sussex Universities Hospital NHS Trust Page 11 of 31 5.1.9 The Antenatal Screening Co -ordinator and SMRHW should both be 
+informed of any woman or person screened on delivery suite/postnatal 
+wards to ensure appropriate tracking and follow up [PHE 2018]. 
+6 Women Known To Be Living with HIV Prior To Screening 
+ 
+6.1 Where a positive diagnosis of HIV is documented and known to the health 
+professional, they should refer the woman to the Specialist Midwife for 
+Reproductive Health and Wellbeing (SMRHW) by phone immediately (see 
+Appendix A ) to ensure appropriate management. Management for these 
+women is the same as for women diagnosed via antenatal screening and 
+detailed in section 10.0 
+ 
+6.2 Known women living with HIV should still be re -screened for HIV as they may 
+not be known to local GUM services and the positive result triggers the 
+laboratory to inform the SMRHW which acts as an additional failsafe to ensure 
+follow -up. When completing the request form write ‘HIV positive status 
+known’ and include date of prior diagnosis and where it was performed. 
+ 
+6.3 If the woman declines a re -screen for HIV then this should be recorded as ‘HIV 
+screening test not required – positive status known’ rather than declined. All 
+other antenatal screening tests should be offered as routine. 
+ 
+7 7.0 Declining Screening 
+ 
+7.1 Screening is optional. All women have the right to decline screening. In these 
+cases the midwife should complete a booking blood test declined form (see 
+Appendix C ) and return to the SMRHW. 
+ 
+7.2 The decision to decline screening must be clearly documented by the midwife 
+in the hand held notes. The ‘decline’ box must also be ticked on the booking 
+blood request form. 
+ 
+7.3 Where women decline screening, the midwife should ensure that the woman 
+is aware she can opt for screening at any stage later in her pregnancy and is 
+aware how to arrange this [PHE 2018b] . Antenatal screening for infectious diseases: MP004 
+Human Immunodeficiency Virus ( HIV) (RSCH PRH only ) 
+ 
+Brighton and Sussex Universities Hospital NHS Trust Page 12 of 31 7.1 The woman sho uld also be informed that as they have declined HIV screening, 
+they will be contacted by the SMRHW to further discuss their choices. This 
+contact will usually be within 10 working days of receipt of the decline form 
+and ideally by 20 weeks. Ideally this discussion takes place in person. At this 
+contact the SMRHW will: 
+• discuss the woman or person ’s decision to decline and ensure that 
+they are fully aware of the benefits of screening for both themselves 
+and their baby 
+• reoffer the screening test and where this is accepted arrange testing 
+of all booking bloods and follow up of the result 
+• offer and where accepted arrange needle prick point of care tests or 
+oral swabs to women and people who are severely needlephobic 
+[PHE 2018b] 
+7.2 If the woman remains unscreened at 28 weeks the midwife should re -offer 
+screening at the 28 week visit along with the other blood test routinely offered 
+at this appointment. The midwife should document in the hand held notes any 
+discussions that take place and the woman or person ’s decision to accept or 
+decline screening after re -offer. 
+ 
+7.3 The SMRHW will follow up at 32 weeks and if the woman remains unscreened, 
+the SMRHW will inform the following staff by email: 
+• Link Neonatal Consultant 
+• Link GUM consultant 
+• Link Obstetric Consultants 
+• Consultant Virologist 
+• Antenatal Screening Co -ordinator 
+• Neonatal secretary 
+• Consultant Neonatologist (who will co -ordinate a team meeting 
+to formulate a postnatal management plan individual to the 
+woman or person’s circumstances) [PHE 2018b] 
+7.4 For further information refer to BSUH neonatal policy: HIV testing of babies of 
+untested mothers. 
+8 Taking the Sample 
+ 
+8.1 The sample may be taken at booking by the midwife or practice nurse or 
+phlebotomist according to local arrangements: 
+• A 5 ml sample of blood is required in a gold topped (clotted) bottle. This 
+same sample can be used for Syphilis and Hep atitis B screening. 
+• The requestor (midwife or doctor) should complete all fields on the 
+Antenatal Booking Blood Request Form. The request from is in 
+triplicate, and the requestor must ensure that all hand writing has 
+transferred through and is legible on all three sheets of the form. Antenatal screening for infectious diseases: MP004 
+Human Immunodeficiency Virus ( HIV) (RSCH PRH only ) 
+ 
+Brighton and Sussex Universities Hospital NHS Trust Page 13 of 31 Where adhesive patient labels are used, a label must be affixed onto 
+each of the three sheets of the request form. The form includes tick 
+boxes for ‘accept’ or ‘decline’ of HIV screening as well as boxes to 
+indicate whether this is a ‘first booking’, ‘urgent’ or ‘repeat’ sample. 
+ 
+8.2 The sample must be labelled according to laboratory guidelines. The minimum 
+acceptable identifiers include forename, surname (no abbreviations), plus date 
+of birth and NHS number or hospital ID number. The NHS number is the 
+preferred number to use [PHE 2016a] . 
+ 
+8.3 Additional information should be included on the request form if relevant: 
+For example: family origins, recent immigration (if lived in an area of world 
+where HIV is endemic), known prior positive result and first language (if not 
+English) to assist the SMRHW in follow -up of positive results. 
+ 
+8.4 Samples are sent to Brighton Pathology for processing and should arrive within 
+one wor king day of sample collection. 
+9 Unacceptable Samples 
+9.1 Where the sample is deemed to be unacceptable by the laboratory because of 
+insufficient blood, incomplete data on the request form, mislabelling of sample 
+bottle or for any other reason, the laboratory will inform the sample requestor 
+to request a repeat. In such cases, a repeat sample should ideally be taken 
+within 10 working days of the request being received by the maternity unit 
+[PHE 2016a, PHE 2018b] . 
+9.2 Where repeat samples take longer than 10 working days to arrange (for 
+example the woman is away or declines to attend for repeat sampling within 
+10 days), the midwife should document reasons why there has been a delay. 
+9.3 The midwife must always follow up the results of repeated samples and 
+arrange a plan (documented in the hand held notes) being mindful that there 
+has already been a delay in obtaining a result because of the need to repeat. 
+ 
+10 Results Processes 
+10.1 Accessing result 
+(Including failsafes to ensure all women who accept screening receive a result) 
+ Antenatal screening for infectious diseases: MP004 
+Human Immunodeficiency Virus ( HIV) (RSCH PRH only ) 
+ 
+Brighton and Sussex Universities Hospital NHS Trust Page 14 of 31 10.1.1 Results will be available to staf f within 5 working days on ICE (the 
+electronic results reporting programme) or by phoning the virology 
+labo ratory at RSCH on 01273 696955 ext 4627 [PHE 2016a] . 
+10.1.2 Failsafe - 10 day check: 
+It is the responsibility of the sample requestor to follow up results 
+within 10 working days of the sample being taken (see also 9.1.3 for 
+situations where this is not possible). The sample requestor should 
+ensure positive results have been acted upon (by contacting the 
+SMRHW ) and follow up missing results or laboratory requests for a 
+repeat sample. The sample requestor must document that results 
+were followed up and acted on. An example proforma that can be 
+used for recording that results were followed up is given in Appendix 
+D 
+10.1.3 It is recognised that some community clinics do not have facilities for 
+venepuncture and therefore women attend hospital phlebotomy to 
+have bloods taken. In such cases, the sample requestor will not know 
+when the bloods were actually taken and so cannot follow up results at 
+10 days. In such cases it is essential that the requestor follows up 
+results as per 9.1.4. 
+ 
+10.1.4 Failsafe - check at follow up antenatal appointment: 
+It is the responsibility of the health professional (midwife or doctor) 
+providing care at the next antenatal appointment (usually at the 16 
+weeks of pregnancy appointment) to check the results . If the result is 
+negative then , document results (with informed consent) in the hand 
+held notes and inform the woman of the results during the 
+appointment [PHE 2018b] .If the result is positive please liaise with 
+the SMRHW to confirm the woman or person is already known to the 
+SMRHW, and the woman or person has been informed of the result. 
+ Antenatal screening for infectious diseases: MP004 
+Human Immunodeficiency Virus ( HIV) (RSCH PRH only ) 
+ 
+Brighton and Sussex Universities Hospital NHS Trust Page 15 of 31 10.1.5 Failsafe - Check at time of dating scan 
+As an additional failsafe, the Antenatal Screening Support Worker 
+(ASSW) will ensure a full set of booking blood results are available at 
+the time women attend dating scan. This allows early identification 
+of missing results that can be actioned after the scan. With consent, 
+missing bloods will be repeated at this point of contact by the ASSW. 
+The ASSW will then inform, via email, the Antenatal Screening Team 
+and named community midwife. It is then the responsibility of the 
+named community midwife to follow up results within 10 working 
+days and inform the woman or person as per 9.1.2. all women and 
+people should be notified of their results following testing and this 
+includes women and people who terminate or miscarry following 
+screening. This is especially important with screen positive results to 
+ensure women and people are referred and seen for specialist follow 
+up within the timeframe detailed in section 10.0 [PHE 2016a, PHE 
+2018b] 
+ 
+10.1.6 It is recognised that not all women will be attending for dating scan. 
+This might include women booking late or transferring in from another 
+trust or women who decline scans. Therefore this is will not capture all 
+women which is why the failsafe checks as detailed in this section are 
+mandatory. 
+ 
+10.1.7 Women who terminate or miscarry : 
+All women should be notified of their results following testing and 
+this includes women who terminate or miscarry following screening. 
+This is especially important with screen positive results to ensure 
+women are referred and seen for specialist follow up as per section 
+10.0 [PHE 2016a, PHE 2018b] . 
+10.1.8 Missing Antenatal Screening Results : 
+Results should be documented in all cases at the next antenatal 
+appointment [PHE 2018 b]. In rare circumstances, a result may not be 
+available at the next appointment. The midwife or doctor should 
+phone the laboratory to try and ascertain how long results will take 
+and agree with the woman or person, a plan to communicate the 
+results to them. 
+10.1.9 If having phoned the laboratory it is apparent that there is no result, 
+then a repeat screening test should be recommended and where 
+accepted, taken that day or within 10 working days maximum [PHE 
+2016a, PHE 2018b]. 
+ Antenatal screening for infectious diseases: MP004 
+Human Immunodeficiency Virus ( HIV) (RSCH PRH only ) 
+ 
+Brighton and Sussex Universities Hospital NHS Trust Page 16 of 31 10.1.10 Where a repeat sample is taken, the midwife or doctor taking the 
+sample must agree a plan with the woman for communicating the 
+result to her within a specified time frame. 
+ 
+10.1.11 Full documentation of the above should be made in the hand held 
+notes by health professional offering the test. 
+ 
+11 Negative Result 
+Where a result is negative, the health professional (midwife or doctor) informing the 
+woman of the result should explain the following: 
+ 
+11.1 A negative result does not confer protection on the woman. If a woman (or her 
+partner) engages in high risk behaviour there is a risk of acquiring HIV during 
+pregnancy [PHE 2018a] Informing a woman of a negative test result should be 
+used as an opportunity for general sexual health promotion and for the 
+dangers of becoming infected during pregnancy or lactation [PHE 2016b, PHE 
+2018b]. 
+11.2 There is a ‘window period’ of 6-8 weeks between acquiring the infection and 
+testing HIV antibody positive. Therefore there is a small possibility of infection 
+going undetected . The option for a repeat test later in the pregnancy should be 
+offered in cases where the woman is anxious about her status or if she is 
+unaware of her partner’s HIV status and he is from a higher risk group (for 
+example IV drug user / from HIV endemic area). 
+ 
+11.3 Women can also request repeat screening at any stage of the pregnancy if she 
+requests to do so or deems herself at risk or changes her sexual partner [PHE 
+2016b, PHE 2018b] 
+12 Follow Up For Women w ith a n HIV Positive Result 
+ Antenatal screening for infectious diseases: MP004 
+Human Immunodeficiency Virus ( HIV) (RSCH PRH only ) 
+ 
+Brighton and Sussex Universities Hospital NHS Trust Page 17 of 31 12.1 All confirmatory testing is performed in Brighton pathology laboratory. 
+12.2 The virology laboratory staff will inform the Specialist Midwife for 
+Reproductive Health and Wellbeing (SMRHW) and designated Health Advisors 
+(HA - who provide cover if the SMRHW is absent) by email of a HIV positive or 
+equivocal result. This email is sent to a dedicated email account 
+(bsuh.womens.health.advisor@nhs.net ) which is checked daily by the 
+designated specialist staff (SMRHW/HAs). This failsafe ensures results are 
+communicated and actioned within the appropriate timeframe as per 10.6. 
+12.3 The following members of staff are also informed about an HIV positive result 
+• Manager of SMRHW 
+• Nominated Health advisor 
+• Consultant for HIV in pregnancy 
+• Consultant obstetrician 
+• Consultant neonatologist 
+• Antenatal Screening Co -ordinator 
+ 
+12.4 The laboratory also informs the Health Protection Agency’s Communicable 
+Disease Surveillance Centre on line with national policy (DoH 2003). Note all 
+HIV positive samples undergo confirmatory testing within BSUH pathology at 
+the RSCH laboratory 
+ 
+12.5 All positive results will be actioned within 48 working hours of the result being 
+received by the Health Advisor team. 
+12.6 The SMRHW (or HA in her absence) will first attempt to contact the woman by 
+phone offering an appointment at the Claude Nicol Centre, RSCH, to discuss 
+antenatal screening blood test results. Women will be offered an appointment 
+within 10 working days of the result. If there is no response from the letter 
+then attempts will be made to contact the woman by phone. 
+12.7 At this first appointment, the SMRHW will inform the women of the results and 
+meet her immediate support needs according to each individual case. This will 
+vary according to whether this was a prior diagnosis or new diagnosis. In 
+addition the following will take place (either at this appointment or subsequent 
+appointments according to the individual circumstances): 
+• Baseline CD4/Viral load test taken. Process agreed with the women for 
+communicating results 
+• The SMRHW asks patients for consent to inform all relevant parties 
+ Antenatal screening for infectious diseases: MP004 
+Human Immunodeficiency Virus ( HIV) (RSCH PRH only ) 
+ 
+Brighton and Sussex Universities Hospital NHS Trust Page 18 of 31 12.8 The SMRHW asks patient for consent to inform all relevant 
+12.9 The SMRHW co-ordinates ongoing care and support as well as partner 
+notification with the woman’s consent. Testing of partner/ other children 
+arranged as appropriate. 
+12.10 The SMRHW arranges an appointment at the Lawson Unit to see the HIV 
+consultant. Pregnant Women who are diagnosed with an HIV infection are 
+managed and treated by the appropriate specialist teams (NICE 2009). See 
+trust policy: MP009 Management of HIV in pregnancy and Neonatal Period. 
+
+12.11 The SMRHW will arrange referral to other agencies as required according to 
+individual client need. 
+12.12 The SMRHW will document all discussions that have taken place with the 
+women in the GUM notes. 
+ 
+13 Documentation/ Liaison with Other Members o f the Healthcare 
+Team 
+ 
+13.1 Women have a right to confidentiality regarding an HIV positive result. Thus 
+other staff involved in her care can only be informed and a result can only be 
+documented in the hand held notes, with informed consent. Women who 
+decline documentation of their HIV status should be encouraged to inform 
+staff on admission in labour. Failure to do so could adversely affect care and 
+interventions may take place that unwittingly increase the risk of vertical 
+transmission. 
+13.2 The SMRHW has responsibility to inform the following staff (once informed 
+consent has been obtained): 
+• Community midwife by email 
+• Consultant for HIV in Pregnancy in person (arranges appointment for 
+the woman to be seen) 
+13.3 The Consultant for HIV in Pregnancy has responsibility to liaise with the 
+following staff re –ongoing treatment (once informed consent has been 
+obtained): 
+• Consultant Neonatologist by letter 
+• Consultant Obstetrician by letter 
+ 
+14 On-Going Care of Women Living With HIV In Pregnancy 
+ Antenatal screening for infectious diseases: MP004 
+Human Immunodeficiency Virus ( HIV) (RSCH PRH only ) 
+ 
+Brighton and Sussex Universities Hospital NHS Trust Page 19 of 31 Refer to the following BSUH protocols for further guidance on management: 
+14.1 See Maternity protocol: MP008 Infections in Pregnancy 
+14.2 See trust policy: MP009 Management of HIV in Pregnancy and Neonatal period 
+ 
+15 Audit and monitoring 
+15.1 Minimum auditable standards 
+Public Health England requires that the following data is collected on a 
+quarterly basis and reported annually ( see Public Health England 2016 for full 
+details of current standards and all definitions): 
+15.1.1 Number of women booking 
+15.1.2 Number of women eligible for screening 
+15.1.3 Number of women tested (Coverage: Standard 1) 
+15.1.4 Number of women declining screening 
+15.1.5 Number of women diagnosed with newly diagnosed HIV infection 
+15.1.6 Number of women diagnosed with old HIV infection (ie diagnosis made 
+before current pregnancy) who were re -screened in the current 
+pregnancy 
+15.1.7 Number of women attending for specialist assessment within 10 
+working days of a positive result (Standard 5) 
+ 
+15.2 Current data requirements of the Key Performance Indicators for screening are 
+available at http://www.screening.nhs.uk/kpi : Data for the trust is submitted 
+quarterly. 
+15.3 An annual audit of women’s notes will take place to review documentation 
+processes. 
+15.4 Data and audit findings will be included in the BSUH Trust Annual Antenatal 
+and Neonatal Screening Report compiled by the Antenatal Screening Co -
+ordinator which is circulated to board level with in the trust and to the 
+following (see contact list in Appendix A ): 
+ 
+• Regional Public Health England lead 
+• Regional Screening and Immunisation Lead 
+• Regional Quality Assurance Screening Lead 
+ 
+ Antenatal screening for infectious diseases: MP004 
+Human Immunodeficiency Virus ( HIV) (RSCH PRH only ) 
+ 
+Brighton and Sussex Universities Hospital NHS Trust Page 20 of 31 
+
+16 Training 
+ 
+16.1 All midwives must attend a yearly update on antenatal screening for infectious 
+diseases as part of their mandatory education update sessions 
+16.2 All midwives new to the trust should complete the Antenatal & Newborn 
+Screening eLearning Module available at www.e -lfh.org.uk .This includes a 
+section on antenatal scre ening for infectious diseases. 
+16.3 It is recommended that all staff involved in antenatal screening for infectious 
+diseases complete the Antenatal & Newborn Screening eLearning Module 
+annually. 
+16.4 All band 5 midwives must complete the Antenatal & Newborn Screening 
+eLearning Module as part of their competencies before they can apply for a 
+band 6. 
+17 Governance 
+ 
+17.1 All incidents related to antenatal screening for HIV are reported via the trusts 
+internal reporting system known as DATIX. 
+17.2 All incidents related to screening for HIV should also be reported to the 
+Antenatal Screening Co-ordinator who will liaise with the Maternity Risk 
+Manager and where necessary complete a SIAF (Screening incident assessment 
+form) in order to notify the Regional QA screening team and the Screening and 
+Immunisations lead. 
+17.3 Where relevant incidents should also be reported to the Laboratory Lead and 
+ Pathology Quality Team as well as the SMRHW and GUM lead consultant. 
+17.4 For further information relating to management of incidents please refer to the 
+protocol: MP085 Maternity & Gynaecology Risk Management Strategy. 
+17.5 The Antenatal Screening for Infectious Diseases Steering Group meets 
+quarterly and will address all issues pertaining to HIV screening. 
+ Antenatal screening for infectious diseases: MP004 
+Human Immunodeficiency Virus ( HIV) (RSCH PRH only ) 
+ 
+Brighton and Sussex Universities Hospital NHS Trust Page 21 of 31 18 Care Pathway: Antenatal screening for infectious diseases HIV 
+screening 
+
+All women given information booklet ‘Screening tests for you and your baby’ which incorporates the leaflet: 
+‘Infectious Diseases’[usually 6 – 9 weeks]. This may be given before or at booking. 
+At booking: Offer and recommend screening for HIV along with Hep B and Syphilis. If further information is required 
+offer referral to Specialist Midwife for Reproductive Health and Wellbeing (SMRHW) for further discussion 
+ 
+ Screening accepted 
+ Screening declined 
+Document in hand held notes –Midwife 
+completes Antenatal Screening Tests Declined 
+form – Return to SMRHW 
+ 
+Advise the woman will be contacted by the 
+SMRHW to discuss reasons for declining 
+screening. Re -offer by 20 weeks – to include 
+offer of swab or needle prick point of care 
+test if needle phobic [by SMRHW] 
+Reoffer again at 28 weeks [By CMW] 
+ 
+If remains unscreened at 32 weeks SMRHW 
+SMRHW informs: Neonatal, GUM, Obstetric 
+and Virology link consultants. 
+NN link consultant arranges meeting to 
+formulate P/N management plan. 
+ 
+Document in hand held notes : Maternal/parental 
+signature not required. 
+Blood taken with booking bloods. 
+Advised of results process. 
+ 
+HIV Negative result 
+ HIV Positive results 
+Results followed up 
+within 10 working days 
+of sample being taken. 
+Documented in 
+maternal hand held 
+notes at NEXT A/N 
+check. 
+ 
+See policy for details 
+of follow up of HIV 
+positive women 
+Lab informs SMRHW 
+of all HIV positive 
+results by email Antenatal screening for infectious diseases: MP004 
+Human Immunodeficiency Virus ( HIV) (RSCH PRH only ) 
+ 
+Brighton and Sussex Universities Hospital NHS Trust Page 22 of 31 19 References 
+ 
+National Institute for Clinical Excellence – NICE (2008) Clinical guideline 62 – Routine 
+antenatal care for the healthy pregnant woman. March 2008: 
+http://www.nice.org.uk/nicemedia/pdf/CG062NICEguideline050609.pdf 
+ 
+Public Health England. NHS Infectious Diseases in Pregnancy Screening Programme: 
+Laboratory Handbook 2016 to 2017. 2016 July (2016a). Available from: 
+https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_d
+ata/file/539828/NHS_Infectious_Diseases_in_Pregnancy_Screening_Programme_Laboratory_
+Handbook_2016_2017_with_gateway_number.pdf 
+ 
+Public Health England. NHS Infectious Diseases in Pregnancy Screening Programme 
+Handbook. 2016 July (2016b). Available from: 
+https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_d
+ata/file/542492/NHS_IDPS_Programme_Handbook_2016_to_2017.pdf 
+ 
+Public Health England [Internet]. Antenatal and Newborn Screening Resource. 2018 
+December (2018a). Available from: https://www.gov.uk/guidance/nhs -population -screening -
+education -and-training 
+ 
+Public Health England [2018b] NHS public health functions agreement 2018 -19: Service 
+specification no.15: NHS Infectious Diseases in Pregnancy Screening Programme. 2018 
+September (2018b). Available from: https://www.england.nhs.uk/wp -
+content/uploads/2017/04/Gateway -ref-07836 -180913 -Service -specification -No.-15-NHS -
+IDPS.pdf 
+ 
+The Royal College of Pathologists. Key performance indicators -proposals for implementation. 
+2013 July. Available from: https://www.rcpath.org/asset/A428B2AF -7AE9 -42DA -
+BF9343E184EE05CF.2DBFC9CA -A72A -479B -ACE8B1150A7C1BC2/ 
+
+ Antenatal screening for infectious diseases: MP004 
+Human Immunodeficiency Virus ( HIV) (RSCH PRH only ) 
+ 
+Brighton and Sussex Universities Hospital NHS Trust Page 23 of 31 20 Patient information 
+ 
+Public Health England [2019 ] ‘Screening Tests for You and Your Baby’. Click on this link to 
+view/download a copy of the information leaflet including the section ‘Infectious Diseases’. 
+Patient information: https://www.gov.uk/government/publications/screening -tests -for-you-
+and-your -baby -description -in-brief 
+ 
+Further information about the NHS Infectious Diseases in Pregnancy Screening Programme is 
+available from: https://www.gov.uk/topic/population -screening -programmes/infectious -
+diseases -in-pregnancy 
+ 
+ Relevant BSUH NHS TRUST Maternity protocols: 
+Maternity protocol MP014: Infections in pregnancy; GBS, Herpes, Varicella and HIV (Aug 
+2009): Available to read or download on the intranet under Maternity/ Labour ward 
+protocols. 
+ 
+Gilleece Y, D Utting, Bomont R (February 2017) BSUH Guidelines MP009 Management of HIV 
+in Pregnancy and Neonatal period: available to read or download on the intranet under 
+Specialised Teams / HIV. 
+
+ Antenatal screening for infectious diseases: MP004 
+Human Immunodeficiency Virus ( HIV) (RSCH PRH only ) 
+ 
+Brighton and Sussex Universities Hospital NHS Trust Page 24 of 31 21 Appendix A – Key Personnel and Contact Information 
+ 
+Designated Programme Lead f or Maternity Services 
+Karen Gregory - Antenatal Screening Co -ordinator 
+ 
+Link Speciality Staff 
+David Utting Consultant Lead for O bstetrics 
+Yvonne Gilleece Consultant L ead for GUM 
+Rob Bomont Consultant L ead for Neonatology 
+Karen Gregory Antenatal Screening Co -ordinator 
+Rosie Jennings Specialist Midwife for Reproductive Health and Wellbeing 
+ 
+Laboratory Team 
+Dr Mohammed Osman Hassan -Ibrahim Consultant Virologist 
+Nick O’Flanagan Blood Sciences M anager 
+Graham Terrey / Clare Reynolds Laboratory Leads 
+Jackie Longbone Laboratory Quality Officer 
+John Mcbride Pathology Quality Manager 
+
+Antenatal Screening 
+Coordinator at BSUH (cross 
+site) Karen Gre gory Karen.gregory@bsuh.nhs.uk 
+Mobile: 07876 357 423 
+Office RSCH 01273 696955 X 67477 
+Office PRH: 01444 441 881 X 5404 
+FAX: 01273 664732 
+Antenatal Screening 
+Support Midwife RSCH: Angela Jones 
+ Office RSCH 01273 696955 X 67477 
+Office PRH: 01444 441 881 X 5404 
+FAX: 01273 664732 
+PRH: Melanie Sanders Office: 01444 441881 X 5404 
+FAX: 01444 415865 
+Fetal Medicine Consultants 
+at BSUH RSCH: 
+David Utting David.Utting@bsuh.nhs.uk 
+Secretary: 01273 696955 X 4031 
+PRH: 
+Jo Sinclair Jo.Sinclair@bsuh.nhs.uk 
+Secretary: 01444 441881 X 8069 
+Laboratory Service Leads 
+for Virology/Microbiology Lead consultant: 
+John Paul John.Paul@bsuh.nhs.uk 
+01273 696955 X 4627 
+Dr Mohammed Osman 
+Hassan -Ibrahim 
+Consultant Virologist MohammedOsman.HassanIbrahim@bsuh.nhs.uk 
+Virology Section 
+Department of Microbiology & Infection 
+Tel. 01273696955 ext 3584 
+Pager: 07623809015 
+Mobile: 07940 933 197 
+Sarah Bastow 
+Blood sciences 
+Manager Sarah.Bastow@bsuh.nhs.uk 
+RSCH Ext 7422 
+PRH Ext 8216 
+Link Neonatal Consultant Rob Bomont, 
+Consultant 
+Neonatologist Rob.Bomont@bsuh.nhs.uk 
+Trevor Mann Baby Unit, RSCH 
+Tel 01273 696955 X 4188 Antenatal screening for infectious diseases: MP004 
+Human Immunodeficiency Virus ( HIV) (RSCH PRH only ) 
+ 
+Brighton and Sussex Universities Hospital NHS Trust Page 26 of 31 Specialist Midwife for 
+Reproductive Health and 
+Wellbeing Rosie Jennings Rosie.Jennings@bsuh.nhs.uk 
+Address: 
+Claude Nicol Clinic 
+RSCH, Eastern Road 
+Brighton, East Sussex, BN2 5BE 
+ 
+Tel: 07919627603 
+Internal extension: X 4716 or X 4725 
+Link GUM Consultant Yvonne Gilleece Yvonne.gilleece@bsuh.nhs.uk 
+Tel: 01273 664707 
+Antenatal and Newborn 
+Screening Programmes 
+(South East) 
+Quality Assurance Service Emma Proctor 
+Quality Assurance 
+Advisor emmaproctor@nhs.net 
+07919691456 
+Public Health England 
+South East Link 
+Jennie Thomas 
+Screening and 
+Immunisations 
+Manager 
+Public Health England 
+South East 
+ 
+ Public Health England South East 
+York House 
+18-20 Massetts Road 
+Horley 
+RH6 7DE 
+ 
+Direct Line: 0113 825 4694 
+Mobile: 07795644708 
+
+ Antenatal screening for infectious diseases: MP004 
+Human Immunodeficiency Virus ( HIV) (RSCH PRH only ) 
+ 
+Brighton and Sussex Universities Hospital NHS Trust Page 27 of 31 22 Appendix B - Background to Antenatal screening for HIV 
+ 
+1.0 Human immunodeficiency Virus (HIV) is a blood borne virus. It is a retrovirus that 
+infects and damages T -lymphocytes, resulting in immune suppression that may lead to 
+Acquire Immune Deficiency Syndrome (AIDS). Two forms of the virus have been 
+identified, HIV -1 and HIV -2. The commonest and most virulent form is HIV -1 with HIV -
+2 being relatively uncommon in western countries 
+ 
+1.1 HIV is transmitted through: sexual contact, contact with contaminated blood products 
+e.g. needle sharing, vertical transmission during pregnancy, birth or breast feeding 
+[PHE 2016b] 
+ 
+1.2 The risk of mother/parent -to-child HIV transmission in an untreated woman or person 
+in pregnancy is around 25%. However, with early diagnosis, effective treatment and 
+subsequent viral suppression, the risk of transmission is now very low (under 0.5%) 
+[PHE 2016b]. 
+ 
+1.3 Pregnant women are offered screening for HIV infection so that interventions can be 
+offered to reduce the risk of mother to child transmission of the virus, as well as 
+safeguard the mother’s own health [PHE 2018b]. Antenatal screening for infectious diseases: MP004 
+Human Immunodeficiency Virus ( HIV) (RSCH PRH only ) 
+ 
+Brighton and Sussex Universities Hospital NHS Trust Page 28 of 31 
+23 Appendix C: Blood Test Declined Form 
+ Antenatal screening for infectious diseases: MP004 
+Human Immunodeficiency Virus ( HIV) (RSCH PRH only ) 
+ 
+Brighton and Sussex Universities Hospital NHS Trust Page 29 of 31 24 Appendix D – Hepatitis B Notification form 
+25 APPENDIX E – Proforma for recording results at 10 days 
+BOOKING BLOOD RESULTS TO BE CHECKED 2 WEEKS AFTER TAKEN: Clinic ______________________________[surgery / children’s centre] 
+ 
+Name, DOB, ID number 
+
+ Accepted 
+/declined Result Date 
+result MW 
+checking 
+Group & Rhesus 
+Hb 
+Sickle and thal 
+Rubella 
+Syphilis 
+HIV 
+Hep B 
+ 
+Downs screen Accepted / Declined Tick if transfer 
+booking: Anomaly scan Accepted / Declined 
+ Comments: results missing/ 
+repeat required/ decline 
+form sent/ referrals made? 
+
+ Gest at 
+booking MW at 
+booking 
+Date booked Date booking 
+bloods taken 
+Name, DOB, ID number 
+
+ Accepted 
+/declined Result Date 
+result MW 
+checking 
+Group & Rhesus 
+Hb 
+Sickle and thal 
+Rubella 
+Syphilis 
+HIV 
+Hep B 
+ 
+Downs screen Accepted / Declined Tick if transfer 
+booking: Anomaly scan Accepted / Declined 
+ Comments: results missing/ 
+repeat required/ decline 
+form sent/ referrals made? 
+
+ Gest at 
+booking MW at 
+booking 
+Date booked Date booking 
+bloods taken Pre-term Labour MP031 
+ 
+Page 31 of 31 
+Brighton & Sussex University Hospitals

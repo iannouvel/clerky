@@ -1,0 +1,533 @@
+# Extracted from: UHSx Bladder Care guideline.pdf
+# Guideline ID: uhsx-bladder-care-guideline
+# Content length: 28289 characters
+# Processing date: 1750066902.07732
+
+CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Bladder Care in Labour & PN Period v1.0 
+For use at: Trust Wide 
+Page 1 of 18 Please note, IF DOCUMENT IS PRIN TED, IT MAY BECOME OUT OF DATE 
+TRUST CLINICAL GUIDELINE 
+Bladder Care in Labour & Postnatal Period 
+ 
+Overview 
+This guideline p rovides evidence -based guidance to staff regarding bladder care and 
+management for of women and birthing people in labour and postnatal period. 
+ 
+Owner S. Adamson 
+Author/further information Franciska Petra Ambrus & Lorna Gisborne , 
+Pelvic Health Specialist Midwives 
+Guideline version v1.0 
+Related policies None 
+Related protocols/procedures SRH&WH: 
+Care in labour, Caesarean Birth , Induction and 
+Augmentation of Labour and Use of Oxytocin , 
+Antepartum & Intrapartum Haemorrhage, 
+Postpartum Haemorrhage, Postnatal Care. 
+PRH&RSCH: 
+Care in Labour , Caesarean Birth, Induction of 
+labour, Obstetric Haemorrhage, Postnatal 
+Schedule of Care. 
+UHSx: 
+Perineal Trauma, Hyponatraemia in labour 
+Standards NICE (2024) NG192 Caesarean Birth 
+NICE (2023) NG235 Intrapartum care 
+NICE (2 021) NG194 Postnatal Care 
+Superseded documents SRH&WH: 
+CG1137 Bladder Care CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Bladder Care in Labour & PN Period v1.0 
+For use at: Trust Wide 
+Page 2 of 18 PRH&RSCH: 
+MP040 Bladder Care 
+Review due April 2028 
+ 
+Approval 
+JOGG Date approved 07/04/25 
+Women & Children’s Clinical Effectiveness 
+Meeting Date approved 17/04/2025 
+Consultation 
+ Date approved 
+Ratification 
+Clinical Document Approval Group Date approved 28/04/2025 
+Uploaded to SharePoint Date 27/05/25 
+ CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Bladder Care in Labour & PN Period v1.0 
+For use at: Trust Wide 
+Page 3 of 18 
+Contents 
+1.0 Introduction ................................ ................................ ................................ ................ 4 
+2.0 Scope ................................ ................................ ................................ ........................ 4 
+3.0 Responsibilities ................................ ................................ ................................ .......... 4 
+4.0 Definitions and abbreviations used within this guideline ................................ ............. 5 
+5.0 Aim ................................ ................................ ................................ ............................ 5 
+6.0 Women and birthing people at high risk ................................ ................................ ..... 5 
+7.0 Diagnosis/presentation ................................ ................................ ............................... 6 
+8.0 Bladder care and prevention of acute bladder distension ................................ ........... 6 
+8.1 In labour ................................ ................................ ................................ ..................... 6 
+9.0 Bladder care following birth ................................ ................................ ........................ 7 
+9.1 Care of the postnatal woman or birthing person without a urinary catheter ................ 7 
+9.2 Care of the postnatal woman and person with a urinary catheter ............................... 8 
+10.0 Trial without catheter (TWOC) ................................ ................................ .................... 9 
+10.1 Management post scanning the bladder ................................ ................................ .... 9 
+10.2 Second unsuccessful ‘trial without catheter’ (TWOC) management .......................... 10 
+10.3 If urinary incontinence is suspected following TWOC ................................ ................ 11 
+11.0 When to use an indwelling catheter CH12 ................................ ................................ .11 
+12.0 Documentation ................................ ................................ ................................ .......... 12 
+Appendix 1: TWOC flowchart ................................ ................................ ............................... 13 
+Appendix 2: Monitoring ................................ ................................ ................................ ......... 14 
+Appendix 3: Guideline Version Control Log ................................ ................................ .......... 15 
+Appendix 4: Due Regard Assessment Tool ................................ ................................ .......... 16 
+Appendix 5: Template Dissemination, Implementation and Access Plan .............................. 17 
+Appendix 6: Additional guidance and information ................................ ................................ .18 
+
+ CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Bladder Care in Labour & PN Period v1.0 
+For use at: Trust Wide 
+Page 4 of 18 
+Bladder Care in Labour 
+and the Postnatal Period 
+ 
+1.0 Introduction 
+This guideline provides evidenced based practice on bladder care in labour and the postnatal 
+period. It supports all maternity staff to identify those women and birthing people at risk of urinary 
+retention and provides a clear management plan. 
+Intrapartum bladder care involves the identification of risk factors, prevention, detection, and early 
+management of voiding dysfunction during labour and after birth. 
+10 – 15% of postnatal women and birthing people have a degree of voiding dysfunction for some 
+time following childbirth and 5% have significant and longer lasting dysfunction (Bjork2003). 
+Postpartum urinary retention has a reported incidence of up to 14.1% after vaginal birth and 
+24.1% following caesarean birth and has several well -established risk factors (Bjork 2003). 
+Urinary retention is most likely to occur within the first 8 to 12 hours following birth because the 
+onset may be slow and asymptomatic. 
+The bladder may take up to 8 hours to regain sensation following epidural anaesthesia and 
+overdistension may occur during this time. If voiding dysfunction is not recognised, bladder 
+overdistension can lead to further denervation with up to 5% suffering long term voiding 
+dysfunction. It may also lead to recurrent urinary tract infections and/or urinary incontinence. 
+The normal capacity of the bladder is 300 to 600mls and overdistension of >1000 mL is a 
+significant risk. 
+2.0 Scope 
+This guideline applies to the following: 
+• Midwives 
+• Obstetricians 
+• Maternity staff 
+3.0 Responsibilities 
+Midwives & obstetricians: 
+• To access, read, understand and follow this guidance . CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Bladder Care in Labour & PN Period v1.0 
+For use at: Trust Wide 
+Page 5 of 18 • To use their professional judgement in applicatio n of this guideline. 
+Management: 
+• To ensure the guideline is reviewed as required in line with Trust and National 
+recommendations . 
+• To ensure the guideline is accessible to all relevant staff . 
+4.0 Definitions and a bbreviations used within this guideline 
+CS Caesarean Birth CSU Catheter Specimen Urine 
+FGM Female Genital Mutilation IDC indwelling catheter 
+MSU Midstream Urine OASI Obstetric Anal Sphincter Injury 
+SVD Spontaneous Vaginal Birth TWOC Trial Without Catheter 
+UG Urogynaecology UTI Urinary Tract Infection 
+U&Es Urea & Electrolytes 
+ 
+5.0 Aim 
+• To optimise bladder health in labour and the postnatal period for all women and birthing 
+people, whilst reducing the risk of infection and minimising damage to the bladder and 
+urethra. 
+• To prevent both symptomatic and asymptomatic bladder overdistension. 
+6.0 Women and birthing people at high risk 
+All women and birthing people are at risk of voiding dysfunction during labour and after birth, 
+though some are more at risk. Risk factors include: 
+• Primigravid 
+• Prolonged labour, especially second stage of labour 
+• Epidural/spinal anaesthesia for labour/birth, irrespective of mode of birth 
+• Need to catheterise in labour 
+• Assisted vaginal birth 
+• Caesarean birth 
+• Perineal injury: Haematoma/bruising/Obstetric Anal Sphincter Injury (OASI) 
+• Constipation 
+• Immobility 
+• Language barrier CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Bladder Care in Labour & PN Period v1.0 
+For use at: Trust Wide 
+Page 6 of 18 • History of voiding problems 
+Please note that catheterisation might be more complicated in women and birthing people who 
+have undergone reconstructive surgery of the genital tract including gender reassignment or 
+female genital mutilation ( FGM ). Please make sensitive enquiries during pregnancy and if 
+necessary, a consultant plan should be made in conjunction with the Urologist. 
+7.0 Diagnosis/presentation 
+Pregnant women and birthing people may not be aware of their bladder being full in labour, 
+especially with an epidural, or following general, spinal or epidural anaesthesia in the postpartum 
+period. 
+Features of voiding dysfunct ion include: 
+• Inability to pass urine spontaneously or within 6 hours of catheter removal 
+• Frequent small voids 
+• Slow stream or dribbling 
+• Feeling of incomplete emptying 
+• Hesitancy 
+• Dysuria 
+• Frequency, urgency, lower abdominal pain 
+• Palpable bladder or deviated uterus 
+• Overflow incontinence 
+8.0 Bladder care and prevention of acute bladder distension 
+8.1 In labour 
+• Offer to test a urine sample with a dipstick test at the start of active labour (send MSU, 
+if the dipstick is positive) and document the findings. 
+• Ensure adequate fluid intake – oral or intravenous. Do not overload. Record input and 
+output on BadgerNet Maternity. 
+• Encourage the woman or birthing person to void every 3 -4 hours and document on 
+BadgerNet Maternity. 
+• Voided volume should be recorded if possible or if not practical an estimation of 
+amount voided should be documented. 
+• If voided volume less than 100 mL review fluid intake and offer palpation of the bladder. 
+If volume more than 500 mL, suggest the woman or birthing person empties bladder 
+more frequently. CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Bladder Care in Labour & PN Period v1.0 
+For use at: Trust Wide 
+Page 7 of 18 • If unable to pass urine after 3 -4 hours, threshold for catheterisation should be low 
+especially if the bladder is palpable and the woman or birthing person cannot void. 
+Catheterise using an in/out catheter. 
+• If an in/out catheter is required a second time, then an indwelling catheter CH12 is 
+recommended, unless birth is imminent. 
+• Note that intermittent catheterisation has a lower risk of urinary tract infections. 
+• Catheterisation should be do ne using aseptic technique and Instillagel ® local 
+anaesthetic gel should be used to lubricate and numb. Verbal informed consent should 
+be documented. 
+• Document on BadgerNet Maternity: 
+­ Time and indication of catheterisation 
+­ Type and size of the catheter 
+­ Volume of urine obtained . 
+• If an indwelling catheter is inserted, the catheter tube should be secured to the thigh 
+but be loose enough to allow the balloon to be above the presenting part as it 
+descends below the bladder neck during the late first and second stages of labour. 
+• U&Es should be taken to assess for hyponatraemia if there has been low urine output 
+(less than 100 mL in 4 hours) (see maternity guidance on fluid balance management ). 
+• Encourage the woman or birthing person to empty bladder at the start of active second 
+stage and prior to any operative birth. 
+• If there is a catheter in place, this must be removed prior to vaginal birth. Partial or total 
+deflation of the balloon does not prevent damage to the urethra and/or bladder neck. A 
+full bladder is associated with prolonged second stage and may prevent the uterus 
+from adequately contracting in the third stage. 
+• If haematuria is seen, this should prompt further investigation. A vaginal examination 
+should be performed to assess for signs of obstructed labour. On vaginal examination, 
+the balloon of the catheter should be palpated, if possible, to ensure it is sitting in the 
+bladder and is not trapped in front of the presenting part. 
+9.0 Bladder care following birth 
+9.1 Care of the postnatal woman or birthing person without a urinary catheter 
+RCOG recommends postnatal women and birthing people, should have voided within 4 -6 hours 
+of birth. Postnatal women and birthing people should be encouraged to void before leaving 
+delivery suite /labour ward or Birth Centre and if this has not occurred, it needs to be clearly 
+documented in the notes and verbally handed over to the postnatal ward staff, using the SBAR 
+handover tool. NICE recommends that conservative measures should be taken to encourage 
+postnatal women and birthing people who have been unable to void within 4 -6 hours of birth. 
+ CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Bladder Care in Labour & PN Period v1.0 
+For use at: Trust Wide 
+Page 8 of 18 Measures to aid voiding: 
+• Adequate analgesia 
+• Help to mobilise 
+• Privacy 
+• Warm bath or shower 
+• Running water 
+Postnatal women and birthing people should have the timing and volume of the first postnatal 
+void documented in the postnatal records. The volume should be over 200 mL. If this has been 
+measured as less than 200 mL the subsequent voids should also be measured, and a fluid 
+balance chart should be continued until adequate volumes are achieved. 
+Passing urine alone is not an adequate assessment of bladder function as incomplete voiding 
+leads to increasingly large residuals of urine in the bladder. This may also result in retention with 
+overflow incontinence. 
+If there is evidence of urinary incontinence, consider the need for a bladder scan and 
+physiotherapy referral. 
+Anyone unable to pass urine post -birth OR complains of pain OR passes frequent small amounts 
+<200 mL please instigate management plan as section 10.1 (Appendix 1 ). 
+9.2 Care of the postnatal woman and person with a urinary catheter 
+If an indwelling catheter (IDC) has been required for postnatal period, then it should be removed 
+when clinically indicated and the woman or birthing person is full mobile (for uncomplicated SVD - 
+once mobile; caesarean birth - between 12 -24 hrs and OASI - 24 hrs post -birth). Please note that 
+IDC removal should be considered at 6 hrs post birth for those people on ERP post caesarean 
+birth. 
+Please check operative birth notes on BadgerNet Maternity for individualised management plan. 
+Healthcare professionals caring for postnatal women and birthing people who have had a 
+caesarean birth (CS) and who have urinary symptoms should consider the possible diagnosis of: 
+• Urinary tract infection 
+• Stress incontinence (occurs in about 4% of postnatal women and people after CS) 
+• Bladder injury - follow individualised care plan (occurs in about 1 per 1000 after CS). 
+Postnatal women and birthing people with an indwelling catheter should be advised on catheter 
+care to minimize the risk of infection. This includes washing the catheter their own catheter lead, 
+once mobile, at least twice each day using downward strokes away from the body and washing 
+the area where the catheter enters the body with water only. Bathing or showering daily is 
+recommended. CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Bladder Care in Labour & PN Period v1.0 
+For use at: Trust Wide 
+Page 9 of 18 Ideally the catheter should be removed in the morning to give the whole day for assessment of 
+voiding. Ideally the urinary catheter should not be removed between 22.00 and 06.00 . However, 
+depending on workload and individual request, this can be reviewed on an individual basis. 
+Leg bags can be offered so that women and birthing people can be more independent with 
+mobilising around the bed space and caring for their newborn. 
+If an IDC is not draining urine despite adequate hydration. Points to consider: 
+• Is the catheter lead kinked or blocked ? Visual check, reposition patient, flush catheter . 
+• Is the catheter sited correctly ? Consider re -siting catheter if concerns . 
+• Check baseline U&E’s and fluid balance and consider if repeat is indicated . 
+10.0 Trial without catheter (TWOC) 
+• When catheter has been removed , the woman or birthing person should be signposted 
+to the Bladder Care information leaflet (Catheter Care - Sussex LMNS ) on 
+Badger Notes which provides details on post catheter bladder care. 
+• Document on BadgerNet Maternity the volume, time, and date of TWOC, as well as 
+further management plan. 
+• Advise the postnatal woman or birthing person to attempt to pass urine within 4 hours 
+after the removal of a urinary catheter (See Appendix 1 ). 
+• A second void should be measured and passed within 4 hours of the first void . 
+• Confirm that the postnatal woman or birthing person is not constipated, advise on fluid 
+intake recommending that they drink to thirst, mindful of diet, and consider laxatives if 
+required. 
+• Perform a bladder scan immediately if : 
+­ The woman or birthing person has not passed urine within 4 hours (or sooner if 
+uncomfortable) 
+­ They have passed less than 200 mL 
+­ Complaining of difficulty of passing urine (follow flow chart in Appendix 1 ). 
+­ Symptoms of complete urinary incontinence. 
+10.1 Management post scanning the bladder 
+If <200 mL in bladder : 
+• Advise hydration and follow TWOC process. Review fluid balance and refer to 
+maternity fluid balance guid ance if necessary . 
+ CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Bladder Care in Labour & PN Period v1.0 
+For use at: Trust Wide 
+Page 10 of 18 If 200 -500 mL in bladder : 
+• In-out catheter and re -start TWOC process 
+If 500 -1000 mL in bladder : 
+• Indwelling catheter (IDC) for 24 hours, urine dip/send CSU, after which repeat TWOC 
+process . 
+• If second TWOC unsuccessful - see section below . 
+• Note : If >1000 mL ml see below. 
+• RSCH/PRH : Postnatal woman or birthing person returns to ward for TWOC . 
+• WH/SRH : refer via BadgerNet Maternity to on -going community support and TWOC at 
+home or return to ward depending on suitability. 
+ * The default for everyone going home with an IDC should be a free drainage bag, however, the 
+option of a flip -flow vs free drainage catheter could be considered in selected cases following 
+discussion with the on -call consultant. 
+* Anyone going home with an IDC should be explained basic catheter care/hygiene and be taught 
+how to empty their bag. Refer women and birthing people to the Catheter Care leaflet (Catheter 
+Care - Sussex LMNS ) and ensure they have grab -bag of supplies. 
+ If volume >1000 mL/second failed TWOC : 
+• Dip urine and send CSU 
+• Datix 
+• Obstetrician review and plan documented on BadgerNet Maternity. 
+• IDC for 7 days to rest the bladder and allow bladder muscle tone to recover . 
+• Refer via BadgerNet Maternity to Community Continence Nurse Referral for on -going 
+community support and TWOC at home (in case this cannot be covered, the woman or 
+birthing person is asked to return to the postnatal ward ). 
+10.2 Second unsuccessful ‘trial without catheter’ (TWOC) management 
+• After removal of indwelling catheter, check and document the subsequent 2 voided 
+volumes. 
+• Post void residuals should be checked within 30 minutes after person has voided with a 
+bladder scan. 
+• If voided volume is above 200 mL and post -void residuals are <150 mL, then the 
+woman or birthing person can be reassured and discharged, with no further 
+investigations required. 
+• However, if bladder dysfunction persists, offer another indwelling catheter to be 
+inserted for 7 days. This should be a free -drainage bag. CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Bladder Care in Labour & PN Period v1.0 
+For use at: Trust Wide 
+Page 11 of 18 • Postnatal women and birthing people at this point should have a full review by the 
+obstetric team and further management plan made. 
+• Follow up must be arranged for all postnatal women and birthing people being 
+discharged with a catheter in -situ. 
+• Refer via BadgerNet Maternity Community Continence Nurse Referral on -going 
+community support and TWOC at home +/- CISC. 
+10.3 If urinary incontinence is suspected following TWOC 
+• This may occur due to retention (overflow incontinence) or due to a temporary effect of 
+delivery on the pelvic floor muscles and nerves. Once retention has been excluded by 
+bladder scan, the postnatal woman or birthing person should be reassured that the 
+incontinence will improve over time. 
+• Postnatal women and birthing people should not be catheterised in this circumstance 
+as this will increase the risk of UTI’s and will not improve bladder function and may 
+delay recovery. They should be offered pads to contain any leakage . 
+• Encourage to perform pelvic floor exercises -signposting to the LMNS website - 
+Sussex LMNS | Local Maternity & Neonatal System 
+• Encourage regular voiding every 2 -3hrs even with lack of sensation to void . 
+• Skin care can be discussed, and women and birthing people be advised to use 
+emollient preparation for washing to help prevent skin irritation. 
+• Refer to physiotherapy via BadgerNet Maternity. 
+11.0 When to use an indwelling catheter CH12 
+• Postnatal women and birthing people post LSCS or operative birth and anyone having 
+spinal/epidural analgesia . 
+• Postnatal women and birthing people with distended bladder in labour . 
+• If there are persistent issues with retention or voiding dysfunction . 
+• Retained placenta . 
+• PPH (postpartum haemorrhage) . 
+• 3rd/4th degree tear . 
+• Extensive perineal trauma including periurethral tear or extensive labia/perineal 
+swelling that is likely to impede voiding such as haematoma . 
+Use of an indwelling catheter should be documented on BadgerNet Maternity (including date and 
+time of insertion). 
+ CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Bladder Care in Labour & PN Period v1.0 
+For use at: Trust Wide 
+Page 12 of 18 12.0 Documentation 
+Accurate documentation is essential. All staff involved should provide written documentation of 
+actions undertaken on BadgerNet Maternity . 
+It is important to record: 
+• The time of the first void intrapartum and postpartum 
+• The volume of the first void intrapartum and postpartum 
+• Referral to the Obstetric team as appropriate 
+• Plan of management 
+• Indwelling catheter inserted . 
+
+ CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Bladder Care in Labour & PN Period v1.0 
+For use at: Trust Wide 
+Page 13 of 18 Appendix 1: TWOC flowchart 
+ 
+ Consider Laxido to resolve constipation/address 
+diet & hydration need. 
+ Signpost to LMNS website for Pelvic Floor 
+Exercises. 
+ Access Catheter care leaflet (Catheter Care - 
+Sussex LMNS ) on BadgerNet Maternity. 
+ Teach catheter care. 
+ Dr Review for any consequent IDC need. 
+ Consider Physiotherapy referral for any pelvic floor 
+dysfunction. 
+ If TWOC fails after 2nd attempt – refer to ‘Home 
+TWOC Service’ via BadgerNet Maternity. 
+CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Bladder Care in Labour & PN Period v1.0 
+For use at: Trust Wide 
+Page 14 of 18 Appendix 2: Monitoring 
+Issue being 
+monitored Monitoring 
+method Responsibility Frequency Reviewed by 
+and actions 
+arising followed 
+up by 
+Urine retention 
+>1000mls Datix & case 
+review Patient Safety 
+Midwives On-going Maternity Safety 
+& Quality 
+Meeting 
+ 
+ CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Bladder Care in Labour & PN Period v1.0 
+For use at: Trust Wide 
+Page 15 of 18 Appendix 3: Guideline Version Control Log 
+Version Date Author Comment 
+1.0 November 2024 Franciska Ambrus & 
+Lorna Gisborne 
+Pelvic Health Specialist 
+Midwives New Trust wide maternity guideline 
+replacing: 
+• MP040 Bladder Care (RSCH&PRH) 
+• CG1137 Bladder Care (SRH&WH) 
+ CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Bladder Care in Labour & PN Period v1.0 
+For use at: Trust Wide 
+Page 16 of 18 Appendix 4: Due Regard Assessment Tool 
+To be completed and attached to any guideline when submitted to the appropriate committee for 
+consideration and approval. 
+ Yes/No Comments 
+1. Does the document/guidance affect one group less or 
+more favourably than another on the basis of: 
+ Age No 
+ · Disability No 
+ · Gender (Sex) No 
+ · Gender Identity No 
+ · Marriage and civil partnership No 
+ · Pregnancy and maternity No 
+ · Race (ethnicity, nationality, colour) No 
+ · Religion or Belief No 
+ · Sexual orientation, including lesbian, gay and bisexual 
+people No 
+2. Is there any evidence that some groups are affected 
+differently and what is/are the evidence source(s)? No 
+3. If you have identified potential discrimination, are there 
+any exceptions valid, legal and/or justifiable? NA 
+4. Is the impact of the document likely to be negative? No 
+5. If so, can the impact be avoided? NA 
+6. What alternative is there to achieving the intent of the 
+document without the impact? NA 
+7. Can we reduce the impact by taking different action 
+and, if not, what, if any, are the reasons why the 
+guideline should continue in its current form? NA 
+8. Has the document been assessed to ensure service 
+users, staff and other stakeholders are treated in line 
+with Human Rights FREDA principles (fairness, respect, 
+equality, dignity and autonomy)? Yes 
+ 
+If you have identified a potential discriminatory impact of this guideline, please refer it to [Insert 
+Name], together with any suggestions as to the action required to avoid/reduce this impact. For 
+advice in respect of answering the above questions, please contact uhsussex.equality@nhs.net 
+01273 664685). CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Bladder Care in Labour & PN Period v1.0 
+For use at: Trust Wide 
+Page 17 of 18 Appendix 5: Template Dissemination, Implementation and Access Plan 
+To be completed and attached to any guideline when submitted to Corporate Governance for 
+consideration and TMB approval. 
+ 
+ Dissemination Plan Comments 
+1. Identify: 
+ Which members of staff or staff groups will be affected 
+by this guideline? Midwives and obstetricians 
+ How will you confirm that they have received the 
+guideline and understood its implications? Dissemination through the 
+usual communication channels 
+and highlighted at Safety 
+Huddles. 
+ How have you linked the dissemination of the guideline 
+with induction training, continuous professional 
+development, and clinical supervision as appropriate? All new members of staff are 
+shown where to access 
+Clinical documents that are 
+relevant to their area of 
+practice. 
+2. How and where will staff access the document (at 
+operational level)? Accessed by staff via 
+Sharepoint . 
+ 
+ Yes/No Comments 
+3. Have you made any plans to remove 
+old versions of the guideline or related 
+documents from circulation? Yes Previous versions will be 
+archived as part of the 
+uploading onto sharepoint 
+process. 
+4. Have you ensured staff are aware the 
+document is logged on the 
+organisation’s register? Yes Dissemination plan includes 
+notifying staff via email, 
+departmental noticeboards, 
+and safety huddles. 
+ CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Bladder Care in Labour & PN Period v1.0 
+For use at: Trust Wide 
+Page 18 of 18 Appendix 6: Additional guidance and information 
+Glavind K. Bjork J. (2003) Incidence and treatment of urinary retention postpartum. International 
+Urogynaecology Journal. 14(2):119 -2, 2003 Jan 
+F.Karim G. Araklitis 2022 The management of Urogynaecological problems in pregnancy and the 
+postpartum, 2022; 24: 167 -75 https://obgyn.onlinelibrary.wiley.com/doi/10.1111/tog.12816 
+Lim JL. Post -partum voiding dysfunction and urinary retention. Aust N Z J Obstet Gynaecol. 2010 
+Dec;50(6):502 -5. doi: 10.1111/j.1479 -828X.2010.01237.x. Epub 2010 Nov 2. PMID: 21133858. 
+NICE (2024) NG192 Caesarean Birth 
+NICE (2023) NG235 Intrapartum care 
+NICE (2 021) NG194 Postnatal Care 
+Portsmouth Hospitals University (Aug 2021) Bladder Care Guideline 
+Sam P, Nassereddin A, LaGrange CA. Anatomy, Abdomen and Pelvis: Bladder Detrusor Muscle. 
+[Updated 2023 Aug 8]. In: StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing; 2024 
+Jan-. Available from: https://www.ncbi.nlm.nih.gov/books/NBK482181/

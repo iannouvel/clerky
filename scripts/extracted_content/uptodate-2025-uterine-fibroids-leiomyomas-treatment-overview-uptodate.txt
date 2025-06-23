@@ -1,0 +1,1313 @@
+# Extracted from: Uptodate - 2025 - Uterine fibroids (leiomyomas) Treatment overview - UpToDate.pdf
+# Guideline ID: uptodate-2025-uterine-fibroids-leiomyomas-treatment-overview-uptodate
+# Content length: 107287 characters
+# Processing date: 1740355611.3157916
+
+Official reprint from UpToDate
+www.uptodate.com © 2025 UpToDate, Inc. and/or its affiliates. All Rights Reserved.
+Uterine fibroids (leiomyomas): Treatment overview
+INTRODUCTION
+Uterine fibroids are very common in reproductive-age females. For some, they are entirely
+asymptomatic. Moreover, since fibroids can grow, remain stable, and/or potentially regress
+(during hypoestrogenic states such as menopause) [1,2], patients without symptoms should
+be educated about the presence of fibroids and potential associated symptoms. However,
+many patients will present with symptoms including abnormal uterine bleeding, pressure or
+bulk symptoms, fertility issues, and/or pain that warrant treatment. These patients have a
+variety of therapeutic options available to address their symptoms.
+This topic will present an overview of the treatment options for fibroids, including expectant
+management. Related topics on the clinical presentation, diagnosis, exclusion of malignancy,
+and specific procedures for fibroids are presented separately.
+COMMON SYMPTOMS FOR TREATMENT®
+AUTHOR:Elizabeth A Stewart, MD
+SECTION EDITOR:Robert L Barbieri, MD
+DEPUTY EDITOR:Alana Chakrabarti, MD
+All topics are updated as new evidence becomes available and our peer review process is complete.
+Literature review current through: Jan 2025.
+This topic last updated: Aug 26, 2024.
+(See "Uterine fibroids (leiomyomas): Epidemiology, clinical features, diagnosis, and natural
+history".)●
+(See "Uterine fibroids (leiomyomas): Differentiating fibroids from uterine sarcomas".) ●
+(See "Uterine fibroids (leiomyomas): Open abdominal myomectomy procedure".) ●
+(See "Uterine fibroids (leiomyomas): Laparoscopic myomectomy and other laparoscopic
+treatments".)●
+(See "Uterine fibroids (leiomyomas): Hysteroscopic myomectomy and other transcervical
+procedures".)●23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 1/39There are four common symptom categories that are associated with uterine fibroids.
+Patients can have one or multiple symptoms:
+Each of these categories is reviewed in detail elsewhere. (See "Uterine fibroids (leiomyomas):
+Epidemiology, clinical features, diagnosis, and natural history", section on 'Clinical features'.)
+Clinicians should be aware that patients may not associate their symptoms with fibroids
+because the symptoms appear unrelated to the disease or are so insidious in onset that they
+attribute their symptoms to aging or other common non-fibroid problems [3,4]. For example,
+a patient with a fibroid uterus, 20 gestational weeks in size, who has urinary frequency, back
+pain, and early satiety may not be aware that these symptoms can be related to uterine
+enlargement and a subserosal fibroid near the bladder. Another patient may have heavy
+menstrual bleeding lasting for 12 days every month, but since fibroids run in families, the
+patient may have been told by family members that this is normal menses [4]. For this group
+of patients, education about symptoms, correlation between physical examination or
+imaging and other anatomic landmarks, and correlation of uterine size with the gestational
+week of pregnancy can be helpful since most patients have symptoms attributable to
+increased uterine size with uterus enlargement equivalent to 12 weeks of gestation.
+PRETREATMENT ASSESSM ENT
+Before selecting a course of treatment, both clinical and laboratory investigations are
+performed to exclude concomitant disease or serious sequelae of disease, such as anemia
+resulting from heavy menstrual bleeding. Imaging studies may also be warranted,
+particularly if surgical or interventional treatment requires additional understanding of the
+anatomy and/or if there is increased suspicion of a uterine sarcoma (eg, peri- or
+postmenopausal patients or patients with specific genetic syndromes) [5]. Patients at risk for
+endometrial cancer should undergo endometrial biopsy.
+The patient's desire for immediate or future childbearing is also assessed prior to choosing
+any fibroid treatment as the therapies have differing impacts on fertility.Heavy or prolonged menstrual bleeding ●
+Bulk symptoms (abdominal protrusion, bowel or bladder dysfunction, early satiety) ●
+Reproductive dysfunction (infertility or recurrent pregnancy loss) ●
+Pain, including painful menses or nonmenstrual pain ●
+(See "Uterine fibroids (leiomyomas): Epidemiology, clinical features, diagnosis, and natural
+history", section on 'Diagnostic evaluation'.)●
+(See "Overview of the evaluation of the endometrium for malignant or premalignant
+disease".)●23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 2/39PATIENTS NOT DESIRING FERTILITY
+For patients who do not desire fertility, treatment is aimed at symptom reduction. We take a
+stepwise approach through the treatments below until the symptoms are adequately
+controlled. As there are limited comparative studies demonstrating superiority of one
+treatment option over another, patient preference and shared decision-making are used to
+create the optimal management strategy.
+Isolated heavy menstrual bleeding — Heavy menstrual bleeding (HMB) is a common
+presenting symptom in patients with fibroids. (See "Uterine fibroids (leiomyomas):
+Epidemiology, clinical features, diagnosis, and natural history", section on 'Heavy or
+prolonged menstrual bleeding'.)
+First tier — First-tier treatment of HMB includes hysteroscopic fibroid resection, if the
+fibroids are in an appropriate anatomic location, or medical treatment aimed at reducing
+HMB for those with fibroids in locations not amenable to hysteroscopic resection.
+Hysteroscopic resection of submucosal fibroids — For patients with HMB, the first
+step is determining if there is a submucosal fibroid because of the safety and efficacy of
+hysteroscopic myomectomy as a treatment [6]. Submucosal fibroids amenable to
+hysteroscopic resection include International Federation of Gynecology and Obstetrics
+(FIGO) type 0, type 1, or type 2 (figure 1).
+Hysteroscopic myomectomy is an outpatient procedure with rapid recovery, a low risk of
+complications compared with abdominal procedures, rapid improvement in quality of
+life, and low risk of reintervention for fibroids [7,8]. Moreover, it is safe for future
+pregnancy, with virtually no risk for uterine rupture in subsequent pregnancy [9].
+However, trial data comparing hysteroscopic resection with other treatments are sparse
+[10], in part because of ethical concerns for randomly assigning a symptomatic patient
+to observation, placebo, or more invasive surgery than necessary (eg, laparotomy) and
+requirement of only intracavitary lesions for a purely hysteroscopic approach.
+Initial hysteroscopic myomectomy leads to substantial quality-of-life improvement in
+most patients [5]. Clinicians should be aware, however, that there is a lower risk of
+complete resection with increasing size of the fibroid, particularly those greater than 5
+cm in diameter and >50 percent extension into the myometrium (FIGO type 2) [11]. A
+variant of hysteroscopic myomectomy is transcervical treatment with radiofrequency
+ablation. (See "Uterine fibroids (leiomyomas): Laparoscopic myomectomy and other
+laparoscopic treatments", section on 'Radiofrequency fibroid ablation'.)
+Information specific to performing hysteroscopic myomectomy, including patient
+evaluation, pretreatment, procedure technique, and outcomes, is presented elsewhere.23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 3/39(See "Uterine fibroids (leiomyomas): Hysteroscopic myomectomy and other transcervical
+procedures".)
+Medical therapy — Patients with all other types of fibroids (ie, not exclusively
+submucosal) who do not desire pregnancy are offered medical management to reduce
+their HMB. First-tier agents for HMB do not reduce the fibroid size but improve the
+bleeding parameters. Patients who also have bulk or pressure symptoms are directed to
+treatment options that are considered second tier for HMB as these agents reduce
+fibroid size as well. (See 'Bulk or pain symptoms with or without bleeding' below.)
+For patients with fibroid-related HMB, the author offers the following treatments in the
+order listed below. As direct comparator data are sparse, the treatment order considers
+the efficacy, safety, tolerability, ease of use, ancillary benefits (eg, contraception), and
+cost. However, patients and clinicians may reasonably elect to use these agents in a
+different order based on patient preferences and other factors, such as desire for
+contraceptive efficacy or local availability.
+Estrogen-progestin contraceptives – Combined estrogen-progestin contraceptives
+(oral contraceptive pills, vaginal ring, or transdermal patch) are the most common
+medical therapy utilized by patients with HMB and fibroids, especially those who
+desire contraception [12]. However, there is little high-quality evidence supporting this
+practice [13]. As estrogen-progestin contraceptives provide a variety of health benefits
+beyond contraception (including reduction of iron deficiency anemia, uterine cancer,
+and ovarian cancer; a long clinical history of use; and are inexpensive and widely
+available), many guidelines still recommend combined estrogen-progestin
+contraceptives as first-line therapy [5,9,13-15]. The selection of oral pills, vaginal ring,
+or transdermal patch is driven by patient preferences around dosing and frequency of
+use. Patients must be appropriate candidates for exogenous estrogen use.●
+(See "Combined estrogen-progestin oral contraceptives: Patient selection,
+counseling, and use".)•
+(See "Contraception: Hormonal contraceptive vaginal rings".) •
+(See "Contraception: Transdermal contraceptive patches".) •
+(See "Combined estrogen-progestin contraception: Side effects and health
+concerns".)•
+Progestin-releasing intrauterine devices (IUDs) – For patients who cannot use or do
+not want estrogen-containing contraceptives, the levonorgestrel (LNG)-releasing IUDs
+(LNG IUD) are the most effective progestin-only contraceptive for fibroid-related HMB,
+although supporting data are mainly observational and less strong than for its use
+with generic HMB [16-18]. Nonetheless, most guidelines support the use of LNG IUDs
+as a first-line agent for fibroid-related HMB [5,9,13-15]. IUDs also provide highly●23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 4/39Second tier — Effective second-tier medical treatments for fibroid-associated HMB are
+gonadotropin-releasing hormone (GnRH) agonists and antagonists [13,24]. Uterine artery
+embolization (UAE) is a minimally invasive treatment option that treats both bleeding and
+bulk symptoms [25].
+Despite evidence supporting use of the progesterone receptor modulators (PRM) ulipristal
+acetate and mifepristone as daily medical therapy for fibroid-related bleeding, neither iseffective long-acting contraception. First, identifying patients with significant
+submucosal fibroids is important since the risk of expulsion of the IUD is greater in
+patients with fibroids that distort the endometrial cavity. Discussion of various IUDs,
+candidates, and device selection are presented elsewhere.
+(See "Intrauterine contraception: Background and device types".) •
+(See "Intrauterine contraception: Candidates and device selection".) •
+(See "Intrauterine contraception: Insertion and removal".) •
+(See "Intrauterine contraception: Management of side effects and complications".) •
+Tranexamic acid – Tranexamic acid is a nonhormonal oral medication that can be
+taken during menses or during the heavy days of menses. It can be preferred by
+patients who cannot or do not wish to use hormonal contraceptives or by those who
+desire a treatment that is used only when symptoms are present. A systematic review
+reported that it can be more effective than oral progestins [19], and small studies have
+shown benefit in patients with fibroid-associated HMB [20,21]. Tranexamic acid is
+available as an oral 1.3 gram dose given three times daily [22]. It is started with the
+onset of HMB. (See "Abnormal uterine bleeding in nonpregnant reproductive-age
+patients: Management", section on 'Patients with heavy bleeding' and "Abnormal
+uterine bleeding in nonpregnant reproductive-age patients: Management", section on
+'Tranexamic acid'.)●
+High-dose oral progestins – High-dose oral progestins do not appear to be as
+effective for treatment for fibroid-related HMB as the LNG IUD, although high-quality
+data are limited. In one randomized trial of 60 patients with fibroid-related HMB, those
+treated with the 52 mg LNG IUD compared with oral norethindrone acetate (NETA, 5
+mg twice daily) had a greater decrease in menstrual blood loss from baseline (80 and
+56 percent, respectively) at six months, as measured by visual blood scoring (VBS) [23].
+   ●
+Other progestin therapies (eg, progestin implants, progestin injections) also do not
+appear to be as effective for fibroid-related HMB as the LNG IUD, although some
+guidelines advise their use [5,13-16]. (See "Abnormal uterine bleeding in nonpregnant
+reproductive-age patients: Management", section on 'Progestin-only therapies'.)23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 5/39currently available in most countries for fibroid treatment; in settings where these drugs
+are available, use is restricted given potential for hepatic toxicity [26-29]. (See 'Treatments
+not typically recommended' below.)
+GnRH analogs — GnRH analogs, including antagonists and agonists, can reduce HMB
+[24]. Agonists also significantly reduce fibroid volume but have potential adverse effects
+that limit use.
+For patients who do not have an adequate response to first-tier treatment, the author
+prefers to initiate oral GnRH antagonist combinations (with low dose estrogen and
+progestin), because they are orally dosed and generally better tolerated compared with
+agonists, and then moves to a trial of depot GnRH agonists if the antagonist therapy is
+not adequate to control symptoms. However, patients and clinicians who prefer to
+initiate GnRH agonists may reasonably do so. In addition, GnRH agonists likely result in a
+greater reduction in fibroid volume compared with GnRH antagonists.
+GnRH antagonists – Oral GnRH antagonists are a relatively new generation of medical
+therapy. Like GnRH agonists, these agents act centrally and are associated with
+hypoestrogenic side effects, but they are available as oral formulations rather than
+injections. GnRH antagonists are often formulated with low-dose steroidal add-back to
+limit hypoestrogenic side effects, so separate add-back therapy is not required.●
+Elagolix combination therapy – Elagolix, in combination with estradiol and
+norethindrone (ie, elagolix-estradiol-norethindrone), was approved by the US Food
+and Drug Administration (FDA) in May 2020 for the treatment of fibroid-related HMB
+for up to 24 months of use [30-32]. This preparation (commercial name Oriahnn) is
+available as two co-packaged capsules: one contains elagolix 300 mg plus estradiol 1
+mg plus norethindrone 0.5 mg to be taken in the morning, and the other contains
+elagolix 300 mg alone to be taken in the evening.•
+In two identical phase III trials comparing six months of elagolix plus hormonal add-
+back therapy (elagolix 300 mg twice a day with daily estradiol 1 mg and
+norethindrone acetate 0.5 mg) with placebo for patients with fibroid-related HMB,
+more patients in the treatment arm met the primary endpoint (menstrual blood loss
+of less than 80 mL during the final month of treatment and at least a 50 percent
+reduction in menstrual blood loss from baseline to the final month) compared with
+placebo (range 69 to 77 versus 9 to 10 percent) [33]. When data were analyzed
+according to specific patient subgroups (eg, age, race, body mass index, fibroid
+location and size), the proportion of responders was greater for patients in the
+elagolix add-back arm compared with placebo in every subgroup [34]. Concomitant
+adenomyosis does not appear to limit the effectiveness for fibroid-related HMB [35].
+Sustained reduction of menstrual bleeding was also shown when the treatment was23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 6/39continued for an additional 6 months (total of 12 months) with 88 percent of
+patients in the treatment arm meeting the primary endpoint [36].
+During treatment with elagolix plus add-back, side effects were modest, including
+hot flushes (7 percent), night sweats (3 percent), headache (5.5 percent), and nausea
+(4 percent). Two patients developed liver transaminase levels more than three times
+the upper limit of normal, resulting in one patient discontinuing treatment. Bone
+mineral density was also affected; at the end of 12 months of treatment, bone
+mineral density in the lumbar spine was reduced by 1.5 percent (median Z-score
+0.8); however, patients regained some bone density when measured one year
+following completion of treatment (improvement to reduction of 0.6 percent;
+median Z-score 1.1). Similar trends were observed in total hip and femoral neck
+bone density.
+The benefit of add-back therapy is that it mitigates many of the hypoestrogenic side
+effects of elagolix; however, the effect on fibroid volume reduction is also
+attenuated.
+Elagolix alone, without add-back therapy, has been demonstrated to improve
+fibroid-related HMB and may be considered for patients with a contraindication to
+add-back therapy; however, this use remains off-label and we do not use elagolix-
+alone for this indication in our practice. In the randomized trials above, elagolix
+alone compared with placebo resulted in meeting the primary endpoint in 77 to 84
+percent of patients after 6 months and 89 percent of patients after 12 months of
+therapy [33,36]. Furthermore, fibroid volume was reduced by 40 to 50 percent after
+6 months, and an even greater reduction was noted after 12 months of therapy.
+Common adverse events included night sweats and reductions in bone mineral
+density (mean reduction of 4.8 percent at the end of 12 months of treatment, with
+improvement to reduction of 2 percent one year following completion of treatment).
+Low-dose elagolix (ie, 150 mg once daily) without add-back therapy has also been
+described [37].
+As ovulation suppression with elagolix plus add-back is variable, it should not be
+considered a contraceptive [38,39].
+Use of elagolix for endometriosis-related pain is presented separately. (See
+"Endometriosis: Medical treatment of pelvic pain", section on 'GnRH antagonists'.)
+Relugolix combination therapy – A combination tablet containing relugolix-
+estradiol-norethindrone acetate (commercial name Myfembree) was approved by
+the US FDA in May 2021 for the treatment of fibroid-related HMB for up to 24
+months [40]. Each tablet contains relugolix 40 mg plus estradiol 1 mg plus•23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 7/39norethindrone acetate 0.5 mg in a single daily dose. Potential advantages of
+relugolix are its once daily dosing and potential for greater reduction of pain and
+bulk symptoms (compared with twice daily dosing of elagolix combination therapy).
+In two identical phase III trials comparing 24 weeks of relugolix combination
+therapy (40 mg of relugolix, 1 mg of estradiol, and 0.5 mg of norethindrone acetate),
+delayed relugolix combination therapy (40 mg of relugolix monotherapy, followed by
+relugolix combination therapy, each for 12 weeks), and placebo, more patients in the
+relugolix treatment arms achieved the primary endpoint (menstrual blood loss of
+less than 80 mL during the final month of treatment and at least a 50 percent
+reduction in menstrual blood loss from baseline to the final month) compared with
+placebo (71 to 80 percent versus 15 to 19 percent) [41]. In addition, combination
+therapy decreased a number of other secondary endpoints (including anemia, bulk-
+related symptoms, and uterine volume [reduction of approximately 12 to 15
+percent; range -3.2 to -23 percent]) while preserving bone mineral density. In a
+secondary analysis of these trials, quality-of-life measures (eg, emotional well-being,
+sexual function) were also improved in the combination therapy group [42].
+When data were analyzed according to specific patient subgroups (eg, age, race,
+ethnicity, uterine volume, baseline menstrual blood loss age), the proportion of
+responders was greater for patients in the relugolix combination therapy arm
+compared with placebo in every subgroup [41]. Combination therapy also decreased
+fibroid-associated pain [41,43]. Of the 277 patients in these trials with moderate to
+severe pain, more patients treated with combination therapy compared with
+placebo achieved minimal to no pain (45.2 versus 13.9 percent) [43]. For patients in
+the combination therapy group, menstrual pain was reduced more than
+nonmenstrual pain. In extension studies, patients using relugolix combination
+therapy long term (up to two years) experienced similar improvements in menstrual
+blood loss; no new safety concerns or changes in bone mineral density were
+identified [44,45].
+Hypersensitivity reactions (eg, anaphylaxis, urticaria, angioedema) have been
+described [46].
+Linzagolix – Linzagolix is an oral GnRH antagonist that is available in Europe for the
+treatment of moderate to severe fibroid symptoms; it is not available in the United
+States. Linzagolix is dispensed as a 100 mg or 200 mg once daily tablet and has the
+option of being administered with or without add-back therapy [47]. The lower dose
+(100 mg) aims for partial suppression of the hypothalamic-pituitary-ovarian (HPO)
+axis where the higher dose (200 mg) aims for full suppression.•23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 8/39The use of GnRH analogs for the management of fibroid-related bulk or pain symptoms
+is discussed in detail below. (See 'Bulk or pain symptoms with or without bleeding'
+below.)In two identical phase III trials evaluating the efficacy and safety of linzagolix
+therapy for the treatment of fibroid-related HMB, more patients treated with
+linzagolix (with or without 1 mg estradiol and 0.5 mg norethisterone acetate add-
+back therapy) met the primary endpoint (menstrual blood loss ≤ 80 mL and ≥ 50
+percent reduction from baseline at 24 weeks) compared with placebo [48].
+Specifically, for patients receiving placebo, 100 mg alone, 100 mg plus add-back, 200
+mg alone, or 200 mg plus add-back, response rates were 29 to 35 percent, 56 to 57
+percent, 66 to 77 percent, 71 to 77 percent, and 76 to 94 percent, respectively.
+Patients receiving linzagolix alone (either dose) compared with linzagolix plus add-
+back therapy had greater reductions in fibroid volume. In addition, fewer patients
+receiving 100 mg (with or without add-back) and 200 mg with add-back experienced
+hot flushes compared with those treated with 200 mg without add-back therapy.
+Reductions in bone mineral density were dose dependent and ameliorated with add-
+back therapy.  
+GnRH agonists – GnRH agonists are primarily used as either preoperative therapy
+(typically three to six months in duration) or as transitional therapy for patients in late
+perimenopause as they move to menopause. For patients with fibroids and anemia
+who are planning surgery for fibroids but have not responded adequately to iron-only
+therapy, a short course of preoperative GnRH agonist treatment plus iron is an
+established option [49].●
+Goals of preoperative therapy can include induction of amenorrhea to improve anemia
+and volume reduction to facilitate a less invasive procedure, such as allowing a vaginal
+rather than an abdominal hysterectomy. Good quality data exist that GnRH agonists
+decrease uterine and fibroid volume, increase hemoglobin, and improve perioperative
+outcomes in patients undergoing hysterectomy and myomectomy [24]. However, side
+effects must be weighed against benefits [5]. When used alone (ie, without hormonal
+add-back treatment), the parenteral forms of GnRH agonists (one- and three-month
+depot formulations given as an intramuscular injection) cause significant
+hypoestrogenic side effects, including bone loss [50]. There are a variety of steroidal
+and nonsteroidal add-back therapies that can limit these side effects and permit more
+long-term use, but these are rarely used unless there are contraindications to surgical
+or interventional therapies for the fibroids. Discussion of add-back therapy, based on
+data from patients with endometriosis, is presented separately. (See "Endometriosis:
+Long-term treatment with gonadotropin-releasing hormone agonists".)23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 9/39Uterine artery embolization — For premenopausal patients who do not desire future
+fertility, uterine fibroid embolization (UAE) is a minimally invasive option for
+management of fibroid-related symptoms. Substantial randomized clinical trial data
+support its efficacy, making it a second-tier treatment for patients who do not have
+access to oral GnRH antagonists, and a third-tier treatment where those agents are
+available [13,51].
+Up to 90 percent of patients will report improved or resolved HMB symptoms after
+treatment. When compared with hysterectomy or myomectomy, patients undergoing
+UAE have a decreased risk of transfusion, a shortened hospital stay, less pain, and a
+quicker return to work. However, following UAE, patients have more short-term
+complications, unscheduled visits, and readmissions, but this may also represent bias
+since UAE patients were typically discharged from the hospital earlier than those
+undergoing surgery. Patients undergoing UAE compared with myomectomy
+(laparoscopic, hysteroscopic, and abdominal) [52-54] and hysterectomy [55] may also
+experience less favorable quality of life and worse symptom severity. This is discusse d in
+more detail elsewhere. (See "Uterine fibroids (leiomyomas): Treatment with uterine
+artery embolization", section on 'Outcomes'.)
+UAE is not intended for use in patients who desire optimization of future childbearing
+and is generally avoided in postmenopausal patients (because of the concern of
+mistakenly treating a uterine sarcoma). In addition, UAE may cause ovarian dysfunction
+and a loss of ovarian reserve. These issues are presented in detail elsewhere. (See
+"Uterine fibroids (leiomyomas): Treatment with uterine artery embolization", section on
+'Reproductive outcomes'.)
+Third tier — Less invasive interventional therapies are available for patients who desire
+less time away from work and/or uterine preservation. However, these procedures are not
+intended to be used for patients who desire optimization of future pregnancy. Procedure
+selection is determined by patient preferences around invasiveness and recovery time as
+well as treatment availability.
+One advantage of third-tier fibroid therapies is that they offer minimally invasive
+approaches to treatment. Depending on patient characteristics and preferences, patients
+may also reasonably proceed to traditional surgical therapy. (See 'Traditional surgery'
+below.)
+Focused ultrasound surgery — Focused ultrasound surgery utilizes high intensity
+ultrasound energy to induce coagulative necrosis of fibroids. The treatment can be
+guided by ultrasound, most widely used in China and typically called high intensity
+focused ultrasound (HIFU) [56,57], or by magnetic resonance imaging (MRI), termed
+MRgFUS in the rest of the world. This noninvasive, thermoablative technique applies23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 10/39multiple waves of ultrasound energy through the abdominal wall and can be performed
+as an outpatient procedure with sedation [58-62]. With HIFU, an abdominal probe is
+placed on the abdomen with the patient supine, while with MRgFUS, the ultrasound
+source is within the bed of the MRI machine, and the patient is positioned prone over
+the transducer. Like surgical myomectomy, each fibroid is targeted individually, and,
+thus, size, vascularity, heterogeneity, calcifications, and abdominal scars through which
+the ultrasound energy passes can all affect treatment. Ideal treatment candidates have
+three or fewer fibroids, size less than 10 centimeters in maximal dimension,
+homogenous and dark on T2-weighted images, and well-vascularized without
+calcification [63,64]. MRI visualizes the anatomic structures and provides real-time
+thermal monitoring to optimize tissue destruction with optimization of safety. It appears
+that MRgFUS results in a reduction in myoma volume of approximately 37 to 40 percent
+[65].
+Outcomes – Symptomatic improvement is observed within the first three months
+postprocedure, and this improvement has been maintained at least through 24 to 36
+months of follow-up, with more complete ablation leading to better outcomes [60,66-
+68]. Adverse event rates appear to be decreased with increased practitioner
+experience, despite more extensive treatment [60]. The procedure is time-consuming
+and costly, but short-term morbidity is low and recovery is rapid. Analyses based on
+quality-of-life measures have found the procedure to be cost-effective [69,70]. Review
+by the United Kingdom's National Institute for Health and Care Excellence suggests
+the data are adequate to support clinical use of MRgFUS [71] and more limited data
+support use of HIFU [72,73].●
+Comparison with UAE – MRgFUS was compared with UAE in the Fibroid Interventions:
+Reducing Symptoms Today and Tomorrow (FIRSTT) study, which included 81 patients
+with combined analysis of observational and randomized data [74]. Complication rates
+were low in both groups, but patients undergoing UAE used more opioid pain
+medications, and patients with significant pain at baseline were more likely to have
+adverse events with either treatment [75]. Over 24 months, quality of life improved,
+and general fibroid symptoms and pain scores declined significantly with both
+treatments, but to a greater extent in the UAE arm in which patients had symptom
+scores that were consistent with patients without fibroids [76]. MRgFUS compared
+with UAE resulted in a higher rate of reintervention for symptomatic fibroids (30.0
+versus 12.5 percent) within three years [76]. Reintervention was more likely when
+treatments occurred at younger ages and in patients with higher pretreatment AMH
+levels. Finally, AMH levels at 24 months were lower in the UAE group [76].●
+Postprocedure pregnancy – There are reports of pregnancies following MRgFUS for
+uterine fibroids [77-80] and ultrasound-guided HIFU [81,82]. The case series of●23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 11/39Endometrial ablation — There is a limited role for endometrial ablation in patients with
+uterine fibroids and HMB, such as for patients with bleeding disorders [83]. In the
+author's practice, use of an LNG IUD is generally preferable to endometrial ablation
+since the IUD does not require surgery, is reversible, provides contraception, and
+minimizes the risk of an extrauterine pregnancy following endometrial ablation. (See
+'Medical therapy' above.)
+Traditional surgery — For patients who do not desire future fertility and have persistent
+fibroid-related symptoms despite the above therapies or who desire surgical treatment,
+options include hysterectomy and myomectomy. Hysterectomy involves removal of the
+uterine corpus, including the fibroids, while myomectomy removes only the fibroids and
+leaves the uterus in situ.MRgFUS described 54 pregnancies in 51 patients with mean birth weight of 3.3 kg and
+a 64 percent vaginal delivery rate. There was no specific pattern of complications; 9
+percent of patients had placentation problems, but, in this series, all had prior uterine
+surgery as a risk factor for this complication [80]. The HIFU series described 80
+pregnancies in 78 patients who delivered at a mean of 38.1±2.2 weeks, with 89 percent
+of pregnancies resulting in delivery and 85 percent in term delivery [82].
+Hysterectomy – Hysterectomy, or complete removal of the fibroid uterus, provides
+definitive therapy and, thus, has been the mainstay of surgical treatment for a century.
+In the United States, over 80 percent of hysterectomies are performed for benign
+disease, and one-third to over one-half are performed for uterine fibroids, which results
+in a lifetime hysterectomy prevalence of 45 percent [84,85]. Hysterectomy eliminates
+both the risk of new fibroids forming and all types of abnormal uterine bleeding, and it
+improves quality of life, even when compared with uterine-sparing options [55,86-88].
+However, hysterectomy has also been associated with long-term morbidity.●
+Outcomes – While short-term outcomes are good [88,89], there has been an
+increased focus on the long-term morbidity associated with hysterectomy, both with
+and without bilateral oophorectomy. Studies of hysterectomy with bilateral
+oophorectomy, which is seldom required for fibroids, have reported increased risk of
+fracture [90], multiple morbidity [91], all-cause mortality [92], cardiovascular disease
+[93], and neurologic dysfunction [94,95]. Hysterectomy with ovarian conservation, the
+more common procedure for patients with fibroids, has also been associated with
+increased risk of earlier menopause [96], decreased ovarian reserve [97,98], mood
+disorders [99], and cardiovascular morbidity [100]. The impact of hysterectomy on
+subsequent pelvic organ prolapse and pelvic floor dysfunction is a subject of debate.
+Additionally, there is increasing evidence that factors other than disease extent,
+including a history of abuse, may be associated with undergoing hysterectomy•23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 12/39Bulk or pain symptoms with or without bleeding — For patients whose main symptoms
+include bulk or pain, with or without HMB, treatment options include UAE (or MRgFUS for
+patients who are optimal candidates and decline UAE) and GnRH analogs. Patients and
+clinicians must balance procedure risk and longer recovery of UAE with the hypoestrogenic
+symptoms associated with long-term use of GnRH analogs. If not effective, or if patients[86,101]. Concerns related to hysterectomy, with or without oophorectomy, are
+presented in detail separately.
+(See "Elective oophorectomy or ovarian conservation at the time of hysterectomy",
+section on 'Long-term health risks'.)-
+(See "Hysterectomy (benign indications): Patient-important issues and surgical
+complications", section on 'Decreased ovarian function or earlier menopause'.)-
+(See "Hysterectomy (benign indications): Patient-important issues and surgical
+complications", section on 'Cardiovascular and metabolic morbidity'.)-
+Indications – The author prefers to avoid the procedure, even with ovarian
+conservation, because of the long-term risks discussed above. In the author's practice,
+hysterectomy is reserved for patients who previously have had unsuccessful
+conservative therapy or who have significant concomitant diseases, such as
+adenomyosis, cervical dysplasia, or uterine prolapse, for which hysterectomy is
+curative for both conditions. Additionally, when hysterectomy is performed for uterine
+fibroids, unless there are high-risk mutations for breast or ovarian cancer such as
+BRCA1 and BRCA2 or ovarian pathology, ovarian conservation appears to be indicated.•
+(See "Hysterectomy (benign indications): Selection of surgical route", section on
+'Hysterectomy indications and alternatives'.)-
+(See "Elective oophorectomy or ovarian conservation at the time of hysterectomy".) -
+For patients who elect hysterectomy, the approach to selecting the route (abdominal or
+vagina) and surgical type (traditional, vaginal, laparoscopic, robotic) is discussed
+elsewhere. (See "Hysterectomy (benign indications): Selection of surgical route".)
+Myomectomy – Given the success of less invasive alternatives, including UAE and
+MRgFUS, the author advises myomectomy only in patients who do not have another
+uterine-sparing option or if there is a suspicion of sarcoma and the patient strongly
+desires a uterine-sparing technique knowing it may compromise outcome if sarcoma is
+found.●
+(See "Uterine fibroids (leiomyomas): Laparoscopic myomectomy and other
+laparoscopic treatments".)•
+(See "Uterine fibroids (leiomyomas): Open abdominal myomectomy procedure".) •
+(See "Uterine fibroids (leiomyomas): Differentiating fibroids from uterine sarcomas".) •23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 13/39desire more definitive surgical therapy, then myomectomy and hysterectomy are discusse d.
+Selection of embolization, medication, or surgery depends upon patient preferences around
+side effects, invasiveness, recovery time, need for prolonged treatment (more than six
+months), and risk of the treatment compared with risk of symptom recurrence. Other
+deciding factors include availability and cost.
+Bulk and pain symptoms are more difficult to manage for several reasons. First, slow uterine
+and fibroid growth can compromise function without abrupt change. Secondly, some bulk
+symptoms, such as urinary frequency and back pain, can be attributed to habits (frequently
+drinking water) or common conditions (lower back pain). However, it is increasingly clear that
+uterine fibroids are associated with both menstrual and nonmenstrual pain without invoking
+other diseases, such as endometriosis or adenomyosis [102].
+Initial treatment options include:
+For patients with persistent bulk or pain symptoms or those who desire definitive surgical
+therapy, surgical treatment options include myomectomy and hysterectomy. Myomectomy
+may be reasonable for patients with a limited number of large lesions in whom discreet
+fibroid removal is likely to significantly reduce uterine volume or focused pain. However, for
+patients with diffuse myometrial fibroids or pain that is not specific to one or two lesions,UAE – For patients who do not desire optimization of pregnancy or future fertility, UAE can
+be used to treat symptoms of pain, pressure, and bulk in addition to HMB. Symptom
+improvement rates vary by indication, mechanism of assessment, treatment comparator,
+and duration of follow-up, but they are in the range of 60 to 80 percent. Discussions of UAE
+procedure details, efficacy, and need for subsequent treatment are presented in detail
+separately. (See "Uterine fibroids (leiomyomas): Treatment with uterine artery
+embolization".)●
+GnRH analogs – GnRH analogs include both agonists (eg, leuprolide acetate depot
+suspension) and antagonists (elagolix and relugolix). Agonist treatment has been
+demonstrated to reduce fibroid volume [24], and relugolix has been demonstrated to
+reduce both fibroid volume and pain (see 'GnRH analogs' above). There are some data
+suggesting that agonist treatment may reduce bulk symptoms more than relugolix, but
+data are conflicting [41,103]. Furthermore, it is likely that elagolix combination therapy also
+decreases pain, but this has not been studied; while pain was a prespecified secondary
+endpoint in the relugolix trials, there are no comparable data for elagolix combination
+therapy.●
+Both GnRH agonists and antagonists result in hypoestrogenic side effects, which limit their
+tolerability and long-term use to a maximum of six months without add-back therapy. (See
+'GnRH analogs' above.)23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 14/39hysterectomy is preferred as it provides definitive surgical therapy. Both surgical approaches
+and benefits as related to the treatment of fibroids are reviewed above. (See 'Traditional
+surgery' above.)
+PATIENTS DESIRING FERTILITY
+Impact of fibroids on fertility — Fibroids themselves can contribute to a num ber of
+reproductive impairments, including infertility and recurrent pregnancy loss, although the
+available data often come from observational studies and, in some insta nces, they conflict
+[104-107]. One of the key confounders is that increasing age is associated with increased risk
+of infertility, fibroids, and miscarriage [106]. Generally, the literature has concluded that
+fibroids that distort the cavity (International Federation of Gynecology and Obstetrics [FIGO]
+types 0 to 3 (figure 1)) have more of an impact on fertility, and surgical treatment can be
+effective in reversing that impairment [104]. Likewise, the more the fibroids are located near
+the serosal surface, the less a role they appear to play. There is also likely confounding by
+age as has been shown in the relationship between fibroids and miscarriage; fibroids are
+associated with miscarriage in univariate analysis, but, in multivariate analysis, age appears
+to be the major influence since both fibroids and miscarriage increase with increasing age up
+to menopause [104,108]. Secondly, infertility and other reproductive dysfunction are often
+multifactorial, and, thus, a complete infertility evaluation of both partners is indicated before
+fertility treatment for fibroids [109]. Finally, in populations such as in the United States where
+much of fertility care is not covered or differentially covered by insurance, there is an
+incentive to treat fibroids first, which are covered as medical issues, before embarking on
+out-of-pocket fertility care. (See "Female infertility: Causes", section on 'Uterine fibroids
+(leiomyomata)'.)
+Treatment options — Most medical therapies for uterine fibroids preclude conception,
+cause adverse effects when employed long-term, and result in rapid symptom rebound
+when discontinued. Therefore, medical treatment of fibroids in patients attempting to
+become pregnant is usually unsuccessful. The author takes the following approaches for
+patients with symptomatic fibroids who desire pregnancy.
+Submucosal fibroids only — For patients desiring fertility who present with heavy
+menstrual bleeding (HMB) and a submucosal fibroid or fibroids (FIGO type 0, type 1, or
+some type 2 (figure 1)), we recommend hysteroscopic myomectomy both for its
+minimally invasive relief of symptoms and optimization of fertility. Hysteroscopic
+myomectomy is appropriate for patients who do, and do not, desire future fertility.
+Outcomes data for hysteroscopic myomectomy with regard to treating HMB are reviewed
+above. (See 'Hysteroscopic resection of submucosal fibroids' above.)23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 15/39For patients desiring pregnancy, wishing to maximize fertility, and presenting with
+submucosal fibroid or fibroids (FIGO type 0 or type 1) in the absence of other symptoms,
+we suggest hysteroscopic myomectomy. Although some guidelines [9] suggest removal of
+submucosal fibroids in asymptomatic patients not actively pursuing pregnancy, we
+suggest removal of FIGO types 0 and 1 fibroids but not type 2 (figure 1) due to the
+greater complexity of that surgery and higher risk of a two-stage procedure. Support for
+this approach mainly stems from the minimally invasive nature of the procedure and the
+anticipated benefit from removal of fibroids that impact the uterine cavity. However,
+available evidence is limited, includes surrogate patient groups (eg, patients with
+endometrial polyps rather than submucosal fibroids), and often lacks data on live birth
+rates, which is the key endpoint [105,106]. A trial comparing hysteroscopic myomectomy
+for major cavity abnormalities with expectant management in 181 patients affected by
+fibroids who had been trying to conceive for a year without success reported improved
+overall pregnancy rates following myomectomy, but the differences were not statistically
+significant [110]. A different trial that evaluated the removal of endometrial polyps prior to
+intrauterine insemination reported improved clinical pregnancy rates after polyp removal
+(odds ratio 4.41, 95% CI 2.45-7.96, 204 patients), but data on live birth rates were not
+available [105,111]. A meta-analysis including 442 patients with uterine fibroids and
+infertility reported nonsignificant trends toward higher clinical pregnancy rates following
+fibroid removal compared with no intervention; again, live birth rates were not reported
+[106].
+All fibroids other than submucosal — For patients who desire pregnancy and present
+with bulk symptoms (with or without bleeding) or whose fibroids are not amenable to
+hysteroscopic resection, we suggest myomectomy via either laparoscopy (with or without
+robotic assistance) or an open abdominal incision.
+Selection of laparoscopic or open technique is determined by the num ber, size, and
+location of the fibroids and does not appear to impact live birth rate, although supporting
+data are limited [106]. As the rate of new fibroid formation is high following uterine-
+sparing interventions such as myomectomy, fibroids are ideally treated as close to the time
+of actively pursuing pregnancy as possible. Additionally, since having a term delivery is
+associated with decreased fibroid risk, timing treatment close to the pursuit of pregnancy
+appears beneficial [112].
+Myomectomy is typically the first option because while less invasive treatments (eg,
+uterine artery embolization [UAE], focused ultrasound surgery) reduce bulk and shrink
+fibroids, they do not remove them. However, for patients who have a high risk of
+intraoperative conversion to hysterectomy, who have had prior myomectomy with
+recurrent fibroids, and/or who are considering a future pregnancy but will accept the
+possibility of impaired fertility in exchange for an expedited recovery phase, these less23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 16/39invasive treatments may be considered appropriate alternatives. (See 'Uterine artery
+embolization' above and 'Focused ultrasound surgery' above.)
+Choosing the approach — Laparoscopic myomectomy offers several advantages
+compared with open abdominal myomectomy, including decreased morbidity and a
+shorter recovery. However, laparoscopic myomectomy may be limited by characteristics
+of myomas and surgical expertise (eg, laparoscopic suturing) [113]. Laparoscopic
+myomectomy may also have higher rates of unplanned hysterectomy compared with an
+open or hysteroscopic approach. (See "Uterine fibroids (leiomyomas): Laparoscopic
+myomectomy and other laparoscopic treatments", section on 'Unplanned
+hysterectomy'.)
+Laparoscopic myomectomy – In general, laparoscopic myomectomy, with or without
+robotic assistance, is an option for patients with the following:●
+Uterine size <17 weeks. •
+Subserosal or intramural fibroids. Pedunculated subserosal fibroids (ie, International
+Federation of Gynecology and Obstetrics [FIGO] type 7) are the easiest to remove,
+but myomas in other locations (FIGO type 2 to 6) can also be excised
+laparoscopically (figure 1). Intracavitary myomas (ie, FIGO type 0 and 1) are
+difficult to remove during laparoscopic myomectomy and hysteroscopic
+myomectomy is the procedure of choice for such myomas. Patients with both
+submucosal and intramural/subserosal myomas may be candidates for concomitant
+laparoscopic and hysteroscopic myomectomy. (See "Uterine fibroids (leiomyomas):
+Hysteroscopic myomectomy and other transcervical procedures", section on 'Patient
+selection'.)•
+A small number (typically less than five) of fibroids [114]. Performing laparoscopic
+myomectomy in patients with large or numerous myomas is likely to be time
+consuming, particularly since morcellation is usually required. In addition, removal
+of such fibroids may lead to increased blood loss, which is better prevented and
+controlled during open myomectomy. (See "Techniques to reduce blood loss during
+abdominal or laparoscopic myomectomy", section on 'Intraoperative measures'.)•
+Fibroids that are anterior or fundal in location. Many surgeons find anterior or
+fundal myomas easier to remove laparoscopically than those that are posterior or
+proximate to other important structures (eg, uterine vessels, fallopian tubes).•
+Future childbearing is possible; however, the integrity of the uterine incision during
+pregnancy has not been evaluated adequately and may be inferior to open abdominal
+myomectomy. Due to reports of uterine rupture in pregnancy following some
+laparoscopic myomectomies, surgeons should discuss the risks and benefits of each23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 17/39In a systematic review of six randomized trials including 576 subjects undergoing
+myomectomy, laparoscopic compared with open abdominal myomectomy had an
+increase in operative duration (13 minutes longer), but a decrease in blood loss (34 mL
+less) [119]. However, these differences are small and unlikely to be clinically significant.
+In addition, while the overall risk of complication was lower for laparoscopic
+myomectomy (odds ratio [OR] 0.47, 95% CI 0.26-0.85), the risk of major complications
+(eg, hemorrhage requiring transfusion, visceral injury, thromboembolism) was similar
+between groups, but the analysis lacked sufficient statistical power to detect this
+difference. The rate of recurrent myomas was also similar between groups (18 to 20
+percent; follow-up period of 6 to 52 months), although this too lacked statistical power.
+Interestingly, other data suggest that a laparoscopic approach may result in less severe
+adhesive disease (particularly fewer adnexal adhesions) which may impact fertility [120],
+and that surgical complication rates (for both open and laparoscopic procedures) may be
+higher in Black, Hispanic, and Asian patients compared with White patients [121]. (See
+"Uterine fibroids (leiomyomas): Laparoscopic myomectomy and other laparoscopic
+treatments", section on 'Complications' and "Uterine fibroids (leiomyomas): Open
+abdominal myomectomy procedure", section on 'Complications' and "Uterine fibroids
+(leiomyomas): Laparoscopic myomectomy and other laparoscopic treatments", section
+on 'Adhesive disease'.)
+Surgical approach does not appear to affect ovarian reserve, as measured by anti-
+müllerian hormone (AMH) levels [122]. While a transient decline in AMH levels may be
+seen after open myomectomy (and associated with tourniquet use), the effect is
+transient, and levels appear to return to baseline by three months. (See "Techniques to
+reduce blood loss during abdominal or laparoscopic myomectomy", section on
+'Tourniquets'.)
+Further randomized trials are needed to compare these two procedures.option with patients, including possible risk of uterine rupture, as well as provide
+information regarding their experience with laparoscopic suturing. While robotic
+assistance may alleviate these problems, supporting data are minimal. (See "Uterine
+fibroids (leiomyomas): Laparoscopic myomectomy and other laparoscopic
+treatments", section on 'Counseling about future pregnancy'.)
+Open abdominal myomectomy – For patients with more numerous and/or larger
+fibroids, a laparotomy may be required. Open abdominal myomectomy can be safely
+performed even with very large uteri in expert hands; absolute size parameters vary
+among surgeons [115-118]. (See "Uterine fibroids (leiomyomas): Open abdominal
+myomectomy procedure".)●23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 18/39Both submucosal and other fibroids — Patients with symptomatic submucosal and other
+fibroids may require both hysteroscopic and abdominal/laparoscopic myomectomy.
+Role of preventive treatment to improve fertility — There are no data to support empiric
+removal of asymptomatic or minimally symptomatic fibroids in patients before attempting
+pregnancy. Because the risk for new fibroid formation is high, this approach can leave
+patients with recurrent fibroids that require additional intervention as they are pursuing
+pregnancy [123]. However, for patients with a uterus 16 weeks in size or larger, shortening
+the interval for trying for pregnancy before embarking on a full fertility evaluation seems
+prudent (after six months for patients <35 years old and after three months for patients ≥ 35
+years old). (See "Advancing maternal age: Infertility evaluation and management".)
+ROLE OF EXPECTANT MANAGEMENT
+There are few data on expectant management for patients with uterine fibroids, and they
+primarily come from the comparator arm of active treatment trials [13]. Moreover, expectant
+management has typically only been studied for a duration of up to six months. With those
+constraints, however, there is little evidence of documented harm over 6 to 12 months of
+observation, and expectant management can be employed [13].
+Candidates – While there are no data-informed guidelines, candidates for expectant
+management may include patients who are:●
+Asymptomatic •
+Attempting pregnancy •
+With lesions that are stable in size as demonstrated by serial imaging studies for one
+year•
+Peri- or postmenopausal •
+With uteri less than 12 weeks in size (not palpable abdominally) •
+Components of expectant management – Expectant management involves periodic
+evaluation of the patient for new symptoms that could be related to fibroids and for
+evidence of fibroid growth. Such evaluation may be limited to history and physical
+examination or may require imaging or laboratory studies, typically with pelvic ultrasound
+and assessment for anemia. The optimal time interval for such evaluation or repeat
+imaging is not known. In patients with no other symptoms or concerns, yearly evaluation
+is reasonable. Patients are encouraged to contact their clinicians if new pelvic symptoms
+develop. Expectant management is not appropriate if anemia worsens despite iron and
+vitamin supplementation, if transfusion is required for treatment of anemia, if the patient
+requires emergency evaluation for either anemia or heavy uterine bleeding, or if imaging
+raises suspicion for uterine sarcoma.●23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 19/39SPECIAL POPULATIONS
+Pregnancy and postpartum — Fibroids can undergo degeneration or torsion in pregnancy
+and the postpartum period, both of which can be associated with significant pain.
+Degeneration is managed with supportive therapy, while management of torsion varies with
+the size and location of the fibroid. (See "Uterine fibroids (leiomyomas): Issues in pregnancy",
+section on 'Degeneration and torsion'.)
+Peri- and postmenopause — Since symptoms tend to stabilize or regress once a patient
+reaches menopause, perimenopausal patients can typically be managed expectantly.
+Postmenopausal patients with fibroids should be evaluated periodically to ensure that the
+fibroid or fibroids have not increased in size. There is no consensus as to the frequency of
+evaluation, but every one to two years seems reasonable in the absence of new symptoms.
+Postmenopausal patients with new symptoms, particularly uterine bleeding or enlargement,
+should be evaluated immediately, and malignancy, including leiomyosarcoma, should be
+excluded. (See "Uterine sarcoma: Classification, epidemiology, clinical manifestations, and
+diagnosis".)
+TREATMENTS NOT TYPICALLY RECOMMENDED
+Numerous medical therapies have been tried for fibroid symptoms but are not effective
+and/or carry unacceptable risks.While many providers rely on periodic ultrasound or magnetic resonance imaging to follow
+patients expectantly, there is no evidence of the usefulness of this process. Nonetheless,
+since certain therapies depend on the number and/or size of the fibroids present, periodic
+imaging can be used at annual intervals, especially in patients who have had prior fibroid
+treatment, to allow the least invasive option for future treatment.
+Progesterone receptor modulators (PRMs) – Despite evidence supporting use of the
+PRMs ulipristal acetate (UPA) and mifepristone as daily medical therapy for fibroid-related
+bleeding [26,124], neither is currently approved in the United States for fibroid treatment.
+Both UPA and mifepristone remain on the market for one-time use as emergency
+contraceptives. (See "Emergency contraception".)●
+UPA – UPA is not typically used for treatment of uterine fibroids as cases of serious liver
+toxicity, liver transplantation, and fatalities have been reported [27,125,126]. As such,
+UPA is not available in the United States for treatment of fibroid-related bleeding by the
+US Food and Drug Administration [28,29]. In the European Union and Canada, UPA is
+approved in selected premenopausal patients with uterine fibroids who are not•23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 20/39candidates for, or have previously failed, surgical procedures (including uterine fibroid
+embolization) for up to four treatment cycles [127].
+In randomized trials, UPA compared with placebo resulted in improved fibroid symptom
+severity and health-related quality of life, and efficacy appeared similar to that of
+gonadotropin-releasing hormone (GnRH) agonists but with the advantage of oral dosing
+and lack of hypoestrogenic side effects [26,128]. The original trials for UPA were
+conducted in European populations where most participants were thin with relatively
+small uteri [129-131]. When trials were subsequently conducted in more diverse United
+States populations utilizing both 5 and 10 mg daily doses, the 10 mg dose generally
+showed greater efficacy [128,132,133].
+Repeated cycles of UPA appear to further reduce fibroid-related symptoms. In one
+randomized trial of patients with fibroid-related heavy menstrual bleeding (HMB), more
+patients receiving UPA (10 mg) for four cycles compared with one cycle had amenorrhea
+(89 versus 79.5 percent) and a greater change in total fibroid volume (-72.1 versus -49.9
+percent) [134].
+UPA as a single dose remains widely available for emergency contraception. Because of
+differences in dosing, off label use in the US would require a compounding pharmacy.
+(See "Emergency contraception", section on 'Oral medication emergency contraception
+methods'.)
+Mifepristone – Mifepristone at doses of 5 to 50 mg for three to six months has been
+reported to decrease heavy menstrual bleeding and, in some studies, fibroid volume
+[135-138]. However, some studies reported abnormal endometrial histology at the
+conclusion of therapy [135]. As a compounded formulation of mifepristone is required
+for these doses, the drug is rarely used for this off-label indication [26,135].•
+Androgenic compounds – Use of the androgens danazol and gestrinone have been
+studied in small series from single centers, but there are no comparative data [139,140].
+Thus, we do not advise using these agents for fibroid-related symptoms.●
+Aromatase inhibitors – While one small trial of the aromatase inhibitor letrozole reported
+decreased fibroid volume following treatment, the trial did not assess fibroid-related
+symptoms, and the volume reduction was similar to that achieved with GnRH agonist
+therapy [141]. Two small studies reported that pretreatment with letrozole may improve
+surgical outcomes [142,143], but these studies have not been repeated.●
+Selective estrogen reuptake modulators (SERMs) – Studies of the SERM raloxifene have
+reported mixed outcomes for fibroid treatment [144]. Use of raloxifene as hormonal add-
+back with GnRH analog treatment for fibroids appeared to reduce bone loss but did not
+improve quality of life or other fibroid-related symptoms [145].●23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 21/39SOCIETY GUIDELINE LINKS
+Links to society and government-sponsored guidelines from selected countries and regions
+around the world are provided separately. (See "Society guideline links: Uterine fibroids
+(leiomyomas)" and "Society guideline links: Abnormal uterine bleeding" and "Society
+guideline links: Hysteroscopy".)
+INFORMATION FOR PATIENTS
+UpToDate offers two types of patient education materials, "The Basics" and "Beyond the
+Basics." The Basics patient education pieces are written in plain language, at the 5 to 6
+grade reading level, and they answer the four or five key questions a patient might have
+about a given condition. These articles are best for patients who want a general overview
+and who prefer short, easy-to-read materials. Beyond the Basics patient education pieces are
+longer, more sophisticated, and more detailed. These articles are written at the 10 to 12
+grade reading level and are best for patients who want in-depth information and are
+comfortable with some medical jargon.
+Here are the patient education articles that are relevant to this topic. We encourage you to
+print or e-mail these topics to your patients. (You can also locate patient education articles
+on a variety of subjects by searching on "patient info" and the keyword(s) of interest.)Complementary medicine ●
+Herbal supplements – Limited data do not support use of herbal supplements,
+including black cohosh and Chinese herbal medicine, for fibroid-related symptoms [146-
+148].•
+Acupuncture – Trials assessing acupuncture for the treatment of fibroid-related
+symptoms are lacking, but small observational studies have suggested improved
+outcomes with acupuncture [149,150]. Until trial data supporting efficacy are available,
+we do not advise these interventions as primary treatment of fibroid-related symptoms.
+However, as risks associated with acupuncture are low, patients who desire a trial of
+acupuncture as adjunctive therapy may reasonably do so.•
+th th
+th th
+Basics topics (see "Patient education: Uterine fibroids (The Basics)" and "Patient education:
+Uterine artery embolization (The Basics)")●
+Beyond the Basics topic (see "Patient education: Uterine fibroids (Beyond the Basics)") ●23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 22/39SUMMARY AND RECOMMENDATIONS
+General considerations ●
+Treatment of fibroids is aimed at resolving or reducing the symptoms associated with
+the lesions. Common symptoms include prolonged or heavy menstrual bleeding (HMB),
+bulk symptoms, pain, and impaired fertility. Symptoms can be present in isolation or
+combination. (See 'Common symptoms for treatment' above.)•
+Pretreatment assessment includes clinical and laboratory evaluation, with imaging and
+endometrial sampling as indicated by either planned procedure or patient risk factors.
+Peri- and postmenopausal patients are evaluated for sarcoma risk, and all patients with
+HMB should be evaluated for iron deficiency anemia and the possibility of coexisting
+endometrial hyperplasia. (See 'Pretreatment assessment' above.)•
+While there are limited data on expectant management for patients with uterine
+fibroids, there is little evidence of documented harm over 6 to 12 months of observation,
+and expectant management can be employed. (See 'Role of expectant management'
+above.)•
+Patients with HMB who do not desire future fertility – For patients who do not desire
+future fertility, treatment is aimed at the presenting symptoms and performed in a
+stepwise approach until the symptoms are adequately controlled. As there are limited
+comparative studies demonstrating superiority of one treatment option over another,
+patient preference and shared decision-making are used to create the optimal
+management strategy.●
+First tier •
+For patients with HMB likely from submucosal fibroids, we recommend hysteroscopic
+myomectomy (Grade 1B). Submucosal fibroids include International Federation of
+Gynecology and Obstetrics (FIGO) type 0, type 1, or some type 2 (figure 1).
+Hysteroscopic myomectomy is an outpatient procedure with rapid recovery, a low risk
+of complications compared with abdominal procedures, rapid improvement in quality
+of life, and low risk of reintervention for fibroids. (See 'Hysteroscopic resection of
+submucosal fibroids' above.)-
+For patients with all other types of fibroids (ie, not exclusively submucosal) who do not
+desire pregnancy, we suggest initial treatment with a combined estrogen-progestin
+contraceptive (oral pills, transdermal patch, or vaginal ring) (Grade 2C). Although
+supporting data are of low quality, these products typically work quickly and are widely
+available, are low in cost, and are generally well-tolerated. Alternatives that are also-23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 23/39considered include levonorgestrel-releasing intrauterine devices, tranexamic acid, and
+progestin-only pills. As direct comparator data are sparse, treatment selection is
+patient-driven and considers variables such as efficacy, safety, tolerability, ease of use,
+and cost. (See 'Medical therapy' above.)
+Second tier – For patients whose symptoms persist despite trial of one or more first-tier
+therapies, second-tier medical treatments for fibroid-associated HMB include
+gonadotropin-releasing hormone (GnRH) agonists and antagonists. Uterine artery
+embolization (UAE) is a minimally invasive treatment option that treats both bleeding
+and bulk symptoms. Treatment choice is based on patient preferences around side
+effects, invasiveness, and recovery. Other deciding factors include availability and cost.
+(See 'Second tier' above.)•
+Third tier – For patients with persistent symptoms, third-tier treatments include focused
+ultrasound surgery and, in rare cases, endometrial ablation. These provide less invasive
+therapies for patients who desire less time away from work and/or uterine preservation.
+Procedure selection is determined by patient preferences around invasiveness and
+recovery time as well as treatment availability. (See 'Third tier' above.)•
+Last line – For patients who do not desire future fertility and have persistent fibroid-
+related symptoms despite the above treatments or who desire surgical therapy, options
+include hysterectomy and myomectomy. While hysterectomy is the definitive procedure
+for relief of symptoms and prevention of recurrent fibroid-related problems (eg,
+hydronephrosis), it is also associated with long-term morbidity. Given the success of less
+invasive alternative treatments, including UAE and focused ultrasound surgery,
+myomectomy is performed only in patients who do not have another uterine-sparing
+option or if there is a suspicion of sarcoma and the patient strongly desires a uterine-
+sparing technique knowing it may compromise outcome if sarcoma is found. (See
+'Traditional surgery' above.)•
+Patients with bulk or pain symptoms who do not desire future fertility – For patients
+whose main symptoms include bulk or pain, with or without HMB, treatment options
+include GnRH analogs and UAE. Patients and clinicians must balance the hypoestrogenic
+symptoms associated with long-term use of GnRH analogs with the procedure risk and
+longer recovery of UAE. If not effective, or if patients desire more definitive surgical
+therapy, then myomectomy and hysterectomy are options. Selection of medication,
+embolization, or surgery depends on patient preferences around side effects,
+invasiveness, recovery time, need for prolonged treatment, and risk of the treatment
+compared with risk of symptom recurrence. (See 'Bulk or pain symptoms with or without
+bleeding' above.)●23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 24/39Use of UpToDate is subject to the Terms of Use.Patients who desire fertility – For patients who desire pregnancy and present with
+symptoms that are reasonably attributed to fibroids (bleeding, bulk, and, possibly,
+infertility), myomectomy is typically the first option. Most medical therapies are not used in
+patients desiring pregnancy because they preclude conception, cause adverse effects
+when employed long-term, and result in rapid symptom rebound when discontinued. (See
+'Treatment options' above.)●
+For patients desiring pregnancy who have symptoms likely caused by fibroids FIGO type
+0, type 1, or some type 2 (figure 1), we recommend hysteroscopic myomectomy
+(Grade 1B). Symptoms typically include abnormal or heavy uterine bleeding.
+Hysteroscopic myomectomy is minimally invasive, provides relief of symptoms, and
+typically preserves the integrity of the myometrium for future pregnancy. (See
+'Submucosal fibroids only' above.)•
+For patients desiring pregnancy, wishing to maximize fertility, and presenting with
+submucosal fibroid or fibroids (FIGO type 0 or type 1) in the absence of other symptoms,
+we suggest hysteroscopic myomectomy (Grade 2C). We offer removal of FIGO types 0
+and 1 fibroids but not type 2 (figure 1) due to the greater complexity of that surgery
+and higher risk of a two-stage procedure. Support for this approach mainly stems from
+the minimally invasive nature of the procedure and anticipated benefit from removal of
+fibroids that impact the uterine cavity. However, available evidence is limited, includes
+surrogate patient groups (eg, patients with endometrial polyps rather than endometrial
+fibroids), and often lacks data on live birth rates, which is the patient-important
+endpoint. (See 'Submucosal fibroids only' above.)•
+For patients desiring pregnancy who have bulk symptoms (with or without bleeding) or
+fibroids that are not amenable to hysteroscopic resection, and in whom there are no
+major contraindications to a surgical approach, we offer open abdominal or laparoscopic
+myomectomy. Myomectomy is preferred over UAE and focused ultrasound surgery given
+the lack of information about the safety of pregnancy with these approaches.•
+For patients undergoing myomectomy in whom laparoscopic removal is technically
+feasible (eg, uterine size <17 weeks, subserosal/submucosal, few in number, anterior
+or fundal location) and who have access to a surgeon with advanced laparoscopic
+skills, we suggest a laparoscopic rather than open approach (Grade 2C). However, the
+integrity of the uterine incision during pregnancy after laparoscopic myomectomy has
+not been evaluated adequately and may be inferior to open abdominal myomectomy.
+(See 'Treatment options' above.)-23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 25/39REFERENCES
+1. Peddada SD, Laughlin SK, Miner K, et al. Growth of uterine leiomyomata among
+premenopausal black and white women. Proc Natl Acad Sci U S A 2008; 105:19887.
+2. Baird DD, Garrett TA, Laughlin SK, et al. Short-term change in growth of uterine
+leiomyoma: tumor growth spurts. Fertil Steril 2011; 95:242.
+3. Ghant MS, Sengoba KS, Recht H, et al. Beyond the physical: a qualitative assessment of
+the burden of symptomatic uterine fibroids on women's emotional and psychosocial
+health. J Psychosom Res 2015; 78:499.
+4. Ghant MS, Sengoba KS, Vogelzang R, et al. An Altered Perception of Normal:
+Understanding Causes for Treatment Delay in Women with Symptomatic Uterine
+Fibroids. J Womens Health (Larchmt) 2016; 25:846.
+5. Management of Symptomatic Uterine Leiomyomas: ACOG Practice Bulletin, Number
+228. Obstet Gynecol 2021; 137:e100.
+6. Stewart EA. Clinical practice. Uterine fibroids. N Engl J Med 2015; 372:1646.
+7. Laughlin-Tommaso SK, Lu D, Thomas L, et al. Short-term quality of life after
+myomectomy for uterine fibroids from the COMPARE-UF Fibroid Registry. Am J Obstet
+Gynecol 2020; 222:345.e1.
+8. Sandberg EM, Tummers FHMP, Cohen SL, et al. Reintervention risk and quality of life
+outcomes after uterine-sparing interventions for fibroids: a systematic review and meta-
+analysis. Fertil Steril 2018; 109:698.
+9. Marret H, Fritel X, Ouldamer L, et al. Therapeutic management of uterine fibroid tumors:
+updated French guidelines. Eur J Obstet Gynecol Reprod Biol 2012; 165:156.
+10. Bhave Chittawar P, Franik S, Pouwer AW, Farquhar C. Minimally invasive surgical
+techniques versus open myomectomy for uterine fibroids. Cochrane Database Syst Rev
+2014; 2014:CD004638.
+11. Wamsteker K, Emanuel MH, de Kruif JH. Transcervical hysteroscopic resection of
+submucous fibroids for abnormal uterine bleeding: results regarding the degree of
+intramural extension. Obstet Gynecol 1993; 82:736.
+12. Yao X, Stewart EA, Laughlin-Tommaso SK, et al. Medical therapies for heavy menstrual
+bleeding in women with uterine fibroids: a retrospective analysis of a large commercially
+insured population in the USA. BJOG 2017; 124:322.
+13. Hartmann KE, Fonnesbeck C, Surawicz T, et al. Management of Uterine Fibroids. AHRQ C
+omparative Effectiveness Review. Rockville, MD: 2017. https://effectivehealthcare.ahrq.g
+ov/sites/default/files/pdf/cer-195-uterine-fibroids-final-revision.pdf (Accessed on January
+06, 2020).23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 26/3914. Vilos GA, Allaire C, Laberge PY, et al. The management of uterine leiomyomas. J Obstet
+Gynaecol Can 2015; 37:157.
+15. NICE guideline [NG88] Heavy menstrual bleeding: assessment and management. Nation
+al Institute for Health and Care Excellence. March 2020 https://www.nice.org.uk/guidanc
+e/ng88/chapter/Recommendations#management-of-hmb (Accessed on April 01, 2020).
+16. Sangkomkamhang US, Lumbiganon P, Pattanittum P. Progestogens or progestogen-
+releasing intrauterine systems for uterine fibroids (other than preoperative medical
+therapy). Cochrane Database Syst Rev 2020; 11:CD008994.
+17. Mercorio F, De Simone R, Di Spiezio Sardo A, et al. The effect of a levonorgestrel-
+releasing intrauterine device in the treatment of myoma-related menorrhagia.
+Contraception 2003; 67:277.
+18. Murat Naki M, Tekcan C, Ozcan N, Cebi M. Levonorgestrel-releasing intrauterine device
+insertion ameliorates leiomyoma-dependent menorrhagia among women of
+reproductive age without a significant regression in the uterine and leiomyoma
+volumes. Fertil Steril 2010; 94:371.
+19. Bryant-Smith AC, Lethaby A, Farquhar C, Hickey M. Antifibrinolytics for heavy menstrual
+bleeding. Cochrane Database Syst Rev 2018; 4:CD000249.
+20. Lukes AS, Moore KA, Muse KN, et al. Tranexamic acid treatment for heavy menstrual
+bleeding: a randomized controlled trial. Obstet Gynecol 2010; 116:865.
+21. Eder S, Baker J, Gersten J, et al. Efficacy and safety of oral tranexamic acid in women with
+heavy menstrual bleeding and fibroids. Womens Health (Lond) 2013; 9:397.
+22. Lysteda- tranexamic acid tablet. US Food and Drug Administration (FDA) approved produ
+ct information. Revised January, 2020. US National Library of Medicine. www.dailymed.nl
+m.nih.gov (Accessed on January 22, 2020).
+23. Tosun AK, Tosun I, Suer N. Comparison of levonorgestrel-releasing intrauterine device
+with oral progestins in heavy menstrual bleeding (HMB) cases with uterine leiomyoma
+(LNG-IUD and oral progestin usage in myoma uteri). Pak J Med Sci 2014; 30:834.
+24. Lethaby A, Puscasiu L, Vollenhoven B. Preoperative medical therapy before surgery for
+uterine fibroids. Cochrane Database Syst Rev 2017; 11:CD000547.
+25. Yoon JK, Han K, Kim MD, et al. Five-year clinical outcomes of uterine artery embolization
+for symptomatic leiomyomas: An analysis of risk factors for reintervention. Eur J Radiol
+2018; 109:83.
+26. Murji A, Whitaker L, Chow TL, Sobel ML. Selective progesterone receptor modulators
+(SPRMs) for uterine fibroids. Cochrane Database Syst Rev 2017; 4:CD010770.
+27. Mahase E. Uterine fibroid drug is recalled after case of liver failure requiring transplant
+prompts EU review. BMJ 2020; 368:m1112.23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 27/3928. FDA delays approval of Esmya, issuing CRL https://www.thepharmaletter.com/article/fda
+-delays-approval-of-esmya-issuing-crl (Accessed on November 29, 2018).
+29. https://healthycanadians.gc.ca/recall-alert-rappel-avis/hc-sc/2020/73939a-eng.php (Acce
+ssed on September 18, 2020).
+30. Taylor HS, Giudice LC, Lessey BA, et al. Treatment of Endometriosis-Associated Pain with
+Elagolix, an Oral GnRH Antagonist. N Engl J Med 2017; 377:28.
+31. Carr BR, Stewart EA, Archer DF, et al. Elagolix Alone or With Add-Back Therapy in Women
+With Heavy Menstrual Bleeding and Uterine Leiomyomas: A Randomized Controlled
+Trial. Obstet Gynecol 2018; 132:1252.
+32. US Food and Drug Administration (FDA). FDA Approves New Option to Treat Heavy Mens
+trual Bleeding Associated with Fibroids in Women. https://www.fda.gov/news-events/pre
+ss-announcements/fda-approves-new-option-treat-heavy-menstrual-bleeding-associate
+d-fibroids-women (Accessed on May 29, 2020).
+33. Schlaff WD, Ackerman RT, Al-Hendy A, et al. Elagolix for Heavy Menstrual Bleeding in
+Women with Uterine Fibroids. N Engl J Med 2020; 382:328.
+34. Al-Hendy A, Bradley L, Owens CD, et al. Predictors of response for elagolix with add-back
+therapy in women with heavy menstrual bleeding associated with uterine fibroids. Am J
+Obstet Gynecol 2021; 224:72.e1.
+35. Muneyyirci-Delale O, Archer DF, Owens CD, et al. Efficacy and safety of elagolix with add-
+back therapy in women with uterine fibroids and coexisting adenomyosis. F S Rep 2021;
+2:338.
+36. Simon JA, Al-Hendy A, Archer DF, et al. Elagolix Treatment for Up to 12 Months in Women
+With Heavy Menstrual Bleeding and Uterine Leiomyomas. Obstet Gynecol 2020;
+135:1313.
+37. Brown E, Kroll R, Li H, et al. Low-Dose Elagolix for the Treatment of Heavy Menstrual
+Bleeding in Patients With Uterine Leiomyomas: A Randomized Controlled Trial. Obstet
+Gynecol 2023; 142:1068.
+38. Archer DF, Ng J, Chwalisz K, et al. Elagolix Suppresses Ovulation in a Dose-Dependent
+Manner: Results From a 3-Month, Randomized Study in Ovulatory Women. J Clin
+Endocrinol Metab 2020; 105.
+39. Vercellini P, Viganò P, Barbara G, et al. Elagolix for endometriosis: all that glitters is not
+gold. Hum Reprod 2019; 34:193.
+40. https://www.accessdata.fda.gov/drugsatfda_docs/label/2021/214846s000lbl.pdf (Access
+ed on May 27, 2021).
+41. Al-Hendy A, Lukes AS, Poindexter AN 3rd, et al. Treatment of Uterine Fibroid Symptoms
+with Relugolix Combination Therapy. N Engl J Med 2021; 384:630.23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 28/3942. Stewart EA, Lukes AS, Venturella R, et al. Quality of life with relugolix combination
+therapy for uterine fibroids: LIBERTY randomized trials. Am J Obstet Gynecol 2023;
+228:320.e1.
+43. Stewart EA, Lukes AS, Venturella R, et al. Relugolix Combination Therapy for Uterine
+Leiomyoma-Associated Pain in the LIBERTY Randomized Trials. Obstet Gynecol 2022;
+139:1070.
+44. Al-Hendy A, Lukes AS, Poindexter AN 3rd, et al. Long-term Relugolix Combination
+Therapy for Symptomatic Uterine Leiomyomas. Obstet Gynecol 2022; 140:920.
+45. Al-Hendy A, Venturella R, Arjona Ferreira JC, et al. LIBERTY randomized withdrawal study:
+relugolix combination therapy for heavy menstrual bleeding associated with uterine
+fibroids. Am J Obstet Gynecol 2023; 229:662.e1.
+46. MYFEMBREE- relugolix, estradiol hemihydrate, and norethindrone acetate tablet, film co
+ated. US Food and Drug Administration (FDA) approved product information. Revised Jan
+usary 2023. US National Library of Medicine. www.dailymed.nlm.nih.gov (Accessed on Ja
+nuary 31, 2023).
+47. Yselty. European Medicines Agency. Available at: https://www.ema.europa.eu/en/medici
+nes/human/EPAR/yselty (Accessed on September 26, 2022).
+48. Donnez J, Taylor HS, Stewart EA, et al. Linzagolix with and without hormonal add-back
+therapy for the treatment of symptomatic uterine fibroids: two randomised, placebo-
+controlled, phase 3 trials. Lancet 2022; 400:896.
+49. Lupron Depot- leuprolide acetate kit. US Food and Drug Administration (FDA) approved
+product information. Revised November, 2018. US National Library of Medicine. www.dai
+lymed.nlm.nih.gov (Accessed on April 01, 2020).
+50. Lupron depot- leuprolide acetate kit. US Food and Drug Administration (FDA) approved p
+roduct information. Revised November, 2018. US National Library of Medicine. https://da
+ilymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=00c486b0-bd7b-4898-834d-8c656e5e7
+3cb (Accessed on January 22, 2020).
+51. Gupta JK, Sinha A, Lumsden MA, Hickey M. Uterine artery embolization for symptomatic
+uterine fibroids. Cochrane Database Syst Rev 2014; :CD005073.
+52. Stewart EA. Comparing Apples to Apples for Fibroids. N Engl J Med 2020; 383:489.
+53. Manyonda I, Belli AM, Lumsden MA, et al. Uterine-Artery Embolization or Myomectomy
+for Uterine Fibroids. N Engl J Med 2020; 383:440.
+54. Sirkeci F, Moss J, Belli AM, et al. Effects on heavy menstrual bleeding and pregnancy of
+uterine artery embolization (UAE) or myomectomy for women with uterine fibroids
+wishing to avoid hysterectomy: The FEMME randomized controlled trial. Int J Gynaecol
+Obstet 2023; 160:492.23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 29/3955. Anchan RM, Spies JB, Zhang S, et al. Long-term health-related quality of life and
+symptom severity following hysterectomy, myomectomy, or uterine artery embolization
+for the treatment of symptomatic uterine fibroids. Am J Obstet Gynecol 2023;
+229:275.e1.
+56. Chen J, Chen W, Zhang L, et al. Safety of ultrasound-guided ultrasound ablation for
+uterine fibroids and adenomyosis: A review of 9988 cases. Ultrason Sonochem 2015;
+27:671.
+57. Chen J, Li Y, Wang Z, et al. Evaluation of high-intensity focused ultrasound ablation for
+uterine fibroids: an IDEAL prospective exploration study. BJOG 2018; 125:354.
+58. Stewart EA, Gedroyc WM, Tempany CM, et al. Focused ultrasound treatment of uterine
+fibroid tumors: safety and feasibility of a noninvasive thermoablative technique. Am J
+Obstet Gynecol 2003; 189:48.
+59. Stewart EA, Rabinovici J, Tempany CM, et al. Clinical outcomes of focused ultrasound
+surgery for the treatment of uterine fibroids. Fertil Steril 2006; 85:22.
+60. Fennessy FM, Tempany CM, McDannold NJ, et al. Uterine leiomyomas: MR imaging-
+guided focused ultrasound surgery--results of different treatment protocols. Radiology
+2007; 243:885.
+61. Gorny KR, Borah BJ, Weaver AL, et al. Clinical predictors of successful magnetic
+resonance-guided focused ultrasound (MRgFUS) for uterine leiomyoma. J Ther
+Ultrasound 2013; 1:15.
+62. Gorny KR, Borah BJ, Brown DL, et al. Incidence of additional treatments in women
+treated with MR-guided focused US for symptomatic uterine fibroids: review of 138
+patients with an average follow-up of 2.8 years. J Vasc Interv Radiol 2014; 25:1506.
+63. Hesley GK, Gorny KR, Henrichsen TL, et al. A clinical review of focused ultrasound
+ablation with magnetic resonance guidance: an option for treating uterine fibroids.
+Ultrasound Q 2008; 24:131.
+64. Yoon SW, Lee C, Cha SH, et al. Patient selection guidelines in MR-guided focused
+ultrasound surgery of uterine fibroids: a pictorial guide to relevant findings in screening
+pelvic MRI. Eur Radiol 2008; 18:2997.
+65. Funaki K, Fukunishi H, Sawada K. Clinical outcomes of magnetic resonance-guided
+focused ultrasound surgery for uterine myomas: 24-month follow-up. Ultrasound Obstet
+Gynecol 2009; 34:584.
+66. Stewart EA, Gostout B, Rabinovici J, et al. Sustained relief of leiomyoma symptoms by
+using focused ultrasound surgery. Obstet Gynecol 2007; 110:279.
+67. Gorny KR, Woodrum DA, Brown DL, et al. Magnetic resonance-guided focused
+ultrasound of uterine leiomyomas: review of a 12-month outcome of 130 clinical
+patients. J Vasc Interv Radiol 2011; 22:857.23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 30/3968. Kim HS, Baik JH, Pham LD, Jacobs MA. MR-guided high-intensity focused ultrasound
+treatment for symptomatic uterine leiomyomata: long-term outcomes. Acad Radiol
+2011; 18:970.
+69. O'Sullivan AK, Thompson D, Chu P, et al. Cost-effectiveness of magnetic resonance
+guided focused ultrasound for the treatment of uterine fibroids. Int J Technol Assess
+Health Care 2009; 25:14.
+70. Zowall H, Cairns JA, Brewer C, et al. Cost-effectiveness of magnetic resonance-guided
+focused ultrasound surgery for treatment of uterine fibroids. BJOG 2008; 115:653.
+71. NICE Guidance. Magnetic resonance image-guided transcutaneous focused ultrasound f
+or uterine fibroids. 2011. https://www.nice.org.uk/guidance/ipg413/chapter/1-Guidance
+(Accessed on January 08, 2020).
+72. NICE Guidance. Ultrasound-guided high-intensity transcutaneous focused ultrasound fo
+r symptomatic uterine fibroids. 2019. https://www.nice.org.uk/guidance/ipg657/chapter/
+1-Recommendations (Accessed on January 08, 2020).
+73. Jin J, Zhao Y, Huang P. Combination of HIFU with sulfur hexafluoride microbubbles in the
+treatment of solitary uterine fibroids: a systematic review and meta-analysis. Eur Radiol
+2024; 34:3786.
+74. AbdElmagied AM, Vaughan LE, Weaver AL, et al. Fibroid interventions: reducing
+symptoms today and tomorrow: extending generalizability by using a comprehensive
+cohort design with a randomized controlled trial. Am J Obstet Gynecol 2016; 215:338.e1.
+75. Barnard EP, AbdElmagied AM, Vaughan LE, et al. Periprocedural outcomes comparing
+fibroid embolization and focused ultrasound: a randomized controlled trial and
+comprehensive cohort analysis. Am J Obstet Gynecol 2017; 216:500.e1.
+76. Laughlin-Tommaso S, Barnard EP, AbdElmagied AM, et al. FIRSTT study: randomized
+controlled trial of uterine artery embolization vs focused ultrasound surgery. Am J
+Obstet Gynecol 2019; 220:174.e1.
+77. Hanstede MM, Tempany CM, Stewart EA. Focused ultrasound surgery of intramural
+leiomyomas may facilitate fertility: a case report. Fertil Steril 2007; 88:497.e5.
+78. Gavrilova-Jordan LP, Rose CH, Traynor KD, et al. Successful term pregnancy following
+MR-guided focused ultrasound treatment of uterine leiomyoma. J Perinatol 2007; 27:59.
+79. Morita Y, Ito N, Ohashi H. Pregnancy following MR-guided focused ultrasound surgery
+for a uterine fibroid. Int J Gynaecol Obstet 2007; 99:56.
+80. Rabinovici J, David M, Fukunishi H, et al. Pregnancy outcome after magnetic resonance-
+guided focused ultrasound surgery (MRgFUS) for conservative treatment of uterine
+fibroids. Fertil Steril 2010; 93:199.
+81. Qin J, Chen JY, Zhao WP, et al. Outcome of unintended pregnancy after ultrasound-
+guided high-intensity focused ultrasound ablation of uterine fibroids. Int J Gynaecol23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 31/39Obstet 2012; 117:273.
+82. Zou M, Chen L, Wu C, et al. Pregnancy outcomes in patients with uterine fibroids treated
+with ultrasound-guided high-intensity focused ultrasound. BJOG 2017; 124 Suppl 3:30.
+83. El-Nashar SA, Hopkins MR, Feitoza SS, et al. Global endometrial ablation for
+menorrhagia in women with bleeding disorders. Obstet Gynecol 2007; 109:1381.
+84. Wright JD, Herzog TJ, Tsui J, et al. Nationwide trends in the performance of inpatient
+hysterectomy in the United States. Obstet Gynecol 2013; 122:233.
+85. Stewart EA, Shuster LT, Rocca WA. Reassessing hysterectomy. Minn Med 2012; 95:36.
+86. Kuppermann M, Learman LA, Schembri M, et al. Predictors of hysterectomy use and
+satisfaction. Obstet Gynecol 2010; 115:543.
+87. Kuppermann M, Learman LA, Schembri M, et al. Contributions of hysterectomy and
+uterus-preserving surgery to health-related quality of life. Obstet Gynecol 2013; 122:15.
+88. Nicholson WK, Wegienka G, Zhang S, et al. Short-Term Health-Related Quality of Life
+After Hysterectomy Compared With Myomectomy for Symptomatic Leiomyomas. Obstet
+Gynecol 2019; 134:261.
+89. Farquhar CM, Sadler L, Stewart AW. A prospective study of outcomes five years after
+hysterectomy in premenopausal women. Aust N Z J Obstet Gynaecol 2008; 48:510.
+90. Melton LJ 3rd, Khosla S, Malkasian GD, et al. Fracture risk after bilateral oophorectomy in
+elderly women. J Bone Miner Res 2003; 18:900.
+91. Rocca WA, Gazzuola-Rocca L, Smith CY, et al. Accelerated Accumulation of
+Multimorbidity After Bilateral Oophorectomy: A Population-Based Cohort Study. Mayo
+Clin Proc 2016; 91:1577.
+92. Rocca WA, Grossardt BR, de Andrade M, et al. Survival patterns after oophorectomy in
+premenopausal women: a population-based cohort study. Lancet Oncol 2006; 7:821.
+93. Rivera CM, Grossardt BR, Rhodes DJ, et al. Increased cardiovascular mortality after early
+bilateral oophorectomy. Menopause 2009; 16:15.
+94. Rivera CM, Grossardt BR, Rhodes DJ, Rocca WA. Increased mortality for neurological and
+mental diseases following early bilateral oophorectomy. Neuroepidemiology 2009;
+33:32.
+95. Rocca WA, Bower JH, Maraganore DM, et al. Increased risk of cognitive impairment or
+dementia in women who underwent oophorectomy before menopause. Neurology
+2007; 69:1074.
+96. Farquhar CM, Sadler L, Harvey SA, Stewart AW. The association of hysterectomy and
+menopause: a prospective cohort study. BJOG 2005; 112:956.
+97. Trabuco EC, Moorman PG, Algeciras-Schimnich A, et al. Association of Ovary-Sparing
+Hysterectomy With Ovarian Reserve. Obstet Gynecol 2016; 127:819.23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 32/3998. Moorman PG, Myers ER, Schildkraut JM, et al. Effect of hysterectomy with ovarian
+preservation on ovarian function. Obstet Gynecol 2011; 118:1271.
+99. Laughlin-Tommaso SK, Satish A, Khan Z, et al. Long-term risk of de novo mental health
+conditions after hysterectomy with ovarian conservation: a cohort study. Menopause
+2020; 27:33.
+100. Laughlin-Tommaso SK, Khan Z, Weaver AL, et al. Cardiovascular and metabolic morbidity
+after hysterectomy with ovarian conservation: a cohort study. Menopause 2018; 25:483.
+101. Gazzuola Rocca L, Smith CY, Stewart EA, Rocca WA. Adverse childhood experiences and
+adult abuse are predictors of hysterectomy and oophorectomy. Maturitas 2017; 106:95.
+102. Osuga Y, Enya K, Kudou K, Hoshiai H. Relugolix, a novel oral gonadotropin-releasing
+hormone antagonist, in the treatment of pain symptoms associated with uterine
+fibroids: a randomized, placebo-controlled, phase 3 study in Japanese women. Fertil
+Steril 2019; 112:922.
+103. Osuga Y, Enya K, Kudou K, et al. Oral Gonadotropin-Releasing Hormone Antagonist
+Relugolix Compared With Leuprorelin Injections for Uterine Leiomyomas: A Randomized
+Controlled Trial. Obstet Gynecol 2019; 133:423.
+104. Practice Committee of the American Society for Reproductive Medicine. Electronic
+address: ASRM@asrm.org, Practice Committee of the American Society for Reproductive
+Medicine. Removal of myomas in asymptomatic patients to improve fertility and/or
+reduce miscarriage rate: a guideline. Fertil Steril 2017; 108:416.
+105. Bosteels J, van Wessel S, Weyers S, et al. Hysteroscopy for treating subfertility associated
+with suspected major uterine cavity abnormalities. Cochrane Database Syst Rev 2018;
+12:CD009461.
+106. Metwally M, Raybould G, Cheong YC, Horne AW. Surgical treatment of fibroids for
+subfertility. Cochrane Database Syst Rev 2020; 1:CD003857.
+107. Pritts TL, Ogden M, Parker W, et al. Intramural Leiomyomas and Fertility: A Systematic
+Review and Meta-Analysis. Obstet Gynecol 2024; 144:171.
+108. Hartmann KE, Velez Edwards DR, Savitz DA, et al. Prospective Cohort Study of Uterine
+Fibroids and Miscarriage Risk. Am J Epidemiol 2017; 186:1140.
+109. Infertility Workup for the Women's Health Specialist: ACOG Committee Opinion, Number
+781. Obstet Gynecol 2019; 133:e377. Reaffirmed 2023.
+110. Casini ML, Rossi F, Agostini R, Unfer V. Effects of the position of fibroids on fertility.
+Gynecol Endocrinol 2006; 22:106.
+111. Pérez-Medina T, Bajo-Arenas J, Salazar F, et al. Endometrial polyps and their implication
+in the pregnancy rates of patients undergoing intrauterine insemination: a prospective,
+randomized study. Hum Reprod 2005; 20:1632.23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 33/39112. Stewart EA, Cookson CL, Gandolfo RA, Schulze-Rath R. Epidemiology of uterine fibroids:
+a systematic review. BJOG 2017; 124:1501.
+113. Parker WH, Rodi IA. Patient selection for laparoscopic myomectomy. J Am Assoc Gynecol
+Laparosc 1994; 2:23.
+114. Gargiulo AR, Srouji SS, Missmer SA, et al. Robot-assisted laparoscopic myomectomy
+compared with standard laparoscopic myomectomy. Obstet Gynecol 2012; 120:284.
+115. Reilly R, Nour N. Abdominal myomectomy is associated with few surgical complications.
+J Gynecol Techniques 1998; 4:107.
+116. West S, Ruiz R, Parker WH. Abdominal myomectomy in women with very large uterine
+size. Fertil Steril 2006; 85:36.
+117. Oladapo OT, Akinsanya AF. Relative morbidity of abdominal myomectomy for very large
+uterine fibroids in a developing country hospital. Arch Gynecol Obstet 2011; 283:825.
+118. Pundir J, Krishnan N, Siozos A, et al. Peri-operative morbidity associated with abdominal
+myomectomy for very large fibroid uteri. Eur J Obstet Gynecol Reprod Biol 2013;
+167:219.
+119. Jin C, Hu Y, Chen XC, et al. Laparoscopic versus open myomectomy--a meta-analysis of
+randomized controlled trials. Eur J Obstet Gynecol Reprod Biol 2009; 145:14.
+120. Bulletti C, Polli V, Negrini V, et al. Adhesion formation after laparoscopic myomectomy. J
+Am Assoc Gynecol Laparosc 1996; 3:533.
+121. Dallas K, Dubinskaya A, Andebrhan SB, et al. Racial Disparities in Outcomes of Women
+Undergoing Myomectomy. Obstet Gynecol 2021; 138:845.
+122. Aharon D, Sekhon L, Getrajdman C, et al. Association of Myomectomy With Anti-
+Müllerian Hormone Levels and Ovarian Reserve. Obstet Gynecol 2022; 140:1000.
+123. Baird DD, Dunson DB, Hill MC, et al. High cumulative incidence of uterine leiomyoma in
+black and white women: ultrasound evidence. Am J Obstet Gynecol 2003; 188:100.
+124. Hartmann KE, Fonnesbeck C, Surawicz T, et al. Management of Uterine Fibroids. AHRQ C
+omparative Effectiveness Review. Rockville, MD: 2017. https://effectivehealthcare.ahrq.g
+ov/sites/default/files/pdf/cer-195-uterine-fibroids-final-revision.pdf (Accessed on March
+19, 2020).
+125. European Medicines Agency. PRAC recommends new measures to minimise risk of rare
+but serious liver injury with Esmya for fibroids. 2018. https://www.ema.europa.eu/en/ne
+ws/prac-recommends-new-measures-minimise-risk-rare-serious-liver-injury-esmya-fibroi
+ds (Accessed on March 26, 2020).
+126. Esmya: New measures to minimise risk of rare but serious liver injury http s://www.ema.
+europa.eu/medicines/human/referrals/esmya (Accessed on August 08, 2018).23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 34/39127. Ulipristal acetate for uterine fibroids: EMA recommends restricting use. European Medici
+nes Agency. November 13, 2020. Available at: https://www.ema.europa.eu/en/news/ulip
+ristal-acetate-uterine-fibroids-ema-recommends-restricting-use (Accessed on July 26, 20
+23).
+128. Lukes AS, Soper D, Harrington A, et al. Health-Related Quality of Life With Ulipristal
+Acetate for Treatment of Uterine Leiomyomas: A Randomized Controlled Trial. Obstet
+Gynecol 2019; 133:869.
+129. Donnez J, Tatarchuk TF, Bouchard P, et al. Ulipristal acetate versus placebo for fibroid
+treatment before surgery. N Engl J Med 2012; 366:409.
+130. Donnez J, Tomaszewski J, Vázquez F, et al. Ulipristal acetate versus leuprolide acetate for
+uterine fibroids. N Engl J Med 2012; 366:421.
+131. Stewart EA. Uterine fibroids and evidence-based medicine--not an oxymoron. N Engl J
+Med 2012; 366:471.
+132. Liu JH, Soper D, Lukes A, et al. Ulipristal Acetate for Treatment of Uterine Leiomyomas: A
+Randomized Controlled Trial. Obstet Gynecol 2018; 132:1241.
+133. Simon JA, Catherino W, Segars JH, et al. Ulipristal Acetate for Treatment of Symptomatic
+Uterine Leiomyomas: A Randomized Controlled Trial. Obstet Gynecol 2018; 131:431.
+134. Donnez J, Vázquez F, Tomaszewski J, et al. Long-term treatment of uterine fibroids with
+ulipristal acetate ☆ . Fertil Steril 2014; 101:1565.
+135. Tristan M, Orozco LJ, Steed A, et al. Mifepristone for uterine fibroids. Cochrane Database
+Syst Rev 2012; 2012:CD007687.
+136. Fiscella K, Eisinger SH, Meldrum S, et al. Effect of mifepristone for symptomatic
+leiomyomata on quality of life and uterine size: a randomized controlled trial. Obstet
+Gynecol 2006; 108:1381.
+137. Bagaria M, Suneja A, Vaid NB, et al. Low-dose mifepristone in treatment of uterine
+leiomyoma: a randomised double-blind placebo-controlled clinical trial. Aust N Z J Obstet
+Gynaecol 2009; 49:77.
+138. Engman M, Granberg S, Williams AR, et al. Mifepristone for treatment of uterine
+leiomyoma. A prospective randomized placebo controlled trial. Hum Reprod 2009;
+24:1870.
+139. Coutinho EM. Treatment of large fibroids with high doses of gestrinone. Gynecol Obstet
+Invest 1990; 30:44.
+140. Ke LQ, Yang K, Li J, Li CM. Danazol for uterine fibroids. Cochrane Database Syst Rev 2009;
+:CD007692.
+141. Song H, Lu D, Navaratnam K, Shi G. Aromatase inhibitors for uterine fibroids. Cochrane
+Database Syst Rev 2013; 2013:CD009505.23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 35/39142. Bizzarri N, Ghirardi V, Remorgida V, et al. Three-month treatment with triptorelin,
+letrozole and ulipristal acetate before hysteroscopic resection of uterine myomas:
+prospective comparative pilot study. Eur J Obstet Gynecol Reprod Biol 2015; 192:22.
+143. Leone Roberti Maggiore U, Scala C, Venturini PL, Ferrero S. Preoperative treatment with
+letrozole in patients undergoing laparoscopic myomectomy of large uterine myomas: a
+prospective non-randomized study. Eur J Obstet Gynecol Reprod Biol 2014; 181:157.
+144. Deng L, Wu T, Chen XY, et al. Selective estrogen receptor modulators (SERMs) for uterine
+leiomyomas. Cochrane Database Syst Rev 2012; 10:CD005287.
+145. Moroni RM, Martins WP, Ferriani RA, et al. Add-back therapy with GnRH analogues for
+uterine fibroids. Cochrane Database Syst Rev 2015; 2015:CD010854.
+146. Xi S, Liske E, Wang S, et al. Effect of Isopropanolic Cimicifuga racemosa Extract on
+Uterine Fibroids in Comparison with Tibolone among Patients of a Recent Randomized,
+Double Blind, Parallel-Controlled Study in Chinese Women with Menopausal Symptoms.
+Evid Based Complement Alternat Med 2014; 2014:717686.
+147. Liu JP, Yang H, Xia Y, Cardini F. Herbal preparations for uterine fibroids. Cochrane
+Database Syst Rev 2013; 2013:CD005292.
+148. Chen NN, Han M, Yang H, et al. Chinese herbal medicine Guizhi Fuling Formula for
+treatment of uterine fibroids: a systematic review of randomised clinical trials. BMC
+Complement Altern Med 2014; 14:2.
+149. Zhang Y, Peng W, Clarke J, Liu Z. Acupuncture for uterine fibroids. Cochrane Database
+Syst Rev 2010; 2010:CD007221.
+150. Cruz J, Carrington L, Hong H. A Feasibility Study on Treatment of Uterine Fibroids with
+Tung's Acupuncture. Med Acupunct 2019; 31:384.
+Topic 5478 Version 66.023/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 36/39GRAPHICS
+PALM-COEIN subclassification system for leiomyomas
+FIGO leiomyoma subclassification system. System 2 classification system including the FIGO
+leiomyoma subclassification system. The system that includes the tertiary classification of leiomyomas
+categorizes the submucous group according to the original Wamsteker et al system and adds
+categorizations for intramural, subserosal, and transmural lesions. Intracavitary lesions are attached
+to the endometrium by a narrow stalk ( ≤ 10% or the mean of three diameters of the leiomyoma) and
+are classified as Type 0, whereas Types 1 and 2 require a portion of the lesion to be intramural: with
+Type 1 being less than 50% of the mean diameter and Type 2 at least 50%. Type 3 lesions are totally
+intramural but also about the endometrium. Type 3 are formally distinguished from Type 2 with
+hysteroscopy using the lowest possible intrauterine pressure necessary to allow visualization. Type 4
+lesions are intramural leiomyomas that are entirely within the myometrium, with no extension to the
+endometrial surface or to the serosa. Subserous (Types 5, 6, and 7) leiomyomas represent the mirror
+image of the submucous leiomyomas: with Type 5 being at least 50% intramural, Type 6 being less
+than 50% intramural, and Type 7 being attached to the serosa by a stalk that is also ≤ 10% or the
+mean of three diameters of the leiomyoma. Classification of lesions that are transmural are
+categorized by their relationship to both the endometrial and the serosal surfaces. The endometrial
+relationship is noted first, with the serosal relationship second (eg, Type 2-5). An additional category,
+Type 8, is reserved for leiomyomas that do not relate to the myometrium at all, and would include
+cervical lesions (demonstrated), those that exist in the round or broad ligaments without direct
+attachment to the uterus, and other so-called "parasitic" lesions.[1]23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 37/39FIGO: International Federation of Gynecology and Obstetrics.
+Reference:
+1. Wamsteker K, Emanuel MH, de Kruif JH. Transcervical hysteroscopic resection of submucous ﬁbroids for abnormal
+uterine bleeding: Results regarding the degree of intramural extension. Obstet Gynecol 1993; 82:736.
+From: Munro MG. Abnormal Uterine Bleeding. Cambridge: Cambridge University Press, 2010. Copyright © 2010 M. Munro.
+Reprinted with the permission of Cambridge University Press.
+Updated with information from:
+Munro MG, Critchley HOD, Fraser IS, FIGO Menstrual Disorders Commi ttee. The two FIGO systems for normal and
+abnormal uterine bleeding symptoms and classiﬁcation of causes of abnormal uterine bleeding in the reproductive
+years: 2018 revisions. Int J Gynaecol Obstet 2018; 143:393.
+Graphic 91085 Version 4.023/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 38/39Contributor Disclosures
+Elizabeth A Stewart, MDGrant/Research/Clinical Trial Support: NIH Grants [Uterine fibroids and
+adenomyosis]; PCORI [Infertility]. Consultant/Advisory Boards: AbbVie [Uterine fibroids]; Alnylam
+[Heavy menstrual bleeding]; ASKA [Uterine fibroids]. Other Financial Interest: Omnia [CME course];
+Omnicuris [CME course]; PER [CME course]. All of the relevant financial relationships listed have been
+mitigated.Robert L Barbieri, MDNo relevant financial relationship(s) with ineligible companies to
+disclose.Alana Chakrabarti, MDNo relevant financial relationship(s) with ineligible companies to
+disclose.
+Contributor disclosures are reviewed for conflicts of interest by the editorial group. When found, these
+are addressed by vetting through a multi-level review process, and through requirements for
+references to be provided to support the content. Appropriately referenced content is required of all
+authors and must conform to UpToDate standards of evidence.
+Conflict of interest policy
+23/02/2025, 23:47 Uterine fibroids (leiomyomas): Treatment overview - UpToDate
+https://www.uptodate.com/contents/uterine-fibroids-leiomyomas-treatment-overview/print?search=ryeqo&source=search_result&selectedTitle=3… 39/39

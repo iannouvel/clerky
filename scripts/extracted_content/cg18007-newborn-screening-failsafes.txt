@@ -1,0 +1,1152 @@
+# Extracted from: CG18007 Newborn screening failsafes.pdf
+# Guideline ID: cg18007-newborn-screening-failsafes
+# Content length: 42886 characters
+# Processing date: 1750066900.505543
+
+CG18007 Newborn Screening Failsafes v4.1 June 2023 Page 1 of 27 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Newborn Screening Failsafe’s 
+Summary statement: How does the 
+document support patient care? This pathway provides information for staff with regard 
+to the process for offering, undertaking and providing 
+results for newborn bloodspot screening. 
+Staff/stakeholders involved in 
+development: Midwives, Paediatric team, Health Visitors, Joint 
+Obstetric Guidelines Group, Community teams, 
+Laboratory, Community Child Health Information 
+Service 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Jacqueline Gregory 
+For use by: Midwives, Obstetricians, Paediatric staff and Health 
+Care Support workers 
+Purpose: To provide accurate information for staff on the 
+processes to follow with regard to newborn blood spot 
+screening 
+This document supports: UH Sussex West (SRH&WH) Maternity Guidelines: 
+NHSP SOP, NIPE SOP, NBS SOP 
+Key related documents: UH Sussex West (SRH&WH) Maternity Guidelines: 
+Antenatal Care and Patient Information, Postnatal 
+Care 
+UH Sussex West (SRH&WH) Trust Policies: An 
+organisation -wide policy for screening procedures, An 
+organisation -wide policy for diagnostic testing 
+PHE publications : KPI’s 
+Approved by: Joint Obstetric Guideline Group 
+Approval date: 21 June 2023 Uploaded: 27th June 2023 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable – Divisional ratification only required 
+Ratification Date: Not Applicable – Divisional ratification only required 
+Expiry Date: November 2024 
+Review date: May 2024 
+If you require this document in another format such as Braille, large print, 
+audio or another language please contact the Trusts Communications Team 
+Reference Number: CG18007 CG18007 Newborn Screening Failsafes v4.1 June 2023 Page 2 of 27 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+This document pertains to the Newborn element of the NIPE, up to 72 hours of age for KPI 
+and any baby up to the age of 6 weeks when the Infant examination occurs at age 6 -8 
+weeks old. 
+
+Version Date Author Status Comment 
+1.0 May 2018 Jacqueline Gregory Archived 
+2.0 Feb 2019 Jacqueline Gregory Archived Pages 5, 7, 16 
+changed to reflect 
+new model 
+3.0 September 
+2020 Jacqueline Gregory Archived See page 19 for 
+additions 
+4.0 November Jacqueline Gregory, LIVE Amendments to 3.1, 
+ 2021 Newborn Hearing 3.2, 3.3 & 4.0. 
+ Screening Co- 
+ordinator New sections: 3.4, 
+3.6, 9.0, 10.0, 11.0 
+ &12.0 
+ Formatting and new 
+ Trust Logo. 
+4.1 June 2023 Clinical Effectiveness 
+team LIVE Appendix 1 Surrogacy 
+consent for newborn 
+screening added. 
+
+The interpretation and application of clinical guidelines will remain the 
+responsibility of the individual clinician. 
+If in doubt contact a senior colleague or expert. CG18007 Newborn Screening Failsafes v4.1 June 2023 Page 3 of 27 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Index 
+1.0 Background ................................ ................................ ................................ ................ 4 
+2.0 Identifying eligible population ................................ ................................ ...................... 4 
+3.0 Failsafe’s ................................ ................................ ................................ ................................ ... 7 
+3.1 NBS, NIPE, NHSP – SRH & WH (birth list failsafe) ................................ ..................... 7 
+3.2 NBS, NIPE, NHSP - Badgernet Report ................................ ................................ ....... 8 
+3.3 NIPE – Referral/ outcome export ................................ ................................ ................ 9 
+3.4 Red (Breached) baby spreadsheet ................................ ................................ ............ 11 
+3.5 S4H NICU Failsafe ................................ ................................ ................................ .... 12 
+3.6 NHSP – Systmone report ................................ ................................ .......................... 14 
+4.0 Child Death Notifications ................................ ................................ ........................... 16 
+5.0 NICU transfer in’s/out’s ................................ ................................ ................................ ......... 16 
+6.0 Northgate has not been populated ................................ ................................ ............ 17 
+7.0 Checking that all newborn screening has been completed ................................ ........ 18 
+8.0 OOA Discharges ................................ ................................ ................................ ....... 19 
+9.0 Home births ................................ ................................ ................................ .............. 20 
+10.0 Independent Midwife providing postnatal care ................................ ........................... 20 
+11.0 Repeat bloodspots ................................ ................................ ................................ .... 20 
+12.0 NHSP QA checks ................................ ................................ ................................ ..... 21 
+13.0 Contact List ................................ ................................ ................................ ............... 22 
+14.0 Abbreviations used in this document ................................ ................................ ......... 23 
+15.0 Main additions/changes ................................ ................................ ............................. 24 
+Appendix 1: Surrogacy and newborn screening consent ................................ ...................... 25 
+ CG18007 Newborn Screening Failsafes v4.1 June 2023 Page 4 of 27 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Newborn Screening Failsafe’s 
+1.0 Background 
+ 
+The 3 NHS Newborn Screening Programmes all aim to identify babies who have serious 
+conditions which will significantly impact on their lives if not identified early. 
+ 
+Each of 3 NHS Newborn Screening Programmes have national databases which are all 
+populated electronically via PDS (Patient demographic service) at point of birth. The cohorts 
+for all 3 programmes are independent of each other 
+ 
+2.0 Identifying eligible population 
+ 
+The eligible population is identified through the issuing of an NHS number at birth or 
+registration with a GP practice for babies born abroad. 
+ 
+The databases for each Programme are web based and located at: 
+ 
+• NIPE 
+• NBS 
+• NHSP 
+ 
+The databases are populated based on the following criteria and UH Sussex West 
+(SRH&WH) are responsible for the following screens: 
+ 
+NIPE: 
+Database populated based on birth hospital. 
+ 
+UH Sussex West (SRH&WH) RYR site responsible for screening all well babies born at 
+Worthing and St Richards Hospital’s within 72 hours, screening babies who are resident on 
+Worthing and St Richards Hospital’s NICU’s once well enough to be screened and babies 
+who move into area without a NIPE screen under the age of 6 weeks. 
+ 
+NBS: 
+Database populated based on post code and/or GP combination or birth hopsital. 
+ 
+UH Sussex West (SRH&WH) Worthing Hospital _WSX site and Chichester St 
+Richards_WSX site are responsible for screening all babies who UH Sussex West 
+(SRH&WH) provide postnatal care to on day 5 and to babies who are resident on UH 
+Sussex West (SRH&WH) NICU’s on day 5. 
+ 
+NHSP: 
+Database populated based on GP 
+ 
+UH Sussex West (SRH&WH) WSH site responsible for screening all well babies with a West 
+Sussex Coastal GP by 4 weeks old, screening babies who are resident on UH Sussex West 
+(SRH&WH) NICU’s at the point of discharge home and babies who move into area without 
+an NHSP screen under the age of 3 months. CG18007 Newborn Screening Failsafes v4.1 June 2023 Page 5 of 27 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+DAILY COHORT CHECKS 
+
+Movers in <6weeks old 
+ 
+Transfers out to other 
+NIPE sites 
+
+Transfers in from other 
+NIPE sites onto 
+postnatal ward or NICU 
+ 
+S4N Movers in for postnatal 
+maternity care 
+
+Daily discharge list 
+
+Transfers out to other 
+NHSP sites COHORT for 
+Newborn 
+Screening Nursing Ward lists on 
+SEMA – Postnatal and 
+NNU’s 
+Daily Sema birth list 
+
+S4H Badgernet daily search 
+
+Transfers 
+in from 
+other 
+NHSP sites 
+
+. 
+Movers in 
+<3 months 
+old NORTHGATE BLOOD 
+SPOT FAILSAFE 
+SOLUTION 
+
+ Transfers in Transfers in 
+from NBS FS 
+populating 
+babies record to 
+other sites due 
+to mapping 
+Transfers out to other trusts for 
+postnatal care/NICU from other 
+trusts for 
+postnatal 
+maternity 
+care OOA Babies on 
+UH Sussex 
+West 
+(SRH&WH) 
+NICU on day 5 
+
+Movers in from abroad < 1 year old for blood spot, UH Sussex West (SRH&WH) will undertake the 
+blood spot once notified by SCT but these do not appear on Northgate 
+Notification of movers in from each newborn screening programme is cross checked with the 
+other screening programmes CG18007 Newborn Screening Failsafes v4.1 June 2023 Page 6 of 27 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Babies born on UH 
+Sussex West 
+(SRH&WH) NICU at 
+point of screening 
+being required 
+Babies born at UH 
+Sussex West (SRH&WH) 
+or another hospital with a 
+West Coastal CCG GP 
+Babies born at UH 
+Sussex West (SRH&WH) 
+or another hospital 
+receiving postnatal care 
+from UH Sussex West 
+(SRH&WH) 
+Babies born at UH 
+Sussex West 
+(SRH&WH) COHORT 
+LAYERS 
+
+ CG18007 Newborn Screening Failsafes v4.1 June 2023 Page 7 of 27 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+3.0 Failsafe’s 
+3.1 NBS, NIPE, NHSP – SRH & WH (birth list failsafe) 
+Located: \\rwsnas \shares \WomenChildrenMgmt \MATERNITY \Newborn Screening \NBS, 
+NIPE, NHSP - SRH & WH (birth list failsafe) 
+ 
+TO BE ACTIONED DAILY 
+Failsafe list populated daily with all births in UH Sussex West (SRH&WH). 
+OOA transfer in’s notified via S4H (NSHP) will be added to all 3 lists, community midwives to 
+be emailed information of transfer in, if not already present on blood spot list to check 
+regarding postnatal care. 
+Community midwives to add any transfer in’s to blood spot list once notified, screening admin 
+to add to both other lists and check screen shave been completed. 
+
+NIPE 
+Check the cohort has 
+populated. 
+Document date NIPE 
+completed and by whom. 
+Check all NIPE screens 
+have been completed 
+within 72hrs. 
+Chase up any NIPE 
+screens which have been 
+carried out but have not 
+yet been inputted onto 
+S4N. 
+See ‘RED BABY 
+SPREADSHEET’ 
+Note any exceptions for 
+babies on NICU. 
+Advise NIPE lead if a baby 
+is within 3hrs of breaching. NBS 
+Check the cohort has 
+populated NBS FS and 
+document. Transfer 
+records in & out as 
+necessary. If transferring 
+out to email the screening 
+lead to notify them of the 
+record. 
+Document: who the 
+bloodspot was taken by, 
+who sent it off & when. If 
+baby back to UH Sussex 
+(SRH&WH) NICU day 5 or 
+6 check BS taken & sent. 
+Check and document when 
+bloodspot received by the 
+lab, including those who 
+have moved OOA. 
+Document when a repeat 
+blood spot is sent. 
+Document when received 
+by the lab. 
+Advise NBS lead and team 
+leads if a blood spot is not 
+received by the lab by day 
+8 or day 10 if a weekend. NHSP 
+Check the cohort has 
+populated S4H. 
+If baby discharged with no 
+screen ensure MSW team 
+aware to book outpatient 
+appointment. 
+Note any exceptions for 
+babies still on NICU 
+At a minimum of 14 days, 
+no later than 21 days 
+check and document that 
+all babies (even those who 
+have moved OOA) have 
+had a hearing screen or 
+are in the correct NHSP 
+site to be offered a hearing 
+screen. 
+Any baby who has not had 
+a hearing screen organise 
+for baby to have an 
+outpatient appointment in 
+an AOAE2/AABR clinic. 
+Note. All transfer out births must have blood spot received checked and NHSP completed 
+checked and documented on the spreadsheet. CG18007 Newborn Screening Failsafes v4.1 June 2023 Page 8 of 27 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 3.2 NBS, NIPE, NHSP - Badgernet Report 
+Located: \\rwsnas \shares \WomenChildrenMgmt \MATERNITY \Newborn Screening \BADGER 
+REPORT CROSS PROGRAMME FAILSAFE 
+TO BE ACTIONED ON RECEIVING REPORT 
+ 
+Admission and discharge date/time report from BADGERNET sent to Screening 
+admin on a rolling 4 week period. 
+
+NIPE NBS NHSP 
+ 
+Add a NIPE column. 
+ 
+Check and document 
+screening completed for 
+babies resident on UH 
+Sussex (SRH&WH) 
+NICU. 
+ 
+Check and document 
+screening completed for 
+babies moved to 
+OOANICU. 
+If not completed check on 
+Badgernet to see if baby 
+still resident in OOA 
+NICU and make note on 
+spreadsheet of where 
+baby is. 
+ 
+Notify NIPE Lead of any 
+babies discharged from 
+any NICU without a NIPE 
+screen. Add a 28 day spot 
+column. 
+
+Check and document that 
+a day 28 spot (CHT) has 
+been requested on NBS 
+FS for all babies born 
+31+6 or earlier 
+ 
+Check and document that 
+a day 28 spot (CHT) has 
+been taken for all babies 
+born 31+6 or earlier. 
+ 
+Advise NBS lead of any 
+babies who have not had 
+the repeat CHT bloodspot 
+taken. To add 3 columns to 
+report. 
+1. Duration over 48hrs 
+yes/no i.e. is baby 
+NICU protocol 
+(transitional care = well 
+baby protocol) 
+2. What protocol baby 
+should be 
+3. What protocol is set in 
+S4H 
+ 
+Check and document that 
+all babies have the 
+correct protocol set / have 
+been screened in the 
+correct protocol in S4H. 
+ 
+Advise NHSP lead of any 
+babies screened as a 
+Well Baby when they 
+should be screened as a 
+NICU Baby 
+
+Note. Any queries regarding discrepancies in admission/discharge times should be checked in 
+the NICU admission/discharge book and emailed to the Badgernet lead. 
+ 
+Email evidence of replies will be saved 
+\\rwsnas \shares \WomenChildrenMgmt \MATERNITY \Newborn Screening \BADGER REPORT CROSS 
+PROGRAMME FAILSAFE \Badger Report Emails CG18007 Newborn Screening Failsafes v4.1 June 2023 Page 9 of 27 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 3.3 NIPE – Referral/ outcome export 
+ 
+An export should be carried out from S4N for all conditions which would require a referral 
+being made. 
+ 
+These should be run from the preset searches in S4N: 
+ 
+• EYE Abnormality Suspected – Failsafe awaiting outcome 
+• HEART – Failsafe awaiting outcome 
+• Hips Abnormality Suspected – Failsafe awaiting outcome 
+• Hips Risk Factors and No Abnormality – Failsafe awaiting outcome 
+• Other Hips 
+• NIPE other 
+ 
+They should re run at a minimum of twice weekly, ideally daily (Monday - Friday) with an 
+overlap in date of 5 days to capture babies who have not had their NIPE on day of birth but 
+within 72 hours. 
+ 
+Add these to the NIPE referral follow up spreadsheet, search in CRIS or ICE for 
+appointment, add appointment date to the spreadsheet. 
+\\rwsnas \shares \WomenChildrenMgmt \MATERNITY \Newborn Screening \NIPE \KPI\Current 
+NIPE referral follow up 
+ 
+The following exports ( see following 2 pages for search criteria) should also be set up as set 
+searches in S4N and saved. 
+These should be run at a minimum of twice weekly ideally daily (Monday - Friday) with an 
+overlap in date of 5 days and exported on a notepad file. 
+This search results is then then cross matched with babies who have a NIPE outstanding (by 
+carrying out the following search in New Search with the following parameters - not started, 
+in process, removed dates of birth). 
+ 
+The above is then repeated at the end of the month B for all of month A (on an ongoing 
+basis) so as to capture any NICU babies who have had a late NIPE. 
+ 
+Note, There is an addition failsafe for NICU babies on the Red (Breached) baby spreadsheet 
+with columns for checking if a Hip referral has been made, referral received/appointment 
+made and that baby is on the referral follow up spreadsheet. 
+\\rwsnas \shares \WomenChildrenMgmt \MATERNITY \Newborn Screening \NIPE \Red 
+(Breached) Babies 
+
+All referral appointments are added to S4N for audit tracking. These are added in the 
+screening tab, click on the relevant ‘Item’ and add the appointment (this appointment is also 
+added to the hip referral spreadsheet). 
+ 
+In the case of Testes, Heart & Rest of Physical Examination the NIPE lead will check 
+referrals and appointments have been made and add to S4N as required. CG18007 Newborn Screening Failsafes v4.1 June 2023 Page 10 of 27 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+IN S4N, CREATE A SERCH FOR THE PREVIOUS WEEK. 
+IN ‘SCREENING STATUS TAB’ CHOOSE CARE PATHWAY OF: 
+Newborn Hips – Screening 
+ 
+INCLUDE ALL OF THE BELOW IN YOUR SEARCH: 
+ 
+•Newborn Hips - screening/No Abnormalities with risk factors 
+•Newborn Hips - screening/Unilateral Abnormality Suspected (Right) with risk factors 
+•Newborn Hips - screening/Unilateral Abnormality Suspected (Right) with No risk factors 
+•Newborn Hips - screening/Unilateral Abnormality Suspected (Left) with risk factors 
+•Newborn Hips - screening/Unilateral Abnormality Suspected (Left) with No risk factors 
+•Newborn Hips - screening/Bi -lateral Abnormality Suspected with risk factors 
+•Newborn Hips - screening/Bi -lateral Abnormality Suspected with no risk factors 
+•Other Abnormality Suspected with No Risk Factors 
+•Other Abnormality Suspected with Risk Factors 
+ 
+IN S4N, CREATE A SERCH FOR THE PREVIOUS MONTH. 
+IN ‘SCREENING STATUS TAB’CHOOSE CARE PATHWAY OF: 
+Newborn Eyes – Screening 
+ 
+INCLUDE ALL OF THE BELOW IN YOUR SEARCH: 
+•Newborn Eyes - screening/Unilateral Abnormality Suspected (Right) with risk factors 
+•Newborn Eyes - screening/Unilateral Abnormality Suspected (Right) with No risk factors 
+•Newborn Eyes - screening/Unilateral Abnormality Suspected (Left) with risk factors 
+•Newborn Eyes - screening/Unilateral Abnormality Suspected (Left) with No risk factors 
+•Newborn Eyes - screening/Bi -lateral Abnormality Suspected with risk factors 
+•Newborn Eyes - screening/Bi -lateral Abnormality Suspected with no risk factors 
+In all exports the following field will be exported: 
+ 
+• PATIENTS LAST NAME 
+• PATIENTS DATE OF BIRTH 
+• PATIENTS LOCAL NUMBER 
+• PATIEMTS PLACE OF BIRTH 
+• NEWBORN SCREENING SUMAMRY FOR HIPS/EYES/HEART/TESTES/REST 
+OF PHYSICAL EXAMINATION) 
+• DATE AND TIME OF LAST NEWBORN SCREEN 
+• SCREEN PRACTITIOER – LATEST 
+• CONFIDENTIAL ID 
+Located: Here 
+HIPS: 
+
+EYES: CG18007 Newborn Screening Failsafes v4.1 June 2023 Page 11 of 27 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+IN S4N, CREATE A SERCH FOR THE PREVIOUS MONTH. 
+IN ‘SCREENING STATUS TAB’CHOOSE CARE PATHWAY OF: 
+Testes – Screening 
+ 
+INCLUDE ALL OF THE BELOW IN YOUR SEARCH: 
+•Newborn Testes – Screening/Unilateral Abnormality Suspected (Right) 
+•Newborn Testes – Screening/Unilateral Abnormality Suspected (Left) 
+•Newborn Testes – Screening/Bilateral Abnormality Suspected 
+IN S4N, CREATE A SERCH FOR THE PREVIOUS MONTH. 
+IN ‘SCREENING STATUS TAB’CHOOSE CARE PATHWAY OF: 
+Newborn Heart – Screening 
+ 
+INCLUDE ALL OF THE BELOW IN YOUR SEARCH: 
+•Newborn Heart – Screening/Abnormality Suspected with Risk Factor 
+•Newborn Heart – Screening/Abnormality Suspected with No Risk Factor 
+IN S4N, CREATE A SERCH FOR THE PREVIOUS MONTH. 
+IN ‘SCREENING STATUS TAB’CHOOSE CARE PATHWAY OF: 
+Newborn Rest of Physical Examination – Screening abnormalities 
+ 
+INCLUDE ALL OF THE BELOW IN YOUR SEARCH: 
+•Abnormality Suspected 
+•Referred Abnormality Suspected 
+ 
+TESTES: 
+ 
+HEART: 
+
+REST OF PHYSICAL EXAMINATION: 
+ 
+3.4 Red (Breached) baby spreadsheet 
+ 
+To ensure babies who are on NICU are not missed they are added to the Red (Breached) 
+baby spreadsheet when they are admitted to NICU. This allows further tracking to occur. 
+ 
+\\rwsnas \shares \WomenChildrenMgmt \MATERNITY \Newborn Screening \NIPE \Red 
+(Breached) Babies 
+ 
+Breached well babies and babies being seen by an IM are also added to this spreadsheet for 
+tracking. CG18007 Newborn Screening Failsafes v4.1 June 2023 Page 12 of 27 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+3.5 S4H NICU Failsafe 
+ 
+Search S4Hfor the previous 3 months well/community baby and NICU 
+protocol babies (increase time period if there are still in process babies who 
+are over 3 months old). 
+
+EXPORT RESULTS: 
+NHS NUMBER 
+PATIENTS PROTOCOL NAME 
+GA 
+DOB 
+SCREENING OUTCOME 
+TOTAL RIGHT EAR TEST FOR AOAE1 
+TOTAL LEFT EAR TEST FOR AOAE1 
+TOTAL RIGHT EAR TEST FOR AABR 
+TOTAL LEFT EAR TEST FOR AABR 
+
+Filter out all well 
+baby/community baby 
+protocol, leaving just 
+NICU protocol babies 
+Filter out all babies in 
+process. Filter out all NICU baby 
+protocol, leaving just 
+well/community baby 
+protocols. 
+ 
+Filter out GA>37 weeks 
+
+Ensure all babies have 
+had both AOAE and 
+AABR screens. Check on SEMA that 
+baby was not on 
+neonatal unit. If born OOA, check on 
+Badgernet that baby was 
+not on neonatal unit. 
+
+Investigate any missed 
+screens, raise Datix / 
+SIAF. 
+Arrange for baby to be 
+screened. 
+Investigate any missed 
+screens, raise Datix / 
+SIAF. 
+Arrange for baby to be 
+screened. 
+
+NICU failsafe reports are saved in: Here CG18007 Newborn Screening Failsafes v4.1 June 2023 Page 13 of 27 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Standard email wording for S4H NICU check to other sites: 
+ 
+Dear Local Manager 
+ 
+As part of our monthly GA/NICU failsafe we recheck our hospital system to ensure any well 
+baby, whose GA is 37weeks or below where only on the postnatal ward or their NICU stay 
+was <48hrs. 
+ 
+I would be grateful if you check your system for this baby: who was born at GA: 
+And confirm that they were not a NICU protocol baby. 
+ 
+Many thanks CG18007 Newborn Screening Failsafes v4.1 June 2023 Page 14 of 27 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 3.6 NHSP – Systmone report 
+CHIS have read only access to WSH NHSP S4H site. 
+On a monthly basis: 
+I. CHIS are responsible for running a report within NHSP of all screen results and 
+uploading the outcome codes and date/time of screen into the Child Health System 
+(Systmone). 
+ 
+II. CHIS are responsible for then running a report in Systmone to look for babies without 
+screen results. This includes babies born in area, babies born out of area but with a 
+GP in area and babies who have moved in . Any babies without a screen result in 
+Systmone are then manually searched for in S4H using the National record search 
+facility. The outcome code and date/time of screen are uploaded into Systmone. 
+ 
+III. Any babies whose screen results could not be located are emailed in a report to the 
+NHSP lead to ensure either they are aware of baby or if not aware of baby a screen 
+can be offered. 
+ 
+IV. CHIS run a report on movers out of area. Any baby without a screen result or with 
+an outcome code of C2, N1, N2, I9 (see outcome codes appendix 18) are emailed in 
+the report to NHSP lead so the S4H record can be transferred to the correct site. 
+ 
+The dates for searches/reports are as follows: 
+During the 1st week of the month ‘D’ CHIS search for all results in S4H from month ‘B’ 
+and upload to Systmone. 
+Following the upload of results CHIS search systmone for babies with no screen 
+result based on the following parameters and S4H is manually searched. Any record 
+with no screen result will be emailed in a report to the NHSP Lead: 
+ 
+Born in area Babies born month C and 2 preceding months 
+(month B and A) with no screen result 
+Born out of area with a GP in area Babies born month C, B and A with no screen 
+result 
+Moved in Babies born month C, B and A with no screen 
+result 
+Moved out Babies up to 1 year old with no screen result 
+or outcome code of C2, N1, N2, I9 
+ 
+V. NHSP team receive the report and check that: 
+ 
+a. Babies NHSP record is in WSH S4H site and screening is pending. WSH site 
+is already aware of baby and is tracking. 
+b. Babies NHSP record is not in WSH S4H site and screening is pending. WSH 
+site is not aware of baby. S4H record is transferred in and baby is offered 
+screening. CG18007 Newborn Screening Failsafes v4.1 June 2023 Page 15 of 27 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ c. Babies NHSP record is not on S4H site and was born out of the country. 
+NHSP lead makes a request to CHIS to check the Health Visitors movers in 
+visit notes to see if a screen was undertaken in country of birth. If no case 
+note in Systmone the NHSP lead will contact parents by phone or a movers 
+into are – no screen on S4H letter offering screening will be sent. 
+If screening is accepted a manual entry of babies birth and demographic 
+details will be added to S4H to create a record. The manual entry incident log 
+should be completed and the NIPE lead informed of the record being created. 
+\\rwsnas \shares \WomenChildrenMgmt \MATERNITY \Newborn 
+Screening \NHSP \Manual entry files 
+d. If any screening results are found for babies on the report these are emailed 
+back to CHIs for manual entry onto Systmone. 
+e. baby is now older than 3 months a letter a moved into area - too old to screen 
+letter will be sent to parents. 
+f. For movers out who have a screen pending result, outstanding Audiology 
+referral / PCHI the demographic and GP details will be updated, a case note 
+written and the record will be transferred to the responsible NHSP site. The 
+NHSP Lead for this site will be emailed to advise them of the record transfer. 
+
+Systmone failsafe reports are saved in: Here CG18007 Newborn Screening Failsafes v4.1 June 2023 Page 16 of 27 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+TO BE ACTIONED ON RECEIVING NOTIFICATION 
+ 
+Check all 3 Newborn Screening databases to check status of baby. 
+ 
+Mark record as deceased on S4N / S4H if record has not been already changed. 
+Change NBS FS record to be marked as deceased 
+Case note who provided the death notification. 
+CHECK IF ANY REFERRAL’S HAVE BEEN MADE FOLLOWING THE SCREEN 
+ 
+Advise these departments of the death 
+NOTE: 
+A NATIONAL SEARCH MAYBE REQUIRED TO LOCATE THE RECORD 4.0 Child Death Notifications 
+ 
+Any Still Births, Neonatal or child deaths notified to the Newborn Screening Teams will be 
+actioned. 
+ 
+The Newborn Screening admin will be advised of still births, neonatal and child deaths from 
+the following departments: 
+• UH Sussex West (SRH&WH) Neonatal 
+• UH Sussex West (SRH&WH) maternity 
+• SCT CHIS 
+The NBS are also advised of all stillbirths. 
+In all neonatal and child deaths, the following is to be carried out: 
+
+5.0 NICU transfer in’s/out’s 
+In both cases any transfer in’s/outs should be documented on the NBS, NIPE, NHSP – SRH 
+& WH (birth list failsafe). 
+Transfer out: If a baby is discharged on Sema then the Badgernet system is to be checked 
+to see if baby has gone to another NICU/PICU. If this is the case, the national screening 
+databases are to be case noted and record transferred to relevant site for completion of 
+screening. 
+Transfer in: Badgernet lead provides screening admin with a weekly report regarding babies 
+who have transferred in and out or UH Sussex West (SRH&WH)’s NICU’s so this can be 
+checked against location of record on national screening databases, these records should 
+then be transferred in or out as required. CG18007 Newborn Screening Failsafes v4.1 June 2023 Page 17 of 27 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+If duplicate records have been made then merge records. 
+Save a screen shot of the demographics page of each record prior to merging . 
+Complete all columns for all births until all babies have populated the databases. 
+Ensure no screen has been missed. 
+Serious incident 
+Report to all Northgate helpdesks unless already been notified by Northgate 6.0 Northgate has not been populated 
+
+UH Sussex West 
+(SRH&WH) systems not 
+working so unable to 
+generate NHS numbers. National Spine has 
+gone down – records 
+not populating. Northgate has gone 
+down - records not I. 
+populating Northgate. 
+
+Create a local list of all births from SEMA and discharge list for each day of the incident. 
+Saved in \\rwsnas \shares \WomenChildrenMgmt \MATERNITY \Newborn Screening \NATIONAL 
+DATABASES NOT POPULATED CG18007 Newborn Screening Failsafes v4.1 June 2023 Page 18 of 27 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 7.0 Checking that all newborn screening has been completed 
+
+MIDWIFE DAY 1 VISIT MIDWIFE DAY 5 VISIT MIDWIFE DAY 10 VISIT 
+
+GAIN CONSENT FOR 
+NBS ENSURE CONSENT 
+WAS OBTAINED FOR 
+NBS CHECK NIPE 
+COMPLETED, 
+CHECK NHSP 
+COMPLETED, 
+
+ALL 
+COMPLETED 
+CHECK 
+NIPE 
+COMPLETE 
+
+NIPE 
+NOT 
+COMPLETE CHECK 
+NHSP 
+COMPLETE 
+
+NHSP 
+NOT 
+COMPLETE 
+ 
+CHECK NIPE 
+COMPLETED, 
+CHECK NHSP 
+COMPLETED, 
+UNDERTAKE 
+BLOODSPOT CHECK 
+BLOODSPOT 
+COMPLETED. 
+CHECK FOR ANY 
+OUTSTANDING 
+REFERRALS FOR 
+MUM AND BABY - DISCHARGE 
+FROM 
+MIDWIFERY 
+CARE 
+
+CONTACT 
+NIPE ADMIN 
+CLERK AND 
+ 
+SRH - 
+CONTACT 
+COMMUNITY 
+TEAM LEAD. 
+ 
+WH - 
+ENSURE 
+THERE IS AN 
+APT TO 
+ATTEND 
+BRAMBER 
+WARD. ADVISE 
+MUM OF 
+DATE/TIME 
+CHECK FRONT 
+OF POSTNATAL 
+NOTES FOR 
+CLINIC 
+APPOINTMENT 
+ 
+CONTACT NHSP 
+ADMIN 
+CLERK/MSW IF 
+NO 
+APPOINTMENT 
+SO 
+APPOINTMNET 
+CAN BE 
+BOOKED NIPE OR 
+NHSP NOT 
+COMPLETED 
+ 
+CONTACT 
+NIPE/NHSP 
+ADMIN 
+CLERK ASAP 
+NIPE OR 
+NHSP NOT 
+COMPLETED 
+ 
+CONTACT 
+NIPE/NHSP 
+ADMIN 
+CLERK ASAP 
+
+CONTACT NIPE 
+LEAD 
+ 
+CONTACT 
+NHSP LEAD 
+ 
+DATIX RAISED 
+IF NOT DUE TO 
+DNA 
+BLOOD SPOT 
+NOT 
+COMPLETED 
+ 
+Take Blood 
+spot with 
+consent 
+
+CONTACT 
+NBS LEAD 
+ 
+DATIX 
+RAISED CG18007 Newborn Screening Failsafes v4.1 June 2023 Page 19 of 27 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 8.0 OOA Discharges 
+ 
+Discharge email from the ward postnatal ward will be copied to screening administrator. 
+ 
+Screening administrator to check which hospital the baby has been discharged to and double 
+check the email address is correct. 
+ 
+Once checked save the email to the Discharge OOA folder 
+ 
+Check all screening programmes: 
+ 
+NIPE: 
+• Check the NIPE has been completed and any referrals actioned. 
+ 
+NBS: 
+• Perform a ‘National Search’ on Northgate Newborn Blood Spot failsafe Solution to 
+locate the records. The record should be in the same location as the hospital in 
+which baby’s discharge has been emailed out to. 
+• Check baby is in the correct site, add a case note: ‘baby not under UH Sussex 
+West (SRH&WH) for PNC and emailed to …. On ….’ 
+• If baby is in WSH site, transfer record out case noting: ‘baby not under UH Sussex 
+West (SRH&WH) for PNC and emailed to …. On ….’ 
+• On the birth list document on baby’s baby OOA and emailed to … on …. 
+• Send an email to Screening lead to site you have transferred the record advising of 
+transfer. 
+ 
+NHSP: 
+ 
+• UH Sussex West (SRH &WH) will attempt to complete all screening of OOA baby’s 
+on the ward. 
+• If the screen is not complete or it has not been started screening admin will case 
+note S4H record, break the share and email the CI to the NHSP lead from the 
+responsible site advising that baby requires a screen. CG18007 Newborn Screening Failsafes v4.1 June 2023 Page 20 of 27 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 9.0 Home births 
+ 
+Home births for UH Sussex East (BRI & PRH) populate UH Sussex West (SRH&WH) 
+postnatal screening database’s (S4N, S4H, NBS FS). 
+ 
+If a baby is on a postnatal screening database as a home birth or other birth location but not 
+on the birth list then this needs investigating. 
+ 
+This can include: 
+a) Undertake a patient search and ward search (APC search) on SEMA to ensure 
+baby is not resident on a UH Sussex West (SRH&WH) ward. 
+b) Check SCR for birth hospital. 
+c) If baby is not resident on UH Sussex West (SRH&WH) wards or UH Sussex 
+West (SRH&WH) is not giving postnatal care, break the share on the 
+record/transfer the record to the responsible site. A case note can be added ‘not 
+a UH Sussex West (SRH&WH) birth). 
+
+10.0 Independent Midwife providing postnatal care 
+ 
+NIPE – Case note the record that an IM undertook the NIPE and advise NIPE Lead so she 
+can move it to the ‘out of area’ facility. 
+ 
+NBS – Case note record that an IM is undertaking the bloodspot. 
+ 
+NHSP – Contact parents for UH Sussex West (SRH&WH) WSH site to offer screening. 
+ 
+Update the NIPE and NBS tabs on the NBS, NIPE, NHSP - SRH & WH (birth list failsafe) 
+spreadsheets to show that IM has provided screening. 
+ 
+11.0 Repeat bloodspots 
+ 
+As a failsafe, the screening administrator will email all repeat bloodspot notifications to the 
+Community Team Leads. 
+a) Forward the repeat email from the lab to the Community team leads. 
+b) Highlight the repeat in red on the NBS, NIPE, NHSP - SRH & WH (birth list 
+failsafe). 
+c) Add the repeat details to the repeat section of the NBS, NIPE, NHSP - SRH & 
+WH (birth list failsafe) on the date of birth of baby. 
+d) Add a comment to say who sent to/spoke to and date. 
+e) Add details of who took the sample and lab rejection reason to the repeat 
+bloodspot spreadsheet. 
+\\rwsnas \shares \WomenChildrenMgmt \MATERNITY \Newborn 
+Screening \NEWBORN BLOOD SPOT \Repeat Blood Spot CG18007 Newborn Screening Failsafes v4.1 June 2023 Page 21 of 27 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+12.0 NHSP QA checks 
+ 
+QA checks should be checked for the correct outcomes during assigning, they will also be 
+checked in S4H on a daily basis (by ticking ‘tests requiring action’ on the QA page) for all 
+screens carried out a week prior to ensure that any late downloads are not missed. 
+ 
+Any ‘Fails’ will be investigated via the QA page, a note written in S4H and ‘override fail 
+result’ should be ticked. 
+ 
+Note if a screener cannot get a CR on QA3 then a NCR is considered as a pass. A NC is not 
+a pass. 
+ 
+Any failed and missed QA tests will be investigated. A log sheet is kept by the NHSP team of 
+incorrect QA checks and offered rescreens. See National Guidance Document for QA checks 
+date Nov 2017. 
+ 
+Should it be found that a baby has been screened by the WSH site without the QA checks 
+being carried out or with incorrect outcomes on that day then the member of staff will be 
+advised and undergo re training, the NHSP lead will be notified. 
+ 
+To summarise for UH Sussex West (SRH&WH) WSH site: 
+ 
+If QA checks are present and the QA checks gave expected results in this period then 
+babies screen result will stand. 
+ 
+If QA1 or 2 gave a result of a CR on the day of screening (and the QA check was not 
+repeated to give a correct result before screening) then babies screen result will not stand 
+and baby will require a re-screen . The MSW/NHSP team will contact parents directly and 
+the MSW will arrange a time to visit for a rescreen to take place. A datix will be raised. 
+If a rescreen is declined/phone not answered/text/letter not responded to then a referral will 
+be made for a follow up in Audiology at 8 -10 months old. The record will be set to targeted 
+f/up required to enable baby to be tracked. 
+ 
+If an incomplete QA check is obtained (after or instead of a correct result) a rescreen is not 
+required but the result will be discussed with the screener and retraining given. CG18007 Newborn Screening Failsafes v4.1 June 2023 Page 22 of 27 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 13.0 Contact List 
+ 
+Antenatal & Newborn Screening Co-ordinator 
+Helen Boiling 
+Helenboiling @nhs.net 
+01243 788122 ext. 32829 
+01903 205111 ext. 86077 
+ 
+NIPE Lead 
+Caroline Thomas 
+Caroline.thomas2@nhs.net 
+ 
+NBS Lead 
+Helen Boiling 
+Helenboiling @nhs.net 
+01243 788122 ext. 32829 
+01903 205111 ext. 86077 
+ 
+NHSP Lead 
+Jacqueline Gregory 
+Jacqueline.gregory1@nhs.net 
+07808 099816 
+ 
+Newborn Screening admin clerk 
+Chrissie Thair 
+Christine.thair@nhs.net 
+01903 205111 ext 86076 
+07808099826 
+ 
+NIPE SmaRT (Northgate). Open 7am-7pm 7 days a week 
+08450705902 
+NIPE.helpdesk@nhs.net 
+ 
+Northgate 
+Newborn Blood Spot Failsafe Solution 
+0845 0702778 
+nbsfs.helpdesk@nhs.net 
+ 
+SMART4Hearing (Northgate) 
+s4h.helpdesk@nhs.net 
+08450130183 
+ 
+Child Health Records 
+Tel: 01243 812510 
+Fax: 01243 812590 
+Michelle Wright Manager 
+Child Health Record Bureau, 
+Michellewright2@nhs.net CG18007 Newborn Screening Failsafes v4.1 June 2023 Page 23 of 27 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+14.0 Abbreviations used in this document 
+ 
+AOAE Automated Otoacoustic Emission 
+AABR Automated Auditory Brainstem Response 
+BRI Royal Sussex County Hospital Brighton 
+CR Clear Response 
+CRIS Radiology Information Solution 
+ICE Pathology and Radiology system 
+NBS Newborn Blood Spot 
+NBS FS Northgate Newborn Bloodspot Failsafe 
+NC Incomplete 
+NCR No Clear Rssponse 
+CHIS Child Health Information Services 
+CHT Congenital Hypothyroidism 
+IM Independent MIdwife 
+HV Health Visitor 
+MIS Maternity Information System (MIS) 
+NHSP Newborn Hearing Screening Programme 
+NIPE Newborn Physical Examination 
+NICU Neonatal Intensive Care Unit 
+PRH Princess Royal Hospital 
+S4H Smart 4 Hearing 
+S4N NIPESmart 
+SCR Summary care record 
+SRH St Richards Hospital 
+WH Worthing Hospital CG18007 Newborn Screening Failsafes v4.1 June 2023 Page 24 of 27 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 15.0 Main additions/changes 
+ 
+Date Page Addition 
+22/9/20 3 Minor cohort change re movers <1yr in not on Northgate 
+22/9/20 7 Transfers out all must have screening databases checked 
+22/9/20 8 Badger report discrepancies – checking and evidencing 
+22/9/20 9 Link for location of system one failsafe reports 
+22/9/20 11 Link for location of NICU failsafe reports 
+22/9/20 13 Section on NICU transfer’s in/out 
+22/9/20 16 Section on OOA discharges 
+ 
+12/11/21 9,10.11 Updated guidance on pre-set S4N searches for referrals 
+12/11/21 11 Red (Breached) Baby Spreadsheet 
+12/11/21 13 Standard email wording for S4H NICU check to other sites 
+12/11/21 14,15 Updates guidance on systmone failsafe (CHIS) 
+12/11/21 20 Home births 
+12/11/21 20 Independent Midwife giving postnatal care 
+12/11/21 20 Repeat bloodspot 
+12/11/21 21 NHSP QA Checks 
+ 
+27/06/23 Appendix 1 Surrogacy consent for newborn screening added. CG18007 Newborn Screening Failsafes v4.1 June 2023 Page 25 of 27 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Appendix 1: Surrogacy and newborn screening consent 
+
+NEWBORN SCREENING CONSENT 
+ 
+Three newborn screens are offered, all details of these screens can be found in ‘Screening 
+Tests for you are your baby’ which was issued to you antenatally. This booklet can also be 
+found by scanning this QR code: 
+
+1. Newborn & Infant Physical Examination (NIPE). 
+ 
+The screening elements of the NIPE programme are: 
+ 
+• Eyes: approximately 2 or 3 in 10,000 babies have problems with their eyes that 
+require treatment. The prime purpose of screening is to identify congenital 
+cataracts. 
+• Heart: approximately 4-10 in 1,000 babies have a heart problem. 
+• Hips: approximately 1 or 2 in 1,000 babies have hip problems that require 
+treatment. 
+• Testes: approximately 1 in 100 baby boys have problems with their testes that 
+require treatment. 
+ 
+2. Newborn Blood Spot (NBS) 
+ 
+The screening elements of the NBS programme are: 
+ 
+• Sickle cell disease (SCD), 
+• Cystic fibrosis (CF), 
+• Congenital hypothyroidism (CHT) 
+• Phenylketonuria (PKU), 
+• Medium -chain acyl-CoA dehydrogenase deficiency (MCADD), 
+• Maple syrup urine disease (MSUD), 
+• Isovaleric acidaemia (IVA), 
+• Glutaric aciduria type 1 (GA1) 
+• Homocystinuria (pyridoxine unresponsive) (HCU) 
+• Severe combined immunodeficiency (SCID) CG18007 Newborn Screening Failsafes v4.1 June 2023 Page 26 of 27 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+3. Newborn Hearing Screening (NHSP) 
+ 
+The screening element of the NHSP programme is: 
+ 
+• Permanent Hearing Loss: 2 in 1000 babies are born with a permanent hearing loss. 
+This increases to 1 in 100 if baby has spent longer than 48hrs on a neonatal unit. No 
+Clear Responses can be obtained from this screening due to a hearing loss, 
+fluid/debris in the ear, baby was unsettled or it was too noisy. If a No Clear response 
+is obtained from the AABR screen baby will be referred to Audiology for further 
+testing. If there is a contraindication to screening, baby will be referred directly to 
+Audiology. Contraindications are: Microtia, atresia, confirmed cCMV, bacterial 
+meningitis, PVP shunt 
+• Information about your baby’s visit to the audiology clinic can be found by scanning 
+this QR code: 
+
+Consent 
+ 
+For each screening programme the details of baby, the screening results and, if required, 
+any tests following the screen will be kept on the NHS screening information system used by 
+the NHS Newborn Screening Programme. The information will be shared with babies doctor, 
+health visitor and other health professionals directly involved with the screening and with any 
+subsequent investigations and treatment if required. 
+ 
+All staff that work in or with the NHS are required as a matter of law to keep information 
+about you and your baby confidential. 
+ 
+An anonymised version of this information will be used for monitoring the success and 
+evaluating the benefits of the screening programmes. All requirements of the Data Protection 
+Act 2018 will be met during the storage and use of the data. 
+ 
+You may request and receive a copy of the information held about baby at any time. 
+ 
+If you choose not to take up this offer of screening, we will keep a record to show that we 
+have contacted you and that you have declined the screen, and we will let babies GP and 
+Health Visitor know that baby has not been screened. CG18007 Newborn Screening Failsafes v4.1 June 2023 Page 27 of 27 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Please complete 
+
+Surrogate Name 
+Surrogate Hospital 
+number 
+Estimated due 
+date 
+If completed 
+postnatally 
+ 
+Babies Name 
+Babies Hospital 
+number 
+Babies NHS 
+number 
+ YES/NO Signed Date 
+NIPE screen 
+consented 
+NBS screen 
+consented 
+NHSP screen 
+consented 
+
+Midwife/doctor completing form: 
+ 
+Date Printed Name Signed NMC/GMC Number 
+
+*If completed antenatally please email a copy of the form to the postnatal screening failsafe clerk.

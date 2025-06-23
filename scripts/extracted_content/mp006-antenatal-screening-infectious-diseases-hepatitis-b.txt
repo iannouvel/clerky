@@ -1,0 +1,1084 @@
+# Extracted from: MP006 Antenatal Screening - Infectious Diseases Hepatitis B.pdf
+# Guideline ID: mp006-antenatal-screening-infectious-diseases-hepatitis-b
+# Content length: 53830 characters
+# Processing date: 1750066901.107045
+
+Antenatal screening for 
+infectious diseases: 
+Hepatitis B 
+
+Maternity Protocol MP006 
+ 
+Date Agreed: December 2019 
+
+Antenatal screening for infectious diseases: MP031 
+HepatitisB (RSCH PRH only ) 
+
+Brighton & Sussex University Hospitals Page 2 of 33 
+
+ Guideline Reviewer: Helen Green 
+Manager Responsible: Karen Gregory 
+Version: 4.0 
+Approval Committee: Women’s Services Safety and Quality Committee 
+Date Agreed: December 2019 
+Review Date: December 2022 
+Cross Reference: MP001 Provision and Schedule of Antenatal Care 
+BSUH Neonatal Department Medical Guidelines: HBV (2013) Postnatal Management 
+of Infants Born to Mothers with Hepatitis B 
+ 
+ Antenatal screening for infectious diseases: MP031 
+HepatitisB (RSCH PRH only ) 
+
+Brighton & Sussex University Hospitals Page 3 of 33 
+ Contents 
+Key Principles ................................ ................................ ................................ ........................ 5 
+Scope ................................ ................................ ................................ ................................ ... 5 
+Responsibilities ................................ ................................ ................................ ..................... 5 
+1 Antenatal Screening for Hepatitis B ................................ ................................ ............. 6 
+1.1 Aims ................................ ................................ ................................ .............................. 6 
+1.2 Objectives ................................ ................................ ................................ ...................... 6 
+1.3 Expected Health Outcomes ................................ ................................ ........................... 6 
+2 Screening for Hepatitis B in Pregnancy ................................ ................................ ......... 6 
+2.1 Pre-Screening information: enabling informed choice ................................ ................. 6 
+3 Offering Screening in Pregnancy ................................ ................................ .................. 7 
+4 Women Booking Late ................................ ................................ ................................ .. 9 
+5 Women who arrive un -booked or without screening results in labour ......................... 9 
+6 Women known to be Hepatitis B positive prior to screening ................................ ...... 10 
+7 Declining Screening ................................ ................................ ................................ ... 11 
+8 Taking the Sample ................................ ................................ ................................ ..... 12 
+9 Unacceptable Samples ................................ ................................ .............................. 12 
+10 Results Processes ................................ ................................ ................................ ...... 13 
+11 Missing Antenatal Screening Results ................................ ................................ .......... 14 
+12 Negative result HEP B ................................ ................................ ................................ 15 
+13 Follow Up Of Hepatitis Positive Result ................................ ................................ ....... 15 
+14 Care of Baby Born to HBV Infected Mother ................................ ................................ 17 
+15 Audit and monitoring ................................ ................................ ................................ 20 
+15.1 Minimum auditable standards ................................ ................................ ................. 20 
+16 Training ................................ ................................ ................................ ..................... 21 
+17 Governance ................................ ................................ ................................ ............... 21 
+18 Care Pathways ................................ ................................ ................................ .......... 22 
+18.1 Antenatal screening for infectious diseases Hepatitis B ................................ .......... 22 
+18.2 Care Pathway: Follow -up of Hepatitis B positive result ................................ ......... 23 
+19 References ................................ ................................ ................................ ................ 24 
+19.1 Patient information ................................ ................................ ................................ .. 25 
+19.2 Further information ................................ ................................ ................................ .. 25 Antenatal screening for infectious diseases: MP031 
+HepatitisB (RSCH PRH only ) 
+
+Brighton & Sussex University Hospitals Page 4 of 33 
+ Appendix A : Key Personnel and Contact Information ................................ ........................... 26 
+Appendix B : Background to Antenatal screening for Hepatitis B ................................ ........... 28 
+Appendix C: Blood Test Declined Form ................................ ................................ ................. 29 
+Appendix D: Staff to contact regarding Vaccinations ................................ ............................ 30 
+Appendix E: Hepatitis B Notification form ................................ ................................ ............ 31 
+Appendix F: Proforma for recording results at 10 days ................................ ......................... 33 
+
+ Antenatal screening for infectious diseases: MP031 
+HepatitisB (RSCH PRH only ) 
+
+Brighton & Sussex University Hospitals Page 5 of 33 
+ Key Principles 
+A protocol is a set of measurable, objective standards to determine a course of action. 
+Professional judgement may be used in the application of a protocol. 
+ 
+Scope 
+This protocol applies to: 
+All women booking at any stage of pregnancy 
+ 
+Responsibilities 
+Midwives & Obstetricians: 
+• To access, read, understand and follow this guidance 
+• To use their professional judgement in application of this protocol 
+ 
+Management: 
+• To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations 
+• To ensure the protocol is accessible to all relevant staff 
+
+ Antenatal screening for infectious diseases: MP031 
+HepatitisB (RSCH PRH only ) 
+
+Brighton & Sussex University Hospitals Page 6 of 33 
+ 1 Antenatal Screening for Hepatitis B 
+ 
+Background to the screening programme is given in Appendix B . 
+For Designated programme lead for maternity services and Link speciality staff please see 
+Appendix A 
+ 
+1.1 Aims 
+ 
+The NHS Infectious Diseases in Pregnancy Screening Programme ensures that all 
+pregnant women and people are offered and recommended screening for Hepatitis B 
+[Public Health England (PHE) 2018b] 
+ 
+1.2 Objectives 
+ 
+• To ensure that women with hepatitis B are identified early in pregnancy to 
+facilitate appropriate assessment and management for their health by an 
+appropriate specialist (eg Specialist Midwife for Reproductive Health and 
+Wellbeing) within 6 weeks of the screening test result being received by 
+maternity services. 
+• To reduce the risk of mother -to-child transmission of hepatitis B 
+• To facilitate appropriate neo natal referral and management. [PHE 2018b]
+ 
+1.3 Expected Health Outcomes 
+ 
+Our aim is to reduce the risk of a mother -to-child transmission of hepatitis B and 
+safeguard the woman’s own health [ PHE 2018b] 
+2 Screening for Hepatitis B in Pregnancy 
+ 
+2.1 Pre-Screening information: enabling informed choice 
+ 
+2.1.1 At the first antenatal contact with the midwife, the woman should be 
+given verbal and written information about hepatitis B. This should 
+include the benefits of screening for both the woman and her unborn 
+baby [National Institute for Health and Care Excellence (NICE) 2008, 
+PHE 2018b] . 
+ 
+2.1.2 Screening should be offered and recommended. 
+ Antenatal screening for infectious diseases: MP031 
+HepatitisB (RSCH PRH only ) 
+
+Brighton & Sussex University Hospitals Page 7 of 33 
+ 2.1.3 The trust uses the NHS Screening Programmes information booklet: 
+‘Screening tests for you and your baby’. This includes the section 
+‘Infectious Diseases’. This leaflet may be sent to the woman or person 
+by post prior to the first appointment or given out at the first 
+appointment. The midwife must document in the hand held notes that 
+the leaflet has been r eceived by the woman or person. 
+ 
+2.1.4 Copies of ‘Screening tests for you and your baby’ are available in some 
+other languages and can be downloaded via the Public Health England 
+website: https://www.gov.uk/government/publications/screening -
+tests -for-you-and-your -baby -description -in-brief. If the leaflet is not 
+available in the language required from the national website, it is 
+possible to ask for the leaflet to be translated via the trust’s Equality 
+and Diversity Team. 
+ 
+2.1.5 Interpreting services (including sign language) should be used for 
+communicating with parents who are not fluent in English at all s tages 
+of the screening pathway. 
+ 
+2.1.6 Where there are specific communication requirements [e.g. English is 
+not the woman’s first language, visual/ hearing impairment], 
+appropriate interpretation services should be used at booking and all 
+subsequent stages in the screening pathway. For further guidance see 
+also the trusts Accessible Communications Guidelines via the Equality 
+and Diversity team. 
+ 
+2.1.7 If the midwife or doctor feels unable to answer all questions or the 
+woman requests further advice/information about any aspect of 
+Hepatitis B, then a direct referral can be made to the Specialist Midwife 
+for Reproductive Health and Wellbeing for specialist counselling (see 
+contact list Appendix A ). 
+3 Offering Screening in Pregnancy 
+ 
+3.1 The Eligible Population: All women and people should be offered screening for 
+Hepatitis B early in each pregnancy regardless of the results of Hepatitis B 
+screening in previous pregnancies [NICE 2008, PHE 2018b, PHE 2019] 
+ Antenatal screening for infectious diseases: MP031 
+HepatitisB (RSCH PRH only ) 
+
+Brighton & Sussex University Hospitals Page 8 of 33 
+ 3.2 The midwife or doctor should discuss the reasons why screening for Hepatitis B 
+is recommended, the results process and follow -up if diagnosed with Hepatitis 
+B infection. 
+ 
+3.3 Screening should be offered early in pregnancy, ideally by 10 weeks [NICE 
+2008]. The aim is to screen all women before 10 weeks, however screening can 
+be offered at any point during the pregnancy. 
+ 
+3.4 Testing should also be available on request at any stage of pregnancy should a 
+woman consider herself to be at risk of infection [PHE 2018b]. 
+ 
+3.5 Women booking late or who arrive unbooked in labour should be offered 
+screening at the first available opportunity (see sections 2.3 and 2.4). 
+ 
+3.6 Women who have booked elsewhere and transferred care to BSUH NHS TRUST 
+should be offered repeat screening. This ensures a result is available in -house 
+for all staff to access electronically if the hand held notes are not available and 
+for completion of cohort data. If a woman declines repeat testing having been 
+screened elsewhere, then a copy of the original result from the previous 
+booking unit must be inserted in both the hand held notes and a further copy 
+sent to the Antenatal Screening Co -ordinator and SMRHW. A booking test 
+declined form (Appendix C) should be completed and the declines process 
+should be implemented) 
+
+3.7 The midwife should document in the hand held notes that discussion has taken 
+place and the woman’s decision to accept [consent to screen] or decline 
+screening. Screening should only be performed after documented informed 
+consent; this does not require a signature from the woman. 
+ 
+3.8 There is currently no national policy to offer repeat Hepatitis B screening later 
+in pregnancy . However, in the following circumstances, the midwife should 
+consider a repeat test at 28 weeks if: 
+• If a woman and partner continue to engage in at -risk behaviour during the 
+pregnancy (eg Intravenous drug use - IVDU) 
+• If the woman is from a high risk group and/ or partner is from a high risk 
+group and Hepatitis B status is unknown. High risk groups include IVDUs 
+or if the woman and/or her partner were born in or have lived in countries 
+with high rates of Hepatitis B infection (mainly Asian and African countries, Antenatal screening for infectious diseases: MP031 
+HepatitisB (RSCH PRH only ) 
+
+Brighton & Sussex University Hospitals Page 9 of 33 
+ commonly China, Thailand, India, Africa & Eastern Europe) with no history 
+of Hepatitis B vaccination in the past. 
+• The woman discloses that partner is Hepatitis B positive and she does not 
+have a clear history of vaccination [PHE 2018b] 
+ 
+These cases should be considered on an individual basis. Advice can be sought from 
+the Specialist Midwife for Reproductive Health and Wellbeing as necessary (see 
+Appendix A). 
+ 
+4 Women Booking Late 
+ 
+4.1 Women booking late must be offered screening at the first appointment with 
+the midwife. Where women book at 24 weeks gestation or later, the blood 
+specimens should be marked urgent and positive results reported (as per 
+positive results pathway section 5) within 24 hours (1 working day) of the 
+sample being received in the laboratory [Royal College of Pathologists (RCP) 
+2013]. 
+ 
+4.2 In such cases it is the responsibility of the midwife booking the woman to 
+follow up results within 5 working days of the sample being taken. The midwife 
+must agree a plan with the woman to communicate the results to her. This 
+plan must be documented in the hand held notes [RCP 2013]. 
+ 
+5 Women who arrive un -booked or without screening results in 
+labour 
+ 
+5.1 Women who arrive un -booked or without screening results in labour must be 
+offered screening on admission by the midwife responsible for her care. 
+Consideration should be given to the stage of labour, woman’s condition and 
+specific risk factors for Hepatitis B. The midwife should document all 
+discussions that have taken place in the hand heldnotes [PHE 2018b]. 
+ 
+5.2 If the woman is considered to be at increased risk of Hepatitis B infection and 
+delivery is imminent it may be necessary to consider urgent screening. Results 
+can normally be obtained within an hour from the laboratory during normal 
+working hours. In these cases laboratory staff must be informed that the result 
+is urgent. Out of normal working hours, the on -call microbiologist should be 
+contacted so that there is no delay in diagnosis [PHE 2016a, PHE 2018b]. Antenatal screening for infectious diseases: MP031 
+HepatitisB (RSCH PRH only ) 
+
+Brighton & Sussex University Hospitals Page 10 of 33 
+ 
+5.3 Presumptive action should be taken on a preliminary positive result taken on a 
+woman in labour until such time as the result is confirmed . 
+ 
+5.4 If consent is withheld for screening during labour, the midwife caring for the 
+woman should re -offer screening after delivery and document discussions/ 
+decisions in hand heldnotes [PHE 2018b]. 
+ 
+5.5 The midwife caring for the woman in labour should inform the on -call neonatal 
+doctor when either: 
+• consent to screening is withheld during labour 
+• a woman has been screened but delivery is likely before the result is 
+available 
+ 
+5.6 In all cases, blood results must be obtained before discharge from the hospital 
+/ maternity services and documented in the hand heldnotes by the midwife 
+responsible for the woman’s care. Positive results will be actioned accordingly. 
+ 
+6 Women known to be Hepatitis B positive prior to screening 
+ 
+6.1 Where a positive diagnosis of Hepatitis B is documented and known to the 
+health professional (midwife or doctor), they should refer the woman to the 
+Specialist Midwife for Reproductive Health and Wellbeing by phone 
+immediately (see Appendix A ) to ensure appropriate management. 
+Management for these women is the same as for women diagnosed via 
+antenatal screening and detailed in section 10.0 
+ 
+6.2 Known Hep B positive women should still be re -screened for Hep B as the 
+blood markers can change with each pregnancy. Additionally they may not be 
+known to local services and the positive result triggers the laboratory to inform 
+the SMRHW which acts as an additional failsafe to ensure follow -up. When 
+completing the form write ‘Hep B positive status known’ and include date of 
+prior diagnosis and where it was performed. 
+ 
+6.3 If the woman declines a re -screen for Hep B then this should be recorded as 
+‘Hep B screening test not required – positive status known’ rather than 
+declined. All other antenatal screening tests should be offered as routine. Antenatal screening for infectious diseases: MP031 
+HepatitisB (RSCH PRH only ) 
+
+Brighton & Sussex University Hospitals Page 11 of 33 
+ 7 Declining Screening 
+ 
+7.1 Screening is optional. All women have the right to decline screening. In these 
+cases the midwife should complete a booking blood test declined form (see 
+Appendix C ) and return to the Specialist Midwife for Reproductive Health and 
+Wellbeing. 
+ 
+7.2 The decision to decline screening must be clearly documented by the midwife 
+in the hand held notes. The ‘decline’ box must also be ticked on the booking 
+blood request form. 
+ 
+7.3 Where women decline screening, the midwife should ensure that the woman 
+is aware she can opt for screening at any stage later in her pregnancy and is 
+aware how to arrange this [PHE 2018b]. 
+ 
+7.1 The woman should also be informed that as they have declined Hepatitis B 
+screening, they will be contacted by the SMRHW to further discuss their choices. 
+This contact will usually be within 10 working days of receipt of the decline form 
+and ideally by 20 weeks. Ideally this discussion takes place in person. At this 
+contact the SMRHW will: 
+• discuss the woman decision to decline and ensure that they are fully 
+aware of the benefits of screening for both themselves and their baby 
+• reoffer the screening test and where this is accepted arrange testing and 
+follow up of the result [PHE 2018b] 
+7.2 If the woman remains unscreened at 28 weeks the midwife should re -offer 
+screening at the 28 week visit along with the other blood test routinely offered 
+at this appointment. The midwife should document in the hand held notes any 
+discussions that take place and the woman decision to accept or decline 
+screening after re -offer. 
+ 
+7.3 The SMRHW will follow up at 32 weeks and if the woman remains unscreened, 
+the SMRHW will inform the following staff by email: 
+• Link Neonatal Consultant 
+• Link GUM consultant 
+• Link Obstetric Consultants 
+• Consultant Virologist 
+• Antenatal Screening Co -ordinator 
+• Neonatal secretary 
+• Consultant Neonatologist (who will co -ordinate a team meeting to 
+formulate a postnatal management plan individual to the woman or 
+person’s circumstances) [PHE 2018b] Antenatal screening for infectious diseases: MP031 
+HepatitisB (RSCH PRH only ) 
+
+Brighton & Sussex University Hospitals Page 12 of 33 
+ 8 Taking the Sample 
+ 
+8.1 The sample may be taking at booking by the midwife or practice nurse or 
+phlebotomist according to local arrangements: 
+• A 5 ml sample of blood is required in a gold topped [clotted] bottle. This 
+same sample can be used for HIV and Syphilis screening. 
+• The requestor [midwife or doctor] should complete all fields on the 
+Antenatal Booking Blood Request Form. The request from is in triplicate, 
+and the requestor must ensure that all hand writing has transferred 
+through and is legible on all three sheets of the form. Where adhesive 
+patient labels are used, a label must be affixed onto each of the three 
+sheets of the request form. The form includes tick boxes for ‘accept’ or 
+‘decline’ of syphilis screening as well as boxes to indicate whether this is 
+a ‘first booking’, ‘urgent’ or ‘repeat’ sample. 
+8.2 The sample must be labelled according to laboratory guidelines. The minimum 
+acceptable identifiers include forename, surname [no abbreviations], plus date 
+of birth and NHS number or hospital ID number. The NHS number is the 
+preferred number to use [PHE 2016a]. 
+8.3 If a woman discloses previous hepatitis B infection, include details on the 
+request form. 
+8.4 Additional information should be included on the request form if relevant: 
+Including family origins, recent immigration (if lived in an area of world where 
+Hep B is endemic) a nd first language (if not English) to assist the SMRHWin 
+follow -up of positive results. 
+8.5 Samples are sent to Brighton Pathology for processing and should arrive within 
+one working day of sample collection. 
+ 
+9 Unacceptable Samples 
+ 
+9.1 Where the sample is deemed to be unacceptable by the laboratory because of 
+insufficient blood, incomplete data on the request form or for any other 
+reason, the laboratory will inform the sample requestor to request a repeat. In 
+such cases, a repeat sample should ideally be taken within 10 working days of 
+the request being received by the maternity unit [PHE 2016a, PHE 2018b]. 
+9.2 Where repeat samples take longer than 10 working days to arrange [for 
+example the woman is away or declines to attend for repeat sampling within 
+10 days], the midwife should document reasons why there has been a delay. Antenatal screening for infectious diseases: MP031 
+HepatitisB (RSCH PRH only ) 
+
+Brighton & Sussex University Hospitals Page 13 of 33 
+ 9.3 The midwife must always follow up the results of repeated samples and 
+arrange a plan [documented in the handheld notes] being mindful that there 
+has already been a delay in obtaining a result because of the need to repeat. 
+ 
+10 Results Processes 
+10.1 Accessing results (Including failsafe to ensure all women who accept screening 
+receive a result) 
+10.1.1 Results will be available to staff within 5 working days on ICE (the 
+electronic results reporting programme) or by phoning the virology 
+laboratory at RSCH on 01273 696955 X 4627 [PHE 2016a]. 
+10.1.2 Failsafe - 10 day check : It is the responsibility of the sample requestor 
+to follow up results within 10 working days of the sample being taken 
+[see also section8.1.3 for situations where this is not possible]. The 
+sample requestor should ensure positive results have been acted upon 
+and follow up missing results or laboratory requests for a repeat 
+sample. The sample requestor must document that results were 
+followed up and acted on. An example proforma that can be used for 
+recording that results were followed up is given in Appendix E. 
+10.1.3 It is recognised that some community clinics do not have facilities for 
+venepuncture and therefore women attend hospital phlebotomy to 
+have bloods taken. In such cases, the sample requestor will not know 
+when the bloods were actually taken and so cannot follow up results by 
+10 days. In such cases it is essential that the requestor follows up 
+results as per section 10.1.4. 
+10.1.4 Failsafe - check at follow up antenatal appointment: It is the 
+responsibility of the health professional (midwife or doctor) providing 
+care at the next antenatal appointment (usually at the 16 week 
+appointment) to check the results, document results (with 
+informedconsent) in the hand held notes and inform the woman of the 
+results during the appointment [PHE 2018b]. 
+ Antenatal screening for infectious diseases: MP031 
+HepatitisB (RSCH PRH only ) 
+
+Brighton & Sussex University Hospitals Page 14 of 33 
+ 10.1.5 Failsafe - check at time of dating scan: As an additional failsafe, the 
+Antenatal Screening Support Worker (ASSW) will ensure a full set of 
+booking blood results are available at the time women attend dating 
+scan. This allows early identification of missing results that can be 
+actioned after the scan. With consent, missing bloods will be repeated 
+at this point of contact by the ASSW. The ASSW will then inform, via 
+email, the Antenatal Screening Team and named community midwife. It 
+is then the responsibility of the named community midwife to follow up 
+results within 10 working days and inform the woman as per 10.1.2.All 
+women and people should be notified of their results following testing 
+and this includes women who terminate or miscarry following 
+screening. This is especially important with screen positive results to 
+ensure women are referred and seen for specialist follow up within the 
+timeframe detailed in section 10.0 [PHE 2016a, PHE 2018b] 
+10.1.6 It is recognised that not all women will be attending for dating scan. 
+This might include women booking late or transferring in from another 
+trust or women who decline scans. Therefore this is will not capture all 
+women which is why the failsafe checks detailed in sectionare 
+mandatory. 
+ 
+10.1.7 Women who terminate or miscarry : All women should be notified of their 
+results following testing and this includes women who terminate or miscarry 
+following screening. This is especially important with screen positive results to 
+ensure women are referred and seen for specialist follow up within the 
+appropriate timeframe [P HE 2016a, PHE 2018b].. 
+11 Missing Antenatal Screening Results 
+ 
+11.1 Results should be documented in all cases at the next antenatal appointment 
+[PHE 2018b]. In rare circumstances, a result may not be available at the next 
+appointment.The midwife or doctor should phone the laboratory to try and 
+ascertain how long results will take and agree with the woman, a plan to 
+communicate the results to them. 
+11.2 If having phoned the laboratory it is apparent that there is no result, then a 
+repeat screening test should be recommended and where accepted, taken that 
+day or within 10 working days maximum [PHE 2016a, PHE 2018b]. 
+ Antenatal screening for infectious diseases: MP031 
+HepatitisB (RSCH PRH only ) 
+
+Brighton & Sussex University Hospitals Page 15 of 33 
+ 11.3 Where a repeat sample is taken, a plan must be agreed with the woman as to 
+relaying the result to her within a specified time frame. 
+11.4 Full documentation of the above should be made in the hand held notes by the 
+midwife or doctor trying to access results. 
+12 Negative result HEP B 
+ 
+Where a result is negative, the health professional (midwife or doctor) informing the woman 
+of the result should explain the following: 
+ 
+• A negative result does not confer protection on the woman. If a woman (or 
+partner) engages in high risk behaviour there is a risk of acquiring HBV during 
+pregnancy (UKNSC 2009). Informing a woman of a negative test result should 
+be used as an opportunity for general sexual health promotion and for the 
+dangers of becoming infected during pregnancy (DoH 2003). 
+• Women should be informed that she can request repeat screening at any stage 
+of the pregnancy if she request to do so or deem herself at risk or changes her 
+sexual partner (PHE 2014). 
+13 Follow Up Of Hepatitis Positive Result 
+ 
+13.1 All confirmatory testing is performed in Brighton pathology laboratory. 
+13.2 The virology laboratory staff will inform the Specialist Midwife for Reproductive 
+Health and Wellbeing [SMRHW] and designated Health Advisors [who provide 
+cover if the SMRHW is absent] by email of a Hepatitis B positive or equivocal 
+result. In addition, the lab will phone the Health Advisor Office to ensure the 
+result has been passed on to the Health Advisors. 
+13.3 All positive results will be actioned within 2 working days of the result being 
+received by the Health Advisor team. 
+13.4 Hepatitis B positive results are available to all staff with access to ICE - the 
+labor atory results reporting system. 
+13.5 The SMRHW or HA will first attempt to contact the woman by phone within 
+48hours (2 working days) of the result being received. If contact is not made by 
+phone then a letter will be sent to the woman that same working day offering an 
+appointment to be seen within 5 working days after the letter’s scheduled 
+arrival, will be sent to the woman that same working day. 
+ Antenatal screening for infectious diseases: MP031 
+HepatitisB (RSCH PRH only ) 
+
+Brighton & Sussex University Hospitals Page 16 of 33 
+ 13.6 At the first appointment, in addition to informing the woman of her result th e 
+SMRHW will complete the following as appropriate: 
+13.6.1 Confirmatory testing is performed on a second specimen to confirm the 
+results obtained from the first specimen and to ensure that the patient 
+details on the original specimen were correct (Recommendation: DoH 
+2003). Hepatitis B DNA, Hepatitis A and Hepat itis C screening also 
+performed. 
+13.6.2 Bloods are taken to assess LFT, AFP and INR 
+13.6.3 Consent is sought to document result in hand held notes and inform all 
+relevant parties involved in on -going care. This includes: Consultant 
+obstetrician, consultant neonatologist, community midwife and 
+immunisation nurse specialist. 
+13.6.4 Written parental consent is obtained to vaccinate the baby: the 
+immunisation consent form in the Personal Child Health Record [PCHR] 
+is completed. 
+13.6.5 Copies of the Immunisation Consent Form are sent to the neonatal 
+secretary for baby notes to be made up and a second copy placed in the 
+maternal hand held notes. 
+12.6.6 Hepatitis B investigation form is sent to local Health Protection Team 
+Link (consultants for communicable diseases): who will forward 
+accordingly [see contact list Appendix A ). The woman must be informed 
+of the need for statutory notification of a hep B positive result (NHS 
+England 2016). 
+13.6.6 The SMRHW will inform the Community Child Health Information 
+Service (CCHIS) who track vaccine administration of all antenatal 
+women found to be Hep B positive. 
+13.6.7 The SMRHW co -ordinates on -going care and support as well as partner 
+notification with the woman’s consent. 
+13.6.8 Screening of partner/ other children/ other family members with 
+Hepatitis B immunisation as appropriate should be organised (DoH 
+2003). This is co -ordinated by the SMRHW. 
+13.7 Where women do not attend the first appointment, the SMRHW will review care 
+with the multidisciplinary team and develop an action plan for further follow 
+and ongoing care. 
+ Antenatal screening for infectious diseases: MP031 
+HepatitisB (RSCH PRH only ) 
+
+Brighton & Sussex University Hospitals Page 17 of 33 
+ 13.8 The SMRHW contacts the woman to confirm Hepatitis B status from the 
+confirmatory testing and inform her of the other blood test results. The SMRHW 
+documents results in the GUM notes. 
+13.9 The SMRHW makes written referral to the liver unit as soon as the confirmatory 
+and DNA results are back which normally takes around 2 weeks. 
+13.10 Vaccine is kept in the fridge on delivery suite at RSCH and in the fridge on SCBU 
+at PRH. 
+13.11 If immunoglobulin is required this will have been pre -ordered by the Specialist 
+Midwife for Reproductive Health and Wellbeing through the Lead Antimicrobial 
+Pharmacist. It will have been made available on delivery suite six weeks before 
+The midwife responsible for the care of the mother during labour should inform the 
+neonatal doctor on -call for labour ward that the infant will require 
+immunisation. 
+14 Care of Baby Born to HBV Infected Mother 
+ 
+The section must read in conjunction with the BSUH neonatal department – medical 
+guidelines: HBV (2011): Postnatal management of infants born to mothers with 
+Hepatitis B. Available on the intranet. 
+ 
+14.1 A full course of vaccination during the first years of life is usually effective in 
+preventing infection of the baby. This involves: 
+• an initial dose within 12 hours of birth 
+• 2nd dose at one month 
+• 3rd dose at two months 
+• 4th dose at 12 months 
+• blood test at 12 months to check for chronic persistent infection (Public 
+Health England 2015). 
+• A booster is also advised at 5 years. 
+14.2 The vaccine schedule detailed above should be administered to babies of 
+women who are positive for Hepatitis B surface antigen (HBsAg) (UK NSC 2009). 
+ Antenatal screening for infectious diseases: MP031 
+HepatitisB (RSCH PRH only ) 
+
+Brighton & Sussex University Hospitals Page 18 of 33 
+ 14.3 The vaccine schedule detailed in above plus Hep B immunoglobulin (HBIG) 
+(within 12 hours of birth) should be given to babies of women who are positive 
+for Hepatitis B e -antigen (HBeAg) as this marker indicates increased risk of 
+transmission (UK NSC 2009). Babies born to mothers who have a high DNA level 
+but are e antigen negative may also be given immunoglobulin after case review 
+by the Hepatology Consultant. Note the immunoglobulin should be given in a 
+different site to the vaccine. 
+14.4 The table below clarifies which babies require Vaccine and which also require 
+HBIG (Public Health England [2016 b] The Green Book) 
+ 
+14.5 If an infant is later identified as having missed HBIG at birth despite being 
+eligible, HBIG can be given up to 7 days after birth. 
+14.6 The midwife responsible for caring for the woman in labour will inform the on -
+call paediatrician prior to the birth that the woman is Hepatitis B positive and 
+neonatal immunisation will be required. Parental consent for the baby’s 
+immunisation is obtained prior to the birth by the Specialist Midwife for 
+Reproductive Health and Wellbeing. The first dose of Hepatitis B vaccine should 
+be given within 12 hours of birth by the on -call paediatrician, midwife or ANNP. 
+(See neonatal policy for further details – including administration of 
+immunoglobulin). 
+ 
+Antenatal screening for infectious diseases: MP031 
+HepatitisB (RSCH PRH only ) 
+
+Brighton & Sussex University Hospitals Page 19 of 33 
+ 14.7 If a woman books late and/or a Hepatitis B test result is not available, Hepatitis B 
+vaccine is given to the infant unless a result will be available within 24 hours of 
+delivery or before discharge (whichever is sooner). Information about vaccine 
+and Hepatitis B immunoglobulin administration, dose and supplies is given in 
+HSC 1998/127 [2] and in Immunisation against infectious disease. Further 
+information about vaccination is available in: DoH [2006] Immunisation against 
+infectious disease – ‘The Green Book’. 
+14.8 Babies with a birth weight of 1500g or less, born to mothers infected with 
+Hepatitis B, should receive HBIG in addition to the vaccine, regardless of the e -
+antigen status of the mother (UK NSC 2009). (See neonatal policy for further 
+details). 
+ 
+14.9 See neonatal policy regarding babies born to women who are HIV positive or 
+where a parent is an intravenous drug user or likely to progress to injecting. 
+14.10 Mothers should be given written information about the number of injections 
+their babies require, when the injections should be given and who will be 
+responsible for the administration of each dose. This includes the importance of 
+completing the full course of immunisation. 
+ 
+14.11 Following administration of the first vaccine, the health professional 
+administering the vaccine and or immunoglobulin documents in the baby notes 
+and where possible the PCHR [red book] that these have been given. The 
+midwife, ANNP or paediatrician also sends copies of the Hepatitis B Notification 
+Form to the people listed on the bottom of the form. Note that there is a 
+different form in use for RSCH and PRH to account for the different geographical 
+areas covered by each site. 
+14.12 The midwife should telephone the SMRHW to advise of date/ time of birth and 
+date/time that the first vaccine was administered (message can be left on 
+mobile phone). The midwife should document actions in the postnatal notes. 
+ 
+14.13 The neonatal secretaries also send a copy of the Hepatitis B Notification form to 
+the SMRHW as a second alert that the baby has been born and the first vaccine 
+has been administered. 
+14.14 The Child Health Record Unit informs the consultant community paediatrician 
+(CCP) who arranges for a blood test form to be sent to the parents at 1 year. The 
+blood test sample is taken at the Royal Alexandra Children’s Hospital. Results are 
+returned to the CCP who subsequently informs the parents and GP. 
+ Antenatal screening for infectious diseases: MP031 
+HepatitisB (RSCH PRH only ) 
+
+Brighton & Sussex University Hospitals Page 20 of 33 
+ 14.15 Follow -up to ensure that babies have received their full vaccine schedule varies 
+between localities. The following staffs are informed by the SMRHW by email 
+with details of the woman and the baby’s GP: the Community Child Health 
+Information Service Manager & Community Child Health Information Service. 
+They then follow up with the practice nurse team at the surgery to ensure the 
+baby has been completed the full course of vaccinations. 
+15 Audit and monitoring 
+ 
+15.1 Minimum auditable standards 
+Public Health England requires that the following data is collected on a quarterly 
+basis and reported annually (see Public Health England [2016 a] for full details of 
+current standards and all definitions): 
+• number of women booking 
+• number of women eligible for screening 
+• number of women tested (Coverage: Standard 2) 
+• number of women declining screening 
+• number of women diagnosed with new Hep B infection 
+• number of women diagnosed with old HBV infection (ie: diagnosis made 
+before current pregnancy) 
+• number of women with high infectivity (new or previous diagnosis) 
+• Number of women attending for specialist assessment within 10 working 
+days of a positive result (Standard 5/6) 
+• number of babies born to positive women who receive appropriate 
+vaccinations within 12 hours of birth (Standard 7) 
+15.2 Current data requirements of the Key Performance Indicators for screening are 
+available at http://www.screening.nhs.uk/kpi ]: ID2 - timely referral of Hepatitis 
+B positive women for specialist assessment. Data is submitted quarterly. 
+ 
+15.3 The Specialist Midwife for Reproductive Health and Wellbeing will maintain a 
+database of all women declining screening and the outcome 
+ 
+15.4 The Specialist Midwife for Reproductive Health and Wellbeing will maintain a 
+database of all women with a hep B positive status and outcome of babies born 
+to Hep B positive mothers. This will include details regarding administration of 
+vaccine and where relevant HBIG. 
+15.5 An annual audit of women’s notes will take place to review documentation 
+processes. 
+ Antenatal screening for infectious diseases: MP031 
+HepatitisB (RSCH PRH only ) 
+
+Brighton & Sussex University Hospitals Page 21 of 33 
+ 15.6 Data and audit findings will be included in the BSUH Trust Annual Antenatal and 
+Neonatal Screening Report compiled by the Antenatal Screening Co -ordinator 
+which is circulated to board level with in the trust and to the following [see 
+contact list in Appendix A ]: 
+• Regional Public Health England lead 
+• Regional Screening and Immunisation Lead 
+• Regional Quality Assurance Screening Lead 
+16 Training 
+16.1 All midwives must attend a yearly update on antenatal screening for infectious 
+diseases as part of their mandatory education update sessions. 
+16.2 All midwives new to the trust should complete the Antenatal & Newborn 
+Screening eLearning Module available at www.e -lfh.org.uk .This includes a 
+section on antenatal screening for infectious diseases. [NOTE THIS LINK WILL 
+BEACTIVE FROM 3 -04-2017] 
+16.3 All band 5 midwives must complete the Antenatal & Newborn Screening 
+eLearning Module as part of their competencies before they can apply for a 
+band 6. 
+17 Governance 
+ 
+17.1 All incidents related to antenatal screening for Hepatitis B are reported via the 
+trusts internal reporting system known as DATIX. 
+17.2 All incidents related to screening for Hep B should also be reported to the 
+Antenatal screening co -ordinator who will liaise with the Maternity Risk 
+Manager and where necessary complete a SIAF [Screening incident assessment 
+form] in order to notify the Regional QA screening team and the Screening and 
+Immunisations lead. 
+17.3 Where relevant incidents should also be reported to the laboratory lead, 
+Pathology Quality Team, SMRHW and GUM lead consultant. 
+17.4 For further information relating to management of incidents please refer to the 
+protocol: MD085 Maternity & Gynaecology Risk Management Strategy . 
+17.5 The Antenatal Screening for Infectious Diseases Ste ering Group meets twice 
+yearly and will address all issues pertaining to Hep B screening. 
+ 
+ Antenatal screening for infectious diseases: MP031 
+HepatitisB (RSCH PRH only ) 
+
+Brighton & Sussex University Hospitals Page 22 of 33 
+ 18 Care Pathways 
+18.1 Antenatal screening for infectious diseases Hepatitis B 
+
+All women and people given information booklet ‘Screening tests for you and your 
+baby’ which incorporates the leaflet: ‘Infectious Diseases’[usually 6 – 9 weeks]. 
+At booking: Offer and recommend screening for HIV along with Hep B and syphilis. If 
+further information is required offer referral to Specialist Midwife for Reproductive 
+Health and Wellbeing [SMRHW] for further discussion 
+ 
+ Screening accepted 
+ Screening declined 
+Document in hand held notes –Midwife 
+completes Antenatal Screening Tests 
+Declined form – Return to SMRHW 
+ 
+Advise the woman she will be contacted 
+by the SMRHW to discuss reasons for 
+declining screening. Re -offer by 20 
+weeks [by SMRHW] 
+Reoffer again at 28 weeks [By CMW] 
+If remains unscreened at 32 weeks 
+SMRHW informs: Neonatal, GUM, 
+Document consent to screening in hand held 
+notes. Blood tak en with routine booking 
+bloods. Advised of results process. 
+ 
+Negative results 
+Positive results 
+Results followed 
+up within 10 
+working days of 
+sample being 
+taken. 
+Documented in 
+hand held notes 
+at NEXT A/N 
+check. 
+ 
+Lab informs 
+SMRHW and HPA 
+of all Hepatitis B 
+positive results. 
+Refer to separate flow chart for follow -up process of Hepatitis B 
+positive results Antenatal screening for infectious diseases: MP031 
+HepatitisB (RSCH PRH only ) 
+
+Brighton & Sussex University Hospitals Page 23 of 33 
+ 18.2 Care Pathway: Follow -up of Hepatitis B positive result 
+
+SMRHW completes the following: 
+•Complete immunisation consent form 
+•Refer woman to the liver unit for follow -up 
+•Liaises with senior pharmacist who orders HBIG if e antigen positive. HBIG kept on labour 
+ward 6/52 prior to delivery. 
+Complete and send Investigation form to Health Protection Unit 
+Inform [with pt consent]: Cons obstetrician, Cons Neonatologist, Community midwife and 
+Immunisation Specialist Nurse 
+PCHR (immunisation consent form) 
+-1 copy sent to neonatal secretary for baby notes to be made up 
+ - 1 copy put in hand held notes 
+Lab informs Specialist Midwife for Reproductive Health and Wellbeing [SMRHW ] who will arrange to 
+meet the wo man to inform her of the result . Confirmatory test, Hepatitis B DNA, LFT’s, INR, AFP, 
+screen for Hep A and Hep B. 
+SMRHW asks patient for consent to inform all relevant parties. 
+SMRHW co-ordinates ongoing care and partner notification 
+ AFTER BIRTH 
+Role of midwife [document all actions in handheld notes]: 
+•Informs on -call paediatrician who will administer first dose of vaccine within 12 hours of birth. 
+•Completes PCHR and gives to mother. 
+•Informs SMRHW by phone of date/ time of baby’s birth and date/ time 1st vaccine given 
+•Whomever gives the vaccination must complete the Hepatitis B notification form ONLINE and 
+print 4 copies and send copies to relevant departments at each site (see appendix B) 
+Immunisation Specialist Nurse follows up 
+with GP practice nurse team to ensure full 
+course of vaccines has been completed. 
+Child Health Record Unit informs the 
+consultant Community Paediatrician [CCP] 
+who arranges for a blood test on the baby at 
+1 year. 
+CCP receives results which are sent to the 
+parents and the GP. Antenatal screening for infectious diseases: MP031 
+HepatitisB (RSCH PRH only ) 
+
+Brighton & Sussex University Hospitals Page 24 of 33 
+ 19 References 
+ 
+UK National Screening Committee (2011) NHS infectious Diseases in Pregnancy Screening 
+Programme: Failsafe Processes: available at 
+https://www.gov.uk/government/publications/infectious -diseases -in-pregnancy -screening -
+programme -failsafe -procedures 
+
+UK NSC (2015) Resource cards for screening: http://cpd.screening.nhs.uk/resource -cards 
+ 
+UK NSC (2010) Infectious diseases in pregnancy: screening programme 
+standards. Sept 2010 https://www.gov.uk/government/publications/infectious -diseases -in-
+pregnancy -screening -programme -standards 
+
+National Institute for Clinical Excellence – NICE (2008) Clinical guideline 62 – Routine 
+antenatal care for the healthy pregnant woman. March 2008: 
+ http://www.nice.org.uk/nicemedia/pdf/CG062NICEguideline050609.pdf 
+ 
+Public Health England (2015) Use of hepatitis B immunoglobulin (HBIG) in infants at high risk 
+of hepatitis B perinatal infection whose mothers have viral load monitoring during pregnancy. 
+Press release: August 2015. 
+
+Public Health England. NHS Infectious Diseases in Pregnancy Screening Programme: 
+Laboratory Handbook 2016 to 2017. 2016 July (2016a). Available from: 
+https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_d
+ata/file/539828/NHS_Infectious_Diseases_in_Pregnancy_Screening_Programme_Laboratory_
+Handbook_2016_2017_with_gateway_number.pdf 
+ 
+Public Health England. NHS Infectious Diseases in Pregnancy Screening Programme 
+Handbook. 2016 July (2016b). Available from: 
+https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_d
+ata/file/542492/NHS_IDPS_Programme_Handbook_2016_to_2017.pdf 
+
+Public Health England (2016b) hepatitis B: Chapter 18 in Immunisation against Infectious 
+disease: The Green Book. Accessible at 
+https://www.gov.uk/.../uploads/.../2905115_ Green _Book _Chapter_18_v3_0W.PDF 
+ 
+Public Health England [2018b] NHS public health functions agreement 2018 -19: Service 
+specification no.15: NHS Infectious Diseases in Pregnancy Screening Programme. 2018 
+September (2018b). Available from: https://www.england.nhs.uk/wp -Antenatal screening for infectious diseases: MP031 
+HepatitisB (RSCH PRH only ) 
+
+Brighton & Sussex University Hospitals Page 25 of 33 
+ content/uploads/2017/04/Gateway -ref-07836 -180913 -Service -specification -No.-15-NHS -
+IDPS.pdf 
+ 
+Public Health England [2019] Infectious diseases in pregnancy screening standards 
+valid for data collection from 1 April 2018. PHE publications gateway number: 
+2018003. Available at: 
+https://www.gov.uk/government/publications/infectious -diseases -in-pregnancy -screening -
+programme -standards/infectious -diseases -in-pregnancy -screening -standards -valid -for-data -
+collected -from -1-april -2018 
+ 
+The Royal College of Pathologists. Key performance indicators -proposals for implementation. 
+2013 July. Available from: https://www.rcpath.org/asset/A428B2AF -7AE9 -42DA -
+BF9343E184EE05CF.2DBFC9CA -A72A -479B -ACE8B1150A7C1BC2/ 
+
+UK NSC (2006) Policy statement on Hepatitis B screening in pregnancy: 
+http://www.screening.nhs.uk/Hepatitisb 
+ 
+Further information about vaccination is available in: Department of Health (2006) 
+Immunisation against infectious disease – ‘The Green Book’; Available at: 
+www.dh.gov.uk/en/Publichealth/Healthprotection/Immunisation/Greenbook/DH_4097254?C
+ONTENT_ID=4097254&chk=isTfGX 
+
+19.1 Patient information 
+UK National Screening Committee (2008) ‘Screening Tests for You and Your Baby’. 
+Click on this link to view/ download a copy of the information leaflet ‘Testing for infections in 
+pregnancy’. 
+Patient information : http://infectiousdiseases.screening.nhs.uk/public 
+
+19.2 Further information 
+Further information about the NHS Infectious Diseases in Pregnancy Screening Programme is 
+available from: http://infectiousdiseases.screening.nhs.uk/professionals 
+
+ Antenatal screening for infectious diseases: MP031 
+HepatitisB (RSCH PRH only ) 
+
+Brighton & Sussex University Hospitals Page 26 of 33 
+ Appendix A – Key Personnel and Contact Information 
+ 
+Designated programme lead for maternity services 
+Karen Creed - Antenatal Screening Co -ordinator 
+ 
+Designated Programme Lead For Maternity Services 
+Karen Creed - Antenatal Screening Co -ordinator 
+ 
+Link Speciality Staff 
+David Utting Consultant Lead for Obstetrics 
+Yvonne Gilleece Consultant Lead for GUM 
+Rob Bomont Consultant Lead for Neonatology 
+Karen Gregory Antenatal Screening Co -ordinator 
+Rosie Jennings Specialist Midwife for Reproductive Health and 
+Wellbeing 
+Sumita Verma Hepatology Consultant 
+Laboratory Team 
+Dr Mohammed Osman Hassan -Ibrahim Consultant Virologist 
+Nick O’Flanagan Laboratory Manager - Virology 
+Graham Terrey / Clare Reynolds Laboratory Leads 
+Jackie Longbone Laboratory Quality Officer 
+John Mcbride Pathology Quality Manager 
+ 
+Antenatal Screening 
+Coordinator at BSUH [cross 
+site] Karen Gregory Mobile: 07876 357 423 
+Office RSCH 01273 696955 X 67477 
+Office PRH: 01444 441 881 X 5404 
+FAX: 01273 664732 
+Antenatal Screening 
+Support Midwives [BSUH] RSCH: [PT] 
+ Office RSCH 01273 696955 X 67477 
+Office PRH: 01444 441 881 X 5404 
+FAX: 01273 664732 
+PRH: [PT] 
+ Office: 01444 441881 X 5404 
+FAX: 01444 415865 
+Fetal Medicine Consultants 
+at BSUH RSCH: 
+David Utting David.Utting@bsuh.nhs.uk 
+PRH: 
+Jo Sinclair Jo.Sinclair@bsuh.nhs.uk 
+Laboratory Service Leads 
+for Virology/Microbiology Lead consultant: 
+John Paul 01273 696955 X 4627 
+John.Paul@bsuh.nhs.uk Antenatal screening for infectious diseases: MP031 
+HepatitisB (RSCH PRH only ) 
+
+Brighton & Sussex University Hospitals Page 27 of 33 
+ Dr Mohammed 
+Osman Hassan -
+Ibrahim 
+Consultant Virologist MohammedOsman.HassanIbrahim@bsuh.nhs.uk 
+Virology Section 
+Department of Microbiology & Infection 
+Tel. 01273696955 ext 3584 
+Pager: 07623809015 
+Mobile: 07940 933 197 
+Nick O’Flanagan 
+Laboratory Manager Nicholas.O’Flanagan@bsuh.nhs.uk 
+Link Hepatology 
+Consultant Dr Sumita Verma 
+Link Neonatal Consultant Rob Bomont, 
+consultant 
+neonatologist Rob.Bomont@bsuh.nhs.uk 
+Trevor Mann Baby Unit, RSCH 
+Tel 01273 696955 X 4188 
+Specialist Midwife for 
+Reproductive Health and 
+Wellbeing Rosie Jennings rosie.jennings@nhs.net 
+Address: 
+Specialist Midwife for Reproductive Health and 
+Wellbeing 
+Claude Nicol Clinic 
+RSCH, Eastern Road 
+Brighton, East Sussex, BN2 5BE 
+Tel: 01273 664716 (option 2) / 07919627603 
+
+Link GUM Consultant Yvonne Gilleece Yvonne.gilleece@bsuh.nhs.uk 
+Tel: 01273 664707 
+Antenatal and Newborn 
+Screening Programmes 
+(South East) 
+Quality Assurance Service Emma Proctor 
+Quality Assurance 
+Advisor 
+ emmaproctor@nhs.net 
+07919691456 
+ 
+Public Health England 
+South East Link Jennie Thomas 
+Screening and 
+Immunisations 
+Manager 
+Public Health 
+England South East Public Health England South East 
+York House 
+18-20 Massetts Road 
+Horley 
+RH6 7DE 
+ 
+Direct Line: 0113 825 4694 
+Mobile: 07795644708 
+
+ Antenatal screening for infectious diseases: MP031 
+HepatitisB (RSCH PRH only ) 
+
+Brighton & Sussex University Hospitals Page 28 of 33 
+ 
+Appendix B - Background to Antenatal screening for Hepatitis B 
+ 
+• Hepatitis B is an infectious disease of the liver caused by the HBV virus. In 
+many cases, the virus does not cause any symptoms (NICE 2008). 
+• HBV is a blood borne infection and can be transmitted through sexual contact, 
+contaminated blood e.g. needle sharing (IV drug use), having a tattoo or 
+piercing with needles that have not been steri lised, sharing toothbrushes or 
+razors or by vertical transmission (mother -to-child transmission) (UK NSC 
+2006). 
+• The risk of perinatal transmission is dependent on the status of the maternal 
+infection. Approximately 70 -90% of mothers who are HBV e -antigen [HBeAg] 
+positive will transmit the infection to the baby. The rate of transmission is 
+approximately 10% in women with antibody to e antigen (AntiHBe) (UK NSC 
+2010). 
+• Infection can result in an acute or chronic infection. A chronic infection may 
+result in cirrhosis of the liver and liver cancer. The earlier in life the infection 
+occurs the greater the risk that it will lead to chronic infection, liver disease 
+and early death (UK NSC 2010). 
+
+ Antenatal screening for infectious diseases: MP031 
+HepatitisB (RSCH PRH only ) 
+
+Brighton & Sussex University Hospitals Page 29 of 33 
+ 
+Appendix C: Blood Test Declined Form 
+ 
+ Antenatal screening for infectious diseases: MP031 
+HepatitisB (RSCH PRH only ) 
+
+Brighton & Sussex University Hospitals Page 30 of 33 
+ Appendix D - Staff to contact regarding Vaccinations 
+ 
+RSCH: Carol Park (senior infection control nurse) 
+ Rosanna Raven (immunisation Lead Nurse) 
+ 
+PRH: Barbara Shepherd (Child Health Record Lead) 
+ Dr Nick Kendall (West Sussex PCT Vaccinations Lead) Antenatal screening for infectious diseases: MP031 
+HepatitisB (RSCH PRH only ) 
+
+Brighton & Sussex University Hospitals Page 31 of 33 
+ Appendix E – Hepatitis B Notification form 
+ Antenatal screening for infectious diseases: MP031 
+HepatitisB (RSCH PRH only ) 
+
+Brighton & Sussex University Hospitals Page 32 of 33 
+ 
+Appendix F– Proforma for recording results at 10 days 
+BOOKING BLOOD RESULTS TO BE CHECKED 2 WEEKS AFTER TAKEN: Clinic ______________________________[surgery / children’s centre] 
+ 
+Name, DOB, ID number 
+
+ Accepted 
+/declined Result Date 
+result MW 
+checking 
+Group & Rhesus 
+Hb 
+Sickle and thal 
+Rubella 
+Syphilis 
+HIV 
+Hep B 
+ 
+Downs screen Accepted / Declined Tick if transfer 
+booking: Anomaly scan Accepted / Declined 
+ Comments: results missing/ 
+repeat required/ decline 
+form sent/ referrals made? 
+
+ Gest at 
+booking MW at 
+booking 
+Date booked Date booking 
+bloods taken 
+ Name, DOB, ID number 
+
+ Accepted 
+/declined Result Date 
+result MW 
+checking 
+Group & Rhesus 
+Hb 
+Sickle and thal 
+Rubella 
+Syphilis 
+HIV 
+Hep B 
+ 
+Downs screen Accepted / Declined Tick if transfer 
+booking: Anomaly scan Accepted / Declined 
+ Comments: results missing/ 
+repeat required/ decline 
+form sent/ referrals made? 
+
+ Gest at 
+booking MW at 
+booking 
+Date booked Date booking 
+bloods taken

@@ -1,0 +1,1233 @@
+# Extracted from: GTG 2015 - Blood transfusion in Obstetrics.pdf
+# Guideline ID: gtg-2015-blood-transfusion-in-obstetrics
+# Content length: 81623 characters
+# Processing date: 1732953490.917253
+
+Blood Transfusion in Obstetrics
+Green-top Guideline No. 47 
+May 2015
+RCOG Green-top Guideline No. 47 © Royal College of Obstetricians and Gynaecologists2 of 23Blood Transfusion in Obstetrics
+This is the second edition of this guideline, which was previously published under the same title in 2007.
+Executive summary of recommendations 
+How can the risk of transfusion be reduced?
+Optimisation of haemoglobin in the antenatal period
+Diagnosis
+Anaemia in pregnancy is defined as first trimester haemoglobin (Hb) less than 110 g/l, second/third 
+trimester Hb less than 105 g/l, and postpartum Hb less than 100 g/l, in line with British Committee 
+for Standards in Haematology (BCSH) guidance.
+For normocytic or microcytic anaemia, a trial of oral iron should be considered as the first step and 
+further tests should be undertaken if there is no demonstrable rise in Hb at 2 weeks and compliance 
+has been checked.
+Pregnant women should be offered screening for anaemia at booking and at 28 weeks. Women 
+with multiple pregnancies should have an additional full blood count done at 20–24 weeks.
+Treatment and management
+Oral iron should be the preferred first-line treatment for iron deficiency.
+Parenteral iron is indicated when oral iron is not tolerated or absorbed or patient compliance is in 
+doubt or if the woman is approaching term and there is insufficient time for oral supplementation 
+to be effective.
+Women should receive information on improvement of dietary iron intake and factors affecting 
+absorption of dietary iron.
+The role of recombinant human erythropoietin (rHuEPO) for non-end-stage renal anaemia is still 
+to be established and it should only be used in the context of a controlled clinical trial or on the 
+expert advice of the haematologist.
+Active management of the third stage of labour is recommended to minimise blood loss.
+Women at high risk of haemorrhage should be advised to deliver in hospital.
+General principles of blood transfusion
+Consent for blood transfusion
+Valid consent should be obtained where possible prior to administering a blood transfusion.
+In an emergency, where it is not feasible to get consent, information on blood transfusion should 
+be provided retrospectively.
+The reason for transfusion and a note of the consent discussion should be documented in the 
+patient’s case notes.B
+AP
+P
+C
+C
+B
+A
+D
+D
+D
+DRCOG Green-top Guideline No. 47 © Royal College of Obstetricians and Gynaecologists3 of 23Requirements for group and screen samples and cross-matching 
+All women should have their blood group and antibody status checked at booking and at 28 weeks 
+of gestation.
+Group and screen samples used for provision of blood in pregnancy should be less than 3 days old.
+In a woman at high risk of emergency transfusion, e.g. placenta praevia, and with no clinically 
+significant alloantibodies, group and screen samples should be sent once a week to exclude or 
+identify any new antibody formation and to keep blood available if necessary. Close liaison with 
+the hospital transfusion laboratory is essential.
+Women should have a group and screen sample taken in line with clear locally agreed protocols 
+for provision of blood.
+Blood product specification in pregnancy and the puerperium 
+ABO-, rhesus D- (RhD-) and K- (Kell-) compatible red cell units should be transfused.
+If clinically significant red cell antibodies are present, then blood negative for the relevant antigen 
+should be cross-matched before transfusion; close liaison with the transfusion laboratory is 
+essential to avoid delay in transfusion in life-threatening haemorrhage.
+Cytomegalovirus- (CMV-) seronegative red cell and platelet components should be provided for 
+elective transfusions during pregnancy.
+What are the strategies to minimise the use of banked blood?
+Is there a role for preoperative/predelivery autologous blood deposit?
+Predelivery autologous blood deposit is not recommended.
+Is there a role for intraoperative cell salvage (IOCS)?
+Cell salvage is recommended for patients where the anticipated blood loss is great enough to 
+induce anaemia or expected to exceed 20% of estimated blood volume.
+Consent should be obtained for IOCS where possible and its use in obstetric patients should be 
+subject to audit and monitoring.
+Cell salvage should only be performed by multidisciplinary teams who develop regular experience 
+of IOCS.
+Where IOCS is used during caesarean section in RhD-negative, previously nonsensitised women 
+and where cord blood group is confirmed as RhD positive (or unknown), a minimum dose of 1500 iu 
+anti-D immunoglobulin should be administered following the reinfusion of salvaged red cells.
+A maternal blood sample should be taken for estimation of fetomaternal haemorrhage 30–40 
+minutes after reinfusion in case more anti-D is indicated.
+Management of obstetric haemorrhage with blood components
+There should be a clear local protocol on how to manage major obstetric haemorrhage.CCP
+PDD
+BD
+C
+DD
+D
+P
+CRCOG Green-top Guideline No. 47 © Royal College of Obstetricians and Gynaecologists4 of 23The protocol should be updated annually and practised in ‘skills drills’ to inform and train relevant 
+personnel.
+Are there mechanical strategies that can be employed?
+Clinicians should familiarise themselves with mechanical strategies that can be employed to 
+reduce postpartum blood loss.
+What blood components can be used for obstetric haemorrhage?
+When should red cells be used?
+There are no firm criteria for initiating red cell transfusion. The decision to provide blood transfusion 
+should be made on clinical and haematological grounds.
+In an extreme situation and when the blood group is unknown, group O RhD-negative red cells 
+should be given (although they may be incompatible for patients with irregular antibodies).
+Staff working in obstetric units should be aware of the location of the satellite blood fridge (where 
+available) and should ensure that access is possible for blood collection.
+In what circumstances should fresh frozen plasma (FFP) and cryoprecipitate be used?
+FFP at a dose of 12–15 ml/kg should be administered for every 6 units of red cells during major 
+obstetric haemorrhage. Subsequent FFP transfusion should be guided by the results of clotting 
+tests if they are available in a timely manner, aiming to maintain prothrombin time (PT) and 
+activated partial thromboplastin time (APTT) ratios at less than 1.5 x normal.
+It is essential that regular full blood counts and coagulation screens (PT, APTT and fibrinogen) are 
+performed during the bleeding episode.
+Cryoprecipitate at a standard dose of two 5-unit pools should be administered early in major 
+obstetric haemorrhage. Subsequent cryoprecipitate transfusion should be guided by fibrinogen 
+results, aiming to keep levels above 1.5 g/l.
+The FFP and cryoprecipitate should ideally be of the same group as the recipient. If unavailable, 
+FFP of a different ABO group is acceptable providing that it does not have a high titre of anti-A or 
+anti-B activity.
+No anti-D prophylaxis is required if a RhD-negative woman receives RhD-positive FFP or 
+cryoprecipitate.
+When should platelets be used? 
+Aim to maintain the platelet count above 50 x 109/l in the acutely bleeding patient.
+A platelet transfusion trigger of 75 x 109/l is recommended to provide a margin of safety.
+The platelets should ideally be group compatible. RhD-negative women should also receive RhD-
+negative platelets.
+Is there a role for near patient testing of coagulation?
+Centres that are using thromboelastography (TEG®, Haemonetics, Braintree, Massachusetts, USA) 
+or rotation thromboelastometry (ROTEM®, Tem, Munich, Germany) for guiding blood transfusion 
+during major obstetric haemorrhage must ensure that their transfusion algorithm protocol has 
+been validated and that quality assurance measures are followed.DP
+PP
+DDD
+D
+DP
+D
+D
+D
+DRCOG Green-top Guideline No. 47 © Royal College of Obstetricians and Gynaecologists5 of 23Pharmacological strategies for management of major obstetric haemorrhage
+Is there a role for recombinant factor VIIa (rFVIIa) therapy?
+The use of rFVIIa may be considered as a treatment for life-threatening postpartum haemorrhage 
+(PPH), but should not delay or be considered a substitute for a live-saving procedure such as 
+embolisation or surgery, or transfer to a referral centre.
+Is there a role for fibrinogen concentrate therapy?
+Fibrinogen concentrate is not licensed in the UK for the management of acquired bleeding disorders. 
+Thus, its use in PPH should be considered only in the context of clinical trials.
+Is there a role for antifibrinolytics?
+For those centres not participating in clinical trials, consideration should be given to using 
+tranexamic acid during major obstetric haemorrhage.
+How should intrapartum anaemia be managed?
+In addition to major haemorrhage guidelines, obstetric units should have guidelines on criteria for 
+red cell transfusion in anaemic women who are not actively bleeding. If the Hb is less than 70 g/l in 
+labour or in the immediate postpartum period, the decision to transfuse should be made according 
+to the individual’s medical history and symptoms.
+How should women with postpartum anaemia be managed in the postnatal period? 
+If the Hb is less than 70 g/l in the postnatal period, where there is no ongoing or threat of bleeding, 
+the decision to transfuse should be made on an informed individual basis.
+How should women who decline blood products be managed? 
+Hb should be optimised prior to delivery to prevent avoidable anaemia.
+Consent/refusal of blood and components or other transfusion-sparing techniques should be 
+discussed and documented during the antenatal period.
+Use of pharmacological, mechanical and surgical procedures to avert the use of banked blood and 
+blood components should be considered early.
+IOCS has a role in the management of patients who refuse allogeneic blood transfusion.
+1. Purpose and scope
+Obstetric conditions associated with the need for blood transfusion may lead to morbidity and mortality 
+if not managed correctly. The increasingly important issues in blood transfusion are adverse events 
+associated with transfusion, including potential infection and potential transmission of prions, rising 
+costs and the possible future problems of availability. 
+The aim of this guideline is to update the previous guidance about the appropriate use of blood products 
+that neither compromises the affected woman nor exposes her to unnecessary risk. Strategies to 
+maximise the haemoglobin (Hb) level at delivery as well as to minimise blood loss are also discussed.D
+D
+D
+D
+CPP
+P
+PRCOG Green-top Guideline No. 47 © Royal College of Obstetricians and Gynaecologists6 of 232. Introduction and background epidemiology
+Obstetric haemorrhage remains a major cause of maternal mortality in the UK and is now the third 
+leading cause of direct maternal deaths, accounting for approximately 10% of direct deaths. This does not 
+represent a significant increase in mortality as deaths have decreased overall. Substandard management 
+continues to be a significant contributor to mortality from haemorrhage.1 It is estimated that there are 
+more than 4000 cases of severe haemorrhage each year in the UK. The majority of these women will 
+need blood transfusion.
+Retrospective analyses of the clinical scenarios often criticise the employment of blood transfusion as 
+‘too little, too late’. Women at high risk of losing greater than 1000 ml should be strongly advised to 
+deliver in a setting where blood transfusion and intensive care facilities are available.2 
+Blood transfusion may be a life-saving procedure but it is not without risk. Recipients may rarely develop 
+transfusion-transmitted infections or suffer immunological sequelae such as red cell alloimmunisation. 
+The major risk, however, of blood transfusion is of a patient receiving an ‘incorrect blood component’.3 
+Strict adherence to correct sampling, cross-match and administration procedures is therefore of 
+paramount importance, even in an emergency. 
+3. Identification and assessment of evidence
+This guideline was developed in accordance with standard methodology for producing RCOG Green-
+top Guidelines. The Cochrane Library (including the Cochrane Database of Systematic Reviews and the 
+Database of Abstracts of Reviews of Effects [DARE]), EMBASE, Trip, MEDLINE and PubMed (electronic 
+databases) were searched for relevant randomised controlled trials, systematic reviews and meta-
+analyses. The search was restricted to articles published between 2003 and March 2013. The databases 
+were searched using the relevant Medical Subject Headings (MeSH) terms, including all subheadings, 
+and this was combined with a keyword search. A top-up search was performed in December 2014.
+Terms and keyword search words included ‘obstetrics and blood transfusion’, ‘tranexamic acid’, ‘factor 
+VIIa’, ‘cell salvage’, ‘antifibrinolytics’, ‘fibrinogen concentrate’, ‘haematinics’, ‘autologous transfusion’, 
+‘transfusion triggers’ and ‘platelet’. The search was limited to humans and the English language. The 
+National Library for Health and the National Guideline Clearinghouse were also searched for relevant 
+guidelines and reviews. Guidelines and recommendations produced by organisations such as the British 
+Committee for Standards in Haematology (BCSH) and various national bodies were considered. Where 
+possible, recommendations are based on available evidence and the areas where evidence is lacking are 
+annotated as ‘good practice points’.
+4. How can the risk of transfusion be reduced?
+4.1 Optimisation of haemoglobin in the antenatal period
+4.1.1 Diagnosis
+Anaemia in pregnancy is defined as first trimester haemoglobin (Hb) less than 110 g/l, second/third 
+trimester Hb less than 105 g/l, and postpartum Hb less than 100 g/l, in line with BCSH guidance.
+For normocytic or microcytic anaemia, a trial of oral iron should be considered as the first step and 
+further tests should be undertaken if there is no demonstrable rise in Hb at 2 weeks and compliance 
+has been checked.
+Pregnant women should be offered screening for anaemia at booking and at 28 weeks. Women 
+with multiple pregnancies should have an additional full blood count done at 20–24 weeks.PB
+PRCOG Green-top Guideline No. 47 © Royal College of Obstetricians and Gynaecologists7 of 23The BCSH has defined what it considers to be adequate Hb levels at different stages of 
+pregnancy.4 The intrapartum and postpartum thresholds for Hb are derived from the World 
+Health Organization with a modification suggested by the US Centers for Disease Control and 
+Prevention because of the plasma expansion seen in the second trimester.5–7
+If the Hb is less than 110 g/l in the first trimester or less than 105 g/l in the second or third trimester, 
+consider haematinic deficiency once haemoglobinopathies have been excluded. 
+Iron deficiency can be difficult to diagnose. The signs and symptoms are generally nonspecific. 
+Serum ferritin is the most useful test for diagnosing iron deficiency but it is an acute phase 
+reactant.4 Other laboratory parameters also have their limitations.8
+Anaemia not due to haematinic deficiency (for example, haemoglobinopathies and bone marrow failure 
+syndromes) should be managed by blood transfusion where appropriate in close conjunction with a 
+haematologist. 
+In line with the National Institute for Health and Care Excellence (NICE),9,10 screening for 
+anaemia should be offered at booking and at 28 weeks, with an additional full blood count at 
+20–24 weeks for women with multiple pregnancies.
+4.1.2 Treatment and management
+Oral iron should be the preferred first-line treatment for iron deficiency.
+Parenteral iron is indicated when oral iron is not tolerated or absorbed or patient compliance is in 
+doubt or if the woman is approaching term and there is insufficient time for oral supplementation 
+to be effective.
+Women should receive information on improvement of dietary iron intake and factors affecting 
+absorption of dietary iron.
+The role of recombinant human erythropoietin (rHuEPO) for non-end-stage renal anaemia is still 
+to be established and it should only be used in the context of a controlled clinical trial or on the 
+expert advice of the haematologist.
+Active management of the third stage of labour is recommended to minimise blood loss.
+Women at high risk of haemorrhage should be advised to deliver in hospital.
+A meta-analysis of randomised trials on the antenatal use of iron, with or without folic acid, 
+showed a 50% reduction in the risk of anaemia in the third trimester or at delivery.11
+A Cochrane review of studies comparing iron supplementation with no iron or placebo found 
+that iron supplementation decreased the incidence of low birthweight babies and prevented 
+maternal anaemia and iron deficiency anaemia.12 A second Cochrane review comparing 
+intermittent versus daily iron supplementation showed that intermittent supplementation 
+produced a similar risk of anaemia at term, prematurity and low birthweight babies, but was 
+associated with fewer side effects.13
+Parenteral therapy offers a shorter duration of treatment and a quicker response than oral 
+therapy.14 It is, however, more invasive and expensive to administer. Severe allergic reactions 
+are possible with all iron preparations. Intravenous iron products should only be administered 
+when staff trained to evaluate and manage anaphylactic or anaphylactoid reactions, as well as 
+resuscitation facilities, are immediately available.A
+C
+B
+AEvidence 
+level 2+
+Evidence 
+level 1++
+Evidence 
+level 1+
+Evidence 
+level 2+Evidence 
+level 2++
+Evidence 
+level 4
+C
+DRCOG Green-top Guideline No. 47 © Royal College of Obstetricians and Gynaecologists8 of 23Rich sources of dietary iron are red meat, fish and poultry. These provide haem iron that is 
+more easily absorbed than non-haem iron but the latter forms the vast majority of iron taken 
+through the diet.15 Vitamin C enhances the absorption of non-haem iron whereas tea and 
+coffee inhibit iron absorption from food.15
+rHuEPO is mostly used in the anaemia of end-stage renal disease. rHuEPO has been used both 
+antenatally and postpartum in patients without end-stage renal disease without any maternal, 
+fetal or neonatal adverse effects.16,17 Its use in clinical practice for non-end-stage renal anaemia 
+is still to be established and should only be used in the context of a controlled clinical trial 
+and/or under haematological advice.
+Clear evidence from randomised trials supports the active management of the third stage of 
+labour as a method of decreasing postpartum blood loss.18–20
+Maternal deaths from haemorrhage in the UK have fallen over the years and one contributor 
+is considered to be the hospitalisation for delivery of women at higher risk of haemorrhage 
+(older women, grand multiparae and those with pre-eclampsia). Analysis of such deaths has 
+led to a recommendation that women at high risk of haemorrhage should not be delivered in 
+units without immediate access to consultant-led care, blood products and intensive care.2
+5. General principles of blood transfusion
+5.1 Consent for blood transfusion
+Valid consent should be obtained where possible prior to administering a blood transfusion.
+In an emergency, where it is not feasible to get consent, information on blood transfusion should 
+be provided retrospectively.
+The reason for transfusion and a note of the consent discussion should be documented in the 
+patient’s case notes.
+The Advisory Committee on the Safety of Blood, Tissues and Organs (SaBTO), following 
+a consultation exercise looking at consent for blood transfusion, recommended that valid 
+consent for blood transfusion should be obtained wherever possible before administering a 
+transfusion. While this does not entail specific written consent, valid consent does require the 
+provision of information to patients on risks and benefits together with alternatives available 
+with clear documentation in the clinical records.21
+Where transfusion of all or specific blood components is refused, or an advance directive exists, this 
+should be documented in the patient’s clinical records and communicated to all relevant healthcare 
+professionals (see section 11).
+Patients who require an emergency blood transfusion may not be able to give valid consent 
+prior to the transfusion. Transfusion should not be delayed, but attempts should be made to 
+provide information retrospectively.21 Patient information leaflets on blood transfusion are 
+available from the UK blood transfusion services (see section 14).
+The decision process leading to transfusion including indication for transfusion and obtaining 
+valid consent should be documented in the patient’s clinical record.22,23 There is some limited 
+evidence24 that when the decision or reason for transfusion is documented there is a lower rate 
+of inappropriate transfusion.D
+DDEvidence 
+level 2+
+Evidence 
+level 3
+Evidence 
+level 4Evidence 
+level 1–
+Evidence 
+level 1+
+Evidence 
+level 4RCOG Green-top Guideline No. 47 © Royal College of Obstetricians and Gynaecologists9 of 235.2 Requirements for group and screen samples and cross-matching 
+All women should have their blood group and antibody status checked at booking and at 28 weeks 
+of gestation.
+Group and screen samples used for provision of blood in pregnancy should be less than 3 days old.
+In a woman at high risk of emergency transfusion, e.g. placenta praevia, and with no clinically 
+significant alloantibodies, group and screen samples should be sent once a week to exclude or 
+identify any new antibody formation and to keep blood available if necessary. Close liaison with 
+the hospital transfusion laboratory is essential.
+Women should have a group and screen sample taken in line with clear locally agreed protocols 
+for provision of blood.
+Maternal red cell antibodies are relatively common.25 These can cause haemolytic disease of 
+the fetus and newborn (HDFN) and will also have implications for the selection of blood for 
+transfusion in the mother to avoid the risk of haemolytic transfusion reactions. Accordingly, 
+the blood group and antibody status of the mother should be tested at booking and at 28 
+weeks of gestation.26,27
+When red cell antibodies are detected in the booking sample, further testing of maternal blood 
+should be undertaken to determine the specificity and the level of antibody or antibodies 
+and to assess the likelihood of HDFN,25 with early referral to a specialist fetal medicine unit 
+depending on the nature of the antibody, level and previous history. Further details on the 
+assessment and management of women with red cell antibodies during pregnancy are covered 
+in the RCOG Green-top Guideline.25
+Transfusion or pregnancy may stimulate the production of unexpected antibodies against 
+red cell antigens through either a primary or secondary immune response.28 To ensure that 
+the specimen used for compatibility testing is representative of a patient’s current immune 
+status, serological studies should be performed using blood collected no more than 3 days in 
+advance of the actual transfusion when the patient has been transfused or pregnant within 
+the preceding 3 months.28
+A formal deviation to the 3-day rule may be used in pregnant women with no clinically 
+significant alloantibodies who require blood standing by for potential obstetric emergencies, 
+e.g. placenta praevia,28 with samples sent once a week to the transfusion laboratory for testing. 
+Fetomaternal haemorrhage constitutes a smaller stimulus than transfusion because the number 
+of foreign antigens is limited and in many pregnancies the volume of red cells transferred from 
+fetus to mother is too small to stimulate a primary response.29
+The majority of laboratories in the UK now use automated testing for blood grouping and 
+antibody testing with advanced information technology systems for documentation and 
+reporting of results. The hospital transfusion laboratory can readily provide red cells that are 
+ABO and rhesus D (RhD) compatible using electronic issue with no cross-matching needed, 
+provided that the patient does not have any antibodies and there are robust automated systems 
+in place for antibody testing and identification of the patient.28 In this setting, since blood can 
+be readily issued, there is no need to reserve units for individual cases. Where electronic issue 
+is not available, a locally agreed maximum surgical blood ordering schedule should be used to 
+decide how many red cell units should be reserved and available for particular cases, based on 
+the obstetric diagnosis. In patients with red cell antibodies, cross-match between the patient’s 
+blood and the red cell units to be transfused is essential to ensure compatibility.PD
+D
+Evidence 
+level 3
+Evidence 
+level 4DRCOG Green-top Guideline No. 47 © Royal College of Obstetricians and Gynaecologists10 of 23It should be borne in mind that many hospitals send antenatal serology off-site for economies of scale. If 
+hospitals send antenatal serology samples for testing off-site, it is advised that the results of the grouping 
+and antibody screen should be made readily available for the local unit. If laboratory provision is off-site, 
+there should be robust systems in place for local arrangements for the provision of blood, and components 
+if required, taking into account transport times and whether or not the woman has red cell antibodies.
+Unless secure electronic patient identification systems are in place, a second sample should be 
+requested for confirmation of the ABO group of a first-time patient prior to transfusion, where 
+this does not impede the delivery of urgent red cells or other components.28
+5.3 Blood product specification in pregnancy and the puerperium 
+ABO-, RhD- and K- (Kell-) compatible red cell units should be transfused.
+If clinically significant red cell antibodies are present, then blood negative for the relevant antigen 
+should be cross-matched before transfusion; close liaison with the transfusion laboratory is 
+essential to avoid delay in transfusion in life-threatening haemorrhage.
+Cytomegalovirus- (CMV-) seronegative red cell and platelet components should be provided for 
+elective transfusions during pregnancy.
+Pregnant women (and women of childbearing age) who are RhD negative must only receive 
+RhD-negative blood to avoid the risk of RhD alloimmunisation.28 Previous blood transfusion is 
+an important cause for alloimmunisation with antibodies other than anti-D, in particular anti-K, 
+which can cause severe HDFN.25 Accordingly, unless a woman is known to be K positive, only 
+K-negative blood should be used for transfusion in women of childbearing age.28 
+Major obstetric haemorrhage protocols must include the provision of emergency blood with immediate issue 
+of group O, RhD-negative and K-negative units, with a switch to group-specific blood as soon as feasible.
+The aim of antibody screening is to determine the presence of atypical red cell antibodies 
+of likely clinical significance. When the antibody screen is positive, further testing is 
+required to identify the relevant antibody or antibodies and the laboratory should select 
+red cell units negative for the relevant antigen for cross-matching.28 However, in a major 
+obstetric haemorrhage there should be no delay in the provision of blood with the initial use 
+of group O-negative units if needed, with subsequent transfusion of cross-matched antigen-
+negative units when available.30 Close liaison with the transfusion laboratory is essential, with 
+input if needed from the clinical haematology team and specialist advice from the national 
+blood service.
+In 2012, SaBTO stated that CMV-seronegative red cells and platelets should be provided, where 
+possible, for pregnant women.31 The UK policy of universal leucocyte depletion substantially 
+reduces the risk of CMV transmission.32 In an emergency, such as major haemorrhage, standard 
+leucocyte-depleted components should be given to avoid delay and CMV-negative blood or 
+platelets are not needed for transfusion during delivery or in the postpartum period.31
+6. What are the strategies to minimise the use of banked blood?
+6.1 Is there a role for preoperative/predelivery autologous blood deposit?
+Predelivery autologous blood deposit is not recommended.
+A Cochrane review on preoperative autologous donations33 considered randomised controlled 
+trials and concluded that the studies were of poor quality, with insufficient numbers of CEvidence 
+level 4
+Evidence 
+level 2+
+Evidence 
+level 4D
+D
+Evidence 
+level 1–BRCOG Green-top Guideline No. 47 © Royal College of Obstetricians and Gynaecologists11 of 23patients and high transfusion rates. None of the studies were conducted on pregnant women. 
+Preoperative/predelivery deposit of autologous blood is not a service that is available routinely 
+in the UK.
+6.2 Is there a role for intraoperative cell salvage (IOCS)?
+Cell salvage is recommended for patients where the anticipated blood loss is great enough to 
+induce anaemia or expected to exceed 20% of estimated blood volume.
+Consent should be obtained for IOCS where possible and its use in obstetric patients should be 
+subject to audit and monitoring.
+Cell salvage should only be performed by multidisciplinary teams who develop regular experience 
+of IOCS.
+Where IOCS is used during caesarean section in RhD-negative, previously nonsensitised women 
+and where cord blood group is confirmed as RhD positive (or unknown), a minimum dose of 1500 iu 
+anti-D immunoglobulin should be administered following the reinfusion of salvaged red cells.
+A maternal blood sample should be taken for estimation of fetomaternal haemorrhage 30–40 
+minutes after reinfusion in case more anti-D is indicated.
+In general, intraoperative cell salvage (IOCS) has been recommended for nonobstetric patients 
+undergoing elective or emergency surgical procedures where the anticipated blood loss is 
+great enough to induce anaemia or expected to exceed 20% of estimated blood volume.34–36 
+Therefore, IOCS would not be required for most caesarean sections if a similar threshold 
+were to be adopted.
+IOCS has been used during caesarean section in a number of case reports and case series 
+without any reported complications related to receiving salvaged blood.37 Although current 
+evidence supports the use of IOCS in obstetrics,38,39 evidence from large randomised controlled 
+trials are needed to support the routine practice of IOCS in obstetrics.
+Preoperative discussions on blood transfusion should be undertaken according to SaBTO 
+guidance,21 as outlined in the section above. These discussions should include oral and written 
+information on cell salvage, if it is available in the facility where the woman is to give birth. 
+More information for staff and patients is available from the UK Cell Salvage Action Group 
+website (see section 14 for link details).
+The NICE guideline on IOCS in obstetrics states that this procedure should only be performed 
+by multidisciplinary teams who have regular experience of IOCS.37 UK centres with high 
+levels of experience of IOCS in obstetrics have developed this experience by training staff to 
+use cell salvage during elective routine low-risk caesarean sections.
+Using disposables for low-risk cases to ensure that theatre staff are trained requires financial resource. 
+If a hospital trust/maternity service provider cannot afford to purchase disposables to train staff in the 
+elective, low-risk setting, then they cannot provide cell salvage in an emergency setting. 
+IOCS, together with the use of modern leucocyte depletion filters, has been shown to be 
+effective at removing the common markers of amniotic fluid contamination.40 However, it 
+will not remove fetal blood cells and therefore adequate anti-D immunisation (as determined 
+by Kleihauer test 30–40 minutes after the procedure) will be required to prevent rhesus 
+immunisation in RhD-negative women.41Evidence 
+level 2+CEvidence 
+level 1–
+Evidence 
+level 2+
+Evidence 
+level 4P
+P
+C
+CRCOG Green-top Guideline No. 47 © Royal College of Obstetricians and Gynaecologists12 of 23 7. Management of obstetric haemorrhage with blood components
+There should be a clear local protocol on how to manage major obstetric haemorrhage. 
+The protocol should be updated annually and practised in ‘skills drills’ to inform and train relevant 
+personnel.
+In October 2010, the National Patient Safety Agency (NPSA) reported 94 incidents (23 obstetric 
+cases) where there was a delay in accessing blood components for life-threatening bleeding 
+patients, resulting in unacceptable morbidity and mortality.42 The report highlighted the 
+need for local protocols that allow provision of emergency blood (including out of hours) in 
+patients with major haemorrhage. These protocols should waive restrictions on special blood 
+components, such as irradiated blood components or CMV, in order to avoid unnecessary 
+delays of red blood cell (RBC) provision and to allow for rapid delivery of uncross-matched 
+blood (i.e. group O RhD and K negative).42
+A randomised controlled trial found that practical, multidisciplinary, obstetric emergency 
+training increased midwives’ and doctors’ knowledge of obstetric emergency management, 
+including postpartum haemorrhage (PPH);43 thus, the major haemorrhage protocol should be 
+practised in ‘skills drills’ and updated annually so as to inform and train relevant personnel.
+7.1 Are there mechanical strategies that can be employed?
+Clinicians should familiarise themselves with mechanical strategies that can be employed to 
+reduce postpartum blood loss.
+The mechanical strategies that can be employed to minimise blood loss during PPH are outlined in 
+RCOG Green-top Guideline No. 53, Prevention and Management of Postpartum Haemorrhage .30
+7.2 What blood components can be used for obstetric haemorrhage?
+7.2.1 When should red cells be used?
+There are no firm criteria for initiating red cell transfusion. The decision to provide blood transfusion 
+should be made on clinical and haematological grounds.
+In an extreme situation and when the blood group is unknown, group O RhD-negative red cells 
+should be given (although they may be incompatible for patients with irregular antibodies).
+Staff working in obstetric units should be aware of the location of the satellite blood fridge (where 
+available) and should ensure that access is possible for blood collection.
+There are no firm criteria for initiating red cell transfusion.44 The decision to perform blood 
+transfusion should be made on both clinical and haematological grounds. Blood transfusion is 
+almost always required when the Hb is less than 60 g/l and it is rarely required when the Hb is 
+greater than 100 g/l.44 It should also be remembered that patients with acute haemorrhage can have 
+normal Hb; hence the clinical evaluation of the patient in this situation is extremely important. 
+Between October 2006 and September 2010, the Rapid Response Report from the NPSA reported 
+11 deaths and 83 incidents where the patient suffered harm as a result of delays in the provision 
+of blood. One of the reasons for the delay in blood transfusion during life-threatening bleeding 
+episodes was a lack of understanding concerning the term ‘cross-matched’, whereby clinicians 
+frequently request ‘cross-matched blood’ without realising that this could take some time, which PEvidence 
+level 3
+Evidence 
+level 1+
+Evidence 
+level 4D
+D
+DPDRCOG Green-top Guideline No. 47 © Royal College of Obstetricians and Gynaecologists13 of 23is not optimal in an emergency.42 Thus, in the event of life-threatening haemorrhage, even if a 
+woman has RBC alloantibodies, the transfusion of group O RhD-negative red cells, or group-
+specific red cells, must not be delayed.
+In order to facilitate the immediate provision of uncross-matched group O red cell units for 
+patients who suffer massive haemorrhage, some National Health Service (NHS) organisations 
+have introduced satellite blood fridges in different clinical areas. Medical staff working in these 
+organisations and who are involved in the management of major bleeding should be aware of 
+the fridge location and should ensure that access is possible for blood collection.42
+7.2.2 In what circumstances should fresh frozen plasma (FFP) and cryoprecipitate be used?
+FFP at a dose of 12–15 ml/kg should be administered for every 6 units of red cells during major 
+obstetric haemorrhage. Subsequent FFP transfusion should be guided by the results of clotting 
+tests if they are available in a timely manner, aiming to maintain prothrombin time (PT) and 
+activated partial thromboplastin time (APTT) ratios at less than 1.5 x normal.
+It is essential that regular full blood counts and coagulation screens (PT, APTT and fibrinogen) are 
+performed during the bleeding episode.
+Cryoprecipitate at a standard dose of two 5-unit pools should be administered early in major 
+obstetric haemorrhage. Subsequent cryoprecipitate transfusion should be guided by fibrinogen 
+results, aiming to keep levels above 1.5 g/l.
+The FFP and cryoprecipitate should ideally be of the same group as the recipient. If unavailable, 
+FFP of a different ABO group is acceptable providing that it does not have a high titre of anti-A or 
+anti-B activity.
+No anti-D prophylaxis is required if a RhD-negative woman receives RhD-positive FFP or 
+cryoprecipitate.
+Observational studies in military combat casualties have suggested that early administration of 
+FFP in high ratios improves clinical outcomes of trauma bleeding patients.45–47 However, due 
+to the lack of randomised controlled trials, the optimum FFP-to-RBC ratio for management of 
+major bleeding remains unknown.48–51 Further, no studies have evaluated the optimum dose 
+of FFP during major bleeding. Until further evidence becomes available, we recommend that 
+FFP at a dose of 12–15 ml/kg should be administered for every 6 units of red cells during a 
+major obstetric bleed.30
+Subsequent FFP transfusion should be guided by the results of clotting tests (if they are available 
+in a timely manner), aiming to maintain PT and APTT ratios at less than 1.5 x normal.52
+Once the FFP has been ordered, it takes at least 30 minutes to thaw and issue.52 During this time, 
+resuscitation should be continued with volume expanding fluids or red cells as appropriate. 
+It should be borne in mind that, at present in the UK, most units of FFP (as is the case with red 
+cells, platelets and cryoprecipitate) are not virally inactivated and that transfusion with these 
+products offers a small risk of transfusion-transmitted infection.52
+Full blood counts play an important role in guiding red cell and platelet transfusion during 
+major haemorrhage, while PT/APTT and fibrinogen results should be used to guide FFP and 
+cryoprecipitate transfusion respectively.53Evidence 
+level 4
+D
+DD
+D
+Evidence 
+level 4PRCOG Green-top Guideline No. 47 © Royal College of Obstetricians and Gynaecologists14 of 23Observational studies have indicated that a fibrinogen level of less than 2.9 g/l is associated 
+with increased risk of PPH.54 One study showed that the decrease in fibrinogen levels was 
+an early predictor of PPH and that the risk for severe PPH was 2.63-fold higher for each 1 g/l 
+decrease in fibrinogen, with the positive predictive value being 100% if the fibrinogen level 
+was 2 g/l or less.55 It is important to recognise that during pregnancy fibrinogen levels increase 
+above normal ranges (varying between 3.5 and 6.5 g/l) and the above studies have indicated 
+that during PPH a fibrinogen level of 2.0 g/l or less is abnormally low.
+Although the above studies have indicated that fibrinogen levels reduce significantly during PPH, no 
+clinical studies have looked into the timing of when to introduce fibrinogen replacement therapy 
+during PPH and what the minimum fibrinogen level should be when managing PPH. Cryoprecipitate 
+at a standard dose of two 5-unit pools should be administered early in major obstetric haemorrhage 
+and subsequent cryoprecipitate transfusion should be guided by fibrinogen results, aiming to keep a 
+fibrinogen level of more than 1.5 g/l. 
+In order to avoid the low risk of ABO-associated haemolysis, FFP and cryoprecipitate should 
+ideally be of the same blood group as the recipient. If this is not possible, FFP of a different 
+group may be acceptable if it does not possess high-titre anti-A or anti-B activity.52
+Sensitisation following the administration of RhD-positive FFP or cryoprecipitate to RhD-
+negative patients is most unlikely; hence no anti-D prophylaxis is required if a RhD-negative 
+woman receives RhD-positive FFP or cryoprecipitate.52
+7.2.3 When should platelets be used? 
+Aim to maintain the platelet count above 50 x 109/l in the acutely bleeding patient.
+A platelet transfusion trigger of 75 x 109/l is recommended to provide a margin of safety.
+The platelets should ideally be group compatible. RhD-negative women should also receive RhD-
+negative platelets.
+The platelet count should not be allowed to fall below 50 x 109/l in the acutely bleeding 
+patient as this represents the critical level for haemostasis. Such a low platelet count may be 
+anticipated when approximately two blood volumes have been replaced by fluid or blood 
+components.56 A platelet transfusion trigger of 75 x 109/l is recommended in a patient with 
+ongoing bleeding, so as to provide a margin of safety.57
+Platelets may not be on-site in many units; therefore their need should be anticipated and good 
+communication with the transfusion laboratory maintained.
+Platelet concentrates should ideally be of the same ABO group as the recipient. ABO-nonidentical 
+platelet transfusions have been associated with poorer platelet count increments in some studies, 
+but this is not usually clinically significant in terms of the haemostatic effectiveness of the 
+platelet transfusion.58 Administration of ABO-nonidentical platelets is an acceptable transfusion 
+practice, in particular, when platelet concentrates are in short supply or when human leucocyte 
+antigen (HLA)-matched platelets are required and the best match is not ABO compatible.58
+In order to avoid the development of anti-D antibodies, RhD-negative platelet concentrates 
+should be given where possible to RhD-negative women of childbearing potential.58
+If RhD-positive platelets are transfused to a RhD-negative woman of childbearing potential, anti-D 
+immunoglobulin should be administered. A dose of 250 iu anti-D immunoglobulin is sufficient to Evidence 
+level 3
+Evidence 
+level 3D
+P
+Evidence 
+level 4DEvidence 
+level 3
+Evidence 
+level 2–RCOG Green-top Guideline No. 47 © Royal College of Obstetricians and Gynaecologists15 of 23cover five adult therapeutic doses of platelets given within a 6-week period. This may be given 
+subcutaneously to minimise bruising and haematomas in thrombocytopenic women.58
+Platelets may be given via an unused blood giving set, although a platelet giving set reduces 
+wastage because it has less dead space. Transfusion of platelets through a giving set previously 
+used for red cells is not recommended.59
+7.2.4 Is there a role for near patient testing of coagulation?
+Centres that are using thromboelastography (TEG®, Haemonetics, Braintree, Massachusetts, USA) 
+or rotation thromboelastometry (ROTEM®, Tem, Munich, Germany) for guiding blood transfusion 
+during major obstetric haemorrhage must ensure that their transfusion algorithm protocol has 
+been validated and that quality assurance measures are followed.
+TEG® and ROTEM® are viscoelastic whole-blood assays that provide information on the 
+coagulation process through the graphic display of clot initiation, propagation and lysis. 
+Experiences in cardiac and liver surgery have suggested that TEG® or ROTEM® can be used 
+to guide transfusion of blood components, although currently there is no validated transfusion 
+algorithm for TEG®/ROTEM®. NHS Quality Improvement Scotland (now known as Healthcare 
+Improvement Scotland) has reviewed the evidence on the clinical and cost effectiveness of 
+TEG®/ROTEM® in liver and cardiac surgery; the report concluded that this intervention is cost-
+effective (assuming a usage of 200 tests annually) since it reduces inappropriate transfusions, 
+thus improving transfusion management and patients’ clinical outcome.60
+There are no randomised controlled trials on the use of TEG® or ROTEM® in major obstetric 
+haemorrhage. At the current time, unless a centre has special expertise in the use of TEG®/ROTEM®, 
+conventional testing should be performed regularly during major obstetric haemorrhage to guide 
+transfusion of blood components. 
+If hospitals are using TEG® or ROTEM® for guiding blood transfusion during major obstetric 
+haemorrhage, it is important that the transfusion algorithm protocol has been validated and 
+that quality assurance measures are followed.61
+8. Pharmacological strategies for management of major obstetric haemorrhage
+8.1 Is there a role for recombinant factor VIIa (rFVIIa) therapy?
+The use of rFVIIa may be considered as a treatment for life-threatening PPH, but should not delay or 
+be considered a substitute for a live-saving procedure such as embolisation or surgery, or transfer 
+to a referral centre.
+Factor VIIa has a pivotal role in initiating the process of blood coagulation. Recombinant 
+factor VIIa (rFVIIa) is licensed for treatment of inherited bleeding disorders. Outside of these 
+settings, a review of 35 randomised controlled trials that used rFVIIa on an off-licence basis 
+demonstrated that rFVIIa significantly increased the risk of arterial thrombosis.62 
+There have been no randomised controlled trials to assess the efficacy of rFVIIa in PPH. A 
+number of case series and national registries have indicated that administration of rFVIIa during 
+PPH might reduce bleeding and transfusion requirements. However, none of these reports were 
+powered to assess the safety of rFVIIa. Moreover, these studies vary significantly with respect to 
+the timing and dosing of rFVIIa administration.63–65 The incidence of thrombotic complications 
+in a review of 272 women with PPH who had received rFVIIa was reported to be 2.5%.66D
+Evidence 
+level 1+ Evidence 
+level 2–Evidence 
+level 3
+Evidence 
+level 4
+Evidence 
+level 1–
+D
+Evidence 
+level 3RCOG Green-top Guideline No. 47 © Royal College of Obstetricians and Gynaecologists16 of 23There is no evidence to support the prophylactic use of rFVIIa to reduce blood loss for caesarean sections. 
+In order to ensure the maximum effect of rFVIIa on clot formation, attempts should be made 
+to correct thrombocytopenia, acidosis and hypofibrinogenaemia.67
+In the event of intractable obstetric haemorrhage, the administration of rFVIIa may be an option to be 
+discussed with the haematologists. It is important that each unit or hospital prepares local guidance on 
+indications for rFVIIa in managing intractable obstetric haemorrhage. A protocol should be available for 
+how to procure it urgently.
+8.2 Is there a role for fibrinogen concentrate therapy?
+Fibrinogen concentrate is not licensed in the UK for the management of acquired bleeding disorders. 
+Thus, its use in PPH should be considered only in the context of clinical trials.
+The main advantages of fibrinogen concentrate compared with cryoprecipitate are faster 
+reconstitution, ease of use and not requiring thawing or ABO compatibility. No randomised 
+controlled trials or prospective clinical studies have assessed the efficacy of fibrinogen concentrate 
+in obstetric haemorrhage. One retrospective study compared the clinical outcomes of 20 and 14 
+women with PPH who had received fibrinogen concentrate and cryoprecipitate respectively.68 
+There were no significant differences between the two groups with regard to estimated blood 
+loss, RBC transfusion, FFP transfusion and high dependency unit or intensive therapy unit stay.
+8.3 Is there a role for antifibrinolytics?
+For those centres not participating in clinical trials, consideration should be given to using 
+tranexamic acid during major obstetric haemorrhage.
+The main antifibrinolytic agent used in the UK is tranexamic acid. Tranexamic acid is a synthetic 
+derivative of the amino acid lysine that reversibly binds to the lysine-binding sites of the 
+plasminogen molecule. In doing so, it prevents activation of plasminogen to plasmin, leading to 
+inhibition of fibrinolysis. The CRASH-2 study showed that tranexamic acid reduces mortality in 
+bleeding trauma patients without an increase in the rate of venous thromboembolism.69
+In obstetric settings, several small randomised trials have compared the use of tranexamic acid 
+with placebo70–72 or no treatment.73–76 Apart from one study,75 all others were performed in women 
+undergoing caesarean section. The overall conclusion was that tranexamic acid significantly 
+reduces blood loss.77 However, none of these trials were statistically powered to assess mortality 
+rates and the safety of tranexamic acid. Further, they were heterogenous in their definition of 
+PPH, the dosing of tranexamic acid and the timing when blood loss was measured.
+9. How should intrapartum anaemia be managed?
+In addition to major haemorrhage guidelines, obstetric units should have guidelines on criteria for 
+red cell transfusion in anaemic women who are not actively bleeding. If the Hb is less than 70 g/l in 
+labour or in the immediate postpartum period, the decision to transfuse should be made according 
+to the individual’s medical history and symptoms.
+Concerns about the safety and availability of donor blood have promoted greater scrutiny 
+of blood transfusion practice with a focus on restrictive transfusion triggers and avoidance 
+strategies where available. Outside the context of major haemorrhage, there is little evidence 
+of the benefit of blood transfusion in fit, healthy, asymptomatic patients. The decision to 
+transfuse must be based on careful clinical assessment in conjunction with the Hb level. DEvidence 
+level 2–
+Evidence 
+level 1–
+PEvidence 
+level 4
+D
+Evidence 
+level 2–
+Evidence 
+level 4RCOG Green-top Guideline No. 47 © Royal College of Obstetricians and Gynaecologists17 of 23Transfusion will be indicated in women with continued bleeding or at risk of further bleeding, 
+imminent cardiac compromise or significant symptoms requiring urgent correction.4
+10. How should women with postpartum anaemia be managed in the postnatal period? 
+If the Hb is less than 70 g/l in the postnatal period, where there is no ongoing or threat of bleeding, 
+the decision to transfuse should be made on an informed individual basis.
+Audits indicate that a high proportion of blood transfusions administered in the postpartum 
+period may be inappropriate, with underutilisation of iron supplements.78,79 Prompt recognition 
+of iron deficiency in the antenatal period followed by iron therapy may reduce the subsequent 
+need for blood transfusion.4 If, after careful consideration, elective transfusion is required, 
+women should be fully counselled about the potential risks. Written information should be 
+provided and valid informed consent should be obtained before the transfusion is administered. 
+11. How should women who decline blood products be managed? 
+Hb should be optimised prior to delivery to prevent avoidable anaemia.
+Consent/refusal of blood and components or other transfusion-sparing techniques should be 
+discussed and documented during the antenatal period.
+Use of pharmacological, mechanical and surgical procedures to avert the use of banked blood and 
+blood components should be considered early.
+IOCS has a role in the management of patients who refuse allogeneic blood transfusion.
+There are additional challenges in the management of pregnancy in mothers refusing blood 
+transfusion, including for religious reasons, i.e. Jehovah’s Witnesses (JW), with a higher risk 
+of morbidity and mortality.80–82 Accordingly, all women declining blood transfusion require 
+careful multidisciplinary planning with senior clinician input during pregnancy to minimise 
+anaemia and to manage blood loss. Early use of iron replacement is indicated with, if needed, 
+use of intravenous iron.83,84
+Antenatal planning is essential and haematinic deficiencies should be corrected if the Hb is less than 
+105 g/l for all women before delivery. 
+The treating clinician will need to establish which blood components or blood-sparing techniques (e.g. 
+clotting factor products) are acceptable. An example of a suggested care plan for managing women refusing 
+blood transfusion is available at: http://www.transfusionguidelines.org.uk/transfusion-handbook/12-
+management-of-patients-who-do-not-accept-transfusion/12-2-jehovah-s-witnesses-and-blood-transfusion. 
+The woman should have an opportunity to discuss consent alone (witnessed) with an experienced 
+clinician. Treating clinicians should ensure that the woman is fully informed of the risks of refusing 
+transfusion and of maternal mortality data for JW compared with non-JW women.80 This needs to be 
+handled sensitively to avoid any possibility of coercion. 
+An advance directive should be completed and carried in the hand-held notes, although a woman should 
+always be given the opportunity to change her mind about the use of blood products.
+The woman may wish to wear a ‘no blood’ wristband to make it clear to all members of the treating team 
+that blood transfusion is not to be used.D
+C
+Evidence 
+level 2–Evidence 
+level 4P
+P
+PEvidence 
+level 4RCOG Green-top Guideline No. 47 © Royal College of Obstetricians and Gynaecologists18 of 23The use of a Patient Blood Management (PBM) programme is recommended by AABB 
+(formerly the American Association of Blood Banks), the Australian National Blood Authority 
+and the National Blood Transfusion Committee, which covers England and North Wales (see 
+section 14). PBM involves an all-encompassing approach to avoid unnecessary transfusion by 
+optimising preoperative/predelivery Hb, avoiding overtransfusion, using cell salvage where 
+appropriate, accepting evidence-based lower transfusion triggers and using intravenous or oral 
+iron supplements in women who are not actively bleeding and are cardiovascularly stable.85
+The Code of Practice for the Surgical Management of Jehovah’s Witnesses by the Royal College of 
+Surgeons of England and Management of Anaesthesia for Jehovah’s Witnesses by the Association of 
+Anaesthetists of Great Britain and Ireland provide useful information.86,87
+Evidence from orthopaedic and cardiac surgery supports the premise that use of autologous 
+blood from IOCS decreases the requirement for allogeneic transfusion. In one study with 68 
+patients included in the review by NICE, the mean postoperative Hb level was significantly 
+greater in the group that had blood cell salvage compared with the control group (104 [SD 
+15] versus 81 [SD 14] g/l). Also, 2.9% (1/34) of patients who received cell salvage required 
+an allogeneic blood transfusion compared with 23.5% (8/34) of the control group.88 Current 
+evidence supports the use of IOCS in obstetrics, which has been endorsed by several bodies 
+and is likely to become increasingly commonplace.37 
+12. Recommendations for future research
+l Define the coagulation abnormalities during major obstetric haemorrhage and investigate the 
+role of point of care testing (i.e. TEG® or ROTEM®) in the diagnosis and management of 
+obstetric haemorrhage.
+l Determine the optimal dose and timing of cryoprecipitate and FFP transfusion during major 
+obstetric haemorrhage.
+l Randomised controlled trials are needed to determine the role of fibrinogen concentrate during 
+major haemorrhage. The WOMAN study (Clinicaltrials.gov ID: NCT00872469), a large, international, 
+randomised, double-blind, placebo-controlled trial, will be addressing the role of tranexamic acid in 
+women with a clinical diagnosis of PPH and data collection is due to finish in 2016. 
+13. Auditable topics
+Standards for audit of documentation: 
+l Provision of local protocols for the management of massive obstetric haemorrhage in all obstetric 
+hospitals (100%).
+l 100% of the staff members, including clinicians, midwives, biomedical scientists and porters, are 
+familiar with this local protocol.
+l Provision of local guidelines for red cell transfusion in anaemic women who are not actively 
+bleeding (100%).
+l Provision of local guidelines for the treatment of antenatal and postnatal anaemia (100%).
+l Documentation of the reasons for transfusion in all patients receiving blood products (100%).
+Standards for audit of practice:
+l Proportion of cases of major obstetric haemorrhage that were incident reported (100%).
+l All cases of major obstetric haemorrhage to be reviewed to ensure that the communication chain 
+worked and that there was no delay in the provision of blood products (100%).
+l Provision of written information on the risks of blood transfusion to women who are transfused (100%).
+l All women who have had a blood transfusion should have their post-transfusion Hb checked (100%).Evidence 
+level 2+Evidence 
+level 4RCOG Green-top Guideline No. 47 © Royal College of Obstetricians and Gynaecologists19 of 2314. Useful links and support groups 
+l NHS Blood and Transplant. Patient Information Leaflets [http://hospital.blood.co.uk/ 
+patient-services/patient-blood-management/patient-information-leaflets/].
+l NHS Choices. Blood transfusion [http://www.nhs.uk/Conditions/Blood-transfusion/Pages/
+Introduction.aspx].
+l Joint United Kingdom (UK) Blood Transfusion and Tissue Transplantation Services Professional 
+Advisory Committee. UK Cell Salvage Action Group [http://www.transfusionguidelines.org.uk/
+transfusion-practice/uk-cell-salvage-action-group].
+l Patient Blood Management
+ m AABB. Patient Blood Management [http://www.aabb.org/pbm/Pages/default.aspx].
+ m National Blood Authority Australia. Patient Blood Management Guidelines [http://www.
+blood.gov.au/pbm-guidelines].
+ m Joint United Kingdom (UK) Blood Transfusion and Tissue Transplantation Services Professional 
+Advisory Committee. Patient Blood Management [http://www.transfusionguidelines.org.uk/
+uk-transfusion-committees/national-blood-transfusion-committee/patient-blood-management].
+l The Royal College of Surgeons of England. Code of Practice for the Surgical Management of 
+Jehovah’s Witnesses . London: The Royal College of Surgeons of England; 2002 [http://www.rcseng.
+ac.uk/publications/docs/jehovahs_witness.html].
+References
+1. Knight M, Kenyon S, Brocklehurst P, Neilson J, Shakespeare 
+J, Kurinczuk JJ, editors, on behalf of MBRRACE-UK. 
+Saving Lives, Improving Mothers’ Care - Lessons learned 
+to inform future maternity care from the UK and 
+Ireland Confidential Enquiries into Maternal Deaths 
+and Morbidity 2009–12 . Oxford: National Perinatal 
+Epidemiology Unit, University of Oxford; 2014.
+2. Centre for Maternal and Child Enquiries (CMACE). 
+Saving Mothers’ Lives: reviewing maternal deaths to 
+make motherhood safer: 2006–08. The Eighth Report on 
+Confidential Enquiries into Maternal Deaths in the United 
+Kingdom. BJOG 2011;118 Suppl 1:1–203.
+3. Serious Hazards of Transfusion Steering Group. Serious 
+Hazards of Transfusion Annual Report 2013 . Manchester: 
+SHOT; 2013.
+4. Pavord S, Myers B, Robinson S, Allard S, Strong J, 
+Oppenheimer C. UK guidelines on the management of iron 
+deficiency in pregnancy. Br J Haematol 2012;156:588–600.
+5. World Health Organization. Iron Deficiency Anaemia: 
+Assessment, Prevention and Control. A guide for 
+programme managers . Geneva: WHO; 2001.
+6. World Health Organization. The Prevalence of Anaemia in 
+Women: A tabulation of available information . 2nd ed. 
+Geneva: WHO; 1992.
+7. Centers for Disease Control (CDC). CDC criteria for anemia 
+in children and childbearing-aged women. MMWR Morb 
+Mortal Wkly Rep 1989;38:400–4.
+8. Adams PC, Reboussin DM, Press RD, Barton JC, Acton 
+RT, Moses GC, et al. Biological variability of transferrin 
+saturation and unsaturated iron-binding capacity. Am J 
+Med 2007;120:999.e1–7.
+9. National Institute for Health and Clinical Excellence. 
+Antenatal care . NICE clinical guideline 62. [Manchester]: 
+NICE; 2008.
+10. National Institute for Health and Clinical Excellence. 
+Multiple pregnancy: The management of twin and 
+triplet pregnancies in the antenatal period . NICE clinical 
+guideline 129. Manchester: NICE; 2011.
+11. Haider BA, Olofin I, Wang M, Spiegelman D, Ezzati M, 
+Fawzi WW. Anaemia, prenatal iron use, and risk of adverse 
+pregnancy outcomes: systematic review and meta-analysis. 
+BMJ 2013;346:f3443.12. Pena-Rosas JP, De-Regil LM, Dowswell T, Viteri FE. Daily 
+oral iron supplementation during pregnancy. Cochrane 
+Database Syst Rev 2012;(12):CD004736.
+13. Pena-Rosas JP, De-Regil LM, Dowswell T, Viteri FE. 
+Intermittent oral iron supplementation during pregnancy. 
+Cochrane Database Syst Rev 2012;(7):CD009997.
+14. Bhandal N, Russell R. Intravenous versus oral iron therapy 
+for postpartum anaemia. BJOG 2006;113:1248–52.
+15. Lynch SR. Interaction of iron with other nutrients. Nutr 
+Rev 1997;55:102–10.
+16. Zimmermann R, Breymann C, Huch R, Huch A. rHuEPO 
+in the treatment of postpartum anemia: subcutaneous 
+versus intravenous administration. Clin Investig 1994;72(6 
+Suppl):S25–30.
+17. Braga J, Marques R, Branco A, Gonçalves J, Lobato L, 
+Pimentel JP, et al. Maternal and perinatal implications of 
+the use of human recombinant erythropoietin. Acta Obstet 
+Gynecol Scand 1996;75:449–53.
+18. Prendiville WJ, Harding JE, Elbourne DR, Stirrat 
+GM. The Bristol third stage trial: active versus 
+physiological management of third stage of labour. BMJ 
+1988;297:1295–1300.
+19. Prendiville WJ, Elbourne D, McDonald S. Active versus 
+expectant management in the third stage of labour. 
+Cochrane Database Syst Rev 2000;(2):CD000007.
+20. Rogers J, Wood J, McCandlish R, Ayers S, Truesdale A, 
+Elbourne D. Active versus expectant management of third 
+stage of labour: the Hinchingbrooke randomised controlled 
+trial. Lancet 1998;351:693–9.
+21. Advisory Committee on the Safety of Blood, Tissues and 
+Organs. Patient consent for blood transfusion . London: 
+Department of Health; 2011.
+22. British Committee for Standards in Haematology. Guideline 
+on the Administration of Blood Components . London: 
+BCSH; 2009. 
+23. United Kingdom Blood Services; Norfolk D, editor. 
+Handbook of Transfusion Medicine . 5th ed. Norwich: 
+TSO; 2014.
+24. Friedman MT, Ebrahim A. Adequacy of physician 
+documentation of red blood cell transfusion and correlation 
+with assessment of transfusion appropriateness. Arch 
+Pathol Lab Med 2006;130:474–9.RCOG Green-top Guideline No. 47 © Royal College of Obstetricians and Gynaecologists20 of 2325. Royal College of Obstetricians and Gynaecologists. 
+The Management of Women with Red Cell Antibodies 
+during Pregnancy . Green-top Guideline No. 65. London: 
+RCOG; 2014.
+26. National Collaborating Centre for Women’s and Children’s 
+Health. Antenatal Care . Clinical Guideline No. 6. London: 
+RCOG Press; 2008.
+27. British Committee for Standards in Haematology. Guideline 
+for blood grouping and antibody testing in pregnancy . 
+London: BCSH; 2006.
+28. British Committee for Standards in Haematology, Milkins C, 
+Berryman J, Cantwell C, Elliott C, Haggas R, et al. Guidelines 
+for pre-transfusion compatibility procedures in blood 
+transfusion laboratories. Transfus Med 2013;23:3–35.
+29. Klein HG, Anstee DJ. Mollison’s Blood Transfusion in Clinical 
+Medicine . 11th ed. Oxford: Blackwell Publishing; 2006.
+30. Royal College of Obstetricians and Gynaecologists. Prevention 
+and Management of Postpartum Haemorrhage . Green-top 
+Guideline No. 52. London: RCOG; 2009.
+31. Advisory Committee on the Safety of Blood, Tissues and 
+Organs. Cytomegalovirus tested blood components. 
+Position statement . London: Department of Health; 2012.
+32. Laupacis A, Brown J, Costello B, Delage G, Freedman J, 
+Hume H, et al. Prevention of posttransfusion CMV in the 
+era of universal WBC reduction: a consensus statement. 
+Transfusion 2001;41:560–9.
+33. Henry DA, Carless PA, Moxey AJ, O’Connell D, Forgie 
+MA, Wells PS, et al. Pre-operative autologous donation for 
+minimising perioperative allogeneic blood transfusion. 
+Cochrane Database Syst Rev 2002;(2):CD003602.
+34. National Blood Authority Australia. Guidance for the 
+provision of Intraoperative Cell Salvage . Canberra: 
+National Blood Authority; 2014 [http://www.blood.gov.au/
+system/files/documents/ics-guidance-march-2014_1.pdf]. 
+Accessed 2015 Apr 15.
+35. Joint United Kingdom (UK) Blood Transfusion and 
+Tissue Transplantation Services Professional Advisory 
+Committee (JPAC). Intraoperative Cell Salvage Education 
+[http://transfusionguidelines.org.uk/transfusion-practice/
+uk-cell-salvage-action-group/intraoperative-cell-salvage-
+education]. Accessed 2015 Apr 15.
+36. Goodnough LT, Monk TG, Sicard G, Satterfield SA, Allen 
+B, Anderson CB, et al. Intraoperative salvage in patients 
+undergoing elective abdominal aortic aneurysm repair: an 
+analysis of cost and benefit. J Vasc Surg 1996;24:213–8.
+37. National Institute for Health and Clinical Excellence. 
+Intraoperative blood cell salvage in obstetrics . NICE 
+interventional procedure guidance 144. Manchester: 
+NICE; 2005.
+38. Allam J, Cox M, Yentis SM. Cell salvage in obstetrics. Int J 
+Obstet Anesth 2008;17:37–45. 
+39. Geoghegan J, Daniels JP, Moore PA, Thompson PJ, Khan KS, 
+Gülmezoglu AM. Cell salvage at caesarean section: the need 
+for an evidence-based approach. BJOG 2009;116:743–7.
+40. Waters JH, Biscotti C, Potter PS, Phillipson E. Amniotic 
+fluid removal during cell salvage in the cesarean section 
+patient. Anesthesiology 2000;92:1531–6.
+41. Catling SJ, Williams S, Fielding AM. Cell salvage in obstetrics: 
+an evaluation of the ability of cell salvage combined with 
+leucocyte depletion filtration to remove amniotic fluid 
+from operative blood loss at caesarean section. Int J Obstet 
+Anesth 1999;8:79–84.
+42. National Patient Safety Agency. Rapid Response Report 
+NPSA/2010/017. The transfusion of blood and blood 
+components in an emergency . London: NPSA; 2010.
+43. Crofts JF, Ellis D, Draycott TJ, Winter C, Hunt LP, Akande 
+VA. Change in knowledge of midwives and obstetricians 
+following obstetric emergency training: a randomised 
+controlled trial of local hospital, simulation centre and 
+teamwork training. BJOG 2007;114:1534–41.44. Murphy MF, Wallington TB, Kelsey P, Boulton F, Bruce 
+M, Cohen H, et al.; British Committee for Standards in 
+Haematology, Blood Transfusion Task Force. Guidelines 
+for the clinical use of red cell transfusions. Br J Haematol 
+2001;113:24–31.
+45. Borgman MA, Spinella PC, Perkins JG, Grathwohl KW, 
+Repine T, Beekley AC, et al. The ratio of blood products 
+transfused affects mortality in patients receiving massive 
+transfusions at a combat support hospital. J Trauma 
+2007;63:805–13.
+46. Spinella PC, Perkins JG, Grathwohl KW, Beekley AC, Niles 
+SE, McLaughlin DF, et al. Effect of plasma and red blood cell 
+transfusions on survival in patients with combat related 
+traumatic injuries. J Trauma 2008;64 Suppl 1:S69–77.
+47. Stinger HK, Spinella PC, Perkins JG, Grathwohl KW, Salinas 
+J, Martini WZ, et al. The ratio of fibrinogen to red cells 
+transfused affects survival in casualties receiving massive 
+transfusions at an army combat support hospital. J Trauma 
+2008;64 Suppl 1:S79–85.
+48. Rajasekhar A, Gowing R, Zarychanski R, Arnold DM, Lim 
+W, Crowther MA, et al. Survival of trauma patients after 
+massive red blood cell transfusion using a high or low 
+red blood cell to plasma transfusion ratio. Crit Care Med 
+2011;39:1507–13.
+49. Curry N, Stanworth S, Hopewell S, Dorée C, Brohi K, Hyde C. 
+Trauma-induced coagulopathy—a review of the systematic 
+reviews: is there sufficient evidence to guide clinical 
+transfusion practice? Transfus Med Rev 2011;25:217–31.e2.
+50. Phan HH, Wisner DH. Should we increase the ratio of 
+plasma/platelets to red blood cells in massive transfusion: 
+what is the evidence? Vox Sang 2010;98:395–402.
+51. Murad MH, Stubbs JR, Gandhi MJ, Wang AT, Paul A, Erwin 
+PJ, et al. The effect of plasma transfusion on morbidity 
+and mortality: a systematic review and meta-analysis. 
+Transfusion 2010;50:1370–83.
+52. O’Shaughnessy DF, Atterbury C, Bolton Maggs P, Murphy M, 
+Thomas D, Yates S, et al.; British Committee for Standards 
+in Haematology, Blood Transfusion Task Force. Guidelines 
+for the use of fresh-frozen plasma, cryoprecipitate and 
+cryosupernatant. Br J Haematol 2004;126:11–28.
+53. Spahn DR, Bouillon B, Cerny V, Coats TJ, Duranteau J, 
+Fernández-Mondéjar E, et al. Management of bleeding 
+and coagulopathy following major trauma: an updated 
+European guideline. Crit Care 2013;17:R76.
+54. Simon L, Santi TM, Sacquin P, Hamza J. Pre-anaesthetic 
+assessment of coagulation abnormalities in obstetric 
+patients: usefulness, timing and clinical implications. Br J 
+Anaesth 1997;78:678–83.
+55. Charbit B, Mandelbrot L, Samain E, Baron G, Haddaoui B, 
+Keita H, et al.; PPH Study Group. The decrease of fibrinogen 
+is an early predictor of the severity of postpartum 
+hemorrhage. J Thromb Haemost 2007;5:266–73.
+56. Hiippala ST, Myllyla GJ, Vahtera EM. Hemostatic factors and 
+replacement of major blood loss with plasma-poor red cell 
+concentrates. Anesth Analg 1995;81:360–5.
+57. Fakhry SM, Sheldon GF. Massive transfusion in the 
+surgical patient. In: Jeffries LC, Brecher ME, editors. 
+Massive Transfusion . Bethesda, Maryland, USA: American 
+Association of Blood Banks; 1994.
+58. British Committee for Standards in Haematology, Blood 
+Transfusion Task Force. Guidelines for the use of platelet 
+transfusions. Br J Haematol 2003;122:10–23.
+59. British Committee for Standards in Haematology, Stainsby D, 
+MacLennan S, Thomas D, Isaac J, Hamilton PJ. Guidelines 
+on the management of massive blood loss. Br J Haematol 
+2006;135:634–41.
+60. NHS Quality Improvement Scotland. HTA Programme: 
+Health Technology Assessment Report 11. The clinical 
+and cost effectiveness of thromboelastography/
+thromboelastometry . Glasgow: NHS QIS; 2008.RCOG Green-top Guideline No. 47 © Royal College of Obstetricians and Gynaecologists21 of 2361. Medicines and Healthcare Products Regulatory Agency. 
+Management and use of IVD point of care test devices . 
+London: MHRA; 2013.
+62. Levi M, Levy JH, Andersen HF, Truloff D. Safety of 
+recombinant activated factor VII in randomized clinical 
+trials. N Engl J Med 2010;363:1791–1800.
+63. Phillips LE, McLintock C, Pollock W, Gatt S, Popham 
+P, Jankelowitz G, et al.; Australian and New Zealand 
+Haemostasis Registry. Recombinant activated factor VII 
+in obstetric hemorrhage: experiences from the Australian 
+and New Zealand Haemostasis Registry. Anesth Analg 
+2009;109:1908–15.
+64. Bomken C, Mathai S, Biss T, Loughney A, Hanley 
+J. Recombinant activated factor VII (rFVIIa) in the 
+management of major obstetric haemorrhage: a case series 
+and a proposed guideline for use. Obstet Gynecol Int 
+2009;2009:364843.
+65. Alfirevic Z, Elbourne D, Pavord S, Bolte A, Van Geijn H, 
+Mercier F, et al. Use of recombinant activated factor VII in 
+primary postpartum hemorrhage: the Northern European 
+registry 2000-2004. Obstet Gynecol 2007;110:1270–8.
+66. Franchini M, Franchi M, Bergamini V, Montagnana M, 
+Salvagno GL, Targher G, et al. The use of recombinant 
+activated FVII in postpartum hemorrhage. Clin Obstet 
+Gynecol 2010 ;53:219–27.
+67. Vincent JL, Rossaint R, Riou B, Ozier Y, Zideman D, Spahn 
+DR. Recommendations on the use of recombinant activated 
+factor VII as an adjunctive treatment for massive bleeding 
+– a European perspective. Crit Care 2006;10:R120.
+68. Ahmed S, Harrity C, Johnson S, Varadkar S, McMorrow S, 
+Fanning R, et al. The efficacy of fibrinogen concentrate 
+compared with cryoprecipitate in major obstetric 
+haemorrhage--an observational study. Transfus Med 
+2012;22:344–9.
+69. CRASH-2 trial collaborators, Shakur H, Roberts I, Bautista 
+R, Caballero J, Coats T, et al. Effects of tranexamic acid on 
+death, vascular occlusive events, and blood transfusion 
+in trauma patients with significant haemorrhage 
+(CRASH-2): a randomised, placebo-controlled trial. Lancet 
+2010;376:23–32.
+70. Sekhavat L, Tabatabaii A, Dalili M, Farajkhoda T, Tafti 
+AD. Efficacy of tranexamic acid in reducing blood loss 
+after cesarean section. J Matern Fetal Neonatal Med 
+2009;22:72–5.
+71. Gungorduk K, Yildirim G, Asicioglu O, Gungorduk OC, 
+Sudolmus S, Ark C. Efficacy of intravenous tranexamic acid 
+in reducing blood loss after elective cesarean section: a 
+prospective, randomized, double-blind, placebo-controlled 
+study. Am J Perinatol 2011;28:233–40.
+72. Movafegh A, Eslamian L, Dorabadi A. Effect of intravenous 
+tranexamic acid administration on blood loss during 
+and after cesarean delivery. Int J Gynaecol Obstet 
+2011;115:224–6.
+73. Gai MY, Wu LF, Su QF, Tatsumoto K. Clinical observation 
+of blood loss reduced by tranexamic acid during and after 
+caesarian section: a multi-center, randomized trial. Eur J 
+Obstet Gynecol Reprod Biol 2004;112:154–7.74. Gohel M, Patel P, Gupta A, Desai P. Efficacy of tranexamic 
+acid in decreasing blood loss during and after cesarean 
+section: a randomized case controlled prospective study. J 
+Obstet Gynaecol India 2007;57:227–30.
+75. Ducloy-Bouthors AS, Jude B, Duhamel A, Broisin F, Huissoud 
+C, Keita-Meyer H, et al.; EXADELI Study Group. High-
+dose tranexamic acid reduces blood loss in postpartum 
+haemorrhage. Crit Care 2011;15:R117.
+76. Xu J, Gao W, Ju Y. Tranexamic acid for the prevention 
+of postpartum hemorrhage after cesarean section: a 
+double-blind randomization trial. Arch Gynecol Obstet 
+2013;287:463–8.
+77. Novikova N, Hofmeyr GJ. Tranexamic acid for preventing 
+postpartum haemorrhage. Cochrane Database Syst Rev 
+2010;(7):CD007872.
+78. Parker J, Thompson J, Stanworth S. A retrospective one-
+year single-centre survey of obstetric red cell transfusions. 
+Int J Obstet Anesth 2009;18:309–13.
+79. Butwick AJ, Aleshi P, Fontaine M, Riley ET, Goodnough LT. 
+Retrospective analysis of transfusion outcomes in pregnant 
+patients at a tertiary obstetric center. Int J Obstet Anesth 
+2009;18:302–8.
+80. Singla AK, Lapinski RH, Berkowitz RL, Saphier CJ. Are 
+women who are Jehovah’s Witnesses at risk of maternal 
+death? Am J Obstet Gynecol 2001;185:893–5.
+81. Massiah N, Athimulam S, Loo C, Okolo S, Yoong W. Obstetric 
+care of Jehovah’s Witnesses: a 14-year observational study. 
+Arch Gynecol Obstet 2007;276:339–43.
+82. Van Wolfswinkel ME, Zwart JJ, Schutte JM, Duvekot JJ, Pel M, 
+Van Roosmalen J. Maternal mortality and serious maternal 
+morbidity in Jehovah’s witnesses in The Netherlands. BJOG 
+2009;116:1103–8.
+83. Khalafallah AA, Dennis AE, Ogden K, Robertson I, Charlton 
+RH, Bellette JM, et al. Three-year follow-up of a randomised 
+clinical trial of intravenous versus oral iron for anaemia in 
+pregnancy. BMJ Open 2012;2:e000998.
+84. Froessler B, Cocchiaro C, Saadat-Gilani K, Hodyl N, Dekker 
+G. Intravenous iron sucrose versus oral iron ferrous 
+sulfate for antenatal and postpartum iron deficiency 
+anemia: a randomized trial. J Matern Fetal Neonatal Med 
+2013;26:654–9.
+85. Goodnough LT, Shander A. Patient blood management. 
+Anesthesiology 2012;116:1367–76.
+86. The Royal College of Surgeons of England. Code of Practice 
+for the Surgical Management of Jehovah’s Witnesses . 
+London: The Royal College of Surgeons of England; 2002.
+87. The Association of Anaesthetists of Great Britain and 
+Ireland. Management of Anaesthesia for Jehovah’s 
+Witnesses . 2nd ed. London: AAGBI; 2005. 
+88. Rainaldi MP, Tazzari PL, Scagliarini G, Borghi B, Conte 
+R. Blood salvage during caesarean section. Br J Anaesth 
+1998;80:195–8.RCOG Green-top Guideline No. 47 © Royal College of Obstetricians and Gynaecologists22 of 23Appendix I: Explanation of guidelines and evidence levels
+Clinical guidelines are: ‘systematically developed statements which assist clinicians and patients in 
+making decisions about appropriate treatment for specific conditions’. Each guideline is systematically 
+developed using a standardised methodology. Exact details of this process can be found in Clinical 
+Governance Advice No. 1 Development of RCOG Green-top Guidelines (available on the RCOG website 
+at http://www.rcog.org.uk/green-top-development ). These recommendations are not intended to dictate 
+an exclusive course of management or treatment. They must be evaluated with reference to individual 
+patient needs, resources and limitations unique to the institution and variations in local populations. 
+It is hoped that this process of local ownership will help to incorporate these guidelines into routine 
+practice. Attention is drawn to areas of clinical uncertainty where further research may be indicated. 
+The evidence used in this guideline was graded using the scheme below and the recommendations 
+formulated in a similar fashion with a standardised grading scheme.
+At least one meta-analysis, systematic review or 
+randomised controlled trial rated as 1++, and 
+directly applicable to the target population; or 
+A systematic review of randomised controlled 
+trials or a body of evidence consisting 
+principally of studies rated as 1+, directly 
+applicable to the target population and 
+demonstrating overall consistency of results
+A body of evidence including studies rated 
+as 2++ directly applicable to the target 
+population, and demonstrating overall 
+consistency of results; or 
+Extrapolated evidence from studies rated as 
+1++ or 1+
+A body of evidence including studies rated as 
+2+ directly applicable to the target population, 
+and demonstrating overall consistency of 
+results; or 
+Extrapolated evidence from studies rated as 
+2++
+Evidence level 3 or 4; or 
+Extrapolated evidence from studies rated as 2+1++ High-quality meta-analyses, systematic 
+reviews of randomised controlled trials or 
+randomised controlled trials with a very 
+low risk of bias
+1+ Well-conducted meta-analyses, systematic 
+reviews of randomised controlled trials 
+or randomised controlled trials with a 
+low risk of bias
+1– Meta-analyses, systematic reviews of 
+randomised controlled trials or 
+randomised controlled trials with a high 
+risk of bias
+2++ High-quality systematic reviews of 
+case–control or cohort studies or high-
+quality case–control or cohort studies 
+with a very low risk of confounding, bias 
+or chance and a high probability that the 
+relationship is causal
+2+ Well-conducted case–control or cohort 
+studies with a low risk of confounding, 
+bias or chance and a moderate 
+probability that the relationship is causal
+2– Case–control or cohort studies with a 
+high risk of confounding, bias or chance 
+and a significant risk that the 
+relationship is not causal
+3 Non-analytical studies, e.g. case reports, 
+case series
+4 Expert opinionClassification of evidence levels Grades of recommendations
+Good practice point
+Recommended best practice based on the 
+clinical experience of the guideline 
+development groupDCBA
+PRCOG Green-top Guideline No. 47 © Royal College of Obstetricians and Gynaecologists23 of 23This guideline was produced on behalf of the Royal College of Obstetricians and Gynaecologists by: 
+Dr L Green, Consultant Haematologist, NHS Blood and Transplant and Barts Health NHS Trust, London; 
+Dr C Connolly, Consultant Anaesthetist, Ninewells Hospital, Dundee, Scotland; Dr TK Cooper MRCOG, Livingston; 
+Dr G Cho, Consultant Haematologist, Central Middlesex Hospital; and Dr S Allard, Consultant Haematologist, 
+NHS Blood and Transplant and Barts Health NHS Trust, London
+and peer reviewed by: 
+Dr J Bamber, Cambridge; British Maternal and Fetal Medicine Society; Mr UI Esen FRCOG, South Shields; Dr R Fox 
+MRCOG, Shropshire; Mr DI Fraser FRCOG, Norwich; Dr S Hamilton FRCOG, Huntingdon; Hospital Information 
+Services for Jehovah’s Witnesses; Dr TA Mahmood FRCOG, Kirkcaldy; RCOG Ethics Committee; RCOG Women’s 
+Network; Dr F Regan FRCP FRCPath, Imperial College Healthcare NHS Trust and NHS Blood and Transplant, London; 
+Dr S Robinson, Guy’s and St Thomas’ NHS Foundation Trust, London; Royal College of Midwives; Dr S Rutter MRCOG, 
+Rotherham; Dr B Thomas MRCOG, Thrissur, India. 
+Committee lead reviewers were: Dr PS Arunakumari FRCOG, Basildon; Mr DJ Cruikshank FRCOG, Middlesbrough; and 
+Dr M Gupta MRCOG, London. 
+All RCOG guidance developers are asked to declare any conflicts of interest. A statement summarising any 
+conflicts of interest for this guideline is available from: https://www.rcog.org.uk/en/guidelines-research-services/
+guidelines/gtg47/.
+The final version is the responsibility of the Guidelines Committee of the RCOG. 
+The review process will commence in 2018, unless otherwise indicated.
+DISCLAIMER 
+The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical 
+practice. They present recognised methods and techniques of clinical practice, based on published evidence, for 
+consideration by obstetricians and gynaecologists and other relevant health professionals. The ultimate judgement 
+regarding a particular clinical procedure or treatment plan must be made by the doctor or other attendant in the light 
+of clinical data presented by the patient and the diagnostic and treatment options available.
+This means that RCOG Guidelines are unlike protocols or guidelines issued by employers, as they are not intended to 
+be prescriptive directions defining a single course of management. Departure from the local prescriptive protocols 
+or guidelines should be fully documented in the patient’s case notes at the time the relevant decision is taken.

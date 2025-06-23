@@ -1,0 +1,737 @@
+# Extracted from: CG14009 PCEA (Epidural) in Labour Guideline.pdf
+# Guideline ID: cg14009-pcea-epidural-in-labour-guideline
+# Content length: 33475 characters
+# Processing date: 1750066900.3428519
+
+Clinical Guideline 
+Due for review : July 2026 
+Name of Guideline : CG14009 Labour Patient Controlled 
+Epidural Analgesia (PCEA) 
+For use at : SRH & WH 
+ 
+Page 1 of 24 
+ 
+Please note, IF DOCUMENT IS PRINTED, IT MAY BECOME OUT OF DATE. 
+ 
+TRUST CLINICAL Guideline 
+Labour Patient Contr olled Epidural Analgesia (PCEA) 
+ 
+Overview 
+This guideline provides guidance for Anaesthetic, Midwifery and Obstetric staff undertaking care 
+of pregnant women and birthing people using PCEA in labour. 
+ 
+How does the document support patient care? 
+By providing evidence -based guidance for staff caring for pregnant women and birthing people 
+using patient controlled epidural analgesia (PCEA) in labour. 
+ 
+Owner Seb Adamson 
+Author/further information O. Sherwood, Consultant Obstetric Anaesthetist 
+G. Allan, Consultant Obstetric Anaesthetist 
+Guideline version v4 
+Related policies UH Sussex SRH &WH guidelines: CG1116 
+Fetal Monitoring, CG1196 Care in labour. 
+Related protocols/ procedures None 
+Standards NG235 Intrapartum Care 2023 
+NG229 Fetal Monitoring in Labour 
+Superseded documents N/A 
+Review due July 2026 
+Reference number CG14009 
+ Clinical Guideline 
+Due for review : July 2026 
+Name of Guideline : CG14009 Labour Patient Controlled 
+Epidural Analgesia (PCEA) 
+For use at : SRH & WH 
+ 
+Page 2 of 24 
+ 
+Approval 
+Joint Obstetric Guideline Group: Date approved : 17th January 2024 
+Medicines Governance Committee Date approved: 12th March 2024 
+W&C Clinical Effectiveness Group Date approved: 21st March 2024 
+Consultation - as required: 
+Medicines Governance Committee Date approved : 12th March 2024 
+Ratification 
+Clinical Document Approval Group Date approved : 17th May 2024 
+
+ Clinical Guideline 
+Due for review : July 2026 
+Name of Guideline : CG14009 Labour Patient Controlled 
+Epidural Analgesia (PCEA) 
+For use at : SRH & WH 
+ 
+Page 3 of 24 
+
+TABLE OF CONTENTS 
+ 
+1.0 Introduction ................................ ................................ ................................ ........................... 4 
+2.0 Scope ................................ ................................ ................................ ................................ .... 4 
+3.0 Responsibilities ................................ ................................ ................................ ..................... 5 
+4.0 Abbreviations used within this guideline ................................ ................................ ................ 5 
+5.0 Key points ................................ ................................ ................................ ............................. 5 
+6.0 Setting up ................................ ................................ ................................ .............................. 6 
+7.0 Epidural drugs ................................ ................................ ................................ ....................... 6 
+8.0 Initial dose ................................ ................................ ................................ ............................. 6 
+9.0 Monitoring of maternal or birthing person and fetal conditions ................................ ............... 7 
+10.0 Subsequent management ................................ ................................ ................................ ...... 7 
+10.1 Fetal ................................ ................................ ................................ ................................ ...... 7 
+10.2 Maternal or birthing person ................................ ................................ ................................ .... 8 
+10.2.1 Maternal or birthing person positioning ................................ ................................ .................. 8 
+10.2.2 Maternal and birthing person pressure area care ................................ ................................ .. 9 
+10.2.3 Second stage ................................ ................................ ................................ ........................ 9 
+11.0 Reasons to call an anaesthetist ................................ ................................ ............................. 9 
+12.0 Postpartum management after labour PCEA ................................ ................................ ......... 9 
+13.0 Monitoring ................................ ................................ ................................ ........................... 11 
+Due Regard Assessment Tool ................................ ................................ ................................ ........ 12 
+Template Dissemination, Implementation and Access Plan ................................ ............................ 13 
+Additional guidance and information ................................ ................................ ............................... 14 
+Appendix 1: Epidural Information Sheet ................................ ................................ .......................... 16 
+Appendix 2: PCEA Labour observation chart ................................ ................................ .................. 18 
+Appendix 3: Peanut Ball Positions ................................ ................................ ................................ .. 19 
+Appendix 4: Regional anaesthetic alert bracelet ................................ ................................ ............. 20 
+Appendix 5: Recovery from a spinal or epidural patient information leaflet ................................ ...... 21 
+Appendix 6: Manual handling equipment for women and people with a raised BMI ........................ 23 
+Appendix 7: Guideline Version Control Log ................................ ................................ ..................... 24 
+ 
+ Clinical Guideline 
+Due for review : July 2026 
+Name of Guideline : CG14009 Labour Patient Controlled 
+Epidural Analgesia (PCEA) 
+For use at : SRH & WH 
+ 
+Page 4 of 24 
+ 
+Labour Patient Controlled Epidural Analgesia 
+(PCEA) Guideline 
+1.0 Introduction 
+This guideline provides guidance for Anaesthetic, Midwifery and Obstetric staff undertaking care of 
+pregnant women and people using PCEA in labour. 
+ 
+Patient controlled epidural analgesia (PCEA) was introduced for labour analgesia in 1998. In PCEA 
+the woman or birthing person controls their analgesia more directly by means of a PCA pump. The 
+woman or birthing person can activate top -ups (according to pre -set criteria including a maximum 
+allowable dose) when required. This technique has been shown to have several benefits over a 
+continuous epidural infusion: 
+ 
+• Reduced total dose of local anaesthetic. 
+• Reduced motor block. 
+• Reduced clinician / midwifery intervention. 
+• Greater maternal and birthing person control leading to greater satisfaction. 
+ 
+The addition of a low dose background epidural infusion to the PCEA has shown conflicting results. 
+All studies conferring a benefit had a low volume PCEA bolus regimen, with a higher bolus there 
+may be no need for an additional high rate continuous infusion. 
+ 
+Newer studies suggest a mandatory epidural bolus once an hour may enhance the PCEA leading to 
+less breakthrough pain and greater maternal and birthing person satisfaction. This could be 
+achieved by a set automated bolus via the pump or encouraging the woman or birthing person to 
+push the PCEA button at least once every hour. 
+ 
+Dilute mixtures of levobupivacaine (e.g. 0.1% w/v) and fentanyl 2 micrograms/ml administered into 
+the epidural space are described as ‘’mobile epidurals’’. The advantages over the previously used 
+more concentrated solutions (e.g. 0.25 -0.5% w/v bupivacaine) used in obstetric analgesia are: 
+ 
+1. Minimal effect on muscle strength so the ability to move during labour is preserved. There 
+is also thought to be less effect on the course of labour and method of birth. 
+2. Bladder sensation, the urge to bear down and the sensation of birth may be retained. 
+3. Less loss of control and greater maternal or birthing person satisfaction 
+2.0 Scope 
+This guideline is for use by: 
+ 
+• Anaesthetists, 
+• Midwives 
+• Obstetricians Clinical Guideline 
+Due for review : July 2026 
+Name of Guideline : CG14009 Labour Patient Controlled 
+Epidural Analgesia (PCEA) 
+For use at : SRH & WH 
+ 
+Page 5 of 24 
+ 
+3.0 Responsibilities 
+Anaesthetists, midwives & obstetricians: 
+ 
+• To access, read, understand and follow this guidance. 
+• To use their professional judgement in application of this guideline. 
+ 
+Management: 
+ 
+• To ensure the guideline is reviewed as required in line with Trust and National 
+recommendations. 
+• To ensure the guideline is accessible to all relevant staff. 
+4.0 Abbreviations used within this guideline 
+ 
+PCEA - Patient Controlled Epidural 
+Anaesthesia CSE - Combined Spinal -Epidural 
+LDM - Low Dose Epidural CTG - Cardiotocograph 
+ODP - Operating Department Practioners CSF - Cerebrospinal Fluid 
+PET - Pre-Eclampsia LMWH - Low Molecular Weight Heparin 
+PCA - Patient controlled analgesia MIS - Maternity Information System 
+FBC - Full Blood Count U&Es - Urea & Electrolytes 
+IV - Intravenous IM - Intramuscular 
+5.0 Key points 
+Epidural pain relief is available on request to any woman or birthing person unless medically 
+contraindicated. 
+ 
+If parenteral opioid has been given in previous 4 hours, use epidural opioids with caution. 
+ 
+The midwife must have attended the mandatory annual update on epidural care. 
+ 
+When a woman or birthing person expresses a desire for epidural analgesia or when pain relief is 
+discussed, the midwife should give a copy of the Epidural Information Sheet ( Appendix 1) to the 
+woman or birthing person and their partner. This should be documented on the epidural chart. 
+ 
+Routine preloading is not required however a bag of crystalloid and giving set should be readily 
+available in the labour room after the epidural is sited. 
+ 
+Before the epidural is inserted, the midwife assesses the stage of labour, monitors the fetal heart 
+with CTG and measures maternal or birthing person blood pressure. The pregnant woman or 
+birthing person should be encouraged to empty bladder in case of delay with urinary 
+catheterisation. 
+ Clinical Guideline 
+Due for review : July 2026 
+Name of Guideline : CG14009 Labour Patient Controlled 
+Epidural Analgesia (PCEA) 
+For use at : SRH & WH 
+ 
+Page 6 of 24 
+ 
+The anaesthetist is then called by the midwife. 
+ 
+The anaesthetist must be aware of the full obstetric and medical history of the woman or birthing 
+person before siting the epidural. 
+ 
+The anaesthetist discusses the epidural with the woman or birthing person and their partner (pre 
+insertion), including side -effects and documents this by signing the epidural chart ( Appendix 2) after 
+insertion (this should be annotated to indicate which of the side effects listed were discussed). 
+Ideally this should also be documented on MIS. 
+ 
+The use of PCEA mandates the need for 1:1 midwife care of a woman or birthing person receiving 
+epidural analgesia in labour. 
+6.0 Setting up 
+IV cannulation is required with a large -bore cannu la 16G or 18G and should already be sited if 
+possible. FBC, U&Es and Group and Save should be taken at the time of insertion of cannula. 
+ 
+Insertion of epidural as standard. Initial dose as below. 
+ 
+Two separate applications of chlorhexidine 2% spray should be applied to the back prior to skin 
+puncture. This is in response to a clinical incident review regarding an abscess at the epidural site 
+postnatally. 
+ 
+Aspiration should be performed when the epidural is sited. Thereafter it need only be performed if 
+doses of more than 15mg of bupivacaine / levobupivacaine are given at any one time (e.g. more 
+than 6mL of 0.25% w/v or 3mL of 0.5% w/v) 
+7.0 Epidural drugs 
+Low Dose Mix (LDM) is 0.1% w/v levobupivacaine with 2 microgram/mL fentanyl in a 100mL 
+cassette. 
+8.0 Initial dose 
+The Anaesthetist should double -check all epidural drugs and epidural infusion connections with 
+another trained member of staff prior to administration, unless to do so would incur an unacceptable 
+delay in an emergency. 
+ 
+Note: **It is important to check that a yellow epidural cassette is attached rather than the 
+grey opioid PCA cassette ** 
+ 
+The standard initial dose is 15mL of the LDM withdrawn from the cassette and administered as a 
+hand held bolus by the anaesthetist. 
+ Clinical Guideline 
+Due for review : July 2026 
+Name of Guideline : CG14009 Labour Patient Controlled 
+Epidural Analgesia (PCEA) 
+For use at : SRH & WH 
+ 
+Page 7 of 24 
+ 
+It is the responsibility of the anaesthetist to set up and connect the PCEA pump and line to the 
+epidural catheter and document the correct connection by signing on the epidural chart. This should 
+be countersigned by the midwife, ODP or another anaesthetist. 
+ 
+Analgesia should be apparent within 10 -20 minutes, although the sensation of contractions may still 
+be present. 
+9.0 Monitoring of maternal or birthing person and fetal conditions 
+Monitoring of maternal or birthing person should be documented on MIS on Epidural/Spinal 
+Assessment forms and on the epidural chart. 
+ 
+The midwife measures maternal BP and pulse every 5 minutes for 20 minutes, offer continuous 
+CTG to all women and birthing people on insertion of regional analgesia (for example, an epidural) 
+for at least 30 minutes during establishment of regional analgesia. If the CTG is normal this can be 
+discontinued and IA used unless there are other risk factors that indication CEFM throughout labour 
+or the woman or birthing person wishes to continue with CEFM. ( NICE 2022 ) 
+ 
+The anaesthetist should be immediately available during this time should the blood pressure fall or 
+another complication occur. 
+ 
+Between 5 to 20 minutes the anaesthetist assesses the components of the block: sympathetic : 
+warm feet, motor : ability to raise legs off the bed against resistance and sensory : reduced 
+sensation to cold (ethyl chloride or cold sticks if available). An upper level of T8 - 10 is usually 
+adequate. 
+ 
+Occasionally, the anaesthetist may give the first dose as a spinal (2.5mL of the low dose mix from 
+the cassette) or 1mL 0.25% w/v levobupivicaine/bupivicaine. This can be either as a single shot 
+spinal followed by standard epidural insertion or by using a combined spinal -epidural (CSE) 
+technique. 
+ 
+The CSE technique is useful for rapid onset of analgesia, e.g. near or in the 2nd stage or when the 
+woman or birthing person is particularly distressed. Analgesia should occur within 5 minutes. After 
+this type of spinal, monitoring and management should be the same as above. 
+10.0 Subsequent management 
+10.1 Fetal 
+After epidural has been established and CTG performed for at least 30 minutes, it can be 
+discontinued if normal and intermittent auscultation commenced, unless there are other risk factors 
+that indicate CTG should continue. 
+ 
+CEFM should be recommenced for a further 30 minutes after any epidural boluses of 10mL or more 
+(PCEA) or if stronger epidural solutions are given by the anaesthetist. NICE 2022 
+ Clinical Guideline 
+Due for review : July 2026 
+Name of Guideline : CG14009 Labour Patient Controlled 
+Epidural Analgesia (PCEA) 
+For use at : SRH & WH 
+ 
+Page 8 of 24 
+ 
+10.2 Maternal or birthing person 
+Maternal or birthing person BP, pulse, pain score and block height should be measured every 30 
+minutes. 
+ 
+The initial level of the block and the motor block should be assessed by the anaesthetist and 
+recorded. Subsequently, the height of block and motor block should be assessed and recorded 
+every 30 minutes on the epidural chart (see Appendix 2 ) and scanned into MIS once completed. 
+ 
+Levobupivicaine 0.1% w/v and fentanyl 2 micrograms/mL will be supplied in a 100mL . 
+cassette. The PCEA pump will be set up and connected by the anaesthetist. The bag and 
+connection should be checked with another trained member of staff and documented on the 
+epidural chart. 
+ 
+The standard regimen will consist of the initial dose of 15mL of the low dose mix withdrawn from 
+cassette given by the anaesthetist, followed by an 8mL low dose mixture PCEA bolus with a 15 
+minute lockout. A low dose background infusion at 0 -2mL/hr may be run to ensure the integrity of 
+the line. 
+ 
+The midwife may give a clinician bolus via the pump of 8mL if analgesia is inadequate. The 
+anaesthetist must be called if analgesia is still not adequate 20 minutes after this bolus. 
+ 
+Low-dose PCEA will not completely abolish the urge to bear down for more than a few minutes. Do 
+not withhold the PCEA button simply because labour is near or in the 2nd stage if the woman or 
+birthing person is in pain and wants to use it. The woman or birthing person can adopt any position 
+they wish during the 2nd stage except supine. 
+ 
+The anaesthetist should not routinely prescribe solutions stronger than 0.1% w/v levobupivacaine 
+on an 'as required' basis; these solutions should be prescribed on an individual basis only. Different 
+doses of low dose solution bolus may be prescribed at the anaesthetist’s discretion. 
+ 
+Recent studies suggest that a mandatory bolus once an hour improves analgesia and patient 
+satisfaction. The woman or birthing person should be encouraged to use the PCEA to administer a 
+bolus at least once an hour. 
+ 
+10.2.1 Maternal or birthing person positioning 
+No woman or birthing person should lie flat on their back at any time; even for a vaginal examination 
+(a wedge should be used). 
+ 
+Using a PCEA does not need to confine the woman or birthing person to bed or the semi -recumbent 
+position. Women and birthing people should be supported when standing, as some impairment of 
+movement control and sensation may occur. 
+ 
+Midwives can consider use of peanut ball as these have been shown to be a safe and low -cost 
+intervention that shortens the length of labour and may reduce the chance of unplanned caesarean 
+birth (Delgardo et al., 2022). See Appendix 3 for different positions that may be used.   
+ Clinical Guideline 
+Due for review : July 2026 
+Name of Guideline : CG14009 Labour Patient Controlled 
+Epidural Analgesia (PCEA) 
+For use at : SRH & WH 
+ 
+Page 9 of 24 
+ 
+10.2.2 Maternal and birthing person pressure area care 
+Women and birthing people who have regional analgesia are at an increased risk of pressure area 
+damage. See CG20011 Maternity Pressure Care guideline for pressure area risk assessments and 
+care planning. The pressure ulcer risk assessment on MIS should be completed, and all pressure 
+area care should be fully documented on MIS. 
+ 
+Women and people who are unable to move themselves, with a raised BMI, should be moved with 
+appropriate manual handling equipment see Appendix 6 . 
+ 
+10.2.3 Second stage 
+Upon confirmation of full cervical dilatation in a woman or birthing person with regional analgesia, 
+unless the woman or birthing person has an urge to push or the baby's head is visible, pushing 
+should be delayed for at least 1 hour and longer if the woman or birthing person wishes, after which 
+actively encourage them to push during contractions. 
+ 
+After diagnosis of full dilatation in a woman or birthing person with regional analgesia, agree a plan 
+with the woman or birthing person in order to ensure that birth will be expected to take place within 
+3 hours of commencing active second stage for nulliparous and 2 hours for multiparous. 
+11.0 Reasons to call an anaesthetist 
+Any woman or birthing person wishes to discuss an epidural, even if midwife feels regional 
+anaesthetic inappropriate – the anaesthetist should be involved with the discussion. 
+ 
+Any woman or birthing person with an epidural is dissatisfied with their analgesia. Or if the woman 
+or birthing person is not pain -free 30 minutes after each administration of local anaesthetic/opioid 
+solution. 
+ 
+Any woman or birthing person with an epidural who: 
+ 
+• Has loss of sensation to cold extending above upper abdomen/lower chest. 
+• Is unable to straight leg raise or has unexpected levels of weakness in lower or upper limbs. 
+• Has hypotension (20% drop in systolic or systolic less than 100 mmHg). 
+• Develops severe headache or any other neurological symptoms. 
+ 
+Blood or CSF (clear fluid) is aspirated from epidural catheter. 
+ 
+Severe itching occurs - management of this should comprise reassurance, naloxone 20 micrograms 
+IV (2 doses may be required), chlorpheniramine 10mg IM or ondansetron 4 – 8 milligrams by 
+intramuscular or intravenous injection. 
+12.0 Postpartum management after labour PCEA 
+Once baby is born and any perineal suturing completed, the epidural catheter can be removed. 
+ Clinical Guideline 
+Due for review : July 2026 
+Name of Guideline : CG14009 Labour Patient Controlled 
+Epidural Analgesia (PCEA) 
+For use at : SRH & WH 
+ 
+Page 10 of 24 
+ 
+On removal, it should be inspected to ensure the blue tip is visible, indicating that it is intact and 
+Opsite spray applied to the site. 
+ 
+After removal of the catheter, a yellow regional anaesthesia wrist band should be applied indicating 
+the time 4 hours after removal. By the time documented on the band the patient should be able to 
+straight leg raise, this is also the time after which LMWH may safely be administered. ( Appendix 4 ) 
+ 
+If the woman or birthing person reports that their legs feel normal and they are able to raise them off 
+the bed against resistance, they may get up for a shower if they wish, 1 -2 hours after the PCEA is 
+discontinued. 
+ 
+If there is any possibility of returning to theatre or a clotting problem, including PET / recent 
+low molecular weight heparin (LMWH) or significant haemorrhage, timing of catheter removal 
+should be discussed with the anaesthetist before removal. 
+ 
+The epidural catheter should be removed no sooner than 12 hours after a prophylactic dose of low 
+molecular weight heparin (LMWH). No LMWH should be administered for at least 4 hours after the 
+epidural catheter is removed. 
+ 
+No patient should be discharged fewer than 6 hours after their epidural is discontinued. 
+ 
+All patients should be reviewed in the postnatal period by an anaesthetist. If there is severe lower 
+back pain, pyrexia and/or a sensory or motor block within 72 hours after epidural insertion the 
+anaesthetist should be urgently called to review the patient. 
+ 
+All patients should be given a copy of the UHSussex ‘Recovery from a spinal or Epidural’ leaflet 
+before going home, this can be sent via BadgerNotes. (Appendix 5 ) 
+ 
+Community midwives should inquire on first day home and on day 5 if the woman or birthing person 
+is experiencing any of the following symptoms: 
+ 
+A headache: 
+ 
+• That limits their ability to look after themselves and their baby. 
+• Does not resolve with rest, increased fluids and paracetamol. 
+• Gets worse on standing but feels slightly better when they lie down. 
+• Has other symptoms such as neck stiffness, hearing changes (such as ringing or feels 
+blocked) or photosensitivity. 
+ 
+And/or backache: 
+ 
+• That is getting worse or is not settling with ibuprofen or paracetamol. 
+• Pain travels up the spine or down into the buttocks or legs. 
+• Site of the epidural is inflamed or has a discharge. 
+• Feels unwell or is pyrexial. 
+• Loss of control of bladder or bowels. 
+ Clinical Guideline 
+Due for review : July 2026 
+Name of Guideline : CG14009 Labour Patient Controlled 
+Epidural Analgesia (PCEA) 
+For use at : SRH & WH 
+ 
+Page 11 of 24 
+ 
+And/or any other changed sensations in the lower body such as: 
+ 
+• Difficulty walking or weakness in the legs. 
+• Numbness . 
+• Pins and needles. 
+ 
+The woman or birthing person should be referred back into the maternity unit for review by the on 
+call obstetric anaesthetist. 
+13.0 Monitoring 
+Response times for provision of intrapartum analgesia. Royal College of Anaesthetists: Raising the 
+Standard: a compendium of audit recipes ( www.rcoa.ac.uk/system/files/CSQ -ARB-section8.pdf ) 
+ 
+ Clinical Guideline 
+Due for review : July 2026 
+Name of Guideline : CG14009 Labour Patient Controlled 
+Epidural Analgesia (PCEA) 
+For use at : SRH & WH 
+ 
+Page 12 of 24 
+ 
+Due Regard Assessment Tool 
+To be completed and attached to any guideline when submitted to the appropriate committee for 
+consideration and approval. 
+ Yes/No Comments 
+1. Does the document/guidance affect one group less or 
+more favourably than another on the basis of: 
+ Age No 
+ · Disability No 
+ · Gender (Sex) No 
+ · Gender Identity No 
+ · Marriage and civil partnership No 
+ · Pregnancy and maternity No 
+ · Race (ethnicity, nationality, colour) No 
+ · Religion or Belief No 
+ · Sexual orientation, including lesbian, gay and bisexual 
+people No 
+2. Is there any evidence that some groups are affected 
+differently and what is/are the evidence source(s)? No 
+3. If you have identified potential discrimination, are there 
+any exceptions valid, legal and/or justifiable? NA 
+4. Is the impact of the document likely to be negative? NA 
+5. If so, can the impact be avoided? NA 
+6. What alternative is there to achieving the intent of the 
+document without the impact? NA 
+7. Can we reduce the impact by taking different action 
+and, if not, what, if any, are the reasons why the 
+guideline should continue in its current form? NA 
+8. Has the document been assessed to ensure service 
+users, staff and other stakeholders are treated in line 
+with Human Rights FREDA principles (fairness, respect, 
+equality, dignity and autonomy)? Yes 
+ 
+If you have identified a potential discriminatory impact of this guideline , please refer it to [ Insert 
+Name ], together with any suggestions as to the action required to avoid/reduce this impact. For 
+advice in respect of answering the above questions, please contact uhsussex.equality@nhs.net 
+01273 664685). 
+
+ Clinical Guideline 
+Due for review : July 2026 
+Name of Guideline : CG14009 Labour Patient Controlled 
+Epidural Analgesia (PCEA) 
+For use at : SRH & WH 
+ 
+Page 13 of 24 
+ 
+Template Dissemination, Implementation and Access Plan 
+ 
+To be completed and attached to any guideline when submitted to Corporate Governance for 
+consideration and TMB approval. 
+ 
+ Dissemination Plan Comments 
+1. Identify: Midwives, obstetricians 
+ Which members of staff or staff groups will be affected 
+by this guideline ? Dissemination through the 
+usual Communication 
+channels and highlighted at 
+Safety Huddles. 
+ How will you confirm that they have received the 
+guideline and understood its implications? All new members of staff 
+shown where to access 
+Clinical documents that are 
+relevant to their area of 
+practice.  
+ How have you linked the dissemination of the guideline 
+with induction training, continuous professional 
+development and clinical supervision as appropriate? Accessed by staff via 
+Sharepoint 
+2. How and where will staff access the document (at 
+operational level)? Midwives, obstetricians 
+ 
+ Yes/No Comments 
+3. Have you made any plans to remove 
+old versions of the guideline or related 
+documents from circulation? Previous version will be 
+archived as part of the upload 
+to SharePoint procedure. 
+4. Have you ensured staff are aware the 
+document is logged on the 
+organisation’s register? Dissemination plan includes 
+notifying staff via email, safety 
+noticeboards, departmental 
+newsletter and social media. 
+ 
+ Clinical Guideline 
+Due for review : July 2026 
+Name of Guideline : CG14009 Labour Patient Controlled 
+Epidural Analgesia (PCEA) 
+For use at : SRH & WH 
+ 
+Page 14 of 24 
+ 
+Additional guidance and information 
+Delgardo A et al. (2022) Effectiveness of the peanut ball use for women with epidural analgesia in 
+labour: a systematic review and meta -analysis, Journal of Obstetrics and Gynacology, 42:5, 726 -
+733. 
+ 
+National Institute for Health and Care Excellence (2023) Intrapartum Care. Available at: NG235 
+Intrapartum Care 2023 (Accessed 27/11/23) 
+ 
+National Institute for Health and Care Excellence (2022) Intrapartum Care. Available at: NG229 
+Fetal Monitoring in Labour (Accessed 27/11/23) 
+ 
+NICE guidelines for caesarean sections: www.nice.org.uk/pdf/CG013fullguideline.pdf 
+ 
+Yentis SM. Editorial: Height of confusion: assessing regional blocks before Caesarean Section. Int J 
+Obstet Anesth 2006; 15: 2 -6. 
+ 
+McLeod GA, Burke D. Levobupivacaine. Anaesthesia 2001; 56: 331 -41. 
+Regan K, O'Sullivan G. Extension of epidural blockade for emergency caesarean section: a survey 
+of UK practice. Int J Obstet Anesth 2006:15; S7. 
+ 
+Russell I F. Levels of anaesthesia and intraoperative pain at caesarean section under regional 
+block. Int J Obstet Anesth 1995; 4: 71 –77 
+ 
+Nageotte MP, Larson D, Rumney PJ, Sidhu M, Hollenbach K. Epidural analgesia compared with 
+combined spinal -epidural analgesia during labor in nulliparous women. N Engl J Med. 1997 Dec 11; 
+337(24):1715 -9. 
+ 
+Br J Obstet Gynaecol 1994; 101: 839 -41. Van der Vyver M, Halpern S, Joseph G. Patient -
+controlled epidural analgesia versus continuous infusion for labour analgesia: a meta -analysis. Br J 
+Anaesth 2002; 89: 459 -65. 
+ 
+Holdcroft A, Dob D. International Journal of Obstetric Anaesthesia (2003) 12,153 - 155 Intrapartum 
+Care: Care of healthy women and their babies during childbirth. National Institute for Health and 
+Clinical Excellence. September 2007 
+ 
+Hillyard SG, Bate TE et al. Extending epidural analgesia for emergency Caesarean section: a meta -
+analysis. Br J Anaesth. 2011 Nov; 107(5):668 -78. 
+ 
+George RB, Allen TK et al. Intermittent epidural bolus compared with continuous epidural infusions 
+for labour analgesia: a systematic review and meta -analysis. Anesth Analg . 2013 Jan; 116(1):133 -
+44. 
+ 
+Capogna G , Camorcia M et al. Programmed intermittent epidural bolus versus continuous epidural 
+infusion for labor analgesia: the effects on maternal motor function and labor outcome. A 
+randomized double -blind study in nulliparous women. Anesth Analg . 2011 Oct; 113(4):826 -31. 
+ Clinical Guideline 
+Due for review : July 2026 
+Name of Guideline : CG14009 Labour Patient Controlled 
+Epidural Analgesia (PCEA) 
+For use at : SRH & WH 
+ 
+Page 15 of 24 
+ 
+Wong CA, Ratliff JT et al. A randomized comparison of programmed intermittent epidural bolus with 
+continuous epidural infusion for labor analgesia. Anesth Analg. 2006 Mar; 102(3):904 -9. 
+
+ Clinical Guideline 
+Due for review : July 2026 
+Name of Guideline : CG14009 Labour Patient Controlled 
+Epidural Analgesia (PCEA) 
+For use at : SRH & WH 
+ 
+Page 16 of 24 
+ 
+Appendix 1: Epidural Information Sheet 
+
+Clinical Guideline 
+Due for review : July 2026 
+Name of Guideline : CG14009 Labour Patient Controlled 
+Epidural Analgesia (PCEA) 
+For use at : SRH & WH 
+ 
+Page 17 of 24 
+ 
+Clinical Guideline 
+Due for review : July 2026 
+Name of Guideline : CG14009 Labour Patient Controlled 
+Epidural Analgesia (PCEA) 
+For use at : SRH & WH 
+ 
+Page 18 of 24 
+ 
+Appendix 2: PCEA Labour observation chart 
+DO NOT PRINT FROM GUIDLINE 
+
+Clinical Guideline 
+Due for review : July 2026 
+Name of Guideline : CG14009 Labour Patient Controlled 
+Epidural Analgesia (PCEA) 
+For use at : SRH & WH 
+ 
+Page 19 of 24 
+ 
+Appendix 3: Peanut Ball Positions 
+
+Clinical Guideline 
+Due for review : July 2026 
+Name of Guideline : CG14009 Labour Patient Controlled 
+Epidural Analgesia (PCEA) 
+For use at : SRH & WH 
+ 
+Page 20 of 24 
+ 
+Appendix 4: Regional anaesthetic alert bracelet 
+Clinical Guideline 
+Due for review : July 2026 
+Name of Guideline : CG14009 Labour Patient Controlled 
+Epidural Analgesia (PCEA) 
+For use at : SRH & WH 
+ 
+Page 21 of 24 
+ 
+Appendix 5: Recovery from a spinal or epidural patient information leaflet 
+
+Clinical Guideline 
+Due for review : July 2026 
+Name of Guideline : CG14009 Labour Patient Controlled 
+Epidural Analgesia (PCEA) 
+For use at : SRH & WH 
+ 
+Page 22 of 24 
+
+Clinical Guideline 
+Due for review : July 2026 
+Name of Guideline : CG14009 Labour Patient Controlled 
+Epidural Analgesia (PCEA) 
+For use at : SRH & WH 
+ 
+Page 23 of 24 
+ 
+Appendix 6: Manual handling equipment for women and people with a raised BMI 
+Clinical Guideline 
+Due for review : July 2026 
+Name of Guideline : CG14009 Labour Patient Controlled 
+Epidural Analgesia (PCEA) 
+For use at : SRH & WH 
+ 
+Page 24 of 24 
+ 
+Appendix 7: Guideline Version Control Log 
+ 
+This should be included for all updated guidelines , summarising the changes between the current 
+and previous version. (Earlier changes should be deleted from the list when the guideline is 
+updated.) 
+Do not list minor and stylistic changes or changes which do not alter the processes described. 
+If the update includes a significant reorganisation of the material, indicate this and list the main 
+areas where the process itself has changed. 
+Change Log - CG14009 Labour Patient Controlled 
+ Version Date Author Status Comment 
+1.0 November 
+2013 Consultant Obstetric 
+Anaesthetists Archived New Trust wide Maternity 
+Guideline 
+2.0 June 2017 Consultant Obstetric 
+Anaesthetists Archived 3 yearly review and update 
+3.0 November 
+2021 Keri Ashpole, 
+Consultant Obstetric 
+Anaesthetists Archived Fit for purpose review – no 
+guidance changes required that 
+present a risk. Awaiting new UH 
+Sussex guideline currently being 
+created. Extended for 1 year. 
+4.0 January 2024 O. Sherwood, 
+Consultant Obstetric 
+Anaesthetist 
+G. Allan, Consultant 
+Obstetric Anaesthetist LIVE 3 year review 
+• Patient information sheets 
+updated ( See appendices ). 
+• Yellow band with time of last 
+dose and straight leg raise 
+added. 
+• Postnatal surveillance of 
+epidural concerns added. 
+• Clorhexidine x2 applications 
+prior to skin puncture for 
+epidural. 
+• Pressure area care section 
+added.

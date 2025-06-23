@@ -1,0 +1,945 @@
+# Extracted from: BJOG - 2016 -  - Management of Bladder Pain Syndrome.pdf
+# Guideline ID: bjog-2016-management-of-bladder-pain-syndrome
+# Content length: 88687 characters
+# Processing date: 1741444026.8900719
+
+Management of Bladder Pain Syndrome
+Green-top Guideline No. 70
+RCOG/BSUG Joint Guideline | December 2016
+Please cite this paper as: Tirlapur SA, Birch JV, Carberry CL, Khan KS, Latthe PM, Jha S, Ward KL, Irving A on behalf of
+the Royal College of Obstetricians and Gynaecologists. Management of bladder pain syndrome. BJOG 2016; 124:e46 –e72.
+DOI: 10.1111/1471-0528.14310
+Management of Bladder Pain Syndrome
+This is the ﬁrst edition of this guideline.
+Executive summary of recommendations
+Initial presentation and assessment
+What initial clinical assessment should be performed?
+Bladder pain syndrome (BPS) is a chronic pain syndrome and the principles of management of
+chronic pain should be used for the initial assessment of this condition.C
+A thorough medical history should be taken and physical examination performed./check
+What baseline investigations should be performed?
+A bladder diary (frequency volume chart) should be completed./check
+A food diary may be used to identify if speci ﬁc foods cause a ﬂare-up of symptoms./check
+Urine should be tested to rule out a urinary tract infection as this is a prerequisite for diagnosis
+of BPS. Investigations for urinary ureaplasma and chlamydia can be considered in symptomaticpatients with negative urine cultures and pyuria.C
+In those with a suspicion of urological malignancy, urine cytology should be tested. Cystoscopyand referral to urology should be initiated in accordance with local protocols.C
+Diagnosis of BPS
+What are the differential diagnoses?
+BPS is a diagnosis of exclusion and other conditions should be excluded.D
+RCOG Green-top Guideline No. 70 e47 of e72 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 2, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14310 by Test, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+What investigations are used to diagnose BPS?
+Bladder biopsies and hydrodistention are not recommended for the diagnosis of BPS.
+Cystoscopy does not con ﬁrm or exclude the diagnosis of BPS, but is required to diagnose/
+exclude other conditions that mimic BPS./check
+Potassium sensitivity test, urodynamic assessment and urinary biomarkers should not be usedin the diagnosis of BPS. Urodynamic tests may be considered if there is coexisting BPS andoveractive bladder (and/or stress urinary incontinence and/or voiding dysfunction) that are notresponsive to treatment. C
+How can we classify the severity of BPS?
+Clinicians should use a validated symptom score to assess baseline severity of BPS and assessresponse to treatment.B
+The use of visual analogue scales for pain should be considered to assess severity of pain inBPS.D
+What is the effect of BPS on quality of life (QoL)?
+Patients with BPS can have low self-esteem, sexual dysfunction and reduced QoL.C
+Patients with BPS may have other coexistent conditions impacting on their QoL.D
+What is the initial management? (see Appendix IV)
+Conservative treatments
+Dietary modi ﬁcation can be bene ﬁcial and avoidance of caffeine, alcohol, and acidic foods and
+drinks should be considered.D
+Stress management may be recommended and regular exercise can be bene ﬁcial.D
+Analgesia is recommended for the symptom of pelvic or bladder pain./check
+There are limited data on the bene ﬁts of acupuncture.D
+Pharmacological treatments
+Oral amitriptyline or cimetidine may be considered when ﬁrst-line conservative treatments
+have failed. Cimetidine is not licensed to treat BPS and should only be commenced by aclinician specialised to treat this condition.B
+RCOG Green-top Guideline No. 70 e48 of e72 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 2, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14310 by Test, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Intravesical treatments
+If conservative and oral treatments have been unsuccessful, other therapies may be added or
+substituted using an individualised approach. This will depend on the experience and expertiseof the clinical team involved, and onward referral to a specialist centre with expertise inchronic pain management and access to professionals from other specialties to provide amultidisciplinary approach to care may be appropriate. Options include:
+Intravesical lidocaine.
+B
+Intravesical hyaluronic acid.B
+Intravesical injection of botulinum toxin A (Botox).B
+Intravesical dimethyl sulfoxide (DMSO).C
+Intravesical heparin.D
+Intravesical chondroitin sulfate.D
+Further treatment options
+Further options should only be considered after referral to a pain clinic and discussion at a
+multidisciplinary team (MDT) meeting. /check
+Cystoscopic fulguration and laser treatment, and transurethral resection of lesions can beconsidered if Hunner lesions are identi ﬁed at cystoscopy./check
+Neuromodulation (nerve stimulation), in the form of posterior tibial or sacral neuromodulation,
+may be considered after conservative, oral and/or intravesical treatments have failed, in amultidisciplinary setting.D
+Oral cyclosporin A may be considered after conservative, other oral, intravesical andneuromodulation treatments have failed.D
+Cystoscopy with or without hydrodistension may be considered if conservative and oraltreatments have failed.D
+Major surgery may be considered as last-line treatment in refractory BPS.D
+RCOG Green-top Guideline No. 70 e49 of e72 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 2, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14310 by Test, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Treatments that are not recommended
+Oral hydroxyzine does not appear to be an effective treatment for BPS.B
+Oral pentosan polysulfate does not appear to be an effective treatment for BPS.A
+Long-term antibiotics, intravesical resiniferatoxin, intravesical Bacillus Calmette –Gu/C19erin, high-
+pressure long-duration hydrodistension and long-term oral glucocorticoids are therapies that arenot recommended for BPS./check
+Further management (see Appendix IV)
+Who should manage BPS?
+History, urinalysis and physical examination should be carried out in primary care./check
+Who should be referred to secondary care?
+Patients who fail to respond to conservative treatment should be referred to secondary care./check
+What is the role of the MDT –physiotherapist, pain team, clinical psychologist?
+Referral to a physiotherapist should be considered as BPS symptoms may be improved with
+physical therapy.B
+Consider referring patients with refractory BPS for psychological support or counselling if it isimpacting on their QoL or the patient requests a referral./check
+Patients with refractory BPS should be referred to an MDT in order to explore alternativetreatment options. Those patients who may bene ﬁt from neuromodulation should be referred
+to an MDT before treatment is commenced./check
+What is the role of support groups?
+Patients should be given written information about patient organisations that provide evidence-based information./check
+Long-term management and prognosis
+What should be the duration of follow-up?
+Patients should be followed up periodically in secondary care with consideration for sharedcare between the pain team and urogynaecology until symptoms become controlled and thenthey can be followed in primary care if required./check
+RCOG Green-top Guideline No. 70 e50 of e72 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 2, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14310 by Test, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+BPS and pregnancy
+Woman can be advised that the effect of pregnancy on the severity of BPS symptoms can be
+variable. /check
+BPS treatment options considered safe in pregnancy include oral amitriptyline and intravesicalheparin./check
+Although one course of DMSO may be used prior to pregnancy for symptom remission withgood pregnancy outcomes (delivery at term, normal birth weight and postnatal symptomcontrol), DMSO is known to be teratogenic in animal studies.D
+1. Purpose and scope
+This guideline aims to provide evidence-based information for primary and secondary care clinicians on the
+symptoms and treatment options for bladder pain syndrome (BPS) in women, together with an appreciation of thecurrent uncertainties surrounding this condition.
+2. De ﬁnition and epidemiology
+The widespread deﬁnition for BPS is that proposed by the European Society for the Study of BPS (ESSIC) in 20081
+as ‘pelvic pain, pressure or discomfort perceived to be related to the bladder, lasting at least 6 months, and
+accompanied by at least one other urinary symptom, for example persistent urge to void or frequency, in theabsence of other identiﬁable causes’. More recently, the American Urological Association
+2has described BPS as ‘an
+unpleasant sensation (pain, pressure, discomfort) perceived to be related to the urinary bladder, associated withlower urinary tract symptoms of more than 6 weeks duration, in the absence of infection or other identiﬁablecauses’; this deﬁnition is preferable as it allows treatments to be initiated soon after symptom presentation. BPS maybe associated with negative cognitive, behavioural, sexual or emotional consequences, as well as symptoms suggestiveof sexual dysfunction according to the European Association of Urology.
+The term BPS has been recommended rather than the previous names of interstitial cystitis (IC) and painful bladder
+syndrome. IC was ﬁrst described in 1887 by Skene and in 1914 Hunner described the nontrigonal ulcers and bladderepithelial damage, known as ‘Hunner’s ulcers’.
+3More recently, these are referred to as Hunner lesions. In 1987, the
+National Institute of Diabetes and Digestive and Kidney Diseases,4one of the US National Institutes of Health,
+developed diagnostic criteria for the condition with the following inclusions: pain associated with bladder or urinaryfrequency, and glomerulations (pinpoint petechial haemorrhages) on cystoscopy or classic Hunner lesions seen afterhydrodistension under anaesthesia to 80 –100 cm water pressure for 1 –2 minutes, where the glomerulations must be
+diffuse and present in at least three quadrants of the bladder at a rate of at least 10 per quadrant and not along thepath of the cystoscope as this may be an artefact. Hunner lesions may be seen as inﬂamed friable areas ornonblanching areas in the chronic state. These strict criteria meant many patients were underdiagnosed so a newterm, painful bladder syndrome, was proposed in 2002 by the International Continence Society as ‘suprapubic painrelated to bladder ﬁlling, accompanied by other symptoms, such as increased daytime and night-time frequency, inthe absence of any identiﬁable pathology or infection’. The International Continence Society reserved the diagnosisof IC to patients ‘with typical cystoscopic and histological features’.
+5
+RCOG Green-top Guideline No. 70 e51 of e72 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 2, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14310 by Test, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+BPS is a chronic condition with unknown aetiology. Cystoscopic ﬁndings have been omitted from the 2008 deﬁnition, as
+positive ﬁndings, such as glomerulations, have been found in asymptomatic patients and inclusion of cystoscopic ﬁndings
+into the disease criteria runs the risk of excluding symptomatic patients. As the deﬁnition of BPS has evolved, it is seennow as a diagnosis of exclusion with no deﬁnitive diagnostic test; hence, it is difﬁcult to estimate prevalence, which canbe dependent on whether symptoms are clinician assigned or patient reported. A large American study
+6found
+prevalence rates of 2.3 –6.5%. BPS is between two and ﬁve times more common in women than men.7–9A systematic
+review found the most commonly reported symptoms of BPS to be bladder/pelvic pain, urgency, frequency andnocturia.
+10A number of expert panels, including the ESSIC,1American Urological Association,2European Association of
+Urology11and International Consultation on Incontinence,12have published symptom-based diagnostic criteria for BPS.
+All include the symptoms of pain related to the bladder, at least one other urinary symptom, absence of identiﬁablecauses and minimum duration of symptoms of 6 weeks
+2to 6 months. Although there are very limited data on BPS in
+the UK, a survey of urogynaecologists13has shown variable practice regarding its diagnosis and management.
+3. Identi ﬁcation and assessment of evidence
+This guideline was developed in accordance with standard methodology for producing Royal College of Obstetricians
+and Gynaecologists (RCOG) Green-top Guidelines. MEDLINE, EMBASE and the Cochrane Library were searched.The search was restricted to articles published between 2006 and October 2015 and limited to humans and theEnglish language. The databases were searched using the relevant Medical Subject Headings (MeSH) terms, includingall subheadings, and this was combined with a keyword search. Search terms included ‘bladder pain syndrome’,‘interstitial cystitis’, ‘painful bladder syndrome’, ‘pelvic pain’ and ‘urogynaecology’. The National GuidelineClearinghouse, National Institute for Health and Care Excellence (NICE) Evidence Search, Trip and GuidelinesInternational Network were also searched for relevant guidelines.
+Where possible, recommendations are based on available evidence. Areas lacking evidence are highlighted and
+annotated as ‘Good Practice Points’. Further information about the assessment of evidence and the grading ofrecommendations may be found in Appendix I.
+4. Initial presentation and assessment
+4.1 What initial clinical assessment should be performed?
+BPS is a chronic pain syndrome and the principles of management of chronic pain should be used
+for the initial assessment of this condition.C
+A thorough medical history should be taken and physical examination performed./check
+The initial consultation is aimed at generating trust between the patient and the caregiver. In chronic pain
+syndromes, it is well recognised that a favourable patient rating of the initial consultation is associated withgreater likelihood of complete recovery at follow-up.
+14Patients should be encouraged to talk about their
+symptoms and any theories that they have about the origins of the pain. This allows engagement in furtherinvestigations and management of their condition.
+15,16It is important to explain that BPS is a chronic
+condition with periods of ﬂuctuating symptom severity, where symptoms may be life-long.Evidence
+level 3
+RCOG Green-top Guideline No. 70 e52 of e72 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 2, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14310 by Test, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Symptom assessment forms the basis of the initial evaluation. This is discussed in section 5.3. The location of
+the pain has been described in several studies and the most commonly reported sites are the bladder,urethra and vagina. The description of the pain ranges from pressure and aching to a burning sensation. Astudy of 565 patients with the condition was used to identify factors that can aggravate and alleviate thecondition. Voiding was found to relieve the pain in 57 –73% of patients. Pain was aggravated by stress (61%),
+sexual intercourse (50%), constrictive clothing (49%), acidic beverages (54%), coffee (51%) and spicy foods (46%).
+The Events Preceding IC study of 158 women with BPS
+17–19found that pain worsened with certain food or
+drink, and/or worsened with bladder ﬁlling, and /or improved with urination in 97% of patients.
+As the diagnosis of BPS is one of exclusion, it is importan t to rule out other possible causes of bladder pain. The
+history taken should include details of previous pelvic surgery, urinary tract infections (UTIs), sexually
+transmitted infections, bladder disease and autoimm une disease. Other condition s commonly associated with
+BPS, such as irritable bowel syndrome, vulvodynia, endo metriosis, ﬁbromyalgia, chronic fatigue syndrome and
+autoimmune diseases like systemic lupus erythematosus and Sj €ogren’s syndrome, should be enquired about while
+taking a clinical history. The location of the pain, and r elationship to bladder ﬁlling and emptying should be
+established. The characteristics of the pain, including t rigger factors and onset, correlation with other events and
+description of the pain, should be recorded. It should be explored whether the woman has any history ofphysical or sexual abuse as this can be associated with pelvic pain.
+20This can be achieved using preformed
+questionnaires as this can be a sensitive topic. Informat ion should be sought about prior or current use of oral
+contraception, whic h a systematic review21has shown may be associated with BPS symptoms.Evidence
+level 3
+Physical examination should be aimed at ruling out bladder distension due to urinary retention, hernias and
+painful trigger points on abdominal palpation. A genital examination should be performed to rule outatrophic changes, prolapse, vaginitis and trigger point tenderness over the urethra, vestibular glands, vulvarskin or bladder. Features of dermatosis, including vulvar or vestibular disease, should be looked for. Anevaluation of the introitus and tenderness during insertion or opening of the speculum should be made.Superﬁcial/deep vaginal tenderness and tenderness of the pelvic ﬂoor muscles should be assessed duringthe course of the examination. Cervical pathology should be excluded. A bimanual pelvic examination ishelpful to rule out abdominal, cervical or adnexal pathology.
+Evidence
+level 4
+4.2 What baseline investigations should be performed?
+A bladder diary (frequency volume chart) should be completed./check
+A food diary may be used to identify if speci ﬁc foods cause a ﬂare-up of symptoms./check
+Urine should be tested to rule out a UTI as this is a prerequisite for diagnosis of BPS.
+Investigations for urinary ureaplasma and chlamydia can be considered in symptomaticpatients with negative urine cultures and pyuria.C
+In those with a suspicion of urological malignancy, urine cytology should be tested. Cystoscopyand referral to urology should be initiated in accordance with local protocols.C
+RCOG Green-top Guideline No. 70 e53 of e72 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 2, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14310 by Test, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+A 3-day ﬂuid diary with input and output is useful for initial assessment (for an example diary see Appendix II).
+Patients with BPS classically void small volumes, so this is useful to identify the severity of the storage symptoms.
+The ﬁrst morning void is a useful guide to the functional capacity of the bladder. The bladder diary can also be usedto reinforce behavioural strategies and, where necessary, pharmacological treatment. Estimation of residual urinevolumes after an episode of micturition should be assessed using bladder scans as part of initial investigations if thereare concerns about incomplete bladder emptying.
+Maintaining a diary to record food intake and its association with pain can be useful to identify if certain types of
+food cause symptoms to ﬂare up.
+A dipstick should be performed and where there is a suggestion of a UTI, a culture and sensitivity test should be
+obtained with consideration given to testing for acid-fast bacilli where there is sterile pyuria. Other more commoncauses of sterile pyuria that should be considered are urinary tract stones, partially treated UTIs and carcinomain situ of the bladder. Ureaplasma is not isolated in routine culture tests, so would need to be speciﬁcally looked for.
+A study of 92 patients diagnosed with BPS
+22demonstrated that the condition itself was not associated with
+persistence of bacterial or viral DNA on bladder biopsy which were negative for adenovirus, cytomegalovirus,herpes simplex virus types I and II, human papillomavirus (all subtypes) and Chlamydia trachomatis . These
+ﬁndings exclude a chronic infective aetiology for the condition. A separate study,
+23looking at the clinical
+characteristics of 87 women with the condition, found that 12% had a past history of chlamydia and therefore,it is important to rule this out with appropriate investigations.
+In the presence of persistent microscopic haematuria, urine cytology is usually indicated and cystoscopy
+considered. Persistent microscopic haematuria should be managed in accordance with local protocols forinvestigating haematuria. In a study of 148 patients with BPS,
+24at least one episode of haematuria was reported
+in 41% of cases over the preceding 18 months. In this group, of those who agreed to a full evaluation, no casesof malignancy were identiﬁed. No statistically signiﬁcant differences were found in age, bladder capacity,presence of Hunner lesions or glomerulations between patients with haematuria and those without.Evidence
+level 2 –
+5. Diagnosis of BPS
+5.1 What are the differential diagnoses?
+BPS is a diagnosis of exclusion and other conditions should be excluded.D
+ESSIC has published a list of differential diagnoses, by expert consensus.1These include:
+/C15malignancy, e.g. bladder carcinoma/carcinoma in situ, cervical, uterine or ovarian cancer
+/C15infection of the urinary or genital tract
+/C15overactive bladder
+/C15radiation cystitis or drug-mediated cystitis, e.g. cyclophosphamide, ketamine
+/C15bladder outlet obstruction or incomplete bladder emptying
+/C15calculus of the bladder or lower ureter
+/C15urethral diverticulum
+/C15pelvic organ prolapse
+/C15endometriosisEvidence
+level 4
+RCOG Green-top Guideline No. 70 e54 of e72 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 2, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14310 by Test, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+/C15pudendal nerve entrapment or pelvic ﬂoor muscle-related pain
+/C15irritable bowel syndrome
+/C15diverticular disease of the bowel.
+Ketamine is used as a recreational drug due to its hallucinogenic effects. Unfortunately, its abuse has led to
+ketamine cystitis, where the bladder becomes ulcerated and ﬁbrosed with urinary tract symptoms, such asfrequency, urgency and haematuria, along with renal impairment.Evidence
+level 4
+5.2 What investigations are used to diagnose BPS?
+Bladder biopsies and hydrodistention are not recommended for the diagnosis of BPS. Cystoscopy
+does not con ﬁrm or exclude the diagnosis of BPS, but is required to diagnose/exclude other
+conditions that mimic BPS./check
+Potassium sensitivity test, urodynamic assessment and urinary biomarkers should not be used inthe diagnosis of BPS. Urodynamic tests may be considered if there is coexisting BPS and overactivebladder (and/or stress urinary incontinence and/or voiding dysfunction) that are not responsive totreatment. C
+Cystoscopy without hydrodistension is expected to be normal (except for discomfort and reduced bladder capacity)
+in the majority of patients with BPS.
+Characteristic cystoscopic ﬁndings that have been ascribed to BPS include post distension glomerulations,
+reduced bladder capacity and bleeding. Cystoscopy may be used to aid in classifying BPS (Appendix III).However, cystoscopy ﬁndings correlate poorly with symptoms. In the IC Database Study,
+25150 women
+underwent cystoscopy and hydrodistension, and there was no correlation observed between severity ofsymptoms and the ﬁnding of glomerulations or bleeding following hydrodistension. Pain, urgency andreduced bladder capacity were associated with the presence of Hunner lesions in 11.7% of the women.Similar ﬁndings have been reported in other studies
+26,27along with glomerulations in asymptomatic women.
+Pathological features have been described in patients with BPS, including inﬂammatory inﬁltrates,
+detrusor mastocytosis, granulation tissue and ﬁbrosis, but these are nonspeciﬁc. The diagnosis of BPScannot be made or excluded on the basis of any speciﬁc ﬁnding on bladder biopsy, and these featuresare not required for the diagnosis. In a study of 108 people with BPS,
+28no correlation was found
+between histological and cystoscopic ﬁndings. In an earlier study of 50 patients,29there was a
+correlation with reduced bladder capacity, inﬂammation and mast cell count; however, cystoscopic andhistological ﬁndings showed large variation. Bladder biopsy may be used to classify BPS (Appendix III) ormay be indicated to exclude other pathologies, such as carcinoma in situ, if suspected by a focal lesionor abnormal cytology. Hunner lesions are present in type 3 BPS and can be associated with reducedbladder capacity.Evidence
+level 2 –
+Caution should be exercised as there is the recognised risk of bladder perforation and rupture associated
+with cystoscopy and hydrodistension.30Evidence
+level 3Evidence
+level 4
+RCOG Green-top Guideline No. 70 e55 of e72 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 2, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14310 by Test, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+During urodynamic studies, pain on bladder ﬁlling, a reduced ﬁrst sensation to void and reduced bladder
+capacity are consistent with BPS; however, there are no urodynamic criteria that are diagnostic for BPS.The presence of detrusor overactivity, which is seen in approximately 14% of patients with BPS, shouldnot preclude a diagnosis of BPS.
+31Pressure ﬂow studies may be considered in patients where there are
+coexisting voiding symptoms, but are not recommended for the diagnosis of BPS.32Evidence
+level 2 –
+Any suspected additional pelvic or abdominal pathology should be appropriately investigated.
+5.3 How can we classify the severity of BPS?
+Clinicians should use a validated symptom score to assess baseline severity of BPS and assess
+response to treatment.B
+The use of visual analogue scales for pain should be considered to assess severity of pain in BPS.D
+Symptom scores can be used to grade the severity of BPS and assess response to treatment. There are
+three published BPS symptom questionnaires: the University of Wisconsin IC Scale,33the O’Leary-Sant IC
+Symptom Index and IC Problem Index,34and the Pelvic Pain and Urgency/Frequency Scale.17All have been
+validated in patients with BPS, and the University of Wisconsin IC Scale, and the O’Leary-Sant IC SymptomIndex and IC Problem Index have shown responsiveness to change over time.
+32In a comparison of
+questionnaires used for the evaluation of chronic pelvic pain, there was a good correlation between the ICSymptom Index, and the Pelvic Pain and Urgency/Frequency symptom scores for bladder complaints, butpoor correlation for quality of life (QoL).
+35Evidence
+level 2++
+A number of different rating scales have been devised to measure pain, such as numerical rating scores or the
+McGill pain questionnaire.36The rating scales rely on a subjective assessment of the pain. Although a visual
+analogue scale is an easily administered instrument to capture pain intensity, a pain-related QoL measure, suchas the brief pain inventory, gives a far better assessment of baseline pain and response to treatment.
+37Evidence
+level 3
+6. What is the effect of BPS on QoL?
+Patients with BPS can have low self-esteem, sexual dysfunction and reduced QoL.C
+Patients with BPS may have other coexistent conditions impacting on their QoL.D
+Patients will often be highly anxious about their symptoms and may present with low self-esteem and poor
+QoL.38Women with BPS can present with sexual dysfunction.39Partner and family support are important
+and early referral to a clinical psychologist, patient support groups and cognitive behavioural therapyshould be considered for persistent BPS. QoL can be assessed formally using questionnaires, such as theKing’s Health Questionnaire, EuroQoL or Short Form-36 Health Survey.Evidence
+level 2 –
+The coexistence of other chronic pain conditions, such as endometriosis and irritable bowel syndrome,
+can make diagnosis challenging and add to the impact on the patient’s QoL.40,41Evidence
+level 3
+RCOG Green-top Guideline No. 70 e56 of e72 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 2, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14310 by Test, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+7. What is the initial management? (see Appendix IV)
+7.1 Conservative treatments
+Dietary modi ﬁcation can be bene ﬁcial and avoidance of caffeine, alcohol, and acidic foods and
+drinks should be considered.D
+Stress management may be recommended and regular exercise can be bene ﬁcial.D
+Analgesia is recommended for the symptom of pelvic or bladder pain./check
+There are limited data on the bene ﬁts of acupuncture.D
+A survey of 1982 participants with IC42revealed that 87.6% of patients reported symptomatic
+improvement with an elimination diet and 86.1% by complete avoidance of comestibles outlined in a paperby Shorter et al.,
+43although treatment duration was not speciﬁed. Certain foods that worsen pain are
+alcohol, citrus fruits, coffee, carbonated drinks, tea, chocolate and tomatoes.18If dietary modiﬁcations do
+not help symptoms, these foods can be reintroduced.
+In the same survey,4276.4% of patients reported symptomatic improvement using relaxation techniques,
+66.8% using meditation, 64.5% listening to music and 80.5% with stress reduction. In addition, 65.2% ofpatients reported symptomatic improvement with regular exercise.Evidence
+level 3
+Between 30% and 61% of patients presenting with chronic pelvic pain have BPS, so although there are no data
+available about the efﬁciency of different forms of analgesia in the treatment of BPS, simple analgesia, such asparacetamol and ibuprofen, may be useful at treating the key symptom of pain in this condition.
+40,44However,
+opioids should be used with caution as there is little evidence they are useful for long-term chronic pain. Earlyreferral to a pain clinic should be considered for patients with refractory symptoms.
+45Evidence
+level 4
+A systematic review of three observational studies with a total of 22 patients46suggested that acupuncture
+provided moderate symptomatic improvement; however, these are very small numbers and a largerandomised trial is needed to properly evaluate treatment effectiveness.Evidence
+level 3
+7.2 Pharmacological treatments
+Oral amitriptyline or cimetidine may be considered when ﬁrst-line conservative treatments have
+failed. Cimetidine is not licensed to treat BPS and should only be commenced by a clinicianspecialised to treat this condition.B
+A systematic review47of two randomised controlled trials (RCTs)48,49that included a total of 281 patients
+who were treated with increasing titrated doses of amitriptyline between 10 mg and 100 mg over a4-month period showed trends in improvement in urinary urgency, frequency and pain scores in bothtrials compared with nontreated patients. However, these were only statistically signiﬁcant in the smallerstudy of 48 patients.
+49Compliance is often affected by the adverse effects, which include dry mouth,
+constipation, sedation, weight gain and blurred vision.Evidence
+level 1 –
+RCOG Green-top Guideline No. 70 e57 of e72 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 2, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14310 by Test, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+One RCT50compared 36 patients treated with a 3-month course of 400 mg cimetidine orally versus
+placebo twice daily. All patients had symptomatic improvements, but these were more pronounced in thetreatment group, especially for pain and nocturia. The small sample size and short duration of follow-upare limiting factors in this study. Cimetidine is currently not licensed for the treatment of BPS. Evidence
+level 1 –
+Multimodal therapy may be considered if single drugs are unsuccessful, but should be commenced by consultants
+with special expertise and consideration of multidisciplinary input.
+7.3 Intravesical treatments
+If conservative and oral treatments have been unsuccessful, other therapies may be added or
+substituted using an individualised approach. This will depend on the experience and expertiseof the clinical team involved, and onward referral to a specialist centre with expertise in chronicpain management and access to professionals from other specialties to provide a multidisciplinaryapproach to care may be appropriate. Options include:
+Intravesical lidocaine.
+B
+Intravesical hyaluronic acid.B
+Intravesical injection of botulinum toxin A (Botox).B
+Intravesical dimethyl sulfoxide (DMSO).C
+Intravesical heparin.D
+Intravesical chondroitin sulfate.D
+Lidocaine is a local anaesthetic that acts by blocking sensory nerve ﬁbres in the bladder. One RCT51
+reported on 102 patients treated with a 5-day course of 200 mg intravesically administered lidocaine with
+alkalinised instillation of 8.4% sodium bicarbonate to a ﬁnal volume of 10 ml versus placebo. Over a29-day follow-up period, 30% of treated patients compared with 9.6% of the control group reportedsymptomatic improvement.
+52
+A systematic review of controlled and observational studies evaluated hyaluronic acid, for example,Cystistat
+/C226(Teva UK Limited, Castleford, Yorkshire) given in a weekly regimen for up to 4 –10 weeks, with
+varying follow-up times. It appears to be an effective intravesical treatment with a number needed to treatof 1.31.
+53Evidence
+level 1 –
+RCOG Green-top Guideline No. 70 e58 of e72 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 2, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14310 by Test, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+A systematic review54evaluating intravesical injection of Botox in BPS patients found three RCTs55–57and
+seven prospective cohort studies58–64with a total of 260 patients. Eight of these studies reported
+symptomatic improvement,55,56,58 –61,63,64although, 7% of patients needed post-treatment self-
+catheterisation. Clinicians and patients might consider trying bladder instillations before resorting toinvasive treatments like Botox injections into the bladder, including the trigone. For this reason, it shouldbe performed by a consultant with a special interest in this clinical ﬁeld.Evidence
+level 2++
+A systematic review65of pharmacological managements of BPS identiﬁed one randomised crossover
+study66that evaluated 33 patients given placebo (saline) or 50% DMSO for two sessions each week for
+2 weeks. Of the treatment group, 53% had marked symptomatic improvement compared with 18% of theplacebo group. Adverse effects include a garlic-like taste and odour on the breath and skin, and bladderspasm. Full eye examination is needed prior to starting treatment and 6-monthly blood tests for renal,liver and full blood counts are advised. This treatment may not be offered in all hospitals in the UK as it isan unlicensed treatment that needs to be prescribed by a consultant with special expertise in this clinicalﬁeld. For this reason, referral to a specialised centre would be recommended.
+Evidence
+level 2+
+One observational study67evaluated 48 patients treated with 10 000 units of heparin in 10 ml sterile
+water instilled three times a week for 3 months. The study reported that 56% of patients achieved clinicalremission over 3 months and 50% of patients had symptomatic control after 1 year.
+An individual participant meta-analysis of 213 patients
+68showed some beneﬁt in the global response
+assessment using 2% intravesical chondroitin sulfate. Small observational studies of 43 patients69–71have
+shown symptomatic improvement using a combination of intravesical hyaluronic acid and chondroitinsulfate, with data suggesting a sustained effect for up to 3 years. Use of multimodal therapies needs to beinitiated with specialist clinicians after multidisciplinary input.Evidence
+level 3
+7.4 Further treatment options
+Further options should only be considered after referral to a pain clinic and discussion at a
+multidisciplinary team (MDT) meeting. /check
+Cystoscopic fulguration and laser treatment, and transurethral resection of lesions can beconsidered if Hunner lesions are identi ﬁed at cystoscopy./check
+Neuromodulation (nerve stimulation), in the form of posterior tibial or sacral neuromodulation,
+may be considered after conservative, oral and/or intravesical treatments have failed, in amultidisciplinary setting.D
+Oral cyclosporin A may be considered after conservative, other oral, intravesical andneuromodulation treatments have failed.D
+Cystoscopy with or without hydrodistension may be considered if conservative and oral treatmentshave failed.D
+Major surgery may be considered as last-line treatment in refractory BPS.D
+RCOG Green-top Guideline No. 70 e59 of e72 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 2, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14310 by Test, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Hunner lesions do not respond to oral treatments and need surgical management. They are usually
+diagnosed by cystoscopy with the appearance of a well-demarcated, reddish, mucosal lesion lacking in thenormal capillary structure, which usually bleeds.
+72Two observational studies73,74reported success
+when using Nd:YAG (neodymium:yttrium-aluminium-garnet) laser under cystoscopic control in patients withBPS with Hunner lesions. Fifty-one patients were treated, resulting in 88% symptomatic relief within 2 –3 days
+of treatment; however, 45% needed additional treatment within 23 months. Since these lesions do not usuallyrespond to oral treatments, fulguration and resection should be considered at an early stage.
+Posterior tibial nerve stimulation (PTNS) is likely to require a ﬁne needle being inserted 5 cm cephalad from
+the medial malleolus and posterior to the margin of the tibia at the site of the posterior tibial nerve. Thetreatment regimen is usually weekly for 10 –12 weeks.
+75Sacral nerve modulation involves an initial test phase
+with insertion of a test lead tunnelled under the skin, transmitted onto the nerve roots exiting the S3 foramen,causing stimulation of the pelvic and pudendal nerves. The lead is connected to a stimulator which is exchangedfor a permanent implant if successful.
+76There are no RCTs evaluating either form of neuromodulation.
+Effectiveness data come from observational studies. One study reported efﬁcacy of PTNS in 18 patients77and
+ﬁve studies78–82reported on sacral nerve stimulation in 150 patients. All studies showed improvements in
+symptoms and QoL. Both forms of neuromodulation are invasive procedures and are associated with potentialrisks, although, PTNS is an ofﬁce-based (outpatient) procedure with no incisions. This treatment should becarried out in centres with expertise at managing chronic pain in a multidisciplinary care setting.
+One observational study
+83of 23 patients treated with low-dose oral cyclosporin showed improvements in
+bladder capacity, voiding volumes, pain and decreased urinary frequency; however, symptoms recurred withtreatment cessation. Adverse effects include hypertension, gingival hyperplasia and facial hair growth.
+Cystoscopy is recommended as a treatment rather than solely as a diagnostic tool. Three observational
+studies
+84–86have described variable symptomatic improvement. However, within 6 months, symptoms had
+recurred in the majority of patients.84–86Bladder rupture is a possible complication of prolonged distension of
+a diseased bladder; hence, low-pressure distension is advised.30
+Total cystectomy and urinary diversion in the form of supratrigonal cystectomy with bladder augmentation,bowel or supratrigonal cystectomy, and orthotopic neobladder formation will likely need intermittent self-catheterisation, and patients must be aware of the likelihood of persistent pelvic and pouch pain postsurgery.
+72Urinary diversion in the form of an ileal conduit (with or without simple cystectomy) will not
+require intermittent self-catheterisation.87This surgery is usually performed in specialist centres by a urologist.
+A retrospective observational study88of 47 patients who had reconstructive surgery, including cystectomy,
+ileocystoplasty and urinary diversion, for BPS found that 82% of patients with Hunner lesions had symptomaticrelief after surgery compared with 23% with non-ulcer disease after an average 89-month follow-up period.Evidence
+level 3
+RCOG Green-top Guideline No. 70 e60 of e72 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 2, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14310 by Test, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+7.5 Treatments that are not recommended
+Oral hydroxyzine does not appear to be an effective treatment for BPS.B
+Oral pentosan polysulfate (PPS) does not appear to be an effective treatment for BPS.A
+Long-term antibiotics, intravesical resiniferatoxin, intravesical Bacillus Calmette –Gu/C19erin, high-
+pressure long-duration hydrodistension and long-term oral glucocorticoids are therapies that arenot recommended for BPS./check
+One RCT89of 31 patients treated with oral hydroxyzine 10 –50 mg daily in titrated doses for 3 weeks,
+then treated on the highest effective dose for 21 weeks was compared with a placebo group. Therewas no signiﬁcant response rate in the treatment group (31%) versus the control group (20%).
+PPS is thought to repair the damaged glycosaminoglycan layer, which acts as a protective mechanism for the
+bladder mucosa.
+72An RCT of 368 patients has shown no statistical signiﬁcance between oral PPS and a
+placebo.90PPS has the adverse effects of diarrhoea, vomiting, rectal bleeding and alopecia. In view of this
+evidence and the adverse effect proﬁle, PPS is no longer recommended as a treatment of BPS.Evidence
+level 1+
+Long-term antibiotics should not be used as a treatment option. One RCT91reported on 50 patients
+randomised to receive an 18-week course of antibiotics (rifampicin plus a sequence of doxycycline,erythromycin, metronidazole, clindamycin, amoxicillin and ciproﬂoxacin for 3 weeks each) or placebo. Therewas 48% symptomatic improvement in the treatment group and 24% in the placebo group, but this was notsigniﬁcant. Due to the high rate of adverse effects in the treatment group (80%), these are not recommended.
+Intravesical resiniferatoxin was evaluated in a systematic review
+92of eight RCTs, but failed to show
+symptomatic improvement and caused pain, which reduced treatment compliance.
+Intravesical Bacillus Calmette –Gu/C19erin has been studied in two RCTs93,94on 282 patients compared with a
+placebo. While it may be effective, there are a large number of adverse effects, including arthralgia, headachesand infection.Evidence
+level 1 –
+High-pressure, long-duration hydrodistension with pressures greater than 80 –100 cm of water over more
+than 10 minutes may cause sepsis or bladder rupture. Two observational studies95,96showed a wide range
+of efﬁcacy rates between 22% and 67%, with at least one case of bladder rupture in each study. The risksof this treatment far outweigh the beneﬁts.Evidence
+level 3
+Long-term oral glucocorticoid administration is not recommended due to its long-term adverse effect
+proﬁle.97,98Evidence
+level 4
+RCOG Green-top Guideline No. 70 e61 of e72 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 2, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14310 by Test, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+8. Further management (see Appendix IV)
+8.1 Who should manage BPS?
+History, urinalysis and physical examination should be carried out in primary care./check
+In primary care, a careful history should be taken enquiring about type, duration and location of pain,
+urinary symptoms and QoL. Primary care should also check that all conservative measures have beentaken. A urine dipstick or midstream specimen of urine is recommended to rule out a UTI. An abdominaland vaginal examination may be performed to assess for tenderness, abdominal masses and urinaryretention. Patients should be commenced on ﬁrst-line conservative treatments, such as analgesia, stressrelief, dietary modiﬁcation, exercise and physical therapy, and if these fail to resolve or improve symptoms,a referral to secondary care should be considered. It is expected that these conservative measures maytake between 3 and 6 months to improve symptoms. Referral to a urogynaecologist or urologist with aspecial interest in BPS would be preferable rather than a general gynaecologist when the main symptomsare pelvic pain and urinary in character.
+Evidence
+level 4
+8.2 Who should be referred to secondary care?
+Patients who fail to respond to conservative treatment should be referred to secondary care. /check
+Patients should be referred to secondary care after 3 –6 months of conservative management if symptoms persist.
+8.3 What is the role of the MDT –physiotherapist, pain team, clinical psychologist?
+Referral to a physiotherapist should be considered as BPS symptoms may be improved with
+physical therapy.B
+Consider referring patients with refractory BPS for psychological support or counselling if it isimpacting on their QoL or the patient requests a referral./check
+Patients with refractory BPS should be referred to an MDT in order to explore alternativetreatment options. Those patients who may bene ﬁt from neuromodulation should be referred to
+an MDT before treatment is commenced./check
+An electronic questionnaire42revealed that 74.2% of patients experienced symptomatic improvement with
+massage therapy, 61.5% with physical therapy and 66.1% through physical therapy with internal treatment.Internal massage releases the pelvic ﬂoor from painful trigger points and areas of myofascial tenderness orrestriction. A randomised study
+99of 10 scheduled treatments of myofascial physical therapy versus global
+therapeutic massage on 81 women showed a reduction in pain, frequency and urgency in both groups withno signiﬁcant difference in therapies.Evidence
+level 1 –
+Some patients beneﬁt from speaking to a counsellor or clinical psychologist and engaging in behavioural therapy to
+modify their lifestyles and improve their QoL.
+Referral to a pain clinic or clinical psychologist may need to be considered if conservative and oral treatments have
+failed. This should be considered before commencing intravesical treatments.
+RCOG Green-top Guideline No. 70 e62 of e72 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 2, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14310 by Test, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+8.4 What is the role of support groups?
+Patients should be given written information about patient organisations that provide evidence-
+based information. /check
+Support groups provide a platform to share experiences, exchange information, raise awareness and promote patient
+self-help management.
+There are many patient organisations that may help patients to ﬁnd relevant information (see section 12).
+9. Long-term management and prognosis
+9.1 What should be the duration of follow-up?
+Patients should be followed up periodically in secondary care with consideration for shared care
+between the pain team and urogynaecology until symptoms become controlled and then they canbe followed in primary care if required./check
+It is difﬁcult to estimate a ﬁnite time for follow-up as it is often difﬁcult to achieve symptomatic control to an extent
+where the patient may be happy, so individualised management plans need to take into consideration response totreatment, effects on QoL and other existing comorbidities.
+9.2 BPS and pregnancy
+Woman can be advised that the effect of pregnancy on the severity of BPS symptoms can be variable./check
+BPS treatment options considered safe in pregnancy inc lude oral amitriptyline and intravesical heparin./check
+Although one course of DMSO may be used prior to pregnancy for symptom remission with good
+pregnancy outcomes (delivery at term, normal birth weight and postnatal symptom control),DMSO is known to be teratogenic in animal studies.D
+There is little published information about the changes in symptoms that may occur during pregnancy.100
+The IC Association conducted a patient survey about symptoms and pregnancy in 1989, where patients who
+described their symptoms as ‘mild’ experienced worsening symptoms during pregnancy, which persisted upto 6 months after delivery. In contrast, patients who described their symptoms as ‘severe’ had a signiﬁcantimprovement in symptoms during the second trimester, which lasted up to 6 months after delivery or forthe duration of breastfeeding. BPS was not affected by the mode of delivery. Another study
+101found that
+only 7% of patients stated that their BPS symptoms had improved during pregnancy.Evidence
+level 3
+Of the commonly used oral treatments, amitriptyline has the lowest risks in pregnancy.100Heparin is the
+safest intravesical treatment because it is unlikely to be absorbed from the bladder or to cross theplacenta and is not excreted in breast milk. Lidocaine does cross the placenta and there is noinformation about the safety of chronic exposure to the fetus. Systemic corticosteroids are not known to Evidence
+level 4
+RCOG Green-top Guideline No. 70 e63 of e72 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 2, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14310 by Test, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+have teratogenic effects,102,103but the possibility of long-term effects on the hypothalamic –pituitary –
+ovarian axis cannot be excluded. The absorption of intravesical corticosteroids is unknown. Sacral nervestimulators should not be placed during pregnancy and, if already present, should be turned off for theduration of pregnancy as the effect on the fetus is unknown.
+104
+In a few cases, multiple members of the same family have BPS. This suggests that some patients may have agenetic predisposition, however, there is no documented evidence for this. Unless the pregnant patientbelongs to a family that has multiple members with the condition, she can be reassured that the risk forpassing it on to her child is low.
+100Evidence
+level 4
+A prospective study105included 12 patients who had a course of DMSO (every 2 weeks for 12 weeks) and all
+had symptom remission. Pregnancy occurred 6 months to 5 years after the DMSO treatment. Nine patientscontinued to have good symptom remission throughout pregnancy. The other three had worsening symptomsand two patients terminated the pregnancy because of severe symptoms. Because this small group of patientswas more homogeneous than the general BPS population, with all patients having chronic inﬂammation onbladder biopsy and good remission after DMSO, it is unclear how the results of this study apply to the generalBPS population. DMSO is known to be teratogenic in animal studies and has a US Food and DrugAdministration rating of grade C, which states there are no adequate human studies, but animal studies show anincreased risk or have not been done.
+100In view of this, DMSO should be avoided in pregnancy.Evidence
+level 3
+10. Recommendations for future research
+/C15Create a single, standardised, validated assessment questionnaire.
+/C15Decide on patient-related outcome measures for BPS.
+/C15Assess the role of conservative treatment, e.g. analgesia, dietary modiﬁcation and stress management
+(section 7.1), versus placebo for BPS.
+/C15Assess the role of the clinical psychologist.
+/C15Assess the number of patients with coexisting conditions.
+/C15Assess the therapeutic and cost effectiveness of complementary therapies, such as acupuncture, with robustlyconducted randomised clinical trials.
+11. Auditable topics
+/C15Proportion of patients with BPS symptoms who receive initial conservative treatments in primary care (100%).
+/C15Proportion of patients with BPS who complete a bladder diary for diagnosis (100%).
+12. Useful links and support groups
+The following organisations provide support for BPS:
+/C15Cystitis and Overactive Bladder Foundation [http://www.cobfoundation.org].
+/C15Pelvic Pain Support Network [http://www.pelvicpain.org.uk].
+/C15International Painful Bladder Foundation [http://www.painful-bladder.org].
+/C15Urostomy Association [http://www.urostomyassociation.org.uk].
+RCOG Green-top Guideline No. 70 e64 of e72 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 2, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14310 by Test, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+References
+1. van de Merwe JP, Nordling J, Bouchelouche P, Bouchelouche K,
+Cervigni M, Daha LK, et al. Diagnostic criteria, classiﬁcation, and
+nomenclature for painful bladder syndrome/interstitial cystitis: anESSIC proposal. Eur Urol 2008;53:60 –7.
+2. American Urological Association. Diagnosis and treatment of
+interstitial cystitis/bladder pain syndrome . Linthicum, MD: AUA; 2014.
+3. Persu C, Cauni V, Gutue S, Blaj I, Jinga V, Geavlete P. From
+interstitial cystitis to chronic pelvic pain. J Med Life 2010;3:167 –74.
+4. Gillenwater JY, Wein AJ. Summary of the National Institute of
+Arthritis, Diabetes, Digestive and Kidney Diseases Workshop onInterstitial Cystitis, National Institutes of Health, Bethesda,Maryland, August 28-29, 1987. J Urol 1988;140:203 –6.
+5. Abrams PH, Cardozo L, Fall M, Grifﬁths D, Rosier P, Ulmsten U,
+et al.; Standardisation Sub-committee of the InternationalContinence Society. The standardisation of terminology of lower
+urinary tract function: report from the Standardisation Sub-
+committee of the International Continence Society. Neurourol
+Urodyn 2002;21:167 –78.
+6. Konkle KS, Berry SH, Elliott MN, Hilton L, Suttorp MJ,
+Clauw DJ, et al. Comparison of an interstitial cystitis/bladder
+pain syndrome clinical cohort with symptomatic communitywomen from the RAND Interstitial Cystitis Epidemiology study.J Urol 2012;187:508 –12.
+7. Clemens JQ, Link CL, Eggers PW, Kusek JW, Nyberg LM Jr,
+McKinlay JB; BACH Survey Investigators. Prevalence of painfulbladder symptoms and effect on quality of life in black, Hispanicand white men and women. J Urol 2007;177:1390 –4.
+8. Berry SH, Stoto MA, Elliott M, Suttorp M, Bogart L, Eggers PW,
+et al. Prevalence of interstitial cystitis/painful bladder syndromein the United States. J Urol 2009;181 Suppl 4:20 –1.
+9. Clemens JQ, Meenan RT, O’Keeffe Rosetti MC, Brown SO,
+Gao SY, Calhoun EA. Prevalence of interstitial cystitis symptomsin a managed care population. J Urol 2005;174:576 –80.
+10. Bogart LM, Berry SH, Clemens JQ. Symptoms of interstitial
+cystitis, painful bladder syndrome and similar diseases in women:
+a systematic review. J Urol 2007;177:450 –6.
+11. Fall M, Baranowski AP, Fowler CJ, Lepinard V, Malone-Lee JG,
+Messelink EJ, et al.; European Association of Urology. EAU
+guidelines on chronic pelvic pain. Eur Urol 2004;46:681 –9.
+12. Hanno P, Lin A, Nordling J, Nyberg L, van Ophoven A, Ueda T,
+et al.; Bladder Pain Syndrome Committee of the International
+Consultation on Incontinence. Bladder Pain Syndrome
+Committee of the International Consultation on Incontinence.Neurourol Urodyn 2010;29:191 –8.
+13. Tirlapur SA, Khan KS. An assessment of clinicians’ and patients’
+experiences in the management of bladder pain syndrome.
+J Obstet Gynaecol 2016;36:241 –5.
+14. Selfe SA, Matthews Z, Stones RW. Factors inﬂuencing outcome
+in consultations for chronic pelvic pain. J Womens Health
+1998;7:1041 –8.
+15. McGowan L, Luker K, Creed F, Chew-Graham CA. How do you
+explain a pain that can’t be seen?: the narratives of women withchronic pelvic pain and their disengagement with the diagnostic
+cycle. Br J Health Psychol 2007;12:261 –74.
+16. Price J, Farmer G, Harris J, Hope T, Kennedy S, Mayou R.
+Attitudes of women with chronic pelvic pain to the
+gynaecological consultation: a qualitative study. BJOG
+2006;113:446
+–52.
+17. Parsons CL, Dell J, Stanford EJ, Bullen M, Kahn BS, Waxell T,
+et al. Increased prevalence of interstitial cystitis: previouslyunrecognized urologic and gynecologic cases identiﬁed using a
+new symptom questionnaire and intravesical potassium
+sensitivity. Urology 2002;60:573 –8.
+18. Warren JW, Brown J, Tracy JK, Langenberg P, Wesselmann U,
+Greenberg P. Evidence-based criteria for pain of interstitial cystitis/
+painful bladder syndrome in women. Urology 2008;71:444 –8.
+19. Tincello DG, Walker AC. Interstitial cystitis in the UK: results of
+a questionnaire survey of members of the Interstitial Cystitis
+Support Group. Eur J Obstet Gynecol Reprod Biol 2005;118:91 –5.
+20. Latthe P, Mignini L, Gray R, Hills R, Khan K. Factors predisposing
+women to chronic pelvic pain: systematic review. BMJ
+2006;332:749 –55.
+21. Champaneria R, D’Andrea RM, Latthe PM. Hormonal
+contraception and pelvic ﬂoor function: a systematic review. Int
+Urogynecol J 2016;27:709 –22.
+22. Al-Hadithi HN, Williams H, Hart CA, Frazer M, Adams EJ,
+Richmond DH, et al. Absence of bacterial and viral DNA inbladder biopsies from patients with interstitial cystitis/chronicpelvic pain syndrome. J Urol 2005;174:151 –4.
+23. Peters KM, Carrico DJ, Diokno AC. Characterization of a clinical
+cohort of 87 women with interstitial cystitis/painful bladdersyndrome. Urology 2008;71:634 –40.
+24. Gomes CM, S /C19anchez-Ortiz RF, Harris C, Wein AJ, Rovner ES.
+Signiﬁcance of hematuria in patients with interstitial cystitis:
+review of radiographic and endoscopic ﬁndings. Urology
+2001;57:262 –5.
+25. Messing E, Pauk D, Schaeffer A, Nieweglowski M, Nyberg LM Jr,
+Landis JR, et al. Associations among cystoscopic ﬁndings and
+symptoms and physical examination ﬁndings in women enrolledin the Interstitial Cystitis Data Base (ICDB) Study. Urology
+1997;49 Suppl 5A:81 –5.
+26. Cole EE, Scarpero HM, Dmochowski RR. Are patient symptoms
+predictive of the diagnostic and/or therapeutic value ofhydrodistention? Neurourol Urodyn 2005;24:638 –42.
+27. Waxman JA, Sulak PJ, Kuehl TJ. Cystoscopic ﬁndings consistent
+with interstitial cystitis in normal women undergoing tuballigation. J Urol 1998;160:1663 –7.
+28. Van Dyck J, Geurts N, Wyndaele JJ. Painful bladder syndrome:
+do the different histopathological features correlate?
+International Continence Society/International UrogynecologicalAssociation (ICS/IUGA) 2010, 23 –27 August 2010, Toronto,
+Canada. Abstract 239. [www.ics.org/Abstracts/Publish/105/
+000239.pdf]. Accessed 2015 Jun 26.
+29. Wyndaele JJ, Van Dyck J, Toussaint N. Cystoscopy and bladder
+biopsies in patients with bladder pain syndrome carried out
+following ESSIC guidelines. Scand J Urol Nephrol 2009;43:471 –5.
+30. Higson RH, Smith JC, Whelan P. Bladder rupture: an acceptable
+complication of distension therapy? Br J Urol 1978;50:529 –34.
+31. Al-Zahrani AA, Gajewski JB. Long-term efﬁcacy and tolerability
+of pentosan polysulphate sodium in the treatment of bladder
+pain syndrome.
+Can Urol Assoc J 2011;5:113 –8.
+32. Carr LK, Corcos J, Nickel JC, Teichman J. Diagnosis of
+interstitial cystitis June 2007. Can Urol Assoc J 2009;3:81 –6.
+33. Goin JE, Olaleye D, Peters KM, Steinert B, Habicht K,
+Wynant G. Psychometric analysis of the University of WisconsinInterstitial Cystitis Scale: implications for use in randomized
+clinical trials. J Urol 1998;159:1085 –90.
+34. O’Leary MP, Sant GR, Fowler FJ Jr, Whitmore KE,
+Spolarich-Kroll J. The interstitial cystitis symptom index andproblem index. Urology 1997;49 Suppl 5A:58 –63.
+RCOG Green-top Guideline No. 70 e65 of e72 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 2, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14310 by Test, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+35. Quaghebeur J, Wyndaele JJ. Comparison of questionnaires used
+for the evaluation of patients with chronic pelvic pain. Neurourol
+Urodyn 2013;32:1074 –9.
+36. Hawker GA, Mian S, Kendzerska T, French M. Measures of adult
+pain: Visual Analog Scale for Pain (VAS Pain), Numeric Rating Scale
+for Pain (NRS Pain), McGill Pain Questionnaire (MPQ), Short-
+Form McGill Pain Questionnaire (SF-MPQ), Chronic Pain GradeScale (CPGS), Short Form-36 Bodily Pain Scale (SF-36 BPS), and
+Measure of Intermittent and Constant Osteoarthritis Pain
+(ICOAP). Arthritis Care Res (Hoboken) 2011;63 Suppl 11:S240 –52.
+37. Brief Pain Inventory (Short Form) [http://www.npcrc.org/ﬁles/
+news/briefpain_short.pdf] Accessed 2015 May 04.
+38. Rapariz-Gonz /C19alez M, Castro-D /C19ıaz D. Mej /C19ıa-Rend /C19on D; EURCIS.
+Evaluation of the impact of the urinary symptoms on quality of lifeof patients with painful bladder syndrome/chronic pelvic pain andradiation cystitis: EURCIS study. Actas Urol Esp 2014;38:224 –31.
+39. Bogart LM, Suttorp MJ, Elliott MN, Clemens JQ, Berry SH.
+Prevalence and correlates of sexual dysfunction among women withbladder pain syndrome/interstitial cystitis. Urology 2011;77:576 –80.
+40. Tirlapur SA, Kuhrt K, Chaliha C, Ball E, Meads C, Khan KS. The
+‘evil twin syndrome’ in chronic pelvic pain: a systematic reviewof prevalence studies of bladder pain syndrome andendometriosis. Int J Surg 2013;11:233 –7.
+41. Suskind AM, Berry SH, Suttorp MJ, Elliott MN, Hays RD,
+Ewing BA, et al. Health-related quality of life in patients withinterstitial cystitis/bladder pain syndrome and frequentlyassociated comorbidities. Qual Life Res 2013;22:1537 –41.
+42. O’Hare PG 3rd, Hoffmann AR, Allen P, Gordon B, Salin L,
+Whitmore K. Interstitial cystitis patients’ use and rating ofcomplementary and alternative medicine therapies. Int Urogynecol
+J2013;24:977 –82.
+43. Shorter B, Lesser M, Moldwin RM, Kushner L. Effect of
+comestibles on symptoms of interstitial cystitis. J Urol
+2007;178:145 –52.
+44. Cervigni M, Natale F. Gynecological disorders in bladder
+pain syndrome/interstitial cystitis patients. Int J Urol 2014;21
+Suppl 1:85 –8.
+45. Faculty of Pain Medicine. Opioids Aware: A resource for patients and
+healthcare professionals to support prescribing of opioid medicines for
+pain. London: The Royal College of Anaesthetists; 2016 [http://
+www.rcoa.ac.uk/faculty-of-pain-medicine/opioids-aware] Accessed2015 May 04.
+46. Verghese TS, Riordain RN, Champaneria R, Latthe PM.
+Complementary therapies for bladder pain syndrome: asystematic review. Int Urogynecol J 2016;27:1127 –36.
+47. Giannantoni A, Bini V, Dmochowski R, Hanno P, Nickel JC,
+Proietti S, et al. Contemporary management of the painfulbladder: a systematic review. Eur Urol 2012;61:29 –53.
+48. Foster HE Jr, Hanno PM, Nickel JC, Payne CK, Mayer RD,
+Burks DA, et al.; Interstitial Cystitis Collaborative Research
+Network. Effect of amitriptyline on symptoms in treatment na €ıve
+patients with interstitial cystitis/painful bladder syndrome. J Urol
+2010;183:1853 –8.
+49. van Ophoven A, Pokupic S, Heinecke A, Hertle L. A prospective,
+randomized, placebo controlled, double-blind study of
+amitriptyline for the treatment of interstitial cystitis. J Urol 2004;
+172:533 –6.
+50. Thilagarajah R, Witherow RO, Walker MM. Oral cimetidine gives
+effective symptom relief in painful bladder disease: a prospective,randomized, double-blind placebo-controlled trial. BJU Int
+2001;87:207 –12.51. Matsuoka PK, Haddad JM, Pacetta AM, Baracat EC. Intravesical
+treatment of painful bladder syndrome: a systematic review and
+meta-analysis. Int Urogynecol J 2012;23:1147 –53.
+52. Nickel JC, Moldwin R, Lee S, Davis EL, Henry RA, Wyllie MG.
+Intravesical alkalinized lidocaine (PSD597) offers sustained relief
+from symptoms of interstitial cystitis and painful bladder
+syndrome. BJU Int 2009;103:910 –8.
+53. Barua JM, Arance I, Angulo JC, Riedl CR. A systematic review
+and meta-analysis on the efﬁcacy of intravesical therapy for
+bladder pain syndrome/interstitial cystitis. Int Urogynecol J
+2016;27:1137 –47.
+54. Tirumuru S, Al-Kurdi D, Latthe P. Intravesical botulinum toxin A
+injections in the treatment of painful bladder syndrome/
+interstitial cystitis: a systematic review. Int Urogynecol J
+2010;21:1285 –300.
+55. Kuo HC, Chancellor MB. Comparison of intravesical botulinum
+toxin type A injections plus hydrodistention with hydrodistention
+alone for the treatment of refractory interstitial cystitis/painfulbladder syndrome. BJU Int 2009;104:657 –61.
+56. El-Bahnasy AE, Farahat YA, El-Bendary M, Taha MR, El-Damhogy M,
+Mourad S. A randomized controlled trial of bacillus Calmette –
+Guerin and botulinum toxin-A for the treatment of refractoryinterstitial cystitis. UroToday Int J 2009;2(1).
+57. Manning JA, Dwyer P, Rosamilia A, Murray C, Thomas E,
+Beattie K. Prospective randomised double blind study of theeffectiveness of botulinum A toxin for treatment of refractorypainful bladder syndrome. Int Urogynecol J 2009;20 Suppl 2:87 –8.
+58. Smith CP, Radziszewski P, Borkowski A, Somogyi GT, Boone TB,
+Chancellor MB. Botulinum toxin a has antinociceptive effects intreating interstitial cystitis. Urology 2004;64:871 –5; discussion 875.
+59. Kuo HC. Preliminary results of suburothelial injection of
+botulinum a toxin in the treatment of chronic interstitial cystitis.Urol Int 2005;75:170 –4.
+60. Carl S, Grosse J, Laschke S. Treatment of interstitial cystitis with
+botulinum toxin type A. Eur Urol 2007;6:248.
+61. Pinto RA, Silva A, Lopes T, Silva JF, Silva CM, Cruz FR, et al.
+Intra-trigonal injection of botulinum toxin A in patients withbladder pain syndrome - results at 9-months follow-up. J Urol
+2009;181:20.
+62. Davies AM, Chahal R, Inman R, Urwin G. Intravesical botulinum
+A toxin (Botox
+TM) - does it have a role in the management of
+interstitial cystitis? Eur Urol Suppl 2006;5:222.
+63. Ramsay AK, Small DR, Conn IG. Intravesical botulinum toxin
+type A in chronic interstitial cystitis: results of a pilot study.Surgeon 2007;5:331 –3.
+64. Giannantoni A, Porena M, Costantini E, Zucchi A, Mearini L,
+Mearini E. Botulinum A toxin intravesical injection in patientswith painful bladder syndrome: 1-year followup. J Urol
+2008;179:1031 –4.
+65. Dimitrakov J, Kroenke K, Steers WD, Berde C, Zurakowski D,
+Freeman MR, et al. Pharmacologic management of painful bladdersyndrome/interstitial cystitis: a systematic review. Arch Intern Med
+2007;167:1922 –9.
+66. Perez-Marrero R, Emerson LE, Feltis JT. A controlled study of
+dimethyl sulfoxide in interstitial cystitis. J Urol 1988;140:36 –9.
+67. Parsons CL, Housley T, Schmidt JD, Lebow D. Treatment of
+interstitial cystitis with intravesical heparin. Br J Urol 1994;73:504 –7.
+68. Thakkinstian A, Nickel JC. Efﬁcacy of intravesical chondroitin
+sulphate in treatment of interstitial cystitis/bladder painsyndrome (IC/BPS): Individual patient data (IPD) meta-analytical
+approach. Can Urol Assoc J 2013;7:195 –200.
+RCOG Green-top Guideline No. 70 e66 of e72 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 2, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14310 by Test, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+69. Cervigni M, Natale F, Nasta L, Mako A. Intravesical hyaluronic
+acid and chondroitin sulphate for bladder pain syndrome/
+interstitial cystitis: long-term treatment results. Int Urogynecol J
+2012;23:1187 –92.
+70. Porru D, Cervigni M, Nasta L, Natale F, Gardella B, Voi RL,
+et al. Effects of endovesical hyaluronic acid/chondroitin sulfate in
+the treatment of interstitial cystitis/painful bladder syndrome.Eur Urol Suppl 2008;7:286.
+71. Giberti C, Gallo F, Cortese P, Schenone M. Combined
+intravesical sodium hyaluronate/chondroitin sulfate therapy forinterstitial cystitis/bladder pain syndrome: a prospective study.Ther Adv Urol 2013;5:175 –9.
+72. Homma Y, Ueda T, Ito T, Takei M, Tomoe H. Japanese guideline
+for diagnosis and treatment of interstitial cystitis. Int J Urol
+2009;16:4 –16.
+73. Malloy TR, Shanberg AM. Laser therapy for interstitial cystitis.
+Urol Clin North Am 1994;21:141 –4.
+74. Rofeim O, Hom D, Freid RM, Moldwin RM. Use of the
+neodymium: YAG laser for interstitial cystitis: a prospective
+study. J Urol 2001;166:134 –6.
+75. Bosch JL. Electrical neuromodulatory therapy in female voiding
+dysfunction. BJU Int 2006;98 Suppl 1:43 –8; discussion 49.
+76. Hassouna MM, Siegel SW, N €yeholt AA, Elhilali MM,
+van Kerrebroeck PE, Das AK, et al. Sacral neuromodulation in
+the treatment of urgency-frequency symptoms: a multicenterstudy on efﬁcacy and safety. J Urol 2000;163:1849 –54.
+77. Zhao J, Bai J, Zhou Y, Qi G, Du L. Posterior tibial nerve
+stimulation twice a week in patients with interstitial cystitis.
+Urology 2008;71:1080 –4.
+78. Whitmore KE, Payne CK, Diokno AC, Lukban JC. Sacral
+neuromodulation in patients with interstitial cystitis: a
+multicenter clinical trial. Int Urogynecol J Pelvic Floor Dysfunct
+2003;14:305 –8; discussion 308 –9.
+79. Maher CF, Carey MP, Dwyer PL, Schluter PL. Percutaneous
+sacral nerve root neuromodulation for intractable interstitial
+cystitis. J Urol 2001;165:884 –6.
+80. Comiter CV. Sacral neuromodulation for the symptomatic
+treatment of refractory interstitial cystitis: a prospective study.
+J Urol 2003;169:1369 –73.
+81. Steinberg AC, Oyama IA, Whitmore KE. Bilateral S3 stimulator
+in patients with interstitial cystitis. Urology 2007;69:441 –3.
+82. Powell CR, Kreder KJ. Long-term outcomes of urgency-frequency
+syndrome due to painful bladder syndrome treated with sacral
+neuromodulation and analysis of failures. J Urol 2010;183:173 –6.
+83. Sairanen J, Forsell T, Ruutu M. Long-term outcome of patients
+with interstitial cystitis treated with low dose cyclosporine A.
+J Urol 2004;171:2138 –41.
+84. Erickson DR, Xie SX, Bhavanandan VP, Wheeler MA, Hurst RE,
+Demers LM, et al. A comparison of multiple urine markers for
+interstitial cystitis. J Urol 2002;167:2461
+–9.
+85. Erickson DR, Kunselman AR, Bentley CM, Peters KM, Rovner ES,
+Demers LM, et al. Changes in urine markers and symptoms afterbladder distention for interstitial cystitis. J Urol 2007;177:556 –60.
+86. Ottem DP, Teichman JM. What is the value of cystoscopy with
+hydrodistension for interstitial cystitis? Urology 2005;66:494 –9.
+87. Kim HJ, Lee JS, Cho WJ, Lee HS, Lee HN, You HW, et al.
+Efﬁcacy and safety of augmentation ileocystoplasty combined
+with supratrigonal cystectomy for the treatment of refractorybladder pain syndrome/interstitial cystitis with Hunner’s lesion.Int J Urol 2014;21 Suppl 1:69 –73.88. R €ossberger J, Fall M, Jonsson O, Peeker R. Long-term results of
+reconstructive surgery in patients with bladder pain syndrome/
+interstitial cystitis: subtyping is imperative. Urology 2007;70:638 –42.
+89. Sant GR, Propert KJ, Hanno PM, Burks D, Culkin D, Diokno AC,
+et al.; Interstitial Cystitis Clinical Trials Group. A pilot clinical
+trial of oral pentosan polysulfate and oral hydroxyzine in patients
+with interstitial cystitis. J Urol 2003;170:810 –5.
+90. Nickel JC, Herschorn S, Whitmore KE, Forrest JB, Hu P,
+Friedman AJ, et al. Pentosan polysulfate sodium for treatment of
+interstitial cystitis/bladder pain syndrome: insights from arandomized, double-blind, placebo controlled study. J Urol
+2015;193:857 –62.
+91. Warren JW, Horne LM, Hebel JR, Marvel RP, Keay SK, Chai TC.
+Pilot study of sequential oral antibiotics for the treatment ofinterstitial cystitis. J Urol 2000;163:1685 –8.
+92. Dawson TE, Jamison J. Intravesical treatments for painful bladder
+syndrome/interstitial cystitis. Cochrane Database Syst Rev 2007;(4):
+CD006113.
+93. Mayer R, Propert KJ, Peters KM, Payne CK, Zhang Y, Burks D,
+et al.; Interstitial Cystitis Clinical Trials Group. A randomized
+controlled trial of intravesical bacillus calmette-guerin fortreatment refractory interstitial cystitis. J Urol 2005;173:1186 –91.
+94. Peters K, Diokno A, Steinert B, Yuhico M, Mitchell B, Krohta S,
+et al. The efﬁcacy of intravesical Tice strain bacillus Calmette-
+Guerin in the treatment of interstitial cystitis: a double-blind,prospective, placebo controlled trial. J Urol 1997;157:2090 –4.
+95. McCahy PJ, Styles RA. Prolonged bladder distension: experience
+in the treatment of detrusor overactivity and interstitial cystitis.
+Eur Urol 1995;28:325 –7.
+96. Glemain P, Rivi /C18ere C, Lenormand L, Karam G, Bouchot O,
+Buzelin JM. Prolonged hydrodistention of the bladder for
+symptomatic treatment of interstitial cystitis: efﬁcacy at6 months and 1 year. Eur Urol 2002;41:79 –84.
+97. Hosseini A, Ehr /C19en I, Wiklund NP. Nitric oxide as an objective
+marker for evaluation of treatment response in patients with
+classic interstitial cystitis. J Urol 2004;172:2261 –5.
+98. Soucy F, Gr /C19egoire M. Efﬁcacy of prednisone for severe
+refractory ulcerative interstitial cystitis. J Urol 2005;173:841 –3;
+discussion 843.
+99. FitzGerald MP, Payne CK, Lukacz ES, Yang CC, Peters KM,
+Chai TC, et al.; Interstitial Cystitis Collaborative ResearchNetwork. Randomized multicenter clinical trial of myofascial
+physical therapy in women with interstitial cystitis/painful bladder
+syndrome and pelvic ﬂoor tenderness. J Urol 2012;187:2113 –8.
+100. Erickson DR, Propert KJ. Pregnancy and interstitial cystitis/painful
+bladder syndrome. Urol Clin North Am 2007;34:61 –9.
+101. Simon LJ, Landis JR, Erickson DR, Nyberg LM. The Interstitial
+Cystitis Data Base Study: concepts and preliminary baselinedescriptive statistics. Urology 1997;49 Suppl 5A:64 –75.
+102. Bjørn AM, Ehrenstein V, Nohr EA, Nørgaard M. Use of inhaled and
+oral corticosteroids in pregnancy and the risk of malformations ormiscarriage. Basic Clin Pharmacol Toxicol 2015;116:308 –14.
+103. Skuladottir H, Wilcox AJ, Ma C, Lammer EJ, Rasmussen SA,
+Werler MM, et al. Corticosteroid use and risk of orofacial clefts.
+Birth Defects Res A Clin Mol Teratol 2014;100:499 –506.
+104. El-Khawand D, Montgomery OC, Wehbe SA, Whitmore KE.
+Sacral nerve stimulation during pregnancy: case report and review
+of the literature. Female Pelvic Med Reconstr Surg 2012;18:127 –9.
+105. Onwude JL, Selo-Ojeme DO. Pregnancy outcomes following the
+diagnosis of interstitial cystitis. Gynecol Obstet Invest 2003;56:160 –2.
+RCOG Green-top Guideline No. 70 e67 of e72 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 2, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14310 by Test, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Appendix I: Explanation of guidelines and evidence levels
+Clinical guidelines are: ‘systematically developed statements which assist clinicians and patients in making decisions
+about appropriate treatment for speciﬁc conditions’. Each guideline is systematically developed using a standardised
+methodology. Exact details of this process can be found in Clinical Governance Advice No.1 Development of RCOG
+Green-top Guidelines (available on the RCOG website at http://www.rcog.org.uk/green-top-development ). These
+recommendations are not intended to dictate an exclusive course of management or treatment. They must beevaluated with reference to individual patient needs, resources and limitations unique to the institution and variationsin local populations. It is hoped that this process of local ownership will help to incorporate these guidelines intoroutine practice. Attention is drawn to areas of clinical uncertainty where further research may be indicated.
+The evidence used in this guideline was graded using the scheme below and the recommendations formulated in a
+similar fashion with a standardised grading scheme.
+Classi ﬁcation of evidence levels Grades of recommendations
+1++ High-quality meta-analyses, systematic reviews
+of randomised controlled trials or randomisedcontrolled trials with a very low risk of biasAAt least one meta-analysis, systematic reviews orRCT rated as 1 ++, and directly applicable to the
+target population; orA systematic review of RCTs or a body ofevidence consisting principally of studies rated as
+1+, directly applicable to the target population
+and demonstrating overall consistency of results1+ Well-conducted meta-analyses, systematic
+reviews of randomised controlled trials orrandomised controlled trials with a low risk of bias
+1–Meta-analyses, systematic reviews of
+randomised controlled trials or randomisedcontrolled trials with a high risk of bias
+BA body of evidence including studies rated as 2 ++
+directly applicable to the target population, anddemonstrating overall consistency of results; orExtrapolated evidence from studies rated as 1 ++
+or 1+2++ High-quality systematic reviews of case –control
+or cohort studies or high-quality case –control
+or cohort studies with a very low risk ofconfounding, bias or chance and a highprobability that the relationship is causal
+2+ Well-conducted case –control or cohort
+studies with a low risk of confounding, bias orchance and a moderate probability that therelationship is causal
+CA body of evidence including studies rated as 2 +
+directly applicable to the target population, anddemonstrating overall consistency of results; orExtrapolated evidence from studies rated as 2 ++
+2– Case –control or cohort studies with a high risk
+of confounding, bias or chance and a signiﬁcantrisk that the relationship is not causal
+3 Non-analytical studies, e.g. case reports, case
+seriesDEvidence level 3 or 4; orExtrapolated evidence from studies rated as 2 +
+4 Expert opinionGood practice point
+/checkRecommended best practice based on the
+clinical experience of the guidelinedevelopment group
+RCOG Green-top Guideline No. 70 e68 of e72 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 2, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14310 by Test, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Appendix II: Example of a bladder diary (adapted from The British Association of Urological Surgeons)
+Time Liquid
+intake (ml)Volume of urine
+passed (ml)Urine leaks
+(small, moderate,large amount)Urgency
+(strong, moderate,mild desire)
+00.00
+01.00
+02.00
+03.0004.00
+05.00
+06.0007.00
+08.00
+09.0010.0011.00
+12.00
+13.0014.00
+15.00
+16.0017.00
+18.00
+19.0020.00
+21.00
+22.0023.00
+RCOG Green-top Guideline No. 70 e69 of e72 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 2, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14310 by Test, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Appendix III: Classi ﬁcation of bladder pain syndrome1according to cystoscopy and biopsy ﬁndings
+Cystoscopy with hydrodistension
+Not done Normal GlomerulationsaHunner lesionsb
+Biopsy
+Not done XX 1X 2X 3XNormal XA 1A 2A 3A
+Inconclusive XB 1B 2B 3B
+Positive
+cXC 1C 2C 3C
+aGlomerulations: grades 2 –3 (grade 2, severe areas of submucosal bleeding ; grade 3, diffuse bleedi ng of bladder mucosa).
+bWith or without glomerulations.
+cHistology showing inﬂammatory inﬁltrates and/or detrusor mastocytosis and/or granulation tissue and/or
+intrafascicular ﬁbrosis.
+RCOG Green-top Guideline No. 70 e70 of e72 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 2, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14310 by Test, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Appendix IV: Proposed treatment algorithm for BPS
+Abbreviations: BCG Bacillus Calmette –Gu/C19erin; BPS bladder pain syndrome; DMSO dimethyl sulfoxide; MDT multidisciplinary team;
+MSU midstream specimen of urine; QoL quality of life; PPS pentosan polysulfate.BPS; Pain/pressure/discomfort in the pelvis/bladder, associated with urinary symptoms (frequency, urgency, nocturia, bladder fi lling pain) lasting at least 6weeks, with no
+identifiable cause. 
+Initial assessment
+Consider other causes:
+Malignancy, infection, overactive bladder, bladder
+calculi, bladder outlet obstruction, prolapse,endometriosis, radiation/drug-related cystitisUrine dipstick +/– MSU
+Physical examination
+Frequency/volume charts
+First-line treatments:
+Second-line treatments:
+Third-line treatments:
+Fourth-line treatments:
+Fifth-line treatments:Oral amitriptyline, cimetidine
+Intravesical DMSO, heparin, botulinum toxin A, lidocaine, chondroitin sulfate, hyaluronic acid 
+Neuromodulation – posterior tibial nerve or sacral nerve stimulation
+Oral cyclosporin A
+Cystoscopy and hydrodistensionIf treatment fails – refer to secondary care
+If Hunner lesions are noted or if major surgery is considered – refer to a tertiary centreHistory: assess urinary
+symptoms, pain, QoLIf urinary tract infection: treat and reassess
+Treatments that are not recommended: Long-term antibiotics, intravesical resiniferatoxin, intravesical BCG,
+intravesical PPS, high-pressure long-duration hydrodistension and long-term oral glucocorticoids.If treatment fails – refer to an MDT, pain team +/– clinical psychologistConservative: analgesia, stress relief, dietary modification, exercise, physical therapy, support groups
+RCOG Green-top Guideline No. 70 e71 of e72 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 2, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14310 by Test, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+This guideline was produced on behalf of the Royal College of Obstetricians and Gynaecologists by:
+Dr SA Tirlapur MRCOG, London; Mrs JV Birch, Pelvic Pain Support Network, Poole; Dr CL Carberry MD,
+Providence, Rhode Island, USA; Professor KS Khan FRCOG, London; Dr PM Latthe MRCOG, Birmingham;Dr S Jha FRCOG, Shefﬁeld, British Society of Urogynaecology; Dr KL Ward MRCOG, Manchester, British
+Society of Urogynaecology; Ms A Irving, Cystitis and Overactive Bladder Foundation, Birmingham
+and peer reviewed by:
+British Association of Urological Surgeons; Ms J Brocksom, British Association of Urological Nurses, Bathgate;
+Dr M Chaudry MRCOG, Leeds; Ms M Ding, Grifﬁth University, Queensland, Australia; Mr B Kumar FRCOG, Wrexham;Dr A Leach, Bladder Pain Society, London; Professor L McGowan, University of Leeds; Dr BD Nicholson, University of
+Oxford; Dr JC Nickel, Kingston General Hospital, Ontario, Canada; Policy Connect, London; Mr R Thilagarajah, Whipp’s
+Cross University Hospital, London.
+Committee lead reviewers were: Miss N Potdar MRCOG, Leicester; and Dr BA Magowan FRCOG, Melrose, Scotland.
+The chairs of the Guidelines Committee were: Dr M Gupta
+1MRCOG, London; Dr P Owen2FRCOG, Glasgow, Scotland;
+and Dr AJ Thomson1MRCOG, Paisley, Scotland.
+1co-chairs from June 20142until May 2014.
+All RCOG guidance developers are asked to declare any conﬂicts of interest. A statement summarising any conﬂicts of
+interest for this guideline is available from: https://www.rcog.org.uk/en/guidelines-r esearch-services/guidelines/gtg70/ .
+The ﬁnal version is the responsibility of the Guidelines Committee of the RCOG.
+The review process will commence in 2019, unless otherwise indicated.
+DISCLAIMER
+The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical practice.
+They present recognised methods and techniques of clinical practice, based on published evidence, for consideration byobstetricians and gynaecologists and other relevant health professionals. The ultimate judgement regarding a particular
+clinical procedure or treatment plan must be made by the doctor or other attendant in the light of clinical data presented
+by the patient and the diagnostic and treatment options available.
+This means that RCOG Guidelines are unlike protocols or guidelines issued by employers, as they are not intended to be
+prescriptive directions deﬁning a single course of management. Departure from the local prescriptive protocols orguidelines should be fully documented in the patient’s case notes at the time the relevant decision is taken.
+RCOG Green-top Guideline No. 70 e72 of e72 ª2016 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 2, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14310 by Test, Wiley Online Library on [08/03/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License

@@ -1,0 +1,826 @@
+# Extracted from: CG1130 Assisted Vaginal Birth Guideline.pdf
+# Guideline ID: cg1130-assisted-vaginal-birth-guideline
+# Content length: 41529 characters
+# Processing date: 1750066900.008748
+
+CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline: Assisted Vaginal Birth v7.0 
+For use at: SRH & WH 
+Page 1 of 20 
+ TRUST CLINICAL GUIDELINE 
+Assisted Vaginal Birth 
+ 
+Overview 
+ 
+• To provide evidence -based guidance on the management of pregnant women and 
+birthing people requiring the use of forceps and vacuum extraction for both rotational 
+and non -rotational assisted vaginal births, and to ensure that their care is safe, 
+consistent and of a high quality. 
+• Guidance on use of sequential instruments and when to abandon the procedure. 
+Please note, IF DOCUMENT IS PRINTED, IT MAY BECOME OUT OF DATE 
+
+Owner Clinical Director 
+ 
+Author/further information Surajit Das, Obstetric Consultant 
+H. Al-Abdali, Obstetric Registrar 
+Guideline version v7.0 
+Related policies None 
+
+Related protocols/procedures UH Sussex (SRH & WH) Maternity 
+Guidelines: Caesarean Section Birth, Diabetes 
+in pregnancy, Shoulder Dystocia, Bladder Care, 
+Venous Thromboembolism, Severely ill 
+pregnant woman and person, Postpartum 
+Haemorrhage 
+Standards NICE NG235 Intrapartum care (2023) 
+RCOG (2020) Green -top guideline no.26 
+Superseded documents N/A 
+Review due March 2027 
+Reference number CG1130 
+Date uploaded 4th December 2024 
+CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline: Assisted Vaginal Birth v7.0 
+For use at: SRH & WH 
+Page 2 of 20 
+
+Approval 
+JOGG Date approved 20th March 2024 
+Women & Children’s Clinical Effectiveness 
+Meeting Date approved 16th May 2024 
+Medicines Governance Committee Date approved 8th November 2024 
+Consultation 
+Antimicrobial Stewardship Group Date approved 7th October 2024 
+Ratification 
+Clinical Document Approval Group Date approved 29th November 2024 CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline: Assisted Vaginal Birth v7.0 
+For use at: SRH & WH 
+Page 3 of 20 
+
+TABLE OF CONTENTS 
+1.0 Introduction ................................ ................................ ................................ ................................ ........... 4 
+2.0 Definitions and abbreviations used in this document ................................ ................................ ..... 4 
+3.0 Duties and Responsibilities ................................ ................................ ................................ ................ 4 
+4.0 Background ................................ ................................ ................................ ................................ .......... 4 
+4.1 Reducing the risk of assisted birth ................................ ................................ ........................ 5 
+4.2 Classification for assisted vaginal birth ................................ ................................ ................. 5 
+5.0 Indication ................................ ................................ ................................ ................................ .............. 5 
+5.1 Fetal Indications ................................ ................................ ................................ ................... 5 
+5.2 Maternal and birthing parent Indications ................................ ................................ ............... 6 
+5.3 Delay in the second stage ................................ ................................ ................................ .... 6 
+5.4 Duration of the active second stage and definition of delay ................................ ................... 7 
+6.0 Contraindications ................................ ................................ ................................ ................................ . 8 
+6.1 Absolute contraindications ................................ ................................ ................................ .... 8 
+6.2 Relative contraindications ................................ ................................ ................................ ..... 8 
+7.0 Choice of instrument ................................ ................................ ................................ ........................... 8 
+7.1 Vacuum comparison with forceps ................................ ................................ ......................... 8 
+8.0 Risk Factors for failed assisted vaginal birth - Choice of place of birth ................................ ....... 9 
+9.0 Categorisation of assisted vaginal birth in theatre ................................ ................................ ........ 10 
+10.0 Requirements for safe assisted vaginal birth ................................ ................................ ................ 10 
+10.1 Full abdominal and vaginal examination ................................ ................................ ............. 10 
+10.2 Preparation for assisted birth ................................ ................................ .............................. 10 
+10.3 Preparation of staff and supervision of trainees ................................ ................................ .. 11 
+11.0 Role of ultrasound ................................ ................................ ................................ ............................ 11 
+12.0 When to discontinue vacuum assisted birth ................................ ................................ ................. 11 
+13.0 When to discontinue forceps birth ................................ ................................ ................................ . 11 
+14.0 Morbidity and USE OF sequential instruments ................................ ................................ ............. 12 
+15.0 Obstetric anal sphincter injuries OASI and episiotomy ................................ ................................ 12 
+16.0 Care following assisted vaginal birth ................................ ................................ .............................. 12 
+16.1 Antibiotics ................................ ................................ ................................ ........................... 12 
+16.2 Bladder care ................................ ................................ ................................ ....................... 13 
+16.3 Thromboprophylaxis ................................ ................................ ................................ ........... 14 
+16.4 Analgesia ................................ ................................ ................................ ........................... 14 
+17.0 Reducing psychological effects of assisted birth ................................ ................................ .......... 14 
+18.0 Patient information ................................ ................................ ................................ ............................ 14 
+19.0 Clinical incident reporting ................................ ................................ ................................ ................. 14 
+Monitoring ................................ ................................ ................................ ................................ ........................ 15 
+Guideline Version Control Log ................................ ................................ ................................ ...................... 16 
+Due Regard Assessment Tool ................................ ................................ ................................ ...................... 17 
+Template Dissemination, Implementation and Access Plan ................................ ................................ ..... 18 
+Additional guidance and information ................................ ................................ ................................ ........... 19 CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline: Assisted Vaginal Birth v7.0 
+For use at: SRH & WH 
+Page 4 of 20 
+
+Assisted Vaginal Birth 
+ 
+1.0 Introduction 
+This guideline is for use at SRH & WH. It aims to provide: 
+ 
+• Evidence -based guidance on the management of pregnant women and birthing people 
+requiring the use of forceps and vacuum extraction for both rotational and non-rotational 
+assisted vaginal births, and to ensure that their care is safe, consistent and of a high 
+quality. 
+• Guidance on use of sequential instruments and when to abandon the procedure. 
+
+2.0 Definitions and abbreviations used in this document 
+ 
+CPD Cephalopelvic Disproportion FBS Fetal Blood Sample 
+OASI Obstetric and Sphincter Injury PPH Postpartum Haemorrhage 
+RCOG Royal College of Obstetricians and 
+Gynaecologists VTE venous thromboembolism 
+WHO World Health Organisation 
+ 
+3.0 Duties and Responsibilities 
+ 
+All staff working in the 
+Trust • To access, read, understand and follow this guideline. 
+• To use their professional judgement in application of this 
+guideline. 
+Managers • To ensure the guideline is reviewed three yearly and aligns with 
+national standards. 
+• To ensure the guideline is accessible to all relevant staff. 
+ 
+4.0 Background 
+In 2022 -2023 Assisted birth rates were12% in the UK. ( NHS Maternity Statistics 2022 -2023 ) 
+Pregnant women and birthing people who have an assisted birth are more likely to have an 
+uncomplicated birth subsequently, though there has been increasing awareness of the potential for 
+mother or birthing parent and baby morbidity associated with assisted vaginal birth, however, with 
+careful practice, overall rates of morbidity remain low. Rare neonatal complications such as sub - 
+galeal and intracranial haemorrhage, spinal cord injury and skull fracture are more common with 
+rotational deliveries and failed attempts. Complex decision -making is required when weighing up 
+these risks with the significant maternal and birthing parent and birthing parent and perinatal 
+morbidity of a second stage caesarean birth. CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline: Assisted Vaginal Birth v7.0 
+For use at: SRH & WH 
+Page 5 of 20 
+ 4.1 Reducing the risk of assisted birth 
+• Continuous support in labour upright or lateral positions in the second stage of labour 
+without epidural. 
+• With epidural - adopt lying down lateral positions rather than upright positions in the 
+second stage of labour. 
+• Delay pushing for 1 –2 hours in nulliparous women and birthing people with epidural 
+analgesia as this may reduce the need for rotational and mid-pelvic assisted vaginal 
+birth. 
+• Epidural in the latent phase of labour compared to the active phase of labour does not 
+increase the risk of assisted vaginal birth. 
+• Discontinuing epidural anaesthesia in active second stage is not recommended as it 
+does not decrease the risk of assisted vaginal birth. 
+• There is insufficient evidence to recommend routine oxytocin augmentation for pregnant 
+women and birthing people with epidural analgesia as a strategy to reduce the incidence 
+of assisted vaginal birth. 
+• There is insufficient evidence to recommend routine prophylactic manual rotation of fetal 
+malposition in the second stage of labour to reduce the risk of assisted vaginal birth. 
+(RCOG 2020) 
+ 
+4.2 Classification for assisted vaginal birth 
+ 
+Outlet Low Mid cavity 
+Fetal scalp visible without 
+separating the labia Fetal skull is at station + 2 cm, 
+but not on the perineum Mid Fetal head is no more 
+than one-fifth palpable per 
+abdomen 
+Fetal skull has reached the 
+perineum Non-rotational ≤ 45° Leading point of the skull 
+is at station 0 or + 1 cm 
+Rotation does not exceed 45 Rotational > 45° Non-rotational ≤ 45° 
+ Rotational > 45 
+ 
+5.0 Indication 
+No indication is absolute, and each case should be considered individually. Threshold to intervene 
+may be lower where several co -factors exist. 
+ 
+5.1 Fetal Indications 
+• Presumed/suspected fetal compromise 
+• Abnormal FBS 
+• Thick meconium CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline: Assisted Vaginal Birth v7.0 
+For use at: SRH & WH 
+Page 6 of 20 
+ 5.2 Maternal and birthing parent Indications 
+• Maternal and birthing parent fatigue/exhaustion. 
+• Medical conditions requiring shortening of the second stage e.g. 
+­ cardiac disease class III or IV, 
+­ severe hypertensive disease, 
+­ cerebral vascular disease or malformation, 
+­ myasthenia gravis, 
+­ spinal cord injury patients 
+­ proliferative retinopathy 
+ 
+5.3 Delay in the second stage 
+Maternal and birthing parent morbidity increases significantly after 3 hours of the second stage and 
+again further after 4 hours, however, with appropriate fetal surveillance and timely intervention, 
+neonatal morbidity is not increased. The timing of intervention for delay in second stage is 
+therefore about balancing the risks of continued pushing against those of assisted birth and 
+alongside the labouring woman or birthing person’s choice. 
+The use of oxytocin, with the offer of regional analgesia, should be considered for nulliparous 
+women and birthing people if contractions are ineffective at the onset and throughout the second 
+stage. This decision should be made on an individual patient basis and documented by an 
+obstetrician. Page 7 of 20 
+ CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline: Assisted Vaginal Birth v7.0 
+For use at: SRH & WH 
+
+5.4 Duration of the active second stage and definition of delay (NICE 2023 ) 
+Delay in progress is defined as a lack of continuing progress in the second stage of labour with effective contractions. Consider maternal or 
+birthing person position to aid descent and active pushing. 
+ 
+ WITHOUT EPIDURAL WITH EPIDURAL 
+ Nulliparous Multiparous Nulliparous Multiparous 
+Passive 1 hour, unless urge to push 1 hour, unless urge to push Up to 2 hours 1 hour 
+Active • Birth should be expected 
+within 3 hours of the start of 
+active second stage in most 
+women and birthing people. 
+• After 1 hour of active 
+pushing, reassess and offer 
+vaginal examination and 
+consider amniotomy if the 
+membranes are intact. 
+• If birth not imminent after 2 
+hours of pushing, refer 
+woman or birthing person for 
+a senior review and a 
+decision on place and mode 
+of birth. • Birth would be expected to 
+take place within 2 hours of 
+the start of the active second 
+stage in most women and 
+birthing people. 
+• After 30 minutes of active 
+pushing, reassess if there 
+are no signs of progress, 
+offer vaginal examination 
+and consider amniotomy if 
+the membranes are intact. 
+• If birth is not imminent after 1 
+hour of pushing, refer the 
+woman or birthing person for 
+senior review and decision 
+on place and mode of birth. • Birth would be expected to 
+take place within 3 hours of 
+the start of the active second 
+stage in most women and 
+birthing people but be aware 
+that these women and 
+birthing people may have 
+had a passive stage of up to 
+2 hours after full dilatation 
+before commencing active 
+pushing. 
+• After 1 hour of active 
+pushing reassess and offer 
+vaginal examination and 
+consider amniotomy if the 
+membranes are intact. 
+• If birth not imminent after 2 
+hours of pushing, refer the 
+woman or birthing person for 
+a senior review and a 
+decision on place and mode 
+of birth. • Birth would be expected to 
+take place within 2 hours of 
+the start of the active second 
+stage in most women and 
+birthing people but be aware 
+that these women and 
+birthing people may have 
+had a passive stage of up to 
+1 hour after full dilatation 
+before commencing active 
+pushing. 
+• After 30 minutes of active 
+pushing, reassess if there 
+are no signs of progress, 
+offer vaginal examination 
+and consider amniotomy if 
+the membranes are intact. 
+• If birth is not imminent after 1 
+hour of pushing, refer the 
+woman or birthing person for 
+senior review and decision 
+on place and mode of birth. 
+CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline: Assisted Vaginal Birth v7.0 
+For use at: SRH & WH 
+Page 8 of 20 
+ 
+6.0 Contraindications 
+Some contraindications are relative, and the risks and benefits should be assessed individually and 
+in partnership with the birthing woman or birthing person. 
+ 
+6.1 Absolute contraindications 
+• Ventouse at less than 32 weeks 
+• Ventouse for face presentation 
+• Ventouse for known or suspected immune thrombocytopenic purpura 
+• Brow presentation 
+• Cervix not fully dilated 
+• Failure to meet criteria for safe birth. 
+
+6.2 Relative contraindications 
+• Fetal bleeding disorders (e.g. alloimmune thrombocytopaenia). Avoid ventouse, low 
+forceps may be acceptable. Balance with risk of abdominal birth. 
+• Fetal predisposition to fracture (e.g. osteogenesis imperfecta). 
+• Ventouse use with caution between 32-36 weeks. 
+• For known or suspected blood -borne maternal or birthing parent infection (including 
+immune thrombocytopenic purpura) use mid-cavity or rotational forceps with caution. 
+ 
+7.0 Choice of instrument 
+The choice of instrument depends on clinical circumstances and practitioner experience. As the use 
+of more than one instrument should be avoided the operator should choose the most appropriate 
+instrument for facilitating successful birth with the first attempt. Operators should be aware that 
+forceps and vacuum extraction are associated with different benefits and risks; failure to complete 
+the birth with a single instrument is more likely with vacuum extraction, but maternal and birthing 
+parent perineal trauma is more likely with forceps. 
+ 
+7.1 Vacuum comparison with forceps 
+• More likely to fail to achieve vaginal birth. 
+• More often associated with cephalohematoma. 
+• More often associated with retinal haemorrhage. 
+• More often associated with maternal and birthing parent concerns regarding baby. 
+• Less significant maternal and birthing parent perineal and vaginal trauma. 
+• No more likely to be associated with caesarean birth. 
+• No more likely to be associated with low 5-minute Apgar. 
+• No more likely to increase need for phototherapy. 
+ 
+Risk-based and occurrence information can be summarised as follows: CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline: Assisted Vaginal Birth v7.0 
+For use at: SRH & WH 
+Page 9 of 20 
+ 
+Maternal and birthing parent 
+outcomes Vacuum Forceps 
+Episiotomy 50-60% ≥ 90% 
+Significant vulvo -vaginal tear 10% 20% 
+OASI 1-4% 8-12% 
+PPH 10-40% 
+Urinary or bowel incontinence Common at 6 weeks - improves over time 
+ 
+Perinatal outcomes Occurrence 
+Cephalohematoma 1-12% Predominantly vacuum 
+Facial or scalp lacerations 10% 
+Retinal haemorrhage 17–38% More common with vacuum, 
+variable 
+Jaundice or hyperbilirubinemia 5–15%. 
+Subgaleal haemorrhage 3-6 in 1000 Predominantly vacuum 
+Intracranial haemorrhage 5-15 in 10,000 
+Cervical spine injury Rare Mainly Kielland’s rotational forceps. 
+Skull fracture Rare Mainly forceps 
+Facial nerve palsy Rare Mainly forceps 
+Fetal death Very rare 
+
+8.0 Risk Factors for failed assisted vaginal birth - Choice of place of birth 
+The following are associated with higher rates of failure of assisted birth and the operating theatre 
+may be more suitable situations where there may be increased need to resort to birth by immediate 
+caesarean section (CS) birth. 
+• Mid-cavity or rotational birth or when 1/5th palpable per abdomen. 
+• Maternal and birthing parent obesity (BMI > 30). 
+• Estimated fetal weight greater than 4000g or clinically large baby. 
+• Occipito -posterior position. 
+• Short maternal and birthing parent stature. 
+• Fetal head circumference above 95th centile. CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline: Assisted Vaginal Birth v7.0 
+For use at: SRH & WH 
+Page 10 of 20 
+ 9.0 Categorisation of assisted vaginal birth in theatre 
+ 
+Category Definition Decision to 
+delivery interval 
+Category 1 Involves an immediate threat to the life of the mother 
+or birthing parent and/or fetus. Within 30 minutes. 
+Category 2 Maternal or birthing parent or fetal compromise which 
+is not immediately life-threatening. Within 75 minutes 
+ 
+10.0 Requirements for safe assisted vaginal birth 
+Adequate planning and preparation is important. Pregnant women and birthing people should be 
+informed about assisted vaginal birth in the antenatal period, especially during their first pregnancy. 
+If they indicate specific restrictions or preferences then this should be explored with an experienced 
+obstetrician, ideally in advance of labour. 
+ 
+10.1 Full abdominal and vaginal examination 
+• Head is ≤ 1/5 palpable per abdomen (in most cases not palpable). 
+• Cervix is fully dilated, and the membranes ruptured. 
+• Station at level of ischial spines or below. 
+• Position of the fetal head has been determined. 
+• Caput and moulding are no more than moderate (or +2) Moderate moulding or +2 
+moulding is where the parietal bones are overlapped but easily reduced; severe moulding 
+or +3 is where the parietal bones have overlapped and are irreducible indicating 
+cephalopelvic disproportion. 
+• Pelvis is deemed adequate. 
+
+10.2 Preparation for assisted birth 
+• Consider the birth preferences of the woman or birthing person for choice of instrument 
+and where possible discuss – ideally antenatally but at least before 2nd stage of labour. 
+• Trust and agreement with pregnant woman or birthing person established document 
+discussion. 
+• Verbal consent in labour room or written in theatre. 
+• For mid-pelvic or rotational births, the risks and benefits of assisted birth should be 
+compared with second stage caesarean. 
+• Appropriate analgesia 
+­ Mid-pelvic or rotational birth, usually regional block; a pudendal block may be 
+acceptable depending on urgency. 
+­ Perineal block may be sufficient for low or outlet birth. 
+• Maternal or birthing parent bladder has been emptied. 
+• Indwelling catheter has been removed or balloon deflated. 
+• Aseptic technique. CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline: Assisted Vaginal Birth v7.0 
+For use at: SRH & WH 
+Page 11 of 20 
+ 10.3 Preparation of staff and supervision of trainees 
+• Operator must have the knowledge, experience and skill necessary to complete 
+procedure and manage any complications that may arise. 
+• For all mid pelvic or rotational assisted births an experienced operator should be either in 
+theatre or immediately available if a trainee has not been signed off as competent. 
+• For mid-pelvic births, theatre facilities should be available to allow a caesarean birth to be 
+performed without delay; a senior obstetrician should be present if an inexperienced 
+obstetrician is conducting the birth. 
+• Anticipation of complications that may arise (e.g. shoulder dystocia, perineal trauma, 
+postpartum haemorrhage). 
+• Personnel present who are trained in neonatal resuscitation. 
+• WHO Surgical Checklist should be used for any births being carried out in theatre due to 
+risk of progressing to caesarean birth. 
+ 
+11.0 Role of ultrasound 
+Ultrasound assessment of the fetal head position prior to assisted vaginal birth is recommended 
+where uncertainty exists following clinical examination. 
+There is insufficient evidence to recommend the routine use of abdominal or perineal ultrasound for 
+assessment of the station, flexion and descent of the fetal head in the second stage of labour. 
+(RCOG 2020 ) 
+ 
+12.0 When to discontinue vacuum assisted birth 
+• No evidence of progressive descent with moderate traction during each pull of a correctly 
+applied instrument by an experienced operator. 
+• After x2 two ‘pop-offs’ (less experienced operators should seek senior support after 1x 
+‘pop-off’ for the best chance of a successful assisted vaginal birth). 
+• If there is minimal descent after 2 pulls consider suboptimal application, incorrect 
+diagnosis of fetal position or CPD. (Less experienced operators should stop and seek 
+senior opinion). 
+• Vacuum -assisted birth should bring the fetal head to the perineum in 3 pulls in the 
+majority of cases; three additional gentle pulls can be used to ease the head out of the 
+perineum. 
+• The rapid negative pressure application for vacuum -assisted birth is recommended as it 
+reduces the duration of the procedure with no difference in maternal or birthing parent and 
+neonatal outcomes. 
+ 
+13.0 When to discontinue forceps birth 
+• When forceps cannot be applied easily. 
+• Handles do not approximate easily. 
+• Lack of progressive descent with moderate traction. 
+• Birth is not imminent following three pulls of a correctly applied instrument by an 
+experienced operator. CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline: Assisted Vaginal Birth v7.0 
+For use at: SRH & WH 
+Page 12 of 20 
+ • Discontinue rotational forceps birth if rotation is not easily achieved with gentle pressure. 
+• If there is minimal descent with the first one or two pulls consider suboptimal application, 
+incorrectly diagnosed position or CPD. Less experienced operators should stop and seek 
+a second opinion. 
+• Experienced operators should re-evaluate the clinical findings and either change 
+approach or discontinue the procedure. 
+• Inform neonatal team in event of failed forceps. 
+• Be aware of the increased risk of fetal head impaction at caesarean birth following a failed 
+forceps and be prepared to disimpact the fetal head using recognised manoeuvres. 
+ 
+14.0 Morbidity and USE OF sequential instruments 
+The use of forceps following failed vacuum extraction must only be attempted in exceptional 
+circumstances and by an experienced operator, or under expert supervision. This should be avoided 
+whenever possible. This is due to an increased risk of trauma to the infant. However, the operator 
+needs to balance the risks of a caesarean birth following failed vacuum extraction with the risks of 
+forceps birth following failed vacuum extraction. 
+There is increased neonatal morbidity following failed vacuum assisted birth and/or sequential use 
+of instruments. The neonatal team should be informed. 
+ 
+15.0 Obstetric anal sphincter injuries OASI and episiotomy 
+• There is an increased risk of OASI following sequential use of instruments. 
+• Manual perineal protection should be used for all instrumental births to reduce the risk of 
+OASI. 
+• Though there is no robust evidence to support routine or restrictive use of mediolateral 
+episiotomy the evidence is strongest for nulliparous and forceps delivery in preventing 
+OASI. This may require an assistant. 
+• The decision should consider the circumstances at the time and the woman or birthing 
+person’s preference. 
+• The risk of post-partum haemorrhage (PPH) is higher with episiotomy 
+• When performing a mediolateral episiotomy, the cut should be at a 60° angle initiated 
+when the head is distending the perineum. 
+ 
+16.0 Care following assisted vaginal birth 
+ 
+16.1 Antibiotics 
+Single dose IV antibiotics should be given as it significantly reduces maternal and birthing parent 
+infection. 
+Refer to Eolas Medical . Ensure antibiotic prescriptions are documented appropriately on the 
+electronic prescribing system and on BadgerNet Maternity. CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline: Assisted Vaginal Birth v7.0 
+For use at: SRH & WH 
+Page 13 of 20 
+ 
+ Antibiotic Dose Rate 
+First line Co-amoxiclav 1.2grams 
+ 
+STAT Penicillin 
+allergy Cefuroxime + 
+Metronidazole 1.5grams 
+500milligrams 
+Severe 
+penicillin 
+Allergy Clindamycin + 
+Gentamicin 900 milligrams 
+240 milligrams 
+ 
+• Make an individualised risk assessment for PPH. 
+• Ensure paired cord blood samples are taken and documented. 
+• At the end of the procedure, it should be ensured that all instruments, swabs and sharps 
+are complete (checked with 2nd staff member) and both should document on Maternity 
+BadgerNet. If in theatre complete the WHO surgical checklist. 
+• Information on assessment including timings, decision -making and procedure. 
+• Standardised proformas in Maternity BadgerNet (examination prior to instrumental birth, 
+instrumental birth and perineal repair section) should be completed, and any additional 
+notes documented in the additional details section. This is the responsibility of the 
+obstetrician undertaking the procedure. 
+• Clear postnatal plan. 
+• Debrief/discussion regarding future pregnancies ideally by the person who performed the 
+birth. 
+• Women and people who had an uncomplicated assisted birth should be encouraged to 
+aim for a spontaneous birth in a subsequent pregnancy as even of those who had a 
+complicated assisted birth in theatre have an 80% chance of a successful spontaneous 
+vaginal birth subsequently. 
+• Additional support should be offered to establish infant feeding and with baby care. 
+Consideration should be made for paediatric review for pain relief for infants who appear 
+in pain from the birth who are unable to latch despite support and who cry excessively 
+when handled. 
+• Pelvic floor exercises should be recommended to all women and birthing people to 
+reduce the risk of urinary incontinence. Physiotherapy directed strategy at 3 months 
+reduces risk of urinary incontinence (31-38%). Physiotherapy -directed postnatal women 
+and birthing people regardless of mode of birth should be advised about pelvic floor 
+exercises and conversation recorded in the records. 
+ 
+16.2 Bladder care 
+Following instrumental birth, women and birthing people should have a fluid balance chart until 
+catheter is removed to detect post-partum urinary retention and the first two voids following birth or 
+removal of an indwelling urinary catheter should be measured and recorded on Maternity 
+BadgerNet. (See : Bladder Care Guideline and Maternity Fluid Management Guideline) 
+• Women and birthing people should be educated about the risk of urinary retention so that 
+they are aware of the importance of bladder emptying in the postpartum period. 
+• Post void residual should be measured if urinary retention is suspected. CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline: Assisted Vaginal Birth v7.0 
+For use at: SRH & WH 
+Page 14 of 20 
+ • Women and birthing people who have had regional analgesia for a trial of assisted vaginal 
+birth should be offered an indwelling catheter for 6 –12 hours after birth to prevent 
+asymptomatic bladder overfilling, to ensure good voiding volumes. 
+• Fluid balance should be documented on Maternity BadgerNet. 
+
+16.3 Thromboprophylaxis 
+Following birth, all women and birthing people should be re -assessed for risk factors for venous 
+thromboembolism (VTE) and a VTE score re -calculated and recorded on Maternity BadgerNet. 
+Where thromboprophylaxis is required, referral to the obstetrician should be made and appropriate 
+prescription arranged. 
+ 
+16.4 Analgesia 
+Regular paracetamol and ibuprofen (in the absence of contraindications) should be considered for 
+all postnatal women and birthing people. 
+ 
+17.0 Reducing psychological effects of assisted birth 
+• Shared decision making, good communication, and positive continuous support during 
+labour and birth have the potential to reduce psychological morbidity following birth. In 
+addition, careful use of language should be observed in the medical record, avoiding the 
+term ‘failure to progress’ in favour of ‘delay’ due to the recognised impact this has on the 
+parent’s view of their birth and their body. 
+• Offer referral to in-house midwife counsellor for advice and support to parents who have 
+had a traumatic birth and wish to talk about their experience. The effect on the birth 
+partner should also be considered. 
+• Do not offer single session, high-intensity psychological interventions with an explicit 
+focus on ‘reliving’ the trauma. 
+ 
+18.0 Patient information 
+Please refer women and birthing people to the following webpages for further written information on 
+assisted vaginal birth (these can be printed and in other languages as required): 
+• RCOG patient information leaflet: An Assisted Vaginal Birth (ventouse or forceps) 
+ 
+19.0 Clinical incident reporting 
+Maternity units should provide a safe and supportive framework to support women and birthing 
+people, their families and staff when serious adverse events occur. All staff should adhere to duty of 
+candour; a professional responsibility to be honest with patients when things go wrong. 
+A clinical incident form (Datix) must be completed in the following circumstances: 
+• Instrumental birth is unsuccessful, and CS is required. 
+• More than one instrument is used. 
+• Third/fourth degree perineal tear is sustained. CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline: Assisted Vaginal Birth v7.0 
+For use at: SRH & WH 
+Page 15 of 20 
+ • Low Apgar (less than 7 at 5 mins), cord pH less than 7.1 or neonatal trauma. 
+• Major obstetric haemorrhage. 
+• Shoulder dystocia. 
+• Event reporting, regular reviews and audits. 
+
+20.0 Monitoring 
+Auditable standards as recommended by RCOG guideline: 
+• Proportion of assisted vaginal births; the UK average is between 10%-15%. 
+• Proportion of unsuccessful assisted vaginal births. 
+• Proportion of sequential instrument use. 
+• Case notes review to audit appropriate care of woman or birthing person with failed 
+assisted vaginal birth or sequential instrument use for: 
+­ Use of ultrasound scan to confirm fetal position. 
+­ Proportion of third- and fourth -degree perineal tears (1-4% for vacuum and 8–12% 
+for forceps). 
+­ Proportion of neonatal morbidity (composite trauma, including subgaleal 
+haemorrhage, brachial plexus injury, fracture, facial nerve palsy, or cerebral 
+haemorrhage), low Apgar score less than 7 at 5 minutes and cord arterial pH less 
+than 7.10 (refer RCOG consent). 
+­ Completeness of documentation (100%). 
+• Proportion of women and birthing people after assisted vaginal birth receiving a postnatal 
+review explaining the birth and discussing birth options in future pregnancy (100%). 
+ 
+Issue being 
+monitored Monitoring 
+method 
+Responsibility 
+Frequency Reviewed by and 
+actions arising 
+followed up by 
+Administration 
+of IV antibiotics 
+with 
+instrumental 
+birth Audit of EPMA CE Team in 
+combination 
+with Pharmacy 
+team. Yearly or more 
+frequently if 
+clinically 
+indicated Maternity Q&S Meeting CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline: Assisted Vaginal Birth v7.0 
+For use at: SRH & WH 
+Page 16 of 20 
+ Change Log – Assisted Vaginal Birth 
+Guideline Version Control Log 
+
+Version Date Author(s) Status Comment 
+1.0 June 2010 Consultant Obstetrician/ 
+IT Audit and CE Midwife Archived Original new Trust wide 
+guideline 
+2.0 Feb 2011 Consultant Obstetrician/ 
+IT Audit and CE Midwife Archived Minor administrative 
+amendment 
+3.0 Aug 2013 Consultant Obstetrician/ 
+IT Audit and CE Midwife Archived Version 2 expired -minor 
+updates only required 
+4.0 July 2017 Obstetric Registrar and 
+Consultant Archived Guideline review and update 
+5.0 Oct 2017 Consultant Obstetrician Archived Addition of consent discussion 
+6.0 Feb 2020 Specialist trainee 
+(R.Sexton) /consultant 
+obstetrician (S.Das) Archived Full review based upon RCOG 
+and NICE recommendations: 
+NICE Guidance (updated 
+2017) CG190 Clinical 
+Guideline -Intrapartum Care 
+RCOG (2020) Green -top 
+guideline no.26 
+7.0 Mar 2024 H. Aladali, Obstetric 
+Registrar 
+S. Das, Obstetric 
+Consultants LIVE 3 year review: 
+• Definition of ineffective 
+progress updated. 
+• Use of USS where there is 
+uncertainty over position. CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline: Assisted Vaginal Birth v7.0 
+For use at: SRH & WH 
+Page 17 of 20 
+ Due Regard Assessment Tool 
+To be completed and attached to any guideline when submitted to the appropriate committee for 
+consideration and approval. 
+ 
+ Yes/No Comments 
+1. Does the document/guidance affect one group less or 
+more favourably than another on the basis of: 
+ Age No 
+ · Disability No 
+ · Gender (Sex) No 
+ · Gender Identity No 
+ · Marriage and civil partnership No 
+ · Pregnancy and maternity No 
+ · Race (ethnicity, nationality, colour) No 
+ · Religion or Belief No 
+ · Sexual orientation, including lesbian, gay and bisexual 
+people No 
+2. Is there any evidence that some groups are affected 
+differently and what is/are the evidence source(s)? No 
+3. If you have identified potential discrimination, are there 
+any exceptions valid, legal and/or justifiable? NA 
+4. Is the impact of the document likely to be negative? No 
+5. If so, can the impact be avoided? NA 
+6. What alternative is there to achieving the intent of the 
+document without the impact? NA 
+7. Can we reduce the impact by taking different action 
+and, if not, what, if any, are the reasons why the 
+guideline should continue in its current form? NA 
+8. Has the document been assessed to ensure service 
+users, staff and other stakeholders are treated in line 
+with Human Rights FREDA principles (fairness, respect, 
+equality, dignity and autonomy)? Yes 
+ 
+If you have identified a potential discriminatory impact of this guideline, please refer it to [Insert 
+Name], together with any suggestions as to the action required to avoid/reduce this impact. For 
+advice in respect of answering the above questions, please contact uhsussex.equality@nhs.net 
+01273 664685). CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline: Assisted Vaginal Birth v7.0 
+For use at: SRH & WH 
+Page 18 of 20 
+ Template Dissemination, Implementation and Access Plan 
+ 
+To be completed and attached to any guideline when submitted to Corporate Governance for 
+consideration and TMB approval. 
+ 
+ Dissemination Plan Comments 
+1. Identify: 
+ Which members of staff or staff groups will be affected 
+by this guideline? Midwives and obstetricians 
+ How will you confirm that they have received the 
+guideline and understood its implications? Dissemination through the 
+usual Communication 
+channels and highlighted at 
+Safety Huddles. 
+ How have you linked the dissemination of the guideline 
+with induction training, continuous professional 
+development and clinical supervision as appropriate? All new members of staff 
+shown where to access 
+Clinical documents that are 
+relevant to their area of 
+practice. 
+2. How and where will staff access the document (at 
+operational level)? Accessed by staff via 
+Sharepoint 
+ 
+ Yes/No Comments 
+3. Have you made any plans to remove 
+old versions of the guideline or related 
+documents from circulation? Yes Previous versions will be 
+archived as part of the 
+uploading to SharePoint 
+process. 
+4. Have you ensured staff are aware the 
+document is logged on the 
+organisation’s register? Yes Dissemination plan includes 
+notifying staff via email, safety 
+noticeboards, departmental 
+newsletter and social media. CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline: Assisted Vaginal Birth v7.0 
+For use at: SRH & WH 
+Page 19 of 20 
+ Additional guidance and information 
+Bohren MA, Hofmeyr GJ, Sakala C, Fukuzawa RK, Cuthbert A. Continuous support for women 
+during childbirth. Cochrane Database of Syst Rev 2017;7:CD003766. 
+Care Quality Commission. Regulation 20: Duty of Candour. Information for all providers: NHS 
+bodies, adult social care, primary medical and dental care, and independent healthcare. London: 
+CQC; 2015. 
+Committee on Practice Bulletins ––Obstetrics. ACOG Practice Bulletin No. 154: Assisted vaginal 
+birth. Obstet Gynecol 2015;126:e56 –65. 
+Demissie K, Rhoads GG, Smulian JC, Balasubramanian BA, Gandhi K, Joseph KS, et al. Assisted 
+vaginal birth and neonatal and infant adverse outcomes: population based retrospective analysis. 
+BMJ 2004;329:24 –9 
+Grady. K, Howell. C and Cox.C (2007) Managing Obstetric Emergencies and Trauma – the MOET 
+Course Manual. 
+Gupta JK, Sood A, Hofmeyr GJ, Vogel JP. Position in the second stage of labour for women without 
+epidural analgesia. Cochrane Database Syst Rev 2017;5:CD002006 
+Knight M, Chiocchia V, Partlett C, Rivero -Arias O, Hua X, Hinshaw K, et al. on behalf of the ANODE 
+collaborative group*. Prophylactic antibiotics in the prevention of infection after assisted vaginal birth 
+(ANODE): a multicentre randomised controlled trial. Lancet 2019;393:2395 –403 
+National Safety Standards for Invasive Procedures (NatSSIPs), NHS England, 2014 
+NICE Intrapartum Care (2023) https://www.nice.org.uk/guidance/ng235 
+NHS Litigation Authority (2010) Clinical Negligence Scheme for Trusts, Maternity Clinical Risk 
+Management Standards, April 2010, London, NHSLA. 
+NHS Maternity Statistics, NHS Maternity Statistics, England, 2022 -23 - NHS Digital 
+ 
+Pavord S, Rayment R, Madan B, Cumming T, Lester W, Chalmers E, et al. on behalf of the Royal 
+College of Obstetricians and Gynaecologists. Management of inherited bleeding disorders in 
+pregnancy. Green -top Guideline No. 71. BJOG 2017;124:e193 –e263.32 
+Ramphul M, Kennelly M, Murphy DJ. Establishing the accuracy and acceptability of abdominal 
+ultrasound to identify the foetal head position in the second stage of labour: a validation study. Eur J 
+Obstet Gynecol Reprod Biol 2012;164:35 –9. 
+Royal College of Obstetricians and Gynaecologists (2020) Assisted Vaginal Birth. Green -top No.26 . 
+ 
+Royal College of Obstetricians and Gynaecologists. Assisted vaginal birth. Consent Advice No. 11. 
+London: RCOG; 2010. 
+Towner D, Castro MA, Eby-Wilkens E, Gilbert WM. Effect of mode of delivery in nulliparous women 
+on neonatal intracranial injury. N Engl J Med 1999;341:1709 –14. CLINICAL GUIDELINE 
+Due for review: March 2027 
+Name of Guideline: Assisted Vaginal Birth v7.0 
+For use at: SRH & WH 
+Page 20 of 20 
+ Tuuli MG, Frey HA, Odibo AO, Macones GA, Cahill AG. Immediate compared with delayed pushing 
+in the second stage of labour: a systematic review and meta -analysis. Obstet Gynecol 
+2012;120:660 –8 
+Wassen MM, Zuijlen J, Roumen FJ, Smits LJ, Marcus MA, Nijhuis JG. Early versus late epidural 
+analgesia and risk of instrumental delivery in nulliparous women: a systematic review. BJOG 
+2011;118:655 –61.

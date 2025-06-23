@@ -1,0 +1,1526 @@
+# Extracted from: CG1196 Care in labour.pdf
+# Guideline ID: cg1196-care-in-labour
+# Content length: 70824 characters
+# Processing date: 1750066900.1625712
+
+CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 1 of 35 
+ TRUST CLINICAL GUIDELINE 
+ 
+Care in Labour (in all care settings) 
+ 
+Overview 
+ 
+The purpose of this guideline is to provide good practice evidence for staff in the care of pregnant 
+women and birthing people in labour in all care settings. 
+ 
+To ensure that labour is managed correctly as per national guidance to ensure optimal outcome 
+for low risk women and birthing people in normal labour involving the woman or birthing person in 
+the decision making process. 
+Please note, IF DOCUMENT IS PRINTED, IT MAY BECOME OUT OF DATE 
+
+Owner S. Adamson & F. Usifo 
+Author/further information N. Maguire, Obstetric Consultant 
+Guideline version v9.1 
+Related policies NA 
+
+Related protocols/procedures UHSussex (SRH & WH) Maternity 
+Guidelines: Fetal Monitoring, Bladder Care, 
+Labour Risk Assessment , Newborn Feeding, 
+Retained Placenta, Operative Vaginal Delivery, 
+Induction of Labour and Use of Oxytocin, 
+Management of Women and Babies with Risk 
+Factors for Neonatal Sepsis 
+
+Standards RCOG 2016 Postpartum Haemorrhage, 
+Prevention and Management (Green -top 
+Guideline No. 52) 
+NICE 2023 Intrapartum Care 
+Superseded documents NA 
+Review due August 2027 
+Reference number CG1196 
+CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 2 of 35 
+
+Approval 
+Joint Obstetrics Guideline Group Date approved 17th January 2024 
+Women & Children’s Clinical Effectiveness 
+Meeting Date approved 21st March 2024 
+Consultation 
+Medicines Governance Committee Date approved 13th March 2024 
+Ratification 
+Clinical Document Approval Group Date approved 21st August 2024 CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 3 of 35 
+ 
+Contents 
+1.0 Introduction ................................ ................................ ................................ ................. 5 
+2.0 Scope ................................ ................................ ................................ .......................... 5 
+3.0 Responsibilities ................................ ................................ ................................ ........... 5 
+4.0 Definitions and abbreviations used within this guideline ................................ ............... 5 
+5.0 Initial assessment by the midwife on admission or attendance at home ....................... 6 
+5.1 If in the latent phase of labour ................................ ................................ ..................... 7 
+5.2 If labour is confirmed ................................ ................................ ................................ ... 7 
+5.3 Risk assessments ................................ ................................ ................................ ....... 7 
+5.4 Initial labour risk assessment ................................ ................................ ....................... 8 
+5.5 Referral ................................ ................................ ................................ ....................... 8 
+5.6 Risk documentation ................................ ................................ ................................ ..... 9 
+6.0 Documentation ................................ ................................ ................................ ............ 9 
+7.0 Pre-labour spontaneous rupture of membranes (SROM) >37 weeks ........................... 9 
+7.1 Speculum examination ................................ ................................ .............................. 10 
+7.2 Expectant management of low risk SROM (>37/40) ................................ ................... 10 
+8.0 Fluid balance management & bladder care ................................ ................................ 10 
+9.0 Management and care of women and birthing people in the first stage of labour ....... 11 
+9.1 Biomechanics ................................ ................................ ................................ ............ 11 
+9.2 Monitoring of the maternal or birthing person condition during established 
+1st stage of labour ................................ ................................ ................................ ...... 12 
+9.3 Monitoring fetal condition ................................ ................................ ........................... 13 
+9.4 Monitoring progress during the 1st stage of labour ................................ ..................... 13 
+9.4.1 Definition of delay in 1st stage ................................ ................................ ................... 14 
+9.4.2 Management of 1st stage delay ................................ ................................ .................. 14 
+9.4.3 Referral to obstetric team ................................ ................................ .......................... 14 
+10.0 Nutrition in labour ................................ ................................ ................................ ...... 15 
+11.0 Pressure area care ................................ ................................ ................................ .... 15 
+12.0 Pain Management ................................ ................................ ................................ ..... 15 
+12.1 Pharmacological analgesia ................................ ................................ ........................ 16 
+12.2 Care and observations for women and birthing people with regional analgesia 
+in labour ................................ ................................ ................................ .................... 16 
+13.0 Management of the second stage of labour ................................ ............................... 17 
+13.1 Confirmation of second stage ................................ ................................ .................... 17 
+13.2 Monitoring maternal condition ................................ ................................ .................... 17 
+13.3 Monitoring fetal condition ................................ ................................ ........................... 18 
+13.4 Commencing pushing ................................ ................................ ................................ 18 
+13.5 Monitoring the progress of second stage ................................ ................................ ... 18 
+13.6 Defining lack of progress ................................ ................................ ........................... 19 
+13.7 Management of delay in progress in the second stage ................................ .............. 20 
+14.0 Management of the third stage of labour ................................ ................................ .... 20 
+14.1 Active management ................................ ................................ ................................ ... 20 
+14.2 Physiological management ................................ ................................ ........................ 21 
+14.2.1 Exclusions to physiological management of the third stage of labour ......................... 22 
+14.3 Referral to obstetric team ................................ ................................ .......................... 22 
+14.4 Placental cord drainage ................................ ................................ ............................. 22 CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 4 of 35 
+ 14.5 Monitoring of maternal or birthing parent condition ................................ ..................... 23 
+14.6 Placental histology ................................ ................................ ................................ .... 23 
+15.0 Care of the mother or birthing parent and baby immediately after birth ...................... 23 
+15.1 Initial assessment of the mother or birthing parent ................................ ..................... 23 
+15.2 Initial care of the baby ................................ ................................ ............................... 24 
+16.0 Monitoring ................................ ................................ ................................ ................. 24 
+Appendix 1: Management following risk assessment in labour ................................ .............. 25 
+Appendix 2: Maternity Information System (MIS) errors ................................ ........................ 26 
+Appendix 3: Peanut Ball Positions ................................ ................................ ......................... 27 
+Appendix 4: Placental histology ................................ ................................ ............................ 28 
+Appendix 5: Guideline Version Control Log ................................ ................................ ........... 29 
+Appendix 6: Due Regard Assessment Tool ................................ ................................ ........... 31 
+Appendix 7: Template Dissemination, Implementation and Access Plan ............................... 32 
+Appendix 8: Additional guidance and information ................................ ................................ .. 33 CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 5 of 35 
+ 
+Care in labour (in all care settings) guideline 
+ 
+1.0 Introduction 
+ 
+This guideline is to ensure that all stages of labour are managed correctly as per national 
+guidance to ensure optimal outcome for low risk women and birthing people in normal labour 
+involving the woman or birthing person in the decision making process. 
+ 
+The majority of women and birthing people with an uncomplicated pregnancy are fit and 
+healthy and have the potential to give birth normally with healthy newborns as the expected 
+outcome. Midwives are expert professionals skilled in supporting and maximising normal 
+birth and their skills should be promoted and valued. The role of the midwife is integral to 
+models of care which promote normality. 
+ 
+Care in labour must be aimed at achieving the best possible physical, emotional and 
+psychological outcomes for pregnant women and birthing people and babies with clinical 
+intervention not being offered if labour is progressing normally and both woman or birthing 
+person and baby are well. 
+ 
+2.0 Scope 
+ 
+This guideline applies to: 
+ 
+• Midwives 
+• Obstetricians 
+ 
+3.0 Responsibilities 
+ 
+Midwives & Obstetricians: 
+ 
+• To access, read, understand and follow this guidance. 
+• To use their professional judgement in application of this guideline. 
+ 
+Management: 
+ 
+• To ensure the guideline is reviewed as required in line with Trust and National 
+recommendations. 
+• To ensure the guideline is accessible to all relevant staff. 
+ 
+4.0 Definitions and abbreviations used within this guideline 
+ 
+MIS - Maternity Information System eg 
+Badgernet VE - Vaginal Examination 
+CTG - Cardiotocography VTE - Venous thromboembolism 
+HELLP - Hemolysis, Elevated Liver 
+Enzymes and Low Platelets GBS - Group B Streptococcus 
+BMI - Body Mass Index PROM - Prolonged Rupture of Membranes CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 6 of 35 
+
+SROM - Spontaneous Rupture of 
+Membranes EFM - Electronic Fetal Monitoring 
+IA - Intermittent Auscultation IM - Intramuscular 
+PPH - Post Partum Haemorrhage MROP - Manual Removal of Placenta 
+FHR- Fetal Heart Rate LMP - Last Menstrual Period 
+IOL- Induction of Labour TENS - Transcutaneous Electrical Nerve 
+Stimulation 
+PCA - Patient Controlled Analgesia ARM - Artificial Rupture of Membranes 
+MTOP - Medical Termination of Pregnancy SCBU - Special Care Baby Unit 
+IUGR - intrauterine Growth Restriction 
+
+First stage: Latent first stage: Painful contractions with cervical change including 
+effacement and dilatation up to 4 centimetres (cm). 
+ 
+Established first stage: Regular, painful contractions with progressive 
+cervical dilatation from 4cm to full dilatation. 
+ 
+Second stage: Passive second stage: full dilatation (10cm) of the cervix prior to or in the 
+absence of involuntary expulsive contractions / maternal effort. 
+ 
+Active second stage: expulsive contractions and/or active maternal effort 
+with full dilatation, or the baby is visible. 
+ 
+Third Stage: From the birth of the baby to expulsion of placenta and membranes. 
+
+5.0 Initial assessment by the midwife on admission or attendance at home 
+• Review maternal records and listen to the woman or birthing person’s story. 
+• Physical observations -record blood pressure, temperature, pulse rate and 
+urinalysis. 
+• Abdominal palpation -fundal height, lie, presentation, position and engagement. 
+• Length, strength and frequency of contractions. 
+• Vaginal loss- show, liquor, blood. 
+• Assessment of the woman or birthing person’s pain, including her wishes for 
+coping with labour and the options available for pain relief. 
+• Review and record maternal or birthing parent and fetal risk factors (see ‘Risk 
+Assessments’ below for further information). 
+• Assessment of fetal movements in the last 24 hours – if reduced then a CTG 
+should be performed, and the woman or birthing person reviewed by an 
+obstetrician. 
+• The fetal heart rate (FHR) should be auscultated for a minimum of 1 minute 
+immediately after a contraction and recorded as a single rate. The maternal pulse 
+should be palpated to differentiate between maternal pulse and FHR. CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 7 of 35 
+ 
+The above assessment should be recorded on MIS and comprise one-to–one midwifery care 
+for at least 1 hour. 
+ 
+5.1 If in the latent phase of labour: 
+ 
+• Encourage the woman or birthing person to go home if in hospital and recommend 
+coping strategies e.g. warm bath, mobilisation, TENS, light diet, hydration, and 
+paracetamol. 
+• Women and birthing people should be advised to keep in touch and inform of any 
+concerns. 
+• For women and birthing people who remain in hospital during the latent phase, the 
+fetal heart should be documented every 2 hours if an opiate has been 
+administered, and every 4 hours if no medication has been given. If auscultation 
+was not performed due to the woman or birthing person being asleep, this should 
+be documented on MIS. 
+• This guideline should be considered in conjunction with the Trust ‘CG1106 Care 
+during the Latent Phase of Labour ’ guideline. 
+5.2 If labour is confirmed 
+ 
+• Cardiotocography (CTG) monitoring is not required, unless risk factors are 
+identified (see CG1116 Fetal Monitoring Guideline ). 
+• Offer vaginal examination (VE). Women and birthing people should be warned that 
+there is a risk of inadvertently rupturing membranes with vaginal examination. 
+• Formulate a plan of care with the woman or birthing person. 
+ 
+For pregnant women and birthing people at low risk of complications, amniotomy and 
+oxytocin do not reduce the incidence of caesarean section, increase the incidence of 
+spontaneous vaginal births or contribute to improved neonatal outcomes. They are therefore 
+unnecessary for women and birthing people at low risk of complications if labour is 
+progressing normally. (NICE CG132 Caesarean Section ). 
+ 
+5.3 Risk assessments 
+ 
+• An initial risk assessment on MIS should be carried out on all women and birthing 
+people in labour on each hospital admission or on attendance at home. 
+• If the risk assessment is completed on admission or at home and the woman or 
+birthing person is subsequently discharged or if the midwife leaves the house not 
+in labour a new risk assessment should be completed on the next admission. 
+• Midwives providing intrapartum care for pregnant women and birthing people, 
+while raising the profile of normal birth must be able to recognise deviations from 
+normal progress at all three stages of labour, recognising events that may be 
+detrimental to maternal and fetal wellbeing during labour. When new risks are 
+identified during any stage of labour, the midwife is responsible for making a timely 
+referral to the on-call obstetric Registrar or Consultant. This should be documented 
+on MIS. CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 8 of 35 
+ 
+• Pregnant women and birthing people should be made aware of the identified risk 
+factors (at any time in the process) and referral, particularly women and birthing 
+people at home or in the birth centre who should be advised of the need to transfer 
+into the maternity unit for obstetric review. 
+ 
+5.4 Initial labour risk assessment 
+ 
+The initial assessment to identify risk factors or potential complications should be 
+documented on MIS using the risk assessment form ( Appendix 1 ) and should take into 
+account any issues or plans of care identified antenatally. This will include the following: 
+ 
+• Appropriate place of birth and the lead professional - midwife led or consultant led 
+care. 
+• Clinical picture - gravida, parity, gestation by scan and LMP. 
+• Current and previous obstetric history e.g. previous: antepartum haemorrhage, 
+preterm labour, complicated labour, shoulder dystocia, 3rd/4th degree tear, 
+postpartum haemorrhage, caesarean Section, manual removal of placenta, pre- 
+eclampsia / HELLP Syndrome, GBS. 
+• Medical history – diabetes, psychiatric disorders, and pre-existing medical 
+conditions e.g. epilepsy, cardiac anomaly, asthma, haemoglobinopathies. 
+• Anaesthetic history & raised BMI. 
+• Risk factors for venous thromboembolism and complete VTE risk assessment. 
+• Social lifestyle history. 
+• Pressure area assessment documented on MIS. 
+• Assessment of routine observations of the woman or birthing person and the fetus 
+including palpation and auscultation. 
+ 
+5.5 Referral 
+ 
+• For pregnant women and birthing people with pre-existing risk factors identified in 
+the antenatal period; or who have newly identified risk factors the labour ward 
+coordinator should be informed and the on -call obstetrician should be contacted 
+and asked to review the patient. 
+• This referral should be documented on MIS. This will ensure that the on call 
+obstetric Team are aware of all patients with identified risks in labour. 
+• The on-call obstetrician should review the patient (taking into account any plans 
+made during the antenatal period) and document an individual plan for the 
+management of the risks on MIS. 
+• If identified with risk factors and the woman or birthing person is non -compliant 
+with the change in status and subsequent plan; this must be relayed to the labour 
+ward coordinator as well as the on -call obstetric consultant. 
+• For pregnant women and birthing people who present in labour with no antenatal 
+care see CG1125 Management of non-attendance for maternity care guideline . If 
+further support is identified (i.e. in postnatal period) referral to other services 
+should be made. For any safeguarding concerns, please raise a Maternity 
+Antenatal and Postnatal Safeguarding Alert . CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 9 of 35 
+ 
+5.6 Risk documentation 
+ 
+• Referrals and subsequent individualised management plans should be 
+documented in the health record. 
+• Any change in lead professional during labour should be documented in the labour 
+record. 
+ 
+6.0 Documentation 
+ 
+Venous Thromboembolism (VTE) and pressure area care assessment. 
+ 
+The partogram should be commenced at the start of the active first stage to provide a 
+contemporaneous record of the progress of labour; as well as fetal and maternal or birthing 
+person wellbeing. 
+ 
+The partogram is intended to provide an accurate record of the progress in labour, so 
+that any delay or deviation from normal may be detected quickly and treated 
+accordingly. 
+ 
+The lead professional should be documented on MIS and updated if it changes at any time. 
+ 
+Post-birth – please check all MIS documentation is correct. Particularly if the entries are not 
+entered by the delivering health professional. Any errors should be escalated immediately if 
+they are discovered see Appendix 2 . 
+ 
+7.0 Pre-labour spontaneous rupture of membranes (SROM) >37 weeks 
+If spontaneous rupture of membranes >37 weeks is reported without contractions the 
+pregnant woman or birthing person should be assessed as soon as possible (home 
+assessment or to attend the hospital out of hours). Where pregnant women and birthing 
+people have additional risks consider immediate assessment. 
+ 
+• Fetal movement, heart rate and liquor colour should be assessed at this initial 
+contact. 
+• Augmentation should be offered at any time after confirmation of PROM taking into 
+account that 60% of women and birthing people with SROM labour within 24 
+hours. 
+• They should also be advised that the risk of serious neonatal infection increases 
+from 1 in 200, to 1 in 100 (doubles) after 24 hours of ruptured membranes (i.e. 
+from 0.5% to 1%). 
+• Induction of labour (IOL) is appropriate up to 24 hours after rupture of the 
+membranes (see ‘CG1119 Induction and augmentation of labour and use of 
+oxytocin guideline ’) or if lower risk the woman and birthing person can choose 
+expectant management with discussion documented on MIS (see section 8.2). 
+• Where there is meconium -stained liquor the woman or birthing person should be 
+reviewed as soon as possible by an obstetrician for an individualised plan of care. CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 10 of 35 
+ 
+• With a history of Group B Streptococcus (GBS), pregnant women and birthing 
+people should be asked to come to Labour Ward and be induced as soon as 
+possible using a Syntocinon infusion (see ‘CG11100 Management of Women and 
+Neonates with Risk Factors for Neonatal Sepsis including Group B Streptococcus ’ 
+guideline). 
+ 
+7.1 Speculum examination 
+ 
+• Speculum examination should not be performed on pregnant women and birthing 
+people with a certain history and clear evidence of rupture of the membranes at 
+term. 
+• Pregnant women and birthing people with an uncertain history of pre -labour 
+rupture of the membranes should be offered a speculum examination to determine 
+whether their membranes have ruptured. 
+ 
+A vaginal examination is not required if the pregnant woman or birthing person is not 
+contracting regularly. 
+ 
+7.2 Expectant management of low risk SROM (>37/40) 
+ 
+Until the induction is commenced or if expectant management beyond 24 hours is chosen by 
+the pregnant woman or birthing person: 
+ 
+• Lower vaginal swabs and maternal C-reactive protein are not indicated. 
+• Pregnant women and birthing people should be advised to record their 
+temperature every 4 hours during waking hours and to report immediately any 
+developing pyrexia or change in the colour or smell of their vaginal loss to detect 
+any infection that may be developing. 
+• Pregnant women and birthing people should be informed that bathing or showering 
+are not associated with an increase in infection, but that having sexual intercourse 
+may be. 
+• Fetal movement and fetal heart rate should be monitored at initial contact, and 
+every 24 hours following SROM until established labour. Pregnant women and 
+birthing people should be advised to report any decrease or change in fetal 
+movements. 
+• If labour has not started 24 hours after rupture of the membranes, advise the 
+pregnant woman or birthing person to give birth where there is access to neonatal 
+services. If required, neonatal sepsis observations will be performed according to 
+‘CG11100 Management of Women and Neonates with Risk Factors for Neonatal 
+Sepsis including Group B Streptococcus ’ guideline, and pregnant women and 
+birthing people should be advised of this during their labour. 
+ 
+8.0 Fluid balance management & bladder care 
+ 
+See ‘CG21009 Maternity fluid management as an in -patient & during labour guideline ’ for 
+frequency of measurement, management of hyponatraemia and management of ketonuria. CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 11 of 35 
+ 
+All pregnant women and birthing people admitted for IOL or in labour or attended to at a 
+homebirth should have a fluid balance chart commenced, with a cumulative balance 
+recorded if transferred between clinical areas. 
+ 
+If unable to void urine on two occasions, consider inserting a silicone indwelling catheter with 
+maternal consent. For more information, please see the ‘CG1137 Bladder Care for Maternity 
+Patients Guideline’ . 
+
+9.0 Management and care of women and birthing people in the first stage of 
+labour 
+ 
+Pregnant women and birthing people should have one to one care once in established 
+labour. 
+ 
+Women and birthing people should be encouraged to adopt upright positions and to mobilise 
+during labour. Midwives should discourage women and birthing people from lying in the 
+supine position. Should a pregnant woman or birthing person feel the need to rest, they 
+should be encouraged into a left lateral position thus enabling the sacrum to move giving 
+optimum room for the baby to descend through the pelvis. 
+ 
+Pregnant women and birthing people should be encouraged to move and adopt positions 
+that they find comfortable. Midwives should promote a homely environment in the labour 
+room where the bed is not the main focus and feel confident in offering equipment such as 
+mats, birthing balls, hydrotherapy and non-invasive pain relief techniques such as massage, 
+and breathing techniques to promote active labour. 
+ 
+9.1 Biomechanics 
+ 
+Midwives can consider use of peanut ball, particularly for women and birthing people with 
+epidurals, as these have been shown to be a safe and low-cost intervention that shortens the 
+length of labour and may reduce the chance of unplanned caesarean birth. See Appendix 3 
+for different positions that may be used. 
+ 
+Freedom of movement during labour is beneficial to support the physiology of labour and irth. 
+Women and birthing people who choose to be mobile during their labour and birth should be 
+supported to do so. 
+ 
+Biomechanics is the study of biology and the mechanisms of movement. Biomechanics and 
+maternal positional changes in any stage of pregnancy and labour encourages optimal fetal 
+positioning and its associated benefits. Biomechanic techniques may be used by a trained 
+midwife or health professional, both preventatively and responsively. On suspicion of a 
+malposition, early support and advice regarding biomechanics may be of benefit. The use of 
+biomechanic techniques should not delay or replace escalations of concerns. The aim of 
+biomechanics in labour is to provide additional choice and holistic care to women and 
+birthing people. CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 12 of 35 
+ 
+Although we do not have robust evidence to support the use of biomechanics to resolve 
+malposition, it is thought that by adopting biomechanical positions, the pelvic and uterine 
+ligaments are stretched, and this may create space and encourage the baby to rotate into a 
+more favourable position for labour. A biomechanical approach is being adopted by many 
+NHS trusts across the UK, and quality improvement projects implementing some of these 
+techniques outside of the UK have been associated with a reduction in caesarean section 
+rate (Barrera, 2022; Sears, 2023; Zwillinger, 2023), and positive birth experience (Iversen, 
+2017). 
+
+9.2 Monitoring of the maternal or birthing person condition during established 
+1st stage of labour 
+ 
+The following observations should be documented on the partogram, and if any deviations, 
+documented in the labour record with plan of care on MIS: 
+ 
+• Pulse every hour. 
+• Blood pressure 4 hourly unless indicted more frequently. 
+• Temperature and respiration rate 4 hourly unless signs of infection. 
+• Encourage to pass urine at least 4 hourly and volume passed documented on fluid 
+balance chart and on partogram. 
+• Uterine contractions showing strength (mild, moderate, strong) and frequency 
+every 30 minutes. 
+• Abdominal palpation should be performed prior to vaginal examinations every four 
+hours and more frequently if clinically indicated . 
+• Tap water may be used if cleansing is required before vaginal examination. 
+• Routine hygiene measures taken by staff caring for women and birthing people in 
+labour, including standard hand hygiene and single ‑use non‑sterile gloves are 
+appropriate to reduce cross ‑contamination between women and birthing people, 
+babies and healthcare professionals. 
+• Vaginal examination (VE) offered 4 hourly, or where there is concern about 
+progress or in response to the pregnant woman or person’s request. Informed 
+verbal consent should be documented prior to the examination. The following 
+information should be observed and documented on MIS: 
+o Cervical effacement 
+o Cervical consistency 
+o Cervical dilatation 
+o Application of the presenting part to the cervix 
+o Presentation and presence and degree of caput and moulding 
+o Position 
+o Station 
+o Membrane status (intact or ruptured) 
+o Liquor colour if ruptured membranes 
+o Swab/cotton wool ball count and check prior to and post examination CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 13 of 35 
+ 
+9.3 Monitoring fetal condition 
+ 
+See CG1116 Fetal Monitoring Guideline 
+ 
+An hourly risk assessment pathway is to be documented within MIS in the fetal monitoring 
+labour review. This assessment should include: 
+ 
+• Antenatal Risk factors reviewed. 
+• Any new or developing intrapartum risk factors. 
+• Type of fetal monitoring and if it is appropriate for level of risk. 
+• Discussion taken place with woman or birthing person. 
+• Adequate analgesia 
+• Bladder care 
+• Hydration and nutrition 
+• Posture 
+• Liquor concerns 
+• Fetal heart assessment 
+• Partogram review 
+• Escalation plan 
+ 
+The fetal heart should be documented every 15 minutes for 1 minute after a contraction on 
+the partogram; any deviations from normal should be documented on MIS with a plan of 
+care. 
+ 
+If deviations from the normal occur and continuous EFM is required, the woman or birthing 
+person should be cared for on the Labour Ward and the Obstetric Registrar informed if CTG 
+becomes pathological. In this case, the review and a management plan should be 
+documented on MIS. 
+ 
+The partogram should be maintained with both intermittent auscultation and continuous 
+electronic fetal monitoring (EFM). 
+ 
+If no fetal heart is detected, an urgent real-time ultrasound assessment to check fetal viability 
+should be offered. 
+ 
+9.4 Monitoring progress during the 1st stage of labour 
+ 
+The midwife has a responsibility to ascertain that progress in labour is satisfactory and that 
+failure to progress is detected and acted upon without delay. The partogram should be used 
+throughout labour to monitor progress. CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 14 of 35 
+ A diagnosis of delay in the active 1st stage of labour needs to consider all aspects of 
+progress in labour and should include the following: 
+ 
+• Cervical dilatation of less than 2 cm in 4 hrs for first labours. 
+• Cervical dilatation of less than 2 cm in 4 hrs or a slowing in the progress of labour 
+for second or subsequent labours. 
+• Lack of decent and rotation of the fetal head. 
+• Negative changes in strength, duration and frequency of contractions or the 
+presence of hyperstimulation (assessed manually). 
+• Any signs of feto pelvic disproportion. 
+9.4.1 Definition of delay in 1st stage 
+
+9.4.2 Management of 1st stage delay 
+ 
+Where delay in the established first stage is suspected the following should be considered: 
+ 
+• Parity. 
+• Cervical dilatation and rate of change. 
+• Uterine contractions. 
+• Station and position of presenting part. 
+• The pregnant woman or birthing person’s emotional state. 
+• Consider emptying bladder. 
+• Referral to the appropriate healthcare professional. 
+ 
+If delay in the established first stage of labour is suspected, amniotomy should be considered 
+for all women and birthing people with intact membranes. The procedure should be 
+explained and consent documented. 
+ 
+If the pregnant woman or birthing person declines amniotomy, VE should be advised 2 hours 
+later, and if progress is less than 1cm a diagnosis of delay should be made. 
+ 
+In cases of amniotomy for delay, VE should be carried out 2 hours following to check 
+continuing progress. 
+ 
+In all stages of labour, pregnant women and birthing people who have left the normal care 
+pathway because of the development of complications can return to it if/when the 
+complication is resolved. 
+ 
+9.4.3 Referral to obstetric team: 
+ 
+When delay in the established first stage of labour is confirmed (see 10.3.1 ) the pregnant 
+woman or birthing person should be referred to the Obstetric Registrar for review and 
+subsequent plan (see ‘CG1119 Induction and augmentation of labour and use of oxytocin ’ 
+guideline). CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 15 of 35 
+ 
+10.0 Nutrition in labour 
+ 
+There is insufficient evidence to support the practice of starving pregnant women and birthing 
+people in labour in order to lessen the risk of gastric acid aspiration. Fasting may result in 
+dehydration and acidosis which, combined with starvation and fatigue, can increase the need 
+for active management and instrumental birth. 
+ 
+Pregnant women and birthing people may eat a light diet (such as toast/biscuits) in 
+established labour unless they have received opioids or they develop risk factors that make a 
+general anaesthetic more likely. 
+ 
+Following the use of parenteral opioids for pain relief or epidural analgesia, consider limiting 
+the oral intake to non -fizzy isotonic drinks or water. 
+ 
+Recommendation on reducing gastric aspiration: 
+ 
+• Routine use of regular acid aspiration for low-risk pregnant women and birthing 
+people is not recommended. 
+• Consider regular acid aspiration prophylaxis for pregnant women and birthing 
+people who receive opioids or who have or develop risk factors that make a 
+general anaesthetic more likely. 
+• Administer oral Omeprazole 20mgs 12 hourly until birth to high risk labouring 
+women and birthing people having continuous electronic fetal monitoring (in cases 
+of suspected renal or liver impairment refer for obstetric review prior to 
+administration). 
+ 
+11.0 Pressure area care 
+ 
+All patients are potentially at risk of developing pressure ulcers; however, they are more 
+likely to occur in pregnant women and birthing people, for example, with limited mobility or 
+activity, diabetes, or limited bladder and bowel control. Please see the ‘CG20011 Maternity 
+Pressure Area Care ’ guideline. 
+ 
+12.0 Pain Management 
+ 
+• Labouring women and birthing people should be offered support and 
+encouragement to help them cope with the pain of contractions. 
+• Advice should be given on breathing and relaxation techniques. 
+• Low risk pregnant women and birthing people should be offered the opportunity to 
+labour and birth in water. The benefits of hydrotherapy for pain relief should be 
+explained to all women and birthing people. 
+• Transcutaneous electrical nerve stimulation (TENS) should not be offered to 
+women and birthing people in established labour. 
+• Midwives should feel confident to support women and birthing people in 
+hypnobirthing. 
+• Pregnant women and birthing people are to be informed of their choices regarding 
+all analgesia available to them. CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 16 of 35 
+
+12.1 Pharmacological analgesia 
+ 
+• Entonox. 
+• Morphine sulfate IM 10milligrams 4hrly in established labour to a max dose of 
+15milligram (under midwife exemptions). 
+• Epidural. 
+• Remifentanil Patient Controlled Analgesia (PCA) (used in selected cases – see 
+Trust ‘CG12027 Remifentanil Patient Controlled Analgesia in Labour’ guideline). 
+ 
+Morphine should be given with an intramuscular antiemetic i.e. prochlorperazine (Stemetil) 
+12.5milligram injection 8 hourly. 
+ 
+12.2 Care and observations for women and birthing people with regional analgesia 
+in labour 
+ 
+Please see CG12009 PCEA Guideline for full guidance. 
+ 
+• Intravenous access should always be secured prior to commencing regional 
+analgesia. 
+• Pre epidural CTG to be completed for 30 minutes. If normal, revert to intermittent 
+auscultation (IA). After each bolus over 10mls, perform another CTG. If normal, IA 
+can be recommenced. 
+• A CTG should be performed on insertion of an epidural for at least 30 minutes 
+during establishment of regional analgesia. If the CTG is normal this can be 
+discontinued and IA used unless there are other risk factors that indication CEFM 
+throughout labour. A CTG should be recommenced, if discontinued, after any 
+epidural boluses of 10ml or more. 
+• Preloading and maintenance fluid infusion need not be administered routinely 
+before establishing low -dose epidural analgesia and combined spinal –epidural 
+analgesia. However if there are clinical or biochemical signs (urine ketones) of 
+dehydration it needs to be corrected prior to spinal/epidural analgesia. See Trust 
+‘CG21009 Maternity fluid management as an in-patient & during labour’ guideline. 
+ 
+The following additional observations should be undertaken for women and birthing people 
+with regional analgesia: 
+ 
+• During establishment of regional analgesia or after further boluses (10 ml or more 
+of low dose solutions) blood pressure should be measured every 5 minutes for a 
+minimum of 20 minutes. 
+• If the woman or birthing person is not pain free 30 minutes after each 
+administration of local anaesthetic/opioid solution, the anaesthetist should be 
+informed. 
+• Hourly assessment of the level of the sensory block should be undertaken and 
+documented on the epidural chart. CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 17 of 35 
+ 
+Women and birthing people with regional analgesia should be encouraged to move 
+frequently and adopt whatever upright positions they find comfortable throughout labour. 
+ 
+Women and birthing people with regional analgesia are at increased risk of pressure injuries. 
+Please see ‘CG20011 Maternity Pressure Area Care ’ guideline for information on optimal 
+pressure area care in labour. 
+ 
+Once established, regional analgesia should be continued until after completion of the third 
+stage of labour and any necessary perineal repair. 
+
+13.0 Management of the second stage of labour 
+ 
+13.1 Confirmation of second stage 
+ 
+Second stage is confirmed either by full dilatation of the cervix on vaginal examination or by 
+a visible presenting part at the perineum. 
+ 
+Passive stage: 
+This is when the woman or birthing person is found to be fully dilated but has no urge to 
+push. They should not be encouraged to push at this stage. 
+ 
+Active stage: 
+The woman or birthing person has a strong sensation to push or bear down and they should 
+be encouraged to follow their instincts. Active pushing should only be commenced if full 
+dilatation of the cervix has been confirmed by vaginal examination. 
+ 
+13.2 Monitoring maternal condition 
+ 
+• Pulse every 15 minutes as a minimum (consider woman or birthing person’s 
+condition which may indicated additional monitoring). 
+• Hourly blood pressure (consider woman or birthing person’s condition which may 
+indicated additional monitoring). 
+• 4 hourly temperature unless signs of infection which would necessitate more 
+frequent observation. 
+• Assess frequency and strength of contractions every 30 minutes. 
+• Offer vaginal examination hourly or as the woman or birthing person wishes. 
+• Encourage bladder emptying (refer to Trust ‘CG1137 Bladder Care for Maternity 
+Patients Guideline’ guideline). CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 18 of 35 
+ 
+13.3 Monitoring fetal condition 
+ 
+During passive and active second stage : 
+ 
+• The fetal heart should be recorded every 5 minutes. 
+• This 5 minutely recording of the fetal heart is still required when a CTG is in 
+progress. 
+• Be aware that it is particularly important to confirm the fetal heart rate in the 
+second stage of labour, when it is easier to mistakenly auscultate maternal and 
+birthing parent heart rate rather than fetal heart rate. 
+ 
+See CG1116 Fetal Monitoring for further points regarding second stage considerations with 
+CTGs. 
+
+13.4 Commencing pushing 
+ 
+As a guide, the midwife should support pushing only when the contractions become 
+expulsive and full dilatation is confirmed by vaginal examination. Directed pushing and / or 
+the use of the Valsalva manoeuvre should not be encouraged if the second stage is 
+progressing normally. 
+ 
+Where possible, labouring women and birthing people should be encouraged to adopt a 
+comfortable upright position such as standing, squatting, sitting or kneeling positions which 
+are most likely to facilitate a spontaneous vaginal birth. 
+ 
+Upon confirmation of full cervical dilatation in women and birthing people with regional 
+analgesia unless the women or birthing person has an urge to push or the baby’s head is 
+visible, pushing can be delayed for at least one hour and longer if the woman or birthing 
+person wishes, after which pushing during contractions should be actively encouraged. 
+ 
+Following the diagnosis of full dilatation in a woman or birthing person with regional 
+analgesia, a plan should be agreed with the woman or birthing person in order to ensure that 
+birth will have occurred within four hours regardless of parity. 
+
+13.5 Monitoring the progress of second stage 
+ 
+Progress in the second stage of labour is defined as advancement of the presenting part, in 
+the presence of expulsive contractions with a stable maternal and fetal condition. 
+ 
+Progress in second stage should be assessed hourly and should include abdominal 
+assessment of the descent of the head. Page 19 of 35 
+ CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+ 
+13.6 Defining lack of progress 
+Lack of continuing progress in second stage of labour with adequate contractions can be defined as follows: 
+ WITHOUT EPIDURAL WITH EPIDURAL 
+ Nulliparous Multiparous Nulliparous Multiparous 
+Passive 1 hour, unless urge to push 1 hour, unless urge to push Up to 2 hours 1 hour 
+Active • Birth should be expected 
+within 3 hours of the start of 
+active second stage in most 
+women and birthing people. 
+• After 1 hour of active 
+pushing, reassess and offer 
+vaginal examination and 
+consider amniotomy if the 
+membranes are intact. 
+• If birth not imminent after 2 
+hours of pushing, refer 
+woman or birthing person for 
+a senior review and a 
+decision on place and mode 
+of birth. • Birth would be expected to 
+take place within 2 hours of 
+the start of the active 
+second stage in most 
+women and birthing 
+people. 
+• After 30 minutes of active 
+pushing, reassess if there 
+are no signs of progress, 
+offer vaginal examination 
+and consider amniotomy if 
+the membranes are intact. 
+• If birth is not imminent after 
+1 hour of pushing, refer the 
+woman or birthing person 
+for senior review and 
+decision on place and mode 
+of birth. • Birth would be expected to 
+take place within 3 hours of 
+the start of the active 
+second stage in most 
+women and birthing people 
+but be aware that these 
+women and birthing people 
+may have had a passive 
+stage of up to 2 hours after 
+full dilatation before 
+commencing active 
+pushing. 
+• After 1 hour of active 
+pushing reassess and offer 
+vaginal examination and 
+consider amniotomy if the 
+membranes are intact. 
+• If birth not imminent after 2 
+hours of pushing, refer the 
+woman or birthing person 
+for a senior review and a 
+decision on place and mode 
+of birth. • Birth would be expected to 
+take place within 2 hours of 
+the start of the active second 
+stage in most women and 
+birthing people but be aware 
+that these women and 
+birthing people may have 
+had a passive stage of up to 
+1 hour after full dilatation 
+before commencing active 
+pushing. 
+• After 30 minutes of active 
+pushing, reassess if there 
+are no signs of progress, 
+offer vaginal examination 
+and consider amniotomy if 
+the membranes are intact. 
+• If birth is not imminent after 1 
+hour of pushing, refer the 
+woman or birthing person for 
+senior review and decision 
+on place and mode of birth. 
+CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 20 of 35 
+ 13.7 Management of delay in progress in the second stage 
+ 
+• Pregnant women and birthing people with intact membranes should be offered 
+amniotomy. 
+• Consider emptying the bladder. 
+• Consider commencing EFM. 
+
+14.0 Management of the third stage of labour 
+ 
+The overall aim must be to ensure safe and effective care is provided to women and people 
+whilst allowing women and birthing people to make an informed choice regarding delivery of 
+the third stage. 
+ 
+Midwives should discuss with pregnant women and birthing people prior to birth both active 
+and physiological management of the third stage, and their choice should be documented in 
+their birth plan. 
+ 
+Midwives should also be skilled in both active and physiological approaches and avoid 
+unevaluated mixed third stage management. 
+ 
+Delayed/ deferred cord clamping is recommended by 1 -3 minutes after birth to allow 
+placental transfusion, unless the need for neonatal resuscitation is recognised. The timing of 
+cord clamping does not appear to have a major impact on blood loss at the time of birth. 
+ 
+Those handling blood products should wear gloves and goggles. 
+Preferably the woman or birthing person should enter the third stage of labour with an empty 
+bladder. 
+ 
+The placenta and membranes should be inspected at the earliest possible opportunity, and 
+blood loss estimated. Cord and maternal blood samples obtained if mother is Rhesus 
+negative or cord PH values are required. 
+ 
+14.1 Active management 
+ 
+Active management is defined as the administration of a prophylactic uterotonic as soon as 
+possible after the birth (and delayed cord clamping), followed by clamping and cutting of the 
+cord and delivery of the placenta by controlled cord traction. 
+ 
+Active management of the third stage is recommended routinely, as it is associated with 
+reduced blood loss, reduced incidence of postpartum haemorrhage and shorter duration of 
+the third stage. 
+ 
+For active management of 3rd stage in vaginal births, oxytocin 10 units by intramuscular (IM) 
+injection should be given with the birth of the anterior shoulder, or immediately after the birth CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 21 of 35 
+ of the baby and before the cord is clamped and cut (NICE 2017). This is the uterotonic 
+recommended to reduce the risk of postpartum haemorrhage (PPH) by RCOG (2016). 
+ 
+The cord is clamped and cut taking care to minimise the risk of blood contamination to those 
+present. Await strong uterine contraction confirmed by abdominal palpation. Steady 
+downward traction is applied to the cord with one hand while maintaining upward counter 
+pressure on the lower abdomen with the other hand. The placenta and membranes are 
+delivered gently in an outward and upward direction. 
+ 
+With active management delivery of the placenta should be achieved within 30 minutes. 
+ 
+14.2 Physiological management 
+ 
+Physiological management is defined as a ‘hands off’ approach for the delivery of the 
+placenta and membranes. The uterotonic drug is not given and the cord is not clamped (or 
+at least until pulsation has ceased or if the mother requests clamping and cutting). 
+ 
+A physiological third stage of labour can be offered to low risk women and birthing people 
+who have had a physiological 1st and 2nd stage and the following are present: 
+• >37 weeks. 
+• Singleton cephalic birth. 
+• A low risk of postpartum haemorrhage (PPH). 
+• Not in the exclusion group (see below). 
+ 
+Ideally there should have been no procedures known to interfere with the natural release of 
+oxytocin e.g. IV syntocinon, prostaglandins, epidural, narcotic analgesia. 
+Following the birth of the baby, the mother or birthing parent and baby should be encouraged 
+to bond in a warm, calm environment, breast feed if appropriate and allow natural separation 
+of placenta and membranes to occur. They should be encouraged to adopt an upright 
+position. Once the midwife has observed signs of placental separation, the woman or birthing 
+person can be asked to bear down to aid delivery of the placenta. 
+ 
+The cord should be left alone until physiological separation occurs unless there is an 
+indication to intervene. If the mother or birthing parent requests the cord to be clamped and 
+cut, there should be a natural cessation of cord pulsation before clamping and cutting to gain 
+equilibrium between baby and placenta. 
+ 
+The following factors may assist separation or expulsion: 
+ 
+• Putting the baby to the breast. 
+• The mother or birthing parent adopting an upright position. 
+• Maternal or birthing parent expulsive efforts. 
+• Quiet, warm room. 
+• Emptying of bladder. CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 22 of 35 
+ 
+Delivery of the placenta is anticipated within one hour by maternal and birthing parent effort 
+only. Physiological management should never include controlled cord traction. 
+ 
+Change from physiological management to active management in the case of: 
+ 
+• Haemorrhage. 
+• Failure to deliver the placenta within 1 hour. 
+• The woman or birthing person's desire to artificially shorten the third stage. 
+• Neonatal resuscitation required. 
+ 
+14.2.1 Exclusions to physiological management of the third stage of labour 
+ 
+Previous caesarean section Polyhydramnios 
+Multiple pregnancy Fibroids 
+Active first stage of labour over 15 hours Operative birth 
+Prolonged 2nd stage Macrosomic fetus 
+Low Hb (< 100g/L ) and/or platelets ( <100) Previous PPH 
+Hypertension/pre -eclampsia Intramuscular narcotic analgesia during labour 
+Epidural anaesthesia BMI >30 
+Intrauterine death Previous retained placenta 
+Pre-existing bleeding disorders Modified WHO 2 heart disease 
+Induction of labour or augmentation (including ARM) 
+ 
+This list is not exhaustive and each case should be assessed on an individual basis. 
+ 
+14.3 Referral to obstetric team 
+ 
+Obstetric medical team referral should be considered if the placenta remains undelivered 
+after: 
+ 
+• 30 minutes following active management. 
+• 60 minutes following physiological management. 
+ 
+14.4 Placental cord drainage 
+ 
+This practice is an evidence based alternative for when a physiological third stage is 
+requested but for maternal and birthing parent or neonatal reasons has had to be curtailed. 
+ 
+It can be used with active or physiological management after a normal birth. 
+ 
+• The cord is clamped and cut and the clamp from the maternal or birthing parent 
+end of cord is removed. This will minimise back flow of blood to mother or birthing 
+parent and reduce turgidity. 
+• Do not milk the cord. CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 23 of 35 
+ • Wait for natural separation and expulsion of placenta and membranes. 
+ 
+14.5 Monitoring of maternal or birthing parent condition 
+ 
+Vaginal blood loss and general condition should be observed during the 3rd stage. 
+ 
+For active management, blood pressure, pulse and temperature should be recorded after the 
+delivery of placenta. 
+ 
+During physiological third stage, consider blood pressure and pulse after 30 minutes and 
+then repeat including temperature following delivery of placenta . 
+ 
+14.6 Placental histology 
+ 
+Cases that require placental histology: 
+ 
+• Miscarriage (14+1 -23+6 weeks). 
+• FGR <3rd centile or drop in growth velocity >50 percentiles. 
+• Fetal hydrops. 
+• UA Dopplers (absent/reversed end diastolic flow). 
+• Monochorionic twins with TTTS. 
+• Preterm birth <32 weeks. 
+• <32-week -onset severe PET. 
+• Severe sepsis with maternal ITU admission and/or fetal sepsis requiring ventilation 
+or level 3 NICU (placenta swabs taken at birth). 
+• Massive placental abruption with retroplacental clot. 
+• Severe fetal distress pH<7.05 / BE≥-12/scalp lactate >4.8mmol. 
+• Caesarean paripartum hysterectomy for morbidly adherent placenta. 
+• Stillbirth or early neonatal death. 
+• MTOP (if requested by screening). 
+ 
+Please see Appendix 4 for transport medium and where to send the placenta. Placenta 
+histology should be requested on ICE. 
+
+15.0 Care of the mother or birthing parent and baby immediately after birth 
+ 
+15.1 Initial assessment of the mother or birthing parent 
+ 
+Maternal and birthing parent observations taken following the birth of the baby should 
+include: 
+ 
+• Temperature, pulse, blood pressure, respirations, uterine contraction, lochia. 
+• Examination of placenta and membranes to assess their condition, structure, cord 
+vessels and completeness. CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 24 of 35 
+ • Early assessment of maternal or birthing parent emotional/psychological condition 
+in response to labour and birth. 
+• Successful voiding of the woman or birthing person’s bladder (within 6 hours). 
+ 
+15.2 Initial care of the baby 
+ 
+• Women and birthing people should be encouraged to have skin to skin contact 
+with their babies as soon as possible after the birth for at least an hour if possible. 
+• In order to keep the baby warm, dry the baby and cover with a warm, dry towel 
+while maintaining skin to skin contact with the woman or birthing person. 
+• Initiation of breast feeding should be encouraged as soon as possible after the 
+birth, ideally within one hour (see the Trust ‘CG1129 Newborn Feeding ’ guideline). 
+• Head circumference, temperature, birth weight and birth centile should be 
+recorded soon after the first hour following birth. 
+• Vitamin K offered. 
+• Undertake initial examination of the newborn in the presence of the parents with 
+their consent. This should be documented on MIS. 
+
+16.0 Monitoring 
+ 
+Suggested auditable standards – refer to NICE Quality Standard QS105 
+ 
+Contact the Maternity Clinical Effectiveness Team for audit priorities. CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 25 of 35 
+ 
+Make referral to on -call 
+obstetrician and inform labour 
+ward coordinator. 
+Yes 
+Keep labour ward coordinator 
+updated regularly. 
+NO 
+New or existing risk factors? 
+Management following risk assessment in labour 
+Reviewed by obstetrician – 
+ensure individualised plan of 
+care is documented on MIS. 
+Change in lead professional 
+during labour? 
+Make and follow individual 
+plan for midwifery -led care. 
+Follow the 
+identified and 
+agreed plan of 
+care. 
+YES 
+Document change 
+of lead 
+professional 
+(including time and 
+reason) on MIS NO 
+Continue with 
+midwifery -led care, 
+keeping labour 
+ward coordinator 
+fully updated. Appendix 1: Management following risk assessment in labour 
+
+ CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 26 of 35 
+ 
+Inform Maternity Digital Team uhsussex.matbadgernet@nhs.net 
+Provide full details of the patients involved. 
+Including: 
+Baby registered against the wrong woman or birthing person 
+Wrong date of birth 
+Wrong time of birth 
+Wrong sex of baby 
+Any wrong delivery details 
+Incorrect birth details recorded on MIS 
+Maternity Digital Team to amend NHS National Spine, and Inform Careflow team and 
+newborn screening administrator of corrections required . 
+Maternity Digital Team to amend all incorrect details and, if appropriate, resend correct 
+documentation to GP/Child Health/Health Visitors. 
+Information that needs deleting needs to be emailed to uhsussex.matbadgernet@nhs.net 
+Maternity Digital Team to raise Datix if serious issue, and offer re-training to those involved in 
+incident if needed . 
+Other errors that need correction can be done by the users themselves by opening the form, 
+amending the information and saving the form. An audit trail can provide evidence of 
+corrections . Appendix 2: Maternity Information System (MIS) errors 
+ 
+ Page 27 of 35 
+ 
+CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+ 
+Appendix 3: Peanut Ball Positions 
+ 
+CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 28 of 35 
+ Stop! Does this placenta need to be sent for histology? 
+If yes to any of the above: 
+1.In a well-ventilated area, select a large specimen container (bucket) and ensure the 
+lid fits tightly. 
+2.Put the placenta in the bucket. 
+3.Pour formalin (10% formal saline) over it, covering it to about five times the volume 
+of the placenta. 
+4.Put the lid on. 
+5.Label the bucket only (not lid) with: 
+a. 
+b. 
+c. 
+d. 
+e. 
+The patient’s name and date of birth and hospital number. 
+The nature of specimen – placenta. 
+The ward – labour ward. 
+Date of specimen. 
+Securely attach the specimen label from ICE 
+Label 
+your 
+placenta 
+bags 
+6.Call porter to collect specimen. 
+In cases of Stillbirth or early neonatal death or MTOP: 
+1.Keep the placenta in a pot but do not add formalin until you have confirmed that the 
+placenta is to be sent for histology. 
+2.Remember that a live born baby at any gestation, who then dies, may require a 
+Coroner’s PM, so do not add formalin to the placenta, even if the parents do not 
+request a PM, until this has been discussed with the Coroner. 
+3.The placenta must be refrigerated in these cases. Appendix 4: Placental histology 
+ 
+• Miscarriage (14+1 -23+6 weeks). 
+• FGR <3rd centile or drop in growth velocity >50 percentiles. 
+• Fetal hydrops. 
+• UA Dopplers (absent/reversed end diastolic flow). 
+• Monochorionic twins with TTTS. 
+• Preterm birth <32 weeks. 
+• <32-week -onset severe PET. 
+• Severe sepsis with maternal ITU admission and/or fetal sepsis requiring 
+ventilation or level 3 NICU (placenta swabs taken at birth). 
+• Massive placental abruption with retroplacental clot. 
+• Severe fetal distress pH<7.05 / BE≥-12/scalp lactate >4.8mmol. 
+• Caesarean paripartum hysterectomy for morbidly adherent placenta. 
+ 
+• Stillbirth or early neonatal death 
+• MTOP (if requested by screening) 
+ CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 29 of 35 
+ Appendix 5: Guideline Version Control Log 
+This should be included for all updated guidelines, summarising the changes between the current 
+and previous version. (Earlier changes should be deleted from the list when the guideline is 
+updated.) 
+Do not list minor and stylistic changes or changes which do not alter the processes described. 
+If the update includes a significant reorganisation of the material, indicate this and list the main 
+areas where the process itself has changed. 
+ 
+Version Date Author Status Comment 
+1.0 24th September 
+2010 Labour ward Co- 
+ordinators Archived New Trust wide guideline 
+2.0 February 2011 CNST Midwife Archived Minor administrative amendment 
+3.0 December 2011 CNST Midwife Archived Amended to include spontaneous 
+rupture of membranes at term 
+4.0 September 2013 CNST Midwife Archived 3 yearly update 
+4.1 August 2014 Patient Safety Midwife Archived Addition of monitoring of fetal heart 
+for in -patients during the latent 
+phase 
+5.0 August 2016 Labour Ward 
+Coordinator Archived Minor additions and review 
+5.1 Dec 2016 Clinical Effectiveness 
+Midwife & JOGG Archived Minor addition to swab count 
+6 March 2017 Obstetric Consultant 
+leads for 
+Labour/Delivery ward 
+& Clinical 
+Effectiveness Midwife Archived Updates from Feb 2017 NICE 
+Guideline and Merge of labour 
+Risk Assessment guideline 
+7 May 2018 Obstetric Consultant 
+leads for 
+Labour/Delivery ward 
+& Clinical 
+Effectiveness Midwife Archived Updated with Placental Pathway 
+8 August 2018 Clinical Effectiveness 
+Midwife Archived Updated with Maternity In 
+formation error process 
+8.1 September 2019 Clinical Effectiveness 
+Midwife (S. Davies) Archived Section 14 updated - active 3rd 
+stage uterotonic changed in line 
+with RCOG (2016) and Trust PPH 
+guideline 
+8.2 July 2020 Clinical Effectiveness 
+Support Midwife (S. 
+Harris) Archived Updates from NICE Quality Care 
+Standards (Feb 2020) and addition 
+of pressure area care guidance. 
+For review in 2 years as this was 
+not a full review. 
+8.3 November 2020 Midwife Archived NICE CG132 Caesarean Section 
+recommendation against early 
+amniotomy and active 
+management of labour to reduce 
+incidence of CS for ‘failure to 
+progress’ added. CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 30 of 35 
+ 
+9.0 July 2021 Clinical Effectiveness 
+Support Midwife Archived 3 year review. Fluid balance 
+management added. Fetal 
+monitoring in second stage 
+amended to align with Trust Fetal 
+Monitoring Guideline. Antacids and 
+opioids updated. 
+9.1 January 2024 Obstetric Consultant 
+CE Team 
+Fetal Monitoring 
+Midwives LIVE Information on Peanut Balls 
+added. 
+Amended to align with NICE NG229 
+Fetal Monitoring in Labour 
+Criteria for Placental histology 
+updated to align with RCPath 2022 
+guidelines CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 31 of 35 
+ 
+Appendix 6: Due Regard Assessment Tool 
+ 
+To be completed and attached to any guideline when submitted to the appropriate 
+committee for consideration and approval. 
+ 
+ Yes/No Comments 
+1. Does the document/guidance affect one group less 
+or more favourably than another on the basis of: 
+ Age No 
+ · Disability No 
+ · Gender (Sex) No 
+ · Gender Identity No 
+ · Marriage and civil partnership No 
+ · Pregnancy and maternity No 
+ · Race (ethnicity, nationality, colour) No 
+ · Religion or Belief No 
+ · Sexual orientation, including lesbian, gay and 
+bisexual people No 
+2. Is there any evidence that some groups are 
+affected differently and what is/are the evidence 
+source(s)? No 
+3. If you have identified potential discrimination, are 
+there any exceptions valid, legal and/or justifiable? NA 
+4. Is the impact of the document likely to be 
+negative? No 
+5. If so, can the impact be avoided? NA 
+6. What alternative is there to achieving the intent of 
+the document without the impact? NA 
+7. Can we reduce the impact by taking different 
+action and, if not, what, if any, are the reasons why 
+the guideline should continue in its current form? NA 
+8. Has the document been assessed to ensure 
+service users, staff and other stakeholders are 
+treated in line with Human Rights FREDA 
+principles (fairness, respect, equality, dignity and 
+autonomy)? Yes 
+ 
+If you have identified a potential discriminatory impact of this guideline, please refer it to 
+[Insert Name], together with any suggestions as to the action required to avoid/reduce 
+this impact. For advice in respect of answering the above questions, please contact 
+uhsussex.equality@nhs.net 01273 664685). CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 32 of 35 
+ 
+Appendix 7: Template Dissemination, Implementation and Access Plan 
+ 
+To be completed and attached to any guideline when submitted to Corporate Governance for 
+consideration and TMB approval. 
+ 
+ Dissemination Plan Comments 
+1. Identify: 
+ Which members of staff or staff groups will be 
+affected by this guideline? Midwives and obstetricians 
+ How will you confirm that they have received the 
+guideline and understood its implications? Dissemination through the 
+usual Communication 
+channels and highlighted at 
+Safety Huddles. 
+ How have you linked the dissemination of the 
+guideline with induction training, continuous 
+professional development, and clinical supervision 
+as appropriate? All new members of staff 
+are shown where to access 
+Clinical documents that are 
+relevant to their area of 
+practice. 
+2. How and where will staff access the document (at 
+operational level)? Accessed by staff via 
+Sharepoint 
+ 
+ Yes/No Comments 
+3. Have you made any plans to 
+remove old versions of the 
+guideline or related documents 
+from circulation? Yes Previous versions will be 
+archived as part of the 
+uploading onto sharepoint 
+process. 
+4. Have you ensured staff are aware 
+the document is logged on the 
+organisation’s register? Yes Dissemination plan includes 
+notifying staff via email, 
+safety noticeboards, 
+departmental newsletter 
+and social media. CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 33 of 35 
+ 
+Appendix 8: Additional guidance and information 
+Use this section to list any statutory, legal, national, or other authoritative documents which have 
+informed the content of this guideline. 
+Wherever possible, give online addresses, either on the Trust intranet or authoritative internet 
+sites (DoH, NICE etc). 
+If any listed document is not available electronically, list the date, author, publisher, and full 
+name. 
+ 
+Anderson, G C et al (2006) ‘Early skin-to-skin contact for mothers and their healthy newborn 
+infants’ The Cochrane database of Systematic Reviews, Issue 3. 
+ 
+Baker C (1996) Nutrition and hydration in labour. British Journal of Midwifery 4: pp 568-572. 
+ 
+Barrera, E. and Acosta, L. (2022) ‘Spinning Babies® a Professional Development Program for 
+Birth Workers to Reduce C -Section Rates’. 2022 SMH Best Practice Fair. 8. 
+ 
+Begley, C. et al. 2010. Cochrane review 
+ 
+Broach J, Newton N (1988) Food and beverages in labour. Part II: the effects of cessation of oral 
+intake during labour. Birth 15: pp 88 -92. 
+ 
+Buckley, S.J. 2004 “Unlocking the potential for normality” The Practising Midwife 7 (6) pp 15-17 
+ 
+Cheyne, H et al 2007 “Should I come in now? A study of women’s early labour experiences” 
+British Journal of Midwifery 15 (10) pp 604 -609 
+ 
+Delgardo, A et al. (2022) Effectiveness of the peanut ball use for women with epidural analgesia 
+in labour: a systematic review and meta -analysis, Journal of Obstetrics and Gynacology, 42:5, 
+726-733. 
+ 
+Dixon L, et al (2011) Systematic Review: The Clinical Effectiveness of Physiological (Expectant) 
+Management of the Third Stage of Labor Following a Physiological Labor and Birth. International 
+Journal of Childbirth. Vol1, Issue 3 (2011). 
+ 
+Downe, S 2003 Transition and the Second Stage of Labour in Myles Textbook for Midwives 
+edited by Fraser, D.M & Cooper, M.A Churchill Livingstone, Edinburgh edited 
+ 
+Enkin M, Keirse MJNC, Neilson J et al. (2000) A Guide to Effective Care in Childbirth. Oxford: 
+Oxford University Press. 
+ 
+Foulkes J, Dumoulin J (1985) The effects of ketonuria in labour. British Journal of Clinical 
+Practice 39: pp 9 -62. 
+ 
+Fraser W, Turcot, Krauss I, Brisson -Carrol G (2004) Amniotomy for shortening spontaneous 
+labour (Cochrane Review) In: The Cochrane Library, Issue 1 Chichester, UK: John Wiley & 
+Sons, Ltd. CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 34 of 35 
+ Frye A (1994) Nourishing the mother. Midwifery Today 31 (Autumn): pp 25-26. 
+ 
+Grant J (1990) Nutrition and hydration in labour in Alexander J, Levy V, and Roch S (eds) 
+Midwifery Practice Intrapartum Care : A research -based approach London: Macmillan 
+Education: pp 58 -69. 
+ 
+Goffnet F, Fraser W, Marcoux S, Breart G, Moutquin J, Daaris M (1997) Early amniotomy 
+increases the frequency of fetal heart abnormalities. British Journal of Obstetrics and 
+Gynaecology 104: pp 40 -346. 
+ 
+Hobbs L (1998) Assessing cervical dilatation without VEs – Watching the purple line. The 
+Practising Midwife. 1(11) pp 34 -35. 
+ 
+Iversen, M.L. et al. (2017) ‘Danish women’s experiences of the rebozo technique during labour: A 
+qualitative explorative study’, Sexual & Reproductive Healthcare , 11, pp. 79 –85. 
+doi:10.1016/j.srhc.2016.10.005. 
+ 
+James D, K, et al (1999) High risk pregnancy, management options (2nd edition) pp1106 -11. 
+Kean L. et al (2000) "Best Practice in Labor Ward Management, First Edition", Saunders. 
+Odent M (1994) Labouring women are not marathon runners. Midwifery Today 31 (Autumn) pp 
+3-51. 
+ 
+MIDIRS (1996) Informed Choice Leaflet No. 5 Position in Labour and Delivery. MIDIRS and The 
+NHS Centre for Review and Dissemination: Bristol. 
+ 
+National Institute for Health Care Excellence (2023) Intrapartum Care 
+ 
+National Institute for Health Care Excellence (2023) NICE NG229 Fetal Monitoring in Labour 
+ 
+NHS (2003) All Wales Clinical Pathway for Normal Labour. 
+ 
+Nursing & Midwifery Council (2009) NMC Record keeping: Guidance for nurses and midwives 
+NMC: London. 
+ 
+Royal College of Midwives 2004 Position Statement 4 “Normal Childbirth” 
+ 
+Royal College of Obstetricians and Gynaecologists (2015) Scientific Impact Paper No. 14: 
+Clamping of the cord and placental transfusion. RCOG. [Accessed Online on 22nd August 2016] 
+https://www.rcog.org.uk/globalassets/documents/guidelines/scientific -impact -papers/sip -14.pdf 
+ 
+RCOG (2016) Postpartum Haemorrhage, Prevention and Management (Green -top Guideline No. 
+52). https://www.rcog.org.uk/en/guidelines -research -services/guidelines/gtg52/ 
+ 
+Saunders NJ et al, (1989) BMJ. Dec 9; 299(6713):1423 -6. 
+ 
+Sears, D. (2023) ‘The Impact of the Spinning Babies Method on Labor Duration and Delivery 
+Outcome’, Walden Dissertations and Doctoral Studies . 13765. CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline: Care in labour v9.1 
+For use at: SRH & WH 
+Page 35 of 35 
+ 
+Sutton, J 2001 Let birth be born again: Rediscovering and Reclaiming our Midwifery Heritage. 
+Birth Concepts, Feltham, Middx 
+ 
+Zwillinger E.E. and Burke J. (2023) ‘Cesarean birth reduction: EBP in action’, American Nurse 
+Journal , 18(9), pp. 50 -54. doi:10.51256/anj092350

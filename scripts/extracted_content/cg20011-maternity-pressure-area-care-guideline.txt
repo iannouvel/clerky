@@ -1,0 +1,688 @@
+# Extracted from: CG20011 Maternity Pressure Area Care Guideline.pdf
+# Guideline ID: cg20011-maternity-pressure-area-care-guideline
+# Content length: 37598 characters
+# Processing date: 1750066900.5738423
+
+CG20011 Maternity Pressure Area Care Guideline V1 July 2020 Page 1 of 18 
+
+Maternity Pressure Area Care Guideline 
+Summary statement: How does the document 
+support patient care? The purpose of this guideline is to provide clear guidance for 
+all staff caring in regard to pressure area care. To maintain 
+skin integrity and minimi se the risk of damage to pressure 
+areas during childbirth and the post natal period. 
+Staff/stakeholders involved in development: 
+Job titles only Clinical Effectiveness team, patient safety team, senior 
+midwives, Trust Tissue Viability team 
+Division: Wome n and Child ren’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Clinical Effectiveness Support Midwife , Tissue Viability 
+For use by: All Obstetric and Midwifery staff 
+Purpose: To provide evidence based guidanc e for staff to prote ct 
+women having babies from pressure area damage. 
+This document supports: 
+Standards and legislation Clinical G uideline for the Prevention of Pressure Ulcers in 
+Adults’ , NICE Pressure Ulcers: Prevention and management 
+CG179 , Clinical Guideline for Wound Management 
+See Maternity Pressure Area Care intranet page 
+Key related documents: Maternity Guidelines Labour Risk Assessment, Antenatal 
+Care and Patient Information, Postnatal Care, Severely 
+ill/High Dependency Care, Wound Management, Prevention 
+of Pressure Ulcers in Adults 
+Approved by: 
+Divisional Governance/Ma nagement Group Maternity Joint Obstetric Guideline Group (JOGG) 
+Approval date: 22nd July 2020 
+Ratified by Board of Directors/ Committee of 
+the Board of Directors N/A 
+Ratification Date: N/A 
+Expiry Date: July 2023 
+Review date: January 2023 
+ 
+If you requ ire this document in another format such as Braille, large print, 
+audio or another language please contact the Trusts Communications Team 
+ 
+Reference Number: CG20011 
+CG20011 Maternity Pressure Area Care Guideline V1 July 2020 Page 2 of 18 
+
+Version Date Author Status Comment 
+1.0 July 2020 S. Harris , Tissue 
+Viability , A. Clark e Live New maternity guideline 
+2.0 
+3.0 
+Index 
+ 
+1.0. Aim ................................ ................................ ................................ .......................... 4 
+2.0. Scope ................................ ................................ ................................ ...................... 4 
+3.0. Responsibilities ................................ ................................ ................................ ....... 4 
+4.0. Introduction ................................ ................................ ................................ ............. 4 
+5.0. Risk assessment ................................ ................................ ................................ ..... 4 
+6.0. Women at Highest Risk of Pressure Ulcers ................................ ............................. 5 
+7.0. Care Planning ................................ ................................ ................................ ......... 5 
+8.0. Surface: Pressure -reducing equipment ................................ ................................ ... 6 
+9.0. Skin Assessment ................................ ................................ ................................ ..... 6 
+9.1. Clinical indicators of compromised peripheral perfusion: ................................ ......... 6 
+9.2. Recommendations for assessing dark pigmented skin ................................ ............ 7 
+10.0. Medical devices ................................ ................................ ................................ ....... 7 
+11.0. Documentation ................................ ................................ ................................ ........ 8 
+12.0. Nutritional monitoring ................................ ................................ .............................. 8 
+13.0. Patient Advice and Information ................................ ................................ ................ 8 
+14.0. Optimal Intrapartum Pr essure Area Care – think SSKIN ................................ ......... 8 
+14.1. Skin care ................................ ................................ ................................ ............. 8 
+14.2. Women not at risk of pressure area damage – score = “green” ........................... 8 
+14.3. Women at risk of pressure area damage – score = “amber”, and those scoring 
+“red” due to a previous pressure ulcer ................................ ................................ ............... 9 
+15.0. Elective Caesarea n Section Pressure Area Care – score = “amber” ....................... 9 
+16.0. Optimal Post -delivery Pressure Area Care – think SSKIN ................................ ....... 9 
+16.1. Care for all w omen ................................ ................................ ............................... 9 
+16.2. Care for women who have had regional analgesia – score = “amber”, and those 
+scoring “red” due to a previous pressure ulcer ................................ ................................ ..10 
+16.3. Care for women who have not had regional analgesia – score “green” ............... 10 
+16.4. Care for women with medical devices – score = “amber” ................................ ....10 
+17.0. Pressure Ulcer vs Moisture Lesion ................................ ................................ ......... 10 
+17.1. Symptoms of moisture lesions: ................................ ................................ ........... 11 
+18.0. Diagnosis and Management of Pr essure Ulcers ................................ ..................... 11 
+18.1. Categorisation of pressure ulcers ................................ ................................ .......11 
+18.2. Assessment ................................ ................................ ................................ ........ 11 
+CG20011 Maternity Pressure Area Care Guideline V1 July 2020 Page 3 of 18 
+
+18.3. Reporting ................................ ................................ ................................ ............ 11 
+18.4. Care for Women with Pressure Ulcers – “red” ................................ ..................... 12 
+18.5. Tissue Viability ................................ ................................ ................................ ....12 
+18.6. Management of pressure ulcers on discharge from hospital ............................... 13 
+19.0. Audit/Monitoring ................................ ................................ ................................ .....13 
+References ................................ ................................ ................................ ........................... 14 
+Appendix 1 – Pressure Ulcer Risk Assessment – Modified PURPOSE T for Maternity ......... 15 
+Appendix 2 – Algorithm for selecting t he most appropriate Safeguard pressure redistribution 
+device ………………………………………………………………………………………………… 15 
+Appendix 3 – Pressure Ulcer Grading chart ................................ ................................ .......... 15 
+Appendix 4 – Incontinence Dermatitis Treatment Protocol ................................ ................... 15 
+Appendix 5 – Daily Pressure Ulcer Form ................................ ................................ .............. 15 
+Appendix 6 – Mater nity Pressure Ulcer Proforma (including flow chart) ................................ 15 
+Appendix 7 – Labour PCEA Observation Chart ................................ ................................ ....15 
+Appendix 8: Maternity wound man agement discharge plan ................................ .................. 15 
+Appendix 9: Pressure ulcer leaflet ................................ ................................ ........................ 15 
+Appendix 10: Reporting and reviewing of pressure ulcers ................................ .................... 15 
+Appendix 11: Correct set up of alternating pressure relieving mattresses ............................. 15 
+Appendix 12: aSSKINg care bundle sticker ................................ ................................ .......... 16 
+Appendix 13: Maternity Pressure Area Care Audit Tool ................................ ........................ 17 
+
+CG20011 Maternity Pressure Area Care Guideline V1 July 2020 Page 4 of 18 
+
+Maternity Pressure Area Care Guideline 
+ 
+This guideline with appendices can be found on the intranet here 
+1.0. Aim 
+ To provide clear guidance for all staff caring for intrapartum and postnatal women 
+with regard to pressure area care. 
+ To maintain skin in tegrity and minimise the risk of damage to pressure areas 
+during childbirth and the post natal period. 
+ 
+2.0. Scope 
+ This guideline provides good evidenced -based practice for all staff to follow with regard to 
+pressure area care for intrapartum and postnatal wome n. 
+ This guideline provides clear guidance on identifying those women at risk of pressure 
+ulcers and facilitating the implementation of best practice. 
+ 
+3.0. Responsibilities 
+Midwives and Obstetricians are expected to: 
+ Access, read, understand and follow this gui dance 
+ Use their professional judgement in the application of this guideline . 
+ 
+Management are expected to: 
+ Ensure the guideline is reviewed as required in line with Trust and National 
+recommendations 
+ Ensure the guideline is accessible to all relevant staff . 
+ 
+4.0. Introduction 
+Pressure ulcers are damage caused to an area of skin and the tissues below as a result of 
+blood supply impairment due to being placed under pressure. Pressure ulcer s can occur in 
+any patient, but they most typically occur in people confined to beds or chairs – either as a 
+result of illness, impaired mobility or nutrition, poor posture or a neurological condition. 
+Equipment not specifically designed to provide pressure relief can also cause pressure area 
+damage. (NICE, 2014.) In maternity care , a woman’s mobility can be restricted due to a 
+number of reasons – for example, regional anaesthesia, operative delivery, perineal damage, 
+as well as obstetric conditions such as pre -eclampsia resulting in poor maternal condition. 
+ 
+5.0. Risk assessment 
+All pa tients are potentially at ris k of developing a pressure ulcer and should be assessed for 
+risk on admission and if there is a change in clinical condition. A modified version of the 
+PURPOSE T risk assessment tool (Appendix 1) to support clinical judgement can be found in 
+the maternity notes. 
+ 
+CG20011 Maternity Pressure Area Care Guideline V1 July 2020 Page 5 of 18 
+
+The pressure ulcer risk category ‘Red’ (s econdary prevention and treatment pathway), 
+‘Amber’ (primary prevention pathway), and ‘Green’ ( no risk) must be clearly identified and 
+communi cated within the team and on transfer via the SBAR . 
+Risk must be re -assessed if there is a change in the patient’s clinical status, for example: 
+ After surgery 
+ On deterioration of an underlying or obstetric condition 
+ A change in mobility, i.e. an epidura l/spinal . 
+ 
+But also at the following times: 
+ On transfer to another ward 
+ During each postnatal assessment (daily on the ward) 
+ On discharge from the postnatal ward and from midwifery care (around Day 10 -12). 
+ 
+When the risk category differs from that of prev ious assessments, the care pl an must be 
+reviewed and updated by the midwife. 
+ 
+6.0. Women a t Highest Risk of Pressure Ulcers 
+All patients are potentially at risk of developing pressure ulcers ; however, they are more 
+likely to occur in women with the following: 
+ 
+ Limited mobility – for example, with regional analgesia, post -caesarean section, 
+permanent disability, or those that are seriously unwell 
+ Limited activity – for example, women on continuous fetal monitoring 
+ A history of past or current pressure ulcers 
+ Diabetes mellitus 
+ Other long term conditions such as heart disease or rheumatoid arthritis 
+ Excessive moisture – for example, those who have ruptured membranes, l imited bladder 
+or bowel control , or are sweating heavily 
+ Poor circulation 
+ Poor dietary and fluid intake , or being over- or underweight 
+ Smokers 
+ Medical devices - in particular urinary catheters and CTG straps . 
+ 
+7.0. Care Planning 
+On completion of the risk assessment, a preventative care plan must be developed and 
+documented in the notes. This should take into account the following: 
+ Identified risk factors including their mobility and ability to reposition themselves 
+ Other comorbidities 
+ The elements of the SSKIN care bundle: 
+ Surface - timely provision of an appropriate mattress, and/or cushion 
+ Skin assess ment - consistent monitoring of pressure areas 
+ Keep moving - a planned repositioning schedule with documented evidence that 
+this has been undertaken 
+CG20011 Maternity Pressure Area Care Guideline V1 July 2020 Page 6 of 18 
+
+ Incontinence - a proactive approach to caring for the skin of the patient 
+experiencing incontinence or wh ere the skin is exposed to excessive moisture 
+ Nutritional monitoring and support . 
+ Patient preference 
+ 
+8.0. Surface: Pressure -reducing equipment 
+ 
+ Patients w ith grade 3 or 4 pressure ulcer s should be provided with an alternating 
+pressure system (see Appendix 2 ). 
+ Pressure -reducing equipment is accessed via the equipment libraries. If an alternating 
+pressure mattress is not available from the Equipment Library, the protocol for accessing 
+a rental system should be followed (avail able on the Equipment Library pages on 
+StaffNet . Code for pressure relieving mattress: M/WM ). 
+ Patients who are unable to move themselves from a seated position must be provided 
+with a pressure -reducing cushion. When a cushion is being used, the patient needs to be 
+able to sit with the feet flat on the floor, buttocks and thighs in parallel contact with the 
+cushion, and back straight with hips, knees and ankles at 90º. 
+ Patients must continue to be repositioned whilst nursed on an alternating pressure 
+system. 
+ All equipment used to reduce or redistribute pressure must be doc umented in the 
+maternity notes . 
+ For more information on pressure -reducing equipment, please refer to the Trust ‘ Clinical 
+Guideline for the Prevention of Pressure Ulcers in Adults’ . 
+ 
+9.0. Skin Assessment 
+ 
+The frequen cy of skin assessment is based on the woman’s risk category (green/amber/red) , 
+clinical condition and tissue tolerance of pressure. The assessment should take into account 
+any pain or discomfort reported by the patient, and the skin should be checked for: 
+ Skin integrity in areas of pressure 
+ Colour changes or discoloration 
+ Variations in heat, firmness and moisture (for example, because of incontinence, 
+oedema, dry or inflamed skin). 
+ 
+To test the tissue tolerance of pressure the fingertip test can be used: 
+ Reddened skin blanches under light fingertip pressure and flushes back on removal of 
+the pressure 
+ Blanching hyperaemia is the normal tissue response to pressure relief and indicates that 
+the micro -circulation is intact. A non -blanching hyperae mia is category 1 pressure ulcer . 
+ 
+Individuals with alterations to intact skin (changes in colour, temperature, skin texture, or pain 
+over a bony prominence) must be recognised as bein g at risk of pressure ulcer . 
+ 
+9.1. Clinical indicators of co mpromised peripheral perfusion : 
+ Persistent erythema following removal of pressure 
+ Non-blanching hyperaemia 
+CG20011 Maternity Pressure Area Care Guideline V1 July 2020 Page 7 of 18 
+
+ Purple/blue discoloration 
+ Localised heat or coolness over a pressure point as compared to the temperature of 
+adjacent tissue 
+ Localised oedema 
+ Localised induration (tissue stif fness) 
+ Discomfort or pain that may be attribut able to incipient pressure ulcer. 
+ 
+In patients with darkly pigmented skin, it may not be possible to detect colour changes, but 
+variations in skin temperature, firmness and moisture may be evident. 
+ 
+9.2. Recommend ations for assessing dark pigmented skin 
+ 
+Skin pigmentation can mask the visual indication of erythema, and category 1 pressure 
+ulcers are more likely to go undetected and deteriorate to full thickness pressure ulcers in 
+darkly pigmented skin. Therefore, a lthough erythema has been identified as the main 
+indicator of pressure damage, this is not possible in darkly pigmented skin. Identifying first 
+stages of pressure damage in dark skin are as follows: 
+ 
+ The colour of intact dark pigmented skin may remain unch anged (does not blanch) 
+when pressure is applied over a bony prominence. 
+ Localised skin colour changes can occur where pressure is applied - these changes 
+may differ from the individual’s usual skin colour. 
+ Local areas of intact skin subject to pressure ma y feel either warm or cool when 
+touched. This assessment should be performed without gloves to make it easier to 
+distinguish differences in temperature. It is important to clean the skin of any body 
+fluids before this direct contact. 
+ If a woman has had a p revious pressure ulcer, the healed area may be lighter in 
+colour. 
+ Areas of skin subjected to pressure may be purplish/bluish/violet in colour. This can 
+be compared with the erythema seen in people with lighter skin tones. 
+ Oedema may occur with an induratio n (area of skin hardness) more than 15mm in 
+diameter. The skin may be taut and shiny. 
+ Women may complain of or indicate current or recent pain or discomfort at body sites 
+where pressure has been applied. 
+ 
+10.0. Medical devices 
+ 
+A medical device is defined by NPU AP (2015) as a ‘device designed and applied for 
+diagnostic or therapeutic purposes’. In maternity, this cou ld include uri nary catheters, oxygen 
+masks, anti-embolism stockings or CTG straps . 
+ 
+When medical devices are in use, the woman’s skin must be observe d frequently for 
+associated pressure -related changes, and every effort made to offload the pressure. 
+
+CG20011 Maternity Pressure Area Care Guideline V1 July 2020 Page 8 of 18 
+
+11.0. Documentation 
+A modif ied version of the PURPOSE T risk assessment tool can be found in all maternity 
+care records. This risk assessment should be used for documenting pressure area care (see 
+Appendix 1). Please state clearly if and why the woman has declined any care. 
+ 
+Pressure area care plans should be clearly documented in the maternity notes. 
+ 
+12.0. Nutritional monitori ng 
+Assessment of the nutritional status of the patient is an integral component of the strategy for 
+the prevention and treatment of pressure ulcers . Malnutrition compromises skin integrity and 
+the healing of existing wounds. 
+ 
+In maternity, nutrition is un likely to be an issue for most women. However, where possible, 
+try to minimise times when nutritional intake is compromised for those at risk e.g. p eriods of 
+pre-op fasting or nil by mouth. 
+ 
+13.0. Patient Advice and Information 
+During their pregnancy and whilst an inpatient, women should be directed to look at the 
+information on ‘ Family Assist ’. On admission to maternity wards, women should be informed 
+of routine advice around pressure ar ea care. 
+ 
+14.0. Optimal Intrapartum Pressure Area Care – think SSKIN 
+14.1. Skin care 
+ Regular changing of Inco pads to ensure skin is kept clean and dry – particularly if 
+woman is draining liquor or is incontinent 
+ Use a cleansing foam as first -line product for cleanin g women and avoid soap -products 
+ Use a barrier cream on areas exposed to moisture at least 3 -4 times a day 
+ All cleaning and barrier products should be single -patient use only . 
+14.2. Women not at risk of pressure area damage – score = “green” 
+ Skin assessment on ad mission to maternity ward . 
+ Skin assessment and application of barrier cream if woman reporting any signs of 
+compromised peripheral perfusion on her pressure areas at any point. 
+ Keep Moving: Encourage to mobilise independently . 
+ Keep Moving: Advise to not sp end longer than 8 -10 hours in bed . 
+ Incontinence/Moisture: Application o f barrier cream if skin exposed to moisture and 
+regular changing of pads . 
+ Nutrition: Encourage women to eat and drink normally (unless otherwise directed by a 
+Doctor) . 
+
+CG20011 Maternity Pressure Area Care Guideline V1 July 2020 Page 9 of 18 
+
+14.3. Women at risk o f pressure area damage – score = “amber” , and those scoring 
+“red” due to a previous pressure ulcer 
+ Skin assessment on admission to maternity ward and when risk category changed (e.g. 
+prior to epidural /spinal or caesarean section) . 
+ For those scoring “red” f or a previous pressure ulcer – document in notes the position 
+and category of the previous pressure ulcer and if there is a visible scar. No Datix 
+required. Consider use of pressure -reducing equipment or mobility aids – discuss with 
+Tissue Viability if uns ure. 
+ Skin assessment 2 hourly . 
+ Complete Labour PCEA Observation Chart (Appendix 7 ) colour score at each skin 
+assessment if woman has an epidural. 
+ Keep Moving: Encourage/as sist repositioning 1-2 hourly - if able to stand, they should be 
+assisted to do so for at least 2 minutes . 
+ Keep Moving: Maximum optimum length of time spent in bed = Up to 12 hours . 
+ Incontinence/Moisture: Protect the skin from moisture with a barrier cream and c leanse 
+the skin promptly after episodes of incontinence . 
+ Incontinence/Moisture: A barrier cream should be applied sparingly after ev ery episode 
+of incontinence, and at least 3 -4 times per day . 
+ Nutrition: Monitor and support the maintenance of blood sugars in women with diabetes 
+as per Trust Diabetes in Pregnancy guideline . 
+ Nutrition: Encourage women to eat and drink normally (unless otherwise directed by a 
+Doctor) . 
+ Use pelvic ti lt on delivery beds to prevent woman from sliding and shearing skin . 
+ 
+15.0. Elective Caesarean Section Pressure Area Care – score = “amber” 
+ 
+ Skin assessment and barrier cream application on admission to maternity ward/ prior to 
+LSCS . 
+ Skin assessment and barrier cream application prior to leaving theatre . 
+ Follow care for “women at risk of pressure area damage” above and “post -delivery 
+pressure area care” as appropriate below . 
+ Nutrition: Consider hydration of women that are to be nil by mouth for a prolonged period 
+of time (e.g. IV fluids) . 
+ 
+16.0. Optimal Post -delivery Pressure Area Care – think SSKIN 
+ 
+16.1. Care for all women 
+ Use a cleansing foam as a first-line product when cleaning women . 
+ Skin assessment prior to transfer to postnatal ward (or earlier if reporting any signs of 
+compromised peripheral perfusion on her pressure areas) . 
+ Diabetic mothers: Monitor blood sugars as per Trust Diabetes in Pregnancy guideline 
+and support the maintenance of stable blood sugars . 
+ Encourage good hygiene and keeping pressure areas clean and dry . 
+CG20011 Maternity Pressure Area Care Guideline V1 July 2020 Page 10 of 18 
+
+16.2. Care for women who have had regional analgesia – score = “amber” , and those 
+scoring “red” due to a previous pressure ulcer 
+ Skin assessment and change of Inco pads at birth an d then 2 -3 hourly until woman is 
+mobilising independently and is scoring “green” on the PURPOSE T risk assessment 
+tool (see Appendix 1 ). 
+ If scoring “red” for having a previous pressure ulcer, once mobilising independently (and 
+otherwise scoring “green”), skin assessments should be performed 12 hourly until home. 
+Repositioning should continue 1 -2 hourly. 
+ Keep Moving: Encourage/ assist to reposition 1 -2 hourly - if able to stand, the woman 
+should be encouraged to do so for at least 2 minutes. 
+ Keep Moving: Once scoring “g reen” , women should be advised to mobilise/reposition 
+regularly and pressure areas should be assessed at every post -natal check by a midwife 
+(or earlier if report ing any signs of compromised peripheral perfusion on her pressure 
+areas) . 
+ Keep Moving: Optimum maximum length of time spent in bed = Up to 12 hours . 
+ Incontinence/Moisture: Protect the skin from moisture with a barrier cream when 
+required . 
+ Incontinence/Moi sture: Cleanse the skin promptly after episodes of incontinence . 
+16.3. Care for women who have not had regional analgesia – score “green” 
+ Skin assessment and change of Inco pads at birth . 
+ Keep Moving: Encouraged to mobilise independently . 
+ Keep Moving: Advised no t to spend longer than 8 -10 hours in bed . 
+ Incontinence/Moisture: Advised to change maternity and Inco pads regularly as required, 
+and to keep skin clean and dry . 
+ Incontinence/Moisture: Consider use of barrier cream if skin exposed to moisture . 
+ Nutrition: C ontinue to advise women to eat and drink normally (unless otherwise directed 
+by a Doctor) . 
+16.4. Care for women with medical devices – score = “amber” 
+ Skin assessment 2 hourly until medical device has been removed . 
+ Keep Moving: Encouraged/assisted to reposition device 2 -3 hourly when in situ . 
+ Incontinence/Moisture: Consider use of a barrier cream . 
+ Nutrition: Continue to advise women to eat and drink normally (unless otherwise directed 
+by a Doctor) . 
+ 
+17.0. Pressure Ulcer vs Moisture Lesion 
+Moisture lesion s develop when the structural integrity of the skin is compromised by repeated 
+or prolonged exposure to moisture, e.g. from amniotic fluid, excessive sweat or urine. 
+Please see Appendix 3 for a ‘Pressure Ulcer Grading Chart’ and Appendix 4 for 
+‘Incontinence Dermatitis Treatment Protocol’. 
+ 
+CG20011 Maternity Pressure Area Care Guideline V1 July 2020 Page 11 of 18 
+
+17.1. Symptoms of moisture lesions: 
+ Wet skin with maceration and/or excoriation 
+ Diffuse in shape with several closely located areas 
+ Edges diffuse and irregular 
+ Often intr a-gluteal, but may be over a bony prominence 
+ Superficial skin loss, without necrosis or slough 
+ Often symmetrical (copy lesions) . 
+ 
+18.0. Diagnosis and Management of Pressure Ulcers 
+ 
+18.1. Categorisation of pressure ulcers 
+Please refer to Section 6 of the Trust ‘Clinical G uideline for the Prevention of p ressure Ulcers 
+in Adults’ for information o n categorisation, an d appendix 3 for the classification of pressure 
+ulcers with diagrams/images. 
+If unsure of the classification of a p ressure ulcer , always request a review from a tissue 
+viability nurse. 
+18.2. Assessment 
+ When a pres sure ulcer is discovered, commence the ‘Pressur e Ulcer Proforma’ and 
+follow the flow -chart (Appendix 6 ) to determine appropriate care. 
+ Document on the ‘Daily Pressure Ulcer Form’ (Appendix 5 ). 
+ In addition, all Patien ts who develop a pressure ulcer must have their wound 
+photographed (with verbal consent) as per Trust Clinical Guideline for Wound 
+Management (see more i nformation below) and added to Datix . 
+Taking photographs: 
+ Two photographs should be taken – one close up of the ulcer , one in normal mode to 
+show position on limb/body . This should then be added to the Datix. 
+ Cameras can be found on both maternity wards. I f not available, please ask the patient 
+to use their own mobile phone and to email the photograph to the Tangmere or Labour 
+Ward NHS e -mail account . 
+ The woman must be identifiable by marking their initials and hospital number on a paper 
+rule used to measur e the ulcer in the photograph . 
+ Please refer to Section 10.4 (page 19) of the Trust ‘Clinical Guideline for Wound 
+Management ’ for further guidance on taking photographs of pressure ulcers . 
+ 
+18.3. Reporting 
+ When first recognised, all pressure ulcers , including category 1, must be reported as a 
+clinical incident on the Datix system. The reporting mechanism is applicable to pressure 
+ulcers that are p resent on admission to the Trust hospitals and to those that develop or 
+deteriorate during the inpatient episode. 
+ Pressure ulcers caused by a medical device must be identified and reported as a 
+‘medical device related pressure ulcer’. 
+CG20011 Maternity Pressure Area Care Guideline V1 July 2020 Page 12 of 18 
+
+ Skin damage determin ed to be as the result of incontinence and/or moisture alone 
+should not be recorded as a pressure ulcer , but should be reported via the Datix system 
+as a moisture lesion. A lesion caused by a combination of incontinence, moisture, and 
+pressure should be re corded as a pressure ulcer (EPUAP 2014). 
+ The Datix ID number should be docume nted o n the ‘Pressure Ulcer Proforma’ (Appendix 
+6) and ‘Daily Pressure Ulcer Form’ (Appendix 5 ). 
+ The Datix w ill automatically alert the Tissu e Viability Team, who , if possible, will then 
+review t he patient on the ward and review the a SSKIN g care plan put in place by a 
+Senior Midwife . The Tissue Viability Nurse (TVN) will then update the Datix and c onfirm 
+grade o f ulcer at time of assessment. 
+ 
+18.4. Care f or Women with Pressure Ulcers – “red” 
+ Complete the ‘Pressure Ulcer Proforma’ (Appendix 6 ) 
+ Document in the ‘Daily Pressure Ulcer Form’ each day starting with whe n ulcer first noted 
+(Appendix 5 ). 
+ A Senior Midwife must assess the pressure ulcer and create a care plan using the 
+aSSKINg care bundle – see Appendix 12 for the sticker to be placed in the maternity 
+notes . 
+ Surface: See section 8 for information on the use of pressure -reducing equipment and if 
+required . 
+ Skin assessment 12 hourly until home . 
+ Keep M oving: Encourage/assist to reposition 1 -2 hourl y. 
+ Incontinence/Moisture: Regular changing of maternity and Inco pads to ensure area is 
+clean and dry (alongside repositioning and skin assessment if not postnatal) . 
+ Incontinence/Moisture: Use a barrier cream on areas exposed to moisture . 
+ Use a cleansing f oam as first -line product if cleaning women . 
+ Advise women to avoid soap -based products when showering . 
+ Recommend the use of emollients on dry skin . 
+ Nutrition: Monitor blood sugars and support the maintenance of stable bloo d sugars in 
+women with diabetes. 
+ Nutrition: Contin ue to advise women to eat and drink normally (unless otherwise directed 
+by a Doctor) . 
+ Consider need for/ impact of analgesia . 
+18.5. Tissue Viability 
+All hospital -acquired pressure ulcers (category 2 and above) should be reviewed by the 
+tissue via bility team and the circumstances leading to their development assessed against 
+the best practice criteria of the skin bundle. Since maternity patients are often only in hospital 
+for a short period of time, it may be that they are discharged prior to being assessed by a 
+Tissue Viability Nurse. For this reason, a senior midwife must assess the pressure ulcer and 
+create a care plan using the aSSKINg care bundle (see Appendix 12 for sticker) prior to any 
+contact with Tissue Viability. 
+ 
+If unsure of the pressure ulcer categor y, please contact T issue Viability for a review. 
+CG20011 Maternity Pressure Area Care Guideline V1 July 2020 Page 13 of 18 
+
+18.6. Management of pressure ulcers on discharge from hospital 
+ A Senior Midwife should create a plan for ongoing care using the aSSKINg care bundle . 
+ Complete the ‘Maternity Wound Management Discharge P lan’ (Appendix 8 ) and put in 
+maternal postnatal notes . 
+ All women with category 2 and above pressure ulcers should have a communi ty nurse 
+referral via One Call: 
+Email: SC-TR.OneCallCoastalReferrals@nhs.net 
+West Sussex (Worthing & Chichester) One Call: 01903 254789 
+North West Sussex (Crawley, Horsham and Mid Sussex) One Call: 01293 228311 
+ Ensure an alert has been put on the maternity information system prior to discharge . 
+ All women should have their pressure areas checked prior to discharge from hospital and 
+at each postnatal check when home by a midwife . 
+ If able to v isit prior to discharge, t he Tis sue Viability Nurse will assist with the plan for 
+ongoing care for those with category 2 and above pressure ulcers – see Pressure Ulcer 
+Proforma ( Appendix 6 ). 
+ Barrier cream , cleansing foam and dressings should be supplied as a TTO as required . 
+ 
+19.0. Audit/Monitoring 
+Frequency of Audit: Annual 
+Method for data collection: Approved quality review tool 
+Standards: NICE Clinical Guideline CG179 . 
+EPUAP et al. (2019) 
+Reports to: Women & Children’s Division Integrated 
+Governance and Performance Board 
+ 
+See Appendix 13 for audit tool relating to this guideline . 
+
+CG20011 Maternity Pressure Area Care Guideline V1 July 2020 Page 14 of 18 
+
+References 
+Baker M (2016) Detecting Pressure Damage In People with Darkly Pigmented Skin. Wound 
+Essentials: 11; 1. 
+ 
+Clark M (2010) Skin assessment in dark pigmented skin : a challenge in pressure ulcer 
+prevention. Nursing Times; 106: 30, early online publication. 
+ 
+European Pressure Ulcer Advisory Panel, National Pressure Injury Advisory Panel and Pan 
+Pacific Pressure In jury Alliance (2019) Prevention and treatment of pressure ulcers/injuries: 
+Quick Reference Guide 2019 
+ 
+National Institute for Health and Care Excellence (2014) Pressure Ulcers Prevention and 
+Managemen t: NICE Clinical Guideline (CG179) 
+ 
+National Institute for Health and Care Excellence Quality Standard (QS89) (2015) 
+ 
+NHS Improvement (2018) Stop the Pressure 
+ 
+NHS Midlands and East (2012) Pressure ulcer programme 
+ 
+WSHFT (2018) Clinical guideline for the prevention of pressure ulcers in adults 
+ 
+WSHFT (2018 ) Clinical guideline for wound management 
+
+CG20011 Maternity Pressure Area Care Guideline V1 July 2020 Page 15 of 18 
+
+Click on links for appendices: 
+ 
+Appendix 1 – Pressure Ulcer Risk Asses sment – Modified PURPOSE T for 
+Maternity 
+ 
+Appendix 2 – Algorithm for selecting the most appropriate Safeguard pr essure 
+redistribution device 
+ 
+Appendix 3 – Pressure Ulcer Gradi ng chart 
+ 
+Appendix 4 – Incontinence Dermatitis Treatment Protocol 
+ 
+Appendix 5 – Daily Pressure Ulcer Form 
+ 
+Appendix 6 – Maternity Pressure Ulcer Proforma (including flow chart) 
+ 
+Appendix 7 – Labour PCEA Observation Chart 
+ 
+Appendix 8 : Maternity wound management discharge plan 
+ 
+Appendix 9: Pressure ulcer leaflet 
+ 
+Appendix 10 : Reporting and reviewing of pressure ulcers 
+Please use for information on Datix classification. The flow chart in the Pressure Ulcer 
+Proforma (appendix 6 ) has been adapted specifically for maternity. 
+ 
+Appendix 1 1: Correct set up of alternating pressure relieving mattresses 
+
+CG20011 Maternity Pressure Area Care Guideline V1 July 2020 Page 16 of 18 
+
+Appendix 12: aSSKINg care bundle sticker 
+
+CG20011 Maternity Pressure Area Care Guideline V1 July 2020 Page 17 of 18 
+
+Appendix 13: Maternity Pressure Area Care Audit Tool 
+
+ Name: Date of delivery: 
+Hospital Number: Site: St. Richard’s Worthing 
+Datix Number: Place of birth: 
+Name of auditor: Date audit tool completed: 
+Type of delivery: Time of birth: 
+BMI: Age: 
+Date pressure ulcer located: Pressure ulcer at discharge to GP care? 
+Yes / No 
+Pressure score on admission: 
+ Green Amber Red Time pressure score became amber (if 
+applicable): 
+Any labour/birth complications? Period pressure ulcer located: 
+Antenatal Intrapartum Postnatal 
+ 
+Risks factors for pressure ulcers (tick all th ose that apply) 
+ Regional analgesia  Limited bladder or bowel control 
+ General analgesia  Poor circulation 
+ Lack of mobility (for other reasons)  Poor nutrition/hydration 
+ Lack of activity (e.g. on CTG)  Smoker 
+ Diabetes  Medical device in situ (e.g. catheter) 
+ Other long -term medical issue  Previous pressure ulcer 
+ Pressure ulcer on admission  Excessive moisture – e.g. SROM/ARM 
+Surface Prevention Treatment 
+1. Is the rationale for the choice of support surface 
+documented (if required)? 
+2. Is the prescribed equ ipment being utilised? 
+Compliance / 2 / 2 
+ 
+Skin/Wound Management 
+1. Is there evidence of a skin inspection upon 
+admission? N/A 
+2. Is there a care plan documented in the notes? 
+3. Is the care plan in line with the Trust guideline? 
+4. Is there evidenc e skin assessments were performed 
+in line with Trust guidance? 
+ 
+5. Is there evidence the care/ treatment plan has been 
+reviewed when necessary? Compliance Non-
+Compliance 
+
+CG20011 Maternity Pressure Area Care Guideline V1 July 2020 Page 18 of 18 
+
+Tissue Viability referral (if required): Yes / No 
+Type of pressure ulcer: 
+Moisture Lesion Combined lesion 
+Category 1 Category 2 Category 3 Category 4 
+Unstageable Deep Tissue Injury 
+ 6. Is there evidence of recording the size of the wound 
+as per Trust guidance? N/A 
+7. Has the wound(s) been pho tographed as per Trust 
+guidance? N/A 
+8. If the patient is in pain, is there evidence of a pain 
+scale being utilized? N/A 
+9. Has a TVN been to review (category 2 pressure 
+ulcers and above only)? N/A 
+Compliance / 5 / 8 
+ 
+Keep Moving 
+1. Is there a requirem ent for repositioning identified in 
+the notes? 
+2. Is there evidence of repositioning as per Trust 
+guidance? 
+3. Has the plan been reviewed as the patient’s 
+condition has altered? 
+4. Is there evidence of patient information regarding the 
+importance of repos itioning? 
+5. Does the patient/carer understand the information? 
+(E.g. any language difficulties but no translation 
+used?) 
+Compliance / 5 / 5 
+ 
+Incontinence/ Moisture 
+1. Is there a clear plan for the care of skin documented? 
+2. Is the plan in line wi th the Trust guideline? 
+3. Is there evidence of care as per Trust guidance? 
+4. Is there evidence a barrier cream has been used (if 
+required)? 
+Compliance / 4 / 4 
+ 
+Nutrition/Hydration 
+1. Is there evidence the patient`s nutrition and hydration 
+status h as been assessed? 
+2. If required, is there a care plan in place? 
+3. Is the care plan in line with the Trust guideline? 
+4. Is there evidence this care plan was implemented? 
+5. Is there evidence of patient/carer education 
+regarding the importance of nutritio n/hydration? 
+Compliance / 5 / 5

@@ -1,0 +1,254 @@
+# Extracted from: Clinical Consensus No. 455 Fetal Sex Determination and Disclosure.pdf
+# Guideline ID: clinical-consensus-no-455-fetal-sex-determination-and-disclosure
+# Content length: 17106 characters
+# Processing date: 1732953490.8492582
+
+SOGC CLINICAL PRACTICE GUIDELINE
+No. 455, November 2024 (Replaces No. 192, April 2007, reaf ﬁrmed January 2016)
+Clinical Consensus No. 455: Fetal Sex
+Determination and Disclosure
+(En français : Déterminer et révéler le sexe f œtal)
+The English document is the original version; translation may introduce small differences in the French version.
+This Clinical Consensus Statement was prepared by the authors
+and overseen by the SOGC Diagnostic Imaging Committee. Itwas reviewed by the SOGC Diagnostic Imaging Committee and
+approved by the SOGC Guideline Management and Oversight
+Committee.This Clinical Consensus Statement supersedes No. 192,published in April 2007, reaf ﬁrmed in January 2016.
+Authors
+Michiel C. Van den Hof, MD, Halifax, NS
+Venu Jain, MD, PhD, Edmonton, AB
+Ori Nevo, MD, Toronto, ONSOGC Diagnostic Imaging Committee (2023): Adewumi
+Adanlawo, Suzanne Demers, Nanette Denis, Hournaz Ghandehari,Ariadna Grigoriu, Venu Jain, Kenneth Lim, Anne-Maude Morency
+(co-chair), Ori Nevo (co-chair), Genevieve Quesnel, Mila Smithies
+Acknowledgements: The authors would like to acknowledge
+and thank Nestor Demancziuk, MD, Edmonton, AB, for his
+contributions to the original version.
+Disclosures: Statements were received from all authors. Dr. Venu
+Jain disclosed speaking fees from Ferring, Bayer, and Organon, aswell as his positions on the SOGC Board of Directors and the
+SOGC Guideline Management and Oversight Committee. No
+relationships or activities that could involve a con ﬂict of interest
+were declared. All authors have indicated that they meet thejournal ’s requirements for authorship.
+Subject Categories: Diagnostic Imaging
+Keywords : diagnostic ultrasound; genitalia; fetal development;
+sex determination
+Corresponding Author : Michiel Van den Hof,
+Michiel.VandenHof@iwk.nshealth.caJ Obstet Gynaecol Can 2024; -(-):102675
+https://doi.org/10.1016/j.jogc.2024.102675
+ª2024 The Society of Obstetricians and Gynaecologists of Canada/La
+Société des obstétriciens et gynécologues du Canada. Published byElsevier Inc. All rights are reserved, including those for text and data
+mining, AI training, and similar technologies.
+This document re ﬂects emerging clinical and scienti ﬁc advances as of the publication date and is subject to change. The information is not
+meant to dictate an exclusive course of treatment or procedure. Institutions are free to amend the recommendations. The SOGC suggests,however, that they adequately document any such amendments.
+Informed consent: Patients have the right and responsibility to make informed decisions about their care, in partnership with their health care
+provider. To facilitate informed choice, patients should be provided with information and support that is evidence-based, culturally appropriate ,
+and personalized. The values, beliefs, and individual needs of each patient in the context of their personal circumstances should be consideredand the ﬁnal decision about care and treatment options chosen by the patient should be respected.
+Language and inclusivity: The SOGC recognizes the importance to be fully incl usive and when context is appropriate, gender-neutral
+language will be used. In other circumstances, we continue to use gendered language because of our mission to advance women ’s
+health. The SOGC recognizes and respects the rights of all people for whom the information in this document may apply, including but not
+limited to transgender, non-binary, and intersex people. The SOGC encourages health care providers to engage in respectful conversationwith their patients about their gender identity and preferred gender pr onouns and to apply these guidelines in a way that is sensitive to each
+person ’s needs.
+Weeks Gestation Notation : The authors follow the World Health Organization ’s notation on gestational age: the ﬁrst day of the last menstrual
+period is day 0 (of week 0); therefore, days 0 to 6 correspond to completed week 0, days 7 to 13 correspond to completed week 1, etc.It is the Society of Obstetricians and Gynaecologists of Canada (SOGC) policy to review the content 5 years after publication, at which
+time the document may be revised to re ﬂect new evidence, or the document may be archived.
+AUGUST JOGC AOÛT 2024 l1
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.KEY MESSAGES
+1. Determination of fetal sex is an important component of
+obstetric ultrasound examination and should not beconsidered optional.
+2. Health care providers need to consider parental wishes regarding
+disclosure or nondisclosure of fetal sex when reporting ultrasound
+ﬁndings or reviewing the ﬁndings with parents.
+3. Health care providers need to be cognizant of increasing
+direct access of patients/parents to their ultrasound reports.
+ABSTRACT
+Objective: To provide guidance on ultrasound review of the fetal
+perineum as well as fetal sex determination and disclosure.
+Target Population: All individuals with ongoing pregnancies.
+Options: To include a review of the fetal perineum and determination
+of fetal sex as a component of the anatomic review during theroutine second-trimester obstetric ultrasound and adhere to patientwishes regarding the disclosure of fetal sex.
+Outcomes: Prenatal diagnosis of fetal genital and sex anomalies or
+variants, parental and pregnancy caregiver knowledge of fetal sex,and adherence to parental wishes regarding knowledge of fetal sex.
+Bene ﬁts, Harms, and Costs: Bene ﬁts include the potential to improve
+perinatal outcomes through the diagnosis of fetal genital anomalies
+and respect for women ’s rightful autonomy over personal health
+information. Potential harms or costs include a possible error in fetalsex determination, increased time for patients and health care
+providers in scheduling and performing the imaging, and theminimal risk of patients choosing to abort a pregnancy if the fetus is
+not the desired sex.
+Evidence: Evidence built on the literature from the prior version of
+this statement through a review of international guidelines,
+Canadian legal rulings, and a literature search of PubMed and the
+Cochrane Database. English language research articles, reviewarticles, and systematic reviews between January 1, 2003, andDecember 31, 2023, were included. Search terms included fetal
+ultrasonography ,sex determination , and genitalia . The references
+of relevant articles were assessed, and applicable articles wereincluded as well.
+Intended Audience: All care providers for pregnant individuals in
+Canada.
+Social Media Abstract: Fetal genitalia should be examined in
+pregnancy and the sex safely disclosed to the patient if they want
+this information.
+CONSENSUS-BASED GOOD PRACTICE STATEMENTS:
+1. Diagnostic imaging providers and other health care providers
+should respect parental wishes regarding the disclosure of fetal sex.
+2. Diagnostic imaging providers should make every effort to determine
+fetal sex during an obstetric ultrasound examination from the sec-
+ond trimester onwards and should include this information in the
+ultrasound report.
+3. If fetal sex cannot be determined, re-examination or appropriate
+referral is recommended.
+4. The obstetric ultrasound examination reports should contain a
+visible alert at the beginning of the report regarding the presence ofinformation on fetal sex, thus giving parents the option of not
+reading any further.
+2
+lAUGUST JOGC AOÛT 2024SOGC CLINICAL PRACTICE GUIDELINE
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.INTRODUCTION
+In Canada, diagnostic ultrasound units are inconsistent
+in their policies on the determination and disclosure of
+fetal sex to patients. Fetal sex determination by ultrasound
+has been recommended as part of the complete fetal
+anatomic review with the caveat that determination may be
+restricted by local practice or by dif ﬁculty in accurately
+determining the actual fetal sex. However, once fetal sex isdetermined, a patient ’s request for disclosure should be
+respected. This can be achieved by communicating directly
+with the patient but should always be documented in the
+report to the referring health professional.
+1e3
+Good Practice Statement 1
+FETAL SEX DETERMINATION AND DISCLOSURE
+The Supreme Court of Canada (McInerney v. MacDonald
+[1992]) concluded that a patient is entitled to examine and
+copy from his or her medical record all information the
+physician considered in administering advice or treat-
+ment.4The physician must justify denying access to the
+record on the basis that doing so would not be in the
+patient ’s best interest. Based on this ruling, it is legally
+difﬁcult to defend nondisclosure. Disclosure of fetal sex
+upon request respects a woman ’s rightful autonomy over
+her personal health information.
+Those who oppose fetal sex determination and disclosure
+have concerns about the risk of error, the time involved in
+determining fetal sex, and that the information may lead
+women to abort pregnancies when the fetus is not the
+wanted sex.
+The risk of error in fetal sex determination is estimated to
+be less than 2% in the second and third trimesters, but
+prospective parents should be made aware of this possi-
+bility with disclosure.5Fetal sex determination with ﬁrst-
+trimester ultrasound is less reliable and, even in a
+focused research setting, was not possible in more than
+10% of cases and was compounded with erroneous pre-
+diction occurring more than 10% of the time.6This degree
+of error is not acceptable, and reliance on ﬁrst-trimester
+ultrasound for determination of fetal sex is not recom-
+mended. If early identi ﬁcation of fetal sex is desired
+because of an increased risk of X-linked conditions or totailor the management of potential fetal congenital adrenal
+hyperplasia, non-invasive prenatal screening (NIPS) with
+cell-free DNA (cfDNA) is highly accurate and available
+after 10 weeks gestation.7
+Genital anomalies occur relatively frequently and are of
+clinical importance. For example, hypospadias occurs in 1
+out of 250 live male infants born worldwide,8,9while Ca-
+nadian data show that 1 in 156 males born in Nova Scotiahave hypospadias.
+10Antenatal diagnosis of hypospadias can
+be dif ﬁcult but is of clinical relevance as this anomaly is also
+associated with other genetic, anatomic, and growth ab-
+normalities. As a more severe example, perineal anomalies
+such as bladder exstrophy often present with ambiguous
+genitalia, and antenatal diagnosis is therefore bene ﬁcial.
+These cases warrant review by multiple disciplines to
+optimize outcomes for affected pregnancies. Also, with the
+increasing use of NIPS to screen for common autosomaltrisomies, pregnant women often choose to also screen for
+sex chromosome aneuploidy as an early way to determine
+fetal sex. Sex discordancy between NIPS genotype and
+ultrasound phenotype is possible, allowing for the possible
+identi ﬁcation of various conditions affecting normal sex
+differentiation, such as those seen with congenital adrenal
+hyperplasia in female fetuses.
+11It is for reasons such as
+these that examination of the fetal perineum should be
+considered part of the fetal anatomic review, and every
+effort should be made to have a complete assessment. Any
+concerns should also prompt referral to select specialties,usually starting with maternal efetal medicine. Although
+there is no evidence that fetal sex determination extends the
+exam time, duration of examination is no longer of rele-
+vance given the clinical importance of accurately assessing
+this area of fetal anatomy.
+Good Practice Statements 2 and 3
+A small number of pregnant women may still consider
+abortion when the fetus is an unwanted sex; however, this
+matter is best addressed by the health professionals who
+are providing care for these women. Given that fetal sex
+can now be readily determined through maternal serum
+cfDNA as early as 10 weeks gestation,12it has become
+much less likely that fetal sex determination during the
+second-trimester ultrasound would signi ﬁcantly contribute
+to such abortions.
+Although diagnostic imaging units may wish to maintain a
+policy of nondisclosure of fetal sex, this information
+should always be included in their reports. This would
+allow the referring physicians or midwives to not onlyABBREVIATIONS
+cfDNA Cell-free DNA
+NIPS Non-invasive prenatal screening
+AUGUST JOGC AOÛT 2024 l3Fetal Sex Determination
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.disclose the fetal sex at their patients ’request but also, on
+rare occasions, use this information to assess genetic risks.
+However, both diagnostic imaging units and care providers
+should also recognize the potential that patients might
+access reports and inadvertently ﬁnd out the fetal sex
+when their desire had been to not know this information.
+As a result, the SOGC recommends that a bolded alert
+always be placed at the start of the report indicating that
+fetal sex is included in the results. Patients will then knownot to read further, if applicable.
+Good Practice Statement 4
+CONCLUSION
+In summary, the SOGC recommends that fetal genitalia be
+assessed as a part of the routine second-trimester obstetric
+ultrasound9and that this examination now be considered
+an essential element in the complete anatomic review. Fetal
+sex should be determined, and a patient ’s request for
+disclosure should be respected. This could be communi-
+cated directly to the patient but should always be part of thereport to the referring health professional. A bolded alert
+should always be placed at the start of the report indicating
+that fetal sex is included. If fetal sex cannot be determined,
+re-examination or appropriate referral is recommended.
+REFERENCES
+1.AIUM-ACR-ACOG-SMFM-SRU Practice. Parameter for the Performance
+of Standard Diagnostic Obstetric Ultrasound Examinations. J UltrasoundMed 2018;37:E13 e24.2. Salomon LJ, Al ﬁrevic Z, Berghella V , et al. ISUOG Practice Guidelines
+(updated): performance of the routine mid-trimester fetal ultrasound scan.
+Ultrasound in Obstetrics & Gynecology 2022;59:840 e56. Available at:
+https://obgyn.onlinelibrary.wiley.com/doi/abs/10.1002/uog.24888 .
+3.Van den Hof MD, Demiaczuk NN. Content of a complete obstetrical
+ultrasound report. J Soc Obstet Gynaecol Can 2001;23:427 e8.
+4. McInerney v. MacDonald: Hearing before the Case number 21899,
+Supreme Court Judgments(1992).
+5. Odeh M, Granin V , Kais M, et al. Sonographic fetal sex determination.
+Obstet Gynecol Surv 2009;64:50 e7. Available at: https://www.ncbi.nlm.
+nih.gov/pubmed/19099612 .
+6. Manzanares S, Benitez A, Naveiro-Fuentes M, et al. Accuracy of fetal sex
+determination on ultrasound examination in the ﬁrst trimester of
+pregnancy. J Clin Ultrasound 2016;44:272 e7. Available at: https://www.
+ncbi.nlm.nih.gov/pubmed/26663411 .
+7. Mackie FL, Hemming K, Allen S, et al. The accuracy of cell-free fetal
+DNA-based non-invasive prenatal testing in singleton pregnancies: asystematic review and bivariate meta-analysis. BJOG 2017;124:32 e46.
+Available at: https://www.ncbi.nlm.nih.gov/pubmed/27245374 .
+8. Springer A, van den Heijkant M, Baumann S. Worldwide prevalence of
+hypospadias. J Pediatr Urol 2016;12:152.e1 e7. Available at: https://www.
+ncbi.nlm.nih.gov/pubmed/26810252 .
+9. Cargill Y , Morin L. No. 223-Content of a Complete Routine Second
+Trimester Obstetrical Ultrasound Examination and Report. J ObstetGynaecol Can 2017;39:e144 e9. Available at: https://www.ncbi.nlm.nih.
+gov/pubmed/28729106 .
+10. Public Health Agency of Canada. Congenital Anomalies in Canada: 2022.
+Public Health infobase. Ottawa. Available at: https://health-infobase.
+canada.ca/congenital-anomalies/data-tool/ . Accessed on February 22,
+2023.
+11. Smet ME, Scott FP , McLennan AC. Discordant fetal sex on NIPT and
+ultrasound. Prenat Diagn 2020;40:1353 e65. Available at: https://www.
+ncbi.nlm.nih.gov/pubmed/32125721 .
+12. Royal College of Obstetricians & Gynaecologists. Non-invasive Prenatal
+Testing for Chromosomal Abnormality using Maternal Plasma DNA(Scienti ﬁc Impact Paper No. 15). Scienti ﬁc Impact Paper No. 15. Available
+at:https://www.rcog.org.uk/guidance/browse-all-guidance/scienti ﬁc-
+impact-papers/non-invasive-prenatal-testing-for-chromosomal-abnormality-using-maternal-plasma-dna-scienti ﬁc-impact-paper-no-15/ . Accessed
+on February 22, 2023.
+4
+lAUGUST JOGC AOÛT 2024SOGC CLINICAL PRACTICE GUIDELINE
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.

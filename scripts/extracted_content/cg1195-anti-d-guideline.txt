@@ -1,0 +1,647 @@
+# Extracted from: CG1195 ANTI D guideline.pdf
+# Guideline ID: cg1195-anti-d-guideline
+# Content length: 34791 characters
+# Processing date: 1750066900.150268
+
+Fetal D Group DNA Screening and Routine Anti -D Prophylaxis (RAADP) for Non -Sensitised 
+RhD Negative Pregnant Women /People Guideline v8.0 Oct 2022 Page 1 of 17 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Fetal D Group DNA Screening and Routine Anti-D Prophylaxis (RAADP) 
+for Non -Sensitised RhD Negative Pregnant Women /People Guideline 
+Summary statement: How does the 
+document support patient By providing evidence based guidance for staff with regard to 
+Fetal testing for D group, and Anti D administration; both 
+prophylactically and following a sensitising event . 
+Staff/stakeh olders involved in 
+development: Leads for Maternity (Obstetric and Midwifery ), Blood 
+Transfusion Leads , Joint Obstetric Guidelines Group 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Transfusion Practitioner and Antenatal Clinical Manager 
+For use by: Midwifery and Medical Obstetric staff 
+Blood Transfusion laboratory staff 
+Purpose: To provide guidance for staff on the safe and timely fetal 
+DNA testing and appropriate administration of Anti D for non -
+sensitis ed RhD negative pregnant women /people 
+This document supports: 
+ British Committee for Standards in Haematology , 2014 
+RCOG , 2011 
+NICE technology appraisal guidance 156, 2008 
+Key related documents: UH Sussex (SRH&WH): Intra-operative Cell Salvage Policy 
+Patient Identification Policy 
+Midwives Exemptions Document 
+Approved by: Joint Obstetric Guideline Group 
+Approval date: 19th October 2022 Date uploaded : 3rd November 2022 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable -Divisional Ratification only required 
+Ratification Date: Not Applicable -Divisional Ratification only required 
+Expiry Date: July 2025 
+Review date: January 2025 
+If you require this document in another format such as Braille, large print, audio or 
+another language please contact the Trusts Communications Team 
+Reference Number: CG1195 
+Qpulse Reference (Pathology ) CP-BTR-ANTID 
+ 
+Fetal D Group DNA Screening and Routine Anti -D Prophylaxis (RAADP) for Non -Sensitised 
+RhD Negative Pregnant Women /People Guideline v8.0 Oct 2022 Page 2 of 17 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+The interpretation and application of clinical guidelines will remain the responsibility 
+of the individual clinician. 
+If in doubt contact a senior colleague or expert. 
+ 
+ Version Date Author Status Comment 
+1.0 August 2011 R. O’Donnell & J. 
+Hargreaves Archived Updated Trust Guideline 
+2.0 May 2012 R. O’ Donnell & H. Clarke Archived Guideline amended to include site 
+differences in Anti D dose 
+3.0 February 2014 R. O’ Donnell & H. Clarke Archived Guideline amended to update 
+change to using the same dose of 
+Anti D for all cases 
+3.1 March 2015 R. O’ Donnell & H. Clarke Archived Minor updates 
+4.0 March 2017 R. O’Donnell Archived Admission of missed Anti D 
+doses 
+5.0 July 2017 R O’Donnell Archived New process for cffDNA added 
+6.0 August 2019 R. O’Donnell Archived Minor re -wording of section 7.3 
+7.0 July 2022 R. O’Donnell , Transfusion 
+Practitioner Archived 3 year review. 
+PSE section updated to 
+incorporate current NICE 
+guidance . 
+8.0 October 2022 J. Birrell, Gynaecology 
+Matron LIVE Table of sensitising events 
+amended to include surgical 
+management of miscarriage and 
+MVA. 
+Fetal D Group DNA Screening and Routine Anti -D Prophylaxis (RAADP) for Non -Sensitised 
+RhD Negative Pregnant Women /People Guideline v8.0 Oct 2022 Page 3 of 17 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Contents 
+ 
+1.0 Abbreviations Used Within This Guideline ................................ ............................... 4 
+2.0 Aim ................................ ................................ ................................ .......................... 4 
+3.0 Scope ................................ ................................ ................................ ...................... 4 
+4.0 Responsibilit ies ................................ ................................ ................................ ........ 5 
+5.0 Introduction ................................ ................................ ................................ .............. 5 
+5.1 Haemolytic Disease of the Fetus and Newborn (HDFN) ................................ .......... 5 
+5.2 Cell-free DNA Fetal D testing ................................ ................................ ................... 6 
+5.3 Prescribing Anti -D immunoglobulin ................................ ................................ .......... 7 
+6.0 Anti D administration ................................ ................................ ................................ 7 
+7.0 Process ................................ ................................ ................................ ................... 8 
+7.1 Pathway 1 - cfDNA D Group Testing ................................ ................................ ....... 8 
+7.2 Pathway 2 - Routine Antenatal Anti D Prophylaxis (RAADP) ................................ ... 9 
+7.3 Birth ................................ ................................ ................................ ......................... 9 
+8.0 Potentially Sensitising Events (PSE) ................................ ................................ ...... 10 
+8.1 PSEs before 12 weeks gestation (confirmed by ultrasound) ................................ .. 11 
+8.2 PSEs at 12 -20 Weeks Gestation (if fetus is D posit ive or unknown) ....................... 11 
+8.3 PSEs after 20 weeks gestation ................................ ................................ .............. 12 
+9.0 Feto-Maternal Haemorrhage (FMH) confirmation ................................ .................. 13 
+9.1 Follow -up of confirmed FMH ................................ ................................ .................. 13 
+9.2 Longer term follow -up after birth ................................ ................................ ............ 13 
+10.0 Missed Anti D doses ................................ ................................ .............................. 14 
+10.1 Process for missed Anti D follow -up: ................................ ................................ ...... 14 
+11.0 Monitoring / Audit ................................ ................................ ................................ ... 15 
+References ................................ ................................ ................................ ....................... 15 
+Appendix 1: Process flowchart ................................ ................................ ......................... 16 
+Appendix 2: Example of D Negative sticker for patient notes ................................ ............ 17 
+
+Fetal D Group DNA Screening and Routine Anti -D Prophylaxis (RAADP) for Non -Sensitised 
+RhD Negative Pregnant Women /People Guideline v8.0 Oct 2022 Page 4 of 17 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Fetal D Group DNA Screening and Routine Anti-D Prophylaxis 
+(RAADP) for Non -Sensitised RhD Negative 
+Pregnant Women /People Guideline 
+
+1.0 Abbreviations Used Within This Guideline 
+ 
+cffDNA - Cell-free Fetal DNA ( RhD testing) DAT - Direct Antiglobulin Test 
+EDD - Expected Delivery Date FC - Flow Cytometry 
+HDFN - Haemolytic Disease of Fetus and 
+Newborn G&S - Group & Save (Antibody screen) 
+FMH - Feto Maternal Haemorrhage HCP – Health Care Professional 
+IM - Intramuscular ICS - Intraoperative Cell Salvage 
+IV - Intravenous IU - International Units 
+RAADP - Routine Antenatal anti -D prophylaxis NHSBT - NHS Blood and Transplant 
+D - RhD Sp-ICE - NHSBT electronic reporting system 
+MIS - Maternity Information System SHOT - Serious Hazards of Transfusion 
+MVA - Manual Vacuum Aspiration 
+ 
+2.0 Aim 
+ 
+The aim of this guideline is to provide healthcare professionals with guidance to : 
+ 
+ Promote Fetal DNA D group testing, 
+ Aid safe and appropriate administration of anti -D, 
+ Avoid sensitisation to the D antigen during pregnancy and at birth for the 
+prevention of HDFN. 
+ 
+Note: Throughout this document RhD is referred to simply as D 
+ 
+3.0 Scope 
+ 
+ Registered H CPs involved in the care of non-sensiti sed D negative pregnant 
+women /people . 
+ Women /people with weak expres sion of the D antigen, between w eak D Types 1 
+to 3, do not normally form allo anti-D, so do not require a nti-D immunoglobulin 
+prophylaxis . Please refer to th eir NHSBT report. 
+ Women /people with indeterminate D typing results should be treated as D 
+negative until confirmatory testing is co mpleted. 
+ If the D status of the fetus is unknown, it should be assumed that the fetus is D 
+positive and the mother /birthing parent treated accordingly. 
+Fetal D Group DNA Screening and Routine Anti -D Prophylaxis (RAADP) for Non -Sensitised 
+RhD Negative Pregnant Women /People Guideline v8.0 Oct 2022 Page 5 of 17 
+Please check against Staffnet that this printout is the most recent version of this document. 
+4.0 Responsibilities 
+ 
+Management are expected to ensure that the guideline is: 
+ 
+ Reviewed as required in line with Trust and National Recommendations . 
+ Accessible to all relevant staff . 
+ 
+The obstetrician or midwife responsible for antenatal care is expected to: 
+ 
+ Access, unde rstand and follow this guidance . 
+ Use their professional judgement in the application of this guideline . 
+ Undergo regular training in the process . 
+ Discuss Cell Free DNA ( cfDNA ) testing and RAADP with the woman /person so 
+that that they can m ake an informed choice about treatment. This discussion 
+should include the risks, benefits and the opt ions open to the woman /person . 
+ Ensure the woman/person is directed to online maternity information on anti -D as 
+soon as D group, Expected Delivery Date (EDD) & viability confirmed. If the 
+woman/person has been previously sensitised and is exempted from RA ADP this 
+should be recorded in the maternal and medical notes. 
+ Explain to women /people who may have a D positive fetus that if they have a 
+sensitising event during pregnancy they need additional anti -D; and that giving 
+Anti D does not protect against the development of other antibodies that cause 
+HDFN. 
+ Provide written requests to the transfusion laboratory for anti -D in a timely manner 
+with identification of the recipient and their clinical details. 
+ Ensure that gestation and reason for testing is made clear on request forms. 
+ Provide written requests and suitable samples for Kleihauer testing . 
+ 
+5.0 Introduction 
+ 
+5.1 Haemolytic Disease of the Fetus and Newborn (HD FN) 
+ 
+D negative mother s/birthing parent s are is at ris k of developing antibodies to D positive fetal 
+red cells after a feto -maternal haemorrhage (FMH) which can occur d uring pregnancy or at 
+birth. HDFN is caused by a blood group incompatibility and can affect D positive babies of D 
+negative mothers /birthing parents . HDFN ranges i n severit y from only being detectable in 
+laboratory tests, through to stillbirt h, birth of infants with severe disabilities or death of 
+newborns from anaemia and jaundice. 
+ 
+Anti-D administration prevents the mother /birthing parent producing anti -D antibodies by 
+coating any D positive red cells that reach the maternal /birthing parent circulation before the 
+immune system is sensitised. 
+
+Fetal D Group DNA Screening and Routine Anti -D Prophylaxis (RAADP) for Non -Sensitised 
+RhD Negative Pregnant Women /People Guideline v8.0 Oct 2022 Page 6 of 17 
+Please check against Staffnet that this printout is the most recent version of this document. 
+5.2 Cell-free DNA Fetal D testing 
+ 
+Around 15% of a Caucasian population are D negative, of whom around 40% will have D 
+negative babies (these women /people do not benefit from the blanket administration of anti 
+D). Maternal /birthing parent plasma DNA includes free -floating fragments of DNA from the 
+mother /birthing parent and fetus, known as cfDNA. CfDNA testing for the presence of f etal D 
+group enables us to give anti D o nly to those women /people who have a D positive fetus. 
+ 
+It is the responsibility of the test requester to ensure that 
+patient consent has been obtained. 
+ 
+Results Availability – samples are sent to NHSBT for testing and results available within 14 
+days. If the result is not returned within this time the midwife must contact the transfusion 
+laboratory. The midwife must check result availability on Sp -ICE: After 14 days if not 
+available on Sp -ICE then contact the Transf usion lab to ensure sample received and sent to 
+the NHSBT: The Transfusion Lab will follow up . 
+ 
+Multiple B irths – a positive result means at least one of the fetuses is D positive and the 
+woman /person should receive RAADP. A negative result mean s that all of the fetus es are D 
+negative. 
+ 
+Late bookers and transfers – may enter into the cfDNA testing pathway if their samples 
+are sent for testing no later than 26 weeks. The lab however will test beyond this date on a 
+case by case basis (please conta ct the lab). If anti -D has been given elsewhere state how 
+much, when and where given on request form. 
+ 
+Test reliability 
+ 
+ Test reliable from 11+2 weeks gestation (crown rump length > 45mm). 
+ Up to 8 % of samples may give result an “inconclusive” result. In these cases treat 
+the fetus as D positive . 
+ Rate of false negatives is approximately 0.1% causes include insufficient fetal 
+DNA and wrong patient’s blood in sample tube (misidentification errors) . 
+ Women /people who have already received Anti -D can be tested (Anti -D does not 
+interfere with the test.) 
+ Ensure the test result you have refers to the current pregnancy . 
+ Not suitable for people who have made anti G . 
+ Due to the presence of rare variant RHD genes, up to 2% of fetuses pred icted to 
+be D positive will in fact be D negative at birth. 
+ 
+Sample requirements 
+ 
+ NHSBT Fetal Genotype Screening request form . 
+ 6mL EDTA tube ( minimum 4mL) . 
+ Samples must be correctly and fully labelled or they will be rejected . 
+ Samples over 7 days old (by the time received by NHSBT) will not be tested . 
+Fetal D Group DNA Screening and Routine Anti -D Prophylaxis (RAADP) for Non -Sensitised 
+RhD Negative Pregnant Women /People Guideline v8.0 Oct 2022 Page 7 of 17 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ The form must also state the EDD. 
+ Haemolysed samples will not be tested as they may contain a high background of 
+maternal DNA which could interfere with detection of fetal DNA. 
+ 
+5.3 Prescribing Anti-D immunoglobulin 
+ 
+Rhophylac ® (CSL Behring): available as 1500 IU prefilled syringe, for IM or IV use, stored 
+at 2-8°C. Note: The manufacturer’s guidance says that for women /people with a body mass 
+index (BMI) 30 or more consider IV administration . If there is any doubt that the injection will 
+not be intramuscular (IM) this must be discussed with the woman /person and the option of I V 
+administration offered. 
+ 
+Anti-D can be supplied and administered under Midwives Exemptions as a routine (i.e. at 
+28/40 and postnatally). This should be documented as a STAT dose on the electronic 
+prescription chart . It must be prescribed by a doctor following a potential sensitising event. 
+Anti D administration should also be documented on MIS. 
+
+6.0 Anti D administration 
+ 
+ The woman /person will be counselle d and given their consent for anti D 
+administration . 
+ The anti -D is doc umented on the electronic prescription chart and Maternity 
+Information System (MIS) . 
+ Take a G&S be fore administering anti-D. 
+ Occasionally anti -D causes an allergic response; therefore administration should 
+take place in hospital where there is access to treatment (ensure adrenaline is 
+available in case of anaphyla ctic reaction). Women/people should be monitored 
+for early signs of hypersensitivity reactions including hives, generalised urticaria, 
+chest tightness, wheeze, hypotension and anaphylaxis. All women /people should 
+wait in the clinic for at least 20 minutes after administration. 
+ IM anti -D should be given into the deltoid muscle . 
+ A verbal identification check of the woman /person against the dispensed product 
+and prescription must be completed prior to administration in accordance with the 
+Trust Patient Identi fication Policy. 
+ Check the expiry of the Anti D. 
+ Anti D should be given as soon as possible after a sensitising event but always 
+within 72 hrs. If it is not given before 72 hrs, every effort should still be made to 
+administer Anti D, as a dose given within 10 days may provide some protection. 
+ Women /people with severe thrombocytopenia ( platelet s ≤30×109/L) or a history of 
+a bleeding disorder e.g. Von Willebrand disease (vWD) , should be administered 
+anti-D IV or subcutaneously depending on whether a pre paration suitable for IV Within this guideline, all anti -D doses are 1500IU unless otherwise stated 
+ 
+Fetal D Group DNA Screening and Routine Anti -D Prophylaxis (RAADP) for Non -Sensitised 
+RhD Negative Pregnant Women /People Guideline v8.0 Oct 2022 Page 8 of 17 
+Please check against Staffnet that this printout is the most recent version of this document. 
+use is available. Please discuss these women /people with the consultant 
+haematologist. Women /people with significant bleeding disord ers such as vWD 
+should be managed jointly with a Haemophilia C entre. 
+ Universal precautions should b e exercised when handling blood products. 
+ Complete the transfusion traceability paperwork and return it to the transfusion 
+laboratory within 24hrs of administration 
+ Document the details of admin istration in the patient record and Maternity 
+Information Sys tem (MIS). 
+ Complete the anti -D prophylaxis section in the woman /person ’s notes and 
+complete the laboratory traceability. 
+ 
+7.0 Process 
+(Also see Appendix 1 ) 
+ 
+ At Booking all pregnant women /people will have a G&S sample taken . It is 
+important that the hospital site is on the form as this is used to send results to the 
+ANC team. 
+ D negative individuals will be identified by the transfusion laboratory . 
+ At 14 -16 weeks Expected Delivery Date (EDD) and viability is confirmed , ANC to 
+send : 
+- A letter to all non -sensitised women /people containing their D group and an 
+ANC appointment (to discuss management and offer cfDNA test ). 
+- Signposting to online maternity information on cfDNA D testing and Anti D . 
+ At Worthing - CMW will discuss CFF DNA test, pathway and treatment plans. 
+Blood for CFF DNA will be taken at this point if consented to. (They do not have a 
+hospital appointment for this) CMW emails ANC who check results, make Anti D 
+appointments, and update MIS. 
+ At St Richard’s - The booking blood group result is checked by ANC and will 
+contact the pregnant woman/person regarding fetal DNA blood test. This is 
+performed with the combined screening blood test. ANC will book routine anti -D if 
+indicated. 
+ Enter the woman /person into Pathway 1 or Pathway 2 . 
+ 
+NB It is the responsibility of the community midwife at the 16 week appointment to check the 
+D result and check that the woman /person is aware of their group and the proposed pathway 
+of testing and treatment. 
+ 
+7.1 Pathway 1 - cfDNA D Group Testing 
+ 
+This pathway should be followed if the woman /person consents to fetal testing . 
+ 
+ Document discussion & consent in notes . 
+ Take cfDNA sample , use specific NHSBT form , send to the transfusion lab. 
+ After 14 days check results on Sp -ICE. 
+
+Fetal D Group DNA Screening and Routine Anti -D Prophylaxis (RAADP) for Non -Sensitised 
+RhD Negative Pregnant Women /People Guideline v8.0 Oct 2022 Page 9 of 17 
+Please check against Staffnet that this printout is the most recent version of this document. 
+If fetus is D negative : 
+ 
+ At 28 Weeks take a G&S , no anti D is required , at birth take a cord blood a nd 
+Kleihauer ( to check cfDNA results) . 
+ Place “Fetal D neg sticker ” Appendix 2 in Green notes and, record on MIS. 
+ 
+If the fetus is D positive: 
+ 
+ Record on M IS, follow Pathway 2 
+ Inform the woman /person that they will re quire additional Anti D for any PSE. 
+ 
+7.2 Pathway 2 - Routine Antenatal Anti D Prophylaxis (RAADP) 
+ 
+This pathway should be followed if the: 
+ 
+ Woman /person declines cfDNA testing . 
+ cfDNA testing has failed . 
+ cfDNA testing shows the fetus is D positiv e. 
+ Woman /person is a late booker (after 26 weeks) and there are no cfDNA results . 
+ 
+28 Week Anti D appointment 
+ 
+ Take a G&S sample before administering an ti D. 
+ Ideally check result of G &S however it is not necessary to wait for results, pri or to 
+administering anti-D. Obtain i nformed consent before administration. 
+ If the woman /person fails to attend her appointment the midwife should ensure 
+that all attempts are made to contact them and reschedule another appointment 
+as soon as possible. A nti-D should be given between 28 -30 weeks; if this has not 
+been possible seek advice from the obstetrician and report through Datix (and 
+SHOT if appropriate) . 
+ 
+NB If anti -D is detected, further history and investigation is required to establish whether it is 
+immune or passive. The outcome will inform clinical decisions regarding anti -D prophylaxis 
+and antenatal follow -up. If no clear conclusion can be reached as to the origin of the anti -D, 
+then prophylaxis should continue to be administered in a ccordance w ith guidelines for 
+women /people who have not formed immune anti -D. 
+ 
+7.3 Birth 
+ 
+All births regardless of previous pathways . 
+ 
+Required samples: 
+ 
+Baby: Cord blood for Group. If this is not collected for any reason, a heel prick sample can 
+be obtained. In situations where this is not possible and there is no cffDNA result available 
+(or cffDNA result predicts the baby to be D pos), it should be assumed the baby is D positive 
+Fetal D Group DNA Screening and Routine Anti -D Prophylaxis (RAADP) for Non -Sensitised 
+RhD Negative Pregnant Women /People Guideline v8.0 Oct 2022 Page 10 of 17 
+Please check against Staffnet that this printout is the most recent version of this document. 
+for the purposes of FMH determination and the administration of anti -D Ig. In cases where 
+the cffDNA result predicts the baby to be D negative and no cord blood sample is taken it is 
+a clinical decision whether to accept the cffDNA result solely and not admin ister anti D to the 
+woman /person . DAT is not required unless HD FN is suspected (a DAT will is however 
+routinely tested as part of the baby group) . 
+ 
+Mother /birthing parent : Kleihauer (if a G&S is indicated send a separate sample) 
+(Take Kleihauer more than 30-45 mins after birth, but ideally within 2 hours of birth) . 
+ 
+If infant is D Positive : ensure Anti D 1500IU is prescribed init ially and given to the 
+mother /birthing parent within 72 hours of birth. Women /people who give birth at home must 
+come into hospita l to receive anti -D. 
+ 
+If FMH more than 4ml, additional anti -D may be required (see section on follow up of 
+sensitising event ). The mother /birthing parent must not leave the hospital until the anti -D has 
+been given; or without a robust documented plan for them to receive this. 
+ 
+Cell Salvage (ICS): if a woman /person has undergone ICS, where cord group is confirmed 
+as D positive (or unknown), anti -D should be administered following the re -infusion of 
+salvaged red cells. To check if more anti -D is needed take a maternal /birthing parent sample 
+for estimation of FMH no sooner than 30 mins after the reinfusion of blood. 
+ 
+8.0 Potentially Sensitising Events (PSE) if fetus is D positive or unknown 
+ 
+Amniocentesis, Chorionic Villus Biopsy 
+& Cordocentesis Antepartum Haemorrhage/Uterine (PV) 
+Bleeding in pregnancy 
+External Cephalic V ersion Abdominal T rauma (sharp/blunt, 
+open/closed) 
+Therapeutic Termination of Pregnancy Intrauterine Death (IUD) & Stillbirth – for 
+IUD, anti -D should be given immediately 
+following the diagnosis of IUD and a 
+further dose of anti -D administered after 
+birth. 
+Ectopic pregnancy if managed by 
+surgical procedure In-utero Therapeutic I nterventions 
+(transfusion, surgery, insertion of shunts, 
+laser) 
+Miscarriage , Threatened Miscarriage Birth – normal, instrumental, or Caesarean 
+Section 
+Surgical Management of miscarriage 
+including manual vacuum aspiration (MVA) 
+and evacuation of molar pregnancy Intra -operative Cell S alvage 
+ 
+D negative pregnant women /people must be aware of the PSEs and have been signposted 
+to online maternity information. 
+ 
+Fetal D Group DNA Screening and Routine Anti -D Prophylaxis (RAADP) for Non -Sensitised 
+RhD Negative Pregnant Women /People Guideline v8.0 Oct 2022 Page 11 of 17 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Anti-D should be given as soon as possible within 72 hours of the event. However, in 
+exceptional circumstances, some protection may be offered up to 10 days after the event. 
+ 
+8.1 PSEs before 12 weeks gestation (confirmed by ultrasound) 
+Anti D is indicated for the following procedures : 
+ Medical termination of pregnancy from 10 weeks gestation . 
+ Surgical termination of pregnancy at any gestation . 
+ Surgical management of miscarriage, including MVA and mo lar pregnancies . 
+ Surgical management of ectopic pregnancy . 
+ 
+A Keilhauer is not required . 
+ 
+8.2 PSEs at 12 -20 Weeks G estation (if fetus is D positive or unknown) 
+ 
+Take a G&S to check D group and the presence of anti -D. If anti -D is identified, further 
+history should be obtained, and investigation undertaken to determine wh ether this is 
+immune or passive. If no clear conclusion can be reached as to the origin of the anti -D 
+detected, the n the woman /person should continue to be offered anti -D prophylaxis on the 
+assumption that it may be passive. Kleihauer not required . 
+ 
+If the woman /person is D negative with no anti D detected check the result of the cfDNA test, 
+if fetus is D negative no further action is required . Women/people with indeterminate D 
+typing results should be treated as D negative until confirmatory testing is completed. 
+Otherwise give anti D for all PSEs including medical and surgical miscarriages, termination 
+of pregnancy and ectop ic/molar pregnancies from 12 weeks gestation confirmed on 
+ultrasound scan . 
+ 
+Continual Bleeding 
+ 
+In the event of continual uterine bleeding which is clinically judged to represent the same 
+sensitising event, with no features suggestive of a new presentation or a significant 
+change in the pattern or severity of bleeding, such as the presence of abdominal pain 
+or another clinical presentation, anti-D should be given at six weekly intervals. 
+ 
+A Kleihauer should be carried out at every 2 weeks from 20 weeks onwards and 
+additional anti D given as appropriate. Advice can also be sought from Consultant. If NHSBT 
+Consultant discussion required, call the Transfusion lab for contact details. 
+
+Fetal D Group DNA Screening and Routine Anti -D Prophylaxis (RAADP) for Non -Sensitised 
+RhD Negative Pregnant Women /People Guideline v8.0 Oct 2022 Page 12 of 17 
+Please check against Staffnet that this printout is the most recent version of this document. 
+8.3 PSEs after 20 weeks gestation 
+
+Take a G& S to check for immune anti -D 
+No further Action 
+Check the result of cfDNA test 
+Fetus 
+ D Neg? 
+Take Kleihauer. Give anti -D (even if RAADP given) 
+Additional anti -D may be required if FMH >4mL (Lab will advise) 
+Continual Bleeding – See section above Kleihauer should be taken every 2 weeks and if positive 
+give additional doses of anti -D regardless of the presence or absence of passive anti -D then retest 
+Kleihauer after 72 hours. 
+If D Neg & no anti D det ected 
+FMH 
+>4mL? 
+Lab to advise how much additional anti D is required 
+Retest Kleihauer 72hrs after giving Anti D. Give more Anti D as directed 
+Yes 
+No 
+Yes 
+No further Action 
+No 
+Fetal D Group DNA Screening and Routine Anti -D Prophylaxis (RAADP) for Non -Sensitised 
+RhD Negative Pregnant Women /People Guideline v8.0 Oct 2022 Page 13 of 17 
+Please check against Staffnet that this printout is the most recent version of this document. 
+9.0 Feto -Maternal Haemorrhage (FMH) confirmation 
+ 
+A Kle ihauer is required if a D negative woman /person has a D positive fetus (or the D group 
+of the fetus is unknown) and she experiences a potentially sensitising event after 20 weeks 
+gestat ion or after the birth of a D positive baby. 
+ 
+If the Kleihauer shows a bleed of >2mL the lab will contact the clinical area and send 
+the sample to a reference lab for flow cytometry to confirm these potentially 
+significant bleeds. 
+ 
+9.1 Follow -up of confirmed FMH 
+ 
+FMH <4mL and routine anti-D has been given, no further testing is required. 
+ 
+FMH 4-11mL (confirmed by Flow Cytometry ) is covered by the 1500IU IM anti-D dose 
+already given ; additional anti -D is not required. However, there should be a follow -up 
+maternal sample to check for clearance of f etal cells . 
+ 
+FMH >12mL or more give extra dose s (for IM administration c alculate the additional anti -D 
+accordi ng to the formula 125IU for every 1mL fetal cells ) rounded up to the nearest vial size , 
+taking into account the post natal anti -D dose already given (but not RAADP dose). Use the 
+same batch of anti-D if possible . Take follow -up maternal /birthing parent samples (after 
+72hrs post dose if given IM or 48hrs if given IV) to check for clearance of fetal cells. For 
+large FMH the use of IV anti-D should be considered and if used, seek specialist advice from 
+a haematologist or refer ence centre before administration. 
+ 
+Note the dose calculation is d ifferent for IV anti-D (67.5 IU / mL). 
+ 
+Check the Haemoglobin of the baby in these cases . 
+ 
+If fetal cells have not cleared on follow -up sample: 
+ 
+ Confirm that the anti -D has been given . 
+ Confirm that the baby is D positive . 
+ Send the follow -up maternal EDTA sample for testing by flow cytometry. 
+ Give further anti -D as dictated by the volume of fetal re d cells remaining and 
+repeat the Kleihauer 72 hrs after the repeat anti -D injection (48 hrs if anti -D was 
+given IV) . 
+ Repeat this sequence of immunisation and testing until no fetal cells are seen in 
+the FMH test. 
+
+9.2 Longer term follow -up after birth 
+ 
+A maternal G &S should be taken 6 months post-birth (this will be decided on an individual 
+patient basis dependent on the size of FMH and NHSBT advice). This follow up provides the 
+Fetal D Group DNA Screening and Routine Anti -D Prophylaxis (RAADP) for Non -Sensitised 
+RhD Negative Pregnant Women /People Guideline v8.0 Oct 2022 Page 14 of 17 
+Please check against Staffnet that this printout is the most recent version of this document. 
+opportunity to counsel the woman /person about the possib ility of sensitisatio n to the D 
+antigen and the nature of HD FN. It is important to note that the absence of immune anti -D 6 
+months post -birth does not mean that the woma n/person has not been sensitised. 
+Women /people who have had FMH greater than 4mL detected should have this h ighlighted 
+at booking in subsequent pregnancies. 
+ 
+10.0 Missed Anti D doses 
+ 
+If for any reason a dose of Anti D is missed or administered late, the woman /person should 
+be a counselled about the possibility of sensitisation to the D antigen a nd the nature of 
+HDFN. A follow -up maternal G&S sample should be taken 6 months post -birth. It is 
+important to note that the absence of immune anti -D at 6 months post -birth does not mean 
+that the woman /person has not been sensitised. All women /people who have missed ant i D 
+should have this highlighted at booking in subsequent pregnancies. 
+ 
+10.1 Process for missed Anti D follow -up: 
+
+Anti D error reported to DATIX. 
+Transfusion Practitioner to report incident to SHOT. 
+Transfusion Practitioner to alert the Antenatal Screening Team of error. 
+Antenatal Screening Team to arrange blood test in 6 months post -birth. 
+If antibody test is negative a letter is sent to confirm this. If Anti D is detected the 
+woman/person is referred to a fetal medicine specialist. 
+Fetal D Group DNA Screening and Routine Anti -D Prophylaxis (RAADP) for Non -Sensitised 
+RhD Negative Pregnant Women /People Guideline v8.0 Oct 2022 Page 15 of 17 
+Please check against Staffnet that this printout is the most recent version of this document. 
+11.0 Monitoring / Audit 
+ 
+Deviations from this guideline will be reported through DATIX and to SHOT as appropriate. 
+Errors will be tracked and trended by the Transfusion Practitioner through the Trust Patient 
+Blood Management Committee. 
+
+References 
+ 
+Guidelines for the Estimation of Fetomaternal Haemorrhage. BCSH 2009 [accessed 
+25/06/19] 
+BCSH gu ideline for the use of anti -D immunoglobulin for the prevention of haemolytic 
+disease of the fetus and newborn 2014 [accessed 2 7/06/22] 
+NHSBT Fetal RHD Screening User Guide 2017 ] [accessed 22/06/2022 ] 
+NICE guidance documents can be found at: NG 126 and NG 140 [accessed 27/06/22] 
+
+Fetal D Group DNA Screening and Routine Anti -D Prophylaxis (RAADP) for Non -Sensitised 
+RhD Negative Pregnant Women /People Guideline v8.0 Oct 2022 Page 16 of 17 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 1: Process flowc hart 
+
+Test Accepted (Pathway 1) 
+Document discussion & consent in 
+notes . 
+Take c ffDNA sample (NHSBT form) . 
+ 
+ Birth 
+Cord Blood – Blood Group & Kleihauer . 
+If Baby D positive give Anti D . 
+ 
+Booking (10 -12 weeks gestation) Send a G&S sample (ANC blood form) 
+At 14 -16 weeks when EDD & viability confirmed send letter, i nformation leaflet s & ANC 
+midwife appointment (Appo intment to discuss management & offer cfDNA test ) 
+cffDNA Test 
+Accepted ? 
+ 
+ Transfusion lab will email weekly list of D negative women /people to ANC 
+No 
+ Yes 
+Test Declined (Pathway 2) 
+Document discussion & decision in 
+notes . 
+Offer anti D prophylaxis at 28 -30 
+weeks . 
+Book Appointment in clinic . 
+ 
+ At 28 Weeks Take G&S sample 
+Give Anti D between 28 -30 Weeks 
+Fetus D Positive 
+ Anti D required 
+Make Anti D Appointment 
+Send letter to 
+woman /person 
+Send letter to CM W 
+ 
+Fetus D 
+Positive? 
+Yes 
+No 
+Fetus D Negative 
+Anti D not required 
+Fetal D Group DNA Screening and Routine Anti -D Prophylaxis (RAADP) for Non -Sensitised 
+RhD Negative Pregnant Women /People Guideline v8.0 Oct 2022 Page 17 of 17 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 2: Example of D Negative sticker f or patient notes

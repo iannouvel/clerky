@@ -1,0 +1,1605 @@
+# Extracted from: BJOG - 2020 - Murphy - Assisted Vaginal Birth.pdf
+# Guideline ID: bjog-2020-murphy-assisted-vaginal-birth
+# Content length: 150051 characters
+# Processing date: 1732953490.8331563
+
+Assisted Vaginal Birth
+Green-top Guideline No. 26
+April 2020
+Please cite this paper as: Murphy DJ, Strachan BK, Bahl R, on behalf of the Royal College of Obstetricians Gynaecologists.
+Assisted Vaginal Birth. BJOG 2020 ;127:e70 –e112.
+DOI: 10.1111/1471-0528.16092 RCOG Green-top Guidelines
+Assisted Vaginal Birth
+DJ Murphy, BK Strachan, R Bahl on behalf of the Royal College of Obstetricians and Gynaecologists
+Correspondence: Royal College of Obstetricians and Gynaecologists, 10 –18 Union Street, London SE1 1SZ. Email:
+clinicaleffectiveness@rcog.org.uk
+This is the fourth edition of this guideline, ﬁrst published in October 2000 under the title Instrumental vaginal delivery ,
+and revised in January 2011 and October 2005 under the title Operative Vaginal Delivery.
+Executive summary
+Preparation for assisted vaginal birth
+Can assisted vaginal birth be avoided?
+Encourage women to have continuous support during labour as this can reduce the need for
+assisted vaginal birth.A
+Inform women that epidural analgesia may increase the need for assisted vaginal birth althoughthis is less likely with newer analgesic techniques. [New 2020]A
+Inform women that administering epidural analgesia in the latent phase of labour compared to
+the active phase of labour does not increase the risk of assisted vaginal birth. [New 2020]A
+Encourage women not using epidural analgesia to adopt upright or lateral positions in the
+second stage of labour as this reduces the need for assisted vaginal birth.A
+Encourage women using epidural analgesia to adopt lying down lateral positions rather thanupright positions in the second stage of labour as this increases the rate of spontaneous vaginalbirth. [New 2020]A
+Recommend delayed pushing for 1 –2 hours in nulliparous women with epidural analgesia as
+this may reduce the need for rotational and midpelvic assisted vaginal birth.B
+Do not routinely discontinue epidural analgesia during pushing as this increases the woman ’s
+pain with no evidence of a reduction in the incidence of assisted vaginal birth. [New 2020]A
+There is insuf ﬁcient evidence to recommend any particular regional analgesia technique in
+terms of reducing the incidence of assisted vaginal birth. [New 2020]A
+RCOG Green-top Guideline No. 26 e71 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+There is insuf ﬁcient evidence to recommend routine oxytocin augmentation for women with
+epidural analgesia as a strategy to reduce the incidence of assisted vaginal birth. [New 2020]A
+There is insuf ﬁcient evidence to recommend routine prophylactic manual rotation of fetal
+malposition in the second stage of labour to reduce the risk of assisted vaginal birth. [New 2020]B
+How should assisted vaginal birth be deﬁned?
+Use a standard classi ﬁcation system for assisted vaginal birth to promote safe clinical practice,
+effective communication between health professionals and audit of outcomes.D
+When should assisted vaginal birth be recommended/contraindicated?
+Operators should be aware that no indication is absolute and that clinical judgment is requiredin all situations.D
+Suspected fetal bleeding disorders or a predisposition to fracture are relative contraindicationsto assisted vaginal birth. [New 2020]P
+Blood borne viral infections in the woman are not an absolute contraindication to assisted
+vaginal birth. [New 2020]D
+The use of a vacuum is not contraindicated following a fetal blood sampling procedure or
+application of a fetal scalp electrode. [New 2020]B
+Operators should be aware that there is a higher risk of subgaleal haemorrhage and scalp
+trauma with vacuum extraction compared with forceps at preterm gestational ages. Vacuumbirth should be avoided below 32 weeks of gestation and should be used with caution between32
++0and 36+0weeks of gestation. [New 2020]C
+What are the essential conditions for safe assisted vaginal birth?
+Safe assisted vaginal birth requires a careful assessment of the clinical situation, clear
+communication with the woman and healthcare personnel, and expertise in the chosenprocedure (Table 3).D
+Does ultrasound have a role in assessment prior to assisted vaginal birth?
+Ultrasound assessment of the fetal head position prior to assisted vaginal birth is
+recommended where uncertainty exists following clinical examination. [New 2020]A
+RCOG Green-top Guideline No. 26 e72 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+There is insuf ﬁcient evidence to recommend the routine use of abdominal or perineal
+ultrasound for assessment of the station, ﬂexion and descent of the fetal head in the second
+stage of labour. [New 2020]C
+What type of consent is required prior to attempting assisted vaginal birth?
+Women should be informed about assisted vaginal birth in the antenatal period, especially
+during their ﬁrst pregnancy. If they indicate speci ﬁc restrictions or preferences then this should
+be explored with an experienced obstetrician, ideally in advance of labour.P
+For birth room procedures verbal consent should be obtained prior to assisted vaginal birth andthe discussion should be documented in the notes.P
+When midpelvic or rotational birth is indicated, the risks and bene ﬁts of assisted vaginal birth
+should be compared with the risks and bene ﬁts of second stage caesarean birth for the given
+circumstances and skills of the operator. Written consent should be obtained for a trial ofassisted vaginal birth in an operating theatre. [New 2020]P
+Performing assisted vaginal birth
+Who should perform assisted vaginal birth?
+Assisted vaginal birth should be performed by, or in the presence of, an operator who has the
+knowledge, skills and experience necessary to assess the woman, complete the procedure andmanage any complications that arise.D
+Advise obstetric trainees to achieve expertise in spontaneous vaginal birth prior to commencingtraining in assisted vaginal birth.P
+Ensure obstetric trainees receive appropriate training in vacuum and forceps birth, includingtheoretical knowledge, simulation training and clinical training under direct supervision. [New 2020]P
+Competency should be demonstrated before conducting unsupervised births. [New 2020]P
+Complex assisted vaginal births should only be performed by experienced operators or under
+the direct supervision of an experienced operator.D
+Who should supervise assisted vaginal birth?
+An experienced operator, competent at midpelvic births, should be present from the outset tosupervise all attempts at rotational or midpelvic assisted vaginal birth.D
+Where should assisted vaginal birth take place?
+RCOG Green-top Guideline No. 26 e73 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Non-rotational low-pelvic and lift out assisted vaginal births have a low probability of failure
+and most procedures can be conducted safely in a birth room. [New 2020]C
+Assisted vaginal births that have a higher risk of failure should be considered a trial and be
+attempted in a place where immediate recourse to caesarean birth can be undertaken.C
+What instruments should be used for assisted vaginal birth?
+The operator should choose the instrument most appropriate to the clinical circumstances andtheir level of skill.P
+Operators should be aware that forceps and vacuum extraction are associated with differentbeneﬁts and risks; failure to complete the birth with a single instrument is more likely with
+vacuum extraction, but maternal perineal trauma is more likely with forceps. [New 2020]A
+Operators should be aware that soft cup vacuum extractors have a higher rate of failure but a
+lower incidence of neonatal scalp trauma. [New 2020]A
+Rotational births should be performed by experienced operators; the choice of instrument
+depending on the clinical circumstances and expertise of the individual. The options includeKielland ’s rotational forceps, manual rotation followed by direct traction forceps or vacuum, and
+rotational vacuum extraction.C
+When should vacuum-assisted birth be discontinued and how should a discontinued vacuum procedure be managed?
+Discontinue vacuum-assisted birth where there is no evidence of progressive descent withmoderate traction during each pull of a correctly applied instrument by an experiencedoperator. [New 2020]P
+Complete vacuum-assisted birth in the majority of cases with a maximum of three pulls to
+bring the fetal head on to the perineum. Three additional gentle pulls can be used to ease the
+head out of the perineum. [New 2020]P
+If there is minimal descent with the ﬁrst two pulls of a vacuum, the operator should consider
+whether the application is suboptimal, the fetal position has been incorrectly diagnosed orthere is cephalopelvic disproportion. Less experienced operators should stop and seek a second
+opinion. Experienced operators should re-evaluate the clinical ﬁndings and either change
+approach or discontinue the procedure. [New 2020]P
+Discontinue vacuum-assisted birth if there have been two ‘pop-offs ’of the instrument. Less
+experienced operators should seek senior support after one ‘pop-off ’to ensure the woman has
+the best chance of a successful assisted vaginal birth. [New 2020]P
+RCOG Green-top Guideline No. 26 e74 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+The rapid negative pressure application for vacu um-assisted birth is recommended as it reduces
+the duration of the procedure with no difference in maternal and neonatal outcomes. [New 2020]P
+The use of sequential instruments is associated with an increased risk of trauma to the infant.
+However, the operator needs to balance the risks of a caesarean birth following failed vacuumextraction with the risks of forceps birth following failed vacuum extraction.B
+Obstetricians should be aware of the increased neonata l morbidity following failed vacuum-assisted
+birth and/or sequential use of instruments, and should inform the neonatologist when this occursto ensure appropriate care of the baby.P
+Obstetricians should be aware of the increased risk of obstetric anal sphincter injury (OASI)following sequential use of instruments. [New 2020]C
+When should attempted forceps birth be discontinued and how should a discontinued forceps procedure be
+managed?
+Discontinue attempted forceps birth where the forceps cannot be applied easily, the handles do not
+approximate easily or if there is a lack of progressive descent with moderate traction. [New 2020]B
+Discontinue rotational forceps birth if rotatio n is not easily achieved with gentle pressure. [New 2020]B
+Discontinue attempted forceps birth if birth is not imminent following three pulls of a correctly
+applied instrument by an experienced operator. [New 2020]B
+If there is minimal descent with the ﬁrst one or two pulls of the forceps, the operator should
+consider whether the application is suboptimal, the position has been incorrectly diagnosed orthere is cephalopelvic disproportion. Less experienced operators should stop and seek a secondopinion. Experienced operators should re-evaluate the clinical ﬁndings and either change
+approach or discontinue the procedure. [New 2020]P
+Obstetricians should be aware of the potential neonatal morbidity following a failed attempt at
+forceps birth and should inform the neonatologist when this occurs to ensure appropriatemanagement of the baby. [New 2020]P
+Obstetricians should be aware of the increased risk of fetal head impaction at caesarean birth
+following a failed attempt at birth via forceps and should be prepared to disimpact the fetalhead using recognised manoeuvres. [New 2020]P
+RCOG Green-top Guideline No. 26 e75 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+What is the role of episiotomy in preventing maternal pelvic ﬂoor morbidity at assisted vaginal birth?
+Mediolateral episiotomy should be discussed with the woman as part of the preparation for
+assisted vaginal birth. [New 2020]P
+In the absence of robust evidence to support either routine or restrictive use of episiotomy at
+assisted vaginal birth, the decision should be tailored to the circumstances at the time and thepreferences of the woman. The evidence to support use of mediolateral episiotomy at assistedvaginal birth in terms of preventing OASI is stronger for nulliparous women and for birth viaforceps. [New 2020]B
+When performing a mediolateral episiotomy the cut should be at a 60 degree angle initiated
+when the head is distending the perineum. [New 2020]B
+Aftercare following assisted vaginal birth
+Should prophylactic antibiotics be given?
+A single prophylactic dose of intravenous amoxicillin and clavulanic acid should be
+recommended following assisted vaginal birth as it signi ﬁcantly reduces con ﬁrmed or suspected
+maternal infection compared to placebo. [New 2020]A
+Good standards of hygiene and aseptic techniques are recommended.P
+Should thromboprophylaxis be given?
+Reassess women after assisted vaginal birth for venous thromboembolism risk and the need for
+thromboprophylaxis.D
+What analgesia should be given after birth?
+In the absence of contraindications, women should be offered regular nonsteroidal anti-inﬂammatory drugs (NSAIDs) and paracetamol routinely.A
+What precautions should be taken for care of the bladder after birth?
+Women should be educated about the risk of urinary retention so that they are aware of the
+importance of bladder emptying in the postpartum period. [New 2020]P
+The timing and volume of the ﬁrst void urine should be monitored and documented.
+[New 2020]C
+A post void residual should be measured if urinary retention is suspected.P
+RCOG Green-top Guideline No. 26 e76 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Recommend that women who have received regional analgesia for a trial of assisted vaginal
+birth in theatre have an indwelling catheter in situ after the birth to prevent covert urinaryretention. This should be removed according to the local protocol. [New 2020]P
+Offer women physiotherapy-directed strategies to reduce the risk of urinary incontinence
+at 3 months.B
+How can psychological morbidity be reduced for the woman?
+Shared decision making, good communication, and positive continuous support during labourand birth have the potential to reduce psychological morbidity following birth. [New 2020]P
+Review women before hospital discharge to discuss the indication for assisted vaginal birth,
+management of any complications and advice for future births. Best practice is where thewoman is reviewed by the obstetrician who performed the procedure.P
+Offer advice and support to women who have had a traumatic birth and wish to talk abouttheir experience. The effect on the birth partner should also be considered. [New 2020]P
+Do not offer single session, high-intensity psychological interventions with an explicit focus on
+‘reliving ’the trauma. [New 2020]P
+Offer women with persistent post-traumatic stress disorder (PTSD) symptoms at 1 month
+referral to skilled professionals as per the NICE guidance on PTSD. [New 2020]D
+What information should women be given for future births?
+Inform women that there is a high probability of a spontaneous vaginal birth in subsequent
+labours following assisted vaginal birth. [New 2020]B
+Individualise care for women who have sustained a third- or fourth-degree perineal tear, or
+who have ongoing pelvic ﬂoor morbidity.P
+Governance issues
+What type of documentation should be completed for assisted vaginal birth?
+Documentation for assisted vaginal birth should include detailed information on the
+assessment, decision making and conduct of the procedure, a plan for postnatal care andsufﬁcient information for counselling in relation to subsequent pregnancies. Use of a
+standardised proforma is recommended. [New 2020]P
+RCOG Green-top Guideline No. 26 e77 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Paired cord blood samples should be processed and recorded following all attempts at assisted
+vaginal birth. [New 2020]P
+Adverse outcomes, including unsuccessful assisted vaginal birth, major obstetric haemorrhage,
+OASI, shoulder dystocia and signi ﬁcant neonatal complications should trigger an incident report
+as part of effective risk management processes. [New 2020]P
+How should serious adverse events be dealt with?
+Obstetricians should ensure that the ongoing care of the woman, baby and family is
+paramount. [New 2020]P
+Obstetricians have a duty of candour; a professional responsibility to be honest with patients
+when things go wrong. [New 2020]P
+Obstetricians should contribute to adverse event reporting, con ﬁdential enquiries, and take part
+in regular reviews and audits. They should respond constructively to outcomes of reviews,taking necessary steps to address any problems and carry out further retraining where needed.[New 2020]P
+Maternity units should provide a safe and supportive framework to support women, theirfamilies and staff when serious adverse events occur. [New 2020]P
+1. Purpose and scope
+The aim of this guideline is to provide evidence-based recommendations on the use of forceps and vacuum extraction
+for both rotational and non-rotational assisted vaginal births. In order to provide safe care for the full range of clinicalscenarios, obstetricians should develop competency in the use of both vacuum and forceps for non-rotational birth andat least one specialist technique for rotational birth. The scope of this guideline includes indications, procedures andgovernance issues relating to assisted vaginal birth.
+2. Introduction and background
+Assisted vaginal birth by vacuum or forceps is used to assist birth for maternal and fetal indications. In the UK,between 10% and 15% of all women give birth by assisted vaginal birth.
+1Almost one in every three nulliparous
+women gives birth by vacuum or forceps, with lower rates in midwifery-led care settings.2,3There has been a rise in
+the rate of caesarean births in the second stage of labour; this may reﬂect concerns about assisted vaginal birthmorbidity or a loss of clinical skills.
+4
+The majority of births by vacuum and forceps, when perf ormed correctly by appropriately trained personnel,
+result in a safe outcome for the woman and baby.5Women who achieve an assisted vaginal birth rather than
+have a caesarean birth with their ﬁrst child are far m ore likely to have an uncomplicated vaginal birth in
+subsequent pregnancies.6–8However, obstetricians, midwives and neon atologists should be aware that serious
+rare complications, such as subgaleal haemorrhage, intra cranial haemorrhage, skull fracture and spinal cord
+RCOG Green-top Guideline No. 26 e78 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+injury, can result in perinatal death and that these complications are more likely to occur with midpelvic,
+rotational and failed attempt s at assisted vaginal birth.5,9The alternative choice of a caesarean birth late in the
+second stage of labour can be very challenging and result in signiﬁcant maternal and perinatal morbidity. As aresult, complex decision making is required when ch oosing between assisted vaginal birth and second-stage
+caesarean birth.
+Two new developments have occurred since the public ation of the 2011 guideline: i) the Montgomery ruling
+has emphasised the importance of informed consent; and ii) a number of high proﬁle manslaughter convictions
+on the grounds of gross negligence have highlighted the risk of a criminal conviction, where serious
+shortcomings are identiﬁed in medical care pro vided to a patient who dies. The Royal College of
+Obstetricians and Gynaecologists (RCOG) has also received reports of a number of neonatal fatalities
+associated with traumatic birth-related injuries. It is i n this context that the safety aspects of this guideline
+have been reviewed and updated.
+3. Identi ﬁcation and assessment of evidence
+This guideline was developed using standard methodol ogy for developing RCOG Green-top Guidelines (GTGs).
+The Cochrane Library (including the Cochrane Databas e of Systematic Reviews, the Database of Abstracts of
+Reviews of Effects [DARE] and the Cochrane Central Register of Controlled Trials [CENTRAL]), EMBASE,MEDLINE and Trip were searched for relevant papers. The search was inclusive of all relevant articles
+published until May 2019. The databases were searched using the relevant Medical Subject Headings (MeSH)
+terms, including all subheadings and synonyms, and t his was combined with a keyword search. Search terms
+included ‘obstetrical forceps’, ‘manual rotation’, ‘assisted deliver *’, ‘assisted vaginal deliver *’, ‘instrumental
+deliver *’ and ‘operative birth’. The search was limited to studies on humans and papers in the English
+language. Relevant guidelines were also searched for using the same criteria in the National GuidelineClearinghouse and the National Institute for Health a nd Care Excellence (NICE) Evidence Search. The full
+search strategy is available to view online as supporting information (Appendix S1 and S2).
+Where possible, recommendations are based on available evidence. Areas lacking evidence are highlighted and
+annotated as ‘good practice points’. Further information about the assessment of evidence and the grading ofrecommendations may be found in Appendix 1.
+4. Preparation for assisted vaginal birth
+4.1. Can assisted vaginal birth be avoided?
+Encourage women to have continuous support during labour as this can reduce the need for
+assisted vaginal birth.A
+Inform women that epidural analgesia may increase the need for assisted vaginal birth althoughthis is less likely with newer anaesthetic techniques.A
+RCOG Green-top Guideline No. 26 e79 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Inform women that administering epidural analgesia in the latent phase of labour compared to
+the active phase of labour does not increase the risk of assisted vaginal birth.A
+Encourage women not using epidural analgesia to adopt upright or lateral positions in thesecond stage of labour as this reduces the need for assisted vaginal birth.A
+Encourage women using epidural analgesia to adopt lying down lateral positions rather than uprightpositions in the second stage of labour as this increases the rate of spontaneous vaginal birth.A
+Recommend delayed pushing for 1 –2 hours in nulliparous women with epidural analgesia as
+this may reduce the need for rotational and midpelvic assisted vaginal birth.B
+Do not routinely discontinue epidural analgesia during pushing as this increases the woman ’s
+pain with no evidence of a reduction in the incidence of assisted vaginal birth.A
+There is insuf ﬁcient evidence to recommend any particular regional analgesia technique in
+terms of reducing the incidence of assisted vaginal birth.A
+There is insuf ﬁcient evidence to recommend routine oxytocin augmentation for women with
+epidural analgesia as a strategy to reduce the incidence of assisted vaginal birth.A
+There is insuf ﬁcient evidence to recommend routine prophylactic manual rotation of fetal
+malposition in the second stage of labour to reduce the risk of assisted vaginal birth.B
+As assisted vaginal birth can be associated with maternal and neonatal morbidity, strategies that reduce
+the need for intervention should be used. Continuous support for women during childbirth has been
+shown to increase the likelihood of spontaneous vaginal birth (26 trials; n=15 858; risk ratio [RR] 1.08,
+95% CI 1.04 –1.12) and reduce the likelihood of assisted vaginal birth (RR 0.90, 95% CI 0.85 –0.96),
+particularly when the carer is not a member of staff.10Evidence
+level 1 ++
+Epidural analgesia compared with non-epidural methods is associated with an increased incidence of
+assisted vaginal birth (23 trials; n=7935; OR 1.42, 95% CI 1.28 –1.57), but provides better pain relief than
+non-epidural analgesia (3 trials; n=1166; mean difference in maternal perception of pain –3.36; 95% CI –
+5.41 to –1.31).2A post hoc subgroup analysis did not replicate this increase in assisted vaginal births
+suggesting that approaches to epidural analgesia in labour (use of lower concentrations of local analgesicor patient-controlled epidural analgesia (PCEA)) do not have this outcome.”Evidence
+level 1 ++
+Administering epidural analgesic in the latent phase of labour compared to the active phase does not
+increase the risk of assisted vaginal birth in nulliparous women (6 trials; n=15 399; RR 0.96, 95% CI
+0.89–1.05).11Evidence
+level 1 +
+RCOG Green-top Guideline No. 26 e80 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+The use of any upright or lateral position in the second stage of labour, compared with supine or
+lithotomy positions, is associated with a reduction in assisted births in women not using epidural analgesia(21 trials; n=6481; RR 0.75, 95% CI 0.66 to –0.86).
+12Evidence
+level 1 +
+A randomised trial included 3236 nulliparous women with a low-dose epidural to determine whether
+being upright in the second stage of labour increases the chance of spontaneous vaginal birth comparedwith lying down. Signiﬁcantly fewer spontaneous vaginal births occurred in women in the upright group at35.2% (548/1556) compared with 41.1% (632/1537) in the lying down group (adjusted RR 0.86, 95% CI0.78–0.94). This represents a 5.9% absolute increase in the chance of spontaneous vaginal birth in the lying
+down group (number needed to treat 17; 95% CI 11 –40).
+13,14Evidence
+level 1 +
+A meta-analysis demonstrated that nulliparous women with epidurals are likely to have fewer rotational
+or midpelvic operative interventions when pushing is delayed for 1 to 2 hours or until they have a strongurge to push (RR 0.59, 95% CI 0.36 –0.98),
+15although a more recent meta-analysis concluded that, when
+the analysis is restricted to high-quality studies, the effect was smaller and did not reach statisticalsigniﬁcance.
+16Evidence
+level 1 ++
+There is insufﬁcient evidence to support the hypothesis that discontinuing epidural analgesia reduces the
+incidence of assisted vaginal birth (23% versus 28%; RR 0.84, 95% CI 0.61 –1.15), but there is evidence that
+it increases the woman’s pain (22% versus 6%; RR 3.68, 95% CI 1.99 –6.80).17Evidence
+level 1 ++
+There is no difference between the rates of assisted vaginal birth for combined spinal –epidural and
+standard epidural techniques (19 trials; n=2658; OR 0.82, 95% CI 0.67 –1.00),18or patient-controlled
+epidural analgesia (PCEA) and standard epidural technique. A meta-analysis of nine studies, including 641women, comparing PCEA to continuous infusion showed that obstetric outcomes were comparable in allincluded studies.
+19A randomised controlled trial (RCT) of 126 women comparing PCEA with continuous
+epidural infusion reported similar rates of normal birth.20Evidence
+level 1 +
+A systematic review evaluating the use of oxytocin at 6 cm dilatation onwards did not report a signiﬁcant
+reduction in assisted vaginal birth (two studies; n=319; RR 0.88, 95% CI 0.72 –1.08). The review reported
+a higher rate of uterine rupture in multiparous women where oxytocin had been commenced.21The
+NICE intrapartum care guideline22has concluded that oxytocin should not be routinely started in the
+second stage of labour and should be used with caution in multiparous women. An experiencedobstetrician should make a thorough assessment before considering oxytocin in the second stage oflabour for a multiparous woman.Evidence
+level 1 +
+Manual rotation has been explored as a strategy to correct fetal malposition and is recommended in the
+guideline of the Society of Obstetricians and Gynaecologists of Canada.23A retrospective cohort study
+reported a reduction in caesarean birth associated with the use of manual rotation (9% versus 41%;P<0.001).
+24Of the 731 women in this study who underwent manual rotation, no woman experienced an
+umbilical cord prolapse, and there was no difference in birth trauma or neonatal acidaemia betweenneonates who had experienced an attempt at manual rotation and those who had not. A prospectivecohort study of 172 attempts at manual rotation reported a 90% success rate with a reduction inEvidence
+level 1 –
+RCOG Green-top Guideline No. 26 e81 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+operative birth (23% versus 39%; OR 0.52, 95% CI 0.28 –0.95).25Given these data, manual rotation of the
+fetal occiput for malposition in the second stage of labour warrants further evaluation as a potentialstrategy to consider before moving to assisted vaginal birth or caesarean birth. A pilot RCT of 30 womenwhere fetal malposition was corrected by manual rotation early in the second stage of labour reported asimilar rate of assisted vaginal birth.
+26A second RCT including 65 women showed a reduction in the
+duration of the second stage of labour (65 minutes versus 82 minutes; P=0.04).27Neither study
+reported any adverse effects related to manual rotation. Larger RCTs are needed to establish ifprophylactic manual rotation early in the second stage of labour can lead to a reduction in operativebirths.
+26Evidence
+level 1 –
+4.2. How should assisted vaginal birth be deﬁned?
+Use a standard classi ﬁcation system for assisted vaginal birth to promote safe clinical practice,
+effective communication between health professionals and audit of outcomes.D
+Systematic abdominal and vaginal examinations are required to conﬁrm the classiﬁcation for assisted vaginal birth.
+Marked caput may give the impression that the vertex is lower than it is. In the majority of cases the fetal head willnot be palpable abdominally, the exception being a deﬂexed occipito posterior position where up to one-ﬁfth of thefetal head may be palpable abdominally when the fetal skull is at station 0 cm or below. A classiﬁcation system wasdeveloped for the previous version of this guideline and was included in the ACOG guidelines (see Table 1).
+28
+4.3. When should assisted vaginal birth be recommended/contraindicated?
+Operators should be aware that no indication is absolute and that clinical judgment is required
+in all situations.D
+Suspected fetal bleeding disorders or a predisposition to fracture are relative contraindicationsto assisted vaginal birth.PTable 1. Classi ﬁcation for assisted vaginal birth28
+Outlet Fetal scalp visible without separating the labia
+Fetal skull has reached the perineum
+Rotation does not exceed 45 °
+Low Fetal skull is at station +2 cm, but not on the perineum
+Two subdivisions:
+1.Non-rotational ≤45°
+2.Rotational >45°
+Mid Fetal head is no more than one- ﬁfth palpable per abdomen
+Leading point of the skull is at station 0 or +1c m
+Two subdivisions:
+1.Non-rotational ≤45°
+2.Rotational >45°
+RCOG Green-top Guideline No. 26 e82 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Blood borne viral infections in the mother are not an absolute contraindication to assisted
+vaginal birth.D
+Vacuum extraction is not contraindicated following a fetal blood sampling procedure orapplication of a fetal scalp electrode.B
+Operators should be aware that there is a higher risk of subgaleal haemorrhage and scalptrauma with vacuum extraction compared with forceps at preterm gestational ages. Vacuumbirth should be avoided below 32 weeks of gestation and should be used with caution between32
++0and 36+0weeks of gestation.C
+Operative intervention may be indicated for conditions of the fetus, the mother or both (see Table 2). The decision
+requires clinical judgment based on the maternal and fetal ﬁndings, preferences of the woman and experience of theobstetrician.
+29A retrospective cohort study of 15 759 nulliparous women demonstrated that maternal morbidity
+increased signiﬁcantly after 3 hours of the second stage and increased further after 4 hours. There was no evidenceof neonatal morbidity increasing in this retrospective study, where fetal surveillance and timely obstetric interventionwere used.
+30The time constraints listed in Table 2 are therefore provided for guidance. The question of when to
+intervene should involve consideration of the risks and beneﬁts of continued pushing versus those of an assistedvaginal birth versus those of a second stage caesarean birth.
+No indication is absolute and each case should be considered individually. The threshold to intervene may be lower
+where several factors coexist. Medical indications include cardiac disease, hypertensive crisis, cerebral vasculardisease or malformations, myasthenia gravis and spinal cord injury. Forceps and vacuum extraction arecontraindicated before full dilatation of the cervix. Forceps can be used for the after-coming head of the breech. Thevacuum extractor is contraindicated with a face presentation.
+Fetal bleeding disorders (for example, alloimmune thrombocytopenia)
+31or a predisposition to fracture
+(for example, osteogenesis imperfecta) are relative con traindications to assisted vaginal birth. However,
+there may be considerable risks if the fetal head has to be delivered abdominally from deep in the pelvis.Experienced obstetricians should be involved in the decision-making for exceptional indication and, ideally,Evidence
+level 4
+Table 2. Indications for assisted vaginal birth[22],[28]
+Fetal Suspected fetal compromise (cardiotocography pathological, abnormal fetal blood sampling result, thick
+meconium)
+Maternal Nulliparous women –lack of continuing progress for 3 hours (total of active and passive second-stage labour)
+with regional analgesia or 2 hours without regional analgesia
+Parous women –lack of continuing progress for 2 hours (total of active and passive second-stage labour) with
+regional analgesia or 1 hour without regional analgesia
+Maternal exhaustion or distressMedical indications to avoid Valsalva manoeuvre
+Combined Fetal and maternal indications for assisted vaginal birth often coexist
+RCOG Green-top Guideline No. 26 e83 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+a discussion will have taken place and be documented in advance of labour. A low forceps may be
+acceptable for assisted vaginal birth with suspected f etal bleeding disorders, but vacuum extraction should
+be avoided.Evidence
+level 4
+Blood borne viral infections of the mother are not a contraindication to assisted vaginal birth. A
+population-based surveillance study of 251 assisted vaginal births in HIV-positive women reported thatone infant had conﬁrmed infection at 18 months of age. The maternal characteristics suggested thattransmission may not have been intrapartum.
+32However, it is sensible to avoid difﬁcult assisted vaginal
+birth where there is an increased chance of fetal abrasion or scalp trauma, as it is to avoid fetal scalpelectrodes or blood sampling during labour.
+33Evidence
+level 3
+Two case studies reported a risk of fetal haemorrhage when a vacuum extractor was applied
+following fetal blood sampling or application of a spiral scalp electrode.34,35However, no bleeding was
+reported in two randomised trials comparing forceps and vacuum extraction following fetal bloodsampling.
+36,37Evidence
+level1+and 3
+A retrospective population-based study including 5064 vacuum and 432 forceps births between 32+0and
+36+6weeks of gestation reported an increased risk of subgaleal hemorrhage (0.16% versus 0%),
+intracranial haemorrhage (0.12% versus 0%) and scalp trauma (9.8% versus 6.3%) associated with vacuumextraction when compared with forceps birth.
+38A Swedish register-based study reported vacuum birth in
+5.7% of preterm births with increased incidence of intracranial haemorrhage (1.5%; adjusted OR [aOR]1.84, 95% CI 1.09 –1.32) and extracranial haemorrhage (0.64%; aOR 4.48, 95% CI 2.84 –7.07) compared
+with spontaneous vaginal birth.
+39A separate follow-up study reported comparable long-term neurological
+outcomes for 266 babies born by vacuum extraction.40Below 32+0weeks of gestation, the use of vacuum
+extraction is not recommended because of the susceptibility of the preterm infant to cephalohaematoma,intracranial haemorrhage, subgaleal haemorrhage and neonatal jaundice.Evidence
+level 2 +
+4.4. What are the essential conditions for safe assisted vaginal birth?
+Safe assisted vaginal birth requires a careful assessment of the clinical situation, clear
+communication with the woman and healthcare personnel, and expertise in the chosenprocedure (Table 3).D
+Like any operative intervention, adequate preparation and planning is important.29 Evidence
+level 4
+4.5. Does ultrasound have a role in assessment prior to assisted vaginal birth?
+Clinicians should be aware that ultrasound assessment of the fetal head position prior to
+assisted vaginal birth is more reliable than clinical examination.A
+There is insuf ﬁcient evidence to recommend the routine use of abdominal or perineal ultrasound
+for assessment of the station, ﬂexion and descent of the fetal head in the second stage of labour.C
+RCOG Green-top Guideline No. 26 e84 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+A multicentre RCT compared ultrasound assessment of the fetal head position prior to assisted
+vaginal birth with standard care to determine whether the use of ultrasound can reduce the incidence
+of incorrect diagnosis of the fetal head position. The incidence of incorrect diagnosis was signiﬁcantly
+lower in the ultrasound group than the standard care group (4/257 [1.6%] versus 52/257 [20.2%]; OR0.06, 95% CI 0.02 –0.19; P<0.001).
+41While correct diagnosis of the fetal head position is a
+prerequisite for safe assisted vaginal birth, the ultrasound assessment in itself does not lead to areduction in morbidity. A further trial evaluated ultrasound assessment of the fetal head position from8 cm cervical dilatation compared with standard vaginal examination and reported a higher incidenceof caesarean birth in the ultrasound group (7.8% versus 4.9%; RR 1.60, 95% CI 1.12 –2.28), but no
+signiﬁcant difference in rates of assisted vaginal birth (25.8% versus 22.2%; RR 1.16, 95% CI 0.99 –
+1.37).
+42Evidence
+level 1 +
+>A survey of obstetricians in the UK and Ireland reported errors in diagnosing the fetal head position at
+all levels of experience.43Therefore, use of ultrasound to deﬁne the fetal head position prior to assisted
+vaginal birth may be a valuable assessment tool, particularly where there is uncertainty about the clinicalﬁndings. The operator should be trained in determining the fetal head position using abdominalultrasound.
+44Evidence
+level 1 +
+A number of observational studies have reported use of abdominal or perineal ultrasound to assess the
+fetal station, ﬂexion of the head and direction of head descent in the second stage of labour.45–47
+Currently, there is insufﬁcient standardisation of these techniques or evidence of beneﬁt to recommendtheir routine use in clinical practice.Evidence
+level 2 +Table 3. Safety criteria for assisted vaginal birth
+Full abdominal and vaginal
+examination/C15Head is ≤1/5 palpable per abdomen (in most cases not palpable)/C15Cervix is fully dilated and the membranes ruptured/C15Station at level of ischial spines or below/C15Position of the fetal head has been determined/C15Caput and moulding is no more than moderate (or +2)a
+/C15Pelvis is deemed adequate
+Preparation of mother /C15Clear explanation given and informed consent taken and documented in
+women ’s case notes/C15Trust established and full cooperation sought and agreed with woman/C15Appropriate analgesia is in place: for midpelvic or rotational birth, this will
+usually be a regional block; a pudendal block may be acceptable depending onurgency; and a perineal block may be suf ﬁcient for low or outlet birth
+/C15Maternal bladder has been emptied/C15Indwelling catheter has been removed or balloon de ﬂated/C15Aseptic technique
+Preparation of staff /C15Operator has the knowledge, experience and skill necessary/C15Adequate facilities are available (equipment, bed, lighting) and access to an
+operating theatre/C15Backup plan: for midpelvic births, theatre facilities should be available to allow
+a caesarean birth to be performed without delay; a senior obstetrician shouldbe present if an inexperienced obstetrician is conducting the birth
+/C15Anticipation of complications that may arise (e.g. shoulder dystocia, perineal
+trauma, postpartum haemorrhage)/C15Personnel present who are trained in neonatal resuscitation
+aModerate moulding or +2 moulding is where the parietal bones are overlapped but easily reduced; severe moulding or +3i s
+where the parietal bones have overlapped and are irreducible indicating cephalopelvic disproportion.
+RCOG Green-top Guideline No. 26 e85 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+4.6. What type of consent is required prior to attempting assisted vaginal birth?
+Women should be informed about assisted vaginal birth in the antenatal period, especially
+during their ﬁrst pregnancy. If they indicate speci ﬁc restrictions or preferences then this should
+be explored with an experienced obstetrician, ideally in advance of labour.P
+For birth room procedures verbal consent should be obtained prior to assisted vaginal birth and
+the discussion should be documented in the notes.P
+When midpelvic or rotational birth is indicated, the risks and bene ﬁts of assisted vaginal birth
+should be compared with the risks and bene ﬁts of second stage caesarean birth for the given
+circumstances and skills of the operator. Written consent should be obtained for a trial ofassisted vaginal birth in an operating theatre.P
+The 2015 Montgomery determination clariﬁed UK law and set new standards for consent, stating that
+doctors have a duty to ensure that patients understand the material risks of any medical intervention andthe risks of any reasonable alternatives.
+48,49The role of the obstetrician is to have a dialogue to ensure
+that the patient understands the risks and beneﬁts, and can make an informed choice. By the very natureof assisted vaginal birth, consent will need to be obtained at the end of labour in an emergency setting.The situation is not always conducive to assimilation of detailed information by the woman to make aninformed choice.
+50Therefore, women should be informed about assisted vaginal birth as part of routine
+antenatal education, particularly when having their ﬁrst baby where the chance of requiring a forceps orvacuum birth is highest. This information should include strategies known to be effective in reducing theneed for assisted vaginal birth and an explanation of the comparative morbidities for assisted vaginal birthand second stage caesarean birth.Evidence
+level 4
+The woman’s birth plan, including any preferences or objections to a particular instrument, should be
+taken into account and discussed.22Care needs to be taken as women may be exhausted, in pain or
+affected by drugs. The principles of obtaining valid consent during labour should be followed.51,52
+Information provided to women in labour should be given between contractions. The ability to presentrisk-based information in a time-sensitive manner appropriate to the clinical circumstances is essential inorder to achieve informed consent. Obstetricians must document their assessment ﬁndings, reasons forproceeding to an assisted vaginal birth and that consent has been given.Evidence
+level 4
+Complex decision making is required when choosing between a trial of midpelvic rotational assisted vaginal
+birth in theatre and second stage caesarean birth with a deeply engaged fetal head. A multicentre prospectivecohort study in the UK of 393 women transferred to theatre in the second stage of labour reported a higherincidence of maternal haemorrhage and neonatal unit admission following caesarean birth, but a higherincidence of pelvic ﬂoor morbidity and neonatal trauma with assisted vaginal birth. The incidence of pelvicﬂoor morbidity was three-fold higher at 6 weeks, but this attenuated at 1 and 3 years. Women who gavebirth by assisted vaginal birth were far more likely to have a vaginal birth in a subsequent pregnancy (80%versus 30%) and there were no differences in neurodevelopmental outcomes at 5 years.
+8,53,54Evidence
+level 2 +
+RCOG Green-top Guideline No. 26 e86 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Two large retrospective cohort studies compared adverse neonatal outcomes for assisted vaginal birth
+and second stage caesarean birth; an Irish study reported similar rates of complications and an Israeli
+study55reported poorer neonatal outcomes for the caesarean group.56,57A secondary analysis of a
+randomised trial of 990 nulliparous women who gave birth by forceps, vacuum or caesarean birth in theUS reported comparable rates of adverse neonatal outcomes for each mode of birth.
+58Two Canadian
+studies59,60reported conﬂicting results. A large retrospective study59reported higher rates of severe birth
+trauma with midpelvic assisted vaginal birth compared with caesarean birth, highest with sequentialinstrument use, whereas a prospective cohort study
+60reported no difference between midpelvic and low
+assisted vaginal birth for either severe maternal or neonatal morbidity.Evidence
+level 2 +
+Obstetricians should refer to the RCOG Consent Advice No. 11 Assisted Vaginal Birth61and Clinical
+Governance Advice No. 6a Obtaining Valid Consent to Participate in Perinatal Research Where Consent is Time
+Critical .52Evidence
+level 2 +
+5. Performing assisted vaginal birth
+5.1. Who should perform assisted vaginal birth?
+Assisted vaginal birth should be performed by, or in the presence of, an operator who has the
+knowledge, skills and experience necessary to assess the woman, complete the procedure andmanage any complications that arise.D
+Advise obstetric trainees to achieve expertise in spontaneous vaginal birth prior to commencingtraining in assisted vaginal birth.P
+Ensure obstetric trainees receive appropriate training in vacuum and forceps birth, includingtheoretical knowledge, simulation training and clinical training under direct supervision.P
+Competency should be demonstrated before conducting unsupervised births.P
+Complex assisted vaginal births should only be performed by experienced operators or underthe direct supervision of an experienced operator.D
+Training is central to patient safety initiatives. Systems analysis reveals inadequate training as a key
+contributor to adverse outcomes.62Evidence
+level 2 +
+The goal of assisted vaginal birth is to mimic spontaneous vaginal birth, thereby expediting birth with a minimum
+of maternal or neonatal morbidity. An understanding of the anatomy of the birth canal, the fetal head and themechanism of normal labour is a prerequisite to becoming a skilled obstetrician. It is strongly recommended thatobstetricians achieve experience in spontaneous vaginal birth before commencing training in vacuum or forcepsbirth.
+RCOG Green-top Guideline No. 26 e87 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Obstetric trainees should familiarise themselves with the theoretical knowledge required for the technical
+and non-technical skills of assisted vaginal birth. A wide range of resources are available, including
+guidelines, clinical skills taxonomy lists based on expert obstetric practice,29,63–65manuals66and online
+training resources (for example, StratOG). These should be supplemented with initial training in asimulation setting. As with any operative procedure, trainees will need to be taught and observed in theclinical setting and have their technique corrected and adjusted by a senior operator until they aredeemed ready for independent practice. It should be made clear to the labouring woman that a traineeoperator is working under direct supervision of an experienced operator.Evidence
+level 4
+Assessment of clinical competence is a key element of core training. Competence should be assessed
+ideally using the OSATS [objective structured assessment of technical skills] form designed for assistedvaginal birth by the RCOG.
+67No data exist on the minimum number of supervised procedures necessary
+before competence is achieved and this is likely to vary at the individual level. Each unit should ideallyhave speciﬁed trainers responsible for training and assessment.
+68Local and specialist courses in labour
+ward management can contribute to the development and maintenance of operative birth expertise.Evidence
+level 4
+Once trained, it may be useful for practitioners to audit their performance. One study has demonstrated
+the potential for the monitoring of obstetricians’ performance on vacuum extraction by the use ofstatistical process control charts.
+69Another study has looked at the position of the chignon as a
+monitoring tool of cup application.70Further work needs to be done to develop data collection tools with
+consideration for case complexity and how the results can be fed back to individuals in a constructivemanner.Evidence
+level 3
+The complexity of the birth is related to the type of assisted vaginal birth as classiﬁed in Table 1.
+Midpelvic and rotational births, independent of the instrument used, demand a high level of clinical andtechnical skill and are associated with higher rates of maternal and neonatal morbidity. The operator mustreceive adequate training and supervision prior to embarking on independent practice. Serious neonataltrauma has been associated with initial unsuccessful attempts at assisted vaginal birth by inexperiencedoperators.
+71[Appendix 3]Evidence
+level 2 +
+5.2. Who should supervise assisted vaginal birth?
+An experienced operator, competent at midpelvic births, should be present from the outset to
+supervise all attempts at rotational or midpelvic assisted vaginal birth.D
+Where there is any uncertainty about successful assisted vaginal birth, an experienced operator should
+assess the patient to ensure that the correct decision has been made to attempt assisted vaginal birth andthat this is being conducted with the most appropriate instrument in the most appropriate setting.
+29For a
+trial of assisted vaginal birth in theatre, an experienced operator should attend in person or should beimmediately available if the trainee on duty has not been assessed and signed-off as competent.
+72Evidence
+level 4
+RCOG Green-top Guideline No. 26 e88 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+A prospective cohort study of 597 consecutive assisted vaginal births in a large teaching hospital in Ireland
+demonstrated no evidence of an association between time of assisted vaginal birth (day versus night) and
+adverse perinatal outcomes despite off-site consultant obstetric support at night. There was a policy of
+senior obstetric attendance for all attempted assisted vaginal births in an operating theatre.73A
+retrospective study from Israel reported higher rates of neonatal morbidity in association with vacuumbirths at night, but no information was provided on stafﬁng.
+74Evidence
+level 2 +
+There is evidence from one study in the US of an association between increasing trainee forceps use
+and positive birth outcomes from the designation of a full-time, experienced and proactive facultymember to obstetrics teaching duty.
+68A further retrospective cohort study reported an increase in
+forceps births and decrease in caesarean births in association with senior obstetric supervision ofresidents. However, the change was only apparent during daytime hours when senior obstetricianswere present.
+75Evidence
+level 2 +
+5.3. Where should assisted vaginal birth take place?
+Non-rotational low-pelvic and lift out assisted vaginal births have a low probability of failure
+and most procedures can be conducted safely in a birth room.C
+Assisted vaginal births that have a higher risk of failure should be considered a trial and beattempted in a place where immediate recourse to caesarean birth can be undertaken.C
+A study in Scotland of 1021 singleton term operative births for fetal distress showed that a decision
+to delivery interval (DDI) of 15 minutes was an achievable target for non-rotational low-pelvicvacuum and forceps births performed in a labour room and there were no assisted vaginal birthfailures.
+6Evidence
+level 2 +
+Higher rates of failure are associated with:
+/C15maternal BMI greater than 30
+/C15short maternal stature
+/C15estimated fetal weight of greater than 4 kg or a clinically big baby
+/C15head circumference above the 95th percentile
+/C15occipito –posterior position
+/C15midpelvic birth or when one-ﬁfth of the head is palpable per abdomen.
+High maternal BMI greater than 30, short maternal st ature, neonatal birth weight greater than 4 kg and
+occipito –posterior positions are all indicators of increa sed failure and require sp ecial consideration.6,53,76–78At
+midpelvic stations, particularly station 0 or where rotation is required, the biparietal diameter is above thelevel of the ischial spines and failure rates are higher. A neonatal head circumference above the 95
+thpercentile
+has been shown to be more strongly associated with unpl anned caesarean or assisted vaginal birth than birth
+weight.79Preliminary data suggest that this might be identiﬁ able using intrapartum sonography and worthy of
+further research.80Evidence
+level 2 +
+RCOG Green-top Guideline No. 26 e89 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Operative births that are anticipated to have a higher rate of failure should be considered a trial and
+conducted in a place where immediate recourse to caesarean birth can be undertaken, such as an
+operating theatre. There is little evidence of increased maternal or neonatal morbidity following failed
+assisted vaginal birth compared to immediate caesarean birth where immediate recourse to caesareanbirth is available.
+81A study of 3189 women in the US reported that adverse neonatal outcomes following
+failed assisted vaginal birth were associated with non-reassuring fetal heart rate recordings and whenthese cases were removed, there was no association between a failed attempt at assisted vaginal birth andadverse neonatal outcomes.
+82Evidence
+level 2 +
+The decision to transfer a woman to an operating theatre needs to take account of the time associated
+with transfer which may affect the neonatal outcome. Two retrospective studies compared assisted vaginalbirth in the labour room with births in an operating theatre.
+6,83A study of 229 operative births for all
+indications had a DDI of 20 minutes for births in the room and 59 minutes for births in theatre.83A
+study of 1021 singleton term operative births for fetal distress showed that a DDI of 15 minutes is anachievable target in the labour room, whereas 30 minutes is the average DDI in theatre.
+6There were no
+statistically signiﬁcant differences in the neonatal outcomes in either study in relation to short and longerDDIs. Therefore, the risks of unsuccessful assisted vaginal birth in the labour room should be balancedwith the risks associated with the transfer time for birth in an operating theatre.Evidence
+level 2 +
+5.4. What instruments should be used for assisted vaginal birth?
+The operator should choose the instrument most appropriate to the clinical circumstances and
+their level of skill.P
+Operators should be aware that forceps and vacuum extraction are associated with differentbeneﬁts and risks; failure to complete the birth with a single instrument is more likely with
+vacuum extraction, but maternal perineal trauma is more likely with forceps.A
+Operators should be aware that soft cup vacuum extractors have a higher rate of failure but a
+lower incidence of neonatal scalp trauma.A
+Rotational births should be performed by experienced operators; the choice of instrumentdepending on the clinical circumstances and expertise of the individual. The options includeKielland ’s rotational forceps, manual rotation followed by direct traction forceps or vacuum, and
+rotational vacuum extraction.C
+There have been no recent RCTs comparing vacuum and forceps, but a Cochrane systematic review
+evaluating 10 existing trials involving 2923 nulliparous and multiparous women reports the relative meritsand risks of vacuum and forceps as outlined below in Table 4.
+84Evidence
+level 1 ++
+Vacuum failure rates of 17% to 36% have been reported in three RCTs comparing different vacuum
+devices. In one trial, including 194 women, the failure rate with the KiwiTMOmniCup was 34% compared
+with 21% with the standard cup (aOR 2.3, 95% CI 1.01 –5.0), increasing the sequential use of instruments
+to 22% and 10%, respectively.85In the second trial, including 404 women, the failure rate for occipito –Evidence
+level 1 +
+RCOG Green-top Guideline No. 26 e90 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+anterior births was 26% compared with 17% with the conventional cup (RR 1.55, 95% CI 1.00 –2.40).86
+Failure of vacuum birth was three to four times more likely with a fetal malposition. A trial of 666 women
+in France comparing the metal vacuum with the disposable iCupTMreported higher failure with the
+disposable cup (35.6% versus 7.1%; P<0.0001).87A further trial in Papua New Guinea reported low rates
+of vacuum failure of 2/100 for the KiwiTMOmnicup and 6/100 for the Bird metal cup.88A prospective
+cohort study of 1000 vacuum-assisted births with the KiwiTMOmniCup reported a failure rate of 12.9%.89Evidence
+level 1 +
+A Cochrane review of nine RCTs involving 1368 women showed that soft vacuum extractor cups
+compared with rigid cups are associated with a higher rate of failure (OR 1.6, 95% CI 1.2 –2.3), but a
+lower incidence of neonatal scalp trauma (OR 0.4, 95% CI 0.3 –0.6).90An updated Cochrane review places
+a greater emphasis on choosing an appropriate instrument based on differing risks and beneﬁts.91Evidence
+level 1 ++
+Birth by vacuum and forceps birth can be associated with signiﬁcant maternal complications. Two maternal
+deaths have been described in association with tearing of the cervix at vacuum birth and a furthermaternal death following uterine rupture in association with forceps birth.
+92,93Vacuum and forceps birth
+are associated with a higher incidence of episiotomy, pelvic ﬂoor tearing, levator ani avulsion and obstetricanal sphincter injury (OASI) than spontaneous vaginal birth. Symptoms associated with pelvic ﬂoor traumainclude pain, dyspareunia, and urinary and bowel incontinence.
+94–100However, a longitudinal prospective
+cohort study nested with a two-centre RCT of routine versus restrictive episiotomy for assisted vaginalbirth reported that pelvic ﬂoor morbidities associated with assisted vaginal birth are often as prevalent, ifnot more prevalent, in the third trimester of pregnancy than postpartum.
+101This suggests that much of
+the pelvic ﬂoor morbidity reported by women in the weeks and months after an assisted vaginal birth maynot be causally related to the procedure. A follow-up study of an RCT comparing vacuum and forcepsreported no signiﬁcant differences in bowel or urinary dysfunction at 5 years.
+102Evidence
+level 2 +
+Birth by vacuum and forceps can be associated with signiﬁcant perinatal complications. Neonatal
+intracranial and subgaleal haemorrhage are life-threatening complications of particular concern.9,103In a
+review of 583 340 liveborn singleton infants born to nulliparous women, the rate of subdural or cerebralhaemorrhage in vacuum births (1 in 860) did not differ signiﬁcantly from that associated with forceps use(1 in 664) or caesarean birth during labour (1 in 954). However, risks increased signiﬁcantly among babiesexposed to sequential instrument use with both vacuum and forceps (1 in 256).
+9Evidence
+level 1 +Table 4. Vacuum extraction as compared with forceps assisted birth
+More likely to fail at achieving vaginal birth OR 1.7; 95% CI 1.3 –2.2
+More likely to be associated with cephalhaematoma OR 2.4; 95% CI 1.7 –3.4
+More likely to be associated with retinal haemorrhage OR 2.0; 95% CI 1.3 –3.0
+More likely to be associated with maternal worries about baby OR 2.2; 95% CI 1.2 –3.9
+Less likely to be associated with signi ﬁcant maternal perineal and vaginal trauma OR 0.4; 95% CI 0.3 –0.5
+No more likely to be associated with birth by caesarean birth OR 0.6; 95% CI 0.3 –1.0
+No more likely to be associated with low 5 min Apgar scores OR 1.7; 95% CI 1.0 –2.8
+No more likely to be associated with the need for phototherapy OR 1.1; 95% CI 0.7 –1.8
+RCOG Green-top Guideline No. 26 e91 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Risk-based information can be summarised as follows:61
+Maternal outcomes:
+/C15Episiotomy; vacuum, 50 –60%; and forceps, more than or equal to 90%.
+/C15Signiﬁcant vulvo –vaginal tear; vacuum, 10%; and forceps, 20%.
+/C15OASI; vacuum, 1 –4%; and forceps, 8 –12%.
+/C15Postpartum haemorrhage; vacuum and forceps, 10 –40%.
+/C15Urinary or bowel incontinence; common at 6 weeks, improves over time.
+Perinatal outcomes:
+/C15Cephalhaematoma; predominantly vacuum, 1 –12%.
+/C15Facial or scalp lacerations; vacuum and forceps, 10%.
+/C15Retinal haemorrhage; more common with vacuum than forceps, variable 17 –38%.
+/C15Jaundice or hyperbilirubinaemia; vacuum and forceps, 5 –15%.
+/C15Subgaleal haemorrhage; predominantly vacuum, 3 to 6 in 1000.
+/C15Intracranial haemorrhage; vacuum and forceps, 5 to 15 in 10 000.
+/C15Cervical spine injury; mainly Kiellands rotational forceps, rare.
+/C15Skull fracture; mainly forceps, rare.
+/C15Facial nerve palsy; mainly forceps, rare.
+/C15Fetal death; very rare.
+The ‘Od /C19on’ device is a new low-cost instrument designed for ease of use with minimal training in low
+resource settings. The World Health Organization is implementing a three-phased study protocol but untilthe device has been fully evaluated it cannot be recommended for routine use.
+104Evidence
+level 2 +
+To date, there have been no randomised trials comparing alternative techniques for rotational assisted vaginal birth.
+Rotational birth with the Kielland’s forceps carries additional risks, such as cervical spine injury, and requires speciﬁcexpertise and training. Alternatives to Kielland’s rotational forceps include manual rotation followed by directtraction forceps or vacuum extraction and rotational vacuum birth.
+A meta-analysis of 23 studies of rotational assisted vaginal births reported that Kielland’s forceps are less
+likely to fail (RR 0.32, 95% CI 0.14 –0.76) and less likely to cause neonatal trauma (RR 0.62, 95% CI 0.46 –
+0.85) when compared with rotational vacuum birth.
+105A prospective cohort study of 381 women
+undergoing rotational assisted vaginal birth compared Kielland’s forceps with manual rotation or directforceps and rotational vacuum. Maternal and perinatal outcomes are comparable with few serious adverseoutcomes, but the use of sequential instruments is less with manual rotation or direct forceps than withrotational vacuum (0.6% versus 36.9%; OR 0.01, 95% CI 0.002 –0.09).
+106In a prospective cohort study of
+women with complex births transferred to theatre in the second stage of labour, attempted forceps weremore likely to result in completed vaginal birth than attempted vacuum (63% versus 48%; P<0.01).
+50A
+number of retrospective cohort studies have evaluated the safety of Kielland’s forceps births and reportedhigh success rates (90 –95%) and low morbidity in settings with experienced operators.
+107–113Evidence
+level 2 +
+RCOG Green-top Guideline No. 26 e92 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Enhanced skills in this area may reduce the need for second stage caesarean births and training should be
+encouraged for trainees, particularly those embarking on the advanced labour ward Advanced Training Skills
+Modules. The operator should choose the best approach within their expertise.
+5.5. When should vacuum-assisted birth be discontinued and how should a discontinued vacuum
+procedure be managed?
+Discontinue vacuum-assisted birth where there is no evidence of progressive descent with
+moderate traction during each pull of a correctly applied instrument by an experiencedoperator.P
+Complete vacuum-assisted birth in the majority of cases with a maximum of three pulls tobring the fetal head on to the perineum. Three additional gentle pulls can be used to ease thehead out of the perineum.P
+If there is minimal descent with the ﬁrst two pulls of a vacuum, the operator should consider
+whether the application is suboptimal, the fetal position has been incorrectly diagnosed orthere is cephalopelvic disproportion. Less experienced operators should stop and seek a secondopinion. Experienced operators should re-evaluate the clinical ﬁndings and either change
+approach or discontinue the procedure.P
+Discontinue vacuum-assisted birth if there have been two ‘pop-offs ’of the instrument. Less
+experienced operators should seek senior support after one ‘pop-off ’to ensure the woman has
+the best chance of a successful assisted vaginal birth.P
+The rapid negative pressure application for vacuum-assisted birth is recommended as it reducesthe duration of the procedure with no difference in maternal and neonatal outcomes.P
+The use of sequential instruments is associated with an increased risk of trauma to the infant.However, the operator needs to balance the risks of a caesarean birth following failed vacuumextraction with the risks of forceps birth following failed vacuum extraction.B
+Obstetricians should be aware of the increased neonatal morbidity following failed vacuum-assisted birth and/or sequential use of instruments and should inform the neonatologist whenthis occurs to ensure appropriate management of the baby.P
+Obstetricians should be aware of the increased risk of OASI following sequential use ofinstruments.C
+The procedural aspects of assisted vaginal birth are difﬁcult to research and guidance relies primarily on
+expert opinion and consensus from specialists in the ﬁeld. Vacca114has emphasised the importance of
+clinical training and good technique for vacuum-assisted birth. Vacca recommends up to three pulls tobring the vertex onto the pelvic ﬂoor and up to three additional pulls to ease the head over the perineumwhere most resistance is encountered. An episiotomy should be performed if the perineum is veryEvidence
+level 4
+RCOG Green-top Guideline No. 26 e93 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+resistant. Vacca warns against considering a’pop-off’ to be a safety feature of the device and highlights the
+danger of a fetal vascular injury if a ‘pop off’ occurs at full traction during descent of the head.66,114Bahl
+et al.64describes a detailed skills taxonomy for non-rotational vacuum birth based on qualitative analysis
+of interviews and video recordings from a group of experts. The advice is that vacuum birth should becompleted within three to four contractions. [Appendix 3]Evidence
+level 4
+Accurate instrument placement will inﬂuence the probability of success and the risk of maternal and
+neonatal trauma. An observational study nested within an RCT of 478 nulliparous women reported thatsuboptimal instrument placement is associated with an increased risk of neonatal trauma (OR 4.25, 95%CI 1.85 –9.72), use of sequential instruments (OR 3.99, 95% CI 1.94 –8.23) and caesarean birth for failed
+assisted vaginal birth (OR 3.81, 95% CI 1.10 –13.2).
+115Evidence
+level 2 +
+A multicentre prospective cohort study of 3594 low or outlet vacuum births reported a 5.8% failure rate.
+An increasing number of ‘pop-offs’ is associated with failed assisted vaginal birth (OR 3.58, 95% CI 2.22 –
+5.77 for two ‘pop-offs’ versus no ‘pop-offs’) and duration of application is associated with an increasedrisk of the composite neonatal adverse outcome (OR 6.9, 95% CI 3.58 –11.79 for more than 12 minutes
+duration versus 0 –2 minutes).
+116Evidence
+level 2 +
+A Cochrane review including two RCTs of 754 women found no signiﬁcant difference in detachment rate,
+low Apgar score, scalp trauma, cephalhaematoma and number of tractions comparing rapid to stepwise(0–2 kg per 2 minutes until 0 –8 kg) increments in pressure. There was a signiﬁcant reduction in the time
+between applying the cup and birth with a median difference of –4.4 minutes (95% CI –4.8 to –4.0) for
+the large trial of 660 participants.
+117Evidence
+level 1 +
+Where available, the operator should be aware of the manufacturer’s recommendations for the chosen instrument.
+The use of outlet or low-cavity forceps following failed vacuum extraction may be judicious in avoiding a
+potentially complex caesarean birth. Caesarean birth in the second stage of labour is associated with anincreased risk of major obstetric haemorrhage, prolonged hospital stay and admission of the baby to theneonatal unit compared with completed assisted vaginal birth.
+53,57Evidence
+level 2 ++
+This must be balanced with the increased risk of neonatal trauma associated with sequential use of
+instruments (risk of intracranial haemorrhage, 1 in 256 births for two instruments versus 1 in 334 forfailed forceps proceeding to caesarean birth).
+9A population-based retrospective analysis of 12 014 739
+live births in the US reported that sequential use of vacuum and forceps compared with forceps alone isassociated with an increased risk of need for mechanical ventilation with an aOR of 2.22 (95% CI 1.24 –
+3.97). The risk of intracranial haemorrhage, retinal haemorrhage and feeding difﬁculty is also greater withthe sequential use of instruments.
+118Evidence
+level 2 +
+A population-based follow-up study of 7987 neonates who were born by attempted vacuum extraction
+of whom 245 (3.1%) had a failed assisted vaginal birth demonstrated no increased risk of long-termneurological morbidity up to 18 years of age in association with failed vacuum birth.
+119Evidence
+level 2 +
+RCOG Green-top Guideline No. 26 e94 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Neonatologists and midwives assessing the neonate following a failed attempt at vacuum birth, particularly where
+there have been multiple pulls, ‘pop-offs’ or use of more than one instrument, need to monitor for signs of
+traumatic injury which may not be immediately apparent at the time of birth.5,9
+The use of sequential instruments has been associated with an increase in the incidence of third- andfourth-degree tears in a cohort study of 1360 nulliparous women in the UK (OASI, 17.4% for sequentialversus 8.4% for forceps alone; OR 2.1, 95% CI 1.2 –33).
+120A study of 760 sequential instrument births in
+the US reported a similar increase compared with vacuum alone (OR 2.77, 95% CI 2.36 –3.26) and
+compared with forceps alone (OR 1.39, 95% CI 1.08-1.64).121Evidence
+level 2 +
+The sequential use of instruments should not be attempted by an inexperienced operator without direct supervision
+and should be avoided whenever possible.
+5.6. When should attempted forceps birth be discontinued and how should a discontinued
+forceps procedure be managed?
+Discontinue attempted forceps birth where the forceps cannot be applied easily, the handles do
+not approximate easily or if there is a lack of progressive descent with moderate traction.B
+Discontinue rotational forceps birth if rotation is not easily achieved with gentle pressure.B
+Discontinue attempted forceps birth if birth is not imminent following three pulls of a correctlyapplied instrument by an experienced operator.B
+If there is minimal descent with the ﬁrst one or two pulls of the forceps, the operator should
+consider whether the application is suboptimal, the position has been incorrectly diagnosed orthere is cephalopelvic disproportion. Less experienced operators should stop and seek a secondopinion. Experienced operators should re-evaluate the clinical ﬁndings and either change
+approach or discontinue the procedure.P
+Obstetricians should be aware of the potential neonatal morbidity following a failed attempt atforceps birth and should inform the neonatologist when this occurs to ensure appropriate careof the baby.P
+Obstetricians should be aware of the increased risk of fetal head impaction at caesarean birthfollowing a failed attempt at forceps birth and should be prepared to disimpact the fetal headusing recognised manoeuvres.P
+RCOG Green-top Guideline No. 26 e95 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+A prospective cohort study of 393 women experiencing rotational or midpelvic assisted birth in the
+second stage of labour reported an increased risk of neonatal trauma and admission to the special care
+baby unit following excessive pulls (more than three pulls). The risk was further increased where birth
+was completed by caesarean birth following a failed attempt at assisted vaginal birth.71At 5 years of
+follow-up, there was no difference in the neurodevelopmental outcomes of babies born by assisted vaginalbirth when compared to babies born by caesarean. The two cases of cerebral palsy did not have a causalrelationship to the mode of birth and were born by caesarean.
+8Evidence
+level 2 +
+A multicentre prospective cohort study of 1731 low or outlet forceps births reported a 4.9% failure rate.
+An increasing number of pulls was associated with failed assisted vaginal birth (OR 3.24, 95% CI 1.59 –6.61
+for 3 or more pulls versus one) and duration of application was associated with an increased risk of thecomposite neonatal adverse outcome (OR 5.37, 95% CI 1.49 –19.32 for greater than 12 minutes duration
+versus 0 –2 minutes).
+116Evidence
+level 2 +
+An observational study nested within an RCT of 478 nulliparous women reported that suboptimal
+instrument placement was more likely with forceps than vacuum and was associated with an increasedrisk of neonatal trauma (OR 4.25, 95% CI 1.85 –9.72) and caesarean birth for failed assisted vaginal birth
+(OR 3.81, 95% CI 1.10 –13.2).
+115Evidence
+level 2 +
+The bulk of malpractice litigation results from failure to discontinue the procedure at the appropriate
+time, particularly the failure to eschew prolonged, repeated or excessive traction efforts in the presenceof poor progress. Adverse events, including unsuccessful forceps or vacuum, birth trauma, term babyadmitted to the neonatal unit, low Apgar scores (less than 7 at 5 minutes) and cord arterial pH less than7.10 should trigger an incident report and review if necessary, as part of effective risk managementprocesses.
+122Evidence
+level 4
+Failed forceps birth is associated with excessive pulls (more than three) and prolonged application of the
+instrument (greater than 12 minutes), which in turn is associated with an increased risk of seriousneonatal traumatic injury.
+71,116Neonatologists and midwives assessing the neonate following a failed
+attempt at forceps birth, particularly where there have been multiple pulls or use of more than oneinstrument, need to monitor for signs of traumatic injury, which may not be immediately apparent at thetime of birth.Evidence
+level 2 +
+It is good practice to disimpact the fetal head in advance of caesarean birth where attempted forceps birth has been
+discontinued. Obstetricians should be aware of the increased risk of fetal head impaction and consider manoeuvresto deliver the head safely.
+123Further research is required to evaluate the effectiveness of alternative manoeuvres and
+medical devices for relieving fetal head impaction at caesarean birth.
+5.7. What is the role of episiotomy in preventing maternal pelvic ﬂoor morbidity at assisted
+vaginal birth?
+Mediolateral episiotomy should be discussed with the woman as part of the preparation for
+assisted vaginal birth.P
+RCOG Green-top Guideline No. 26 e96 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+In the absence of robust evidence to support either routine or restrictive use of episiotomy at
+assisted vaginal birth, the decision should be tailored to the circumstances at the time and thepreferences of the woman. The evidence to support use of mediolateral episiotomy at assistedvaginal birth in terms of preventing OASI is stronger for nulliparous women and for birth viaforceps.B
+When performing a mediolateral episiotomy the cut should be at a 60 degree angle initiatedwhen the head is distending the perineum.B
+A two-centre RCT including 200 nulliparous women failed to provide conclusive evidence that a policy of
+routine episiotomy is better or worse than a restrictive policy at assisted vaginal birth. The incidence ofOASI was similar in both groups (8.1% in 99 women randomised to routine episiotomy and 10.9% in 101women randomised to restrictive use; OR 0.72, 95% CI 0.28 –1.87).
+124Evidence
+level 1 +
+A large observational study from the Netherlands of 28 732 assisted vaginal births concluded that
+mediolateral episiotomy is protective against OASI in both vacuum extraction (9.4% versus 1.4%; OR 0.11,95% CI 0.09 –0.13) and forceps birth (22.7% versus 2.6%; OR 0.28, 95% CI 0.13 –0.63).
+125A further
+retrospective cohort study from the Netherlands of 2861 assisted vaginal births reported a 5.7%frequency of OASI and six-fold reduction in OASI with the use of mediolateral episiotomy.
+126In a UK
+prospective study of 1360 assisted vaginal births, episiotomy did not appear to protect against OASI invacuum extraction (4.3% with episiotomy versus 5.5% without episiotomy) or forceps birth (11.7% versus10.6%). However, episiotomy was associated with a greater incidence of postpartum haemorrhage (28.4%versus 18.4%; OR 1.72, 95% CI 1.21 –2.45).
+94A large UK-based retrospective cohort study calculated the
+risk of OASIS based on 1.2 million primiparous vaginal deliveries as follows: 1.89 (95% CI 1.74-2.05) foldgreater in ventouse without episiotomy and 6.53 times greater in forceps deliveries without episiotomy(95% CI 5.57-7.64).
+127,128(2015)Evidence
+level 1 +
+to 2–
+There have been two systematic reviews of the evidence for episiotomy use at vacuum birth each
+including 15 observational studies.129,130The Danish group129interpreted the data as showing that
+mediolateral or lateral episiotomy is protective against OASI in nulliparous women and should beconsidered, while the Israeli group
+130reported that episiotomy in vacuum birth does not appear to be of
+beneﬁt and might even increase maternal morbidity in parous women. A non-signiﬁcant relationship wasshown between mediolateral episiotomy and obstetric anal sphincter injuries (OASIS) in nulliparouswomen (OR 0.68, 95% CI 0.43 –1.07; six studies), whereas an increased risk was demonstrated in parous
+women (OR 1.27, 95% CI 1.05 –1.53; two reports).Evidence
+level 1 +
+6. Aftercare following assisted vaginal birth
+6.1. Should prophylactic antibiotics be given?
+A single prophylactic dose of intravenous amoxicillin and clavulanic acid should be
+recommended following assisted vaginal birth as it signi ﬁcantly reduces con ﬁrmed or suspected
+maternal infection compared to placebo.A
+RCOG Green-top Guideline No. 26 e97 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Good standards of hygiene and aseptic techniques are recommended.P
+A Cochrane review included only one randomised trial of 393 participants. There were seven women
+with endometritis in the group given no antibiotic and none in the prophylactic antibiotic group (RR 0.07,95% CI 0.00 –1.21).
+131There is a similar lack of evidence for the role of antibiotics at normal birth or
+after repair of episiotomy.132The use of antibiotics in labour and after birth is common and yet good
+antibiotic stewardship is needed to prevent antimicrobial resistance. High-quality evidence is required toinform clinical practice.Evidence
+level 1 ++
+The ANODE trial was a multicentre, randomised, blinded, controlled trial done at 27 hospital obstetric units in the
+UK.133Women who had undergone birth by forceps or vacuum at 36 weeks or greater gestation, with no indication
+for ongoing prescription of antibiotics in the postpartum period and no contraindications to prophylactic amoxicillinand clavulanic acid, were randomly assigned (1:1) to receive a single intravenous dose of prophylactic amoxicillin andclavulanic acid or placebo. The proportion of women who had overall primary outcome events was higher thananticipated (486 [15%] of 3225). A signiﬁcantly smaller number of women allocated to the amoxicillin and clavulanicacid group had a conﬁrmed or suspected infection (180 [11%] of 1619) than women who were allocated to theplacebo group (306 [19%] of 1606; RR 0 /C158, 95% CI 0 /C149–0/C169;P<0/C10001). The ANODE trial showed that women
+who received a single prophylactic dose of intravenous amoxicillin and clavulanic acid a median of 3 hours afterassisted vaginal birth were signiﬁcantly less likely to have a conﬁrmed or suspected maternal infection than womenwho received placebo. They were also signiﬁcantly less likely to experience a range of other secondary outcomes,including perineal wound infection, perineal pain, and perineal wound breakdown. They were less likely to report anyprimary care physician or home visits or any hospital outpatient visits in relation to concerns about their perineumcompared with the placebo group. The ANODE trial therefore provides evidence of beneﬁt of prophylacticantibiotic administration after assisted vaginal birth, with few observed adverse events in relation to the intervention.
+Obstetricians should practice good aseptic techniques and use personal protection equipment (for
+example, gloves and aprons, or surgical gowns) to reduce infection and prevent contamination.
+22Evidence
+level 4
+6.2. Should thromboprophylaxis be given?
+Reassess women after assisted vaginal birth for venous thromboembolism risk and the need for
+thromboprophylaxis.D
+There are a lack of data to evaluate the independent risk of assisted vaginal birth for thromboembolism.
+However, many identiﬁed risk factors for thromboembolism, such as prolonged labour and immobility, arealso associated with operative births. Therefore, women should be reassessed after assisted vaginal birthfor risk factors for venous thromboembolism and prescribed thromboprophylaxis accordingly. Theobstetrician should refer to the RCOG Green-top Guideline No. 37a Reducing the risk of Venous
+Thromboembolism during the Pregnancy and the Puerperium .
+134Evidence
+level 4
+RCOG Green-top Guideline No. 26 e98 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+6.3. What analgesia should be given after birth?
+In the absence of contraindications, women should be offered regular nonsteroidal anti-
+inﬂammatory drugs (NSAIDs) and paracetamol routinely.A
+NSAIDs are effective for pain relief for perineal, vaginal and pelvic discomfort. Oral NSAIDs, such as
+diclofenac or ibuprofen, have been shown to be beneﬁcial for perineal pain and provide better analgesiathan paracetamol or placebo. Paracetamol has a good safety record in the postnatal period and is usedregularly in postoperative pain.
+135Evidence
+level 1 ++
+6.4. What precautions should be taken for care of the bladder after birth?
+Women should be educated about the risk of urinary retention so that they are aware of the
+importance of bladder emptying in the postpartum period.P
+The timing and volume of the ﬁrst void urine should be monitored and documented.C
+A post void residual should be measured if urinary retention is suspected.P
+Recommend that women who have received regional analgesia for a trial of assisted vaginal
+birth in theatre have an indwelling catheter in situ after the birth to prevent covert urinaryretention. This should be removed according to the local protocol.P
+Offer women physiotherapy-directed strategies to reduce the risk of urinary incontinence at3 months.B
+Assisted vaginal birth, prolonged labour and epidural analgesia are associated with an increased risk of
+postpartum urinary retention (PUR), which can be associated with long-term bladder dysfunction.136
+There is considerable variation in practice in postpartum bladder management in the UK.137However, at
+a minimum, the ﬁrst void should be measured and if retention is a possibility, a post void residual shouldbe measured to ensure that retention does not go unrecognised.
+138Evidence
+level 2 +
+The use of bladder scanning, as an alternative to catheterisation, to measure residual urine can be used if
+appropriate training has been undertaken, particularly to avoid confusion between the postpartum uterusand the bladder.
+139Evidence
+level 2 ++
+There is one small ‘before and after’ trial that suggests that systematic intermittent bladder catheterisation
+at 2 hours post birth reduces the risk of covert PUR after assisted vaginal birth from 15/23 (65%) in theobservational group to 2/11 (18%) ( P=0.02). This trial is small and subject to bias in the ‘before and
+after’ design.
+140Evidence
+level 2 –
+RCOG Green-top Guideline No. 26 e99 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Women who have had regional analgesia for a trial of assisted vaginal birth should be offered
+an indwelling catheter for 6 –12 hours after birth (in keeping with the local protocol) to prevent
+asymptomatic bladder over ﬁlling, followed by ﬂuid balance charts to ensure good voiding
+volumes.P
+Further good quality studies are required to evaluate strategies for the prevention and management of PUR.
+Urinary incontinence is common in late pregnancy and after birth. A Cochrane review of pelvic ﬂoor
+muscle exercise in antenatal and postnatal women concluded that there is uncertainty about the beneﬁt ofpelvic ﬂoor muscle exercise to treat urinary incontinence in postnatal women.
+141However, one trial that
+involved women with assisted vaginal birth demonstrated that a physiotherapist delivering interventiondesigned to prevent urinary incontinence, reduced incontinence at 3 months from 38.4% to 31.0% in agroup of women that had had assisted vaginal birth and/or a baby over 4 kg.
+142The effect was reduced at
+12 months.Evidence
+level 1 +
+6.5. How can psychological morbidity be reduced for the woman?
+Shared decision making, good communication, and positive continuous support during labour
+and birth have the potential to reduce psychological morbidity following birth.P
+Review women before hospital discharge to discuss the indication for assisted vaginal birth,management of any complications and advice for future births. Best practice is where thewoman is reviewed by the obstetrician who performed the procedure.P
+Offer advice and support to women who have had a traumatic birth and wish to talk abouttheir experience. The effect on the birth partner should also be considered.P
+Do not offer single session, high-intensity psychological interventions with an explicit focus on‘reliving ’the trauma.P
+Offer women with persistent post-traumatic stress disorder (PTSD) symptoms at 1 month
+referral to skilled professionals as per the NICE guidance on PTSD.D
+Factors that inﬂuence the ongoing psychological wellbeing of a woman after assisted vaginal birth are
+complex. A large prospective study from the Norwegian Mother and Child Cohort study reported thatmode of birth was not signiﬁcantly associated with a change in emotional distress (as measured by theeight-item dichotomised version of the Symptoms Check List) from 30 weeks of gestation to 6 monthspostpartum or with the presence of emotional distress at 6 months. The biggest predictor of emotionaldistress postnatally was antenatal emotional distress.
+143Evidence
+level 2 +
+RCOG Green-top Guideline No. 26 e100 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+However, in the UK national maternity survey in 2010, the risk of reduced postnatal health wellbeing was
+higher in women who gave birth with the aid of forceps compared with an unassisted birth; with a higher rate
+of women reporting two or more PTSD-type symptoms at 3 months (25/359 [7%] versus 93/3275 [3%]; OR
+4.89, 95% CI 2.68 –8.9). The survey also concluded that 42% of women that had an assisted vaginal birth did
+not talk to a healthcare professional about their birth and 43% of these women would have liked to.144Evidence
+level 2 +
+Follow-up of a cohort at 3 years following operative birth reported that 50% of women did not plan on
+having a further child and almost one-half of these women reported fear of childbirth as the main reasonfor avoiding pregnancy.
+8Evidence
+level 2 +
+The association between assisted vaginal birth and PTSD is complex and studies have had conﬂicting
+results. A systematic review concluded that assisted vaginal birth is one of a number of risk factors forPTSD and proposes a model for consideration that includes predisposing risk factors, triggering factorsand coping factors.
+145Evidence
+level 2 +
+A further cohort study suggested that the key associations with a traumatic birth are lack of control and
+lack of choice for pain relief. This highlights the importance of shared decision making, consideration forpain relief, and the value of non-technical skills in conducting an operative birth and in reducing the impactof the birth on the psychological wellbeing of the woman and her family.
+146Evidence
+level 2 +
+Several studies have looked at debrieﬁng approaches to reducing psychological morbidity following
+childbirth. A Cochrane review concluded that there is little or no evidence to support either a positive oradverse effect of psychological debrieﬁng for the prevention of psychological trauma in women followingchildbirth.
+147Nonetheless, women report the need for a review following birth to discuss the
+management of any complications and the implications for future births.144Evidence
+level 2 –
+The optimal timing, setting and healthcare professional for post-birth review require further evaluation.
+The obstetrician should refer to the NICE guideline on postnatal mental health and PTSD, and referwomen with continuing severe symptoms to relevant expertise, such as psychology, as recommended inthe guideline.
+138Evidence
+level 4
+6.6. What information should women be given for future births?
+Inform women that there is a high probability of a spontaneous vaginal birth in subsequent
+labours following assisted vaginal birth.B
+Individualise care for women who have sustained a third- or fourth-degree perineal tear, orwho have ongoing pelvic ﬂoor morbidity.P
+RCOG Green-top Guideline No. 26 e101 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Women who have experienced an uncomplicated assisted vaginal birth should be encouraged to aim for a
+spontaneous vaginal birth in a subsequent pregnancy as there is a high chance of success. A population-
+based register study from Sweden found that 90% of women who had a ventouse-assisted birth with their
+ﬁrst baby had a spontaneous or unassisted birth with their second baby.7Although the risk of a further
+operative birth is higher than for women who had an unassisted birth in their ﬁrst pregnancy, the absoluterisk is low. The likelihood of achieving a spontaneous vaginal birth in a subsequent pregnancy isapproximately 80% for women who have required more complex assisted vaginal births in theatre.
+8This
+discussion should take place at the earliest opportunity as there is evidence to suggest that women decidesoon after birth.
+148Evidence
+level 2 +
+The future plan of care should be reviewed carefully with women who have experienced a third- or
+fourth-degree tear, particularly if they are symptomatic, as they may be at increased risk of furtheranorectal damage with a subsequent birth. Women should be counselled regarding the risk of recurrenceand implications for future childbirth as per the RCOG guideline.
+128Evidence
+level 2 +
+7. Governance issues
+7.1. What type of documentation should be completed for assisted vaginal birth?
+Documentation for assisted vaginal birth should include detailed information on the
+assessment, decision making and conduct of the procedure, a plan for postnatal care andsufﬁcient information for counselling in relation to subsequent pregnancies. Use of a
+standardised proforma is recommended.P
+Paired cord blood samples should be processed and recorded following all attempts at assistedvaginal birth.P
+Adverse outcomes, including failed assisted vaginal birth, major obstetric haemorrhage, OASI,shoulder dystocia and signi ﬁcant neonatal complications should trigger an incident report as
+part of effective risk management processes.P
+Like any clinical documentation, the documentation of the decision making and the conduct of the operative birth
+needs to include the key information to inform ongoing medical care of the woman and baby in the postnatal period,to enable debrieﬁng, inform local audits and to inform decision making in subsequent births. An accurate record ofthe procedure must be completed including critical time points in the decision making, conduct and completion ofthe procedure. This is aided by standardised documentation, an example of which can be found in Appendix 2.
+7.2. How should serious adverse events be dealt with?
+Obstetricians should ensure that the ongoing care of the woman, baby and family are
+paramount.P
+RCOG Green-top Guideline No. 26 e102 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Obstetricians have a duty of candour; a professional responsibility to be honest with patients
+when things go wrong.P
+Obstetricians should contribute to adverse event reporting, con ﬁdential enquiries, and take part
+in regular reviews and audits. They should respond constructively to outcomes of reviews,taking necessary steps to address any problems and carry out further retraining where needed.P
+Maternity units should provide a safe and supportive framework to support women, theirfamilies and staff when serious adverse events occur.P
+Like all health professionals, obstetricians have a duty of candour; a professional responsibility to be open and honest
+with patients when things go wrong. This is described in the joint statement from eight regulators in the UK.149
+Maternity units should provide a safe and supportive environment in which learning can take place from seriousadverse events. Highly complex human factors are involved in assisted vaginal birth (and attempted assisted vaginalbirth). An understanding of the interplay of these in adverse events is important. Not all serious adverse events arecaused by failures in care.
+8. Recommendations for future research
+/C15What is the role of oxytocin in the second stage of labour in women using epidural analgesia?
+/C15Should manual rotation be used for correction of fetal malposition early in the second stage of labour?
+/C15What is the role of ultrasound to assess fetal head position prior to assisted vaginal birth?
+/C15What is the best choice of instrument for rotational assisted vaginal birth?
+/C15What manoeuvres can alleviate fetal head impaction at second stage caesarean birth?
+9. Auditable topics
+Maternity unit
+/C15Proportion of assisted vaginal births; the UK average is between 10% and 15%.
+Maternity unit and individual operator
+/C15Proportion of unsuccessful assisted vaginal births.
+/C15Proportion of sequential instrument use.
+/C15Case notes review to audit appropriate care of women with failed assisted vaginal birth or sequential instrument
+use for:
+/C15When to use sequential instrument and when to discontinue.
+/C15Use of ultrasound scan to conﬁrm fetal position.
+/C15Proportion of third- and fourth-degree perineal tears (1–4% for vacuum and 8–12% for forceps).
+/C15Proportion of neonatal morbidity (composite trauma, including subgaleal haemorrhage, brachial plexus injury,fracture, facial nerve palsy, or cerebral haemorrhage), low Apgar score less than 7 at 5 minutes and cordarterial pH less than 7.10 (refer RCOG consent).
+/C15Proportion of documentation of written or verbal consent for assisted vaginal birth (100%).
+/C15Proportion of written consent documented for trial of assisted vaginal birth in operating theatre (100%).
+/C15Completeness of documentation (100%).
+RCOG Green-top Guideline No. 26 e103 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+/C15Proportion of women after assisted vaginal birth receiving a postnatal review explaining the birth and discussing
+birth options in future pregnancy (100%).
+10. Useful links and support groups
+/C15Royal College of Obstetricians and Gynaecologists. London: RCOG; 2012.
+/C15NHS Choices. [https://www.nhs.uk/conditions/pregnancy-and-baby/ventouse-forceps-delivery/].
+/C15Tommy’s. [https://www.tommys.org/pregnancy-information/labour-birth/assisted-birth].
+Disclosures of interest
+DJM reports personal fees from Medico-legal cases of adverse perinatal outcome involving OVB. RB has declared no
+conﬂicts of interest. BKS has declared no conﬂicts of interest. Full disclosures of interest for the developers,Guidelines Committee and peer reviewers are available to view online as supporting information.
+Funding
+All those involved in the development of the Green-top Guidelines, including the Guidelines Committee, GuidelinesCommittee co-chairs, guideline developers, peer reviewers and other reviewers, are unpaid volunteers and receiveno direct funding for their involvement in producing the guideline. The only exception to this is the GuidelinesCommittee members who receive reimbursement for the expenses for attending the Guidelines Committeemeetings for standard RCOG activities; this is standard as per RCOG rules.
+References
+1. NHS Maternity Statistics, England 2016-17 [https://digital.nhs.uk/
+data-and-information/publications/statistical/nhs-maternity-statistics/2016-17]. last accessed 04 February 2020
+2. Anim-Somuah M, Smyth RM, Jones L. Epidural versus non-
+epidural or no analgesia in labour. Cochrane Database Syst Rev
+2011;12:CD000331. Update 2018.
+3. Hodnett ED, Downe S, Walsh D. Alternative versus
+conventional institutional settings for birth. Cochrane Database
+Syst Rev 2012;8:CD000012.
+4. Spencer C, Murphy D, Bewley S. Caesarean section in the
+second stage of labour. BMJ 2006;333:613 –4.
+5. Demissie K, Rhoads GG, Smulian JC, Balasubramanian BA,
+Gandhi K, Joseph KS, et al. Operative vaginal delivery andneonatal and infant adverse outcomes: population basedretrospective analysis. BMJ 2004;329:24 –9.
+6. Murphy DJ, Koh DKM. Cohort study of the decision to delivery
+interval and neonatal outcome for emergency operative vaginaldelivery. Am J Obstet Gynecol 2007;196:145.
+7. Elvander C, Cnattingius S. Outcome of attempted vaginal
+delivery after a previous vacuum extraction: a population-basedstudy. Acta Obstet Gynecol Scand 2016;95:362 –7.
+8. Bahl R, Strachan B, Murphy DJ. Outcome of subsequent
+pregnancy three years after previous operative delivery in
+the second stage of labour: cohort study. BMJ 2004;
+328:311.
+9. Towner D, Castro MA, Eby-Wilkens E, Gilbert WM. Effect of
+mode of delivery in nulliparaous women on neonatal intracranial
+injury. N Engl J Med 1999;341:1709 –14.10. Bohren MA, Hofmeyr GJ, Sakala C, Fukuzawa RK, Cuthbert A.
+Continuous support for women during childbirth. Cochrane
+Database of Syst Rev 2017;7:CD003766.
+11. Wassen MM, Zuijlen J, Roumen FJ, Smits LJ, Marcus MA, Nijhuis JG.
+Early versus late epidural analgesia and risk of instrumental delivery
+in nulliparous women: a systematic review. BJOG 2011;118:655 –61.
+12. Gupta JK, Sood A, Hofmeyr GJ, Vogel JP. Position in the second
+stage of labour for women without epidural analgesia. Cochrane
+Database Syst Rev 2017;5:CD002006.
+13. Epidural and Position Trial Collaborative Group. Upright versus
+lying down position in second stage of labour in nulliparous
+women with low dose epidural: BUMPES randomised controlled
+trial. BMJ 2017;359:j4471.
+14. Kibuka M, Thornton JG. Position in second stage of labour for
+women with epidural analgesia. Cochrane Database Syst Rev
+2017;2:CD008070.
+15. Roberts CL, Torvaldsen S, Cameron CA, Olive E. Delayed versus
+early pushing in women with epidura l analgesia: a systematic review
+and meta-analysis. BJOG 2004;111:1333 –40.
+1 6 . T u u l iM G ,F r e yH A ,O d i b oA O ,M a c o n e sG A ,C a h i l lA G .I m m e d i a t e
+compared with delayed pushing in the second stage of labour: asystematic review and meta-analysis. Obstet Gynecol 2012;120:660 –8.
+17. Torvaldsen S, Roberts CL, Bell JC, Raynes-Greenow CH.
+Discontinuation of epidural analgesia late in labour for reducingthe adverse delivery outcomes associated with epidural analgesia.Cochrane Database Syst Rev 2004;4:CD004457.
+18. Simmons SW, Cyna AM, Dennis AT, Hughes D. Combined
+spinal-epidural versus epidural analgesia in labour. Cochrane
+Database Syst Rev 2007;3:CD003401.
+RCOG Green-top Guideline No. 26 e104 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+19. van der Vyver M, Halpern S, Joseph G. Patient-controlled
+epidural analgesia versus continuous infusion for labour analgesia:
+a meta-analysis. Br J Anaesth 2002;89:459 –65.
+20. Wong CA, Ratliff JT, Sullivan JT, Scavone BM, Toledo P,
+McCarthy RJ. A randomized comparison of programmed
+intermittent epidural bolus with continuous epidural infusion for
+labor analgesia. Anesth Analg 2006;102:904 –9.
+21. Costley PL, East CE. Oxytocin augmentation of labour in women
+with epidural analgesia for reducing operative deliveries. Cochrane
+Database Syst Rev 2013;7:CD009241.
+22. National Institute for Health and Care Excellence. Intrapartum
+care for healthy women and babies . Clinical Guideline 190. London:
+NICE; 2017.
+23. Cargill YM, MacKinnon CJ, Arsenault MY, Bartellas E, Daniels S,
+Gleason T, et al. Clinical Practice Obstetrics Committee.Guidelines for assisted vaginal birth. J Obstet Gynaecol Can
+2004;26:747 –61.
+24. Shaffer BL, Cheng YW, Vargas JE, Caughey AB. Manual rotation
+to reduce caesarean delivery in persistent occiput posterior or
+transverse position. J Matern Fetal Neonatal Med 2011;24:65 –72.
+25. Le Ray C, Deneux-Tharaux C, Khireddine I, Dreyfus M, Vardon D,
+Gofﬁnet F. Manual rotation to decrease operative delivery inposterior or transverse positions. Obstet Gynecol 2013;122:634 –40.
+26. Phipps H, de Vries B, Hyett J, Osborn DA. Prophylactic manual
+rotation for fetal malposition to reduce operative delivery.Cochrane Database Syst Rev 2014;12:CD009298.
+27. Broberg J, Rees S, Jacob S, Drewes P, Wolsey B, Dayton L, et al.
+90: A randomized controlled trial of prophylactic early manual
+rotation of the occiput posterior fetal head at the beginning ofthe second stage of labor vs. expectant management in
+nulliparas. Am J Obstet Gynecol 2016;214:S63.
+28. Committee on Practice Bulletins ––Obstetrics. ACOG Practice
+Bulletin No. 154: Operative Vaginal Delivery. Obstet Gynecol
+2015;126:e56 –65.
+29. Bahl R, Murphy DJ, Strachan B. Decision-making in operative
+vaginal delivery: when to intervene, where to deliver and whichinstrument to use? Qualitative analysis of expert clinical practice.Eur J Obstet Gynecol Reprod Biol 2013;170:333 –40.
+3 0 . C h e u n gY W ,H o p k i n sL M ,C a u g h e yA B .H o wl o n gi st o ol o n g :D o e sa
+prolonged second stage of labor in nulliparous women affect maternaland neonatal morbidity? Am J Obstet Gynecol 2004;191:933 –8.
+31. Pavord S, Rayment R, Madan B, Cumming T, Lester W, Chalmers E,
+et al. on behalf of the Royal College of Obstetricians and
+Gynaecologists. Management of inherited bleeding disorders inpregnancy. Green-top Guideline No. 71. BJOG 2017;124:e193 –e263.32.
+32. Peters H, Francis K, Harding K, Tookey PA, Thorne C.
+Operative vaginal delivery and invasive procedures in pregnancyamong women living with HIV. Eur J Obstet Gynecol Reprod Biol
+2017;210:295 –9.
+33. National Institutes of Health. Management of Hepatitis C: 2002 .
+National Institutes of Health Consensus Conference Statement.Bethesda, Maryland: NIH; 2002 [https://consensus.nih.gov/2002/2002hepatitisc2002116html.htm].
+34. Roberts IF, Stone M. Fetal hemorrhage: complication of vacuum
+extractor after fetal blood sampling. Am J Obstet Gynecol
+1978;132:109.
+35. Thiery M. Fetal hemorrhage following blood sampling and use of
+vacuum extractor. Am J Obstet Gynecol 1979;134:231.
+36. Johanson RB, Pusey J, Livera N, Jones P. North Staffordshire/
+Wigan assisted delivery trial. Br J Obstet Gynaecol 1989;96:
+537–44.37. Johanson RB, Rice C, Doyle M, Arthur J, Ibrahim J, Warwick A,
+et al. A randomised prospective study comparing the new
+vacuum extractor policy with forceps delivery. Br J Obstet
+Gynaecol 1993;100:524 –30.
+38. Esakoff T, Cheng Y, Snowden J, Caughey A. 819: Is operative
+vaginal delivery safe in the preterm fetus? Am J Obstet Gynecol
+2013;208:S343.
+39./C23Aberg K, Norman M, Ek /C19eus C. Preterm birth by vacuum
+extraction and neonatal outcome: a population-based cohort
+study. BMC Pregnancy and Childbirth 2014;14:42.
+40. Schwarzman P, Walﬁsch A, Wainstock T, Segal I, Landau D,
+Sheiner E. Vacuum extraction for the preterm newborn and
+the long-term neurological outcome. Am J Obstet Gynecol 2017;
+216:S549.
+41. Ramphul M, Ooi PV, Burke G, Kennelly MM, Said SAT,
+Montgomery AA, et al. Instrumental delivery and ultrasound: a
+multicentre randomised controlled trial of ultrasound assessment
+of the fetal head position versus standard care as an approach toprevent morbidity at instrumental delivery. BJOG 2014;121:1029 –
+1038.
+42. Popowski T, Porcher R, Fort J, Javoise S, Rozenberg P. Inﬂuence
+of ultrasound determination of fetal head position on mode ofdelivery: a pragmatic randomized trial. Ultrasound Obstet Gynecol
+2015;46:520 –5.
+43. Ramphul M, O’Brien Y, Murphy DJ. Strategies to enhance
+assessment of the fetal head position before instrumental delivery:a survey of obstetric practice in the United Kingdom and Ireland.
+Eur J Obstet Gynecol Reprod Biol 2012;165:181 –8.
+44. Ramphul M, Kennelly M, Murphy DJ. Establishing the accuracy
+and acceptability of abdominal ultrasound to identify the foetal
+head position in the second stage of labour: a validation study.
+Eur J Obstet Gynecol Reprod Biol 2012;164:35 –9.
+45. Sananes NP, Kasbaoui S, Severac F, Gaudineau A, A €ıssi G, Favre
+R, et al. 96: Ultrasound measurement of the perineum-fetal head
+distance as a predictive factor of difﬁcult vaginal operative
+delivery. Am J Obstet Gynecol 2017;216:S69.
+46. Kasbaoui S, S /C19everac F, A €ıssi G, Gaudineau A, Lecointre L,
+Akladios C, et al. Predicting the difﬁculty of operative vaginal
+delivery by ultrasound measurement of fetal head station. Am J
+Obstet Gynecol 2017;216:507.
+47. Bultez T, Quibel T, Bouhanna P, Popowski T, Resche-Rigon
+M, Rozenberg P. Angle of fetal head progression measured
+using transperineal ultrasound as a predictive factor of
+vacuum extraction failure. Ultrasound Obstet Gynecol 2016;48:
+86–91.
+48. Chan SW, Tulloch E, Cooper ES, Smith A, Wojcik W, Norman
+JE. Montgomery and informed consent: where are we now? BMJ
+2017;357:j2224.
+49. Clearkin L. Changes to the law on consent following
+Montgomery vs Lanarkshire Health Board. Br J Hosp Med (Lond)
+2016;77:355 –7.
+50. Avasarala S, Mahendran M. A survey of women’s experiences
+following instrumental vaginal delivery. J Obstet Gynaecol
+2009;29:504 –6.
+51. Royal College of Obstetricians and Gynaecologists.
+Obtaining
+Valid Consent . Clinical Governance Advice No. 6. London:
+RCOG; 2015.
+52. Royal College of Obstetricians and Gynaecologists. Obtaining
+Valid Consent to Participate in Perinatal Research Where Consent isTime critical . Clinical Governance Advice No. 6a. London: RCOG;
+2016.
+RCOG Green-top Guideline No. 26 e105 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+53. Murphy DJ, Liebling RE, Verity L, Swingler R, Patel R. Early
+maternal and neonatal morbidity associated with operative
+delivery in the second stage of labour: a cohort study. Lancet
+2001;358:1203 –7.
+54. Bahl R, Strachan B, Murphy DJ. Pelvic ﬂoor morbidity at 3 years
+after instrumental delivery and cesarean section in the second
+stage of labor and the impact of a subsequent delivery. Am J
+Obstet Gynecol 2005;192:789 –94.
+55. Shmueli A, Salman L, Ashwal E, Hiersch L, Gabbay-Benziv R,
+Yogev Y, et al. Perinatal outcomes of vacuum assisted versuscesarean deliveries for prolonged second stage of delivery atterm. J Matern Fetal Neonatal Med 2016;30:886 –9.
+56. Bahl R, Patel RR, Swingler R, Ellis N, Murphy DJ.
+Neurodevelopmental outcome at 5 years after operative deliveryin the second stage of labor: a cohort study. Am J Obstet Gynecol
+2007;197:147.
+57. Walsh C, Robson M, McAuliffe F. 647: Neonatal morbidity and
+mortality of operative vaginal delivery: a 10-year study of 82,000infants. Am J Obstet Gynecol 2012;206:S290.
+58. Contag SA, Clifton RG, Bloom SL, Spong CY, Varner MW,
+Rouse DJ, et al. Neonatal outcomes and operative vaginaldelivery versus cesarean delivery. Am J Perinatol 2010;27:493 –9.
+59. Muraca GM, Sabr Y, Lisonkova S, Skoll A, Brant R, Cundiff GW,
+et al. Perinatal and maternal morbidity and mortality after
+attempted operative vaginal delivery at midpelvic station. CMAJ
+2017;189:E764 –72.
+60. Ducarme G, Hamel JF, Bouet PE, Legendre G, Vandenbroucke L,
+Sentilhes L. Maternal and neonatal morbidity after attempted
+operative vaginal delivery according to Fetal head station. Obstet
+Gynecol 2015;126:521 –9.
+61. Royal College of Obstetricians and Gynaecologists. Operative
+vaginal delivery . Consent Advice No. 11. London: RCOG; 2010.
+62. Johnstone T. Minimizing risk: obstetric skills training. Clinical Risk
+2003;9:99 –102.
+63. Bahl R, Murphy DJ, Strachan B. Non-technical skills for
+obstetricians conducting forceps and vacuum deliveries:qualitative analysis by interviews and video recordings. Eur J
+Obstet Gynecol Reprod Biol 2010;150:147 –51.
+64. Bahl R, Murphy DJ, Strachan B. Qualitative analysis by
+interviews and video recordings to establish the componentsof a skilled low-cavity non-rotational vacuum delivery. BJOG
+2009;116:319 –26.
+65. Bahl R, Murphy DJ, Strachan B. Qualitative analysis by interviews
+and video recordings to establish the components of a skilledrotational forceps delivery. Eur J Obstet Gynecol Reprod Biol
+2013;170:341 –7.
+66. Attilakos G, Draycott T, Gale A, Siassakos D, Winter C editors.
+ROBuST: RCOG Operative Birth Stimulation Training: Course Manual .
+Cambridge: Cambridge University Press; 2014.
+67. Royal College of Obstetricians and Gynaecologists. OSATS .
+London; RCOG: 2018. [https://www.rcog.org.uk/en/careers-training/about-specialty-training-in-og/assessment-and-progression-through-training/workplace-based-assessments/osats/]
+68. Solt I, Jackson S, Moore T, Rotmensch S, Kim MJ. Teaching
+forceps: the impact of proactive faculty. Am J Obstet Gynecol
+2011;204:448.
+69. Lane S, Weeks A, Scholeﬁeld H, Alﬁrevic Z. Monitoring
+obstetricians’ performance with statistical process control charts.BJOG 2007;114:614 –8.
+70. Sau A, Sau M, Ahmed H, Brown R. Vacuum extraction: is there
+any need to improve the current training in the UK? Acta Obstet
+Gynecol Scand 2004;83:466 –
+70.71. Murphy DJ, Liebling RE, Patel R, Verity L, Swingler R. Cohort
+study of operative delivery in the second stage of labour and
+standard of obstetric care. BJOG 2003;110:610 –5.
+72. Royal College of Obstetricians and Gynaecologists. Responsibilities
+of Consultant On-call . Good Practice No. 8. London: RCOG; 2009.
+73. Butler K, Ramphul M, Dunney C, Farren M, McSweeney A,
+McNamara K, et al. A prospective cohort study of the morbidityassociated with operative vaginal deliveries performed by day and
+at night. BMJ Open 2014;4:e006291.
+74. Salman L, Hadar E, Aviram A, Wiznitzer RC, Chen R, Gabbay-
+Benziv R. 913: When the sun goes down - effect of time of dayon perinatal adverse outcome following vacuum assisted vaginal
+deliveries. Am J Obstet Gynecol 2017;216:S521.
+75. Bardos J, Loudon H, Rekawek P, Friedman F, Brodman M, Fox
+NS. Associations Between Senior Obstetrician Supervision ofResident Deliveries and Mode of Delivery. Obstet Gynecol
+2017;129:486 –90.
+76./C23Aberg K, Norman M, Pettersson K, Ek /C19eus C. Vacuum extraction of
+fetal macrosomia and risk of neonatal complications: a population-
+based cohort study. Acta Obstet Gynecol Scand 2016;95:1089 –96.
+77. Ahlberg M, Norman M, Hjelmstedt A, Ek /C19eus C. Risk factors for
+failed vacuum extraction and associated complications in termnewborn infants: a population-based cohort study. J Matern Fetal
+Neonatal Med 2016;29:1646 –51.
+78. Aiken AR, Aiken CE, Alberry MS, Brockelsby JC, Scott JG.
+Management of fetal malposition in the second stage of labor: apropensity score analysis. Am J Obstet Gynecol 2015;212:355.
+79. Lipschuetz M, Cohen SM, Ein-Mor E, Sapir H, Hochner-Celnikier
+D, Porat S, et al. A large head circumference is more stronglyassociated with unplanned cesarean or instrumental delivery and
+neonatal complications than high birthweight. Am J Obstet Gynecol
+2015;213:833.
+80. Ooi PV, Ramphul M, Said S, Burke G, Kennelly MM, Murphy DJ.
+Ultrasound assessment of fetal head circumference at the onset
+of labor as a predictor of operative delivery. J Matern Fetal
+Neonatal Med 2015;282:182 –6.
+81. Revah A, Ezra Y, Farine D, Ritchie K. Failed trial of vacuum or
+forceps –maternal and fetal outcome. Am J Obstet Gynecol
+1997;176:200 –4.
+82. Alexander JM, Leveno KJ, Hauth JC, Landon MB, Gilbert S,
+Spong CY, et al. Eunice Kennedy Shriver National Institute ofChild Health and Human Development (NICHD) Maternal-Fetal
+Medicine Units Network (MFMU). Failed operative vaginal
+delivery. Obstet Gynecol 2009;114:1017 –22.
+83. Olagundoye V, MacKenzie IZ. The impact of a trial of
+instrumental delivery in theatre on neonatal outcome. BJOG
+2007;114:603 –8.
+84. Johanson RB, Menon BK. Vacuum extraction versus forceps for
+assisted vaginal delivery. Cochrane Database Syst Rev 2000;2:CD000224.
+85. Attilakos G, Sibanda T, Winter C, Johnson N, Draycott T. A
+randomised controlled trial of a new handheld vacuumextraction device. BJOG 2005;112:1510 –5.
+86. Groom KM, Jones BA, Miller N, Paterson-Brown S. A
+prospective randomised controlled trial of the Kiwi Omnicup
+versus conventional ventouse cups for vacuum-assisted vaginaldelivery. BJOG
+2006;113:183 –9.
+87. Equy V, David-Tchouda S, Dreyfus M, Riethmuller D, Vendittelli
+F, Cabaud V, et al. Clinical impact of the disposable ventouseiCup/C226versus a metallic vacuum cup: a multicenter randomized
+controlled trial. BMC Pregnancy Childbirth 2015;15:332.
+88. Mola GD, Kuk JM. A randomised controlled trial of two
+instruments for vacuum-assisted delivery (Vacca Re-Usable
+RCOG Green-top Guideline No. 26 e106 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+OmniCup and the Bird anterior and posterior cups) to compare
+failure rates, safety and use effectiveness. Aust N Z J Obstet
+Gynaecol 2010;50:246 –52.
+89. Baskett TF, Fanning CA, Young DC. A prospective observational
+study of 1000 vacuum assisted deliveries with the OmniCup
+device. J Obstet Gynaecol Can 2008;30:573 –80.
+90. Johanson R, Menon V. Soft versus rigid vacuum extractor cups
+for assisted vaginal delivery. Cochrane Database of Syst Rev 2000;2:
+CD000446.
+91. O’Mahony F, Hofmeyr GJ. Menon V. Choice of instruments for
+assisted vaginal delivery. Cochrane Database of Syst Rev 2010;11:
+CD005455.
+92. Department of Health, Welsh Ofﬁce, Scottish Home and Health
+Department, Department of Health and Social Services,Northern Ireland. Report on Conﬁdential Enquiries into Maternal
+Deaths in the United Kingdom, 1988 –1990 . London: HMSO; 1994.
+93. Department of Health, Welsh Ofﬁce, Scottish Home and Health
+Department, Department of Health and Social Services,Northern Ireland. Why Mothe rs Die. Report on Conﬁdential
+Enquiries into Maternal Deaths in the United Kingdom, 1994 –1996.
+London: The Stationery Ofﬁce; 1998.
+94. Macleod M, Strachan B, Bahl R, Howarth L, Goyder K, Van de
+Venne M, et al. A prospective cohort study of maternal and
+neonatal morbidity in relation to use of episiotomy at operative
+vaginal delivery. BJOG 2008;115:1688 –94.
+95. Memon HU, Blomquist JL, Dietz HP, Pierce CB, Weinstein MM,
+Handa VL. Comparison of levator ani muscle avulsion injury after
+forceps-assisted and vacuum-assisted vaginal childbirth. Obstet
+Gynecol 2015;125:1080 –7.
+96. Bradley MS, Kaminski RJ, Streitman DC, Dunn SL, Krans EE.
+Effect of rotation on perineal lacerations in forceps-assisted
+vaginal deliveries. Obstet Gynecol 2013;122:132 –7.
+97. Crane AK, Geller EJ, Bane H, Ju R, Myers E, Matthews CA.
+Evaluation of pelvic ﬂoor symptoms and sexual function in
+primiparous women who underwent operative vaginal delivery
+versus caesarean delivery for second-stage arrest. Female Pelvic
+Med Reconstr Surg 2013;19:13 –6.
+98. Wang J, Vause S, Tower C. Deﬁning risks of instrumental
+delivery in a large UK cohort. Arch Dis Child Fetal Neonatal Ed
+2012;97:A79.
+99. R €ais€anen S, Vehvil €ainen-Julkunen K, Cartwright R, Gissler M,
+Heinonen S. Vacuum-assisted deliveries and the risk of obstetric
+anal sphincter injuries-a retrospective register-based study in
+Finland. BJOG 2012;119:1370 –8.
+100. De Souza A, Dwyer PL, Charity M, Thomas E, Ferreira CH,
+Schierlitz L. The effects of mode delivery on postpartum sexual
+function: a prospective study. BJOG 2015;122:1410 –8.
+101. Macleod M, Goyder K, Howarth L, Bahl R, Strachan B, Murphy
+DJ. Morbidity experienced by women before and after operative
+vaginal delivery: prospective cohort study nested within a two-
+centre randomised controlled trial of restrictive versus routineuse of episiotomy. BJOG 2013;120:1020
+–7.
+102. Johanson RB, Heycock E, Carter J, Sultan AH, Walklate K, Jones
+PW. Maternal and child health after assisted vaginal delivery: ﬁve-
+year follow up of a randomised controlled study comparingforceps and ventouse. Br J Obstet Gynaecol 1999;106:544 –9.
+103. Whitby EH, Grifﬁths PD, Rutter S, Smith MF, Sprigg A,
+Ohadike P, et al. Frequency and natural history of subduralhaemorrhages in babies and relation to obstetric factors.Lancet 2004;363:846 –51.104. Schvartzman JA, Carroli D, Di Renzo GC, Hofmeyr J, Kafrissen
+M, Merialdi M, et al. 0607 The ODON device. A new simple
+instrument for assisted vaginal delivery. Int J Gynecol Obstet
+2012;119:S475 –6.
+105. Al Wattar BH, Al Wattar B, Gallos I, Pirie AM. Rotational
+vaginal delivery with Kielland’s forceps: a systematic review and
+meta-analysis of effectiveness and safety outcomes. Curr Opin
+Obstet Gynecol 2015;27:438 –44.
+106. Bahl R, Van de Venne M, Macleod M, Strachan B, Murphy DJ.
+Maternal and neonatal morbidity in relation to the instrumentused for mid-cavity rotational operative vaginal delivery: aprospective cohort study. BJOG 2013;120:1526 –32.
+107. Stock SJ, Josephs K, Farquharson S, Love C, Cooper SE, Kissack
+C, et al. Maternal and neonatal outcomes of successful Kielland’srotational forceps delivery. Obstet Gynecol 2013;121:1032 –9.
+108. Burke N, Field K, Mujahid F, Morrison JJ. Use and safety of
+Kielland’s forceps in current obstetric practice. Obstet Gynecol
+2012;120:766 –70.
+109. Al-Suhel R, Gill S, Robson S, Shadbolt B. Kjelland’s forceps in the
+new millennium. Maternal and neonatal outcomes of attempted
+rotational forceps delivery. Aust N Z J Obstet Gynaecol 2009;49:510 –4.
+110. O’Brien S, Day F, Lenguerrand E, Cornthwaite K, Edwards S,
+Siassakos D. Rotational forceps versus manual rotation and
+direct forceps: A retrospective cohort study. Eur J Obstet Gynecol
+Reprod Biol 2017;212:119 –25.
+111. Tempest N, Hart A, Walkinshaw S, Hapangama DK. A re-
+evaluation of the role of rotational forceps: retrospective
+comparison of maternal and perinatal outcomes following
+different methods of birth for malposition in the second stage oflabour. BJOG 2013;120:1277 –84.
+112. Tempest N, McGuinness N, Lane S, Hapangama DK. Neonatal
+and maternal outcomes of successful manual rotation to correctmalposition of the fetal head; A retrospective and prospectiveobservational study. PLoS ONE 2017;12:e0176861.
+113. Aiken CE, Aiken AR, Brockelsby JC, Scott JG. Factors inﬂuencing
+the likelihood of instrumental delivery success. Obstet Gynecol
+2014;123:796 –803.
+114. Vacca A. The trouble with vacuum extraction. Curr Obstet
+Gynaecol 1999;9:41 –5.
+115. Ramphul M, Kennelly MM, Burke G, Murphy DJ. Risk factors and
+morbidity associated with suboptimal instrument placement atinstrumental delivery: observational study nested within the
+Instrumental Delivery & Ultrasound randomised controlled trial
+ISRCTN 72230496. BJOG 2015;122:558 –63.
+116. Miller ES. 223: Is duration of operative vaginal delivery associated
+with adverse obstetric outcomes? Am J Obstet Gynecol 2016;214:
+S133.
+117. Suwannachat B, Lumbiganon P, Laopaiboon M. Rapid versus
+stepwise negative pressure application for vacuum extraction
+assisted vaginal delivery. Cochrane Database Syst Rev 2012:CD006636.
+118. Gardella C, Taylor M, Benedetti T, Hitti J, Critchlow C. The
+effect of sequential use of vacuum and forceps for assistedvaginal delivery on neonatal and maternal outcomes. Am J Obstet
+Gynecol 2001;185:896 –902.
+119. Mastrolia SA, Walﬁsch A, Wainstock T, Landau D, Sheiner E.
+947: Failed vacuum does not increase the risk for long-term
+pediatric neurological morbidity. Am J Obstet Gynecol 2017;216:
+S535 –6.
+120. Murphy DJ, Macleod M, Bahl R, Strachan B. A cohort study of
+maternal and neonatal morbidity in relation to use of sequential
+instruments at operative vaginal delivery. Eur J Obstet Gynecol
+Reprod Biol 2011;156:41 –5.
+RCOG Green-top Guideline No. 26 e107 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+121. Fong A, Wu E, Pan D, Ogunyemi D, Chung J. 784: Failure rate
+and delivery-related maternal morbidity in vacuum delivery,
+forceps delivery, or a combination of both. Am J Obstet Gynecol
+2013;208:S329.
+122. NHS Litigation Authority. Clinical Negligence Scheme for Trusts.
+Maternity. Clinical Risk Management Standards, April 2005 . London:
+NHSLA; 2005.
+123. Jeve YB, Navti OB, Konje J. Comparison of techniques used to
+deliver a deeply impacted fetal head at full dilatation: a
+systematic review and meta-analysis. BJOG 2016;123:337 –345.
+124. Murphy DJ, Macleod M, Bahl R, Goyder K, Howarth L, Strachan B.
+A randomised controlled trial of routine versus restrictive use of
+episiotomy at operative vaginal delivery: a multicentre pilot study.
+BJOG 2008;115:1695 –702.
+125. de Leeuw JW, de Wit C, Kuijken JP, Bruinse HW. Mediolateral
+episiotomy reduces the risk for anal sphincter injury during
+operative vaginal delivery. BJOG 2008;115:104 –8.
+126. de Vogel J, van der Leeuw-van Beek A, Gietelink D, Vujkovic M, de
+Leeuw JW, van Bavel J, et al. The effect of mediolateral episiotomy
+during operative vaginal delivery on the risk of developing
+obstetrical anal sphincter injuries. Am J Obstet Gynecol 2012;206:404.
+127. Gurol-Urangci I, Cromwell DA, Edozien LC, et al. Third and
+fourth degree perineal tears among primiparous women in
+England between 2000 and 2012: time trends and risk factors.
+BJOG 2013;120:1516 –25.
+128. Royal College of Obstetricians and Gynaecologists. The
+Management of Third- and Fourth-Degree Perineal Tears . Green-top
+Guideline No. 29. London: RCOG; 2015.
+129. Lund NS, Persson LK, Jang €o H, Gommesen D, Westergaard HB.
+Episiotomy in vacuum-assisted delivery affects the risk of
+obstetric anal sphincter injury: a systematic review and meta-
+analysis. Eur J Obstet Gynecol Reprod Biol 2016;207:193 –9.
+130. Sagi-Dain L, Sagi S. Morbidity associated with episiotomy in
+vacuum delivery: a systematic review and meta-analysis. BJOG
+2015;122:1073 –81.
+131. Liabsuetrakul T, Choobun T, Peeyananjarassri K, Islam QM.
+Antibiotic prophylaxis for operative vaginal delivery. Cochrane
+Database Syst Rev 2017;8:CD004455.
+132. Bonet M, Ota E, Chibueze CE, Oladapo OT. Routine antibiotic
+prophylaxis after normal vaginal birth for reducing maternalinfectious morbidity. Cochrane Database Syst Rev 2017;11:CD012137.
+133. Knight M, Chiocchia V, Partlett C, Rivero-Arias O, Hua X,
+Hinshaw K, et al. on behalf of the ANODE collaborative group*.
+Prophylactic antibiotics in the prevention of infection afteroperative vaginal delivery (ANODE): a multicentre randomised
+controlled trial. Lancet 2019;393:2395 –403.
+134. Royal College of Obstetricians and Gynaecologists. Reducing the
+Risk of Venous Thromboembolism during Pregnancy and thePuerperium . Green-top Guideline No. 37a. London: RCOG; 2015.135. Nikpoor P, Bain E. Analgesia for forceps delivery. Cochrane
+Database Syst Rev 2013;9:CD008878.
+136. Mulder F, Schoffelmeer M, Hakvoort R, Limpens J, Mol BW, van
+der Post JA, et al. Risk factors for postpartum urinary retention:a systematic review and meta-analysis. BJOG 2012;119:1440 –6.
+137. Zaki MM, Pandit M, Jackson S. National survey for intrapartum
+and postpartum bladder care: assessing the need for guidelines.BJOG 2004;111:874 –6.
+138. National Institute for Health and Care Excellence. Postnatal care
+up to 8 weeks after birth . NICE Clinical Guideline 37. London:
+NICE; 2006.
+139. National Institute for Health and Care Excellence. (2013) Urinary
+incontinence in women: management . NICE Clinical Guideline 171.
+London: NICE; 2015.
+140. Neron M, All /C18egre L, Huberlant S, Mousty E, de Tayrac R, Fatton
+B, et al. Impact of systematic urinary catheterization protocol in
+delivery room on covert postpartum urinary retention: a before-
+after study. Sci Rep 2017;7:17720.
+141. Woodley SJ, Boyle R, Cody JD, Mørkved S. Hay-Smith EC. Pelvic
+ﬂoor muscle training for prevention and treatment of urinary
+and faecal incontinence in antenatal and postnatal women.Cochrane Database Syst Revs 2017;12:CD007471.
+142. Chiarelli P, Cockburn J. Promoting urinary continence in women
+after delivery: randomised controlled trial. BMJ 2002;324:1241.
+143. Adams SS, Eberhard-Gran M, Sandvik /C23AR, Eskild A. Mode of
+delivery and postpartum emotional distress: a cohort study of55,814 women. BJOG 2012;119:298 –305.
+144. Rowlands IJ, Redshaw M. Mode of birth and women’s
+psychological and physical wellbeing in the postnatal period. BMC
+Pregnancy and Childbirth 2012;12:138.
+145. Andersen LB, Melvaer LB, Videbech P, Lamont RF, Joergensen JS.
+Risk factors for developing post-traumatic stress disorderfollowing childbirth: a systematic review. Acta Obstet Gynecol
+Scand 2012;91:1261 –72.
+146. Garthus-Niegel S, von Soest T, Vollrath ME, Eberhard-Gran M.
+The impact of subjective birth experiences on post-traumaticstress symptoms: a longitudinal study. Arch Womens Ment Health
+2013;16:1 –10.
+147. Bastos MH, Furuta M, Small R, McKenzie-McHarg K, Bick D.
+Debrieﬁng interventions for the prevention of psychologicaltrauma in women following childbirth. Cochrane Database Syst
+Revs 2015:CD007194.
+148. Murphy DJ, Liebling RE. Cohort study of maternal views on
+future mode of delivery following operative delivery in thesecond stage of labor. Am J Obstet Gynecol 2003;188:542 –8.
+149. Care Quality Commission. Regulation 20: Duty of Candour.
+Information for all providers: NHS bodies, adult social care, primarymedical and dental care, and independent healthcare . London:
+CQC; 2015.
+RCOG Green-top Guideline No. 26 e108 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Appendix 1 Explanation of guidelines and evidence levels
+Clinical guidelines are: ‘systematically developed statements which assist clinicians and patients in making decisions
+about appropriate treatment for speciﬁc conditions’. Each guideline is systematically developed using a standardised
+methodology. Exact details of this process can be found in Clinical Governance Advice No.1 Development of RCOG
+Green-top Guidelines (available on the RCOG website at https://www.rcog.org.uk/en/guidelines-research-services/guide
+lines/clinical-governance-advice-1a/). These recommendations are not intended to dictate an exclusive course ofmanagement or treatment. They must be evaluated with reference to individual patient needs, resources andlimitations unique to the institution and variations in local populations. It is hoped that this process of localownership will help to incorporate these guidelines into routine practice. Attention is drawn to areas of clinicaluncertainty where further research may be indicated.
+The evidence used in this guideline was graded using the scheme below and the recommendations formulated in a
+similar fashion with a standardised grading scheme.
+Classi ﬁcation of evidence levels Grades of Recommendation
+1++ High-quality meta-analyses, systematic
+reviews of randomised controlled trials orrandomised controlled trials with a very lowrisk of bias
+AAt least one meta-analysis, systematic reviewsor RCT rated as 1 ++, and directly applicable to
+the target population; or a systematic review ofRCTs or a body of evidence consistingprincipally of studies rated as 1 +, directly
+applicable to the target population and
+demonstrating overall consistency of results1+ Well-conducted meta-analyses, systematic
+reviews of randomised controlled trials or
+randomised controlled trials with a low riskof bias
+BA body of evidence including studies rated as 2 ++
+directly applicable to the target population, and
+demonstrating overall consistency of results; orExtrapolated evidence from studies rated as 1 ++
+or 1+1/C0 Meta-analyses, systematic reviews of
+randomised controlled trials or randomisedcontrolled trials with a high risk of bias
+CA body of evidence including studies rated as2+directly applicable to the target population,
+and demonstrating overall consistency ofresults; orExtrapolated evidence from studies rated as2++2++ High-quality systematic reviews of case –
+control or cohort studies or high-qualitycase–control or cohort studies with a very
+low risk of confounding, bias or chance and ahigh probability that the relationship is causal
+DEvidence level 3 or 4; orExtrapolated evidence from studies rated as 2 +2+ Well-conducted case –control or cohort
+studies with a low risk of confounding, biasor chanceand a moderate probability that therelationship is causal
+Good Practice Points 2/C0 Case –control or cohort studies with a high
+risk of confounding, bias or chance and asigniﬁcant risk that the relationship is not
+causal
+PRecommended best practice based on theclinical experience of the guidelinedevelopment group3 Non-analytical studies, e.g. case reports, case
+series
+4 Expert opinion
+RCOG Green-top Guideline No. 26 e109 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Appendix 2 Assisted vaginal birth record (revised)
+RCOG Green-top Guideline No. 26 e110 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Appendix 3 Decision making for assisted vaginal birth
+Safety criteria for Opera/g415ve Vaginal Birth (OVB) met
+Consider Trial in Theatre if
+• Head 1/5thpalpable abdominally
+• Head is in mid-pelvis • Rota/g415on required
+• Features suspicious of CPD Con/g415nue in the Labour Room if
+• Head is low-pelvic/outlet
+• No rota/g415on or rotates easily 
+• No features of CPD 
+Select op/g415mal 
+instrumentSelect op/g415mal place 
+for birth
+• Select instrument most competent at using (operator or supervising operator)
+• Select instrument least likely to fail, avoiding sequen/g415al use of instruments
+• Avoid vacuum assisted birth at < 32 weeks gesta/g415on; cau/g415on at 32–36 weeks
+Correct applica/g415on 
+of instrumentIf unable to achieve correct applica/g415on:
+• Reassess engagement, posi/g415on, sta/g415on and asyncli/g415sm• Seek second opinion if less experienced 
+• Experienced operator to reassess and consider reapplica/g415on, change of instrument or 
+discon/g415nue procedure
+• Discon/g415nue procedure if not achieved co rrect applica/g415on with above measures
+A/g425empt trac/g415onIf progressive descent not observed with appropriate trac/g415on:
+• Check if the instrument is applied correctly
+• Reassess for features of cephalo-pelvic dispropor/g415on
+• Seek second opinion if less experienced 
+• Experienced operator may revise approach (c hange instrument, alter direc/g415on of 
+trac/g415on)
+• Discon/g415nue procedure if descent not achieved with above measures
+• Discon/g415nue vacuum assisted birth if two ‘pop oﬀs’ of the instrumentA/g425empt rota/g415on (if 
+indicated)If unable to achieve rota/g415on easily:
+• Senior obstetrician to check for correc t applica/g415on and correct rota/g415on technique
+• Discon/g415nue procedure if rota/g415on not achieved with above measures 
+Note: birth in direct OP posi/g415on may occur with vacuum or at low sta/g415on forceps
+•
+Reassess a/g332er 3 
+pullsConsider discon/g415nuing the procedure:
+• If in vacuum-assisted birth the head is no t on the pelvic ﬂoor (and birth an/g415cipated 
+with maximum 3 gentle pulls to ease over perineum)
+• If forceps birth and the head is not crowning with birth imminent
+Failed a/g425empt at 
+OVBConsider the consequences of failed a/g425empt at OVB
+• Consider forceps followed by failed vacuum only with vertex at low sta/g415on
+• Increased risk of trauma to the fetus an d OASI with sequen/g415al instrument use
+• Increased morbidity for the mother with a caesarean birth in second stage
+• Increased risk of fetal head impac/g415on at caesarean birth 
+Inform neonatologist of 
+increased risk of neonatal 
+morbidity •Complete the OVB proforma
+•Debrief the mother/partner/family
+RCOG Green-top Guideline No. 26 e111 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+This guideline was produced on behalf of the Royal College of Obstetricians and Gynaecologists by: Professor D J Murphy
+FRCOG, Dublin; Dr BK Strachan MRCOG, Bristol; Dr R Bahl MRCOG, Bristol
+and peer reviewed by: Mr A Pradhan FRCOG, Addenbrookes Hospital, Cambridge; Mr D Fraser FRCOG, Norwich;
+Dr R Napolitano MD PhD, London; Dr J Allison MRCOG, Edinburgh; Dr GR Graham FRCA, Maidstone and Tunbridge
+Wells NHS Trust, Kent; Maggie Matthews FRCOG, Maidstone and Tunbridge Wells NHS Trust, Kent; Dr Kim Hinshaw
+FRCOG, Sunderland; Mr AH Sultan MD FRCOG, Croydon; Dr P Bidwell PhD RM, Royal College of Obstetricians &Gynaecologists, London; Dr HP Dietz MD PhD FRANZCOG DDU CU, University of Sydney, Australia; Dr A Gorry
+MRCOG, Barts Health NHS Trust, London; Mrs A Diyaf MRCOG, Bridgend; Dr LM Page MRCOG, London; Dr A Ikomi
+FRCOG, Scunthorpe; Dr J Dagustun, Greater Manchester; Dr J Chamberlain MRCOG, Edinburgh; Dr Bim WilliamsFRCOG, Bolton; Dr A Aggarwal MRCOG, Leeds; Dr G Esegbona MRCOG, London; British Intrapartum Care Society;Caesarean Birth; Birthrights; Safe Obstetric Systems; Maternity Outcomes Matter; Birth trauma association.
+Committee lead reviewers were: Dr B Magowan FRCOG, Melrose and Dr A McKelvey MRCOG, NorwichThe Co-Chairs of the Guidelines Committee were: Dr MA Ledingham FRCOG, Glasgow and Dr B Magowan FRCOG,
+Melrose
+All RCOG guidance developers are asked to declare any conﬂicts of interest. A statement summarising
+any conﬂicts of interest for this guideline is available from: https://www.rcog.org.uk/en/guidelines-researc
+hservices/guidelines/gtg26 .
+The ﬁnal version is the responsibility of the Guidelines Committee of the RCOG.
+The guideline will be considered for update 3 years after publication, with an intermediate
+assessment of the need to update 2 years after publication.
+DISCLAIMER
+The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical practice.They present recognised methods and techniques of clinical practice, based on published evidence, for consideration byobstetricians and gynaecologists and other relevant health professionals. The ultimate judgement regarding a particular
+clinical procedure or treatment plan must be made by the doctor or other attendant in the light of clinical data presented
+by the patient and the diagnostic and treatment options available.
+This means that RCOG Guidelines are unlike protocols or guidelines issued by employers, as they are not intended to be
+prescriptive directions deﬁning a single course of management. Departure from the local prescriptive protocols orguidelines should be fully documented in the patient’s case notes at the time the relevant decision is taken.
+RCOG Green-top Guideline No. 26 e112 of e112 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2020, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16092 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License

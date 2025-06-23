@@ -1,0 +1,544 @@
+# Extracted from: CG1128 Neonatal Resuscitation.pdf
+# Guideline ID: cg1128-neonatal-resuscitation
+# Content length: 22960 characters
+# Processing date: 1750066899.9746742
+
+CG1128 Neonatal Resuscitation Guideline V6. 1 Jan 2023 Page 1 of 18 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+ 
+Neonatal Resuscitation Guideline 
+Summary statement: How does the 
+document support patient care? By providing clear guidance for staff involved in neonatal 
+resuscitation 
+Staff/stakeholders involved in 
+development: Paediatric Consultants, Obstetric Consul tants and Senior 
+Midwifery Staff 
+Division: Women and Children’s 
+Department: Maternity & Neonatal 
+Responsible Person: Chief of Service 
+Author: Paediatric Lead Consultant and Neonatal Matron 
+For use by: All Medical and Midwifery staff involved in the 
+resuscitation of newborns. 
+Purpose: To provide evidence -based guidance on the 
+management of Neonatal Resuscitation. 
+This document support : NICE (2014) Intrapartum Care CG190 (last updated 2017) 
+Resuscitation Council UK: Newborn 
+Resuscitation Council UK COVID -19 considerations 
+Key related documents: UH Sussex (SRH & WH) Maternity Guidelines: 
+Examination of the Newborn, Admission to Neonatal Unit, 
+Immediate Care of the Newborn 
+ UH Sussex Resuscitation Policy (2018) 
+UH Sussex Medical Devices Policy 
+Approved by: Maternity joint Paediatric Meeting : 27th June 2023 
+JOGG : 18th January 2023 
+Medicines Governance Committee : 4th April 20 23 
+Date uploaded : 14th July 2023 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable – Divisional Ratification only required 
+Ratification Date: Not Applicable – Divisional Ratification only required 
+Expiry Date: October 2023 
+Review date: April 2023 
+If you require this document in another format such as Braille, large print, audio or 
+another language please contact the Trusts Communications Team 
+Reference Number: CG1128 
+CG1128 Neonatal Resuscitation Guideline V6. 1 Jan 2023 Page 2 of 18 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+ 
+Version Date Author Status Comment 
+1.0 Octob er 2010 Paediatric Lead 
+Consultant and 
+Practice 
+Development Midwife Archived New Trustwide guideline 
+2.0 November 2010 Paediatric Lead 
+Consultant and 
+Practice 
+Development Midwife Archived Minor amendment 
+3.0 April 2011 Lead Matron 
+Neonates Archived On-call Paediatric Consultant 
+presence information updated 
+4.0 May 2012 Consultant 
+Pediatricians Archived Guideline amended to include 
+Paediatrician attendance at 
+delivery 
+5.0 January 2013 Clinical Governance 
+(CNST Lead) Archived Process clarification 
+5.1 November 2013 Consultant 
+Paediatricians Archived 3 year review -no changes 
+5.2 June 2016 Band 7 labour ward 
+coordinator Archived 3 year review and amendments 
+6.0 September 2020 - 
+March 2021 Head of Nursing 
+Neonatal Matron 
+Clinical Director 
+Maternity Clinical 
+Effectiveness 
+Team Archived Updated . New proforma devised 
+by S. Harris (midwife) 
+6.1 January 2023 Maternity Clinical 
+Effectiveness 
+Team 
+ 
+E. Yates, 
+Consultant 
+paediatrician LIVE Additions to 6. 2 Paediatrician to 
+review. 
+NNU changed to SCBU 
+throughout. 
+Appendix 1 : adrenaline dosage 
+amended to 0.2ml/kg to align with 
+NLS (2021). 
+ 
+The interpretation and app lication of clinical guidelines will remain 
+the responsibility of the individual clinician. 
+ 
+If in doubt contact a senior colleague or expert . 
+
+CG1128 Neonatal Resuscitation Guideline V6. 1 Jan 2023 Page 3 of 18 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+
+Contents 
+ 
+1.0 Aim ................................ ................................ ................................ ................................ ............. 4 
+2.0 Scope ................................ ................................ ................................ ................................ ......... 4 
+3.0 Responsibilities ................................ ................................ ................................ .......................... 4 
+4.0 Abbreviations used in this guideline ................................ ................................ ............................ 4 
+5.0 Background ................................ ................................ ................................ ................................ 4 
+6.0 Communication ................................ ................................ ................................ .......................... 5 
+6.1 Further paediatrician a ttendance at delivery ................................ ................................ ............... 6 
+6.2 Request paediatrician review following birth if: ................................ ................................ ........... 6 
+6.3 Where neonatal resuscitation is required in A&E ................................ ................................ ........ 7 
+7.0 Equipment ................................ ................................ ................................ ................................ .. 7 
+7.1 Birth outside the hospital ................................ ................................ ................................ ............ 7 
+7.2 Birth in hospital ................................ ................................ ................................ ........................... 7 
+7.3 Maternity unit ................................ ................................ ................................ .............................. 7 
+8.0 Training ................................ ................................ ................................ ................................ ...... 8 
+9.0 Monitoring/Audit ................................ ................................ ................................ ......................... 9 
+References ................................ ................................ ................................ ................................ ............ 9 
+Appendix 1: Resuscitation Equipment & Dru gs for Neonates ................................ ............................... 10 
+Appendix 2a: Management of babies born extremely pre -term at <26 weeks gestation - Perinatal 
+Network Guidelines ................................ ................................ ................................ .................. 12 
+Appendix 2b: Outcomes for babies born alive between 22 & 26 weeks gestation ................................ 13 
+Appendix 3: Resuscitation Council UK (Newborn Life Support Flowchart (NLS 2021) ......................... 14 
+Appendix 4: Resuscitaire Contents Based on NLS Guidelines ................................ ............................. 15 
+Appendix 5: Emergency Neonatal Trolley at SRH & Worthing ................................ ............................. 16 
+Appendix 6: Neonatal Resuscitation Proformas ................................ ................................ ................... 17 
+
+CG1128 Neonatal Resuscitation Guideline V6. 1 Jan 2023 Page 4 of 18 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+ 
+Neonatal Resuscitation Guideline 
+ 
+1.0 Aim 
+ 
+To ensure that when neonatal resuscitation is required, there is available equipment and 
+trained personnel to initiate basic life support at birth and in the immediate postnatal period. 
+ 
+2.0 Scope 
+ 
+This guideline is applicable to all staff who are involved in newborn life support. 
+ 
+3.0 Responsibilities 
+ 
+Midwives & Obs tetricians, Paediatric Staff : 
+ 
+ To access, read, understand and follow this guidance 
+ To use their professional judgement in the application of this guidel ine 
+ 
+Management: 
+ 
+ To ensure the guideline is reviewed as required in line with Trust and 
+National recommendations . 
+ To ensure the guideline is accessible to all relevant staff 
+ 
+4.0 Abbreviations used in this guideline 
+ 
+SHO - Senior House Officer PEEP - Positive End Expiratory Pressure 
+CTG - Cardiotocograph HSIB - Healthcare Safety Investigation Branch 
+A&E - Accident & Emergency ATAIN - Avoiding Term Admissions in to Neonatal Units 
+SCBU - Special Care Baby Unit 
+ 
+5.0 Background 
+ 
+The Neonatal Resuscitati on process within this Trust follows the guidance of the Resuscitation 
+Council (UK, 2021) . Please note, due to COVID -19, see th e Resuscitation Council UK (2020) 
+revised safety guidance/resources website for the impact upon newborn life support. 
+ 
+Passage through the birth canal is, b y adult standards, a relatively hypoxic experience for the fetus 
+since significant respiratory exchange at the placenta is prevented for the 50 - 75 seconds duration 
+CG1128 Neonatal Resuscitation Guideline V6. 1 Jan 2023 Page 5 of 18 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+of the average contraction. Though most babies tolerate this well, some do not and these f ew may 
+require help to establish normal breathing at delivery. 
+ 
+Newborn life support is designed to provide this help and it comprises the following elements: 
+drying and covering the newborn baby to conserve heat, assessing the need for any intervention, 
+airway opening, lung inflation, rescue breathing, chest compressions and, very rarely, the 
+administration of drugs. 
+ 
+Following any neonatal resuscitation, the parents must have a full explanation of events by a 
+paediatrician. 
+ 
+The neonatal lead paediatricia n on each site is responsible for clinical standards in relation to the 
+care of the newborn; and provides a link between the neonatal service and labour . 
+ 
+6.0 Communication 
+ 
+Staff in the maternity unit can access the on call neonatal emergency team by dialing ‘2222’ and 
+stating ‘ Neonatal Emergency’ and place of emergency. 
+ 
+This will summon: 
+ 
+ Paediatric tier 2 bleep holder (registrar or Advanced Nurse Practitioner) 
+ Paediatric tier 1 bleep holder (SHO or Advanced Nurse Prac titioner ) 
+ Senior Neonatal Nurse 
+ Maternity Bleep Holder 
+ 
+The on -call Paediatric Consultant can be contacted via switch board. If their presence is required 
+they should be available within 30 minutes. 
+ 
+The ‘Neonatal Emergency’ call should be considered in the following situations: 
+ 
+ Shoulder d ystocia 
+ Cord prolapse 
+ Category 1 caesarean sections 
+ When a baby requires resuscitation (at any time) 
+ 
+This list is not exhaustive and midwifery and obstetric staff must use their own judgment for 
+other indications. 
+ 
+CG1128 Neonatal Resuscitation Guideline V6. 1 Jan 2023 Page 6 of 18 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+6.1 Further paediatrician attendance a t delivery 
+ 
+The Paediatric Team should be asked to attend for the following situations: 
+ 
+ Significant meconium stained liquor 
+ Breech and other abnormal presentations 
+ Severe intrauterine growth retardation (estimated fetal weight less than 1.8kgs) 
+ Pre-term 2 9-34+6 weeks 
+ Delivery for pathological CTG 
+ Trial of instrumental delivery in theatre 
+ 
+The on -call Paediatr ic Consultant and Registrar should be called for: 
+ 
+ Preterm under 30 weeks 
+ Pre-term 22 -23+6 weeks if parents wish resuscitation assessment at birth -movements, 
+spontaneous respiratory efforts and heart rate response to mask ventilation 
+ By request of Labour Ward Co -ordinator or Consultant Obstetrician 
+ 
+For all non -emergency requests for Paediatricians, use the hospital bleep system to call the 
+member of st aff required. The on -call Paediatric Consultant should be informed of any newborn 
+requiring high dependency or intensive care following delivery as they may be required to 
+attend. 
+ 
+In situations where there is uncertainty about the gestation between 22 -23; and the parents are 
+requesting neonatal resuscitation, the Consultant Obstetrician should discuss the case with the on - 
+call Paediatric Consultant and formulate a plan of care. (See appendix 2a & 2b) 
+
+6.2 Request p aediatrician review f ollowing birth if: 
+ 
+ Baby is unwell or midwifery/parental concerns 
+ Abnormal neonatal observations 
+ Antenatal plan requires Paediatric input 
+ Major congenital abnormality 
+ Apgars <6 @10 mins 
+ Cord gases: PH < 7.0 BE more negative than -16. 
+ Any baby that required resuscitation beyond inflation breaths, or requires continued episodes 
+of stimulation, should have a senior paediatric review to determine cause /on -going plan . 
+ Persistently elevated lactate can be an indication for review. 
+ Any concerns will need to be escalate d appropriately . 
+
+CG1128 Neonatal Resuscitation Guideline V6. 1 Jan 2023 Page 7 of 18 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+6.3 Where neonatal resuscitation is required in A&E 
+ 
+Staff must dial: ‘ 2222’ and st ate “Neonatal Emergency , A&E ” 
+ 
+This will summon: 
+ 
+ Paediatric tier 2 bleep holde r (registrar or Advanced Nurse Practitioner) 
+ Paediatric tier 1 bleep holder (SHO or Advanced Nurse Practitioner) 
+ 
+And Mon -Fri, 9 -5: 
+ 
+ Senior Neonatal Nurse 
+ 
+The on -call Paediatric Consultant can be contacted via switch board. If their presence is required 
+they should be available within 30 minutes . 
+ 
+7.0 Equipment 
+ 
+7.1 Birth outside the hospital 
+ 
+Midwives attending women /people giving birth outside of the hospital environment will carry basic 
+resuscitation equipment – stethoscope, bag, valve and mask for lung inflation. The bag, valve and 
+mask system are single use on ly. This equipment will be checked that it is fit for use monthly and 
+documented in the community midwives diary using a sticker. 
+ 
+For babies who need resuscitation 999 will be dialed and a parame dic ambulance requested for 
+transfer into hospital. 
+ 
+All babies needing resuscitation should be b rought straight to the Special Care Baby Unit (SCBU ) at St. 
+Richards and A& E at Worthing. 
+ 
+The Neonatal team will be notified prior to arrival. 
+ 
+7.2 Birth in hospital 
+ 
+Emergency equipment available for resuscitation of the newborn has been standardised 
+throughout the Trust and is available within the maternity unit. 
+ 
+7.3 Maternity unit 
+ 
+Equipment provided is a Resuscitaire equipped to provide heat, light and ble nded air/oxygen for us e in 
+resuscitation (see appendix 4 and 5Appendix 5: Emergency Neonatal Trolley at SRH & Worthing ). 
+CG1128 Neonatal Resuscitation Guideline V6. 1 Jan 2023 Page 8 of 18 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+Lung inflation is either via the bag and mask , open circuit or PEEP circu it; equipment for stabilization of 
+airways; umbilical venous access. 
+ 
+The resuscitaires in the maternity service are the overall responsibility of the Trust Medical 
+Devices Department (EBME) in regards for ensuring a programme of r outine maintenance as 
+well as demand repairs to ensure resuscitaires are fit for use and safe. The Medical Devices 
+Policy provides guidance on reporting pr ocedures for repairs . 
+ 
+Professionally it is the responsibility of designated healthcare professionals in care settings where 
+neonatal resuscitation takes place to ensure that daily checks are documented on the appropriate 
+recording system (NMC 2018). 
+ 
+Within the maternity service, staff undertake routine surface checks to ensure that they are 
+restocked an d checked after use in readiness for the next use. This must be recorded, dated and 
+signed daily in the appropriate document for each resuscitaire, which is matched by the associated 
+asset number on the document and on the resuscitaire. 
+ 
+At Worthing, there is a resuscitaire for the main theatre which is occasionally used when a 2nd 
+obstetric theatre is required. This is checked by the maternity/neonatal service prior to 
+maternal /birthing parent transfer to this theatre for birth. Main Theatre has the day -to-day 
+responsibility for the resuscitaire with the professional responsibility remaining within the 
+healthcare profession when checking it for immediate use. 
+ 
+8.0 Training 
+ 
+Training for staff working within the maternity service will be delivered in line wi th the UHSC073 
+Maternity TNA Policy . 
+ 
+Managers of nursing staff are responsible for ensuring they receive annual mandatory training to a 
+level compatible with their clinical responsibilities and this is recorded on the Trust training 
+database. 
+ 
+It is preferable for the labour ward co -ordinator to be Neonatal Life Support trained. If not, a plan 
+for this to be achieved should be in place. 
+
+CG1128 Neonatal Resuscitation Guideline V6. 1 Jan 2023 Page 9 of 18 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+ 
+9.0 Monitoring /Audit 
+ 
+Admissions to the Special Care Baby Unit are monitored via patient safe ty, through processes such as 
+ATAIN or HSIB referrals. 
+ 
+References 
+ 
+National Institute for Heal th and Clinical Excellence (2014) Intrapartum care: Care of healthy women 
+and babies. Last updated 2017. 
+ 
+Newborn resuscitation and support of transition of infants at birth Guidelines 2021 | Resuscitation 
+Council UK 
+ 
+Royal College of Anaesthetists, Royal College of Midwives, Royal College of Obstetricians and 
+Gynaecologists, Royal College of Paediatrics and Child Health, 2007. 
+ 
+Safer Childbirth: Minimum Standards for the Organisation and Delivery of Care in Labour. London: 
+RCOG Press. 
+ 
+Resuscitation Council (UK) 2021, N eonatal Life Support Flow Chart 
+
+NMC (2018) Code of Professional standards of practice and behavior for nurses, midwives and nursing 
+associates 
+ 
+CG1128 Neonatal Resuscitation Guideline V6. 1 Jan 2023 Page 10 of 18 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+
+Appendix 1: Resuscitation Equipment & Drugs for Ne onates 
+
+WT (kg) Corrected 
+gestation Oral ETT 
+(mid-trachea= 
+T1 on CXR) 
+Size/Length ADRENALINE 
+1:10,000 
+ 
+0.2ml/kg IV/IO BICARBONATE 
+2-4 ml/kg of 
+4.2% 
+(1-2mmol/kg) GLUCOSE 10% 
+2.5ml/kg 0.9% SODIUM 
+CHLORIDE 
+10ml/kg in 
+10- 20s 
+0.5-0.75 22-24 2.5/5.5cm 0.2ml 1.5-2 ml 1.3ml 5ml 
+0.75-1.0 25-26 2.5/6 cm 0.2ml 2-3 ml 1.5ml 10ml 
+1-1.3 27-29 3.0/7 cm 0.2ml 2-4 ml 2.5ml 10ml 
+1.5 30-32 3.0/7 cm 0.2 ml 3-4 ml 3ml 15 ml 
+2.0 32-35 3.5/ 8cm 0.4ml 4-8 ml 5ml 20ml 
+3.0 35-Term 3.5/ 9cm 0.6ml 6-12 ml 7.5ml 30ml 
+4.0 Large term 3.5-4.0/ 10cm 0.8ml 10 ml 10ml 40ml 
+CG1128 Neonatal Resuscitation Guideline V6. 1 Jan 2023 Page 12 of 18 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+Pre-term labour 
+No but thought to be 
+>22+0 Yes 
+Appendix 2 a: Management of ba bies born extremely pre -term at <26 weeks gestation 
+Perinatal Network Guidelines 
+ 
+
+
+
+
+ 
+
+ 
+ 
+
+
+CAESAREAN 
+SECTION* CARE 
+ 
+ 
+ 
+ 
+
+
+ 
+
+
+ Discussion with 
+parents 
+Accurate 
+gestational age? 
+Resuscitate 
+ Comfort 
+Care 
+ 
+Survival 
+Focused 
+Care 
+25+0- 
+25+6 
+24+0- 
+24+6 
+Assessment and care consistent 
+with parents’ wishes 
+22+0- 
+23+6 
+Resuscitation and in -utero transfer would not norm ally be 
+carried out. Paediatric Team is not normally involved. 
+<22+0 Neonatal assessment 
+at birth 
+ 
+Rarely 
+Indicated * Resuscitation 
+followed by 
+reassessment Comfort 
+focuse d 
+Care 
+Consider if 
+fetal 
+compromise 
+occurs Maternal 
+indications 
+only* 
+CG1128 Neonatal Resuscitation Guideline V6. 1 Jan 2023 Page 13 of 18 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+Appendix 2b: Outcomes for babies born alive between 22 & 26 weeks gestation 
+ 
+ 
+CG1128 Neonatal Resuscitation Guideline V6. 1 Jan 2023 Page 14 of 18 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+Appendix 3 : Resuscitation Council UK (Newborn Life Support Flowchart ( NLS 2021 ) 
+
+CG1128 Neonatal Resuscitation Guideline V6. 1 Jan 2023 Page 15 of 18 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+Appendix 4: Resuscitaire Contents Based on NLS Guidelines 
+
+RESUSCITAIRE CHECKLIST 
+ON TOP 
+Light, heater and stop clock wo rking 
+Air and oxygen cylinders >4000 kPa (1/4 full) - disconnect wall 
+oxygen to check 
+(Keep cylinders turned off until delivery) 
+If blender, set at 21 - 30% O2 
+Oxygen tubing present 
+Oxygen supply working (IPPV to 30cmsH20) 
+Face mask size 1 attached / neo puff 
+Argyle mini yankauer suction tube attached to suction tubing 
+Suction working (pressure to10kpa) 
+(Suction bottles and tubing are single use only) 
+4 towels 
+Stethoscope 
+IN DRAWER 
+Argyle (black 10Fr) suction catheter X1 
+Argyle mini yankauer X1 
+Face mask size 0 x1 
+2 laryngoscopes handles with spare batteries 
+2 disposable laryngoscope straight miller blades sizes 0 and 1 
+(tested and working) (Blades are single use only) 
+Oropharyngeal Guedal Airway size 00, size 0 and size 1 
+ETT size 2.5 x 2, each with size 2.5 clamp attached 
+ETT size 3.0 x 2, each with size 3.0 clamp attached 
+ETT size 3.5 x 2, each with size 3.5 clamp attached 
+ETT size 4.0 x 2, each with size 4.0 clamp attached 
+Intubation stylets x 2 
+Umbilical cord clamp 
+Hats (various sizes w ith and without ties ) 
+ 
+EMERGENCY TROLLEY & DRUG BOX (Located in room 1 on Special Care 
+Baby Unit at SRH) 
+ 
+NEONATAL BOX containing emergency drugs and equipment (Located in clinical 
+room and Obstetric Theatre at Worthing) 
+CG1128 Neonatal Resuscitation Guideline V6. 1 Jan 2023 Page 16 of 18 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+Appendix 5 : Emergency Neonatal T rolley at SRH & Worthing 
+ 
+Tray 1: Airway 
+Laryngoscope Handle X 2 
+2 Disposable Straight Miller Blades 
+one Size 1 
+one Size 0 for Babies < 1000g 
+Sterile Endotracheal Tubes with 
+Endotracheal Clamp sizes: (two of each) 
+2.5mm, 3.00mm, 3.5mm, 4.00mm 
+Porte x Tracheal Intubation Stylet X 2 
+ 
+Tray 2: Airway /Breathing 
+Oropharyngeal (Guedal) Airway 000, 00, 0, 1, 2 
+Ambi Bag 500ml 
+Masks sizes 0, 01, 2 
+CO2 Detector 
+ 
+Tray 3: Circulation 
+Sterile Artery Forceps X 2 Sterile blade size 23 X 2 
+Sterile Medical Probe Caruso mayo scissors 
+Luer Lock 3 – way tap Small stick scissors 
+Syringes sizes: 2ml, 5ml, 10ml X 1 Needle holder 
+Umbilical Catheter sizes 3.5, 4, 5 X 1 Cord clamp clipper 
+Green needle X 1 Ethicon Nylon tape X 2 
+Sterile disposable scalpel Biosyn suture x2 (for UVC) 
+Incubator feeding tubes sizes 05, 06 and 08 Neoflon size 24 GA x2 
+IV Catheter Radiopaque size 24G Dressing and Elastoplast 
+ 
+Tray 4 
+Plastic bags x2 
+Hat sizes: Small, Medium, Large x2 
+ 
+Trolley base 
+Drug box 
+Saturation mon itor (kept plugged in) 
+Saturation probes and posies 
+
+Advanced Airway Box on SCBU 
+CG1128 Neonatal Resuscitation Guideline V6. 1 Jan 2023 Page 17 of 18 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+Appendix 6 : Neonatal Resuscitation P roforma s 
+PLEASE DO NOT PRINT FROM GUIDELINE

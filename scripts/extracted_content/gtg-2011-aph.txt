@@ -1,0 +1,917 @@
+# Extracted from: GTG 2011 - APH.pdf
+# Guideline ID: gtg-2011-aph
+# Content length: 80471 characters
+# Processing date: 1732953490.8912878
+
+Antepartum Haemorrhage
+Green–top Guideline No. 63
+November 2011RCOG Green-top Guideline No. 63 2 of 23 © Royal College of Obstetricians and GynaecologistsAntepartum Haemorrhage
+This is the first edition of this guideline.
+1. Purpose and scope
+Antepartum haemorrhage (APH) is defined as bleeding from or in to the genital tract, occurring from 24+0
+weeks of pregnancy and prior to the birth of the baby. The most important causes of APH are placenta praevia
+and placental abruption, although these are not the most common. APH complicates 3–5% of pregnancies andis a leading cause of perinatal and maternal mortality worldwide.
+1Up to one-fifth of very preterm babies are
+born in association with APH, and the known association of APH with cerebral palsy can be explained bypreterm delivery.
+This guideline has been developed primarily for clinicians working in obstetric units in the UK;
+recommendations may be less appropriate for other settings where facilities, resources and routine practicediffer. This guideline does not include specific recommendations for the management of women who refuseblood transfusion. The Centre for Maternal and Child Enquiries (CMACE)
+2and the RCOG3have published
+guidance regarding the management of pregnancy in women who decline blood products. The code ofpractice for the surgical management of Jehovah’s Witness patients by the Royal College of Surgeons(England) and Management of Anaesthesia for Jehovah’s Witnesses by the Association of Anaesthetists of GreatBritain and Ireland provide useful additional information.
+4,5
+2. Introduction and background
+Obstetric haemorrhage remains one of the major causes of maternal death in developing countries and is thecause of up to 50% of the estimated 500 000 maternal deaths that occur globally each year.
+6In the UK, 
+deaths from obstetric haemorrhage are uncommon. In the 2006–08 report of the UK Confidential Enquiriesinto Maternal Deaths,
+7haemorrhage was the sixth highest direct cause of maternal death (9 direct deaths; 
+3.9 deaths/million maternities) a decline from the 14 that occurred in the previous triennium (6.6 deaths/million maternities).
+8There were 4 deaths from APH in the more recent report.7In the 2005–07
+report of the Confidential Enquiries into Maternal Deaths in South Africa, obstetric haemorrhage was the thirdmost common cause of death accounting for 12.4% of all deaths; there were 108 deaths from APH and 74 ofthese (68.5%) were considered to be clearly avoidable.
+9Haemorrhage emerges as the major cause of severe
+maternal morbidity in almost all ‘near miss’ audits in both developed and developing countries.10
+Obstetric haemorrhage encompasses both antepartum and postpartum bleeding. This green-top guideline isrestricted in scope to the management of APH. The causes of APH include: placenta praevia, placentalabruption and local causes (for example bleeding from the vulva, vagina or cervix). It is not uncommon to failto identify a cause for APH when it is then described as ‘unexplained APH’. 
+Green-top guidelines that are relevant to this topic and are cited in this guideline include:
+RCOG Green-top Guideline No. 47 
+Blood Transfusions in Obstetrics3
+RCOG Green-top Guideline No. 22 The Use of Anti-D Immunoglobulin for Rhesus D Prophylaxis11
+RCOG Green-top Guideline No. 27 Placenta Praevia, Placenta Praevia Accreta and Vasa Praevia: 
+Diagnosis and Management12
+RCOG Green-top Guideline No. 52 Prevention and Management of Postpartum Haemorrhage13
+RCOG Green-top Guideline No. 56 Maternal Collapse in Pregnancy and the Puerperium14
+RCOG Green-top Guideline No. 55 Late Intrauterine Fetal Death and Stillbirth15
+RCOG Green-top Guideline No. 7 Antenatal Corticosteroids to Reduce Neonatal Morbidity16
+RCOG Green-top Guideline No. 1b Tocolysis for Women in Preterm Labour17© Royal College of Obstetricians and Gynaecologists 3o f 2 3 RCOG Green-top Guideline No. 63RCOG Green-top Guideline No. 37b The Acute Management of Thrombosis and Embolism During
+Pregnancy and the Puerperium.18
+There are no consistent definitions of the severity of APH. It is recognised that the amount of blood lost is
+often underestimated and that the amount of blood coming from the introitus may not represent the totalblood lost (for example in a concealed placental abruption). It is important therefore, when estimating theblood loss, to assess for signs of clinical shock. The presence of fetal compromise or fetal demise is animportant indicator of volume depletion.
+19
+For the purposes of this guideline, the following definitions have been used:Spotting – staining, streaking or blood spotting noted on underwear or sanitary protectionMinor haemorrhage – blood loss less than 50 ml that has settledMajor haemorrhage – blood loss of 50–1000 ml, with no signs of clinical shockMassive haemorrhage – blood loss greater than 1000 ml and/or signs of clinical shock.
+Recurrent APH is the term used when there are episodes of APH on more than one occasion.
+3. Identification and assessment of the evidence
+This guideline was developed in accordance with standard methodology for producing RCOG Green-top
+Guidelines.20–22Cochrane reviews on interventions for suspected placenta praevia23and for treating placental
+abruption have highlighted the lack of evidence to guide practice.24
+3.1 Search strategy
+The Cochrane Library (including the Cochrane Database of Systematic Reviews, DARE and EMBASE), TRIP ,Medline and PubMed (electronic databases) were searched for relevant randomised controlled trials,systematic reviews and meta-analyses. The search was restricted to articles published between 1966 andFebruary 2011. The databases were searched using the relevant MeSH terms, including all subheadings, andthis was combined with a keyword search. Search words included ‘antepartum haemorrhage’, ‘placentalabruption’, ‘placenta praevia’, ‘placenta previa’, ‘vasa praevia’, ‘vasa previa’, ‘obstetric haemorrhage’, ‘obstetrichemorrhage’, ‘fetal haemorrhage’, ‘fetal hemorrhage’, ‘fetomaternal haemorrhage’, ‘fetomaternal hemorrhage’,‘antenatal bleeding’, ‘pregnancy’, ‘disseminated intravascular coagulopathy’, and the search limited to humansand the English language.
+The National Library for Health and the National Guidelines Clearing House were also searched for relevant
+guidelines and reviews (with no results). Guidelines and recommendations produced by organisations suchas NHS Health Trusts were therefore considered. Where possible, recommendations are based on availableevidence and the areas where evidence is lacking are annotated as ‘good practice points’.
+4. Prediction and prevention of antepartum haemorrhage?
+4.1 What are the risk factors for placental abruption? 
+A number of clinical and epidemiological studies have identified predisposing risk factors for placentalabruption.
+25–31The most predictive is abruption in a previous pregnancy. A large observational study from
+Norway reported a 4.4% incidence of recurrent abruption (adjusted OR 7.8, 95% CI 6.5–9.2).32Abruption
+recurs in 19–25% of women who have had two previous pregnancies complicated by abruption.33Other risk
+factors for placental abruption include: pre-eclampsia, fetal growth restriction, non-vertex presentations,polyhydramnios, advanced maternal age, multiparity, low body mass index (BMI), pregnancy following assistedreproductive techniques, intrauterine infection, premature rupture of membranes, abdominal trauma (bothaccidental and resulting from domestic violence), smoking and drug misuse (cocaine and amphetamines)during pregnancy.
+31,34First trimester bleeding increases the risk of abruption later in the pregnancy. A retrospective cohort study
+from Denmark found that threatened miscarriage increases the risk of placental abruption from 1.0% to 1.4%(OR 1.48, 95% CI 1.30–1.68).
+35A systematic review reported first trimester bleeding to be associated with an
+increased risk of placental abruption (OR 1.6, 95% CI 1.1–2.6); when an intrauterine haematoma is identifiedon ultrasound scan in the first trimester, the risk of subsequent placental abruption is increased (RR 5.6, 95%CI 2.8–11.1).
+36
+Maternal thrombophilias have been associated with placental abruption. In a systematic review, Robertson etal.
+37identified seven studies that evaluated the association between thrombophilias and placental abruption.
+Overall, thrombophilias were associated with an increased risk of placental abruption, but significantassociations were only observed with heterozygous factor V Leiden (OR 4.70, 95% CI 1.13–19.59) andheterozygous prothrombin 20210A (OR 7.71, 95% CI 3.01–19.76). More recently, a systematic review andmeta-analysis of prospective cohort studies investigating the relationship between factor V Leiden, theprothrombin gene mutation and placental abruption reported only a weak association (pooled OR estimatefor placental abruption in women with factor V Leiden was 1.85 [95% CI 0.92–3.70], and prothrombin20210A was 2.02 [95% CI 0.81–5.02]).
+38
+While these and other risk factors for placental abruption are recognised, causal pathways remain largelyspeculative.
+39Women should be assessed for these factors at each antenatal contact. This information may be
+used to assign women to high-risk or low-risk antenatal care.
+4.2 What are the risk factors for placenta praevia?
+A number of risk factors for placenta praevia have been described, some of which are listed in Table 1.40–43,45–47
+In a comparison of maternal risk factors for placenta praevia and placental abruption, Yang et al.44concluded
+that abruption is more likely to be related to conditions occurring during pregnancy and placenta praevia ismore likely to be related to conditions existing prior to pregnancy.
+4.3 Can APH be predicted?
+APH has a heterogeneous pathophysiology and cannot reliably be predicted.
+A number of risk factors for APH have been described (see sections 4.1 and 4.2). 
+RCOG Green-top Guideline No. 63 4 of 23 © Royal College of Obstetricians and GynaecologistsCTable 1. Risk factors for placenta praevia40–43,45–47
+Previous placenta praevia (adjusted OR 9.7)45–47
+Previous caesarean sections (RR 2.6, 95% CI 2.3–3.0 with a background rate of 0.5%)46
+One previous caesarean section OR 2.2 (95% CI 1.4–3.4 with a background rate of 1%)47
+Two previous caesarean sections OR 4.1 (95% CI 1.9–8.8)
+Three previous caesarean sections OR 22.4 (95% CI 6.4–78.3)
+Previous termination of pregnancy
+Multiparity
+Advanced maternal age ( >40 years)
+Multiple pregnancy
+Smoking
+Deficient endometrium due to presence or history of:
+• uterine scar• endometritis• manual removal of placenta• curettage
+• submucous fibroid
+Assisted conception5o f 2 3 RCOG Green-top Guideline No. 63 © Royal College of Obstetricians and GynaecologistsAPH has a heterogeneous pathophysiology and cannot be predicted. In a study investigating risk
+factors for placental abruption, the authors concluded that abruption is usually a sudden andunexpected obstetric emergency, not predictable by means of known reproductive risk factors.
+48
+They found that approximately 70% of cases of placental abruption occur in low-risk pregnancies.Another study aiming to predict placental abruption in women with previous caesarean sectionconcluded that models combining risk factors were too inefficient to be useful.
+49
+4.4. Can APH be prevented?
+Women should be advised, encouraged and helped to change modifiable risk factors (such as smoking
+and drug misuse).
+There is limited evidence to support interventions to prevent APH.
+4.4.1 Placental abruption
+In view of the known associations between placental abruption and tobacco use, cocaine and amphetaminemisuse, women should be advised and encouraged to modify these risk factors. No evidence was identifiedthat specifically investigated smoking cessation and APH. A Cochrane review concluded that smokingcessation programmes in pregnancy reduce the proportion of women who continue to smoke, and reducelow birthweight and preterm birth. The pooled trials have inadequate power to detect reductions in perinatalmortality or very low birthweight and did not specifically analyse rates of APH.
+51The management of cocaine
+and amphetamine misuse involves a combination of symptomatic interventions during the withdrawal phaseand psychosocial interventions. There has been very little systematic research into the effectiveness of thisapproach in pregnant women.
+52,53
+A systematic review of folic acid supplements in pregnancy (involving a re-analysis of a large randomisedcontrolled trial and update of a Cochrane review) found no conclusive evidence of benefit (including risk ofplacental abruption) in women who took folic acid supplements.
+54In contrast, an observational study
+conducted in Norway investigating vitamin supplementation and risk of placental abruption found thatwomen who use folic acid and multivitamins during pregnancy are significantly less likely than non-users todevelop placental abruption (adjusted OR 0.74, 95% CI 0.65–0.84).
+55
+There are no good data to support a role for antithrombotic therapy (low dose aspirin +/– low molecularweight heparin) in the prevention of abruption in women with thrombophilia.
+56
+A pilot study investigating the effects of antithrombotic therapy (the low molecular weightheparin, enoxaparin) in women with a previous placental abruption reported that womenrandomised to receive enoxaparin in the subsequent pregnancy experienced fewer placentalvascular complications (including abruption, pre-eclampsia or low birthweight; adjusted hazardratio = 0.37, 95% CI 0.18–0.77).
+57The authors conclude that their study findings are preliminary and
+are currently being evaluated in larger multicentre trials to ensure their findings can be generalised. 
+4.4.2 Haemorrhage from placenta praevia
+It is considered good practice to avoid vaginal and rectal examinations in women with placenta praevia,
+and to advise these women to avoid penetrative sexual intercourse.
+RCOG Green-top Guideline No. 27 recommends that in cases of placenta praevia, cervical cerclage
+to prevent or reduce bleeding and prolong pregnancy is not supported by sufficient evidence torecommend this practice outside a clinical trial.
+12
+RCOG Green-top Guideline No. 27 indicates that there is no place for the use of prophylactictocolytics in women with placenta praevia to prevent bleeding.
+12Evidence
+level 2++
+Evidence
+level 4
+Evidence
+level 1–
+Evidence
+level 1+P
+P5. Is APH associated with any specific pregnancy complications and outcomes?
+Health professionals should be aware that domestic violence in pregnancy may result in APH.
+Health professionals should be aware that domestic violence in pregnancy may result in APH.50Women with
+repeated presentations that may include APH should be asked about this. 
+Antepartum haemorrhage is associated with maternal and perinatal morbidity and mortality. Clinicians
+managing women with APH should be aware of these potential consequences.
+APH is associated with complications for the mother and her fetus (Table 2).58Complications are more likely
+to occur when haemorrhage is due to a placental cause (abruption or placenta praevia), when the bleedingis heavy and when the bleeding occurs at early gestations.
+59
+5.1 Unexplained APH 
+Pregnancies complicated by unexplained APH are also at increased risk of adverse maternal andperinatal outcomes. A meta-analysis of unexplained APH identified 10 relevant studies in theprevious 38 years, with a limited number of cases; preterm delivery (OR 3.17), stillbirth (OR 2.09),and fetal anomalies (OR 1.42) appear to be increased in frequency.
+60More recently, a retrospective
+observational study from Australia found that women with unexplained APH are at greater risk ofpreterm delivery and of undergoing induction of labour at term, and their babies are more likely tobe admitted to neonatal intensive care units and develop hyperbilirubinaemia.
+61Furthermore,
+women with unexplained APH were more likely to have smaller babies (2940g versus 3325g, p < 0.001), and this difference remained statistically significant when the birthweight was adjustedfor gestational age at delivery and other confounders (p = 0.026).
+6. Where should the woman presenting with APH be managed? 
+It is recommended that women be advised to report all vaginal bleeding to their antenatal care provider.
+Women with APH presenting to a midwifery-led maternity unit, a general practitioner or to an accident
+and emergency department should be assessed, stabilised if necessary and transferred to a hospitalmaternity unit with facilities for resuscitation (such as anaesthetic support and blood transfusionresources) and performing emergency operative delivery.
+A multidisciplinary team including midwifery and obstetric staff, with immediate access to laboratory,
+theatre, neonatal and anaesthetic services, should provide clinical assessment.
+6 of 23 RCOG Green-top Guideline No. 63 © Royal College of Obstetricians and GynaecologistsEvidence
+levels 
+1– to 2+Table 2. Complications of APH
+Maternal complications Fetal complications
+Anaemia Fetal hypoxia
+Infection Small for gestational age and fetal growth restriction
+Maternal shock Prematurity (iatrogenic and spontaneous)
+Renal tubular necrosis Fetal death
+Consumptive coagulopathy 
+Postpartum haemorrhage
+Prolonged hospital stay
+Psychological sequelae
+Complications of blood transfusion 
+PP
+PP
+PRCOG Green-top Guideline No. 63 7 of 23 © Royal College of Obstetricians and GynaecologistsSequential reports investigating maternal deaths in the UK have highlighted the importance of
+multidisciplinary protocols for the management of obstetric haemorrhage. These should be updated andrehearsed regularly in conjunction with transfusion services. All members of staff, including those working inthe blood bank, should be aware of the processes which are in place to ensure that blood and blood productscan be delivered in a timely manner. These reports have recommended that women known to be at high riskof haemorrhage should be managed in centres with facilities for blood transfusion, intensive care and otherinterventions.
+7,8,62,63
+7. What is the role of clinical assessment in women presenting with APH? 
+The role of clinical assessment in women presenting with APH is first to establish whether urgent
+intervention is required to manage maternal or fetal compromise. The process of triage includes historytaking to assess coexisting symptoms such as pain, an assessment of the extent of vaginal bleeding,the cardiovascular condition of the mother, and an assessment of fetal wellbeing.
+Women presenting with a major or massive haemorrhage that is persisting or if the woman is unable to
+provide a history due to a compromised clinical state, an acute appraisal of maternal wellbeing should beperformed and resuscitation started immediately. The mother is the priority in these situations and should bestabilised prior to establishing the fetal condition. 
+If there is no maternal compromise a full history should be taken.
+●The clinical history should determine whether there is pain associated with the haemorrhage. 
+Placental abruption should be considered when the pain is continuous. Labour should be considered if thepain is intermittent.
+●Risk factors for abruption and placenta praevia should be identified.
+●The woman should be asked about her awareness of fetal movements and attempts should be made toauscultate the fetal heart.
+●If the APH is associated with spontaneous or iatrogenic rupture of the fetal membranes, bleeding from aruptured vasa praevia should be considered.
+●Previous cervical smear history may be useful in order to assess the possibility of a neoplastic lesion of thecervix as the cause of bleeding. The presentation of cervical cancer in pregnancy depends on the stage atdiagnosis and lesion size; most women with International Federation of Gynecology and Obstetrics (FIGO)stage I cancer are asymptomatic; symptomatic pregnant women usually present with APH (mostly postcoital)
+or vaginal discharge.
+64In a Swedish population study, the incidence of cervical cancer was 7.5 cases per 
+100 000 deliveries; in over half of these cases, the women had an abnormal cervical smear history.65
+Examination of the woman should be performed to assess the amount and cause of APH.
+The basic principles of resuscitation should be adhered to in all women presenting with collapse or major
+haemorrhage. These should follow the principles outlined in Green-top Guideline No.56 Maternal Collapse
+in Pregnancy and the Puerperium14and in Green-top Guideline No.52 Prevention and Management of
+Postpartum Haemorrhage .13The primary survey should follow the structured approach of airway (A),
+breathing (B) and circulation (C). Following initial assessment and commencement of resuscitation, causes forhaemorrhage or collapse should be sought.
+All women presenting with APH should have their pulse and blood pressure recorded.
+7.1 Abdominal palpation
+The woman should be assessed for tenderness or signs of an acute abdomen. The tense or ‘woody’ feel to the
+uterus on abdominal palpation indicates a significant abruption. Abdominal palpation may also reveal uterinecontractions. A soft, non-tender uterus may suggest a lower genital tract cause or bleeding from placenta orvasa praevia.P
+P
+P7.2 Speculum examination
+A speculum examination can be useful to identify cervical dilatation or visualise a lower genital
+tract cause for the APH. In a prospective observational study of 564 women presenting with APH,521 (92.4%) underwent an admission speculum examination; 389 women (69%) had a normalcervix, 120 (21%) had cervical ectropion and 12 (2%) had a dilated cervix. 
+66
+If the woman presents with a clinically suspicious cervix she should be referred for colposcopicevaluation in line with guidelines from the British Society for Colposcopy and Cervical Pathology.
+67
+7.3 Digital vaginal examination
+If placenta praevia is a possible diagnosis (for example, a previous scan shows a low placenta, there is a highpresenting part on abdominal examination or the bleed has been painless), digital vaginal examination shouldnot be performed until an ultrasound has excluded placenta praevia. Digital vaginal examination can provideinformation on cervical dilatation if APH is associated with pain or uterine activity. 
+8. What investigations should be performed in women presenting with APH?
+8.1 Maternal investigations
+Investigations should be performed to assess the extent and physiological consequences of the APH.
+The maternal investigations performed will depend on the amount of bleeding.
+The Kleihauer test should be performed in rhesus D (RhD)-negative women to quantify fetomaternal
+haemorrhage (FMH) in order to gauge the dose of anti-D immunoglobulin (anti-D Ig) required.
+The Kleihauer test is not a sensitive test for diagnosing abruption.Ultrasound can be used to diagnose placenta praevia but does not exclude abruption.Placental abruption is a clinical diagnosis and there are no sensitive or reliable diagnostic tests
+available. Ultrasound has limited sensitivity in the identification of retroplacental haemorrhage.
+8.1.1 Blood tests
+In cases of major or massive haemorrhage, blood should be analysed for full blood count and coagulationscreen and 4 units of blood cross-matched. Urea, electrolytes and liver function tests should be assayed. Theinitial haemoglobin may not reflect the amount of blood lost and therefore clinical judgement should be usedwhen initiating and calculating the blood transfusion required. In such circumstances a point of care test(‘bedside test’) to assess haemoglobin may be useful. The platelet count, if low, may indicate a consumptiveprocess seen in relation to significant abruption; this may be associated with a coagulopathy.
+In minor haemorrhage, a full blood count and group and save should be performed. A coagulation screen is
+not indicated unless the platelet count is abnormal.
+In all women who are RhD-negative, a Kleihauer test should be performed to quantify FMH to
+gauge the dose of anti-D Ig required.
+11
+The Kleihauer test is not a sensitive test for diagnosing placental abruption.68,69
+8.1.2 Ultrasound scanWomen presenting with APH should have an ultrasound scan performed to confirm or exclude placentapraevia if the placental site is not already known. Ultrasound scanning is well established in determiningplacental location and in the diagnosis of placenta praevia.
+12,70
+8 of 23 RCOG Green-top Guideline No. 63 © Royal College of Obstetricians and GynaecologistsEvidence
+level 4Evidence
+level 3
+P
+C
+DD
+C
+Evidence
+level 4
+Evidence
+level 2+RCOG Green-top Guideline No. 63 9o f 2 3 © Royal College of Obstetricians and GynaecologistsThe sensitivity of ultrasound for the detection of retroplacental clot (abruption) is poor. Glantz and
+colleagues71reported the sensitivity, specificity, and positive and negative predictive values of
+ultrasonography for placental abruption to be 24%, 96%, 88% and 53% respectively. Thus,ultrasonography will fail to detect three-quarters of cases of abruption. However, when theultrasound suggests an abruption, the likelihood that there is an abruption is high.
+8.2 Fetal investigation
+An assessment of the fetal heart rate should be performed, usually with a cardiotocograph (CTG) in
+women presenting with APH once the mother is stable or resuscitation has commenced, to aid decisionmaking on the mode of delivery.
+Whenever possible, CTG monitoring should be performed where knowledge of fetal condition will
+influence the timing and mode of delivery.
+Ultrasound should be carried out to establish fetal heart pulsation if fetal viability cannot be detected
+using external auscultation.
+APH, particularly major haemorrhage and that associated with placental abruption, can result in fetal
+hypoxia and abnormalities of the fetal heart rate pattern. If the fetal heart rate cannot be heard onauscultation, then an ultrasound scan should be performed to exclude an intrauterine fetal death.
+15
+Ultrasound imaging can be technically difficult, particularly in the presence of maternal obesity,abdominal scars and oligohydramnios, but views can often be augmented with colour Doppler.
+Guidance directly relevant to monitoring the fetal heart rate at the extreme of viability can be
+reasonably extrapolated from advice on the management of women in extremely preterm labour(less than 26
++0weeks) from the British Association of Perinatal Medicine.72The results of this working
+group suggest ‘If active obstetric intervention in the interests of the fetus is not planned, for exampleat gestations less than 26
++0weeks, continuous monitoring of the fetal heart rate is not advised. ’72
+There is a lack of published evidence regarding the role and usefulness of fetal heart-rate monitoring inwomen presenting with APH. In one study, the fetal heart-rate pattern (CTG) was abnormal in 69% of womenpresenting with placental abruption.
+73Whilst conservative (expectant) management appears to be safe in
+preterm pregnancies with placental abruption and a normal CTG, an abnormal CTG is associated with poorfetal outcome and delivery should be expedited to save the fetus.
+74Clinical judgement is required in these
+circumstances since women presenting with bleeding that may indicate a catastrophic event such asplacental abruption, constitute a group where the fetus is more likely to be exposed to severe hypoxia andacidaemia.
+75In such circumstances, the CTG can reasonably be expected to be informative.
+In the context of suspected vasa praevia various tests exist that can differentiate between fetal and
+maternal blood, but are often not applicable. (See Green-top Guideline No. 27 Placenta Praevia,
+Placenta Accreta and Vasa Praevia: Diagnosis and Management .12)
+Evidence is lacking concerning the validity of point of care tests to differentiate between fetal and
+maternal blood. In the event of a significant bleed related to vasa praevia, signs of fetal compromisewould be identifiable on fetal heart rate monitoring and delivery would be indicated irrespectiveof the results of such a test. Commercial kits to perform such tests are currently unavailable and thetests are considered to be complicated and lacking in accuracy.
+9. Should women with APH be hospitalised, and if so, for how long?
+Recommendations about hospitalisation for women with placenta praevia are presented in RCOG Green-topGuideline No. 27.
+12Evidence
+level 3
+D
+Evidence
+level 3
+Evidence
+level 4
+Evidence
+level 2+CP
+PWomen presenting with spotting who are no longer bleeding and where placenta praevia has been
+excluded can go home after a reassuring initial clinical assessment.
+All women with APH heavier than spotting and women with ongoing bleeding should remain in hospital
+at least until the bleeding has stopped.
+At present, there is no evidence to support recommendations regarding duration of inpatient management
+following APH. Where the bleeding has been spotting and has settled, and tests of fetal and maternal wellbeingare reassuring, the woman can go home. She should be encouraged to contact the maternity unit if she hasany further bleeding, pain or a reduction in fetal movements. Further measures such as a telephoneconsultation between the woman and the hospital the following day may provide further reassurance. 
+Each woman must be assessed on an individual basis and sound clinical judgment applied. For example, if a
+woman presents with spotting and has a past history of intrauterine fetal death resulting from placentalabruption, then hospitalisation would be appropriate.
+10. Should corticosteroids be administered to women who present with APH before term?
+Clinicians should offer a single course of antenatal corticosteroids to women between 24+0and 34+6
+weeks of gestation at risk of preterm birth.
+In women presenting with spotting, where the most likely cause is lower genital tract bleeding, where
+imminent delivery is unlikely, corticosteroids are unlikely to be of benefit, but could still be considered.
+RCOG Green-top Guideline No. 7 Antenatal Corticosteroids to Reduce Neonatal Morbidity states
+that antenatal corticosteroids should be given to all women at risk of iatrogenic or spontaneouspreterm birth up to 34
++6weeks of gestation.16Antenatal corticosteroids are associated with a
+significant reduction in rates of neonatal death, respiratory distress syndrome and intraventricularhaemorrhage.
+In women with APH and no immediate indication to deliver the baby, an assessment should be made
+in each individual case. If bleeding is associated with pain suggestive of uterine activity or abruption,the risk of preterm birth is increased and therefore steroids may be of benefit. Women presentingwith spotting which has stopped (particularly an identified lower genital tract cause such aspostcoital from a cervical ectropion) and no abdominal pain or tenderness may not require steroids.
+11. Should tocolytic therapy be used in women presenting with APH who have uterine activity?
+Tocolysis should not be used to delay delivery in a woman presenting with a major APH, or who is
+haemodynamically unstable, or if there is evidence of fetal compromise.
+A senior obstetrician should make any decision regarding the initiation of tocolysis in the event of an APH.
+Women most likely to benefit from use of a tocolytic drug are those who are very preterm, those
+needing transfer to a hospital that can provide neonatal intensive care and those who have not yetcompleted a full course of corticosteroids. RCOG Green-top Guideline No. 1b states that tocolytictherapy is contraindicated in placental abruption and is ‘relatively contraindicated’ in ‘mildhaemorrhage’ due to placenta praevia.
+17
+Towers et al.76reviewed 236 cases of APH, which included 131 cases of placental abruption and
+105 cases of placenta praevia. Tocolysis had been used in 95 women with abruption and in 76women with placenta praevia. The authors concluded that no adverse maternal or fetal effects of
+10 of 23 RCOG Green-top Guideline No. 63 © Royal College of Obstetricians and GynaecologistsP
+P
+A
+P
+Evidence
+level 1++
+Evidence
+level 4
+P
+P
+Evidence
+level 4
+Evidence
+level 2–RCOG Green-top Guideline No. 63 11 of 23 © Royal College of Obstetricians and Gynaecologiststocolysis occurred, but that a prospective randomised trial was necessary to determine whether
+tocolytic use carries any benefits.
+If tocolysis is employed, then the drug of choice in a woman with a history of APH should have fewest
+maternal cardiovascular side effects. The calcium antagonist nifedipine has been associated with cases ofmaternal hypotension and is probably best avoided.
+77
+12. Should the antenatal care of a woman be altered following APH?
+Following single or recurrent episodes of APH from a cervical ectropion, subsequent antenatal care need
+not be altered.
+Following APH from placental abruption or unexplained APH, the pregnancy should be reclassified as
+‘high risk’ and antenatal care should be consultant-led. Serial ultrasound for fetal growth should beperformed.
+If placenta praevia is diagnosed, subsequent antenatal care should be in line with RCOG Green-top Guideline
+No 27.12
+Women with pregnancies complicated by APH (including unexplained APH) are at increased riskof adverse perinatal outcomes including small for gestational age fetus (see section 5) and fetalgrowth restriction. Serial ultrasound for fetal growth should be performed. The pregnant womanshould be reclassified as high-risk at least until serial ultrasound scans demonstrate normal fetalgrowth and amniotic fluid volume. An epidemiological study of women with unexplained APHdemonstrated an increased risk of oligohydramnios (OR 6.2), premature rupture of membranes (OR3.4), fetal growth restriction (OR 5.6), preterm labour and caesarean delivery (OR 4.0). The authorsconcluded that women who have experienced APH should have increased fetal surveillancethroughout the pregnancy.
+78
+13. Labour and delivery
+13.1 When should women with APH be delivered and what mode of delivery should be employed in women
+whose pregnancies have been complicated by APH? 
+If fetal death is diagnosed, vaginal birth is the recommended mode of delivery for most women
+(provided the maternal condition is satisfactory), but caesarean birth will need to be considered forsome. This is addressed in Green-top Guideline No. 55.
+15
+If the fetus is compromised, a caesarean section is the appropriate method of delivery with concurrentresuscitation of the mother.
+Women with APH and associated maternal and/or fetal compromise are required to be delivered
+immediately.
+The optimum timing of delivery of women presenting with unexplained APH and no associated maternal
+and/or fetal compromise is not established. A senior obstetrician should be involved in determining thetiming and mode of birth of these women.
+In women with APH secondary to placenta praevia, intrapartum management is described in Green-top
+Guideline No. 27.12
+APH associated with maternal or fetal compromise is an obstetric emergency. Management should includematernal resuscitation and delivery of the fetus to control the bleeding (see section 15). Delivery in thisEvidence
+level 2–
+DP
+Evidence
+level 2+
+P
+P
+P
+Psituation will usually be by caesarean section, unless the woman is in established labour. Similarly, if there is
+evidence of fetal distress, resuscitation of the mother should commence and arrangements made to deliverthe baby by caesarean section once the woman is stabilised.
+No studies were identified to support recommendations regarding the optimum timing of delivery of women
+presenting with APH in the absence of maternal or fetal compromise. In women presenting with APH before37
++0weeks of gestation, where there is no maternal or fetal compromise and bleeding has settled, there is no
+evidence to support elective premature delivery of the fetus.
+If the woman presents after 37+0weeks of gestation, it is important to establish if the bleeding is an APH or
+blood stained ‘show’; if the APH is spotting or the blood is streaked through mucus it is unlikely to requireactive intervention. However, in the event of a minor or major APH, induction of labour with the aim ofachieving a vaginal delivery should be considered in order to avoid adverse consequences potentiallyassociated with a placental abruption.
+13.2 What intrapartum fetal monitoring should be employed for women whose pregnancies were complicated
+by APH? 
+Women in labour with active vaginal bleeding require continuous electronic fetal monitoring.
+In women who are in preterm labour whose pregnancies have been complicated by major APH or
+recurrent minor APH, or if there has been any clinical suspicion of an abruption, then continuouselectronic fetal monitoring should be recommended.
+In women who have experienced one episode of minor APH, in which there have been no subsequent
+concerns regarding maternal or fetal wellbeing, intermittent auscultation is appropriate.
+Women with minor APH with evidence of placental insufficiency (such as fetal growth restriction or
+oligohydramnios) should be recommended to undergo continuous electronic fetal monitoring.
+The monitoring of the fetal heart rate in labour aims to identify hypoxia before it leads to perinatal death or
+impaired neurological development. There is a lack of evidence to support recommendations on intrapartumfetal monitoring after APH.
+Guidelines commissioned by the National Institute for Health and Clinical Excellence (NICE) on
+intrapartum care recommend that continuous electronic fetal heart rate monitoring should beperformed when women have active vaginal bleeding.
+79Pregnancies complicated by co-existing
+severe morbidity are outside the remit of the guideline.
+Extrapolating advice from the NICE guidelines on intrapartum care, it seems reasonable to recommend that
+women whose pregnancies have been complicated by major APH or recurrent, minor APH, who are inpreterm labour or if there has been any clinical suspicion of an abruption, should be recommended toundergo continuous electronic fetal monitoring. Since NICE recommends that intermittent auscultation of thefetal heart rate is appropriate for low-risk women in established labour,
+79it would be reasonable practice to
+employ intermittent auscultation of the fetal heart in women who have experienced spotting or one episodeof minor APH, in which there have been no subsequent concerns regarding maternal or fetal wellbeing.
+13.3 What is the optimal mode of anaesthesia for women who have experienced APH? 
+Regional anaesthetic is recommended for operative delivery unless there is a specific contraindication.
+In a case of APH where maternal or fetal condition is compromised and caesarean section required, a general
+anaesthetic should be considered to facilitate control of maternal resuscitation and to expedite delivery.
+12 of 23 RCOG Green-top Guideline No. 63 © Royal College of Obstetricians and GynaecologistsP
+PD
+D
+Evidence
+level 4
+P
+PA consultant anaesthetist should be involved in the intrapartum care of women with APH with
+associated compromise.
+The Sixth Report of the Confidential Enquiries into Maternal and Child Health in the UK63highlighted the
+relative safety of regional versus general anaesthesia for operative delivery. Specific contraindications toregional anaesthesia relevant to APH include maternal cardiovascular instability and coagulopathy. The choiceof anaesthesia for each case requires an individual assessment by a senior anaesthetist; if the woman ishaemodynamically stable, the magnitude of active bleeding should determine the appropriateness of regionalanaesthesia.
+In the case of severe fetal compromise but with a stable mother, it is reasonable to perform a general
+anaesthetic in the fetal interest to expedite rapid delivery. The optimal mode of anaesthesia will depend onthe skill, expertise and experience of the individual anaesthetist. In this situation good communication isrequired between the obstetric and anaesthetic staff. Sequential reports investigating maternal deaths in theUK have highlighted the importance of senior (consultant) anaesthetic involvement in the care of women athigh risk of haemorrhage.
+8,62,63
+13.4 What is the appropriate management of the third stage of labour in women with APH?
+Postpartum haemorrhage (PPH) should be anticipated in women who have experienced APH.
+Women with APH resulting from placental abruption or placenta praevia should be strongly
+recommended to receive active management of the third stage of labour.
+Consideration should be given to the use of ergometrine-oxytocin (Syntometrine® [Alliance,
+Chippenham, Wilts]) to manage the third stage of labour in women with APH resulting from placentalabruption or placenta praevia in the absence of hypertension (see Green-top Guideline No.52).
+APH arising from placental abruption and placenta praevia is associated with an increased risk of
+postpartum haemorrhage.80,81Active versus expectant management of the third stage of labour
+reduces the risk of PPH (blood loss greater than 1000 ml) and need for blood transfusion.82NICE
+guidelines on intrapartum care79recommend that women with risk factors for PPH (including APH)
+should have these highlighted in their notes and a care plan covering the third stage of labourshould be made and discussed with the women.
+A Cochrane review addressing prophylactic ergometrine-oxytocin versus oxytocin for the third
+stage of labour reported that the addition of ergometrine to oxytocin was associated with a smallreduction in the risk of PPH using the definition of PPH of blood loss of at least 500 ml (OR 0.82,95% CI 0.71–0.95).
+83
+Consideration should therefore be given to the use of ergometrine-oxytocin for the third stage of labour inwomen with APH resulting from placental abruption or placenta praevia. 
+14. Should women presenting with APH who are RhD-negative be given anti-D Ig? 
+Anti-D Ig should be given to all non-sensitised RhD-negative women after any presentation with APH,
+independent of whether routine antenatal prophylactic anti-D has been administered.
+In the non-sensitised RhD-negative woman in the event of recurrent vaginal bleeding after 20+0weeks
+of gestation, anti-D Ig should be given at a minimum of 6-weekly intervals.
+13 of 23 RCOG Green-top Guideline No. 63 © Royal College of Obstetricians and GynaecologistsP
+P
+A
+B
+Evidence
+level 1++
+B
+DIn the non-sensitised RhD-negative woman for all events after 20+0weeks of gestation, at least 500 iu
+anti-D Ig should be given followed by a test to identify FMH greater than 4 ml red blood cells; additionalanti-D Ig should be given as required.
+Recommendations regarding the administration of anti-D Ig for RhD prophylaxis are presented in RCOG
+Green-top Guideline No.22.11
+15. How should massive APH be managed and who should be included in the resuscitation team?
+The management of massive APH should follow locally devised multidisciplinary protocols for massive
+obstetric haemorrhage.
+The management team should include a consultant obstetrician, anaesthetist, haematologist and
+midwifery labour ward coordinator. Laboratory staff and portering staff should be alerted.
+The CEMACH report, Saving Mothers’ Lives 2003–05 , stated that ‘dealing with ill, bleeding women requires
+skilled teamwork between obstetric and anaesthetic teams with appropriate help from other specialistsincluding haematologists, vascular surgeons and radiologists. Senior staff should be involved as early aspossible, and should have appropriate experience’.
+7,8A multidisciplinary haemorrhage protocol should be
+available in all units and be updated regularly.62,63
+The principles of management of massive APH are outlined in Appendix 1.
+16. What blood products should be ordered and made available for women with APH?
+The principles of fluid replacement and administration of blood products are the same for APH as they arefor PPH. These are presented in detail in the RCOG Green-top Guideline No. 52 
+Prevention and Management
+of Postpartum Haemorrhage13and are summarised in Appendix 2. 
+Data regarding transfusion of blood products in APH are limited. In the management of military trauma, a
+decrease in coagulopathy and improved survival is reported with a high fresh frozen plasma (FFP) to packedred cell (PRC) transfusion ratio of 1:1 to 1:1.4.
+84,85An observational population-based study compared the
+transfusion of whole blood versus PRCs in obstetric haemorrhage.86Women who were transfused with PRCs
+developed acute tubular necrosis more often than women given whole blood, while pulmonary oedema wasmore commonly seen in women given whole blood. Prospective randomised trials are required beforerecommendations can be made on whole blood transfusion in obstetric haemorrhage.
+87
+16.1 How should the woman presenting with an APH who develops a coagulopathy be managed?
+In women who have experienced a massive blood loss or a major abruption, the development of a
+disseminated intravascular coagulation (DIC) should be considered. Clotting studies and a plateletcount should be urgently requested and advice from a haematologist sought. Up to 4 units of FFP and10 units of cryoprecipitate may be given whilst awaiting the results of the coagulation studies.
+RCOG Green-top Guideline No. 52 states that: ‘While acknowledging the general principle that
+results of coagulation studies and the advice of a haematologist should be used to guide transfusionof coagulation factors, up to 1 litre (equivalent to 4 units) of FFP and 10 units of cryoprecipitate(two packs) may be given empirically in the face of relentless bleeding, while awaiting the resultsof coagulation studies’. 
+13
+In cases of placental abruption and associated intrauterine fetal death, coagulopathy and hypovolaemic shockare not uncommon.
+70Resuscitation of the woman should follow the framework in Appendix 2, working
+closely with haematology and anaesthetic colleagues.
+RCOG Green-top Guideline No. 63 14 of 23 © Royal College of Obstetricians and GynaecologistsD
+PP
+D
+Evidence
+level 416.2 How should the woman presenting with an APH who is taking anticoagulant therapy be managed?
+Women receiving antenatal anticoagulant therapy (usually low molecular weight heparin or warfarin)
+should be advised that if they have any vaginal bleeding they should not take any more doses ofanticoagulant medication. They should attend hospital urgently, be assessed on admission and furtherdoses should only be administered after consultation with medical staff.
+If a woman develops a haemorrhagic problem while on anticoagulant therapy, the treatment should
+be reviewed urgently and expert haematological advice sought.18
+Any woman who is considered to be at high risk of haemorrhage and in whom continued heparintreatment is considered essential should be managed with intravenous, unfractionated heparin untilthe risk factors for haemorrhage have resolved.
+18
+17. In women whose pregnancy is complicated by APH, how should the neonate be
+managed and by whom?
+Major or massive APH may result in fetal anaemia and fetal compromise. The neonate should be
+assessed by a senior paediatrician/neonatologist.
+In minor APH, clinical judgement should be used. With continuing haemorrhage, it would be appropriate
+to request paediatric support at the time of delivery.
+17.1 Major APH
+17.1.1 Abruption and vasa praevia
+The principal concern in these circumstances is neonatal anaemia and therefore these babies should bemanaged by an experienced paediatrician/neonatologist. Neonatal staff should be present at the time ofdelivery and be informed of the likely diagnosis and extent of the blood loss so that arrangements for earlyneonatal blood transfusion can be made if necessary.
+The obstetrician should ensure that, in cases of vasa praevia, the umbilical cord is clamped as soon as possible
+after delivery, leaving the longer part attached to the neonate so that umbilical artery catheterisation isfacilitated if required. 
+17.1.2 Placenta praevia
+Anterior placenta praevia that necessitates incising the placenta at the time of caesarean section is anindication for attendance by an experienced paediatrician/neonatologist. 
+17.2 Minor APH
+Clinical judgement should be used in these circumstances. It would be appropriate to inform paediatric staffof the anticipated delivery.
+18. How should the woman with an extremely preterm pregnancy (24+0to 26+0weeks of
+gestation) and APH be managed? 
+Regardless of the gestation, the mother’s life should take priority. She should be resuscitated and
+stabilised before any decision is made regarding delivery of the baby.
+A senior paediatrician/neonatologist should be involved in the counselling of women when extreme
+preterm birth is likely.
+15 of 23 RCOG Green-top Guideline No. 63 © Royal College of Obstetricians and GynaecologistsPPEvidence
+level 4D
+P
+DConservative management is usually appropriate when APH occurs in the extremely preterm pregnancy (less
+than 26+0weeks of gestation) and the mother’s condition is stable. 
+When the bleeding is considered life-threatening for the woman or there is evidence of
+cardiovascular compromise that fails to respond to resuscitation, consideration should be given todelivery of the fetus. At these gestations experienced neonatologists should be involved in thecounselling of the woman and her partner.
+88The use of practical, clinical guidelines in these
+situations aids consistency and promotes informed, supportive and responsible choices.89The
+British Association of Perinatal Medicine have produced a framework for the management of babiesborn extremely preterm (less than 26
++0weeks of gestation).72
+19. What are the postnatal issues that need to be addressed in women whose pregnancies
+are complicated by APH?
+The postnatal management of pregnancies complicated by major or massive APH should include
+thromboprophylaxis, debriefing and clinical incident reporting.
+Following a major APH or when the outcome for either the mother or baby/babies was suboptimal, it is
+important that an experienced obstetrician debriefs the woman and her partner. The visit should take placeat the earliest possible time following delivery when the woman is able to comprehend and communicate.The events should be discussed and the woman and her family given the opportunity to ask questions. Afollow-up appointment 4 to 6 weeks following birth should be offered and contact numbers for access tomedical and psychological support should be provided as appropriate.
+Where the APH has resulted in fetal demise, good communication between the maternity unit and
+the woman’s general practitioner and community midwife is crucial. These issues are addressed inRCOG Green-top Guideline No. 55 
+Late Intrauterine Fetal Death and Stillbirth .15It may be
+appropriate for the consultant to contact the general practitioner by telephone.7
+Haemorrhage and blood transfusion are risk factors for venous thromboembolism thereforethromboprophylaxis should be commenced or reinstituted as soon as the immediate risk of haemorrhage isreduced. Women at high risk of further haemorrhage (for example women with a coagulopathy) or womenwith continuing haemorrhage and in whom thromboprophylaxis is indicated, may be more appropriatelymanaged with unfractionated heparin and/or graduated compression stockings.
+18
+Risk management in obstetric practice aims to improve quality of care and patient safety. The RCOGrecommend that a major obstetric haemorrhage should be reported through clinical incident systems.
+90
+20. What is the role of obstetric skill drills to improve the management of APH?
+Management of a major APH should be included in obstetric skill drills.
+CEMACH, the RCOG and the Royal College of Midwives have recommended obstetric drills or skill drillswhich includes maternal collapse. These drills are also now one of the requirements in the new MaternityClinical Negligence Scheme for Trusts standards.
+91
+Sequential reports investigating maternal deaths in the UK have highlighted the importance ofobstetric haemorrhage skill drills.
+7,8,62,63Management of a major APH should be included in obstetric
+skill drills92–94A prospective randomised trial from the UK demonstrated that practical, multi-
+professional training in the management of obstetric emergencies increases midwives’ and doctors’knowledge.
+95Skill drills should ensure all members of staff, including those involved in blood
+transfusion services, know exactly what to do, ensuring that appropriate blood products are
+RCOG Green-top Guideline No. 63 16 of 23 © Royal College of Obstetricians and GynaecologistsEvidence
+level 4
+P
+Evidence
+level 4
+Evidence
+levels 
+2+ to 4Cdelivered to the labour ward. A multidisciplinary approach to treatment should promote effective
+teamworking and ensure prompt and efficient management in such an emergency.
+21. Suggested audit topics 
+1. The administration of corticosteroids to women presenting with APH less than 34+6weeks of gestation.
+2. Administration of anti-D Ig to non-sensitised RhD-negative women presenting with APH.3. Percentage of women with APH (recurrent episodes of minor APH, a major APH that has resolved or
+unexplained APH) referred for serial growth scans.
+4. Management of the third stage of labour in women who had a major APH.5. Appropriate training of the multidisciplinary team.
+22. Areas for future research
+1. Randomised controlled trials of sufficient power are required to assess interventions (for example diet,
+vitamin supplements and antithrombotic therapy) to prevent placental abruption.
+2. Studies are required to determine the optimum timing of delivery in women presenting with unexplained
+APH and no associated maternal and/or fetal compromise.
+3. Data regarding transfusion of blood products in APH are limited. Studies are required to determine
+maternal and fetal outcomes following use of PRCs, FFP and whole blood in the management of APH.
+References
+17 of 23 RCOG Green-top Guideline No. 63 © Royal College of Obstetricians and GynaecologistsEvidence
+levels 
+2+ to 4
+1. Calleja-Agius J, Custo R, Brincat MP , Calleja N. Placental
+abruption and placenta praevia. Eur Clin Obstet Gynaecol
+2006;2:121–7.
+2. Hall M. Guidelines for management and treatment of obstetric
+haemorrhage in women who decline blood transfusion. In:Lewis G, Drife J, editors. Why Mothers Die 2000–2002 . The
+Sixth Report of the Confidential Enquiries into MaternalDeaths in the United Kingdom. London: RCOG Press; 2004.
+3. Royal College of Obstetricians and Gynaecologists. Blood
+Transfusions in Obstetrics . Green-top Guideline No. 47.
+London: RCOG; 2008.
+4. Royal College of Surgeons. Code of Practice for Management
+of Jehovah Witnesses . London: RCSENG; 2002.
+5. Association of Anaesthetists of Great Britain and Ireland.
+Management of Anaesthesia for Jehovah’s Witnesses . 2nd ed.
+London: AAGBI; 2005[www.aagbi.org/publications/guidelines/docs/jehovah.pdf].
+6. Khan KS, Wojdyla D, Say L, Gülmezoglu AM, Van Look PF . WHO
+analysis of causes of maternal death: a systematic review.Lancet 2006;367:1066–74.
+7. Cantwell R, Clutton-Brock T, Cooper G, Dawson A, Drife J,
+Garrod D, et al. Saving Mothers’ Lives: Reviewing maternal
+deaths to make motherhood safer, 2006–08 . The Eighth
+Report of the Confidential Enquiries into Maternal Deaths inthe United Kingdom. BJOG 2011;118:1–203.
+8. Lewis, G, editor. The Confidential Enquiry into Maternal and
+Child Health (CEMACH). Saving Mothers’ Lives: reviewing
+maternal deaths to make motherhood safer, 2003–2005 . The
+Seventh Report on Confidential Enquiries into Maternal Deathsin the United Kingdom. London: CEMACH; 2007.
+9. Department of Health. Saving Mothers 2005–2007 . Fourth
+Report on Confidential Enquiries into Maternal Deaths inSouth Africa. Pretoria: Department of Health; 2009.
+10. Brace V , Kernaghan D, Penney G. Learning from adverse clinical
+outcomes: major obstetric haemorrhage in Scotland, 2003–05.BJOG 2007;114:1388–1396.
+11. Royal College of Obstetricians and Gynaecologists. The Use of
+Anti-D Immunoglobulin for Rhesus D Prophylaxis . Green-top
+Guideline No. 22. London: RCOG; 2011.12. Royal College of Obstetricians and Gynaecologists. Placenta
+Praevia, Placenta Praevia Accreta and Vasa Praevia:
+Diagnosis and Management . Green-top Guideline No. 27.
+London: RCOG; 2011.
+13. Royal College of Obstetricians and Gynaecologists. Prevention
+and Management of Postpartum Haemorrhage . Green-top
+Guideline No. 52. London: RCOG; 2009.
+14. Royal College of Obstetricians and Gynaecologists. Maternal
+Collapse in Pregnancy and the Puerperium . Green-top
+Guideline No. 56. London: RCOG; 2011.
+15. Royal College of Obstetricians and Gynaecologists. Late
+Intrauterine Fetal Death and Stillbirth . Green-top Guideline
+No. 55. London: RCOG; 2010.
+16. Royal College of Obstetricians and Gynaecologists. Antenatal
+Corticosteroids to Reduce Neonatal Morbidity . Green-top
+Guideline No. 7. London: RCOG; 2010.
+17. Royal College of Obstetricians and Gynaecologists. Tocolytic
+Drugs for Women in Preterm Labour . Green-top Guideline
+No. 1b. London: RCOG; 2011.
+18. Royal College of Obstetricians and Gynaecologists. The Acute
+Management of Thrombosis and Embolism During
+Pregnancy and the Puerperium . Green-top Guideline No. 37b.
+London: RCOG; 2007.
+19. Oylese Y , Ananth CV . Placental abruption. Obstet Gynecol
+2006;108:1005–16. 
+20. Royal College of Obstetricians and Gynaecologists.
+Development of RCOG Green-top Guidelines: Policies and
+Processes . Clinical Governance Advice 1a. London: RCOG; 2006.
+21. Royal College of Obstetricians and Gynaecologists.
+Development of RCOG Green-top Guidelines: Producing a
+Scope . Clinical Governance Advice 1b. London: RCOG; 2006.
+22. Royal College of Obstetricians and Gynaecologists.
+Development of RCOG Green-top Guidelines: Producing a
+Clinical Practice Guideline . Clinical Governance Advice 1c.
+London: RCOG; 2006.
+23. Neilson JP . Interventions for suspected placenta praevia.
+Cochrane Database Syst Rev 2003;(2):CD001988.
+24. Neilson JP . Interventions for treating placental abruption.
+Cochrane Database Syst Rev 2003;(1):CD003247; 
+reviewed 2009.25. Raymond EG, Mills JL. Placental abruption: maternal risk 
+factors and associated fetal conditions. Acta Obstet Gynecol
+Scand 1993;72:633–9. 
+26. Ananth CV , Oyelese Y , Srinivas N, Yeo L, Vintzileos AM. Preterm
+premature rupture of membranes, intrauterine infection andoligohydramnios: risk factors for placental abruption. Obstet
+Gynecol 2004;104:71–7.
+27. Tikkanen M, Nuutila M, Hiilesmaa V , Paavonen J, Ylikorkala O.
+Clinical presentation and risk factors of placental abruption.Acta Obstet Gynecol Scand 2006;85:700–5.
+28. Tikkanen M, Nuutila M, Hiilesmaa V , Paavonen J, Ylikorkala O.
+Prepregnancy risk factors for placental abruption. Acta Obstet
+Gynecol Scand 2006;85:40–4.
+29. Ananth CV , Nath CA, Philipp C. The normal anticoagulant
+system and risk of placental abruption: protein C, protein S andresistance to activated protein C. J Matern Fetal Neonatal Med
+2010;23:1377–83.
+30. Deutsch AB, Lynch O, Alio AP , Salihu HM, Spellacy WN.
+Increased risk of placental abruption in underweight women.Am J Perinatol 2010;27:235–40.
+31. Pariente G, Wiznitzer A, Sergienko R, Mazor M, Holcberg G,
+Sheiner E. Placental abruption: critical analysis of risk factorsand perinatal outcomes. J Matern Fetal Neonatal Med
+2010;24:698–702. 
+32. Rasmussen S, Irgens LM. Occurrence of placental abruption in
+relatives. BJOG 2009;116:693–699.
+33. Tikkanen M. Etiology, clinical manifestations, and prediction of
+placental abruption. Acta Obstet Gynecol Scand
+2010;89:732–40.
+34. Kennare R, Heard A, Chan A. Substance use during pregnancy:
+risk factors and obstetric and perinatal outcomes in SouthAustralia. ANZJOG 2005;45:220–5.
+35. Lykke JA, Dideriksen KL, Lidegaard O, Langhoff-Roos J. First-
+trimester vaginal bleeding and complications later inpregnancy. Obstet Gynecol 2010;115:935–44.
+36. van Oppenraaij RH, Jauniaux E, Christiansen OB, Horcajadas JA,
+Farquharson RG, Exalto N; ESHRE Special Interest Group forEarly Pregnancy (SIGEP). Predicting adverse obstetric outcomeafter early pregnancy events and complications: a review. Hum
+Reprod Update 2009;15:409–21.
+37. Robertson L, Wu O, Langhorne P , Twaddle S, Clark P , Lowe GD,
+et al; Thrombosis: Risk and Economic Assessment ofThrombophilia Screening (TREATS) Study. Thrombophilia inpregnancy: a systematic review. Br J Haematol
+2006;132:171–96.
+38. Rodger MA, Betancourt MT, Clark P , Lindqvist PG, Dizon-
+Townson D, Said J, et al. The association of factor V Leiden andprothrombin gene mutation and placental-mediated pregnancycomplications: a systematic review and meta-analysis ofprospective cohort studies. PLoS Med 2010;7:e1000292.
+39. Nath CA, Ananth CV , Smulian JC, Shen-Schwarz S, Kaminsky L;
+New Jersey-Placental Abruption Study Investigators.Histologicevidence of inflammation and risk of placental abruption. Am 
+J Obstet Gynecol 2007:197:319.e1–6.
+40. Parazzini F , Dindelli M, Luchini L, La Rosa M, Potenza MT,
+Frigerio L, et al. Risk factors for placenta praevia. Placenta
+1994;15:321–6.
+41. Sheiner E, Shoham-Vardi I, Hallak M, Hershkowitz R, Katz M,
+Mazor M. Placenta previa: obstetric risk factors and pregnancyoutcome. J Matern Fetal Med 2001;10:414–9.
+42. Faiz AS, Ananth CV . Etiology and risk factors for placenta
+previa: an overview and meta-analysis of observational studies.J Matern Fetal Neonatal Med 2003;13:175–90.
+43. Healy DL, Breheny S, Halliday J, Jaques A, Rushford D, Garrett C,
+et al. Prevalence and risk factors for obstetric haemorrhage in6730 singleton births after assisted reproductive technology inVictoria Australia. Hum Reprod 2010;25:265–74.
+44. Yang Q, Wen SW , Phillips K, Oppenheimer L, Black D, Walker
+MC. Comparison of maternal risk factors between placentalabruption and placenta previa. Am J Perinatol
+2009;26:279–86.45. Rasmussen S, Albrechtsen S, Dalaker K. Obstetric history and
+the risk of placenta previa. Acta Obstet Gynecol Scand
+2000;79:502–7.
+46. Ananth CV , Smulian JC, Vintzileos AM. The association of
+placenta previa with history of cesarean delivery and abortion:a meta-analysis. Am J Obstet Gynecol 1997;177:1071–8.
+47. Hendricks MS, Chow YH, Bhagavath B, Singh K. Previous
+cesarean section and abortion as risk factors for developingplacenta previa. J Obstet Gynaecol Res 1999;25:137–42.
+48. Toivonen S, Heinonen S, Anttila M, Kosma VM, Saarikoski S.
+Reproductive risk factors, Doppler findings, and outcome ofaffected births in placental abruption: a population-basedanalysis. Am J Perinatol 2002;19:451–60.
+49. Odibo AO, Cahill AG, Stamilio DM, Stevens EJ, Peipert JF ,
+Macones GA. Predicting placental abruption and previa inwomen with a previous cesarean delivery. Am J Perinatol
+2007;24:299–305.
+50. Campbell JC. Health consequences of intimate partner
+violence. Lancet 2002;359:1331–6.
+51. Lumley J, Chamberlain C, Dowswell T, Oliver S, Oakley L,
+Watson L. Interventions for promoting smoking cessationduring pregnancy. Cochrane Database Syst Rev
+2009;(3):CD001055.
+52. Day E, George S. Management of drug misuse in pregnancy.
+Advances in Psychiatric Treatment 2005;11:253–61.
+53. Pinto SM, Dodd S, Walkinshaw SA, Siney C, Kakkar P , Mousa HA.
+Substance abuse during pregnancy: effect on pregnancyoutcomes. Euro J Obstet Gynecol Reprod Biol
+2010;150:137–41.
+54. Charles DH, Ness AR, Campbell D, Smith GD, Whitley E, Hall
+MH. Folic acid supplements in pregnancy and birth outcome:re-analysis of a large randomised controlled trial and update ofCochrane review. Paediatr Perinat Epidemiol
+2005;19:112–24.
+55. Nilsen RM, Vollset SE, Rasmussen SA, Ueland PM, Daltveit AK.
+Folic acid and multivitamin supplement use and risk ofplacental abruption: a population-based registry study. Am J
+Epidemiol 2008;167:867–74.
+56. Rodger MA, Paidas M. Do thrombophilias cause placenta-
+mediated pregnancy complications? Semin Thromb Hemost
+2007;33:597–603.
+57. Gris JC, Chauleur C, Faillie JL, Baer G, Marès P , Fabbro-Peray P , 
+et al. Enoxaparin for the secondary prevention of placentalvascular complications in women with abruptio placentae: thepilot randomised controlled NOH-AP trial. Thromb Haemost
+2010;104:771–9.
+58. Calleja-Agius J, Custo R, Brincat M, Calleja N. Placental
+abruption and placenta praevia. Eur Clin Obstet Gynaecol
+2006;2:121–7. 
+59. Walfish M, Neuman A, Wlody D. Maternal haemorrhage. Br J
+Anaesthesia 2009;103:i47–i56. 
+60. Magann EF , Cummings JE, Niederhauser A, Rodriguez-
+Thompson D, McCormack R, Chauhan SP . Antepartum bleedingof unknown origin in the second half of pregnancy: a review.Obstet Gynecol Surv 2005;60:741–5.
+61. McCormack RA, Doherty DA, Magann EF , Hutchinson M,
+Newnham JP . Antepartum bleeding of unknown origin in thesecond half of pregnancy and pregnancy outcomes. BJOG
+2008;115:1451–7.
+62. Confidential Enquiry into Maternal and Child Health. Why
+Mothers Die 1997–1999. The Fifth Report of the Confidential
+Enquiries into Maternal Deaths in the United Kingdom.London: RCOG; 2001.
+63. Confidential Enquiry into Maternal and Child Health. Why
+Mothers Die 2000–2002 . The Sixth Report of the Confidential
+Enquiries into Maternal Deaths in the United Kingdom.London: RCOG; 2004.
+64. Van Calsteren K, Vergote I, Amant F . Cervical neoplasia during
+pregnancy: diagnosis, management and prognosis. Best Pract
+Res Clin Obstet Gynaecol 2005;19:611–30.
+RCOG Green-top Guideline No. 63 18 of 23 © Royal College of Obstetricians and Gynaecologists19 of 23 RCOG Green-top Guideline No. 63 © Royal College of Obstetricians and Gynaecologists65. Norström A, Jansson I, Andersson H. Carcinoma of the uterine
+cervix in pregnancy. A study of the incidence and treatment inthe Western region of Sweden 1973 to 1992. Acta Obstet
+Gynecol Scand 1997;76:583–9.
+66. Chilaka VN, Konje JC, Clarke S, Taylor DJ. Practice observed: is
+speculum examination on admission a necessary procedure inthe management of all cases of antepartum haemorrhage? J
+Obstet Gynaecol 2000;20:396–8.
+67. NHS Cervical Screening Programmes. Colposcopy and
+Programme Management: Guidelines for the NHS Cervical
+Screening Programme. 2nd edition. Sheffield: NHSCSP; 2010
+[http://www.cancerscreening.nhs.uk/cervical/publications/nhscsp20.html].
+68. Emery CL, Morway LF , Chung-Park M, Wyatt-Ashmead J, Sawady
+J, Beddow TD. The Kleihauer-Betke test. Clinical utility,indication, and correlation in patients with placental abruptionand cocaine use. Arch Pathol Lab Med 1995;119:1032–7. 
+69. Dhanraj D, Lambers D. The incidences of positive Kleihauer-
+Betke test in low-risk pregnancies and maternal traumapatients. Am J Obstet Gynecol 2004;190:1461–3.
+70. Oyelese Y . Placenta previa: the evolving role of ultrasound.
+Ultrasound Obstet Gynecol 2009;34:123–6.
+71. Glantz C, Purnell L. Clinical utility of sonography in the
+diagnosis and treatment of placental abruption. J Ultrasound
+Med 2002;21:837–40.
+72. Wilkinson AR, Ahluwalia J, Cole A, Crawford D, Fyle J, Gordon A,
+et al. Management of babies born extremely preterm at lessthan 26 weeks of gestation: a framework for clinical practice atthe time of birth. Arch Dis Child Fetal Neonatal Ed
+2009;94:F2–5.
+73. Tikkanen M, Nuutila M, Hiilesmaa V , Paavonen J, Ylikorkala O.
+Clinical presentation and risk factors of placental abruption.Acta Obstet Gynecol Scand 2006;85:700–5.
+74. Manolitsas T, Wein P , Beischer NA, Sheedy MT, Ratten VJ. Value of
+cardiotocography in women with antepartum haemorrhage –is it too late for caesarean section when the cardiotocographshows ominous features? Aust N Z J Obstet Gynaecol
+1994;34:403–8.
+75. Ananth CV , Berkowitz GS, Savitz DA, Lapinski RH. Placental
+abruption and adverse perinatal outcomes. JAMA
+1999;282:1646–51.
+76. Towers CV , Pircon RA, Heppard M. Is tocolysis safe in the
+management of third-trimester bleeding? Am J Obstet Gynecol
+1999;180:1572–8.
+77. Khan K, Zamora J, Lamont RF , Van Geijn Hp H, Svare J, Santos-
+Jorge C, et al. Safety concerns for the use of calcium channelblockers in pregnancy for the treatment of spontaneouspreterm labour and hypertension: a systematic review andmeta-regression analysis. J Matern Fetal Neonatal Med
+2010;23:1030–8.
+78. Harlev A, Levy A, Zaulan Y , Koifman A, Mazor M, Wiznitzer A, et
+al. Idiopathic bleeding during the second half of pregnancy asa risk factor for adverse perinatal outcome. J Matern Fetal
+Neonatal Med 2008;21:331–5. 
+79. National Collaborating centre for Women’s and Children’s
+Health. Intrapartum care: care of healthy women and their
+babies during childbirth. London: RCOG Press; 2007.80. Stones RW , Paterson CM, Saunders NJ. Risk factors for major
+obstetric haemorrhage. Eur J Obstet Gynecol Reprod Biol
+1993;48:15–8.
+81. Schuurmans N, MacKinnon C, Lane C, Etches D. Prevention and
+management of postpartum haemorrhage. Society ofObstetricians and Gynaecologists of Canada Clinical PracticeGuidelines No.88. J Soc Obstet Gynaecol Can 2000;22:271–81
+[http://www.sogc.org/guidelines/public/88E-CPG-April2000.pdf].
+82. Begley CM, Gyte GM, Murphy DJ, Devane D, McDonald SJ,
+McGuire W . Active versus expectant management for women inthe third stage of labour. Cochrane Database Syst Rev
+2010;(7):CD007412.
+83. McDonald S, Abbott JM, Higgins SP . Prophylactic ergometrine-
+oxytocin versus oxytocin for the third stage of labour.Cochrane Database Syst Rev 2004;(1):CD000201. 
+84. Holcomb JB, Jenkins D, Rhee P , Johannigman J, Mahoney P ,
+Mehta S, et al. Damage control resuscitation: directly addressingthe early coagulopathy of trauma. J Trauma 2007;62:307–10. 
+85. Borgman MA, Spinella PC, Perkins JG, Grathwohl KW , Repine T,
+Beekley AC. The ratio of blood products transfused affectsmortality in patients receiving massive transfusions at a combatsupport hospital. J Trauma 2007;63:805–13.
+86. Alexander JM, Sarode R, McIntire DD, Burner JD, Leveno KJ.
+Whole blood in the management of hypovolemia due toobstetric hemorrhage. Obstet Gynecol 2009;113:1320–6. 
+87. Mercier FJ, Bonnet MP . Use of clotting factors and other
+prohemostatic drugs for obstetric hemorrhage. Curr Opin
+Anaesthesiol 2010;23:310–6. 
+88. Vohr BR, Allen M. Extreme prematurity – the continuing
+dilemma. N Engl J Med 
+2005;352:71–2.
+89. Kaempf JW , Tomlinson M, Arduza C, Anderson S, Campbell B,
+Ferguson LA, et al. Medical staff guidelines for periviabilitypregnancy counseling and medical treatment of extremelypremature infants. Pediatrics 2006;117;22–9.
+90. Royal College of Obstetricians and Gynaecologists. Improving
+patient safety: risk management for maternity and
+gynaecology. Clinical Governance Advice No.2. London:
+RCOG; 2009.
+91. Clinical Negligence Scheme for Trusts. Maternity Clinical Risk
+Management Standards 2011/12 . NHS Litigation Authority
+[http://www.nhsla.com/RiskManagement/].
+92. Draycott T, Crofts J. Structured team training in obstetrics and
+its impact on outcome. Fetal Matern Med Rev
+2006;17:229–37.
+93. Sorensen SS. Emergency drills in obstetrics: reducing risk of
+perinatal death or permanent injury. JONAS Healthc Law
+Ethics Regul 2007;9:9–16. 
+94. Grunebaum A. Error reduction and quality assurance in
+obstetrics. Clin Perinatol 2007;34:489–502.
+95. Crofts JF , Ellis D, Draycott TJ, Winter C, Hunt LP , Akande VA.
+Change in knowledge of midwives and obstetricians followingobstetric emergency training: a randomised controlled trial oflocal hospital, simulation centre and teamwork training. BJOG
+2007;114:1534–41.APPENDIX 1
+Principles of management of massive APH (blood loss greater than 1000 ml and/or signs of clinical shock)
+Personnel required:
+●call experienced midwife (in addition to midwife in charge)
+●call obstetric middle grade and alert consultant
+●call anaesthetic middle grade and alert consultant
+●alert consultant clinical haematologist on call
+●alert blood transfusion laboratory
+●call porters for delivery of specimens/blood
+●designate one member of the team to record events, fluids, drugs and vital signs.
+Initial management:
+Initial management should follow the ABCD pathway.
+●A and B – assess a irway and b reathing
+A high concentration of oxygen (10–15 litres/minute) via a facemask should be administered. 
+●C – evaluate c irculation
+Establish two 14-gauge intravenous lines; a 20 ml blood sample should be taken and sent for diagnostic tests,
+including full blood count and assessment of FMH if RhD-negative, coagulation screen, urea and electrolytesand cross match (4 units)
+●D – assess the fetus and decide on d elivery
+The four pillars of management:
+●communication between all members of the multidisciplinary team
+●resuscitation (see Appendix 2)
+●monitoring and investigation 
+●arrest bleeding by arranging delivery of the fetus (see section 14).
+These management strategies have been adapted from RCOG Green-top Guideline No. 52 Prevention and
+Management of Postpartum Haemorrhage .12The differences in management options between APH and PPH
+are that there are two individuals to care for (should the fetus still be alive) and that a very specific methodof controlling the haemorrhage is available in the event of an APH (delivery of the fetus and placenta).Delivery of the fetus and placenta will control bleeding by allowing the uterus to contract and stop bleedingfrom the site of placental separation, and will also remove placental tissue, a source of production ofcoagulation activators which predisposes to the development of DIC.
+RCOG Green-top Guideline No. 63 20 of 23 © Royal College of Obstetricians and Gynaecologists21 of 23 RCOG Green-top Guideline No. 63 © Royal College of Obstetricians and GynaecologistsAPPENDIX 2
+The principles of fluid replacement and administration of blood products (from RCOG Green-top Guideline No. 5212)
+Basic measures for haemorrhage up to 1000 ml with no clinical shock:
+●intravenous access (14-gauge cannula x 1)
+●commence crystalloid infusion.
+Full protocol for massive haemorrhage (blood loss > 1000 ml or clinical shock):
+●assess airway
+●assess breathing
+●evaluate circulation
+●oxygen by mask at 10–15 litres/minute
+●intravenous access (14-gauge cannula x 2)
+●position left lateral tilt
+●keep the woman warm using appropriate available measures
+●transfuse blood as soon as possible
+●until blood is available, infuse up to 3.5 litres of warmed crystalloid Hartmann’s solution (2 litres) and/or
+colloid (1–2 litres) as rapidly as required
+●the best equipment available should be used to achieve rapid warmed infusion of fluids
+●special blood filters should notbe used, as they slow infusions.
+Fluid therapy and blood product transfusion:
+Crystalloid up to 2 litres Hartmann’s solutionColloid up to 1–2 litres colloid until blood arrivesBlood cross-matched
+if cross-matched blood unavailable and the clinical situation is urgent, give uncross-
+matched group-specific blood orgive O RhD-negative blood
+consider the use of red-cell salvage if available
+Fresh frozen plasma 4 units of FFP (12–15 ml/kg or total 1 litre)
+(i) for every 6 units of red cells or (ii) if prothrombin time and/or activated partial thromboplastin time (PT and aPTT) aregreater than 1.5 x mean control
+Platelets concentrates if platelet count < 50 x 10
+9/l
+Cryoprecipitate if fibrinogen < 1 g/l.
+With continuing massive haemorrhage and whilst awaiting coagulation studies, up to 4 units of FFP and 10
+units of cryoprecipitate (two packs) may be given empirically.
+Apply clinical judgement in each situation.The main therapeutic goal of the management of massive blood loss as outlined in Green-top Guideline No. 52
+summarises the main therapeutic goal of management of massive blood loss is to maintain:
+●haemoglobin > 8 g/dl
+●platelet count > 75 x 109/l 
+●prothrombin time < 1.5 x mean control
+●activated partial prothromboplastin time < 1.5 x mean control
+●fibrinogen > 1.0 g/l.Grades of recommendations
+At least one meta-analysis, systematic review or
+randomised controlled trial rated as 1++ anddirectly applicable to the target population; or 
+A systematic review of randomised controlled
+trials or a body of evidence consistingprincipally of studies rated as 1+ directlyapplicable to the target population anddemonstrating overall consistency of results
+A body of evidence including studies rated as
+2++ directly applicable to the targetpopulation, and demonstrating overallconsistency of results; or 
+Extrapolated evidence from studies rated as
+1++ or 1+
+A body of evidence including studies rated as
+2+ directly applicable to the target populationand demonstrating overall consistency ofresults; or 
+Extrapolated evidence from studies rated as
+2++
+Evidence level 3 or 4; or Extrapolated evidence from studies rated as 2+
+Good practice point
+Recommended best practice based on the
+clinical experience of the guidelinedevelopment groupClassification of evidence levels
+1++ High-quality meta-analyses, systematic
+reviews of randomised controlled trialsor randomised controlled trials with avery low risk of bias
+1+ Well-conducted meta-analyses, systematic
+reviews of randomised controlled trialsor randomised controlled trials with alow risk of bias
+1– Meta-analyses, systematic reviews of
+randomised controlled trials orrandomised controlled trials with a highrisk of bias
+2++ High-quality systematic reviews of
+case–control or cohort studies or high-quality case–control or cohort studieswith a very low risk of confounding, biasor chance and a high probability that therelationship is causal
+2+ Well-conducted case–control or cohort
+studies with a low risk of confounding,bias or chance and a moderateprobability that the relationship is causal
+2- Case–control or cohort studies with a
+high risk of confounding, bias or chanceand a significant risk that therelationship is not causal
+3 Non-analytical studies, e.g. case reports,
+case series
+4 Expert opinion
+PC
+DBAAPPENDIX 3
+Clinical guidelines are ‘systematically developed statements which assist clinicians and women in making
+decisions about appropriate treatment for specific conditions’. Each guideline is systematically developedusing a standardised methodology. Exact details of this process can be found in Clinical GovernanceAdvice No.1: Development of RCOG Green-top Guidelines (available on the RCOG website at
+http://www.rcog.org.uk/guidelines ). These recommendations are not intended to dictate an exclusive
+course of management or treatment. They must be evaluated with reference to individual patient needs,resources and limitations unique to the institution and variations in local populations. It is hoped that thisprocess of local ownership will help to incorporate these guidelines into routine practice. Attention isdrawn to areas of clinical uncertainty where further research might be indicated.
+The evidence used in this guideline was graded using the scheme below and the recommendations
+formulated in a similar fashion with a standardised grading scheme.
+© Royal College of Obstetricians and Gynaecologists 22 of 23 RCOG Green-top Guideline No. 63DISCLAIMER
+The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical
+practice. They present recognised methods and techniques of clinical practice, based on published evidence, forconsideration by obstetricians and gynaecologists and other relevant health professionals. The ultimate judgementregarding a particular clinical procedure or treatment plan must be made by the doctor or other attendant in the lightof clinical data presented by the patient and the diagnostic and treatment options available within the appropriatehealth services. 
+This means that RCOG Guidelines are unlike protocols or guidelines issued by employers, as they are not intended to
+be prescriptive directions defining a single course of management. Departure from the local prescriptive protocols orguidelines should be fully documented in the patient’s case notes at the time the relevant decision is taken.The guideline review process will commence in 2015 unless evidence requires earlier review.This guideline was produced on behalf of the Guidelines Committee of the Royal College of Obstetricians and
+Gynaecologists by:Dr AJ Thomson MRCOG, Paisley, Scotland and Dr JE Ramsay MRCOG, Kilmarnock, Scotland; with inputfrom Miss D Rich FRCOG, Wales at the scope and first draft stage
+and peer reviewed by: 
+Sir S Arulkumaran FRCOG, London; Mr KT Moriarty MRCOG, Northampton; Mr DI Fraser MRCOG, Norwich; Mr AKAsh FRCOG, London; Dr G Kumar FRCOG, BMFMS, RCGP , BCSH.
+Committee lead peer reviewers were: 
+Dr P Owen MRCOG, Glasgow, Scotland and Dr K Harding FRCOG, London
+The final version is the responsibility of the Guidelines Committee of the RCOG.
+© Royal College of Obstetricians and Gynaecologists RCOG Green-top Guideline No. 63 23 of 23

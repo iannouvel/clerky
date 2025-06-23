@@ -1,0 +1,1263 @@
+# Extracted from: Guideline No. 451 Asymptomatic Endometrial Thickening in Postmenopausal Women.pdf
+# Guideline ID: guideline-no-451-asymptomatic-endometrial-thickening-in-postmenopausal-women
+# Content length: 79507 characters
+# Processing date: 1732953490.9576077
+
+SOGC CLINICAL PRACTICE GUIDELINE
+No. 451, July 2024 (Replaces No. 249, October 2010, reaf ﬁrmed May 2018)
+Guideline No. 451: Asymptomatic
+Endometrial Thickening in
+Postmenopausal Women
+The English document is the original version; translation may introduce small differences in the French version.
+This clinical practice guideline was prepared by the authors and
+overseen by the SOGC Clinical Practice Gynaecology committee.
+It was reviewed by the SOGC Clinical Gynaecology Committee
+and The Society of Gynaecologic Oncologists of Canada (GOC)and approved by the SOGC Guideline Management andOversight Committee.
+This clinical practice guideline supersedes No. 249, published in
+October 2010, reaf ﬁrmed in May 2018.
+Authors
+Wendy Wolfman, MD, Toronto, ON
+Olga Bougie, MD, Kingston, ONInnie Chen, MD, Ottawa, ON
+Yale Tang, MD, Edmonton, AB
+Susan Goldstein, MD, Toronto, ONJeanne Bouteaud, MD, Montréal, QCSOGC Clinical Practice Gynaecology Committee (2022): Olga
+Bougie, Innie Chen, Anisha Dubey, Devon Evans, Joann James,
+Marie Jones, Sari Kives, Ally Murji, Jessica Papillon-Smith, Leslie
+Po, Elizabeth Randle, David Rittenberg (co-chair), JackieThurston, Paul Yong (co-chair)
+Acknowledgements: The authors would like to acknowledge and
+thank special contributor Javier Mejia-Gomez, MD, Toronto, ON.
+Disclosures: Statements were received from all authors. Forty-
+four relationships or activities that could involve a con ﬂict of
+interest were declared. All authors have indicated that they meet
+the journal ’s requirements for authorship. Jeanne Bouteaud
+declares that she received grants from Bayer and P ﬁzer
+(unrelated to the current guideline), as well as honouraria from
+Lupin, Searchlight Pharma, Duschesnay, Astellas, and Bayer for
+lectures/presentations, and she is on the Board of Directors of theCanadian Menopause Society. Olga Bougie declares that shereceived a research grant from Bayer, a consulting fee from
+Hologic, honouraria for a lecture from AbbVie, support to attend a
+meeting from P ﬁzer, is a board member of Organon, and holds a
+leadership role with CanSAGE. Susan Goldstein declares that
+she received honouraria from Astellas, Bayer, Biosyent,
+Duchesnay, Esai, P ﬁzer, Organon, MD Briefcase, the Ontario
+College of Family Physicians, and the Canadian MenopauseSociety for lecture/presentations, and she is a member of the
+Board of Directors of the Canadian Menopause Society with an
+educational grant. Wendy Wolfman declares that she receivedconsulting fees from Astellas, honouraria from the CanadianJ Obstet Gynaecol Can 2024;46(7):102591
+https://doi.org/10.1016/j.jogc.2024.102591
+ª2024 The Society of Obstetricians and Gynaecologists of Canada/La
+Société des obstétriciens et gynécologues du Canada. Published by
+Elsevier Inc. All rights are reserved, including those for text and datamining, AI training, and similar technologies.
+This document re ﬂects emerging clinical and scienti ﬁc advances as of the publication date and is subject to change. The information is not
+meant to dictate an exclusive course of treatment or procedure. Institutions are free to amend the recommendations. The SOGC suggests,
+however, that they adequately document any such amendments.
+Informed consent: Patients have the right and responsibility to make informed decisions about their care, in partnership with their health care
+provider. To facilitate informed choice, patients should be provided with information and support that is evidence-based, culturally appropriate ,
+and personalized. The values, beliefs, and individual needs of each patient in the context of their personal circumstances should be considered
+and the ﬁnal decision about care and treatment options chosen by the patient should be respected.
+Language and inclusivity: The SOGC recognizes the importance of being fully inclusive and when the context is appropriate, gender-neutral
+language will be used. In other circumstances, we continue to use gendered language because of our mission to advance women ’sh e a l t h .
+The SOGC recognizes and respects the rights of all people for whom the information in this document may apply, including but not limited to
+transgender, non-binary, and intersex people. The SOGC encourages health care providers to engage in respectful conversation with their patients
+about their gender identity and preferred gender pronouns and to apply these guidelines in a way that is sensitive to each person ’sn e e d s .It is the Society of Obstetricians and Gynaecologists of Canada (SOGC) policy to review the content 5 years after publication, at which
+time the document may be revised to re ﬂect new evidence, or the document may be archived.
+JULYJOGC JUILLET 2024 l1
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.Menopause Society, Humber Hospital, Bayer, P ﬁzer, Duschenay,
+Lupin, and Astellas for educational events, support for travel from
+the Canadian Menopause Society and International Menopause
+Society, and holds leadership positions on the CanadianMenopause Society, International Menopause Society, and theMenopause Foundation of Canada. Yale Tang has nothing to
+declare. Innie Chen declares that she is a University of Ottawa
+Clinical Research Chair in Population Health and Health Servicesfor Women and has received grants from the Canadian Institutesof Health Research, Physicians ’Services Incorporation
+Foundation, and The Ottawa Hospital Academic Medical
+Organization; she is also the Gynecology Quality Lead at theOttawa Hospital and a member of the Board of Directors of theInternational Pelvic Pain Society.
+Subject Categories: Gynaecology
+Keywords : postmenopause; diagnostic imaging; endometrial
+neoplasms; endometrial hyperplasia: hysteroscopy; biopsy
+Corresponding Author : Wendy Wolfman,
+Wendy.Wolfman@sinaihealth.ca
+RECOMMENDED CHANGES IN PRACTICE
+1. Postmenopausal women without bleeding or risk factors do
+not need investigations if they are found to have
+endometrial thickness <11 mm on ultrasound.
+2. Further endometrial investigations should be decided on an
+individual basis, based on speci ﬁc ultrasound ﬁndings and
+the patient ’s personal risk for endometrial cancer.
+KEY MESSAGES
+1. Routine pelvic ultrasound is not recommended to screen for
+endometrial cancer.
+2. Most patients who have endometrial cancer present with
+postmenopausal bleeding.
+3. Asymptomatic endometrial thickening is common, and an
+endometrium <11 mm is associated with an extremely low
+risk of malignancy.
+4. Patients who have endometrial thickening and other risk
+factors may be considered for further endometrialassessments based on their individual risk factors and
+ultrasound ﬁndings.
+5. Hormone therapies, if given in a continuous combined
+formulation, do not increase the risk of endometrial cancer.
+6. Patients on tamoxifen should not have routine ultrasound
+assessment if they are asymptomatic.
+7. Endometrial biopsy in a patient with global thickening on
+ultrasound has a high rate of accuracy, if an adequate
+sample and pathological result is obtained.
+8. Invasive endometrial procedures have a low but not
+insigni ﬁcant complication risk.
+ABSTRACT
+Objective: To formulate strategies for clinical assessments for
+endometrial thickening on ultrasound in a postmenopausal woman
+without bleeding.Target population: Postmenopausal women of any age.
+Outcomes: To reduce unnecessary invasive interventions and
+investigations in women with asymptomatic endometrial
+thickening while selectively investigating women at risk for
+endometrial cancer.
+Bene ﬁts, harms, and costs: It is anticipated that the adoption of these
+recommendations would save postmenopausal women
+unnecessary anxiety, pain, and risk of procedural complications. Itis also expected to decrease the cost to the health care system byeliminating unnecessary interventions.
+Evidence: English language articles from Medline, Cochrane, and
+PubMed databases for relevant peer-reviewed articles dating from1995 to 2022 (e.g., asymptomatic endometrial thickness,endometrial cancer, postmenopausal bleeding, transvaginal
+ultrasound, endometrial biopsy, cervical stenosis, hormone
+therapies and the endometrium, tamoxifen, tibolone, aromataseinhibitors). Results were restricted to systematic reviews and meta-
+analyses, randomized controlled trials/controlled clinical trials, and
+observational studies.
+Validation Methods: The authors rated the quality of evidence and
+strength of recommendations using the Grading of
+Recommendations Assessment, Development and Evaluation
+(GRADE) approach. See Appendix A (Tables A1 for de ﬁnitions and
+A2for interpretations of strong and conditional [weak]
+recommendations).
+Intended Audience: Physicians, including gynaecologists,
+obstetricians, family physicians, radiologists, pathologists, andinternists; nurse practitioners and nurses; medical trainees,including medical students, residents, and fellows; and other
+providers of health care of the postmenopausal population.
+Social Media Abstract: Postmenopausal women often have a
+thickening of the lining of the uterus found during ultrasound.
+Without bleeding, an endometrium <11 mm is rarely a serious
+problem but should be evaluated by a health care provider.
+SUMMARY STATEMENTS
+1. Asymptomatic endometrial thickening >5 mm is found in 3% e15%
+of postmenopausal women depending on the population studied(moderate ).
+2. Ninety percent of postmenopausal women with endometrial cancer
+present with bleeding ( high).
+3. In postmenopausal women without bleeding and an endometrium
+<11 mm, the incidence of endometrial cancer is approximately 1%
+(high).
+4. Endometrial biopsy is an accurate procedure if an adequate tissue
+sample is obtained in a patient with global thickening ( high).
+5. Hormone replacement therapies, if used in a continuous combined
+formulation, do not increase the risk of uterine cancer ( high).
+6. Women prescribed tamoxifen do not require screening ultrasound
+examinations ( high).
+7. Cervical stenosis may complicate the ability to obtain an adequate
+endometrial pathological sample ( high).
+RECOMMENDATIONS:
+1. Indications for endometrial tissue sampling in patients presenting
+with postmenopausal bleeding should not be extrapolated toasymptomatic women ( strong, high ).
+2. A woman who has an endometrial thickness >11 mm and/or other
+positive ﬁndings on ultrasound, such as increased vascularity, in-
+homogeneity of the endometrium, or particulate ﬂuid, should have
+endometrial sampling or be referred to a gynaecologist for further
+investigations ( strong, moderate
+).
+2lJULYJOGC JUILLET 2024SOGC CLINICAL PRACTICE GUIDELINE
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.3. Further investigations should be made on an individual basis in
+asymptomatic women with increased endometrial thickening andrisk factors for endometrial cancer, such as obesity, hypertension,
+late menopause, unopposed estrogen use, and genetic cancer
+risks ( conditional, moderate ).
+4. Postmenopausal women without bleeding, no risk factors, and a
+global endometrial thickening of <11 mm do not require invasive
+investigations ( strong, moderate ).
+5. Transvaginal ultrasound should not be used as a screening tool for
+endometrial cancer ( strong, moderate ).
+6. In asymptomatic women with endometrial thickening >11 mm
+and insuf ﬁcient endometrial sampling, further investigations
+should include hysterosonogram, diagnostic hysteroscopy,dilation and curettage, or watchful monitoring ( conditional,
+low).
+7. Women taking hormone therapy in a continuous combined
+formulation without bleeding do not require screening ultrasounds
+(strong, high ).
+8. Women who are amenorrheic on hormone therapies and develop
+new bleeding should be investigated ( strong, low ).
+9. Asymptomatic women on tamoxifen should not receive routine/
+screening ultrasound ( strong, high ).
+10. Women with cervical stenosis and no bleeding should be managed
+individually depending on the endometrial thickness, appearance
+of the endometrium on ultrasound, and the patient ’s individual risk
+factors ( strong, low ).
+JULYJOGC JUILLET 2024
+l3Asymptomatic Endometrial Thickening
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.INTRODUCTION
+SOGC guideline no. 249, Asymptomatic Endome-
+trial Thickening, was published in the JOGC in
+October 20101and updated in 2018.2This guideline
+has been one of the most requested SOGC guidelines
+because of widespread use of pelvic and abdominal
+ultrasound for investigation of common clinical sce-
+narios, such as lower abdominal pain, bloating andevaluation of the adnexa, and the prevalence of
+asymptomatic thickening ( >4e5 mm) in the general
+postmenopausal population
+3,4(3%e15% or higher,
+depending on the study).
+Theﬁnding of asymptomatic endometrial thickening on
+ultrasound represents a clinical management dilemma
+and constitutes a frequent reason for referral to gynae-
+cologists. The primary reason to conduct further in-vestigations in women with asymptomatic endometrial
+thickening is to rule out endometrial malignancy. The
+2018 guideline
+2concluded that the ri sk of malignancy in
+women who are not bleeding with an endometrium
+thickness <11 mm was extremely low and that further
+investigations should be individualized based on patient
+risk factors.5,6
+This current guideline was developed to re-evaluate the
+literature on asymptomatic thickening since the publication
+of the 2010 guideline and its re-approval in 2018. Asendometrial polyps account for a large proportion of
+thickening, a separate new document has been written for
+this clinical entity.
+7
+Deﬁnition
+Asymptomatic endometrial thickening is de ﬁned as an
+endometrial thickness >5 mm discovered in a post-
+menopausal woman who is not experiencing vaginal
+bleeding. The measurement combines the width of the
+anterior and posterior layers of the endometrium of the
+midline sagittal image on transvaginal ultrasound.
+In a menstruating woman, this thickness re ﬂects the
+endometrial changes associated with the phase of the
+menstrual cycle that occur due to hormonal ﬂuctuations.
+The endometrium ranges from 3 mm after menses to 15mm in the luteal phase. In the ﬁrst year after the last
+menstrual period, the normal endometrium is often
+thicker than it will be several years after menopause,
+reﬂecting declining residual levels of estrogen.
+8In a
+postmenopausal woman several years after the last men-
+strual period, the endometrium is typically less than
+4e5 mm thick.9,10Ultrasound Characterization, Anatomy, and
+Pathology of Endometrial Thickening in
+Postmenopausal Women
+Characteristics of the endometrium on ultrasound exami-
+nation include global or diffuse thickening, heterogeneity,
+ﬂuid collections, increased vascularity, and focal areas of
+thickening with or without feeding vessels.
+Ultrasound measurement over 4 e5 mm may also re ﬂect
+structural abnormalities such as a uterine septum, sub-
+mucous myomas, polyps, synechiae or scars, or adeno-
+myosis. Ultrasound technology, by identifying vascular ﬂow,
+allows differentiation of polyps from other abnormalities.11
+Findings of increased vascularity and ﬂuid accumulation
+(especially particulate) in association with endometrial
+thickening may warrant further investigations.11
+After menopause, the range of biopsy results for endo-metrial thickening include atrophic endometrium, prolif-
+erative endometrium, secretory endometrium, polyps,
+endometritis, cystic atrophy, cystic hyperplasia, complex
+hyperplasia, atypical hyperplasia, or carcinoma of the
+endometrium.
+12
+RISK FACTORS FOR ENDOMETRIAL CANCER/
+HYPERPLASIA IN WOMEN WITH ASYMPTOMATICENDOMETRIAL THICKENING
+Certain clinical characteristics, namely BMI >30, use of
+antihypertensive medication, and use of estrogen andprogesterone therapy are associated with endometrial
+thickening.
+13e16
+In patients presenting with endometrial thickening, several
+risk factors for endometrial hyperplasia and cancer should
+be considered. Increasing age,17,18nulliparity,19,20
+obesity,17e19,21,22hypertension,19,20,22,23diabetes,17,19,20,22
+and tamoxifen use19,22,24have consistently been associ-
+ated with increased risk of hyperplasia. Other clinicalcharacteristics, such as menopausal status,
+17polycystic
+ovary syndrome,25a long menstrual history (early
+menarche, late menopause),22and infertility22may also
+increase the risk of hyperplasia, based on results from
+select studies. Lynch syndrome (also called hereditary non-
+polyposis colorectal cancer) is an inherited risk factor for
+hyperplasia and endometrial cancer,26and patients with
+this syndrome should be managed in clinics with special
+expertise, as these guidelines do not apply to them.26
+Exposure to estrogen and progesterone hormone ther-apy post menopause has been demonstrated to increasethe risk of hyperplasia in some studies
+19,22but not in
+others.27Regimens for hormone therapy including long
+4lJULYJOGC JUILLET 2024SOGC CLINICAL PRACTICE GUIDELINE
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.cycle use of progestins (i.e., every 2 e3 months in a
+sequential formulation) have been associated with a higher
+risk of endometrial cancer.28In the Women ’s Health
+Initiative randomized trial, women receiving hormone
+therapy demonstrated a nonsigni ﬁcant lower incidence of
+endometrial cancer diagnoses, compared with those not
+receiving hormone therapy (13 fewer cases per 10 000).27
+Endometrial cancer is the most common gynaecologicmalignancy. The incidence and mortality of endometrial
+cancer in Canada is 36.8 and 5.9 per 100 000.
+29Endometrial
+cancer is typically diagnosed in postmenopausal women,
+who usually present with postmenopausal bleeding. The
+incidence of endometrial cancer in women between ages 30
+and 49 years who present with irregular bleeding is on the
+rise in Ontario, consistent with trends in other countries30
+(see SOGC guidelines 390 and 291).31,32Approximately
+90% of women with endometrial cancer will present withpostmenopausal (or abnormal) uterine bleeding.
+27,33In
+postmenopausal women without bleeding, the absolute risk
+of endometrial cancer or atypical hyperplasia is low (0.62%
+and 0.59%, respectively).34For asymptomatic endometrial
+thickness, an individualized risk assessment that considers
+patient and imaging risk factors balanced against the
+possible complications and cost of investigations, is neces-
+sary. Endometrial cancer typically presents with signi ﬁcantly
+elevated endometrial thickness (mean ¼20±4m m
+compared to mean ¼4±1 mm in women with normal
+endometrium).35These estimates are for women presenting
+with bleeding. A recent retrospective study involving non-
+bleeding women with endometrial thicknesses >10 mm
+and<10 mm found that the prevalence of endometrial
+malignancy was 6.3% and 1.7%, respectively ( P¼0.023).7
+It is important to consider that type 2 endometrial cancer,
+which is more virulent (e.g., papillary serous, clear cell,
+mucinous, carcinosarcoma, and poorly differentiated sub-
+types), tends to arise from atrophic endometrium and is not
+associated with hormonal stimulation.
+There does not appear to be a survival advantage in
+diagnosing endometrial cancer in women who are
+asymptomatic versus those who are bleeding.36
+Summary Statements 1 and 2 and
+Recommendations 1, 2, and 3
+INCIDENCE OF ASYMPTOMATIC ENDOMETRIAL
+THICKENING ON ULTRASOUND
+An incidental ﬁnding of thickened endometrium ( >4m m )m a y
+be detected in approximately 3% e15% of postmenopausalwomen,3,37e39though ﬁgures vary widely depending on pa-
+tient selection in the research and clinical setting. While an
+incidental ﬁnding of a thickened endometrium is not uncom-
+mon, it is not on its own diagnostic of endometrial pathology,
+and endometrial sampling is required for precise pathologic
+diagnosis.
+The American Cancer Society; European Society for
+Medical Oncology; European Society for Radiotherapyand Oncology and European Society of Gynaecological
+Oncology;
+40and American College of Obstetricians and
+Gynecologists10do not recommend routine endometrial
+cancer screening for average-risk asymptomatic patients.
+There is no evidence that this screening reduces mortality
+from endometrial cancer. Screening asymptomatic women
+increases anxiety and complications from biopsies.
+Most cases of endometrial cancer are identi ﬁed because of
+symptoms, especially bleeding. A high proportion of these
+cases are diagnosed at an early stage, with high rates of survival.
+STUDIES ON THE SIGNIFICANCE OF
+ASYMPTOMATIC ENDOMETRIAL THICKENING
+There is a lack of consensus on the signi ﬁcance and
+management of an incidental ﬁnding of endometrial
+thickening in asymptomatic postmenopausal women, and
+studies have sought to determine the ideal threshold forendometrial thickness at which additional investigation
+with endometrial sampling is recommended.
+41
+Smith-Bindman et al. performed a decision analysis to
+estimate the endometrial thickness threshold that should
+be considered abnormal in asymptomatic postmenopausal
+women, incorporating published and unpublished data to
+model outcomes in a theoretical cohort of postmenopausal
+women aged 50 years or older, not receiving hormonetherapy.
+5They calculated that in postmenopausal women
+without vaginal bleeding, the risk of cancer is approxi-
+mately 0.002% when the endometrium is /C2011 mm thick
+and 6.7% when the endometrium is thicker than 11 mm.
+This is similar to the risk differential in the setting of
+postmenopausal bleeding when the endometrial thickness
+cutoff of 5 mm is used.
+Alcazar et al. published a systematic review and meta-
+analysis that included 9 studies and 4751 post-
+menopausal women not on hormone replacement therapy,tamoxifen, or aromatase inhibitors. The mean prevalence
+of endometrial cancer or hyperplasia with atypia among
+women with endometrial thicknesses /C2111 mm was 6.5%
+(range 0% e15%), while the mean prevalence in women
+JULYJOGC JUILLET 2024 l5Asymptomatic Endometrial Thickening
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.with an endometrial thickness <11 mm was 1.7% (range
+0.1%e5.1%). Compared with women with an endometrial
+thickness <11 mm, those with a thickness >11 mm had a
+2.59-fold increased risk of endometrial cancer or hyper-
+plasia with atypia.42
+Since the publication of this systematic review, additional
+studies have proposed similar endometrial thickness
+thresholds for endometrial sampling. Using receiveroperating characteristic (ROC) curves, thresholds of /C2110
+mm (n ¼1995)
+38and/C2112 mm (n ¼488)43have been
+separately proposed, with no conclusive threshold found
+in another study.39
+Another study involved 602 postmenopausal women with
+vaginal bleeding or asymptomatic thickened endometrium
+who were evaluated and divided into 2 groups of symp-
+tomatic or bleeding women (n ¼274) and asymptomatic
+or non-bleeding women with an incidental ﬁnding of
+thickened endometrium ( >5 mm; n ¼328). Women in
+both groups underwent endometrial biopsy for histo-
+pathologic examination. Endometrial carcinoma was
+detected in 8 women (2.9%) in group 1 and in 3 (0.9%) in
+group 2. The best cutoff point for endometrial thickness in
+predicting endometrial carcinoma in group 1 was 8.2 mm,
+which provided 75% sensitivity (95% CI 40.9% e92.9%)
+and 74% speci ﬁcity (95% CI 68% e78.5%). In group 2,
+the area under the ROC curve (AUC) was 0.76 (95% CI
+0.46e1.00; P¼0.114); the evidence was inconclusive as to
+the relationship between endometrial thickness and
+malignancy.39
+Another recent systematic review re-examined the optimal
+endometrial thickness threshold for diagnosing endome-
+trial cancer.44Although the authors of that study cautioned
+that there are signi ﬁcant limitations in the studies currently
+available, a review of 7 studies (n ¼2986), found that 12
+mm was the optimal diagnosis threshold for endometrialcancer in asymptomatic postmenopausal women (AUC
+0.716; 95% CI 0.534 e0.897, P¼0.019).
+An observational study of 1024 women in Austria not on
+tamoxifen and without Lynch syndrome with thickened
+endometrium on ultrasound who underwent histological
+assessment surgically con ﬁrmed this thickness cutoff of 11
+mm.
+45
+While asymptomatic endometrial thickening may be re-
+ported as an isolated incidental ﬁnding, several studies
+have suggested increased risk for endometrial cancer or
+hyperplasia with atypia when increased vascularity is
+present.43In summary, women with endometrial thickening /C2111 mm
+or increased vascularity on ultrasound warrant additional
+investigation by a gynaecologist for consideration of
+endometrial biopsy.
+Summary Statement 3 and Recommendations 4
+and 5
+INVESTIGATIONS: ACCURACY OF BLIND
+ENDOMETRIAL BIOPSY
+Endometrial biopsy is required for assessment of endo-
+metrial tissue, and options include blind outpatient endo-
+metrial biopsy, dilation and curettage, or preferably
+hysteroscopy-guided biopsy. Advantages of blind outpa-
+tient endometrial biopsy compared with dilation and
+curettage and hysteroscopy include cost savings and its
+minimally invasive nature. Interestingly, agreement rate on
+tumour grade from preoperative endometrial sampling to
+ﬁnal diagnosis in patients found to have endometrial car-
+cinoma was not signi ﬁcantly higher in hysteroscopic biopsy
+versus of ﬁce endometrial biopsy in one systemic review.46
+The Pipelle suction-piston device was found to be the best
+and most frequently evaluated device in several systemic
+reviews and meta-analyses, with a sensitivity of 99.6% in
+detecting endometrial carcinoma and a 81% sensitivity in
+detecting atypical endometrial hyperplasia (speci ﬁcity
+>98%).47,48Diagnostic accuracy was higher in post-
+menopausal women compared with premenopausal
+women (sensitivity 99.6% vs. 91%, respectively).47In a
+systematic review of 1013 patients, the overall failure rate
+of outpatient biopsy was 7% (95% CI 5% e8%) with 6
+devices tested (Accurette, Gynoscann, Novak curette,
+Vabra aspirator, Z-sampler, and Pipelle), compared with
+8% (95% CI 6% e11%) in studies using only the Pipelle.48
+Overall, 15% of samples procured with all devices were
+histologically inadequate (95% CI 12% e17%), compared
+with 13% of samples procured with the Pipelle (95% CI
+10%e16%).48Postmenopausal women had increased
+failure rates for outpatient biopsy along with increased
+rates of inadequate tissue samples (12% and 22%,
+respectively).48With the Pipelle device, the post-test
+probability of endometrial cancer in postmenopausal
+women was calculated to be 82.7% for a positive test and
+0.8% for a negative test (pretest probability 6.9%, (CI
+4.4e10)).48Hence, a negative test result has high negative
+predictive value in someone with low pretest probability.
+Endometrial biopsy is a successful procedure with a high
+overall accuracy for detecting endometrial cancer when
+6lJULYJOGC JUILLET 2024SOGC CLINICAL PRACTICE GUIDELINE
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.adequate specimens are obtained from patients with global
+endometrial thickening. If inadequate tissue is found (i.e.,
+determined by the pathologist to be insuf ﬁcient for eval-
+uation) or scant tissue is retrieved after several Pipelle
+passes, additional diagnostic tests or watchful evaluation
+with repeat ultrasound imaging after 4 months may be
+necessary, depending on the clinical scenario, the concern
+on initial ultrasound appearance, and the patient ’s wishes,
+if the risk of malignancy is calculated to be low.44See
+Figure 1 for an algorithm of suggested management.
+Summary Statement 4 and Recommendation 6
+ENDOMETRIAL EFFECTS OF MENOPAUSAL
+HORMONE THERAPIES
+Systemic Menopausal Hormone Treatments
+The thickness of the endometrium in a postmenopausal
+woman should be <4e5 mm. Various menopausal hor-
+mone products have been shown to affect endometrial
+thickness, depending on the type, dosage, and regimen.
+The use of unopposed systemic estrogen has been shown
+to increase endometrial thickness.49,50One prospectiverandomized controlled trial studying the effects of conju-
+gated equine estrogen at a dosage of 0.625 mg daily re-
+ported an increase of 5.5 mm in endometrial thickness
+after 52 weeks of use.50
+A Cochrane review51,52reported both a dose-response and
+duration-of-use-response relationship between the use of
+oral estrogen alone and the risk of hyperplasia over 1 e3
+years of use. With the lowest dose regimens (i.e., conju-gated equine estrogens at 0.45 mg and estradiol at 1 mg) a
+marginally nonsigni ﬁcant increase in hyperplasia was re-
+ported at 1 year; however, signi ﬁcant increases were seen
+at both years 2 and 3 in this group, and an even more
+striking increased risk was observed for the moderate-
+(odds ratio [OR] 11.86) and high-dose estrogen groups
+(OR 13.6). This same review reported no clinically sig-
+niﬁcant increase in endometrial thickness or endometrial
+hyperplasia for both continuous and sequential estrogen-progestin therapy regimens, although there is mixed evi-
+dence for a variety of long cycle regimens.
+28,51,52
+Newer estrogen-progestin therapies and related products
+continue to be developed for which either endometrial
+thickness or endometrial biopsy hyperplasia data have
+been collected. In prospective randomized controlled trials
+Figure 1. Algorithm for the Investigation of Endometrial Thickening in Postmenopausal Women
+Endometrial thickening >5mm
+Higher-risk patient
+(Concerning US features)Low-risk patient
+(No concerning US features)Consider biopsyEndometrial thickening 
+<11mmEndometrial thickening 
+>11mmAsymptomatic Postmenopausal bleeding
+Biopsy +/- hysteroscopy or hysterosonogram if required
+Biopsy not feasible 
+in office or inadequate
+Consider risk factors 
+& US features*Biopsy obtainedReassure and observe
+ Consider hysteroscopy
+ Hysterosonogram
+ D&CHigh-risk features
+No risk factors or bleeding
+Repeat in 4 monthsFurther management 
+based on results
+*High-risk patient features include increasing age,1,2nulliparity,3,4obesity,1e3,5,6hypertension,3,4,6,7diabetes,1,3,4,6tamoxifen use,3,6,8and
+Lynch syndrome. High-risk US features include increased vascularity, heterogeneity, and ﬂuid collection.
+US: ultrasound; D&C: dilation and curettage.
+JULYJOGC JUILLET 2024 l7Asymptomatic Endometrial Thickening
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.of these newer products and combinations, no signi ﬁcant
+increases in endometrial thickness (i.e., a /C201 mm increase)
+and/or endometrial hyperplasia (i.e., a <1% incidence of
+endometrial hyperplasia) were observed for the following:
+/C15estradiol þprogesterone (1/100, 0.5/100, 0.5/50 and
+0.25/50) for 12 months53;
+/C15estradiol 1 mg þdrospirenone 2 mg for 12 months;
+/C15estradiol patch 25 mgþvaginal progesterone 100 mg
+2/wk for 12 months51,54;
+/C15a levonorgestrel intrauterine system (average 14 mg/d)þ
+estrogen gel 1.5 mg/d, estradiol patch 50 mg, or estradiol
+2 mg, oral, once daily) for 1 e2 cycles (5 e10 y)55;
+/C15tibolone 2.5 mg, oral, once daily for 2 years56e58; and
+/C15the tissue selective estrogen complex tablet containing
+conjugated equine estrogen 0.45 mg and bazedoxifene
+20 mg once daily for 12 months.59
+A Cochrane review of studies involving tibolone usersconcluded that there was no clear evidence of differences
+in the risk of endometrial cancer between tibolone and
+placebo. A recent prospective cohort study from Denmark
+in a larger database of patients treated with tibolone be-
+tween 1995 and 2009 did ﬁnd an increased risk of endo-
+metrial cancer.
+60,61
+Not all selective estrogen receptor modulator and estrogen
+combinations offer endometrial safety. A 1-year random-
+ized controlled trial studying raloxifene 40 mg þestradiol
+1 mg (oral, once daily) reported a signi ﬁcant increase in
+endometrial thickness of 0.74 mm ( P<0.05). In this trial,
+2 patients were found to have endometrial hyperplasia, 1
+with atypia.62One study on the use of conjugated equine
+estrogens 0.3 mg þraloxifene reported no change in
+endometrial thickness.63
+The use of transdermal testosterone as an adjunct to
+estradiol has been studied, and no increase in endometrial
+thickness or endometrial hyperplasia were reported.64,65
+Complementary Treatments
+There are limited quality studies exploring the effect of
+herbal or complementary menopausal products on endo-
+metrial thickness, and most are of short duration. A meta-
+analysis of 30 randomized controlled trials related to a
+variety of phytoestrogens (iso ﬂavone, genistein, daidzein,
+lignans, S-equol and equol) used for up to 104 weeks re-
+ported no increase in endometrial thickness. Data for
+endometrial hyperplasia were not reported.66Treatments for Genitourinary Syndrome of
+Menopause
+Local (vaginal) hormone therapies contain estradiol; con-
+jugated equine estrogen or estrone; dehydroepiandroster-
+one (DHEA); or testosterone in a variety of preparations
+and delivery systems.
+A 2020 systematic review of 22 trials assessing endometrial
+thickness and 15 trials with endometrial biopsies found no
+clear evidence of endometrial proliferation after vaginal
+estrogen therapy used for up to 52 weeks. No change in
+endometrial thickness was reported for vaginal tablets, ring
+or inserts with estradiol 4 mg, 10 mgo r2 5 mg, In head-to-
+head studies, although a higher percentage of conjugated
+equine estrogen cream users versus ring users were found
+to have an endometrial thickness >5 mm (12% vs. 6%);
+this difference was not statistically signi ﬁcant. A higher rate
+of proliferative endometrium was also reported with theuse of vaginal conjugated equine estrogen cream; however,
+the authors opined that these differences were attributable
+to a higher dose of conjugated equine estrogen cream used
+in the studies (1.25 mg 3 /C2wk vs. 0.3 e0.625 g 2 /C2wk).
+Overall, there was no clear ﬁnding of endometrial prolif-
+eration after vaginal estrogen therapy; however, not all
+studies included endometrial biopsy.
+67
+Studies of a new low-dose vaginal estradiol soft gel (4 mg
+and 10 mg dosages) did not assess changes in endometrial
+thickness, but there was no hyperplasia.68
+Studies of a DHEA vaginal insert, Prasterone 6.5 mg daily,
+and of intravaginal testosterone69also reported either no
+increase in endometrial thickness or endometrial
+hyperplasia.70
+Ospemifene is an oral selective estrogen receptor modu-
+lator approved for the treatment of genitourinary syn-
+drome of menopause. In studies, up to 52 weeks ofospemifene 60 mg daily, was associated with a modest
+mean increase in endometrial thickness of 0.62 e0.81 mm,
+but this ﬁnding was deemed clinically insigni ﬁcant. The
+incidence of endometrial hyperplasia was found to be
+<1%, with no cases of endometrial hyperplasia with atypia
+reported.
+71
+Nonhormonal Options for Vasomotor Symptoms
+In a phase 2b randomized controlled trial, fezolinetant, aneurokinin-3 receptor antagonist, at a variety of doses was
+shown to have no impact on endometrial thickness, based
+on 12 weeks of data.
+72
+8lJULYJOGC JUILLET 2024SOGC CLINICAL PRACTICE GUIDELINE
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.Tamoxifen
+First reported in the 1990s, postmenopausal patients on
+tamoxifen therapy were found to have a thicker endome-
+trium (10.4 [SD 5.2] mm vs. 4.2 [SD 2.8] mm; P¼0.0001)
+compared with controls.73These ﬁndings were rapidly
+conﬁrmed in other studies.73e76Average endometrial
+thickness was 11.5 (SD 5.2) mm after 2.8 years of therapywith tamoxifen 20 mg daily.
+77
+The percentage of patients on tamoxifen having an
+endometrial thickness >5 mm on transvaginal ultrasound
+was found to be 53% e71% in women taking tamoxifen
+compared with 12% in a control group.76,78,79Increase in
+endometrial thickness was only signi ﬁcant in post-
+menopausal or amenorrheic patients and not in premen-
+opausal ones.75,76,80
+On transvaginal ultrasound examination, the endometrium
+of patients on tamoxifen is often described as irregular and
+containing multiple cystic areas resembling “swiss cheese ”
+or as a cystically thickened endometrium. In 50% e90% of
+patients, this ultrasound ﬁnding is not associated with any
+cavitary lesion, with both endometrial biopsy and hyster-
+oscopy con ﬁrming an atrophic endometrium and histology
+showing a condensated stroma and ﬂuid-ﬁlled, cystically
+dilated glands lined with ﬂattened epithelium.80e82In most
+studies, transvaginal ultrasound was unable to differentiatebetween signi ﬁcant endometrial pathology and endome-
+trial glandulocystic atrophy.
+80,82
+Endometrial thickening on transvaginal ultrasound was
+signiﬁcantly associated with postmenopausal bleeding79as
+well as endometrial pathology, particularly endometrial
+cancer.73,77,83No correlation between endometrial thick-
+ness and duration of tamoxifen treatment was found.76
+In multiple studies using 5 mm as the cutoff for further
+investigation in women taking tamoxifen, the sensitivityand speci ﬁcity for positive histological ﬁndings varied
+from 87.5% to 91% and from 19% to 96%, respec-
+tively.
+79,84,85Other studies have recommended against the
+use of a single cutoff based on transvaginal ultrasound
+alone, since some patients with thicknesses <5m mw e r e
+found to have signi ﬁcant endometrial pathology, including
+endometrial cancer.86
+Endometrial thickness signi ﬁcantly decreased 6 months
+after tamoxifen was ceased, and no difference in endo-
+metrial thickness was noted between women on tamoxifen
+and controls 1 year after the end of tamoxifen
+treatment.81,87As stated in the American College of Obstetricians and
+Gynecologists ’2014 committee opinion, routine screening
+of asymptomatic women on tamoxifen with transvaginal
+ultrasound and/or endometrial sampling demonstrated no
+beneﬁts, and it is not currently recommended.88,89Women
+on tamoxifen should promptly report any abnormal
+vaginal bleeding. Symptomatic women should be investi-
+gated, and transvaginal ultrasound alone is not suf ﬁcient to
+eliminate signi ﬁcant endometrial pathology in this higher
+risk population.76,90Therefore, the management of
+endometrial thickening, if found in an asymptomatic pa-
+tient on tamoxifen, should be determined by a case-by-
+case evaluation.
+Aromatase Inhibitors
+In one study, postmenopausal patients treated with ful-
+vestrant were found to have signi ﬁcantly lower endome-
+trial thicknesses than patients receiving placebo, even after
+a 14-day course of ethinyl estradiol.91
+In a study comparing endometrial thickness in patients
+taking exemestane versus tamoxifen, patients on tamoxifen
+were twice as likely to have endometrial thicknesses >5
+mm compared with patients on exemestane after 24
+months of treatment (35.5% vs. 61.8%; P¼0.004). This
+difference appeared as early as 6 months of treatment and
+was no longer visible 12 months after treatment comple-
+tion. Patients who switched from tamoxifen to exemestane
+had a rapid decrease in endometrial thickness within 6
+months, mostly due to losing the stimulatory effect of
+tamoxifen.92
+Summary Statements 5 and 6 and
+Recommendations 7, 8, and 9
+APPROACH TO A STENOTIC CERVIX
+An endometrial biopsy may be challenging to obtain in the
+presence of a stenotic, tortuous cervix; extremes of uterine
+ﬂexion or version; congenital anomalies; or scarring of the
+cervix from previous surgery or radiation.93In these sit-
+uations, it may be dif ﬁcult to obtain an adequate sample,
+and attempts at biopsy may lead to increased patient
+discomfort, as well as complications such as creation of
+false passage, uterine perforation, and bleeding.94Cervical
+stenosis is characterized as narrowing of the endocervicalcanal preventing passage of a 2.5 mm Hegar or Pratt
+dilator.
+93Stenosis of the external cervical os is described as
+an external os diameter <4.5 mm.93,95Common risk
+factors for cervical stenosis include nulliparity and
+JULYJOGC JUILLET 2024 l9Asymptomatic Endometrial Thickening
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.postmenopausal status, as well as a history of previous
+endometrial curettage and treatment of cervical
+dysplasia.96,97
+Medical Management
+Prostaglandin E 1(misoprostol) has been suggested as a
+treatment option for cervical stenosis. Although its
+mechanism of action is not completely understood, it is
+thought to be mediated by estrogen.93Misoprostol dos-
+ages of 400 mg orally or 200 mg vaginally 9 to 12 hours
+prior to hysteroscopy may be of bene ﬁt, as evidenced by
+shorter procedure times and use of fewer dilators.98,99
+Alternatively, 10 mg of vaginal prostaglandin E 2(dino-
+prostone) can be considered.100Studies examining use of
+misoprostol prior to attempted of ﬁce endometrial biopsy
+or IUD insertion have not demonstrated a bene ﬁt.47,101,102
+Furthermore, misoprostol is associated with several
+adverse effects, including nausea, vomiting, vaginal
+bleeding, and abdominal/pelvic pain.103,104It is important
+to consider that misoprostol may also be ineffective as a
+cervical-ripening agent in postmenopausal women and
+those treated with gonadotropin-releasing hormone ana-
+logs because of the hypoestrogenic state in these pa-
+tients,105unless they have been pretreated with systematic
+estrogen for 2 weeks prior.106
+Osmotic dilators (laminaria tents) may facilitate cervicaldilation during operative hysteroscopy; however, place-
+ment of laminaria requires some degree of cervical os
+dilation, thereby limiting their use.
+107
+Operative Techniques
+Cervical dilation may be associated with a few complica-tions. The overall risk of dilation and curettage and hys-
+teroscopy is less than 1%, with uterine perforation
+reported in 0.12% e0.76% of cases, depending on the
+series reviewed.
+108e110
+Typically, cervical stenosis is managed with gradual dilation
+using successively larger rigid dilators. This method may
+lead to the creation of false passage or uterine perforation,
+especially if uterine orientation is unknown or with ex-
+tremes of uterine ﬂexion. Ultrasound guidance may miti-
+gate this risk.111Use of intracervical dilute vasopressin
+(0.05 U/mL) has been reported to reduce the force
+required for cervical entry, but caution must be used, as
+systematic in ﬁltration of vasopressin may result in car-
+diovascular compromise.112
+In certain cases, blind dilation of the cervical canal maylead to cervical laceration, creation of false passage, or
+uterine perforation. A vaginoscopic approach may avoidthese complications, in which a small diameter (preferably
+<5 mm) hysteroscope is used to directly visualize the
+vagina and cervical canal before entering the uterus. This
+approach may be used in an outpatient hysteroscopy
+setting or in the operating room. At times, it may be
+necessary to revise the cervical canal to gain access to the
+uterus. This may be done with sharp dissection using
+microscissors and/or blunt dissection with micro-
+graspers.
+113Other alternatives are using the cutting loop
+electrode or laser to excise a small segment of the internal
+os or using the hysteroscopic morcellator to access the
+uterine cavity.113,114Bettocchi et al. described successful
+approaches to accessing the uterine cavity in 98.5% of 10
+156 cases of cervical stenosis, using hysteroscopic tech-
+niques such as the push/spread technique, the micro-
+scissor, micrograsper, and bipolar electrode.96
+Hammoud et al. recently described ultrasound-guidedendometrial biopsy for patients with cervical stenosis
+that involved bypassing the cervix.
+115Under general
+anesthetic, when cervical dilation failed, they describe ac-
+cess through the anterior uterine wall by a 20 cm, 18- or
+20-gauge needle inserted through the vaginal vault. This
+technique is done under transabdominal ultrasound guid-
+ance. Once intrauterine access is con ﬁrmed, the endo-
+metrium is sampled.
+Summary Statement 7 and Recommendation 10
+CONCLUSION
+Theﬁnding of endometrial thickening and the possibility
+of uterine cancer causes anxiety in patients. Asymptomatic
+endometrial thickening in postmenopausal women is
+commonly found on an ultrasound examination. Hyper-
+plasia is a pathological diagnosis made after tissue biopsy,
+not a diagnosis that can be made on ultrasound. Although
+the risk of endometrial cancer is relatively low in women
+with no bleeding, the disease has the best outcomes when
+found at an early stage, usually when postmenopausalwomen present with bleeding. There is no evidence of
+improved outcomes before a woman presents with
+bleeding. Routine ultrasound screening for asymptomatic
+women is not recommended. Current evidence supports
+our previous guideline, which recommended a conserva-
+tive approach with a 10 e11mm endometrium in a non-
+bleeding woman. However, it is recommended that
+certain subsets of women with higher risks of developing
+endometrial cancer or who have other positive ﬁndings
+(e.g., increased vascularity, inhomogeneity of the endo-
+metrium, particulate ﬂuid) as well as women with clinical
+10lJULYJOGC JUILLET 2024SOGC CLINICAL PRACTICE GUIDELINE
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.risk factors should be triaged on an individual basis.
+Investigations for asymptomatic endometrial thickening
+are not risk free, and serious complications such as
+infection, uterine perforation, and bowel injury have been
+reported in the literature. Endometrial biopsy should be a
+keyﬁrst step in evaluating those suspected to have pa-
+thology or at high risk for cancer, though the ﬁnding of
+insufﬁcient tissue necessitates more invasive testing.
+Watchful monitoring with repeat ultrasound over4 months may be an option if the patient is counselled with
+respect to her individual endometrial cancer risk. Newer
+literature continues to support the extremely low risk of
+malignancy in women with asymptomatic global endo-
+metrial thickening <10e11 mm.
+REFERENCES
+1. Wolfman W , Leyland N, Heywood M, et al. Asymptomatic endometrial
+thickening. J Obstet Gynaecol Can 2010;32:990 e9. Available at https://
+www.ncbi.nlm.nih.gov/pubmed/21176311 .
+2. Wolfman W . No. 249-Asymptomatic Endometrial Thickening. J Obstet
+Gynaecol Can 2018;40:e367 e77. Available at https://www.ncbi.nlm.nih.
+gov/pubmed/29731210 .
+3. Gambacciani M, Monteleone P, Ciaponi M, et al. Clinical usefulness of
+endometrial screening by ultrasound in asymptomatic postmenopausalwomen. Maturitas 2004;48:421 e4. Available at https://www.ncbi.nlm.nih.
+gov/pubmed/15283934 .
+4. Vuento MH, Pirhonen JP , Makinen JI, et al. Screening for endometrial
+cancer in asymptomatic postmenopausal women with conventional and
+colour Doppler sonography. Br J Obstet Gynaecol 1999;106:14 e20.
+Available at https://www.ncbi.nlm.nih.gov/pubmed/10426254 .
+5. Smith-Bindman R, Weiss E, Feldstein V. How thick is too thick? When
+endometrial thickness should prompt biopsy in postmenopausal womenwithout vaginal bleeding. Ultrasound Obstet Gynecol 2004;24:558 e65.
+Available at https://www.ncbi.nlm.nih.gov/pubmed/15386607 .
+6. Goldstein SR. Modern evaluation of the endometrium. Obstet Gynecol
+2010;116:168 e76. Available at https://www.ncbi.nlm.nih.gov/pubmed/2
+0567184 .
+7. Ai F, Wang Y, Zhou L, et al. Clinicopathologic characteristics and risk
+factors for endometrial malignancy in postmenopausal women withendometrial thickening. Menopause 2022;29:137 e43. Available at https://
+www.ncbi.nlm.nih.gov/pubmed/35013057 .
+8. Tsuda H, Kawabata M, Kawabata K, et al. Improvement of diagnostic
+accuracy of transvaginal ultrasound for identi ﬁcation of endometrial
+malignancies by using cutoff level of endometrial thickness based on length
+of time since menopause. Gynecol Oncol 1997;64:35 e7. Available at
+https://www.ncbi.nlm.nih.gov/pubmed/8995544 .
+9. Lin MC, Gosink BB, Wolf SI, et al. Endometrial thickness after menopause:
+effect of hormone replacement. Radiology 1991;180:427 e32. Available at
+https://www.ncbi.nlm.nih.gov/pubmed/1829843 .
+10. ACOG Committee Opinion No. 734. The Role of Transvaginal
+Ultrasonography in Evaluating the Endometrium of Women WithPostmenopausal Bleeding. Obstet Gynecol 2018;131:e124 e9. Available at
+https://www.ncbi.nlm.nih.gov/pubmed/29683909 .
+11. Opolskiene G, Sladkevicius P , Valentin L. Ultrasound assessment of
+endometrial morphology and vascularity to predict endometrial malignancyin women with postmenopausal bleeding and sonographic endometrialthickness >or¼4.5 mm. Ultrasound Obstet Gynecol 2007;30:332 e40.
+Available at https://www.ncbi.nlm.nih.gov/pubmed/17688304 .
+12. Archer DF, McIntyre-Seltman K, Wilborn Jr WW , et al. Endometrial
+morphology in asymptomatic postmenopausal women. Am J ObstetGynecol 1991;165:317 e20; discussion 20-2. Available at https://www.ncbi.
+nlm.nih.gov/pubmed/1872332 .
+13. Martinez-Rubio MP , Alcazar JL. Ultrasonographic and pathological
+endometrial ﬁndings in asymptomatic postmenopausal women taking
+antihypertensive drugs. Maturitas 2003;46:27 e32. Available at https://
+www.ncbi.nlm.nih.gov/pubmed/12963167 .
+14. Sit AS, Modugno F, Hill LM, et al. Transvaginal ultrasound measurement of
+endometrial thickness as a biomarker for estrogen exposure. CancerEpidemiol Biomarkers Prev 2004;13:1459 e65. Available at https://www.
+ncbi.nlm.nih.gov/pubmed/15342446 .
+15. Andolf E, Dahlander K, Aspenberg P . Ultrasonic thickness of the
+endometrium correlated to body weight in asymptomatic postmenopausalwomen. Obstet Gynecol 1993;82:936 e40. Available at https://www.ncbi.
+nlm.nih.gov/pubmed/8233268 .
+16. Okman-Kilic T, Kucuk M. The effects of antihypertensive agents on
+endometrial thickness in asymptomatic, hypertensive, postmenopausalwomen. Menopause 2003;10:362 e5. Available at https://www.ncbi.nlm.
+nih.gov/pubmed/12851520 .
+17. Topcu HO, Erkaya S, Guzel AI, et al. Risk factors for endometrial
+hyperplasia concomitant endometrial polyps in pre- and post-menopausalwomen. Asian Pac J Cancer Prev 2014;15:5423 e5. Available at https://
+www.ncbi.nlm.nih.gov/pubmed/25041012 .
+18. Barboza IC, Depes Dde B, Vianna Junior I, et al. Analysis of endometrial
+thickness measured by transvaginal ultrasonography in obese patients.Einstein (Sao Paulo) 2014;12:164 e7. Available at https://www.ncbi.nlm.
+nih.gov/pubmed/25003920 .
+19. Aggarwal A, Hatti A, Tirumuru SS, et al. Management of Asymptomatic
+Postmenopausal Women Referred to Outpatient Hysteroscopy Service with
+Incidental Finding of Thickened Endometrium - A UK District GeneralHospital Experience. J Minim Invasive Gynecol 2021;28:1725 e9. Available
+athttps://www.ncbi.nlm.nih.gov/pubmed/33610754 .
+20. Giannella L, Mfuta K, Setti T, et al. Diagnostic accuracy of endometrial
+thickness for the detection of intra-uterine pathologies and appropriateness
+of performed hysteroscopies among asymptomatic postmenopausal
+women. Eur J Obstet Gynecol Reprod Biol 2014;177:29 e33. Available at
+https://www.ncbi.nlm.nih.gov/pubmed/24766900 .
+21. Arikan II, Barut A, Arikan D, et al. Comparison of serum androgens and
+endometrial thickness in obese and non-obese postmenopausal women.
+J Turk Ger Gynecol Assoc 2010;11:149 e51. Available at https://www.
+ncbi.nlm.nih.gov/pubmed/24591922 .
+22. Fan B, Zhao Q, Zhang S, et al. Assessment of transvaginal sonography
+combined with endometrial cytology as a mass screening method forendometrial cancer in Beijing. J Int Med Res 2010;38:803 e9. Available at
+https://www.ncbi.nlm.nih.gov/pubmed/20819417 .
+23. Kanmaz AG, Inan AH, Beyan E, et al. Importance of transvaginal
+ultrasonography before endometrial sampling in asymptomatic
+postmenopausal patients. J Gynecol Obstet Hum Reprod
+2019;48:25 e8. Available at https://www.ncbi.nlm.nih.gov/pubmed/3
+0381237 .
+24. Yela DA, Ikejiri TA, Machado CR, et al. Tamoxifen use as a malignancy risk
+factor in postmenopausal women with endometrial polyps. Menopause2019;26:863 e6. Available at https://www.ncbi.nlm.nih.gov/pubmed/3096
+9185.
+25. Linkov F, Edwards R, Balk J, et al. Endometrial hyperplasia, endometrial
+cancer and prevention: gaps in existing research of modi ﬁable risk factors.
+Eur J Cancer 2008;44:1632 e44. Available at https://www.ncbi.nlm.nih.
+gov/pubmed/18514507 .
+26. Meyer LA, Broaddus RR, Lu KH. Endometrial cancer and Lynch
+syndrome: clinical and pathologic considerations. Cancer Control2009;16:14 e22. Available at https://www.ncbi.nlm.nih.gov/pubmed/1
+9078925 .
+27. Anderson GL, Judd HL, Kaunitz AM, et al. Effects of estrogen plus
+progestin on gynecologic cancers and associated diagnostic procedures:the Women ’
+s Health Initiative randomized trial. JAMA
+2003;290:1739 e48. Available at https://www.ncbi.nlm.nih.gov/
+pubmed/14519708 .
+JULYJOGC JUILLET 2024 l11Asymptomatic Endometrial Thickening
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.28. Bjarnason K, Cerin A, Lindgren R, et al. Adverse endometrial effects
+during long cycle hormone replacement therapy. Scandinavian Long Cycle
+Study Group. Maturitas 1999;32:161 e70. Available at https://www.ncbi.
+nlm.nih.gov/pubmed/10515673 .
+29. Brenner DR, Poirier A, Woods RR, et al. Projected estimates of cancer in
+Canada in 2022. CMAJ 2022;194:E601 e7. Available at https://www.ncbi.
+nlm.nih.gov/pubmed/35500919 .
+30. Lortet-Tieulent J, Ferlay J, Bray F, et al. International Patterns and Trends in
+Endometrial Cancer Incidence, 1978-2013. J Natl Cancer Inst
+2018;110:354 e61. Available at https://www.ncbi.nlm.nih.gov/pubmed/2
+9045681 .
+31. Auclair M-H, Yong PJ, Salvador S, et al. Guideline No. 390-Classi ﬁcation
+and Management of Endometrial Hyperplasia. Journal of Obstetrics andGynaecology Canada 2019;41:1789 e800. https://doi.org/10.1016/j.jogc.
+2019.03.025 .
+32. Renaud M-C, Le T. No. 291-Epidemiology and Investigations for
+Suspected Endometrial Cancer. Journal of Obstetrics and GynaecologyCanada 2018;40:e703 e11.https://doi.org/10.1016/j.jogc.2018.07.005 .
+33. Clarke MA, Long BJ, Del Mar Morillo A, et al. Association of Endometrial
+Cancer Risk With Postmenopausal Bleeding in Women: A SystematicReview and Meta-analysis. JAMA Intern Med 2018;178:1210 e22. Available
+athttps://www.ncbi.nlm.nih.gov/pubmed/30083701 .
+34. Breijer MC, Peeters JA, Opmeer BC, et al. Capacity of endometrial
+thickness measurement to diagnose endometrial carcinoma inasymptomatic postmenopausal women: a systematic review and meta-analysis. Ultrasound Obstet Gynecol 2012;40:621 e9. Available at https://
+www.ncbi.nlm.nih.gov/pubmed/23001905 .
+35. Smith-Bindman R, Kerlikowske K, Feldstein VA, et al. Endovaginal
+ultrasound to exclude endometrial cancer and other endometrialabnormalities. JAMA 1998;280:1510 e7. Available at https://www.ncbi.
+nlm.nih.gov/pubmed/9809732 .
+36. Gemer O, Segev Y , Helpman L, et al. Is there a survival advantage in
+diagnosing endometrial cancer in asymptomatic postmenopausal patients?An Israeli Gynecology Oncology Group study. Am J Obstet Gynecol
+2018;219:181 e1 ee6. Available at https://www.ncbi.nlm.nih.gov/
+pubmed/29792852 .
+37. Ciatto S, Cecchini S, Bonardi R, et al. A feasibility study of screening for
+endometrial carcinoma in postmenopausal women by ultrasonography.Tumori 1995;81:334 e7. Available at https://www.ncbi.nlm.nih.gov/
+pubmed/8804449 .
+38. Ghoubara A, Emovon E, Sundar S, et al. Thickened endometrium in
+asymptomatic postmenopausal women - determining an optimum
+threshold for prediction of atypical hyperplasia and cancer. J Obstet
+Gynaecol 2018;38:1146 e9. Available at https://www.ncbi.nlm.nih.gov/
+pubmed/29862866 .
+39. Seckin B, Cicek MN, Dikmen AU, et al. Diagnostic value of sonography for
+detecting endometrial pathologies in postmenopausal women with andwithout bleeding. J Clin Ultrasound 2016;44:339 e46. Available at https://
+www.ncbi.nlm.nih.gov/pubmed/26857098 .
+40. Colombo N, Creutzberg C, Amant F, et al. ESMO-ESGO-ESTRO
+Consensus Conference on Endometrial Cancer: Diagnosis, Treatment and
+Follow-up. Int J Gynecol Cancer 2016;26:2 e30. Available at https://www.
+ncbi.nlm.nih.gov/pubmed/26645990 .
+41. Fleischer AC, Wheeler JE, Lindsay I, et al. An assessment of the value of
+ultrasonographic screening for endometrial disease in postmenopausalwomen without symptoms. Am J Obstet Gynecol 2001;184:70 e
+5.
+Available at https://www.ncbi.nlm.nih.gov/pubmed/11174482 .
+42. Alcazar JL, Bonilla L, Marucco J, et al. Risk of endometrial cancer and
+endometrial hyperplasia with atypia in asymptomatic postmenopausal
+women with endometrial thickness >/¼11 mm: A systematic review and
+meta-analysis. J Clin Ultrasound 2018;46:565 e70. Available at https://
+www.ncbi.nlm.nih.gov/pubmed/30113073 .
+43. Li Z, Li L. Risk of malignancies among asymptomatic postmenopausal
+women with thickened endometrium: A cohort study. Medicine (Baltimore)2019;98:e14464. Available at https://www.ncbi.nlm.nih.gov/pubmed/3
+0732213 .44. Li JXL, Chan F, Johansson CYM. Can a higher endometrial thickness
+threshold exclude endometrial cancer and atypical hyperplasia in
+asymptomatic postmenopausal women? A systematic review. Aust N Z JObstet Gynaecol 2022. Available at https://www.ncbi.nlm.nih.gov/
+pubmed/34994399 .
+45.Heﬂer L, La ﬂeur J, Kickmaier S, et al. Risk of endometrial cancer in
+asymptomatic postmenopausal patients with thickened endometrium: datafrom the FAME-Endo study: an observational register study. Archives ofgynecology and obstetrics 2018;298:813 e20.
+46. Visser NCM, Reijnen C, Massuger L, et al. Accuracy of Endometrial
+Sampling in Endometrial Carcinoma: A Systematic Review and Meta-analysis. Obstet Gynecol 2017;130:803 e13. Available at https://www.ncbi.
+nlm.nih.gov/pubmed/28885397 .
+47.D i j k h u i z e nF P H L J ,M o lB W J ,B r Ö L m a n nH A M ,e ta l .T h ea c c u r a c y
+of endometrial sampling in the diagnosis of patients with endometrialcarcinoma and hyperplasia: A meta-analysis. Cancer 2000;89:1765 e72.
+48. Clark TJ, Mann CH, Shah N, et al. Accuracy of outpatient endometrial
+biopsy in the diagnosis of endometrial cancer: a systematic quantitative
+review. BJOG 2002;109:313 e21. Available at https://www.ncbi.nlm.nih.
+gov/pubmed/11950187 .
+49. Hickey M, Ambekar M. Abnormal bleeding in postmenopausal hormone
+users-What do we know today? Maturitas 2009;63:45 e50. Available at
+https://www.ncbi.nlm.nih.gov/pubmed/19386451 .
+50. Goldstein SR, Scheele WH, Rajagopalan SK, et al. A 12-month
+comparative study of raloxifene, estrogen, and placebo on thepostmenopausal endometrium. Obstet Gynecol 2000;95:95 e103. Available
+athttps://www.ncbi.nlm.nih.gov/pubmed/10636510 .
+51. Furness S, Roberts H, Marjoribanks J, et al. Hormone therapy in
+postmenopausal women and risk of endometrial hyperplasia. CochraneDatabase Syst Rev 2012:CD000402. Available at https://www.ncbi.nlm.
+nih.gov/pubmed/22895916 .
+52. Roberts H, Hickey M, Lethaby A. Hormone therapy in postmenopausal
+women and risk of endometrial hyperplasia: a Cochrane review summary.Maturitas 2014;77:4 e6. Available at https://www.ncbi.nlm.nih.gov/
+pubmed/24182544 .
+53. Mirkin S, Goldstein SR, Archer DF, et al. Endometrial safety and bleeding
+proﬁle of a 17beta-estradiol/progesterone oral softgel capsule (TX-
+001HR). Menopause 2020;27:410 e7. Available at https://www.ncbi.nlm.
+nih.gov/pubmed/31913228 .
+54. Fernandez-Murga L, Hermenegildo C, Tarin JJ, et al. Endometrial response
+to concurrent treatment with vaginal progesterone and transdermalestradiol. Climacteric 2012;15:455 e9. Available at https://www.ncbi.nlm.
+nih.gov/pubmed/22321028 .
+55. Wildemeersch D. Why perimenopausal women should consider to use a
+levonorgestrel intrauterine system. Gynecol Endocrinol 2016;32:659 e61.
+Available at https://www.ncbi.nlm.nih.gov/pubmed/26930021 .
+56. Archer DF, Hendrix S, Gallagher JC, et al. Endometrial effects of tibolone.
+J Clin Endocrinol Metab 2007;92:911 e8. Available at https://www.ncbi.
+nlm.nih.gov/pubmed/17192288 .
+57. Morais-Socorro M, Cavalcanti MA, Martins R, et al. Safety and ef ﬁcacy of
+tibolone and menopausal transition: a randomized, double-blind placebo-
+controlled trial. Gynecol Endocrinol 2012;28:483 e7. Available at https://
+www.ncbi.nlm.nih.gov/pubmed/22132809 .
+58. Kurtay G, Berker B, Demirel C. Transvaginal ultrasonographic assessment
+of the endometrium in asymptomatic, postmenopausal women usingdifferent HRT regimens containing tibolone or estrogen. J Reprod Med2004;49:893 e8. Available at https://www.ncbi.nlm.nih.gov/pubmed/156
+03100 .
+59. Pinkerton JV , Harvey JA, Lindsay R, et al. Effects of bazedoxifene/
+conjugated estrogens on the endometrium and bone: a randomized trial.
+J Clin Endocrinol Metab 2014;99:E189 e98. Available at https://www.ncbi.
+nlm.nih.gov/pubmed/24438370 .
+60.Formoso G, Perrone E, Maltoni S, et al. Short-term and long-term effects
+of tibolone in postmenopausal women. Cochrane database of systematicreviews 2016;2016:CD008536 .
+12
+lJULYJOGC JUILLET 2024SOGC CLINICAL PRACTICE GUIDELINE
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.61.Lokkegaard ECL, Morch LS. Tibolone and risk of gynecological hormone
+sensitive cancer. International journal of cancer 2018;142:2435 e40.
+62. Stovall DW , Utian WH, Gass ML, et al. The effects of combined raloxifene
+and oral estrogen on vasomotor symptoms and endometrial safety.Menopause 2007;14:510 e7. Available at https://www.ncbi.nlm.nih.gov/
+pubmed/17314736 .
+63. Carneiro AL, de Cassia de Maio Dardes R, Haidar MA. Estrogens plus
+raloxifene on endometrial safety and menopausal symptoms –
+semisystematic review. Menopause 2012;19:830 e4. Available at https://
+www.ncbi.nlm.nih.gov/pubmed/22549172 .
+64. Chaikittisilpa S, Soimongkol K, Jaisamrarn U. Ef ﬁcacy of oral estrogen plus
+testosterone gel to improve sexual function in postmenopausal women.Climacteric 2019;22:460 e5. Available at https://www.ncbi.nlm.nih.gov/
+pubmed/30810382 .
+65. Zang H, Sahlin L, Masironi B, et al. Effects of testosterone treatment on
+endometrial proliferation in postmenopausal women. J Clin EndocrinolMetab 2007;92:2169 e75. Available at https://www.ncbi.nlm.nih.gov/
+pubmed/17341565 .
+66. Mareti E, Abatzi C, Vavilis D, et al. Effect of oral phytoestrogens on
+endometrial thickness and breast density of perimenopausal andpostmenopausal women: A systematic review and meta-analysis. Maturitas2019;124:81 e8. Available at https://www.ncbi.nlm.nih.gov/pubmed/31
+097185 .
+67. Crandall CJ, Diamant A, Santoro N. Safety of vaginal estrogens: a
+systematic review. Menopause 2020;27:339 e60. Available at https://www.
+ncbi.nlm.nih.gov/pubmed/31913230 .
+68. Constantine GD, Simon JA, Pickar JH, et al. The REJOICE trial: a phase 3
+randomized, controlled trial evaluating the safety and ef ﬁcacy of a novel
+vaginal estradiol soft-gel capsule for symptomatic vulvar and vaginalatrophy. Menopause 2017;24:409 e16. Available at https://www.ncbi.nlm.
+nih.gov/pubmed/27922936 .
+69. Fernandes T, Costa-Paiva LH, Pedro AO, et al. Ef ﬁcacy of vaginally applied
+estrogen, testosterone, or polyacrylic acid on vaginal atrophy: a randomizedcontrolled trial. Menopause 2016;23:792 e8. Available at https://www.ncbi.
+nlm.nih.gov/pubmed/27116462 .
+70. Portman DJ, Labrie F, Archer DF, et al. Lack of effect of intravaginal
+dehydroepiandrosterone (DHEA, prasterone) on the endometrium inpostmenopausal women. Menopause 2015;22:1289 e95. Available at
+https://www.ncbi.nlm.nih.gov/pubmed/25968836 .
+71. Di Donato V , Schiavi MC, Iacobelli V , et al. Ospemifene for the treatment
+of vulvar and vaginal atrophy: A meta-analysis of randomized trials. Part II:Evaluation of tolerability and safety. Maturitas 2019;121:93 e100. Available
+athttps://www.ncbi.nlm.nih.gov/pubmed/30509754 .
+72. Fraser GL, Lederman S, Waldbaum A, et al. A phase 2b, randomized,
+placebo-controlled, double-blind, dose-ranging study of the neurokinin 3receptor antagonist fezolinetant for vasomotor symptoms associated withmenopause. Menopause 2020;27:382 e92. Available at https://www.ncbi.
+nlm.nih.gov/pubmed/32102086 .
+73. Lahti E, Blanco G, Kauppila A, et al. Endometrial changes in
+postmenopausal breast cancer patients receiving tamoxifen. Obstet
+Gynecol 1993;81:660 e4. Available at https://www.ncbi.nlm.nih.gov/
+pubmed/8469450 .
+74. Kedar RP , Bourne TH, Powles TJ, et al. Effects of tamoxifen on uterus and
+ovaries of postmenopausal women in a randomised breast cancer
+prevention trial. Lancet 1994;343:1318 e21. Available at https://www.ncbi.
+nlm.nih.gov/pubmed/7910323 .
+75. Cheng WF, Lin HH, Torng PL, et al. Comparison of endometrial changes
+among symptomatic tamoxifen-treated and nontreated premenopausal andpostmenopausal breast cancer patients. Gynecol Oncol 1997;66:233 e7.
+Available at https://www.ncbi.nlm.nih.gov/pubmed/9264568 .
+76. Bertelli G, Venturini M, Del Mastro L, et al. Tamoxifen and the
+endometrium: ﬁndings of pelvic ultrasound examination and endometrial
+biopsy in asymptomatic breast cancer patients. Breast Cancer Res Treat1998;47:41 e6. Available at https://www.ncbi.nlm.nih.gov/pubmed/9493
+974.77. Lee M, Piao J, Jeon MJ. Risk Factors Associated with Endometrial
+Pathology in Premenopausal Breast Cancer Patients Treated with
+Tamoxifen. Yonsei Med J 2020;61:317 e22. Available at https://www.ncbi.
+nlm.nih.gov/pubmed/32233174 .
+78. Mourits MJ, Van der Zee AG, Willemse PH, et al. Discrepancy between
+ultrasonography and hysteroscopy and histology of endometrium inpostmenopausal breast cancer patients using tamoxifen. Gynecol Oncol1999;73:21 e6. Available at https://www.ncbi.nlm.nih.gov/pubmed/1
+0094875 .
+79. Tesoro MR, Borgida AF, MacLaurin NA, et al. Transvaginal endometrial
+sonography in postmenopausal women taking tamoxifen. Obstet Gynecol1999;93:363 e6. Available at https://www.ncbi.nlm.nih.gov/pubmed/1
+0074980 .
+80. Chang J, Powles TJ, Ashley SE, et al. Variation in endometrial thickening in
+women with amenorrhea on tamoxifen. Breast Cancer Res Treat1998;48:81 e5. Available at https://www.ncbi.nlm.nih.gov/pubmed/95411
+92.
+81. Le Donne M, Alibrandi A, Ciancimino L, et al. Endometrial pathology in
+breast cancer patients: Effect of different treatments on ultrasonographic,
+hysteroscopic and histological ﬁndings. Oncol Lett 2013;5:1305 e10.
+Available at https://www.ncbi.nlm.nih.gov/pubmed/23599784 .
+82. Palva T, Ranta H, Koivisto AM, et al. A double-blind placebo-controlled
+study to evaluate endometrial safety and gynaecological symptoms inwomen treated for up to 5 years with tamoxifen or placebo - a substudy forIBIS I Breast Cancer Prevention Trial. Eur J Cancer 2013;49:45 e51.
+Available at https://www.ncbi.nlm.nih.gov/pubmed/22832202 .
+83. Kahraman K, Pabuccu E, Taskin S, et al. The role of ultrasound and
+symptom-based triage for detection of pathological endometrial changes inpatients undergoing tamoxifen therapy for breast cancer. Eur J GynaecolOncol 2011;32:667 e71. Available at https://www.ncbi.nlm.nih.gov/
+pubmed/22335032 .
+84. Cohen I, Rosen DJ, Tepper R, et al. Ultrasonographic evaluation of the
+endometrium and correlation with endometrial sampling in
+postmenopausal patients treated with tamoxifen. J Ultrasound Med
+1993;12:275 e80. Available at https://www.ncbi.nlm.nih.gov/
+pubmed/8345555 .
+85. Markovitch O, Tepper R, Aviram R, et al. The value of sonohysterography
+in the prediction of endometrial pathologies in asymptomaticpostmenopausal breast cancer tamoxifen-treated patients. Gynecol Oncol2004;94:754 e9. Available at https://www.ncbi.nlm.nih.gov/pubmed/1535
+0369.
+86. Aboul Nasr AL, Saad El Din IM, Salem MS, et al. Endometrial pathologies
+in asymptomatic women receiving tamoxifen for breast cancer. Journal ofEvidence-Based Women ’s Health Journal Society 2016;6. Available at
+https://journals.lww.com/ebjwh/Fulltext/2016/05000/Endometrial_pathologies_in_asymptomatic_women.5.aspx .
+87. Love CD, Dixon JM. Thickened endometrium caused by tamoxifen returns
+to normal following tamoxifen cessation. Breast 2000;9:156 e
+7. Available at
+https://www.ncbi.nlm.nih.gov/pubmed/14731840 .
+88. Chelmow D, Brooks R, Cavens A, et al. Executive Summary of the
+Uterine Cancer Evidence Review Conference. Obstet Gynecol2022;139:626 e43. Available at https://www.ncbi.nlm.nih.gov/
+pubmed/35272316 .
+89. Committee Opinion No. 601: Tamoxifen and uterine cancer. Obstet
+Gynecol 2014;123:1394 e7. Available at https://www.ncbi.nlm.nih.gov/
+pubmed/24848920 .
+90. Love CD, Muir BB, Scrimgeour JB, et al. Investigation of endometrial
+abnormalities in asymptomatic women treated with tamoxifen and an
+evaluation of the role of endometrial screening. J Clin Oncol
+1999;17:2050 e4. Available at https://www.ncbi.nlm.nih.gov/pubmed/1
+0561257 .
+91.Kuter I, Hegg R, Singer CF, et al. Impact of fulvestrant 500 mg/month
+versus fulvestrant 250 mg/month on bone turnover markers andendometrial thickness: ﬁndings from the NEWEST study. European
+Journal of Cancer Supplements 2010;8:64 .
+JULYJOGC JUILLET 2024
+l13Asymptomatic Endometrial Thickening
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.92. Bertelli G, Hall E, Ireland E, et al. Long-term endometrial effects in
+postmenopausal women with early breast cancer participating in the
+Intergroup Exemestane Study (IES) –a randomised controlled trial of
+exemestane versus continued tamoxifen after 2-3 years tamoxifen. AnnOncol 2010;21:498 e505. Available at https://www.ncbi.nlm.nih.gov/
+pubmed/19717534 .
+93. Christianson MS, Barker MA, Lindheim SR. Overcoming the challenging
+cervix: techniques to access the uterine cavity. J Low Genit Tract Dis2008;12:24 e31. Available at https://www.ncbi.nlm.nih.gov/
+pubmed/18162809 .
+94. Wood MA, Kerrigan KL, Burns MK, et al. Overcoming the Challenging
+Cervix: Identi ﬁcation and Techniques to Access the Uterine Cavity. Obstet
+Gynecol Surv 2018;73:641 e9. Available at https://www.ncbi.nlm.nih.gov/
+pubmed/30468239 .
+95. Barbieri RL. Stenosis of the external cervical os: an association with
+endometriosis in women with chronic pelvic pain. Fertil Steril1998;70:571 e3. Available at https://www.ncbi.nlm.nih.gov/pubmed/
+9757894 .
+96. Bettocchi S, Bramante S, Bifulco G, et al. Challenging the cervix: strategies
+to overcome the anatomic impediments to hysteroscopy: analysis of 31,052ofﬁce hysteroscopies. Fertil Steril 2016;105:e16 e7. Available at https://
+www.ncbi.nlm.nih.gov/pubmed/26873675 .
+97. Mathevet P , Dargent D, Roy M, et al. A randomized prospective study
+comparing three techniques of conization: cold knife, laser, and LEEP .Gynecol Oncol 1994;54:175 e9. Available at https://www.ncbi.nlm.nih.
+gov/pubmed/8063242 .
+98. Ngai SW , Chan YM, Liu KL, et al. Oral misoprostol for cervical priming in
+non-pregnant women. Hum Reprod 1997;12:2373 e5. Available at https://
+www.ncbi.nlm.nih.gov/pubmed/9436666 .
+99. Preutthipan S, Herabutya Y. Vaginal misoprostol for cervical priming
+before operative hysteroscopy: a randomized controlled trial. ObstetGynecol 2000;96:890 e4. Available at https://www.ncbi.nlm.nih.gov/
+pubmed/11084173 .
+100. Inal HA, Ozturk Inal ZH, Tonguc E, et al. Comparison of vaginal
+misoprostol and dinoprostone for cervical ripening before diagnostic
+hysteroscopy in nulliparous women. Fertil Steril 2015;103:1326 e31.
+Available at https://www.ncbi.nlm.nih.gov/pubmed/25712577 .
+101. Crane JMG, Craig C, Dawson L, et al. Randomized trial of oral
+misoprostol before endometrial biopsy. J Obstet Gynaecol Can2009;31:1054 e9. Available at https://www.ncbi.nlm.nih.gov/pubmed/2
+0175345 .
+102. Perrone JF, Caldito G, Mailhes JB, et al. Oral misoprostol before of ﬁce
+endometrial biopsy. Obstet Gynecol 2002;99:439 e44. Available at https://
+www.ncbi.nlm.nih.gov/pubmed/11864671 .
+103. Crane JM, Healey S. Use of misoprostol before hysteroscopy: a systematic
+review. J Obstet Gynaecol Can 2006;28:373 e9. Available at https://www.
+ncbi.nlm.nih.gov/pubmed/16768880 .104. Al-Fozan H, Firwana B, Al Kadri H, et al. Preoperative ripening of the
+cervix before operative hysteroscopy. Cochrane Database Syst Rev
+2015:CD005998. Available at https://www.ncbi.nlm.nih.gov/
+pubmed/25906113
+.
+105. Polyzos NP , Zavos A, Valachis A, et al. Misoprostol prior to hysteroscopy
+in premenopausal and post-menopausal women. A systematic review andmeta-analysis. Hum Reprod Update 2012;18:393 e404. Available at
+https://www.ncbi.nlm.nih.gov/pubmed/22544173 .
+106. Oppegaard KS, Nesheim BI, Istre O, et al. Comparison of self-
+administered vaginal misoprostol versus placebo for cervical ripening prior
+to operative hysteroscopy using a sequential trial design. BJOG2008;115(663). e1 e9. Available at https://www.ncbi.nlm.nih.gov/
+pubmed/18201279 .
+107. Ostrzenski A. Resectoscopic cervical trauma minimized by inserting
+Laminaria digitata preoperatively. Int J Fertil Menopausal Stud1994;39:111 e3. Available at https://www.ncbi.nlm.nih.gov/pubmed/8
+012440 .
+108. Jansen FW , Vredevoogd CB, van Ulzen K, et al. Complications of
+hysteroscopy: a prospective, multicenter study. Obstet Gynecol
+2000;96:266 e70. Available at https://www.ncbi.nlm.nih.gov/pubmed/1
+0908775 .
+109. Kayatas S, Meseci E, Tosun OA, et al. Experience of hysteroscopy
+indications and complications in 5,474 cases. Clin Exp Obstet Gynecol2014;41:451 e4. Available at https://www.ncbi.nlm.nih.gov/
+pubmed/25134297 .
+110. Aydeniz B, Gruber IV , Schauf B, et al. A multicenter survey of
+complications associated with 21,676 operative hysteroscopies. Eur J
+Obstet Gynecol Reprod Biol 2002;104:160 e4. Available at https://www.
+ncbi.nlm.nih.gov/pubmed/12206931 .
+111. Hunter RE, Reuter K, Kopin E. Use of ultrasonography in the
+difﬁcult postmenopausal dilation and curettage. Obstet Gynecol
+1989;73:813 e6. Available at https://www.ncbi.nlm.nih.gov/
+pubmed/2649823 .
+112. Phillips DR, Nathanson HG, Milim SJ, et al. The effect of dilute
+vasopressin solution on the force needed for cervical dilatation: a
+randomized controlled trial. Obstet Gynecol 1997;89:507 e11. Available at
+https://www.ncbi.nlm.nih.gov/pubmed/9083303 .
+113. Suen MWH, Bougie O, Singh SS. Hysteroscopic management of a stenotic
+cervix. Fertil Steril 2017;107:e19. Available at https://www.ncbi.nlm.nih.
+gov/pubmed/28577618 .
+114. Salari BW , Bhagavath B, Galloway ML, et al. Hysteroscopic morcellator to
+overcome cervical stenosis. Fertil Steril 2016;106:e12 e3. Available at
+https://www.ncbi.nlm.nih.gov/pubmed/27542706 .
+115. Hammoud AO, Deppe G, Elkhechen SS, et al. Ultrasonography-guided
+transvaginal endometrial biopsy: a useful technique in patients with cervicalstenosis. Obstet Gynecol 2006;107:518 e20. Available at https://www.ncbi.
+nlm.nih.gov/pubmed/16449171 .
+14
+lJULYJOGC JUILLET 2024SOGC CLINICAL PRACTICE GUIDELINE
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.APPENDIX A
+Table A1. Key to Grading of Recommendations, Assessment, Development and Evaluation Quality of Evidence
+Grade Deﬁnition
+Strength of
+recommendation
+Strong High level of con ﬁdence that the desirable effects outweigh the undesirable effects (strong recommendation for) or
+the undesirable effects outweigh the desirable effects (strong recommendation against)
+Conditional (weak)aDesirable effects probably outweigh the undesirable effects (weak recommendation for) or the undesirable effects
+probably outweigh the desirable effects (weak recommendation against)
+Quality of evidence
+High High level of con ﬁdence that the true effect lies close to that of the estimate of the effect
+Moderate Moderate con ﬁdence in the effect estimate:
+The true effect is likely to be close to the estimate of the effect, but there is a possibility that it is substantially
+different
+Low Limited con ﬁdence in the effect estimate:
+The true effect may be substantially different from the estimate of the effect
+Very low Very little con ﬁdence in the effect estimate:
+The true effect is likely to be substantially different from the estimate of effect
+Adapted from GRADE Handbook (2013), Table 5.1.
+aDo not interpret conditional (weak) recommendations to mean weak evidence or uncertainty of the recommendation.
+Table A2. Implications of Strong and Conditional (Weak) recommendations, by guideline user
+Perspective Strong Recommendation
+/C15“We recommend that .”
+/C15“We recommend to not .”Conditional (Weak) Recommendation
+/C15“We suggest .”
+/C15“We suggest to not .”
+Authors The net desirable effects of a course of action outweigh the
+effects of the alternative course of action.It is less clear whether the net desirable consequences of
+a strategy outweigh the alternative strategy.
+Patients Most individuals in the situation would want the
+recommended course of action, while only a small
+proportion would not.The majority of individuals in the situation would want the
+suggested course of action, but many would not.
+Clinicians Most individuals should receive the course of action.
+Adherence to this recommendation according to the
+guideline could be used as a quality criterion orperformance indicator.Recognize that patient choices will vary by individual and
+that clinicians must help patients arrive at a care
+decision consistent with the patient ’s values and
+preferences.
+Policy makers The recommendation can be adapted as policy in most
+settings.The recommendation can serve as a starting point for
+debate with the involvement of many stakeholders.
+Adapted from GRADE Handbook (2013), Table 6.1.
+JULYJOGC JUILLET 2024 l15Asymptomatic Endometrial Thickening
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.

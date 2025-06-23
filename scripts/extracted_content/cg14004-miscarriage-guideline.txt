@@ -1,0 +1,1075 @@
+# Extracted from: CG14004 Miscarriage Guideline.pdf
+# Guideline ID: cg14004-miscarriage-guideline
+# Content length: 53184 characters
+# Processing date: 1750066900.3205292
+
+CG14004 Management of Miscarriage and Early Pregnancy Problems Guideline. V4.0 November 2022 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. Page 1 of 31 
+Management of Miscarriage and Early Pregnancy loss 
+Summary statement: How does the 
+document support patient care? By providing evidence based guidance f or staff in the 
+management of m iscarriage 
+Staff/stakeholders involved in 
+development: Clinical Leads for Early Pregnancy Service, Leads for 
+Gynaecology Risk Management , Labour Ward Leads 
+(Obstetric and Midwifery), Joint Obstetrics and Gynaecology 
+Guidelines Group 
+Division: Women and Chi ldren’s 
+Department: Gynaecology 
+Responsible Person: Chief of Service 
+Author: Clinical Leads for Early Pregnancy Service including 
+Gynaecology Matron, Gynaecology Q, I & I Matron and 
+Clinical Nurse Specialist 
+For use by: Gynaecology, Obstetric, A & E and Midwifery staff 
+Purpose: To provide clear evidence -based guidance on th e 
+management of m iscarriage 
+This document supports: NICE guideline NG126 ; Ectopic pregnancy and miscarriage: 
+diagnosis and initial management, April 2019, updated 
+November 2021 
+RCOG Diagnosis and management of Ectopic Pregnancy - 
+Green -top Guideline No. 21 , November 2016 
+Key related documents: UH Sussex (SRH & WH) Maternity Guidelines: Ectopic 
+Pregnancy (including pregnancies of unknown location) 
+Approved by: Maternity Joint Obstetric and Gynaecology Guidelines Group 
+Medicines Governance Committee : 13th December 2022 
+Approval date: 16TH November 2022 Date uploa ded:14th December 2022 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable – Divisional Ratification only required 
+Ratification Date: Not Applicable – Divisional Ratification only required 
+Expiry Date: June 2023 
+Review date: December 2022 
+If you require this document in another format such as Braille, large print, audio or another language 
+please contact the Trusts Communications Team 
+Reference Number: CG14004 
+CG14004 Management of Miscarriage and Early Pregnancy Problems Guideline. V4.0 November 2022 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. Page 2 of 31 
+ 
+Version Date Author Status Comment 
+1.0 November 2013 Consultant 
+Obstetrician Archived New Trust guideline 
+2.0 January 2016 Consultant 
+Obstetrician Archive Reviewed – No amendments 
+made 
+3.0 January 2019 Clinical Lead for 
+Early Pregnancy 
+Service including 
+Gynaecology 
+Matron and Clinical 
+Nurse Specialist Archived Amended and updated 
+4.0 November 2022 Gynaecology 
+Quality, Innovation 
+and Improvement 
+Matron 
+Clinical Lead for 
+Early Pregnancy 
+Service LIVE Amended and updated 
+Addition of MVA for 
+management of miscarriage 
+Addition of the use of vaginal 
+micronised progesterone 
+
+CG14004 Management of Miscarriage and Early Pregnancy Problems Guideline. V4.0 November 2022 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. Page 3 of 31 
+Contents 
+1.0 Aim ................................ ................................ ................................ ................................ ......... 5 
+2.0 Scope ................................ ................................ ................................ ................................ ......5 
+3.0 Responsibilities ................................ ................................ ................................ ....................... 5 
+4.0 Introduction ................................ ................................ ................................ ........................... 5 
+4.1 Abbreviations ................................ ................................ ................................ ......................... 6 
+5.0 Early Pregnancy Assessment Clinics ................................ ................................ ....................... 6 
+5.1 At Worthing Hospital ................................ ................................ ................................ .............. 6 
+5.2 At St Richards’ Hospital ................................ ................................ ................................ .......... 7 
+5.3 Clinical Assessment ................................ ................................ ................................ ................ 7 
+6.0 Signs and Symptoms of Miscarriage ................................ ................................ ...................... 7 
+6.1 Common Symptoms: ................................ ................................ ................................ .............. 7 
+6.2 Common signs: ................................ ................................ ................................ ....................... 7 
+6.3 Signs of miscarriage requiring urgent medical attention and or emergency surgical 
+intervention: ................................ ................................ ................................ ................................ .....8 
+7.0 Ultrasound Guidance for Women with pain and bleeding in Early Pregnancy ..................... 8 
+7.1 Ultrasound Scan Protocol ................................ ................................ ................................ ....... 8 
+7.2 Scan Process and identification of patient: ................................ ................................ ............ 8 
+7.3 Reporting of scan findings: ................................ ................................ ................................ .....9 
+7.4 General Principles for all Early Pregnancy Scanning ................................ .............................. 9 
+7.5 Diagnosis and Classification of Miscarriage on USS ................................ ............................ 10 
+A. Delayed Miscarriage: ................................ ................................ ................................ ..... 10 
+B. Anembyronic Pregnancy: ................................ ................................ .............................. 11 
+C. Incomplete Miscarriage / Retained Products of Conception (RPOC): ........................... 11 
+D. Postpartum USS in patients less than six weeks post -delivery: ................................ .... 12 
+E. Complete Miscarriage ................................ ................................ ................................ ... 12 
+F. Pregnancy Unknown Location (PUL) ................................ ................................ ............. 12 
+G. Ectopic Pregnancy ................................ ................................ ................................ ......... 13 
+H. Pregnancy of Uncertain Viability (PUV). ................................ ................................ ........ 13 
+8.0 Management of Miscarriage ................................ ................................ .............................. 14 
+8.1 Threatened Miscarriage ................................ ................................ ................................ ...... 14 
+8.2 Incomplete miscarriage ................................ ................................ ................................ ....... 14 
+8.3 Complete Miscarriage ................................ ................................ ................................ ......... 15 
+CG14004 Management of Miscarriage and Early Pregnancy Problems Guideline. V4.0 November 2022 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. Page 4 of 31 
+8.4 Pregnancy Testing Post Miscarriage ................................ ................................ ................... 15 
+8.5 Expectant management of miscarriage ................................ ................................ .............. 15 
+8.5.1 Risks of expectant management of miscarriage ................................ ................................ 16 
+8.6 Medical management of miscarriage as outpatient ................................ .......................... 16 
+8.6.1 Side effects and risks of medical management of miscarriage (MMM) ............................. 17 
+8.6.2 Contraindications to medical management ................................ ................................ ....... 18 
+8.7 Surgical management of miscarriage under local anaesthetic – Manual Vacuum Aspir ation 
+(MVA) ................................ ................................ ................................ ................................ ............. 18 
+8.7.1 Risks of MVA ................................ ................................ ................................ ....................... 20 
+8.8 Surgical management of miscarriage under general anaesthetic (SMM) .......................... 20 
+8.8.1 Risks of surgical management: ................................ ................................ ........................... 21 
+9.0 Consent ................................ ................................ ................................ .............................. 21 
+10.0 Anti-D rhesus prophylaxis ................................ ................................ ................................ .. 21 
+11.0 Audit ................................ ................................ ................................ ................................ ... 22 
+References: ................................ ................................ ................................ ................................ .... 23 
+Appendix 1 - EPAC Referral Pathway for Worthing and St Richards’ Hospitals ............................ 24 
+Appendix 2 - Initial Clinical Assessment ................................ ................................ ........................ 27 
+Appendix 3 - Gestational age by GSD ................................ ................................ ............................ 28 
+Appendix 4 - Flowchart Management of a confirmed miscarriage ................................ ............... 29 
+Appendix 5 - Sensitive disposal of fetal remains ................................ ................................ ........... 30 
+Appendix 6 - Consent for the sensitive disposal of non -recognisable fetal remains .................... 31 
+ 
+CG14004 Management of Miscarriage and Early Pregnancy Problems Guideline. V4.0 November 2022 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. Page 5 of 31 
+Management of Miscarriage and Early Pregnancy loss 
+ 
+1.0 Aim 
+ 
+The aim is to provide clear guidance for all staff caring for women with early pregnancy 
+complications. 
+ 
+2.0 Scope 
+ 
+This guideline applies to: 
+ Early Pregnancy Assessment Unit (EPAC) staff 
+ Accident & Emergency ( A & E ) staff 
+ Ward Nursing Staff 
+ Sonographers 
+ Gynaecologists 
+ Obstetricians 
+ Midwives 
+ General Practitioners (GPs) 
+ 
+3.0 Responsibilities 
+ 
+ Obstetricians and Gynaecologists, A & E , Sonographers, EPAC, Midwives and 
+Nursing staff 
+1. To access, read, understand and follow this guidance 
+2. To use their professional judgement in application of this guideline 
+3. This guidance is for staff employed by University Hospitals Sussex (SRH & 
+WH) Trust. The guidance is flexible and should be tailored to the individual 
+circumstances of the patient. If the guidance is not being followed, 
+documentation of the reasoning and/or justification is essential, with clear 
+documentation of alternative pla ns and discussions. 
+ 
+ Management: 
+1. To ensure the guideline is reviewed as required in line with Trust and 
+National recommendations 
+2. To ensure the guideline is accessible to all relevant staff 
+ 
+4.0 Introduction 
+ 
+Early pregnancy loss accounts for over 50,000 admissions in the UK annually (The 
+Health and Social Care information Centre, 2012). Approximately 1 in 4 pregnancies end 
+in miscarriage and th is can cause considerable distress to women and their carers 
+(Miscarriage Association) . Miscarriage and ectopic pregnancy have an adverse effect on 
+the quality of life of many women. 
+ 
+CG14004 Management of Miscarriage and Early Pregnancy Problems Guideline. V4.0 November 2022 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. Page 6 of 31 
+There is an early pregnancy assess ment clinic (EPAC) situated within St Richards’ and 
+Worthing Hospitals. The clinic is only for patients with pain and/or bleeding in early 
+pregnancy up to 18 weeks. A pregnancy test should be positive prior to referral. Patients 
+can be referred by their GP , A&E or community midwives (See Appendix 1 for the 
+referral pathways and forms ). 
+ 
+4.1 Abbreviations 
+ 
+SRH St Richards Hospital WH Worthing Hospital 
+A&E Accident and Emergency GDU Gynae Day Unit 
+EPAC Early Pregnancy Assessment Clinic MMM Medical management of miscarriage 
+PUL Pregnancy of Unknown Location MVA Manual Vacuum Aspiration 
+ 
+MSD mean sac diameter(s) SMM Surgical management of miscarriage 
+Crown Rump Length (CRL) G&S Group & Save 
+FBC Full blood count BHCG Beta-Human Chorionic Gonadotropin 
+BP Blood pressure NSAIDs Non-Steroidal Anti Inflammatory 
+Drugs 
+P Pulse O&G Obstetrics and Gynaecology 
+IV Intravenous hCG Human Chorionic Gonadotropin 
+PV Per vaginal LFT Liver Function Test 
+POC Products of conception PUV Pregnancy of uncertain viability 
+RPOC Retained products of conception U&Es Urea & Electrolytes 
+TAS Transabdominal Scan TVS Transvaginal Scan 
+ 
+5.0 Early Pregnancy Assessment Clinics 
+ 
+5.1 At Worthing Hospital 
+ 
+EPAC - Monday to Friday 8-2pm 
+ Between 8am - 2pm telephone EPAC on 01903 285165 
+ Between 2pm and 8pm telephone Gynaecology Day Unit on GDU on 
+01903 285147 
+ Ladies will be contacted with the next available appointment. 
+ 
+Out of Hours Mon – Friday 8pm – 8am and Weekends 
+ An email referral can be sent to epac.wgh@nhs.net 
+ Telephone Bramber Ward on 01903 2 85144 this referral will then be passed onto 
+EPAC on the next working day and patients will be contacted as above. 
+Complete the proforma with the patients’ details . 
+CG14004 Management of Miscarriage and Early Pregnancy Problems Guideline. V4.0 November 2022 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. Page 7 of 31 
+The EPAC nurse will contact the patient to discuss their referral as it may be that not all 
+patients will require an appointment. Ensure patients are aware that appointments will be 
+the next available and this may not be the ne xt day. 
+ 
+5.2 At St Richards ’ Hospital 
+ 
+EPAC - Monday to Friday 8 - 1pm 
+ Telephone Gynae Outpatients on 01243 788122 ext 32874 /35278 the 
+receptionist will take a message and pass the patient details onto EPAC . 
+ They will be contacted with the next available appointment. 
+Out of Hours Mon – Friday 1pm - 8 am and weekends 
+ Between 1pm and 5 m telephone Monday – Friday telephone Gynaecology 
+Outpatients on 01243 788122 ext 32874 
+ An email referral can be sent to epac.srh@nhs.net 
+ The on call SHO on Bleep 6100 will take the patients details and forward them to 
+the EPAC Staff. 
+ 
+Complete the proforma with the patient s’ details ( Appendix 1 ). 
+The EPAC nurse will contact the patient to discuss their referral as it may be that not all 
+patients will require an appointment. Ensure patients are aware that appointments will be 
+the next available and this may not be the next day. Do not advise patients th at they will 
+receive as an ultrasound scan or a next/same day appointment as this is not always 
+required. 
+ 
+5.3 Clinical Assessment 
+ 
+Follow the flowchart in (Appendix 2 ).when a woman/person attends t he early pregnancy 
+unit (EPAC) or gynaecology day unit (GDU) with a positive pregnancy test. 
+ 
+6.0 Signs and S ymptoms of Miscarriage 
+ 
+6.1 Common Symptoms : 
+ Abdominal cramps or pelvic pain 
+ Amenorrhoea or missed period with a positive pregnancy test 
+ Vaginal bleeding may vary from spotting to heavy bleeding with clots 
+ Passed products of conception 
+ Completely asymptomatic 
+ Loss of pregnancy symptoms 
+ 
+6.2 Common signs : 
+ Active vaginal bleeding 
+ Pain / cramps 
+CG14004 Management of Miscarriage and Early Pregnancy Problems Guideline. V4.0 November 2022 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. Page 8 of 31 
+ Cervical os open or closed 
+ Products of conception at the cervical os 
+ 
+6.3 Signs of miscarriage requiring urgent medical attention and or emergency 
+ surgical intervention : 
+ 
+ Significant pain 
+ Significant vaginal blood loss +/ - large clots 
+ pallor 
+ Tachycardia (more than 100 beats per minute) or 
+ Hypotension (less than 100/60 mmHg) 
+ Shock, collapse , fainting +/ - dizziness 
+ Cervical o s open 
+ Products of conception (P OC) at the cervical os 
+ Cervical shock (collapse) 
+ 
+7.0 Ultrasound Guidance for Women with pain and bleeding in Early 
+ Pregnancy 
+ 
+Women in a clinically stable condition between 6 -12 weeks gestation with a positive 
+pregnancy test will be offered an ultrasound scan in EPAC 
+ 
+The Sonographer or Qualified Scan Practitioner will perform the ultrasound scan in line 
+with the Early Pregnancy Protocols . 
+ 
+7.1 Ultrasound Scan Protocol 
+ 
+This update was formulated following NICE Guidelines on Ectopic pregnancy and 
+miscarriage published in April 2019 and updated November 2021(previously published 
+2012). 
+ 
+NICE advise that we should inform women that diagnosis of miscarriage using a single 
+ultrasound scan (USS) cannot be guaranteed to be 100% accurate. Stating that there is 
+a small chance that the diagnosis maybe incorrect, particularly at very early gestations. 
+This had le d to the development of the following guidance. 
+ 
+7.2 Scan Process and identification of patient: 
+ 
+1. The person scanning must confirm the patient’s name and date of birth and first 
+line of address in accordance with trust policy. 
+2. Verbal consent for a transv aginal scan must be obtained and a chaperone must 
+be offered and if declined document on the report. 
+CG14004 Management of Miscarriage and Early Pregnancy Problems Guideline. V4.0 November 2022 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. Page 9 of 31 
+3. The name of the person scanning, and any assistant/colleague present at the 
+time of the examination must appear on the report. 
+4. Scan report s must be typed onto viewpoint system and copied onto the CRIS 
+system . 
+5. The examination must be processed on CRIS inc luding the decontamination 
+processes if a TVS is completed. 
+6. Images should be sent to PACS. 
+ 
+7.3 Reporting of scan findings: 
+ 
+All reports are to be standardised, therefore a t these examinations the following should 
+be assessed and representative images recorded (as appropriate); 
+a. Endometrial appearance and thickness if no evidence of gestation al sac 
+b. Number of sacs and mean sac diameter(s) ( MSD) – (if not fetal pole present) and 
+appearance if irregular 
+c. The position or site of the sac within the uterus 
+d. The presence of any haematoma and size (at least 3 dimensions) 
+e. The presence/absence of a yolk sac and MSD 
+f. The presence/absence of an embryo plus Crown Rump Length (CRL) 
+g. Presence or absence of heart movement in the embryo (recorded in report) 
+h. The presence of the pregnancy in the uterine cavity incorporating the cervix 
+should be clearly demonstrated and captured as an image. 
+i. Adnexa must be assessed any masses and their appearance, patient tenderness 
+and vascularity and relation to other pelvic organs must be documented 
+j. Ovaries to be identified - document shape size, morphology and identify corpus 
+luteum. If the ovaries are not seen image adnexa to include the il iac vessels and 
+document visibly not seen. 
+k. Presence of free fluid to be documented and deepest pool measured report to 
+include the appearance (anechoic or mixed). 
+On Viewpoint u se the drop downs to the formulate report (do not free type). Use the 
+BMUS char ts to date by CRL and the gestation al sac diameter (Appendix 3 ). 
+ 
+7.4 General Principles for all Early Pregnancy Scanning 
+ 
+CG14004 Management of Miscarriage and Early Pregnancy Problems Guideline. V4.0 November 2022 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. Page 10 of 31 
+ The transvaginal probe must be cleaned and disinfected, and covered with a 
+probe cover for each scan. All decontamination events are to be documented / 
+scanned onto CRIS. Throughout the examination the sonographer must hold the 
+end of the probe cover to ensure that it is removed with the probe at the end of 
+the examination. 
+ 
+ If in d oubt or the findings are equivocal seek advice from a sonographer or 
+colleague. 
+ 
+ State the name of the sonographer giving the second opinion in the scan report. 
+ 
+ A second opinion can be provided by another qualified sonographer, registrar 
+who has obtained their early pregnancy scanning competency or a consultant 
+(qualified ultrasound practitioner). The ultrasound list should not be significantly 
+delayed by seeking a second opinion if it is not readily available in the EPAC 
+setting. 
+ 
+ All scan reports must have a clear conclusion to classify the scan findings, the 
+following conclusions should be used as appropriate in the scan report: 
+ Viable intrauterine Pregnancy 
+ Twin viable pregnancy 
+ Delayed miscarriage/Anembyronic pregnancy 
+ Incomplete miscarriage / Retained products of conception (RPOC) 
+ Complete miscarriage 
+ Pregnancy of unknown location (PUL) 
+ Pregnancy of uncertain viability (PUV) 
+ Ectopic pregnancy 
+ 
+ When carrying out a transabdominal (TA) or transvaginal ultrasound scan (TVS) 
+the assessment must include the adnexae to see if there is a heterotopic 
+pregn ancy (NICE 2019). 
+ 
+7.5 Diagnosis and Classification of Miscarriage on USS 
+ 
+A. Delayed Miscarriage: 
+ 
+If the CRL length is 7 mm or more with a t ransvaginal scan (TVS) , and there is no 
+visible heartbeat : 
+ Seek a second opinion on the viability of the pregnancy 
+ If a second opinion is not available at the time of the appointment perform a 
+second scan in the next available EPAC clinic 
+ The area of the fetal heart should be observed for approximately 30 seconds to 
+confirm no cardiac activity utilising the M mode function if needed (ASUM, 201 7). 
+CG14004 Management of Miscarriage and Early Pregnancy Problems Guideline. V4.0 November 2022 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. Page 11 of 31 
+If the CRL is 7 mm or more with a transabdominal scan, offer a TVS. If the patient 
+declines a TVS record the CRL and perform a second scan 14 days from the first scan 
+to make a diagnosis (NICE 2012). 
+ 
+If the CRL is less than 7 mm then a second scan must be a minimum of 7 days after 
+the initial scan (NICE 2019 ). Conclude that this is a pregnancy of uncertain viability 
+(PUV) at this stage . 
+ 
+At rescan, if there is a reduction in CRL or no change report it as a delayed miscarriage 
+and refer to EPAC (ISUOG 2013) . 
+ 
+If fetal viability continues to be uncertain the patient should be referred to a n EPAC 
+consultant so that the scan report is reviewed in context with the presenting clinical 
+history and further management plan can be made. 
+ 
+B. Anembyronic Pregnancy: 
+ 
+If the Mean Sac Diameter (MSD) is 25 mm or more there is no visible fetal pole using 
+a TV scan: 
+ Seek a second opinion on the viability of the pregnancy . 
+ If a second opinion is not available at the time of the appointment perform a 
+second scan in the next available EPAC clinic 
+If there is no visible fetal pole and the MSD diameter is measured by a TA scan only: 
+ Record the size of the MSD 
+ Offer a TVS if declined explain diagnosis is in concl usive and a perform a second 
+scan a minimum of 1 4 days after the first scan before making the diagnosis . 
+If the MSD is less than 25 mm on TVS and there is no fetal pole rescan a minimum of 7 
+days later (NICE 2019 ). Further scans may be needed before a diagnosis can be made. 
+Report this as PUV. 
+ 
+C. Incomplete Miscarriage / Retained Products of Conception (RPOC): 
+ 
+ RPOC should be visualised on TVS unless contraindicated or declined by the 
+patient. Record this on the VP report. 
+ RPOC of 15 mm AP diameter or more should be referred to the Gynae SHO or 
+EPAC Nurse to review the patient. 
+ If RPOC is present it must be measured in three planes (L x AP x W). Document 
+size, appearance and vascularity of any RPOC visualised. Also comment on any 
+fundal dilation, if present. Report this as incomplete or RPOC. 
+ A thin and linear endometrium of less than 15mm AP diameter with no evidence 
+of focal pathology can be classified as a ‘ complete miscarriage’ if consistent 
+with history of misca rriage and a negative pregnancy test (see E). 
+ 
+CG14004 Management of Miscarriage and Early Pregnancy Problems Guideline. V4.0 November 2022 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. Page 12 of 31 
+D. Postpartum USS in patients less than six weeks post -delivery: 
+ 
+Where ultrasound is being considered it must be discussed with a consultant 
+as there are limited indications for ultrasound after delivery . 
+ 
+All patients should be managed clinically in the first instance. The differential 
+diagnosis of RPOC or endometritis should be made through history and 
+examination. 
+ 
+If medical management fails then ultrasound may add to facilitating fur ther 
+management of the patient. However , interpretation of scan results is often 
+misleading in these patie nts and leads to over diagnosis of retained products and 
+recommendations for surgical management . 
+ 
+E. Complete Miscarriage 
+ 
+This can be diagnosed when 
+ There is no intrauterine pregnancy seen on ultrasound , the endometrial thickness 
+is less than 15mm and the pregnancy test is negative 
+ There is no intrauterine pregnancy seen on ultrasound, the endometrial thickness 
+is less than 15mm, the pregnancy test is positive but the patient has had a 
+previous ultrasound scan showing an intrauterine pregnancy. 
+ 
+If the pregnancy test is positive , there is no intrauterine pregnancy seen on ultrasound 
+and the endometrial thickness is less than 15mm but no previous scans have 
+demonstrated an intrauterine pregnancy the PUL protocol should be followed . 
+ 
+F. Pregnancy Unknown Location (P UL) 
+ 
+If no fetal pole is evident with a positive pregnancy test , all patients must be offered a 
+TVS scan to assess the endometrium, gestation al sac (if present) ovaries and adnexae. 
+ 
+A gestation al sac is defined by criteria in the table below, it is not necessary to see a 
+yolk sac in order to be certain of a gestation al sac. 
+
+CG14004 Management of Miscarriage and Early Pregnancy Problems Guideline. V4.0 November 2022 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. Page 13 of 31 
+ Pseudosac Early IUP 
+Location Along the cavity line, between 
+endometrial layers Below the midline echo buried into 
+the endometrium 
+Shape May change during scan, usually ovoid Steady, usually round 
+Borders Single layer Double ring hyperechoic decidual 
+reaction 
+Sac content No yolk sac Yolk sac seen by 5 -6 weeks 
+ 
+ If no GS is seen on TVS, image and report endometrial thickness and 
+appearance, status of ovaries, adnexal/POD free fluid and presence of any 
+adnexal masses. 
+ Record the presence of a Corpus Luteum, and document size (90% of ectopic 
+pregnancies will be on the side of the c orpus luteum). 
+ Please ensure detailed documentation of the size, appearance and dimensions 
+of any masses are noted. 
+ Please comment on any adnexal tenderness noted on TV scanning. 
+ Conclude report ‘this is a Pregnancy of unknown location’, or Ectopic 
+pregnan cy patient to be managed according to the EPAC protocols. 
+ 
+G. Ectopic Pregnancy 
+ 
+When carrying out transvaginal ultrasound scan in early pregnancy, it is important to 
+look for the following signs which are indications of the possibility, high probability or 
+existence of a tubal ectopic pregnancy: 
+ An empty uterus or 
+ A collection of fluid within the uterine cavity , (sometimes described as a pseudo -
+sac) that must be differentiated from an early int rauterine sac . 
+ An adnexal mass, moving separate to the ovary (sometimes called the ‘sliding 
+sign’), with an empty gestational sac (sometimes described as a ‘tubal ring’ or a 
+‘bagel sign’) or 
+ An adnexal mass, moving separate to the ovary, comprising a gest ation al sac 
+and/or a yolk sac and/or a fetal pole (with or without a fetal heartbeat). (NICE 
+2019) 
+ A complex, inhomogeneous adnexal mass, moving separate to the ovary. 
+ Ensure the use of colour doppler when assessing an ectopic pregnancy. 
+ Report the location and enter the size in three dimensions. 
+ Report and measure any free fluid. 
+ 
+H. Pregnancy of Uncertain Viability (PUV). 
+ 
+ For findings of a gestation al sac and yolk sac of approximately 4 -5 weeks with 
+no fetal pole report as “PUV.” The s onographer sho uld recommend the length of 
+follow up required (minimum of 10 days). 
+CG14004 Management of Miscarriage and Early Pregnancy Problems Guideline. V4.0 November 2022 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. Page 14 of 31 
+ Check both ovaries & adnexa 
+ Refer to PUL guidance if necessary. 
+ 
+8.0 Management of Miscarriage 
+ 
+The options for care and management of women and people diagnosed with a 
+miscarriage are demonstrated in the Management of Miscarriage flow chart ( Appendix 4 ) 
+ 
+Histology is only requested if the tissue has a ‘Molar’ appearance on scan or 
+macroscopic examination of the tissue. 
+ 
+8.1 Threatened Miscarria ge 
+ 
+Advise a woman or person with a confirmed intrauterine pregnancy with a fetal heartbeat 
+who presents with vaginal bleeding, but has no history of previous miscarriage, that: 
+ If her bleeding gets worse, or persists beyond 14 days, she should return for 
+further assessment. 
+ If the bleeding stop s, to start or continue with routine antenatal care (NICE 
+2012, amended 2021) 
+ 
+Once an intrauterine pregnancy is confirmed on ultrasound scan in a woman who 
+presents with vaginal bleeding and who has had at least one previous miscarriage, 
+ Offer vaginal micronised progesterone (cyclogest) 400mg twice daily 
+ Advise her to continue progesterone until the17th week of pregnancy (NICE 2021) 
+ 
+8.2 Incomplete miscarriage 
+ 
+Women and people with significant bleeding and signs of shock should be examined to 
+exclude evidence of products in the cervical os. If present these should be remove d and 
+sent for sensitive disposal. 
+ 
+All women and people with incomplete miscarriages should be offered c onservative, 
+surgical or medical management of miscarriage, unless the patient is haemodynamically 
+unstable where urgent uterine evacuation is appropriate. 
+ 
+This is diagnosed when: 
+ 
+ There is no intrauterine pregnancy seen on ultrasound 
+ A clear clinical h istory of passing products of conception 
+ Endometrial thickness is greater than 15mm volume 
+
+CG14004 Management of Miscarriage and Early Pregnancy Problems Guideline. V4.0 November 2022 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. Page 15 of 31 
+8.3 Complete Miscarriage 
+ 
+This is diagnosed when: 
+ 
+ A previous ultrasound scan has confirmed an intrauterine pregnancy and there is 
+no intrauterine pregnancy seen on the subsequent ultrasound 
+ Endometrial thickness is less than 15mm 
+ 
+Women and people who have not had a previous ultrasound scan confirming an 
+intrauterine pregnancy will require follow up with beta hCG levels before a definitive 
+diagnosis can be made in order to ensure an ectopic pregnancy is not misse d 
+ 
+8.4 Pregnancy Testing Post Miscarriage 
+ 
+This applies to all women and people who have: 
+ 
+ Conservative management of miscarriage 
+ Spontaneous miscarriage 
+ Medical Management of miscarriage 
+ 
+It is recommended that we advise women and people to perform a home pregnancy test 
+in 3 to 4 weeks and to contact EPAC if the result is positive (NICE 2012). On discharge 
+EPAC should provide the patient with a pregnancy test and the instructions on how to 
+perform this to try to minimise their distress at a difficult time. 
+ 
+There are currently 3 care options for the management of miscarriage : Expectant, 
+Medical and Surgical Management. 
+ 
+8.5 Expectant management of miscarriage 
+ 
+Offer expectant management for 14 days as the first -line management strategy for 
+women and people with a confirmed diagnosis of miscarriage. This initial decision can 
+be changed at any time for an alternative management plan. 
+ 
+Discuss alternative options with a consultant for the following issues : 
+ increased risk of haemorrhage 
+ previous adverse and/or traumatic experience associated with pregnancy ( e.g. 
+stillbirth , miscarriage or antepartum haemorrhage) 
+ increased risk from the effects of haemorrhage ( e.g. history of coagulopathies or 
+is unable to have a blood transfusion) 
+ evidence of infection 
+ suggestion of molar pregnancy 
+ 
+CG14004 Management of Miscarriage and Early Pregnancy Problems Guideline. V4.0 November 2022 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. Page 16 of 31 
+Explain what expectant management involves and that this is successful in about 50 out 
+of 100 women who choose this option. It can ta ke some time before the bleeding starts 
+and this may continue for up to 3 weeks (ref: RCOG patient info leaflet) Give all women 
+and people undergoing expectant management of miscarriage verbal and written 
+information about what to expect throughout the process, advice on pain relief and 
+where and when to get help in an emergency. 
+ 
+The resolution of bleeding and pain indicate that the miscarriage has completed during 
+the 14 days of expectant management, advise the woma n or person to take a urine 
+pregnancy test after 3 weeks, and to contact EPAC if it is still positive. 
+ 
+Offer a repeat scan if after the period of expectant management the bleeding and pain 
+have not started (suggesting that the process of miscarriage has n ot begun) or if they 
+are experiencing persist ent and/or increasing pain and bleeding (suggesting an 
+incomplete miscarriage). 
+ 
+Discuss all treatment options (continued expectant management, medical management, 
+and surgical management) with the woman to allo w her to make an informed choice. 
+ 
+Review the condition of a woman or person who opts for continued expectant 
+management of miscarriage at a minimum of 14 days after the first follow -up 
+appointment. 
+ 
+This management option will be unacceptable and distressing to some women and 
+people, therefore the other options must be discussed. 
+ 
+8.5.1 Risks of expectant management of miscarriage 
+ 
+The risks of expectant management are: 
+ Infection 5:100 
+ Haemorrhage requiring transfusion 
+ Haemorrhage requiring emergency surgical management of miscarriage 
+ Retained products of conception requiring further intervention at a later date 
+ 
+8.6 Medical management of miscarriage as outpatient 
+ 
+Outpatient medical management should be offered for miscarriages less than or equal to 
+9 weeks gestation as measured on the ultrasound due to the increased risk of bleeding 
+with advanced gestation. This is successful in 85 out of 100 women or people and 
+avoids an anaesthetic. 
+ 
+Obtain an informed consent and prescribe Mifepristone 200 milligrams to be taken orally 
+whilst in clinic or on the ward, followed by 800micrograms of misoprostol to be 
+CG14004 Management of Miscarriage and Early Pregnancy Problems Guideline. V4.0 November 2022 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. Page 17 of 31 
+administered PV 36 -48 hours later . Request a full blood count (FBC) and group and 
+save (G&S) . 
+ 
+The misoprostol 800 microg rams can be administered vaginally at home 36 -48 hours 
+after the Mifepristone . Advise the woman or person to empty their bladder and lay down 
+for a minimum of 3 0 minutes after insertion, a tampon can be inserted to ensure the 
+tablets remain in place. The tampon can be removed after 30 minute s and then the use 
+of sanitary pads is recommended whilst the bleeding continues. Offer all women and 
+people a prescription or provide TTO packs for pain relief and anti -emetics . All women 
+and people must have support at home from a responsible adult during this treatment . 
+ 
+If misoprostol is inserted within the clinic t he woman or person needs to go home 
+straight away as bleeding can start to occur within an hour. 
+ 
+If the miscarriage has not occurred after 48-72 hours the woman is asked contact GDU 
+(WH) or EPAC (SRH) as a repe at dose of misoprostol might be required . 
+ 
+Offer women and people the opportunity to return with any products passed at home for 
+sensitive disposal of fetal remains. T he Trust policy for sensitive disposal would need to 
+be implemented (see guidance on Trust Intranet , Appendix 5 ). 
+ 
+Each woman or person needs to be assessed on an individual basis to determine the 
+suitability of her /their managing the miscarriage at home , for example in the 
+management of the miscarriage of a twin pregnancy . 
+ 
+Provide verbal and written information to the woman or person to ensure they have a 
+clear understanding of the process . This should include information on the length and 
+extent of bleeding, levels of and the potential side effects of treatment diarrhoea and 
+vomiting. If there is prolonged and /or heavy vaginal bleeding, an offensive vaginal 
+discharge, pain unrelieved by analge sia, a raised temperature or the woman or person 
+feels generally unwell she /they must attend A& E or contact GDU for a medical 
+assessment . 
+ 
+Following treatment women and people are requested to perform a urine pregnancy test 
+3-4 weeks later unless they experience worsening symptoms, in which case advise them 
+to contact GDU (WH) or EPAC (SRH) . If the urine pregnancy test is positive after 3 -4 
+weeks advise them to contact GDU (WH) or EPAC (SRH) to arrange for an USS and 
+beta hCG to exclude a molar or ectopic pregnancy. 
+ 
+8.6.1 Side effects and risks of medical management of miscarriage (MMM) 
+ 
+The risks of medical management are: 
+ Infection 5:100 
+ Haemorrhage requiring transfusion 
+CG14004 Management of Miscarriage and Early Pregnancy Problems Guideline. V4.0 November 2022 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. Page 18 of 31 
+ Haemorrhage requiring emergency surgical evacuation, 
+ Nausea / vomiting, 
+ Rash, 
+ Headache, 
+ Risk of uterine rupture in multiparous women with previous caesarean sections 
+ Retained products of conception requiring surgical intervention 
+ 
+8.6.2 Contraindications to medical management 
+ 
+Absolute Relative 
+Adrenal insufficiency Hypertension 
+Long term glucocorticoid therapy Severe asthma 
+Haemoglobinopathies or anticoagulant 
+therapy 
+Anaemia (haemoglobin < 10 0g/dl) 
+Porphyria 
+Mitral stenosis 
+Glaucoma 
+NSAID ingestion in previous 48hours 
+ 
+8.7 Surgical m anagement of miscarriage under local anaesthetic – Manual 
+Vacuum Aspiration (MVA) 
+ 
+MVA is a way of emptying the uterus under local anaesthetic with ultrasound guidance 
+for incomplete miscarriage or pregnancies of less than 10 weeks gestation. 
+ 
+Provide verb al and written information to all women and people undergoing MVA for the 
+management of miscarriage about th is treatment option and what to expect during and 
+after the procedure. Request a full blood count (FBC) and group and save (G&S). 
+Prescribe Misopros tol 400 micrograms PV for cervical preparation to be inserted on 
+admission prior to the procedure. Consent for sensitive disposal of fetal remains (see 
+Appendix 6 ). 
+ 
+Inclusion criteria for MVA 
+ Haemodynamically stable 
+ <10/40 gestation 
+ Parous women or people or nullips who have specifically chosen to have this 
+procedure 
+ CRL <25mm 
+ RPOC <50mm 
+ No clinical signs of infection 
+ 
+CG14004 Management of Miscarriage and Early Pregnancy Problems Guideline. V4.0 November 2022 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. Page 19 of 31 
+Explain the surgical procedure and obtain informed written consent, this can be obtained 
+by a career SHO , registrar or Nurse Specialist who is comfortable describing the 
+procedure and the potential complications , benefits and risks associated with it 
+
+CG14004 Management of Miscarriage and Early Pregnancy Problems Guideline. V4.0 November 2022 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. Page 20 of 31 
+8.7.1 Risks of MVA 
+ 
+Although MVA has been proven to be very safe, like any treatment there are risks 
+(RCOG 2018) . 
+ 
+Uncommon surgical risks involve: 
+ Bleeding 
+ Incomplete uterine evacuation (4%) 
+ Infection (4%) 
+ Vasovagal episode 
+ 
+Very rare risks include: 
+ Severe bleeding 
+ Emergency admission 
+ Surgery under general anaesthesia 
+ Blood transfusion. 
+ 
+Anti-D immunoglobulin should be given to all non -sensitised Rh negative women 
+undergoing MVA. 
+ 
+Ensure that products of conception are seen at evacuation, this is only sent for histology 
+if a molar pregnancy is suspected. 
+ 
+8.8 Surgical management of miscarriage under general anaesthetic (SMM) 
+ 
+Where clinically appropriate, offer women surgical management of miscarriage in a 
+theatre under general anaesthetic. 
+ 
+Provide verbal and written information to all women undergoing surgical management of 
+miscarriage about th is treatment option and what to expect during and after the 
+procedure. Request a full blood count (FBC) and group and save (G&S). Prescribe 
+Misoprostol 400 microgra ms PV for cervical preparation to be inserted on admission 
+prior to the procedure if the cervix has not been previo usly dilated. Consent for sensitive 
+disposal of fetal remains (see Appendix 6 ). 
+ 
+Specific Indications: 
+ Increased risk of haemorrhage (late first trimester) 
+ Previous adverse and/or traumatic experience associated with pregnancy (e.g. 
+Stillbirth , miscarriage or antepartum haemorrhage) 
+ Increased risk from the effects of haemorrhage (e.g. History of coagulopathies or 
+is unable to have a blood transfusion) 
+ Evidence of infection . 
+ Molar pregnancy 
+ 
+CG14004 Management of Miscarriage and Early Pregnancy Problems Guideline. V4.0 November 2022 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. Page 21 of 31 
+Explain the surgical procedure and obtain informed written consent , this can be obtained 
+by a career SHO, registrar or Nurse Specialist who is comfortable describing the 
+procedure and the potential complications, benefits and risks associated with it 
+ 
+8.8.1 Risks of surgical management: 
+ 
+Anaesthetic complications are rare 
+Uncommon surgical risks involve : 
+ Infection (4%) 
+ Incomplete uterine evacuation (4%) 
+ Uterine perforation (1%) 
+ Haemorrhage (1%) 
+Very rare risks include: 
+ Hysterectomy (0.003%) 
+ Cervical tears 
+ Intrauterine adhesions, 
+ Intra-abdominal trauma (0.1%), 
+ 
+Arrange for measurement of haemoglobin concentration and determination of ABO and 
+Rhesus blood groups. Anti -D immunoglobu lin should be given to all non -sensitised Rh 
+negative women undergoing surgical evacuation. 
+ 
+Ensure that products of conception are seen at evacuation , this is only sent for histology 
+if a molar pregnancy is suspected . 
+ 
+9.0 Consent 
+ 
+Consent is a patient’s agreement for a health professional to provide care. In the case of 
+management of their miscarriage women may opt for one method of care and then 
+change their minds and request something else. 
+ 
+It is important to listen and support patients at this difficult time. Guidance on consent 
+can be found at http://nww.westernsussexhospitals.nhs.uk/assets/Consent -Policy -
+October -2015 -P23.pdf In the case of an under 16 year old, further information can be 
+found at: 
+https://www.nhs.uk/conditions/consent -to-treatment/children/ 
+ 
+10.0 Anti-D rhesus prophylaxis 
+ 
+Offer anti -D rhesus prophylaxis at a dose of 1500 international units (I/U) to all rhesus 
+negative women who have a surgical procedure to manage an ectopic pregnancy or a 
+miscarriage. 
+ 
+Do not offer anti -D rhesus prophylaxis to women under 12 weeks who: 
+CG14004 Management of Miscarriage and Early Pregnancy Problems Guideline. V4.0 November 2022 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. Page 22 of 31 
+ Receive solely medical management for an ectopic pregnancy or miscarriage 
+ Have a threatened miscar riage 
+ Have a complete miscarriage 
+ Have a pregnancy of unknown location. 
+ 
+Do no t use a Kleihauer test for quantifying feto –maternal haemorrhage. Further 
+information is available within the Fetal D Group DNA Screening and Routine Anti -D 
+Prophylaxis (RAADP) for Non -Sensitised RhD Negative Pregnant Women/People 
+Guideline 
+ 
+For patient information, p lease signpost women to the Miscarriage Association 
+miscarriageassociation.org 
+ 
+Any patient ’s who have experienced recurrent miscarriage, please discuss with the lead 
+consulta nts for early pregnancy on each site. 
+ 
+11.0 Audit 
+ 
+The process for audit and monitoring of this guideline are contained within the Maternity 
+Audit Document. 
+ 
+The audit of this guideline will include: 
+ 
+ The type of miscarriage and outcomes 
+ Emergency admissions of patients known to EPAC services on a care pathway, 
+including readmissions 
+ 
+CG14004 Management of Miscarriage and Early Pregnancy Problems Guideline. V4.0 November 2022 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. Page 23 of 31 
+References : 
+ 
+ASUM 2017: Australasian Society for Ultrasound in Medicine. Policies, Standards and 
+Guidelines for the Performance of first Trimester Ultrasound. Adopted by Council 
+December 2017. asum.com.au 
+ 
+Association of Early Pregnancy Units. Guidelines 20 07 (Archived) 
+ 
+ISUOG Practice guidelines: performance of first trimester fetal ultrasound scan. 
+Ultrasound Ostet Gynecol 2013: 41; 102 -113 isuog.org 
+ 
+Kirk E, Bourne T. Predicting Outcomes in Pregnancies of Unkno wn Location. 
+Women's Health. 2008; 4(5):491 -499 pubmed.ncbi.nlm 
+ 
+Miscarriage Association miscarriageassociation.org 
+ 
+NICE guid eline, NG126 published April 2019, Updated November 2021. Ectopic 
+Pregnancy and miscarriage: diagnosis and initial management. 
+nice.org.uk/guidance/ng126 
+ 
+RCOG, Surgical management of miscarriage and removal of persistent placental or fetal 
+remains, Consent Advice No 10. January 2018 
+ 
+Sagili H, Mohamed K. Pregnancy of unknown location: an evidence -based appr oach to 
+Management. The Obstetrician & Gynaecologist 2008; 10:224 –230 obgyn.onlinelibrary 
+
+CG14004 Management of Miscarriage and Early Pregnancy Problems Guideline. V4.0 November 2022 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. Page 24 of 31 
+Appendix 1 - EPAC Referral Pathway for Worthing and St Richards’ 
+Hospitals 
+Referrals to the Early Pregnancy Assessment Clinic (EPAC) 
+The Early Pregnancy Assessment Clinic (EPAC) is for women and people between 6 
+and 18 weeks pregnant with problems in early pregnancy. Women and people between 
+6-12 weeks gestation must have a positive pregnancy test to be referred. If patients do 
+not meet the criteria please discuss with the EPAC Nurse Specialist or Gynaecology Day 
+Unit Sister (please see below). 
+Referrals can be made by a GP, Practice Nurse, Midwife and A&E. We are unable to 
+accept self -referrals. All patients are contacted following triage with the next available 
+appointment if appropriate (this may not be the next working day). Please do not 
+suggest that the appointment/scan will be the next day as this is often not possible. 
+The EPAC staff will then contact the patients directly to discuss their referral and offer an 
+appointment as appropriate. Please inform ladies that they may receive a call from 07.45 
+onwards from an unknown numb er and this will be to offer the next available 
+appointment. 
+When referring please supply the ladies full name, contact details, DoB, Hospital 
+number, GP, LMP and clinical reason. 
+We recommend that all ladies attend with a comfortably full bladder for a trans -
+abdominal scan, however they may be asked to empty their bladder for a transvaginal 
+scan. 
+Please see attached referral forms for details on who to contact and when. 
+ 
+CG14004 Management of Miscarriage and Early Pregnancy Problems Guideline. V4.0 November 2022 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. Page 25 of 31 
+Referrals to EPAC St Richards’ Hospital Chichester 
+Monday to Friday 8 -5pm (EPAC working hours 08:00 -13:00 ) 
+ An email referral can be sent to epac.srh@nhs.net 
+ EPAC staff will aim to contact patient within clinic al opening hours . 
+Out of Hours Mon – Friday 5pm – 8 am and weekends – please email as above 
+ The on call SHO on Bleep 6100 will take the patients details and forward them to the 
+EPAC Staff. 
+The EPAC nurse will contact the patient to discuss their referral as it may be that not all 
+patients will require an appointment. 
+PLEASE DO NOT INFORM PATIENTS THAT THEY WILL RECEIVE A SCAN OR A SAME -DAY REVIEW 
+Date & Time 
+Name 
+DOB 
+Hospital Number or 
+NHS No. 
+Contact Numbers 
+LMP If gestation >15/40 
+please consider M/W to listen in 
+Positive Pregnancy 
+Test? Resus Group 
+Reason for referral 
+Please TICK relevant 
+boxes PV bleeding Shoulder tip 
+pain 
+Abdominal pain Rectal pain 
+Change of bowel 
+habits Duration of 
+symptoms 
+Other reason for 
+referral (Non man datory) 
+Significant Obstetric 
+and Gynaecological 
+History 
+
+Referred by: 
+Designation: 
+Contact Tel: 
+EPAC Nurse will triage referrals. Please be aware FH is not visible on scan until 6/40 
+ 
+EPAC NURSE TRIAGE ONLY: 
+
+ Nurse sign & date: 
+
+ Nurse sign & date: 
+CG14004 Management of Miscarriage and Early Pregnancy Problems Guideline. V4.0 November 2022 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. Page 26 of 31 
+Referrals to EPAC Worthing Hospital 
+Monday to Friday 8 -8pm (EPAC working hours 08:00 -14:00 ) 
+ An email referral can be sent to epac.wgh@nhs.net 
+ EPAC staff will aim to contact patient within clinic al opening hours . 
+Out of Hours Mon – Friday 8pm – 8 am and weekends – please email as above 
+ An email referral can be sent to epac.wgh@nhs.net 
+ Telephone Bramber Ward on 01903 285144 this referral will then be passed onto 
+EPAC on the ne xt working day and patients will be contacted as above. 
+The EPAC nurse will contact the patient to discuss their referral as it may be that not all 
+patients will require an appointment. 
+PLEASE DO NOT INFORM PATIENTS THAT THEY WILL RECEIVE A SCAN OR A SAME -DAY REVIEW 
+Date & Time 
+Name 
+DOB 
+Hospital Number or 
+NHS No. 
+Contact Numbers 
+LMP If gestation >15/40 
+please consider M /W to listen in 
+Positive Pregnancy 
+Test? Resus Group 
+Reason for referral 
+Please TICK relevant 
+boxes PV bleeding Shoulder tip 
+pain 
+Abdominal pain Rectal pain 
+Change of bowel 
+habits Duration of 
+symptoms 
+Other reason for 
+referral (Non man datory) 
+Significant Obstetric 
+and Gynaecological 
+History 
+
+Referred by: 
+Designation: 
+Contact Tel: 
+EPAC Nurse will triage referrals. Please be aware FH is not visible on scan until 6/40 
+ 
+EPAC NURSE TRIAGE ONLY: 
+
+ Nurse sign & date: 
+
+ Nurse sign & date: 
+CG14004 Management of Miscarriage and Early Pregnancy Problems Guideline. V4.0 November 2022 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. Page 27 of 31 
+Appendix 2 - Initial Clinical Assessment 
+
+CG14004 Management of Miscarriage and Early Pregnancy Problems Guideline. V4.0 November 2022 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. Page 28 of 31 
+Appendix 3 - Gestational age by GSD 
+ 
+Please state approximate until CRL is visualised. 
+ 
+Taken from viewpoint charts: 
+WEEKS GSD (mm) 
+5.0 7 mm 
+5.4 10 mm 
+6.0 12 mm 
+6.4 15 mm 
+7.0 18 mm 
+7.4 21 mm 
+8.0 25 mm 
+8.4 28 mm 
+9.0 32 mm 
+ 
+CG14004 Management of Miscarriage and Early Pregnancy Problems Guideline. V4.0 November 2022 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. Page 29 of 31 
+Appendix 4 - Flowchart Management of a confirmed miscarriage 
+
+CG14004 Management of Miscarriage and Early Pregnancy Problems Guideline. V4.0 November 2022 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. Page 30 of 31 
+Appendix 5 - Sensitive disposal of fetal remains 
+
+CG14004 Management of Miscarriage and Early Pregnancy Problems Guideline. V4.0 November 2022 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. Page 31 of 31 
+Appendix 6 - Consent for the sensitive disposal of non-recognisable fetal 
+remains

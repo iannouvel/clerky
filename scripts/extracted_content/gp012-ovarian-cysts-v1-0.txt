@@ -1,0 +1,376 @@
+# Extracted from: GP012 Ovarian Cysts (v1.0).pdf
+# Guideline ID: gp012-ovarian-cysts-v1-0
+# Content length: 20273 characters
+# Processing date: 1750066900.8814554
+
+Ovarian Cysts 
+Management of Asymptomatic Ovarian C ysts in Pre and Post -
+Menopausal Women 
+
+Gynecology Protocol: GP012 
+Date agreed: July 2017 
+ 
+Ovarian Cysts GP012 
+Page 2 of 13 
+Brighton & Sussex University Hospitals 
+
+Guideline Reviewer Vuivun Wong 
+Version 1.1 
+Approval Committee Women’s Services Safety and Quality Co mmittee 
+Date agreed: July 2016 
+Review date July 2019 Ovarian Cysts GP012 
+Page 3 of 13 
+Brighton & Sussex University Hospitals CONTENTS 
+Key Principles ................................ ................................ ................................ .................... 4 
+Scope ................................ ................................ ................................ ............................... 4 
+Responsibilities ................................ ................................ ................................ ................. 4 
+1.0 Objective Standards ................................ ................................ ................................ .. 5 
+1.1 Definitions ................................ ................................ ................................ .................. 5 
+ 1.2 Background ................................ ................................ ................................ ......... 5 
+ Table 1. Types Of Adnexal Masses ................................ ................................ .............. 6 
+ 1.3 Pathogenesis ................................ ................................ ................................ ....... 6 
+2.0 Diagnosis Pathway ................................ ................................ ................................ .... 7 
+ 2.1 Technical Aspects ................................ ................................ ................................ 7 
+3.0 Clinical Information ................................ ................................ ................................ ... 8 
+4.0 Menopausal Status ................................ ................................ ................................ ... 8 
+ 4.1 Definition ................................ ................................ ................................ ............ 8 
+5.0 Reporting Simple Ovarian Cysts ................................ ................................ ................. 9 
+ 5.1 Pre-Menopausal ................................ ................................ ................................ .. 9 
+ 5.2 Post -Menopausal ................................ ................................ ................................ 9 
+ 5.3 Complex Cysts ................................ ................................ ................................ ..... 9 
+6.0 Tumour Markers ................................ ................................ ................................ ..... 10 
+7.0 Triaging Ovarian Masses ................................ ................................ ......................... 11 
+ 7.1 Risk Of Malignancy Index (Rmi) ................................ ................................ ......... 11 
+ 7.2 Iota Ultrasound Features Classification ................................ .............................. 12 
+8.0 Management Of Ovarian Masses Presumed To Be Benign ................................ ....... 12 
+9.0 References ................................ ................................ ................................ .............. 13 
+
+ Ovarian Cysts GP012 
+Page 4 of 13 
+Brighton & Sussex University Hospitals Key Principles 
+These guidelines and algorithms are aimed to assist in the initial assessment and 
+management of ovarian masses in p re and post -menopausal women . The guideline also 
+aims to assist triaging where ovarian masses should be managed. They are not designed to 
+be prescriptive and you are not expected to use them in exclusion of discussion with senior 
+colleagues. 
+ 
+Evidence used to inform these guidelines have been drawn from : 
+RCOG – Guideline No. 62 (2011) – Management of suspected ovarian masses in 
+premenopausal women 
+RCOG – Guideline No. 34 (2003) – Ovarian cysts in Postmenopausal Women Management of 
+Asymptomatic Ovarian and O ther Adnexal Cysts Imaged at U/S: Society of Radiologist in 
+Ultrasound Consensus Conference Statement (2009 
+Scope 
+This guideline applies to: 
+• Patients with asymptomatic simple or haemorrhagic ovarian cysts 
+• All Sonographers/ Radiologists/ Gynaecologists who are performing gynaecological 
+ultrasound examinations 
+• All clinicians who are managing patients with pelvic masses 
+Responsibilities 
+Nurses, Midwives, Radiologists, Sonographers, Obstetricians & Gynaecologists : 
+• To access, read, understand and follow this guidance 
+• To use this guideline when writing protocols and policies for maternity care 
+ 
+Management Team : 
+• To ensure the guideline is reviewed as required in line with Trust and National 
+recommendations 
+• To ensure the guideline is accessible to all relevant staff 
+ Ovarian Cysts GP012 
+Page 5 of 13 
+Brighton & Sussex University Hospitals 1.0 Objective Standards 
+1.1 Definitions 
+ A simple asymptomatic ovarian cyst, as diagnosed with ultrasound imaging, is a thin and 
+smooth -walled anechoic space with no flow within using colour Doppler which is often 
+found incidentally and is not a ccom panied by symptoms of pain. However up to 20% of 
+borderline tumour can appear as a simple cyst particularly if the cyst is large. 
+ 
+ A classic haemorrhagic ovarian cyst has the following ultrasound features: a cystic mass 
+with a reticular pattern of internal echoes (often referred to as fishnet, cobweb, spider 
+web, generally due to fibrin strands) and/or a solid -appearing area with concave 
+margins. No internal flow with colour Doppler is seen, and there is usually 
+circumferential flow in the wall of the cyst . Wall thickness can be variable. 
+ 
+ Other adnexal masses are described below 
+1.2 Background 
+ The m ajority of ovarian masses and cysts are benign in premenopausal women. The 
+sonographic appearance of a normal ovary has a varying appearance throughout the 
+men strual cycle which may include multiple developing follicles, one or more 
+dominant follicle and a corpus luteum. At ultrasound the follicles appear as multiple, 
+thin and smooth -walled, round or oval, anechoic spaces with no flow using colour 
+Doppler ( i.e. the appearance of a simple cyst). The size of a dominant follicle at 
+ovulation averages 2 -2.4cm with a range of 1.7 – 2.8cm. Therefore cysts of < 3cm 
+should be considered a normal physiological finding. 
+ 
+ After ovulation, the dominant follicle becomes a c orpus luteum. This is typically a 
+diffusely thick -walled cyst with crenulated inner margins, measuring < 3cm in 
+maximum diameter. It usually has internal echoes and a ring of vascularity at the 
+periphery seen using colour Doppler. 
+ 
+After menopause, foll iculogenesis ceases and the ovaries decrease in size. The 
+normal post -menopausal ovary typically appears small and homogenous in 
+echotexture. Small simple cysts become less frequently observed as patient 
+progresses through the menopause transition . Some o f these cysts seen in early 
+menopause may reflect an ovulatory event, and others may be para -ovarian or tubal Ovarian Cysts GP012 
+Page 6 of 13 
+Brighton & Sussex University Hospitals in origin. Even in late menopause, where ovulation is unlikely to occur, small simple 
+cysts up to 1cm may be seen in up to 21% of women. 
+ 
+ The i ncidence of simple ovarian cysts found using ultrasound, particularly in pre -
+menopausal women, is high and the cause of many repeat scans. 
+ 
+ Functional and simple cysts which are less that 50mm maximum diameter usually 
+resolve over 2 to 3 menstrual cycles without any need for intervention. Table 1 
+describes the different types of adnexal masses, 
+Table 1. Types of adnexal masses 
+Benign ovarian 
+ Functional cysts 
+Endometriomas 
+Serous cystadenoma 
+Mucinous cystadenoma 
+Mature teratoma 
+ 
+Benign non -ovarian 
+ Para tubal cyst 
+Hydrosalpinges 
+Tubo -ovarian abscess 
+Peritoneal pseudocysts 
+Appendiceal abscess 
+Diverticular abscess 
+Pelvic kidney 
+ 
+Primary malignant ovarian Germ cell tumour 
+Epithelial carcinoma 
+Sex-cord tumour 
+ 
+Secondary malignant ovarian Predominantly bre ast and gastrointestinal 
+carcinoma 
+ 
+1.3 Pathogenesis 
+ The most common reason for finding a simple ovarian cyst is due to the persistence 
+and growth of a follicle .The pathogenesis of late post -menopausal cysts up to 1cm is Ovarian Cysts GP012 
+Page 7 of 13 
+Brighton & Sussex University Hospitals unclear but may be seen in up to o ne fifth of patients. It is considered of no clinical 
+importance and would not require follow -up. 
+ Haemorrhagic ovarian cysts are generally due to expanding haemorrhage within a 
+corpus luteum or other functional cyst. They typically resolve within 8 to 12 weeks 
+and will alter in appearance over time. No internal colour flow w ill be seen at colour 
+Doppler. 
+2.0 Diagnosis Pathway 
+Diagnosis is made by good quality ultrasound images, preferably using the trans -vaginal 
+route and sometimes requiring both trans -vaginal and abdominal methods. 
+ 
+Ultrasound of the female pelvis : 
+ The patient should receive an information sheet prior to the examination outlining 
+the procedure. 
+ Explanation of the procedure and verbal consent should be obtained prior to 
+proceeding. 
+ A cha perone should be present during the examination or at least offered if staffing 
+does not allow one to be present at all times. 
+ A chaperone is essential when the clinician performing the scan is male 
+ History of latex allergy and patient ID should be checked prior to performing the 
+examination. 
+ Patient needs to empty their bladder immediately prior to a vaginal examination or 
+have a full bladder for an abdominal approach. 
+ Patients ID should be entered on the machine. 
+ Probe should be cleaned and a probe cover applied over the vaginal transducer if 
+used. 
+ Procedure performed in a manner to preserve modesty. 
+ Images recorded of size, shape and echotexture of uterus, endometrium, ovaries 
+and adnexae. 
+ Any abnormalities should be measured and recorded. 
+ Any cyst should be checked for size (max. diameter), wall thickness, presence and 
+number of septae, presence of solid components, colour flow within septae and/or 
+solid components. 
+2.1 Technical Aspects 
+ The entire cyst needs to be adequately imaged – there will be occas ional incidences 
+when this is not technically possible and reliable characterisation is not obtained Ovarian Cysts GP012 
+Page 8 of 13 
+Brighton & Sussex University Hospitals with ultrasound. This is most likely to occur with large cysts and is also why simple 
+cysts > 5cm, despite being unlikely to show malignant change, should be followed -up 
+in case a small solid area is missed/cyst incompletely imaged. Both transabdominal 
+and transvaginal scans may need to be done to adequately image a large cyst. 
+ Colour or Power Doppler is needed for evaluation of most complex cysts and to 
+ascertain whether hypoechoic areas or potential artefact are solid or not. 
+ Presence of flow within a cyst is the most important Doppler feature rather than 
+spectral Doppler values. 
+ Measurements of cysts in 3 –dimensions can be modified by pressure with the 
+vaginal probe with variability in accuracy of measurements. The measurement of 
+the maximum diameter of the cysts is the recommendation . 
+3.0 Clinical Information 
+If not present on the request form, the following information is consider ed pertinent to the 
+examination: 
+ Patients age 
+ Last menstrual period 
+ Relevant signs and symptoms 
+ Hormonal status (OCP, HRT or fertility drugs) 
+ Personal or family h/o Cancer 
+ History of prior surgery 
+ Results of previous investigations/scans 
+4.0 Menopausal Status 
+4.1 Definition 
+A strict definition of menopause, especially early menopause is difficult because it 
+represents a continuum. The ovaries may appear somewhere in the spectrum between pre 
+and post -menopausal. The average age for menopause is 51 -53 years in Western countries 
+with a wide variation from 40 – 60years . 
+ 
+Post menopause is defined as 1 year or more of amenorrhoea from the final menstrual 
+period. Physiologically, this time can be divided into early (1 - 5years) and late (>5years) 
+post menopause , but for the purpose o f simplicity the first definition is to be used. 
+ Ovarian Cysts GP012 
+Page 9 of 13 
+Brighton & Sussex University Hospitals 5.0 Reporting Simple Ovarian Cysts 
+5.1 Pre-Menopausal 
+ Cysts ≤ 3cm: Normal physiological findings. Writing findings in the report is up to the 
+discretion of reporting clinician. No follow -up. 
+ Cysts > 3cm ≤ 5cm. Report and describe. Do not need follow -up. 
+ Cysts > 5cm. Rescan in 6/12. If resolved no follow up. No change or increase in size 
+– Gynae referral . 
+ Cysts > 7cm are difficult to assess with U/S, recommendation for MRI & Refer to 
+Gynaecology 
+5.2 Post-Menopausal 
+ Cysts ≤1cm clinically inconsequential. Up to clinician whether to describe in report. 
+No follow -up. 
+ Cysts > 1cm ≤ 5cm. Describe and repeat scan in 6/12. If resolved, no follow -up. No 
+change or increase in size – Gynae referral. 
+ Cysts > 5c m. Gynae referral. 
+The same recommendations/pathway is suggested for classic haemorrhagic cysts in the pre -
+menopausal patient. If there is any doubt about the U/S features they should be treated as 
+complex cysts. 
+ 
+In post -menopausal patients – ALL non -simple cysts should be referred for a gynaecological 
+opinion. 
+ 
+5.3 Complex Cysts 
+All of the following cysts should have Gynae referrals regardless of menopausal status : 
+ Ovarian Cysts GP012 
+Page 10 of 13 
+Brighton & Sussex University Hospitals  Endometrioma – homogenous low level internal echoes. No solid component+/ - tiny 
+echogen ic foci in walls. 
+ Dermoid – features to make confident diagnosis are; Focal or diffuse hyperechoic 
+components, Hyperechoic lines and dots, an area of acoustic shadowing, No internal 
+flow with colour Doppler . Malignant change most common in women > 50years and 
+cysts >10cm. 
+ Hydrosalpinx – tubular -shaped cystic mass 
++/- Short , round projections 
++/- Waist sign (indentations on opposite sides) 
++/- seen separate from ovary 
+If classic features no further follow up is required to establish diagnosis. If not cla ssic 
+alternative imaging may be required. Frequency of follow up as clinically indicated. 
+ 
+ Peritoneal Inclusion Cyst – follows contours of adjacent pelvic organs. The ovary is 
+at the edge or suspended within the mass. Can have septations. If classic fe atures 
+no follow up required . If not classic further imaging may be required. 
+ 
+ Indeterminate but probably Benign Cysts 
+1) Simple cyst with thin septation or focal calcification in wall. 
+2) Non classic haemorrhagic /endometrioma/dermoid/multiple septae/solid nod ule 
+with no colour flow NB Cysts > 10cm have a 13% chance of being malignant. 
+ 
+ Complex Cysts - suspicious of malignancy 
+1) Thick, irregular septations > 3mm. 
+2) Nodule with blood flow. 
+GP patient – write unexpected finding on report , Fax report to GP and refer to 
+Gynae. 
+ 
+6.0 Tumour Markers 
+Consider sending serum CA125 but result should be interpreted with caution as it is 
+raised in numerous benign conditions including fibroids, endometriosis, adenomyosis 
+and pelvic infection especially in pre-menopausal women . Usually the CA 125 levels are 
+less than 200 units/ml in these circumstances. Serial CA 125 monitoring may also be 
+considered as rapidly rising levels are more likely to be associated with malignancy. If CA 
+125 levels are more than 200 units/ml, please discu ss with a gynaecological oncologist. It 
+is also important to note that only 50% of early stage epithelial carcinoma of the ovary 
+has a raised CA 125. 
+ 
+Alpha fetoprotein and HCG should also be measured for women under 40 years old with 
+a complex ovarian mas s because of possibility of germ cell tumours . Ovarian Cysts GP012 
+Page 11 of 13 
+Brighton & Sussex University Hospitals 7.0 Triaging Ovarian Masses 
+Triaging is important to decide which cases are best managed by a general gynaecologist 
+or a gynaecological oncologist. 
+7.1 Risk o f Malignancy Index ( RMI) 
+RMI combines 3 pre-surgi cal features of serum CA 125 (CA125), menopausal statu s (M) 
+and ultrasound score (U). RMI = U x M x CA125 
+ 
+ The ultrasound result is scored 1 point for each of the following characteristics: 
+multilocular cysts, solid areas, metastases, ascites and bilatera l lesions. U = 0 (for 
+an ultrasound score of 0), U = 1 (for an ultrasound score of 1), U = 3 (for an 
+ultrasound score of 2 –5). 
+ The menopausal status is scored as 1 = premenopausal and 3 = postmenopausal. 
+Postmenopausal can be defined as women who have had no period for more 
+than one year or women over the age of 50 who have had a hysterectomy. 
+ Serum CA -125 is measured in IU/ml and can vary between zero to hundreds or 
+even thousands of units. 
+ 
+Table 2: An example of a protocol for triaging women using the r isk of malignancy index 
+(RMI); data from validation of RMI by Prys Davies et al. 16 
+ 
+Risk 
+ RMI Women (%) Risk of cancer (%) 
+Low < 25 40 < 3 
+ 
+Moderate 25–250 30 20 
+ 
+High 
+ > 250 30 75 
+ 
+Patients that are of moderate and high risk will need to be discussed with a gynaecological 
+oncologist. Ovarian Cysts GP012 
+Page 12 of 13 
+Brighton & Sussex University Hospitals 7.2 IOTA Ultrasound features classification 
+The IOTA Group has published the largest study to date investigating the use of ultrasound 
+in differentiating benign and malignant ovarian masses. Using data derived from the IO TA 
+Group, simple ultrasound rules were developed to help classify masses as benign (B -rules) 
+or malignant (M -rules) (see Table 3). Using these rules the reported sensitivity was 95%, 
+specificity 91%, positive likelihood ratio of 10.37 and negative likeliho od ratio of 0.06. 
+ 
+Table 3 : IOTA Group ultrasound ‘rules’ to classify masses as benign (B -rules) or 
+malignant (M -rules) 
+ 
+B-rules 
+ M-rules 
+Unilocular cysts 
+ Irregular solid tumour 
+Presence of solid components whe re the 
+largest solid component < 7 mm 
+ Ascites 
+Presence of acoustic shadowing 
+ At least four papillary structures 
+Smooth multilocular tumour with a largest 
+diameter < 100 mm 
+ Irregular multilocular solid tumour with 
+largest diameter ≥100 mm 
+No blood flow 
+ Very strong blood flow 
+8.0 Managem ent o f Ovarian Masses Presumed To Be Benign 
+ Women with small <50mm diameter simple ovarian cyst do not require follow up as the 
+cyst are likely to be physiological and almost always resolve within 3 menstrual cycle . In 
+postmenopausal women it is reasonabl e to offer a r epeat ultrasound after 4 months as 
+50% may resolve after 3 months. Conservative management need to take into account 
+the background risk of ovarian cancer in the woman and symptoms. 
+ 
+ Women with simple ovarian cyst of 50 to 70mm in diameter sh ould have yearly 
+ultrasound follow up and those with larger simple cysts (>70mm) should be considered 
+for further imaging i.e. MRI or surgical intervention. In postmenopausal women, surgical 
+intervention can be offered with a view for bilateral oophorectom y. 
+ Ovarian Cysts GP012 
+Page 13 of 13 
+Brighton & Sussex University Hospitals  Ovarian cysts that persist or increase in size are unlikely to be functional and may 
+warrant surgical management 
+ 
+ Aspiration of cyst has not been shown to be effective and is associated with high risk of 
+recurrence as high as 84% 
+ 
+ Where possible, cysts should be removed intact or use a tissue bag to avoid peritoneal 
+spillage of cystic contents. 
+ 
+ The possibility of oophorectomy should always be discussed preoperatively 
+9.0 References 
+1. RCOG Guideline No. 34 (2003) – Ovarian cysts in Po stmenopausal Women 
+2. RCOG Guideline No. 62 (2011) – Management of suspected ovarian masses in 
+ pre-menopausal women 
+3. Management of Asymptomatic Ovarian and Other Adnexal Cysts Imaged at 
+ U/S: Society of Radiologist in Ultrasound Consensus Conference Statemen t 
+ (2009)DePriest PD, Varner E, Powell J, Fried A, Puls L, Higgins R, et al. The 
+ efficacy of a sonographic morphology index in identifying ovarian cancer: a 
+ multi -institutional investigation. GynecolOncol 1994

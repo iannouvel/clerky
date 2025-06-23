@@ -1,0 +1,1308 @@
+# Extracted from: CG1147 Maternal Sepsis.pdf
+# Guideline ID: cg1147-maternal-sepsis
+# Content length: 57558 characters
+# Processing date: 1750066900.1038907
+
+CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 1 of 33 
+ TRUST CLINICAL GUIDELINE 
+Maternal or Birthing Person Sepsis in Pregnancy 
+and the Puerperium 
+ 
+Overview 
+To provide evidence -based guidance for obstetric, midwifery and medical staff to assist in the 
+prevention and management of Sepsis in Pregnancy 
+ 
+By providing information to ensure optimal outcomes for mother or birthing person and baby in 
+pregnancies complicated by sepsis, and to act as a resource for staff caring for women and 
+birthing people whose needs fall within the scope of this guideline. 
+ 
+Please note, IF DOCUMENT IS PRINTED, IT MAY BECOME OUT OF DATE 
+
+Owner S. Adamson 
+Author/further information A. Davey, Obstetric Consultant 
+K. Abdelrahman, Obstetric SHO 
+Guideline version 7.1 
+Related policies None 
+
+Related protocols/procedures Hospital Obstetric Antimicrobial Formulary 
+Recognition and Management of Severely Ill 
+Pregnant Women Including High Dependency / 
+Intensive Care Guideline 
+Management of Women and Neonates with 
+Risk Factors for Neonatal Sepsis (including 
+Group B Streptococcus) 
+Standards NICE NG51 
+RCOG Green -top Guidelines 64a and 64b 
+Superseded documents N/A 
+Review due November 2026 
+Reference number CG1147 CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 2 of 33 
+
+Approval 
+Joint Obstetric Guideline Group: Date approved: 15th November 2023 
+W&C Clinical Effectiveness Group: Date approved: 21st March 2024 
+Medicines Governance Committee: Date approved: 13th March 2024 
+Consultation as relevant 
+Add relevant Trust -wide governance group 
+(see table below) Date approved: N/A 
+Other specialist teams (i.c IPC, H&S, Finance) Date approved: N/A 
+Ratification 
+Clinical Document Approval Group Date approved: 19th April 2024 
+ 
+Consultation 
+Please select any appropriate consultation groups/ committees: 
+Trust Wide Governance Group Tick as 
+required: 
+Medicines Governance Committee (MGC - replaces ‘Medicines Optimisation 
+Committee’ and ‘Drug and Therapeutics Committee’) 
+ 
+Antimicrobial Stewardship Group 
+Resuscitation Committee 
+Resuscitation Operational Management Group (ROMG) 
+Trust Transfusion Committee 
+Trust Infection Prevention Committee (Chief Nursing Officer) 
+Thrombosis Committee 
+Health Records Committee 
+BSUH Trauma Committee 
+Major Trauma Committee 
+Sussex Trauma Network 
+Children’s Safeguarding Strategy Committee 
+Radiation Safety Committee 
+Medical Devices & Equipment Committee 
+Patient Blood Management Committee 
+Patient Safety Committee 
+BSUH Diabetes In-Patient Care Committee 
+Carer and Patient Information Group (CPIG) 
+Women’s Safety and Quality Committee 
+Food Improvement Group 
+NIV Steering Group 
+NMAHP Board 
+Deteriorating Patient Group 
+Other (please specify) 
+W&C Clinical Effectiveness Group 
+ 
+CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 3 of 33 
+ Contents 
+1.0 Aim ................................ ................................ ................................ ................................ .. 5 
+2.0 Scope ................................ ................................ ................................ ............................. 5 
+3.0 Responsibilities ................................ ................................ ................................ ................ 5 
+4.0 Background ................................ ................................ ................................ ...................... 5 
+4.1 Pregnant women and people from minority ethnic backgrounds and deprived areas ...... 6 
+5.0 Definitions ................................ ................................ ................................ ........................ 7 
+5.1 Abbreviation used within this guideline ................................ ................................ ............ 7 
+6.0 Risk factors for sepsis ................................ ................................ ................................ ...... 7 
+7.0 Diagnosis of sepsis ................................ ................................ ................................ .......... 8 
+8.0 Symptoms and signs suggestive of infection and possible sepsis ................................ ..... 8 
+9.0 Possible sources of sepsis ................................ ................................ ............................... 9 
+10.0 Influenza in pregnant women and birthing people ................................ ........................... 10 
+11.0 Assessment and recognition of sepsis ................................ ................................ ........... 10 
+12.0 Management of sepsis ................................ ................................ ................................ ... 11 
+12.1 High-risk sepsis ................................ ................................ ................................ ............ 11 
+12.1.1 Investigations and observations ................................ ................................ ..................... 12 
+12.1.2 Indications for transfer to the Critical Care Unit ................................ .............................. 13 
+12.2 Moderate Risk Sepsis ................................ ................................ ................................ ... 13 
+12.3 Low Risk Sepsis ................................ ................................ ................................ ........... 14 
+12.4 Paracetamol ................................ ................................ ................................ .................. 14 
+13.0 Intrapartum care for women and people with suspected or confirmed sepsis ................. 14 
+13.1 Recognising suspected or confirmed intrapartum sepsis ................................ ............... 14 
+13.2 Management of suspected or confirmed intrapartum sepsis ................................ .......... 15 
+13.3 Fetal monitoring and mode of birth ................................ ................................ ................ 16 
+13.4 FBS ................................ ................................ ................................ .............................. 16 
+13.5 Anaesthesia for women and birthing people in labour with sepsis and signs of 
+organ dysfunction ................................ ................................ ................................ .......... 16 
+14.0 Antimicrobials ................................ ................................ ................................ ................. 17 
+15.0 Antivirals ................................ ................................ ................................ ........................ 17 
+16.0 Postnatal care ................................ ................................ ................................ ................ 18 
+16.1 Multidisciplinary review in the first 24 hours post birth ................................ ................... 18 
+16.2 Surgical interventions ................................ ................................ ................................ .... 18 
+16.3 Infection control ................................ ................................ ................................ ............ 18 
+16.4 Neonatal considerations post-birth ................................ ................................ ................ 18 
+16.5 Neonatal considerations and maternal or birthing person sepsis with 72 hours 
+postnatally ................................ ................................ ................................ ..................... 19 
+16.6 Debrief and support ................................ ................................ ................................ ...... 19 
+17.0 Monitoring and Audit ................................ ................................ ................................ ...... 20 
+Appendix 1: Inpatient Maternal or Birthing Person Sepsis Tool ................................ .................. 21 
+Appendix 2: Sepsis Six Pathway ................................ ................................ ............................... 22 
+Appendix 3: Community Midwifery Sepsis Screening Action Tool ................................ .............. 23 
+Appendix 4: Maternal or Birthing Person Telephone Triage Sepsis Tool ................................ .... 24 
+Appendix 5: Risk stratification tool for suspected sepsis ................................ ............................ 25 
+Appendix 6: Antibiotic treatment spectra for sepsis ................................ ................................ .... 26 
+Appendix 7: Neonatal referral pathway into hospital from community with suspected CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 4 of 33 
+ maternal or birthing person sepsis ................................ ................................ ................. 27 
+Appendix 8: Guideline Version Control Log ................................ ................................ ............... 28 
+Appendix 9: Due Regard Assessment Tool ................................ ................................ ............... 30 
+Appendix 10: Template Dissemination, Implementation and Access Plan ................................ .. 31 
+Appendix 11: Additional guidance and information ................................ ................................ ..... 32 CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 5 of 33 
+ Maternal or Birthing Person Sepsis in 
+Pregnancy and the Puerperium 
+ 
+1.0 Aim 
+ 
+This guideline is intended to cover the management of obstetric patients with suspected sepsis 
+for the use of maternity staff. It also provides guidance on when to involve critical care 
+specialists. 
+ 
+The aim of this guideline is to encourage early recognition of sepsis and the institution of prompt 
+therapeutic measures with involvement of a multidisciplinary team. Early and aggressive 
+treatment has been proven to improve outcomes. 
+ 
+2.0 Scope 
+ 
+This guideline applies to: 
+ 
+• Midwives 
+• Obstetricians 
+• Anaesthetists 
+• Maternity support staff 
+ 
+3.0 Responsibilities 
+ 
+Midwives, Obstetricians, and Anaesthetists have a responsibility to: 
+• To access, read, understand and follow this guideline. 
+• To use their professional judgement in application of this guideline. 
+ 
+Management have a responsibility to: 
+• To ensure the guideline is reviewed as required in line with Trust and National 
+recommendations. 
+• To ensure the guideline is accessible to all relevant staff. 
+ 
+4.0 Background 
+ 
+Sepsis in pregnancy remains an important cause of maternal and birthing person death in the 
+UK, and worldwide. In 2022 the Centre for Maternal & Child Enquiries (CMACE) published the 
+UK Confidential Enquiry into Maternal Deaths for the period 2018 -2020 that found sepsis to be 
+one of the top 5 causes of direct maternal and birthing person death in the UK. The mortality 
+rate for pregnancy related sepsis has continued to increase steadily, and is now statistically 
+significantly higher than at its nadir in 2012 -14. Maternal or birthing person sepsis accounts for 
+10% of all maternal or birthing person deaths worldwide and is a major contributor to other 
+common causes of maternal and birthing person death such as heart disease, thrombosis & 
+thromboembolism, neurological and other indirect causes . 
+Key to reducing these figures are: CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 6 of 33 
+ 
+• Timely recognition and diagnosis of sepsis. 
+• Fast administration of intravenous antibiotics. 
+• Quick involvement of experts including intensive care specialists. 
+ 
+Sepsis is a time -critical condition. Screening, early intervention and immediate treatment can 
+save lives. Substandard care was identified in many of the cases of maternal mortality, in 
+particular lack of recognition of the signs of sepsis and a lack of guidelines on the investigation 
+and management of genital tract sepsis. 
+ 
+Septic shock is the most extreme end of the sepsis spectrum and carries a high mortality rate. 
+ 
+Pregnant women and birthing people, or any woman or person who has given birth, had a 
+termination of pregnancy, or miscarriage in the last 6 weeks, are more susceptible to develop 
+sepsis. Sepsis in pregnancy is often insidious in onset and can progress very rapidly. In the 
+postpartum period the risk of serious sepsis should not be overlooked. 
+ 
+Common pathogens are from endogenous flora and are sensitive to standard antibiotics and 
+surgical interventions. If timely and aggressive therapeutic measures are implemented the 
+obstetric population should rarely suffer from significant morbidity. 
+ 
+In the UK the most common pathogens are Streptococcus spp. predominantly Groups A and B, 
+followed by Pneumococcus and Escherichia Coli. Other organisms implicated include 
+Staphylococcus aureus, Fusobacteriae spp., Influenza, MRSA, clostridium septicum, 
+Morganella morganii and Obligate Anaerobic Bacteria. Group A Streptococcus (GAS) can 
+cause invasive infections and is associated with maternal and birthing person deaths. 
+ 
+4.1 Pregnant women and people from minority ethnic backgrounds 
+and deprived areas 
+ 
+Women and birthing people and babies from some minority ethnic backgrounds and those who 
+live in deprived areas have an increased risk of death and may need closer monitoring and 
+additional support. 2020 MBRRACE -UK reports showed that: 
+ 
+• Compared with white women and birthing people (8/100,000), the risk of maternal 
+and birthing person death during pregnancy and up to 6 weeks after birth is: 
+- 4 times higher in black women and birthing people (34/100,000) 
+- 3 times higher in women and birthing people with mixed ethnic background 
+(25/100,000) 
+- 2 times higher in Asian women and birthing people (15/100,000; does not 
+include Chinese women and birthing people) 
+• Compared with white babies (34/10,000), the stillbirth rate is 
+- More than twice as high in black babies (74/10,000) 
+- Around 50% higher in Asian babies (53/10,000) 
+• Women and birthing people living in the most deprived areas (15/100,000) are more 
+than 2.5 times more likely to die compared with women and birthing people living in 
+the least deprived areas (6/100,000). CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 7 of 33 
+ 
+• The stillbirth rate increases according to the level of deprivation in the area the 
+mother or birthing person lives in, with almost twice as many stillbirths for women and 
+birthing people living in the most deprived areas (47/10,000) compared with the least 
+deprived areas (26/10,000). 
+ 
+5.0 Definitions 
+ 
+Sepsis: A life threatening condition that occurs when the body’s response to an 
+infection injures its own tissues and organs. 
+ 
+Septic shock: A subset of sepsis where patients become hypotensive despite adequate fluid 
+resuscitation. 
+ 
+Once vasopressors are required to keep the MAP ≥65mmHg and serum lactate levels are 
+≥2mmol/L the hospital mortality rate is over 40%. 
+ 
+5.1 Abbreviation used within this guideline . 
+ 
+GAS - Group A Streptococcus MEOWS - Modified Early Warning Score 
+PPH - Postpartum Haemorrhage MSU - Mid-Stream Urine 
+SSTI - Skin and Soft tissue infection U&E - Urea & Electrolytes 
+PCR - Polymerase chain reaction CCU - Critical Care Unit 
+AKI - Acute Kidney Injury ERPC - Evacuation of Retained Products of 
+Conception 
+HVS - High Vaginal Swab CSF - Cerebro -Spinal Fluid 
+LFTs - Liver Function Tests CRP - C-Reactive Protein 
+FBC - Full Blood Count ABG - Arterial Blood Gas 
+RPOC - Retained Products of Conception IUD - Intrauterine Death 
+GBS - Group B Streptococcus FBS - Fetal Blood Sample 
+ 
+6.0 Risk factors for sepsis 
+ 
+Obesity Cervical cerclage 
+Impaired glucose tolerance / diabetes Prolonged SROM 
+Impaired immunity including 
+immunosuppressant medication Amniocentesis and other invasive intrauterine 
+procedures 
+Anaemia Vaginal trauma 
+Continued heavy bleeding or vaginal 
+discharge Retained products of conception 
+Caesarean section / assisted birth Wound haematoma 
+History of pelvic infection Minority ethnic groups CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 8 of 33 
+ 
+History of Group B streptococcal infection Acquisition/ carriage of invasive organisms 
+(especially GAS) 
+IUD Surgical termination of pregnancy 
+ 
+7.0 Diagnosis of sepsis 
+ 
+Clinicians and healthcare professionals of all kinds, at all levels of seniority and in all clinical 
+settings, can find sepsis difficult to diagnose with certainly. 
+ 
+Although people with sepsis may have a history of infection, fever is not present in all cases. 
+ 
+The signs and symptoms of sepsis are often non-specific and can be missed if clinicians do not 
+think, “Could this be sepsis?” 
+ 
+Gaining information from relatives and carers may be essential when considering a diagnosis of 
+sepsis. 
+ 
+Women and birthing people whose first language is not English are at increased risk of delayed 
+sepsis recognition due to potential communication difficulties. To reduce this risk, a translator 
+should be used for all women and birthing people who are not fluent in written and verbal 
+English to ensure effective communication. 
+ 
+For providing help for patients requiring language support, staff can access interpreting services 
+by opening this this link: 
+ 
+Interpretation & Translation Toolkit 
+ 
+A referral to the overseas team should be considered if there are any questions regarding the 
+patients being eligible for NHS maternity care. 
+ 
+Symptoms and signs of sepsis in the pregnant woman and person may be even less distinctive 
+than in the non -pregnant population and therefore a high index of suspicion is necessary. 
+Pregnant women and birthing people may also become septic more rapidly than non-pregnant 
+patients. 
+ 
+Women and birthing people should be assessed clinically and if unwell, with dehydration or 
+vomiting, admission should be considered. 
+
+8.0 Symptoms and signs suggestive of infection and possible sepsis 
+ 
+Symptoms Signs 
+Fever Erythematous wound +/- suppuration 
+Rigors Breaches in skin integrity and necrotic changes 
+Offensive or persistent discharge or lochia Cardiac murmur CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 9 of 33 
+
+Diarrhoea Tachypnoea, cyanosis suggestive of hypoxia (may 
+be difficult to pick up peripheral oxygen saturations 
+due to shock) 
+ 
+Vomiting Tachycardia (baseline HR in pregnancy is higher up 
+to 90bpm, beta blockers such as labetalol may lower 
+heart rate) 
+Sore throat Hypotension, prolonged Capillary Refill Time (CRT) 
+>2 seconds – mottled skin or ashen appearance 
+Rash (Generalised Streptococcal 
+Maculopapular rash) Decreased urine output 
+Severe abdominal pain and tenderness 
+(particularly genital tract sepsis) Altered mental state 
+Productive cough Hypothermia temperature <36 degrees Celsius 
+Urinary symptoms Hyperglycaemia (7.7mmols/l) in the absence of 
+diabetes 
+Severe headache associated with photophobia 
+and neck stiffness Mastitis 
+Toxic Shock Syndrome caused by 
+Staphylococcal and Streptococcal exotoxins 
+can produce confusing symptoms including 
+nausea, vomiting and diarrhoea, exquisite 
+severe pain out of proportion to clinical signs 
+due to necrotising fasciitis, watery vaginal 
+discharge, generalised rash and conjunctival 
+suffusion 
+ 
+Repeated self-referral with symptoms should be considered a red flag for sepsis and warrant a 
+thorough investigation for signs of sepsis. MBRRACE -UK 2023 
+ 
+9.0 Possible sources of sepsis 
+ 
+Although the most common site of sepsis in pregnancy and the puerperium is the genital tract 
+(i.e. Chorioamnionitis and Endometritis), causes outside the genital tract should not be 
+forgotten. These include: 
+ 
+• Mastitis (NICE Guidance on treatment and management ). 
+• Urinary tract infection /acute pyelonephritis. 
+• Pneumonia 
+• Skin and Soft tissue infection (SSTI) i.e.: IV cannula sites, injection sites, and 
+caesarean or episiotomy wounds. Necrotising Fasciitis may progress extremely 
+quickly. 
+• Gastroenteritis (Clostridium Difficile is rare but increasingly found in obstetric patients) 
+• Appendicitis 
+• Cholecystitis 
+• Pancreatitis 
+• Infection related to regional anaesthesia. CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 10 of 33 
+ 
+• Meningitis 
+• Viral infections, in particular Influenza (H1N1), Coronavirus COVID -19, HSV (herpes 
+simplex virus). 
+ 
+10.0 Influenza in pregnant women and birthing people 
+ 
+Pregnant women and birthing people are considered to be at high risk of severe illness caused 
+by H1N1 influenza, especially in the 2nd and 3rd trimester. 
+ 
+The main symptoms are: 
+ 
+• Fever 
+• Fatigue 
+• Dry cough 
+• Sore throat 
+• Headache 
+• Gastrointestinal disease with nausea, vomiting, diarrhoea and abdominal pain can 
+also be present. 
+ 
+Any pregnant woman or birthing person presenting with either upper or lower respiratory 
+symptoms should have a combined throat then nose swab sent for respiratory viral panel PCR 
+analysis. If a pregnant woman or birthing person has influenza -like symptoms then clinicians 
+should have a low threshold for prescribing antiviral medicine before the results of the PCR is 
+available. 
+ 
+Prompt treatment with in the first 48 hours of onset of symptoms reduces the risk of severe 
+illness. Patients with severe disease should be managed jointly between obstetric and medical 
+teams. 
+ 
+In those presenting with uncomplicated disease Oseltamivir remains the first line option for the 
+vast majority of pregnant women with influenza, including during seasons that are dominated by 
+influenza A(H1N1)pdm09. For pregnant women and birthing people who meet additional criteria 
+for requiring zanamivir first line, further assessment (that is, rapid diagnostics) and antiviral 
+treatment should be discussed with a local infection specialist. Guidance on use of antiviral 
+agents for the treatment and prophylaxis of seasonal influenza (publishing.service.gov.uk) 
+ 
+Novel coronavirus (SARS -CoV-2) is a new strain of coronavirus which causes COVID -19. For 
+further guidance please follow the RCOG Guideline on Covid -19 Infection in Pregnancy 
+(December 2022). 
+ 
+11.0 Assessment and recognition of sepsis 
+ 
+• Early recognition, urgent transfer to hospital and prompt, aggressive treatment is 
+necessary to save lives. 
+• Complete the ‘Inpatient Maternal or Birthing Person Sepsis Tool’ (Appendix 1) to 
+guide assessment and management. 
+• If in the community use the ‘Community Midwifery Sepsis Tool’ (Appendix 3). CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 11 of 33 
+ 
+• For telephone triage use ‘Maternal or Birthing Person Telephone Triage Sepsis Tool’ 
+(Appendix 4 ). 
+• If on attending hospital and commencement of BSOTs ‘Antenatal Triage Assessment 
+Care for Unwell/Other’ sepsis is suspected, investigations and treatment should be 
+guided by the ‘Sepsis Six’ - see section 12.1. 
+• Early involvement of senior obstetricians, anaesthetists, critical care consultants and 
+microbiologists is crucial. 
+• An obstetric review must be carried out in all cases of suspected sepsis within 30 
+minutes as per MEOWS. 
+• A thorough history and head -to-toe examination should be performed to identify and 
+possible source of infection. 
+• NICE Guidance on Sepsis (2017) stratifies risk of illness or death from sepsis into 
+high risk, moderate risk, and low risk using parameters based on the patient’s history 
+and examination findings. The parameters used in the sepsis screening tools are 
+shown in Appendix 5 . 
+ 
+12.0 Management of sepsis 
+12.1 High -risk sepsis 
+ 
+If patients have a suspected infection and any high -risk criteria, they are at HIGH RISK of 
+severe illness or death from sepsis. 
+ 
+If one or more high risk criteria are present assume sepsis start Sepsis Six Pathway actions 
+immediately. 
+ 
+Use Appendix 2 for documentation. 
+ 
+If no high-risk factors are present with a suspected infection, then assess moderate risk factors 
+(see section 12.2). 
+ 
+A sepsis emergency box is available on all maternity wards to use for prompt treatment and 
+guidance. 
+ 
+The treatment of High-Risk Sepsis starts the SEPSIS 6 PATHWAY : 
+ 
+Administer oxygen - give 15L/min via facemask with reservoir bag to keep saturations >94% 
+ 
+Take blood cultures & samples - think source, take cultures but don’t delay starting antibiotics 
+for microbiology. Blood cultures and other samples as guided by clinical suspicion of focus of 
+infection e.g. Mid -Stream Urine (MSU), High Vaginal Swab (HVS), Cerebro -Spinal Fluid (CSF), 
+sputum, stool, wound or throat swab and rapid MRSA screen. Consider imaging: as guided by 
+clinical suspicion of focus of infection e.g. CXR, Pelvic ultrasound, CT abdomen/pelvis. 
+ 
+Give intravenous antibiotics - give within 60 minutes. Consider allergies. Give according to 
+trust protocol, discuss with microbiologist. Ensure that antibiotics are actually given within the 
+hour not just prescribed. CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 12 of 33 
+ 
+Give intravenous fluids 500ml immediately - resuscitate using crystalloids. If hypotensive or 
+lactate >2 mmol/L give 500ml stat over less than 15 minutes and repeat bolus if no response. 
+Doctors to advise if not hypotensive or lactate not >2mmol or patient has pre-eclampsia. More 
+rapid and larger volumes may be required in septic shock, however if a maximum fluid 
+challenge of 20ml/kg has been given and the patient remains hypotensive then an urgent 
+review by the critical care team is required re: use of vasopressors. 
+ 
+Check serial lactates – There is a clear correlation between raised lactate and morbidity and 
+mortality (see table below): 
+ 
+Lactate Mortality 
+< 2 15% 
+2-4 25% 
+>4 38% 
+The degree of reduction of lactate following resuscitation (lactate clearance) predicts survival. 
+Lactate can be checked from a capillary or venous sample and if normal this is reassuring. 
+Avoid taking venous sample for lactate from the same limb through which lactate containing IV 
+fluids are running. If a capillary or venous sample is abnormal this should be corroborated with 
+an arterial sample. 
+
+Lactate >4 or BP <90 Deliver initial minimum 20ml/kg of crystalloid urgently. Discuss with 
+obstetric consultant. Seek anaesthetic review and critical care 
+referral. 
+Lactate 2-4 Give fluids urgently, discuss with obstetric consultant. 
+Lactate <2 Consider IV fluids. 
+Recheck after each 10ml/kg challenge. 
+ 
+Measure urine output – in sepsis monitor hourly output and commence fluid balance. The 
+patient will need a urinary catheter with a urometer attached. 
+ 
+12.1.1 Investigations and observations 
+ 
+• Other investigations include Urea & Electrolytes (U+E), Liver Function Tests (LFTs), 
+C-Reactive Protein (CRP), Full Blood Count (FBC), clotting Blood Glucose and 
+Arterial Blood Gas (ABG). 
+• Record the time each of these actions is completed. 
+• All actions should be completed as soon as possible and ALWAYS within 60 minutes. 
+• For all patients with high risk sepsis monitor observations at least every 30 minutes 
+and record on a MEOWS chart on MIS. 
+• Commence fluid balance chart on MIS (see CG21009 Maternity fluid management as 
+an in -patient or in labour ) 
+• Case should be discussed with a consultant obstetrician. CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 13 of 33 
+ 
+Seek obstetric and anaesthetic consultant reviews for patients who fail to respond to treatment 
+within 60 minutes. Indicators for failure to respond to treatment are: 
+ 
+• Systolic blood pressure persistently below 90 mmHg. 
+• Reduced level of consciousness despite resuscitation. 
+• Respiratory rate over 25 breaths per minute. 
+• Lactate not reduced by more than 20% within 1 hour. 
+• All patients with severe sepsis / septic shock and those not responding to standard 
+treatment should be managed in the Critical Care Unit (CCU) with multi -disciplinary 
+team input. 
+ 
+12.1.2 Indications for transfer to the Critical Care Unit: 
+ 
+System Indication Indication 
+Cardiovascular Hypotension or raised serum lactate persisting despite ﬂuid 
+resuscitation, suggesting the need for inotrope support 
+ 
+Respiratory Pulmonary oedema 
+Mechanical ventilation 
+Airway protection 
+Renal Renal dialysis 
+Neurological Signiﬁcantly decreased conscious level 
+ 
+Miscellaneous Multi -organ failure 
+Uncorrected acidosis 
+Hypothermia 
+(See CG1148 Recognition and management of severely ill pregnant woman -person v8.0.pdf ) 
+ 
+12.2 Moderate Risk Sepsis 
+ 
+Patients with suspected sepsis and 2 or more moderate risk criteria and a lactate <2 with no 
+evidence of Acute Kidney Injury (AKI) and in whom a definitive condition cannot be identified: 
+ 
+• Repeat structured assessment at least hourly. 
+• Ensure review by a senior clinical decision maker within 3 hours of meeting 2 or more 
+moderate risk criteria for consideration of antibiotics. 
+ 
+Patients with suspected sepsis who have 2 moderate risk criteria and have lactate of <2 with no 
+evidence of AKI and in whom definitive condition or infection can be identified and treated: 
+ 
+• Manage the definitive condition. 
+ 
+Patients who meet only 1 moderate risk criterion with suspected sepsis: 
+ 
+• Arrange clinician review within 1 hour of meeting criterion for clinical assessment. 
+• Perform blood tests if indicated. 
+• Manage infection if diagnosed. CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 14 of 33 
+
+Patients with suspected sepsis with one moderate risk criteria and lactate <2 with no evidence 
+of acute kidney injury and in whom a definitive condition cannot be identified: 
+ 
+• Repeat structured assessment hourly 
+• Ensure review by the senior obstetric registrar within 3 hours of meeting moderate 
+criterion for consideration of antibiotics 
+ 
+12.3 Low Risk Sepsis 
+ 
+Patients with no high risk or moderate criteria: 
+• Arrange clinical review. 
+• Manage according to clinical judgement. 
+ 
+12.4 Paracetamol 
+ 
+• Consider paracetamol for women and people in labour with a fever, a temperature of 
+38°C or above on a single reading, or 37.5°C or above on 2 consecutive readings 
+(1 hour apart). 
+• Be aware that paracetamol is not a treatment for sepsis and should not delay 
+investigation if sepsis is suspected. 
+• Non-steroidal anti -inflammatory drugs (NSAIDS) may impede the ability of 
+polymorphs to fight infection due to GAS and should be avoided in cases of sepsis. 
+ 
+13.0 Intrapartum care for women and people with suspected 
+or confirmed sepsis 
+NICE 2019 NG121 
+ 
+13.1 Recognising suspected or confirmed intrapartum sepsis 
+ 
+• Use appendix 1-5 for the recognition of sepsis in pregnant women and birthing 
+people. 
+• Take into account the normal physiological changes in labour when thinking about 
+the possibility of sepsis, for example, increased maternal or birthing person pulse 
+rate. 
+• Recognise that women and birthing people in labour with sepsis are at higher risk of 
+severe illness or death. 
+• A pyrexia >38C in labour should be treated as a sign of possible intrauterine infection 
+and antibiotics given as per the CG11100 Management of risk factors for neonatal 
+sepsis guideline inc GBS v8.3 April24.pdf . 
+• This is to treat possible infection for the benefit of the baby even if the mother or 
+birthing person is well and does not trigger any of the high or moderate risk criteria for 
+sepsis. CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 15 of 33 
+ 
+13.2 Management of suspected or confirmed intrapartum sepsis 
+ 
+For women and birthing people in labour with suspected sepsis, ensure ongoing 
+multidisciplinary review from a team with a named lead, including a: 
+ 
+• Senior obstetrician. 
+• Senior obstetric anaesthetist. 
+• Senior midwife. 
+• Labour ward coordinator. 
+ 
+For women and birthing people in labour with sepsis, this should also include a: 
+ 
+• Senior neonatologist. 
+• Senior microbiologist. 
+ 
+Include a senior intensivist (critical care specialist), if any of the following signs of organ 
+dysfunction are present: 
+ 
+• Altered consciousness. 
+• Hypotension (systolic blood pressure less than 90 mmHg). 
+• Reduced urine output (less than 0.5 ml/kg per hour). 
+• Need for 40% oxygen to maintain oxygen saturation above 92%. 
+• Tympanic temperature of less than 36°C. 
+ 
+Involve the woman or birthing person and their birth companion(s) in shared decision making 
+about their care, including the following options: 
+ 
+• Induction of labour 
+• Continuing labour 
+• Augmenting labour 
+• Instrumental birth 
+• Caesarean section 
+ 
+When discussing timing and mode of birth, take into account the woman or birthing person’s 
+preferences, concerns and expectations, and the whole clinical picture, including: 
+ 
+• The source and severity of sepsis, if known. 
+• Weeks of pregnancy 
+• Fetal wellbeing 
+• Stage and progress of labour 
+• Parity 
+• Response to treatment. 
+ 
+If the source of sepsis is thought to be the genital tract, expedite the birth. CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 16 of 33 
+ 
+13.3 Fetal monitoring and mode of birth 
+ 
+• Continuous Cardiotocograph is advised for women and people in labour with 
+confirmed or suspected sepsis. 
+• If the critically ill woman or birthing person is pregnant consider birth. Whenever 
+possible discussion should take place with the woman and person if their condition 
+allows. 
+• If preterm birth is anticipated, consider steroids for fetal lung maturity despite the 
+presence of sepsis. Beware that steroids should be used cautiously in the presence 
+of infection. 
+• Attempting birth in the setting of maternal and birthing person instability increases the 
+maternal and birthing person and fetal mortality rates unless the source of infection is 
+intrauterine. Decision on mode of birth should be individualised with consideration of 
+severity of maternal or birthing person illness, duration of labour, gestational age and 
+viability. 
+• Neonatologists should be informed of the presence of maternal or birthing person 
+sepsis as soon as possible after birth if not present at the time of birth. 
+ 
+13.4 FBS 
+ 
+• Take into account the woman or birthing person’s preferences, stage of labour, parity 
+and likelihood of chorioamnionitis. 
+• Be aware that FBS results with suspected or confirmed sepsis may be falsely 
+reassuring. 
+• Repeat FBS should be viewed with caution. 
+• Only repeat fetal blood sampling with caution and in discussion with a consultant 
+obstetrician. 
+• Explain to the woman or birthing person and their birth companion(s) what fetal blood 
+sampling involves and the uncertainty of the significance of the results, and support 
+their decision to accept or decline testing. 
+ 
+13.5 Anaesthesia for women and birthing people in labour with sepsis and signs of 
+organ dysfunction 
+ 
+Analgesia for women and birthing people in labour with sepsis or suspected sepsis: 
+ 
+• If there are any signs of organ dysfunction (see section 13.2), regional analgesia 
+should only be used with caution and advice from a consultant obstetric anaesthetist. 
+• With suspected sepsis where concern is insufficient for antibiotic treatment, consider 
+the birthing pool as a form of analgesia only after discussion with a senior midwife 
+and a senior obstetrician. 
+• If antibiotics are needed for suspected sepsis, start the antibiotics before inserting the 
+needle for regional analgesia. 
+• With suspected sepsis, carry out a multidisciplinary review of options for pain relief at 
+least every 4 hours. 
+• If there are concerns about providing a woman or birthing person’s choice of regional 
+analgesia, this should be discussed with the consultant obstetric anaesthetist. CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 17 of 33 
+ 
+14.0 Antimicrobials 
+ 
+• Take into account the whole clinical picture when thinking about antimicrobial 
+treatment. 
+• Document the rationale for any decision to start antimicrobial treatment and the 
+choice of antimicrobial. 
+• Take specimens for microbiological culture, including blood cultures, before starting 
+antimicrobials. 
+• If there is a clear source of infection, use existing local antimicrobial guidance when 
+offering an antimicrobial. 
+• If there is an unclear source of infection, offer a broad -spectrum intravenous 
+antimicrobial from the agreed local formulary and in line with local or national 
+guidelines. 
+• Explain to the woman or birthing person there is no evidence to support the use of 
+one broad -spectrum antimicrobial over another and that the choice of antimicrobial 
+will be guided by local antimicrobial guidelines. 
+• Antibiotics should be given in accordance with this and the current Trust Microguide . 
+Any concerns should be discussed with microbiologist. 
+ 
+Following birth the obstetric team should review the woman or birthing person to decide 
+whether continuation of antibiotics is necessary. 
+ 
+15.0 Antivirals 
+ 
+Antivirals are not currently recommended as first line treatment for suspected bacterial sepsis. 
+However, they may be appropriate in some women, examples include: 
+ 
+• Women and birthing people who continue to deteriorate despite appropriate antibiotic 
+treatment (positive response should occur within 48 -72 hours). 
+• Women and birthing people with respiratory symptoms suggestive of influenza or 
+Covid -19 (see section 10.0 ). 
+• Women and birthing people with symptoms suggestive of other viral infection (e.g. a 
+rash consistent with chicken pox or HSV). 
+• Women and people with immunosuppression. 
+o HIV / AIDs. 
+o Transplant recipients. 
+o Long term immunosuppressive therapies. 
+• Women and birthing people who have unwell contacts who are being treated for viral 
+illness. 
+ 
+In these women and birthing people consideration of antivirals may be appropriate. Liaison with 
+microbiology is recommended. CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 18 of 33 
+ 16.0 Postnatal care 
+ 
+16.1 Multidisciplinary review in the first 24 hours post birth 
+ 
+This review should document the following: 
+ 
+• Microbiological specimens for culture. 
+• Antimicrobial treatment. 
+• Increased frequency of monitoring. 
+• An enhanced level of care and monitoring. 
+• Further investigations such as imaging. 
+• Support to enable the woman or birthing person to feed her baby as they choose 
+(including keeping the woman or birthing person and baby together wherever 
+possible and maintaining skin -to-skin contact). 
+• Additional support for the woman or birthing person and their family. 
+ 
+16.2 Surgical interventions 
+ 
+The following surgical procedures may be necessary: 
+ 
+• Closed space infections such as wound or pelvic abscesses require removal of 
+sutures, and / or surgical drainage. 
+• ERPC if RPOC / secondary PPH. 
+• Fasciotomy or wide debridement for necrotising fasciitis. 
+ 
+If surgical interventions have been necessary, the woman or birthing person should be made 
+aware of signs of infection and who to contact if concerned. GPs should be notified in the 
+discharge summary of any on-going wound management by community midwife at discharge. 
+ 
+If has already discharged by maternity team, the obstetrician to contact GP directly to arrange 
+on-going wound care. 
+ 
+16.3 Infection control 
+ 
+Consider any and all potential sources of infection and take precautions to ensure that infection 
+control policy is strictly adhered to throughout all care. See Standard Infection Prevention and 
+Control Precautions Guideline for further guidance. 
+ 
+16.4 Neonatal considerations post -birth 
+ 
+See CG11100 Management of risk factors for neonatal sepsis guideline inc GBS v8.3 
+April24.pdf for further guidance on monitoring the neonate following birth in cases where 
+maternal or birthing person sepsis was suspected or confirmed antenatally or in labour. CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 19 of 33 
+ 
+16.5 Neonatal considerations and maternal or birthing person sepsis with 72 hours 
+postnatally 
+ 
+If a mother or birthing person is identified as having, or readmitted with, infection and at a high 
+risk of developing sepsis within the first 72 hours of birth, the on-call paediatric registrar should 
+be informed as soon as possible to assess the baby. See appendix 7 for neonatal referral 
+process from community. 
+ 
+16.6 Debrief and support 
+ 
+Sepsis diagnosis and treatment can be traumatic for women and birthing people and their 
+partners. It is essential to debrief with women and birthing people and their partners following 
+treatment and referral to Birth Afterthoughts service should be offered for further support. CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 20 of 33 
+ 17.0 Monitoring and Audit 
+ 
+All staff taking observations should have annual training in the use of MEOWS chart. 
+ 
+Hospital number: Surname: 
+Datix number: Date of birth: 
+Sepsis onset: 
+YES / NO / NA Antenatal 
+Labour YES / NO / NA 
+Postnatal YES / NO / NA 
+Escalated appropriately as per protocol: YES / NO / NA 
+Reviewed by obstetric team within timeframe 
+as per protocol: YES / NO / NA 
+Investigations undertaken as per protocol: 
+ 
+YES / NO / NA Serum lactate 
+Swabs (all applicable) YES / NO / NA 
+Bloods YES / NO / NA 
+MSU YES / NO / NA 
+Specimens (all applicable) YES / NO / NA 
+IV antibiotics: 
+YES / NO / NA Administered 
+Given within timeframe as per protocol YES / NO / NA 
+IV fluids: 
+YES / NO / NA Administered 
+Given within timeframe as per protocol YES / NO / NA 
+O2 via face mask administered: YES / NO / NA 
+Observations completed as per protocol: YES / NO / NA 
+Head to toe assessment completed as per 
+protocol: YES / NO / NA 
+Risk factors for sepsis (comment): 
+Outcome (comment): 
+Datix completed YES / NO 
+Name of auditor (PRINT): Date of audit: CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 21 of 33 
+ 
+Appendix 1: Inpatient Maternal or Birthing Person Sepsis Tool 
+ CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 22 of 33 
+ 
+Appendix 2: Sepsis Six Pathway 
+ CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 23 of 33 
+ 
+Appendix 3: Community Midwifery Sepsis Screening Action Tool CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 24 of 33 
+ 
+Appendix 4: Maternal or Birthing Person Telephone Triage Sepsis Tool CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 25 of 33 
+ 
+Appendix 5: Risk stratification tool for suspected sepsis CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 26 of 33 
+ 
+Appendix 6: Antibiotic treatment spectra for sepsis 
+
+Please refer to the Adult Antimicrobial & Obstetric Guidelines | UHSussex staff at Worthing and 
+St Richards for further guidance on antibiotic treatment of suspected or confirmed maternal and 
+birthing person sepsis. Page 27 of 33 
+ 
+CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+ 
+Appendix 7: Neonatal referral pathway into hospital from community with suspected maternal or birthing person 
+sepsis 
+
+If jaundice within 24 hrs of 
+age (any gestation) 
+NNU - SRH / Bluefin - WH 
+Within 2 hours for SBR 
+
+24- 72 hrs of age 
+If feeding concerns or jaundice 
+Direct to TANGMERE or 
+BRAMBER Ward for 
+midwife review 
+
+Babies over 72 hrs of age 
+Jaundice, feeding concerns, 
+excessive weight loss 
+Direct to TANGMERE or 
+BRAMBER Ward IF UNWELL - ANY AGE 
+and/or 
+MATERNAL or BIRTIHING 
+PERSON SEPSIS WITHIN 
+72 HOURS OF BIRTH 
+Paediatric middle grade to 
+decide location to be assessed 
+based on referral information: 
+A&E / CAU / Postnatal Ward 
+
+Liaise with Infant 
+Feeding Team Follow jaundice / 
+weight loss guidance 
+
+Regular Paediatric 
+Review (daily at least) 
+If observations normal 
+and issues is feeding or 
+weight loss related admit 
+to TANGMERE or 
+BRAMBER Ward 
+
+If no admission please If unwell admit to 
+Howard or Bluefin Ward 
+
+Liaise with 
+Infant Feeding Team 
+Discharge from Any Clinical Area 
+Please liaise back to community midwife - inform them of plan +/- outstanding results 
+via Postnatal Ward Clark (to place on discharge spreadsheet) liaise back to 
+community midwife - 
+inform them of plan +/- 
+outstanding results 
+Paediatric Referral Readmission 
+Paediatrician to be informed of any readmission 
+SRH - Bleep 6511 
+WH- Bleep 1358 
+If baby unwell floppy, unresponsive, 
+hypothermic, respiratory concerns 
+CALL 999 
+and inform Paediatrician CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 28 of 33 
+ Change Log – Maternal or Birthing Parent Sepsis Appendix 8: Guideline Version Control Log 
+ 
+This should be included for all updated guideline, summarising the changes between the 
+current and previous version. (Earlier changes should be deleted from the list when the 
+guideline is updated.) 
+Do not list minor and stylistic changes or changes which do not alter the processes 
+described. 
+If the update includes a significant reorganisation of the material, indicate this and list the 
+main areas where the process itself has changed. 
+
+Version Date Author Status Comment 
+1.0 May 2011 R. Mason, 
+M.Bhattacharya Archived New guideline 
+2.0 July 2011 R.Mason 
+S.Jerwood Archived Updated following further 
+microbiology input 
+3.0 April 2014 JOGG Archived 3-year update 
+ 
+4.0 
+February 2015 S. Bolger 
+S. Laatz 
+N. Maguire 
+H. Clarke 
+Archived Updated to include initial 
+management of sepsis and 
+maternal sepsis proforma 
+5.0 July 2017 M. Hon Archived Incorporating NICE NG51 July 
+2016 
+ 
+6.0 
+August 2020 A. Orr- Downey 
+G. Simmonds 
+S. Glass 
+T. Kapoor 
+Archived 3-year update. 
+Addition of NICE 
+recommendations 
+
+6.1 
+
+March 2022 
+
+C. Ross, Obstetric 
+Registrar 
+ 
+J. Collard, Clinical 
+Effectiveness 
+Support Midwife 
+
+Archived • Section added for postnatal 
+maternal/birthing person 
+sepsis triggering paediatric 
+review of neonate if within 72 
+hours of birth with 
+accompanying appendix. 
+• HVS and antivirals added. 
+• BSTOTs assessment added. 
+• Intrapartum sepsis moved 
+from appendices to main body 
+of guideline. 
+• Sample check boxes add to 
+Sepsis Six proforma. 
+• Guideline reformatted to Trust 
+standard and appendices re - 
+ordered. 
+ 
+7.0 
+November 2023 A. Davey, Obstetric 
+Consultant 
+K. Abdelrahman, 
+Obstetric SHO 
+Archived 
+3 year review. No change to 
+clinical practice. CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 29 of 33 
+ 
+7.1 July 2024 Clinical Outcomes & 
+Effectiveness Team LIVE Transferred onto guideline 
+template. 
+ 
+The interpretation and application of clinical guidelines will remain the 
+responsibility of the individual clinician. 
+If in doubt contact a senior colleague or expert. CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 30 of 33 
+ Appendix 9: Due Regard Assessment Tool 
+To be completed and attached to any guideline when submitted to the appropriate committee 
+for consideration and approval. 
+ 
+ Yes/No Comments 
+1. Does the document/guideline affect one group less 
+or more favourably than another on the basis of: 
+ Age no 
+ · Disability no 
+ · Gender (Sex) no 
+ · Gender Identity no 
+ · Marriage and civil partnership no 
+ · Pregnancy and maternity no 
+ · Race (ethnicity, nationality, colour) no 
+ · Religion or Belief no 
+ · Sexual orientation, including lesbian, gay and bisexual 
+people 
+2. Is there any evidence that some groups are affected 
+differently and what is/are the evidence source(s)? no 
+3. If you have identified potential discrimination, are 
+there any exceptions valid, legal and/or justifiable? no 
+4. Is the impact of the document likely to be negative? no 
+5. If so, can the impact be avoided? N/A 
+6. What alternative is there to achieving the intent of 
+the document without the impact? N/A 
+7. Can we reduce the impact by taking different action 
+and, if not, what, if any, are the reasons why the 
+guideline should continue in its current form? N/A 
+8. Has the document been assessed to ensure service 
+users, staff and other stakeholders are treated in 
+line with Human Rights FREDA principles (fairness, 
+respect, equality, dignity and autonomy)? yes 
+ 
+If you have identified a potential discriminatory impact of this guideline, please refer it to A. 
+Davey, Obstetric Consultant & K. Abdelrahman, Obstetric SHO, together with any 
+suggestions as to the action required to avoid/reduce this impact. For advice in respect of 
+answering the above questions, please contact uhsussex.equality@nhs.net 01273 664685). CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 31 of 33 
+ Appendix 10: Template Dissemination, Implementation and Access Plan 
+ 
+To be completed and attached to any guideline when submitted to Corporate Governance 
+for consideration and TMB approval. 
+ 
+ Dissemination Plan Comments 
+1. Identify: 
+ Which members of staff or staff groups will be 
+affected by this guideline? Midwives and Obstetricians 
+ How will you confirm that they have received the 
+guideline and understood its implications? Dissemination of update to 
+all maternity staff is carried 
+out via work emails, notice 
+boards, social media, safety 
+huddles and Leading 
+Learning emails to 
+obstetricians. If indicated, it is 
+included in maternity 
+mandatory training. 
+ How have you linked the dissemination of the 
+guideline with induction training, continuous 
+professional development, and clinical supervision 
+as appropriate? All staff are shown how to 
+access maternity guidelines 
+on SharePoint when they join 
+the Trust. It is confirmed at 
+performance appraisals. 
+2. How and where will staff access the document (at 
+operational level)? Maternity clinical documents 
+are uploaded to SharePoint 
+which all maternity staff have 
+access to. 
+
+ Yes/No Comments 
+3. Have you made any plans to 
+remove old versions of the guideline 
+or related documents from 
+circulation? Yes Archiving of previous version 
+is part of our process. 
+4. Have you ensured staff are aware 
+the document is logged on the 
+organisation’s register? Yes This is part of our 
+dissemination process – see 
+above CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 32 of 33 
+ Appendix 11: Additional guidance and information 
+ 
+Ali A, Lamont R. Recent advances in the diagnosis and management of sepsis in pregnancy. 
+F1000Research. 2019;8:1546 
+ 
+Angus DC, Linde -Zwirble WT, Lidiker J, Clermont G, Carcilo J et al. Epidemiology of severe 
+sepsis in the United States: analysis of incidence, outcome and associated costs of care, 
+Critical Care Medicine 29:1303 -1310 2001. 
+ 
+Centre for Maternal and Child Enquires (CMACE). Saving Mothers’ Lives: reviewing 
+maternal deaths to make motherhood safer: 2006 -08. The 8th Report on Confidential 
+Enquiries into Maternal Deaths in the United Kingdom. BJOG 2011; 118 (suppl.1): 1 -203 
+ 
+Department of Health and the Royal College of Obstetricians and Gynaecologists (2009) 
+Pandemic H1N1 2009 Influenza: Clinical Management Guidelines for Pregnancy 
+ 
+Docherty AB, Harrison EM, Green CA, et al. Features of 16,749 hospitalised UK patients 
+with COVID -19 using the ISARIC WHO Clinical Characterisation Protocol. medRxiv 
+2020:2020.04.23.20076042. doi: 10.1101/2020.04.23.20076042 
+ 
+Fein, A.M., DuVivier, R. (1992) Sepsis in Pregnancy. Clinics in Chest Med (1992) 13(4): 709- 
+722. 
+ 
+Knight M, Kenyon S, Brocklehurst P, Neilson J, Shakespeare J, Kurninczukk JJ, (Eds) on 
+behalf of MBRRACE -UK. Saving Lives, Improving Mothers’Care – Lessons learned to inform 
+future maternity care from the UK and Ireland Confidential Enquiries into Maternal Deaths 
+and Morbidity 2009 -12. Oxford: National Perinatal Epidemiology Unit, University of Oxford 
+2014. 
+ 
+Marty P, Roquilly A, Vallee F, et al. Lactate clearance for death prediction in severe sepsis 
+or septic shock patients during the first 24 hours in Intensive Care Unit: an observational 
+study. Annals of Intensive Care 2013; 3(1): 3. 
+ 
+MBRRACE -UK Saving Lives, Improving Mothers' Care report for 2023 MBRRACE -UK 2023 
+ 
+Mikkelsen ME, Miltiades AN, Gaieski DF, et al. Serum lactate is associated with mortality in 
+severe sepsis independent of organ failure and shock. Critical Care Medicine 2009; 37 (5): 
+1670 -7 
+ 
+NICE clinical guideline No. Sepsis: the recognition, diagnosis and management of sepsis. 
+January 2016 www.nice.org/guidance/cg 
+ 
+NICE clinical guideline 190. Intrapartum care for healthy women and babies Clinical 
+guideline Published: 3 December 2014 nice.org.uk/guidance/cg190 CLINICAL GUIDELINE 
+Due for review : November 2026 
+Name of Guideline : Maternal or Birthing Person Sepsis 
+in Pregnancy and the Puerperium 
+For use at: SRH & WH 
+Page 33 of 33 
+ RCOG Green top guideline April 2012; 64a Bacterial Sepsis in Pregnancy. 
+ 
+RCOG. Maternal Collapse in Pregnancy and the Puerperium. London: RCOG 2011 
+ 
+Royal College of Obstetricians and Gynaecologists. Green -top guideline number 53. 
+ 
+RCOG. 2022. Coronavirus (COVID -19) Infection in Pregnancy. Available at: RCOG 
+Guideline on Covid -19 Infection in Pregnancy 
+ 
+Rouphael NG, O’Donnell JA, Bhatnagar J, Lewis F et al. Clostridium difficile – associated 
+diarrhoea: an emerging threat to pregnant women. Am J Obstet Gynecol 2008: e635el -8. 
+Department of Health (2011) H1N1 (2009) winter flu: Updated advice for providers of 
+maternity services. 
+ 
+Sheffield JS. (2004) Sepsis and septic shock in pregnancy. Critical Care Clinics 20:651 -660. 
+ 
+Singer M, Deutschmann CS, Seymour CW et al. The Third International Consensus 
+Definitions for Sepsis and Septic Shock (Sepsis -3). Journal of the American Medical 
+Association 2016; 315(8):801 -810. 
+ 
+Stevens DL. Could NSAIDs enhance the progression of bacterial infections to toxic shock 
+syndrome? Clin Inf Dis 1995; 21:1977 -980. 
+ 
+Surviving Sepsis Campaign. International Guidelines for Management of Severe Sepsis and 
+Septic Shock: 2012. 
+ 
+Trzeciak S, Chansky ME, Dellinger PR et al. Operationalizing the use of serum lactate 
+measurement for identifying high risk of death in a clinical practice algorithm for suspected 
+severe sepsis. Academic Emergency Medicine 2006; 13: 150 –1 
+ 
+UK Health Security Agency. Guidance on use of antiviral agents for the treatment and 
+prophylaxis of seasonal influenza (publishing.service.gov.uk) (2021) 
+ 
+The UK Sepsis Trust. The UK Sepsis Trust Home Page | What is Sepsis? | Sepsis 
+Symptoms (accessed March 2024) 
+ 
+World Health Organization. Coronavirus disease (COVID -2019) situation reports. 2020 
+[Available from: https://www.who.int/emergencies/diseases/novel -coronavirus - 
+2019/situation -reports/ ] accessed 9 June 2020.

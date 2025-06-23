@@ -1,0 +1,755 @@
+# Extracted from: CG19002 Accidentally dropped babies in hospital.pdf
+# Guideline ID: cg19002-accidentally-dropped-babies-in-hospital
+# Content length: 31704 characters
+# Processing date: 1750066900.5209143
+
+CG19002 Assessment and management of babies who are accidentally dropped in hospital v2.0 May 2023 Page 1 of 18 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Assessment and Management of B abies w ho are Accidentally 
+Dropped /Fall with in Hospital 
+Summary statement: How does the document 
+support patient care? Provides evidence based guidance for maternity and 
+neonatal services on the prevention and actions to take 
+in the event of a baby being dropped 
+Staff/stakeholders involved in development: 
+ Midwifery Matrons, Paediatric 
+Consultants /Neonatologists , Patient Safety Midwife and 
+Public Health Midwife 
+Division: Women and Chil dren’s 
+Department: Maternity & Neonatal Services 
+Responsible Person: Chief of Service 
+Author: Paediatric Consultants 
+Senior Midwifery Manager (Public Health) /Public Health 
+Midwife 
+For use by: Women and Children’s Division 
+Purpose: To provide evidence based guidance for staff when 
+caring for babies that are dropped whilst under care 
+within UH Sussex (SRH &WH) Women and Children’s 
+division 
+This document supports: 
+ National Institute for Health and Care Excellence’s 
+(NICE) clinical guideline CG176 ‘Head injury – 
+assessment and early management’ 
+Key related documents: Neonatal Resuscitation guideline 
+Admission to SCBU guideline 
+Approved by: JOGG : 17th May 2023 
+Maternity Joint Paediatric Meeting: 27th June 2023 
+Date uploaded : 17th July 20 23 
+Ratified by Board of Directors/ Committee of 
+the Board of Directors N/A 
+Ratification Date: N/A 
+Expiry Date: May 2026 
+Review date: November 2025 
+If you require this document in another format such as Braille, large print, audio or another 
+language please contact the Trusts Communications Team 
+Reference Number: CG19002 
+CG19002 Assessment and management of babies who are accidentally dropped in hospital v2.0 May 2023 Page 2 of 18 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+The interpretation and application of clinical guidelines will remain the responsibility 
+of the individual clinician. If in doubt contact a senior colleague or expert . 
+ Version Date Author Status Comment 
+1.0 December 2019 Senior Midwifery Manager 
+(Public Health) /Public 
+Health Midwife Archived New Guideline 
+2.0 February 2023 Karen Bennett - 
+Tangmere ward manager 
+ 
+Debbie Furniss - 
+Bramber ward manager LIVE 3 year review 
+CG19002 Assessment and management of babies who are accidentally dropped in hospital v2.0 May 2023 Page 3 of 18 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Contents 
+ 
+1.0 Aim of this document ................................ ................................ ................................ .. 4 
+2.0 Scope ................................ ................................ ................................ ........................ 4 
+3.0 Responsibilities ................................ ................................ ................................ .......... 4 
+4.0 Abbreviations used within this guideline ................................ ................................ ..... 4 
+5.0 Introduction ................................ ................................ ................................ ................ 5 
+6.0 Prevention of falls ................................ ................................ ................................ ...... 5 
+6.1 Curtains/door open risk assessment tool ................................ ................................ .... 7 
+7.0 Post fall guidance ................................ ................................ ................................ ....... 8 
+8.0 On-going midwife/ nurse r esponsibility ................................ ................................ ....... 9 
+9.0 On-going neonatal medical team responsibility ................................ .......................... 9 
+10.0 Administration ................................ ................................ ................................ ............ 9 
+10.1 Baby fall documentation and audit proforma ................................ ............................. 11 
+10.2 Baby Body Map ................................ ................................ ................................ ......... 14 
+10.3 New baby falls NEWTT chart ................................ ................................ .................... 15 
+11.0 SCBU /Beeding adm ission and Head/C -Spine imaging summary .............................. 15 
+12.0 Audit ................................ ................................ ................................ ......................... 16 
+References ................................ ................................ ................................ ........................... 16 
+Appendix 1: Flowchart for management of babies who are accidentally dropped in hospital 17 
+Appendix 2: Head Injury Card – Parental information ................................ ........................... 18 
+
+CG19002 Assessment and management of babies who are accidentally dropped in hospital v2.0 May 2023 Page 4 of 18 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Assessment and management of b abies w ho are accidentally 
+dropped/fall within h ospital 
+
+1.0 Aim of this document 
+ 
+The aim of this guideline is to provide evidence based guidance for maternity and neonatal 
+services on the prevention and actions to take in the event of a baby being dropped. 
+ 
+2.0 Scope 
+ 
+This guideline applies to all staff involved in the care of babies in maternity units and Special 
+Care Baby Units (SCBU) within University Hospitals Sussex (SRH & WH). 
+ 
+3.0 Responsibilities 
+ 
+Healthcare staff: 
+ 
+ To access, read, understand and follow this guidance. 
+ To use their professional judgement in application of this guideline. 
+ 
+Management: 
+ 
+ To ensure the guideline is reviewed as required in line with Trust and National 
+recommendations. 
+ To ensure the guideline is accessible to all relevant staff and disseminated widely. 
+
+4.0 Abbreviations used within this guideline 
+ 
+SCBU Special Care Baby Unit SCBU Special Care Baby Unit 
+NICE National Institute for Heath and Care 
+Excellence WH Worthing Hospital 
+UNICEF Intermittent Auscultation SIDS Sudden Infant Death Syndrome 
+NEWTT Newborn Early Warning Trigger 
+and Track OFS Occipital Frontal Head Circumference 
+HI Head injury SORT Southampton Oxford Retrieval Team 
+MIS Maternity Information System 
+
+CG19002 Assessment and management of babies who are accidentally dropped in hospital v2.0 May 2023 Page 5 of 18 
+Please check against Staffnet that this printout is the most recent version of this document. 
+5.0 Introduction 
+ 
+The National Institute for Health and Care Excellence’s (NICE) clinical guideline CG176 
+‘Head injury – assessment and early management ’ describes current best practice in the 
+care of infants under one year who present with suspected or confirmed traumatic head 
+injury with or without other major trauma. NICE guidance (including any updates to it) 
+remains your key reference source for thi s. This guidance complies with all the requirements 
+(assessments, investigations and observation) of the NICE guideline and includes 
+information on managing a baby who is dropped while being cared for in a hospital setting. 
+ 
+This guidance facilitate s the correct action in the context of this rare and unusual event . It is 
+essential that all parents/carers staying on wards and caring for babies are given information 
+and guidance on safety when handling their baby and to minimise standing and walking with 
+a baby in arms, as much as reasonably possible, and that actions are taken when there is a 
+higher predictive risk of a fall/drop. 
+ 
+6.0 Prevention of falls 
+ 
+There are occasional situations in which a baby fall is completely unpredictable and 
+unexpected. Whil e in hospital, to try to limit falls, babies should always be moved around in 
+appropriate cots not carried. 
+ 
+However, it is apparent that there are some factors which may be predictive of a baby fall. 
+In recent fall reviews, the majority of babies which f ell: 
+ 
+ Were in their mother /birthing parent ’s bed between 21:00 - 07:00hrs 
+ Maternal /birthing parent h aemoglobin was 105g/L or less . 
+ 
+Reducing the numbers of these falls has been achieved by using : 
+ 
+ A curtain open assessment tool to score risk (see over) 
+AND 
+ 2 hourl y check rounds overnight (22:00/00:00/02:00/04:00/ 06:00hrs) to ensure 
+babies are in their cots whilst mothers /birthing parents are asleep ( recor ded on 
+checklist sheet attached (as per risks below - high risk delivery or any other 
+concerns). 
+ Discuss with the woman/person that they are at higher risk of dropping their baby 
+and the reason for the actions in the table below. 
+ 
+CG19002 Assessment and management of babies who are accidentally dropped in hospital v2.0 May 2023 Page 6 of 18 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+ Issues : Actions: 
+Limited 
+Mobility • Low haemoglobin ( less than 105g/l), 
+• Effective regional analgesia 
+• Severe perineal pain 
+• Following caesarean section • Encourage to use the call buzzer to call for 
+assistance when wishing to mobilise or transfer the 
+baby out of the cot. 
+• Ensure call buzzer should be left within easy access 
+for the mother. 
+Co-Sleeping 
+with babies • Is actively discouraged on the ward 
+and in accordance to the health 
+promotion recommendations by 
+UNICEF 2013 • Actively discourage 
+• 2hrly night rounds to ensure safe sleeping 
+• Babies found co -sleeping, wake the parent then with 
+consent, plac e baby in the cot. 
+Unrestricted 
+View for 
+observations • To observe mums and their babies 
+more easily 
+• Could reduce the risk of baby falls, 
+particularly if safe sleeping 
+recommendations are not being 
+adhered to. 
+• Implications for ensuring 
+women /birthing parent ’s privacy and 
+dignity thus a risk assessment tool 
+helpful to highlight those at highest 
+risk. • Use risk assessment tool re appropriate position of 
+the curtains. (See below) 
+• If a woman /person scores 2 or more it should be 
+clearly explained that it is recommended that their 
+curtains remain open so that they and their baby 
+can be closely observed. 
+• If they declines this and wishes their curtains to be 
+drawn around their bed, then this must be 
+documented. 
+• The risk assessment should be scanned into MIS on 
+discharge home. 
+Cot sides • Not recommended. 
+• No evidence of preventing / reducing falls. 
+• Potential risk of strangulation 
+Clip-on 
+Bedside cots • Currently not recommended. 
+• Risk of securing issues/falls/positioning problems – sudden infant death syndrome (SIDS) risk 
+CG19002 Assessment and management of babies who are accidentally dropped in hospital v2.0 May 2023 Page 7 of 18 
+Please check against Staffnet that this printout is the most recent version of this document. 
+6.1 Curtains/door open risk assessment tool 
+ 
+Curtains/Door Open Risk Assessment Tool 
+ Scoring suggested at: 
+ Time of birth – prior to transfer to postnatal ward 
+ 12 hrs post birth 
+ 24 hrs post birth 
+If scores are 2 or more, it should be recommended that curtains/door remain open for adequate observation of 
+both mum/birthing parent and baby to reduce baby fall risk. 
+ There may be times when: 
+a) Despite recommendations, mothers /birthing parents do not wish to comply. This should be documented 
+on the score sheet below and on MIS . 
+b) There are barrier nursing reasons necessitating a side room door to be kept closed. This should be 
+docum ented as exclusion under ‘barrier’. 
+ Score 0 Score 1 Score 2 
+Mode of 
+birth Spontaneous vaginal Instrumental or 
+Caesarean more than 
+12hours ago C-Section (first 12hours) 
+ 
+Mobility Independently Mobile  Bed bound 
+ Needs assistance mobilising . 
+ Taking meds which affect mobility/conscious . 
+level eg prescribed medication or illicit drugs . 
+ Medical condition affecting mobility e.g. MS . 
+ Social concerns or learning difficulties . 
+ Medical condition affecting conscious level . 
+Anaemia Hb more than 105 g/L Hb less than 105g/L 
+Asymptomatic Hb less than 85 g/L Or 
+Hb more than 85g/L + symptoms of anaemia 
+Date and time Score Recommended curtains open 
+(tick) 
+Yes No Barrier Agreement from patient for curtains/door 
+open? 
+
+Risk assessment completed / no longer at risk . Date & time: 
+Scan into MIS once completed 
+CG19002 Assessment and management of babies who are accidentally dropped in hospital v2.0 May 2023 Page 8 of 18 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+7.0 Post fall guidance 
+ 
+Falls may occur on the Maternit y Unit or on SCBU . 
+ 
+On initial presentation following a baby fall: 
+1. Check ABC, if the baby is stable, the midwife or nurse should perform a set of 
+NEWTT observations and then inform the Neonatal team after determining that the 
+baby is safe and stable. 
+2. If the baby requires resuscitation and is deemed safe to mo ve, the midwife should 
+take the baby to the resuscitaire and call the neonatal crash team on 2222. 
+3. Inform the parents/carer as soon as possible if not present during the fall . 
+4. Follow the baby falls summary flow sheet in section 10.1 . 
+ 
+Paediatric response to a s table baby: 
+1. Contact the paediatrician to discuss timeframe for review based on the clinical 
+situation. If significant head injury is suspected, assessment should be within 15 
+minutes (NICE 2019 ) 
+2. NEWTT ob servations taken by the nurse/ midwife should b e documented available 
+for the d octor to review. 
+3. The Paediatric doctor should take a detailed history on the Baby Fall Proforma 
+(See section 10 .2) from the midwife/neonatal nurse caring for the baby and from 
+the parents or people present at time of fall. This should include: 
+ Who was caring for the baby at the time of the fall . 
+ If the baby was being held at the time of the fall, who was holding the baby . 
+ Time of fall . 
+ Time of reporting . 
+ The position to which the baby fell . 
+ An estimate of the height of the fall and type of surface onto which the baby 
+fell. 
+ The circumstances surrounding the fall . 
+ Any witnesses to the fall . 
+ The last time a professional saw the bab y prior to the fall . 
+4. The Paediatric doctor should carefully document neurological examination and any 
+bruises or skin markings, documenting these on a Body Map ( see section 10 .3). 
+Occipital frontal head circumference (OFC ) should be measured and documented . 
+5. The paediatrician doctor should note mode of birth and any bruising ascribed to 
+delivery on the body map to differentiate these from any other bruising . 
+6. The paediatrician should ensure that vitamin K was given at birth . 
+7. The on call paediatric consultant should be informed of the event as appropriate to 
+ensure there is an adequate care plan in place including any further treatment and 
+CG19002 Assessment and management of babies who are accidentally dropped in hospital v2.0 May 2023 Page 9 of 18 
+Please check against Staffnet that this printout is the most recent version of this document. 
+investigations required e.g. discussion with neurology team, appropriate duration 
+of bab y fall NEWTT obs ervations , need for any x -rays and/or CT scan . 
+8. All aspects of safeguarding the patient should be considered, parents should be 
+informed of this . 
+9. Prescribe and administer analgesia as appropriate. 
+
+8.0 On-going midwife/ nurse responsibility 
+ 
+The midwife/nurse caring for the baby should inform the safeguarding midwife of the fall to 
+ensure that there are no previously known safeguarding concerns, unless the fall was 
+witnessed by a healthcare professional and assessed as non -suspicious. 
+ 
+If the history and examination are compatible with an accidental injury and the baby is st able 
+enough to remain on the postnatal ward, then the baby should have a minimum of 24 hours 
+of observations, charted on the Baby F all Neonatal Observation Chart and NEWT T including 
+documentation of concerns regarding irritability, lethargy and vomiting. All babies who are 
+considered to have had a possible head injury should also be assessed and docum ented as 
+to whether the GCS is n ormal i .e. 15 or less. If there are any s ymptoms of altered 
+neurological behaviour / falling GCS, an urgent review should be requeste d from the 
+neonatal team. 
+ 
+9.0 On-going neonatal medical team responsibility 
+ 
+The neonatal team should respond promptly to any concerns from the midwives/nurse 
+regarding altered neurological behaviour. These should be escalated and discussed with the 
+consultant paediatrician regarding the need for radiological investigation and further 
+management. 
+ 
+A second ex amination should be performed within 2hrs reviewing th e obs ervations , including 
+a thorough neurological examination and examination for any new bruising particularly on the 
+head. A repeat OFC should be performed and GCS documented. If all well obs ervations 
+continue and next review would be at 24hrs unless the baby is unwell prior to this. 
+ 
+If during any examination there are findings consistent with skull injury including bruising 
+unaccountable for by birth history / depressed skull bones/ boggy swellings/ reduced 
+GCS /abnormal neurology /fluid leak from nose or ears, the baby should be admitted 
+immediately to the SCBU/ paediatric ward the consultant informed and the need for 
+computerised tomography scan assessed by the consultant paediatrician on call. 
+ 
+10.0 Administration 
+ 
+All medical notes and observation charts for the baby should be filed in the baby’s notes and 
+documented on MIS . 
+ 
+Complete DATIX form (midwifery staff or n eonatal nurses according to location of fall) . 
+CG19002 Assessment and management of babies who are accidentally dropped in hospital v2.0 May 2023 Page 10 of 18 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Complete b aby falls proforma and body map to record/ investigate the fall. 
+Any communication with the s afeguarding team and ongoing plans should be recorded 
+ 
+The appropriate community midwife/nurse should be informed by the discharging midwife on 
+the Badge r Discharge Summary. Inform the GP by EDN. The ‘Red Book’ must be completed 
+for parents, health visitors and GP . 
+ 
+Follow up should be arranged and documented and a head injury (HI) card given for all head 
+injuries. 
+
+CG19002 Assessment and management of babies who are accidentally dropped in hospital v2.0 May 2023 Page 11 of 18 
+Please check against Staffnet that this printout is the most recent version of this document. 
+10.1 Baby fall documentation and audit proforma 
+
+Baby fall documentation and audit proforma 
+Name sticker mum Name sticker baby 
+Date initiated 
+Maternal history (to be completed by MW) 
+Significant antenatal details: 
+ 
+Medical 
+ 
+Pregnancy 
+ 
+Scans 
+Time of admission to hospital 
+ 
+Maternal Analgesia 
+Labour / Acute Medical Complications 
+
+Maternal Blood loss 
+
+Latest Maternal Hb 
+Type of birth (circle) SVB Breech Ventouse 
+Forceps Caesarean 
+Date and Time of birth / Birth weight / OFC Date: Time: BW (kg) OFC (cm) 
+Feeding method (circle) Breast milk Formula Milk Mixed 
+Vitamin K given No IM PO 
+The Fall (MW and SCBU team to complete) 
+Where (circle) Recovery/HDU LW MLU PNW 
+Type of bed space (circle) 
+ Bay Side room 
+Curtain / door position at time of fall Open Closed 
+Curtain / door tool used prior to fall N Y Recommended open Y N 
+If fell from mother, last maternal obs Date Time 
+Temp Pulse BP 
+Last rounds by professional Date: Time: 
+Baby fall Date: Time 
+Persons present and their position at time of fall 
+Person awake or asleep 
+Witnesses to fall + comments 
+CG19002 Assessment and management of babies who are accidentally dropped in hospital v2.0 May 2023 Page 12 of 18 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+ Description of 
+fall Include: 
+Circumstances 
+Height of fall description 
+Impact surface 
+Position baby fell in / point of impact 
+
+Condition of 
+baby 
+ 
+Action taken 
+(circle, enter 
+times) include 
+MW / nursing 
+interventions 
+ Stable Unstable 
+Routine neonatal paging 
+Time: 
+Care given: 
+
+Obs: 
+ Resuscitaire / Resuscitation 
+Crash call 2222 Time: 
+ 
+Resus details: 
+Baby Review (to be completed by neonatal team) 
+Gestation + 
+age at time of 
+fall Gestation: Weeks Age: Days Hours 
+Time of 
+notification / 
+arrival at scene Notification time: Arrival time: 
+Staff present 
+(names / 
+grades) 
+Ongoing 
+Resuscitation / 
+stabilisation on 
+arrival? 
+1st Review 
+Date : 
+Time: 
+Examination 
+Complete body 
+map attachment 
+ 
+Document initial 
+actions taken 
+ 
+ Findings: OFC = cm GCS (see reverse of Fallen Baby NEWTT) = 
+Plan 1 
+Date: 
+
+Time: Planned place of stay (circle) PNW (low risk) 
+
+1 hourly for 2hrs until re -examined at 2 hours 
+ 
+Review in: 2 hours SCBU /Beeding ward ALL 
+GCS <15 
+
+for ongoing care 
+(medium – high risk ) 
+
+Imaging Investigations incl uding 
+radiology 
+ 
+Insert Frequency of baby fall 
+NEWTT obs ervations 
+ 
+Neonatal Review Time 
+CG19002 Assessment and management of babies who are accidentally dropped in hospital v2.0 May 2023 Page 13 of 18 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+ 2nd Review 
+At e.g. 2 hr 
+Date: 
+ 
+Time: Findings: OFC = cm GCS = 
+ 
+Plan 2 Planned place of stay (circle) PNW SCBU /Beeding for 
+ongoing care 
+ Insert Frequency of baby fall 
+NEWTT observations 
+ 
+Investigations incl uding 
+radiology 
+ 
+Neonatal Review Time NEWTT Obs : hrly 
+3rd Review 
+E.g. 24 hr 
+Date: 
+ 
+Time: Findings: OFC = cm GCS = 
+ 
+Plan 3 Planned place of stay (circle) PNW SCBU /Beeding for 
+ongoing care 
+ Insert Frequency of baby fall 
+NEWTT obs ervations 
+ 
+Investigations incl uding 
+radiology 
+ 
+Neonatal Review Time NEWTT Obs : hrl y 
+Safeguarding 
+involvement: Y/N contact : 
+Date and 
+time of 
+discharge: Head injury leaflet given and discussed: 
+Follow up: Y N Details: 
+Datix Completed: 
+ 
+***Scan form into Badgernet once completed *** 
+ 
+NB: The following symptoms followi ng head injury have significant 
+ correlation with abnormal CT findings 
+Pallor 
+Irritability with agitation 
+Irritability + drowsiness 
+Bulging AF 
+Vomiting 
+Seizures 100% 
+54% 
+38% 
+35% 
+23% 
+19% 
+CG19002 Assessment and management of babies who are accidentally dropped in hospital v2.0 May 2023 Page 14 of 18 
+Please check against Staffnet that this printout is the most recent version of this document. 
+10.2 Baby Body Map 
+ 
+Date / Time Body Map Completed………………………………………. 
+ 
+Name of Person Completing Body Map……………………………….. (Print Name) 
+ 
+Signed………………………… 
+Designation………………………… 
+***Scan into Badgernet once completed*** 
+OFC= 
+
+Assess and document 
+ Exact site of injury on the body, e.g. upper outer arm/lef t cheek and size of injury – in 
+centimetres 
+ Approximate shape of injury, e.g. round/square or straight line and colour 
+ Is the skin broken/ Is the injury clean/ Is there a scab/ blistering / bleeding 
+ Is there any swelling at the site of the injury, or elsewhere? Is mobility restricted? 
+ Does the site of the injury feel hot? Does the child feel hot? Does the child feel pain? 
+
+CG19002 Assessment and management of babies who are accidentally dropped in hospital v2.0 May 2023 Page 15 of 18 
+Please check against Staffnet that this printout is the most recent version of this document. 
+10.3 New baby falls NEWTT chart 
+
+11.0 SCBU /Beeding admission and Head/ C-Spine imaging summary 
+ 
+Automatic discussion for admission to SCBU for: 
+ Babies with GCS <15 even with previous normal CT (? 24 hr repeat CT +/ - ? MRI) 
+ Ongoing symptoms and signs 
+ Multiple injuries 
+ Automatic discussion with SORT/Neurosurgical unit for regional Neurosurgical Unit 
+for ALL babies with GCS < 8 and evidence of intracranial injury. (NICE1 .7) (Call 
+SORT) . 
+ 
+Remember there is a radiation lifetime safe limit due to high radiation risks ( 2 CTs) so it is not 
+in every baby’s interest to have a CT scan without fulfilling certai n criteria. (NICE 1.46) The 
+paediatric consultant must be informed of the baby and they therefor make the CT scan 
+decision. (CT not MRI – NICE 1.41) . 
+ 
+Once the decision i s made to CT, arrangements must then be made for : 
+ Urgent CT scan slot (contact radiology ) 
+ Updating of parents/guardians 
+ Safe accompanied transfer of the baby to and from CT 
+ Appropriate monitoring during CT scan 
+ Urgent reporting of the scan 
+ Review of potential need for CT to be reviewed by Southampton Neurosurgical 
+team. For an unwell baby this would be achieved via discussion with the 
+Southampton and Oxford Retrieval Service (SORT) , or direct referral to the 
+neurosurgical team at Southampton for a sta ble baby (NICE neurosurgeons 1.3 -
+1.13) . 
+
+ Infant Glasgow Coma S cale (< 1 year) If the GCS is NOT 15, call the SCBU team for urgent review 
+ A GCS of 15 means the baby is: Appropriately alert and awake and is responsive 
+ 
+Eyes are opening spontaneously 
+ 
+Baby moves spontaneously and purposefully 
+Best verbal response Best eye response Best motor response Point Total GCS Score Guide: Remember 
+even a teddy bear can have GCS of 3 
+No response No eye opening No motor response 1 
+Inconsolable, agitated, 
+moans/ grunts in 
+response to pain Open to pain only Abnormal Extensio n to 
+pain(decorticate 
+posturing) 2 15 = NORMAL / minor injury 
+ 
+If NEWTT also normal the n Baby fall 
+NEWTT o bs continue 1 for 2 hours . 
+Inconsistently inconsolable, 
+cries in response to pain / 
+screams Open to voice Abnormal flexion to pain 
+(decorticate posturing) 3 
+NEWTT obs should then be continued 
+4hry until 24hrs (minimum) 
+Cries but consolable Open spontaneously Withdraws from pain 4 Any baby with a confirmed GCS < 15 
+needs to be admitted to NICU (1.34 
+nice) and Needs 1/2hrly obs until GCS 
+15 then as above Appropriately awake and 
+alert. Responsive. n/a Withdraws from touch 5 
+ 
+13-14 = mild injury 
+9- 12 = moderate injury 
+8 = Intubate and Ventilate immediately 
+3-8 severe injury n/a n/a Moves spontaneously 
+and purposefully 6 
+CG19002 Assessment and management of babies who are accidentally dropped in hospital v2.0 May 2023 Page 16 of 18 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Babies with any of the following would qualify automatically for head CT scan within 1 
+hour (NICE 1.49 / 1.41) : 
+ 
+ Suspected NAI 
+ Post trauma seizure 
+ GCS < 15 in baby 
+ Suspected open/ depressed 
+ Tense fontanelle 
+ Signs of base of skull ~ (panda eyes/CSF or blood leak nose/ears ) 
+ Focal deficit 
+ Bruising /swelling/laceration > 5cm on head 
+ LOC > 5mins 
+ 3 or more vomits 
+ Abnormal or increasing drowsiness 
+ Fall > 3m height 
+ 
+Babies with any of the following would also qualify for C-Spine CT scan (NICE 1.5) : 
+ 
+ First GCS <13 
+ Intubated 
+ Signs of external neck injury / Abnormal neck / skull x -rays 
+ Multi -region trauma 
+ Focal peripheral neurological signs 
+
+12.0 Audit 
+ 
+To be audited through incident review. 
+
+References 
+ 
+National Institute for Health and Care Excellence. CG176 Head injury: assessment and early 
+management (2019) 
+CG19002 Assessment and management of babies who are accidentally dropped in hospital v2.0 May 2023 Page 17 of 18 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 1: Flowchart for management of babies who are accidentally dropped in 
+hospital 
+For further information please see NICE: Head injury - assessment and early management 
+FALLEN BABY FLOW SHEET 
+MW / nurse assess ABC and level consciousness 
+Unstable : Abnormal ABC or reduced consciousness 
+(i.e. not awake or alert.) 
+ MW / Nursing Team 
+-Take baby to resuscitaire 
+-Start resuscitation 
+-Call 2222 neonatal crash team 
+Assess baby ASAP (HI <15 mins ) 
+-Review Baby Fall NEWTT obs. Careful history + examination including neurol ogy and signs of injury/OFC/ GCS 
+-Complete proforma including body map. Assess status/injuries / NAI potential 
+-Make diagnosis/ plan including investigations and discuss with senior NICU team 
+-Ensure Vitamin K given and consider if analgesia needed (remember paracetamol closes PDA/ opiates mask HI) 
+ 
+Any baby with : 
+-GCS < 15 even if any previous CT normal. 
+-And/ or ongoing symptoms and signs. 
+-And/ or multiple injuries or injur ies needing radiology 
+Require stabilisation/neuro observations 
+(SCBU /paediatric ward) 
+Babies with: 
+Normal examination / minor injury + deemed fit to remain on PNW 
+Require: 
+1 / Minimum 24hrs fallen baby NEWTT obs (at 1hr, 2hrs the 4hrly) 
+2/ Medical / NNP review at 2hrs. if well can be next reviewed after 24hrs. 
+ 
+At any time : 
+Unwell baby/Abnormal Obs/ Deterioration 
+Call Paediatric registrar or above as required 
+Well baby/ Normal obs at 24hrs 
+Medical/ NNP review at 24 hours. 
+If fit for discharge: 
+1) Arrange follow up in community 
+2) Asses need fo r neonatal clinic 
+follow -up 
+3) Head injury babies must be 
+discharge with a head injury card. 
+ 
+Review need for 
+CT Head / CT Neck, 
+Further imaging of other injuries 
+? Neurosurgical referral / Transfer (NICE 1.7 = ALL babies with GCS <8 ) 
+Any imaging needs prompt review / reporting 
+ 
+CT Head required within 1 hr: 
+(NICE HI 1.49/1.41) 
+-Suspected NAI 
+-Post trauma seizure 
+-GCS < 15 in baby 
+-Suspected open / depressed # 
+-Tense fontanelle / foc al deficit 
+-Base of skull# (panda eyes csf , blood 
+leak nose/ears) 
+-Bruise /swelling / laceration > 5cm 
+-Loss Of Consciousness > 5mins 
+-3 or more vomits 
+-Abnormally /increasingly drowsy 
+-Fall > 3m height 
+C Spine CT required 
+(NICE HI 1.5) 
+-First GCS < 13 
+-Intubated 
+-Signs of external neck injury 
+-Abnormal neck / skull x -rays 
+-Multi -region trauma 
+-Focal peripheral neurological signs 
+ Stable: ABC normal , Awake and alert 
+MW/Nursing team: place baby in their cot. 
+-Baby fall NEWTT obs incl uding stats 
+-Inform SCBU 
+-Complete the 1st section of the falls proforma 
+-Initiate a Datix 
+-Inform a safeguarding team if required and inform parents if 
+not present 
+CG19002 Assessment and management of babies who are accidentally dropped in hospital v2.0 May 2023 Page 18 of 18 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 2: Head Injury Card – Parental information 
+ 
+Following your baby’s head injury we now feel that your baby is fit for discharge home 
+with you. 
+ 
+When you get them home it is very unlikely that they will have any further problems, but we 
+recommend you check your baby regularly for the following symptoms and signs. If any 
+these do occur / return, we suggest you bring your baby back to their nearest hospital 
+emergency department as soon as possible for review: 
+ 
+ Any significant changes to their feeding pattern (going off their feeds). C heck they 
+have wet nappies . 
+ Any unusual vomiting (other than your baby’s usual possets) . 
+ Becoming excessively sleepy or difficult to wake . 
+ Excessive crying / high pitched cries / unusua lly quiet . 
+ Any increase in swelling on baby’s head or any other injured areas . 
+ Unusually floppy or stiff . 
+ Seizures (also known as convulsions or fits) . 
+ Clear fluid or blood coming out of their ear or nose . 
+
+Things that will help your baby recover 
+ 
+ Ensure baby has plenty of rest and avoid stressful, bright and noisy situations. 
+ Don’t pass baby around family and friends for cuddles until they have recovered 
+fully. 
+ Do not give painkillers e.g. paracetamol or ibuprofen unless they are prescribed by 
+a doctor.

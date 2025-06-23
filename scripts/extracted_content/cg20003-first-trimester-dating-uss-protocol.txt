@@ -1,0 +1,582 @@
+# Extracted from: CG20003 First Trimester Dating USS Protocol.pdf
+# Guideline ID: cg20003-first-trimester-dating-uss-protocol
+# Content length: 31143 characters
+# Processing date: 1750066900.5375028
+
+CLINICAL PROTOCOL 
+CG20003 First Trimester US Screening: Dating Scan, 
+Combined Test & Declined Combined Test Ultrasound v4.0 
+Due for review: February 2027 
+For use at: SRH & WH 
+
+Page 1 of 16 
+
+First Trimester US Screening: 
+Dating Scan, Combined Test & Declined Combined Test 
+Ultrasound 
+
+OVERVIEW 
+The purpose of this protoc ol is to enable sonographers to safely complete the first trimester scan 
+with or without screening, incorporating national and local guidance. 
+This protocol applies to sonographers carrying out first trimester scanning. 
+ 
+TABLE OF CONTENTS 
+1.0 Introduction ................................ ................................ ................................ ........................... 2 
+2.0 Definitions and abbreviations used in this document ................................ ............................. 2 
+3.0 Duties and Responsibilities ................................ ................................ ................................ .... 2 
+4.0 Information for pregnant women and birthing people prior to scan ................................ ........ 3 
+5.0 FASP: Screening Programme ................................ ................................ ................................ 3 
+5.1 Trust notes ................................ ................................ ................................ ............................ 3 
+5.2 Images to be recorded ................................ ................................ ................................ ........... 4 
+5.3 FASP recommended assessment for the CRL for pregnancy dating and 
+combined screening ................................ ................................ ................................ .............. 5 
+5.4 FASP: Recommended criteria for measurement of NT for combined screening .................... 6 
+5.5 Diagram 2: Where to place callipers for the NT measurement ................................ ............... 6 
+5.6 Measuring the CRL & NT to one decimal point ................................ ................................ ...... 7 
+5.7 Unable to obtain NT ................................ ................................ ................................ ............... 7 
+5.8 Increased Nuchal Translucency (NT) ................................ ................................ .................... 7 
+5.9 Multiple Pregnancy ................................ ................................ ................................ ................ 7 
+5.9.1 Quadruple Screening in Twin Pregnancies ................................ ................................ ............ 8 
+5.9.2 Demised Twin Syndrome ................................ ................................ ................................ ....... 8 
+5.9.2.1 Empty second pregnancy sac and the combined test ................................ ............................ 9 
+5.9.2.2 Second pregnancy sac containing a non -viable fetus and the combined test ........................ 9 
+5.10 Fertility treatment pregnancies ................................ ................................ .............................. 9 
+6.11 Abnormalities ................................ ................................ ................................ ......................... 9 
+6.12 Non-obstetric abnormalities ................................ ................................ ................................ ... 9 
+Monitoring the Effectiveness of this P rotocol ................................ ................................ ................... 10 
+Protocol Version Control Log ................................ ................................ ................................ .......... 11 
+Template Dissemination, Implementation and Access Plan ................................ ............................. 13 
+Additional guidance and information ................................ ................................ ............................... 14 
+ CLINICAL PROTOCOL 
+CG20003 First Trimester US Screening: Dating Scan, 
+Combined Test & Declined Combined Test Ultrasound v4.0 
+Due for review: February 2027 
+For use at: SRH & WH 
+
+Page 2 of 16 1.0 INTRODUCTION 
+The purpose of this protocol is to enable sonographers to safely complete the first trimester scan 
+with or without screening, incorporating national and local guidance. 
+12-week combined test & declined combined test ultrasound scans must only be performed by a 
+sonographer/ fetal medi cine specialist / ultrasound practitioner with a minimum of a post graduate 
+certificate or academic equivalent. The sonographer must also have undertaken and passed the 
+‘Fetal Medicine Foundation’ theoretical and practical course, followed by annual renewa l of FMF 
+licence. This is the individual operator ’s responsibility. 
+2.0 DEFINITIONS AND ABBR EVIATIONS USED IN TH IS DOCUMENT 
+ANST - Antenatal Screening Team FASP - Fetal anomaly Screening Programme 
+CT - Combined Test NT - Nuchal Translucency 
+QUAD - Quadruple test: maternal age, AFP, 
+hCG uE3 and inibin -A: optimum time for 
+testing = 16 weeks. DQASS - The Downs syndrome screening 
+quality assurance support service 
+SSS - Screening Support Sonographers MIS - Maternity Information System e.g. 
+BadgerNet 
+CRL - Crown Rump Length EPAC - Early Pregnancy Assessment Clinic 
+RPOC - retained products of conception FH - fetal heart 
+HC - Head circumference TAS - Trans abdominal scan 
+TVS - Trans vaginal scan UKAS - United Kingdom Accreditation Service 
+CRIS - Computerised Radiology Information 
+System MIS - Maternity information System e.g. 
+Badgernet 
+ 
+3.0 DUTIES AND RESPONSIB ILITIES 
+All staff working in the 
+Trust  To access, read, understand and follow this protocol . 
+ To use their professional judgement in application of this 
+protocol . 
+Managers  To ensure the protocol is reviewed three yearly and aligns with 
+national standards. 
+ To ensure the protocol is accessible to all relevant staff. 
+ CLINICAL PROTOCOL 
+CG20003 First Trimester US Screening: Dating Scan, 
+Combined Test & Declined Combined Test Ultrasound v4.0 
+Due for review: February 2027 
+For use at: SRH & WH 
+
+Page 3 of 16 4.0 INFORMATION FOR PREG NANT WOMEN AND BIRTH ING PEOPLE PRIOR 
+TO SCAN 
+ All pregnant women and birthing people must be counselled by a midwife prior to the first 
+trimester ultrasound examination, to enable pregnant women and birthing people to make 
+an informed c hoice regarding screening. The pregnant woman or birthing person is not 
+required to decide straight away but must have decided by the time of the scan 
+appointment. A dating/NT/CT scan is requested at point of receipt of referral by admin 
+team. The y should indicate where possible if an interpreter is required or if there are 
+mobility considerations. 
+ Midwives, obstetricians or admin requesting an ultrasound scan make this via ICE and 
+must ensure there is sufficient clinical information to justify the scan. 
+ All pregnant women and birthing people are asked to attend with a moderately full 
+bladder. 
+ All appointments are allocated 25 mins as per UKAS national guidance - Updated by 
+BMUS 2018. 
+ Patient information leaflets are available on the MIS 
+5.0 FASP: SCREENIN G PROGRAMME 
+Screening i s offered to assess the risk of the baby being born with Downs syndrome (Trisomy 21), 
+Patau’s Syndrome (Trisomy 13) and Edwards Syndrome (Trisomy 18). 
+The test of choice for both singleton and multiple pregnancies is first trimester combined screening. 
+Pregnant women and birthing people can choose: 
+ Not to have screening 
+ To have screening for T21 only 
+ To have screening for T18 & T13 only 
+ To have screening for T21, T18 & T13. 
+5.1 Trust notes 
+ The pregnant woman and birthing person must be properly identified according to the 
+trust policy with name, date of birth and address prior to the ultrasound examination. 
+ Verbal consent should be obtained by the operator prior to the ultrasound examination. 
+ If a pregnant woman or birthing person declines first or second trimester screening, and 
+other abnormalities are found (such as for example: a cystic hygroma, NT > 3.5mm, 
+megacystis or anencephaly) the pregnant woman or birthing person must be aware that 
+results will be communicated to them and same day referral to the ANST will be made. 
+ If the CRL is >84mm the combined test cannot be done. A Quadruple test can be 
+performed by completing an HC measurement. The HC measurement must be calculated 
+using Viewpoi nt, not done as a manual calculation, as these do not always match. 
+ A Quadruple test can only be done if HC is >101mm and less than 172.0mm inclusive. If 
+the HC is less than 101mm on the day, record the HC and refer to a midwife who will book 
+the pregnant woman or birthing person in for bloods in a few days. The Quadruple test 
+can be offered from 14+2 to 20+0 inclusive (FASP July 2022). CLINICAL PROTOCOL 
+CG20003 First Trimester US Screening: Dating Scan, 
+Combined Test & Declined Combined Test Ultrasound v4.0 
+Due for review: February 2027 
+For use at: SRH & WH 
+
+Page 4 of 16  If the pregnant wom an or birthing person consent s to screening at booking appointment 
+then declines at time of scan, the sonographer should document on scan report and notify 
+ANST to confirm patient choice and document declined on MIS. An NT measurement can 
+be completed in case the pregnant woman or birthing person changes their mind to 
+prevent rescan if screening is subsequ ently accepted after counselling with ANST. 
+ If the pregnant woman or birthing person change s their mind and requests screening after 
+a declined test, a Quadruple Test will be offered if a second scan for NT cannot be offered 
+due to availability. 
+ If the pr egnant woman or birthing person consents to screening but changes their mind 
+AFTER the ultrasound scan and before bloods are taken, this should be documented , and 
+the screening midwife should be notified. 
+ If the pregnant woman or birthing person declines screening , they should still be sent to 
+the ANC to have their height and weight checked – this allows for the entry of EDD and 
+number of babies, as well as BMI, to be accurately recorded on the MIS. 
+ All examinations must be properly attended, post -process ed and auto reported on CRIS 
+on the day of the investigation. 
+ All images must be properly stored on PACS in the correct pregnant woman or birthing 
+person’s file. 
+ A Viewpoint report must be completed. Please see appendix 2 for a guide on completing 
+Viewpoint reports. 
+5.2 Images to be recorded . 
+ CRL must be between 45 -84 mm (must be a minimum of 3 images) 
+ NT measurement (must be a minimum of 3 images) 
+ 
+The following fetal structures should be examined: 
+ 
+ Skull/ brain 
+ Fetal Hands 
+ Fetal Feet 
+ Stomach 
+ Bladder if visible. 
+ Abdominal wall/ Cord Insertion 
+ Location of the placenta(s) 
+ Longitudinal view demonstrating cervix & uterus to identify the pregnancy is correctly 
+sited. 
+ Assess maternal or birthing person adnexa. 
+ Document quality of view; where poor, include possible reason for poor view 
+ CLINICAL PROTOCOL 
+CG20003 First Trimester US Screening: Dating Scan, 
+Combined Test & Declined Combined Test Ultrasound v4.0 
+Due for review: February 2027 
+For use at: SRH & WH 
+
+Page 5 of 16 5.3 FASP recommended assessment for the CRL for pregnancy dating and combined 
+screening. 
+Criteria for CRL Detail to be Demonstrated 
+CRL range 
+in mm  45.0- 84.0 mm. 
+Midline Section  Sagittal section of the fetus with the head in line with the full length of the 
+body. 
+ Echogenic tip of the nose visible. 
+ Rectangular shape of the palate. 
+ Translucent diencephalon. 
+ CRL axis should be between 0 and 30 degrees to the horizontal. 
+ Clearly defined crown and rump. 
+Position  Pocket of fluid, at least equivalent in the size to the width of the palate, 
+should be visible between the chin and chest. 
+ Fetal palate angle should be 30 to 60 degrees, relative to the horizontal. 
+ Nasal tip should be at the level of above the level of the abdominal wall. 
+Image 
+Magnification  The magnification of the fetus is made as large as possible before the 
+image is frozen. The entire CRL section should be magnified to 60 – 98% 
+of the screen. 
+Calliper 
+Placement  Correct calliper placement on the outer borders of crown & rump. 
+ Longest length of the fetus should be recorded. 
+Image Archiving  The CRL should be measured at least twice and the maximum 
+measurement that meets the criteria should be recorded. 
+ The image demonstrating the measured CRL which has been reported 
+should be archived. 
+ 
+Below is a FASP good example of a CRL, incorporating all of the above points: 
+
+CLINICAL PROTOCOL 
+CG20003 First Trimester US Screening: Dating Scan, 
+Combined Test & Declined Combined Test Ultrasound v4.0 
+Due for review: February 2027 
+For use at: SRH & WH 
+
+Page 6 of 16 5.4 FASP: Recommended criteria for measurement of NT for combined screening 
+Criteria for NT Twelve Components to assess the NT image appearance 
+Midline section  Horizontal sagittal section of the fetus extending from crown to include at 
+least the upper aspect of the heart. 
+ Head in line with the body with the nuchal translucency visible along the 
+length of the neck . 
+ Echogenic tip of the nose 
+ Rectangular shape of the palate 
+ Translucent diencephalon 
+ Frontal process of the maxilla should not be visible (see Diagram 1) 
+Position  Pocket of fluid, at least equivalent in size to the width of the palate, should 
+be visible between the fetal chin and chest . 
+ Angle of the palate relative to the horizontal should be between 30 0 and 
+600. 
+ Nasal tip should be level with, or above, the anterior chest wall. 
+Magnification  The image should be magnified to 60 – 98% of the screen. 
+Calliper 
+placement  Callipers should be placed on the upper and lower skin line (see Diagram 2) 
+ Widest part of the NT should be measured 
+ 
+Diagram 1: FASP good example of a NT measurement - incorp orating all of the above points: 
+ 
+5.5 Diagram 2: Where to place callipers for the NT measurement. 
+Measurement should be taken with the inner border of the horizontal of the callipers placed ON the 
+line that defines the NT thickness. The crossbar of the calliper should be such that it is hardly visible 
+as it emerges with the white line of the border. It should not be visible in the nuchal fluid. 
+CLINICAL PROTOCOL 
+CG20003 First Trimester US Screening: Dating Scan, 
+Combined Test & Declined Combined Test Ultrasound v4.0 
+Due for review: February 2027 
+For use at: SRH & WH 
+
+Page 7 of 16 
+ 
+*Note the NT and CRL image guidance tool developed with the assumption that the fetus is supine. 
+The image components can still be applied when the fetus is prone, although it may not be possible 
+to score component 3 (echogenic tip of nose). Therefore when the fetus is prone an image score of 
+‘good’ may not be achievable. 
+5.6 Measuring the CRL & NT to one decimal point . 
+To ensure consistent, standardised and safe practice, sonographers must measure and report both 
+the CRL & NT to one decimal place as recommended by NHS FASP. It is recommended for all 
+ultrasound equipment to display measurements to one decimal place. 
+5.7 Unable to obtain NT . 
+If unable to obtain NT measurement due to fetal lie or high BMI etc, attempt to rebook the pregnant 
+woman or birthing person. If on the second attempt the NT still cannot be obtained, measure the 
+CRL and HC. Document and refer the pregnant woman and birthing person to the ANST re a QUAD 
+test. 
+TVS may be offered as alternative to TAS if possible , within time constraints. 
+5.8 Increased Nuchal Translucency (NT) 
+If the NT is equal to or more than 3.5 mm with a CRL between 45-84 mm, a fetal abnormality must 
+be considered. 
+An increased NT is associated with an increased chance of these autosomal trisomy’s as well as 
+other fetal anomalies such as cardiac defects. But, as with all screening tests, a pregnancy with an 
+increased NT may also have a normal outcome. Inform the pregnant woman and birthing person 
+and document this on the report then refer the pregnant woman or birthing person to the ANST. 
+5.9 Multiple Pregnancy 
+Unexpected DCDA twins found at the CT scan do not need to be referred to ANST. MCDA, MCMA 
+or triplet pregnancies are to be referred to the ANST as it can complicate screening. Take CRL and 
+NT for both foetuses. Midwives in ANC should be alerted to all multiple pregnancies to ensure scan 
+and appointment times can be adjusted accordingly. 
+CLINICAL PROTOCOL 
+CG20003 First Trimester US Screening: Dating Scan, 
+Combined Test & Declined Combined Test Ultrasound v4.0 
+Due for review: February 2027 
+For use at: SRH & WH 
+
+Page 8 of 16 Chorionicity should be determined as early as possible as pregnant woman or birthing person 
+management differs. Comment and document the presence of the lambda or T -sign membrane. An 
+image must be recorded of the membrane inserti on on which the diagnosis of chorionicity is based. 
+If you are unable to determine the chorionicity at the earliest scan, seek the second opinion of a 
+senior sonographer or rebook another appointment in 2 weeks’ time. 
+ Dichorionic, Diamniotic: there will be two gestation sacs, a thick dividing membrane, 
+lambda sign two yolk sacs and two placentas. 
+ Monochorionic, Diamniotic: there will be one gestation sac, a thin dividing membrane, T 
+sign two yolk sacs and a single shared placenta. 
+ Monochorionic, Monoamnio tic: there will be one gestation sac, no dividing membrane, 
+one yolk sac and a single shared placenta (likely to be intertwined cords). 
+ 
+The test of choice for twin pregnancies is the combined test. Every effort must be made to offer and 
+complete t his test. The larger of the 2 CRL measurements should be used in the chance result 
+calculation. Measure the NT for each of the fetuses. Identification of Twin 1/A should be made as 
+the fetus closest to the maternal cervix. 
+For screening using the combined test, where a dichorionic twin pregnancy is identified the chance 
+result will be reported for each fetus. In a monochorionic twin pregnancy both foetuses are either 
+affected or unaffected, so the chance result will be the same. 
+5.9.1 Quadruple Screening in Twin Pregnancies 
+For the small number of pregnant women and birthing people who have a twin pregnancy and miss 
+the opportunity of having first trimester screening they can be offered the choice of a second 
+trimester quadruple test for Down’s syndrome on ly. This means the decision -making process is 
+more difficult for pregnant women and birthing people as this test is less sensitive than first trimester 
+screening and any subsequent decisions about invasive diagnostic testing and selective reduction 
+will ha ve to be made later in the pregnancy. 
+The quadruple test is offered to pregnant women and birthing people with a twin pregnancy to 
+screen for T21 only when one or both of the: 
+ NT measurements cannot be obtained. 
+ CRL measurements are greater than 84.0mm. The larger of the 2 HC measurements 
+should be used in the chance result calculation. 
+5.9.2 Demised Twin Syndrome 
+The definition of a vanished twin is when one fetus in a twin pregnancy is non -viable. It may be 
+partially or completely reabsorbed. 
+An ultrasound scan for the combined or quadruple test may show either: 
+ An empty second pregnancy sac. 
+ A second pregnancy sac containing a non -viable fetus. CLINICAL PROTOCOL 
+CG20003 First Trimester US Screening: Dating Scan, 
+Combined Test & Declined Combined Test Ultrasound v4.0 
+Due for review: February 2027 
+For use at: SRH & WH 
+
+Page 9 of 16 5.9.2.1 Empty second pregnancy sac and the combined test 
+When there is an empty second pregnancy sac, the CT can be used to calculate the chance result. 
+When ultrasound shows, there is an empty second pregnancy sac, the biochemical markers appear 
+no different to those in a singleton pregnancy and the CT of NT, PAPP -A and free beta HCG can be 
+used to calcul ate the risk. 
+5.9.2.2 Second pregnancy sac containing a non -viable fetus and the combined test . 
+When there is a second pregnancy sac containing a non -viable fetus, the CT cannot be used to 
+calculate the chance result - it is possible there could be a contr ibution to the maternal bio -chemical 
+markers for many weeks. 
+It is recommended that in this event services undertake the chance calculation based on the 
+maternal age and NT only (i.e. without the biochemistry) this will be done by the Laboratory. 
+Please refer to the NICE guidance on screening for Down’s Edwards and Patau’s syndrome in 
+higher multiple pregnancies (triplets & more): these are referred to Tertiary care. 
+5.10 Fertility treatment pregnancies 
+In IVF pregnancies or other fertility treatments (i. e. ICSI) the pregnancy must not be redated by the 
+CRL. The IVF details must be obtained from the pregnant woman or birthing person and inputted 
+onto Viewpoint to establish the pregnant women and birthing people EDD. 
+In the scenario where the pregnant woman or birthing person does not know this information - 
+redate the pregnancy by the CRL and state this on the report. Refer to the ANST. 
+If the date of birth or age of the donor at the time of egg collection is unknown, every effort must be 
+made to find this information for the chance result calculation. This includes IVF treatment received 
+outside England. If this information cannot be determined, laboratories can use the upper age limit 
+of egg donation in England which is under 36 years (that is; 35 years a nd 364 days). When this 
+approach is used, it must be clearly written on the chance result report. We recommend using this 
+cut-off due to limited information on egg donation outside England. In these cases, the healthcare 
+professional should discuss the lim itations of this approach and the impact on the chance result. 
+6.11 Abnormalities 
+If abnormalities are present, the sonographer is required to inform the pregnant woman or birthing 
+person of their findings, document on the report and refer to ANST. Please refer to the EPAC 
+Protocol if there is no evidence of pregnancy, no sac contents, no FH or RPOC. If the quiet room is 
+needed, check its vacant its code is: c248x: (SRH). 
+6.12 Non-obstetric abnormalities 
+ 
+If a uterine anomaly is suspected such as didelphic, unicornuate, bicornuate or septate - report that 
+these cannot be easily characterised with 2D ultrasound. CLINICAL PROTOCOL 
+CG20003 First Trimester US Screening: Dating Scan, 
+Combined Test & Declined Combined Test Ultrasound v4.0 
+Due for review: February 2027 
+For use at: SRH & WH 
+
+Page 10 of 16 Abnormalities of the uterine shape: i.e . bicornuate and didelphus/subseptate – document on the 
+report. When assessing the maternal adnexa a simple ovarian cyst measuring 3 -5 cm should be 
+documented on viewpoint. No follow up required. If there is a simple cysts greater than 5cm/ or 
+complex cyst please refer to the antenatal clinic midwives. Document position and size and position 
+of any fibroids. 
+MONITORING THE EFFEC TIVENESS OF THIS P ROTOCOL 
+ Every 3 months the SSS will conduct an audit of paired CRL & NT measurements for 
+every sonographer. Scores are either ‘Good’, ‘Acceptable’ or ‘Poor’. Audit resu lts are 
+sent back to each individual via the superintendent sonographer and copied to the 
+superintendent sonographer. 
+ Every 6 months DQASS provides a report to our department and laboratory documenting 
+activity and performance. Sonographers receive a grap h to demonstrate their plot spread 
+of NT measurements via the SSS. Red flags are managed according to the Trust 
+protocol. 
+ CLINICAL PROTOCOL 
+CG20003 First Trimester US Screening: Dating Scan, 
+Combined Test & Declined Combined Test Ultrasound v4.0 
+Due for review: February 2027 
+For use at: SRH & WH 
+
+Page 11 of 16 PROTOCOL VERSION CONTROL LOG 
+Change Log – First Trimester US Screening 
+ 
+Version Date Author(s) Reason for change 
+1.0 Feb 2015 Rebecca 
+Coombes New guideline. 
+2.0 Jan 2020 Rebecca 
+Coombes Review completed. 
+2.1 May 2020 Rebecca 
+Coombes FASP reference added. 
+3.0 May 2022 Rebecca 
+Coombes Appendices on filming in scan rooms and other 
+people in scan rooms added. 
+Name changed to ‘Dating Scan, Combined Test & 
+Declined Combined Test USS Protocol’. 
+4.0 Feb 2024 Rebecca 
+Coombes, 
+Amanda Sutton Updated this to reflect FASP changes (up to 
+23/11/23). 
+ 
+ CLINICAL PROTOCOL 
+CG20003 First Trimester US Screening: Dating Scan, 
+Combined Test & Declined Combined Test Ultrasound v4.0 
+Due for review: February 2027 
+For use at: SRH & WH 
+
+Page 12 of 16 Due Regard Assessment Tool 
+ Yes/No Comments 
+1. Does the document/guidance affect one group less or 
+more favourably than another on the basis of: 
+ Age No 
+ · Disability No 
+ · Gender (Sex) No 
+ · Gender Identity No 
+ · Marriage and civil partnership No 
+ · Pregnancy and maternity No 
+ · Race (ethnicity, nationality, colour) No 
+ · Religion or Belief No 
+ · Sexual orientation, including lesbian, gay and bisexual 
+people No 
+2. Is there any evidence that some groups are affected 
+differently and what is/are the evidence source(s)? No 
+3. If you have identified potential discrimination, are there 
+any exceptions valid, legal and/or justifiable? NA 
+4. Is the impact of the document likely to be negative? No 
+5. If so, can the impact be avoided? NA 
+6. What alternative is there to achieving the intent of the 
+document without the impact? NA 
+7. Can we reduce the impact by taking different action 
+and, if not, what, if any, are the reasons why the 
+protocol should continue in its current form? NA 
+8. Has the document been assessed to ensure service 
+users, staff and other stakeholders are treated in line 
+with Human Rights FREDA principles (fairness, respect, 
+equality, dignity and autonomy)? Yes 
+ 
+If you have identified a potential discriminatory impact of this protocol , please refer it R. Coombes, & 
+A. Sutton , together with any suggestions as to the action required to avoid/reduce this impact. For 
+advice in respect of answering the above questions, please contact uhsussex.equality@nhs.net 
+01273 664685). 
+ CLINICAL PROTOCOL 
+CG20003 First Trimester US Screening: Dating Scan, 
+Combined Test & Declined Combined Test Ultrasound v4.0 
+Due for review: February 2027 
+For use at: SRH & WH 
+
+Page 13 of 16 TEMPLATE DISSEMINATI ON, IMPLEMENTATION A ND ACCESS PLAN 
+ 
+ Dissemi nation Plan Comments 
+1. Identify: 
+ Which members of staff or staff groups will be affected 
+by this protocol ? Sonographers and midwives. 
+ How will you confirm that they have received the 
+protocol and understood its implications? Dissemination through the 
+usual Communication 
+channels and highlighted at 
+Safety Huddles. 
+ How have you linked the dissemination of the protocol 
+with induction training, continuous professional 
+development and clinical supervision as appropriate? All new members of staff 
+show n where to access 
+Clinical documents that are 
+relevant to their area of 
+practice. 
+2. How and where will staff access the document (at 
+operational level)? Accessed by staff via 
+SharePoint 
+ 
+ Yes/No Comments 
+3. Have you made any plans to remove 
+old versions of the protocol or related 
+documents from circulation? Yes Previous versions will be 
+archived. 
+4. Have you ensured staff are aware the 
+document is logged on the 
+organisation’s register? Yes Dissemination plan includes 
+notifying staff via email, safety 
+noticeboards, departmental 
+newsletter and social media. 
+Summary sent to 
+sonographers. 
+
+ CLINICAL PROTOCOL 
+CG20003 First Trimester US Screening: Dating Scan, 
+Combined Test & Declined Combined Test Ultrasound v4.0 
+Due for review: February 2027 
+For use at: SRH & WH 
+
+Page 14 of 16 ADDITIONAL GUIDANCE AND INFORMATION 
+Lees, C.C., Stampalija, T., Baschat , A.A., da Silva Costa, F., Ferrazzi, E., Figueras, F., Hecher, K., 
+Kingdom, J., Poon, L.C., Salomon, L.J. and Unterscheider, J. (2020), ISUOG Practice Guidelines: 
+diagnosis and management of small -for-gestational -age fetus and fetal growth restriction. 
+Ultrasound Obstet Gynecol, 56: 298 -312. https://doi.org/10.1002/uog.22134 
+ 
+Kennedy, L.M., Tong, S., Robinson, A.J. et al. Reduced growth velocity from the mid -trimester is 
+associated with placental insufficiency in fetuses born at a normal birthweight. BMC Med 18, 395 
+(2020). https://doi.org/10.1186/s12916 -020-01869 -3 
+ 
+Professional guidance for fetal growth scans performed after 23 weeks of g estation 
+British Medical Ultrasound Society 3rd Trimester Special Interest Group. January 2022 BMUS 2022 . 
+ 
+New Zealand Maternal Fetal Medicine Network. Guideline for the Management of Suspected Small 
+for Gestational Age Singleton Pregnancies and Infants after 34 Weeks’ Gestation. NZMFM:2014 . 
+
+ CLINICAL PROTOCOL 
+CG20003 First Trimester US Screening: Dating Scan, 
+Combined Test & Declined Combined Test Ultrasound v4.0 
+Due for review: February 2027 
+For use at: SRH & WH 
+
+Page 15 of 16 Clinical protocol [ CDL 4588 ] governance and approval 
+Owner Tim Taylor 
+Author/further information R. Coombes, Superintendent Sonographer 
+A. Sutton, Sonographer 
+Protocol version v4.0 
+Related policies N/A 
+Related documents Antenatal Care and Patient Information 
+Standards Saving Babies Lives version 3 (2023) 
+Antenatal Care. NICE guideline [NG201] (2021) 
+Guidelines for Professional Ultrasound Practice Society and 
+College of Radiographers and British Medical Ultrasound 
+Society Revision 5 (2023) 
+Fetal anomaly screening programme handbook - GOV.UK 
+(www.gov.uk) 
+Superseded documents N/A 
+Review due February 2027 
+Reference number CG2003 
+ 
+Approval 
+JOGG Date approved: 21st February 2024 
+Women & Children’s Clinical Effectiveness 
+Meeting Date approved: 21st March 2024 
+ 
+Consultation 
+Add relevant Trust -wide governance group 
+(see table below) Date approved: N/A 
+Add other specialist teams or groups as 
+appropriate Date approved: N/A 
+
+ CLINICAL PROTOCOL 
+CG20003 First Trimester US Screening: Dating Scan, 
+Combined Test & Declined Combined Test Ultrasound v4.0 
+Due for review: February 2027 
+For use at: SRH & WH 
+
+Page 16 of 16 Ratification 
+Clinical Document Approval Group Date approved: 19th April 2024 
+ 
+Consultation 
+Please select any appropriate consultation groups/ committees: 
+Trust Wide Governance Group Tick as required: 
+Medicines Governance Committee (MGC - replaces ‘Medicines Optimisation 
+Committee’ and ‘Drug and Therapeutics Committee’) 
+Antimicrobial Stewardship Group 
+Resuscitation Committee 
+Resuscitation Operational Management Group (ROMG) 
+Trust Transfusion Committee 
+Trust Infection Prevention Committee (Chief Nursing Officer) 
+Thrombosis Committee 
+Health Records Committee 
+BSUH Trauma Committee 
+Major Trauma Committee 
+Sussex Trauma Network 
+Children’s Safeguarding Strategy Committee 
+Radiation Safety Committee 
+Medical Devices & Equipment Committee 
+Patient Blood Management Committee 
+Patient Safety Committee 
+BSUH Diabetes In -Patient Care Committee 
+Carer and Patient Information Group (CPIG) 
+Women’s Safety and Quality Committee 
+Food Improvement Group 
+NIV Steering Group 
+NMAHP Board 
+Deteriorating Patient Group 
+Other (please specify)

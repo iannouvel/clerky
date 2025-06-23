@@ -1,0 +1,581 @@
+# Extracted from: MP008 Infections in Pregnancy.pdf
+# Guideline ID: mp008-infections-in-pregnancy
+# Content length: 30924 characters
+# Processing date: 1750066901.137717
+
+Infections in Pregnancy 
+
+Maternity Protocol: MP008 
+ 
+Date agreed: September 2019 
+ 
+ Infections in pregnancy (RSCH PRH only ) MP008 
+Page 2 of 20 
+Brighton & Sussex University Hospitals 
+ 
+Guideline Reviewer: Ryan Hogan 
+Manager responsible: Jo Sinclair 
+Version: 5.0 
+Approval Committee: Women’s Safety and Quality Committee 
+Date agreed: September 2019 
+Review date: September 2022 
+Cross reference: MP001 Antenatal Provision and Schedule of Care 
+MP004 Antenatal Screening: Infectious Diseases - HIV 
+MP006 Antenatal Screening: Infectious Diseases - Hepatitis B 
+MP007 Antenatal Screening: Infectious Diseases - Syphilis 
+MP022 Emergency Admissions Pregnant Women 
+MP032 ROM (term and pre -term) 
+MP069 Care of Newborn Immediately after birth 
+ Infections in pregnancy (RSCH PRH only ) MP008 
+Page 3 of 20 
+Brighton & Sussex University Hospitals Contents 
+Key Principles: ................................ ................................ ................................ ....................... 5 
+Scope: ................................ ................................ ................................ ................................ ... 5 
+Responsibilities ................................ ................................ ................................ ..................... 5 
+Section 1 ................................ ................................ ................................ ............................... 6 
+1 Management of Group B Streptococcus (GBS) in Pregnancy ................................ ......... 6 
+1.1 Antenatal management ................................ ................................ ................................ 6 
+1.2 Women with GBS in previous pregnancies ................................ ................................ 7 
+1.3 Women with previously affected baby with neonatal GBS disease ............................ 7 
+1.4 Intrapartum Management ................................ ................................ ............................ 7 
+2 Indications for offering GBS -specific IAP: ................................ ................................ ..... 7 
+3 IV antibiotic prophylaxis for GBS is not indicated in the following circumstances: ........ 8 
+4 Other advice for mothers ................................ ................................ ............................ 8 
+5 GBS Intrapartum Prophylactic Antibiotic Decision Tree ................................ ................ 9 
+6 Risks and benefits summary ................................ ................................ ...................... 10 
+6.3 Risks of GBS infection : ................................ ................................ ........................... 10 
+6.4 Risk of Intrapartum Antibiotics : ................................ ................................ ........... 10 
+7 Intrapartum antibiotics ................................ ................................ ............................. 10 
+8 If intrapartum antibiotics are declined ................................ ................................ ....... 11 
+Section 2 ................................ ................................ ................................ ............................. 11 
+1 Herpes Simplex in Pregnancy ................................ ................................ ..................... 11 
+1.1 Antenatal Primary Genital Herpes Infection ................................ ............................. 11 
+1.2 Antenatal Recurrent genital herpes ................................ ................................ ........... 12 
+1.3 Genital herpes at time of delivery ................................ ................................ ............. 12 
+1.4 Recurrent genital herpes*** ................................ ................................ ...................... 13 
+1.5 Pre-labour preterm rupture of membranes (PPROM) – primary infection ............... 13 
+1.6 Pre-labour preterm rupture of membranes (PPROM) – recurrent infection ............. 14 
+1.7 Postnatal HSV transmission ................................ ................................ ...................... 14 
+Section 3 ................................ ................................ ................................ ............................. 14 
+1 Chicken Pox in Pregnancy ................................ ................................ .......................... 14 
+2 Contact with Varicella Virus (chickenpox or shingles) in the antenatal period ............. 14 
+3 Pregnant women who have developed chickenpox ................................ .................... 15 
+4 Maternal infection/ rash at term ................................ ................................ ............... 17 Infections in pregnancy (RSCH PRH only ) MP008 
+Page 4 of 20 
+Brighton & Sussex University Hospitals Section 3 ................................ ................................ ................................ ............................. 18 
+1 Parvovirus Infection (Slapped Cheek Fever) ................................ ............................... 18 
+2 References: ................................ ................................ ................................ ............... 20 
+ 
+ Infections in pregnancy (RSCH PRH only ) MP008 
+Page 5 of 20 
+Brighton & Sussex University Hospitals Key Principles : 
+ 
+A protocol is a set of measurable, objective standards used to determine a course of action. 
+Professional judgement and clinical context should be considered in the application of a 
+protocol. 
+ 
+Scope: 
+ 
+This protocol applies to 
+• All childbearing women with exposure to, suspected or confirmed infection 
+ 
+Responsibilities 
+ 
+Midwives & Obstetricians: 
+• To access, read, understand and follow this guidance 
+• To use their professional judgement in application of this protocol 
+ 
+Management: 
+• To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations 
+• To ensure the protocol is accessible to all relevant staff 
+• To ensure that protocols are available for service users on request 
+ 
+ Infections in pregnancy (RSCH PRH only ) MP008 
+Page 6 of 20 
+Brighton & Sussex University Hospitals Section 1 
+1 Management of Group B Streptococcus (GBS) in Pregnancy 
+ 
+Group B streptococcus is the most frequent cause o f severe early onset infection in 
+newborn infants. A study conducted in the 1 980’s approximated that 25% of mothers in the 
+UK were likely to be GBS carrie rs. However, despite this the i ncidence of early -onset GBS 
+diseas e in the UK is 0.5/1000 births. 
+1.1 Antenatal management 
+1.1.1 Screening 
+Routine screening, with either high vaginal or rectal swabs, is NOT 
+recommended for group B streptococcus, as evidence of its clinical 
+and cost effectiveness remains uncertain. 
+1.1.2 Information for women 
+All pregnant women should be provided with an information leaflet 
+on GBS in pregnancy by their community midwife, or be directed 
+towards the leaflet on the Trust maternity website 
+1.1.3 Antenatal detection of GBS in current pregnancy (incidental or 
+planned) 
+ The health professional ordering tests or receiving results is ultimately 
+ responsible for: 
+• Contacting the women 
+• Discussing implications of GBS to the newborn and 
+advantages, disadvantages of intrapartum antib iotics (if 
+relevant) (see below) 
+• Organising prescription for antibiotics (if appropriate and 
+consent gained) 
+• Documenting results and plan of care in the maternal notes 
+ 
+Offer IV antibiotic prophylaxis in 
+labour 
+Assess if other risk factors present - see 
+decision tree 
+IV antibiotic prophylaxis 
+recommended during labour* 
+*ensure mother is explained reasons for 
+this and patient leaflet given. 
+GBS detected on high vaginal 
+swab 
+NO antibiotic treatment required 
+antenatally 
+ Treat UTI appropriately at time 
+of diagnosis 
+GBS detected in urine 
+specimen 
+(GBS bacteriuria is associated with a 
+greater risk of neonatal GBS disease) Infections in pregnancy (RSCH PRH only ) MP008 
+Page 7 of 20 
+Brighton & Sussex University Hospitals 1.2 Women with GBS in previous pregnancies 
+ 
+These women have approximately a 50% likelihood of being GBS positive in a 
+subsequent pregnancy. Discuss the option of: 
+1.2.1 Intrapartum antibiotic prophylaxis 
+1.2.2 A low vaginal swab at 35 weeks gestation. If positive for GBS, the 
+woman would be offered intrapartum antibiotic prophylaxis . 
+1.3 Women with previously affected baby with neonatal GBS diseas e 
+ Intrapartum antibiotic prophylaxis should be offere d to all women with 
+previously affected infants, irrespective of whether GBS was detected in the 
+mother previously. No further tests are required to detect GBS carriage. 
+ 
+1.4 Intrapartum Management 
+1.4.1 Women should be supported to make an informed choice about their 
+plan of care and whether they have or do not have antibiotics. All 
+discussion and decisions should be documented in the maternal 
+notes. Women who make an informed choice that may be different to 
+our recommendations should be offered a referral to a consultant led 
+clinic and Supervisor of Midwives and supported in this choice. 
+1.4.2 Use decision map to identify women for whom intrapartum antibiotic 
+prophylaxis is recommended. 
+1.4.3 Women colonised with GBS with ruptured membranes at 37+0 or 
+more should be offered immediate induction of labour and IV 
+antibiotics offered . 
+1.4.4 Women colonised with GBS having an elective caesarean with intact 
+membranes do not require GBS IV antibiotic prophylaxis. Use 
+standard C/S antibiotic regime. 
+1.4.5 Where women give their informed consent to receive antibiotics, 
+document this in the maternal notes and Intravenous antibiotics 
+should be administered as soon as possible after onset of labour. The 
+prophylactic antibi otics should be administered four hours or more 
+before delivery to offer the highest efficacy in preventing the vertical 
+transmission. 
+1.4.6 Discontinue maternal antibi otics once baby is delivered. 
+ 
+2 Indications for offering GBS -specific IAP: 
+ Infections in pregnancy (RSCH PRH only ) MP008 
+Page 8 of 20 
+Brighton & Sussex University Hospitals 2.1 Previous baby with invasive GBS infection. 
+2.2 GBS bacteriuria in the current pregnancy. 
+2.3 Vaginal swab positive for GBS in current pregnancy. 
+2.4 Pyrexia (>38°C) in labour or 2 x reading of >37.5 one hour apart (give broad -
+spectrum antibiotics to include GBS cover). 
+2.5 Chorioamnionitis (give broad -spectrum antibiotics to include GBS cover). 
+IAP for GBS is not necessary if delivering by pre -labour lower segment 
+caesarean section with intact membranes. 
+2.6 preterm labour (23 - 36+6/40) 
+ 
+3 IV antibiotic prophylaxis for GBS is not indicated in the following 
+circumstances: 
+3.1 Planned Caesarean section, in the absence of labour and with intact 
+membranes 
+3.2 Women with rupture of membranes, not in labour and over 34 weeks 
+gestation 
+3.3 Women with rupture of membranes, not in labour and under 34 weeks 
+gestation should have oral antibiotics ( See Maternity Protocol MP032 Rupture 
+of Membranes Term and Pre -term ). NB if these women develop additional risk 
+factor(s) e.g. maternal pyrexia / fetal heart abnormalities the management 
+plan should be reviewed and consideration given to commencing IV antibiotics 
+and/or expediting delivery 
+3.4 Broad spectrum antibiotics should replace GBS specific antibiotics when 
+ chorioamnionitis is suspected. 
+4 Other advice for mothers 
+4.1 Women are advised against home births if IV antibiotics are to be given. 
+Women who make an informed choice to have a birth at home should be 
+offered a referral to a LWL/PMA. 
+4.2 There is no contraindication against using the birthing pool, as long as the 
+venflon site is kept dry. 
+4.3 There is no contra -indication to breast feeding in women with GBS carriage. 
+4.4 Decision map for Intrapartum antibiotic prophylaxis 
+ 
+ 5 GBS Intrapartum Prophylactic Antibiotic Decision Tree 
+
+6 Risks and benefits summary 
+6.1 When considering the use of prophylactic antibiotics, the risks and benefits of 
+antibiotic therapy should be discussed with the woman to allow her to make 
+an informed choice (see information below on incidence of GBS and side -
+effects of antibiotics). 
+6.2 About a quarter of pregnant women in the UK carry GBS in their vagina. Many 
+ babies therefore come into contact with GBS during labour or during birth, 
+and GBS will colonise some of them. The vast majority of babies are not 
+harmed by contact with GBS at birth. 
+ 
+6.3 Risks of GBS infection : 
+6.3.1 Out of every 2000 newborn babies in the UK and Ireland, only one is 
+diagnosed with GBS infection; this means that about 340 babies each 
+year are diagnosed with early onset neonatal GBS. 
+6.3.2 Around one baby dies out of every ten who are diagnosed. 
+6.3.3 Although it is rare, GBS is the most common cause of life -threatening 
+infection in babies during the first week after birth. 
+6.4 Risk of Intrapartum Antibiotics : 
+6.4.1 Some women may experience temporary side effects such as 
+diarrhoea or nausea 
+6.4.2 A very few number of women will die or be serious injured from an 
+allergic reaction (anaphylaxis) to the antibiotics 
+6.4.3 It is thought that babies exposed to antibiotics very early in their lives 
+may have a higher than normal risk of asthma and/or other allergies 
+later in life 
+6.4.4 Bacteria becoming resistant to antibiotics 
+ 
+7 Intrapartum antibiotics 
+ 
+7.1 3 g intravenous benzylpenicillin should be given as soon as possible after the 
+onset of labour and 1.5 g 4 hourly until delivery 
+7.2 In the case of non -severe penicillin allergy (eg. no anaphylaxis, angioedema, 
+respiratory distress or urticaria), intravenous cefuroxime, 1.5 g loading dose 
+followed by 750 mg every 8 hours should be given. 
+ Infections in pregnancy (RSCH PRH only ) MP008 
+Page 11 of 20 
+Brighton & Sussex University Hospitals 7.3 In the case of severe penicillin allergy, intravenous vancomycin 1 g every 12 
+hours should be given. 
+ 
+8 If intrapartum antibiotics are declined 
+8.1 The neonatal team should be informed at the time of delivery 
+8.2 The baby should be observed as per Transition Care Pathway 
+ 
+Section 2 
+1 Herpes Simplex in Pregnancy 
+ 
+Herpes simplex is a virus which can lead to ulcerating lesions either around the mouth or 
+vaginal/rectal area. Neonatal Herpes infection is rare (1/60000 live births) however can 
+potentially be very serious. 30% of neonatal infections present with symptoms localised to 
+the skin, eye or mouth alone and have the best prognosis. 70% of cases present with a 
+disseminated infection or a local central nervous system (CNS) infection. These carry a 
+worse prognosis, particularly CNS infection which often presents later. The infection in 
+neonates is predominantly secondary to maternal primary genital herpes infection within 6 
+weeks of the time of delivery. In extremely rare circumstances transplacental transmission 
+can occur. It may also arise from postnatal exposure. 
+ 
+1.1 Antenatal Primary Genital Herpes Infection 
+1.1.1 If a patient has suspected genital herpes please refer to a 
+genitourinary physician to confirm the diagnosis with PCR. It is 
+recommended to check for other sexually transmitted infections. 
+1.1.2 Aciclovir, an anti -viral drug, can be beneficial to reduce the severity 
+and length of symptoms. A reduced dose is not required in pregnancy, 
+however the RCOG state it should be used with caution before 20 
+weeks gestation. Treat for 5 days with 400mg three times daily. Please 
+ensure women are counselled in regards to side effects by prescribing 
+clinician. MedicinesComplete 
+1.1.3 Paracetamol and topical lidocaine 2% gel can be offered as 
+symptomatic relief. 
+1.1.4 If suspected maternal disseminated infection, discuss with the 
+Consultant Virologist in consideration of IV acyclovir. 
+ Infections in pregnancy (RSCH PRH only ) MP008 
+Page 12 of 20 
+Brighton & Sussex University Hospitals 1.1.5 Providing that delivery does not ensue within the next 6 weeks, the 
+pregnancy should be managed expectantly and vaginal delivery 
+anticipated. 
+1.1.6 Daily suppressive aciclovir 400 mg three times daily should be 
+considered from 36 weeks of gestation. This reduces HSV lesions at 
+term and hence the need for delivery by caesarean section. 
+ 
+1.2 Antenatal Recurrent genital herpes 
+1.2.1 Recurrent bouts tend to be short lived and respond to conservative 
+management such as saline baths and analgesia. 
+1.2.2 No indication for caesarean section if the patient has recurrent 
+episode of genital herpes 
+ 
+If a women says would like a caesarean section if active ulcers at time 
+of birth the RCOG suggest treating her with acyclovir from 36 weeks 
+gestation to reduce the probability of herpes simplex lesions at the 
+time of delivery and thus allowing for vaginal delivery 
+There is insufficient evidence to determi ne whether this reduces 
+the incidence of neonatal herpes; howe ver, it reduces viral 
+shreddi ng and recurrences at delivery so may reduce the need for 
+caesarean section. Limited information exists regarding the neonatal 
+safety of prophylaxis. The risks, benefits and alternatives to daily 
+suppressive therapy should be discussed with women who have a 
+history and prophylaxis initiated for women who desire intervention. 
+1.2.3 If the woman is HIV positive refer to genitourinary consultant in 
+regards to this as transmission rates of both HIV and HSV can be 
+higher to baby if a woman has both. 
+1.2.4 In case of unreliable previous history of genital herpes, please confirm 
+lesions presented at week 34+ with PCR testing and contact the 
+consultant virologist (or microbiologist) for any needed arrangement 
+for HSV IgG type specific serology testing in the booking blood and/or 
+current blood sample. 
+ 
+1.3 Genital herpes at time of delivery 
+1.3.1 Primary infection ** 
+Studies have shown with genital ulcers present during primary 
+infection during delivery over 40% of infants suffer with neonatal 
+herpes simplex. 
+• Caesarean section should be recommended to all women 
+presenting with a first episode of genital herpes within 6 
+weeks of delivery Infections in pregnancy (RSCH PRH only ) MP008 
+Page 13 of 20 
+Brighton & Sussex University Hospitals • For women who have primary infection within 6 weeks of 
+delivery but decide for a normal vaginal delivery; invasive 
+procedures eg rupture of membranes, fetal blood sample, 
+fetal electrode should be avoided. IV acyclovir to be given to 
+mother during labour (5mg/kg, 8 hourly). Counsel the mother 
+that It is unknown whether intrapartum aciclovir reduces the 
+risk of neonatal HSV infection. Inform Neonatal team about 
+situation as baby may also require acyclovir and be swabbed 
+(skin/Eye/Throat) for PCR testing. 
+ 
+** In case of unreliable previous history of genital herpes, please confirm lesions 
+presented at labour with PCR testing and contact the consultant virologist (or 
+microbiologist) for any needed arrangement for HSV IgG type specific serology 
+testing in the booking blood and/or current blood sample. 
+ 
+1.4 Recurrent genital herpes *** 
+ 
+1.4.1 If patient has recurrent herpes at the time of labour, please inform 
+neonatology team. 
+1.4.2 Women should be advised risk of transmission is 0 –3% for vaginal 
+delivery 
+1.4.3 Vaginal delivery should be recommended to the mother in the 
+absence of other obstetric indications for caesarean section. 
+1.4.4 If rupture of membranes is confirmed woman should be advised to 
+expedite delivery by appropriate methods 
+1.4.5 If active lesions present, invasive procedures should be avoided. 
+ 
+*** In case of unreliable previous history of genital herpes, please confirm lesions 
+presented at labour with PCR testing and contact the consultant virologist (or 
+microbiologist) for any needed arrangement for HSV IgG type specific serology 
+testing in the booking blood and/or current blood sample. 
+ 
+1.5 Pre-labour preterm rupture of membranes (PPROM) – primary infection 
+1.5.1 Women with active lesions of a primary infection of genital herpes 
+will benefit from caesarean section to reduce neonatal transmission. 
+1.5.2 If there is initial conservative management of PPROM, for example, 
+during administration of steroids, the mother should be 
+recommended to receive intravenous aciclovir 5 mg/kg every 8 hours. 
+ Infections in pregnancy (RSCH PRH only ) MP008 
+Page 14 of 20 
+Brighton & Sussex University Hospitals 1.6 Pre-labour preterm rupture of membranes (PPROM) – recurrent infection 
+1.6.1 If < 34 weeks gestation and expectant management is planned, offer 
+oral aciclovir 400 mg three times daily for the mother 
+
+1.7 Postnatal HSV transmission 
+1.7.1 Women should be advised to wash their hands thoroughly before 
+touching their baby, avoid kissing their baby if they have cold sores 
+lesions. 
+1.7.2 Women should be encouraged to breast feed if they intend to, unless 
+they have herpetic lesions affecting the nipples. 
+ 
+Click on the link to access a patient information leaflet on genital herpes 
+ 
+Section 3 
+1 Chicken Pox in Pregnancy 
+ 
+1.1 Chicken pox (Varicella Zoster Virus, VZV), is a highly infectious condition which 
+is transmitted directly via personal contact or droplet spread. Most infections 
+occur in childhood and 90% of the adult population in the UK is immune, 
+having had the childhood infection (this is greatly reduced in immigrant 
+populations). The incubation period can be between 10 -21 days but the 
+infectious period is from 2 days prior to the vesicles appearing until they are 
+completely dry (about 5 days from onset of rash). 
+1.2 Shingles occur in individuals who have had chickenpox in the past. It is the re -
+activation of the virus which has remained latent since the initial infection. 
+1.3 Antenatal screening for varicella susceptibility is not currently recommended 
+in the UK. 
+ 
+2 Contact with Varicella Virus (chickenpox or shingles) in the 
+antenatal period 
+ Infections in pregnancy (RSCH PRH only ) MP008 
+Page 15 of 20 
+Brighton & Sussex University Hospitals 2.1 Take a careful history to establish the nature of the contact (significant contact 
+is being in the same room for 15 mins, face -to-face contact or being on an 
+open ward) and how susceptible the woman is. 
+2.1.1 Women who have not had chicken pox or are unsure about whether 
+they have had chicken pox previously should have a blood test to 
+check Varicella zoster virus (VZV) immunity. Contact Virology team to 
+ask if booking blood samples can be used or determine whether 
+further samples are required. 
+2.1.2 As of 6th July 2018, Public Health England has restricted the use of 
+varicella zoster immunoglobulin (VZIG) due to a supply shortage. The 
+below advice is applicable until further notice: 
+2.1.3 If the pregnant woman is not immune to VZV and she has had 
+significant contact with the virus, management varies depending on 
+gestation. 
+• In the first 20 weeks of pregnancy, give VZIG as soon as 
+possible. VZIG is effective when given up to 10 days after 
+contact. Ideally this should be given by the GP, but if this 
+is not possible she must be seen urgently in DAU or 
+triage (provided she has not developed a rash) for VZIG 
+to be given. Virology team will arrange for VZIG to be 
+issued by pharmacy. 
+• If > 20 weeks gestation, aciclovir should be offered 
+(800mg four times a day from day 7 to 14 after 
+exposure). 
+2.1.4 If VZIG is given, the woman must be treated as though infectious from 
+days 8 -28 after VZIG administered (therefore minimizing risk to other 
+vulnerable groups). 
+2.1.5 If further significant exposure is recorded within 3 weeks of the 
+initial VZIG, a second dose of VZIG is necessary. 
+3 Pregnant women who have developed chickenpox 
+ 
+3.1 If maternal infection occurs in the first 28 weeks of pregnancy, congenital 
+varicella syndrome may result, despite this being ra re (approx. 2% in the first 
+20 weeks gestation) there is a high fetal mortality. Fetal varicell a syndrome is 
+characterized by one or more of the following: 
+ Infections in pregnancy (RSCH PRH only ) MP008 
+Page 16 of 20 
+Brighton & Sussex University Hospitals • scarring of skin in a dermatomal distribution 
+• eye defects (micropthalmia, chorioretinitis, cataracts) 
+• hypoplasia of the limbs 
+• neurological defects (microcephaly, mental restriction, 
+bladder/bowel dysfunction). 
+ 
+3.2 All women who have had chickenpox prior to 28 weeks gestation should be 
+referred to antenatal clinic (see Appendix A below) once the rash is completely 
+dry. 
+3.3 Pregnant women who develop a rash (any gestation) should be advised to 
+immediately contact their GP. 
+3.4 The woman should be advised to avoid contact with other susceptible 
+individuals (e.g. other pregnant women, neonates) until the rash is completely 
+dry. 
+3.5 Women presenting within 24 hours of the onset of the rash should be 
+prescribed oral aciclovir if more than 20 weeks gestation. Aciclovir may 
+considered in women at <20 weeks gestation. Counsel the women on the risks 
+and benefits of taking acyclovir, and that its use is not licensed in pregnancy. 
+Refer to BNF for further information 
+ 
+3.6 Women should be alerted to complications of Varicella infection: e.g. 
+pneumonitis, hepatitis, bleeding disorder, encephalitis and to attend hospital if 
+symptoms of the above are apparent. Those with immunosuppressive 
+disorders also should be assessed in a hospital setting on the Medical ward 
+involving the virologist and medical team. 
+ Infections in pregnancy (RSCH PRH only ) MP008 
+Page 17 of 20 
+Brighton & Sussex University Hospitals 4 Maternal infection/ rash at term 
+4.1 If maternal infection is at term, the risk of varicella of newborn is greatest . 
+Avoid elective delivery until 5 -7 days after the onset of maternal rash, 
+allowing passive transfer of maternal antibodies to the fetus. 
+4.2 The neonate should have an ophthalmic examination, if there is clinical 
+evidence of neonatal varicella infection. 
+4.3 If within 7 days of the maternal rash appearing the birth occurs, or mother 
+develops rash within 7 days after birth, the neonate should be given VZIG. 
+4.4 If within 4 days of the maternal rash appearing the birth occurs, or mother 
+develops rash within 2 days after birth, the neonate should be considered for 
+an additional 10 day course of Aciclovir iv. 
+4.5 Breast feeding is encouraged, if they intend to, unless there are lesions around 
+the nipples. 
+4.6 If the baby develops rash despite VZIG prophylaxis, viral lesion swab should be 
+taken for VZV PCR and Aciclovir i.v. started. 
+4.7 If a non -immune neonate is exposed to chickenpox or shingles within the first 
+seven days of life, VZIG should be given. If the baby develops rash despite VZIG 
+prophylaxis, viral lesion swab should be taken for VZV PCR. 
+4.8 If neonatal varicella infection is suspected - contact the Neonatologist. Aciclovir 
+is often prescribed in these circumstances. 
+4.9 Click the link to access a patient information leaflet on chickenpox 
+
+ Infections in pregnancy (RSCH PRH only ) MP008 
+Page 18 of 20 
+Brighton & Sussex University Hospitals Section 3 
+1 Parvovirus Infection (Slapped Cheek Fever) 
+ 
+If there has been contact with Parvovirus B19 in pregnancy the lab will be able to test the 
+booking bloods to ascertain if she is immune or susceptible. If immune, no further action is 
+required. If susceptible, send a clotted blood sample to virology. If negative repeat 2 -3 weeks 
+later. If there is a suspicion of actual Parvovirus infection in a pregnant woman, viral “green” 
+throat/mouth swab (for parvovirus B19 DNA) and clotted blood sample should be taken and 
+sent to virology. Clinical features may be indistinguishable from rubella infection. Check the 
+woman’s booking blood results for rubella immunity status. See MP005 Protocol, A/N 
+Screening: Infectious Diseases - Rubella antibody, for further guidance. 
+ 
+1.1 If there is confirmed Parvovirus infection in the woman she should be 
+discussed with a Fetal Medicine consultant (directly or via the Antenatal 
+Screening co -ordinators). She should not be seen in a clinic until after the 
+infection has passed and she is no longer infectious (i.e. approx 1 -2 weeks later 
+or if a rash appears). Scans should be performed form 2 -3 weeks up until 10 
+weeks or so after her infection. Below 18 weeks the scans are performed to 
+confirm viability and rule out hydrops. From 18 weeks onwards fetal Doppler 
+assessments should be performed to look for signs of fetal anaemia by 
+measuring MCA peak systolic velocity (NOT PI). The sonographers do not 
+currently perform this measurement so please inform the Antenatal Screening 
+Co-ordinator or fetal medicine consultant who will make the necessary 
+arrangements. 
+1.2 If fetal hydrops is found at any time on a scan it must be discussed urgently 
+with a consultant. If 18 weeks or more urgent referral to a tertiary Fetal 
+Medicine Unit is indicated (e.g. Harris Birthright Unit at King’s College 
+Hospital). Otherwise discuss with Fetal Medicine consultant. 
+ Infections in pregnancy (RSCH PRH only ) MP008 
+Page 19 of 20 
+Brighton & Sussex University Hospitals 1.3 5.5 Parvovirus Infection (Slapped Cheek Fever) – Flow Diagram 
+
+Maternal exposure to B19V & 
+booking bloods do not show 
+immunity 
+Check maternal anti-B19V IgG and IgM & viral DNA titre 
+IgG + 
+IgM - 
+IgG - 
+IgM + 
+IgG - 
+IgM - 
+IgG + 
+IgM + 
+Past infection 
+ Recent infection 
+confirmed by parvovirus DNA PCR 
+No past or recent infection 
+No fetal risk 
+ Fetal assessment 
+ Risk assessment and 
+counselling 
+Refer to Fetal Medicine Consultant 
+Ultrasound and measurement of 
+MCA -PSV from 2 – 10 weeks post infection 
+ Repeat maternal 
+serum sample after 
+2-3 weeks 
+Weekly ultrasound for MCA PSV 
+(2-10 weeks post infection) 
+Expectant policy 
+No hydrops fetalis or 
+fetal anaemia 
+Hydrops fetalis or fetal 
+anaemia on MCA PSV 
+Urgent referral to tertiary fetal medicine 
+centre (? fetal blood sampling and intra -
+uterine transfusion) Infections in pregnancy (RSCH PRH only ) MP008 
+Page 20 of 20 
+Brighton & Sussex University Hospitals 
+2 References: 
+ 
+Group B Streptococcal Disease, Early -onset. RCOG Green -top Guideline No. 36. Sep 2017 
+ 
+The prevention of early onset Neonatal group B streptococcus disease in UK obstetric units 
+2007 
+ 
+Group B Streptococcus (GBS) in pregnancy and newborn babies. Patient information leaflet. 
+RCOG. Dec 2017. 
+
+Management of Genital Herpes in Pregnancy. BASSH/RCOG Guideline. Oct 2014. 
+ 
+Chickenpox in Pregnancy. Green -top Guideline No. 13. Jan 2015. 
+ 
+UK National Screening Committee recommendation on Varicella susceptibility screening in 
+pregnancy. Mar 2016. 
+ 
+Guidance on viral rash in pregnancy. Investigation, diagnosis and management of viral rash 
+illness, or exposure to viral rash illness, in pregnancy. Health Protection Agency. 2011. 
+ 
+Use of Varicella Zoster Immunoglobulin (VZIG) in pregnancy during supply shortage: advice 
+to GPs, obstetricians and midwives. Public Health England. July 2018.

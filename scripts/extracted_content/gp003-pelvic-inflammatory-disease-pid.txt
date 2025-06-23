@@ -1,0 +1,531 @@
+# Extracted from: GP003 Pelvic Inflammatory Disease (PID).pdf
+# Guideline ID: gp003-pelvic-inflammatory-disease-pid
+# Content length: 26285 characters
+# Processing date: 1750066900.7755942
+
+Pelvic Inflamm atory 
+Disease 
+
+Protocol: GP003 
+ 
+Date Agreed: May 2017 
+
+Pelvic Inflammatory Disease GP003 
+Brighton & Sussex University Hospital Trust Page 2 of 17 
+
+Manager responsible: VuiVun Wong 
+Author: Rebecca Tidswell 
+Protocol Title: Pelvic Inflammatory Disease (PID) 
+Protocol Numb er: GP003 
+Version num ber: 3 
+Approving Comm ittee: Women's Quality and Safety Committee 
+Date agreed: May 2017 
+Amended Date: March 2017 , September 2017 
+Review Date: March 2020 
+ 
+Pelvic Inflammatory Disease GP003 
+Brighton & Sussex University Hospitals Page 3 of 17 Contents 
+Key Principles ................................ ................................ ................................ ................................ .......... 4 
+Scope ................................ ................................ ................................ ................................ ....................... 4 
+Responsibilities ................................ ................................ ................................ ................................ ....... 4 
+1.0 Objectiv e standards ................................ ................................ ................................ .................... 5 
+1.1 Definition ................................ ................................ ................................ ................................ 5 
+1.2 Epidemiology ................................ ................................ ................................ .......................... 5 
+1.3 Pathogenesis ................................ ................................ ................................ .......................... 5 
+2.0 Isolation Rates ................................ ................................ ................................ ............................ 5 
+3.0 Diagnosis ................................ ................................ ................................ ................................ ..... 6 
+3.1 Sexual Histo ry................................ ................................ ................................ .......................... 6 
+4.0 Clinical Features ................................ ................................ ................................ .......................... 7 
+5.0 Investigations ................................ ................................ ................................ .............................. 8 
+6.0 Manage ment ................................ ................................ ................................ .............................. 8 
+6.1 Outpatient Management ................................ ................................ ................................ .............. 8 
+6.2 Inpatient Management ................................ ................................ ................................ ................. 8 
+6.3 General Advice ................................ ................................ ................................ .............................. 9 
+7.0 Patient information ................................ ................................ ................................ ..................... 9 
+8.0 Analgesia: ................................ ................................ ................................ ................................ .. 10 
+9.0 Antibiotic Treatment Regimens ................................ ................................ ............................... 11 
+9.1 Antibiotic guidance ................................ ................................ ................................ ............... 11 
+9.2 Penicillin Allergy ................................ ................................ ................................ .................... 11 
+9.3 IV to ORAL Switch ................................ ................................ ................................ ................ 12 
+10.0 NICE guidance on drug choice ................................ ................................ ................................ .. 12 
+11.0 IUCD and PID ................................ ................................ ................................ ............................. 14 
+11.1 NICE guidance on IUCD and PID ................................ ................................ ............................ 14 
+12.0 Follow Up ................................ ................................ ................................ ................................ .. 15 
+13.0 Training ................................ ................................ ................................ ................................ ..... 16 
+14.0 Monotoring Compliance ................................ ................................ ................................ ........... 16 
+15.0 References ................................ ................................ ................................ ................................ 17 
+Pelvic Inflammatory Disease GP003 
+Brighton & Sussex University Hospitals Page 4 of 17 KEY PRINCIPLES 
+ 
+These guidelines and algorithms are aimed to assist in decision making. They are not 
+designed to be prescriptive and you are not expected to use them in exclusion of 
+discussions with senior colleagues. 
+ 
+Evidence used to inform these guidelines had been drawn from RCOG, BASHH or NICE 
+guidelines. Where applicable other references are quoted. 
+ 
+SCOPE 
+This g uideline appl ies to women attending with suspected pelvic inflammatory disease, 
+which may be managed as an inpatient or outpatient. It covers recommendations on 
+diagnosis, treatment , and health promotion principles required for effective 
+management. 
+ 
+RESPONSIBILITIES 
+ 
+Gynaecologists, Nurses & Midwives: 
+ To access, read, understand and follow this guidance 
+ To use their professional judgement in application of this guidance 
+ 
+Management: 
+ To ensure the guideline is reviewed as required in line with Trust and national 
+recommendations 
+ To ensure the guideline is accessible to all relevant staff 
+ Brighton & Sussex University Hospitals NHS 
+Maternity Protocol: GP003 Pelvic Inflammatory Disease 
+Date of Issue: May 
+ Review Date: May 
+Pelvic Inflammatory Disease GP003 
+ 1.0 Objective Standards 
+1.1 Definition 
+ The clinical syndrome associated with ascending infection from the endocervix, 
+causing endometritis, parametritis, oophoritis, tubo -ovarian abscess, and/or pelvic 
+peritonitis. 
+ 
+1.2 Epidemiology 
+The incidence of PID is unknown and probably grossly underestimated as figures 
+are either based on inpatient episodes or cases treated in GUM outpa tients. 
+Many cases are treated in primary care and ~50% women have sub-clinical or 
+unrecognised disease. It is estimated to account for 1:60 GP visits by females 
+under 45 years. 
+ 
+Rates are probably increasing, reflecting increasing incidence of sexually 
+transmitted diseases, particularly Chlamydia. Behavioural factors that increase 
+the risk of sexually transmitted infections (STIs), such as younger age at first sexual 
+intercourse, multiple sexual partners, and frequency of partner change, are all 
+associated with increased risk of PID. 
+ 
+1.3 Pathogenesis 
+PID is c ommonly initiated by an STI, which predisposes to further colonisation by 
+organisms that would normally be non-pathogenic. The isolation of anaerobes 
+tends to be associated with more severe disease and anae robes are invariably 
+present in tubo-ovarian abscesses. The r isk of PID is also increased by other 
+factors that breech cervical host defences, such as IUCD insertion, childbirth, 
+miscarriage, surgical procedures, and TOP. 
+ 
+2.0 Isolation Rates 
+ 
+ Chlamydia trachomatis: 40% (14-65%) using EIA, DIF & culture (higher with 
+NAATs) 
+ Neisse ria gonorrhoea: 14% 
+ Anaerobes: 60% 
+ Brighton & Sussex University Hospitals NHS 
+Maternity Protocol: GP003 Pelvic Inflammatory Disease 
+Date of Issue: May 
+ Review Date: May 
+Pelvic Inflammatory Disease GP003 
+  Mycoplasma: 10-15% 
+ No organisms isolated: 25-50% 
+Complications 
+ Infertility (risk after 1 episode 8%, 2 episodes 
+ 9.5%, 3 episodes 40%), 
+ Ectopic pregnancy (9.5 times more likely) 
+ Chronic pelvic pain (9.8 times more likely) 
+ 
+With each infection, host defen ces become increasingly damaged and the risk of 
+complications rises with each subsequent insult. 
+3.0 Diagnosis 
+PID may be symptomatic or asymptomatic. Even when present, clinical symptoms and signs 
+lack sensitivity or specificity (positive predictive value of a clinical diagnosis is 65 -90% 
+compared to laparoscopic diagnosis). 
+ 
+Testing for gonorrhoea and chlamydia in the lower genital tract is recommended since a 
+positive result sup port diagnosis. The absence of infection at this site does not exclude PID 
+however. 
+ 
+An elevated ESR or CRP also supports diagnosis but is non -specific 
+The absence of endocervical or vaginal pus cells has a good negative predictive value (95%) 
+for a diagnosis of PID but their presence is non -specific (poor positive predictive value - 
+17%) 
+ 
+3.1 Sexual History 
+ The number of sexual partners within the last 3 months 
+ The duration of each relationship 
+ The date of last sexual intercourse with each partner 
+ Whether barrier contraception used within each relationship 
+ Brighton & Sussex University Hospitals NHS 
+Maternity Protocol: GP003 Pelvic Inflammatory Disease 
+Date of Issue: May 
+ Review Date: May 
+Pelvic Inflammatory Disease GP003 
+ 4.0 Clinical Features 
+The following features are suggestive of a diagnosis of PID 
+4.1 Symptoms 
+ Lower abdominal pain, usually bilateral 
+ Deep dyspareunia 
+ Abnormal vaginal bleeding, including post coital, inter -menstrual and 
+menorrhagia 
+ Abnormal vaginal or cervical discharge, which is often purulent 
+ 
+ 4.2 Signs 
+ Lower abdominal tenderness, which is usually bilateral 
+ Adnexal tenderness on bimanual vaginal examination 
+ Cervical motion tenderness on bimanual vaginal examination 
+ Fever >38°C 
+ 
+A diagnosis of PID, and empirical treatment, should be considered and offered in any young 
+woman (under 25 years of age) who is sexually active and has recent onset of bilateral lower 
+abdominal pain a ssociated with local tenderness on bimanual vaginal examination, in whom 
+pregnancy has been excluded. 
+ 
+ 4.2.1 Complicating Factors 
+ IUCD - Removal of IUCD should be considered and may be associated with 
+better short term clinical outcomes. The decision to remove the IUCD should 
+be balanced against the risk of pregnancy in those who have had otherwise 
+unprotected intercourse in the preceding seven days. Hormonal emergency 
+contraception may be appropriate for some women in this situation 
+ HIV - women with HIV may have more severe symptoms associated with PID, 
+but respond well to standard antibiotic therapy. No change in treatment 
+regime is required. 
+ Fitz-Hugh -Curtis Syndrome - this comprises right upper quadrant pain 
+associated with perihepatitis. Althoug h laparoscopic division of hepatic 
+adhesions has been performed, there is insufficient clinical trial evidence to 
+make specific recommendations for treatment beyond those for 
+uncomplicated PID 
+ Brighton & Sussex University Hospitals NHS 
+Maternity Protocol: GP003 Pelvic Inflammatory Disease 
+Date of Issue: May 
+ Review Date: May 
+Pelvic Inflammatory Disease GP003 
+ 5.0 Investigations 
+ Urinalysis, including pregnancy test 
+ Bloods, inc luding FBC and CRP 
+ Observations, temperature 
+ Routine swabs 
+o Endocervical Chlamydia & gonor rhoea 
+o High vaginal swab (black charcoal) 
+ Pelvic Ultrasound, particularly if symptoms/signs of moderat e/severe 
+disease 
+6.0 Management 
+It is likely that delaying treatment increases the long term sequelae , such as ectopic 
+pregnancy, infertility and chronic pelvic pain. Therefore, a low threshold for empiric 
+treatment is recommended. Broad spectrum antibiotics are required to cover N. 
+gonorrhoeae, C. trachomatis and a variety of anaerobic and aerobic ba cteria commonly 
+found in the upper genital tract in women with PID . 
+Treatment must be effective (>95% cure rate), easy to take, have low side effects, and be 
+given promptly. 
+ 
+If gonococcus diagnosed on NAATs the patient should be reviewed by genitourinary 
+medicine so cultures can be taken for gonorrhoea & contact tracing carried out. Please 
+contact the liaison Health Advisor on 07789 995086 or ext. 4716 
+
+6.1 Outpatient Management 
+Patients seen in A&E and treated as outpatient must be provided with emergency 
+drug packs. 
+ 
+6.2 Inpatient Management 
+ If any of the following features are present, c onsider admission, IV antibiotics 
+and/or laparoscopy: 
+ Severe or atypical disease 
+ Temp> 38oC 
+ Nausea & vomiting, 
+ Peritonism 
+ WBC >15 
+ Brighton & Sussex University Hospitals NHS 
+Maternity Protocol: GP003 Pelvic Inflammatory Disease 
+Date of Issue: May 
+ Review Date: May 
+Pelvic Inflammatory Disease GP003 
+  Pregnant or adolescent patient 
+ If the diagnosis is uncertain, pelvic abscess suspected or there is a 
+possibility of a surgical emergency 
+ If the patient has not responded to out-patient therapy, or is intolerant to 
+oral therapy 
+6.3 General Advice 
+ Rest advised for those with severe disease. 
+ Both patient and partner should abstain from sexual contact until 
+completion of treatment and review 
+ Explanation of the treatment and its possible adverse effects 
+ Patient must avoid alcoh ol if being treated with metronidazole 
+ Potential OCP interactions with antibiotics ( advise to abstain from sexual 
+contact whilst on antibiotics ) 
+ Importance of compliance to treatment 
+ Importance of follow up 
+ All patients must be asked to give consent for follow up for themselves and 
+sexual contacts. 
+ It is essential that sexual partners also receive treatment, whether or not an 
+organism is identified on tests (they should contact CNC for treatment) 
+7.0 Patient informatio n 
+ 
+Ensure patients receive patient information leaflet - click here for RCOG 
+leaflet (https://www.rcog.org.uk/globalassets/documents/patients/patient -information -
+leaflets/gynaecology/pi -acute -pid.pdf ). 
+ 
+We should discuss long term sequelae of PID with the patient, including the following: 
+ Following treatment, fertility is usually maintained but there remains a risk of 
+future infertility, chronic pelvic pain or ectopic pregnancy 
+ Clinically more severe disease is associated with a gre ater risk of sequelae 
+ Repeated episodes of PID are associated with an exponential increase in the 
+risk of infertility 
+ The earlier treatment is given, the lower the risk of future fertility problems 
+ Future use of barrier contraception will significantly reduce risk of PID 
+ The need to screen/treat her sexual contacts for infection to prevent her 
+becoming re-infected 
+ 
+Brighton & Sussex University Hospitals NHS 
+Maternity Protocol: GP003 Pelvic Inflammatory Disease 
+Date of Issue: May 
+ Review Date: May 
+Pelvic Inflammatory Disease GP003 
+ 8.0 Analgesia 
+All patients should be offered adequate analgesia and anti-emetics eg: 
+ Metoclopramide oral / IM 10mg TDS or cyclizine 50mg IM/PO TDS 
+ Ibuprofen 400mg TDS 
+ Paracetamol oral / IV 1g QDs 
+ Brighton & Sussex University Hospitals NHS 
+Maternity Protocol: GP003 Pelvic Inflammatory Disease 
+Date of Issue: May 
+ Review Date: May 
+Pelvic Inflammatory Disease GP003 
+ 9.0 Antibiotic Treatment Regimens 
+9.1 Antibiotic guidance 
+ 1st Line Penicillin Allergy 
+Outpatient 
+ 
+Non -pregnant Ofloxacin oral 400mg bd for 14 
+days 
++ 
+Metronidazole oral 400mg bd for 5 days 
+ 
+Pregnant 
+Or Ofloxacin 
+Contraindicated Ceftriaxone 500mg IM stat 
+(omit if penicillin allergy, IgE mediated e.g anaphylaxis, if 
+gonococcus diagnosed on NAAT, discuss with GUM) 
++ 
+Clarithromycin oral 500mg bd for 
+14 days 
++ 
+Metronidazole oral 400mg bd for 5 days 
+Inpatient 
+
+Non -Pregnant Ceftriaxone IV 2g od for 14 days 
+(omit if penicillin allergy, IgE mediated e.g anaphylaxis, if 
+gonococcus diagnosed on NAAT, discuss with GUM) 
++ 
+Ofloxacin IV 400mg bd for 14 days 
++ 
+Metronidazole IV 500mg tds for 14 days 
+
+ Pregnant 
+Or Ofloxacin 
+Contraindicated Ceftriaxone IV 2g od for 14 days 
+(omit if penicillin allergy, IgE mediated e.g anaphylaxis, if 
+gonococcus diagnosed on NAAT, discuss with GUM) 
++ 
+Clarithromycin IV 500mg bd for 
+14 days 
++ 
+Metronidazole IV 500mg tds for 
+14 days 
+*UK gonorrhoea resistance to quinolones in heterosexual women is about 15% 
+therefore if patient is high risk for gonorrhoea (patient’s partner has 
+gonorrhoea, clinically severe disease, following sexual contact abroad), discuss 
+alternative regimens with genitourinary medicine. 
+ 
+9.2 Penicillin Allergy 
+ 
+ Brighton & Sussex University Hospitals NHS 
+Maternity Protocol: GP003 Pelvic Inflammatory Disease 
+Date of Issue: May 
+ Review Date: May 
+Pelvic Inflammatory Disease GP003 
+ Reaction Which antibiotic can be given 
+ Penicillin Cephalosporin Other beta -
+lactams 
+Anaphylaxis No No No 
+Urticaria No No No 
+Pruritic rash (immediate) No No No 
+Laryngeal oedema/ 
+angioedema/bronchospasm No No No 
+Minor rash (non- confluent, 
+non-pruritic, restricted to 
+small area of the body) With caution in 
+serious infection Yes Yes 
+Rash occurring > 72 hours 
+post penicillin exposure With caution in 
+serious infection Yes Yes 
+Nausea, vomiting, 
+diarrhoaea Yes Yes Yes 
+
+9.3 IV TO ORAL SWITCH 
+ 
+ IV antibiotics should be switched to oral equivalents and complete 14 days 
+after 48 hours if:- 
+ Temperature < 38°c for at least 24 hours 
+ Clinical improvement observed 
+ WCC & CRP improving 
+ Haemo dynamically stable 
+ Oral route viable (no evidence of malabsorption, vomiting or unsafe 
+swallow) 
+ 
+10.0 NICE guidance on dr ug choice during very early pregnancy 
+(before a positive pregnancy test ) 
+ 
+ PARACETAMOL : experience suggests this can be used at any time during 
+pregnancy or breastfeeding [ NTIS, 2004 ; Schaefer et al, 2007 ]. 
+ NSAIDS: The UK Teratology Information Service (UKTIS, formerly the National 
+Teratology Information Service [NTIS]), reviewed safety data of NSAIDs from 
+ Brighton & Sussex University Hospitals NHS 
+Maternity Protocol: GP003 Pelvic Inflammatory Disease 
+Date of Issue: May 
+ Review Date: May 
+Pelvic Inflammatory Disease GP003 
+ published research and post marketing surveillance systems. They concluded that 
+'the available data do not indicate that exposure to ibuprofe n before 30 weeks of 
+pregnancy is associated with an increased risk of congenital defects or 
+spontaneous abortions' [ NTIS, 2004 ]. 
+ ANTIBIOTICS : The RCOG recommends that the risk of giving any of their 
+recommended antibiotic regimens in very early pregnancy (before a positive 
+pregnancy test) is low, since significant drug toxicity results in failed implantation 
+[RCOG, 2009 ], and BASHH states that the risk of giving any of the recommended 
+antibiotic regimens in very early pregnancy (prior to a pregnancy test becoming 
+positive) is justified by the need to provide effective therapy and the low risk to 
+the fetus [ BASHH, 2011a ]. 
+ CEFTRIAXONE has not specifically been studied during pregnancy. However, the 
+risk associated with use of cephalosporins during pregnancy is thought to be low 
+and, a lthough data are limited for individual agents such as ceftriaxone, the 
+cephalosporins as a class are considered to be an appropriate choice during 
+pregnancy [ NTIS , 2008b ]. Although ceftriaxone crosses the placental barrier, it 
+has not been associated with adverse events on fetal development in laboratory 
+animals [ ABPI Medic ines Compendium, 2009 ]. 
+ DOXYCYCLINE is contraindicated beyond the 15th week of gestation because, 
+from the 16th week of pregnancy it causes tooth and bone discolouration and 
+inhibits bone growth. However, it can be used in the first trimester. Inadvertent 
+first-trimester use of tetracyclines occurs frequently and has not been associated 
+with an increased risk of congenital malformations [ Schaefer et al, 2007 ]. 
+ METRO NIDAZOLE has been in clinical use for a long time, and experience 
+suggests that it is not teratogenic in humans [ Schaefer et al, 2007 ]. A recent 
+prospective contro lled study in 228 women exposed to metronidazole in 
+pregnancy, 86% of whom had first trimester exposure, confirms these findings 
+[Schaefer et al, 2007 ]. 
+ OFLOXACIN has only limited pregnancy -exposure data. Quinolones have caused 
+arthropathy in animal studies. However, a recent study (most of the data are on 
+ciprofloxacin and norfloxacin, but some are on ofloxacin) did not find that 
+quinolone use in the first trimest er of pregnancy was associated with an 
+increased risk of malformations or other adverse effects on pregnancy outcome 
+[Schaefer et al, 2007 ]. 
+ There are fewer publis hed data on the use of AZITHROMYCIN rather than 
+ERYTHROMYCIN during pregnancy and breastfeeding. The limited published data 
+and follow -up data collected by the UK Teratology Information Service (UKTIS, 
+formerly the National Teratology Information Service [ NTIS]), do not 
+ Brighton & Sussex University Hospitals NHS 
+Maternity Protocol: GP003 Pelvic Inflammatory Disease 
+Date of Issue: May 
+ Review Date: May 
+Pelvic Inflammatory Disease GP003 
+ demonstrate an increased risk of congenital malformations following exposure to 
+azithromycin in human pregnancy [ NTIS, 2008a ]. 
+11.0 IUCD and PID 
+Removal of IUCD should be considered and may be associated with better short term clinical 
+outcomes. The decision to remove the IUCD should be balanced against the risk of 
+pregnancy in those who have had otherwise unprotected intercourse in the preceding seven 
+days. Hormonal emergency contraception may be appropriate for some women in this 
+situation (BASHH) . 
+ 
+11.1 NICE guidance on IUCD and PID: 
+ Evidence on whether or not to remove intrauterine contraception in a woman who has 
+pelvic inflammatory disease (PID) is limited and conflicting. There are no long term data on 
+the effects on fertility. 
+ Expert opinion differs regarding the management of women with PID who have 
+intrauterine contraception: 
+ Brighton & Sussex University Hospitals NHS 
+Maternity Protocol: GP003 Pelvic Inflammatory Disease 
+Date of Issue: May 
+ Review Date: May 
+Pelvic Inflammatory Disease GP003 
+  The Faculty of Sexual and Reproductive Healthcare (FSRH), does not routinely 
+recommend the removal of intrauterine contraception. The Faculty's Clinical 
+Effectiveness Unit supports the continued use of intrauterine contraception and 
+appropriate antibiotic treatment if PID is suspec ted; there is no need to remove 
+the device unless symptoms fail to resolve within 72 hours, or the woman wants 
+it removed [FFPRHC, 2006 ; FSRH, 2007 ]. 
+ The Royal College of Obstetricians and Gynaecologists [RCOG, 2009 ] advises 
+that consideration should be given to removing the device, especially if 
+symptoms have not resolved within 72 hours. 
+ The British Association for Sexual Health and HIV recommends considering 
+removing the device if the woman develops PID. They advise balancing th e 
+decision to remove the device against the risk of pregnancy if the woman has 
+had sexual intercourse in the preceding 7 days [ BASHH, 2011a ]. 
+ The World Health Orga nisation - selected practice recommendations for 
+contraceptive use state that [ WHO, 2004 ]: 
+o There is no need for removal of the intrauterine contra ception if the 
+woman wishes to continue its use. 
+o If the woman wishes removal, it should be removed after antibiotic 
+treatment has been started. 
+o If the infection does not improve, generally the course would be to 
+remove the device and continue antibiotic treatment. If the device is not 
+removed, the antibiotic should also be continued. In both cases the 
+woman should be monitored closely. 
+12.0 Follow Up 
+ 
+All patients with a suspected diagnosis of PID should be referred to the liaison 
+health advisors at the Claude Nicole Centre (CNC ) (This involves faxing the PID 
+proforma to 01273 6647 20). 
+ 
+For moderate to severe disease treated as an outpatient, patients should be re-assessed 
+at 48h and be investigated further if not responding to treatment. This should be 
+undertaken by the gynae cology team. 
+ 
+For patients who require prolonged inpatient stays or with severe disease, review by 
+the health advisors may be possible on the ward. 
+ 
+All patients will be reviewed at two weeks, by CNC, to assess: 
+ Brighton & Sussex University Hospitals NHS 
+Maternity Protocol: GP003 Pelvic Inflammatory Disease 
+Date of Issue: May 
+ Review Date: May 
+Pelvic Inflammatory Disease GP003 
+  Treatment compliance for both her and current sexual partner 
+ Clinical progress 
+ Whether patient has had sexual intercourse before review 
+ Whether partner(s) have received treatment 
+ To address any concerns the patient may have 
+ To re-iterate safer sex messages 
+ 
+13.0 Training 
+Please refer to the Training Needs Analysis document for details on staff training in 
+relation to this protocol. 
+ 
+14.0 Monitoring Compliance 
+Please refer to the Monitoring and Auditing docume nt for details on monitoring 
+comp liance for this protocol 
+ Brighton & Sussex University Hospitals NHS 
+Maternity Protocol: GP003 Pelvic Inflammatory Disease 
+Date of Issue: May 
+ Review Date: May 
+Pelvic Inflammatory Disease GP003 
+ 
+15.0 References 
+ 
+The guidance in this document is based on best practice and current RCOG clinical 
+guidelines 
+http://www.rcog.org.uk/files/rcog-corp/uploaded - 
+files/T32PelvicInflamatoryDisease2008MinorRevision.pdf. 
+http://www.bashh.org/do cuments/3205 
+http://www.ffprhc.org.uk/admin/up loads/CEUGuidanceDrugInteractionsHormonal. 
+pdf 
+ 
+National Teratology Information Service – personal communication 7th August & 7th 
+Septemb er 2009 
+ 
+In addition some primary research has been used 
+1. Weström L, Joesoef R, Reynolds G, Hagdu A, Thompson SE. Pelvic 
+inflammatory disease and fertility. A cohort study of 1,844 women with 
+laparoscopically verified disease and 657 control women with normal 
+laparoscopic results. Sex Transm Dis. 1992; 19(4): 185-92 
+2. Westrom L. Effect of pelvic inflammat ory disease on fertility. Venereology. 
+1995; 8(4): 219-22 
+3. Adler MW, Belsey EH, O'Connor BH. Morbidity associated with pelvic 
+inflammatory disease. Br J Vener Dis. 1982;58(3):151-7 
+4. Managem ent of PID (2011) British association for sexual health and HIV. 
+http://www.bashh.org/gu idelines

@@ -1,0 +1,772 @@
+# Extracted from: PIIS0002937822004781.pdf
+# Guideline ID: piis0002937822004781
+# Content length: 58308 characters
+# Processing date: 1750159555.724577
+
+Society for Maternal-Fetal Medicine
+Consult Series #63: Cesarean scar ectopic pregnancy
+Society for Maternal-Fetal Medicine (SMFM); Russell Miller, MD; and Cynthia Gyam ﬁ-Bannerman, MD; Publications
+Committee *
+The American College of Obstetricians and Gynecologists (ACOG) and the Society of Family Planning endorse this docu-
+ment. The American Society for Reproductive Medicine supports this document.This document replaces SMFM Consult Series #49: Cesarean scar pregnancy (May 2020).
+Cesarean scar ectopic pregnancy is a complication in which an early pregnancy implants in the scar from
+a previous cesarean delivery. This condition presents a substantial risk for severe maternal morbidity andmortality because of challenges in securing a prompt diagnosis. Ultrasound is the primary imagingmodality for cesarean scar ectopic pregnancy diagnosis, although a correct and timely determination
+can be dif ﬁcult. Surgical, medical, and minimally invasive therapies have been described for cesarean
+scar ectopic pregnancy management, but the optimal treatment is unknown. Patients who declinetreatment of a cesarean scar ectopic pregnancy should be counseled regarding the risk for severemorbidity. The following are the Society for Maternal-Fetal Medicine recommendations: we recom-mend against expectant management of cesarean scar ectopic pregnancy (GRADE 1B); we suggestthat operative resection (with transvaginal or laparoscopic approaches when possible) or ultrasound-guided uterine aspiration be considered for the surgical management of cesarean scar ectopicpregnancy and that sharp curettage alone be avoided (GRADE 2C); we suggest intragestationalmethotrexate for the medical treatment of cesarean scar ectopic pregnancy, with or without othertreatment modalities (GRADE 2C); we recommend that systemic methotrexate alone not be used totreat cesarean scar ectopic pregnancy (GRADE 1C); in patients who choose expectant management
+and continuation of a cesarean scar ectopic pregnancy, we recommend repeated cesarean delivery
+between 34 0/7 and 35 6/7 weeks of gestation (GRADE 1C); we recommend that patients with acesarean scar ectopic pregnancy be advised on the risks of another pregnancy and counseledregarding effective contraceptive methods, including long-acting reversible contraception and per-manent contraception (GRADE 1C).
+Key words: cesarean scar ectopic pregnancy, cesarean scar pregnancy, placenta accreta spectrum
+Introduction
+Cesarean scar ectopic pregnancy (CSEP) is a complication
+in which an early pregnancy implants in the scar from aprevious cesarean delivery. Perhaps because of highworldwide cesarean delivery rates, there seems to beincreased incidence and recognition of this condition over
+the past 2 decades. The clinical presentation is variable, and
+many are asymptomatic at presentation. Patients maypresent to various obstetrical and gynecologic care pro-viders, but maternal-fetal medicine subspecialists are ofteninvolved in the diagnosis and subsequent management ofthese pregnancies. CSEP can be dif ﬁcult to diagnose in a
+timely fashion. Ultrasound imaging is the primary imagingmodality for CSEP diagnosis. Expectantly managed CSEPis associated with high rates of severe maternal morbidity,such as hemorrhage, placenta accreta spectrum (PAS), anduterine rupture. Given these substantial risks, de ﬁnitive
+surgical or medical management is recommended afterCSEP diagnosis. Several surgical and medical treatmentshave been described for this disorder; however, optimal
+management remains uncertain at this time. For this reason,
+registries have been created for providers to submit data ondiagnosis, natural history, and management ( https://csp-
+registry.com and https://octri.ohsu.edu/redcap/surveys/?
+s¼XCK7FLEA84 ).
+Corresponding author: Society for Maternal-Fetal Medicine (SMFM):
+Publications Committee. pubs@smfm.org
+SEPTEMBER 2022 B9
+SMFM Consult Series
+smfm.orgWhat is cesarean scar ectopic pregnancy,
+and what is its incidence?
+CSEP occurs when an embryo implants in the ﬁbrous scar
+tissue of a previous cesarean hysterotomy.1This abnormal
+implantation presents a substantial risk of severe maternalmorbidity and mortality complicated by challenges in
+securing a timely diagnosis and uncertainty regarding
+optimal treatment once identi ﬁed.
+Although relatively uncommon, reported international
+experience with CSEP seems to be increasing, likely becauseof high contemporary cesarean delivery volume. High cesar-ean delivery rates are observed in many of the world ’s most
+populous developed nations, with an estimated 18.5 millionwomen undergoing this procedure each year.
+2Consequently,
+there is mounting collective awareness of rare cesarean
+delivery-associated complications such as CSEP.
+The true incidence of CSEP is unknown because the
+condition is likely underdiagnosed and underreported. Re-ported single-center estimates of incidence range from 1 in1800 to 1 in 2656 of overall pregnancies.
+3,4Although CSEP
+incidence is believed to have increased over time, otherfactors, including improved imaging with ultrasound and
+magnetic resonance imaging (MRI), increased use of
+transvaginal ultrasonography, and possibly increasedphysician awareness, may contribute to a perceived in-crease in incidence.
+What is the pathogenesis of cesarean scar
+ectopic pregnancy?
+Although the pathogenesis of CSEP is incompletely un-
+derstood, the mechanism has been postulated to involve
+blastocyst implantation within a microscopic dehiscencetract in the scar from a previous cesarean delivery.
+5e8
+Because of the ﬁbrous nature of scar tissue, these inher-
+ently de ﬁcient implantation sites are at risk for dehiscence,
+PAS, and hemorrhage as the CSEP enlarges.
+CSEP and placenta accreta seem to have similar disease
+pathways and may exist along a common disease contin-
+uum.9In one series in which pregnancies complicated by
+either CSEP or early PAS underwent histopathologic anal-ysis by blinded pathologists, ﬁndings were indistinguishable
+between groups, with a high interobserver correlation.
+10
+Histopathologic analyses for both groups were character-ized by myometrial or scar tissue villous invasion with little orno intervening decidua.
+The implantation patterns of CSEP can be categorized as
+either endogenic (also referred to as “on the scar ”) or exo-
+genic ( “in the niche ”).
+11,12Endogenic is de ﬁned as growing
+within the uterine cavity and exogenic as arising from adeeply implanted gestational sac into the scar that maygrow toward the bladder or abdominal cavity. Theseultrasonographic appearances may in ﬂuence obstetrical
+prognosis.
+11,12It has recently been suggested that early
+ﬁrst-trimester determination of whether a CSEP is growing
+“on the scar ”or“in the niche ”of the previous cesareanhysterotomy may be used to predict subsequent pregnancy
+outcome12,13(Figure 1 ). In one small retrospective study,
+patients with pregnancies growing “on the scar ”had vari-
+able obstetrical outcomes, whereas those with pregnanciesgrowing “in the niche ”all underwent hysterectomy with PAS
+at delivery.
+13
+How does cesarean scar ectopic pregnancy
+present clinically, and are there known risk
+factors?
+Although second-trimester diagnoses have been reported,
+CSEP usually presents in the ﬁrst trimester. In one review of
+published CSEP case series, the average gestational age atdiagnosis was 7.5 /C62.5 weeks.
+11The clinical presentation is
+variable, ranging from asymptomatic ultrasonographicdetection to a presentation with uterine rupture andFIGURE 1
+Implantation patterns of cesarean scar
+ectopic pregnancy
+A,“On-the-scar” or endogenic form has a considerable myometrial layer
+(clear space ) between the placenta and anterior uterine surface ( solid
+arrow ).B,“In-the-niche” or exogenic form has a thin myometrial inter-
+phase below the placenta ( between the 2 arrows ). (Used with permission
+from Kaelin Agten et al.13)
+CX, cervix; P, placenta.
+Society for Maternal-Fetal Medicine (SMFM). Consult Series #63: Cesarean scar ectopic
+pregnancy. Am J Obstet Gynecol 2022.SMFM Consult Series smfm.org
+B10 SEPTEMBER 2022hemoperitoneum, typically in the absence of a timely diag-
+nosis. In the previously mentioned review, approximatelyone-third of cases were asymptomatic, and approximately
+one-third presented with painless vaginal bleeding.
+11Nearly
+one-quarter of presentations involved pain, with or withoutbleeding. Patients with ruptured CSEP may also presentwith hemodynamic collapse.
+Although by de ﬁnition previous cesarean delivery is a
+prerequisite for CSEP development, and placenta previamay modify this risk, it is not clear if the number of previouscesarean deliveries further increases the risk. Notwith-
+standing that some reports and anecdotal observations
+suggest an overrepresentation of women with multipleprevious cesarean deliveries in CSEP cohorts, a review ofthe literature reveals that 52% of CSEP cases occur inwomen with a single previous cesarean delivery.
+1,3,14
+Interestingly, the indication for previous cesarean delivery
+may be a risk factor for CSEP, with previous delivery forbreech presentation seeming to be a more common indi-
+cation in women who later experience CSEP.
+6,11,15,16It is
+hypothesized that the lower uterine segment is often lesswell developed in pregnancies that are delivered for mal-presentation, and that a thicker hysterotomy scar presents agreater risk of poor healing and resultant microscopicdehiscence. No published data exist regarding an associ-ation between the hysterotomy closure technique andCSEP.
+How is cesarean scar ectopic pregnancy
+diagnosed?
+Ultrasound imaging is the primary imaging modality for
+CSEP diagnosis, although a correct and timely determina-tion can be dif ﬁcult. The initial ﬁnding of a low, anteriorly
+located gestational sac should raise concern for a possibleCSEP and warrants further investigation.
+17When patients
+with suspected CSEP are evaluated, a high degree of clin-
+ical suspicion is needed because a missed or delayeddiagnosis can result in uterine dehiscence, hemorrhage,loss of fertility, or maternal death.
+Transvaginal ultrasound imaging is the optimal modality
+for the evaluation of suspected CSEP because it providesthe highest image resolution
+18(Figures 2 and3). Grayscale
+combined with color Doppler ultrasound imaging is rec-
+ommended for CSEP diagnosis. One group suggests
+combining transvaginal ultrasound imaging with a trans-abdominal ultrasonogram with a full maternal bladder toprovide a “panoramic view ”of the uterus and the relation-
+ship between the gestational sac and bladder.
+6Although
+test performance characteristics are unknown and likelyinﬂuenced by examiner experience and skill, in one review,
+94 of 111 (84.6%) CSEP cases were detected by trans-
+vaginal ultrasound imaging, with the remaining 17 (15.4%)
+pregnancies incorrectly diagnosed as incomplete abortionsor cervical pregnancies.
+11
+Since diagnostic criteria were ﬁrst proposed by Vial et al16
+in 2000, other authors have suggested modi ﬁcations toenhance the ultrasonographic detection of CSEP.3,18One
+approach proposes the following ultrasonographic criteriato diagnose CSEP: (1) an empty uterine cavity and endo-cervix; (2) placenta, gestational sac, or both embedded in
+the hysterotomy scar; (3) a triangular (at /C208 weeks of
+gestation) or rounded or oval (at >8 weeks of gestation)
+gestational sac that ﬁlls the scar “niche ”(the shallow area
+representing a healed hysterotomy site); (4) a thin (1 e3 mm)
+or absent myometrial layer between the gestational sac andbladder; (5) a prominent or rich vascular pattern at or in thearea of a cesarean scar; and (6) an embryonic or fetal pole,FIGURE 2
+Transvaginal 2-dimensional ultrasound image
+of a cesarean scar ectopic pregnancy
+A gestational sac can be seen clearly embedded within a hysterotomy
+scar.
+Society for Maternal-Fetal Medicine (SMFM). Consult Series #63: Cesarean scar ectopic
+pregnancy. Am J Obstet Gynecol 2022.
+FIGURE 3
+Doppler image of a cesarean scar ectopic
+pregnancy
+The image shows a prominent vascular pattern in the area of a hyster-
+otomy scar.
+Society for Maternal-Fetal Medicine (SMFM). Consult Series #63: Cesarean scar ectopic
+pregnancy. Am J Obstet Gynecol 2022.smfm.org SMFM Consult Series
+SEPTEMBER 2022 B11yolk sac, or both, with or without fetal cardiac activity
+(Figure 4 ). All of these criteria may not be observed. Espe-
+cially with very early diagnosis and before fetal cardiac ac-
+tivity, the patient should have con ﬁrmation of pregnancy (for
+example, a positive pregnancy test result).18Bulging or
+ballooning of the lower uterine segment in the midlinesagittal transabdominal view has also been considered tobe supportive of CSEP diagnosis.
+19,20
+A challenge in the diagnosis of CSEP is distinguishing it
+from other clinical entities with a similar ultrasonographicappearance. In a literature review that collected 751 cases
+of CSEP, 107 (13.6%) cases were originally misdiagnosed
+as cervical ectopic pregnancies, spontaneous abortions intransit, or low implantation of an intrauterine pregnancy.
+21
+Given the importance of prompt diagnosis, referral to anexperienced center for a second opinion may be preferableto ongoing follow-up examinations that are likely to delaydiagnosis.
+Are other modalities useful for the diagnosis
+of cesarean scar ectopic pregnancy?
+Transvaginal 3-dimensional ultrasound and 3-
+dimensional power ultrasound imaging have been usedin an attempt to enhance the accuracy of CSEP diag-nosis, with case reports supporting the utility of thesetechniques.
+22e24However, because of limited publishedexperience with these approaches, there are insuf ﬁcient
+data to support a bene ﬁt of routine use of 3-dimensional
+ultrasound imaging for the diagnosis or management of
+CSEP.
+MRI has been used as an adjunct to ultrasound imaging
+for the diagnosis of CSEP, although its incremental bene ﬁt
+over ultrasound imaging alone is unknown.1,6,7,25e27Both
+T1- and T2-weighted images can demonstrate a gestationalsac embedded within the lower uterine segment at the levelof a previous cesarean scar niche and an empty endometrialcavity and endocervix. In one MRI series, most CSEPs
+presented as a thin-walled diverticulum at the cesarean scar
+niche.
+27MRI may also provide useful information regarding
+the degree of invasion and whether there is evidence ofPAS.
+1Most authors do not recommend MRI as a routine
+component of CSEP evaluation because transvaginal ul-trasound imaging with color Doppler interrogation isbelieved to be reliable in securing a correct diagnosis.However, in cases in which ultrasound imaging is incon-
+clusive, MRI could be considered as an adjunct study. Given
+the risks associated with delayed diagnosis, the use ofmultiple ultrasound imaging approaches and modalities,such as MRI, is likely preferable to serial ultrasoundexaminations.
+CSEP diagnosis has been reported with the use of hys-
+teroscopy and laparoscopy.
+7,11,28,29Although theseFIGURE 4
+Ultrasonographic features of ﬁrst-trimester cesarean scar ectopic pregnancy
+A,Two-dimensional ultrasound image shows an empty uterine cavity and closed, empty endocervical canal. B,Low implantation with blood ﬂow around
+the gestational sac. C,Implantation “in the niche” with thin myometrial layer between gestational sac and bladder ( line).D,Doppler imaging shows blood
+ﬂow around the chorionic/gestational sac at the site of placental implantation. E,Altered bladder line with bulging of the gestational sac into the bladder.
+F,Placental lacunae in a cesarean scar pregnancy at 8 weeks of gestation. G,After 7 weeks of gestation, the gestational sac extends toward the uterine
+cavity, elongates, and eventually assumes an intracavitary position. The placenta stays anchored in the area of the scar/niche in its initial site of
+implantation.
+P, placenta.
+Society for Maternal-Fetal Medicine (SMFM). Consult Series #63: Cesarean scar ectopic pregnancy. Am J Obstet Gynecol 2022.SMFM Consult Series smfm.org
+B12 SEPTEMBER 2022methods are not recommended solely for diagnostic pur-
+poses, they can be used to con ﬁrm a diagnosis at the time of
+planned operative intervention. With laparoscopic exami-
+nation, CSEP has been described as an ecchymotic bulge
+with a “salmon-red ”appearance beneath the bladder at the
+level of the previous cesarean scar with an otherwisenormal-appearing uterus.
+7,29
+What is the natural history of cesarean scar
+ectopic pregnancy?
+Limited information exists regarding the natural history of
+CSEP because few recognized CSEPs continue to a viable
+gestational age. Those that do are believed to be at high riskfor severe complications in the second and third trimesters,although the rates of these complications are unknown.CSEPs have resulted in live births, often associated withPAS, cesarean hysterectomy, and massive hemorrhage atdelivery.
+11,15,30Series describing outcomes of expectantly
+managed CSEPs all involve small case numbers and high
+hysterectomy rates that range from 50% to 100% and are
+usually associated with PAS.10,31e34In case series of
+women who were treated expectantly, most required addi-tional treatment, and >50% had severe complications.
+30In
+one series that prospectively followed up 10 women with aﬁrst-trimester ultrasonographic diagnosis of a pregnancy
+implanted in or on a previous cesarean scar, all the womenhad PAS diagnosed at the time of the repeated cesarean
+delivery.
+32
+Because of the high risk of severe maternal morbidity,
+expectant management is not recommended for a recog-nized CSEP, and de ﬁnitive surgical or medical management
+generally is advised as soon as the diagnosis isconﬁrmed.
+1,11,13For cases where CSEP is suspected but
+the diagnosis is not certain, short-interval follow-up, asecond opinion, or additional imaging with MRI should be
+considered to establish a timely diagnosis without undue
+delay. We recommend against expectant management of CSEP
+(GRADE 1B).
+An exception to the recommendation against expectant
+management involves early CSEP characterized by fetaldeath or other evidence of early pregnancy failure. In thecase of an early CSEP that is de ﬁnitively diagnosed as
+nonviable, expectant management may be pursued with
+serial ultrasound surveillance, quantitative human chori-
+onic gonadotropin (hCG) measurements, and monitoringfor maternal symptoms such as bleeding or pelvic pain.However, it should be recognized that it can take severalmonths for a nonviable CSEP to resolve spontaneously,and expectant management of nonviable CSEPs has beenassociated with the development of a uterine arteriove-nous malformation (AVM).
+20Uterine AVM in this clinical
+context has been associated with persistent, severe
+vaginal bleeding and may require umbilical artery emboli-zation or even hysterectomy. In a series by Timor-Tritschet al,
+2020% (2/10) of expectantly treated women had an
+AVM.What cesarean scar ectopic pregnancy
+treatment modalities have been reported?
+Although many different options for the management of
+CSEP have been reported, the optimal treatment is un-known ( Table ). Surgical, medical, and minimally invasive
+therapies and various combinations of such treatments
+have been described. However, the medical literature con-
+sists predominantly of case series, with a limited number ofrandomized controlled trials comparing treatment ap-proaches. These series are in ﬂuenced by variable levels of
+clinical experience, institutional capability, provider skill,and case complexity, which hinders comparisons betweenstudies. Conclusions regarding optimal CSEP therapy arefurther limited by a lack of head-to-head comparisons be-
+tween medical and surgical approaches.
+The modalities that have been described for CSEP
+treatment include hysteroscopy, laparoscopy, laparotomy,open surgery, transvaginal surgery, sharp curettage, uter-ine aspiration, uterine artery embolization (UAE), metho-trexate (both local guided injection and systemicadministration), direct potassium chloride (KCl) injection,needle-guided sac decompression, high-intensity focused
+ultrasound imaging, the use of balloon catheters, and
+combinations of these methods.
+35In 1 review, the authors
+reported that treatment selection was in ﬂuenced by
+physician specialty, with gynecologic surgeons favoringcurettage, laparoscopy, and hysteroscopy, and obstetri-cians more readily pursuing needle-based injections andinterventional radiology involvement.
+21Publication bias
+likely also limits conclusions that can be drawn from the
+available literature.
+CSEP treatment decisions are guided by the principal
+goal of preserving maternal health, followed by the sec-
+ondary goal of preserving fertility when possible. Manage-ment decisions should be determined after consideringpregnancy viability, gestational age, maternal health, futurefamily planning wishes, physician skill and experience, andinstitutional resources. Preferred management may differbetween institutions on the basis of resources, personnel,and clinical experience. Even with efforts to tailor treatment
+strategies to individual patients and clinical presentations,
+there remains a substantial risk for complications with anymanagement approach.
+Systematic reviews have been inconsistent with regard to
+the identi ﬁcation of a single optimal CSEP treatment mo-
+dality that best balances procedural success and risks. In areview by Timor-Tritsch and Monteagudo
+21that included
+751 reported cases of CSEP and 31 different treatment
+approaches, a 44.1% complication rate was reported
+overall. Complications included unplanned emergency op-erations that included hysterectomy (4.8%), laparotomy(5.3%), and UAE (2.9%). Among procedures described bythe authors as ﬁrst-line, the highest complication rates were
+observed with intramuscular methotrexate alone (54/87cases; 62.1%), curettage alone or in combination with othermodalities (189/305 cases; 61.9%), and UAE alone or insmfm.org SMFM Consult Series
+SEPTEMBER 2022 B13combination with other modalities (30/64 cases; 46.9%).
+The lowest complication rates among ﬁrst-line therapies
+were reported with hysteroscopy alone or in combination(22/119 cases; 18.4%) and local intragestational injection ofmethotrexate or KCl (8/81 cases; 9.6%). On the basis of
+observed complication rates, this review supported the use
+of local methotrexate and hysteroscopy-based approachesto CSEP treatment and discouraged the stand-alone use ofsystemic methotrexate, curettage, and UAE. Of note, mostof the available literature does not distinguish betweensharp and suction curettage, although the complicationrates seem to be lower with suction curettage.
+Different conclusions were reached in a systematic review
+by Birch Petersen et al
+36that compiled 2037 CSEP cases,
+some of which overlapped with the Timor-Tritsch report andincluded data from 4 randomized trials and 48 case series.Among CSEP cases with available gestational age data,most were detected in the ﬁrst trimester. Treatment mo-
+dalities were condensed into 14 main approaches. Successwas de ﬁned as the ef ﬁcacy of a ﬁrst-line treatment modality
+in resolving a CSEP. Major complications were de ﬁned as
+hysterectomy, estimated blood loss of >1000 mL, or a need
+for blood transfusion. The lowest success rates wereobserved with expectant management (41.5% success,53.7% complications), curettage (n ¼243; 48.1% success,21% complications), UAE and methotrexate (n ¼427; 68.6%
+success, 2.8% complications), systemic methotrexate(n¼339; 75.2% success, 13% complications), and com-
+bined local and systemic methotrexate (n ¼34; 76.5% suc-
+cess, 2.3% complications). Among reported therapies, the
+highest success rates were observed with transvaginal
+CSEP resection (n ¼118; 99.2% success, 0.9% complica-
+tions), laparoscopy (n ¼69; 97.1% success, 0% complica-
+tions), UAE with curettage, hysteroscopy, or both (n ¼85;
+95.4% success, 1.2% complications), and UAE alone(n¼295; 93.6% success, 3.4% complications). On the basis
+of this review of the literature, the authors concluded thatinterventional approaches seemed superior to medical
+approaches.
+36
+Since the publication of these reviews, treatment with a
+cervical double-balloon catheter that can terminate thepregnancy while compressing the blood supply to thegestational sac has been reported. A few series have re-ported a low rate of complications (4.2%) and a high suc-cess rate (97.7%) with this technique.
+37,38
+It should be emphasized that, although transvaginal
+CSEP resection, UAE, and laparoscopy alone or in
+combination seemed to be superior to medical andminimally invasive treatments in the Birch Petersen et al
+36
+review, these interventions require resources such asTABLE
+Treatment options for cesarean scar ectopic pregnancy
+MethodNumber of studies
+Number of patients Efﬁcacy, %aComplicationsbCase series RCTs
+Expectant management 5 0 41 41.5 53.7%
+sMTX 18 3 339 75 13%Needle aspiration þsMTX 6 0 148 84.5 15.5%
+D&C 21 0 243 48 21%Hysteroscopy
+c7 0 95 83 3.2%
+Transvaginal resectiond6 0 118 >99 0.9%
+UAEþD&C 5 2 295 93.6 3.4%
+UAEþD&Cþhysteroscopy 1 1 87 95.4 1.2%
+UAEþD&CþsMTX 13 1 427 68.6 2.8%
+Local and sMTX 2 0 34 75 2.3%Laparoscopy 7 0 69 97.1 0Local MTX 2 1 74 64.9 4.1%HIFU 1 0 16 100 0HIFUþhysteroscopic suction curettage 1 0 52 100 0
+Data adapted from Birch Petersen et al.36
+D&C , dilation and curettage; HIFU , high-intensity focused ultrasound; MTX , methotrexate; RCT, randomized controlled trial; sMTX , systemic methotrexate; UAE, uterine artery embolization.
+aWomen who did not need additional treatment;bSevere complications such as hemorrhage and hysterectomy;cEleven patients also had systemic MTX and hysteroscopy;dTwelve patients also
+had systemic MTX and transvaginal resection.
+Society for Maternal-Fetal Medicine (SMFM). Consult Series #63: Cesarean scar ectopic pregnancy. Am J Obstet Gynecol 2022.SMFM Consult Series smfm.org
+B14 SEPTEMBER 2022specially equipped procedural suites or operating rooms,
+advanced equipment, anesthesia availability, and trainedstaff. Consequently, some of these interventions are not
+widely available, and they may be costly. Furthermore,
+little high-quality evidence exists comparing thesemethods head-to-head with less resource-intensive mo-dalities, such as local intragestational injections ofmethotrexate or KCl.
+What are the recommended treatment
+approaches for cesarean scar ectopic
+pregnancy?
+Surgical treatment
+Both medical and interventional treatment options have
+been described for the management of CSEP. Among sur-gical management options, transvaginal and laparoscopicCSEP resection seem to have low complication rates,although published data regarding these techniques arelimited.
+39e41A potential advantage of these approaches is
+that the scar tissue can be excised and the surrounding
+myometrium reapproximated at the time of CSEP removal. Itis unknown if this practice decreases the risk of CSEPreoccurrence.
+Curettage alone, without adjuvant treatments, has been
+associated with high complication rates, including hemor-rhage and perforation, because of an inability to completelyaccess and remove trophoblastic tissue outside of the
+endometrial cavity and because scar tissue contracts poorly
+after curettage. As with PAS, sharp curettage may severdeeply invading blood vessels and expose the patient toongoing bleeding. In addition to a high complication rate,additional treatment is reported to be required after 52% ofcurettage cases.
+36Again, it should be noted that the pub-
+lished literature incompletely distinguishes between sharpcurettage and uterine aspiration, which may provide
+different success and complication rates with CSEP man-
+agement. We suggest that operative resection (with transvaginal
+or laparoscopic approaches when possible) or ultrasound-guideduterine aspiration be considered for the surgical management ofCSEP, and that sharp curettage alone be avoided (GRADE 2C).
+Although sharp curettage alone is not recommended as a
+primary CSEP treatment, higher ef ﬁcacy and lower
+complication rates have been reported with ultrasound-
+guided vacuum aspiration.
+42In a series that involved 191
+women with CSEP who underwent suction curettage, therewas a 4.7% rate of blood transfusion and a single case ofhysterectomy owing to hemorrhage. Among patients whoreturned for follow-up, there was a 6% rate of repeatedsurgery because of retained products of conception. Shir-odkar placement as an adjunct to curettage has also beendescribed, in which the cerclage suture is placed before
+curettage and only secured in the setting of hemorrhage to
+minimize bleeding.
+43
+Gravid hysterectomy is an alternative surgical option that
+may be considered for the de ﬁnitive management of CSEP.
+This approach may be particularly appropriate for earlysecond-trimester CSEP presentations or for those who do
+not desire future fertility.
+Medical treatment
+When pursuing medical treatment of CSEP, local or intra-gestational injection of methotrexate is a preferredapproach, with or without accompanying systemic metho-trexate. Stand-alone systemic methotrexate is not recom-mended because of a higher reported risk ofcomplications.
+16,30Although a small randomized trial of
+systemic vs local methotrexate demonstrated no differencein overall cure rates,
+44reviews suggest a high risk of com-
+plications with intramuscular methotrexate alone,21,45and
+local methotrexate seems to be a more effective approach.In a literature review by Cheung,
+45of 96 cases of intra-
+gestational methotrexate for CSEP, success was achievedin 73.9% after a single local methotrexate injection, andincreased to 88.5% after an additional local or intramuscularmethotrexate injection. No baseline clinical characteristicswere found to in ﬂuence the outcome other than serum hCG
+>100,000 IU/L, which was associated with treatment failure.
+Intragestational injection is typically performed with a 20-gauge needle under ultrasound guidance using a trans-vaginal approach. Sac aspiration may be performed beforeinjection to verify appropriate needle placement. There arelimited data regarding optimal dosing for local methotrexateinjection, with dosages of 1 mg/kg of maternal weight andup to 50 mg being described.
+18,36,45,46Varying dosages of
+systemic methotrexate have been reported in the manage-
+ment of CSEP; in general, these dosages are comparablewith those used for ectopic pregnancy.
+7,47We suggest
+intragestational methotrexate for medical treatment of CSEP, withor without other treatment modalities (GRADE 2C). We recommendthat systemic methotrexate alone not be used to treat CSEP(GRADE 1C).
+When patients with CSEP who have been treated medi-
+cally are observed, the gestational mass can take weeks to
+months to resolve. A transient increase in hCG levels andCSEP mass size can be observed after methotrexate ther-apy. After local conservative CSEP treatment that involved22 women, one study reported a mean time to resolution of88 days (range, 26 e177).
+18An understanding of this antic-
+ipated posttherapy course may help to minimize unnec-essary additional treatments. During the posttreatment
+observation period, patients should be monitored for con-
+cerning symptoms, such as hemorrhage or uterine AVMdevelopment. Interval ultrasonographic surveillance may behelpful in observing for CSEP resolution.
+Intragestational KCl has also been described for the
+treatment of CSEP in a small number of cases.
+33This
+approach may be particularly appropriate for the man-agement of heterotopic CSEP with a coexisting intra-
+uterine pregnancy because methotrexate exposure may
+have embryocidal or teratogenic consequences for theintrauterine cotwin. As with methotrexate, ultrasound-guided KCl injection can be accompanied by sacsmfm.org SMFM Consult Series
+SEPTEMBER 2022 B15aspiration. In a case report and review of the literature, 5
+cases of heterotopic CSEPs treated with local KCl weredescribed.
+48All resulted in healthy live births of the
+cotwin, although 2 cases were complicated by post-partum hemorrhage, with 1 case resulting in hysterec-
+tomy because of placenta accreta. Hysteroscopic and
+laparoscopic approaches for treating heterotopic CSEPshave also been described.
+49,50
+Adjunct treatment options
+UAE is a minimally invasive procedure that has been used in
+various combinations to treat CSEP. UAE has been reportedas a stand-alone procedure and in combination withcurettage, methotrexate, and hysteroscopy, which compli-cates comparisons between studies. One review indicatedhigh success and low complication rates when UAE wasperformed without methotrexate or with and without
+curettage.
+36When methotrexate was added to a UAE
+strategy, there was a higher risk (31.4%) that additionaltreatments would be needed. In a small randomized trial thatcompared UAE followed by vacuum aspiration (n ¼37) with
+systemic methotrexate followed by vacuum aspiration(n¼35), UAE was associated with a signi ﬁcant reduction in
+blood loss.
+51Two women in the methotrexate group
+required hysterectomy vs none in the UAE group. UAE may
+be a uterine- and fertility-preserving procedure, although
+reported outcomes in the setting of CSEP vary signi ﬁcantly,
+and its role as an adjunct to other management approachesrequires further study.
+As previously mentioned, Timor-Tritsch et al
+37,38,52
+have also reported ultrasound-guided placement and
+inﬂation of balloon and Foley catheters to tamponade a
+CSEP gestational sac that is complicated by bleeding or
+as a prophylactic measure. Their experience suggests
+that this technique may be well tolerated and ef ﬁcacious,
+which supports a potential option that warrants furtherstudy.How should cesarean scar ectopic
+pregnancy be managed in patients whodecline treatment?
+Patients who decline treatment of a CSEP should be
+counseled about the risk for signi ﬁcant obstetrical compli-
+cations, including PAS, massive hemorrhage, uterinerupture, severe maternal morbidity, and potentially maternaldeath. Management of such cases should include a very
+high index of suspicion for PAS with appropriate antepartum
+management and delivery planning. Patients should becounseled regarding signs and symptoms of preterm laboror any symptoms that suggest uterine rupture. A repeatedcesarean delivery is recommended between 34 0/7 and 356/7 weeks of gestation. As with other medically indicatedlate preterm births, betamethasone administration is rec-ommended before delivery.
+53In patients who choose expec-
+tant management and continuation of a CSEP, we recommend
+repeated cesarean delivery between 34 0/7 and 35 6/7 weeks ofgestation (GRADE 1C).
+As with PAS, delivery should occur at level III or level IV
+facilities with appropriate expertise and resources, whichincludes the capability to manage massive hemorrhage.
+54
+A multidisciplinary team approach to delivery is recom-mended, and the team should be prepared for the po-
+tential need for cesarean hysterectomy and massive
+transfusion.
+How does a history of cesarean scar ectopic
+pregnancy affect future pregnancies?
+Patients can become pregnant after uterine-preserving
+management of a CSEP, although there seems to be anincreased risk for recurrent CSEP and other severe
+maternal morbidities. Ben Nagi et al
+55reported a 5% rate
+of recurrent CSEP among 21 pregnancies achieved afterprevious conservative CSEP management. However, otherseries have reported high rates of complications. Seowet al
+56reported 7 pregnancies among 14 women withUNNUMBERED TABLE 1
+Summary of recommendations
+Recommendation Grade
+1 We recommend against expectant management of cesarean scar ectopic pregnancy. 1B
+2 We suggest that operative resection (with transvaginal or laparoscopic approaches when possible) or ultrasound-guided uterine
+aspiration be considered for the surgical management of cesarean scar ectopic pregnancy and that sharp curettage alone be avoided.2C
+3 We suggest intragestational methotrexate for the medical treatment of cesarean scar ectopic pregnancy, with or without other
+treatment modalities.2C
+4 We recommend that systemic methotrexate alone not be used to treat cesarean scar ectopic pregnancy. 1C
+5 In patients who choose expectant management and continuation of a cesarean scar ectopic pregnancy, we recommend repeated
+cesarean delivery between 34 0/7 and 35 6/7 wk of gestation.1C
+6 We recommend that patients with a cesarean scar ectopic pregnancy be advised of the risks of another pregnancy and counseled
+regarding effective contraceptive methods, including long-acting reversible contraception and permanent contraception.1C
+Society for Maternal-Fetal Medicine (SMFM). Consult Series #63: Cesarean scar ectopic pregnancy. Am J Obstet Gynecol 2022. .SMFM Consult Series smfm.org
+B16 SEPTEMBER 2022UNNUMBERED TABLE 2
+Society for Maternal-Fetal Medicine grading system: Grading of Recommendations Assessment,
+Development, and Evaluation (GRADE) recommendations67,a
+Grade of
+recommendation Clarity of risk and beneﬁt Quality of supporting evidence Implications
+1A. Strong
+recommendation,high-quality evidenceBeneﬁts clearly outweigh risks and
+burdens, or vice versaConsistent evidence from well-performed,
+randomized controlled trials, oroverwhelming evidence of some other formFurther research is unlikely to change
+conﬁdence in the estimate of beneﬁt and
+riskStrong recommendation that
+can apply to most patients inmost circumstances withoutreservation
+Clinicians should follow a strong
+recommendation unless a clearand compelling rationale for analternative approach is present
+1B. Strong
+recommendation,
+moderate-qualityevidenceBeneﬁts clearly outweigh risks and
+burdens, or vice versaEvidence from randomized controlled trials
+with important limitations (inconsistent
+results, methodologic ﬂaws, indirect orimprecise), or very strong evidence of
+some other research design
+Further research (if performed) is likely tohave an impact on conﬁdence in theestimate of beneﬁt and risk and may
+change the estimateStrong recommendation that
+applies to most patients
+Clinicians should follow a strongrecommendation unless a clear
+and compelling rationale for an
+alternative approach is present
+1C. Strong
+recommendation,low-quality evidenceBeneﬁts seem to outweigh risks and
+burdens, or vice versaEvidence from observational studies,
+unsystematic clinical experience, orrandomized controlled trials with seriousﬂaws
+Any estimate of effect is uncertainStrong recommendation that
+applies to most patientsSome of the evidence basesupporting the recommendation
+is, however, of low quality
+2A. Weak
+recommendation,high-quality evidenceBeneﬁts closely balanced with risks and
+burdensConsistent evidence from well-performed
+randomized controlled trials oroverwhelming evidence of some other form
+Further research is unlikely to change
+conﬁdence in the estimate of beneﬁtand riskWeak recommendation; best
+action may differ depending oncircumstances, patients, or
+societal values
+2B. Weak
+recommendation,
+moderate-quality evidenceBeneﬁts closely balanced with risks and
+burdens; some uncertainty in the
+estimates of beneﬁts, risks, and burdensEvidence from randomized controlled trials
+with important limitations (inconsistent
+results, methodologic ﬂaws, indirect or
+imprecise), or very strong evidence ofsome other research designFurther research (if performed) is likely to
+have an effect on conﬁdence in the
+estimate of beneﬁt and risk and maychange the estimateWeak recommendation;
+alternative approaches likely to
+be better for some patients
+under some circumstances
+2C. Weak
+recommendation,
+low-quality evidenceUncertainty in the estimates of beneﬁts,
+risks, and burdens; beneﬁts may be
+closely balanced with risks and burdensEvidence from observational studies,
+unsystematic clinical experience, or
+randomized controlled trials with seriousﬂawsAny estimate of effect is uncertainVery weak recommendation,
+other alternatives may be
+equally reasonable
+Best practice Recommendation in which either:
+(1) there is an enormous amount of
+indirect evidence that clearly justiﬁesstrong recommendation (direct evidencewould be challenging, and inefﬁcient use
+of time and resources, to bring
+together and carefully summarize), or(2) recommendation to the contrary wouldbe unethical
+aAdapted from Guyatt et al.
+68
+Society for Maternal-Fetal Medicine (SMFM). Consult Series #63: Cesarean scar ectopic pregnancy. Am J Obstet Gynecol 2022 .smfm.org SMFM Consult Series
+SEPTEMBER 2022 B17previous CSEP who were treated conservatively. The
+mean interval between CSEP and subsequent pregnancywas 13 months (range, 0 e34 months). Four pregnancies
+were intrauterine, with 1 twin pregnancy; all were delivered
+by uncomplicated cesarean delivery between 35 and 36weeks of gestation. Two pregnancies were complicated byplacenta accreta: one was a triplet pregnancy (involvingintrauterine twins and a recurrent CSEP) that resulted in acesarean hysterectomy and massive hemorrhage at 32weeks of gestation, although the other involved accretanoted at the time of cesarean delivery that did not require
+hysterectomy at 37 weeks of gestation. The ﬁnal preg-
+nancy involved a woman who became pregnant 3 monthsafter curettage and cervical balloon treatment for a CSEP.In the subsequent pregnancy, she experienced sponta-neous uterine rupture and died of hypovolemic shock witha stillborn fetus.
+In a review of the literature, which included the series
+mentioned previously, Sadeghi et al
+57reported 59 subse-
+quent pregnancies (81%) among 73 women with a CSEP
+who retained their uterus. Of these, 15 cases (25%) werecomplicated by recurrent CSEP. The largest single-centerexperience to describe pregnancy after CSEP included 32pregnancies, with a 15.6% recurrent CSEP rate.
+58A more
+recent single-center series included 10 spontaneous preg-nancies in 8 women with a history of CSEP; 4 (40%) wererepeated CSEPs.
+59Patients who consider pregnancy after a
+CSEP should be informed that there is a signi ﬁcant risk of
+recurrence and severe maternal morbidity. We recommend
+that patients with a CSEP be advised of the risks of anotherpregnancy and counseled regarding effective contraceptivemethods, including long-acting reversible contraception andpermanent contraception (GRADE 1C).
+Although a short interval between successful conserva-
+tive CSEP management and subsequent pregnancy may
+increase the risk for recurrent CSEP or PAS, there is no
+consensus about how long to wait before attemptinganother pregnancy for patients who desire another preg-nancy after counseling regarding the risks.
+14,30Some ex-
+perts have recommended waiting 12 to 24 months beforeattempting another pregnancy, although there is limitedsupporting evidence for this recommendation.
+4,60
+Given the increased risk for CSEP recurrence, some
+advocate evaluation of the uterus and cesarean scar by
+saline infusion sonohysterography before a subsequentpregnancy. However, it is not clear whether the detection ofa defect is associated with higher risks and should in ﬂuence
+counseling regarding the advisability of another pregnancy.Interpregnancy repair or revision of a cesarean scar hasbeen reported with the use of a variety of surgical modalities.However, there are insuf ﬁcient data to support a bene ﬁtt o
+this practice.
+21,61e66
+Should a patient with a history of CSEP become pregnant,
+close ultrasonographic monitoring is recommended toconﬁrm the presence of an intrauterine pregnancy and toexclude recurrent CSEP or PAS. An initial ultrasound ex-
+amination is recommended on presentation to prenatalcare, ideally at <8 weeks of gestation, to con ﬁrm a normal
+intrauterine location. Repeated cesarean delivery is rec-
+ommended between 34 0/7 and 35 6/7 weeks of gestation,before the onset of labor. Betamethasone administration isrecommended before anticipated late preterm delivery.
+53
+The delivery team should be prepared for obstetrical hem-orrhage and the potential need for cesarean hysterectomy(Unnumbered Table 1 ).
+Conclusion
+Because of high worldwide cesarean delivery rates, an
+increased incidence of CSEP has been recognized. CSEPcan be dif ﬁcult to diagnose in a timely fashion; this diagnosis
+should be considered in patients with a previous cesareandelivery who undergo early ﬁrst-trimester ultrasonography.
+Several surgical and medical treatments have beendescribed for this disorder; however, optimal management
+remains uncertain at this time. For this reason, registries
+have been created for providers to submit data on diag-nosis, natural history, and management ( https://csp-
+registry.com and https://octri.ohsu.edu/redcap/surveys/?
+s¼XCK7FLEA84 )(Unnumbered Table 2 ).
+n
+REFERENCES
+1.Riaz RM, Williams TR, Craig BM, Myers DT. Cesarean scar ectopic
+pregnancy: imaging features, current treatment options, and clinical out-
+comes. Abdom Imaging 2015;40:2589 –99.
+2.Gibbons L, Belizan JM, Lauer JA, Betran AP, Merialdi M, Althabe F.
+Inequities in the use of cesarean section deliveries in the world. Am JObstet Gynecol 2012;206:331.e1 –19.
+3.Jurkovic D, Hillaby K, Woelfer B, Lawrence A, Salim R, Elson CJ. First-
+trimester diagnosis and management of pregnancies implanted into thelower uterine segment cesarean section scar. Ultrasound Obstet Gynecol
+2003;21:220 –7.
+4.Seow KM, Huang LW, Lin YH, Lin MY, Tsai YL, Hwang JL. Cesarean
+scar pregnancy: issues in management. Ultrasound Obstet Gynecol2004;23:247 –53.
+5.Godin PA, Bassil S, Donnez J. An ectopic pregnancy developing in a
+previous caesarian section scar. Fertil Steril 1997;67:398 –400.
+6.Maymon R, Halperin R, Mendlovic S, Schneider D, Herman A. Ectopic
+pregnancies in a caesarean scar: review of the medical approach to an
+iatrogenic complication. Hum Reprod Update 2004;10:515 –23.
+7.Ash A, Smith A, Maxwell D. Caesarean scar pregnancy. BJOG
+2007;114:253 –63.
+8.Tantbirojn P, Crum CP, Parast MM. Pathophysiology of placenta creta:
+the role of decidua and extravillous trophoblast. Placenta 2008;29:
+639 –45.
+9.Timor-Tritsch IE, Monteagudo A, Cali G, et al. Cesarean scar pregnancy
+is a precursor of morbidly adherent placenta. Ultrasound Obstet Gynecol
+2014;44:346 –53.
+10.Timor-Tritsch IE, Monteagudo A, Cali G, et al. Cesarean scar preg-
+nancy and early placenta accreta share common histology. Ultrasound
+Obstet Gynecol 2014;43:383 –95.
+11.Rotas MA, Haberman S, Levgur M. Cesarean scar ectopic pregnan-
+cies: etiology, diagnosis, and management. Obstet Gynecol 2006;107:1373 –81.
+12.Gonzalez N, Tulandi T. Cesarean scar pregnancy: a systematic review.
+J Minim Invasive Gynecol 2017;24:731 –8.SMFM Consult Series smfm.org
+B18 SEPTEMBER 202213.Kaelin Agten A, Cali G, Monteagudo A, Oviedo J, Ramos J, Timor-
+Tritsch I. The clinical outcome of cesarean scar pregnancies implanted “on
+the scar ”versus “in the niche ”. Am J Obstet Gynecol 2017;216:510.e1 –6.
+14.McKenna DA, Poder L, Goldman M, Goldstein RB. Role of sonography
+in the recognition, assessment, and treatment of cesarean scar ectopic
+pregnancies. J Ultrasound Med 2008;27:779 –83.
+15.Maymon R, Halperin R, Mendlovic S, et al. Ectopic pregnancies in
+caesarean section scars: the 8 year experience of one medical centre.
+Hum Reprod 2004;19:278 –84.
+16.Vial Y, Petignat P, Hohlfeld P. Pregnancy in a cesarean scar. Ultra-
+sound Obstet Gynecol 2000;16:592 –3.
+17.Calì G, Timor-Trisch IE, Palacios-Jaraquemada J, et al. Changes in
+ultrasonography indicators of abnormally invasive placenta during preg-
+nancy. Int J Gynaecol Obstet 2018;140:319 –25.
+18.Timor-Tritsch IE, Monteagudo A, Santos R, Tsymbal T, Pineda G,
+Arslan AA. The diagnosis, treatment, and follow-up of cesarean scar
+pregnancy. Am J Obstet Gynecol 2012;207:44.e1 –13.
+19.Moschos E, Sreenarasimhaiah S, Twickler DM. First-trimester diag-
+nosis of cesarean scar ectopic pregnancy. J Clin Ultrasound 2008;36:
+504 –11.
+20.Timor-Tritsch IE, Khatib N, Monteagudo A, Ramos J, Berg R,
+Kovács S. Cesarean scar pregnancies: experience of 60 cases.J Ultrasound Med 2015;34:601 –10.
+21.Timor-Tritsch IE, Monteagudo A. Unforeseen consequences of the
+increasing rate of cesarean deliveries: early placenta accreta and cesareanscar pregnancy. A review. Am J Obstet Gynecol 2012;207:14 –29.
+22.Shih JC. Cesarean scar pregnancy: diagnosis with three-dimensional
+(3D) ultrasound and 3D power Doppler. Ultrasound Obstet Gynecol
+2004;23:306 –7.
+23.Wang CJ, Yuen LT, Yen CF, Lee CL, Soong YK. Three-dimensional
+power Doppler ultrasound diagnosis and laparoscopic management of a
+pregancy in a previous cesarean scar. J Laparoendosc Adv Surg Tech A
+2004;14:399 –402.
+24.Ozkan S, Calis ¸kan E, Ozeren S, Corakçi A, Cakiro /C21glu Y, Cos ¸kun E.
+Three-dimensional ultrasonographic diagnosis and hysteroscopic man-
+agement of a viable cesarean scar ectopic pregnancy. J Obstet GynaecolRes 2007;33:873 –7.
+25.Valley MT, Pierce JG, Daniel TB, Kaunitz AM. Cesarean scar preg-
+nancy: imaging and treatment with conservative surgery. Obstet Gynecol
+1998;91:838 –
+40.
+26.Weimin W, Wenqing L. Effect of early pregnancy on a previous lower
+segment cesarean section scar. Int J Gynaecol Obstet 2002;77:201 –7.
+27.Peng KW, Lei Z, Xiao TH, et al. First trimester caesarean scar ectopic
+pregnancy evaluation using MRI. Clin Radiol 2014;69:123 –9.
+28.Wang CJ, Chao AS, Yuen LT, Wang CW, Soong YK, Lee CL. Endo-
+scopic management of cesarean scar pregnancy. Fertil Steril 2006;85:
+494.e1 –4.
+29.Roberts H, Kohlenber C, Lanzarone V, Murray H. Ectopic pregnancy in
+lower segment uterine scar. Aust N Z J Obstet Gynaecol 1998;38:114 –6.
+30.Osborn DA, Williams TR, Craig BM. Cesarean scar pregnancy:
+sonographic and magnetic resonance imaging ﬁndings, complications,
+and treatment. J Ultrasound Med 2012;31:1449 –56.
+31.Ben Nagi J, O ﬁli-Yebovi D, Marsh M, Jurkovic D. First-trimester ce-
+sarean scar pregnancy evolving into placenta previa/accreta at term.
+J Ultrasound Med 2005;24:1569 –73.
+32.Zosmer N, Fuller J, Shaikh H, Johns J, Ross JA. Natural history of early
+ﬁrst-trimester pregnancies implanted in cesarean scars. Ultrasound Obstet
+Gynecol 2015;46:367 –75.
+33.Michaels AY, Washburn EE, Pocius KD, Benson CB, Doubilet PM,
+Carusi DA. Outcome of cesarean scar pregnancies diagnosed sono-
+graphically in the ﬁrst trimester. J Ultrasound Med 2015;34:595 –9.
+34.Calì G, Timor-Tritsch IE, Palacios-Jaraquemada J, et al. Outcome of
+cesarean scar pregnancy managed expectantly: systematic review andmeta-analysis. Ultrasound Obstet Gynecol 2018;51:169 –75.
+35.Xiao J, Zhang S, Wang F, et al. Cesarean scar pregnancy: noninvasive
+and effective treatment with high-intensity focused ultrasound. Am JObstet Gynecol 2014;211:356.e1 –7.36.Birch Petersen K, Hoffmann E, Rifbjerg Larsen C, Svarre Nielsen H.
+Cesarean scar pregnancy: a systematic review of treatment studies. Fertil
+Steril 2016;105:958 –67.
+37.Monteagudo A, Calì G, Rebarber A, et al. Minimally invasive treatment
+of cesarean scar and cervical pregnancies using a cervical ripening double
+balloon catheter: expanding the clinical series. J Ultrasound Med 2019;38:
+785 –93.
+38.Timor-Tritsch IE, Monteagudo A, Bennett TA, Foley C, Ramos J, Kaelin
+Agten A. A new minimally invasive treatment for cesarean scar pregnancy
+and cervical pregnancy. Am J Obstet Gynecol 2016;215:351.e1 –8.
+39.Kang SY, Park BJ, Kim YW, Ro DY. Surgical management of cesarean
+scar ectopic pregnancy: hysterotomy by transvaginal approach. Fertil Steril
+2011;96:e25 –
+8.
+40.Le A, Shan L, Xiao T, Zhuo R, Xiong H, Wang Z. Transvaginal surgical
+treatment of cesarean scar ectopic pregnancy. Arch Gynecol Obstet2013;287:791 –6.
+41.Wang DB, Chen YH, Zhang ZF, et al. Evaluation of the transvaginal
+resection of low-segment cesarean scar ectopic pregnancies. Fertil Steril2014;101:602 –6.
+42.Jurkovic D, Knez J, Appiah A, Farahani L, Mavrelos D, Ross JA. Sur-
+gical treatment of cesarean scar ectopic pregnancy: ef ﬁcacy and safety of
+ultrasound-guided suction curettage. Ultrasound Obstet Gynecol2016;47:511 –7.
+43.Jurkovic D, Ben-Nagi J, O ﬁlli-Yebovi D, Sawyer E, Helmy S, Yazbek J.
+Efﬁcacy of Shirodkar cervical suture in securing hemostasis following
+surgical evacuation of cesarean scar ectopic pregnancy. UltrasoundObstet Gynecol 2007;30:95 –100.
+44.Peng P, Gui T, Liu X, Chen W, Liu Z. Comparative ef ﬁcacy and safety of
+local and systemic methotrexate injection in cesarean scar pregnancy.Ther Clin Risk Manag 2015;11:137 –42.
+45.Cheung VY. Local methotrexate injection as the ﬁrst-line treatment for
+cesarean scar pregnancy: review of the literature. J Minim Invasive Gynecol
+2015;22:753 –8.
+46.Yamaguchi M, Honda R, Uchino K, Tashiro H, Ohba T, Katabuchi H.
+Transvaginal methotrexate injection for the treatment of cesarean scar
+pregnancy: ef ﬁcacy and subsequent fecundity. J Minim Invasive Gynecol
+2014;21:877 –83.
+47.Michener C, Dickinson JE. Caesarean scar ectopic pregnancy: a single
+centre case series. Aust N Z J Obstet Gynaecol 2009;49:451 –5.
+48.Ugurlucan FG, Bastu E, Dogan M, Kalelioglu I, Alanya S, Has R. Man-
+agement of cesarean heterotopic pregnancy with transvaginal ultrasound-guided potassium chloride injection and gestational sac aspiration, and
+review of the literature. J Minim Invasive Gynecol 2012;19:671 –3.
+49.Wang CJ, Tsai F, Chen C, Chao A. Hysteroscopic management of
+heterotopic cesarean scar pregnancy. Fertil Steril 2010;94:1529.e15 –8.
+50.Demirel LC, Bodur H, Selam B, Lembet A, Ergin T. Laparoscopic
+management of heterotopic cesarean scar pregnancy with preservation ofintrauterine gestation and delivery at term: case report. Fertil Steril
+2009;91:1293.e5 –7.
+51.Zhuang Y, Huang L. Uterine artery embolization compared with
+methotrexate for the management of pregnancy implanted within a ce-sarean scar. Am J Obstet Gynecol 2009;201:152.e1 –3.
+52.Timor-Tritsch IE, Cali G, Monteagudo A, et al. Foley balloon catheter to
+prevent or manage bleeding during treatment for cervical and cesareanscar pregnancy. Ultrasound Obstet Gynecol 2015;46:118 –23.
+53.Committee on Obstetric Practice. Committee Opinion No. 713: ante-
+natal corticosteroid therapy for fetal maturation. Obstet Gynecol 2017;130:
+e102 –9.
+54.American College of Obstetricians and Gynecologists, Society for
+Maternal-Fetal Medicine. Obstetric Care Consensus No. 7: placenta
+accreta spectrum. Obstet Gynecol 2018;132:e259 –75.
+55.Ben Nagi J, Helmy S, O ﬁli-Yebovi D, Yazbek J, Sawyer E, Jurkovic D.
+Reproductive outcomes of women with a previous history of caesarean
+scar ectopic pregnancies. Hum Reprod 2007;22. 2012 e5.
+56.Seow KM, Hwang JL, Tsai YL, Huang LW, Lin YH, Hsieh BC.
+Subsequent pregnancy outcome after conservative treatment of asmfm.org SMFM Consult Series
+SEPTEMBER 2022 B19previous cesarean scar pregnancy. Acta Obstet Gynecol Scand 2004;83:
+1167 –72.
+57.Sadeghi H, Rutherford T, Rackow BW, et al. Cesarean scar ectopic
+pregnancy: case series and review of the literature. Am J Perinatol2010;27:111 –20.
+58.Wang Q, Peng HL, He L, Zhao X. Reproductive outcomes after pre-
+vious cesarean scar pregnancy: follow up of 189 women. Taiwan J ObstetGynecol 2015;54:551 –3.
+59.Grechukhina O, Deshmukh U, Fan L, et al. Cesarean scar pregnancy,
+incidence, and recurrence: ﬁve-year experience at a single tertiary care
+referral center. Obstet Gynecol 2018;132:1285 –95.
+60.American College of Obstetricians and Gynecologists, Society for
+Maternal-Fetal Medicine. Obstetric Care Consensus No. 8: interpregnancy
+care. Obstet Gynecol 2019;133:e51 –72.
+61.Klemm P, Koehler C, Mangler M, Schneider U, Schneider A. Laparo-
+scopic and vaginal repair of uterine scar dehiscence following cesarean
+section as detected by ultrasound. J Perinat Med 2005;33:324 –31.
+62.Donnez O, Jadoul P, Squif ﬂet J, Donnez J. Laparoscopic repair of wide
+and deep uterine scar dehiscence after cesarean section. Fertil Steril
+2008;89:974 –80.
+63.Gubbini G, Centini G, Nascetti D, et al. Surgical hysteroscopic treat-
+ment of cesarean-induced isthmocele in restoring fertility: prospectivestudy. J Minim Invasive Gynecol 2011;18:234 –7.
+64.He M, Chen MH, Xie HZ, et al. Transvaginal removal of ectopic preg-
+nancy tissue and repair of uterine defect for caesarean scar pregnancy.BJOG 2011;118:1136 –9.
+65.Yalcinkaya TM, Akar ME, Kammire LD, Johnston-MacAnanny EB,
+Mertz HL. Robotic-assisted laparoscopic repair of symptomatic ce-
+sarean scar defect: a report of two cases. J Reprod Med 2011;56:265 –70.
+66.Donnez O, Donnez J, Orellana R, Dolmans MM. Gynecological and
+obstetrical outcomes after laparoscopic repair of a cesarean scar defect in
+a series of 38 women. Fertil Steril 2017;107:289 –96.e2 .
+67.Society for Maternal-Fetal Medicine (SMFM), Chauhan SP,
+Blackwell SC. SMFM adopts GRADE (Grading of RecommendationsAssessment, Development, and Evaluation) for clinical guidelines. Am J
+Obstet Gynecol 2013;209:163 –5.
+68.Guyatt GH, Oxman AD, Vist GE, et al. GRADE: an emerging consensus
+on rating quality of evidence and strength of recommendations. BMJ2008;336:924 –6.
+All authors and Committee members have ﬁled a disclosure of interests
+delineating personal, professional, business, or other relevant ﬁnancial
+or non ﬁnancial interests in relation to this publication. Any substantial
+conﬂicts of interest have been addressed through a process approved
+by the Society for Maternal-Fetal Medicine (SMFM) Board of Directors.
+The SMFM has neither solicited nor accepted any commercial
+involvement in the speci ﬁc content development of this publication.
+This document has undergone an internal peer review through amultilevel committee process within SMFM. This review involvescritique and feedback from the SMFM Publications and Document
+Review Committees and ﬁnal approval by the SMFM Executive Com-
+mittee. The SMFM accepts sole responsibility for the document con-tent. SMFM publications do not undergo editorial and peer review by
+the American Journal of Obstetrics & Gynecology. The SMFM Publi-
+cations Committee reviews publications every 18 to 24 months andissues updates as needed. Further details regarding SMFM publica-tions can be found at www.smfm.org/publications . The SMFM rec-
+ognizes that obstetrical patients have diverse gender identities and is
+striving to use gender-inclusive language in all of its publications. SMFMwill be using terms such as “pregnant person/ persons ”or“pregnant
+individual/individuals ”instead of “pregnant woman/women ”and will
+use the singular pronoun “they. ”When describing the study pop-
+ulations used in research, SMFM will use the gender terminology re-ported by the study investigators.
+Reprints will not be available.
+B20 SEPTEMBER 2022 ª2022 Published by Elsevier Inc. https://doi.org/10.1016/j.ajog.2022.06.024SMFM Consult Series smfm.org

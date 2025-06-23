@@ -1,0 +1,1040 @@
+# Extracted from: MP055 Perinatal Collapse in Pregnancy & Puerperium.pdf
+# Guideline ID: mp055-perinatal-collapse-in-pregnancy-puerperium
+# Content length: 58056 characters
+# Processing date: 1750066901.5587227
+
+Perinatal Collapse in 
+Pregnancy & 
+Puerperium 
+
+Maternity Protocol: MP055 
+ 
+Date agreed: March 2022 Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 2 of 36 
+
+Author: Win Khine 
+Version: 3 
+Approval Committee: Women’s Safety and Quality Committee 
+Date agreed: March 2022 
+Amended date: 
+Review date: March 2025 
+Cross reference: MP012 Venous Thrombosis 
+MP019 Hypertensive disease 
+MP034 Vaginal birth after caesarean section (VBAC) 
+MP042 Epidurals in Labour 
+MP050 Caesarean Section 
+MP053 Obstetric Haemorrhage 
+MP056 High dependency care 
+
+ Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 3 of 36 
+ Table of Contents 
+Key Principles ................................ ................................ ................................ ........................ 4 
+Scope ................................ ................................ ................................ ................................ ... 4 
+Responsibilities ................................ ................................ ................................ ..................... 4 
+1 Maternal Collapse in Pregnancy and the Puerperium ................................ ................... 5 
+2 Immediate Emergency Resuscitative Management ................................ ...................... 7 
+3 Call 2222 Ask for an Maternal Cardiac Arrest or Obstetric Em ergency .......................... 7 
+4 Initiate Investigations to Establish a Diagnosis: ................................ ............................ 7 
+5 Process for the Use of the Modified Early Obstetric Warning System (MEOWS) ........... 8 
+6 Roles and Responsibilities of Staff Groups ................................ ................................ . 11 
+7 Specific Management Regimes & Guidance ................................ ............................... 13 
+8 Eclampsia ................................ ................................ ................................ .................. 20 
+9 Intracranial haemorrhage ................................ ................................ .......................... 20 
+10 Anaphylaxis ................................ ................................ ................................ .............. 20 
+11 Other causes ................................ ................................ ................................ ............. 21 
+12 What is the optimal initial management of maternal collapse? ................................ .. 23 
+13 What are the outcomes for mother and baby? ................................ .......................... 27 
+14 Documentation ................................ ................................ ................................ ......... 28 
+15 Incident reporting ................................ ................................ ................................ ..... 28 
+16 Training ................................ ................................ ................................ ..................... 28 
+17 Debriefing ................................ ................................ ................................ ................. 28 
+18 Auditable topics ................................ ................................ ................................ ........ 28 
+19 Useful links and support groups ................................ ................................ ................. 29 
+20 References ................................ ................................ ................................ ................ 30 
+Appendix: Activation of Sudden Maternal Collapse Guideline ................................ .............. 31 
+Appendix - Adult Resuscitation Algorithm - Resus Council 2021 ................................ ............ 32 
+Appendix - Recommended airway equipment ................................ ................................ ...... 33 
+Appendix - Post collapse management ................................ ................................ ................ 34 
+Appendix : Prompt Card peri -partum Collapse ................................ ................................ ..... 35 
+Appendix : Prompt Maternal Cardiac Arrest ................................ ................................ ......... 36 
+ Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 4 of 36 
+ 
+Key Principles 
+ 
+A protocol is a set of measurable, objective standards to determine a course of action. 
+Professional judgement may be use in the application of a protocol. 
+ 
+Scope 
+ 
+This protocol applies to: 
+• All seriously ill women 
+• All women found collapsed in the peri -partum period 
+ 
+Responsibilities 
+ 
+Midwives & Obstetricians: 
+• To access, read, understand and follow this guidance 
+• To use their professional judgement in application of this protocol 
+ 
+Management: 
+• To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations 
+• To ensure the protocol is accessible to all relevant staff 
+
+ Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 5 of 36 
+ 1 Maternal Collapse in Pregnancy and the Puerperium 
+ 
+ Maternal collapse is a rare but life -threatening event, with a wide ranging aetiology. 
+The outcome primarily for the mother, but also the fetus, depends on prompt and 
+effective resuscitation. 
+ 
+ Maternal collapse is defined as an acute event involving the cardiorespiratory 
+systems and/or central nervous systems, resulting in a reduced or absent conscious 
+level (and potentially cardiac arrest and death), at any stage in pregnancy and up to 
+6 weeks after birth. Importantly, if maternal collapse which is not as the result of 
+cardiac arrest is not treated effectively, maternal cardiac arrest can then occur. 
+ 
+1.1 Causes of Maternal Collapse 
+ 
+Maternal collapse can result from a number of causes. A systematic approach 
+should be taken to identify the cause. 
+If the cause is reversible, the survival rates are greater and those for which 
+specific treatment exists must be rapidly considered. 
+ 
+ Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 6 of 36 
+
+N.B. The immediate resuscitative management of all conditions is the same for any woman who 
+collapses before, during, or after labour (Appendix Immediate Resus management ) 
+ Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 7 of 36 
+ 2 Immediate Emergency Resuscitative Management 
+2.1 Call for help via emergency bell 
+2.2 Check for signs of life (Open airway, check central pulse/respiration) 
+3 Call 222 2 Ask for an Maternal Cardiac Arrest or Obstetric 
+Emergency giving specific location 
+ (Appendix Activation of Sudden Maternal Collapse Guideline) 
+3.1 Commence Basic Life support (A.B.C.) 
+3.2 Give oxygen via non -rebreathe reservoir face mask 
+3.3 Left lateral tilt with slight head down (pregnant women only) 
+3.4 Obtain venous access (2 large bore cannulas ) Consider intra -osseous access if 
+IV route difficult (available from ED, if not on resus trolley) 
+3.5 Initiate fluid resuscitation to correct shock 
+3.6 Institute Advanced Life Support (intubation / ventilation / inotropes) for: 
+• persistent hypoxia 
+• hypotension or 
+• reduced level of consciousness 
+3.7 Start modified early obstetric warning system chart (MEOWS) 
+4 Initiate Investigations to Establish a Diagnosis: 
+4.1 Maternal observations – temp, pulse, BP, saturations and respiratory rate 
+4.2 Venous blood – U&E/ FBC / Coagulation / cross -match 4 units 
+4.3 Arterial blood gases - lactate 
+4.4 ECG 
+4.5 CVP line – Consider taking a clotted sample for squames in relatation to 
+diagnosis of an AFE section 7.4 AFE 
+ 
+N.B Inform the Obstetric and Anaesthetic Consultants on call at an early stage. For ANY 
+maternal collapse Obstetric Consultants must attend in person Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 8 of 36 
+ 5 Process for the Use of the Modified Early Obstetric Warning 
+System (MEOWS ) 
+5.1 Introduction 
+Saving Mother’s Lives2 advocates the use of a modified early warning system in 
+maternity care settings to facilitate the prompt recognition of acute illness 
+and/or rapid deterioration of a woman’s condition. It is important to note that 
+the system will not improve outcomes in isolation; this will only occur if 
+interventions subsequently applied are appropriate and timely. 
+ 
+5.2 Use of MEOWS chart2 
+5.2.1 All antenatal patients admitted must have MEOWS commenced. 
+5.2.2 Postnatal women who have: 
+• Prior risk factors identified 
+• Developed complications 
+• Undergone surgical intervention ( post -surgery MEOWS 
+observations for the first 24 hrs ) 
+5.3 Exceptions for use 
+5.3.1 If Women is in established labour do cument observations on the 
+parto gram, if becomes unwell to commence MEOWS 
+ 
+NB: It is essential that pregnant and recently delivered women with 
+obstetric and medical complications who are admitted to all clinical 
+areas within and outside of maternity are assessed using the MEOWS 
+chart 
+5.4 Respiratory rate & MEOWS 
+5.4.1 Changes in the respiratory rate are often an early warning sign that 
+the woman’s condition is deteriorating. 
+5.4.2 It is vital to also note the regularity, pattern and description of the 
+breathing. 
+5.4.3 A change in the respiratory rate is an accurate predictor of 
+deterioration in physical condition, often before changes in any other 
+parameters are observed. 
+ Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 9 of 36 
+ 5.5 Oxygen saturation & MEOWS 
+5.5.1 Sa O 2 monitoring should be available for all high risk women. 
+5.6 Temperature & MEOWS 
+5.6.1 During labour a slight transient raise in temperature is often observed 
+and this may also be seen as a response to epidural anaesthesia. 
+5.6.2 However a rise in temperature observed at any other time in the 
+pregnancy continuum must be closely observed. 
+5.6.3 A marked rise in temperature or a marked fall could indicate an 
+impending risk of sepsis. 
+5.6.4 The early recognition and appropriate treatment for sepsis is essential 
+ 
+5.7 Heart rate & MEOWS 
+5.7.1 Most women have an increased heart rate (of about 20 bpm) in 
+pregnancy compared to the non -pregnant state due to the associated 
+physiological changes 
+5.7.2 The pulse will also increase during periods of strenuous activity 
+and/or stress 
+5.7.3 A sudden rise in heart rate may be in response to labour, pain, fear, 
+anxiety, etc and in isolation (all other parameters are normal) should 
+be observed 
+5.7.4 A prolonged tachycardia, in conjunction with any other abnormal 
+observation, must be treated as potentially very serious 
+5.7.5 A slow pulse may result from effective pain relief such as an epidural, 
+especially when the woman is relaxed and possibly able to sleep 
+5.7.6 However, slower heart rates can also be: 
+• Drug induced e.g. such as local anaesthetic toxicity , refer to 
+section 7 
+• present in cardiac complications 
+• in conjunction with a raised blood pressure and sudden loss of 
+consciousness could indicate cerebral haemorrhage 
+ Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 10 of 36 
+ 5.8 Blood pressure & MEOWS 
+5.8.1 During pregnancy there are natural variation s in BP due to the 
+associated physiological changes: e.g. diastolic ma y fall around 
+20mmHg from non pregnant state in the first trimester. 
+5.8.2 Underlying hypertensive problems/renal disease 
+• With these conditions women may not exhibit a first trimester 
+drop in blood pressure and may go on to have hypertensive 
+problems in this or later pregnancies. 
+5.8.3 Pre-eclampsia 
+• Some women developing pre -eclampsia may be normotensive 
+• In the presence of proteinuria and altered blood profiles women 
+should be closely monitored. 
+5.8.4 Identifying significant changes in BP 
+• The systolic pressure is sensitive to activity, stress and anxiety and 
+transient rises up to 150 are considered normal 
+• A lower systolic reading is common in pregnancy 
+• A sudden decrease in blood pressure especially with a 
+corresponding increase in pulse rate may indicate haemorrhage 
+• The two BP parameters (diastolic and systolic) are scored 
+separately and so if both score in the yellow zone an obstetric 
+referral is indicated 
+ 
+NB If the pulse rate > the systolic blood pressure this is highly significant and 
+must be referred immediately to an obstetrician. 
+5.9 Urine output/testing & MEOWS 
+5.9.1 A fluid balance chart must be commenced for all women on a MEOWS 
+chart 
+5.9.2 Other factors e.g. presence of blood (especially visible blood) may be 
+significant especially in women labouring with previous caesarean 
+(LSCS) 
+5.10 Pain scores & MEOWS 
+5.10.1 Pain scores should be assessed ideally with the woman resting using a 
+verbal descriptor scale (VDS) which places a numerical value on pain, 
+as described by the patient 
+ Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 11 of 36 
+ 5.10.2 Any pain outside that expected of normal labour is abnormal, and this 
+should be regularly reviewed and documented, including site, type of 
+pain (constant, intermittent, on movement only, sharp, dull, etc) as 
+well as the intensity 
+5.10.3 Following surgical intervention pain is a normal physiological response 
+to trauma but pain assessment is essential to ensure adequate 
+analgesia is prescribed and administered. 
+5.10.4 Prolonged use of opioid analgesia is of concern and warrants further 
+investigation 
+5.11 Observation parameters 
+The frequency of observations will depend on the condition of the woman . 
+ 
+6 Roles and Responsibilities of Staff Groups 
+6.1 Midwives 
+6.1.1 Escalate to Matron/Site manager/Manager on call to assist with 
+ongoing emergency 
+6.1.2 Will provide one to one care and document observations 
+6.1.3 Observations and documentation are charted on: 
+• MEOWS Chart 
+• Maternity notes 
+6.1.4 Basic observations of the mother should be recorded regularly 
+according to the care plan and include: 
+• Oxygen saturation level 
+• Pulse and respiratory rate 
+• Temperature – frequency according to clinical condition 
+• Blood pressure 
+• Hourly urine output measurement 
+• Level of consciousness (AVPU) 
+• Evaluation of pain and sensory levels 
+• Blood loss per vagina/wound or drain 
+6.1.5 Referral to the Obstetric Registrar should be made if: 
+• MEOWS observations trigger one red score 
+• MEOWS observations trigger two simultaneous yellow scores Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 12 of 36 
+ 6.1.6 Urgent r eferral to the Obstetric Registrar (using fast bleep system via 
+switchboard) if: 
+• There is an obvious clinical deterioration or loss of 
+consciousness of the women 
+• Two or more of the MEOWS cardio -respiratory parameters are 
+recorded in the red zones 
+6.2 Obstetricians 
+6.2.1 Multidisciplinary plans of care should be documented and regularly 
+updated within the maternity notes 
+6.2.2 There should be regular Consultant level involvement in care of 
+severely ill patients 
+6.2.3 Consultant Obstetricians must attend in person all cases of maternal 
+collapse and uterine rupture 
+6.3 Anaesthetists 
+6.3.1 All severely ill pregnant women should be flagged up in the 
+multidisciplinary ward round or on admission by the midwife in 
+charge to allow anaesthetic team involvement and review. 
+6.3.2 The Consultant Obstetric Anaesthetist will liaise with the ITU 
+consultant if admission/transfer to ITU/HDU is deemed necessary. 
+6.3.3 All discussions and care plans should be documented in the maternal 
+notes with planned review times 
+6.3.4 Appropriate cases should be reported to UK Obstetric Surveillance 
+System (UKOSS) via the lead obstetric anaesthetist 
+6.4 All members of the team to consider Critical Care Outreach team for support 
+6.5 When to fast bleep the Obstetric Registrar 
+ By dialling 2222 if: 
+• There is an obvious clinical deterioration 
+• Loss of consciousness of the woman 
+6.6 Cardiac / pulmonary arrest 
+If a cardiac and/or pulmonary arrest is confirmed dial 2222 and notify: 
+• Maternal Cardiac Arrest 
+• The Consultant Obstetrician and Anaesthetist should be informed 
+about the referral as soon as possible and should review the case. 
+ Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 13 of 36 
+ 6.7 Guidance for staff on when to involve clinicians from outside the maternity 
+service 
+6.7.1 Where women have complications other than common obstetric 
+issues, specialist clinicians should be considered as a source of 
+information and support. The Obstetrician leading the care should 
+consider involving the following specialities if the clinical situation 
+warrants it after discussion with the maternity team and Consultant 
+on call (unless life threatening when direct referral can be made) . 
+6.7.2 Specialist clinicians (usually the on call middle grade or consultant 
+level) should be contacted via the hospital switchboard. 
+
+Specialist clinicians Consider involvement when: 
+Physicians respiratory and/or cardiovascular problems 
+Gastroenterologists gastrointestinal and liver problems 
+Nephrologists renal function is deteriorating 
+Neurologists unexplainable CNS problems 
+General surgeons surgical complication is suspected 
+Interventional radiologists Haemorrhage NB only available 9 -5 
+Haematologist Blood related disorders 
+Microbiologists Sepsis / infection / antibiotic issues 
+ 
+6.8 ITU admissions 
+The Consultant Obstetrician will liaise with the Obstetric Anaesthetic Consultant 
+who will liaise with the ITU Consultant if admission to ITU is deemed necessary. 
+ 
+7 Specific Management Regimes & Guidance 
+7.1 Haemorrhage 
+• Major obstetric haemorrhage has an estimated incidence of 6 in 1000 
+maternities. This is among the most common causes of maternal collapse. 
+• Causes of major obstetric haemorrhage include postpartum 
+haemorrhage, major antepartum haemorrhage from placenta praevia, 
+placental abruption, uterine rupture and ectopic pregnancy , rarely uterine 
+inversion . In most cases of massive haemorrhage leading to collapse, the 
+cause is obvious, but concealed haemorrhage should not be forgotten, 
+including following caesarean section and ruptured ectopic pregnancy. Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 14 of 36 
+ • Other rarer causes of concealed haemorrhage include splenic artery 
+rupture and hepatic rupture. 
+• Blood loss is often difficult to estimate, especially slow, steady bleeding, 
+and fit, healthy women can tolerate significant loss prior to showing signs 
+of decompensation. 
+7.1.1 Management of Haemorrhage 
+• In the case of maternal collapse secondary to antepartum 
+haemorrhage, the fetus and placenta should be delivered 
+promptly to allow control of the haemorrhage. 
+• In the case of massive placental abruption, caesarean section 
+may occasionally be indi cated even if the fetus has demised to 
+allow rapid control of the haemorrhage. 
+• Intravenous tranexamic acid significantly reduces mortality due 
+to postpartum haemorrhage. 
+Referred to : MP053 Obstetric Haemorrhage , MP034 Vaginal 
+Birth after Caesarean Section VAC. 
+ 
+7.2 Cardiovascular Events 
+ 
+• Cardiac disease was the most common overall cause of indirect maternal 
+death in the MBRRACE -UK report 2016. 
+• The majority of deaths secondary to cardiac causes occur in women with no 
+previous history and almost one in five deaths occurred in an ambulance or 
+accident and emergency department. 
+• The main cardiac causes of maternal death are ischaemia and sudden 
+arrhythmic cardiac death with a structurally normal heart. 
+• Most cardiac events have preceding signs and symptoms. Aortic root 
+dissection, although usually associated with an inherited aortopathy e.g. 
+Ehlers -Danlos syndrome, can present in otherwise healthy women, and signs 
+and symptoms, such as central chest or interscapular pain, a wide pulse 
+pressure (mainly secondary to systolic hypertension) and a new cardiac 
+murmur, must prompt appropriate imaging and, if required, referral to a 
+cardiologist. 
+• The incidence of congenital and rheumatic heart disease in pregnancy is 
+increasing, secondary to increased survival rates and with improved 
+management of congenit al heart disease. 
+• Women with mechanical prosthetic heart valves are at particularly increased 
+risk of complications in pregnancy. These women should be cared for by an Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 15 of 36 
+ appropriately skilled and experienced multidisciplinary team, usually in 
+regional centres. 
+• Other cardiac causes include: cardiomyopathy; dissection of the coronary 
+artery; acute left ventricular failure; infective endocarditis; and pulmonary 
+oedema. 
+7.3 Management of Cardiac Diseases 
+ 
+• After successful resuscitation, cardiac cases should be managed 
+by an expert cardiology team. 
+• After initial resuscitation, the ongoing m anagement of cardiac 
+disease is similar to that in the non -pregnant state, although in 
+many cases, delivery will be necessary to facilitate this. 
+• Although thrombolysis can be associated with significant 
+bleeding from the placental site, it should be given to women 
+with acute coronary insufficiency, although caution should be 
+exercised in the perioperative period. If available, percutaneous 
+angioplasty allows accurate diagnosis and definitive therapy. 
+ 
+7.4 Thromboembolism 
+In the MBRRACE -UK report 2016 Thromboembolism was the most common 
+cause of direct maternal death. Appropriate use of thromboprophylaxis has 
+improved maternal morbidity and mortality, but improvements in clinical risk 
+assessment and prophylaxis are still required. 
+7.4.1 Management of Thromboembolism 
+Refer to acute Management of Thrombosis and Embolism during 
+Pregnancy and the Puerperium. 
+ 
+7.5 Amniotic fluid embolism (AFE) 
+• UK data published in 2016 give an incidence of AFE of 1.7 per 100 000 
+maternities. 
+• Survival rates seem to have improved significantly over time, from 14% in 
+1979, to approximately 30% in 2005 and 81% by 2014. 
+• However, neurological morbidity in survivors is well recognised. 
+• It presents as collapse during labour or birth, or within (usually) 30 minutes 
+of birth, in the form of acute hypotension, respiratory distress and acute 
+hypoxia. Seizures and cardiac arrest may occur. 
+• If AFE occurs prior to birth, profound fetal distress develops acutely. 
+• There are different phases to the disease progression, which clearly depend 
+on maternal survival. Initially, pulmonary hypertension may develop Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 16 of 36 
+ secondary to vascular occlusion either by debris or vasoconstriction. This 
+often resolves and left ventricular dysfunction or failure develops. 
+• Coagulopathy often develops if the mother survives long enough, often giving 
+rise to massive postpartum haemorrhage. The underlying pathophysiological 
+process has been compared to anaphylaxis or severe sepsis, and may be due 
+to complement activation. 
+• Diagnosis in nonfatal cases is clinical, as there is no established accurate 
+diagnostic test premortem, although research continues in the area. 
+7.5.1 Management of amniotic fluid embolism 
+• The management of AFE is supportive rather than specific, as 
+there is no proven effective therapy. 
+• Early involvement of senior experienced staff, including 
+obstetricians, anaesthetists, haematologists and intensivists, is 
+essential to optimise outcome. 
+• Coagulopathy needs early, aggressive treatment, including the 
+use of fresh frozen plasma. 
+• Recombinant factor VII should only be used if coagulopathy 
+cannot be corrected by massive blood component replacement 
+as it has been associated with poorer outcome in women with 
+AFE. 
+• Arrhythmias may develop and will require standard treatment. 
+Inotropic support is likely to be needed and measurement of 
+cardiac output may help direct the rapy and avoid fluid overload. 
+Fluid overload will exacerbate pulmonary oedema and increase 
+the risk of acute respiratory distress syndrome. High filling 
+pressures are indicative of a failing left ventricle. 
+• If undelivered, delivery of the fetus and placenta should be 
+performed as soon as possible. The incidence of uterine atony is 
+increased in this condition and contributes to the postpartum 
+haemorrhage. 
+• There is no robust evidence to support their use of steroids, 
+heparin, plasmapheresis and haemofiltration. 
+ 
+7.5 Sepsis 
+• Sepsis has been recognised for centuries as a significant cause of maternal 
+morbidity and mortality, and substandard care continues to feature in the 
+cases that result in death. Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 17 of 36 
+ • Bacteraemia, which can be present in the absence of pyrexia or a raised white 
+cell count, can progress rapidly to severe sepsis and septic shock leading to 
+collapse. 
+• The most common organisms implicated in obstetric sepsis are the 
+streptococcal groups A, B and D, pneumococcus and Escherichia coli . 
+ 
+7.5.1 Management of Sepsis 
+• Septic shock should be managed in accordance with the Surviving 
+Sepsis Campaign guidelines. 
+• The speed and appropriateness of therapy administered in the initial 
+hours after severe sepsis develops are likely to influence outcome with 
+early resuscitation improving survival rates. 
+• A multidisciplinary team approach is required, including midwives, 
+consultant obstetricians, anaesthetists, haematologists, intensivists and 
+microbiologists. 
+• The following ‘Care Bundle’ should be applied immediately or within 
+6 hours, and has been shown to signi ficantly improve survival rates: 
+1. Measure serum lactate. 
+2. Obtain blood cultures and culture swabs prior to antibiotic 
+administration. 
+3. Administer broad spectrum antibiotic(s) within the first hour of 
+recognition of severe sepsis and septic shock according to local 
+protocol. 
+4. In the event of hypotension and /or lactate more than 4 mmol/l: 
+➢ Begin rapid administration of an initial minimum of 
+30 ml/kg of crystalloid to be completed within 3 hours of 
+diagnosis. 
+➢ Once adequate volume replacement has been achieved, a 
+vasopressor (noradrenaline, with vasopressin or adrenaline 
+in addition, if required) and/or an inotrope (for example, 
+dobutamine) may be used to maintain mean arterial 
+pressure more than 65 mmHg. 
+5. In the event of hypotension despite fluid resuscitation (septic 
+shock) and/or lactate more than 4 mmol/l: 
+➢ Dynamic variables of fluid status such as 
+transoesophageal Doppler and lithium dilution cardiac 
+output (LiDCO) are preferred to static variables like 
+central venous pressure or pulmonary artery occlusion Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 18 of 36 
+ pressure and the use of central venous pressure alone to 
+guide fluid resuscit ation can no longer be justified 
+➢ Consider steroids if unresponsive to adequate fluid 
+resuscitation and vasopressor therapy. 
+➢ Maintain oxygen saturation at more than 94% (88% –92% 
+in women at risk of hypercapnic respiratory failure) with 
+facial oxygen. Consider transfusion if haemoglobin less 
+than 70 g/l. 
+6. Ongoing management involves continued supportive therapy, 
+removing the septic focus, administration of blood products if 
+required, and Thromboprophylaxis . 
+7.6 Drug toxicity and overdose 
+• Drug toxicity and overdose should be considered in all cases of collapse. 
+• Substance misuse should be remembered as a potential cause of collapse especially 
+outside of hospital. 
+• In terms of therapeutic drug toxicity, the commonly used drugs in obstetric practice 
+are magnesium sulphate in the presence of renal impairment and local anaesthetic 
+agents. 
+• Toxic effects associated with local anaesthetics usually result from excessively high 
+plasma concentrations. This can be either as a result of inadvertent intravenous 
+injection, or systemic absorption of toxic amounts administered via appropriate 
+(epidural, local infiltration etc.) routes. Local anaesthetic toxicity resulting from 
+systemic absorption of the local anaesthetic may occur sometime after the initial 
+injection. Effects initially include a feeling of inebriation and light headedness 
+followed by sedation, circumoral paraesthesia and twitching; convulsions can occur 
+in severe toxicity. On intravenous injection, convulsions and cardiovascular collapse 
+may occur very rapidly. Signs of severe toxicity include sudden loss of consciousness, 
+with or without tonic -clonic convulsions, and cardiovascular collapse; sinus 
+bradycardia, conduction blocks, asystole and ventricular tachyarrhythmias can all 
+occur. 
+• In terms of local anaesthetics, total spinal block or high spinal/epidural block are 
+rare. A high index of suspicion is needed in cases of maternal collapse following 
+spinal anaesthesia or epidural top up. Appropriate training of medical and midwifery 
+staff to recognise the signs and symptoms of high block is essential. 
+7.6.1 Management of Drug toxicity and overdose 
+• Many drug overdoses have treatments specific to the drug in 
+question and appropriate help should be sought in the 
+management of such cases, including liaising with Toxbase and 
+speaking to GP / local pharmacist. Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 19 of 36 
+ • In obstetric practice, the two main drugs that can give rise to 
+overdose or toxic problems are magnesium sulphate and local 
+anaesthetic agents. 
+7.6.2 Management of Magnesium S ulphate toxicity 
+• The antidote to magnesium toxicity is 10 ml 10% calcium 
+gluconate or 10 ml 10% calcium chloride given by slow 
+intravenous injection. 
+7.6.3 Local anaesthetic agents 
+• If local anaesthetic toxici ty is suspected, stop injecting 
+immediately. 
+• Manage arrhythmias as usual, recognising that they may be very 
+refractory to treatment. 
+• Lipid rescue should be used in cases of collapse secondary to 
+local anaesthetic toxicity. Intralipid® 20% should be available in all 
+hospitals offering maternity services. The mechanisms by which 
+lipids reverse local anaesthetic cardiotoxicity may be (1 ) 
+increasing clearance from cardiac tissue which is termed a ‘lipid 
+sink.’ ( 2 ) lipids counteract local anaesthetic inhibition of 
+myocardial fatty acid oxidation, thereby enabling energy 
+production and reversing cardiac depression. 
+• Intravenous bolus injection of Intralipid® (Baxter Healthcare 
+Corporation, Deerfield, Illinois, USA) 20% 1.5 ml/kg over 1 min 
+(100 ml for a woman weighing 70 kg) followed by an intravenous 
+infusion of Intralipid® 20% 15 ml/kg/h (1000 ml.h−1 for a woman 
+weighing 70 kg). The bolus injection can be repeated twice at 5 -
+minute intervals if an adequate circulation has not been restored 
+(a further two 100 ml boluses at 5 -minute intervals for a woman 
+weighing 70 kg). After another 5 minutes, the i nfusion rate 
+should be increased to 30 ml/kg/hr if an adequate circulation has 
+not been restored. Do not exceed a maximum cumulative dose of 
+12 ml/kg (840 ml for a woman weighing 70 kg). CPR should be 
+continued throughout this process until an adequate circulation 
+has been restored. This may take over 1 hour. 
+• Prolonged resuscitation may be necessary, and it may be 
+appropriate to consider other options. The first -line treatment 
+should be lipid emulsion, but if the facilities are available, some 
+may consider the use of cardiopulmonary bypass. 
+• All cases of lipid rescue should be reported to NHS Improvement 
+and the Lipid Rescue site. (www.nrls.npsa.nhs.uk ) 
+(www.lipidrescue.org ) Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 20 of 36 
+ 8 Eclampsia 
+• Eclampsia as the cause of maternal collapse is usually obvious in the inpatient 
+setting. Often the diagnosis of pre -eclampsia has already been made and the 
+seizure witnessed. 
+• In the community setting, fitting after 20 weeks’ gestation may be attributable 
+to eclampsia, notably where there is no known history of epilepsy. However, 
+epilepsy should always be considered in cases of maternal collapse associated 
+with seizure activity. 
+8.1 Management of Eclampsia 
+Refer to Hypertension in Pregnancy: Diagnosis and Management . 
+9 Intracranial haemorrhage 
+• Intracranial haemorrhage is a significant complication of uncontrolled, 
+particularly systolic, hypertension, but can also result from ruptured 
+aneurysms and arteriovenous malformations. 
+• The initial presentation may be maternal collapse, but often severe headache 
+precedes this. 
+9.1 Management of Intracranial haemorrhage 
+• Neuro -radiologists and neurosurgeons should be involved in the care of 
+pregnant women with intracranial haemorrhage at the earliest 
+opportunity. 
+• Expert neuroradiology is required to establish an accurate diagnosis, and 
+management is the same as in non -pregnant women, although delivery 
+may be necessary to facilitate this. 
+10 Anaphylaxis 
+• Anaphylaxis is a severe, life -threatening generalised or systemic 
+hypersensitivity reaction, resulting in respiratory, cutaneous and circulatory 
+changes, and possibly gastrointestinal disturbance and collapse. There is 
+significant intravascular volume redistribution, which can lead to decreased 
+cardiac output. Acute ventricular failure and myocardial ischaemia may occur. 
+Upper airway occlusion secondary to angioedema, bronchospasm and mucous 
+plugging of smaller airways all contribute to significant hypoxia and difficulties 
+with ventilation. 
+• Common triggers are a variety of drugs, latex, animal allergens and foods. The 
+incidence of severe perioperative obstetric anaphylaxis is between 1 and 3.5 
+per 100 000, with a mortality rate of approximately 1%. 
+• Anaphylaxis is likely when all of the following three criteria are met: Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 21 of 36 
+ ➢ sudden onset and rapid progression of symptoms 
+➢ life-threatening airway and/or breathing and/or circulation problems 
+➢ skin and/or mucosal changes (flushing, urticaria, angioedema). 
+• Exposure to a known allergen for the woman supports the diagnosis, but 
+many cases occur with no previous history. Mast cell tryptase levels can be 
+useful in confirming the diagnosis. As a minimum, 1 sample at 1 –2 hours after 
+the start of symptoms should be taken. Ideally though 3 timed samples should 
+be taken: as soon as possible after resuscitation has started (without delaying 
+resuscitation); 1 –2 hours after the start of symptoms; 24 hours later. 
+ 
+10.1 Management of Anaphylaxis 
+• In cases of anaphylaxis, all potential causative agents should be 
+removed, and the ABCDE approach to assessment and resuscitation 
+followed. 
+• If the anaphylactic reaction occurs in the community, the woman 
+should have basic life support and be transferred to a hospital setting 
+as quickly as possible. 
+• The treatment for anaphylaxis is 1:1000 adrenaline 500 micrograms 
+(0.5 ml) intramuscularly. This dose is for intramuscular use only. 
+Adrenaline treatment can be repeated after 5 minutes if there is no 
+effect. In experienced hands, 50 microgram bolus (0.5 ml of 1:10 000 
+solution) can be titrated intravenously. 
+• Adjuvant therapy consists of chlorphenami ne 10mg and 
+hydrocortisone 200 mg. Both are given intramuscularly or by slow 
+intravenous injection. 
+11 Other causes 
+• Hypoglycaemia, hyponatraemia and other metaboli c and electrolyte 
+disturbances. 
+• Other causes of hypoxia include airway obstruction secondary to aspiration 
+or foreign body, air embolism, tension pneumothorax, cardiac tamponade 
+secondary to trauma or dissection, and hypothermia. 
+• From an anaesthetic perspective, the main causes of collapse would be local 
+anaesthetic toxicity or failed tracheal intubation. 
+• Pregnant women undergo a variety of physiological changes that can 
+accelerate the development of hypoxia and acidosis, and make ventilation 
+more difficult and make resuscitation during pregnancy more challenging. Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 22 of 36 
+ 11.1 Aortocaval compression 
+• From around 20 weeks of gestation onwards the gravid uterus reduces 
+venous return in the supine position. As a consequence, cardiac output is 
+reduced by up to 30 –40%.Supine hypotension itself can precipitate maternal 
+collapse, which is usually reversed by turning the woman into the left lateral 
+position. 
+• When cardiopulmonary arrest occurs, chest compressions are needed to 
+produce a cardiac output. In the non -pregnant situation, they achieve 
+around 30% of the normal cardiac output. Aortocaval compression further 
+reduces cardiac output to approximately 10% of the non -pregnant cardiac 
+output. Therefore, cardiopulmonary resuscitation (CPR) is less likely to be 
+effective in a woman who is at 20 or more weeks of gestation. 
+11.2 Respiratory changes 
+• Changes in lung function, diaphragmatic splinting and increased oxygen 
+consumption make pregnant women become hypoxic more readily and 
+make ventilation more difficult. 
+11.3 Intubation 
+ 
+• Weight gain in pregnancy, large breasts inhibiting the working space and 
+laryngeal oedema can all contribute to making intubation more difficult 
+ 
+11.4 Aspiration 
+• Pregnant women are at a significantly higher risk of regurgitation and 
+aspiration, secondary to the progesterone effect relaxing the lower 
+oesophageal sphincter along with the raised intra -abdominal pressure 
+secondary to the gravid uterus. During labour or following maternal opioid 
+administration there can also be a delay in gastric emptying. Aspiration 
+pneumonitis in pregnant women, known as Mendelsson's syndrome, can 
+be severe. 
+• The risks can be minimised by early intubation with effective cricoid 
+pressure, and the use of H 2 antagonists and antacids prophylactically in all 
+women considered tobe at high risk of obstetric intervention during labour. 
+11.5 Circulation 
+• The increased cardiac output and hyperdynamic circulation of pregnancy 
+mean that large volumes of blood can be lost rapidly, especially from the 
+uterus which receives 10% of the cardiac output at term. Otherwise healthy 
+women tolerate blood loss remarkably well and can lose up to 35% of their 
+circulation before becoming symptomatic, and often maternal tachycardia Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 23 of 36 
+ may be the only sign of hypovolaemia until very late in the haemorrhage. 
+• Blood loss is tolerated less well if there is a pre -existing maternal 
+anaemia,and clotting is less efficient if there is significant anaemia. 
+• Concealed bleeding and underestimation of loss means that intervention is 
+often delayed. Where signs of hypovolaemia have been subtle, 
+hypovolaemia as the cause of maternal cardiopulmonary arrest may go 
+unrecognised. 
+
+12 What is the optimal initial management of maternal collapse? 
+ 
+12.1 Resuscitation in maternal collapse 
+• Maternal collapse resuscitation should follow the Resuscitation Council 
+(UK) guidelines using the standard ABCDE approach, with some 
+modifications for maternal physiology, in particular relief of aortocaval 
+compression. Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 24 of 36 
+ • If maternal cardiac arrest occurs in the community setting, basic life 
+support should be administered and rapid transfer arranged. The cause of 
+the maternal collapse should be rapidly identified and treated to prevent 
+potential progression to maternal cardio -respiratory arrest. 
+• Ongoing regular ABCDE assessment should be performed as the risk of 
+progression to cardiac arrest remains until the cause of the collapse is 
+treated. 
+12.2 Relieving aorto -caval compression 
+• Manual displacement of the uterus to the left is effective in relieving 
+aortocaval compression in women above 20 weeks’ gestation or where 
+the uterus is palpable at or above the level of the umbilicus. This permits 
+effective chest compressions in the supine position in the event of cardiac 
+arrest. The technique should be performed using an ‘up, off and over’ 
+method. This is achieved by placing a hand below the uterus on the 
+maternal right and pushing the uterus slightly upwards and to the left. 
+This maintains the woman in a supine position, allowing for continuous 
+effective cardiac compressions if necessary. 
+• A left lateral tilt of the woman from head to toe at an angle of 15 –30o on 
+a firm surface (a tilting operating table, with an appropriate size solid 
+wedge and spinal board ) will relieve aortocaval compression in the 
+majority of pregnant women and still allow effective chest compressions 
+to be performed in the event of cardiac arrest. Using soft surfaces, such as 
+a bed, or objects, such as pillows or blankets, are not nearly as effective, 
+compromise effective chest compressions, and should not be used. (a 
+video of the procedure can be found at 
+https://www.youtube.com/watch?v=2VyqGqDNlLc ) 
+• In cases of major trauma, the spine should be protected with a spinal 
+board before any tilt is applied. In the absence of a spinal board, manual 
+displacement of the uterus should be used. 
+12.3 Airway 
+• Intubation in an unconscious woman with a cuffed endotracheal tube 
+should be performed immediately by an experienced anaesthetist. 
+• The airway in pregnancy is more vulnerable because of the increased 
+risk of regurgitation and aspiration. For this reason, it is important to 
+clear and protect the airway as early as possible. 
+• Intubation with a cuffed endotracheal tube should then be performed. 
+This will protect the airway, ensure good oxygen delivery and facilitate 
+more efficient ventilation. 
+• Failed intubation is more common in the pregnant than nonpregnant 
+patient and a plan for failed intubation should always be considered. Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 25 of 36 
+ • Appendix 2 of this guideline presents suggested equipment that should 
+be available for cases where airway management may be difficult. 
+12.4 Breathing 
+• Supplemental high flow oxygen should be administered as soon as 
+possible to counteract rapid deoxygenation. Maternal physiological 
+changes lead to increased oxygen requirements. Therefore, 
+supplemental oxygen should be added with a gas flow of 10 –15 l per 
+minute to whatever method of ventilation is being employed. 
+• Bag and mask ventilation or insertion of a simple supraglottic airway 
+should be undertaken until intubation can be achieved. 
+12.5 Circulation 
+• If the airway is clear and there is no breathing, chest compressions 
+should be commenced immediately in the absence of a cardiac output. 
+Hand position should be over the centre of the chest and it is important 
+to ensure that the direction of compression is perpendicular to the chest 
+wall. If a left lateral tilt is employed then the angle of tilt must be taken 
+into account when performing chest compressions. Immediate and 
+competent chest compressions have been found to have a direct impact 
+on maternal outcome. 
+• In total, 30 chest compressions (at a rate of 100 –120 per minute) should 
+be performed for every two ventilation breaths initially. If there are two 
+rescuers, one should be responsible for chest compressions and 
+ventilation breaths, whilst the other should ensure aortocaval 
+decompression with manual uterine displacement. 
+• Because chest compressions are not as effective after 20 weeks of 
+gestation, there should be early recourse to delivery of the fetus and 
+placenta if CPR is not effective. In woman with a very high BMI chest 
+compressions can be performed over the head of the woman if there is 
+sub-optimal rescuer positioning. 
+• Two wide -bore cannulae (minimum 16 gauge) should be inserted as 
+soon as possible. If peripheral venous access is not possible, early 
+consideration of central venous access, intraosseous access or venous 
+cutdown should be considered. 
+• There should be an aggressive approach to volume replacement, 
+although caution should be exercised in the context of pre -eclampsia or 
+eclampsia. 
+• Abdominal ultrasound by a skilled operator can assist in the dia gnosis of 
+concealed haemorrhage as haemorrhage is the most common cause of 
+maternal collapse. Laparotomy should not be delayed if the findings are 
+negative and/or the index of suspicion is high. This, however, should not 
+interfere with the resuscitation process. Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 26 of 36 
+ • In the case where significant haemorrhage, and pre -eclampsia or 
+eclampsia exist, careful fluid management is essential. 
+• The same defibrillation energy levels should be used as in a nonpregnant 
+woman. Adhesive defibrillator pads are preferable to defibrillator 
+paddles, and the left defibrillation pad should be applied lateral to the 
+left breast. If the woman's breasts are large or engorged, defibrillator 
+pads may need to be placed on the anterior and posterior precordium to 
+optimise defibrillation energy transfer. The energy from the 
+defibrillation shock is directed across the heart and there is no evidence 
+that shocks from a direct current defibrillator have an adverse effect on 
+the fetus. Uterine monitors should be removed before shock delivery. 
+12.6 Drugs 
+• There should be no alteration in algorithm drugs or doses used in the 
+Resuscitation Council (UK) protocols. (Appendix - Resus Council 2021) 
+12.7 Other considerations 
+• Common, reversible causes of maternal cardiopulmonary arrest should be 
+considered throughout the resuscitation process. 
+• Resuscitation efforts should be continued until a decision is taken by the 
+consultant obstetrician and consultant anaesthetist to discontinue 
+resuscitation efforts. This decision should be made in consensus with the 
+cardiac arrest team. 
+• Throughout the resuscitation process, consideration should be given to 
+the cause of the collapse, so that ongoing therapy can be directed 
+towards the specific cause to optimise outcome. 
+12.8 When, where and how should perimortem caesarean section (PMCS) be 
+performed? 
+• In women over 20 weeks of gestation, if there is no response to correctly 
+performed CPR within 4 minutes of maternal collapse or if resuscitation is 
+continued beyond this, then PMCS should be undertaken to assist 
+maternal resuscitation. Ideally, this should be achieved within 5 minutes 
+of the collapse. 
+• PMCS should not be delayed by moving the woman. It should be 
+performed where maternal collapse has occurred and resuscitation is 
+taking place. With no circulation, blood loss is minimal, and no 
+anaesthetic is required. The doctrine of ‘best interests of the patient’ 
+would apply to conduct of this procedure being carried out without 
+consent. 
+• The operator should use the incision, which will facilitate the most rapid 
+access. This may be a midline vertical incision or a suprapubic transverse 
+incision . Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 27 of 36 
+ • A scalpel and umbilical cord clamps (or alternative ligatures) should be 
+available on the resuscitation trolley in all areas where maternal collapse 
+may occur, including the accident and emergency department. 
+• Delivery of the fetus and placenta reduces oxygen consumption, 
+improves venous return and cardiac output, facilitates chest 
+compressions and makes ventilation easier. It also allows for internal 
+chest compressions by inserting the hand through the open abdomen up 
+to the diaphragm and compressing the posterior aspect of the heart 
+against the chest wall. This improves cardiac output beyond that achieved 
+in closed chest compressions. 
+• At less than 20 weeks of gestation there is no proven benefit from 
+delivery of the fetus and placenta. PMCS should be considered a 
+resuscitative procedure, to be performed primarily in the interests of 
+maternal survival. 
+• Delivery within 5 minutes of maternal collapse improves the chances of 
+survival for the baby. If maternal resuscitation is continuing beyond 
+4 minutes of the collapse, delivery of the fetus and placenta should be 
+performed as soon as possible to aid this, even if the fetus is already 
+dead. 
+• If resuscitation is successful following birth, there should be prompt 
+transfer to an appropriate environment at that point, as well as 
+anaesthesia and sedation, to control ensuing haemorrhage and complete 
+the operation. 
+• Where the resuscitation is not successful, the case should be discussed 
+with the coroner or procurator fiscal to determine whether a postmortem 
+is required before any medical devices, such as lines and endotracheal 
+tube are removed, as per the Royal College of Pathologists 
+recommendations. 
+13 What are the outcomes for mother and baby? 
+• Outcomes for mothers and babies depend on the cause of collapse, 
+gestational age and access to emergency care, with survival rates being 
+poorer if the collapse occurs out of hospital. In maternal cardiac arrest 
+maternal survival rates of over 50% have been reported. 
+• Time intervals between collapse and PMCS was significantly shorter in 
+women who survived compared with those who died (median interval, 
+3 minutes versus 12 minutes; P = 0.001). 
+• Neonatal survival was only found in women who suffered cardiac arrest in 
+hospital and there were reports of neonatal survival where delivery was 
+performed 30 minutes after maternal cardiac arrest. Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 28 of 36 
+ 14 Documentation 
+• Accurate documentation is essential in all cases of maternal collapse, whether 
+or not resuscitation is successful. 
+15 Incident reporting 
+• All cases of maternal collapse should generate a clinical incident form and the 
+care should be reviewed through the clinical governance process. 
+• All cases of maternal death should be reported to MBRRACE -UK. 
+16 Training 
+• All generic life support training should consider the adaptation of CPR in 
+pregnant women. 
+• All maternity staff should have annual formal multidisciplinary training in ABLS 
+(Adult Basic Life Support) and the management of maternal collapse. 
+• Life support training improves resuscitation skills. 
+• Small group multidisciplinary interactive practical training is recommended to 
+improve the management of maternal collapse. 
+• All front -line staff must be aware of the adaptations for CPR in pregnancy. This 
+includes paramedics who will deal with collapse in the community setting and 
+accident and emergency department personnel, as well as staff within a 
+maternity unit. 
+17 Debriefing 
+• Debriefing is recommended for the woman, the family and the staff involved 
+in the event. 
+• Maternal collapse can be associated with post -traumatic stress disorder (for 
+the woman, her family and for staff involved), postnatal depression and 
+tocophobia. Debriefing is an important part of holistic maternity care and 
+should be offered by a competent professional to support the ongoing mental 
+health of all concerned. 
+18 Auditable topics 
+• Proportion of staff undergoing regular training in life support (100%). 
+• Proportion of staff undergoing regular training in maternal collapse (100%). 
+• Audit of the management of maternal collapse (100%). 
+• Compliance with incident reporting (100%). Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 29 of 36 
+ • Achievement of PMCS within 5 minutes of collapse on hospital premises, 
+where there is no response to resuscitation (100% in pregnancies over 
+20 weeks of gestation). 
+• Presence of a scalpel on resuscitation trolleys (100%). 
+19 Useful links and support groups 
+• UK Obstetric Surveillance System (UKOSS) 
+[https://www.npeu.ox.ac.uk/ukoss ]. 
+• MBRRACE -UK: Mothers and Babies: Reducing Risk through Audits and 
+Confidential Enquiries across the UK [ https://www.npeu.ox.ac.uk/mbrrace -
+uk]. 
+• Advance Life Support in Obstetrics (ALSO) [ http://www.also -uk.com/ ]. 
+• Practical Obstetric Multi -Professional Training (PROMPT) 
+[http://www.promptmaternity.org/ ]. 
+• Managing Medical and Obstetric Emergencies and Trauma (mMOET), 
+Advanced Life Support Group (ALSG) [ http://www.alsg.org/home/ ]. 
+• The Birth Trauma Association [ http://www.birthtraumaassociation.org.uk/ ]. 
+ Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 30 of 36 
+ 20 References 
+ 
+Confidential Enquiry into Maternity and Child Health. (2004). Why Mothers Die 2000 -2002 . 
+London: RCOG Press. www.cemach.org.uk 
+ 
+Mothers & Babies Reducing Risk through Audit and Confidential Enquiry across the UK 
+(MBRRACE -UK). (2017). Saving Mothers Lives:Improving Mothers’ Care. Lessons learned to 
+inform maternity care from theUK and Ireland Confidential Enquiries into Maternal Deaths 
+and Morbidity 2013 –15.. https://www.npeu.ox.ac.uk/downloads/files/mbrrace -
+uk/reports/MBRRACE -UK%20Maternal%20Report%202017%20 -%20Web.pdf 
+ 
+National Confidential Enquiry into Patient Outcome and Death. (2001). Changing the Way We 
+Operate: The 2001 Report of the National Confidential Enquiry into Peri -operative Deaths . 
+London: NCEPOD. www.ncepod.org.uk 
+ 
+Royal College of Anaesthetists, Royal College of Midwives, Royal College of Obstetricians and 
+Gynaecologists, Royal College of Paediatrics and Child Health. (2007). Safer Childbirth: Minimum 
+Standards for the Organisation and Delivery of Care in Labour . London: RCOG Press. 
+www.rcog.org.uk 
+ 
+Royal College of Anaesthetists, Royal College of Physicians of London, Intensive Care Society, 
+Resuscitation Council (UK). (2008). Cardiopulmonary Resuscitation: Standards for Clinical 
+Practice and Training (Updated version) . London: www.resus.org.uk 
+
+ Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 31 of 36 
+ Appendix: Activation of Sudden Maternal Collapse Guideline 
+Immediate management of Sudden Maternal Collapse should be the same regardless of cause. 
+ 
+A = Airway B = Breathing C = Circulation 
+ 
+ Client unresponsive 
+ Open airway and look for signs of life 
+No pulse or respirations Pulse and respirations present 
+• Request a ‘2222 – Maternal 
+Cardiac Arrest’ 
+• Declare cardiac arrest and giving 
+specific location 
+• This will activate the cardiac arrest 
+team, including obstetric, 
+anaesthetic & Neonatal teams for 
+assistance 
+Follow cardiac arrest guidelines 
+ 
+The following modifications are required in 
+pregnancy: 
+ 
+• Uterine displacement (manual or 25 -30° 
+left lateral tilt) 
+• Increased chest wall compression force 
+• Use cricoid pressure if assistance 
+• available 
+• Early tracheal intubation, consider using 
+short laryngoscope handle and smaller 
+endotracheal tube 
+• Perimortem caesarean delivery if mother 
+fails to respond with a return of 
+spontaneous circulation within 4 minutes 
+• Consider other aetiologies, e.g. 
+Magnesium toxicity 
+• Consider left wide paddle, adhesive pad, 
+or breast displacement • Request a ‘2222 - obstetric 
+emergency’ 
+• Declare obstetric emergency giving 
+specific location. 
+• This will summon the obstetric, 
+anaesthetic and Neonatal teams 
+for assistance 
+1. Administer 100% oxygen by face mask and 
+maintain airway. 
+2. Put in to recovery position. 
+3. Insert 2 IV cannulae of not less than 14 gauge 
+and stake blood for FBC, clotting, G&S, U&E, 
+RBS. 
+4. Consider early intra -osseus access if 
+cannulation difficult 
+5. Apply monitoring 
+• NIBP 3min cycle 
+• SpO2 
+• ECG 
+6. If GCS < 8 or airway reflexes compromised, 
+anaesthetic SpR should intubate and ventilate 
+5. 
+7. If systolic pressure < 90 mmHg 
+• Ensure uterine displacement 
+• Infuse 1 litre of colloid or crystalloid 
+• Consider ephedrine 6mg boluses 
+8. Establish and manage specific cause of collapse 
+but remember to regularly evaluate A,B,C for 
+changes in maternal condition 
+9. Assess the fetal condition and consider urgent 
+delivery of fetus 
+ Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 32 of 36 
+ Appendix - Adult Resuscitation Algorithm - Resus Council 2021 
+ 
+ Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 33 of 36 
+ Appendix - Recommended airway equipment 
+
+ Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 34 of 36 
+ Appendix - Post collapse management 
+
+ Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 35 of 36 
+ Appendix : Prompt Card peri -partum Collapse 
+
+ Peripartum Collapse Severely ill Pregnant Women (RSCH PRH only ) MP055 
+University Hospitals Sussex NHS Trust East Page 36 of 36 
+ Appendix : Prompt Maternal Cardiac Arrest

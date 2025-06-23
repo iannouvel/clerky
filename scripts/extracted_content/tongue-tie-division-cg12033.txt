@@ -1,0 +1,490 @@
+# Extracted from: Tongue-tie Division CG12033.pdf
+# Guideline ID: tongue-tie-division-cg12033
+# Content length: 25718 characters
+# Processing date: 1750066902.0290658
+
+CG12033 Division of Tongue Tie v6.2 Nov 2023 Page 1 of 20 
+Please check against the intranet that this printout is the most recent version of this document. 
+
+Division of Tongue Tie (Ankyloglossia) Guideline 
+Summary statement: How does the document 
+support patient care? Provides guidance to health care professionals on 
+tongue tie and the process for referral including 
+information for tongue tie practitioners 
+Staff/stakeholders involved in development: Consultant Paediatricians, Infant Feeding Group, Joint 
+Obstetric Guideline Group Members 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Public Health Midwife 
+For use by: Medical, Paediatric, Nursing and Midwifery staff 
+Purpose: To provide a robust assessment and referral for those 
+mother/birthing parents and babies experiencing feeding 
+difficulties in relation to tongue tie 
+This document supports: NICE (2005) Division of Ankyloglossia (Tongue Tie) for 
+Breastfeeding : Interventional Procedure Guidance 149 
+Key related documents: UHSussex Maternity (SRH&WH) Guidelines: Infant 
+Feeding, Hypoglycaemia and Reluctant Feeder 
+Approved by: Joint Obstetric Guideline Group 
+Approval date: 15th November 2023 
+Date uploaded: 22nd November 2023 
+Ratified by Board of Directors/ Committee of the 
+Board of Directors N/A 
+Expiry Date: March 2026 
+Review date: September 2025 
+If you require this document in another format such as Braille, large print, audio or another 
+language please contact the Trusts Communications Team 
+Reference Number: CG12033 CG12033 Division of Tongue Tie v6.2 Nov 2023 Page 2 of 20 
+Please check against the intranet that this printout is the most recent version of this document. 
+
+Version Date Author Status Comment 
+1.0 July 2012 L. Cosgrove Archive New Trustwide Maternity 
+Guideline 
+2.0 July 2015 D. Bell Archive 
+3.0 May 2018 S Crisp Archive 3 yearly update 
+4.0 August 2018 S. Crisp Archive amendment 
+5.0 February 2020 C Parr Archive Reformatted, change of 
+assessments, links to 
+appendices. 
+6.0 January 2023 F. Humberstone, 
+Infant Feeding Lead Archived Three year review 
+Information on oral thrush 
+added. Parent information 
+updated. 
+6.1 July 2023 S. Harris 
+Infant feeding 
+Midwife Archived Updated Appendix 1: Tongue Tie 
+Assessment and Division form 
+New Appendix 6: Frenulotomy 
+Safety Checklist. 
+6.2 November 2023 F. Humberstone, 
+Infant Feeding Lead LIVE Updated Appendix 1: Tongue 
+tie Assessment & Consent 
+form 
+ 
+The interpretation and application of clinical guidelines will remain the responsibility 
+of the individual clinician. 
+If in doubt contact a senior colleague or expert. CG12033 Division of Tongue Tie v6.2 Nov 2023 Page 3 of 20 
+Please check against the intranet that this printout is the most recent version of this document. 
+
+Contents 
+1.0 Aim ................................ ................................ ................................ .............................. 4 
+2.0 Scope ................................ ................................ ................................ .......................... 4 
+3.0 Abbreviations used in this guideline ................................ ................................ ............. 4 
+4.0 Introduction ................................ ................................ ................................ ................. 4 
+5.0 Symptoms of Tongue Tie ................................ ................................ ............................. 4 
+5.1 Breastfeeding ................................ ................................ ................................ .............. 5 
+5.2 Bottle feeding ................................ ................................ ................................ .............. 5 
+6.0 Referral ................................ ................................ ................................ ....................... 5 
+6.1 Assessment prior to referral ................................ ................................ ......................... 6 
+6.1.1 (TABBY) Tongue Assessment Tool ................................ ................................ ............. 6 
+6.2 Inpatients ................................ ................................ ................................ .................... 8 
+7.0 Training ................................ ................................ ................................ ....................... 8 
+8.0 Clinical assessment ................................ ................................ ................................ ..... 8 
+8.1 Contraindications ................................ ................................ ................................ ......... 8 
+9.0 Pre Division discussion ................................ ................................ ................................ 9 
+10.0 Tongue Tie Division ................................ ................................ ................................ ..... 9 
+11.0 Bleeding ................................ ................................ ................................ ...................... 9 
+12.0 Post procedure ................................ ................................ ................................ .......... 10 
+13.0 Audit ................................ ................................ ................................ .......................... 11 
+References and Bibliography ................................ ................................ ................................ 12 
+Appendix 1: Tongue tie Assessment & Consent form ................................ ............................ 13 
+Appendix 2: Tongue tie pre-appointment assessment form ................................ ................... 14 
+Appendix 3: Post Tongue Tie Division Information for parents ................................ .............. 16 
+Appendix 4: Letter to GP template ................................ ................................ ........................ 18 
+Appendix 5: Frenultomy Excessive Bleeding Proforma ................................ ......................... 19 
+ CG12033 Division of Tongue Tie v6.2 Nov 2023 Page 4 of 20 
+Please check against the intranet that this printout is the most recent version of this document. 
+ Division of Tongue Tie (Ankyloglossia) Guideline 
+
+1.0 Aim 
+ 
+The aim of this guideline is to provide a resource for staff caring for mothers/birthing parents 
+and their babies who have breastfeeding or bottle -feeding concerns relating to tongue tie. 
+ 
+The guidance should help to provide consistency in the information provided to parents in 
+relation to infant feeding, and where assessment and division of Tongue -tie may be 
+beneficial. 
+ 
+2.0 Scope 
+ 
+This guideline applies to all staff involved in providing feeding support: 
+ 
+• Midwives 
+• Neonatal staff 
+• Maternity assistants 
+• Maternity support workers 
+
+3.0 Abbreviations used in this guideline 
+ 
+MSW - Maternity Support Worker SCBU - Special Care Baby Unit 
+SRH - St Richard’s Hospital TABBY - Tongue Assessment Tool 
+MIS - Maternity Information 
+System 
+
+4.0 Introduction 
+ 
+Ankyloglossia, also known as Tongue Tie is a congenital anomaly characterised by an 
+abnormally short lingual frenulum which restricts mobility of the tongue. It varies in degree, 
+from a mild form, in which the tongue is bound only by a thin mucous membrane, to a severe 
+form, in which the tongue is completely fused to the floor of the mouth. Breastfeeding 
+difficulties may arise from the inability to suck effectively, causing sore nipples and mastitis in 
+the mother and poor infant weight gain. 
+ 
+5.0 Symptoms of Tongue Tie 
+ 
+Many visible tongue -ties are asymptomatic and do not require treatment and some may 
+resolve spontaneously with time. This is why it is essential to perform a full feeding 
+assessment and provide support and advice on effective positioning and attachment prior to 
+discussing the presence of a tongue -tie. The feeding assessments for breastfeeding babies CG12033 Division of Tongue Tie v6.2 Nov 2023 Page 5 of 20 
+Please check against the intranet that this printout is the most recent version of this document. 
+ 
+can be found in the Baby Postnatal Record. Below is a list of symptoms which may be 
+present for a mother/birthing parent and baby dyad, affected by a tongue tie. 
+ 
+5.1 Breastfeeding 
+ 
+For mother/birthing parent: 
+ 
+• Sore damaged nipples despite good positioning and attachment 
+• Nipple pain while feeding (not just discomfort during the first few sucks) 
+• Engorgement 
+• Recurrent mastitis 
+• Exhaustion from frequent feeding 
+• Reduced milk supply due to baby not latching well leading to frequent long feed 
+• Cessation of breastfeeding 
+For baby: 
+• Difficulty attaching to the breast or remaining attached 
+• Feeding for long periods of time with only short breaks in between 
+• Unsettled baby appearing to be hungry most of the time 
+• Poor weight gain 
+• Fussiness at the breast 
+• Wind due to poor attachment 
+• Noisy feeding - clicking, smacking 
+• Reflux or vomiting after feeds 
+ 
+5.2 Bottle feeding 
+ 
+• Feeds take a long time 
+• Dribbling a lot during feed 
+• Baby may appear very windy or ‘colicky’ 
+• Noisy feeding and only taking a small amount of milk at each feed 
+• Difficulty staying attached 
+• Poor weight gain or faltering growth 
+• Reflux or vomiting after feeds despite pace feeding 
+ 
+6.0 Referral 
+ 
+Referral to the Tongue Tie Clinic is for feeding concerns relating to tongue tie only. Referrals 
+made for concerns regarding speech or other issues will not be treated. These parents 
+should be signposted to their GP for further discussion. Please note: a visible frenulum with 
+no feeding difficulties will also not be divided. 
+ 
+In all situations parents should have access to the relevant patient information leaflet, or a 
+hard copy can be given to the parents if preferred. CG12033 Division of Tongue Tie v6.2 Nov 2023 Page 6 of 20 
+Please check against the intranet that this printout is the most recent version of this document. 
+ 
+Referral for tongue tie division can be made by any health professional that has performed a 
+feeding assessment. 
+ 
+This can be done by contacting: 
+ 
+• SRH infant feeding team on 0780 8099 829 - Monday clinic. 
+• Worthing Paediatric Outpatients extension: 86700 - Wednesday clinic/ or 3rd Friday 
+of the month. 
+ 
+Please have available when calling: 
+ 
+• Name 
+• Hospital number 
+• Date of Birth 
+• Address 
+• GP and Surgery name 
+ 
+Please note: Babies can be seen on either site, whether born at St Richards’ or Worthing 
+hospitals, however, a baby can only have a division performed up to 8 weeks and 5 days of 
+age. Please consider this when making an appointment, especially if there is a waiting list. 
+To avoid delay, if you know that the baby will be older than 8 weeks and 5 days of age, 
+please refer directly to Southampton or Brighton (see section 8.1 for links). 
+ 
+6.1 Assessment prior to referral 
+ 
+In the case of all breastfeeding babies, a full breastfeeding assessment must be undertaken 
+and a management plan put in place, to maintain lactation and support the mother/birthing 
+parent until a tongue tie assessment can be performed. All feeding assessments should be 
+documented on MIS and the parents should be asked to bring these to their appointment. 
+ 
+As part of the assessment, staff may choose to use the Tabby assessment tool, but this is 
+not essential. The main part of the assessment is to observe a full feed and make any 
+adjustments, to ensure correct positioning and attachment. If problems still persist following 
+intervention, then it is deemed appropriate to refer to the clinic for full oral assessment by a 
+tongue tie practitioner. 
+ 
+6.1.1 (TABBY) Tongue Assessment Tool 
+ 
+Using the TABBY Assessment Tool (see below) will give the baby being assessed a score 
+out of 8. 
+ 
+• 8 indicates normal tongue function 
+• 6 or 7 are considered borderline: suggest a ‘wait and see’ approach, with support 
+for breastfeeding positioning & attachment 
+• 5 or below suggests that there is impairment of tongue function: this may or may 
+not be having an effect on breastfeeding. CG12033 Division of Tongue Tie v6.2 Nov 2023 Page 7 of 20 
+Please check against the intranet that this printout is the most recent version of this document. 
+
+When bottle feeding, it is essential to teach Paced bottle feeding and consider changing the 
+bottle teats before referral to the clinic. 
+ 
+Prior to the appointment, the Tongue Tie Assessment form (see appendix 1 ) must be 
+completed by a maternity care assistant , to confirm the appointment has been booked for a 
+valid reason and pre-checks are completed to ensure Vitamin K has been administered and 
+baby is the appropriate age. 
+ 
+• If parents have declined Vitamin K they should be signposted to their GP for a 
+clotting screen to establish if the baby can undergo a procedure safely. By the time 
+a result is ready, the baby may be over the 8 week and 5 day cut -off. In this case, 
+referral to a specialist referral centre should be made to avoid delay. 
+• Please ask for parent not to feed baby immediately prior to the appointment, so 
+baby is eager to feed. This is particularly useful in the case of any bleeding post- 
+procedure 
+ 
+A note on thrush: Thrush is rare in babies under 6 weeks. Please ensure you do not 
+postpone the appointment, unless parents report clear symptoms. These should include 
+Lesions and redness on cheeks and white spots around the gums and tongue. A white 
+coating on the tongue is not diagnostic of thrush and can be due to the tongue -tie itself. 
+ 
+If a baby is near the end of a course of treatment and symptoms are mild, the appointment 
+can still take place and division performed at the discretion of the practitioner. 
+CG12033 Division of Tongue Tie v6.2 Nov 2023 Page 8 of 20 
+Please check against the intranet that this printout is the most recent version of this document. 
+ 
+6.2 Inpatients 
+ 
+Inpatient tongue tie divisions have the potential to be carried out on an ad -hoc basis, either 
+on the ward, or the birth centre, but only when a practitioner is available and their work -load 
+will allow. A feeding assessment must have taken place prior to referral, as with all other 
+referrals to clinic. 
+ 
+Babies on the SCBU requiring a tongue tie assessment, should have written documentation 
+by their consultant paediatrician in the medical record, agreeing to the procedure if required. 
+A feeding assessment should also take place for these babies to ascertain there are no other 
+causes for the poor feeding, prior to division. 
+ 
+Any pre-term babies have the potential to have their age adjusted inline to what their age 
+would have been if born at term. These babies can therefore receive their division if over 
+8 weeks but this must be supported by their lead consultant paediatrician with written 
+confirmation in the medical record and carried out by a tongue tie trained SCBU Nurse as 
+this is beyond a midwives scope of practice/ responsibility. 
+ 
+7.0 Training 
+ 
+Any midwife or nurse completing an assessment of tongue tie and division will have 
+undertaken the appropriate training. A copy of the training record should be kept with the 
+Maternity Practice Education Team as a record of competency and must also be provided if 
+the training took place externally to this Trust. 
+ 
+8.0 Clinical assessment 
+ 
+A detailed assessment should first take place using the Tongue tie Assessment and Division 
+Clinic form and the Frenulotomy Safety Checklist . This should include the following: 
+ 
+• Assessment of breastfeeding 
+• Maternal and birth history 
+• Family history 
+• Assessment of tongue structure and function using the assessment tool and 
+TABBY scoring (see section 6.1.1 ) and palate inspection using torch and tongue - 
+depressor 
+• Clinical judgement: is the feeding problem caused by the tongue -tie; considering 
+maternal anatomy. 
+• Discussion with parents. 
+• Ensure baby has received IM vitamin K or 2 doses of oral vitamin K. 
+ 
+8.1 Contraindications 
+ 
+Contraindications to performing a frenulotomy may include an unusually thick frenulum, or 
+where the presence of blood vessels can be identified. These cases will need referral to a 
+specialist centre with a neonatal surgeon: CG12033 Division of Tongue Tie v6.2 Nov 2023 Page 9 of 20 
+Please check against the intranet that this printout is the most recent version of this document. 
+ 
+• Southampton Children’s Hospital (up to 8 months old). A referral form can be sent 
+to them directly by the tongue tie practitioner. Please follow this link for referral to 
+them Southampton Children's Hospital - tongue tie - referring a baby for tongue -tie 
+division - University Hospital Southampton (uhs.nhs.uk) 
+• Brighton Paediatric Surgeon (up to 6 months old) email the assessment to 
+bsuh.ttbrightonsurgeons@nhs.net 
+ 
+9.0 Pre Division discussion 
+ 
+• Explain procedure to the parents including the risk factors and complete a consent 
+form. 
+• Provide an opportunity for parents to ask any questions. 
+• If parents decide not to proceed, ensure appropriate follow -up is in place for 
+continued feeding support, at home or in the local community. 
+• Document plan in notes. 
+ 
+10.0 Tongue Tie Division 
+ 
+The procedure should be performed in an identified clinical area with access to emergency 
+call system, hand washing facilities, direct light and sufficient privacy to allow the 
+mother/birthing parent to facilitate skin to skin and breastfeeding. 
+ 
+If the procedure is being carried out outside of the normal Tongue Tie Assessment Clinic 
+then the midwife/nurse in charge and the on-call paediatrician should be informed that the 
+procedure is about to take place. 
+ 
+• Ask the mother/birthing parent to prepare to feed her baby, following the 
+procedure. 
+• Lay out all the equipment prior to the division, maintaining aseptic technique and 
+count swabs with the assistant. 
+• No anaesthetic is required. 
+• Wrap the baby in a clean towel with arms secure and head firmly supported. 
+• Wash hands and apply sterile gloves. 
+• Following the procedure, apply a sterile swab firmly against the floor of the mouth 
+until bleeding has slowed/stopped. 
+• Return the baby to the mother/birthing parent for feeding as this will alleviate pain 
+and help stop bleeding. 
+• Observe the feed and if required correct the latch or position/discuss paced bottle 
+feeding The assistant is to remain in attendance until haemostasis has been 
+achieved 
+• If bleeding persists the baby should be seen by the on-call paediatrician before 
+going home/ returning to ward (refer to section 11.0 ). 
+ 
+11.0 Bleeding 
+ 
+A small amount of bleeding is common after tongue tie division and usually resolves within a 
+couple of minutes. CG12033 Division of Tongue Tie v6.2 Nov 2023 Page 10 of 20 
+Please check against the intranet that this printout is the most recent version of this document. 
+ 
+• Feeding the baby at the breast or on a bottle, immediately after the procedure, is 
+the most comfortable and effective way to stop the bleeding. 
+• The action of sucking naturally puts pressure on the wound by compressing the 
+floor of the mouth. 
+• If the baby refuses to feed, or are is unable to latch onto the breast, the baby can 
+suck the practitioner’s gloved finger or a parent’s finger. 
+• If there is excessive bleeding or any immediate problems a paediatrician must 
+review the baby. (See Appendix 5 for more detailed instruction). 
+ 
+Where bleeding is heavy or prolonged: 
+ 
+• Start the proforma and ask MSW to complete. 
+• Apply pressure over the wound using gauze for at least a timed 5 minutes. 
+• If the gauze becomes soaked during this time, replace the gauze and ensure you 
+are pressing under the tongue on the raw area, use 2 fingers side by side, to 
+increase the surface area you are covering. 
+• Wait for another 5 minutes and then re-examine the wound. Avoid removing the 
+gauze before this time as this can prolong the bleeding. 
+• If bleeding persists, apply Kaltostat dressing for a further 5 minutes. 
+• If it is clear that bleeding is not slowing, bleep the on-call paediatric registrar to 
+attend. 
+• A further Kaltostat dressing may be required at this point. 
+• The paediatrician once in attendance can apply a couple of drops of adrenaline to 
+a damp gauze and re-apply. Bleeding is likely to cease within a couple of minutes. 
+ 
+If all this fails, you will have to invoke surgical help (estimated risk 1: 100,000) Silver Nitrate, 
+electrocautery and suturing are options at this point. 
+ 
+Babies that have endured a long period of sublingual pressure followed by some form of 
+surgery may have considerable oedema coupled with oral aversion, and so they will need to 
+be kept under very close supervision until they are feeding normally. A prompt naso -gastric 
+tube for initial stress -free feeds is very useful and avoids an unnecessary intravenous 
+infusion. 
+ 
+12.0 Post procedure 
+ 
+Discuss post-procedure information with the parents and give information leaflet. 
+Discussion to include: 
+• Risk of infection, appearance / of the wound and post-procedure exercises 
+(appendix 3 ). 
+• Make Arrangements for the midwife or maternity support worker to visit the 
+following day or to provide telephone advice if under midwifery care. 
+• If under the care of the Health visitor, advise the parents to contact them for further 
+support if required and make them aware of local support such as ‘Milk’ groups. 
+• Provide parents with the GP letter . CG12033 Division of Tongue Tie v6.2 Nov 2023 Page 11 of 20 
+Please check against the intranet that this printout is the most recent version of this document. 
+ 
+• Document in the red book or MIS, whichever is currently in use. 
+ 
+13.0 Audit 
+ 
+Audit of outcomes for this guideline is monitored through the Infant Feeding Team. CG12033 Division of Tongue Tie v6.2 Nov 2023 Page 12 of 20 
+Please check against the intranet that this printout is the most recent version of this document. 
+ 
+References and Bibliography 
+ 
+Ashok PK, Upadhyaya K (2012) Tannins are Astringent, Journal of Pharmacognosy and 
+Phytochemistry, Vol. 1 No. 3 p 45 (Online Available at www.phytojournal.com, ISSN 2278 - 
+4136 ZDB -Number: 2668735 -5, IC Journal No: 8192, Volume 1 Issue 3) 
+Association of Tongue Tie Practitioners (2015): http://www.tongue -tie.org.uk/ 
+Bate-Smith EC (1972) Haemanalysis of Tannins:The concept of relative astringency. 
+Agricultural Research Council Institute of Animal Physiology, Babraham, Cambridge 
+Black R et al 1998. The process of breastfeeding, Lactation Specialist self study series, 
+module 2 
+ 
+Fernando C (1998) Tongue tie – from confusion to clarity Tandem, Australia 
+ 
+Griffiths M & Westcott C. (2000) Division of Tongue tie. Southampton General Hospital 
+ 
+Hazelbaker A K .2010 Tongue Tie, Morphogenesis, impact, assessment and treatment. 
+Aidan& Eva Press 
+ 
+Ingram, J., Copeland, M., Johnson, D. et al. (2019) The development and evaluation of a 
+picture tongue assessment tool for tongue -tie in breastfed babies (TABBY). Int Breastfeed J 
+14, 31. https://doi.org/10.1186/s13006 -019-0224 -y 
+ 
+NICE December (2005) Division of Ankyloglossia (Tongue Tie) for Breastfeeding. 
+Interventional Procedure Guidance 149, December 2005 
+ 
+Nursing and Midwifery Council (2005) Guidelines for records and record keeping. NMC. 
+London. 
+ 
+Pardis T, Khoroushi M (2014) A review of chemical hemostatic agents in restorative 
+dentistry. Dent Res J (Isfahan). 2014 Jul -Aug; 11(4): 423 -428. 
+ 
+Riordan J, Auerback K G (1993) Anatomy and physiology of lactation in breastfeeding and 
+human lactation 
+ 
+University of Southampton NHS Foundation Trust, Southampton Children’s Hospital Tongue 
+Tie Service http://www.uhs.nhs.uk/OurServices/Childhealth/Tonguetie/Tonguetie.aspx 
+ 
+Wiessinger D, Miller M (1995) Breasfeeding Difficulties as a result of tight lingual and labial 
+frena: a case report Journal of Human Lactation 12(3):313 -316 
+ 
+Woolridge M 1986. The anatomy of infant sucking Midwifery 2:164 -171 CG12033 Division of Tongue Tie v6.2 Nov 2023 Page 13 of 20 
+Please check against the intranet that this printout is the most recent version of this document. 
+
+Appendix 1: Tongue tie Assessment & Consent form 
+DO NOT PRINT FROM GUIDELINE 
+
+CG12033 Division of Tongue Tie v6.2 Nov 2023 Page 14 of 20 
+Please check against the intranet that this printout is the most recent version of this document. 
+
+Appendix 2: Tongue tie pre-appointment assessment form 
+DO NOT PRINT FROM GUIDELINE 
+ 
+ CG12033 Division of Tongue Tie v6.2 Nov 2023 Page 15 of 20 
+Please check against the intranet that this printout is the most recent version of this document. 
+
+CG12033 Division of Tongue Tie v6.2 Nov 2023 Page 16 of 20 
+Please check against the intranet that this printout is the most recent version of this document. 
+
+Appendix 3: Post Tongue Tie Division Information for parents 
+DO NOT PRINT FROM GUIDELINE 
+ CG12033 Division of Tongue Tie v6.2 Nov 2023 Page 17 of 20 
+Please check against the intranet that this printout is the most recent version of this document. 
+
+CG12033 Division of Tongue Tie v6.2 Nov 2023 Page 18 of 20 
+Please check against the intranet that this printout is the most recent version of this document. 
+
+Appendix 4: Letter to GP template 
+DO NOT PRINT FROM GUIDELINE 
+ 
+Access here on StaffNet. 
+
+ CG12033 Division of Tongue Tie v6.2 Nov 2023 Page 19 of 20 
+Please check against the intranet that this printout is the most recent version of this document. 
+
+Appendix 5: Frenultomy Excessive Bleeding Proforma 
+DO NOT PRINT FROM GUIDELINE 
+ 
+ CG12033 Division of Tongue Tie v6.2 Nov 2023 Page 20 of 20 
+Please check against the intranet that this printout is the most recent version of this document.

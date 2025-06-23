@@ -1,0 +1,420 @@
+# Extracted from: CG1145 Fetal Abnormality Guideline (including fetal echo referral criteria).pdf
+# Guideline ID: cg1145-fetal-abnormality-guideline-including-fetal-echo-referral-criteria
+# Content length: 20631 characters
+# Processing date: 1750066900.0404563
+
+CG01145 Fetal Abnormality Guideline V8.1 Jan 2022 Page 1 of 11 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+ Fetal Abnormality Guideline (including fetal echo referral criteria) 
+Summary statement: How does the document 
+support patient care? By providing clear guidance for staff on the process to follow 
+when referral for fetal abnormality is required . 
+Staff/stakeholders involved in development: 
+ Obstetric Consultants, Antenatal Screening Team and Senior 
+Midwifery Staff 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Antenatal Screening Coordinator 
+For use by: All Obstetric and Midwifery staff 
+Purpose: To ensure early and appropriate referral when a fetal 
+abnormality is detected in pregnancy . 
+This document supports: 
+ Fetal Anomaly Screening Pro gramme Standards 2015 -16 
+NHS Fetal Anomaly Screening Programm e Handbook 2018 
+(PHE) 
+Key related documents: UH Sussex West : Antenatal Care and Patient Information, 
+Maternal Antenatal Screening Tests, Intrauterine Death 
+Including Induction of Labour for Fetal Abnormality 
+Approved by: Joint Obstetric Guideline Group 
+Approval date: 19th January 2022 Date uploaded: 24th January 2022 
+Ratified by Board of Directors/ Committee of 
+the Board of Directors Not Applicable – Divisional Ratification only required 
+Ratification Date: Not Applicable – Divisional Ratification only required 
+Expiry Date: April 2024 
+Review date: November 2023 
+If you require this document in another format such as Braille, large print, audio or 
+another language please contact the Trusts Communications Team 
+Reference Number: CG1145 
+CG01145 Fetal Abnormality Guideline V8.1 Jan 2022 Page 2 of 11 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Version Date Author Status Comment 
+1.0 January 2011 Antenatal Screening 
+Coordinator (ASC) Archived New Trustwide guideline 
+2.0 February 2011 CNST Lead Midwife Archived Administrative update 
+3.0 30/10/12 CNST Midwife Archived Minor amendments for CNST 
+2012 -13 
+3.1 July 2013 Antenatal Screening 
+Coordinator and 
+Fetal Medicine 
+Specialist Midwives Archived Anomaly tracker updated 
+4.0 January 2014 Antenatal Screening 
+Coordinator and 
+Fetal Medicine 
+Specialist Midwives Archive d 3 year review -update to process 
+following chorionic villus 
+sampling / amniocentesis 
+5.0 August 2016 Antenatal Screening 
+Coordinator and 
+Fetal Medicine 
+Specialist Midwives Archive d Removal of Anomaly Tracker 
+6.0 August 2017 Antenatal Screening 
+Coordinator (ASC) Archived 3 yearly update 
+7.0 February 2019 ASC Archived Referral timelines and process 
+updated in line with national 
+guidance 
+Addition of undetected anomaly 
+process 
+7.1 September 2019 ASC Archived Amendment made to process for 
+an undetected fetal anomaly 
+8.0 April 2021 ACS and Lead Fetal 
+Medicine Consultant Archived Addition of referral criteria for 
+fetal echo and early anomaly 
+scan 
+8.1 January 2022 R. Mason, Obstetric 
+Consultant LIVE Section on polyhydramnios 
+added. 
+
+The interpretation and application of clinical guidelines will remain the 
+responsibility of the individual clinician. 
+ 
+If in doubt contact a senior colleague or expert. 
+ 
+CG01145 Fetal Abnormality Guideline V8.1 Jan 2022 Page 3 of 11 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Index 
+ 
+1.0 Aim ................................ ................................ ................................ ............................ 4 
+2.0 Scope ................................ ................................ ................................ ........................ 4 
+3.0 Responsibilities ................................ ................................ ................................ .......... 4 
+4.0 Abbreviations used within this guideline ................................ ................................ ..... 4 
+5.0 Introduction ................................ ................................ ................................ ................ 5 
+6.0 The Anomaly Scan ................................ ................................ ................................ .... 5 
+6.1 Normal variant ................................ ................................ ................................ ........... 6 
+6.2 Polyhydramnios ................................ ................................ ................................ ......... 6 
+7.0 Process following Inconclusive / Abnormal Scan ................................ ....................... 7 
+8.0 Fetal medicine referral ................................ ................................ ............................... 7 
+8.2 Following appointment at Fetal Medicine Unit (FMU) ................................ ................. 7 
+9.0 Continuing with pregnancy ................................ ................................ ......................... 8 
+10.0 Birth ................................ ................................ ................................ ........................... 8 
+11.0 Postnatal ................................ ................................ ................................ ................... 8 
+12.0 Recording of co nfirmed abnormalities ................................ ................................ ........ 9 
+13.0 Referral for fetal echo ................................ ................................ ................................ 9 
+14.0 Referral for fetal medicine early anomaly scan ................................ .......................... 9 
+15.0 Monitoring ................................ ................................ ................................ ................ 10 
+References ................................ ................................ ................................ ......................... 10 
+Appendix 1: Undetected antenatal Fetal Anomaly Process ................................ ................. 11 
+
+CG01145 Fetal Abnormality Guideline V8.1 Jan 2022 Page 4 of 11 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Fetal Abnormality Guideline 
+(including fetal echo referral criteria) 
+ 
+1.0 Aim 
+ 
+ To ensure effective multi -disciplinary communication and appropriate referral 
+when fetal abnormality has been identified . 
+ The identification of a fetal anomaly offers the woman choice about whether to 
+continue with the pregnancy or not. 
+ To act as resource for staff caring for pregnant women /poeople whose needs fall 
+within the scope of this p rotocol . 
+ To ensure optimal care for babies diagnosed with an abnormality. 
+ To ensure mother has optimal care in appropriate setting. 
+ To ensure arrangements are clear which professional is responsible for the 
+woman /person ’s care at all times. 
+ 
+2.0 Scope 
+ 
+This guideline applies to all staff caring for antenatal women /people when a fetal abnormality 
+is detected. 
+ 
+3.0 Responsibilities 
+ 
+Midwives, obstetricians, sonographers and p aediatricians: 
+ 
+ To access, read, understand and follow this guidance . 
+ To use their professional judgement in application of this guideline . 
+ This guidance is for staff employed by University Hospitals Sussex West . The 
+guidance is not rigid and should be tailored to the individual circumstances of each 
+woman /person . If the guidance is not being followed, documentation of the 
+reasoning and/or justification is essential, with clear documentation of alternative 
+plans and discussions. 
+ 
+Management: 
+ 
+ To ensure the guideline is reviewed as required in line with Trust and National 
+recommendations . 
+ To ensure the guideline is accessible to all relevant staff . 
+ 
+4.0 Abbreviations used within this guideline 
+ 
+MIS - Maternity Information System FASP – Fetal Anomaly Screening Programme 
+TGA - Transposition of the great arteries AVSD - Atrioventricular septal defect 
+TOF - Tetralogy of Fallot (TOF) HLHS - Hypoplastic left heart syndrome 
+CG01145 Fetal Abnormality Guideline V8.1 Jan 2022 Page 5 of 11 
+Please check against Staffnet that this printout is the most recent version of this document. 
+NT - Nuchal translucency DVP - Deepest vertical pool 
+TORCH - Toxoplasmosis, rubella, 
+cytomegalovirus, herpes simplex ANC - Antenatal Clinic 
+ARC - Antenatal Results and Choices FMU - Fetal Medicine Unit 
+ 
+5.0 Introduction 
+ 
+NHS FASP (2018) recommends the offer of a mid -pregnancy scan which is undertaken 
+between 18+0 t o 20+6 weeks of pregnancy to screen for major fetal anomalies. Where the 
+first scan is incomplete, the pregnant woman /person must be offered a second scan to 
+complete the pathway by 23+0 weeks . 
+ 
+Where an adequate assessment of the fetal anatomy remains compromised after the repeat 
+scan, there is no requirement to offer further ultrasound examination for completion of 
+screening. The pregnant woman /person should be informed that the screening is incomplete 
+and this should be recorded on M IS and in the woman /person ’s handheld notes . 
+ 
+Pregnant w omen /people who wish to have a fetal anomaly ultrasound scan, but do not wish 
+to be informed if abnormalities are found, should be advised that all significant findings seen 
+on the scan will be report ed and therefore they should consider not having fetal anomaly 
+ultrasound screening. 
+ 
+6.0 The Anomaly Scan 
+ 
+There are currently 11 conditions which should be screened for as a minimum during the 
+anomaly scan (FASP 2018 ). These conditions specified below i ndicate conditions that may: 
+ 
+ Benefit from treatment before or after birth . 
+ Require that the birth should be in an appropriate hospital/centre and/or to 
+optimise treatment after the baby is born . 
+ Cause the baby to die shortly after birth. 
+ 
+Anencephaly 
+Open spina bifida 
+Cleft lip 
+Diaphragmatic hernia 
+Gastroschisis 
+Exomphalos 
+Serious cardiac abnormalities including the following: 
+ Transposition of the great arteries (TGA) 
+ Atrioventricular septal defect (AVSD) 
+ Tetralogy of Fallot (TOF) 
+ Hypoplastic left heart syndrome (HLHS ) 
+Bilateral renal agen esis 
+Lethal skeletal dysplasia 
+CG01145 Fetal Abnormality Guideline V8.1 Jan 2022 Page 6 of 11 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Edward’s syndrome (T18) 
+Patau’s syndrome (T13) 
+ 
+These findings require tertiary appointment within 5 working days . 
+ 
+6.1 Normal variant 
+ 
+The following findings now defined as normal variants (previously termed as ‘soft markers’) 
+should no longer be referred for further assessment whether one or more are found: 
+ 
+ Choroid plexus cyst(s) 
+ Dilated cisterna magna 
+ Echogenic foci in the heart 
+ Two vessel cord 
+ 
+However , the finding s below should be referred for further assessment and treated as for 
+any other suspected fetal abnormality: 
+ 
+ Nuchal fold (equal to or greater than 6mm) 
+ Ventriculomegaly (atrium equal to or greater than 10mm) 
+ Echogenic bowel (with density equivalent to bone ) 
+ Renal pelvic dilatation (AP measurement greater than 7 mm) 
+ Small measurements compared to dating scan (significantly less than 5th centile 
+on Viewpoint chart) . 
+ 
+6.2 Polyhydramnios 
+ 
+Polyhydramnios is excess amniotic detected on USS and affects approximately 1 in 100 
+pregnancies. Amniotic fluid level is measured using a vertical measurement of the deepest 
+vertical pool (DVP) (normal range 2 – 8 cm). In 80% of cases polyhydramnios is mild (DVP 
+8-12 cm) and the majority of cases idiopathic and do not require any further investigation. 
+ 
+When the DVP is >12cm it is more likely to be associated with maternal or fetal pathology 
+(The Fetal Medicine Foundation). Etiology of polyhydramnios includes: 
+ 
+ Fetal malformations 
+ Maternal diabetes 
+ Multiple pregna ncy 
+ Fetal anaemia 
+ 
+When polyhydramnios is isolated - TORCH and Parvovirus screens should not be 
+requested. 
+ 
+If polyhydramnios is detected: 
+ 
+CG01145 Fetal Abnormality Guideline V8.1 Jan 2022 Page 7 of 11 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ DVP 8 - 12 cm – advise low GI diet and reassure mother/birthing parent. 
+ DVP > 12 cm – perfor m random BM, advise low GI diet , refer to Fetal Medicine 
+Consultant. 
+ 
+7.0 Process following Inconclusive / Abnormal Scan 
+ 
+Pregnant w omen /people must be informed of a suspected anomaly b efore they leave the 
+ultrasound appointment. 
+ 
+6.1 Abnormal Scan Result 
+ 
+ Sonographer informs screening t eam and if necessary accompanies the pregnant 
+woman /person to ANC . It is the responsibility of the screening team to follow up 
+pregnant women /people who fail to attend antenatal clinic . 
+ Findings discussed and explained to pregnant woman /person by screening team. 
+ Outcome and statistics should not be discussed at this point or information outside 
+of expertise given to parents. 
+ If there is written information available for the particular condition then this should 
+be made available f or parents. 
+ For pregnant women /people with poor understanding of English, the telephone 
+interpreting service should be used in the first instance. Ideally this should be 
+backed up by written information in the correct language where available. When 
+ongoing appointments a re required, every attempt should be made to arrange a 
+face-to-face interpreter including sign language. 
+ 
+8.0 Fetal medicine referral 
+ 
+Where local referral is required, this should be within 3 working days. Local referral is to an 
+obstetric ultrasound specialist . 
+ 
+Where tertiary level referral is required, this should be within 5 working days 
+ 
+Cases where the referral occurs outside the above timeframes (e.g. maternal /birthing parent 
+request ), must be documented on M IS and on the screening scan abnormal ity database . 
+ 
+The screening team are responsible for ensuring the referral form is emailed to the tertiary 
+centre followed by scan reports and blood results once the referral has been accepted. 
+ 
+8.2 Following appointment at Fetal Medicine Unit (FMU) 
+ 
+ Screening t eam will liaise with FMU to discuss results/care/follow -up. 
+ Scan reports and invasive testing results are to be received by screening team 
+prior to contact with pregnant woman /person . 
+ Any results and subsequent plans will be documented on MIS (with an alert 
+created if abnormal) and in the hospital notes . 
+CG01145 Fetal Abnormality Guideline V8.1 Jan 2022 Page 8 of 11 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Patient to be telephoned next day to discuss consultation and appropriate follow 
+up appointments made . 
+ The GP and community midwife should be notified of the referral and outcome . 
+ If parents o pt to discontinue the pregnancy, protocol for termination of pregnancy 
+to be followed following appointment with Consultant Obstetrician (see Intrauterine 
+Death Including Induction of Labour for Fetal Abnormality ). 
+ 
+9.0 Continuing with pregnancy 
+ 
+ Follow up appointments should be arranged as per plan of tertiary unit 
+ Once p lace of birth is identified - whether locally or at tertiary unit , the screening 
+team are responsible for ensuring the plan is liaised to the local obstetric 
+ultrasound specialist consultant and local lead paediatrician for neonates . 
+ The postnatal plan will be document ed on M IS (with an alert created) and in the 
+maternal /birthing parent notes . 
+ If necessary an a ppointment will be made for the parents with Consultant 
+Paediatrician to discuss condition, care at birth and follow -up. Parents should be 
+given the opportunity t o visit t he Neonatal Unit (as required) . 
+ Screening t eam to liaise with Labour Ward Manager, Neonatal Unit Manager and 
+Postnatal Ward Manager as required. 
+ Whenever clinically appropriate, the possibility of organ donation should be 
+discussed with the parent s by the Consultant Obstetrician / Paediatrician. Details 
+of the discussion must be documented in the health record as above. 
+ Letters should contain the names of all health professionals who have received a 
+copy; and a copy should be filed in the hospital record. 
+ Letters mu st also be copied to the pregnant woman /person for her information and 
+they should be given a list of contact numbers for any queries, including support 
+groups such as Antenatal Results and Choices (ARC) . 
+ If appropriate a referral can be made to the palliative care team at Chestnut Tree 
+House Hospice . 
+ 
+Pregnancy care should be provided by a designated midwife throughout the antenatal period 
+ 
+10.0 Birth 
+ 
+Labour Wa rd staff should inform on call paediatric team and obstetric t eam when the 
+pregnant woman /person is admitted for birth. The neonatal plan will be in the pregnant 
+woman /person ’s notes and on MIS. 
+ 
+11.0 Postnatal 
+ 
+ The screening team will record the birth outcome on the screening scan 
+abnormality database. 
+ The health professional pe rforming the NIPE check will ensure follow up 
+appointments are arranged as required . 
+CG01145 Fetal Abnormality Guideline V8.1 Jan 2022 Page 9 of 11 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+12.0 Recor ding of confirmed abnormalities 
+ 
+All confirmed fetal anomalies should be recorded as follows: 
+ 
+ Confirmed fetal anomalies and undiagnosed postnatal anomalies to be presented 
+and discussed on a quarterly basis at departmental meeting . 
+ Information should be shared with the National Congenital Anomaly and Rare 
+Disease Registration Service for quality and monitoring. 
+ 
+13.0 Referral for fetal echo 
+ 
+Indications for fetal echo at 20 - 21 weeks (after the anomaly scan): 
+ 
+ Previous pregnancy (either partner) affected with a significant cardiac abnormality 
+(not patent ductus arteriosus, small VSDs or secundum atrial septal defects) . 
+ One of the parents has had a significant cardiac abnormality that required surgery . 
+ Nuchal translucency (NT) > 3.5 mm . 
+ 
+When a fetal echo is required this can be booked via the screening team midwife. Other 
+referrals for fetal echo should be discussed with the fetal medicine consultant . 
+ 
+Maternal anti -Ro / La antibodies are not an indication for fetal echo. These patients require 
+fetal auscultation every 2 weeks from 16/40 to 30/40. A fetal medicine referral for fetal echo 
+is required when a bradycard ia is heard during auscultation. 
+ 
+Pregnant w omen /people with diabetes do not require a fetal echo. They should be offered a 
+routine anomaly scan at 20 weeks to detect fetal structural abnormalities, including 
+examination of the fetal heart (4 chambers, outflow tracts and 3 vessels) . 
+ 
+14.0 Referral for fetal medicine early anomaly scan 
+ 
+Indications for early anomaly scan (16 -18/40) : 
+ 
+ Previous pregnancy (either partner) affected by a major structural abnormality . 
+ One of the parents had a major structural abnormality . 
+ Patient taking teratogenic drugs in current pregnancy e.g. sodium valproate. The 
+UK Teratology Information Service ( www.uktis.org ) is a good resource . See also 
+The Commission on Human Medicines which has reviewed the available safety 
+data for epilepsy medicines during pr egnancy (January, 2021). 
+ 
+An early anomaly scan should be booked via the screening team midwife. Cases which do 
+not fit the above criteria or further advice needed should be discussed with the fetal medicine 
+consultant . 
+ 
+CG01145 Fetal Abnormality Guideline V8.1 Jan 2022 Page 10 of 11 
+Please check against Staffnet that this printout is the most recent version of this document. 
+15.0 Monitoring 
+ 
+This guideline is monitored through the annual Key Performance Indicator (KPI) data 
+submitted to Public H ealth England by the screening team. 
+
+References 
+ 
+The Commission on Human Medicines (2021) Public Assessment Report of antiepileptic 
+drugs: review of safety of u se during pregnancy. 
+ 
+The Fetal Medicine Foundation 
+ 
+NICE NG3 (2015) Diabetes in pregnancy: management from preconception to the postnatal 
+period. Updated 2020. 
+ 
+NHS Fetal Anomaly Screening Programme Handbook 2018 (PHE) 
+ 
+Organ donation Nice Guidance CG135 (Dec 2011) 
+ 
+Pasquini L et al ‘ Prevalence of a positive TORCH a nd parvovirus B19 screening in 
+pregnancies complicated by polyhydramnios ’ Prenat Diagn 2016 36(3) 
+ 
+UK Teratology Information Service 
+
+CG01145 Fetal Abnormality Guideline V8.1 Jan 2022 Page 11 of 11 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appe ndix 1: Undetected antenatal Fetal Anomaly Process

@@ -1,0 +1,119 @@
+# Extracted from: Risk Assessment Obstetric VTE  non-maternity wards.pdf
+# Guideline ID: risk-assessment-obstetric-vte-non-maternity-wards
+# Content length: 6200 characters
+# Processing date: 1750066901.8840866
+
+UH Sussex Risk Assessment for 
+Obstetric Venous Thromboembolism (VTE) 
+(Adapted from RCOG No. 37 a guidelines ) 
+For use on all non-maternity wards at UH Sussex Hospitals for obstetric patients 
+ 
+As a minimum, all pregnant women and birthing people should have a VTE 
+risk assessment completed at their Booking Appointment and at 28 weeks after 
+re-weighing has been offered. 
+Repeat VTE assessments should be completed for ALL admissions to any 
+hospital ward or at any time where new risks are noted including propos ed 
+long distance travel >4 hours or if excessive weight gain at any stage of the 
+pregnancy. 
+ 
+(Please complete daily risk assessment using the described risk factors and score(s). The total score is used whether 
+antenatal or postnatal & the associated suggestive management plan on page 2). 
+Date: 
+Pre-existing Risk Factors (√). Gestation or days P/N: 
+Previous VTE 4 
+Previous VTE – provoked by major surgery 3 
+Known high -risk thrombophilia 3 
+Medical co morbidities e.g. cancer, heart failure, active system ic 
+lupus erythematosus , inflammatory polyarthropathy or 
+inflammatory bowel disease, nephrotic syndrome, type 1 diabetes 
+mellitus with nephropathy, sickle cell disease, current IV drug user. 
+3 
+Family history of unprovoked or estrogen - related VTE in first 
+degree relative 1 
+Known low -risk thrombophilia (no VTE) 1 
+Age 35 years and above 1 
+Obesity BMI 30 or more (based on booking weight) 1 
+Obesity BMI 40 or more (based on booking weight) 2 
+Parity 3 or more 1 
+Current s moker 1 
+Gross varicose veins 1 
+Obstetric Risk Factors (√) 
+Pre-eclampsia in current pregnancy 1 
+Assisted Reproductive technology/ IVF (antenatal only) 1 
+Multiple pregnancy 1 
+Caesarean section in labour 2 
+Elective Caesarean section 1 
+Mid-cavity or rotational operational delivery 1 
+Prolonged labour ( more than 24 hours) 1 
+PPH ( more than 1 litre or blood transfusion) 1 
+Preterm birth less than 37+0 weeks in current pregnancy 1 
+Stillbirth in current pregnancy 1 
+Transient Risk Factors (√) 
+Any surgical procedure in pregnancy or puerperium except 
+immediate repair of the perineum e.g. appendectomy, postpartum 
+sterilisation 3 
+Hyperemesis 3 
+OHSS (ovarian hyperstimualtion syndrome) - first trimester only 4 
+Long distance travel more than 4 hours (not exclusively by air) 
+within the past 8 weeks 1 
+Current systemic infection 1 
+Immobility, dehydration 1 
+Surgical procedure in pregnancy or less than 6 weeks postpartum 
+(see over page for assessment tool) TOTAL: 
+ 
+Midwife initials 
+Obstetric Medical Review Required (Yes / No) 
+Enoxaparin required (Yes / No) 
+Associated Document. Due for review: Dec 2027 . VTE risk assessment for use on non -maternity wards / Prevention and Management of Venous 
+Thromboembolism (VTE) in Pregnancy and the Postnatal Period . Version 1 .0. For use at: PRH, RSCH. SRH, WH . Page 1 of 2 
+Patient Name:……………….………………………….. 
+DoB: ……………………………………………………… 
+Hospital Number: ……………………….…………….. 
+NHS Number :…………………. ……………………….. 
+Patient label 
+
+ Antenatal R isk Assessment for Venous Thromboembolism (VTE) 
+• If total score 4 or more antenatally, consider thromboprophylaxis from the first trimester. 
+• If total score 3 antenatally, consider thromboprophylaxis from 28 weeks. 
+• Re-weigh and reassess for thromboprophylaxis at 28 weeks . If already on thromboprophylaxis, check correct 
+dose for weight at 28 weeks has been prescribed. 
+• If admitted to hospital antenatally , consider thromboprophylaxis. 
+• Reassess for thromboprophylaxis any time where new risks are noted, including proposed long distance travel 
+>4 hours or if excessive weight gain, at any stage of the pregnancy. 
+For patients with an identified bleeding risk, the balance of risks of bleeding and thrombosis should be discussed in 
+consultation with a haematologist with expertise in thrombosis and bleeding in pregnancy. 
+Postnatal Risk Assessment for Venous Thromboembolism (VTE) 
+• If total score 2 or more postnatally, consider thromboprophylaxis for at least 10 days. NB: If persisting or more 
+than 3 risk factors consider extending thromboprophylaxis with LMWH 
+• If prolonged admission (3 days or more ) or readmission to hospital within the puerperium consider 
+thromboprophylaxis. 
+• Calculate dose on current weight. If the woman or birthing person is immobile post birth (for instance post 
+caesarean birth), use the 28 -week weight to calculate LMWH dose. Re -weigh and recalculate dose as soon as 
+able to mobilise. 
+• Previous VTE, anyone requiring AN LMWH, High risk thrombophilia, low risk thrombophilia + FHx = High Risk – 
+should have at least 6 weeks PN prophylactic LMWH 
+For patients with an identified bleeding risk, the balance of risks of bleeding and thrombosis should be discussed 
+in consultation with a haematologist with expertise in thrombosis and bleeding in pregnancy. 
+Antenatal and Postnatal Prophylactic Dose of Low Molecular Weight Heparin (LMWH) 
+Current weight Enoxaparin Dose (Inhixa) 
+< 50 kg 20 mg daily subcutaneously 
+50 – 90 kg 40 mg daily subcutaneously 
+91 – 130 kg 60 mg daily subcutaneously 
+131 – 170 kg 80 mg daily subcutaneously 
+> 170 kg Seek specialist advice 
+High prophylactic dose for people weighing 
+50 – 90 kg 40 mg twice daily subcutaneously 
+
+Associated Document. Due for review: Dec 2027 . VTE risk assessment for use on non -maternity wards / Prevention and Management of Venous 
+Thromboembolism (VTE) in Pregnancy and the Postnatal Period . Vers ion 1.0. For use at: PRH, RSCH. SRH, WH Page 2 of 2 Bleeding Risks / Relative Contraindications to Enoxaparin (tick as appropriate) 
+Haemophilia or other known bleeding disorder 
+(e.g. von Will ebrand’s or acquired coagulopathy ) Active antenatal or postnatal bleeding or at risk of major 
+haemorrhage (e.g. placenta praevia) 
+Thrombocytopenia (l ow platelets <75 x 109 /l) Severe renal disease (glomerular filtration rate [GFR] 
+< 30 ml/minute/1.73m2 ) 
+Acute stroke in previous 4 weeks (haemorrhagic 
+or ischaemic) Severe liver disease (prothrombin time above normal 
+range or known varices). 
+Uncontrolled hypertension (BP >200 systolic and 
+/ or >120 diastolic) Allergy to Enoxaparin 
+If any ticks, discuss with on - call Consultant Obstetrician

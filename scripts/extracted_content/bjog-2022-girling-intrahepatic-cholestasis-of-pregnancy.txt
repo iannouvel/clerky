@@ -1,0 +1,2009 @@
+# Extracted from: BJOG - 2022 - Girling - Intrahepatic cholestasis of pregnancy.pdf
+# Guideline ID: bjog-2022-girling-intrahepatic-cholestasis-of-pregnancy
+# Content length: 92577 characters
+# Processing date: 1740370221.8533766
+
+BJOG . 2022;129:e95–e114. | e95
+ wileyonlinelibrary.com/journal/bjo
+RCOG GREEN-TOP GUIDELINES
+Intrahepatic cholestasis of pregnancy
+Green- top Guideline No. 43 June 2022
+Joanna Girling | Caroline L. Knight | Lucy Chappell | on behalf of the Royal College of 
+Obstetricians and Gynaecologists Published Online 9 August 2022
+DOI: 10.1111/1471-0528.17206 
+© 2022 Royal College of Obstetricians and Gynaecologists.Correspondence
+Royal College of Obstetricians and 
+Gynaecologists, 10– 18 Union Street, London 
+SE1 1SZ, UK.
+Email: clinicaleffectiveness@rcog.org.ukKey recommendations
+• The diagnosis of intrahepatic cholestasis of pregnancy (ICP) should be considered 
+in pregnant women who have itching in skin of normal appearance and raised 
+peak random total bile acid concentration of 19 micromol/L or more. [Grade D]
+• Additional laboratory and/or imaging investigations are not recommended 
+unless itch is associated with atypical clinical symptoms, the presence of relevant 
+comorbidities, or in early onset severe ICP. Consider additional postnatal 
+investigations in women in whom resolution of abnormal liver function tests is 
+delayed or does not occur. [Grade C]
+• Consider discussing the care of women with severe, very early or atypical presentation 
+of what appears to be ICP with a hepatologist. [Grade D]
+• Confirm the diagnosis of ICP in the postnatal period at least 4 weeks after birth, 
+with resolution of itching and liver function tests returning to normal (including 
+bile acids). [Grade D]
+• Advise women with isolated ICP and a singleton pregnancy that the risk of 
+stillbirth only increases above population rate once their serum bile acid 
+concentration is 100 micromol/L or more.
+⚬ In women with peak bile acids 19– 39 micromol/L (mild ICP) and no other risk 
+factors, advise them that the risk of stillbirth is similar to the background risk. 
+Consider options of planned birth by 40 weeks' gestation or ongoing antenatal 
+care according to national guidance.
+⚬ In women with peak bile acids 40– 99 micromol/L (moderate ICP) and no other 
+risk factors, advise them that the known risk of stillbirth is similar to the 
+background risk until 38– 39 weeks' gestation. Consider planned birth at 
+38– 39 weeks' gestation.
+⚬ In women with peak bile acids 100 micromol/L or more (severe ICP), advise them 
+that the risk of stillbirth is higher than the background risk. Consider planned 
+birth at 35– 36 weeks' gestation. [Grade A]
+• Advise women with ICP and a twin pregnancy that the risk of stillbirth is higher 
+compared with a twin pregnancy without ICP. [Grade D]
+• Clinicians should be aware that fetal ultrasound and/or cardiotocography (CTG) 
+do not predict or prevent stillbirth in ICP. [Grade D]This is the third edition of the guideline. 
+The first edition was published in 2006 and 
+the second in 2011 under the title Obstetric 
+Cholestasis .
+e96 | 
+GREEN-TOP GUIDELINE NO. 43
+1 | PURPOSE AND SCOPE
+This guideline summarises the evidence regarding the di -
+agnosis, and the maternal and fetal risks of intrahepatic 
+cholestasis of pregnancy (ICP), previously called obstetric 
+cholestasis. It provides guidance regarding the different care 
+options available. These should be considered in conjunc -
+tion with the wishes of the woman, as part of shared and 
+informed decision- making.
+While some high quality randomised controlled trials 
+in ICP have now been completed, many publications do not 
+have such a rigorous design, and this limits the ability to pro -
+vide detailed evidence- based recommendations for specific 
+aspects of care. Areas of uncertainty are highlighted along 
+with recommendations for future research in this field.
+Within this document we use the terms pregnant woman 
+and women's health. However, it is important to acknowl -
+edge that it is not only people who identify as women for 
+whom it is necessary to access care. Obstetric and gynaecol -
+ogy services and delivery of care must therefore be appropri -
+ate, inclusive and sensitive to the needs of those individuals 
+whose gender identity does not align with the sex they were 
+assigned at birth.
+2 | INTRODUCTION
+The care of women and pregnant people with ICP is driven 
+by concern from women and from healthcare professionals 
+over the potential increased risk of stillbirth. Reduction of 
+stillbirth is a priority in maternity care in the UK.1
+Prevalence is influenced by genetic and environmental 
+aspects and varies between populations. In the UK, ICP af -
+fects 0.7% of pregnancies in multi- ethnic populations, and 
+1.2%– 1.5% of women of Indian- Asian or Pakistani- Asian 
+origin.2,3
+Intrahepatic cholestasis of pregnancy is a multifactorial 
+condition. It is characterised by pruritus in the absence of 
+a primary skin condition, with abnormal maternal bile 
+acid concentrations. The onset of symptoms is most com -
+mon in the third trimester, but can be earlier in pregnancy.4 
+Alternative diagnoses (such as pre- eclampsia) should always 
+be considered before a diagnosis of ICP is made; it is also possible for other conditions to co- exist. Pruritus and raised 
+bile acid concentrations should return to normal after birth.
+Ideally, all women with ICP should have liver function 
+tests (including bile acids) checked after birth, as a propor -
+tion may have persistent abnormalities suggestive of addi -
+tional or alternative comorbidities (such as non- alcoholic 
+fatty liver). Few studies have reported comprehensive post -
+natal follow- up of women to assess for additional diagnoses.
+There are no clinical features or laboratory patterns that 
+are unique to ICP, as other conditions can cause itching, or 
+raised bile acid concentrations in pregnancy. Around 25% of 
+pregnant women develop itching2,5; the majority of these do 
+not have and do not develop ICP.
+Historically, ICP has been diagnosed in women on the 
+basis of self- reported itching together with elevation of any 
+of a wide range of liver function tests beyond pregnancy- 
+specific limits.6 There is now increasing evidence that in 
+singleton pregnancies, most liver function tests do not re -
+flect risk of fetal demise and that only maternal total bile 
+acid concentrations results are associated with the risk of 
+stillbirth.
+A meta- analysis of 23 studies involving 5557 women 
+with ICP and 165 136 healthy controls, and the first indi -
+vidual patient data analysis of 5269 women with ICP from 
+27 studies7 has been published since this guideline was last 
+updated. In singleton pregnancies, stillbirth was associated 
+with maximum total bile acid concentration, especially over 
+100 micromol/L. In pregnancies with co- morbidities that 
+themselves may impact on pregnancy outcome (such as mul -
+tifetal, diabetic, pre- eclamptic pregnancies), these must be 
+taken into account when considering risks and care options.
+Bile acid concentrations are not associated with intensity 
+of itching.8 Other liver blood tests, such as alanine trans -
+aminase or aspartate transaminase are not associated with 
+pregnancy outcome.7 In light of this, the consensus is now 
+that the diagnosis of ICP requires elevated maternal bile 
+acid concentrations, and that women and pregnant people 
+with itching and isolated raised transaminases alone (with 
+normal bile acid concentrations) should not be given a di -
+agnosis of ICP.9 This is supported by the recent systematic 
+review described above, in which there was no association 
+between abnormal maternal transaminase concentrations 
+and stillbirth.7• Advise women with ICP that the presence of risk factors or co- morbidities (such as 
+gestational diabetes and/or pre- eclampsia and/or multifetal pregnancy) appear to 
+increase the risk of stillbirth and may influence decision- making around timing of 
+planned birth. [Grade D]
+• Advise women that there are no treatments that improve pregnancy outcome (or 
+raised bile acid concentrations) and treatments to improve maternal itching are of 
+limited benefit. [Grade A]
+• Do not routinely offer ursodeoxycholic acid for the purpose of reducing adverse 
+perinatal outcomes in women with ICP. [Grade A]
+ 14710528, 2022, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17206 by Test, Wiley Online Library on [23/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e97
+INTRAHEPATIC CHOLESTASIS OF PREGNANCY 
+2.1 | What terminology should be used to 
+describe the conditions?
+Most published studies to date have included women with ICP 
+diagnosed on the basis of itch and elevated bile acids above the 
+laboratory reference range. In a study of 560 women a preg-
+nancy specific reference range for non- fasting bile acids was 
+calculated with an upper limit of normal of 18 micromol/L.10 
+In light of the meta- analysis and individual patient data 
+analysis showing that stillbirth risk is not linked with alanine 
+transaminase levels, but is linked with peak bile acid concen-
+tration,7 the suggested terminology for pregnant women with 
+otherwise unexplained itching is outlined in Table  1.
+2.2 | What are the clinical issues for women 
+with ICP?
+The clinical issues for women and pregnant people with 
+ICP may include coping with the itching, monitoring op -
+tions during the pregnancy, options for controlling mater -
+nal symptoms, reducing fetal risk, preterm birth, difficulty 
+sleeping, anxiety about the condition, and optimal timing 
+of birth. Itching varies in nature between different women 
+and for some women at different times, from mild to un -
+bearable and from focal to widespread, and for some women 
+this can have an adverse impact on their mental wellbeing. 
+Liver failure (impaired synthetic function such as prolonged 
+prothrombin time, or metabolic dysfunction such as hypo -
+glycaemia) is not a typical feature of ICP.
+3 | IDENTIFICATION AND 
+ASSESSMENT OF EVIDENCE
+The Cochrane Library and electronic databases (DARE, 
+EMBASE, Trip, MEDLINE and PubMed) were searched 
+looking for the following terms in the title or ab -
+stract ‘cholestasis’, ‘intrahepatic cholestasis’, ‘obstetric cholestasis’, ‘bile acids and salts’ and ‘liver function 
+test’. The search was restricted to articles published until 
+August 2017. The full search strategy is available to view 
+online as supporting information. A further search was 
+undertaken up to February 2021 and additional arti -
+cles included as appropriate. The full literature search 
+is available to view online as supporting information 
+(Appendices S1 and S2 ).
+This Royal College of Obstetricians and Gyneacologists 
+(RCOG) guideline was developed in accordance with the 
+standard methodology for producing RCOG Green- top 
+Guidelines.11
+4 | HOW IS ICP DIAGNOSED?
+4.1 | How should the diagnosis of ICP be 
+made?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+The diagnosis of ICP should 
+be considered in pregnant 
+women who have itching in 
+skin of normal appearance 
+and raised peak random 
+total bile acid concentration 
+of 19 micromol/L or more. 
+The diagnosis is more 
+likely if it is confirmed that 
+itching and raised bile acids 
+resolve after birth4 D There is no 
+diagnostic test 
+for ICP, but this 
+definition is 
+pragmatic, and is 
+used in clinical 
+research involving 
+women with ICP
+If a diagnosis of ICP is 
+suspected, carry out a 
+structured history and 
+examination, so that other 
+causes of itching and liver 
+dysfunction can be excluded4 D There are other 
+potential causes 
+of itching and 
+abnormalities of 
+liver function tests 
+in pregnant women
+Offer repeat liver function 
+tests and bile acid 
+measurement (depending 
+on gestation and clinical 
+context) in women with 
+normal blood results whose 
+itch persists, and no other 
+cause is apparent4 D Women and 
+pregnant people 
+with gestational 
+pruritus may 
+develop ICP up 
+to 15 weeks after 
+initial presentation
+If resolution of itching 
+is associated with 
+normalisation of bile acids 
+and liver function tests 
+during pregnancy, the 
+diagnosis of ICP is unlikely 
+to be correct4 D In clinical practice, 
+diagnoses should 
+be reconsidered 
+if the clinical 
+presentation 
+changes
+New onset pruritus in pregnant women, if associated 
+with rash is unlikely to be ICP. If the itchy skin looks 
+abnormal (other than excoriations) then another cause 
+should be considered. Liver function tests and bile acids 
+are not required routinely. Clinicians should be aware 
+however, that skin conditions (e.g. eczema) and ICP can 
+co- exist.TABLE 1 Terminology for pregnant women with itching of normal 
+skin
+Diagnosis Clinical features
+Gestational 
+pruritusItching and peak bile acid concentrations 
+<19 micromol/La
+Mild ICP Itching and raised peak bile acid concentrations 
+19– 39 micromol/L
+Moderate ICP Itching and raised peak bile acid concentrations 
+40– 99 micromol/L
+Severe ICP Itching and raised peak bile acid concentrations 
+≥100 micromol/L
+Note : Peak bile acid concentrations refer to the highest bile acid concentration 
+recorded during a woman's pregnancy. Thus a woman's diagnosis may progress in 
+severity during pregnancy.
+aThe upper limit of normal bile acid concentrations in pregnancy is 
+18 micromol/L.10
+ 14710528, 2022, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17206 by Test, Wiley Online Library on [23/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e98 | 
+GREEN-TOP GUIDELINE NO. 43
+If the itchy skin looks normal, or there is only skin 
+trauma due to scratching, the diagnosis may include ges -
+tational pruritus, or ICP (see Table  1); measurement of 
+bile acid concentrations and liver function tests should be 
+undertaken. Raised bile acid concentration of 19 micro -
+mol/L or more in pregnancy supports a diagnosis of ICP. 
+[Evidence level 4]
+When clinically indicated, bile acid measurements should 
+be taken at a convenient time, and do not need to be per -
+formed fasting. By taking a non- fasting upper limit of nor -
+mal up to 19 micromol/L for bile acid concentrations, almost 
+20% of women previously considered to have ICP (as their 
+bile acid concentrations are below 19 micromol/L but above 
+the standard laboratory cut off) do not have this diagnosis. 
+Published data indicate that pregnant women with raised 
+bile acids less than 19 micromol/L are not at increased risk 
+of stillbirth.10 In addition, as prandial readings are higher 
+than fasting, this approach maximises the chance of detect -
+ing peak bile acid readings that are of greater clinical impor -
+tance for preventing adverse pregnancy outcome.
+Itching of normal skin, liver dysfunction and elevated bile 
+acid concentrations are non- specific and have a wide range 
+of causes. A healthcare professional should carry out a struc -
+tured history and examination, and consider other potential 
+diagnoses: these may be pregnancy specific (including pre- 
+eclampsia) or coincidental to the pregnancy (comprehen -
+sively reviewed by Walker et al).12 Drug reactions, allergic 
+reactions, and urticaria should form part of the differential 
+diagnosis. [Evidence level 4]
+In women and pregnant people with persistent itch of 
+normal skin and normal blood results, an initial diagnosis of 
+gestational pruritus should be considered. Women can go on 
+to develop ICP up to 15 weeks after a diagnosis of gestational 
+pruritus.13 If itching continues for these women, they should 
+be offered review with repeated liver function tests and bile 
+acid measurement as clinically indicated. The frequency and 
+duration of review and tests should be determined on an in -
+dividual basis, but might be based around scheduled care. The 
+gestational age is also relevant in determining test frequency, 
+particularly later in the third trimester when a diagnosis of ICP 
+may change care around the timing of birth (aiming to reduce 
+the risk of stillbirth) [see Section  5.2]. Use pregnancy- specific 
+reference ranges for liver function tests.6 [Evidence level 4]
+Pruritus and biochemical abnormalities usually persist 
+throughout pregnancy in women with ICP, although it 
+is very common for them to fluctuate. However, in a few 
+women, pruritus and biochemical abnormalities will re -
+solve completely for the remainder of the pregnancy; clini -
+cians may then need to reconsider the cause of the original 
+symptoms and why resolution has occurred. There are 
+many causes of transient liver function test abnormalities, 
+such as drug reactions (e.g. to antibiotics) or non- specific 
+viral illnesses. When resolution occurs during pregnancy, 
+it is unlikely that the original diagnosis was correct. In dis -
+cussion with the woman or pregnant person, ongoing care 
+can usually return to normal, and decisions about timing of 
+birth should be based on usual obstetric practice, although there should be greater caution if bile acid concentrations 
+have been markedly raised (e.g. 100 micromol/L or more). 
+[Evidence level 4]
+4.2 | What is the role of other investigations 
+in the care of women with suspected ICP?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Additional laboratory 
+and/or imaging 
+investigations are 
+not recommended 
+in every woman, but 
+could be considered 
+on an individual 
+basis. Consider 
+antenatal testing only 
+if there are atypical 
+clinical symptoms, 
+presence of relevant 
+comorbidities, 
+or early onset 
+severe ICP. 
+Consider postnatal 
+investigations in 
+women in whom 
+resolution of 
+abnormal liver 
+function tests is 
+delayed or does not 
+occur2+ C A cohort study 
+showed that 
+the likelihood 
+that routine 
+investigations 
+would identify 
+other causes of the 
+clinical picture was 
+extremely low
+Previous RCOG guidelines14 have recommended rou -
+tine laboratory and imaging investigations to exclude 
+other causes for the clinical picture of ICP, including 
+viral and autoimmune tests and liver ultrasound. A re -
+cent retrospective review of over 500 pregnant women 
+with raised bile acid concentrations suggests that the 
+likelihood of identifying a viral, autoimmune, or struc -
+tural cause for the itching and liver derangement that 
+was not suspected on other clinical grounds is extremely 
+low as no new diagnoses were made following investi -
+gations.15 Therefore, routine use of other investigations 
+is no longer recommended. The UK National Screening 
+Committee does not recommend routine screening for 
+hepatitis C in pregnancy due to lack of evidence of ben -
+efit16; the same uncertainties apply to pregnant women 
+with ICP. Routine hepatitis C testing is therefore not cur -
+rently recommended in women with suspected or proven 
+ICP. Additional investigations (including for hepatitis 
+C) should be considered in women and pregnant people 
+with an atypical or uncertain picture of ICP. This may 
+include women with markedly elevated transaminases, 
+early onset of ICP in the first or second trimester, a rap -
+idly progressive biochemical picture, any features of liver 
+failure or evidence of acute infection, or if resolution does 
+not occur after birth. [Evidence level 2+]
+ 14710528, 2022, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17206 by Test, Wiley Online Library on [23/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e99
+INTRAHEPATIC CHOLESTASIS OF PREGNANCY 
+Three cohort studies of 223 women,17 531 women15 and 
+745 women18 with ICP who had routine coagulation testing 
+reported no cases of prolonged prothrombin time in women 
+with uncomplicated clinical presentations. The small num -
+ber of abnormal results were in women with alternative di -
+agnoses (such as acute fatty liver of pregnancy). Coagulation 
+testing is therefore not recommended routinely for women 
+and pregnant people with uncomplicated ICP. It should be 
+considered on an individual basis especially when failure of 
+liver synthetic function or failure of fat absorption is sus -
+pected. [Evidence level 2+]
+4.3 | When should specialist hepatology 
+advice be sought?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Consider 
+discussing the 
+care of women 
+with severe, very 
+early or atypical 
+presentation of 
+what appears to 
+be ICP with a 
+hepatologist4 D It is good practice 
+to discuss 
+complex or 
+unusual cases 
+with relevant 
+specialists
+Women who develop pruritus and abnormalities in 
+liver function and bile acids in the first or second trimes -
+ter and especially in the first trimester are more likely to 
+have an underlying genetic predisposition or an alterna -
+tive or additional diagnosis. Input from a hepatologist 
+and/or a clinician with a special interest in cholestasis to 
+discuss investigations and treatment options should be 
+considered. A postnatal referral should also be considered 
+for women and pregnant people who do not have reso -
+lution of itch and biochemical abnormalities after birth. 
+[Evidence level 4]
+4.4 | What is the usual postnatal resolution?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Confirm the 
+diagnosis of ICP 
+in the postnatal 
+period at least 
+4 weeks after birth, 
+with resolution 
+of itching and 
+liver function 
+tests returning to 
+normal (including 
+bile acids)4 D It is good practice 
+to ensure that 
+women with ICP 
+have appropriate 
+follow upFor many women with ICP, itching will stop very soon 
+after birth; in the majority it stops in the first few hours or 
+days.
+Liver function tests are non- specific and can become ab -
+normal during birth. Alanine transaminase and aspartate 
+transaminase are found in smooth muscle, breast and red 
+blood cells and may be elevated for other reasons in the im -
+mediate post- partum period. [Evidence level 4]
+Women with ICP who have no other diagnoses are usu -
+ally clinically well; liver function tests and bile acids should 
+not be measured until at least 4 weeks after birth, to allow 
+time for levels to return to a normal range.19 If the woman 
+or pregnant person is clinically unwell, other or additional 
+diagnoses should be suspected and liver function testing 
+should be repeated sooner, as clinically indicated. [Evidence 
+level 4]
+5 | MATERNAL AND 
+PERINATAL RISKS
+5.1 | What is the maternal morbidity?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Advise women 
+with ICP that 
+the predominant 
+symptom is itching. 
+This can be severe, 
+may fluctuate and may 
+markedly affect sleep2+ C It is usual clinical 
+practice to discuss 
+symptoms with 
+women
+Women with ICP 
+may have a higher 
+chance of developing 
+pre- eclampsia or 
+gestational diabetes. 
+They should have 
+blood pressure and 
+urine monitoring, 
+and testing for 
+gestational diabetes 
+according to national 
+guidance1+ B It is important that 
+women with ICP 
+continue to have 
+normal aspects of 
+antenatal care
+Itching is the main symptom of ICP. The itching is not 
+specific to any single location; it is often generalised and may 
+affect the palms of the hands and/or the soles of the feet; it 
+ay vary in intensity.2 For women and pregnant people with 
+gestational pruritus or ICP, there is poor correlation between 
+severity of itch and level of bile acids,8 and regardless of the 
+diagnosis, itch can be very severe for some women and may 
+negatively impact their emotional wellbeing and mental 
+health. The itching is often more pronounced at night, which 
+can interfere with sleep. [Evidence level 2+]
+Additional symptoms of cholestasis, such as dark urine 
+and pale stools, are infrequently reported.4 Steatorrhoea 
+ 14710528, 2022, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17206 by Test, Wiley Online Library on [23/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e100 | 
+GREEN-TOP GUIDELINE NO. 43
+may occur,20 and women with this symptom may have mal -
+absorption of vitamin K. Jaundice is rare, affecting less than 
+1% of women with ICP,15 and tends to be mild if it occurs. 
+[Evidence level 2+]
+The incidence of pre- eclampsia was higher in women 
+with ICP (odds ratio [OR] 3.7 [95% CI 3.2– 4.3]): 12.2% 
+of women with ICP had pre- eclampsia compared 
+with 3.4% of women without ICP (228/1876 versus 
+3385/94 386).7 As pre- eclampsia can be diagnosed at any 
+gestation from the mid- second trimester, healthcare 
+professionals should ensure that women and pregnant 
+people with ICP receive ongoing blood pressure and 
+urinalysis screening for pre- eclampsia alongside review 
+for ICP.21 [Evidence level 1+]
+In a meta- analysis of more than 5000 women with ICP, 
+rates of gestational diabetes were higher in women with 
+ICP (OR 2.4 [95% CI 2.1– 2.8]): 13.2% of women with ICP 
+had already been diagnosed with gestational diabetes com -
+pared with 5.9% of women without ICP (239/1806 versus 
+5571/94 384).7 Additional testing for gestational diabetes is 
+not currently recommended; risk assessment and testing 
+for gestational diabetes should follow national guidelines.22 
+[Evidence level 1+]
+A large Swedish population- based study of 11 388 
+women with ICP and 113 893 controls found that women 
+who have had ICP had an increased likelihood of later 
+being diagnosed with hepatobiliary disease (hazard ratio 
+(HR) 2.62 [95% CI 2.47– 2.77]); 15% in women with ICP 
+versus 6.3% in controls), predominantly due to gall -
+stone disease (HR 2.72 [2.55– 2.91]; 11.6% versus 4.6%).23 
+However gallstones are common, affecting 5– 25% of 
+adults in high income countries,24 and it is unclear 
+whether gallstone disease predates ICP in such women. 
+[Evidence level 2– ]
+The same study found an association between ICP 
+and immune- mediated diseases later in life (HR 1.28 
+[1.19– 1.38]; 7.2% versus 5.8%). These included diabetes 
+(HR 1.47 [1.26– 1.72]; 1.7% versus 1.2%), thyroid disease 
+(HR 1.30 [1.14– 1.47]; 2.5% versus 2.0%), psoriasis (HR 
+1.27 [1.07– 1.51]; 1.4% versus 1.1%), inflammatory poly -
+arthropathies (HR 1.32 [1.11– 1.58]; 1.3% versus 0.9%) 
+and Crohn's disease (HR 1.55 [1.14– 2.10]; 0.4% versus 
+0.3%), but not ulcerative colitis (HR 1.21 [0.93– 1.58]; 
+0.6% versus 0.5%).25 Most of these conditions remain at 
+low absolute incidence. The benefit of routine regular 
+screening for these conditions is not proven in women 
+and pregnant people after ICP and is not currently rec -
+ommended. [Evidence level 2– ]
+Women with ICP have a reported small increased 
+chance of a subsequent diagnosis of other conditions, 
+such as hepatitis C. The UK strategy for hepatitis C de -
+tection is based on additional investigations on high- risk 
+groups (e.g. those who have hepatitis B) and does not at 
+present include women with current or previous ICP.26 
+In general, after an episode of ICP women do not require 
+additional screening nor follow up.5.2 | What is the risk of stillbirth?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Advise women with isolated 
+ICP and a singleton 
+pregnancy that the risk of 
+stillbirth only increases 
+above population rate 
+once their serum bile 
+acid concentration is 
+100 micromol/L or more: 
+• In women with peak bile 
+acids 19– 39 micromol/L 
+and no other risk factors, 
+advise them that the risk 
+of stillbirth is similar to 
+the background risk.
+• In women with peak bile 
+acids 40– 99 micromol/L 
+and no other risk factors, 
+advise them that the risk 
+of stillbirth is similar 
+to the background 
+risk until 38– 39 weeks' 
+gestation.
+• In women with peak bile 
+acids 100 micromol/L 
+or more, advise them 
+that the risk of stillbirth 
+is higher than the 
+background risk1+ A Demonstrated in 
+the meta- analysis 
+of 23 studies.
+Advise women with ICP 
+that the presence of risk 
+factors or co- morbidities 
+(such as gestational diabetes 
+and/or pre- eclampsia and/
+or multifetal pregnancy) 
+appear to increase the risk of 
+stillbirth and may influence 
+decision- making around 
+timing of planned birth2+ to 2– D Reported in 
+retrospective 
+cohort studies
+Advise women with ICP and 
+a twin pregnancy that the 
+risk of stillbirth is higher 
+compared with a twin 
+pregnancy without ICP2– D Reported in a 
+retrospective 
+cohort study from 
+China.
+Stillbirth remains the major concern for women and 
+pregnant people with ICP and for their healthcare prac -
+titioners. A large systematic review and individual patient 
+data meta- analysis of women with ICP reported that, for 
+singleton pregnancies, the risk of stillbirth only increased 
+above population rate once serum bile acid concentrations 
+were 100 micromol/L or more ( Table  2).7
+The national stillbirth rates from 28 weeks' gestation for 
+2015 for countries contributing to these ICP data varied 
+from 0.18% to 0.72% depending on country; the UK still -
+birth rate was 0.29%.7
+The pathophysiology of stillbirth in ICP is uncertain, but 
+it is thought that bile acids may cause an acute fetal anoxic 
+event possibly due to fetal arrhythmia27 or acute placental 
+ 14710528, 2022, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17206 by Test, Wiley Online Library on [23/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e101
+INTRAHEPATIC CHOLESTASIS OF PREGNANCY 
+vessel spasm.28 In singleton pregnancies, stillbirth was as -
+sociated with peak total bile acid concentration but not with 
+alanine transaminase.7 [Evidence level 1+]
+A 12- month UK Obstetric Surveillance System (UKOSS) 
+study in 2010– 2011 reviewed 669 cases of ICP in singleton 
+pregnancy with bile acids 40 micromol/L or more across 
+the UK which included 10 stillbirths.29 Of these, seven had 
+coexistent pregnancy complications (three had gestational 
+diabetes; two had pre- eclampsia; two had non- specified 
+complications). These differences remained significant 
+against national data and suggest that women with ICP 
+and other comorbidities warrant additional surveillance. 
+[Evidence level 2+]
+The aetiology of adverse perinatal outcomes, including 
+stillbirth, in multifetal pregnancies is multifactorial. The 
+risk of stillbirth in multifetal pregnancies is higher than in 
+singleton pregnancies.30 [Evidence level 2– ]
+One retrospective cohort study from China specifically 
+evaluated ICP in twin pregnancies.31 They reviewed 129 twin 
+pregnancies complicated with ICP and 1793 twin pregnan -
+cies without ICP (2006– 2014). There was an increased risk of 
+stillbirth in twin pregnancies with ICP compared with twin 
+pregnancy without ICP (3.9% versus 0.8%, aOR 5.75 [95% 
+CI 2.00– 16.6]). This was further stratified as a stillbirth risk 
+of 3.3% in women with bile acids of 10– 39 micromol/L and 
+5.1% in women with bile acids of 40 micromol/L or more. 
+Stillbirths with ICP in twin pregnancies occurred between 
+33– 35 weeks' gestation, compared to 36– 38 weeks' gestation 
+among singletons. [Evidence level 2– ]
+5.3 | What is the risk of perinatal 
+morbidity?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Advise women with 
+moderate or severe 
+ICP that they have 
+a higher chance of 
+both spontaneous and 
+iatrogenic preterm birth1+ A Demonstrated in the 
+meta- analysis of 23 
+studiesRecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Advise women with 
+moderate or severe 
+ICP that they have 
+an increased chance 
+of having meconium 
+stained amniotic fluid 
+during labour and birth1+ A Demonstrated in the 
+meta- analysis of 23 
+studies
+Advise women with 
+moderate or severe 
+ICP that their baby is 
+more likely to receive 
+neonatal care1+ A Demonstrated in the 
+meta- analysis of 23 
+studies
+In the meta- analysis of more than 5000 women with ICP, 
+women with bile acids ≥40 micromol/L had an increased 
+overall risk of both spontaneous preterm birth (OR 3.47 
+[95% CI 3.06– 3.95]) and iatrogenic preterm birth (OR 3.65 
+[1.94– 6.85]),7 the latter likely reflecting the policy of ‘active 
+management’ with planned early birth (despite a limited ev -
+idence base for this approach).32 The percentage of women 
+with singleton pregnancies who gave birth before 37 weeks 
+increased with increasing bile acid concentration: 16.5% 
+of women with bile acids below 40 micromol/L (373/2264), 
+19.1% of women with bile acids 40– 99 micromol (261/1368), 
+and 30.5% of women with bile acids 100 micromol/L or more 
+(157/514). The majority of multifetal pregnancies were born 
+preterm.7 [Evidence level 1+]
+In the same meta- analysis of more than 5000 women 
+with ICP, there was an increased chance of meconium 
+stained amniotic fluid (of any grade) in women with 
+ICP: OR 2.60 (95% CI 1.62– 4.16).7 The 2010– 2011 UKOSS 
+study of 713 women with bile acids 40 micromol/L or 
+more found that these women had meconium stained 
+amniotic fluid at lower gestational ages, and more com -
+monly at 35– 38 weeks, when compared with women with -
+out ICP.29 The presence of meconium stained amniotic 
+fluid in labour should be managed using national guid -
+ance.33 [Evidence level 1+]
+ICP is associated with a small increase in admission to 
+the neonatal unit: OR 1.47 (95% CI 1.03– 2.10).7 There was, 
+however, no difference in the rate of a neonatal 5 min Apgar 
+score of less than 7,7 (which is associated with increased TABLE 2 Association between peak bile acid concentration and prevalence of stillbirth in singleton pregnancy (adapted from Ovadia et al.)7
+Peak bile acid 
+concentrationsPrevalence of stillbirth 
+(with 95% CI)Absolute numbers of 
+stillbirthsHazard ratio (with 
+95% CI)
+National UK stillbirth rate from 
+28 weeks (2015)– 0.29%a– – 
+Mild ICP Raised bile acids 
+19– 39 micromol/L0.13% (0.02– 0.38%) 3/2310 Referent
+Moderate ICP 40– 99 micromol/L 0.28% (0.08– 0.72%) 4/1412 2.35 (0.52– 10.50) 
+p = 0.2642
+Severe ICP ≥100 micromol/L 3.44% (2.05– 5.37%) 18/524 30.50 (8.83– 105.30) 
+p < 0.0001
+a95% confidence intervals not given.
+ 14710528, 2022, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17206 by Test, Wiley Online Library on [23/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e102 | 
+GREEN-TOP GUIDELINE NO. 43
+neonatal morbidity and mortality): OR 1.41 (0.95– 2.10).34,35 
+[Evidence level 1+]
+The 2010– 2011 UKOSS study on 713 UK women with ICP 
+(bile acids 40 micromol/L or more) showed that 45% of neonatal 
+admissions were due to preterm birth, and 30% due to respira -
+tory problems.29 Their study had a preterm birth rate of 25%, 
+with a 15% rate of meconium stained liquor, but no cases of me -
+conium aspiration. The median duration of stay in the neonatal 
+unit was 7 days (IQR 2.25– 13.75 days).29 [Evidence level 1+]
+6 | HOW SHOULD WOMEN WITH 
+ICP BE MONITORED?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Review women 
+with ICP within 
+a consultant- led 
+maternity unit4 GPP Women with 
+ICP may be 
+at increased 
+likelihood of 
+pregnancy 
+complications
+The frequency and content of monitoring for women and 
+pregnant people with ICP should be determined in conjunc -
+tion with the woman or pregnant person and based on the 
+amount of discomfort or distress they experience, bile acid 
+concentrations, gestational age and the presence of other mor -
+bidities. This might incorporate review of diagnosis, discus -
+sion of maternal and fetal wellbeing, treatment of pruritus, 
+and need for further biochemical testing. [Evidence level 4]
+6.1 | What maternal monitoring should be 
+advised?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+For women with ICP, 
+consider repeating 
+liver function tests and 
+bile acids after 1 week, 
+and then determine 
+frequency on an 
+individual basis4 D Due to the 
+unpredictable 
+nature of ICP, it is 
+good practice to 
+offer monitoring
+Maternal itch appears to be poorly correlated to the level of 
+biochemical abnormality. For women with ICP, ongoing mon -
+itoring of symptoms and biochemical monitoring may show: 
+• rising bile acid concentrations, and if 100 micromol/L or 
+more, the diagnosis of severe ICP,
+• fall in bile acids concentrations into a more reassuring cat -
+egory, such that frequency of monitoring and/or care can 
+be altered accordingly,
+• spontaneous resolution of itch and biochemical abnor -
+malities returning to normal levels, in which case the di -
+agnosis should be reconsidered [see above in Section 4.1 ],• Fluctuating bile acid concentrations but peak concentra -
+tions within the boundaries for their current diagnosis. 
+[Evidence level 4]
+All women with itch and an initial raised bile acid level, 
+should have a second bile acid measurement repeated around 
+1 week later before any diagnostic or care decisions are deter -
+mined, as it is common for women with bile acid levels over 
+100 micromol/L and 40– 100 micromol/L to have subsequent 
+bile acid concentrations that are much lower.8
+The subsequent frequency at which women and pregnant 
+people have biochemical assessment will be determined on 
+an individual basis and according to the impact that the re -
+sult might have on further care (see Section 8.1 ): 
+• If the woman has mild ICP with peak bile acids 19– 39 mi-
+cromol/L, they could have weekly testing as they approach 
+38 weeks' gestation in order to inform timing of birth.
+• If the woman has moderate ICP with peak bile acid 40– 99 mi-
+cromol/L, especially if they are approaching 35 weeks' gesta -
+tion, weekly testing should be considered, as timing of birth 
+may be influenced if levels rise to 100 micromol/L or more.
+• If the woman has severe ICP with peak bile acid 100 mi-
+cromol/L or more, further routine testing of bile acids 
+might not impact on decision making and therefore may 
+not be routinely required. [Evidence level 4]
+6.2 | What fetal monitoring should be 
+advised?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Clinicians should 
+be aware that fetal 
+ultrasound and/or 
+cardiotocography 
+(CTG) do not predict 
+or prevent stillbirth 
+in ICP3 D Several case studies 
+describe fetal death 
+despite close CTG 
+and/or ultrasound 
+surveillance
+Advise women with 
+ICP to monitor fetal 
+movements and 
+present for immediate 
+assessment at their 
+local maternity unit if 
+they have any concerns4 D Recommended in 
+Saving Babies' Lives 
+Care Bundles version 
+2 (2019) for all 
+pregnant women
+In ICP, there is evidence that cardiotocography (CTG) 
+monitoring or biophysical profile do not predict stillbirth. 
+Several studies describe fetal death despite close surveillance 
+and previously normal ultrasound scans (including fetal 
+Doppler measurements), biophysical profile, and/or CTG 
+monitoring.31,36,37,38 [Evidence level 3]
+ICP is not associated with fetal growth restriction, with 
+no difference in birthweight centiles compared with babies 
+born to women without ICP,7 and therefore strategies for an -
+tenatal monitoring for placental insufficiency are unlikely to 
+be beneficial in women with isolated ICP. [Evidence level 3]
+ 14710528, 2022, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17206 by Test, Wiley Online Library on [23/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e103
+INTRAHEPATIC CHOLESTASIS OF PREGNANCY 
+All pregnant women and pregnant people should be ad -
+vised to monitor the quality and quantity of their fetal move -
+ments, and report any reduction or change to their local 
+maternity unit immediately, as recommended in national 
+guidance. 1 Maternal detection of movements is simple and 
+not time consuming for women or staff, but its specific role 
+in monitoring pregnancies complicated by ICP has not been 
+assessed. [Evidence level 4]
+7 | WHAT IS THE ROLE OF DRUG 
+TREATMENT IN THE TREATMENT 
+OF ICP?
+7.1 | What impact on maternal symptoms 
+(itch), maternal biochemistry and fetal outcome 
+can be expected?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Advise women 
+that there are no 
+treatments that 
+improve pregnancy 
+outcome (or 
+raised bile acid 
+concentrations) 
+and treatments to 
+improve maternal 
+itching are of 
+limited benefit1+ A Systematic review has 
+shown no clear evidence 
+of maternal or perinatal 
+benefit with treatments to 
+reduce itching or adverse 
+perinatal outcomes
+The role of drug treatment in ICP is to try to reduce ma -
+ternal itching (which may be of variable intensity and is un -
+related to bile acid concentrations). There is no evidence that 
+routine medical treatment improves maternal raised bile acid 
+concentrations or perinatal outcomes.39 [Evidence level 1+]
+Topical emollients
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Consider topical 
+emollients such as 
+aqueous cream (with 
+or without menthol 
+added) to ameliorate 
+skin symptoms4 D Used in clinical 
+practice, but not 
+formally evaluated 
+for evidence 
+of benefit in 
+reducing itching
+Although there is minimal high- quality evidence to en -
+dorse topical emollient treatment in women with ICP and it 
+is not a disease- modifying drug, there is consensus that such 
+treatment may relieve some of the discomfort associated 
+with itching and has no known harmful effects. [Evidence 
+level 4]Antihistamines
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Consider 
+antihistamine 
+agents, such as 
+chlorphenamine, 
+particularly at 
+night although the 
+effectiveness of 
+this treatment is 
+uncertain in women 
+with ICP4 GPP Used in clinical 
+practice, but not 
+formally evaluated 
+for evidence of 
+benefit in reducing 
+itching
+Chlorphenamine has antihistamine properties and may 
+have sedative side- effects in some women. The effective -
+ness of the treatment is uncertain in women and pregnant 
+people with ICP, and relief may be more related to its seda -
+tive action than a direct effect. There is experience of using 
+chlorphenamine in other conditions in pregnancy (such as 
+hay fever) and harmful effects have not been reported. Other 
+common antihistamine agents including loratadine and ce -
+tirizine are also used in pregnancy for other indications but 
+do not have sedative side- effects. [Evidence level 4]
+Ursodeoxycholic acid
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Do not 
+routinely offer 
+ursodeoxycholic 
+acid for the 
+purpose of 
+reducing adverse 
+perinatal outcomes 
+in women with ICP1+ A The largest randomised 
+controlled trial of 
+ursodeoxycholic acid 
+showed no evidence of 
+significant benefit
+Evidence from randomised controlled trials shows that 
+there is no reduction in adverse perinatal outcomes in women 
+prescribed ursodeoxycholic acid, compared to women in the 
+placebo group.39,40 No sub- group (e.g. based on maternal bile 
+acid concentrations, or gestational age at presentation) was 
+identified that might benefit. [Evidence level 1+]
+There is a small (around 5 mm, on a linear 0 to 100 mm 
+itch scale with 0 ‘no itch’ and 100 ‘worst imaginable itch’) re -
+duction in maternal itch in women taking ursodeoxycholic 
+acid.39 Women and clinicians considered that a reduction of 
+at least 30 mm on the itch scale would be clinically relevant 
+and worthwhile;40 the majority of women would therefore 
+not consider this a useful treatment. It remains possible 
+that some women's and pregnant people's itching may re -
+duce with ursodeoxycholic acid, but it is not clear how such 
+women might be identified. A recent secondary analysis of 
+the largest trial could not identify a cohort based on bile acid 
+ 14710528, 2022, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17206 by Test, Wiley Online Library on [23/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e104 | 
+GREEN-TOP GUIDELINE NO. 43
+concentration or itch score who would benefit.8 [Evidence 
+level 1+]
+A systematic review and individual participant meta- 
+analysis of ursodeoxycholic acid in ICP included four ran -
+domised controlled trials of over 800 women (of whom 183 
+had bile acid of 40 micromol/L or more) with a primary 
+outcome of stillbirth and a composite secondary outcome 
+of stillbirth and preterm birth.41 Ursodeoxycholic acid had 
+no impact on the primary endpoint. Spontaneous preterm 
+birth under 34 weeks' gestation was not reduced (5/387 
+women taking ursodeoxycholic acid versus 6/366 women 
+taking placebo, aOR 0.75, 95% CI 0.23– 2.51, p  =  0 . 6 5 ) . 
+Spontaneous preterm birth under 37 weeks' gestation was 
+reduced in women taking ursodeoxycholic acid compared 
+with placebo (18/387 versus 32/366 aOR 0.46, 95% CI 0.25– 
+0.86, p = 0.015).
+In women with bile acid concentrations 40 micromol/L 
+or more who are 34– 36 weeks' gestation, ursodeoxycholic 
+acid may offer some benefit in reducing late preterm birth. 
+However, as with other circumstances where preterm birth 
+occurs42 it is not clear that this reduction results in any ben -
+efit to the baby. The optimal starting gestation and dosing 
+regimen are unclear. Some women and pregnant people with 
+bile acid concentrations of 40 micromol/L or more may wish 
+to take ursodeoxycholic acid with a view to prolonging ges -
+tation, but as this does not prevent stillbirth, the advantage 
+of doing so may be less clear, especially for those with bile 
+acids over 100 micromol/L.
+In the largest trial, maternal bile acid concentrations 
+were found to be higher in the group treated with ur -
+sodeoxycholic acid,39 possibly as a result of standard 
+laboratory assays being unable to distinguish between 
+endogenous and exogenous sources. Ursodeoxycholic acid 
+cannot therefore be recommended for the purpose of re -
+ducing this biochemical marker of disease. In the same 
+trial, women treated with ursodeoxycholic acid had lower 
+alanine transaminase levels than those taking placebo, 
+but the clinical implications of this are uncertain, as al -
+anine transaminase levels have no association with still -
+birth.7 [Evidence level 1+]
+Other agents
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Do not offer 
+other agents for 
+treatment of 
+ICP outside of a 
+research study or 
+individualised 
+specialist 
+treatment3 D In the absence of evidence 
+of benefit, routine use of 
+other treatments is not 
+recommendedUse of rifampicin has been reported largely in single 
+cases43 and by questionnaire survey of affected women,44 
+but there is no evidence from randomised controlled trials 
+to support its routine use in ICP. Further research is under -
+way to evaluate its use in women with ICP.45 In women and 
+pregnant people with early- onset severe disease, an opinion 
+from a specialist in ICP should be sought before considering 
+rifampicin treatment. [Evidence level 3]
+7.2 | Is there a place for vitamin K use?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Consider maternal 
+vitamin K treatment 
+only if there appears to 
+be reduced absorption of 
+dietary fats (e.g. presence 
+of steatorrhoea) and/or 
+evidence of abnormal 
+prothrombin time if 
+coagulation studies are 
+performed4 D Extrapolation 
+from other 
+clinical scenarios 
+where dietary 
+fat absorption 
+is impaired, but 
+routine use in all 
+women with ICP is 
+lacking an evidence 
+base
+The experience of experts is that the large majority of 
+women with ICP will not have evidence of reduced fat ab -
+sorption9 and routine use of vitamin K treatment is not in -
+dicated. If women have symptoms such as steatorrhoea,20 
+coagulation assessment should be performed and use of vi -
+tamin K treatment considered (prescribed as a water- soluble 
+formulation such as menadiol sodium phosphate at a dose of 
+10 mg daily). [Evidence level 4]
+8 | HOW SHOULD WOMEN BE 
+ADVISED ON TIMING AND MODE OF 
+BIRTH?
+8.1 | Timing of birth
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Consider options 
+of planned birth by 
+40 weeks' gestation or 
+ongoing antenatal care 
+according to national 
+guidance in women with 
+mild ICP (peak bile acids 
+19– 39 micromol/L) and 
+no other risk factors; 
+advise women that the 
+risk of stillbirth is similar 
+to the background risk1+ A Systematic review 
+with individual 
+patient data meta- 
+analysis reporting 
+risk of stillbirth, 
+stratified by peak 
+maternal bile acid 
+concentration
+ 14710528, 2022, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17206 by Test, Wiley Online Library on [23/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e105
+INTRAHEPATIC CHOLESTASIS OF PREGNANCY 
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Consider planned birth 
+at 38– 39 weeks' gestation 
+in women with moderate 
+ICP with peak bile acids 
+40– 99 micromol/L and 
+no other risk factors; 
+advise them that the 
+overall risk of stillbirth 
+is similar to the 
+background risk until 
+38– 39 weeks' gestation1+ A Systematic review 
+with individual 
+patient data meta- 
+analysis reporting 
+risk of stillbirth, 
+stratified by peak 
+maternal bile acid 
+concentration
+Consider planned birth 
+at 35– 36 weeks' gestation 
+in women with severe 
+ICP with peak bile acids 
+100 micromol/L or more; 
+advise them that the risk 
+of stillbirth is higher 
+than the background risk1+ A Systematic review 
+with individual 
+patient data meta- 
+analysis reporting 
+risk of stillbirth, 
+stratified by peak 
+maternal bile acid 
+concentration
+Advise women that 
+the presence of co- 
+morbidities (such as 
+gestational diabetes, 
+pre- eclampsia, multifetal 
+pregnancy) appear 
+to increase the risk 
+of stillbirth and may 
+influence decision- 
+making around timing 
+of planned birth2+ C Evidence 
+from national 
+surveillance case 
+control study 
+supported by 
+other case series 
+demonstrating 
+increased 
+stillbirth risk with 
+comorbidities
+Active care in ICP, usually referring to planned birth 
+around 38 weeks' gestation, came into practice in many set -
+tings, including the UK, despite inadequate evaluation of 
+its benefit or an understanding of which women with ICP 
+might be at increased risk of adverse perinatal outcomes. 
+Previous studies had reported on cohorts of women with 
+ICP, often after introduction of active care, and speculated 
+that low stillbirth risk is related to such a policy,46,47 but few 
+had evaluated prognostic factors to allow better stratifica -
+tion to tailor timing of birth. [Evidence level 1+]
+A large systematic review and individual patient data 
+meta- analysis of women with ICP has reported that the 
+risk of stillbirth is 0.13% in women with peak bile acids less 
+than 40 micromol/L, which is not higher than background 
+population risk.7 Although the risk of stillbirth remains 
+low throughout gestation for these women, the benefits of 
+continuing the pregnancy after 40 weeks' gestation may be 
+outweighed by the risk, therefore it is reasonable to discuss 
+with the woman or pregnant person whether they wish to 
+continue the pregnancy or have a planned birth. [Evidence 
+level 1+]The risk of stillbirth in women with peak bile acids of 40– 
+99 micromol/L was 0.28%. This was not higher than over -
+all background population risk,7 but did appear to increase 
+at around 38– 39 weeks' gestation. Although the number of 
+affected pregnancies is small and the confidence intervals 
+wide, it is reasonable to offer planned birth at this gesta -
+tion for women and pregnant people with peak bile acids of 
+40– 99 micromol/L, or earlier if other comorbidities (such as 
+gestational diabetes or pre- eclampsia) are present. [Evidence 
+level 1+]
+For women with peak bile acids 100 micromol/L or 
+more, the risk of stillbirth is 3.44%, which is higher than 
+background population rate, and the risk appears to in -
+crease from 35– 36 weeks' gestation. This information 
+should be shared with the woman or pregnant person and 
+planned birth considered, based on other factors and the 
+woman's preferences. This is in keeping with other studies 
+using different methodologies, including a retrospective 
+cohort study of 1 604 386 pregnancies assessing compos -
+ite perinatal mortality risk48 and a decision modelling 
+study concluding that 36 weeks' gestation was optimal.49 
+[Evidence level 1+]
+In women with ICP and peak bile acids 40 micromol/L 
+or more, co- morbidities may be associated with a greater 
+risk of stillbirth.29 The presence of and risks related to co- 
+morbidities should be taken into account when considering 
+the timing of planned birth. [Evidence level 1+]
+8.2 | Mode of birth
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Advise women 
+that ICP in itself 
+does not impact 
+their choice 
+around mode of 
+birth and that 
+these decisions 
+should be based 
+on usual obstetric 
+practice for that 
+woman2+ D Choices around mode 
+of birth should follow 
+routine obstetric 
+practice
+Women and pregnant people with ICP do not have in -
+creased rates of assisted or operative birth compared with 
+women without ICP.50 Mode of birth should therefore be 
+based on usual obstetric or medical indications. If planned 
+early birth is indicated, induction of labour should be con -
+sidered unless other reasons for caesarean birth are present. 
+[Evidence level 2+]
+ 14710528, 2022, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17206 by Test, Wiley Online Library on [23/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e106 | 
+GREEN-TOP GUIDELINE NO. 43
+8.3 | Monitoring in labour
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+• Offer continuous 
+electronic fetal 
+monitoring (CEFM) to 
+women with peak bile 
+acids 100 micromol/L 
+or more.
+• There is insufficient 
+evidence for or against 
+CEFM in women with 
+peak bile acids below 
+100 micromol/L. A 
+shared decision can 
+be made based on 
+co- morbidities and 
+preferences.
+Advise women that the 
+presence of risk factors 
+(such as gestational 
+diabetes, pre- eclampsia, 
+multifetal pregnancy) 
+appear to increase the 
+risk of adverse perinatal 
+outcomes and that these 
+conditions themselves 
+may necessitate 
+monitoring during 
+birth or in conjunction 
+with ICP may influence 
+decision- making 
+around monitoring in 
+labour.
+Advise women that 
+meconium- stained 
+liquor is more common 
+in moderate and severe 
+ICP, and that this will 
+influence decision- 
+making around CEFM4 D Recommendation 
+based on 
+extrapolation from 
+assessment of fetal 
+risk associated 
+with stillbirth 
+and other adverse 
+perinatal outcomes, 
+highlighted by 
+systematic review
+If the woman or pregnant person has existing obstet -
+ric or medical conditions that influence decision- making 
+around fetal monitoring in labour, these should be taken 
+into account when planning intrapartum care. In women 
+with mild ICP (peak bile acids 19– 39 micromol/L) and no 
+other risk factors, intrapartum care can follow national 
+guidelines.33 In women with moderate ICP (peak bile 
+acids 40– 99 micromol/L), the decision should be made 
+on an individualised basis, explaining that the benefit 
+of continuous electronic fetal monitoring is uncertain; 
+the presence of any other risk factors should be taken 
+into account. In women with severe ICP (peak bile acids 
+100 micromol/L or more), in light of evidence that there 
+is a risk of adverse perinatal outcomes in these women, 
+continuous electronic fetal monitoring should be offered. 
+Women with moderate and severe ICP are more likely to 
+have meconium- stained liquor, and this will influence 
+the need for continuous electronic monitoring in labour. 
+[Evidence level 4]8.4 | Analgesia in labour
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Offer women with 
+uncomplicated ICP 
+standard analgesia 
+and anaesthesia 
+options for birth4 D Choice of analgesia 
+should be based 
+on routine clinical 
+practice
+There are no studies that have indicated that women or 
+pregnant people with ICP require different options for an -
+algesia and anaesthesia for birth and national guidance 
+should be followed.33 Three cohort studies of 223 women,17 
+531 women15 and 745 women18 with ICP described above in 
+Section  4.2, who had routine coagulation testing reported no 
+cases of prolonged prothrombin time in women with uncom -
+plicated clinical presentations. The small number of abnor -
+mal results occurred in women with alternative diagnoses 
+(such as acute fatty liver of pregnancy). [Evidence level 4]
+8.5 | Third stage of birth
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Advise women that 
+there is no evidence 
+of an increased 
+risk of postpartum 
+haemorrhage if they 
+have uncomplicated 
+ICP2– D Care of third 
+stage should 
+follow routine 
+clinical practice
+A case– control study (64 cases)50 and case- cohort study 
+(348 cases)51 both showed no increased risk of postpartum 
+haemorrhage in women with ICP. Standard care using na -
+tional guidance for the third stage of birth should be fol -
+lowed.33 [Evidence level 2– ]
+9 | WHAT FOLLOW- UP SHOULD BE 
+OFFERED TO WOMEN WHO HAVE 
+HAD A PREGNANCY AFFECTED BY 
+ICP?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+For women who have 
+uncomplicated ICP, 
+follow- up should be 
+arranged at least 4 weeks 
+after birth to confirm 
+resolution of ICP. Advise 
+them that they should 
+anticipate itching and 
+raised maternal bile acid 
+concentrations to resolve 
+after birth4 D Good practice to 
+arrange follow up
+ 14710528, 2022, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17206 by Test, Wiley Online Library on [23/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e107
+INTRAHEPATIC CHOLESTASIS OF PREGNANCY 
+In women who have had ICP, itch usually stops after 
+birth, often in the first few days, and liver function tests and 
+bile acid concentrations should return to normal within a 
+few weeks. At postnatal follow- up, the healthcare profes -
+sional should ensure that itching has resolved and should 
+confirm that maternal bile acid concentrations and liver 
+function tests have normalised. If itching or biochemical 
+abnormalities persist beyond 6 weeks postpartum, consider 
+other diagnoses depending upon the history and examina -
+tion findings. Referral to a hepatologist may be required. 
+[Evidence level 4]
+9.1 | What advice should be offered for future 
+contraceptive or hormonal options?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Advise women that 
+ICP itself does not 
+influence their choice of 
+contraception or hormone 
+replacement therapy4 D Choice of 
+contraception 
+should follow 
+UK Medical 
+Eligibility 
+Criteria 
+(UKMEC) 
+guidance
+For women with 
+ICP and previous 
+cholestasis secondary 
+to combined hormonal 
+(oestrogen- containing) 
+contraception, advise 
+them to use progestogen- 
+only or non- hormonal 
+methods4 D This is in line 
+with UKMEC 
+guidance
+In women with previous 
+ICP requesting HRT, 
+consider offering if 
+there are no other 
+contraindications to use4 D Extrapolated 
+from UKMEC 
+guidance on 
+exogenous 
+oestrogen use
+As with all women and pregnant people, discussion about 
+methods of contraception should begin during the antenatal 
+period21 and continue in the early postpartum days.52 This 
+should include the health benefits of spacing pregnancies, 
+consideration of medical conditions and/or patient char -
+acteristics affecting contraceptive choice (such as venous 
+thromboemblism risk factors, breastfeeding, medical his -
+tory), the reliability and benefits of long- acting reversible 
+contraceptive methods, and the additional use of condoms if 
+there is a risk of sexually transmitted infections and HIV.53 
+[Evidence level 4]
+The 2016 UK Medical Eligibility Criteria (UKMEC) for 
+Contraceptive Use advises that copper- bearing intra- uterine 
+devices, levonorgestrel- releasing intra- uterine systems, 
+progestogen- only implant, progestogen- only injectable, and 
+progestogen- only pill can be used without restriction in 
+women with a history of ICP (UKMEC category 1).53Combined hormonal contraception can be used in 
+women with ICP (UKMEC 2) provided they do not also 
+have a history of contraception related cholestasis. It was 
+previously thought that women with a history of ICP may 
+have an increased risk of developing cholestasis when using 
+oestrogen- containing hormonal contraception, but this is 
+unlikely for the majority of women. The 2016 UKMEC states 
+that in women who have had ICP the advantages of using 
+these oestrogen- containing methods outweigh this theoreti -
+cal risk (UKMEC category 2)53 and women may thus choose 
+to use this method. Resolution of itching and liver function 
+tests and bile acid concentrations returning to normal lev -
+els should be confirmed before commencing this method. 
+[Evidence level 4] Advise women to attend for review if recur -
+rence of itch and abnormal liver function tests occur while 
+using combined hormonal contraception, this would give a 
+diagnosis of contraceptive- related cholestasis (UKMEC 3) 
+and alternative contraception options should be discussed. 
+[Evidence level 4]
+For women with an atypical presentation of ICP, atypi -
+cal postnatal clinical course, where other diagnoses are sus -
+pected, or where itching and liver function tests have not 
+resolved, a personalised approach to contraceptive choice 
+should be undertaken, with provision of information about 
+avoidance of pregnancy with active liver disease.
+For menopausal women considering hormonal replace -
+ment therapy (HRT), national recommendations should be 
+followed.54 Current UKMEC guidance is that oestrogen- 
+containing contraception can be used in women with a 
+history of ICP. It therefore seems reasonable to offer the 
+lower physiological dose of oestrogen found in HRT, with 
+review of use if women develop itching or other signs of 
+cholestasis.
+9.2 | How should women be cared for in 
+future pregnancies?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Advise women with 
+a history of ICP that 
+they have an increased 
+chance of recurrence 
+of ICP in subsequent 
+pregnancies3 D Good practice to 
+inform women 
+of likelihood of 
+recurrence
+Perform a baseline 
+liver function test and 
+bile acid concentration 
+with booking blood 
+investigations3 D Good practice to 
+establish baseline 
+values
+Women and people of reproductive age who have had a 
+pregnancy complicated by ICP have an increased chance of ICP 
+in a subsequent pregnancy compared to the general pregnancy 
+ 14710528, 2022, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17206 by Test, Wiley Online Library on [23/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e108 | 
+GREEN-TOP GUIDELINE NO. 43
+population, but the precise magnitude of this is unclear, as 
+quoted rates of recurrence are based on small studies (e.g. of 18 
+women55 and 69 women56) and the results may not be general -
+izable to a wider UK population with ICP. At booking in subse -
+quent pregnancies, baseline measurement of liver function tests 
+and bile acid concentrations should be performed in order to 
+establish that these are normal. They should only be repeated if 
+clinically indicated. [Evidence level 3]
+10 | RECOMMENDATIONS FOR 
+FUTURE RESEARCH
+• In women with ICP: 
+⚬ Which maternal or fetal prognostic tools and/or mon -
+itoring modalities predict adverse perinatal outcome 
+(including preterm birth and stillbirth)?
+⚬ Should women with ICP be tested for gestational dia -
+betes (and by what method)?
+⚬ What is an effective treatment for itching?
+⚬ What is an effective treatment to prevent adverse peri -
+natal outcomes?
+• In pregnant women with raised bile acids, what is the nat -
+ural history of bile acid concentrations without treatment?
+• What is the ongoing risk of adverse pregnancy outcome in 
+women whose bile acid concentrations normalise?
+• What is the cause of itching in women without raised bile 
+acids, and what is an effective treatment for their itching?
+11 | AUDITABLE TOPICS
+• Proportion of women with raised bile acid concentrations 
+offered timing of birth in line with RCOG Green- top 
+Guideline. (>90%)
+• Proportion of women with uncomplicated raised bile acid 
+concentrations having additional investigations routinely 
+performed. (<10%)
+• Proportion of women with raised bile acid concentrations 
+offered ursodeoxycholic acid in line with RCOG Green- 
+top Guideline. (<5%)
+• Proportion of women with severe ICP (peak bile acids 
+≥100 micromol/L) offered continuous electronic fetal 
+monitoring during labour. (>90%)
+These targets have been set in recognition of the need for 
+individualised care particularly in women with comorbidi -
+ties and atypical ICP.
+12 | USEFUL LINKS AND 
+SUPPORT GROUPS
+• Information for healthcare professionals 
+⚬ Maternal use of medication in pregnancy (UK 
+Teratology Information Service) ( http://www.uktis.
+org/html/mater nal_expos ure.html )⚬ http://www.uktis.org/html/mater nal_expos ure.html
+• Information for women and families 
+⚬ Research based charity and support group ICP Support 
+(http://www.icpsu pport.org/ )
+⚬ RCOG. Intrahepatic Cholestasis of Pregnancy . 
+Information for you ( https://www.rcog.org.uk/for- the- 
+publi c/)
+• Information for women and their families on use of med -
+icines in pregnancy 
+⚬ http://www.medic inesi npreg nancy.org/
+CONFLICT OF INTERESTS
+JG, CLK and LC have declared no conflicts of interest.
+FUNDING INFORMATION
+All those involved in the development of the Green- 
+top Guidelines, including the Guidelines Committee, 
+Guidelines Committee co- chairs, guideline developers, 
+peer reviewers and other reviewers, are unpaid volunteers 
+and receive no direct funding for their work in producing 
+the guideline. The exception to this are the RCOG staff 
+involved who are salaried employees of the College and 
+Guidelines Committee members who receive reimburse -
+ment for expenses for attending Guidelines Committee 
+meetings. Please see more information on travel expense 
+rules on the RCOG website.
+REFERENCES
+ 1. NHS England. Saving babies' lives care bundle version 2019 [cited 
+2019 Aug 22]. Available from: https://www.engla nd.nhs.uk/wp- conte 
+nt/uploa ds/2019/07/savin g- babie s- lives - care- bundl e- versi on- two- v5.
+pdf
+ 2. Kenyon AP, Tribe RM, Nelson- Piercy C, Girling JC, Williamson C, 
+Seed PT, et al. Pruritus in pregnancy: a study of anatomical distri -
+bution and prevalence in relation to the development of obstetric 
+cholestasis. Obstet Med. 2010;3(1):25– 9.
+ 3. Abedin P, Weaver JB, Egginton E. Intrahepatic cholestasis of 
+pregnancy: prevalence and ethnic distribution. Ethn Health. 
+1999;4(1– 2):35– 7.
+ 4. Geenes V, Williamson C. Intrahepatic cholestasis of pregnancy. 
+World J Gastroenterol. 2009;15(17):2049– 66.
+ 5. Szczech J, Wiatrowski A, Hirnle L, Reich A. Prevalence and relevance 
+of pruritus in pregnancy. Biomed Res Int. 2017;2017:4238139.
+ 6. Girling JC, Dow E, Smith JH. Liver function tests in pre- eclampsia: 
+importance of comparison with a reference range derived for normal 
+pregnancy. Br J Obstet Gynaecol. 1997;104(2):246– 50.
+ 7. Ovadia C, Seed PT, Sklavounos A, Geenes V, Di Ilio C, Chambers 
+J, et al. Association of adverse perinatal outcomes of intrahe -
+patic cholestasis of pregnancy with biochemical markers: results 
+of aggregate and individual patient data meta- analyses. Lancet. 
+2019;393(10174):899– 909.
+ 8. Fleminger J, Seed PT, Smith A, Juszczak E, Dixon PH, Chambers 
+J, et al. Ursodeoxycholic acid in intrahepatic cholestasis of 
+pregnancy: a secondary analysis of the PITCHES trial. BJOG. 
+2021;128(6):1066– 75.
+ 9. Williamson C, Geenes V. Intrahepatic cholestasis of pregnancy. 
+Obstet Gynecol. 2014;124(1):120– 33.
+ 10. Mitchell AL, Ovadia C, Syngelaki A, Souretis K, Martineau M, 
+Girling J, et al. Re- evaluating diagnostic thresholds for intrahepatic 
+cholestasis of pregnancy: case– control and cohort study. BJOG. 
+2021;128(10):1635– 44.
+ 14710528, 2022, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17206 by Test, Wiley Online Library on [23/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e109
+INTRAHEPATIC CHOLESTASIS OF PREGNANCY 
+ 11. Royal College of Obstetricians and Gynaecologists. Developing a 
+Green- top Guideline. Guidance for developers. London: RCOG; 2020.
+ 12. Walker I, Chappell LC, Williamson C. Abnormal liver function tests 
+in pregnancy. BMJ. 2013;347:f6055.
+ 13. Kenyon AP, Piercy CN, Girling J, Williamson C, Tribe RM, Shennan 
+AH. Pruritus may precede abnormal liver function tests in pregnant 
+women with obstetric cholestasis: a longitudinal analysis. BJOG. 
+2001;108(11):1190– 2.
+ 14. Royal College of Obstetricians and Gynaecologists. Obstetric 
+cholestasis: Green- top Guideline no. 43. London: RCOG; 2011.
+ 15. Conti- Ramsden F, McEwan M, Hill R, Wade J, Abraham G, Buckeldee 
+O, et al. Detection of additional abnormalities or co- morbidities in 
+women with suspected intrahepatic cholestasis of pregnancy. Obstet 
+Med. 2019;13(4):185– 91.
+ 16. UK National Screening Committee. Antenatal screening for hepatitis 
+C virus. 2018 [cited 2020 Jan 13]. Available from: https://legac yscre 
+ening.phe.org.uk/hepat itisc - pregn ancy
+ 17. DeLeon A, De Oliveira GS, Kalayil M, Narang S, McCarthy RJ, Wong 
+CA. The incidence of coagulopathy in pregnant patients with intrahe -
+patic cholestasis: should we delay or avoid neuraxial analgesia? J Clin 
+Anesth. 2014;26(8):623– 7.
+ 18. Lees J, Al- Rawi S, McPhee H, Southcoast Perioperative A, Research C. 
+Coagulopathy in obstetric cholestasis in Wessex Deanery. Int J Obstet 
+Anesth. 2019;37:130– 1.
+ 19. David AL, Kotecha M, Girling JC. Factors influencing postnatal liver 
+function tests. BJOG. 2000;107(11):1421– 6.
+ 20. Reyes H, Radrigan ME, Gonzalez MC, Latorre R, Ribalta J, Segovia 
+N, et al. Steatorrhea in patients with intrahepatic cholestasis of preg -
+nancy. Gastroenterology. 1987;93(3):584– 90.
+ 21. National Institute for Health and Care Excellence. Antenatal Care. 
+NICE guideline [NG201]. London: NICE; 2021.
+ 22. National Institute of Health and Care Excellence. Diabetes in preg -
+nancy: management from preconception to the postnatal period. 
+NG3. London: NICE; 2020.
+ 23. Marschall HU, Wikstrom Shemer E, Ludvigsson JF, Stephansson 
+O. Intrahepatic cholestasis of pregnancy and associated hepa -
+tobiliary disease: a population- based cohort study. Hepatology. 
+2013;58(4):1385– 91.
+ 24. Gurusamy KS, Davidson BR. Gallstones. BMJ. 2014;348:g2669.
+ 25. Wikstrom Shemer EA, Stephansson O, Thuresson M, Thorsell 
+M, Ludvigsson JF, Marschall HU. Intrahepatic cholestasis 
+of pregnancy and cancer, immune- mediated and cardiovas -
+cular diseases: a population- based cohort study. J Hepatol. 
+2015;63(2):456– 61.
+ 26. Public Health England. Hepatitis C: interventions for patient case- 
+finding and linkage to care. 2018 [cited 2020 Jan 13]. Available from: 
+https://assets.publi shing.servi ce.gov.uk/gover nment/ uploa ds/syste 
+m/uploa ds/attac hment_data/file/82933 1/Hepat itis_C_inter venti 
+ons_for_patie nt_case- findi ng_and_linka ge_to_care.pdf
+ 27. Vasavan T, Deepak S, Jayawardane IA, Lucchini M, Martin C, Geenes 
+V, et al. Fetal cardiac dysfunction in intrahepatic cholestasis of preg -
+nancy is associated with elevated serum bile acid concentrations. J 
+Hepatol. 2021;74(5):1087– 96.
+ 28. Sepulveda WH, Gonzalez C, Cruz MA, Rudolph MI. Vasoconstrictive 
+effect of bile acids on isolated human placental chorionic veins. Eur J 
+Obstet Gynecol Reprod Biol. 1991;42(3):211– 5.
+ 29. Geenes V, Chappell LC, Seed PT, Steer PJ, Knight M, Williamson 
+C. Association of severe intrahepatic cholestasis of pregnancy with 
+adverse pregnancy outcomes: a prospective population- based case– 
+control study. Hepatology. 2014;59(4):1482– 91.
+ 30. Cheong- See F, Schuit E, Arroyo- Manzano D, Khalil A, Barrett J, 
+Joseph KS, et al. Prospective risk of stillbirth and neonatal complica -
+tions in twin pregnancies: systematic review and meta- analysis. BMJ. 
+2016;354:i4353.
+ 31. Liu X, Landon MB, Chen Y, Cheng W. Perinatal outcomes with intra -
+hepatic cholestasis of pregnancy in twin pregnancies. J Matern Fetal 
+Neonatal Med. 2016;29(13):2176– 81. 32. Henderson CE, Shah RR, Gottimukkala S, Ferreira KK, Hamaoui A, 
+Mercado R. Primum non nocere: how active management became 
+modus operandi for intrahepatic cholestasis of pregnancy. Am J 
+Obstet Gynecol. 2014;211(3):189– 96.
+ 33. National Institute of Health and Care Excellence. Intrapartum care 
+for healthy women and babies. Clinical guideline [CG190]. London: 
+NICE; 2014.
+ 34. Iliodromiti S, Mackay DF, Smith GC, Pell JP, Nelson SM. Apgar score 
+and the risk of cause- specific infant mortality: a population- based co -
+hort study. Lancet. 2014;384(9956):1749– 55.
+ 35. Lai S, Flatley C, Kumar S. Perinatal risk factors for low and moderate 
+five- minute Apgar scores at term. Eur J Obstet Gynecol Reprod Biol. 
+2017;210:251– 6.
+ 36. Kawakita T, Parikh LI, Ramsey PS, Huang CC, Zeymo A, Fernandez 
+M, et al. Predictors of adverse neonatal outcomes in intrahepatic 
+cholestasis of pregnancy. Am J Obstet Gynecol. 2015;213(4):570.
+e1– 8.
+ 37. Grymowicz M, Czajkowski K, Smolarczyk R. Pregnancy course in 
+patients with intrahepatic cholestasis of pregnancy treated with 
+very low doses of ursodeoxycholic acid. Scand J Gastroenterol. 
+2016;51(1):78– 85.
+ 38. Baliutaviciene D, Zubruviene N, Zalinkevicius R. Pregnancy out -
+come in cases of intrahepatic cholestasis of pregnancy. Int J Gynaecol 
+Obstet. 2011;112(3):250– 1.
+ 39. Chappell LC, Bell JL, Smith A, Linsell L, Juszczak E, Dixon PH, et al. 
+Ursodeoxycholic acid versus placebo in women with intrahepatic 
+cholestasis of pregnancy (PITCHES): a randomised controlled trial. 
+Lancet. 2019;394(10201):849– 60.
+ 40. Chappell LC, Gurung V, Seed PT, Chambers J, Williamson C, 
+Thornton JG, et al. Ursodeoxycholic acid versus placebo, and early 
+term delivery versus expectant management, in women with intra -
+hepatic cholestasis of pregnancy: semifactorial randomised clinical 
+trial. BMJ. 2012;344:e3799.
+ 41. Ovadia C, Sajous J, Seed PT, Patel K, Williamson NJ, Attilakos G, 
+et al. Ursodeoxycholic acid in intrahepatic cholestasis of pregnancy: 
+a systematic review and individual participant data meta- analysis. 
+Lancet Gastroenterol Hepatol. 2021;6(7):547– 58.
+ 42. Norman JE, Marlow N, Messow CM, Shennan A, Bennett PR, 
+Thornton S, et al. Vaginal progesterone prophylaxis for preterm birth 
+(the OPPTIMUM study): a multicentre, randomised, double- blind 
+trial. Lancet. 2016;387(10033):2106– 16.
+ 43. Liu J, Murray AM, Mankus EB, Ireland KE, Acosta OM, Ramsey PS. 
+Adjuvant use of rifampin for refractory intrahepatic cholestasis of 
+pregnancy. Obstet Gynecol. 2018;132(3):678– 81.
+ 44. Geenes V, Chambers J, Khurana R, Shemer EW, Sia W, Mandair D, 
+et al. Rifampicin in the treatment of severe intrahepatic cholestasis of 
+pregnancy. Eur J Obstet Gynecol Reprod Biol. 2015;189:59– 63.
+ 45. Hague WM, Callaway L, Chambers J, Chappell L, Coat S, de Haan- 
+Jebbink J, et al. A multi- centre, open label, randomised, parallel- 
+group, superiority trial to compare the efficacy of URsodeoxycholic 
+acid with RIFampicin in the management of women with severe early 
+onset Intrahepatic Cholestasis of pregnancy: the TURRIFIC ran -
+domised trial. BMC Pregnancy Childbirth. 2021;21(1):51.
+ 46. Wikstrom Shemer E, Marschall HU, Ludvigsson JF, Stephansson O. 
+Intrahepatic cholestasis of pregnancy and associated adverse preg -
+nancy and fetal outcomes: a 12- year population- based cohort study. 
+BJOG. 2013;120(6):717– 23.
+ 47. Kohari KS, Carroll R, Capogna S, Ditchik A, Fox NS, Ferrara LA. 
+Outcome after implementation of a modern management strategy for 
+intrahepatic cholestasis of pregnancy. J Matern Fetal Neonatal Med. 
+2017;30(11):1342– 6.
+ 48. Puljic A, Kim E, Page J, Esakoff T, Shaffer B, LaCoursiere DY, et al. 
+The risk of infant and fetal death by each additional week of expectant 
+management in intrahepatic cholestasis of pregnancy by gestational 
+age. Am J Obstet Gynecol. 2015;212(5):667.e1– 5.
+ 49. Lo JO, Shaffer BL, Allen AJ, Little SE, Cheng YW, Caughey AB. 
+Intrahepatic cholestasis of pregnancy and timing of delivery. J Matern 
+Fetal Neonatal Med. 2015;28(18):2254– 8.
+ 14710528, 2022, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17206 by Test, Wiley Online Library on [23/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e110 | 
+GREEN-TOP GUIDELINE NO. 43
+ 50. Webster JR, Chappell L, Cheng F, Breeze AC, Lucas N, Plaat F, et al. 
+Operative delivery rates following induction of labour for obstetric 
+cholestasis. Obstet Med. 2011;4(2):66– 9.
+ 51. Furrer R, Winter K, Schaffer L, Zimmermann R, Burkhardt T, 
+Haslinger C. Postpartum blood loss in women treated for intrahe -
+patic cholestasis of pregnancy. Obstet Gynecol. 2016;128(5):1048– 52.
+ 52. National Institute of Health and Care Excellence. Postnatal Care. 
+NICE guideline [NG194]. London: NICE; 2021.
+ 53. Faculty of Sexual and Reproductive Healthcare. UK medical eligibil-
+ity criteria for contraceptive use. London: FSRH; 2016.
+ 54. National Institute for Health and Care Excellence. Menopause: di -
+agnosis and management. NICE guideline [NG23]. London: NICE; 
+2015.
+ 55. Shaw D, Frohlich J, Wittmann BA, Willms M. A prospective study 
+of 18 patients with cholestasis of pregnancy. Am J Obstet Gynecol. 
+1982;142(6 Pt 1):621– 5.
+ 56. Savander M, Ropponen A, Avela K, Weerasekera N, Cormand B, 
+Hirvioja ML, et al. Genetic evidence of heterogeneity in intrahepatic 
+cholestasis of pregnancy. Gut. 2003;52(7):1025– 9.SUPPORTING INFORMATION
+Additional supporting information can be found 
+online in the Supporting Information section at the 
+end of this article. How to cite this article: Girling J, 
+Knight CL, Chappell L; on behalf of the Royal College 
+of Obstetricians and Gynaecologists. Intrahepatic 
+cholestasis of pregnancy. BJOG. 2022;129(13):e95– e114. 
+https://doi.org/10.1111/1471-0528.17206
+ 14710528, 2022, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17206 by Test, Wiley Online Library on [23/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e111
+INTRAHEPATIC CHOLESTASIS OF PREGNANCY 
+APPENDIX 1
+Explanation of guidelines and evidence levels
+Clinical guidelines are: ‘systematically developed state-
+ments which assist clinicians and patients in making deci-
+sions about appropriate treatment for specific conditions’ . 
+Each guideline is systematically developed using a standard-
+ised methodology. Exact details of this process can be found 
+in Clinical Governance Advice No. 1 Development of RCOG 
+Green- top Guidelines (available on the RCOG website at http://www.rcog.org.uk/green - top- devel opment). These recom-
+mendations are not intended to dictate an exclusive course of 
+management or treatment. They must be evaluated with refer -
+ence to individual patient needs, resources and limitations unique 
+to the institution and variations in local populations. It is hoped 
+that this process of local ownership will help to incorporate these 
+guidelines into routine practice. Attention is drawn to areas of 
+clinical uncertainty where further research may be indicated.
+The evidence used in this guideline was graded using the 
+scheme below and the recommendations formulated in a 
+similar fashion with a standardised grading scheme.
+Classification of evidence levels
+1++ High- quality meta- analyses, systematic reviews of randomised controlled trials or randomised controlled trials with a very low 
+risk of bias
+1+ Well- conducted meta- analyses, systematic reviews of randomised controlled trials or randomised controlled trials with a low risk 
+of bias
+1– Meta- analyses, systematic reviews of randomised controlled trials or randomised controlled trials with a high risk of bias
+2++ High- quality systematic reviews of case– control or cohort studies or high- quality
+case– control or cohort studies with a very low risk of confounding, bias or chance and a
+high probability that the relationship is causal
+2+ Well- conducted case– control or cohort studies with a low risk of confounding, bias or chance
+and a moderate probability that the relationship is causal
+2– Case– control or cohort studies with a high risk of confounding, bias or chance and a
+significant risk that the relationship is not causal
+3 Non- analytical studies, e.g. case reports, case series
+4 Expert opinion
+Grades of Recommendation
+Grade of Recommendation: A At least one meta- analysis, systematic reviews or RCT rated as 1++, and directly applicable to the target 
+population; or a systematic review of RCTs or a body of evidence consisting principally of studies rated as 1+, 
+directly applicable to the target population and demonstrating overall consistency of results
+Grade of Recommendation: B A body of evidence including studies rated as 2++ directly applicable to the target population, and 
+demonstrating overall consistency of results; or
+Extrapolated evidence from studies rated as 1++ or 1+
+Grade of Recommendation: C A body of evidence including studies rated as 2+ directly applicable to the target population, and demonstrating 
+overall consistency of results; or
+Extrapolated evidence from studies rated as 2++
+Grade of Recommendation: D Evidence level 3 or 4; or
+Extrapolated evidence from studies rated as 2+
+Good Practice Points
+Grade of Recommendation: ✓ Recommended best practice based on the clinical experience of the guideline development group
+ 14710528, 2022, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17206 by Test, Wiley Online Library on [23/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e112 | 
+GREEN-TOP GUIDELINE NO. 43
+APPENDIX 2
+Flowchart for the care of pregnant women with itching
+Pregnant woman with itching
+Skin abnorma l Skin normal / 
+scratch marks only
+Bile acid concentrations
+≥40 micromol/lBile acid concentrations
+19–39 micromol/lBile acid concentrations 
+<19 micromol/lNOT IC P
+Consider other diagnoses 
+according to clinical contex t
+GESTATIONAL PRURITUS
+Retest if ongoing itch; bile acids 
+may increase and the woman 
+develop ICP.
+No effect on stillbirth. 
+No impact on preterm birth.
+No impact on birth timing .MILD ICP 
+Retest as clinically indicated if 
+ongoing itch; bile acids may increase 
+and the woman develop moderate / 
+severe ICP .
+No effect on stillbirth .
+16% preterm birth rate .
+Consider birth by 40 weeks .ICP (moderate / severe) most 
+likely diagnosi s
+Review as clinically indicated, 
+with repeat bile acid 
+concentrations to assess 
+trajectory
+Bile acid concentrations
+40–99 micromol/lBile acid concentrations
+≥100 micromol/l
+MODERATE ICP 
+Stillbirth risk similar to general 
+population until 38–39 weeks.
+19% preterm birth rate .
+Consider birth by 38–39 weeks.SEVERE IC P
+Stillbirth risk higher than 
+general population at 35-36 
+weeks .
+30% preterm birth rate.
+Consider birth by 35-36 weeks.
+Figures above relate to singleton pregnancy with no other risk factors .
+Comorbidities (particularly pre-eclampsia and diabetes) or other obstetric risk factors (such as multifetal pregnancy), 
+are associated with increased risk of stillbirth and should be taken into consideration when planning management .
+Additional liver investigations may be considered in women with atypical features (e.g. early onset, marked 
+transaminitis, jaundice, fever, or in whom postpartum resolution does not occur). These investigations may include liver 
+ultrasound, viral hepatitis screen, liver autoimmune tests, and/or coagulation screen.Check bile acids and 
+liver function tests
+Structured history and examination: consider other causes / diagnoses.
+Additional liver investigations not routinely indicated; 
+consider if atypical features .
+ 14710528, 2022, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17206 by Test, Wiley Online Library on [23/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | e113
+INTRAHEPATIC CHOLESTASIS OF PREGNANCY 
+APPENDIX 3
+Summary of care for pregnant women with itching and normal skin
+Otherwise uncomplicated low risk singleton pregnancya
+Itching with normal skin/excoriations
+Peak total BA concentration, micromol/L
+<19 micromol/L 19– 39 micromol/L 40– 99 micromol/L ≥100 micromol/L
+Initial diagnosis Pruritus gravidarum Mild ICP Moderate Severe ICP
+Structured history and examination, no additional or alternative causes identified
+If itch persists, frequency 
+of BA1– 2 weekly 1– 2 weekly 1– 2 weekly Only if will impact care 
+plans
+Risk of stillbirth compared 
+with general obstetric 
+population [0.18– 0.75]Unchanged Unchanged 0.13% Unchanged until 39 weeks, 
+0.28%Raised, 3.44%
+Timing of mode of birth No impact Consider planned birth by 
+40 weeksConsider planned birth at 
+38– 39 weeksConsider planned birth at 
+35– 36 weeks
+Preterm birth rate, 
+spontaneous and 
+iatrogenicUnchanged 16% 19% 30%
+Role for routine use of 
+UDCANo No No impact on stillbirth No impact on stillbirth
+Additional liver 
+investigationsbNot indicated routinely. Consider for women with atypical features (e.g. early onset, marked tranaminitis, jaundice, 
+fever, or in whom postpartum resolution does not occur)
+a For pregnancies with other obstetric or medical conditions, these should be taken into consideration when deciding management options.
+b Such as liver ultrasound, viral hepatitis screen, liver autoimmune tests. ICP, intrahepatic cholestasis of pregnancy; UDCA, ursodeoxyxholic acid.
+ 14710528, 2022, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17206 by Test, Wiley Online Library on [23/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+e114 | 
+GREEN-TOP GUIDELINE NO. 43
+DISCLAIMER
+The Royal College of Obstetricians and 
+Gynaecologists produces guidelines as an educa -
+tional aid to good clinical practice. They present 
+recognised methods and techniques of clinical 
+practice, based on published evidence, for consid -
+eration by obstetricians and gynaecologists and 
+other relevant health professionals. The ultimate 
+judgement regarding a particular clinical proce -
+dure or treatment plan must be made by the doctor 
+or other attendant in the light of clinical data pre -
+sented by the patient and the diagnostic and treat -
+ment options available.
+This means that RCOG Guidelines are unlike pro -
+tocols or guidelines issued by employers, as they 
+are not intended to be prescriptive directions de -
+fining a single course of management. Departure 
+from the local prescriptive protocols or guidelines 
+should be fully documented in the patient's case 
+notes at the time the relevant decision is taken.This guideline was produced on behalf of the 
+Royal College of Obstetricians and 
+Gynaecologists by: 
+Miss J Girling FRCOG, London; Dr CL Knight 
+MRCOG, London; Professor L Chappell FRCOG, 
+London.
+and peer reviewed by: Dr EA Bonney MRCOG, 
+Leeds Teaching Hospitals NHS Trust, Leeds; Dr 
+J Allison MRCOG, NHS Fife, Kirkcaldy; Dr G 
+Sayed FRCOG, Hamad Medical Corporation, 
+Qatar; Dr D Fraser FRCOG, Norfolk and Norwich 
+Universitiy Hospitals NHS Trust, Norwich; C 
+Ovadia MRCOG, King's College London, London; 
+C Williamson FRCS FMedSci, King's College 
+London, London; A Ikomi, Mid and South Essex 
+NHS Trust, Billericay; Dr T Everett MRCOG, 
+Leeds Teaching Hospitals NHS Trust, Leeds; ICP 
+Support; The Royal College of Midwives; UK 
+National Screening Committee; British Maternal 
+and Fetal Medicine Society.
+Committee lead reviewers were: Dr B Magowan 
+FRCOG, Melrose and Dr MA Ledingham FRCOG, 
+Glasgow.
+The chairs of the Guidelines Committee were: 
+Dr B Magowan FRCOG, Melrose and Dr MA 
+Ledingham FRCOG, Glasgow.
+The final version is the responsibility of the 
+Guidelines Committee of the RCOG.The guideline will be considered for update 3 years after 
+publication, with an intermediate assessment of the need to 
+update 2 years after publication.This guideline was produced on behalf of the Royal College 
+of Obstetricians and Gynaecologists by: 
+Miss J Girling FRCOG, London; Dr CL Knight MRCOG, 
+London; Professor L Chappell FRCOG, London.
+and peer reviewed by: Dr EA Bonney MRCOG, Leeds 
+Teaching Hospitals NHS Trust, Leeds; Dr J Allison 
+MRCOG, NHS Fife, Kirkcaldy; Dr G Sayed FRCOG, Hamad 
+Medical Corporation, Qatar; Dr D Fraser FRCOG, Norfolk 
+and Norwich Universitiy Hospitals NHS Trust, Norwich; 
+C Ovadia MRCOG, King's College London, London; C 
+Williamson FRCS FMedSci, King's College London, London; 
+A Ikomi, Mid and South Essex NHS Trust, Billericay; Dr T 
+Everett MRCOG, Leeds Teaching Hospitals NHS Trust, 
+Leeds; ICP Support; The Royal College of Midwives; UK 
+National Screening Committee; British Maternal and Fetal 
+Medicine Society.
+Committee lead reviewers were: Dr B Magowan FRCOG, 
+Melrose and Dr MA Ledingham FRCOG, Glasgow.
+The chairs of the Guidelines Committee were: Dr B Magowan 
+FRCOG, Melrose and Dr MA Ledingham FRCOG, Glasgow.
+The final version is the responsibility of the Guidelines 
+Committee of the RCOG.The guideline will be considered 
+for update 3 years after publication, with an intermediate as -
+sessment of the need to update 2 years after publication.
+DISCLAIMER
+The Royal College of Obstetricians and Gynaecologists 
+produces guidelines as an educational aid to good clinical 
+practice. They present recognised methods and techniques 
+of clinical practice, based on published evidence, for consid -
+eration by obstetricians and gynaecologists and other rele -
+vant health professionals. The ultimate judgement regarding 
+a particular clinical procedure or treatment plan must be 
+made by the doctor or other attendant in the light of clinical 
+data presented by the patient and the diagnostic and treat -
+ment options available.
+This means that RCOG Guidelines are unlike protocols or 
+guidelines issued by employers, as they are not intended to 
+be prescriptive directions defining a single course of man -
+agement. Departure from the local prescriptive protocols or 
+guidelines should be fully documented in the patient's case 
+notes at the time the relevant decision is taken.
+ 14710528, 2022, 13, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17206 by Test, Wiley Online Library on [23/02/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License

@@ -1,0 +1,929 @@
+# Extracted from: UHSx Maternity Smoking & Smoke Free Pregnancy guideline.pdf
+# Guideline ID: uhsx-maternity-smoking-smoke-free-pregnancy-guideline
+# Content length: 46777 characters
+# Processing date: 1750066902.1778517
+
+CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Maternity Smoking & Smoke Free Pregnancy 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 1 of 26 Please note, IF DOCUMENT IS PRINTED, IT MAY BECOME OUT OF DATE. 
+ 
+TRUST CLINICAL GUIDELINE 
+Maternity Smok ing & Smoke Free Pregnancy 
+ 
+OVERVIEW 
+ 
+This guideline is to ensure optimal outcomes for mother and birthing parent and baby in 
+pregnancies complicated by smoking and to act as a resource for staff caring for women and 
+people whose needs fall within the scope of this guideline . 
+ 
+This guideline applies to all midwifery, maternity, obstetric, and medical staff caring for pregnant 
+and / or postnatal women and people who currently smoke or have stopped smoking since 
+conception. 
+ 
+OWNER S. Adamson & F. Usifo 
+AUTHOR/FURTHER INFORMATION Caroline Thomas – Public Health Midwife 
+Cara Henwood –Tobacco Dependency 
+Specialist Midwife 
+Juliette Golding - Tobacco Dependency 
+Specialist Midwife 
+GUIDELINE VERSION v1.0 
+RELATED POLICIES None 
+RELATED DOCUMENTS Maternity Vaping Protocol CDL 11592 
+Protocol for Direct Supply of NRT by Tobacco 
+Dependency Advisors UHS -CG-0012 -2023 
+STANDARDS NCSCT. (2019) Stopping Smoking in 
+Pregnancy. A briefing for maternity providers. 
+NCSCT Standard Treatment Programme for 
+Pregnant Women. 
+NICE 2023: T obacco: preventing uptake, 
+promoting quitting, and treating dependence 
+NCSCT. (2019) Stopping Smoking in 
+Pregnancy. A briefing for maternity providers. 
+NCSCT Standard Treatment Programme for 
+Pregnant Women. 
+NICE 2023: T obacco: preventing uptake, 
+promoting quitting, and treating dependence CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Maternity Smoking & Smoke Free Pregnancy 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 2 of 26 SUPERSEDED DOCUMENTS 
+ CG20021 Smoking & Smoking Cessation in 
+Pregnancy Guideline (Legacy West) 
+MP061 Smoking Cessation (Legacy East) 
+REVIEW DUE August 2027 
+ 
+Approval 
+Joint Obstetrics Guideline Group Date approved 17/04/2024 
+Women & Children’s Clinical Effectiveness 
+Meeting Date approved 16/05/2024 
+Consultation 
+Tobacco Depend ency Programme Manager – 
+Janice Britz Date approved 12/6/2024 
+Medicines Governance Committee Date approved 14/03/2024 
+Ratification 
+Clinical Document Approval Group Date approved 21st August 2024 
+ 
+ CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Maternity Smoking & Smoke Free Pregnancy 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 3 of 26 Table of contents 
+1.0 Introduction ................................ ................................ ................................ ........................... 4 
+2.0 Definitions and abbreviations used within this guideline ................................ ........................ 5 
+3.0 Responsibilities ................................ ................................ ................................ ..................... 5 
+4.0 Smokefree Pregnancy Pathway - Antenatal care ................................ ................................ ... 5 
+4.1 Additional scans and monitoring ................................ ................................ ............................ 6 
+Figure 1: Smokefree Pregnancy Pathway UH Sussex ................................ ................................ ...... 7 
+4.2 Referral: Opt -out basis ................................ ................................ ................................ .......... 8 
+4.3 Community Midwives’ role in supporting people who are undergoing a quit attempt ............. 8 
+4.4 CO monitoring test procedure ................................ ................................ ................................ 9 
+4.5 Equipment for CO testing ................................ ................................ ................................ .... 10 
+4.6 Infection control ................................ ................................ ................................ ................... 10 
+4.7 Interpretation of CO reading ................................ ................................ ................................ 10 
+4.7.1 Reading below 4ppm - Normal reading in pregnancy ................................ .......................... 10 
+4.7.2 Reading 4ppm+ - Raised result ................................ ................................ ........................... 10 
+4.7.3 Reading above 10ppm in a non -smoker or 30 ppm in a smoker with symptoms of carbon 
+monoxide poisoning ................................ ................................ ................................ ........................ 11 
+4.7.4 Women and people with symptoms of CO exposure: ................................ .......................... 11 
+4.7.5 Reading above 10ppm and non -smoker exposed to cigarette smoke: ................................ . 11 
+4.7.6 CO reading>10ppm on consecutive occasions: ................................ ................................ ... 11 
+4.8 35+0 - 36+6 weeks ................................ ................................ ................................ ............... 12 
+5.0 Declined referrals and non -compliance. ................................ ................................ ............... 12 
+6.0 Partners / household members who smoke - Second Hand Smoke (SHS) .......................... 12 
+7.0 Nicotine Replacement Therapy (NRT) and electronic cigarettes ................................ .......... 12 
+7.1 Electronic cigarettes/vaping ................................ ................................ ................................ . 13 
+8.0 Care within the maternity unit ................................ ................................ .............................. 13 
+8.1 Triage/DAU/MAU/BSOTS ................................ ................................ ................................ .... 13 
+8.2 Admission ................................ ................................ ................................ ............................ 14 
+8.3 NRT selection based on Fagerstrom assessment tool ................................ ......................... 14 
+8.4 Labour ................................ ................................ ................................ ................................ . 15 
+8.5 Postnatal care ................................ ................................ ................................ ..................... 15 
+9.0 Sudden Infant Death syndrome (SIDS) ................................ ................................ ................ 15 
+10.0 Infant feeding ................................ ................................ ................................ ...................... 15 
+11.0 Staff training ................................ ................................ ................................ ........................ 16 
+Appendix 1: Saving Babies Lives v3.1 Care Bundle document and risk assessment ...................... 17 
+Appendix 2: CO Testing flowchart – Interpretation of Result ................................ ............................ 18 
+Appendix 3: Community Services ................................ ................................ ................................ ... 19 
+Appendix 4: User guide including how to perform a CO measurement ................................ ........... 20 
+Appendix 5: Monitoring ................................ ................................ ................................ ................... 21 
+Appendix 6: Guideline version control log ................................ ................................ ....................... 22 
+Appendix 7: Due regard assessment tool ................................ ................................ ........................ 23 
+Appendix 8: Template dissemination, implementation and access plan ................................ .......... 24 
+Appendix 9: Additional guidance / information ................................ ................................ ................. 25 
+See also / Linked documents ................................ ................................ ................................ .......... 26 
+ CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Maternity Smoking & Smoke Free Pregnancy 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 4 of 26 Maternity Smoking & Smoke Free Pregnancy 
+ 
+1.0 Introduction 
+Smoking in pregnancy is defined as inhaling tobacco products (e.g., cigarettes) while pregnant. 
+Smoking or exposure to second -hand smoke during pregnancy increases the risk of stillbirth, 
+miscarriage, and sudden infant death. Children born to parents who smoke are more likely to 
+develop health problems including respiratory conditions, learning difficulties, and diabetes, and are 
+more likely to grow up to be smokers. (ASH 2021) Smoking in pregnancy is the leading modifiable 
+risk factor for poor birth outcomes. 
+ Maternal Smoking 
+Low birth weight 4.1 times more likely 
+Spontaneous preterm birth 2.6 times more likely 
+Selvaratnam et al .(2023). Objective measures of smoking and caffeine intake and the risk of adverse pregnancy outcomes. 
+ Maternal Smoking Second Hand smoke 
+Heart Defects 25%more likely Increased risk 
+Stillbirth 47% more likely Possible increase 
+Miscarriage 32% more likely Increase risk 
+Sudden Infant Death 3 times more likely 45% more likely 
+ 
+There is strong evidence that stopping smoking reduces the above risks and improves outcomes for 
+families (RCP 2010). The recommended treatment for stopping smoking is a combination of 
+behavioral support and nicotine rep lacement therapy (NCSCT 2019). 
+NICE guidance on Smoking in Pregnancy recognizes that some women will find it difficult to say that 
+they smoke because of the pressure not to smoke in pregnancy is so intense, this in turn makes it 
+difficult to ensure they are offered appropriate support. Development of the Smokefree Pregnancy 
+Journey ( figure 1 ) will support practitioners to follow the pathway for women and people who smoke 
+during pregnancy. A Carbon Monoxide (CO) Test is an immediate and non -invasive biochemical 
+screening method for helping to assess whether someone smokes or is at risk of increased CO 
+levels. CO screening should be performed prior to discussing smoking status. 
+All health professionals must be consistent on the messaging women and people receive on 
+smoking. The health benefits of stopping completely rather than ‘cutting down’ is recommended in 
+pregnancy. Cutting down diverts smokers from stopping smoking to reducing and may create a false 
+impression of risk reduction (Hastings, Andrade 2014). Women and people who received mixed 
+messages regarding cutting down or stopping completely were much more likely to cut down, rather 
+than give up completely (58% and 14% respectively). (Graham et al., 2014). Any levels of 
+compensatory smoking still increase the risks associated with stillbirth. CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Maternity Smoking & Smoke Free Pregnancy 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 5 of 26 2.0 Definitions and abbreviations used within this guideline 
+UH Sussex - University Hospitals Sussex 
+NHS Foundation Trust SFP service - Smokef ree Pregnancy service 
+NRT - Nicotine Replacement Therapy CO - Carbon Monoxide 
+USS - Ultrasound Scan VBA - Very Brief Advice 
+SIDS - Sudden Infant Death Syndrome SFT - Smoke free Team 
+MIS - Maternity Information System e.g. 
+Badgernet MHRA - Medicines and Healthcare products 
+Regulatory Authority 
+SBLv3 - Saving Babies Lives version 3 F2F - Face to Face 
+SHS - Second Hand Smoke SATOD - Smoking at time of delivery. 
+AN - Antenatal DAU - Day Assessment Unit 
+BSOTS - Birmingham Symptom -Specific 
+Obstetric Triage System NCSST - National Centre for Stop smoking 
+Training 
+RCP - Royal College of Physicians EC - Electronic Cigarettes 
+HP - Health Practitioner ASH - Action on Smoking and Health 
+ANC - Antenatal Clinic 
+3.0 Responsibilities 
+All staff working in the Trust 
+including Tobacco 
+Dependency Treatment 
+Practitioners • Access, read, understand, and apply this guidance. 
+• Attend any mandatory training pertaining to this guidance. 
+Managers • Ensure the guideline is reviewed as required in line with Trust 
+and National recommendations. 
+• Ensure the guideline is accessible to all relevant staff. 
+Other posts Overall management and direction of Tobacco Dependency 
+Treatment programmes at UH Sussex 
+Continuous review of processes. Oversight and management of 
+Smoke Free Pregnancy Service: 
+Public health Midwife 
+Tobacco Dependency Specialist Midwife 
+Tobacco Dependency Specialist Midwife 
+ 
+Maternity staff can use any appointment or meeting as an opportunity to ask women and people if 
+they have smoked in the last year. If they have, explain how UH Sussex Smokef ree Pregnancy 
+Service can help people to quit and advise them to stop . 
+4.0 Smokef ree Pregnancy Pathway - Antenatal care 
+The smoke free pregnancy pathway follows the recommended NCSCT standard treatment 
+programme for pregnant women and people . CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Maternity Smoking & Smoke Free Pregnancy 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 6 of 26 Standard treatment programme (ncsct.co.uk) 
+Smokef ree Pregnancy Service has been designed specifically for pregnant women and people and 
+can provide flexible support (face to face appointm ents /phone calls/posting NRT). 
+• Contact via telephone within 24 - 48hrs (working Days) 
+• Offer of Face -to-Face appointment within 5 working days. 
+• NRT offered and behavioural support from first contact. (see Protocol for direct supply of 
+NRT by tobacco dependency advisors) 
+• Weekly telephone/F2F appointments until 28 days post quit. 
+• Regularly contact post quit as required. At least monthly. 
+ 
+4.1 Additional scans and monitoring 
+• Those who are smoking at booking are offered serial growth USS from 32/40 gestation 
+every 4 weeks until birth in line with Saving Babies Lives Care Bundle v3.1. See maternity 
+SGA &FG R guideline . 
+• Consider aspirin provision for smokers as per recommendation on Saving Babies Lives 
+Care Bundle v3.1 Appendix 1 . 
+• A non -smoker who has 2 more high CO>10 ppm readings with no cause identified. Make 
+referral to ANC for review by obstetrician and consideration of scan. 
+ 
+If the client indicates they may decline the referral, please advise the pregnant smoker that she will 
+still be offered an appointment with the SFT as part of the high -risk pathway to reduce the risks 
+associated with smoking in pregnancy. 
+ 
+ CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Maternity Smoking & Smoke Free Pregnancy 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 7 of 26 Figure 1: Smokef ree Pregnancy Pathway UH Sussex 
+ 
+CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Maternity Smoking & Smoke Free Pregnancy 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 8 of 26 4.2 Referral: Opt-out basis 
+Referrals should be made using an ‘Opt -Out’ method. The criteria for referral are: 
+• Current smoker/ Shisha user: Anyone who has smoked in the 14 days immediately prior 
+to admission / booking is classed as a smoker (NHS Digital Definitions, 2024) 
+• Raised CO ≥ 4 PPM who identify as a smoker. 
+• Ex-Smoker/Early quitters within last 6 weeks (quit since conception - due to the risk of 
+relapse). 
+ 
+NB: Exclusive users of EC are not required to be referred unless they have smoked tobacco since 
+conception. If people are keen to stop using an EC support can be provided by the SFT on an 
+individual basis. 
+All those eligible for referral must have a Smokefree Pregnancy referral generated and sent via MIS 
+– this is to ensure that all eligible for referral are included in reports and to ensure appropriate 
+monitoring and support can be given in response to the identified risks. 
+Explain that it is normal practice to refer pregnant people to their local specialist stop smoking 
+service as soon as possible in their pregnancy, best practice is via an immediate telephone call or 
+inform them that they will be referred, and the service will contact her within the next working day. 
+Smokef ree pregnancy service will provide feedback to midwifery teams via email each month on the 
+following topics. 
+• CO compliance 
+• Smoking status and lifestyle report updates. 
+• Referrals received and missed referrals. 
+• When people fail to engage on 3+ occasions. 
+• VBA and requests for support with engagement. 
+• Successful quits 
+ 
+4.3 Community Midwives’ role in supporting people who are undergoing 
+a quit attempt 
+If a pregnant smoker is undertaking a quit attempt with the support of the SFT they should be asked 
+about her quit attempt and given positive reinforcement on the benefits of being smoke free for them 
+and their baby; these conversations should be recorded on the woman and person ’s MIS. 
+A multidisciplinary approach is required, and this will provide motivation for the pregnant smoker to 
+compliment the behaviour change techniques plus NRT used by the SFT. 
+If a smoker opted -out of a referral to the SFT or has not engaged with the stop smoking service: 
+1. Ask them about their smoking status at every contact and update on MIS via Lifestyle report. 
+2. Explain the risks of smoking during pregnancy and the benefits of quitting for their baby. 
+3. Offer another referral to the service. 
+4. Continue to offer CO monitoring at each Antenatal contact in line with NICE guidance NG902 
+and record smoking status changes. CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Maternity Smoking & Smoke Free Pregnancy 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 9 of 26 5. Discuss and encourage quit progress and verify quits by recording COs alongside new 
+smoking status. 
+ 
+See Appendix 3 for community stop smoking services (for referring/ signposting partners). 
+ 
+4.4 CO monitoring test procedure 
+Pregnant women and people should be offered CO monitoring at each antenatal appointment 
+regardless of their smoking status with the outcome recorded in MIS. 
+The result should be discussed and a question on smoking status asked. CO monitoring should be 
+part of routine assessment and be carried out before the topic of smoking is raised. 
+Explain that CO affects the body’s ability to transport oxygen around the body, which reduces the 
+oxygen available to the baby but is also a marker for a woman and person ’s exposure to smoking. 
+Cigarette smoke contains over 7000 chemicals of which hundreds are toxic and may also cause 
+damage to the fetus. 
+Raised CO readings are linked to poor fetal outcomes due to hypoxia which are associated with 
+miscarriage, growth restriction and developmental problems, placental insufficiency and fetal loss 
+(Reeves and Bernstein, 2008). 
+1. Explain the rationale for offering CO testing. You can use th is leaflet “Test your breath” 
+38830_hi res.pdf (ash.org.uk) 
+The leaflet is available in multiple languages. Explain that CO is a poisonous gas, and 
+that CO screening is a simple breath test part of antenatal care. That cigarette smoke, 
+environmental factors such as pollution from car exhaust fumes, faulty gas appliances 
+and second -hand tobacco smoke can result in raised CO readings. The client should be 
+informed that the raised level can be reversed by avoiding these factors. 
+2. With consent, ask the client to perform the test using the following m ethod for CO testing: 
+• Explain the procedure clearly to the patient. See User Guide Appendix 4 for 
+visual guide. Use Trust approved interpreters if this is required. 
+• Turn the monitor on 
+• Assemble D piece and insert straw 
+• Press the female icon and the machine will start to count down. Ask the woman 
+and person to: 
+­ Take a deep breath and hold it until the machine is ready (the machine will 
+count down from 15 seconds). DO NOT talk to the woman and person 
+while they are holding their breath . 
+­ Blow slowly into the machine on the 3rd beep 
+3. Explain the results – see Appendix 2 for reference. 
+4. Ask about smoking status – “Have you smoked tobacco in the last 2 weeks?” 
+5. Document the results and any action you have taken – refer all smokers not currently 
+enga ging with smoke free services. 
+ CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Maternity Smoking & Smoke Free Pregnancy 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 10 of 26 4.5 Equipment for CO testing 
+Maternity staff undertaking CO testing will be issued with: A CO monitor (individual serial number 
+logged on Maternity Stop Smoking database) Plastic D -pieces (to be replaced monthly) Disposable 
+straw mouth pieces (single use) 
+Each Midwife, Maternity Support Worker and Tobacco Dependency Treatment Practitioner is 
+responsible for the safe keeping of their equipment. The responsibility for reporting faults, damage 
+or loss of equipment rests with individual staff members unless the equipment is registered to a 
+particular unit (Delivery Suite, ANC, triage, Postnatal Areas), where the unit manager will hold 
+responsibility for equipment. 
+ 
+4.6 Infection control 
+Staff are responsible for wiping the CO monitor with a clinical non -alcohol wipe between patients. 
+Single use mouthpieces should be removed and disposed of as clinical waste. If the woman and 
+person have an obvious respiratory infection, CO monitoring should not be performed. 
+Alcohol wipes and hand sanitizer should not be used when performing CO testing. 
+(use of alcohol can result in false positive results). 
+ 
+4.7 Interpretation of CO reading 
+4.7.1 Reading below 4ppm - Normal reading in pregnancy 
+Confirm smoking status, as some smokers can present a low CO reading. If quit within the last 2 
+weeks, ref er on an opt -out basis to smoke free pregnancy service, 
+ 
+4.7.2 Reading 4ppm+ - Raised result 
+This requires further discussion from the health professional. Midwives should follow: ‘Ask, Advise, 
+Act’ pathway to deliver VBA, starting with asking about smoking status. 
+Try to establish the possible cause: 
+• Smoking cigarettes is the most common cause. 
+• Environmental (faulty gas boiler, cooker, car exhaust or from paint stripper). 
+• Non-disclosure. 
+• Exposure to second hand smoke. 
+• Certain occupations in which may be exposed to high CO. 
+• Women and people who are lactose intolerant who have been exposed to dairy foods will 
+give a raised result. 
+ 
+If no cause is identified, then give VBA and make referral to smoke free pregnancy team via MIS 
+referrals. CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Maternity Smoking & Smoke Free Pregnancy 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 11 of 26 Record this action on MIS. If a woman and person “opts” out of the referral on that day, this should 
+also be recorded. Then a month later a text to be sent encouraging contact and offering support and 
+free NRT. 
+ 
+4.7.3 Reading above 10ppm in a non -smoker or 30 ppm in a smoker with sympto ms of 
+carbon monoxide poisoning 
+Do you have any symptoms of CO EXPOSURE? 
+Symptom % reporting this symptom 
+Headache 90% 
+Nausea and vomiting 50% 
+Vertigo 50% 
+Alterations in consciences 30% 
+Subjective Weakness 20% 
+Department of Health 2013 
+4.7.4 Women and people with symptoms of CO exposure: 
+• Refer to A&E for blood analysis. 
+• Assess fetal wellbeing via DAU or maternity triage. 
+ 
+4.7.5 Reading above 10ppm and non -smoker exposed to cigarette smoke: 
+• This is a high reading for someone not exposed to cigarette smoke. 
+• Advise women and people to contact Gas safety line 0800 300 363. 
+ 
+4.7.6 CO reading>10ppm on consecutive occasions: 
+• Ensure machine is calibrated correctly (unnecessary on Bedfont piCObaby Smokerlyzer – 
+contact SFT for any fault queries) 
+• Give VBA. 
+• Refer to CO flowchart for consideration of CO symptoms . 
+• Refer to smoke free team to offer appointment/discussion. 
+• Refer to ANC for consultant review and to discuss need for serial scans. 
+• Offer and record CO reading at next contact. 
+ 
+N.B. Staff need to be aware that CO has a short half -life, this means that CO levels will reduce by 
+half after around 3 -4 hours. Be aware they may not have been exposed for some time so the result 
+may be less than the typical exposure levels i.e. due to prolonged waits in ANC/triage, appointments 
+at the end of the day. 
+ CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Maternity Smoking & Smoke Free Pregnancy 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 12 of 26 4.8 35+0 - 36+6 weeks 
+All women and people should be offered CO testing, their smoking status confirmed and 
+documented in the lifestyle report on MIS. 
+This data is used to evidence our SBLv3.1 compliance data. Midwives are encouraged to discuss 
+repeat referral to SFT, abstinence for birth and Smokefree Homes. As part of the Birth Preferences, 
+they should be encouraged to request NRT to make any inpatient stay more comfortable due to our 
+Smokefree hospital agenda. The latest smoking status should inform the SATOD. 
+5.0 Declined referrals and non -compliance. 
+Those who: 
+• Decline the opt -out referral following MIS referral submission. 
+• Do not engage after 3 contact attempts following referral. 
+• Consecutively DNA 3 appointments with the Smoke free Pregnancy Service. 
+ 
+Push notifications will be sent via MIS by the SFT explaining the risks of smoking and open -door 
+guideline should they wish to access the service in the future. Women and people and families will 
+be signposted to self -help materials. The named midwife and any other relevant healthcare 
+professional will be informed via email. 
+All contacts from the SFT will be added to MIS including DNA information. 
+6.0 Partners / household members who smoke - Second Hand Smoke (SHS) 
+SHS - is harmful to health. Exposure to SHS is causally linked to sudden infant death. 
+Having a partner or living with someone who smokes can also make quitting smoking during 
+pregnancy challenging. Exposure to second -hand smoke is dangerous in pregnancy and postnatally 
+and linked with adverse outcomes (see Table 1 , Introduction). 
+Partners should be encouraged to stop smoking and provided with information about services 
+available to them (See Appendix 3 for referral to community services). 
+7.0 Nicotine Replacement Therapy (NRT) and electronic cigarettes 
+Nicotine replacement therapy (NRT) works by reducing urges to smoke and other withdrawal 
+symptoms, thereby making stopping smoking easier. Long -term studies have found no harm to the 
+fetus from using NRT in pregnancy (NCSCT 2019). 
+Combination NRT (typically the patch plus another form of NRT) is the most effective medication 
+option and is suitable for pregnant women. Stop -smoking medications such as Varenicline 
+(Champix) and Bupropion (Zyban) are not licensed for use in pregnancy. 
+ CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Maternity Smoking & Smoke Free Pregnancy 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 13 of 26 7.1 Electronic cigarettes/ vaping 
+Research has demonstrated clear evidence EC are at least 95% less harmful than a cigarette (PHE, 
+2015) . 
+A Cochrane review in Dec 2022 (Hartmann et. al, 2022) found high certainty evidence that using 
+ECs with nicotine increases quit rates at 6 months or longer compared to NRT. 
+ECs produce no carbon monoxide which is detrimental to unborn fetus resulting in poorer outcomes 
+such as stillbirth, preterm and small for gestational age babies. ECs do not contain tar and 
+thousands of other toxic chemicals doing in cigarettes. ECs give smokers the nicotine they crave 
+but protect them from the toxins they would inhale from a cigarette. 
+Given EC have only been around for about a decade, we do not yet have the longitudinal studies to 
+show long term effects. Evidence is clear that ECs are at least 20 times safer than continuing to 
+smoke (PHE 2015). 
+There is a risk of fire from the electrical elements of EC and a risk of poisoning from ingestion of e -
+liquids. These risks appear to be comparable to similar electrical goods and potentially poisonous 
+household substances. All staff should be aware of the fire hazard associated with the use and 
+recharging of e -cigarettes. E -cigarettes are not to be used in an oxygen rich environment . 
+Smokers choosing to switch to an EC should be supported by the health professional.UHSx will be 
+taking part in the national ‘swap to stop 'scheme beginning April 2024. ( See Maternity Vaping 
+Protocol CDL 11592 ) 
+8.0 Care within the maternity unit 
+Any pregnant smoker with a planned admission should be informed that NRT can be provided to 
+support temporary abstinence. Women and people who have smoked throughout their pregnancy 
+are likely to experience symptoms of nicotine withdrawal during their hospital stay. 
+8.1 Triage/DAU/ MAU/ BSOTS 
+• Please perform a CO measurement as part of routine observations. These may need to 
+be included on a separate observation note but should be clearly recorded on MIS for 
+every admission. Update smoking status. 
+• Please ask all Triage patients “Have you smoked tobacco in the last two weeks”. A 
+lifestyle update should be completed on MIS. Smoking status should be recorded. 
+• Provide Very Brief Advice (VBA) 
+• Offer and refer smoke free team to smokers if not engaging. This can be done via MIS 
+referrals. 
+ 
+How to refer to SFT via MIS see user guide Appendix 4 . 
+ CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Maternity Smoking & Smoke Free Pregnancy 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 14 of 26 8.2 Admission 
+A CO should be performed within 2 hrs of admission if clinically possible. Clients who are identified 
+as smokers should be given VBA and offered for NRT to support with withdrawal symptoms. NRT 
+should be started as soon as possible, ideally within 2 hours of admission. 
+NRT is to be stored on the delivery suites/ wards as stock in the clinical rooms and prescribed 
+where needed. 
+All pregnant smokers should be asked on the drug rounds: “Would you like any nicotine products 
+such as patches or gum?” This is to promote a smoke free environment both within the hospital 
+grounds and on -going for postnatal discharge. 
+ 
+8.3 NRT selection base d on Fagerst rom assessment tool 
+The higher the score, the more dependent the smoker is, indicating the need for higher starting 
+doses of NRT and robust weekly support. 
+How soon after you wake 
+do you smoke? Within 5 minutes 
+6-30 mins 
+31-60 mins 
+More than 1 hr 3 
+2 
+1 
+0 
+How many cigarettes per 
+day do you smoke? 10 or less 
+11-20 
+21-30 1 
+2 
+3 
+ 
+Smokes: More than 10 per day Less than 10 per day 
+Patch 16hr/25mg 16hr/15mg 
+Plus one of the following 
+Nicorette Microtab 2mg 2mg 
+Lozenge 4mg 2mg 
+Gum 4mg 2mg 
+Quick mist Mouth spray 1mg 1mg 
+Nicorette Inhalator 15mg 15mg 
+Nasal Spray 10mg/ml indicated 10mg/ml indicated 
+ 
+UHSx is a Smokefree Hospital and service users need to be made aware of this. CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Maternity Smoking & Smoke Free Pregnancy 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 15 of 26 Staff should not be facilitating childcare for smoking parents to go off the ward. Treat the nicotine 
+dependence to enable them to stay on the ward. 
+The Smokefree Pregnancy Service Tobacco Dependency Treatment Practitioners should be made 
+aware of the admission so they can visit the client on the wards and offer behavioural support 
+alongside NRT treatments if they are working within the hospital setting that day. 
+ 
+8.4 Labour 
+Women and people can safely continue to use NRT while in labour. The midwife should document 
+this and ensure that sufficient supply is available for the duration of the stay. 
+Midwives are responsible for documenting the SATOD (Smoking at Time of Delivery). Women and 
+people should be asked if they have used tobacco products in the previous 14 days. 
+A “yes” reply should be recorded as “smoker”. Those using electronic cigarettes ONLY do not 
+classify as “smoker”. The accuracy of SATOD is crucial to improving services and national reporting. 
+Please ensure that the information is collected and recorded accurately. At least one CO recording 
+around the time of birth should be recorded to verify smoking status and CO exposure. 
+ 
+8.5 Postnatal care 
+Encouragement should be given to those who have remained abstinent during their hospital stay 
+and NRT continued to be made available. Smoking status should be communicated at handover 
+and between maternity and neonatal care teams. CO reading should be taken and recorded on MIS 
+at least once during the birth admission. 
+Ongoing smoke free support and re -referral should be offered to recently delivered smokers. The 
+smokefree team can support families up to 28 days into the postnatal period. All partners who 
+smoke should be signposted to the local Smokefree Pregnancy services. 
+9.0 Sudden Infant Death syndrome (SIDS) 
+Exposure to second and third -hand smoke can significantly increase a baby’s risk of SIDS. (The 
+Lullaby Trust 2020). Reinforce the benefits of st aying smoke free and having a smokefree home. 
+Women and people who smoke should be given clear instructions on how to reduce their baby’s 
+exposure to second and third -hand smoke. 
+For further information on smoking and SIDS risk, please refer to guidance from : The Lullaby Trust - 
+Safer sleep for babies, Support for families 
+10.0 Infant feeding 
+All women and people should be encouraged to breastfeed, regardless of smoking status. 
+When supporting breastfeeding mothers, use the opportunity to raise awareness of the physiology 
+of breastfeeding when smoking, i.e. that nicotine will be found in breast milk and that smoking can CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Maternity Smoking & Smoke Free Pregnancy 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 16 of 26 reduce the quantity of breast milk and increase the risk of colic, which may help some women to 
+remain non -smokers. 
+NRT is safe to use while breastfeeding. Patches do not need to be removed for feeds. 
+E-cigarettes may be used while breastfeeding. There are no known risks from exposure to e -
+cigarettes vapor – however, as newborn lungs are small and fragile, it is advisable that e -cigarettes 
+are used outside or in ventilated areas. 
+11.0 Staff training 
+• All staff undertaking CO screening should be trained in the use of the CO monitor and 
+interpretation of results. 
+• Every 3 years - completion of the Saving Babies Lives care bundle - Element 1. 
+• Annually - completion of ‘VBA for pregnant women smoking’. Using the NCSCT (National 
+Centre for Smoking Cessation and Training) template . 
+• Training must include learning from incidents, service user feedback and local learning. 
+• Training must include local clinical guidance and care pathways. 
+ 
+Attendance figures will be recorded and held within the MPDT. All staff are required to confirm 
+competency via the medical devices form. 
+SFT will have further training. 
+• All Tobacco Dependency Treatment Practitioners and Specialis t Midwives will undertake 
+full NCSST practitioner level 2 training annually. 
+• Completion of specialist modules on smokefree pregnant/smoke free home/vaping. 
+• NCSST competency form completed annually. 
+• Attend national webinars and share learning with midwifery teams. 
+• Attendance to behaviour change course/motivational interviewing as available. CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Maternity Smoking & Smoke Free Pregnancy 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 17 of 26 Appendix 1 : Saving Babies Lives v3.1 Care Bundle document and risk assessment 
+CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Maternity Smoking & Smoke Free Pregnancy 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 18 of 26 Appendix 2: CO Testing flowchart – Interpretation of Result 
+
+Gas Safety Number 
+0800 300 363 
+Symptoms of CO poisoning: 
+•Headache 
+•Nausea and Vomiting 
+•Vertigo 
+•Alteration in consciousness 
+•Subjective weakness 
+•Flu-like symptoms (no pyrexia) 
+ CO Screening in Pregnancy 
+CO Level 
+<4ppm 
+Non-
+Smoker 
+Smoker 
+•Normal result. 
+•CO at each 
+subsequent 
+contact. 
+•Record 
+smoking 
+status at each 
+contact. 
+•Give VBA. 
+•Discuss short 
+half-life & CO will 
+be higher at time 
+of cigarette. 
+•Refer to SFP 
+team. 
+•CO at each 
+subsequent 
+contact. 
+•Record smoking 
+status at each 
+contact. 
+Non-Smoker 
+CO Level 
+>10ppm 
+No symptoms of CO 
+exposure: 
+•Discuss second smoke. 
+•Encourage CO detector in 
+home . 
+•Give gas safety number. 
+•Refer to SFP team if 
+identifies as a smoker or 
+to explore source. 
+•CO at each subsequent 
+contact. 
+•Record smoking status at 
+each contact. 
+2 consecutive CO>10ppm: 
+•Refer to ANC for 
+discussion of serial growth 
+scans from 32/40. 
+Have symptoms of CO poisoning: 
+•As above PLUS - 
+-Refer immediately to A&E. 
+-Assess fetal wellbeing and follow up. 
+Smoker 
+>30ppm 
+No symptoms of CO 
+poisoning: 
+•Give VBA 
+•Refer to SFP Team. 
+•Discuss risks of smoking 
+in pregnancy. 
+•Encourage CO detector in 
+home. 
+•Give gas safety number. 
+•CO at each subsequent 
+contact. 
+•Record smoking status at 
+each contact. 
+Non-Smoker 
+ Smoker 
+•Discuss signs/symptoms of 
+CO poisoning. 
+•Identify possible source. 
+•Discuss Second Hand smoke. 
+•Encourage CO detector in 
+home. 
+•Give gas safety number. 
+•CO at each subsequent 
+contact. 
+•Refer to SFP team if identifies 
+as a smoker or to explore 
+source. 
+•Record smoking status at 
+each contact. 
+•Give VBA 
+•Refer to SFP Team. 
+•Discuss risks of 
+smoking in pregnancy. 
+•CO at each 
+subsequent contact. 
+•Record smoking status 
+at each contact. 
+CO Level 
+>4ppm CLINICAL GUIDELINE 
+Due for review: August 2027 
+Name of Guideline : Smoke Free Pregnancy Maternity Smoking & Smoke Free Pregnancy 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 19 of 26 Appendix 3: Community Services 
+ 
+West Sussex 
+https://www.westsussexwellbeing.org.uk/topics/smoking/services -for-west-sussex 
+ 
+Stop smoking services (brighton -hove.gov.uk) 
+ 
+NHS Helpline and free App 
+Quit smoking - Better Health - NHS (www.nhs.uk) 
+ 
+Brighton and Hove City Council 
+Help to stop smoking (brighton -hove.gov.uk) 
+ CLINICAL GUIDELINE 
+Due for review: August 2027 
+Name of Guideline : Smoke Free Pregnancy Maternity Smoking & Smoke Free Pregnancy 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 20 of 26 Appendix 4: User guide including how to perform a CO measurement 
+Double c lick on image for full document: 
+ 
+CLINICAL GUIDELINE 
+Due for review: August 2027 
+Name of Guideline : Smoke Free Pregnancy Maternity Smoking & Smoke Free Pregnancy 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 21 of 26 Appendix 5: Monitoring 
+Team responsible for monitoring: Specialist Tobacco Dependence Midwives, Public Health Midwife, 
+Matrons, and team leaders. 
+ 
+Data will be reported monthly to the Tobacco Patient Level Data Collection . 
+ 
+Evidence of compliance with Saving Babies Lives is submitted quarterly to the implementation tool 
+provided by SBLV3.1 . 
+MISyear5 -update -July-2023.pdf 
+ 
+A highlight report with locally agreed KPIs will be presented at the bimonthly UHSx/NHS Sussex 
+TDT Facilitative and Partnership Meeting . 
+ 
+Minimum Quarterly report to be written and sent to Director and Heads of Midwifery and 
+disseminated as appropriate . 
+ 
+Reports and data to be presented as required to local and national Smokefree Pregnancy and 
+health improvement agencies . 
+ 
+Issue being 
+monitored Monitoring 
+method Responsibility Frequency Reviewed by and 
+actions arising 
+followed up by 
+As above . Audit Public health Midwife/ 
+Tobacco dependency 
+Midwife Monthly audits 
+and Quarterly 
+reports will be 
+produced Quality and Safety 
+Meeting 
+ CLINICAL GUIDELINE 
+Due for review: August 2027 
+Name of Guideline : Smoke Free Pregnancy Maternity Smoking & Smoke Free Pregnancy 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 22 of 26 Appendix 6: Guideline version control log 
+Change Log – Maternity Smoking & Smoke Free Pregnancy 
+ 
+Version Date Author(s) Comment 
+1.0 April 
+2024 Caroline Thomas – Public 
+health Midwife 
+ 
+Cara Henwood –Tobacco 
+Dependency Specialist 
+Midwife 
+ 
+Juliette Golding - Tobacco 
+Dependency Specialist 
+Midwife New Trust wide guideline replacing: 
+• CG20021 Smoking & Smoking Cessation 
+in Pregnancy Guideline (Legacy West) 
+• MP061 Smoking Cessation (Legacy East) 
+
+ CLINICAL GUIDELINE 
+Due for review: August 2027 
+Name of Guideline : Smoke Free Pregnancy Maternity Smoking & Smoke Free Pregnancy 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 23 of 26 Appendix 7: Due regard assessment tool 
+To be completed and attached to any guideline when submitted to the appropriate committee for 
+consideration and approval. 
+ Yes/No Comments 
+1. Does the document/guidance affect one group less or 
+more favourably than another on the basis of: 
+ Age No 
+ · Disability No 
+ · Gender (Sex) No 
+ · Gender Identity No 
+ · Marriage and civil partnership No 
+ · Pregnancy and maternity No 
+ · Race (ethnicity, nationality, colour) No 
+ · Religion or Belief No 
+ · Sexual orientation, including lesbian, gay and bisexual 
+people No 
+2. Is there any evidence that some groups are affected 
+differently and what is/are the evidence source(s)? No 
+3. If you have identified potential discrimination, are there 
+any exceptions valid, legal and/or justifiable? N/A 
+4. Is the impact of the document likely to be negative? No 
+5. If so, can the impact be avoided? N/A 
+6. What alternative is there to achieving the intent of the 
+document without the impact? N/A 
+7. Can we reduce the impact by taking different action 
+and, if not, what, if any, are the reasons why the 
+guideline should continue in its current form? N/A 
+8. Has the document been assessed to ensure service 
+users, staff and other stakeholders are treated in line 
+with Human Rights FREDA principles (fairness, respect, 
+equality, dignity and autonomy)? Yes 
+ 
+If you have identified a potential discriminatory impact of this guideline , please refer it to [ Insert 
+Name ], together with any suggestions as to the action required to avoid/reduce this impact. For 
+advice in respect of answering the above questions, please contact uhsussex.equality@nhs.net 
+01273 664685). 
+
+ CLINICAL GUIDELINE 
+Due for review: August 2027 
+Name of Guideline : Smoke Free Pregnancy Maternity Smoking & Smoke Free Pregnancy 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 24 of 26 Appendix 8: Template dissemination, implementation and access plan 
+ 
+To be completed and attached to any guideline when submitted to Corporate Governance for 
+consideration and TMB approval. 
+ 
+ Dissemination Plan Comments 
+1. Identify: 
+ Which members of staff or staff groups will be affected 
+by this guideline ? Maternity Support Workers, 
+Midwives and Obstetricians. 
+ How will you confirm that they have received the 
+guideline and understood its implications? We have a dissemination 
+process that involves 
+publicising this update via 
+social media, staff work 
+emails, noticeboards and 
+safety huddles. 
+ How have you linked the dissemination of the guideline 
+with induction training, continuous professional 
+development and clinical supervision as appropriate? Staff are shown where to 
+access clinical documents as 
+part of their induction. 
+Awareness of where guidance 
+is located is confirmed at 
+appraisals. 
+2. How and where will staff access the document (at 
+operational level)? Will be made available on 
+SharePoint. 
+ 
+ Yes/No Comments 
+3. Have you made any plans to remove 
+old versions of the guideline or related 
+documents from circulation? Yes Archiving is a standard part of 
+the uploading procedure. 
+4. Have you ensured staff are aware the 
+document is logged on the 
+organisation’s register? Yes We have a dissemination 
+process that involves 
+publicising this update via 
+social media, staff work 
+emails, noticeboards and 
+safety huddles. 
+
+ CLINICAL GUIDELINE 
+Due for review: August 2027 
+Name of Guideline : Smoke Free Pregnancy Maternity Smoking & Smoke Free Pregnancy 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 25 of 26 Appendix 9: Additional guidance / information 
+Action on Smoking and Health. Smoking, pregnancy, and fertility. London: ASH, 2021 
+Selvaratnam R,Sovio U,Cook E,Gaccioli F, Charnock -Jones, Smith G. Objective measures of 
+smoking and caffeine intake and risk of adverse pregnancy outcomes. International journal of 
+Epidemiology. 2023. 
+RCP & RCPCH. Passive Smoking and Children, 2010. 
+Royal College of Physicians. Hiding in plain sight: treating tobacco dependency in the NHS. 
+London: RCP, 2018. 
+NCSCT. Dependence on smoking. 
+https://www.ncsct.co.uk/usr/pub/Dependence%20on%20Smoking%20.pdf 
+https://www.ncsct.co.uk/usr/pub/NCSCT%20Standard%20Treatment%20Programme%20for%20Pre
+gnant%20Women.pdf 
+NCSCT. Resumption of face -to-face stop smoking consultations and carbon monoxide (CO) 
+monitoring. London: NCSCT 2021 
+NCSCT. Dependence on smoking. 
+https://www.ncsct.co.uk/usr/pub/Dependence%20on%20Smoking%20.pdf 
+National Institute for Health and Care Excellence (NICE). Tobacco: preventing uptake, promoting 
+quitting and treating dependence. (NG209. 2021.) Overview | Tobacco: preventing uptake, 
+promoting quitting and treating dependence | Guidance | NICE 
+Graham, H. et al (2014) Cutting Down: Insights from Qualitative Studies of Smoking in Pregnancy. 
+Health Social Care Community, 22 (3): 259 -67. 
+NHS Digital 
+Appendix 1: Definitions - NHS Digital 
+ 
+Hastings.G.,D.E Andrade, M.2014. Should smokers to advised to cut down as well as quit? No. 
+British Medical Journal,348.10.1136/BMJ.G2787. 
+Reeves S, Bernstein I. Effects of maternal tobacco -smoke exposure on fetal growth and neonatal 
+size. Expert Rev Obstet Gynecol. 2008;3(6):719 -730. 
+NHS England: Saving Babies Lives Version Three. PRN00130 -saving -babies -lives-version -three -
+2023.pdf 
+Smoking in Pregnancy Challenge Group. Use of electronic cigarettes before, during and after 
+pregnancy. A guide for maternity and other healthcare professionals. 2019. 
+PHE 2015. E -cigarettes: an evidence update A report commissioned by Public Health England. E-
+cigarettes: an evidence update (publishing.service.gov.uk) 
+Hartmann -Boyce J, Lindson N, Butler AR, McRobbie H, Bullen C, Begh R, Theodoulou A, Notley C, 
+Rigotti NA, Turner T, Fanshawe TR, Hajek P. Electronic cigarettes for smoking cessation. Cochrane 
+Database of Systematic Reviews 2022, Issue 11. Art. No.: CD010216. DOI: 
+10.1002/14651858.CD010216.pub7. CLINICAL GUIDELINE 
+Due for review: August 2027 
+Name of Guideline : Smoke Free Pregnancy Maternity Smoking & Smoke Free Pregnancy 
+For use at: PRH, RSCH, SRH, WH 
+ 
+ Page 26 of 26 See also / Linked documents 
+Maternity Vaping Protocol CDL 11592 
+Protocol for Direct Supply of NRT by Tobacco Dependency Advisors UHS -CG-0012 -2023

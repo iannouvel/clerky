@@ -1,0 +1,2003 @@
+# Extracted from: PP14002 Newborn Blood Spot Screening.pdf
+# Guideline ID: pp14002-newborn-blood-spot-screening
+# Content length: 83981 characters
+# Processing date: 1750066901.8136616
+
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 1 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Newborn Blood Spot Screening (UH Sussex West) SOP 
+Summary statement: How does the 
+document support patient care? This pathway provides information for staff with regard 
+to the process for offering, undertaking and providing 
+results for newborn bloodspot screening. 
+Staff/stakeholders involved in 
+development: Midwives, Paediatric team, Health Visitors, Joint 
+Obstetric Guidelines Group, Community teams, 
+Laboratory, Community Child Health Information 
+Service 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Jacqueline Gregory 
+For use by: Midwives, Obstetricians, Paediatric staff and Health 
+Care Support workers 
+Purpose: To provide accurate information for staff on the 
+processes to follow with regard to newborn blood spot 
+screening 
+This document supports: 
+ NHS public health functions agreement 2017 -18. 
+Service specifiactionno.19 NHS Newborn Blood Spot 
+Screening Programme 
+Key related documents: UH Sussex West Maternity Guidelines: Antenatal 
+Care and Patient Information, Postnatal Care 
+UH Sussex West Trust Po licies: An organisation -
+wide policy for screening procedures, An organisation -
+wide policy for diagnostic testing 
+NHSEI publications : KPI’s 
+Approved by: Joint Obstetric Guideline Group (JOGG) 
+Approval date: 18th May 2022 Date uploaded: 24th May 2022 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable – Divisional ratification only required 
+Ratification Date: Not Applicable – Divisional ratification only required 
+Expiry Date: February 2025 
+Review date: August 2024 
+If you require this document in another format such as Braille, large print, audio or 
+another language please contact the Trusts Communications Team 
+Reference Number: PP14002 
+
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 2 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Version Date Author Status Comment 
+1.0 March 
+2018 Antenatal & Newborn 
+Screening Co -
+ordinator NHSP lead Archived Revised WSHFT Pathway 
+2.0 February 
+2019 NHSP lead -
+Jacqueline Gregory Archived 
+3.0 July 2020 NBS Lead - 
+Jacqueline Gregory Archived See page 42 for amendments 
+3.1 Nov 2021 J. Collard, Clinical 
+Effectiveness Support 
+Midwife Archive d Guideline expiry date 
+extended to Feb 2022 
+following agreement from C. 
+Parr, Clinical Governance 
+Lead and J. Gregory , NHSP 
+Lead. 
+Formatting and new Trust 
+logo. 
+4.0 Feb 2022 Jacqueline Gregory, 
+NBS Lead Archived See: Main additons/changes 
+to SOP 
+4.1 May 2022 Jacqueline Gregory, 
+NBS Lead LIVE Changes to: 
+ Movers in and out 
+ Avoidable repeats 
+ Newborn Screening 
+Outcome Solutions 
+ Decline 
+ Laboratories 
+ Screening co -ordinators 
+email addresses 
+ 
+The interpretation and application of clinical guidelines will remain 
+the responsibility of the individual clinician. 
+ 
+If in doubt cont act a senior colleague or expert. 
+ 
+This SOP can be located on the trust’s intranet: 
+http://nww.westernsussexhospitals.nhs.uk/?s=newborn+screening&resource_type=&post_ty
+pe=resource 
+
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 3 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Contents 
+ 
+1.0 Background ................................ ................................ ................................ ................ 5 
+2.0 Identifying eligible population ................................ ................................ ...................... 5 
+2.1 Antenatal notification ................................ ................................ ................................ .. 6 
+3.0 National Screening Pathway ................................ ................................ ....................... 7 
+4.0 Northgate Blood Spot Failsafe Solution Flow Chart ................................ .................... 8 
+5.0 UH Sussex West screening pathways ................................ ................................ ........ 9 
+5.1 Well baby/born after 32 weeks GA ................................ ................................ ............. 9 
+5.2 Premature Neonate ................................ ................................ ................................ .. 10 
+5.3 In a Transfused Neonate ................................ ................................ .......................... 11 
+5.4 Repeat Samples Pathway ................................ ................................ ........................ 12 
+5.5 Leaflets ................................ ................................ ................................ ..................... 13 
+5.6 Exclusion Criter ia ................................ ................................ ................................ ..... 13 
+6.0 Performing a Newborn blood spot ................................ ................................ ............ 14 
+6.1 Complete blood spot card ................................ ................................ ......................... 14 
+6.2 Preparing the foot ................................ ................................ ................................ ..... 15 
+6.3 Lancet use/ puncture sites ................................ ................................ ........................ 15 
+6.4 Taking the sample ................................ ................................ ................................ .... 15 
+6.5 After taking the sample ................................ ................................ ............................. 17 
+7.0 Referrals of affected babies following the Newborn blood spot ................................ . 17 
+7.1 Sickle Cell Disease (SCD) ................................ ................................ ........................ 17 
+7.2 Cystic Fibrosis (CF) ................................ ................................ ................................ .. 18 
+7.3 Congenital Hypothyroidism (CHT) ................................ ................................ ............ 18 
+7.4 Inherited Metabolic Diseases (IMD’s) ................................ ................................ ....... 18 
+7.5 Carrier results ................................ ................................ ................................ ........... 18 
+8.0 Results pathway ................................ ................................ ................................ ....... 18 
+9.0 Governance structure and reporting ................................ ................................ ......... 19 
+9.1 Governance structure ................................ ................................ ............................... 20 
+10.0 Movers in and out of area ................................ ................................ ......................... 20 
+11.0 Training and ongoing assessments/avoidable repeats ................................ ............. 23 
+12.0 Newborn Outcome Solutions ................................ ................................ .................... 23 
+Appendix 1: Mapping and cohort checking in NBS FS ................................ ......................... 24 
+Appendix 2: Day 5 – check all cohort is visible in NBS FS ................................ ................... 26 
+Appendix 3: Daily tasks ................................ ................................ ................................ ........ 27 
+Appendix 4: Dispatch pathways ................................ ................................ ........................... 28 
+Appe ndix 5: NICU paperwork ................................ ................................ ............................... 30 
+Appendix 6: Child death notifications ................................ ................................ ................... 32 
+Appendix 7: New user request for Northgate Failsafe Solution ................................ ............ 33 
+Appendix 8: Decline NBS screen ................................ ................................ ......................... 34 
+Appendix 9: Northgate Newborn blood spot failsafe solution has not been populated .......... 35 
+Appendix 10: Deletion of record/ changes to a record in NBS FS ................................ ........ 36 
+Appendix 11: Repeat blood spots ................................ ................................ ........................ 37 
+Appendix 12: Admission Day Spot/Discharge Spot Failsafe ................................ ................. 38 
+Appendix 14: Laboratories ................................ ................................ ................................ ... 39 
+Appendix 15: Screening co -ordinators email addresses ................................ ....................... 40 
+Appendix 16: Movers in – advised by CHIS ................................ ................................ ......... 41 
+Appendix 17: Checking that all Newborn screening has been completed ............................. 42 
+Appendix 17: Examples of bloodspot samples ................................ ................................ ..... 43 
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 4 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Contact List ................................ ................................ ................................ .......................... 46 
+Abbreviation used within this SOP ................................ ................................ ....................... 48 
+References ................................ ................................ ................................ .......................... 49 
+Main additions/changes to SOP: ................................ ................................ .......................... 51 
+
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 5 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Newborn Blood Spot Screening SOP 
+
+1.0 Background 
+ 
+The NHS Newbon Blood Spot Screening Programme aims to identify babies who ha ve rare 
+but serious conditions s o as to improve health a nd reduce disability or death. 
+
+These conditions comprise of newborn babies who are at high risk of being affected by or 
+may be carriers of: 
+ 
+ Sickle cell disease (SCD) 
+ Cystic fibrosis (CF) 
+ Congenital hypothyroidism (CHT) 
+ 
+ six inherited metabolic diseases: 
+ Phenylketonuria (PKU), 
+ Medium -chain acyl -CoA dehydrogenase deficiency (MCADD), 
+ Maple syrup urine disease (MSUD), 
+ Isovaleric acidaemia (IVA), 
+ Glutaric aciduria type 1 (GA1) 
+ Homocystinuria (pyridoxine unresponsive) (HCU) 
+ 
+And 
+ 
+ Severe combined immunodeficiency (SCID) – Screening for SCID is currently being 
+offered in some parts of England as part of an evaluation. It is not yet available for all 
+newborn babies in England 
+ 
+Note UH Sussex West use SW Thames lab who currently are not part of the SCID testing 
+pilot programme. Once SCID testing commences at SW Thames lab it must be noted that 
+bloodspot sample sizes must not be larger than the circle on the card. 
+ 
+2.0 Identifying eligible population 
+ 
+The eligible popula tion is identified through the issuing of an NHS number at birth or 
+registration with a GP practice for babies born abroad. 
+ 
+Northgate Newborn Blood Spot Failsafe Solution is populated electronically via PDS (Patient 
+demographic service) at point of birth. Movers in from abroad do not populate NBS FS so are 
+managed manually. 
+ 
+NBS FS is populated based on address of the baby and the GP they reside with. 
+ 
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 6 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Capture of full cohort and movement of population is based on the following, and 
+incorporates layer s of fail safes to ensure no babies are missed. 
+
+The paediatric wards (Howard - SRH, Bluefin Worthing) will be checked daily for re -admissions, any 
+baby 5 days old wil l require their bloodspot taking whilst resident on the ward. 
+
+2.1 Antenatal notification 
+ 
+Where a family history of any metabolic condition is identified in either parent antenatally, the 
+antenatal screening team should be notified. They should then notify the postnatal failsafe 
+clerk so that plan can be made for early testing of the baby. SW Thames Lab should be 
+contacted as part of the plan . 
+COHORT 
+NICU residents and 
+residents on the 
+paediatric wards 
+Transfers out to other 
+trusts for postnatal care 
+Transfers in from other trusts 
+for postnatal maternity care 
+on onto UH Sussex West 
+NICU 
+CHIS movers in under 
+1 year no screen 
+ 
+Northgate blood spot 
+failsafe solution 
+Notification of movers in 
+from other newborn 
+screening programmes who 
+will receive postnatal care 
+(failsafe) 
+Daily MIS birth list 
+(Failsafe) 
+ 
+CHIS will check NBS FS 
+and HV will refer to UH 
+Sussex West if screening 
+is required 
+ 
+NICU residents including: 
+Monthly Badgernet report 
+Weekly notification of 
+transfer’s in and out from 
+Senior BadgerNet Data Co -
+ordinator 
+ 
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 7 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+3.0 National Screening Pathway 
+
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 8 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+4.0 Northgate Blood Spot Failsafe Solution Flow Chart 
+ 
+Note: NBS FS requires Internet explorer 10 to run correctly 
+
+NBS FS web address – which can only be accessed via a secure N1 link : 
+ 
+Northgate - bloodspot 
+ 
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 9 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+5.0 UH Sussex West screening pathways 
+5.1 Well baby/born after 32 weeks GA 
+
+ Babies admitted to NICU 
+All babies , regardless of GA should have an admission bloodspot taken which is sent to the lab with the day 5 bl oodspot 
+Provide all pregnant women the information leaflet ‘Screening tests for you and your baby’ in their preferred language where possible. 
+ 
+At least 24 hours prior to screen ing, ensure that parents have received, read and understood the 
+ ‘screening tests for you and your baby’ leaflet. 
+Ensure they understand what conditions baby is being screened for: 
+sickle cell disease (SCD), 
+cystic fibrosis (CF), 
+congenital hypothyroidism (CHT) 
+phenylketonuria (PKU), 
+medium -chain acyl -CoA dehydrogenase deficiency (MCADD), 
+maple syrup urine disease (MSUD), 
+isovaleric acidaemia (IVA), 
+glutaric aciduria type 1 (GA1) 
+homocystinuria (pyridoxine unresponsive) (HCU) 
+ 
+Screen and data capture declined 
+Screen and data capture consented to. Ensure parents are aware the 
+residual blood spots get retained for 5 years and can be used for researc h. 
+Write ‘NO RESEARCH CONTACT’ on the form if parents do not want to be 
+contacted about this in the future. 
+Arrange to take blood sample on day 5, with day of birth counting as day 0. 
+Note – ideally this should be day 5 regardless of gestational age, fee ding 
+status, medical condition or medication. 
+Document that NBS screening has been discussed, recommended and that 
+consent has been given, and that parents have been provided with a copy 
+of the screening leaflet. 
+Record consent in maternal hand held note s and babies PCHR book. 
+Write on the blood spot form if 1 or more tests have been declined. Fill in 
+the card completely attaching the bar code label. NHS number is 
+mandatory 
+Return sample to community midwives office, or post directly after adequate 
+dryin g and notify screening admin for documen ting. 
+Ascertain if all screening is declined. 
+SCD, CF and CHT can be declined 
+individually however the 6 IMD’s can only be 
+declined as a group 
+Document that NBS screening has been 
+discussed, recommended and that 
+consent has been declined, and that 
+parents have been provided with a copy 
+of the screening leaflet. 
+Record consent in maternal hand held 
+notes and babies PCHR book. 
+ 
+A blood spot card MUST still be 
+completed with a bar code label and 
+sent to the lab. 
+ 
+Ensure parents have information on how 
+to have their baby tested if they changed 
+their mind. 
+ 
+Send letter to parents, GP, CHIS, and 
+Antenatal & Newborn Screening Co -
+ordinator that screening was declined. 
+See Decline pathway 
+ 
+NORMAL 
+RESULTS 
+Results are sent 
+to CHIS from 
+the lab. CHIS 
+will notify 
+parents by letter 
+REPEAT 
+REQUIRED 
+UH Sussex 
+West notified by 
+email from the 
+Lab and on 
+Northgate 
+search 
+ABNORMAL RESULTS 
+Lab informs relevant 
+clinician. Results are 
+copied to CHIS. CHIS to 
+advice parents of norma l 
+results at 6 weeks 
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 10 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+5.2 Premature Neonate 
+
+Admission spot should be sent to the lab if baby transfers to another NICU 
+If baby is 
+resident on 
+another NICU 
+on day 5, 
+transfer NBS 
+record to 
+them and 
+email the 
+sites 
+screening 
+team 
+ 
+Provide all pregnant women the information leaflet ‘Screening tests for you and your baby ’ in their preferred language where possible. 
+Baby born before 32 weeks gestation (equal to 31+6 days ). With parent consent take admission bloodspot. 
+Baby stays on UH Sussex West NICU and is resident on day 5. Set Northgate record to N ICU. 
+Provide parents with information leaflet ‘screening tests for you and your baby: babies in special care units’ 
+YES 
+ NO 
+Screen and data capture consented to ensuring parents are fully 
+aware of all conditions baby will be screened for. 
+Take admission day blood spot 
+Take routine sample on day 5 
+Document that NBS screening has been discussed, recommended 
+and that consent has been given, and that parents have been 
+provided with a copy of the screening leaflet. 
+Record consent on Badgernet, in Hospital notes, SCBU notes, 
+PCHR book and the Discharge summary. 
+ 
+Screen offered to parents 
+Screen and data 
+capture declined 
+Ascertain if all 
+screening is 
+declined. 
+SCD, CF and CHT 
+can be declined 
+individually however 
+the 6 IMD’s can only 
+be decli ned as a 
+group . 
+Document decline on 
+Badgernet, in Hospital 
+notes, SCBU notes, 
+babies PCHR book 
+and the discharge 
+summary. 
+ 
+Send letter to parents, 
+GP, CHIS, and 
+Antenatal & Newborn 
+Screening Co -
+ordinator that 
+screening was 
+declined. 
+See Decline pathway 
+ 
+Follow well baby pathway for results/repeat. 
+Additionally follow below for CHT 
+CHT NOT 
+SUSPECTED 
+Repeat sample (2 
+spots) at 28 days or 
+day of discharge. If 
+discharged before 
+28 days –write 
+‘discharge sample’ 
+on the card. 
+NBS FS will flag the 
+record as repeat 
+required and date. 
+SUSPECTED 
+CHT 
+ 
+REFERRAL BY THE 
+LABORATORY 
+CHT 
+BORDERLINE - 
+Laboratory will 
+request a 4 spot 
+repeat sample. 
+This must be no 
+sooner than 7 
+days from the 
+previous 
+sample. 
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 11 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+5.3 In a Transfused Neonate 
+
+Provide all pregnant women the information leaflet ‘Screening tests for you and your baby’ in their preferred language where possible. 
+Baby admitted to NICU (any gestation) 
+With parental consent, take single sample blood spot on admission to the unit 
+Rationale: When screening for SCD the blood spot sample MUST be taken before a blood transfusion even if this is before 
+day 5. A screen with a blood spot after transfusion will test the donor blood for SCD rather than the babies o wn blood. 
+A single spot taken on admission will reduce the need to carry out a repeat. 
+Admission sample taken 
+Admission sample not taken due to an emergency 
+or lack of time to gain parental consent. 
+ 
+Sample card should be clearer marked 
+ADMISSION DAY BLOODSPOT. 
+NICU staff to retain the card and send to the lab 
+with the routine day 5 sample 
+ 
+Baby receives 
+blood transfusion 
+Baby NOT 
+transfused 
+Offer routine blood 
+spot screening on day 
+5 for all conditions 
+and follow well baby 
+or premature 
+neona tal pathway 
+dependent on GA 
+Offer routine blood spot 
+screening on day 5 for all 
+conditions, except SCD. 
+ 
+NOTE. This should be 
+delayed until 72 hours 
+after the last transfusion. 
+If baby is having repeated 
+transfusions then the 
+sample should be taken 
+on day 5 and repeated 72 
+hours after transfusion . 
+The laboratory will generate a request for a repeat sample to 
+screen for SCD 4 months AFTER the last transfusion. At this 
+point the donor blood should have cleared from the baby. 
+HV will arrange an appointm ent at paediatric outpatients. 
+Offer routine blood spot screening on day 5 for all 
+conditions and follow well baby or premature 
+neonatal pathway dependent on GA 
+NOTE - DAY 0/PRE TRANSFUSION CARDS DO 
+NOT APPEAR ON NORTHGATE. 
+ 
+In the unlikely event that a Day 0/pre 
+transfusion card sample is received on its own, 
+the screening laboratory will screen the sample 
+for sickle cell anaemia only and the result is 
+entered onto the NBS FS . When the Day 5 
+sample arrives the records are then updated. 
+NOTE: If baby leaves UH Sussex West care then the NBS FS record will be case noted with where baby has moved to and transferred out. An email 
+will be sent to the screening lead. The receiving site should transfer the NBS FS record in to gain access . 
+Templates for letters sent from CHIS can be found on the following link 
+newborn -blood-spot-screening -results -to-parents -template 
+ 
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 12 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+5.4 Repeat Samples Pathway 
+
+ If a clinical repeat is required and a Health Professional requires any advice prior to 
+seeing/contacting the parents/carers, Dr Rabbs, Consultant Paediatrician (UH Sussex West) 
+can be emailed. 
+
+Lab informs maternity services 
+by email to 
+uhsussex.nbbs@nhs.net that a 
+repeat sample is required. 
+NBS FS default search provides 
+list of not received and repeat 
+screens require d. 
+Is baby under 28 days old or still under midwifery/neonatal care? 
+YES 
+ NO 
+Midwife/Neonatal staff to 
+carry out a repeat blood 
+spot – diarise if a 28 day 
+spot is required. 
+ 
+To contact parent within 1 
+day of notification from lab, 
+to visit within ideally within 
+1 day, maximum 2 days. 
+Paediatric outpatient appointment to be arranged 
+Remember: CF cannot be screened for after 8 weeks . 
+Baby is over 28 days old 
+Clinical repeat 
+required. 
+CHIS to inform named HV 
+that repeat is required . 
+ 
+HV visits family to explain 
+why a repeat is required . 
+ 
+Avoidable Repeat 
+required for any 
+reason 
+Results given to parents by HV /CHIS and documented in 
+PCHR book . 
+Resul ts given by 
+CHIS 
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 13 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+5.5 Leaflets 
+Information regarding the screening programmes is provided to all parents: 
+ ‘Screening for you and your baby’ booklet is provided via a QR card to all parents by 
+community midwives at booking. 
+
+ Information can also be found at: 
+screening -tests -for-you-and-your-baby -description -in-brief 
+ Parents of babies who are resident on NICU are also given the booklet ‘Screening for 
+you and your baby – babies in special care unit’s 
+screening -tests -for-you-and-your-baby -babies -in-special -care-units 
+ An easy read version is available: 
+screening -tests -for-you-and-your-baby -easy -guides 
+ Written information is available in different languages: 
+screening -tests -for-you-and-your-baby -description -in-brief 
+ Information is available to watch on animations, these are subtitled for sign language 
+and differen t languages: 
+screening -tests -for-you-and-your-baby 
+Screening test for you and your baby - different languages , subtitled and British Sign 
+Language 
+ Information on SCID screening 
+scid-screening -helping -you-decide -if-you-want -this-for-your-baby 
+
+Additional information for health professionals and parents/carers regarding repeats can be 
+found at: 
+repeat -blood -spot-samples -description -in-brief 
+ 
+Information on repeat bloodspot for cystic fibrosis can be found at: 
+repeat -blood -spot-test-for-cystic -fibrosis -information -sheet 
+ 
+Information on repeat bloodspot for congenital hypothyroidism can be found at: 
+congenital -hypothyroidism -cht-suspected -description -in-brief/congenital -hypothyroidism -cht-
+information -for-families -following -a-suspected -screening -test-result 
+ 
+5.6 Exclusion Criteria 
+ 
+ Babies Stillborn or who died before day 8 
+ Babies>56 days old are ineligible for CF screening 
+ Children over 1 year of age 
+
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 14 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+6.0 Performing a Newborn blood spot 
+ 
+Parents must verbally consent to the NBS. This consent must be documented in the 
+maternity notes and the baby’s child health record. Only those with parental responsibility 
+can give consent. For surrogacy births the trust guideline for gaining consent will also be 
+followed Trust's surrogacy guideline 
+ 
+Good quality blood spot samples are vital to ensure that babies with rare but serious 
+conditions are identified and treat ed early. Poor quality samples can cause inaccurate 
+newborn screening results. 
+ 
+Poor quality samples will be rejected by the laboratory at their discretion, the laboratory will 
+request an ‘avoidable repeat’ sample. These repeat samples can cause anxiety fo r parents, 
+distress to baby and can delay diagnosing a condition. In some cases parents might decline 
+the repeat leaving babies screening incomplete. It is also costly to the trust. 
+ 
+The most significant effects of poor quality samples are: 
+ 
+a. Falsely low an alyte concentrations which can be caused by: 
+ Small volume blood spots (under filled circles) 
+ Compression of the sample 
+These samples can cause false -negative results. 
+ 
+b. Falsely nigh analyte concentrations which can be caused by: 
+ Layering the blood 
+ Applying the blood to the front and the back of the cards 
+ These samples can cause false -positive results. 
+ 
+Please refer to Newborn blood spot screening: sampling guidelines for full guidance on 
+collecting the blood spot sample. 
+ 
+newborn -blood -spot-screening -sampling -guidelines 
+ 
+6.1 Complete blood spot card 
+ 
+ Ensure blood spot card has not passed its expiry date . 
+ Confirm babies name, date of birth and parents contact details . 
+ Ask parent to check what has been written on the card is correct . 
+ Attach babies barcode label to the card, remember babies NHS Number MUST be 
+present . 
+ Fill in ALL boxes on the card. Write gestational age in weeks AND days . 
+ Take care to avoid contamination when filling in the card, by touch or by placing 
+the card on a dirty surface . 
+ Ensure relevant A/N screening results are recorded on card e.g. Parents are 
+known carriers of CF or haemoglobinapathy. 
+ Write on the blood spot form if 1 or more tests have been declined . 
+ 
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 15 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+6.2 Preparing the foot 
+ 
+ Clean the heel by washing it in plain tepid water. 
+ Do not use alcohol wipes . 
+ Allow foot to air dry before taking the sample. 
+ The heel should be warm. Do not pre -warm by soaking the foot in warm water . 
+ Allow the foot to hang down to increase blood flow . 
+ 
+6.3 Lancet use/ puncture sites 
+ 
+ Follow local policy for universal precautions and infection control . 
+ Use automatic lancet device . 
+ The external and internal limits of the c alcaneous are the preferred puncture site. 
+See Figure 1. 
+ For term babies, skin puncture must be no deeper than 2.0mm . 
+ 
+ There is some evidence that the whole heel plantar surface is safe for obtaining 
+blood in term and preterm infants. See Figure 2. 
+ For pr eterm babies and if using the whole of the plantar surface then skin puncture 
+must not be deeper than 1.0 mm 
+
+ Always avoid the posterior curvature of the heel 
+ These sites are also suitable for babies up to a year in age. 
+ 
+6.4 Taking the sample 
+ 
+ The aim is to fill each circle on the blood spot card, using a single drop of blood for 
+each circle. 
+ The lab aim to punch 3 2mm disc’s from each circle. 
+ Puncture the heel and wait up to 15 seconds to allow the blood to flow. 
+ 
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 16 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Allow one spot to fill each circle by n atural flow, ensure it seeps through to the 
+back of the card. 
+ DO NOT allow the heel to come into contact with the card. 
+ DO NOT squeeze the foot in an attempt to increase the blood flow. 
+ DO NOT layer the blood. 
+ When finished, wipe the excess blood from the heel and apply gentle pressure to 
+the wound with cotton wool or gauze. Apply a spot plaster if required. 
+ Should 1 blood spot not be adequate or soak through, add another blood spot to 
+the card ensuring it is of correct size. 
+ If the blood flow ceases, the c ongealed blood should be wiped away firmly with 
+cotton wool or gauze. Gently massage the foot, avoid squeezing, and drop the 
+blood onto the card. 
+ A second puncture should only be performed if the baby fails to bleed with the 
+above technique. This should be carried on a different part of the foot or on the 
+other foot. 
+
+If a midwife is unable to sufficiently bleed a baby and advises parents to take baby to hospital 
+to be bled, a bloodspot card with stickers attached will be given to parents to take with the m. 
+
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 17 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+6.5 After taking the sample 
+ 
+ Allow the blood spots to dry away from direct sunlight or heat, before placing in the 
+glassine envelope. The card should be placed in with the blood spots inserted first. 
+ Record any of the following in the ‘comments’ box on the blood spot card. 
+ Babies known medical history. 
+ Family history relevant to the conditions being screened for. 
+ If NOT day 5 -8 the reason for sample being taken, e.g. pre -transfusion, CHT 
+preterm. 
+ Record that blood spot was taken in maternal notes and PCHR book if available. 
+ Inform parents how and when they will receive results. 
+ Return card to collection point within 24hrs for dispatch and logging. 
+ Dispatch points are on the Birth Centre at St Richards and in the Community 
+Midwives office at Worthing H ospital. Samples from NICU are also left at these 
+dispatch points. 
+ Check date of birth is correct on the stickers. 
+ If posting the card directly, advise Community Team Leads or Screening Admin 
+Clerk so dispatch date can be recorded. 
+ 
+Bloodspot cards are ord ered from the trust’s procurement system, these are ordered by the 
+ward clerks . 
+ 
+7.0 Referrals of affected babies following the Newborn blood spot 
+ 
+The UKNSPC recommends the following timeframes to ensure babies achieve the maximum 
+benefit from treatment. 
+ 
+For babies whose blood spot was taken by UH Sussex West they will be referred as follows: 
+ 
+7.1 Sickle Cell Disease (SCD) 
+ Major Hbo disorder: Lab informs local Lead Peadiatrician by fax and phone. 
+Paediatrician contacts parents and a follow up arranged, G P informed by the lab. 
+ Lab sends copy of results to CHIS. 
+
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 18 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+7.2 Cystic Fibrosis (CF) 
+ Lab informs the Regional Cystic Fibrosis Unit at The Royal Brompton Hospital, 
+who contacts the local Lead Paediatrician, who will arrange to see the family. Lab 
+sends copy of results to CHIS. 
+ 
+7.3 Congenital Hypothyroidism (CHT) 
+ Lab informs named local Consultant Paediatrician, Worthing Hospital – Dr E 
+Vamvakiti, St Richards Hospital – Dr R Remorino. If neither available then the 
+On-call Consultant Paediatrician will be con tacted. They will arrange to inform 
+parents and will organise appropriate follow up. 
+ Lab sends copy of results to CHIS and GP. 
+ 
+7.4 Inherited Metabolic Diseases (IMD’s) 
+ Lab will inform Dr Mike Champion – Metabolic Consultant, Evelina Children’s 
+Hospital (St Thomas’s Hospital) who arranges for parents to be informed and 
+organises appropriate follow up. 
+ Lab sends copy of results to CHIS. 
+ 
+7.5 Carrier results 
+ CHIS will advise Link Health Visitor who contacts parents. 
+ 
+Exceptions to these will be on a case by case basis and will take into account parent’s 
+wishes. 
+8.0 Results pathway 
+
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 19 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Pathway for negative results following a repeat NBBS for a possible condition: 
+CHIS will send a letter out to the Mother once the lab post their results. 
+The KPI for this process is 6 weeks however CHIS advise, parents should have heard within 
+3 weeks from the date of the repeat test. 
+In the event that they have not had any communication within this time frame parents can 
+phone the Health Visitors or CHIS during business hours on 01243 793643. 
+ 
+Pathway for positive results following a repeat NBBS for a possible condition: 
+The Laboratory or local Paediatric team will contact the parents with a care plan and 
+consultation. 
+CHIS advise that this should be wit hin 3 weeks from the date of the repeat test. 
+ 
+9.0 Governance structure and reporting 
+KPI’s are: 
+ 
+NB1 - CHIS responsible for submission 
+The proportion of babies registered within the clinical commissioning group (CCG) both at 
+birth and on the last day of the reporting period who are eligible for newborn blood spot 
+(NBS) screening and have a conclusive result recorded on the child hea lth information 
+system (CHIS) at less than or equal to 17 days of age. 
+ 
+NB2 – The laboratory are responsible for submission, UH Sussex West to provide 
+commentary. 
+The proportion of 1st blood spot samples that require repeating due to an avoidable failure i n 
+the sampling process . 
+Monthly, Quarterly and Yearly summarised reports are saved NEWBORN BLOOD SPOT 
+Reports . 
+The Yearly summarised report with commentary is submitted quarterly to SIT and QA as part 
+of the Trusts ANNB KPI submissions. 
+ 
+NB4 – CHIS responsible for submission 
+The proportion of all babies eligible for newborn blood spot (NBS) screening who: 
+Have changed resp onsible CCG in the first year of life or have moved in from another UK 
+country or abroad and have a conclusive result record ed on the CHIS ≤ 21 calendar days of 
+notifying the CHRD of movement in. 
+ 
+UH Sussex West NBS Lead will monitor monthly repeat reports provided by the lab for both 
+avoidable and clinical repeats , this can be found here. These will be collated and forwarded 
+to Team Leads. When repeat rates have been over the acceptable NHSEI level they will then 
+be investigated and reported on via the ANNB quarterly meetings along with any mitigations 
+for screens not carried out within KPI. 
+Quarterly KPI reporting template can be found here 
+ 
+Screening Incidents 
+Any incidents will be reported via the trusts internal system (DATIX) and escalated to the 
+regional QA team via the Screening incident assessment form (SIAF) emailed to the regional 
+SIT and QA teams: 
+PHE.Screening -ImmsSSAT@nhs.net ; phe.southQA@nhs.net 
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 20 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Managing safety incidents in NHS screening programmes document will be adhered to and 
+will the tru st’s incident policy. 
+Root cause analysis will be undertaken when required including a timeline of events and 
+learning these will be signed off at trust level by the clinical governance lead (maternity) . 
+The postnatal screening log should be completed, all incidents should be saved in the 
+Newborn screening incident folder (NBS) under the SIAF reference. 
+ 
+The SIAF, root cause analysis forms, screening incident log and screening programme 
+folders can be found by clicking the link here 
+ 
+9.1 Governance structure 
+
+Means no direct line management of staff 
+ 
+10.0 Movers in and out of area 
+ 
+Movers in: 
+ 
+ Movers in for postnatal care are rung into the Community Midwives Office or 
+emailed to the postnatal ward from the discharging Hospital. If seen post day 5 
+then blood spot screening will checked and be will be offered if it has not been 
+done so already. 
+ The Community Team Lead will ch eck that the NBS FS record has been 
+transferred into our NBS FS site, if this has not been done then they will instigate 
+this transfer. 
+ Blood spot screening can be undertaken up to the age of 1 year of it has not been 
+carried out prior to moving into the area, CHIS to advise regarding these. 
+Antenatal and Newborn 
+screening co -ordinator 
+ 
+Community Matron - Midwifery 
+Head of Midwifery 
+ 
+All Midwives 
+Antenatal and 
+Newborn screening 
+team 
+Women and Children’s Directorate 
+Screening admin 
+ 
+NNU staff 
+ 
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 21 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Barcode labels can be printed from Northgate if parent does not have any. On 
+babies NBS FS record click on: View babies record, print labels, pick size of label 
+required 
+
+ Babies not on Northgate must have their bloodspot tracked manually. 
+ 
+The postnatal screening admin team should be advised of sample being taken and sent and logged on the movers in 
+spreadsheet found: Birthlist - failsafe 
+The lab should be contacted after 7 days to ensure receipt and check result s. 
+ 
+For babies over 30 days old, a reporting should be completed and sent to all parties on the sheet 
+Movers in reporting sheet 
+Was baby born in the UK? 
+YES 
+ NO 
+Is baby on Northgate? 
+Carry out a national search and transfer record in 
+CHIS aware of mover in and ascertains if baby has had 
+screening elsewhere, HV visits family 
+Screening 
+has not 
+occurred 
+or sample 
+not 
+received. 
+Screening has occurred and 
+written results are available for 
+all the conditions currently 
+screened for locally 
+Screening has occurred but: 
+Repeat is required 
+OR 
+No written results are available 
+OR 
+Testing was not completed for all the 
+conditions currently screened for locally 
+If in doubt offer a rescreen 
+Document in PCHR book and 
+send a copy to chis to be recorded 
+on SYSTMONE 
+Provide parents with pre -screen information – written and verbal. 
+Document discussion and parental consent or decline in PCHR. 
+Remember – it is not possible to screen for cystic fibrosis once a baby is 
+8 weeks old. 
+Screening declined: 
+Document in PCHR. Complete decline 
+letter, copy to CHIS, lab and GP. Create 
+evolve record and upload letter. 
+ 
+Screening accepted: Arrange a UH Sussex West paediatric outpatient 
+appointment or with midwifery team if <28 days old 
+Appointment attended, offer another if 1st DNA’d 
+UH Sussex West to inform 
+CHIS of DNA’s 
+CHIS send all normal 
+results to parents 
+YES 
+ NO 
+Screening 
+has not 
+occurred 
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 22 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Movers out: Prior to a bloodspot being taken 
+ 
+ The midwife responsible for the birth will ensure that details are passed onto the 
+correct Hospital for postnatal care. See Postnatal Care Guideline. 
+ The Community Team Lead or postn atal screening admin will check the location of 
+the NBS FS record and transfer out if it is not in the correct location with a case 
+note and a comment added to the birth list for where babies PNC is being given. 
+ Barcode labels will be in parents postnatal notes 
+ For NICU babies, 
+o If baby leaves UH Sussex West NICU to another NICU then the NBS FS 
+record will be case noted with where baby has moved to and transferred out. 
+o An email will be sent to the screening lead. The receiving site should transfer 
+the NBS FS record in to gain access. 
+o A note will be added to the birth list of where baby is residing 
+o If baby is under 32 weeks GA details will be added to the 28 day bloodspot 
+spreadsheet for tracking 
+o Should baby return to a UH Sussex West NICU their record shou ld be 
+transferred back in to ensure there isn’t anything outstanding regarding 
+repeats. 
+
+Movers out: After a bloodspot being taken 
+ 
+ If a baby is resident on any UH Sussex West ward on day 5 or is being given PNC on 
+day 5 a bloodspot will be taken. 
+ Should this baby then be discharged home to another area or move area for PNC the 
+bloodspot record on NBS FS should be case noted, transferred to new site (so a 
+repeat can be seen should this be required) and the screening lead for the site 
+emailed. 
+ The discharg ing midwife should notify the screening admin so the NBS FS record can 
+be actioned as above. 
+ The birth list will require a comment adding to it regarding baby has moved out of 
+area. 
+ Should a repeat email be received, this will be forwarded to the screening lead and 
+the community team lead midwife/NICU matron contacted where baby now is. If the 
+screening admin is sending this email it will be copied to UH Sussex West’s 
+community team leads. 
+
+Instructions on t ransferring in a bloodspot record in on Northgate records instructions can be 
+found in the Northgate folder by clicking here 
+
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 23 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+11.0 Training and ongoing assessments/avoidable repeats 
+ 
+ UH Sussex West will follow national guidance from NHSEI for training of new staff 
+who will undertake the Newborn Blood Spot. 
+ UH Sussex West will ensure that for those practitioners carrying out the Newborn 
+Blood Spot , a record is kept to show competency/when accredited study has taken 
+place. 
+ UH Sussex West will provide an annual update for all those who undertake the 
+Newborn Blood Spot. This may include practical and theoretical assessments and 
+annual completion of t he NBS e -learning module. Training logs will be kept. 
+ UH Sussex West will highlight when retraining is required based on avoidable 
+repeats. 
+ All avoidable repeats are logged on the avoidable repeat spreadsheet found 
+Avoidable repeat spreadsheet 
+ For all avoidable repeats the sample taker will be sent the following email from the 
+NBS email account when the repeat is received from the lab. Community Team 
+leads, NBS lead and NICU matrons will be copied in as required. This will be 
+logged on the repeat spread sheet. 
+ When the quarterly NBS report is received from the lab the NBS Lead will email all 
+staff who have had a repeat with a breakdown how many on what dates. This will 
+be logged on the repeat spreadsheet. 
+When 2 repeats in a quarter have been required the e-learning for health NBS 
+specific units will need to be undertaken within 2 weeks. 
+When 2 repeats in a quarter have been required the e-learning for health NBS 
+specific u nits will need to be undertaken within 2 weeks and a meeting held with 
+their line manager to make a for mal plan to improve competency. 
+ If 2 or 3 repeats have been taken over a 3 month period crossing 2 quarters the 
+following emails l will be sent. This wil l be logged on the repeat spreadsheet. 
+When 2 repeats across 2 quarters have been required the e-learning for health 
+NBS specific units will need to be undertaken within 2 weeks. 
+When 3 repeats across 2 quarters ha ve been required the e-learning for health 
+NBS specific units will need to be undertaken within 2 weeks and a meeting held 
+with their line manager to make a form al plan to improve competency. 
+ 
+Email templates can be found by clicking here 
+
+12.0 Newborn Outcome Solutions 
+ 
+Babies diagnosed with SCT must have their outcomes add to the Newborn outcome 
+solutions webdased database . 
+Victoria Sharp Neonatal Consultant is Lead Consultant and will input all data. 
+Automatic emails are received from the national team when a baby is diagnosed to initiate 
+the data input. The lead Consultant is emailed directly and t he NBS Lead is also email ed, as 
+a failsafe, and should ensure data is inputted in a timely fashion. 
+User Guide can be found by clicking this link. 
+ 
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 24 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 1 : Mapping and cohort checking in NBS FS 
+ 
+Babies are mapped automatically by Northgate Blood Spot Failsafe Solution at point of the 
+NHS number being generated. 
+ 
+Records are mapped by the baby’s home address (post code or GP code). If the post code 
+or GP code cannot be used, the record is mapped to the hospital of birth (‘org code’). If the 
+‘org code’ cannot be used, the record is mapped to the child health unit code linked to the 
+baby’s record (‘CHU code’). If the ‘CHU code’ cannot be used, the record mov es to the 
+‘unmapped site’ and a manual process is used to place the record. 
+ 
+UH Sussex West’s NBS FS facilities are: 
+ Worthing Hospital_WSX 
+ Chichester St Richards _WSX 
+ 
+Both facilities are checked daily against the birth list to ensure UH Sussex West’s coho rt is 
+present; this is carried out on day 5, i.e. the day the blood spot should be taken by the NBS 
+admin. 
+ 
+ Any missing records for which UH Sussex West will be providing postnatal care 
+will be located via a National Record Search and transferred in. These should be 
+transferred in at the point of notification by the community team lead and added to 
+the birth list or by the screening admin team when the blood spot is taken and has 
+been added to the birth list by the sender - an email should also be sent to t he 
+screening admin to advise of the transfer in. 
+ 
+ Any babies for which UH Sussex West are not providing postnatal care will have 
+their NBS FS record transferred to the correct location, if this has not automatically 
+been done so by Northgate. In each case a National Record Search should be 
+carried out to check the location of the baby and then if required it should be 
+transferred to the correct site with a case note added. In all cases, no matter the 
+location of the NBS FS record, it is the responsibility of the discharging midwife to 
+telephone/email the hospital who will be providing PNC advising of the transfer of 
+care. 
+ 
+ Any babies resident on UH Sussex West’s NICU’s will have their NBS FS record 
+checked to ensure it is in the correct location at the poi nt of sending off the blood 
+spot, the Northgate record should be marked as ‘NICU’ to aid tracking. The NBS 
+FS record will change to purple italics within Northgate to highlight this easily. 
+
+ Any baby resident on another NICU on day 5 whose NBS FS sits in UH Sussex 
+West’s site will have the record case noted and the record transferred, the 
+screening lead for the site will be emailed. The birthlist will have a commnet added 
+to it regarding the location of baby and if a 28 spot required babies details will b e 
+added to this spreadsheet. The Screening admin will check the NBS record to 
+ 
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 25 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ensure the sample has been received and transfer the record back to UH Sussex 
+West should baby repatriate back to UH Sussex West NICU. 
+ 
+ Any records transferred in from other sit es should be checked and accepted by the 
+community team lead or screening admin if UH Sussex West is providing PNC. If 
+the screening admin accepts the record they should notify the community team 
+lead. 
+ 
+ A daily search should be undertaken in NBS FS for transfer in’s by removing the 
+date and ticking the transfer in search box. All transfer ins should be checked and 
+actioned accordingly. 
+ 
+ Any baby moving onto UH Sussex West care for PNC should be searched for on 
+Northgate and transferred in if it is not al ready within the UH Sussex West site by 
+the community team lead or screening admin . This should be carried out at the 
+point the notification from the birth hospital is received. The hospital transferring 
+baby should transfer the NBS FS record but it should not be presumed that this will 
+occur. Records should be searched for even if post day 5 to check that a repeat 
+blood spot was not required. 
+ 
+ Any baby being seen by an independent midwife should have the NBS record case 
+noted with IM’s name and phone numbe r should a repeat be required. 
+ 
+ If a record is present on UH Sussex West NBS FS site and baby is not on the birth 
+list then the record needs investigating. 
+Check babies address and birth hospital; 
+o If baby does not have a UH Sussex West address, case note a nd transfer 
+baby to birth hospital. 
+o If baby has UH Sussex West address, check with Community Teams Leads 
+if we would give PNC, if we would not then transfer to birth hospital with a 
+case note added. 
+Note – some border babies will have PNC delivered by birt h hospital even though live 
+in West Sussex (UH Sussex West providing area). If unsure and team leads are 
+unsure email the screening team or ring postnatal ward of the hospital record is being 
+transferred to so they can check 
+ 
+Records ‘in transfer’ will be visible in both sites until the transfer has been accepted. 
+Records are mapped to our NBS FS sites based on the following criteria: 
+The first “port of call” for Bloodspot mapping is the GP practice code: if a unique mapping is 
+produced on the GP practice, then this will determine the hospital the baby is mapped to and 
+the po stcode will not be considered. 
+Mapped GP’s and postcodes to Worthing Hospital_WSX and Chichester St Richards _WSX 
+can be found by clicking here 
+ 
+NB. Any baby who has a Hampshire CCG GP but is having postnatal care with UH Sussex 
+West will need to be transferred in. 
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 26 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 2: Day 5 – check all cohort is visible in NBS FS 
+
+Instructions on how to check all babies have populated NBFS can be found here NBS admin to locate the birth list in 
+Birthlist failsfe 
+This list is populated daily with all births in UH Sussex West 
+Transfers in notified to NSHP or by the community midwives are also added to the lists if UH Sussex West 
+are providing postnatal care. 
+This is called the bloodspot/NIPE/NHSP list failsafe spreads heet. 
+Births will be highlighted for SRH. 
+Complete the column ‘Northgate checked’ on the spreadsheet 
+ 
+In NBS FS, in both WSH and PIW facilities ensure all babies are visible if UH Sussex West are providing postnatal 
+care. Move to correct facility if required. 
+ 
+In NBS FS, in both WSH and PIW facilities, transfer in any babies who we are providing postnatal care to by 
+carrying out a national search, if not already done so by the community team lead. 
+Choose ‘receiving care in area’ for the reason note, search by NHS number by clicking on 
+
+ In NBS FS, in both WSH and PIW facilities, transfer out any babies who we are not providing postnatal care to, if 
+not already don e so by the community team lead and add a case note. Email the screening lead at the site the 
+record is being transferred to as required. 
+Transfer out by clicking the transfer out arrow 
+ 
+Choose where to transfer the record to. The record will still be vis ible until the receiving site accepts the transfer. 
+It can be cancelled by re clicking on the same icon should a mistake have been made. 
+
+NICU BABIES 
+In NBS FS, in both WSH and PIW facilities, case note if a baby has moved to another NICU. 
+ It is the responsibility of the NICU site taking the bloodspot to transfer in the NBS FS record. However it is good practice to 
+transfer the record to them with a case note and to email the screening lead of the site. 
+ 
+Should a repeat or 28 day spot be required and the NBS FS record is still showing as not being accepted on a transfer, then 
+the community team lead or screening admin should contact the NICU where baby is to ensure the repeat has been taken 
+and case note NBS FS. The relevant lab can also b e contacted. 
+ 
+If baby is resident in UH Sussex West NICU on day 5 then it should be checked that the record is in WSH or PIW facility in 
+NBS FS. It should be transferred in and case noted if not already visible. 
+Badgernet should be checked on day 5&6 for babies transferring on these days to ensure BS has been taken. 
+ 
+Should a repeat be required and baby is no longer resident on UH Sussex West NICU’S then the community team lead or 
+screening admin should advise the NICU/community midwifery team where baby n ow resides to ensure the repeat can be 
+taken, case note NBS FS and transfe r blood spot taken 
+
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 27 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 3: Daily tasks 
+
+ Transfer in any OOA births from eSP. 
+Note if have been screened or if screen required 
+Check that a blood spot card has been 
+dispatched for all babies 5 -8 days old 
+and any 28 day spots 
+These daily checks are carried out by: 
+Worthing Hospital – Postnatal screening admin 
+St Richards Hospital – Postnatal screening admin 
+ 
+Check that the blood spot cards have 
+been received by the lab by 
+undertaking a NBS FS search for all 
+birth dates where samples have been 
+sent 
+ 
+Check NBS FS for any repeats 
+required including 28 day spots 
+ 
+No blood spot 
+card 
+dispatched – 
+notify 
+community 
+team lead by 
+phone or 
+email 
+No blood spot card received by day 13 
+– notify community team lead by p hone 
+or email 
+No result on NBS FS post day 13 of 
+age - ADVISE NBS lead 
+Blood spot cards should be sent by 
+midday for samples taken the previous 
+day to allow drying time. 
+ 
+Guidance from manufacturer is cards 
+require 3 hours to dry 
+Carry out a nationa l record search in 
+NBS FS for any OOA blood spot 
+results as a failsafe for babies born at 
+UH Sussex West but PNC is being 
+provided by another trust 
+Loca te the birth list by clicking here 
+This list is populated daily with all births in UH Sussex West 
+Transfers in notified to NSHP or by the community midwives are also added to the lists. 
+This is called the BLOODSPOT/NIPE/NHSP list failsafe spreadsheet. 
+
+COLUMNS WHICH ARE COMPLETED ON THE BLOODSPOT/NIPE/NHSP LIST FAILSAFE 
+SPREADSHEET ARE TO PROVIDE TRACKIG INFORMATION: 
+ 
+All repeats admission spots and 28 day spots are also recorded on this sheet for the day they are 
+taken. These are recorded under their own headings to enable easy audit 
+Search 
+Badgernet /SEMA 
+for all admissions 
+/transfers. 
+ 
+Add to 
+spreadsheet if in 
+UH S ussex West 
+NICU on day 5 
+and not born UH 
+Sussex West 
+ 
+Add what NICU 
+resident in if not 
+in UH Sussex 
+West 
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 28 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 4: Dispatch pathways 
+ a. Worthing Hospital 
+
+ Transfer in any OOA births from eSP. 
+Note if have been screened or if screen required Blood spot cards from community midwifery are left in the bloodspot box community midwifery office for 
+dispatch. Blood spot cards from the wards are left in the bloodspot box on Bramber ward for collection. 
+Add the correct code to the card: 
+LH= well baby, LHN = NICU baby 
+ Cards should be allowed to dry for 3 hours prior to posting. All cards received 
+into the office after 1pm should be sent the following day 
+On BLOODSPOT/NIPE/NHSP list failsafe spreadsheet complete columns: 
+o date blood spot taken 
+o date blood spot dispatched to the lab 
+o who took the blood spot 
+o if it was a repeat 
+o who dispatched the blood spot 
+If baby is not on the BLOODSPOT/NIPE/NHSP list failsafe spreadsheet add 
+details and email screening admin to notify of the addition. Check: 
+ Baby barcode sticker is on each page 
+ Date of specimen is > 5 day post birth. 
+ Has been signed by a midwife 
+ All boxes are filled in 
+ Date of birth is correct 
+ 
+Blood spot cards are sent in prepaid envelopes to St Helier hospital. 
+No more than 3 blood spot cards can be sent in 1 envelope . 
+Ensure the blood spot part of the card is inserted into the envelope first to avoid damage on opening. 
+Sellotape the envelope for security. 
+ 
+Admission spots are not sent until the 5 day spot accompanies it unless baby has been transferred to 
+another Hospital. 
+Bloodspot cards will not & must not be rejected by any member of the midwifery team for sample 
+size/sufficiency if a repeat sample would then be delayed reaching the lab. 
+The lab makes the decision if a repeat is required. 
+
+ Midwife posts 
+blood spot card 
+directly. 
+ A picture of the 
+front and back of 
+the card should 
+be sent to 
+another midwife 
+for 2nd checking 
+If the blood spot is a repeat/ an admission spot or 28 day spot add all details to 
+the correct title on the babies DOB list 
+ Midwife to 
+contact te am 
+lead or NBS 
+admin clerk to 
+advice card has 
+been sent if they 
+are unable to 
+complete the 
+spreadsheet 
+themselves. 
+Last post at Worthing hospital reception is 
+Weekdays 16:30 and Saturday 11:00 
+ All bloodspots taken by the 
+ward should be checked by a 
+team lead prior to being sent. 
+If the sample has not soaked 
+through or spots are too 
+small this should be retaken 
+so long as there is no delay in 
+sending the sample 
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 29 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ b. St Richards Hospital 
+
+ Transfer in any OOA births from eSP. 
+Note if have been screened or if screen required Blood spot cards from midwifery and NICU are l eft in the blood spot box on the birth centre for dispatch 
+Cards are dispatched by birth centre ward clerk daily , except Sundays. 
+
+Add the correct code to the card: 
+XH= well baby, LXN = NICU baby 
+ Cards should be allowed to dry for 3 hours prior to posting. All cards 
+received into the office after 1pm should be sent the following day. 
+On BLOODSPOT/NIPE/NHSP list failsafe spreadsheet complete the following 
+columns: 
+o Date blood spot taken 
+o Date blood spot dispatched to the lab 
+o Who took the blood spot 
+o If bloo d spot was taken whilst baby was admitted 
+o If it was a repeat 
+o Who dispatched the blood spot 
+If baby is not on BLOODSPOT/NIPE/NHSP list failsafe spreadsheet add 
+details and email screening admin to notify of the addition. 
+o 
+ Check: 
+ Baby barcode sticker is on each page 
+ Date of specimen is > 5 day post birth. 
+ Has been signed by a midwife 
+ All boxes are filled in 
+ Date of birth is correct 
+Blood spot cards are sent in prepaid envelopes to St Helier hospital. 
+No more than 3 blood spot cards can be sent in 1 envelope . 
+Ensure the blood spot part of the card is inserted into the envelope first to avoid damage on opening. 
+Sellotape the envelope f or security. 
+ 
+Admission spots are not sent until the 5 day spot accompanies it unless baby has been transferred to 
+another Hospital. 
+Bloodspot cards will not & must not be rejected by any member of the midwifery team for sample 
+size/sufficiency if a repea t sample would then be delayed reaching the lab. 
+The lab makes the decision if a repeat is required. 
+ 
+ Midwife posts 
+blood spot card 
+directly. 
+A picture of the 
+front and back of 
+the card should 
+be sent to 
+another midwife 
+for 2nd checking 
+ 
+If the blood spot is a repeat/ a 1 day spot or 28 day spot add all details to the 
+correct title on the babies DOB list 
+ Midwife to 
+contact team 
+lead or NBS 
+admin clerk to 
+advice card has 
+been sent if they 
+are unable to 
+complete the 
+spreadsheet 
+
+ Post is taken to the post box at the front of the Hospital All bloodspots taken by the 
+ward should be checked by a 
+team lead prior to being sent. 
+If the sample has not soaked 
+through or spots are too 
+small this should be retaken 
+so long as there is no delay in 
+sending the sample 
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 30 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 5: NICU paperwork 
+ 
+Beeding Ward and NNU will document that a blood spot has been offered, consent to and 
+taken on: 
+ 
+ Neonatal Observation Chart 
+ On Badgernet 
+ On the Discharge to Postnatal Ward Form . 
+ On the discharge sticker if baby is discharged home at less than 10 days old from 
+the unit, which is stuck in the discharge book. (need to check they do this on 
+NNU) . 
+ 
+The following pa perwork is filled out with the date of when the blood spot was taken. 
+ 
+Neonatal Observation chart 
+
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 31 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Discharge to Postnatal Ward Form 
+ 
+Discharge Sticker 
+
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 32 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 6: Child death notifications 
+ 
+The NBS team are advised of neonatal and child deaths from the following departments: 
+ 
+UH Sussex West Neonatal 
+UH Sussex West Maternity 
+UH Sussex Bereavement team 
+SCT CHIS 
+
+In all neonatal deaths, the following is carried out: 
+
+NBS team advised of death 
+ 
+NBS FS checked to ensure that CHIS have marked baby as 
+deceased 
+ 
+Not marked as deceased 
+ 
+NBS team to mark record as deceased. 
+To add a case note regarding where the deceased notification 
+was received from. 
+Check and action as required that SEMA/M IS/S4H/S4N and Birth 
+list are all marked as deceased 
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 33 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 7: New user request for Northgate Failsafe Solution 
+ 
+The following form is required to be filled in by the NBS lead and emailed to the NBS helpdesk to 
+request access and can be found here 
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 34 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 8: Decline NBS screen 
+
+Community team lead advised of decline by midwife offering the NBS. 
+Community team lead review/discuss with midwife. Advise NBS lead. 
+Laboratory receive card with no blood spots 
+Laboratory mark NBS FS record as declined 
+CHIS to send decline letter to family if they have not received copy of decline letter from UH Sussex West 
+ 
+Decline le tters to by midwife/community team lead to the following and a copy saved/uploaded onto babies 
+evolve record under Maternity : 
+Parents (asking them to confirm their decision and advising on when/how they can request screening 
+should they change their mind) 
+GP and Health Visitor 
+CHIS - who will upload to SYSTMONE and will also task the HV team on the system 
+Email letter to SC-TR.CCHIS@NHS.NET and save to evolve 
+The decline letter temp late for parents, which should be added to trust header, and the deline screen 
+spreadsheet can be found here 
+
+Complete baby demographics on blood spot card (barcode sticker to be used) , send card to 
+the laboratory, add decline or decline code if reason known – see below. 
+Record decline on MIS . Note decline on failsafe birth list. Casenote decline on NBS FS 
+ 
+Parents contact midwifery/HV team and consent for screening. 
+ 
+Notify GP & CHIS of contact 
+Midwifery or HV team to arrange to obtain a blood spot for screening, dependent on age of baby. 
+ 
+Newborn blood spot declined. 
+Record decline in maternal hand held notes and babies PCHR book if available . 
+ 
+Decline codes 
+0201 – DECLINED, NO HISTORY OF BEING SCREENED 
+0202 – DECLINED, SCREENED IN UK (AS REPORTED BY 
+PARENTS) WITH NO EVIDENCE OF RESULT 
+0203 – DECLINED, SCREENED OUTSIDE UK WITH 
+EVIDENCE OF RESULT 
+0204 – DECLIN ED, SCREENED OUTSIDE UK WITH NO 
+EVIDENCE OF RESULT 
+ 
+Remember: 
+ 
+Ascertain if all screening is declined. 
+SCD, CF and CHT can be declined 
+individually 
+However, the 6 IMD’S can only be 
+declined as a group 
+ 
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 35 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Appendix 9: Northgate Newborn blood spot failsafe solution has not been populated 
+
+IV. 
+
+National spine has gone 
+down – records not 
+populating 
+Create a local list of all births from M IS/SEMA for each day of the incident 
+. 
+Saved in womenchildrenmgmt folder , maternity folder, Newborn bloodspots, NIPE and NHSP, 
+national databases not populated folder. 
+Complete all columns for all births until all babies have populated NBS FS 
+Serious incident 
+Report to NBS helpdesk unless they have already sent out a notification of the 
+incident 
+NBS FS has gone down - 
+records not populating 
+NORTHGATE 
+ 
+Ensure no screen has been missed 
+ 
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 36 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 10: Deletion of record/ changes to a record in NBS FS 
+ 
+ NBS FS is populated from the national storage system when the NHS number is 
+generated. 
+ Any sub sequent changes due to errors e.g. gender, time of birth, address etc will 
+not change on NBS FS automatically. 
+ 
+ These must be manually changed or reported to Northgate. 
+ NOTE - date of birth can only be changed when baby is searched for in your 
+facility, NOT via a national search . 
+ If a record needs removing this should also be reported to Northgate. 
+ 
+ Northgate should be emailed from an nhs.net account: 
+ nbsfs.helpdesk@nhs.net 
+ 
+ This request will be carried out by Community Team Leads, NBS admin or the 
+Antenatal and Newborn Screening Co -ordinator. 
+ 
+ Screen shots of the NBS FS pages should be taken and saved to ensure correct 
+changes have been made and for tracking should an inciden t occur. 
+
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 37 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 1 1: Repeat blood spots 
+ 
+ All repeats will be requested by the lab, both clinical repeats and avoidable repeats 
+via email to uhsussex.nbbs@nhs.net 
+ For avoidable repeats the lab will send a cop y of the original blood spot card 
+ Once actioned these emails will be saved in the SRH actioned or Worthing 
+actioned folders under year and repeat code 
+ The repeat spreadsheet will be completed and an email sent to the sample taker 
+with a picture of the car d. These can be found in the repeat bloodspot folder . Also 
+see Section 11. 
+ Community team leads and Newborn Screeni ng admin will check NBSFS daily for 
+baby’s requiring a repeat or a card having not been received. 
+ Community team leads will inform midwives and neonatal staff that a repeat is 
+required 
+ If a midwife is unable to sufficiently bleed a baby and advises parent s to take baby 
+to hospital to be bled, a bloodspot card with stickers attached will be given to 
+parents to take with them. 
+ All repeats will be casenoted in NBS FS with date the repeat was taken and sent, 
+for 28 d ay spots a due date will be added. 
+ Any NBS record for babies on OOA NICU will now be transferred to the NBS site 
+who undertook the blood spot if baby is still resident there if the record has not 
+already been transferred out. 
+ Link for info to parents and professionals regarding clinical repeats : 
+repeat -blood -spot-samples -description -in-brief 
+
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 38 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 1 2: Admission Day Spot/Discharge Spot Failsafe 
+
+Badger report for NICU residents received every fortnight from Badgernet data co -ordinator 
+Add a column for 28 day spot 
+For any baby born 31 + 6 GA or earlier, search NBS fs to ensure a 28 day/pre discharge spot 
+has been requested. 
+ 
+This can be checked in NBS FS by: 
+ 
+Checking that the repeat date is on the record 
+Opening the notes section and seeing 
+ 
+Check back on previous badger reports to ensure a 28 day/pre discharge spot has been taken at the correct 
+time. 
+ 
+View notes in NBS FS and check that CHT no longer says repeat required. 
+ 
+Highlight any missed baby TO NICU team and NBS lead. Raise a SIAF and Datix 
+HIGHLIGHT ANY MISSED BABY TO NICU TEAM AND NBS LEAD 
+ 
+Complete columns on the spreadsheet as per above search’s (requested/completed) 
+ 
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 39 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 14: Laboratories 
+Lab name Contact 
+number Who uses the lab in surrounding 
+area 
+St Helier (SW Thames) 02392 296 
+2991 UH Sussex West, East Surrey 
+Portsmouth Labs 02392 286 
+903 Portsmouth and Southampton 
+Hospitals 
+South East Thames Lab 0207 149 
+6243 UH Sussex East 
+ 
+Note – some labs mark NBSFS as sample being received befo re it has been checked. So it m ust not 
+be presumed that a received sample will not then need repeating. 
+
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 40 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 15: Screening co -ordinators email addresses 
+Can be found by clicking here 
+
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 41 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 16: Movers in – advised by CHIS 
+
+Sussex Community Trust (SCT) to identify those who require a bloodspot to be taken. 
+SCT to advise lab if NBS declined (declined not wanted/ declined as had BS taken but no evidence) 
+SCT will refer baby to UH Sussex (SRH&WH) if have a West Su ssex CCG GP 
+For SRH – ring 01243 788122 ext 32591 Howard Ward for appointment 
+For Worthing – ring 01903 286700 CDC for appointment 
+For both complete referral form (still awaiting rom SCT) and email to uhsussex.nbbs@nhs.net 
+The following details must be provided on the referral form: 
+Baby’s name, DOB, NHS number, birth weight, address, Parent’s details, contact number and if a 
+translator is required, GP name, HV name, email and phone number. 
+ 
+Appointment provided to parents and added to SEMA with code (still awaiting confirmation of code). 
+ 
+Email referral received, screening admin to add details to Bloodspot movers in failsafe spreadsheet and check 
+an appointment is on SEMA, Screening admin to add details to movers in reporting template found here. 
+ 
+All documents are saved in: 
+NBS, NIPE, NHSP - SRH & WH (birth list failsafe) 
+Appointment attended, HV emailed to advise blood spot 
+taken . 
+Blood spot sent to lab and failsafe spreadsheet filled in. 
+Screening admin to ring lab to check bloodspot received 
+3 days after posting and complete failsafe spreadsheet 
+with received date and result. 
+Screening admin to complete movers in reporting 
+templ ate and email to england.kss -ph@nhs.net and 
+PHE.Screening -ImmsSSAT@nhs.net by 21st of each 
+month 
+Any repeat required lab will email request to 
+uhsussex.nbbs@nhs.net 
+Appointment NOT ATTENDED . 
+UH Sussex West to send another 
+appointment and advise HV. 
+ 
+2nd appointment NOT ATTENDED . 
+UH Sussex West to send bloodspot card to 
+lab with DNA x 2 written on it. 
+ Lab will code as ‘reasonable effort made 
+to contact’ 
+UH Sussex (SRH&WH) to advise HV of 
+2nd DNA 
+SCT to send DNA letter to parents 
+ 
+If baby < 3months old, screening admin to check if baby has had hearing screen and appoint if necessary. 
+ 
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 42 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 17: Checking that all Newborn screening has been completed 
+
+Midwife day 1 visit 
+Check 
+NIPE 
+complete 
+ 
+Midwife day 5 visit 
+Check NIPE 
+completed, 
+check NHSP 
+completed, 
+undertake 
+bloodspot . 
+ 
+Midwife day 10 visit 
+Check NIPE 
+completed, 
+check NHSP 
+completed, check 
+bloodspot 
+completed. check 
+for any 
+outstanding 
+referrals for mum 
+and baby 
+All 
+completed - 
+discharge 
+from 
+midwifery 
+care 
+NIPE 
+not 
+complete 
+ 
+NIPE or 
+NHSP not 
+completed 
+ 
+Contact 
+NIPE/NHSP 
+admin clerk 
+ASAP 
+ 
+Contact NIPE 
+admin clerk 
+and 
+ 
+SRH - contact 
+community 
+team lead. 
+ 
+WH - 
+Ensure there 
+is an apt to 
+attend 
+Bramber 
+ward. Advise 
+mum of 
+date/time 
+ 
+NIPE or 
+NHSP not 
+completed 
+ 
+Contact 
+NIPE/NHSP 
+admin clerk 
+ASAP 
+ 
+Contact 
+NIPE 
+lead 
+ 
+ Contact 
+NHSP 
+lead 
+ 
+Datix 
+raised if 
+not due 
+to DNA 
+ 
+Blood spot 
+not 
+completed 
+ 
+Take blood 
+spot with 
+consent 
+Contact 
+NBS lead 
+ 
+Datix 
+raised 
+Gain consent for 
+NBS 
+ 
+Ensure consent was 
+obtained for NBS 
+Check 
+NHSP 
+complete 
+NHSP 
+not 
+complete 
+ 
+Check front of 
+postnatal 
+notes for 
+clinic 
+appointment . 
+ 
+CONTACT 
+NHSP ADMIN 
+CLERK/MSW IF 
+NO 
+APPOINTMENT 
+SO 
+APPOINTMNET 
+CAN BE 
+BOOKED 
+ 
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 43 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 17: Examples of bloodspot samples 
+ 
+Insufficient Samples: 
+ 
+The blood spots have soaked through to the back of the card but the volume of blood is too 
+small for testing. There is a risk that a baby with a condition could be missed. 
+
+The blood spot has not soaked through adequately to the back of the card: 
+
+A large volume of blood was obtained but was incorrectly applied to the card meaning it did 
+not soak through. 
+
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 44 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Poor quality sample: 
+There are multiple small spots making up the larger spots and the blood spots have not 
+soaked through to the back of the cards. 
+
+Incomplete drying: 
+Staining on the glassene envelope and the ripples can be seen in the blood spots. There will 
+be an insufficient amount of blood in the sample to obtain an accurate result. Samples should 
+dry for at leats 3 hours before sending . 
+
+5th spot on the card: 
+ 
+The lab are happy for you to add a 5th sample to the card if you are concerned about one of 
+your spots. Do ensure this 5th spot is of correct size and has soaked through. 
+
+A good quality bloodspot sample: 
+ 
+These blood spots are the same size and shape as seen from both sides of the card. 
+ 
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 45 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Each blood spot is made up of a single drop of blood. 
+The density of blood is consistent throughout the bloodspot which is important for obtaining 
+accurate results and 3 sa mples can be taken from each bloodspot . 
+
+Remember to check your card before it is sent for accuracy, ask parents to check the 
+sticker and the details written on the card: 
+
+If posting a sample yourself 
+A photo of the sample and card should be to a colleague for checking 
+Do not send for 3 hours to ensure sample is dry 
+
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 46 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Contact List 
+ 
+Antenatal & Newborn Screening Co -ordinator 
+Karen Lundie 
+karen.lundie@nhs.net 
+Mobile: 07785 996864 
+SRH tel: 01243 788122 ext. 32829 
+WH tel: 01903 205111 ext. 86077 
+ 
+NBS admin clerk 
+Chrissie Thair 
+Christine.thair@nhs.net 
+07808099826 
+ 
+NBS Lead 
+Jacqueline Gregory 
+Jacqueline.gregory1@nhs.net 
+ 
+Community Midwifery – Worthing Hospital 
+01903 285194 
+Fax: 01903 285197 
+ 
+Community Midwifery – St Richards Hospital 
+(Birth Centre) 
+01243 788122 ext. 32811 
+ 
+Neonatal Unit, St Richards Hospital 
+01243 788122 ext 32985/32986 
+ 
+Beeding Ward (SCBU), Worthing Hospital 
+01903 285184 
+ 
+Paediatric Out Patients, Worthing Hospital 
+01903 286700 ext. 84656 
+Dr Katia Vamvakiti, Consultant Paediatrician 
+Ekaterini.Vamvakiti@wsht.nhs.uk 
+ 
+Paediatric Out Patients, St Richards Hospital 
+01243 788 122 ext. 2599. Bleep 419 
+Dr Rowena Remorino, Consultant Paediatrician 
+Rowena.Remorino@wsht.nhs.uk 
+
+Newborn Outcome Solution UH Sussex West Contact 
+Victoria Sharp Neonatal Consultant 
+v.sharp@nhs.net 
+
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 47 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+SW Thames Laboratory 
+South West Thames 
+3rd Floor D Block 
+Regional Newborn Screening Service 
+St Helier Hospital 
+Wrythe Lane 
+Carshalton SM5 1AA 
+ 
+Tel:0208 4532323 
+Fax:0208 4532581 
+j.ssali1@nhs.net 
+
+Northgate 
+Newborn Blood Spot Failsafe Solution 
+0845 0702778 
+nbsfs.helpdesk@nhs.net 
+ 
+CHIS 
+Tel: 01 243 812510 
+Fax: 01243 812590 
+Michelle Wright Manager 
+Child Health Record Bureau, 
+Michellewright2@nhs.net 
+
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 48 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Abbreviation used within this SOP 
+ 
+NBS Newborn Blood Spot 
+CF Cystic Fibrosis 
+CHIS Child Health Information Services 
+CHT Congenital Hypothyroidism 
+GA1 Glutaric Aciduria type 1 
+GP General Practioner 
+HCU Homocystinuria (pyridoxine unresponsive) 
+HV Health Visitor 
+IM Independent Midwife 
+IMD Inherited Metabolic Diseases 
+IVA Isovaleric Acidaemia 
+MCADD Medium -chain acyl -CoA Dehydrogenase Deficiency 
+MSUD Maple Syrup Urine Disease 
+NBSFS Newborn Blood Spot Failsafe Solution 
+NHSEI 
+NICU Neonatal Intensive Care Unit 
+NNU Neonatal Unit 
+PCHR Personal Child Health Record 
+PKU Phenylketonuria 
+PNC Postnatal Care 
+QA Quality Assurance 
+SCD Sickle Cell Disease 
+SCID Severe Combined Immunodeficiency 
+SOP Standard Operating Procedure 
+SRH St Richards Hospital 
+UH Sussex University Sussex Hospital 
+UKNSPC UK Newborn Screening Programme Centre 
+MIS Maternity Information System 
+
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 49 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+References 
+ 
+Standards for NHS newborn blood spot screening 
+https://www.gov.uk/government/publications/standards -for-nhs-newborn -blood -spot-
+screening 
+Managing safety incidents in NHS screening programmes : Ref: NHSEI publications gateway 
+number 2017284. 
+https://www.gov.uk/government/publications/managing -safety -incidents -in-nhs-screening -
+programmes 
+ 
+Screening of individuals with uncertain or incomplete screening status in England July 2017 
+NHSEI 
+https://www.gov.uk/government/ publications/screening -of-individuals -with-uncertain -or-
+incomplete -screening -status 
+ 
+NHS Newborn Blood Spot Screening Programme. Failsafe processes. 
+https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/456192/NBS_
+Failsafe_processes_v1.1.pdf 
+ 
+https://www.england.nhs.uk/wp -content/uploads/2017/04/service -spec -19.pdf 
+ 
+Newborn blood spot screening education and training 
+https://www.gov.uk/guidance/newborn -blood -spot-screening -education -and-training 
+ 
+How to take a newborn blood spot sample 
+https://www.rcm.org.uk/news -views -and-analysis/analysis/how -to-take-a-newborn -blood -
+spot-sample 
+ 
+Health professional handbook: newborn blood spot screening 
+https://www.gov.uk/government/publications/health -professional -handbook -newborn -blood -
+spot-screening 
+ 
+Newborn blood spot screening sampling guideline 
+https://www.gov.uk/government/publications/newborn -blood -spot-screening -sampling -
+guidelines 
+ 
+Newborn blood spot decline letter templates 
+https://www.gov.uk/government/publications/declined -newborn -blood -spot-screening -
+template -letters 
+Newborn blood spot screening: results to paren ts templates 
+https://www.gov.uk/government/publications/newborn -blood -spot-screening -results -to-
+parents -template 
+ 
+Newborn blood spot user gu ides 
+https://www.gov.uk/government/publications/newborn -blood -spot-screening -failsafe -solution -
+user-guide 
+ 
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 50 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/655643/NBSF
+S_quick_reference_guide.pdf 
+ 
+Northgate training videos 
+https://vimeopro.com/phescreening/blood -spot-failsafe -videos/video/223791136 
+ 
+NBS status codes and sub codes 
+https://www.gov.uk/government/publications/status -codes -for-the-newborn -blood -spot-nbs-
+screening -programme 
+ 
+Link for UH Sussex (SRH&WH)safeguarding policy 
+http://nww.westernsussexhospitals.nhs.uk/assets/p16007 -safeguarding -children -policy -
+v2.pdf 
+ 
+Link for UH Sussex (SRH&WH) Surrogacy Guideline 
+http://nww.westernsussexhospitals.nhs.uk/resources/surrogacy -guideline/ 
+ 
+Newborn Blood Spot Wales, training presentation. 
+ 
+NHS Choices website 
+
+PP14002 Newborn Blood spot Screening Standard Operating Procedure v4.1 Page 51 of 51 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Main a dditions /changes to SOP : 
+ 
+Date Page Addition 
+1/7/20 4 Weekly Badgernet notification re transfers in and out of NICU’s 
+1/7/20 11 Link to surrogacy guideline added re consent 
+1/7/20 19 Specific NBS e -learning modules to be completed if avoidable repeat 
+rate is high. 
+1/7/20 19 Postnatal Care Guideline to be referenced for movers out 
+1/7/20 20 Case note NBS Failsafe Solution with IM details if they are seeing baby 
+for NBS 
+1/7/20 20 Mapping postcodes for Henfield and BN41 
+1/7/20 35,36 Movers in pathway and reporting mechanism 
+ 
+11/01/2022 5 SCID 
+11/01/2022 6 Notification to screening team of family history of metabolic conditions 
+if picked up antenatally 
+11/01/2022 13 Leaflets in different language – links to 
+11/01/2022 18 CHIS results pathway 
+11/01/2022 19 KPI reporting - NB2 
+11/01/2022 20,21 Movers in and out 
+11/01/2022 23, 39 Avoidable repeats 
+11/01/2022 24 Newborn Screening Outcome Solutions 
+11/01/2022 36 Decline 
+11/01/2022 40 Laboratories 
+11/01/2022 41 Screening co -ordinators email addresses

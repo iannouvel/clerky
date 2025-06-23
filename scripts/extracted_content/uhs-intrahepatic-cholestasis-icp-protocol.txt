@@ -1,0 +1,413 @@
+# Extracted from: UHS Intrahepatic Cholestasis(ICP) protocol.pdf
+# Guideline ID: uhs-intrahepatic-cholestasis-icp-protocol
+# Content length: 23744 characters
+# Processing date: 1750066902.0634453
+
+UHS -CG-0001 -2023 UH Sussex Intrahepatic Cholestasis of Pregnancy v1.1 Oct 2023 Page 1 of 12 
+Please check against the intranet that this printout is the most recent version of this document. 
+ 
+UH Sussex Intrahepatic Cholestasis of Pregnancy (ICP) Guideline 
+Summary statement: How does the 
+document support patient care? By providing evidence based guidance for staff in the 
+maternity unit on the diagnosis and management of 
+intrahepatic cholestasis of pregnancy (ICP). 
+Staff/stakeholders involved in 
+development: Leads for Maternity Risk Management (Obstetric and 
+Midwifery), Labour Ward Leads (Obstetric and 
+Midwifery), Joint Obstetric Guidelines Group. 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Obstetric Consultant 
+For use by: Obstetric Medical staff and Midwives 
+Purpose: To provide clinical guidance for staff on the diagnosis 
+and management of ICP. 
+This document supports: RCOG 2022 Green top guideline No 43 
+Key related documents: UH Sussex: Labour and Antenatal Risk Assessments 
+UH Sussex : Patient Information: Obstetric Cholestasis 
+Approved by & date: JOGG: 18th October 2023 
+Medicines Governance Committee: 11th July 2023 
+Date uploaded: 18th October 2023 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable -Divisional Ratification only required 
+Ratification Date: Not Applicable -Divisional Ratification only required 
+Expiry Date: May 2026 
+Review date: November 2025 
+If you require this document in another format such as Braille, large print, 
+audio or another language please contact the Trusts Communications Team 
+Reference Number: UHS-CG-0001 -2023 UHS -CG-0001 -2023 UH Sussex Intrahepatic Cholestasis of Pregnancy v1.1 Oct 2023 Page 2 of 12 
+Please check against the intranet that this printout is the most recent version of this document. 
+
+Version Date Author Status Comment 
+
+1.0 
+
+April 2023 Sophia Stone, 
+Obstetric 
+Consultant 
+(SRH&WH) 
+ 
+Jo Sinclair, 
+Obstetric 
+Consultant 
+(RSCH&PRH) 
+
+Archived New merged UH Sussex 
+Maternity guideline 
+replacing: 
+• MP021 Obstetric 
+Cholestasis (legacy East) 
+• CG1102 Intrahepatic 
+Cholestasis of Pregnancy 
+(legacy West) 
+1.1 September 2023 CE Team Live Merged approval from 
+Legacy East. 
+ 
+The interpretation and application of clinical guidelines will remain the 
+responsibility of the individual clinician. 
+If in doubt contact a senior colleague or expert. UHS -CG-0001 -2023 UH Sussex Intrahepatic Cholestasis of Pregnancy v1.1 Oct 2023 Page 3 of 12 
+Please check against the intranet that this printout is the most recent version of this document. 
+
+Contents 
+1.0 Aim ................................ ................................ ................................ .............................. 4 
+2.0 Scope ................................ ................................ ................................ .......................... 4 
+3.0 Responsibilities ................................ ................................ ................................ ........... 4 
+4.0 Abbreviations used in the guideline ................................ ................................ ............. 4 
+5.0 Introduction ................................ ................................ ................................ ................. 4 
+6.0 Diagnosis ................................ ................................ ................................ .................... 5 
+7.0 History and examination ................................ ................................ .............................. 5 
+8.0 Investigations ................................ ................................ ................................ .............. 6 
+9.0 Discussion of maternal and perinatal risks ................................ ................................ ... 6 
+10.0 Management of ICP ................................ ................................ ................................ .... 7 
+10.1 Antenatal Care ................................ ................................ ................................ ............ 7 
+10.2 Drug treatment ................................ ................................ ................................ ............ 7 
+10.3 Timing of birth/ Induction of Labour (IOL) ................................ ................................ ..... 8 
+10.4 Intrapartum care ................................ ................................ ................................ .......... 8 
+10.5 Postnatal care ................................ ................................ ................................ ............. 9 
+10.6 Subsequent pregnancies ................................ ................................ ............................. 9 
+11.0 Audit ................................ ................................ ................................ .......................... 10 
+12.0 Useful links ................................ ................................ ................................ ................ 10 
+References ................................ ................................ ................................ ........................... 11 
+Appendix 1: Flowchart for care of pregnant women and people with itching .......................... 12 UHS -CG-0001 -2023 UH Sussex Intrahepatic Cholestasis of Pregnancy v1.1 Oct 2023 Page 4 of 12 
+Please check against the intranet that this printout is the most recent version of this document. 
+ Intrahepatic Cholestasis of Pregnancy Guideline 
+
+1.0 Aim 
+ 
+The aim of this guideline is to provide evidence based guidance for staff in the diagnosis and 
+management of intrahepatic cholestasis of pregnancy (ICP). 
+
+2.0 Scope 
+ 
+• Obstetricians 
+• Midwives 
+
+3.0 Responsibilities 
+ 
+Midwives and Obstetricians have a responsibility to: 
+ 
+• To access, read, understand and follow this guidance. 
+• To use their professional judgement in application of this guideline. 
+ 
+Management have a responsibility to: 
+ 
+• To ensure the guideline is reviewed as required in line with Trust and National 
+recommendations. 
+• To ensure the guideline is accessible to all relevant staff. 
+
+4.0 Abbreviations used in the guideline 
+ 
+ICP - Intrahepatic Cholestasis of Pregnancy OC - Obstetric Cholestasis 
+LFTs - Liver Function Tests IOL - Induction of Labour 
+AST - Aspartate aminotransferase ALT - Alanine Aminotransferase 
+PEP - Polymorphic Eruption of Pregnancy LKM - Liver -Kidney Microsomal 
+DAU - Day Assessment Unit URSO - Ursodeoxycholic acid 
+COCP - Combined Oral Contraceptive Pill INR - International Normalisation Ratio 
+BA - Bile Acids 
+
+5.0 Introduction 
+ 
+In the UK, Intrahepatic cholestasis of pregnancy (ICP) affects 0.7% of pregnancies in multi - 
+ethnic populations, and 1.2% –1.5% of women/people of Indian -Asian or Pakistani -Asian UHS -CG-0001 -2023 UH Sussex Intrahepatic Cholestasis of Pregnancy v1.1 Oct 2023 Page 5 of 12 
+Please check against the intranet that this printout is the most recent version of this document. 
+ origin. The prevalence is affected by many variables including genetics, racial background 
+and environmental factors. 
+ 
+The aetiology is still unknown and is likely to be multifactorial. There is a high recurrence 
+rate in future pregnancies of between 45 -90%. 
+ 
+Characteristics of ICP include pruritus (itching) in the absence of a rash, and deranged liver 
+function tests (LFTs) and/or raised bile acids (BA), which resolve spontaneously after birth 
+and which have no alternative cause. 
+ 
+In a meta -analysis of adverse perinatal outcomes of ICP with biochemical markers, 
+in singleton pregnancies, stillbirth was associated with maximum total bile acid concentration, 
+especially over 100 micromol/L. In pregnancies with co -morbidities that themselves may 
+impact on pregnancy outcome (such as multifetal, diabetic, pre -eclamptic pregnancies), 
+these must be taken into account when considering risks and care options. 
+ 
+Bile acid concentrations are not associated with intensity of itching. Other liver blood tests, 
+such as alanine transaminase or aspartate transaminase are not associated with pregnancy 
+outcome. In light of this, the consensus is now that the diagnosis of ICP requires elevated 
+maternal bile acid concentrations, and that pregnant women and people with itching and 
+isolated raised transaminases alone (with normal bile acid concentrations) should not be 
+given a diagnosis of ICP. This is supported by the recent systematic review described above, 
+in which there was no association between abnormal maternal and birthing parent 
+transaminase concentrations and stillbirth. 
+
+6.0 Diagnosis 
+ 
+The diagnosis of ICP should be considered in pregnant women and people who have itching 
+in skin of normal appearance and raised peak random total bile acid concentration of 
+19 micromol/L or more. The diagnosis is more likely if it is confirmed that itching and raised 
+bile acids resolve after birth. 
+ 
+Offer repeat liver function tests and bile acid measurement (depending on gestation and 
+clinical context) in women/people with normal blood results whose itch persists, and no other 
+cause is apparent. 
+ 
+If resolution of itching is associated with normalisation of bile acids and liver function tests 
+during pregnancy, the diagnosis of ICP is unlikely to be correct. 
+
+7.0 History and examination 
+ 
+If a diagnosis of ICP is suspected, carry out a structured history and examination, so that 
+other causes of itching and liver dysfunction can be excluded. UHS -CG-0001 -2023 UH Sussex Intrahepatic Cholestasis of Pregnancy v1.1 Oct 2023 Page 6 of 12 
+Please check against the intranet that this printout is the most recent version of this document. 
+ Presence of a skin rash may be diagnostic of Polymorphic Eruption of Pregnancy (PEP) or 
+Pemphigoid Gestationis, and these women/people should be referred or treated as 
+appropriate. 
+
+8.0 Investigations 
+ 
+Bile acid (BA) measurement: raised peak random total bile acid concentration of 
+19 micromol/L or more is indicative of ICP. 
+ 
+Women and people with a typical picture of ICP do not need to routinely undergo the 
+investigations (hepatitis serology and liver ultrasound) for other causes of liver disease. 
+ 
+However, these additional investigations (including viral and autoimmune screen and liver 
+ultrasound), should be considered in women and people and pregnant people with an 
+atypical or uncertain picture of ICP. This may include women and people with markedly 
+elevated transaminases, early onset of ICP in the first or second trimester, a rapidly 
+progressive biochemical picture, any features of liver failure or evidence of acute infection, or 
+if resolution does not occur after birth. Consider discussing the care of women and people 
+with severe, very early or atypical presentation of what appears to be ICP with a 
+hepatologist. 
+ 
+Confirm the diagnosis of ICP in the postnatal period at least 4 weeks after birth, with 
+resolution of itching and liver function tests returning to normal (including bile acids). 
+ 
+9.0 Discussion of maternal and perinatal risks 
+Maternal and birthing parent: 
+• Advise women and people with ICP that the predominant symptom is itching. This 
+can be severe, may fluctuate and may markedly affect sleep. 
+• Women and people with ICP may have a higher chance of developing pre - 
+eclampsia (OR 3.7) or gestational diabetes (OR 2.4). They should have blood 
+pressure and urine monitoring, and testing for gestational diabetes according to 
+national guidance. 
+ 
+Fetal: 
+• Stillbirth: 
+Advise pregnant women and people with isolated ICP and a singleton pregnancy 
+that the risk of stillbirth only increases above population rate once their serum bile 
+acid concentration is 100 micromol/L or more: 
+o In women and people with peak bile acids 19 –39 micromol/L and no other 
+risk factors, advise them that the risk of stillbirth is similar to the background 
+risk. 
+o In women and people with peak bile acids 40 –99 micromol/L and no other 
+risk factors, advise them that the risk of stillbirth is similar to the background 
+risk until 38 –39 weeks' gestation. UHS -CG-0001 -2023 UH Sussex Intrahepatic Cholestasis of Pregnancy v1.1 Oct 2023 Page 7 of 12 
+Please check against the intranet that this printout is the most recent version of this document. 
+ o In women and people with peak bile acids 100 micromol/L or more, advise 
+them that the risk of stillbirth is higher than the background risk. 
+• Advise pregnant women and people with ICP that the presence of risk factors or 
+co-morbidities (such as gestational diabetes and/or pre -eclampsia and/or multi - 
+fetal pregnancy) appear to increase the risk of stillbirth and may influence decision - 
+making around timing of planned birth. 
+• Advise pregnant women and people with moderate or severe ICP that they have a 
+higher chance of both spontaneous and iatrogenic preterm birth. 
+• Advise pregnant women and people with moderate or severe ICP that they have 
+an increased chance of having meconium stained amniotic fluid during labour and 
+birth. 
+• Advise women and people pregnant with moderate or severe ICP that their baby is 
+more likely to receive neonatal care. 
+
+10.0 Management of ICP 
+10.1 Antenatal Care 
+ 
+• Pregnant women and people with ICP should receive the RCOG patient 
+information leaflet: obstetric cholestasis / ICP once the diagnosis has been made. 
+• Pregnant women and people with ICP should be under consultant led care and 
+should be managed within the Day Assessment Unit (DAU). 
+• BA & LFTs should be measured weekly in the majority until birth. 
+• Pregnant women and people should be checked regularly for other conditions that 
+may alter LFTs such as pre-eclampsia, with on -going management dependent on 
+the diagnosis. 
+• Ultrasound and regular antenatal CTG monitoring are not routinely indicated in 
+pregnant women and people with ICP alone and are not reliable predictors of fetal 
+morbidity. 
+• Advise women and people with ICP alone to monitor fetal movements and present 
+for immediate assessment if they have concerns. 
+
+10.2 Drug treatment 
+ 
+• Advise pregnant women and people that there are no treatments that improve 
+pregnancy outcome (or reduce BA concentration) and treatments to improve 
+maternal itching are of limited benefit. 
+• Topical emollient, Aqueous Cream with menthol 1% (RSCH &PRH) or Levomethol 
+1% in Aqueous Cream (SRH & WH), for relief of pruritus may benefit some 
+pregnant women and people. 
+• Antihistamine agents such as chlorphenamine may be considered. 
+• Ursodeoxycholic acid (URSO) has been shown not to improve symptomatic 
+pruritus and should not be prescribed routinely. It may have a place in 
+management of pregnant women and people with severe, very early onset ICP 
+and individualised decision made for its use by senior obstetrician in discussion 
+with maternal and birthing medicine. (The commonly used dosage is 250mg four 
+times a day orally). UHS -CG-0001 -2023 UH Sussex Intrahepatic Cholestasis of Pregnancy v1.1 Oct 2023 Page 8 of 12 
+Please check against the intranet that this printout is the most recent version of this document. 
+ • In pregnant women and people with BA >40 micromol/L who are 34 -36 weeks’ 
+gestation, URSO may offer some benefit in reducing late preterm birth but it is not 
+clear that this reduction results in any benefit to the baby and nor prevent stillbirth. 
+• Other agents should not be offered for treatment of ICP outside of a research 
+study or individualised specialist treatment. 
+• If the prothrombin time is elevated or if evidence of reduced absorption of dietary 
+fats (eg steatorrhoea), consider 10mg water soluble vitamin K (menadiol sodium 
+phosphate). Routine use of vitamin K is not indicated because most pregnant 
+women and people with ICP will not have evidence of reduced fat absorption. 
+• Any pregnant women and people with total bile acids >100 micromol/l should have 
+an urgent consultant review and a discussion regarding on -going management. 
+• Pregnant women and people with bile acids <100 micromol/l but are rapidly rising 
+should also be discussed with a consultant. 
+
+10.3 Timing of birth/ Induction of Labour (IOL) 
+ 
+• Timing of birth should be planned by (or after discussion with) Consultant 
+obstetrician taking into account co-morbidities and peak BA concentration. 
+• Consider planned birth at 38 –39 weeks' gestation in women and people with 
+moderate ICP with peak bile acids 40 –99 micromol/L and no other risk factors; 
+advise them that the overall risk of stillbirth is similar to the background risk until 
+38–39 weeks' gestation. 
+• Consider planned birth at 35 –36 weeks' gestation in women and people with 
+severe ICP with peak bile acids 100 micromol/L or more; advise them that the risk 
+of stillbirth is higher than the background risk. Advise pregnant women and people 
+that giving birth at a late preterm gestation will require their hospital stay to be 
+lengthened to 3 days minimum to monitor their baby (WH&SRH see CG21010 
+Care of the late preterm newborn guideline ). 
+• Advise pregnant women and people that the presence of co -morbidities (such as 
+gestational diabetes, pre -eclampsia, multifetal pregnancy) appear to increase the 
+risk of stillbirth and may influence decision -making around timing of planned birth. 
+
+10.4 Intrapartum care 
+ 
+• Advise pregnant women/people that ICP in itself does not impact their choice 
+around mode of birth and that these decisions should be based on usual obstetric 
+practice for that woman/person. 
+• Offer continuous electronic fetal monitoring (CEFM) to pregnant women/people 
+with peak bile acids 100 micromol/L or more. 
+• There is insufficient evidence for or against CEFM in pregnant women/people with 
+peak bile acids below 100 micromol/L. A shared decision can be made based on 
+co-morbidities and preferences. 
+• Advise pregnant women/people that the presence of risk factors (such as 
+gestational diabetes, pre-eclampsia, multi -fetal pregnancy) appear to increase the 
+risk of adverse perinatal outcomes and that these conditions themselves may UHS -CG-0001 -2023 UH Sussex Intrahepatic Cholestasis of Pregnancy v1.1 Oct 2023 Page 9 of 12 
+Please check against the intranet that this printout is the most recent version of this document. 
+ necessitate monitoring during birth or in conjunction with ICP may influence 
+decision -making around monitoring in labour. 
+• Advise pregnant women and people that meconium -stained liquor is more 
+common in moderate and severe ICP, and that this will influence decision -making 
+around CEFM. 
+• Offer pregnant women and people with uncomplicated ICP standard analgesia 
+and anaesthesia options for birth. 
+• Advise pregnant women and people that there is no evidence of an increased risk 
+of postpartum haemorrhage if they have uncomplicated ICP. 
+
+10.5 Postnatal care 
+ 
+• Inform women and people with ICP that the itch usually stops after birth and LFTs 
+and BAs should return to normal within a few weeks. 
+• BAs and LFTs should be checked at 4 weeks post birth and the woman and 
+people reviewed in a postnatal follow up appointment to ensure resolution of the 
+symptoms and normalisation of blood results and hence confirmation of the 
+diagnosis. 
+• Pregnant women and people with on-going abnormalities do not have ICP and 
+should be investigated via the primary care practitioner for other causes of 
+abnormal liver function. 
+• Pregnant women and people with previous ICP should be advised that ICP does 
+not influence choice of contraception unless they have previously experienced 
+cholestasis secondary to the combined oral contraceptive pill (COCP) - they 
+should consider progesterone -only or non -hormonal methods. 
+• Women and people with previous ICP may have HRT if there are no other 
+contraindications. 
+ 
+10.6 Subsequent pregnancies 
+ 
+• Pregnant women and people should be advised about the risk of recurrence in 
+future pregnancies. Referral should be made for consultant led care if symptoms 
+develop in subsequent pregnancies. 
+• Perform a baseline liver function test and bile acid concentration with 
+booking blood investigations in order to establish that these are normal. UHS -CG-0001 -2023 UH Sussex Intrahepatic Cholestasis of Pregnancy v1.1 Oct 2023 Page 10 of 12 
+Please check against the intranet that this printout is the most recent version of this document. 
+ 11.0 Audit 
+ 
+RCOG suggested audit questions: 
+ 
+• Proportion of pregnant women and people with raised bile acid concentrations 
+offered timing of birth in line with RCOG Green -top Guideline. (>90%). 
+• Proportion of pregnant women and people with uncomplicated raised bile acid 
+concentrations having additional investigations routinely performed. (<10%). 
+• Proportion of pregnant women and people with raised bile acid concentrations 
+offered ursodeoxycholic acid in line with RCOG Green -top Guideline. (<5%). 
+• Proportion of pregnant women and people with severe ICP (peak bile acids 
+≥100 micromol/L) offered continuous electronic fetal monitoring during labour. 
+(>90%). 
+
+12.0 Useful links 
+ 
+Information for healthcare professionals: 
+• Maternal use of medication in pregnancy (UK Teratology Information Service) 
+Maternal exposure – UKTIS 
+ 
+Information for women and people and families: 
+• Research based charity and support group ICP Support 
+http://www.icpsupport.org/ 
+• RCOG. Intrahepatic Cholestasis of Pregnancy . Information for you 
+https://www.rcog.org.uk/for -the-public/ 
+ 
+Information for women and people and their families on use of medicines in pregnancy: 
+• http://www.medicinesinpregnancy.org/ UHS -CG-0001 -2023 UH Sussex Intrahepatic Cholestasis of Pregnancy v1.1 Oct 2023 Page 11 of 12 
+Please check against the intranet that this printout is the most recent version of this document. 
+ References 
+ 
+Royal College of Obstetricians and Gynaecologists (2011) Obstetric Cholestasis (Greentop 
+43 Guideline). Reviewed in 2014 – not updated. 
+ 
+Association of adverse perinatal outcomes of intrahepatic cholestasis of pregnancy with 
+biochemical markers: results of aggregate and individual patient data meta -analyses, 
+Ovadia, C et al, Lancet, March 2019, 393(10174): 899 -909 
+ 
+Conti -Ramsden F, McEwan M, Hill R, Wade J, Abraham G, Buckeldee O, et al. Detection of 
+additional abnormalities or co -morbidities in women with suspected intrahepatic cholestasis 
+of pregnancy . Obstet Med . 2019 ;13(4):185–91. 
+ 
+Interventions for treating cholestasis in pregnancy, Cochrane Review, Gurung V, Stokes M, 
+Middleton P, Milan SJ, Hague W, Thornton JG, The Cochrane Library 2013, Issue 6 
+ 
+Efficacy of Ursodeoxycholic Acid in Treating Intrahepatic Cholestasis of Pregnancy: A Meta - 
+analysis, YANNICK BACQ et al, GASTROENTEROLOGY 2012; 143:1492 –1501 
+ 
+Obstetric cholestasis: outcome with active management. Jain R; Suri V; Chopra S; Chawla 
+YK; Kohli KK, Journal of Obstetrics & Gynaecology Research, May 2013, vol./is. 39/5(953 -9), 
+1341 -8076; 1447 -0756 (2013 May) 
+ 
+The concentrations of bile acids and erythropoietin in pregnant women with intrahepatic 
+cholestasis and the state of the fetus and newborn, Kowalska -Kanka A.; Maciejewski T.; 
+Niemiec K.T., Medycyna wieku rozwojowego, July 2013, vol./is. 17/3(232 -245), 1428 -345X 
+(2013 Jul -Sep) 
+ 
+Ursodeoxycholic acid versus placebo in women with intrahepatic cholestasis of pregnancy 
+(PITCHES): a randomised control trial, Chapell, L et al, Lancet, September 2019, 
+394(10201): 849 -860 UHS -CG-0001 -2023 UH Sussex Intrahepatic Cholestasis of Pregnancy v1.1 Oct 2023 Page 12 of 12 
+Please check against the intranet that this printout is the most recent version of this document. 
+ 
+Appendix 1: Flowchart for care of pregnant women and people with itching

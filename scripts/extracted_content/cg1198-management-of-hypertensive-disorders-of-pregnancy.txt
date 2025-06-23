@@ -1,0 +1,1503 @@
+# Extracted from: CG1198 Management of Hypertensive disorders of pregnancy.pdf
+# Guideline ID: cg1198-management-of-hypertensive-disorders-of-pregnancy
+# Content length: 70887 characters
+# Processing date: 1750066900.1756978
+
+CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 1 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Hypertensive Disorders during Pregnancy Guideline 
+Summary statement: How does the 
+document support patient care? By providing evidence based guidance for staff in the 
+management and treatment of hypertensive disorders during 
+pregnancy 
+Staff/stakeholders involved in 
+development: Leads for Maternity Risk Management (Obstetric and 
+Midwifery), Labour Ward Leads (Obstetric and Midwifery), 
+Joint Obstetric Guidelines Group, Anaesthetists. 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Consultant obstetrician/Midwife 
+For use by: Medical Obstetric, Midwifery and Anaesthetic Staff 
+Purpose: To provide evidence based guidance for staff when caring for 
+women with hypertensive disorders in pregnancy. This 
+guidance should be used in conjunction with the guideline for 
+severe pre -eclampsia and eclampsia. 
+This document supports: NICE Hypertension in Pregnancy NG133 
+Key related documents: UH Sussex (SRH&WH) Maternity Guidelines: 
+Management of Severe Pre-eclampsia and Eclampsia 
+Approved by: Joint Obstetric Guideline Group (JOGG) 
+Approval date: 25th November 2020 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable -Divisional Ratification only required 
+Ratification Date: Not Applicable -Divisional Ratification only required 
+Expiry Date: November 2023 
+Review date: May 2023 
+If you require this document in another format such as Braille, large print, audio or another language 
+please contact the Trusts Communications Team 
+Reference Number: CG1198 CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 2 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Version Date Author Status Comment 
+1.0 August 2011 N. Maguire and H. 
+Clarke Archived New Trust guideline 
+1.1 July 2014 Joint Obstetric 
+Guideline Group Archived 3 year review - no changes 
+2.0 Jan 2018 Miss S Stone Archive 3 yearly review addition of 
+appendix GP letter and 
+Booking risk assessment 
+3.0 Aug 2018 JOGG Archived Change in risk factors 
+4.0 November 2020 S. Stone, 
+Consultant 
+obstetrician 
+J. Collard, Clinical 
+Effectiveness 
+Support Midwife Archived Guideline revised in line with 
+NICE Hypertension in 
+Pregnancy NG133 
+4.1 September 2021 S. Stone, 
+Consultant 
+obstetrician 
+J. Collard, Clinical 
+Effectiveness 
+Support Midwife Live Clarification of Risk Factors. 
+Fluid balance monitoring 
+updated. Home BP 
+monitoring flow chart added. 
+Amendment regarding 
+monitoring of readings and 
+return of equipment to the 
+Home BP monitoring 
+pathway. 
+
+The interpretation and application of clinical guidelines will remain the 
+responsibility of the individual clinician. 
+If in doubt contact a senior colleague or expert. CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 3 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Index 
+1.0 Aim................................ ................................ ................................ .................. 5 
+2.0 Scope ................................ ................................ ................................ .............. 5 
+3.0 Responsibilities ................................ ................................ ............................... 5 
+4.0 Introduction ................................ ................................ ................................ ..... 5 
+5.0 Definitions ................................ ................................ ................................ ....... 6 
+6.0 Assessment of blood pressure and urine ................................ ......................... 6 
+6.1 Degrees of hypertension ................................ ................................ ................. 6 
+6.2 Assessment of proteinuria in pypertensive disorders of pegnancy ................... 6 
+7.0 Risk factors for pre-eclampsia ................................ ................................ ......... 7 
+7.1 Moderate risk factors ................................ ................................ ....................... 7 
+7.2 High risk factors ................................ ................................ .............................. 7 
+7.3 Uterine artery dopplers ................................ ................................ .................... 8 
+8.0 Antenatal care of women/people at high risk of pre-eclampsia ......................... 8 
+9.0 Management of pregnancy with chronic hypertension ................................ ..... 9 
+9.1 Pre-pregnancy care ................................ ................................ ......................... 9 
+9.2 Antihypertensive treatment appropriate for pregnancy ................................ ... 10 
+9.3 Antenatal care ................................ ................................ ............................... 10 
+9.3.1 Fetal monitoring ................................ ................................ ............................ 11 
+9.3.2 Timing of birth ................................ ................................ ............................... 11 
+10.0 Management of pregnancy with later onset or gestational hypertension ....... 12 
+10.1 Antenatal care ................................ ................................ ............................... 12 
+10.1.1 Fetal monitoring ................................ ................................ ............................. 14 
+10.1.2 Timing of birth ................................ ................................ ............................... 14 
+11.0 Management of pregnancy with pre-eclampsia ................................ .............. 15 
+11.1 Antenatal care ................................ ................................ ............................... 16 
+11.1.1 Fetal monitoring ................................ ................................ ............................. 17 
+11.1.2 Timing of birth ................................ ................................ ............................... 18 
+12.0 Intrapartum care for chronic and gestational hypertension and 
+pre-eclampsia ................................ ................................ ................................ 19 
+13.0 Postnatal care for chronic and gestational hypertension and pre-eclampsia 19 
+13.1 Blood pressure ................................ ................................ .............................. 19 
+13.2 Blood tests ................................ ................................ ................................ .... 20 
+13.3 Fluid balance ................................ ................................ ................................ . 21 
+13.4 Follow up ................................ ................................ ................................ ....... 21 
+13.5 Postnatal antihypertensive treatment ................................ ............................. 21 
+13.6 Antihypertensive treatment and breastfeeding ................................ ............... 22 
+14.0 Risk of reoccurrence of hypertensive disorders in pregnancy ........................ 22 
+15.0 Long -term risks of cardiovascular disease ................................ ..................... 22 
+16.0 Monitoring / Audit ................................ ................................ .......................... 24 
+References ................................ ................................ ................................ ............... 25 
+Appendix 1: Drug information ................................ ................................ .................... 26 
+Appendix 2: Antenatal risk assessment for pre-eclampsia ................................ ......... 27 
+Appendix 3: GP letter – Aspirin prophylaxis ................................ .............................. 28 
+Appendix 4: Risk of reoccurrence of hypertensive disorders in pregnancy ............... 29 CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 4 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Appendix 5: Risk of future cardiovascular disease ................................ .................... 30 
+Appendix 6: Home BP pathway and guidance ................................ .......................... 31 
+Appendix 7: GP referral letter for postnatal care ................................ ........................ 33 
+Appendix 8: Postnatal management of hypertension flow chart ................................ . 34 CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 5 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Hypertensive Disorders of Pregnancy Guideline 
+ 
+1.0 Aim 
+ 
+This guideline aims to provide evidence based information for staff to enable them to 
+deliver safe and timely care. 
+ 
+2.0 Scope 
+ 
+• Midwives 
+• Obstetricians 
+ 
+3.0 Responsibilities 
+ 
+Midwives and Obstetricians are expected: 
+ 
+• To access, read, understand and follow this guidance. 
+• To use their professional judgement in the application of this guideline. 
+ 
+Management are expected: 
+ 
+• To ensure the guideline is reviewed as required in line with Trust and 
+National recommendations. 
+• To ensure the guideline is accessible to all relevant staff. 
+ 
+Note: - In cases of severe pre-eclampsia and eclampsia please refer to CG112 
+Management of Severe Pre -eclampsia and Eclampsia . 
+ 
+4.0 Introduction 
+ 
+Hypertensive disorders during pregnancy occur in women/people with pre-existing or 
+chronic hypertension, and in women/people who develop new -onset hypertension in 
+pregnancy. 
+Hypertensive disorders during pregnancy carry risks for the woman/person and the 
+baby. Hypertension in pregnancy remains one of the leading causes of maternal 
+death in the UK. 
+ 
+Hypertensive disorders also carry a risk for the baby. Small -for-gestational -age 
+babies (mainly because of fetal growth restriction arising from placental disease) are 
+common, with 20–25% of preterm births and 14–19% of term births in women/people 
+with pre -eclampsia being less than the tenth growth centile of birth weight for 
+gestation. CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 6 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 5.0 Definitions 
+ 
+For the purposes of this guideline, the following definitions apply: 
+ 
+• Chronic hypertension (formerly known as essential hypertension) is 
+hypertension that is present at the booking visit or before 20 weeks or if the 
+woman/person is already taking antihypertensive medication when referred 
+to maternity services. It can be primary or secondary in aetiology. 
+• Gestational hypertension (formerly known as pregnancy induced 
+hypertension) is new hypertension presenting after 20 weeks without 
+significant proteinuria. 
+• Pre-eclampsia is new hypertension presenting after 20 weeks with 
+significant proteinuria. Pre-eclampsia is a multisystem disorder that can 
+affect almost all maternal organ systems and the unborn baby. 
+• Severe pre-eclampsia is pre-eclampsia with severe hypertension and/or 
+with symptoms, and/or biochemical and/or haematological impairment. 
+• Eclampsia is a convulsive condition associated with pre-eclampsia. 
+• HELLP syndrome is haemolysis, elevated liver enzymes and low platelet 
+count. 
+ 
+6.0 Assessment of blood pressure and urine 
+ 
+6.1 Degrees of hypertension 
+ 
+• Hypertension blood pressure of 140/90 -159/109 mmHg. 
+• Severe hypertension blood pressure of 160/110 or more. 
+ 
+6.2 Assessment of proteinuria in pypertensive disorders of pegnancy 
+ 
+• A reagent -strip reading device (if available) should be used to measure 
+proteinuria in the antenatal period in secondary care settings. 
+• Do not use first morning void to test for proteinuria. 
+• If 1+ proteinuria or more is detected, a sample of urine for urinary protein: 
+creatinine ratio (PCR) should be obtained to quantify proteinuria. 
+Significant proteinuria is diagnosed with a PCR 30mg/mmol or more. If 
+there is uncertainty about the diagnosis of pre -eclampsia, consider re - 
+testing on a new sample, alongside clinical review. 
+ 
+Do not routinely use 24 -hour urine collection to quantify proteinuria. Interpret 
+proteinuria measurements in the context of a full clinical review of symptoms, signs, 
+and other investigations for pre -eclampsia. CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 7 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 7.0 Risk factors for pre-eclampsia 
+ 
+At the booking appointment and repeat in the second trimester either at the 16 -18 
+week or 25 week appointment, the following risk factors for pre-eclampsia should be 
+assessed: 
+ 
+7.1 Moderate risk factors 
+ 
+• Maternal age 40 years or older 
+• Nulliparity 
+• Pregnancy interval of more than 10 years 
+• Family history of pre -eclampsia 
+• Body mass index (BMI) 35 kg/m2 or above 
+• Multiple pregnancy 
+ 
+Additional moderate risk factors for taking aspirin from Saving Babies Lives Care 
+Bundle Version 2 (please note these two risk factors are not risk factors for 
+developing PET): 
+ 
+• Assisted conception (IVF/ IUI) 
+• Current smoker 
+ 
+7.2 High risk factors 
+ 
+• Chronic hypertension 
+• Previous hypertensive disease during pregnancy – gestational 
+hypertension and pre/eclampsia 
+• Chronic kidney disease 
+• Autoimmune disease i.e. lupus of antiphospholipid syndrome 
+• Type 1 or type 2 Diabetes 
+ 
+Additional high risk factors for taking aspirin from Saving Babies Lives Care Bundle 
+(please note these three risk factors are not risk factors for developing PET): 
+ 
+• Low Pregnancy Associated Plasma Protein (PAPP -A) screening blood test 
+• Previous Fetal Growth Restriction (FGR) - either birth weight less than 
+2.5kg over 37 week’s gestation or below the 10th growth centile). 
+• Previous stillbirth 
+ 
+Women/people with one high risk factor or two moderate risk factors of pre- 
+eclampsia should be advised to take 150mg of aspirin once daily at night from 
+12 weeks until 36 weeks. 
+ 
+Women/people with one high risk factor should be referred to the Antenatal Clinic 
+ideally for care under the Obstetric Medicine Consultant or other appropriate CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 8 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Consultant as per local protocol. For women with 2 or more moderate risk factors, 
+referral to Antenatal Clinic should be considered. 
+ 
+7.3 Uterine artery dopplers 
+ 
+Pregnant women/people with risk factors should be managed as indicated in the 
+table below: 
+
+Two moderate risk factors 
+ 
+or 
+ 
+One high risk factor 
+
+Uterine artery 
+dopplers with 
+anomaly scan If normal: 
+Serial USS from 32 weeks every 
+2-4 weeks until birth. 
+If abnormal uterine artery 
+dopplers and EFW 10th Growth 
+Centile or more: Serial USS 
+from 28 weeks every 2-4 weeks 
+until birth. 
+Abnormal uterine artery 
+dopplers and AC or EFW below 
+10th Growth Centile: Refer to 
+Fetal Medicine Consultant. 
+New onset of 
+hypertension, 
+gestational hypertension, 
+pre-eclampsia 
+Serial USS from diagnosis until birth. 
+Saving Babies Lives Care Bundle V2 
+ 
+8.0 Antenatal care of women/people at high risk of pre-eclampsia 
+ 
+Perform uterine artery doppler with anomaly scan and carry out ultrasound fetal 
+growth, amniotic fluid volume assessment and umbilical artery doppler velocimetry 
+(see table in Section 7.3 ) starting at 32 weeks (or at least 2 weeks before previous 
+gestational age of onset if earlier than 28 weeks) and repeating 2-4 weeks until birth 
+in women with previous: 
+ 
+• Severe pre-eclampsia. 
+• Pre-eclampsia that needed birth before 34 weeks. 
+• Pre-eclampsia with a baby whose birth weight was less than the 
+10th growth centile. 
+• Intrauterine death. 
+• Placental abruption. 
+ 
+For women/people at high risk of pre -eclampsia, antenatal monitoring of blood 
+pressure (BP) and urinalysis should be individualised depending on clinical picture, 
+but should be checked every 2 weeks from 28 weeks. CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 9 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Perform CTG when fetal movements are reduced or required in professional 
+judgment. 
+ 
+Pregnant women/people should be made aware of the need to contact Labour Ward 
+promptly if they experience symptoms of pre -eclampsia. Symptoms include: 
+ 
+• Severe headache. 
+• Problems with vision, such as blurring or flashing before the eyes. 
+• Severe pain just below the ribs. 
+• Vomiting. 
+• Sudden swelling of the face, hands or feet. 
+ 
+When women/people present with new onset of any of these symptoms, blood 
+pressure and urinalysis must be checked and further assessment/referral considered. 
+ 
+9.0 Management of pregnancy with chronic hypertension 
+ 
+Chronic hypertension is hypertension that is present at the booking visit or before 
+20 weeks or if the woman/person is already taking antihypertensive medication when 
+referred to maternity services. It can be primary or secondary in aetiology. 
+ 
+9.1 Pre-pregnancy care 
+ 
+Offer women/people with chronic hypertension referral to maternal medicine/ 
+specialist in hypertensive disorders of pregnancy to discuss the risks and benefits of 
+treatment. 
+ 
+Continue with existing antihypertensive treatment if safe in pregnancy or switch to an 
+alternative treatment, unless there is a: 
+ 
+• Sustained systolic blood pressure reading less than 110 mmHg or 
+• Sustained diastolic blood pressure reading less than 70 mmHg or 
+• The woman/person is symptomatic of hypotension. 
+ 
+Offer antihypertensive treatment to pregnant women/people not currently on 
+treatment who have chronic hypertension if they have a: 
+ 
+• Sustained systolic blood pressure reading of 140 mmHg or higher or 
+• Sustained diastolic blood pressure reading of 90 mmHg or higher. 
+ 
+There is an increased risk of congenital abnormalities if angiotensin -converting 
+enzyme (ACE) inhibitors and angiotensin II receptor blockers (ARBs) are taken 
+during pregnancy. These should be stopped as soon as pregnancy is confirmed. 
+Alternative antihypertensive treatment can be discussed with the healthcare 
+professional responsible for managing their hypertension ideally pre -pregnancy. CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 10 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Chlorothiazide diuretics may be associated with congenital abnormality and neonatal 
+complications and alternatives should be considered. 
+ 
+Advise women/people who take antihypertensive treatments other than ACE 
+inhibitors, ARBs, Thiazide or Thiazide -like diuretics that the limited evidence 
+available has not shown an increased risk of congenital malformation with such 
+treatments. 
+ 
+Commence Aspirin 150mg daily at night from 12 weeks gestation until 36 weeks. 
+ 
+Avoid using nitric oxide donors, progesterone, diuretics or low molecular weight 
+heparin, and nutritional supplements or salt restriction to prevent hypertensive 
+disorders in pregnancy. 
+ 
+9.2 Antihypertensive treatment appropriate for pregnancy 
+ 
+• Labetalol can be used to treat women with chronic hypertension. 
+• If Labetalol not suitable (contraindicated with asthma) consider Nifedipine or 
+• Third line, Methyldopa. 
+ 
+Decide treatment based on side effects, risks (to mother and fetus), and the 
+woman/person’s preferences. 
+ 
+9.3 Antenatal care 
+ 
+Women/people with chronic hypertension must be referred to the Obstetric Medicine 
+/ Maternal Medicine Clinic as early as possible in the pregnancy for assessment and 
+plan. 
+ 
+Consider: 
+ 
+• Full history to consider underlying causes of secondary hypertension. 
+• Cardiovascular examination. 
+• Baseline U&E’s and LFT’s and ECG. 
+ 
+A pregnancy plan should be made outlining timing of antenatal appointments and 
+parameters for referral to Day Assessment Unit (DAU) / Antenatal Clinic. 
+ 
+Home BP monitoring should be offered (see Appendix 6 for home BP protocol and 
+pathway). If not available, women/people will need weekly midwifery review if BP 
+control is difficult or 2 -4 weekly for well controlled BP. In addition they should be 
+followed up in maternal medicine clinic. 
+ 
+Urinalysis for proteinuria should be performed at every visit or if home BP monitoring, 
+weekly. Refer to Day Assessment Unit if new onset proteinuria or other symptoms / 
+signs of pre -eclampsia and follow guidance in section 11 for management of 
+suspected pre -eclampsia. CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 11 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Aim for a target blood pressure of 135/85mmHg or less. 
+ 
+Offer advice on weight management, exercise, healthy eating and lowering the 
+amount of salt in their diet. 
+ 
+Offer placental growth factor (PIGF) - based testing (if available) to help rule out pre- 
+eclampsia between 20 weeks and up to 35 weeks of pregnancy, if a woman/person 
+with chronic hypertension is suspect of developing pre -eclampsia. 
+ 
+Schedule additional appointments based on the individual needs of the 
+woman/person and their baby. 
+ 
+9.3.1 Fetal monitoring 
+ 
+If normal artery doppler at anomaly scans, carry out ultrasound fetal growth scans to 
+include amniotic fluid volume assessment and umbilical artery doppler velocimetry at 
+32 weeks and then every 2 -4 weeks until birth. 
+ 
+If abnormal artery doppler, perform serial ultrasounds from 28 weeks and then every 
+2-4 weeks until birth. 
+ 
+Cardiotocography (CTG) is only necessary if fetal activity is abnormal or required in 
+professional judgment. 
+ 
+Refer to the CG15022 Small for Gestational Age and Fetal Growth Restriction 
+Guideline for further information. 
+ 
+9.3.2 Timing of birth 
+ 
+Avoid induction of labour before 37 weeks in women/people with chronic 
+hypertension whose blood pressure is lower than 160/110 mmHg, with or without 
+antihypertensive treatment, unless otherwise clinically indicated. Timing of birth and 
+maternal / fetal indications for birth should be agreed between the senior obstetrician 
+and the woman/person on an individual basis. 
+ 
+Consider induction of labour before 37 weeks for women/people with uncontrolled 
+severe chronic hypertension (110/160 or above), after a course of corticosteroids has 
+been completed (if less than 35 weeks), and consider Magnesium Sulphate in line 
+with CG20013 Preterm Birth Risk Pathway . CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 12 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 10.0 Management of pregnancy with later onset or 
+gestational hypertension 
+ 
+Gestational hypertension is new hypertension presenting after 20 weeks without 
+significant proteinuria. 
+ 
+10.1 Antenatal care 
+ 
+• Women/people with gestational hypertension should be reviewed in DAU, 
+Antenatal Clinic or Labour Ward depending on the severity by a healthcare 
+professional trained in the management of hypertensive disorders of 
+pregnancy. 
+• Refer women/people over 20+0 weeks with a first episode of hypertension 
+(blood pressure of 140/90 mmHg or higher) to DAU or labour ward to be 
+seen within 24 hours. 
+• Urgently refer women/people with severe hypertension (blood pressure of 
+160/110 mmHg or higher) to labour ward to be seen on the same day. The 
+urgency of the referral should be determined by an overall clinical 
+assessment. 
+• Previous history of pre-eclampsia or gestational hypertension, pre-existing 
+vascular or kidney disease, moderate risk factors for pre -eclampsia and 
+gestational age at presentation should be considered. 
+• Offer placental growth factor (PIGF) - based testing (if available) to help 
+rule out pre -eclampsia between 20 weeks and up to 35 weeks of 
+pregnancy, if a woman/person with chronic hypertension is suspect of 
+developing pre -eclampsia. 
+• Antihypertensive treatment (see table below and Section 9.2 – for 
+treatment acceptable in pregnancy). 
+• Bed rest should not be offered as treatment for gestational hypertension. 
+• Home BP monitoring pathway ( Appendix 4 ) may be considered in 
+women/people requiring antihypertensive therapy to maintain normal range 
+BP. 
+ 
+Action Degree of hypertension 
+ 
+Hypertension: 
+blood pressure of 
+140/90 –159/109mmHg Severe hypertension: 
+blood pressure of 
+160/110mmHg or more 
+Admission to 
+hospital Do not routinely admit to 
+hospital. Admit, but if BP falls below 
+160/110mmHg then manage 
+as for hypertension. 
+Antihypertensive 
+pharmacological 
+treatment Offer pharmacological 
+treatment if BP remains 
+above 140/90mmHg. Offer pharmacological 
+treatment to all women. CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 13 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Target blood 
+pressure once on 
+antihypertensive 
+treatment 
+Aim for BP of 135/85mmHg 
+or less. 
+Aim for BP of 135/85mmHg or 
+less. 
+Blood pressure 
+measurement Once or twice a week 
+(depending on BP) until BP 
+is 135/85mmHg or less. Every 15–30 minutes until BP 
+is less than 160/110mmHg. 
+Dipstick 
+proteinuria testing* Once or twice a week (with 
+BP measurement). Daily while admitted. 
+ 
+Blood tests Measure full blood count, 
+liver function and renal 
+function at presentation and 
+then weekly. Measure full blood count, liver 
+function and renal function at 
+presentation and then weekly. 
+PlGF -based testing 
+(if available) Carry out PlGF -based 
+testing (if available) on 
+1 occasion if there is 
+suspicion of pre-eclampsia. Carry out PlGF -based testing 
+(if available) on 1 occasion if 
+there is suspicion of pre - 
+eclampsia. 
+
+Fetal assessment • Offer fetal heart 
+auscultation at every 
+face-to-face antenatal 
+appointment. 
+• Ask about fetal 
+movements at every 
+appointment including 
+telephone 
+appointments. 
+• Carry out ultrasound 
+assessment of the fetus 
+at diagnosis and, if 
+normal, repeat every 
+2 weeks. 
+• Refer to CG15022 Small 
+for Gestational Age and 
+Fetal Growth Restriction 
+Guideline • Offer fetal heart 
+auscultation at every face- 
+to-face antenatal 
+appointment. 
+• Ask about fetal movements 
+at every appointment 
+including telephone 
+appointments. 
+• Carry out a CTG at 
+diagnosis and then only if 
+clinically indicated. 
+• Carry out ultrasound 
+assessment of the fetus at 
+diagnosis and, if normal, 
+repeat every 2 weeks. 
+• Refer to CG15022 Small 
+for Gestational Age and 
+Fetal Growth Restriction 
+Guideline 
+* Use an automated reagent -strip reading device (if available) for dipstick screening 
+for proteinuria in a secondary care setting. 
+Abbreviations: BP, blood pressure; CTG, cardiotocography; PIGF, placental growth 
+factor. 
+NICE NG133 Hypertensive Disorders of Pregnancy 2019 
+ 
+In hospital, observations must be recorded on the MEOW chart and referral made 
+accordingly. CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 14 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 10.1.1 Fetal monitoring 
+ 
+Gestational hypertension (140/90 – 159/109mmHg) 
+ 
+In women/people with gestational hypertension, carry out ultrasound fetal growth to 
+include amniotic fluid volume assessment and umbilical artery doppler velocimetry at 
+diagnosis. Repeat every 2 -4 weeks until birth. 
+ 
+In women/people with gestational hypertension, cardiotocography (CTG) is only 
+necessary if fetal activity is abnormal or required in professional judgement. 
+ 
+Refer to CG15022 Small for Gestational Age and Fetal Growth Restriction Guideline . 
+ 
+Severe gestational hypertension (160/110mmHg or more) 
+At diagnosis: 
+ 
+• CTG. 
+• Ultrasound fetal growth; including amniotic fluid volume assessment and 
+umbilical artery doppler velocimetry (if conservative management planned). 
+• Carry out ultrasound assessment of the fetus at diagnosis and, if normal, 
+repeat every 2 weeks until birth. 
+• Refer to CG15022 Small for Gestational Age and Fetal Growth Restriction 
+Guideline . 
+ 
+If the results of all fetal monitoring are normal, do not routinely repeat CTG 
+more than weekly; unless any of the following occur: 
+ 
+• The woman/person reports a change in fetal movement. 
+• Vaginal bleeding. 
+• Abdominal pain. 
+• Deterioration in maternal condition. 
+ 
+For severe gestational hypertension ensure senior obstetric review for plan of 
+care including: 
+ 
+• Timing, nature and place of future fetal monitoring. 
+• Maternal and fetal indications for birth. 
+• Timing of corticosteroids should be given if indicated. 
+• Liaison with neonatal paediatricians and obstetric anaesthetists. 
+ 
+10.1.2 Timing of birth 
+ 
+• Avoid induction of labour before 37 weeks to women with gestational 
+hypertension whose blood pressure is lower than 160/110mmHg, with or 
+without antihypertensive treatment, unless there are other medical 
+indications. CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 15 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ • Timing of birth and maternal/fetal indications for birth should be agreed 
+between the senior obstetrician and the woman/person on an individual 
+basis. 
+• Consider induction of labour for women before 37 weeks with uncontrolled 
+severe gestational hypertension (160/110 or higher), after a course of 
+corticosteroids has been completed (if less than 35 weeks), and consider 
+Magnesium Sulphate in line with CG20013 Preterm Birth Risk Pathway . 
+ 
+11.0 Management of pregnancy with pre-eclampsia 
+ 
+Pre-eclampsia is new hypertension presenting after 20 weeks with significant 
+proteinuria (1+ or more). Women/people with newly presenting pre -eclampsia 
+should be reviewed on Labour Ward or DAU (depending on severity). 
+ 
+They should be reviewed by a healthcare professional trained in the management of 
+hypertensive disorders of pregnancy. 
+ 
+Subsequent care can be managed between DAU, Antenatal Clinic or Labour Ward 
+depending on the severity. 
+ 
+Offer Labetalol to treat women/people with pre-eclampsia. If Labetalol not suitable 
+(contraindicated with asthma), consider Nifedipine, if Labetalol and Nifedipine not 
+suitable consider Methyldopa. Medication choice should be based on side effects, 
+risks (to mother and fetus) and the woman/person’s preferences. 
+ 
+Carry out a full clinical assessment at each antenatal appointment. 
+ 
+Offer admission for surveillance and interventions needed if there are concerns 
+regarding the wellbeing of the woman/person or fetus. 
+ 
+These concerns can include a sustained diastolic blood pressure 160mmHg or above 
+or a new or persistent biochemical or haematological results that cause concern: 
+ 
+• Rise in creatinine (90micromol/litre or more, 1mg/100ml or more). 
+• Rise in alanine transaminase (over 70IU/litre or twice upper limit of 
+normal range). 
+• Fall in platelet count (under 150,000/microliter). 
+• Signs of impending eclampsia. 
+• Signs of pulmonary oedema. 
+• Other signs of severe pre-eclampsia. 
+• Suspected fetal compromise. 
+• Any other clinical signs that cause concern. CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 16 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 11.1 Antenatal care 
+ 
+Women/people with pre- eclampsia should be managed as indicated in the table 
+below: 
+ 
+Action Degree of hypertension 
+ Hypertension: Severe hypertension: 
+blood pressure of 140/90 – 
+159/109mmHg blood pressure of 
+160/110mmHg or more 
+Admission to 
+hospital Admit if any clinical concerns 
+for the wellbeing of the 
+woman/person or baby. Admit, but if BP falls below 
+160/110mmHg then manage as 
+for hypertension. 
+Antihypertensive 
+pharmacological 
+treatment Offer pharmacological 
+treatment if BP remains 
+above 140/90mmHg. Offer pharmacological 
+treatment to all women. 
+Target blood 
+pressure once 
+on 
+antihypertensive 
+treatment 
+Aim for BP of 135/85mmHg 
+or less. 
+Aim for BP of 135/85mmHg or 
+less. 
+
+Blood pressure 
+measurement 
+At least every 48 hours, and 
+more frequently if the 
+woman/person is admitted to 
+hospital. Every 15–30 minutes until BP is 
+less than 160/110mmHg, then 
+at least 4 times daily whilst the 
+woman/person is an inpatient, 
+depending on clinical 
+circumstances. 
+ 
+Dipstick 
+proteinuria 
+testing* Only repeat if clinically 
+indicated, for example if new 
+symptoms and signs develop 
+or if there is uncertainty over 
+diagnosis. Only repeat if clinically 
+indicated, for example if new 
+symptoms and signs develop or 
+if there is uncertainty over 
+diagnosis. 
+ 
+Blood tests Measure full blood count, 
+liver function and renal 
+function twice a week. Measure full blood count, liver 
+function and renal function 
+3 times a week. CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 17 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Fetal 
+assessment • Offer fetal heart 
+auscultation at every 
+face-to-face antenatal 
+appointment. 
+• Ask about fetal 
+movements at every 
+appointment including 
+telephone appointments. 
+• Carry out ultrasound 
+assessment of the fetus 
+at diagnosis and, if 
+normal, repeat every 
+2 weeks until birth. 
+• Carry out a CTG at 
+diagnosis and then only if 
+clinically indicated. • Offer fetal heart 
+auscultation at every face- 
+to-face antenatal 
+appointment. 
+• Ask about fetal movements 
+at every appointment 
+including telephone 
+appointments. 
+• Carry out ultrasound 
+assessment of the fetus at 
+diagnosis and, if normal, 
+repeat every 2 weeks until 
+birth. 
+• Carry out a CTG at 
+diagnosis and then only if 
+clinically indicated. 
+NICE NG133 Hypertensive Disorders of Pregnancy 2019 
+
+In hospital, observations must be recorded on the MEOW chart and referral made 
+accordingly. 
+ 
+11.1.1 Fetal monitoring 
+Severe pre -eclampsia 
+Carry out CTG at diagnosis of severe pre-eclampsia. 
+ 
+If conservative management of severe confirmed pre-eclampsia is planned, carry out 
+all the following tests at diagnosis: 
+ 
+• Ultrasound fetal growth and amniotic fluid volume assessment. 
+• Umbilical artery doppler velocimetry. 
+ 
+Repeat ultrasound fetal growth, amniotic fluid volume assessment or umbilical artery 
+doppler velocimetry every 2 -4 weeks if normal until birth. 
+ 
+If the results of all fetal monitoring are normal, do not routinely repeat CTG more than 
+weekly; unless any of the following occur: 
+ 
+• The woman/person reports a change in fetal movement. 
+• Vaginal bleeding. 
+• Abdominal pain. 
+• Deterioration in maternal condition. 
+ 
+For women/people with conservative management of pre-eclampsia there needs to 
+be a plan of care to include: CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 18 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ • Timing, nature and place of future fetal monitoring. 
+• Fetal indications for birth. 
+• If and when corticosteroids should be given. 
+• When discussion with neonatal paediatricians and obstetric anaesthetists 
+should take place and what decisions should be made. 
+ 
+The consultant obstetrician should be informed of any abnormal fetal monitoring 
+results.There must be a documented plan in the notes which should include the 
+following: 
+• Maternal and fetal thresholds for planned early birth prior to 37 weeks 
+gestation. 
+• Considerations can include (but not limited to): 
+- Inability to control blood pressure despite using three or more classes 
+of antihypertensive. 
+- Maternal pulse oximetry less than 90%. 
+- Progressive deterioration in liver or renal function, haemolysis or 
+platelet count. 
+- Ongoing neurological features, such as severe intractable headache, 
+repeated visual scotmata, or eclampsia. 
+- Placental abruption. 
+- Reversed end-diastolic flow in the umbilical artery doppler, a non- 
+reassuring CTG or stillbirth. 
+- When corticosteroids should be given. 
+- When discussions with paediatricians and anaesthetists should take 
+place and what decisions should be made. 
+ 
+11.1.2 Timing of birth 
+The consultant obstetrician should be involved in any decisions regarding timing of 
+birth. 
+Weeks of 
+pregnancy Timing of birth 
+ 
+Before 
+34 weeks Continue surveillance unless there are indications for planned 
+early birth. Offer intravenous magnesium sulphate and a course of 
+antenatal corticosteroids in line with CG20013 Preterm Birth Risk 
+Pathway . 
+
+From 34 to 36+6 
+weeks Continue surveillance unless there are indications for planned 
+early birth. 
+When considering the option of planned early birth take into 
+account the woman/person’s and baby’s condition, risk factors 
+(such as maternal comorbidities, multi -fetal pregnancy) and 
+availability of neonatal unit beds. Consider a course of antenatal 
+corticosteroids in line with CG20013 Preterm Birth Risk Pathway . 
+37 weeks 
+onwards Initiate birth within 24–48 hours. 
+NICE NG133 Hypertensive Disorders of Pregnancy 2019 CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 19 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ If birth is planned before 34 weeks, discussion must occur with neonatal and 
+anaesthetic teams. 
+ 
+12.0 Intrapartum care for chronic and gestational hypertension and 
+pre-eclampsia 
+ 
+Hypertension (140/90 –159/109mmHg) 
+• Measure BP hourly. 
+• Continue antenatal hypertensive treatment. 
+• Carry out blood tests according to criteria from antenatal period. 
+• Do not routinely limit duration of second stage of labour if BP stable. 
+• Third Stage - 10 units Syntocinon should be prescribed and administered 
+intramuscularly. 
+• On admission commence fluid balance monitoring as per ‘Maternity Fluid 
+Balance Measurement as an In -Patient or in Labour Guideline’. 
+ 
+Severe Hypertension (160/110mmHg and above) 
+See CG112 Management of Severe Pre-eclampsia and Eclampsia . 
+ 
+13.0 Postnatal care for chronic and gestational hypertension and 
+pre-eclampsia 
+ 
+13.1 Blood pressure 
+ 
+Essential, gestational, intrapartum hypertension or pre -eclampsia may persist in the 
+postnatal period and hypertension, pre -eclampsia or eclampsia can develop de novo 
+postnatally. Blood pressure is physiologically highest around day 3 postnatally and 
+for some women/people a prolonged period of monitoring is justified. If new onset 
+severe headache, visual disturbance or upper abdominal pain occurs, medical review 
+should be sought. 
+ 
+Blood pressure should be checked within the first hour post birth and four hours later 
+as a minimum, and continued 4 hourly for 24 hours if antenatal or intrapartum anti - 
+hypertensives have been needed. 
+ 
+Hypertension and PET may deteriorate in the first 48 -72 hours postpartum. 40% of 
+eclampsia occurs postpartum but is unlikely to present after the fifth postpartum day. 
+ 
+Women/people with complicated pre-eclampsia should stay in hospital for 48-72hrs 
+post birth. 
+ 
+For women/people who have given birth with un-medicated pre-eclampsia monitor 
+blood pressure: 
+ 
+• At least 4 times a day whilst the woman/person is an inpatient and record 
+on MEOWS chart. CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 20 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ • At least once a day during day 3 to day 5 post birth. 
+• On alternate days until normal if blood pressure was abnormal on 
+days 3 -5. 
+ 
+Consider anti-hypertensive treatment if blood pressure persistently 140/90mmHg or 
+more and recommend if higher than 150/100mmHg. 
+ 
+Check for symptoms (headache and epigastric pain) at each blood pressure check. 
+For women/people who have given birth and are on an antihypertensive treatment, 
+measure blood pressure: 
+ 
+• At least 4 times a day whilst the woman/person is an inpatient and record 
+on MEOWS chart. 
+• Continue antenatal antihypertensive treatment (except methyldopa, which 
+should be stopped within 2 days and alternative treatment prescribed or 
+recommence on pre -pregnancy anti -hypertensive). 
+• Consider reducing treatment if blood pressure falls below 140/90mmHg 
+and reduce treatment if blood pressure less than 130/80mmHg. 
+• Offer transfer to community care once the following criteria are met: 
+- There are no symptoms of pre -eclampsia. 
+- Blood pressure, with or without treatment, is 150/100mmHg or less. 
+- Blood results are stable or improving. 
+• All women/people who have had pre-eclampsia should have postnatal care 
+plan documented for transfer to community care. This should include: 
+- Who will provide follow -up care, including medical review if needed. 
+- Frequency of blood pressure monitoring required. 
+- Thresholds for reducing or stopping treatment. 
+- Indications for referral to primary care for blood pressure review. 
+- Self-monitoring of symptoms. (See appendix 8) 
+• Discharge on treatment and provide home BP monitor if patient does not 
+already have one (see appendix 6 and appendix 8 ). Ensure the patient is 
+aware of who (ie the labour ward/triage) and when to contact if the BP 
+rises above the target readings. It is the responsibility of the patient’s 
+named community midwife and the labour ward/obstetric team to oversee 
+the care of the postnatal women/people with hypertension in liaison with 
+the maternal medicine consultants until they are discharged back to the GP 
+(usually between 2and 6 weeks postnatal). 
+• Check BP at home with home monitor every 1 -2 days for up to 2 weeks 
+following discharge or until the woman/person is off treatment and arrange 
+return or collection of home BP monitor. (See appendix 6 and appendix 8 ) 
+ 
+13.2 Blood tests 
+ 
+If mild/moderate pre-eclampsia or step down from CG112 Management of Severe 
+Pre-eclampsia and Eclampsia , measure U&E’s, LFT’s and FBC 48 -72 hours after 
+birth or step down. Repeat as clinically indicated. Do not repeat if results normal. CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 21 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 13.3 Fluid balance 
+ 
+Chronic hypertension and gestational hypertension: 
+Fluid balance monitoring should continue as per CG21009 Maternity Fluid 
+Management as an In -Patient or in Labour Guideline. 
+Severe pre-eclampsia: 
+If creatinine levels are within normal range after step down from intensive fluid 
+balance monitoring as per CG112 Management of Severe Pre -eclampsia and 
+Eclampsia , commence routine fluid balance monitoring as per CG21009 Maternity 
+Fluid Management as an In -Patient or in Labour Guideline. 
+13.4 Follow up 
+ 
+A member of the Obstetric Team should telephone the woman/person’s GP Surgery 
+directly on discharge with plan for follow up, in addition to sending a Discharge Letter 
+marked ‘Urgent for Immediate Medical Review’ (see Appendix 7 ). 
+ 
+Offer medical review (can be with GP or Obstetrician) for women/people with 
+pre-eclampsia: 
+• Who remain on antihypertensive treatment at 2 weeks after discharge. 
+• And at 6-8 weeks postnatally (to include urinary reagent dipstick test). 
+ 
+Women/people who remain on antihypertensive treatment at 6 -8 weeks postnatally, 
+or have persistent proteinuria should be referred for specialist assessment of their 
+hypertension and/or proteinuria to assess kidney function. If abnormal after 3 months 
+they should be referred for specialist kidney assessment. (See appendix 8 ) 
+13.5 Postnatal antihypertensive treatment 
+ 
+• Discuss and decide treatment options with the woman/person based on 
+her preferences. 
+• Offer Enalapril to treat hypertension in women/people during the postnatal 
+period, with appropriate monitoring of maternal renal function and maternal 
+serum potassium. 
+• For women/people of black African or Caribbean family origin with 
+hypertension during the postnatal period, consider antihypertensive 
+treatment with: 
+- Nifedipine or 
+- Amlodipine if the womanperson has previously used this to 
+successfully control their blood pressure. 
+- For women/people with hypertension in the postnatal period, if blood 
+pressure is not controlled with a single medicine consider a 
+combination of Nifedipine (or Amlodipine) and Enalapril. If this 
+combination is not tolerated or is ineffective, consider either: 
+o Adding Atenolol or Labetalol to the combination treatment or 
+o Swapping 1 of the medicines already being used for Atenolol 
+or Labetalol. CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 22 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ • When treating women/person with antihypertensive medication during the 
+postnatal period, use medicines that are taken once daily when possible. 
+• Treat women/people with hypertension in the postnatal period who are not 
+breastfeeding and who are not planning to breastfeed in line with the NICE 
+Guideline on Hypertension in Adults . 
+ 
+13.6 Antihypertensive treatment and breastfeeding 
+ 
+Inform women/people with hypertension who wish to breastfeed that their treatment 
+can be adapted to accommodate breastfeeding, and will not prevent them from 
+breastfeeding. Explain: 
+• Antihypertensive medicines can pass into breast milk. 
+• Most antihypertensive medicines taken while breastfeeding only lead to very 
+low levels in breast milk and would be unlikely to have any clinical effect. 
+• Most medicines are not tested in pregnant or breastfeeding women/people, 
+so disclaimers in the manufacturer’s information are not because of any 
+specific safety concerns or evidence of harm. 
+ 
+As antihypertensive agents have the potential to transfer into breast milk: 
+ 
+• Consider monitoring the blood pressure of babies, especially those born 
+preterm, who have symptoms of low blood pressure for the first few weeks. 
+• When discharged home, advise women/people to monitor their babies for 
+drowsiness, lethargy, pallor, cold peripheries or poor feeding. 
+ 
+Where possible, avoid using diuretics or angiotensin receptor blockers to treat 
+hypertension in women/people in the postnatal period who are breastfeeding or 
+expressing milk. 
+ 
+For further information on breastfeeding and anti-hypertensives see Breastfeeding & 
+Antihypertensives . 
+
+14.0 Risk of reoccurrence of hypertensive disorders in pregnancy 
+ 
+Inform women/people with hypertensive disorders in pregnancy that there is an 
+approximate 1:5 risk of reoccurrence (see Appendix 4 ). 
+ 
+15.0 Long -term risks of cardiovascular disease 
+ 
+Inform women/people who have had a hypertensive disorder of pregnancy that this is 
+associated with an increased risk of hypertension and cardiovascular disease in later 
+life (see Appendix 5 ). 
+ 
+Discuss how to reduce their risk of cardiovascular disease, including hypertensive 
+disorders, with their GP or specialist. This may include: CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 23 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ • Avoiding smoking. 
+• Maintaining a healthy lifestyle. 
+• Maintaining a healthy weight. 
+ 
+In women/people who have had pre-eclampsia or hypertension with early birth before 
+34 weeks, consider pre -pregnancy counselling to discuss possible risks of recurrent 
+hypertensive disorders of pregnancy, and how to lower them for any future 
+pregnancies. 
+ 
+Advise women/people who have had pre-eclampsia to achieve and keep a BMI 
+within the healthy range before their next pregnancy (18.5 –24.9kg/m2). 
+ 
+Advise women/people who have had pre-eclampsia that the likelihood of recurrence 
+increases with an inter -pregnancy interval greater than 10 years. CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 24 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 16.0 Monitoring / Audit 
+ 
+• Pregnant women/people at increased risk of pre -eclampsia at booking 
+appointment are offered a prescription 150mg of Aspirin to take daily at night 
+until 36 weeks. 
+ 
+• Women/people taking antihypertensive medication have a blood pressure of 
+135/85mmHg or less. 
+ 
+• Pregnant women/people with severe hypertension are admitted for a full 
+assessment carried out by a healthcare professional trained in managing 
+hypertension in pregnancy. 
+ 
+• Women/people with pre-eclampsia who have severe hypertension or a high 
+risk of adverse events, or if there are any clinical concerns are admitted to 
+hospital and monitored. 
+ 
+• Women/people with PET have a senior obstetrician involved in any decisions 
+about timing of birth. 
+ 
+• Women/people who have had hypertension have a plan for ongoing 
+antihypertensive management included within the postnatal care plan, which 
+is communicated to their GP when they are transferred to community care 
+after the birth. 
+
+For further audit guidance please contact the Maternity Clinical Effectiveness Team . CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 25 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ References 
+ 
+MBRRACE UK. 2019. MBRRACE -UK Report 2019 : Saving Lives, Improving 
+Mother’s Care 2015 -2017 . Oxford: MBRRACE -UK. 
+ 
+National Institute for Health and Clinical Excellence. 2019. Hypertension in Pregnancy. 
+NICE Pathway . London: NICE. Available at: https://www.nice.org.uk/guidance/ng133 
+ 
+University Hospital Southampton regional maternal medicine network guideline. 
+2020. Hypertension in pregnancy and the puerperium guideline . CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 26 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Appendix 1: Drug information 
+ 
+It is assumed that prescribers will use a drug's SPC to inform decisions made with 
+individual patients. Drugs for which particular attention should be paid to the 
+contraindications and special warnings during pregnancy and lactation are listed below. 
+ 
+Atenolol is licensed for the treatment of hypertension and is already used widely in UK 
+postnatal obstetric practice, but the SPC (August 2013) advises that anticipated benefit 
+be weighed against the possible risks of its use particularly in the first and second 
+trimesters of pregnancy, and in women who may become pregnant or who are 
+breastfeeding. Informed consent on the use of atenolol in these situations should be 
+obtained and documented. 
+Captopril is licensed for the treatment of hypertension and is already used in UK 
+postnatalobstetric practice, but the SPC (August 2013) advises that it is contraindicated 
+in the second and third trimesters of pregnancy and in lactation and that it is not 
+recommended during the first trimester of pregnancy or in breastfeeding for preterm 
+infants and for the first few weeks after delivery. Informed consent on the use of captopril 
+in these situations should be obtained and documented. 
+Enalapril is licensed for the treatment of hypertension and is already used widely in UK 
+postnatal obstetric practice, but the SPC (August 2013) advises that it is contraindicated 
+in the second and third trimesters of pregnancy and that it is not recommended during the 
+first trimester of pregnancy or in breastfeeding for preterm infants and for the first few 
+weeks after delivery. Informed consent on the use of enalapril in these situations should 
+be obtained and documented. 
+ 
+Labetalol is licensed for the treatment of hypertension, including during pregnancy and is 
+already used widely in UK obstetric practice, but the SPC (August 2013) advises that it 
+should only be used during the first trimester of pregnancy if the potential benefit 
+outweighs the potential risk, and that breastfeeding is not recommended. Informed 
+consent on the use of labetalol in these situations should be obtained and documented. 
+Methyldopa is licensed for the treatment of hypertension and is already used widely in 
+UK obstetric practice, but the SPC (August 2013) advises that its use in women who are, 
+or may become, pregnant or who are breastfeeding their newborn infant requires that 
+anticipated benefits be weighed against possible risks. Informed consent on the use of 
+methyldopa in these situations should be obtained and documented. 
+ 
+Metoprolol is licensed for the treatment of hypertension and is already used widely in UK 
+postnatal obstetric practice, but the SPC (August 2013)advises that anticipated benefit be 
+weighed against the possible risks of its use in women who are pregnant or 
+breastfeeding. Informed consent on the use of metoprolol in these situations should be 
+obtained and documented. 
+ 
+Nifedipine is licensed for the treatment of hypertension and is already used widely in UK 
+obstetric practice, but the SPC (August 2013) advises that it is contraindicated in women 
+who may become pregnant, and in pregnancy before week 20, and that any use in 
+pregnancy after week 20 requires a very careful individual risk benefit assessment. It also 
+advises that nifedipine should not be used during breastfeeding. Informed consent on the 
+use of nifedipine in these situations should be obtained and documented. CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 27 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Aspirin in pregnancy Appendix 2: Antenatal risk assessment for pre-eclampsia 
+ 
+Why is aspirin given during pregnancy? 
+Some pregnant women are at risk of developing pre -eclampsia (a serious condition which usually 
+presents as high blood pressure and protein in the urine) and fetal growth restriction (when the baby is 
+smaller than usual due to not growing at a normal rate in the womb). There is evidence to suggest that 
+this group of women are at reduced risk of developing these conditions if they take a low dose of aspirin 
+during their pregnancy. 
+Why do I need aspirin during my pregnancy? 
+If you have 1 of the following risk factors you will be offered aspirin during your pregnancy: 
+(Your midwife/doctor will indicate which risk factor(s) apply to you) 
+▪ Hypertensive disease during your previous pregnancy 
+▪ Chronic kidney disease 
+▪ Autoimmune disease such as systemic lupus erythematosus or antiphospholipid syndrome 
+▪ Type 1 or Type 2 diabetes 
+▪ Chronic hypertension 
+▪ Low Pregnancy Associated Plasma Protein (PAPP -A) screening blood test 
+▪ Previous Fetal Growth Restriction (FGR) - either birth weight <2.5kg over 37 week’s gestation 
+or <10th centile) 
+▪ Previous stillbirth 
+▪ Previous pre-eclampsia or eclampsia 
+If you have 2 of the following risk factors you will be offered aspirin during your pregnancy: 
+(Your midwife/doctor will indicate which risk factors apply to you) 
+▪ First pregnancy 
+▪ Pregnancy interval of more than 10 years 
+▪ Family history of pre-eclampsia 
+▪ Assisted conception (IVF/ IUI) 
+▪ Age 40 years or older 
+▪ Body Mass index (BMI) of 35Kg/m2 or more at first contact 
+▪ Current smoker 
+▪ Multiple pregnancy 
+How much aspirin do I need to take? 
+You will be prescribed 150mg of aspirin to take once daily ideally at night with food. You should take this 
+as soon as you receive the prescription (as this is associated with better outcomes) until the birth of your 
+baby. 
+How will I receive the prescription? 
+Most risk factors will be identified by your midwife at your first booking appointment. The midwife will 
+send a letter to your doctor to request the prescription which you can collect from your doctor’s surgery. 
+Some risk factors may be identified later in your pregnancy, for example following an ultrasound scan. If 
+this is the case your midwife or doctor will inform you at that time and will notify your doctor in the same 
+manner. 
+Are there any contraindications to taking aspirin? 
+If you have any of the conditions below, we would not recommend taking aspirin during your pregnancy: 
+active or previous peptic (stomach or duodenal) ulcer; bleeding disorders (antiplatelet dose); children 
+under 16 years (risk of Reye’s syndrome); haemophilia or severe cardiac failure. 
+ 
+If you develop any side effects, then please contact your midwife or Doctor. 
+▪ Your obstetrician will discuss the benefits and risks of treatment with aspirin after 36 weeks 
+gestation and agree with you when to stop aspirin treatment. 
+▪ Stop aspirin 24 hours prior to an elective caesarean section, induction of labour, or any 
+invasive procedures. 
+Stop aspirin if signs of labour or heavy vaginal bleeding. CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 28 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Appendix 3: GP letter – Aspirin prophylaxis 
+
+Date: 
+ 
+Dear 
+RE: 
+NHS number: 
+ 
+Your patient ................................ . has been identified as having one or more risk 
+factors for development of pre -eclampsia and or intra -uterine growth 
+restriction and therefore meets the criteria for aspirin prophylaxis in 
+pregnancy. She does not have any contraindication or allergy to aspirin and 
+has accepted prophylaxis in accordance with NICE guideline NG133 
+Hypertension in Pregnancy 2019. 
+ 
+I would be grateful if you could prescribe aspirin 150mg daily at night with food 
+throughout the pregnancy. The woman/person will be advised by her 
+obstetrician when to cease taking this dose of aspirin from around 36 weeks 
+but this will be an individualised plan. 
+ 
+Yours sincerely, 
+
+Midwife CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 29 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Appendix 4: Risk of reoccurrence of hypertensive disorders 
+in pregnancy 
+ 
+ Type of hypertension in previous or current pregnancy 
+Prevalence of 
+hypertensive 
+disorder in a 
+future pregnancy Any 
+hypertension in 
+pregnancy 
+Pre-eclampsia Gestational 
+hypertension 
+ 
+Any hypertension Approximately 
+21% 
+(1 in 5) Approximately 20% 
+(1 in 5) Approximately 22% 
+(1 in 5) 
+
+Pre-eclampsia 
+
+Approximately 
+14% 
+(1 in 7) Up to approximately 
+16% 
+(1 in 6) 
+If birth was at 28–34 
+weeksa: 
+approximately 33% 
+(1 in 3) 
+ 
+If birth was at 34–37 
+weeks: 
+approximately 23% 
+(1 in 4) 
+
+Approximately 7% 
+(1 in 14) 
+ 
+Gestational 
+hypertension Approximately 
+9% 
+(1 in 11) Between 
+approximately 6 and 
+12% 
+(up to 1 in 8) Between 
+approximately 11 
+and 15% 
+(up to 1 in 7) 
+Chronic 
+hypertension 
+Not applicable Approximately 2% 
+(up to 1 in 50) Approximately 3% 
+(up to 1 in 34) 
+a No evidence was identified for women/people who gave birth at less than 28 weeks, 
+but the committee agreed that the risk was likely to be at least as high, if not higher, 
+than that for women/people who gave birth between 28 and 34 weeks. 
+NICE NG133 Hypertensive Disorders of Pregnancy 2019 CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 30 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Appendix 5: Risk of future cardiovascular disease 
+
+ Type of hypertension in current or previous pregnancy 
+Risk of future 
+cardiovascular 
+diseasea,b Any 
+hypertension 
+in pregnancy Pre- 
+eclampsia Gestational 
+hypertension Chronic 
+hypertension 
+Major adverse 
+cardiovascular 
+event Risk increased 
+(up to 
+approximately 
+2 times) Risk increased 
+(approximately 
+1.5–3 times) Risk increased 
+(approximately 
+1.5–3 times) Risk increased 
+(approximately 
+1.7 times) 
+Cardiovascular 
+mortality Risk increased 
+(up to 
+approximately 
+2 times) Risk increased 
+(approximately 
+2 times) (no data) (no data) 
+Stroke Risk increased 
+(up to 
+approximately 
+1.5 times) Risk increased 
+(approximately 
+2–3 times) Risk may be 
+increased Risk increased 
+(approximately 
+1.8 times) 
+Hypertension Risk increased 
+(approximately 
+2–4 times) Risk increased 
+(approximately 
+2–5 times) Risk increased 
+(approximately 
+2–4 times) (not 
+applicable) 
+a Risks described are overall estimates, summarised from risk ratios, odds ratios and 
+hazard ratios. 
+b Increased risk is compared to the background risk in women who did not have 
+hypertensive disorders during pregnancy. Absolute risks are not reported, because 
+these will vary considerably, depending on the follow up time (range from 1 to 40 years 
+postpartum). 
+NICE NG133 Hypertensive Disorders of Pregnancy 2019 CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 31 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Appendix 6: Home BP pathway and guidance 
+Self-monitoring of Blood Pressure - Antenatal and Postnatal 
+ 
+Inclusion criteria: 
+Home BP monitoring should only be offered to women who are currently hypertensive 
+i.e. Women with chronic hypertension, gestational hypertension or pre -eclampsia. 
+This is to ensure sufficient supply and equitable access for those who most need it. 
+Normotensive women considered at higher risk of pregnancy hypertension by NICE 
+guidelines should not currently be offered a home BP monitor. They may wish to purchase 
+their own. 
+ 
+Exclusion Criteria: 
+Before women start on this pathway the healthcare professionals must make sure that the 
+women do not come under any of the exclusion categories below. 
+• Women who are diagnosed with severe pre-eclampsia. 
+• Women who have had any systolic BP measurement of 160 mmHg or above and diastolic 
+BP measurement of 110 or above. 
+• Women with worsening abnormality in PET bloods. 
+• Women with symptoms of headache, visual disturbances, abdominal pain or feeling 
+unwell. 
+ 
+Process: 
+Arrange for a woman to attend face to face appointment in day assessment unit or antenatal 
+clinic and check eligibility for self -monitoring of blood pressure. Provide antenatal (or 
+postnatal) check as usual. Women may already own their own validated monitor (which can 
+be used). 
+ 
+The home monitors can be obtained from DAU on each site. 
+Ensure that women’s contact details are up to date on hospital electronic system (home, 
+mobile phone number, email) and update these as necessary. 
+ 
+Women who are suitable for self-monitoring should have a one to one training session on how 
+to measure Blood Pressure (BP) using the equipment provided and how to record it on the 
+monitoring sheet, with a midwife or doctor. They must also complete a blood pressure monitor 
+loan form with the woman/person. 
+ 
+The woman/person should be given an information leaflet, which describes the technique of 
+monitoring and the action to take at each threshold of Blood Pressure. They should be given 
+written instructions on expected frequency of blood pressure monitoring determined by the 
+Consultant as well as the contact details for the Maternity telephone triage 01903 285269, 
+where they could call in for help. 
+ 
+All women suitable for self -monitoring should be entered in a register to be kept in the Day 
+Assessment Unit on both sites. Women/people will be contacted by their community midwife 
+weekly if PIH (gestational hypertension) or alternate week if stable pre -existing hypertension 
+and asked to read out the BP recordings on their sheet or alternatively contact can be 
+maintained via email with a screenshot of BP sheet which should be uploaded onto Medway. 
+ 
+BP and urinalysis, current antihypertensive regime and follow up plan must be recorded on 
+Medway following discussion with the on-call obstetric team or the woman/person’s named 
+consultant. CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 32 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+It is anticipated that women with chronic hypertension will require home BP monitor for entire 
+pregnancy and be followed up in consultant led antenatal clinic/ maternal medicine clinic. 
+ 
+Women with suspected PET/PIH should be discussed with oncall obstetric team, and follow 
+the NICE guidelines for management of hypertension in pregnancy 
+(www.nice.org.uk/guidance/ng133 ) – which includes weekly ‘PET’ blood tests and 
+urinanalysis in women/people with PIH, which may be done by community midwife. 
+Women/people with suspected pre-eclampsia require twice weekly blood tests and should be 
+reviewed in DAU. 
+ 
+Postnatal women with hypertension should monitor BP daily for 10-14 days and see their GP 
+at 2 weeks post -partum. (See appendix 8 ) 
+ 
+Ensure the woman/person is aware of who (i.e. the labour ward/triage) and when to contact if 
+the BP rises above the target readings. It is the responsibility of the patient’s named 
+community midwife and the labour ward/obstetric team to oversee the care of the postnatal 
+women with hypertension in liaison with the maternal medicine consultants until they are 
+discharged back to the GP (usually between 2and 6 weeks postnatal). 
+ 
+Monitors should be returned to DAU (SRH or WH) by 6-8 weeks after birth at the very latest. 
+Community midwives can facilitate the return of the monitor to DAU. 
+ 
+Once returned, wipe the blood pressure monitor thoroughly with a cleaning wipe, and check 
+that all components are correct (e.g. cuff, connector, batteries). 
+ 
+(NB Consider how to record details of blood pressure monitor loans and associated uptake 
+and outcomes as a service evaluation). 
+ 
+Educating women on how to perform and record blood pressure: 
+Women need to be trained in the appropriate technique for taking Blood Pressure. 
+They should be informed about the following and provided with written information: 
+ 
+• Resting for 5 minutes before taking blood pressure. 
+• Do not smoke or drink caffeinated beverages for at least 30 minutes before. 
+• Take the blood pressure reading before (not after) eating. 
+• Sit comfortably with back supported and both feet on the floor (do not cross their 
+legs). 
+• Elevate arm to heart level on a table or a desk. 
+ 
+Ask the woman/person to take her blood pressure twice, at least one minute apart and write 
+the second blood pressure down in the Blood Pressure monitoring sheet provided. 
+Give written instructions on expected frequency of blood pressure monitoring. 
+ 
+Validating the monitor: 
+Blood Pressure monitors once purchased will be inspected by the EBME department and 
+signed off as fit to use, this lasts for one year. After the year it will need to go back to EBME 
+for re -validation. 
+ 
+Please see Home BP Pathway for appendices for forms and written information to give 
+to women monitoring their BP at home. CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 33 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Appendix 7: GP referral letter for postnatal care 
+ 
+St Richard’s Hospital Worthing Hospital 
+Spitalfield Lane Lyndhurst Road 
+Chichester Worthing 
+West Sussex West Sussex 
+PO19 6SE BN11 2DH 
+Tel: 01243 788122 Tel: 01903 205111 
+
+www.westernsussexhospitals.nhs.uk 
+
+URGENT – for immediate review by GP 
+ 
+Date: 
+
+Dear Doctor, 
+This is to inform you that your patient (name)………………………… 
+has been discharged from Worthing Hospital / St Richards Hospital (delete as 
+appropriate) on ………………… following a delivery of a male/female infant. 
+The baby was delivered at ..................... weeks of gestation by: 
+(Mode of delivery) 
+ 
+She has been diagnosed with pre-eclampsia/pregnancy -induced hypertension 
+and has been put on the following treatment regime: 
+
+Plan : Please continue with the antihypertensive treatment for 6 weeks. 
+ 
+At 6-8 week postnatal appointment please perform urine dipstick test and 
+BP measurement. 
+ 
+Please refer to specialist any women who remain on antihypertensives or 
+have persistent proteinuria to assess for kidney function. 
+ 
+Other comments: 
+
+Thank you 
+Yours faithfully, CG1198 Management of hypertensive disorders in pregnancy guideline v4.1 Sept 2021 Page 34 of 34 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ It is the responsibility of the patient’s named community midwife and the labour 
+ward/obstetric team to oversee the care of the postnatal women with hypertension in 
+liaison with the maternal medicine consultants until they are discharged back to the GP 
+(usually between 2 and 6 weeks postnatal). Appendix 8: Postnatal management of hypertension flow chart 
+ 
+Community & Secondary Care Pathway for managing hypertension 
+in the postnatal period 
+ 
+Women/people with complicated PET should remain in hospital for 48 -72 hrs post birth. If 
+medicated antenatally or in intrapartum, should stay in for 4hrly BPs at least for first 24hrs. 
+• Discharge criteria: 
+- No symptoms of PET. 
+- BP is 150/100 or less (with or without treatment). 
+- Blood results are stable or improving. 
+• Plan in place: 
+- Who will provide follow -up care, including medical review if needed. 
+- Frequency of blood pressure monitoring required. 
+- Thresholds for reducing or stopping treatment. 
+- Indications for referral to primary care for blood pressure review. 
+- Self-monitoring of symptoms. 
+• Obstetric Team to phone discharge through to GP and follow up with letter (appendix 7). 
+
+Medicated Hypertension 
+Daily BP for 10-14 days post birth 
+Issue with SelfBP monitor upon hospital discharge. 
+Discharge with 28 days of medication, if required. 
+Unmedicated Hypertension 
+Once discharged - BP daily day 3-5 
+post birth. 
+If BP abnormal on days 3-5, continue 
+on alternate days until normal. 
+Consider anti -hypertensives if 
+higher than 140/90. Recommended 
+if higher than 150/110. 
+Monitors should be returned to DAU (SRH or WH) by 6-8 weeks after birth at the very latest. 
+Community midwives can facilitate the return of the monitor to DAU. 
+GP Appointments 
+2 weeks - see GP post birth. 
+6-8 weeks - GP appointment to dip urine dip, BP check & refer for kidney function if 
+woman/person remains on medication or has persistent proteinuria.

@@ -1,0 +1,524 @@
+# Extracted from: MP042 Epidurals in Labour.pdf
+# Guideline ID: mp042-epidurals-in-labour
+# Content length: 31596 characters
+# Processing date: 1750066901.4352846
+
+University Hospitals Sussex Foundation Trust Page 1 
+ 
+Epidurals in labour and 
+potential complications 
+Maternity Protocol: MP042 
+Date agreed: January 2022
+Epidurals in labour (RSCH PRH only ) MP042 
+ 
+University Hospitals Sussex Foundation Trust Page 2 
+ Guideline Reviewer: Róisín Monteiro, Abby Medniuk 
+Version: 3 
+Approval Committee: Women’s Services Safety and Quality Committee 
+Date agreed: January 2022 
+Review date: November 2024 
+Cross reference: MP035 : Care of women and people in labour 
+ MP043 : Prevention of Acid Aspiration Syndrome 
+MP037 : Fetal Heart MonitoringEpidurals in Labour MP042 
+ 
+University Hospitals Sussex Foundation Trust Page 3 Contents 
+Key Principles ................................ ................................ ................................ ......................... 4 
+Scope ................................ ................................ ................................ ................................ ....4 
+Responsibilities ................................ ................................ ................................ ...................... 4 
+1 Indications for Epidural Analgesia ................................ ................................ ................ 5 
+2 Contraindications to Epidural Analgesia ................................ ................................ ....... 5 
+3 Responsibilities ................................ ................................ ................................ ............ 5 
+3.1 Midwife ................................ ................................ ................................ ............................ 5 
+3.2 Anaesthetist ................................ ................................ ................................ ...................... 6 
+4 Equipment ................................ ................................ ................................ ................... 7 
+5 Eating and Drinking ................................ ................................ ................................ ......7 
+6 Low Dose Epidurals - ‘Walking Epidurals’ ................................ ................................ ......7 
+7 On-going Management of Epidurals in Labour ................................ .............................. 8 
+8 Bolus Top Up ................................ ................................ ................................ ............... 8 
+9 Maternal or parental and fetal monitoring once the epidural is sited ............................ 8 
+10 Catheters ................................ ................................ ................................ ................... 10 
+11 Complications of epidural analgesia ................................ ................................ ........... 10 
+11.2 Hypotension or bradycardia ................................ ................................ .................... 11 
+11.3 High block ................................ ................................ ................................ ................. 11 
+11.4 Immediate Emergency Resuscitative Management ................................ .............. 11 
+11.5 Local Anaesthetic Toxicity ................................ ................................ ....................... 12 
+11.6 Accidental dural puncture during epidural insertion in labour, intrathecal 
+(spinal) catheter and management of headache ................................ ................................ ... 12 
+12 Training ................................ ................................ ................................ ..................... 15 
+Appendix A: Dermatomes – Front & Back View ................................ ................................ .... 16 
+Appendix B Post -natal review of any mother or birthing parent with a Headache after 
+regional anaesthesia ................................ ................................ ................................ ............ 17 
+
+ Epidurals in Labour MP042 
+ 
+University Hospitals Sussex Foundation Trust Page 4 Key Principles 
+A protocol is a set of measurable, objective standards to determine a course of action. 
+Professional judgment may be used in the application of a protocol. 
+Scope 
+This protocol applies to: 
+• Women and people having epidurals in labour. 
+• Women and people with complications from epidurals used during childbirth 
+Responsibilities 
+Midwives, Anaesthetists & Obstetricians: 
+• To access, read, understand and follow this guidance 
+• To use their professional judgment in application of this protocol 
+Management: 
+• To ensure the protocol is reviewed as required in line with Trust and 
+National recommendations 
+• To ensure the protocol is accessible to all relevant staff Epidurals in Labour MP042 
+ 
+University Hospitals Sussex Foundation Trust Page 5 1 Indications for Epidural Analgesia 
+1.1 Maternal or parental request for analgesia 
+1.2 Obstetric or foetal indications which may increase the need for regional analgesic 
+block for delivery, (e.g. IUGR, prematurity, multiple birth, mal presentation) or 
+where premature pushing is causing cervical oedema 
+1.3 Medical indications in the mother or birthing parent (e.g. 
+respiratory/cardiac/obesity/ diabetes/hypertensive disorders) in which reduced 
+stress or work may be beneficial 
+2 Contraindications to Epidural Analgesia 
+2.1 Local or systemic sepsis (relative). N.b. Presumed infection is not a Contra -indication 
+providing antibiotic therapy has been commenced. As a general guide, a mother or 
+birthing parent with a temperature of >39 degrees and WCC > 25 or overt clinical 
+signs of sepsis should not have an epidural. The anaesthetic team will make the 
+final decision 
+2.2 Clotting disturbances and thrombocytopenia. Usually, a platelet count of <80, or 
+abnormal clotting precludes epidural analgesia. Usually, a platelet count between 
+80-100 with abnormal clotting also precludes epidural analgesia. If in doubt discuss 
+with consultant anaesthetist 
+2.3 Maternal or parental hypovolemia or cardiovascular instability 
+2.4 Raised intracranial pressure , or conditions where accidental dural puncture would 
+be particularly detrimental to the patient’s health 
+2.5 Allergy to amide local anaesthetics – very rare 
+2.6 Inability for the service to ensure a midwife can provide 1 to 1 care of the woman or 
+person during labour 
+2.7 Epidurals can be sited if pethidine has been given in the previous 4 hours but the 
+patient must have respiratory rate measured hourly and saturation monitoring 
+ 
+3 Responsibilities 
+3.1 Midwife 
+3.1.1 To ensure women and people are making an informed choice about their 
+pain -relief in labour. If women and people are requesting an epidural for 
+pain relief alone, the midwife providing care should ensure that all other 
+modes of pain relief & support have been offered (as appropriate). Epidurals in Labour MP042 
+ 
+University Hospitals Sussex Foundation Trust Page 6 Midwives should give unbiased and full information to women and people 
+about their choices and the risks and benefits of the pain relief options 
+available. All discussions and decisions should be clearly documented in 
+the maternal or parental notes 
+3.1.2 To provide a laminated epidural information card (OAA epidural 
+information card, available in many languages on the OAA website) to any 
+woman or person considering e pidural pain relief, prior to contacting the 
+anaesthetist 
+3.1.3 To check a platelet count. A recent ante natal test is fine (e.g. 28 week 
+bloods) , unless there is reason to suspect the platelet count is low or 
+dropping (e.g. PIH, IUD, sepsis , recent COVID infection ); in these cases the 
+FBC must have been checked in the previous 24 hours, or more frequently 
+(i.e. 6 hours) if the count is dropping rapidly. Discussion with the 
+anaesthetist should occur for clarification if unclear 
+3.1.4 To ensure the correct equipment is available and working prior to the 
+epidural commencing (see below) 
+3.1.5 To request the anaesthetist to review, consent and perform the epidural 
+when able 
+3.1.6 Epidurals must be managed by an approved midwife with responsibility 
+for this woman or person alone and no other 
+3.1.7 The woman or person must have half hourly cardiovascular observations 
+and hourly neurological assessment (sensory and motor).Please see 
+section 9: Maternal or parental and fetal monitoring once the epidural is 
+sited , for further information 
+3.1.8 Observations should be documented in the maternal or parental notes and 
+deviations from the norm noted and referral to anaesthetist made 
+3.2 Anaesthetist 
+3.2.1 To explain the procedure, the possible complications, answer questions 
+and gain and document informed consent. This should be documented on 
+BadgerNet 
+3.2.2 Aim to attend all women and people within 30 minutes of a request for 
+epidural analgesia, with a maximum time of 1 hour. If unable to facilitate 
+this, attempts should be made to seek additional help 
+3.2.3 Responsible for giving the first test dose via the epidural catheter, and 
+establishing adequate analgesia. Initial doses may be given either as a 
+manual bolus or via the epidural pump. Between 15 and 20ml of 
+Bupivacaine 0.1% with Fentanyl 2μg/ml (the low dose solution) are usually 
+required to establish a functional block. 
+3.2.4 Prescribe all epidural drugs and document procedure on Badgernet 
+3.2.5 Ultimate responsibility rests with the initiating or on -call Anaesthetist Epidurals in Labour MP042 
+ 
+University Hospitals Sussex Foundation Trust Page 7 4 Equipment 
+4.1 Working IV access prior to epidural insertion is essential. The standard IV access is 
+a 16 gauge (grey) cannula . This should be checked and crystalloid solution 
+(Hartmann’s or normal saline) must be immediately available in the room, prior to 
+siting an epidural 
+4.2 The epidural should be clearly labelled to differentiate from an IV line. All epidural 
+infusions must be given using a dedicated epidural pump and yellow giving set 
+4.3 Working oxygen, re -inflatable bag valve mask (AmbuBag) and suction must be 
+available in the room, and a r esuscitation trolley kept nearby 
+4.4 A working PCEA epidural pump must be obtained prior to siting the epidural 
+5 Eating and Drinking 
+5.1 Not all women and people with an epidural are at increased risk of surgical 
+intervention and need restriction of oral intake to clear fluids only. Clear non -fizzy 
+drinks and light carbohydrate foods are acceptable in most, provided labour is 
+progressing normally 
+5.2 Please see Maternity Protocol: MP043 Prevention of Acid Aspiration Syndrome for 
+further information. If unsure, the anaesthetist should decide whether the woman or 
+person should be restricted to clear fluids only 
+6 Low Dose Epidurals - ‘Walking Epidurals’ 
+6.1 With low dose epidurals using bupivacaine concentrations of 0.1% or less the 
+woman or person may be able to be mobile in bed, or walk with the support of the 
+midwife or their birth partner. The development of motor block is variable. Before 
+standing or walking, an assessment of motor block must be made by the midwife, 
+as below 
+
+6.2 Walking is contraindicated if: 
+• not meeting above criteria , 
+• no-one is available to accompany the woman or person, 
+• weight is >100kg, postural hypotension, 
+• non-re-assuring CTG, 
+• risk of cord prolapse Action 
+Step 1 Able to fully straight leg raise 
+Step 2 Able to stand up beside the bed initially with 
+2 assistants for balance - not support 
+Step 3 Completion of three half squats (knee 
+bending) with the assistance of one 
+person for balance only Step 4 Sensation in feet normal or very close to normal Epidurals in Labour MP042 
+ 
+University Hospitals Sussex Foundation Trust Page 8 7 On-going Management of Epidurals in Labour 
+7.1 Analgesia is maintained using a Patient -Controlled Epidural Analgesia (PCEA) mode; 
+this consists of 8 ml boluses, activated solely by the woman or person via the 
+epidural pump, with a 20 -minute “lock -out” 
+7.2 The epidural should be prescribed by the anaesthetist on Badgernet 
+7.3 Midwives can change the epidural mixture bag (if trained and competent to do so) 
+7.4 Women and people should be encouraged to self -administer via the PCEA function 
+when they start to feel breakthrough pain and not to wait until it becomes unbearable 
+7.5 A midwife may NOT give boluses via the pump, and pain not relieved by self - 
+administered PCEA boluses should be referred to the anaesthetist 
+ 
+8 Bolus Top Up 
+8.1 PCEA modes of pain relief aim to combine maternal or parental control, titration of 
+analgesia, and reduced motor block. Additionally, boluses have been demonstrated 
+to produce superior pain -relief to equipotent infusions 
+8.2 It is usually better, to educate women and people , and encourage regular self -
+administrated PCEA boluses where pain is present , rather than have a background 
+infusion . However, in the unlikely event that a woman or person requires multiple 
+anaesthetist boluses for pain, a background infusion rate may be considered at the 
+anaesthetist’s discretion, providing maximum safe dosage is not exceeded. The 
+epidural should be assessed for function, and consideration also given to re -siting 
+the epidural catheter. 
+8.3 Discontinuing an epidural at the start of the second stage is more likely to result in 
+pain that interferes with pushing than in an increased likelihood of spontaneous 
+delivery. Epidurals should NOT therefore be discontinued in the second stage, and 
+women and people should be encouraged to self -administer if pain is present. 
+ 
+9 Maternal or parental and fetal monitoring once the epidural is 
+sited 
+9.1 Maternal or parental pulse and blood pressure must be recorded at five minute 
+intervals for twenty minutes after initial establishment of the epidural, or longer if 
+the woman or person is hypotensive 
+ Epidurals in Labour MP042 
+ 
+University Hospitals Sussex Foundation Trust Page 9 9.2 Maternal or parental blood pressure should be recorded half hourly whilst PCEA is 
+in progress. If further boluses by the anaesthetist are given, m aternal or parental 
+pulse and blood pressure must be recorded at five minute intervals for twenty 
+minutes , prior to resuming usual half hourly monitoring 
+9.3 Distribution of the block should be recorded every hour according to NICE guidance, 
+together with the presence or absence of pain. Distribution is usually determined 
+using ethyl chloride spray, and the upper level of the block is where normal cold 
+sensation is found, compared to the arm or face. Blocks should be tested working 
+upwards from the thighs, bilaterally 
+9.4 Documentation of level of block should be in terms of when sensation changes at 
+the indicated dermatome (see Appendix A) . A block up to T10 (level of umbilicus) 
+is usually required for good analgesia 
+9.5 If the woman or person complains of pain, its site and nature must be documented 
+in the maternal or parental notes. Complaints of pain require confirmation of the 
+distribution of the block by the midwife, prior to action being taken. Action usually 
+involves a bolus being administered by the patient in the appropriate position 
+(according to block assessment) 
+9.6 Motor block should be assessed hourly along with sensory block. The woman or 
+person should be asked to lift her heel off the bed ( straight -leg raise , SLR) 
+9.7 The anaesthetist should be notified when: 
+9.7.1 analgesia is inadequate after block testing and 2 patient -controlled 
+boluses in an appropriate position 
+9.7.2 profound motor block during labour (unable to SLR, even briefly) 
+9.7.3 high sensory block (above T6, breasts or chest) 
+9.8 During the recovery phas e after a spinal anaesthetic or epidural top -up for a 
+procedure, motor block should be tested by the midwife 4hours after last dose of 
+anaesthetic. T he woman or person should be able to SLR by 4 h. If unable to SLR at 
+4 h from the last dose of epidural/spinal local anaesthetic, the anaesthetist should 
+be called to assess whether the woman or person ’s care should be escalated to 
+investigate the possibility of reversible causes of neurological injury. Women and 
+people should be infor med of this likely timescale for resolution of their ne uraxial 
+block and encouraged to alert staff should this be delayed. 
+9.9 If any concerns regarding extensive block when epidural in situ or after 
+removal, the anaesthetist must be informed. Please refer to national guidance 
+for further information: Safety guideline: neurological monitoring associated 
+with obstetric neuraxial block 2020: A joint guideline by the Association of 
+Anaesthetists and the Obstetric Anaesthetists' Association. 
+ Epidurals in Labour MP042 
+ 
+University Hospitals Sussex Foundation Trust Page 10 9.10 Women and people with epidurals are at increased risk of developing a 
+pressure sore. For every woman and people with an epidural the Maternity 
+Adapted Pressure Ulcer Risk Assessment should be completed and the Skin 
+Care Bundle followed. 
+9.11 Continuous fetal heart monitoring should be conducted for 30 minutes after initial 
+establishment of the epidural. Thereafter, intermittent auscultation every 15 
+minutes in 1st stage and 5 minutes in 2nd stage as in normal labour 
+9.12 Where an epidural is working well and the mother or birth parent’s pain is well 
+controlled with PCEA epidural analgesia, continuous EFM is only required for 30 
+minutes after the initial loading dose. When an epidural is not working sufficiently 
+well and requires anaesthetic review, all bolus doses should be followed by 
+continuous EFM for 30 minutes, or longer if there is haemodynamic instability 
+9.13 Contractions should be palpated abdominally regularly by the midwife and 
+documented in the maternal or parental notes as to their strength, frequency and 
+rate 
+10 Catheters 
+10.1 Women or person should be actively encouraged to attempt to void their bladder 
+prior to insertion of the epidural 
+10.2 It is NOT necessary to routinely pass an indwelling urinary catheter on all women and 
+people with an epidural. The aim is to maximise mobility as much as possible 
+10.3 Women and people without a catheter should attempt to pass urine at least 3 -4 
+hourly in labour, on a bedpan if required. If they are unable to void then a catheter 
+should be sited in order to prevent urinary retention and long term bladder damage 
+10.4 If labour is prolonged an indwelling catheter is more likely to be necessary 
+10.5 The denser the epidural block, the greater the risk of urinary retention being 
+unnoticed 
+10.6 Where an indwelling urinary catheter has been inserted for labour it should be 
+a 12FG Foley catheter with 10ml in balloon only. Deflate catheter balloon for 
+vaginal birth 
+10.7 Consider re -catheterisation post -delivery for 6 hours or until can mobilise 
+independently 
+10.8 It must be checked that the woman or person has passed urine following 
+removal of the urinary catheter. See Maternity Protocol MP040: Bladder Care 
+11 Complications of epidural analgesia 
+11.1 Complications may include, but are not limited to: 
+- Hypotension or bradycardia Epidurals in Labour MP042 
+ 
+University Hospitals Sussex Foundation Trust Page 11 - High block 
+- Local anaesthetic systemic toxicity 
+- Accidental dural puncture +/ - headache (PDPH) 
+- Intrathecal (spinal) catheter 
+- Neurological injury – please refer to section 9.9 
+- Pressure ulcer injury prevention – please refer to section 10.8 
+11.2 Hypotension or bradycardia 
+11.2.1 Hypotension < 90 mmHg systolic or maternal or parental bradycardia < 
+60bpm 
+11.2.2 Management: 
+• 02 10L/min by mask 
+• Turn woman or person onto left side 
+• Speed IV fluids. 
+• Stop epidural infusion 
+• Call Anaesthetist 
+11.3 High block 
+11.3.1 If woman or person complains of numbness in arms or difficulty 
+breathing: 
+ 
+• Stop epidural pump and request anaesthetic review. Check 
+maternal or parental pulse, blood pressure and level of block. If 
+block above T6 this will require a more urgent anaesthetic review 
+• Ask woman or person to squeeze your hands and pull you 
+towards them. If weak then remain with the woman or person 
+and pull emergency buzzer. Give 02 10L/min by mask. Fast bleep 
+anaesthetist and fetch resus trolley. 
+• The epidural pump can be recommenced after review and 
+agreement with the anaesthetist 
+11.3.2 If woman or person stops breathing institute immediate resuscitative 
+management (see below) 
+11.4 Immediate Emergency Resuscitative Management 
+• Call for help via emergency bell 
+• Call 2222 Ask for Obstetric Emergency Team and Cardiac Arrest Team 
+• Commence Basic Life support (A.B.C.) 
+• Give oxygen 
+• Lie flat with left tilt (wedge under R buttock) 
+• Obtain venous access x 2 
+• Initiate fluid resuscitation to correct hypotension 
+• Institute Advanced Life Support (intubation/ventilation/inotropes) for 
+persistent hypoxia, hypotension or reduced level of consciousness Epidurals in Labour MP042 
+ 
+University Hospitals Sussex Foundation Trust Page 12 11.5 Local Anaesthetic Toxicity 
+11.5.1 This event usually occurs within 20 minutes of the administration of local 
+anaesthetic. It may occur after inadvertent intravenous local anaesthetic 
+or after a higher dose of anaesthetic in the correct place 
+11.5.2 Specific features: 
+Metallic taste in mouth or ringing in ears, confusion, disorientation and 
+dyspnoea. Ptosis and miosis may occur followed by respiratory muscle 
+paralysis, cyanosis, and apnoea. Cardiac arrest may occur due to anoxia or 
+direct effect of the drug 
+11.5.3 Specific Management 
+Immediate Emergency Resuscitative Management (ABC as above) 
+11.5.4 Lipid rescue 
+The protocol is attached to the cardiac arrest trolley. The anaesthetist will 
+advise in special management. (Usually 1.5 mL/kg of 20% Intralipid as an 
+intravenous bolus followed by 0.25 - 0.5 mL/kg/min for 30 - 60 minutes to 
+an initial maximum of 500 mL in an adult) 
+11.6 Accidental dural puncture during epidural insertion in labour, 
+intrathecal (spinal) catheter and management of headache 
+11.6.1 Dural puncture occurs during the insertion of between 1 in 100 and 1 in 
+300 epidural catheters. It may occur with the Tuohy needle, or CSF may be 
+aspirated from the epidural catheter. The volume of fluid flowing usually 
+makes the diagnosis, but testing for the presence of glucose using urine 
+test sticks can distinguish CSF from saline 
+11.6.2 Catheter migration is possible at any stage during the use of an 
+epidural. All bolus doses should therefore be fractionated, so each 
+dose is safe if the catheter is misplaced 
+11.6.3 Recognition of spinal catheter: 
+11.6.3.1 Fluid can be aspirated from the epidural catheter prior to giving a 
+manual bolus (only the anaesthetist should do this) 
+11.6.3.2 The patient gets comfortable too quickly following a dose 
+(usually within 5 -10 minutes, rather than 10 -15 minutes if drug is 
+in the epidural space 
+11.6.3.3 The block is more dense than expected, eg. Legs begin to feel 
+heavy after 1st dose only 
+11.6.3.4 Blood pressure drops lower than expected 
+ Epidurals in Labour MP042 
+ 
+University Hospitals Sussex Foundation Trust Page 13 11.6.4 Management 
+11.6.4.1 Recognised dural tap during epidural insertion: The epidural 
+should usually be re -sited at another level. An intrathecal dose of 
+local anaesthetic and opiate can be given prior to removal of a 
+misplaced needle or catheter, but backflow may make this 
+unreliable. Typically 2.5 -4mg bupivacaine plus up to 20μg 
+Fentanyl can be given (e.g. 2.5 - 4ml of low dose mixture). 
+Occasionally, especially if the epidural procedure has been 
+particularly difficult, the anaesthetist may decide to leave the 
+epidural catheter in the CSF and manage pain using a ‘spinal 
+catheter’. In this situation, there will be no patient -delivered 
+boluses and ALL top -ups will be given by the anaesthetist. This 
+plan must be agreed by the responsible consultant anaesthetist. 
+11.6.4.2 Recognised intrathecal (spinal) location of catheter at any other 
+time: if catheter migration is suspected, the PCEA button should 
+be removed from the patient (and/or stop the epidural program 
+on the pump), they should be sat upright, a full set of 
+observations taken, block assessment performed and the 
+anaesthetist should be alerted for urgent review. 
+11.6.4.3 Once an epidural catheter has been correctly sited, it must be 
+clearly labelled “dural tap”. All top ups are given by the 
+anaesthetist until happy the epidural is safe to use normally 
+(note, this point might not be reached). Drug may traverse the 
+dura, so caution is required and top ups must be fractionated. 
+The woman or person must be informed, and the likely 
+consequences (risk of post -dural puncture headache) must be 
+explained. Also inform the labour ward coordinator and 
+obstetricians covering the labour ward. The consultant 
+anaesthetist on in day time should review the woman or person. 
+Document on Badgernet 
+11.6.4.4 Delivery/birth may proceed as normal. Extreme caution is required if 
+a high dose top up is required for caesarean section. There is no 
+contraindication to pushing in the second stage. Instrumental 
+delivery and post -partum bed rest do not decrease headache 
+incidence. 
+ 
+11.6.4.5 Following delivery the woman or person should be prescribed 
+regular oral analgesia, and encouraged to drink as much water as 
+possible. Laxatives should be prescribed to limit constipation and 
+straining. The OAA leaflet on post -dural puncture headache should 
+be given to any woman or person with a headache which might be a 
+PDPH. Early review by a consultant anaesthetist is required and a 
+blood patch should be offered for symptoms of post -dural puncture 
+headache. 
+ Epidurals in Labour MP042 
+ 
+University Hospitals Sussex Foundation Trust Page 14 11.6.5 Post -partum headache 
+ This may be due to a range of causes. These include: 
+• Fatigue 
+• Dehydration 
+• Dural puncture (either with an epidural or spinal needle). 
+• Migraine 
+• Infection 
+• Pre-eclampsia 
+• Intracranial pathology including tumour, haematoma 
+and cortical vein thrombosis. 
+11.6.6 A full history and neurological examination must be taken to establish the 
+diagnosis. The PDPH presentation form should be complet ed on 
+Badgernet. Further follow up IS required for this presentation, and so 
+theywill move to the PDPH follow up list on BadgerNet for subsequent 
+follow ups. Appropriate investigations and treatment will be organised by 
+the relevant medical staff, depending on the likely diagnosis. 
+11.6.7 Dural puncture headache is usually a frontal or occipital headache 
+extending to the neck and shoulders. It is worsened by standing and 
+relieved by lying down. It may occur following spinal anaesthesia, and in 
+the absence of a diagnosed dural tap. About 70% of headaches due to 
+dural puncture resolve in the first week, but if the headache limits a 
+woman or person’s ability to care for their child, the consultant 
+anaesthetist may recommend a blood patch. 
+11.6.8 A Blood patch is best formed at least 24 -48 hours post -delivery. Late 
+patching is associated with a lower re -patch rate but the timing 
+decision will also depend on the severity of the headache. Headaches 
+are completely relieved 50% of the time after the first patch, with a 
+requirement for re -patching of 30 -40% depending on the timing of the 
+first patch. 
+11.6.9 All women and people who have a confirmed or suspected dural 
+puncture, with or without headache, should have this communicated to 
+their GP. There is a standard letter template which should be completed 
+and sent to the GP (Appendix B) 
+11.6.10 All women and people with a suspected PDPH should be given a 
+patient information leaflet. National leaflets can be accessed through the 
+following websites: 
+• https://www.labourpains.com/assets/_managed/cms/files/Headache_after
+_epidural.pdf 
+• https://www.rcoa.ac.uk/sites/default/files/documents/2019 -11/10 -
+HeadachesSpinalEpiduralweb.pdf Epidurals in Labour MP042 
+ 
+University Hospitals Sussex Foundation Trust Page 15 12 Training 
+Please refer to the Training Needs Analysis document for details on staff training in relation to 
+this protocol. 
+Please refer to the Monitoring and Auditing document for details on monitorin g compliance 
+13 References 
+National Institute for Healt h and Care Excellence. Clinical guideline [CG190]: Intrapartum care 
+for healthy women and babies, 2014 (revised 2017). L ondon: NICE, 2017. 
+https://www.nice.org.uk/guidance/cg190 
+Management of Postdural Puncture Headache, OAA December 2019 https://www.oaa -
+anaes.ac.uk/Clinical_Guidelines 
+Raising the standard section 06, obstetric services. RCOA www.rcoa.ac.uk 
+National Institute for Healt h and Care Excellence. Clinical guideline [CG190]: Intrapartum 
+care for healthy women and babies, 2014 (revised 2017). London: NICE, 2017. 
+Monteiro, Salman, Malhotra and Yentis. Analgesia, Anaesthesia and Pregnancy – A Practical 
+Guide London: CUP, 2019, pp78 -86, 143 -158. 
+Yentis SM, Lucas DN, Brigante L, Collis R, Cowley P, Denning S, Fawcett WJ, Gibson A. Safety 
+guideline: neurological monitoring associated with obstetric neuraxial block 2020: A joint 
+guideline by the Association of Anaesthetists and the Obstetric Anaesthetists' Association. 
+Anaesthesia. 2020 Jul;75(7):913 -919. 
+
+ Epidurals in Labour MP042 
+ 
+University Hospitals Sussex Foundation Trust Page 16 Appendix A: Dermatomes – Front & Back View 
+ 
+Epidurals in labour (RSCH PRH only ) MP042 
+ 
+University Hospitals Sussex Foundation Trust Page 17 
+ Appendix B Post -natal review of any mother or birthing parent with a 
+Headache after regional anaesthesia 
+ 
+Dear General Practitioner 
+This person was recently admitted under the obstetric team for delivery of their baby. 
+During their stay a member of the anaesthetic team performed a spinal/epidural 
+block. As a complication of this procedure they unfortunately developed a post dural -
+puncture headache. 
+ This headache didn’t settle with conservative management including simple 
+analgesia and hydration, so an epidural blood patch was performed in order to 
+treat it. This involves sterile 
+injection of autologous blood into the epidural space which clots and stops the 
+CSF leakage. 
+ The headache improved and the patient agreed to continue with 
+conservative management. 
+Should this patient present to your practice with headaches in the near future please be 
+aware that post dural -puncture headaches can recur, despite the initial success of a 
+blood patch/conservative management. The headache is typically fronto -occipital, 
+aggravated by sitting, standing, coughing or straining and relieved by lying down. 
+Associated symptoms can include nausea, tinnitus, photophobia and vertigo. They have 
+been informed to contact us at the hospital should they develop any further problems 
+and will be followed up by telephone over the next few days. Other causes of 
+headaches should obviously still be considered. 
+Details of the procedures are recorded below. 
+Date of delivery: 
+Site of Delivery Royal Sussex County Hospital / Princess Royal Hospital 
+Anaesthetic procedure: Epidural / Spinal / combined spinal epidural 
+Reason for procedure: Labour analgesia / Caesarean Section 
+Date and any relevant 
+details of blood patch: 
+ 
+If you have any further questions or they require a review by our team please contact the 
+on call 
+obstetric anaesthetist via the Princess Royal Hospital switchboard 01444 441881 bleep 
+6327, or Royal 
+Sussex County Hospital switchboard 01273 696955 bleep 8140 
+You will receive a further discharge summary from the obstetricians with details of the 
+birth. 
+Yours Sincerely 
+Name: Date:

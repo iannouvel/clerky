@@ -1,0 +1,407 @@
+# Extracted from: MP056 Obstetric High Dependency Care.pdf
+# Guideline ID: mp056-obstetric-high-dependency-care
+# Content length: 20164 characters
+# Processing date: 1750066901.5657618
+
+Obstetric High 
+Dependency Care 
+
+Maternity Protocol: MP056 
+ 
+Date agreed: September 2021 Obstetric High Dependency Care (RSCH PRH only ) MP056 
+Brighton & Sussex University Hospitals Page 2 of 13 
+
+Author: 
+Update: Lynne Campbell 
+Abby Medniuk 
+Manager responsible: Jo Sinclair 
+Version: 3 
+Approval Committee: Women’s Safety and Quality Committee 
+Date agreed: September 2018 
+Amended date: August 2018 
+Review date: September 2021 
+Cross reference: MP055 Peri-partum Collapse, Severely Ill pregnant woman Obstetric High Dependency Care (RSCH PRH only ) MP056 
+Brighton & Sussex University Hospitals Page 3 of 13 Contents 
+Key Principles ................................ ................................ ................................ ........................ 4 
+Scope ................................ ................................ ................................ ................................ ... 4 
+Responsibilities ................................ ................................ ................................ ..................... 4 
+1 Introduction ................................ ................................ ................................ ................ 5 
+2 Categories of HDU Care ................................ ................................ ............................... 5 
+3 Maternity High Dependency Care ................................ ................................ ................ 5 
+4 Requirements of staff when transferring women to HDU/ITU. ................................ ..... 6 
+5 General Guidelines for High Dependency Care ................................ ............................. 6 
+6 Contacting the Critical Care Outreach team ................................ ................................ . 7 
+7 Roles and Responsibilities of Staff Groups ................................ ................................ ... 7 
+7.1 Midwives ................................ ................................ ................................ .................... 7 
+7.2 Obstetricians ................................ ................................ ................................ .............. 8 
+7.3 Anaesthetists ................................ ................................ ................................ .............. 8 
+8 Guidance for staff on when to involve clinicians from outside the maternity service .... 8 
+9 Equipment and Resources ................................ ................................ ........................... 9 
+9.1 HDU Equipment ................................ ................................ ................................ ........ 9 
+10 Considerations for Transfer to HDU/ITU Outside Maternity Services .......................... 10 
+11 Agreed criteria for transfer to HDU/ITU outside maternity services: .......................... 10 
+11.1 Requirements of staff when transferring women to HDU/ITU ....................... 10 
+12 Discharge from HDU/ITU ................................ ................................ ........................... 12 
+13 Monitoring Compliance ................................ ................................ ............................. 12 
+14 References ................................ ................................ ................................ ................ 13 
+
+ Obstetric High Dependency Care (RSCH PRH only ) MP056 
+Brighton & Sussex University Hospitals Page 4 of 13 Key Principles 
+ 
+A protocol is a set of measurable, objective standards to determine a course of action. 
+Professional judgement may be use in the application of a protocol. 
+ 
+Scope 
+ 
+This protocol applies to: Any woman requiring high dependency care or intensive care 
+associated with obstetric event/care. 
+ 
+Responsibilities 
+ 
+Midwives & Obstetricians: 
+• To access, read, understand and follow this guidance 
+• To use their professional judgement in application of this protocol 
+ 
+Management: 
+• To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations 
+• To ensure the protocol is accessible to all relevant staff 
+ 
+ Obstetric High Dependency Care (RSCH PRH only ) MP056 
+Brighton & Sussex University Hospitals Page 5 of 13 1 Introduction 
+The majority of women during their pregnancy, labour and postnatal periods require 
+care and support that can be met through the provision of normal midwifery 
+services. A small but significant number however, have related conditions to their 
+pregnancy that will be life threatening to them and their baby and require High 
+Dependency Care. 
+2 Categories of HDU Care 
+ 
+Where mothers are nursed is influenced by various factors including the level of care that 
+they will require. The table below has been derived from The Department of Health 
+document, Comprehensive Critical Care 1. 
+ 
+Level Care 
+Level 0 Patients whose needs can be met through normal ward care in an acute 
+hospital. 
+Level 1 Patients at risk of their condition deteriorating, or those recently relocated 
+from higher levels of care, whose needs can be met on an acute ward with 
+additional advice and support from the critical care team. 
+Level 2 Patients requiring more detailed observation or intervention including support 
+for a single failing organ system or post -operative care and those stepping 
+down from higher levels of care 
+Level 3 Patients requiring advanced respiratory support alone or basic respiratory 
+support together with support of at least two organ systems. This level 
+includes all complex patients requiring support or multi -organ failure 
+ 
+3 Maternity High Dependency Care 
+3.1 Criteria for transfer of a women to the HDU area within maternity service: 
+Those women requiring High Dependency Care, that are usually cared for 
+within the maternity unit setting fall into the LEVEL 1 category (see above) 
+3.2 If a women requires transfer to HDU/ITU inside maternity services this should 
+be clearly documented in the maternal notes along with description of the 
+reason for transfer by the senior clinician provision care 
+3.3 The provision of high dependency care within the Trust for obstetric patients is 
+carried out in a variety of hospital and ward settings, these include: 
+ 
+A designated high dependency room on Labour Ward level 1 
+Theatre recovery area on Labour Ward level 0,1 
+Main theatre recovery area level 0,1,2 
+General High Dependency Ward level 1, 2, 
+General Intensive Care Ward level 2, 3 
+ Obstetric High Dependency Care (RSCH PRH only ) MP056 
+Brighton & Sussex University Hospitals Page 6 of 13 4 Requirements of staff when transferring women to HDU/ITU 
+within maternity services. 
+ 
+Staff should document their actions as stated below when transferring women 
+ 
+Staff Action/requirements 
+Anaesthetists • Stabilise woman 
+• Accompany and manage care and safety of woman during transfer 
+to HDU room 
+• Verbal and written handover of care to HDU/ITU staff using CHAPS 
+(Clinical picture, History, Assessment and Plan) 
+Obstetricians • Assist in stabilisation of woman 
+• Agree plan of care in relation to the woman’s obstetric 
+requirements, including plan for future reviews and involvement 
+(see above). Document plan in maternal notes and handover 
+information to colleagues 
+Midwives • Assist in stabilisation of woman 
+• Escalate to Labour ward coordinator as required 
+• Agree plan of care in relation to the woman’s midwifery 
+requirements, including plan for future reviews and involvement 
+• Accompany woman to HDU room during transfer 
+• Ensure all documentation is completed 
+• Complete DATIX form 
+ 
+5 General Guidelines for High Dependency Care 
+ 
+5.1 All women admitted to HDU must have their level of care stated and clearly 
+documented on the MEOWS sheets 
+5.2 Women’s level of care requirement may change during their HDU stay 
+5.3 All women should be cared for in a designated area (Recovery or room 34 at 
+RSCH, recovery room at PRH) 
+5.4 One to one nursing/midwifery care must be available 
+5.5 All women in requiring HDU care should be reviewed by the obstetric and 
+anaesthetic team at least twice (morning and evening) each day. This review 
+should be documented in the maternal notes along with an agreed 
+individualised plan of care. 
+ Obstetric High Dependency Care (RSCH PRH only ) MP056 
+Brighton & Sussex University Hospitals Page 7 of 13 5.6 Carers should be proficient in cardiopulmonary resuscitation and be able to 
+administer IV drugs 
+5.7 Consultation with the Critical Care Outreach Teams should be considered for 
+support 
+ 
+6 Contacting the Critical Care Outreach team 
+ 
+Contact the department 
+• Via hospital switchboards on both hospital sites 
+• Via Bleep system 
+ 
+6.1 The majority of mothers who require high dependency care on the labour 
+ward will generally come from the categories below and already have 
+guidelines for their management and care. 
+6.2 For all women there should be clear, regularly updated, management plans of 
+care documented in the mother's notes by the obstetrician responsible for the 
+patients care; this is particularly relevant if there is no specific maternity 
+protocol. 
+ 
+7 Roles and Responsibilities of Staff Groups 
+ 
+7.1 Midwives 
+7.1.1 Will provide one to one care and document observations 
+7.1.2 Observations and documentation are charted on: 
+• MEOWS Chart 
+• Maternity notes 
+7.1.3 Basic observations of the mother should be recorded regularly 
+according to the care plan and include: 
+• Oxygen saturation level 
+• Pulse and respiratory rate 
+• Temperature – frequency according to clinical condition 
+• Blood pressure 
+• Hourly urine output measurement 
+• Level of consciousness 
+• Evaluation of pain and sensory levels 
+• Bloo d loss per vagina/wound or drain 
+7.1.4 Referral to the Obstetric Registrar should be made if: 
+• MEOWS observations trigger one red score 
+• MEOWS observations trigger two simultaneous yellow scores Obstetric High Dependency Care (RSCH PRH only ) MP056 
+Brighton & Sussex University Hospitals Page 8 of 13 7.1.5 Urgent Referral to the Obstetric Registrar by using fast bleep system 
+via switchboard should be made if: 
+• there is an obvious clinical deterioration or loss of 
+consciousness of the woman 
+• two or more of the MEOWS cardio -respiratory parameters are 
+recorded in the red zones 
+7.2 Obstetricians 
+7.2.1 Multidisciplinary plans of care should be documented and regularly 
+updated within the maternity notes 
+7.2.2 There should be regular Consultant level involvement in care of HDU 
+patients 
+7.3 Anaesthetists 
+7.3.1 All HDU patients should be flagged up in the multidisciplinary ward 
+round or on admission by the midwife in charge to allow anaesthetic 
+team involvement and review. All reviews and plans should be 
+documented in the maternal notes 
+7.3.2 The Consultant Obstetric Anaesthetist/most senior anaesthetist on 
+site will liaise with the ITU Consultant if admission to ITU is deemed 
+necessary. Any decisions should be documented in the maternal notes 
+ 
+8 Guidance for staff on when to involve clinicians from outside the 
+maternity service 
+ 
+8.1 Where women have complications other than common obstetric issues, 
+specialist clinicians should be considered as a source of information and 
+support. The Obstetrician leading the care should consider involving the 
+following specialities if the clinical situation warrants it after discussion with 
+the maternity team and Consultant on call (unless life threatening when direct 
+referral can be made) . 
+8.2 Specialist clinicians (usually the on call middle grade or consultant level) should 
+be contacted via the hospital switchboard. 
+8.3 All discussions, referrals and consultations by specialist staff outside maternity 
+services should be clearly documented in the maternal notes by the clinician 
+providing care. 
+ 
+Specialist clinicians Consider involvement when: 
+Physicians respiratory and/or cardiovascular problems 
+Gastroenterologists gastrointestinal and liver problems 
+Nephrologists renal function is deteriorating Obstetric High Dependency Care (RSCH PRH only ) MP056 
+Brighton & Sussex University Hospitals Page 9 of 13 Neurologists unexplainable CNS problems 
+General surgeons surgical complication is suspected 
+Interventional radiologists Haemorrhage NB only available 9 -5 
+Haematologist Blood related disorders 
+Microbiologists Sepsis / infection / antibiotic issues 
+Critical Care Outreach team Any women requiring HDU care 
+ 
+9 Equipment and Resources 
+9.1 HDU Equipment 
+ 
+Each designated HDU bed space must have the following in line with national 
+guidance: 
+ 
+Within bed space 
+• Oxygen outlet and breathing system for 100% oxygen (ambu/Mapleson c 
+circuit) 
+• Pulse oximetry 
+• Blood pressure measurement 
+• Electrical sockets 
+• Suction unit 
+In close proximity for use as required 
+• IV cannula , blood bottles/syringes/needles/sharps bin 
+• IV fluids, fluid warmer and infusion pumps 
+• Continuous ECG monitoring 
+• 12 lead ECG 
+• Facility for Invasive monitoring including all equipment needed for insertion and 
+continuous monitoring 
+• Forced air warming device 
+• Defibrillator 
+• Resuscitation equipment, emergency drug box and emergency airway box 
+• Transfer equipment 
+• Emergency Alarm, emergency massive haemorrhage trolley and emergency 
+eclampsia box 
+• Telephone and computer terminal for checking blood results, PACS and 
+accessing guidelines 
+• Haemacue / co -ox HB (in main theatres/ITU/NNU) 
+• Point of care coagulation testing (ROTEM) available in lab, with real time 
+reporting available via software on theatre computer. 
+• High flow nasal oxygen (Optiflow ™) is available from main theatres 
+ Obstetric High Dependency Care (RSCH PRH only ) MP056 
+Brighton & Sussex University Hospitals Page 10 of 13 10 Considerations for Transfer to HDU/ITU Outside Maternity 
+Services 
+ 
+Occasionally women that may not be suitable for high dependency care within the 
+Maternity Unit setting will need to be transferred to a General High Dependency Unit or 
+Intensive Care Unit or to main recovery. 
+10.1 Factors that would influence this management decision are: 
+10.1.1 Inadequate staffing levels and skill mix of the midwives and medical 
+staff on duty 
+10.1.2 High current workload of the obstetric clinical area 
+10.1.3 A clinical judgment or preference of the obstetric/anaesthetic team 
+managing the mother's care. 
+10.1.4 This type of transfer decision will be made by the multidisciplinary 
+team consisting of duty Consultant Obstetrician, Consultant Obstetric 
+Anaesthetist and Labour ward Co -ordinator. 
+11 Agreed criteria for transfer to HDU/ITU outside maternity 
+services: 
+ 
+If a women requires transfer to HDU/ITU outside ma ternity services this should be clearly 
+documented in the maternal notes along with description of the reason for transfer by the 
+senior clinician provision care 
+ 
+Clinical situations that require Mandatory transfer to ITU 
+• deterioration of any clinical condition necessitating LEVEL 3 care 
+Possible clinical conditions which may necessitate transfer to HDU/ITU 
+• Massive peri -partum haemorrhage 
+• Haemodynamic instability 
+• Requirement for cardiac monitoring 
+• Need for inotropes or invasive monitoring 
+• Respiratory problems 
+• Any major medical disorder 
+• Severe PIH, PET or essential hypertension 
+• Severe HELLP syndrome 
+• Unstable diabetes 
+ 
+11.1 Requirements of staff when transferring women to HDU/IT U 
+ 
+Staff should document their actions as stated below when transferring women 
+ Obstetric High Dependency Care (RSCH PRH only ) MP056 
+Brighton & Sussex University Hospitals Page 11 of 13 Staff Action/requirements 
+Anaesthetists • Stabilise woman 
+• Escalate to Consultant Anaesthetist as required 
+• Agree transfer plan with obstetric and midwifery team. 
+Document discussions and time decision made 
+• Contact HDU/ITU and agree transfer plan with senior 
+clinician. Document named clinician who agrees to 
+transfer and time decision is made 
+• Document transfer plan in maternal notes 
+• Accompany and manage care and safety of woman 
+during transfer to HDU/ITU 
+• Verbal and written handover of care to HDU/ITU 
+Obstetricians • Assist in stabilisation of woman 
+• Escalate to Consultant Obstetrician as required 
+• Agree transfer plan with anaesthetic and midwifery 
+team. Document discussions and time decision made 
+• Agree plan of care in relation to the woman’s obstetric 
+ requirements, including plan for future reviews and 
+ involvement (see above). Document plan in maternal 
+ notes and handover information to colleagues 
+
+Staff Action/requirements 
+Midwives • Assist in stabilisation of woman 
+• Escalate to Labour ward coordinator and Supervisor or 
+Midwives as required 
+• Agree transfer plan with anaesthetic and obstetric team. 
+Document discussions and time decision made 
+• Agree plan of care in relation to the woman’s midwifery 
+requirements, including plan for future reviews and 
+involvement 
+• Accompany woman to HDU/ITU during transfer 
+• With anaesthetist provide a verbal and written handover 
+of care to HDU/ITU staff using CHAPS 
+• Ensure all documentation is completed as required prior 
+to transfer 
+• Document woman’s location and condition in the 
+communication book on labour ward. This information 
+needs to be updated daily by the LW coordinator and 
+included in the daily handovers. 
+• Send datix 
+HDU/ITU 
+clinicians • Discuss and agree transfer plan with anaesthetist 
+• Prepare bed space for transfer 
+• Receive woman and verbal and written handover from 
+anaesthetist and midwife accompanying woman 
+• Ensure woman has continued obstetric, anaesthetic and Obstetric High Dependency Care (RSCH PRH only ) MP056 
+Brighton & Sussex University Hospitals Page 12 of 13 midwifery input during her HDU/ITU stay (see above) 
+Porters • Women will be transferred on beds and will require porters 
+for transferring 
+• Transfer woman on bed to HDU/ITU with anaesthetist 
+and midwife accompanying 
+Ward clerks • Ensure woman is transferred on the OASIS system from 
+Maternity to HDU/ITU 
+ 
+12 Discharge from HDU/ITU 
+ 
+Decision for discharge from HDU (to either a low risk l abour ward room or to post/ante natal 
+wards) must be made by senior staff (Registra r / Consultant in Obstetrics or Anaesthesia in 
+conjunction with senior midwife) out of hours this may be over the telephone. 
+12.1 Criteria 
+12.1.1 Women who are considered not to be high -risk anymore and/or no 
+longer fill the admission criteria to HDU. 
+12.1.2 Women who deteriorate such that a safe level of care can no longer 
+be provided on HDU and require admission to ITU or other specialist 
+area. (see above). 
+13 Monitoring Compliance 
+ 
+Please refer to the Monitoring and Auditing document for details on monitoring compliance 
+for this protocol. 
+
+ Obstetric High Dependency Care (RSCH PRH only ) MP056 
+Brighton & Sussex University Hospitals Page 13 of 13 14 References 
+ 
+1. Comprehensive Critical Care A review of adult critical care services Department of 
+Health London (2000) 
+ 
+2. Immediate Post Anaesthetic Recovery The Association of Anaesthetists of Great Britain 
+and Ireland London(2002) 
+ 
+3. Guidelines for the Provision of Anaesthetic Services: Royal College of Anaesthetists 
+London (2004) 
+ 
+4. Peri Operative recovery in The Marsden Manual (2001) The Royal Marsden Manual and 
+Blackwell Science London 
+ 
+5. Advanced Life Support Group and the Royal College of Obstetricians and Gynaecologists 
+(2007) Managing Obstetric Emergencies and Trauma London RCOG Press. 
+ 
+6. Saving Mothers Lives: Reviewing maternal deaths to make motherhood safer 2003 -2005. 
+Confidential Enquiry into Maternal and Child Health (2007) London: CEMACH. 
+www.cemach.org.uk 
+ 
+7. Why Mothers Die Report on Confidential Enquires into Maternal Deaths in the UK 1994 -
+1996 London Department of Health 
+ 
+8. Royal College of Anaesthetists, Royal College of Midwives, Royal college of Obstetricians 
+and Gynaecologists, Royal College of Paediatrics and Child Health (2007) Safer 
+Childbirth: minimum standards for the organisation and delivery of care in labour. 
+London: RCOG Press. 
+ 
+9. Association of Anaesthetists and the Obstetric Anaesthetists Association (2005) 
+OAA/AAGBI Guidelines for obstetric anaesthetic services . London.

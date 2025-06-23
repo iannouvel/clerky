@@ -1,0 +1,436 @@
+# Extracted from: P19005 LocSOP for Obstetric Procedural Counts.pdf
+# Guideline ID: p19005-locsop-for-obstetric-procedural-counts
+# Content length: 22282 characters
+# Processing date: 1750066901.7685506
+
+P19005 Local SOP for swabs, needle & instrument counts for invasive procedures 
+in obstetric settings v3.0 April 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 1 of 13 
+ Local Standard Operating Procedure for Swabs, needle & instrument 
+counts for invasive procedures in obstetric settings (outside of theatre) 
+Summary statement: How does the 
+document support patient care? The purpose of this SOP is to provide a local standard 
+operating procedure for safe management of swabs, 
+needles and instrument counts during invasive 
+procedures within maternity outside of theatre. 
+Staff/stakeholders involved in 
+development: Obstetric Anaesthetists, Obstetric Consultants and all 
+Midwifery Staff 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Patient safety team and Head of Midwifery 
+For use by: All staff involved in the counting of swabs, needles and 
+instruments outside of the theatre setting. 
+Purpose: To standardise the counting of swabs, needles and 
+instruments outside the theatre setting within maternity. 
+This document supports: Care Quality Commission 
+NICE (2014) Intrapartum Care CG190 (updated 2017) 
+RCOG (2020) Green -top guideline 26 . 
+Key related documents: UH Sussex West Maternity Guidelines 
+Trust Guidelines 
+Approved by: Maternity Quality and safety meeting 
+Approval date: 20th April 2022 Date uploaded: 21st April 2022 
+Ratified by: N/A 
+Ratification Date: N/A 
+Expiry Date: April 2025 
+Review date: October 2024 
+If you require this document in another format such as Braille, large print, audio or another 
+language please contact the Trusts Communications Team 
+Reference Number: P19005 P19005 Local SOP for swabs, needle & instrument counts for invasive procedures 
+in obstetric settings v3.0 April 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 2 of 13 
+
+Version date Author Status Comment 
+1.0 
+2.0 April 2022 Patient Safety Archived Adapted from Morecambe 
+ Team Bay Procedure. 
+ Head of Midwifery 
+ Labour Ward lead 
+ clinician 
+3.0 April 2022 C. Donoghue, 
+Patient Safety 
+Midwife LIVE 3 year review – audit form 
+updated to current form in 
+use. 
+ J. Collard, Clinical 
+Effectiveness 
+Support Midwife 
+ 
+Formatted to meet new Trust 
+standard. 
+ 
+The interpretation and application of clinical guidelines will remain the 
+responsibility of the individual clinician. 
+If in doubt contact a senior colleague or expert. P19005 Local SOP for swabs, needle & instrument counts for invasive procedures 
+in obstetric settings v3.0 April 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 3 of 13 
+
+Contents 
+1.0 Aim of this document ................................ ................................ ................................ ... 4 
+2.0 Abbreviations used in this SOP ................................ ................................ ................... 4 
+3.0 Scope ................................ ................................ ................................ .......................... 4 
+4.0 Responsibilities ................................ ................................ ................................ ........... 4 
+5.0 Introduction ................................ ................................ ................................ ................. 4 
+6.0 Scope for undertaking counts ................................ ................................ ...................... 5 
+6.1 Examples of Procedures in non-operating theatres that must have 
+counts undertaken ................................ ................................ ................................ ....... 5 
+6.2 Non theatre environments where invasive procedures may occur ................................ 5 
+7.0 Procedure ................................ ................................ ................................ ................... 6 
+7.1 Duties ................................ ................................ ................................ .......................... 6 
+7.2 Local safety standards for counting swabs, needles, instruments 
+for births or invasive procedures ................................ ................................ .................. 6 
+7.3 Standards for ‘Counts Reconciliation’ at Procedure End ................................ .................... 7 
+7.4 Standard to be followed if there is a discrepancy arising at the counts 
+reconciliation of swabs and needles ................................ ................................ ............ 7 
+7.5 Reconciled counts ................................ ................................ ................................ ....... 8 
+7.6 Known -non reconciled counts (where the discrepancy is identified at the count) .......... 8 
+7.6 Unreconciled counts at homebirths ................................ ................................ .............. 8 
+7.8 Transfer to theatre ................................ ................................ ................................ ....... 8 
+8.0 Audit ................................ ................................ ................................ .......................... 10 
+References ................................ ................................ ................................ ........................... 12 
+Appendix 1: Maternity Estimated Blood Loss (EBL) form ................................ ...................... 13 P19005 Local SOP for swabs, needle & instrument counts for invasive procedures 
+in obstetric settings v3.0 April 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 4 of 13 
+ 
+Local SOP for swabs, needle & instrument counts for 
+invasive procedures in obstetric settings 
+
+1.0 Aim of this document 
+ 
+The purpose of this SOP is to provide a local standard operating procedure for safe 
+management of swabs, needles and instrument counts during invasive procedures within 
+maternity outside of theatre. 
+ 
+2.0 Abbreviations used in this SOP 
+ 
+SOP - Standard Operating Procedure EBL - Estimated Blood Loss 
+
+3.0 Scope 
+ 
+This guideline applies to: 
+ 
+• Midwives 
+• Obstetricians 
+• Anaesthetists 
+• Maternity recovery staff 
+• Operating Department Practitioners 
+• Maternity Assistants 
+ 
+4.0 Responsibilities 
+ 
+Obstetricians, midwives, theatre staff and maternity assistants: 
+ 
+• To access, read, understand and follow this SOP. 
+Management: 
+• To ensure the SOP is reviewed as required in line with Trust and National 
+recommendations. 
+• To ensure the SOP is accessible to all relevant staff. 
+ 
+5.0 Introduction 
+ 
+Swabs are used in maternity care with a potential for retention within the vagina. Retained 
+swabs following a vaginal birth or other associated procedures are a cause of P19005 Local SOP for swabs, needle & instrument counts for invasive procedures 
+in obstetric settings v3.0 April 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 5 of 13 
+ maternal/birthing parent morbidity and might result in sepsis, pain and secondary post- 
+partum haemorrhage. 
+ 
+A retained swab, instrument or needle is rare but with good and effective processes for 
+counting should never happen. This is why it is referred to as a Never Event1. 
+ 
+It is a mandatory requirement that midwives, doctors and those assisting them adhere 
+consistently to robust safety standards and have appropriate training. 
+ 
+Two staff members must undertake the count together, but there may on rare occasions be 
+an extenuating situation where the initial count would be ‘single person’ count. A single 
+person count is only undertaken if it is in the woman’s/birthing parent’s best interest, i.e. 
+where suturing would otherwise be delayed in the home birth setting for example as no 
+second person has yet arrived. 
+ 
+The standards within this procedural document will be applicable to all invasive obstetric and 
+gynaecological procedures undertaken outside an operating theatre where swabs, 
+instruments, blades and needles are used. 
+ 
+This SOP should be read in conjunction with the Trust’s ‘Count for swabs, instruments and 
+needles protocol’. 
+ 
+If a woman/person is transferred for immediate ongoing treatment to the operating theatre, 
+there must be a safety handover to confirm that any counts for previous procedures are 
+complete and correct. 
+ 
+6.0 Scope for undertaking counts 
+ 
+6.1 Examples of Procedures in non-operating theatres that must have 
+counts undertaken 
+ 
+• Fetal blood sampling 
+• Spontaneous and assisted vaginal birth 
+• Perineal repair 
+• Major obstetric haemorrhage 
+ 
+6.2 Non theatre environments where invasive procedures may occur 
+ 
+• Hospital birthing rooms 
+• Homebirth 
+ 
+Logging of all swab, instrument and needle counts and signing the documentation record is a 
+mandatory requirement. Both midwifery, nursing and medical staff must ensure the sections 
+ 
+1 Never Events are serious, largely preventable safety incidents that should not occur if the available 
+preventative measures are implemented. They include things like wrong site surgery or foreign objects 
+left in a person's body after an operation P19005 Local SOP for swabs, needle & instrument counts for invasive procedures 
+in obstetric settings v3.0 April 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 6 of 13 
+ relating to counts both pre and post procedure in the maternity record is completed and 
+signed. 
+ 
+Where a swab or instrument count indicates that there is a missing swab or instrument, every 
+reasonable effort should be made to locate the missing item (emptying bins, checking 
+bedding and recounting) but in the event that the count cannot be reconciled, further action 
+should be taken to ensure that the swab or instrument is not retained – i.e. thorough 
+examination of the patient and x ray to identify retained item or rule out retention. 
+ 
+Where it is identified through good practice with counts that an item is missing and where 
+procedure is then followed in terms of reasonable efforts to find the item and initiate a 
+thorough examination of the patient, this is not a near miss or a Never Event but a sign that 
+the system is working. 
+ 
+Any incident arising out of breach of SOP will be managed and investigated in line with 
+Trusts Policy for the management of incidents. 
+ 
+7.0 Procedure 
+ 
+7.1 Duties 
+Responsibilities of the all staff involved in undertaking obstetric invasive procedures are 
+defined in this document. Staff must ensure the following: 
+ 
+• The operator and the second checker must always follow the standards of this 
+document at all times. 
+• They must have appropriate training and fully understand the procedural steps in 
+this document for counting swab, needles and instruments and undertake them at 
+the correct times during invasive procedures. 
+• Staff must ensure all swabs, needles and instruments are disposed appropriately 
+dependent on whether they are single use or sterilisable. 
+• Staff must follow safe standards for sharps. 
+ 
+Two people are required to undertake the count, one of which must be the midwife, or doctor 
+who is undertaking the procedure . 
+ 
+7.2 Local safety standards for counting swabs, needles, instruments 
+for births or invasive procedures 
+ 
+• All delivery or clinical rooms have a white board and when writing on the white 
+board it must be legible and in a clear line of vision to the operator. 
+• The woman’s/birthing parent’s name and the date must be recorded on the 
+whiteboard. 
+• All swabs and needles must be recorded on the white board. All counts must be 
+undertaken in a loud and audible tone. P19005 Local SOP for swabs, needle & instrument counts for invasive procedures 
+in obstetric settings v3.0 April 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 7 of 13 
+ • Prior to commencement of any procedure, a swab, instrument and needle count 
+will be performed between the operator and 2nd checker. The second checker can 
+be a non -clinician provided they have the required training competence. 
+• They must check that there are 5 swabs present in each bundle, each swab must 
+have a radiopaque line running through it and larger swabs must have an attached 
+tape on the white board. 
+• Suture wraps/packets should be retained on the ‘working’ field by the operator to 
+ensure the needles correspond to the number logged on the white board. 
+• Non X ray detectable swabs, dressings, sanitary towels or other forms of gauze 
+which are to be used as therapeutic dressings must only ever be opened when 
+wound closure/delivery is complete and the count has been undertaken and 
+verified as correct. 
+ 
+7.3 Standards for ‘Counts Reconciliation’ at Procedure End 
+ 
+• At the end of the procedure, counts must always be performed with two people; 
+one of them being the operator (this is either the treating clinician or midwife) and a 
+trained counts staff member. 
+• The counts must be undertaken by the same staff at the start and end wherever 
+possible. 
+• Once again the count must be performed in a loud audible tone. 
+• All items for inclusion in the count must be checked separately. There must be no 
+interruptions during the counts of swabs, needles and instruments. 
+• If an interruption occurs, the count must be restarted. 
+• In the event of a suture needle breaking all parts must be pieced together and 
+identified as a whole for the count. 
+• If any part of a broken item cannot be accounted for section 7.4 of this procedural 
+document must be followed in all cases. 
+• It is only when the count is verified as correct that the operator can leave the room. 
+• The completed and reconciled counts must be recorded and signed for in the 
+woman’s/birthing parent’s case notes. 
+ 
+7.4 Standard to be followed if there is a discrepancy arising at the counts 
+reconciliation of swabs and needles 
+ 
+In the first instance a full recount of all swabs, instruments and sharps must be 
+undertaken and the following steps to locate the missing item must be taken: 
+ 
+• Inform the woman/person. 
+• Inform the midwife in charge. 
+• The environment must be scrutinised for the missing item, this includes the bed 
+area, drapes, clinical trolley; sluice bucket and bins. No items should ever leave 
+the procedural room prior to confirmation of a correct count and if they have, 
+they must be brought back. 
+• The floor should be checked thoroughly in cases of missing suture needles. P19005 Local SOP for swabs, needle & instrument counts for invasive procedures 
+in obstetric settings v3.0 April 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 8 of 13 
+ • If a swab is not found within the room, a gentle vaginal examination must occur. 
+• If the discrepancy is not rectified, an x-ray must be performed prior to the 
+woman/person being transferred out of the room. 
+• If it is a suture needle that is missing the operator can use vaginal scanning or 
+X ray to confirm if it is present in the vagina or not. 
+• If the x ray confirms presence of the missing item and immediate retrieval will 
+have no adverse effects to the woman, it must be removed. 
+• If it is considered not retrievable without further intervention the episode must be 
+escalated to the consultant and the plan for removal is clearly documented in the 
+case. Consider completing a Datix in this scenario as this would be considered a 
+clinical incident even though the count correctly identified the missing item. 
+ 
+7.5 Reconciled counts 
+ 
+If a count is recognised as incomplete but reconciled, prior to the woman/person leaving the 
+procedure room due to the above steps being undertaken it is not generally classed as a 
+clinical incident as this is the specific purpose of the count. 
+ 
+7.6 Known -non reconciled counts (where the discrepancy is identified at the count) 
+ 
+• If the location of the missing item is confirmed, a plan for removal must be made 
+and discussed with the woman/person and fully documented. 
+• If the missing item is not located then an urgent radiologist report must be 
+requested of the x-ray that has been taken. Further X-ray may also be deemed 
+necessary. 
+• If the woman/person is for discharge, information and discussion will need to occur 
+and be documented in the notes of what action to take if any untoward symptoms 
+or concerns arise. 
+• The information must also be included and highlighted in any discharge and or 
+transfer letters to the midwife and GP. 
+ 
+7.6 Unreconciled counts at homebirths 
+ 
+Section 7.4 will be actioned. If the item is not located arrangements must be made for the 
+woman/person to attend the hospital for an emergency/urgent x -ray. 
+ 
+7.8 Transfer to theatre 
+ 
+On occasion a woman may have to be transferred from the delivery room to theatre. 
+ 
+• All counts should be completed in accordance with the standards of this SOP prior 
+to transfer. 
+• If not completed prior to transfer the theatre team must be informed and the 
+operator (if possible) returns to the room to complete the check with the second 
+checker. P19005 Local SOP for swabs, needle & instrument counts for invasive procedures 
+in obstetric settings v3.0 April 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 9 of 13 
+ • Any emergency vaginal packing, or tampons inserted during the initial procedure 
+must be documented in the woman’s/birthing parent’s notes and communicated to 
+the theatre procedural team at the theatre handover. P19005 Local SOP for swabs, needle & instrument counts for invasive procedures 
+in obstetric settings v3.0 April 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 10 of 13 
+ 8.0 Audit 
+ 
+Maternity Local Safety Standards for Counting Swabs, Needles, 
+Instruments for births or invasive procedures 
+Audit proforma 
+ 
+Pre- procedure count 
+Is the woman’s hospital number and date recorded on the 
+whiteboard? Yes No 
+Has a swab, instrument and needle count been performed 
+between the operator and trained 2nd checker? Yes No 
+Have you checked that there are 5 swabs present in each 
+bundle? 
+(each swab must have a radiopaque line running through it and 
+larger swabs must have anattached tape) 
+Yes 
+No 
+Are all swabs and needles recorded on the white board? Yes No 
+All counts undertaken in a loud and audible tone? Yes No 
+Was the count uninterrupted? Yes No 
+If any interruptions, was the count restarted? N/A Yes No 
+Procedural checks/count 
+Do the Suture wraps/packets/Needles set aside on the ‘working’ 
+field correspond to the number recorded on the white board? Yes No 
+Has the count been performed and confirmed correct following 
+closure of wound/tear, prior to opening any non X-ray detectable 
+swabs/ dressings/ sanitary towels or gauze? 
+N/A 
+Yes 
+No 
+In the event of a suture needle breaking, were all parts pieced 
+together and identified as a whole for the count? N/A Yes No 
+End of procedure count 
+Was the end of procedure count performed between the operator 
+and trained 2nd checker? Yes No 
+Was the count undertaken by the same staff as the pre- 
+procedure count? Yes No 
+Count clear and audible? Yes No 
+If any interruptions, was the count restarted? N/A Yes No 
+Was the completed count correct and documented in the 
+woman’s notes? Yes No 
+
+PTO if any count discrepancies occur P19005 Local SOP for swabs, needle & instrument counts for invasive procedures 
+in obstetric settings v3.0 April 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 11 of 13 
+ 
+Count discrepancies 
+***Only fill out if count discrepancies found*** 
+Has a full recount of all swabs, instruments and sharps 
+been performed? Yes No 
+Has the Midwife in charge/Consultant been informed? Yes No 
+Has the Woman been informed? Yes No 
+Has the surrounding environment (bed space, floor, 
+drapes, bed linen, trolley, bins etc.) been thoroughly 
+checked? 
+Yes 
+No 
+If a swab is not found within the room, has a gentle 
+vaginal examination been performed with maternal 
+consent? 
+Yes 
+No 
+Has an X-ray been performed prior to the woman being 
+transferred out of the room? Yes No 
+If a suture needle is missing, was vaginal scanning or 
+X- ray used to investigate if it is has been retained? N/A Yes No 
+If the X-ray confirms presence of the missing item, 
+was it removed? N/A Yes No 
+Was the Consultant informed, and a plan made to 
+remove retained item if irretrievable? Yes No 
+Has a DATIX been completed? 
+(This would be considered a clinical incident even 
+though the count correctly identified the missing item) 
+Yes 
+No 
+Known un-reconciled counts **only** 
+If the location of the missing item is confirmed, has a plan 
+for removal been made and discussed with the woman 
+and fully documented? 
+Yes 
+No 
+If the missing item is not located, has an urgent x-ray 
+been requested? Yes No 
+Following X-ray, has the report been escalated in a timely 
+manner? Yes No P19005 Local SOP for swabs, needle & instrument counts for invasive procedures 
+in obstetric settings v3.0 April 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 12 of 13 
+ References 
+ 
+NHS England (2014) Standardise, education, harmonise. Commissioning the conditions for 
+safer surgery. Report the of NHS England Never Events Taskforce 
+ 
+NMC (2015) The Code. Professional standards of practice and behaviour for nurses and 
+midwives 
+ 
+Royal College of Surgeons (RCS) (2015) Duty of Candour - Guidance for Surgeons and 
+Employers (NHS England (2015) Never Events 2015/2016 
+ 
+World Health Organization (WHO) (2008) WHO surgical safety checklist and implementation 
+manual 
+ 
+World Health Organization (WHO) (2009) WHO Guidelines for Safe Surgery 2009 P19005 Local SOP for swabs, needle & instrument counts for invasive procedures 
+in obstetric settings v3.0 April 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 13 of 13 
+ 
+Appendix 1: Maternity Estimated Blood Loss (EBL) form 
+Not to be printed from this document

@@ -1,0 +1,1042 @@
+# Extracted from: CG18005 Newborn BCG Immunisation guideline.pdf
+# Guideline ID: cg18005-newborn-bcg-immunisation-guideline
+# Content length: 55218 characters
+# Processing date: 1750066900.4538696
+
+CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 1 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Newborn BCG Immunisation Guideline 
+Summary statement: How does the 
+document support patient care? Providing clear evidence based guidance for staff involved in 
+identifying and delivering the BCG Immunisation Programme 
+Staff/stakeholders involved in 
+development: 
+TB Nurse Specialist; Maternity, Joint Obstetric Guidelines 
+Group, Paediatrics, Public Health England 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Public Health Midwife & TB Nurse Specialist 
+ 
+For use by: All paediatric and maternity staff involved in the care of 
+newborn babies 
+ 
+Purpose: To provide clear evidence based guidance on the BCG 
+Immunisation Programme 
+This document supports: Public Health England Service Specifications. 
+ 
+Key related documents: UH Sussex West (SRH&WH) Maternity Guidelines: 
+CG17003 NIPE guideline 
+Approved by: Joint Obstetric Guideline Group and Pharmacy 
+Approval date: 24th Nov 2021 Uploaded: 29th Nov 2021 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors 
+Not Applicable – Divisional Ratification only required 
+Ratification Date: Not Applicable – Divisional Ratification only required 
+Expiry Date: November 2024 
+Review date: May 2024 
+If you require this document in another format such as Braille, large print, audio or 
+another language please contact the Trusts Communications Team 
+Reference Number: CG1130 CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 2 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Version date Author Status Comment 
+1.0 March 2018 TB Nurse 
+Specialist and 
+Public Health 
+Midwife Archive New Guideline 
+2.0 August 2019 Public Health 
+Midwife & TB 
+Nurse Specialist Archived Amendments to reflect PGD, 
+HIV guidance & inclusion of 
+SOPs 
+3.0 November 2021 C. Thomas, 
+Public Health 
+Midwife LIVE PHE Immunisation 
+Programme: Changes from 
+September 2021. 
+ 
+The interpretation and application of clinical guidelines will remain the 
+responsibility of the individual clinician. 
+ 
+If in doubt contact a senior colleague or expert . CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 3 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Index 
+1.0 Introduction ................................ ................................ ................................ .................. 4 
+2.0 Scope ................................ ................................ ................................ .......................... 4 
+3.0 Abbreviations used in this guideline ................................ ................................ .............. 4 
+4.0 Responsibilities ................................ ................................ ................................ ............ 4 
+5.0 Aim of the immunisation programme ................................ ................................ ............ 5 
+6.0 BCG immunisation programme ................................ ................................ .................... 5 
+6.1 Direct health outcomes ................................ ................................ ................................ . 5 
+7.0 Antenatal booking visit................................ ................................ ................................ .. 5 
+7.1 Definition of at risk infants ................................ ................................ ............................ 6 
+8.0 Newborn infant physical examination (NIPE) screening ................................ ................ 6 
+9.0 Responsibilities of staff following BCG referral ................................ .............................. 7 
+9.1 Responsibilities of the discharging community midwife ................................ ................. 7 
+9.2 Administrative staff ................................ ................................ ................................ ....... 7 
+9.3 The paediatric nurse/midwife in clinic ................................ ................................ ........... 8 
+9.4 Responsibilities of Public Health midwife ................................ ................................ ...... 8 
+10.0 Exclusions ................................ ................................ ................................ .................... 9 
+10.1 Maternal HIV ................................ ................................ ................................ ............... 9 
+10.2 SCID - Severe Combined Immunodeficiency ................................ ............................... 9 
+11.0 BCG vaccine dose and administration ................................ ................................ ........ 10 
+11.1 Dose ................................ ................................ ................................ ......................... 10 
+11.2 Method of administration ................................ ................................ ........................... 10 
+11.3 Advice ................................ ................................ ................................ ....................... 10 
+11.4 Interactions ................................ ................................ ................................ ................ 11 
+11.5 Surrey and Sussex Partnership ................................ ................................ ................. 11 
+12.0 Audit / Monitoring ................................ ................................ ................................ ....... 12 
+13.0 References ................................ ................................ ................................ ................. 12 
+Appendix 1: Countries at high risk of TB ................................ ................................ ............... 14 
+Appendix 2: A guide for parents about the BCG vaccination and after care ........................... 15 
+Appendix 3: BCG referral booking process ................................ ................................ ........... 17 
+Appendix 4: BCG referral process (NIPE practitioner) ................................ ........................... 18 
+Appendix 5: BCG referral process (discharging midwife) ................................ ....................... 19 
+Appendix 6: BCG referral process (administration of failsafes) ................................ .............. 22 
+Appendix 7: How to run the NIPE BCG report ................................ ................................ ....... 25 
+Appendix 8: How to print a BCG referral from NIPE ................................ .............................. 27 
+Appendix 9: How to book a BCG appointment (administrators) ................................ ............. 29 
+Appendix 10: BCG referral process (Public Health Midwife) ................................ .................. 31 CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 4 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Newborn BCG Immunisation Guideline 
+1.0 Introduction 
+ 
+This guideline has been developed to standardise the procedure for identification of those 
+neonates at risk of human tuberculosis (TB), the procedure for the referral and 
+documentation, and the vaccination programme for those neonates deemed to be at risk of 
+developing TB. 
+ 
+This guideline applies to neonates/infants under the care of practitioners working within UH 
+Sussex West (SRH & WH). 
+ 
+Human tuberculosis is caused by infection with the mycobacterium tuberculosis, and may 
+affect any part of the body. Rates of TB have stabilised in the UK over the past seven years, 
+following an increase in incidence from 1990 to 2005. However, despite considerable efforts 
+to improve TB prevention, treatment and control, the incidence of TB in the UK remains high 
+compared to most other Western European countries, with 5,758 cases reported in 2015, an 
+incidence of 9.0 per 100,000 of the population. 
+ 
+2.0 Scope 
+ 
+This guideline applies to: 
+• Midwives 
+• Paediatric nurses 
+• Paediatricians 
+. 
+3.0 Abbreviations used in this guideline 
+ 
+TB - Tuberculosis SCID - Severe Combined Immunodeficiency 
+BCG - Bacillus Calmette -Guerin CHRD - Child Health Records Department 
+NIPE - Newborn Infant Physical 
+Examination PGD - Patient Group Directive 
+PCHR - Personal Child Health Record book NBBS - Newborn Blood Spot 
+CHIS - Child Health Information System MTCT - Mother to Child Transmission 
+PHE - Public Health England MMR - Mumps Measles Rubella 
+ 
+4.0 Responsibilities 
+ 
+Midwives, paediatric nurses and paediatricians: 
+• To access, read, understand and follow this guidance. 
+ 
+Management: 
+• To ensure the guideline is reviewed as required in line with Trust and National 
+recommendations. CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 5 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ • To ensure the guideline is accessible to all relevant staff. 
+ 
+5.0 Aim of the immunisation programme 
+ 
+The aim of the selective neonatal BCG immunisation programme is to protect those infants 
+(0 - 12 months of age), identified in ‘at risk’ groups as being at an increased risk from or 
+exposure to TB infection. 
+ 
+The aim will be achieved by delivering an evidence -based, population -wide immunisation 
+programme that: 
+ 
+• Identifies the eligible population and ensures effective timely delivery with optimal 
+coverage based on the target population. 
+• Is safe, effective, equitable and of a high quality and is independently monitored via 
+the Screening and Immunisation Teams based within NHS England. 
+• Is delivered and supported by appropriately trained, competent healthcare 
+professionals who participate in ongoing training and development in line with 
+national standards. 
+• delivers, manages and stores vaccine in accordance with national guidance 
+• Is supported by regular and accurate data collection using the appropriate returns as 
+required nationally and/or locally. 
+ 
+6.0 BCG immunisation programme 
+ 
+The BCG immunisation programme is delivered as a risk -based programme. A key part of 
+this risk based approach is the selective neonatal programme targeted at those infants most 
+at risk of exposure to TB. 
+ 
+Analysis shows the vaccine to be 70 - 80% effective against the most severe forms of the 
+disease that includes TB meningitis in children. 
+ 
+6.1 Direct health outcomes 
+ 
+In the context of health outcomes the selective neonatal BCG vaccine programme aims to: 
+ 
+• Reduce the number of new-borns at risk from or exposure to TB infection. 
+• Reduce the number of preventable infections and their onward transmission. 
+• Achieve high coverage across the groups identified. 
+ 
+7.0 Antenatal booking visit 
+ 
+At booking the midwife should identify the exact country of origin of both parents and ensure 
+that this is documented onto the Medway Maternity system. The midwife should complete the 
+BCG section of the woman’s handheld notes. CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 6 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 7.1 Definition of at risk infants 
+ 
+Neonatal BCG vaccine is routinely offered to infants in the following high-risk groups: 
+ 
+• All infants (0 – 12 months) living in areas of the UK where annual incidence of TB 
+is 40/100,000 or greater. 
+• All infants (0 – 12 months) where one or more parent or grandparent was born in a 
+country where the annual incidence of TB is 40/100,000 or greater. 
+ 
+Countries listed in appendix 1 have high rates of TB. If the answer to any of the following 
+questions is ‘ yes’ then the baby should have a BCG vaccination: 
+ 
+• Are you, your family or your baby’s father or his family from one of these 
+countries? 
+• Will you and your baby be going to live for more than one month or travel 
+frequently in one of these countries in the near future? 
+• Is there anyone in your house, or anyone else who is likely to have long-term close 
+contact with your baby, who either has TB, or has had it in the past, or comes from 
+one of these countries? 
+ 
+The above is not exclusive and any baby who is considered at risk but does not fit any of the 
+above categories should be discussed with a paediatrician. 
+ 
+If the parents answer ‘yes’ to any of the high risk categories, the midwife should discuss BCG 
+vaccination and give the National Patient Information leaflet regarding BCG Vaccine to the 
+parent. This can be accessed and / or printed from Family Assist via a computer or Smart 
+phone. 
+ 
+8.0 Newborn infant physical examination (NIPE) screening 
+ 
+Using the definition of at risk infants, the NIPE practitioner will identify if the baby requires a 
+BCG vaccination. 
+ 
+Eligibility for BCG is a mandatory field on NIPE S4N systems. Screening will be completed 
+identifying risk of TB and if BCG vaccination is indicated. Free text should be added to 
+identify the concerns e.g. country of origin; active TB in house etc. 
+ 
+If BCG referral is indicated, the referral form ‘BCG Neonatal Immunisation Referral Form’ can 
+be selected from the ‘letters’ tab. All fields must be completed in the NIPE Practitioner 
+section only. Any missing information can cause a delay in immunisation of the infant. The 
+NIPE practitioner is responsible for the BCG referral. 
+ 
+• The referral form should be emailed to: 
+uhsussex.bcgimmunisationprogram@nhs.net CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 7 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ • The referral procedure should be explained to the parents with the aim of 
+vaccination within 28 days of birth. 
+ 
+9.0 Responsibilities of staff following BCG referral 
+ 
+9.1 Responsibilities of the discharging community midwife 
+ 
+• At discharge to the health visitor, if BCG vaccination is required, this should be 
+documented on the carbonated page on the back of the Maternal Postnatal Care 
+Record. 
+• If a referral has been made this can be identified by looking at the S4N NIPE print 
+out in the Personal Child Health Record book (PCHR). 
+• If it is not clear from this documentation whether a referral has been made, a paper 
+copy referral using the form ‘BCG Neonatal Immunisation Referral Form’ should be 
+completed. This is then scanned and emailed to: 
+uhsussex.bcgimmunisationprogram@nhs.net 
+ 
+9.2 Administrative staff 
+ 
+• Staff should check the referral form is fully completed by the NIPE practitioner. 
+• An appointment is made for vaccination in the BCG neonatal immunisation clinic 
+as soon as possible. This should be within 2 weeks of age. 
+• Inform CHIS weekly of all our eligible babies. 
+• Staff to check NBBS result received and that the SCID result is recorded. Any 
+results which show a detected result to be highlighted to Public Health Midwife. 
+• If repeat sample is a positive result. Cancel BCG appointment. 
+• When the baby has attended for immunisation the carbon copies of PCHR will be 
+sent to the GP and child health records department ( CHRD) . The completed 
+referral and administration form will be filed in maternal notes. The completed 
+referral should also be scanned into EVOLVE as part of the neonatal record. 
+• If a parent fails to bring their child to the appointment (DNA) contact the midwife / 
+heath visitor or GP to check address correct and send new appointment. 
+• If 2nd DNA the standard hospital DNA letter will be sent to health visitor / GP / 
+CHRD. 
+• If the vaccine is declined this should be documented on the referral form and filed 
+on Evolve. 
+• All referrals and outcomes will be recorded on the failsafe spreadsheet maintained 
+by the administrative BCG team within the Maternity Shared Drive. This will include 
+reports obtained from Medway and NIPE S4N to ensure that all referrals are made 
+and actioned. 
+• If no referral has been received within 3 days of birth, check NIPE for BCG referral 
+history. 
+• Run a report from NIPE S4N per site of all BCG referrals for the month. CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 8 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 9.3 The paediatric nurse/midwife in clinic 
+ 
+BCG Vaccination is to be given to infants only by a nurse/midwife trained and competent in 
+the administration of BCG immunisation. BCG is delivered via a Patient Group Directive 
+(PGD). Training will be facilitated by an appropriately identified trainer overseen by the TB 
+Nurse Specialist 
+ 
+• The baby must be identified by name, date of birth and NHS number checked with 
+the parent/carer and against PCHR red book and referral form. 
+• The nurse/midwife must ensure that the baby has been correctly identified as 
+needing BCG vaccination using the definitions above. 
+• The nurse/midwife must check the result of SCID screening has been received. As 
+BCG is a live vaccine it cannot be given to a baby with SCID, due to 
+immunosuppression, so the SCID result (not tested/detected/not detected) must be 
+known before the BCG vaccine can be given. 
+o SCID Not tested=Give vaccine. 
+o SCID Not detected=Give Vaccine. 
+o SCID detected=Contradicted DO NOT GIVE. 
+• Check the exclusions below and document consent from the parent/carer on the 
+referral form. 
+• Post vaccination the nurse/midwife must complete EPMA including batch no, 
+product name, expiry, site & route of vaccine. 
+• The nurse/midwife must complete the referral form, the appropriate PCHR pages 
+(including the batch number and date given) and return them to the administrator. 
+• Post vaccine advice leaflet should be discussed with the parent and given for 
+reference (see Appendix 2 ). 
+ 
+9.4 Responsibilities of Public Health midwife 
+ 
+If there is no referral made present reprint and complete relevant sections. Feedback is given 
+to NIPE practitioner to avoid reoccurrence. 
+ 
+If there is no history of referral then check maternal notes and check country of origin against 
+Medway entry and complete referral as appropriate. Feedback to NIPE practitioner. 
+ 
+• Failsafe: This should occur monthly. 
+• Check each baby against Medway spreadsheet to ensure all referral and babies 
+are accounted for. 
+• If no NBBS result received or baby is SCID detected ensure appointment for BCG 
+is cancelled. BCG not to be given if no SCID result available. 
+• Use Northgate/CHIS to confirm result. 
+• All SCID suspected/SCID detected results will be seen by immunologist within 24 
+hrs in specialist centre for confirmatory testing -flow cytometry. CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 9 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ • Contact babies GP to establish outcome of immunologist appointment. If letter 
+confirms BCG eligibility ask admin team to book baby appointment in BCG clinic. 
+Ensure copy of immunologist letter is received and attached to referral form. 
+• Report data to PHE monthly report any delays and mitigations. 
+ 
+10.0 Exclusions 
+ 
+The injection should not be given or should be delayed if the baby: 
+ 
+• Has a high fever. 
+• Is having treatment for cancer or other serious conditions that weaken the immune 
+system. 
+• Is HIV positive. 
+• Is suffering from a generalised skin condition e.g. eczema. 
+• Is in receipt of passive antibodies e.g. immunoglobulin within the last 3 months. 
+• Is currently receiving a course of steroids. 
+• NO NBBS result received. 
+• SCID Detected. Until letter received from Immunologist to clarify SCID result. 
+• Exposure to immunosuppression treatment in pregnancy or mother is 
+breastfeeding, BCG not to be given until six months of age. 
+ 
+10.1 Maternal HIV 
+ 
+Infants considered at VERY LOW or LOW RISK of HIV transmission (i.e. maternal viral load 
+<50 HIV RNA copies/mL at or after 36 weeks’ gestation) may be given BCG following birth if 
+indicated according to UK guidelines for HIV -unexposed infants. 
+ 
+Where maternal HIV is present and BCG is required the referral form for BCG should be sent 
+to the paediatric consultant (Dr Anne -Marie Buckley for St Richard’s and Dr Jonathan Rabbs 
+for Worthing). The consultant will confirm that the mother -to-child-transmission (MTCT) is 
+considered low risk and they will date and sign the referral form stating the baby can receive 
+its BCG immunisation. 
+ 
+10.2 SCID - Severe Combined Immunodeficiency 
+ 
+• Rare treatable genetic disorder that affects the development of functional T cells 
+and B cells in the infants. 
+• If left untreated results in repeated severe infections and death within the first few 
+years of life. 
+• Current estimate of incidence in the UK is 1in 48,933. 
+• BCG vaccine is contradicted in infants affected by SCID. CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 10 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 11.0 BCG vaccine dose and administration 
+ 
+11.1 Dose 
+
+Infants under 12 months of age: 0.05ml of the reconstituted vaccine strictly by 
+intradermal injection. 
+Infants and children over 12 months 
+of age: 0.1ml of the reconstituted vaccine strictly by 
+intradermal injection. 
+ 
+11.2 Method of administration 
+ 
+When drawn up into the syringe the vaccine suspension should appear homogenous, slightly 
+opaque and colourless. BCG Vaccine (AJ Vaccine) should be administered with a syringe 
+fitted with a short bevel needle (gauge 26 G). 
+ 
+The baby should be held by the nurse/carer and the left arm exposed. The injection site 
+should be clean and dry and not contaminated with antiseptics. If alcohol is used to swab 
+the skin, it must be allowed to evaporate before the vaccine is injected. 
+ 
+The vaccine should be injected strictly intradermal normally into the lateral aspect of the left 
+upper arm at the level of the insertion of the deltoid muscle. Sites higher on the arm should 
+be avoided as more likely to lead to keloid formation. 
+ 
+• The skin is stretched between thumb and forefinger. 
+• The needle should be almost parallel with the skin surface and slowly inserted with 
+the bevel upwards , approximately 2mm into the superficial layers of the dermis; the 
+needle should be visible through the epidermis during insertion. 
+• The injection should be given slowly. 
+• A raised, blanched bleb is a sign of correct injection. 
+• The injection site is best left uncovered to facilitate healing. 
+ 
+Check the comfort of the baby and reassure the parents/carers. 
+ 
+11.3 Advice 
+ 
+The parents/carers should be advised that a sore area may form, it may burst and leak 
+fluid/blood; this is an expected reaction and should not cause alarm. The sore area should 
+be kept dry and a dressing should not be applied, it will heal slowly (it may take 6-8 months 
+or longer). 
+ 
+Advise the parents/carers to see the GP if they are concerned about the baby’s well -being or 
+the area of soreness. CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 11 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+11.4 Interactions 
+ 
+BCG vaccine may be given concurrently with inactivated or live vaccines. Live vaccines, 
+such as rotavirus, live attenuated influenza vaccine (LAIV), oral typhoid vaccine, yellow fever, 
+varicella, zoster and MMR can be administered at any time before or after BCG vaccination. 
+ 
+Other vaccines to be given at the same time as BCG vaccine should not be given into the 
+same arm. No other vaccination should be given for at least three months in the arm used for 
+BCG vaccination (the left arm at UHSussex NHS Trust) because of the risk of regional 
+lymphadenitis. 
+ 
+11.5 Surrey and Sussex Partnership 
+ 
+Surrey and Sussex 
+BCG SCID pathway v CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 12 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 12.0 Audit / Monitoring 
+ 
+The number of babies vaccinated by 28 days and after 28 days will be monitored by key 
+performance indicator (KPI) statistics sent to Public Health England. 
+ 
+This will include the number who decline and the number who fail to attend the appointment. 
+ 
+13.0 References 
+ 
+British HIV Association Guidelines for the management of HIV in pregnancy and postpartum 
+2018 
+ 
+Public Health England: Tuberculosis in the UK: 2016 report 
+ 
+Immunisation against infectious disease: Green Book Chapter 32Tuberculosis July August 
+2018 
+https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_dat 
+a/file/731848/_Greenbook_chapter_32_Tuberculosis_.pdf 
+ 
+Public Health England: WHO estimates of tuberculosis incidence by country 2012 
+ 
+Sedaghatian M.R. Kardouni K. Tuberculin response in preterm infants after BCG vaccination 
+at birth. Archives of Disease in Childhood (1993); 69:309 -311 
+ 
+NICE Guidelines for Tuberculosis 2016 
+Collaborative Tuberculosis Stratergy for England 2015 to 2020 
+Immunisation against infectious disease – ‘The Green Book’: 
+https://www.gov.uk/government/collections/immunisation -against -infectious -disease -the- 
+green -book 
+ 
+For country information on prevalence see: 
+www.who.int/tb/country/data/profiles/en/index.html 
+ 
+Immunisation training: national minimum standards 
+https://www.gov.uk/government/publications/immunisation -training -national -minimum - 
+standards 
+ 
+NPSA Vaccine cold storage, supporting information January 2010: 
+http://www.nrls.npsa.nhs.uk/EasySiteWeb/getresource.axd?AssetID=66112&type=full&servic 
+etype=Attachment 
+ 
+Protocol for ordering, storing and handling vaccines (DH Sept 2010) 
+www.dh.gov.uk/en/Publicationsandstatistics/Publications/PublicationsPolicyAndGuidance/DH 
+_120010 CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 13 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Health Protection Agency, Vaccine Incident Guidance, March 2012: 
+https://www.gov.uk/government/publications/vaccine -incident -guidance -responding -to- 
+vaccine -errors 
+ 
+National Reporting and Learning System (NRLS): https://report.nrls.nhs.uk/nrlsreporting/ 
+ 
+NHS England, Serious Incident Framework March 2015. An update to the 2010 National 
+Framework for Reporting and Learning from Serious Incidents Requiring Investigation 
+https://www.england.nhs.uk/patientsafety/serious -incident/ 
+ 
+NMC Standards for medicine management 2010: 
+http://www.nmc.org.uk/standards/additional -standards/standards -for-medicines - 
+management/ 
+ 
+Who pays for what: Aspects of the maternity pathway payment for the screening and 
+immunisation programmes June 2015 
+https://www.gov.uk/government/publications/maternity -pathway -payment -system -guidance - 
+for-nhs-providers -and-commissioners 
+ 
+British National Formulary www.bnf.org/bnf/index.htm 
+ 
+JCVI (Joint Committee on Vaccination and Immunisation) 
+https://www.gov.uk/government/policy -advisory -groups/joint -committee -on-vaccination -and- 
+immunisation 
+ 
+Resuscitation Council – UK guidelines www.resus.org.uk/pages/guide.htm 
+ 
+World Health Organization – Immunisations www.who.int/topics/immunization/en/ 
+ 
+NICE – Shared learning resources 
+www.nice.org.uk/usingguidance/sharedlearningimplementingniceguidance/examplesofimple 
+mentation/eximpresults.jsp?o=575 
+ 
+https://www.gov.uk/government/publications/bcg -immunisation -programme -changes - 
+from-september -2021 -letter/bcg -immunisation -programme -changes -from-september - 
+2021 -letter CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 14 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Appendix 1: Countries at high risk of TB 
+ 
+Afghanistan Guinea Palau 
+Algeria Guinea -Bissau Panama 
+Angola Guyana Papua New Guinea 
+Armenia Haiti Paraguay 
+Azerbaijan Honduras Peru 
+Bangladesh Hong Kong (SAR) Philippines 
+Belarus India Rep. Korea 
+Benin Indonesia Republic of Moldova 
+Bhutan Iraq Romania 
+Bolivia (Plurinational State Of) Kazakhstan Russian Federation 
+Botswana Kenya Rwanda 
+Brazil Kiribati Sao Tome & Principe 
+Brunei Darussalam Kyrgyzstan Senegal 
+Burkina Faso Lao PDR Sierra Leone 
+Burundi Lesotho Singapore 
+Cabo (Cape) Verde Liberia Solomon Islands 
+Cambodia Libya Somalia 
+Cameroon Lithuania South Africa 
+Central African Republic Macao (SAR) South Sudan 
+Chad Madagascar Sri Lanka 
+China Malawi Sudan 
+Congo Malaysia Swaziland 
+Côte d'Ivoire Maldives Tajikistan 
+DPR Korea Mali Thailand 
+DR Congo Marshall Islands Timor -Leste 
+Djibouti Mauritania Togo 
+Dominican Republic Micronesia (FSO) Turkmenistan 
+Ecuador Mongolia Tuvalu 
+El Salvador Morocco Uganda 
+Equatorial Guinea Mozambique Ukraine 
+Eritrea Myanmar UR Tanzania 
+Ethiopia Namibia Uzbekistan 
+Fiji Nauru Vanuatu 
+Gabon Nepal Viet Nam 
+Gambia Nicaragua Yemen 
+Georgia Niger Zambia 
+Ghana Nigeria Zimbabwe 
+Greenland Northern Mariana Islands 
+Guam Pakistan CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 15 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Appendix 2: A guide for parents about the BCG vaccination and after care 
+
+Patient name: Hospital Number: 
+ 
+Date of vaccine: Date of birth: 
+ 
+Limb/Side Vaccine Given: 
+
+The BCG vaccination 
+ 
+The Bacillus Calmette -Guérin (BCG) vaccination has been administered to help give 
+protection against Tuberculosis (TB). The BCG vaccine is currently provided by the company 
+Intervax and has been approved by the World Health Organisation (WHO). 
+ 
+You should have received the patient information leaflet regarding BCG vaccine for the 
+newborn with your appointment letter. The nurse/midwife should have also explained the 
+points below before, the BCG vaccination was given. 
+ 
+• The BCG is a live vaccine containing a weakened form of the bacteria that causes 
+TB. Because it is weakened it doesn't actually cause TB but helps people develop 
+immunity against it. 
+ 
+• The vaccination is given under the skin and the body slowly absorbs it. 
+ 
+• The BCG vaccine should not make your baby feel unwell. 
+ 
+• Following changes in advice from Public Health England regarding live vaccines, 
+the BCG vaccine can now be given at any time. This means it can be given before 
+or after rotavirus, live attenuated influenza vaccine, oral typhoid vaccine, yellow 
+fever, varicella, zoster, MMR and tuberculin skin testing. A four week interval does 
+not need to be observed. 
+ 
+• If further vaccinations are given, they should not be given in the same arm for a 
+period of three months. 
+ 
+• The BCG vaccination is only given once. Even if no scar develops, we do not re- 
+vaccinate. 
+ 
+The injection 
+ 
+The injection is given just under the skin of the left upper arm (Deltoid). The vaccination 
+usually leaves a white mark under the skin. CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 16 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+This mark will disappear a few hours after it has been given. Between two and six weeks 
+later a small lump where the injection was given will appear. It can be up to the size of a five 
+pence piece. It may ooze and form a scab. This is quite normal but may take several months 
+to heal. 
+
+After care 
+ 
+• Keep the area clean. 
+ 
+• No creams, lotions or plasters should be used on the area. Only use a plaster if 
+you are going swimming. 
+ 
+• If it oozes on to clothing a small dry woven dressing may be used (gauze). 
+ 
+• The sore should gradually heal over to leave a scar on the arm. 
+
+If you are worried about the vaccination reaction please contact the Tuberculosis (TB) 
+Nursing Team on the details below. 
+ 
+BCG/Tuberculosis (TB) Nursing Team 
+Emma Gluba 
+TB Nurse Specialist 
+Respiratory Department, Loxwood Centre 
+St Richard’s Hospital 
+Spitalfield Lane, Chichester 
+West Sussex PO19 6SE 
+ 
+Telephone: 01243 788122 Ext: 32397 CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 17 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+On receiving a referral (self -referral or GP referral) please ensure that the 
+information given on the form regarding nationality is entered to Sema Helix. 
+At booking please ask the parent the follow questions: 
+•Are you, your family or your baby’s father or his family from one of these 
+countries? 
+•Will you and your baby be going to live for more than one month or travel 
+frequently in one of these countries in the near future? 
+•Is there anyone in your house, or anyone else who is likely to have long-term 
+close contact with your baby, who either has TB, or has had it in the past, or 
+comes from one of these countries? Appendix 3: BCG referral booking process 
+Maternity oversee BCG Immunisation Clinics for all babies born in our Trust. 
+Please see flow chart below on the expectations of the Antenatal Clinic and Booking Midwife 
+with this process. 
+
+• At booking the midwife should identify the exact country of origin of both parents 
+and ensure that this is documented onto the Medway Maternity system. 
+• Also indicate if the baby will need BCG if any of the answers to above questions 
+are ‘yes’. The midwife should complete the BCG section of the woman’s 
+handheld notes. 
+
+• Save NIPE SMaRT report with comments in the relevant month of the BCG 
+administration folder 
+• If the baby requires BCG immunisation once born, discuss this with the 
+woman and ensure that you give her the patient information on BCG 
+vaccination. 
+• Please ensure that you give the parent the Patient Information on TB and 
+BCG Vaccine. This can be printed out via Family Assist using the Family 
+Assist Icon in WSHT Applications or searching Family Assist on the parent’s 
+Smart phone. 
+• Search: BCG; Open Screening Tests for you & your baby; Press on more 
+information on the BCG vaccination to open leaflet which can be printed or 
+downloaded to read. CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 18 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+On completing a NIPE screen please ask the parent the follow questions: 
+• Are you, your family or your baby’s father or his family from one of these 
+countries? 
+• Will you and your baby be going to live for more than one month or travel 
+frequently in one of these countries in the near future? 
+• Is there anyone in your house, or anyone else who is likely to have long - 
+term close contact with your baby, who either has TB, or has had it in the past, 
+or comes from one of these countries? (See appendix 1 ) 
+
+Press ‘Print Selected Letter’ & wait for this to build in the print list. Once built please 
+open the word documented and ensure all fields are completed in the NIPE 
+Practitioner section only. Any missing information can cause a delay in 
+immunisation of the infant Appendix 4: BCG referral process (NIPE practitioner) 
+Please see flow chart below on the expectations of you as NIPE Practitioners with this 
+process. 
+
+If a baby has been identified as requiring 
+BCG vaccination please ensure ‘yes’ is 
+selected on the S4N form 
+(Risk Factors tab). In the free text box enter the country 
+or other information which 
+determines this baby to be of risk 
+to TB. 
+
+Following completion of the 
+screening on S4N the 
+referral form ‘BCG Neonatal 
+Immunisation Referral Form’ 
+can be found in the 
+‘Letters’ tab. 
+ 
+Continued on next page 
+CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 19 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+The above fields can be completed on computer which will then make it easier for you to 
+send as an attachment to: uhsussex.bcgimmunisationprogram@nhs.net 
+Please ensure that you give the parent the Patient Information on TB and BCG 
+Vaccine. This can be printed out via Family Assist using the Family Assist Icon in 
+WSHT Applications or searching Family Assist on the parent’s Smart phone 
+Search: BCG; Open Screening Tests for you & your baby; Press on more information 
+on the BCG vaccination to open leaflet which can be printed or downloaded to read. 
+
+CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 20 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Prior to discharge 
+please check the 
+NIPE Print Out to 
+identify if the baby 
+has had a BCG 
+immunisation referral. 
+NIPE Paperwork (found in PN notes and/or PCHR ‘Red Book’) 
+•If highlights ‘Yes’ - assume referral sent and the administration failsafe will follow this up 
+•If highlights ‘No’- assume referral not sent 
+ 
+If you suspect a BCG vaccine is required and you assume one hasn’t been completed 
+as the NIPE paper states ‘No’ please ask the parent the follow questions: 
+ 
+•Are you, your family or your baby’s father or his family from one of these countries? 
+•Will you and your baby be going to live for more than one month or travel frequently 
+in one of these countries in the near future? 
+•Is there anyone in your house, or anyone else who is likely to have long-term close 
+contact with your baby, who either has TB, or has had it in the past, or comes from 
+one of these countries? (See appendix 1 ). Appendix 5: BCG referral process (discharging midwife) 
+ 
+Please see flow chart below on the expectations of you as the discharging Midwife 
+with this process. 
+
+Continued on next page CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 21 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Please ensure that once completed you scan and send the copy to the address 
+below. A Ward Clerk can assist you with this. 
+Uhsussex.bcgimmunisationprogram@nhs.net 
+
+Please ensure that you give the parent the Patient Information 
+on TB and BCG Vaccine. This can be printed out via Family 
+Assist using the Family Assist Icon in WSHT Applications or 
+searching Family Assist on the parent’s Smart phone. 
+Search: BCG; Open Screening Tests for you & your baby; 
+Press on more information on the BCG vaccination to open 
+leaflet which can be printed or downloaded to read. 
+Once confirmed that a BCG immunisation referral is required please completed a 
+paper copy of the BCG Newborn Immunisation Referral From 2019 CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 22 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Appendix 6: BCG referral process (administration of failsafes) 
+ 
+Please see flow chart below on the expectations of you as Administrators of the BCG 
+Failsafe with this process. Any concerns with any aspect of the process please contact the 
+Public Health Midwife. 
+ 
+Pre appointment: 
+• A weekly report is run from Medway & NIPE, which will produce a list of babies born who 
+were identified at booking requiring BCG immunisation. For details on how to run the 
+reports please see the how to guide. 
+• This will be found on the server in the Maternity Shared Drive; Public Health; BCG 
+Immunisation Programme Folder - BCG Clinic Set Up; Flow Chart SOP (Please save 
+reports in the specific named folder in the BCG administration folder) 
+• Please action those for your site specifically and start with the oldest babies first. 
+• DO NOT DELETE the spreadsheet as this will need to be saved for use by others. The 
+purpose of the spreadsheet is to detail all actions made with regards to BCG 
+immunisation. 
+• Add the additional template columns to the spreadsheet. This is to log all your actions. 
+• BCG referrals will be received via email: uhsussex.bcgimmunisationprogram@nhs.net 
+• Please check that you have received a referral form for each baby. If you have not 
+received a form once the NIPE examination has been complete, please generate a BCG 
+referral from NIPE S4N and email to the NIPE practitioner to confirm. Please do not wait 
+for the NIPE practitioner to respond. Proceed with making the appointment and cancel 
+later if needed. 
+• If the referral does not match any of the babies on the Medway spreadsheet please 
+ensure baby’s family origin is on the high risk list for TB or there is a family history. Add 
+baby to the spreadsheet and proceed with making the appointment. 
+• Inform CHIS weekly of babies identified at NIPE eligible for BCG. 
+Once the referral has been received please check the following: 
+1. Has all of the NIPE Practitioner section been completed? 
+o Yes: Proceed 
+o No: Please email referrer to complete. Ensure baby has a family origin on the high 
+risk list for TB or family history of TB and proceed with making the appointment. 
+2. Do the countries stated on the referral form match those on the country list below? 
+o Yes: Proceed 
+o No: Check Medway for both Mother and Father’s family origin or if there is a family 
+history of TB. If country stated is not on the list, highlight blue on the spreadsheet. If 
+no specific country is listed, contact mum to check and proceed with making 
+appointment if applicable. CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 23 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+• Check Sema Helix for available appointment and book. 
+• Appointment should be given within 2 weeks of birth (over 28 days is reportable to Public 
+Health England so this should ‘allow’ for a potential DNA). 
+• Send appointment letter with BCG Leaflet. 
+• This can be found under Maternity Shared Drive; Public Health; BCG Immunisation 
+Programme Folder - BCG Administration. 
+• Enter all actions to the relevant baby on the spreadsheet 
+• Text reminders to each parent prior to appointment 
+• One week prior to appointment crosscheck that NBBS result received. CHIS will notify 
+us of any screen positive results from SCID screening taken on day 5 NBBS. 
+• Use Northgate to check NBBS back and result for SCID is known: 
+SCID Negative -proceed 
+SCID not screened -proceed 
+SCID positive -Cancel Appointment with parents. Inform Public Health Midwife. 
+• Cancel upcoming BCG appointment. Inform parents. 
+Pre Clinic: 
+Prior to day of clinic ensure that ‘BCG Pack’ is made for those babies due to attend clinic 
+BCG Pack (plastic wallet per baby) to include: 
+• Referral Form 
+• Nurse Checklist 
+• BCG Immunisation Leaflet 
+• After Care Leaflet 
+The nurse will come and collect the packs on the day of the clinic. 
+Has the patient declined? 
+• Cancel the appt and send cancelation letter to patient; Send a decline letter to GP and 
+email appropriate Health Visitor team; Record on spreadsheet; Upload scan copy of this 
+form to EVOLVE and file this and a copy of the decline letter in maternal notes. 
+Post Clinic: 
+Once you have received the referrals back check the following: 
+Has the Paediatric Nurse section of form been fully completed? 
+• Yes: Proceed. 
+• No: Email nurse that the form requires completed cc TB Nurse Specialist to email. 
+Has the patient DNA’d? 
+• No: Proceed 
+• Yes: Rebook the appointment and contact mother to confirm address. Record second CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 24 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+appt on spreadsheet. 
+2nd DNA? 
+• No: Proceed 
+• Yes: Send DNA letter to GP and patient, and email the appropriate Health Visiting Team 
+on NHS.net. Record on the spreadsheet, upload referral to EVOLVE and file in Mum’s 
+Maternity notes. 
+Patient Attended Clinic? 
+• Vaccinated: Send the pink carbon copies of PCHR to GP, keep the yellow one; 
+Upload scan copy of the referral form and Paediatric Nurse Checklist to EVOLVE and 
+file in maternal notes. Record on the BCG and CHIS spreadsheet. 
+• Not Vaccinated: Find out whether they declined or appt need to be rebooked. Action 
+as appropriate. 
+Enter all actions to the relevant baby on the spreadsheet. CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 25 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Once you have selected a site, 
+select the box that says ‘Search’ Appendix 7: How to run the NIPE BCG report 
+ 
+As well as the weekly BCG report from Medway, a report from NIPE is also run every 
+Monday to ensure no babies are missed. 
+Log in to NIPE. You will need to select which site you wish to run the report for. Please select 
+either Worthing or St Richards as the report will not work if you select ‘Western Sussex 
+Hospitals’. 
+
+You will need to 
+select a ‘from’ and 
+‘to’ date. The report 
+is run weekly so this 
+will need to be for 
+the previous week. 
+For example if it is 
+Monday 31st 
+December, you will 
+need to run the 
+report from Monday 
+24th to Sunday 30th 
+December. Then 
+click ‘search’ . 
+CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 26 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Another box will appear with a list of babies born within that date period. Click on arrow next 
+to ‘Advanced Search’ , followed by the ‘Risk Factors’ tab. From the drop down menu tick 
+the box next to ‘Risk of TB, BCG indicated’ and hit enter on the keyboard. This will adjust 
+the list of babies to only those who have been identified by the NIPE practitioner as being 
+eligible for a BCG vaccine. 
+
+Remember you will need to run this report twice – once for St Richards and once for 
+Worthing. 
+ 
+Please screenshot both NIPE reports and save under: 
+S:\WomenChildrenMgmt \MATERNITY \PUBLIC HEALTH \BCG Immunisation 
+Programme \BCG Administration \BCG NIPE Report 
+ 
+If you have not received a referral , check Medway for a country of origin or family history of 
+TB. If they are eligible and were not also generated form the Medway report, please add 
+baby to the BCG spreadsheet and proceed with generating a referral and making an 
+appointment. If no eligibility for BCG is indicated on Medway, contact the parents to check for 
+family origin or family history of TB. 
+ 
+Official flowcharts and guides on the BCG clinic process can be found under: 
+S:\WomenChildrenMgmt \MATERNITY \PUBLIC HEALTH \BCG Immunisation 
+Programme \BCG Clinic Set Up \Flow Chart SOP CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 27 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Appendix 8: How to print a BCG referral from NIPE 
+
+1. Log in to NIPE. 
+2. Select the site. Please select either St Richards or Worthing as selecting Western 
+Sussex will not work. 
+ 
+3. Click on the ‘Search’ box. 
+ 
+4. Search for the baby using name or NHS number and click ‘Search’ . 
+5. Click on babies name to open the record. 
+6. Click on the ‘Screening’ tab. If the NIPE has been completed it will look like the 
+image below with green/red outcomes. If it has not been complete, the boxes will be 
+grey. 
+ 
+CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 28 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+1. Click on the ‘Letters’ tab. 
+2. Click on the ‘Print’ tab to bring up a list of documents. 
+3. Go to page 6 and tick the box text to ‘BCG Referral Form 2018’ . The click ‘Print’. 
+ 
+4. Click on the word icon to open the word document. 
+
+5. Once you have opened it in a word document you will be able to save/print it and fill 
+in the relevant details. CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 29 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Appendix 9: How to book a BCG appointment (administrators) 
+ 
+Official flowcharts and guides on the BCG clinic process can be found under MATERNITY > 
+PUBLIC HEALTH > BCG Immunisation Programme > BCG Clinic Set Up 
+Throughout the week emails will come in to the BCG inbox (wsht and nhs.net) with BCG 
+referrals. With these you will need to check the stated country on the referral against the high 
+risk list on the back of the referral (WHO list). If it matches you can make the appointment. 
+ 
+Please note : Syria is not on the list but we are currently offering babies with a Syrian family 
+origin the BCG vaccine. 
+ 
+If there is no country that matches but there is a family history of TB, the BCG vaccine can 
+also be offered. If this is the case it will be stated on the BCG referral. 
+ 
+Now you can put the referral on sema… 
+ 
+Open sema and go to Outpatients > Manage Outpatient Referrals. Type in baby’s NHS 
+number. Check that the correct baby has been entered and click on New Referral at the 
+bottom of the box. You will need to answer any underlined questions. 
+• Referral Type will be ‘Consultant, other than A&E ’ for paediatricians, ‘Allied Health 
+Professional ’ for Midwives or ‘ Health Visitor ’ for Health Visitors. 
+• In Referrers ID or Source write the name of the person who referred the baby (found 
+on the referral). 
+• Date Referral Received . 
+• Intended Case Type is Outpatient. 
+• In the small box next to Health Prof type NMB and click the arrows. Then select Nick 
+M Brennan from the drop down menu. In the drop down menu next to speciality 
+select Paediatrics . Please note: this is for St Richards BCG clinic ONLY. If you are 
+booking an appointment for Worthing clinic please see list of codes on the next page. 
+• Under Administrative details the Service Type is Advice/Consultation , the Priority is 
+Routine and the Overseas Visitor is Not Applicable. 
+ 
+Now you can book the appointment... 
+ 
+• Under Outpatients > Manage Outpatient Referrals , select the referral you just put 
+on and click Book Appt at the bottom right. 
+• Next to Clinic write PABCGC (for St Richards, if you are booking an appointment for 
+Worthing please see list of codes on the next page) and select the arrows. Select 
+BCG Newborn Immunisation SRH should from the drop down list. The from and to 
+dates should be filled out automatically (this is the range date you will be searching 
+available clinics. (If there aren’t any appointments available in this range you can 
+change it). Click Search . 
+• Then select a clinic date and time and click next. In the Booking System drop down 
+menu select Partial Booking System and click finish . Another box should appear 
+for an appointment letter to be sent to the patient. In the box next to code type CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 30 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ OPTEPI (code for the BCG Clinic letter – St Richards ONLY, if you are booking for 
+Worthing clinic, check the codes below). In the list you should see ‘Contact – Paed 
+Immunisation’ , click on it and click the ‘ >’ so that it moves to the box on the right. 
+Then click ok. 
+ 
+The appointment letter will need to be sent with the blue ‘TB, BCG vaccine and your baby’ 
+leaflet in the envelope. 
+ 
+Make a note of what babies you receive throughout the week to make filling out the 
+spreadsheet easier. Do not add babies to the spreadsheet that are born in the current week 
+as this will confuse things when the BCG report is run every Monday. 
+ 
+Filling out the referral form 
+ 
+Once the appointment is made you will need to fill out the referral form. Fill out the 
+Date/Time of appt and tick when you have sent an appointment letter and when the BCG 
+vaccine has been prescribed on JAC . 
+ 
+Useful Codes 
+ 
+BCKY – Dr Anne -Marie Buckey is the health professional for St Richards BCG Clinic 
+Vam – Dr Vamvakiti is the health professional for Worthing BCG Clinic 
+PABCGC – St Richard’s clinic code 
+OPTEPI – St Richard’s clinic letter code 
+PABCGW – Worthing clinic code. If Sally is away and you are covering for Worthing this is 
+the code to book babies in the Worthing clinics. When putting the referral on sema it’s the 
+same process but instead of Nick Brennan as the Health Professional it’s E Vamvakiti. 
+WOPTPZ – Worthing clinic letter code CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 31 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+The administrators will contact if a referral has not been received within at least 
+3 days of birth of any baby from the Medway spreadsheet. 
+ 
+•Please check NIPE for a BCG referral history. If there is one present reprint and 
+complete relevant sections. Feedback to NIPE practitioner that a referral was not 
+sent by email to avoid reoccurrence. 
+•If no history of referral printed then request maternal notes and check country of 
+origin against Medway entry and complete referral if appropriate. Feedback to 
+NIPE practitioner that a referral was not completed to avoid reoccurrence. 
+The administrators will contact if a referral has been received but does not appear on 
+Medway spreadsheet or the countries of origin do not match the high risk list. 
+ 
+•Please request maternal notes and check country of origin written. Check against 
+Medway entry. If not clear why a referral was sent and nothing written in NIPE 
+SMaRT please contact NIPE practitioner to understand why a referral was 
+required. 
+The administrators will contact you if the BCG referral has not been fully completed 
+and no response has been gleaned from email sent. 
+ 
+•Please request maternal notes and check country of origin against Medway entry 
+and complete referral if appropriate. Feedback to NIPE practitioner that the referral 
+was not completed fully to avoid reoccurrence. 
+ 
+Failsafe 
+ 
+Monthly (may need adjusting to fortnightly if regular referrals missing) Requirement: 
+ 
+•Pull report on excel spreadsheet from NIPE SMaRT per site facility (cannot use 
+Trust oversite for this) of all BCG referrals for the month. 
+•Check each baby against the Medway spreadsheet to ensure all referrals and 
+babies accounted for. 
+•If there are additional babies on the NIPE SMaRT report that do not appear on 
+the Medway spreadsheet please review comments in NIPE SMaRT to determine 
+if BCG referral should have been sent. This will also require checking against 
+maternal notes and Medway entry to ensure it was not a manual entry error by 
+NIPE Practitioner. Appendix 10: BCG referral process (Public Health Midwife) 
+Obligations of the Public Health Midwife: 
+
+ CG18005 Newborn BCG Immunisation Guideline 3.0 November 2021 Page 32 of 32 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+•Use Northgate/CHIS to double check result. 
+•Ensure appointment for BCG has been cancelled and parents aware. 
+Contact babies GP via email to establish outcome of immunologist appointment. 
+ 
+•If false positive result confirmed by GP or immunologist has confirmed vaccine 
+can be given. 
+•Rebook BCG appointment. 
+•Report delay /mitigations to PHE in monthly returns. 
+
+Failsafe for public health midwife if no NBBS result received/ SCID positive.

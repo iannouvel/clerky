@@ -1,0 +1,586 @@
+# Extracted from: FIGO - 2015 - Intrapartum Fetal Monitoring - Cardiotocography.pdf
+# Guideline ID: figo-2015-intrapartum-fetal-monitoring-cardiotocography
+# Content length: 51053 characters
+# Processing date: 1745340882.7038343
+
+FIGO GUIDELINES
+FIGO consensus guidelines on intrapartum fetal
+monitoring: Cardiotocography ☆,★
+Diogo Ayres-de-Camposa, Catherine Y. Spongb, Edwin Chandraharanc;
+for the FIGO Intrapartum Fetal Monitoring Expert Consensus Panel1
+aMedical School, Institute of Biomedical Engineering, S. Joao Hospital, University of Porto, Portugal
+bEunice Kennedy Shriver National Institute of Child Health and Human Development, Bethesda, MD, USA
+cSt George ’s University Hospitals NHS Foundation Trust, London, UK
+1. Introduction
+The purpose of this chapter is to assist in the use and interpretation
+of intrapartum cardiotocography (CTG), as well as in the clinical man-
+agement of speci ﬁc CTG patterns. In the preparation of these guidelines,
+it has been assumed that all necessary resources, both human and ma-terial, required for intrapartum monitoring and clinical management
+are readily available. Unexpected complications may occur during
+labor, even in patients without prior evidence of risk, so maternity hos-
+pitals need to ensure the presence of trained staff, as well as appropriate
+facilities and equipment for an expedite delivery (in particular emer-
+gency cesarean delivery). CTG monitoring should never be regarded as
+a substitute for good clinical observation and judgement, or as an excuse
+for leaving the mother unattended during labor.
+2. Indications
+The evidence for the bene ﬁts of continuous CTG monitoring, as
+compared with intermittent auscultation, in both low- and high-risk
+labors is scientiﬁ cally inconclusive [1,2]. When compared with intermit-
+tent auscultation, continuous CTG has been shown to decrease theoccurrence of neonatal seizures, but no effect has been demonstratedon the incidence of overall perinatal mortality or cerebral palsy. Howev-
+er, these studies were carried out in the 1970s, 1980s, and early 1990s
+where equipment, clinical experience, and interpretation criteria were
+very different from current practice, and they were clearly underpow-
+ered to evaluate differences in major outcomes [3]. These issues are
+discussed in more detail in Section 8 of this chapter. In spite of these
+limitations, most experts believe that continuous CTG monitoring
+should be considered in all situations where there is a high risk of fetal
+hypoxia/acidosis, whether due to maternal health conditions (such as
+vaginal hemorrhage and maternal pyrexia), abnormal fetal growth
+during pregnancy, epidural analgesia, meconium stained liquor, or the
+possibility of excessive uterine activity, as occurs with induced or aug-
+mented labor. Continuous CTG is also recommended when abnormali-
+ties are detected during intermittent fetal auscultation. The use of
+continuous intrapartum CTG in low-risk women is more controversial,
+although it has become standard of care in many countries. An alterna-tive approach is to provide intermittent CTG monitoring alternating
+with fetal heart rate (FHR) auscultation. There is some evidence to sup-
+port that this is associated with similar neonatal outcomes in low-risk
+pregnancies [4]. Intermittent monitoring should be carried out long
+enough to allow adequate evaluation of the basic CTG features (seebelow). The routine use of admission CTG for low-risk women on en-
+trance to the labor ward has been associated with an increase in cesar-
+ean delivery rates and no improvement in perinatal outcomes [5],b u t
+studies were also underpowered to show such differences. In spite ofthe lack of evidence regarding bene ﬁt, this procedure has also become
+standard of care in many countries.
+3. Tracing acquisition
+3.1. Maternal position for CTG acquisition
+Maternal supine recumbent position can result in aortocaval com-
+pression by the pregnant uterus, affecting placental perfusion and fetal
+oxygenation. Prolonged monitoring in this position should therefore
+be avoided. The lateral recumbent, half-sitting, and upright positions
+are preferable alternatives [6].
+CTG acquisition can be performed by portable sensors that transmit
+signals wirelessly to a remote fetal monitor (telemetry). This solutionInternational Journal of Gynecology and Obstetrics 131 (2015) 13 –24
+☆Developed by the FIGO Safe Motherhood and Newborn Health Committee;
+coordinated by Diogo Ayres-de-Campos.
+★The views expressed in this document re ﬂect the opinion of the individuals and not
+necessarily those of the institutions that they represent.
+1Consensus panel: Daniel Surbek (Switzerland ⁎), Gabriela Caracostea (Romania ⁎), Yves
+Jacquemyn (Belgium ⁎), Susana Santo (Portugal⁎ ), Lennart Nordström (Sweden ⁎), Tulia
+Todros (Italy ⁎), Branka Yli (Norway ⁎), George Farmakidis (Greece ⁎), Sandor Valent
+(Hungary ⁎), Bruno Carbonne (France ⁎), Kati Ojala (Finland ⁎), José Luis Bartha (Spain ⁎),
+Joscha Reinhard (Germany ⁎), Anneke Kwee (Netherlands ⁎), Romano Byaruhanga
+(Uganda ⁎), Ehigha Enabudoso (Nigeria ⁎), John Anthony (South Africa ⁎), Fadi Mirza
+(Lebanon ⁎), Tak Yeung Leung (Hong Kong ⁎), Ramon Reyles (Philippines ⁎), Park In Yang
+(South Korea ⁎), Henry Murray (Australia and New Zealand ⁎), Yuen Tannirandorn
+(Thailand ⁎), Krishna Kumar (Malaysia ⁎), Taghreed Alhaidary (Iraq ⁎), Tomoaki Ikeda
+(Japan ⁎), Ferdusi Begum (Bangladesh ⁎), Jorge Carvajal (Chile ⁎), José Teppa (Venezuela ⁎),
+Renato Sá (Brazil ⁎), Lawrence Devoe (USA ⁎⁎), Gerard Visser (Netherlands ⁎⁎), Richard
+Paul (USA ⁎⁎), Barry Schifrin (USA ⁎⁎), Julian Parer (USA ⁎⁎), Philip Steer (UK ⁎⁎), Vincenzo
+Berghella (USA ⁎⁎), Isis Amer-Wahlin (Sweden ⁎⁎), Susanna Timonen (Finland ⁎⁎), Austin
+Ugwumadu (UK ⁎⁎), João Bernardes (Portugal ⁎⁎), Justo Alonso (Uruguay ⁎⁎), Sabaratnam
+Arulkumaran (UK ⁎⁎).
+⁎Nominated by FIGO associated national society; ⁎⁎Inv ited by FIGO based on literature
+search.
+http://dx.doi.org/10.1016/j.ijgo.2015.06.020
+0020-7292/© 2015 Published by Elsevier Ireland Ltd. on behalf of International Federation of Gynecology and Obstetrics.
+Contents lists available at ScienceDirect
+International Journal of Gynecology and Obstetrics
+journal homepage: www.elsevier.com/locate/ijgohas the advantage of allowing the mother to move freely during signal
+acquisition, rather than be restrained to bed or a sofa, and should there-
+fore be the preferred option when available. Telemetry systems differ in
+the maximum distance allowed between patient and monitor for ade-
+quate signal transmission [7].
+3.2. Paper scales for CTG registration and viewing
+The horizontal scale for CTG registration and viewing is commonly
+called “paper speed ”and available options are usually 1, 2, or 3 cm/min.
+In many countries throughout the world 1 cm/min is selected, while inthe Netherlands it is usually 2 cm/min, and in North America and Japanit is almost exclusively 3 cm/min. Some experts feel that 1 cm/min pro-
+vides records of suf ﬁcient detail for clinical analysis, and this has the ad-
+vantage of reducing tracing length. Other experts feel that the smalldetails of CTG tracings are better evaluated using higher papers speeds.
+The vertical scale used for registration and viewing may also be different,
+and available alternatives are 20 or 30 bpm/cm.
+The paper scales used in each center should be the ones with which
+healthcare professionals are most familiar, because tracing interpreta-
+tion depends on pattern recognition and these patterns may appear
+very different. Inadvertent use of paper scales to which the staff is unac-
+customed may lead to erroneous interpretations of CTG features. For ex-
+ample, at 3 cm/min variability appears reduced to a clinician familiar
+with the 1 cm/min scale, while it may appear exaggerated in the oppo-
+site situation (see examples below).
+3.3. External versus internal FHR monitoring
+External FHR monitoring uses a Doppler ultrasound transducer to
+detect the movement of cardiac structures. The resulting signal requires
+signal modulation and autocorrelation to provide adequate qualityrecordings [8]. This process results in an approximation of the true
+heart rate intervals, but this is considered to be suf ﬁciently accurate
+for analysis. External FHR monitoring is more prone to signal loss, to in-
+advertent monitoring of the maternal heart rate ( Fig. 1 )[9], and to sig-
+nal artefacts such as double-counting ( Fig. 2 ) and half-counting [8],
+particularly during the second stage of labor. It may also not record
+fetal cardiac arrhythmias accurately.
+Internal FHR monitoring using a fetal electrode (usually known as
+scalp electrode, but it can also be applied to the breech) evaluates thetime intervals between successive heart beats by identifying R waves
+on the fetal electrocardiogram QRS complex, and therefore measures
+ventricular depolarization cycles. This method provides a more accurate
+evaluation of intervals between cardiac cycles, but it is more expensive
+because it requires a disposable electrode. It is very important that the
+fetal electrode is only applied after a clear identi ﬁcation of the presenting
+part and that delicate fetal structures such as the sutures and fontanelsare avoided. Internal FHR monitoring requires ruptured membranes
+and has established contraindications, mainly related to the increased
+risk of vertical transmission of infections. It should not be used in patients
+with active genital herpes infection, those who are seropositive to hepa-
+t i t i sB ,C ,D ,E ,o rt oH I V[10,11] , in suspected fetal blood disorders, when
+there is uncertainty about the presenting part, or when arti ﬁcial rupture
+of membranes is inappropriate (i.e. an unengaged presentation). Fetal
+electrode placement should also preferably be avoided in very preterm
+fetuses (under 32 weeks of gestation).
+External FHR monitoring is the recommended initial method for
+routine intrapartum monitoring, provided that a recording of acceptable
+quality is obtained, i.e. that the basic CTG features can be identi ﬁed.
+Minimum requirements for using this method are that careful reposi-tioning of the probe is carried out during the second stage of labor,
+that in all atypical FHR tracings maternal heart rate monitoring is
+ruled out (see below), and if any doubt remains, fetal auscultation,
+Fig 1. Maternal heart rate monitoring in the last 9 minutes of the tracing. External fetal heart rate monitoring at 1 cm/min (top graph), 2 cm/min (middle graph), and 3 cm/min (bottom
+graph).14 D. Ayres-de-Campos et al. / International Journal of Gynecology and Obstetrics 131 (2015) 13 –24
+ 18793479, 2015, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1016/j.ijgo.2015.06.020 by Test, Wiley Online Library on [22/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ultrasound evaluation, or internal FHR monitoring are performed. If an
+acceptable record cannot be obtained with external monitoring or if a
+cardiac arrhythmia is suspected, then internal monitoring should be
+used, in the absence of the previously mentioned contraindications.
+3.4. External versus internal monitoring of uterine contractions
+External monitoring of uterine contractions using a tocodynamometer
+(toco) evaluates increased myometrial tension measured through the
+abdominal wall. Incorrect placement, reduced tension applied to the
+supporting elastic band, or abdominal adiposity may result in failed or
+inadequate registration of contractions. In addition, this technology
+only provides accurate information on the frequency of contractions.
+It is not possible to extract reliable information regarding the intensity
+and duration of contractions, nor on basal uterine tone.
+Internal monitoring of uterine contractions using an intrauterine
+catheter provides quantitative information on the intensity and duration
+of contractions, as well as on basal uterine tone, but it is more expensive
+as the catheter is disposable, and requires ruptured membranes.
+Contraindications include uterine hemorrhage of unknown cause and
+placenta previa. It may also be associated with a small risk of fetal injury,placental hemorrhage, uterine perforation, and infection [12].T h e
+routine use of intrauterine pressure catheters has not been shown tobe associated with improved outcomes in induced and augmented
+labor [13], and so it is not recommended for routine clinical use.
+3.5. Simultaneous monitoring of the maternal heart rate
+Simultaneous monitoring of the maternal heart rate (MHR) can be
+useful in speci ﬁc maternal health conditions and in cases where it is dif-
+ﬁcult to distinguish between maternal and fetal heart rates (for example
+complete fetal heart block) [9]. Some CTG monitors provide thepossibility of continuous MHR monitoring, either by electrocardiogra-
+phy or pulse oximetry. In some recent models, the latter technology
+has been incorporated in the tocodynamometer, allowing continuous
+MHR monitoring without the use of additional equipment. Providing
+that the technology is available and does not cause discomfort to the
+mother, simultaneous MHR monitoring should be considered whenperforming continuous CTG, especially during the second stage of
+labor, when tracings show accelerations coinciding with contractions
+and expulsive efforts [9], or when the MHR is elevated.
+3.6. Monitoring of twins
+Continuous external FHR monitoring of twin gestations during
+labor should preferably be performed with dual channel monitors thatallow simultaneous monitoring of both FHRs, as duplicate monitoring
+of the same twin may occur and this can be picked up by observing
+almost identical tracings. Some monitors have embedded algorithms
+to alarm when this situation is suspected. During the second stage of
+labor, external FHR monitoring of twins is particularly affected by
+signal loss, and for this reason some experts believe that the present-
+ing twin should preferably be monitored internally for better signalquality [14], if no contraindications to fetal electrode placement are
+present. Other experts believe that external monitoring of bothtwins is acceptable, provided that distinct and good quality FHR signals
+can be obtained.
+3.7. Storage of tracings
+All CTG tracings need to be identi ﬁed with the patient name, place of
+recording, “paper speed, ”and date and time when acquisition started
+and ended. In hospitals where paper CTG recordings are used, the latter
+should be considered as part of the patient record and preserved as
+Fig 2. Double-counting of the fetal heart rate during decelerations (arrows). External fetal heart rate monitoring at 1 cm/min (top graph), 2 cm/min (middle graph), and 3 cm/min
+(bottom graph).15 D. Ayres-de-Campos et al. / International Journal of Gynecology and Obstetrics 131 (2015) 13 –24
+ 18793479, 2015, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1016/j.ijgo.2015.06.020 by Test, Wiley Online Library on [22/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+such. In hospitals using digital CTG archives [15], a secure ﬁle backup
+system needs to be in place, and all tracings should be readily available
+for review by the clinical staff.
+4. Analysis of tracings
+CTG analysis starts with the evaluation of basic CTG features
+(baseline, variability, accelerations, decelerations, and contractions)
+followed by overall CTG classi ﬁcation.
+4.1. Evaluation of basic CTG features
+4.1.1. Baseline
+This is the mean level of the most horizontal and less oscillatory FHR
+segments. It is estimated in time periods of 10 minutes and expressed in
+beats per minute (bpm). The baseline value may vary between subse-
+quent 10-minute sections.
+In tracings with unstable FHR signals, review of previous segments
+and/or evaluation of longer time periods may be necessary to estimate
+the baseline [16], in particular during the second stage of labor and to
+identify the fetal behavioral state of active wakefulness ( Fig. 3 )t h a t
+can lead to erroneously high baseline estimation.
+Normal baseline : a value between 110 and 160 bpm.
+Preterm fetuses tend to have values toward the upper end of thisrange and post-term fetuses towards the lower end. Some experts
+consider the normal baseline values at term to be between 110-
+150 bpm.Tachycardia : a baseline value above 160 bpm lasting more than
+10 minutes.Maternal pyrexia is the most frequent cause of fetal tachycardia, and it
+may be of extrauterine origin or associated with intrauterine infection.Epidural analgesia may also cause a rise in maternal temperatureresulting in fetal tachycardia [17]. In the initial stages of a non-
+acute fetal hypoxemia, catecholamine secretion may also result intachycardia. Other less frequent causes are the administration of
+beta-agonist drugs [18](salbutamol, terbutaline, ritodrine, fenoterol),
+parasympathetic blockers (atropine, scopolamine), and fetal arrhyth-mias such as supraventricular tachycardia and atrial ﬂutter.
+Bradycardia : a baseline value below 110 bpm lasting more than
+10 minutes.Values between 100 and 110 bpm may occur in normal fetuses,
+especially in postdate pregnancies. Maternal hypothermia [19],
+administration of beta-blockers [20], and fetal arrhythmias such as
+atrioventricular block are other possible causes.
+4.1.2. Variability
+This refers to the oscillations in the FHR signal, evaluated as
+the average bandwidth amplitude of the signal in 1-minute segments.
+Normal variability : a bandwidth amplitude of 5 −25 bpm.
+Reduced variability : a bandwidth amplitude below 5 bpm for more
+than 50 minutes in baseline segments [21] (Figs. 4 and 5 ), or for
+more than 3 minutes during decelerations [22] (see Figs. 8 and 9 ).
+Reduced variability can occur due to central nervous system
+hypoxia/acidosis and resulting decreased sympathetic and parasym-
+pathetic activity, but it can also be due to previous cerebral injury
+[23], infection, administration of central nervous system depressants
+or parasympathetic blockers. During deep sleep, variability is usuallyin the lower range of normality, but the bandwidth amplitude is sel-
+dom under 5 bpm. There is a high degree of subjectivity in the visualevaluation of this parameter, and therefore careful re-evaluation is
+recommended in borderline situations. Following an initially normal
+CTG, reduced variability due to hypoxia is very unlikely to occur dur-
+ing labor without preceding or concomitant decelerations and a rise
+in the baseline.
+Fig 3. Fetal behavioral state of active wakefulness. This pattern may lead to erroneously high baseline estimation if it is identi ﬁed at the top of accelerations. External fetal heart rate mon-
+itoring at 1 cm/min (top graph), 2 cm/min (middle graph), and 3 cm/min (bottom graph).16 D. Ayres-de-Campos et al. / International Journal of Gynecology and Obstetrics 131 (2015) 13 –24
+ 18793479, 2015, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1016/j.ijgo.2015.06.020 by Test, Wiley Online Library on [22/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Fig 4. Reduced variability. External fetal heart rate monitoring at 1 cm/min (top graph), 2 cm/min (middle graph), and 3 cm/min (bottom graph).
+Fig 5. Reduced variability. The baseline is affected by contractions causing decreases in fetal heart rate that are close to ful ﬁlling the criteria for decelerations, but the bandwidth remains
+reduced. Internal fetal heart rate monitoring at 1 cm/min (top graph), 2 cm/min (middle graph), and 3 cm/min (bottom graph).17 D. Ayres-de-Campos et al. / International Journal of Gynecology and Obstetrics 131 (2015) 13 –24
+ 18793479, 2015, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1016/j.ijgo.2015.06.020 by Test, Wiley Online Library on [22/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Increased variability (saltatory pattern): a bandwidth value ex-
+ceeding 25 bpm lasting more than 30 minutes ( Fig. 6 ).
+The pathophysiology of this pattern is incompletely understood, but
+it may be seen linked with recurrent decelerations, when hypoxia/acidosis evolves very rapidly. It is presumed to be caused by fetalautonomic instability/hyperactive autonomic system [24].
+4.1.3. Accelerations
+Abrupt (onset to peak in less than 30 seconds) increases in FHR
+above the baseline, of more than 15 bpm in amplitude, and lasting
+more than 15 seconds but less than 10 minutes.
+Most accelerations coincide with fetal movements and are a sign of a
+neurologically responsive fetus that does not have hypoxia/acidosis.
+Before 32 weeks of gestation, their amplitude and frequency may be
+lower (10 seconds and 10 bpm of amplitude). After 32 −34 weeks,
+with the establishment of fetal behavioral states, accelerationsrarely occur during periods of deep sleep, which can last up to
+50 minutes [21]. The absence of accelerations in an otherwise normal
+intrapartum CTG is of uncertain signi ﬁcance, but it is unlikely to indicate
+hypoxia/acidosis. Accelerations coinciding with uterine contractions,
+especially in the second stage of labor, suggest possible erroneous re-
+cording of the maternal heart rate, since the FHR more frequently decel-
+erates with a contraction, while the maternal heart rate typically
+increases [9].
+4.1.4. Decelerations
+Decreases in the FHR below the baseline, of more than 15 bpm in
+amplitude, and lasting more than 15 seconds.
+Early decelerations : decelerations that are shallow, short-lasting,
+with normal variability within the deceleration and are coincident
+with contractions. They are believed to be caused by fetal head com-pression [25] and do not indicate fetal hypoxia/acidosis.Variable decelerations (V-shaped): decelerations that exhibit a
+rapid drop (onset to nadir in less than 30 seconds), good variabilitywithin the deceleration, rapid recovery to the baseline, varyingsize, shape, and relationship to uterine contractions ( Fig. 7 ).
+Variable decelerations constitute the majority of decelerations dur-ing labor, and they translate a baroreceptor-mediated response toincreased arterial pressure, as occurs with umbilical cord compres-sion [26]. They are seldom associated with an important degree of
+fetal hypoxia/acidosis, unless they evolve to exhibit a U-shaped com-ponent, reduced variability within the deceleration (see late deceler-ations below), and/or their individual duration exceeds 3 minutes[22,27] (see prolonged decelerations below).
+Late decelerations (U-shaped and/or with reduced variability):
+decelerations with a gradual onset and/or a gradual return tothe baseline and/or reduced variability within the deceleration(Fig. 8 ). Gradual onset and return occurs when more than
+30 seconds elapses between the beginning/end of a decelerationand its nadir. When contractions are adequately monitored, late de-celerations start more than 20 seconds after the onset of a contrac-tion, have a nadir after the acme, and a return to the baseline afterthe end of the contraction.These decelerations are indicative of a chemoreceptor-mediated re-sponse to fetal hypoxemia [25,27] . In the presence of a tracing with
+no accelerations and reduced variability, the de ﬁnition of late decel-
+erations also includes those with an amplitude of 10 −15 bpm.
+Prolonged decelerations : lasting more than 3 minutes.
+These are likely to include a chemoreceptor-mediated component andthus to indicate hypoxemia. Decelerations exceeding 5 minutes, withFHR maintained at less than 80 bpm and reduced variability withinthe deceleration ( Fig. 9 ), are frequently associated with acute fetal
+hypoxia/acidosis [22,28 –30]and require emergent intervention.
+Fig 6. Increased variability: saltatory pattern. Internal fetal heart rate monitoring at 1 cm/min (top graph), 2 cm/min (middle graph), and 3 cm/min (botto mg r a p h ) .18 D. Ayres-de-Campos et al. / International Journal of Gynecology and Obstetrics 131 (2015) 13 –24
+ 18793479, 2015, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1016/j.ijgo.2015.06.020 by Test, Wiley Online Library on [22/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Fig 7. Variable decelerations. Internal fetal heart rate monitoring at 1 cm/min (top graph), 2 cm/min (middle graph), and 3 cm/min (bottom graph).
+Fig 8. Late decelerations in the second half of the tracing. External fetal heart rate monitoring at 1 cm/min (top graph), 2 cm/min (middle graph), and 3 cm/min (bottom graph).19 D. Ayres-de-Campos et al. / International Journal of Gynecology and Obstetrics 131 (2015) 13 –24
+ 18793479, 2015, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1016/j.ijgo.2015.06.020 by Test, Wiley Online Library on [22/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+4.1.5. Sinusoidal pattern
+A regular, smooth, undulating signal, resembling a sine wave, with
+an amplitude of 5 −15 bpm, and a frequency of 3 −5 cycles per minute.
+This pattern lasts more than 30 minutes, and coincides with absent
+accelerations ( Fig. 10 ).
+The pathophysiological basis of the sinusoidal pattern is incompletely
+understood, but it occurs in association with severe fetal anemia, as is
+found in anti-D alloimmunization, fetal-maternal hemorrhage, twin-to-
+twin transfusion syndrome, and ruptured vasa previa. It has also been de-
+scribed in cases of acute fetal hypoxi a, infection, cardiac malformations,
+hydrocephalus, and gastroschisis [31].
+4.1.6. Pseudosinusoidal pattern
+A pattern resembling the sinusoidal pattern, but with a more jagged
+“saw-tooth ”appearance, rather than the smooth sine-wave form
+(Fig. 11 ). Its duration seldom exceeds 30 minutes and it is characterized
+by normal patterns before and after.
+This pattern has been described after analgesic administration to the
+mother, and during periods of fetal sucking and other mouth movements[32].I ti ss o m e t i m e sd i f ﬁcult to distinguish the pseudosinusoidal pattern
+from the true sinusoidal pattern, leaving the short duration of the formeras the most important variable to discriminate between the two.
+4.1.7. Fetal behavioral states
+This refers to periods of fetal quiescence re ﬂecting deep sleep
+(no eye movements), alternating with periods of active sleep (rapid
+eye movements) and wakefulness [33,34] . The occurrence of different
+behavioral states is a hallmark of fetal neurological responsivenessand absence of hypoxia/acidosis. Deep sleep can last up to 50 minutes
+[21] and is associated with a stable baseline, very rare accelerations,
+and borderline variability. Active sleep is the most frequent behavioralstate, and is represented by a moderate number of accelerations andnormal variability. Active wakefulness is rarer and represented by alarge number of accelerations and normal variability ( Fig. 1 ). In the lat-
+ter pattern, accelerations may be so frequent as to cause dif ﬁculties in
+baseline estimation (see Fig. 1 ). Transitions between the different pat-
+terns become clearer after 32 −34 weeks of gestation, consequent to
+fetal nervous system maturation.
+4.1.8. Contractions
+These are bell-shaped gradual increases in the uterine activity signal
+followed by roughly symmetric decreases, with 45 −120 seconds in
+total duration.
+Contractions are essential for the progression of labor, but they com-
+press the vessels running inside the myometrium and may transiently
+decrease placental perfusion and/or cause umbilical cord compression
+[35]. With the tocodynamometer, only the frequency of contractions
+can be reliably evaluated, but increased intensity and duration canalso contribute to FHR changes.
+Tachysystole : This represents an excessive frequency of contrac-
+tions and is de ﬁned as the occurrence of more than ﬁve contractions
+in 10 minutes, in two successive 10-minute periods, or averaged
+over a 30-minute period.
+5. Tracing classi ﬁcation
+Tracing classi ﬁcation requires a previous evaluation of basic CTG fea-
+tures (see above). Tracings should be classi ﬁed into one of three classes:
+normal, suspicious, or pathological, according to the criteria presented
+inTable 1 . Other classi ﬁca
+ tion systems including a larger number of
+tiers are recommended by some experts [36,37] . Due to the changing
+nature of CTG signals during labor, re-evaluation of the tracing should
+be carried out at least every 30 minutes.
+Fig 9. Prolonged deceleration. External fetal heart rate monitoring at 1 cm/min (top graph), 2 cm/min (middle graph), and 3 cm/min (bottom graph).20 D. Ayres-de-Campos et al. / International Journal of Gynecology and Obstetrics 131 (2015) 13 –24
+ 18793479, 2015, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1016/j.ijgo.2015.06.020 by Test, Wiley Online Library on [22/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Fig 10. Sinusoidal pattern. External fetal heart rate monitoring at 1 cm/min (top graph), 2 cm/min (middle graph), and 3 cm/min (bottom graph).
+Fig 11. Pseudosinusoidal pattern. External fetal heart rate monitoring at 1 cm/min (top graph), 2 cm/min (middle graph), and 3 cm/min (bottom graph).21 D. Ayres-de-Campos et al. / International Journal of Gynecology and Obstetrics 131 (2015) 13 –24
+ 18793479, 2015, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1016/j.ijgo.2015.06.020 by Test, Wiley Online Library on [22/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+6. Clinical decision
+Several factors, including gestational age and medication adminis-
+tered to the mother, can affect FHR features (see above), so CTG analysis
+needs to be integrated with other clinical information for a comprehen-
+sive interpretation and adequate management. As a general rule, if the
+fetus continues to maintain a stable baseline and a reassuring variability,
+the risk of hypoxia to the central organs is very unlikely. However, the
+general principles that should guide clinical management are outlined
+inTable 1 .
+7. Action in situations of suspected fetal hypoxia/acidosis
+When fetal hypoxia/acidosis is anticipated or suspected (suspicious
+and pathological tracings), and action is required to avoid adverse neo-
+natal outcome, this does not necessarily mean an immediate cesareandelivery or instrumental vaginal delivery. The underlying cause for the
+appearance of the pattern can frequently be identi ﬁed and the situation
+reversed, with subsequent recovery of adequate fetal oxygenation andthe return to a normal tracing.
+Excessive uterine activity is the most frequent cause of fetal hypoxia/
+acidosis [35] and it can be detected by documenting tachysystole in the
+CTG tracing and/or palpating the uterine fundus. It can usually be re-versed by reducing or stopping oxytocin infusion, removing adminis-
+tered prostaglandins if possible, and/or starting acute tocolysis with
+beta-adrenergic agonists (salbutamol, terbutaline, ritodrine) [38–40],
+atosiban [41], or nitroglycerine [42]. During the second stage of labor,
+maternal pushing efforts can also contribute to fetal hypoxia/acidosis
+and the mother can be asked to stop pushing until the situation
+is reversed.
+Aortocaval compression can occur in the supine position and lead to
+reduced placental perfusion. Excessive uterine activity may also be asso-
+ciated with the supine position [43,44] , possibly due to the stimulation
+of the sacral plexus by the uterine weight. In these cases, turning themother to her side is frequently followed by normalization of the CTG
+pattern. Transient cord compression is another common cause of CTG
+changes (variable decelerations), and these can sometimes be reverted
+by changing the maternal position or by performing amnioinfusion [45].
+Sudden maternal hypotension can also occur during labor, usually
+after epidural or spinal analgesia [46], and it is usually reversible by
+rapid ﬂuid administration and/or an intravenous ephedrine bolus.
+Other less frequent complications affecting the maternal respiration,
+maternal circulation, placenta, umbilical cord, or the fetal circulation
+can also result in fetal hypoxia/acidosis [35], and their management is
+beyond the scope of this document.
+Oxygen administration to the mother is widely used with the objec-
+tive of improving fetal oxygenation and consequently normalizing CTGpatterns, but there is no evidence from randomized clinical trials thatthis intervention, when performed in isolation, is effective when mater-
+nal oxygenation is adequate [47]. Intravenous ﬂuids are also commonly
+used for the purpose of improving CTG patterns, but again there is noevidence from randomized clinical trials to suggest that this interven-
+tion is effective in normotensive women [48].
+Good clinical judgement is required to diagnose the underlying
+cause for a suspicious or pathological CTG, to judge the reversibility of
+the conditions with which it is associated, and to determine the timing
+of delivery, with the objective of avoiding prolonged fetal hypoxia/
+acidosis, as well as unnecessary obstetric intervention. Additional
+methods may be used to evaluate fetal oxygenation [49]. When a suspi-
+cious or worsening CTG pattern is identi ﬁed, the underlying cause
+should be addressed before a pathological tracing develops. If the situa-
+tion does not revert and the pattern continues to deteriorate, consider-
+ation needs to be given for further evaluation or rapid delivery if a
+pathological pattern ensues.
+During the second stage of labor, due to the additional effect of ma-
+ternal pushing, hypoxia/acidosis may develop more rapidly. Therefore,
+urgent action should be undertaken to relieve the situation, including
+discontinuation of maternal pushing, and if there is no improvement,delivery should be expedited.
+8. Limitations of cardiotocography
+Cardiotocography has well-documented limitations, and it is neces-
+sary to be aware of these for safe use of the technology.
+It has been well demonstrated that CTG analysis is subject to consid-
+erab
+le intra- and interobserver disagreement, even when experienced
+clinicians use widely accepted guidelines [50–52]. The main aspects
+that are prone to observer disagreement are the identi ﬁcation and clas-
+siﬁcation of decelerations, the evaluation of variability [51], and the
+classi ﬁcation of tracings as suspicious and pathological [51,52] . The sub-
+jectivity of observer analysis has also been demonstrated in retrospec-
+tive audit of tracings, where CTG features are frequently assessed to be
+more abnormal in cases with known adverse neonatal outcome [53].
+Many studies have evaluated the ability of suspicious and patholog-
+ical CTGs to predict the occurrence of hypoxia/acidosis. Different CTG in-
+terpretation criteria, different intervals between tracing abnormality
+and birth, and different criteria to de ﬁne adverse outcome have been
+used, resulting in mixed ﬁndings [54]. However, it is recognized that
+hypoxia/acidosis has not been documented shortly after a normal CTG
+tracing. On the other hand, suspicious and pathological tracings have a
+limited capacity to predict metabolic acidosis and low Apgar scores,
+i.e. a large percentage of cases with suspicious and pathological tracings
+do not have these outcomes [54]. While there is a strong association be-
+tween certain FHR patterns and hypoxia/acidosis, their capacity toTable 1
+Cardiotocography classi ﬁcation criteria, interpretation, and recommended management.a
+Normal Suspicious Pathological
+Baseline 110− 160 bpm Lacking at least one characteristic of normality, butwith no pathological featuresb100 bpm
+Variability 5−25 bpm Lacking at least one characteristic of normality, butwith no pathological featuresReduced variability, increased variability, or sinusoidalpattern
+Decelerations No repetitive
+bdecelerations Lacking at least one characteristic of normality, butwith no pathological featuresRepetitive
+blate or prolonged decelerations during
+N30 min or 20 min if reduced variability, or one
+prolonged deceleration with N5 min
+Interpretation Fetus with no hypoxia/acidosis Fetus with a low probability of having
+hypoxia/acidosisFetus with a high probability of having hypoxia/acidosis
+Clinical management No intervention necessary to improve
+fetal oxygenation stateAction to correct reversible causes if identi ﬁed,
+close monitoring or additional methods to evaluatefetal oxygenation [49]Immediate action to correct reversible causes,additional methods to evaluate fetal oxygenation[49], or if this is not possible expedite delivery. In
+acute situations (cord prolapse, uterine rupture, orplacental abruption) immediate delivery should beaccomplished.
+aThe presence of accelerations denotes a fetus that does not have hypoxia/acidosis, but their absence during labor is of uncertain signi ﬁcance.
+bDecelerations are repetitive in nature when they are associated with more than 50% of uterine contractions [29].22 D. Ayres-de-Campos et al. / International Journal of Gynecology and Obstetrics 131 (2015) 13 –24
+ 18793479, 2015, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1016/j.ijgo.2015.06.020 by Test, Wiley Online Library on [22/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+discriminate between newborns with or without metabolic acidosis is
+limited. Thus, they are sensitive indicators, but have a low speci ﬁcity
+and low positive predictive value. However, it should not be forgottenthat the aim of intrapartum fetal monitoring is to identify situations
+that precede hypoxia/acidemia so as to avoid fetal injury. The subjectiv-
+ity of CTG interpretation and the fact that hypoxia is a continuum that
+may not reach the threshold of metabolic acidosis or injury are probablyimportant contributing factors to these limitations.
+A large number of randomized controlled trials have been conducted
+comparing continuous CTG monitoring with intermittent auscultation
+as screening methods for fetal hypoxia/acidosis during labor, in both
+low- and high-risk women [1,2]. However, these trials took place in
+the 1970s, 1980s, and early 1990s, and used different CTG interpretationcriteria, so it is dif ﬁcult to establish how their results relate to current
+clinical practice. With these limitations in mind, they indicate a limitedbeneﬁt of continuous CTG for fetal monitoring in all women during
+labor, as the only signi ﬁcant improvement was a 50% reduction in neo-
+natal seizures (hypoxic-ischemic encephalopathy was not evaluated in
+most trials), and no differences were found in the incidences of overall
+perinatal mortality and cerebral palsy. However, it is widely recognized
+that the trials were underpowered to detect differences in these out-
+comes [3]. Only a small proportion of perinatal deaths and cerebral
+palsies are caused by intrapartum hypoxia/acidosis, so a large numberof cases are needed to show any bene ﬁt. On the other hand, continuous
+CTG was associated with a 63% increase in cesarean delivery and a 15%increase in instrumental vaginal deliveries [1].
+Unnecessary obstetric intervention confers additional risks for the
+mother and newborn [55,56] , and the former may result from poor
+CTG interpretation, limited knowledge of the pathophysiology of fetaloxygenation, and inadequate clinical management. It is recognized
+that, for consistent implementation, clinical guidelines need to be
+as simple and objective as possible, to allow rapid decision-making
+even in complex and stressful situations. In addition, regular and struc-
+tured training of the labor ward staff is essential to ensure proper use of
+this technology.
+Conﬂict of interest
+The authors have no con ﬂicts of interest to declare.
+References
+[1]Alﬁrevic Z, Devane D, Gyte GM. Continuous cardiotocography (CTG) as a form of
+electronic fetal monitoring (EFM) for fetal assessment during labour. Cochrane
+Database Syst Rev 2013;5:CD006066.
+[2]Vintzileos AM, Nochimson DJ, Guzman ER, Knuppel RA, Lake M, Schifrin BS. Inter-mittent electronic fetal heart rate monitoring versus intermittent auscultation: a
+meta-analysis. Obstet Gynecol 1995;85(1):149 –55.
+[3]Royal College of Obstetricians and Gynaecologists. The use of electronic fetal moni-
+toring. Evidence-based clinical guideline, number 8. London: RCOG Press; 2001.
+[4]Herbst A, Ingemarsson I. Intermittent versus continuous electronic fetal monitoringin labour: a randomized study. Br J Obstet Gynaecol 1994;101(8):663 –8.
+[5]Devane D, Lalor JG, Daly S, McGuire W, Smith V. Cardiotocography versus intermit-tent auscultation of fetal heart on admission to labour ward for assessment of fetalwellbeing. Cochrane Database Syst Rev 2012;2:CD005122.
+[6]Carbonne B, Benachi A, Leveque ML, Cabrol D, Papiernik E. Maternal position duringlabor: effects on fetal oxygen saturation measured by pulse oximetry. Obstet
+Gynecol 1996;88(5):797 –800.
+[7]Di Renzo GC, Luzi G, Caserta G, Clerici G, Cosmi EV. The role of telemetry in perinatalmonitoring. J Perinat Med 1994;22(6):517 –22.
+[8]Carter MC. Signal processing and display –cardiotocographs. Br J Obstet Gynaecol
+1993;100(Suppl. 9):21 –3.
+[9]Nurani R, Chandraharan E, Lowe V, Ugwumadu A, Arulkumaran S. Misidenti ﬁcation
+of maternal heart rate as fetal on cardiotocography during the second stage oflabour: the role of the fetal electrocardiograph. Acta Obstet Gynecol Scand 2012;
+91(12):1428 –32.
+[10] Maiques V, Garcia-Tejedor A, Perales A, Navarro C. Intrapartum fetal invasive proce-
+dures and perinatal transmission of HIV. Eur J Obstet Gynecol Reprod Biol 1999;
+87(1):63 –7.
+[11] Kaye EM, Dooling EC. Neonatal herpes simplex meningoencephalitis associated withfetal monitor scalp electrodes. Neurology 1981;31(8):1045 –7.
+[12] Handwerker SM, Selick AM. Placental abruption after insertion of catheter tip intra-
+uterine pressure transducers: a report of four cases. J Reprod Med 1995;40(12):845 –9.[13] Bakker JJ, Janssen PF, van Halem K, van der Goes BY, Papatsonis DN, van des Post JA,
+et al. Internal versus external tocodynamometry during induced or augmented
+labour. Cochrane Database Syst Rev 2013;8:CD006947.
+[14] Bakker PC, Colenbrander GJ, Verstraeten AA, Van Geijn HP. Quality of intrapartumcardiotocography in twin deliveries. Am J Obstet Gynecol 2004;191(6):2114 –9.
+[15] Nunes I, Ayres-de-Campos D, Figueiredo C, Bernardes J. An overview of central fetalmonitoring systems in labour. J Perinat Med 2013;41(1):93 –9.
+[16] Ayres-de-Campos D, Bernardes J, Marsal K, Nickelsen C, Makarainen L, Ban ﬁeld P,
+et al. Can the reproducibility of fetal heart rate baseline estimation be improved?Eur J Obstet Gynecol Reprod Biol 2004;112(1):49 –54.
+[17] Segal S. Labor epidural analgesia and maternal fever. Anesth Analg 2010;111(6):1467 –75.
+[18] Neilson JP, West HM, Dowswell T. Betamimetics for inhibiting preterm labour.
+Cochrane Database Syst Rev 2014;2:CD004352.
+[19] Jadhon ME, Main EK. Fetal bradycardia associated with maternal hypothermia.Obstet Gynecol 1988;72(3 Pt 2):496 –7.
+[20] Boutroy MJ. Fetal and neonatal effects of the beta-adrenoreceptor blocking agents.
+De
+v Pharmacol Ther 1987;10(3):224 –31.
+[21] Suwanrath C, Suntharasaj T. Sleep –wake cycles in normal fetuses. Arch Gynecol
+Obstet 2010;281(3):449 –54.
+[22] Hamilton E, Warrick P, O ’Keeffe D. Variable decelerations: do size and shape matter?
+J Matern Fetal Neonatal Med 2012;25(6):648 –53.
+[23] Nelson KB, Dambrosia JM, Ting TY, Grether JK. Uncertain value of electronic fetal
+monitoring in predicting cerebral palsy. N Engl J Med 1996;334(10):613 –8.
+[24] Nunes I, Ayres-de-Campos D, Kwee A, Rosen KG. Prolonged saltatory fetal heart rate
+pattern leading to newborn metabolic acidosis. Clin Exp Obstet Gynecol 2014;41(5):
+507 –11.
+[25] Court DJ, Parer JT. Experimental studies of fetal asphyxia and fetal heart rate inter-pretation. In: Nathanielsz PW, Parer JT, editors. Research in Perinatal Medicine (I).
+New York: Perinatalogy Press; 1984. p. 113 –69.
+[26] Ball RH, Parer JT. The physiologic mechanisms of variable decelerations. Am J Obstet
+Gynecol 1992;166(6 Pt 1):1683 –9.
+[27] Holzmann M, Wretler S, Cnattingius S, Nordstrom L. Cardiotocography patterns andrisk of intrapartum fetal acidemia. J Perinat Med 2015;43(4):473 –9.
+[28] Westgate JA, Wibbens B, Bennet L, Wassink G, Parer JT, Gunn AJ. The intrapartum de-celeration in center stage: a physiologic approach to the interpretation of fetal heart
+rate changes in labor. Am J Obstet Gynecol 2007;197(3):236.e1 –236.e11.
+[29] Cahill AG, Roehl KA, Odibo AO, Macones GA. Association and prediction of neonatal
+acidemia. Am J Obstet Gynecol 2012;207(3):206.e1 –8.
+[30] Takano Y, Furukawa S, Ohashi M, Michikata K, Sameshima H, Ikenoue T. Fetal heartrate patterns related to neonatal brain damage and neonatal death in placental
+abruption. J Obstet Gynaecol Res 2013;39(1):61 –6.
+[31] Modanlou HD, Murata Y. Sinusoidal fetal heart rate pattern: reappraisal of its de ﬁni-
+tion and clinical signi ﬁcance. J Obstet Gynaecol Res 2004;30(3):169 –80.
+[32] Graça LM, Cardoso CG, Calhaz-Jorge C. An approach to interpretation and classi ﬁca-
+tion of sinusoidal fetal heart rate patterns. Eur J Obstet Gynecol Reprod Biol 1988;27(3):203 –12.
+[33] Nijhuis JG, Prechtl HF, Martin CB, Bots RS. Are there behavioural states in the humanfetus? Early Hum Dev 1982;6(2):177 –95.
+[34] de Vries JI, Visser GH, Prechtl HF. The emergence of fetal behaviour II. Quantitative
+aspects. Early Hum Dev 1985;12(2):99 –120.
+[35] Ayres-de-Campos D, Arulkumaran S, FIGO Intrapartum Fetal Monitoring ExpertConsensus Panel. FIGO consensus guidelines on intrapartum fetal monitoring:
+Physiology of fetal oxygenation and the main goals of intrapartum fetal monitoring.Int J Gynecol Obstet 2015;131:5 –8 [in this issue].
+[36] Parer JT, Ikeda T. A framework for standardized management of intrapartum fetalheart rate patterns. Am J Obstet Gynecol 2007;197(1):26.e1 –6.
+[37] Coletta J, Murphy E, Rubeo Z, Gyam ﬁ-B
+ annerman C. The 5-tier system of assessing
+fetal heart rate tracings is superior to the 3-tier system in identifying fetal acidemia.Am J Obstet Gynecol 2012;206(3):226.e1 –5.
+[38] Heuser CC, Knight S, Esplin S, Eller AG, Holmgren CM, Richards D, et al. Tachysystolein term labor: incidence, risk factors, outcomes, and effect on fetal heart tracings. Am
+J Obstet Gynecol 2013;209(1):32.e1 –6.
+[39] Briozzo L, Martinez A, Nozar M, Fiol V, Pons J, Alonso J. Tocolysis and delayed deliv-ery versus emergency delivery in cases of non-reassuring fetal status during labor. J
+Obstet Gynaecol Res 2007;33(3):266 –73.
+[40] Heus R, Mulder EJ, Derks JB, Visser GH. Acute tocolysis for uterine activity reduction
+in term labor: a review. Obstet Gynecol Surv 2008;63(6):383 –8.
+[41] Heus R, Mulder EJ, Derks JB, Kurver PH, van Wolfswinkel L, Visser GH. A prospectiverandomized trial of acute tocolysis in term labour with atosiban or ritodrine. Eur J
+Obstet Gynecol Reprod Biol 2008;139(2):139 –45.
+[42] Pullen KM, Riley ET, Waller SA, Taylor L, Caughey AB, Druzin ML, et al. Randomized
+comparison of intravenous terbutaline vs nitroglycerin for acute intrapartum fetal
+resuscitation. Am J Obstet Gynecol 2007;197(4):414.e1 –6.
+[43] Williams EA. Abnormal uterine action during labour. J Obstet Gynaecol Br Emp1952;59:635 –41.
+[44] Caldeyro-Barcia R, Noriega-Guerra L, Cibils LA, Alvarez H, Poseiro JJ, Pose ST. Effect ofposition changes on the intensity and frequency of uterine contractions duringlabor. Am J Obstet Gynecol 1960;80:284 –90.
+[45] Hofmeyr GJ, Lawrie TA. Amnioinfusion for potential or suspected umbilical cordcompression in labour. Cochrane Database Syst Rev 2012;1:CD000013.
+[46] Simmons SW, Taghizadeh N, Dennis AT, Hughes D, Cyna AM. Combined spinal-epidural versus epidural analgesia in labour. Cochrane Database Syst Rev 2012;10:CD003401.
+[47] Fawole G, Hofmeyr GJ. Maternal oxygen administration for fetal distress. CochraneDatabase Syst Rev 2012;12:CD000136.23 D. Ayres-de-Campos et al. / International Journal of Gynecology and Obstetrics 131 (2015) 13 –24
+ 18793479, 2015, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1016/j.ijgo.2015.06.020 by Test, Wiley Online Library on [22/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+[48] Simpson KR, James DC. Ef ﬁcacy of intrauterine resuscitation techniques in improving
+fetal oxygen status during labor. Obstet Gynecol 2005;105(6):1362 –8.
+[49] Visser GH, Ayres-de-Campos D, FIGO Intrapartum Fetal Monitoring Expert
+Consensus Panel. FIGO consensus guidelines on intrapartum fetal monitoring:
+Adjunctive technologies. Int J Gynecol Obstet 2015;131:25 –9 [in this issue].
+[50] Paneth N, Bommarito M, Stricker J. Electronic fetal monitoring and later outcome.Clin Invest Med 1993;16(2):159 –65.
+[51] Ayres-de-Campos D, Bernardes J, Costa-Pereira A, Pereira-Leite L. Inconsistencies in
+classi ﬁcation by experts of cardiotocograms and subsequent clinical decision. BJOG
+1999;106(12):1307 –10.
+[52] Blackwell SC, Grobman WA, Antoniewicz L, Hutchinson M, Gyam ﬁ-Bannerman C.
+Interobserver and intraobserver reliability of the NICH 3-tier fetal heart rate inter-pretation system. Am J Obstet Gynecol 2011;205(4):378.e1 –5.[53] Ayres-de-Campos D, Arteiro D, Costa-Santos C, Bernardes J. Knowledge of adverse neo-natal outcome alters clinicians' interpretation of the intrapartum cardiotocograph. BJOG
+2011;118(8):978– 84.
+[54] Spencer JA. Clinical overview of cardiotocography. Br J Obstet Gynaecol 1993;100(Suppl. 9):4 –7.
+[55] National Institute for Health and Clinical Excellence. Caesarean section. NICE clinical
+guideline 13. April 2004 http://www.nice.org.uk/guidance/cg13/resources/guid-
+ance-caesarean-section-pdf . Accessed August 1, 2014.
+[56] O’Mahony F, Hofmeyr GJ, Menon V. Choice of instruments for assisted vaginal delivery.
+Cochrane Database Syst Rev 2010;11:CD005455.24 D. Ayres-de-Campos et al. / International Journal of Gynecology and Obstetrics 131 (2015) 13 –24
+ 18793479, 2015, 1, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1016/j.ijgo.2015.06.020 by Test, Wiley Online Library on [22/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License

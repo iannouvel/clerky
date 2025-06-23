@@ -1,0 +1,505 @@
+# Extracted from: CG12027 PCA (Remifentanil) in Labour guideline.pdf
+# Guideline ID: cg12027-pca-remifentanil-in-labour-guideline
+# Content length: 27612 characters
+# Processing date: 1750066900.2152646
+
+CG12027 Remifentanil PCA in Labour Guideline v4.1 Aug 2021 Amended Nov 2021 
+Page 1 of 13 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Remifentanil Patient Controlled Analgesia (PCA) in Labour 
+Guideline 
+Summary statement: How does the document 
+support patient care? A Remifentanil PCA will provide a safe, effective alternative 
+analgesic option for those labouring women/people in whom 
+epidural analgesia is contraindicated or has failed. 
+Staff/stakeholders involved in development: Consultant Obstetric Anaesthetist, SpR Anaesthetists, Joint 
+Obstetric Guidelines Group 
+Division: Women and Children’s 
+Department: Anaesthesia 
+Responsible Person: Chief of Service 
+Author: Obstetric Anaesthetic Consultant 
+For use by: Anaesthetists, Midwifery staff and Clinical Nurse Specialist 
+In-patient Pain Service 
+Purpose: To define a protocol to enable the safe delivery of 
+remifentanil PCA analgesia for women in labour 
+This document supports: Melber AA. Et al Remifentanil patient -controlled analgesia in 
+labour: six-year audit of outcome data of the RemiPCA SAFE 
+Network (2010 –2015) IJOA 2019; 39: 12 -21. 
+Key related documents: UH Sussex (WH&SRH) medicines management policy 
+UH Sussex (WH&SRH) controlled drugs policy 
+Approved by: Joint Obstetric Guidelines Group 
+Approval date: 25th Aug 2021 
+Ratified by Board of Directors/ Committee of 
+the Board of Directors Not applicable -divisional ratification only required 
+Ratification Date: Not applicable -divisional ratification only required 
+Expiry Date: Aug 2024 
+Review date Feb 2024 
+If you require this document in another format such as Braille, large print, audio or 
+another language please contact the Trusts Communications Team 
+Reference Number: CG12027 CG12027 Remifentanil PCA in Labour Guideline v4.1 Aug 2021 Amended Nov 2021 
+Page 2 of 13 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Version Date Author Status Comment 
+1.0 May 2012 Obstetric Anaesthetic 
+Consultants Archived New Trustwide Maternity 
+Guideline 
+2.0 October 2013 Obstetric Anaesthetic 
+Consultants Archived Guideline updated 
+3.0 January 2017 Obstetric Anaesthetic 
+Consultants Archived Triannual review and renewal no 
+changes required. 
+4.0 August 2021 K. Ashpole, Obstetric 
+Anaesthetic 
+Consultant Archived Review and changes made 
+based on new publications 
+4.1 November 2021 K. Ashpole, Obstetric 
+Anaesthetic 
+Consultant Live Amendment: References added CG12027 Remifentanil PCA in Labour Guideline v4.1 Aug 2021 Amended Nov 2021 
+Page 3 of 13 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Index 
+
+1.0 Aim ................................ ................................ ................................ ................................ ........ 4 
+2.0 Scope ................................ ................................ ................................ ................................ .... 4 
+3.0 Responsibilities ................................ ................................ ................................ ...................... 4 
+3.1 Anaesthetists, midwives, obstetricians and CNS IPS ................................ .............................. 4 
+3.2 Management ................................ ................................ ................................ .......................... 5 
+4.0 Introduction ................................ ................................ ................................ ............................ 5 
+5.0 Side effects ................................ ................................ ................................ ............................ 5 
+6.0 Indications ................................ ................................ ................................ .............................. 6 
+7.0 Contra -Indications (Absolute & Relative (R)) ................................ ................................ .......... 6 
+8.0 Absolute requirements before considering ................................ ................................ .............. 6 
+9.0 Reasons to discuss with Consultant Anaesthetist ................................ ................................ ... 6 
+10.0 Complications ................................ ................................ ................................ ........................ 7 
+11.0 Monitoring and other requirement ................................ ................................ ........................... 7 
+12.0 Set up ................................ ................................ ................................ ................................ .... 7 
+13.0 Points of safety ................................ ................................ ................................ ...................... 8 
+14.0 Trouble Shooting ................................ ................................ ................................ .................... 8 
+14.1 Analgesia not effective ................................ ................................ ................................ ........... 8 
+14.2 Maternal desaturation ................................ ................................ ................................ ............. 8 
+14.3 Sedation ................................ ................................ ................................ ................................ . 9 
+14.4 Nausea & Vomiting ................................ ................................ ................................ ................ 9 
+14.5 Pruritus ................................ ................................ ................................ ................................ .. 9 
+15.0 How to explain the PCA to the woman/person ................................ ................................ ........ 9 
+References ................................ ................................ ................................ ................................ ......10 
+Appendix 1: PCA - Information sheet for pregnant women/people ................................ .................... 11 
+Appendix 2: Remifentanil PCA Prescription & Observation Chart ................................ ..................... 12 CG12027 Remifentanil PCA in Labour Guideline v4.1 Aug 2021 Amended Nov 2021 
+Page 4 of 13 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Remifentanil Patient Controlled Analgesia (PCA) 
+in Labour Guideline 
+1.0 Aim 
+ 
+To provide guidance for Obstetric, Anaesthetic, Midwifery and clinical nurse specialist In -patient 
+Pain Service (CNS IPS) staff to enable the safe delivery of remifentanil patient controlled analgesia 
+(PCA) analgesia for women/people in labour who are unable to have an epidural. 
+ 
+A remifentanil PCA has become an increasingly popular alternative to other opioids such as 
+diamorphine in patients who do not want or cannot have an epidural. One of the known side effects 
+of remifentanil is respiratory depression in the mother and at higher doses (40mcg) can cause 
+respiratory depression in 1 in 10 women/people. There are no known case reports of respiratory 
+depression in babies born to mothers using remifentanil PCAs. 
+ 
+The main change in this guideline is to increase the safety features of remifentanil PCAs by the 
+following: 
+ 
+1. Bolus dose reduced to 20mcg initially then increased to 40mcg as necessary. 
+2. PCA button handset to be removed and retained by midwife if at any point the midwife 
+needs to leave the room. This ensures 1:1 midwifery care. 
+3. Lockout period remains at 3 minutes (increased from 2 minutes). 
+4. Give supplemental oxygen if SaO 2 < 94% (increased from 92%). 
+5. PCA should be stopped 5-10 minutes before cord clamping. 
+6. Paediatric doctor is not required to attend the delivery (mirrors other Trust’s guidelines). 
+ 
+2.0 Scope 
+ 
+• Anaesthetists 
+• Obstetricians 
+• Midwives 
+• CNS IPS working within the maternity service. 
+ 
+3.0 Responsibilities 
+ 
+3.1 Anaesthetists, midwives, obstetricians and CNS IPS: 
+ 
+• To access, read, understand and follow this guidance. 
+• To use their professional judgement in application of this guideline. CG12027 Remifentanil PCA in Labour Guideline v4.1 Aug 2021 Amended Nov 2021 
+Page 5 of 13 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 3.2 Management: 
+ 
+• To ensure the guideline is reviewed as required in line with Trust and National 
+recommendations. 
+• To ensure the guideline is accessible to all relevant staff. 
+ 
+4.0 Introduction 
+ 
+The guidance is designed to provide an analgesia alternative for labour in women/people who 
+cannot have an epidural or choose not to have an epidural. It is not designed to replace epidural 
+analgesia for labour. A remifentanil PCA will provide a safe, effective alternative analgesic option 
+for pregnant women/people in whom epidural analgesia is contraindicated or has failed. 
+ 
+Remifentanil is an ultra -short acting opioid analgesic drug with a half -life of 2 to 4 minutes. It acts 
+within 2 minutes and is rapidly metabolised in the mother and fetus by tissue and red blood cell 
+esterases. It does not accumulate in the mother or fetus so regardless of the length of time the drug 
+has been used the drug will wear off in about 3 minutes. 
+ 
+PCA remifentanil has been shown to be superior to either intramuscular (IM) or intravenous (IV) 
+pethidine for labour analgesia. In obstetric units where PCA remifentanil is used routinely, the 
+conversion rate to epidurals is about 9% which indicates that in some cases analgesia is 
+inadequate. Epidurals remain the gold standard for labour analgesia. 
+ 
+Remifentanil PCA reduces, but does not abolish, labour pain and women/people should be made 
+aware of this. Remifentanil can be used in conjunction with Entonox but it may increase 
+sedation so only offer Entonox once established on the remifentanil PCA. 
+ 
+Neonatal complications have not been reported although published work has not included preterm 
+neonates. Remifentanil should not be used at a gestation less than 36 weeks unless agreed by 
+a consultant anaesthetist and obstetrician or the fetus is non -viable. 
+ 
+5.0 Side effects 
+ 
+• Maternal sedation (25%) 
+• Reduced respiratory rate (25%) 
+• Apnoea (very rare and responds to tactile or verbal stimulation)14 
+• Itching (2%) 
+• Nausea and vomiting (15%) 
+• Dizziness 
+• Reduced fetal heart rate variability on the CTG CG12027 Remifentanil PCA in Labour Guideline v4.1 Aug 2021 Amended Nov 2021 
+Page 6 of 13 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 6.0 Indications 
+ 
+• Where epidural analgesia is contraindicated e.g. clotting abnormalities, spinal surgery, 
+spinal cord problems, local/generalised sepsis, patient refusal. The patient will usually 
+have been seen in the anaesthetic antenatal clinic and there will be an anaesthetic plan in 
+their handheld notes or a letter on Medway or Evolve. 
+• At maternal request if midwifery staffing levels allow. 
+ 
+7.0 Contra -Indications (Absolute & Relative (R)) 
+ 
+• Inadequate midwifery staffing to provide 1:1 care. 
+• Known allergy to opioid drugs. 
+• Recent opioids within 4 hours e.g. IM Morphine or if anaesthetist considers the patient 
+to be too drowsy. 
+• Must not run concurrently with an epidural. 
+• Baseline SaO 2 < 95% on room air or concurrent respiratory and / or cardiac disease. 
+• Fetal compromise e.g. PET - discuss with Obstetric and Neonatal teams (R). 
+• Gestation less than 36 weeks unless agreed by a consultant anaesthetist and obstetrician 
+or the fetus is non -viable (R). 
+ 
+8.0 Absolute requirements before considering 
+ 
+• The patient should be issued with and have read the remifentanil PCA patient information 
+leaflet and give verbal consent. 
+• A midwife to be continuously in the room to provide one to one care. This means 
+that the midwife should not leave the room unless relieved by another midwife even in 
+cases of IUD. 
+• Dedicated IV cannula for PCA use only. 
+• The on-call anaesthetist and Labour Ward co-ordinator must be informed and agree. 
+• Oxygen saturation (SaO 2) monitoring must be established before the woman/person 
+starts using the PCA and must be monitored continuously while the remifentanil PCA is 
+being used and for 15 minutes after discontinuation of the PCA. 
+• Anaesthetist must be present on labour ward for the first 15 minutes of use. 
+• A remifentanil PCA observation chart must be completed while the PCA is in progress. 
+• Naloxone 400 microgram (mcg) (opioid antagonist) should be prescribed on the drug 
+chart and readily available in the room for administration to the woman/person. 
+ 
+9.0 Reasons to discuss with Consultant Anaesthetist 
+ 
+• For an increase in the bolus dose above 40 mcg. 
+• If the patient is on drugs which might slow the heart rate down e.g. beta-blockers 
+or calcium channel blockers. 
+• Maternal cardiac and respiratory disorders. 
+• Morbid obesity. CG12027 Remifentanil PCA in Labour Guideline v4.1 Aug 2021 Amended Nov 2021 
+Page 7 of 13 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+10.0 Complications 
+ 
+Complication Incidence 
+Desaturation < 90% 
+Common Decreased respiratory rate 
+Drowsiness 
+Poor CTG Variable 
+ 
+11.0 Monitoring and other requirement 
+ 
+• Continuous SaO 2 monitoring. 
+• Oxygen must be available and administered by nasal cannula or facemask at 2-4 L/min if 
+SaO 2 is less than 94%. If SaO 2 is still below 92% despite oxygen administration call the 
+anaesthetist. 
+• Continuous CTG monitoring. 
+• Sedation score and respiratory rate every 5 minutes for 30 minutes after initiation, then 
+every 30 minutes thereafter. 
+• Measure the pulse every 30min. 
+• NIBP every 60mins (Do not place NIBP cuff on same arm as the cannula). 
+• Omeperazole 20mg (PO) administered 12 hourly and cyclizine 50mg (IM/IV) should be 
+prescribed and administered 8 hourly. 
+• Patients should not eat whilst using the PCA but may have sips of water. 
+• Monitoring should continue for at least 15 minutes after the remifentanil PCA has 
+stopped. 
+• If the midwife needs to leave the room the PCA handset should be taken with them 
+as a safety precaution. 
+ 
+12.0 Set up 
+ 
+• PCA pump and drug should be mixed, prepared and connected up by the anaesthetist 
+and the mixing checked with the labour ward midwife or ODP. 
+• Separate, dedicated intravenous cannula ideally at forearm (won’t be occluded by patient 
+movement). PCA line connected directly to IV cannula. 
+ 
+• Dilution method: 
+ 
+Make up a solution of 50mcg/mL of remifentanil in 0.9% sodium chloride 
+Using 100mL: 5mg Remifentanil in 100mL 0.9% sodium chloride CG12027 Remifentanil PCA in Labour Guideline v4.1 Aug 2021 Amended Nov 2021 
+Page 8 of 13 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ PCA set up: 
+ 
+• PCA dose 20mcg (= 0.4mL) delivered stat 
+• 3 minute lockout 
+• No loading dose 
+• No background infusion 
+• Maximum 800mcg/hour 
+• Note this is a low dose PCA set up and a standard PCA set up is 30 -40mcg with a 
+3 minute lockout. The Anaesthetist can change the patient to this dose once established 
+on 20mcg dose if required. 
+ 
+13.0 Points of safety 
+• Anaesthetist must be present on labour ward for the initial bolus and first 15 
+minutes of remifentanil PCA use. 
+• Always use a dedicated cannula. 
+• Always flush the cannula after the PCA is removed (10 mL sodium chloride). 
+• Do not give any other drugs via the PCA cannula. 
+• Only the patient is to use the PCA button. It is NOT to be pressed by midwifery staff , or 
+the patient's relatives. 
+• The PCA button should be removed and taken with the midwife if she needs to 
+leave the room. 
+• Can be used in conjunction with Entonox. 
+• The PCA can be used during delivery and for the repair of tears and episiotomies. 
+• Naloxone should be readily available in the room and prescribed on the drug chart 
+as 100 microgram every 2-3 min. 
+ 
+14.0 Trouble Shooting 
+ 
+14.1 Analgesia not effective 
+ 
+Educate the woman/person to co-ordinate the bolus dose with the contraction. Entonox may be 
+necessary. 
+ 
+14.2 Maternal desaturation 
+ 
+• Give oxygen supplementation (2-4 L/min via nasal prongs). 
+• If respiratory depression is more profound, i.e. SaO 2 is less than 92% despite 
+supplemental oxygen, the PCA handset should be temporarily removed from the patient, 
+encourage them to take deep breaths and call the anaesthetist to reduce the PCA dose. 
+• The bolus dose should be reduced by 10mcg and the patient observed with further 
+reductions in the bolus dose if respiratory depression persists. 
+• Naloxone should be available and used in cases of severe respiratory depression. CG12027 Remifentanil PCA in Labour Guideline v4.1 Aug 2021 Amended Nov 2021 
+Page 9 of 13 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 14.3 Sedation 
+ 
+Excessive sedation is rare. If it occurs reduce the bolus dose or stop the PCA. 
+. 
+14.4 Nausea & Vomiting 
+ 
+Prescribe cyclizine 50mg IM/IV tds and consider Ondansetron 4mg IM/IV tds. 
+ 
+14.5 Pruritus 
+ 
+This is usually worst in the first two hours. Prescribe Chlorpheniramine 4mg PO/ 10mg IM or IV. If 
+severe reduce the bolus dose of remifentanil or stop the PCA. 
+ 
+15.0 How to explain the PCA to the woman/person 
+ 
+• It might help to say that it is a fast acting strong pain relieving drug delivered into the vein 
+every time they press the PCA button and it wears off in between contractions. 
+• It is not licensed for this use but is widely used in many hospitals around the world 
+including the UK. 
+• Timing of pressing the button is important and should be done before the contraction 
+starts or as soon as it's anticipated. 
+• Inform the woman/person of the side-effects including drowsiness, itching, nausea, 
+dizziness and transient lower oxygen saturations requiring supplemental oxygen. CG12027 Remifentanil PCA in Labour Guideline v4.1 Aug 2021 Amended Nov 2021 
+Page 10 of 13 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ References 
+ 
+Blair JM, Dobson GT, Hill DA, McCracken GR, Fee JPH. Patient controlled analgesia for labour: a 
+comparison of remifentanil with pethidine. Anaesthesia 2005; 60: 22 -27 
+Evron S, Glezerman M, Sadan O, Boaz M, Ezri T. Remifentanil: A novel systemic analgesic for 
+labour pain. Anaesthesia and Analgesia 2005; 100: 233 -238 
+Marwah R, Hassan S, Carvalho JC,et al. Remifentanil versus fentanyl for intravenous patient - 
+controlled labour analgesia: an observational study. Can J Anaesth. 2012 Mar; 59(3):246 -54 
+Marr R, Hyams J, Bythell V. Cardiac arrest in an obstetric patient using remifentanil patient - 
+controlled analgesia. Anaesthesia 2013 Mar;68(3):283 -7 
+Melber A, Jelting Y ,Huber B et al Remifentanil patient -controlled analgesia in labour: six-year audit 
+of outcome data of the RemiPCA SAFE Network (2010 –2015). IJOA 2019; 39:12 -21. 
+Morley -Forster P.K. and Weberpals J. Neonatal effects of patient -controlled analgesia using 
+fentanyl in labor. International Journal of Obstetric Anesthesia, Volume 7, Issue 2, April 1998, 
+Pages 103 -107 
+Muchatuta NA, Kinsella SM. Remifentanil for Labour Analgesia: time to draw breath. Anaesthesia 
+2013, 68, 227 -235. 
+Murray H, Hodgkinson A, Hughes D. Remifentanil patient -controlled intravenous analgesia during 
+labour: a retrospective observational study of 10 years’ experience. IJOA 2019; 39:29 -34. 
+Schnabel A, Hahn N, Broscheit J et al. Remifentanil for labour analgesia: a meta -analysis of 
+randomised controlled trials. Eur J Anaesthesiol. 2012 Apr;29(4):177 -85 
+Tveit TO, Halvorsen A, Seiler S et al Efficacy and side effects of intravenous remifentanil patient - 
+controlled analgesia used in a stepwise approach for labour: an observational study. IJOA 2013 
+Jan; 22(1):19 -25. 
+Volikas I, Male D. A comparison of pethidine and remifentanil patient -controlled analgesia in labour. 
+International Journal of Obstetric Anesthesia, 1998; 10: 86 -90 
+Volmanen P., Akural E., Raudaskoski T., Alahuhta S. Remifentanil in Obstetric Analgesia: A Dose - 
+Finding Study. Anaesthesia and Analgesia 2002; 94(4): 913 -917 
+Volmanen P, Akural E, Raudaskoski T, Ohtonen P, Alahuhta S. Comparison of remifentanil and 
+nitrous oxide in labour analgesia. Acta Anaesthesiologica Scandinavica. 2005; 49(4): 453 -458 
+Van de Velde M. Carvelho B. Remifentanil for labor analgesia: an evidence -based narrative review. 
+IJOA 2016; 25: 66 -74. 
+Melber AA. Et al Remifentanil patient -controlled analgesia in labour: six-year audit of outcome data 
+of the RemiPCA SAFE Network (2010 –2015) IJOA 2019; 39: 12 -21. 
+Murray P, Hughes D. Remifentanil patient -controlled intravenous analgesia during labour: a 
+retrospective observational study of 10 years’ experience. IJOA 2019; 39: 29 -34. CG12027 Remifentanil PCA in Labour Guideline v4.1 Aug 2021 Amended Nov 2021 
+Page 11 of 13 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Appendix 1: PCA - Information sheet for pregnant women/people 
+ 
+What is a remifentanil PCA? 
+Remifentanil is a very short -acting pain relieving drug rather like pethidine and diamorphine. Its 
+pain relieving effect comes on very rapidly, and also wears off very quickly afterwards. A small 
+measured dose of the remifentanil will be administered by a drip into a vein in your arm at your 
+request, by pushing a button on an electronic pump. 
+Who can use remifentanil? 
+A woman/person in labour who is unable to have an epidural for medical reasons, or if insertion of 
+an epidural is not technically possible. However, we would advise anyone with an allergy to 
+morphine, pethidine or other related drugs not to use remifentanil. It can’t be used if you have had 
+opiate pain relieving drugs within the last 4 hours. 
+How is it given? 
+To use remifentanil you will need to have a cannula (‘drip’) placed in a vein, usually on the back of 
+your hand or arm. The drip is connected to an electronic pump, which delivers a small measured 
+dose of the drug once you press the hand -held button. The pain relieving effect is usually felt in 40 
+to 60 seconds, and wears off again within a few minutes. You are in control and you get the drug 
+when you need it and not in between contractions. There is a safety feature built into the pump so 
+that you can only get a safe amount of the drug, however some people can be sensitive to its 
+effects so monitoring your respiratory rate and oxygen levels is important. You can use the pump at 
+any time, right up to your delivery if you wish, and the effects will still wear off very quickly when you 
+stop using the PCA after your baby has been born. 
+Are there any unwanted effects of remifentanil? 
+Nausea and vomiting, itching and dizziness may occur. Some women/people can get sleepy 
+between contractions and not breathe as often, as tends to also happen with other similar drugs, 
+such as pethidine and diamorphine. However, even if you are drowsy, this will wear off very quickly 
+after you stop using the pain relief. As part of our routine observations your midwife will measure 
+your oxygen levels continuously using a sensor (like a peg) on your finger, as well as your level of 
+pain relief and drowsiness at regular intervals. If your oxygen levels are lower than normal you will 
+be required to have some extra oxygen usually through a small tube into your nose, otherwise all 
+observations and treatments are the same as for any other woman on the labour ward. 
+Remifentanil has been shown to be safe for babies, with similar short term side effects occurring 
+with pethidine or diamorphine. 
+Are there any risks with remifentanil? 
+Recent studies have not shown cases of respiratory arrest (i.e. mother/person stopped breathing) 
+but were it to happen it should respond quickly to immediate treatment. It is more common that your 
+oxygen levels can fall without supplementary oxygen (1 to 2 in 10 cases). For this reason we ensure 
+that you have a midwife with you at all times, monitor your oxygen levels with a probe on your finger 
+and give you extra oxygen should you require it. 
+ 
+When can I ask for remifentanil? 
+You can request remifentanil at any time in labour but it may not be available if the labour ward is 
+very busy. Your midwife will contact the duty anaesthetist to organise the setting up of the pump. 
+This may take a little while, but you will be able to use it immediately, once you are given the button 
+to push. CG12027 Remifentanil PCA in Labour Guideline v4.1 Aug 2021 Amended Nov 2021 
+Page 12 of 13 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Appendix 2: Remifentanil PCA Prescription & Observation Chart 
+ 
+Please complete or Affix Patient Label 
+ 
+Unit No: ………………………………………… 
+NHS No: ……………………………………….. 
+Surname ……………………………………….. 
+Forenames …………………………………….. 
+Ward/Dept: MATERNITY 
+ 
+Remifentanil PCA Prescription & 
+Observation Chart 
+ 
+Staff Details Solution PCA Setting 
+Anaesthetist: Drug: Remifentanil 50 microgram/mL 
+Date: PCA Dose: 20 micrograms (initial) 
+Bleep: SRH 008 WH 002 100ml Solution Lockout: 3 Minutes 
+Midwife: 5mg Remifentanil in 100mL 
+0.9% Sodium Chloride Max: 800 micrograms/hour 
+Observation Scores 
+Sedation Scores 
+(A) Alert 
+(V) Verbal - Respond when spoken to 
+(P) Pain - Respond to painful stimuli 
+(U) Unresponsive Pain Score 
+(0) No Pain 
+(1) Mild Pain 
+(2) Moderate Pain 
+(3) Severe Pain 
+(4) Excruciating Pain 
+Management of Side Effects 
+ANY OF THESE OBSERVATIONS TRIGGER 
+THE ACTION PLAN: 
+ 
+• Respiratory rate < 8 
+• SaO 2 below 94% despite oxygen 
+• Sedation score < V (not responding to 
+verbal command ACTION PLAN 
+ 
+1. STOP PCA PUMP 
+2. Give or increase Oxygen 
+3. Bleep Anaesthetist URGENTLY 
+4. Give Naloxone 100 microgram every 2-3 
+minutes 
+Absolute Requirements 
+• The patient should have read the Remifentanil PCA patient information leaflet & given 
+verbal consent. 
+• A midwife must at all times be in the room and provide one to one care. 
+• In the exceptional case of a midwife needing to leave the room, the handset button of 
+the PCA should be taken with the midwife so no drug can be administered without 
+supervision. 
+• The Anaesthetist and Labour Ward Co-ordinator on call must be informed and agree. 
+• The Anaesthetist must be present on Labour Ward for the first 15 mins of use. 
+• Naloxone must be written on the drug chart and available in the room for 
+administration to the mother. (Naloxone: 400 microgram Naloxone add 3mL water for 
+injection = 100mcg/mL). CG12027 Remifentanil PCA in Labour Guideline v4.1 Aug 2021 Amended Nov 2021 
+Page 13 of 13 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Call Anaesthetist if: 
+Respiratory rate < 8 
+SaO 2 below 94% despite oxygen 
+Sedation score < V (not responding to verbal command) 
+Sedation Score 
+(A) Alert 
+(V) Verbal - respond when spoken to 
+(P) Pain - respond to painful stimuli 
+(U) Unresponsive 
+Pain Score 
+No pain (0) 
+Mild pain (1) 
+Moderate pain (2) 
+Severe pain (3) 
+Excruciating pain (4) Remifentanil PCA Observation Chart 
+ 
+Measure SpO2 continuously & ALL other observations every 30 minutes. 
+(Measure every 5 minutes for the first 30 minutes or if any concerns.) 
+ 
+Date: 
+Time 
+24 hours SaO 2 % Sedation 
+score Resp. 
+rate O2 
+A) Nasal Cannula L/min 
+B) Mask % Pain 
+score Pulse BP Volume 
+Delivered 
+ 
+mL Initials 
+
+Continue observations for 15 minutes after the PCA has been stopped.

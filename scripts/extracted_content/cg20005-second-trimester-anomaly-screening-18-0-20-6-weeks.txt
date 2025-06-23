@@ -1,0 +1,1361 @@
+# Extracted from: CG20005 Second Trimester Anomaly Screening 18+0 - 20+6 weeks.pdf
+# Guideline ID: cg20005-second-trimester-anomaly-screening-18-0-20-6-weeks
+# Content length: 60118 characters
+# Processing date: 1750066900.555372
+
+CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 1 of 37 
+
+Second Trimes ter Anomaly Screeni ng P rotoc ol 
+18+0 - 20+6 weeks 
+ 
+OVERVIEW 
+The purpose of this protocol is to enable sonographers to safely complete the twenty -week anomaly 
+scan, incorporating the NHS Fetal Anomaly Screening Programme, SBLCB v3.1 and local guidance. 
+This protocol applies to: Sonographers when completing the anomaly scan. 
+ 
+TABLE OF CONTENTS 
+1.0 Introduction ................................ ................................ ................................ ............................ 3 
+2.0 Definitions and abbreviations used in this document ................................ .............................. 3 
+3.0 Contents ................................ ................................ ................................ ................................ . 3 
+4.0 Duties and Responsibilities ................................ ................................ ................................ .... 4 
+5.0 The 11 conditions looked for in the Anomaly Scan ................................ ................................ .. 4 
+6.0 Anatomy to be examined and recorded ................................ ................................ .................. 5 
+6.1 Head and neck examination ................................ ................................ ................................ ... 5 
+6.2 Neck & skin ................................ ................................ ................................ ............................ 5 
+6.3 Face examination ................................ ................................ ................................ ................... 5 
+6.4 Chest (Heart Examination) ................................ ................................ ................................ ..... 5 
+6.5 Abdominal examination ................................ ................................ ................................ .......... 5 
+6.6 Kidneys & bladder ................................ ................................ ................................ .................. 6 
+6.7 Thorax ................................ ................................ ................................ ................................ .... 6 
+6.8 Spinal examination ................................ ................................ ................................ ................. 6 
+6.9 Limbs ................................ ................................ ................................ ................................ ..... 6 
+6.10 Genitalia ................................ ................................ ................................ ................................ . 7 
+6.11 Uterine cavity ................................ ................................ ................................ ......................... 7 
+7.0 FASP ................................ ................................ ................................ ................................ ...... 7 
+7.1 Head circumference demonstrating HC measurement and measurement of the 
+atrium of the lateral ventricle ................................ ................................ ................................ ... 8 
+7.2 Suboccipito -bregmatic view demonstrating measurement of the transcerebellar diameter .... 8 
+7.3 Coronal view of lips with nasal tip ................................ ................................ ........................... 9 
+7.4 Abdominal circumference demonstrating AC measurement ................................ ................... 9 
+7.5 Femur Length demonstrating FL measurement ................................ ................................ ...... 9 
+7.6 Sagittal view of spine including sacrum and skin covering ................................ .................... 10 
+7.7 Coronal upper spine ................................ ................................ ................................ ............. 10 
+7.8 Coronal lower spine ................................ ................................ ................................ .............. 10 
+8.0 Fetal Cardiac Protocol: Structures to be examined & images stored ................................ ... 11 
+8.1 Situs/Laterality ................................ ................................ ................................ ...................... 11 
+8.2 Four-Chamber ................................ ................................ ................................ ...................... 11 
+8.3 Aorta/Left Ventricular Outflow Tract ................................ ................................ ...................... 12 
+8.4 Pulmonary/Right Ventricular Outflow Tract ................................ ................................ ........... 12 CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 2 of 37 
+ 8.5 The 3 vessel and trachea view (3VT) ................................ ................................ ................... 13 
+9.0 Suboptimal Views ................................ ................................ ................................ ................. 13 
+10.0 High risk pregnant women and birthing people ................................ ................................ ..... 13 
+11.0 Suspected fetal abnormalities ................................ ................................ ............................... 16 
+12.0 The normal variant ................................ ................................ ................................ ............... 16 
+13.0 SGA/IUGR ................................ ................................ ................................ ............................ 17 
+14.0 Placenta ................................ ................................ ................................ .............................. 17 
+14.1 Placenta Site Assessment ................................ ................................ ................................ .... 17 
+14.2 Low-lying placenta - TVS ................................ ................................ ................................ ...... 17 
+14.3 Placenta praevia – TVS ................................ ................................ ................................ ........ 18 
+14.4 Placenta Accreta - TVS ................................ ................................ ................................ ........ 18 
+14.5 Vasa Praevia – TVS ................................ ................................ ................................ ............. 18 
+14.6 Placental Lakes ................................ ................................ ................................ .................... 19 
+14.7 Placental Masses ................................ ................................ ................................ ................. 19 
+14.8 Placental Anomalies ................................ ................................ ................................ ............. 19 
+15.0 Late dating ................................ ................................ ................................ ........................... 19 
+16.0 Adnexal masses ................................ ................................ ................................ ................... 19 
+17.0 Cervix assessment ................................ ................................ ................................ ............... 19 
+17.1 High risk ................................ ................................ ................................ ............................... 20 
+17.2 Intermediate risk ................................ ................................ ................................ ................... 20 
+17.3 Cervical Length ................................ ................................ ................................ .................... 20 
+17.4 Normal Cervical Changes ................................ ................................ ................................ ..... 21 
+17.5 Abnormal Cervical Changes ................................ ................................ ................................ . 21 
+18.0 Monitoring the effectiveness of this p rotocol ................................ ................................ ......... 23 
+19.0 Protocol Version Control Log ................................ ................................ ................................ 24 
+20.0 Due Regard Assessment Tool ................................ ................................ .............................. 25 
+21.0 Template Dissemination, Implementation and Access Plan ................................ .................. 26 
+22.0 Additional guidance and information ................................ ................................ ........................ 27 
+Appendix 1: Pathway for fetal echogenic bowel ................................ ................................ .............. 28 
+Appendix 2: Pathway for Isolated Fetal Renal Pylectasia ................................ ................................ 29 
+Appendix 3: Pathway for Isolated Ventriculomegaly ................................ ................................ ........ 30 
+Appendix 4: Pathway for the detection of Fetal Talipes ................................ ................................ ... 31 
+Appendix 5: Pathway for the detection of an Adnexal mass detected ................................ .............. 32 
+Appendix 6: Imaging Pathway for the detection of Placenta Praevia/Accreta ................................ .. 33 
+Appendix 7: Amniotic Bands, Amniotic Folds and Uterine Synechae ................................ ............... 34 
+
+ CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 3 of 37 
+ 1.0 INTRODUCTION 
+The purpose of this protocol is to enable sonographers to safely complete the twenty week anomaly 
+scan, incorporating the NHS Fetal Anomaly Screening Programme, SBLCB v3.1 and local guidance. 
+2.0 DEFINITIONS AND ABBREVIATIONS USED IN THIS DOCUMENT 
+AC Abdominal Circumference ANC Antenatal Clinic 
+DAU Day Assessment Unit ANST Antenatal Screening Team 
+AP Anterior posterior BPD Bi parietal Diameter 
+BMI Body mass Index DCDA Dichorionic Diamniotic 
+EDD Expected Date of Delivery PI Pulsatile Index 
+FL Femur Length FMU Fetal medicine Unit 
+FMC Fetal Medicine Consultant HC Head Circumference 
+MCDA Monochorionic Diamniotic MCMA Monochorionic Monoamniotic 
+NF Nuchal Fold RSI Repetitive strain injury 
+NSC National Screening committee NT Nuchal Translucency 
+PACS Picture Archive and 
+Communication system FASP Fetal Anomaly Screening programme 
+RCOG Royal college of Obstetricians 
+and Gynaecologist NICE National Institute of Clinical 
+Excellence 
+SGH St Georges Hospital TAS Trans Abdominal scan 
+TCD Trans Cerebral Diameter T21 Trisomy 21 (Chromosome abnormality) 
+TVS Trans vaginal Scanning UAD Umbilical Artery Doppler’s 
+ 
+3.0 CONTENTS 
+• All pregnant women and birthing people in UH Sussex West are offered a 18 -20+6 week 
+anomaly scan to screen for structural anomalies; locate the placenta and check the 
+growth of the fetus in accordance with NICE and PHE NHS Fetal Anomaly Screening 
+Programme recommendations. 
+• The scan is performed by an appropriately trained member of staff (min Pg Cert, DMU or 
+equivalent) and in accordance with all Trust protocols and NHS Fetal Anomaly Screening 
+Programme. 
+• The pregnant woman or birthing person should be appropriately counselled by their 
+midwife prior to the examination using screening consent check list – on Badgernet . 
+• Midwives or obstetricians requesting an ultrasound (USS) should ensure the ICE request 
+form is fully completed. Forms with insufficient information may be rejected, causing delay 
+in the pregnant women and birthing people having their USS. 
+• The member of staff performing the scan must obtain informed verbal consent for the 
+examination prior to starting the scan. 
+• The pregnant women and birthing people have the option to decline the scan and if so 
+should be referred to ANST. The sonographer must document that the pregnant woman or 
+birthing person has declined screening and inform the ANST. CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 4 of 37 
+ • One person may accompany the pregnant woman or birthing person into the scan room 
+for their pregnancy scans. See Appendix 9 . 
+• A print of the baby can be requested at this scan for which a donation to the hospital 
+charity is requested. The picture is supplied on the understanding that the image is non -
+diagnostic and for personal use only. See Appendix 8 . 
+• The person scanning must check the pregnant woman or birthing person’s name, date of 
+birth, hospital number and gestational age. All results must be accurately recorded on 
+Viewpoint, images on PACS or other computer storage system, and examinations on 
+CRIS. The name of the person scanning, and any assistant, must appear on the 
+Viewpoint report and be recorded on CRIS. 
+• The report is entered on to both Viewpoint and Badgernet reporting system s. 
+4.0 DUTIES AND RESPONSIBILITIES 
+All staff working in the Trust • To access, read, understand and follow this protocol. 
+• To use their professional judgement in application of this 
+protocol . 
+Managers • To ensure the p rotocol is reviewed as required in line with Trust 
+and National (NHS FASP) recommendations . 
+• To ensure the p rotocol is accessible to all relevant staff. 
+Other posts Sonographers responsibility to adhere to this protocol . 
+Committees 
+ 
+5.0 THE 11 CONDITIONS LOOKED FOR IN THE ANOMALY SCAN 
+Conditions Detection 
+Rate (%) 
+Anencephaly 98 
+Open spina bifida 90 
+Cleft lip 75 
+Diaphragmatic hernia 60 
+Gastroschisis 98 
+Exomphalos 80 
+Serious cardiac anomalies include the following: 
+• Transposition of the Great Arteries (TGA) 
+• Atrioventricular Septal Defect (AVSD) 
+• Tetralogy of Fallot (TOF) 
+• Hypoplastic Left Heart Syndrome (HLHS) 50 
+Bilateral renal agenesis 84 
+Lethal skeletal dysplasia 60 
+Edwards’ syndrome (Trisomy 18) 95 
+Patau’s syndrome (Trisomy 13) 95 
+ 
+ CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 5 of 37 
+ 6.0 ANATOMY TO BE EXAMINED AND RECORDED 
+Please note all anatomy detailed in BOLD is to be recorded as an image on PACS: 
+University Hospitals Sussex SRH & WH update NCARDS monthly. 
+6.1 Head and neck examination 
+Head, shape and brain. measure, record & image: 
+• Head Circumference with Cavum Septum Pellucidum, and posterior horn of the 
+lateral ventricle, all visible on the same image. 
+• Posterior horn of the lateral ventricle (Vp ) including choroid plexus. Normal range= up 
+to and including 10 mm (measured from the same image as the HC). Please see 
+appendix 3 . 
+• Cerebellum (TCD) with cavum septum pellucidum and check its shape and size. 
+6.2 Neck & skin 
+Nuchal skin fold < 6mm with skin surface seen (measured from same image as HC) . Refer to 
+fetal medicine if nuchal fold is over 6mm. 
+6.3 Face examination 
+Lips: Use coronal view only. Upper lip and both nostrils in the same view. 
+Profile: sagittal view. 
+6.4 Chest (Heart Examination) 
+The heart is assessed and imaged for: 
+• Situs, including the stomach (to include RT or LT annotation) . 
+• Movement and rhythm . 
+• Four chamber view . 
+• Aorta / Left ventricular outflow tract . 
+• Pulmonary / right ventricular outflow tract . 
+• Three vessel view or bifurcation of the pulmonary artery. 
+• Three vessel and tracheal view. 
+• Colour Flow Doppler images of the 4CV, LVOT, RVOT and 3VV (3VT if possible). 
+• Thorax – coronal view if possible . 
+ 
+Please refer to 8.0 Fetal Cardiac Protocol for further information on cardiac assessment. 
+6.5 Abdominal examination 
+Abdominal circumference: Rib, Stomach and short intrahepatic section of umbilical vein in 
+transverse section. If the AC is increased >95 percentile please refer to ANC midwives for 
+assessment & rescan at 28 weeks. 
+ CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 6 of 37 
+ Abdominal wall: Transverse section of the cord insertion. 
+• Stomach – fluid filled, situs, size. 
+• Aorta situs 
+• Longitudinal axis abdominal – thoracic appearance. 
+• Umbilical cord insertion. 
+• Three vessel cord – document on report if 2VC and do Uterine Artery Dopplers refer to 
+ANC midwife for risk pathway assessment, but no further scans are indicated as per 
+FASP. Any vessel cord anomalies or vascular malformations refer to the Antenatal 
+Screening Team. 
+• Bowel. Record image and report if echogenic, do Uterine Artery Dopplers. Please see 
+appendix 1 for fetal echogenic bowel pathway. 
+6.6 Kidneys & bladder 
+Image a transverse cross section demonstrating both kidneys. The AP diameter of the renal 
+pelvis is normal up to 7mm. Above 7mm refer to ANST. 
+Image the filled bladder in transverse section . 
+Please see appendix 2 for renal flow chart. 
+* Hydronephrosis is associated with other chromosomal abnormalities e.g dilated ureters, distended 
+bladder or reduced liquor volume – these and any other renal anomalies should be referred to 
+ANST. 
+6.7 Thorax 
+Image to include stomach seen below diaphragm and heart to the left and occupying 1/3rd of 
+the thorax with no mediastinal shift. 
+6.8 Spinal examination 
+Normal scan appearance in transverse , coronal and sagittal views. Refer any suspected spinal 
+defects to the Antenatal Screening Team. 
+6.9 Limbs 
+• Measure and record an accurate Femur length. 
+• If the femur length is between the 5th and 3rd centile with otherwise normal morphology 
+and ossification then rescan in 4 weeks. If the FL is below the 3rd centile and/or has 
+abnormal morphology and ossification then refer to Fetal Medicine. 
+• Assess the: Femora, tibiae, fibulae, metatarsals - footprint and the carrying angle of 
+the feet. Please see appendix 4 . 
+• Assess the: Humerii, ulnae, radai, metacarpals and carrying angle of the hands: 
+clenched fist is acceptable . 
+• Appearance of the skeleton. CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 7 of 37 
+ 6.10 Genitalia 
+The sex of the fetus may be determined at the time of the 20 week scan if requested by the 
+pregnant woman or birthing person. It should be made clear that this is only an opinion and may be 
+only 95% correct. This opinion is given verbally or written down at the pregnant woman or birthing 
+person’s request. 
+Pregnant women and birthing people will not be rescanned if the sex is not visible unless 
+there is a medical indication. 
+6.11 Uterine cavity 
+• Amniotic bands, amniotic folds & uterine synechiae. Images are to be stored on PACS 
+and ANST asked to arrange Fetal Medicine Consultant to review the images. Please see 
+Appendix 7 for more information. 
+• Fibroids: position and size to be documented on the Viewpoint report and images to be 
+saved. 
+• If at anomaly scan, a fibroid is noted in the lower segment of the uterus, follow -up should be 
+arranged as per local protocol. If the sonographer has any concerns about other fibroids 
+(size and location) please seek a second opinion. 
+• If fibroids are high and are not located close to the cervix, a rescan is not required. This 
+should be documented on viewpoint. A referral to the consultant should be arranged. Serial 
+growth scans are not routinely performed for fibroids. Pregnant women and birthing people 
+should be clinically assessed and scans arranged as clinically indicated . 
+7.0 FASP 
+FASP require images of 6 specific anatomical sections to be archived. 
+These are: 
+• Head circumference (HC) measurement and the atrium of the lateral ventricle. 
+• Suboccipitobregmatic view demonstrating measurement of the transcerebellar diameter. 
+• Coronal view of lips with nasal tip . 
+• Abdominal circumference (AC) measurement . 
+• Femur length (FL) measurement . 
+• Sagittal (preferred) or coronal view of spine including sacrum . 
+ 
+Examples of these images are included below, along with corresponding schematic diagrams. 
+ 
+The HC, AC and FL measurements should be taken to assess growth velocity. The British Medical 
+Ultrasound Society (BMUS) Fetal size and dating: charts recommended for clinical obstetric practice 
+(2009) guidelines provide guidance on how to date a pregnancy where the estimated due date 
+(EDD) was not previously assigned. CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 8 of 37 
+ 7.1 Head circumference demonstrating HC measurement and measurement of the 
+ atrium of the lateral ventricle 
+
+7.2 Suboccipito -bregmatic view demonstrating measurement of the transcerebellar 
+ diameter 
+
+CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 9 of 37 
+ 7.3 Coronal view of lips with nasal tip 
+ 
+7.4 Abdominal circumference demonstrating AC measurement 
+
+7.5 Femur Length demonstrating FL measurement 
+
+CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 10 of 37 
+ 7.6 Sagittal view of spine including sacrum and skin covering 
+ 
+7.7 Coronal upper spine 
+ 
+7.8 Coronal lower spine 
+
+CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 11 of 37 
+ 8.0 FETAL CARDIAC PROTOCOL: STRUCTURES TO BE EXAMINED & 
+IMAGES STORED 
+It is acknowledged that cardiac scanning is a dynamic study and that still images may be 
+suboptimal. Images and dynamic assessment to be made in accordance with Fetal Cardiac protocol 
+(FASP 2023) 
+The views required are: 
+8.1 Situs/Laterality 
+
+8.2 Four -Chamber 
+This view shows the transverse section of the thorax including a complete rib and crux of the heart. 
+
+CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 12 of 37 
+ 8.3 Aorta/Left Ventricular Outflow Tract 
+This view shows the outflow tract of the left ventricle. 
+
+8.4 Pulmonary/Right Ventricular Outflow Tract 
+This view shows the outflow tract of the right ventricle only or the Three -Vessel View (3VV): This 
+view shows the outflow tract of the right ventricle including the pulmonary artery. 
+
+CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 13 of 37 
+ 8.5 The 3 vessel and trachea view (3VT) 
+A transverse view of the fetal upper mediastinum; it depicts the main pulmonary artery in direct 
+communication with the ductus arteriosus, the transverse aortic arch and the superior vena cava. 
+ 
+9.0 SUBOPTIMAL VIEWS 
+A single repeat scan must be offered and completed by 23 +0 weeks gestation. In cases where the 
+image quality of the first examination is compromised by one of the following: 
+• Increased maternal body mass index (BMI) 
+• Uterine fibroids 
+• Abdominal scarring 
+• Sub-optimal fetal position 
+ 
+The pregnant woman or birthing person should be rescanned on the same day or offered a new 
+appointment according to local clinical assessment. 
+If first examination is sub -optimal and the sonographer is suspicious of a possible fetal abnormality, 
+a second opinion may be sought and documented if done so. 
+Where an adequate assessment of the fetal anatomy remains comprom ised after the repeat scan, 
+the pregnant woman or birthing person should be referred to ANST. 
+10.0 HIGH RISK PREGNANT WOMEN AND BIRTHING PEOPLE 
+Uterine artery Dopplers should be completed at the anomaly scan for the following indications: 
+Previous Pregnancy: 
+• Hypertensive disease in previous pregnancy 
+• Previous IUGR 
+• Previous SGA stillbirth 
+ 
+CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 14 of 37 
+ 
+Current Pregnancy: 
+• Low PAPP -A < 5th centile 
+• EFW below 10th centile at anomaly scan 
+• Echogenic Bowel 
+• 2 vessel cord 
+• Significant bleeding 
+ 
+Medical conditions: 
+• Chronic kidney disease 
+• Hypertension 
+• Auto immune disease 
+• Post Fontan (HLHS repair) 
+ 
+Measuring Uterine Artery mean PI:   
+ 
+• To calculate the mean PI, add left & right PI together then divide by 2. 
+• If this figure is less than the 95th centile for correct gestational age, this is normal.    
+• If raised refer to ANST. 
+• Whether there are notches or not, is irrelevant. 
+ 
+ CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 15 of 37 
+ Table 2 : Reference intervals for mean uterine artery pulsatility index. 
+ GA 
+(weeks)    5th 
+centile    50th 
+centile    95th 
+centile   
+11  1.18  1.79  2.7  
+12  1.11  1.68  2.53  
+13  1.05  1.58  2.38  
+14  0.99  1.49  2.24  
+15  0.94  1.41  2.11  
+16  0.89  1.33  1.99  
+17  0.85  1.27  1.88  
+18  0.81  1.2  1.79  
+19  0.78  1.15  1.7  
+20  0.74  1.1  1.61  
+21  0.71  1.05  1.54  
+22  0.69  1  1.47  
+23  0.66  0.96  1.41  
+24  0.64  0.93  1.35  
+25  0.62  0.89  1.3  
+26  0.6  0.86  1.25  
+27  0.58  0.84  1.21  
+28  0.56  0.81  1.17  
+29  0.55  0.79  1.13  
+30  0.54  0.77  1.1  
+31  0.52  0.75  1.06  
+32  0.51  0.73  1.04  
+33  0.5  0.71  1.01  
+34  0.5  0.7  0.99  
+35  0.49  0.69  0.97  
+36  0.48  0.68  0.95  
+37  0.48  0.67  0.94  
+38  0.47  0.66  0.92  
+39  0.47  0.65  0.91  
+40  0.47  0.65  0.9  
+41  0.47  0.65  0.89  
+ 
+ CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 16 of 37 
+ 
+11.0 SUSPECTED FETAL ABNORMALITIES 
+If an abnormality is found or suspected the sonographer should communicate the results of the scan 
+to the pregnant woman or birthing person (and partner) as soon as possible in an appropriate 
+format/language, enabling the pregnant woman or birthing person to understand there are concerns. 
+The anomaly should be documented on Viewpoint / Badgernet and images stored on PACS. 
+To adhere to National guidelines (PHE SO8a/SO8b) ANST will arrange for the pregnant woman or 
+birthing person to be referred to a Fetal Medicine Specialist or Tertiary centre if an abnormality is 
+suspected. 
+• Fetal Medicine Consultant (FMC): seen within 3 working days. 
+• Fetal Medicine unit (FMU) Tertiary unit: seen within 5 working days. 
+ 
+FASP requires the scan findings listed below to be reported and the pregnant woman or birthing 
+person referred for further assessment, however this is not an exhaustive list and ALL concerns re; 
+abnormal appearances should be reported. 
+• Nuchal fold (greater than 6mm). 
+• Ventriculomegaly (atrium greater than 10mm). 
+• Echogenic bowel (with density equivalent to bone). 
+• Renal pelvic dilatation (AP measurement greater than 7 mm). 
+• Small measurements of HC, AC and/or FL (below the 5th centile on fetal biometry 
+charts). 
+12.0 THE NORMAL VARIANT 
+If one or more of the normal variants listed below (other than two vessel cord) are seen, this does 
+not need to be reported nor does the pregnant woman or birthing person need referral for further 
+assessment as part of the NHS FASP : 
+• Choroid plexus cyst(s) 
+• Dilated cisterna magna 
+• Echogenic foci in the heart 
+• Two vessel cord 
+ 
+Although not part of NHS FASP, some scan findings can be associated with an increased risk of 
+fetal growth restriction (FGR). The Royal College of Obstetricians and Gynaecologists (RCOG) 
+guidance and the NHS England Saving Babies’ Lives Care Bundle (SBLCB) require additional 
+assessment for FGR. This includes uterine artery Doppler assessment and an individualised plan of 
+care. The scan findings that require referral for additional assessment for FGR are: 
+• Echogenic bowel . 
+• Estimated fetal weight below the 10th centile . 
+• Single umbilical artery (2 vessel cord) . 
+ CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 17 of 37 
+ If these findings are seen during the anomaly scan, referral to ANC M/W should be made in order 
+that the correct risk pathway is then followed. 
+13.0 SGA/IUGR 
+Small fetuses are divided into: 
+• Normal (constitutionally) small. 
+• Non–placenta mediated growth restriction, for example; structural or chromosomal 
+anomaly, inborn errors of metabolism and fetal infection. 
+• Placenta mediated growth restriction. 
+ 
+Pragmatically, fetuses with a placenta mediated growth problem are classified as being either: 
+• Small for Gestational Age (SGA) defined as fetuses with an estimated fetal weight 
+between the 3rd and 10th centile and normal Doppler indices - of which an estimated 70% 
+will be constitutionally small. 
+• Fetal Growth Restriction (FGR) - defined as either of the following: EFW or abdominal 
+circumference (AC) <3rd centile OR EFW or AC <10th centile with evidence of placental 
+dysfunction (abnormal uterine artery Doppler (mean pulsatility index >95th centile). 
+ 
+If at anomaly scan the EFW or AC is <10th centile, do Uterine Artery Dopplers and refer to ANST for 
+appropriate risk pathway assessment. 
+14.0 PLACENTA 
+14.1 Placenta Site Assessment 
+• Image and label the lower section, showing the placental site in relation to the internal os 
+and demonstrating maternal or birthing person bladder if possible. 
+• If not low ie > 20 mm from the internal os, classify and image the placenta as fundal, left 
+lateral, right lateral, posterior high or anterior high. 
+• If the placenta appears low on TAS, a transvaginal scan should be performed at the time 
+of the anomaly scan. 
+• If TVS is declined this must be recorded on the report. 
+14.2 Low-lying placenta - TVS 
+• If the placenta is 20mm or less from the internal os, it is categorised as a low -lying 
+placenta. 
+- If the placenta is anterior with no previous caesarean section scar; or a posterior 
+placenta, then inform the antenatal clinic midwife . 
+- If it is an anterior placenta and there is a previous history of a caesarean section; or 
+previous history of placenta accreta, then scan for signs of placenta accreta (see 
+section 14.4 ). 
+• All pregnant women and birthing people with low -lying placentas at their anomaly scan 
+must be sent to the ANC midwife, who will arrange a follow -up scan at 32 weeks. Record CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 18 of 37 
+ on Viewpoint that the pregnant woman or birthing person has been referred to a midwife. 
+Please refer to the placenta flowchart in appendix 6 . 
+ 
+14.3 Placenta praevia – TVS 
+• If the placenta is covering the internal os, it is categorised as placenta praevia. 
+- If the placenta is anterior with no previous caesarean section scar; or a posterior 
+placenta, then inform the antenatal clinic midwife. 
+- If it is an anterior placenta and there is a previous history of a caesarean section; or 
+previous history of placenta accreta, then scan for signs of placenta accreta (see 
+section 14.4 ). 
+• All pregnant women and birthing people with placenta praevia at their anomaly scan must 
+be sent to the ANC midwife, who will arrange a follow -up scan at 32 weeks. Record on 
+Viewpoint that the pregnant woman or birthing person has been referred to a midwife. 
+Please refer to the placenta flowchart in appendix 6 . 
+14.4 Placenta Accreta - TVS 
+• Placenta accreta occurs when all or part of the placenta attaches abnormally to the 
+myometrium. 
+• At the anomaly scan, if the placenta is either low -lying or there is placenta praevia AND 
+there is an anterior placenta and previous caesarean section, OR a previous history of 
+placenta accreta, then pregnant women and birthing people are at risk of placenta 
+accreta. 
+• Assess for signs of placenta accreta. Use colour Doppler. 
+• Ultrasound characteristics of accreta are: 
+- Loss of myometrial thickness 
+- Numerous, large placental lakes 
+- Bladder wall interruption 
+- Placental tissue extending beyond the uterus 
+- Presence of mass -like tissue 
+- Striking amount of colour Doppler between myometrium and posterior bladder wall 
+- Striking amount of colour Doppler in the placenta bed 
+- Bridging vessels extending from the placenta 
+14.5 Vasa Praevia – TVS 
+• Vasa Praevia is when there is a low placenta and fetal vessels course through the 
+membranes over the internal cervical Os and below the fetal presenting part, unprotected by 
+placental tissue or the umbilical cord. 
+• This can be secondary to a velamentous cord insertion in a single or bi -lobed placenta, or 
+from fetal vessels running between lobes of a placenta with one or more accessory lobes 
+(vasa praevia type 2). 
+• Use colour Doppler to differentiate fetal, and maternal and birthing person’s vessels – 
+maternal or birthing person’s vessels will alter with maternal or birthing person’s breathing. 
+• Refer the pregnant women and birthing people to ANST. CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 19 of 37 
+ 14.6 Placental Lakes 
+These are not thought to have any clinical significance and should be ignored unless they occupy 
+more than 50% of placenta tissue. If this is found then the pregnant woman or birthing person 
+should be referred to ANST. 
+14.7 Placental Masses 
+Any suspected placental masses should be referred to Fetal Medicine for further assessment. 
+14.8 Placental Anomalies 
+Report on any succenturiate or bi -lobar placentas that are noted and give detail of location. Check 
+neither lobe is close to the internal os and assess for Vasa Praevia - record in Viewpoint report. 
+Refer these pregnant women and birthing people to the ANC midwife to discuss findings. 
+15.0 LATE DATING 
+• If there have been no earlier scans and the pregnancy is dated at the anomaly scan by 
+the HC – rescan in 3 weeks to check the growth velocity is normal. 
+• If an anomaly scan is not undertaken (eg: a pregnant woman and birthing person who 
+books after 23 weeks), then a scan should be arranged as soon as possible for baseline 
+measurements to be taken and documented, with a follow up scan 3 weeks later to check 
+growth/dates - it should be explained that fetal maturity might compromise the amount of 
+detail visible especially in the 3rd trimester. 
+• No repeat scan should be performed to complete fetal anomaly assessment in the third 
+trimester unless an anomaly is suspected. 
+16.0 ADNEXAL MASSES 
+All adnexal masses and ovarian cysts should be reported on Viewpoint and local gynaecology 
+pathway followed. 
+Please refer to appendix 5 for adnexal cysts/masses fibroids. 
+17.0 CERVIX ASSESSMENT 
+A cervical length scan is indicated in pregnant women and birthing people who are at risk of cervical 
+insufficiency or preterm delivery. Transvaginal ultrasound is the gold standard for cervical length 
+assessment and must be performed. 
+Pregnant women and birthing people’s risk is categorised as high or intermediate . Pregnant 
+women and birthing people identified as at high or intermediate risk will have been referred to the 
+preterm birth prevention clinic (PTBC) by 12 weeks for risk assessment and be booked for cervical 
+length assessment as part of the anomaly scan appointment. Urgent referral is only necessary if the 
+cervical length is <25mm. 
+Please refer to Antenatal Clinic midwives to arrange senior obstetric review. CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 20 of 37 
+ 17.1 High risk 
+Pregnant women and birthing people identified as High risk of cervical incompetence or preterm 
+delivery transvaginal cervical length assessment every 2 -4 weeks between 16 and 24 weeks – as 
+per NICE/SBLCB version 3.1. 
+ Factors resulting in high risk include: 
+• Previous preterm birth or mid trimester loss between 16 -34 weeks gestation. 
+• Previous preterm labour rupture of membranes before 34weeks gestation. 
+• Previous cervical cerclage. 
+• Intrauterine adhesions – Ashermanns syndrome. 
+• History of trachelectomy (surgical cervical removal for cervical cancer). 
+• Known uterine variant. 
+ 
+Pre term birth prevention clinic are primarily responsible for initial management and ongoing 
+surveillance of high risk pregnant women and birthing people. 
+17.2 Intermediate risk 
+Pregnant women and birthing people identified as at intermediate risk of cervical insufficiency or 
+preterm delivery require a single TVS scan performed between 18 -22 weeks gestation as a 
+minimum - as per NICE/SBLCB version 3.1. 
+Intermediate risk factors include: 
+• Previous birth by c -section at full dilatation 
+• History of significant cervical excisional event ie: LLETZ greater than15 mm depth 
+removed or 
+• More than one LLETZ performed or 
+• Cone biopsy performed. 
+17.3 Cervical Length 
+• Important to ask the pregnant woman or birthing person to empty the bladder. 
+• Gently place the transvaginal probe in the anterior vaginal fornix to ensure a longitudinal 
+view of the cervix is obtained. 
+• Positively identify the Internal Os, External Os, cervical canal and endo -cervical mucosa. 
+• The endo -cervical mucosa should be used to define the level of the Internal Os. 
+• Ensure minimal pressure on the cervix with the transvaginal probe as this will elongate 
+the cervix. 
+• Image a true sagittal section of the cervix and magnify the image to between 50 & 75%. 
+• Measure the distance in a straight line (not trace) between the Internal and External Os. 
+Take 3 measurements (store images) over a period of 3 minutes and record the best 
+shortest measurement of the cervical length. CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 21 of 37 
+ 17.4 Normal Cervical Changes 
+After 20 weeks’ gestation, the cervix appears to shorten slightly with increasing gestational age. 
+Cervical effacement begins at the Internal Os, so funnelling is effacement in progress, as the cervix 
+becomes shorter, the funnel disappears. 
+17.5 Abnormal Cervical Changes 
+The magnitude of endo -cervical funnelling and particularly the degree of cervical shortening appears 
+to be correlated to the risk of preterm delivery. 
+• Dilatation of the Internal Os with prolapsing membranes into the endo -cervical canal i.e. 
+funnelling of the cervix. 
+• Cervical shortening, progressive shortening of the endo -cervical length to <25mm. 
+
+Important to recognise the differing appearance between cervical canal and a thickened lower 
+uterine segment coming together in the midline; which gives a false impression of a longer canal. 
+• Ensure minimal pressure on the cervix with the transvaginal probe as this will elongate 
+the cervix. 
+• Image a true sagittal section of the cervix and magnify the image to between 50 & 75%. 
+• Measure the distance in a straight line (not trace) between the Internal and External Os. 
+Take 3 measurements (store images) over a period of 3 minutes and record the best 
+shortest measurement of the cervical length. 
+ 
+CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 22 of 37 
+ 
+Check the possible presence of funnelling at the internal os. The endo -cervical mucosa will give an 
+accurate definition of the amount of funnelling. 
+ 
+Care should be taken with a thickened lower uterine segment as this can mimic a funnel. Check for 
+the absence of the endo -cervical mucosa extending along the walls of the funnel. 
+• Check the possible presence of dynamic changes in the cervix, defined by the 
+appearance and disappearance of funnelling during the scan. 
+ 
+Cervical length screening is used to identify pregnant women and birthing people who may require 
+cervical cerclage and to try and avoid unnecessary insertion of sutures. 
+Cervical length <25mm requires urgent review to discuss the possibility of emergency cervical 
+cerclage. 
+ 
+CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 23 of 37 
+ 18.0 Monitoring 
+ 
+Issue being 
+monitored Monitoring 
+method Responsibility Frequency Reviewed by 
+and actions 
+arising followed 
+up by 
+Anomaly USS 
+carried out as per 
+policy. Audit Superintendent 
+Sonographer, 
+Ultrasound 
+Depa rtment Three monthly Each 
+Sonographer 
+receiving a copy 
+of the 
+assessment and 
+comments from 
+the SSS. 
+Discrepancies 
+are reported to 
+the SS. 
+ 
+ CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 24 of 37 
+ 19.0 PROTOCOL VERSION CONTROL LOG 
+ 
+Change Log – Second Trimester Screening 
+ 
+Version Date Author(s) Comment 
+1.0 November 
+2015 Rebecca 
+Coombes New guideline 
+2.0 January 
+2020 Rebecca 
+Coombes Review completed 
+2.1 May 2020 Rebecca 
+Coombes FASP reference added and updated review date. 
+3.0 May 2022 R. Coombes, 
+Superintendent 
+Sonographer Appendices added for information on filming in scan 
+rooms and other people in scan rooms added. 
+3.1 February 
+2023 Rebecca 
+Coombes, 
+Superintendent 
+Sonographer 
+Amanda Sutton, 
+Sonographer Updated for SBLCB v3.1 
+4.0 February 
+2024 Rebecca 
+Coombes, 
+Superintendent 
+Sonographer 
+Amanda Sutton, 
+Sonographer Updated to reflect FASP changes up to 23/11/23. 
+4.1 April 2025 Amanda Sutton, 
+Sonographer Minor amendment to wording in section 12.0 for 
+clarity. CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 25 of 37 
+ 20.0 DUE REGARD ASSESSMENT TOOL 
+ 
+ Yes/No Comments 
+1. Does the document affect one group less or more 
+favourably than another on the basis of: 
+ Age No 
+ · Disability No 
+ · Gender (Sex) No 
+ · Gender Identity No 
+ · Marriage and civil partnership No 
+ · Pregnancy and maternity No 
+ · Race (ethnicity, nationality, colour) No 
+ · Religion or Belief No 
+ · Sexual orientation, including lesbian, gay and bisexual 
+people No 
+2. Is there any evidence that some groups are affected 
+differently and what is/are the evidence source(s)? No 
+3. If you have identified potential discrimination, are there 
+any exceptions valid, legal and/or justifiable? NA 
+4. Is the impact of the document likely to be negative? No 
+5. If so, can the impact be avoided? NA 
+6. What alternative is there to achieving the intent of the 
+document without the impact? NA 
+7. Can we reduce the impact by taking different action 
+and, if not, what, if any, are the reasons why the 
+protocol should continue in its current form? NA 
+8. Has the document been assessed to ensure service 
+users, staff and other stakeholders are treated in line 
+with Human Rights FREDA principles (fairness, respect, 
+equality, dignity and autonomy)? Yes 
+ 
+If you have identified a potential discriminatory impact of this protocol, please refer it to Rebecca 
+Coombes, Superintendent Sonographer & Amanda Sutton, Sonographer , together with any 
+suggestions as to the action required to avoid/reduce this impact. For advice in respect of answering 
+the above questions, please contact uhsussex.equality@nhs.net 01273 664685). 
+
+ CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 26 of 37 
+ 21.0 TEMPLATE DISSEMINATION, IMPLEMENTATION AND ACCESS PLAN 
+
+ Dissemination Plan Comments 
+1. Identify: 
+ Which members of staff or staff groups will be affected 
+by this p rotocol ? Sonographers and maternity 
+staff. 
+ How will you confirm that they have received the 
+protocol and understood its implications? Normal dissemination 
+channels and audit. 
+ How have you linked the dissemination of the protocol 
+with induction training, continuous professional 
+development and clinical supervision as appropriate? New starters are shown where 
+to access guidance. 
+2. How and where will staff access the document (at 
+operational level)? Accessed by staff via 
+SharePoint 
+ 
+ Yes/No Comments 
+3. Have you made any plans to 
+remove old versions of the 
+protocol or related documents 
+from circulation? Yes Previous version will 
+be archived. 
+4. Have you ensured staff are 
+aware the document is logged 
+on the organisation’s 
+register? Yes Dissemination plan 
+includes notifying 
+departmental lead that 
+this protocol is now 
+live. A summary of 
+changes will be 
+emailed to 
+sonographers who 
+carry out Anomaly 
+USS. 
+
+ CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 27 of 37 
+ 22.0 ADDITIONAL GUIDANCE AND INFORMATION 
+Gregrory, V.1999. Occupational health and Safety update: Report on results of an Australian 
+Sonography survey of prevalence of musculoskeletal disorders among Sonographers: cited in: 
+Richens, Y. Lavender, T.2010. Care for the pregnant women who are obese. Quay books division. 
+London. 
+Loughna P, Chitty L, Evans T, & Chudleigh T “ Fetal size & dating: charts recommended for clinical 
+obstetric practice” Ultrsound 2008 17(3) :160 -166 
+Kirwin, D., 2010. NHS Fetal Anomaly screening programme – 18+0 – 20+6 weeks National 
+Standards and guidance for England. London. British library cataloguing in Publicati on Data. British 
+Library. 
+Public Health England. 2023. National screening guidelines NHS Fetal Anomaly Screening 
+Programme . 
+National Institute of Clinical excellence. 2021. Antenatal care . London. 
+National Institute of Clinical excellence . 2019. Twin and triplet pregnancy . London. 
+NICE guidelines for antenatal care for cervical assessment 2011 (60) 
+NHS England. 2023. Saving babies Lives Care Bundle v 3.1 
+NHS England . 2024. 20 week scan Guidance 
+Richens, Y.& Lavender, T., 2010. Care for pregnant women who are obese. London. Quay books 
+division. 
+Royal College of Obstetricians and Gynaecologists . 2018 Green top guideline 27a : Placenta 
+Praevia and Placenta Accreta: Diagnosis and Management. 
+Wolfe, H.M., Sokol, T.J., Martier, S.M., et al. 1990. Maternity obesity: a potential source of error in 
+sonographic prenatal diagnosis. Obstetric and gynaecology. 76, pp.339 -42: cited in: Richens, Y. 
+Lavender, T. 2010. Care for the pregnant women who are obese. Quay books division. London. 
+Wong, S.F., Chan, F.Y., Cinootta, R.B., et al. 2002. Routine Ultrasound screening in diabetic 
+pregnancies. Ultrasound in Obstetric and Gynaecology: Cited in: Richens, Y. Lavender, T. 2010. 
+Care for the pregnant women who are obese. Quay books division. London. 
+ CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 28 of 37 
+ APPENDIX 1: PATHWAY FOR FETAL ECHOGENIC BOWEL 
+
+Fetal Echogenic Bowel Noted on Scan 
+(to be as echogenic as bone while gradually 
+decreasing the gain) 
+DO UTERINE ARTERY DOPPLERS 
+Confirmation Scan with 
+Fetal Medicine 
+Consultant 
+Referral to the fetal medicine 
+consultant within 3 days 
+INITIATE FURTHER TESTS 
+•Torch + Parvovirus 
+•Look for any source/cause, other 
+signs of bleeding in the fetus 
+•Cystic Fibrosis Testing ( both partners) 
+•If indicated - offer amniocentesis 
+IMMEDIATE REFERRAL to the 
+Antenatal screening team for 
+counselling 
+Postnatally – 24 hour observation 
+for neonate to ensure normal bowel 
+movements prior to discharge . 
+If normal : back to community care 
+Fetal Echogenic Bowel confirmed on 
+scan by the Fetal Medicine Consultant 
+Document on Maternity Information 
+System (eg Medway or Badger Net) 
+and hospital notes and inform the: 
+•Community Midwife 
+•Named Consultant 
+•Lead Paediatrician 
+•GP CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 29 of 37 
+ APPENDIX 2: PATHWAY FOR ISOLATED FETAL RENAL PYLECTASIA 
+ 
+Isolated Fetal Renal Pylectasis 
+identified on scan 
+Renal pelvis dilatation of 
+≥ 10mm and < 15mm 
+with/without calyceal and 
+ureteric involvement 
+indicates a moderate 
+hydronephrosis 
+Renal pelvic dilatation of 
+> 7mm and < 10mm with 
+NO calyceal or ureteric 
+involvement indicates 
+mild hydronephrosis 
+Moderate Pylectasis 
+refer to the Fetal 
+Medicine Consultant 
+(FMC) to review images 
+on PACs and make a 
+plan of care within 7 – 
+10 days 
+Repeat scan to be 
+arranged for at 32 weeks 
+Refer to the Antenatal Screening team for counselling and 
+documentation on Maternity Information System 
+(eg Badger Net) 
+If the RPD is 
+<10mm refer back 
+to community care 
+with an information 
+leaflet on 
+identifying UTI’s 
+postnatally. 
+Severe Pylectasis 
+Refer to the tertiary unit for review: 
+St. Richard’s Hospital Southampton Hospital 
+Worthing Hospital St. George’s Hospital 
+Document on Maternity 
+Information System (eg 
+Medway or Badger Net) and in 
+hospital notes and inform the: 
+•Community Midwife 
+•Named consultant 
+•Lead Paediatrician 
+•GP 
+Renal pelvis dilatation 
+of any diameter WITH 
+calyceal dilatation 
+Renal pelvis dilatation 
+of ≥ 15mm 
+with/without calyceal 
+and ureteric 
+involvement indicates 
+a severe 
+hydronephrosis 
+ 
+Refer to the 
+Fetal Medicine 
+Consultant 
+(FMC) within 3 
+days. Severe 
+Pylectasis 
+confirmed. 
+Initiate further 
+testing. 
+If the RPD is 
+≥10mm and 
+≤15mm , at birth 
+refer to postnatal 
+Paediatric Renal 
+Protocol. Give 
+an information 
+leaflet on 
+identifying UTI’s 
+postnatally. 
+If the Renal 
+Pelvis is 
+>15mm refer 
+to the fetal 
+medicine 
+consultant 
+within 7 -10 
+days . 
+ CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 30 of 37 
+ APPENDIX 3: PATHWAY FOR ISOLATED VENTRICULOMEGALY 
+
+Posterior ventricle > 10mm 
+IMMEDIATE REFERRAL 
+To the Antenatal Screening Team for 
+counselling. 
+Ventriculomegaly confirmed. 
+Initiate further testing TORCH + 
+Parvovirus B19 screening 
+Refer to the Tertiary unit for review 
+Ventricles normal - 
+Refer back to community care. 
+Document on Maternity Information 
+System (eg Badger Net) and hospital 
+notes and inform the: 
+• Community Midwife 
+• Named consultant 
+• Lead Paediatrician 
+• GP 
+Referral and appointment to be made with the Fetal 
+Medicine Consultant as per National Guidance CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 31 of 37 
+ APPENDIX 4: PATHWAY FOR THE DETECTION OF FETAL TALIPES 
+ 
+Unilateral Talipes 
+ Bilateral Talipes 
+Scan with Fetal Medicine Consultant 
+as per National Guidance 
+Refer to Fetal Medicine 
+Consultant for review within 5 
+working days (FASP 2010) 
+Referral to Antenatal Screening 
+Team (ANST) 
+Unilateral/Bilateral Talipes Identified 
+Assess all structures to rule out other 
+markers of chromosomal 
+abnormalities 
+Refer to the Tertiary unit for Paediatric 
+Orthopaedic review. 
+St. Richard’s Hospital Southampton Hospital. 
+Worthing Hospital St. George’s Hospital 
+INITIATE FURTHER TESTS 
+ If indicated: Offer Amniocentesis 
+Document on Maternity Information System (eg 
+Badger Net) and hospital notes and inform the: 
+•Community Midwife 
+•Named consultant 
+•Lead Paediatrician 
+•GP CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 32 of 37 
+ APPENDIX 5: PATHWAY FOR THE DETECTION OF AN ADNEXAL MASS DETECTED 
+ 
+Adnexal mass detected on 
+routine pregnancy scan 
+Less than <5cm diameter, and 
+smooth regular cyst wall, with 
+no concerning features. 
+≥5cm in diameter or 
+difficult to characterise 
+Any size adnexal mass 
+with suspicious features: 
+•Irregular internal wall 
+•Solid papillation/s 
+•Increasing in size 
+•Ascites 
+ If this persists at the anomaly scan, 
+record on report and refer clinic 
+review after anomaly scan. Post 
+natal FU appt should be made at 6 
+weeks post birth. 
+Discuss with JIR/MKT. 
+Who will plan further 
+management as 
+required. 
+Discuss with JIR/MKT 
+at St Richards Hospital 
+& SA at Worthing. 
+Persistent cyst of 
+≥ 5cm with no 
+suspicious 
+features, rescan at 
+24 weeks and 6 
+weeks postnatal 
+as a minimum. 
+A postnatal scan 
+follow up 
+appointment 
+should be made 
+prior to leaving 
+the clinic. 
+If suspicious of malignancy: for CA -125 & 
+discussion with the Multi -Disciplinary Team 
+•These scan criteria apply to ASYMPTOMATIC pregnant women and birthing people ; prompt 
+consultant review is required in the presence of pain/discomfort to formulate management plan 
+regarding need for surgery. 
+•Pregnant women and birthing people with a cyst >5cm should be warned about the risk of 
+torsion and advised to attend the hospital urgently if sudden onset pain. 
+Document on Maternity Information System (eg 
+Badger Net) and hospital notes and inform the: 
+•Community Midwife 
+•Named consultant 
+•Lead Paediatrician 
+•GP 
+Please inform the Antenatal clinic Midwife 
+Less than <5cm 
+diameter, 
+anechoic 
+contents and 
+smooth regular 
+cyst wall. 
+Back to 
+community care CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 33 of 37 
+ APPENDIX 6: IMAGING PATHWAY FOR THE DETECTION OF PLACENTA 
+PRAEVIA/ACCRETA 
+ 
+At the anomaly scan, if the placenta appears low -lying, or placenta praevia is suspected, 
+confirm by TVS 
+Inform the Antenatal clinic Midwife and document it in the hospital notes 
+Low-lying placenta: Less than 20mm from internal os 
+Placenta praevia: Covering the os 
+Placenta 20mm or 
+more from os 
+Ultrasound scan at 32 weeks 
+Asymptomatic 
+low-lying placenta 
+No further scans 
+required 
+ 
+Ultrasound scan 
+at 36 weeks 
+Recurrent bleeding with low -lying 
+placenta or placenta praevia 
+Steroids before 34 weeks. If still 
+praevia, scheduled caesarean at 
+34-36 weeks. 
+Ultra sound scan for 
+placenta accreta 
+Asymptomatic 
+placenta praevia 
+If still low -lying, 
+individualised 
+decision around 
+delivery 
+Steroids at 34 -36 
+weeks 
+Anterior placenta with NO 
+previous caesarean section, 
+OR posterior placenta 
+Anterior placenta AND 
+previous caesarean section, 
+OR previous history of 
+placenta accreta 
+No ultrasound signs of 
+placenta accreta 
+Ultrasound signs of 
+placenta accreta 
+Referral to specialist 
+centre 
+Ultrasound scan at 
+36 weeks. 
+If still praevia, 
+caesarean at 36 -37 
+weeks CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 34 of 37 
+ APPENDIX 7: AMNIOTIC BANDS, AMNIOTIC FOLDS AND UTERINE SYNECHAE 
+It is important to differentiate between amniotic bands and amniotic folding with or without uterine 
+synechae as the risks to the fetus are very different. 
+Amniotic Band Syndrome is a group of congenital birth defects believed to be caused by 
+entrapment of fetal parts (usually a limb or digits) in fibrous amniotic bands while in utero. 
+
+Amniotic Bands 
+The commonly accepted view is that ABS occurs when the inner membrane (amnion) ruptures 
+without injury to the outer membrane (chorion), this exposes the baby to fibrous sticky tissue 
+(bands) from the ruptured amnion which can float in the waters of the uterus, these fibrous tissues 
+can entangle the baby reducing blood supply and causing congenital abnormalities. In some cases 
+a complete “natural” amputation of a digit(s) or limb may occur before birth or the digit(s) or limbs 
+may be necrotic (dead) and require surgical amputation following birth. 
+A strong relationship between ABS and clubfoot exists. A 31.5% of associated clubfoot deformity 
+and ABS can be correlated with 20% occurring bilaterally. Other abnormalities found with ABS 
+include: clubhands, cleft lip, and/or cleft palate, and hemangioma. 
+ 
+Ultrasound diagnosis Amniotic Bands 
+Amniotic bands are only of significance if they are attached to the fetus or amputation injuries are 
+identified. If this is the case refer for urgent Fetal Medicine review. 
+ 
+Uterine Synechiae 
+Synechiae is a term which means "adhesions" or a fibrous scars. Intrauterine adhesions resulting 
+from the uterine trauma, such as curettage, are called Asherman syndrome. They may also result 
+from other uterine interventions such as caesarian section and myomectomy. They rarely result from 
+uterine infections such as chlamydia, tuberculosis, and schistosomiasis and the presence of the 
+foreign body. However, it is not unusual to meet pregnant women and birthing people with 
+CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 35 of 37 
+ synechiae with lack of any previous relevant history. 
+ 
+Uterine synechiae in pregnancy have also been referred to as "amniotic sheets" or "amniotic folds". 
+They are most commonly noted as an incidental finding during the ultrasound examination in 
+pregnancy. In general, synechiae do not interfere with fetal development. Pregnant women and 
+birthing people with uterine synechiae are more likely to have placental abruption (2.1% compared 
+with 0.6%, adjusted odds ratio [OR] 3.25, 95% confidence interval [CI] 1.43 -7.36), preterm 
+premature rupture of membranes (5.5% compared with 2.3%, adjusted OR 2.51, 95% CI 1.51 -4.18), 
+and caesarean delivery for mal -presentation (5.1% compared with 3.0%, adjusted OR 1.75, 95% CI 
+1.04-2.95). The risks of placenta praevia, fetal growth restriction, stillbirth, and preterm delivery were 
+not significantly different. 
+ 
+Diagnosis 
+ 
+Synechiae appear as thick bands connected to the uterine wall. In other words, a synechia has its 
+base and a free edge. In pregnancy, this appearance is caused by a combination of the fibrous 
+synechia itself, and the complete wrapping of fetal membranes around the synechia. Color Doppler 
+shows blood flow in the majority of synechial bands. Inform obstetrician but Fetal Medicine review 
+not required. 
+
+Images of Amniotic folds, Doppler imaging demonstrates vascularization. 
+ 
+CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 36 of 37 
+ Clinical protocol [CDL 4582 ] governance and approval 
+Owner Tim Taylor 
+Author/further information Rebecca Coombes, Superintendent Sonographer 
+Amanda Sutton, Sonographer 
+Protocol version v1.0 
+Related policies N/A 
+Related documents Labour Risk Assessment, Antenatal Care and Patient 
+Information, Postnatal Care, Severely ill/High Dependency 
+Care, Non Obstetric Emergency Care, Pre -term birth 
+pathway 
+Standards Screening standards for the NHS Fetal Anomaly Screening 
+Programme (FASP) 26.7.2019 
+Superseded documents N/A 
+Review due February 2027 
+ 
+Approval 
+JOGG Date approved: 21st February 2024 
+Women & Children’s Clinical Effectiveness 
+Meeting Date approved: 21st March 2024 
+ 
+Consultation 
+Add relevant Trust -wide governance group 
+(see table below) Date approved: N/A 
+Add other specialist teams or groups as 
+appropriate Date approved: N/A 
+ 
+Ratification 
+Clinical Document Approval Group Date approved: 19th April 2024 
+ 
+ CLINICAL PROTOCOL 
+Due for review: February 2027 
+CG20005 Second Trimester Anomaly Screening v4.1 
+For use at: SRH & WH 
+ 
+Page 37 of 37 
+ Consultation 
+Please select any appropriate consultation groups/ committees: 
+Trust Wide Governance Group Tick as required: 
+Medicines Governance Committee (MGC - replaces ‘Medicines Optimisation 
+Committee’ and ‘Drug and Therapeutics Committee’) 
+Antimicrobial Stewardship Group 
+Resuscitation Committee 
+Resuscitation Operational Management Group (ROMG) 
+Trust Transfusion Committee 
+Trust Infection Prevention Committee (Chief Nursing Officer) 
+Thrombosis Committee 
+Health Records Committee 
+BSUH Trauma Committee 
+Major Trauma Committee 
+Sussex Trauma Network 
+Children’s Safeguarding Strategy Committee 
+Radiation Safety Committee 
+Medical Devices & Equipment Committee 
+Patient Blood Management Committee 
+Patient Safety Committee 
+BSUH Diabetes In -Patient Care Committee 
+Carer and Patient Information Group (CPIG) 
+Women’s Safety and Quality Committee 
+Food Improvement Group 
+NIV Steering Group 
+NMAHP Board 
+Deteriorating Patient Group 
+Other (please specify)

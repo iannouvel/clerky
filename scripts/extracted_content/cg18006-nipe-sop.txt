@@ -1,0 +1,1813 @@
+# Extracted from: CG18006 NIPE SOP.pdf
+# Guideline ID: cg18006-nipe-sop
+# Content length: 68926 characters
+# Processing date: 1750066900.487214
+
+CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 1 of 48 
+ 
+Newborn and Infant Physical Examination Screening Standard 
+Operating Procedure 
+Summary statement: How does the 
+document support patient care? This pathway provides information for staff with regard 
+to the process for offering, undertaking and providing 
+results for newborn and infant physical examination 
+screening 
+Staff/stakeholders involved in 
+development: Caroline Thomas, Helen Boiling, Jacqueline Gregory, 
+Maternity Leads, Paediatricians. 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Jacqueline Gregory, Claire Parr, Stephanie Crisp 
+Caroline Thomas 
+For use by: Any staff member involved in the NIPE programme 
+Purpose: To provide accurate information for staff on the 
+processes to follow with regard to newborn and infant 
+physical examination screening 
+This document supports: NHS Newborn and Infant Physical Examination 
+Screening Programme Service specifications 2017 - 
+2018 
+Key related documents: UH Sussex (SRH&WH) Maternity Guidelines: 
+Antenatal Care and Patient Information, Postnatal 
+Care 
+UH Sussex (SRH&WH) Policies: An organisation - 
+wide policy for screening procedures, An organisation - 
+wide policy for diagnostic testing 
+PHE publications: KPI’s, NIPE handbook 
+Approved by: Joint Obstetric Guideline Group: 15th February 2023 
+Joint Maternity & Neonatal Meeting : 22nd August 2023 
+Date uploaded: 11th September 2023 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable – Divisional ratification only required 
+Ratification Date: Not Applicable – Divisional ratification only required 
+Expiry Date: February 2026 
+Review date: August 2025 
+If you require this document in another format such as Braille, large print, audio or 
+another language please contact the Trusts Communications Team 
+Reference Number: CG18006 CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 2 of 48 
+
+This document pertains to the Newborn element of the NIPE, up to 72 hours of age for KPI 
+and any baby up to the age of 6 weeks when the Infant examination occurs at age 6 -8 
+weeks old. 
+
+Version Date Author Status Comment 
+1.0 January 
+2018 NHSP lead and NIPE 
+lead Archived New WSHFT Pathway 
+2.0 Feb 2019 NHSP lead and NIPE 
+lead Archived 
+3.0 February 
+2021 NIPE lead (C. Thomas) Archived Public Health England 
+standards changes 
+4.0 February 
+2023 C. Thomas, NIPE Lead LIVE Section 9.0 Training and 
+on-going assessment 
+updated. 
+New appendix 18: 
+Treatment protocol for 
+babies with suspected 
+DDH 
+
+The interpretation and application of clinical guidelines will remain the 
+responsibility of the individual clinician. 
+If in doubt contact a senior colleague or expert. CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 3 of 48 
+ Contents 
+1.0 Background ................................ ................................ ................................ ................. 4 
+2.0 Identifying eligible population ................................ ................................ ....................... 4 
+3.0 National Screening Pathway ................................ ................................ ........................ 5 
+4.0 Newborn pathway ................................ ................................ ................................ ........ 6 
+5.0 Performing a newborn physical examination ................................ ............................... 7 
+6.0 Referrals following the NIPE screen ................................ ................................ ............ 7 
+6.0 Governance structure and reporting ................................ ................................ ............. 8 
+7.0 Governance structure ................................ ................................ ................................ .. 9 
+8.0 Movers in and out of area ................................ ................................ .......................... 10 
+9.0 Training and ongoing assessments ................................ ................................ ............ 10 
+Appendix 1: Daily checks ................................ ................................ ................................ ..... 12 
+Appendix 2: Pathways ................................ ................................ ................................ .......... 12 
+Appendix 3: Homebirth/No Birth Hospital/Discharged NICU no screen ................................ . 15 
+Appendix 4: NICU process map ................................ ................................ ........................... 15 
+Appendix 5: NICU paperwork ................................ ................................ ............................... 17 
+Appendix 6: Referrals ................................ ................................ ................................ ........... 18 
+Appendix 7: Child death notifications ................................ ................................ ............... 19 
+Appendix 8: Decline NIPE screen ................................ ................................ ......................... 20 
+Appendix 9: Baby confirmed as screened but no data on S4N ................................ .............. 21 
+Appendix 10: Example of letter for no data on s4n following screening ................................ . 22 
+Appendix 11: Paper copy of NIPE screen ................................ ................................ ............. 24 
+Appendix 12: Babies born out of area but transferred to UH Sussex (SRH&WH) ward’s ........ 25 
+Appendix 13: Breached babies ................................ ................................ ............................. 26 
+Appendix 14: Escalation process for babies close to breaching ................................ ............ 27 
+Appendix 15: S4H/S4N has not been populated ................................ ................................ ... 28 
+Appendix 16: Bloodspot/ NIPE/ NHSP failsafe spreadsheet ................................ ................. 28 
+Appendix 17: NICU failsafe ................................ ................................ ................................ .. 30 
+Appendix 18: Treatment protocol for babies presenting with suspected Development 
+Dysplasia of the Hips (DDH) at UHSussex ................................ ................................ ........... 31 
+Appendix 19: Hip referral and attendance failsafe ................................ ................................ . 35 
+Appendix 20: CRIS pathway ................................ ................................ ................................ . 36 
+Appendix 21: Template emails re HIPS ................................ ................................ ................ 37 
+Appendix 22: Eyes/ testes /heart/ referral failsafe ................................ ................................ . 38 
+Appendix 23: Movers in/out – notification from CHIS ................................ ............................ 42 
+Appendix 24: Incorrect Gender ................................ ................................ ............................. 43 
+Appendix 25: Manual entry of record into S4N ................................ ................................ ...... 44 
+Appendix 26: Checking that all newborn screening has been completed .............................. 45 
+Contact list ................................ ................................ ................................ ........................... 46 
+Glossary ................................ ................................ ................................ ............................... 47 
+References ................................ ................................ ................................ ........................... 48 CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 4 of 48 
+ 
+Newborn and Infant Physical Examination Screening SOP 
+ 
+1.0 Background 
+ 
+The NHS Newborn and Infant Physical Examination (NIPE) Screening Programme aims to: 
+ 
+• Identify and refer all babies born with congenital abnormalities of the heart, hips, 
+eyes or testes, where these are detectable, within 72 hours of birth 
+• To further identify abnormalities that may be detected, at the second physical 
+examination performed between 6 -8 weeks of age 
+ 
+The overall health outcomes are to reduce mortality and morbidity for the screened 
+conditions through the identification of congenital abnormalities and early assessment and 
+intervention for: 
+ 
+• Congenital cardiac defects 
+• Developmental dysplasia of the Hip (DDH) 
+• Ocular abnormalities 
+• Undescended testes 
+ 
+2.0 Identifying eligible population 
+ 
+The responsibility for identifying eligible babies remains with the birth unit until responsibility 
+is formally passed to another maternity service or primary care. 
+ 
+Eligible babies are those babies born within University Hospitals Sussex (UH Sussex) NHS 
+Trust - St. Richard’s (SRH) & Worthing (WH) Hospitals maternity care. 
+For movers in UH Sussex (SRH&WH) will use the NHS Coastal West Sussex CCG as a 
+boundary. Babies if they are registered with a GP in this area, or if not registered with a GP, 
+is resident in the NHS Coastal West Sussex CCG area will be offered screening if this has 
+not already taken place when born. 
+ 
+S4N is populated electronically via PDS (Patient demographic service) at point of birth. It is 
+the responsibility of the maternity service providing care to ensure provision is made for the 
+examination for babies born at home. 
+ 
+Capture of full cohort and movement of population is based on the following, and 
+incorporates layers of fail safes to ensure no babies are missed. CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 5 of 48 
+ 
+Transfers in from other 
+NIPE sites onto 
+postnatal ward or NICU 
+NICU residents 
+including Badger 
+report 
+Screening may be 
+delayed for babies 
+who are born too 
+prematurely or 
+who are too unwell 
+Transfers out to other 
+NIPE sites 
+S4N 
+Daily discharge list 
+Nursing Ward list on 
+Careflow 
+Notification of movers 
+in from CHIS under 6 
+weeks 
+Badgernet daily search 
+COHORT 
+Health Visitors notification of 
+movers in under 6 weeks of age 
+Movers in for postnatal 
+maternity care 
+Notification of movers in 
+from other newborn 
+screening programmes 
+(failsafe) CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 6 of 48 
+ 
+3.0 National Screening Pathway 
+ 
+4.0 Newborn pathway 
+
+S4N web address CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 7 of 48 
+ 
+5.0 Performing a newborn physical examination 
+ 
+The screening elements of the NHS NIPE programme are: 
+ 
+1. Eyes: approximately 2 or 3 in 10,000 babies have problems with their eyes that 
+require treatment. The prime purpose of screening is to identify congenital 
+cataracts. 
+2. Heart: approximately 4-10 in 1,000 babies have a heart problem. 
+3. Hips: approximately 1 or 2 in 1,000 babies have hip problems that require 
+treatment. 
+4. Testes: approximately 1 in 100 baby boys have problems with their testes that 
+require treatment. 
+ 
+For guidance on how to perform the screens please see the Newborn and Infant Physical 
+Examination Screening Programme Handbook (Public Health England, updated October 
+2020). 
+
+6.0 Referrals following the NIPE screen 
+Referrals will be made to the following departments 
+Baby lives in Worthing Hospital provider area: 
+1. Eyes: Internal referral to the Eye Department at Southlands Hospital (if detected at 
+home please contact on-call paediatric team to arrange ophthalmology review and 
+timeframes for this) 
+2. Heart: Internal referral to the Acute Paediatric Department at Worthing Hospital 
+3. Hips: Internal referral to the radiology/Ultrasound Department at Worthing Hospital. 
+Internal referral to Paediatric Physiotherapy at Worthing Hospital 
+4. Testes: Internal referral to the Acute Paediatric Department at Worthing Hospital 
+with an aim that baby will be seen prior to discharge . If bi -lateral undescended 
+testes detected – to be urgently referred to on-call paediatrican. To be seen 
+within 24 hours. 
+ 
+Baby lives in St Richards Hospital provider area: 
+ 
+1. Eyes: Internal referral to the Eye Department at St Richards Hospital (if detected at 
+home please contact on -call paediatric team to arrange ophthalmology review and 
+timeframes for this) 
+2. Heart: Internal referral to the Acute Paediatric Department at St Richards Hospital 
+3. Hips: Internal referral to the radiology/Ultrasound Department at St Richards 
+Hospital. Internal referral to Paediatric Physiotherapy at St Richards Hospital 
+4. Testes: Internal referral to the Acute Paediatric Department at St Richards Hospital 
+with an aim that baby will be seen prior to discharge. If bi-lateral undescended 
+testes detected – to be urgently referred to on -call paediatrican. To be seen 
+within 24 hours. CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 8 of 48 
+
+Baby lives out of area: 
+ 
+Referrals will be made based on the birth hospital (as above) unless parents request to be 
+seen at a different hospital. 
+
+6.0 Governance structure and reporting 
+ 
+NIPE KPI data is submitted quarterly to PHE (PHE.screeningdata@nhs.net)and local SIT 
+team following sign off by Head of Midwifery. 
+Performance, any management changes which may be required and incidents are standing 
+items on the ANNB Steering group quarterly meeting. 
+ 
+Mitigations for screens not carried out within KPI will be provided to NSC QA & local SIT 
+team quarterly. 
+ 
+Any incidents will be reported via the trusts internal system (DATIX) and escalated to the 
+regional QA team via the Screening incident assessment form (SIAF) to 
+phe.southQA@nhs.net. 
+Managing safety incidents in NHS screening programmes document will be adhered to as 
+will the trust’s incident policy. 
+ 
+KPI reports, including mitigations, will also be sent to the following list of UH Sussex 
+(SRH&WH) staff for information: 
+ 
+Clinical director of Paediatrics and Chief Head of Service, Scanning team – including 
+Superintendent Radiographers, Consultant Radiologist & Head of Imaging, Public Health 
+Manager - Maternity, Patient Safety Midwife, Clinical Effectiveness Midwife, Antenatal and 
+Newborn Screening Co -ordinator. 
+ 
+The NIPE standards are as follows: 
+ 
+NIPE Standard 1: (SO1) Identify the population and coverage - Quarterly 
+NIPE Standard 2: ( SO2) Timeliness of intervention (abnormality of the eye) - Annual 
+NIPE Standard 3: (SO3) Diagnosis/intervention: timeliness of ultrasound scans of hips for 
+developmental dysplasia. Quarterly 
+NIPE Standard 4: (SO4) Diagnosis/intervention: timeliness of hip clinical assessment or 
+discharge. Annual 
+NIPE Standard 5: (SO5) Timeliness of intervention (bilateral undescended testes) – Annual 
+ 
+KPI data should be counted where the provider is responsible for the baby at the time of 
+newborn screening, including babies who have transferred out after they were screened and 
+received a result. Babies who are transferred before screening are the responsibility of the 
+receiving provider and should be included in their KPI coverage data. Therefore KPI data 
+should be derived on this basis. The provider is the maternity service where baby was born. 
+ 
+Mitigations for screens not carried out within KPI will include but not be exclusively: CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 9 of 48 
+ 
+Head of Midwifery 
+Community Team 
+Leads & Ward 
+Matrons 
+NIPE Lead 
+Consultant 
+Paediatricians 
+NIPE trained 
+midwives 
+Screening admin 
+NIPE trained 
+Paediatricians 
+Midwifery Matron – Community and Out Patients 
+Women and Children’s Directorate 
+• If a screen was offered pre discharge but parents did not wish to wait for screening 
+to be completed and subsequently if a date/time to screen within KPI, was offered 
+to parents for screening but parents declined or Did Not attend on this date/time. 
+• Babies on NICU are ‘too ill’ to screen or <34+0 weeks. 
+ 
+A NIPE screen is classed as ‘missed’ if it is not completed as per the following: 
+ 
+• Before full discharge from maternity services or neonatal or Paediatric inpatient 
+services (without provision for completion within the community setting) 
+• By 6 weeks of age for unscreened babies who remain in maternity or neonatal 
+inpatient care (unless baby remains too unwell to have their NIPE) 
+• By 6 weeks of age for unscreened babies who have moved into an area 
+ 
+If a missed screen is a result of a failure in the screening pathway then this will be reported 
+via the trusts internal system (DATIX) and escalated to the regional QA team. Managing 
+safety incidents in NHS screening programme’ s guidance will be adhered to as will the trust’s 
+incident policy guidelines. 
+ 
+7.0 Governance structure 
+ 
+Means no direct line management 
+ 
+CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 10 of 48 
+ 
+No NIPE completed on S4N (national search) 
+Has baby been registered with a GP? 
+YES 
+ NO 
+UH Sussex (SRH &WH) to arrange 
+an outpatient appointment with 
+Paediatrician for NIPE to be 
+completed. 
+GP to carry out the 6-8 week NIPE 
+UH Sussex (SRH &WH) to arrange 
+an outpatient appointment with 
+Paediatrician for NIPE to be 
+completed. Advise parents to 
+register with a GP. 
+Mover into West Sussex Coastal area under the age of 6 weeks 
+Note: For all movers in CHIS will search S4N for results. CHIS will inform HV of movers 
+in so that they can pick up the care of baby and ensure that a GP registration occurs. 
+If UH Sussex (SRH &WH) are made aware of a mover in OLDER than 6 weeks from 
+another source then the NIPE Lead will advise the baby’s local HV as a failsafe for 
+CHIS also advising them. 8.0 Movers in and out of area 
+ 
+UH Sussex (SRH&WH) will be responsible for movers in who have not had a completed 
+NIPE examination if they are under the age of 6 weeks. 
+
+9.0 Training and ongoing assessments 
+ 
+UH Sussex (SRH &WH) will follow national guidance from PHE for training of new staff who 
+will undertake the NIPE examination. Each practitioner will be required to complete the 
+annual competency framework. All NIPE trained midwives must complete annually: 
+ 
+• Minimum of 10 NIPE’s 
+• Complete the e-learning module 
+• Attend an annual update session 
+ 
+This framework needs to be signed by a confirmer (Fellow NIPE trained Midwife/NIPE lead 
+Midwife) and the completed framework shared with to the PDT. 
+ 
+• NQM with NIPE as part of training 
+• Attend NIPE teaching session as part of their preceptorship. CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 11 of 48 
+ • Perform 10 supervised NIPE’s and 10 unsupervised NIPE’S (to be checked by a 
+NIPE practitioner) 
+• Final Sign off by consultant/NIPE lead midwife. 
+• Completion of the e-learning module and cleft palate training. 
+ 
+Midwives with NIPE qualification - Return to practice 
+For midwives who have not performed NIPE's within last 12 months they are required to: 
+ 
+• Complete the competency framework document 
+• Perform a minimum of 10 NIPE's supervised by fellow NIPE/NIPE lead/Paediatric 
+Registrar/ Consultant and signed off as competent. 
+• Attend Annual NIPE update session. 
+• Complete NIPE e-learning for Health module. 
+• Complete cleft palate training. 
+• Update from NIPE lead on use of S4N system (can be arranged on an ad hoc 
+basis). 
+Practitioners who can undertake a newborn NIPE are: 
+ 
+• A doctor (paediatrician or GP) who is competent to undertake all elements of the 
+newborn examination. 
+• A midwife, nurse or health visitor has successfully undertaken a University 
+accredited ‘examination of the newborn’ programme of study. 
+ 
+The Maternity Practise Education Team will ensure that for those midwives carrying out the 
+Newborn examination, a record is kept to show when accredited study has taken place and 
+when this was completed / passed. The Maternity Practise Education Team will maintain a 
+log for training. 
+ 
+UH Sussex (SRH &WH) will provide an annual update for those who undertake the NIPE 
+examination. This will comprise of annual completion of the NIPE e-learning module and may 
+include practical and theoretical assessments should these deemed to be required. Any 
+major updates to the NIPE Programme will be disseminated to practitioners though training 
+study days. Training logs will be kept. 
+ 
+The NIPE Clinical Leads will ensure a log of training and competency is kept for any doctor 
+who is trained to perform a NIPE Screen. 
+ 
+If the NIPE lead is concerned regarding errors or themes from any NIPE practitioner then the 
+need for retraining will be highlighted to the Consultant Paediatricians and/ or Midwifery 
+Matron. CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 12 of 48 
+ 
+Check discharge list for 
+homebirths * 
+Case note. 
+Email NIPE lead 
+of hospital baby 
+has moved to. 
+Transfer NIPE 
+record in S4N 
+Mark as complete on 
+the daily 
+BLOODSPOT/NIPE/NH 
+SP failsafe spreadsheet. 
+Date and who completed 
+Has screening 
+been 
+completed? 
+YES 
+ 
+Set record to NICU. 
+Case note with date, 
+where baby is located – 
+Beeding ward or SCBU 
+NO 
+Follow, Worthing or St Richards, well baby 
+pathway for screening to be completed 
+Baby 
+discharged 
+home 
+NO 
+Follow homebirth 
+/discharge NICU no 
+screen pathway for 
+Worthing or St Richards 
+dependent on who is 
+providing postnatal care. 
+Is baby on NICU ? 
+Has the NIPE screen been completed? 
+Perform national record 
+search in S4N to locate 
+record. Bring record into UH 
+Sussex (SRH &WH) 
+Ensure maternity information system birth list for 
+previous day matches birth list in S4N for same day. 
+Was baby a 
+homebirth? 
+ YES 
+Monitor twice daily on 
+Badgernet and SEMA 
+to ensure baby still 
+resident on the units 
+Baby moved to an 
+OOA NICU *Home births and 
+BBA’s currently 
+populate the 
+Brighton 
+St Richards Site. 
+S4N System 
+Baby moved 
+to well-baby 
+ward Appendix 1: Daily checks 
+
+YES 
+
+YES CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 13 of 48 
+ 
+Was appointment 
+attended? 
+Daily 
+ 
+NIPE admin clerk Ward 
+clerk to check 
+Paediatrician’s NIPE folder 
+to see who is attending clinic 
+that day, to case note time 
+and date in S4N. 
+ 
+Check if any baby due to 
+attend is having postnatal 
+care from SRH but was born 
+in Worthing as they should 
+have their NIPE as per St 
+Richards pathway. 
+ 
+Inform NIPE lead of any 
+babies who will breach 
+within 3hrs hours should 
+they DNA. 
+Complete table in the 
+Paediatricians NIPE folder held 
+on Bramber ward (paediatric 
+checklist) with 
+Babies sticker 
+Breach date 
+Comments 
+At the time of the appointment 
+provided to parents. 
+Parents to be provided with an 
+appointment on Bramber Ward or a NIPE 
+trained community midwife to perform at 
+home. 
+Has the NIPE been completed on well 
+baby ward prior to discharge? 
+If on NICU, 
+midwives to 
+check to see if 
+NIPE was 
+completed prior 
+to transfer to 
+ward. 
+NIPE admin clerk to 
+advise NIPE lead 
+Ward clerk / 
+midwife / 
+paediatrician to 
+advice NIPE 
+admin clerk of 
+DNA and breach 
+date. No further action 
+required. 
+Complete the 
+table in the 
+paediatricians 
+NIPE folder and 
+add information 
+to S4N. Appendix 2: Pathways 
+ 
+a) Postnatal ward (Bramber) Worthing Hospital 
+
+YES NO 
+
+NO 
+ CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 14 of 48 
+ 
+Discharging midwife to make arrangements for either: 
+Baby to have the NIPE completed in the community or to return to ward. 
+ 
+This will be dependent on the availability of the NIPE trained midwife in community. 
+Birth Centre 
+ Tangmere Ward 
+Is baby discharged from 
+Tangmere ward or Birth 
+Centre? 
+Appointment 
+with NIPE 
+practitioner on 
+Tangmere Ward 
+Has the NIPE been completed on well 
+baby ward prior to discharge? 
+If on NICU, 
+midwives to 
+check to see if 
+NIPE was 
+completed prior 
+to transfer to 
+ward. 
+When NIPE completed at home a text should 
+be sent to the NIPE administrator’s phone to 
+notify of completion. 
+Community midwife to undertake NIPE at home. 
+ 
+Those babies who require a NIPE at home will have 
+this documented in the discharge book. 
+NIPE results to be inputted onto S4N 
+within 24hrs No further action 
+required 
+Day 2 – NIPE admin clerk to phone Community Team 
+Leads regarding any missing NIPE results. 
+To follow up with an email with NIPE lead copied in. 
+b) Well Baby St Richards Hospital 
+
+YES NO 
+
+ CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 15 of 48 
+ Home birth – 
+NIPE 
+administrator or 
+ward clerk to 
+transfer record 
+into S4N 
+St Richards 
+postnatal care 
+Midwife who 
+attended the 
+birth to arrange 
+for the NIPE to 
+be completed. 
+Community midwife to 
+undertake NIPE at 
+home if NIPE trained. 
+Otherwise contact 
+Tangmere Ward. 
+ 
+See well baby pathway 
+St Richards. 
+In all pathways there should always be provision in place to screen a baby prior to discharge, though UH Sussex 
+(SRH&WH) are aware that at times this will need to be carried out as an outpatient appointment or in the 
+community. 
+If however, arrangements have not been made for the NIPE screen post discharge the NIPE lead must be 
+advised. Appendix 3: Homebirth/No Birth Hospital/Discharged NICU no screen 
+
+Every 2 days 
+NIPE admin clerk 
+to phone 
+Community Team 
+Leads of any 
+missing NIPE 
+results and follow 
+up with an email 
+with NIPE lead 
+copied in. 
+Community midwife to 
+undertake NIPE at 
+home if NIPE trained. 
+Otherwise contact 
+Bramber Ward. 
+ 
+See well baby 
+Worthing pathway. 
+Worthing 
+postnatal care 
+Daily 
+NIPE administrator 
+to check this 
+population are in 
+paediatricians 
+NIPE folder. If not 
+present to notify 
+community team 
+leads. 
+Midwife who 
+attended the 
+birth to arrange 
+for the NIPE to 
+be completed. CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 16 of 48 
+ 
+Appendix 4: NICU process map 
+ CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 17 of 48 
+ Appendix 5: NICU paperwork 
+ 
+Beeding Ward and SCBU will document that a NIPE has been offered, consent to and 
+completed on the following documentation: 
+ 
+• Neonatal Observation Chart 
+• On Badgernet 
+• On the Discharge to Postnatal Ward Form 
+• On the discharge sticker if baby is discharged home at less than 10 days old from 
+the unit, which is stuck in the discharge book (need to check they do this on 
+SCBU). CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 18 of 48 
+ Appendix 6: Referrals 
+ 
+a) Eyes 
+The Newborn and Infant Physical Examination Screening Programme Handbook 
+updated April 2021 produced by PHE should be followed for guidance on when to 
+refer. 
+ 
+b) Heart 
+The Newborn and Infant Physical Examination Screening Programme Handbook 
+updated produced April 2021by PHE should be followed for guidance on when to 
+refer. 
+
+c) Hips 
+The Newborn and Infant Physical Examination Screening Programme Handbook 
+updated produced April 2021 by PHE should be followed for guidance on when to 
+refer. 
+ 
+d) Testes 
+The Newborn and Infant Physical Examination Screening Programme Handbook 
+Updated produced April 2021 by PHE should be followed for guidance on when to 
+refer. CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 19 of 48 
+
+Search S4N for baby. 
+Locate record by searching when in a facility. 
+ 
+If OOA baby transfer record in. 
+ 
+Mark record as deceased. 
+ 
+Case note date of death and who advised. 
+Transfer record back out as necessary 
+NIPE team advised of death 
+
+Check for any referrals or outstanding appointments 
+ 
+Advise all relevant departments 
+Careflow, Maternity information system (eg BADGERNET) 
+and CRIS IT systems checked Appendix 7: Child death notifications 
+ 
+NIPE are advised of neonatal and child deaths from the following departments: 
+ 
+• UH Sussex (SRH&WH) Neonatal 
+• UH Sussex (SRH&WH) maternity 
+• SCT CHIS 
+ 
+NIPE are also advised of all still births. 
+ 
+In all neonatal and child deaths, the following is carried out: 
+
+ CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 20 of 48 
+ 
+Decline to be documented in purple handheld notes and PCHR 
+book if available by Midwife/ Paediatrician. 
+NIPE lead advised of decline by Midwife/ Paediatrician. 
+Parents to be sent letter to explaining importance of why 
+we offer a screen and how we screen. 
+Copy sent to GP, HV and CHIS. 
+Upload copy of letter to evolve 
+Casenote S4N 
+Case note in S4N that letter sent 
+Contacts and 
+attends for 
+screening. 
+ 
+Notify GP/HV/CHIS of 
+results via PCHR 
+Does not contact or 
+attend for screening. 
+Appendix 8: Decline NIPE screen 
+
+Decline NIPE 
+template.docx 
+
+NIPE rescreen 
+letter.docx 
+ CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 21 of 48 
+ 
+Still no data and no paper copy 
+NIPE Team Lead to be advised by phone 3 hrs 
+prior to breach time 
+ 
+NIPE Team Lead or Community 
+Midwife to contact parents. 
+ 
+Parent’s to be offered a rescreen. 
+ 
+If a rescreen is declined then to ask 
+parents the ‘lost data set of questions’ 
+to ascertain NIPE screen was 
+understood and if any referrals likely. 
+ 
+Send letter for ‘no data on S4N 
+following screening’ to parents, GP, 
+CHIS Appendix 9: Baby confirmed as screened but no data on S4N 
+
+No data on S4N 
+
+Confirm with NIPE practitioner that 
+NIPE screen was carried out. Ask for 
+data to be added to S4N. Advise NIPE 
+lead of baby and breach time CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 22 of 48 
+ Appendix 10: Example of letter for no data on s4n following screening 
+ 
+Lost data set of questions for NIPE 
+ 
+This form should only be used if the examination has not been documented on NIPE SMaRT and the 
+paper copy cannot be located. Please ensure that the notes are checked for any documentation of the 
+screen prior to contacting the parents. Please contact the NIPE practitioner who carried out the screen 
+to determine if they can remember the screen outcome or know where the paper copy may have been 
+put. 
+ 
+Prior to asking these questions the parents should be offered the opportunity for a re-screen. If they do 
+not want to have this repeated it is important that they can answer the following questions to satisfy 
+that there were no abnormalities suspected or referrals required. If the parent choses a re -screen this 
+should be offered ASAP. 
+ 
+The maternal notes should be checked for any antenatal risk factors established in pregnancy. The 
+NIPE guideline should be consulted for any suspected abnormalities to ensure the correct referral 
+pathway is used. 
+ 
+Please transcribe answers directly onto the baby’s record on NIPE SMaRT. A case note should be 
+added to ensure it is clear that the information obtained was via the parents, in retrospect, because 
+the original NIPE documents could not be located. A Datix should also be completed. 
+ 
+Heart 
+1. Is there a family history of heart abnormalities? 
+a. If yes what are they? 
+b. Did your baby have any suspected abnormalities identified on scan in pregnancy? 
+2. When NIPE screen was carried out did the doctor/midwife find any concerns with your baby’s 
+heart sounds? 
+a. If yes what were they? 
+ 
+Eyes 
+3. When the NIPE screen was carried out did the doctor/midwife find any concerns with your 
+baby’s eyes? 
+a. If yes what were they? 
+ 
+Hips 
+4. Is there a family history of childhood hip abnormalities? 
+a. If yes please advise a hip USS for the baby will be required and a referral will be sent 
+5. Was your baby breech at birth or after 36 weeks of pregnancy? 
+a. If yes please advise a hip USS for the baby will be required and a referral will be sent 
+6. When the NIPE screen was carried out did the doctor/midwife find any concerns with your 
+baby’s hips? 
+a. If yes what were they? 
+ 
+Testes (males only) 
+7. When the NIPE screen was carried out did the doctor/midwife find any concerns with your 
+baby’s testes? 
+a. If yes what were they? 
+ 
+Rest of physical Examination 
+8. Overall were there any suspected concerns/problems found during the examination? 
+a. If yes what were they? CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 23 of 48 
+ b. Explain the referrals required for the specified abnormalities 
+c. Is your baby currently well (feeding, tone, colour etc)? 
+ 
+Risk of TB 
+9. Were you or your partner or any of your parents born anywhere other than the UK? Or have 
+you or any family/ household member had TB? 
+a. If yes where? 
+b. Please check current BCG referral form to identify if the country stated above falls in 
+to one of the ‘at risk’ countries requiring referral for BCG 
+If the parents are unsure of any of the answers to the questions above please offer again a re-screen 
+to determine a definite response. If this is declined please document on NIPE SMaRT, in the free text 
+boxes, of any of the unsure answers. 
+ 
+Please print 2 copies of the NIPE SMaRT record and send one to the parents to be placed in the 
+PCHR (‘red book’). CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 24 of 48 
+ 
+Locum 
+Paediatrician has 
+no NIPE log in 
+Complete a 
+paper copy of the 
+NIPE screen 
+results 
+Paper copy to be 
+given to the ward 
+clerk 
+Ward clerk scans 
+and emails to 
+NIPE Lead and 
+NIPE admin clerk 
+NIPE admin clerk 
+case note S4N 
+NIPE Lead inputs 
+onto S4N 
+Record cannot be 
+located in S4N 
+Complete a 
+paper copy of the 
+NIPE screen 
+results 
+See manual entry 
+of record onto 
+S4N flow chart 
+Baby screened in 
+community by 
+Community 
+Midwife 
+Community 
+Midwife to 
+document if any 
+abnormalities so 
+as to enable 
+accurate input of 
+results onto S4N. 
+ 
+Text NIPE admin 
+to advise NIPE 
+complete. 
+Community 
+Midwife to input 
+results onto S4N 
+within 24hrs of 
+screen being 
+completed. 
+Day 3 – NIPE admin clerk to 
+phone community Team 
+Leads of any missing NIPE 
+results or if a confirmation 
+text of NIPE completed has 
+not been received. 
+To follow up with an email 
+copied into NIPE Lead. Appendix 11: Paper copy of NIPE screen 
+ 
+Paper copy May 
+22.doc 
+ 
+ CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 25 of 48 
+ 
+Baby born at another Hospital and 
+transferred to UH Sussex (SRH&WH). 
+
+Search for baby on S4N to see if NIPE 
+has been completed. 
+Transfer record into S4N only if screen 
+is not complete 
+ 
+Follow 
+homebirth/discharged 
+NICU no screen pathway if 
+baby is discharged home 
+without a NIPE screen Appendix 12: Babies born out of area but transferred to UH Sussex (SRH&WH) 
+ward’s 
+
+Transferred to NICU. 
+(Beeding ward or SCBU) 
+Transferred Postnatal 
+Ward 
+Follow well baby pathway 
+dependent on Worthing or 
+St Richards location 
+*email with 
+read receipt. 
+If not read in 
+24hrs 
+contact the 
+ward directly 
+Contact Badgernet* 
+data co -ordinator so 
+screening can be 
+undertaken whilst on 
+the unit. Contact the 
+ward directly if the 
+Badgernet co-ordinator 
+is on annual leave CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 26 of 48 
+ 
+Add to ‘red baby spreadsheet’ 
+Check any breached NIPE’s for any referrals and add to referral failsafe 
+spreadsheet. Especially NICU babies. Appendix 13: Breached babies 
+
+Babies record turns red on S4N. 
+ 
+Note - this might not mean baby has breached. 
+They might be waiting for data to be inputted. 
+
+Fill in the following columns 
+
+Colour code babies as follows by highlighting the cells 
+
+Update colours on spreadsheet once NIPE completed. 
+
+ CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 27 of 48 
+ 
+The Paediatric SHO cannot facilitate the 
+NIPE screen and the baby is due to 
+breach prior to the next day shift. 
+The baby has been discharged and the NIPE has not 
+been confirmed as completed by a community 
+midwife or plan made for return to ward and the baby 
+is due to breach prior to the next day. 
+Contact the paediatric registrar and 
+inform them of the situation. If they 
+cannot facilitate the NIPE screen prior 
+to the next day shift continue with flow 
+chart. 
+Contact community team leader to see if they can 
+confirm if NIPE completed in community. If it has 
+not ask them to make contact with the woman to 
+arrange NIPE prior to breach time. 
+Call switchboard and ask to be put 
+through to the on -call paediatric 
+consultant. Inform them of potential 
+breach and ask them to contact junior 
+doctors to assist with solution. 
+If community team leader not available please 
+contact a NIPE qualified midwife in community to 
+contact the woman to arrange NIPE prior to breach 
+time. 
+If community midwife cannot facilitate NIPE in 
+community please contact women and invite the 
+baby in to the postnatal ward to have NIPE prior to 
+breach time. 
+Inform NIPE admin clerk / ward clerk of the actions undertaken to rectify in order for them to 
+document this on the red baby spreadsheet 
+Babies in the community 
+ Babies on the ward Appendix 14: Escalation process for babies close to breaching 
+ 
+The following information is provided for ward co-ordinators regarding 
+‘How to action a NIPE close to breaching’. 
+ 
+It is a national standard that all well babies (those not on SCBU) should have their NIPE 
+within 72hours from their time of birth. You will be contacted should a baby be close to 
+breaching where contacting the midwife/ paediatrician has been unsuccessful, in order for 
+you to escalate. 
+Your support is appreciated and please note this only happens occasionally. 
+ CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 28 of 48 
+ 
+Complete all columns for all births until all babies have populated S4H 
+and S4N 
+Ensure no screen has been missed 
+NOTE: 
+If records need merging due to incorrect NHS numbers then screen shots of the demographic pages 
+should be saved prior to merging. Appendix 15: S4H/S4N has not been populated 
+
+S4H has gone down - 
+records not populating 
+S4H National Spine has gone 
+down – records not 
+populating S4H and S4N S4N has gone down - 
+records not populating 
+S4N 
+
+Serious incident 
+Report to NHSP/NIPE helpdesks unless already been notified 
+
+Create a local list of all births from Maternity Information System (Badgernet), cross check with 
+Careflow and the discharge list for each day of the incident. 
+This is saved in the Newborn Screening folder, maternity folder, WomenChildrenMgmt folder. 
+
+If duplicate records have been made then merge records. 
+Save a screen shot of the demographics page of each record 
+prior to merging 
+ CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 29 of 48 
+ 
+LOCATE THE BIRTH LIST IN 
+This list is populated daily with all births in UH Sussex (SRH&WH). 
+Transfers in notified to NHSP or by the community midwives are also added to the lists 
+Work on previous day’s birth list and identify gaps in the 3 previous days list 
+Pin any incomplete birth lists to tool bar until they are completed so as to be 
+aware of them. 
+Once NIPE is completed, add completed to the spreadsheet and who completed it. 
+If an OOA birth NIPE is 
+incomplete contact NIPE lead . 
+If baby was born OOA but is in area for postnatal care or hearing screening, 
+search for record within a facility to check NIPE is complete. Appendix 16: Bloodspot/ NIPE/ NHSP failsafe spreadsheet 
+
+ CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 30 of 48 
+ 
+Appendix 17: NICU failsafe 
+ 
+Badgernet report 
+ 
+Admission and discharge date/time report from 
+Badgernet sent to NIPE administrator on a rolling 2 
+week period 
+
+NIPE admin clerk to add a NIPE column. 
+‘NIPE complete if transferred to another site 
+ 
+Baby resident in UH Sussex (SRH&WH) NICU only 
+
+YES NO 
+ 
+Screening 
+completed? Screening 
+completed? 
+
+YES NO YES NO 
+ 
+Put N/A in 
+column 
+
+Spreadsheet saved in 
+maternity \newborn 
+screening \badger report 
+folder Notify NIPE 
+lead Put 
+completed 
+and date 
+completed 
+in column Check 
+Badgernet to 
+see if baby 
+has been 
+discharged. 
+ 
+Document on 
+the 
+spreadsheet 
+where baby is. 
+ 
+If USS apt >4-6/52 & 
+baby was born >34 
+weeks & above then 
+these need 
+highlighting to USS 
+admin. If USS apt >4 - 
+6/52 & baby was 
+born <34 weeks 
+these babies 
+have been age 
+adjusted and is 
+acceptable. 
+ 
+Keep checking until baby is home 
+or NIPE is complete. 
+ 
+If discharged and NIPE not 
+completed advised NIPE lead. CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 31 of 48 
+ 
+Referrals for RACH Baby Hip Ultrasound clinic should be sent to: uhsussex.outpatientbookings@nhs.net 
+Queries regarding outcomes and treatment should be sent to: uhsussex.infanthipscreening@nhs.net 
+Appendix 18: Treatment protocol for babies presenting with suspected Development Dysplasia of the Hips (DDH) at UHSussex 
+ 
+Targeted screening for Development Dysplasia of the Hips (DDH) at UHSussex 
+ 
+Babies with abnormal clinical examination in the neonatal period should be referred to the RACH baby hip clinic (or their local ultrasound 
+department if born at SRH or Worthing) as soon as possible for an ultrasound scan at 4 weeks of age: 
+I – Inspection Asymmetrical groin creases, leg length discrepancy 
+P – Palpation Asymmetrical hip abduction 
+S – Stability Either an abnormal Barlow (dislocatable) or Ortolani (dislocated) test 
+NB: Ligamentous clicks without instability 
+There is limited evidence in the literature to support hip ultrasound screening in isolated clicky hips without instability. However, it can be difficult to 
+differentiate between a clicky hip and an unstable hip, by a non-expert examiner. Therefore, ligamentous clicks should be examined by experienced staff. If 
+screening outcome is still unclear, then an ultrasound should be requested. 
+Babies with the following risk factors and a normal clinical hip examination should be referred as soon as possible to the RACH baby hip clinic (or 
+their local ultrasound department if born at SRH or Worthing) for an ultrasound at 4 -6 weeks of age: 
+Breech presentation at or after 36 completed weeks of pregnancy , irrespective of presentation at birth or mode of delivery. This includes breech 
+babies who have had a successful external cephalic version (ECV). 
+Breech presentation at delivery if ≥ 28 weeks gestation 
+Positive family history in first degree relative: mother, father or sibling 
+In multiple births, where any of these risk factors are present , all babies in the pregnancy should be referred for a hip USS 
+Foot deformities at birth – Fixed talipes equinovarus (clubfoot) 
+The primary purposes of screening taken from Newborn and infant physical examination (NIPE) screening programme handbook – GOV.UK (www.gov.uk) 
+are: CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 32 of 48 
+ 
+• Early identification of a dislocated or a dislocatable hip(s) 
+• The identification of sonographic pathological hip dysplasia through selective ultrasound scan (USS) 
+• Minimising the risk of long-term complications through: 
+• Timely hip ultrasound scan 
+• Further expert assessment 
+• Early intervention 
+A ‘one stop shop’ model can be provided, in which ultrasound and review by orthopaedic specialist or specialist practitioner is undertaken on the same day, 
+during the same care episode. In order to meet the national standards associated with the pathway, this joint care episode should be between 4 and 6 weeks 
+of age (or between 38+0 and 40+0 weeks corrected age for babies born <34+0 weeks gestation). 
+Standard 3 (NIPE S03 – NP3) 
+• For babies with screen positive hip results, NIPE standard 3 requires the hip USS to be undertaken within the target timescale. 
+• For babies who are born at <34+0 weeks gestation, hip USS should be undertaken between 38+0 and 40+0 weeks corrected age. 
+• Referral to orthopaedic services after hip USS will then depend on the scan result and local management policy in place. 
+Standard 4 (NIPE S04) 
+For babies who attend for ultrasound scan of the hips after screen positive newborn hip referral, standard 4 requires an outcome decision to be made within 
+the target timescale. This is to ensure that babies who require treatment enter the treatment pathway by 6 weeks of age. 
+• For babies who are born ≥34+0 gestation, an outcome decision should be made by 6 weeks of age. 
+• For babies who are born <34+0 weeks gestation, an outcome decision should be made by 40+0 weeks corrected age. 
+An outcome decision is either: 
+• Discharge from the hip screening pathway after review of normal hip USS results. 
+• Attendance for clinical assessment by orthopaedic specialist (it is required that hip USS has been undertaken in advance of the decision). CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 33 of 48 
+ 
+Treatment protocol for babies presenting with suspected Developmental Dysplasia of the Hip (DDH) 
+Graf Measurement Description Treatment Follow up 
+Type I Graf α > 60 ֯ Normal mature hip with good 
+bony roof formation No treatment if normal clinical 
+examination Discharge 
+Type Iia Graf α = 50֯ – 60 ֯ The roof is immature but 
+appropriate for age (<12 
+weeks) No treatment required unless instability 
+present Follow up scan at or before 12 weeks 
+Discharge following normal scan α >60 ֯ 
+Type Iib Graf α = 50֯ – 60 ֯ The roof is dysplastic for age 
+( >12 weeks) Treat in Pavlik Harness 
+Harness can be removed for bathing if 
+no instability Harness review every 2 weeks 
+Rescan every 2-4 weeks until α>60 ֯ 
+Continue harness for 6 weeks after α>60 ֯ 
+Follow up in Dysplasia clinic for XR at 9 months age 
+Type Iic/D Graf α < 50 ֯ 
+/+- instability The roof is dysplastic Treat in Pavlik Harness 
+Harness can be removed for bathing 
+once α > 50 ֯ and no instability Harness review every 2 weeks 
+Rescan every 2-4 weeks until α>60 ֯ 
+Continue harness for 6 weeks after α>60 ֯ 
+Follow up in Dysplasia clinic for XR at 9 months age 
+Type III No Graf α angle 
+measurable Femoral head is decentred 
+and cartilaginous roof 
+pushed up Treat in Pavlik harness 24 hours a day 
+Harness can be removed for bathing 
+Once hip is centred and stable Harness review every 2 weeks 
+Rescan after 1 week to check location of hip 
+Then Rescan every 2 -4 weeks until α>60 ֯ 
+Continue harness for 6 weeks after α>60 ֯ 
+Follow up in Dysplasia clinic for XR at 9 months age 
+Type IV No Graf α angle 
+measurable Femoral head is decentred 
+and cartilaginous roof 
+pushed down, potentially 
+blocking reduction Consider trial of Pavlik harness if hip 
+reducible – proceed with caution Rescan after 1 week to check location of hip 
+If reducing continue as protocol for Type III 
+If not reducing or any complications refer to Consultant 
+ 
+Note: Babies who develop Femoral Nerve Palsy should stop harness treatment until full active knee extension has recovered. Harness can then be restarted with caution. CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 34 of 48 
+ 
+Neonatal hip examination (NIPE) 
+Inspection: Symmetry of leg length. 
+Level of knees when hips and knees are bilaterally flexed 
+(Galeazzi test). 
+Range of abduction of the hip in flexion. 
+Tests: Barlow (identifies a dislocatable hip) and Ortolani (identifies a 
+dislocated hip that can be reduced) on each hip separately to assess 
+hip stability. 
+Repeat NIPE examination at 6-8 
+week baby check by GP 
+Negative Screen = Normal 
+clinical examination and no risk 
+factors 
+Positive Screen = abnormal 
+clinical examination and /or risk 
+factors 
+Abnormal clinical findings are: 
+Leg length discrepancy 
+Knees at different levels on 
+Galeazzi test 
+Restricted unilateral or bilateral 
+hip abduction (loss ≥30 ) 
+Palpable clunk during Ortolani or 
+Barlow tests 
+Refer to local baby ultrasound clinic for scan 
+(USS) 
+Brighton: 
+uhsussex.outpatientbookings@nhs.net 
+Worthing: via ICE 
+St Richards: via ICE 
+Positive Screen 
+Refer to baby ultrasound 
+clinic for scan (USS): 
+uhsussex.outpatientbookin 
+gs@nhs.net Negative Screen 
+Discharge from 
+pathway. Follow 
+the national 
+healthy Child 
+Programme 
+Abnormal USS 
+Local ultrasound clinic to refer to 
+RACH baby ultrasound hip clinic 
+Email sent to both: 
+uhsussex.outpatientbookings@nhs.net 
+Uhsussex.infanthipscreening@nhs.net 
+From RACH clinic, follow Treatment 
+Protocol Normal USS 
+Discharge from 
+pathway 
+NIPE target timescales for USS: 
+Born <34+ 0 weeks gestation - 
+scan between 38 + 0 and 40 + 0 
+weeks and outcome decision by 
+40 + 0 
+Born ≥34 + 0 weeks gestation – 
+scan between 4 -6 weeks of age 
+and outcome decision by 6 weeks 
+of age. Neonatal Hip Screening Referral Pathway 
+
+ CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 35 of 48 
+ 
+Appendix 19: Hip referral and attendance failsafe 
+ 
+In S4N, create a search from previous week. Include all of the below in your search: 
+• Newborn hips-screening/no abnormalities with risk factors 
+• Newborn hips-screening/Unilateral Abnormality Suspected(right)with risk factors 
+• Newborn hips-screening/unilateral Suspected (right) with No risk factors 
+• Newborn -hips screening/unilateral abnormality suspected(left)with risk factors 
+• Newborn hips screening/unilateral abnormality suspected(left)no risk factors 
+• Newborn hips-screening/Bilateral abnormality suspected with risk factors 
+• Newborn hips-screening/Bilateral abnormality with no risk factors 
+• Other Abnormality with No risk factors 
+• Other Abnormality Suspected with risk factors 
+
+Export the following fields: 
+• Patients last name 
+• Patients date of birth 
+• Patients local number 
+• Patients place of birth 
+• Newborn screening summary for hips 
+• Date and time of last newborn screen 
+• Screen practitioner – latest 
+• Confidential id 
+
+Save notepad file as per dates searched, open notepad file into excel. 
+Ensure ‘text’ is chosen when opening in excel to ensure CI populates correctly. 
+
+• Open excel NIPE referral follow up spreadsheet for correct year. 
+• Add babies from recent export to this spreadsheet. 
+
+• Search CRIS for babies appointment – see CRIS pathway* 
+• Add to spreadsheet 
+
+>34 weeks screen positive=4 weeks of age <34 weeks screen positive=38+0 -40+0 corrected age 
+
+If there is no appointment on CRIS, or the appointment is not within KPI then to chase up with scan 
+department . 
+See CRIS pathway 
+ 
+Note - add columns to each month of the spreadsheet with formula 
+Column m = weeks, formula for column: =int((l2 -c2)/7) 
+Column n = days, formula for column: =(datedif(c2,l2,"d")) -(7*m2) 
+Column o = age weeks, formula for column: =concatenate(m2,"","+","",n2) 
+Highlight columns m & n, right click on mouse and ‘hide’ CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 36 of 48 
+ Appendix 20: CRIS pathway 
+
+Using CRIS find out appointment times for each of the babies. 
+• If no appointments check ICE that referral made. Email radiology to chase 
+appointment. 
+• If no referral inform NIPE lead midwife. 
+
+USS appointment should be allocated for4 -6 weeks of age unless born <34 weeks in 
+which case the USS department will correct age to 38+0 to 40+0 for these babies. If baby 
+has USS >4 -6/52 please check gestation at birth. 
+S 
+One or more risk factor C 
+• First-degree family history of hip problems in early life. 
+• This includes baby’s parents or siblings who have had a hip problem that R 
+started as a baby or young child that needed treatment with a splint, 
+harness or operation. E 
+• Breech presentation at or after 36 completed weeks of pregnancy, 
+irrespective of presentation at birth or mode of delivery - this includes E 
+breech babies who have had a successful external cephalic version 
+(ECV). 
+• Breech presentation at the time of birth between 28 weeks gestation and 
+term. 
+ 
+P 
+Multiple Pregnancies 
+O 
+Where any risk factors are present all babies from that pregnancy should have 
+an USS. S 
+I 
+ 
+• Difference in leg length. Clinical examination T 
+• Knees at different levels when hips and knees are bilaterally flexed. 
+• Restricted unilateral limitation of hip abduction (with a difference of 20 
+degrees or more between hips). 
+• Gross bilateral limitation of hip abduction (loss of 30 degrees abduction or 
+more). 
+• Palpable ‘clunk’ when undertaking the Ortolani manoeuvre. 
+• Fixed talipes(local pathway) N 
+I 
+V 
+E CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 37 of 48 
+ To USS team if baby still waiting in CRIS - 
+Dear 
+I can see that Baby ……………………………. NHS no ................................ ...................... was referred for a hip USS on 
+………………………..but is still waiting for an allocated appointment. This baby with be 4 52 old on .......................... could 
+you please let me know when it has been allocated an appointment date please? 
+Kind regards 
+ 
+Send email to- 
+- WH; Emily Warman -Andrews. CC Rebecca Coombes & NIPE Lead (If Emily out of office - Clive Wootton or Kim 
+Goom) 
+- SRH; Paula Couzens. CC Rebecca Coombes & NIPE Lead (If Paula out of office - Kim Goom) 
+To USS team if apt >4 52 and gestation 34 weeks 
+Dear 
+I can see that Baby……………………………….. NHS no ................................ ....... has an appointment for a hip USS 
+on…………………… 
+Unfortunately this would make the baby 4- 6 weeks of age and would breach the Public Health England pathway for 
+babies requiring a hip USS. 
+ 
+Could you please see if this appointment could be brought forward to be in line with the 4-6 weeks of age USS standard 
+please? 
+Kind regards 
+Send email to- 
+- WH; Emily Warman -Andrews. CC Rebecca Coombes & NIPE Lead (If Emily out of office - Clive Wootton or Kim 
+Goom) 
+- SRH; Paula Couzens. CC Rebecca Coombes & NIPE Lead (If Paula out of office - Kim Goom) 
+To NIPE Practitioner (paediatrician or midwife) if require clarification of hip finding - 
+Dear 
+I am in the process of following up hip abnormalities for babies following their NIPE screening and I can see that you 
+carried out Baby…………………. NHS no…………………………. NIPE on ………………………… 
+ 
+You have highlighted that the baby has a suspected hip abnormality but unfortunately you have not documented what 
+your suspicions are and therefore I cannot confirm if the baby is on the right pathway. 
+ 
+Could you let me know ASAP whether this baby has a suspected dislocated hip or another screen positive element (see 
+NIPE guideline on intranet) or a clicky hip so I can ensure the baby has the right appointment? 
+ 
+Kind regards 
+
+Send email to- 
+- WH NIPE practitioner. CC NIPE Lead; Katia Vamvakiti (if paed) 
+- SRH NIPE practitioner. CC NIPE Lead; V.Sharpe(if paed) Appendix 21: Template emails re HIPS 
+
+ CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 38 of 48 
+ 
+Appendix 22: Eyes/ testes /heart/ referral failsafe 
+ 
+a. Eyes 
+
+In S4N, create a search for the previous month. 
+In ‘screening status tab’ choose care pathway of: Newborn Eyes – Screening 
+ 
+Include all of the below in your search: 
+• Newborn Eyes - screening/Unilateral Abnormality Suspected (Right) with risk factors 
+• Newborn Eyes - screening/Unilateral Abnormality Suspected (Right) with No risk 
+factors 
+• Newborn Eyes - screening/Unilateral Abnormality Suspected (Left) with risk factors 
+• Newborn Eyes - screening/Unilateral Abnormality Suspected (Left) with No risk 
+factors 
+• Newborn Eyes - screening/Bi -lateral Abnormality Suspected with risk factors 
+• Newborn Eyes - screening/Bi -lateral Abnormality Suspected with no risk factors 
+
+Export the following fields 
+• Patients last name 
+• Patients date of birth 
+• Patients local number 
+• Patients place of birth 
+• Newborn screening summary for eyes 
+• Date and time of last newborn screen 
+• Screen practitioner – latest 
+• Confidential id 
+
+Save notepad file as per month searched, open notepad file into excel. 
+Ensure ‘text’ is chosen when opening in excel to ensure CI populates correctly. 
+
+• Open excel NIPE referral follow up spreadsheet for correct year. 
+• Add babies from recent export to this spreadsheet. 
+
+• Search babies for babies referral/appointment. 
+• Add to spreadsheet. 
+
+NIPE lead to search to check that referrals have been made. CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 39 of 48 
+ 
+b. Testes 
+
+In s4n, create a search for the previous month. 
+In ‘screening status tab’ choose care pathway of: Testes – Screening 
+ 
+Include all of the below in your search: 
+• Newborn Testes – Screening/Unilateral Abnormality Suspected (Right) 
+• Newborn Testes – Screening/Unilateral Abnormality Suspected (Left) 
+• Newborn Testes – Screening/Bilateral Abnormality Suspected 
+
+Export the following fields: 
+• Patients last name 
+• Patients date of birth 
+• Patients local number 
+• Patients place of birth 
+• Newborn screening summary for testes 
+• Date and time of last newborn screen 
+• Screen practitioner – latest 
+• Confidential id 
+
+Save notepad file as per month searched, open notepad file into excel. 
+Ensure ‘text’ is chosen when opening in excel to ensure CI populates correctly. 
+
+• Open excel NIPE referral follow up spreadsheet for correct year. 
+• Add babies from recent export to this spreadsheet. 
+
+• Search babies for babies referral/appointment 
+• Add to spreadsheet 
+
+NIPE lead to search to check that referrals have been made. CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 40 of 48 
+ 
+c. Heart 
+
+In S4N, create a search for the previous month. 
+In ‘screening status tab’ choose care pathway of: newborn heart – screening 
+ 
+Include all of the below in your search: 
+• Newborn Heart – Screening/Abnormality Suspected with Risk Factor 
+• Newborn Heart – Screening/Abnormality Suspected with No Risk Factor 
+
+Export the following fields: 
+• Patients last name 
+• Patients date of birth 
+• Patients local number 
+• Patients place of birth 
+• Newborn screening summary for heart 
+• Date and time of last newborn screen 
+• Screen practitioner – latest 
+• Confidential id 
+
+Save notepad file as per month searched, open notepad file into excel. 
+Ensure ‘text’ is chosen when opening in excel to ensure CI populates correctly. 
+
+• Open excel NIPE referral follow up spreadsheet for correct year. 
+• Add babies from recent export to this spreadsheet 
+
+• Search babies for babies referral/appointment 
+• Add to spreadsheet 
+
+NIPE lead to search to check that referrals have been made. CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 41 of 48 
+ 
+d. Rest of physical examination 
+
+In S4N, create a search for the previous month. 
+In ‘screening status tab’ choose care pathway of: newborn rest of physical examination – 
+screening abnormalities 
+ 
+Include all of the below in your search: 
+• Abnormality Suspected 
+
+Export the following fields 
+• Patients last name 
+• Patients date of birth 
+• Patients local number 
+• Patients place of birth 
+• Newborn screening summary for rest of physical examination 
+• Date and time of last newborn screen 
+• Screen practitioner – latest 
+• Confidential id 
+
+Save notepad file as per month searched, open notepad file into excel. 
+Ensure ‘text’ is chosen when opening in excel to ensure CI populates correctly. 
+
+• Open excel NIPE referral follow up spreadsheet for correct year. 
+• Add babies from recent export to this spreadsheet 
+
+• Search babies for babies referral/appointment 
+• Add to spreadsheet 
+
+Nipe lead to search to check that referrals have been made. CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 42 of 48 
+ 
+CHIS to run a report on systmone weekly of all movers in under 6 weeks of 
+age 
+SCT and Solent CHIS have read only access to UH Sussex (SRH&WH) S4N 
+to search to see if NIPE has been completed 
+NIPE team to organise for baby for have a NIPE examination offered ASAP if 
+one has not been carried out. 
+NIPE team to keep an excel log of all movers in with actions required. 
+NIPE team to carry out a national record search to ascertain if NIPE screen 
+was complete and if any referrals were made 
+CHIS to email report to NIPE lead and NIPE admin via nhs.net of those 
+whose NIPE is not complete. Appendix 23: Movers in/out – notification from CHIS 
+ 
+ CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 43 of 48 
+ Use Edit to change gender 
+NIPE lead/Newborn screening administrator to 
+email practitioner confirm details of examination. 
+Practitioner confirms testes were examined then 
+practitioner to edit result on S4N Practitioner to email Newborn 
+Screening 
+administrator/Maternity Admin 
+Team. 
+Re-print NIPE documentation 
+and send to parents 
+Complete Datix Appendix 24: Incorrect Gender 
+
+Maternity Admin Team/Newborn 
+Screening Admin to change 
+S4N,S4H,Northgate, Maternity 
+Informations System (Badgernet) 
+Admin team to amend materrnity 
+Informations System (Badgernet) 
+S4H,Northgate Any uncertainty re-offer repeat 
+NIPE exam. Add baby to red baby spreadsheet Perform NIPE and print forms NIPE completed. S4N incorrect Practitioner identified 
+Wrong Gender Screening Team Notified of 
+Incorrect Gender CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 44 of 48 
+ 
+Unable to locate record in S4N Appendix 25: Manual entry of record into S4N 
+
+Re-search using NHS number only 
+
+Re-search using surname only 
+
+Re-search using date of birth only 
+
+NO Has record been located? YES 
+ 
+Wait 6hrs for late population of NHSP 
+number Determine where error lies. 
+Contact NIPE lead and NHSP 
+lead 
+ 
+Has baby populated S4N? 
+
+YES 
+ 
+No further 
+action 
+required NO 
+ 
+Advise NIPE & NHSP lead. 
+Contact Maternity admin UH 
+Sussex(SRH&WH) & Michelle 
+Wright SCT if there is an issue with 
+issuing the NHS number. 
+Keep a spreadsheet of missing 
+babies* Contact Maternity admin UH 
+Sussex (SRH&WH) and Michelle 
+Wright SCT if issue with wrong 
+NHS number 
+
+YES 
+
+YES Check with Northgate 
+helpdesk if there is a 
+national issue NO 
+ 
+Manually enter record, 
+complete manual entry log. 
+Email NIPE & NHSP lead to 
+notify of manual entry. Case 
+Await S4N notification 
+that issue has been fixed note in S4N 
+ 
+Has baby 
+populated 
+S4H? 
+
+YES 
+MOVER INTO COUNTRY, NEW 
+NHS NUMBER SO DID NOT 
+POPULATE S4N AT BIRTH Match records populated against 
+spreadsheet* to ensure none missed NO CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 45 of 48 
+
+Gain consent for 
+NBS 
+Midwife day 1 visit 
+ Midwife day 5 visit 
+ Midwife day 10 visit 
+Appendix 26: Checking that all newborn screening has been completed 
+
+Ensure consent was 
+obtained for NBS 
+ 
+ Check NIPE 
+Completed, 
+Check NHSP 
+completed, check 
+bloodspot 
+completed. Check 
+for any outstanding 
+referrals for mum 
+and baby. 
+
+All completed 
+- discharge 
+from 
+midwifery 
+care 
+
+Check front of 
+postnatal 
+notes for clinic 
+appointment 
+ 
+Contact NHSP 
+admin clerk if 
+no 
+appointment NIPE or 
+NHSP not 
+completed 
+ 
+Contact 
+NIPE/NHSP 
+admin clerk 
+ASAP BLOOD 
+SPOT NOT 
+COMPLETED 
+ 
+Take Blood 
+spot with 
+consent 
+
+Contact 
+NBS lead 
+ 
+Datix 
+raised 
+
+Check 
+NIPE 
+Complete 
+Check NIPE 
+Completed, 
+Check NHSP 
+completed, 
+undertake bloodspot 
+NIPE 
+Not 
+complete 
+
+NIPE or 
+NHSP not 
+completed 
+ 
+Contact 
+NIPE/NHSP 
+admin clerk 
+ASAP 
+
+Contact NIPE 
+admin clerk 
+and 
+ 
+SRH - contact 
+community 
+team lead. 
+ 
+Worthing - 
+Ensure there 
+is an apt to 
+attend 
+Bramber ward. 
+Advise mum of 
+date/time 
+
+Contact 
+NIPE lead 
+ 
+Contact 
+NHSP lead 
+ 
+Datix raised 
+if not due to 
+DNA 
+Check 
+NHSP 
+Complete 
+NHSP 
+Not 
+complete CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 46 of 48 
+ Contact list 
+
+NIPE Lead 
+Caroline Thomas 
+Caroline.thomas2@nhs.net 
+ 
+NIPE Clinical Leads 
+Worthing 
+Dr Edward Yates, Consultant Paediatrician 
+Edward.yates@nhs.net 
+ 
+St Richards 
+Dr Vicky Sharpe Consultant Paediatrician 
+V.Sharpe@nhs.net 
+ 
+NIPE Failsafe clerk 
+Chrissie Thair 
+01903 205111 ext 86076 01243 788122 Ext 32811 
+07808099826 
+ 
+Neonatal Unit, St Richards Hospital 
+01243 788122 ext 32985/32986 
+ 
+Beeding Ward (SCBU), Worthing Hospital 
+01903 285184 
+ 
+Badgernet Data Co-coordinator 
+Lorraine Lelliott 
+lorraine.lelliott@nhs.net 
+St Richard’s Hospital: 01243 788122 ext 32986 
+Worthing Hospital: 01903 205111 ext 85184 
+ 
+S4N (Northgate). Open 7am-7pm 7 days a week 
+08450705902 
+NIPE.helpdesk@nhs.net 
+ 
+Child Health Records 
+Tel: 01243 812510 
+Fax: 01243 812590 
+Michelle Wright Manager 
+Child Health Record Bureau, 
+Michellewright2@nhs.net CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 47 of 48 
+ Glossary 
+ 
+ANNB Antenatal and Newborn 
+CHIS Child Health Information Services 
+GP General Practitioner 
+HV Health Visitor 
+NICU Neonatal Intensive Care Unit 
+NIPE Newborn Physical Examination 
+NNU Neonatal Unit 
+PCHR Personal Child Health Record 
+PHE Public Health England 
+QA Quality Assurance 
+S4N Smart4NIPE 
+SCBU Special Care Baby Unit CG18006 NIPE Screening SOP Version 4.0 February 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 48 of 48 
+ References 
+ 
+• NHS Choices website 
+ 
+• NHS NIPE Screening Programme Standards 2019 -2020 
+ 
+• Newborn and Infant Physical Examination Screening Programme Handbook April 
+2021 
+ 
+• Screening of individuals with uncertain or incomplete screening status in England July 
+2017 PHE 
+ 
+Managing safety incidents in NHS screening programmes : Ref: PHE publications gateway 
+number 2017284. 
+ 
+• NIPE Screening Standards

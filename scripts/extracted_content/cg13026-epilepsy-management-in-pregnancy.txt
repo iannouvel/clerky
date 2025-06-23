@@ -1,0 +1,809 @@
+# Extracted from: CG13026 Epilepsy Management in Pregnancy.pdf
+# Guideline ID: cg13026-epilepsy-management-in-pregnancy
+# Content length: 39254 characters
+# Processing date: 1750066900.2981436
+
+CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : CG13026 Epilepsy in Pregnancy Management v4.0 
+For use at : SRH & WH 
+ 
+ Page 1 of 21 
+ 
+Please note, IF DOCUMENT IS PRINTED, IT MAY BECOME OUT OF DATE. 
+ 
+TRUST CLINICAL GUIDELINE 
+Epilepsy in Pregnancy Management Guideline 
+ 
+Overview 
+By providing information to ensure optimal outcomes for the pregnant woman or birthing p erson 
+and baby in pregnancies complicated by epilepsy, and to act as a resource for staff caring for 
+women and birthing people whose needs fall within the scope of this guideline. 
+ 
+Owner Seb Adamson 
+Author/further information Sophia Stone, Consultant Obstetrician 
+Guideline version v4.0 
+Related policies None 
+Related protocols/procedures UH Sussex (SRH&WH) Maternity 
+Guidelines: Maternal Transfer and On -Site 
+Handover of Care, Antenatal Care and Patient 
+Information, Labour Risk Assessment 
+Standards SIGN 143 
+MBRRACE -UK 2023 
+NICE 20 21 
+RCOG 2016 
+Valproate Pregnancy Prevention Programme 
+(2020) 
+Superseded documents N/A 
+Review due August 2027 
+Reference number CG13026 
+ 
+ CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : CG13026 Epilepsy in Pregnancy Management v4.0 
+For use at : SRH & WH 
+ 
+ Page 2 of 21 
+Approval 
+Joint Obstetric Guideline Group Date approved: 24th June 2023 
+W&C Clinical Effectiveness Meeting Date approved: 16th May 2024 
+Consultation as relevant 
+Medicines Governance Committee Date approved: 2nd May 2024 
+Ratification 
+Clinical Document Approval Group Date approved: 21st August 2024 
+
+ CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : CG13026 Epilepsy in Pregnancy Management v4.0 
+For use at : SRH & WH 
+ 
+ Page 3 of 21 
+
+Contents 
+
+1.0 Aim ................................ ................................ ................................ ................................ ....... 4 
+2.0 Scope ................................ ................................ ................................ ................................ ... 4 
+3.0 Responsibilities ................................ ................................ ................................ .................... 4 
+4.0 Abbreviations used within this guideline ................................ ................................ ............... 4 
+5.0 Introduction ................................ ................................ ................................ ........................... 5 
+6.0 Risks associated with epilepsy and pregnancy ................................ ................................ ..... 5 
+6.1 Maternal or birthing person ................................ ................................ ................................ ... 5 
+6.2 Fetal ................................ ................................ ................................ ................................ ..... 5 
+6.3 Types of AEDs and different seizures ................................ ................................ ................... 6 
+7.0 Pre-pregnancy ................................ ................................ ................................ ...................... 6 
+8.0 Antenatal monitoring of pregnant women and birthing people with known epilepsy ............. 7 
+8.1 Discussion and information for pregnant women and birthing people with epilepsy .............. 9 
+9.0 Other causes of seizures in pregnancy ................................ ................................ ................. 9 
+10.0 Appropriate investigations following a first seizure in pregnancy ................................ ......... 10 
+11.0 Management in labour of women and birthing people with known epilepsy ........................ 10 
+11.1 Management of a seizure in labour ................................ ................................ ..................... 11 
+12.0 Post birth ................................ ................................ ................................ ............................ 12 
+12.1 Breastfeeding ................................ ................................ ................................ ..................... 12 
+12.2 Safety measures ................................ ................................ ................................ ................. 12 
+12.3 Contraception ................................ ................................ ................................ ..................... 12 
+13.0 Audit/monitoring ................................ ................................ ................................ .................. 14 
+Appendix 1: Patient information ................................ ................................ ................................ ..... 15 
+Appendix 2: Useful links and support groups ................................ ................................ ................. 16 
+Appendix 3: Monitoring the effectiveness of this guideline ................................ ............................. 17 
+Appendix 4: Guideline Version Control Log ................................ ................................ .................... 18 
+Appendix 5: Due Regard Assessment Tool ................................ ................................ .................... 19 
+Appendix 6: Template Dissemination, Implementation and Access Plan ................................ ........ 20 
+Appendix 7: Additional guidance and information ................................ ................................ ........... 21 
+
+ CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : CG13026 Epilepsy in Pregnancy Management v4.0 
+For use at : SRH & WH 
+ 
+ Page 4 of 21 
+
+Epilepsy in P regnancy Management Guideline 
+
+1.0 Aim 
+ 
+To ensure optimal outcomes for pregnant woman or birthing person and baby in pregnancies 
+complicated by epilepsy and to act as a resource for staff caring for women and birthing people 
+whose needs fall within the scope of this guideline. These guidelines are intended to provide high 
+quality, evidence based care to women and birthing people and babies under the care of the 
+maternity units in University Hospitals Sussex NHS Trust (SRH & WH) . 
+
+2.0 Scope 
+ 
+This guideline applies to all medical, obstetric and midwifery staff caring for pregnant women and 
+birthing people with known epilepsy. A separate section describes the investigations and 
+management of a first seizure or fit in a pregnant woman or birthing person not known to have 
+epilepsy . 
+
+3.0 Responsibilities 
+ 
+It is the responsibility of all midwifery and medical staff to: 
+ 
+• Access, read, und erstand and apply this guidance . 
+• Attend any mandatory training pertaining to this guidance . 
+ 
+It is the responsibility of the division to: 
+ 
+• Ensure the guideline is reviewed as required in line with Tru st and National 
+recommendations . 
+• Ensure the guideline is a ccessible to all relevant staff . 
+
+4.0 Abbreviations used within this guideline 
+ 
+EEG - Electroencephalographic AEDs - Antiepileptic drugs 
+MBRRACE(UK) – Mother and Babies: 
+Reducing Risk through Audit and 
+Confidential Enquires SUDEP - Sudden unexpected death in 
+epilepsy 
+Cu-IUDs - Copper -bearing intrauterine 
+devices LNG -IUS - Levonorgestrel -containing 
+intrauterine system 
+SPC - Summaries of product characteristics BNF - British National Formulary 
+POP - Progestogen -only pill CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : CG13026 Epilepsy in Pregnancy Management v4.0 
+For use at : SRH & WH 
+ 
+ Page 5 of 21 
+
+5.0 Introduction 
+ 
+Epilepsy is the most common chronic neurological disorder to complicate pregnancy. It is defined 
+as a neurological condition characterized by recurrent epileptic seizures unprovoked by any 
+immediately identifiable cause. Epilepsy is classified according to the clinical type of seizure or 
+specific electroencephalographic (EEG) features. 
+ 
+The mainstay of treatment for epilepsy is antiepileptic drugs (AEDs) taken daily to prevent the 
+recurrence of epileptic seizures. 
+ 
+Epilepsy affects approximately 0.5% of women or birthing people of child -bearing age. 
+Approximately one third of people receiving AEDs are of reproductive age. The risk of the child to 
+develop epilepsy is 4% -5% if one parent has epilepsy, 10% if previously affected sibling(s) and15% -
+20% if both parents have epilepsy. 
+
+6.0 Risks associated with epilepsy and pregnancy 
+6.1 Maternal or birthing person 
+ 
+There is a 10 -fold increase in mortality among pregnant women and birthing people with epilepsy 
+which greatly exceeds the two to three -fold mortality rate observed in all people with epilepsy. 
+MBRACE UK reported 14 maternal and birthing p eople deaths in 2009 -2012 and 12 were due to 
+SUDE P. 
+
+6.2 Fetal 
+ 
+There are one in 250 pregnancies exposed to AEDs. AED exposure in -utero is associated with 
+congenital malformation (see below). Risk of major congenital malformations is related to the type, 
+number and dose of AED. Furthermore, there are concerns about the long -term neurological 
+development of children exposed to AEDs in -utero with significant increased risk in those exposed 
+to high dose of Sodium Valproate or polytherapy. In-utero exposure to Carbamazepine and 
+Lamotrigine does not appear to affect the neurodevelopment of the newborn ( MBRRACE 2014). 
+ 
+There is a general consensus that the risk of uncontrolled convulsive seizures in the pregnant 
+woman or birthing person outweighs the potential tera togenic risk of the medication , therefore most 
+women and birthing people with active epilepsy are advised to continue with medicati on during 
+pregnancy. If stopped, the impact of seiz ures extends into daily living and can result in loss of 
+driving license, negative impact on employment, relationships and reduced quality of life. 
+ 
+A variety of adverse effects have been reported on infants born to women and birthing people with 
+epilepsy either treated or untreated, including intrauterine growth restriction, major and minor 
+malformations and postnatal developmental delay. The overall risk of congenital malformation for 
+any AE D exposure is about 5% (two to three -fold the background level of risk). The average 
+frequency of major congenital malformations in cohorts of women and birthing people using AED CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : CG13026 Epilepsy in Pregnancy Management v4.0 
+For use at : SRH & WH 
+ 
+ Page 6 of 21 
+monotherapy only ranges between 1.03% and 4.5% (less if not on treatment at all but higher than 
+background malformation rate). The risk is highest in the first trimester during organogenesis and 
+for Sodium Valproate. 
+
+Fetal anticonvulsant syndrome 
+Major Minor 
+• Microcephaly 
+• Cleft lip & palate 
+• Neural tube defects 
+• Congenital heart disease 
+• Fetal growth restriction 
+• Developmental delay • Hypertelorism 
+• Distal digital & nail hypoplasia 
+• Flat nasal bridge 
+• Low set ears 
+• Epicanthic folds 
+• Long philtrum 
+
+6.3 Types of AEDs and different seizures 
+ 
+Serum AED concentrations often fall during pregnancy, especially in t he second and third 
+trimesters . Physiological changes in pregnancy alter AED pharmacokinetics of absorption, AED 
+concentrations , and excretion. There is decreased gastric tone and motility, increased plasma 
+volume, increased renal clearance and albumin levels and protein binding. There is a reduction in 
+Lamotrigine levels in up to 70% in pregnancy. The total concentration of Carbamaze pine 
+decreases. Total and free P henytoin concentration decreases in all three trimes ters but the 
+concentrations of L evetiracetam decreases mostly during the third trimester. These falls in levels 
+can result in aggravation of seizures . 
+ 
+A baseline serum drug level can be considered to establish the compliance with the treatment. 
+There is no clear evidence to suggest that regular monitoring of serum AED levels in pregnancy 
+improves seizure control or affects maternal or fetal outcomes. NICE (National Institute for Health 
+and Clinical Excellence) and SIGN (Scottish Intercollegiate Guidelines Network) guidelines do not 
+currently recommend regular AED monitoring in pregnancy , although individual circumstances may 
+be taken in consideration (E.g. change in drug dose, poor control of seizures). The EMPiR E trial 
+(Anti-epileptic drug m onitoring in pregnancy : an evaluation of effectiveness, cost -effectiveness and 
+acceptabili ty of monitoring strategies) supports the NICE recommendation. 
+ 
+Clinicians should be aware that some of the AEDs have the potential to affect maternal cognition, 
+particularly in those with past/present history of psychiatric problems or those taking high doses of 
+AEDs or polytherapy. Appropriate and early referral to the perinatal mental health team should be 
+made if there are any new or worsening symptoms. 
+
+7.0 Pre-pregnancy 
+ 
+Ideally women and birthing people should be counselled pre -pregnancy and given accurate 
+information regarding the risks of epilepsy and drug therapy on pregnancy. This should be either by CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : CG13026 Epilepsy in Pregnancy Management v4.0 
+For use at : SRH & WH 
+ 
+ Page 7 of 21 
+a neurologist with an interest in pregnancy or a maternal medicine specialist. Consider sending 
+baseline drug levels for those on Lamotrigine, Levetiracetam and/or Oxcarbazepine . 
+ 
+Women and birthing people should be advised to take Folic Acid 5mg daily for at least 3 months 
+prior to conception and continue throughout pregnancy. There is evidence to suggest that peri -
+conceptional Folic Acid is associated with significant higher IQ and reducing major congenital 
+malformations in children of women and birthing people taking AEDs. 
+ 
+Women and birthing people should be informed that the risk of congenital malformations is linked to 
+the type, number and dose of AEDs . Aim is for seizure -free before conception and during 
+pregna ncy (particularly for women and birthing people or girls with generalised tonic -clonic 
+seizures) but consider the risks of adverse effects of AEDs and use the lowest effective dose of 
+each AED, avoiding polytherapy if possible. Valproate must no longer be used in any woman or 
+birthing person or girl /child able to have children unless they have been informed of the risks and 
+the need to avoid becoming pregnant. It is important women and birthing people do not stop taking 
+valproate without first discussing it with their doctor Valproate use by Women/people & 
+Girls/children. 
+ 
+Woman or birthing person on Sodium Valproate should be especially counselled regarding 
+changing or reducing therapy in pregnancy because of the significantly higher fetal malformation 
+rate associated with this drug. If they decide to continue on Sodium V alproate into pregnancy, the 
+discussion regarding risks should be clearly documented and written consent obtained (see 
+Appendix 1 ). 
+ 
+Women and birthing people and girls /children with epilepsy need accurate information during 
+pregnancy. The possibility of status epilepticus and SUDEP (sudden unexpected death in epilepsy) 
+should be discussed with all women and birthing people and girls /children who plan to stop AED 
+therapy. 
+ 
+In the case of an unplanned pregnancy, it is never recommended to stop or change the dose of 
+AEDs without informed counselling Urgent epilepsy specialist referral should be made to discuss 
+the treatment and effect on the pregnancy. 
+ 
+Genetic counselling should be considered if one partner has epilepsy, particularly if the partner has 
+idiopathic epilepsy and a positive family history of epilepsy. Although there is an increased risk of 
+seizures in chil dren of parents with epilepsy, y oung people and adults with epilepsy should be given 
+information that the probability that a child will be affected is generally low. However, this will 
+depend on the family or personal history. 
+
+8.0 Antenatal monitoring of pregnant women and birthing people with 
+known epilepsy 
+ 
+All pregnant women and birthing people with epilepsy should be referred to the maternal medicine 
+(obstetric medicine) clinic as early as possible. 
+ CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : CG13026 Epilepsy in Pregnancy Management v4.0 
+For use at : SRH & WH 
+ 
+ Page 8 of 21 
+Women and birthing people who are seizure -free for at least 10 years (with the last 5 years off 
+AED) and those with childhood epilepsy synd rome who have reached adulthood seizure and 
+treatm ent-free are considered to no longer have epilepsy. If there are no other risk factors, they can 
+be managed as a low-risk pregnancy . 
+ 
+All women and birthing people with epilepsy should be encouraged to declare their pregnancy and 
+be informed about the potential risks of epilepsy in pregnancy. At booking the clinician should 
+provide information about the UK Epilepsy in Pregnancy Register and invite the woman or birthing 
+person to register at www.epilepsyandpregnancy.co.uk . 
+ 
+The clinician should discuss with the woman or birthing person the relative benefits and risks of 
+adjusting medication to enable them to make an informed decision. They should be ideally 
+managed under the joint care of their neurologist and maternal medicine specialist . 
+ 
+Women and birthing people with epilepsy should be regularly assessed for sleep deprivati on and 
+stress, adherence to AED s, seizure type and frequency to rule out risk factors of seizures. If 
+significant risks factors of seizures or deterioration in seizure control are identified, consider 
+antenatal admission and continuous observation under neurology or maternity unit. 
+ 
+Pregnant women and birthing people who are taking AEDs should be offered a high -resolution 
+ultrasound scan to screen for structural anomalies. This scan should be performed at 18 –20+6 
+weeks gestation by an appropriately trained ultrasonographer. 
+ 
+Women and birthing people on polytherapy, single high doses of AEDs , or very poorly controlled 
+epilepsy should be offered a fetal medicine cl inic ultrasound at 16 -18 weeks gestation. Consider 
+fetal echocardiography at 22 weeks in patients on polytherapy or on Sodium Valproate. Because of 
+an association with fetal growth restriction, serial fetal growth scans should be offered from 28 
+weeks for the remainder of the pregnancy. 
+ 
+There is no evidence for routine ant epartum CTG in women and birthing people taking AED s. 
+ 
+It is important that there should be a regular follow -up, planning of delivery, and liaison between the 
+specialist or epilepsy team and the obstetrician or midwife. 
+ 
+AED levels can be useful in women and birthing people taking Lamotrigine, L evetiracetam or 
+Oxcarbazepine during pregnancy. If seizures increase or are likely to increase, monitoring AED 
+levels 6 -8 weekly may be useful when making dose adjustments . 
+ 
+Women and birthing people taking Carbamezepine, Levetiracetam should have their sodium level 
+checked with their 28 weeks blood, as these medications potentiall y can cause hyponatremia. 
+ 
+Women and birthing people taking enzyme inducing AEDs ( Phenytoin, Primidone, Carbamazepine, 
+Phenobarbitone and Topiramate at doses ≥200mg daily) should be prescribed PO Vitamin K 10mg 
+daily from 36 weeks gestation until deliver y. 
+ CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : CG13026 Epilepsy in Pregnancy Management v4.0 
+For use at : SRH & WH 
+ 
+ Page 9 of 21 
+It is no longer recommended to c onsider double dose of Dexamethasone or Betamethasone for 
+fetal lung maturity in patients on Hepatic Enzyme inducer AED ( Phenytoin , Phenobarbitone , 
+Carbamazepine or Topiramate) ( RCOG Green -top Guideline 68 2016 ). 
+
+8.1 Discussion and information for pregnant women and birthing people with epilepsy 
+ 
+Women and birthing people with generalised tonic –clonic seizures should be informed that the fetus 
+may be at relatively higher risk of harm during a seizure, although the absolute risk remains very 
+low, and the level of risk may depend on seizure frequency. 
+ 
+Women and birthing people should be reassured that there is no evidence that focal, absence and 
+myoclonic seizures affect the pregnancy or developing fetus adversely unless t hey fall and sustain 
+an injury. 
+ 
+Women and birthing people should be reassured that an increase in seizure frequency is generally 
+unlikely in pregnancy or in t he first few months after birth. 
+ 
+Women and birthing people should be advised to bath e in shallow water or to shower. 
+ 
+Women and birthing people with epilepsy should be informed that although they are likely to have 
+healthy pregnancies, their risk of complications during pregnancy and labour is higher than for 
+women and birthing people and girls /children without epilepsy. 
+ 
+All Women and birthing p eople with epilepsy should be informed about RCOG PIL (see appendix 
+1). 
+
+9.0 Other causes of seizures in pregnancy 
+ 
+• Eclampsia (please refer to Management of Severe Pre -Eclampsia and Eclampsia 
+Guideline ) 
+• Cerebral vein thrombosis 
+• Thrombotic thrombocytopenic purpura 
+• Stroke 
+• Subarachnoid haemorrhage 
+• Drug and alcohol withdrawal 
+• Hypoglycaemia 
+• Hyponatraemia 
+• Sepsis 
+• Postdural puncture (rare) 
+• Gestational epilepsy 
+• Pseudoepilepsy 
+• Vasovagal syncope 
+• Addisonian crisis 
+ CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : CG13026 Epilepsy in Pregnancy Management v4.0 
+For use at : SRH & WH 
+ 
+ Page 10 of 21 
+ 
+10.0 Appropriate investigations following a firs t seizure in pregnancy 
+ 
+• Blood pressure 
+• Urinalysis 
+• ‘PET’ b loods (FBC, U&E, LFT, clotting) 
+• Blood film 
+• Blood glucose 
+• Serum calcium 
+• Serum AED levels 
+• Alcohol 
+• Toxicology 
+• CT or MRI imaging +/ - EEG +/ - lumbar CSF analysis (involve neurologist and radiologist 
+for advice/opinion) 
+ 
+11.0 Management in labour of women and birthing people with known epilepsy 
+ 
+Women and birthing people may be reassured that the risk of a tonic –clonic seizure during the 
+labour and the 24 hours after birth is low (1 –4%). 
+ 
+• The risk of seizures during labour is low, but it is sufficient to warrant the recommendation 
+that delivery should take place in an obstetric unit with facilities for maternal and neonatal 
+resuscitation and treating maternal and birthing people seizures. 
+• The woman or birthing person should be admitted early in labour and the obstetric and 
+anaesthetic teams should be informed of their admission . 
+• One-to-one midwifery care is recommended to allow close monitoring of WWE in labour 
+and to prevent known precipitants of seizure in labour such as over breathing , poor 
+control of pain, dehydration and omission of AED intake . 
+• The decision to use water for analgesia and birth must be made based on the seizure risk 
+status of the pregnant woman or birthing person after discussion between them and team 
+caring for the woman or birthing person , with attention given to how the risk of drowning 
+can be minimised in the unlikely event of seizure. Appropriate safety measures such as a 
+hoist should be available. Women and birthing people should not be left alone in the pool 
+and have support of their partner and/or the midwife at all times. Healthcare 
+professionals, pregnant women and birthing people will need to be aware of the 
+difficulties in managing a seizure in labour in this situation and the small potential risk of 
+drowning . 
+• Ensure the woman or birthing person continues to take their AED during labour . 
+• Women and birthing people should not be left unattended in labour or for the first 24 
+hours postpartum . 
+• Intravenous access should be obtained in early labour . 
+• To limit the risk of precipitating a seizure because of pain and anxiety, early epidural 
+analgesia should be considered. Try to avoid other triggers such as dehydration, pyrexia 
+and exhaustion . 
+• Continuous fetal monitoring in women and birthing people at high risk of seizure in labour 
+is recommended . CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : CG13026 Epilepsy in Pregnancy Management v4.0 
+For use at : SRH & WH 
+ 
+ Page 11 of 21 
+11.1 Management of a seizure in labour 
+ 
+The anaesthetic registrar or consultant should be in attendance. Consider transfer to ITU and 
+involve neurologists. Consider non -epilepsy causes of seizures including eclampsia ( if indicated - 
+see CG1112 Management of Severe Pre -eclampsia and Eclampsia Guideline ) 
+ 
+Caesarean section is indicated for obstetric reasons only or if in status or recurrent seizures in 
+labour or if the fetal heart rate is not recovered within 5 minutes. 
+ 
+The woman or birthing person should be managed in left lateral position with 
+either manual displacement of the uterus or use of a wedge to provide a left tilt. 
+Commence h igh dose oxygen via mask , BP monitoring and ECG. 
+Investigations to be performed: 
+•Urinalysis 
+•‘PET’ bloods (FBC, U&E, LFT, clotting) , Blood film , Blood 
+glucose , Serum calcium , Serum AED levels , Alcohol , Toxicology . 
+•CT or MRI imaging +/ - EEG +/ - lumbar CSF analysis (involve 
+neurologist and radiologist for advice/opinion) . 
+Management of a seizure in labour 
+Administer: 
+Lorazepam IV 0.1 mg/kg diluted 1:1 with normal saline (alternatively 4 mg) by 
+slow bolus over two minutes, repeated once after 10−20 minutes if seizures 
+continue watching for respiratory depression. 
+OR 
+Diazepam 5 -10 mg slow IV. 
+OR 
+if no IV access 
+Diazepam rectal gel 10 -20 mg repeated once 15 min later or 
+Midazolam 10 mg buccal preparation. 
+Consider Levetiracetam (Keppra) as 2nd line loading dose 6 0mg/ kg based 
+on actual body weight to a maximum of 4.5g for management of active 
+seizures. 
+This should be given in 100ml sodium chloride 0.9% at a rate not exceeding 
+6mg/kg/min (i.e 4.5g to be given over 10 minutes) 
+There are dose reductions required for renal impairment 
+(see Injectable Medicines Policy for more details) 
+If this does not control seizures then intravenous Phenytoin 
+should be started: 
+Loading dose Phenytoin infusion at a dose of 10 -15 mg/kg 
+at a rate of 50 mg/minute – give as neat solution . CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : CG13026 Epilepsy in Pregnancy Management v4.0 
+For use at : SRH & WH 
+ 
+ Page 12 of 21 
+ 
+12.0 Post birth 
+ 
+All children born to women and birthing people taking enzyme -inducing AEDs should be given 1 mg 
+of Vitamin K parenterally at birth. Be aware of the risk of neonatal withdrawal syndrome in women 
+and birthing people with AED and benzodiazepines. 
+ 
+If the woman or birthing p erson ’s dose of AED was increased in pregnancy it may be gradually 
+reduced to pre - pregnancy levels in the first few weeks postpartum. Lamotrigine and Phenytoin 
+blood levels increase rapidly following delivery and therefore their doses should be decreased 
+relatively rapidly (during the first week postpartum) . 
+
+12.1 Breastfeeding 
+ 
+All women and birthing people and girls /children with epilepsy should be encouraged to breastfeed, 
+except in very rare circumstances. For patients on combination therapy or if there are other risk 
+factors e.g. premature baby, seek further advice from Woman & Childrens Pharmacist (Mon -Fri). 
+Bleep numbers are available on Maternity Wards. 
+ 
+Breastfeeding for most women and birthing people and girls /children taking AEDs is generally safe 
+and should be encouraged. However, each woman or birthing person needs to be supported in the 
+choice of feeding method that bests suits them and their family. If a baby of a woman or birthing 
+person taking AEDs is unusually sleepy or has to be woken for feeds, the woman or birthing person 
+should be encouraged to feed before rather than after taking their AEDs. 
+ 
+Lamotrigine should not be in itiated in breastfeeding women and birthing p eople . 
+ 
+Lamotrigine doses increased during pregnancy should be reduced to pre -pregnancy dose with in 1-2 
+weeks following birth. 
+ 
+12.2 Safety measure s 
+ 
+Parents of new babies should be informed that introducing a few simple safety precautions may 
+significantly reduce the risk of accidents and minimise anxiety. An approaching birth can be an ideal 
+opportunity to review and consider the best and most helpful measures to start to ensure maximum 
+safety for both woman or birthing person and baby for example advise nursing & changing nappies 
+on the floor , laying the baby down in a place of safety if they have a warning aura , and bathing the 
+baby in very shallow water or with supervision. 
+ 
+12.3 Contraception 
+ 
+Women and birthing people taking hepatic enzyme -inducing drugs (Phenytoin, Primidone, 
+Carbamazepine, Phenobarbitone, and Topiramate at doses ≥ 200mg daily) shou ld be advised to 
+use a reliable contraceptive method unaffected by enzyme inducers [e.g. progestogen -only 
+injectable, copper -bearing intraut erine devices (Cu -IUDs) or the levonorgestrel -containing 
+intrauterine system (LNG -IUS)]. CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : CG13026 Epilepsy in Pregnancy Management v4.0 
+For use at : SRH & WH 
+ 
+ Page 13 of 21 
+ 
+Women and birthing people on combined oral contraceptive pill taking hepatic enzyme inducers 
+require higher doses of oestrogen to achieve adequate contraception. They should receive a 
+combined pill containing 50 microgram ethinyl oestradiol or two pills containing 30 micrograms but 
+full guidance about dosage should be sought from the SPC and current edition of the BNF 
+(available at http://bnf.org ). Alternative c ontraception should be advised. 
+ 
+The progestogen -only pill (POP) is not recommended as reliable contraception in women and 
+birthing people and girls /children taking enzyme -inducing AEDs . If they are taking POP, women and 
+birthing eople should be advised to take 2 p rogesterone -only pills per day . 
+ 
+The progestogen implant is not recommended in women and birthing people and girls taking 
+enzyme -inducing AEDs. 
+ 
+Double dose of ‘morning after pill’ is advised but guidance about dose and type of emergency 
+contraception should be sought from BNF. Cu-IUD is a better alternative. 
+ 
+Valproate, Clonazepam, Vigabatrin, Lamotrigine, L evetiracetam, Gabapentin, and T iagabine do not 
+induce hepatic enzymes and all methods of contraception are acceptable. 
+ 
+• However women and birthing people taking Lamotrigine alongside an oestrogen -based 
+contraceptive can result in a significant reduction of L amotrigine levels and lead to loss of 
+seizure control. When a woman or birthing person starts or stops taking the se 
+contraceptives, the dose of L amotrigine may need to be adjusted . 
+ 
+ CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : CG13026 Epilepsy in Pregnancy Management v4.0 
+For use at : SRH & WH 
+ 
+ Page 14 of 21 
+13.0 Audit/ monitorin g 
+ 
+Auditable standards - RCOG Green -top Guideline 68 (2016) pg. 28 
+ 
+Standards for audit of practice should include the following: 
+ 
+• Provision of written information on the effects of epilepsy and AEDs on pregnancy outcomes 
+and seizures (100%). 
+• Multidisciplinary input into pre -pregnancy, antenatal, intrapartum and postnatal care of WWE 
+(100%). 
+ 
+Standards for audit of documentation should include the following: 
+ 
+• Written protocols for management of status epilepticus in all obstetric units (100%). 
+• Documented discussion on risks to the woman or birthing p erson and baby from epilepsy 
+and AEDs in the short and long term (100%). 
+• Proportion of women and birthing people enrolled in the UK Epilepsy and Pregnancy 
+Register (100%). 
+
+ CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : CG13026 Epilepsy in Pregnancy Management v4.0 
+For use at : SRH & WH 
+ 
+ Page 15 of 21 
+Appendix 1 : Patient information 
+ 
+Leaflet and information for women and birthing people can be found at Epilepsy in pregnancy 
+RCOG PIL 
+
+ CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : CG13026 Epilepsy in Pregnancy Management v4.0 
+For use at : SRH & WH 
+ 
+ Page 16 of 21 
+Appendix 2: Useful l inks and support group s 
+ 
+• Epilepsy Action. Epilepsy and having a baby https://www.epilepsy.org.uk/living/sex -and-
+contraception/sex -and-epilepsy 
+• Epilepsy Society. Pregnancy and parenting https://epilepsysociety.org.uk/living -
+epilepsy/pregnancy -and-epilepsy/pregnancy -and-parenting 
+• UK Epilepsy and Pregnancy Register [ http://www.epilepsyandpregnancy.co.uk/ ]. 
+
+ CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : CG13026 Epilepsy in Pregnancy Management v4.0 
+For use at : SRH & WH 
+ 
+ Page 17 of 21 
+Appendix 3: Monitoring the effectiveness of this guideline 
+ 
+Auditable standards - RCOG Green -top Guideline 68 (2016) pg. 28 
+ 
+Standards for audit of practice should include the following: 
+ 
+• Provision of written information on the effects of epilepsy and AEDs on pregnancy outcomes 
+and seizures (100%). 
+• Multidisciplinary input into pre -pregnancy, antenatal, intrapartum and postnatal care of WWE 
+(100%). 
+ 
+Standards for audit of documentation should include the following: 
+ 
+• Written protocols for management of status epilepticus in all obstetric units (100%). 
+• Documented discussion on risks to the mother or birthing parent and baby from epilepsy 
+and AEDs in the short and long term (100%). 
+• Proportion of women and birthing people enrolled in the UK Epilepsy and Pregnancy 
+Register (100%). 
+ 
+ CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : CG13026 Epilepsy in Pregnancy Management v4.0 
+For use at : SRH & WH 
+ 
+ Page 18 of 21 
+Appendix 4: Guideline Version Control Log 
+ 
+This should be included for all updated guidelines, summarising the changes between the current 
+and previous version. (Earlier changes should be deleted from the list when the guideline is 
+updated.) 
+Do not list minor and stylistic changes or changes which do not alter the processes described. 
+If the update includes a significant reorganisation of the material, indicate this and list the main 
+areas where the process itself has changed. 
+ 
+Change Log – Epilepsy in Pregnancy Management 
+
+ Version Date Author Status Comment 
+1.0 October 2013 Maternal Medicine 
+Obstetric 
+Consultant Archived New Trust Maternity guideline 
+2.0 June 2016 Maternal Medicine 
+Obstetric 
+Consultant (Miss S 
+Stone) Archived Amended and Updated 
+3.0 June 2020 Maternal Medicine 
+Obstetric 
+Consultant S. 
+Stone/ M. 
+Placintescu 
+(Specialist trainee) Archived Amended and updated in line 
+with NICE, RCOG guidance 
+Link to patient info for Valproate 
+use and Valproate Pregnancy 
+Prevention Programme added. 
+4.0 June 2023 Maternal Medicine 
+Obstetric 
+Consultant 
+R.Mason / 
+ H.Alabdali 
+(Registrar) LIVE • 3 year update. 
+• Women and birthing people 
+taking Carbamezepine or 
+Levetiracetam should have 
+their sodium level checked 
+with their 28 weeks blood. 
+• Levetiracetam dose for active 
+seizures changed to 60mg/kg 
+based on actual body weight 
+to a maximum of 4.5g. CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : CG13026 Epilepsy in Pregnancy Management v4.0 
+For use at : SRH & WH 
+ 
+ Page 19 of 21 
+Appendix 5: Due Regard Assessment Tool 
+ 
+To be completed and attached to any guideline when submitted to the appropriate committee for 
+consideration and approval. 
+ 
+ Yes/No Comments 
+1. Does the document/guidance affect one group less or 
+more favourably than another on the basis of: 
+ Age No 
+ · Disability No 
+ · Gender (Sex) No 
+ · Gender Identity No 
+ · Marriage and civil partnership No 
+ · Pregnancy and maternity No 
+ · Race (ethnicity, nationality, colour) No 
+ · Religion or Belief No 
+ · Sexual orientation, including lesbian, gay and bisexual 
+people No 
+2. Is there any evidence that some groups are affected 
+differently and what is/are the evidence source(s)? No 
+3. If you have identified potential discrimination, are there 
+any exceptions valid, legal and/or justifiable? NA 
+4. Is the impact of the document likely to be negative? No 
+5. If so, can the impact be avoided? NA 
+6. What alternative is there to achieving the intent of the 
+document without the impact? NA 
+7. Can we reduce the impact by taking different action 
+and, if not, what, if any, are the reasons why the 
+guideline should continue in its current form? NA 
+8. Has the document been assessed to ensure service 
+users, staff and other stakeholders are treated in line 
+with Human Rights FREDA principles (fairness, respect, 
+equality, dignity and autonomy)? Yes 
+ 
+If you have identified a potential discriminatory impact of this guideline, please refer it to [Insert 
+Name], together with any suggestions as to the action required to avoid/reduce this impact. For 
+advice in respect of answering the above questions, please contact uhsussex.equality@nhs.net 
+01273 664685). 
+
+ CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : CG13026 Epilepsy in Pregnancy Management v4.0 
+For use at : SRH & WH 
+ 
+ Page 20 of 21 
+Appendix 6: Template Dissemination, Implementation and Access Plan 
+ 
+To be completed and attached to any guideline when submitted to Corporate Governance for 
+consideration and TMB approval. 
+ 
+ Dissemination Plan Comments 
+1. Identify: 
+ Which members of staff or staff groups will be affected 
+by this guideline? Midwives and obstetricians 
+ How will you confirm that they have received the 
+guideline and understood its implications? Dissemination through the 
+usual Communication 
+channels and highlighted at 
+Safety Huddles. 
+ How have you linked the dissemination of the guideline 
+with induction training, continuous professional 
+development, and clinical supervision as appropriate? All new members of staff are 
+shown where to access 
+Clinical documents that are 
+relevant to their area of 
+practice. 
+2. How and where will staff access the document (at 
+operational level)? Accessed by staff via 
+Sharepoint 
+ 
+ Yes/No Comments 
+3. Have you made any plans to remove 
+old versions of the guideline or related 
+documents from circulation? Yes Previous versions will be 
+archived as part of the 
+uploading onto sharepoint 
+process. 
+4. Have you ensured staff are aware the 
+document is logged on the 
+organisation’s register? Yes Dissemination plan includes 
+notifying staff via email, safety 
+noticeboards, departmental 
+newsletter and social media. 
+ 
+ CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : CG13026 Epilepsy in Pregnancy Management v4.0 
+For use at : SRH & WH 
+ 
+ Page 21 of 21 
+Appendix 7: Additional guidance and information 
+
+RCOG (2016) Green -top Guideline No 68 Epilepsy in Pregnancy . 
+ 
+NICE (20 21) CG137 Epilepsy . 
+ 
+Nelson -Piercy, C. (Ed). 2015. Handbook of Obstetric Medicine – Fifth Edition. 
+ 
+Clinical Effectiveness Unit and Faculty of Sexual & Reproductive Healthcare Clinical Guidance. 
+2012. Drug Interactions with Hormonal Contraception. 
+ 
+MBRRACE -UK 2023 
+ 
+Feb 2021 https://www.gov.uk/guidance/valproate -use-by-women -and-girls 
+ 
+Healthcare Improvement Scotland (2018) SIGN 143: Diagnosis and management of epilepsy in 
+adults . 
+ 
+Valproate Pregnancy Prevention Programme: information for young girls taking Valproate (2019) 
+ 
+Valproate Pregnancy Prevention Programme (2020)

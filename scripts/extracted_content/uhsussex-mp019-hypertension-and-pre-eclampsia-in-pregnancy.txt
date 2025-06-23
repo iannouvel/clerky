@@ -1,0 +1,1348 @@
+# Extracted from: UHSussex - MP019 - Hypertension and Pre-eclampsia in Pregnancy.pdf
+# Guideline ID: uhsussex-mp019-hypertension-and-pre-eclampsia-in-pregnancy
+# Content length: 64113 characters
+# Processing date: 1741730445.2477455
+
+Hypertension and 
+preeclampsia in 
+pregnancy 
+
+Maternity Protocol: MP019 
+Date agreed: April 2022 
+
+Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 2 of 39 
+
+ Author: Win Khine 
+Version: 3 
+Approval Committee: Women’s Safety and Quality Committee 
+Date agreed: April 2022 
+Amended date: 
+Review date: April 2025 (MGC 2023) 
+Cross reference: MP001 Provision & Schedule of Antenatal Care 
+MP056 High Dependency Care (HDU) 
+ Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 3 of 39 
+ Contents 
+Key Principles: ................................ ................................ ................................ ....................... 6 
+Scope: ................................ ................................ ................................ ................................ ... 6 
+Responsibilities: ................................ ................................ ................................ .................... 6 
+Section 1 ................................ ................................ ................................ ............................... 7 
+1 Definitions ................................ ................................ ................................ .................. 7 
+1.1 Hypertension ................................ ................................ ................................ ................ 7 
+1.2 Pre-existing hypertension ................................ ................................ ........................... 7 
+1.3 Gestational hypertension ................................ ................................ ............................ 7 
+1.4 Pre-eclampsia ................................ ................................ ................................ ............... 7 
+1.5 Eclampsia ................................ ................................ ................................ ..................... 7 
+1.6 HELLP Syndrome ( Hemolysis, Elevated Liver enzymes, Low Platelets) ............... 7 
+1.7 Preeclampsia superimposed upon pre -existing hypertension ................................ . 8 
+Section 2: Hypertension ................................ ................................ ................................ ......... 8 
+2 Antenatal Management of Women/people with a Previous History of hypertensive 
+disease during pregnancy or at High Risk of Pre -Eclampsia ................................ ..................... 8 
+3 Antenatal referrals and management ................................ ................................ .......... 9 
+4 Referral / Management Guidance for Midwives in Antenatal Clinic Setting .................. 9 
+5 Management of chronic hypertension in pregnancy ................................ .................. 10 
+5.1 Pre-pregnancy advice ................................ ................................ ................................ 10 
+5.2 Treatment of chronic hypertension ................................ ................................ ......... 10 
+5.3 Antihypertensive Drugs ................................ ................................ ............................ 11 
+5.4 Antenatal appointments ................................ ................................ ............................ 11 
+5.5 Timing of birth ................................ ................................ ................................ .......... 11 
+5.6 Postnatal investigation, monitoring and treatment ................................ ................ 12 
+6 Management of Gestational Hypertension ................................ ................................ 12 
+6.2 Management of pregnancy with gestational hypertension ................................ .......... 12 
+6.3 Antihypertensive Drugs ................................ ................................ ............................ 14 
+6.4 Timing of birth ................................ ................................ ................................ .......... 14 
+6.5 Postnatal investigation, monitoring and treatment ................................ ................ 14 
+6.5.1 Measure blood pressure: ................................ ................................ ...................... 14 
+6.5.2 Continue antihypertensive treatment if required ................................ .................. 14 
+6.5.3 Write a care plan for postnatal community care that includes all of the following:
+ 15 
+7 Management of Pre -eclampsia ................................ ................................ .................. 15 Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 4 of 39 
+ 7.1 Assessing pre -eclampsia ................................ ................................ ............................ 15 
+7.2 Features of severe preeclampsia ................................ ................................ .............. 15 
+7.3 HELLP syndrome ................................ ................................ ................................ ..... 16 
+7.4 Management and treatment of pregnancy with pre -eclampsia ............................ 16 
+7.5 Offer labetalol to treat hypertension ................................ ................................ ............ 17 
+7.6 Offer nifedipine for women/people in whom labetalol is not suitable ........................ 17 
+7.7 Offer methyldopa if labetalol or nifedipine are not suitable ................................ ....... 17 
+8 Medical management of acute severe hypertension, severe pre -eclampsia or 
+eclampsia in a critical care setting ................................ ................................ ........................ 18 
+9 Acute management of severe hypertension ................................ ............................... 19 
+9.8 Contraindications ................................ ................................ ................................ ...... 21 
+9.9 Oral nifedipine – Second Line Treatment ................................ .............................. 21 
+9.10 Intravenous hydralazine – Third Line Treatment ................................ ............. 21 
+10 Corticosteroids for fetal lung maturation ................................ ................................ ... 22 
+11 Fluid balance and volume expansion ................................ ................................ ......... 22 
+12 CVP line ................................ ................................ ................................ .................... 22 
+13 Plan for Delivery ................................ ................................ ................................ ........ 24 
+14 Postnatal investigation, monitoring and treatment (including after discharge from 
+critical care) ................................ ................................ ................................ ........................ 27 
+15 Haematological and biochemical monitoring ................................ ............................. 28 
+Section 3: Fetal monitoring ................................ ................................ ................................ .. 29 
+15.6 Fetal monitoring in chronic hypertension ................................ ........................... 29 
+15.7 Fetal monitoring in gestational hypertension ................................ ..................... 29 
+15.8 Fetal monitoring in pre -eclampsia or severe gestational hypertension ............ 29 
+16 Women/people who need additional fetal monitoring ................................ .............. 30 
+17 Intrapartum care ................................ ................................ ................................ ....... 30 
+17.3 Blood pressure monitoring: ................................ ................................ .................. 31 
+17.4 Control of fluid balance ................................ ................................ ........................ 31 
+17.5 Haematological and biochemical monitoring ................................ ...................... 31 
+17.6 Care during epidural analgesia ................................ ................................ ............ 31 
+17.7 Management of second stage of labour ................................ ................................ 31 
+18 Antihypertensive treatment during the postnatal period, including during 
+breastfeeding ................................ ................................ ................................ ...................... 32 
+19 Advice and follow -up at transfer to community care ................................ .................. 33 Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 5 of 39 
+ 20 Reference ................................ ................................ ................................ .................. 35 
+21 Appendix ................................ ................................ ................................ .................. 36 
+Appendix A - How should the blood pressure (BP) be taken? ................................ ............... 36 
+Appendix B - CVP lines ................................ ................................ ................................ ......... 36 
+22 Appendix C: Flowchart demonstrating guidance / management advice for midwives 
+in community antenatal clinic settings ................................ ................................ ................. 38 
+Appendix D: Severe Pre -eclampsia proforma .............................. Error! Bookmark not defined. 
+Appendix E: VIP Scoring ................................ ................................ ................................ ....... 39 
+
+ Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 6 of 39 
+ Key Principles: 
+A protocol is a set of measurable, objective standards to determine a course of action. 
+Professional judgement may be used in the application of a protocol. 
+Scope: 
+This protocol applies to: 
+• All pregnant women/people with Hypertensive Disease 
+Responsibilities: 
+Midwives & Obstetricians: 
+• To access, read, understand and follow this guidance 
+• To use their professional judgement in application of this protocol 
+Management Team: 
+• To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations 
+• To ensure the protocol is accessible to all relevant staff 
+
+ Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 7 of 39 
+ Section 1 
+1 Definitions 
+1.1 Hypertension 
+ 
+Systolic over 140mmHg on two separate occasions (within same week) in 
+pregnancy (NB systolic of ≥150 requires immediate treatment and ≥180 is a 
+medical emergency - CMACE 2011) Diastolic over 90mmHg on two separate 
+occasions in pregnancy 
+1.2 Pre-existing hypertension 
+Women/people with hypertension at the booking appointment or before 
+20 weeks of pregnancy. 
+1.3 Gestational hypertension 
+New -onset hypertension presenting after 20 weeks of pregnancy. It can occur 
+in isolation, or in association with proteinuria when it is known as pre -
+eclampsia. 
+1.4 Pre-eclampsia 
+ 
+ Raised BP on 2 occasi ons at > 20/40 gestation with significant proteinuria. 
+Pre-eclampsia is a multisystem disorder that can affect almost all maternal 
+organ systems and the unborn baby. 
+Women/people with either pre -existing hypertension or gestational 
+hypertension are at increased risk of developing pre -eclampsia. 
+1.5 Eclampsia 
+Pre-eclampsia becomes eclampsia when the mother develops seizures. 
+1.6 HELLP Syndrome ( Hemolysis, Elevated Liver enzymes, Low Platelets) 
+It represents a subtype of preeclampsia with severe features in which 
+haemolysis, elevated liver enzymes, and thrombocytopenia are the predominant 
+features, rather than hypertension or central nervous system or renal 
+dysfunction, although the latter do occur. The majority of patients, but not all, 
+have hypertension (82 to 88 percent) and/or proteinuria (86 to 100 percent) Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 8 of 39 
+ 1.7 Preeclampsia superimposed upon pre -existing hypertension 
+Superimposed preeclampsia is defined by the new onset of proteinuria, 
+significant end -organ dysfunction, or both after 20 weeks of gestation in a 
+woman with pre -existing hypertension. 
+For women/people with pre -existing hypertension who have proteinuria prior to 
+or in early pregnancy, superimposed preeclampsia is defined by worsening or 
+resistant hypertension (especially acutely) in the last half of pregnancy or 
+development of signs/symptoms of the severe end of the disease spectrum. 
+Section 2 : Hypertension 
+2 Antenatal Management of Women/people with a Previous History 
+of hypertensive disease during pregnancy or at High Risk of Pre -
+Eclampsia 
+2.1 Risk assessment and Antiplatelet agent ( 150mg Asprin) 
+
+ Moderate 
+• First pregnancy 
+• Age ≥ 40 years 
+• Pregnancy interval 
+>10years 
+• BMI ≥ 35kgm2 at booking 
+• Family history of pre -
+eclampsia 
+• Multi -fetal pregnancy 
+ 
+High 
+• Hypertensive disease 
+during previous pregnancy 
+• Chronic kidney disease 
+• Autoimmune disease such 
+as systemic lupus 
+erythematosus or 
+antiphospholipid syndrome 
+• Type 1 or type 2 diabetes 
+• Chronic hypertension ≥2 moderate risk 
+factors or ≥1 high risk 
+factors 
+Asprin 150mg from 12 
+weeks until 36 weeks 
+in the evening 
+Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 9 of 39 
+
+2.2 Assessment of proteinuria in hypertensive disorders of pregnancy 
+2.2.1 If dipstick screening is positive (1+ or more), use protein: creatinine 
+ratio to quantify proteinuria in pregnant women/people . Do not use 
+first morning urine void to q uantify proteinuria in pregnant 
+women/ people. 
+2.2.2 Do not routinely use 24 -hour urine collection to quantify proteinuria in 
+pregnant women/ people. 
+2.2.3 Use protein creatinine ratio of 30 mg/mmol as a threshold for significant 
+proteinuria 
+If the result is 30 mg/mmol or above and there is still uncertainty about the 
+diagnosis of pre -eclampsia, consider re -testing on a new sample, alongside 
+clinical review. 
+3 Antenatal referrals and management 
+Women/people who are identified at the initial booking visit as being at high risk or 
+having more than one moderate risk factor, should be referred immediately to a 
+consultant -led antenatal clinic for further assessment. 
+They should be seen in the clinic as soon as possible after the initial visit, but by 20 weeks 
+gestation at the latest. 
+In the consultant -led clinic, an individualised plan of care will be made on a case -to-case 
+basis and documented in the handheld maternity notes, including a decision about the 
+need for antenatal aspirin 
+4 Referral / Management Guidance for Midwives in Antenatal Clinic 
+Setting 
+ 
+4.1 If a midwife has concerns about a BP they should ensure that the BP is taken 
+using a manual sphygmomanometer and an appropriate sized cuff. (Please see 
+Appendix A for information on how the BP should be taken) 
+4.2 Midwives can refer by directly contacting the DAU at either hospital site during 
+DAU opening hours; outside of these times e.g. weekends, the labour ward 
+coordinator on duty should be contacted to organise a review. 
+ 
+• Two BP readings within one week >140 mmHg systolic* 
+• Raised diastolic >90 mmHg Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 10 of 39 
+ • Significant proteinuria (++protein or more) with raised systolic / 
+diastolic 
+• Borderline systolic / diastolic + symptoms of PET +/ - proteinuria 
+• Significant proteinuria (++protein or more) and symptoms suggestive 
+of PET (oedema / frontal headache / epigastric pain / visual 
+disturbance ) 
+ 
+* in detecting a raised systolic >140mmHg on the first occasion 
+ 
+If no other concerns arrange for the woman to be seen within 1 week for repeat 
+BP measurement and urinalysis 
+ 
+• If there is +proteinuria send MSU 
+• If the repeat BP check is >140 mmHg again - then refer for obstetric 
+opinion 
+• If the repeat BP check is <140 mmHg and no other concerns then 
+return to routine follow up/ antenatal care See Appendix C for 
+flowchart for this process 
+5 Management of chronic hypertension in pregnancy 
+5.1 Pre-pregnancy advice 
+5.1.1 Offer women/people with chronic hypertension referral to a specialist 
+in hypertensive disorders of pregnancy to discuss the risks and benefits 
+of treatment. 
+5.1.2 Advise women/people who take angiotensin -converting enzyme (ACE) 
+inhibitors or angiotensin II receptor blockers (ARBs), that there is an 
+increased risk of congenital abnormalities if these dr ugs are taken 
+during pregnancy and discuss alternative antihypertensive treatment 
+5.1.3 Advise women/people who take thiazide or thiazide -like diuretics: that 
+there may be an increased risk of congenital abnormalities and 
+neonatal complications if these drugs are taken during pregnancy and 
+discuss alternative antihypertensive treatment 
+5.1.4 Stop antihypertensive treatment in women/people taking ACE 
+inhibitors or ARBs if they become pregnant (preferably within 2 working 
+days of notification of pregnancy) and offer alternatives as per 
+section5.3 . 
+5.2 Treatment of chronic hypertension 
+5.2.1 Offer pregnant women/people with chronic hypertension advice on: 
+• Weight management 
+• Exercise 
+• Healthy eating Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 11 of 39 
+ • Lowering t he amount of salt in their diet 
+5.2.2 Continue with existing antihypertensive treatment if safe in pregnancy, 
+or switch to an alternative treatment, unless: 
+• Sustained systolic blood pressure is <110 mmHg or 
+• Sustained diastolic blood pressure is < 70 mmHg or 
+• The woman has symptomatic hypotensio n 
+5.2.3 Offer antihypertensive treatment to pregnant women/people who have 
+chronic hypertension and who are not already on treatment if they 
+have: 
+• Sustained systolic blood pressure of 140 mmHg or higher 
+• Sustained diastolic bloo d pressure of 90 mmHg or higher 
+• Aim for a target blood pressure of 135/85 mmHg 
+5.3 Antihypertensive Drugs 
+5.3.1 Consider labetalol to treat chronic hypertension in pregnant 
+women/people 
+5.3.2 Consider nifedipine for women/people in who m labetalol is not suitable 
+5.3.3 Consider Methyldopa if both labetalol and nifedipine are not suitable 
+Base the choice on any pre -existing treatment, side -effect profiles, risks and 
+the woman's preference. 
+5.4 Antenatal appointments 
+5.4.1 Weekly appointments if hypertension is poorly controlled 
+5.4.2 Appointments every 2 to 4 weeks if hypertension is within target blood 
+pressure 135/85. 
+5.5 Timing of birth 
+5.5.1 Do not offer planned early birth before 37 weeks to women/people 
+with chronic hypertension whose blood pressure is lower than 
+160/110 mmHg, with or without antihypertensive treatment, unless 
+there are other medical indications or fetal growth restriction. 
+5.5.2 For women/ people with chronic hypertension whose blood pressure is 
+lower than 160/110 mmHg with or without antihypertensive treatment 
+timing of birth should be agreed after 37 weeks between the woman 
+and the senior obstetrician. 
+ Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 12 of 39 
+ 5.5.3 If planned early birth is necessary offer a course of antenatal 
+corticosteroids and magnesium sulphate if indicated, in line with the 
+guideline on preterm labour and birth . 
+5.6 Postnatal investigation, monitoring and treatment 
+5.6.1 Measure blood pressure: 
+• Daily for the first 2 days after birth 
+• At least once between day 3 and day 5 after birth 
+• As clinically indicated if antihypertensive tr eatment is changed after 
+birth 
+• Aim to keep blood pressure lower than 140/90 mmHg 
+• Continue antihypertensive treatment, if required 
+• If a woman has taken methyldopa to treat chronic hypertension 
+during pregnancy, stop within 2 days after the birth and change to 
+an alternative antihyperte nsive. Methyl dopa can cause postnatal 
+depression 
+• Offer a review of antihypertensive treatment 2 weeks after the 
+birth, with their GP or specialist. 
+• Offer a medical review 6 –8 weeks after the birth with their GP or 
+specialist as appropriate. 
+6 Management of Gestational Hypertension 
+6.1.1 A full assessment should be carried out in a secondary care setting by a 
+healthcare professional that is trained in the management of 
+hypertensive disorders of pregnancy. 
+6.1.2 Reassessment of Asprin requirement require Section 2 : 2 
+6.1.3 In women/people with gestational hypertension, take account of the 
+following risk factors that require additional assessment and follow -up: 
+• Nulliparity 
+• Age 40 years or older 
+• Pregnancy interval of more than 10 years 
+• Family history of pre -eclampsia 
+• Multi-fetal pregnancy 
+• BMI of 35 kg/m2 or more 
+• Gestational age at presentation 
+• Previous history of pre -eclampsia or gestational hypertension 
+• Pre-existing vascular disease 
+• Pre-existing kidney disease 
+6.2 Management of pregnancy with gestational hypertension 
+ 
+Degree of hypertension Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 13 of 39 
+ 
+Hypertension: 
+blood pressure of 140/90 –
+159/109 mmHg Severe hypertension: 
+blood pressure of 160/110 mmHg or 
+more 
+Admission to hospital Do not routinely admit to hospital Admit, but if BP falls below 
+160/110 mmHg then manage as for 
+hypertension 
+Antihypertensive 
+pharmacological 
+treatment Offer pharmacological treatment if 
+BP remains above 140/90 mmHg Offer pharmacological treatment to all 
+women/people 
+Target blood pressure 
+once on 
+antihypertensive 
+treatment Aim for BP of 135/85 mmHg or less Aim for BP of 135/85 mmHg or less 
+Blood pressure 
+measurement Once or twice a week (depending 
+on BP) until BP is 135/85 mmHg or 
+less Every 15 –30 minutes until BP is less 
+than 160/110 mmHg 
+Dipstick proteinuria 
+testing Once or twice a week (with BP 
+measurement) Daily while admitted 
+Blood tests Measure full blood count, liver 
+function and renal function at 
+presentation and then weekly Measure full blood count, liver 
+function and renal function at 
+presentation and then weekly 
+Fetal assessment Offer fetal heart auscultation at 
+every antenatal appointment 
+Carry out ultrasound assessment 
+of the fetus at diagnosis and, if 
+normal, repeat every 2 to 4 weeks, 
+if clinically indicated 
+Carry out a CTG only if clinically 
+indicated 
+Offer fetal heart auscultation at every 
+antenatal appointment 
+Carry out ultrasound assessment of 
+the fetus at diagnosis and, if normal, 
+repeat every 2 weeks, if severe 
+hypertension persists 
+Carry out a CTG at diagnosis and then 
+only if clinically indicated 
+ Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 14 of 39 
+ 6.3 Antihypertensive Drugs 
+6.3.1 Consider labetalol to treat gestational hypertension 
+6.3.2 Consider nifedipine for whom labet alol is not suitable 
+6.3.3 Consider methyldopa if labetalol or nifedipine are not suitable 
+Base the choice on side -effect profiles, risk (including fetal effects) and 
+the woman's preferences. 
+6.4 Timing of birth 
+6.4.1 Do not offer planned early birth before 37 weeks to women/people 
+with gestational hypertension whose blood pressure is lower than 
+160/110 mmHg, unless there are other medical indications or fetal 
+growth restriction 
+6.4.2 For women/people with gestational hypertension whose blood 
+pressure is lower than 160/110 mmHg after 37 weeks, timing of birth 
+should be agreed between the woman and the senior obstetrician 
+ 
+6.4.3 If planned early birth is necessary offer a course of antenatal 
+corticosteroids and magnesium sulphate if indicated , in line with the 
+guideline MP031 preterm labour and birth 
+6.5 Postnatal investigation, monitoring and treatment 
+6.5.1 Measure blood pressure: 
+• Daily for the first 2 days after birth 
+• At least once between day 3 and day 5 after birth 
+• As clinically indicated if antihypertensive tr eatment is changed 
+after birth 
+• Neonatal Hypoglycaemia Pathway required if has been on 
+antenatal Beta –blockers MP069 Care of Newborn immediately after 
+Birth 
+6.5.2 Continue antihypertensive treatment if required 
+• Advise women/people that the duration of their postnatal 
+antihypertensive treatment will usually be similar to the duration 
+of their antenatal treatment (but may be longer) 
+• Reduce antihypertensive treatment if their blood pressure falls 
+below 130/80 mmHg . 
+• If a woman has taken methyldopa to treat gestational 
+hypertension, stop within 2 days after the birth and change to an 
+alternative treatment if necessary Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 15 of 39 
+ • Please see antihypertensive treatment during the postnatal 
+period, including during breastfeeding 
+• For women/people with gestational hypertension who did not 
+take antihypertensive treatment and have given birth, start 
+antihypertensive treatment if their blood pre ssure is 
+150/100 mmHg or higher 
+6.5.3 Write a care plan for postnatal community care that includes all of the 
+following: 
+• Who will provide follow -up care, including medical review if 
+needed 
+• Frequency of blood pressure monitoring needed 
+• Thresholds for reducing or stopping treatment 
+• Indications for referral to primary care for blood pressure 
+review. 
+6.5.4 Offer women/people who have had gestational hypertension and who 
+remain on antihypertensive treatment, a medical review with their GP 
+or specialist 2 weeks after transfer to community care. 
+6.5.5 Offer all women/people who have had gestational hypertension a 
+medical review with their GP or specialist 6 –8 weeks after the birth. 
+ 
+7 Management of Pre -eclampsia 
+7.1 Assessing pre -eclampsia 
+7.1.1 Assessment of women/people with pre -eclampsia should be performed 
+by a healthcare professional trained in the management of 
+hype rtensive disorders of pregnancy 
+7.1.2 Carry out a full clinical assessment at each antenatal appointme nt for 
+women/people with pre -eclampsia 
+7.1.3 Offer admission to hospital for surveillance and any interventions 
+needed if there are concerns for the wellbeing of the woman or baby 
+7.2 Features of severe preeclampsia 
+ Concerns could include any of the following: (Features of severe disease) Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 16 of 39 
+ 7.2.1 Sustained systolic blood pressure of 160 mmHg or higher 
+7.2.2 Any maternal biochemical or haematological investigations that cause 
+concern for example, a new and persistent: 
+7.2.2.1 Rise in creatinine (90 micromol/litre or more, 1 mg/100 ml or 
+more) or 
+7.2.2.2 Rise in alanine transaminase (over 70 IU/litre, or twice upper 
+limit of normal range) or 
+7.2.2.3 Fall in platelet count (under 150,000/microlitre) 
+7.3 HELLP syndrome 
+ 
+Signs of impending eclampsia (severe headache, visual disturbance, epigastric 
+pain/vomiting, Papilloedema, clonus, liver tenderness) 
+• Signs of impending pulmonary oedema 
+• Other signs of severe pre -eclampsia 
+• Suspected fetal compromise 
+• Any other clinical signs that cause concern 
+7.4 Management and treatment of pregnancy with pre -eclampsia 
+ 
+ Degree of hypertension 
+ Hypertension: 
+blood pressure of 140/90 –
+159/109 mmHg Severe hypertension: 
+blood pressure of 160/110 mmHg 
+or more 
+Admission to hospital Admit if any clinical concerns 
+for the wellbeing of the woman 
+or baby Admit, but if BP falls below 
+160/110 mmHg then manage as for 
+hypertension 
+Antihypertensive 
+pharmacological 
+treatment Offer pharmacological 
+treatment if BP remains above 
+140/90 mmHg Offer pharmacological treatment to 
+all women/people 
+Target blood pressure 
+once on 
+antihypertensive 
+treatment Aim for BP of 135/85 mmHg or 
+less Aim for BP of 135/85 mmHg or less 
+Blood pressure 
+measurement At least every 48 hours, and 
+more frequently if the woman 
+is admitted to hospital Every 15 –30 minutes until BP is less 
+than 160/110 mmHg, then at least 
+4 times daily while the woman is an 
+inpatient, depending on clinical 
+circumstances 
+Dipstick proteinuria Only repeat if clinically Only repeat if clinically indicated, Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 17 of 39 
+ testing a indicated, for example, if new 
+symptoms and signs develop or 
+if there is uncertainty over 
+diagnosis for example, if new symptoms and 
+signs develop or if there is 
+uncertainty over diagnosis 
+Blood tests Measure full blood count, liver 
+function and renal function 
+twice a week Measure full blood count, liver 
+function and renal function 3 times 
+a week 
+Fetal assessment Offer fetal heart auscultation at 
+every antenatal appointment 
+Carry out ultrasound 
+assessment of the fetus at 
+diagnosis and, if normal, repeat 
+every 2 weeks 
+Carry out a CTG at diagnosis 
+and then only if clinically 
+indicated 
+ Offer fetal heart auscultation at 
+every antenatal appointment 
+Carry out ultrasound assessment of 
+the fetus at diagnosis and, if normal, 
+repeat every 2 weeks 
+Carry out a CTG at diagnosis and 
+then only if clinically indicated 
+ 
+7.5 Offer labe talol to treat hypertension 
+7.6 Offer nifedipine for women/people in whom labetalol is not suitable 
+7.7 Offer methyldopa if labetalol or nifedipine are not suitable 
+Base the choice on any pre -existing treatment, side -effect profiles, risks 
+(including fetal effe cts) and the woman's preference Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 18 of 39 
+ 8 Medical management of acute severe hypertension, severe pre -
+eclampsia or eclampsia in a critical care setting 
+8.1 Women/people with these condition should be managed in a hig h dependency 
+unit environment ( on th e delivery suite if undelivered ) 
+8.2 Consultant on call must involve in the management and attend in person during 
+out of hours when registrar on call is requesting for help 
+8.3 Anticonvulsants in severe pre -eclampsia or eclampsia 
+8.3.1 If a woman in a critical care setting who has severe hypertension or 
+severe pre -eclampsia or previously had an eclamptic fit, give 
+intravenous magnesium sulphate . 
+8.3.2 Magnesium sulphate is never a substitute for prompt initiation of 
+antihypertensive treatment of severe hypertension as it has minimal 
+effects on blood pressure. 
+8.3.3 Consider prophylactic magnesium sulphate treatment, if one or more of 
+the following features of severe pre -eclampsia is present: 
+• Continue signs of cerebral irritation - ongoing or recurring 
+severe headaches, agitation and clonus or drowsiness, visual 
+scotomata , nausea or vomiting 
+• Epigastric pain 
+• Severe hypertension 
+• Progressive deterioration in laboratory blood tests (such as 
+rising creatinine or liver transaminases, or falling platelet 
+count). 
+8.3.4 A loading dose of 4g should be given intravenously over 5 minutes, 
+followed by an infusion of 1 g/hour maintained for 24 hours after 
+delivery or after the last seizure. 
+ 
+8.4 Doses of magnesium sulphate 
+ 
+Loading Dose Maintenance Dose 
+4g Magnesuim Sulphate (8mls of 50% 
+solution) 
+ 
+Mixed with 12 ml sodium chloride for 
+injections 
+
+I.V. over 5 mins 10g Magnesuim Sulphate (20mls) 
+ 
+Mixed with 30mls sodium chloride for 
+injection to total volume 50ml 
+ 
+Infusion to run at a rate of 5mls/hour 
+(1g/hour) Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 19 of 39 
+ 8.5 Recurrent fits should be treated with a further dose of 2 –4 g given intravenously 
+over 5 to 15 minutes. 
+8.6 Side effects of parenteral magnesium sulphate include neuromuscular blockage 
+or loss of tendon reflexes , double vision and slurred speech, respiratory 
+depression and cardiac ar rest. 
+8.7 Observations at least hourly or as per Obstectric Care plan. 
+8.7.1 Hourly of the following: 
+• Pulse Oximetry 
+• Urine output 
+• Respiratory rate 
+• Deep Tendon Reflexes 
+8.7.2 If the following have been achieved after the first four hours following 
+commencement of Magnesuim Sulphate you can chan ge the frequency 
+to four hourly: 
+• Bicep reflexs present 
+• Respiratory rate >12 
+• Urine output >100ml previous 4 hrs; 97% magnesium is excreted in 
+urine; presence of oliguria can lead to toxic levels 
+8.8 If the woman is oliguric, has liver function impairment or acute kidney injury or 
+has further convulsion, serum magnesium sulpha te levels should be monitored 
+(therapeutic range 2 – 4 mmol/L ). 
+8.9 Magnesuim Sulphate regime if in AKI: 
+ 
+Loading Dose Maintenance Dose 
+4g Magnesuim Sulphate (8mls of 50% 
+solution) 
+ 
+Mixed with 12 ml sodium chloride for 
+injections 
+
+I.V. over 5 mins 10g Magnesuim Sulphate (20mls) 
+ 
+Mixed with 30mls sodium chloride for 
+injection to total volume 50ml 
+ 
+Infusion to run at a rate of 2.5 mls/hour 
+(1g/hour) 
+ 
+8.10 Do not use diazepam, phenytoin or other anticonvulsants as an alternative to 
+magnesium sulphate in women/people with eclampsia. 
+9 Acute management of severe hypertension 
+(Blood pressure of 160/110 mmHg or MAP 125 or more is obstetric emergenc y) 
+MAP = Diastolic BP + 1/3 ( Systolic BP – Diastolic BP ) Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 20 of 39 
+ 9.1 Treat women/ people with above BP or MAP during pregnancy or after birth 
+immediately with one of the following: 
+Labetalol infusion: - First Line Treatment 
+Intravenous labetalol should be used for first-line therapy because it is effective, 
+has a rapid onset of action, and a good safety profile. If the woman can tolerate 
+oral therapy initial 200mg dose can be given immediately whilst gaining venous 
+access for IV labetalol: 
+ 
+9.2 The fall in blood pressure begins within 5 to 10 minutes and lasts from 3 to 6 
+hours. Continuous cardiac monitoring is not necessary routinely, but should be 
+used in patients with relevant co -morbidities (eg, coronary artery disease). 
+9.3 Cumulative maximum dose is 300 mg. If target BP is not achieved, sw itch to 
+another class of agent. 
+Alternatively 
+9.4 A continuous IV infusion of 0.5 to 2 mg/minute can be started after initial 20 mg 
+IV dose instead of intermittent therapy. 
+9.5 Adjust dose within this range to achieve target blood pressure. 
+ Step 1 Begin with 20mg intravenously over 2 minutes (given as 4mls labetalol: 5mg/ml) 
+Step 2 If BP remains above target level at 10 minutes , give 40mg IV over 2 minutes 
+Step 3 If BP remains above target level at 20 minutes , give 80mg IV over 2 minutes 
+Step 4 If BP remains above target level at 30 minutes , give 80mg IV over 2 minutes 
+Step 5 If BP remains above target level at 40 minutes , give 80mg IV over 2 minutes 
+Step 1 Infusion of (neat) labetalol via syringe pump at 5mg/ml starting rate of 4ml/hr or 
+20mg/hr 
+Step 2 If BP remains above target level at 30 minutes increase to 40mg/hr 
+Step 3 If BP remains above target level at 30 minutes increase to 80mg/hr 
+Step 4 If BP remains above target level at 30 minutes increase to 160mg/hr (maximum 
+dose) Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 21 of 39 
+ 9.6 Cumulative maximum dose is 300 mg. If target BP is not achieved, switch to 
+another class of agent. 
+9.7 Note - Although manufacturer's labelling recommends against exceeding a 300 
+mg cumulative dose (intermitt ent IV and continuous infusion) it may be 
+reasonable to exceed this threshold in closely monitored patients who are 
+responding. 
+9.8 Contraindications 
+9.8.1 Labetalol is contra -indicated in patients with a history of oral steroid 
+dependent asthma or obstructive airways disease. Oral nifedipine 
+would be the drug of choice in these women/people . In mild asthma 
+(i.e. defined as not requiring regular or steroid based oral medication), 
+labetalol may be used with caution and attention paid to th e 
+development of bronchospasm. 
+ 
+9.9 Oral nifedipine – Second Line Treatment 
+ 
+9.9.1 Caution - In most cases, use of immediate -release oral nifedipine will 
+be safe and well tolerated; however, there is a risk of an acute, 
+precipitous fall in blood pressure, which may result in a reduction in 
+uteroplacental perfusion. The shorter acting preparations of nifedipine 
+are also associated with a higher incidence of headache and 
+tachycardia. 
+9.9.2 Nifidipine used in conjunction with Magnisium sulphate may cause 
+profound hypotension. 
+ 
+9.10 Intravenous hydralazine – Third Line Treatment 
+Adequate reduction of blood pressure is less predictable than with IV labetalol 
+ 
+Step 1 5 mg IV gradually over 1 to 2 minutes 
+Step 2 If BP remains above target level at 20 minutes, give 5 or 10mg IV over 2 minutes, 
+depending on the initial response 
+Step 3 If BP remains above target level at 40 minutes, give 5 or 10mg IV over 2 minutes, Step 1 Immediate release nifedipine 10mg orally 
+Step 2 If target BP not achieved after 20 minutes administer 10 -20mg depending on initial 
+response 
+Step 3 If target BP not achieved after further 20 minutes administer 10 -20mg depending on 
+previous response 
+Step 4 If target BP not achieved after further 20 minutes switch to another agent Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 22 of 39 
+ depending on the initial response 
+Step 4 If BP remains above target level at 6 0 minutes, give 10 mg IV over 2 minutes, depending 
+on the previous response 
+ Cumulative maximum dose is 30 mg 
+9.11 Consider using up to 500 ml crystalloid fluid before or at the same time as the 
+first dose of intravenous hydralazine in the antenatal period. 
+9.12 If target BP is not achieved, switch to another class of agent. 
+9.13 In women/people with severe hypertension who are in critical care, monitor 
+their response to treatment: 
+9.13.1 To ensure that their blood pressure falls 
+9.13.2 To identify adverse effects for both the woman and the baby 
+9.13.3 To modify t reatment according to response 
+ 
+10 Corticosteroids for fetal lung maturation 
+10.1 If early birth is considered likely within 7 days in women/people with pre -
+eclampsia, offer a course of antenatal corticosteroids in line with the NICE 
+guideline on preterm labour and birth . 
+10.2 Corticosteroids to manage HELLP syndrome 
+Do not use dexamethasone or betamethasone for the treatment of HELLP 
+syndrome . 
+11 Fluid balance and volume expansion 
+ 
+Do not use volume expansion in women/people with severe pre -eclampsia unless 
+hydralazine is the antenatal antihypertensive 
+11.1 In women/people with severe pre -eclampsia, limit maintenance fluids to 
+80 ml/hour unless there are other ongoing fluid losses (for example, 
+haemorrhage). 
+11.2 The woman should have an indwelling urinary catheter with an hourly urometer 
+attached hourly fluid balance should be clearly documented on a fluid balance 
+chart 
+12 CVP line 
+12.1 Should be considered if: 
+• oliguria persists despite management with fluid challenges 
+• serum albumin <20 
+• any suspicion of HELLP syndrome : Liaise with the anaesthetist Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 23 of 39 
+ 12.2 Referral to critical care : 
+Refer women/people with severe hypertension or severe pre -eclampsia to the 
+appropriate critical care setting using the criteria in table 4. 
+12.3 Clinical criteria for choice of critical care level 
+ 
+Level 3 care Severe pre -eclampsia and needing ventilation 
+Level 2 care Step -down from level 3 or severe pre -eclampsia with any of the following 
+complications: 
+• eclampsia 
+• HELLP syndrome 
+• haemorrhage 
+• hyperkalaemia 
+• severe oliguria 
+• coagulation support 
+• intravenous antihypertensive treatment 
+• initial stabilisation of severe hypertension 
+• evidence of cardiac failure 
+• abnormal neurology 
+Level 1 care Pre-eclampsia with hypertension 
+Ongoing conservative antenatal management of severe preterm 
+hypertension 
+Step -down treatment after the birth 
+ Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 24 of 39 
+ 13 Plan for Delivery 
+13.1 Involve a senior obstetrician in any decisions on timing of birth for 
+women/people with pre -eclampsia. 
+13.2 Discuss with the anaesthetic team if birth is planned in a woman with severe 
+pre-eclampsia. 
+13.3 Discuss with the neonatal team if birth is planned in a woman with pre -
+eclampsia, and neonatal complications are anticipated. 
+13.4 Caesarean section versus induction of labour 
+Choose mode of birth for women/people with severe hypertension, severe pre -
+eclampsi a or eclampsia according 
+• clinical circumstances 
+• gestational age 
+• fetal condition 
+• woman s/persons preference Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 25 of 39 
+ 13.5 Decision regarding the timing of delivery as the only cure for pre – eclampsia is 
+delivery 
+13.5.1 This should not be attempted before adequate control of BP, 
+coagulopathy; eclamptic seizues and haemodynamic stability are 
+achieved. 
+13.5.2 To avoid neonatal deaths or long term complications from prematurity 
+it is customary to try and prolong the pregnancy with expectant 
+management. This often not possible for more than a few weeks and in 
+severe cases only hours or days may be gained. 
+13.5.3 On average, most women/people with pre eclampsia require delivery 
+within 2 weeks from the time of diagnosis. 
+13.5.4 Threshold for considering planned early birth could include (but are not 
+limited to) any of the following knowm features of servere pre -
+eclampsia: 
+13.5.4.1 Inability to control maternal blood pressure despite using 3 or 
+more classes of antihypertensives in appropriate doses 
+13.5.4.2 Maternal pulse oximetry less than 90% 
+13.5.4.3 Progressive deterioration in liver function, renal function, 
+haemolysis, or platelet count 
+13.5.4.4 Ongoing neurological features, such as severe intractable 
+headache, repeated visual scotomata, or eclampsia 
+13.5.4.5 Placental abruption 
+13.5.4.6 Reversed end -diastolic flow in the umbilical artery doppler 
+velocimetry, a non -reassuring cardiotocograph, or stillbirth 
+13.5.4.7 Other features not listed above may also be considered in the 
+decision to plan early birth 
+13.6 Timing of birth in women/people with pre -eclampsia 
+ 
+Weeks of 
+pregnancy Timing of birth 
+Pre-viable 
+gestational 
+age If a woman develops preeclampsia with severe features as above before fetal 
+viability, 
+offer termination of pregnancy is an option Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 26 of 39 
+ to reduce the mother's risk of developing life -threatening morbidity 
+(eg, cerebrovascular haemorrhage) or death 
+to prevent the birth of an infant at the limit of viability and thus at high risk of 
+death or severe permanent disability. 
+Before 
+34 weeks Continue surveillance unless there are indications for planned early birth. Offer 
+intravenous magnesium sulphate and a course of antenatal corticosteroids in line 
+with the NICE guideline on preterm labour and birth . 
+From 34 to 
+36 +6weeks Continue surveillance unless there are indications for planned early birth. 
+When considering the option of planned early birth, tak e into account the 
+woman's and baby's condition, risk factors (such as maternal comorbidities, 
+multi -fetal pregnancy) and availability of neonatal unit beds. 
+Consider a course of antenatal corticosteroids in line with the NI CE guideline on 
+preterm labour and birth. 
+37 weeks 
+onwards Initiate birth within 24 –48 hours. 
+ Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 27 of 39 
+ 14 Postnatal investigation, monitoring and treatment (including after 
+discharge from critical care) 
+ Blood pressure control 
+14.1 In women/people with pre -eclampsia who did not take antihypertensive 
+treatment and have given birth, measure blood pressure: 
+14.1.1 At least 4 times a day while the woman is an inpatient 
+14.1.2 At least once between day 3 and day 5 after birth 
+14.1.3 On alternate days until normal, if blood pressure was abnormal on 
+days 3–5. 
+14.2 In women/people with pre -eclampsia who did not take antihypertensive 
+treatment and have given birth, start antihypertensive treatment if blood 
+pressure is 150/100 mmHg or higher. 
+14.3 In women/people who had pre -eclampsia ask: 
+14.3.1 about severe headache and epigastric pain each t ime blood pressure is 
+measured. 
+14.3.2 In women/people with pre -eclampsia who took antihypertensive 
+treatment and have given birth, 
+14.4 Measure blood pressure: 
+14.4.1 At least 4 times a day while the woman is an inpatient 
+14.4.2 Every 1 –2 days for up to 2 weeks after transfer to community care until 
+the woman is off treatment and has no hypertension. 
+14.4.3 Continue antihypertensive treatment (see section 19 for choice of 
+antihypertensive during the postnatal period) 
+14.4.4 Consider reducing antihypertensive treatment if their blood pressure 
+falls below 140/90 mmHg 
+14.4.5 Reduce antihypertensive treatment if their blood pressure falls below 
+130/80 mmHg. 
+14.4.6 If a woman has taken methyldopa to treat pre -eclampsia, stop within 
+2 days after the birth and change to an alternative treatment if 
+necessary (see section 19 for choice of antihypertensive during the 
+postnatal period). As Methyldopa can be associated with postnatal 
+depression. 
+14.4.7 Offer women/people with pre -eclampsia who have given birth transfer 
+to community care if all of the following criteria have been met: Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 28 of 39 
+ 14.4.7.1 There are no symptoms of pre -eclampsia 
+14.4.7.2 Blood pressure, with or without treatment, is 150/100 mmHg 
+or less 
+14.4.7.3 Blood test results are stable or improving. 
+14.5 Write a care plan for women/people with pre -eclampsia who have given birth 
+and are being transferred to community care that includes all of the following: 
+14.5.1 Who will provide follow -up care, including medical review if needed 
+14.5.2 Frequency of blood pressure monitoring 
+14.5.3 Thresholds for reducing or stopping treatment 
+14.5.4 Indications for referral to primary care for blood pressure review 
+14.5.5 Self-monitoring for symptoms 
+14.6 Offer women/people who have had pre -eclampsia and who remain on 
+antihypertensive treatment, a medical review with their GP or specialist 2 weeks 
+after transfer to community care. 
+14.7 Offer all women/people who have had pre -eclampsia a medical review with 
+their GP or specialist 6 –8 weeks after the birth. 
+ 
+15 Haematological and biochemical monitoring 
+15.1 In women/people who have pre -eclampsia with mild or moderate hypertension, 
+or after step -down from critical care: 
+15.1.1 Measure platelet count, transaminases and serum creatinine 48 –
+72 hours after birth or step -down 
+15.1.2 Do not repeat platelet count, transaminases or serum creatinine 
+measurements if results are normal at 48 –72 hours. 
+15.2 If biochemical and haematological indices are outside the reference range in 
+women/people with pre -eclampsia who have given birth, repeat platelet count, 
+transaminases and serum creatinine measurements as clinically indicated until 
+results return to normal. 
+15.3 In women/people with pre -eclampsia who have given birth, carry out a urinary 
+reagent -strip test 6 –8 weeks after the birth. 
+15.4 Offer women/people who had pre -eclampsia and still have proteinuria (1+ or 
+more) at 6 –8 weeks after the birth, a further review with their GP or specialist at 
+3 months after the birth to assess kidney function. 
+ Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 29 of 39 
+ 15.5 Consider referring women/people with an abnormal kidney function assessment 
+at 3 months for a specialist kidney assessment in line with the NICE guideline on 
+chronic kidney disease in adults . 
+Section 3: Fetal monitoring 
+15.6 Fetal monitoring in chronic hypertension 
+15.6.1 In women/people with chronic hypertension, carry out an ultrasound 
+for fetal growth and amniotic fluid volume assessment, and umbilical 
+artery doppler velocimetry at 30 and 34 weeks . 
+15.6.2 In women/people with chronic hypertension, only carry out 
+cardiotocography if clinically indicated. 
+ 
+15.7 Fetal monitoring in gestational hypertension 
+15.7.1 In women/people with gestati onal hypertension, carry out an 
+ultrasound for fetal growth and amniotic fluid volume assessment and 
+umbilical artery doppler velocimetry at diagnosis and if normal repeat 
+every 2 to 4 weeks, if clinically indicated. 
+15.7.2 In women/people with gestational hypertension, only carry out 
+cardiotocography if clinically indicated. 
+ 
+15.8 Fetal monitoring in pre -eclampsia or severe gestational hypertension 
+15.8.1 Carry out cardiotocography at diagnosis of pre -eclampsia or severe 
+gestational hypertension. 
+15.8.2 If conservative management of pre -eclampsia or severe gestational 
+hypertension is planned, carry out all the following tests at diagnosis: 
+15.8.2.1 Ultrasound for fetal growth and amniotic fluid volume 
+assessment 
+15.8.2.2 Umbilical artery doppler velocimetry 
+15.8.3 If the results of all fetal monitoring are normal in women/people with 
+pre-eclampsia or severe gestational hypertension, do not routinely 
+repeat cardiotocography unless clinically indicated. 
+15.8.4 In women/people with pre -eclampsia or severe gestational 
+hypertension, repeat cardiotocography if any of the following occur: 
+15.8.4.1 The woman reports a change in fetal movement 
+15.8.4.2 Vaginal bleeding 
+ Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 30 of 39 
+ 15.8.4.3 Abdominal pain 
+15.8.4.4 Deter ioration in maternal condition 
+15.8.5 n women/people with pre -eclampsia or severe gestational 
+hypertension, repeat ultrasound for fetal growth and amniotic fluid 
+volume assessment or umbilical artery doppler velocimetry every 
+2 weeks, with subsequent surveillance and monitoring determined by 
+the findings of these scans. 
+15.8.6 For women/people with pre -eclampsia or severe gestational 
+hypertension, write a care plan that includes all of the following: 
+15.8.6.1 The timing and nature of future fetal monitoring 
+15.8.6.2 Fetal indications for birth and if and when antenatal 
+corticosteroids should be given 
+15.8.6.3 Plans for discussion with neonatal paediatrici ans and obstetric 
+anaesthetists 
+16 Women/people who need additional fetal monitoring 
+16.1 Carry out an ultrasound for fetal growth and amniotic fluid volume assessment 
+and umbilical artery doppler velocimetry starting at between 28 and 30 weeks 
+(or at least 2 weeks before previous gestational age of onset if earlier than 
+28 weeks) and repeating 4 weeks later in women/people with previous: 
+16.1.1 Severe pre -eclampsia 
+16.1.2 Pre-eclampsia that resulted in birth before 34 weeks 
+16.1.3 Pre-eclampsia with a baby whose birth weight was less than the 
+10th centile 
+16.1.4 Intrauterine death 
+16.1.5 Placental abruption 
+16.2 In women/people who need additional fetal monitoring as above, carry out 
+cardiotocography only if clinically indicated. 
+ 
+17 Intrapartum care 
+17.1 Give advice and treatment to women/ people in line with the NICE guideline on 
+intrapartum care , unless there are recommendations in this guideline on the 
+same topic. Offer care in accordance with the NICE guideline on intrapartum 
+care for women/people with hypertension whether treated or untreated, and 
+not just on the basis of blood pressure in labour. 
+ Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 31 of 39 
+ 17.2 Give women/people with chronic hypertension advice and care in line with the 
+NICE guideline on intrapartum care for women/people with existing medical 
+conditions or obstetric complications and their babies . 
+17.3 Blood pressure monitoring: 
+17.3.1 Hourly 
+17.3.2 Every 15 –30 minutes if blood pressure greater 160/110 mmHg 
+17.3.3 Continue use of antenatal antihyper tensive 
+17.4 Control of fluid balance 
+17.4.1 The woman should have an indwelling urinary catheter with an hourly 
+urometer attached 
+17.4.2 Total fluid input should be restricted to 80mls/hour (or 1ml/kg/hour) 
+17.4.3 Hourly fluid balance should be clearly documented on a fluid balance 
+chart 
+17.4.4 if oliguric (< 20mls/hour) for more than 6 hours, give a fluid challenge 
+with 250mls colloid over 20 mins and check U&Es 
+17.4.5 If oliguria persists for further 30 mins after fluid challenge, commence 
+maintenance Hartmann’s infusion of 1ml/kg/hour, monitoring carefully 
+for signs of pulmonary oedema (tachypnoea, basal crackles or falling O 2 
+sats) 
+17.5 Haematological and biochemical monitoring 
+17.5.1 Determine the need for haematological and biochemical tests using the 
+same criteria as in the antenatal period even if regional analgesia is 
+being considered 
+17.6 Care during epidural analgesia 
+17.6.1 Do not preload women/people who have severe pre -eclampsia with 
+intravenous fluids before establishing low -dose epidural analgesia or 
+combined spinal epidural analgesia. 
+17.7 Management of second stage of labour 
+17.7.1 Do not routinely limit the duration of the second stage of labour in 
+women/people with controlled hypertension. 
+17.7.2 Consider operative or assisted birth in the second stage of labour for 
+women/people with severe hypertension whose hypertension has not 
+responded to initial treatment. 
+ Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 32 of 39 
+ 18 Antihypertensive treatment during the postnatal period, including 
+during breastfeeding bsuh.medicines.information@nhs.net 
+18.1.1 Explain to women/people who wish to breastfeed that: 
+18.1.1.1 Antihypertensive medicines can pass into breast milk 
+18.1.1.2 Most antihypertensive medicines taken while breastfeeding 
+only lead to very low levels in breast milk, so the amounts 
+taken in by babies are very small and would be unlikely to have 
+any clinical effect 
+18.1.1.3 Most medicines are not tested in pregnant or breastfeeding 
+women/people, so disclaimers in the manufacturer's 
+information are not because of any specific safety concerns or 
+evidence of harm. 
+18.1.1.4 Make decisions on treatment together with the woman, based 
+on her preferences. 
+18.1.1.5 When discharged home, advise women/people to monitor 
+their babies for drowsiness, lethargy, pallor, cold peripheries 
+or poor feeding. 
+18.1.1.6 Where possible, avoid using diuretics or angiotensin recepto r 
+blockers for those who are breastfeeding or expressing milk. 
+18.1.1.7 Treat women/people who are not breastfeeding and who are 
+not planning to breastfeed in line with the NICE guideline on 
+hypertension in adults . 
+18.1.1.8 PIL available at 
+https://www.nice.org.uk/guidance/ng133/resources/antihype
+rtensive -treatment -during -the-postnatal -period -pdf-
+313945610004 
+18.1.2 Offer enalapril to treat hypertension in women/people during the 
+postnatal period, with appropriate monitoring of maternal renal 
+function and maternal serum potassium. 
+18.1.3 For women/people of black African or Caribbean family origin with 
+hypertension during the postnatal period, consider antihypertensive 
+treatment with: 
+18.1.3.1 Nifedipine 
+18.1.3.2 Amlodipine if the woman has previously used this to 
+successfully control her blood pressure. Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 33 of 39 
+ 18.2 If blood pressure is not controlled with a single medicine, consider a 
+combination of nifedipine (or amlodipine) and enalapril. If this combination is 
+not tolerated or is ineffective, consider either: 
+18.2.1 Adding atenolol or labetalol to the combination treatment or 
+18.2.2 Swapping 1 of the medicines already being used for atenolol or 
+labetalol 
+19 Advice and follow -up at transfer to community care 
+19.1 Likelihood of recurrence of hypertensive disorders of pregnancy 
+Type of hypertension in previous or current pregnancy 
+Prevalence of 
+hypertensive disorder 
+in a future pregnancy Any hypertension in 
+pregnancy Pre-eclampsia Gestational 
+hypertension 
+Any hypertension Approximately 21% 
+(1 in 5 
+women/people ) Approximately 20% 
+(1 in 5 women/people ) Approximately 22% 
+(1 in 5 
+women/people ) 
+Pre-eclampsia Approximately 14% 
+(1 in 7 
+women/people ) Up to approximately 
+16% 
+(1 in 6 women/people ) 
+If birth was at 28 –34 
+weeksa: approximately 
+33% 
+(1 in 3 women/people ) 
+If birth was at 34 –37 
+weeks: approximately 
+23% 
+(1 in 4 women/people ) Approximately 7% 
+(1 in 14 
+women/people ) 
+Gestational 
+hypertension Approximately 9% 
+ (1 in 11 
+women/people ) Between approximately 
+6 and 12% 
+(up to 1 in 8 
+women/people ) Between 
+approximately 11 
+and 15% 
+(up to 1 in 7 
+women/people ) 
+Chronic hypertension Not applicable Approximately 2% 
+(up to 1 in 50 
+women/people ) Approximately 3% 
+(up to 1 in 34 
+women/people ) Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 34 of 39 
+ a No evidence was identified for women/people who gave birth at less than 28 weeks, but the 
+committee agreed that the risk was likely to be at least as high, if not higher, than that for 
+women/people who gave birth between 28 and 34 weeks. 
+19.2 Long -term risk of cardiovascular disease 
+ 
+Type of hypertension in current or previous pregnancy 
+Risk of future 
+cardiovascular 
+disease a, b Any hypertension 
+in pregnancy Pre-eclampsia Gestational 
+hypertension Chronic 
+hypertension 
+Major adverse 
+cardiovascular 
+event Risk increased 
+(up to 
+approximately 2 
+times) Risk increased 
+(approximately 
+1.5–3 times) Risk increased 
+(approximately 
+1.5–3 times) Risk increased 
+(approximately 
+1.7 times) 
+Cardiovascular 
+mortality Risk increased 
+(up to 
+approximately 2 
+times) Risk increased 
+(approximately 2 
+times) (no data) (no data) 
+Stroke Risk increased 
+(up to 
+approximately 1.5 
+times) Risk increased 
+(approximately 
+2–3 times) Risk may be 
+increased Risk increased 
+(approximately 
+1.8 times) 
+Hypertension Risk increased 
+(approximately 2 –
+4 times) Risk increased 
+(approximately 
+2–5 times) Risk increased 
+(approximately 
+2–4 times) (not applicable) 
+a Risks described are overall estimates, summarised from risk ratios, odds ratios and hazard 
+ratios. 
+b Increased risk is compared to the background risk in women/people who did not have 
+hypertensive disorders during pregnancy. Absolute risks are not reported, because these will 
+vary considerably, depending on the follow -up time (range from 1 to 40 years postpartum). Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 35 of 39 
+ 19.3 Advise women/people to discuss how to reduce their risk of cardiovascular 
+disease, including hypertensive disorders, with their GP or specialist. This may 
+include: 
+19.3.1 Avoiding smoking, as recommended in the NICE guideline on stop 
+smoking interventions and services 
+19.3.2 Maintaining a healthy lifestyle, as recommended in the NICE guideline 
+on cardiovascular disease 
+19.3.3 Maintaining a healthy weight, as recommended in the NICE guideline 
+on obesity . 
+19.4 In women/people early birth before 34 weeks, consider pre -pregnancy 
+counselling to discuss possible risks of recurrent hypertensive disorders of 
+pregnancy, and how to lower them for any future pregnancies. 
+19.5 Body mass index and recurrence of hypertensive disorders of pregnancy 
+19.5.1 Advise women/people to achieve and keep a BMI within the healthy 
+range before their next pregnancy (18.5 –24.9 kg/m2). See also the NICE 
+guideline on obesity: identification, assessment and management . 
+19.6 Inter -pregnancy interval and recurrence of hypertensive disorders of pregnancy 
+19.6.1 Advise women/people that the likelihood of recurrence increases with 
+an inter -pregnancy interval greater than 10 years. 
+19.7 Long -term risk of end -stage kidney disease 
+19.7.1 Women/people who have no proteinuria and no hypertension at the 
+postnatal review (6 –8 weeks after the birth) that although the relative 
+risk of end -stage kidney disease is increased, the absolute risk is low 
+and no further follow -up is necessary. 
+19.8 Thrombophilia and the risk of pre -eclampsia 
+19.8.1 Do not routinely perform screening for thrombophilia 
+ 
+20 Reference 
+ 
+Patient Information Leaflet : https://action -on-pre-eclampsia.org.uk/wp -
+content/uploads/2019/11/High -blood -pressure -in-pregnancy -blood -pressure -PDA -
+WEB.pdf 
+ 
+NICE guideline [NG133] Hypertension in pregnancy: diagnosis and management 
+Published date: 25 June 2019 
+ 
+Handbook of Obstetric Medicine , Fifth Edition ( 2015 ), Catherine Nelson - Piercy Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 36 of 39 
+ Up to Date, Hypertension in Pregnancy ( updated in April , 2020 ) 
+ 
+21 Appendix 
+ 
+Appendix A - How should the blood pressure (BP) be taken? 
+ 
+21.1 Woman should be reclined at 45 degrees, with BP cuff at level of heart 
+21.2 The appropriate size cuff should be used for her arm dimensions 
+21.3 The diastolic pressure should be measured using Korotkoff phase 5 
+(disappearance of sound, rather than muffling) 
+21.4 Automated methods need to be used with caution as they underestimate BP – 
+ideally use manual sphygmomanometer if possible, or check BP with another 
+validated device 
+Appendix B - CVP lines 
+ 
+Important points about CVP lines: 
+21.5 The point of reference for a reading of zero is the sternal notch when the patient 
+is lying flat 
+21.6 If the fluid column does not move with respiration, it may be blocked 
+21.7 CVP should be checked every 15 mins during any fluid challenges or if there are 
+concerns about pulmonary oedema or HELLP, otherwise the CVP can be checked 
+hourly 
+
+21.8 If pulmonary oedema does occur: 
+ CVP Action 
+< 0cmH 2O give fluid boluses of colloid, with maintenance fluid, until CVP rises 
+or diuresis occurs 
+0-5cmH 2O Normal reading 
+Give maintenance fluids until diuresis occurs or CVP> 5 
+> 5cmH 2O There is a risk of pulmonary oedema 
+• Restrict fluids (fluid output + 30mls/hour) 
+• check U&Es 4 -hourly 
+• give furosemide 
+• Liaise with the hospital ITU outreach team Hypertension & Pre -eclampsia MP019 
+In Pregnancy (RSCH PRH only ) 
+ 
+University Hospitals Sussex NHS Trust East Page 37 of 39 
+ 21.8.1 Sit the woman up 
+21.8.2 Give O2 5L/min via non -rebreathe mask 
+21.8.3 Administer furosemide 20mg half -hourly up to total of 80mg 
+21.8.4 Consider communicating with ITU if does not resolve within the hour 
+ 22 Appendix C: Flowchart demonstrating guidance / management advice for midwives in community 
+antenatal clinic settings 
+
+Syst ≤140 
+ Diast <90 
+ Diastolic ≥ 90 
+Refer for 
+obstetric opinion 
+Any other concerns? 
+Yes 
+ No 
+Routine antenatal care / 
+follow up 
+Individualised plan - 
+may include 
+obstetric review 
+PET Symptoms? 
+Yes 
+ No 
+ 
+Refer for obstetric opinion 
+Urinalysis - protein 
+NAD / 
+Trace 
+ 
++ 
+ 
+++ / 
+more 
+ 
+See woman within 
+one week. Repeat 
+BP check & 
+urinalysis 
+ 
+Send MSU 
+See woman within 
+one week. Repeat 
+BP check & 
+urinalysis 
+ 
+Repeat BP check 
+BP within 
+normal range 
+Raised BP 
+>140 mmHg 
+Systolic >150 
+Appendix D : VIP Scoring

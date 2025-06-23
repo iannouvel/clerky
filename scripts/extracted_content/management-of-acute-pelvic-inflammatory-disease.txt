@@ -1,0 +1,333 @@
+# Extracted from: Management of Acute Pelvic Inflammatory Disease.pdf
+# Guideline ID: management-of-acute-pelvic-inflammatory-disease
+# Content length: 11078 characters
+# Processing date: 1750066901.7536452
+
+Pelvic Inflammatory Disease Guideline. Version 1 1 st November 2013 
+Page 1 of 9 
+Management of Acute Pelvic Inflammatory Disease Gui deline 
+Summary statement: How does the document 
+support patient care? By providing evidence based guidance for medical 
+staff on the parameters and treatment for pelvic 
+inflammatory disease (PID) 
+Staff/stakeholders involved in development: 
+ Gynaecology medical staff, Gynaecology nursing staf f, 
+Pharmacists, Microbiologists 
+Division: Women and Child Health 
+Department: Gynaecology 
+Responsible Person: Chief of Service 
+Author: Consultant Gynaecologist 
+For use by: Gynaecology medical staff, Gynaecology nursing staf f, 
+Pharmacists, Microbiologists, General Practitioners . 
+Emergency Medicine Staff 
+Purpose: To provide evidence based guidance for medical staf f 
+on the parameters and treatment for pelvic 
+inflammatory disease 
+This document supports RCOG Green-top No. 32 
+Key related documents: 
+Approved by: Women and Child Health Integrated Performance 
+Group 
+Approval date: 1st November 2013 
+Ratified by Board of Directors/ Committee of 
+the Board of Directors Not applicable - Divisional ratification only requi red 
+Ratification Date: Not applicable - Divisional ratification only requi red 
+Expiry Date: 1st November 2016 
+Review date: September 2016 
+ 
+If you require this document in another format such as Braille, large print, 
+audio or another language please contact the Trusts Communications Team 
+ 
+Reference Number: CG13027 
+Pelvic Inflammatory Disease Guideline. Version 1 1 st November 2013 
+Page 2 of 9 
+Version Date Author Status Comment 
+1.0 October 2013 Consultant 
+Gynaecologist Live New Trust wide guideline 
+2.0 
+3.0 
+4.0 
+ 
+Pelvic Inflammatory Disease Guideline. Version 1 1 st November 2013 
+Page 3 of 9 Index 
+
+ Page number 
+1.0 Aim 4 
+2.0 Scope 4 
+3.0 Responsibilities 4 
+4.0 Introduction 4 
+5.0 Risk Factors 4 
+6.0 Clinical Features 4 
+7.0 Differential Diagnoses 5 
+8.0 Investigations 5 
+9.0 Management 
+• Outpatient 
+• Inpatient 5-6 
+10.0 PID in Pregnancy 6 
+11.0 Complications 6 
+12.0 Sexual partners 7 
+13.0 Follow up 7 
+14.0 Auditable Standards 7 
+ References 8 
+ Appendix 1: PID Referral Form 9 
+
+Pelvic Inflammatory Disease Guideline. Version 1 1 st November 2013 
+Page 4 of 9 Management of Acute Pelvic Inflammatory Disease (PI D) 
+Guideline 
+ 
+1.0 Aim 
+ 
+To provide clear guidance for all staff caring for women with suspected or proven pelvic 
+inflammatory disease (PID). 
+ 
+2.0 Scope 
+ 
+This guideline applies to: 
+• A&E staff 
+• Gynaecology Staff 
+• Women’s Health doctors 
+• Sexual Health staff 
+ 
+3.0 Responsibilities 
+• Medical and Nursing Staff are responsible to acces s, read, understand and follow 
+this guidance and to use their own professional jud gement in the application of this 
+guidance. 
+• Management have a responsibility to ensure the gui deline is accessible to all 
+relevant staff. 
+ 
+4.0 Introduction 
+ 
+Pelvic inflammatory disease is a result of endocerv ical infection causing endometritis, 
+salpingitis, parametritis, oophoritis, tubo-ovarian abscess or pelvic peritonitis. Causative 
+agents can be Chlamydia trachomatis, Neisseria gonorrhoeae, Mycop lasma genitalium or 
+anaerobes. Delays in receiving appropriate treatmen t can lead to sequelae such as 
+infertility, chronic pain and ectopic pregnancy. 
+ 
+5.0 Risk Factors 
+• Age – peak between 15 to 24 years old 
+• Untreated partner 
+• Recent change in partner 
+• Sexual activity 
+• Past history of PID/STD 
+• Recent IUCD insertion 
+• Recent termination of pregnancy 
+• Recent instrumentation of the uterus 
+ 
+6.0 Clinical features of PID 
+ 
+• Bilateral lower abdominal tenderness with possible radiation to the legs 
+• Abnormal vaginal discharge 
+• Pyrexia >38C 
+• Abnormal vaginal bleeding - inter-menstrual or pos t-coital bleeding or breakthrough 
+bleeding whilst on oral contraceptive pill (OCP) 
+• Deep dyspareunia 
+• Cervical and/or adnexal excitation 
+• Palpable mass 
+ 
+Pelvic Inflammatory Disease Guideline. Version 1 1 st November 2013 
+Page 5 of 9 7.0 Differential Diagnoses 
+ 
+• Ectopic pregnancy 
+• Appendicitis 
+• Endometriosis 
+• Irritable bowel syndrome or gastro-intestinal comp laints 
+• Ovarian accident such as cyst torsion or rupture 
+• Urinary tract infection 
+• Chronic cyclical pelvic pain syndrome 
+ 
+8.0 Investigations 
+ 
+• FBC looking for leukocytosis 
+• Raised CRP or ESR 
+• Trans-vaginal ultrasound may aid diagnosis, especi ally when supported by power 
+Doppler identifying inflamed and dilated tubes and tubo-ovarian masses. 
+• High vaginal, endocervical & Chlamydia swabs. It i s not a prerequisite to swab prior to 
+the initiation of treatment; however a positive res ult would necessitate treatment of 
+sexual partners. Absence of confirmed cultures does not exclude PID. 
+ 
+There is limited evidence for CT and MRI 
+ 
+9.0 Management 
+ 
+9.1 Outpatient 
+ 
+Delaying treatment will likely increase the severit y of the condition and increase the risk of 
+long term sequelae. Therefore a low threshold for e mpiric treatment of PID is 
+recommended. 
+ 
+Outpatient antibiotic therapy 
+Stat dose IM Ceftriaxone 500mg, 
+po Doxycycline 100mg bd for 14 days & 
+po Metronidazole 400mg bd for 14 days 
+OR po Ofloxacin 400mg BD & 
+po Metronidazole 400mg bd for 14 days 
+ 
+Women should be counselled on the side effects of t reatment, the risks to future fertility 
+and the need of use of barrier contraception. She w ill need to be counselled that sexual 
+partners will need screening to reduce risk of re-i nfection. 
+ 
+9.2 Inpatient 
+ 
+Hospital admission may be required if 
+• there is a lack of response to oral therapy, 
+• surgical intervention may be required eg drainage of tubo-ovarian abscess, 
+• there is clinical evidence of severe disease or th e presence of a tubo-ovarian 
+abscess, 
+• intolerance to oral therapy and 
+• pregnancy 
+Pelvic Inflammatory Disease Guideline. Version 1 1 st November 2013 
+Page 6 of 9 
+Inpatient antibiotic therapy 
+IV Ceftriaxone 2g OD & 
+po Doxycycline 100mg BD & 
+po Metronidazole 400mg bd 
+Converted to outpatient therapy for 14 days total 
+OR IV Clindamycin 900mg TDS & 
+IV Gentamicin (2mg/kg loading dose) followed by 1.5mg/kg 3 times daily – 
+converted to PO Clindamycin 450mg QDS for 14 days t otal OR 
+po Doxycycline 100mg bd and po Metronidazole 400mg bd for 14 days 
+ 
+IV antibiotic therapy should be continued until 24 hours after clinical improvement. 
+Appropriate analgesia should be provided. 
+ 
+Laparoscopy maybe required for adhesiolysis or the drainage of a pelvic abscess. 
+ 
+Patients should be advised to avoid unprotected int ercourse until both them, and their 
+partner(s), have completed treatment and follow-up. 
+A detailed explanation of their condition with part icular emphasis on the long term 
+implications for the health of themselves and their partner(s) should be provided, 
+reinforced with clear and accurate written informat ion 
+(http://www.bashh.org/documents/4238.pdf ) 
+ 
+10.0 PID in pregnancy 
+ 
+A pregnancy test should be performed on all women w ho have suspected PID to exclude 
+an ectopic pregnancy. PID is associated with signif icant maternal and fetal morbidity 
+therefore initial parental therapy is advised. 
+ 
+The risk of giving the recommended antibiotic regim en in very early pregnancy is low and 
+likely results in failed implantation [UK National Teratology Information Service]. 
+ 
+PID is rare in pregnancy. Drugs toxic in pregnancy, such as Tetracycline should be 
+avoided. There are insufficient data from clinical trials to recommend a specific regimen 
+and empirical therapy with agents effective against Gonorrhoea, Chlamydia and anaerobic 
+infections should be considered taking into account local antibiotic sensitivity patterns (e.g. 
+Ceftriaxone plus oral or IV Erythromycin with the p ossible addition of oral or IV 
+Metronidazole 500mg tds in clinically severe diseas e). 
+ 
+11.0 Complications 
+ 
+Women with HIV may develop more severe symptoms ass ociated with PID but respond 
+well to standard antibiotic therapy. No change in t reatment recommendations compared to 
+HIV uninfected patients is required. 
+ 
+Fitz-Hugh-Curtis syndrome comprises of abdominal pa in with peri-hepatitis, peri-
+appendicitis or peri-sigmoiditis, in women with PID . 
+ 
+Women with PID and an IUCD, without symptomatic imp rovement after 72 hours may 
+require the IUCD to be removed. The decision to rem ove the IUCD needs to be balanced 
+against the risk of pregnancy in those who have had otherwise unprotected intercourse in 
+the preceding 7 days. Hormonal emergency contracept ion may be appropriate for some 
+women in this situation. 
+ 
+Pelvic Inflammatory Disease Guideline. Version 1 1 st November 2013 
+Page 7 of 9 12.0 Sexual Partners 
+ 
+Partners should be contacted and advised to attend their nearest Sexual Health Clinic for 
+appropriate investigation and treatment. A complete d referral form (Appendix A) should be 
+faxed to the nearest sexual health clinic. 
+ 
+Partners should avoid sexual intercourse until the course of treatment has been 
+completed. 
+
+13.0 Follow up 
+ 
+A review at 72 hours is recommended if a woman pres ents with a moderate to severe 
+presentation of PID, to evaluate for clinical impro vement. 
+ 
+Further review at the Fletcher Unit, Chichester or Worthing Sexual Health or Central Clinic 
+may be necessary to ensure antibiotic compliance, a dequate clinical response, screening 
+and treatment of sexual contacts and exclude pregna ncy (Appendix 1). 
+ 
+Persisting infections may require repeat testing fo r Chlamydia or gonorrhoea. 
+
+14.0 Auditable Standards 
+ 
+The auditable standards for this guideline are cont ained within the Maternity Standards 
+Audit Document. 
+Pelvic Inflammatory Disease Guideline. Version 1 1 st November 2013 
+Page 8 of 9 References 
+ 
+Royal College of Obstetricians and Gynaecologists G reen-top Guideline No.32 
+Management of Acute Pelvic Inflammatory Disease 
+ 
+British Association for Sexual Health and HIV. Clin ical Effectiveness Group. UK National 
+Guideline for the Management of Pelvic Inflammatory Disease. 2011 
+http://www.bashh.org/documents/3572.pdf 
+
+Pelvic Inflammatory Disease Guideline. Version 1 1 st November 2013 
+Page 9 of 9 Appendix 1 
+
+Pelvic Inflammatory Disease 
+Referral to Sexual Health for further screening / p artner notification 
+
+Patient Name: 
+ 
+Hospital 
+Number: 
+ 
+DOB: 
+
+Date of 
+diagnosis: 
+ 
+Microbiological investigations: 
+ Chlamydia 
+Date Site of sample Result 
+
+Gonorrhoea 
+Date Site of sample Result 
+ 
+Other 
+Date Site of Sample 
+ Result 
+ 
+Antibiotic regimen 
+prescribed & date 
+commenced 
+
+Other relevant info 
+eg removal IUCD / 
+pregnancy etc 
+
+Referring Dr: 
+ 
+Bleep / contact 
+number: 
+ 
+Please FAX to relevant department: 
+ 
+Fletcher unit, 
+St Richards Hospital 
+Spitalfields lane 
+Chichester 
+PO19 6SE 
+Tel: 01243 831607 
+ 
+Fax: 01243 831606 
+Sexual Health Worthing 
+45 Rowlands Road 
+Worthing 
+BN11 3JN 
+ 
+Tel: 01903 285199 
+ 
+Fax: 01903 236078 
+ 
+Crawley Sexual Health 
+Clinic 
+5th Floor Crawley Hospital 
+West Green Drive 
+Crawley 
+RH11 7DH 
+Telephone 01293 600459 
+Fax: 01293 600405

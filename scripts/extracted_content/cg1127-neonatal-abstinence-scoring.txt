@@ -1,0 +1,787 @@
+# Extracted from: CG1127 Neonatal Abstinence Scoring.pdf
+# Guideline ID: cg1127-neonatal-abstinence-scoring
+# Content length: 44641 characters
+# Processing date: 1750066899.9453611
+
+CG1127 Neonatal Abstinence Syndrome v5.0 Dec 2021 Page 1 of 21 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Neonatal Abstinence Syndrome Guideline 
+Summary statement: How does the 
+document support patient care? This provides evidence -based guidance for the care of 
+newborns of birth parents known to have misused 
+substances in pregnancy. 
+Staff/stakeholders involved in 
+development: Consultant Paediatrician/Neonatologist, Clinical Lead 
+Nurse Paediatric Clinical Services, Neonatal Ward 
+Sisters, senior midwives, Specialist neonatal pharmacist. 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: J. Fozard, P. Sandhu and C. Stepney 
+For use by: All University Hospitals Sussex (West and East) Medical 
+and Midwifery staff involved in caring for neonates. 
+ 
+Purpose: To provide evidence -based guidance on the assessment 
+and management of babies of birth parents known to 
+have misused substances in pregnancy 
+This document supports: Maternity Standards 
+
+Key related documents: Maternity Guidelines: Neonatal Resuscitation, Admission 
+to Neonatal Unit, Newborn Feeding 
+Information Leaflet ‘’ Neonatal Abstinence Syndrome - 
+Advice for Parents’’ 
+Drug withdrawal patient first leaflet 
+
+Approved by & date: Joint Obstetric Guideline Group – 22nd December 2021 
+Integrated Neonatal and Paediatric Meeting – 
+20th December 2021 
+Date uploaded – 22nd March 2022 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable – Divisional Ratification only required 
+Ratification Date: Not Applicable – Divisional Ratification only required 
+Expiry Date: December 2024 
+Review date: June 2024 
+If you require this document in another format such as Braille, large print, audio or 
+another language please contact the Trusts Communications Team 
+Reference Number: CG1127 CG1127 Neonatal Abstinence Syndrome v5.0 Dec 2021 Page 2 of 21 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Version Date Author Status Comment 
+1.0 January 2011 Neonatal Matron 
+and Neonatal 
+Managers Archived New Trustwide guideline 
+2.0 February 2011 CNST Lead Midwife Archived Administrative update 
+3.0 January 2014 Joint Obstetric 
+Guideline Group Archive 3 year review - Addition of 
+care of birth parent and the 
+baby where maternal 
+antidepressants are taken 
+4.0 March 2018 Joint Obstetric 
+Guideline Group 
+and Consultant 
+Paediatricians Archived Reviewed and change to anti- 
+depressant withdraw 
+guidance 
+5.0 December 2021 Paediatric 
+Consultants, 
+Neonatal Outreach 
+Sisters, Neonatal 
+Sisters LIVE 3 yearly review. 
+Guideline updated in line with 
+new research and TMBU 
+guidelines. 
+Formatted to new Trust 
+standard. 
+ 
+The interpretation and application of clinical guidelines will remain the responsibility of 
+the individual clinician. 
+ 
+If in doubt contact a senior colleague or expert. CG1127 Neonatal Abstinence Syndrome v5.0 Dec 2021 Page 3 of 21 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Index 
+1.0 Aim ................................ ................................ ................................ ................................ ... 4 
+2.0 Scope ................................ ................................ ................................ ............................... 4 
+3.0 Responsibilities ................................ ................................ ................................ ................. 4 
+4.0 Introduction ................................ ................................ ................................ ....................... 4 
+4.1 Abbreviations used in this guideline ................................ ................................ ................... 4 
+5.0 Effects of drug misuse on the foetus and newborn ................................ ............................ 5 
+6.0 Management during pregnancy, labour and postnatal period ................................ ............. 6 
+6.1 Antenatal Care ................................ ................................ ................................ .................. 6 
+6.2 Birth and perinatal care ................................ ................................ ................................ ..... 6 
+6.3 Administration of Hepatitis B vaccine and Immunoglobulin ................................ ................ 6 
+6.4 Care on Postnatal Ward and Neonatal Unit ................................ ................................ ....... 7 
+6.5 Breastfeeding ................................ ................................ ................................ .................... 7 
+6.6 Birth parents taking prescribed psychotropic medications ................................ .................. 8 
+6.7 Supportive measures for babies with symptoms of withdrawal ................................ .......... 9 
+7.0 Neonatal Abstinence Syndrome ................................ ................................ ........................ 9 
+7.1 Signs of withdrawal in the baby ................................ ................................ ......................... 9 
+7.2 Timing of the onset of symptoms of withdrawal ................................ ............................... 10 
+7.3 Principles of the management of neonatal withdrawal ................................ ..................... 10 
+7.4 Assessment of withdrawal ................................ ................................ ............................... 10 
+7.5 Using the Neonatal Abstinence Scoring Sheet ................................ ................................ 11 
+8.0 Treatment of Neonatal Abstinence Syndrome ................................ ................................ . 12 
+8.1 Non-pharmacological treatment ................................ ................................ ....................... 12 
+8.2 When to admit to a neonatal unit and start pharmacological treatment ............................ 12 
+8.3 Starting morphine in opiate withdrawal ................................ ................................ ............ 12 
+8.4 Morphine weaning regime ................................ ................................ ............................... 13 
+8.5 Non-opiate Withdrawal ................................ ................................ ................................ .... 13 
+9.0 Discharge Planning and follow -up ................................ ................................ ................... 14 
+10.0 Providing Patient Information ................................ ................................ ........................... 14 
+11.0 Audit /Monitoring ................................ ................................ ................................ ............. 15 
+References ................................ ................................ ................................ ................................ 17 
+Appendix 1: Neonatal Abstinence Scoring Chart ................................ ................................ ........ 18 
+Appendix 2a: Neonatal Abstinence Syndrome Leaflet (UHSussex West) ................................ ... 19 
+Appendix 2b: Neonatal Abstinence Syndrome Leaflet (UHSussex East) ................................ .... 20 
+Appendix 3: Morphine Weaning Flowchart ................................ ................................ ................. 21 CG1127 Neonatal Abstinence Syndrome v5.0 Dec 2021 Page 4 of 21 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Neonatal Abstinence Syndrome Guideline 
+ 
+1.0 Aim 
+ 
+This guideline provides evidence -based guidance for staff for the assessment and management 
+of Neonatal Abstinence Syndrome (NAS) of newborns of birth parents known to have used 
+prescribed substances or/and non -prescribed substances in pregnancy. 
+ 
+2.0 Scope 
+ 
+This guideline applies to all paediatric, neonatal and midwifery staff caring for newborn babies at 
+risk of NAS. All midwives and neonatal nurses should be aware of the signs, symptoms and 
+assessment tools for NAS and are individually responsible for the birth parents and babies in 
+their care. 
+ 
+3.0 Responsibilities 
+ 
+Midwives, Health Care Assistants, Neonatal staff, Paediatricians and Obstetricians: 
+ 
+• To access, read, understand and follow this guidance. 
+• To use their professional judgment in application of this guideline. 
+ 
+Management: 
+ 
+• To ensure the guideline is reviewed as required in line with Trust and National 
+recommendations. 
+• To ensure the guideline is accessible to all relevant staff. 
+ 
+4.0 Introduction 
+ 
+70% of babies born to drug -dependant birth parents are affected in some way, even if the birth 
+parent has decreased their drug dependency during pregnancy. Babies can withdraw from drugs 
+that are both prescribed and that are illicitly used. 
+ 
+4.1 Abbreviations used in this guideline 
+ 
+IUGR - Intrauterine Growth Restriction SIDS - Sudden Infant Death Syndrome 
+PPROM - Preterm, Prolonged Rupture Of 
+Membranes USS - Ultrasound Scan 
+LSD - Lysergic acid diethylamide SCBU - Special Care Baby Unit 
+SSRIs - Selective Serotonin Reuptake 
+Inhibitors NAS - Neonatal Abstinence Syndrome 
+NON - Neonatal Outreach Nurse CG1127 Neonatal Abstinence Syndrome v5.0 Dec 2021 Page 5 of 21 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+5.0 Effects of drug misuse on the foetus and newborn 
+Listed below are some of the illicit and prescribed substances which could precipitate neonatal 
+withdrawal symptoms. Other known effects of taking these substances in pregnancy have also 
+been mentioned. They may be known under different trade names (if prescribed) or street 
+names if taken illicitly. If you are unsure what substance is being used, please speak with the 
+on-call Pharmacist or consult www.addictioncentre.com or www.talktofrank.com for reference. 
+ 
+The list below is not exhaustive. You should consult the birth parent themselves to ask them 
+their expectations of the post -natal course and check their notes for clinic letters with 
+recommendations for perinatal and postnatal care. Always speak with your senior if uncertain. 
+ 
+• Alcohol: heavy intake can result in foetal alcohol syndrome. This syndrome is not 
+discussed in these guidelines. 
+• Amphetamines (speed, meth, crystal meth, crank, ice): Increased risk of premature 
+birth, intrauterine growth restriction (IUGR) and placental abruption. The baby has an 
+increased risk of sudden infant death syndrome (SIDS), cardiac problems and cleft lip. 
+The baby may show agitation and tachypnoea. Most recover in a week. 
+• Antidepressants: Citalopram and sertraline result in a higher risk of premature birth. If 
+two or more antidepressants are taken, the baby may start to show signs after the first 
+48 hours. These signs (jittery, poor feeding, irritability and respiratory distress) might 
+last up to one month. Medication is not usually required. 
+• Benzodiazepines/Tranquillisers: If taken in the first trimester the baby has an 
+increased risk of cleft palate. They may also display classic signs of withdrawal 
+(outlined below). 
+• Cannabis: Babies may startle more easily but are usually easily comforted. There is a 
+small increased risk of gastroschisis. 
+• Cocaine: There is an association with placental abruption and preterm, pre-labour 
+rupture of membranes (PPROM). The foetus may suffer from intra -uterine growth 
+restriction (IUGR). Intracranial haemorrhage and ischaemic lesions are more 
+common. A Cranial Ultrasound Scan (USS) should be considered after birth. 
+• Ecstasy: Babies may be small for dates. There is an increased risk of both cleft palate 
+and cardiac defects. 
+• LSD (Lysergic acid diethylamide), Magic mushrooms: There is no evidence that these 
+drugs have any significant harmful effects on either the foetus or the pregnancy. 
+• Nicotine: low birth weight, increased risk of premature birth and jitteriness after birth. 
+Note that babies do not usually need to be formally observed for symptoms of nicotine 
+withdrawal. 
+• Opiates (heroin/methadone): There is an increased risk of premature birth and low 
+birth weight. Babies may show withdrawal symptoms within the first 24 hours of birth. 
+There is an increased risk of congenital heart defects, gastroschisis, spina bifida and 
+glaucoma. CG1127 Neonatal Abstinence Syndrome v5.0 Dec 2021 Page 6 of 21 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ • Opioids as analgesics (codeine, dihydrocodeine, morphine, tramadol): may increase 
+risk of cleft lip/palate and heart defects. Babies are likely to show withdrawal 
+symptoms within the first 24 hours of birth. 
+ 
+6.0 Management during pregnancy, labour and postnatal period 
+6.1 Antenatal Care 
+ 
+Drug and alcohol dependent birth parents require the following antenatal care: 
+ 
+• The community midwife will signpost them to relevant resources (e.g. specialist 
+midwives, One Stop clinics in the East) and literature e.g. Family Assist 
+• In selected and complex cases, a meeting with the designated Paediatric Consultant 
+with a Neonatal Interest may be recommended. If so, an agreed plan of care should 
+be in the parental notes, including recommendations for monitoring and/or admission 
+to the neonatal unit. 
+• An invitation to visit the neonatal unit may be warranted if admission is anticipated 
+after birth. 
+• An understanding that their baby will require observation in hospital for a minimum of 
+2 days after birth depending on the substance used (see section 7.2 for expected 
+timeframes of symptoms of withdrawal). If signs of withdrawal are trending upwards 
+the inpatient observation period will be extended (usually for 5 days if the baby settles 
+and has not needed any pharmacological treatment). 
+• Administration of Hepatitis B vaccine for baby via the accelerated schedule (i.e first 
+dose of the vaccine given at birth) if indicated. This should be determined antenatally 
+• Referral to Social Services following parental discussion. 
+ 
+6.2 Birth and perinatal care 
+ 
+When a baby is born to a birth parent misusing substances the midwifery team will inform social 
+services and ensure there is a discharge planning meeting prior to discharge. 
+ 
+Opiate dependent birth parents should not be given Pethidine or Diamorphine as analgesia 
+during labour as there is an increased risk of respiratory depression in the baby at birth. 
+ 
+For birth parents who have been using opiates in pregnancy (either misusing or taking opiate 
+replacement treatment), do NOT give them Naloxone (Narcan). This will precipitate acute 
+withdrawal in the baby and likely lead to severe seizures. 
+ 
+6.3 Administration of Hepatitis B vaccine and Immunoglobulin 
+ 
+If the birth parent has been using injected substances illicitly during pregnancy there is a high 
+risk of both maternal and neonatal infection with Hepatitis B, C and HIV. All birth parents are 
+tested for this at booking. Those who remain at continued risk for perinatal virus transmission CG1127 Neonatal Abstinence Syndrome v5.0 Dec 2021 Page 7 of 21 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ should be re -tested due to the risk of seroconversion. These babies should be offered the 
+Hepatitis B vaccine at birth (accelerated schedule). This should be prescribed and administered 
+by the paediatrician. This is then repeated at 4 weeks and 1 year of age. Please ensure this is 
+arranged by completing documentation for the community team and forwarding it on to the 
+relevant teams. 
+ 
+Note that high risk babies may also require the Hepatitis B immunoglobulin (HBIG). The need for 
+the accelerated schedule and/or immunoglobulin should be very clearly documented in the 
+antenatal plan. If there is any doubt, please consult a senior paediatrician. 
+6.4 Care on Postnatal Ward and Neonatal Unit 
+ 
+It is important to keep the birth parent and their baby together after birth where possible. 
+ 
+The parent should have been counselled antenatally about observation and investigations in the 
+postnatal period. Discuss what they already know, note any antenatal recommendations and 
+implement the following: 
+ 
+• Establish the duration and severity of the birth parent’s substance use. 
+• Observe the baby on the postnatal ward for a minimum of 2 days. If the baby has 
+symptoms of increasing drug withdrawal then seek paediatric review and consider 
+admission to the neonatal unit. 
+• Start the Neonatal Abstinence Scoring Chart (Appendix 1) and file in the baby’s notes. 
+Start 2 hours after birth then review 2 -4 hourly depending on the score. Electronic 
+versions of the scoring chart can be used on the electronic patient records Badgernet 
+Maternity and Metavision in the East. 
+• Administer additional medication if indicated and advised e.g. Hepatitis B vaccine via 
+accelerated schedule, antiretroviral medication. 
+• Ask the birth parent for a urine sample for drug screening if recommended in the 
+antenatal plan or if new illicit substances have been taken. 
+• Collect urine (up to 10ml from cotton balls in the nappy) from the baby for a toxicology 
+screen if recommended in the antenatal plan AND if consent given by the parent. This 
+might not be needed if parental sample is taken. 
+ 
+6.5 Breastfeeding 
+ 
+Establishing breastfeeding can be both physically and emotionally challenging. Parents involved 
+with substance misuse or prolonged, prescribed medication might expect that they cannot 
+breastfeed but this is usually not the case. Therefore we should encourage, support and 
+facilitate breastfeeding or expressing breastmilk where it is safe to do so. 
+ 
+Specific considerations include: CG1127 Neonatal Abstinence Syndrome v5.0 Dec 2021 Page 8 of 21 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ • Methadone: Breastfeeding is safe if the birth parent received a prescribed and 
+controlled maintenance dose throughout pregnancy and will continue to do so post- 
+partum. Breastfeeding may decrease withdrawal symptoms in babies exposed in 
+utero. Note that when the parent is ready to stop breastfeeding then this must be 
+done gradually rather than abruptly to avoid precipitating withdrawal in the infant. 
+• Buprenorphine: Breastfeeding is safe but an antenatal recommendation from a 
+neonatal consultant should confirm this. 
+• Benzodiazepines: the active metabolite nordiazepam has a long half-life and transmits 
+to breastmilk. Breastfeed with caution as this has potential to cause lethargy, weight 
+loss and jaundice. See section 8.3 for pharmacological management of 
+benzodiazepine withdrawal. 
+• Codeine: The elimination of half -life of morphine (codeine’s metabolite) is prolonged in 
+newborn babies. The amount of morphine excreted into breastmilk is dependent on 
+genetic factors so it is not possible to know who might excrete larger volumes of active 
+metabolite. Therefore, breastfeeding is generally not considered safe with any 
+codeine use lasting longer than 4 days at the lowest dosage. 
+• Cannabis: Cannabinoids found in breastmilk may affect an infant’s motor 
+development. Note that the act of smoking by any parent or caregiver can increase 
+the risk of SIDS. 
+• Continued or unstable substance misuse: not safe to breastfeed. 
+• Suspected street or illicit drug use with no clear history: not safe to breastfeed until 
+urine toxicology back. 
+• HIV in the birth parent: Breastfeeding is currently contraindicated in this group in the 
+UK but this may be changing. 
+• Hepatitis B in the birth parent: Breastfeeding is safe if the baby receives the Hepatitis 
+B vaccine at birth. 
+ 
+If you have concerns about any substance, please consult the Paediatric Pharmacist on-call or 
+the LactMed database (link: www.ncbi.nlm.nih.gov/books/NBK501922). Always discuss these 
+cases with your senior. 
+ 
+6.6 Birth parents taking prescribed psychotropic medications 
+ 
+Birth parents who have been prescribed psychotropic medication including antidepressants, 
+mood stabilisers, anti -psychotics or benzodiazepines during pregnancy should have received 
+advice as part of their antenatal care. The discussion should emphasise the importance of 
+maintaining optimum parental mental health as this will have a positive impact on bonding with 
+their baby. However there is uncertainty surrounding continued pharmacological treatment and 
+the risks to the baby and this should be acknowledged. 
+ 
+Recommendations for the care of the baby should also be documented for the midwifery and 
+paediatric teams to follow. Parents may be given the patient information ‘Neonatal Abstinence 
+Syndrome - A Guide for Parents ’ if indicated. CG1127 Neonatal Abstinence Syndrome v5.0 Dec 2021 Page 9 of 21 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Specific considerations around anti-depressant medication include: 
+ 
+• Sertraline, citalopram and fluoxetine (all SSRIs, selective serotonin reuptake 
+inhibitors) are the preferred antidepressants in pregnancy. 
+• Sertraline and citalopram are the preferred antidepressants in breastfeeding. 
+• 1 x SSRI can cause transient changes in muscle tone and jitteriness in the baby which 
+should settle in 48 hours. 
+• More than 1x SSRI or multiple psychotropic medications - A hospital birth is 
+recommended. The parent and baby should be observed in hospital for a minimum of 
+48 hours for signs of withdrawal. 
+ 
+6.7 Supportive measures for babies with symptoms of withdrawal 
+ 
+These non-pharmacological interventions are extremely beneficial in reducing NAS symptoms: 
+ 
+• Promote a calm environment - minimise external stimuli, bright lights, noise and 
+stimulation. 
+• Frequent physical contact with parents - kangaroo care, skin-to-skin, massage, 
+cuddling. 
+• Swaddling. 
+• Regular small feeds. 
+• Non-nutritive sucking e.g. on dummy or finger. 
+ 
+7.0 Neonatal Abstinence Syndrome 
+7.1 Signs of withdrawal in the baby 
+The signs and symptoms of a baby’s withdrawal depend on the type of medication used in 
+pregnancy, for e.g., non -opiate withdrawal tends to cause predominantly behavioural or 
+neurological symptoms. The timing of symptoms depends on the pharmacology of the drug. 
+Neonatal metabolism of the drug also plays a role. 
+ 
+Signs of withdrawal can be grouped into the following: 
+ 
+• Behavioural - difficulty settling/sleeping, high-pitched cry. 
+• Neurological - sucking/swallowing coordination, disorganised movement patterns, 
+tremors, jitteriness, fits. 
+• Autonomic symptoms - temperature variability, tachypnoea, heart rate variability. 
+• Gastro -intestinal symptoms - colic, increased transit of milk resulting in sore bottom 
+and even excess fluid losses. 
+ 
+The following are considered major symptoms: CG1127 Neonatal Abstinence Syndrome v5.0 Dec 2021 Page 10 of 21 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ • Convulsions 
+• Continuous high-pitched cry when undisturbed 
+• Tremors when undisturbed 
+• Hypertonicity 
+ 
+It is essential that these babies receive paediatric review and other causes of these 
+symptoms such as sepsis, hypoglycaemia and electrolyte imbalance are considered. 
+ 
+7.2 Timing of the onset of symptoms of withdrawal 
+ 
+• 8 - 24 hrs: recent heroin use (IV or smoking), alcohol. 
+• 12-48 hrs: opiates with a short half-life, e.g. codeine, dihydrocodeine, oramorph, 
+buprenorphine. 
+• 2-7 days: methadone. 
+• 1-6 weeks: diazepam. This should be managed as an outpatient. 
+ 
+Some babies who have been exposed to multiple drugs might develop withdrawal in phases 
+over several weeks. 
+7.3 Principles of the management of neonatal withdrawal 
+ 
+• Babies should remain with their birth parent where possible. 
+• ‘Routine’ admission to neonatal unit is not required. 
+• Encourage and facilitate ongoing skin-skin contact with the birth parent. 
+• Employ supportive measures to help baby’s symptoms. 
+• Tight swaddling in the cot can be helpful but be mindful of temperature control. 
+ 
+7.4 Assessment of withdrawal 
+The Neonatal Abstinence Score is based on The Modified Finnegan Chart. This lists 28 
+symptoms of withdrawal and is used to record changes in symptoms or to assess response to 
+treatment. Note that this chart was designed to monitor symptoms of opiate withdrawal only. 
+Therefore it might not be as helpful when assessing withdrawal from other medications (although 
+it continues to be used for this). 
+ 
+When assessing and diagnosing withdrawal consider: 
+ 
+• Is there any other reason that the baby could be unsettled? (hypoglycaemia, infection/ 
+meningitis). 
+• What is the feeding pattern? 
+o Consult your senior if you are unsure of the normal patterns of breastfeeding. 
+o Pay attention to excessive feeding or dribbling. 
+• What is the sleeping pattern? CG1127 Neonatal Abstinence Syndrome v5.0 Dec 2021 Page 11 of 21 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ o How long does the baby settle for? 
+o Is the baby asleep or awake and upset? 
+• How is the baby’s birth parent? 
+o Their anxiety or worry can impact on your assessment. 
+• A full examination paying attention to baby’s response to handling, neurology (tone, 
+position, reflexes) and movement pattern. 
+ 
+If the pattern or the timing of onset of symptoms does not fit with the drug history, consider an 
+alternative diagnosis or a change in the substances misused in pregnancy. 
+
+7.5 Using the Neonatal Abstinence Scoring Sheet 
+ 
+• The first score should be recorded two hours after birth (baseline score). This score 
+should reflect all infant behaviour observed from birth up to this time. 
+• Following the baseline score all infants should be scored at 4 hourly intervals, except 
+when high scores indicate more frequent scoring. 
+o If the infant’s total score is 8 or more, scoring is increased to 2 hourly and 
+continued for 24 hours from the last total score of 8 or higher. 
+o If the 2 hourly score is 7 or less for 24 hours then 4 hourly scoring intervals may 
+be resumed. 
+• The score sheet allows for 2 hourly scoring over the 24-hour period. 
+• A new sheet should be started at the beginning of each day. 
+• Scoring is dynamic and summative. This means that all symptoms observed during 
+the scoring interval (i.e. over the preceding hours) should be included in the point total 
+• If pharmacotherapy is required the infant is scored at 2 - 4 hourly intervals throughout 
+the duration of the therapeutic period. 
+• If after cessation of pharmacotherapy the score is less than 8 for the following 3 days 
+then scoring can be discontinued. 
+• If after cessation of pharmacotherapy the score is 8 or more on 2 occasions then 
+scoring should be continued for the following 4 days to ensure there is no late onset of 
+symptoms. 
+ 
+There are limitations of this scoring tool. Some of the symptoms are on the spectrum of normal 
+baby and normal breastfeeding behaviour which makes it difficult to be objective. Practically, it 
+does not account for the variability in scores between different professionals. Those who have 
+limited experience of scoring might record observations at a point -in-time rather than a 
+summative assessment over the previous hours. CG1127 Neonatal Abstinence Syndrome v5.0 Dec 2021 Page 12 of 21 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 8.0 Treatment of Neonatal Abstinence Syndrome 
+8.1 Non-pharmacological treatment 
+ 
+Please see section 6.7 for supportive measures you can use. Reassure the parent that some 
+signs are to be expected and that if treatment is indicated, you will start it straight away to 
+ensure baby’s comfort. 
+ 
+8.2 When to admit to a neonatal unit and start pharmacological treatm ent 
+ 
+If the NAS score is greater than or equal to 8 for 2 scores or greater than or equal to 12 for 1 
+score, admit to a neonatal unit for further monitoring. Discuss this with the Paediatric/Neonatal 
+Consultant and the neonatal nurse -in-charge. If the high scores persist despite supportive 
+measures, pharmacological treatment should be started. 
+ 
+Some situations may warrant neonatal unit admission regardless of the NAS score: 
+ 
+• Excessive vomiting, diarrhoea or feeding dysfunction requiring IV or NG treatment. 
+• Safeguarding or other team concerns. 
+• Parental self-discharge. 
+ 
+The aim of treatment is to ensure the baby is comfortable and to achieve normal infant 
+behaviour. 
+ 
+8.3 Starting morphine in opiate withdrawal 
+ 
+See Appendix 3 for a flowchart outlining the information below: 
+ 
+• Start morphine sulphate 125 micrograms/kg/day 4 times a day (current concentration 
+is 100 mcg/mL). 
+• If after 36 hours (6 doses) the baby is still scoring 8 or more or has not achieved a 
+“normal” sleeping or feeding pattern, increase the dose by 25%. 
+• If the baby is sleepy or has poor feeding, decrease the dose by 25%. 
+• If baby vomits within 20 minutes of medication, repeat the full dose. 
+• If baby vomits within 20-40 minutes of medication, give half the prescribed dose. 
+• Monitoring (until the baby has been on a stable morphine dose for 36 hours) should 
+include: 
+o 6 hourly observations including HR and RR. 
+o Apnoea monitor (rare possibility of apnoea with excessive dose). 
+o NAS scoring with frequency guided as per section 7.5. CG1127 Neonatal Abstinence Syndrome v5.0 Dec 2021 Page 13 of 21 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 8.4 Morphine weaning regime 
+ 
+• When baby’s dose is stable (36 hours of normal infant behaviour with NAS score less 
+than 8) commence weaning by reducing the dose by 5 micrograms/kg twice a week. 
+This can be re-calculated by the Neonatal Outreach Nurse who can inform caregiver. 
+It takes 3 -4 reduced doses before the baby might notice anything, if at all. 
+• Make the reduction in the late afternoon or evening. Then any behaviour changes will 
+be the following day when parents can offer extra cuddles or more frequent feeds. 
+• When the dose is reduced to 15 micrograms/kg per dose then reduce dose intervals 
+to TDS, BD, OD and then stop. 
+• Note that a baby’s dose should not be changed 36 hours prior to discharge. 
+• The usual length of morphine treatment is 1-2 months. 
+• Depending on the dose at discharge, the Neonatal Outreach Nurse (NON)/specialist 
+follow -up team may wish to consider reducing the dose at a higher rate. This is after 
+discussion with the Paediatric consultant. 
+ 
+8.5 Non-opiate Withdrawal 
+ 
+Alcohol withdrawal - phenobarbitone 20mg/kg as a once only dose. 
+ 
+Benzodiazepine withdrawal - symptoms usually occur between 10 days and 6 weeks of age. If 
+symptoms occur earlier, consider alternative diagnosis or other substances use in pregnancy. 
+Potentially affected babies should be seen in outpatients 2 weeks after discharge. 
+If symptoms occur: 
+• Start chlorpromazine at 2 mg/kg/day divided into three doses. 
+• Increase to 3 mg/kg/day after 36-48 hours if baby remains unsettled. 
+• Increase or decrease dose by 25% if baby is either too sleepy or still unsettled. 
+• Maximum dose is 6 mg/kg/day. 
+ 
+If chlorpromazine is unavailable phenobarbitone can be used as an alternative option. 
+
+NAS score (4 hourly in inpatient setting) Action 
+8 or more for 2 scores Phenobarbitone 15mg/kg PO or IM stat 
+Then 6mg/kg/day in 2 divided doses PO 
+8 or more despite phenobarbitone 
+6mg/kg/day Phenobarbitone 8mg/kg/day in 2 divided 
+doses PO 
+8 or more despite phenobarbitone 
+8mg/kg/day Phenobarbitone 10mg/kg/day in 2 divided 
+doses PO 
+8 or more despite phenobarbitone 
+10mg/kg/day No further increment. Monitor cardio - 
+respiratory function 
+Table 1: titration of phenobarbitone in benzodiazepine and barbiturate withdrawal CG1127 Neonatal Abstinence Syndrome v5.0 Dec 2021 Page 14 of 21 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ When withdrawal symptoms settle the dose can be reduced rapidly under the advice of a 
+consultant. 
+ 
+Barbiturate withdrawal - use the regime described in Table 1. When the score falls below 
+treatment level for 48 hours, reduce the dose by 2mg per dose every 4th day or longer. 
+ 
+9.0 Discharge Planning and follow -up 
+A baby is safe to discharge when they have stable NAS scores, display normal sleeping and 
+feeding patterns and have had no change in morphine dose for 36 hours. 
+ 
+• Antenatal plan - check all tasks have been achieved. 
+• Discharge planning meeting - ensure this had MDT attendance and all tasks actioned. 
+• Medication - document a clear weaning schedule in discharge summary. Order TTO’s 
+in good time. Prescribe an adequate quantity to last until the next clinic appointment. 
+• Discharge summary - document a coherent plan for monitoring, ongoing 
+pharmacological treatment and follow -up in the community. Ensure copies sent to all 
+professionals involved. 
+• Social support - ensure this is in place. 
+• Safeguarding - ensure the local team and social services are notified of any concerns. 
+• Parental/carer safety -net advice - provide ample opportunity for parents to discuss 
+what symptoms to expect, how to manage them and features which should prompt 
+review in hospital. This will be supplemented by the information leaflet in Appendix 2 
+• Contact details for parents - Neonatal Outreach Nurse (NON) to provide information 
+leaflet in Appendix 2 . 
+• Open access - arrange this for the Paediatric ward by speaking with their ward 
+clerk/matron. Parents should be given the phone number for the ward. 
+• Community follow -up - Neonatal Outreach Nurse (NON) to visit at least once a week 
+and provide telephone follow -up. They will also monitor growth, discuss feeding and 
+keep the consultant up-to-date with weaning. Ensure close liaison with health visitor. 
+• Outpatient follow -up - request consultant clinic appointment for 2 months after 
+discharge. 
+ 
+10.0 Providing Patient Informatio n 
+ 
+Midwives, Neonatal Nurses and Paediatric doctors are responsible for explaining to parents the 
+reasons for monitoring. 
+ 
+The patient information leaflet ‘Neonatal Abstinence Syndrome ’ (from Family Assist) should be 
+given in the antenatal period. 
+ 
+There is a separate leaflet for babies requiring admission to a neonatal unit. CG1127 Neonatal Abstinence Syndrome v5.0 Dec 2021 Page 15 of 21 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 11.0 Audit /Monitoring 
+ 
+Suggest auditable points: 
+ 
+Antenatally 
+ 
+Have drug and alcohol dependent birth parents had: 
+ 
+o Invitation to visit the neonatal unit if admission anticipated? 
+o Met with the designated Paediatric Consultant? 
+o A documented agreed plan of care has been made including recommendations for 
+monitoring and/or admission to the neonatal unit. Including likely length of stay in 
+hospital and observations? 
+o Documented discussion of Hepatitis B vaccine for baby via the accelerated schedule 
+(i.e first dose of the vaccine given at birth) if indicated? 
+o A referral to Social Services following parental discussion? 
+ 
+• When a baby is born to a birth parent misusing substances have the midwifery team 
+informed social services to ensure there is a discharge planning meeting prior to discharge? 
+• Was the birth parent asked for a urine sample for drug screening if recommended in the 
+antenatal plan or if new illicit substances suspected? 
+• If recommended in the antenatal plan, and consented to by the birth parent, was urine 
+collected from the baby for a toxicology screen? 
+• If more than 1x SSRI or multiple psychotropic medications are being taken by the birth 
+parent, was the baby observed in hospital for a minimum of 48 hours for signs of 
+withdrawal? 
+ 
+Neonatal Abstinence Scoring chart: 
+ 
+• Has the Neonatal Abstinence Scoring Chart been started 2 hours after birth then reviewed 
+2-4 hourly depending on the score? 
+• If the infant’s total score was 8 or more, was the scoring is increased to 2 hourly and 
+continued for 24 hours from the last total score of 8 or higher? 
+• If the 2 hourly score is 7 or less for 24 hours then were 4 hourly scoring intervals resumed? 
+• If pharmacotherapy was required was the infant scored at 2 - 4 hourly intervals throughout 
+the duration of the therapeutic period. 
+• If after cessation of pharmacotherapy the score was less than 8 for the following 3 days then 
+scoring was the NAS chart discontinued appropriately? 
+• If after cessation of pharmacotherapy the score was 8 or more on 2 occasions then was 
+scoring continued for the following 4 days to ensure there is no late onset of symptoms? CG1127 Neonatal Abstinence Syndrome v5.0 Dec 2021 Page 16 of 21 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Discharge Planning and follow -up: 
+ 
+• Has a Discharge planning meeting taken place? 
+• Is a clear weaning schedule documented? 
+• Is there a Discharge summary documented and has been sent to all professionals 
+involved? 
+• Has social services been informed of any concerns? 
+• Has the information in patient information leaflet and contact details for Neonatal 
+Outreach Nurse (NON) been documented as given? 
+• Has Open access been arranged? 
+• Has an Outpatient follow -up been requested for 2 months after discharge? CG1127 Neonatal Abstinence Syndrome v5.0 Dec 2021 Page 17 of 21 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ References 
+ 
+Balain, M. and Johnson K (2014) Neonatal Abstinence Syndrome: role of breastfeeding. Infant. 
+10(1)9 -13. 
+ 
+Drugs and Lactation Database (Lactmed) https:// www.ncbi.nlm.nih.gov/books/NBK501922/c 
+(accessed 13/9/21) 
+ 
+Finnegan LP. Neonatal Abstinence Syndrome: assessment and pharmacotherapy. In: Nelson N, 
+editor. Current therapy in neonatal -perinatal medicine. 2ed. Ontario: BC Decker; 1990. 
+ 
+Hadak and Tan (2012) Neonatal Drug Withdrawal. Paediatrics. 129:e540 
+ 
+Hullett, J (2000) Neonatal abstinence syndrome: How and where should babies with this 
+condition be cared for? Infant. 6(5):159 -164. 
+ 
+Igbal, M.M., Sobhan, T. and Ryals, T. (2002) Effects of Commonly Used Benzodiazepines on 
+the fetus, neonate and nursinbg infant. Psychiatric Services. 53(1):39 -49. 
+ 
+Kumar, R. and Garg, S. (2019) Neonatal Abstinence Syndrome: a current update. Infant. 4 (15): 
+132-136 
+ 
+NHS 18 Hep B vaccination, online available at www.nhs.uk/conditions/vacinations/hepatitis -B- 
+vaccine (accessed 14/7/21) 
+ 
+Nottingham Neonatal Service – 2005 Management Of The Infant Born To The Drug Abusing 
+Birth parent. 
+ 
+Oei, J.L. et al (2012) Amphetamines:the pregnanat woman and her children: a review. 32:737 - 
+747. 
+ 
+Salisbury NHS Foundation Trust 2007 Neonatal Abstinence Syndrome Guideline. 
+Shukla, S. et al (2021) Perinatal Drug Abuse and Neonatal Drug Withdrawal 
+Trevor Mann Baby Unit, Brighton Hospitals NHS Trust. Feb 2020 Protocol for Care of Newborns 
+Exposed to: A) Unprescribed Medication or Substances (substance misuse) B) Prescribed 
+Medication During Pregnancy. 
+ 
+www.birth parenttobaby.org (accessed 21/7/21) CG1127 Neonatal Abstinence Syndrome v5.0 Dec 2021 Page 18 of 21 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Appendix 1: Neonatal Abstinence Scoring Chart 
+ CG1127 Neonatal Abstinence Syndrome v5.0 Dec 2021 Page 19 of 21 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Appendix 2a: Neonatal Abstinence Syndrome Leaflet (UHSussex West) 
+ 
+Neonatal Abstinence Syndrome Information Leaflet 
+ 
+During pregnancy, drugs travel across the placenta to the baby. When the baby is born, the 
+supply of drugs to the baby is stopped and so the baby can show signs and symptoms of 
+withdrawal. 
+ 
+It is important to also remember there are other reasons why the baby can be unsettled (e.g. 
+illness, colic, milk allergy). 
+ 
+Babies showing signs of withdrawal are stabilised on oral morphine and are able to be 
+discharged home when symptoms are minimal and the morphine dose has been unchanged for 
+36 hours. 
+ 
+After 2 weeks of age any new withdrawal signs are unlikely to be due to withdrawal unless we 
+are reducing the morphine dose. 
+ 
+As well as giving the morphine, there are other things you can do to help baby: 
+ 
+• Swaddling (loosely) - decreases sensory stimulation 
+• More frequent smaller feeds 
+• Increased support –increasing confidence in handling baby 
+• Education -teaching comforting and interacting techniques, massage and relaxation 
+baths 
+• Carrying babies around more or just holding them to help settle. 
+ 
+The symptoms of colic can be similar to those of withdrawal. Babies with colic are usually 
+unsettled for a small part of the day (usually the evenings) whereas a withdrawal baby can be 
+unsettled for the 24 hour period. 
+ 
+Morphine will be prescribed by the hospital to go home with baby. Our approach is to not reduce 
+the dose too soon. Baby needs to settle at home and get used to their new environment. It will 
+be prescribed to be given 4 times a day. Don’t ever change the morphine dose yourself. The 
+Neonatal Outreach Nurse will visit regularly and will be responsible for a repeat prescription. 
+ 
+It is best to reduce the dose in the late afternoon or evening, so if baby is a little more unsettled, 
+it will be during the following day when it is easier to give a few extra cuddles! 
+ 
+For any questions/advice please call Neonatal Outreach Sister: 
+ 
+07825 831019 (SRH Hannah), or 07825 831020 (Worthing Claire) CG1127 Neonatal Abstinence Syndrome v5.0 Dec 2021 Page 20 of 21 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Appendix 2b: Neonatal Abstinence Syndrome Leaflet (UHSussex East) 
+ 
+Neonatal Abstinence Syndrome Information Leaflet 
+ 
+During pregnancy, drugs travel across the placenta to the baby. When the baby is born, the 
+supply of drugs to the baby is stopped and so the baby can show signs and symptoms of 
+withdrawal. 
+ 
+It is important to also remember there are other reasons why the baby can be unsettled (e.g. 
+illness, colic, milk allergy). 
+ 
+Babies showing signs of withdrawal are stabilised on oral morphine and are able to be 
+discharged home when symptoms are minimal and the morphine dose has been unchanged for 
+36 hours. 
+ 
+After 2 weeks of age any new withdrawal signs are unlikely to be due to withdrawal unless we 
+are reducing the morphine dose. 
+ 
+As well as giving the morphine, there are other things you can do to help baby: 
+ 
+• Swaddling (loosely) - decreases sensory stimulation 
+• More frequent smaller feeds 
+• Increased support –increasing confidence in handling baby 
+• Education -teaching comforting and interacting techniques, massage and relaxation 
+baths 
+• Carrying babies around more or just holding them to help settle. 
+ 
+The symptoms of colic can be similar to those of withdrawal. Babies with colic are usually 
+unsettled for a small part of the day (usually the evenings) whereas a withdrawal baby can be 
+unsettled for the 24 hour period. 
+ 
+Morphine will be prescribed by the hospital to go home with baby. Our approach is to not reduce 
+the dose too soon. Baby needs to settle at home and get used to their new environment. It will 
+be prescribed to be given 4 times a day. Don’t ever change the morphine dose yourself. The 
+staff at the One Stop Follow -up outpatients clinic will be responsible for a repeat prescription. 
+ 
+It is best to reduce the dose in the late afternoon or evening, so if baby is a little more unsettled, 
+it will be during the following day when it is easier to give a few extra cuddles! 
+ 
+For any questions/advice please call a member of the specialist services: 
+Specialist midwives Anna Ferguson, Nikki Tuck, Royal Sussex County Hospital 01273 
+696955 ext 67583, mobile 07795 498509 
+Neonatologist Dr Neil Aiton, ANNP Jamie Blades; RSCH 01273 696955 ext 64195 
+(secretariat) CG1127 Neonatal Abstinence Syndrome v5.0 Dec 2021 Page 21 of 21 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Commence morphine 
+125mcg/kg/day 4 x day 
+36 hours of scores < 8 
+reduce the dose by 
+5 mcg/kg/dose twice a week 
+
+When dose has reached 
+15 mcg/kg/dose reduce to TDS 
+
+After 48 hours if scores 
+<8 reduce to BD 
+ 
+After 48hrs if scores <8 
+reduce to OD Appendix 3: Morphine Weaning Flowchart 
+
+36 hours scores >8 increase 
+dose by 25%. Repeat if 
+necessary after 36 hours 
+until scores are < 8

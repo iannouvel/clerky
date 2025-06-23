@@ -1,0 +1,1829 @@
+# Extracted from: BJOG - 2018 - Denison - Care of Women with Obesity in Pregnancy.pdf
+# Guideline ID: bjog-2018-denison-care-of-women-with-obesity-in-pregnancy
+# Content length: 160431 characters
+# Processing date: 1732953490.7993102
+
+Care of Women with Obesity in Pregnancy
+Green-top Guideline No. 72
+November 2018
+Please cite this paper as: Denison FC, Aedla NR, Keag O, Hor K, Reynolds RM, Milne A, Diamond A, on behalf of the
+Royal College of Obstetricians and Gynaecologists. Care of Women with Obesity in Pregnancy.
+Green-top Guideline No. 72. BJOG 2018
+DOI: 10.1111/1471-0528.15386 RCOG Green-top Guidelines
+Care of Women with Obesity in Pregnancy
+FC Denison, NR Aedla, O Keag, K Hor, RM Reynolds, A Milne, A Diamond, on behalf of the Royal
+College of Obstetricians and Gynaecologists
+Correspondence: Royal College of Obstetricians and Gynaecologists, 27 Sussex Place, Regent’s Park, London NW1 4RG.
+Email: clinicaleffectiveness@rcog.org.uk
+This is the second edition of this guideline. The ﬁrst edition was published in 2010 as a joint guideline with the
+Centre of Maternal and Child Enquiries under the title ‘Management of Women with Obesity in Pregnancy’.
+Executive summary
+Prepregnancy care
+What care should be provided in the primary care setting to women of childbearing age with obesity who wish to
+become pregnant?
+Primary care services should ensure that all women of childbearing age have the opportunity to
+optimise their weight before pregnancy. Advice on weight and lifestyle should be given duringpreconception counselling or contraceptive consultations. Weight and BMI should be measuredto encourage women to optimise their weight before pregnancy.P
+Women of childbearing age with a BMI 30 kg/m2or greater should receive information and
+advice about the risks of obesity during pregnancy and childbirth, and be supported to lose
+weight before conception and between pregnancies in line with National Institute for Health
+and Care Excellence (NICE) Clinical guideline (CG) 189.D
+Women should be informed that weight loss between pregnancies reduces the risk of stillbirth,hypertensive complications and fetal macrosomia. Weight loss increases the chances ofsuccessful vaginal birth after caesarean (VBAC) section.B
+What nutritional supplements should be recommended to women with obesity who wish to become pregnant?
+Women with a BMI 30 kg/m2or greater wishing to become pregnant should be advised to take
+5 mg folic acid supplementation daily, starting at least 1 month before conception andcontinuing during the ﬁrst trimester of pregnancy.D
+Obese women are at high risk of vitamin D de ﬁciency. However, although vitamin D
+supplementation may ensure that women are vitamin D replete, the evidence on whetherroutine vitamin D should be given to improve maternal and offspring outcomes remainsuncertain.B
+RCOG Green-top Guideline No. 126 e63 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Provision of antenatal care
+How and where should antenatal care be provided?
+Care of women with obesity in pregnancy can be integrated into all antenatal clinics, with clear
+local policies and guidelines for care available.D
+What are the facilities, equipment, and personnel required?
+All maternity units should have a documented environmental risk assessment regarding theavailability of facilities to care for pregnant women with a booking BMI 30 kg/m
+2or greater.
+This risk assessment should address the following issues:
+/C15circulation space
+/C15accessibility, including doorway widths and thresholds
+/C15safe working loads of equipment and ﬂoors
+/C15appropriate theatre gowns
+/C15equipment storage
+/C15transportation
+/C15stafﬁng levels
+/C15availability of, and procurement process for, speci ﬁc equipment, including large blood pressure
+cuffs, appropriately sized compression stockin gs and pneumatic compression devices, sit-on
+weighing scale, large chairs without arms, lar ge wheelchairs, ultraso und scan couches, ward and
+delivery beds, mattresses, theatre t rolleys, operating theatre tables and lifting and lateral transfer
+equipment.
+Maternity units should have a central list of all facilities and equipment required to provide
+safe care to pregnant women with a booking BMI 30 kg/m2or greater. The list should include
+details of safe working loads, product dimensions, as well as where speci ﬁc equipment is
+located and how to access it.P
+Women with a booking BMI 40 kg/m2for whom moving and handling are likely to prove
+unusually dif ﬁcult should have a moving and handling risk assessment carried out in the third
+trimester of pregnancy to determine any requirements for labour and birth. Clearcommunication of manual handling requirements should occur between the labour and theatresuites when women are in early labour.D
+Some women with a booking BMI less than 40 kg/m2or greater may also bene ﬁt from assessment of
+moving and handling requirements in the third trimester. This should be decided on an individual basis.PP
+RCOG Green-top Guideline No. 126 e64 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Measuring weight, height and BMI
+When and how often should maternal weight, height and BMI be measured?
+All pregnant women should have their weight and height measured using appropriate
+equipment, and their BMI calculated at the antenatal booking visit. Measurements should berecorded in the handheld notes and electronic patient information system.D
+For women with obesity in pregnancy, consideration should be given to reweighing womenduring the third trimester to allow appropriate plans to be made for equipment and personnelrequired during labour and birth.P
+What is the acceptable gestational weight gain in obese women?
+There is a lack of consensus on optimal gestational weight gain. Until further evidence is available,a focus on a healthy diet may be more applicable than prescribed weight gain targets.P
+Information giving during pregnancy
+What are the clinical risks of maternal obesity to maternal and fetal health in pregnancy?
+All pregnant women with a booking BMI 30 kg/m2or greater should be provided with accurate
+and accessible information about the risks associated with obesity in pregnancy and how theymay be minimised. Women should be given the opportunity to discuss this information.D
+What dietetic and exercise advice should be offered in pregnancy?
+Dietetic advice by an appropriately trained professional should be provided early in thepregnancy where possible in line with NICE Public Health Guideline 27.P
+What is the role of anti-obesity drugs in pregnancy?
+Anti-obesity or weight loss drugs are not recommended for use in pregnancy.C
+Risk assessment during pregnancy in women with obesity
+What speciﬁc risk assessments are required for anaesthetics?
+Pregnant women with a booking BMI 40 kg/m2or greater should be referred to an obstetric
+anaesthetist for consideration of antenatal assessment.D
+Difﬁculties with venous access and regional and general anaesthesia should be assessed. In
+addition, an anaesthetic management plan for labour and birth should be discussed anddocumented. Multidisciplinary discussion and planning should occur where signi ﬁcant potential
+difﬁculties are identi ﬁed.D
+RCOG Green-top Guideline No. 126 e65 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+What speciﬁc risk assessments are required for prevention of pressure sores?
+Women with a booking BMI 40 kg/m2or greater should have a documented risk assessment in
+the third trimester of pregnancy by an appropriately quali ﬁed professional to consider tissue
+viability issues. This should involve the use of a validated scale to support clinical judgement.D
+Special considerations for screening, diagnosis and management of maternal disease in women withobesity
+What special considerations are recommended for screening, diagnosis and management of gestational diabetes in
+women with obesity?
+All pregnant women with a booking BMI 30 kg/m2or greater should be screened for
+gestational diabetes according to NICE or Scottish Intercollegiate Guidelines Network guidelines.B
+What special considerations are recommended for screening, diagnosis and management of hypertensive
+complications of pregnancy in women with obesity?
+An appropriate size of cuff should be used for blood pressure measurements taken at the
+booking visit and all subsequent antenatal consultations. The cuff size used should bedocumented in the medical records.C
+Clinicians should be aware that women with class II obesity and greater have an increased riskof pre-eclampsia compared with those with a normal BMI.B
+Women with more than one moderate risk factor (BMI of 35 kg/m2or greater, ﬁrst pregnancy,
+maternal age of more than 40 years, family history of pre-eclampsia and multiple pregnancy)may bene ﬁt from taking 150 mg aspirin daily from 12 weeks of gestation until birth of the
+baby.B
+Women who develop hypertensive complications should be managed according to the NICECG107.P
+What special considerations are recommended for prevention, screening, diagnosis and management of venous
+thromboembolism in women with obesity?
+Clinicians should be aware that women with a BMI 30 kg/m2or greater, prepregnancy or at
+booking, have a pre-existing risk factor for developing venous thromboembolism (VTE) duringpregnancy.B
+Risk assessment should be individually discussed, assessed and documented at the ﬁrst
+antenatal visit, during pregnancy (if admitted or develop intercurrent problems), intrapartumand postpartum. Antenatal and post-birth thromboprophylaxis should be considered inaccordance with the RCOG GTG No. 37a.D
+RCOG Green-top Guideline No. 126 e66 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Acute VTE in pregnant women with obesity should be treated according to RCOG GTG No. 37b .P
+What special considerations are recommended for screening, diagnosis and management of mental health problems
+in women with obesity?
+Women with BMI 30 kg/m2or greater are at increased risk of mental health problems and
+should therefore be screened for these in pregnancy.D
+There is insuf ﬁcient evidence to recommend a speci ﬁc lifestyle intervention to prevent
+depression and anxiety in obese pregnant women.P
+Antenatal screening
+What special considerations does maternal obesity have for screening for chromosomal anomalies during pregnancy?
+All women should be offered antenatal screening for chromosomal anomalies. Women shouldbe counselled, however, that some forms of screening for chromosomal anomalies are slightlyless effective with a raised BMI.B
+Consider the use of transvaginal ultrasound in women in whom it is dif ﬁcult to obtain nuchal
+translucency measurements transabdominally.P
+What special considerations does maternal obesity have for screening for structural anomalies during pregnancy?
+Screening and diagnostic tests for structural anomalies, despite their limitations in the obesepopulation, should be offered. However, women should be counselled that all forms ofscreening for structural anomalies are more limited in obese pregnant women.C
+Fetal surveillance
+How and when should the fetus be monitored antenatally?
+As recommended by RCOG GTG No. 31, serial measurement of symphysis fundal height (SFH) isrecommended at each antenatal appointment from 24 weeks of gestation as this improves theprediction of a small-for-gestational-age fetus.B
+Women with a BMI greater than 35 kg/m2are more likely to have inaccurate SFH
+measurements and should be referred for serial assessment of fetal size using ultrasound.P
+Where external palpation is technically dif ﬁcult or impossible to assess fetal presentation,
+ultrasound can be considered as an alternative or complementary method.P
+RCOG Green-top Guideline No. 126 e67 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+How and when should the fetus be monitored during labour?
+In the absence of good-quality evidence, intrapartum fetal monitoring for obese women in
+labour should be provided in accordance with NICE CG190 recommendations.P
+How and when should the fetus be monitored post dates in women with obesity?
+There is a lack of de ﬁnitive data to recommend routine monitoring of post dates pregnancy.
+However, obese pregnant women should be made aware that they are at increased risk ofstillbirth.D
+Planning labour and birth
+What should be discussed with women with maternal obesity regarding labour and birth?
+Women with maternal obesity should have an informed discussion with their obstetrician andanaesthetist (if clinically indicated) about a plan for labour and birth which should bedocumented in their antenatal notes.P
+Women who are multiparous and otherwise low risk can be offered choice of setting forplanning their birth in midwifery-led units (MLUs), with clear referral pathways for early
+recourse to consultant-led units (CLUs) if complications arise.C
+Active management of the third stage should be recommended to reduce the risk of
+postpartum haemorrhage (PPH).A
+Is maternal obesity an indication for induction of labour?
+Elective induction of labour at term in obese women may reduce the chance of caesarean birthwithout increasing the risk of adverse outcomes; the option of induction should be discussedwith each woman on an individual basis.B
+Is maternal obesity an indication for caesarean section?
+The decision for a woman with maternal obesity to give birth by planned caesarean sectionshould involve a multidisciplinary approach, taking into consideration the individual woman ’s
+comorbidities, antenatal complications and wishes.C
+Is macrosomia and maternal obesity an indication for induction of labour and/or caesarean section?
+Where macrosomia is suspected, induction of labour may be considered. Parents should have adiscussion about the options of induction of labour and expectant management.B
+RCOG Green-top Guideline No. 126 e68 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+What care should women with obesity and a previous caesarean section receive?
+Women with a booking BMI 30 kg/m2or greater should have an individualised decision for
+VBAC following informed discussion and consideration of all relevant clinical factors.P
+Care during childbirth
+Where should obese women give birth?
+Class I and II maternal obesity is not a reason in itself for advising birth within a CLU, butindicates that further consideration of birth setting may be required.D
+The additional intrapartum risks of maternal obesity and the additional care that can beprovided in a CLU should be discussed with the woman so that she can make an informedchoice about planned place of birth.P
+What lines of communication are required during labour and birth in women with maternal obesity?
+The on-duty anaesthetist covering the labour ward should be informed of all women with classIII obesity admitted to the labour ward for birth. This communication should be documented bythe attending midwife in the notes.P
+What midwifery support should be available during labour to obese women?
+Women with class III obesity who are in established labour should receive continuous midwifery care,with consideration of additional measures to prevent pressure sores and monitor the fetal condition.P
+What speciﬁc interventions may be required during labour and birth for women with maternal obesity?
+In the absence of current evidence, intrapartum care should be provided in accordance withNICE CG190.P
+Women with a BMI 40 kg/m2or greater should have venous access established early in labour
+and consideration should be given to the siting of a second cannula.P
+Although active management of the third stage of labour is advised for all women, the increasedrisk of PPH in those with a BMI greater than 30 kg/m
+2makes this even more important.B
+What speciﬁc surgical techniques are recommended for performing caesarean section on the obese woman
+(including incision, closure)?
+There is a paucity of high-quality evidence to support the use of one surgical approach over
+another. Surgical approaches should therefore follow NICE CG132 but clinicians may decidealternative approaches are merited depending on individual circumstances.P
+RCOG Green-top Guideline No. 126 e69 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+What postoperative wound care is recommended following caesarean section in women with obesity?
+Women with class 1 obesity or greater having a caesarean section are at increased risk of
+wound infection and should receive prophylactic antibiotics at the time of surgery .A
+Women undergoing caesarean section who have more than 2 cm subcutaneous fat should have
+suturing of the subcutaneous tissue space in order to reduce the risk of wound infection andwound separation.A
+There is a lack of good-quality evidence to recommend the routine use of negative pressuredressing therapy, barrier retractors and insertion of subcutaneous drains to reduce the risk ofwound infection in obese women requiring caesarean sections.B
+Postnatal care and follow-up after pregnancy
+How can the initiation and maintenance of breastfeeding in women with maternal obesity be optimised?
+Obesity is associated with low breastfeeding initiation and maintenance rates. Women with abooking BMI 30 kg/m
+2or greater should receive appropriate specialist advice and support
+antenatally and postnatally regarding the bene ﬁts, initiation and maintenance of breastfeeding.P
+What ongoing care, including postnatal contraception advice, should be provided to women with maternal obesity
+following pregnancy?
+Maternal obesity should be considered when making the decision regarding the most
+appropriate form of postnatal contraception.P
+What information should be given postnatally to obese women about their long-term health risks and those of their
+children?
+Refer to NICE CG189. Women with class I obesity or greater at booking should continue to be
+offered nutritional advice following childbirth from an appropriately trained professional, with aview to weight reduction in line with NICE Public Health Guideline 27.D
+Women who have been diagnosed with gestational diabetes should have postnatal follow-up inline with NICE Guideline 3.D
+What support can be given in the community to ensure minimal interpregnancy weight gain or to minimise risks of a
+future pregnancy?
+Women should be supported to lose weight postpartum and offered referral to weight
+management services where these are available.P
+RCOG Green-top Guideline No. 126 e70 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Management of pregnancy following bariatric surgery
+What are the clinical risks of previous bariatric surgery to maternal and fetal health during pregnancy?
+A minimum waiting period of 12 –18 months after bariatric surgery is recommended before
+attempting pregnancy to allow stabilisation of body weight and to allow the correctidenti ﬁcation and treatment of any possible nutritional de ﬁciencies that may not be evident
+during the ﬁrst months.D
+How should women with previous bariatric surgery be cared for during pregnancy?
+Women with previous bariatric surgery have high-risk pregnancies and should have consultant-
+led antenatal care.P
+Women with previous bariatric surgery should have nutritional surveillance and screening for
+deﬁciencies during pregnancy.D
+Woman with previous bariatric surgery should be referred to a dietician for advice with regard
+to their specialised nutritional needs.D
+1. Purpose and scope
+Obesity is becoming increasingly prevalent in the UK population and has become one of the most commonly
+occurring risk factors in obstetric practice, with 21.3% of the antenatal population being obese and fewer than one-half of pregnant women (47.3%) having a body mass index (BMI) within the normal range.
+1According to World
+Health Organization criteria,2adults can be classiﬁed according to BMI as shown below in Table 1.
+Table 1. Classi ﬁcation of adults according to BMI
+Classi ﬁcation BMI (kg/m2)
+Underweight <18.50
+Normal range 18.50 –24.99
+Overweight ≥25.00
+Preobese 25.00 –29.99
+Obese class I 30.00 –34.99
+Obese class II 35.00 –39.99
+Obese class III ≥40.00
+RCOG Green-top Guideline No. 126 e71 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+While the majority of the recommendations within this guideline pertain to women with a BMI 30 kg/m2or greater, some
+recommendations are speciﬁc to women in the higher classes of obesity only. Obese women with a BMI below a speciﬁed
+threshold may also beneﬁt from recommendations in a higher BMI group, depending on individual circumstances.However, the chosen BMI cut-offs reﬂect careful consideration given to the balance of medical intervention versus risk,differences in local prevalence of maternal obesity and resource implications for local healthcare organisations.
+The recommendations cover interventions prior to conception, and during and after pregnancy.
+2. Introduction and background epidemiology
+The prevalence of obesity in the general population in the UK has increased markedly since the early 1990s. The
+prevalence of obesity in pregnancy has also been seen to increase, rising from 9 –10% in the early 1990s to 16 –19%
+in the 2000s.3,4
+Pregnant women who are obese are at greater risk of a variety of pregnancy-related complications compared withwomen of normal BMI, including pre-eclampsia and gestational diabetes. Pregnant women who are obese are also atincreased risk of caesarean birth. Maternal size can make the assessment of fetal size, presentation and externalmonitoring of fetal heart tracing more challenging during pregnancy. Initiation and maintenance of breastfeeding arealso more difﬁcult in the women with obesity.
+1,5–17High prepregnancy BMI is associated with a small but statistically
+signiﬁcant increase in severe maternal morbidity or mortality, with the adjusted rate difference per 10 000 womencompared with normal BMI being 24.9 (95% CI 15.7 –34.6) for women with class I obesity, 35.8 (95% CI 23.1 –49.5)
+for women with class II obesity and 61.1 (95% CI 44.8 –78.9) for women with class III obesity.
+18These US data are
+supported by the 2015 MBRRACE-UK (Mothers and Babies: Reducing Risk through Audits and Conﬁdential Enquiriesacross the UK) review into maternal deaths, which reported that 30% of women who died were obese and 22%were overweight.
+19In recognition of the excess in deaths and additional risks, the Conﬁdential Enquiry on Maternal
+and Child Health (CEMACH 2003 –5) recommended that women with a BMI 30 kg/m2or more should be seen for
+prepregnancy counselling.
+3. Identi ﬁcation and assessment of evidence
+This guideline was developed using standard methodology for developing RCOG Green-top Guidelines (GTGs). The
+Cochrane Library (including the Cochrane Database of Systematic Reviews, the Database of Abstracts of Reviews ofEffects [DARE] and the Cochrane Central Register of Controlled Trials [CENTRAL]), EMBASE, MEDLINE, and Trip weresearched for relevant papers. The search was inclusive of all relevant articles published until May 2016. A top-up literaturesearch was performed in January 2018. The databases were searched using the relevant Medical Subject Headings (MeSH)terms, including all subheadings and synonyms, and this was combined with a keyword search. Search terms included‘obesity’, ‘bariatric surgery’, ‘anti-obesity agents’, and ‘(prepregnancy or pre-pregnancy or preconception *or pre-
+conception *or pregestation *or pre-gestation *)a d j 3( o b e s *or weight or bmi)’. The search was limited to studies on
+humans and papers in the English language. Relevant guidelines were also searched for using the same criteria in theNational Guideline Clearinghouse and the National Institute for Health and Care Excellence (NICE) Evidence Search.
+Where possible, recommendations are based on available evidence. Areas lacking evidence are highlighted and
+annotated as ‘good practice points’. Further information about the assessment of evidence and the grading ofrecommendations can be found in Appendix I.
+RCOG Green-top Guideline No. 126 e72 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+4. Prepregnancy care
+4.1 What care should be provided in the primary care setting to women of childbearing age with
+obesity who wish to become pregnant?
+Primary care services should ensure that all women of childbearing age have the opportunity to
+optimise their weight before pregnancy. Advice on weight and lifestyle should be given duringpreconception counselling or contraceptive consultations. Weight and BMI should be measuredto encourage women to optimise their weight before pregnancy.P
+Women of childbearing age with a BMI 30 kg/m2or greater should receive information and
+advice about the risks of obesity during pregnancy and childbirth, and be supported to loseweight before conception and between pregnancies in line with NICE Clinical guideline (CG)189.D
+Women should be informed that weight loss between pregnancies reduces the risk of stillbirth,hypertensive complications and fetal macrosomia. Weight loss increases the chances ofsuccessful vaginal birth after caesarean (VBAC) section.B
+Compared with women of a healthy prepregnancy BMI, pregnant women with obesity are at increased
+risk of miscarriage,20gestational diabetes,16pre-eclampsia,21venous thromboembolism (VTE),22,23induced
+labour,24dysfunctional or prolonged labour,25caesarean section,26anaesthetic complications,27–31
+postpartum haemorrhage (PPH),32wound infections15and mortality.33Women over their ideal weight are
+less likely to initiate and maintain breastfeeding than women of normal weight.34Evidence
+level 2 –
+to 2++
+Infants of obese mothers are at increased risk of congenital anomalies,35stillbirth,12,36prematurity,8
+macrosomia9,15and neonatal death.9,36Intrauterine exposure to maternal obesity is also associated with
+an increased risk of developing obesity and metabolic disorders in childhood.37Women should be
+supported to lose weight before conception and between pregnancies in line with NICE CG189.38Please
+see Appendix II for further information on risks.Evidence
+level 2 ++
+There is evidence that in women with obesity, weight loss between pregnancies reduces the risk of
+stillbirth,39–42hypertensive complications40and macrosomia. Weight loss also increases the chances of
+successful VBAC43in a linear manner.Evidence
+level 2 ++
+4.2 What nutritional supplements should be recommended to women with obesity who wish to
+become pregnant?
+Women with a BMI 30 kg/m2or greater wishing to become pregnant should be advised to take
+5 mg folic acid supplementation daily, starting at least 1 month before conception andcontinuing during the ﬁrst trimester of pregnancy.D
+RCOG Green-top Guideline No. 126 e73 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Obese women are at high risk of vitamin D de ﬁciency. However, although vitamin D
+supplementation may ensure that women are vitamin D replete, the evidence on whether routinevitamin D should be given to improve maternal and offspring outcomes remains uncertain.B
+In the general maternity population, a systematic review of ﬁve trials, including 7391 pregnancies (2033
+with a history of a pregnancy affected by a neural tube defect [NTD] and 5358 with no history of NTDs),demonstrated that daily folic acid supplementation in doses ranging from 0.36 mg (360 micrograms) to4 mg (4000 micrograms) a day, with and without other vitamins and minerals, before conception and up
+to 12 weeks of gestation, prevents the recurrence of these defects. However, there is insufﬁcient
+evidence to determine whether folic acid reduces the risk of other birth defects.
+44Evidence
+level 1 ++
+Women with a raised BMI are at increased risk of NTDs, with a meta-analysis of 12 observational cohort
+studies reporting an OR of 1.70 (95% CI 1.34 –2.15) and 3.11 (95% CI 1.75 –5.46) for women deﬁned as
+obese and severely obese, respectively, compared with women of healthy weight.35Evidence
+level 2 ++
+Evidence from cross-sectional data shows that compared with women with a BMI less than 27 kg/m2, women
+with a BMI 27 kg/m2or greater are less likely to use nutritional supplements and less likely to receive folate
+through their diet. In addition, they had lower serum folate levels even after controlling for folate intake.45Evidence
+level 2 +
+The ﬁndings from the studies above suggest that obese women should receive higher doses of folate
+supplementation in order to minimise the increased risk of fetal NTDs. Although there have been somestudies which have suggested a link between high-dose folic acid supplementation and longer termoutcomes, including asthma in the offspring
+46,47and maternal malignancy, causality has not been
+established and the consensus is that high-dose folic acid is safe.48However, there is uncertainty about
+whether 5 mg is the appropriate dose,49and whether supplementation reduces the risk of NTDs to the
+same extent in the obese as it does in the non-obese pregnant population.Evidence
+level 2 /C0
+Prepregnancy BMI is inversely associated with serum vitamin D concentrations among pregnant women.
+Women with obesity (BMI 30 kg/m2or greater) are at increased risk of vitamin D deﬁciency compared
+with women of a healthy weight (BMI less than 25 kg/m2). Cord serum vitamin D levels in infants of
+obese women have also been found to be lower than infants born to non-obese women.50Evidence
+level 2 +
+The main source of vitamin D is synthesis on exposure of the skin to sunlight. However, in the UK there is limited
+sunlight of the appropriate wavelength, particularly during winter. A survey in the UK showed that approximatelyone-quarter of UK women aged between 19 and 24 years, and one-sixth of those aged between 25 and 34 years,
+are at risk of vitamin D deﬁciency.
+51Maternal skin exposure alone may not always be enough to achieve the optimal
+vitamin D status needed for pregnancy, and the recommended oral intake of 10 micrograms vitamin D daily for allpregnant and breastfeeding women cannot usually be met from diet alone.
+A Cochrane review concluded that supplementing pregnant women with vitamin D in a single or
+continued dose increases serum 25-hydroxyvitamin D at term and may reduce the risk of low birthweight,preterm birth and pre-eclampsia. However, when calcium and vitamin D are combined, the risk ofpreterm birth is increased. The clinical signiﬁcance of the increased serum 25-hydroxyvitamin Dconcentrations therefore remains unclear.
+52Evidence
+level 1 +
+RCOG Green-top Guideline No. 126 e74 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+A multicentre trial randomised 569 pregnant women to receive placebo and 565 to receive cholecalciferol
+1000 iu/day (25 micrograms/day). A total of 370 (65%) neonates in the placebo group and 367 (65%)
+neonates in the cholecalciferol group had a usable dual energy X-ray absorptiometry scan and were analysed
+for the primary endpoint. The neonatal whole-body bone mineral content of infants born to mothersassigned to cholecalciferol 1000 iu/day did not signiﬁcantly differ from that of infants born to mothersassigned to placebo (61.6 g [95% CI 60.3 –62.8] versus 60.5 g [95% Cl 59.3 –61.7], respectively; P=0.21).
+However, supplementation of women with cholecalciferol 1000 iu/day during pregnancy did demonstratethat this dosage was sufﬁcient to ensure that most pregnant women were vitamin D replete and it was safe.
+53Evidence
+level 1 ++
+5. Provision of antenatal care
+5.1 How and where should antenatal care be provided?
+Care of women with obesity in pregnancy can be integrated into all antenatal clinics, with clear
+local policies and guidelines for care available.D
+The Clinical Negligence Scheme for Trusts (CNST) Maternity Risk Management Standards54recommend that
+maternity services must develop and implement robust processes to manage the risks associated with obesity,and consistently provide sensitive, comprehensive, and appropriate multidisciplinary care. Speciﬁcrecommendations include a requirement for all women with a BMI 30 kg/m
+2or greater to have
+multidisciplinary care, a documented antenatal consultation about the intrapartum risks and to be advised todeliver in a consultant-led unit (CLU) for those with a BMI of 35 kg/m
+2or greater. This may not be feasible in
+areas of high prevalence due to capacity and resources. It is therefore important that all health professionalsproviding maternity care are aware of the maternal and fetal risks, and the speciﬁc interventions required tominimise these.
+55Provision of care should be organised depending on the local need and available services.Evidence
+level 4
+5.2 What are the facilities, equipment and personnel required?
+All maternity units should have a documented environmental risk assessment regarding the
+availability of facilities to care for pregnant women with a booking BMI 30 kg/m2or greater.
+This risk assessment should address the following issues:P
+/C15circulation space
+/C15accessibility, including doorway widths and thresholds
+/C15safe working loads of equipment and ﬂoors
+/C15appropriate theatre gowns
+/C15equipment storage
+/C15transportation
+/C15stafﬁng levels
+/C15availability of, and procurement process for, speci ﬁc equipment, including large blood
+pressure cuffs, appropriately sized compression stockings and pneumatic compressiondevices, sit-on weighing scale, large chairs without arms, large wheelchairs, ultrasound scancouches, ward and delivery beds, mattresses, theatre trolleys, operating theatre tables, andlifting and lateral transfer equipment.
+RCOG Green-top Guideline No. 126 e75 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Maternity units should have a central list of all facilities and equipment required to provide
+safe care to pregnant women with a booking BMI 30 kg/m2or greater. The list should include
+details of safe working loads, product dimensions, as well as where speci ﬁc equipment is
+located and how to access it.P
+Women with a booking BMI 40 kg/m2for whom moving and handling is likely to prove
+unusually dif ﬁcult should have a moving and handling risk assessment carried out in the third
+trimester of pregnancy to determine any requirements for labour and birth. Clearcommunication of manual handling requirements should occur between the labour and theatresuites when women are in early labour.D
+Some women with a booking BMI less than 40 kg/m2or greater may also bene ﬁt from assessment
+of moving and handling requirements in the third trimester. This should be decided on an individual
+basis.P
+A minimum requirement for maternity services within the NHS Litigation Authority’s CNST Maternity
+Risk Management Standards is the availability of suitable equipment for women with a high BMI. It isrecommended that units should have a documented process to assess this on a regular basis.
+54It is also
+recognised as good practice for maternity units to have an ultrasound machine, and extra-long spinal andepidural needles available at all times on the labour ward.
+Five areas have been identiﬁed in the risk assessment of the bariatric patient journey: patient factors;
+equipment; communication; building space; and organisational and staff issues.
+56Available moving and
+handling equipment should be listed along with its weight limit and storage location.57This will include chairs,
+beds, theatre operating tables and transfer equipment, such as hoists and lateral transfer equipment. Movingand handling courses and updates should be mandatory and include the management of class III obesity.
+57Evidence
+level 4
+6. Measuring weight, height and BMI
+6.1 When and how often should maternal weight, height and BMI be measured?
+All pregnant women should have their weight and height measured using appropriate
+equipment, and their BMI calculated at the antenatal booking visit. Measurements should be
+recorded in the handheld notes and electronic patient information system.D
+For women with obesity in pregnancy, consideration should be given to reweighing womenduring the third trimester to allow appropriate plans to be made for equipment and personnelrequired during labour and birth.P
+Appropriate care of women with maternal obesity can only be possible with consistent identiﬁcation of
+those women who are at risk. NICE CG62 Antenatal care for uncomplicated pregnancies58recommends that
+maternal height and weight is measured at the booking appointment (ideally by 10 weeks of gestation) andthe woman’s BMI is calculated. Semi-structured interviews of health professionals in the North EastGovernment Ofﬁce Region of England suggested that self-reported rather than measured height andweight are used at some community booking visits due to lack of availability of appropriate equipment.
+3AEvidence
+level 2 +
+RCOG Green-top Guideline No. 126 e76 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+systematic review, including 62 studies, found women under-reported their prepregnancy ( –2.94 kg to
+–0.29 kg) and birth ( –1.28 kg to –0.07 kg) weights, and over-reported gestational weight gain (0.33 –3 kg).
+However, the magnitude of error was small and did not largely bias associations between pregnancy-related weight and birth outcomes. The review concluded that although measured weight is preferable,self-reporting is a cost-effective and practical measurement approach.
+59
+Mandatory height and weight data ﬁelds in electronic patient information systems, and functionality allowing theautomatic calculation of BMI, may be useful to enable local organisations to achieve 100% compliance with this standard.
+6.2 What is the acceptable gestational weight gain in obese women?
+There is a lack of consensus on optimal gestational weight gain. Until further evidence is available,
+a focus on a healthy diet may be more applicable than prescribed weight gain targets.P
+There is a lack of consensus on optimal gestational weight gain.60The Institute of Medicine (IoM)
+guidelines (USA) recommend different ranges of weight gain for normal weight, overweight and obesewomen.
+61These guidelines are the most widely used but are not adopted routinely in clinical
+practice.60,62,63The original recommendations were focussed on strong evidence supporting the need for
+adequate maternal gestational weight gain to prevent fetal growth restriction. The guidelines were laterextended to include advice for overweight and obese pregnant women. However, due to a lack ofcontrolled trials, the recommended ranges of weight gain for each BMI category were devised usingavailable evidence from observational studies considering prevention of small -and large -for-gestational -age
+infants, reduction in caesarean section rates and reducing postpartum weight retention. Notably, therewas insufﬁcient evidence for the IoM to include gestational diabetes and pre-eclampsia, common adverseoutcomes in obese pregnant women, when preparing these guidelines. Studies have suggested that theIoM guidelines should be modiﬁed according to obesity class.
+64Until further evidence is available, a focus
+on a healthy diet may be more applicable than prescribed weight gain targets.Evidence
+level 2 +
+to 2++
+7. Information giving during pregnancy
+7.1 What are the clinical risks of maternal obesity to maternal and fetal health in pregnancy?
+All pregnant women with a booking BMI 30 kg/m2or greater should be provided with accurate
+and accessible information about the risks associated with obesity in pregnancy and how theymay be minimised. Women should be given the opportunity to discuss this information.D
+Preconception counselling provides a unique opportunity to inform obese women who are planning a
+pregnancy about the potential beneﬁts of achieving a healthy weight prepregnancy and of the increasedrisk associated with maternal obesity. Although preconception advice and care is the ideal scenario, manywomen present for the ﬁrst time during pregnancy. These women should be given an early opportunity todiscuss potential risks and management options with a healthcare professional. The aim is to provideappropriate information sensitively, which empowers the woman to actively engage with healthprofessionals and the services available to her. Relevant information will include the increased risk of
+Evidence
+level 4
+RCOG Green-top Guideline No. 126 e77 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+gestational diabetes, pre-eclampsia and fetal macrosomia, requiring: an increased level of maternal and fetal
+monitoring; the potential for poor ultrasound visualisation of the baby and consequent difﬁculties in fetalsurveillance and screening for anomalies; the potential for difﬁculty with intrapartum fetal monitoring,anaesthesia and caesarean section, which would require senior obstetric and anaesthetic involvement aswell as an antenatal anaesthetic assessment; and the need to prioritise the safety of the mother at alltimes. Preconception counselling should therefore be given where possible.
+65,66
+7.2 What dietetic and exercise advice should be offered in pregnancy?
+Dietetic advice by an appropriately trained professional should be provided early in the
+pregnancy where possible in line with NICE Public Health Guideline 27.P
+Many women and their partners have pre-existing social and cultural beliefs about pregnancy diet and weight gain.67
+These views should be considered when discussing the importance of healthy eating and appropriate exercise during
+pregnancy to prevent excessive weight gain and gestational diabetes.63
+7.3 What is the role of anti-obesity drugs in pregnancy?
+Anti-obesity or weight loss drugs are not recommended for use in pregnancy.C
+Anti-obesity or weight loss drugs are used for the management of obesity in women of reproductive age. Currently,
+there is a paucity of information about the effect of anti-obesity drugs on the fetus and access to most anti-obesitydrugs (with the exception of orlistat) is limited.
+Orlistat is a lipase inhibitor that acts by inhibiting the absorption of dietary fats. Although data are limited,
+using the Swedish Medical Birth Register, during the years 1998 –2011 and among 392 126 infants born,
+248 were exposed to orlistat in early pregnancy and no increase in major malformation risk was seen(relative risk [RR] 0.42, 95% CI 0.11 –1.07).
+68Evidence
+level 2 +
+Phentermine/topiramate promotes appetite reduction and decreases food consumption. The exact
+mechanism of action of topiramate on weight loss is not known but may be related to appetite
+suppression and increased satiety.69Use of topiramate in pregnancy is linked to oral clefts. A meta-
+analysis of all studies reporting on women exposed to topiramate during pregnancy included 3420 patientsand 1 204 981 controls. The odds ratio of oral cleft following ﬁrst trimester exposure to topiramate was6.26 (95% CI 3.13 –12.51; P=0.00001).
+69Evidence
+level 2 ++
+Topiramate and phentermine are also individually excreted in breast milk and, therefore, the combination of
+phentermine/topiramate may also be present in breast milk. Treatment with either medication is therefore notrecommended during lactation due to unknown risks on the infant.
+RCOG Green-top Guideline No. 126 e78 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Lorcaserin hydrochloride is a serotonin receptor agonist that is highly selective for the speciﬁc serotonin
+receptor, 5-HT 2C, which is involved in the regulation of appetite.70It is believed that lorcaserin promotes
+satiety and results in weight loss from decreased overall food consumption. There are no data on the
+safety of lorcaserin in human pregnancy. In animal studies, although exposure to lorcaserin duringembryogenesis has not demonstrated teratogenicity or embryolethality, exposure in late pregnancy didresult in lower birthweight of offspring, which persisted to adulthood. Lorcaserin is thereforecontraindicated in pregnancy.
+71,72Evidence
+level 4
+8. Risk assessment during pregnancy in women with obesity
+8.1 What speciﬁc risk assessments are required for anaesthetics?
+Pregnant women with a booking BMI 40 kg/m2or greater should be referred to an obstetric
+anaesthetist for consideration of antenatal assessment.D
+Difﬁculties with venous access, and regional and general anaesthesia should be assessed. In
+addition, an anaesthetic management plan for labour and birth should be discussed anddocumented. Multidisciplinary discussion and planning should occur where signi ﬁcant potential
+difﬁculties are identi ﬁed.D
+The Obstetric Anaesthetists’ Association and Association of Anaesthetists of Great Britain and Ireland
+guideline on obstetric anaesthetic services66recommends that antenatal assessment for all pregnant
+women with a booking BMI 40 kg/m2or greater should be made by an obstetric anaesthetist.Evidence
+level 4
+Obesity is a risk factor for many anaesthetic-related complications and has been identiﬁed as a signiﬁcant risk
+factor for anaesthesia-related maternal mortality. A study of UK Obstetric Surveillance System data showed thatone-quarter of maternal cardiac arrests were related to anaesthesia. Of this number, 75% of the women wereobese.
+27Epidural resite rate in the women with class III obesity (greater than 136 kg in weight) was 17% in a
+cohort study compared with 3% in the control group (less than 113 kg in weight).31Obesity in pregnancy is
+associated with an increased risk of difﬁculties with airway management, including difﬁcult bag mask ventilation73
+and failed intubation,28,29a higher risk of desaturation when difﬁculty is encountered28and postoperative
+atelectasis. Guidelines from the Difﬁcult Airway Society and Obstetric Anaesthetists’ Association highlight theimportance of thoughtful formation of both primary and secondary airway plans.
+74,75Obesity is also associated
+with a signiﬁcantly higher gastric volume in labouring parturients.76The increased difﬁculties associated with the
+provision of general and regional anaesthesia in the obese can lead to an increased decision-to-delivery time in
+women who require a category 1 or 2 caesarean section.30Women with class III obesity will be at highest risk
+and it is recommended that anaesthetic resources locally are focused on this group of women. Maternityservices may decide to use a lower BMI threshold, taking into consideration the local prevalence of maternalobesity. Each woman should be given advice on labour analgesia after individual risk assessment.Evidence
+level 2 /C0
+RCOG Green-top Guideline No. 126 e79 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+8.2 What speciﬁc risk assessments are required for prevention of pressure sores?
+Women with a booking BMI 40 kg/m2or greater should have a documented risk assessment in
+the third trimester of pregnancy by an appropriately quali ﬁed professional to consider tissue
+viability issues. This should involve the use of a validated scale to support clinical judgement.D
+A BMI greater than 40 kg/m2is a risk factor for developing pressure sores.77,78Immobility is also a risk
+factor.79A documented assessment of pressure ulcer risk should be performed, using a validated scale to
+support clinical judgement as per NICE guidance.80Reassessment of risk should occur if there is a change
+in clinical status. Those assessed as being at risk should have plans for skin assessment, skin care,repositioning frequency and pressure redistributing devices put in place.
+80Evidence
+level 4
+9. Special considerations for screening, diagnosis and management of maternal disease in women
+with obesity
+9.1 What special considerations are recommended for screening, diagnosis and management of
+gestational diabetes in women with obesity?
+All pregnant women with a booking BMI 30 kg/m2or greater should be screened for
+gestational diabetes according to NICE or Scottish Intercollegiate Guidelines Network (SIGN)guidelines.B
+National guidelines, including NICE Guideline 3 Diabetes in pregnancy: management from preconception to the
+postnatal period ,81and SIGN guidelines,82recommend that all pregnant women with a booking BMI 30 kg/m2
+or greater be screened for gestational diabetes.based on
+evidence
+level 2 /C0
+to 2++
+studies
+Maternal obesity is known to be an important risk factor for gestational diabetes with a number of large
+cohort studies reporting a three-fold increased risk compared with women of a healthy weight.6,8,15,16,83A
+large prospective cohort has found that obese women with gestational diabetes have a three-foldincreased risk of congenital anomalies.
+84Moreover, secondary analysis of the Hyperglycaemia and Adverse
+Pregnancy Outcomes study showed that maternal gestational diabetes and obesity were independentlyassociated with adverse pregnancy outcomes, with an even greater impact in combination.
+85Evidence
+level 2 ++
+9.2 What special considerations are recommended for screening, diagnosis and management of
+hypertensive complications of pregnancy in women with obesity?
+An appropriate size of cuff should be used for blood pressure measurements taken at the
+booking visit and all subsequent antenatal consultations. The cuff size used should bedocumented in the medical records.C
+Clinicians should be aware that women with class II obesity and greater have an increased riskof pre-eclampsia compared with those with a normal BMI.B
+RCOG Green-top Guideline No. 126 e80 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Women with more than one moderate risk factor (BMI of 35 kg/m2or greater, ﬁrst pregnancy,
+maternal age of more than 40 years, family history of pre-eclampsia and multiple pregnancy)may bene ﬁt from taking 150 mg aspirin daily from 12 weeks of gestation until birth of the
+baby.B
+Women who develop hypertensive complications should be managed according to the NICE CG107.P
+The effects of three different cuff sizes (standard, 12 923 cm; large, 15 933 cm; and thigh,
+18936 cm) on blood pressure measurement (84 000 measurements) were evaluated in 1240 adults. The
+differences in readings among the three cuffs were smallest in non-obese subjects and becameprogressively greater with increasing arm circumference in the obese population. Less error wasintroduced by using too large a cuff than by too small a cuff.
+86Evidence
+level 2 +
+A systematic review and meta-analysis of 29 prospective cohort studies involving a total of 1 980 761
+participants found that when compared with women with a BMI of between 18.5 kg/m2and 24.9 kg/m2, risk
+ratios for pre-eclampsia of overweight, obese and severely obese women were 1.70 (95% CI 1.60 –1.81;
+P<0.001), 2.93 (95% CI 2.58 –3.33; P<0.001) and 4.14 (95% CI 3.61 –4.75; P<0.001), respectively.87Evidence
+level 2 ++
+Moderate risk factors for the development of pre-eclampsia include a BMI of 35 kg/m2or greater, ﬁrst
+pregnancy, maternal age of more than 40 years, family history of pre-eclampsia and multiple pregnancy. Itis the considered opinion of the NICE Guideline Development Group
+88that women with more than one
+moderate risk factor may beneﬁt from taking 75 mg aspirin daily from 12 weeks of gestation until thebirth of the baby.
+88,89Evidence
+level 2 +
+More recent evidence from a multicentre randomised placebo-controlled trial and a systematic review and
+meta-analysis suggests that women at high risk of pre-eclampsia may beneﬁt from taking 150 mg aspirindaily from 12 weeks of gestation.
+90,91Evidence
+level 1 +
+One randomised trial92has found this beneﬁt may be enhanced if aspirin is taken at night, rather than
+during the day.Evidence
+level 1 –
+NICE CG10788also recommends that women who have had pre-eclampsia should be advised to achieve
+and keep a BMI within the healthy range (18.5 –24.9 kg/m2; as per NICE CG43 Obesity Prevention ) before
+their next pregnancy. One retrospective cohort study showed that the risk of recurrence of pre-eclampsia in women who had it in their ﬁrst pregnancy increases linearly with increasing BMI.
+93Evidence
+level 2 –
+9.3 What special considerations are recommended for prevention, screening, diagnosis and
+management of venous thromboembolism in women with obesity?
+Clinicians should be aware that women with a BMI 30 kg/m2or greater, prepregnancy or at
+booking, have a pre-existing risk factor for developing VTE during pregnancy.B
+RCOG Green-top Guideline No. 126 e81 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Risk assessment should be individually discussed, assessed and documented at the ﬁrst
+antenatal visit, during pregnancy (if admitted or develop intercurrent problems), intrapartumand postpartum. Antenatal and postbirth thromboprophylaxis should be considered inaccordance with the RCOG GTG No. 37a.D
+Acute VTE in pregnant women with obesity should be treated according to RCOG GTG No. 37b .P
+Obesity is a risk factor for VTE22,23,94 –97with the risk of pulmonary emboli (adjusted OR [aOR] 14.9, 95%
+CI 3.0 –74.8) being greater than for deep vein thrombosis (aOR 4.4, 95% CI 1.6 –11.9). Risk assessment
+and use of thromboprophylaxis in obesity should be guided as per RCOG GTG No. 37a98and treated as
+per RCOG GTG No. 37b.99Evidence
+level 2 +
+The RCOG recommends routine measurement of peak anti-Xa activity for women weighing 90 kg or
+more on therapeutic doses of low-molecular-weight heparin (LMWH).99Evidence
+level 4
+Two studies, one prospective cohort (n =85) and one case –control (n =40), investigated weight-based
+dosing of prophylactic LMWH and subsequent anti-Xa levels in women with class III obesity. Both studiesfound that weight-based dosing of LWMH was superior to ﬁxed dosing in reversing the increasedthrombotic tendency in class III obesity.
+100,101Evidence
+level 2 –
+9.4 What special considerations are recommended for screening, diagnosis and management of
+mental health problems in women with obesity?
+Women with BMI 30 kg/m2or greater are at increased risk of mental health problems and
+should therefore be screened for these in pregnancy.D
+There is insuf ﬁcient evidence to recommend a speci ﬁc lifestyle intervention to prevent
+depression and anxiety in obese pregnant women.P
+A systematic review and meta-analysis showed that obese pregnant women are at increased risk of mental
+health problems in pregnancy.102Obese and overweight women had a signiﬁcantly higher prevalence of
+depression symptoms than women of normal weight and higher median prevalence estimates. This was foundduring pregnancy (obese, 33.0%; overweight, 28.6%; normal weight 22.6%) and postpartum (obese, 13.0%;overweight, 11.8%; normal weight, 9.9%). Obese women also had higher odds of antenatal anxiety (OR 1.41;95% CI 1.10 –1.80). The few studies identiﬁed for postpartum anxiety,
+103–105eating disorders106,107or
+antenatal serious mental illness103,108also suggested increased risk among obese women.Evidence
+2++
+Three randomised controlled trials have investigated the effect of lifestyle intervention, including advice
+on dietary intake and physical activity, in obese pregnant women and although they have demonstrateda reduction in gestational weight gain, they have had conﬂicting results on depression and anxiety levels.
+109–111Evidence
+2+
+According to recommendations from NICE CG192,112women with a BMI 30 kg/m2or greater should be
+screened for mental health problems.Evidence
+level 4
+RCOG Green-top Guideline No. 126 e82 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+10. Antenatal screening
+In the UK, pregnant women are offered antenatal screening for fetal aneuploidy, including trisomy 21 (Down
+syndrome), using either ﬁrst trimester combined screening or second trimester biochemical screening. In addition,women are offered a fetal anomaly scan between 18
++0and 20+6weeks of gestation to detect structural
+abnormalities.
+A comprehensive meta-analysis by Stothard et al.113has shown that obese pregnant women (BMI 30 kg/m2
+or greater) are at increased risk of a range of structural anomalies (Table 2). Data from the Consortium on
+Safe Labour study has further divided obese pregnant women into two groups (those with gestationaldiabetes and those without) and have shown that even in the absence of gestational diabetes, obese pregnantwomen remain at risk of developing congenital cardiac defects (OR 1.18, 95% CI 1.02 –1.36).
+7Evidence
+level 2 ++
+10.1. What special considerations does maternal obesity have for screening for chromosomal
+anomalies during pregnancy?
+All women should be offered antenatal screening for chromosomal anomalies. Women should
+be counselled, however, that some forms of screening for chromosomal anomalies are slightlyless effective with a raised BMI.B
+Consider the use of transvaginal ultrasound in women in whom it is dif ﬁcult to obtain nuchal
+translucency (NT) measurements transabdominally.P
+Obese pregnant women should be offered diagnostic testing using invasive methods if found to be high risk with
+screening tests.
+Table 2. Risk of fetal structural anomalies for obese pregnant women
+Structural anomaly OR 95% CI
+Neural tube defects 1.80 1.62 –2.15
+Spina bi ﬁda 2.24 1.86 –2.69
+Cardiovascular anomalies 1.30 1.12 –1.51
+Septal anomalies 1.20 1.09 –1.31
+Cleft palate 1.23 1.03 –1.47
+Cleft lip and palate 1.20 1.03 –1.40
+Anorectal atresia 1.48 1.12 –1.97
+Hydrocephaly 1.68 1.19 –2.36
+Limb reduction anomalies 1.34 1.03 –1.73
+RCOG Green-top Guideline No. 126 e83 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+The First and Second Trimester Evaluation of Risk trial114has demonstrated that maternal BMI has a
+signiﬁcant impact on the success of obtaining accurate NT measurements. Other studies115,116have
+supported this ﬁnding and have shown that additional time is required to obtain measurements, and even
+then, these women have a higher chance of unsuccessful attempts at NT measurements requiring repeatvisits.Evidence
+level 2 ++
+A retrospective cohort study by Tsai et al.117has shown that the proportion of pregnant women who
+completed ﬁrst trimester screening is inversely proportional to their BMI (64% of women with BMI18–24.9 kg/m
+2versus 61% of women with BMI greater than 30 kg/m2and 47% if BMI greater than 40 kg/m2;
+P<0.001). However, further analyses of those who completed screening with speciﬁc ultrasonographic soft
+markers did not show any difference in detection rates between the groups (47% for normal or overweightwomen versus 17% for obese women; P=0.20).Evidence
+level 2 +
+Those with unsuccessful ﬁrst trimester screening should be offered second trimester screening with serum markers.
+Noninvasive prenatal testing (NIPT) involves detecting free fetal DNA fractions in the maternal serum for
+results. These have been shown to decrease with increasing maternal weight. Obesity-speciﬁc tests arenot available and women should be informed of the limitations of these tests.
+118,119Results of screening
+for trisomies with NIPT may therefore be less effective for obese pregnant women.Evidence
+2+
+Diagnostic testing may be offered, considering the limitations of screening tests in obese women, after full
+counselling. A retrospective cohort study concluded that women with a BMI between 30 and 40 kg/m2do
+not have increased risk of fetal loss associated with chorionic villus sampling or amniocentesis. Higher lossrates were observed for women with class III obesity following amniocentesis (aOR 2.2, 95% CI 1.2 –3.9).
+120Evidence
+level 2 +
+10.2 What special considerations does maternal obesity have for screening for structural
+anomalies during pregnancy?
+Screening and diagnostic tests for structural anomalies, despite their limitations in the obese
+population, should be offered. However, women should be counselled that all forms ofscreening for structural anomalies are more limited in obese pregnant women.C
+Maternal obesity is a limiting factor in screening for structural anomalies during pregnancy due to difﬁculty in
+accurate visualisation of fetal structures with increasing BMI.121The increased echogenicity of adipose tissue
+and increased absorption of the ultrasonic sound beam by abdominal fat results in reduced image clarity andpoor image quality. This leads to fewer anomalies being detected at the midtrimester fetal anomaly scan inobese pregnant women, with an increased risk of missed antenatal diagnoses of fetal anomalies (aOR 0.7,95% CI 0.7 –0.9; P=0.001).
+114,122Data from the FaSTER trial has shown a lower sensitivity and higher
+false-negative rate of detection of multiple aneuploidy markers (BMI less than 25 kg/m2, 32% sensitivity and
+68% false-negative rate versus BMI greater than 30 mg/m2, 22% sensitivity and 78% false-negative rate).Evidence
+level 2 ++
+RCOG Green-top Guideline No. 126 e84 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+This may result in the need for extra time for fetal anomaly scans. Repeat scans, including consideration of the
+transvaginal approach, may also be required to complete the screening process. A case –control study by
+Hendler et al.123looking at repeat examination of cardiac structures in obese versus non-obese pregnant
+women found that repeat ultrasound visualisation at a later gestation can improve identiﬁcation of cardiacstructural abnormalities. However, rates of suboptimal views remained signiﬁcantly higher in the obese group.Evidence
+level 2 /C0
+11. Fetal surveillance
+11.1 How and when should the fetus be monitored antenatally?
+As recommended by RCOG GTG No. 31, serial measurement of symphysis fundal height (SFH) is
+recommended at each antenatal appointment from 24 weeks of gestation as this improves theprediction of a small-for-gestational-age fetus.B
+Women with a BMI greater than 35 kg/m2are more likely to have inaccurate SFH
+measurements and should be referred for serial assessment of fetal size using ultrasound.P
+Where external palpation is technically dif ﬁcult or impossible to assess fetal presentation,
+ultrasound can be considered as an alternative or complementary method.P
+The following methods of estimating fetal growth have been assessed in the NICE CG62 Antenatal care for
+uncomplicated pregnancies58and RCOG GTG No. 31 Investigation and Management of the Small -for-Gestational -
+Age Fetus :124
+/C15SFH with or without the use of customised SFH measurements.125,126
+/C15Ultrasound scanning with or without the use of customised charts.
+/C15Clinical judgement and abdominal palpation.
+In women with obesity, all of these methods are technically more difﬁcult, increasing the risk of false-
+negative results. This is particularly the case for women with class III obesity.
+In the absence of good-quality evidence, it is advised that NICE CG6258and RCOG GTG No. 31124
+recommendations are followed for women with obesity to ensure safe and standard provision of care.Evidence
+level 4
+11.2 How and when should the fetus be monitored during labour?
+In the absence of good-quality evidence, intrapartum fetal monitoring for obese women in
+labour should be provided in accordance with NICE CG190 recommendations.P
+There is no evidence to support continuous fetal monitoring during labour in the absence of other
+comorbidities, or medical or obstetric complications. NICE CG190 Intrapartum care for healthy women and
+babies127recommends that intermittent fetal heart monitoring should be offered to low-risk women in
+labour using the Pinard stethoscope or Doppler ultrasound.Evidence
+level 4
+RCOG Green-top Guideline No. 126 e85 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+11.3 How and when should the fetus be monitored post dates in women with obesity?
+There is a lack of de ﬁnitive data to recommend routine monitoring of post dates pregnancy.
+However, obese pregnant women should be made aware that they are at increased risk ofstillbirth.D
+Perinatal mortality and fetal compromise increase progressively beyond 37 weeks of gestation128and
+women with obesity are at increased risk of stillbirth (BMI greater than 35 kg/m2versus 20 –25 kg/m2;O R
+3.9, 95% CI 2.44 –6.22).12Women with obesity are also at increased risk of prolonged pregnancy.12A
+retrospective cohort study of 29 224 women concluded that women with higher BMIs had increased risk
+of prolonged pregnancy and induction of labour with aOR 1.24 (95% CI 1.14 –1.34) for overweight
+women, aOR 1.52 (95% CI 1.37 –1.10) for class I obesity, aOR 1.75 (95% CI 1.48 –2.07) for class II obesity
+and aOR 2.27 (95% CI 1.78 –2.89) for class III obesity. Approximately 60% of obese primiparous women
+and 90% of obese multiparous women achieved vaginal birth following induction of labour.129Evidence
+level 2 +
+Deﬁnitive recommendations for fetal surveillance are hampered by the lack of randomised controlled
+trials demonstrating that antepartum fetal surveillance decreases perinatal morbidity or mortality in late-term and post-term gestations. The American College of Obstetrics and Gynecology suggests that basedon epidemiological data linking advancing gestational age to stillbirth, antepartum fetal surveillance at orbeyond 41 weeks of gestation should be indicated.
+130There are no deﬁnitive studies determining the
+optimal type or frequency of such testing and no evidence speciﬁc for women with obesity.Evidence
+level 4
+12. Planning labour and birth
+Planning for labour and birth is a dynamic process, which requires ongoing review of the woman’s antenatal progress
+and development of complications during the antenatal period. When discussing labour with the woman, it isimportant to consider maternal comorbidities, fetal complications, and access to services for emergency birth andneonatal resuscitation if required.
+This requires a multidisciplinary, individualised approach, with consideration of the woman’s and her
+partner’s views, and may involve the obstetrician, midwife and anaesthetist, and early anticipation ofpotential maternal and fetal complications that may arise during the intrapartum period.
+125Evidence
+level 4
+12.1 What should be discussed with women with maternal obesity regarding labour and birth?
+Women with maternal obesity should have an informed discussion with their obstetrician and
+anaesthetist (if clinically indicated) about a plan for labour and birth which should bedocumented in their antenatal notes.P
+Women who are multiparous and otherwise low risk can be offered choice of setting forplanning their birth in MLUs with clear referral pathways for early recourse to CLUs ifcomplications arise.C
+RCOG Green-top Guideline No. 126 e86 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Active management of the third stage should be recommended to reduce the risk of PPH.A
+Maternal obesity is associated with an increased incidence of induction of labour (OR 1.70, 95% CI
+1.64–1.76),15augmentation of labour (aOR 1.26, 95% CI 1.16 –1.37)14and intrapartum caesarean
+section (aOR 1.52, 95% CI 1.30 –1.79).14In addition, this group of women are also at increased risk
+of complications, including shoulder dystocia (OR 2.9, 95% CI 1.4 –5.8),24and have a higher prevalence
+of requesting additional analgesia in labour (aOR of requesting for epidural 1.20, 95% CI 1.18 –1.23).9
+The Birthplace in England national prospective cohort study131reported that low-risk women should be
+offered a choice of birthplace, including CLUs and MLUs. The risk of adverse events is uncommon andinterventions are low. Planned birth in midwifery-led units is supported by NHS trained midwives workingwith referral pathways to CLUs in case complications arise, liaising with a comprehensive network ofambulance services.
+A secondary analysis of the Birthplace study looking at the impact of maternal obesity on intrapartum
+outcomes in otherwise low-risk women concluded that the intrapartum risks may be lower thanpreviously anticipated (adjusted RR 1.12, 95% CI 1.02 –1.23 for BMI greater than 35 kg/m
+2relative to low-
+risk women of normal weight).14Evidence
+level 2 +
+NICE CG190127recommends that women with a booking BMI greater than 35 kg/m2have planned labour
+and birth in an obstetric unit. Those who have a BMI of between 30 kg/m2and 35 kg/m2at booking
+should have individualised assessment of place of birth.Evidence
+level 1 /C0
+to 2++
+NICE CG6258recommends that healthcare providers should discuss labour and birth with pregnant
+women before 36 weeks of gestation. This discussion should include the labour plan, pain managementand management of prolonged pregnancy.
+Women with maternal obesity should be made aware of potential intrapartum complications when
+discussing labour and birth. Issues that should be discussed include potential anaesthetic and obstetriccomplications, availability of senior obstetrician and anaesthetist, immediate access to theatre and neonatalresuscitation facilities. However, in recognition of the secondary analysis of the Birthplace study looking atthe intrapartum risks of maternal obesity, parity should be taken into account when assessing place ofbirth and risk for giving birth in MLUs.Evidence
+level 4
+Sebire et al.15have shown that obese pregnant women are at increased risk of PPH (OR 1.39, 95% CI
+1.32–1.46) even after correcting for mode of birth. Active management of the third stage of labour should
+be recommended to women with maternal obesity. The use of prophylactic uterotonics for themanagement of the third stage of labour has been shown to reduce the risk of PPH.
+132Evidence
+level 2 ++
+RCOG Green-top Guideline No. 126 e87 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+12.2 Is maternal obesity an indication for induction of labour?
+Elective induction of labour at term in obese women may reduce the chance of caesarean birth
+without increasing the risk of adverse outcomes; the option of induction should be discussedwith each woman on an individual basis.B
+A retrospective cohort study of 74 725 obese women compared the perinatal outcomes of elective
+induction of labour at 37 weeks of gestation and expectant management. The odds of caesarean birthwere lower among nulliparous women with elective induction of labour at 37 weeks of gestation (OR0.55, 95% CI 0.34 –0.90) and 39 weeks of gestation (OR 0.77, 95% CI 0.63 –0.95) compared with
+expectant management. Among multiparous women with a prior vaginal birth, elective induction oflabour at 37 (OR 0.39, 95% CI 0.24 –0.64), 38 (OR 0.65, 95% CI 0.51 –0.82) and 39 (OR 0.67, 95% CI
+0.56–0.81) weeks of gestation was associated with lower odds of caesarean section. Additionally,
+elective induction of labour at 38, 39 and 40 weeks of gestation was associated with lower odds ofmacrosomia. There were no differences in the odds of operative vaginal birth, lacerations, brachialplexus injury or respiratory distress syndrome. This study concluded that elective induction of labour ofobese women at term may reduce the risk of caesarean birth, without increasing the risks of adverseoutcomes.
+133Evidence
+level 2 +
+A systematic review and meta-analysis of prospective, retrospective, cohort and case –control studies,
+including 1 443 449 pregnant women in upper and middle income countries, concluded that maternal obesityis associated with fetal overgrowth and macrosomia, with an overall, unadjusted OR 2.42 (95% CI 2.16 –2.72)
+for large-for-gestational-age infants more than the 90
+thcentile; OR 2.17 (95% CI 1.92 –2.45) for birthweight
+more than 4000 g; and OR 2.77 (95% CI 2.22 –3.45) for birthweight more than 4500 g.134Evidence
+level 2 ++
+A 2016 Cochrane database systematic review of randomised trials for induction of labour for suspected
+fetal macrosomia concluded that elective induction of labour did not reduce the risk of brachial plexusinjury. However, induction of labour results in lower mean birthweight, and fewer fractures and cases ofshoulder dystocia. The authors concluded that while further trials are needed to identify the optimalgestation for induction and diagnosis of macrosomia, induction of labour may be considered wheremacrosomia can be identiﬁed conﬁdently and options of induction and expectant management should bediscussed.
+135Evidence
+level 1 +
+12.3 Is maternal obesity an indication for caesarean section?
+The decision for a woman with maternal obesity to give birth by planned caesarean section
+should involve a multidisciplinary approach, taking into consideration the individual woman ’s
+comorbidities, antenatal complications and wishes.C
+RCOG Green-top Guideline No. 126 e88 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Pregnant women with a higher BMI have an increased risk of caesarean birth. A systematic review and
+meta-analyses of 11 cohort studies136concluded that the risk of caesarean section increased by 50% in
+overweight women and more than doubled in obese women (pooled OR in overweight women 1.53,
+95% CI 1.48 –1.58; obese women 2.26, 95% CI 2.04 –2.51; class III obesity 3.38, 95% CI 2.49 –4.57).
+However, the decision regarding mode of birth should be individualised and consider the woman’scomorbidities, circumstances and wishes. A multidisciplinary approach is recommended and a discussionbetween the consultant obstetrician, anaesthetist, midwife and woman during the antenatal period isencouraged. Assessment of cervical favourability should be taken into account, as it has been shown thatnulliparous obese pregnant women with an unfavourable cervix are more likely to have a failed induction,resulting in caesarean section.
+137However, a retrospective cohort study by Subramaniam et al.138showed
+that planned caesarean section in women with class III obesity is not associated with reduced morbiditycompared with induction of labour.Evidence
+level 2 /C0
+Women with maternal obesity who require birth by emergency caesarean section are at increased risk of signiﬁcant
+morbidity and mortality. This should be taken into consideration when planning labour and mode of birth. Thosewith class III obesity may require additional specialist equipment. A detailed plan for obstetric and anaestheticmanagement should be put in place antenatally and documented in the woman’s notes.
+12.4 Is macrosomia and maternal obesity an indication for induction of labour and/or caesarean
+section?
+Where macrosomia is suspected, induction of labour may be considered. Parents should have a
+discussion about the options of induction of labour and expectant management.B
+A Cochrane review135of evidence on near-term or term induction of labour for fetal macrosomia has
+shown a reduction in the risk of shoulder dystocia and fetal fractures, irrespective of maternal BMI. Theﬁndings also showed no change in the risk of caesarean section. In order to prevent one fracture, itwould be necessary to induce 60 women. Evidence
+level 2 +
+This ﬁnding was supported by a randomised controlled trial by Boulvain et al.139which studied obese
+pregnant women. This trial compared induction of labour between 37+0and 38+6weeks of gestation
+versus expectant management of large-for-dates fetuses which was deﬁned by an estimated fetal weightgreater than the 95
+thcentile. This trial has shown a decreased incidence of shoulder dystocia in the
+induction of labour group (OR 0.47, 95% CI 0.26 –0.86), but there were no reported cases of brachial
+plexus injuries or intracranial haemorrhage in either group.
+A meta-analysis by Magro-Malosso et al.140of nondiabetic women did not show that induction of labour
+at term for fetal macrosomia, as diagnosed using antenatal ultrasonographic-estimated fetal weight,prevents shoulder dystocia (OR 0.57, 95% CI 0.30 –1.08). It did, however, show a reduced risk of fetal
+fractures (OR 0.17, 95% CI 0.03 –0.79).Evidence
+level 1 +
+RCOG Green-top Guideline No. 126 e89 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Boulvain et al.139and Magro-Malosso et al.140did show that fetuses from the induction of labour group
+were at increased risk of raised bilirubin of more than 250 mmol/l (9% in induction group versus 3% in
+expectant group; P=0.0004; OR 3.03, 95% CI 1.60 –5.74) and phototherapy (11% in induction group
+versus 7% in expectant group; P=0.03; OR 1.68, 95% CI 1.07 –2.66).Evidence
+level 1 ++
+12.5 What care should women with obesity and a previous caesarean section receive?
+Women with a booking BMI 30 kg/m2or greater should have an individualised decision for
+VBAC following informed discussion and consideration of all relevant clinical factors.P
+The risks and beneﬁts of VBAC are outlined in RCOG GTG No. 45 Birth after Previous Caesarean Birth .141 Evidence
+level 4
+Compared with non-obese pregnant women, obese pregnant women have additional risks which need to
+be considered during decision making. Obesity is a risk factor for unsuccessful VBAC. A retrospectivecohort study by Durnwald et al.
+142showed that only 54.6% of obese pregnant women had successful
+VBAC compared with 70.5% of those with a normal BMI ( P=0.003). Notably, those who had a normal
+BMI at booking but subsequently had an obese BMI at birth also had reduced VBAC success comparedwith those who maintained a normal BMI during pregnancy (56.6% versus 74.2%; P=0.006). This ﬁnding
+has been replicated by several other studies.
+143,144
+Class III obesity is associated with increased rates of uterine rupture during trial of labour143–145and
+neonatal injury. Emergency caesarean section in women with obesity is associated with an increased riskof serious maternal morbidity because anaesthetic
+146and operative difﬁculties are more prevalent in these
+women than in women with a healthy BMI. This should also be taken into account when discussing therisks and beneﬁts of VBAC.Evidence
+level 2 /C0
+13. Care during childbirth
+13.1 Where should obese women give birth?
+Class I and II maternal obesity is not a reason in itself for advising birth within a CLU, but
+indicates that further consideration of birth setting may be required.D
+The additional intrapartum risks of maternal obesity and the additional care that can beprovided in a CLU should be discussed with the woman so that she can make an informedchoice about planned place of birth.P
+Women with obesity are at signiﬁcantly higher risk of shoulder dystocia, emergency caesarean section and
+atonic PPH after vaginal but not caesarean birth.147Immediate obstetric intervention is vital in these
+situations. In addition, babies born to mothers with obesity are up to 1.5 times more likely to be admitted toa neonatal intensive care unit than babies born to mothers of a healthy weight.
+10–12,15,16,24,137,148Evidence
+level 2 ++
+RCOG Green-top Guideline No. 126 e90 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+13.2 What lines of communication are required during labour and birth in women with
+maternal obesity?
+The on-duty anaesthetist covering the labour ward should be informed of all women with class
+III obesity admitted to the labour ward for birth. This communication should be documented bythe attending midwife in the notes.P
+An opportunity for early assessment will allow the on-duty anaesthetist to review documentation of the antenatal
+anaesthetic consultation, identify potential difﬁculties with regional and/or general anaesthesia, and alert seniorcolleagues if necessary. An early epidural may be advisable, depending on the clinical scenario.
+13.3 What midwifery support should be available during labour to obese women?
+Women with class III obesity who are in established labour should receive continuous
+midwifery care, with consideration of additional measures to prevent pressure sores andmonitor the fetal condition.P
+Continuous midwifery care is recommended for all women in established labour as per NICE CG190.127
+Women with class III obesity need extra vigilance regarding care of pressure areas and ensuring normal
+labour progress. Fetal heart rate monitoring can be a challenge and close surveillance is required withrecourse to fetal scalp electrode or ultrasound assessment of the fetal heart if necessary.Evidence
+level 4
+13.4 What speciﬁc interventions may be required during labour and birth for women with
+maternal obesity?
+In the absence of current evidence, intrapartum care should be provided in accordance with
+NICE CG190.P
+Women with a BMI 40 kg/m2or greater should have venous access established early in labour
+and consideration should be given to the siting of a second cannula.P
+Although active management of the third stage of labour is advised for all women, theincreased risk of PPH in those with a BMI greater than 30 kg/m
+2makes this even more
+important.B
+A systematic review of eight studies149including 364 771 women concluded that healthy nulliparous
+women with obesity are subject to increased interventions during labour and birth compared withnormal-weight women. Interventions included early hospitalisation, artiﬁcial rupture of membranes,epidural analgesia, induction of labour and augmentation of labour. Future studies are needed to evaluatematernal and neonatal outcomes with and without the use of interventions. Intrapartum care should beprovided in accordance with NICE CG190.
+127Evidence
+level 2 +
+RCOG Green-top Guideline No. 126 e91 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Establishing venous access in women with class III obesity is more likely to be difﬁcult than in women with class I
+and II obesity. It is important that this is not attempted for the ﬁrst time in an emergency situation when urgent
+venous access is required for intravenous medication or for resuscitation.
+Women with obesity are at increased risk of PPH. There is strong evidence from the general maternity
+population that active management of the third stage of labour reduces the risk of PPH, postpartumanaemia and the need for blood transfusion.
+150Active management in all women is associated with a
+reduced incidence of prolonged third stage of labour and with a reduction in the use of therapeuticoxytocic drugs.Evidence
+level 1 ++
+13.5 What speciﬁc surgical techniques are recommended for performing caesarean section on the
+obese woman (including incision, closure)?
+There is a paucity of high-quality evidence to support the use of one surgical approach over
+another. Surgical approaches should therefore follow NICE CG132 but clinicians may decide
+alternative approaches are merited depending on individual circumstances.P
+Surgical access to the uterus can be very challenging in some women with obesity due to the presence of a large
+panniculus. It is important that an additional experienced assistant is present during the surgical procedure. Severaldifferent surgical approaches have been described in obese women, including vertical and transverse suprapannus skinincisions, to avoid pannus retraction.
+151–157Compared with transverse infrapanniculus incisions, vertical
+suprapanniculus incisions are associated with increased operative morbidity, including bleeding and classical
+hysterotomy,144and prolonged postoperative hypoxaemia and respiratory compromise.158,159Evidence is conﬂicting
+about whether the risk of surgical site infections is increased,151,157,160,161decreased155or unchanged154,162 –164with
+vertical suprapanniculus incisions. The alternative suprapanniculus approach is to use a transverse as opposed to avertical skin incision
+165but there is a paucity of evidence on clinical outcomes following this approach.
+13.6 What postoperative wound care is recommended following caesarean section in women
+with obesity?
+Women with class I obesity or greater having a caesarean section are at increased risk of
+wound infection and should receive prophylactic antibiotics at the time of surgery .A
+Women undergoing caesarean section who have more than 2 cm subcutaneous fat should have
+suturing of the subcutaneous tissue space in order to reduce the risk of wound infection andwound separation.A
+There is a lack of good-quality evidence to recommend the routine use of negative pressuredressing therapy, barrier retractors and insertion of subcutaneous drains to reduce the risk ofwound infection in obese women requiring caesarean sections.B
+RCOG Green-top Guideline No. 126 e92 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+A retrospective observational study of 287 213 singleton pregnancies15reported an aOR of 2.24 (99% CI,
+1.91–2.64) for wound infection in obese women compared with healthy weight women. In the general
+maternity population, a systematic review of randomised trials in women undergoing elective ornonelective caesarean sections
+166showed that the incidence of wound infections was signiﬁcantly reduced
+with antibiotic prophylaxis compared with no prophylaxis. Compared with placebo or no treatment,the use of prophylactic antibiotics in women undergoing caesarean section reduced the incidence ofwound infection (RR 0.40, 95% CI 0.35 –0.46; 82 studies; 14 407 women), endometritis (RR 0.38, 95% CI
+0.34–0.42; 83 studies; 13 548 women) and maternal serious infectious complications (RR 0.31, 95% CI
+0.20–0.49; 32 studies; 6159 women). Suturing of the subcutaneous tissue space should be performed as
+recommended by NICE CG13 Caesarean section .
+167
+Two controlled trials168,169randomised 76 and 91 women, respectively, who had at least 2 cm
+subcutaneous fat to closure or nonclosure of the subcutaneous tissue space. Meta-analysis167of these
+randomised controlled trials showed that closure of the subcutaneous space decreased the incidence ofwound complications (RR 0.42, 95% CI 0.22 –0.81).Evidence
+level 1 ++
+A systematic review and meta-analysis in the nonobstetric population,170including nine randomised
+controlled trials and 15 observational studies, concluded that the use of negative pressure wound therapysigniﬁcantly reduced surgical site infections in randomised controlled trials (OR 0.56, 95% CI 0.32 –0.96;
+P=0.04) and observational studies (OR 0.30, 95% CI 0.32 –0.42; P<0.00001). These results were found
+to be consistent in clean and clean-contaminated surgery with different types of procedures, but not inorthopaedic or trauma surgery.Evidence
+level 2 ++
+However, there is insufﬁcient evidence for negative pressure dressings in the obese obstetric
+population,156,157other practices to reduce surgical site infections, including insertion of subcutaneous
+drains,171,172and use of barrier retractors,173,174with more data awaited from ongoing trials.Evidence
+level 2 /C0
+to 1+
+14. Postnatal care and follow-up after pregnancy
+14.1 How can the initiation and maintenance of breastfeeding in women with maternal obesity
+be optimised?
+Obesity is associated with low breastfeeding initiation and maintenance rates. Women with a
+booking BMI 30 kg/m2or greater should receive appropriate specialist advice and support
+antenatally and postnatally regarding the bene ﬁts, initiation and maintenance of breastfeeding.P
+Maternal obesity is associated with a physiological delay in lactogenesis, lower rates of breastfeeding
+initiation, earlier cessation of breastfeeding and earlier introduction of solids.40,175,176Evidence
+level 2 ++
+This is likely to be multifactorial in origin and may be due to women’s perceptions of breastfeeding, difﬁculty
+with correct positioning of the baby and the possibility of an impaired prolactin response to suckling.177Evidence
+level 3
+RCOG Green-top Guideline No. 126 e93 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Evidence derived from randomised controlled trials178,179in the general maternity population shows that
+breastfeeding education and support is associated with higher breastfeeding initiation rates and, in some
+instances, longer durations of breastfeeding.Evidence
+level 1 +
+Dedicated breastfeeding support during the postnatal period is needed as the onset of breastfeeding is likely to be
+more complicated than for other women. Extra help is needed to ensure frequent and effective milk removal tostimulate lactogenesis, and assistance with physical difﬁculties attaching the newborn infant to large breasts.
+180–182
+14.2 What ongoing care, including postnatal contraception advice, should be provided to women
+with maternal obesity following pregnancy?
+Maternal obesity should be considered when making the decision regarding the most
+appropriate form of postnatal contraception.P
+Postnatal contraception advice should be given according to the Faculty of Sexual and Reproductive
+Healthcare guidelines183,184which recognise that women with obesity are at increased risk of VTE if they
+take the hormonal contraceptive pill.Evidence
+level 2 /C0
+to 2++
+14.3 What information should be given postnatally to obese women about their long-term health
+risks and those of their children?
+Refer to NICE CG189. Women with class I obesity or greater at booking should continue to be
+offered nutritional advice following childbirth from an appropriately trained professional, with aview to weight reduction in line with NICE Public health guideline 27.D
+Women who have been diagnosed with gestational diabetes should have postnatal follow-up inline with NICE Guideline 3.D
+Clinicians should refer to NICE CG189.38A small number of randomised controlled trials185–187have
+assessed the effect of postnatal lifestyle interventions on weight reduction. Modiﬁcation of dietary andphysical activity behaviours are associated with a signiﬁcant reduction in body weight compared with nolifestyle intervention. Maternity services need to identify what services are available locally to provide thisfollow-up.Evidence
+level 1 /C0
+A systematic review and meta-analysis188found that women with gestational diabetes mellitus had an
+increased risk of developing type II diabetes compared with those who had a normoglycaemic pregnancy(RR 7.43, 95% CI 4.79 –11.51).
+In an earlier systematic review,
+189there was a steep increase in incidence of type II diabetes within the
+ﬁrst 5 years following a pregnancy with gestational diabetes. However, after 5 years, the conversion ofgestational diabetes to type II diabetes appeared to plateau.Evidence
+level 1 +
+RCOG Green-top Guideline No. 126 e94 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Data from an observational cohort study of 330 Danish women with diet-treated gestational diabetes
+showed that 41% of these women developed diabetes during a median of 10 years follow-up.80This
+reﬂected a doubling of the risk compared with an earlier cohort of 241 women with gestational diabetes
+followed by the same research group 10 years previously. Being overweight (aOR 2.0, 95% CI 1.1 –3.4) or
+obese (aOR 2.6, 95% CI 1.5 –4.5) prepregnancy was found to be a signiﬁcant risk factor for the
+development of type II diabetes in these women.Evidence
+level 2 +
+14.4 What support can be given in the community to ensure minimal interpregnancy weight gain
+or to minimise risks of a future pregnancy?
+Women should be supported to lose weight postpartum and offered referral to weight
+management services where these are available.P
+Even modest postpartum weight retention is associated with a heightened risk of adverse outcomes in
+subsequent pregnancies, including hypertensive disease, diabetes and stillbirth.190Greater attention should
+be paid to interventions to help women reduce their weight following pregnancy to achieve a healthy BMI.Evidence
+level 4
+15. Management of pregnancy following bariatric surgery
+15.1 What are the clinical risks of previous bariatric surgery to maternal and fetal health during
+pregnancy?
+A minimum waiting period of 12 –18 months after bariatric surgery is recommended before
+attempting pregnancy to allow stabilisation of body weight and to allow the correctidenti ﬁcation and treatment of any possible nutritional de ﬁciencies that may not be evident
+during the ﬁrst months.D
+A meta-analysis of 11 cohort studies191compared obese women who had undergone bariatric surgery
+with obese women who had not undergone bariatric surgery. The analysis concluded that women whohad undergone bariatric surgery had lower odds of gestational diabetes (OR 0.31, 95% CI 0.15 –0.65),
+hypertensive disorders (OR 0.42, 95% CI 0.23 –0.78) and macrosomia (OR 0.40, 95% CI 0.24 –0.67).
+However, the odds for small-for-gestational-age newborns was increased (OR 2.16, 95% CI 1.38 –2.66).Evidence
+level 2 +
+Another systematic review and meta-analysis of 17 nonrandomised cohort and case –control studies192
+concluded that obese women who had bariatric surgery had a lower incidence of pre-eclampsia (OR 0.45,
+95% CI 0.25 –0.80; P=0.007), gestational diabetes (OR 0.47, 95% CI 0.40 –0.56; P<0.001) and large-for-
+gestational-age neonates (OR 0.46, 95% CI 0.34 –0.62; P<0.001), while a higher incidence of small-for-
+gestational-age neonates (OR 1.93, 95% CI 1.52 –2.44; P<0.001), preterm birth (OR 1.31, 95% CI 1.08 –
+1.58; P=0.006), admission for neonatal intensive care (OR 1.33, 95% CI 1.02 –1.72; P=0.03) and
+maternal anaemia (OR 3.41, 95% CI 1.56 –7.44; P=0.002) was identiﬁed.Evidence
+level 2 ++
+RCOG Green-top Guideline No. 126 e95 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+A review of the current evidence193concluded that there is a better overall obstetric outcome after
+bariatric surgery compared with women with class III obesity who are managed conservatively. A
+reduction in the prevalence of gestational diabetes mellitus, pregnancy-associated hypertensive disorders,
+macrosomia and congenital defects were observed. However, the risk of potential maternal nutritionaldeﬁciencies and newborn small for gestational age cannot be overlooked. Results concerning the incidenceof preterm birth and the number of caesarean sections are less consistent.Evidence
+level 2 ++
+15.2 How should women with previous bariatric surgery be cared for during pregnancy?
+Women with previous bariatric surgery have high-risk pregnancies and should have consultant-
+led antenatal care.P
+Women with previous bariatric surgery should have nutritional surveillance and screening fordeﬁciencies during pregnancy.D
+Woman with previous bariatric surgery should be referred to a dietician for advice with regard
+to their specialised nutritional needs.D
+Pregnancy can exacerbate nutritional deﬁciencies that predate pregnancy. Women, particularly those with
+malabsorptive procedures involving anatomical changes in the gastrointestinal tract, are at high risk of
+micronutritional deﬁciencies (including vitamin B12, iron, folate and fat-soluble vitamins) and macronutritionaldeﬁciencies (mainly fat and protein).
+A few studies
+194–197have evaluated the nutritional state of women during pregnancy following bariatric
+surgery. Although these are limited by small sample sizes and lack of appropriate controls, these womenare at increased risk of anaemia and low B12 levels. Relevant information should be requested from theparent bariatric surgery team. Women who have undergone previous gastric band insertion should haveconsideration of deﬂation for the duration of pregnancy dependent upon the circumstances of the woman.Hyperemesis may be pathological and related to an internal hernia or gastric band slip. Certain
+procedures are associated with an increased risk of reﬂux and aspiration –gastric band and sleeve
+gastrectomy. The major thrust of care will be vitamin and mineral supplementation during pregnancy,which requires specialist dietetic support.
+198Based on this evidence, joint guidelines generated by the
+American Association of Clinical Endocrinology, The Obesity Society, and American Society for Metabolicand Bariatric Surgery recommend that women with previous surgery have nutritional surveillance andscreening every trimester.
+199However, although supplementation may partially correct nutritional
+deﬁciencies,200there is a paucity of evidence about what the optimal basal supplementation should be in
+clinical practice.Evidence
+level 4
+16. Recommendations for future research
+/C15Studies to evaluate a normal partogram for women who are obese.
+/C15Studies to evaluate the safety and role of anti-obesity drugs during pregnancy.
+/C15Methods to improve antenatal fetal surveillance in women who are obese.
+RCOG Green-top Guideline No. 126 e96 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+/C15Studies to evaluate surgical techniques at caesarean birth in women who are obese.
+/C15Methods to reduce postsurgical site infection.
+/C15Methods to improve the safety of mode of birth in women who are obese after caesarean section.
+/C15Studies to evaluate the risk of adverse health outcomes in the offspring of women who are obese.
+/C15Studies to evaluate the psychological needs of pregnant women who are obese.
+/C15Studies to assess the impact of increased risks associated with obesity on maternal emotional and
+psychological wellbeing.
+17. Auditable topics
+/C15Proportion of women with class I obesity or greater at booking who commenced 5 mg folic acid
+supplementation daily prior to conception (100%).
+/C15Proportion of pregnant women who have a record of maternal height, weight and BMI in their
+maternity records (100%).
+/C15Proportion of maternity healthcare professionals who have had training in moving and handling
+techniques and the use of specialist bariatric equipment within the previous year (100%).
+/C15Proportion of women with class III obesity who had an antenatal anaesthetic review (100%).
+/C15Proportion of women with class I obesity or greater at booking, plus two other risk factors for VTE,
+as outlined in RCOG GTG No. 37a, who had pharmacological thromboprophylaxis prescribedantenatally (100%).
+/C15Proportion of women with class III obesity at booking who had pharmacological
+thromboprophylaxis prescribed postnatally (100%).
+/C15Proportion of women with class I obesity or greater at booking who had a glucose tolerance test
+during pregnancy (100%).
+/C15Proportion of women with class I obesity or greater at booking who had active management of the
+third stage of labour (100%).
+/C15Proportion of operative vaginal births and caesarean sections in women with class III obesity at
+booking, which were attended by an obstetrician and anaesthetist at specialty trainee level 6 or
+above (100%).
+18. Useful links and support groups
+/C15Royal College of Obstetricians and Gynaecologists. Why your weight matters during pregnancy and
+after birth. Information for you. London: RCOG; 2018.
+/C15NHS Choices. Overweight and pregnant [http://www.nhs.uk/conditions/pregnancy-and-baby/pages/
+overweight-pregnant.aspx].
+/C15Obesity in pregnancy [http://www.maternal-and-early-years.org.uk/obesity-in-pregnancy].
+References
+1. NMPA Project Team. National Maternal and Perinatal Audit: Clinical
+Report 2017 . London: RCOG; 2017.
+2. World Health Organization. Obesity: preventing and managing the
+global epidemic . WHO Technical Report Series. Geneva: WHO;
+2000.
+3. Heslehurst N, Lang R, Rankin J, Wilkinson JR, Summerbell CD.
+Obesity in pregnancy: a study of the impact of maternal obesityon NHS maternity services. BJOG 2007;114:334 –42.4. Kanagalingam MG, Forouhi NG, Greer IA, Sattar N. Changes
+in booking body mass index over a decade: retrospective
+analysis from a Glasgow Maternity Hospital. BJOG
+2005;112:1431 –3.
+5. Aune D, Saugstad OD, Henriksen T, Tonstad S. Maternal
+body mass index and the risk of fetal death, stillbirth, andinfant death: a systematic review and meta-analysis. JAMA
+2014;311:1536 –46.
+RCOG Green-top Guideline No. 126 e97 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+6. Bhattacharya S, Campbell DM, Liston WA, Bhattacharya S. Effect
+of Body Mass Index on pregnancy outcomes in nulliparous
+women delivering singleton babies. BMC Public Health 2007;
+7:168.
+7. Brite J, Laughon SK, Troendle J, Mills J. Maternal overweight and
+obesity and risk of congenital heart defects in offspring. Int J
+Obes (Lond) 2014;38:878 –82.
+8. Callaway LK, Prins JB, Chang AM, McIntyre HD. The prevalence
+and impact of overweight and obesity in an Australian obstetric
+population. Med J Aust 2006;184:56 –9.
+9. Cedergren MI. Maternal morbid obesity and the risk of adverse
+pregnancy outcome. Obstet Gynecol 2004;103:219 –24.
+10. Denison FC, Norrie G, Graham B, Lynch J, Harper N, Reynolds RM.
+Increased maternal BMI is associated with an increased risk of minorcomplications during pregnancy with consequent cost implications.BJOG 2009;116:1467 –72.
+11. Denison FC, Norwood P, Bhattacharya S, Duffy A, Mahmood T,
+Morris C, et al. Association between maternal body mass indexduring pregnancy, short-term morbidity, and increased health
+service costs: a population-based study. BJOG 2014;121:72 –81;
+discussion 82.
+12. Denison FC, Price J, Graham C, Wild S, Liston WA.
+Maternal obesity, length of gestation, risk of postdates
+pregnancy and spontaneous onset of labour at term. BJOG
+2008;115:720 –5.
+13. Gaillard R, Steegers EA, Hofman A, Jaddoe VW. Associations of
+maternal obesity with blood pressure and the risks of gestational
+hypertensive disorders. The Generation R Study. J Hypertens
+2011;29:937 –44.
+14. Hollowell J, Pillas D, Rowe R, Linsell L, Knight M, Brocklehurst P.
+The impact of maternal obesity on intrapartum outcomes in
+otherwise low risk women: secondary analysis of the Birthplacenational prospective cohort study. BJOG 2014;121:343 –55.
+15. Sebire NJ, Jolly M, Harris JP, Wadsworth J, Joffe M, Beard RW,
+et al. Maternal obesity and pregnancy outcome: a study of
+287,213 pregnancies in London. Int J Obes Relat Metab Disord
+2001;25:1175 –82.
+16. Weiss JL, Malone FD, Emig D, Ball RH, Nyberg DA, Comstock CH,
+et al. FASTER Research Consortium. Obesity, obstetric complica-
+tions and cesarean delivery rate –a population-based screening study.
+Am J Obstet Gynecol 2004;190:1091 –7.
+17. Zhou A, Xiong C, Hu R, Zhang Y, Bassig BA, Triche E, et al.
+Pre-pregnancy BMI, gestational weight gain, and the risk of
+hypertensive disorders of pregnancy: a cohort study in Wuhan,China. PLoS One 2015;10:e0136291.
+18. Lisonkova S, Muraca GM, Potts J, Liauw J, Chan WS, Skoll A,
+et al. Association Between Prepregnancy Body Mass Index andSevere Maternal Morbidity. JAMA 2017;318:1777 –86.
+19. Knight M, Kenyon S, Brocklehurst P, Neilson J, Shakespeare J,
+Kurinczuk JJ, editors, on behalf of MBRRACE-UK. Saving Lives,
+Improving Mothers’ Care –Lessons Learned to Inform Future
+Maternity Care from the UK and Ireland Conﬁdential Enquiries intoMaternal Deaths and Morbidity 2009-12 . Oxford: National
+Perinatal Epidemiology Unit, University of Oxford; 2014.
+20. Lashen H, Fear K, Sturdee DW. Obesity is associated with
+increased risk of ﬁrst trimester and recurrent miscarriage:
+matched case-control study. Hum Reprod 2004;19:1644
+–6.
+21. O’Brien TE, Ray JG, Chan WS. Maternal body mass index and
+the risk of preeclampsia: a systematic overview. Epidemiology
+2003;14:368 –74.
+22. Jacobsen AF, Skjeldestad FE, Sandset PM. Ante- and postnatal
+risk factors of venous thrombosis: a hospital-based case-controlstudy. J Thromb Haemost 2008;6:905 –12.23. Larsen TB, Sørensen HT, Gislum M, Johnsen SP. Maternal
+smoking, obesity, and risk of venous thromboembolism during
+pregnancy and the puerperium: a population-based nested case-control study. Thromb Res 2007;120:505 –9.
+24. Usha Kiran TS, Hemmadi S, Bethel J, Evans J. Outcome of
+pregnancy in a woman with an increased body mass index. BJOG
+2005;112:768 –72.
+25. Carlson NS, Hernandez TL, Hurt KJ. Parturition dysfunction in
+obesity: time to target the pathobiology. Reprod Biol Endocrinol
+2015;13:135.
+26. Chu SY, Kim SY, Schmid CH, Dietz PM, Callaghan WM, Lau J,
+et al. Maternal obesity and risk of cesarean delivery: a meta-
+analysis. Obes Rev 2007;8:385 –94.
+27. Beckett VA, Knight M, Sharpe P. The CAPS Study: incidence,
+management and outcomes of cardiac arrest in pregnancy in theUK: a prospective, descriptive study. BJOG 2017;124:1374 –81.
+28. Juvin P, Lavaut E, Dupont H, Lefevre P, Demetriou M, Dumoulin JL,
+et al. Difﬁcult tracheal intubation is more common in obese thanin lean patients. Anesth Analg 2003;97:595 –600, table of contents.
+29. Lundstrøm LH, Møller AM, Rosenstock C, Astrup G, Wetterslev J.
+High body mass index is a weak predictor for difﬁcult and failedtracheal intubation: a cohort study of 91,332 consecutive patientsscheduled for direct laryngoscopy registered in the Danish
+Anesthesia Database. Anesthesiology 2009;110:266 –74.
+30. Members of the Working Party, Nightingale CE, Margarson MP,
+Shearer E, Redman JW, Lucas DN, et al; Association of theAnaesthetists of Great Britain; Ireland Society for Obesity and
+Bariatric Anaesthesia. Peri-operative management of the obese
+surgical patient 2015: Association of Anaesthetists of GreatBritain and Ireland Society for Obesity and Bariatric Anaesthesia.
+Anaesthesia 2015;70:859 –76.
+31. Tonidandel A, Booth J, D’Angelo R, Harris L, Tonidandel S.
+Anesthetic and obstetric outcomes in morbidly obeseparturients: a 20-year follow-up retrospective cohort study. Int J
+Obstet Anesth 2014;23:357 –64.
+3 2 . F y f eE M ,T h o m p s o nJ M D ,A n d e r s o nN H ,G r o o mK M ,M c C o w a nL M .
+Maternal obesity and postpartum haemorrhage after vaginal andcaesarean delivery among nulliparous women at term: a
+retrospective cohort study. BMC Pregnancy Childbirth 2012;12:112.
+33. Dinatale A, Ermito S, Fonti I, Giordano R, Cacciatore A, Romano M,
+et al. Obesity and fetal-maternal outcomes. JP r e n a tM e d 2010;4:5 –8.
+34. Amir LH, Donath S. A systematic review of maternal obesity and
+breastfeeding intention, initiation and duration. BMC Pregnancy
+Childbirth 2007;7:9.
+35. Rasmussen SA, Chu SY, Kim SY, Schmid CH, Lau J. Maternal
+obesity and risk of neural tube defects: a metaanalysis. Am J
+Obstet Gynecol 2008;198:611 –9.
+36. Kristensen J, Vestergaard M, Wisborg K, Kesmodel U, Secher NJ.
+Pre-pregnancy weight and the risk of stillbirth and neonatal death.
+BJOG 2005;112:403 –8.
+37. Norman JE, Reynolds RM. The consequences of obesity and
+excess weight gain in pregnancy. Proc Nutr Soc 2011;70:450 –6.
+38. National Institute of Health and Care Excellence. Obesity:
+identiﬁcation, assessment and management . Clinical guideline 189.
+London: NICE; 2014.
+39. Knight-Agarwal CR, Williams LT, Davis D, Davey R, Cochrane T,
+Zhang H, et al. Association of BMI and interpregnancy BMI change
+with birth outcomes in an Australian obstetric population: aretrospective cohort study. BMJ Open 2016;6:e010667.
+40. McBain RD, Dekker GA, Clifton VL, Mol BW, Grzeskowiak LE.
+Impact of inter-pregnancy BMI change on perinatal outcomes: a
+retrospective cohort study. Eur J Obstet Gynecol Reprod Biol
+2016;205:98 –104.
+RCOG Green-top Guideline No. 126 e98 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+41. Salihu HM. Maternal obesity and stillbirth. Semin Perinatol 2011;
+35:340 –4.
+42. Whiteman VE, Crisan L, McIntosh C, Alio AP, Duan J, Marty PJ,
+et al. Interpregnancy body mass index changes and risk ofstillbirth. Gynecol Obstet Invest 2011;72:192 –5.
+43. Callegari LS, Sterling LA, Zelek ST, Hawes SE, Reed SD.
+Interpregnancy body mass index change and success of termvaginal birth after cesarean delivery. Am J Obstet Gynecol 2014;
+210:330.e1 –7.
+44. De-Regil LM, Pe ~na-Rosas JP, Fern /C19andez-Gaxiola AC, Rayco-Solon P.
+Effects and safety of periconceptional oral folate supplementationfor preventing birth defects. Cochrane Database Syst Rev 2015;(12):
+CD007950.
+45. Mojtabai R. Body mass index and serum folate in childbearing age
+women. Eur J Epidemiol 2004;19:1029 –36.
+46. Zetstra-van der Woude PA, De Walle HE, Hoek A, Bos HJ,
+Boezen HM, Koppelman GH, et al. Maternal high-dose folic acid
+during pregnancy and asthma medication in the offspring.Pharmacoepidemiol Drug Saf 2014;23:1059 –65.
+47. Wang T, Zhang HP, Zhang X, Liang ZA, Ji YL, Wang G. Is folate
+status a risk factor for asthma or other allergic diseases? Allergy
+Asthma Immunol Res 2015;7:538 –46.
+48. Moussa HN, Hosseini Nasab S, Haidar ZA, Blackwell SC, Sibai BM.
+Folic acid supplementation: what is new? Fetal, obstetric, long-
+term beneﬁts and risks. Future Sci OA 2016;2:FSO116.
+49. Stern SJ, Matok I, Kapur B, Koren G. Dosage requirements for
+periconceptional folic acid supplementation: accounting for BMI
+and lean body weight. J Obstet Gynaecol Can 2012;34:374 –8.
+50. Bodnar LM, Catov JM, Roberts JM, Simhan HN. Prepregnancy
+obesity predicts poor vitamin D status in mothers and their
+neonates. J Nutr 2007;137:2437 –42.
+51. Ofﬁce for National Statistics. National Diet and Nutrition Survey:
+Vol. 4: Nutritional Status (Anthropometry and Blood Analytes), BloodPressure and Physical Activity . London: ONS; 2004.
+52. De-Regil LM, Palacios C, Lombardo LK, Pe ~na-Rosas JP. Vitamin
+D supplementation for women during pregnancy. Cochrane
+Database Syst Rev 2016;(1):CD008873.
+53. Cooper C, Harvey NC, Bishop NJ, Kennedy S, Papageorghiou AT,
+Schoenmakers I, et al. Maternal gestational vitamin D supplementa-
+tion and offspring bone health (MAVIDOS): a multicentre, double-blind, randomised placebo-controlled trial. Lancet Diabetes Endocrinol
+2016;4:393 –402.
+54. NHS Litigation Authority. Clinical Negligence Scheme for Trusts:
+Maternity Clinical Risk Management Standards . Version 1. London:
+NHS Litigation Authority; 2013.
+55. Royal College of Obstetricians and Gynaecologists. Management
+of Women with Obesity in Pregnancy . London: RCOG/CMACE;
+2010.
+56. Health and Safety Executive. RR573 - Risk assessment and process
+planning for bariatric patient handling pathways . Merseyside: HSE;
+2007.
+57. The Association of Anaesthetists of Great Britain and Ireland.
+Peri-operative management of the morbidly obese patient
+. London:
+AAGBI; 2007.
+58. National Institute for Health and Care Excellence. Antenatal care
+for uncomplicated pregnancies . Clinical guideline 62. Manchester:
+NICE; 2017.
+59. Headen I, Cohen AK, Mujahid M, Abrams B. The accuracy of
+self-reported pregnancy-related weight: a systematic review.Obes Rev 2017;18:350 –69.
+60. Scott C, Andersen CT, Valdez N, Mardones F, Nohr EA, Poston L,
+et al. No global consensus: a cross-sectional survey of maternalweight policies. BMC Pregnancy Childbirth 2014;14:167.61. Yaktine AL, Rasmussen KM, editors. Weight Gain During
+Pregnancy: Reexamining the Guidelines . Washington DC: National
+Academies Press; 2009.
+62. Koletzko B, Bauer CP, Bung P, Cremer M, Flothk €otter M,
+Hellmers C, et al. German national consensus recommendations
+on nutrition and lifestyle in pregnancy by the ‘Healthy Start -
+Young Family Network’. Ann Nutr Metab 2013;63:311 –22.
+63. National Institute for Health and Care Excellence. Weight
+management before, during and after pregnancy . Public health
+guideline 27. Manchester: NICE; 2010.
+64. Faucher MA, Barger MK. Gestational weight gain in obese
+women by class of obesity and select maternal/newborn
+outcomes: a systematic review. Women Birth 2015;28:e70 –9.
+65. Moos MK, Dunlop AL, Jack BW, Nelson L, Coonrod DV, Long R,
+et al. Healthier women, healthier reproductive outcomes:recommendations for the routine care of all women of reproductive
+age. Am J Obstet Gynecol 2008;199 Suppl 2:S280 –9.
+66. Association of Anaesthetists of Great Britain and Ireland and
+Obstetric Anaesthetists’ Association. OAA/AAGBI Guidelines for
+Obstetrics Anaesthetic Services 2013 . London: OAA/AAGBI; 2013.
+67. Keely A, Cunningham-Burley S, Elliott L, Sandall J, Whittaker A. “If
+she wants to eat ...and eat and eat ...ﬁne!It’s gonna feed the
+baby”: pregnant women and partners’ perceptions and experiences
+of pregnancy with a BMI >40 kg/m
+2.Midwifery 2017;49:87 –94.
+68. K €all/C19en BA. Antiobesity drugs in early pregnancy and congenital
+malformations in the offspring. Obes Res Clin Pract 2014;8:e571 –6.
+69. Alsaad AM, Chaudhry SA, Koren G. First trimester exposure to
+topiramate and the risk of oral clefts in the offspring: a systematic
+review and meta-analysis. Reprod Toxicol 2015;53:45 –50.
+70. Wong D, Sullivan K, Heap G. The pharmaceutical market for
+obesity therapies. Nat Rev Drug Discov 2012;11:669 –70.
+71. Fantasia HC. New developments in the pharmacologic treatment
+of obesity. Nurs Womens Health 2013;17:53 –62.
+72. U.S. Food & Drug Administration. Belviq . Silver Spring, Maryland,
+USA: FDA; 2012 [https://www.accessdata.fda.gov/drugsatfda_doc
+s/label/2012/022529lbl.pdf]. Accessed 2018 Aug 1.
+73. Kheterpal S, Han R, Tremper KK, Shanks A, Tait AR, O’Reilly M,
+et al. Incidence and predictors of difﬁcult and impossible mask
+ventilation. Anesthesiology 2006;105:885 –91.
+74. Frerk C, Mitchell VS, McNarry AF, Mendonca C, Bhagrath R,
+Patel A, et al. Difﬁcult Airway Society 2015 guidelines formanagement of unanticipated difﬁcult intubation in adults. Br J
+Anaesth 2015;115:827 –48.
+75. Mushambi MC, Kinsella SM, Popat M, Swales H, Ramaswamy KK,
+Winton AL. Quinn AC; Obstetric Anaesthetists’ Association;
+Difﬁcult Airway Society. Obstetric Anaesthetists’ Association and
+Difﬁcult Airway Society guidelines for the management of difﬁcultand failed tracheal intubation in obstetrics. Anaesthesia 2015;
+70:1286 –306.
+76. Roberts RB, Shirley MA. Reducing the risk of acid aspiration
+during cesarean section. Anesth Analg 1974;53:859 –68.
+77. Drake DJ, Swanson M, Baker G, Pokorny M, Rose MA,
+Clark-Reed L, et al. The association of BMI and Braden total
+score on the occurrence of pressure ulcers. J Wound Ostomy
+Continence Nurs 2010;37:367 –71.
+78. VanGilder C, MacFarlane G, Meyer S, Lachenbruch C. Body mass
+index, weight, and pressure ulcer prevalence: an analysis of
+the 2006-2007 International Pressure Ulcer Prevalence Surveys.J Nurs Care Qual 2009;24:127 –35.
+79. Lindgren M, Unosson M, Fredrikson M, Ek AC. Immobility –a
+major risk factor for development of pressure ulcers among
+adult hospitalized patients: a prospective study. Scand J Caring Sci
+2004;18:57 –64.
+RCOG Green-top Guideline No. 126 e99 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+80. National Institute for Health and Care Excellence. Pressure ulcers:
+prevention and management. clinical guideline 179 . Manchester:
+NICE; 2014.
+81. National Institute for Health and Care Excellence. Diabetes in
+pregnancy: management from preconception to the postnatal period .
+NICE Guideline 3. Manchester: NICE; 2015.
+82. Scottish Intercollegiate Guidelines Network. Management of
+diabetes: a national clinical guideline . Number 116. Edinburgh:
+SIGN; 2010.
+83. Bianco AT, Smilen SW, Davis Y, Lopez S, Lapinski R, Lockwood CJ.
+Pregnancy outcome and weight gain recommendations for themorbidly obese woman. Obstet Gynecol 1998;91:97 –102.
+84. Moore LL, Singer MR, Bradlee ML, Rothman KJ, Milunsky A. A
+prospective study of the risk of congenital defects associatedwith maternal obesity and diabetes mellitus. Epidemiology
+2000;11:689 –94.
+85. Catalano PM, McIntyre HD, Cruickshank JK, McCance DR, Dyer AR,
+Metzger BE, et al. HAPO Study Cooperative Research Group. Thehyperglycemia and adverse pregnancy outcome study: associations of
+GDM and obesity with pregnancy outcomes. Diabetes Care
+2012;35:780 –6.
+86. Maxwell MH, Waks AU, Schroth PC, Karam M, Dornfeld LP.
+Error in blood-pressure measurement due to incorrect cuff size
+in obese patients. Lancet 1982;2:33 –6.
+87. Wang Z, Wang P, Liu H, He X, Zhang J, Yan H, et al. Maternal
+adiposity as an independent risk factor for pre-eclampsia: a meta-analysis of prospective cohort studies. Obes Rev 2013;14:508 –21.
+88. National Institute of Health and Care Excellence. Hypertension in
+pregnancy: diagnosis and management . Clinical guidelines 107.
+Manchester: NICE; 2011.
+89. Schumann NL, Brinsden H, Lobstein T. A review of national
+health policies and professional guidelines on maternal obesityand weight gain in pregnancy. Clin Obes 2014;4:197 –208.
+90. Rolnik DL, Wright D, Poon LC, O’Gorman N, Syngelaki A,
+de Paco MC, et al. Aspirin versus Placebo in Pregnancies at
+High Risk for Preterm Preeclampsia. N Engl J Med 2017;377:
+613–22.
+91. Roberge S, Nicolaides K, Demers S, Hyett J, Chaillet N, Bujold E.
+The role of aspirin dose on the prevention of preeclampsia and
+fetal growth restriction: systematic review and meta-analysis.Am J Obstet Gynecol 2017;216:110 –20.
+92. Ayala DE, Ucieda R, Hermida RC. Chronotherapy with low-dose
+aspirin for prevention of complications in pregnancy. Chronobiol
+Int2013;30:260 –79.
+93. Chen Q, Wei J, Tong M, Yu L, Lee AC, Gao YF, et al.
+Associations between body mass index and maternal weight gain
+on the delivery of LGA infants in Chinese women withgestational diabetes mellitus. J Diabetes Complications 2015;29:
+1037 –41.
+94. James AH, Jamison MG, Brancazio LR, Myers ER. Venous
+thromboembolism during pregnancy and the postpartum period:incidence, risk factors, and mortality. Am J Obstet Gynecol
+2006;194:1311 –5.
+95. Kane EV, Calderwood C, Dobbie R, Morris C, Roman E, Greer IA.
+A population-based study of venous thrombosis in pregnancy inScotland 1980-2005. Eur J Obstet Gynecol Reprod Biol 2013;169:223 –9.
+96. Knight M; UKOSS. Antenatal pulmonary embolism: risk factors,
+management and outcomes.
+BJOG 2008;115:453 –61.
+97. Simpson EL, Lawrenson RA, Nightingale AL, Farmer RD. Venous
+thromboembolism in pregnancy and the puerperium: incidence
+and additional risk factors from a London perinatal database.
+BJOG 2001;108:56 –60.98. Royal College of Obstetricians and Gynaecologists. Reducing the
+Risk of Venous Thromboembolism during Pregnancy and the
+Puerperium . Green-top Guideline No. 37a. London: RCOG; 2015.
+99. Royal College of Obstetricians and Gynaecologists. Reducing the
+Risk of Venous Thromboembolic Disease in Pregnancy and the
+Puerperium: Acute Management . Green-top Guideline No. 37b.
+London: RCOG; 2015.
+100. Ismail SK, Norris L, O’Shea S, Higgins JR. Weight-adjusted
+LMWH prophylaxis provides more effective thrombin inhibition
+in morbidly obese pregnant women. Thromb Res 2014;134:234 –9.
+101. Overcash RT, Somers AT, LaCoursiere DY. Enoxaparin dosing
+after cesarean delivery in morbidly obese women. Obstet Gynecol
+2015;125:1371 –6.
+102. Molyneaux E, Poston L, Ashurst-Williams S, Howard LM.
+Obesity and mental disorders during pregnancy and postpartum:a systematic review and meta-analysis. Obstet Gynecol 2014;
+123:857 –67.
+103. Ban L, Gibson JE, West J, Fiaschi L, Oates MR, Tata LJ. Impact of
+socioeconomic deprivation on maternal perinatal mental illnesses
+presenting to UK general practice. Br J Gen Pract 2012;62:e671 –8.
+104. Micali N, Simonoff E, Treasure J. Pregnancy and post-partum
+depression and anxiety in a longitudinal general populationcohort: the effect of eating disorders and past depression.
+J Affect Disord 2011;131:150 –7.
+105. Rallis S, Skouteris H, Wertheim EH, Paxton SJ. Predictors of
+body image during the ﬁrst year postpartum: a prospectivestudy. Women Health 2007;45:87 –104.
+106. Easter A, Bye A, Taborelli E, Corﬁeld F, Schmidt U, Treasure J,
+et al. Recognising the symptoms: how common are eatingdisorders in pregnancy? Eur Eat Disord Rev 2013;21:340 –4.
+107. Bulik CM, Von Holle A, Hamer R, Knoph Berg C, Torgersen L,
+Magnus P, et al. Patterns of remission, continuation andincidence of broadly deﬁned eating disorders during earlypregnancy in the Norwegian Mother and Child Cohort Study
+(MoBa). Psychol Med 2007;37:1109 –18.
+108. Bod /C19en R, Lundgren M, Brandt L, Reutfors J, Kieler H.
+Antipsychotics during pregnancy: relation to fetal and maternalmetabolic effects. Arch Gen Psychiatry 2012;69:715 –21.
+109. Bogaerts AF, Devlieger R, Nuyts E, Witters I, Gyselaers W,
+Guelinckx I, et al. Anxiety and depressed mood in obesepregnant women: a prospective controlled cohort study. Obes
+Facts 2013;6:152 –64.
+110. Claesson IM, Sydsj €o G, Brynhildsen J, Cedergren M, Jeppsson A,
+Nystr €om F, et al. Weight gain restriction for obese pregnant
+women: a case-control intervention study. BJOG 2008;115:44 –50.
+111. Dodd JM, Crowther CA, Robinson JS. Dietary and lifestyle
+interventions to limit weight gain during pregnancy for obese or
+overweight women: a systematic review. Acta Obstet Gynecol
+Scand 2008;87:702 –6.
+112. National Institute of Health and Care Excellence. Antenatal and
+postnatal mental health: clinical management and service guidance .
+Clinical guideline 192. Manchester; NICE: 2014.
+113. Stothard KJ, Tennant PW, Bell R, Rankin J. Maternal overweight
+and obesity and the risk of congenital anomalies: a systematic
+review and meta-analysis. JAMA 2009;301:636 –50.
+114. Aagaard-Tillery KM, Flint Porter T, Malone FD, Nyberg DA, Collins J,
+Comstock CH, et al. Inﬂuence of maternal BMI on genetic
+sonography in the FaSTER trial. Prenat Diagn 2010;30:14 –22.
+115. Gandhi M, Fox NS, Russo-Stieglitz K, Hanley ME, Matthews G,
+Rebarber A. Effect of increased body mass index on ﬁrst-
+trimester ultrasound examination for aneuploidy risk assessment.
+Obstet Gynecol 2009;114:856 –9.
+RCOG Green-top Guideline No. 126 e100 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+116. Thornburg LL, Mulconry M, Post A, Carpenter A, Grace D,
+Pressman EK. Fetal nuchal translucency thickness evaluation in
+the overweight and obese gravida. Ultrasound Obstet Gynecol
+2009;33:665 –9.
+117. Tsai LJ, Ho M, Pressman EK, Thornburg LL. Ultrasound
+screening for fetal aneuploidy using soft markers in the
+overweight and obese gravida. Prenat Diagn 2010;30:821 –6.
+118. Canick JA, Palomaki GE, Kloza EM, Lambert-Messerlian GM,
+Haddow JE. The impact of maternal plasma DNA fetal fraction
+on next generation sequencing tests for common fetalaneuploidies. Prenat Diagn 2013;33:667 –74.
+119. Ashoor G, Syngelaki A, Poon LC, Rezende JC, Nicolaides KH.
+Fetal fraction in maternal plasma cell-free DNA at 11-13 weeks’
+gestation: relation to maternal and fetal characteristics.Ultrasound Obstet Gynecol 2013;41:26 –32.
+120. Harper LM, Cahill AG, Smith K, Macones GA, Odibo AO. Effect
+of maternal obesity on the risk of fetal loss after amniocentesis
+and chorionic villus sampling. Obstet Gynecol 2012;119:745 –51.
+121. Phatak M, Ramsay J. Impact of maternal obesity on procedure of
+mid-trimester anomaly scan. J Obstet Gynaecol 2010;30:447 –50.
+122. Chung JH, Pelayo R, Hatﬁeld TJ, Speir VJ, Wu J, Caughey AB.
+Limitations of the fetal anatomic survey via ultrasound in theobese obstetrical population. J Matern Fetal Neonatal Med
+2012;25:1945 –9.
+123. Hendler I, Blackwell SC, Bujold E, Treadwell MC, Mittal P, Sokol RJ,
+et al. Suboptimal second-trimester ultrasonographic visualization ofthe fetal heart in obese women: should we repeat the examination?
+J Ultrasound Med 2005;24:1205 –9; quiz 1210 –1.
+124. Royal College of Obstetricians and Gynaecologists. The
+Investigation and Management of the Small –for–Gestational –Age
+Fetus . Green-top Guideline No. 31. London: RCOG; 2014.
+125. Bailey SM, Sarmandal P, Grant JM. A comparison of three
+methods of assessing inter-observer variation applied tomeasurement of the symphysis-fundal height. Br J Obstet Gynaecol
+1989;96:1266 –71.
+126. Morse K, Williams A, Gardosi J. Fetal growth screening by fundal
+height measurement. Best Pract Res Clin Obstet Gynaecol
+2009;23:809 –18.
+127. National Institute of Health and Care Excellence. Intrapartum
+care for healthy women and babies . Clinical guideline CG190.
+Manchester: NICE; 2017.
+128. Smith GC. Life-table analysis of the risk of perinatal death at
+term and post term in singleton pregnancies. Am J Obstet Gynecol
+2001;184:489 –96.
+129. Arrowsmith S, Wray S, Quenby S. Maternal obesity and labour
+complications following induction of labour in prolonged
+pregnancy. BJOG 2011;118:578 –88.
+130. American College of Obstetricians and Gynecologists. Practice
+bulletin no. 146: management of late-term and postterm
+pregnancies. Obstet Gynecol 2014;124:390 –
+6.
+131. Birthplace in England Collaborative Group, Brocklehurst P,
+Hardy P, Hollowell J, Linsell L, Macfarlane A, McCourt C, et al.Perinatal and maternal outcomes by planned place of birth for
+healthy women with low risk pregnancies: the Birthplace in
+England national prospective cohort study. BMJ 2011;343:d7400.
+132. Mavrides E, Allard S, Chandraharan E, Collins P, Green L, Hunt BJ,
+et al. Prevention and management of postpartum haemorrhage.
+BJOG 2016;124:e106 –49.
+133. Lee VR, Darney BG, Snowden JM, Main EK, Gilbert W, Chung J,
+et al. Term elective induction of labour and perinatal outcomes in
+obese women: retrospective cohort study. BJOG 2016;123:271 –8.134. Gaudet L, Ferraro ZM, Wen SW, Walker M. Maternal obesity
+and occurrence of fetal macrosomia: a systematic review and
+meta-analysis. Biomed Res Int 2014;2014:640291.
+135. Boulvain M, Irion O, Dowswell T, Thornton JG. Induction of
+labour at or near term for suspected fetal macrosomia. Cochrane
+Database Syst Rev 2016;(5):CD000938.
+136. Poobalan AS, Aucott LS, Gurung T, Smith WC, Bhattacharya S.
+Obesity as an independent risk factor for elective and emergency
+caesarean delivery in nulliparous women –systematic review and
+meta-analysis of cohort studies. Obes Rev 2009;10:28 –35.
+137. Wolfe H, Timofeev J, Tefera E, Desale S, Driggers RW. Risk of
+cesarean in obese nulliparous women with unfavorable cervix:
+elective induction vs expectant management at term. Am J Obstet
+Gynecol 2014;211:e1 –5.
+138. Subramaniam A, Jauk VC, Goss AR, Alvarez MD, Reese C,
+Edwards RK. Mode of delivery in women with class III obesity:
+planned cesarean compared with induction of labor. Am J Obstet
+Gynecol 2014;211: 700.e1 –700.e9.
+139. Boulvain M, Senat MV, Perrotin F, Winer N, Beucher G, Subtil D,
+et al. Groupe de Recherche en Obst /C19etrique et Gyn /C19ecologie
+(GROG). Induction of labour versus expectant management forlarge-for-date fetuses: a randomised controlled trial. Lancet
+2015;385:2600 –5.
+140. Magro-Malosso ER, Saccone G, Chen M, Navathe R, Di Tommaso M,
+Berghella V. Induction of labour for suspected macrosomia at term innon-diabetic women: a systematic review and meta-analysis ofrandomized controlled trials. BJOG 2017;124:414 –21.
+141. Royal College of Obstetricians and Gynaecologists. Birth after
+Previous Caesarean Birth . Green-top Guideline No. 45. London:
+RCOG; 2015.
+142. Durnwald CP, Ehrenberg HM, Mercer BM. The impact of
+maternal obesity and weight gain on vaginal birth after cesareansection success. Am J Obstet Gynecol 2004;191:954 –7.
+143. Juhasz G, Gyamﬁ C, Gyamﬁ P, Tocce K, Stone JL. Effect of body
+mass index and excessive weight gain on success of vaginal birth
+after cesarean delivery. Obstet Gynecol 2005;106:741 –6.
+144. Hibbard JU, Gilbert S, Landon MB, Hauth JC, Leveno KJ, Spong CY,
+et al. National Institute of Child Health and Human Development
+Maternal-Fetal Medicine Units Network. Trial of labor or repeat
+cesarean delivery in women with morbid obesity and previouscesarean delivery. Obstet Gynecol 2006;108:
+125–33.
+145. Goodall PT, Ahn JT, Chapa JB, Hibbard JU. Obesity as a risk
+factor for failed trial of labor in patients with previous cesarean
+delivery. Am J Obstet Gynecol 2005;192:1423 –6.
+146. Saravanakumar K, Rao SG, Cooper GM. The challenges of
+obesity and obstetric anaesthesia. Curr Opin Obstet Gynecol
+2006;18:631 –5.
+147. Blomberg M. Maternal obesity and risk of postpartum
+hemorrhage. Obstet Gynecol 2011;118:561 –8.
+148. Heslehurst N, Rankin J, Wilkinson JR, Summerbell CD. A
+nationally representative study of maternal obesity in England,UK: trends in incidence and demographic inequalities in 619 323
+births, 1989 –2007. Int J Obes (Lond) 2010;34:420 –8.
+149. Carlson NS, Lowe NK. Intrapartum management associated with
+obesity in nulliparous women. J Midwifery Womens Health
+2014;59:43 –53.
+150. Begley CM, Gyte GM, Murphy DJ, Devane D, McDonald SJ,
+McGuire W. Active versus expectant management for women inthe third stage of labour. Cochrane Database Syst Rev 2010;(7):
+CD007412.
+RCOG Green-top Guideline No. 126 e101 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+151. Bell J, Bell S, Vahratian A, Awonuga AO. Abdominal surgical
+incisions and perioperative morbidity among morbidly obese
+women undergoing cesarean delivery. Eur J Obstet Gynecol Reprod
+Biol2011;154:16 –9.
+152. Brocato BE, Thorpe EM Jr, Gomez LM, Wan JY, Mari G. The
+effect of cesarean delivery skin incision approach in morbidly
+obese women on the rate of classical hysterotomy. J Pregnancy
+2013;2013:890296.
+153. Edwards RK, Kumar R, Zhi D, Szychowski J, Subramaniam A,
+Lefkowitz EJ, et al. Gravidas with class III obesity: evaluating theabdominal skin microbiota above and below the panniculus.J Matern Fetal Neonatal Med 2016;29:3312 –6.
+154. Houston MC, Raynor BD. Postoperative morbidity in the morbidly
+obese parturient woman: supraumbilical and low transverseabdominal approaches. Am J Obstet Gynecol 2000;182:1033 –5.
+155. Marrs CC, Moussa HN, Sibai BM, Blackwell SC. The relationship
+between primary cesarean delivery skin incision type and wound
+complications in women with morbid obesity. Am J Obstet
+Gynecol 2014;210:319.e1 –4.
+156. McLean M, Hines R, Polinkovsky M, Stuebe A, Thorp J, Strauss
+R. Type of skin incision and wound complications in the obeseparturient. Am J Perinatol 2012;29:301 –6.
+157. Wall PD, Deucy EE, Glantz JC, Pressman EK. Vertical skin
+incisions and wound complications in the obese parturient.
+Obstet Gynecol 2003;102:952 –6.
+158. Elman A, Langonnet F, Dixsaut G, Hay JM, Guignard J, Dazza F,
+et al. Respiratory function is impaired less by transverse than by
+median vertical supraumbilical incisions. Intensive Care Med
+1981;7:235 –9.
+159. Vaughan RW, Wise L. Choice of abdominal operative incision in
+the obese patient: a study using blood gas measurements.
+Ann Surg 1975;181:829 –35.
+160. Thornburg LL, Linder MA, Durie DE, Walker B, Pressman EK,
+Glantz JC. Risk factors for wound complications in morbidly
+obese women undergoing primary cesarean delivery. J Matern
+Fetal Neonatal Med 2012;25:1544 –8.
+161. Alanis MC, Villers MS, Law TL, Steadman EM, Robinson CJ.
+Complications of cesarean delivery in the massively obese
+parturient. Am J Obstet Gynecol 2010;203:271.e1 –7.
+162. Myles TD, Gooch J, Santolaya J. Obesity as an independent risk
+factor for infectious morbidity in patients who undergo cesareandelivery. Obstet Gynecol 2002;100:959 –64.
+163. Stamilio DM, Scifres CM. Extreme obesity and postcesarean
+maternal complications. Obstet Gynecol 2014;124:227 –32.
+164. Wolfe HM, Gross TL, Sokol RJ, Bottoms SF, Thompson KL.
+Determinants of morbidity in obese women delivered by
+cesarean. Obstet Gynecol 1988;71:691 –6.
+165. Tixier H, Thouvenot S, Coulange L, Peyronel C, Filipuzzi L,
+Sagot P, et al. Cesarean section in morbidly obese women: supra
+or subumbilical transverse incision? Acta Obstet Gynecol Scand
+2009;88:1049 –52.
+166. Smaill FM, Grivell RM. Antibiotic prophylaxis versus no
+prophylaxis for preventing infection after cesarean section.
+Cochrane Database Syst Rev
+2014;(10):CD007482.
+167. National Institute of Health and Care Excellence. Caesarean
+Section. Clinical Guideline 132 . Manchester: NICE; 2011.
+168. Allaire AD, Fisch J, McMahon MJ. Subcutaneous drain vs. suture
+in obese women undergoing cesarean delivery. A prospective,randomized trial. J Reprod Med 2000;45:327 –31.
+169. Cetin A, Cetin M. Superﬁcial wound disruption after cesarean
+delivery: effect of the depth and closure of subcutaneous tissue.
+Int J Gynaecol Obstet 1997;57:17 –21.170. De Vries FE, Wallert ED, Solomkin JS, Allegranzi B, Egger M,
+Dellinger EP, et al. A systematic review and meta-analysis
+including GRADE qualiﬁcation of the risk of surgical siteinfections after prophylactic negative pressure wound therapycompared with conventional dressings in clean and contaminated
+surgery. Medicine (Baltimore) 2016;95:e4673.
+171. Hellums EK, Lin MG, Ramsey PS. Prophylactic subcutaneous
+drainage for prevention of wound complications after cesarean
+delivery –a metaanalysis. Am J Obstet Gynecol 2007;197:
+229–35.
+172. Gates S, Anderson ER. Wound drainage for caesarean section.
+Cochrane Database Syst Rev 2013;(12):CD004549.
+173. Hinkson L, Siedentopf JP, Weichert A, Henrich W. Surgical site
+infection in cesarean sections with the use of a plastic sheathwound retractor compared to the traditional self-retaining metalretractor. Eur J Obstet Gynecol Reprod Biol 2016;203:
+232–8.
+174. Scolari Childress KM, Gavard JA, Ward DG, Berger K, Gross
+GA. A barrier retractor to reduce surgical site infections and
+wound disruptions in obese patients undergoing cesarean
+delivery: a randomized controlled trial. Am J Obstet Gynecol
+2016;214:285.e1 –10.
+175. Garcia AH, Voortman T, Baena CP, Chowdhurry R, Muka T,
+Jaspers L, et al. Maternal weight status, diet, and supplement use
+as determinants of breastfeeding and complementary feeding: asystematic review and meta-analysis. Nutr Rev 2016;74:
+490–516.
+176. Preusting I, Brumley J, Odibo L, Spatz DL, Louis JM. Obesity as a
+Predictor of Delayed Lactogenesis II. J Hum Lact 2017;33:
+684–91.
+177. Keely A, Lawton J, Swanson V, Denison FC. Barriers to breast-
+feeding in obese women: a qualitative exploration. Midwifery
+2015;31:532 –9.
+178. Balogun OO, O’Sullivan EJ, McFadden A, Ota E, Gavine A,
+Garner CD, et al. Interventions for promoting the initiation of
+breastfeeding. Cochrane Database Syst Rev 2016;11:CD001688.
+179. McFadden A, Gavine A, Renfrew MJ, Wade A, Buchanan P,
+Taylor JL, et al. Support for healthy breastfeeding mothers with
+healthy term babies. Cochrane Database Syst Rev 2017;2:
+CD001141.
+180. Brown D, Baker G, Hoover K. Breastfeeding tips for women
+with large breasts. J Hum Lact 2013;29:261 –2.
+181. Jevitt C, Hernandez I, Gro €er M. Lactation complicated by
+overweight and obesity: supporting the mother and newborn.J Midwifery Womens Health 2007;52:606 –13.
+182. Mok E, Multon C, Piguel L, Barroso E, Goua V, Christin P, et al.
+Decreased full breastfeeding, altered practices, perceptions, andinfant weight change of prepregnant obese women: a need forextra support. Pediatrics 2008;121:e1319 –
+24.
+183. Faculty of Sexual & Reproductive Healthcare. UK Medical Eligibility
+Criteria for Contraceptive Use . London: FSRH; 2016.
+184. Faculty of Sexual & Reproductive Healthcare. Contraception After
+Pregnancy . London: FSRH; 2017.
+185. Leermakers EA, Anglin K, Wing RR. Reducing postpartum weight
+retention through a correspondence intervention. Int J Obes Relat
+Metab Disord 1998;22:1103 –9.
+186. Lovelady CA, Garner KE, Moreno KL, Williams JP. The effect of
+weight loss in overweight, lactating women on the growth oftheir infants. N Engl J Med 2000;342:449 –53.
+187. O’Toole ML, Sawicki MA, Artal R. Structured diet and physical
+activity prevent postpartum weight retention. J Womens Health
+(Larchmt) 2003;12:991 –8.
+RCOG Green-top Guideline No. 126 e102 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+188. Bellamy L, Casas JP, Hingorani AD, Williams D. Type 2 diabetes
+mellitus after gestational diabetes: a systematic review and meta-
+analysis. Lancet 2009;373:1773 –9.
+189. Kim C, Newton KM, Knopp RH. Gestational diabetes and the
+incidence of type 2 diabetes: a systematic review. Diabetes Care
+2002;25:1862 –8.
+190. Poston L, Caleyachetty R, Cnattingius S, Corval /C19an C, Uauy R,
+Herring S, et al. Preconceptional and maternal obesity:
+epidemiology and health consequences. Lancet Diabetes Endocrinol
+2016;4:1025 –36.
+191. Yi XY, Li QF, Zhang J, Wang ZH. A meta-analysis of maternal
+and fetal outcomes of pregnancy after bariatric surgery. Int J
+Gynaecol Obstet 2015;130:3 –9.
+192. Galazis N, Docheva N, Simillis C, Nicolaides KH. Maternal and
+neonatal outcomes in women undergoing bariatric surgery: asystematic review and meta-analysis. Eur J Obstet Gynecol Reprod
+Biol2014;181:45 –53.
+193. Gonz /C19alez I, Lecube A, Rubio M /C19A, Garc /C19ıa-Luna PP. Pregnancy
+after bariatric surgery: improving outcomes for mother and
+child. Int J Womens Health 2016;8:8721 –9.
+194. Dias MC, Fazio Ede S, de Oliveira FC, Nomura RM, Faintuch J,
+Zugaib M. Body weight changes and outcome of pregnancy aftergastroplasty for morbid obesity. Clin Nutr 2009;28:169 –72.
+195. Jans G, Guelinckx I, Voets W, Galjaard S, Van Haard PM,
+Vansant GM, et al. Vitamin K1 monitoring in pregnancies afterbariatric surgery: a prospective cohort study. Surg Obes Relat Dis
+2014;10:885 –90.196. Mead NC, Sakkatos P, Sakellaropoulos GC, Adonakis GL,
+Alexandrides TK, Kalfarentzos F. Pregnancy outcomes and
+nutritional indices after 3 types of bariatric surgery performed ata single institution. Surg Obes Relat Dis 2014;10:1166 –73.
+197. Carreau AM, Nadeau M, Marceau S, Marceau P, Weisnagel SJ.
+Pregnancy after bariatric surgery: Balancing risks and beneﬁts.
+Can J Diabetes 2017;41:432 –8.
+198. Kominiarek MA. Preparing for and managing a pregnancy after
+bariatric surgery. Semin Perinatol 2011;35:356 –61.
+199. Mechanick JI, Youdim A, Jones DB, Garvey WT, Hurley DL,
+McMahon MM, et al. Clinical practice guidelines for theperioperative nutritional, metabolic, and nonsurgical support of the
+bariatric surgery patient –2013 update: cosponsored by American
+Association of Clinical Endocrinologists, The Obesity Society, andAmerican Society for Metabolic & Bariatric Surgery. Obesity (Silver
+Spring) 2013;21 Suppl 1:S1 –27.
+200. Devlieger R, Guelinckx I, Jans G, Voets W, Vanholsbeke C,
+Vansant G. Micronutrient levels and supplement intake inpregnancy after bariatric surgery: a prospective cohort study.
+PLoS ONE 2014;9:e114192.
+201. Vahratian A, Zhang J, Troendle JF, Savitz DA, Siega-Riz AM.
+Maternal prepregnancy overweight and obesity and the patternof labor progression in term nulliparous women. Obstet Gynecol
+2004;104:943 –51.
+202. Chu SY, Kim SY, Lau J, Schmid CH, Dietz PM, Callaghan WM,
+et al. Maternal obesity and risk of stillbirth: a metaanalysis.Am J Obstet Gynecol 2007;197:223 –8.
+RCOG Green-top Guideline No. 126 e103 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Appendix I: Explanation of guidelines and evidence levels
+Clinical guidelines are: ‘systematically developed statements which assist clinicians and patients in making decisions
+about appropriate treatment for speciﬁc conditions’. Each guideline is systematically developed using a standardised
+methodology. Exact details of this process can be found in Clinical Governance Advice No.1 Development of RCOG
+Green-top Guidelines (available on the RCOG website at http://www.rcog.org.uk/green-top-development ). These
+recommendations are not intended to dictate an exclusive course of management or treatment. They must beevaluated with reference to individual patient needs, resources and limitations unique to the institution and variationsin local populations. It is hoped that this process of local ownership will help to incorporate these guidelines intoroutine practice. Attention is drawn to areas of clinical uncertainty where further research may be indicated.
+The evidence used in this guideline was graded using the scheme below and the recommendations formulated in a
+similar fashion with a standardised grading scheme.
+Classi ﬁcation of evidence levels Grades of recommendation
+1++ High-quality meta-analyses, systematic reviews
+of randomised controlled trials or randomised
+controlled trials with a very low risk of bias
+AAt least one meta-analysis, systematic review or
+RCT rated as 1 ++, and directly applicable to the
+target population; or
+A systematic review of RCTs or a body ofevidence consisting principally of studies rated as1+, directly applicable to the target population
+and demonstrating overall consistency of results1+ Well-conducted meta-analyses, systematic
+reviews of randomised controlled trials orrandomised controlled trials with a low risk
+of bias
+1– Meta-analyses, systematic reviews of
+randomised controlled trials or randomised
+controlled trials with a high risk of bias
+BA body of evidence including studies rated as 2 ++
+directly applicable to the target population, and
+demonstrating overall consistency of results; or
+Extrapolated evidence from studies rated as 1 ++
+or 1+2++ High-quality systematic reviews of case –control
+or cohort studies or high-quality case –control
+or cohort studies with a very low risk of
+confounding, bias or chance and a high
+probability that the relationship is causal
+2+ Well-conducted case –control or cohort
+studies with a low risk of confounding, bias or
+chance and a moderate probability that the
+relationship is causalCA body of evidence including studiesrated as 2 +directly applicable to the target
+population, and demonstrating overallconsistency of results; orExtrapolated evidence from studies rated
+as 2++
+2– Case –control or cohort studies with a high risk
+of confounding, bias or chance and a signiﬁcantrisk that the relationship is not causal
+3 Non-analytical studies, e.g. case reports, case
+seriesDEvidence level 3 or 4; orExtrapolated evidence from studies rated as 2 +
+4 Expert opinionGood practice points
+PRecommended best practice based on the
+clinical experience of the guideline developmentgroup
+RCOG Green-top Guideline No. 126 e104 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Appendix II: Risks of maternal obesity
+Risk Study n OR (95% CI)a
+Gestational diabetes NW Thames 1989 –9715
+Aberdeen 1976 –200524287 213
+24 2413.6 (3.3 –4.0)b
+2.4 (2.2 –2.7)
+Hypertensive disorders NW Thames 1989 –9715
+Aberdeen 1976 –200524287 213
+24 2412.1 (1.9 –2.5)b
+3.3 (2.7 –3.9)
+Venous thromboembolism Denmark 1980 –20012371 729 9.7 (3.1 –30.8)
+Slower labour progress
+4–10 cmUSA 1995 –2002201612 7.0 versus 5.4 hoursc
+P<0.001
+Caesarean section Meta-analysis of 33 studies261 391 654 2.1 (1.9 –2.3)
+Emergency caesarean section NW Thames 1989 –9715
+Cardiff 1990 –9924287 213
+83501.8 (1.7 –1.9)
+2.0 (1.2 –3.5)
+Postpartum haemorrhage NW Thames 1989 –9715
+Aberdeen 1976 –200524287 213
+24 2411.4 (1.2 –1.6)b
+2.3 (2.1 –2.6)
+Wound infection NW Thames 1989 –9715287 213 2.24 (1.91 –2.64)b
+Birth defects Australia 1998 –2002911 252 1.6 (1.0 –2.5)
+Prematurity Aberdeen 1976 –200524
+Australia 1998 –2002924 241
+11 2521.2 (1.1 –1.4)
+1.2 (0.8 –1.7)
+Macrosomia NW Thames 1989 –9715
+Sweden 1992 –200126287 213
+805 2752.4 (2.2 –2.5)b
+3.1 (3.0 –3.3)d
+Shoulder dystocia Sweden 1992 –200126
+Cardiff 1990 –9924805 275
+83503.14 (1.86 –5.31)d
+2.9 (1.4 –5.8)
+Admission to neonatal
+intensive care unitNW Thames 1989 –9715
+Cardiff 1990 –9924287 213
+83501.3 (1.3 –1.4)b
+1.5 (1.1 –2.3)
+Stillbirth Meta-analysis of 9 studies2021 031 804 2.1 (1.5 –2.7)
+Neonatal death
+DepressionDenmark 1989 –9636
+Meta-analysis of 62 studies10224 505
+75 1082.6 (1.2 –5.8)
+33.0%e
+aUnless otherwise stated.
+b99% CI.
+cMedian class I obesity or greater compared with normal weight.
+dOR for class III obesity.
+eMedian prevalence in obese women.
+RCOG Green-top Guideline No. 126 e105 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+This guideline was produced on behalf of the Royal College of Obstetricians and Gynaecologists by:
+Professor FC Denison MRCOG, Edinburgh; Dr NR Aedla MRCOG, Edinburgh; Dr O Keag MRCOG,
+Edinburgh; Dr K Hor, Speciality Trainee, Princess Royal Maternity Hospital, Glasgow;Professor RM Reynolds FRCP, FRCPE, Professor of Metabolic Medicine and Honorary Consultant Physician,
+University of Edinburgh and Edinburgh Royal Inﬁrmary; Dr A Milne, Consultant Obstetric Anaesthetist,
+Edinburgh Royal Inﬁrmary; and Mrs A Diamond, Weight Management and Specialist Bariatric Dietician,Edinburgh Royal Inﬁrmary
+and peer reviewed by:
+Dr L Amir MBBS, MMed, PhD, Judith Lumley Centre, La Trobe University, Australia; Dr LM Bodnar PhD, RD, University ofPittsburgh, Pennsylvania, USA; Dr V Beckett FRCOG, Bradford; Dr C Bouch, Chairman Elect, The Society for Obesity &
+Bariatric Anaesthesia (UK), London; Cochrane Pregnancy and Childbirth, Liverpool; Dr J Cousins, Chairman, The Society
+for Obesity & Bariatric Anaesthesia (UK), London; Dr K Duckitt FRCOG, Campbell River, British Colombia, Canada;Dr KA Fox MD, Med, FACOG, Texas Children’s Hospital, USA; Dr D Fraser FRCOG, Norwich; Dr RJ McCurdy MD,
+MPH, FACOG, Thomas Jefferson University Hospitals, Philadelphia, Pennsylvania, USA; RCOG Women’s Network;
+Dr H Salama MRCOG, Southampton; Dr HS Salama MRCOG, Benghazi, Libya; Professor GCS Smith FRCOG, Cambridge;Dr A Subramaniam MD, MPH, FACOG, Birmingham Hospital, University of Alabama, USA;
+Professor J Thornton FRCOG, Nottingham; Dr TS Usha Kiran FRCOG, Cardiff; and Miss R Zill-e-Huma MRCOG, Stevenage.
+Committee lead reviewers were: Dr B Magowan FRCOG, Melrose; and Dr S Karavolos MRCOG, Aberdeen.
+The Chair of the Guidelines Committee was: Dr AJ Thomson MRCOG, Paisley.
+All RCOG guidance developers are asked to declare any conﬂicts of interest. A statement summarising any
+conﬂicts of interest for this guideline is available from: https://www.rcog.org.uk/en/guidelines-research-
+services/guidelines/gtg72/.
+The ﬁnal version is the responsibility of the Guidelines Committee of the RCOG.
+The guideline will be considered for update 3 years after publication, with an intermediate
+assessment of the need to update 2 years after publication.
+DISCLAIMER
+The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical practice.
+They present recognised methods and techniques of clinical practice, based on published evidence, for consideration byobstetricians and gynaecologists and other relevant health professionals. The ultimate judgement regarding a particular
+clinical procedure or treatment plan must be made by the doctor or other attendant in the light of clinical data presented
+by the patient and the diagnostic and treatment options available.
+This means that RCOG Guidelines are unlike protocols or guidelines issued by employers, as they are not intended to be
+prescriptive directions deﬁning a single course of management. Departure from the local prescriptive protocols orguidelines should be fully documented in the patient’s case notes at the time the relevant decision is taken.
+RCOG Green-top Guideline No. 126 e106 of e106 ª2018 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15386 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License

@@ -1,0 +1,441 @@
+# Extracted from: Shoulder Dystocia Guideline UHSx.pdf
+# Guideline ID: shoulder-dystocia-guideline-uhsx
+# Content length: 22508 characters
+# Processing date: 1750066901.9924555
+
+CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Shoulder Dystocia v1.0 
+For use at: Trust Wide 
+Page 1 of 16 Please note, IF DOCUMENT IS PRINTED, IT MAY BECOME OUT OF DATE 
+ 
+TRUST CLINICAL GUIDELINE 
+Shoulder Dystocia 
+ 
+Overview 
+This clinical policy is written to support all staff, including obstetricians, midwives, midwifery support 
+workers and paediatricians who are involved in cases of shoulder dystocia. Providing evidence -
+based guidance on the prevention, prediction and treatment of shoulder dystocia (SD) and to 
+ensure rapid, efficient and consistent care for mothers and birthing parents, in addition to 
+optimising outcomes for the baby when shoulder dystocia is diagnosed. 
+ 
+Owner S. Adamson 
+Author/further information C. Madziwa 
+B. Middleto n, Obstetric Consultant 
+Guideline version v1.0 
+Related policies None 
+Related protocols/procedures SRH& WH: 
+Neonatal Resuscitation, Postnatal Care 
+PRH&RSCH: 
+Care of the Newborn, Neonatal Resuscitation, 
+Postnatal Care 
+UH Sussex maternity : 
+Admission to TS, SCBU or NNU 
+Standards PROMPT Maternity Foundation 
+RCOG: Shoulder Dystocia Green top Guideline 
+No. 42. 
+Maternity Incentive Scheme - NHS Resolution 
+Superseded documents SRH&WH: 
+CG1149 Shoulder Dystocia 
+PRH&RSCH: 
+MP048 Shoulder Dystocia CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Shoulder Dystocia v1.0 
+For use at: Trust Wide 
+Page 2 of 16 Review due April 2028 
+Date Uploaded 30th April 2025 
+ 
+Approval 
+JOGG Date approved 19/03/2 025 
+Women & Children’s Clinical Effectiveness 
+Meeting Date approved 17/04/2025 
+Consultation 
+Lead Midwife for Education Date approved 17/02/2025 
+Ratification 
+Clinical Document Approval Group Date approved 28/04/2025 
+ 
+ CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Shoulder Dystocia v1.0 
+For use at: Trust Wide 
+Page 3 of 16 Contents 
+1.0 Introduction ................................ ................................ ................................ .......................... 4 
+2.0 Scope ................................ ................................ ................................ ................................ .. 4 
+3.0 Responsibilities ................................ ................................ ................................ .................... 4 
+4.0 Definitions and abbreviations used within this guideline ................................ ....................... 5 
+5.0 Prediction and prevention ................................ ................................ ................................ .... 5 
+6.0 Risk factors ................................ ................................ ................................ .......................... 5 
+7.0 Antenatal management of previous shoulder dystocia ................................ ......................... 5 
+8.0 Intrapartum management of shoulder dystocia ................................ ................................ .... 6 
+9.0 Diagnosis of shoulder dystocia ................................ ................................ ............................ 6 
+10.0 Emergency management of shoulder dystocia ................................ ................................ .... 6 
+11.0 Persistent failure of first and second -line manoeuvres ................................ ......................... 7 
+12.0 Post birth management ................................ ................................ ................................ ........ 7 
+13.0 Paediatric management ................................ ................................ ................................ ....... 7 
+14.0 Follow up ................................ ................................ ................................ ............................. 8 
+15.0 Training ................................ ................................ ................................ ............................... 8 
+16.0 Record keeping and reporting ................................ ................................ .............................. 8 
+17.0 Monitoring ................................ ................................ ................................ ...................... 9 
+Appendix 1: PROMPT management of shoulder dystocia ................................ ............................. 10 
+Appendix 2: Shoulder Dystocia Proforma ................................ ................................ ...................... 12 
+Appendix 3: Guideline version control log ................................ ................................ ..................... 13 
+Appendix 4: Due Regard Assessment Tool ................................ ................................ ................... 14 
+Appendix 5: Template Dissemination, Implementation and Access Plan ................................ ....... 15 
+Appendix 6: Additional guidance and information ................................ ................................ .......... 16 
+
+ CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Shoulder Dystocia v1.0 
+For use at: Trust Wide 
+Page 4 of 16 
+Shoulder Dystocia 
+ 
+1.0 Introduction 
+Shoulder dystocia (SD) is defined as vaginal cephalic birth that requires additional obstetric 
+manoeuvres to release the baby’s shoulders after gentle downward traction has been 
+unsuccessful . It occurs when either the anterior or, less commonly, the posterior shoulder of the 
+baby impacts on the maternal or birthing parent ’s symphysis or sacral promontory. 
+The incidence of SD is wide in variation but occurs in approximately 0.6% of all vaginal births in UK 
+and North America. 
+Perinatal mortality and morbidity is high in cases of shoulder dystocia, even with appropriate 
+management. Hypoxia and b rachial plexus injuries (BPI) occur in 2.3% -16% of shoulder dystocia 
+cases with <10% permanent disability (0.1 - 0.2 per 1000 live births). Not all brachial plexus 
+injuries are associated with excessive traction, as maternal or birthing parent propulsive force can 
+also contribute. BPI can also occur outside of shoulder dystocia. Nevertheless, BPI from shoulder 
+dystocia is a common cause of litigation in maternity services. 
+Maternal or birthing parent morbidity risks from SD include postpartum haemorrhage (11%) and 
+maternal or birthing parent trauma including fourth -degree perineal tears (3.8%). Risk of incidence 
+is unchanged by the manoeuvres required to effect birth of the baby . 
+2.0 Scope 
+This guideline applies to: 
+• Midwives 
+• Obstetricians 
+• Paediatricians 
+• Maternity support workers (MSWs) 
+3.0 Responsibilities 
+Midwives , obstetricians , paediatricians and MSWs : 
+• To access, read, understand and follow this guidance . 
+• To use their professional judgement in applicatio n of this guideline. 
+Management: 
+• To ensure the guideline is reviewed as required in line with Trust and National 
+recommendations . 
+• To ensure the guideline is accessible to all relevant staff . CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Shoulder Dystocia v1.0 
+For use at: Trust Wide 
+Page 5 of 16 4.0 Definitions and a bbreviations used within this guideline 
+BPI Brachial plexus injuries EFW Estimated fetal weight 
+IOL Induction of labour Kgs Kilograms 
+MSWs Maternity Support Workers PROMPT Practical Obstetric Multi -Professional 
+Training 
+PTP Perinatal training program me RCM Royal College of Midwives 
+RCOG Royal College of Obstetricians and 
+Gynaecologists SD Shoulder Dystocia 
+ 
+5.0 Prediction and prevention 
+Shoulder dystocia is a largely unpredictable and unpreventable event. Few shoulder dystocia 
+cases can be anticipated and prevented, as most occur in the absence or risk factors. 48% of 
+births complicated by shoulder dystocia are in infants weighing <4000 g. 
+There are certain risk factors which increase the likelihood of SD (see below). In instances where 
+an SD is anticipated due to risk factors: 
+• Key personnel should be alerted prior to birth. 
+• The mother or birthing parent and their partner/family can be informed about the steps 
+that may be taken in the event of a difficult birth. 
+There is no evidence that the use of McRoberts manoeuvre before birth of the fetal head prevents 
+shoulder dystocia, therefore, prophylactic use of McRoberts positioning prior to birth of the fetal 
+head is not recommended. 
+6.0 Risk factors 
+Risk factors associated with shoulder dystocia 
+Pre-labour Intrapartum 
+• Previous shoulder dystocia 
+• Fetal Macrosomia> 4.5 kgs 
+• Diabetes Mellitus 
+• Maternal and birthing parent Body Mass 
+Index >30 kgs/m2 
+• Induction of labour • Prolonged first stage of labour 
+• Secondary Arrest 
+• Prolonged second stage of labour 
+• Oxytocin augmentation 
+• Assisted Vaginal Birth 
+7.0 Antenatal management of previous shoulder dystocia 
+For women and birthing people reporting shoulder dystocia in a previous pregnancy, the birth 
+records should be requested and reviewed by the consultant obstetrician to ascertain the degree of CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Shoulder Dystocia v1.0 
+For use at: Trust Wide 
+Page 6 of 16 the dystocia. The rate of shoulder dystocia in women and birthing people who have had previous 
+shoulder dystocia has been reported to be 10 times higher than in the general population; with a 
+reported recurrence rate of between 1% and 25%. 
+There is no requirement to advise elective caesarean birth or induction of labour (IOL) routinely but 
+factors such as the severity of any previous neonatal or maternal injury, fetal size, and maternal or 
+birthing parent choice should all be considered when offering recommendations for the next birth. 
+Induction of labour at term can reduce the incidence of shoulder dystocia in women and birthing 
+people with gestational diabetes. Induction does not prevent shoulder dystocia in non -diabetic 
+women and birthing people with a suspected macrosomic fetus. 
+Elective caesarean birth should be considered to reduce the potential morbidity for pregnancies 
+complicated by pre -existing or gestational diabetes, regardless of treatment, with an EFW of 
+>4.5kg . 
+For women and birthing people who choose vaginal birth following a previous shoulder dystocia, a 
+discussion should take place in the antenatal period, regarding the risk of recurrence and 
+management plans for labour and birth. 
+8.0 Intrapartum management of shoulder dystocia 
+9.0 Diagnosis of shoulder dystocia 
+Shoulder dystocia is a subjective clinical diagnosis, and its timely management requires prompt 
+recogniti on. Routine traction in an axial direction (i.e. traction in line with the fetal spine without 
+lateral deviation) may be employed to diagnose shoulder dystocia. 
+Indicators of SD include: 
+ 
+• Difficulty with birth of the face and chin. 
+• The head remaining tightly applied to the vulva or even retracting (‘turtle sign’). 
+• Failure of restitution of the fetal head. 
+• Failure to deliver the head using routine axial traction with the contraction following birth 
+of the head. 
+ 
+Allow a further contraction after the birth of the fetal head before diagnosing shoulder 
+dystocia. Waiting and allowing a further contraction allows the full mechanics of labour to take 
+place, giving time for shoulder restitution. 
+10.0 Emergency management of shoulder dystocia 
+In high -risk cases where shoulder dystocia is anticipated, an experienced obstetrician should be 
+available on the labour ward for the second stage of labour. However, it is recognised that not all 
+cases can be anticipated and therefore all birth attendants should be conversant with the 
+techniques required to facilitate births complicated by shoulder dystocia. CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Shoulder Dystocia v1.0 
+For use at: Trust Wide 
+Page 7 of 16 Before any manoeuvres are attempted an explanation of the problem must be communicated to 
+the mother or birthing parent and their partner. The co -operation of both will be needed to facilitate 
+a successful outcome. Where possible, a member of staff should be allocated to stand beside the 
+woman or birthing parent and their partner to explain and discuss what is happening. 
+Maternal or birthing parent pushing should be discouraged to prevent further impaction of the 
+shoulders. 
+Shoulder dystocia should be managed systematically. Speed is required to reduce hypoxic 
+acidosis and care to minimise trauma to the baby. Pulling the fetus in a lateral or downward 
+traction is more likely to cause brachial plexus injury and therefore must be avoided. 
+RCOG (2012) Green top guidance and the PROMPT annual update (2021) advi se the use of 
+algorithms to support the management on shoulder dystocia (see appendix 1 ). 
+A scribe should be appointed to complete details on the shoulder dystocia proforma (see 
+appendix 2 ) as they occur. This should be scanned into BadgerNet Maternity once completed. 
+ 
+11.0 Persistent failure of first and second -line manoeuvres 
+Several third -line methods have been described for those cases resistant to all simple measures 
+but should only be attempted by appropriately trained staff to avoid unnecessary maternal or 
+birthing parent morbidity and mortality. 
+• Cleidotomy: Bending/fracture of the clavicle with a finger or surgical division. 
+• Symphysiotomy: Dividing the anterior fibres of the symphyseal ligament. 
+• Zavanelli manoeuvre : Cephalic replacement and birth by caesarean birth. 
+ 
+12.0 Post birth management 
+After the birth , birth attendants should be alert to the increased possibility of : 
+• Postpartum haemorrhage (11%) 
+• Third or fourth -degree perineal tears (3.8%). 
+• The need for neonatal resuscitation 
+• Fetal injury (brachial plexus injury, fractures, pneumothoracies and hypoxic brain 
+damage) 
+• The need for formal debrief of the woman or birthing person , their family and staff. 
+13.0 Paediatric management 
+If shoulder dystocia is suspected the paediatric team (SHO and Registrar) to attend the birth. 
+Where there is actual or suspected brachial plexus injury, or any other injury to the newborn 
+following shoulder dystocia, the on -call paediatrician should be notified and asked to review at the CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Shoulder Dystocia v1.0 
+For use at: Trust Wide 
+Page 8 of 16 earliest opportunity. This review should be documented in the baby record on BadgerNet 
+Maternity . 
+The baby should be examined for injury after birth by a neonatal clinician. 
+14.0 Follow up 
+Women and birthing people who have experienced a birth complicated by shoulder dystocia are 
+often traumatised by the event. This is often more common when the baby has suffered serious 
+morbidity or even mortality or if the mother and birthing parent had m ajor complications after the 
+shoulder dystocia. However, this can also occur when there has been no significant complication 
+to the mother or birthing parent, or their baby and may only become evident in a subsequent 
+pregnancy. All women and birthing peop le should be offered follow up/counselling referral if 
+appropriate. For women and birthing people living in West Sussex, staff can signpost them to the 
+Time to Talk service – link here . 
+All women and people who have had a significant shoulder dystocia should be offered a follow up 
+appointment with the consultant obstetrician postnatally and the impact on subsequent 
+pregnancies should be discussed including risk of recurrence and mode of b irth. This follow up 
+with the consultant obstetrician should take place 6 -8 weeks following birth. The 6 -week routine 
+postnatal check should be with the GP as usual. 
+15.0 Training 
+Training for all birth attendants in the management of shoulder dystocia is recommended by the 
+Royal College of Midwives (RCM) and Royal College of Obstetricians and Gynaecologists 
+(RCOG). 
+Mandatory multi -disciplinary training in management of shoulder dystocia is required for clinicians 
+on an annual basis. Details of staff training are evidenced in the UH Sussex Maternity Education 
+Strategy . 
+K2MS Perinatal Training Programme (PTP) is available to all obstetric doctors and midwives 
+within the trust maternity department and provides a training and assessment package for shoulder 
+dystocia for staff to complete annually. 
+PROMPT (PRactical Obstetric Multiprofessional Training) is a simple practical aid to training. See 
+appendix 1 . 
+16.0 Record keeping and reporting 
+The shoulder dystocia proforma must be used to aid accurate record keeping. This is scanned into 
+BadgerNet Maternity if not completed electronically at the time. Any additional details from the birth 
+should also be documented in the labour care record on BadgerNet Maternity . 
+ 
+A patient safety incident reporting form (Datix) must be completed for all cases of shoulder 
+dystocia . 
+ CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Shoulder Dystocia v1.0 
+For use at: Trust Wide 
+Page 9 of 16 17.0 Monitoring 
+Issue being 
+monitored Monitoring 
+method Responsibility Frequency Reviewed by 
+and actions 
+arising followed 
+up by 
+Cases of 
+shoulder 
+dystocia Review of case 
+records through 
+Datix reporting Patient Safety 
+Midwives, 
+Clinical 
+Governance 
+Team Ongoing case 
+review Patient Safety 
+Midwives, 
+Clinical 
+Governance 
+Team 
+
+ CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Shoulder Dystocia v1.0 
+For use at: Trust Wide 
+Page 10 of 16 Appendix 1: PROMPT management of shoulder dystocia 
+CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Shoulder Dystocia v1.0 
+For use at: Trust Wide 
+Page 11 of 16 
+CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Shoulder Dystocia v1.0 
+For use at: Trust Wide 
+Page 12 of 16 Appendix 2: Shoulder Dystocia Proforma 
+PLEASE DO NOT PRINT FROM GUIDELINE . PROFORMA CAN BE FOUND ON SHAREPOINT ALONGSIDE GUIDELINE. 
+CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Shoulder Dystocia v1.0 
+For use at: Trust Wide 
+Page 13 of 16 Appendix 3: Guideline version control log 
+Version Date Author Status Comment 
+1.0 November 2024 C. Madziwa 
+B. Middleton, 
+Obstetric 
+Consultant 
+S.Thompson 
+Practice 
+Development 
+Midwife LIVE New Trust wide guideline 
+replacing: 
+• CG1149 Shoulder Dystocia 
+(SRH&WH) 
+• MP048 Shoulder Dystocia 
+(PRH&RSCH) 
+
+ CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Shoulder Dystocia v1.0 
+For use at: Trust Wide 
+Page 14 of 16 Appendix 4: Due Regard Assessment Tool 
+To be completed and attached to any guideline when submitted to the appropriate committee for 
+consideration and approval. 
+ Yes/No Comments 
+1. Does the document/guidance affect one group less or 
+more favourably than another on the basis of: 
+ Age No 
+ · Disability No 
+ · Gender (Sex) No 
+ · Gender Identity No 
+ · Marriage and civil partnership No 
+ · Pregnancy and maternity No 
+ · Race (ethnicity, nationality, colour) No 
+ · Religion or Belief No 
+ · Sexual orientation, including lesbian, gay and bisexual 
+people No 
+2. Is there any evidence that some groups are affected 
+differently and what is/are the evidence source(s)? No 
+3. If you have identified potential discrimination, are 
+there any exceptions valid, legal and/or justifiable? NA 
+4. Is the impact of the document likely to be negative? No 
+5. If so, can the impact be avoided? NA 
+6. What alternative is there to achieving the intent of the 
+document without the impact? NA 
+7. Can we reduce the impact by taking different action 
+and, if not, what, if any, are the reasons why the 
+guideline should continue in its current form? NA 
+8. Has the document been assessed to ensure service 
+users, staff and other stakeholders are treated in line 
+with Human Rights FREDA principles (fairness, 
+respect, equality, dignity and autonomy)? Yes 
+ 
+If you have identified a potential discriminatory impact of this guideline, please refer it to [Insert 
+Name], together with any suggestions as to the action required to avoid/reduce this impact. For 
+advice in respect of answering the above questions, please contact uhsussex.equality@nhs.net 
+01273 664685). 
+ CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Shoulder Dystocia v1.0 
+For use at: Trust Wide 
+Page 15 of 16 Appendix 5: Template Dissemination, Implementation and Access Plan 
+ To be completed and attached to any guideline when submitted to Corporate Governance for 
+consideration and TMB approval. 
+ 
+ Dissemination Plan Comments 
+1. Identify: 
+ Which members of staff or staff groups will be 
+affected by this guideline? Midwives , obstetricians & 
+anaesthetists. 
+ How will you confirm that they have received the 
+guideline and understood its implications? Dissemination through the 
+usual communication 
+channels and highlighted at 
+Safety Huddles. 
+ How have you linked the dissemination of the 
+guideline with induction training, continuous 
+professional development, and clinical supervision as 
+appropriate? All new members of staff are 
+shown where to access 
+Clinical documents that are 
+relevant to their area of 
+practice. 
+2. How and where will staff access the document (at 
+operational level)? Accessed by staff via 
+Sharepoint . 
+ 
+ Yes/No Comments 
+3. Have you made any plans to remove 
+old versions of the guideline or 
+related documents from circulation? Yes Previous versions will be 
+archived as part of the 
+uploading onto sharepoint 
+process. 
+4. Have you ensured staff are aware the 
+document is logged on the 
+organisation’s register? Yes Dissemination plan includes 
+notifying staff via email, 
+departmental noticeboards, 
+and safety huddles. 
+
+ CLINICAL GUIDELINE 
+Due for review: April 2028 
+Name of Guideline : Shoulder Dystocia v1.0 
+For use at: Trust Wide 
+Page 16 of 16 Appendix 6: Additional guidance and information 
+NMC (2015) The Code: Professional Standards of Practice and Behaviour for Nurses, Midwives 
+and Nursing Associates. 
+RCOG (2012) Shoulder Dystocia Green top Guideline No. 42. RCOG. London. 
+PROMPT (2021) Annual update 2021 (Licence for 2022/2023 not procured; for 2024 -this is to be 
+revised) 
+ 
+Patient information 
+An information leaflet for parents “A difficult birth: what is shoulder dystocia?” produced by the 
+RCOG is available online ( www.rcog.org.uk/for -the-public/ ) 
+The Erb’s Palsy Group ( http://www.erbspalsy.co.uk/ erbspalsygroup.org.uk ) provides an excellent 
+support network for children and families affected by BPI. 
+Women and birthing people can also self -refer to Birth stories - University Hospitals Sussex NHS 
+Foundation Trust

@@ -1,0 +1,233 @@
+# Extracted from: PID Proforma - June 2011v2.pdf
+# Guideline ID: pid-proforma-june-2011v2
+# Content length: 5522 characters
+# Processing date: 1750066901.7818983
+
+TK/GD/SL/PID/06/11 Referral source /box2 GP /box2 A&E 
+ 
+/box2 Other 
+ 
+If other specify details: 
+ 
+ Presenting complaint 
+ 
+i. Abdominal Pain 
+Duration: 
+
+ii. Abnormal Bleeding 
+Duration: 
+/box2 None 
+/box2 Light/spotting 
+/box2 Heavy 
+/box2 Intermentrual 
+/box2 Post-coital 
+/box2 Other(specify) 
+
+iii. Vaginal Discharge 
+/box2 None 
+Duration: 
+Nature: 
+ 
+iv. Dyspareunia 
+/box2 None 
+Duration: 
+Nature: 
+ 
+iv. Other 
+/box2 None 
+/box2 Nausea/vomiting 
+/box2 Fever 
+ Allergies 
+ 
+ Suspected Pelvic Inflammatory Disease Protocol 
+
+Attach addressograph label Date of assessment: / / 
+Further Details 
+
+Sexual History 
+
+Previous Gynaecological History 
+ 
+Menstrual cycle: LMP: 
+ 
+Contraception: 
+ 
+Last smear: 
+Previous Obstetric History 
+
+Previous Surgical/Medical History 
+
+Current medication 
+ 
+ Sexual 
+partner Last sexual 
+intercourse Duration of 
+relationship Condoms 
+always used? 
+1 
+2 
+3 
+ 
+No of partners in last 3 months: Contact no. 
+
+ General examination Abdominal examination 
+ 
+Temperature: Pulse: 
+ 
+Urine dipstick: BP: 
+
+Pelvic examination 
+ 
+Vagina/Vulva 
+ 
+Cervix 
+ 
+Uterus 
+ 
+Adnexae mass? 
+ Modified McCormack Score : Total: / 36 
+0 = tenderness absent; 1 = tenderness described by patient but not manifest by 
+changes in facial expression or muscle tone; 2 = tenderness resulting in altered 
+facial expression or muscle tone; 3 = tenderness causing marked observable 
+distress 
+
+Upper 
+right 
+ direct rebound Upper 
+left 
+ direct rebound 
+Lower 
+right 
+ direct rebound Lower 
+left 
+ direct rebound 
+Cervical motion 
+tenderness 
+Uterine tenderness 
+Right adnexal 
+tenderness Left adnexal 
+tenderness 
+
+Investigation Date performed Result 
+/box2 Urinary pregnancy test 
+/box2 Endocervical swab (Chlamydia / 
+gonorrhoeal) 
+/box2 High vaginal swab (Bacteriology) 
+/box2 Full blood count 
+/box2 CRP 
+/box2 Mid stream urine 
+/box2 Trans-vaginal Ultrasound 
+/box2 Others (specify) 
+ 
+Admit if: 
+ 
+/box2 Clinically severe symptoms & signs 
+/box2 Unable to tolerate oral regimen 
+/box2 No response to oral treatment 
+/box2 Diagnosis uncertain or unable to 
+exclude surgical emergency 
+/box2 Tubo-ovarian mass/abscess on USS 
+/box2 Pregnant 
+/box2 Immunocompromised 
+ Management plan:(tick all appropriate) 
+ 
+/box2 Eligible for PID trial? Refer GUM research* 
+/box2 Discharge with oral antibiotics 
+/box2 Admit for observation and treatment 
+/box2 Admit for treatment and laparoscopy 
+/box2 Refer to surgeons 
+/box2 Refer to other speciality (details) 
+ 
+ *call ext 3079 / 3081 
+
+ Treatment prescribed:(tick all appropriate) 
+Antibiotics 
+ 1st Line IgE-mediated penicillin allergy 
+Outpatient 
+Non Pregnant /box2 Ofloxacin* oral 400mg bd 14 days 
++ 
+Metronidazole oral 400mg bd 5 days 
+Pregnant or 
+ofloxacin contra-
+indicated /box2 Ceftriaxone IM 500mg stat 
++ 
+Clarithromycin oral 500mg bd 
+14 days 
++ 
+Metronidazole oral 400mg 5 days /box2 Clarithromycin oral 500mg bd 14 days 
++ 
+Metronidazole oral 400mg 5 days 
+ 
+# See statement below regarding gonorrhoea 
+Inpatient 
+Non Pregnant /box2 Ceftriaxone IV 2g od 14 days 
++ 
+Ofloxacin IV 400mg bd 14 days 
++ 
+Metronidazole IV 500mg tds 14 days /box2 Ofloxacin* IV 400mg bd 14 days 
++ 
+Metronidazole IV 500mg tds 14 days 
+Pregnant /box2 Ceftriaxone IV 2g od 14 days 
++ 
+Clarithromycin IV 500mg bd 14 days 
++ 
+Metronidazole IV 500mg tds 14 days /box2 Discuss with local expert 
+ 
+Additional 
+/box2 Metoclopramide oral/IM 10mg tds 
+/box2 Diclofenac oral 50mg tds 
+/box2 Paracetamol oral/IV 1g four times a day 
+ 
+*UK gonorrhoea resistance to quinolones in heterose xual women is about 15% therefore if patient is hig h risk for gonorrhoea (patient’s 
+partner has gonorrhoea, clinically severe disease , following sexual contact abroad), discuss alterna tive regimens with GU medicine. 
+# This regime does NOT provide gonorrhoeal cover. If gonococcus diagnosed on NAATs the patient should be seen by GU medicine so 
+cultures can be taken for gonorrhoea & contact trac ing carried out. Please contact liaison Health Advi sor on 07789 995086 or ext. 4726 
+ 
+IV to Oral Switch 
+IV antibiotics should be switched to oral equivalen ts (and complete 14 days) after 48 hours if: - Temp erature < 38°c for at 
+least 24 hours. clinical improvement observed, WCC & CRP improving, haemodynamically stable, oral rout e viable (no 
+evidence of malabsorption, vomiting or unsafe swall ow) 
+ 
+For details relating to IgE mediated penicillin all ergy please refer to guideline 
+
+ 2 week follow -up Further investigations/results 
+ 
+/box2 Confirm abstinence from sexual intercourse 
+/box2 Compliance checked 
+/box2 Advice given regarding significance of PID and sequ elae 
+
+ Counselling prior to discharge: 
+ 
+/box2 Refrain from sexual intercourse until 
+treatment complete for patient and 
+partner 
+/box2 Advise to avoid alcohol with 
+Metronidazole & for 48 hours post last 
+dose 
+/box2 Explain importance of compliance 
+/box2 Advice concerning the need for follow 
+up 
+/box2 Offer information leaflet and contact 
+tracing card 
+/box2 Obtain consent for Health Advisor to 
+proceed with partner notification 
+/box2 Fax through proforma to liaison health 
+advisor at CNC (01273 664720) 
+
+ I hereby give permission for the health advisors at the 
+Claude Nichol Clinic to contact me regarding 
+arranging follow-up for my recent sexual partners. 
+ 
+Signed: 
+Patients Name: 
+Date: 
+Contact no(s): 
+SHO Name: 
+ 
+ Bleep: 
+ 
+Discussed with Reg /box2 Yes /box2 No 
+ 
+Reg Name: 
+ 
+ Further Notes Ensure patient consent is obtained and that proform a is faxed through to Claude Nicol Clinic

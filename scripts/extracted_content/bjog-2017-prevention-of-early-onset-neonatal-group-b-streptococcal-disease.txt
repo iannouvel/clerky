@@ -1,0 +1,891 @@
+# Extracted from: BJOG - 2017 -  Prevention of Early‐onset Neonatal Group B Streptococcal Disease.pdf
+# Guideline ID: bjog-2017-prevention-of-early-onset-neonatal-group-b-streptococcal-disease
+# Content length: 78846 characters
+# Processing date: 1732953490.7910235
+
+Prevention of Early-onset Neonatal
+Group B Streptococcal Disease
+Green-top Guideline No. 36
+September 2017
+Please cite this paper as: Hughes RG, Brocklehurst P, Steer PJ, Heath P, Stenson BM on behalf of the Royal College of
+Obstetricians and Gynaecologists. Prevention of early-onset neonatal group B streptococcal disease. Green-top Guideline
+No. 36. BJOG 2017 ;124:e280 –e305.
+DOI: 10.1111/1471-0528.14821 RCOG Green-top Guidelines
+Prevention of Early-onset Neonatal Group B Streptococcal Disease
+This is the third edition of this guideline. The second edition was published in 2012 under the same title.
+Executive summary
+Information for women
+What information should women be given about group B streptococcal (GBS) colonisation of the mother
+and the risk of neonatal infection, during pregnancy and after delivery?
+All pregnant women should be provided with an appropriate information lea ﬂet. [New 2016 ]P
+Antenatal screening
+Should all pregnant women be offered bacteriological screening for GBS?
+Universal bacteriological screening is not recommended.D
+What are the clinical risk factors that affect the risk of GBS disease?
+Clinicians should be aware of the clinical risk factors that place women at increased risk of
+having a baby with early-onset GBS (EOGBS) disease. [ New 2016 ]P
+Should women be offered intrapartum antibiotic prophylaxis (IAP) if GBS was detected in a previous
+pregnancy, irrespective of carrier status this pregnancy?
+Explain to women that the likelihood of maternal GBS carriage in this pregnancy is 50%. Discuss
+the options of IAP, or bacteriological testing in late pregnancy and then offer of IAP if stillpositive. [ New 2016 ]B
+If performed, bacteriological testing should ideally be carried out at 35 –37 weeks of gestation
+or 3–5 weeks prior to the anticipated delivery date, e.g. 32 –34 weeks of gestation for women
+with twins. [ New 2016 ]C
+Should women with a previous baby affected by GBS disease be offered IAP irrespective of carrier
+status this pregnancy?
+IAP should be offered to women with a previous baby with early- or late-onset GBS disease.D
+RCOG Green-top Guideline No. 36 e281 of e305 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14821 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+What screening tests (if any) should be offered if a woman requests testing for carrier status?
+A maternal request is not an indication for bacteriological screening. [ New 2016 ]D
+Antenatal care
+How should GBS bacteriuria in the current pregnancy be managed?
+Clinicians should offer IAP to women with GBS bacteriuria identi ﬁed during the current
+pregnancy.C
+Women with GBS urinary tract infection (growth of greater than 105cfu/ml) during pregnancy
+should receive appropriate treatment at the time of diagnosis as well as IAP. [ New 2016 ]C
+Should women be treated before the onset of labour if GBS carriage is detected incidentally earlier in the
+pregnancy?
+Antenatal treatment is not recommended for GBS cultured from a vaginal or rectal swab.C
+Should the management differ if the detection of GBS is incidental or following intentional testing, and if so, how?
+Where GBS carriage is detected incidentally or by intentional testing, women should be offered
+IAP. [ New 2016 ]
+Should being a GBS carrier inﬂuence the method of induction?
+Method of induction should not vary according to GBS carrier status. [ New 2016 ]P
+Is being a GBS carrier a contraindication to membrane sweeping?
+Membrane sweeping is not contraindicated in women who are carriers of GBS. [ New 2016 ]D
+How should planned caesarean section in women with known GBS colonisation be managed?
+Antibiotic prophylaxis speci ﬁc for GBS is not required for women undergoing planned caesarean
+section in the absence of labour and with intact membranes.C
+Management of term labour (including rupture of membranes) to reduce the risk of EOGBS disease
+How should rupture of membranes in a woman at term (37+0weeks of gestation) with known or unknown GBS
+carrier status be managed?
+Women who are known GBS carriers should be offered immediate IAP and induction of labour
+as soon as reasonably possible.CP
+RCOG Green-top Guideline No. 36 e282 of e305 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14821 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+In women where the carrier status is negative or unknown, offer induction of labour
+immediately or expectant management up to 24 hours. Beyond 24 hours, induction of labour isappropriate. [ New 2016 ]A
+How should labour in a woman with a temperature of 38 °C or greater and without known GBS colonisation be
+managed?
+Women who are pyrexial (38 °C or greater) in labour should be offered a broad-spectrum
+antibiotic regimen which should cover GBS in line with local microbiology sensitivities.C
+How should preterm labour be managed in women without known GBS colonisation?
+IAP is recommended for women in con ﬁrmed preterm labour. [ New 2016 ]D
+IAP is not recommended for women not in labour and having a preterm planned caesarean
+section with intact membranes. [ New 2016 ]D
+Is there a role for polymerase chain reaction or other near-patient testing at the onset of labour?
+Polymerase chain reaction or other near-patient testing at the onset of labour is not
+recommended. [ New 2016 ]C
+Can GBS-positive women have a water birth?
+Birth in a pool is not contraindicated if the woman is a known GBS carrier provided she is
+offered appropriate IAP. [ New 2016 ]D
+Management of preterm labour (including rupture of membranes) to reduce the risk of EOGBS
+disease
+Women with preterm rupture of membranes
+How should known or unknown GBS carrier status be managed in women with preterm prelabour rupture of
+membranes?
+Bacteriological testing for GBS carriage is not recommended for women with preterm rupture
+of membranes. IAP should be given once labour is con ﬁrmed or induced irrespective of GBS
+status. [ New 2016 ]D
+For those with evidence of colonisation in the current pregnancy or in previous pregnancies,
+the perinatal risks associated with preterm delivery at less than 34+0weeks of gestation
+are likely to outweigh the risk of perinatal infection. For those at more than 34+0weeks of
+gestation it may be bene ﬁcial to expedite delivery if a woman is a known GBS carrier.
+[New 2016 ]D
+RCOG Green-top Guideline No. 36 e283 of e305 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14821 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Bacteriological considerations
+What are the appropriate swabs if testing for carrier status is to be undertaken?
+When testing for GBS carrier status, a swab should be taken from the lower vagina and the
+anorectum. A single swab (vagina then anorectum) or two different swabs can be used.[New 2016 ]D
+How quickly should the swabs be transported to the laboratory, in what medium and at what temperature?
+After collection, swabs should be placed in a non-nutrient transport medium, such as Amies or
+Stuart. Specimens should be transported and processed as soon as possible. If processing is
+delayed, specimens should be refrigerated. [ New 2016 ]B
+What culture medium should be used if testing for GBS carriage is to be undertaken?
+Enriched culture medium tests are recommended. The clinician should indicate that the swab is
+being taken for GBS. [ New 2016 ]B
+Which antibiotic should be used for IAP?
+For women who have agreed to IAP, benzylpenicillin should be administered. Once
+commenced, treatment should be given regularly until delivery.B
+Which antibiotic should be used in women with known or suspected penicillin allergy?
+Provided a woman has not had severe allergy to penicillin, a cephalosporin should be used. Ifthere is any evidence of severe allergy to penicillin, vancomycin should be used. [ New 2016 ]P
+How should known GBS colonisation in women who decline IAP be managed?
+Women with known GBS colonisation who decline IAP should be advised that the baby should
+be very closely monitored for 12 hours after birth, and discouraged from seeking very earlydischarge from the maternity hospital. [ New 2016 ]P
+What are the adverse effects of IAP (maternal anaphylaxis, altered neonatal bowel ﬂora and abnormal child
+development)?
+Clinicians should be aware of the potential adverse effects of IAP. [ New 2016 ]C
+Should vaginal cleansing be performed in labour and does this differ according to GBS carrier
+status?
+There is no evidence that intrapartum vaginal cleansing will reduce the risk of neonatal GBS
+disease.C
+RCOG Green-top Guideline No. 36 e284 of e305 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14821 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+How should a newborn baby be managed?
+If there have been any concerns about early-onset neonatal infection, what signs should prompt parents and carers
+to seek medical advice?
+Parents and carers should seek urgent medical advice if they are concerned that the baby:D
+/C15is showing abnormal behaviour (for example, inconsolable crying or listlessness), or
+/C15is unusually ﬂoppy, or
+/C15has developed dif ﬁculties with feeding or with tolerating feeds, or
+/C15has an abnormal temperature unexplained by environmental factors (lower than 36 °C or higher
+than 38 °C), or
+/C15has rapid breathing, or
+/C15has a change in skin colour. [ New 2016 ]
+How should term babies whose mothers have received adequate IAP be managed?
+Term babies who are clinically well at birth and whose mothers have received IAP for prevention
+of EOGBS disease more than 4 hours before delivery do not require special observation.[New 2016 ]P
+The babies of women who have received broad-spectrum antibiotics during labour for
+indications other than GBS prophylaxis may require investigation and treatment as per the NICEclinical guideline on early-onset neonatal infection. [ New 2016 ]P
+How should well babies at risk of EOGBS disease whose mothers have not received adequate IAP be monitored?
+Well babies should be evaluated at birth for clinical indicators of neonatal infection and have
+their vital signs checked at 0, 1 and 2 hours, and then 2 hourly until 12 hours. [ New 2016 ]P
+Should postnatal antibiotic prophylaxis be given to low-risk term babies?
+Postnatal antibiotic prophylaxis is not recommended for asymptomatic term infants without
+known antenatal risk factors.C
+How should a baby with clinical signs of EOGBS disease be managed?
+Babies with clinical signs of EOGBS disease should be treated with penicillin and gentamicinwithin an hour of the decision to treat. [ New 2016 ]P
+How should the baby of a mother who has had a previous baby with GBS disease be managed?
+Babies should be evaluated at birth for clinical indicators of neonatal infection and have their
+vital signs checked at 0, 1 and 2 hours, and then 2 hourly until 12 hours. [ New 2016 ]P
+What advice should be given to women regarding breastfeeding?
+Breastfeeding should be encouraged irrespective of GBS status. [ New 2016 ]P
+RCOG Green-top Guideline No. 36 e285 of e305 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14821 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Pathway of care
+RCOG Green-top Guideline No. 36 e286 of e305 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14821 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+1. Purpose and scope
+The purpose of this guideline is to provide guidance for obstetricians, midwives and neonatologists on the prevention
+of early-onset neonatal group B streptococcal (EOGBS) disease and the information to be provided to women, their
+partners and family. Prevention of late-onset group B streptococcal (GBS) disease and treatment of established GBSdisease is not considered beyond initial antibiotic therapy.
+2. Introduction and background epidemiology
+The Lanceﬁeld group B beta-haemolytic streptococcus infection ( Streptococcus agalactiae ) is recognised as the most
+frequent cause of severe early-onset (less than 7 days of age) infection in newborn infants.1The GBS carriage rate
+varies among racial groups, with the highest rates in people of black African ancestry and the lowest in people ofSouth Asian ancestry.
+GBS is present in the bowel ﬂora of 20 –40% of adults (this is called ‘colonisation’). People who are colonised are called
+‘carriers’. This includes pregnant women (there is no evidence that its carriage rate is speciﬁcally affected by pregnancy).
+There remains controversy about the best strategy to prevent EOGBS disease. Surveys in 2015 demonstrated that
+there was a large variation in UK practice.
+2The incidence of EOGBS disease in the UK and Ireland in 2015 was
+0.57/1000 births (517 cases), a signiﬁcant increase in incidence since previous surveillance undertaken in 2000(0.48/1000).
+3Of the cases, 22% had been born prematurely and overall, 35% had one or more of the following risk
+factors: a previous baby affected by GBS disease; GBS bacteriuria; a vaginal swab positive for GBS; or a maternaltemperature of 38 °C or greater in labour. Of the cases with discharge status, 7.4% were reported as having disability. A
+signiﬁcant decline in case fatality rate was shown between the two surveillance periods: 10.6% to 5.2%, respectively.
+Since 2002, the US guidelines
+4have advised that all pregnant women should be offered screening for GBS carriage at
+35–37 weeks of gestation and those found to be colonised with GBS (or labouring before this time) should be
+offered intrapartum antibiotic prophylaxis (IAP), usually in the form of intravenous benzylpenicillin or ampicillin.IAP has been shown to signiﬁcantly reduce the risk of culture-positive early-onset but not late-onset disease(occurring 7 or more days after birth). There is also indirect evidence of an impact on neonatal deaths. Alongitudinal analysis of disease-related neonatal mortality in the USA showed a decline in mortality in the ﬁrst weekafter birth, coinciding with the introduction of IAP.
+5A 2016 report from the USA shows a continuing fall in the
+incidence of GBS infection without any increase in deaths from other causes of neonatal disease.6A Cochrane
+review of three trials (all at high risk of bias) including 500 women concluded that IAP for colonised mothersreduced the incidence of EOGBS disease (relative risk 0.14; 95% CI 0.04 –0.74) although the numbers of deaths were
+too small to assess the impact of the intervention on mortality.
+7
+There have been no randomised studies addressing whether routine screening has had any impact on all-causemortality. A positive antenatal screen will result in the recommendation of IAP which carries some risks for themother and baby. These include anaphylaxis,
+8increased medicalisation of labour and the neonatal period, and
+possibly, infection with antibiotic-resistant organisms when broad-spectrum antibiotics, such as amoxicillin, are usedfor prophylaxis.
+9,10In the UK, most guidelines recommend that the ﬁrst-line drug for GBS-speciﬁc IAP should be
+benzylpenicillin, also known as penicillin G. The UK National Screening Committee examined the issue of strategiesfor the prevention of EOGBS disease in 2016 –17 and in March 2017 recommended that routine screening using
+bacteriological culture or near-patient testing techniques should not be introduced into UK practice.
+11
+RCOG Green-top Guideline No. 36 e287 of e305 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14821 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+2.1 Role of vaccination to prevent EOGBS disease
+An effective vaccine given to pregnant women would be expected to induce high levels of GBS-speciﬁc immunoglobulin G
+in the woman and, via transplacental transfer, in her baby, resulting in protection against neonatal GBS disease(both EOGBS and late-onset GBS). Phase II trials of a trivalent GBS conjugate vaccine in pregnant women in South Africaand Malawi have demonstrated safety as well as efﬁcient transplacental transfer of vaccine-speciﬁc antibodies.
+11,12Vaccine
+manufacturers are now developing pentavalent formulations (i.e. covering 5 of the 10 possible GBS serotypes) whichwould cover an estimated 96% of EOGBS cases in the UK. Another, or additional, potential mechanism of vaccineprotection may be through reduction of maternal GBS colonisation and transmission to the baby. However, no cleareffect of vaccination on colonisation was observed in the 2016 pregnancy trial with the trivalent conjugate vaccine.
+11
+Studies in the UK suggest that vaccination against GBS would be acceptable to pregnant women.13,14
+3. Identi ﬁcation and assessment of evidence
+This guideline was developed using standard methodology for developing RCOG Green-top Guidelines. The
+Cochrane Library (including the Cochrane Database of Systematic Reviews, the Database of Abstracts of Reviews of
+Effects [DARE] and the Cochrane Central Register of Controlled Trials [CENTRAL]), EMBASE, MEDLINE and Trip
+were searched for relevant papers. The search was inclusive of all relevant articles published between January 2011and October 2016. The databases were searched using the relevant Medical Subject Headings (MeSH) terms,including all subheadings and synonyms, and this was combined with a keyword search. Search terms included ‘groupB streptococcus’, ‘ Streptococcus agalactiae ’, ‘group B streptococcus and pregnancy’, ‘streptococcal infections’ and ‘GBS
+bacteriuria’. The search was limited to studies on humans and papers in the English language. Relevant guidelineswere also searched for using the same criteria in the National Guideline Clearinghouse and the National Institute forHealth and Care Excellence (NICE) Evidence Search.
+Where possible, recommendations are based on available evidence. Areas lacking evidence are highlighted and
+annotated as ‘good practice points’. Further information about the assessment of evidence and the grading ofrecommendations may be found in Appendix I.
+4. Information for women
+4.1 What information should women be given about GBS colonisation of the mother and the
+risk of neonatal infection, during pregnancy and after delivery?
+All pregnant women should be provided with an appropriate information lea ﬂet.P
+All pregnant women should be provided with an appropriate information leaﬂet, such as the RCOG
+patient information leaﬂet Group B streptococcus (GBS) infection in newborn babies.15Please see section 14
+for more useful links and resources. Women should be offered information in a format that is accessibleto them.Evidence
+level 4
+RCOG Green-top Guideline No. 36 e288 of e305 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14821 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+5. Antenatal screening
+5.1 Should all pregnant women be offered bacteriological screening for GBS?
+Universal bacteriological screening is not recommended.D
+The National Screening Committee16does not recommend universal bacteriological screening for GBS.
+Their view is that there is no clear evidence to show that testing for GBS routinely would do moregood than harm. The reasons quoted are:
+/C15Many women carry the bacteria and, in the majority of cases, their babies are born safely andwithout developing an infection.
+/C15Screening women late in pregnancy cannot accurately predict which babies will develop GBS infection.
+/C15No screening test is entirely accurate. Between 17% and 25% of women who have a positive swabat 35 –37 weeks of gestation will be GBS negative at delivery. Between 5% and 7% of women who
+are GBS negative at 35 –37 weeks of gestation will be GBS positive at delivery.
+/C15In addition, many of the babies who are severely affected from GBS infection are born prematurely,
+before the suggested time for screening.
+/C15Giving all carriers of GBS IAP would mean that a very large number of women would receive treatmentthey do not need; this may increase adverse outcomes to mother and baby (see sections below).
+This is why screening all women in pregnancy for GBS is not routinely offered in the UK. Some women
+choose to seek GBS testing outside the NHS. Providing the test is performed by an accredited laboratory,if the woman is found to be a carrier during the current pregnancy, IAP should be offered.
+5.2 What are the clinical risk factors that affect the risk of GBS disease?
+Clinicians should be aware of the clinical risk factors that place women at increased risk of
+having a baby with EOGBS disease.P
+There are a number of clinical risk factors that appear to place women at increased risk of having a baby with
+EOGBS disease. These include:
+/C15having a previous baby with GBS disease
+/C15discovery of maternal GBS carriage through bacteriological investigation during pregnancy (for example, a urineinfection or a swab taken to investigate a vaginal discharge)
+/C15preterm birth
+/C15prolonged rupture of membranes
+/C15suspected maternal intrapartum infection, including suspected chorioamnionitis
+/C15pyrexia.Evidence
+level 4
+RCOG Green-top Guideline No. 36 e289 of e305 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14821 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+5.3 Should women be offered IAP if GBS was detected in a previous pregnancy, irrespective of
+carrier status this pregnancy?
+Explain to women that the likelihood of maternal GBS carriage in this pregnancy is 50%. Discuss
+the options of IAP, or bacteriological testing in late pregnancy and the offer of IAP if still positive.B
+If performed, bacteriological testing should ideally be carried out at 35 –37 weeks of gestation
+or 3–5 weeks prior to the anticipated delivery date, e.g. 32 –34 weeks of gestation for women
+with twins.C
+Assuming that approximately 50% of women will be recurrent carriers, the risk of EOGBS disease should
+be approximately 2 to 2.5 times that quoted for the total population.17–21The risk of EOGBS disease in
+the baby in this circumstance is likely to be around 1 in 700 to 1 in 800.3At this risk level, some women
+would choose IAP and others would not. Bacteriological testing in this circumstance would help to reﬁnethe risk. A positive bacteriological test in this circumstance would indicate a risk of 1 in 400, but the riskwould be 1 in 5000 if the mother is GBS negative. A signiﬁcant number of mothers may therefore chooseto avoid IAP if they test negative.Evidence
+level 1 +
+If bacteriological tests for GBS are to be performed in pregnancy they should ideally be performed at
+35–37 weeks of gestation22in order to determine carriage status close to delivery. There is no evidence
+to support the practice of varying the timing of screening. However, in women where preterm delivery isanticipated, earlier testing is justiﬁed.Evidence
+level 2 +
+5.4 Should women with a previous baby affected by GBS disease be offered IAP irrespective of
+carrier status this pregnancy?
+IAP should be offered to women with a previous baby with early- or late-onset GBS disease.D
+The proportion of term pregnant women with a previous baby affected by EOGBS is assumed to be 0.08%,
+based on a consensus estimate from a UK modelling study.23Mothers who have had a previous baby
+affected by early- or late-onset GBS are at increased chance of another affected baby compared withwomen of similar carrier status who have not had an affected baby. The reasons for this increased risk arenot clear but may indicate persistence of carriage of a virulent strain of GBS or a deﬁcient immuneresponse.
+24–26In view of this potentially increased risk, and the possibility of false-negative antenatal testing,
+we recommend giving IAP in such cases and maternal bacteriological tests are not recommended.Evidence
+level 3
+5.5 What screening tests (if any) should be offered if a woman requests testing for carrier status?
+A maternal request is not an indication for bacteriological screening.D
+The National Screening Committee does not recommend universal bacteriological screening for GBS.Evidence
+level 4
+RCOG Green-top Guideline No. 36 e290 of e305 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14821 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+6. Antenatal care
+6.1 How should GBS bacteriuria in the current pregnancy be managed?
+Clinicians should offer IAP to women with GBS bacteriuria identi ﬁed during the current pregnancy.C
+Women with GBS urinary tract infection (growth of greater than 105cfu/ml) during pregnancy
+should receive appropriate treatment at the time of diagnosis as well as IAP.C
+GBS bacteriuria is associated with a higher risk of chorioamnionitis and neonatal disease although it is not
+possible to quantify these risks accurately. Women with GBS bacteriuria should be offered IAP. Womenwith GBS urinary tract infection (growth of greater than 10
+5cfu/ml) during pregnancy should receive
+appropriate treatment at the time of diagnosis as well as IAP.27Evidence
+level 3
+6.2 Should women be treated before the onset of labour if GBS carriage is detected incidentally
+earlier in the pregnancy?
+Antenatal treatment is not recommended for GBS cultured from a vaginal or rectal swab.C
+Antenatal treatment for vaginal or rectal colonisation does not reduce the likelihood of GBS colonisation
+at the time of delivery28and so is not indicated in this situation. Instead, IAP should be offered to
+GBS-colonised women (see section 6.3).Evidence
+level 2 +
+6.3 Should the management differ if the detection of GBS is incidental or following intentional
+testing, and if so, how?
+Where GBS carriage is detected incidentally or by intentional testing, women should be offered
+IAP.P
+There is no evidence to support different management strategies based on how GBS carriage was detected.
+6.4 Should being a GBS carrier inﬂuence the method of induction?
+Method of induction should not vary according to GBS carrier status.P
+There is no evidence to suggest that different induction methods increase the risk of EOGBS disease. If indicated,
+intravenous IAP should be commenced once a diagnosis of established labour has been made following induction.
+6.5 Is being a GBS carrier a contraindication to membrane sweeping?
+Membrane sweeping is not contraindicated in women who are carriers of GBS.D
+There is evidence that membrane sweeping does not increase the risk of EOGBS disease.29 Evidence
+level 2 /C0
+RCOG Green-top Guideline No. 36 e291 of e305 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14821 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+6.6 How should planned caesarean section in women with known GBS colonisation be
+managed?
+Antibiotic prophylaxis speci ﬁc for GBS is not required for women undergoing planned caesarean
+section in the absence of labour and with intact membranes.C
+All women having caesarean section should receive broad-spectrum antibiotic prophylaxis in line with the NICE
+clinical guideline Caesarean section .30Women undergoing planned caesarean delivery in the absence of labour or
+membrane rupture do not require additional penicillin antibiotic prophylaxis speciﬁcally for GBS, regardless of GBScolonisation status. The risk of neonatal EOGBS disease is extremely low in this circumstance.
+Women who are known GBS carriers who are to be delivered by caesarean section after spontaneous
+rupture of membranes should be offered IAP and delivered by category 2 or 3 caesarean depending onother clinical ﬁndings.
+31Evidence
+level 3
+7. Management of term labour (including rupture of membranes) to reduce the risk of EOGBS
+disease
+7.1 How should rupture of membranes in a woman at term (37+0weeks of gestation) with
+known or unknown GBS carrier status be managed?
+Women who are known GBS carriers should be offered immediate IAP and induction of labour
+as soon as reasonably possible.C
+In women where the carrier status is negative or unknown, offer induction of labourimmediately or expectant management up to 24 hours. Beyond 24 hours, induction of labour isappropriate.A
+If known to be colonised with GBS, women should be offered immediate IAP because of the increased
+risk of EOGBS disease with prolonged rupture of membranes.32Evidence
+level 2 +
+As recommended in NICE clinical guideline 7033women should be offered induction of labour
+immediately or up to 24 hours after spontaneous rupture of membranes with unknown carrier status.32Evidence
+level 1 +
+7.2 How should labour in a woman with a temperature of 38 °C or greater and without known
+GBS colonisation be managed?
+Women who are pyrexial (38 °C or greater) in labour should be offered a broad-spectrum
+antibiotic regimen which should cover GBS in line with local microbiology sensitivities.C
+Intrapartum pyrexia (38 °C or greater) is associated with a risk of EOGBS disease of 5.3 per 1000 (versus a
+background risk of 0.6 per 1000).34
+RCOG Green-top Guideline No. 36 e292 of e305 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14821 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+In view of this increased risk of EOGBS, IAP should be offered in the presence of maternal pyrexia. Since
+a raised temperature can indicate chorioamnionitis, a broad-spectrum antibiotic, rather than penicillin G, is
+recommended in this situation. The antibiotic regimen of choice will depend on local microbiology
+guidance; intravenous amoxicillin 2 g every 6 hours (or intravenous cefuroxime 1.5 g every 6 hours inwomen with a nonanaphylactic reaction to penicillin) is acceptable in this context.
+35Evidence
+level 3
+7.3 How should preterm labour be managed in women without known GBS colonisation?
+IAP is recommended for women in con ﬁrmed preterm labour.D
+IAP is not recommended for women not in labour and having a preterm planned caesarean
+section with intact membranes.D
+The proportion of women giving birth preterm in the UK is 8.2%.36More women present in threatened
+preterm labour than deliver preterm. The risk of EOGBS disease in the infants of those women whodeliver preterm is estimated to be 2.3 per 1000.
+23The risk of GBS infection is higher with preterm
+delivery and the mortality rate from infection is increased (20 –30% versus 2 –3% at term).37,38In the 2015
+British Paediatric Surveillance Unit national UK surveillance study, the mortality rate in preterm infants at33 weeks of gestation or less was 27% versus 2.7% at term.
+39For this reason, IAP is recommended for
+women in conﬁrmed preterm labour. However, IAP is not recommended for women having preterm
+planned caesarean section with intact membranes.Evidence
+level 4
+7.4 Is there a role for polymerase chain reaction or other near-patient testing at the onset of
+labour?
+Polymerase chain reaction or other near-patient testing at the onset of labour is not
+recommended.C
+The evidence does not suggest that using polymerase chain reaction technology for near-patient testing is
+feasible in UK maternity labour ward settings.40The technology for near-patient testing continues to
+improve and it is possible that this may confer beneﬁts in the future. An ongoing cluster randomised trialis testing whether the use of near-patient testing in labour can reduce the use of IAP in women whopresent with clinical risk factors who would be eligible for IAP.Evidence
+level 2 +
+7.5 Can GBS-positive women have a water birth?
+Birth in a pool is not contraindicated if the woman is a known GBS carrier provided she is
+offered appropriate IAP.D
+The evidence suggests that water birth is not contraindicated for GBS-positive women who have been
+offered the appropriate IAP.41–43Evidence
+level 3
+RCOG Green-top Guideline No. 36 e293 of e305 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14821 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+8. Management of preterm labour (including rupture of membranes) to reduce the risk of EOGBS
+disease
+8.1 Women with preterm rupture of membranes
+8.1.1 How should known or unknown GBS carrier status be managed in women with preterm prelabour rupture
+of membranes?
+Bacteriological testing for GBS carriage is not recommended for women with preterm rupture
+of membranes. IAP should be given once labour is con ﬁrmed or induced irrespective of GBS
+status.D
+For those with evidence of colonisation in the current pregnancy or in previous pregnancies,the perinatal risks associated with preterm delivery at less than 34
++0weeks of gestation are
+likely to outweigh the risk of perinatal infection. For those at more than 34+0weeks of
+gestation it may be bene ﬁcial to expedite delivery if a woman is a known GBS carrier.D
+There is no evidence that treating GBS colonisation before labour is beneﬁcial.44–46Therefore, a
+prelabour-positive GBS culture does not change management in pregnancies with a gestation of less than
+34+0weeks because the high morbidity associated with early preterm birth means that early delivery is
+not indicated unless there are overt signs of infection. The risk of GBS infection is higher with pretermdelivery and the mortality rate from infection is increased (20 –30% versus 2 –3% at term)
+37,38and this
+therefore justiﬁes IAP in all cases of preterm labour.
+The NICE guideline Preterm labour and birth47recommends that all women with preterm prelabour
+rupture of the membranes should be offered oral erythromycin 250 mg, 4 times a day for a maximum of10 days or until the woman is in established labour (whichever is sooner). Oral penicillin should beconsidered for the same duration in women who cannot tolerate erythromycin or in whom erythromycinis contraindicated.
+A large multicentre randomised controlled trial (RCT) of elective delivery at 34 –36 weeks of gestation for
+preterm spontaneous rupture of membranes versus conservative management
+48has demonstrated no
+signiﬁcant differences in neonatal disease, morbidity or mortality. As a result, there is no indication toprefer one form of management over the other at this gestational age although IAP should be given oncelabour starts. There may be disadvantages with conservative management beyond 34
++0weeks of gestation
+in the presence of known GBS colonisation and in this group, early intervention may be preferable.49Evidence
+level 4
+RCOG Green-top Guideline No. 36 e294 of e305 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14821 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+9. Bacteriological considerations
+Public Health England has published a standard for the detection of GBS carriage.50
+9.1 What are the appropriate swabs if testing for carrier status is to be undertaken?
+When testing for GBS carrier status, a swab should be taken from the lower vagina and the
+anorectum. A single swab (vagina then anorectum) or two different swabs can be used.D
+Public Health England has published a standard for the detection of GBS carriage.50The standard notes
+that optimum yield will be achieved with swabs obtained from the lower vagina and the anorectum. Asingle swab for both sites of collection is rational but two different swabs can be used. The swabs may berayon or dacron, ﬁbre or ﬂocked, and may be collected by the physician or other qualiﬁed caregiver, orby the woman with appropriate instruction. These tests are described as enriched culture medium tests.Evidence
+level 4
+9.2 How quickly should the swabs be transported to the laboratory, in what medium and at
+what temperature?
+After collection, swabs should be placed in a non-nutrient transport medium, such as Amies or
+Stuart. Specimens should be transported and processed as soon as possible. If processing isdelayed, specimens should be refrigerated.D
+GBS isolates can remain viable in transport media for several days at room temperature. However, the
+recovery of isolates declines over 1 –4 days, especially at elevated temperatures, which can lead to
+false-negative results. When feasible, specimens should be refrigerated before processing.4Evidence
+level 4
+9.3 What culture medium should be used if testing for GBS carriage is to be undertaken?
+Enriched culture medium tests are recommended. The clinician should indicate that the swab is
+being taken for GBS.D
+The most widely used enriched culture medium is Todd-Hewitt broth with nalidixic acid and colistin
+(e.g. Lim broth), or nalidixic acid and gentamicin further subcultured on a blood agar plate. Several optionsare available for the subculture of an enriched culture medium for isolation of GBS, including selective andchromogenic agar.
+4Evidence
+level 4
+9.4 Which antibiotic should be used for IAP?
+For women who have agreed to IAP, benzylpenicillin should be administered. Once
+commenced, treatment should be given regularly until delivery.B
+RCOG Green-top Guideline No. 36 e295 of e305 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14821 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+It is recommended that 3 g intravenous benzylpenicillin be given as soon as possible after the onset of
+labour and 1.5 g 4 hourly until delivery. To optimise the efﬁcacy of IAP, the ﬁrst dose should be given at
+least 4 hours prior to delivery. There is evidence that benzylpenicillin levels in cord blood exceed the
+minimum inhibitory concentration for GBS as early as 1 hour after maternal administration51but it is not
+known how this relates to neonatal colonisation or disease. There is also evidence that giving penicillin for2 hours before delivery reduces neonatal colonisation
+52,53but evidence from 201354suggests that 4 hours
+of penicillin is more effective than 2 hours at reducing the risk of EOGBS disease. Amoxicillin is analternative but the Cochrane review
+7found no difference between amoxicillin and benzylpenicillin and
+thus, the narrower spectrum antibiotic is preferred.Evidence
+level 2 +
+9.5 Which antibiotic should be used in women with known or suspected penicillin allergy?
+Provided a woman has not had severe allergy to penicillin, a cephalosporin should be used. If
+there is any evidence of severe allergy to penicillin, vancomycin should be used.P
+The antibiotic chosen will depend on the conﬁdence of the diagnosis of penicillin allergy and the severity of penicillin
+allergy. If the history suggests that the reaction described is not likely to be allergic in nature (e.g. vomiting only)then penicillin should be given. If the history suggests an allergy to beta-lactams, but one that is not severe(i.e. no anaphylaxis, angioedema, respiratory distress or urticaria), then a cephalosporin can be administeredintravenously (e.g. cefuroxime, 1.5 g loading dose followed by 750 mg every 8 hours). If the allergy to beta-lactams issevere then intravenous vancomycin (1 g every 12 hours) is recommended.
+4
+Clindamycin can no longer be recommended as the current resistance rate in the UK is 16%.39 Evidence
+level 4
+9.6 How should known GBS colonisation in women who decline IAP be managed?
+Women with known GBS colonisation who decline IAP should be advised that the baby should
+be very closely monitored for 12 hours after birth, and discouraged from seeking very earlydischarge from the maternity hospital.P
+Women should be made aware that the risk of the baby developing EOGBS infection is higher than if they
+had received IAP. The overall risk remains low. The baby will require clinical evaluation at birth andmonitoring of vital signs for 12 hours.
+55Evidence
+level 4
+9.7 What are the adverse effects of IAP (maternal anaphylaxis, altered neonatal bowel ﬂora and
+abnormal child development)?
+Clinicians should be aware of the potential adverse effects of IAP.C
+A positive antenatal screen will result in the recommendation of IAP, which may carry some risks for
+mother and baby. A UK Obstetric Surveillance System study (2012 –2015)56identiﬁed 37 cases of
+maternal anaphylaxis over 3 years (1.6/100 000 maternities), around 50% of which were associated withthe administration of antibiotics (0.8/100 000 maternities) although it is not known whether any weregiven as IAP.Evidence
+level 3
+RCOG Green-top Guideline No. 36 e296 of e305 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14821 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+A number of studies have shown an effect of IAP on neonatal bowel ﬂora, for example, causing reductions
+in colonisation with lactobacilli or biﬁdobacterium, but these ﬁndings have not been consistent across allstudies.
+57–61Evidence
+level 2 ++
+Changes in the neonatal bowel microbiome have been linked to a number of later effects in the child,
+including allergy, and obesity and diabetes.62–64However, these risks remain theoretical.Evidence
+level 2 +
+There are no studies showing that IAP adversely affects child development. The ORACLE I trial showed
+that oral erythromycin or co-amoxiclav given to pregnant women with preterm prelabour rupture of themembranes for up to 10 days was not associated with any long-term adverse outcomes.
+65However, the
+ORACLE II trial showed that oral erythromycin given to pregnant women in spontaneous preterm labourwith intact membranes for up to 10 days was associated with long-term functional impairment in children(odds ratio 1.18, 95% CI 1.02 –1.37), and both oral erythromycin (odds ratio 1.93, 95% CI 1.21 –3.09) and
+co-amoxiclav (odds ratio 1.69, 95% CI 1.07 –2.67) were associated with cerebral palsy at the age of
+7 years.
+66However, this was a different scenario to that of IAP. Moreover, at the age of 11 years, no
+effect of these antibiotics given in either spontaneous preterm labour or prelabour rupture of membraneswas found on continuous outcome scores, contextual value added measure (a measure of educationprogress), or on criterion-referenced attainment or identiﬁed special needs.
+67Evidence
+level 4
+10. Should vaginal cleansing be performed in labour and does this differ according to GBS carrier
+status?
+There is no evidence that intrapartum vaginal cleansing will reduce the risk of neonatal GBS
+disease.C
+Although vaginal cleansing with chlorhexidine has been shown to reduce the risk of neonatal GBS
+colonisation, there is no evidence to show that this has any impact on EOGBS disease.68Evidence
+level 3
+11. How should a newborn baby be managed?
+11.1 If there have been any concerns about early-onset neonatal infection, what signs should
+prompt parents and carers to seek medical advice?
+Parents and carers should seek urgent medical advice if they are concerned that the baby:D
+/C15is showing abnormal behaviour (for example, inconsolable crying or listlessness), or
+/C15is unusually ﬂoppy, or
+/C15has developed dif ﬁculties with feeding or with tolerating feeds, or
+/C15has an abnormal temperature unexplained by environmental factors (lower than
+36°C or higher than 38 °C), or
+/C15has rapid breathing, or
+/C15has a change in skin colour.
+RCOG Green-top Guideline No. 36 e297 of e305 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14821 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+The NICE clinical guideline Neonatal infection (early onset): antibiotics for prevention and treatment ,55outlines
+symptoms and signs in the neonate that should prompt urgent medical advice. Parents and carers should
+be aware of these if there have been any concerns about early-onset neonatal infection before a baby is
+discharged.Evidence
+level 4
+11.2 How should term babies whose mothers have received adequate IAP be managed?
+Term babies who are clinically well at birth and whose mothers have received IAP for
+prevention of EOGBS disease more than 4 hours before delivery do not require specialobservation.P
+The babies of women who have received broad-spectrum antibiotics during labour forindications other than GBS prophylaxis may require investigation and treatment as per the NICE
+clinical guideline on early-onset neonatal infection.P
+Given that adequate IAP reduces the risk of EOGBS disease to a level approaching that of the general
+population it seems reasonable to manage these babies as low risk.7Evidence
+level 4
+11.3 How should well babies at risk of EOGBS disease whose mothers have not received
+adequate IAP be monitored?
+Well babies should be evaluated at birth for clinical indicators of neonatal infection and have
+their vital signs checked at 0, 1 and 2 hours, and then 2 hourly until 12 hours.P
+Two studies52,69have shown that 90% of infants who are diagnosed with early-onset infection will display
+signs by 12 hours.55Evidence
+level 4
+11.4 Should postnatal antibiotic prophylaxis be given to low-risk term babies?
+Postnatal antibiotic prophylaxis is not recommended for asymptomatic term infants without
+known antenatal risk factors.C
+The incidence of EOGBS disease in asymptomatic term infants without known antenatal risk factors in the
+UK is estimated at 0.2 cases/1000 births.70No RCT has investigated treatment in this group. If postnatal
+antibiotic treatment was completely effective and there were no adverse effects, 5000 infants would needto be treated to prevent a single case and at least 80 000 infants would have to be treated to prevent asingle death from EOGBS disease. Routine postnatal antibiotic prophylaxis is not recommended.Evidence
+level 3
+11.5 How should a baby with clinical signs of EOGBS disease be managed?
+Babies with clinical signs of EOGBS disease should be treated with penicillin and gentamicin
+within an hour of the decision to treat.P
+RCOG Green-top Guideline No. 36 e298 of e305 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14821 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+The NICE guideline on early-onset neonatal infection55contains a list of clinical indicators of neonatal
+infection and is provided as an appendix in this guideline (see Appendix II). Clinicians caring for babies
+with clinical signs of EOGBS disease should be aware of these factors. Appropriate investigations should
+be performed in line with the NICE guidance,55and treatment with intravenous penicillin and gentamicin
+commenced without delay and without awaiting the results of investigations.Evidence
+level 4
+11.6 How should the baby of a mother who has had a previous baby with GBS disease be
+managed?
+Babies should be evaluated at birth for clinical indicators of neonatal infection and have their
+vital signs checked at 0, 1 and 2 hours, and then 2 hourly until 12 hours.P
+The baby of a mother who has had a previous baby with GBS disease is believed to be at increased risk of EOGBS
+although it is not possible to estimate the size of this risk.
+Mothers who have had a previous baby with GBS disease will be offered IAP. Following careful clinical
+assessment the baby’s vital signs and clinical condition should be monitored closely for at least 12 hours(see NICE clinical guideline 149).
+55Evidence
+level 4
+Although some clinicians prefer to obtain blood cultures and treat the baby with intravenous penicillin, and then stop
+the antibiotics at 36 hours if the cultures are negative, there is no evidence that this is necessary .
+11.7 What advice should be given to women regarding breastfeeding?
+Breastfeeding should be encouraged irrespective of GBS status.P
+There is no evidence to discourage breastfeeding where there are concerns regarding the possible risk of
+transmission of GBS disease.
+12. Recommendations for future research
+/C15Cluster randomised trial of screening for GBS carriage with the offer of IAP for carriers to investigate thebeneﬁts and harms of a bacteriological screening programme.
+/C15Studies of the virulence of speciﬁc strains identiﬁed using genetic markers and of serological correlates ofprotection.
+/C15What is the long-term prognosis and associated costs for infants who survive EOGBS disease?
+/C15What is the safety, immunogenicity and efﬁcacy of a GBS vaccine in pregnant women?
+/C15Can serocorrelates of protection against GBS be deﬁned and used to facilitate the licensure of a GBS vaccinewithout the need for large-scale prelicensure efﬁcacy trials in pregnant women?
+RCOG Green-top Guideline No. 36 e299 of e305 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14821 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+13. Auditable topics
+/C15Proportion of pregnant women with the following indications for IAP who actually received IAP (100%):
+–preterm labour
+–previous invasive GBS disease
+–known GBS carrier (however detected)
+–GBS bacteriuria or GBS urinary tract infection in current pregnancy.
+/C15Proportion of women who are pyrexial in labour who are offered appropriate antibiotics, including antibiotic for
+preventing EOGBS (100%).
+/C15Proportion of pregnant women who were colonised in a previous pregnancy who are offered testing and/orIAP (100%).
+/C15Proportion of pregnant women given high-quality patient information (100%).
+/C15Percentage of professionals with knowledge and understanding of GBS carriage and EOGBS disease (100%).
+14. Useful links and support groups
+/C15Royal College of Obstetricians and Gynaecologists. Group B streptococcus (GBS) infection in newborn babies.
+Information for you. London: RCOG; 2017 [https://www.rcog.org.uk/en/patients/patient-leaflets/group-b-streptoc
+occus-gbs-infection-in-newborn-babies/].
+/C15Free information materials both printed and online are available from Group B Strep Support [www.gbss.org.uk ;
+Telephone: 01444 416176 ].
+References
+1. Lanceﬁeld RC. The antigenic complex of streptococcus
+hæmolyticus: I. Demonstration of a type-speciﬁc substance inextracts of streptococcus hæmolyticus. J Exp Med 1928;47:91 –103.
+2. Royal College of Obstetricians and Gynaecologists. Audit of Current
+Practice in Preventing Early-Onset Neonatal Group B Streptococcal
+Disease in the UK . First Report. RCOG: London; 2015.
+3. O’Sullivan C, Lamagni T, Efstratiou A, Patel D, Cunney R, Meehan M,
+et al. P3 Group B Streptococcal (GBS) disease In UK and Irish
+infants younger than 90 days, 2014 –2015. Arch Dis Child
+2016;101:A2.
+4. Verani JR, McGee L, Schrag SJ; Division of Bacterial Diseases,
+National Center for Immunization and Respiratory Diseases,
+Centers for Disease Control and Prevention (CDC). Prevention
+of perinatal group B streptococcal disease –revised guidelines
+from CDC, 2010. MMWR Recomm Rep 2010;59:1 –36.
+5. Lukacs SL, Schoendorf KC, Schuchat A. Trends in sepsis-related
+neonatal mortality in the United States, 1985 –1998. Pediatr Infect
+Dis J 2004;23:599 –603.
+6. Schrag SJ, Farley MM, Petit S, Reingold A, Weston EJ, Pondo T,
+et al. Epidemiology of Invasive Early-Onset Neonatal Sepsis, 2005
+to 2014. Pediatrics 2016;138:https://www.ncbi.nlm.nih.gov/pubmed/
+27940705.
+7. Ohlsson A, Shah VS. Intrapartum antibiotics for known maternal
+Group B streptococcal colonization. Cochrane Database Syst Rev
+2014;(6):CD007467.
+8. Chaudhuri K, Gonzales J, Jesurun CA, Ambat MT,
+Mandal-Chaudhuri S. Anaphylactic shock in pregnancy: a case study
+and review of the literature. Int J Obstet Anesth 2008;17:350 –7.9. Stoll BJ, Hansen N, Fanaroff AA, Wright LL, Carlo WA,
+Ehrenkranz RA, et al. Changes in pathogens causing early-onsetsepsis in very-low-birth-weight infants. N Engl J Med 2002;
+347:240 –7.
+10. Moore MR, Schrag SJ, Schuchat A. Effects of intrapartum
+antimicrobial prophylaxis for prevention of group-B-streptococcaldisease on the incidence and ecology of early-onset neonatalsepsis. Lancet Infect Dis 2003;3:201 –13.
+11. UK National Screening Committee. Group B Streptococcus: The UK
+NSC Policy on Group B Streptococcus Screening in Pregnancy . London:
+NSC; 2008 [www.screening.nhs.uk/groupbstreptococcus].
+12. Heyderman RS, Madhi SA, French N, Cutland C, Ngwira B,
+Kayambo D, et al. Group B streptococcus vaccination in
+pregnant women with or without HIV in Africa: a non-randomised phase 2, open-label, multicentre trial. Lancet Infect
+Dis2016;16:546 –55.
+13. McQuaid F, Jones C, Stevens Z, Plumb J, Hughes R, Bedford H,
+et al. Factors inﬂuencing women’s attitudes towards antenatalvaccines, group B Streptococcus and clinical trial participation in
+pregnancy: an online survey. BMJ Open 2016;6:e010790.
+14. McQuaid F, Jones C, Stevens Z, Plumb J, Hughes R, Bedford H,
+et al. Attitudes towards vaccination against group B streptococcusin pregnancy. Arch Dis Child 2014;99:700 –1.
+15. Royal College of Obstetricians and Gynaecologists. Group B
+Streptococcus (GBS) Infection in Newborn Babies. Information for you .
+London: RCOG; 2017.
+16. UK National Screening Committee. UK NSC Group B Streptococcus
+(GBS) Recommendation . London: UK NSC; 2017.
+RCOG Green-top Guideline No. 36 e300 of e305 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14821 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+17. Turrentine MA, Colicchia LC, Hirsch E, Cheng PJ, Tam T, Ramsey PS,
+et al. Efﬁciency of screening for the recurrence of antenatal
+group B streptococcus colonization in a subsequent pregnancy: asystematic review and meta-analysis with independent patientdata. Am J Perinatol 2016;33:510 –17.
+18. Tam T, Bilinski E, Lombard E. Recolonization of group B
+Streptococcus (GBS) in women with prior GBS genital colonizationin pregnancy. J Matern Fetal Neonatal Med 2012;25:1987 –9.
+19. Page-Ramsey SM, Johnstone SK, Kim D, Ramsey PS. Prevalence of
+group B Streptococcus colonization in subsequent pregnancies ofgroup B Streptococcus-colonized versus noncolonized women.Am J Perinatol 2013;30:383 –8.
+20. Colicchia LC, Lauderdale DS, Du H, Adams M, Hirsch E.
+Recurrence of group B streptococcus colonization in successivepregnancies. J Perinatol 2015;35:173 –6.
+21. Turrentine MA, Ramirez MM. Recurrence of group B streptococci
+colonization in subsequent pregnancy. Obstet Gynecol
+2008;112:259 –64.
+22. Yancey MK, Schuchat A, Brown LK, Ventura VL, Markenson GR.
+The accuracy of late antenatal screening cultures in predicting
+genital group B streptococcal colonization at delivery. Obstet
+Gynecol 1996;88:811 –5.
+23. Colbourn T, Asseburg C, Bojke L, Philips Z, Claxton K, Ades AE,
+et al. Prenatal screening and treatment strategies to prevent
+group B streptococcal and other bacterial infections in earlyinfancy: cost-effectiveness and expected value of informationanalyses. Health Technol Assess 2007;11:1 –226.
+24. Carstensen H, Christensen KK, Grennert L, Persson K, Polberger S.
+Early-onset neonatal group B streptococcal septicaemia insiblings. J Infect 1988;17:201 –4.
+25. Faxelius G, Bremme K, Kvist-Christensen K, Christensen P,
+Ringertz S. Neonatal septicemia due to group B streptococci --
+perinatal risk factors and outcome of subsequent pregnancies. J
+Perinat Med 1988;16:423 –30.
+26. Christensen KK, Dahlander K, Linden V, Svenningsen N,
+Christensen P. Obstetrical care in future pregnancies after fetalloss in group B streptococcal septicemia. A prevention programbased on bacteriological and immunological follow-up. Eur J Obstet
+Gynecol Reprod Biol 1981;12:143 –50.
+27. Allen VM, Yudin MH, Bouchard C, Boucher M, Caddy S, Castillo E,
+et al.; Infectious Diseases Committee, Society of Obstetriciansand Gynaecologists of Canada. Management of group B
+streptococcal bacteriuria in pregnancy. J Obstet Gynaecol Can
+2012;34:482 –6.
+28. Gardner SE, Yow MD, Leeds LJ, Thompson PK, Mason EO Jr,
+Clark DJ. Failure of penicillin to eradicate group B streptococcal
+colonization in the pregnant woman. A couple study. Am J Obstet
+Gynecol 1979;135:1062 –5.
+29. Kabiri D, Hants Y, Yarkoni TR, Shaulof E, Friedman SE, Paltiel O,
+et al. Antepartum membrane stripping in GBS carriers, is it safe?
+(The STRIP-G Study). PLoS ONE 2015;10:e0145905.
+30. National Institute for Health and Clinical Excellence. Caesarean
+Section . NICE clinical guideline 132. London: NICE; 2011.
+31. Ramus RM, McIntire DD, Wendel Jr GD. Antibiotic chemopro-
+phylaxis for group B strep is not necessary with elective cesareansection at term. Am J Obstet Gynecol 1999;180:S85.
+32. Seaward PG, Hannah ME, Myhr TL, Farine D, Ohlsson A, Wang EE,
+et al. International multicenter term PROM study: evaluation ofpredictors of neonatal infection in infants born to patients withpremature rupture of membranes at term. Premature Rupture of
+the Membranes. Am J Obstet Gynecol 1998;179:635 –
+9.33. National Institute for Health and Clinical Excellence. Inducing
+labour . NICE clinical guideline 70. London: NICE; 2008.
+34. Oddie S, Embleton ND. Risk factors for early onset neonatal group
+B streptococcal sepsis: case –control study. BMJ2002;325:308.
+35. Higgins RD, Saade G, Polin RA, Grobman WA, Buhimschi IA,
+Watterberg K, et al.; Chorioamnionitis Workshop Participants.
+Evaluation and management of women and newborns with amaternal diagnosis of chorioamnionitis: summary of a workshop.
+Obstet Gynecol 2016;127:426 –36.
+36. Hospital Episode Statistics Analysis, Health and Social Care
+Information Centre. Hospital Episode Statistics: Admitted Patient Care
+2012-13 . Leeds: HES; 2013.
+37. Schrag SJ, Zywicki S, Farley MM, Reingold AL, Harrison LH,
+Lefkowitz LB, et al. Group B streptococcal disease in the era ofintrapartum antibiotic prophylaxis. N Engl J Med 2000;342:15 –20.
+38. Phares CR, Lynﬁeld R, Farley MM, Mohle-Boetani J, Harrison LH,
+Petit S, et al.; Active Bacterial Care Surveillance/Emerging Infections
+Program Network. Epidemiology of invasive group B streptococcaldisease in the United States, 1999-2005. JAMA 2008;299:2056 –65.
+39. O’Sullivan C, Heath PT, Lamagni T, Boyle M, Doherty L, Reynolds A,
+et al. Group B Streptococcal Disease in Infants <90 Days of Age .
+Unpublished 2015 [www.rcpch.ac.uk/bpsu/gbs].
+40. Daniels JP, Gray J, Pattison HM, Gray R, Hills RK, Khan KS; GBS
+Collaborative Group. Intrapartum tests for group B streptococcus:
+accuracy and acceptability of screening. BJOG 2011;118:257 –65.
+41. Zanetti-D €allenbach RA, Holzgreve W, H €osli I. Neonatal group B
+streptococcus colonization in water births. Int J Gynaecol Obstet
+2007;98:54 –5.
+42. Thoeni A, Zech N, Moroder L, Ploner F. Review of 1600 water
+births. Does water birth increase the risk of neonatal infection? J
+Matern Fetal Neonatal Med 2005;17:357 –61.
+43. Zanetti-D €allenbach R, Lapaire O, Maertens A, Holzgreve W, H €osli I.
+Water birth, more than a trendy alternative: a prospective,observational study. Arch Gynecol Obstet 2006;274:355 –65.
+44. Baecher L, Grobman W. Prenatal antibiotic treatment does not
+decrease group B streptococcus colonization at delivery. Int J
+Gynaecol Obstet 2008;101:125 –8.
+45. Bland ML, Vermillion ST, Soper DE. Late third-trimester
+treatment of rectovaginal group B streptococci with benzathine
+penicillin G. Am J Obstet Gynecol 2000;183:372 –6.
+46. Weeks JW, Myers SR, Lasher L, Goldsmith J, Watkins C, Gall SA.
+Persistence of penicillin G benzathine in pregnant group B
+streptococcus carriers. Obstet Gynecol 1997;90:240 –3.
+47. National Institute of Health Care and Excellence. Preterm Labour
+and Birth . NICE guideline 25. London: NICE; 2015.
+4 8 . M o r r i sJ M ,R o b e r t sC L ,B o w e nJ R ,P a t t e r s o nJ A ,B o n dD M ,A l g e r tC S ,
+et al.; PPROMT Collaboration. Immediate delivery compared with
+expectant management after preterm pre-labour rupture of themembranes close to term (PPROMT trial): a randomised controlled
+trial. Lancet 2016;387:444 –52.
+49. Tajik P, van der Ham DP, Zafarmand MH, Hof MH, Morris J,
+Franssen MT, et al. Using vaginal Group B Streptococcus colonisa-tion in women with preterm premature rupture of membranes to
+guide the decision for immediate delivery: a secondary analysis of the
+PPROMEXIL trials. BJOG 2014;121:1263 –72; discussion 1273.
+50. Public Health England. UK Standards for Microbiology Investiga-
+tions. Detection of Carriage of Group B Streptococci . London: PHE;
+2015.
+51. Barber EL, Zhao G, Buhimschi IA, Illuzzi JL. Duration of
+intrapartum prophylaxis and concentration of penicillin G in fetal
+serum at delivery. Obstet Gynecol 2008;112:265 –70.
+RCOG Green-top Guideline No. 36 e301 of e305 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14821 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+52. Lin FY, Brenner RA, Johnson YR, Azimi PH, Philips JB 3rd, Regan JA,
+et al. The effectiveness of risk-based intrapartum chemoprophylaxis
+for the prevention of early-onset neonatal group B streptococcaldisease. Am J Obstet Gynecol 2001;184:1204 –10.
+53. de Cuito M, Sanchez MJ, Sampedro A, Miranda JA, Herruzo AJ,
+Rosa-Fraile M. Timing of intrapartum ampicillin and prevention of
+vertical transmission of group B streptococcus. Obstet Gynecol
+1998;91:112 –14.
+54. Fairlie T, Zell ER, Schrag S. Effectiveness of intrapartum antibiotic
+prophylaxis for prevention of early-onset group B streptococcaldisease. Obstet Gynecol 2013;121:570 –7.
+55. National Institute of Health Care and Excellence. Neonatal
+Infection (Early Onset): Antibiotics for Prevention and Treatment . NICE
+clinical guideline 149. London: NICE, 2012.
+56. UK Obstetric Surveillance System. Anaphylaxis in Pregnancy .
+Oxford: UKOSS; 2015 [www.npeu.ox.ac.uk/ukoss/current-surveilla
+nce/aip?highlight=YTo0OntpOjA7czo4OiJtYXRlcm5hbCI7a
+ToxO3M6OToiJ21hdGVybmFsIjtpOjI7czoxMToiYW5hcGh5bGF4aXMiO2k6MztzOjIwOiJtYXRlcm5hbCBhbmFwaHlsYXhpcyI7fQ==].
+57. Mazzola G, Murphy K, Ross RP, Di GD, Biavati B, Corvaglia LT,
+et al. Early gut microbiota perturbations following intrapartumantibiotic prophylaxis to prevent group B streptococcal disease.PLoS ONE 2016;11:e0157527.
+58. Cassidy-Bushrow AE, Sitarik A, Levin AM, Lynch SV, Havstad S,
+Ownby DR, et al. Maternal group B Streptococcus and the infantgut microbiota. J Dev Orig Health Dis 2016;7:45 –53.
+59. Aloisio I, Quagliariello A, De Fanti S, Luiselli D, De Filippo C,
+Albanese D, et al. Evaluation of the effects of intrapartum
+antibiotic prophylaxis on newborn intestinal microbiota using asequencing approach targeted to multi hypervariable 16S rDNA
+regions. Appl Microbiol Biotechnol 2016;100:5537 –46.
+60. Azad MB, Konya T, Persaud RR, Guttman DS, Chari RS, Field CJ,
+et al. Impact of maternal intrapartum antibiotics, method of birthand breastfeeding on gut microbiota during the ﬁrst year of life: a
+prospective cohort study. BJOG 2016;123:983 –93.61. Corvaglia L, Tonti G, Martini S, Aceti A, Mazzola G, Aloisio I,
+et al. Inﬂuence of intrapartum antibiotic prophylaxis for group B
+streptococcus on gut microbiota in the ﬁrst month of life.J Pediatr Gastroenterol Nutr 2016;62:304 –8.
+62. Rachid R, Chatila TA. The role of the gut microbiota in food
+allergy. Curr Opin Pediatr 2016;28:748 –53.
+63. Mueller NT, Mao G, Bennet WL, Hourigan SK, Dominguez-Bello MG,
+Appel LJ, et al. Does vaginal delivery mitigate or strengthen the
+intergenerational association of overweight and obesity? Findings
+from the Boston Birth Cohort. Int J Obes (Lond) 2017;41:497 –501.
+64. Paun A, Danska JS. Modulation of type 1 and type 2 diabetes
+risk by the intestinal microbiome. Pediatr Diabetes 2016;17:
+469–77.
+65. Kenyon S, Pike K, Jones DR, Brocklehurst P, Marlow N, Salt A,
+et al. Childhood outcomes after prescription of antibiotics topregnant women with preterm rupture of the membranes: 7-year
+follow-up of the ORACLE I trial. Lancet 2008;372:1310 –8.
+66. Kenyon S, Pike K, Jones DR, Brocklehurst P, Marlow N, Salt A,
+et al. Childhood outcomes after prescription of antibiotics to
+pregnant women with spontaneous preterm labour: 7-year follow-
+up of the ORACLE II trial. Lancet 2008;372:1319 –27.
+67. Marlow N, Bower H, Jones D, Brocklehurst P, Kenyon S, Pike K,
+et al. The ORACLE Children Study: educational outcomes at 11
+years of age following antenatal prescription of erythromycin or
+co-amoxiclav.
+Arch Dis Child Fetal Neonatal Ed 2017;102:F131 –5.
+68. Ohlsson A, Shah VS, Stade BC. Vaginal chlorhexidine during
+labour to prevent early-onset neonatal group B streptococcal
+infection. Cochrane Database Syst Rev 2014;(12):CD003520.
+69. Escobar GJ, Li DK, Armstrong MA, Gardner MN, Folck BF, Verdi JE,
+et al. Neonatal sepsis workups in infants >/=2000 grams at birth: A
+population-based study. Pediatrics 2000;106:256 –63.
+70. Heath PT, Balfour G, Weisner AM, Efstratiou A, Lamagni TL,
+Tighe H, et al.; PHLS Group B Streptococcus Working Group.Group B streptococcal disease in UK and Irish infants younger
+than 90 days. Lancet 2004;363:292 –4.
+RCOG Green-top Guideline No. 36 e302 of e305 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14821 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Appendix I: Explanation of guidelines and evidence levels
+Clinical guidelines are: ‘systematically developed statements which assist clinicians and patients in making decisions
+about appropriate treatment for speciﬁc conditions’. Each guideline is systematically developed using a standardised
+methodology. Exact details of this process can be found in Clinical Governance Advice No.1 Development of RCOG
+Green-top Guidelines (available on the RCOG website at www.rcog.org.uk/green-top-development ). These
+recommendations are not intended to dictate an exclusive course of management or treatment. They must beevaluated with reference to individual patient needs, resources and limitations unique to the institution and variationsin local populations. It is hoped that this process of local ownership will help to incorporate these guidelines intoroutine practice. Attention is drawn to areas of clinical uncertainty where further research may be indicated.
+The evidence used in this guideline was graded using the scheme below and the recommendations formulated in a
+similar fashion with a standardised grading scheme.
+Classi ﬁcation of evidence levels Grades of recommendation
+1++ High-quality meta-analyses, systematic reviews
+of randomised controlled trials or randomised
+controlled trials with a very low risk of biasAAt least one meta-analysis, systematic review or
+RCT rated as 1 ++, and directly applicable to the
+target population; or
+A systematic review of RCTs or a body ofevidence consisting principally of studies rated as1+, directly applicable to the target population
+and demonstrating overall consistency of results1+ Well-conducted meta-analyses, systematic
+reviews of randomised controlled trials orrandomised controlled trials with a low risk
+of bias
+1– Meta-analyses, systematic reviews of
+randomised controlled trials or randomised
+controlled trials with a high risk of bias
+BA body of evidence including studies rated as 2 ++
+directly applicable to the target population, and
+demonstrating overall consistency of results; or
+Extrapolated evidence from studies rated as 1 ++
+or 1 +2++ High-quality systematic reviews of case –control
+or cohort studies or high-quality case –control
+or cohort studies with a very low risk of
+confounding, bias or chance and a high
+probability that the relationship is causal
+2+ Well-conducted case –control or cohort
+studies with a low risk of confounding, bias or
+chance and a moderate probability that the
+relationship is causalCA body of evidence including studiesrated as 2 +directly applicable to the target
+population, and demonstrating overallconsistency of results; orExtrapolated evidence from studies rated
+as 2 ++
+2– Case –control or cohort studies with a high risk
+of confounding, bias or chance and a signiﬁcantrisk that the relationship is not causal
+3 Non-analytical studies, e.g. case reports, case
+seriesDEvidence level 3 or 4; orExtrapolated evidence from studies rated as 2 +
+4 Expert opinionGood practice points
+PRecommended best practice based on the
+clinical experience of the guideline developmentgroup
+RCOG Green-top Guideline No. 36 e303 of e305 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14821 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Appendix II: Clinical indicators of possible early-onset neonatal infection (observations and events in the
+baby), including ‘redﬂags ’
+Clinical indicator Red ﬂag
+Altered behaviour or responsiveness
+Altered muscle tone (for example, ﬂoppiness)
+Feeding dif ﬁculties (for example, feed refusal)
+Feed intolerance, including vomiting, excessive gastric aspirates and abdominal distensionAbnormal heart rate (bradycardia or tachycardia)Sign of respiratory distressRespiratory distress starting more than 4 hours after birth Yes
+Hypoxia (for example, central cyanosis or reduced oxygen saturation level)
+Jaundice within 24 hours of birth
+ApnoeaSigns of neonatal encephalopathySeizures Yes
+Need for cardio-pulmonary resuscitationNeed for mechanical ventilation in a preterm baby
+Need for mechanical ventilation in a term baby Yes
+Persistent fetal circulation (persistent pulmonary hypertension)Temperature abnormality (lower than 36 °C or higher than 38 °C) unexplained by
+environmental factors
+Signs of shock Yes
+Unexplained excessive bleeding, thrombocytopenia, or abnormal coagulation (International
+Normalised Ratio greater than 2.0)
+Oliguria persisting beyond 24 hours after birthAltered glucose homeostasis (hypoglycaemia or hyperglycaemia)Metabolic acidosis (base de ﬁcit of 10 mmol/litre or greater)
+Local signs of infection (for example, affecting the skin or eye)
+National Institute for Health and Clinical Excellence (2012) Neonatal infection (early onset): antibiotics for prevention and
+treatment. Available from: [https://www.nice.org.uk/guidance/cg149] NICE guidance is prepared for the National Health Service inEngland, and is subject to regular review and may be updated or withdrawn. NICE has not checked the use of its content in thisguideline to con ﬁrm that it accurately re ﬂects the NICE publication from which it is taken.
+RCOG Green-top Guideline No. 36 e304 of e305 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14821 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+This guideline was produced on behalf of the Royal College of Obstetricians and Gynaecologists by:
+Dr RG Hughes FRCOG, Edinburgh; Professor P Brocklehurst FRCOG, Birmingham;
+Professor PJ Steer FRCOG, London; Professor P Heath, St George’s University London;
+Professor BM Stenson, Royal Inﬁrmary of Edinburgh
+and peer reviewed by:
+British Infection Association; Professor L Chappell MRCOG, London; Dr M Eogan MD FRCPI MRCOG, Rotunda Hospital,Dublin, Ireland; Dr R Fernando, President of the Obstetric Anaesthetists’ Association, London; Dr G Gopal Rao FRCPath,
+Northwick Park Hospital, London; Dr J Gray FRCPath, Birmingham Children’s Hospital; Group B Strep Support;
+Dr T Kay FRCOG, Exeter; Professor S Kenyon, University of Birmingham; RCOG Women’s Network;Royal College of Paediatrics and Child Health; Dr A Soe FRCPCH, Medway
+Committee lead reviewers were: Dr A Thomson MRCOG, Paisley; and Dr B A Magowan FRCOG, MelroseThe chairs of the Guidelines Committee were: Dr M Gupta MRCOG, London; and Dr AJ Thomson MRCOG, Paisley
+All RCOG guidance developers are asked to declare any conﬂicts of interest. A statement summarising
+any conﬂicts of interest for this guideline is available from: https://www.rcog.org.uk/en/guidelines-research-
+services/guidelines/gtg36/.
+The ﬁnal version is the responsibility of the Guidelines Committee of the RCOG.
+The guideline will be considered for update 3 years after publication,
+with an intermediate assessment of the need to update 2 years after publication.
+DISCLAIMER
+The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical practice.
+They present recognised methods and techniques of clinical practice, based on published evidence, for consideration byobstetricians and gynaecologists and other relevant health professionals. The ultimate judgement regarding a particular
+clinical procedure or treatment plan must be made by the doctor or other attendant in the light of clinical data presented
+by the patient and the diagnostic and treatment options available.
+This means that RCOG Guidelines are unlike protocols or guidelines issued by employers, as they are not intended to be
+prescriptive directions deﬁning a single course of management. Departure from the local prescriptive protocols orguidelines should be fully documented in the patient’s case notes at the time the relevant decision is taken.
+RCOG Green-top Guideline No. 36 e305 of e305 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 12, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14821 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License

@@ -1,0 +1,670 @@
+# Extracted from: UHSx Midwives Exemption.pdf
+# Guideline ID: uhsx-midwives-exemption
+# Content length: 29706 characters
+# Processing date: 1750066902.2102737
+
+CLINICAL POLICY 
+Due for review: 21st August 2027 
+Name of Policy: UHSCL002 Policy for Midwives Exemptions 
+For use at: PRH, RSCH, SRH & WH 
+ 
+ Page 1 of 17 
+Please note, IF DOCUMENT IS PRI NTED, IT MAY BECOME OUT OF DATE 
+ 
+TRUST CLINICAL POLICY 
+Policy for Midwives Exemption 
+ 
+OVERVIEW : 
+ 
+The objective of this policy is to provide guidance for midwives on the administration and dosage of 
+medicines including the appropriate indications and clinical circumstances where each medicine is 
+used. The aim is to ensure that all legal and statutory requirements regarding prescribing, dispensing 
+and administration of medicines are met. 
+ 
+OWNER Clinical Director 
+Seb Adamson / Frank Usifo 
+AUTHOR/FURTHER 
+INFORMATION D. Annandale, Women and Children ’s Lead Pharmacist L East 
+POLICY VERSION v1.0 
+RELEVANT GUIDELINE N/a 
+RELATED 
+PROTOCOLS/PROCEDURES UHSMM001 Medicines Management Policy 
+STANDARDS https://www.legislation.gov.uk/uksi/2012/1916/contents/made 
+(accessed Oct 2022) 
+https://www.legislation.gov.uk/uksi/2012/1916/schedule/17/made 
+https://www.legislation.gov.uk/uksi/2012/1916/regulation/223/made 
+The Code: Professional standards of practice and behaviour for 
+nurses, midwives and nursing associates - The Nursing and 
+Midwifery Council (nmc.org.uk) 
+SUPERSEDED DOCUMENTS N/A 
+REVIEW DUE August 2027 
+REFERENCE NUMBER UHSCL002 
+ 
+ CLINICAL POLICY 
+Due for review: 21st August 2027 
+Name of Policy: UHSCL002 Policy for Midwives Exemptions 
+For use at: PRH, RSCH, SRH & WH 
+ 
+ Page 2 of 17 
+ 
+Approval 
+Joint Obstetrics Guideline 
+Group Date approved 20th March 2024 
+Women & Children’s Clinical 
+Effectiveness Group Date approved 18th April 2024 
+Consultation 
+Medicines Governance 
+Committee Date approved 21st May 2024 
+Ratification 
+Clinical Document Approval 
+Group Date approved 21st August 2024 
+ 
+SCOPE OF APPLICATION AND EXEMPTIONS 
+ 
+Included in policy: 
+For the groups listed below, failure to follow the policy may result in investigation and management 
+action which may include formal action in line with the Trust's disciplinary or capability procedures for 
+Trust employees, and other action in relation to organisations contracted to the Trust, which may result 
+in the termination of a contract, assignment, placement, secondment, or honorary arrangement. 
+Trust wide: PRH, RSCH, SRH, WH 
+Midwives employed by University Hospitals Sussex NHS Trust. 
+Exempted from policy: 
+The following groups are exempt from this policy 
+No midwives are exempt from this policy. 
+ 
+ CLINICAL POLICY 
+Due for review: 21st August 2027 
+Name of Policy: UHSCL002 Policy for Midwives Exemptions 
+For use at: PRH, RSCH, SRH & WH 
+ 
+ Page 1 of 17 
+
+Table of Contents 
+
+1.0 Introduction ................................ ................................ ................................ ................. 2 
+2.0 Purpose ................................ ................................ ................................ ....................... 3 
+2.1 Documentation on EPMA and medical notes ................................ .............................. 3 
+3.0 Definitions ................................ ................................ ................................ ................... 3 
+4.0 Duties, responsibilities and accountabilities ................................ ................................ .4 
+4.1 Midwives ................................ ................................ ................................ ..................... 4 
+4.2 Student midwives ................................ ................................ ................................ .......4 
+5.0 Midwives exemptions ................................ ................................ ................................ ..5 
+5.1 Process general sale list medicines (GSL) and pharmacy medicines (P) .................... 5 
+5.2 Process for inpatient / home birth setting general sale list medicines (GSL) and 
+pharmacy medicines (P) ................................ ................................ ............................. 5 
+5.3 Process for outpatient /community setting general sale list medicines (GSL) and 
+pharmacy medicines (P) ................................ ................................ ............................. 6 
+5.4 Process for prescription only medicines (POMs) ................................ ......................... 7 
+5.5 Process for inpatient / home birth setting Prescription Only Medicines (POM) ............ 8 
+6.0 Midwife Exemptions for Supply ................................ ................................ .................... 8 
+7.0 Midwife Exemptions for Administration ................................ ................................ ...... 10 
+8.0 Training implications ................................ ................................ ................................ .. 11 
+Appendix 1: Monitoring ................................ ................................ ................................ ........ 12 
+Appendix 2: Policy Version Control Log ................................ ................................ ............... 12 
+Appendix 3: Due Regard Assessment Tool ................................ ................................ .......... 13 
+Appendix 4: Template Dissemination, Implementation and Access Plan .............................. 14 
+Additional guidance and information ................................ ................................ .................... 15 
+ 
+ CLINICAL POLICY 
+Due for review: 21st August 2027 
+Name of Policy: UHSCL002 Policy for Midwives Exemptions 
+For use at: PRH, RSCH, SRH & WH 
+ 
+ Page 2 of 17 
+ 
+Policy for Midwives Exemption 
+ 
+1.0 Introduction 
+ 
+The objective of this policy is to provide guidance for midwives on the administration and 
+dosage of medicines including the appropriate indications and clinical circumstances where 
+each medicine is used. The aim is to ensure that all legal and statutory requirements 
+regarding prescribing, dispensing and administration of medicines are met. 
+ 
+This policy applies to patients and babies under the care of Nursing and Midwifery Council 
+(NMC) registered midwives working for University Hospitals Sussex NHS Trust. 
+ 
+Under the Medicines for Human Use Act 2012 registered midwives may administer or 
+supply, on their own initiative any of the prescription -only medicines that are 
+specified within Schedule 17, provided it is in the course of their professional 
+midwifery practice. 
+ 
+Exemptions are listed under Part 1 (Exemptions from restrictions on sale and supply of 
+prescription -only medicines) Part 2 (Exemption from the restriction on supply of prescription -
+only medicines) and Part 3 (Exemptions from the restriction on administration of prescription -
+only medicines). 
+ 
+Midwives may supply and/ or administer P or GSL medicines which is also referenced in 
+Human Medicines Regulations 2012 reg 223(4)/(5). 
+ 
+Medicines falling within these exemptions may be supplied or administered without the need 
+for a prescription or patient specific direction (PSD) from a medical practitioner. Provided the 
+requirements of any conditions attached to these exemptions are met, a patient group 
+direction (PGD) is not required. If a medicine is not included in the midwives exemptions then 
+a PGD, or prescription, or a patient -specific written direction will be required. 
+ 
+Registered midwives must only supply and administer those medicines, in which they have 
+received the appropriate training as to the therapeutic use, dosage, side effects, precautions, 
+contra -indications and methods of administration. CLINICAL POLICY 
+Due for review: 21st August 2027 
+Name of Policy: UHSCL002 Policy for Midwives Exemptions 
+For use at: PRH, RSCH, SRH & WH 
+ 
+ Page 3 of 17 
+ 
+2.0 Purpose 
+ 
+This policy applies to the supply of medication to all patients and babies seen within the 
+maternity service at University Hospitals Sussex NHS Trust. 
+ 
+Registered midwives must only supply and administer those medicines, in which they have 
+received the appropriate training as to the therapeutic use, dosage, side effects, precautions, 
+contra -indications and methods of administration. 
+ 
+Midwives supplying or administering medication under midwives exemptions (ME) must 
+ensure that their practice is up to date and that they are familiar with the medicines that they 
+supply. They should have access to the most up to date versions of the British National 
+formulary (BNF) and the British National Formulary for Children (BNFC) and be aware of the 
+indications, side effects and contra -indications for any medication supplied. The most up to 
+date version is available on -line. All staff supplying or administering medication as a midwife 
+exemption must be signed off as competent to do so. 
+ 
+All Trust staff (including permanent, locum, secondee, students, agency, bank and 
+voluntary), must follow the policies agreed by the Trust. Breaches of adherence to Trust 
+policy may have potential contractual consequences for the employee. 
+
+2.1 Documentation on EPMA and medical notes 
+ 
+Where medicine supply or administration occurs, it should be clear the midwife is acting 
+under midwife exemption. “Given/supplied under midwife exemption” along with other 
+required information must be documented. 
+
+3.0 Definitions 
+ 
+A midwife is a person who, having been regularly admitted to a midwifery educational 
+programme, duly recognised within the UK, has successfully completed the prescribed 
+course of studies in midwifery and has acquired the requisite qualifications to be registered 
+and/or legally licensed to practise midwifery. 
+ 
+EPMA Electronic Prescribing and Medicines 
+Administration GLS General Sales List 
+P Pharmacy Medicines POM Prescription Only Medicines 
+CD Controlled Drugs BNF British National formulary 
+BNFC British National Formulary for Children PGD Patient group direction 
+IV intravenous IM intramuscular 
+PR per rectum PV per vagina CLINICAL POLICY 
+Due for review: 21st August 2027 
+Name of Policy: UHSCL002 Policy for Midwives Exemptions 
+For use at: PRH, RSCH, SRH & WH 
+ 
+ Page 4 of 17 
+ 
+4.0 Duties, r esponsibilities and a ccountabilities 
+ 
+4.1 Midwives 
+ 
+Each registered midwife is accountable for her/his own conduct and practice in accordance 
+with the Nursing and Midwifery Council’s “The Code Professional standards of practice and 
+behaviours for nurses and midwives”. 
+ 
+Each midwife is responsible for any medication supplied or administered as a midwife 
+exemption in accordance with this policy. 
+ 
+Any midwife supplying and administering under a midwife exemption is required to have up 
+to date knowledge for that medication with regards to: 
+ 
+• Indication 
+• Dosage 
+• Side effects 
+• Precautions 
+• Contraindications 
+• Interactions 
+• Method of administration 
+ 
+This will be demonstrated by successful completion of the necessary competencies as 
+outlined in the competency statement for the administration of medication (level 2) specific to 
+midwives. 
+ 
+Midwives are responsible for: 
+ 
+• Adhering to the list of agreed exemptions at UHS listed within this policy . 
+• Ensuring the safe and clinically appropriate use of medicines . 
+• Ensuring their practice and knowledge are up to date by accessing up -to-date 
+resources (e.g. BNF, BNFC) . 
+• Discussing the aims and side effects of any drug treatment administered or 
+supplied to their patient . 
+
+4.2 Student midwives 
+ 
+A student midwife may administer any drug listed within this policy, with the exception of 
+controlled drugs (CDs), under the direct supervision of a competent midwife . 
+
+ CLINICAL POLICY 
+Due for review: 21st August 2027 
+Name of Policy: UHSCL002 Policy for Midwives Exemptions 
+For use at: PRH, RSCH, SRH & WH 
+ 
+ Page 5 of 17 
+5.0 Midwives exemptions 
+ 
+5.1 Process general sale list medicines (GSL) and pharmacy medicines (P) 
+ 
+Human Medicines Regulations 2012 reg 223(4)/ (5) describes the legislation for midwives to 
+supply, deliver or administer. 
+ 
+Midwives can supply , deliver or administer all general sale list medicines (GSL) and 
+pharmacy medicines (P) in accordance with their scope of practice. 
+ 
+• Trust policy covers which GSL and P medicines are available/allowed. The 
+allowed medicines are listed in this document. 
+• Trust polices which cover eligibility to administer medicines must be followed. 
+• The Medicines Management Policy and other relevant trust policies must be 
+followed. 
+• Registered midwives must only supply and administer those medicines, in which 
+they have received the appropriate training as to the therapeutic use. 
+ 
+Prior to administering or supplying a medication as a midwife exemption, the midwife will 
+need to ensure that: 
+ 
+• They have an up to date knowledge of the medication they are supplying / 
+administering . 
+• The patient is known to them, and that administration is within the course of their 
+professional practice . 
+• The patient is not allergic to the medication or any of its excipients . 
+• The patient has no contra -indications to the required medication . 
+• There are no significant drug interactions . 
+• The medication supplied is the most appropriate choice for the required indication . 
+• The dosage is correct, consider patient’s weight (where appropriate) . 
+• The patient is counselled on any medication they are given in terms of indication, 
+use and side effects. Where the medication is unlicensed or being used outside of 
+its license (off -label), the patient should be made aware of this. 
+• An authorised prescriber is contacted without delay where contraindications are 
+discovered, or the patient develops a reaction to the medicine or where 
+assessment of the patient indicates the medicine is no longer suitable . 
+• Prior/recent drug administration is checked with the patient or theatre records 
+and/or handover notes as appropriate . 
+
+5.2 Process for inpatient / home birth setting general sale list medicines (GSL) and 
+pharmacy medicines (P) 
+ 
+The legal ability to supply, deliver or administer is not the legal ability to prescribe (instruct 
+others to administer). Therefore, in the inpatient setting midwives can document giving a CLINICAL POLICY 
+Due for review: 21st August 2027 
+Name of Policy: UHSCL002 Policy for Midwives Exemptions 
+For use at: PRH, RSCH, SRH & WH 
+ 
+ Page 6 of 17 
+dose of a P or GSL medicine which is covered in this policy. If further doses are required, 
+then the medication should be prescribed. 
+ 
+Documentation of medication administration should occur in line with trust policy and be 
+clear to other healthcare professionals caring for the patient. It should be recorded in the 
+EPMA single dose section. Before the next dose is due (if any may be required) a prescriber 
+should be asked to prescribe the medication. 
+ 
+It is recognised, 
+ 
+• In some situations that the midwife will be administering from a TTO pack as it will 
+be clear the patient will be discharged on that medication e.g. NRT or a cream. 
+This is not a supply to the patient and must be kept in accordance with Medicines 
+Management Policy. 
+• In some situations, a patient may receive more than one dose of a medication via 
+midwifery exemption before it is prescribed. The target is however for it to be 
+prescribed and not given regularly via the EPMA single dose section. 
+• Home births only documentation of administration will occur as there is no easy 
+access to a prescriber 
+• Entonox should not be prescribed on the Regular medication section. Only 
+documentation of ME administration occurs in the single dose section of EPMA. 
+ 
+Discharge of the patient with any medication is covered by hospital policy. This must only 
+occur via a prescription (TTO). Use of t wo systems, midwife exemptions and a TTO is not 
+safe practice for medicine management at discharge. Midwife exemptions does not negate 
+the need for a prescribed TTO at discharge. 
+
+5.3 Process for outpatient /community setting general sale list medicines (GSL) 
+and pharmacy medicines (P) 
+
+Midwives can supply all general sale list medicines (GSL) and pharmacy medicines (P) in 
+accordance with their scope of practice if the medicine is listed by this document. 
+ 
+Supply must be documented in the patient notes in line with the Medicines Management 
+Policy (as detailed for a patient specific order) or on EPMA. 
+ 
+The medicine supplied to the patient must be: 
+ The NHS encourages patients to purchase OTC (over the counter) medications for 
+minor health conditions. All GSL and P medicines are OTC medications. This 
+should also be encouraged in midwifery practice. Nicotine replacement therapy is 
+an exception. CLINICAL POLICY 
+Due for review: 21st August 2027 
+Name of Policy: UHSCL002 Policy for Midwives Exemptions 
+For use at: PRH, RSCH, SRH & WH 
+ 
+ Page 7 of 17 
+• Included in the GSL & P approved medicines list . 
+• In its original packaging and unopened . 
+• Have printed directions for the patient to follow . 
+• Have a trust sticker attached to the packaging to document the patient’s name . 
+• Have a [GSL] or [P] logo printed on the packaging. 
+• The only exception is Entonox where its use is documented (but not supplied). 
+
+5.4 Process for prescription only medicines (POMs) 
+ 
+Under the Medicines for Human Use Act 2012, registered midwives may administer or 
+supply on their own initiative any of the prescription only medicines that are specified within 
+Schedule 17, provided it is during their professional midwifery practice. It must be limited to 
+medications listed in this document. 
+ 
+Exemptions are listed under Part 1 (Exemptions from restrictions on the sale and supply of 
+prescription only medicines) Part 2 (Exemption from the restriction on the supply of 
+prescription only medicines) and Part 3 (Exemptions from the restriction on the 
+administration of prescription only medicines). 
+ 
+• Trust polices which cover eligibility to administer medicines must be followed. 
+• The Medicines Management Policy or other relevant trust policies must be 
+followed. 
+• Registered midwives must only supply and administer those medicines, in which 
+they have received the appropriate training as to the therapeutic use. 
+ 
+Prior to administering a medication under a midwife exemption, the midwife will need to 
+ensure that: 
+ 
+• They have an up to date knowledge of the medication they are supplying / 
+administering . 
+• The patient is known to them, and that administration is within the course of their 
+professional practice . 
+• The patient is not allergic to the medication or any of its excipients . 
+• The patient has no contra -indications to the required medication . 
+• The medication supplied is the most appropriate choice for the required indication . 
+• The dosage is correct, consider patient’s weight (where appropriate) . 
+• The patient is counselled on any medication they are given in terms of indication, 
+use and side effects. Where the medication is unlicensed or being used outside of 
+its license (off -label), the patient should be made aware of this. 
+• An authorised prescriber is contacted without delay where contraindications are 
+discovered, or the patient develops a reaction to the medicine or where 
+assessment of the patient indicates the medicine is no longer suitable . 
+• Prior/recent drug administration is checked with the patient or theatre records 
+and/or handover notes as appropriate . CLINICAL POLICY 
+Due for review: 21st August 2027 
+Name of Policy: UHSCL002 Policy for Midwives Exemptions 
+For use at: PRH, RSCH, SRH & WH 
+ 
+ Page 8 of 17 
+ 
+5.5 Process for inpatient / home birth setting Prescription Only Medicines (POM) 
+ 
+Documentation of the medication administration should occur in line with trust policy and be 
+clear to other healthcare professionals caring for the patient. It should be recorded in the 
+EPMA single dose section. 
+It is recognised, 
+ 
+• These medications are unlikely to become regular medicines and a request for 
+them to be prescribed as such is not required. 
+• Home births should be documented as per policy . 
+
+6.0 Midwife Exemptions for Supply 
+ 
+Drug Name and Form Legal 
+Class Route Indication 
+Aqueous Cream GSL Topical Dry skin 
+Anusol cream GSL Topical Haemorrhoids 
+Anusol HC ® Ointment P Topical Severe haemorrhoids and associated 
+conditions or if unresponsive to 
+Anusol® after three days 
+Clotrimazole 1% cream P Topical Vulvovaginal candidiasis 
+Clotrimazole 500mg pessary P PV Vaginal candidiasis 
+Diclofenac 100mg suppositories POM PR Analgesia (first 48 hours only) 
+Emla ® cream P Topical Women and birthing people requiring 
+local anaesthesia prior to venepuncture 
+or venous cannulation. 
+Entonox® P Inhaled Analgesia 
+Ferrous sulfate 200mg tablets, 
+Ferrous Fumarate 322mg/210mg P Oral Iron-deficiency anaemia 
+Folic acid 400 micrograms GSL Oral Prevention of neural tube defects 
+Fybogel sachets GSL Oral Constipation 
+Gaviscon® Advance suspension P Oral Dyspepsia 
+Glycerol suppositories GSL PR Constipation, which has not responded 
+to oral laxatives 
+Hydrocortisone 1%w/v cream P Topically Skin irritation 
+Ibuprofen 200mg/400mg tablets GSL Oral Mild to moderate pain CLINICAL POLICY 
+Due for review: 21st August 2027 
+Name of Policy: UHSCL002 Policy for Midwives Exemptions 
+For use at: PRH, RSCH, SRH & WH 
+ 
+ Page 9 of 17 
+Instillagel® P Topical Women and birthing people requiring a 
+urinary catheter inserted either by 
+midwife or self - catheterisation. 
+Lactulose solution P Oral Constipation 
+LMX4 Lidocaine 4% w/w Cream P Topical Women and birthing requiring local 
+anaesthesia prior to venepuncture or 
+venous cannulation. 
+Miconazole POM / P Topical Thrush treatment 
+Nicotine replacement therapy 
+(NRT) All formulations available 
+on formulary. P Various Smoking cessation 
+(Note currently vapes are not legal 
+medicine and are not covered in this 
+policy) 
+Nystatin 100,000 units/ mL oral 
+suspension POM Oral Oral thrush 
+Paracetamol 500mg tablets GSL Oral Mild to moderate pain 
+Phytomenadione 2mg POM Oral* Prevention of vitamin K deficiency 
+bleeding 
+Pregaday® tablets P Oral Prevention of iron deficiency anaemia 
+Peppermint water GSL Oral Abdominal colic and flatulence 
+Senna GSL Oral Management of postnatal constipation 
+Simple Linctus GSL Oral Sore throat / cough 
+Sodium Citrate Compound Enema P PR Constipation, which has not responded 
+to oral laxatives 
+Tetracaine (Ametop® gel) P Topical Women and birthing people requiring 
+local anaesthesia prior to venepuncture 
+or venous cannulation. 
+Vitamin D supplement 10 
+micrograms GSL Oral Pregnant women and birthing people 
+antenatally. 
+
+ CLINICAL POLICY 
+Due for review: 21st August 2027 
+Name of Policy: UHSCL002 Policy for Midwives Exemptions 
+For use at: PRH, RSCH, SRH & WH 
+ 
+ Page 10 of 17 
+7.0 Midwife Exemptions for Administration 
+ 
+Drug Name Legal 
+Class Route Indication 
+Adrenaline POM IM Anaphylaxis 
+Anti-D Immunoglobulin POM IM Prophylaxis against newborn 
+haemolytic disease 
+Carboprost POM IM Postpartum haemorrhage 
+Cyclizine POM IM Antiemetic 
+Diamorphine CD POM IM Analgesia 
+Ergometrine POM IM Tocolytic 
+Gelofusine POM IV Maternal fluid resuscitation 
+Hartmann’s Solution POM IV Maternal fluid resuscitation 
+Hepatitis B vaccine POM IM Immunisation against Hepatitis B 
+Hepatitis immunoglobulin POM IM Prophylaxis against Hepatitis B 
+Lidocaine POM Subcuticular 
+/ perineal 
+infiltration Local anaesthesia 
+Morphine CD POM Parenteral Analgesia 
+Naloxone POM IV Opioid overdose 
+Oxytocin POM IV/IM Tocolytic to expedite 3rd stage of 
+labour when syntometrine contra -
+indicated. 
+For control of postpartum bleeding. 
+Pethidine CD POM IM Analgesia 
+Phytomenadione (vitamin K) POM IM To prevent Vitamin K deficiency 
+bleeding 
+Prochlorperazine POM IM Anti-emetic 
+Sodium chloride 0.9% POM IV I/V Flush, infusion for maternal 
+resuscitation or IV drug dilution. 
+Syntometrine® POM IM Tocolytic to expedite 3rd stage of 
+labour 
+
+ CLINICAL POLICY 
+Due for review: 21st August 2027 
+Name of Policy: UHSCL002 Policy for Midwives Exemptions 
+For use at: PRH, RSCH, SRH & WH 
+ 
+ Page 11 of 17 
+8.0 Training implications 
+ 
+It will be the midwi ves responsibility : 
+ 
+• To acquaint themselves with the policy and in particular the list of midwifery 
+exempt medicines . 
+• To have undergone any suitable training identified as necessary under the terms 
+of this policy or otherwise . 
+• To have been fully authorised by their line manager and their CMG to undertake 
+the activity . 
+• To always fully comply with the terms of any relevant Trust policies and/or 
+procedures . 
+
+ CLINICAL POLICY 
+Due for review: 21st August 2027 
+Name of Policy: UHSCL002 Policy for Midwives Exemptions 
+For use at: PRH, RSCH, SRH & WH 
+ 
+ Page 12 of 17 
+Appendix 1: Monitoring 
+ 
+Please contact uhsussex.medicines.governance.group@nhs.net 
+ 
+Issue being 
+monitored Monitoring 
+method Responsibility Frequency Reviewed by 
+and actions 
+arising 
+followed up by 
+Safe supply & 
+administration of 
+medicines under 
+Midwife 
+Exemptions. Audit of EPMA Maternity Audit 
+Team in 
+combination 
+with Pharmacy 
+team. 3 year Maternity Q&S 
+Meeting 
+
+Appendix 2: Policy Version Control Log 
+ Change Log – Midwives Exemption 
+Version Date Substantive 
+changes since 
+previous version Reason for change 
+Author Author 
+1.0 Feb 2024 NA New Trust wide 
+Midwives 
+Exemption Policy. 
+Previous SRH/WH 
+and PRH/RSCH 
+versions archived 
+as no longer valid. D. Annandale, 
+Children and 
+Women’s lead 
+pharmacist CLINICAL POLICY 
+Due for review: 21st August 2027 
+Name of Policy: UHSCL002 Policy for Midwives Exemptions 
+For use at: PRH, RSCH, SRH & WH 
+ 
+ Page 13 of 17 
+Appendix 3: Due Regard Assessment Tool 
+To be completed and attached to any policy when submitted to the appropriate committee for 
+consideration and approval. 
+ Yes/No Comments 
+1. Does the document/guidance affect one group less or more 
+favourably than another on the basis of: 
+ • Age N 
+ • Disability N 
+ • Gender (Sex) N 
+ • Gender Identity N 
+ • Marriage and civil partnership N 
+ • Pregnancy and maternity N 
+ • Race (ethnicity, nationality, colour) N 
+ • Religion or Belief N 
+ • Sexual orientation, including lesbian, gay and bisexual people N 
+2. Is there any evidence that some groups are affected differently 
+and what is/are the evidence source(s)? N 
+3. If you have identified potential discrimination, are there any 
+exceptions valid, legal and/or justifiable? / 
+4. Is the impact of the document likely to be negative? N 
+5. If so, can the impact be avoided? / 
+6. What alternative is there to achieving the intent of the document 
+without the impact? N 
+7. Can we reduce the impact by taking different action and, if not, 
+what, if any, are the reasons why the policy should continue in 
+its current form? / 
+8. Has the document been assessed to ensure service users, staff 
+and other stakeholders are treated in line with Human Rights 
+FREDA principles (fairness, respect, equality, dignity and 
+autonomy)? N 
+If you have identified a potential discriminatory impact of this policy, please refer it together with any 
+suggestions as to the action required to avoid/reduce this impact. For advice in respect of answering 
+the above questions, please contact uhsussex.equality@nhs.net 01273 664685 . 
+ CLINICAL POLICY 
+Due for review: 21st August 2027 
+Name of Policy: UHSCL002 Policy for Midwives Exemptions 
+For use at: PRH, RSCH, SRH & WH 
+ 
+ Page 14 of 17 
+Appendix 4: Template Dissemination, Implementation and Access Plan 
+ 
+To be completed and attached to any policy when submitted to Corporate Governance for 
+consideration and TMB approval. 
+ 
+ Dissemination Plan Comments 
+1. Identify: 
+ Which members of staff or staff groups will be 
+affected by this policy? Midwives 
+ How will you confirm that they have received 
+the policy and understood its implications? Midwi ves as registered healthcare 
+professional must understanding of policy. 
+Set as iris training as mandatory. Midwife 
+governance lead to action 
+ How have you linked the dissemination of the 
+policy with induction training, continuous 
+professional development and clinical 
+supervision as appropriate? All maternity staff are shown where to locate 
+guidance as part of their induction process. 
+2. How and where will staff access the document 
+(at operational level)? Staff will be able to access via SharePoint. 
+ 
+ Yes/No Comments 
+3. Have you made any plans to remove old 
+versions of the policy or related documents 
+from circulation? YES Previous Midwives Exemption 
+documents are already 
+archived. 
+4. Have you ensured staff are aware the 
+document is logged on the organisation’s 
+register? YES Dissemination plan includes 
+notifying staff via work emails, 
+Departmental social media 
+page and safety notice boards. 
+
+ CLINICAL POLICY 
+Due for review: 21st August 2027 
+Name of Policy: UHSCL002 Policy for Midwives Exemptions 
+For use at: PRH, RSCH, SRH & WH 
+ 
+ Page 15 of 17 
+Additional guidance and information 
+ 
+https://www.nmc.org.uk/standards/code/ 
+https://bnf.nice.org.uk/ 
+https://bnfc.nice.org.uk/ 
+https://www.medicines.org.uk/emc 
+https://www.brightonandhoveccg.nhs.uk/your -care/medicines -and-pharmacies/prescribing -
+formulary/ 
+https://obsgynhandbook.nhsggc.org.uk/scottish -national -midwifery -formulary/ (Note 
+information from not this site does not supersede information this document.) 
+https://www.nmc.org.uk/standards/code/ 
+https://www.legislation.gov.uk/uksi/2012/1916/contents/made (accessed Oct 2022) 
+https://www.legislation.gov.uk/uksi/2012/1916/schedule/17/made 
+https://www.legislation.gov.uk/uksi/2012/1916/regulation/223/made 
+https://bnf.nice.org.uk/ 
+https://bnfc.nice.org.uk/ 
+https://www.medicines.org.uk/emc (accessed Oct 2022) 
+https://obsgynhandbook.nhsggc.org.uk/scottish -national -midwifery -formulary/ (accessed Oct 
+2022)

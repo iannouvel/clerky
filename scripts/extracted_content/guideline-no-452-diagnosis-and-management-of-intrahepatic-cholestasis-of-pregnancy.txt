@@ -1,0 +1,1159 @@
+# Extracted from: Guideline No. 452 Diagnosis and Management of Intrahepatic Cholestasis of Pregnancy.pdf
+# Guideline ID: guideline-no-452-diagnosis-and-management-of-intrahepatic-cholestasis-of-pregnancy
+# Content length: 74036 characters
+# Processing date: 1732953490.974475
+
+SOGC CLINICAL PRACTICE GUIDELINE
+No. 452, August 2024
+Guideline No. 452: Diagnosis and
+Management of Intrahepatic
+Cholestasis of Pregnancy
+(En français : Diagnostic et prise en charge de la cholestase intrahépatique de la grossesse)
+The English document is the original version; translation may introduce small differences in the French version.
+This clinical practice guideline was prepared by the authors,
+reviewed by the SOGC Clinical Obstetrics Committee (2023), and
+approved by the SOGC Guideline Management and Oversight
+Committee (GMOC).
+Authors
+Sebastian R. Hobson, MD, PhD, Toronto, ON
+Elissa R. Cohen, MD, MA, Yarmouth, NSShital Gandhi, MD, MPH, Toronto, ONVenu Jain, MD, PhD, Edmonton, AB
+Kirsten M. Niles, MD, PhD, Surrey, BC
+Marie-Ève Roy-Lacroix, MD, Sherbrooke, QCBi Lan Wo, MD, Montréal, QCSOGC Clinical Obstetrics Committee (2023): Georgina
+Wilcock, Elissa Cohen, Stephanie Cooper, Christopher Nash,
+Kirsten Niles, Megan Gomes, Francois Audibert, Karen Wou,
+Sakina Walji, Marie-Danielle Dionne, Isabelle Boucoiran, JillianCoolen, Graeme Smith, Sebastian Hobson, Kenneth Lim, ErnestoFigueiro Filho, Kimberly Butt.
+Disclosures: Statements were received from all authors. No
+relationships or activities that could involve a con ﬂict of interest
+were declared by Dr. Sebastian Hobson, Dr. Marie-Ève Roy-Lacroix, and Dr. Bi Lan Wo. Dr. Elissa Cohen declares that shereceived payment or honouraria from Bayer for work associated
+with the Mirena intrauterine device and a scholarship from the
+Social Sciences and Humanities Research Council for herdoctoral dissertation research. Dr. Shital Gandhi declares that sheis the Treasurer for the North American Society for Obstetric
+Medicine. Dr. Venu Jain declares that he has received payment
+for expert opinions on medicolegal cases and has not yet givenexpert testimony. He also declares that he is on the SOGC Board
+of Directors and is a member of SOGC GMOC. Dr. Kirsten Niles
+declares that she is a member of the SOGC Clinical ObstetricsCommittee and Regional Division Head of Obstetrics, Fraser
+J Obstet Gynaecol Can 2024;46(8):102618
+https://doi.org/10.1016/j.jogc.2024.102618
+ª2024 The Society of Obstetricians and Gynaecologists of Canada/La
+Société des obstétriciens et gynécologues du Canada. Published by
+Elsevier Inc. All rights are reserved, including those for text and datamining, AI training, and similar technologies.
+This document re ﬂects emerging clinical and scienti ﬁc advances as of the publication date and is subject to change. The information is not
+meant to dictate an exclusive course of treatment or procedure. Institutions are free to amend the recommendations. The SOGC suggests,however, that they adequately document any such amendments.
+Informed consent: Patients have the right and responsibility to make informed decisions about their care, in partnership with their health care
+provider. To facilitate informed choice, patients should be provided with information and support that is evidence-based, culturally appropriate ,
+and personalized. The values, beliefs, and individual needs of each patient in the context of their personal circumstances should be considered
+and the ﬁnal decision about care and treatment options chosen by the patient should be respected.
+Language and inclusivity : While the SOGC as a rule uses gendered language, in respect for our mission to advance women ’s health, there are
+contexts in which it is important to use gender neutral language, and to be fully inclusive. This guideline speaks to the needs of people are oftenmarginalized or “unseen. ”For this reason, except where citing the words of others, the SOGC has chosen to use gender neutral language in this
+guideline. The SOGC recognizes and respects the rights of all people for whom the information in this document may apply, including but not
+limited to transgender, non-binary, and intersex people. The SOGC encourages health care providers to engage in respectful conversation withtheir patients about their gender identity and preferred gender pronouns and to apply these guidelines in a way that is sensitive to each person ’s
+needs.
+Weeks Gestation Notation : The authors follow the World Health Organization ’s notation on gestational age: the ﬁrst day of the last menstrual
+period is day 0 (of week 0); therefore, days 0 to 6 correspond to completed week 0, days 7 to 13 correspond to completed week 1, etc.It is the Society of Obstetricians and Gynaecologists of Canada (SOGC) policy to review the content 5 years after publication, at which
+time the document may be revised to re ﬂect new evidence, or the document may be archived.
+AUGUST JOGC AOÛT 2024 l1
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.Health Authority where she provides regional obstetrical care
+guidance that is not speci ﬁc to this guideline. All authors have
+indicated that they meet the journal ’s requirements for authorship.
+Subject Categories: obstetrics; maternal fetal medicine.
+Keywords : cholestasis; intrahepatic cholestasis; pregnancy;
+pruritis; bile acids and salts
+Corresponding Author : Sebastian Hobson,
+sebastian.hobson@sinaihealth.ca
+KEY MESSAGES
+1. Intrahepatic cholestasis of pregnancy is a common
+pregnancy condition manifesting in the late-second or third
+trimesters with maternal itching and elevated non-fasting bileacids ( >19
+mmol/L).
+2. The most signi ﬁcant perinatal sequelae of intrahepatic
+cholestasis of pregnancy are iatrogenic and spontaneous
+preterm birth, neonatal respiratory distress, and neonatalintensive care unit admission. The risk of stillbirth is increasedwhen bile acid levels are /C21100
+mmol/L.
+3. The mainstay of symptomatic treatment of itching is with
+ursodeoxycholic acid, given daily in divided doses.
+4. Antenatal fetal monitoring has not been shown to improve
+perinatal outcomes. The risk of stillbirth may be lowered
+with planned early birth based on the highest recorded bileacid level.
+ABSTRACT
+Objective: To summarize the current evidence and to make
+recommendations for the diagnosis and management of
+intrahepatic cholestasis of pregnancy.
+Target Population: Pregnant people with intrahepatic cholestasis of
+pregnancy.
+Options: Diagnosing the condition using fasting or non-fasting bile
+acids, classifying disease severity, determining what treatment tooffer, establishing how to monitor for antenatal fetal wellbeing,
+identifying when to perform elective birth.
+Bene ﬁts, Harms, and Costs: Individuals with intrahepatic cholestasis
+of pregnancy are at increased risk of adverse perinatal outcomesincluding preterm birth, neonatal respiratory distress and admission
+to a neonatal intensive care unit, with an increased risk of stillbirth
+when bile acid levels are /C21100
+mmol/L. There is inequity in bile acid
+testing availability and timely access to results, along withuncertainly of how to treat, monitor. and ultimately deliver these
+pregnancies. Optimization of diagnostic and management protocols
+can improve maternal and fetal postnatal outcomes.
+Evidence: Medline, PubMed, Embase, and the Cochrane Library were
+searched from inception to March 2023, using medical subject
+headings (MeSH) and keywords related to pregnancy, intrahepaticcholestasis of pregnancy, bile acids, pruritis, ursodeoxycholic acid,and stillbirth. This document presents an abstraction of the
+evidence rather than a methodological review.Validation Methods: The authors rated the quality of evidence and
+strength of recommendations using the Grading ofRecommendations Assessment, Development and Evaluation
+(GRADE) approach. See Appendix A (Tables A1 for de ﬁnitions and
+A2for interpretations).
+Intended Audience: Obstetric care providers, including obstetricians,
+family physicians, nurses, midwives, maternal efetal medicine
+specialists, and radiologists.
+Social Media Abstract: Intrahepatic cholestasis of pregnancy requires
+adequate diagnosis with non-fasting bile acid levels which guide
+optimal management and delivery timing.
+SUMMARY STATEMENTS:
+1. Intrahepatic cholestasis of pregnancy is a common pregnancy
+condition manifesting in the late-second or third trimesters(moderate ).
+2. The etiology of intrahepatic cholestasis is complex, involving a
+combination of hormonal factors, genetic susceptibility, and envi-ronmental in ﬂuences ( low).
+3. Intrahepatic cholestasis remains a diagnosis of exclusion and is
+based on the presence of maternal pruritis, predominantly of the
+palms and soles, along with elevated non-fasting bile acids ( >19
+mmol/L) ( moderate ).
+4. The perinatal sequelae of intrahepatic cholestasis of pregnancy in-
+cludes increased risks of preeclampsia, gestational diabetes, pre-
+term birth, neonatal respiratory distress, and neonatal intensive careunit admission ( moderate ). Patients with intrahepatic cholestasis
+and bile acids /C21100
+mmol/L have a signi ﬁcantly increased risk of
+stillbirth compared with the general population ( moderate ).
+5. The mainstay of symptomatic treatment of pruritis is with urso-
+deoxycholic acid (10 e15 mg/kg/d), given daily in 2 e3 divided
+doses, which may also reduce the risk of preterm birth, but not
+stillbirth ( high).
+6. Antenatal fetal monitoring has not been shown to improve perinatal
+outcomes ( moderate ).
+7. Symptoms as well as intrahepatic cholestasis-associated
+biochemical abnormalities are expected to resolve within 1 e2
+weeks postpartum, although they may persist up to 4 weeks insome individuals ( moderate ).
+8. Individuals who have been diagnosed with intrahepatic cholestasis
+are at increased risk of future cholecystitis, cholelithiasis,pancreatic disease, goiter, and hypothyroidism ( low).
+9. Recurrence of intrahepatic cholestasis in future pregnancies is
+around 70% e90% ( low).
+10. In patients with a history of intrahepatic cholestasis of pregnancy
+choosing hormonal contraception, progestin-only options are
+associated with the lowest risk of non-pregnant cholestasis
+(moderate ).
+RECOMMENDATIONS:
+1. Clinicians should include intrahepatic cholestasis of pregnancy in
+the differential diagnosis of any pregnant person with pruritis,particularly of the palms of the hands or soles of feet, in the late-
+second or third trimester ( strong, moderate ).
+2. Laboratory investigations for intrahepatic cholestasis should
+include non-fasting bile acids, alanine aminotransferase, aspartateaminotransferase, gamma-glutamyl transferase, and bilirubin.
+Additional testing or imaging should be guided by clinical ﬁndings
+and differential diagnoses ( strong, moderate ).
+3. Clinicians and health care authorities should advocate for univer-
+sally available serum bile acid testing with timely access to results
+(strong, low ).
+2
+lAUGUST JOGC AOÛT 2024SOGC CLINICAL PRACTICE GUIDELINE
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.4. Clinicians should adopt the contemporary de ﬁnition of intrahepatic
+cholestasis as raised non-fasting bile acid levels >19mmol/L
+(strong, moderate ).
+5. Repeat testing of non-fasting laboratory investigations should be
+performed every 2 e4 weeks to monitor disease progression and
+ascertain the highest recorded bile acid level ( strong, low ).
+6. Atypical presentations of intrahepatic cholestasis should be
+referred for specialist consultation by a maternal efetal medicine or
+internal medicine physician ( strong, low ).
+7. Clinicians should counsel patients diagnosed with intrahepatic
+cholestasis regarding increased risks of preeclampsia, gestational
+diabetes, preterm birth, neonatal respiratory distress, and neonatalintensive care unit admission. Furthermore, there is a signi ﬁcant
+increase in the risk of stillbirth if bile acid levels are /C21100
+mmol/L,
+and some evidence demonstrating a modest increase in stillbirth
+risk with bile acid levels >40mmol/L from 38 weeks gestation
+onward ( strong, low ).
+8. While topical emollients and antihistamines may be prescribed,
+clinicians should offer treatment of pruritis in cholestasis of preg-nancy with ursodeoxycholic acid ( strong, moderate ).
+9. The following therapies for intrahepatic cholestasis have been
+shown to be ineffective and should not be prescribed by clinicians
+to treat the condition: dexamethasone, cholestyramine, pheno-barbital, S-adenosylmethionine, activated charcoal, and epome-diol ( strong, moderate ).
+10. All pregnant individuals should be advised to monitor fetal move-
+ments as the mainstay of fetal wellbeing surveillance in intra-hepatic cholestasis and to seek timely care if indicated ( strong,
+moderate ).
+11. While additional fetal monitoring is not mandated in intrahepatic
+cholestasis, local units may offer monitoring after discussion andshared decision-making ( conditional, low ); in patients with bile acid
+levels between 40 ؘe99
+mmol/L monitoring can include obstetric
+ultrasound for biophysical pro ﬁle or electronic fetal heart rate
+monitoring every 1 e2 weeks, and in patients with bile acid levels
+/C21100mmol/L monitoring can include obstetric ultrasound for bio-
+physical pro ﬁle or electronic fetal heart rate monitoring weekly or
+twice weekly.
+12. Based on expert opinion, clinicians should counsel their patients
+regarding optimal delivery timing based on the highest recordednon-fasting bile acid level: 20 e39
+mmol/L at 390e396weeks
+gestation ( conditional, low ); 40e69mmol/L at 380e386weeks
+gestation ( conditional, low ); 70e99mmol/L at 360e376weeks
+gestation ( conditional, moderate ); and /C21100mmol/L by 36 weeks
+gestation ( strong, high ) or earlier in patients with comorbidities or
+other risks factors (i.e., multiple pregnancy, preeclampsia, gesta-
+tional diabetes, previous stillbirth secondary to intrahepaticcholestasis and/or severe persistent maternal pruritus).
+13. Patients with intrahepatic cholestasis should be offered contin-
+uous electronic fetal heart rate monitoring in labour ( conditional,
+low).
+14. Clinicians should con ﬁrm resolution of pruritis in intrahepatic
+cholestasis at the 6-week postpartum visit and repeat bile acid and
+liver transaminase testing in those where symptoms persist ( con-
+ditional, low ).
+15. Clinicians should pursue further workup or specialist consultation
+for patients with persistent intrahepatic cholestasis symptoms or
+biochemical abnormalities beyond the postpartum period ( condi-
+tional, low ).
+16. Clinicians should inform patients affected by intrahepatic
+cholestasis that they and their family members are at a higher risk ofintrahepatic cholestasis in future pregnancies ( conditional, low ).
+AUGUST JOGC AOÛT 2024
+l3Intrahepatic Cholestasis of Pregnancy
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.INTRODUCTION
+Intrahepatic cholestasis of pregnancy (ICP) is the most
+common hepatic disease unique to pregnancy, with
+wide-ranging incidence from 0.1% to >27% in certain
+populations.1,2This multifactorial disease manifests in the
+late-second or third trimesters of pregnancy and is usually
+characterized by symptomatic pruritis alongside elevated
+maternal bile acid levels. The etiology of ICP is likelycomplex, involving a combination of hormonal factors,
+genetic susceptibility, and environmental in ﬂuences
+(Figure 1 ).
+While ICP can cause signi ﬁcant pruritis and distress,
+serious maternal complications are not associated with the
+condition. The most signi ﬁcant sequelae of ICP are iat-
+rogenic and spontaneous preterm birth, neonatal respira-
+tory distress, neonatal intensive care unit (NICU)admission, and stillbirth.
+3Available pharmacological
+treatments for ICP aim to relieve pruritis but do not
+improve perinatal outcomes. Rather, earlier delivery is used
+to mitigate the potential for fetal or neonatal morbidity and
+mortality. After delivery, ICP usually resolves rapidly, and
+long-term hepatic effects are rare, aside from an increased
+risk of ICP recurrence in subsequent pregnancies.
+In recent years, there have been con ﬂicting opinions and
+guidance on the optimal diagnostic and management ap-
+proaches to minimize adverse outcomes from ICP .Important debate has centred on diagnostic bile acid level
+criteria, universal and timely availability of testing, fetal
+monitoring for wellbeing, perinatal risk of stillbirth, and
+the optimal gestational age at which to recommend de-
+livery. As such, this clinical practice guideline aims to
+evaluate and summarize the available literature on ICP and
+provide pragmatic and evidence-based recommendations
+to guide clinical care options and optimize perinataloutcomes. Informed and shared decision-making should
+underpin all aspects of diagnosis and management,
+respecting the wishes of each individual patient.
+Summary Statement 1
+EPIDEMIOLOGY AND INCIDENCE
+ICP is the most common gestational disease that specif-
+ically targets the liver, as opposed to preeclampsia or
+HELLP (hemolysis, elevated liver enzymes and low
+platelets) syndrome, where hepatic dysfunction may be
+encountered but usually with multisystem or fetoplacental
+involvement.4Furthermore, these disease processes can
+coexist with ICP .5e7
+The incidence of ICP varies widely geographically and
+ethnically. Incidence of 0.1% e0.3% has been reported in
+North America, compared with 1.5% e3.2% in northern
+Europe, and 4.0% e6.5% in Chile.4,8,9Higher incidence
+has been reported in Latino (5.6%) and South Asian
+(1.2%e1.5%) populations, with >27% incidence in the
+Mapuche, a group of Indigenous Chileans8e10.
+ETIOLOGY, RISK FACTORS AND
+PATHOPHYSIOLOGY
+Bile acids are produced in the liver in a highly regulated
+manner due to their cytotoxicity, and pregnancy is believed
+to have a cholestatic effect. Bile acids within the fetal
+compartment result from fetal production, which starts as
+early as 12 weeks gestation, as well as from transplacental
+transfer.8Pregnancies without a diagnosis of ICP have a
+fetal to maternal gradient to facilitate clearance of bile
+acids and protect the fetus from their cytotoxic effects. In
+ICP , a signi ﬁcant increase of maternal bile acid reverses
+this gradient, resulting in accumulation within the fetal
+compartment.3
+Administration of oral progesterone in early pregnancy hasbeen associated with increased risk of ICP .
+11Animal
+studies have identi ﬁed that estrogen may alter the
+expression of hepatic transport proteins and receptors
+involved in bile acid homeostasis.8,12The ability of the
+physiological hormonal changes of pregnancy to result in
+pathology may be related to the presence of underlying
+genetic susceptibility. Heterozygous variants in several
+genes associated with bile acid synthesis and homeostasishave been associated with ICP, particularly those associ-
+ated with the autosomal recessive disorder progressive
+familial intrahepatic cholestasis, including ABCB4,ABBREVIATIONS
+ALT alanine aminotransferase
+ANA antinuclear antibodies
+AST aspartate aminotransferase
+FGR fetal growth restrictionGGT gamma-glutamyl transferase
+ICP intrahepatic cholestasis of pregnancy
+NICU neonatal intensive care unit
+PT prothrombin time
+PTT partial thromboplastin time
+TSBA total serum bile acids
+UDCA ursodeoxycholic acid
+4
+lAUGUST JOGC AOÛT 2024SOGC CLINICAL PRACTICE GUIDELINE
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.ABCB11 , and ATP8B1 .8,12These genes have similarly
+been associated with other forms of hepatobiliary disease
+including benign recurrent hepatic cholestasis and chole-
+lithiasis. Additional gene candidates that may infer risk for
+ICP include NR1H4 ( farnesoid X receptor [FXR]),
+ABCC2 , and NR1I2 (pregnane X receptor [PXR]).8,12
+Environmental in ﬂuences also represent risk factors for
+ICP, including selenium or vitamin D de ﬁciency and
+pregnancy during the winter months.12e14ICP has been
+reported to occur more frequently in pregnant individuals
+with advanced maternal age, multiparity, multiple gestation
+pregnancy, conception after in vitro fertilization, diabetes
+mellitus, hypertensive disorders of pregnancy, tobacco use,
+and personal or family history of ICP.6e10Finally,individuals with preexisting liver disease, including hepa-
+titis C, may be at increased risk of ICP ( Figure 2 ).15,16
+Summary Statement 2
+CLINICAL FINDINGS
+Clinical Presentation
+The most common presenting symptom of ICP is pruritis
+of the palms of the hands and soles of the feet that is often
+reported as worse at nighttime.17Pruritis usually occurs in
+the latter half of the second trimester or early in the thirdtrimester and may appear 3 e4 weeks prior to any
+abnormal laboratory ﬁndings. Other uncommonFigure 1. Summary of risk factors involved in the etiology and pathophysiology of intrahepatic cholestasis of pregnancy
+(ICP).
+ART: assistive reproductive technology; PFIC: progressive familial intrahepatic cholestasis.
+AUGUST JOGC AOÛT 2024 l5Intrahepatic Cholestasis of Pregnancy
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.symptoms could include nausea, fatigue, abdominal pain,
+pale stool or steatorrhea, dark urine, and malaise; however,
+systemic complaints are atypical and would indicate the
+need for further evaluation for other differential
+diagnoses.1,18,19
+Physical Exam
+There are no primary dermatological lesions associated
+with ICP; however, secondary excoriations and prurigo
+nodules resulting from scratching by the patient are
+common.20Jaundice may be present in up to 10% e15%
+of patients with ICP, with an onset of approximately 3 e4
+weeks after pruritis occurs.18Other ﬁndings, such as
+encephalopathy or signs of fulminant liver failure, are
+rare and warrant specialist review and assessment
+(Appendix B ).
+Laboratory Findings
+In association with the clinical presentation described
+above, elevation of serum bile acids is the most common
+laboratory abnormality in ICP .20Although serum bile
+acids may be normal at ﬁrst presentation with pruritis,
+subsequent elevations are common, justifying ongoing
+surveillance. Other common laboratory abnormalities
+include elevated serum aminotransferases (alanineaminotransferase / aspartate aminotransferase [ALT/
+AST]).19,20Gamma-glutamyl transferase (GGT) may be
+normal or moderately elevated. Laboratory abnormalities
+typically resolve following delivery. If there is persistence
+of abnormal laboratory ﬁndings beyond 6 weeks post-
+partum, then further investigation for an etiology beyond
+ICP is indicated.
+Imaging Findings
+While some international organizations20e22recommend
+or suggest diagnostic imaging, there are no pathogno-
+monic imaging ﬁndings associated with ICP.
+DIAGNOSIS
+Once ICP is suspected in a pregnant person with pruritus
+(particularly of the hands and feet) in the second or third
+trimester, diagnosis is con ﬁrmed by an elevation of total
+serum bile acids (TSBA) with or without an elevation in
+liver transaminases. However, a thorough history and
+physical examination can reveal atypical ﬁndings in some
+patients. Pregnant individuals with a dermatologic erup-
+tion, jaundice, or any other atypical features, as well as
+those presenting earlier in pregnancy should prompt theclinician to consider other causes ( Appendix B ).Figure 2. The pathophysiology of intrahepatic cholestasis of pregnancy. Reproduced from Dixon and Williamson. The
+pathophysiology of intrahepatic cholestasis of pregnancy, Clin Res Hepatol Gastroenterol, 2016. 141-153. Copyright ª
+2016 Elsevier Masson SAS. All rights reserved.12
+6lAUGUST JOGC AOÛT 2024SOGC CLINICAL PRACTICE GUIDELINE
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.Highly elevated bile acids are strongly associated with
+adverse fetal events, and the magnitude of the increase
+correlates with more severe outcomes.23Hence, accurate,
+timely, and freely available testing of bile acid levels is
+important. Normal bile acid level ranges vary by labora-
+tory; generally, the upper limit of normal is accepted as 10
+mmol/L in the non-pregnant population.24It is known that
+postprandial elevation in bile acids typically occur.
+Furthermore, pregnancy itself causes both fasting andpostprandial bile acid levels to rise,
+25possibly due to high
+levels of estrogen and progesterone.
+We endorse the contemporary de ﬁnition of ICP as bile
+acid levels >19mmol/L and recommendation to perform
+testing in the non-fasting state. These recommendations
+are based on a study comparing bile acid levels in preg-
+nancies with mild and severe ICP to uncomplicated con-
+trol pregnancies, which found values as high as 19 mmol/L
+in the uncomplicated group after eating a standardized
+meal.25Similarly, in a study of 293 healthy asymptomatic
+pregnancies tested after 37 weeks gestation, the upper limit
+of TSBA levels were found to be 14.1 mmol/L fasting and
+20.1mmol/L non-fasting.26Unfortunately, individuals with
+mild ICP may in fact have fasting bile acid levels that are
+lower than the non-pregnant value cutoff of 10 mmol/L,25
+emphasizing the importance of non-fasting samples forincreased the sensitivity.
+In pregnant people with pruritus, a strong clinical suspi-
+cion of ICP, and non-fasting bile acids /C2019
+mmol/L, serial
+TSBA levels should be monitored prospectively every 2 e4
+weeks, as there can be a lag between symptom onset and
+bile acid rise.27
+Liver transaminases (AST/ALT) are often elevated in ICP
+and may in fact precede the rise in bile acids.28,29However,
+a meta-analysis found no correlation of elevated trans-
+aminases with obstetric outcomes,30so these values cannot
+be used to establish the diagnosis of ICP nor predict
+outcomes. For a condition that is cholestatic in nature,
+GGT and bilirubin are most commonly normal.29,31If
+elevated, bilirubin levels remain inferior to bile acid levels
+for both determining diagnosis and predicting stillbirth.30
+ICP remains a diagnosis of exclusion, which raises the
+question of which laboratory tests should be performed.
+The pro ﬁle of elevated bile acids and AST/ALT with
+normal bilirubin and GGT are characteristic of the syn-
+drome. If the pattern is not as expected (i.e., signi ﬁcantly
+raised GGT/bilirubin), this should prompt investigation
+for an alternative diagnosis.Several studies have found that the yield on routine testing
+for other medical conditions such as viral infections and
+maternal autoimmune diseases is low.11,32In a retrospec-
+tive study of 531 pregnancies with elevated bile acids,
+testing for viruses (Epstein-Barr virus, cytomegalovirus,
+hepatitis A, B, and C) and immune causes (antinuclear
+antibodies, anti-smooth muscle antibodies, and anti-
+mitochondrial antibodies) was performed in roughly 75%
+of cases and identi ﬁed no new diagnoses.33Of the 62%
+patients that had liver imaging, 26% had gallbladder
+ﬁndings (sludge, gallstones) but no other signi ﬁcant liver
+ﬁndings.
+As such, it is our recommendation that routine testing for
+Epstein-Barr virus, cytomegalovirus, and hepatitis C not
+be performed in the assessment of ICP (Hepatitis B is
+routinely screened for in the ﬁrst trimester). Abdominal
+imaging and further tests for underlying liver diseasesshould only be performed in select cases (see below).
+While there are rare case reports of vitamin K de ﬁciency
+and associated coagulopathy in ICP ,
+34most of these in-
+stances were associated with severe steatorrhea that led to
+fat soluble vitamin malabsorption or with adverse drug
+reactions to cholestyramine, which is not routinely pre-
+scribed in contemporary practice. As such, routine testing
+for either vitamin K de ﬁciency or coagulopathy (pro-
+thrombin time [PT], partial thromboplastin time [PTT],
+international normalized ratio [INR]) are not recom-mended, unless there is clinical evidence of these states
+(i.e., easy bruising, petechiae, severe epistaxis or gingival
+bleeding, hematuria, hemarthrosis).
+Alternative diagnoses should be considered in the
+following circumstances: onset of symptoms prior to the
+late second trimester; presence of dermatologic eruption
+(other than excoriations); presence of jaundice; abnormal
+bilirubin or GGT; systemic symptoms, such as fever, etc.The differential diagnoses for cholestatic liver diseases are
+outlined in Appendix B .
+Summary Statement 3 & Recommendations 1, 2,
+3, 4, 5, and 6
+MATERNAL AND FETAL SEQUELAE
+Maternal Effects
+In addition to disease-speci ﬁc symptoms, pregnant in-
+dividuals with ICP have an increased chance of pre-
+eclampsia with and without severe features in both
+AUGUST JOGC AOÛT 2024 l7Intrahepatic Cholestasis of Pregnancy
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.singleton and twin gestations.35e37One systematic review
+and meta-analysis identi ﬁed a pooled odds ratio (OR) of
+2.58 (95% CI 2.37 e2.81) for preeclampsia in the presence
+of ICP.5Preeclampsia was typically diagnosed within 2 e4
+weeks after the identi ﬁcation of ICP .35,36Individuals
+diagnosed with ICP also have an increased risk of gesta-
+tional diabetes mellitus, with a pooled OR of 2.19 (95% CI
+1.58e3.03).5
+Fetal Effects
+The fetal impacts of ICP include an increased chance of
+stillbirth, meconium-stained amniotic ﬂuid, spontaneous
+and iatrogenic preterm birth, neonatal respiratory distress,
+and admission to the NICU. ICP has not been shown to
+be associated with reduced birthweight.30
+A systematic review and meta-analysis published in 2019evaluated the association between biochemical markers
+and perinatal outcomes in ICP , including 56 studies in 15
+countries with a total of 5269 patients with ICP versus 165
+136 controls.
+30Spontaneous preterm birth was found to
+be higher in patients with ICP (OR 3.47 [95% CI
+3.06e3.95]); as was meconium-stained amniotic ﬂuid (OR
+2.60 [95% CI 1.62 e4.16]) and admission to the NICU
+(OR 2.12 [95% CI 1.48 e3.03]). The risk of stillbirth for
+singleton pregnancies was positively associated with the
+highest recorded bile acid level. For patients with bile acids
+˂40mmol/L, stillbirth occurred in 3 out of 2310 cases
+(0.12%; [95% CI 0.02 e0.38]) and in 4 out of 1412 cases
+for patients with bile acids 40 e99mmol/L (0.28%, [95%
+CI 0.08 e0.72]) (hazard ratio 2.35 [95% CI 0.52 e10.50];
+P¼0.26). Patients with ICP and bile acids /C21100mmol/L
+had signi ﬁcantly increased risks of stillbirth with an OR of
+30.50 (95% CI 8.83 e105.30) ( P˂0.0001. Eighteen cases
+of stillbirth occurred among 524 patients representing a
+3.43% risk (range 3% e44 %; [95% CI 2.05 e5.37])
+compared with the baseline rate in the study of 0.32%.
+Within the contemporary Canadian context, the baseline
+population stillbirth rate is approximately 0.28%.38
+From a pathophysiological perspective, bile acids have
+been identi ﬁed to increase gut motility in an ovine model
+as well as oxytocin receptor expression and contractility of
+human myometrial cell cultures.8The exact mechanism of
+fetal death remains unclear but is hypothesized to besecondary to a placental vasospasm or sudden fetal cardiac
+event. Infusion of bile acids into isolated placental veins
+identi ﬁed a dose-dependent vasoconstrictive effect, sug-
+gesting the potential for acute vasospasm resulting in
+sudden fetal death.
+39Co-culture of laboratory rodentmyocytes with the bile acid taurocholate impacted the rate
+and rhythm of cardiomyocyte contraction and abnormal
+calcium dynamics.40Evaluation of pregnancies with ICP
+have supported the presence of alterations to fetal cardiac
+parameters, including increased fetal N-terminal pro-
+hormone of brain natriuretic peptide (NT-proBNP),41
+prolongation of the mechanical PR interval,42e44arryth-
+mias,45and altered left ventricular modi ﬁed myocardial
+performance indices.46While these studies suggest a po-
+tential for an acute fetal cardiac event resulting in fetal
+death, as well as potential future tools for assessment, the
+association of these altered fetal cardiac parameters with
+stillbirth, longitudinal progression, and thresholds for
+intervention remain unclear, and therefore their utility in
+clinical practice is currently limited.
+Summary Statement 4 and Recommendation 7
+MANAGEMENT
+The goal of treating ICP has two aims: to ameliorate
+maternal symptomatology of pruritus and to improve fetal
+outcomes. Therapies that may be used for pruritic relief
+include topical emollients and antihistamines, such as hy-
+droxyzine; these are safe in pregnancy; however, they have
+not been speci ﬁcally evaluated for ef ﬁcacy in the treatment
+of ICP.
+Ursodeoxycholic acid (UDCA) is the most frequently used
+medication for ICP . UDCA is itself a bile acid and has
+proven bene ﬁt in several liver diseases in non-pregnant
+people. It has a reassuring safety pro ﬁle overall, with
+gastrointestinal complaints being the most common
+adverse effect. UDCA alters the composition of total bile
+salts, replacing 60% of harmful bile salts.47This may
+explain why in some studies UDCA does not reduce total
+bile acid levels compared with placebo,48causing confu-
+sion as to whether it has any clinical bene ﬁt. Co-culture of
+rodent cardiomyocytes with UDCA suggests a partial
+protective effect49; however, evaluation of fetal cardiac
+parameters show con ﬂicting results.41,43
+Importantly, the PITCHES trial found that treatment with
+ursodeoxycholic acid 500 mg twice daily starting between
+20 and 40 weeks gestation had no impact on the endpoint
+of perinatal death, preterm delivery, or admission to the
+NICU.48There was no reduction in total bile acid levels,
+and a subgroup analysis of patients with severely elevated
+bile acids >100 mmol/L showed no differences in
+8lAUGUST JOGC AOÛT 2024SOGC CLINICAL PRACTICE GUIDELINE
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.outcomes, although the number of such individuals was
+small (23 in the treatment group and 17 in the placebo
+group). However, a large individual participant meta-
+analysis found that treatment with UDCA reduced the
+risk of preterm birth, with a number needed to treat of
+15.50The 2020 Cochrane review on the subject could not
+draw de ﬁnitive conclusions on the bene ﬁts of UDCA
+regarding fetal compromise and stillbirth.51
+With respect to maternal pruritis in ICP, in a meta-analysisof UDCA versus placebo or other treatments, UDCA
+resulted in a modest improvement in maternal pruritus
+scores on a visual analog scale (mean difference e7.64
+[95% CI e9.69 to e5.60] points [two trials, n ¼715;
+moderate-quality evidence]).
+51
+Given the bene ﬁcial effects of UDCA on pruritis and its
+potential bene ﬁt in reducing preterm birth, alongside the
+benign side effect pro ﬁle, we recommend treatment of
+severe cases of ICP (non-fasting bile acids /C21100mmol/L)
+with UDCA, unless delivery is indicated. The recom-
+mended dose is 10 e15 mg/kg/d orally in 2 e3 divided
+daily doses, with a typical starting dose of 500 mg every 12
+hours (twice daily). If pruritus is not relieved to a tolerable
+level within 2 weeks, the dose may be titrated every 1 e2
+weeks as required, to a maximum dose of 20 mg/kg/d.52
+We suggest that the use of UDCA be considered forsymptom relief in non-severe cases (non-fasting bile acids
+<100
+mmol/L), using a shared decision-making approach
+with the pregnant individual.
+Refractory cases of ICP may bene ﬁt from a referral to a
+specialist hepatologist, obstetric internist, or
+maternal efetal medicine specialist for evaluation of
+possible underlying medical/genetic predisposition to ICP .
+If no other disorder is found, consideration may be given
+to the addition of rifampicin (dose range 300 e1200 mg/
+d), a semi-synthetic antibiotic that has the ability to lowerbile acid levels.
+53In a case series of 28 patients, the
+addition of rifampicin to UDCA led to a reduction in bile
+acid levels.54Initiation should be discussed with a specialist
+in liver disorders in pregnancy. Maternal vitamin K sup-
+plementation (10 mg oral daily) is only indicated in in-
+dividuals with demonstrated vitamin K de ﬁciency and/or
+coagulopathy with abnormal PT (see Diagnosis section
+above regarding indications for testing).
+Ineffective previously studied treatments for ICP include
+dexamethasone, cholestyramine, phenobarbital, S-adeno-sylmethionine, activated charcoal, and epomediol.
+51,54e56Summary Statement 5 & Recommendations 8 and
+9
+Follow-Up Laboratory Testing and Monitoring
+Once the diagnosis is established, monitoring of bile acid
+levels should be performed to gauge the magnitude of
+fetal risk. Frequency of monitoring should be based on
+severity of pruritic symptoms and weeks of gestation.
+For early or mild disease, laboratory monitoring may be
+performed every 2 e4 weeks, whereas for more severe or
+late disease, every 1 e2 weeks for the remainder of the
+pregnancy.
+Both clinicians and health care authorities should advocate
+for timely and equitable access to bile acid testing and
+results, regardless of location or centre of care.
+Fetal Monitoring
+Fetal monitoring with either electronic fetal heart rate
+monitoring (cardiotocography) or ultrasound have not
+been shown to accurately identify fetuses at increased risk
+of stillbirth or adverse outcomes.57e59However, since
+recent data permit the strati ﬁcation of risk for pregnant
+patients with ICP, it may be reasonable, but not mandated,
+for units to develop fetal monitoring protocols based on
+local preferences. All pregnant individuals should beadvised to monitor fetal movements as the mainstay of
+fetal wellbeing surveillance, and to seek timely care if
+indicated.
+Despite a lack of evidence of bene ﬁt and absence of a
+rationale for antenatal testing, some units with adequate
+resources may elect to offer the following approach in
+moderate to severe ICP:
+/C15In patients with bile acid levels 40 e99
+mmol/L: ob-
+stetric ultrasound for biophysical pro ﬁle or electronic
+fetal heart rate monitoring every 1 e2 weeks.
+/C15In patients with bile acid levels /C21100mmol/L: obstetric
+ultrasound for biophysical pro ﬁle or electronic fetal
+heart rate monitoring weekly or twice weekly. Inpatient
+management with daily electronic fetal monitoring maybe utilized by some units. The decision whether to
+consider outpatient versus inpatient monitoring should
+be based on speci ﬁc patient risk factors and the pref-
+erence of the caregiver and the patient. Currently, there
+is no speci ﬁc evidence demonstrating bene ﬁts of inpa-
+tient care and monitoring.
+AUGUST JOGC AOÛT 2024 l9Intrahepatic Cholestasis of Pregnancy
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.Fetal growth restriction (FGR) has not been shown to be
+increased in the case of ICP.30It is unlikely that per-
+forming a growth ultrasound will change the management
+of the pregnancy, since the likelihood of placental insuf-
+ﬁciency is not increased in cases of isolated ICP . However,
+in centres that do not routinely perform a third-trimester
+ultrasound, this scan may be offered to rule out FGR,
+and to ensure that there are no additional risk factors
+present.
+Summary Statement 6 & Recommendations 10
+and 11
+Delivery Timing
+Previous international guidelines have recommended
+active management for patients with ICP by elective de-
+livery around 36 e38 weeks gestation, independent of bile
+acid levels, to decrease the risk of adverse outcomes,including stillbirth. This has led contemporary obstetric
+groups to question which speci ﬁc pregnancies affected by
+ICP are at signi ﬁcant risk of adverse outcomes, consid-
+ering the risks of medically indicated premature birth.
+The decision of delivery timing should be based on the
+highest recorded non-fasting bile acid level obtained in the
+current pregnancy ( Appendix C ). Since the risk of stillbirth
+is equivalent to the baseline risk in pregnant patients with
+bile acids ˂40
+mmol/L, delivery is recommended by 40
+weeks gestation. In patients with bile acid levels between40e99
+mmol/L, the risk of stillbirth is equivalent to
+population data; this risk may increase from 38 weeks
+gestation onwards, however, the number of patients
+studied is limited after that gestational age. Thus, we
+propose delivery at 380e386weeks if bile acids are 40 e69
+mmol/L and 360e376weeks if bile acids are 70 e99mmol/
+L. If the bile acids are /C21100mmol/L, the risk of stillbirth is
+increased, and delivery should be considered by 36 weeks
+gestation or earlier in patients with comorbidities or otherrisks factors (i.e., multiple gestation pregnancy, pre-
+eclampsia, gestational diabetes, previous stillbirth second-
+ary to ICP , and/or severe persistent maternal pruritus).
+Individual decision-making based on identi ﬁed risk factors
+or comorbidities should be prioritized when determining
+birth timing.
+Antenatal corticosteroids should be administered based on
+gestational age ebased recommendations if the risk of
+delivery within the next 7 days is high.
+60The mode of
+delivery for patients with ICP should be based onobstetrical and medical indications, since ICP does notincrease the risk of assisted vaginal birth or cesarean
+delivery.
+61
+Acknowledging the lack of evidence, we recommend pa-
+tients with ICP be offered continuous electronic fetal heart
+rate monitoring in labour, owing to the increase incidence
+of adverse outcomes, and repeat bile acid levels are usually
+not performed intrapartum. There are currently no
+evidence-based recommendations for analgesic or anaes-thetic options in labour, nor for alternative management of
+the third stage.
+Recommendations 12, 13
+POSTPARTUM OUTCOMES, CONTRACEPTION
+CONSIDERATIONS, AND RECURRENCE RISK
+Symptoms as well as ICP-associated biochemical abnor-
+malities are expected to resolve within 1 e2 weeks post-
+partum, although they may persist up to 4 weeks in some
+individuals.8,62,63It is important to con ﬁrm resolution of
+symptoms at a follow-up visit around 6 weeks postpartum
+and repeat bile acid and liver transaminase testing for those
+whose symptoms persist. In the few who continue to havesymptoms, biochemical abnormalities, or any atypical fea-
+tures, further investigation for an alternate etiology is indi-
+cated.
+8Further, collaborative consultation with specialists in
+obstetric medicine, hepatology, or internal medicine should
+be considered. It should be noted that normalization of liver
+transaminases and bile acids postpartum does not rule out
+the presence of an underlying liver disease.63
+The postpartum encounter also provides an opportunity
+to discuss the risk of ICP in family members, particularly
+female siblings. If ICP has developed before 32 weeksgestation, there is 20% chance that the patient has a
+pathologic genetic variant in the ABCB11 /ABCB4
+genes.
+8,20In these individuals, consultation with a specialist
+in clinical genetics, internal medicine, or maternal efetal
+medicine is recommended for consideration of genetic
+testing. Finally, individuals with ICP are at an increased risk
+of cholecystitis, cholelithiasis, pancreatic disease, and,
+interestingly, goiter and hypothyroidism.64The increased
+likelihood of hepatobiliary disease may, in part, be sec-ondary to shared genetic risk factors as described
+previously.
+15
+Infants born to parents with ICP have normal bio-
+psychosocial development but may have an increased risk
+of acquiring metabolic disease during adulthood, including
+10lAUGUST JOGC AOÛT 2024SOGC CLINICAL PRACTICE GUIDELINE
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.altered lipid pro ﬁles and increased BMI by the age of 16
+years.65,66
+Overall, the recurrence risk of ICP in future pregnancies is
+around 70%,67and up to 90%, if genetic predispositions
+are present.68The risk may be lower if the index pregnancy
+was multifetal,8and recurrence may vary in relation to
+gravidity and timing compared with the index preg-
+nancy.69e71Individuals should be counselled regarding this
+relatively high risk of recurrence at the postpartum visit, if
+not already discussed antenatally.
+The World Health Organization has endorsed the use of
+postpartum combined estrogen-progestin contraception
+for those with ICP as acceptable ( Appendix D ).72How-
+ever, these individuals should also be advised that they are
+at risk of non-pregnant cholestasis with use of combined
+hormonal contraception, and that this risk can be reducedusing lower dose estrogen formulations.
+73Therefore,
+combined hormonal contraceptives should be dis-
+continued if symptoms of cholestasis develop. The risk of
+non-pregnant cholestasis is low with the use of progestin-
+only contraception.74
+Summary Statements 7, 8, 9, and 10 &
+Recommendations 14, 15, and 16
+CONCLUSION
+ICP is a multifactorial and common hepatic disease unique
+to pregnancy. As such, all pregnancy care providers should
+be familiar with the condition, its investigation and diag-
+nosis, and contemporary evidence for best practice in
+treatment and management. This guideline aims to syn-
+thesize the most current evidence base into a pragmatic
+and clinically relevant tool that can guide standardized care
+to achieve the best possible perinatal outcomes.
+REFERENCES
+1. Geenes V , Williamson C. Intrahepatic cholestasis of pregnancy. World J
+Gastroenterol 2009;15:2049 e66. Available at: https://www.ncbi.nlm.nih.
+gov/pubmed/19418576 .
+2. Reyes H, Gonzalez MC, Ribalta J, et al. Prevalence of intrahepatic
+cholestasis of pregnancy in Chile. Ann Intern Med 1978;88:487 e93.
+Available at: https://www.ncbi.nlm.nih.gov/pubmed/637428 .
+3. Geenes V, Chappell LC, Seed PT, et al. Association of severe
+intrahepatic cholestasis of pregnancy with adverse pregnancy outcomes:a prospective population-based case-control study. Hepatology2014;59:1482 e91. Available at: https://www.ncbi.nlm.nih.gov/
+pubmed/23857305 .
+4. Allen AM, Kim WR, Larson JJ, et al. The Epidemiology of Liver Diseases
+Unique to Pregnancy in a US Community: A Population-Based Study. ClinGastroenterol Hepatol 2016;14:287 e294.e1-2. Available at: https://www.
+ncbi.nlm.nih.gov/pubmed/26305066 .
+5. Arafa A, Dong JY . Association between intrahepatic cholestasis of
+pregnancy and risk of gestational diabetes and preeclampsia: a systematicreview and meta-analysis. Hypertens Pregnancy 2020;39:354 e60. Available
+at:https://www.ncbi.nlm.nih.gov/pubmed/32326772 .
+6. Mashburn S, Schleckman E, Cackovic P , et al. Intrahepatic cholestasis of
+pregnancy: risk factors for severe disease. J Matern Fetal Neonatal Med2022;35:8566 e70. Available at: https://www.ncbi.nlm.nih.gov/
+pubmed/34632916 .
+7. Wu K, Yin B, Li S, et al. Prevalence, risk factors and adverse perinatal
+outcomes for Chinese women with intrahepatic cholestasis ofpregnancy: a large cross-sectional retrospective study. Ann Med2022;54:2966 e74. Available at: https://www.ncbi.nlm.nih.gov/
+pubmed/36271887 .
+8. Williamson C, Geenes V . Intrahepatic cholestasis of pregnancy. Obstet
+Gynecol 2014;124:120 e33. Available at: https://www.ncbi.nlm.nih.gov/
+pubmed/24901263 .
+9. Corcoran A, Langan H. Obstetric Cholestasis: Investigation of a suspected
+high incidence in the West of Ireland. Eur J Obstet Gynecol Reprod Biol2022;269:114 e7. Available at: https://www.ncbi.nlm.nih.gov/pubmed/34
+992033 .
+10. Smith DD, Rood KM. Intrahepatic Cholestasis of Pregnancy. Clin Obstet
+Gynecol 2020;63:134 e51. Available at: https://www.ncbi.nlm.nih.gov/
+pubmed/31764000 .
+11. Bacq Y, Sapey T, Brechot MC, et al. Intrahepatic cholestasis of pregnancy: a
+French prospective study. Hepatology 1997;26:358 e64. Available at:
+https://www.ncbi.nlm.nih.gov/pubmed/9252146 .
+12. Dixon PH, Williamson C. The pathophysiology of intrahepatic cholestasis
+of pregnancy. Clin Res Hepatol Gastroenterol 2016;40:141 e53. Available
+at:https://www.ncbi.nlm.nih.gov/pubmed/26823041 .
+13. Wikstrom Shemer E, Marschall HU. Decreased 1,25-dihydroxy vitamin D
+levels in women with intrahepatic cholestasis of pregnancy. Acta ObstetGynecol Scand 2010;89:1420 e3. Available at: https://www.ncbi.nlm.nih.
+gov/pubmed/20955096 .
+14. Reyes H, Baez ME, Gonzalez MC, et al. Selenium, zinc and copper plasma
+levels in intrahepatic cholestasis of pregnancy, in normal pregnancies and in
+healthy individuals, in Chile. J Hepatol 2000;32:542 e9. Available at:
+https://www.ncbi.nlm.nih.gov/pubmed/10782901 .
+15. Marschall HU, Wikstrom Shemer E, Ludvigsson JF, Stephansson O.
+Intrahepatic cholestasis of pregnancy and associated hepatobiliary disease: apopulation-based cohort study. Hepatology 2013;58:1385 e
+91. Available at:
+https://www.ncbi.nlm.nih.gov/pubmed/23564560 .
+16. Wijarnpreecha K, Thongprayoon C, Sanguankeo A, et al. Hepatitis C
+infection and intrahepatic cholestasis of pregnancy: A systematic review and
+meta-analysis. Clin Res Hepatol Gastroenterol 2017;41:39 e45. Available at:
+https://www.ncbi.nlm.nih.gov/pubmed/27542514 .
+17. Cunningham FG, Leveno KJ, Bloom SL, et al. Hepatic, Biliary, and
+Pancreatic Disorders. Williams Obstetrics. 25e. New York, NY: McGraw-Hill Education; 2018 .
+18. Kondrackiene J, Kupcinskas L. Intrahepatic cholestasis of pregnancy-
+current achievements and unsolved problems. World J Gastroenterol
+2008;14:5781 e8. Available at: https://www.ncbi.nlm.nih.gov/
+pubmed/18855975 .
+19. Lindor KD, Lee RH. Intrahepatic cholestasis of pregnancy. [cited Jan 2023].20. Girling J, Knight CL, Chappell L, et al. Intrahepatic cholestasis of
+pregnancy: Green-top Guideline No. 43 June 2022: Green-top GuidelineNo. 43 June 2022. BJOG 2022. Available at: https://www.ncbi.nlm.nih.
+gov/pubmed/35942656 .
+21. Tran TT, Ahn J, Reau NS. ACG Clinical Guideline: Liver Disease and
+Pregnancy. The American journal of gastroenterology 2016;111:176 e94.
+22. Sarkar M, Brady CW , Fleckenstein J, et al. Reproductive Health and Liver
+Disease: Practice Guidance by the American Association for the Study of
+Liver Diseases. Hepatology (Baltimore, Md) 2021;73:318 e65.
+AUGUST JOGC AOÛT 2024
+l11Intrahepatic Cholestasis of Pregnancy
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.23. Glantz A, Marschall HU, Mattsson LA. Intrahepatic cholestasis of
+pregnancy: Relationships between bile acid levels and fetal complication
+rates. Hepatology 2004;40:467 e74. Available at: https://www.ncbi.nlm.
+nih.gov/pubmed/15368452 .
+24. Azer SA, Hasanato R. Use of bile acids as potential markers of liver
+dysfunction in humans: A systematic review. Medicine (Baltimore)2021;100:e27464. Available at: https://www.ncbi.nlm.nih.gov/
+pubmed/34731122 .
+25. Mitchell AL, Ovadia C, Syngelaki A, et al. Re-evaluating diagnostic
+thresholds for intrahepatic cholestasis of pregnancy: case-control and
+cohort study. BJOG 2021;128:1635 e44. Available at: https://www.ncbi.
+nlm.nih.gov/pubmed/33586324 .
+26. Huri M, Seravalli V , Lippi C, et al. Intrahepatic cholestasis of pregnancy -
+Time to rede ﬁne the reference range of total serum bile acids: A cross-
+sectional study. BJOG 2022;129:1887 e96. Available at: https://www.ncbi.
+nlm.nih.gov/pubmed/35373886 .
+27. Kenyon AP , Piercy CN, Girling J, et al. Pruritus may precede abnormal liver
+function tests in pregnant women with obstetric cholestasis: a longitudinal
+analysis. BJOG 2001;108:1190 e2. Available at: https://www.ncbi.nlm.nih.
+gov/pubmed/11762661 .
+28. Shaw D, Frohlich J, Wittmann BA, Willms M. A prospective study of 18
+patients with cholestasis of pregnancy. Am J Obstet Gynecol1982;142:621 e5. Available at: https://www.ncbi.nlm.nih.gov/pubmed/7
+065033 .
+29. Heikkinen J. Serum bile acids in the early diagnosis of intrahepatic
+cholestasis of pregnancy. Obstet Gynecol 1983;61:581 e7. Available at:
+https://www.ncbi.nlm.nih.gov/pubmed/6835612 .
+30. Ovadia C, Seed PT, Sklavounos A, et al. Association of adverse perinatal
+outcomes of intrahepatic cholestasis of pregnancy with biochemicalmarkers: results of aggregate and individual patient data meta-analyses.Lancet 2019;393:899 e909. Available at: https://www.ncbi.nlm.nih.gov/
+pubmed/30773280 .
+31. Laatikainen T, Ikonen E. Serum bile acids in cholestasis of pregnancy.
+Obstet Gynecol 1977;50:313 e8. Available at: https://www.ncbi.nlm.nih.
+gov/pubmed/896101 .
+32. Kenyon AP, Piercy CN, Girling J, et al. Obstetric cholestasis, outcome with
+active management: a series of 70 cases. BJOG 2002;109:282 e8. Available
+at:https://www.ncbi.nlm.nih.gov/pubmed/11950183 .
+33. Conti-Ramsden F, McEwan M, Hill R, et al. Detection of additional
+abnormalities or co-morbidities in women with suspected intrahepaticcholestasis of pregnancy. Obstet Med 2020;13:185 e91. Available at:
+https://www.ncbi.nlm.nih.gov/pubmed/33343695 .
+34. Maldonado M, Alhousseini A, Awadalla M, et al. Intrahepatic Cholestasis
+of Pregnancy Leading to Severe Vitamin K De ﬁciency and Coagulopathy.
+Case Rep Obstet Gynecol 2017;2017:5646247. Available at: https://www.
+ncbi.nlm.nih.gov/pubmed/28680707 .
+35. Mor M, Shmueli A, Krispin E, et al. Intrahepatic cholestasis of pregnancy
+as a risk factor for preeclampsia. Arch Gynecol Obstet 2020;301:655 e64.
+Available at: https://www.ncbi.nlm.nih.gov/pubmed/32034507 .
+36. Raz Y , Lavie A, Vered Y , et al. Severe intrahepatic cholestasis of pregnancy
+is a risk factor for preeclampsia in singleton and twin pregnancies. Am J
+Obstet Gynecol 2015;213:395.e1-8. Available at: https://www.ncbi.nlm.
+nih.gov/pubmed/25979617 .
+37. Wikstrom Shemer E, Marschall HU, Ludvigsson JF, Stephansson O.
+Intrahepatic cholestasis of pregnancy and associated adverse pregnancy and
+fetal outcomes: a 12-year population-based cohort study. BJOG2013;120:717 e23. Available at: https://www.ncbi.nlm.nih.gov/
+pubmed/23418899 .
+38. Joseph KS, Lee L, Arbour L, et al. Stillbirth in Canada: anachronistic
+deﬁnition and registration processes impede public health surveillance and
+clinical care. Can J Public Health 2021;112:766 e72. Available at: https://
+www.ncbi.nlm.nih.gov/pubmed/33742313 .
+39. Sepulveda WH, Gonzalez C, Cruz MA, Rudolph MI. Vasoconstrictive
+effect of bile acids on isolated human placental chorionic veins. Eur JObstet Gynecol Reprod Biol 1991;42:211 e5. Available at: https://www.
+ncbi.nlm.nih.gov/pubmed/1773876 .40. Williamson C, Gorelik J, Eaton BM, et al. The bile acid taurocholate
+impairs rat cardiomyocyte function: a proposed mechanism for intra-
+uterine fetal death in obstetric cholestasis. Clin Sci (Lond) 2001;100:363 e9.
+Available at: https://www.ncbi.nlm.nih.gov/pubmed/11256973 .
+41. Vasavan T, Deepak S, Jayawardane IA, et al. Fetal cardiac dysfunction in
+intrahepatic cholestasis of pregnancy is associated with elevated serum bileacid concentrations. J Hepatol 2021;74:1087 e96. Available at: https://
+www.ncbi.nlm.nih.gov/pubmed/33276032 .
+42. Rodriguez M, Moreno J, Marquez R, et al. Increased PR Interval in Fetuses
+of Patients with Intrahepatic Cholestasis of Pregnancy. Fetal Diagn Ther
+2016;40:298 e302. Available at: https://www.ncbi.nlm.nih.gov/
+pubmed/26959834 .
+43. Strehlow SL, Pathak B, Goodwin TM, et al. The mechanical PR interval in
+fetuses of women with intrahepatic cholestasis of pregnancy. Am J ObstetGynecol 2010;203:455. e1-5. Available at: https://www.ncbi.nlm.nih.gov/
+pubmed/20684945 .
+44. Yakut K, Ocal FD, Ozturk M, et al. Assessment of Mechanical Fetal PR
+Interval in Intrahepatic Cholestasis of Pregnancy and Its Relationship with
+the Severity of the Disease. Am J Perinatol 2020;37:1476 e81. Available at:
+https://www.ncbi.nlm.nih.gov/pubmed/31430816 .
+45. Al Inizi S, Gupta R, Gale A. Fetal tachyarrhythmia with atrial ﬂutter in
+obstetric cholestasis. Int J Gynaecol Obstet 2006;93:53 e4. Available at:
+https://www.ncbi.nlm.nih.gov/pubmed/16527280 .
+46. Ozel A, Alici Davutoglu E, Eric Ozdemir M, et al. Assessment of fetal left
+ventricular modi ﬁed myocardial performance index and its prognostic
+signiﬁcance for adverse perinatal outcome in intrahepatic cholestasis of
+pregnancy. J Matern Fetal Neonatal Med 2020;33:2000 e5. Available at:
+https://www.ncbi.nlm.nih.gov/pubmed/30309274 .
+47. Manna LB, Ovadia C, Lovgren-Sandblom A, et al. Enzymatic
+quanti ﬁcation of total serum bile acids as a monitoring strategy for women
+with intrahepatic cholestasis of pregnancy receiving ursodeoxycholic acidtreatment: a cohort study. BJOG 2019;126:1633 e40. Available at: https://
+www.ncbi.nlm.nih.gov/pubmed/31483939 .
+48. Chappell LC, Bell JL, Smith A, et al. Ursodeoxycholic acid versus placebo
+in women with intrahepatic cholestasis of pregnancy (PITCHES): a
+randomised controlled trial. Lancet 2019;394:849 e60. Available at:
+https://www.ncbi.nlm.nih.gov/pubmed/31378395 .
+49. Gorelik J, Shevchuk AI, Diakonov I, et al. Dexamethasone and
+ursodeoxycholic acid protect against the arrhythmogenic effect oftaurocholate in an in vitro study of rat cardiomyocytes. BJOG2003;110:467 e74. Available at: https://www.ncbi.nlm.nih.gov/
+pubmed/12742331 .
+50. Ovadia C, Sajous J, Seed PT, et al. Ursodeoxycholic acid in intrahepatic
+cholestasis of pregnancy: a systematic review and individual participant datameta-analysis. Lancet Gastroenterol Hepatol 2021;6:547 e58. Available at:
+https://www.ncbi.nlm.nih.gov/pubmed/33915090 .
+51. Walker KF, Chappell LC, Hague WM, et al. Pharmacological interventions
+for treating intrahepatic cholestasis of pregnancy. Cochrane Database SystRev 2020;7:CD000493. Available at: https://www.ncbi.nlm.nih.gov/
+pubmed/32716060 .
+52. Pusl T, Beuers U. Intrahepatic cholestasis of pregnancy. Orphanet J Rare
+Dis 2007;2:26. Available at: https://www.ncbi.nlm.nih.gov/
+pubmed/17535422 .
+53. De Vloo C, Nevens F. Cholestatic pruritus : an update. Acta Gastroenterol
+Belg 2019;82:75 e82. Available at: https://www.ncbi.nlm.nih.gov/
+pubmed/30888758 .
+54. Geenes V , Chambers J, Khurana R, et al. Rifampicin in the treatment of
+severe intrahepatic cholestasis of pregnancy. Eur J Obstet Gynecol ReprodBiol 2015;189:59 e63. Available at: https://www.ncbi.nlm.nih.gov/
+pubmed/25864112 .
+55. Wood AM, Livingston EG, Hughes BL, Kuller JA. Intrahepatic Cholestasis
+of Pregnancy: A Review of Diagnosis and Management. Obstet GynecolSurv 2018;73:103 e9. Available at: https://www.ncbi.nlm.nih.gov/
+pubmed/29480924 .
+56. Bicocca MJ, Sperling JD, Chauhan SP . Intrahepatic cholestasis of
+pregnancy: Review of six national and regional guidelines. Eur J Obstet
+12
+lAUGUST JOGC AOÛT 2024SOGC CLINICAL PRACTICE GUIDELINE
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.Gynecol Reprod Biol 2018;231:180 e7. Available at: https://www.ncbi.nlm.
+nih.gov/pubmed/30396107 .
+57. Kawakita T, Parikh LI, Ramsey PS, et al. Predictors of adverse neonatal
+outcomes in intrahepatic cholestasis of pregnancy. Am J Obstet Gynecol2015;213:570.e1-8. Available at: https://www.ncbi.nlm.nih.gov/
+pubmed/26071912 .
+58. Grymowicz M, Czajkowski K, Smolarczyk R. Pregnancy course in patients
+with intrahepatic cholestasis of pregnancy treated with very low doses ofursodeoxycholic acid. Scand J Gastroenterol 2016;51:78 e85. Available at:
+https://www.ncbi.nlm.nih.gov/pubmed/26152830 .
+59. Baliutaviciene D, Zubruviene N, Zalinkevicius R. Pregnancy outcome in
+cases of intrahepatic cholestasis of pregnancy. Int J Gynaecol Obstet2011;112:250 e1. Available at: https://www.ncbi.nlm.nih.gov/
+pubmed/21247575 .
+60. Liauw J, Foggin H, Socha P, et al. Technical Update No. 439: Antenatal
+Corticosteroids at Late Preterm Gestation. J Obstet Gynaecol Can2023;45:445 e57. e2. Available at: https://www.ncbi.nlm.nih.gov/
+pubmed/36572248 .
+61. Webster JR, Chappell L, Cheng F, et al. Operative delivery rates following
+induction of labour for obstetric cholestasis. Obstet Med 2011;4:66 e9.
+Available at: https://www.ncbi.nlm.nih.gov/pubmed/27582856 .
+62. Olsson R, Tysk C, Aldenborg F, Holm B. Prolonged postpartum course of
+intrahepatic cholestasis of pregnancy. Gastroenterology 1993;105:267 e71.
+Available at: https://www.ncbi.nlm.nih.gov/pubmed/8514043 .
+63. Donet A, Girault A, Pinton A, Lepercq J. Intrahepatic cholestasis of
+pregnancy: Is a screening for differential diagnoses necessary? J GynecolObstet Hum Reprod 2020:101907. Available at: https://www.ncbi.nlm.nih.
+gov/pubmed/32931957 .
+64. Hamalainen ST, Turunen K, Mattila KJ, et al. Intrahepatic cholestasis of
+pregnancy and comorbidity: A 44-year follow-up study. Acta ObstetGynecol Scand 2019;98:1534 e9. Available at: https://www.ncbi.nlm.nih.
+gov/pubmed/31355915 .
+65. Terrault NA, Williamson C. Pregnancy-Associated Liver Diseases.
+Gastroenterology 2022;163:97 e117. e1. Available at: https://www.ncbi.
+nlm.nih.gov/pubmed/35276220 .66. Papacleovoulou G, Abu-Hayyeh S, Nikolopoulou E, et al. Maternal
+cholestasis during pregnancy programs metabolic disease in offspring.
+J Clin Invest 2013;123:3172 e81. Available at: https://www.ncbi.nlm.nih.
+gov/pubmed/23934127 .
+67. Lammert F, Marschall HU, Glantz A, Matern S. Intrahepatic cholestasis of
+pregnancy: molecular pathogenesis, diagnosis and management. J Hepatol2000;33:1012 e21. Available at: https://www.ncbi.nlm.nih.gov/
+pubmed/11131439 .
+68. Savander M, Ropponen A, Avela K, et al. Genetic evidence of
+heterogeneity in intrahepatic cholestasis of pregnancy. Gut
+2003;52:1025 e9. Available at: https://www.ncbi.nlm.nih.gov/
+pubmed/12801961 .
+69. Muresan D, Ona D, Cruciat G, et al. Recurrent intrahepatic cholestasis of
+pregnancy. A case report. J Gastrointestin Liver Dis 2008;17:323 e5.
+Available at: https://www.ncbi.nlm.nih.gov/pubmed/18836627 .
+70. Han M, Li X. Recurrent Intrahepatic Cholestasis Pregnancy: A Case
+Report. Journal of Clinical Obstetrics, Gynecology & Infertility2017;1:1018 .
+71. Tamiru AT, Rade BK, Ali O. The Recurrent Liver Disorder of a Pregnant
+Mother: Intrahepatic Cholestasis of Pregnancy - A Case Report andLiterature Review. Int Med Case Rep J 2021;14:73 e
+6. Available at: https://
+www.ncbi.nlm.nih.gov/pubmed/33603498 .
+72. World Health Organization. Reproductive Health and Research. Medical
+eligibility criteria for contraceptive use. 5th edition. ed. Geneva:Department of Reproductive Health and Research, World HealthOrganization; 2015. 268. Available at: http://apps.who.int/iris/bitstream/1
+0665/181468/1/9789241549158_eng.pdf .
+73. Perrault F, Echelard P, Viens D, Borduas M. Contraceptive vaginal
+ring-induced cholestasis in a patient with a history of intrahepaticcholestasis of pregnancy. Clin Res Hepatol Gastroenterol 2021;45:101475. Available at: https://www.ncbi.nlm .nih.gov/pubmed/32651
+076.
+74. Curtis KM, Tepper NK, Jatlaoui TC, et al. U.S. Medical Eligibility Criteria
+for Contraceptive Use, 2016. MMWR Recomm Rep 2016;65:1 e103.
+Available at: https://www.ncbi.nlm.nih.gov/pubmed/27467196 .
+AUGUST JOGC AOÛT 2024
+l13Intrahepatic Cholestasis of Pregnancy
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.APPENDIX A
+Table A1. Key to Grading of Recommendations, Assessment, Development and Evaluation Quality of Evidence
+Grade Deﬁnition
+Strength of recommendation
+Strong High level of con ﬁdence that the desirable effects outweigh the undesirable effects (strong recommendation
+for) or the undesirable effects outweigh the desirable effects (strong recommendation against)
+Conditional (weak)aDesirable effects probably outweigh the undesirable effects (weak recommendation for) or the undesirable
+effects probably outweigh the desirable effects (weak recommendation against)
+Quality of evidence
+High High level of con ﬁdence that the true effect lies close to that of the estimate of the effect
+Moderate Moderate con ﬁdence in the effect estimate:
+The true effect is likely to be close to the estimate of the effect, but there is a possibility that it is substantiallydifferent
+Low Limited con ﬁdence in the effect estimate:
+The true effect may be substantially different from the estimate of the effect
+Very low Very little con ﬁdence in the effect estimate:
+The true effect is likely to be substantially different from the estimate of effect
+Adapted from GRADE Handbook (2013), Table 5.1.
+aDo not interpret conditional (weak) recommendations to mean weak evidence or uncertainty of the recommendation.
+Table A2. Implications of Strong and Conditional (Weak) recommendations, by guideline user
+Perspective Strong Recommendation
+/C15“We recommend that .”
+/C15“We recommend to not .”Conditional (Weak) Recommendation
+/C15“We suggest .”
+/C15“We suggest to not .”
+Authors The net desirable effects of a course of action outweigh
+the effects of the alternative course of action.It is less clear whether the net desirable consequences of a
+strategy outweigh the alternative strategy.
+Patients Most individuals in the situation would want the
+recommended course of action, while only a small
+proportion would not.The majority of individuals in the situation would want the
+suggested course of action, but many would not.
+Clinicians Most individuals should receive the course of action.
+Adherence to this recommendation according to the
+guideline could be used as a quality criterion orperformance indicator.Recognize that patient choices will vary by individual and that
+clinicians must help patients arrive at a care decision
+consistent with the patient ’s values and preferences.
+Policy makers The recommendation can be adapted as policy in most
+settings.The recommendation can serve as a starting point for debate
+with the involvement of many stakeholders.
+Adapted from GRADE Handbook (2013), Table 6.1.
+14lAUGUST JOGC AOÛT 2024SOGC CLINICAL PRACTICE GUIDELINE
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.APPENDIX B
+Table B. List of differential diagnoses in the consideration of intrahepatic cholestasis of pregnancy
+Differential diagnosis Description with distinguishing features
+AFLP /C15Occurring in late third trimester
+/C15Hepatic failure (encephalopathy, coagulopathy)
+/C15Elevated bilirubin (conjugated or mixed pattern), AST/ALT, INR
+/C15Low glucose, low albumin
+Allergic or drug reaction /C15Pruritus at any gestational age
+/C15History of exposure to allergen or drug
+/C15Maculopapular rash
+Atopic dermatitis /C15Pruritus at any gestational age
+/C15History of atopy
+Atopic eruptions of pregnancy,
+including prurigo of pregnancyand pruritic folliculitis of pregnancy/C15Red-brown papules on abdomen and extensor surfaces of limbs
+/C15Pruritic follicular papules and pustules, on shoulders, upper back, arms, and thighs
+Autoimmune hepatitis /C15Nausea, lethargy, jaundice
+/C15Other autoimmune disorders
+/C15Symptoms before pregnancy
+/C15Associated autoantibodies
+Biliary obstruction /C15Abdominal pain, pale stools, dark urine
+/C15Liver ultrasound abnormalities
+Drug-induced liver injury /C15Pruritus, jaundice
+/C15Ingestion of drugs before onset of symptoms or biochemical abnormalities
+HELLP syndrome /C15Hemolysis, elevated liver enzymes, low platelets.
+/C15Typically occurs in cases of severe preeclampsia (hypertension, placental
+insuf ﬁciency, fetal growth restriction, adverse maternal systemic effects)
+Hyperemesis gravidarum /C15Onset ﬁrst and early-second trimester
+/C15Nausea, vomiting
+/C15AST/ALT elevated in 50% of hospitalized patients
+Pemphigoid gestationis /C15Vesicles and bullae, intensely pruritic
+/C15Involves umbilicus
+/C15Autoimmune condition, often associated with other autoimmune disease (e.g., Graves disease)
+/C15Typically ﬂares postpartum if not treated
+Polymorphic eruption of pregnancy
+(formerly PUPPPs)/C15Urticarial plaques and papules
+/C15Starts on abdomen, in striae, sparing umbilicus
+/C15Can spread to upper arms, breasts, and thighs
+Primary biliary cirrhosis or primary
+sclerosing cholangitis/C15Pruritus, jaundice, lethargy
+/C15Other autoimmune disorders
+/C15Symptoms before pregnancy
+/C15Associated autoantibodies
+Pruritus gravidarum /C15No skin eruption
+/C15Normal bile acids
+Systemic disease /C15History of liver, renal, or thyroid disease
+/C15Signs and symptoms of systemic disease
+/C15History of pruritus before conception
+Veno-occlusive disease /C15Abdominal pain, distension (ascites)
+/C15Jaundice, gastrointestinal bleeding
+/C15Thrombosis demonstrated on imaging
+/C15Thrombophilia
+Viral hepatitis /C15Jaundice, nausea, vomiting
+/C15Abdominal pain
+/C15Systemic symptoms
+/C15Generally unwell
+/C15Prior contact history
+AFLP: acute fatty liver of pregnancy; AST: aspartate aminotransferase; ALT: alanine aminotransferase; INR: international normalized ratio; HELL P: hemolysis, elevated
+liver enzymes and low platelets; PUPPPs: pruritic urticarial papules and plaques of pregnancy.
+AUGUST JOGC AOÛT 2024 l15Intrahepatic Cholestasis of Pregnancy
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.APPENDIX C
+Table C. A pragmatic guide to recommending iatrogenic birth based on highest non-fasting bile acid levels and
+associated risk of stillbirth compared with the general population risk
+Highest reported bile acid level ( mmol/L) Recommended gestation for delivery
+/C2019 (normal) Routine care
+20e39 390e396
+40e69 380e386
+70e99 360e376
+/C21100 By 360weeks gestation or earlier in patients with comorbidities or other risks factors
+Source: Ovadia C, Seed PT, Sklavounos A, et al. Association of adverse perinatal outcomes of intrahepatic cholestasis of pregnancy with biochemical markers: results
+of aggregate and individual patient data meta-analyses. Lancet . 2019;393:899 e909. Available at https://www.ncbi.nlm.nih.gov/pubmed/30773280 .ª2019 The
+Author(s). Published by Elsevier Ltd.
+16lAUGUST JOGC AOÛT 2024SOGC CLINICAL PRACTICE GUIDELINE
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.APPENDIX D
+A condition for which there is no restriction for the use 
+of the contraceptive method.
+A condition for which the advantages of using the 
+method generally outweigh the theoretical or proven 
+risks.
+A condition for which the theor etical or proven risks 
+usually outweigh the advantages of using the method.
+A condition that represents an una cceptable health risk 
+if the contraceptive method is used.
+History of cholestasis Cu-IUD LNG IUD Implant DMPA POP CHC
+Pregnancy-related 1 1 1 1 1 2
+Past CHC-related 1 2 2 2 2 3
+CHC: combined hormonal contraception (pill, patch, and ring); CuIUD: copper-containing intrauterine device; DMPA: depot medroxyprogesterone ac etate; LNG-IUD:
+levonorgestrel-releasing intrauterine device; POP: progestin-only pill.The medical eligibility criteria for contraceptive use by the World Health Organization, 2015,1and the U.S. Medical
+Eligibility Criteria (US MEC) for Contraceptive Use, 2016,2use the following categories for contraceptive eligibility:
+The following table summarizes the eligibility of contraception use for women with an history of intrahepatic cholestasis of
+pregnancy and for past CHC-related cholestasis1,2
+AUGUST JOGC AOÛT 2024 l17Intrahepatic Cholestasis of Pregnancy
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.REFERENCES
+1. World Health Organization. Reproductive Health and Research. Medical
+eligibility criteria for contraceptive use. 5th edition. Geneva: Departmentof Reproductive Health and Research, World Health Organization; 2015.p. 268. Available at. http://apps.who.int/iris/bitstream/10665/181468/1/
+9789241549158_eng.pdf .
+2. Curtis KM, Tepper NK, Jatlaoui TC, et al. U.S. Medical Eligibility Criteria for
+Contraceptive Use, 2016. MMWR Recomm Rep 2016;65:1 e103. Available
+at,https://www.ncbi.nlm.nih.gov/pubmed/27467196 .
+18
+lAUGUST JOGC AOÛT 2024SOGC CLINICAL PRACTICE GUIDELINE
+Downloaded for Ian Nouvel (ian.nouvel@nhs.net) at University Hospitals Sussex NHS Foundation Trust from ClinicalKey.com by Elsevier on 
+November 27, 2024. For personal use only. No other uses without permission. Copyright ©2024. Elsevier Inc. All rights reserved.

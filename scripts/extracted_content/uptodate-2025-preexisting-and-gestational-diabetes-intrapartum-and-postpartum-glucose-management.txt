@@ -1,0 +1,826 @@
+# Extracted from: Uptodate - 2025 - Preexisting and gestational diabetes - Intrapartum and postpartum glucose management.pdf
+# Guideline ID: uptodate-2025-preexisting-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management
+# Content length: 66426 characters
+# Processing date: 1740354353.283942
+
+Official reprint from UpToDate
+www.uptodate.com © 2025 UpToDate, Inc. and/or its affiliates. All Rights Reserved.
+Preexisting (pregestational) and gestational diabetes:
+Intrapartum and postpartum glucose management
+INTRODUCTION
+In pregnancies complicated by diabetes, a key therapeutic goal across gestation is avoidance
+of maternal hyperglycemia, which increases the risk of adverse pregnancy outcomes,
+including preeclampsia, fetal macrosomia, and neonatal hypoglycemia, among others. Strict
+avoidance of hyperglycemia remains important during labor because maternal
+hyperglycemia at that time has been linked to fetal hypoxemia and neonatal hypoglycemia.
+Glycemic targets are relaxed postpartum both because the fetus is no longer exposed to
+maternal hyperglycemia and because the risk for maternal hypoglycemia increases when
+insulin resistance dramatically falls after placental expulsion.
+This topic will discuss inpatient glycemic management in preexisting (also called
+pregestational) and gestational diabetes, with a focus on the intrapartum and postpartum
+periods. Other issues in the management of diabetes in pregnancy are reviewed separately:®
+AUTHOR:Camille E Powe, MD
+SECTION EDITORS:David M Nathan, MD, Erika F Werner, MD, MS
+DEPUTY EDITOR:Vanessa A Barss, MD, FACOG
+All topics are updated as new evidence becomes available and our peer review process is complete.
+Literature review current through: Jan 2025.
+This topic last updated: Oct 23, 2024.
+(See "Preexisting (pregestational) diabetes: Preconception counseling, evaluation, and
+management".)●
+(See "Preexisting (pregestational) diabetes mellitus: Antenatal glycemic management".) ●
+(See "Preexisting (pregestational) diabetes mellitus: Obstetric issues and pregnancy
+management".)●
+(See "Diabetic ketoacidosis in pregnancy".) ●
+(See "Gestational diabetes mellitus: Glucose management, maternal prognosis, and follow-
+up".)●
+(See "Gestational diabetes mellitus: Obstetric issues and management".) ●23/02/2025, 23:06 Preexisting (pregestational) and gestational diabetes: Intrapartum and postpartum glucose management - UpToDate
+https://www.uptodate.com/contents/preexisting-pregestational-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management/print?… 1/27INTRAPARTUM MANAGEMENT
+Factors affecting glycemic management — Intensive management of maternal glycemia
+during labor and delivery is commonly recommended to optimize fetal outcomes. During
+labor, a variety of factors impact glycemic management and should be considered:
+Glycemic targets — A reasonable target range for intrapartum glucose levels is 70 to 125
+mg/dL (3.9 to 6.9 mmol/L). This target range encompasses recommendations of the
+American College of Obstetricians and Gynecologists (ACOG; 70 to 110 mg/dL [3.9 to 6.1
+mmol/L]) [1].
+Rationale — Attention to intrapartum avoidance of hyperglycemia is based on evidence
+that it reduces the risk of two major complications: fetal hypoxemia and neonatal
+hypoglycemia.Metabolic demands of labor – During the active phase of labor, glucose uptake by the
+contracting uterus lowers blood glucose and reduces insulin requirements, analogous to
+exercise (see "Exercise guidance in adults with diabetes mellitus").●
+Food restriction – Many people in labor are placed on a clear liquid diet. Caloric restriction
+can reduce insulin requirements, but clear liquid diets that include sugar-sweetened
+beverages can cause hyperglycemia (see "Labor and delivery: Management of the normal
+first stage", section on 'Oral intake').●
+Dextrose-containing intravenous fluids – Administration of dextrose-containing fluids
+may prevent dehydration, shorten the length of labor, and prevent ketosis, but may also
+lead to hyperglycemia if insulin is not present in sufficient quantities (see "Labor and
+delivery: Management of the normal first stage", section on 'Intravenous fluids').●
+Fetal hypoxemia — Most of the literature relating fetal hypoxemia to maternal
+hyperglycemia was published prior to 1990, before the availability of rapid-acting insulin
+analogues and the publication of seminal studies demonstrating the benefits of
+intensive glycemic control in diabetes [2]; yet, this literature provides strong evidence for
+a causal relationship between maternal hyperglycemia and fetal hypoxemia during
+labor. For example:●
+Experimental studies in sheep suggest that fetal hyperglycemia and hyperinsulinemia
+(resulting from maternal hyperglycemia) increase fetal oxygen consumption and can
+lead to fetal hypoxemia, acidemia, and (if severe enough) death [3,4].•
+In pregnant individuals without diabetes, rapid infusion of 50 grams of dextrose
+during labor (as compared with lactated ringers or normal saline) resulted in maternal•23/02/2025, 23:06 Preexisting (pregestational) and gestational diabetes: Intrapartum and postpartum glucose management - UpToDate
+https://www.uptodate.com/contents/preexisting-pregestational-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management/print?… 2/27and fetal hyperglycemia and reduced cord blood pH in a randomized trial [5].
+In pregnant individuals with diabetes, an observational study found that glycemic
+control in the six hours prior to giving birth was associated with perinatal asphyxia
+(defined as late decelerations, prolonged fetal bradycardia, one-minute APGAR <6, or
+intrauterine fetal death), while maternal glycated hemoglobin (A1C) in the third
+trimester was not [6]. Participants in this study with and without perinatal asphyxia
+had a mean blood glucose during labor of 161 mg/dL (8.9 mmol/L) and 127 mg/dL (7.1
+mmol/L), respectively; average A1C at 36 weeks of gestation was 8.5 and 8.0 percent.•
+Theoretically, if intrapartum hyperglycemia occurs on a background of chronic
+maternal hyperglycemia (high A1C), which reduces red blood cell 2.3-
+diphosphoglycerate (2,3-DPG) concentrations, then maternal hemoglobin will bind
+oxygen more tightly and therefore release it less well in areas of low oxygen tension,
+such as the intervillous space [7,8]. This could compound intrapartum fetal hypoxemia
+and acidemia [6].•
+Neonatal hypoglycemia — Maternal hyperglycemia causes fetal hyperinsulinemia,
+which can result in hypoglycemia after birth [9-11]. Neonatal hypoglycemia is usually
+transient, but neurologic sequelae can occur and neonatal intensive care unit (NICU)
+admission may be needed. (See "Management and outcome of neonatal hypoglycemia".)●
+Whether antenatal or intrapartum glucose control is more important for reducing the
+risk of neonatal hypoglycemia is uncertain. Antenatal hyperglycemia may result in
+chronic fetal hyperinsulinemia, while intrapartum hyperglycemia may result in acute
+fetal hyperinsulinemia, both of which may persist temporarily after birth in newborns.
+In a 2002 study of 107 individuals with type 1 diabetes, mean intrapartum glucose
+levels >140 mg/dL (7.8 mmol/L) resulted in hypoglycemia in over 80 percent of
+neonates, while A1C levels from the first, second, and third trimester were not
+associated with neonatal blood glucose [10].•
+However, a 2018 systematic review found that results of studies evaluating the
+association between intrapartum glucose levels and neonatal hypoglycemia were
+mixed; many studies reporting a relationship were older (ie, not reflecting
+contemporary management for diabetes in pregnancy) and failed to account for
+confounders such as antenatal glycemic control, preterm birth, and large for
+gestational age birth weight [11].•
+In a 2020 observational study that adjusted for these factors (157 type 1 diabetes, 237
+type 2 diabetes, 3256 gestational diabetes), intrapartum glycemic control was not
+significantly associated with neonatal hypoglycemia [12].•23/02/2025, 23:06 Preexisting (pregestational) and gestational diabetes: Intrapartum and postpartum glucose management - UpToDate
+https://www.uptodate.com/contents/preexisting-pregestational-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management/print?… 3/27Glucose monitoring — The optimum method and frequency of glucose monitoring have not
+been established. We measure capillary glucose levels and determine the frequency based
+on a combination of factors, including the phase of labor, whether food is restricted, and the
+insulin regimen.A 2019 secondary analysis of the CONCEPTT randomized trial of continuous glucose
+monitoring (CGM) during pregnancy also found that intrapartum glucose levels
+(available in only 33 participants) were not associated with neonatal hypoglycemia
+[13]. In this small study, antenatal glycemia (by CGM and A1C) and fetal/neonatal
+markers of chronic exposure to maternal hyperglycemia were stronger correlates of
+neonatal hypoglycemia.•
+Latent phase capillary glucose monitoring ●
+Food not restricted – During the latent phase, if the patient is eating, we generally
+continue the standard glucose monitoring schedule that was used antenatally: capillary
+glucose monitoring fasting and one to two hours after meals. If prandial insulin has
+been required, we also check capillary blood glucose prior to meals.•
+Food restricted – Once food is restricted, we measure capillary glucose levels every four
+hours and administer insulin as needed to maintain euglycemia (see 'Insulin
+management' below).•
+Active phase capillary glucose monitoring (food is typically restricted during this phase) ●
+During the active phase, we monitor capillary blood glucose every hour in patients on an
+intravenous insulin infusion or an insulin pump; this includes all patients with type 1
+diabetes.•
+In patients on subcutaneous insulin or on no insulin during labor, we measure capillary
+blood glucose every two to four hours, depending on the stability of the blood glucose
+levels. In a randomized trial of strict versus liberal intrapartum glycemic management
+for gestational diabetes, monitoring and treating capillary blood glucose with
+correctional insulin every four hours as compared with hourly did not result in a greater
+risk of neonatal hypoglycemia [14]. In fact, neonatal blood glucose in the first 24 hours
+of life was lower in the group that had hourly monitoring and a stricter glucose target
+(60 to 100 mg/dL [3.3 to 5.6 mmol/L] versus 60 to 120 mg/dL [3.3 to 6.7 mmol/L]).•
+Continuous glucose monitoring (CGM) devices – An increasing number of people with
+diabetes are using CGM devices throughout pregnancy. There is limited evidence
+supporting the accuracy of these devices in the inpatient setting, though hospital use
+increased during the COVID-19 pandemic. (See "COVID-19: Issues related to diabetes
+mellitus in adults".) In a single study that compared glucose measured by intermittently●23/02/2025, 23:06 Preexisting (pregestational) and gestational diabetes: Intrapartum and postpartum glucose management - UpToDate
+https://www.uptodate.com/contents/preexisting-pregestational-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management/print?… 4/27Insulin management — We individualize insulin management during labor, considering the
+type of diabetes, regimen prior to labor, and glucose level on presentation. The following
+approaches should not be considered absolute protocols and may need to be adjusted to
+meet changing intrapartum needs.
+Type 1 diabetes — People with type 1 diabetes have minimal to no endogenous insulin
+production and require exogenous basal insulin without interruption to prevent diabetic
+ketoacidosis. Euglycemia should not preclude the administration of basal insulin.
+Additional insulin is required for any carbohydrate intake. A review of these principles can
+be found elsewhere. (See "Management of blood glucose in adults with type 1 diabetes
+mellitus".)
+In the active phase of labor, patients with type 1 diabetes may have a considerable drop in
+insulin requirements, and often require dextrose infusion to allow continued and
+necessary insulin administration [16].
+Patients on multiple daily insulin injectionsscanned CGM and capillary blood glucose using a hospital point-of-care glucometer in
+patients undergoing cesarean birth, the mean absolute relative difference of paired
+glucose measurements (a measure of accuracy) was similar to that reported in studies in
+pregnant and nonpregnant individuals in the outpatient setting [15]. Sixty-eight percent of
+glucose values were "concordant" (ie, they would have resulted in the same intrapartum
+glycemic management) and the discordant glucose values only occurred when the glucose
+was <70 mg/dL (3.9 mmol/L) or >110 mg/dL (6.1 mmol/L).
+Most hospitals require confirmation of CGM glucose readings via capillary blood glucose
+monitoring for insulin dosing decisions. It is our practice to perform capillary blood
+glucose monitoring at the frequencies described above even if patients continue to use
+their home CGM devices as an adjunct for self-management. CGM sensors should be worn
+at a site away from the lower abdomen (eg, flank or upper arm). Discrepancies between
+capillary glucose measurements and CGM measurements should be noted and addressed
+with calibration if available on the CGM device being used. (See "Glucose monitoring in the
+ambulatory management of nonpregnant adults with diabetes mellitus", section on 'CGM
+systems'.)
+Before food is restricted, patients with type 1 diabetes need basal, preprandial, and
+correctional insulin. We typically provide preprandial and correctional coverage using
+the home subcutaneous insulin regimen. If the patient's blood glucose levels have
+been tightly controlled at home or if the patient is not eating full meals on the labor
+unit, a dose reduction of 20 to 30 percent may be necessary to prevent hypoglycemia.●23/02/2025, 23:06 Preexisting (pregestational) and gestational diabetes: Intrapartum and postpartum glucose management - UpToDate
+https://www.uptodate.com/contents/preexisting-pregestational-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management/print?… 5/27After food is restricted – As the patient enters active labor or when food becomes
+restricted, we administer dextrose-containing intravenous fluids (5 or 10 percent
+dextrose) and start an insulin infusion using a standardized protocol, such as that
+published by Dude et al [17]. Patients who present with significant hyperglycemia (eg,
+>200 mg/dL [11.1 mmol/L]) may have an insulin infusion initiated in early labor, rather
+than waiting until active labor. Use of an insulin infusion for intrapartum glycemic
+management is recommended by ACOG [1].●
+In patients starting insulin infusions, we hold dextrose-containing fluids if the blood
+glucose prior to starting the insulin infusion is ≥ 160 mg/dL (8.9 mmol/L), to bring
+blood glucose into the target range (70 to 125 mg/dL [3.9 to 6.9 mmol/L]) more
+rapidly. After the blood glucose declines below 160 mg/dL (8.9 mmol/L), the dextrose-
+containing fluids can be started and continued, with further hyperglycemia managed
+using a change in the rate of the insulin infusion, per protocol. A small dose of basal
+insulin (equivalent to the postpartum insulin dose) can be given in addition to the
+insulin infusion protocol to prevent inadvertent interruptions to basal insulin delivery
+in type 1 diabetes.
+Protocols – Various reasonable protocols for intrapartum intravenous insulin are
+available [1,17-20]. Two studies of specific protocols have reported excellent maternal
+glycemic outcomes:●
+A pre-post implementation study by Dude et al evaluated an intrapartum
+management protocol for laboring patients that accounted for an individual
+patient's antenatal insulin requirement (a proxy for insulin resistance) [18]. As
+compared with nonprotocolized management prior to protocol implementation, this
+protocol was associated with lower peak maternal intrapartum glucose (127 mg/dL
+pre versus 116 mg/dL post), reduced maternal hyperglycemia (>125 mg/dL [6.9
+mmol/L], 51 percent pre versus 38 percent post), and less frequent maternal
+hypoglycemia (<60 mg/dL [3.3 mmol/L], 6.1 percent pre- versus 2.5 percent post).
+The intravenous insulin protocol [17] includes an infusion of 10 percent dextrose at
+50 mL per hour if the patient is not hyperglycemic (ie, it is initiated if blood glucose
+is <160 mg/dL [8.9 mmol/L]). We typically use 5 percent dextrose at 75 to 125 mL per
+hour.•
+A small observational study of intrapartum use of a computer-driven insulin infusion
+protocol reported the protocol improved mean glucose (103 mg/dL versus 122
+mg/dL [5.7 versus 6.8 mmol/L]) and increased the proportion of patients who
+achieved target blood glucose by delivery (82 versus 9 percent), without a significant
+difference in maternal hypoglycemia (0 versus 4 percent) when compared with a
+"standard" insulin infusion protocol based on the current blood glucose level alone•23/02/2025, 23:06 Preexisting (pregestational) and gestational diabetes: Intrapartum and postpartum glucose management - UpToDate
+https://www.uptodate.com/contents/preexisting-pregestational-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management/print?… 6/27Patients on insulin pumps — Many pregnant people with type 1 diabetes use
+continuous subcutaneous insulin infusion (CSII or pump therapy) to manage glycemia
+antenatally and prefer to remain on their insulin pump during labor and throughout
+their delivery hospitalization. Although data are limited, this is reasonable as a
+randomized trial (70 participants) found no significant difference in first neonatal blood
+glucose (primary outcome) or any secondary neonatal outcomes in patients assigned to
+use their own insulin pump during labor versus intravenous insulin infusion [22].
+Participants assigned to intravenous insulin had more maternal hyperglycemia during
+labor (maternal glucose >200 mg/dL [11.1 mmol/L]). A prospective observational study
+also reported that advanced hybrid closed-loop therapy was safe and effective in
+maintaining target glucose levels intrapartum and in the early postpartum period [23].
+(See "Management of blood glucose in adults with type 1 diabetes mellitus", section on
+'Continuous subcutaneous insulin infusion (insulin pump)'.)[20]. The computer algorithm calculates the insulin infusion rate based on the
+current blood glucose plus a "multiplier," which starts at a standard figure and
+increases or decreases depending on whether the blood glucose is in the target
+range [21].
+For patients who prefer not to use their pumps or who are unable to self-manage
+their pump while hospitalized, management of insulin infusion is the same as that
+for patients who normally take multiple daily insulin injections (see 'Patients on
+multiple daily insulin injections' above).●
+For patients who wish to use their own insulin pumps while in the hospital,
+hospitals should have written policies/protocols. Those who use their pump during
+labor should move the infusion site away from the lower abdomen (eg, to the flank,
+thigh, or buttock). If the patient has persistent hyperglycemia on the insulin pump, the
+pump site, tubing, and control device should be evaluated to ensure they are working
+properly. We have a low threshold for switching to an insulin infusion for persistent
+hyperglycemia greater than target (>125 mg/dL [6.9 mmol/L]).●
+Before food is restricted – In the latent phase before food is restricted, patients
+using an insulin pump will continue to need prandial insulin coverage, which we
+typically provide by continuing the antenatal insulin pump settings. If the patient's
+blood glucose levels have been tightly controlled at home or if the patient is not
+eating full meals on the labor unit, we consider a dose reduction of 20 to 30 percent.•
+After food is restricted – Once food is restricted and/or the patient is in the active
+phase of labor, we start a constant infusion of dextrose-containing fluids in patients
+whose blood glucose is ≤ 125 mg/dL (6.9 mmol/L, a lower threshold for dextrose-
+containing fluids than for our insulin infusion protocol because of the presumed•23/02/2025, 23:06 Preexisting (pregestational) and gestational diabetes: Intrapartum and postpartum glucose management - UpToDate
+https://www.uptodate.com/contents/preexisting-pregestational-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management/print?… 7/27Type 2 diabetes — Intrapartum insulin requirements vary widely in these patients and
+many require no administration of insulin because of the combination of food restriction
+and active labor.
+Patients on multiple daily injections — Most patients with type 2 diabetes are treated
+in pregnancy with multiple daily insulin injections. (See "Preexisting (pregestational)lower risk of hypoglycemia when using the home insulin pump). This allows for a
+stable basal rate of subcutaneous insulin infusion that can be adjusted to achieve
+glycemic targets as labor progresses. Once we initiate the dextrose infusion, we
+continue it unless the patient is markedly hyperglycemic, and adjust the insulin
+pump basal rate based on the trends in blood glucose. Bolus insulin is administered
+through the pump to provide rapid correction of hyperglycemia.
+Few protocols for intrapartum insulin pump management have been published:
+A multicenter retrospective study described a standardized protocol for intrapartum
+CSII in a series of 65 patients with type 1 diabetes [24]. The protocol involved using
+three potential basal rates. Patients who were euglycemic on presentation
+continued the basal rate at the last antepartum level; this was reduced to 30 to 70
+percent of the last antepartum level when active labor began and intravenous
+glucose commenced. A lower basal rate of 0.1 to 0.2 units per hour was used if
+hypoglycemia developed.•
+Another protocol suggests increasing or decreasing the pump basal rate by 20
+percent as needed every hour to maintain glucose in the target range (with 10
+percent dextrose infusion at 50 mL per hour if blood glucose was ≤ 100 mg/dL [5.6
+mmol/L]) [17].•
+The protocol in a randomized trial comparing intrapartum insulin pump versus
+intravenous insulin infusion described above involved increasing the pump basal
+rate by 5 to 20 percent for hyperglycemia, depending on the current blood glucose
+level and rate of change [22]. For hypoglycemia, the pump was suspended and
+intravenous dextrose was given.•
+Patients using hybrid closed-loop insulin pumps – There are few data on the
+intrapartum use of the hybrid closed-loop insulin pumps available in the United States.
+These pumps are not approved by the US Food and Drug Administration (FDA) for
+pregnant individuals, but off-label use is increasingly common. The autho r's practice is
+to continue hybrid closed-loop insulin therapy intrapartum in patients who were using
+it off-label in pregnancy, provided that CGM readings remain congruent with frequent
+hospital glucometer blood glucose checks. Hospital policies on inpatient use of
+patient-managed insulin pumps vary widely.●23/02/2025, 23:06 Preexisting (pregestational) and gestational diabetes: Intrapartum and postpartum glucose management - UpToDate
+https://www.uptodate.com/contents/preexisting-pregestational-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management/print?… 8/27diabetes mellitus: Antenatal glycemic management".)
+Patients on metformin or an insulin pumpBefore food is restricted – Before labor and in the latent phase of labor before food is
+restricted, we typically provide 70 to 80 percent of the total daily dose of insulin that
+was used at home. The exact dose reduction from the home insulin regimen depends
+on the recent level of glycemic control, the patient diet, the blood glucose level on
+presentation, and the anticipated labor course.●
+Approximately half of the hospital-provided total daily dose (35 to 40 percent of the
+home total daily dose) is given as intermediate-acting insulin (NPH) in two divided
+doses every 12 hours. We use NPH instead of longer-acting formulations because of
+the greater ease in making frequent adjustments. We may give an even lower dose of
+NPH insulin if active labor is anticipated in the next six to eight hours, given the
+duration of action of NPH and anticipated decline in insulin requirement with uterine
+contractions.
+Before labor and in the latent phase of labor before food is restricted, half of the
+hospital-provided total daily dose is given as rapid-acting insulin prior to meals in
+three divided doses (approximately 12 to 15 percent of the home total daily dose with
+each of three meals) plus correctional rapid-acting insulin (table 1).
+After food restriction and/or in the active phase of labor, we use either an
+intravenous insulin infusion according to a standardized protocol (such as that
+published by Dude et al [17]) or subcutaneous correctional insulin administered via a
+sliding scale every two to four hours (table 1). If the patient is very or persistently
+hyperglycemic (glucose >200 mg/dL [11.1 mmol/L] on presentation or glucose >125
+mg/dL [6.9 mmol/L] on multiple checks), we use intravenous insulin infusion rather
+than subcutaneous insulin. Use of an insulin infusion for intrapartum glycemic
+management is recommended by ACOG [1].●
+In active labor, we start a constant infusion of dextrose-containing fluids in patients
+whose capillary blood glucose is <160 mg/dL (8.9 mmol/L) if using an insul in infusion.
+In patients on subcutaneous correctional insulin, we start a constant infusion of
+dextrose-containing fluids in patients whose blood glucose is ≤ 125 mg/dL (6.9 mmol/L,
+a lower threshold because of a presumed lower risk of hypoglycemia when using
+subcutaneous versus intravenous insulin). Once we initiate the dextrose infusion, we
+continue it while adjusting the insulin infusion or administering the correctional
+subcutaneous insulin dose unless the patient is markedly hyperglycemic.
+Metformin – For patients taking metformin at home, we hold this agent on admission
+to the hospital for delivery.●23/02/2025, 23:06 Preexisting (pregestational) and gestational diabetes: Intrapartum and postpartum glucose management - UpToDate
+https://www.uptodate.com/contents/preexisting-pregestational-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management/print?… 9/27Gestational diabetes
+Special situations
+Scheduled cesarean birth in patients receiving insulinInsulin pump – Patients managed with insulin pumps antepartum can be managed
+similarly to patients with type 1 diabetes who use pumps. (See 'Patients on insulin
+pumps' above.)●
+Subcutaneous correctional insulin – Patients with gestational diabetes can often be
+managed with subcutaneous correctional insulin during labor (table 2). If blood
+glucose levels are persistently above the goal of ≤ 125 mg/dL (6.9 mmol/L) despite
+subcutaneous insulin, insulin infusion can be initiated.●
+A randomized trial comparing intensive glucose management (goal blood glucose 70 to
+100 mg/dL [3.3-5.6 mmol/L], hourly monitoring) versus liberalized glucose management
+(goal blood glucose 70 to 120 mg/dL [3.9-6.7 mmol/L], every-four-hours monitoring) in
+patients with gestational diabetes using subcutaneous rapid-acting correctional insulin
+to manage intrapartum glycemia supports the use of a liberalized protocol in these
+patients, as shown in the table (table 2) [14]. In this trial, the mean neonatal blood
+glucose level in the first 24 hours of life was lower in the intensive management group,
+but neonatal hypoglycemia rates were similar in both groups.
+Rotating fluids – A strategy of "rotating fluids" (table 3) has also been used in
+patients with gestational diabetes, and reduced the need for intrapartum insul in
+infusion.●
+A small randomized trial found similar mean glucose levels (103 mg/dL [5.7 mmol/L])
+and neonatal outcomes in insulin-treated patients (primarily gestational diabetes) who
+were treated with the rotating fluids protocol and those receiving continuous insulin
+infusion to achieve glucose targets of 100 mg/dL (5.6 mmol/L) [25].
+When cesarean birth is planned in patients on insulin for diabetes, the procedure
+should be scheduled early in the morning.●
+Patients on multiple daily injections should maintain their usual dose of NPH on the
+night prior to admission. If they use a longer-acting basal insulin at night (eg,
+glargine), the dose should be decreased by 20 to 50 percent, with the exact
+percentage dose reduction determined by the risk of morning hypoglycemia based on
+recent fasting self-monitored glucose values. Those on insulin pumps should generally
+maintain the basal rate until admission to the hospital, unless they are prone to early●23/02/2025, 23:06 Preexisting (pregestational) and gestational diabetes: Intrapartum and postpartum glucose management - UpToDate
+https://www.uptodate.com/contents/preexisting-pregestational-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management/print… 10/27morning hypoglycemia, in which case the overnight basal rate can be decreased by 20
+to 50 percent.
+On the morning of the cesarean: ●
+Type 1 diabetes – On the morning of the cesarean, patients on multiple daily
+injections who administer their basal insulin (other than insulin degludec) in the
+morning should administer either a) the anticipated postpartum dose or b) be
+admitted for possible intravenous dextrose on the morning of the cesarean and
+administer 50 to 70 percent of the most recent home morning basal insulin dose. If
+the cesarean will be delayed past the early morning, the latter approach should be
+taken. Insulin degludec is a long-acting insulin with a duration of action up to 42
+hours. Thus, we hold the insulin degludec dose on the morning of a planned
+cesarean birth to prevent postpartum hypoglycemia [26].•
+Patients on insulin pumps can continue using them if congruent with hospital policy.
+We reduce the basal insulin dose by approximately 20 percent if the patient is prone to
+morning hypoglycemia and switch to postpartum settings during or immediately after
+the procedure. Prandial insulin is held on the morning of the cesarean consistent with
+taking nothing by mouth status, but correctional insulin can be given if the blood
+glucose is above target (>125 mg/dL [6.9 mmol/L]).
+We provide dextrose-containing fluids if the blood glucose falls below 100 mg/dL
+(5.6 mmol/L).
+Type 2 or gestational diabetes – On the morning of the cesarean, the dose of
+insulin can generally be held. If the cesarean will be delayed past the early morning,
+50 to 70 percent of the usual basal insulin dose can be given and intravenous
+dextrose should be administered if the blood glucose is below 100 mg/dL (5.6
+mmol/L).•
+We monitor glucose levels every hour in patients with type 1, type 2, and gestational
+diabetes who take insulin because of their risk of developing hypoglycemia in the
+setting of taking nothing by mouth.●
+Pre- and intraoperative hyperglycemia is treated with either intravenous insulin or
+subcutaneous rapid-acting insulin, as needed, to manage glucose levels.●
+Corticosteroids are now frequently used as antiemetic prophylaxis during cesarean
+birth. However, the dosages typically used have significant effects on postpartum
+glycemia, thus we generally prefer to avoid them in most patients with diabetes. If
+used, they may increase postpartum insulin requirements beyond what is●23/02/2025, 23:06 Preexisting (pregestational) and gestational diabetes: Intrapartum and postpartum glucose management - UpToDate
+https://www.uptodate.com/contents/preexisting-pregestational-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management/print… 11/27Scheduled cesarean birth in patients using metformin — Patients using metformin
+should hold this medication on the morning of the cesarean.
+Scheduled cesarean birth in patients with gestational diabetes managed with
+nutritional therapy alone — These patients are managed similarly to pregnant
+individuals without diabetes undergoing scheduled cesarean birth.
+Induction of labor — Patients undergoing induction of labor can be managed similarly
+to those who have spontaneous labor. In patients on long-acting basal insulin (>24 hour
+duration of action), particularly multiparous patients who may have a shorter labor,
+some clinicians reduce the dose by 20 to 50 percent on the night prior to an induction of
+labor.
+POSTPARTUM MANAGEMENT
+Type 1 diabetes
+Pathophysiology — Insulin requirements drop precipitously immediately after birth
+because pregnancy-associated insulin resistance rapidly dissipates after expulsion of the
+placenta [27]. The insulin requirement reaches a nadir at approximately 48 hours
+postpartum and is lower than the prepregnancy requirement [28]. Insulin resistance (and
+therefore insulin requirement) then increases over the subsequent two to four weeks
+postpartum, but does not reach prepregnancy levels as long as the individual is
+breastfeeding [29-31]. (See 'Breastfeeding mothers' below.)
+Glycemic monitoring and targetsrecommended below. (See "Postoperative nausea and vomiting", section on
+'Glucocorticoids'.)
+Postoperative management is discussed below. (See 'Postpartum management'
+below.)●
+Capillary blood glucose levels are monitored fasting, before meals, and at bedtime. The
+author also performs an overnight blood glucose check (at 2 or 3 AM) on the first two
+nights postpartum because of the risk of overnight hypoglycemia.●
+If the patient is not eating, capillary blood glucose can be monitored every four to six
+hours. Given the risk of hypoglycemia and the need to administer basal insulin,
+dextrose-containing fluids are infused in patients who are not reliably eating.
+Maternal glucose targets can be relaxed postpartum because glycemic effects on fetal
+outcomes are no longer a concern. The targets are generally the same as those in other●23/02/2025, 23:06 Preexisting (pregestational) and gestational diabetes: Intrapartum and postpartum glucose management - UpToDate
+https://www.uptodate.com/contents/preexisting-pregestational-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management/print… 12/27Insulin management — If information about the prepregnancy dose is available, we
+initially provide 60 to 70 percent of the prepregnancy total daily insulin dose, with half
+given as basal insulin. Given that people with type 1 diabetes typically double their insulin
+requirements during pregnancy [32], this initial postpartum insulin dosing is usually 30 to
+35 percent of the antenatal doses. However, close attention to glucose levels and
+adjustment of the insulin regimen in the first few days postpartum is necessary because of
+wide patient variation in insulin requirements, as demonstrated in a study of patients with
+type 1 diabetes using a closed-loop insulin delivery during labor and on days 1 and 2
+postpartum [33]. Because insulin degludec is a long-acting insulin with a duration of action
+up to 42 hours, some clinicians hold the first postpartum insulin degludec dose after
+delivery to prevent postpartum hypoglycemia related to the higher doses administered
+prior to delivery [26].
+Basal, prandial, and correctional insulin is provided via multiple daily injections or insul in
+pump (see "Management of blood glucose in adults with type 1 diabetes mellitus"). A
+correctional sliding scale for hospitalized postpartum patients on multiple daily injections
+is available in the table (table 4). Patients who were using hybrid closed-loop insulin
+pump therapy prior to pregnancy and suspended it during pregnancy may resume
+automated insulin delivery postpartum, but the exact timing of resumption should be
+determined by the specific hybrid closed-loop algorithm being used. Some algorithms rely
+on the insulin delivery in the preceding days to weeks, thus patients may need to run the
+pump without automated features temporarily to avoid overly aggressive insul in delivery
+based on pregnancy insulin requirements.
+The only trial of use of a hybrid closed-loop insulin pump in the postpartum setting
+demonstrated less hypoglycemia (and without excess hyperglycemia) in those randomly
+assigned to closed-loop insulin delivery compared with those assigned to automated
+insulin suspension only [34]. However, participants were randomized at day 7 postpartum
+to avoid the issue of the need for the closed-loop system to adapt to rapid changes in
+insulin requirement in the immediate postpartum setting.
+Close outpatient follow-up for insulin titration is important until the individual's insulin
+requirement stabilizes in the first two to four weeks postpartum.
+Breastfeeding mothers — Insulin requirements remain 15 to 20 percent lower than
+prepregnancy requirements in breastfeeding mothers with type 1 diabetes [29-31,35].hospitalized patients (<140 mg/dL [7.8 mmol/L] preprandial glucose, <180 mg/dL [10.0
+mmol/L] any random glucose); the author prefers to keep the blood glucose above 100
+mg/dL (5.6 mmol/L) in the first 24 to 28 hours postpartum given the high risk of
+hypoglycemia. (see "Management of diabetes mellitus in hospitalized patients", section
+on 'Glycemic targets').23/02/2025, 23:06 Preexisting (pregestational) and gestational diabetes: Intrapartum and postpartum glucose management - UpToDate
+https://www.uptodate.com/contents/preexisting-pregestational-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management/print… 13/27Studies examining glucose control via continuous glucose monitoring (CGM) in
+individuals with type 1 diabetes and established breastfeeding (eg, one to two months
+after birth) suggest no increase in episodes of hypoglycemia compared with those
+feeding formula [36] or matched, nonpregnant [29] females with type 1 diabetes.
+It has been suggested that breastfeeding individuals with type 1 diabetes should
+consume a minimum of 210 grams of carbohydrates daily [35].
+Exogenous insulin use is compatible with breastfeeding; insulin is a normal component
+of human milk and is not expected to be orally bioavailable to the infant [35,37].
+Type 2 diabetes
+Pathophysiology — Insulin resistance rapidly dissipates after expulsion of the placenta, as
+described above (see 'Pathophysiology' above). Glucose levels tend to be normal or only
+modestly elevated in the immediate postpartum period in individuals with type 2 diabetes
+not receiving glucose-lowering therapy.
+Glycemic monitoring and targets
+Insulin management — Many patients who were not on insulin before pregnancy or who
+started insulin in the setting of planning pregnancy can stop insulin in the immediate
+postpartum period. In the minority of patients who were on long-standing insulin therapy
+prior to pregnancy, we follow a similar management plan as for type 1 diabetes (see
+'Insulin management' above), with the addition of metformin if not contraindicated.
+Patients who were not on long-standing insulin therapy should continue or initiate
+metformin if no contraindication exists and start additional noninsulin therapies as
+indicated (see below).Capillary blood glucose levels are monitored fasting, before meals, and at bedtime
+during the postpartum hospitalization. The targets are generally the same as those in
+other hospitalized patients (<140 mg/dL [7/8 mmol/L] preprandial glucose, <180 mg/dL
+[10.0 mmol/L] any random glucose).●
+After discharge, we ask patients who are not on insulin to monitor blood glucose levels
+twice daily (fasting and either two hours after the largest meal or at bedtime) to identify
+hyperglycemia in the first two to four weeks postpartum. While nonpregnant patients
+with type 2 diabetes on noninsulin agents do not necessarily have to monitor blood
+glucoses on a regular basis and can be monitored with A1C, the A1C is not reliable in the
+immediate postpartum period due to alterations in red blood cell turnover that occur
+during pregnancy and at delivery.23/02/2025, 23:06 Preexisting (pregestational) and gestational diabetes: Intrapartum and postpartum glucose management - UpToDate
+https://www.uptodate.com/contents/preexisting-pregestational-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management/print… 14/27Metformin management — In patients with type 2 diabetes, we start or continue
+metformin after birth if there are no contraindications. Metformin is first-line therapy in
+type 2 diabetes and in the absence of other contraindications should be continued even if
+other agents are used. (See "Metformin in the treatment of adults with type 2 diabetes
+mellitus", section on 'Contraindications'.)
+We start with 500 mg orally once daily with food and increase the total daily dose by 500
+mg weekly until a target dose of 1000 mg twice daily is reached. (See "Initial management
+of hyperglycemia in adults with type 2 diabetes mellitus" and "Metformin in the treatment
+of adults with type 2 diabetes mellitus".)
+While the patient is hospitalized, in addition to metformin, hyperglycemia is treated using
+correctional insulin dosed via a sliding scale before meals (table 4). The sliding scale
+insulin is discontinued prior to discharge. For patients who are not meeting glycemic
+targets despite metformin, combination therapy is necessary to achieve optimal results
+(see "Initial management of hyperglycemia in adults with type 2 diabetes mellitus", section
+on 'Persistent hyperglycemia'). Options for additional therapies for those who have
+contraindications to metformin or who are persistently hyperglycemic on metformin are
+limited in breastfeeding patients (see 'Breastfeeding mothers' below). Patients who are not
+breastfeeding can be treated similarly to other nonpregnant patients. (See "Initial
+management of hyperglycemia in adults with type 2 diabetes mellitus", section on
+'Persistent hyperglycemia'.)
+Other diabetes medications — Other diabetes medications can be used in the
+postpartum setting, similar to use outside of pregnancy, but most options (other than
+insulin and metformin) are not compatible with breastfeeding (see below).
+Breastfeeding mothers — Breastfeeding is encouraged in mothers with type 2 diabetes
+and may have metabolic benefits. (See "Preexisting (pregestational) diabetes mellitus:
+Obstetric issues and pregnancy management".)
+Metformin is excreted at low levels in breastmilk and is considered compatible with
+breastfeeding [38]. Exogenous insulin use is also compatible with breastfeeding [35,37].
+If additional pharmacologic therapy beyond or instead of metformin or insulin is needed,
+glyburide [39] is considered compatible with breastfeeding (see "Breastfeeding: Parental
+education and support", section on 'Maternal medication safety').
+Data on GLP-1 receptor agonists and SGLT2-inhibitors in lactation are not available, thus
+are not recommended in breastfeeding patients. In particularly, SGLT2-inhibitors have
+high oral bioavailability and were present in the milk of lactating animals who were
+administered these medications. Thus, there is considerable concern for infant exposure
+and adverse effects if a lactating parent uses these medications.23/02/2025, 23:06 Preexisting (pregestational) and gestational diabetes: Intrapartum and postpartum glucose management - UpToDate
+https://www.uptodate.com/contents/preexisting-pregestational-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management/print… 15/27Gestational diabetes
+Pathophysiology — Insulin resistance rapidly dissipates after expulsion of the placenta, as
+described above (see 'Pathophysiology' above). Diabetes medications are not routinely
+given after birth to patients with gestational diabetes as glucose levels tend to be normal
+without exogenous glucose-lowering therapy.
+Glucose monitoring and targets
+Breastfeeding — Based on observational studies, breastfeeding may prevent the
+development of type 2 diabetes in mothers with a history of gestational diabetes (See
+"Gestational diabetes mellitus: Obstetric issues and management", section on
+'Breastfeeding'.)
+SOCIETY GUIDELINE LINKS
+Links to society and government-sponsored guidelines from selected countries and regions
+around the world are provided separately. (See "Society guideline links: Diabetes mellitus in
+pregnancy".)
+INFORMATION FOR PATIENTS
+UpToDate offers two types of patient education materials, "The Basics" and "Beyond the
+Basics." The Basics patient education pieces are written in plain language, at the 5 to 6
+grade reading level, and they answer the four or five key questions a patient might have
+about a given condition. These articles are best for patients who want a general overview
+and who prefer short, easy-to-read materials. Beyond the Basics patient education pieces are
+longer, more sophisticated, and more detailed. These articles are written at the 10 to 12Many obstetrics services, including our own, assess fasting glucose levels 24 to 72 hours
+after birth to check for overt diabetes (fasting glucose ≥ 126 mg/dL [7.0 mmol/L]) in
+patients with gestational diabetes and continue to treat patients with hyperglycemia. A
+normal postpartum fasting glucose does not obviate the need for additional postpartum
+glucose testing. Typically, this consists of a two-hour oral glucose tolerance test at 4 to
+12 weeks postpartum. However, some obstetrics services are now performing an early
+two-hour oral glucose tolerance test during the delivery hospitalization. If overt diabetes
+is not diagnosed while the patient is in the hospital postpartum, follow-up for
+development of overt diabetes is recommended. Follow-up is discussed in detail
+separately. (See "Gestational diabetes mellitus: Glucose management, maternal
+prognosis, and follow-up", section on 'Follow-up' and "Gestational diabetes mellitus:
+Obstetric issues and management", section on 'Screening for overt diabetes'.)●
+th th
+th th23/02/2025, 23:06 Preexisting (pregestational) and gestational diabetes: Intrapartum and postpartum glucose management - UpToDate
+https://www.uptodate.com/contents/preexisting-pregestational-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management/print… 16/27grade reading level and are best for patients who want in-depth information and are
+comfortable with some medical jargon.
+Here are the patient education articles that are relevant to this topic. We encourage you to
+print or e-mail these topics to your patients. (You can also locate patient education articles
+on a variety of subjects by searching on "patient info" and the keyword(s) of interest.)
+SUMMARY AND RECOMMENDATIONSBasics topics (see "Patient education: Care during pregnancy for people with type 1 or type
+2 diabetes (The Basics)")●
+Beyond the Basics topics (see "Patient education: Care during pregnancy for patients with
+type 1 or 2 diabetes (Beyond the Basics)")●
+Type 1 diabetes ●
+Patients on multiple daily injections •
+In early labor, if food is not restricted, the patient on multiple daily insulin injections
+follows their home subcutaneous insulin regimen, including basal, prandial, and
+correctional coverage. If the patient's blood glucose levels have been tightly controlled
+at home or if the patient is not eating full meals on the labor unit, a dose reduction
+may be necessary. (See 'Patients on multiple daily insulin injections' above.)-
+Once food is restricted and/or the active phase is reached, an intravenous insulin
+infusion is started using a standardized protocol. Dextrose-containing intravenous
+fluids are administered along with the insulin infusion as long as the patient is not
+hyperglycemic (ie, administer if blood glucose <160 mg/dL [8.9 mmol/L]). (See 'Patients
+on multiple daily insulin injections' above.)-
+Postpartum insulin requirements in the first few days are lower than prior to
+pregnancy, reaching a nadir at 48 hours before increasing and stabilizing by two to
+four weeks after birth. If the prepregnancy insulin dosages are known, we provide an
+initial postpartum regimen that is 60 to 70 percent of the prepregnancy regimen. This
+usually equates to insulin dosages that are 30 to 35 percent of the insulin dosages
+prior to delivery. Postpartum insulin requirements vary widely; close monitoring and
+adjustment are needed. (See 'Insulin management' above and 'Glycemic monitoring
+and targets' above.)-
+In breastfeeding patients with type 1 diabetes, insulin requirements may remain 15
+to 20 percent lower than prior to pregnancy. (See 'Breastfeeding mothers' above.)23/02/2025, 23:06 Preexisting (pregestational) and gestational diabetes: Intrapartum and postpartum glucose management - UpToDate
+https://www.uptodate.com/contents/preexisting-pregestational-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management/print… 17/27Patients who use an insulin pump may continue to do so intrapartum if hospital
+policies allow, but need to move the infusion site away from the lower abdomen (eg, to
+the flank, thigh, or buttock), which is used for contraction and fetal monitoring. Data on
+the use of hybrid closed-loop insulin pumps in the intrapartum and postpartum period
+are limited. (See 'Patients on insulin pumps' above.)•
+Target blood glucose levels are 70 to 125 mg/dL (3.9 to 6.9 mmol/L) during active labor.
+Higher blood glucose levels have been associated with fetal acidemia and neonatal
+hypoglycemia. These levels may be relaxed after birth (<140 mg/dL [7.8 mmol/L]
+preprandial glucose, <180 mg/dL [10.0 mmol/L] any random glucose) and until the
+patient stabilizes to avoid hypoglycemia. (See 'Glycemic targets' above and 'Glycemic
+monitoring and targets' above.)•
+Type 2 diabetes ●
+In early labor, if food is not restricted, the patient on multiple daily insulin injections
+takes 70 to 80 percent of the home antenatal total daily insulin dose. Half of this
+provided dose is given as intermediate-acting insulin (NPH) in two divided doses every
+12 hours. The other half is given as standing prandial rapid-acting insulin in three
+divided doses before meals. Correctional rapid-acting insulin is also given before meals
+(table 1). (See 'Patients on multiple daily injections' above.)•
+After food restriction and/or in the active phase of labor, either an intravenous
+insulin infusion or correctional insulin administered via a sliding scale every two to four
+hours (table 1) is acceptable. Dextrose-containing fluids are infused if the patient is
+not hyperglycemic. If the patient is very or persistently hyperglycemic (glucose >200
+mg/dL [11.1 mmol/L] on presentation or glucose >125 mg/dL [6.9 mmol/L] on multiple
+checks), we use an intravenous insulin infusion rather than subcutaneous insulin. (See
+'Intrapartum management' above.)•
+Patients on metformin should hold this medication during labor. (See 'Patients on
+metformin or an insulin pump' above.)•
+Patients managed with insulin pumps antepartum can be managed similarly to
+patients with type 1 diabetes who use pumps. (See 'Patients on insulin pumps' above.)•
+Postpartum – Most patients with type 2 diabetes should be treated with metformin
+unless there are contraindications. Those who were on long-standing insulin before
+pregnancy should follow a similar management plan as for type 1 diabetes, with the
+addition of metformin. Breastfeeding may have metabolic benefits and should be
+encouraged, but options for agents to treat hyperglycemia in breastfeeding patients are
+limited to metformin, glyburide, and insulin. (See 'Metformin management' above and
+'Insulin management' above.)•23/02/2025, 23:06 Preexisting (pregestational) and gestational diabetes: Intrapartum and postpartum glucose management - UpToDate
+https://www.uptodate.com/contents/preexisting-pregestational-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management/print… 18/27ACKNOWLEDGMENT
+The UpToDate editorial staff acknowledges Michael F Greene, MD and Siri Kjos, MD, who
+contributed to earlier versions of this topic review.
+Use of UpToDate is subject to the Terms of Use.
+REFERENCES
+1. American College of Obstetricians and Gynecologists' Committee on Practice Bulletins—
+Obstetrics. ACOG Practice Bulletin No. 201: Pregestational Diabetes Mellitus. Obstet
+Gynecol 2018; 132:e228. Reaffirmed 2023.
+2. Diabetes Control and Complications Trial Research Group, Nathan DM, Genuth S, et al.
+The effect of intensive treatment of diabetes on the development and progression of
+long-term complications in insulin-dependent diabetes mellitus. N Engl J Med 1993;
+329:977.
+3. Carson BS, Philipps AF, Simmons MA, et al. Effects of a sustained insulin infusion upon
+glucose uptake and oxygenation of the ovine fetus. Pediatr Res 1980; 14:147.
+4. Philipps AF, Rosenkrantz TS, Porte PJ, Raye JR. The effects of chronic fetal hyperglycemia
+on substrate uptake by the ovine fetus and conceptus. Pediatr Res 1985; 19:659.
+5. Philipson EH, Kalhan SC, Riha MM, Pimentel R. Effects of maternal glucose infusion on
+fetal acid-base status in human pregnancy. Am J Obstet Gynecol 1987; 157:866.
+6. Mimouni F, Miodovnik M, Siddiqi TA, et al. Perinatal asphyxia in infants of insulin-
+dependent diabetic mothers. J Pediatr 1988; 113:345.
+7. Madsen H, Ditzel J. Changes in red blood cell oxygen transport in diabetic pregnancy.
+Am J Obstet Gynecol 1982; 143:421.Gestational diabetes ●
+During labor, patients with gestational diabetes can often be managed with
+subcutaneous correctional insulin (table 1). If blood glucose levels are persistently
+above the goal of 125 mg/dL (6.9 mmol/L) despite subcutaneous insulin, insul in infusion
+can be initiated.•
+Close follow-up for the development of overt diabetes is required. Choice of test, timing,
+interpretation, and ongoing testing are discussed separately. (See "Gestational diabetes
+mellitus: Glucose management, maternal prognosis, and follow-up", section on 'Follow-
+up'.)•23/02/2025, 23:06 Preexisting (pregestational) and gestational diabetes: Intrapartum and postpartum glucose management - UpToDate
+https://www.uptodate.com/contents/preexisting-pregestational-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management/print… 19/278. Widness JA, Teramo KA, Clemons GK, et al. Direct relationship of antepartum glucose
+control and fetal erythropoietin in human type 1 (insulin-dependent) diabetic pregnancy.
+Diabetologia 1990; 33:378.
+9. Kline GA, Edwards A. Antepartum and intra-partum insulin management of type 1 and
+type 2 diabetic women: Impact on clinically significant neonatal hypoglycemia. Diabetes
+Res Clin Pract 2007; 77:223.
+10. Taylor R, Lee C, Kyne-Grzebalski D, et al. Clinical outcomes of pregnancy in women with
+type 1 diabetes(1). Obstet Gynecol 2002; 99:537.
+11. Yamamoto JM, Benham J, Mohammad K, et al. Intrapartum glycaemic control and
+neonatal hypoglycaemia in pregnancies complicated by diabetes: a systematic review.
+Diabet Med 2018; 35:173.
+12. Yamamoto JM, Donovan LE, Mohammad K, Wood SL. Severe neonatal hypoglycaemia
+and intrapartum glycaemic control in pregnancies complicated by type 1, type 2 and
+gestational diabetes. Diabet Med 2020; 37:138.
+13. Yamamoto JM, Corcoy R, Donovan LE, et al. Maternal glycaemic control and risk of
+neonatal hypoglycaemia in Type 1 diabetes pregnancy: a secondary analysis of the
+CONCEPTT trial. Diabet Med 2019; 36:1046.
+14. Hamel MS, Kanno LM, Has P, et al. Intrapartum Glucose Management in Women With
+Gestational Diabetes Mellitus: A Randomized Controlled Trial. Obstet Gynecol 2019;
+133:1171.
+15. Citro F, Bianchi C, Aragona M, et al. Accuracy of intermittently scanned continuous
+glucose monitoring during caesarean delivery in pregnant women with insulin-treated
+diabetes. Diabetes Res Clin Pract 2024; 210:111611.
+16. Jovanovic L, Peterson CM. Insulin and glucose requirements during the first stage of
+labor in insulin-dependent diabetic women. Am J Med 1983; 75:607.
+17. Dude A, Niznik CM, Szmuilowicz ED, et al. Management of Diabetes in the Intrapartum
+and Postpartum Patient. Am J Perinatol 2018; 35:1119.
+18. Dude AM, Niznik C, Peaceman AM, Yee LM. Evaluation of an Intrapartum Insul in
+Regimen for Women With Diabetes. Obstet Gynecol 2020; 136:411.
+19. Kitzmiller JL, Gavin L. Preexisting diabetes and pregnancy. In: Manual of Endocrinology a
+nd Metabolism, 3rd ed, Lavin N (Ed), Lippincott Williams & Wilkins, Philadelphia 2002. p.6
+60.
+20. Dinglas C, Muscat J, Adams T, et al. Software-guided insulin dosing improves
+intrapartum glycemic management in women with diabetes mellitus. Am J Obstet
+Gynecol 2018; 219:191.e1.
+21. Bouw JW, Campbell N, Hull MA, et al. A retrospective cohort study of a nurse-driven
+computerized insulin infusion program versus a paper-based protocol in critically ill23/02/2025, 23:06 Preexisting (pregestational) and gestational diabetes: Intrapartum and postpartum glucose management - UpToDate
+https://www.uptodate.com/contents/preexisting-pregestational-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management/print… 20/27patients. Diabetes Technol Ther 2012; 14:125.
+22. Wilkie GL, Delpapa E, Leftwich HK. Intrapartum continuous subcutaneous insulin
+infusion vs intravenous insulin infusion among pregnant individuals with type 1
+diabetes mellitus: a randomized controlled trial. Am J Obstet Gynecol 2023; 229:680.e1.
+23. Beunen K, Gillard P, Van Wilder N, et al. Advanced Hybrid Closed-Loop Therapy
+Compared With Standard Insulin Therapy Intrapartum and Early Postpartum in Women
+With Type 1 Diabetes: A Secondary Observational Analysis From the CRISTAL
+Randomized Controlled Trial. Diabetes Care 2024; 47:2002.
+24. Fresa R, Visalli N, Di Blasi V, et al. Experiences of continuous subcutaneous insulin
+infusion in pregnant women with type 1 diabetes during delivery from four Italian
+centers: a retrospective observational study. Diabetes Technol Ther 2013; 15:328.
+25. Rosenberg VA, Eglinton GS, Rauch ER, Skupski DW. Intrapartum maternal glycemic
+control in women with insulin requiring diabetes: a randomized clinical trial of rotating
+fluids versus insulin drip. Am J Obstet Gynecol 2006; 195:1095.
+26. Keller MF, Vestgaard M, Damm P, et al. Treatment with the long-acting insulin analog
+degludec during pregnancy in women with type 1 diabetes: An observational study of 22
+cases. Diabetes Res Clin Pract 2019; 152:58.
+27. Waters TP, Kim SY, Sharma AJ, et al. Longitudinal changes in glucose metabolism in
+women with gestational diabetes, from late pregnancy to the postpartum period.
+Diabetologia 2020; 63:385.
+28. Achong N, Duncan EL, McIntyre HD, Callaway L. Peripartum management of glycemia in
+women with type 1 diabetes. Diabetes Care 2014; 37:364.
+29. Ringholm L, Roskjær AB, Engberg S, et al. Breastfeeding at night is rarely followed by
+hypoglycaemia in women with type 1 diabetes using carbohydrate counting and flexible
+insulin therapy. Diabetologia 2019; 62:387.
+30. Riviello C, Mello G, Jovanovic LG. Breastfeeding and the basal insulin requirement in type
+1 diabetic women. Endocr Pract 2009; 15:187.
+31. Nørgaard SK, Nørgaard K, Roskjær AB, et al. Insulin Pump Settings During Breastfeeding
+in Women with Type 1 Diabetes. Diabetes Technol Ther 2020; 22:314.
+32. García-Patterson A, Gich I, Amini SB, et al. Insulin requirements throughout pregnancy
+in women with type 1 diabetes mellitus: three changes of direction. Diabetologia 2010;
+53:446.
+33. Stewart ZA, Wilinska ME, Hartnell S, et al. Closed-Loop Insulin Delivery during Pregnancy
+in Women with Type 1 Diabetes. N Engl J Med 2016; 375:644.
+34. Donovan LE, Feig DS, Lemieux P, et al. A Randomized Trial of Closed-Loop Insulin
+Delivery Postpartum in Type 1 Diabetes. Diabetes Care 2023; 46:2258.23/02/2025, 23:06 Preexisting (pregestational) and gestational diabetes: Intrapartum and postpartum glucose management - UpToDate
+https://www.uptodate.com/contents/preexisting-pregestational-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management/print… 21/2735. Ringholm L, Stougaard EB, Nørgaard SK, et al. Diabetes Management During
+Breastfeeding in Women with Type 1 Diabetes. Curr Diab Rep 2020; 20:34.
+36. Achong N, McIntyre HD, Callaway L, Duncan EL. Glycaemic behaviour during
+breastfeeding in women with Type 1 diabetes. Diabet Med 2016; 33:947.
+37. Insulin. Drugs and Lactation Database (LactMed). National Library of Medicine (US). Avail
+able at: https://www.ncbi.nlm.nih.gov/books/NBK500991/ (Accessed on March 17, 2022).
+38. Metformin. Drugs and Lactation Database (LactMed). National Library of Medicine (US).
+Available at: https://www.ncbi.nlm.nih.gov/books/NBK501020/ (Accessed on March 17, 2
+022).
+39. Glyburide. Drugs and Lactation Database (LactMed). National Library of Medicine (US). A
+vailable at: https://www.ncbi.nlm.nih.gov/books/NBK500865/ (Accessed on March 17, 20
+22).
+Topic 4441 Version 48.023/02/2025, 23:06 Preexisting (pregestational) and gestational diabetes: Intrapartum and postpartum glucose management - UpToDate
+https://www.uptodate.com/contents/preexisting-pregestational-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management/print… 22/27GRAPHICS
+Correctional rapid-acting subcutaneous insulin scale for intrapartum use
+Patients on 40 to 79 total units of insulin per day*
+Blood sugar Rapid-acting insulin dose
+≤125 mg/dL 0 units
+126 to 150 mg/dL 1 unit
+151 to 175 mg/dL 2 units
+176 to 200 mg/dL 3 units
+>200 mg/dL Start intravenous insulin infusion
+Patients on 80 to 139 total units of insulin per day
+Blood sugar Rapid-acting insulin dose
+≤125 mg/dL 0 units
+126 to 150 mg/dL 2 units
+151 to 175 mg/dL 4 units
+176 to 200 mg/dL 6 units
+>200 mg/dL Start intravenous insulin infusion
+Patients on 140 to 200 total units of insulin per day*
+Blood sugar Rapid-acting insulin dose
+≤125 mg/dL 0 units
+126 to 150 mg/dL 3 units
+151 to 175 mg/dL 6 units
+176 to 200 mg/dL 9 units
+>200 mg/dL Start intravenous insulin infusion
+* Patients on <40 or >200 units of insulin per day may require customized correctional insulin.
+Graphic 135227 Version 1.023/02/2025, 23:06 Preexisting (pregestational) and gestational diabetes: Intrapartum and postpartum glucose management - UpToDate
+https://www.uptodate.com/contents/preexisting-pregestational-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management/print… 23/27Liberalized glycemic control protocol for use in laboring patients with
+gestational diabetes
+Blood glucose (mg/dL), monitored every
+4 hoursRapid-acting insulin administered
+≤120* 0 units
+121-150 2 units
+151-200 4 units
+>200 8 units
+* When the blood sugar is <60 mg/dL, juice is provided to treat hypoglycemia.
+Data from: Hamel MS, Kanno LM, Has P, et al. Intrapartum Glucose Management in Women With Gestational Diabetes
+Mellitus: A Randomized Controlled Trial. Obstet Gynecol 2019; 133:1171.
+Graphic 135238 Version 1.023/02/2025, 23:06 Preexisting (pregestational) and gestational diabetes: Intrapartum and postpartum glucose management - UpToDate
+https://www.uptodate.com/contents/preexisting-pregestational-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management/print… 24/27Rotating fluids protocol
+Maternal plasma glucoseIntravenous insulin
+(units/hour)*Intravenous solution
+"Rotating fluids." For use in women with gestational diabetes. This protocol should not be
+used in women with type 1 or type 2 diabetes mellitus.
+≤100 mg/dL (5.6 mmol/L) Hold D5NS at 125 mL/hour to achieve
+CBG of 100 mg/dL (5.6 mmol/L)
+101 to 140 mg/dL (5.6 to 7.8
+mmol/L)Hold Lacted Ringers or normal saline
+at 125 mL/hour to achieve CBG
+of 100 mg/dL (5.6 mmol/L)
+>140 mg/dL (7.8 mmol/L) Short- or rapid-acting insulin
+infusion titrated to achieve CBG
+of 100 mg/dL (5.6 mmol/L)Lacted Ringers or normal saline
+at 125 mL/hour to achieve CBG
+of 100 mg/dL (5.6 mmol/L)
+CBG: capillary blood glucose; D5NS: 5 percent dextrose normal saline.
+* Mix 25 units regular insulin in 250 mL normal saline (1 unit:10 mL).
+Reference:
+1. Jovanovic L, Peterson CM. Management of the pregnant, insulin-dependent diabetic woman. Diabetes Care 1980; 3:63.
+Data from: Rosenberg VA, Eglinton GS, Rauch ER, Skupski DW. Intrapartum maternal glycemic control in women with insulin
+requiring diabetes: a randomized clinical trial of rotating ﬂuids versus insulin drip. Am J Obstet Gynecol 2006; 195:1095.
+Graphic 76661 Version 12.0[1]23/02/2025, 23:06 Preexisting (pregestational) and gestational diabetes: Intrapartum and postpartum glucose management - UpToDate
+https://www.uptodate.com/contents/preexisting-pregestational-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management/print… 25/27Correctional insulin sliding scale for postpartum use
+Weight <75 kg (165 pounds)
+Blood glucose Rapid-acting insulin
+<150 mg/dL [8.3 mmol/L] 0 units
+151 to 199 mg/dL [8.4 to 11.0 mmol/L] 1 unit
+200 to 249 mg/dL [11.1 to 13.8 mmol/L] 2 units
+250 to 299 mg/dL [13.9 to 16.6 mmol/L] 3 units
+300 to 350 mg/dL [16.7 to 19.4 mmol/L] 4 units
+351 to 400 mg/dL [19.5 to 22.2 mmol/L] 5 units
+Weight ≥ 75 kg (165 pounds)
+Blood glucose Rapid-acting insulin
+<150 mg/dL [8.3 mmol/L] 0 units
+151 to 199 mg/dL [8.4 to 11.0 mmol/L] 2 units
+200 to 249 mg/dL [11.1 to 13.8 mmol/L] 4 units
+250 to 299 mg/dL [13.9 to 16.6 mmol/L] 6 units
+300 to 350 mg/dL [16.7 to 19.4 mmol/L] 8 units
+351 to 400 mg/dL [19.5 to 22.2 mmol/L] 10 units
+Graphic 138403 Version 1.023/02/2025, 23:06 Preexisting (pregestational) and gestational diabetes: Intrapartum and postpartum glucose management - UpToDate
+https://www.uptodate.com/contents/preexisting-pregestational-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management/print… 26/27Contributor Disclosures
+Camille E Powe, MDSpeaker's Bureau: American Diabetes Association [Diabetes]. Other Financial
+Interest: Associate Editor of Diabetes Care [Diabetes]; Mediflix Inc [Medical information]. All of the
+relevant financial relationships listed have been mitigated.David M Nathan, MDConsultant/Advisory
+Boards: Lexicon [Diabetes therapy]. All of the relevant financial relationships listed have been
+mitigated.Erika F Werner, MD, MSGrant/Research/Clinical Trial Support: Malama [Pilot RCT for
+gestational diabetes (PI, funding to institution)]; NIH [Glycemic profiles in pregnancy (Site PI, funding to
+institution)]. All of the relevant financial relationships listed have been mitigated.Vanessa A Barss,
+MD, FACOGNo relevant financial relationship(s) with ineligible companies to disclose.
+Contributor disclosures are reviewed for conflicts of interest by the editorial group. When found, these
+are addressed by vetting through a multi-level review process, and through requirements for
+references to be provided to support the content. Appropriately referenced content is required of all
+authors and must conform to UpToDate standards of evidence.
+Conflict of interest policy
+23/02/2025, 23:06 Preexisting (pregestational) and gestational diabetes: Intrapartum and postpartum glucose management - UpToDate
+https://www.uptodate.com/contents/preexisting-pregestational-and-gestational-diabetes-intrapartum-and-postpartum-glucose-management/print… 27/27

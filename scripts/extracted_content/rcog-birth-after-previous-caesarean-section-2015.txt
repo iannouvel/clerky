@@ -1,0 +1,1720 @@
+# Extracted from: RCOG - Birth After Previous Caesarean Section - 2015.pdf
+# Guideline ID: rcog-birth-after-previous-caesarean-section-2015
+# Content length: 109616 characters
+# Processing date: 1732953491.0000415
+
+Birth After Previous 
+Caesarean Birth
+Green-top Guideline No. 45
+October 2015
+RCOG Green-top Guideline No. 45 © Royal College of Obstetricians and Gynaecologists2 of 31Birth After Previous Caesarean Birth
+This is the second edition of this guideline. The first edition was published in 2007 under the same title.1
+Executive summary of recommendations 
+Antenatal care schedule
+What is the recommended schedule of antenatal care for pregnant women with previous caesarean 
+delivery? 
+Implementation of a vaginal birth after previous caesarean delivery (VBAC) versus elective repeat 
+caesarean section (ERCS) checklist or clinical care pathway is recommended to facilitate best 
+practice in antenatal counselling, shared decision making and documentation. [ New 2015 ]
+Suitability for planned VBAC
+Which women are best suited to have a planned VBAC?
+Planned VBAC is appropriate for and may be offered to the majority of women with a singleton 
+pregnancy of cephalic presentation at 37+0 weeks or beyond who have had a single previous lower 
+segment caesarean delivery, with or without a history of previous vaginal birth.
+What are the contraindications to VBAC?
+Planned VBAC is contraindicated in women with previous uterine rupture or classical caesarean scar 
+and in women who have other absolute contraindications to vaginal birth that apply irrespective of 
+the presence or absence of a scar (e.g. major placenta praevia).
+In women with complicated uterine scars, caution should be exercised and decisions should be 
+made on a case-by-case basis by a senior obstetrician with access to the details of previous surgery.
+Can women with two or more prior caesareans be offered planned VBAC?
+Women who have had two or more prior lower segment caesarean deliveries may be offered VBAC 
+after counselling by a senior obstetrician. This should include the risk of uterine rupture and 
+maternal morbidity, and the individual likelihood of successful VBAC (e.g. given a history of prior 
+vaginal delivery). Labour should be conducted in a centre with suitable expertise and recourse to 
+immediate surgical delivery. [ New 2015 ]
+What factors are associated with an increased risk of uterine rupture in women undergoing VBAC?
+An individualised assessment of the suitability for VBAC should be made in women with factors 
+that increase the risk of uterine rupture.
+Antenatal counselling
+What are the overall aims of antenatal counselling?
+The antenatal counselling of women with a previous caesarean birth should be documented in 
+the notes.
+A final decision for mode of birth should be agreed upon by the woman and member(s) of the 
+maternity team before the expected/planned date of delivery.
+When a date for ERCS is being arranged, a plan for the event of labour starting before the scheduled 
+date should be documented in the notes.P
+DB
+CD
+P
+P
+P
+PRCOG Green-top Guideline No. 45 © Royal College of Obstetricians and Gynaecologists3 of 31The routine use of VBAC checklists during antenatal counselling should be considered, as they 
+would ensure informed consent and shared decision making in women undergoing VBAC. [ New 2015 ]
+A patient information leaflet should be provided with the consultation.
+What are the risks and benefits of planned VBAC versus ERCS from 39+0 weeks of gestation?
+Women should be made aware that successful VBAC has the fewest complications and therefore 
+the chance of VBAC success or failure is an important consideration when choosing the mode of 
+delivery.
+Women should be made aware that the greatest risk of adverse outcome occurs in a trial of VBAC 
+resulting in emergency caesarean delivery.
+Women should be informed that planned VBAC is associated with an approximately 1 in 200 (0.5%) 
+risk of uterine rupture.
+Women should be informed that the absolute risk of birth-related perinatal death associated with 
+VBAC is extremely low and comparable to the risk for nulliparous women in labour.
+Women should be informed that ERCS is associated with a small increased risk of placenta 
+praevia and/or accreta in future pregnancies and of pelvic adhesions complicating any future 
+abdominopelvic surgery.
+The risk of perinatal death with ERCS is extremely low, but there is a small increase in neonatal 
+respiratory morbidity when ERCS is performed before 39+0 weeks of gestation. The risk of respiratory 
+morbidity can be reduced with a preoperative course of antenatal corticosteroids.
+What is the likelihood of VBAC success?
+Women should be informed that the success rate of planned VBAC is 72–75%.
+What factors determine the individualised likelihood of VBAC success?
+Women with one or more previous vaginal births should be informed that previous vaginal delivery, 
+particularly previous VBAC, is the single best predictor of successful VBAC and is associated with a 
+planned VBAC success rate of 85–90%. Previous vaginal delivery is also independently associated 
+with a reduced risk of uterine rupture.
+Intrapartum management of planned VBAC
+What delivery setting is appropriate for conducting planned VBAC?
+Women should be advised that planned VBAC should be conducted in a suitably staffed and 
+equipped delivery suite with continuous intrapartum care and monitoring with resources available 
+for immediate caesarean delivery and advanced neonatal resuscitation.
+Women with an unplanned labour and a history of previous caesarean delivery should have a 
+discussion with an experienced obstetrician to determine feasibility of VBAC. [ New 2015 ]
+Epidural analgesia is not contraindicated in a planned VBAC, although an increasing requirement 
+for pain relief in labour should raise awareness of the possibility of an impending uterine rupture.
+Women should be advised to have continuous electronic fetal monitoring for the duration of 
+planned VBAC, commencing at the onset of regular uterine contractions.
+How should women with a previous caesarean birth be advised in relation to induction or augmentation 
+of labour?P
+CB
+B
+P
+PCB
+CB
+C
+C
+D
+DRCOG Green-top Guideline No. 45 © Royal College of Obstetricians and Gynaecologists4 of 31Women should be informed of the two- to three-fold increased risk of uterine rupture and around 
+1.5-fold increased risk of caesarean delivery in induced and/or augmented labour compared with 
+spontaneous VBAC labour.
+A senior obstetrician should discuss the following with the woman: the decision to induce labour, 
+the proposed method of induction, the decision to augment labour with oxytocin, the time intervals 
+for serial vaginal examination and the selected parameters of progress that would necessitate 
+discontinuing VBAC.
+Clinicians should be aware that induction of labour using mechanical methods (amniotomy or 
+Foley catheter) is associated with a lower risk of scar rupture compared with induction using 
+prostaglandins.
+Planning and conducting ERCS
+What elements are involved in the perioperative, intraoperative and postoperative care for ERCS?
+ERCS delivery should be conducted after 39+0 weeks of gestation.
+Antibiotics should be administered before making the skin incision in women undergoing ERCS. 
+[New 2015 ]
+All women undergoing ERCS should receive thromboprophylaxis according to existing RCOG 
+guidelines. [ New 2015 ]
+Early recognition of placenta praevia, adopting a multidisciplinary approach and informed consent 
+are important considerations in the management of women with placenta praevia and previous 
+caesarean delivery. [ New 2015 ]
+How should women in special circumstances be cared for?
+Clinicians should be aware that there is uncertainty about the safety and efficacy of planned 
+VBAC in pregnancies complicated by post-dates, twin gestation, fetal macrosomia, antepartum 
+stillbirth or maternal age of 40 years or more. Hence, a cautious approach is advised if VBAC is 
+being considered in such circumstances.
+Women who are preterm and considering the options for birth after a previous caesarean delivery 
+should be informed that planned preterm VBAC has similar success rates to planned term VBAC but 
+with a lower risk of uterine rupture.
+1. Purpose and scope
+The purpose of this guideline is to provide evidence-based information to inform the antenatal and 
+intrapartum care of pregnant women who have had previous caesarean delivery, with the options for 
+delivery being either planned vaginal birth after previous caesarean delivery (VBAC) or elective repeat 
+caesarean section (ERCS). 
+2. Introduction and background epidemiology
+There has been continued debate about defining an acceptable caesarean delivery rate and what rate 
+achieves optimal maternal and infant outcomes. The overall caesarean delivery rate in England for 2012–
+2013 was 25.5%2; the majority were emergency (14.8%) rather than elective (10.7%) caesarean births. 
+The caesarean delivery rates for Wales,3 Northern Ireland4 and Scotland5 in 2012–2013 were 27.5%, 29.8% 
+and 27.3% respectively. Hence, counselling women for and managing birth after caesarean delivery are 
+important issues. P
+P
+PPD
+D
+A
+B
+BRCOG Green-top Guideline No. 45 © Royal College of Obstetricians and Gynaecologists5 of 31There is a consensus (National Institute for Health and Care Excellence [NICE],6 Royal College of 
+Obstetricians and Gynaecologists [RCOG],1 American College of Obstetricians and Gynecologists [ACOG]/
+National Institutes of Health [NIH]7–9) that planned VBAC is a clinically safe choice for the majority of 
+women with a single previous lower segment caesarean delivery. Such a strategy is also supported by 
+health economic modelling6,10 and would also at least limit any escalation of the caesarean delivery 
+rate and maternal morbidity associated with multiple caesarean deliveries.11–15 This guideline provides 
+evidence-based recommendations on best practice for the antenatal and intrapartum management of 
+women undergoing planned VBAC and ERCS. The terms used in this guideline are defined in Appendix I. 
+3. Identification and assessment of evidence
+This guideline was developed in accordance with standard methodology for producing RCOG Green-top 
+Guidelines. MEDLINE, PubMed, all Evidence-Based Medicine (EBM) Reviews (Cochrane Central Register 
+of Controlled Trials, Cochrane Database of Systematic Reviews, Methodology Register, ACP Journal 
+Club, Database of Abstracts of Reviews of Effects [DARE], Health Technology Assessment database 
+[HTA], Maternity and Infant Care), EMBASE and Trip were searched for relevant randomised controlled 
+trials, systematic reviews, meta-analyses and cohort studies. The search was restricted to articles 
+published between 2003 and February 2015. Search words included ‘VBAC’, ‘TOLAC’, ‘vaginal birth 
+after caesarean’, ‘previous caesarean’, ‘prior caesarean’ and all relevant Medical Subject Headings (MeSH) 
+terms. This guideline assesses the quality of evidence and determines the strength of recommendations 
+in accordance with Scottish Intercollegiate Guidelines Network criteria.
+4. Identified studies and limitations of data
+Notable publications within the last 10 years have included evidence-based systematic reviews,9,16,17 clinical 
+guidelines from the UK (RCOG 20071 and NICE 20116) and the USA (ACOG 20107; NIH 2010 Consensus 
+report8) and a study by the US National Institute of Child Health and Human Development (NICHD, 2004; 
+17 898 planned VBACs, 15 801 planned ERCSs at 37+0–41+0 weeks of gestation18). Important attributes 
+of the NICHD study18 include its large sample size, prospective strict case ascertainment and reporting 
+outcomes according to planned VBAC and planned ERCS antenatal decisions rather than observed 
+modes of delivery. Many of the recent studies vary in their case ascertainment and outcome criteria. 
+These include an Australian multicentre patient preference cohort trial (2012; 1237 planned VBACs, 
+1108 planned ERCSs at 38+0–39+0 weeks of gestation),19 a UK national case–control study (2012–2013; 
+UK Obstetric Surveillance System)12,13,20 and Scottish (2013),21 Australian (2010)22 and Dutch (2009)23 
+population-based studies. Importantly, although planned ERCS is recommended to be conducted from 
+39+0 weeks of gestation,6 most studies have reported ERCS outcomes for deliveries that have occurred 
+between 37+0 and 40+0 weeks of gestation. 
+5. Antenatal care schedule
+5.1 What is the recommended schedule of antenatal care for pregnant women with previous 
+caesarean delivery?
+Implementation of a VBAC versus ERCS checklist or clinical care pathway is recommended to 
+facilitate best practice in antenatal counselling, shared decision making and documentation.
+The antenatal care schedule should comply with that recommended by the NICE antenatal 
+care guideline,24 with specific reviews as shown in Appendices II and III. NICE25 pathways 
+may also be used as guides when devising appropriate local clinical care pathways.
+In the majority of cases, counselling for mode of delivery could be conducted by a member 
+of the maternity team soon after the woman’s midtrimester ultrasound, assuming that there P
+Evidence 
+level 4RCOG Green-top Guideline No. 45 © Royal College of Obstetricians and Gynaecologists6 of 31were no contraindications to planned VBAC. An obstetrician should be involved in any of 
+the following situations: the woman had contraindications that precluded VBAC, she was 
+uncertain of mode of delivery, she specifically requested ERCS, she required induction 
+of labour (e.g. more than 41+0 weeks of gestation) or she developed specific pregnancy 
+complications (e.g. pre-eclampsia, breech presentation, fetal growth restriction, macrosomia). 
+After initial counselling, some more complex cases may need senior support. In most cases, 
+the decision regarding mode of delivery should be finalised by 36+0 weeks of gestation. Having 
+well-structured evidence-based patient information leaflets that list key points, including the 
+probability of the woman having successful VBAC, is likely to improve the informed decision-
+making process on mode of birth after caesarean delivery26 (see Appendix IV).
+Use of specialist antenatal clinics designed to guide and support women through the informed 
+decision-making process on mode of birth after a primary caesarean delivery has been found 
+to improve VBAC attempt rates in Australia.27
+6. Suitability for planned VBAC
+6.1 Which women are best suited to have a planned VBAC?
+Planned VBAC is appropriate for and may be offered to the majority of women with a singleton 
+pregnancy of cephalic presentation at 37+0 weeks or beyond who have had a single previous lower 
+segment caesarean delivery, with or without a history of previous vaginal birth.
+There is a consensus, endorsed by evidence-based systematic reviews9,16,17 and clinical 
+guidelines,1,6–8 that planned VBAC is a safe and appropriate mode of delivery for the majority 
+of pregnant women with a single previous lower segment caesarean delivery.
+However, a review of the previous caesarean delivery records and current pregnancy is recommended 
+to identify contraindications to VBAC. 
+6.2 What are the contraindications to VBAC?
+Planned VBAC is contraindicated in women with previous uterine rupture or classical caesarean scar 
+and in women who have other absolute contraindications to vaginal birth that apply irrespective of 
+the presence or absence of a scar (e.g. major placenta praevia).
+In women with complicated uterine scars, caution should be exercised and decisions should be 
+made on a case-by-case basis by a senior obstetrician with access to the details of previous surgery.
+Women with the following risk factors are considered to be at increased risk of adverse maternal and/or 
+perinatal outcome as a consequence of VBAC.
+Previous uterine rupture
+Based on limited observational data,28–30 women who have experienced a previous uterine 
+rupture are reported to have a higher risk (5% or higher) of recurrent uterine rupture with 
+labour. Hence previous uterine rupture is considered a contraindication to VBAC.
+Type of previous uterine incision
+Based on limited observational data,31,32 there is insufficient evidence to support the safety 
+of VBAC in women with previous inverted T or J incisions, low vertical uterine incisions or 
+significant inadvertent uterine extension at the time of primary caesarean; hence caution 
+should be exercised in these women and decisions should be made by a senior obstetrician 
+on a case-by-case basis. VBAC is contraindicated in women with previous classical caesearean 
+delivery due to the high risk of uterine rupture.33Evidence 
+level 4
+B
+Evidence 
+level 2++
+D
+D
+Evidence 
+level 3
+Evidence 
+level 3RCOG Green-top Guideline No. 45 © Royal College of Obstetricians and Gynaecologists7 of 31Previous uterine surgery
+Although previous uterine surgery is not within the scope of this guideline, there is uncertainty 
+whether women who have undergone laparoscopic or abdominal myomectomy, particularly 
+where the uterine cavity has been breached, are at increased risk of uterine rupture.34–41 Uterine 
+rupture after hysteroscopic resection of uterine septum is considered a rare complication.42,43 
+Given this uncertainty, women who have had such uterine surgery should be considered to 
+have delivery risks at least equivalent to those of VBAC and managed similarly in labour.
+Placenta praevia 
+A major degree of placenta praevia (and some cases of minor or partial placenta praevia) 
+is a contraindication to vaginal delivery, including VBAC (see RCOG Green-top Guideline 
+No. 27).44 A systematic review reported that women with one, two, or three or more previous 
+caesarean deliveries experience a 1%, 1.7% or 2.8% risk respectively of placenta praevia in 
+subsequent pregnancies,9 concurring with the findings of a recent UK population study and 
+meta-analysis.45 Placenta accreta occurs in 11–14% of women with placenta praevia and one prior 
+caesarean delivery and in 23–40% of women with placenta praevia and two prior caesarean 
+deliveries. In women with placenta praevia and five or more prior caesarean deliveries, the 
+incidence of placenta accreta is up to 67%.9 In view of these associations, the RCOG and NICE 
+have produced recommendations for women with a previous caesarean delivery which can be 
+found in RCOG Green-top Guideline No. 2744 and the NICE guideline.6
+6.3 Can women with two or more prior caesareans be offered planned VBAC?
+Women who have had two or more prior lower segment caesarean deliveries may be offered VBAC 
+after counselling by a senior obstetrician. This should include the risk of uterine rupture and 
+maternal morbidity, and the individual likelihood of successful VBAC (e.g. given a history of prior 
+vaginal delivery). Labour should be conducted in a centre with suitable expertise and recourse to 
+immediate surgical delivery.
+A multivariate analysis of the NICHD study showed that there was no significant difference 
+in the rates of uterine rupture in VBAC with two or more previous caesarean births (9/975, 
+92/10 000) compared with a single previous caesarean birth (115/16 915, 68/10 000).46 These 
+findings concur with other observational studies, which, overall, have shown similar rates of 
+VBAC success with two previous caesarean births (VBAC success rates of 62–75%) and single 
+prior caesarean birth.47–50 It is notable that more than half of the women with two previous 
+caesarean deliveries had also had a previous vaginal birth and 40% had a previous VBAC. 
+Hence, caution should be applied when extrapolating these data to women with no previous 
+vaginal delivery.
+A systematic review51 has suggested that women with two previous caesarean deliveries 
+who are considering VBAC should be counselled about the success rate (71.1%), the uterine 
+rupture rate (1.36%) and the comparable maternal morbidity to the repeat caesarean delivery 
+option. The rates of hysterectomy (56/10 000 compared with 19/10 000) and transfusion 
+(1.99% compared with 1.21%) were increased in women undergoing VBAC after two previous 
+caesarean births compared with one previous caesarean birth. Therefore, provided that 
+the woman has been fully informed by a senior obstetrician of the increased risks and a 
+comprehensive individualised risk analysis has been undertaken of the indication for and the 
+nature of the previous caesarean deliveries, then planned VBAC may be supported in women 
+with two or more previous lower segment caesarean deliveries.
+Women seeking multiple (e.g. three or more) future pregnancies should be counselled 
+that opting for ERCS may expose themselves to greater surgical risks for future pregnancies Evidence 
+level 2++Evidence 
+level 3
+Evidence 
+level 2++Evidence 
+level 2+C
+Evidence 
+level 3RCOG Green-top Guideline No. 45 © Royal College of Obstetricians and Gynaecologists8 of 31(particularly placenta praevia, placenta accreta and hysterectomy) associated with repeated ERCS 
+delivery11–13,44,52,53 and therefore greater consideration ought to be given to attempting VBAC.
+6.4 What factors are associated with an increased risk of uterine rupture in women 
+undergoing VBAC?
+An individualised assessment of the suitability for VBAC should be made in women with factors 
+that increase the risk of uterine rupture.
+Factors that potentially increase the risk of uterine rupture include short inter-delivery interval 
+(less than 12 months since last delivery), post-date pregnancy, maternal age of 40 years or 
+more, obesity, lower prelabour Bishop score, macrosomia and decreased ultrasonographic 
+lower segment myometrial thickness.20,22,23,54–57 A recent retrospective study58 involving 3176 
+patients evaluated the safety of women undergoing VBAC with a short inter-delivery interval. 
+The study concluded that a short inter-delivery interval (less than 12 months) is not a risk factor 
+for major complications such as uterine rupture and maternal death, but that it is for preterm 
+delivery. Further data are needed before the safety of such an approach can be confirmed.
+There is uncertainty in how to incorporate this knowledge in antenatal counselling and 
+therefore the presence of these risk factors does not contraindicate VBAC. However, such 
+factors may be considered during the decision-making process, particularly if considering 
+induction or augmentation of VBAC labour (see section 8.2).
+A recent meta-analysis59 has suggested that measurement of lower uterine segment (LUS) 
+thickness antenatally in women with a previous caesarean delivery could be used to predict 
+the occurrence of a uterine defect (scar dehiscence or scar rupture) in women undergoing 
+VBAC. According to the study, a myometrial thickness (the minimum thickness overlying 
+the amniotic cavity at the level of the uterine scar) cut-off of 2.1–4.0 mm provided a strong 
+negative predictive value for the occurrence of a uterine defect during VBAC, whereas a 
+myometrial thickness cut-off between 0.6 and 2.0 mm provided a strong positive predictive 
+value for the occurrence of a uterine defect. However, the study could not define an ideal LUS 
+thickness cut-off value usable in clinical practice. This meta-analysis provides support for the 
+use of antenatal LUS measurements in the prediction of a uterine defect in women undergoing 
+VBAC; however, clinical applicability needs be assessed in prospective observational studies 
+using a standardised method of measurement.
+7. Antenatal counselling
+7.1 What are the overall aims of antenatal counselling?
+The antenatal counselling of women with a previous caesarean birth should be documented in 
+the notes.
+A final decision for mode of birth should be agreed upon by the woman and member(s) of the 
+maternity team before the expected/planned date of delivery.
+When a date for ERCS is being arranged, a plan for the event of labour starting before the scheduled 
+date should be documented in the notes.
+The routine use of VBAC checklists during antenatal counselling should be considered, as they 
+would ensure informed consent and shared decision making in women undergoing VBAC.
+A patient information leaflet should be provided with the consultation.Evidence 
+level 1+P
+BEvidence 
+level 3
+Evidence 
+level 3
+Evidence 
+level 2–
+PP
+PPRCOG Green-top Guideline No. 45 © Royal College of Obstetricians and Gynaecologists9 of 31Ideally, discussion should be individualised to the woman’s medical circumstances and consider her 
+individual chance of VBAC success and future reproductive preferences. The antenatal counselling 
+process should be documented in the medical records. Where possible, outcomes from women who give 
+birth at term (37+0–42+0 weeks of gestation) should be used for the purposes of antenatal counselling and 
+are used throughout this guideline. As up to 10% of women scheduled for ERCS go into labour before 
+39+0 weeks, it is good practice to discuss and document a plan for delivery if labour starts prior to the 
+scheduled date. 
+Clinical trials have shown decision aids, specific patient information literature and ‘VBAC 
+checklists’, which encompass such information, may facilitate the decision-making process 
+by lowering decisional conflict, improving level of knowledge, improving satisfaction and 
+increasing the perception of having made an informed choice.60–66
+Documentation of the counselling process (for example, using a standardised VBAC checklist or 
+clinical care pathway) and provision of a patient information leaflet67 are recommended.60–62,68 
+An example checklist is provided in Appendix IV.
+7.2 What are the risks and benefits of planned VBAC versus ERCS from 39+0 weeks of 
+gestation?
+Women should be made aware that successful VBAC has the fewest complications and therefore 
+the chance of VBAC success or failure is an important consideration when choosing the mode of 
+delivery.
+Women should be made aware that the greatest risk of adverse outcome occurs in a trial of VBAC 
+resulting in emergency caesarean delivery.
+Women should be informed that planned VBAC is associated with an approximately 1 in 200 (0.5%) 
+risk of uterine rupture.
+Women should be informed that the absolute risk of birth-related perinatal death associated with 
+VBAC is extremely low and comparable to the risk for nulliparous women in labour.
+Women should be informed that ERCS is associated with a small increased risk of placenta 
+praevia and/or accreta in future pregnancies and of pelvic adhesions complicating any future 
+abdominopelvic surgery.
+The risk of perinatal death with ERCS is extremely low, but there is a small increase in neonatal 
+respiratory morbidity when ERCS is performed before 39+0 weeks of gestation. The risk of 
+respiratory morbidity can be reduced with a preoperative course of antenatal corticosteroids.
+The maternal and fetal risks of planned VBAC and ERCS from 39+0 weeks of gestation are summarised 
+in Table 1.
+Planned VBAC adverse maternal outcomes
+Uterine rupture
+The NICHD study18 showed that planned VBAC, compared with ERCS, had a higher risk of 
+uterine rupture (0.7% versus 0%). The US Agency for Healthcare Research and Quality (AHRQ) 
+meta-analysis and studies from the UK, Australia and Ireland reported a VBAC uterine rupture 
+risk of 0.5%,9 0.2%,20 0.33%22 and 0.2%73 respectively. Rates of uterine rupture differ according 
+to whether VBAC labour is spontaneous (0.15–0.4%), induced (0.54–1.4%) or augmented 
+(0.9–1.91%)18,20,22 (Appendix V). In the UK cohort study, two women with uterine rupture died 
+(uterine rupture case fatality 1.3%, 95% CI 0.2–4.5%).20Evidence 
+level 1–
+B
+BEvidence 
+level 1+
+B
+C
+C
+C
+Evidence 
+level 2–RCOG Green-top Guideline No. 45 © Royal College of Obstetricians and Gynaecologists10 of 31Table 1. Risks and benefits of opting for VBAC versus ERCS from 39+0 weeks of gestation
+Planned VBAC ERCS from 39+0 weeks
+Maternal outcomes • 72–75% chance of successful VBAC. If 
+successful, shorter hospital stay and recovery.• Able to plan a known delivery date in select 
+patients. This may however change based 
+on circumstances surrounding maternal 
+and fetal wellbeing in the antenatal period.
+• Approximately 0.5% risk of uterine scar rupture. 
+If occurs, associated with maternal morbidity 
+and fetal morbidity/mortality.• Virtually avoids the risk of uterine rupture 
+(actual risk is extremely low: less than 
+0.02%).
+• Longer recovery.
+• Reduces the risk of pelvic organ prolapse 
+and urinary incontinence in comparison 
+with number of vaginal births (dose–
+response effect) at least in the short term.69
+• Option for sterilisation if fertility is no 
+longer desired. Evidence suggests that the 
+regret rate is higher and that the failure 
+rate from sterilisation associated with 
+pregnancy may be higher than that from an 
+interval procedure. If sterilisation is to be 
+performed at the same time as a caesarean 
+delivery, counselling and agreement 
+should have been given at least 2 weeks 
+prior to the procedure.70
+• Increases likelihood of future vaginal birth. • Future pregnancies – likely to require 
+caesarean delivery, increased risk of 
+placenta praevia/accreta and adhesions 
+with successive caesarean deliveries/
+abdominal surgery.
+• Risk of anal sphincter injury in women 
+undergoing VBAC is 5% and birthweight is 
+the strongest predictor of this. The rate of 
+instrumental delivery is also increased up to 
+39%.71 
+• Risk of maternal death with planned VBAC of 
+4/100 000 (95% CI 1/100 000 to 16/100 000).9 • Risk of maternal death with ERCS of 
+13/100 000 (95% CI 4/100 000 to 
+42/100 000).9 
+Infant outcomes • Risk of transient respiratory morbidity of 2–3%. • Risk of transient respiratory morbidity of 
+4–5% (6% risk if delivery performed at 38 
+instead of 39 weeks). The risk is reduced 
+with antenatal corticosteroids, but there 
+are concerns about potential long-term 
+adverse effects.72
+• 10 per 10 000 (0.1%) prospective risk of 
+antepartum stillbirth beyond 39+0 weeks 
+while awaiting spontaneous labour (similar to 
+nulliparous women).
+• 8 per 10 000 (0.08%) risk of hypoxic ischaemic 
+encephalopathy (HIE).• < 1 per 10 000 (< 0.01%) risk of delivery-
+related perinatal death or HIE.
+• 4 per 10 000 (0.04%) risk of delivery-related 
+perinatal death. This is comparable to the risk 
+for nulliparous women in labour.
+The estimates of risk for adverse maternal or fetal events in VBAC are based on women receiving continuous electronic 
+monitoring during their labour.
+Hysterectomy and other morbidities
+The rates of hysterectomy, thromboembolic disease, transfusion and endometritis did not 
+differ significantly between planned VBAC and ERCS according to the AHRQ meta-analysis9 
+and another meta-analysis.74 However, the NICHD study showed unsuccessful compared with Evidence 
+level 2+RCOG Green-top Guideline No. 45 © Royal College of Obstetricians and Gynaecologists11 of 31successful VBAC increased the risk of uterine rupture (2.3% versus 0.1%), hysterectomy (0.5% 
+versus 0.1%), transfusion (3.2% versus 1.2%) and endometritis (7.7% versus 1.2%).18 Meta-
+analysis has shown that hysterectomy was required in 14–33% of uterine rupture cases.9 
+A review of Maternal-Fetal Medicine Units Network publications75 suggests that, at term, 
+women undergoing VBAC as compared with ERCS have a significantly greater incidence of 
+blood transfusion (2% versus 1%), but the likelihood of hysterectomy is not increased. 
+Planned VBAC adverse perinatal outcomes 
+Antepartum stillbirth
+Planned VBAC is associated with an additional 10 per 10 000 prospective risk of antepartum 
+stillbirth beyond 39+0 weeks of gestation (recommended timing for ERCS delivery) while 
+awaiting spontaneous labour.76 The pathophysiology of the increased risk of stillbirth 
+associated with VBAC is unexplained, but this increased risk is evident in women with 
+previous caesarean delivery compared with no prior caesarean delivery despite correcting for 
+gestation and other factors.76,77
+Delivery-related perinatal death
+In the NICHD study, planned VBAC is associated with a 4 per 10 000 risk of term perinatal death 
+(i.e. intrapartum stillbirth or neonatal death), with around one-third (1.4 per 10 000 overall) of deaths 
+due to uterine rupture.18 In contrast, ERCS is associated with a risk of delivery-related perinatal 
+death of 1 per 10 000 or less. The risk of perinatal death arising from uterine rupture during 
+VBAC was reported as 4.5% in a Dutch population study23 and 2–16% in the AHRQ meta-analysis.9
+Neonatal hypoxic ischaemic encephalopathy (HIE)
+In the NICHD study, HIE affected 8 per 10 000 planned VBACs and, of these, 60% of cases 
+(7/12) were due to uterine rupture.18
+ERCS and adverse maternal and perinatal outcomes
+Maternal mortality 
+Both the NICHD18 study and AHRQ9 meta-analysis showed an increased risk of maternal 
+mortality with ERCS compared with planned VBAC (13/100 000 versus 4/100 000),9 although 
+data were conflicting on whether the differences were statistically significant. Absolute risks 
+are extremely low for either mode of delivery.
+Neonatal respiratory morbidity 
+ERCS compared with planned VBAC increased the risks of transient tachypnoea of the newborn 
+(4–5% versus 2–3%) and respiratory distress syndrome (0.5% versus less than 0.05%).9,18,78–81 
+The Antenatal Steroids for Term Elective Caesarean Section (ASTECS) trial82 reported that 
+respiratory morbidity was 11.4%, 6.2% and 1.5% at 37, 38 and 39 weeks of gestation respectively.
+Long-term outcomes of planned VBAC versus ERCS
+There are no data reporting on long-term maternal or infant outcomes of planned VBAC versus 
+ERCS cohort groups.9 There are considerable data to show that repeated ERCS is associated 
+with an increased risk of placenta praevia, placenta accreta and surgical complications at the 
+time of subsequent pregnancy and delivery, such as hysterectomy.11–13,44,45,52,53
+Perinatal outcomes of planned VBAC versus ERCS 
+The NICHD observational study showed that there was around a three-fold increase (0.38% 
+versus 0.13%, OR 2.90, 95% CI 1.74–4.81) for one or more serious composite adverse perinatal 
+outcomes (which include perinatal mortality and HIE) for planned VBAC at term compared 
+with ERCS. Another prospective cohort study in Australia used a broader composite of adverse Evidence 
+level 2+Evidence 
+level 1–Evidence 
+level 2+Evidence 
+level 2–Evidence 
+level 2+
+Evidence 
+level 3
+Evidence 
+level 2–
+Evidence 
+level 2–
+Evidence 
+level 2–RCOG Green-top Guideline No. 45 © Royal College of Obstetricians and Gynaecologists12 of 31perinatal outcomes (perinatal mortality, HIE, neonatal intensive care unit admission, neonatal 
+acidosis, birth trauma, neonatal sepsis) and also found an approximately three-fold risk for 
+women attempting VBAC.19
+A review of Maternal-Fetal Medicine Units Network publications75 suggests that, at term, 
+in women undergoing VBAC as compared with ERCS, there were similar rates of neonatal 
+seizures and perinatal mortality.
+Summary of outcomes of planned VBAC versus ERCS
+A reasonable summary of the evidence is that planned VBAC exposes the woman to a very low 
+(0.25%) additional risk for experiencing perinatal mortality or serious neonatal morbidity and 
+an additional 1.5% risk of any significant morbidity compared with opting for ERCS from 39+0 
+weeks of gestation. Nevertheless, it may be helpful to emphasise to women that the absolute 
+risk of delivery-related perinatal death associated with VBAC is extremely low (4 per 10 000 
+[0.04%]) and comparable to the risk for nulliparous women in labour.83,84
+Cochrane reviews85–87 suggest that there are benefits and risks associated with planned ERCS 
+and planned induction of labour in women with a prior caesarean delivery. There is a paucity of 
+randomised controlled trials that would provide the most reliable evidence and help women to 
+make an informed choice. The related evidence for the established care pathways is potentially 
+biased, as it is drawn from nonrandomised studies. Hence, the results and conclusions should 
+be interpreted with caution and the uncertainties should be discussed with women.
+7.3 What is the likelihood of VBAC success?
+Women should be informed that the success rate of planned VBAC is 72–75%.
+Meta-analysis88,89 (n = 103 188 VBAC labours) reported a pooled VBAC labour success rate of 
+74% (95% CI 72–75%), while the NICHD study reported a 73% VBAC labour success rate (n = 
+17 898 VBAC labours). A recent Australian cohort trial reported a VBAC success rate of 43% 
+(535/1237 planned VBAC at 37 weeks), although excluding those women who required elective 
+caesarean after opting for VBAC, the study showed a VBAC success rate of 59% (535/903 VBAC 
+labours).19 There are often differences in VBAC success rates between centres and published 
+studies, so consideration should be given to counselling women using locally derived VBAC 
+success rates given the pragmatic differences in population, induction/non-induction VBAC 
+policies and healthcare provision.
+7.4 What factors determine the individualised likelihood of VBAC success?
+Women with one or more previous vaginal births should be informed that previous vaginal delivery, 
+particularly previous VBAC, is the single best predictor of successful VBAC and is associated with a 
+planned VBAC success rate of 85–90%. Previous vaginal delivery is also independently associated 
+with a reduced risk of uterine rupture.
+Several pre-admission- and admission-based multivariate models have been published to 
+predict the individualised likelihood of VBAC success.90–93 Importantly, women at increased 
+risk of unsuccessful VBAC are also at increased risk of uterine rupture, including catastrophic 
+rupture leading to perinatal death.92,94–96 Research is exploring the value of transvaginal/
+transabdominal ultrasonographic assessment of myometrial scar thickness to predict VBAC 
+success and uterine scar rupture (see section 6.4).57,59,97–99 Although prediction models ought to 
+be intuitively beneficial, such models have not been routinely applied in the decision-making 
+process and their precise role is yet to be established. A 2013 meta-analysis of these studies has 
+concluded that further prospective research is required.59Evidence 
+level 2+
+CEvidence 
+level 1++
+CEvidence 
+level 2–
+Evidence 
+level 3
+Evidence 
+level 2–Evidence 
+level 2+RCOG Green-top Guideline No. 45 © Royal College of Obstetricians and Gynaecologists13 of 31A VBAC score100 has been used by some authors to predict the success of women attempting 
+VBAC. The retrospective VBAC score was created by examining five features: admission 
+Bishop score, age, previous caesarean delivery indication, body mass index (BMI) and previous 
+vaginal birth. The higher the VBAC score, the higher the success rate; the success rate of 
+women with a VBAC score of more than 16 was greater than 85%, in contrast to those with a 
+VBAC score of 10 who had a 49% success rate.
+The use of specific population-based models to predict VBAC success needs further data,101,102 
+although initial results are promising.
+Induced labour, no previous vaginal delivery, BMI greater than 30 and previous caesarean 
+for labour dystocia are associated with an increased risk of unsuccessful VBAC. If all of these 
+factors are present, successful VBAC is achieved in 40% of cases.18,103
+Previous vaginal delivery, particularly previous successful VBAC, is the single best predictor 
+for successful VBAC and is associated with a planned VBAC success rate of 85–90%.103 Previous 
+vaginal delivery is also independently associated with a reduced risk of uterine rupture.54,96,104,105 
+Greater maternal height, maternal age less than 40 years, BMI less than 30, gestation of less 
+than 40 weeks and infant birthweight less than 4 kg (or similar/lower birthweight than index 
+caesarean delivery106) are associated with an increased likelihood of successful VBAC.90,93,107–110 
+In addition, spontaneous onset of labour, vertex presentation, fetal head engagement or a 
+lower station, and higher admission Bishop score also increase the likelihood of successful 
+VBAC.91,94,103,108,111 Successful VBAC is more likely among women with previous caesarean for 
+fetal malpresentation (84%) compared with women with previous caesarean for either labour 
+dystocia (64%) or fetal distress (73%) indications.18,103 Younger women and those of white 
+ethnicity experienced the highest success rate, in contrast to women of black ethnicity who 
+experienced a lower success rate. Those who had an emergency caesarean delivery in their 
+first birth also had a lower VBAC success rate, in particular those who experienced a failed 
+induction of labour.112 Despite a degree of data inconsistency, successful VBAC appears more 
+likely among women with previous caesarean for dystocia at 8 cm or more compared with 
+women with previous caesarean for dystocia at less than 8 cm.113–115 A retrospective study 
+concluded that the success rate for VBAC in women who had a prior caesarean delivery due to 
+an unsuccessful instrumental delivery was high (61.3%). The risk factors that were associated 
+with a failed VBAC in these women were occiput posterior position and prolonged second 
+stage as the indication for instrumental vaginal delivery in the index pregnancy, maternal age 
+older than 30 years at the time of subsequent delivery and a birthweight in the subsequent 
+pregnancy that is higher than the birthweight in the index pregnancy. This information and 
+the risk factors for VBAC failure can be used when counselling these women regarding mode 
+of delivery in subsequent pregnancy.116
+8. Intrapartum management of planned VBAC
+8.1 What delivery setting is appropriate for conducting planned VBAC?
+Women should be advised that planned VBAC should be conducted in a suitably staffed and 
+equipped delivery suite with continuous intrapartum care and monitoring with resources available 
+for immediate caesarean delivery and advanced neonatal resuscitation.
+Women with an unplanned labour and a history of previous caesarean delivery should have a 
+discussion with an experienced obstetrician to determine feasibility of VBAC.
+Epidural analgesia is not contraindicated in a planned VBAC, although an increasing requirement 
+for pain relief in labour should raise awareness of the possibility of an impending uterine rupture.DEvidence 
+level 2–Evidence 
+level 2+Evidence 
+level 2–
+P
+PRCOG Green-top Guideline No. 45 © Royal College of Obstetricians and Gynaecologists14 of 31Women should be advised to have continuous electronic fetal monitoring for the duration of 
+planned VBAC, commencing at the onset of regular uterine contractions.
+There should be continuous monitoring of the labour to ensure prompt identification of maternal or 
+fetal compromise, labour dystocia or uterine scar rupture. Consequently, all women in established VBAC 
+labour should receive:
+l supportive one-to-one care
+l intravenous access with full blood count and blood group and save
+l continuous electronic fetal monitoring 
+l regular monitoring of maternal symptoms and signs 
+l regular (no less than 4-hourly) assessment of their cervicometric progress in labour.
+For all labours, a meta-analysis showed that epidural analgesia increased the risk of second 
+stage delay and operative instrumental vaginal delivery.117 It is appropriate to consider early 
+placement of the epidural catheter so that it can be used later for labour analgesia or for 
+anaesthesia should an operative delivery become necessary.118
+One study (NICHD103) suggested that planned VBAC success rates were higher among women 
+receiving epidural analgesia; two other studies reported the opposite finding.23,54 A recent 
+case–control study showed frequent epidural dosing to be an independent risk factor for 
+impending uterine rupture in VBAC labour.119 The increasing pain and analgesia requirement 
+that is likely to precede uterine rupture may explain the association between uterine rupture 
+and increasing epidural dosing in VBAC labour that progresses to uterine rupture. 
+The presence of any of the features in the list below is suggestive of uterine rupture. Abnormal 
+cardiotocography (CTG) is the most consistent finding in uterine rupture and is present in 
+66–76% of these events. However, over half of cases present with a combination of findings 
+(most often abnormal CTG and abdominal pain).20,23,120 The diagnosis is made at emergency 
+caesarean delivery or postpartum laparotomy. Most uterine ruptures (more than 90%) occur 
+during labour (the peak incidence being at 4–5 cm cervical dilatation), with around 18% 
+occurring in the second stage of labour and 8% being identified post vaginal delivery.23 
+The clinical features associated with uterine scar rupture include:
+l abnormal CTG
+l severe abdominal pain, especially if persisting between contractions
+l acute onset scar tenderness
+l abnormal vaginal bleeding
+l haematuria
+l cessation of previously efficient uterine activity
+l maternal tachycardia, hypotension, fainting or shock
+l loss of station of the presenting part
+l change in abdominal contour and inability to pick up fetal heart rate at the old 
+transducer site.
+The risk of uterine rupture in an unscarred uterus is extremely rare at 2 per 10 000 (0.02%) 
+deliveries and this risk is mainly confined to multiparous women in labour.20,23,121 The risk of 
+uterine rupture in planned VBAC is approximately 20–50 per 10 000 (0.2–0.5%) and in ERCS 
+the risk is 2 per 10 000 (0.02%) (Appendix V).9,20,22,73 Early diagnosis of uterine scar dehiscence 
+or rupture followed by expeditious laparotomy and neonatal resuscitation are essential to 
+reduce associated morbidity and mortality. An observational study indicated a potential upper 
+limit for nonhypoxic neonatal delivery of 18 minutes from suspected uterine rupture to 
+delivery.122 It is important to note that scar dehiscence may be asymptomatic in up to 48% of Evidence 
+level 3D
+Evidence 
+level 3RCOG Green-top Guideline No. 45 © Royal College of Obstetricians and Gynaecologists15 of 31women, and the classic triad of a complete uterine rupture (pain, vaginal bleeding, fetal heart 
+rate abnormalities) may present in less than 10% of cases.123
+8.2 How should women with a previous caesarean birth be advised in relation to induction 
+or augmentation of labour?
+Women should be informed of the two- to three-fold increased risk of uterine rupture and around 
+1.5-fold increased risk of caesarean delivery in induced and/or augmented labour compared with 
+spontaneous VBAC labour.
+A senior obstetrician should discuss the following with the woman: the decision to induce labour, 
+the proposed method of induction, the decision to augment labour with oxytocin, the time intervals 
+for serial vaginal examination and the selected parameters of progress that would necessitate 
+discontinuing VBAC.
+Clinicians should be aware that induction of labour using mechanical methods (amniotomy or 
+Foley catheter) is associated with a lower risk of scar rupture compared with induction using 
+prostaglandins.
+Although induction and augmentation are not contraindicated in women with previous 
+caesarean delivery, there remains considerable disagreement among clinicians on their use. 
+Induction (particularly in women with an unfavourable cervix or by prostaglandin method) or 
+augmentation of VBAC labour are associated with a two- to three-fold increased risk of uterine 
+rupture and around a 1.5-fold increased risk of caesarean delivery compared with spontaneous 
+VBAC labour (Appendix V). Studies evaluating oxytocin use in VBAC labour have not recorded 
+the indication for oxytocin use. However, it would seem plausible to assume that uterine 
+rupture would be more likely to occur if oxytocin was used to overcome delayed progress 
+when uterine activity appeared to be adequate (appropriate strength/frequency uterine 
+contractions) compared with when uterine activity was absent or inadequate (infrequent/
+weak strength contractions). Furthermore, a case–control study has shown that utilising 
+higher dose oxytocin (exceeding 20 milliunits/minute) during VBAC augmentation increases 
+the risk of uterine rupture by four-fold or greater.124,125
+The decision to induce or augment VBAC labour should be determined following careful obstetric 
+assessment and be made by senior obstetricians in consultation with the women. As part of informed 
+consent, women should be made aware of the increased risks (uterine rupture and emergency caesarean 
+delivery) associated with induction and/or augmentation of VBAC labour, and of the alternative option of 
+caesarean delivery. Women who are contemplating many future pregnancies may be prepared to accept 
+the additional risks associated with induction and/or augmentation in an effort to avoid the potential 
+long-term surgical risks associated with multiple repeat caesarean deliveries. 
+Women with previous caesarean delivery who have not previously given birth vaginally 
+and those who have labour induced with prostaglandins are at increased risk of uterine 
+rupture and the same two factors are associated with an increased risk of perinatal death 
+due to uterine rupture.105 In the NICHD study,18 prostaglandin induction compared with non-
+prostaglandin induction (e.g. amniotomy or intracervical Foley catheter) was associated with 
+a higher uterine rupture risk (87 per 10 000 [0.87%] versus 29 per 10 000 [0.29%]) and a 
+higher risk of perinatal death due to uterine rupture (11.2 per 10 000 [0.11%] versus 4.5 per 
+10 000 [0.045%]). Hence, careful consideration should be given to using prostaglandins and, 
+if prostaglandins are to be used, to restricting the dose of total prostaglandin exposure in 
+accordance with locally agreed guidelines, or considering another method of induction, such 
+as an intracervical Foley catheter.126PD
+Evidence 
+level 3Evidence 
+level 3
+D
+Evidence 
+level 3RCOG Green-top Guideline No. 45 © Royal College of Obstetricians and Gynaecologists16 of 31Two retrospective studies127,128 have suggested that low-dose prostaglandin E2 is a safe option 
+for induction of labour in women undergoing VBAC, with no appreciable increase in rates of 
+uterine rupture or maternal and perinatal mortality when compared with women undergoing 
+a spontaneous VBAC. However, a Cochrane review129 suggested that there is insufficient 
+evidence from randomised controlled trials to determine the lowest risk method of induction 
+of labour with a previous caesarean delivery.
+9. Planning and conducting ERCS
+9.1 What elements are involved in the perioperative, intraoperative and postoperative care 
+for ERCS?
+ERCS delivery should be conducted after 39+0 weeks of gestation.
+Antibiotics should be administered before making the skin incision in women undergoing ERCS.
+All women undergoing ERCS should receive thromboprophylaxis according to existing RCOG guidelines.
+Early recognition of placenta praevia, adopting a multidisciplinary approach and informed consent 
+are important considerations in the management of women with placenta praevia and previous 
+caesarean delivery.
+Recommended practice relating to planning and conducting ERCS is provided in the NICE caesarean 
+section guideline.6 In addition to standard perioperative measures for conducting ERCS, there are further 
+specific issues that warrant discussion.
+Women considering ERCS should be counselled that delaying delivery by 1 week from 38+0 to 
+39+0 weeks enables around a 5% reduction (6% versus 1%) in the risk of respiratory morbidity 
+(particularly reducing the risk of transient tachypnoea of the newborn),78–81,130 but this delay 
+may be associated with a 5 per 10 000 (0.05%) increase in the risk of antepartum stillbirth.76 
+Should there be a need to perform ERCS prior to 39 weeks, consideration should be given to 
+administering maternal corticosteroids.6,130 A randomised controlled trial demonstrated a 50% 
+reduction in respiratory morbidity by administering prophylactic betamethasone to women 
+having elective caesarean deliveries beyond 37+0 weeks (steroid versus control 2.4% versus 
+5.1%; relative risk 0.46, 95% CI 0.23–0.93) and this treatment effect was still apparent at 39+0 
+weeks of gestation (steroid versus control, 0.6% versus 1.5%).82 
+However, the current RCOG Green-top Guideline on antenatal corticosteroids130 raises a 
+caution that there is ‘an absence of evidence available for the safety of antenatal corticosteroids 
+in babies born after 36+0 weeks of gestation’; some research suggests the existence of potential 
+long-term adverse effects in infants of mothers who received antenatal corticosteroids.72,131 
+A follow-up study from the trial of steroids prior to term caesarean delivery demonstrated 
+no long-term benefit of steroids, but found that glucocorticoid-exposed children were twice 
+as likely to be identified as being in the lowest achievement group at school compared with 
+controls (33/186 [17.7%] versus 14/164 [8.5%] respectively, relative risk 2.1, 95% CI 1.1–3.7, P = 
+0.01).132 These issues should be discussed with women prior to the use of steroids and efforts 
+should be directed to avoiding ERCS prior to 39+0 weeks rather than a more liberal use of 
+earlier delivery and antenatal steroids.
+Perioperative preincision antibiotics achieve a greater reduction in the risk of maternal infection 
+than prophylactic antibiotics administered after making the skin incision. No detrimental effects 
+on the baby have been demonstrated. Ideally, the chosen antibiotic should protect against 
+endometritis and urinary tract and wound infections: i.e. cefuroxime and metronidazole.6 PBEvidence 
+level 2–
+PA
+Evidence 
+level 1+RCOG Green-top Guideline No. 45 © Royal College of Obstetricians and Gynaecologists17 of 31Concerns about the use of co-amoxiclav in pregnancy were raised by the Overview of the Role 
+of Antibiotics in Curtailing Labour and Early Delivery (ORACLE) studies, which demonstrated an 
+increased incidence of necrotising enterocolitis when it was given in preterm prelabour rupture 
+of membranes133 and a nonsignificant increase when used during spontaneous preterm labour.134 
+Extrapolating from these data, the NICE Guideline Development Group advise against its use as 
+prophylaxis before skin incision or before cord clamping at the time of caesarean delivery, citing 
+a hypothetical increased risk of necrotising enterocolitis by fetal exposure to co-amoxiclav.135
+The choice of method of thromboprophylaxis should be as per the RCOG guidance.136
+The RCOG has published guidance on the diagnosis and management of placenta praevia in 
+association with a caesarean delivery and placenta accreta45 and its recommendations should 
+be followed in women with a previous caesarean delivery and placenta praevia.
+10. How should women in special circumstances be cared for?
+Clinicians should be aware that there is uncertainty about the safety and efficacy of planned 
+VBAC in pregnancies complicated by post-dates, twin gestation, fetal macrosomia, antepartum 
+stillbirth or maternal age of 40 years or more. Hence, a cautious approach is advised if VBAC is 
+being considered in such circumstances.
+Women who are preterm and considering the options for birth after a previous caesarean delivery 
+should be informed that planned preterm VBAC has similar success rates to planned term VBAC but 
+with a lower risk of uterine rupture.
+41+0 weeks of gestation
+The NICE induction of labour guideline recommends induction of labour from 41+0 weeks as 
+this reduces perinatal mortality without an increase in caesarean delivery rates.137 There are 
+no adequate data to recommend whether such an approach is equally valid in women with 
+previous caesarean delivery. The risk of stillbirth at or after 39 weeks is between 1.5- and 
+two-fold higher in women with previous caesarean delivery compared with women without 
+previous caesarean delivery (absolute risks 11 per 10 000 [0.11%] versus 5 per 10 000 [0.05%]).76 
+Hence, the reduction in risk of perinatal death that occurs by delivering from 41 weeks is likely 
+to be greater among women with previous caesarean delivery. However, in such women, 
+induction of labour compared with spontaneous labour is associated with increased risks of 
+emergency caesarean delivery (by 1.5-fold) and uterine scar rupture (by two- to three-fold).
+A reasonable approach would be for women who planned VBAC to have a review by a senior obstetrician 
+at 41+0 weeks of gestation if spontaneous onset of labour has not ensued (Appendix II). Such a review 
+should assess her likelihood of successful VBAC (for example, favourable cervix, previous vaginal 
+birth, absence of any obstetric or fetal complications), her understanding of the increased maternal and 
+perinatal risks if induction is chosen, her preference for membrane sweep, spontaneous VBAC, induced 
+(amniotomy or prostaglandin) VBAC or ERCS, and her future reproductive preferences. In practice, this 
+may mean scheduling a ‘provisional ERCS’ at around 40+10 weeks and converting to induction of labour 
+depending on further clinical and cervical assessment at 40+10 weeks. 
+Twin gestation
+Various studies, including the NICHD study (n = 186 twin pregnancies)138 and three US 
+retrospective studies (n = 535,139 n = 1850,140 n = 25141 twin pregnancies), have reported similar 
+successful rates of VBAC in twin pregnancies (45–84%) to those in singleton pregnancies.Evidence 
+level 3Evidence 
+level 1+
+Evidence 
+level 4
+BP
+Evidence 
+level 3RCOG Green-top Guideline No. 45 © Royal College of Obstetricians and Gynaecologists18 of 31Suspected fetal macrosomia
+In relation to VBAC labour, birthweight of 4 kg or more is associated with an increased 
+risk of uterine rupture (OR 2.62, 95% CI 1.001–6.85), unsuccessful VBAC (OR 2.47, 95% CI 
+1.82–3.34), shoulder dystocia (OR 25.13, 95% CI 9.31–67.86) and third- and fourth-degree 
+perineal laceration (OR 2.64, 95% CI 1.66–4.19).110 For women with no prior vaginal delivery 
+undergoing VBAC labour when neonatal birthweight was 4 kg or higher, the VBAC success 
+rate was reported as less than 50% and the uterine rupture rate was 3.6%.142 A subgroup 
+analysis of the NICHD study showed that, among women with previous caesarean delivery 
+for dystocia, greater birthweight in the subsequent planned VBAC labour (relative to the first 
+birthweight) was associated with a decreased likelihood of successful VBAC.108 However, third 
+trimester ultrasound is a poor predictor of macrosomia in decision making regarding VBAC.
+Antepartum stillbirth
+Women with an antepartum stillbirth and a previous caesarean delivery undergo labour with 
+a high VBAC success rate (87%). The care of these women should be in line with national 
+guidelines.143 However, because a proportion of cases required induction and/or augmentation, 
+one study reported a uterine rupture rate of 2.4%.144
+Maternal age of 40 years or more 
+Maternal age of 40 years or more is an independent risk factor for stillbirth145 and unsuccessful 
+VBAC.103,146,147 Published advice suggests consideration of delivery of women aged 40 years 
+or more by 39+0–40+0 weeks to reduce the risk of adverse perinatal outcome (particularly 
+stillbirth).145 However, given the likely additive effects of previous caesarean delivery and 
+raised maternal age on the risk of stillbirth, careful consideration should be given to the 
+timing of the delivery in women aged 40 years or above who plan VBAC. There is insufficient 
+evidence to recommend optimum timing of delivery in this subgroup of women.
+Preterm VBAC
+The NICHD study showed planned VBAC success rates for preterm and term pregnancies 
+were similar (72.8% versus 73.3%). However, the rates of uterine rupture (34 per 10 000 versus 
+74 per 10 000 respectively) and dehiscence (26 per 10 000 versus 67 per 10 000 respectively) 
+were significantly lower in preterm compared with term VBAC.148 Perinatal outcomes were 
+similar with preterm VBAC and preterm ERCS.
+11. Recommendations for future research
+l Development, validation and pragmatic clinical evaluation of an antenatal- and/or intrapartum-
+based scoring system to identify women at high or low risk of unsuccessful VBAC.
+l Determine the clinical value of antenatal and intrapartum ultrasound to predict the likelihood of 
+successful VBAC or uterine rupture using specific (e.g. ultrasonographically measured myometrial 
+scar thickness) or combination parameters.
+l Investigate the aetiology and prevention (e.g. specific antenatal monitoring strategies, timing 
+of delivery) of the increased risk of stillbirth in women with previous caesarean delivery in the 
+presence or absence of other previous complications (e.g. pre-eclampsia, preterm delivery, small 
+for gestational age).
+l Investigate cervicometric progress in VBAC labour and determine the value of timing interventions 
+to maximise VBAC success and minimise uterine rupture.
+l Research into factors that may explain the regional and unit-based variation in uptake of VBAC 
+and the factors that impact most on women accepting or declining VBAC (e.g. patient information Evidence 
+level 2–
+Evidence 
+level 3
+Evidence 
+level 4
+Evidence 
+level 2–RCOG Green-top Guideline No. 45 © Royal College of Obstetricians and Gynaecologists19 of 31leaflet, previous childbirth experiences, desired family size, understanding the risk analysis during 
+counselling, how to reduce any decisional conflict, variation in case mix).
+l Investigate the use of mechanical dilators for induction of VBAC labour.
+12. Auditable topics
+l Documented discussion of risks and benefits of VBAC versus ERCS/use of VBAC checklists (100%).
+l Proportions of women experiencing successful versus unsuccessful spontaneous and induced 
+planned VBAC (particularly with reference to the induction method).
+l 100% reporting of serious maternal (e.g. uterine rupture, peripartum hysterectomy, mortality) and 
+neonatal (e.g. antepartum stillbirth, HIE, intrapartum and neonatal mortality) morbidity/mortality 
+consequent to VBAC versus ERCS via a local incident reporting system.
+l Effectiveness of antenatal screening for placenta praevia and accreta, including frequency of 
+‘missed’ antenatal diagnoses against locally agreed standards.
+l Use of continuous electronic fetal monitoring during VBAC labour (100%).
+l Documentation of senior obstetrician involvement in induction and augmentation of VBAC 
+labour (100%).
+13. Useful links and support groups
+l Caesarean Birth and VBAC Information [http://caesarean.org.uk].
+l Royal College of Obstetricians and Gynaecologists. Birth after a caesarean section: Information 
+for you . London: RCOG; 2015. 
+References
+1. Royal College of Obstetricians and Gynaecologists. Birth 
+After Previous Caesarean Birth . Green-top Guideline No. 
+45. London: RCOG; 2007.
+2. Health and Social Care Information Centre. NHS Maternity 
+Statistics - England, April 2012 to March 2013: Provider 
+level analysis. [Leeds]: HSCIC; 2013 [http://www.hscic.
+gov.uk/catalogue/PUB12744]. Accessed 2015 Mar 18.
+3. Welsh Government. Maternity Statistics, Wales: 
+Method of Delivery, 2004-2014 . SDR 210/2014. Cardiff: 
+Welsh Government; 2014 [http://gov.wales/docs/
+statistics/2014/141202-maternity-method-delivery-2014-en.
+pdf]. Accessed 2015 Mar 18.
+4. Department of Health, Social Services & Public Safety. 
+Northern Ireland Hospital Statistics: Inpatient and Day 
+Case Activity Statistics 2012/13. Belfast: DHSSPS; 2013 
+[http://www.dhsspsni.gov.uk/index/statistics/hospital_
+statistics_-_inpatient_and_day_case_activity_2012-13.
+pdf]. Accessed 2015 Mar 18. 
+5. Information Services Division, NHS National Services 
+Scotland. Births in Scottish Hospitals. Edinburgh; 
+Information Services Division, NHS National Services 
+Scotland; 2014 [https://isdscotland.scot.nhs.uk/Health-
+Topics/Maternity-and-Births/Publications/2014-08-
+26/2014-08-26-Births-Report.pdf?83330935240]. Accessed 
+2015 Mar 18.
+6. National Institute for Health and Clinical Excellence. 
+Caesarean section. NICE clinical guideline 132. 
+Manchester: NICE; 2011. 
+7. American College of Obstetricians and Gynecologists. 
+ACOG Practice bulletin no. 115: Vaginal birth after previous 
+cesarean delivery. Obstet Gynecol 2010;116:450–63.
+8. Cunningham FG, Bangdiwala SI, Brown SS, Dean TM, 
+Frederiksen M, Rowland Hogue CJ, et al. NIH consensus 
+development conference draft statement on vaginal birth 
+after cesarean: new insights. NIH Consens State Sci 
+Statements 2010;27(3).9. Guise JM, Eden K, Emeis C, Denman MA, Marshall N, Fu R, et al. 
+Vaginal Birth After Cesarean: New Insights. Evidence Reports/
+Technology Assessments, No. 191. Rockville, Maryland, USA: 
+Agency for Healthcare Research and Quality; 2010.
+10. Fawsitt CG, Bourke J, Greene RA, Everard CM, Murphy A, 
+Lutomski JE. At what price? A cost-effectiveness analysis 
+comparing trial of labour after previous caesarean versus 
+elective repeat caesarean delivery. PLoS One 2013;8:e58577.
+11. Eshkoli T, Weintraub AY, Sergienko R, Sheiner E. 
+Placenta accreta: risk factors, perinatal outcomes, and 
+consequences for subsequent births. Am J Obstet Gynecol 
+2013;208:219.e1–7.
+12. Cook JR, Jarvis S, Knight M, Dhanjal MK. Multiple repeat 
+caesarean section in the UK: incidence and consequences 
+to mother and child. A national, prospective, cohort study. 
+BJOG 2013;120:85–91.
+13. Fitzpatrick KE, Sellers S, Spark P, Kurinczuk JJ, Brocklehurst 
+P, Knight M. Incidence and risk factors for placenta accreta/
+increta/percreta in the UK: a national case-control study. 
+PLoS One 2012;7:e52893.
+14. Marshall NE, Fu R, Guise JM. Impact of multiple cesarean 
+deliveries on maternal morbidity: a systematic review. Am 
+J Obstet Gynecol 2011;205:262.e1–8.
+15. Silver RM, Landon MB, Rouse DJ, Leveno KJ, Spong CY, Thom 
+EA, et al.; National Institute of Child Health and Human 
+Development Maternal–Fetal Medicine Units Network. 
+Maternal morbidity associated with multiple repeat 
+cesarean deliveries. Obstet Gynecol 2006;107:1226–32.
+16. Dodd JM, Crowther CA, Huertas E, Guise JM, Horey D. 
+Planned elective repeat caesarean section versus planned 
+vaginal birth for women with a previous caesarean birth. 
+Cochrane Database Syst Rev 2004;(4):CD004224.
+17. Dodd JM, Crowther CA. Elective repeat caesarean 
+section versus induction of labour for women with a 
+previous caesarean birth. Cochrane Database Syst Rev 
+2012;(5):CD004906.RCOG Green-top Guideline No. 45 © Royal College of Obstetricians and Gynaecologists20 of 3118. Landon MB, Hauth JC, Leveno KJ, Spong CY, Leindecker 
+S, Varner MW, et al.; National Institute of Child Health 
+and Human Development Maternal–Fetal Medicine Units 
+Network. Maternal and perinatal outcomes associated with 
+a trial of labor after prior cesarean delivery. N Engl J Med 
+2004;351:2581–9.
+19. Crowther CA, Dodd JM, Hiller JE, Haslam RR, Robinson 
+JS; Birth After Caesarean Study Group. Planned vaginal 
+birth or elective repeat caesarean: patient preference 
+restricted cohort with nested randomised trial. PLoS Med 
+2012;9:e1001192.
+20. Fitzpatrick KE, Kurinczuk JJ, Alfirevic Z, Spark P, 
+Brocklehurst P, Knight M. Uterine rupture by intended 
+mode of delivery in the UK: a national case-control study. 
+PLoS Med 2012;9:e1001184.
+21. Stock SJ, Ferguson E, Duffy A, Ford I, Chalmers J, Norman 
+JE. Outcomes of induction of labour in women with 
+previous caesarean delivery: a retrospective cohort study 
+using a population database. PLoS One 2013;8:e60404.
+22. Dekker GA, Chan A, Luke CG, Priest K, Riley M, Halliday 
+J, et al. Risk of uterine rupture in Australian women 
+attempting vaginal birth after one prior caesarean section: 
+a retrospective population-based cohort study. BJOG 
+2010;117:1358–65.
+23. Zwart JJ, Richters JM, Ory F, de Vries JI, Bloemenkamp 
+KW, van Roosmalen J. Uterine rupture in The Netherlands: 
+a nationwide population-based cohort study. BJOG 
+2009;116:1069–78; discussion 1078–80.
+24. National Institute for Health and Care Excellence. 
+Antenatal care . NICE clinical guideline 62. [Manchester]: 
+NICE; 2008.
+25. National Institute for Health and Care Excellence. Planning 
+the mode of birth . NICE Pathway. Manchester: NICE: 2011 
+[http://pathways.nice.org.uk/pathways/caesarean-section/
+planning-the-mode-of-birth]. Accessed 2014 Jul 25.
+26. Schoorel EN, Vankan E, Scheepers HC, Augustijn BC, 
+Dirksen CD, de Koning M, et al. Involving women in 
+personalised decision-making on mode of delivery after 
+caesarean section: the development and pilot testing of a 
+patient decision aid. BJOG 2014;121:202–9. 
+27. Gardner K, Henry A, Thou S, Davis G, Miller T. Improving 
+VBAC rates: the combined impact of two management 
+strategies. Aust N Z J Obstet Gynaecol 2014;54:327–32.
+28. Al Qahtani NH, Al Hajeri F. Pregnancy outcome and 
+fertility after complete uterine rupture: a report of 20 
+pregnancies and a review of literature. Arch Gynecol 
+Obstet 2011;284:1123–6.
+29. Chibber R, El-Saleh E, Al Fadhli R, Al Jassar W, Al Harmi J. 
+Uterine rupture and subsequent pregnancy outcome – how 
+safe is it? A 25-year study. J Matern Fetal Neonatal Med 
+2010;23:421–4.
+30. Reyes-Ceja L, Cabrera R, Insfran E, Herrera-Lasso F. 
+Pregnancy following previous uterine rupture. Study of 19 
+patients. Obstet Gynecol 1969;34:387–9.
+31. Naef RW 3rd, Ray MA, Chauhan SP, Roach H, Blake PG, 
+Martin JN Jr. Trial of labor after cesarean delivery with a 
+lower-segment, vertical uterine incision: is it safe? Am J 
+Obstet Gynecol 1995;172:1666–73; discussion 1673–4.
+32. Shipp TD, Zelop CM, Repke JT, Cohen A, Caughey AB, 
+Lieberman E. Intrapartum uterine rupture and dehiscence 
+in patients with prior lower uterine segment vertical and 
+transverse incisions. Obstet Gynecol 1999;94:735–40.
+33. Greene RA, Fitzpatrick C, Turner MJ. What are the maternal 
+implications of a classical caesarean section? J Obstet 
+Gynaecol 1998;18:345–7.
+34. Rovio PH, Heinonen PK. Pregnancy outcomes after 
+transvaginal myomectomy by colpotomy. Eur J Obstet 
+Gynecol Reprod Biol 2012;161:130–3.
+35. Parker WH, Einarsson J, Istre O, Dubuisson JB. Risk factors 
+for uterine rupture after laparoscopic myomectomy. J 
+Minim Invasive Gynecol 2010;17:551–4.36. Makino S, Tanaka T, Itoh S, Kumakiri J, Takeuchi H, 
+Takeda S. Prospective comparison of delivery outcomes of 
+vaginal births after cesarean section versus laparoscopic 
+myomectomy. J Obstet Gynaecol Res 2008;34:952–6.
+37. Kumakiri J, Takeuchi H, Itoh S, Kitade M, Kikuchi I, 
+Shimanuki H, et al. Prospective evaluation for the feasibility 
+and safety of vaginal birth after laparoscopic myomectomy. 
+J Minim Invasive Gynecol 2008;15:420–4.
+38. Gavai M, Berkes E, Lazar L, Fekete T, Takacs ZF, Urbancsek 
+J, et al. Factors affecting reproductive outcome following 
+abdominal myomectomy. J Assist Reprod Genet 
+2007;24:525–31.
+39. Kumakiri J, Takeuchi H, Kitade M, Kikuchi I, Shimanuki 
+H, Itoh S, et al. Pregnancy and delivery after laparoscopic 
+myomectomy. J Minim Invasive Gynecol 2005;12:241–6.
+40. Campo S, Campo V, Gambadauro P. Reproductive outcome 
+before and after laparoscopic or abdominal myomectomy 
+for subserous or intramural myomas. Eur J Obstet Gynecol 
+Reprod Biol 2003;110:215–9.
+41. Seracchioli R, Manuzzi L, Vianello F, Gualerzi B, Savelli 
+L, Paradisi R, et al. Obstetric and delivery outcome of 
+pregnancies achieved after laparoscopic myomectomy. 
+Fertil Steril 2006;86:159–65.
+42. Shokeir T, Abdelshaheed M, El-Shafie M, Sherif L, Badawy 
+A. Determinants of fertility and reproductive success after 
+hysteroscopic septoplasty for women with unexplained 
+primary infertility: a prospective analysis of 88 cases. Eur J 
+Obstet Gynecol Reprod Biol 2011;155:54–7.
+43. Nouri K, Ott J, Huber JC, Fischer EM, Stögbauer L, Tempfer 
+CB. Reproductive outcome after hysteroscopic septoplasty 
+in patients with septate uterus - a retrospective cohort 
+study and systematic review of the literature. Reprod Biol 
+Endocrinol 2010;8:52.
+44. Royal College of Obstetricians and Gynaecologists. Placenta 
+Praevia, Placenta Praevia Accreta and Vasa Praevia: 
+Diagnosis and Management . Green-top Guideline No. 27. 
+London: RCOG; 2011.
+45. Gurol-Urganci I, Cromwell DA, Edozien LC, Smith GC, 
+Onwere C, Mahmood TA, et al. Risk of placenta previa in 
+second birth after first birth cesarean section: a population-
+based study and meta-analysis. BMC Pregnancy Childbirth 
+2011;11:95.
+46. Landon MB, Spong CY, Thom E, Hauth JC, Bloom SL, Varner 
+MW, et al.; National Institute of Child Health and Human 
+Development Maternal-Fetal Medicine Units Network. 
+Risk of uterine rupture with a trial of labor in women with 
+multiple and single prior cesarean delivery. Obstet Gynecol 
+2006;108:12–20.
+47. Macones GA, Cahill A, Pare E, Stamilio DM, Ratcliffe 
+S, Stevens E, et al. Obstetric outcomes in women with 
+two prior cesarean deliveries: is vaginal birth after 
+cesarean delivery a viable option? Am J Obstet Gynecol 
+2005;192:1223–8; discussion 1228–9.
+48. Miller DA, Diaz FG, Paul RH. Vaginal birth after cesarean: a 
+10-year experience. Obstet Gynecol 1994;84:255–8.
+49. Caughey AB, Shipp TD, Repke JT, Zelop CM, Cohen A, 
+Lieberman E. Rate of uterine rupture during a trial of labor 
+in women with one or two prior cesarean deliveries. Am J 
+Obstet Gynecol 1999;181:872–6.
+50. Spaans WA, van der Vliet LM, Röell-Schorer EA, Bleker OP, 
+van Roosmalen J. Trial of labour after two or three previous 
+caesarean sections. Eur J Obstet Gynecol Reprod Biol 
+2003;110:16–9.
+51. Tahseen S, Griffiths M. Vaginal birth after two caesarean 
+sections (VBAC-2)—a systematic review with meta-analysis 
+of success rate and adverse outcomes of VBAC-2 versus VBAC-
+1 and repeat (third) caesarean sections. BJOG 2010;117:5–19.
+52. Kamara M, Henderson JJ, Doherty DA, Dickinson JE, 
+Pennell CE. The risk of placenta accreta following primary 
+elective caesarean delivery: a case-control study. BJOG 
+2013;120:879–86.RCOG Green-top Guideline No. 45 © Royal College of Obstetricians and Gynaecologists21 of 3153. Grobman WA, Gersnoviez R, Landon MB, Spong CY, Leveno 
+KJ, Rouse DJ, et al.; National Institute of Child Health and 
+Human Development (NICHD) Maternal–Fetal Medicine 
+Units (MFMU) Network. Pregnancy outcomes for women 
+with placenta previa in relation to the number of prior 
+cesarean deliveries. Obstet Gynecol 2007;110:1249–55.
+54. Barger MK, Weiss J, Nannini A, Werler M, Heeren T, 
+Stubblefield PG. Risk factors for uterine rupture among 
+women who attempt a vaginal birth after a previous cesarean: 
+a case-control study. J Reprod Med 2011;56:313–20.
+55. Weimar CH, Lim AC, Bots ML, Bruinse HW, Kwee A. Risk 
+factors for uterine rupture during a vaginal birth after one 
+previous caesarean section: a case-control study. Eur J 
+Obstet Gynecol Reprod Biol 2010;151:41–5.
+56. Bujold E, Gauthier RJ. Risk of uterine rupture associated 
+with an interdelivery interval between 18 and 24 months. 
+Obstet Gynecol 2010;115:1003–6.
+57. Bergeron ME, Jastrow N, Brassard N, Paris G, Bujold 
+E. Sonography of lower uterine segment thickness 
+and prediction of uterine rupture. Obstet Gynecol 
+2009;113:520–2.
+58. Kessous R, Sheiner E. Is there an association between 
+short interval from previous cesarean section and adverse 
+obstetric and perinatal outcome? J Matern Fetal Neonatal 
+Med 2013;26:1003–6.
+59. Kok N, Wiersma IC, Opmeer BC, de Graaf IM, Mol BW, 
+Pajkrt E. Sonographic measurement of lower uterine 
+segment thickness to predict uterine rupture during a trial 
+of labor in women with previous Cesarean section: a meta-
+analysis. Ultrasound Obstet Gynecol 2013;42:132–9.
+60. Say R, Robson S, Thomson R. Helping pregnant women make 
+better decisions: a systematic review of the benefits of patient 
+decision aids in obstetrics. BMJ Open 2011;1:e000261.
+61. Emmett CL, Montgomery AA, Murphy DJ; DiAMOND Study 
+Group. Preferences for mode of delivery after previous 
+caesarean section: what do women want, what do they 
+get and how do they value outcomes? Health Expect 
+2011;14:397–404.
+62. Veltman L. Vaginal birth after cesarean checklist: an 
+evidence-based approach to improving care during VBAC 
+trials. J Healthc Risk Manag 2009;29:22–7.
+63. Frost J, Shaw A, Montgomery A, Murphy DJ. Women’s views 
+on the use of decision aids for decision making about the 
+method of delivery following a previous caesarean section: 
+qualitative interview study. BJOG 2009;116:896–905.
+64. Montgomery AA, Emmett CL, Fahey T, Jones C, Ricketts I, 
+Patel RR, et al.; DiAMOND Study Group. Two decision aids 
+for mode of delivery among women with previous caesarean 
+section: randomised controlled trial. BMJ 2007;334:1305.
+65. Moffat MA, Bell JS, Porter MA, Lawton S, Hundley V, 
+Danielian P, et al. Decision making about mode of 
+delivery among pregnant women who have previously 
+had a caesarean section: A qualitative study. BJOG 
+2007;114:86–93.
+66. Law LW, Pang MW, Chung TK, Lao TT, Lee DT, Leung 
+TY, et al. Randomised trial of assigned mode of delivery 
+after a previous cesarean section – impact on maternal 
+psychological dynamics. J Matern Fetal Neonatal Med 
+2010;23:1106–13.
+67. Royal College of Obstetricians and Gynaecologists. Birth 
+after a caesarean section: Information for you . London: 
+RCOG; 2015.
+68. Catling-Paull C, Johnston R, Ryan C, Foureur MJ, Homer 
+CS. Non-clinical interventions that increase the uptake 
+and success of vaginal birth after caesarean section: a 
+systematic review. J Adv Nurs 2011;67:1662–76.
+69. Rørtveit G, Hannestad YS. Association between mode 
+of delivery and pelvic floor dysfunction. Tidsskr Nor 
+Laegeforen 2014;134:1848–52. 
+70. Faculty of Sexual & Reproductive Healthcare. Male and 
+Female Sterilisation . London: FSRH; 2014.71. Hehir MP, Fitzpatrick M, Cassidy M, Murphy M, O’Herlihy 
+C. Are women having a vaginal birth after a previous 
+caesarean delivery at increased risk of anal sphincter 
+injury? BJOG 2014;121:1515–20.
+72. Aiken CE, Fowden AL, Smith GC. Antenatal glucocorticoids 
+prior to cesarean delivery at term. JAMA Pediatr 
+2014;168:507–8. 
+73. Turner MJ, Agnew G, Langan H. Uterine rupture and labour 
+after a previous low transverse caesarean section. BJOG 
+2006;113:729–32.
+74. Rossi AC, D’Addario V. Maternal morbidity following a trial 
+of labor after cesarean section vs elective repeat cesarean 
+delivery: a systematic review with metaanalysis. Am J 
+Obstet Gynecol 2008;199:224–31.
+75. Hammad IA, Chauhan SP, Magann EF, Abuhamad AZ. 
+Peripartum complications with cesarean delivery: a review 
+of Maternal-Fetal Medicine Units Network publications. J 
+Matern Fetal Neonatal Med 2014;27:463–74.
+76. Smith GC, Pell JP, Dobbie R. Caesarean section and risk 
+of unexplained stillbirth in subsequent pregnancy. Lancet 
+2003;362:1779–84.
+77. Gray R, Quigley MA, Hockley C, Kurinczuk JJ, Goldacre M, 
+Brocklehurst P. Caesarean delivery and risk of stillbirth in 
+subsequent pregnancy: a retrospective cohort study in an 
+English population. BJOG 2007;114:264–70.
+78. Go MD, Emeis C, Guise JM, Schelonka RL. Fetal and 
+neonatal morbidity and mortality following delivery after 
+previous cesarean. Clin Perinatol 2011;38:311–9.
+79. Kamath BD, Todd JK, Glazner JE, Lezotte D, Lynch AM. 
+Neonatal outcomes after elective cesarean delivery. Obstet 
+Gynecol 2009;113:1231–8.
+80. Richardson BS, Czikk MJ, daSilva O, Natale R. The impact 
+of labor at term on measures of neonatal outcome. Am J 
+Obstet Gynecol 2005;192:219–26.
+81. Zanardo V, Simbi AK, Franzoi M, Soldà G, Salvadori A, 
+Trevisanuto D. Neonatal respiratory morbidity risk and 
+mode of delivery at term: influence of timing of elective 
+caesarean delivery. Acta Paediatr 2004;93:643–7.
+82. Stutchfield P, Whitaker R, Russell I; Antenatal Steroids 
+for Term Elective Caesarean Section (ASTECS) Research 
+Team. Antenatal betamethasone and incidence of neonatal 
+respiratory distress after elective caesarean section: 
+pragmatic randomised trial. BMJ 2005;331:662.
+83. Smith GC, Pell JP, Cameron AD, Dobbie R. Risk of perinatal 
+death associated with labor after previous cesarean 
+delivery in uncomplicated term pregnancies. JAMA 
+2002;287:2684–90.
+84. Smith GC. Life-table analysis of the risk of perinatal death at 
+term and post term in singleton pregnancies. Am J Obstet 
+Gynecol 2001;184:489–96.
+85. Dodd JM, Crowther CA, Grivell RM, Deussen AR. Elective 
+repeat caesarean section versus induction of labour 
+for women with a previous caesarean birth. Cochrane 
+Database Syst Rev 2014;(12):CD004906.
+86. Dodd JM, Crowther CA, Huertas E, Guise JM, Horey D. 
+Planned elective repeat caesarean section versus planned 
+vaginal birth for women with a previous caesarean birth. 
+Cochrane Database Syst Rev 2013;(12):CD004224.
+87. Horey D, Kealy M, Davey MA, Small R, Crowther CA. 
+Interventions for supporting pregnant women’s decision-
+making about mode of birth after a caesarean. Cochrane 
+Database Syst Rev 2013;(7):CD010041.
+88. Guise JM, Berlin M, McDonagh M, Osterweil P, Chan 
+B, Helfand M. Safety of vaginal birth after cesarean: a 
+systematic review. Obstet Gynecol 2004;103:420–9.
+89. Mozurkewich EL, Hutton EK. Elective repeat cesarean 
+delivery versus trial of labor: a meta-analysis of the literature 
+from 1989 to 1999. Am J Obstet Gynecol 2000;183:1187–97.
+90. Chaillet N, Bujold E, Dubé E, Grobman WA. Validation of a 
+prediction model for vaginal birth after caesarean. J Obstet 
+Gynaecol Can 2013;35:119–24.RCOG Green-top Guideline No. 45 © Royal College of Obstetricians and Gynaecologists22 of 3191. Grobman WA, Lai Y, Landon MB, Spong CY, Leveno KJ, 
+Rouse DJ, et al. Does information available at admission for 
+delivery improve prediction of vaginal birth after cesarean? 
+Am J Perinatol 2009;26:693–701.
+92. Smith GC, White IR, Pell JP, Dobbie R. Predicting cesarean 
+section and uterine rupture among women attempting 
+vaginal birth after prior cesarean section. PLoS Med 
+2005;2:e252.
+93. Hashima JN, Eden KB, Osterweil P, Nygren P, Guise JM. 
+Predicting vaginal birth after cesarean delivery: a review 
+of prognostic factors and screening tools. Am J Obstet 
+Gynecol 2004;190:547–55.
+94. Grivell RM, Barreto MP, Dodd JM. The influence of 
+intrapartum factors on risk of uterine rupture and 
+successful vaginal birth after cesarean delivery. Clin 
+Perinatol 2011;38:265–75.
+95. Grobman WA. Rates and prediction of successful vaginal 
+birth after cesarean. Semin Perinatol 2010;34:244–8.
+96. Grobman WA, Lai Y, Landon MB, Spong CY, Leveno KJ, 
+Rouse DJ, et al.; National Institute of Child Health and 
+Human Development Maternal-Fetal Medicine Units 
+Network. Prediction of uterine rupture associated with 
+attempted vaginal birth after cesarean delivery. Am J 
+Obstet Gynecol 2008;199:30.e1–5.
+97. Naji O, Wynants L, Smith A, Abdallah Y, Stalder C, Sayasneh 
+A, et al. Predicting successful vaginal birth after Cesarean 
+section using a model based on Cesarean scar features 
+examined by transvaginal sonography. Ultrasound Obstet 
+Gynecol 2013;41:672–8.
+98. Gizzo S, Zambon A, Saccardi C, Patrelli TS, Di Gangi S, 
+Carrozzini M, et al. Effective anatomical and functional 
+status of the lower uterine segment at term: estimating 
+the risk of uterine dehiscence by ultrasound. Fertil Steril 
+2013;99:496–501.
+99. Jastrow N, Gauthier RJ, Gagnon G, Leroux N, Beaudoin F, 
+Bujold E. Impact of labor at prior cesarean on lower uterine 
+segment thickness in subsequent pregnancy. Am J Obstet 
+Gynecol 2010;202:563.e1–7.
+100. Metz TD, Stoddard GJ, Henry E, Jackson M, Holmgren C, 
+Esplin S. Simple, validated vaginal birth after cesarean 
+delivery prediction model for use at the time of admission. 
+Obstet Gynecol 2013;122:571–8. 
+101. Schoorel EN, Melman S, van Kuijk SM, Grobman WA, 
+Kwee A, Mol BW, et al. Predicting successful intended 
+vaginal delivery after previous caesarean section: external 
+validation of two predictive models in a Dutch nationwide 
+registration-based cohort with a high intended vaginal 
+delivery rate. BJOG 2014;121:840–7.
+102. Schoorel EN, van Kuijk SM, Melman S, Nijhuis JG, Smits LJ, 
+Aardenburg R, et al. Vaginal birth after a caesarean section: 
+the development of a Western European population-
+based prediction model for deliveries at term. BJOG 
+2014;121:194–201.
+103. Landon MB, Leindecker S, Spong CY, Hauth JC, Bloom 
+S, Varner MW, et al.; National Institute of Child Health 
+and Human Development Maternal-Fetal Medicine Units 
+Network. The MFMU Cesarean Registry: factors affecting 
+the success of trial of labor after previous cesarean delivery. 
+Am J Obstet Gynecol 2005;193:1016–23.
+104. Stamilio DM, Shanks A. Vaginal birth after cesarean 
+(VBAC) outcomes associated with increasing number of 
+prior VBACs. Womens Health (Lond Engl) 2008;4:233–6.
+105. Smith GC, Pell JP, Pasupathy D, Dobbie R. Factors 
+predisposing to perinatal death related to uterine rupture 
+during attempted vaginal birth after caesarean section: 
+retrospective cohort study. BMJ 2004;329:375.
+106. Harper LM, Stamilio DM, Odibo AO, Peipert JF, Macones 
+GA. Vaginal birth after cesarean for cephalopelvic 
+disproportion: effect of birth weight difference on success. 
+Obstet Gynecol 2011;117:343–8.
+107. Costantine MM, Fox K, Byers BD, Mateus J, Ghulmiyyah 
+LM, Blackwell S, et al. Validation of the prediction model for success of vaginal birth after cesarean delivery. Obstet 
+Gynecol 2009;114:1029–33.
+108. Peaceman AM, Gersnoviez R, Landon MB, Spong CY, Leveno 
+KJ, Varner MW, et al.; National Institute of Child Health 
+and Human Development Maternal-Fetal Medicine Units 
+Network. The MFMU Cesarean Registry: impact of fetal size 
+on trial of labor success for patients with previous cesarean 
+for dystocia. Am J Obstet Gynecol 2006;195:1127–31.
+109. Stock SJ, Walker J, Cooper S, Norman JE. Effect of birth 
+weight on adverse obstetric outcomes in vaginal birth after 
+cesarean delivery. Obstet Gynecol 2010;115:1089; author 
+reply 1089–90.
+110. Jastrow N, Roberge S, Gauthier RJ, Laroche L, Duperron L, 
+Brassard N, et al. Effect of birth weight on adverse obstetric 
+outcomes in vaginal birth after cesarean delivery. Obstet 
+Gynecol 2010;115:338–43.
+111. Flamm BL, Geiger AM. Vaginal birth after cesarean 
+delivery: an admission scoring system. Obstet Gynecol 
+1997;90:907–10.
+112. Knight HE, Gurol-Urganci I, van der Meulen JH, Mahmood TA, 
+Richmond DH, Dougall A, et al. Vaginal birth after caesarean 
+section: a cohort study investigating factors associated with 
+its uptake and success. BJOG 2014;121:183–92.
+113. Abildgaard H, Ingerslev MD, Nickelsen C, Secher NJ. 
+Cervical dilation at the time of cesarean section for dystocia 
+– effect on subsequent trial of labor. Acta Obstet Gynecol 
+Scand 2013;92:193–7.
+114. Kwon JY, Jo YS, Lee GS, Kim SJ, Shin JC, Lee Y. Cervical 
+dilatation at the time of cesarean section may affect the 
+success of a subsequent vaginal delivery. J Matern Fetal 
+Neonatal Med 2009;22:1057–62.
+115. Hoskins IA, Gomez JL. Correlation between maximum 
+cervical dilatation at cesarean delivery and subsequent 
+vaginal birth after cesarean delivery. Obstet Gynecol 
+1997;89:591–3.
+116. Melamed N, Segev M, Hadar E, Peled Y, Wiznitzer A, Yogev 
+Y. Outcome of trial of labor after cesarean section in 
+women with past failed operative vaginal delivery. Am J 
+Obstet Gynecol 2013;209:49.e1–7.
+117. Anim-Somuah M, Smyth RM, Jones L. Epidural versus non-
+epidural or no analgesia in labour. Cochrane Database 
+Syst Rev 2011;(12):CD000331.
+118. Scott JR. Intrapartum management of trial of labour 
+after caesarean delivery: evidence and experience. BJOG 
+2014;121:157–62.
+119. Cahill AG, Odibo AO, Allsworth JE, Macones GA. Frequent 
+epidural dosing as a marker for impending uterine rupture 
+in patients who attempt vaginal birth after cesarean 
+delivery. Am J Obstet Gynecol 2010;202:355.e1–5.
+120. Craver Pryor E, Mertz HL, Beaver BW, Koontz G, Martinez-
+Borges A, Smith JG, et al. Intrapartum predictors of uterine 
+rupture. Am J Perinatol 2007;24:317–21.
+121. Ofir K, Sheiner E, Levy A, Katz M, Mazor M. Uterine 
+rupture: differences between a scarred and an unscarred 
+uterus. Am J Obstet Gynecol 2004;191:425–9.
+122. Holmgren C, Scott JR, Porter TF, Esplin MS, Bardsley 
+T. Uterine rupture with attempted vaginal birth after 
+cesarean delivery: decision-to-delivery time and neonatal 
+outcome. Obstet Gynecol 2012;119:725–31.
+123. Guiliano M, Closset E, Therby D, LeGoueff F, Deruelle P, 
+Subtil D. Signs, symptoms and complications of complete 
+and partial uterine ruptures during pregnancy and delivery. 
+Eur J Obstet Gynecol Reprod Biol 2014;179:130–4.
+124. Cahill AG, Waterman BM, Stamilio DM, Odibo AO, 
+Allsworth JE, Evanoff B, et al. Higher maximum doses of 
+oxytocin are associated with an unacceptably high risk for 
+uterine rupture in patients attempting vaginal birth after 
+cesarean delivery. Am J Obstet Gynecol 2008;199:32.e1–5.
+125. Cahill AG, Stamilio DM, Odibo AO, Peipert JF, Stevens EJ, 
+Macones GA. Does a maximum dose of oxytocin affect risk 
+for uterine rupture in candidates for vaginal birth after 
+cesarean delivery? Am J Obstet Gynecol 2007;197:495.e1–5.RCOG Green-top Guideline No. 45 © Royal College of Obstetricians and Gynaecologists23 of 31126. Jozwiak M, van de Lest HA, Burger NB, Dijksterhuis MG, 
+De Leeuw JW. Cervical ripening with Foley catheter for 
+induction of labor after cesarean section: a cohort study. 
+Acta Obstet Gynecol Scand 2014;93:296–301.
+127. Schmitz T, Pourcelot AG, Moutafoff C, Biran V, Sibony O, 
+Oury JF. Cervical ripening with low-dose prostaglandins 
+in planned vaginal birth after cesarean. PLoS One 
+2013;8:e80903. 
+128. Haas J, Barzilay E, Chayen B, Lebovitz O, Yinon Y, Mazaki-
+Tovi S, et al. Safety of low-dose prostaglandin E2 induction 
+in grandmultiparous women with previous cesarean 
+delivery. J Matern Fetal Neonatal Med 2014;27:445–8.
+129. Jozwiak M, Dodd JM. Methods of term labour induction 
+for women with a previous caesarean section. Cochrane 
+Database Syst Rev 2013;(3):CD009792.
+130. Royal College of Obstetricians and Gynaecologists. 
+Antenatal Corticosteroids to Reduce Neonatal Morbidity 
+and Mortality . Green-top Guideline No. 7. London: RCOG; 
+2010.
+131. Seckl JR, Holmes MC. Mechanisms of disease: 
+glucocorticoids, their placental metabolism and fetal 
+‘programming’ of adult pathophysiology. Nat Clin Pract 
+Endocrinol Metab 2007;3:479–88.
+132. Stutchfield PR, Whitaker R, Gliddon AE, Hobson L, Kotecha 
+S, Doull IJ. Behavioural, educational and respiratory 
+outcomes of antenatal betamethasone for term caesarean 
+section (ASTECS trial). Arch Dis Child Fetal Neonatal Ed 
+2013;98:F195–200.
+133. Kenyon SL, Taylor DJ, Tarnow-Mordi W; ORACLE 
+Collaborative Group. Broad-spectrum antibiotics for 
+preterm, prelabour rupture of fetal membranes: the 
+ORACLE I randomised trial. Lancet 2001;357:979–88.
+134. Kenyon SL, Taylor DJ, Tarnow-Mordi W; ORACLE 
+Collaborative Group. Broad-spectrum antibiotics for 
+spontaneous preterm labour: the ORACLE II randomised 
+trial. Lancet 2001;357:989–94.
+135. National Collaborating Centre for Women’s and Children’s 
+Health. Caesarean section . NICE Clinical Guideline. 
+London: RCOG; 2011 [http://www.nice.org.uk/guidance/
+cg132/evidence/cg132-caesarean-section-full-guideline-3]. 
+Accessed 2015 Mar 18.
+136. Royal College of Obstetricians and Gynaecologists. 
+Reducing the Risk of Venous Thromboembolism during 
+Pregnancy and the Puerperium . Green-top Guideline No. 
+37a. London: RCOG; 2015. 
+137. National Institute for Health and Clinical Excellence. 
+Induction of labour . NICE clinical guideline 70. 
+Manchester: NICE; 2008.
+138. Varner MW, Leindecker S, Spong CY, Moawad AH, Hauth JC, Landon MB, et al.; National Institute of Child Health 
+and Human Development Maternal-Fetal Medicine Units 
+Network. The Maternal-Fetal Medicine Unit cesarean 
+registry: trial of labor with a twin gestation. Am J Obstet 
+Gynecol 2005;193:135–40.
+139. Cahill A, Stamilio DM, Paré E, Peipert JP, Stevens EJ, Nelson 
+DB, et al. Vaginal birth after cesarean (VBAC) attempt 
+in twin pregnancies: is it safe? Am J Obstet Gynecol 
+2005;193:1050–5.
+140. Ford AA, Bateman BT, Simpson LL. Vaginal birth 
+after cesarean delivery in twin gestations: a large, 
+nationwide sample of deliveries. Am J Obstet Gynecol 
+2006;195:1138–42.
+141. Aaronson D, Harlev A, Sheiner E, Levy A. Trial of labor 
+after cesarean section in twin pregnancies: maternal 
+and neonatal safety. J Matern Fetal Neonatal Med 
+2010;23:550–4.
+142. Elkousy MA, Sammel M, Stevens E, Peipert JF, Macones 
+G. The effect of birth weight on vaginal birth after 
+cesarean delivery success rates. Am J Obstet Gynecol 
+2003;188:824–30.
+143. Royal College of Obstetricians and Gynaecologists. Late 
+Intrauterine Fetal Death and Stillbirth . Green-top 
+Guideline No. 55. London: RCOG; 2010.
+144. Ramirez MM, Gilbert S, Landon MB, Rouse DJ, Spong 
+CY, Varner MW, et al. Mode of delivery in women with 
+antepartum fetal death and prior cesarean delivery. Am J 
+Perinatol 2010;27:825–30.
+145. Royal College of Obstetricians and Gynaecologists. 
+Induction of Labour at Term in Older Mothers . Scientific 
+Impact Paper No. 34. London: RCOG; 2013.
+146. Srinivas SK, Stamilio DM, Stevens EJ, Odibo AO, Peipert JF, 
+Macones GA. Predicting failure of a vaginal birth attempt 
+after cesarean delivery. Obstet Gynecol 2007;109:800–5.
+147. Grobman WA, Lai Y, Landon MB, Spong CY, Leveno KJ, 
+Rouse DJ, et al.; National Institute of Child Health and 
+Human Development (NICHD) Maternal-Fetal Medicine 
+Units Network (MFMU). Development of a nomogram for 
+prediction of vaginal birth after cesarean delivery. Obstet 
+Gynecol 2007;109:806–12.
+148. Durnwald CP, Rouse DJ, Leveno KJ, Spong CY, MacPherson 
+C, Varner MW, et al.; National Institute of Child Health 
+and Human Development Maternal-Fetal Medicine Units 
+Network. The Maternal-Fetal Medicine Units Cesarean 
+Registry: safety and efficacy of a trial of labor in preterm 
+pregnancy after a prior cesarean delivery. Am J Obstet 
+Gynecol 2006;195:1119–26.RCOG Green-top Guideline No. 45 © Royal College of Obstetricians and Gynaecologists24 of 31Appendix I: Definitions of terms
+Planned VBAC Planned VBAC (vaginal birth after previous caesarean delivery) refers to the 
+intended mode of delivery of any woman who has experienced a prior caesarean 
+birth who plans to deliver vaginally rather than by elective repeat caesarean 
+section (ERCS).
+Successful and unsuccessful 
+planned VBACA vaginal delivery (spontaneous or assisted) in a woman undergoing planned 
+VBAC indicates a successful VBAC. Delivery by emergency caesarean during 
+the labour indicates an unsuccessful VBAC.
+Uterine rupture Disruption of the uterine muscle extending to and involving the uterine serosa or 
+disruption of the uterine muscle with extension to the bladder or broad ligament.
+Uterine dehiscence Disruption of the uterine muscle with intact uterine serosa.
+Perinatal mortality Combined number of stillbirths (antepartum and intrapartum) and neonatal 
+deaths between 20 weeks of gestation and 28 days of life per 10 000 live 
+births and stillbirths. Perinatal mortality rate will exclude deaths due to fetal 
+malformation unless otherwise stated.
+Term delivery-related perinatal 
+death Term delivery-related perinatal death is defined as the combined number of 
+intrapartum stillbirths and neonatal deaths per 10 000 live births and stillbirths 
+at or beyond 37+0 weeks of gestation. Birth-related perinatal mortality rates 
+exclude antepartum stillbirths and deaths due to fetal malformation unless 
+otherwise stated. 
+Neonatal respiratory morbidity Combined rate of transient tachypnoea of the newborn and respiratory distress 
+syndrome.RCOG Green-top Guideline No. 45 © Royal College of Obstetricians and Gynaecologists25 of 31Appendix II: Example of a schedule of antenatal care
+12+0 weeks Provision of written patient information on delivery options (VBAC and ERCS).
+18–21+0 weeks Ultrasonographer to perform midtrimester scan for fetal anomaly and placental localisation.
+Reschedule ultrasound at 32–34 weeks for women identified to have a low-lying placenta with a 
+history of previous caesarean delivery.
+21–28 weeks Antenatal counselling appointment for women with uncomplicated singleton pregnancies and 
+single previous lower segment caesarean delivery. Documented counselling of risks and benefits 
+of VBAC versus ERCS (facilitated by use of decision aid, pro forma or checklist). A review of the 
+previous caesarean delivery, with access to the woman’s previous obstetric medical record, should 
+take place. Counselling should be undertaken by member(s) of the maternity team.
+Midwifery review for all pregnant women. Undertake routine reviews and completion of 28-week 
+screening tests (e.g. full blood count, ABO rhesus D group status, administration of anti-D if 
+appropriate).
+32–34 weeks Obstetrician-led assessment of women with previous caesarean delivery who are identified to have 
+a low-lying placenta at 32–34-week obstetric ultrasound. The aim is to provide adequate time for 
+investigation and management of possible placenta accreta.
+Midwifery review for women with normally sited placenta. Establish woman’s preference for 
+planned VBAC or ERCS and ensure suitability for planned VBAC (i.e. cephalic presentation, no other 
+obstetric complications). 
+By 36 weeks Obstetrician-led assessment to determine mode of delivery for women who opted for ERCS, are 
+undecided on mode of delivery or have complicating obstetric and medical disorders (e.g. multiple 
+pregnancy, delivery of a macrosomic infant [birthweight of 4 kg or more], small for gestational age 
+and/or fetal growth restriction, pre-eclampsia).
+Midwifery review to confirm suitability and maternal preference for planned VBAC (i.e. woman 
+understands all risks/benefits, has normally grown fetus with cephalic presentation, no other 
+obstetric complications).
+After 39 weeks Performing ERCS 
+If ERCS is required prior to 39+0 weeks for obstetric or medical indications then prophylactic 
+antenatal corticosteroids may be considered to reduce the risk of neonatal respiratory morbidity 
+(transient tachypnoea of the newborn, respiratory distress syndrome). However, concerns 
+regarding the long-term safety should be discussed with the mother.
+41+0 weeks Senior obstetrician-led assessment for women who had opted for planned VBAC but have not gone 
+into spontaneous labour. Risks and benefits of various options are discussed and documented. 
+Options include membrane sweep, prostaglandin, amniotomy or Foley catheter induction of labour, 
+ERCS or expectant management. RCOG Green-top Guideline No. 45 © Royal College of Obstetricians and Gynaecologists26 of 31Appendix III: Clinical management of pregnant women who have had one or more caesarean birth(s)
+Management of pregnant women who have one or more caesarean birth(s)
+Any contraindications to VBAC
+l Placental localisation – exclude praevia ± accreta.
+l Review previous record and operative notes.
+l Medical or obstetric conditions that preclude VBAC.
+Antenatal counselling and shared decision-making process
+l Explain risks and benefits of planned VBAC versus ERCS, including the individualised likelihood of VBAC success. 
+• m For example, women with previous vaginal births should be informed that previous vaginal delivery, particularly 
+previous VBAC, is the single best predictor of successful VBAC and is associated with planned VBAC success rates of 
+85–90%.
+• m Greater maternal height, maternal age less than 40 years, BMI less than 30, gestation of less than 40 weeks and 
+infant birthweight less than 4 kg (or similar/lower birthweight to/than index caesarean delivery) are associated with 
+an increased likelihood of successful VBAC. 
+• m In addition, spontaneous onset of labour, vertex presentation, fetal head engagement or a lower station, and higher 
+admission Bishop score also increase the likelihood of successful VBAC. 
+• m Successful VBAC is more likely among women with prior caesarean for fetal malpresentation (84%). 
+l Elicit maternal choice for mode of delivery and how it fits with future reproductive preferences.
+Intrapartum care for VBAC
+l Delivery setting, monitoring, analgesia.
+l Recognising failure to progress and/or uterine rupture.
+l Caution if induction and/or augmentation is/are considered necessary.
+Intrapartum care for ERCS
+l Preferred gestational timing to conduct caesarean (from 39+0 weeks).
+l Perioperative management.
+Management of women in special circumstances
+l VBAC in the presence of high-risk obstetric factors.RCOG Green-top Guideline No. 45 © Royal College of Obstetricians and Gynaecologists27 of 31Appendix IV: Birth choices after caesarean delivery pathway
+Likelihood of Overall Tick when 
+discussed
+Successful VBAC (one previous caesarean delivery, no previous vaginal birth) 3 out of 4 or 72–75%
+Successful VBAC (one previous caesarean delivery, at least one previous 
+vaginal birth)Almost 9 out of 10 or 
+up to 85–90%
+Unsuccessful VBAC more likely in:
+Induced labour, no previous vaginal delivery, body mass index (BMI) greater than 30 and previous 
+caesarean for labour dystocia. If all of these factors are present, successful VBAC is achieved in 40% 
+of cases.
+Likelihood of VBAC ERCS
+Maternal
+Uterine rupture 5 per 1000/0.5% < 2 per 10 000/< 0.02%
+Blood transfusion 2 per 100/2% 1 per 100/1%
+Endometritis No significant difference in risk
+Serious complications 
+in future pregnanciesNot applicable if successful 
+VBACIncreased likelihood of placenta praevia/ 
+morbidly adherent placenta
+Maternal mortality 4 per 100 000/0.004% 13 per 100 000/0.013%
+Fetal/newborn
+Transient respiratory 
+morbidity2–3 per 100/2–3% 4–6 per 100/4–6% (risk reduced with 
+corticosteroids, but there are concerns 
+about potential long-term adverse effects)
+Antepartum stillbirth 
+beyond 39+0 weeks 
+while awaiting 
+spontaneous labour10 per 10 000/0.1% Not applicable
+Hypoxic ischaemic 
+encephalopathy (HIE)8 per 10 000/0.08% < 1 per 10 000/< 0.01%
+Information leaflet(s) provided: VBAC ERCS Other 
+Discussed:
+Continuous electronic fetal monitoring at the onset of regular uterine contractions
+Birth on the labour suite
+Need for intravenous (IV) access in labour
+Comments:RCOG Green-top Guideline No. 45 © Royal College of Obstetricians and Gynaecologists28 of 31Management plan in the event of:
+Preterm labour ( < 37+0 weeks) VBAC Emergency caesarean delivery
+Spontaneous labour before 
+ERCS date VBAC Caesarean delivery Depends on stage of 
+labour – details below
+No spontaneous labour after 
+41 weeks – discussed with 
+senior obstetrician Sweep Induction of labour (give details of agreed plan below) ERCS
+Use of oxytocin in labour 
+– discussed with senior 
+obstetrician
+Details of induction of labour:
+ERCS booking details:
+Additional comments:RCOG Green-top Guideline No. 45 © Royal College of Obstetricians and Gynaecologists29 of 31Appendix V: VBAC success and uterine rupture risks of planned VBAC labours
+Spontaneous Induced Augmented
+AHRQ meta-analysis9VBAC success 
+Uterine rupture* 74% (95% CI 
+72–75%)
+* 0.47% (95% CI 
+0.28–0.68%)63% (95% CI 
+59–67%)
+1.2% (95% CI 
+0.7–1.9%)68% (95% CI 
+64–72%)
+1.1% (95% CI 
+0.9–1.5%)
+NICHD study18,103 
+(n = 17 898 VBACs)VBAC success
+Uterine rupture80.6%
+0.36%67.4%
+1.02%73.9%
+0.87%
+Australian population study22 
+(n = 10 958 VBACs)VBAC success
+Uterine rupture52.6%
+0.15%51.4%
+0.68%61.6%
+1.91%
+UK Obstetric Surveillance System 
+case–control study20Uterine rupture 0.13% 0.36% 0.28%
+* refers to overall rates when spontaneous, induced and augmented labours are combined, although the large majority of data 
+are derived from spontaneous labour.RCOG Green-top Guideline No. 45 © Royal College of Obstetricians and Gynaecologists30 of 31Appendix VI: Explanation of guidelines and evidence levels
+Clinical guidelines are: ‘systematically developed statements which assist clinicians and patients in 
+making decisions about appropriate treatment for specific conditions’. Each guideline is systematically 
+developed using a standardised methodology. Exact details of this process can be found in Clinical 
+Governance Advice No.1 Development of RCOG Green-top Guidelines (available on the RCOG website 
+at http://www.rcog.org.uk/green-top-development ). These recommendations are not intended to dictate 
+an exclusive course of management or treatment. They must be evaluated with reference to individual 
+patient needs, resources and limitations unique to the institution and variations in local populations. 
+It is hoped that this process of local ownership will help to incorporate these guidelines into routine 
+practice. Attention is drawn to areas of clinical uncertainty where further research may be indicated. 
+The evidence used in this guideline was graded using the scheme below and the recommendations 
+formulated in a similar fashion with a standardised grading scheme.
+At least one meta-analysis, systematic review or 
+randomised controlled trial rated as 1++, and 
+directly applicable to the target population; or 
+A systematic review of randomised controlled 
+trials or a body of evidence consisting 
+principally of studies rated as 1+, directly 
+applicable to the target population and 
+demonstrating overall consistency of results
+A body of evidence including studies rated 
+as 2++ directly applicable to the target 
+population, and demonstrating overall 
+consistency of results; or 
+Extrapolated evidence from studies rated as 
+1++ or 1+
+A body of evidence including studies rated as 
+2+ directly applicable to the target population, 
+and demonstrating overall consistency of 
+results; or 
+Extrapolated evidence from studies rated as 
+2++
+Evidence level 3 or 4; or 
+Extrapolated evidence from studies rated as 2+1++ High-quality meta-analyses, systematic 
+reviews of randomised controlled trials or 
+randomised controlled trials with a very 
+low risk of bias
+1+ Well-conducted meta-analyses, systematic 
+reviews of randomised controlled trials 
+or randomised controlled trials with a 
+low risk of bias
+1– Meta-analyses, systematic reviews of 
+randomised controlled trials or 
+randomised controlled trials with a high 
+risk of bias
+2++ High-quality systematic reviews of 
+case–control or cohort studies or high-
+quality case–control or cohort studies 
+with a very low risk of confounding, bias 
+or chance and a high probability that the 
+relationship is causal
+2+ Well-conducted case–control or cohort 
+studies with a low risk of confounding, 
+bias or chance and a moderate 
+probability that the relationship is causal
+2– Case–control or cohort studies with a 
+high risk of confounding, bias or chance 
+and a significant risk that the 
+relationship is not causal
+3 Non-analytical studies, e.g. case reports, 
+case series
+4 Expert opinionClassification of evidence levels Grades of recommendations
+Good practice point
+Recommended best practice based on the 
+clinical experience of the guideline 
+development groupDCBA
+P© Royal College of Obstetricians and Gynaecologists 31 of 31 RCOG Green-top Guideline No. 45DISCLAIMER
+The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical
+practice. They present recognised methods and techniques of clinical practice, based on published evidence, for
+consideration by obstetricians and gynaecologists and other relevant health professionals. The ultimate judgement
+regarding a particular clinical procedure or treatment plan must be made by the doctor or other attendant in the light
+of clinical data presented by the patient and the diagnostic and treatment options available.
+This means that RCOG Guidelines are unlike protocols or guidelines issued by employers, as they are not intended to
+be prescriptive directions defining a single course of management. Departure from the local prescriptive protocols or
+guidelines should be fully documented in the patient’s case notes at the time the relevant decision is taken.This guideline was produced on behalf of the Royal College of Obstetricians and Gynaecologists by: 
+Professor JK Gupta FRCOG, Birmingham; Professor GCS Smith FRCOG, Cambridge; and Mr RR Chodankar MRCOG,
+Camberley 
+and peer reviewed by: 
+Professor Z Alfirevic FRCOG, Liverpool; Ms SM Baines, midwifery lecturer and supervisor of midwives, 
+Wrightington, Wigan and Leigh NHS Foundation Trust; Dr S Bewley FRCOG, London; British Maternal and Fetal
+Medicine Society; Mrs A Diyaf MRCOG, Barnstaple; Dr AA Elkady FRCOG, Greater Cairo, Egypt; Mr UI Esen FRCOG,
+South Shields; Dr M Formosa FRCOG, Msida, Malta; Mr DI Fraser FRCOG, Norwich; Mr M Griffiths FRCOG, Luton; 
+Dr S Hamilton FRCOG, Huntingdon; Dr KR Harding FRCOG, London; Mr DW Irons FRCOG, Durham; Dr SI Kayani
+FRCOG, Sabah Al-Salem, Kuwait; Dr R Malhas MRCOG, Walsall; Mr CN Nzewi MRCOG, Guernsey; Mr SOU Orife FRCOG,
+South Shields; Dr MAK Perera, Avissawella, Sri Lanka; RCOG Ethics Committee; RCOG Women’s Network; Royal College
+of Midwives; Dr S Rutter MRCOG, Rotherham; Dr P Sarkar FRCOG, Slough; Dr JR Scott FRCOG, Salt Lake City, Utah, USA;
+Dr M Sinha MRCOG, Chichester; Mrs P Sinha FRCOG, St Leonards-on-Sea; Dr CY Spong, Eunice Kennedy Shriver
+National Institute of Child Health and Human Development, National Institutes of Health, Bethesda, Maryland, USA; 
+The Royal College of Radiologists; Dr CL Tower MRCOG, Manchester; Dr AU Ukpong, Port Harcourt, Nigeria; 
+Mr DP Webster MRCOG, Poole; and Dr SNE Webster MRCOG, Newcastle upon Tyne. 
+Committee lead reviewers were: Mrs G Kumar FRCOG, Wrexham; Dr P Owen FRCOG, Glasgow; and Dr AJ Thomson
+MRCOG, Paisley. 
+The chairs of the RCOG Guidelines Committee were: Dr M Gupta1 MRCOG, London; Dr P Owen2FRCOG, Glasgow;
+and Dr AJ Thomson1MRCOG, Paisley. 
+1co-chairs from June 2014 2until May 2014.
+All RCOG guidance developers are asked to declare any conflicts of interest. A statement summarising any
+conflicts of interest for this guideline is available from: https://www.rcog.org.uk/en/guidelines-research-services/
+guidelines/gtg45/ . 
+The final version is the responsibility of the Guidelines Committee of the RCOG.
+The review process will commence in 2018, unless otherwise indicated.

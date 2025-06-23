@@ -1,0 +1,480 @@
+# Extracted from: MP026 BSOTS.pdf
+# Guideline ID: mp026-bsots
+# Content length: 24751 characters
+# Processing date: 1750066901.290921
+
+BSOTS 
+Maternity Protocol : MP026 
+ 
+Agreed Date: February 2022 
+
+BSOTS (RSCH PRH only ) MP026
+ 
+University Hospital Sussex NHS Trust East Page 2 of 18 
+
+ Triage of Maternity Patients Protocol 
+Maternity Protocol MP026 
+Version 1 
+Approval Date: 28/02/2022 
+Approval Committee Women’s Safety and Quality committee 
+Review date: February 2025 
+Author: Heather Woods : MAU Lead 
+Katie Fraser : Obstetric Lead 
+Julie Carr : RSCH Matron 
+Key Principles: A protocol is a set of measurable, objective standards to 
+determine a course of action. Professional judgment may be used 
+in the application of a protocol. 
+Purpose: To provide guidance for all maternity staff involved in the non-
+elective admission of maternity patients ensuring admissions are 
+seen by the most appropriate person, in the most appropriate 
+area and in a safe and appropriate timeframe based on robust 
+BSOTS assessment. 
+Key related documents: UH Sussex (SRH&WH) Maternity Guidelines: 
+• MP024 Reduced Fetal Movements 
+• MP019 Hypertensive Disorders During Pregnancy 
+• MP053 Obstetric Haemorrhage 
+• MP032 Pre -labour Rupture of Membranes 
+• MO031 Preterm Labour 
+• MP030 Latent Phase of Labour 
+• MP035 Care of Women in Labour 
+• MP045 Pyrexia in Labour and Sepsis 
+• MP071 Provisions and Schedules of Postnatal Care 
+ BSOTS (RSCH PRH only ) MP026
+ 
+University Hospital Sussex NHS Trust East Page 3 of 18 
+ Contents 
+Aims: ................................ ................................ ................................ ................................ ....5 
+Scope: ................................ ................................ ................................ ................................ ....5 
+Responsibilities: ................................ ................................ ................................ ..................... 5 
+Abbreviations used within this guideline ................................ ................................ ................ 6 
+1 Introduction and key points ................................ ................................ ......................... 6 
+2 Duties and Responsibilities ................................ ................................ .......................... 6 
+2.1 Midwives ................................ ................................ ................................ .......................... 6 
+2.2 Medical staff ................................ ................................ ................................ ..................... 7 
+2.3 Escalation for Obstetric review RSCH ................................ ................................ .............. 8 
+3 Referral Criteria ................................ ................................ ................................ ........... 9 
+3.1 Referral criteria ................................ ................................ ................................ ................ 9 
+3.2 Additional reasons: ................................ ................................ ................................ .......... 9 
+3.3 Referral Exclusion Criteria ................................ ................................ ................................ 9 
+3.4 Referral Pathway for Women and people ................................ ................................ ....... 9 
+4 Patient Assessment and Treatment Plan ................................ ................................ .... 10 
+4.1 Initial Assessment ................................ ................................ ................................ .......... 10 
+4.2 Midwifes responsibilities ................................ ................................ ............................... 10 
+4.3 Prioritisation ................................ ................................ ................................ ................... 10 
+4.4 Subsequent immediate care ................................ ................................ .......................... 11 
+4.5 Role of the MCA ................................ ................................ ................................ ............. 11 
+4.6 On-going Care ................................ ................................ ................................ ................ 11 
+4.7 Discharge and Follow up ................................ ................................ ................................ 12 
+4.8 Results and Further Management ................................ ................................ ................. 12 
+4.9 Escalation ................................ ................................ ................................ ....................... 12 
+5 Communication with the Woman or Person ................................ ............................... 12 
+5.1 The BSOTs midwife should: ................................ ................................ ............................ 13 
+5.2 The Obstetrician should: ................................ ................................ ................................ 13 
+5.3 An appropriate translation service should be used for non -English speaking patients 13 
+6 BSOTS Staffing requirements ................................ ................................ ..................... 13 
+6.1 Midwifery staffing: ................................ ................................ ................................ ......... 13 
+6.2 Obstetric staffing ................................ ................................ ................................ ............ 14 
+7 Audit ................................ ................................ ................................ ......................... 14 
+Appendix 1: ................................ ................................ ................................ .......................... 14 
+Appendix 2: Patient Journey ................................ ................................ ................................ . 15 BSOTS (RSCH PRH only ) MP026
+ 
+University Hospital Sussex NHS Trust East Page 4 of 18 
+ Appendix 3: Example of Algorithm & Assessment Card ................................ ......................... 16 
+Appendix 3 (cont): Example of Algorithm & Assessment Card ................................ ............... 17 
+ 
+ BSOTS (RSCH PRH only ) MP026
+ 
+University Hospital Sussex NHS Trust East Page 5 of 18 
+ Aim s: 
+ 
+• This operational policy will facilitate services for women and people requiring an urgent 
+non-scheduled obstetric assessment, usually when attending Maternity Triage in MAU 
+at RSCH or DAU/Triage at PRH. 
+• Assessment by using BSOTS© (Birmingham Symptom specific Obstetric Triage System) 
+will standardise and clinically prioritise care, reduce time to initial assessment and 
+reduce need for inappropriate tests, treatments and reviews. 
+• The use of the BSOTS© system enables an overview of the workload in Maternity Triage 
+and ensures appropriate escalation should that be required. It also ensures those who 
+require medical attention receive it in a timely way and that those women and people 
+for whom it is appropriate, are discharged by the midwife. 
+ 
+Scope : 
+ 
+This guideline is for use by: 
+• Midwives 
+• Obstetricians 
+• Maternity and Health Care Assistants 
+ 
+Responsibilities: 
+ 
+It is the responsibility of all Midwives and obstetricians to: 
+• Access, read, understand, and apply this guidance. 
+• Attend any mandatory training pertaining to this guidance 
+• To use their professional judgement in the application of his protocol 
+ 
+It is the responsibility of the division to: 
+• Ensure the guideline is reviewed as required in line with Trust and National 
+recommendations. 
+• Ensure the guideline is accessible to all relevant staff. 
+
+ BSOTS (RSCH PRH only ) MP026
+ 
+University Hospital Sussex NHS Trust East Page 6 of 18 
+ Abbreviations used within this guideline 
+ 
+BSOTS - Birmingham Symptom specific 
+Obstetric Triage System MEOWS – Modified Early Obstetric Warning 
+Score 
+TAC - Triage Assessment Card MAU – Maternity Assessment Unit 
+DAU - Day Assessment Unit APH – Antepartum Haemorrhage 
+SROM – Spontaneous Rupture of Membranes ANC – Antenatal Clinic 
+IOL – Induction of Labour CMW – Community Midwife 
+ 
+1 Introduction and key points 
+ 
+Maternity Triage systems are designed to ensure that women and people receive the level and 
+quality of care appropriate to their clinical need and that the resources available to the unit are 
+used effectively. Failure to appropriately identify, prioritise and treat pregnant women and 
+people in an emergency situation has resulted in adverse outcomes within the UK as 
+highlighted by the Confidential Enquiry reports into Maternal Deaths. This, together with 
+information from local audit at Birmingham Women’s NHS Foundation Trust (BWNFT) led to 
+development of a specific system for women who attend Maternity Triage (BSOTS©). 
+The Birmingham Symptom Specific Obstetric Triage System (BSOTS) is based on established 
+triaging systems used in Emergency Medicine and is a process of prioritising the order in which 
+women and people receive obstetric and/or midwifery attention on arrival to the Maternity 
+Services guiding their treatment according to clinical need. It includes a standardised initial 
+assessment by a midwife, ideally within 15 minutes of attendance, and the allocation of a 
+category of clinical urgency using prioritisation algorithms. The system also guides timing of 
+subsequent assessments and care (by an obstetrician if required). This appropriate 
+prioritisation of care should improve safety for women and people and babies by identifying 
+those who require more urgent attention and reducing the time to treatment commencing. 
+ 
+Standardised symptom -specific algorithms are used for allocation of clinical priority and the 
+immediate care and further investigations of the eight most common reasons for attendance: 
+Abdominal pain, Antenatal bleeding, Hypertension, Ruptured membranes, Reduced fetal 
+movements, Suspected labour, Unwell/other and postnatal. 
+ 
+2 Duties and Responsibilities 
+ 
+2.1 Midwives 
+• Midwives provide the majority of care for women and people during initial 
+assessment and immediate care in Triage and should do so in accordance with 
+NMC standards. BSOTS (RSCH PRH only ) MP026
+ 
+University Hospital Sussex NHS Trust East Page 7 of 18 
+ • Midwives should carry out the initial assessment which includes baseline 
+maternal or parental observations, fetal heart auscultation, abdominal 
+palpation and urinalysis within 15 -30 minutes of a woman or person’s arrival in 
+the department. 
+• Midwives are required to continue to use their clinical judgement whilst using 
+the BSOTS© algorithms and immediate care guidance. 
+• Midwives can allocate subsequent duties to an MCA after initial assessment 
+(bloods, further observations) but MUST undertake the initial assessment and 
+observations themselves. 
+• Midwives should inform the obstetric registrar if woman or person is deemed 
+to have “orange” clinical priority, and expect review within 15 minutes. If the 
+registrars on duty are unable to attend then the SHO can review in the first 
+instance or escalate to the Obstetric consultant if required. 
+• The triage midwife should escalate to the Delivery Suite shift leader if they are 
+unable to triage women and people within 30 minutes of arrival – this should 
+be recorded as a red flag event and appropriate action taken such as utilisation 
+of the escalation policy to provide extra midwifery staffing support. 
+• Care provided on admission should be recorded on the specific BSOTS© area of 
+Badgernet. 
+• Midwives should be familiar with or received the training package for the use 
+of the BSOTS© and the associated paperwork. 
+2.2 Medical staff 
+ 
+• Obstetric staff should respond promptly to requests to review women and 
+people and assess them in accordance with GMC good medical practice 
+standards. 
+• On-call teams should inform Triage of any telephone referrals taken 
+• Be familiar with the BSOTS© system for prioritising women’s care in triage 
+• Continue to use their clinical judgement whilst using the BSOTS© algorithms 
+and immediate care guidance 
+• Care provided should be recorded on the specific BSOTS© area of Badgernet 
+detailing ongoing plan of care. 
+• Escalate to senior members of the medical team if concerned about an 
+individual woman’s or person’s clinical condition or if unable to attend Triage if 
+busy elsewhere in the hospital, or if workload exceeds capacity leading to 
+excessive delays for review of women and people in the department. 
+
+ BSOTS (RSCH PRH only ) MP026
+ 
+University Hospital Sussex NHS Trust East Page 8 of 18 
+ 2.3 Escalation for Obstetric review RSCH 
+
+2.4 Escalation for Obstetric review PRH 
+
+BSOTS (RSCH PRH only ) MP026
+ 
+University Hospital Sussex NHS Trust East Page 9 of 18 
+ 3 Referral Criteria 
+3.1 Referral criteria 
+Women and people booked at UHSussex who are pre gnan t; ≥14+0 weeks 
+gestation or postnatal presenting with the following criteria and requiring urgent 
+assessment: 
+• Abdominal Pain, 
+• Antenatal Bleeding, 
+• Hypertension, 
+• SROM, 
+• Reduced Fetal Movements, 
+• Suspected Labour, 
+• Unwell/Other and 
+• Significant postnatal concerns 
+ 
+3.2 Additional reasons: 
+• Complications following operation or procedure undertaken within Maternity 
+Directorate during the pregnancy. 
+• Women and people not booked at UHSussex NHS Foundation Trust who are 
+pregnant; ≥14+0 weeks gestation, or postnatal (within 6 weeks of birth) 
+requiring urgent assessment and visiting the area. 
+3.3 Referral Exclusion Criteria 
+Women and people presenting with the following symptoms will not be suitable 
+Maternity Triage: 
+• Non obstetric problems (rash, mild UTI symptoms, migraine/headache) 
+• Any woman or person presenting with early pregnancy (≤14 weeks gestation) 
+related problems → EPAU 
+• Any non -pregnant woman or person who are greater than 6 weeks beyond 
+birth 
+• Complications following operation or procedure undertaken within 
+Gynaecology Directorate. 
+3.4 Referral Pathway for Women and people 
+ 
+Women and people can attend MAU/DAU/Triage via self -referral (phone -call to 
+the department, discussion with midwife and advised to attend), referral from 
+antenatal clinic, community midwife or GP. Women and people should never be 
+encouraged to just ‘turn up’ in MAU /Triage . 
+ 
+Women and people are advised to attend should be given a recommended 
+timeframe or if appropriate be given an appointment in the assessment unit diary. 
+ BSOTS (RSCH PRH only ) MP026
+ 
+University Hospital Sussex NHS Trust East Page 10 of 18 
+ 4 Patient Assessment and Treatment Plan 
+4.1 Initial Assessment 
+ 
+Once the woman or person has presented to the department, the triage process is started a nd 
+the time of arrival must be noted . 
+ 
+The initial triage assessment to determine the urgency with which women and people will need 
+to be seen will be carried out in the dedicated initial triage assessment area. (Exceptions to this 
+are during quieter times in the day or overnight when it may be appropriate to so al l 
+assessments in a bay or room ) 
+ 
+Based on reason for attendance, the midwife will identify the appropriate symptom specific 
+Triage Assessment Card (TAC) to be used for the assessment (there is a TAC for each of the 
+eight BSOTS reasons for attendance: abdominal pain, antenatal bleeding, reduced fetal 
+movements, suspected labour, hypertension, spontaneous rupture of the membranes, 
+unwell/other and postnatal) see example see appendix 3. 
+ 
+4.2 Midwifes responsibilities 
+ 
+4.2.1 The midwife will then complete a standard clinical triage assessment 
+within 15 -30 minutes of the woman or person arriving on the unit: 
+• This includes taking a brief maternal or parental history and reason 
+for attending, 
+• Observing general appearance 
+• MEOWS assessment (temperature, pulse, blood pressure, 
+respirations, oxygen saturation (if applicable), urine output, 
+neurological response, amniotic fluid loss or other vaginal 
+discharge/ PV loss (if applicable), lochia (if applicable) 
+• Assessment of pain levels: none, mild, moderate, severe 
+• Abdominal palpation and fundal height if appropriate 
+• Auscultation of the fetal heart (if antenatal) 
+ 
+4.2.2 Using this information and the BSOTS algorithm specific to the woman or 
+person’s presenting condition; the midwife will then be able to: 
+• Ascertain Level of urgency and prioritise care using BSOTS© 
+symptom specific algorithms 
+• Plan of immediate care 
+4.3 Prioritisation 
+ 
+This initial triage assessment should take about 5 -10 minutes and is used to define a category of 
+clinical urgency Red, Orange, Yellow or Green using symptom specific algorithms which 
+indicates when women or people should be next seen, with each category clearly stating the BSOTS (RSCH PRH only ) MP026
+ 
+University Hospital Sussex NHS Trust East Page 11 of 18 
+ timing of subsequent assessment and care some of which is midwifery led and some which will 
+need an Obstetrician. 
+ 
+*It is important that clinical staff can exercise their clinical judgement when deciding on the 
+women or person’s category of urgency, but this should only be used to increase the category of 
+urgency. Clinical indicators such as maternal or parental blood pressure or pulse should not be 
+overridden . 
+ 
+Doctors should be contacted via the bleep system and any communication issues should be 
+escalated to the labour ward coordinator with the highest level of urgency (red) should be seen 
+immediately ideally on delivery suite for ongoing 1:1 care. 
+Women and people identified as orange should be seen within 15 minutes and immediately 
+moved from the initial triage area to a bed space. 
+Women and people identified as yellow can return to the waiting room and be seen within an 
+hour and women and people identified as green seen within 4 hours for further assessment. 
+Midwife will need to bleep relevant person and escalate if they are unable to attend. 
+ 
+4.4 Subsequent immediate care 
+ 
+BSOTS algorithms detail the immediate subsequent care and tasks required for each of the 8 
+reasons for attendance. 
+
+4.5 Role of the MCA 
+ 
+• The MCA assigned to MAU /Triage should primarily assist the BSOTS midwife 
+but wherever possible should also help with phone calls and observations and 
+bloods generated from care in the assessment unit. Clear communication 
+between MCAs and midwives is imperative. 
+• The MCA should NOT carry out initial triaging observations. Subsequent 
+observations and blood tests can be carried out by the MCA. 
+• Of utmost importance with BSOTS is time of arrival and time of initial 
+assessment and subsequent care timings and the MCA will be expected to 
+assist with this 
+ 
+4.6 On-going Care 
+ BSOTS category Maximum time until treatment By whom? 
+Red Immediate Reg+ 
+Orange 15 minutes Reg+ 
+Yellow 1 hour Midwife/SHO+ 
+Green 4 hours Midwife/SHO+ BSOTS (RSCH PRH only ) MP026
+ 
+University Hospital Sussex NHS Trust East Page 12 of 18 
+ Handover and transfer of care should be from one health care professional 
+(midwife or medical staff) to another directly, ideally in person, but if this is not 
+possible, by telephone. 
+Effective communication is central to promoting patient safety. A structured and 
+consistent handover and transfer of care between staff can be achieved using the 
+SBAR tool that covers details on the woman or person’s Situation, Background, 
+Assessment, and Recommendations 
+
+Situation 
+What is the woman or persons gestation, gravida, parity and 
+reason for admission/presenting problem? 
+Background 
+What is the woman or persons history, e.g. obstetric risk 
+factors, MH, CP etc…? 
+Assessment 
+What assessment have you made? Use MEOWS, CTG, blood 
+and urine results, concerns about physical or mental health as 
+well as holistic assessment. 
+Recommendations 
+What is your plan? Further tests, treatments, reviews, 
+escalation or discharge? What is the timeframe? 
+ 
+4.7 Discharge and Follow up 
+Following review women and people may be admitted and transferred to Labour 
+Ward or antenatal ward or will be discharged with appropriate follow -up 
+appointments arranged if necessary. 
+ 
+4.8 Results and Further Management 
+The results of any pending tests undertaken during the Triage assessment should 
+be entered into the results diary which is checked on the night shift and actioned 
+the following day. 
+ 
+4.9 Escalation 
+Any delays or breaches to BSOTs initial assessments or waiting times must be 
+escalated to the MAU/TRIAGE Lead or Labour Ward Co -ordinator and a DATIX 
+completed. 
+ 
+5 Communication with the W oman or Person 
+ BSOTS (RSCH PRH only ) MP026
+ 
+University Hospital Sussex NHS Trust East Page 13 of 18 
+ 5.1 The BSOTs midwife should: 
+• Manage expectations by communicating clearly what is happening next, 
+timeframes and who they are waiting to see. 
+• Re-assure that their information has been passed on from their previous 
+provider. 
+• Consider re -capping the history to reassure the woman or person that you 
+have the appropriate information. Ensure a holistic assessment of the woman 
+or person’s condition is undertaken. 
+• Provide appropriate advice on discharge and arrange follow up appointments 
+if necessary and results are in the results diary to be actioned later. 
+5.2 The Obstetrician should: 
+ 
+• Re-assure that their information has been passed on from their previous 
+provider. 
+• Consider re -capping the history to reassure the woman or person that you 
+have the appropriate information. 
+5.3 An appropriate translation service should be used for non -English speaking 
+patients 
+ 
+https://nww.bsuh.nhs.uk/working -here/equality -diversity -and-human -rights/communications -
+support -and-translation -services/ 
+ 
+6 BSOTS Staffing requirements 
+ 
+Local midwifery and medical staffing numbers and skill mix will depend on how busy the 
+maternity triage department is and may vary with different shift times throughout the day. The 
+priority must be to undertake the initial triage within 15 -30 minutes of arrival. 
+ 
+6.1 Midwifery staffing: 
+6.1.1 Maternity Triage is one experienced midwife and one Maternity Care 
+Assistant ( MCA ). 
+6.1.2 Where MAU and Triage are run from the same area, another midwife 
+working should be allocated to run the maternity/day assessment unit 
+(MAU/DAU) booked appointments. 
+ 
+• Both midwives are responsible for telephone calls. 
+• The expectation is that midwives will help each other out where 
+possible without compromising their own workload. 
+• Allocation of duties such as daily checks and checking/actioning 
+blood/other results will be discussed at handover. BSOTS (RSCH PRH only ) MP026
+ 
+University Hospital Sussex NHS Trust East Page 14 of 18 
+ • Midwives are expected to facilitate each other’s breaks. 
+• The MCA will primarily be allocated to the BSOTS triage midwife but 
+may also help with phone calls and MAU/DAU duties. 
+6.1.3 If either the BSOTS or MAU/DAU midwife is re allocated to other areas 
+due to staffing shortages then the remaining midwife will not be 
+expected to adhere to BSOTS timeframes but should still endeavour to 
+risk asses using TAC and algorithms. 
+6.1.4 Reallocation of Triage or MAU/DAU midwife should be DATIX’d. 
+ 
+6.2 Obstetric staffing 
+ 
+MAU /Triage falls under the remit of the obstetric SHO and Registrar. When they 
+are busy it is appropriate to escalate to the Gynae SH O and Registrar (see section 
+2.3). The consultant on call can also be called if all others are busy and a breach of 
+BSOTS timings is likely. Any breaches of timings should be DATIX. 
+7 Audit 
+ 
+Monitoring Method Frequency 
+BSOTS suspended due to relocation of BSOTS midwife Audit Annual 
+Number of women and people seen within 30 minutes Audit Annual 
+Number of women and people seen within timeframe for 
+red, orange, yellow and green Audit Annual 
+Number of red flags – women and people not triaged within 
+30 minutes from time of arrival – due to midwifery staffing Audit Annual 
+ 
+Appendix 1: 
+
+Triage BSOTS Day assessment appointments 
+Abdominal pain BP profile 
+PVB ?OC/OC follow up 
+Hypertension > 140/90 SROM assessments >37/40 
+PPROM OP IOLs 
+Mec SROM Ferinject 
+RFM Bloods 
+Suspected established labour Ongoing management PIH and PET 
+PN unwell Scan reviews 
+Beeline Reg reviews 
+Unwell/other (r.g. hyperemesis) High risk sweeps 
+ Planned CTGs BSOTS (RSCH PRH only ) MP026
+ 
+University Hospital Sussex NHS Trust East Page 15 of 18 
+
+Appendix 2: Patient Journey 
+ BSOTS (RSCH PRH only ) MP026
+ 
+University Hospital Sussex NHS Trust East Page 16 of 18 
+
+Appendix 3 : Example of Algorithm & Assessment Card 
+ 
+BSOTS (RSCH PRH only ) MP026
+ 
+University Hospital Sussex NHS Trust East Page 17 of 18 
+ 
+Appendix 3 (cont): Example of Algorithm & Assessment Card 
+ 
+BSOTS (RSCH PRH only ) MP026
+ 
+University Hospital Sussex NHS Trust East Page 18 of 18

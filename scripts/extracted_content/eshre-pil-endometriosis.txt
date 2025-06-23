@@ -1,0 +1,499 @@
+# Extracted from: ESHRE PIL - Endometriosis.pdf
+# Guideline ID: eshre-pil-endometriosis
+# Content length: 30006 characters
+# Processing date: 1733444062.248222
+
+2 
+ 
+About this booklet .................................................................................................. 4 
+The ESHRE guideline on management of women with endometriosis 4 
+Why a patient version? 4 
+How this booklet was developed 4 
+More information 5 
+Who developed the ESHRE guideline on management of women with endometriosis? 5 
+Part 1: The menstrual cycle ..................................................................................... 6 
+Part 2: About Endometriosis ................................................................................... 7 
+What is endometriosis? 7 
+What are the symptoms of endometriosis? 8 
+What causes endometriosis? 9 
+Endometriosis, adenomyosis, uterine fibroids and polyps? 10 
+How can endometriosis be classified? 11 
+Classification systems used in this document 12 
+How can you reduce the chances of getting endometriosis? 13 
+Part 3: Endometriosis in adolescents ..................................................................... 14 
+Part 4: Endometriosis outside the pelvis ................................................................ 15 
+Does endometriosis occur outside the pelvic cavity? 15 
+Treatment of endometriosis outside the pelvis 15 
+Part 5: Diagnosis of Endometriosis ........................................................................ 16 
+Should my doctor perform a clinical examination? 16 
+What is laparoscopy? 17 
+Should I undergo laparoscopy for a definite diagnosis? 18 
+
+ Table of contents 3 
+ Part 6: Treatment of pain due to endometriosis .................................................... 21 
+Which medication can be used before a definite diagnosis of endometriosis? 22 
+Can I take analgesics (painkillers) for pain due to endometriosis? 22 
+What are the options for hormonal treatment of pain? 23 
+How does hormonal treatment work? 23 
+Progestagens and anti-progestagens 24 
+GnRH agonists 26 
+Aromatase inhibitors 27 
+What are the side effects of hormonal treatment? 27 
+Is surgical treatment an option for relieving pain symptoms? 28 
+Part 7: Endometriosis and infertility ...................................................................... 30 
+Am I infertile because I have endometriosis? 30 
+Is surgical treatment an option for enhancing the chance of getting pregnant? 31 
+Is medically assisted reproduction an option for enhancing the chance of get pregnant? 32 
+Part 8: Beyond usual treatment ............................................................................. 35 
+Part 9: Menopause in endometriosis ..................................................................... 36 
+Part 10: Endometriosis and Cancer ........................................................................ 37 
+Part 11: Dictionary ................................................................................................ 38 
+Part 12: Questions from women with endometriosis ............................................. 40 
+Part 13: More information .................................................................................... 42 
+ 
+References ............................................................................................................ 44 
+Disclaimer ............................................................................................................. 45 
+ 4 
+ 
+The ESHRE guideline on management of women with endometriosis 
+Recently, a group of clinical experts in endometriosis has written a Europea n guideline on 
+endometriosis in an attempt to improve clinical practice within Europe and as a result improve 
+the quality of life of women with endometriosis. The guideline is entitl ed “Management of 
+women with endometriosis”. 
+ 
+Why a patient version? 
+This patient version is a translation of the guideline in plain language. This version aims at 
+involving patients in healthcare improvement, either by learning about th e current standard 
+of care, or by enabling patients to make informed decisions on their health, supported by the 
+best available evidence. 
+ 
+How this booklet was developed 
+This booklet was written by Dr Nathalie Vermeulen (methodological expert), Ms Bianc a de Bie 
+(patient representative) and Dr Gerard Dunselman (gynaecologist and chair of the Guideline 
+Development Group). 
+A number of key questions w as selected based on patient enquiries received by the Dutch 
+endometriosis patient organisation (Endometriose Stichting). The questions o f patients are 
+listed in the back of this booklet. Focussing on these questions, the clinicians version of the 
+Guideline on the management of women with endometriosis was translated to p lain language 
+advises and answers for patients. 
+Further background information and answers to questions not addressed in the guideline is 
+added in yellow squares. Difficult terms are coloured blue and explaine d in the dictionary. The 
+chair of the guideline development group checked the accuracy of all pr ovided information . 
+Finally, the booklet was sent to the guideline development group and national patient 
+organisations for review . The text was adapted based on comments from the following 
+individuals and organisations: 
+Helen North/ Patient Advisory Group Endometriosis UK 
+Sandra Engstrom support group leader for EndometriosisUK in Edinburgh 
+Geraldine Canny Ph.D. Referent biologist for a local patient association (Association Suisse de 
+Soutien Contre l'Endométriose) 
+Prof. Dr. Carlos Calhaz – Jorge Faculdade de Medicina de Lisboa (Portugal) 
+Prof. Thomas D'Hooghe University Hospitals Gasthuisberg, University of Leuven (Belgium) About this booklet 5 
+ More information 
+More detailed information on each of the topics in the patient version can be found in the 
+clinicians’ edition of the guideline on the ESHRE website (www.eshre.eu /guidelines). 
+Contact details for national patient organisations within Europe can be found at the back of 
+this booklet. 
+Who developed the ESHRE guideline on management of women with 
+endometriosis? 
+This booklet is based on the guideline on management of women with endometri osis (for 
+doctors) that was developed by a guideline development group set up by th e ESHRE Special 
+Interest Group Endometriosis and Endometrium. The guideline development grou p 
+constituted of clinicians with special interest in women with endometriosis, a literature 
+methodological expert and a patient representative. 
+ 
+Dr. Gerard A.J. Dunselman Maastricht University Medical Centre (The Netherlands) 
+Dr. Christian Becker Nuffield Department of Obstetrics and Gynaecology, University of Oxford (UK) 
+Prof. Dr. Carlos Calhaz – Jorge Faculdade de Medicina de Lisboa (Portugal) 
+Prof. Thomas D'Hooghe University Hospitals Gasthuisberg, University of Leuven (Belgium) 
+Dr. M. Oskari Heikinheimo Helsinki University Central Hospital (Finland) 
+Dr. Andrew W. Horne MRC Centre for Reproductive Health – University of Edinburgh (UK) 
+Prof. Dr. med. Ludwig Kiesel University Hospital of Münster (Germany) 
+Dr. Annemiek Nap Rijnstate Arnhem (The Netherlands) 
+Dr. Willianne Nelen Radboud University Nijmegen Medical Centre (The Netherlands) 
+Dr. Andrew Prentice University of Cambridge (UK) 
+Dr. Ertan Saridogan University College London Hospital (UK) 
+Dr. David Soriano Endometriosis Center - Sheba Medical Center, Tel-Hashomer (Israel) 
+Ms. Bianca De Bie Endometriose Stichting (The Netherlands) 
+Dr. Nathalie Vermeulen European Society for Human Reproduction and Embryology 
+ 
+The guideline on management of women with endometriosis (for doctors) is publi shed on the 
+website of ESHRE (www.eshre.eu/guidelines). For more detailed information, yo u can contact 
+a patient organisation or ask your doctor. 7 
+ 
+It is estimated that between 2 and 10% of the women within the general population have 
+endometriosis and that up to 50% of the infertile women have endometriosis. 
+Women with endometriosis often have severe complaints and significantly reduced quality of 
+life, including restraint of normal activities, pain/discomfort and anxiety/d epression. 
+ 
+What is endometriosis? 
+Endometriosis is defined as the presence of endometrial-like tissue outsi de the uterus 
+(Kennedy et al ., 2005). Endometriosis triggers a chronic inflammatory reaction resulting in 
+pain and adhesions . Adhesions develop when scar tissue attaches separate structures or 
+organs together. The activity and the complaints due to endometriosis may vary du ring the 
+woman’s menstrual cycle as hormone levels fluctuate. Consequently, symptoms may be 
+worse at certain times in the cycle, particularly just prior to and during the woman’s menstrual 
+period. While some women with endometriosis experience severe pelvic pain, others have no 
+symptoms at all or regard their symptoms as simply being ‘ordinary menstrual pain ’. 
+
+Endometriotic tissue in the abdomen 
+NIH fact sheet : Endometriosis (2011) 
+ Part 2: About Endometriosis 
+11 
+ How can endometriosis be classified? 
+A staging system has been developed by the American Society of Reproductive M edicine 
+(ASRM) to stage endometriosis and adhesions due to endometriosis. This classification is 
+often used by gynaecologists to document any endometriosis and adhesions that are 
+visualized during surgery. While a higher stage is generally regarded as denoting a more severe 
+form of disease, the staging system neither predicts severity of pain nor co mplexity of surgery. 
+The classification was originally developed to predict impairment to ferti lity and for this 
+reason is focused on ovarian disease and adhesions . Patients w ith the same ‘stage’ of disease 
+may have different disease presentations and types. Furthermore, some forms of severe 
+disease are not included e.g., invasive disease of the bowels, bladder and diaph ragm. The four 
+stages of the ASRM staging system for endometriosis are as follows: 
+Stages 1 & 2 (minimal to mild disease): Superficial peritoneal endometriosis. Possible 
+presence of small deep lesions . No endometrioma. Mild filmy adhesions , if present. 
+Stages 3 and 4 (moderate to severe disease): The presence of superficial peritoneal 
+endometriosis, deeply invasive endometriosis with moderate to extensive adhesions between 
+the uterus and bowels and/or endometrioma cysts with moderate to extensive adhesions 
+involving the ovaries and tubes. 
+As a patient, your stage of disease does not indicate your symptoms nor necessaril y the 
+optimal treatment to manage those symptoms. However, the subtype(s) of disease that you 
+have may well be informative in deciding upon optimal treatment. 
+
+Schematic classification examples of extent and location of endometriosis 
+Adapted from the Revised American Society for Reproductive Medicine Classificat ion of Endometriosis (1996). 
+
+16 
+ 
+Because the symptoms of endometriosis are not very specific, the diagnosis of endomet riosis 
+cannot be made by the symptoms alone. However, symptoms can give a doctor a first h int 
+towards the diagnosis of endometriosis. 
+Should my doctor perform a clinical examination? 
+In addition to your symptoms, clinical examination can provide additional information to the 
+doctor. However, there is little scientific evidence for the value of c ertain clinical signs to come 
+to the diagnosis endometriosis . 
+During clinical vaginal examination the doctor looks for tenderness, nodules or swelling of the 
+vaginal wall especially in the deepest point of the vagina between the b ack of the uterus and 
+the rectum by inspection using the speculum and by palpation using h is/her fingers. In women 
+with deep endometriosis or endometriosis of the ovaries, clinical examinati on may give 
+considerable information regarding the proper diagnosis, while in per itoneal disease the 
+clinical examination most of the time is completely normal. Part 5: Diagnosis of Endometriosis 21 
+ 
+Endometriosis is a chronic disease. In that sense, there is no cure for e ndometriosis, but the 
+symptoms can be reduced with the right treatment. Communication is the key to finding a 
+treatment that fits you. Please discuss your options with your doctor and ask any qu estions 
+you may have. Your doctor will be happy to explain the different options and answer your 
+questions. 
+Women with endometriosis have either pain, fertility problems or they have both. Treatment 
+of endometriosis focuses on resolving or reducing pain due to endometri osis or on improving 
+fertility, so a patient can get pregnant naturally or through fertilit y treatments. For treating 
+endometriosis, the doctor can prescribe medical treatment or advise surgical t reatment. Bot h 
+will be explained in detail here. 
+Depending on the patient, the treatment will be different. Your d octor will take several factors 
+into consideration when prescribing medical treatment or advising surgic al treatment. These 
+factors include: 
+ The preferences of the woman 
+ The type of disease (peritoneal disease, ovarian cyst or deep endometriosis) 
+ The severity and type of pain symptoms 
+ The wish to become pregnant immediately or at a later stage 
+ The costs and side-effects of some treatments 
+ The age of the woman 
+ The treatments she has already received. 
+ The doctor (country, expert centre) 
+This means that two women with endometriosis could receive different tr eatments and even 
+that one woman could receive different treatments over time dependi ng on her preferences, 
+her age, her wish to become pregnant. 
+Important to remember is that medical treatment works only when they are taken as 
+prescribed. Stopping medical treatment often means that the symptoms r ecur. 
+In the next section, options for medical treatment and surgical treatment w ill be explained. Part 6: Treatment of pain due to endometriosis 30 
+ 
+Am I infertile because I have endometriosis? 
+Probably not, women diagnosed with endometriosis are not all infertil e. In medical terms, 
+infertility is defined as not reaching pregnancy after 1 year of regular intercourse. It is 
+estimated that 60-70% of women with endometriosis are fertile and can get p regnant 
+spontaneously and have children. Therefore, women not wanting to get pregn ant should 
+discuss their options for contraception with their doctor. 
+A proportion of women with endometriosis and fertility problems will stay involuntaril y 
+childless, but there are no exact data on how many. Of the women wit h fertility problems , a 
+proportion will get pregnant, but only after medical assistance, either s urgery or medically 
+assisted reproduction (IUI or IVF). There is no evidence that hormonal treatment or 
+alternative treatment enhances the chance of spontaneous pregnancy in women with 
+endometriosis . 
+There is no best option for aiding infertile women with endometriosis to get pregnant. The 
+decision on which option to take, surgery of medically assisted reproduction, shoul d be based 
+on type of disease, the doctor ’s preferences and the patient ’s preferences . 
+There is also no evidence that women with endometriosis have a high er risk of complications 
+in pregnancy (birth defects, miscarriages), but please inform your doctor or mi dwife of a 
+diagnosis of endometriosis. Part 7: Endometriosis and infertility 
+Ablation: removal of diseased or unwanted tissue by surgery or other means 
+Add-back therapy : Hormonal therapy to minimize side effects of medications that suppress estrogen 
+(such as leuprolide acetate); add-back therapy usually decreases hot flashes and also helps prevent 
+bone loss. 
+Adhesions : bands of fibrous scar tissue 
+Assisted reproductive technology (ART) : The name for treatments that enable people to conceive by 
+means other than sexual intercourse. Assisted reproduction techniques include intra-uterine 
+insemination (IUI) , in vitro fertilisation (IVF) , intracytoplasmic sperm injection (ICSI) , donor 
+insemination and egg donation. 
+Controlled ovarian stimulation (COS): For ART: pharmacologic treatment in which women are 
+stimulated to induce the development of multiple ovarian follicles to obtain m ultiple oocytes at 
+follicular aspiration. 
+Definite diagnosis : A diagnosis that has been absolutely confirmed 
+Dyschezia : Painful or difficult defecation. 
+Dysmenorrhea : Severe pain in the lower abdomen or back, sometimes together with nausea, 
+depression and headache, directly before and/or during menstruation . 
+Dyspareunia : Recurrent or persistent genital pain directly before, during or shortly after coitus (sexual 
+intercourse). 
+Embryo: A fertilised egg. 
+Endometrioma: An endometrial cyst containing old blood and endometrium . 
+Endometrium : The layer of tissue that lines the uterus. During the menstrual cycle, the endometrium 
+grows to a thick, blood vessel-rich, glandular tissue layer. The main job of the endo metrium is to accept 
+the implantation of the fertilized egg that drops into the uterine cavity sever al days after ovulation and 
+to nurture the dividing cells in the early stages of pregnancy. 
+Estrogen/Oestrogen: A female sex hormone produced by developing eggs in the ovaries, which 
+stimulates the development of female sex characteristics. 
+Excision : To remove tissue surgically. (Synonym of resection) 
+Fertility problem : Where no pregnancy results for a couple after 2 years of regular (at least every 2 to 
+3 days) unprotected sexual intercourse. 
+Heavy menstrual bleeding : Abnormally heavy and prolonged menstruation at regular intervals. 
+Hormone : A molecule that is produced by one tissue and carried in the bloodstream to another tissu e 
+to cause a biological effect. Part 11: Dictiona ry 
+39 
+ In vitro fertilization (IVF) : A technique by which eggs are collected from a woman and fertilised with 
+a man’s sperm outside the body. Usually one or two resulting embryos are then transferred to the 
+womb. If one of them attaches successfully, it results in a pregnancy. 
+Infertility : the state of being not fertile and unable to become pregnant. Clinical definition of infertility: 
+A disease of the reproductive system defined by the failure to achieve a clinical pregnancy after 12 
+months or more of regular unprotected sexual intercourse. 
+Intra-uterine insemination (IUI) : A technique to place sperm int o a woman’s womb through the cervix 
+Intracytoplasmic sperm injection (ICSI): A variation of IVF in which a single sperm is injected into an 
+egg. 
+Laparoscopy: A “keyhole” operation in which the surgeon uses uses a low diameter telescopic system , 
+called a laparoscope, to examine or operate on an area in a woman’s pelvis. Done under general 
+anaesthetic. 
+Laparotomy or open surgery: opening the abdominal cavity with an incision made with a scalpel 
+Lesions : Areas of abnormal tissue or disease 
+Medically assisted reproduction (MAR): Reproduction brought about through ovulation induction, 
+controlled ovarian stimulation , ovulation triggering, ART procedures, and intrauterine, intracervical, 
+and intravaginal insemination with semen of husband/partner or donor. 
+Menstruation : The monthly discharge from the uterus; it consists of blood and endometrium sloughed 
+from the uterine lining. 
+Menorrhagia : Abnormally heavy and prolonged menstruation at regular intervals. (Synonym of Heavy 
+menstrual bleeding ) 
+Natural cycle IVF: An IVF procedure in which one or more oocytes are collected from the ovaries during 
+a spontaneous menstrual cycle without any drug use. 
+Ovary : an organ in the pelvis of women containing the eggs. 
+Progesterone : A hormone produced by the Ovary , but only if ovulation has occurred (after the egg is 
+released). Its action is to prepare the endometrium for implantation of the embryo. 
+Randomized controlled trail (RCT): The “gold standard” of medical proof of the relative efficacy of one 
+treatment over another, or over using nothing at all (placebo). Patients with a disease and who are 
+similar to one another in most other respects (such as age, height, weight, duration of il lness, and 
+severity of disease) are assigned to one treatment group or another by randomization. The patients 
+undergo treatment and are followed for a certain length of time to see if there is any difference in the 
+results of the treatments studied. 
+Ultrasound: High frequency sound waves used to provide images of the body, tissue s and internal 
+organs. 
+
+40 
+ Part 12: Questions from women with endometriosis 
+The Endometriose Stichting, the Dutch organisation for endometriosis pati ents 
+has a platform for patients to ask any questions they may have about 
+endometriosis. In order to document the questions, concerns and needs for 
+information of women with endometriosis, we collected and summariz ed the 
+questions asked by women between May 2012 and May 2013. Most of these 
+questions have been answered in this patient version. 
+ 
+Questions on endometriosis: 
+ What is the difference between endometriosis and adenomyosis, uterine 
+fibroids and polyps? 
+ What are the different types of endometriosis, based on severity? 
+ 
+Questions on symptoms of endometriosis: 
+ Are the following symptoms associated with endometriosis? 
+Heavy menstrual bleeding, fungal infections, weight gain, nausea, 
+migraine, radiating pain, cardiac arrhythmia, vaginism, fatigue, insomnia, 
+back pain, pelvic pain, symptoms outside the menstrual period, cont inuous 
+pain, bladder pain, Irritable bowel syndrome (IBS), rectal bleeding, b lood in 
+urine 
+ 
+Questions on the diagnosis of endometriosis: 
+ Can the diagnosis of endometriosis be established by ultrasound or MRI? 
+ What are the implications of a negative diagnostic laparoscopy with 
+symptoms of endometriosis? 
+ Can GnRH agonists (e.g., Lupron/Lucrin and Zoladex) be used to diagnose 
+endometriosis? 
+ 
+Questions on hormonal treatment for endometriosis: 
+ Which hormonal treatment can be prescribed in endometriosis? 
+ Which hormones can be prescribed empirically? 
+ How do these hormones work? 
+ What are the side effects? 
+ 
+Questions on alternative treatment for endometriosis: 
+ What are the options for alternative medicine? 
+ Does acupuncture help in relieving symptoms of endometriosis? 
+ Does homeopathy help in relieving symptoms of endometriosis? 
+ What about physiotherapy? 
+41 
+ Questions on surgical treatment for endometriosis: 
+ Should I take medication after surgery? 
+ Is my case too risky? Am I inoperable? 
+ Is hysterectomy the solution and should I take hormone-replacement 
+therapy after surgery? 
+ What is the difference between ablation and excision? 
+ What is the difference between laparotomy and laparoscopy? 
+ What is the difference between traditional laparoscopy and robo tic 
+laparoscopy? 
+ 
+Questions on small ovarian cysts: 
+ Should I take hormonal contraceptives? 
+ Should I undergo surgery? Which type of surgery? 
+ How long can the cyst stay? 
+ Is an endometrioma ‘damaging’ to the ovary? 
+ Will my endometrioma rupture? Is it an emergency? 
+ What is the best option if I want to get pregnant and my suspected 
+endometrioma is not causing me pain symptoms? 
+ Should asymptomatic endometrioma be treated? 
+ 
+Questions on infertility and pregnancy in endometriosis: 
+ How many women with endometriosis remain involuntarily childless? 
+ Why/how might endometriosis impair my fertility? 
+ Am I infertile because I have endometriosis? 
+ What is the best option to get pregnant? 
+ Do I have an increased risk for pregnancy complications, miscarriage? 
+ Will pregnancy cure my endometriosis? 
+ Is it wise to bring plans for pregnancy forward? 
+ Should I undergo surgery prior to IVF? 
+ 
+Questions on extragenital endometriosis: 
+ Can endometriosis occur in women without a uterus? 
+ Can endometriosis affect the following sites: diaphragm, lungs, thora x, 
+kidney, pouch of Douglas, bowel, bladder? 
+ 
+Questions on menopause in endometriosis: 
+ Should I take Lucrin (Lupron > GnRH agonist)? 
+ Does (pseudo)menopause cure endometriosis? 
+ 
+Questions on endometriosis and cancer: 
+ What is the effect of the hormonal treatments on the risk of cancer? 
+ Does endometriosis cause cancer? 
+ 
+Questions on reimbursement in endometriosis: 
+ Which treatments are reimbursement for women with endometriosis? 
+43 
+ Austria EVA – Endometriose Vereinigung Austria Website: www.eva-info.at 
+Email: office@eva-info.at 
+Belgium Endometriose Stichting Website: www.endometriose.be 
+Email: info@endometriose.be 
+Denmark Endometriose Foreningen Denmark Website: www.endo.dk 
+Email: info@endo.dk 
+Finland Endometrioosiyhdistys Finland Website: www.endometrioosiyhdistys.fi 
+Email: endo@endometrioosiyhdistys.fi 
+France Association EndoFrance Website: www.endofrance.org 
+Email: contact@endofrance.org 
+Germany Endometriose-Vereinigung Deutschland e.V. Website: www.endometriose-vereinigung.de 
+Email: info@endometriose-vereinigung.de 
+Hungary Nok az endometriózisért alapitvány Website: www.endometriozis.hu 
+Email: info@endometriozis.hu 
+Iceland Samtök Kvenna með Endómetríósu Website: www.endo.is 
+Email: endo@endo.is 
+Ireland Endometriosis Association of Ireland Website: www.endometriosis.ie 
+Email: info@endo.ie 
+Israel Endi – Endometriosis Israel Website: www.endi.org.il 
+Email: info@endi.org.il 
+Italy Associazione Italiana Endometriosi Onlus Website: www.endoassoc.it 
+Email: info@endoassoc.it 
+Associazione Progetto Endometriosi Onlus Website: www.apeonlus.com 
+Email: info@apeonlus.com 
+Malta Endo Support (Malta) Website: no website 
+Email: endosupport@gmail.com 
+The Netherlands Endometriose Stichting Website: www.endometriose.nl 
+Email: info@endometriose.nl 
+Norway Endometrioseforeningen Website: www.endometriose.no 
+Email: post@endometriose.no 
+Poland Polskie Stowarzyszenie Endometrioza Website: www.pse.aid.pl 
+Email: info@pse.aid.pl 
+Stowarzyszenie Endometrioza Website: www.endometrioza.aid.pl 
+Email: info@endometrioza.aid.pl 
+Pierwszy Polski Portal o Endometriozie Website: www.endometrioza.org 
+Email: redkcja@endoendo.pl 
+Portugal Associação Portuguesa de Endometriose Website: www.aspoendo.org 
+Email: aspoendo@netcabo.pt 
+Spain Asociacion de Endometriosis España (AEE) Website: www.endoinfo.org 
+Email: info@endoinfo.org 
+Asociacion de Afectadas de Endometriosis 
+de Madrid (ADAEM) Website: www.adaem.org.es 
+Email: adaem@adaem.org.es 
+Sweden Endometriosföreningen Sverige Website: www.endometriosforeningen.com 
+Email: info@endometriosforeningen.com 
+Switzerland Groupe Endometriosis Suisse Website: www.endosuisse.ch 
+Email: laure@endosuisse.ch 
+Association Suisse de Soutien Contre 
+l’Endometriose Website: www.assce.ch 
+Email: info@assce.ch 
+Turkey Turkish Society of Endometriosis and 
+Adenomyosis Website: www.endometriozisdernegi.com 
+Email: info@endometriozisdernegi.com 
+United Kingdom Endometriosis UK Website: www.endometriosis-uk.org 
+Email: admin@endometriosis-uk.org 
+Endometriosis SHE Trust UK Website: www .shetrust.org.uk 
+Email: shetrust@shetrust.org.uk 
+44 
+ 
+The body of this document 
+The ESHRE guideline on management of women with endometriosis (2013). 
+Available at www.eshre.eu/guidelines 
+ 
+Information on endometriosis in adolescents 
+Brosens I , Gordts S , Benagiano G. Endometriosis in adolescents is a hidden, prog ressive and severe disease that deserves 
+attention, not just compassion. Hum Reprod. 2013 Aug;28(8):2026-31. doi: 10.1093/humrep/det243. Epub 2013 Jun 5. 
+ 
+Dictionary 
+Reproductive medicine. A textbook for paramedics. N. De Haan, M. Spelt, R. Göbel (eds), Elsevier gezondheidszorg, 
+Amsterdam 2010. 
+100 questions and answers about endometriosis. David B. Redwine. Jones & Bartlett L earning, 2009 
+Mohammad Reza Razzaghi, Mohammad Mohsen Mazloomfard and Anahita Ansari Jafari (2012). Endometriosis, 
+Endometriosis - Basic Concepts and Current Research Trends, Prof. Koel Chaud hury (Ed.), ISBN: 978- 953-51-0524 -4, InTech, 
+DOI: 10.5772/32760. Available from: http://www.intechopen.com/books/endometrio sis-basic-concepts-and-current-
+research-trends/endometriosis- an-overview 
+ 
+Illustrations 
+The menstrual cycle 
+Wikimedia Commons (GNU Free Documentation License) 
+ 
+ Endometriotic tissue in the abdomen 
+NIH fact sheet : Endometriosis (2011) 
+ 
+Endometriosis, adenomyosis, uterine fibroids and polyps 
+Illustration from http://www.fairview.org/healthlibrary/Article/85716 (No copyright information) 
+ 
+Schematic classification examples of extent and location of endometriosi s 
+Adapted from the Revised American Society for Reproductive Medicine Classificati on of Endometriosis (1996). 
+ 
+Surgical laparoscopy 
+Krames Information brochure on endometriosis 
+ 
+A levonorgestrel-releasing intrauterine system 
+http://m.mirena.com/ 
+ 
+Options for hormonal contraceptives 
+© 1995- 2013 Healthwise, Incorporated. Healthwise, Healthwise for every health decision, and the Healthwise logo are 
+trademarks of Healthwise, Incorporated. 
+ 
+ References 
+45 
+ 
+The European Society of Human Reproduction and Embryology (ESHRE) developed the curren t 
+information booklet for patients based on the clinical practice guideline. The aim of clinical practice 
+guidelines is to aid healthcare professionals in everyday clinical decision about appropriate and 
+effective care of their patients. 
+This booklet is in no way intended to replace, dictate or fully define evaluation and treatment by a 
+qualified physician. It is intended solely as an aid for patients seeking general inform ation on issues in 
+reproductive medicine. 
+ESHRE makes no warranty, express or implied, regarding the clinical practice guidelines or patient 
+information booklets and specifically excludes any warranties of merchantability and fitness for a 
+particular use or purpose. ESHRE shall not be liable for direct, indirect, special, incidental, or 
+consequential damages related to the use of the information contained herein. While ESHRE makes 
+every effort to compile accurate information and to keep it up- to-date, it cannot, however, guarantee 
+the correctness, completeness and accuracy of the guideline or this booklet in every respect. 
+The information provided in this document does not constitute business, medical or other professional 
+advice, and is subject to change. Disclaimer

@@ -1,0 +1,384 @@
+# Extracted from: MP011 Obesity In Pregnancy.pdf
+# Guideline ID: mp011-obesity-in-pregnancy
+# Content length: 21499 characters
+# Processing date: 1750066901.1874113
+
+Obesity In Pregnancy 
+
+Maternity protocol: MP011 
+ 
+Date agreed: April 2022 
+ 
+Obesity in Pregnancy MP011 
+University Sussex Hospitals NHS Trust East Page 2 of 13 
+
+Guideline Reviewer : Abirami Kalaparan 
+Manager responsible: Jo Sinclair 
+Version: 5 
+Approval Committee: Women’s Safety and Quality Committee 
+Date agreed: April 2022 
+Review date: April 2025 
+Cross reference: MP001 Provision & Schedule of Antenatal Care 
+MP012 Venous Thrombosis (VTE) 
+MD084 BSUH Maternity & Obstetric Training Needs Analysis & Skills 
+and Drills 
+ Obesity in Pregnancy MP011 
+University Sussex Hospitals NHS Trust East Page 3 of 13 Table of Contents 
+Key Principles ................................ ................................ ................................ ........................ 4 
+Scope ................................ ................................ ................................ ................................ ... 4 
+Responsibilities ................................ ................................ ................................ ..................... 4 
+1 Obesity in Pregnancy ................................ ................................ ................................ ... 5 
+2 Potential Clinical Complications Related to Obesity ................................ ..................... 5 
+3 Calculating and Documenting the Body Mass Index (BMI) ................................ ............ 5 
+4 Management of Obesity in Pregnancy (In Addition To Routine Antenatal Care) ............ 5 
+5 For all pregnant people with booking BMI ≥30: ................................ ............................ 6 
+6 For all pregnant people with BMI ≥ 35 (additional care to above): ................................ 7 
+7 For all pregnant people with BMI ≥ 40 (additional care to above): ................................ 8 
+8 For all pregnant people with BMI ≥ 50 (additional care to above): ................................ 8 
+9 Delivery referral from PRH to RSCH ................................ ................................ ............. 8 
+10 Labour & Birth ................................ ................................ ................................ ............. 9 
+11 Postnatal Care ................................ ................................ ................................ ........... 10 
+12 Specialist Equipment ................................ ................................ ................................ . 10 
+13 Pregnancy following Bariatric surgery ................................ ................................ ........ 11 
+14 References ................................ ................................ ................................ ................ 13 
+
+ Obesity in Pregnancy MP011 
+University Sussex Hospitals NHS Trust East Page 4 of 13 Key Principles 
+ 
+A protocol is a set of measurable, objective standards to determine a course of action. 
+Professional judgement may be use d in the application of a protocol. 
+ 
+Scope 
+ 
+This protocol applies to: 
+• Obese women in pregnancy . 
+ 
+Responsibilities 
+ 
+Midwives & Obstetricians: 
+• To access, read, understand and follow this guidance 
+• To use their professional judgement in application of this protocol 
+ 
+Management: 
+• To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations 
+• To ensure the protocol is accessible to all relevant staff 
+ Obesity in Pregnancy MP011 
+University Sussex Hospitals NHS Trust East Page 5 of 13 1 Obesity i n Pregnancy 
+ Obesity is a growing problem in the UK 
+2 Potential Clinical Complications Related to Obesity 
+ 
+2.1 Diabetes 
+2.2 Hypertension and pre -eclampsia 
+2.3 Renal disease and UTI 
+2.4 Cardiovascular disease 
+2.5 Increased risk of infections in pregnancy and postnatal period 
+2.6 Increased hospital attendance 
+2.7 Difficulties with clinical procedures – e.g. fetal monitoring and scanning, IV 
+access 
+2.8 Limits choice re. place of birth 
+2.9 Anaesthesia 
+2.10 Increased incidence of IOL 
+2.11 Longer labour 
+2.12 Increased risk of CS 
+2.13 Larger babies/increased incidence of neonatal complications, stillbirth and 
+shoulder dystocia 
+2.14 Incontinence 
+2.15 Breastfeeding problems – though should be encouraged nevertheless as helps 
+weight loss and has long term health benefits for mother and decreases 
+chances of obesity later in life for babies 
+2.16 Psychosocial factors 
+2.17 Longer term problem of obesity (also links to childhood obesity) 
+ 
+3 Calculating and Documenting t he Body Mass In dex (BMI ) 
+3.1 BMI should be calculated using the following formula or using a BMI 
+calculation wheel. Weight should be taken on appropriate calibrated scales at 
+booking appointment and height should be measured using a portable 
+measuring device or wall stick. Women’s self -reported height and weight 
+should only be taken if measuring devices are not available (or woman declines 
+measurement). This should be documented in the maternal notes. 
+3.2 
+ 
+4 Management of Obesity i n Pregnancy (In Addition To Routine Antenatal Care) 
+4.1 First Trimester: 6 - 12 weeks 
+4.1.1 Midwife providing booking appointment and care should: 
+• correctly calculate BMI 
+Obesity in Pregnancy MP011 
+University Sussex Hospitals NHS Trust East Page 6 of 13 • accurately document weight, height and BMI on booking form and 
+maternal hand held notes specifying if weight and/or height has 
+been reported due to lack of suitable equipment required 
+document the antenatal risk assessment in the maternal notes 
+4.1.2 Clerks or midwives inputting the booking information into the 
+maternity information system should include the booking BMI data 
+4.1.3 Clerks inputting the booking information on women / pregnant 
+people with BMI >30kg/m2 are required to update CQUIN database. 
+Any midwives inputting booking information electronically should 
+send booking information questionnaire to Clerk before giving to 
+women to put in hand held notes 
+4.1.4 Pregnant women who have undergone bariatric surgery should be 
+evaluated for nutritional deficiencies and the need for vitamin 
+supplementation when indicated. 
+5 For all pregnant people with booking BMI ≥30: 
+5.1 Women / pregnant people should be counselled at booking regarding the 
+effects of a high BMI during pregnancy. They should be made aware of the 
+above -mentioned risks. 
+5.2 Antenatal thromboprophylaxis should be considered depending on other risk 
+factors according to the flow chart in the antenatal notes. (see Maternity 
+Protocol MP012 Venous Thrombosis ) 
+5.3 Women / pregnant people should be advised to book for multidisciplinary care 
+during the antenatal period (maternity team based care) 
+5.4 Women / pregnant people should be offered an appointment with Maternal 
+Health Dietitian. If accepted by women, the maternal obesity dietetic referral 
+form should be completed ( see Appendix A ) and sent to Nutrition and Dietetics 
+Department, RSCH 
+5.5 Women / pregnant people should be offered an antenatal consultation during 
+the 3rd trimester with an appropriately trained professional (for example 
+obstetrician or midwife) to discuss possible intrapartum complications and 
+agree an individualised management plan. All discussion should be 
+documented in their notes on Badgernet. 
+5.6 Women / pregnant people should be recommended to have Vitamin D 
+supplementation in pregnancy 10 micrograms / day (NICE 2008) 
+5.7 Women / pregnant people should be advised to commence folic acid 5mg daily 
+at least one month before conception and up to 12 weeks of pregnancy. 
+(RCOG, 2010). 
+ Obesity in Pregnancy MP011 
+University Sussex Hospitals NHS Trust East Page 7 of 13 5.8 Women / pregnant people should be advised to take 150mg Aspirin from 12 
+weeks to 36 weeks if they have 2 moderate risks factors for pre -eclampsia 
+(BMI >35 along with either being their first pregnancy, maternal age >40, 
+family history of pre -eclampsia or multiple pregnancy) 
+5.9 Clinicians should accurately measure blood pressure using large cuff (as with 
+all subsequent antenatal checks) and ensure documentation of booking BP in 
+hand held notes 
+5.10 If there is difficulties measuring the SFH refer to DAU for Obstetric review 
+5.11 Glucose Tolerance Test (GTT) and HbA1c 
+• HbA1C should be checked alongside booking bloods. If >41 to refer to the 
+diabetes team 
+• Women / pregnant people should also be offered a GTT 26/40 
+5.12 Scanning 
+• The booking midwife should offer a referral for first trimester scan to 
+ensure accurate dating of pregnancy and for the anomaly scan (as for 
+routine care) 
+• No further scans are required unless additional risks are identified or there 
+are other indications. 
+ 
+6 For all pregnant people with BMI ≥ 35 (additional care to above ): 
+ 
+6.1 Offer and advise women / pregnant people a referral to obstetric care. 
+6.2 The midwife completing the booking form should document BMI and referral 
+on the booking form. This should be sent to the A/N lead midwife in ANC who 
+will book the appropriate appointment with an obstetrician and inform the 
+woman by letter. 
+6.3 Scanning: 
+• Referring clinicians should document BMI on USS request form to ensure 
+that a 34/40 growth sca n is scheduled by scan department for all women 
+with BMI ≥ 35 . 
+• If woman / pregnant people have a dating scan elsewhere ensure to 
+request 3 4/40 growth scan when completing request for 20/40 anomaly 
+scan . 
+6.4 Women / pregnant should be offered an ANC appointment with obstetrician 
+after 34/40 growth scan. The obstetrician should review the scan results, 
+discuss possible intra -partum complications, consider need for postnatal 
+thromboprophylaxis and agree an individual plan of care for labour and birth 
+which should be clearly documented and signed in the maternal hand held 
+notes. 
+ Obesity in Pregnancy MP011 
+University Sussex Hospitals NHS Trust East Page 8 of 13 6.5 Women / pregnant people should be advised to birth in an obstetric led unit 
+within a hospital environment. If women make an informed decision to birth at 
+home please respect their choice. Please explain and justify your advice and 
+plan of care and document it clearly. Please ask that the woman acknowledge 
+your proposed plans, your advice, and any concerns you may have, and 
+document this clearly. 
+6.6 If there is difficulties measuring the SFH refer to DAU for Obstetric review 
+6.7 Women / pregnant people should be advised to access the Anaesthesia In 
+Pregnancy Information leaflet on Maternity - BSUH Maternity 
+6.8 Women / pregnant people undergoing a caesarean section should have a PICO 
+dressing applied to prevent wound infection 
+7 For all pregnant people with BMI ≥ 40 (additional care to above ): 
+7.1 Scanning as per 6.3 
+7.2 On Admission t he obstetric anaesthetist should discuss and agree an obstetric 
+anaesthetic management plan for labour and delivery and this should be 
+clearly docum ented in the maternal notes. 
+7.3 Women / pregnant people should have an individual documented assessment 
+in the third trimester of pregnancy by a midwife with appropriate training (all 
+Midwives will have an update on manual handling requirements and tissue 
+viability issues as part of their mandatory training rolling programme: see 
+Maternity Protocol MD084 Women’s services education strategy ) to determine 
+manual handling requirements for childbirth and consider tissue viability 
+issues. 
+ 
+8 For al l pregnant people with BMI ≥ 5 0 (additional care to above ): 
+8.1 The midwife completing the booking form should document BMI and indicate 
+a referral on the booking form. This should be sent to the A/N lead midwife in 
+ANC who will book the appropriate appointment with an anaesthetist in ANC 
+and inform the woman / pregnant person. They should be seen at the ‘high 
+risk anaesthetic clinic’ at 34 -36 weeks gestation. 
+ 
+8.2 Refer those with BMI< 50 ONLY if pre -existing co -morbidities e.g., 
+hypertension, asthma, diabetes, sleep apnoea. If no co -morbidities, please give 
+all pregnant women / people with raised BMI 30 -50 the leaflet ‘Obesity in 
+pregnancy – what it means for you’ which details anaesthetic implications 
+9 Delivery referral from PRH to RSCH 
+This list has been compiled by the Obstetric Anaesthetists’ Group (east) , and reflects 
+many factors at Princess Royal Hospital Central Delivery Suite (CDS) which have the Obesity in Pregnancy MP011 
+University Sussex Hospitals NHS Trust East Page 9 of 13 potential to impact the delivery of safe care. These factors include : the number (and 
+commitment to ITU/ED) of anaesthetists on site out of hours, The level of experience 
+of the out of hours on call anaesthetist for CDS, proximity of the on call consultant 
+(approx. 30 minutes) anaesthetist and availability of allied resources out of hours . 
+Women or people with the following we would recommend delivery at RSCH: 
+9.1 Cardiac ladies seen through COCA, unless can be treated as normal 
+9.2 Abnormal placentation which is likely to need Interventional Radiology 
+9.3 Reasonable risk for involvement of General Surgeon during CS 
+9.4 BMI > 60 for any mode of delivery 
+9.5 BMI > 50 with additional risk factors eg. GDM, PET, sleep apnoea, multiple 
+previous CS (for non -scheduled delivery) 
+9.6 Likelihood of difficult airway – needs anaesthetic assessment (could consider 
+planned CS with consultant presence at PRH) 
+9.7 Severe haematological condition, with potential to require product transfusion 
+at short notice – eg. Platelets – due to not being kept on site at PRH. 
+(This list is not exhaustive but is a guide, and there may be occasions when it is 
+deemed reasonable to plan delivery at PRH aft er consideration of all factors) 
+Any patients fitting any of the above criteria should be red flagged for 
+discussion with the anaesthetic team at earliest possible opportunity to make a 
+plan. These ladies should definitely be referred to the Obstetric Anaesthetic 
+Review Clinic (Obs ARC) antenatally to see a consultant obstetric anaesthetist, 
+but IF IN ANY DOUBT PLEASE Bleep the on call anaesthetist to discuss. 
+ 
+10 Labour & Birth 
+10.1 Women / pregnant people with a BMI ≥ 35 should be advised to birth in an 
+obstetric unit 
+10.2 The Obstetric team should be aware of women / pregnant people with a BMI ≥ 
+35 in labour 
+10.3 The Anaesthetic team should be aware of women / pregnant people with a 
+BMI ≥ 35 in labour and should review them for Anaesthesia 
+10.4 If continuous CTG is indicated and abdominal tracing not satisfactory or 
+achievable, fetal scalp electrode (FSE) should be recommended 
+ Obesity in Pregnancy MP011 
+University Sussex Hospitals NHS Trust East Page 10 of 13 10.5 Women / pregnant people with BMI ≥40 admitted for IOL should have a 
+presentation scan undertaken by an obstetrician appropriately trained in 
+scanning prior to commencing induction process 
+10.6 A presentation scan should be considered for those attending in labour where 
+the presenting part cannot be clearly identified by either palpation or through 
+vaginal examination 
+10.7 All women / pregnant people should be assessed for VTE when admitted in 
+labour ( see Maternity Protocol MP012 Venous Thrombosis ) 
+10.8 Women / pregnant people undergoing caesarean section who have more than 
+2cms subcutaneous fat, should have suturing of the subcutaneous tissue space 
+in order to reduce the risk of wound infection and wound deperation (RCOG 
+Guideline 17, 2018) 
+ 
+11 Postnatal Care 
+ 
+11.1 BMI ≥ 30 is a risk factor for VTE and all women should be risk assessed post 
+birth for VTE ( see Maternity Protocol MP012 Venous Thrombosis ) 
+11.2 Breastfeeding to be encouraged (breastfeeding support to include using 
+different positions to enable successful latch and attachment 
+11.3 Women / pregnant people should be informed that breastfeeding can help 
+with postnatal weight loss and can help prevent childhood obesity 
+11.4 Women / pregnant people should be offered continued support by the 
+maternal health dietitian for 6 weeks postnatal. After this time appropriate 
+alternative services will be recommended for continued weight management 
+support. Consultation with weight -reduction specialists before attempting 
+another pregnancy should be encouraged. 
+ 
+12 Specialist Equipment 
+ 
+Requirement to assess the availability of suitable equipment in all care settings for women 
+with a high BMI Obesity in Pregnancy MP011 
+University Sussex Hospitals NHS Trust East Page 11 of 13 12.1 For all women / pregnant people the correct size of sphygmomanometer cuff 
+must be used for all readings of the maternal blood pressure. Large cuffs will 
+be available in all care settings. 
+12.2 In addition, all women / pregnant people should have their weight measured 
+on scales that can register the weight however large the woman is. Although 
+the majority of clinics in the community setting will have suitable equipment, 
+consideration should be given to sending the woman to a clinic with suitable 
+scales if required. 
+12.3 In the community setting : If no appropriate scales are available in their ‘home’ 
+clinic, advice should be sought by the midwife from her team leader as to 
+where the nearest appropriate scales are located. 
+12.4 In the hospital : If no appropriate scales are available in the immediate clinical 
+area, advice should be sought by the midwife from the bariatric team as to 
+where the nearest appropriate scales are located. 
+12.5 Community midwives, GP’s and Midwifery leads in clinical areas should give 
+consideration to the suitability of examination couches and make alternative 
+arrangements such as a specialist bed for examinations as/where required. 
+12.6 A plan should be discussed and made with the woman / pregnant person 
+regarding the need for any additional or specialist equipment which made be 
+required at any stage during the pregnancy, birth and postnatal period. This 
+may include: 
+12.6.1 A special theatre table and related equipment (e.g. stirrups) for 
+instrumental or operative birth 
+12.6.2 A specialist bed and mattress 
+ 
+(Such equipment can be order through Maternity clerks, Labou r Ward 
+Leads or the o n call manager) 
+12.7 For woman / pregnant person choosing a home birth, a discussion regarding: 
+• Access to the flat/house 
+• Evacuation in case transfer to hospital is required 
+• the safety of using a birthing pool and the difficulties associated with 
+leaving the pool in an emergency 
+• Consider discussing with a Community Manager 
+12.8 All discussion and agreed plans should be clearly documente d in their 
+maternity notes on Badgernet. Those women / pregnant people who would 
+like a home birth out of guidelines will need to be referred to the Consultant 
+midwives antenatally. 
+ 
+13 Pregnancy following Bariatric surgery 
+ Obesity in Pregnancy MP011 
+University Sussex Hospitals NHS Trust East Page 12 of 13 13.1 Preconception 
+• Postpone pregnancy during the period of rapid weight loss (at least the first 
+year). 
+• Ensure safe and effective contraception advice is given. COC may be less 
+reliable following surgery due to gut shortening and reduced absorption. 
+• LARC ( long -acting reversible contraception) eg: IUD (copper / mirena) or 
+progesterone depot. 
+ 
+13.2 Nutrition 
+• Refer to a dietician 
+• Supplements: Multivitamins such as Folic acid 5mg, Vitamin B12 (1mg 
+every 3 months IM), Vitamin D and Vitamin A (convert to beta -
+carotene form when pregnant) 
+13.3 Antenatal management 
+• MDT 
+• Blood tests to check nutritional state in each trimester (FBC, LFTS, Ca, 
+Folate, B12, Ferritin and Vitamin D) 
+• Inform their bariatric surgeon that they are pregnant. 
+• Monitor weight (gestational weight gain should ideally be 7 -11kg). 
+Active band management with those who have LAGB (laparoscopic 
+adjustable gastric banding) 
+• GDM screening. They are unable to have a OGTT performed due to 
+dumping syndrome, therefore BM monitoring should be recommended 
+for one week between 24 -28/40. 
+• Serial growth scans at 32 and 34 weeks 
+• Anaesthetic referral if BMI > 50 and VTE prophylaxis if relevant. 
+• Low threshold to investigate pain if they present with abdominal pain, 
+as this may be secondary to intestinal obstruction or gastric band 
+slippage if vomiting. 
+13.4 Surgical complications 
+• Internal hernias. Most common location is Petersen’s space (defect 
+between the small bowel limbs, transverse mesocolon and the 
+retroperitoneum). This has a high incidence of maternal and fetal death 
+if left untreated after 48 hours of symptoms. 
+• Gastric band slippage. This may be increased due to vomiting and 
+increased abdominal pressure. This is also more likely to occur if the 
+interval between surgery and pregnancy is short. 
+13.5 Intrapartum management 
+• There is no evidence for an earlier induction or timing of delivery 
+• There is no evidence that a caesarean section is more beneficial than 
+a vaginal delivery . 
+13.6 Postnatal 
+• Encourage breast feeding Obesity in Pregnancy MP011 
+University Sussex Hospitals NHS Trust East Page 13 of 13 • VTE assessment 
+• Follow up with bariatric surgeon if there was band adjustment in the 
+pregnancy. 
+• If the woman / pregnant person wants body contouring – advise them 
+to wait till they have completed their family. 
+• 
+14 References 
+
+Pregnancy after bariatric surgery: Consensus recommendation for pre -conceptual , antenatal 
+and postnatal care. August 2019 
+ 
+Royal College of Obstetricians and Gynaecologist, Green top guideline 72. Care of women 
+with Obesity in Pregnancy. November 2018 
+ 
+Saving Babies’ Lives version two. NHS England. March 2019

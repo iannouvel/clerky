@@ -1,0 +1,1239 @@
+# Extracted from: CG1199 Management of Infectious Diseases.pdf
+# Guideline ID: cg1199-management-of-infectious-diseases
+# Content length: 68254 characters
+# Processing date: 1750066900.187196
+
+Page 1 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+
+Management of Infectious Diseases during Pregnancy Guideline 
+Summary statement: How does the 
+document support patient care? The purpose of this guideline is to provide evidence based 
+guidance for staff on the timely management of infectious 
+diseases during pregnancy 
+Staff/stakeholders involved in 
+development: Consultants in sexual health and HIV medicine, Microbiology 
+Consultants, Obstetric lead for infectious diseases, Paediatric 
+Consultants, Antenatal Screening Co -ordinator 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Antenatal Screening Co-ordinator and Consultant in sexual 
+health and HIV medicine 
+For use by: Medical and Midwifery staff 
+Purpose: To provide guidance for staff in the care of pregnant 
+women/people with infectious diseases in pregnancy 
+This document supports: BHIVA 2018 
+BASHH 2015 
+PHE IDPS Standards 
+PHE Hep B Guidance 2021 
+Key related documents: WSHFT Maternity Guidelines: Antenatal Screening Tests, 
+Induction of Labour, Caesarean section, Rash and Viral 
+Illnesses during Pregnancy Guideline. 
+Approved by: Joint Obstetric Guideline Group 
+Approval date: 28th April 2021 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable -Divisional Ratification only required 
+Ratification Date: Not Applicable -Divisional Ratification only required 
+Expiry Date: April 2024 
+Review date: November 2023 
+If you require this document in another format such as Braille, large print, audio or another language 
+please contact the Trusts Communications Team 
+Reference Number: CG1199 Page 2 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ 
+Version Date Author Status Comment 
+1.0 August 2012 Antenatal Screening 
+Co-ordinator (ASC) 
+and GUM Consultant Archived New Trust Maternity guideline 
+2.0 July 2013 Antenatal Screening 
+Co-ordinator 
+Consultant 
+Paediatricians 
+GUM Consultants Archived Tracker form updated to include 
+positive Hep C & syphilis. 
+Addition of management of 
+infants born of syphilis positive 
+mothers 
+2.1 April 2014 Antenatal Screening 
+Co-ordinator Archived Minor update and addition of 
+chlamydia screening 
+3.0 January 2015 Antenatal Screening 
+Co-ordinator Archived Minor updates to guideline and 
+tracker form 
+4.0 July 2016 Antenatal Screening 
+Co-ordinator Archived Syphilis guidance updated 
+5.0 August 2018 Antenatal Screening 
+Co-ordinator Archived Removal of Hep B vaccination 
+for babies of HIV positive women 
+Addition of Quality Monitoring 
+Standards 
+Addition of gonorrhoea testing 
+5.1 February 2019 ASC Archived Minor updates 
+5.2 January 2021 Clinical Effectiveness 
+Midwife S. Glass Archived Addition of appendices 2 & 3 
+Document reformatted and 
+addition of hyperlinks. 
+5.3 April 2021 Antenatal Screening 
+Coordinator (H. 
+Boiling) Live Update to Hepatitis B pathway, 
+Hep C 
+Appendix 1 updated Page 3 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ Index 
+1.0 Aim ................................ ................................ ................................ ................................ 5 
+2.0 Scope ................................ ................................ ................................ ............................ 5 
+3.0 Responsibilities ................................ ................................ ................................ ............. 5 
+3.2 Management ................................ ................................ ................................ ................. 5 
+4.0 HIV ................................ ................................ ................................ ................................ 6 
+4.2 Positive result ................................ ................................ ................................ ................ 6 
+4.3 HIV infected pregnant woman/person known to Sexual Health Team ............................ 6 
+4.3. Pregnancy management ................................ ................................ ............................... 7 
+4.3.1 Key points ................................ ................................ ................................ ..................... 7 
+4.3.2 34- 36 week antenatal appointment ................................ ................................ ............... 8 
+4.3.3 HIV infected pregnant women/people refusing advice or treatment ................................ 8 
+4.4 Complications of Early Pregnancy ................................ ................................ ................. 8 
+4.4.1 Hyperemesis ................................ ................................ ................................ ................. 8 
+4.4.2 Bleeding ................................ ................................ ................................ ........................ 9 
+4.5 Complications of later pregnancy ................................ ................................ ................... 9 
+4.6 Pre-term labour ................................ ................................ ................................ ............. 9 
+4.6.1 Pre-term Pre-labour Rupture of Membranes (PPROM) <34 weeks ................................ 9 
+4.6.2 PPROM >34 weeks ................................ ................................ ................................ ..... 10 
+4.7 Intrapartum care ................................ ................................ ................................ .......... 10 
+4.7.1 Term Pre-labour Rupture of Membranes (PROM) ................................ ........................ 10 
+4.7.2 Induction of labour ................................ ................................ ................................ ....... 10 
+4.7.3 VBAC ................................ ................................ ................................ .......................... 10 
+4.7.4 Management of vaginal birth ................................ ................................ ....................... 11 
+4.7.5 Un-booked woman in labour or undocumented HIV Result ................................ .......... 11 
+4.8 Admission for elective caesarean section ................................ ................................ .... 12 
+4.9 Postpartum ................................ ................................ ................................ .................. 12 
+4.9.1 Infant feeding ................................ ................................ ................................ .............. 12 
+4.9.2 Suppression of lactation ................................ ................................ .............................. 12 
+4.9.3 Choosing to breastfeed ................................ ................................ ............................... 12 
+4.10 Neonatal care plan - key points ................................ ................................ ................... 13 
+4.10.1 Infant Post-Exposure Prophylaxis (PEP) ................................ ................................ ...... 13 
+5.0 Hepatitis B ................................ ................................ ................................ .................. 14 
+5.2 Overview ................................ ................................ ................................ ..................... 14 
+5.2.1 Screening ................................ ................................ ................................ .................... 15 
+5.3 Management of Hepatitis B positive women during pregnancy ................................ .... 16 
+5.4 Gastroenterology review ................................ ................................ .............................. 17 
+5.5 Intrapartum care ................................ ................................ ................................ .......... 17 
+5.6 Babies born to Hepatitis B Positive mothers ................................ ................................ 18 
+6.0 Hepatitis C ................................ ................................ ................................ .................. 20 
+6.2 Antenatal screening ................................ ................................ ................................ ..... 20 
+6.3 Management during pregnancy ................................ ................................ ................... 20 
+6.4 Babies born to Hepatitis C positive mothers/people ................................ ..................... 20 Page 4 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ 7.0 Management of Partners who are HIV, Hep B and C Positive ................................ ...... 21 
+8.0 Syphilis ................................ ................................ ................................ ........................ 21 
+8.2 Management during pregnancy ................................ ................................ ................... 22 
+8.3 Assessment ................................ ................................ ................................ ................. 22 
+8.4 Signs and Symptoms of Congenital Syphilis ................................ ................................ 22 
+8.5 Follow -Up ................................ ................................ ................................ .................... 23 
+9.0 Genital Herpes ................................ ................................ ................................ ............ 23 
+9.2 Incidence ................................ ................................ ................................ ..................... 23 
+9.3 Key points ................................ ................................ ................................ ................... 24 
+9.4 Management of primary episode ................................ ................................ ................. 24 
+9.5 Presentation at time of birth ................................ ................................ ......................... 24 
+9.6 Recurrent episodes of genital herpes ................................ ................................ .......... 25 
+10.0 Chlamydia and Gonorrhoea testing ................................ ................................ ............. 25 
+10.1 Symptoms ................................ ................................ ................................ ................... 25 
+References ................................ ................................ ................................ ............................. 27 
+Audit ................................ ................................ ................................ ................................ ....... 28 
+Appendix 1: Tracker Form for Positive Hep C and Syphilis results in pregnancy ..................... 29 
+Appendix 2: Chlamydia and Gonorrhoea Pathway ................................ ................................ .. 30 
+Appendix 3: Medway Antenatal Assessment Guide for Recording Decline .............................. 31 
+Appendix 4: Preparation and Administration of Zidovudine (AZT) ................................ ............ 32 
+Appendix 5: Syphilis Birth Plan ................................ ................................ ............................... 33 
+Appendix 6: Criteria for Hep B Positive pregnant woman/person requiring 
+antenatal referral to Gastroenterology within 6 weeks ................................ ............................. 35 
+Appendix 7: Pathway for babies requiring Hep B vaccination / Hep B Immunoglobulin ............ 36 Page 5 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ Management of Infectious Diseases during Pregnancy Guideline 
+1.0 Aim 
+ 
+The aim is to provide clear guidance for all staff caring for pregnant women/people with a pre- 
+existing or newly diagnosed sexually transmitted disease. 
+ 
+This guideline covers: 
+• HIV 
+• Hepatitis B 
+• Hepatitis C 
+• Syphilis 
+• Genital herpes 
+• Chlamydia 
+• Gonorrhoea 
+ 
+2.0 Scope 
+ 
+Midwives 
+Obstetricians 
+Microbiology staff 
+Sexual Health staff 
+ 
+3.0 Responsibilities 
+ 
+3.1 Midwives, Obstetricians and Microbiology staff: 
+ 
+• To access, read, understand and follow this guidance. 
+• To use their professional judgement in application of this guideline. 
+• This guidance is for staff employed by Western Sussex Hospitals Trust. The 
+guidance is flexible and should be tailored to the individual circumstances of the 
+parents. If the guidance is not being followed, documentation of the reasoning 
+and/or justification is essential, with clear documentation of alternative plans and 
+discussions. 
+ 
+3.2 Management: 
+ 
+• To ensure the guideline is reviewed as required in line with Trust and National 
+recommendations. 
+• To ensure the guideline is accessible to all relevant staff. Page 6 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ 4.0 HIV 
+ 
+All pregnant women/people are offered screening for HIV each pregnancy as part of the 
+antenatal screening process which occurs at booking. They can request additional screening 
+at any time during the pregnancy. 
+ 
+• If a pregnant woman/person declines screening, this must be entered on maternity 
+Information system (MIS), noted on the risk form and the Screening Team notified. 
+• A formal re -offer of screening must be made by 20 weeks and documented in the 
+maternity notes and on MIS. This offer consists of a letter with written information 
+about the benefits of screening and the offer of an appointment and contact details. 
+• Cases of known HIV should be documented on both the booking blood form and the 
+antenatal risk assessment by the booking midwife. 
+• Antenatal HIV care should be delivered by a multidisciplinary team (MDT) who are 
+responsible for following the current British HIV Association (BHIVA) guideline. 
+ 
+4.1 Positive result 
+ 
+• Consultant Microbiologist informs Antenatal Screening Co-ordinator (ASC) and 
+Sexual Health Advisor via generic email. 
+• Commence WSFHT Maternity HIV Pathway and Care Plan for Neonate of HIV 
+Positive Woman. 
+• The Screening team will liaise with the Health Advisor regarding the positive result 
+• Pregnant women/people with positive screening test results should be contacted 
+and advised about the result, at an appointment made for that purpose, within 10 
+working days of the result being available to maternity services. 
+• Screening team midwife will ensure patient has information using IDPS patient 
+information leaflet. 
+• ASC will liaise with the Consultants in Sexual health and HIV medicine. From this 
+point the care and management of HIV is taken over by the Sexual Health Team. 
+• The Screening Team will notify National Study of HIV in Pregnancy. 
+• Management of the HIV, medication and communication with the Primary Care, 
+Obstetric and Paediatric Teams are the responsibility of the Sexual Health Team. 
+• Non-attendance at specialist appointments should be reviewed within a 
+multidisciplinary framework and an action plan developed. 
+• Maternal & neonatal alerts are created on the Maternity Information system. 
+ 
+NB. If a pregnant woman/person subsequently miscarries it remains the responsibility of the 
+ASC to co -ordinate ongoing care. 
+ 
+4.2 HIV infected pregnant woman/person known to Sexual Health Team Page 7 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ • Sexual Health Team will inform Consultant Obstetrician, Antenatal Screening 
+Coordinator and Consultant Microbiologist of pregnancy. 
+• Pregnant women/people will be advised to access primary care team for routine 
+pregnancy care. 
+• Appointment with Consultant Obstetrician at 12-16 and 34-36 weeks. 
+• Consultant Obstetrician will make formal referral to Consultant Paediatrician 
+following first appointment. 
+ 
+4.3. Pregnancy management 
+ 
+4.3.1 Key points 
+ 
+• ASC informs Consultant Obstetrician and arranges an Antenatal Clinic appointment 
+with the pregnant woman/person for 12 -16 weeks to discuss diagnosis and 
+management of pregnancy. A plan of care should be documented in Maternity 
+hospital record; including an appointment at 34 -36 weeks to discuss and document 
+the plan for birth which will be confirmed according to latest viral load result. 
+• Consultant Obstetrician will make a referral to the Lead Consultant Paediatrician for 
+HIV, who will arrange an appointment with the parents to discuss and document a 
+neonatal care plan which will be held in the Maternity hospital record and copied into 
+hand held records with patient’s permission. 
+• The pregnant woman/person must be assured that their confidentiality with regard to 
+their diagnosis will be respected but should be encouraged to allow disclosure to 
+health professionals such as Community Midwife, Health Visitor and GP. 
+• They should also be encouraged and supported with disclosing their status to their 
+sexual partner with counselling and support. 
+• Permission should be asked of the pregnant woman/person to record HIV result in 
+hand held notes. If permission not given to be left blank. 
+• Sexual health screening is recommended for pregnant women/people newly 
+diagnosed with HIV. 
+• For HIV-positive pregnant women/people already engaged in HIV care who become 
+pregnant sexual health screening is suggested. 
+• In pregnant women/people who commence (combination) cART in pregnancy, an 
+HIV viral load should be performed 2 –4 weeks after commencing cART, at least 
+once every trimester, at 36 weeks and at birth. 
+• For pregnant women/people on cART with a viral load of <50 copies/mL at 36 
+weeks, and in the absence of obstetric contraindications, a planned vaginal birth is 
+recommended. 
+• For pregnant women/people with a viral load of 50 -399 copies/mL at 36 weeks, 
+Caesarean Section (CS) should be considered, taking into account the actual viral 
+load, the trajectory of the viral load, length of time on treatment, adherence issues, 
+obstetric factors and the pregnant woman/person’s views. Page 8 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ • Where the viral load is > 400 copies/mL at 36 weeks regardless of ARV therapy, CS 
+is recommended. 
+• Where the indication for CS is the prevention of MTCT, LSCS should be undertaken 
+at between 38 and 39 weeks’ gestation. 
+• HIV infected pregnant women/people requesting invasive prenatal diagnosis should 
+be counselled by a fetal medicine specialist. This should be done in consultation 
+with the HIV Consultant to optimise treatment to prevent HIV transmission 
+associated with the procedure. 
+• Intravenous (IV) AZT is recommended for pregnant women/people with a viral load 
+of >1,000 HIV RNA copies/mL or for untreated pregnant women/people presenting 
+in labour, with ruptured membranes or admitted for a planned LSCS. It may be 
+considered in pregnant women/people on zidovudine monotherapy undergoing 
+LSCS, but continued oral dosing is a reasonable alternative. 
+ 
+4.3.2 34- 36 week antenatal appointment 
+ 
+• Prior to this appointment the Sexual Health Consultant will write to the Consultant 
+Obstetrician with a summary of current care, medication, CD4 count and viral load. 
+• At the appointment, the Consultant Obstetrician will confirm mode of birth and 
+discuss infant feeding. Birth plan may be amended based upon the final 36/40 viral 
+load. The neonatal plan for recommended post-exposure prophylaxis (PEP) should 
+also be discussed. 
+• The birth plan will be documented in the Maternity HIV Pathway. 
+• Following this appointment the Consultant Obstetrician will write to the Paediatric 
+and Sexual Health Consultants to notify them of the birth plan. 
+• If AZT is required, the Consultant for HIV will inform the specialist HIV pharmacist 
+who will order and dispense to Labour Ward by 36 weeks. This will need to be 
+prescribed on admission. A supply of AZT is available in the emergency drug 
+cupboard (contact on - call pharmacist). 
+ 
+4.3.3 HIV infected pregnant women/people refusing advice or treatment 
+ 
+A pre-birth case conference involving social services should be held to plan post-natal 
+interventions to reduce the risk of transmission (RCPCH 2006). 
+ 
+4.4 Complications of Early Pregnancy 
+ 
+4.4.1 Hyperemesis 
+ 
+For HIV positive pregnant women/people, particularly those on cART, a diagnosis of 
+hyperemesis should only be made once acidosis, hepatitis and pancreatitis have been 
+excluded. Controlled interruption of cART may be the best option in severe cases of Page 9 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ hyperemesis. The HIV Consultant must be informed of all women with hyperemesis in order to 
+advise on differentials and optimisation / cessation of cART. 
+ 
+4.4.2 Bleeding 
+ 
+Management of pregnant HIV positive women/people who experience vaginal bleeding is the 
+same as that of pregnant women/people who are HIV negative. The possibility of drug toxicity 
+should be considered in pregnant women/people with abdominal pain. 
+ 
+4.5 Complications of later pregnancy 
+ 
+Some of the medical conditions that may arise as a result of HIV infection can complicate 
+pregnancy. Some of these are known to increase the risk of pregnant woman/peerson -to- 
+child transmission. 
+ 
+• HIV infection may increase the risk of thrombi. All HIV positive pregnant 
+women/people undergoing surgical procedure must have TEDS and/or Fragmin 
+prescribed. 
+• Thrombophilias – Treatment is the same as for HIV negative women/people, 
+although there are no studies to confirm efficacy. 
+• Nephropathies associated with HIV infection can occur. Commonest is 
+immunoglobulin A (IgA) nephropathy resulting in large amounts of proteinuria. 
+Increases the risk of PET and hypertension and thromboembolism. 
+• Consultation with sexual health clinic should be undertaken for management plan. 
+ 
+4.6 Pre-term labour 
+ 
+• Management is the same as for HIV negative pregnant women/people. 
+• A vaginal swab for bacteriology must be taken. 
+• Dexamethasone or Betamethasone and anti-tocolytics if advised. 
+ 
+4.6.1 Pre-term Pre-labour Rupture of Membranes (PPROM) <34 weeks 
+ 
+• Consider prolonging pregnancy taking into account maternal cART, viraemia and 
+presence of other pregnancy or HIV related co morbidities. 
+• Steroids should be administered. 
+• Look for genital infections and start erythromycin. 
+• Give prophylaxis for group B streptococcus in labour if Group B strep found on HVS 
+or MSU during index pregnancy. IV benzylpenicillin is recommended even if they 
+have already been started on erythromycin. 
+• Contact HIV Consultant immediately about admission and optimise cART regime to 
+reduce risk of pregnant woman/person -to-child transmission. Page 10 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ • Strongly consider maternal single -dose NVP / Double dose Tenofovir and 
+Raltegravir if neonate will be unable to take oral PEP. 
+• Consider IV AZT if viral load is detectable. 
+• Continue maternal ART. 
+• There should be multidisciplinary discussion about the timing and mode of birth. 
+Consider transfer to tertiary referral unit if <32 weeks. 
+• If viral load <50 induction of labour is recommended, if viral load > 50 caesarean 
+section is recommended. 
+ 
+4.6.2 PPROM >34 weeks 
+ 
+• Birth should be expedited regardless of pregnant woman/person’s viral load (VL) 
+and therapy. 
+• If viral load <50 induction of labour is recommended, if viral load >50 caesarean 
+section is recommended. 
+• Look for genital infections and start erythromycin. 
+• Give prophylaxis for group B streptococcus in labour. 
+ 
+4.7 Intrapartum care 
+ 
+Please refer to the intrapartum care plan in the patient’s HIV care pathway in the green 
+hospital notes. If HIV consultant advice is needed out of hours please contact HIV Clinician on 
+call via switchboard. 
+ 
+4.7.1 Term Pre-labour Rupture of Membranes (PROM) 
+ 
+• Broad spectrum IV antibiotics should be given where there is evidence of 
+chorioamnionitis. 
+• IOL is recommended for those with a non-detectable viral load and favourable 
+cervix. The aim is birth within 24 hours. 
+ 
+4.7.2 Induction of labour 
+ 
+Pregnant women/person with a non-detectable viral load can be induced for the usual 
+reasons. 
+ 
+4.7.3 VBAC 
+ 
+VBAC carries the same risks as for HIV negative women/people. This should be offered if the 
+criteria are met for vaginal birth - see Birth after Caesarean (BAC) guideline . Page 11 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ 4.7.4 Management of vaginal birth 
+ 
+• Each pregnant woman/person will have an individual birth plan documented in the 
+Maternity HIV Pathway, with details of medication and any medical instructions. 
+• Labour must progress normally, with mother and fetus in good condition throughout. 
+If viral load < 50 management of labour should follow same principles as uninfected 
+population (including use of ARM, fetal blood sampling, FSE application and 
+episiotomy). 
+• Fetal Blood Sampling and FSE application are contra -indicated in pregnant 
+women/people with detectable viral load. 
+• Episiotomy if required should be performed immediately prior to birth to minimise the 
+risk of transmission from mother to newborn. 
+• Do not delay LSCS for those who have presented in labour and are not suitable for 
+vaginal birth. 
+• Low cavity traction forceps and ventouse are permissible in women with VL< 50 
+• IV AZT is not indicated for pregnant women/people with an viral load 
+<1000copies/mL. 
+• If IV AZT/ZDV has been commenced, continue until cord is clamped. 
+ 
+4.7.5 Un-booked woman in labour or undocumented HIV Result 
+ 
+• If undocumented, check whether HIV result is on Semahelix before contacting the 
+laboratory. 
+• If booked elsewhere but un -booked here and admitted to our unit in labour, check 
+her handheld medical notes and if not evident, contact the hospital she is booked at 
+for the result. 
+• If positive, HIV Consultant on-call should be notified immediately. 
+ 
+Urgent HIV testing should be offered to women thought to be at high risk of infection, which 
+might include: 
+ 
+• Recent migrants from countries with high rates of HIV infection. 
+• Women who misuse substances intravenously. 
+• Suspected sexual abuse. 
+ 
+If urgent HIV test indicated phone laboratory and request ‘Urgent HIV Test’ and notify 
+Pathology laboratory reception. (For out -of-hours call switchboard and ask for On-Call 
+Biomedical Scientist to come in to process sample.) Result is available approximately one 
+hour after received in SRH laboratory - NICE NG121 2019 . 
+ 
+(See section 8.0 CG1125 Management of non-attendance for maternity care guideline for 
+management of un -booked pregnant women/people in labour.) Page 12 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ 
+4.8 Admission for elective caesarean section 
+ 
+• If AZT infusion required, admit to Labour ward the evening before. 
+• If AZT infusion not required admit as usual to Labour ward at 0800. 
+• Weigh patient in kilograms. 
+• Inform Consultant Obstetrician and Consultant Paediatrician of admission. 
+• If required commence IV AZT 4 hours before operation (See Appendix 4 for 
+preparation and dose). 
+• During infusion continue oral doses of any anti-retroviral regime as boarded. 
+• Continue infusion until cord clamped. 
+• Check ARVs taken on time and no doses missed last 12 hours. If either of the 
+aforementioned have occurred seek advice from the responsible HIV clinician or out 
+of hours contact the HIV Clinician on call via switchboard. 
+ 
+NB: No special procedures or changes in operating lists are required. Normal precautions and 
+cleaning procedures should be followed. 
+ 
+4.9 Postpartum 
+ 
+• Inform HIV Consultant and antenatal screening team of birth. 
+• Refer to postnatal care plan (within maternity HIV pathway) for regimen for either 
+continuing or stopping cART. 
+• If mother/newly birthed person is on cART for treatment of her HIV status, continue. 
+ 
+4.9.1 Infant feeding 
+ 
+• In the UK the recommendation is that the safest way to feed infants born to 
+women/newly birthed people with HIV is with formula milk, as there is no on-going 
+risk of HIV exposure after birth. 
+• Abstaining from breastfeeding can have financial and psychological repercussions 
+for women/newly birthed people; this may require support from the HIV MDT. 
+ 
+4.9.2 Suppression of lactation 
+ 
+• Women/newly birthed people not breastfeeding their infant by choice, or because of 
+viral load >50 HIV RNA copies/mL, should be offered cabergoline to suppress 
+lactation. 
+ 
+4.9.3 Choosing to breastfeed 
+ 
+• Women/newly birthed people who are virologically suppressed on cART with good 
+adherence and who choose to breastfeed should be supported to do so, but should Page 13 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ be informed about the low risk of transmission of HIV through breastfeeding in this 
+situation and the requirement for extra maternal and infant clinical monitoring. 
+• When a woman/newly birthed person decides to breastfeed, they and their infant 
+should be reviewed monthly in clinic for HIV RNA viral load testing during and for 2 
+months after stopping breastfeeding. 
+• Maternal cART (rather than infant pre-exposure prophylaxis [PrEP]) is advised to 
+minimise HIV transmission through breastfeeding and safeguard the 
+woman/person’s health. 
+• Women/newly birthed people should be provided with the BHIVA breastfeeding 
+patient information leaflets to enable them to make an informed decision. 
+ 
+4.10 Neonatal care plan - key points 
+ 
+• Baby does not need to be transferred to neonatal unit unless clinically indicated. 
+• Inform on-call Registrar / Consultant Paediatrician prior to birth. 
+• Refer to Neonatal HIV Care Plan in Maternity notes and transfer this to baby notes 
+following birth. 
+ 
+4.10.1 Infant Post -Exposure Prophylaxis (PEP) 
+Very low risk 
+• Two weeks of zidovudine monotherapy is recommended if all the following criteria 
+are met: 
+o The woman/person has been on cART for longer than 10 weeks; 
+o And two documented maternal HIV viral loads <50 HIV RNA copies/mL during 
+pregnancy at least 4 weeks apart; 
+o And Maternal HIV viral load <50 HIV RNA copies/mL at or after 36 weeks. 
+ 
+Low risk 
+ 
+• Extend to 4 weeks of zidovudine monotherapy: 
+o If the criteria above are not all fulfilled but maternal HIV viral load is <50 HIV RNA 
+copies/mL at or after 36 weeks; 
+o If the infant is born prematurely (<34 weeks) but most recent maternal HIV viral 
+load is <50 HIV RNA copies/mL. 
+ 
+High risk 
+ 
+• Use combination PEP: 
+o If maternal birth HIV viral load is known to be or likely to be >50 HIV RNA 
+copies/mL on day of birth. 
+o If uncertainty about recent maternal adherence or if viral load is not known. Page 14 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ Neonatal PEP should be commenced as soon as possible after birth, and at least within 4 
+hours. In the context of known maternal resistance to zidovudine with very low or low risk, 
+zidovudine monotherapy is still recommended for infant PEP. 
+ 
+If high risk (combination PEP indicated) and there is a history of documented maternal 
+zidovudine and/or nevirapine resistance, seek expert advice. If advice is not immediately 
+available, commence standard three -drug PEP (zidovudine, lamivudine and nevirapine) until 
+guidance is provided. 
+ 
+Septrin should be considered for babies at high risk of HIV transmission or positive first PCR 
+(see Neonatal Care Plan). 
+ 
+A paired sample of the babies blood with the mothers blood should be taken and sent to the 
+laboratory within 48 hours of birth (see care pathway). 
+ 
+Arrange neonatal follow up as per Neonatal HIV Care Plan. 
+ 
+5.0 Hepatitis B 
+ 
+Public Health England (PHE) have produced new hep B guidance for antenatal screening and 
+selective neonatal immunisation to start in April 2021. 
+ 
+5.1 Overview 
+ 
+Hepatitis B is an infectious disease caused by the hepatitis B virus (HBV) that affects the liver. 
+The virus causes both acute and chronic infections. An estimated 257 million people or 3.5% 
+of the global population are living with chronic hepatitis B virus infection. 
+ 
+Clinical picture 
+ 
+The incubation period of HBV infection ranges from 40 to 160 days, with an average of 60 to 
+90 days. 
+ 
+Acute infection 
+ 
+This can be asymptomatic. If symptoms occur they may include fever, malaise and abdominal 
+pain. Jaundice occurs in approximately 10% of younger children and in 30 to 50% of adults. 
+Most adults (90%) with acute HBV infection recover completely but only 10% of infants will 
+clear the virus. Acute infection may occasionally lead to fulminant hepatic necrosis, which is 
+often fatal. Page 15 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ Chronic infection 
+ 
+This develops in 5 to 10% of adults, 20 to 50% of children under the age of 6 years and over 
+90% of newborns following infection. Individuals with chronic HBV infection may carry the virus 
+for the rest of their lives. They have an increased risk of developing liver cirrhosis (permanent 
+scarring of the liver) over a period of years and sometimes cancer of the liver. Patients with 
+chronic infection should be managed by a hepatologist or gastroenterologist. Antiviral 
+treatment can help to reduce the progression of liver disease and complications. 
+ 
+Transmission 
+ 
+Globally, perinatal transmission vertically (from mother to baby) is the most common route 
+of HBV acquisition and represents an important contribution to establishing chronic infections 
+within populations. Hepatitis B is more infectious than other blood borne viruses like hepatitis 
+C and HIV. 
+ 
+Hepatitis B virus can be passed from person to person through unprotected sexual 
+intercourse, direct contact with the blood of an infected person, including within the household 
+(horizontal transmission), sharing contaminated needles and through perinatal transmission. 
+ 
+Perinatal transmission rates, in the absence of immunisation of the newborn at birth, can be as 
+high as 90% from higher infectivity mothers/people and approximately 10 to 40% from lower 
+infectivity mothers/people. Of those babies who are infected at birth or during the first year of 
+life, around 90% will go on to develop chronic infection. The disease will progress to liver 
+cirrhosis and liver cancer in 15% to 40% of children with chronic infection. 
+ 
+5.2.1 Screening 
+ 
+All pregnant women/people are offered screening for Hepatitis B each pregnancy as part of 
+the antenatal screening process which occurs at booking. Hep B surface antigen (HBsAg) is 
+tested on all pregnant women/people. 
+ 
+• If a pregnant woman/person declines screening, this must be entered on maternity 
+Information system (MIS), noted on the risk form, and the ASC notified. The 
+pregnant woman/person should be sent a letter outlining the reasons for infectious 
+diseases screening, and offered an appointment with the screening team to discuss. 
+• A formal re-offer of screening must be made by 20 weeks and documented in the 
+maternity notes, and on MIS (Letter as described in HIV section 4.0 ) 
+• Cases of known Hepatitis B should be documented on both the booking blood form 
+and the antenatal risk assessment by the booking midwife. Page 16 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ 5.3 Management of Hepatitis B positive women during pregnancy 
+ 
+Following a confirmed positive result the ASC / antenatal screening midwife will: 
+ 
+• Offer a face to face appointment to discuss the result within 10 working days of the 
+confirmed result being made available to the maternity service. This appointment will 
+include a blood test for Hep B viral load (HBC DNA), Hep C and LFTs. 
+• From April 2021, PHE are increasing their surveillance of both pregnant 
+women/people and infants with Hep B. In addition to the blood tests above, the 
+screening midwife will also take an additional sample for PHE for all cases of Hep B. 
+This sample should be collected in the provided ethylenediaminetetraacetic acid 
+(EDTA) blood tubes and sent to the PHE laboratory in Colindale with a completed 
+request form in pre -paid return packaging. If the pregnant woman/person declines 
+this additional sample, this should be recorded in their notes and on the completed 
+request forms and returned to PHE Colindale. 
+• Ensure patient has information IDPS patient information leaflet . 
+• Notify The Community Child Health Information Service (CCHIS) and GP by email 
+using the ‘Notification of maternal positive hepatitis B antenatal result form . 
+• Co-ordinate appointments with the maternal medicine consultant obstetrician who 
+will ensure appropriate management of pregnancy. 
+• Ensure the required vaccination schedule is documented in the intrapartum record, 
+baby birth record and on Medway. 
+• Commence PHE Hep B screening and immunisation maternal and paediatric 
+checklist and place in hospital record. 
+• Liaise with paediatric team regarding postnatal vaccination +/- hepatitis B 
+immunoglobulin (HBIG). 
+• Create maternal & neonatal alerts on the Maternity Information system. 
+ 
+If the pregnant woman/person is deemed to be higher infectivity, then HBIG should be 
+requested from PHE Colindale’s Hepatitis B Infant Coordinator using the current HBIG request 
+form. Indications for HBIG in addition to hep B vaccine are detailed in the Green Book and in 
+Appendix 6 . 
+ 
+The antenatal screening midwife will refer pregnant women/people with a positive Hep B result 
+to gastroenterology for an assessment. This will include a review within 6 weeks of the positive 
+result where pregnant women/people are identified as newly positive or high infectivity (see 
+Appendix 6 ). It must be clearly documented in the maternity notes whether pregnant 
+woman/person is high or low infectivity. 
+ 
+The gastroenterologist will update the screening team, Consultant Obstetrician, Consultant 
+Paediatrician with a plan of care for the woman/person and the neonate. This will include the 
+vaccination schedule +/ - HBIG. The GP should be notified. Page 17 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ The maternal medicine consultant obstetrician will review, ideally before 20 weeks, and 
+consider repeat HBV DNA at 24 weeks if indicated. 
+ 
+If invasive procedures such as amniocentesis are planned in early gestation, pregnant 
+women/people may be counselled that the risk of transmission of hepatitis B is low even with a 
+high viral load but that antiviral treatment could be considered to commence prior to the 
+procedure if HBV DNA is >107IU/ml. 
+ 
+Non -attendance at specialist appointments should be reviewed within a multidisciplinary 
+framework and an action plan developed. 
+ 
+Note: If a pregnant women/people subsequently miscarries it remains the responsibility of the 
+ASC to ensure the gastroenterology department are notified. 
+ 
+5.4 Gastroenterology review 
+ 
+At the gastroenterology review, the pregnant woman/person will be assessed and counselled 
+for possible antiviral treatment in the third trimester. Treatment with tenofovir should 
+commence from 28 weeks’ gestation. This may only be initiated by the gastroenterology team. 
+ 
+Pregnant women/people on treatment are reviewed monthly in the gastroenterology clinic for 
+side effects with monthly repeat HBV DNA tests (i.e. 32, 36, 40 weeks). They require U&Es, 
+LFTs and phosphate weekly for first 2 weeks of treatment, then fortnightly for 4 weeks and 
+monthly thereafter (gastroenterology to follow up results). 
+ 
+Treatment needs to continue for 4 weeks postpartum to prevent a hepatitis flare. Newly birth 
+women/people should be counselled that the safety of breastfeeding on tenofovir is uncertain. 
+ 
+5.5 Intrapartum care 
+Key points: 
+• Inform on-call Neonatal Team on admission in labour or for caesarean section to 
+ensure timely administration of Hep B vaccine / HBIG. 
+• Avoid FBS and FSE. 
+• Consider avoiding a difficult instrumental birth although there is no evidence that it 
+increases transmission. 
+• Antiviral treatment should continue for minimum 4 weeks postpartum and termination 
+of treatment must be made by or in liaison with a consultant gastroenterologist 
+because of risk of hepatitis flare after birth. Page 18 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ 5.6 Babies born to Hepatitis B Positive mothers 
+High Infectivity cases from April 2021 
+Postnatal maternal surveillance sample 
+ 
+The second maternal venous surveillance sample should be taken on birth suite from those 
+women/people classified as being of higher infectivity after they have birthed their baby. 
+ 
+EDTA blood tubes, request forms and pre-paid return envelopes will be available in the ‘hep B 
+birth suite box’ which, along with the HBIG, will be sent to maternity units approximately 7 
+weeks prior to the estimated birth date . 
+ 
+Newborn dried bloodspot (NBS) sample 
+ 
+A DBS test should be taken on birth suite from babies born to mothers/people classified as 
+being at higher infectivity before administration of the vaccine and HBIG. 
+ 
+The DBS cards, instructions on collection and pre-paid return envelopes will be provided in the 
+hep B birth suite box, which along with the HBIG, will be delivered to maternity units (ANC) 
+approximately 7 weeks prior to the estimated birth date. This will be brought to labour ward by 
+the screening team. 
+ 
+This surveillance blood sample is different to the newborn blood spot sample taken on day 5 
+after the baby’s birth. The mother/person should be informed that the baby will still need to 
+have the newborn blood spot screen sample on day 5. 
+ 
+If the woman/person declines to have maternal serology and or neonatal DBS taken it should 
+be recorded in their notes and on the completed request forms and returned to PHE Colindale. 
+ 
+All babies will require Hep B (monovalent) vaccination course. The 1st dose must be given 
+within 24 hours of birth (at the earliest opportunity) by the Health Professional. Further doses 
+are required at 4 weeks and 12 months via the GP. This is in addition to the routine childhood 
+vaccination programme which includes hexavalent combination vaccine. 
+ 
+This highlights the importance of notifying CCHIS at the earliest opportunity (see below) to 
+ensure timely vaccination. The baby should also be tested for hepatitis B surface antigen 
+(HBsAG) at 1 year of age. 
+ 
+For mothers/people with high infectivity, the baby will require HBIG and vaccination course. 
+HBIG must be prescribed and will be available from pharmacy and given to the baby as soon 
+as possible after birth by the Health Professional. Page 19 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ Note: Premature babies of Hep B positive mothers weighing less than 1500 grams should be 
+given HBIG and vaccinated regardless of infectivity (seek advice from Microbiology as this will 
+have to be ordered from the duty doctor at Colindale). 
+ 
+Breastfeeding is acceptable if hepatitis B positive and not on treatment. 
+ 
+5.7 The midwife responsible for discharging the woman/person must ensure the 
+following: 
+ 
+• The Child Health Record (red book) insert ‘Hepatitis vaccination’ is completed and 
+given to the mother. 
+• The ‘Notification of birth: baby of mother with hepatitis B form’ is emailed or sent to 
+CCHIS and the GP. The address for CCHIS is: 2nd Floor, Southgate House, 
+Chichester, PO19 8EG. Email address is: sc.tr.cchis@nhs.net. 
+ 
+Note: This postnatal notification form and the red book insert should be placed in the hospital 
+Maternity Record with a Baby Birth Record during the pregnancy by the Screening Team. Page 20 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ 5.8 Screening team responsibilities following birth 
+Actions required 
+• Check maternal blood and newborn DBS samples have been taken. 
+• Check laboratory request forms for maternal blood and newborn DBS samples 
+& PHE notification form is fully completed. 
+• Dispatch maternal samples and DBS to PHE BBVU in Virus Reference department, 
+Colindale using prepaid supplied. 
+• Ensure the CHIS, Health Visitor and GP or Practice nurse are notified of: 
+o Vaccine administration at birth. 
+o The requirement for the second vaccine at 4 weeks and completion of selective 
+immunisation schedule. 
+• Complete: 
+o PHE hepatitis B in pregnancy maternal and paediatric checklist. 
+o PHE IDPS Integrated screening outcomes surveillance service (ISOSS) hepatitis 
+B database (from April 2021). 
+ 
+6.0 Hepatitis C 
+ 
+6.1 Antenatal screening 
+ 
+Hepatitis C screening is not routinely offered to pregnant women/people. However, i f the 
+woman/person discloses she has a history of intravenous drug use or is Hepatitis B positive, 
+screening for Hepatitis C should be requested with consent and full clinical details given. 
+ 
+Where risk factors are present a repeat screen should be considered in the third trimester. 
+ 
+6.2 Management during pregnancy 
+ 
+The Screening Team will make a referral to gastroenterology in a timely manner. 
+ 
+Gastroenterology will email / write to the screening team midwives with the plan of care for the 
+woman/person and neonate. The screening team will update the maternal medicine consultant 
+obstetrician and the paediatric team. 
+ 
+The plan, including referrals, should be documented on the Tracker form (Appendix 1) and 
+neonatal alert created on Medway Maternity Information System. 
+ 
+CCHIS will be notified via email by the screening team of Hep C status. 
+ 
+6.3 Babies born to Hepatitis C positive mothers/people 
+ 
+• Inform paediatrician prior to birth. Page 21 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ • If there is no known positive Hep B source then the infant should be vaccinated 
+according to the routine schedule and would not need to follow the neonatal 
+hepatitis B pathway for babies born to hepatitis B positive mothers/people. 
+• If, at birth, there is thought to be a clear or imminent risk of hepatitis B / risk factors 
+in the infants household, such as lifestyle factors discussed or identified, father 
+/partner hep B positive, then a single dose of hepatitis B vaccine would be 
+recommended followed by the full hexavalent course. 
+• Refer to Consultant Paediatrician for clinic review and PCR at 3 months. 
+• If 3 month PCR is negative, repeat at 6 months. 
+• If PCR is positive at any time, consider referral to Consultant Paediatrician for 
+infectious diseases at St Georges (for Worthing) and Southampton (for SRH). 
+ 
+7.0 Management of Partners who are HIV, Hep B and C Positive 
+ 
+• Sexual health should be notified of women/people with positive partners for HIV, 
+Hepatitis B or C. 
+• If father/partner is hep B positive, a single dose of hepatitis B vaccine would be 
+recommended followed by the full hexavalent course for these newborns. 
+ 
+Key point 
+ 
+• IV drug users or women/people with a positive partner should be re-tested for HIV, 
+Syphilis, and Hepatitis B & Hep C in the third trimester. 
+ 
+See Hep B vaccine PGD for inclusion criteria 
+ 
+8.0 Syphilis 
+ 
+Pregnant women/people are offered screening for syphilis at booking of each pregnancy. 
+Cases of known or previous syphilis should be documented on both the booking blood form 
+and the antenatal risk assessment by the booking midwife. 
+ 
+• If a pregnant woman/person declines screening, this must be entered on maternity 
+Information system (MIS), noted on the risk form and the ASC notified. 
+• A formal re-offer of screening must be made by 20 weeks and documented in the 
+maternity notes and on MIS (letter as in HIV section 4.0 ). 
+• The aim of antenatal screening is to contribute to the reduction of congenital syphilis 
+infection. 
+ 
+The urgency to complete the assessment is because: 
+ 
+• Not all positive screening test results will be confirmed as a syphilis diagnosis or as 
+an infection requiring treatment. Page 22 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ • Treatment, when indicated, needs to be instituted as early as possible to avoid 
+adverse outcomes of pregnancy. 
+ 
+8.1 Management during pregnancy 
+ 
+The Screening team will inform the Health Advisor of the positive result. 
+ 
+Pregnant women/people with positive screening test results should be contacted and advised 
+about the result, at an appointment made for that purpose, within 10 working days of the result 
+being available to maternity services. For pregnant women/people treated adequately prior to 
+the current pregnancy, no further action is required, but this will require clinical assessment by 
+the Sexual health team. 
+ 
+8.2 Assessment 
+ 
+Assessment by the Sexual Health Team is needed to provide diagnostic evaluation of 
+maternal infection; and to decide whether treatment and follow up are required. This also 
+provides an opportunity to discuss arrangements for partner notification and management. 
+The Sexual Health Team will write to Consultant Obstetrician, Consultant Paediatrician, GP 
+and the antenatal screening team to confirm details of plan of care for mother/person and 
+baby. 
+ 
+They will also complete the Syphilis Birth Plan (Appendix 5), which should be filed in maternity 
+hospital notes. 
+ 
+• The antenatal screening team will co-ordinate the appointment with the Consultant 
+Obstetrician. 
+• The plan, including referrals, should be documented on the Tracker form 
+(Appendix 1 ). 
+• Screening team midwife will ensure patient has information using IDPS patient 
+information leaflet . 
+• Non-attendance at specialist appointments should be reviewed within a 
+multidisciplinary framework and an action plan developed. 
+ 
+NB. If a pregnant woman/person subsequently miscarries it remains the responsibility of the 
+ASC to co -ordinate ongoing care. 
+ 
+8.3 Signs and Symptoms of Congenital Syphilis 
+ 
+Early: 
+• IUGR 
+• Maculopapular rash (30-60%) 
+• Vesiculobullous lesions Page 23 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ • Perioral fissures 
+• Condylomata lata 
+• Rhinitis (which may be haemorrhagic) (10-50%) 
+• Osteochondritis (90%), periostitis (40-80%), osteomyelitis 
+• Hepatosplenomegaly 
+• Persisting hypoglycaemia 
+• Lymphadenopathy (50%) 
+• Pseudoparalysis 
+• Chorioretinitis, pathologic CSF (40%), meningitis 
+• Haemolysis/thrombocytopenia 
+• Hydrops 
+ 
+Late: 
+• Keratitis (40%) 
+• Clutton’s joints 
+• Hutchinson’s incisors 
+• Mulberry molars 
+• High arched palate 
+• Deafness 
+• Frontal bossing and small maxilla/protruberant mandible 
+• Saddle nose 
+• Neurological or gummatous involvement 
+ 
+8.4 Follow -Up 
+ 
+• Neurodevelopmental, Audiological and ophthalmological follow -up. 
+• Repeat reactive tests at 3, 6 and 12 months of age or until all tests become negative 
+(usually by 6 months). Also repeat the IgM at 3 months in case the infant’s response is 
+delayed or suppressed, LP after 6 months (if CNS initially involved). 
+• Repeat treatment, if symptoms persist or recur; if titre not < ¼ of initial value or 
+increases; if abnormal CSF control. 
+ 
+9.0 Genital Herpes 
+ 
+9.1 Incidence 
+ 
+Neonatal herpes is rare in the UK (between 1986 and 1991 there was an incidence of 
+1:60,000 live births annually). Page 24 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ 9.2 Key points 
+ 
+• Neonatal herpes is a viral infection with a high morbidity and mortality which is most 
+commonly acquired at or near the time of birth. 
+• Neonatal herpes may be caused by herpes simplex virus type 1 (HSV -1) or herpes 
+simplex virus type 2 (HSV - 2), as either viral type can cause genital herpes. Almost 
+all cases of neonatal herpes occur as a result of direct contact with infected 
+maternal secretions, although cases of postnatal transmission have been found. 
+• Factors influencing transmission include the type of maternal infection (primary or 
+recurrent), the presence of transplacental maternal neutralising antibodies, the 
+duration of rupture of membranes before birth, the use of fetal scalp electrodes and 
+mode of birth. The risks are greatest when a woman acquires a new infection 
+(primary genital herpes) in the third trimester, particularly within 6 weeks of birth. 
+• Although recurrent genital herpes is associated with a very low risk of neonatal 
+herpes (3%), recurrent herpes at the time of birth which is commonly asymptomatic 
+or unrecognised, may cause localised forms of neonatal herpes. 
+• Symptomatic genital herpes infections are diagnosed clinically and confirmed by 
+direct detection of HSV. 
+• A swab for HSV PCR should be used. 
+ 
+9.3 Management of primary episode 
+ 
+• Pregnant women/people should be referred to a genitourinary physician for 
+management of the condition. Oral or intravenous acyclovir in standard doses 
+should be offered (use with caution before 20 weeks). 
+• Serological type specific HSV antibody testing, which can help to differentiate 
+between primary and recurrent infections, should be considered if a woman 
+presents with a first episode of genital herpes in the third trimester. 
+• Following first or second trimester acquisition, daily suppressive acyclovir 400 mg 
+three times daily from 36 weeks of gestation reduces HSV lesions at term and 
+hence the need for birth by caesarean section. 
+• Caesarean section should be the recommended mode of birth for all women 
+developing first episode genital herpes in the third trimester, particularly those 
+developing symptoms within 6 weeks of expected birth, as the risk of neonatal 
+transmission of HSV is very high at 41%. 
+ 
+9.4 Presentation at time of birth 
+ 
+• Caesarean section should be strongly recommended to all pregnant women/people 
+presenting with primary episode genital herpes lesions at the time of birth, or within 
+6 weeks of the expected date of birth. 
+• For these pregnant women/people who opt for a vaginal birth, rupture of membranes 
+should be avoided and invasive procedures should not be used. (If ruptured Page 25 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ membranes are confirmed at term, birth should be expedited by the appropriate 
+means.) 
+• Intravenous acyclovir given intrapartum to the pregnant woman/person and 
+subsequently to the baby may be considered. The neonatologist should be 
+informed. 
+• There is insufficient evidence to recommend use of daily suppressive acyclovir from 
+36 weeks of gestation to reduce the likelihood of HSV lesions at term for pregnant 
+women/people who experience a primary episode of genital herpes earlier in the 
+current pregnancy. 
+ 
+9.5 Recurrent episodes of genital herpes 
+ 
+• Antiviral treatment is rarely indicated for treatment of recurrent episodes of genital 
+herpes during pregnancy. (The majority of recurrent episodes of genital herpes are 
+short lasting and resolve within 7–10 days without antiviral treatment. Saline bathing 
+and analgesia can help relieve symptoms). 
+• PCR during late gestation are not recommended. 
+• A recurrent episode of genital herpes occurring during the antenatal period is not an 
+indication for birth by caesarean section. 
+• Vaginal birth should be anticipated in the absence of other obstetric indications for 
+caesarean section. 
+• For pregnant women/people with a history of recurrent genital herpes, who would 
+opt for caesarean birth if HSV lesions were detected at the onset of labour, daily 
+suppressive acyclovir given from 36 weeks of gestation until birth may be given to 
+reduce the likelihood of HSV lesions at term. 
+ 
+10.0 Chlamydia and Gonorrhoea testing 
+ 
+Chlamydia is the most commonly diagnosed sexually transmitted infection (STI) in the UK. It is 
+most common in men and women under 25 years old. The bacteria that cause chlamydia are 
+found in the semen, vaginal fluids and saliva of people who have the infection. Chlamydia is 
+easily passed from one person to another through unprotected sex. 
+ 
+If chlamydia is not treated it can cause pelvic inflammatory disease, ectopic pregnancy and 
+infertility. 
+ 
+10.1 Symptoms 
+ 
+Often chlamydia can be asymptomatic. Possible symptoms are: 
+ 
+• Unusual vaginal discharge. 
+• Pain when urinating or having sex. 
+• Bleeding after sex or between periods. Page 26 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ • Pelvic pain or painful testicles. 
+ 
+Gonorrhoea is a sexually transmitted infection caused by bacteria called Neisseria 
+gonorrhoeae or gonococcus. The bacteria are mainly found in discharge from the penis and in 
+vaginal fluid. 
+ 
+Gonorrhoea is easily passed between people through: 
+ 
+• Unprotected vaginal, oral or anal sex. 
+• Sharing vibrators or other sex toys that have not been washed or covered with a 
+new condom each time they're used. 
+• The bacteria can infect the cervix, the urethra, the rectum and, less commonly, the 
+throat or eyes. 
+• The infection can also be passed from a pregnant woman/person to her baby. 
+• Without treatment, gonorrhoea can cause permanent blindness in a newborn baby. 
+ 
+Pregnant women/people 25 years old and younger are offered chlamydia and gonorrhoea 
+testing at booking this should be documented within the handheld records and an information 
+sheet will be provided. This is done by a self-taken low vaginal swab (specific for chlamydia / 
+gonorrhoea testing) which is sent to the microbiology lab. The swabs are provided by the 
+sexual health department. 
+ 
+The result is dealt with by the Sexual Health Team and the woman is informed by text/phone 
+call/email. All subsequent tests or treatment are managed by the Sexual Health Team. 
+ 
+The sole responsibility of the maternity service is to offer the test at booking 
+and deliver the swab to the laboratory. Page 27 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ References 
+ 
+BHIVA guidelines on the management of HIV in pregnancy and postpartum 
+British HIV Association (BHIVA) 2018 
+ 
+Royal College of Obstetricians and Gynaecologists/BASHH (2014) Management of Genital 
+Herpes in Pregnancy. Foley E, Clarke E, Beckett VA, Harrison S, Pillai A, FitzGerald M, Owen 
+P, Low -Beer N, Patel R. 
+ 
+Department of Health Guideline (2017) Immunisation against infectious disease (The Green 
+Book) Chapter 18. Hepatitis B, 2017) 
+ 
+Public Health England (PHE) Infectious Diseases in Pregnancy Screening programme 
+standards (September 2010). 
+ 
+BASHH UK National guidelines on the management of syphilis (2015) 
+ 
+Public Health England (PHE) Guidance on the hepatitis B antenatal screening and selective 
+neonatal immunisation pathway (January 2021). 
+ 
+Hep B vaccine national PGD (UK Government, PHE) 
+ 
+NICE NG121 Intrapartum care for women with existing medical conditions or obstetric 
+complications and their babies (2019) Page 28 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ Audit 
+
+Sample Size All cases of women diagnosed with HIV, Hepatitis B and 
+syphilis during pregnancy 
+Frequency of Audit Triennial 
+Method for data collection Approved quality review tool and infectious diseases 
+database 
+Standards : IDPS (PHE NSC) 
+Monitoring of compliance by Antenatal and newborn screening and immunisations group 
+Reports to: Maternity quality and safety group 
+
+1. The number of newly diagnosed pregnant women/people with a confirmed antenatal 
+infectious disease result informed within 10 days of the result being communicated to 
+the screening team. 
+2. The number of babies eligible for Hepatitis B vaccination with documented evidence of 
+receiving Hep B vaccination within 24 hours of birth. 
+3. The number of babies receiving Hepatitis B vaccination with evidence that the P/N 
+vaccination schedule was emailed / sent to the Community Child Health Information 
+Service (CCHIS). 
+4. In cases where treatment for syphilis was required during pregnancy the number where 
+the baby had a venous blood sample request for ‘syphilis screen + RPR+ treponemal 
+IgM’. Page 29 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ Appendix 1: Tracker Form for Positive Hep C and Syphilis results in pregnancy 
+
+Link to form on intranet Page 30 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ Appendix 2: Chlamydia and Gonorrhoea Pathway 
+(Created by Claire Parr & Merle Symonds October 2020 version 1) 
+Page 31 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ Appendix 3: Medway Antenatal Assessment Guide for Recording Decline 
+Page 32 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ AZT should be administrated in 2 stages: 
+ 
+• Firstly, a Loading Infusion of 2mg/kg IV over 1 hour. 
+ 
+• Then, a Maintenance Infusion of 1mg/kg/hr IV until the umbilical cord is clamped. 
+ 
+For ease of administration the infusion solution is made up to 2mg/ml of AZT in 5% glucose. 
+See below for method of preparation. 
+This information is not intended to supersede 
+manufacturer’s product information. Appendix 4: Preparation and Administration of Zidovudine (AZT) 
+
+Preparation of Zidovudine infusion using aseptic technique 
+ 
+• AZT injection comes in 20ml vial containing 200mg AZT, i.e. 10mg/ml. 
+• All infusions are prepared with 5% glucose to a final concentration of 2mg/ml . 
+ 
+• The infusion needs to be prepared immediately prior to use. 
+• Remove 50ml of 5% glucose from a 250ml bag and discard. Add 50ml (500mg) of 
+AZT injection (10mg/ml) to the remaining 200ml 5% glucose, to give a final 
+concentration of 2mg/ml. Mix well. 
+• Use this bag for the Loading Infusion (2mg/kg) in the first 60 minutes. Use the rest of 
+the bag for the maintenance infusion (1mg/kg/hr) until the umbilical cord is clamped. 
+Prepare fresh infusion bag if required. 
+Example: patient’s weight = W kg. 
+➢ Loading Dose of 2mg/kg = (W x 2) mg. 
+➢ Infusion fluid required = [(W x 2) mg  2mg/ml] = W ml. 
+Therefore run W ml AZT infusion fluid over 1 hr, then run maintenance infusion from the 
+same bag. 
+Maintenance Infusion at 1mg/kg/hr = W mg/hr. 
+Infusion fluid required = ( W mg  2 mg/ml) 
+ 
+Therefore, run (W  2) ml AZT infusion fluid per hr until the umbilical cord is clamped. 
+
+ Page 33 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ Appendix 5: Syphilis Birth Plan 
+Maternal name and demographics: 
+
+EDD: 
+Maternal diagnosis and treatment details & dates: 
+ 
+Other concerns (e.g. re-infection risk from partner, treatment in late pregnancy, etc.): 
+
+Genito - urinary management (GUM) advice for infant management: 
+ 
+1. □ Pregnant woman/person adequately treated prior to this pregnancy with no 
+risk of congenital syphilis. 
+ 
+• At birth: baby requires no additional physical examination or tests for syphilis. 
+• Follow up: no syphilis follow up required for baby. 
+ 
+2. □ Pregnant women/people treated for syphilis during this pregnancy with low 
+risk of congenital syphilis. 
+ 
+• At birth: assess baby for signs of congenital syphilis. If no concerns perform 
+routine syphilis screening on venous blood sample (not cord). 
+• Request ‘syphilis screen + RPR+ treponemal IgM’. 
+• Follow up: repeat ‘syphilis screen + RPR+ treponemal IgM’ every 3 months until 
+RPR is negative (this usually occurs by 6 months). If clinical signs suggest 
+congenital syphilis (see 2015 BASHH guideline). Manage according to ‘option 3’ 
+below. 
+ 
+3. □ There is significant risk of congenital syphilis. 
+ 
+• At birth: assess baby for signs of congenital syphilis (see 2015 BASHH guideline). 
+• Request ‘syphilis screen + RPR+ treponemal IgM’ plus FBC, U&E.LFT & ALT. 
+Lumbar puncture (request WBC, protein, RPR & TPHA) and further tests as 
+clinically indicated; long bones& chest X -ray, ophthalmology& audiology reviews 
+and (if available) samples from lesions for dark ground microscopy and PCR for T. 
+pallidum . Page 34 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ • Treatment for congenital syphilis: benzylpenicillin 25mg/kg 12 hourly IV for 7 
+days, the 8 hourly on days 8, 9,& 10 (total 10 days). 
+• Follow up months 1 & 3: Request ‘syphilis screen + RPR+ treponemal IgM’. 
+• Follow up months 6 & 12: Request RPR only. Discharge baby when RPR titre 
+has dropped at least fourfold (e.g. from 1 in 32 to 1 in 8) or becomes negative. 
+ 
+Please discuss all babies with suspected syphilis or requiring treatment or any blood 
+tests requiring interpretation with the on -call GUM team. 
+ 
+Local contact details: 
+ 
+Plan completed by: 
+Date: 
+ 
+Copies to: 
+Hospital maternity notes (obstetric team) □ 
+GP □ 
+Paediatric/neonatal team □ Page 35 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ Appendix 6: Criteria for Hep B Positive pregnant woman/person requiring 
+antenatal referral to Gastroenterology within 6 weeks 
+ 
+Pregnant women/people who were screened positive (newly diagnosed) for hepatitis B and 
+pregnant women/people already known to be hepatitis B positive with high infectivity as 
+defined as: 
+
+HBsAg positive and HBeAg positive. 
+HBsAg positive, HBeAg negative and anti-HBe negative. 
+HBsAg positive where e-markers have not been determined. 
+Has acute hepatitis B during pregnancy. 
+HBsAg seropositive and known to have an HBV DNA level equal or above106IU/ml in an 
+antenatal sample. Page 36 of 36 
+CG1199 Management of Infectious Diseases during Pregnancy Guideline Version 5.3 April 2021 
+ Appendix 7: Pathway for babies requiring Hep B vaccination / Hep B 
+Immunoglobulin 
+ 
+Criteria for babies requiring Hep B vaccination: 
+• Maternal/paternal Hep B (low infectivity) and / or Hep C infection. 
+Criteria for babies requiring Hep B vaccination and Hep B immunoglobulin: 
+• High infectivity maternal Hep B infection (viral load greater than 1 x 106 iu/ml). 
+• Premature babies of Hep B positive pregnant women/people weighing less than 1500 
+grams should be given HBIG and vaccinated regardless of infectivity (seek advice 
+from Microbiology as this will have to be ordered from the duty doctor at Colindale). 
+Neonatal Hep B (monovalent) vaccine only 
+ 
+1. Inform on-call paediatrician when woman admitted in labour / for LSCS. 
+2. Paediatrician to prescribe and give 1st dose of Hep B vaccine at earliest opportunity 
+following birth (must be within 24 hours). 
+3. Administer vaccine on NNU. 
+4. Neonatal Hep B vaccine is stored on NNU. 
+5. The red book insert ‘Hepatitis vaccination’ should also be completed and given to the 
+newly birthed woman/person. 
+6. Hepatitis B Postnatal Immunisation notification form is completed and sent or emailed 
+to the Community Child Health Information Service (CCHIS). The address for CCHIS 
+is: 2nd Floor, Southgate House, Chichester, PO19 8EG. Email address is: 
+sc.tr.cchis@nhs.net . This will ensure subsequent injections are arranged. 
+7. Document administration in baby notes. 
+Neonatal Hep B Immunoglobulin (200 IU) 
+ 
+1. It will be documented on Medway and in maternal hospital record if immunoglobulin is 
+required as well as Hep B vaccine. 
+2. Immunoglobulin is ordered by the Antenatal Screening Team at 32 weeks for named 
+patients and is stored in pharmacy by 36 weeks. 
+3. At night, weekends and bank holidays contact on-call pharmacist. 
+4. Must be prescribed and given by paediatrician on NNU. 
+5. Complete and send ‘After birth’ page of Issue of Hepatitis B Immunoglobulin for 
+Infants at Risk of Hepatitis B form (seek advice from Screening Team midwife in ANC 
+if unsure). Also place a copy of this form in the baby’s hospital notes.

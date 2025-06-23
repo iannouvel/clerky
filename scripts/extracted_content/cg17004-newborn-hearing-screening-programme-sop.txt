@@ -1,0 +1,2127 @@
+# Extracted from: CG17004 Newborn Hearing Screening Programme SOP.pdf
+# Guideline ID: cg17004-newborn-hearing-screening-programme-sop
+# Content length: 76269 characters
+# Processing date: 1750066900.4381962
+
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 1 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Newborn Hearing Screening Standard Operating Procedure 
+Summary statement: How does the 
+document support patient care? This pathway provides information for staff with regard 
+to the process for offering, undertaking and providing 
+results for newborn hearing screening 
+Staff/stakeholders involved in 
+development: Jacqueline Gregory 
+Division: Women & Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Newborn Hearing Screening co -ordinator 
+For use by: Maternity Support Workers, Health care assistants, 
+midwives, NICU Nursery Nurses, NICU staff nurses 
+Purpose: To provide accurate information for staff on the 
+processes to follow with regard to newborn hearing 
+screening 
+This document supports: NHS Newborn Hearing Screening Programme Service 
+specifications 2019 -20 
+Key related documents: UH Sussex West (SRH&WH) Maternity Guidelines: 
+Antenatal Care and Patient Information, Postnatal 
+Care 
+UH Sussex West (SRH&WH) Trust Policies: An 
+organisation -wide policy for screening procedures, An 
+organisation -wide policy for diagnostic testing 
+Approved by: Joint Obstetric Gu ideline Group (JOGG) 
+Approval date: 18th May 2022 Uploaded : 24th May 2022 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable – Divisional ratification only required 
+Ratification Date: Not Applicable – Divisional ratification only required 
+Expiry Date: November 2024 
+Review date: May 2024 
+If you require this document in another format such as Braille, large print, 
+audio or another language please contact the Trusts Communications Team 
+Reference Number: CG17004 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 2 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+The interpretation and application of clinical guidelines will remain the 
+responsibility of the individual clinician. 
+If in doubt contact a senior colleague or expert . 
+ 
+ Version Date Author Status Comment 
+1.0 March 2017 Newborn Hearing 
+Screening Co -ordinator Archived New WSHFT Pathway 
+2.0 April 2018 Newborn Hearing 
+Screening Co -ordinator Archived New title and updated 
+SOP 
+3.0 Dec 2018 Newborn Hearing 
+Screening Co -ordinator Archived New model of screening 
+adopted 
+4.0 July 2020 Newborn Hearing 
+Screening Co -ordinator Archived See page 37 for 
+amendments 
+5.0 November 
+2021 J. Gregory, Newborn 
+Hearing Screening Co -
+ordinator Archived Amendments to - 
+Point 4.2: Screening 
+Pathway Well Baby 
+WSH NHSP Site. 
+Appendix 3: 
+Management of record 
+for NICU baby in S4H. 
+Appendix 5: Screening 
+on NICU if baby has 
+already been screened. 
+Appendix 14: Baby 
+confirmed as screened 
+but no imported data or 
+results saved to same 
+ear. 
+Formatting and new 
+Trust logo inserted. 
+5.1 May 2022 J. Gregory, Newborn 
+Hearing Screening Co -
+ordinator LIVE Links updated 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 3 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Contents 
+ 
+1.0 Background ................................ ................................ ................................ ............... 4 
+2.0 Identifying eligible population ................................ ................................ ...................... 4 
+3.0 National Screening Pathways from Service Specifications ................................ ......... 5 
+4.0 UH Sussex West (SRH&WH) Screening pathway ................................ ...................... 7 
+4.1 Screening Pathway NICU Baby WSH NHSP site ................................ ....................... 8 
+4.2 Screening Pathway Well Baby WSH NHSP Site ................................ ........................ 9 
+4.3 Screening Pathways Out Of Area Babies/Babies Going Into Foster Care OOA ....... 10 
+4.4 DNA - WELL BABY NHSP SITE ................................ ................................ .............. 11 
+5.0 Performing a Hearing Screen ................................ ................................ ................... 12 
+6.0 Referrals Following the Hearing Screen ................................ ................................ ... 13 
+7.0 Governance Structure, Reporting and Incidents ................................ ....................... 15 
+8.0 Training and Ongoing Assessments ................................ ................................ ......... 17 
+9.0 Equipment and QA Tests ................................ ................................ ......................... 18 
+Appendix1: Daily Checks ................................ ................................ ................................ .... 20 
+Appendix 2 : NICU - Process Map ................................ ................................ ........................ 21 
+Appendix 3: Management of record for NICU baby in S4H ................................ ................. 22 
+Appendix 4: NICU - Paperwork ................................ ................................ ........................... 23 
+Appendix 5: Screening on NICU if baby has already been screened ................................ ... 25 
+Appendix 8: Stickers for Postnatal Notes ................................ ................................ ............ 28 
+Appendix 9: Letters for parents ................................ ................................ ........................... 29 
+Appendix 10: NHSP Ward Books/logs ................................ ................................ ................ 30 
+Appendix 11: Babies in Foster Care ................................ ................................ ................. 31 
+Appendix 12: Child Death Notifications ................................ ................................ ............... 32 
+Appendix 13: Decline/Withdrew from Screen ................................ ................................ ...... 33 
+Appendix 14: Baby confirmed as screened but no imported data or results saved 
+to same ear ................................ ................................ ................................ ......................... 34 
+Appendix 15: Babies born out of area but WHS site responsible for screening ................... 35 
+Appendix 16: S4H/NIPESMaRT has not been populated ................................ .................... 36 
+Appendix 17: SYSTMONE Failsafe (CHIS) ................................ ................................ ......... 37 
+Appendix 18: Outcome codes in S4H ................................ ................................ .................. 39 
+Appendix 19: Bloodspot/NIPE/NHSP List Failsafe ................................ .............................. 40 
+Appendix 20: NICU Failsafes ................................ ................................ .............................. 41 
+Appendix 22: High risk of hearing loss notification from antenatal booking .......................... 45 
+Appendix 23: GP’S in West Coastal CCG 09G ................................ ................................ .... 46 
+Appendix 24: Home births ................................ ................................ ................................ ... 47 
+Appendix 25: Checking that all Newborn Screening has been completed ........................... 48 
+Appendix 26: Border Agreements ................................ ................................ ....................... 49 
+Appendix 27: Contact List ................................ ................................ ................................ ... 50 
+Abbreviations used in this document ................................ ................................ ................... 51 
+References ................................ ................................ ................................ ......................... 52 
+Main additions/Changes ................................ ................................ ................................ ...... 53 
+
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 4 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Newborn Hearing Screening Standard Operating Procedure 
+ 
+1.0 Background 
+ 
+The newborn hearing screening test helps to identify babies who have permanent hearing 
+loss as early as possible. This means parents can get the support and advice they need right 
+from the start. 
+ 
+One to two babies in every 1,000 are born with a permanent hearing loss in one or both 
+ears. This increases to about 1 in every 100 babies who have spent more than 48 hours in 
+intensive care. Most of these babies are born into families with no history of permanent 
+hearing los s. Permanent hearing loss can significantly affect a baby's development. Early 
+identification can provide these babies with a better chance of developing language, speech, 
+and communication skills. 
+ 
+2.0 Identifying eligible population 
+ 
+UH Sussex West (SRH& WH) are responsible for screening all babies who are registered 
+with an NHS Coastal West Sussex CCG and all babies who have spent more than 48hrs on 
+any neonatal unit in the country, finishing their stay on a neonatal unit at UH Sussex West 
+(SRH&WH) . 
+ 
+Smart4Hearing is population electronically via PDS (Patient demographic service). 
+Capture of full cohort and movement of population is based on the following, and 
+incorporates layers of fail safes to ensure no babies are missed. 
+
+COHORT 
+NICU residents including: 
+Monthly Badgernet report 
+Weekly notification of transfer’s in and out 
+from Senior BadgerNet Data Co -ordinator 
+ 
+Transfers out to other NHSP 
+sites 
+Health Visitors includi ng movers in under 
+3mths of age (Failsafe) 
+Transfers in from other 
+NHSP sites 
+Systmone report (CHIS) 
+(Failsafe) 
+Daily MIS discharge list 
+S4H 
+UH Sussex West (SRH&WH) 
+Movers: in notified from other 
+postnatal screening programmes 
+(failsafe) 
+Movers in for postnatal care (Failsafe) 
+Daily Sema birth list 
+Nursing Ward list on SEMA 
+Babies delivered by an independent 
+midwife whose GP is mapped to 
+WSH NHSP site 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 5 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+3.0 National Screening Pathways from Service Specifications 
+
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 6 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+S4H web address – which can only be accessed via a secure N1 link 
+SMSNHSP Manual Login 
+ 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 7 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+4.0 UH Sussex West (SRH&WH) Screening pathway 
+ 
+The model of screening adopted by UH Sussex West (SRH&WH) – WSH site - is a hospital 
+service for parents and b abies. The national NHS newborn hearing screening programme 
+standards are always followed and reported against . 
+ 
+Information regarding the screening programmes is provided to all parents: 
+ ‘Screening for you and your baby’ booklet is provided via a QR card to all parents by 
+community midwives at booking . 
+ 
+ Information can also be found at: 
+Screening Tests for you and your baby: Description in brief 
+ Parents of babies who are resident on NICU are also given the booklet ‘Screening for you 
+and your baby – babies in special care unit’s 
+Screening Tests for you and your baby: Babies in special care units 
+ An easy read version is availa ble: 
+Screening Tests for you and your baby: Easy guides 
+ Written information is available in different languages : 
+Screening Tests for you and your baby: Description in brief 
+ Information is available to watch on animations, these are subtitled for sign language nad 
+different languages : 
+Screening Tests for you and your baby 
+Screening test for you and your baby - different languages, subtitled and British Sign 
+Language 
+ A specific NHSP animation can be found using the following link: 
+Newborn hearing screening (English) - YouTube 
+Babies can only be screened up to 12 weeks of age as per the national protocol. 
+ 
+All parents of well babies are offered screening on the postnatal ward prior to discharge , as 
+close to discharge as possible . If a baby is on antibiotics they should not be screened until 
+either: antibiotics have stopped and baby is deemed as being well or at the point of 
+discharge if baby is going home on antibiotics . Home births, discharges from delivery 
+suites/birth centre and repeat screens are offered an appointment in community clinics or at 
+their NIPE appointment . This NHSP service is provided by a team of maternity support 
+workers who have undertaken their newborn hearing screening training, who are proved to 
+be competent by passing the necessary national NHSP qualification s, who maintain their 
+skills by carrying out regular screening and who are assessed annually. 
+All parent s of NICU protocol babies (i.e. babies who have spent >48hrs on a NICU/SCBU) 
+are offered hearing screening prior to discharge, once baby is well and off all medication. 
+ 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 8 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+This service is provided by staff nurses and nursery nurses on the neonatal units who h ave 
+undertaken their newborn hearing screening training, proved to be competent by passing the 
+necessary national NHSP qualification s, who maintain their s kills and are assessed annually. 
+ 
+4.1 Screening Pathway NICU Baby WSH NHSP site 
+
+Screen offered to all babies who are resident in neonatal unit > 48hrs 
+Ensure parents have a copy of ‘Screening tests for you and your baby: babies in special care units’ in their preferred 
+language where possible . 
+Ensure parents are fully informed about the screening proc ess and possible results and referrals which may be 
+required . 
+AOAE 
+& 
+AABR 
+Bilateral Clear 
+Responses for AABR 
+No risk 
+factors. 
+Discharge 
+to routine 
+surveillance. 
+Risk factors 
+present; 
+including 
+screen results 
+of bilateral 
+NCR for AOAE 
+with bilateral 
+CR’s for AABR 
+No Clear responses 
+on 1 or both ears for 
+AABR 
+Arrange clinic 
+appointment for 
+screening 
+Refer to Audiology for 
+Diagnostic ABR 
+Screen and data 
+capture declined 
+Screen and data capture 
+consented to 
+Set record as Declined in 
+SMART4Hearing. 
+Send letter to GP/HV/Parent offering 
+screening up to 3 months of age. 
+Refer to Audiology to be seen at 8 -10 
+months old . 
+Discharged with 
+no screen 
+Refer to 
+Audiology 
+for targeted 
+follow up 
+. 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 9 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+4.2 Screening Pathway Well Baby WSH NHSP S ite 
+
+AOAE1 only 
+ 
+COMMUNITY CLINIC 
+AOAE1 
+Risk 
+factors 
+present 
+Refer to 
+Audiology for 
+Diagnostic ABR 
+OTOPORTS SHOULD BE DOWNLOADED WHEN 
+NEXT IN THE HOSPITAL UNLESS GOING ON 
+ANNUAL LEAVE/NOT WORKING FOR > 3DAYS. IN 
+WHICH CASE THEY SHOULD BE DOWNLOADED 
+THAT DAY. 
+ 
+*Appoint
+ment 
+detai ls to 
+be added 
+to S4H 
+Book into 
+AOAE2/AABR clinic 
+with appropriately 
+trained MSW/HCA* 
+Baby on Bramber / Tangmere Ward 
+ 
+Appointment requested 
+Complete screening appointment book and excel clinic 
+diary sheet * 
+Bilateral 
+Clear 
+Responses 
+Complete 
+paperwork 
+and add 
+screening 
+complete 
+sticker to 
+front of 
+notes. 
+CR letter to 
+parents 
+No risk 
+factors. 
+Discharge 
+to routine 
+surveillance
+. 
+No Clear responses 
+1 or both ears 
+Complete paperwork 
+and add new 
+screening 
+appointment sticker 
+to front of notes. 
+Provide parents with 
+NCR letter with 
+appointment details 
+on 
+Risk 
+factors 
+present 
+Refer to 
+Audiology 
+for targeted 
+follow up 
+Screen and/or data 
+capture declined 
+Baby over 24 hrs old 
+Set record as 
+Declined in 
+SMART4 
+Hearing. 
+ 
+Send letter to 
+GP/HV/Parent 
+offering 
+screening up to 
+3 months of 
+age. 
+ 
+Explain screen to parents. If parent’s consent to screen, to decide with parents if this is to be carried 
+out on the ward or at an outpatient appointment. Only AOAE1 to be offered on the w ard unless baby 
+is in 24hours later in which case AOAE2 may be offered. 
+If parents wish to have an appointment, provide parents with details. 
+(avoid d ay 5 & 10 due to midwife visit) Appointment sticker to be stuck onto purple notes. 
+No Clear 
+responses 1 or 
+both ears 
+Baby discharged under 
+24hrs old 
+Bilateral Clear 
+Responses 
+Complete paperwork 
+including PCHR form, 
+add screening complete 
+sticker to front of notes. 
+Give out reaction to 
+sounds leaflet if no red 
+book. 
+No risk 
+factors. 
+Discharge 
+to routine 
+surveillance 
+ 
+NHSP admin to refer 
+to Audiology for 
+targeted follow up 
+DNA 
+- See 
+DNA 
+path
+way 
+DNA - 
+See 
+DNA 
+path
+way 
+Parents 
+decide would 
+like screening 
+– book into 
+AOAE2/AABR 
+clinic 
+BABIES DISCHARGED FROM NICU WITH NO 
+SCREEN. 
+BABIES MOVED INTO AREA WITH NO 
+COMPLETED SCREEN. 
+ NHSP ADMIN /MSW TO CONT ACT PARENTS 
+WITH AN APPOINTMENT. 
+Baby re -admitted/in for 
+jaundice or NIPE check 
+No Clear 
+responses 
+1 or both 
+ears. If 
+able to 
+carry out 
+an AABR 
+ 
+AOAE1 undertaken 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 10 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+4.3 Screening Pathways Out Of Area Babies /Babies Going Into Foster Care OOA 
+
+ Download result. 
+ 
+Screen on the ward for AOAE1 as close to discharge as possible. 
+Baby is Out of Area if they do not have a Coastal West GP. See GP list below. 
+Bilateral Clear 
+Responses 
+Complete 
+paperwork and 
+add screening 
+complete sticker 
+to front of notes 
+Download result. 
+NHSP Admin to 
+record details and 
+results on OOA 
+Spreadsheet b reak 
+share on record. 
+No Clear responses 
+1 or both ears 
+Complete 
+paperwork. 
+ 
+Advise parents they 
+will be invited into 
+clinic nearer to their 
+home .Provide 
+parents with letter 
+ 
+Coastal West Sussex GP’s CCG 09G 
+Adur: The Ball Tree Surgery , Harbour View Healthcare, The Manor Practice , New Pond Row Surgery , Northbourne 
+Medical Centre , The Orchard Surgery 
+Arun: The Coppice & Angmering Medical Centre , Fitzalan Medical Group , The Lawns Surgery , The Park Surgery , 
+Westcourt Medical Centre , Willow Green Surgery 
+Chanctonbury: Billingshurst Surgery , The Glebe Surgery , Henfield Medical Centre , Steyning Health Centre 
+Chichester: Cathedral Medical Group , Langley House Surgery , Lavant Road Surgery , Loxwood Medical Practice, 
+Parklands Surgery , Petworth Surgery , Pulborough Medical Group , Riverbank Medical Centre , Selsey Medical Practice , 
+Southbourne Surgery , Tangmere Medical Centre , Witterings Health Centre 
+Regis: The Arundel Surgery , Avisford Medical Group , Bersted Green Surgery, Bognor Medical Practice , The Croft 
+Practice , Flansham Park Health Centre , Grove House Surgery , Maywood Healthcare Centre , West Meads Surgery 
+Worthing (Cissbury): The Barn Surgery , Broadwater Medical Centre , Cornerways Surgery , The Lime Tree Surgery , 
+The Phoenix Surgery , Selden Medical Centre , St Lawrence Surgery , Strand Medical Group , Victoria Road Surgery , 
+Worthing Medical Group 
+NHSP admin to Admin to 
+record details and results on 
+OOA Spreadsheet to break 
+share and contact correct 
+NHSP site to advise further 
+screening is required. 
+ 
+Neighbouring NHSP sites: 
+BRI – Brighton, Hove and Mid Sussex SAS – Sussex and Surrey (Horsham/Crawley) 
+WSY – West Surrey PIW – Portsmouth and Isle of Wight (Peters field) 
+HHA – Hampshire EAH – Eastbourne and Hastings 
+Exceptions: 
+Babies living in 
+Hampshire, who UH 
+Sussex West 
+(SRH&WH) provide 
+Postnatal care to. 
+ 
+These babies need 
+an appointment in 
+an AOAE2/AABR 
+clinic at the hospital. 
+ 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 11 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+4.4 DNA - WELL BABY NHSP SITE 
+
+P16007 Safeguarding children policy 
+ 
+Any questions or queries regarding NHSP can be emailed directly t o the NHSP Co -ordinator 
+or the NHSP admin. 
+ 
+Safeguarding concern. 
+ 
+Raise with Team Lead 
+1st DNA 
+2nd DNA 
+Unable to gain access 
+AOAE1 or AOAE2/AABR CLINIC 
+APPOINTMENT 
+Contact parents and arrange another 
+clinic appointment. 
+Advise NHSP admin so appointment 
+can be added to S4H 
+AABR screener to arrange visit for all 
+screening to be completed with KPI of 
+>4wekks 
+Advise NHSP admin of date, add to S4H 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 12 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+5.0 Performing a Hearing Screen 
+ 
+The first screening test is called an automated otoacoustic emission (AOAE). 
+ 
+A small soft -tipped earpiece is placed in baby's ear and gentle clicking sounds are played. 
+When the ear receives this sound, the outer hair cells in the cochlea produce a tiny 
+response , this is known as an otoacoustic emission. This tiny response can be picked up by 
+the screening equipment. This screen takes a couple of minutes. 
+ 
+It's not always possible to get clear responses from the first screen. T he reasons for this can 
+be: 
+ 
+ Baby has a permanent hearing loss 
+ Baby was unsettled when the screen was carried out 
+ Too much background noise was present 
+ Baby has fluid or a temporary blockage in their ear 
+If a no clear response is obtained then baby will be offered a second screen. This is normally 
+the same as the first screen. If again a no clear response is obtained from either ear then a 
+different screen is then offered, an automated auditory brainstem r esponse (AABR). 
+ 
+The AABR screen involves placing three small sensors on baby's head, neck and shoulder. 
+Soft headphones are placed over baby's ears and gentle clicking sounds are played. The 
+response from cochlea to the sound is picked up via the auditor y nerve at the brainstem by 
+the sensors. This screen can take up to 20 -30minutes to complete . 
+ 
+The results are provided to parents as soon as the screen is complete. 
+ 
+The newborn hearing screen will not pick up extremely mild hearing losses, a progressive 
+loss or a late onset loss. In all cases parents are signposted to the checklists in the PCHR 
+book. These checklists are to provide information on developmental milestones for ‘reaction 
+to sounds’ and ‘making sounds’. 
+ 
+Consent must be obtained for the scree ns to be carried out and for the data to be kept on 
+the national database (S4H). Only those with parental responsibility can give consent. 
+If a social worker or foster carer gives consent then this must be documented in S4H. 
+ 
+For babies born as part of a surrogacy agreement the trust’ s surro gacy policy will be 
+adhered to rega rding gaining consent for any screening . 
+Surrogacy guideline 
+ 
+If screening results are save d to the incorrect ear/or to the same ear : 
+ If the screener notices at point of screen – the screen should be repeated and saved 
+to the correct ear. Screener to email NHSP team to confirm re sults. This email will be 
+saved, S4H will be case noted. 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 13 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ If the NHSP team notice at point of assigning results – screener will be email ed for 
+confirmation of error, PCHR form should be checked. Only a fter written confirmation 
+is received from the screener the results will be amended and manually entered 
+(manual entry log w ill be completed) or baby will be offered a rescreen. If the results 
+are a lso incorrect on the PCHR form the parents will be contacted and a rescreen will 
+be offered . If the screener is unsure of the correct results a rescreen should be 
+offered. S4H will be case noted. 
+ If at an appointment there is some uncertainty about which ear require rescreening, 
+both ears should be rescreened . S4H will be case noted. 
+The m anual entry log is completed for any results which require entering found here and is 
+cross matched with monthly discrepant data reports from NHSEI 
+ 
+Twins /Multiple births 
+When screening twins as an inpatient, the hosp ital number/NHS number of baby from 
+stickers should be checked against baby’s ID tag to ensure the correct baby is being 
+screened. 
+Twin 1/ Twin 2 etc or 1st name (if known) should be entered into the Otoport to help to 
+ensure correct data is used when scr eening. 
+ 
+6.0 Referrals Following the Hearing Screen 
+ 
+Referrals are made to Audiology following the hearing screen based on the screen result 
+and if risk factors are present. 
+The following babies are referred to Audiology for a diagnostic ABR , so that the level of 
+hearing can be determined. This appointment should be within 4 weeks of screen completion 
+or by 44 weeks GA to meet KPI2. 
+ Babies who have results of no clear response at AABR. 
+ Babies who meet the n ational exclusion criteria - Programmable ventr iculo-
+peritoneal (PVP) shunts, atresia or micr otia (no patent canal in one or both ears), 
+meningitis (confirmed or strongly suspected bacterial meningitis or meningococcal 
+septicaemia ), confirmed congenital cytomegalovirus. 
+Babies are ref erred, dependent on residential address, to either: 
+ 
+ Worthing Audiology , Worthing Hospital, Lyndhurst road, Worthing, West 
+Sussex BN11 2DH by email referral uhsussex.audiologyworthing@nhs.net – to be 
+seen in the Audiology Department at Worthing Hospital. 
+ 
+ Portsmouth Audiology , The Elizabeth Foundation, Southwick Hill Road, 
+Cosham, Portsmouth, PO6 3LL by telephone referral (023 92 322 174) – to be 
+seen at Chapel Street clinic, Chichester or at The E lizabeth Foundation, 
+Portsmouth. 
+Referral forms can be found here 
+ 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 14 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+All ABR referrals will be given a booklet/QR code to scan for ‘ Your bab y’s visit to the 
+Audiology Clinic ’. 
+ 
+This information is also available in different languages. 
+Newborn Hearing Screening: First visi t to the audiology clinic 
+
+The following babies are referred to Audiology for a targeted follow up and will be seen in 
+Audiology at 8 -10 months corrected age as they are deemed to have an increased chance of 
+a late on set or progressive loss. 
+Risk factors identifying this population and are: 
+ 
+Babies are referred by email dependent on residential address, to either: 
+ 
+ Worthing Audiology, Worthing Hospital, Lyndhurst road, Worthing, West Sussex 
+BN11 2DH – to be seen in the CDC at Worthing Hospital. 
+
+ Portsmouth Audiology, The Elizabeth Foundation, Southwick Hill Road, Cosham, 
+Portsmouth, PO6 3LL – to be seen at Chapel Street cli nic, Chichester. Email the 
+Confidential ID to NHSP lead at PIW site. 
+ 
+Referral forms can be found here 
+ 
+A referral is created on S4H as a means of audit tracking for all Audiology referrals. 
+This will create a share with the Audiology department so results can be added. 
+Phone numbers and baby’s name (if known) should be added to the record at this point . 
+ 
+A letter should be sent to the GP and HV advising of this referral. Template can be found 
+here 
+ 
+Confirmed Congenital 
+Infection e.g. Toxoplasmosis, Rubella, Herpes 
+Cranio -facial anomalies A (noticeable) craniofacial anomaly (excluding minor pits & 
+ear tags) at any age e.g. cleft palate 
+Syndrome Confirmed s yndrome related to hearing loss 
+NICU protocol babies 
+only with results of: BILAT ERAL NCR FOR AOAE BUT BILATERAL CR FOR 
+AABR * 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 15 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+7.0 Governance Structure, Reporting and Inci dents 
+ 
+KPI’s and National reports are published by NHSEI monthly and quarterly , NHSEI provide a 
+window of 2 weeks for signing off the KPI reports prior to them being published for the public 
+to view. These reports are a vailable for NHSP managers and Team L eads to download from 
+S4H. 
+The NHSP team will provide quarterly and annual KPI report to the regional QA team local 
+SIT team, commissioners, Head of Midwifery, Public Health Lead – Maternity, Audiology. 
+This will include information on all 5 NHSP programme standards along with the following: 
+ 
+KPI’s for the 5 Programmes Standards from the ‘report by current site’ report : 
+ 
+ Information on each baby for NH1 not achieved 
+ Information on each baby for NH2 not achieved 
+ Permanent Childhood Hearing Impairment’s diagn osed for that quarter /year 
+ Any incidents raised that quarter/year 
+ Any challenges for the NHSP team 
+ 
+ Programme Standards and KPIs Acceptable Achievable 
+1 The proportion of babies eligible for newborn hearing screening for whom the 
+screening process is complete by 4 weeks corrected age (hospital programmes -
+well babies, NICU babies) or by 5 weeks corrected age (community programmes -
+well babies). (NH1) ≥ 98% ≥ 99.5% 
+2 Well baby referrals from OAE 1 hospital ≤ 27% ≤ 20% 
+3 Total Referrals - Hospital >2.0% to ≤2.8% ≥0.5% to ≤2.0% 
+4 The proportion of babies with a no clear response result in one or both ears or 
+other result that require an immediate onward referral for audiological assessment 
+who are offered audiological assessment within the required timescale. ≥ 97% ≥ 99% 
+5 The proportion of babies with a no clear response result in one or both ears or 
+other result that require an immediate onward referral for audiological assessment 
+who receive audiological assessment within the required timescale. (NH2) ≥ 90% ≥ 95% 
+ 
+The reporting template can be found here 
+ 
+All other reports downloaded from S4H will be reviewed and actioned monthly. 
+These report s and the report log are then s aved here 
+Following a review of all reports: 
+ Audiology departments will be contacted regarding any missing data (Yield 
+report and Audiology Data reports ). 
+ Screener activity will be monitored for training needs and action taken for thos e 
+who obtaining recurrent NCR’s . 
+ The number of screens per CCG will be collated and logged (extended activity 
+report). 
+ Data quality reports, all will be saved per month even if there is nothing to 
+action so that audits can be undertaken to show reports have been looked at . 
+ The report log will be completed once each NHSEI report and each failsafe 
+report has been undertaken / actioned 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 16 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Screening Incidents 
+Any incidents will be reported via the trusts internal system (DATIX) and escalated to 
+the regional QA team via the Screening incident assessment form (SIAF) emailed to 
+the regional SIT and QA teams: 
+ PHE.Screening -ImmsSSAT@nhs.net ; phe.southQA@nhs.net 
+
+Managing safety incidents in NHS screening programmes document will be adhered 
+to and will the tru st’s incident policy. 
+ 
+Root cause analysis will be undertaken when required including a timeline of events 
+and learning, these will be signed off at trust level by the clinical governance lead 
+(maternity). 
+ 
+The postnatal screening log should be completed, all incidents should be saved in 
+the Newborn screening incident folder (NBS) under the SIAF reference. 
+ 
+The SIAF, root cause analysis forms, screening incident log and screening 
+programme folders can be found by clicking the link here 
+
+Performance and incidents are standing items on the UHS West ANNB S teering group 
+quarterly meeting. 
+ 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 17 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+UH Sussex West (SRH&WH) Governance Map for NHSP : 
+
+Means no direct line management of staff 
+
+8.0 Training and Ongoing Assessments 
+ 
+UH Sussex West (SRH&WH) WSH site will follow national guidance from NHSEI for training 
+of new NHSP staff. 
+ 
+This is in the form of completion of a national ECA and the Level 3 Care Diploma for Health 
+Screeners with the NHSP units. 
+ 
+Screeners can only screen under supervision until they have completed and successfully 
+passed an ECA. Screeners may then screen unsupervised providing they are working 
+towards or have completed the Level 3 Care Diploma for Health Screeners. If a screener 
+choses to stop their Diploma or has not completed this in the required timeframe they will no 
+longer be able to screen and may have their banding changed. 
+NHSP 
+CO-ORDINATOR 
+HEAD OF COMMUNITY 
+MIDWIFERY 
+HEAD OF MIDWIFERY 
+MSW SCREENING 
+TEAM 
+NEONATAL HEARING 
+SCREENERS 
+WOMEN AND CHILDRENS 
+DIRECTORATE 
+SCREENING 
+ADMIN 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 18 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Any staff member wh o underta kes screening and is registered with their national body e.g. 
+staff nurses, midwives, audiologist s are exempt from the Level 3 Car e Diploma for Health 
+Screeners, they still however have to pass the ECA 
+ 
+Following completion of the Level 3 Care Diploma for Health Screeners screener ’s will have 
+their competency re -assessed annually. 
+ 
+This will comprise of : 
+ 
+ Nationally approved e -learning 
+ Direct observation of screening skills. Either in a simulated or live environment or by 
+peer review and a professional disc ussion with the NHSP lead 
+National and local assessment sheets will be used for ECA preparation, diploma evidence 
+and annual reviews. 
+Assessment sheets can be found here 
+
+9.0 Equipment and QA T ests 
+ 
+UH Sussex West (SRH&WH) WSH site will make provision for the calibration and 
+maintenance of all current scr eening equipment as per the manufacturers guideline. 
+ 
+UH Sussex West (SRH& WH) WSH site will purchase consumables and any new equipment 
+required, to ensure a safe NHSP programme, only from nationally approved providers. 
+ 
+MSW ’s and each NICU ward will be provided with screening equipment and will be expected 
+to keep this equipment safe and secure. Each piece of equipment wi ll be password 
+protected for individual screener s. 
+ 
+Each MSW and each NICU ward will be responsible for com pleting the daily checks on the 
+equipment they use for screening , on days when screening occurs, to ensur e the equipment 
+is working correctly prior to screening. These should be saved and documented on the log 
+sheets provided. 
+ 
+OTOPORT QA T ests results : 
+ 
+QA1 – Cavity check. A No Clear Response (NCR) should be obtained . 
+QA2 – Occlusion check. A No Clear Respon se (NCR) should be obtained . 
+QA3 – Real ear check. A Clear Re sponse (CR) should be obtained. Ideally 5 dots should be 
+obtained once a week. 
+QA4 – AABR impedance and listening check 
+ 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 19 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+For staff with a hearing loss it may not be possible to obtain a QA3 real ear check CR on a 
+regular basis. The check should be attempted and saved and documented that a NCR 
+response was obtained. Ideally a CR should be obtained from someone else’s ear week ly. 
+
+QA checks will be checked in S4H on a daily basis (by ticking ‘tests requiring action’ on the 
+QA page) for all screens carried out a week prior to ensure that any late downloads are not 
+missed, they are also checked during assigning to ensure QA chec ks are present. Any ‘Fails’ 
+will be investigated via the QA page, a note written in S4H and ‘override fail result’ should be 
+ticked 
+ 
+Any failed and missed QA tests will be investigated. A log sheet is kept by the NHSP team of 
+incorrect QA checks and offere d rescreens. 
+See National Guidance Document for QA checks date Nov 2017. 
+ 
+Should it be found that a baby has been screened by the WSH site without the QA checks 
+being carried out or with incorrect outcomes on that day then the member of staff will be 
+advised and undergo re training. 
+ 
+To summarise for UH Sussex West (SRH&WH) WSH site: 
+ 
+If QA checks are present and the QA checks gave expected results in this period then 
+babies screen result will stand. 
+ 
+If QA1 or 2 gave a result of a CR on the day of screening (and the QA check was not 
+repeated to give a correct result before screening) then babies screen result will not stand 
+and baby will require a re -screen . The MSW/ NHSP team will contact parents directly and 
+the MSW will arrange a ti me to visit for a rescreen to take place . A dati x and SIAF will be 
+raised. 
+If a rescreen is declined/phone not answered/ text/letter not responded to then a referral will 
+be made for a follow up in Audiology at 8 -10 months old. The record will be set to ta rgeted 
+f/up required to enable baby to be tracked 
+ 
+If an incomplete QA check is obtained (after or instead of a correct result ) a rescreen is not 
+required but the result will be discussed with the screener and retraining given . 
+
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 20 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendi x1: Daily Checks 
+
+ Transfer in any OOA births from eSP. 
+Note if have been screened or if screen required 
+Check NICU babies and case note in S4H with date 
+and time of admission, change to NICU protocol and to 
+in patient, update case notes for those still in 
+Case note all discharges: 
+For those with no screen completed: check S4H & 
+EXCEL diary spreadsheet for appointments. 
+Add appointment to S4H 
+Change demographic to ‘outpatient’’ 
+Check record is in correct facility based on which 
+clinic baby is booked into. 
+Move record as necessary. 
+No appointment on S4H or on 
+EXCEL diary 
+Contact pare nts to offer appointment for screening. 
+Book into AOAE2/AABR clinic if AOAE1 already completed at birth hospital 
+Check stillbirth’s not populated S4H 
+OOA Babies 
+Add contact 
+number 
+Break share on 
+Contact local 
+NHSP team if 
+screen not 
+complete. 
+ 
+NOTE – WSH 
+site will not be 
+break any 
+shares until 
+baby is 
+discharged so 
+parents are not 
+contacted 
+whilst still in 
+Hospital . 
+ 
+See appendix 
+6 
+Add a list of babies requiring 
+an appointment to MSW 
+EXCEL diary sheets for 
+Worthing and SRH found 
+here 
+under the heading ‘NHSP 
+appointments needing to be 
+made ’. 
+Include name, nhs number, 
+date of birth, location , phone 
+number and Mum’s name. 
+Transfer in any OOA births from S4H 
+Note if have been screened or if screen required. 
+Add to BLOODSPOT/NIPE/NHSP failsafe spreadsheet on each tab 
+Check for babies who have NOT gone home with Mum. 
+ Are they on NICU, have they gone into foster care, is 
+MIS incorrect? 
+Chase any outstanding results with MSW teams and 
+NICU’s older than 3 days for missing downloads. 
+On all babies demographics page: Set Translator to ‘Not Required’. 
+Change to ‘Required – adding what language’ following informati on provided by MSW/NICU staff 
+from information on the PCHR form. 
+Tick consent giver. 
+Discharge list from MIS emailed to NHSP TEAM 
+The paediatric wards (Howard - 
+SRH, Bluefin Worthing) will be 
+checked daily for re -admissions 
+and cross checked with S4H for 
+babies who require screening. 
+Screening will attempt to be 
+organised prior to discharge 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 21 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 2: NICU - Process Map 
+
+If a baby is transferred to an OOA NICU and screening is not complete, NHSP admin will 
+case not record and email correct NHSP site for them to share into the record 
+ 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 22 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 3: Management of record for NICU baby in S4H 
+
+Yes 
+No 
+Baby is on SEMA NICU list 
+but not on S4H NICU list 
+Baby is on S4H NICU list but not on 
+SEMA NICU list 
+ 
+Baby recently 
+admitted to 
+NICU ward, 
+check date 
+and time of 
+admission on 
+SEMA. 
+Locate baby in 
+S4H, change 
+to ‘NICU’ 
+protocol and 
+case note 
+date and time 
+of admission 
+Search 
+S4H using 
+NHS 
+number. 
+Has baby 
+been 
+screened? 
+Check 
+badgernet 
+-Has baby 
+has been 
+screened? 
+Ring NICU 
+to double 
+check 
+ Yes 
+No 
+SEMA list 
+says baby 
+discharged 
+No 
+further 
+action 
+required 
+Organise 
+for MSW 
+to screen 
+baby in 
+an out 
+patients 
+clinic 
+ 
+Does baby 
+already have 
+an 
+appointment 
+for 
+screening? 
+Case note 
+S4H. 
+ Email CI to 
+site baby 
+now resides 
+in and ask 
+them to 
+‘share in’ 
+record to 
+track baby 
+until 
+screening is 
+complete or 
+baby 
+transferred 
+back to 
+WSHT 
+NICU 
+No 
+Yes 
+Ask NICU 
+to 
+download 
+Has baby been 
+discharged to 
+another NICU? 
+Yes 
+Add 
+appointment to 
+S4H record 
+ 
+Has baby been in for >48hrs? 
+ 
+Yes 
+No 
+Change to 
+well baby 
+and add to 
+outstanding 
+screens for 
+MSW’s 
+No 
+NOTE: If a baby has been on another NICU and discharged without a screen. Check with the site 
+who broke the share that baby is well before offering an appointment. 
+Baby may have been transferred to another NICU 
+ 
+Compare NICU list on SEMA with pending NI CU list on S4H 
+ 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 23 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 4: NICU - Paperwork 
+ 
+Beeding Ward and NNU will document that a hearing screen has been offered, consent 
+to and performed on the following documentation: 
+ 
+ Neonatal Observation Chart 
+ On Badgernet 
+ On the Discharge to Postnatal Ward Form 
+ On the discharge sticker if baby is discharged home at less than 10 days old from 
+the unit, which is stuck in the discharge book. (need to check they do this on NNU) 
+
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 24 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 25 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 5 : Screening on NICU if baby has already been screened 
+ 
+The following scenarios apply for baby’ s who have either : Gone home prior to being 
+admitted to NNU and screening has/hasn’t been carried out or has been screened on the 
+postnatal ward prior to admission onto NNU but did not go home. 
+ 
+1. Well baby, goes home, screen has been completed with CR’s either prior to 
+discharge or at home/in a clinic. Baby is then admitted to SCBU (not meningitis) 
+from home. 
+Screen is complete prior to admission so baby does not require rescreening. 
+If any treatment/intervention given that could have impact on hearing then baby to 
+be referred directly to Audiology by the paediatricians. 
+ 
+2. Well baby, g oes home but hasn’t been screen ed either on the ward or at 
+home/clinic . Baby is admitted to SCBU (not meningitis) from home and stays in 
+>48hrs. 
+Screen baby under NICU protocol following treatment/intervention. 
+ 
+3. Well baby, screened on the postnatal ward by MSW prior to being discharged, 
+admitted to SCBU (not meningitis) before going h ome and stays in >48hrs. 
+Ignore previous screening , set results to not required in S4H, rescreen baby 
+under NICU protocol with both AOAE and AABR following treatment/intervention . 
+ 
+Screening on NICU flow charts can be found here 
+ 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 26 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 6: Discharges from NICU with no hearing screen 
+
+Provide Mum with a ‘missed NICU screen’ letter and advise parents the MSW’s will 
+be in touch to arrange screening 
+ 
+Complete hearing book to say screening referred to 
+Community. On handover ensure midwives on 
+Postnatal are aware that baby 
+needs a NICU protocol screen . 
+It may be that an MSW can complete 
+this on the ward but an appointment 
+may be arranged with parents Yes 
+No 
+Note: There is never any pressure to complete hearing screens if the unit is busy or if 
+the baby has been discharged back to the postnatal ward. 
+It is not always appropriate for NICU hearin g screeners to be screening on the postnatal 
+ward due to w orkload unless this is deemed necessary by the lead nurse on NICU . Has baby been on NICU > 48hours and no one was able to perform a hearing 
+screen? 
+Email Christine.thair@nhs.net and jacqueline.gregory1@nhs.net to advise that 
+screening was not completed on the unit Yes 
+Is baby going back to Postnatal ward ? 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 27 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 7: Breaking shares in S4H 
+
+Baby has been discharged with no screen and has a ‘shared in’ 
+status on S4H 
+Are WSHT providing postnatal care? 
+ 
+Yes 
+No 
+Case note ‘baby home, 
+WSH to screen’ 
+Weekly check the shared out list and break all shares which say ‘ Inactive - No 
+Confirmed Hearing Loss’ , ensure outcome is on birth list. 
+Add appo intment to 
+S4H/add to outstanding 
+screen list for MSW to 
+arrange an appointment 
+Screen complete , add 
+outcome to birth list, 
+break share 
+Casenote ‘baby 
+home’. 
+Add phone number 
+Email CI number to 
+responsible site 
+explaining that a 
+screen appointment 
+is required. 
+Break share 
+Has MSW booked an 
+appointment to 
+screen baby? 
+Yes 
+No 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 28 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 8: Stickers for Postnatal Notes 
+ 
+Stickers can be requested from the print room by sending the following documents . 
+These can be found here 
+
+HEARING SCREEN 
+APPOINTMENT……..…………… ……. 
+ 
+VENUE…………………………………… …. 
+ 
+Contact Chrissie on 07808 099826 if you need to rearran ge 
+ 
+ HEARING SCREEN 
+COMPLETE
+
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 29 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 9 : Letters for parents 
+ 
+All letters being posted to parents should be written in office automation, emailed to the GP, 
+copied to the HV and saved to the evolve record under Maternity . 
+
+a. Clear Responses 
+b. No Clear Responses , further screening needed 
+c. Screening Contraindicated 
+d. Missed Screen On N ICU 
+e. ABR Referral form/letters 
+f. Targeted follow up referral form/letters 
+g. OOA – No Clear Response On Ward 
+h. Moved Into Area – No Screen On S4H 
+i. DNA 
+j. Unable To Contact – Appointment Letter 
+k. Decline Screen 
+l. Incorrect QA Checks – Rescreen Required 
+ 
+All letter templates can be found here 
+
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 30 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 10 : NHSP Ward Books /logs 
+ 
+A new NHSP screening book for postnatal ward can be found here or NICU found here and 
+can be ordered from the print room via email. 
+
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 31 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 11 : Babies in Foster Care 
+
+ Transfer in any OOA births from eSP. 
+Note if have been screened or if screen required 
+NHSP -check column on discharge list 
+for babies not discharged with Mum. 
+Check if screened whilst on the ward. 
+Daily discharge 
+list 
+No further action required. Baby 
+to be screened prior to discharge 
+BABY IN FOSTER 
+CARE 
+Check SEMA for matching 
+addresses for mum and baby 
+YES 
+Check mum’s and babies MIS 
+record for comments 
+Ensure S4H record set as NICU 
+Update S4H with correct details. 
+Transfer to relevant NHSP site if 
+required and email local manager 
+Is baby on NICU? 
+NO 
+YES 
+ 
+Advise Maternity Information 
+Analyst/Clerical Manager of 
+MIS error 
+NO 
+Check with 
+Safeguarding Midwife 
+Notification email or text from 
+Safeguarding Midwife or 
+safeguarding discharge document 
+completed regarding baby in foster 
+care and who can give consent to 
+NHSP manager and NHSP admin. 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 32 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 12 : Child Death Notifications 
+ 
+NHSP are advised of neonatal and child deaths from the following departments: 
+ 
+ UH Sussex West (SRH&WH) Neonatal 
+ UH Sussex West (SRH&WH) maternity (Bereavement multidisciplinary team – 
+uhsussexbereavemnet.office@nhs.net 
+ SCT CHIS 
+NHSP are also advised of all still births. 
+ 
+In all neonatal and child deaths , the following is carried out: 
+
+NHSP team advised of death. 
+Information shared with MSW teams as required. 
+ 
+SEMA and M IS checked for deceased notification. 
+Search S4H for baby. 
+This may involve a national record search. 
+Mark record as deceased. 
+Case note date of death and who advised. 
+ 
+OUTSTANDING APPOINTMENTS OR PCHI 
+ 
+Advise all relevant Audiology departments 
+RECORD SHARED WITH ANOTHER SITE 
+ 
+Advise relevant Local NHSP M anager by email 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 33 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 13 : Decline/Withdrew from Screen 
+
+NHSP team advised of decline by screener. 
+Decline form to be signed by parents, scanned and saved 
+to babies evolve record under Maternity . 
+Decline documented in MIS 
+Screener to document decline of screen in purple maternity 
+hand held notes and PCHR book if available 
+ 
+Attends for screening within 3 months 
+of date of babies birth 
+Unset decline in S4H so results can be 
+uploaded. 
+Advise Health Visitor and CHIS of results 
+ 
+Parents will be written to explaining importance of : 
+ 
+ Why we offer a hearing screen 
+How we perform a hearing screen. 
+(See letters section) . 
+Copy sent to GP and HV. 
+Letter saved to baby’s evolve record under Maternity 
+S4H case noted and record set to decline. 
+ 
+Complete decline log sheet: 
+Found here 
+ 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 34 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 14: Baby confirmed as s creened but no imported data or results 
+saved to same ear 
+
+Create list in S4H for babies with no screen result: 
+In process screens for babies older than 1 week. 
+Contact MSW teams/NICU teams to see if baby has been screened. 
+ 
+Q. Are the results saved to 
+the same ear? 
+Search imported files for that 
+screener post screening date 
+Has baby been screened? 
+Q. Are results stuck in dataviewer 
+on the PC? 
+Q. Has the screen been assigned 
+to another baby? 
+Baby to be 
+rescreened 
+Case note S4H that 
+results have been 
+chased. Contact MSW 
+team and ask for date 
+when baby will be seen 
+Case note S4H date 
+of screen and 
+screener name. 
+Request Otoport be 
+downloaded 
+Check with screener 
+which resu lts are for 
+which baby by email 
+advise NHSP lead . 
+ datix to be raised. 
+Results assigned to 
+correct baby once 
+screener replied. 
+Save email and 
+save copy of PCHR 
+form. Advise NHSP 
+Lead 
+Plug in an otoport to 
+try and push results 
+through. 
+Export any results 
+which will not go 
+through onto an 
+excel spreadsheet 
+and manually enter 
+results. Delete 
+babies from the 
+dataviewer 
+Check QA results to see 
+if ma chine has been 
+downloaded since date 
+of screen. 
+If no – ask for O toport to 
+be downloaded 
+YES 
+ NO 
+INVESTIGATE 
+Email screener, copy in NHSP Lead, for confirmation that both ears were screened, 
+save email response. Locate PCHR form and scan and save a copy. 
+AOAE1 
+ AOAE2 
+If screener confirms that both were screened then save the email reply. 
+ Incorrect result i n S4H should be set to ‘not required’ 
+Manual entry of the correct results made. 
+Manual entry incident log found here should be completed. 
+NHSP lead to cross matched with monthly discrepant data reports. 
+ 
+Datix to be raised 
+YES 
+ NO 
+YES 
+NO 
+NO 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 35 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Appendix 15 : Babies born out of area but WHS site responsible for screening 
+
+Baby born out of WSH area, transfer 
+& shared into WSH site at point of 
+record being created by S4H 
+Share broken by birth NHSP site. 
+Has baby been screened? 
+Organise to offer baby a 
+hearing screen 
+Does baby need any refe rral 
+to Audiology ? 
+YES 
+ NO 
+Make referral to 
+relevant 
+Audiology 
+service 
+No further 
+action 
+required 
+YES 
+ 
+NO 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 36 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 16 : S4H/NIPESM aRT has not been populated 
+
+National Spine has 
+gone down – records 
+not populating S4H and 
+S4N 
+ 
+Create a local list of all births from SEMA and discharge list for each day of the incident. 
+Found here 
+Complete all columns for all births unt il all babies have populated 
+S4H and S4N 
+Ensure no screening has been missed 
+S4H has gone down - 
+records not populating 
+S4H 
+ 
+Serious incident 
+Report to NHSP/NIPE helpdesks unless already been notified 
+S4N has gone down - 
+records not populating 
+S4N 
+
+If duplicate records have been made then merge records. 
+Save a screen shot of the demographics page of each record prior 
+to merging 
+NOTE: 
+If records need merging due to incorrect NHS numbers then screen shots of the demographic 
+pages should be sa ved prior to merging. 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 37 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendi x 17: SYSTMONE Failsafe (CHIS) 
+ 
+CHIS have read only access to WSH NHSP S4H site. 
+ 
+On a monthly basis: 
+I. CHIS are responsible for running a report with in NHSP of all sc reen results and 
+uploading the outcome codes and date/time of screen into the Child Health System 
+(Systmone). 
+ 
+II. CHIS are responsible for then running a report in Systmone to look for babies without 
+screen results. This includes babies born in area , babies born out o f area but with 
+a GP in area and babies who have moved in. Any babies without a screen result in 
+Systmone are then manually searched for in S4H using the National record search 
+facility. The outcome code and date/time of screen are uploaded into Systmone . 
+ 
+III. Any babies whose screen results could not be located are emailed in a report to the 
+NHSP lead to ensure either they are aware of baby or if not aware of baby a screen 
+can be offered. 
+ 
+IV. CHIS run a report on movers out of area . Any baby without a screen result or with 
+an outcome code of C2, N1, N2, I9 (see outcome codes appendix 18) are emailed in 
+the report to NHSP lead so the S4H record can be transferred to the correct site . 
+ 
+The dates for searches/reports are as follows: 
+During the 1st week of the month ‘ D’ CHIS search for all results in S4H from month 
+‘B’ and upload to Systmone. 
+Following the upload of results CHIS search systmone for babies with no screen 
+result based on the following parameters and S4H is manually searched . Any record 
+with no screen resul t will be emailed in a report to the NHSP Lead : 
+ 
+Born in area Babies born month C and 2 preceding months 
+(month B and A) with no screen result 
+Born out of area with a GP in area Babies born month C, B and A with no screen 
+result 
+Moved in Babies born month C, B and A with no screen 
+result 
+Moved out Babies up to 1 year old with no screen result 
+or outcome code of C2, N1, N2, I9 
+ 
+V. NHSP team receive the report and check that: 
+ 
+a. Babies NHSP record is in WSH S4H site and screening is pending. WSH site 
+is already aware of baby and is tracking. 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 38 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+b. Babies NHSP record is not in WSH S4H site and screening is pending. WSH 
+site is not aware of baby. S4H record is transferred in and baby is offered 
+screening . 
+c. Babies NHSP record is not on S4H site and was born out of the country . 
+NHSP lead makes a request to CHIS to check the Health Visitors movers in 
+visit notes to see if a screen was undertaken in country of birth. If no case 
+note in Systmone the NHSP lead wil l contact parents by phone or a movers 
+into are – no screen on S4H letter offering screening will be sent . 
+If screening is accepted a manual entry of babies birth an d demographic 
+details will be added to S4H to create a record. The manual entry incident log 
+should be completed and the NIPE lead informed of the record being created. 
+This can be found here. 
+d. If any screening results are found for babies on the report these are emailed 
+back to CHIs for manual entry onto Systmone. 
+e. baby is now older than 3 months a letter a moved into area - too old to screen 
+letter will be sent to parents. 
+f. For movers out who have a screen pending result, outstanding Audiology 
+referral / PCHI the demographic and GP details will be updated, a case note 
+written and the record will be transferred to the responsible NHSP site. The 
+NHSP Lead for this s ite will be emailed to advise them of the record transfer. 
+
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 39 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 18 : Outcome codes in S4H 
+
+ Incomplete 
+C1: No 
+follow -up 
+required N1: 
+Unilateral 
+referr al I1: Declined 
+screen I4: 
+Deceased I7: Late entry I11: 
+Equipment 
+malfunction 
+C2: Targeted 
+f/u required N2: Bilateral 
+referral I2: 
+Appointment s 
+missed I5: Out of 
+coverage I9: 
+Contraindicated I12: 
+Equipment 
+not available 
+ I3: Lost 
+Contact I6: 
+Withdrew 
+consent I10: Baby 
+unsettled I13: Lack of 
+capacity 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 40 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 19: Bloodspot/NIPE/NHSP List Failsafe 
+
+Locate the birth list here 
+
+Search S4H for all screens on that birth date. 
+In the overview site, search with the date you require, put birth in both date of 
+birth boxes, tick all babies for protocol (wellbaby and NICU) and tick ‘in process 
+and complete’ for newborn screen to generate all babies records . 
+If a baby is on the 
+S4H hearing 
+screening list but 
+not on the 
+bloodspot list 
+highlight this with 
+the Community 
+Midwifery Team 
+Leads so as to 
+check if US 
+Sussex 
+(SRH&WH) are 
+giving postnatal 
+care 
+If a baby is on the 
+bloodspot list but not 
+on S4H, car ry out a 
+‘national record 
+‘search to find 
+screening results. 
+ 
+Check all OOA 
+babies, put ‘complete’ 
+for babies who have 
+had their screen 
+completed or 
+‘transferred to correct 
+site’ for those in the 
+correct site but not 
+yet screened. 
+Put the outcome code i n 
+the NHSP column for 
+babies who have had their 
+screen completed. 
+ 
+A screen not completed will 
+say 
+Active – screening. 
+ 
+Comp lete the monthly 
+sheets saved here 
+Email to 
+kevin.knig ht@wsht.nhs.uk 
+ONCE ALL COMPLETED 
+ 
+If not complete highlight the 
+cell red, contact screening 
+teams to investigate why baby 
+not yet screened 
+Advise NHSP lead. 
+Make a note of date of ‘in 
+process screens’ and recheck 
+each day until complete 
+Note. 
+ 
+All transfers into any of the 3 screening 
+programmes will be added to all 3 tabs of this 
+spreadsheet to complete full population for babies 
+in the area under 10 days old. All babies will be 
+tracked and checked that postnatal screening has 
+been offered. 
+ 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 41 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 20 : NICU Failsafe s 
+ 
+1. Badger report 
+
+The badgernet reports are saved here 
+
+Admission and discharge date/time report from 
+badgernet sent to NHSP lead and NHSP admin on 
+a rolling 4 week period 
+NHSP team to add 3 columns to report 
+1.Duration over 48hrs yes/no i.e. is baby NICU protocol (document if in 
+transitional care as this = well baby protocol) 
+2.What protocol baby should be 
+3.What protocol is set in S4H 
+ 
+Complete columns 1 & 2 
+Search all babies in S4H to check the protocol for screening, complete column 3. 
+Check co lumn 2 & 3 match save in failsafe folder, badger report. 
+Check on SEMA for any discrepancy ’s; 
+advise NHSP lead and badgernet lead 
+if there are any. 
+ 
+Check on SEMA times of 
+admission/discharge of all babies 
+screened as well baby to ensure on 
+changes in admission times 
+ 
+Advise NHSP co-ordinator of any 
+babies screened to incorrect 
+protocol 
+NHSP lead to investigate, raise 
+datix, arrange for baby to be 
+screened 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 42 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+2. SMART4HEARING 
+
+ NHSP lead to 
+investigate, raise datix & 
+SIAF arrange for baby to 
+be screened 
+Filter out all NICU baby 
+protocol, leaving just 
+well/community baby protocols 
+Filter out GA>37 weeks 
+Advise NHSP lead of 
+any babies who have 
+been set to wrong 
+protocol and missed a 
+hearing screen 
+ 
+NHSP lead to 
+investigate, raise a datix 
+& SIAF arrange for baby 
+to be screened 
+Check on SEMA that 
+baby was not on 
+neonatal unit. 
+Complete comments 
+column 
+Monthly search S4H for the previous month well/community baby and NICU protocol babies 
+Saved here 
+Export results: 
+NHS number 
+Protocol name 
+GA 
+Date of birth 
+Screening outcome 
+Total right ear test for AOAE1 
+Total left ear test for AOAE1 
+Total right ear test for AABR 
+Total left ear test for AABR 
+Filter out all well baby/community 
+baby protocol, leaving just NICU 
+protocol babies 
+Filter out all babies in process 
+Advise nhsp lead of any 
+babies who have missed 
+a hearing screen 
+ 
+Ensure all babies have 
+had both AOAE & AABR 
+screens 
+If born OOA , check on 
+badgernet that baby 
+was not on our NICU 
+and email birth site 
+NHSP Lead to check 
+baby was not in their 
+NICU (see standard 
+email) 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 43 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Standard email wording for NICU check to other sites 
+ 
+Dear Local Manager 
+ 
+As part of our monthly GA/NICU failsafe we recheck our hospital system to ensu re any well 
+baby, whose GA is 37 weeks or below where only on the postnatal ward or their NICU stay 
+was <48hrs. 
+ 
+I would be grateful if you check your system for this baby: who was born at GA: 
+And confirm that they were not a NICU protocol baby. 
+ 
+Many Thanks 
+
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 44 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 21: Manual Entry of record into SMaRT4Hearing 
+
+NO 
+Unable to locate record in S4H 
+Re-search using nhs number only 
+Re-search using surname only 
+Re-search using date of birth only 
+Has record been located? 
+Determine where error lies. 
+Contact NHSP lead and NIPE 
+lead 
+Contact Maternity Information 
+Analyst/Clerical Manager and 
+CHIS, SCT if issue with wrong 
+NHS number 
+Wait 6hrs for late population of NHS 
+number 
+Has baby populated S4H ? 
+No further 
+action 
+required 
+Advise NHSP & NIPE lead. 
+Contact Maternity Information 
+Analyst/Clerical Manager and 
+CHIS, SCT if issue with issuing 
+the NHS number. 
+Keep a spreadsheet of missing 
+babies* 
+Check with N orthgate helpdesk 
+if there is a national issue 
+Await S4H 
+notification that issue 
+has been fixed 
+ Has baby 
+populated 
+S4H 
+Manually enter record, 
+complete manual entry log. 
+Email NHSP and NIPE lead 
+to advise of manual entry. 
+Case note on S4H 
+Mover into country, new nhs 
+number so did not populate S4H 
+at birth 
+YES 
+YES 
+YES 
+NO 
+NO 
+NO 
+YES 
+Match records populated against 
+spreadsheet* to ensure non missed 
+YES 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 45 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 22 : High risk of hearing loss notification from antenatal booking 
+
+High risk of hearing loss identified at booking 
+Community Midwife advises antenatal screening team 
+Antenatal & Newborn Screening Co -ordinator contacts parents to 
+discuss. Offers a call from the NHSP Lead 
+Antenatal & Newborn Screening Co -ordinator advises NHSP Lead 
+NHSP Lead contact parents if req uested, diaries when baby due 
+Baby has been born. 
+Appropriate screening, including AABR offered based on risk 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 46 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 23 : GP’S in West Coastal CCG 09G /S4H WSH site 
+ 
+Adur: The Ball Tree Surgery , Harbour View Healthcare, The Manor Practice , New Pond 
+Row Surgery , Northbourne Medical Centre , The Orchard Surgery 
+ 
+Arun: The Coppice & Angmering Medical Centre , Fitzalan Medical Group , The Lawns 
+Surgery , The Park Surgery , Westcourt Medical Centre , Willow Green Surgery 
+ 
+Chanctonbury: Billingshurst Surgery , The Glebe Surgery , Henfield Medical Centre , 
+Steyning Health Centre 
+ 
+Chichester: Cathedral Medical Group , Langley House Surgery , Lavant Road Surgery , 
+Loxwood Medical Practice, Parklands Surgery , Petworth Surgery , Pulborough Medical 
+Group , Riverbank Medical Centre , Selsey Medical Practice , Southbourne Surgery , 
+Tangmere Medical Centre , Witterings Health Centre 
+ 
+Regis: The Arundel Surgery , Avisford Medical Group , Bersted Green Surgery, Bognor 
+Medical Practice , The Croft Practice , Flansham Park Health Centre , Grove House 
+Surgery , Maywood Healthcare Centre , West Meads Surgery 
+ 
+Worthing (Cissbury): The Barn Surgery , Broadwater Medical Centre , Cornerways 
+Surgery , The Lime Tree Surgery , The Phoenix Surgery , Selden Medical Centre , St 
+Lawrence Surgery , Strand Medical Group , Victoria Road Surgery , 
+ 
+If a baby lives in WSH site screening area based on postcode but has not populated due to 
+no or incorrect GP. The record will be transferred inot site. 
+A dummy GP WSH -Site Western Sussex Hospital FT will be added to the record. 
+Monthly advanced searches will be carried regarding missing or dummy GP’s 
+ All babies born in the past year with a dummy GP WSH -Site Western Sussex 
+Hospital FT 
+ All babies born in the past year, results exported with nhs number and patients GP 
+practise name. Results filtered in excel for babies with no GP 
+Those babies on either of the above 2 lists will be looked up on SCR and the GP added to 
+S4H. 
+ 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 47 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 24 : Home births 
+ 
+Home births for UH Sussex East (BRI & PRH) populate UH Sussex West (SRH&WH) WSH 
+NHSP site. 
+ 
+If a baby has populated S4H as a home birth or other birth location but is not on the birth list 
+then this needs investigating. 
+ 
+This should include: 
+a) Undertake a patient search and ward search (APC search) on SEMA to ensure 
+baby is not resident on a UH Sussex West (SRH&WH) ward. 
+b) Check SCR for birth hospital 
+ 
+If baby is not resident on UH Sussex West (SRH&WH) wards or UH Sussex West 
+(SRH&WH) is not providing postnatal care, break the share on the reco rd/transfer the record 
+to the responsible site. A case note can be added ‘not a UH Sussex West (SRH&WH) birth . 
+ 
+Home births from other borders may, at times, populate WSH site, i n which case the above 
+still applies. 
+ 
+If a home birth is on the discharge lis t but baby is not in WSH site they will be shared in for 
+WSH to complete screening. A case note will be added so that the responsible site are 
+aware. 
+
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 48 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Appendix 25: Checking that all Newborn Screening has been completed 
+
+ MIDWIFE DAY 10 VISIT 
+ 
+MIDWIFE DAY 1 VISIT 
+ 
+CHECK 
+NHSP 
+COMPLETE 
+ 
+MIDWIFE DAY 5 VISIT 
+ 
+CHECK NIPE 
+COMPLETED, 
+CHECK NHSP 
+COMPLETED, 
+UNDERTAKE 
+BLOODSPOT 
+ 
+CHECK NIPE 
+COMPLETED, 
+CHECK NHSP 
+COMPLETED, 
+CHECK 
+BLOODSPOT 
+COMPLETED. 
+CHECK FOR ANY 
+OUTSTANDING 
+REFERRALS FOR 
+MUM AND BABY 
+ 
+ALL 
+COMPLETED 
+- DISCHARGE 
+FROM 
+MIDWIFERY 
+CARE 
+ 
+NIPE 
+NOT 
+COMPLETE 
+ 
+NIPE OR 
+NHSP NOT 
+COMPLETED 
+ 
+CONTACT 
+NIPE/NHSP 
+ADMIN 
+CLERK ASAP 
+ 
+CONTACT 
+NIPE ADMIN 
+CLERK AND 
+ 
+SRH - 
+CONTACT 
+COMMUNITY 
+TEAM LEAD. 
+ 
+WH - 
+ENSURE 
+THERE IS AN 
+APT TO 
+ATTEND 
+BRAMBER 
+WARD. 
+ADVISE MUM 
+OF 
+DATE/TIME 
+ 
+NIPE OR 
+NHSP NOT 
+COMPLETED 
+ 
+CONTACT 
+NIPE/NHSP 
+ADMIN 
+CLERK ASAP 
+CONTACT NIPE 
+LEAD 
+ 
+ CONTACT 
+NHSP LEAD 
+ 
+DATIX RAISED 
+IF NOT DUE TO 
+DNA 
+ 
+BLOOD SPOT 
+NOT 
+COMPLETED 
+ 
+Take Blood 
+spot with 
+consent 
+ 
+CONTACT 
+NBS LEAD 
+ 
+DATIX 
+RAISED 
+ 
+GAIN CONSENT FOR 
+NBS 
+ENSURE CONSENT 
+WAS OBTAINED FOR 
+NBS 
+ 
+CHECK 
+NIPE 
+COMPLETE 
+ 
+NHSP 
+NOT 
+COMPLETE 
+ 
+CHECK FRONT 
+OF POSTNATAL 
+NOTES FOR 
+CLINIC 
+APPOINTMENT 
+ 
+CONTACT 
+NHSP ADMIN 
+CLERK/MSW IF 
+NO 
+APPOINTMENT 
+SO 
+APPOINTMNET 
+CAN BE 
+BOOKED 
+
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 49 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Appendix 26 : Border Agreements 
+ 
+All border agreements are agreed and signed off by the NHSP manag ers of affected sites annually. 
+They can be found here 
+ 
+a) Babies Born in Princess Royal Hospital BRI site, living in Partridge Green or Cowfold, 
+with SAS or WSH GP Practice 
+ 
+b) Babies born UH Sussex West (SRH&WH) living in BRI site but GP in UH Sussex West 
+(SRH&WH) site 
+ 
+c) Babies born at WSHT but have East Sussex GP 
+ 
+d) Babies Born at Sussex and Surrey Hospital, but with WSH site mapped GP Practice 
+ 
+e) Babies Born at West Surrey Hospital, but with WSH GP Practice 
+ 
+f) Babies Born in West Sussex, but with PIW GP Practice 
+ 
+g) Homebirth Babies Born in West Sussex, but with PIW GP Practice 
+ 
+h) OOA Regional Document 
+ 
+i) Other NHSP site contact details can be found here 
+ 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 50 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 2 7: Contact List 
+
+Newborn Hearing Screening Co -ordinator 
+Jacqueline Gregory 
+Jacqueline.gregory1@nhs.net 
+07808 099816 
+ 
+Newborn Hearing Screening Team Lead 
+Gail Addison 
+g.addison@nhs.net 
+ 
+Newborn Hearing Screening admin clerk 
+Chrissie Thair 
+Christine.thair@nhs.net 
+07808099826 
+ 
+Antenatal & Newborn Screening Co -ordinator 
+Karen Lundie 
+karen.lundie@nhs.net 
+Mobile: 07785 996864 
+SRH tel: 01243 788122 ext. 32829 
+WH tel: 01903 205111 ext. 86077 
+
+Maternity Support Workers 
+Worthing 
+Community Midwives Office 01903 285194 
+St Richards 
+Birth centre 01243 788122 ext 32811 
+ 
+Neonatal Unit, St Richards Hospital 
+01243 788122 ext 32985/32986 
+Beeding Ward (SCBU), Worthing Hospital 
+01903 285184 
+ 
+NEC SWS (Formerly Northgate) 
+s4h.helpdesk@nhs.net 
+08450130183 
+ 
+Child Health Records 
+Tel: 01243 812510 
+Fax: 01243 812590 
+Michelle Wright Manager 
+Child Health Record Bureau, 
+Michellewr ight2@nhs.net 
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 51 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Abbreviations used in this document 
+ 
+ABR Auditory Brainstem Response 
+AOAE Automated Otoacoustic Emission 
+AABR Automated Auditory Brainstem Response 
+CHIS Child Health Information Services 
+CI Confidential ID 
+HV Health Visitor 
+MIS Maternity Information System eg Medway 
+MSW Maternity Support Worker 
+NHS National Health Service 
+NHSEI NHS England and NHSP Improvement 
+NHSP Newborn Hearing Screening Programme 
+NICU Neonatal Intensive Care Unit 
+NNU Neonatal Unit 
+OOA Out of Area 
+PCHR Personal Child Health Record 
+QA Quality Assurance 
+S4H Smart4Hearing 
+S4N Smart4NIPE 
+SCBU Special Care Baby Unit 
+
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 52 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+References 
+
+NHS Choices website 
+ 
+NHS Newborn Hearing Screening Programme : Standards 
+Newborn Hearing Screening Programme Quality Standards 
+ 
+NHS Newborn Hearing Screening Service Specification no 20 2019/20 
+Public Health National Service Specifications 
+ 
+NHS Newborn Hearing Screening Operational Guidance 
+Newborn Hearing Screening Programme NHSP Operational Guidance 
+ 
+Managing safety incidents in NHS screening programmes : Ref: PHE publications gateway 
+number 2017284. 
+Managing Safety Incidents in NHS Screening Programmes 
+ 
+Screening of individuals with uncertain or incomplete screening status in England 
+Screening of individuals with uncertain or incomplete screening status 
+ 
+Link for UH Sussex West (SRH&WH) Surrogacy Guideline 
+Surrogacy Guideline 
+ 
+This document can be found on the trust website 
+nww.westernsussexhospitals.nhs.uk/?s=newborn+screening&resource_type=&post_type=re
+source 
+ 
+Resources tile on S4H. 
+All user guides, forms and tools, release notes and training video’s can be located on the 
+resource tiles 
+
+CG17004 Newborn Hearing Screening Standard Operating Procedure v5.1 May 2022 Page 53 of 53 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Main a dditions /Changes 
+ 
+Date Page Addition 
+01/07 /20 4 Weekly Badgernet notification re transfers in and out of NICU’s 
+01/07 /20 11 Link to surrogacy guideline regarding consent 
+01/07 /20 12 Worthing Audiology email address 
+01/07 /20 12 New exclusion’s for screening 
+01/07 /20 20 Screening on NICU if screening has already occurred 
+01/07 /20 21 Letters for parents 
+01/07 /20 24 Results saved to same ear 
+01/07 /20 27 CHIS read only access to S4H and running of reports from S4H 
+01/07 /20 34 PIW – border homebirth pathway 
+01/07 /20 34 OOA Regional document 
+ 
+08/11/21 8 Screening information in different languages and animations 
+08/11/21 14 Updated guidance on screens saved to wrong ears 
+08/11/21 15 Updated guidance on screening twins 
+08/11/21 16 QR code for Audiology visit leaflet 
+08/11/21 17 UHS West NHSP report template 
+08/11/21 18 Screening incident section 
+08/11/21 20 New assessment sheets 
+08/11/21 21 Updated guidance on incomplete QA checks 
+08/11/21 24 Management of record for NICU baby in S4H 
+08/11/21 28 Updated guidance on d ischarges from NICU with no hearing 
+screen 
+08/11/21 40/41 New Systmone failsafe 
+08/11/21 46 Standard email wordin g for NICU check to other sites 
+08/11/21 50 Home births

@@ -1,0 +1,1574 @@
+# Extracted from: UHSx Perinatal Mental Health guideline.pdf
+# Guideline ID: uhsx-perinatal-mental-health-guideline
+# Content length: 74916 characters
+# Processing date: 1750066902.2412212
+
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 1 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+UH Sussex Perinatal Mental Health Guideline 
+Summary statement: How does the 
+document support patient care? By providing guidance for staff within maternity on 
+detection and identification of perinatal mental health 
+risk and subsequent care pathways . 
+Staff/stakeholders involved in 
+development: 
+Job titles only Senior midwifery staff, obstetric consultants and 
+obstetric anaesthetists 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: PNMH Midwife 
+For use by: All Obstetric and Midwifery staff 
+Purpose: To provide evidence based guidan ce on the perinatal 
+mental health pathway of care . 
+This document supports: 
+Standards and legislation CNST Maternity Standards 
+Care Quality Commission 
+NICE 2020 Antenatal a nd Postnatal Mental Health 
+CEMACE Saving Mothers Lives 2006 – 2008 
+Key related documents: UH Sussex Maternity Guidelines: Antenatal Care 
+and Patient Information, Postnatal Care 
+Approved by & date : JOGG (SRH &WH): 15th March 2023 
+Protocol Steering Group (RSCH&PRH): March 2023 
+Medicines Governance Committee: 9th August 2022 
+ (Confirmed by email 26th April 2023) 
+Date uploaded: 4th May 2023 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors N/A 
+Ratification Date: N/A 
+Expiry Date: March 2026 
+Review date: September 2025 
+If you require this document in another format such as Braille, large print, 
+audio or another language please contact the Trusts Communications Team 
+Reference Number: CG22001 
+ 
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 2 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+Version Date Author Status Comment 
+1.0 March 2023 Eli. Hibberd, 
+Perinatal Mental 
+Health Midwife 
+(SRH & WH) 
+ 
+Ali Clifton 
+Specialist Mental 
+Health Midwife 
+(RSCH & PRH) 
+ 
+Maria Jesse 
+Specialist Mental 
+Health Midwife 
+(RSCH & PRH) LIVE New merged T rust wide 
+PNMH guideline 
+
+The interpretation and application of clinical guidelines will remain the responsibility 
+of the individual clinician. If in doubt, contact a senior colleague or expert. 
+ 
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 3 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Contents 
+ 
+1.0 Key Principles ................................ ................................ ................................ .......... 4 
+2.0 Scope ................................ ................................ ................................ ....................... 4 
+3.0 Responsibilities ................................ ................................ ................................ ........ 4 
+4.0 Abbreviations used within this guideline ................................ ................................ ... 4 
+5.0 Definitions ................................ ................................ ................................ ................ 4 
+6.0 Introduction ................................ ................................ ................................ .............. 5 
+7.0 Prediction and detection ................................ ................................ ........................... 6 
+8.0 Booking ................................ ................................ ................................ .................... 6 
+9.0 Acting on screening information ................................ ................................ ............... 7 
+10.0 NHS Talking Therapy ................................ ................................ ............................... 8 
+11.0 Specialist Perinatal Mental Health Team ................................ ................................ .. 8 
+11.1 Healthy Futures Team (Brighton and Hove only) ................................ ..................... 9 
+11.2 Perinatal Bereavement Service ................................ ................................ .............. 10 
+12.0 Factors important to maintain ing maternal emotional wellbeing .............................. 10 
+13.0 Management of high risk women/people ................................ ................................ 10 
+14.0 Inpatient psychiatric emergency ................................ ................................ ............. 11 
+15.0 Outpatient psychiatric emergency ................................ ................................ .......... 11 
+16.0 Tocophobia ................................ ................................ ................................ ............ 12 
+17.0 Postnatal Care ................................ ................................ ................................ ....... 12 
+18.0 Use of interpreters ................................ ................................ ................................ .. 12 
+19.0 Mental capacity ................................ ................................ ................................ ...... 13 
+20.0 Medication ................................ ................................ ................................ .............. 13 
+20.1 Medication pathway referral ................................ ................................ ................... 13 
+20.2 Recognised resources for information on drugs in pregnan cy and breastfeeding ..14 
+20.3 Medications with specific cautions ................................ ................................ .......... 15 
+21.0 Psychotropic Medication Pathway SSRI Referral ................................ ................... 18 
+22.0 Sources of information ................................ ................................ ........................... 19 
+23.0 Useful contacts ................................ ................................ ................................ ....... 20 
+24.0 Audit ................................ ................................ ................................ ....................... 22 
+References ................................ ................................ ................................ ........................... 23 
+Appendix 1a: Maternal/Birthing Parent Mental Health: Antenatal Care Pathway (SRH &WH) 25 
+Appendix 1b: Maternal/Birthing Parent Mental Health: Antenatal Care Pathway (PRH & 
+RSCH) 26 
+Appendix 2a: Maternal/Birthing Parent Mental Health: Urgent Review Pathway (SRH & WH 
+only) 26 
+Appendix 2b: Maternal/Birthing Parent Mental Health: Urgent Review Pathway (PRH & 
+RSCH) 28 
+Appendix 3: Patient Health Questionnaire - PHQ -9 ................................ .............................. 29 
+Appendix 4: Hospital Mental Health Liaison Referral Form (SRH only) ................................ . 30 
+Appendi x 5: Healthy Futures Team (Brighton & Hove only) ................................ .................. 32 
+
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 4 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Perinatal Mental Health Guideline 
+ 
+1.0 Key Principles 
+ 
+A protocol is a set of measurable, objective standards to determine a course of actio n. 
+Professional judgement may be used in the application of a protocol. 
+ 
+2.0 Scope 
+ 
+This protocol applies to any woman and birthing person requiring support with their Mental 
+Health. 
+ 
+3.0 Responsibilities 
+ 
+Midwives & obstetricians: 
+ 
+ To access, read, und erstand and follow this guidance . 
+ To use their professional judgement in application of this protocol . 
+ 
+Management: 
+ 
+ To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations . 
+ To ensure the protocol is accessible to all relevant staff . 
+ To ensure the protocol is available for service users on request . 
+ 
+4.0 Abbreviations used within this guideline 
+ 
+DSH – Deliberate Self -Harm PTSD – Post-Traumatic Stress Disorder 
+GAD – Generalised Anxiety Disorder RMN – Registered Men tal Health Nurse 
+OCD – Obsessive Compulsive Disorder LBW - Low Birth Weight 
+MBRRACE – Mother s and Babies: 
+Reducing Risk through Audits and 
+Confidential Enquiries across the UK SPMHS - Specialist Perinatal Mental Health 
+Service 
+MBU – Mother and Baby Unit SSRIs – Selective Serotonin Reuptake 
+Inhibitors 
+
+5.0 Definitions 
+ 
+Anxiety Disorders: These include generalised anxiety disorder, panic disorder, obsessive -
+compulsive disorder, phobias, post -traumatic stress disorder and social anxiety disorder. 
+ 
+Baby : Refers to an infant aged between 0 and 12 months. 
+
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 5 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Perinatal : This is defined in this guideline as from pregnancy and up to 1 year after 
+childbirth. 
+ 
+Postpartum psychosis : Psychosis often with mania and/or depressive symptoms in the 
+immediate postnatal pe riod, which can become very severe extremely quickly (also known as 
+puerperal psychosis). 
+ 
+Psychotropic medication : This is defined in this guideline as all medication used to treat 
+mental health problems. 
+ 
+Severe mental illness : This is defined in this gu ideline as severe and inca pacitating 
+depression, schizoaffective disorder , schizophrenia, bipolar dis order, psychosis and 
+postpartum psychosis. 
+ 
+Traumatic birth : Includes births, whether preterm or full term, which are physically traumatic 
+(for example, in strumental or assisted deliveries or emergency caesarean sections, severe 
+perineal tears, postpartum haemorrhage) and births that are experienced as traumatic, even 
+when the delivery is obstetrically straightforward. 
+ 
+Trauma informed care: Is care that shi fts the focus from “ What’s wrong with you?” to “What 
+happened to you?” A trauma -informed approach to care acknowledges that health 
+organisations and care teams need to have a complete picture of a patient’s life situation, 
+past and present, to provide effe ctive health care services with a healing orientation (TICIRC, 
+2021). 
+ 
+Valproate : Refers to 3 formulations of valproate available in the UK: sodium valproate and 
+valproic acid (Iicensed for the treatment of epilepsy) and semi -sodium valproate (licensed for 
+the treatment of acute mania and continuation treatment in people whose mania responds to 
+treatment). 
+ 
+6.0 Introduction 
+ 
+The objective of this guideline is to advise healthcare providers on the clinical management 
+and services available for women and pr egnant people with mental health problems during 
+pregnancy and the immediate postnatal period. The aim is to reduce perinatal morbidity and 
+mortality, to provide a framework that is underpinned by evidence -based practice and to 
+facilitate collaboration of multidisciplinary teams. 
+ 
+The 2021 MBRRACE report demonstrates that poor mental health continues to be one of the 
+leading causes of maternal and parental death during the perinatal period whilst maternal 
+suicide remains the leading cause of death occurrin g within a year of the end of pregnancy 
+(Knight et al 2021). Lessons derived from the enquiries emphasise the importance of 
+prevention and effective identification and management of mental health problems and 
+highlights the work required to mitigate agains t the stark inequalities of care between women 
+and pregnant people of different ethnic backgrounds. 
+
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 6 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+The level of care for pregnant women and people with mental health problems, during the 
+intrapartum period, should be the same as for anyone with a mental health problem. 
+However, treatment and management decisions are complicated by the presence of the 
+developing f oetus, choices concerned with infant feeding and the timescales imposed by 
+pregnancy and birth. 
+ 
+Mental health issues during the intrapartum peri od can have serious consequences for the 
+health and wellbeing of a mother or pregnant person and their baby, as well as other family 
+members. This guideline makes recommendations for the prediction, detection, and 
+management of mental health problems for w omen and pregnant people who are accessing 
+maternity services. 
+ 
+7.0 Prediction and detection 
+ 
+Pregnant women and people have increased contact with health services, which provides an 
+opportunity for identifying those with mental illness, or those at an inc reased risk of 
+developing one. The risk factors that consistently show reasonable predictive value, 
+particularly for the development of depression, psychosis and recurrence of bipolar disorder, 
+include past psychiatric history (especially previous puerpera l psychosis) and current mental 
+disorder, or symptoms. 
+ 
+Perinatal mental health problems are very common, affecting up to 20% of women and 
+pregnant people at some point during the perinatal period (Bauer et al, 2014). Disclosing 
+mental health problems is d ifficult, 70% of women and birthing people will hide or underplay 
+their illness (MMHA, 2022). Findings of a UK survey reveal almost a third of women and 
+pregnant people have never disclosed to a health professional that they were unwe ll with a 
+mental healt h problem. 34% of those who had hidden their feelings , did so because they 
+were concerned their baby might be taken away (Boots Family Trust, 2013). Reassurance 
+and good communication is imperative. 
+ 
+By careful planning with the woman or pregnant person, a nd good communication between 
+services, it may be possible to reduce the rate of onset of mental illness, its severity, and its 
+impact on the woman or pregnant person and their families. 
+ 
+8.0 Booking 
+ 
+The lead professional/midwife providing care at booki ng must routinely ask all women and 
+pregnant people about any current or previous mental health issues, including: 
+ 
+ Past or present severe mental illness – (including schizophrenia, bipolar disorder, 
+psychosis or severe depression) . 
+ Postnatal mental health problems, e.g. depression, postpartum psychosis . 
+ A family history of perinatal mental illness, or other severe mental health illness . 
+ Past or present treatment by a psychiatrist / specialist mental health team, 
+including inpatient care (please document wh ich hospital, date of admission and 
+whether admission was voluntary or involuntary) . 
+ Past or present psychotropic medication . 
+ 
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 7 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+ Anxiety or panic disorder . 
+ Obsessive -compulsive disorder (OCD) . 
+ Post-traumatic stress disorder (PTSD) . 
+ Eating disorders . 
+ 
+Addition al questions (Whooley Questions) to determine current depression should be asked 
+by the booking midwife: 
+ 
+ During the past month, have you often been bothered by feeling down, depressed 
+or hopeless? 
+ During the past month, have you often been bothered by hav ing little interest or 
+pleasure in doing things? 
+ 
+(Consider using the Patient Health Questionnaire PHQ -9, Appendix 3). 
+ 
+Also consider asking about anxiety using the 2 -item Generalised Anxiety Disorder scale 
+(GAD -2): 
+ 
+ During the past month, have you been feeling nervous, anxious or on edge? 
+ During the past month, have you not been able to stop or control worrying? 
+ 
+If the woman or pregnant person answers ‘yes’ to one of more of the first four detection 
+questions, and would like help, follow the maternal mental health antenatal care pathway 
+(Appendix 1a & Appendix 1b ) 
+ 
+9.0 Acting on screening information 
+ 
+All healt hcare professionals should follow the antenatal care pathway (Appendix 1a & 
+Appendix 1b ) and the urge nt review pathway ( Appendix 2a & Appendix 2b ). The Specialist 
+Perinat al Mental Health Midwife can be contacted to assist with any queries that may arise 
+from the referral process. 
+ 
+The midwife providing care should document the woman or pregnant persons mental health 
+history on the booking risk assessment form and in the maternal notes, and document and 
+upload any external referrals made. 
+ 
+Copies of any referrals to the Specialist Perinatal Mental Health Servi ce (SPMHS) should be 
+uploaded onto the maternity information system (eg Badgernet or Medway) . 
+ 
+Inform the Specialist Mental Health Midwife and the GP with consent if referring to the 
+SPMHS. 
+
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 8 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+10.0 NHS Talking Therapy 
+ 
+If a woman or pregnant person ’s mental health problem is mild to moderate, consider a 
+referral to NHS Talking Therapy. They provide talking therapy for people experiencing: 
+ 
+ Stress, worry and general anxiety 
+ Depression 
+ Panic attacks and agoraphobia 
+ Phobias 
+ Social Anxiety 
+ Obsessive -Comp ulsive Disorder (OCD) 
+ Post-Traumatic Stress Disorder (PTSD) 
+ Health Anxiety 
+ Post Natal Depression 
+ Low self -esteem or low confidence 
+ Relationship difficulties 
+ Bereavement and reactions to loss 
+ 
+Women/p eople can self -refer to all NHS Talking Therapy services, but may welcome support 
+in doing so. Talking T herapy services in the patch include : 
+ 
+Time to Talk South Team (Henfield, Lancing, Littlehampton, Shoreham, Steyning, 
+Storrington and Worthing): 01903 703540 Time to Talk - NHS talking therapies in West 
+Sussex (sussexcommunity.nhs.uk) 
+ 
+Time to Talk West Team (Bognor, Arundel, Chichester, Selsey, Southbourne, Midhurst, 
+Petworth, Pulborough, Loxwoo d, Witterings): 01273 265967 
+ 
+Time to Talk North Team (Crawley, Horsham): 01403 620434 
+ 
+Health in Mind (East Sussex excluding Brighton and Hove) e.g. Lewes, Eastbourne, 
+Hastings https://www.healthinmind.org.u k/ 
+ 
+The Wellbeing Service (Brighton and Hove (patient’s address or registered GP practice in 
+BN1, BN2, BN3 or BN41) https://www.brightonandhovewellbeing.org/ 
+ 
+11.0 Specialist Perinatal Mental He alth Team 
+ 
+The Specialist Perinatal Mental Health Service (SPMHS) is a community -based service for 
+pregnant women and people with severe mental health difficulties, either now or in the past, 
+during pregnancy and up to a year after birth. The service is pr ovided by Sussex Partnership 
+NHS Foundation Trust. 
+ 
+Who should be referred? 
+
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 9 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+ Women and people who are prescribed mood stabilising or antipsychotic 
+medication and requesting preconception advice . 
+ Women and people with primary tocophobia (fear of childbirth not linked to 
+previous traumatic birth) . 
+ Women and people with a past history of severe mental illness (e.g. bipolar 
+disorder , schizophrenia or severe depression or anxiety ). 
+ Women and people experiencing current symptoms of severe mental illness (e.g. 
+bipolar disorder , schizophrenia or severe depression or anxiety ) and/or not 
+responding fully to treatment in the community and/or areas of high risk (please 
+circle any which apply) . 
+ Women and people with personal or family history of bipolar disorder, postpar tum 
+psychosis or severe postnatal depression (e.g. requiring admission or secondary 
+care) . 
+ 
+Referrals can be made online: Perinatal services :: Sussex Partnership NHS Foundation 
+Trust 
+ 
+Perinatal staff are happy to discuss whether a referral is appropriate: 
+ 
+Coastal West Sussex : 0300 304 0214 admin -perinatalcws@ spft.nhs.uk 
+Brighton and Hove: 0300 304 0097 admin -perinatalbh@spft.nhs.uk 
+Northwest Sussex and East Surrey : 0300 304 0213 adminperinatalnws@spft.nhs.uk 
+East Sussex: 0300 304 0212 admin -perinataleast@spft.nhs.uk 
+ 
+11.1 Healthy Futures Team (Brighton and Hove only) 
+ 
+The Healthy Futures Team is a Specialist Public Health Nursing Service (health visiting and 
+school nursing). It utilises an early intervention model to improve health outcomes and 
+reduce inequalities for families facing disadvantage in Brighto n & Hove. 
+ 
+The team will deliver the Healthy Child Programme to families meeting following criteria: 
+ 
+ Antenatal mothers and pregnant people who are under 18 at conception. 
+ Anyone subject to a pre -birth child protection conference that is not already kno wn 
+to the public health community nursing service. Consideration will be given to 
+those undergoing a pre -birth Strengthening Families Assessment. 
+ A parent with a history of being looked after that is not already known to the public 
+health community nursin g service. 
+ Refugees, Asylum seekers, undocumented migrants and Travellers and those in 
+emergency housing (including the women’s refuge) who are pregnant or with a 
+child under the age of 19 that is not already known to the public health community 
+nursing s ervice . 
+ Migrant families housed in temporary on -campus accommodation provided by the 
+University of Sussex who are pregnant or with a child under the age of 19 that is 
+not already known to the public health community nursing service . 
+(See Appendix 5) 
+ 
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 10 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+11.2 Perinatal Bereavement Service 
+ 
+Anyone who has been pregnant and experienced a stillbirth (when a baby dies during 
+pregnancy from 24 weeks gestation) or neonatal loss (when a baby dies during the first 28 
+days of life) within the last year can be referred to the Perinatal Bereavement Service. 
+ 
+The Perinatal Bereavement Service is a new service and applies to anyone who has 
+experienced a stillbirth or neonatal loss on or after 25th July 2022. Referrals can be ma de by 
+a health professional via the following link . 
+ 
+https://www.sussexpartnership.nhs.uk/perinatal 
+ 
+12.0 Factors important to maintaining maternal emotional wellbeing 
+ 
+Greater understanding of how to reduce stressors for women and pregnant people can have 
+a significant impact on maternal and infant welfare. 
+ 
+The following measures can help: 
+ 
+ Encourage skin -to-skin contact between mother /birthing parent and baby to 
+promote and encourage bondi ng and to initiate breastfeeding . 
+ Prevention of separation from the family unit (maternity and mental health services 
+have a duty to ensure that, where a baby requires inpatient neonatal care and the 
+mother requires inpatient psychiatric care, neonatal ser vices are informed of the 
+mother /birthing parent ’s admission and visits to the baby are appropriately 
+facilitated) . 
+ Regular assessment of pain and appropriate management . 
+ Encourage good diet and rest . 
+ Ensure women/people are aware of the support services a vailable . 
+ Appropriate communication with the GP, health visitor, community midwives and 
+social services . 
+ Signpost to Birth Afterthoughts or Birth Stories following birth, if appropriate . 
+ Use of trauma -informed care by staff . 
+ 
+13.0 Management of high risk women/p eople 
+ 
+If there is a family history of postpartum psychosis or bipolar disorder, maternity and primary 
+care services should be alert for change in mental state in late pregnancy and the early 
+postpartum and, if present, should refer for urgent psyc hiatric assessment. 
+ 
+High risk women and pregnant people should be referred into the local specialist perinatal 
+mental health service (SPMHS) in early pregnancy and should have a 32 week pre -birth 
+planning meeting organised by the SPMHS, which should incl ude professionals from across 
+the perinatal mental health care pathway. 
+ 
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 11 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+A perinatal mental health care plan should be drawn up after this pre -birth planning meeting. 
+It should detail diagnosis, medication, risk factors, early warning signs of relapse and actions 
+taken in the event of a deterioration of mental state in the perinatal period, including contact 
+details of all professionals. 
+ 
+There should be an expectation of early consultant perinatal psychiatrist involvement in the 
+assessment and management of high -risk women /people and of women /people exhibiting 
+sudden alterations in mental state in late pregnancy or the early puerperium (Knight et al. 
+2015) 
+ 
+14.0 Inpatient psychiatric e mergency 
+ 
+ If psychosis is suspected or identified in ho spital, the Ho spital Mental Health Liaison 
+Team must be contacted (see Appendix 2a and Appendix 2b ) to conduct an 
+assessment and pl an the necessary on -going care . 
+o Worthing Hospital : this is via telephone x85252 
+o St Richards Hospital via referral form ( Appendix 4) which should be emailed 
+to: spnt.mhlt.chichester@nhs.net 
+o For RSCH & PRH complete an online referral form via the intranet: 
+https://nww.bsuh.nhs.uk/clinical/teams -and- departments/mentalhealth -
+services/rsch -mental -health -services/rsch -mental - health -
+liaisonreferrals/mhlt -inpatient -referral -form-working -age-adults/ 
+ The Specialist Perinatal Mental Health Midwife, Safeguarding Midwife, Labour 
+Ward Co-ordinator, Consultant on -call and Manager on -call must be informed . 
+ The woman/person must not be left unattended . 
+ The woman/person and their family must be kept informed . 
+ Safeguard the needs of the baby . 
+ Lone working should be avoided, it may be necessary to have a Registered Mental 
+Health Nurse (RMN) present while the mother remains on the maternity unit. When 
+making a booking via a nursing agency, a female RMN should be requested if 
+possible . 
+ Documentation should be detailed and concise . 
+ Admission to a psychiatric unit may be arranged either with the woman/person ’s 
+consent, or if severely ill and unwilling to be admitted, may be admitted 
+involuntarily under the Mental He alth Act (1983) . 
+ Transfer to a Mother and Baby Unit (MBU) should be considered in the first 
+instance. The woman /person should be escorted by an appropriately qualified 
+person. 
+ 
+15.0 Outpatient psychiatric e mergency 
+ 
+ If suspected psychosis occurs in the communit y, follow the Urgent Review 
+Pathway (Appendix 2 ) and notify the GP, the Specialist Perinatal Mental Health 
+Midwife , Safeguarding Midwife, Labour Ward co -ordinator, Consultant on -call and 
+Manager o n-call. 
+ 
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 12 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+ If support services are delayed consider transfer (with agreement) to Accident & 
+Emergency where assess ment by the Hospital Mental Health Liaison Team will be 
+carried out . 
+ Admission to a psychiatric unit may be arranged either with the woman/person s 
+consent, or if severely ill and unwilling to be admitted, may be admitted 
+involuntarily under the Mental Health Act (1983) . 
+ The woman/person and their family must be kept informed . 
+ Safeguard the needs of the baby . 
+ Documentation should be detailed and con cise. 
+ Women and people who require psychiatric admission following childbirth should 
+ideally be admitted to the nearest MBU to avoid separation of mother or birthing 
+parent and their baby. 
+ 
+16.0 Tocophobia 
+ 
+In the UK, the term tocophobia was first report ed by Hofbert and Brockington in 2000 and is 
+now widely recognised as a pathological intense dread and avoidance of childbirth. 
+Identifying tocophobia can be difficult because women /people are often reluctant to discuss 
+their fears and presentation can be diverse (Mycroft and Taha, 2018, p.2) . There is no 
+consensus on the operational definition of tocophobia and varying classification exists in the 
+literature (O’Connell et al. 2017). It is commonly categorised into ‘primary tocophobia’ – 
+affecting nulliparo us women /people , and ‘secondary tocophobia’ – affecting multiparous 
+women /people who have had a previous traumatic birth experience (Hofberg and Ward, 
+2003, p.507). 
+ 
+All women and pregnant people presenting with primary tocophobia at Worth ing and St 
+Richar ds should be referred to the Couns elling Midwife for further assessment , who can then 
+refer on to the PNMH Service following consultation . Women and pregnant people at RSCH 
+and PRH should be referred to the PNMH Service. If primary tocophobia is identified at 
+booking, the booking midwife should indicate this on the risk form. 
+ 
+Women and pregnant people with secondar y tocophobia can be referred to NHS Talking 
+Thera py and the Birth Afterthoughts service (SRH&WH) or Birth Stories (RSCH & PRH) . If 
+secondary toc ophobia is identified at booking, the booking midwife should indicate this on the 
+risk form. 
+ 
+17.0 Postnatal Care 
+ 
+For high risk women/people it is good practice to inform all teams of discharge. 
+ 
+18.0 Use of interpreters 
+ 
+Women and pregnant people should always have the opportunity of being seen alone and, 
+where there are language barriers, family or friends should not be used as interpreters 
+(National Institute for Health and Care Excellence 2010). 
+
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 13 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+19.0 Mental c apacity 
+ 
+Mental capacity is a person ’s ability to make a decision at the time it needs to be made. All 
+healthcare staff have a duty to ensure that patients have the mental capacity to make 
+decisions regarding their physical and mental health care. Healthcare professionals should 
+assume a woman/p erson has the capacity to make a decision themselves, unless it is proved 
+otherwise. Where there is doubt, an assessment of cap acity should be undertaken (Knight et 
+al. 2015, Appendix 3). 
+
+20.0 Medication 
+ 
+When givi ng advice about medication in pregnancy and breastfeeding encourage people to 
+take into account the risks and benefits, based on the best available evidence. Take into 
+consideration their history, current symptoms and stressors. Plans should address 
+immed iate, short -term and long -term risk. Ideally with the input of an expert in , prescribing in 
+pregnancy. 
+ 
+ It is essential to recognise there are risks associated with not treating mental 
+health problems in pregnancy and the postnatal period. Due to a cultu re focusing 
+entirely on potential risk, rather than benefit (Saving Lives, Improving Mothers’ 
+Care 2018). 
+ Decisions on continuing, stopping or changing medication in pregnancy should be 
+made only after careful review of the benefits and risks of doing so, to both mother 
+and infant (Saving Lives, Improving Mothers’ Care 2018). 
+ Thought should be given to the patient ’s wishes concerning breastfeeding. 
+ Patients will perceive risk differently. 
+ Early re -evaluation in the postnatal period is required to assess whe ther the patient 
+would benefit from recommencing medication, either prophylactically or to manage 
+emergent symptoms carried out either by the GP or mental health service 
+depending on the level of pre -existing mental health care. There should be clear 
+commu nication (Saving Lives, Improving Mothers’ Care 2018) 
+ 
+For guidelines regarding specific medication see the Perinatal Mental Health: Prescribing 
+Guidance for Trust Prescribers and GPs : Perinatal services :: Sussex Partnership NHS 
+Foundation Trust 
+ 
+20.1 Medication pathway referral 
+ 
+Single medication is prescribe d with no other medication; see the advice from UK Teratology 
+below in the recognised resources for information on drugs in pregnancy and breastfeeding 
+section. 
+ 
+Multiple medication treatments can create complex medicine information questions, see 
+below. 
+
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 14 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+ When discussing medication in pregnancy, acknowledge that there is 
+uncertainty surrounding risks and that there is conflicting advice . 
+ Explain the risks of treating versus not treating mental health conditions . 
+ Discuss the risk of relapse. Consider when th e last episode was, its severity 
+and the response to treatment . 
+ Discuss the risks of stopping medicines suddenly . 
+ Discuss the robust evidenced surrounding attachment and bonding, and that 
+poor attachment and bonding can have potentially long -term consequen ces 
+on children . 
+ Try to avoid using the term ‘withdrawal’ whe n discussing SSRIs and neonates, 
+it is inappropriate, and can increase patient’ s guilt around choosing to 
+continue medication, because of the association with recreational drugs . 
+ As always, respe ct the woman or pregnant person ’s decision to make an 
+informed choice . 
+ Always document discussion . 
+ 
+Patients who are prescribed multiple medications and already under the Specialist Perinatal 
+Mental Health Service need no further action. The SPMHS always d iscuss prescribed 
+medications and matters relating to the neonate . 
+ 
+Those who are not under the SPMHS should be referred for a medication review at: 
+ 
+ SRH & WH only: the Joint Obstetric Clinic . 
+ RSCH & PRH only: One Stop Prescribed Medications Clinic . 
+ 
+If in doubt seek guidance from Specialist Mental Health Midwife, the Consultant 
+Neonatologist, Specialist Perinatal Mental Health Services or the Pharmacy Team. Note the 
+Specialist Pharmacy Service provide online training resources, see recognised resources f or 
+information on drugs in pregnancy and breastfeeding. 
+ 
+20.2 Recognised resources for information on drugs in pregnancy and 
+ breastfeeding 
+ 
+The UK Teratology Information Service (UKTIS) 
+(Patient information leaflets available) 
+ 
+http://www.uktis.org.html/maternal_exposure.html 
+ 
+NICE 
+ 
+Antenatal and postnatal mental health: clinical management and service guidance Clinic al 
+Guideline [CG192] 
+ 
+CKS Depression – antenatal and postnatal 
+ 
+https://cks.nice.org.uk/topics/depression -antenatal -postnatal/ 
+ 
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 15 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+Sussex Partnership NHS Foundation Trust: Perinatal Mental Health: Prescribing 
+Guidance for Trust Prescribers and GPs 
+ 
+Specia list Pharmacy Service: Safety in Pregnancy 
+ 
+https://www.sps.nhs.uk/home/guidance/safety -in-pregnancy/ 
+ 
+Training resources 
+ 
+ Questions to ask when giving advice on medicines in pregnan cy. 
+ Information resources that give advice about medicines in pregnancy . 
+ Assessing risk and informing the risk versus benefit decision for medicines in 
+pregnancy . 
+ The principles of prescribing in pregnancy . 
+ Formulating your advice on the use of medicines i n pregnancy . 
+ 
+Treatment resources 
+ 
+ Both pre -existing and new conditions need to be managed carefully during 
+pregnancy. Maintaining good maternal health supports good fetal health and 
+development. Articles discuss and signpost to advice on safe and effectiv e treatment 
+during pregnancy for a range of common conditions, including mental health and 
+pregnancy. 
+ 
+Specialist Pharmacy Service: Safety in Breastfeeding 
+ 
+https://www.sps.nhs.uk /home/guidance/safety -in-breastfeeding/ 
+ 
+Training resources 
+ 
+ Why breastfeeding is important and how pharmacy can help 
+ Questions to ask when giving advice on medicines and breastfeeding 
+ Information resources that give advice on medicines and breastfeeding 
+ 
+Treatment resources 
+ 
+ Searching on SPS website for the medication will provide information 
+ 
+20.3 Medications with specific cautions 
+ 
+Carbamazepine - NICE recommend that this drug is not routinely prescribed during 
+pregnancy due to the risk of neural tube defects; (risk raised from 6/10,000 to 20 -50/10,000). 
+It has also been linked to other major malformations, gastrointestinal tract problems and 
+cardiac abnormalities. 
+
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 16 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Women and pregnant people who continue on Carbamazepine should have a growth scan at 
+32 weeks. 
+ 
+Lamotrigine – NICE recommend that this drug is not routinely prescribed during pregnancy 
+citing a risk of oral cleft of around 9/1,000. However, a recent study suggests that the risk is 
+lower or not present. Data is limited at present but the avai lable evidence does not suggest it 
+is a major teratogen. 
+ 
+Lamotrigine should not be routinely prescribed for women and pregnant people who are 
+breastfeeding because of the risk of dermatological problems in the infant, such as Stevens -
+Johnson syndrome. 
+ 
+Lithium – Should be avoided, if possible, especially in the first trimester and, where possible, 
+stopped before conception. If it is continued, this must be under secondary care supervision. 
+There is a possible increase in the risk of congenital malformation s. Ebstein’s anomaly was 
+previously considered to be 20 times more likely if a foetus was exposed to lithium but this 
+has not been replicated in further studies. 
+ 
+Cessation of lithium should be done gradually over at least four weeks. If the woman or 
+pregnant person is not well, they can be switched to an antipsychotic or lithium restarted in 
+the second trimester if they are not planning to breastfeed (Breastfeeding is contraindicated 
+in women and pregnant people taking lithium) . If lithium is continued, the Specialist Perinatal 
+Mental Health Service will arrange for serum levels to be checked every four weeks until 
+week 34 and then weekly thereafter. 
+ 
+Women and pregnant people taking lithium should have a growth scan at 32 weeks. 
+ 
+Women and pregnant peo ple taking lithium need to have an appointment in the Joint 
+Obstetric Mental Health Clinic where a plan for delivery can be made. Women and pregnant 
+people taking lithium should be advised to have their baby in hospital so they can be closely 
+monitored during labour. Monitoring should include fluid balance, because of the risk of 
+dehydration and lithium toxicity. In prolonged labour, it may be appropriate to check serum 
+lithium levels. 
+ 
+Women and pregnant people who are taking lithium and having a planned caesarean section 
+should have serum levels checked prior to caesarean section. 
+ 
+Staff on the Postnatal or Labour Ward must check serum levels within 24 hours of the birth, 
+at least 12 hours after the last dose of lithium has been administered. 
+ 
+It is the responsibility of the midwife on Labour Ward and/or the Postnatal Ward looking after 
+any women and pregnant people taking lithium, to ensure serum levels are taken and to 
+report these results to the SPMHS in a timely manner. The interpretation of serum lithium 
+level results, and any subsequent management is solely the responsibility of the Specialist 
+Perinatal Mental Health Service or, if out of hours, the on-call Consultant Psychiatrist. The 
+Paediatric Team is responsible for checking serum levels in the baby. 
+
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 17 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Paroxetine – If a woman or person is taking paroxetine and is planning a pregnancy or has 
+an unplanned pregnancy, they should be advised to stop taking the drug (with guidance). It is 
+the only antidepressant fully contraindicated by NICE because it is associated with f oetal 
+heart defects (first trimester). 
+ 
+Sodium Valproate – This drug is absolutely contraindicated in pregnancy and should also 
+not be prescribed to any woman or person of child -bearing potential unless absolutely 
+necessary. If prescri bed, the rationale for this must be clearly documented and the 
+person/client must be aware of the risk. Refer to Valproate Pregnancy Prevention 
+Programme. 
+ 
+There is a high risk of neural tube defects (risks raised from 6/10,000 to 100 -200/10,000). It 
+can a lso affect intellectual development of children in up to 30% of cases (Valproate 
+Syndrome). 
+ 
+Women and pregnant people who continue on valproate should have a growth scan at 32 
+weeks. 
+ 
+Olanzapine and Quetiapine – Olanzapine and quetiapine are associated wi th weight gain 
+and gestational diabetes so this needs to be monitored closely during pregnancy. Women or 
+pregnant people on olanzapine should have a GTT at 24 – 28 weeks even if they have no 
+other risk factors for GDM. 
+ 
+Venlafaxine – Although venlafaxine i s not recommended by NICE, perinatal psychiatrists 
+and obstetricians use it frequently in treatment -resistant patients. However, blood pressure 
+must be monitored more closely throughout pregnancy. 
+
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 18 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+21.0 Psychotropic Medication Pathway SSRI Referral 
+ 
+ When discussing medication in pregnancy, acknowledge that there is uncertainty surrounding risks and 
+that there is conflicting advice. 
+ Explain the risks of treating versus not treating mental health conditions. 
+ Discuss the r isk of relapse. Consider when the last episode was, its severity and the response to 
+treatment. 
+ Discuss the risks of stopping medication suddenly. 
+ Discuss the robust evidence surrounding attachment and bonding, and that poor attachment and 
+bonding can have potentially long -term consequences on children. 
+ Try to discourage the term ‘withdrawal’ when discussing SSRIs and neonates, it is inappropriate and can 
+increase women/people ’s guilt around choosing to continue on medication, because of the association 
+with drugs such as heroin. 
+ As always, respect the woman or pregnant person ’s decision to make an informed choice. 
+What does current research suggest? 
+The information below is intended to help you talk with women/people, and for them to understand where the 
+concerns come from, and how the evidence has changed. Women/people need to understand that research 
+continues, and therefore our guidance is not definitive, but is based on best evidence, current thinking and 
+clinical experience. 
+ Some studies have shown an increase in fetal cardiac defects from 0.8% (normal background 
+incidence) to 1.2% when women/people were prescribed an SSRI in the first 12 weeks of pregnancy 
+(i.e. a very slight increase in risk) but the evidence is conflicting and confounded. 
+ Some babies do experience transient disturbances in muscle tone and tremors (which can also 
+present during sleep), but this resolves within 48 -72 hours and does not require treatment. 
+ Research from about nine years ago suggested women /people ’s mental health was the p riority, and 
+that SSRI’s were safe to take in pregnancy. 
+ A 2015 study looked at 49,000 women /people and behavioural problems in their children at age 7 
+and found that while untreated depression was associated with an increased risk of problem 
+behaviours, t his was not seen with children whose mother /birthing parent took SSRIs. 
+ 
+Women and birthing people prescribed single SSRI 
+(e.g. fluoxetine, citalopram, sertraline) and where no 
+other medications are prescribed Women and birthing people prescribed 
+multipl e psychotropic medication 
+ Advise woman/person that Sertraline, Citalopram 
+and Fluoxetine are the preferred antidepressants for 
+pregnancy and that Sertraline and Citalopram are 
+preferred for breastfeeding. 
+ Consider signposting to BUMPS website. 
+ Reassure th at homebirth is not contraindicated. 
+ Reassure that breastfeeding is not contraindicated. 
+ Contact SPMH Midwife if GP has advised 
+discontinuation. 
+ If the woman/person is still seeking further 
+reassurance, consider referral to SPMHT for 
+medication review. Refer to SPMHT for medication review if not 
+already under their care. 
+ 
+If not, refer for medication 
+review at : 
+ RSCH / PRH only – Perinatal Service 
+ WH & SRH only – Joint obstetric Clinic. 
+ 
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 19 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+22.0 Sources of information 
+ 
+There are several sources of evidence which are helpful in contributing to the discussion that 
+you can have with mothers and birthing parents: 
+ 
+BUMPS : (Best Use of Medication in Pregnancy) 
+https://www.medicinesinpregnancy.org/ 
+The number of medicines listed on this website has grown over the last few years and is a 
+useful resource. 
+ 
+TOXBASE : 
+This contains the resources of the UKTIS (UK Teratology Information Service). It contain s 
+information about fetal exposure to drugs and medicines in pregnancy and information 
+regarding breastfeeding. When you have logged in, click on the menu option: ‘exposure in 
+pregnancy’ and select the drug you are looking for from the drop -down list. 
+ 
+They have information about manufacturer’s data and pre -release trials which you won’t find 
+elsewhere, and they are helpful in placing the context in terms of fetal exposure (i.e. the risk 
+compared to the normal rate of malformations). 
+ 
+LACTMED : 
+A useful reso urce from the National Library of Medicines based in the United States. 
+https://www.ncbi.nlm.nih.gov/books/NBK501922/ 
+ 
+BOOKS: 
+Drugs During Pregnancy and Lactation C. Schaeffer, P Peters, RK Mil ler (2014, 3rd edition) 
+ 
+Drugs in Pregnancy and Lactation GG Briggs, RK Freeman, CV Towers, AB Forinash (2017, 
+11th edition) 
+ 
+BNF and eBNF : 
+ 
+Not particularly comprehensive but some useful information. 
+ 
+UK DRUGS IN LACTATION ADVISORY SERVICE (UKDILAS) 
+ 
+The lactation information has now merged with the specialist pharmacy service and this 
+website can be found on: 
+ 
+https://www.sps.nhs.uk/articles/ukdilas/ 
+
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 20 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+23.0 Useful contacts 
+ 
+WH & SRH 
+Specialist Pe rinatal Mental Health Midwife 
+Mon - Thurs e.hibberd@nhs.net 
+07775 778 176 
+Safeguarding Midwives 
+Sarah Barwick 
+Clare Hosking uhsussex.safeguardingmidwives @nhs.net 
+07899 915875 
+07808 099824 
+Counselling Midwife – Birth Afterthoughts 
+Annie Hamilton ann.hamilton4@nhs.net 
+07876 475772 
+Obstetric Mental Health Lead – Worthing 
+Shaz Salim 
+Obstetric Mental Health Lead – Chichester 
+Niamh Maguire 
+shahzad.salim2@nhs.net 
+ 
+niamh.maguire@nhs.net 
+Psychiatric Liaison Team – Worthing 
+Psychiatric Liaison Team – Chichester x85252 
+x33443 
+Perinatal Mental Health Team – Coastal 
+Perinatal Mental Health Team – North West 
+Perinatal Mental Health Team – OOA Brighton 0300 304 0214 
+0300 304 0213 
+0300 304 0212 
+Sussex Mental Health Line (24/7) 0300 5000 101 
+WORTH - West Sussex 0300 222 8181 
+Text 07 834 968539 
+My Sister ’s - House Bognor/Chichester 01243 697800 
+The Life Centre – Worthing/Chichester 
+(Support around sexual abuse & trauma, 
+postnatal women/people only) 0800 8020808 (Sun -Thurs 7.30pm -10pm) 
+Text 07717 989022 (every Wednesday) 
+Samaritans 116 123 
+0300 094 5717 
+ 
+RSCH & PRH 
+Specialist Perinatal Mental Health Midwife 07867929439 /07900716105 x63613 
+Obstetric Mental Health Lead 07884054020 
+Safeguarding Midwives 01273 696955 X 62523 
+07920 503354 
+Substance Use, Homeless & Travellers 
+Specia list Midwife 07795 498509 
+Perinatal/Infant Mental Health (PIMH) Nurse 
+Specialist Brighton and Hove 01273 666484 
+07827898942 
+Perinatal Mental Health Specialist HV 0127369011 X 65283 
+07795355437 
+Psychiatric Liaison Team PRH 01444 441881 X 68338, or via switchboard 
+for bleep holder 
+Psychiatric Liaison Team RSCH 01273 696955 X 64248 or the Mental 
+Health bleep: 8484 
+ 
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 21 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Sussex Mental Healthline 0300 5000 101 
+Mental Health Rapid Response Service 0300 304 0078 
+SPMHS Brighton and Hove 03003040097 
+SPMHS North West Sussex 03003040213 
+SPMHS East Sussex 03003040212 
+BSUH HELP Service 01273 696955 X 63692 
+Independent Domestic Violence Advisory 
+Service 07792276165 
+01273 696955 X 64366 
+Victim Support 0300 323 9985 (9am -5pm) 08 08 16 89 111 
+(out of hours support l ine) 
+The Portal (Help to find support and advice for 
+survivors of Domestic Abuse and Violence in 
+Brighton and Hove and East Sussex) 03003239985 
+ 
+Worth (Domestic Abuse Services West Sussex) 07834 968539 or 033 022 28181 (9am -5pm 
+MonFri)domesticabuseserv icescentral@w
+estsussex.gov.uk 
+MIND (Mental Health Charity) Brighton and 
+Hove 01273 666950 info@mindcharity.co.uk 
+Threshold (Women’s Mental Health Support) 
+Brighton 01273 645455 threshold@bht.org.uk 
+Brighton Women’s Centre 01273 698 036 07842 311 406 (We ds & 
+Thurs 10am -12pm) 
+support@womenscentre.org.uk 
+
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 22 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+24.0 Audit 
+ 
+Suggested areas for audit: 
+ 
+ Women/people with positive response to Whooley questions antenatally and 
+postnatally have appropriate action taken 
+ Women/people with identified mental health conce rns have a documented individual 
+management plan of care during pregnancy/birth/postnatal period 
+ Women/people with identified mental health concerns have necessary interventions 
+delivered in a timely manner, taking into account the stage of pregnancy/age o f baby 
+ 
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 23 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+References 
+ 
+Bauer, A., Parsonage, M., Knapp, M,, Lemmi, A. and Adelaja, B. (2014). The costs of 
+perinatal mental health problems . [Online] London: Centre for Mental Health and London 
+School of Economics. Available from: https://maternalmentalhealth alliance.org/projects/the -
+economic -case -forincreasing -access -to-treatment -for-women -with-common -
+maternalmental -health -problems/ 
+ 
+Boots Family Trust (2013) Perinatal Mental Health Experiences of Women and 
+HealthProfessionals,.[Online] London: The Boots Family Trust Alliance. Available at: 
+https://sites.google.com/site/bootsfamilytrustalliance /thereport 
+ 
+Hofberg, K. and Brockington, I. (2000) ‘ Tokophobia: an unreasoning dread of childbirth – 
+Aseries of 26 cases’ , British Journal of Psychiatry, 176, pp.8 3-5. 
+ 
+Hofberg, K. and Ward, M.R. (2003) ‘ Fear of pregnancy and childbirth’ , Postgraduate Medical 
+Journal, 2003, 79, pp. 505 -510. 
+ 
+Knight, M., Tuffnell, D., Kenyon, S., Shakespeare, J., Gray, R. and Kurinczuk, J.J. (eds.) on 
+behalf of MBRRACE -UK (2015). Saving Lives, Improving Mothers’ Care - Surveillance of 
+maternal deaths in the UK 2011 -13 and lessons learned to inform maternity care from the UK 
+and Ireland Confidential Enquiries into Maternal Deaths and Morbidity 2009 -13. 
+Oxford:National Perinatal Epide miology Unit, University of Oxford. 
+ 
+Knight, M., Nair, M., Tuffnell, D., Shakespeare, J., Kenyon, S. and Kurinczuk, J.J. (eds.) on 
+behalf of MBRRACE -UK (2017). Saving Lives, Improving Mothers’ Care - Lessons learned to 
+inform maternity care from the UK an d Ireland Confidential Enquiries into Maternal Deaths 
+and Morbidity 2013 – 15. Oxford: National Perinatal Epidemiology Unit, University of Oxford. 
+ 
+Knight M, Bunch K, Tuffnell D, Patel R, Shakespeare J, Kotnis R, Kenyon S, Kurinczuk JJ 
+(Eds.) on behalf of MBRRACE -UK (2021). Saving Lives, Improving Mothers’ Care - Lessons 
+learned to inform maternity care from the UK and Ireland Confidential Enquiries into Maternal 
+Deaths and Morbidity 2017 -19. Oxford: National Perinatal Epidemiology Unit, University of 
+Oxfor d 2021. 
+ 
+Mycroft, R. and Taha, S. (2018) Fear of childbirth (Tokophobia) and traumatic experience of 
+childbirth: best practice toolkit . London: PanLondon perinatal mental health networks. 
+ 
+Perinatal Mental Health MP014 University Hospital Sussex NHS Tru st East Page 27 of 32 
+Maternal Mental Health Alliance. 2022. Key statistics about perinatal mental health in the UK. 
+[Online] London: Maternal Mental Health Alliance. Available from: 
+https://maternalmentalhealthalliance.org/about/perinatalment al-health/ 
+ 
+National Institute for Health and Care Excellence (2014) Antenatal and postnatal mental 
+health: clinical management and service guidance - Clinical guideline [Online] Available at: 
+https://www.nice.org .uk/guidance/cg192 
+
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 24 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+National Institute for Health a nd Care Excellence (2010) Pregnancy and Complex Social 
+Factors -Clinical guideline [Online] Available at: https:// www.nice.org.uk/guidance/cg110 
+ 
+O’Connell, M.A., Leahy -Warren, P., Khashan, A.S., Kenny, L.C. andO’Neill, S.M. (2017) 
+‘Worldwide prevalence of tocophobia in pregnant women: systematic review and meta -
+analysis’ , Nordic Federation of Societies of Obstetrics and Gynaecology, 96,pp. 907 -920. 
+[Online] DOI: 10.1111/aogs.13138 
+ 
+Trauma -Informed Care Implementation Resource Centre (2021) What is traum a-informed 
+care? [Online] Available at: https://www.traumainformedcare.chcs.org /what -is-trauma -
+informedcare/ 
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 25 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Appendix 1 a: Maternal/Birthing Parent Mental Health: Antenatal Care Pathway (SRH &WH) 
+
+  ‘No’ to Whooley questions at booking . 
+ No previous mental health illnes s. 
+ No concerns at booking . 
+ 
+(REMEMBER: ROCI /GP records ) 
+ Routine antenatal care . 
+ Monitor mental health at each contact 
+(consider Whooley questions) . 
+ If mental health concerns identified and 
+woman/person feel they need help 
+consider referral to Time to Talk , 
+encourage to make contact with GP . 
+ Submit safeguarding alert . 
+ MODERATE TO SEVERE 
+‘Yes’ to any of the following at booking: 
+ Prescribed mood -stabilising or anti -psychotic 
+medication and requesting advice . 
+ Primary tocophobia (fear of childbirth not 
+linked to previous traumatic birth) . 
+ Past history of severe mental illness (e.g. 
+bipolar, schizophrenia, severe depression, 
+schizo -affective disorder) . 
+ Current severe mental illness or symptoms of 
+(e.g. bipolar, schizophrenia, severe 
+depression, schizo -affective disorder) and/or 
+not responding fully to treatment in the 
+community and/or areas of high risk . 
+ Personal / family history of postnatal 
+psychosis or severe postnatal depression 
+(e.g. requiring admission or secondary care) . 
+ Gain consent to refer to Speciali st Perinatal 
+Mental Health Team (SPMHT) . 
+ Submit SPMHT referral on intranet . 
+ If woman/person already known to 
+Community Mental Health Services, inform 
+their Lead Practitioner of the pregnancy . 
+ Inform GP of referral . 
+ Document plan of care for on -going 
+monito ring of mood . 
+ Submit safeguarding alert . 
+ Consider referral to Early Help or Children ’s 
+Social Services if any safeguarding or child 
+protection issues identified (gain consent 
+prior to referring) . 
+(REMEMBER: ROCI /GP records ) Discuss any concerns / queries with Specialist Perinatal Mental Health Midwife (SPMHM) to identify 
+individualised care pathway if unsure. Eli Hibberd e.hibberd@nhs.net 07775 778176 Mon – Thurs 
+Things to consider… 
+Offer referrals to FNP / Young Parents Pathway / Early Help / CGL if needed 
+Highlight online resources: 
+https://www.bestbeginnings.org.uk/watch -out-of-the-blue-online 
+https://www.mindcharity.co.uk/advice -information/how -to-look-after-your-mental -health/apps -for-wellbeing -and-
+mental -health/ Maternal/Birthing Parent Mental Health: Antenatal Care Pathway (SRH & WH) 
+MILD TO MODERATE 
+ History of mild/moderate depression or anxiety, 
+advise woman/person to see their GP in first 
+instance . 
+ Document plan of care to monitor during 
+pregnancy . 
+ Consider Time to Talk referral, inf orm GP . 
+ Women/people prescribed antidepressant 
+medication in pregnancy should continue to be 
+monitored by their GP . 
+ Advise not to stop medication without 
+consulting GP first (refer to Perinatal 
+Prescribing Guidelines) . 
+ If woman/person already known to Comm unity 
+Mental Health Services, inform their Lead 
+Practitioner of the pregnancy . 
+ Continue to monitor mood at each antenatal 
+contact . 
+ Submit safeguarding alert . 
+(REMEMBER: ROCI /GP records ) 
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 26 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Appendix 1b: Maternal/Birthing Parent Mental Health: Antenatal Care Pathway (PRH & RSCH) 
+‘No’ to all the prediction and detection 
+questions at booking and 
+No previous mental health illness and no 
+concerns at booking . 
+Remember to review the GP letter 
+ 
+THINGS TO CONSIDER 
+Consider an early referral for enhanced health 
+visiting support e.g. Healthy Future Team 
+(Brighton and Hove) Family Nurse 
+Practitioners/Vulnera ble Families Team 
+Signpost to local social support : e.g. local 
+Children’s Centre/Threshold/Women’s 
+Centre/MIND/PANDAS/Mellow Bumps/Mothers 
+uncovere d MODERATE TO SEVERE 
+‘Yes’ to any of the following at booking: 
+ Prescribed mood stabilising or antipsychotic 
+medication and requesting preconception advice . 
+ Primary tocophobia (fear of childbirth not linked to 
+previous traumatic birth) . 
+ Past history of severe mental illness (e.g. bipolar, 
+schizophrenia or severe depression) . 
+ Current symptoms of severe mental illness (e.g. 
+bipolar, schizophrenia or severe depression) and/or 
+not responding fully to treatment in the community 
+and/or areas of high risk. 
+ Personal / family history of postnatal psychosis or 
+severe postnatal depression (e.g. requiring admission 
+or seconda ry care) . 
+ 
+ Gain verbal consent to refer to Specialist Perinatal 
+Mental Health Service (SPMHS) 
+ Complete the SPHMS referral form and email to 
+spnt.perinatalreferrals@nhs.net 
+ Upload a copy of the referral to BadgerNet under the 
+Perinatal mental health tab. Inform the GP (with 
+consent) and Specialist Mental Health Midwife of the 
+referral . 
+Document plan of care for on-going monitoring of mood 
+and emotional wellbeing . Consider any safeguarding or 
+child protection issues and refer to Children’s Social 
+Services, inform the Specialist Safeguarding Midwife 
+where appropriate . 
+ Discuss with mental health m idwife to identify individualised care pathway if unsure 07867929439 
+x63613 or uhsussex.mentalhealthmidwives @nhs.net 
+ 
+Highlight online resources: 
+https://www.bestbeginnings.org.uk/watch -out-of-the-blue-online 
+https://www.mindcharity.co.uk/advice -information/how -to-look-after-your-mental -health/apps -for-
+wellbeing -and-mental -health/ (great information about the myriad of available) Maternal/Birthin g Parent Mental Health: Antenatal Care Pathway (PRH & RSCH) 
+MILD TO MODERATE 
+History of mild/moderate depression or anxiety – 
+advise woman or birthing person to see her GP in 
+the first instance, and document plan of care to 
+monitor during pregnancy. 
+Cons ider a referral to IAPT services. Women and 
+pregnant people prescribed antidepressant 
+medication in pregnancy should continue to be 
+monitored by their GP in pregnancy. 
+Advise woman/birthing per son not to stop their 
+medication without consulting their GP first. (Refer to 
+Perinatal Prescribing Guidelines available on info-
+net) Continue to monitor mood at each antenatal 
+contact. 
+DOCUMENT PLAN OF CAR E * 
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 27 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Appendix 2 a: Maternal/Birthing Parent Mental Health: Urgent Review Pathway (SRH & WH only) 
+
+ Maternal /Birthing Parent Mental Health: Urgent Review Pathway (SRH & WH) 
+Woman /person showing signs of se vere mental illness, psychosis or displaying risky behaviours. 
+RED FLAGS: 
+ Recent sign ificant changes in mental state or emergence of new symptoms 
+ New thoughts of or acts of violent self -harm 
+ New and persistent expressions of incompetency as a mother or es trangement from the infant 
+ Partner, family or friends reporting significant change in presentation and/or acting out of character 
+INPATIENT 
+ Stay with woman/person . 
+ Notify Obstetric Consultant on -call, Specialist 
+Midwife, Safeguarding Midwife, Labour Ward 
+Co-ordinator . 
+ SRH : Refer to the Hospital Mental Health 
+Liaison Team (referral form Appendix E) and 
+email to spnt.mhlt.chichester@nhs.net 
+ WGH : Refer to the Hospital Mental Health 
+Liaison Team x85252 . 
+ Submi t safeguarding alert . ADAU 
+ Stay with woman/person . 
+ Do not routinely admit to antenatal ward or 
+labour ward . 
+ Notify Obstetric Consultant on -call, Specialist 
+Midwife, Safeguarding Midwife . 
+ Obstetrician/Specialist Midwife to arrange 
+transfer and escort woman /person to A&E for 
+review by the Hospital Mental Health Liaison 
+Team . 
+ Submit safeguarding alert . IN THE COMMUNITY 
+ Stay with woman/person . 
+ Notify GP, Obstetric Consultant on -call, 
+Specialist Midwife, Safeguarding Midwife, 
+Labour Ward Co -ordinator . 
+ Notify P erinatal Mental Health Team 0300 
+304 0214 (mon – fri 9am – 5pm) . 
+ Notify Sussex Mental Health Line if out -of-
+hours 0300 5000 101. 
+ If woman/person presenting immediate risk 
+to self or others, call police/ambulance to 
+escort to A&E for urgent review . 
+ Submit s afeguarding alert . 
+ Document all clinical care and actions taken in notes and on the maternity information system. 
+ Notify the GP and Health Visitor . 
+ Reassure partner / family members and where possible, provide printed information to the family about who t o contact 
+for support . 
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 28 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Appendix 2b: Maternal/Birthing Parent Mental Health: Urgent Review Pathwa y (PRH & RSCH) 
+ Maternal /Birthing Parent Mental Health: Urgent Review Pathway (PRH & RSCH) 
+Woman /person showing signs of severe mental illness, psychosis or displaying risky behaviours. 
+RED FLAGS: 
+ Recent sign ificant changes in mental state or eme rgence of new symptoms 
+ New thoughts of or acts of violent self -harm 
+ New and persistent expressions of incompetency as a mother or estrangement from the infant 
+ Partner, family or friends reporting significant change in presentation and/or acting out of char acter 
+IN THE COMMUNITY 
+ Notify Consultant on -call, Specialist Mental 
+Health Midwife, Safeguarding Midwife, Shift Co -
+ordinator and Manager on -call. THE HAVENS AT MILL VIEW 
+A mental health crisis assessment facility located 
+on the Mill View Hospital Site in Nevill Avenue, 
+Hove. It is available 24/7 and provides 
+assessment and support for adults over the age 
+of 18. It is an alternative to attending A&E and 
+can be an alternative to hospital admission. 
+Available to anyone living in Sussex 
+Referral by professional only by calling 
+0300 304 0220 Unfortunately, not able to 
+accommodate mother/birth parent with baby. MAU 
+Do not routinely admit to antenatal ward or 
+labour ward, Obstetrician/Midwife to arrange 
+transfer and escort woman/person to A &E for 
+review by Psychiatric Liaison Team. Inform on -
+call Manager. 
+ Document all clinical care and actions 
+taken in notes and on the maternity 
+information system. 
+ Notify the GP and Health Visitor. 
+ Reassure partner / family members and 
+where possible, provi de printed 
+information to the family about who to 
+contact for support. AREAS OUTSIDE OF BRIGHTON & HOVE 
+ During 9am – 5pm, if there is immediate risk to 
+a mother/birthing parent or their baby, please 
+call the GP or go to A&E. 
+ If you believe the mother/birt hing parent is in 
+crisis please call the Sussex Mental Healthline: 
+0300 5000 101 or 0800 0309 500 
+Mon – Fri 5pm – 9am, and 24hrs at weekends and 
+Bank Holidays. 
+BRIGHTON & HOVE 
+ The Mental Health Rapi d Response Service 
+(MHRRS) for Brighton & Hove provide a service 
+for people who are experiencing a crisis with 
+their mental health , who think they are at risk of 
+harming themselves or other. For instance: high 
+risk of suicide, with specific intension to act, at 
+high risk to others, significant mental health 
+conc erns, require immediate attention. They can 
+be contacted on: 
+0300 304 0078 
+24hrs a day, 7 days a week . INPATIENT 
+Notify Obstetric Consultant on -call, Specialist 
+Mental Health Midwife, Safeguarding Midwife, 
+Shift Co -ordinator and Manager on -call. 
+Remember to consider any co -existing 
+medical/obstetric problems to avoid the 
+misattribution of psychiatric illness. Ensure 
+both Obstetrician and Perinatal Psychiatrist 
+are involved in patient’s care. 
+PRH 
+Contact the Adult 
+Mental Health Liaison 
+Service available 7 
+days a week, 7.30 – 
+21.00 on ext 68338. 
+Out of hours contact 
+the duty SNP via 
+switichboard. RSCH 
+Contact the Adult 
+Mental Health Liaison 
+Service available 24 
+hours a day, 7 days a 
+week on ext 64248 or 
+the Mental Health 
+bleep: 8484 
+ 
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 29 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Appendix 3: Patient Health Questionnaire - PHQ -9 
+
+Patient Health Questionnaire – PHQ -9 
+ 
+Name: Date: Today’s Da te: 
+ 
+Fill in the boxes with pen or pencil to mark your answers. 
+ 
+A. Over the last 2 weeks, how often have you been bothered by any of the following problems? 
+
+Not at all 
+
+0 
+Several 
+days 
+
+1 
+More 
+than half 
+the days 
+ 
+2 
+Nearly 
+every 
+day 
+ 
+3 
+1. Little interest or plea sure in doing things? 
+2. Feeling down, depressed or hopeless 
+3. Trouble falling/staying asleep, sleeping too much 
+4. Feeling tired or having little energy 
+5. Poor appetite or overeating 
+6. Feeling bad about yourself – or that you a re a failure or have 
+let yourself or your family down 
+7. Trouble concentrating on things, such as reading the 
+newspaper or watching television 
+8. Moving or speaking so slowly that other people could have 
+noticed. Or the opposite – being so fidge ty or restless that you 
+have been moving around a lot more than usual 
+9. Thoughts that you would be better off dead or of hurting 
+yourself in some way 
+
+ Total Score = 
+
+ + 
+
+ + 
+
+ + 
+
+B. If you have been bothered by any of the 9 problems listed above, please answer the following: 
+ 
+How difficult have these problems made it for you to do your work, take care of t hings at home, or get along with 
+other people? 
+ 
+Not at all difficult Somewhat difficult Very difficult Extreme ly Difficult 
+ 
+     
+
+This health survey was adapted from the PRIME -MD® Patient Health Questionnaire © 1999, Pfizer. Inc. Reproduced with permission. For research 
+information, contact Dr. Robert. L. Spitzer at rls8@columbia.edu 
+Copyright © August 2003 Caremark 
+ 
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 30 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Appendix 4: Hospital Mental Health Liaison Referral Form (SRH only) 
+ 
+Working Age Mental Health Liaison E -Referral Form (V4 ) 
+
+Referrer Name: 
+Speciality/ Designation: 
+Contact Number/ Bleep: 
+Date & Time of referral: 
+
+Patient Name ( required ): 
+Date of Birth ( required ): 
+NHS Number ( required ): 
+GP: Choose an item . 
+ Does this patient require an interpreter? 
+Yes ☐ No ☐ Language Required? 
+ Has this referral been discussed with the patient? 
+Yes ☐ No ☐ Best Interests ☐ 
+ Attitude to referral? 
+Positive ☐ Neutral ☐ Negative ☐ Comments: 
+ Is the patient physically well enough to undertake a psychiatric interview with 
+mental health staff? 
+Yes ☐ No ☐ 
+ Does this person have responsibility as a carer (for children <18 or a vulnerable 
+adult)? 
+Yes ☐ No ☐ 
+ 
+ COVID Status? (required): Positive☐ Negative☐ Pending☐ 
+ 
+Ward: Choose an item. 
+Bay & Bed Number 
+Date and time of arrival at Hospital 
+(required ): 
+ 
+Reasons for admission: 
+(Please include any long -term 
+conditions and known diagnosis ) 
+
+Current treatment plan: 
+(please include any psychiatric 
+treatment known 
+
+Expected length of stay: 
+
+PLEASE EMAIL THIS COMPLETED FORM TO SPNT.MHLT.CHICHESTER@NHS.NET (INBOX 
+MONITORED 07:00 - 21:00), Referrals received after 21:00 will be processed the next day. 
+If you do not receive an ackn owledgement of referral within four hours, 
+please contact Ext 33443 
+ Referrer Details : 
+ 
+Patient Details : 
+ 
+Admission Details : 
+
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 31 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+Please describe the patients mental state, any evidence of self -neglect, current 
+medication, longevity of concerns/symptoms, your impression, what you would like from 
+this referral. 
+
+Is the patient under Drug or Alcohol Services? Yes ☐ No ☐ 
+Requested Intervention ( drop down menu ): Choose an item. 
+ 
+The greater the number of positive responses, the higher the risk. 
+ YES NO YES NO 
+Possible 
+ 
+If any of the above are ticked then please brief ly describe how you are managing these. 
+Ensure you s tate clearly any concerns that you may have and actions being taken to reduce 
+risk and keep patient safe: 
+ Previous self -harm ☐ ☐ Family history of suicide ☐ ☐ 
+Previous suicide attempt ☐ ☐ Unemployed ☐ ☐ 
+Current suicidal thoughts ☐ ☐ Male, younger men and middle 
+age (35 -55) ☐ ☐ 
+Current suicide plan ☐ ☐ Separated/widowed/divorced/ 
+domestic violence ☐ ☐ 
+Hopelessness/helplessness/ 
+burdensomeness ☐ ☐ Lack of support or breakdown in 
+social circumstances ☐ ☐ 
+Sense of "entrapment" e.g. 
+feeling ‘overwhelmed’ by thei r 
+problems ☐ ☐ 
+Family concerned about risk 
+☐ 
+☐ 
+Low in mood ☐ ☐ Recent stressful life event ☐ ☐ 
+Displaying bizarre or 
+unpredictable behaviour 
+ 
+☐ 
+ 
+☐ Psychotic symptoms e.g. 
+persecutory/nihilistic 
+delusions/command 
+hallucination beliefs that don't f it 
+with evidence 
+or culture 
+ 
+☐ 
+ 
+☐ 
+
+Alcohol/drug misuse ☐ ☐ Poor adherence to psychiatric 
+treatment ☐ ☐ 
+Chronic pain or illness ☐ ☐ Access to lethal means of harm ☐ ☐ Reasons for Referral ( required ): 
+ 
+Risk screen ing Checklist ( required ) 
+ 
+Summary of risk 
+
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 32 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Appendix 5: Healthy Futures Team (Brighton & Hove only) 
+ 
+Acting early to enhance outcomes for c hildren 
+ 
+The Healthy Futures Team is a newly commissioned 0 -19 Specialist Public Health Nursing 
+Service (health visiting and school nursing). It utilises an early intervention model to improve 
+health outcomes and reduce inequalities for families facing di sadvantage in Brighton & Hove. 
+ 
+Team members 
+Linda Evans – Clinical Service Manager 
+Candy Barrett and Amanda Brooks - Specialist Public Health Nurses – BME/Travellers 
+Julie Davidson –Specialist Public Health Nurse – Teenage parents 
+Denise Ranger – Speci alist Public Health Nurse – Senior School Nurse 
+Amanda Brooks – Health Visitor 
+Charlotte Crisswell – Health Visitor 
+Cathy Lovejoy – Health Visitor 
+Louise Stewart -Roberts – Health Visitor 
+Bernie Sweatman – Health Visitor 
+Mary Frankland – Healthy Child Pr actitioner 
+Naomi Potter – Healthy Child Practitioner 
+Val Milton – Team Administrator 
+ 
+The team will deliver the Healthy Child Programme (0 -19) to families meeting following 
+criteria : 
+ Antenatal mothers and pregnant people who are under 18 at conception . 
+ Anyone subject to a pre -birth child protection conference that is not already known 
+to the public health community nursing service. Consideration will be given to 
+those undergoing a pre -birth Strengthening Families Assessment. 
+ A parent with a history of being Looked After that is not already known to the public 
+health community nursing service. 
+ Refugees, Asylum seekers, undocumented migrants and Travellers and those in 
+emergency housing (including the women’s refuge) who are pregnant or with a 
+child unde r the age of 19 that is not already known to the public health community 
+nursing service . 
+ Migrant families housed in temporary on -campus accommodation provided by the 
+University of Sussex who are pregnant or with a child under the age of 19 that is 
+not already known to the public health community nursing service . 
+ Children registered as home educated . 
+ Children missing education or educated other than at school. 
+ Children excluded from school and within the Pupil Referral Unit. 
+ Children who are registered as young carers and not in local authority education. 
+ 
+The Healthy Futures Team will: 
+ Provide a city -wide service enabling continuity of care to families with specific 
+vulnerabilities, predominantly at Healthy Child Programme universal partnership 
+plus l evel. 
+ 
+CG22001 UH Sussex Perinatal Mental Health Guideline v1.0 Page 33 of 33 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+ Offer early assessment and intervention at the point of referral into the team, 
+promoting positive parenting and reducing the impact of disadvantage on families. 
+ Develop an intensive 0 -19 service, delivering the five core health visiting 
+contactsan d progressive intensive support and interventions with families. 
+ Deliver a service focused on the health visiting and school nursing high -impact 
+areas. 
+ Work towards the ongoing development of the Healthy Futures Team service, 
+including specific pathways and interventions. 
+ Act as a specialist resource for colleagues in the 0 -19 Healthy Child Programme 
+service. 
+ 
+Referrals 
+Referral should be made via the ‘Healthy Futures Team’ email – 
+Email: SC-TR.hea lthyfuturesteam@nhs.net 
+Referrals will be triaged by Linda Evans, Clinical Service Manager 
+Please contact Linda Evans or team members if you would like to discuss a family. 
+ 
+Contact details: 
+Roundabout Children’s Centre, Whitehawk Road, BN2 5FL. 
+Telep hone number: 01273 666484 Email: SC -TR.healthyfuturesteam@nhs.net

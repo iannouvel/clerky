@@ -1,0 +1,838 @@
+# Extracted from: GTG 2011 - Pregnancy and Breast Cancer.pdf
+# Guideline ID: gtg-2011-pregnancy-and-breast-cancer
+# Content length: 46493 characters
+# Processing date: 1732953490.8998735
+
+Pregnancy and Breast Cancer
+Green–top Guideline No. 12
+March 2011PregnancyandBreastCancer 
+ThistitlewasfirstpublishedasRCOGadvicein1997andsubseque ntlyasaGreen-topGuidelineinJanuary 
+2004.Thisdocumentisthesecondeditionoftheguidelineandupdatestheprevious 2004edition. 
+1. Purposeandscope 
+Thisdocumentaimstoprovideclinicalguidancetohealthprofessionalscaringforwomenofchildbearin g 
+agewithadiagnosisorhistoryofbreastcancer.Themanagement ofpregnancy inrelationtobreastcancer 
+ismultidisciplinary.Theguidelinewillbeofvaluetoobstetriciansandgynaecologists,fertilityspecialists 
+andmidwivesaswellasoncologistsandbreastcarenurses. 
+2. Background 
+Breastcanceristhemostcommoncancerinfemales,withalifetimeriskofoneinnineintheUK,andis 
+theleadingcauseofdeathinwomenaged35 –54years.Fifteenpercentofcasesarediagnosedbeforethe 
+ageof45years,thusbreastcanceraffectsalmost5000womenofreproductiveageintheUKannually. 
+Between1991and1997therewere1.3 –2.4casesofbreastcancerinwomenper10000livebirths ,1,2 
+althoughwhenbreastcancerisdiagnosedinwomenaged30yearsorless,10 –20%ofcasesmaybe 
+associatedwithpregnancyoroccurwithin1yearpostpartu m.
+Theprognosisofbreastcancerisimproving ,with5-yearsurvivalaround 80%fortheunder50sagegroup; 
+however,thesurvivalratemaybelowerinveryyoungwomen .3Treatmentofpregnancy-associatedcancer 
+shouldbeinamultidisciplin aryteamaccordingtostandard UKguidelines 4withinclusionoftheobstetric 
+teamascoremembers. 
+Fewerthan10%ofwomendiagnosedwithbreastcancersubsequentlybecomepregnant, 5,6 butincreasing 
+numbersofwomenareseekingpregnancyfollowingtreatment.Youngwomenpresentingwithbreast 
+canceroftenhavefertility-rel atedconcerns 7–9 andneedwell-informeddiscussionsonfertility,pregnancy 
+andlactationafterbreastcancerandtheavailability offertilitypreservationprocedures.
+3. Identification andassessment ofevidence 
+Thisguidelinewasdevelopedinaccordancewithstandard methodologyforproducingRCOGGreen-top 
+Guidelines .Medline,Pubmed,allEBMreviews(CochraneCRCT,CochraneDatabaseofSystematicReviews, 
+Methodologyregister ,ACPjournalclub ,DARE,HTA,MaternityandInfantCare),EMBASEandTRIPwere 
+searchedforrelevantrandomisedcontrolledtrials,systematicreviewsandmeta-analyses,cohortstudiesand 
+casestudies.Thesearchwasrestrictedtoarticlespublishedbetween2002and December 2009 ,updated 
+fromtheoriginalsearchforthepreviousedition.Thesearchtermsincludedwere:‘breastneoplasms ’, 
+‘breastcancer’,‘pregnancy’,‘pregnancycomplications’, ‘breastcancerandfertility’,‘mastectomy ’,‘ breast -
+feeding ’,‘ lactation ’, ‘contraception’, ‘fertility ’and ‘infertility’.Abstracts wereusedtoidentifykeyarticles.The 
+NationalLibraryforHealthandtheNationalGuidelines ClearingHouseweresearched forrelevant 
+guidelines. 
+Incontrasttotheextensiveliteratureontreatmentofbreastcancer,thereisnolevel1evidence on 
+pregnancyandbreastcancer.Therearesomewell-desig nedobservationalstudies.Thus ,recommendations 
+forpracticearelimitedtogradeC/Dbut ,wherepossible, recomme ndationsarebasedon,andexplicitly 
+linkedto,theevidencethatsupportsthem.Areaslackingevidencearehighlightedandannotatedas‘good 
+practicepoints ’. 
+RCOGGreen-topGuidelineNo.12 2of15 ©RoyalColle geofObste tricians andGynaecologis ts 4. Whatistheoptimalmanagement ofbreast cancerdiagnosedduringpregnancy? 
+4.1 Prognosis 
+Pregnancyitselfdoesnotappeartoworsentheprognosis forwomendiagnosedinpregnancy 
+comparedwith non-pregnantcontrols matchedforageandstage 10 (providedthatstandard 
+treatmentguidelinesforthebreastcancerareadheredto ).
+However,aspregnancy-associatedbreastcanceroccursinayoungerpopulationwhomayhave 
+featuresthatcarryahigherriskofmetastasessuchashigh -gradetumoursandestrogen receptor 
+negativetumours,theseyoungerwomenmaybeexpectedtohaveaninferiorprognosis .11,12 
+4.2 Diagnosis 
+Womenpresentingwithabreastlumpduringpregnancyshouldbereferred toa 
+breastspecialistteamandanyimagingorfurther testsshouldbeconductedin 
+conjunctionwiththemultidisciplin aryteam. 
+Diagnosismaybedifficultinwomenwhoarepregnant orlactating.Womenpresentingwithabreastlump 
+duringpregnancyshouldbereferredtoabreastspecialistteamandanyimagingorfurthertestsshould 
+beconductedwithinthebreastmultidisciplinaryteam.Womenshouldhaveadesignated keyworker, 
+usuallyabreastcarenurse.Ultrasoundisusedfirsttoassessadiscretelump,butifcancerisconfirmed ,
+mammographyisnecessary (withfetalshielding)toassesstheextentofdiseaseandthecontralateral 
+breast.Tissuediagnosisiswithultrasound -guidedbiopsyforhistologyratherthancytology ,asproliferative 
+changeduringpregnancy renderscytologyinconclusive inmanywomen.Histologyissimilartothatinage-
+matchednon-pregnantcounterparts :histologicalgrade,receptorstatusandhumanepidermalgrowth 
+factorreceptor2(HER2 )informtreatmentplanning. Stagingformetastasesisconducte donlyifthereis 
+highclinicalsuspicionandshouldcomprisechestX-rayandliverultrasound ifpossible.Gadolinium-
+enhancedmagneticresonanceimagingis notrecommendedunlessthereisaspecificneedforitto 
+investigateaclinicalproblem ;therearelimiteddatafortheuseofthisimagingmethodinpregnancy, 
+althoughnoadverseeffectsofgadoliniumonthefetushavebeenreported .13 Tumourmarkerssuchas 
+CA15-3,CEAandCA125arenotusedinearlybreastcancerand maybemisleadinginpregnancy,andare 
+notrecommended. 
+BonescanningandpelvicX-raycomputedtomographyarenotrecommended 
+becauseofthepossibleeffectofirradiationonthefetus .
+Inwomenwhoarenotpregnant, X-raycomputedtomography(CT )andisotopebonescanarethe 
+preferredmethodsofinvestigationtoestablish orexcludemetastases.Thesemethodsarenotappropriate 
+inwomenwhoarepregnant,inwhomchestX-rayandliverultrasoundarepreferred. Ifthereisconcern 
+aboutboneinvolvement,aplainfilmoftherelevantareaand/ormagneticresonanceimagingtominimise 
+radiationexposuretothefetusissuggested. 
+4.3Considerationofterminat ionofpregnancy 
+Thedecisiontocontinuethepregnancyshouldbebasedoncarefuldiscussion ofthe 
+cancerprognosis,treatmentandfuturefertilitywiththewomanandherpartnerand 
+multidisciplinaryteam .
+4.4Treatmentduringpregnancy 
+Themultidisciplinaryteamreviewoutcome shouldbeforwardedtotheobstetricteam 
+andfamilydoctor. 
+©RoyalCollegeofObst etriciansandGynaecologists 3of15 RCOGGreen-topGuidelineNo.12 Evidence 
+level2 –
+Evidence 
+level2+/3 
+/check
+/check
+/check
+/checkSurgicaltreatmentincludingloco -regionalclearance canbeundertakeninalltrimesters.Breast-
+conservingsurgeryormastectomycanbeconsidered ,basedontumourcharacteristics and 
+breastsize ,followingmultidiscipl inaryteamdiscussion. Reconstructionshouldbedelayedto 
+avoidprolongedanaesthesiaandtoallowoptimalsymmetrisati onofthebreastsafterdelivery. 
+Sentinelnodeassessmentusingradioisotope scintigraphydoesnotcausesignificantuterine 
+radiation ,14 butbluedyeisnotrecommendedastheeffectuponthefetusisunknown .Sentinel 
+nodebiopsyisindicatedinwomenwhohaveanegative resultfromapreoperativeaxillary 
+ultrasoundandneedlebiopsy.Iftheaxillaispositive ,axillaryclearanceisindicated. 
+Radiotherapyiscontraindicateduntildeliveryunlessitislife savingortopreserveorganfunction(e.g. 
+spinalcordcompression).Ifnecessary ,radiotherapycanbeconsideredwithfetalshielding or,depending 
+ongestationalage,earlyelectivedeliverycouldbediscussed.Routinebreast/chestwallradiotherapy can 
+bedeferreduntilafterdelivery .
+Systemicchemotherapyiscontraindicatedinthefirsttrimester becauseofahighrateoffetal 
+abnormality ,butissafefromthesecondtrimesterandshouldbeofferedaccordingtoprotocols 
+definedbytheriskofbreastcancerrelapseandmortality.Anthracylineregimens aresafe;there 
+arefewerdataontaxanes ,whichshouldbereservedforhigh -risk(node -positive)ormetastatic 
+disease .15–17 Standardantiemeticsincluding5HT3 serotonin antagonistsanddexamethasone 
+shouldbeused.Therearenodataonaneurokinin recptorantagonistwithveryhighefficacyin 
+chemotherapy -inducedemesis .Thereisnoevidence foranincreasedrateofsecond-trimester 
+miscarriageorfetalgrowthrestriction,organdysfunctionorlong -termadverseoutcomewith 
+theuseofchemotherapy .17,18 
+Forwomeninwhomtumourcharacteristics,definedbyimagingandcorebiopsy,meanthatchemothera py 
+isindicated,adecisionmaybemadetoofferneoadjuvantchemotherapybeforesurgerytoallowtumour 
+downstagingandtofacilitatesurgery.Occasionally ,withalow -risktumourinwhichchemotherapyisnot 
+indicated ,theremaybeanindicationformastectomy. Inthissituationradiotherapywouldbedeferred. 
+Tamoxifenandtrastuzumabarecontraindi catedinpregnancyandshouldnotbe 
+used. 
+Tamoxifenisnotuseduntilafterdelivery.Trastuzumab,amonoclonalantibodytargetedagainst 
+theHER2/neureceptor, iscontraindicatedduringpregnancy becauseofreportedadversefetal 
+outcome .19,20 Therearenodataonothertargetedtherapies suchasvascularendothelialgrowth 
+factorantagonists ,includingbevacizumab.However, therearenocompellingoncological 
+reasonsforuseoftargetedtherapiesincludingmonoclonalantibodiesorsmall-molecule tyrosine 
+kinaseinhibitorsduringpregnancyasconventionalchemotherapy canbeused ,allowingthese 
+drugstobereservedforpostpartum.Haemopoietic growthfactors(granulocytecolony-
+stimulatingfactor)maybeemployedtoamelioratechemother apy-inducedneutropenia and 
+havebeenusedextensivelyinhaematologicalmalignancy;theiruseisrecommendedto 
+minimisepotentialmaternalandfetalproblemsassociatedwithneutropenia .21 Useoftheseand 
+otherdrugsshouldbediscussedwiththeobstetrician. 
+4.5Timingofdeliveryofthebaby 
+Thebirth ofthebabyshouldbetimedafterdiscussionwiththewomanandthe 
+multidisciplinaryteam .
+Mostwomencangotofulltermofpregnancyandhaveanormalorinduceddelivery.Ifearlydeliveryof 
+thebabyisnecessary ,considerationofcorticosteroidsforfetallungmaturationisappropriate.However, 
+birthshouldbemorethan2 –3weeksafterthelastchemotherapy sessiontoallowmaternalbonemarrow 
+recoveryandtominimiseproblemswithneutropenia.
+RCOGGreen-topGuidelineNo.12 4of15 ©RoyalColle geofObste tricians andGynaecologis ts Evidence 
+level4 
+Evidence 
+level3 
+D
+Evidence 
+level3 
+/check4.6Lactation 
+Womenshouldnotbreastfeedwhentakingtrastuzumab(Herceptin®,Roche)or 
+tamoxifen,asitisunknownwhetherthesedrugsaretransmitted inbreastmilk.
+Theabilitytobreastfeedmaydependonsurgeryandwhethermajorducts havebeenexcised. 
+Breastfeedingwhileonchemotherapyisnotadvised,asthedrugscrossintobreastmilkandmay 
+causeneonatalleucopeniawithariskofinfection.Thereshouldbeatimeintervalof14daysor 
+morefromthelastchemotherapy sessiontostartofbreastfeedingtoallowdrugclearance from 
+breastmilk .22 
+Ifchemotherapyisrestarted ,breastfeedingmustcease.Ashortperiodoflactation maybe 
+psychologicallybeneficialafterastressfulpregnancy andbebeneficialtothebaby .23 Women 
+takingtamoxifenshouldnotbreastfeed. 
+Womenshouldnotbreastfeedwhentakingtrastuzumab asitisunknownwhetherthisdrugistransmitte d 
+inbreastmilk .
+5. Whatarethecontraceptive choices forwomen wish ingtoavoidpregnancyafter 
+treatmentofbreastcancer? 
+Non-hormonalcontraceptivemethodsarerecomm ended. 
+Womenwithahistoryofbreastcancershouldseekspecialist contraceptiveadvice.Hormonal 
+contraceptio niscontraindicatedinwomenwithcurrentorrecentbreastcancer(WorldHealth 
+Organization/UK medicaleligibilitycategory4) .24 Thisadvicedoesnotdifferentiatebetween 
+hormone-sensitiveandhormone-insensitive tumours.Although hormona lcontraceptionmay 
+beconsideredafteratleast5yearsfreeofrecurrence(WorldHealthOrganization/UK category 
+3) 24 andcurrentevidenceallaysconcernsthatlong-termoralcontraceptiveuseaffectsbreast 
+cancerrisk, 25,26 thereisinsufficientevidencetosupporttheuseofcombinedorprogestogen-
+onlyhormonal contraceptiveswhenalternativenon-horm onalmethodsaresuitableand 
+acceptable. 
+Thelevonorgestrelintrauterinesystem(LNG-IUS :Mirena®, BayerHealthcarePharmaceuticals) 
+mayreducetheriskofendometrialabnormaliti esduringtamoxifen therapy ,27 butfurther 
+evidenceisrequiredonitssafetyinbreastcancersurvivors.Nooverallincreaseinrecurrence 
+riskwasfoundinaretrospectivecontrolledcohortstudy ofLNG-IUSuserscomparedwithnon-
+users(adjustedhazardratio1.86 ,95%CI0.86 –4.00), 28 althoughsubgroupanalysissuggesteda 
+higherrecurrencerisk ,whichwasofborderlinesignificance ,inwomenwhodeveloped breast 
+cancerwhileusingLNG -IUSandcontinued itsuse(adjustedhazardratio3.39,95%CI1.01– 
+11.35). 28 
+6. Whatadviceshou ldbegiventowomen planni ngpregnancyfollowi ngbreastcancer?
+Womenplanningapregnancyaftertreatment forbreastcancershouldconsulttheir 
+clinicaloncologist,breastsurgeonandobstetrician. 
+Womenontamoxifenareadvisedtostopthistreatment3monthsbeforetryingtoconceivebecauseof 
+thelonghalf -lifeofthedrug, and tohaveanyroutineimagingbeforetryingtoconceivetoavoidtheneed 
+forimagingduringpregnancy.Womenwithmetastati cdiseaseshouldbeadvisedagainstafurther 
+pregnancyaslifeexpectan cyislimitedandtreatmentofmetastaticdiseasewouldbecompromised. The 
+remainderofthissectionconcernswomentreatedforearly -stagedisease. 
+©RoyalCollegeofObst etriciansandGynaecologists 5of15 RCOGGreen-topGuidelineNo.12 /check
+Evidence 
+level3 
+Evidence 
+level4 
+/check
+Evidence 
+level4 
+Evidence 
+level2+ 
+/check6.1Impactofpregnancy onriskofrecurrence 
+Womencanbereassuredthatlong-termsurvival afterbreastcancerisnotadversely 
+affectedbypregnancy . 
+Sincemanybreastcancersareestrogen receptorpositiveandendocrineresponsive,womenusedtobe 
+advisedagainstpregnancybecauseofconcerns thatitwouldworsenprognosis.However,theevidence 
+fromthepublishedstudiesisreassuring,showing eithernoimpactonsurvivalorimprovedsurvival. 
+Despitethelimitationsofthestudies,whicharemainlyretrospectivecase –controlserieswithlimited 
+numbers,theyatleastdemonstratethatoutcomeaftertreatmentforbreastcancerisnotadverselyaffected 
+bypregnanc y .29,30 
+Theprognosisisgoodforwomenwithasubsequentpregnancy afterearly -stagebreastcancer .31 –33 
+Thepublishedseriesreflectanimprovementintreatmentoverrecentdecades. Arecent 
+population-basedstudyinWesternAustraliafrom1982to2003reportedsurvivalratesof92% 
+at5yearsand86%at10years .6
+Severalstudiesshowbettersurvivaloutcomeinwomenwhoconceiveaftertreatmentforbreast 
+cancer .5,6,32,34,35 Inthelargestseries,womenwhohadafull-termpregnancy( n=199)hada 
+relativeriskofdeathof0.73(95%CI0.54 –0.99). 5Thesefindingsmaybeexplainedbyselection 
+biasandthe‘healthymothereffect ’describedbySankila :36 healthywomenaremorelikelyto 
+conceive,andwomenwithpoorprognosisorearlyrelapsedonotembarkuponpregnancy.
+However ,someauthors postulateanactualprotective effectofpregnancy. 6,37 
+Theimpactofpregnancy doesnotseemtobemodifiedbytumourcharacteristics(e.g.size, 
+hormonereceptorstatus) ,5butthereareinsufficientdatatodrawfirmconclusions.Inwomen 
+withBRCA genemutations,therisksassociated withsubsequentpregnancyareuncertain .38 
+6.2 Timeintervalbeforepregnancy 
+Adviceonpostponementofpregnancyshouldbeindividualisedandbasedon 
+treatmentneedsandprognos isovertime.Mostwomenshouldwaitatleast2years 
+aftertreatment,whichiswhentheriskofcancerrecurrence ishighest. 
+Womenaregenerallyadvisedtowaitforatleast2yearsaftertreatmentforbreastcancerbefore 
+conception 37,39–41 becauseoftheriskofearlyrelapse.Therateofdiseaserecurrenceishighest 
+inthefirst3yearsafterdiagnosisandthen declines ,42 althoughlaterelapsesdooccurupto10 
+yearsandmorefromdiagnosis .3
+Womenwithestrogenreceptorpositivediseaseshouldbeadvisedthattherecommended duration of 
+tamoxifentreatmentis5years. 
+Thisadvicehasbeenchallengedbecauseofthelackofpublisheddatashowingthatpostponing 
+pregnancyhasanimpactonoutcome ;6theliteratureonrecurrentdiseasealsoneedstobe 
+reviewedinthelightofchangingtreatmentregimens andimprovedunderstandingofcancer 
+subtypes.Ithasbeensuggestedthatwomenwithagoodprognosisneednotwait2yearsto 
+becomepregnant .6
+RCOGGreen-topGuidelineNo.12 6of15 ©RoyalColle geofObste tricians andGynaecologis ts C
+Evidence 
+level2+ 
+Evidence 
+level2+ 
+Evidence 
+level2+ 
+/check
+Evidence 
+level3 
+Evidence 
+level2+ Anunderstandingoftheprognostic factorsaffectingtheindividualwoman –tumoursize,grade, 
+nodalstatus,estrogenandprogesteronereceptor andHER2status–shouldenabletheoncologist 
+togiveappropriateadvice. 43,44 Thisisofgreatimportancetothewomandesiringpregnancy,who 
+mayneedtoweighupthebenefitofpostponing conception,forexampletocomplete 
+prolongedadjuvanttherapywithtamoxifen, againsttheriskofinfertilityasaresultofdelay.
+6.3Outcomeofpregnancy 
+Themajorityofpregnanciesafterbreastcancerproceedtolivebirth.Theremaybeanincreased 
+miscarriageratefollowingbreastcancer ,45 butthepublishedseriesaresmallandnotallreport 
+maternalage(amajorriskfactorformiscarriage )ordistinguishbetweenspontaneous 
+miscarriageandinducedtermination .31,46,47 Arecentlyreportedseriesof465pregnantwomen 
+whowerebreastcancersurvivorsresultedin236full -termbirths(51%),36spontaneousmiscar -
+riages(8%)and193inducedterminations (41%). 5Womenaremorelikelytoterminatea 
+pregnancywhenitoccurssoonaftertreatmentorduringadjuvanttherapy. 5,6 
+Womencanbereassuredconcerningtheriskofmalformation inchildrenconceive d 
+aftertreatmentforbreastcancer .
+Mostoftheavailabledatadonotshowanyincrease incongenitalmalformationsorstillbirth 
+amongtheoffspringofwomenwhohavecompleted treatmentforbreastcancer .6,48,49 Alarge 
+studyderivedfromtheDanishregistriesidentified216birthstowomenwithapriordiagnosis 
+ofbreastcancerandfoundnostillbirths,noincreaseincongenitalanomaliesnoincreaseinlow 
+birthweightandnosubstantialriskofpretermbirth(OR 1.3,95%CI0.7–2.2). 49 TheSwedish 
+dataon331births,however,showedatendency towardsanincreasedriskofmalformations 
+(OR2.1,95%CI1.2 –3.7),birthbefore32weeksofgestation (OR3.2,95%CI1.7 –6.0)andbirth 
+weightbelow1500g(OR2.9,95%CI1.4 –5.8); 50 nevertheless ,adverseoutcomesareuncommon.
+Theheritabilityofbreastcancerisasourceofanxietybutdoesnotaffectchildhoodhealth.Womenwho 
+areknowntobebreastcancergene( BRCA )carriersmaywishtoconsiderpreimplantation genetic 
+diagnosis,whichisnowavailableintheUK.However ,someyoungwomenwithafamilyhistoryindicative 
+ofgeneticriskmaynotwishtoundergotestingsoasnottocompromisetheirdecisionsregardinghaving 
+afamily.
+7. Whatistheoptimalmanagement ofpregn ancyfollow ingtreatmentforbreast cance r?
+Pregnancyfollowingbreastcancershouldbejointlysupervisedbytheobstetrician, 
+oncologistandbreastsurgeon. 
+Echocardiographyshouldbeperformedduringpregnancyinwomenatrisktodetect 
+cardiomyopathythroughrestingleftventricularejectionfractionorechocardio -
+graphicfractionalshortening. 
+Duringpregnancy ,abreasttreatedbysurgery/radiotherapy maynotundergohormonalchangeandthe 
+womanmayrequireatemporaryprosthesis.Ifbreastimagingisneeded ,ultrasound(performedthrough 
+thebreastmultidisciplinaryteam)ispreferred.Metastatic relapsemaybehardertodetect andcommon 
+complaintsinpregnancysuchasbackachecanbedifficulttoassess. 
+Thesewomenmayhavereceivedadjuvantchemotherapy with anthracyclines(doxorubicin, epirubici n) ,
+whichcancausecumulativedose-dependent leftventricular dysfunction and,rarely,cardiomyopathy .51,52 
+Althoughcardiaccomplicationsduringpregnancyarerareincancersurvivors ,53 echocardiographyshould 
+beperformedduringpregnancyinwomenatrisktodetectcardiomyopathythroughrestingleftventricular 
+ejectionfractionorechocardiographicfractionalshortening . 
+©RoyalCollegeofObst etriciansandGynaecologists 7of15 RCOGGreen-topGuidelineNo.12 Evidence 
+level4 
+Evidence 
+level3 
+D
+Evidence 
+level2+/3 
+D/checkAslightlyincreasedriskofdeliverycomplications(OR1.5,95%CI1.2 –1.9)andcaesarean 
+section(OR1.3,95%CI1.0 –1.7)hasbeenreportedinbreastcancersurvivors. 50 
+Thesupervisionofpregnancyafterbreastcancershouldbeconsultant led,butmidwiferyinvolvementwill 
+helptonormalisecare. 
+8. Whatadviceshouldbegiven towomen wishingtobreastfe edfollow ingtreatmentfor 
+breastcancer?
+Womencanbereassuredthattheycanbreastfeed fromtheunaffectedbreast. 
+Thereisnoevidencethatbreastfeedingincreasestheriskofrecurrenceinwomenwhohave 
+completedtreatmentforbreastcancer.Onlyonestudyhasreportedonsurvivalinrelationto 
+lactation ,32 andsuggestedthatbreastfeedingwasassociatedwithbettersurvivalthanbottle-
+feeding. 
+Breast-conservingsurgerymaynotinhibitlactationintheaffectedbreast,butradiotherapy 
+causesfibrosis ,makinglactationunlikely .54–57 Thereisnoevidencethatpreviouschemotherapy 
+affectsthesafetyofbreastfeeding. 
+Inviewofthewell -recognisedbenefitsofbreastfeedingtothebaby ,23 womenwhowishtobreastfeed 
+shouldbeencouragedtodoso. 39,58 Midwiferysupporthelpstoestablishsuccessfullactation. 59 
+9. Whatistheeffectofbreast cancertreatment onthewoma n’sfertility? 
+Theeffectoftreatmentonfertilityshouldbediscussed withallwomenofrepro-
+ductiveagediagnosedwithbreastcancer,andwritteninformationshouldbe 
+provided.Referraltoafertilityspecialis tshouldbeavailable .Specialistcounsell ing 
+shouldbeavailable. 
+Infertilityaftertreatmentisamajorconcernforyoungwomenwithbreastcancer .60–63 Inan 
+Americansurveyof657womendiagnosedwithbreastcancerundertheageof40years,57% 
+reported‘substantialconcern ’aboutbecominginfertileand29%statedthatitinfluencedtheir 
+treatmentdecisions. 63 Inthissample,only51%feltthattheirconcernshadbeenadequately 
+addressed,andseveralotherauthorshavenotedwomen’s frustrationwiththepaucityof 
+informationavailable .64–66 Women’spreferredsourceofinformationonfertilityisconsultation 
+withafertilityspecialistbackedupbyaninformati onbooklet. 64,67 
+ArecentjointworkingpartyoftheRoyalColleges ofPhysicians ,RadiologistsandObstetricians 
+andGynaecologistsintheUKrecommended thatpeoplewithcancershouldbefullyinformed 
+ofpotentialgonadotoxicitybeforetreatment, andthatspecialistpsychological supportand 
+counsellingshouldbeavailable. 68 
+9.1 Whatistheeffectofadjuvant chemotherapyonfertility?
+Chemotherapy-inducedgonadotoxicitymaycause permanen tamenorrhoea withcompleteloss 
+ofgermcells ,transientamenorrhoea,menstrualirregularityandsubfertility .Thedegreeofgonado -
+toxicityisdependentonthespecificagentsused,thecumulativedoseadministe redandthe 
+woman’sage. Amenorrhoeaisreportedin20–70%ofpremenopausalwomenwithbreastcancer ,69 
+buttheraterangesfromlessthan 5%inwomenunder30yearsofageto50%inwomenaged 
+36 –40 years .70 Alkylatingagentssuchascyclophosphamidehavewell -recognisedgonadotoxicity, 
+RCOGGreen-topGuidelineNo.12 8of15 ©RoyalColle geofObste tricians andGynaecologis ts Evidence 
+level2+ 
+Evidence 
+level2+ /check
+Evidence 
+level3 
+/check
+Evidence 
+level3 
+Evidence 
+level4 
+Evidence 
+level3 andtheclassicCMFregimen(cyclophosphamide,methotrexate, 5-fluorouracil)causesahigher 
+incidenceofamenorrhoeathananthracycline-bas edregimenssuchasFEC(5-fluorouracil, 
+epirubicin,cyclophosphamide) .71 Thenewertaxanesappeartobelessgonadotoxic .72 
+9.2 Whatistheeffectofadjuvant hormon altherapyonfertility? 
+Theagentsusedforadjuvanthormonaltherapydonotinthemselvescauselong-termeffectsonfertility. 
+Tamoxifen(aselectiveestrogenreceptormodulator)oftencausesmenstrualirregularityandthereisan 
+increasedriskofendometrialpathology;conceptionduringtamoxifentherapyshouldbeavoidedbecause 
+ofpotentialteratogenicity ,anda‘washoutperiod ’of2–3monthsisadvised.Gonadotrophin-releasing 
+hormone(GnRH)analoguescauseamenorrhoea andprofoundestrogen deficiency;womenmayfindthe 
+menopausalsymptomsworrying ,buttheeffectisentirelyreversible.Trastuzumabisamonoclonalantibody 
+thatbindsselectivelytotheHER2proteinexpressed bysomebreastcancers;thereisnoevidencethatit 
+impairsfertility,butpregnancyisnotadvisedduringtreatment. 
+9.3Whatadviceshouldbegiventothewomanaboutpostponement ofpregnancybeforeembar kingonfurther 
+pregnancy?
+Womenaregenerallyadvisedtopostponepregnancy foratleast2yearsaftertreatment andmaybeadvised 
+tocontinuetamoxifenfor5years.However,ageisamajordeterminantoffertilityanddelaywithalready 
+poorovarianfunctionowingtochemotherapy islikelytoleadtoinfertility.Womenintheir30sdesiring 
+pregnancymaywishtodiscussthevalueofprolonged treatmentwithtamoxifenandconsider discontin -
+uationafter2–3years.Resumingtreatmentwithtamoxifenafterchildbearinghasnotbeenstudied ,butit 
+isareasonablestrategy. 
+9.4 Canfertilitybepreservedbeforetreatment? 
+Thereisarapidly growingliteratureonpreservationoffertilitypotentialbeforechemotherapy.Atpresent ,
+onlyaminorityofwomenofreproductiveageundertakefertility -preservationproceduresandthereare 
+scarcelyanydataonlong -termoutcome.
+9.4.1GnRHanalogues 
+Thereareinsufficientlevel1datatosupport theroutineuseofGnRHanaloguesfor 
+ovarianprotectioninestrogenreceptorpositivebreastcancer .
+GnRHanalogueshavetherapeuticuseinhormone-sensitiv ebreastcancer,astheyinduce 
+profoundovariansuppressio nandcreatealow-estrogen state.Trialsareinprogresstoexamine 
+theeffectonfertilitypotential,althoughthereareconcernsthatconcomitantGnRHanalogues 
+maylessentumourresponsetochemotherapyinestrogen receptorpositivebreastcancer.There 
+areseveralobservationalandphaseIIstudiesoftheuseofGnRHanalogues duringchemo-
+therapywiththeintentionofprotectingtheoocytepoolfromdepletion .73 Non-randomised 
+studiesinwomenwithbreastcancer(totaln=222)aresuggestiveofbenefit .74–76 
+Arecentlyreportedrandomisedcontrolledtrialinpremenopausalwomenwithbreastcancer 
+foundthatco-treatmentwithGnRHanaloguesduringchemotherapylessenedtheriskofovarian 
+damage(35/39resumedmensesversus 13/39,P<0.001). 77 Theuncertaintiescanbediscussed 
+withthewomanbythetreatingoncologist .
+9.4.2Cryopreservation 
+Ovarianstimulationforeggorembryofreezing requires carefuldiscussioninlightof 
+unknownlong-termrisks.Modified stimulationregimes shouldbeconsidered for 
+womenwithestrogen-sensitivebreastcancer. 
+©RoyalCollegeofObst etriciansandGynaecologists 9of15 RCOGGreen-topGuidelineNo.12 Evidence 
+level3 
+/check
+Evidence 
+level3 
+Evidence 
+level1+ 
+/checkEmbryocryopreservationisawell established techniquewithsuccessratesofatleast20%per 
+cycle ,78 althoughitispossiblethatsuccessratesmaybelowerwhenoocytesareretrievedfrom 
+womenwithcancer. Thetimerequiredforovarianstimulationandeggharvestmaypostpone 
+chemotherapy,andthereisasmallriskofproceduralcomplicationssuchasovarianhyperstim -
+ulation.Thereisconcernthatelevatedestrogenlevelsmaybedeleteriousinestrogenreceptor 
+positivebreastcancer;tominimisethisrisk,stimulation regimenswithtamoxifen orletrozole, 
+usuallycombinedwithgonadotrophins,areproposed .79,80 
+Oocytestoragemaybeofferedtowomenwithoutapartner.Freeze –thawtechniquesarerapidly 
+improving ,buttherehavebeenonlyafewhundred birthsworldwideafteruseofthistechnique 
+andtherearenolong-termsafetydata.Harvesting immatureoocyteswithout requiringa 
+hormone-stimulatedcycleisanattractiveproposition ,butisnotanestablishedtechnique .81 
+Thereareinsufficientdatatosupport ovariantissuestorageforfertilitypreservation 
+inwomenwithbreastcancer;thisshouldbeofferedonlyinthecontextofaresearch 
+trial. 
+Cryopreservationofovariancortexorthewholeovaryhasresultedinasmallnumber of 
+pregnanciesafterregrafting .82 Thisremainsanexperimentaltechniqueandtissuestorage 
+regulationsintheUKhaverestricteditsuse.Theneedforasurgicalprocedureisadisadvantage , 
+butthistechniquedoesnotdelaychemotherapy. 
+Everybreastoncologyserviceshouldhaveadesignate dpathwayforpromptreferral 
+toafertilityspecialistabletoofferassistedconception; serviceprovisionshouldnot 
+bedependentonlocalinvitrofertilistionfunding arrangem ents. 
+Theorganisationalaspectsofthe expanding breastoncology serviceneedtobeaddressed.Promptreferral 
+isessential;preparationsforeggretrievalcanbeinstigatedduringbreastcancerdiagnostic procedures 
+andsurgerytominimisedelaysinstartingsystemictreatment.TheNationalInstituteforHealthandClinical 
+Excellence 83 recommendeduniversalaccesstosperm,eggandembryostorageforpeopleundergoing 
+gonadotoxictreatment.However,NHSfundingisnotavailableinallareas,andisdependent uponthe 
+primarycaretrustandthelocalinfertilitybudget.Theoncology referralpathwayinthecancernetwork 
+doesnotnecessarilycoincidewithlocalinvitrofertilisation arrangements.ThejointRoyalCollegesworking 
+partyrecommendedthatadequatefundingshouldbemadeavailable. 68 
+9.5Assistedreproduct ionaftertreatmentforbreast cancer 
+Fertilitytreatmentafterchemotherapyislimitedbylossofovarianreserve .84,85 Thestimulationaspectof 
+invitrofertilisationcarriesatheoreticalriskasitisahyperestrogenicstate,althoughofshorterduration 
+thanpregnancy. Womenwhohavechemotherapy -inducedmenopausecanbecomepregnantwithdonated 
+eggs;thisrequiresshort-termhormonereplacement therapy,whichagaincarriesatheoretical risk. 
+Replacementofcryopreservedembryosisalsoperformed inamedicatedhormonereplacem enttherapy 
+cycle.Womenforwhompregnancyiscontraindicated maywishtoconsidersurrogacy. 
+RCOGGreen-topGuidelineNo.12 10 of15 ©RoyalColle geofObste tricians andGynaecologis ts Evidence 
+level3 Evidence 
+level2+ 
+Evidence 
+level3 
+/checkD10. Sugge stedaudittopics 
+Relativelyfewwomenpresentwithpregnancyduringoraftertreatmentforbreastcancer.
+Oncologistsmaywishtoaudit :
+Gwhatpercentageof youngwomentreatedforbreastcancerhavebeengiveninformationon
+contraceptionandfuturepregnancy
+Goutcomeofreferralstoafertilityspecialist .
+Gynaecologistsmaywishtoaudit :
+Goutcomeofreferralsforfertilitypreservation .
+References 
+©RoyalCollegeofObst etriciansandGynaecologists 11 of15 RCOGGreen-topGuidelineNo.12 1. SmithLH,DanielsenB,AllenME,CressR.Cancer 
+associatedwithobstetricdelivery:resultsoflinkagewith 
+theCaliforniacancerregistry.AmJObstetGynecol
+2003;189:1128–35.
+2. AnderssonTM ,JohanssonAL ,HsiehCC ,Cnattingius S ,
+LambeM .Increasingincidenceofpregnancy-associated 
+breastcancerinSweden.ObstetGynecol2009; 
+114:568–72. 
+3. EarlyBreastCancerTrialists ’CollaborativeGroup 
+(EBCTCG ).Effectsofchemotherapyandhormonal 
+therapyforearlybreastcanceronrecurrenceand15-year 
+survival:anoverviewoftherandomisedtrials.Lancet 
+2005;365:1687–717. 
+4. AssociationofBreastSurgeryatBaso 2009 .Surgical 
+guidelinesforthemanagementofbreastcancer. 
+EurJSurgOncol2009;35 Suppl1:s1 .1–22.
+5. KromanN,JensenMB,WohlfarhrtJ,EjlertsenB;Danish 
+BreastCancerCooperativeGroup.Pregnancy after 
+treatmentofbreastcancer–apopulatio n-basedstudyon 
+behalfofDanishBreastCancerCooperative Group. Acta 
+Oncol2008;47:545–9. 
+6. IvesA,SaundersC,BulsaraM,SemmensJ.Pregnancyafter 
+breastcancer:populationbasedstudy.BMJ 2007;334:194. 
+7. BraunM ,Hasson-OhayonI,PerryS,KaufmanB,UzielyB. 
+Motivationforgivingbirthafterbreastcancer. 
+Psychooncology 2005;14:282–96. 
+8. ConnellS,PattersonC,NewmanB.Aqualitative analysis
+ofreproductiveissuesraisedbyyoungAustralianwomen 
+withbreastcancer.HealthCareWomenInt2006; 
+27:94–110. 
+9. PeateM,MeiserB,HickeyM,FriedlanderM.Thefertility-
+relatedconcerns,needsandpreferencesofyounger 
+womenwithbreastcancer:asystematicreview.Breast 
+CancerResTreat2009;116:215–23. 
+10. BeadleBM,Woodward WA,MiddletonLP,TereffeW,Strom 
+EA,LittonJK,etal.Theimpactofpregnancy onbreast 
+canceroutcomesinwomen≤35years.Cancer 
+2009;115:1174–84. 
+11. RodriguezAO,ChewH,CressR,XingG,McElvyS, 
+DanielsenB,etal.Evidenceofpoorersurvivalin 
+pregnancy-ass ociatedbreastcancer.ObstetGynecol
+2008;112:71–8. 
+12. MiddletonLP,AminM,GwynK,Theriault R,SahinA.Breast 
+carcinomainpregnantwomen:assessmentof 
+clinicopathologicandimmunohi stochemicalfeatures. 
+Cancer 2003;98:1055–60. 
+13. WebbJA,ThomsenHS,MorcosSK;MembersofContrast 
+MediaSafetyCommitteeofEuropean Societyof 
+UrogenitalRadiology(ESUR).Theuseofiodinatedand 
+gadoliniumcontrastmediaduringpregnancy and 
+lactation.EurRadiol2005;15:1234–40. 
+14. SpanheimerPM,GrahamMM,SuggSL,Scott-ConnerCE, 
+WeigelRJ. Measurementofuterineradiationexposure 
+fromlymphoscintigraphyindicatessafetyofsentinel 
+lymphnodebiopsyduringpregnancy.AnnSurgOncol
+2009;16:1143–7. 15. GiacalonePL,LaffargueF,BénosP.Chemotherapyfor 
+breastcarcinomaduringpregnancy:aFrenchnational 
+survey.Cancer 1999;86:2266–72. 
+16. RingAE,SmithIE,JonesA,ShannonC,GalaniE,EllisPA. 
+Chemotherapyforbreastcancerduringpregnancy:an
+18-yearexperiencefromfiveLondonteachinghospitals. 
+JClinOncol2005;23:4192–7. 
+17. HahnKM,JohnsonPH,GordonN,KuererH,MiddletonL, 
+RamirezM,etal.Treatmentofpregnantbreastcancer 
+patientsandoutcomesofchildrenexposedto 
+chemotherapyinutero.Cancer 2006;107:1219–26. 
+18. GwynK.Childrenexposedtochemotherapyinutero. 
+JNatlCancerInstMonogr 2005;(34):69–71. 
+19. WatsonWJ.Herceptin(trastuzumab)therapyduring 
+pregnancy:associationwithreversibleanhydramnios. 
+Obstet Gynecol2005;105:642–3. 
+20. MirO,BerveillerP,RopertS,GoffinetF,PonsG,TreluyerJM, 
+etal.Emergingtherapeuticoptionsforbreastcancer 
+chemotherapyduringpregnancy.AnnOncol
+2008;19:607–13. 
+21. AvilésA,NeriN .Haematologicalmalignanciesand 
+pregnancy :afinalreportof84childrenwhoreceived 
+chemotherapyinutero. Clin Lymphoma 2001;2:173–7. 
+22. EganPC,CostanzaME,DodionP,EgorinMJ,BachurNR. 
+Doxorubicinandcisplatinexcretionintohumanmilk. 
+CancerTreatRep 1985;69:1387–9. 
+23. LeungAKC,SauveRS.Breastisbestforbabies.JNatlMed 
+Assoc 2005;97:1010–9. 
+24. GaffieldME,CulwellKR.Newrecommendations onthe 
+safetyofcontraceptivemethodsforwomenwithmedical 
+conditions:WorldHealthOrganization’sMedical
+eligibilitycriteriaforcontraceptiveuse,fourthedition .
+IPPFMedicalBulletin2010;44(1)[ http://www.ippf.org/ 
+NR/rdonlyres/D67E0B0E-39C 9-4A0A-99E7-
+44AD870C5058/0/MedBullEnglishMar2010.pdf ]. 
+25. Breastcancerandhormona lcontraceptives:collaborative 
+reanalysisofindividualdataon53 297womenwithbreast 
+cancerand100 239womenwithoutbreastcancerfrom 
+54epidemiologicalstudies .CollaborativeGroupon 
+HormonalFactorsinBreastCancer. Lancet 
+1996;347:1713–27. 
+26. HannafordPC,SelvarajS,ElliottAM,AngusV,IversenL ,Lee 
+AJ .Cancerriskamongusersoforalcontraceptives:cohort 
+datafromtheRoyalCollegeofGeneralPractitioner ’soral 
+contraceptionstudy.BMJ 2007;335:651. 
+27. ChanSS,TamWH,YeoW,YuMM,NgDP,WongAW,etal. A
+randomisedcontrolledtrialofprophylacticlevonorgestrel 
+intrauterinesystemintamoxifen-treatedwomen.BJOG 
+2007;114:1510–5. 
+28. TrinhXB,TjalmaWA,MakarAP,BuytaertG,WeylerJ,van 
+DamPA.Useofthelevonorgestrel-releasingintrauterine 
+systeminbreastcancerpatients.FertilSteril2008;90: 
+17–22. 
+29. CalhounK ,HansenN.Theeffectofpregnancyonsurvival 
+inwomenwithahistoryofbreastcancer.BreastDis 
+2005;23:81–6. 30. BarthelmesL ,DavidsonLA,GaffneyC,GateleyCA. 
+Pregnancyandbreastcancer.BMJ 2005;330:1375–8 . 
+31. VelentgasP,DalingJR,MaloneKE,WeissNS,WilliamsMA, 
+SelfSG,etal. Pregnancyafterbreastcarcinoma:outcomes 
+andinfluenceonmortality. Cancer 1999;85:2424–32 . 
+32. GelberS,CoatesAS,GoldhirschA,Castiglione-GertschM, 
+MariniG,Lindtner J ;InternationalBreastCancerStudy 
+Group. Effectofpregnancyonoverallsurvivalafterthe 
+diagnosisofearly-stagebreastcancer. JClinOncol
+2001;19:1671–5. 
+33. vonSchoultzE,JohanssonH,WilkingN,RutqvistLE. 
+Influenceofpriorandsubsequentpregnancy onbreast 
+cancerprognosis. JClinOncol1995;13:430–4. 
+34. BlakelyLJ,BuzdarAU,LozadaJA,ShullaihSA,HoyE,Smith 
+TL ,etal.Effectsofpregnancy aftertreatmentforbreast 
+carcinomaonsurvivalandriskofrecurrence.Cancer 
+2004;100:465 –9. 
+35. MuellerBA,SimonMS,DeapenD,Kamineni A,MaloneKE, 
+DalingJR.Childbearingandsurvivalafterbreast 
+carcinomainyoungwomen.Cancer 2003;98:1131– 40. 
+36. SankilaR,Heinävaar aS,HakulinenT.Survivalofbreast 
+cancerpatientsaftersubsequenttermpregnancy :“healthy 
+mothereffect ”.AmJObstetGynecol1994;170:818–23. 
+37. PetrekJ,SeltzerV.Breastcancerinpregnant and 
+postpartumwomen .JObstetGynaecolCan 2003;25: 
+944–50. 
+38. AndrieuN,GoldgarDE,EastonDF,RookusM,BrohetR, 
+AntoniouAC,etal;EMBRACE;GENEPSO; IBCCS 
+CollaboratorsGroup.Pregnancies,breast-feeding,
+andbreastcancerriskintheInternationalBRCA1/2 
+CarrierCohortStudy(IBCCS).JNatlCancerInst 
+2006;98:535–44. 
+39.SocietyofObstetriciansandGynaecologistsofCanada. 
+ClinicalpracticeGuidelineNo. 111:Breastcancer,
+pregnancy,andbreastfeeding .Ottawa:SOGC;2002 
+[http://www.sogc.org/guidelines/public/111E -CPG-
+February2002.pdf ]. 
+40. IsaacsJH. Cancerofthebreastinpregnancy. SurgClin 
+NorthAm1995;75:47–51. 
+41. GwynK,TheriaultR. Breastcancerduringpregnancy .
+Oncology(WillistonPark) 2001;15:39–46;discussion 46 ,
+49–51. 
+42. SaphnerT,TormeyDC,GrayR. Annualhazardratesof 
+recurrenceforbreastcancerafterprimarytherapy. 
+JClinOncol1996;14:2738–46. 
+43. AveretteHE,MirhashemiR,MoffatFL. Pregnancy after 
+breastcarcinoma:theultimatemedicalchallenge .Cancer 
+1999;85:2301–4.
+44. HickeyM,PeateM,SaundersCM,FriedlanderM .Breast 
+cancerinyoungwomenanditsimpactonreproductive 
+function.HumReprodUpdate 2009;15:323–39. 
+45. DelMastroL,CatzedduT,VenturiniM.Infertilityand 
+pregnancyafterbreastcancer:currentknowledgeand 
+futureperspectives.CancerTreatRev 2006;32:417– 22. 
+46. BlakelyLJ,BuzdarAU,LozadaJA,ShullaihSA,HoyE,Smith 
+TL ,etal.Effectsofpregnancy aftertreatmentforbreast 
+carcinomaonsurvivalandriskofrecurrence.Cancer 
+2004;100:465–9. 
+47. MulvihillJJ,McKeenEA,RosnerF,ZarrabiMH. Pregnancy 
+outcomeincancerpatients.Experienceinalarge 
+cooperativegroup .Cancer 1987;60:1143–50. 
+48. SuttonR,BuzdarAU,HortobagyiGN. Pregnancy and 
+offspringafteradjuvant chemothe rapyinbreastcancer 
+patients .Cancer 1990;65:847–50. 
+49. LangagergaardV,GislumM,SkriverMV,NørgårdB,LashTL, 
+RothmanKJ ,etal.Birthoutcomeinwomenwithbreast 
+cancer.BrJCancer 2006;94:142–6. 
+50. DalbergK,ErikssonJ,HolmbergL .Birthoutcomein 
+womenwithpreviouslytreatedbreastcancer –a
+population-bas edcohortstudyfromSweden.PLoSMed 
+2006;9 :e336. 
+51. HershmanDL,ShaoT. Anthracyclinecardiotoxicityafter 
+breastcancertreatment. Oncology(WillistonPark) 
+2009;23:227–34. 
+52. ShanK,LincoffAM,YoungJB.Anthracycline-induced 
+cardiotoxicity.AnnInternMed1996;125:47–58. 53. vanDalenEC,vanderPalHJ,vandenBosC,KokWE, 
+CaronHN,KremerLC. Clinicalheartfailureduring 
+pregnancyanddeliveryinacohortoffemalechildhood 
+cancersurvivorstreatedwithanthracyclines .EurJ 
+Cancer2006;42:2549–53. 
+54. HigginsS,HafftyBG. Pregnancyandlactationafterbreast-
+conservingtherapyforearlystagebreastcancer .Cancer 
+1994;73:2175–80. 
+55. TralinsAH .Lactationafterconservativebreastsurgery 
+combinedwithradiationtherapy .AmJClinOncol
+1995;18:40–3. 
+56. MoranMS,ColasantoJM,HafftyBG,WilsonLD,LundMW, 
+HigginsSA. Effectsofbreast-conservingtherapyon 
+lactationafterpregnancy.CancerJ 2005;11:399– 403. 
+57. VarsosG,YahalomJ. Lactationfollowingconservation 
+surgeryandradiotherapyforbreastcancer. JSurgOncol
+1991;46:141–4. 
+58. AzimHAJr,BellettiniG,GelberS,PeccatoriFA.Breast-
+feedingafterbreastcancer:ifyouwish,madam.Breast 
+CancerResTreat 2009;14:7–12.
+59. CamuneB,GabzdylE.Breast-feedingafterbreastcancerin 
+childbearingwomen .JPerinatNeonatalNurs 
+2007;21:225–33. 
+60. PartridgeAH,GelberS,PeppercornJ,SampsonE,Knudsen 
+K,Laufer,M,etal.Web-basedsurveyoffertilityissuesin 
+youngwomenwithbreastcancer.JClinOncol
+2004;22:4174–83. 
+61. BraunM,Hasson-Ohayon I,PerryS,KaufmanB,UzielyB. 
+Motivationforgivingbirthafterbreastcancer. 
+Psychooncology 2005;14:282–96. 
+62. ConnellS,PattersonC,NewmanB .Aqualitativeanalysisof 
+reproductiveissuesraisedbyyoungAustralianwomen 
+withbreastcancer.HealthCareWomenInt 2006; 
+27:94–110. 
+63. PeateM,MeiserB,HickeyM,FriedlanderM. Thefertility-
+relatedconcerns,needsandpreferencesof younger 
+womenwithbreastcancer:asystematicreview.Breast 
+CancerResTreat 2009;116:215–23. 
+64. ThewesB,MeiserB,RickardJ,FriedlanderM.Thefertility-
+andmenopause-relatedinformationneedsofyounger 
+womenwithadiagnosisofbreastcancer:aqualitative 
+study.Psychooncology 2003;12:500–11. 
+65. KnobfMT.Themenopausalsymptomexperienceinyoung 
+mid-lifewomenwithbreastcancer.CancerNurs 
+2001;24:201–10. 
+66. DunnJ,StegingaSK.Youngwomen’sexperienceofbreast 
+cancer:definingyoungandidentifyingconcerns. 
+Psychooncology 2000;9:137–46.
+67. ThewesBM.Fertility-andmenopause-relatedinformation 
+needsofyoungerwomenwithadiagnosisofearlybreast 
+cancer.JClinOncol2005;23:5155–65.
+68. RoyalCollegeofPhysicians,TheRoyalCollegeof 
+Radiologists,RoyalCollegeofObstetriciansand 
+Gynaecologists.Theeffectsofcancertreatmenton 
+reproductivefunctions .Guidanceonmanagement.
+ReportofaWorkingParty.London:RCP ;2007 
+[http://bookshop.rcplondon. ac.uk/contents/ 
+pub238-5e88e6e4-d9d0-4e99-a2f9-b1bea2daf562.pdf ]. 
+69. MintonSE,MunsterPN.Chemotherapy-induced 
+amenorrheaandfertilityinwomenundergoingadjuvant 
+treatmentforbreastcancer.CancerControl2002;9: 
+466–72. 
+70. BinesJ,OleskeDM,CobleighMA.Ovarianfunctionin 
+premenopausalwomentreatedwithadjuvant 
+chemotherapyforbreastcancer. JClinOncol
+1996;14:1718–29. 
+71. ZekriJM,El-HelwLM,PurohitOP,HattonMQ,ColemanRE. 
+Epirubicin/vinorelbineadjuvantchemotherapyinyoung 
+womenwithbreastcancerisassociatedwithpreservation 
+ofmenstrualfunction. ClinOncol(RCollRadiol) 
+2008;20:513–6. 
+72. MinisiniAM,MenisJ,ValentF,AndreettaC,AlessiB, 
+PascolettiG,etal.Determinantsofrecoveryfrom 
+amenorrheainpremenopausalbreastcancerpatients 
+receivingadjuvantchemotherapyinthetaxaneera. 
+AnticancerDrugs 2009;20:503–7. 
+RCOGGreen-topGuidelineNo.12 12 of15 ©RoyalColle geofObste tricians andGynaecologis ts 73. BlumenfeldZ.Howtopreservefertilityinyoungwomen 
+exposedtochemotherapy?TheroleofGnRHagonist 
+cotreatmentinadditiontocryopreservationofembrya, 
+oocytes,orovaries.Oncologist 2007;12:1044–54. 
+74. MaltarisT,WeigelM,MuellerA,SchmidtM,SeufertR,Fischl 
+F,etal.Cancerandfertilitypreservation:fertility 
+preservationinbreastcancerpatients.BreastCancerRes 
+2008;10:206. 
+75. RecchiaF,SaggioG,AmiconiG,DiBlasioA,CestaA, 
+CandeloroG ,etal.Gonadotropi n-releasinghormone 
+analoguesaddedtoadjuvant chemotherapyprotect 
+ovarianfunctionandimproveclinicaloutcomesinyoung 
+womenwithearlybreastcarcinoma.Cancer 
+2006;106:514–23. 
+76. MaisanoR,CaristiN,MareM,BottariM,AdamoV,Mafodda 
+A,etal .Protectiveeffectofleuprolideonovarianfunction 
+inyoungwomentreatedwithadjuvant chemotherapyfor 
+earlybreastcancer:amulticenterphaseIIstudy. 
+JChemother 2008;20:740–3. 
+77. BadawyA,ElnasharA,El-AshryM,ShahatM.Gonadotropin-
+releasinghormoneagonistsforprevention of 
+chemotherapy-inducedovariandamage:prospective 
+randomizedstudy.FertilSteril2009;91:694–7. 
+78. HumanFertilisation&EmbryologyAuthority.Codeof 
+Practice.London:HFEA ;2009[http://www.hfea.gov.uk/ 
+code.html]. 
+79. OktayK,BuyukE,LibertellaN,AkarM,Rosenwaks Z. 
+Fertilitypreservationinbreastcancerpatients:a 
+prospectivecontrolledcomparisonofovarianstimulation 
+withtamoxifenandletrozole forembryo 
+cryopreservation. JClinOncol2005;23:4347–53. 80. OktayK,HourvitzA,SahinG,OktemO,SafroB,CilA,etal. 
+Letrozolereducesestrogenandgonadotropin exposurein 
+womenwithbreastcancerundergoingovarian 
+stimulationbeforechemotherapy.JClinEndocrinol
+Metab2006;91:3885–90. 
+81. DemirtasE,ElizurSE,HolzerH,GidoniY,SonWY,Chian 
+RC,etal .Immatureoocyteretrievalinthelutealphaseto 
+preservefertilityincancerpatients.ReprodBiomed 
+Online 2008;17:520–3. 
+82. DonnezJ,Martinez-MadridB,JadoulP ,VanLangendonc ktA ,
+DemylleD ,DolmansMM .Ovariantissuecryopreservation 
+andtransplantation:areview.HumReprodUpdate 
+2006;12:519–35. 
+83. NationalInstituteforHealthandClinicalExcellence. 
+Assessmentandtreatmentforpeoplewithfertility 
+problems .London:NICE ;2004[ http://www. 
+nice.org.uk/nicemedia/pdf/CG011publicinfoenglish.pdf ].
+84. LutchmanSinghK,MuttukrishnaS,SteinRC,McGarrigle 
+HH,PatelA, ParikhB,etal.Predictorsofovarianreservein 
+youngwomenwithbreastcancer. BrJCancer 
+2007;96:1808–16.
+85. AndersonRA,ThemmenAP,Al-QahtaniA,GroomeNP, 
+CameronDA.Theeffectsofchemotherapyandlong-term 
+gonadotr ophinsuppressionontheovarianreservein 
+premenopausalwomenwithbreastcancer.HumReprod 
+2006;21:2583–92. 
+©RoyalCollegeofObst etriciansandGynaecologists 13 of15 RCOGGreen-topGuidelineNo.12 Appendix 
+RCOGGreen-topGuidelineNo.12 14 of15 ©RoyalColle geofObste tricians andGynaecologis ts Gradesofrecomme ndations 
+Atleastonemeta-analysis,systematicreviewor 
+randomisedcontrolledtrialratedas1++and 
+directlyapplicabletothetargetpopulation;or
+Asystematicreviewofrandomisedcontrolled 
+trialsorabodyofevidenceconsisting 
+principallyofstudiesratedas1+directly 
+applicabletothetargetpopulationand 
+demonstratingoverallconsistencyofresults 
+Abodyofevidenceincludingstudiesratedas 
+2++directlyapplicabletothetarget 
+population,anddemonstratingoverall 
+consistencyofresults;or
+Extrapolatedevidencefromstudiesratedas 
+1++or1+ 
+Abodyofevidenceincludingstudiesratedas 
+2+directlyapplicabletothetargetpopulation 
+anddemonstratingoverallconsistencyof 
+results;or
+Extrapolatedevidencefromstudiesratedas 
+2++ 
+Evidencelevel3or4;or
+Extrapolatedevidencefromstudiesratedas2+ 
+Goodpracticepoint 
+Recommendedbestpracticebasedonthe 
+clinicalexperienceoftheguideline 
+developmentgroup Class ificationofevidence levels 
+1++ High-qualitymeta-analyses,systematic 
+reviewsofrandomisedcontrolledtrials 
+orrandomisedcontrolledtrialswitha 
+verylowriskofbias 
+1+ Well-conductedmeta-analyses,systematic 
+reviewsofrandomisedcontrolledtrials 
+orrandomisedcontrolledtrialswitha 
+lowriskofbias 
+1– Meta-analyses,systematicreviewsof 
+randomisedcontrolledtrialsor 
+randomisedcontrolledtrialswithahigh 
+riskofbias 
+2++ High-qualitysystematicreviewsofcase– 
+controlorcohortstudiesorhigh-quality 
+case–controlorcohortstudieswitha 
+verylowriskofconfounding,biasor 
+chanceandahighprobabilitythatthe 
+relationshipiscausal 
+2+ Well-conductedcase–controlorcohort 
+studieswithalowriskofconfounding, 
+biasorchanceandamoderate 
+probabilitythattherelationshipiscausal 
+2-Case–controlorcohortstudieswitha 
+highriskofconfounding,biasorchance 
+andasignificantriskthattherelationship 
+isnotcausal 
+3Non-analyticalstudies,e.g.casereports, 
+caseseries 
+4Expertopinion /checkC
+DBA©RoyalCollegeofObst etriciansandGynaecologists 15 of15 RCOGGreen-topGuidelineNo.12 DISCLAIMER 
+TheRoyalCollegeofObstetriciansandGynaecolog istsproducesguidelinesasaneducationalaidtogoodclinicalpractice. 
+Theypresentrecognisedmethodsandtechniquesofclinicalpractice,basedonpublished evidence,forconsideration by 
+obstetriciansandgynaecologistsandotherrelevanthealthprofession als.Theultimatejudgement regardingaparticular 
+clinicalprocedureortreatmentplanmustbemadebythedoctororotherattendant inthelightofclinicaldatapresented 
+bythepatientandthediagnosticandtreatment optionsavailable.ThismeansthatRCOGguidelines areunlikeprotocols 
+orguidelinesissuedbyemployers,astheyarenotintendedtobeprescriptivedirections definingasinglecourseof 
+management.Departurefromthelocalprescriptiveprotocols orguidelines shouldbefullydocumen tedinthepatient’s 
+casenotesatthetimetherelevantdecisionistaken. Theguidelinesreviewprocesswillcommencein2014, unlessevidencerequiresearlierreview ThisguidelinewasproducedonbehalfoftheGuidelines Committee oftheRoyalCollegeofObstetricians and
+Gynaecologistsby:
+MsMCDaviesFRCOG,LondonandDrALJones,UCLHFoundationTrust,CancerManagement,London 
+andpeerreviewedby:AssociationofBreastSurgery;BritishMaternalandFetalMedicine Society;BreastCancerCare; 
+RCOGConsumers’Forum; ProfessorJMDixon,ProfessorofSurgeryandConsultant Surgeon,WesternGeneralHospital, 
+Edinburgh,Scotland ;DrAHDDiyafMRCOG,Birmingham; DrAFrancis,ConsultantBreastSurgeon,University Hospital 
+Birmingham; ProfessorABMacLeanFRCOG,London;ProfessorJLansac FRCOG,France;ProfessorPSauven,Professor 
+ofSurgicalOncology,BroomfieldHospital,Chelmsfor d,UK .
+Committeeleadpeerreviewerswere:DrKHardingFRCOG,LondonandDrNASiddiquiFRCOG,Glasgow,Scotland .
+Conflictsofinterest :nonedeclared 
+ThefinalversionistheresponsibilityoftheGuidelinesCommitteeoftheRCOG.

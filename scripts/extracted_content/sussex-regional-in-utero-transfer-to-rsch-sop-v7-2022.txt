@@ -1,0 +1,529 @@
+# Extracted from: Sussex Regional In utero transfer to RSCH SOP V7 2022.pdf
+# Guideline ID: sussex-regional-in-utero-transfer-to-rsch-sop-v7-2022
+# Content length: 20261 characters
+# Processing date: 1750066902.0214028
+
+1 
+
+Preterm In-Utero Transfer 
+Standard Operating Procedure 
+
+For Sussex Maternity Units 
+
+ Guideline Contributors 
+Phil Amess Amanda Clifton 
+Niamh Maguire Lynn Woolley 
+Dexter Pascal l Emma Chambers 
+Jo Sinclair Lisa Jeffery 
+Katie Fraser 
+ 
+Review Date 
+Document Status V7 
+2 
+
+Quick Guide for Preterm In -utero Transfer (IUT) 
+
+ Preterm delivery threatened 
+< 27 weeks gestation for LNU s 
+< 28 weeks, multiples for LNUs 
+< 32 weeks gestation for SCU s 
+ Aim: safe and timely IUT from Sussex 
+maternity units to RSCH for delivery and care 
+on the NICU 
+ 
+Triage for rapid review at 
+local maternity unit 
+Is delivery imminent? 
+Contractions 
+Condition of cervix 
+CTG 
+Fibronectin test 
+QUiPP app - 
+https:// quipp .org 
+Are there risks that 
+prevent safe transfer? 
+PV bleeding 
+PET 
+Start SBAR form 
+ 
+Delivery not 
+likely or indicated 
+ 
+Monitor and manage 
+locally and consider : 
+Steroids 
+Antibiotics 
+Tocolysis 
+ Likely need for 
+deliver y and 
+safe to transfer 
+ 
+TELEPHONE CONTACTS 
+BSUH CDS: 01273 664793 
+EBS: 0207 407 4999 
+SECAMB : 0300 123 0999 
+ 
+Imminent risk of 
+delivery and / or 
+unsafe to transfer 
+ 
+Delivery at local unit 
+ 
+Ex-utero transfer to NICU 
+ Arrange time critical transfer to the 
+RSCH : 
+Contact labour ward at the RSCH 
+and confirm bed availability 
+No need to check NICU cot status 
+at this stage 
+D/W the RSCH labour ward 
+consultant and if helpful include 
+the NICU consultant 
+Contact EBS if transfer refused 
+Identify midwife for transfer 
+Contact SECAMB for transfer 
+Informat ion to parents 
+ 
+The RSCH labour ward team 
+should inform the NICU of all IUT 
+request s (accepted and refused) 
+Stabilise and start appropriate 
+treatments: s teroids, magnesium, 
+antibiotics and tocolysis. 
+Complete SBAR form for transfer 
+ 
+Delivery 
+following 
+successful IUT 
+ IUT 
+successful but 
+not delivered 
+ The maternity team at the RSCH will make every effort to 
+accept IUTs from Sussex maternity units. 
+Failure to achieve an IUT at <27 or <32 weeks gestation 
+will trigger the referring maternity and neonatal team s to 
+jointly complete an exception report . 
+3 
+ 
+Key Principles 
+A standard operating procedure (SOP) is a set of step by step instructions ensuring 
+that a potential ly complex process can be undertaken in a timely way. Professional 
+judgement may be used in the application of a SOP. 
+ 
+Scope 
+This SOP applies to: 
+• All members of staff who come into contact with the pregnant person being 
+transferred during the antenatal, intrapartum and postpartum periods. 
+• Women being transferred from home to hospital, from site to site and from this 
+Trust to another Trust. 
+ 
+Responsibilities 
+It is the responsibility of all midwifery and medical sta ff to: 
+• Access, read, understand, and apply this guidance 
+• Attend any mandatory training pertaining to this guidance 
+ 
+It is the responsibility of the division to: 
+• Review the SOP in line with national recommendations 
+• Ensure the SOP is accessible to all relevant staff 
+• Monitor outcomes of the SOP 
+ 
+Definition s 
+Preterm labour is defined by the World Health Organisation (WHO)1 as the onset of 
+regular uterine contractions between viability and 37/40 weeks gestation associated 
+with cervical effacement and dilatation. Current guidelines describe a ‘threshold of 
+viability’ between 22 and 26 weeks. 
+Preterm birth is defined as birth between 26+6 weeks to 36+6 weeks gestation. 
+Extreme preterm birth is defined as birth between 22+6 weeks to 26+6 weeks 
+gestation. 
+
+1 https:// www.who.int /news -room/fact -sheets/detail/ preterm -birth 
+4 
+
+Aims 
+• Timely in -utero transfer is achieved for those pregnant mothers most at risk. 
+• 85% of births in Sussex , below 27 completed weeks of pregnancy occur at a 
+maternity unit with a NICU. 
+• The number of unnecessary transfers is reduced . 
+• Patient experience of transfer is improved . 
+• The t ime spent on arranging transfer is reduced . 
+ 
+Indications 
+An in-utero transfer is required when a pregnant person is likely to deliver a baby who 
+requires expertise unavailable at the local baby unit; or when a woman has an illness 
+in pregnancy requiring expertise not available at the local maternity unit. 
+The following criteria apply for in -utero transfer of threatened preterm delivery with in 
+the South East Coast Neonatal Network . 
+Local Neonatal Units (LNU): 
+• <27 weeks gestation and/or an expected birth weight of <800g and <28 weeks 
+gestation multiples shoul d be transferred in -utero to a NICU for delivery. 
+Special Care Units (SCU): 
+• <32 weeks gestation and/or an expected birth weight of <1250g should be 
+transferred in -utero to a NICU or LNU if appropriate . 
+Ex-utero transfer of extreme preterm babies immediately after birth is associated with 
+increased neonatal morbidity and mortality . Importantly some may represent missed 
+opportunities for in -utero transfer . 
+ 
+Trust to Trust Transfer 
+The tertiary maternity site within Sussex is located at the Royal Sussex County 
+Hospital (RSCH) in Brighton. 
+The tertiary centre should accept people in Sussex who are in preterm labour below 
+32 weeks gestation. The expectation is that all below 27 weeks gestation will be 
+accepted. It may be acceptable to transfer in -utero to a LNU at gestations between 27 
+and 32 weeks. Currently there is no LNU within Sussex. Transfer out of the local area 
+to a NICU or LNU should be avoided as it may increase the risk of transfer and be 
+associated w ith increased stress and expense for the pregnant woman and her family. 
+5 
+ 
+Identifying a pregnant person with preterm labour is extremely important and should 
+involve senior obstetric, neonatal and midwifery staff. 
+A thorough clinical assessment of every preg nant person in threatened preterm labour, 
+or deemed to be at risk of delivering preterm, should be performed by the obstetric 
+middle grade before discuss ion of in -utero transfer with the obstetric and neonatal 
+consultant. 
+Transfer following preterm prolonged rupture of membranes should be considered if 
+there is evidence of uterine activity or clinical chorioamnionitis. 
+Full communication between units is vital in the management planning of an in-utero 
+transfer. This must include a MDT discussion within both the transferring and the 
+receiving maternity unit. The decision to transfer can then be reviewed and 
+documented in both the notes and on the MIT system. 
+ 
+Although the Trevor Mann Baby Unit (TMBU) will always accept a Sussex in-utero 
+transfer when it is safe to do so , the neonatal staff should be informed as soon as 
+possible to allow any necessary reorganisation of resources. 
+
+Transfer 
+ 
+Once a decision has been made to transfer i.e. preterm birth is probable or medically 
+indicated for either maternal or fetal condition, the m idwife providing c are for the 
+pregnant person should ensure the following : 
+ 
+• Medical staff at each site are in agreement to transfer the pregnant pe rson 
+• Labour ward coordinators at each site know about and agree to the transfer 
+• Neonatal unit is informed 
+• Maternal consent is gained and documented in notes 
+• SBAR transfer form is completed in full and placed in the notes 
+ 
+The obstetrician providing care should write a clear plan of action in maternal notes . If 
+necessary a copy of all documentation can be kept by the transferring unit, the original 
+must accompany the birthing person. 
+ 
+All in-utero transfers by ambulance will be classed as an emergency unless otherwise 
+indicated. 
+ 
+The labour ward co -ordinator should arrange for an ambulance by phoning ambulance 
+control. 
+ 
+6 
+ 
+• It should be stated that the transfer is an immediate, blue light transfer by a 
+paramedic ambulance. 
+ 
+• The time of the call s hould be documented in the maternal notes by the person 
+making the call. 
+ 
+• The time of the arrival of the ambulance and time of departure from the 
+transferring maternity unit should be documented in the maternal notes by the 
+midwife providing care. 
+ 
+• The time of arrival at the receiving labour ward should be documented in the 
+maternal notes , or a new electronic record commenced, by the midwife 
+providing care. 
+ 
+• The midwife providing care should accompany the pregnant person in the 
+ambulance (bringing approp riate equipment for eventualities during transfer) 
+ 
+• The maternity notes should accompany the pregnant person. On arrival the 
+midwife providing care should give a full handover to the receiving midwife . If 
+possible include the labour ward co -ordinator and on call registrar . The 
+handover should be documented in the notes and the SBAR form signed as 
+confirmation of a complete and proper handover. 
+ 
+Transfer refused or not completed 
+ 
+There may be some incidences when transfer is refus ed. This might be due to the 
+labouring person’s wishes or lack of capacity / staffing at the tertiary centre. Any 
+potential refusal of a Sussex in -utero transfer should be escalated by the RSCH labour 
+ward coordinator to their obstetric labour ward and NICU consultants. Options to 
+facilitate acceptance should be fully explored within MTD discussion s at both the 
+transferring and receiving units. Freeing up capacity or reorganisation of staffing may 
+be possible with only minor delay. It will be necessary to have further unit to unit 
+discussion s at this stage. The transferring unit must record the decision making 
+process in the pregnant person’s no tes and on the MI S. 
+ 
+Failure to achieve an in -utero transfer at <27 weeks for LNUs or <32 weeks gestation 
+for SCUs will trigger the referring maternity and neonatal teams to joint ly complete an 
+exception report. There is a Sussex , Standard Operating Proce dure for the review and 
+learning from preterm babies born outside a unit appropriate for their gestation or 
+weight . The completed e xception report is sent to the Neonatal Network Manager , 
+South East Coast Operational Delive ry Network and the LMS Safety Lead . 
+ 
+7 
+ 
+Useful Links 
+https://www. bapm .org/posts/109 -new-bapm -framework -on-extreme -preterm 
+https:// quipp .org 
+Appendices 
+Appendix 1: SBAR Communication Tool 
+Appendix 2: SECAmb Guidance 
+Appendix 3: SOP for reviewing the learning from preterm births born 
+outside of appropriate unit 
+Appendix 4 : ODN Exception Reportin g Tool 
+
+8 
+ 
+Appendix 1 - SBAR Communication Tool 
+
+S 
+Situation What is happening now? 
+Identify yourself, woman/baby by name, Parity & Gestation Reason for 
+
+Request/briefly describe Current Situation 
+
+B 
+Background What has happened in the past that is relevant? 
+Reason For Admission, 
+
+Significant Medical or Obstetric History 
+
+A 
+Assessment What is the Problem/Issue? 
+Summarise Facts/Findings 
+
+Relevant Observations & MEOWS | Fetal Condition 
+
+R 
+Recommendations What do you think needs to happen now? What does the receiver 
+want you to do? 
+Recommendations/Proposed Plan of Care What Action is Required? 
+
+Ask receiver to repeat key information to ensure understanding. 
+Handover signature Receiver signature 
+
+9 
+ 
+Appendix 2 – SECAmb Guidance 
+
+10 
+
+11 
+ 
+Appendix 3 – SOP for reviewing the learning from preterm births born 
+outside of appropriate unit 
+ 
+Standard Operating Procedure for review and learning from preterm babies born 
+outside a unit appropriate for their gestation or weight 
+ 
+Purpose 
+To provide a framework to support multidisciplinary review and learning of all cases 
+where a baby has been born in a maternity unit that does not have the recommended 
+level of neonatal unit support, according to the South East Coast Neonatal Network 
+Guidance and Process (V4 Sept 2017) 
+To support NHS KLOE target of 85% of deliveries under 27 weeks in the right place; 
+and development of a perinatal pathway for delivery in accordance with NICE quality 
+standard. This work is in support of GIRFT and the Neonatal Critical Care Review. 
+ 
+Scope 
+All maternity units within the Sussex LMS footprint 
+• Eastbourne & Hastings NHS Trust (SCU) – Level 1 
+• Brighton & Sussex University Hospital Trust (NICU) – Level 3 at RSCH site, 
+(SCU) – Level 1 at PRH site 
+• Western & Sussex NHS Foundation Trust (SCU) – Level 1 at the Worthing site, 
+(LNU) – Level 2 at St Richards’s site 
+ 
+The LNU on the St Richard’s site falls within the Wessex neonatal ODN despite the 
+maternity department being part of Sussex LMS. This LNU is also under review as 
+part of the neonatal critical care review. 
+ 
+Categories of unit 
+Whilst every hospital with a labour ward h as the capability to look after a sick or 
+preterm baby who needs intensive care as an emergency; and can do so for a brief 
+period of time – the expertise of an intensive care unit is demonstrated to improve 
+outcomes for these infants. Additionally babies who are born in the wrong centre will 
+then need to undergo a transfer ex -utero, which has also been demonstrated to 
+worsen outcomes; as well as causing increased demand for neonatal transfer 
+services. 
+Neonatal Intensive Care Units (NICUs) are sited alongsi de specialist obstetric and 
+fetal medicine services, and provide the whole range of medical neonatal care for their 
+local population, along with additional care for babies and their families referred from 
+12 
+ 
+the Neonatal Network. Many NICUs in England are co -located with neonatal surgery 
+services and other specialised services. Medical staff in a NICU should have no clinical 
+responsibilities outside the neonatal and maternity services. 
+Local Neonatal Units (LNUs) provide neonatal care for their own catchment 
+population, except for the sickest babies. They provide all categories of neonatal care, 
+but they transfer babies who require complex or longer -term intensive care to a NICU, 
+as required. 
+LNU’s in South East Coast provide care for; 
+• singletons from 27 weeks upwards and birth weight above 800g, 
+• multiple births from 28 weeks upwards and birth weight above 800g. 
+LNU’s can provide short term ventilation for up to 48 hours. The majority of babies 
+over 27 weeks of gestation will usually receive their full care, inc luding short periods 
+of intensive care, within their LNU. Babies expected to deliver below 27 weeks 
+gestation and/or below 800g should be transferred out in -utero to a NICU for delivery. 
+LNUs may receive transfers in from other neonatal services in the Net work; as per 
+Network Pathways. 
+Although LNUs are able to provide short duration of intensive care, where this is likely 
+to continue early contact should be made with the NICU to alert them to the case; in 
+order to offer support and planning in case of the need for transfer. 
+Special Care Units (SCUs) provide care for babies that do not require intensive care. 
+SCU’s in South East Coast Neonatal Network provide care for; 
+• Babies of 32weeks upwards with an expected birth weight of above1250g 
+Babies expected to deliver below the above criteria should be transferred out in -utero 
+for delivery where possible. 
+Any baby requiring intensive care post -delivery should be stabilised and transferred 
+out to an appropriate centre. 
+ 
+Exception Reporting 
+An established proce ss is already in place that is led by the South East Coast 
+Operational Delivery Network (ODN) whereby an exception report is completed for all 
+births that occur outside the recommended setting according to the neonatal network 
+guidance. 
+In order to maximi se learning opportunities to prevent future occurrence of babies born 
+outside the recommended care setting, each case should be reviewed by a 
+multidisciplinary team soon after occurrence. 
+
+13 
+ 
+Review Team 
+The review team should have representation from each of the following: 
+• Consultant Obstetrician 
+• Consultant Neonatologist/Paediatrician with specialist neonatal knowledge 
+• Midwife 
+• Neonatal Nurse 
+The review may be undertaken within an already established MDT meeting such as a 
+Perinatal Mortality & Morbidity meeting. 
+On-line representation from obstetric and/or neonatal team members from the Level 3 
+unit may be helpful in maximising learning opportunities. 
+ 
+Trust process 
+• When a baby meets the criteria for an exception report to be completed, a Datix 
+should be generated from within the relevant Trust within 48 hours of the baby 
+being born. 
+• An exception report should be completed within 7 days by an obstetric 
+consultant and forwarded to the Maternity Governance Lead for inclusion at the 
+next designate d forum for case review and discussion. There is a proforma for 
+reporting: Exception report for births in the wrong place (South East Coast 
+ODN). A copy of which can be seen in appendix 4 of this document. 
+• Following the MDT review, the finalised and comple ted exception report should 
+be sent to the ODN and LMS. 
+• A summary of the case review and learning should be shared at the next LMS 
+Quality & Safety Forum. The LMS Safety Lead will contact each Trust ahead of 
+the forum to ascertain whether there are any ca ses to be presented. 
+• Learning from each case will be shared by the LMS with the ODN at the next 
+ODN Governance Meeting. 
+
+14 
+ 
+Appendix 4: ODN Exception Reporting Tool 
+ 
+South East Operational Delivery Network 
+Exception report for births in the wrong place: 
+ <27 week or ˂28/40 multiples delivered in a centre without a NICU 
+<31 or 32 weeks (dependent of service spec) in a centre without a NICU or LNU 
+ 
+Unit Name: 
+BadgerNet ID: Date / time of delivery: Gestation at birth: 
+Birthweight: Number Fetus (>1 for 
+multiple birth) : Time of admission 
+ 
+Date of discharge Hospital of discharge (if 
+transferred) Discharge destination. 
+Date / time of presentation of mother: 
+ 
+Start of labour: Date / time / type ( Iatrogenic or spontaneous) 
+ 
+Rupture of membranes: Date / time / type 
+ 
+Start of 2nd stage: Date / time 
+ 
+Date and time of delivery : 
+ 
+Method of delivery 
+ 
+Please outline Concerns at presentation and rough timeline of events to 
+delivery if not covered above 
+
+Date of last presentation of mother (prior to delivery episode): 
+Please describe reason for presentation , eg routine outpatient 
+appointment 
+Identify any risk factors or concerns documented for pre term birth at 
+this stage. E.g. Previous pre -term delivery, Current multiple pregnancy 
+PET, APH, Signs of infection, Preterm Rupture of Membranes, Prolonged 
+Rupture of Membranes ˃ 18 /24 hrs (please c ircle), Shortened cervix on 
+scan, Previous cervical treatment, Fetal abnormality, Placenta Praevia , IVF 
+pregnancy 
+15 
+
+Prior to delivery were any of the following tests/investigations tried? 
+Fibronectin test : if so state positive result date or negative re sult date 
+ 
+Ante natal steroids given : date & time 
+ 
+Mg SO4 given : Loading dose date and time 
+ 
+Maintenance dose date & time 
+ 
+Antibiotics : date & time 
+ 
+Rescue cerclage : date 
+
+Were efforts made to undertake an in - utero transfer 
+prior to delivery? Ye
+s N
+o 
+Please outline reason why transfer did not occur ( e.g. Tertiary NICU unable 
+to accept, Tertiary Obstetric service unable to accept, Delivery occurred prior 
+to transfer, Maternal condition unsafe for transfer, Delivery indicated 
+immediately. 
+
+Prior to delivery did communications take place with a 
+tertiary o bstetric consultant? Y
+e
+s N
+o 
+If no, why not? 
+ 
+If yes, name / title of contact at tertiary unit and outline of 
+communication that took place: 
+
+Prior to delivery did communications take place with a 
+tertiary NICU consultant? Y
+e
+s N
+o 
+If no, why not? 
+
+16 
+ 
+If yes, name / title of contact at tertiary unit and outline of communication that 
+took place: 
+
+Prior to delivery did communications take place with a 
+senior midwife on labour ward of the NICU? Y
+e
+s N
+o 
+If no, why not? 
+ 
+If yes, name / title of contact at tertiary unit and outline of communication that 
+took place: 
+ 
+Have you reviewed this as a maternity clinical incident 
+within your Trust? Y
+e
+s N
+o 
+Name / title of reviewer(s) 
+ 
+Please comment on any learning coming out of review. Or other learning. 
+(e.g. Were any opportunities missed, could anything have been done 
+differently , are there processes that could be improved in the future,) 
+
+Outcome of baby : 
+(eg died, transferred. If remained on unit please say whether discussed with 
+tertiary centre (If so who & when) 
+
+Exception Reported by: 
+Name and Title: Date: 
+Organisation:

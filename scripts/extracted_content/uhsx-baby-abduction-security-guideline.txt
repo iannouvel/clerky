@@ -1,0 +1,457 @@
+# Extracted from: UHSx Baby Abduction & Security guideline.pdf
+# Guideline ID: uhsx-baby-abduction-security-guideline
+# Content length: 20639 characters
+# Processing date: 1750066902.070567
+
+CLINICAL GUIDELINE 
+Due for review: 
+Name of Guideline : Baby Abduction & Newborn Security v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 1 of 14 Please note, IF DOCUMENT IS PRIN TED, IT MAY BECOME OUT OF DATE 
+ 
+TRUST CLINICAL GUIDELINE 
+Baby Abduction & Newborn Security 
+ 
+Overview 
+This guideline aims to: 
+• To prevent the abduction of babies from the hospital environment during the immediate 
+postnatal period . 
+• To keep mothers and birthing parents, and babies together, ensuring early infant attachment 
+and wellbeing . 
+• To provide guidance on the process to follow in the event of suspected or actual baby 
+abduction . 
+ 
+Owner S. Adamson 
+Author/further information S. Barwick, Named Safeguarding Midwife 
+Guideline version v1.0 
+Related policies None 
+Related protocols/procedures SRH&WH: 
+Postnatal Care 
+PRH&RSCH: 
+Postnatal Care 
+UHSx: 
+Standards None 
+Superseded documents SRH&WH: 
+CG15006 Baby Abduction 
+PRH&RSCH: 
+MP059 Baby Abduction 
+MP075 Newborn Security CLINICAL GUIDELINE 
+Due for review: 
+Name of Guideline : Baby Abduction & Newborn Security v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 2 of 14 Review due 1st April 202 8 
+Date uploaded 22nd April 2 025 
+ 
+Approval 
+JOGG Date approved 12/03/25 
+Women & Children’s Clinical Effectiveness 
+Meeting Date approved 20/03/25 
+Consultation 
+Security Manager SRH&WH Date consulted 12/11/24 
+Security Manager PRH&RSCH Date consulted 12/11/2 4 
+Emergency Planning Manager Date consulted 12/11/2 4 
+Ratification 
+Clinical Document Approval Group Date approved 01/04/25 
+ CLINICAL GUIDELINE 
+Due for review: 
+Name of Guideline : Baby Abduction & Newborn Security v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 3 of 14 
+ 
+Table of c ontents 
+1.0 Introduction ................................ ................................ ................................ ................ 4 
+2.0 Scope ................................ ................................ ................................ ........................ 4 
+3.0 Responsibilities ................................ ................................ ................................ .......... 4 
+4.0 Abbreviations used within this guideline ................................ ................................ ..... 5 
+5.0 Good practice points to ensure safety of babies and infants ................................ ....... 5 
+5.1 Mother or birthing parent and baby ................................ ................................ ............ 5 
+5.2 Staff ................................ ................................ ................................ ........................... 5 
+5.3 Visitors ................................ ................................ ................................ ....................... 5 
+5.4 Security measures ................................ ................................ ................................ ..... 6 
+5.5 CCTV ................................ ................................ ................................ ......................... 6 
+6.0 Action in the event of a suspected or actual baby abduction ................................ ...... 6 
+6.1 Immediate action ................................ ................................ ................................ ........ 6 
+6.2 Porter and security actions ................................ ................................ ......................... 7 
+6.3 Ongoing actions ................................ ................................ ................................ ......... 7 
+7.0 Monitoring ................................ ................................ ................................ .................. 9 
+Appendix 1: Quick Guide - Action in the event of baby / infant abduction ............................. 10 
+Appendix 2: Baby / Infant Abduction Log ................................ ................................ .............. 11 
+Appendix 3: Guideline Version Control Log ................................ ................................ .......... 12 
+Appendix 4: Due Regard Assessment Tool ................................ ................................ .......... 13 
+Appendix 5: Template Dissemination, Implementation and Access Plan .............................. 14 
+
+ CLINICAL GUIDELINE 
+Due for review: 
+Name of Guideline : Baby Abduction & Newborn Security v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 4 of 14 
+Baby Abduction & Newborn Security 
+1.0 Introduction 
+University Hospitals Sussex (UHSussex) NHS Foundation Trust is committed to meeting its 
+statutory and legal responsibilities to provide a safe and secure working environment. This 
+guidance outlines the responsibility that employees have in the promotion of a secure 
+environment for themselves and others. 
+Baby and infant safety and the prevention of abduction are a priority within the Women & 
+Child ren’s Division. 
+Employees of UHSussex in partnership with mothers and birthing parent s and their families, will 
+comply with all organisational and local safety and security measures in existence. This will 
+involve education of staff, mothers and visitors, the distribution of visiting guidance and 
+adherence to individual unit precautions and security systems i.e. identification bands and 
+‘access swipe card’ systems. 
+2.0 Scope 
+This guidance applies to staff working within the maternity, portering, security and switchboard 
+departments. 
+3.0 Responsibilities 
+Staff have the responsibility to: 
+• Access, read, understand and follow this guidance . 
+• Use their professional judgement in the application of this guidance . 
+• Uphold the principles of good practice outlined in the guidance and act swiftly in the 
+event of a suspected infant abduction. 
+Management are expected: 
+• To ensure the guidance is reviewed as required in line with Trust and National 
+recommendations . 
+• Senior/Lead Midwives/Nurses must ensure that the effectiveness of the guidance is 
+monitored through the facilitation of inclusion in mandatory training and practice drills . 
+Service users are expected: 
+• To respect and adhere to visiting hours and their allied restrictions outlined in the 
+guidance CLINICAL GUIDELINE 
+Due for review: 
+Name of Guideline : Baby Abduction & Newborn Security v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 5 of 14 4.0 Abbreviations used within this guideline 
+CCTV Closed -Circuit Television ID Identification 
+NNU Neonatal Unit SCBU Special Care Baby Unit 
+ 
+5.0 Good practice points to ensure safety of babies and infants 
+5.1 Mother or birthing parent and baby 
+• Women and birthing people admitted to the maternity department should have an 
+identification (ID) band; stating their name, hospital number and date of birth, placed on 
+the wrist or ankle. 
+• Newborn babies should have two identification bands placed on ankles as soon as 
+possible after birth. Details recorded on the band must include: 
+­ baby’s sex 
+­ mother or birthing parent ’s full name 
+­ baby’s hospital number 
+­ date and time of birth. 
+This includes all readmissions to the hospital after the birth. 
+• These must be checked with the mother and birthing parent or partner or a 2nd 
+member of staff. 2 ID bands should be in place at all times until the baby is discharged 
+home. 
+• Mothers and birthing parents should be reminded to be vigilant at all times and asked 
+to notify a member of staff if 2 ID bands are not in place at any time. They will be 
+replaced at this time. 
+5.2 Staff 
+All staff entering the units must wear identity badges with photograph and name clearly 
+displayed. 
+Staff will ensure any information about prohibited visitors will be circulated with other staff on 
+shift, to include all areas of Maternity and NNU/SCBU. Security will also be informed if 
+appropriate. 
+5.3 Visitors 
+Wards in the maternity department are locked and operated by a door buzzer system for non -
+staff members. This ensures visitors entering will need to identify themselves to staff. Visitors are 
+also asked not to let other people in at the same time but to ask them to buzz and wait. 
+ CLINICAL GUIDELINE 
+Due for review: 
+Name of Guideline : Baby Abduction & Newborn Security v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 6 of 14 5.4 Security measures 
+The midwife will check the baby ID bands with the mother or birthing parent or birth partner or a 
+2nd member of staff following birth, prior to placing them on the baby. 
+The presence of 2 baby identification bands will be checked daily whilst in hospital. If an ID band 
+is missing, it will be replaced immediately. 
+The midwife responsible for care of family would be aware of if baby needs to be moved from the 
+ward (e.g. for treatment/investigations in different hospital departments ) 
+5.5 CCTV 
+CCTV is available and images are kept for 28 days. Security can arrange for the images to be 
+kept for longer if required for evidence. 
+6.0 Action in the event of a suspected or actual baby abduction 
+(See appendix 1 ) 
+6.1 Immediate action 
+On suspecting abduction of a baby, the midwife will confirm the abduction and then inform the 
+person in charge of the ward. 
+The alarm will be raised by a ‘ 2222 ’ phone call to switchboard using the phrase 
+’MATERNITY LOCKDOWN ’ followed by the affected ward, which will alert them to contact the 
+following relevant staff members by emergency bleep (see appendix 1 & appendix 2 ): 
+• Security 
+• Porters 
+• On-call maternity bleep holder /coordinator 
+• Clinical site manager 
+• On-call Paediatric / Neonatal registrar 
+• On-call obstetric registrar 
+• On-call Paediatric /Neonatal matron / senior nurse 
+• On-call Obstetric Consultant 
+Call security immediately after 2222 call to give a description of suspected persons. 
+THE WARD SHOULD INFORM POLICE IMMEDIATELY ON 9 999 CLINICAL GUIDELINE 
+Due for review: 
+Name of Guideline : Baby Abduction & Newborn Security v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 7 of 14 Maternity bleep holder to coordinate and inform Maternity Manager on Call. They will inform the 
+Senior Maternity Manager on Call. 
+The following should be also notified: 
+• Head of Midwifery 
+• Ward managers of adjacent wards 
+• Director of Midwifery 
+• Communications manager 
+• On Call hospital Executive 
+• Facilities manager 
+The on -call maternity bleep holder (or ward manager) will mobilise staff and co -ordinate 
+proceedings. 
+Secure entrances and exits to ward area. This will be carried out by available staff members, 
+porters and /or security personnel. 
+Ensure staff do not handle or remove any of the abducted baby’s clothing , blankets, equipment & 
+cot. 
+The Baby / Infant Abduction log ( appendix 2 ) should be used to document proceedings. 
+6.2 Porter and security actions 
+Portering and security will follow their lockdown guidance to secure the hospital. UHSC074 
+Missing persons 
+The portering and security services at will organise supervision of the hospital exits identifying 
+key exits relevant to the incident. 
+6.3 Ongoing actions 
+Midwifery staff will be delegated to: 
+• Move the mother or birthing parent of the abducted baby/infant to a private area for 
+comfort an d support and to remain with them throughout. 
+• Check th e bands of all remaining babies/ infants on the ward . 
+• Inform other mothers and birthing parents regarding the situation in order that a state of 
+alert can be maintained. 
+• Reassure the mothers and birthing parents on the ward and provide support. 
+• Arrange for family members to be informed and request their attendance on the ward to 
+support the mother or birthing parent . CLINICAL GUIDELINE 
+Due for review: 
+Name of Guideline : Baby Abduction & Newborn Security v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 8 of 14 • Observe and follow where possible the abductor if event witnessed and description of 
+person obtained but must ensure personal safety . 
+• Search immediate areas, i.e. wards, toilets, corridors, offices . 
+Staff will be expected to co -operate with the police by giving an accurate history of events in the 
+ward prior to or during the abduction. 
+Media enquiries will be managed via the Trust’s Communications Manager (see appendix 1 ) in 
+conjunction with the senior management team and the police department. 
+A multidisciplinary case review will take place within 24 hours of the event occurring and findings 
+reported accordingly. 
+Opportunity will be provided for staff and women and birthing people to reflect on the situation, 
+and professional support and advice offered based on the individuals’ needs by the senior 
+midwife/nurse. This may include a debrief for staff involved in the incident. CLINICAL GUIDELINE 
+Due for review: 
+Name of Guideline : Baby Abduction & Newborn Security v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 9 of 14 
+7.0 Monitoring 
+Issue being 
+monitored Monitoring 
+method Responsibility Frequency Reviewed by 
+and actions 
+arising followed 
+up by 
+Baby Abduction Datix Patient Safety 
+Midwives On-going Maternity Quality 
+& Safety Meeting 
+ 
+Maternity and paediatric staff will be educated about the risk of baby abduction. Training will be 
+carried out locally in the form of ‘Practice Drills’, undertaken to ensure staff are familiar with the 
+relevant action to be taken in the event of abduction. CLINICAL GUIDELINE 
+Due for review: 
+Name of Guideline : Baby Abduction & Newborn Security v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 10 of 14 Appendix 1: Quick Guide - Action in the event of baby / infant abduction 
+PROCEDURE RATIONALE 
+INFORM 
+1. Abduction suspected . 
+2. Confirm abduction and raise the alarm – call ‘2222 ’ and 
+state: ’MATERNITY LOCKDOWN ’ and location of suspected 
+abduction. This will alert: 
+• Security 
+• Porters 
+• On-call Maternity bleep holder/coordinator 
+• On-call Obstetric Consultant 
+• On-call Obstetric Registrar 
+• On-call Paediatric/Neonatal Registrar 
+• On-call Paediatric/Neonatal matron / senior nurse 
+• Clinical Site Manager 
+3. Call Security immediately after 2222 call to give a description 
+of suspected persons . 
+4. Phone police on 9 999. 
+5. Maternity bleep holder to coordinate and inform Manager on 
+Call. They will inform: 
+• Senior manager on call 
+The following people should also be notified: 
+• Ward managers of adjacent wards 
+• Head of midwifery 
+• Director of Midwifery 
+• Communications Manager 
+• On-call Hospital Executive 
+Prevent delay 
+PROTECT CRIME SCENE 
+Mobilise staff and co -ordinate proceedings 
+
+Security will escalate their lockdown 
+procedure once contacted by area with 
+description. 
+ 
+ACT 
+1. Secure entrance and exits to ward area. 
+2. Commence Baby/ Infant Abduction Log. 
+3. Staff will not remove the empty cot or touch any of the 
+clothing and the room will be secured. 
+4. Senior / Lead Midwife to delegate tasks: 
+• Moving mother or birthing person of abducted baby to a 
+private area and stay with them. 
+• Observe/follow abductor if identified (ensure personal 
+safety) . 
+• Check remaining ward areas . 
+• Comfort and support other women & birthing people. 
+5. Check other babies’ ID bands . To ensure all staff and visitors remain in 
+area. To ensure clear documentation of 
+event. 
+Needed as evidence by the police. 
+
+Provide support and comfort. 
+Halt the abduction. 
+Ensure baby not held elsewhere. 
+To reassure women during a stressful time. 
+ 
+Check identity, ensure mother & baby bands 
+match. 
+6. Co-operate with the police Aid the investigation 
+7. Direct media attention to Communications and Engagement 
+Team: 
+Office hours: Reporters should 
+email: uhsussex.media@nhs.net 
+Out of hours: 01903 285285 to reach the colleague on -call. 
+To channel media attention via the correct 
+sources in conjunction with the police . 
+STAND DOWN 
+1. Inform all when situation returns to normal . Facilitate return to normal duties 
+2. Complete Datix Incident Form . Compliance with Trust policy CLINICAL GUIDELINE 
+Due for review: 
+Name of Guideline : Baby Abduction & Newborn Security v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 11 of 14 Appendix 2: Baby / Infant Abduction Log 
+The location 
+Date Time Hospital Ward 
+ 
+The baby / infant 
+Male/Female Age / DOB Ethnicity Clothing 
+ 
+The abductor 
+Male/Female Age (approx) Ethnicity Description Related to 
+child? 
+ 
+Immediate action 
+Time of ‘2222’ 
+call Time of 999 to 
+police Call security and give 
+description of suspected 
+abductor Secure ward 
+ 
+Action Time completed 
+Secure entrance and exits to ward area. 
+Secure area of suspected abduction. Do not remove the 
+empty cot or touch any of the clothing. 
+Moving mother or birthing parent of abducted baby to a private 
+area and stay with them. 
+Observe abductor if identified (ensure personal safety) . 
+Check remaining ward areas. 
+Comfort and support other women and birthing people . 
+Check other babies’ ID bands. 
+Name of staff on duty Role 
+
+ CLINICAL GUIDELINE 
+Due for review: 
+Name of Guideline : Baby Abduction & Newborn Security v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 12 of 14 Appendix 3: Guideline Version Control Log 
+Version Date Author Comment 
+1.0 January 2025 Sarah Barwick, 
+Named Midwife for 
+Safeguarding New Trust wide guideline replacing: 
+• CG15006 Baby Abduction (SRH&WH) 
+• MP059 Baby Abduction (PRH&RSCH) 
+• MP075 Newborn Security (PRH&RSCH) 
+ CLINICAL GUIDELINE 
+Due for review: 
+Name of Guideline : Baby Abduction & Newborn Security v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 13 of 14 Appendix 4: Due Regard Assessment Tool 
+To be completed and attached to any guideline when submitted to the appropriate committee for 
+consideration and approval. 
+ Yes/No Comments 
+1. Does the document/guidance affect one group less or 
+more favourably than another on the basis of: 
+ Age No 
+ · Disability No 
+ · Gender (Sex) No 
+ · Gender Identity No 
+ · Marriage and civil partnership No 
+ · Pregnancy and maternity No 
+ · Race (ethnicity, nationality, colour) No 
+ · Religion or Belief No 
+ · Sexual orientation, including lesbian, gay and bisexual 
+people No 
+2. Is there any evidence that some groups are affected 
+differently and what is/are the evidence source(s)? No 
+3. If you have identified potential discrimination, are there 
+any exceptions valid, legal and/or justifiable? NA 
+4. Is the impact of the document likely to be negative? No 
+5. If so, can the impact be avoided? NA 
+6. What alternative is there to achieving the intent of the 
+document without the impact? NA 
+7. Can we reduce the impact by taking different action 
+and, if not, what, if any, are the reasons why the 
+guideline should continue in its current form? NA 
+8. Has the document been assessed to ensure service 
+users, staff and other stakeholders are treated in line 
+with Human Rights FREDA principles (fairness, respect, 
+equality, dignity and autonomy)? Yes 
+ 
+If you have identified a potential discriminatory impact of this guideline, please refer it to [Insert 
+Name], together with any suggestions as to the action required to avoid/reduce this impact. For 
+advice in respect of answering the above questions, please contact uhsussex.equality@nhs.net 
+01273 664685). CLINICAL GUIDELINE 
+Due for review: 
+Name of Guideline : Baby Abduction & Newborn Security v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 14 of 14 Appendix 5: Template Dissemination, Implementation and Access Plan 
+To be completed and attached to any guideline when submitted to Corporate Governance for 
+consideration and TMB approval. 
+ 
+ Dissemination Plan Comments 
+1. Identify: 
+ Which members of staff or staff groups will be affected 
+by this guideline? Maternity staff, switchboard, 
+portering and security. 
+ How will you confirm that they have received the 
+guideline and understood its implications? Dissemination through the 
+usual communication channels 
+and highlighted at Safety 
+Huddles. 
+Leads for switchboard, 
+portering and security will be 
+notified and asked to 
+disseminate to their staff. 
+ How have you linked the dissemination of the guideline 
+with induction training, continuous professional 
+development, and clinical supervision as appropriate? All new members of staff are 
+shown where to access 
+Clinical documents that are 
+relevant to their area of 
+practice. 
+2. How and where will staff access the document (at 
+operational level)? Accessed by staff via 
+Sharepoint . 
+ 
+ Yes/No Comments 
+3. Have you made any plans to remove 
+old versions of the guideline or related 
+documents from circulation? Yes Previous versions will be 
+archived as part of the 
+uploading onto sharepoint 
+process. 
+4. Have you ensured staff are aware the 
+document is logged on the 
+organisation’s register? Yes Dissemination plan includes 
+notifying staff via email, 
+departmental noticeboards, 
+and safety huddles. 
+Library to add links to other 
+relevant sections of 
+sharepoint.

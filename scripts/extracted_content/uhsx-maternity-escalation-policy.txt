@@ -1,0 +1,1537 @@
+# Extracted from: UHSx Maternity Escalation Policy.pdf
+# Guideline ID: uhsx-maternity-escalation-policy
+# Content length: 72939 characters
+# Processing date: 1750066902.1618962
+
+UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 1 of 43 
+ 
+UH Sussex Maternity Escalation Policy 
+Summary statement: How does the 
+document support patient care? The purpose of this guideline is to provide good practice 
+evidence for staff in the care of pregnant women and people 
+in labour in all care settings. 
+Staff/stakeholders involved in 
+development: Head of Midwifery, Clinical Governance Lead, Clinical 
+Midwifery Managers, Registered Midwives, Consultant 
+Obstetricians and Labour Ward Lead. 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Head of midwifery, Better Births Midwife, Clinical 
+Effectiveness Support Midwife 
+For use by: All Medical and Midwifery staff involved in the care of 
+pregnant women and people 
+Purpose: This document is to assist the maternity service at UH 
+Sussex to maintain the safety of mothers and birthing parents 
+and babies at all times and maintain a safe working 
+environment for staff. The policy outlines procedures to be 
+implemented when the whole system or one constituent part 
+of the system are unable to manage the demand being 
+placed on it. 
+This document supports: Care Quality Commission 
+NICE CG190 Intrapartum care for healthy women and babies 
+(updated 2022) 
+Key related documents: Trust Governance Policy Document 
+Trust Patient Safety Business Continuity / Major Incident 
+Birthrate plus Acuity tool 
+Approved by: Joint Obstetric Guideline Group 15th November 2023 
+Date uploaded 17th January 2024 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Trust Management Board 
+Ratification Date: January 2024 
+Expiry Date: February 2025 
+Review date: August 2024 
+If you require this document in another format such as Braille, large print, audio or 
+another language please contact the Trusts Communications Team 
+Reference Number: UHSC022 UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 2 of 43 
+ 
+Version Date Author Status Comment 
+1.0 December 2021 Consultant 
+Obstetrician / IT 
+Audit and CE 
+Midwife Archived New Trust wide policy 
+replacing: 
+• WSHT P54 Escalation and 
+contingency plan – 
+Maternity unit divert & 
+closure policy 
+• MP058 Maternity 
+Escalation Protocol 
+1.1 September 2023 C. Parr, Clinical 
+Governance Lead Archived New appendix 17: Handover 
+of documentation following 
+divert / transfer of patient 
+across hospital sites. 
+New appendix 18: UHS 
+Student escalation. 
+1.2 November 2023 CE Team LIVE Appendix 10b: SECAmb 
+Divert form updated. 
+ 
+The interpretation and application of clinical guidelines will remain the 
+responsibility of the individual clinician. 
+If in doubt contact a senior colleague or expert. UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 3 of 43 
+
+Contents 
+1.0 Aim of this document ................................ ................................ ................................ .. 4 
+2.0 Scope ................................ ................................ ................................ ......................... 4 
+3.0 Responsibilities ................................ ................................ ................................ .......... 4 
+4.0 Abbreviations used in this guideline ................................ ................................ ............ 4 
+5.0 Introduction ................................ ................................ ................................ ................ 5 
+6.0 Escalation definitions and triggers ................................ ................................ .............. 5 
+7.0 Escalation Process: Red - MOPEL Level 3 ................................ ................................ . 8 
+8.0 Risk assessments and mitigation of risk reviews ................................ ......................... 8 
+8.1 Insufficient staff ................................ ................................ ................................ ......... 10 
+8.2 Insufficient beds ................................ ................................ ................................ ......... 10 
+8.3 Closure of the neonatal unit ................................ ................................ ....................... 10 
+8.4 Provision of urgent or emergency care ................................ ................................ ...... 11 
+9.0 Notifying service users ................................ ................................ .............................. 11 
+10.0 Notifying other departments/aligned specialties and Ambulance Control .................... 12 
+11.0 Reopening the unit and follow -up................................ ................................ ............... 12 
+12.0 Monitoring ................................ ................................ ................................ ................. 13 
+References ................................ ................................ ................................ ........................... 13 
+Appendix 1: STRATEGIC COMMANDER ................................ ................................ ............. 14 
+Appendix 2: TACTICAL COMMANDER ................................ ................................ ................ 15 
+Appendix 3: CLINICAL SITE MANAGER ................................ ................................ .............. 16 
+Appendix 4: MATERNITY MANAGER ON-CALL ................................ ................................ .. 17 
+Appendix 5: CONSULTANT OBSTETRICIAN ON-CALL ................................ ....................... 20 
+Appendix 6: DELIVERY SUITE COORDINATOR ................................ ................................ .. 21 
+Appendix 7: NEONATAL CONSULTANT ................................ ................................ .............. 24 
+Appendix 8: Maternity Risk Assessment form ................................ ................................ ....... 25 
+Appendix 9: Communication checklist for diverting from a maternity unit or closing all UH 
+Sussex Maternity units ................................ ................................ ................................ .......... 26 
+Appendix 10a: Implementation of a Divert SECAmb only ................................ ...................... 28 
+Appendix 10b: Ambulance Specialist Divert Request form (SECAmb only) ........................... 29 
+Appendix 11: List of maternity units contacted ................................ ................................ ...... 31 
+Appendix 12: Contact telephone numbers ................................ ................................ ............. 32 
+Appendix 13: Record of women and people diverted ................................ ............................ 34 
+Appendix 14: Mutual Aid document ................................ ................................ ....................... 35 
+Appendix 15: Client letter ................................ ................................ ................................ ...... 35 
+Appendix 16: Request for mutual aid from other NHS Trusts ................................ ................ 37 
+Appendix 17: Handover of documentation following divert / transfer of patient across 
+hospital sites ................................ ................................ ................................ .............. 38 
+Appendix 18: UHS Student escalation ................................ ................................ .................. 39 
+Due Regard Assessment Screening ................................ ................................ ..................... 39 
+Due Regard Assessment Tool ................................ ................................ .............................. 42 
+Dissemination, Implementation and Access Plan ................................ ................................ .. 43 UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 4 of 43 
+ UH Sussex Maternity Escalation Policy 
+1.0 Aim of this document 
+ 
+The purpose of this document is to provide a framework for the declaration and response to 
+a Maternity Divert. The overriding objectives of the plan are to provide: 
+ 
+• Provide a framework and key actions for responding to a disruptive incident. 
+• To ensure that appropriate steps are undertaken if closure of the Maternity Unit is 
+unavoidable. 
+• Provide an overview and prioritisation of essential services delivered by the 
+practice to patients and associated supporting functions. 
+• To ensure a standardised approach to diverting pregnant women and people to 
+another acute site when closing the maternity unit is unavoidable. 
+• Restore normal operations as soon as possible. 
+ 
+2.0 Scope 
+ 
+This guideline applies to: 
+• Midwives 
+• Obstetricians 
+• Maternity Managers 
+ 
+3.0 Responsibilities 
+ 
+Midwives & Obstetricians: 
+• To access, read, understand and follow this guidance. 
+• To use their professional judgement in application of this guidance. 
+ 
+Management: 
+• To ensure the guideline is reviewed as required in line with Trust and National 
+recommendations. 
+• To ensure the guidance is accessible to all relevant staff. 
+ 
+4.0 Abbreviations used in this guideline 
+ 
+SMOC - Senior Manager On-Call DoM - Director of Midwifery 
+CSM - Clinical Site Manager IOL - Induction of Labour 
+DOC - Director On-Call CS - Caesarean Section 
+HoM - Head of Midwifery MIS - Maternity Information System 
+ICS - Integrated Care System EOC - Emergency Operations Centre 
+MLU - Midwifery Led Unit MOPEL - Maternity Operational Pressures 
+Escalation Levels 
+OPEL - Operational Pressures Escalation 
+Levels SECamb - South East Coast Ambulance 
+Service 
+SCAS - South Central Ambulance Service UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 5 of 43 
+ 
+5.0 Introduction 
+ 
+In the rare event of capacity or staffing issues, admissions to the maternity units within UH 
+Sussex may need to be restricted or closed. This policy gives guidance for the Maternity and 
+Neonatology workforce as well as Command Roles including Clinical Site Managers (CSMs), 
+Senior Managers On -Call (SMOCs) and Director On -Call (DOC) on the appropriate steps to 
+be taken if closure is unavoidable and to ensure a standardised approach to diverting 
+pregnant women and people to other Trusts for maternity care. 
+ 
+Each situation must be assessed carefully at the time. Women and people cannot be refused 
+admission until a decision to close/divert is finalised. 
+ 
+All CSMs, SMOCs, DOCs and staff working within the maternity and neonatal workforce are 
+required to have read this document, and be able to access this if there are any needs to 
+escalate areas of concerns that may require a review of the services being provided. 
+ 
+Whilst it is extremely rare for the unit to have to close, it will only close or restrict admissions 
+as a last resort after a clinical and strategic assessment of the risks within the Maternity Unit / 
+Neonatal Unit. 
+ 
+The decision to close and divert care requires an agreement by the Consultant Obstetrician 
+On-Call and Head of Midwifery / Director of Midwifery in association with the Consultant 
+Neonatologist On-Call. Closure of the unit will have major implications for all pregnant women 
+and people booked for care, neighbouring hospitals and the Neonatal Services. Consensus 
+to close will only be considered when all other potential solutions are exhausted. 
+ 
+6.0 Escalation definitions and triggers 
+ 
+Green – MOPEL Level 1: 
+The maternity service operates normally across all services and will be expected to accept 
+diverted women and people from other maternity units on a case by case basis if needed. 
+Triggers 
+• Bed capacity: 
+o Delivery suite: At least 2 beds available. 
+o Antenatal / postnatal wards: At least 2 beds available. 
+• Medical and midwifery staffing: 
+o Medical staffing: Consultant, Registrar and SHO all available on shift. 
+o Midwifery staffing: Less than -2 acuity in midwifery staffing. 
+• Other acuity and elective workload: 
+o Elective caesarean sections able to proceed, theatre staff available to undertake 
+elective activity. 
+o Induction of labour (IOL): Max of 3 women and people awaiting transfer to delivery 
+suite for IOL. UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 6 of 43 
+ Black – MOPEL Level 4: 
+Decisions taken to suspend maternity services across UH Sussex Maternity Units, unable to 
+manage demand within UH Sussex Maternity Units and no other actions are possible to 
+improve the situation. 
+Amber – MOPEL Level 2: 
+The staffing levels and skill mix are not appropriate for the workload. Work activity has to be 
+prioritised. Internal escalation processes must be activated within each UH Sussex maternity 
+unit following internally agreed actions, so that it is possible for the clinical activity to be 
+managed within own resources. 
+Triggers 
+• Bed capacity: 
+o Delivery suite: Only 1 bed available. 
+o Antenatal / postnatal ward: Only 1 bed available. 
+• Medical and midwifery staffing: 
+o Medical staffing: Consultant present but either Registrar or SHO not available. 
+o Midwifery staffing: Acuity of -2.5 or less in midwifery staffing. 
+• Other acuity and workload: 
+o Delayed or rescheduled elective caesarean sections, unavailable to undertake 
+elective activity. 
+o Induction of labour (IOL): High risk women and people awaiting transfer to delivery 
+suite for IOL or 5 outstanding low risk IOL. 
+o Consider ability to support labouring women and people at home. 
+ 
+Review situation 2 hourly 
+ 
+Red – MOPEL Level 3: 
+Unable to provide safe care to women and people and babies and the situation is likely to 
+last more than an hour in either hospital or community. Diversion needed between UH Sussex 
+Maternity Units. 
+Triggers 
+• Bed capacity: 
+o Delivery suite: No beds available on delivery suite. 
+o Antenatal / postnatal ward: No beds available. 
+• Medical and midwifery staffing: 
+o Medical staffing: Consultant unavailable for shift on delivery suite. 
+o Midwifery staffing: Acuity of -3 or less in midwifery staffing. 
+o Inability to provide 1:1 care in labour. 
+• Other acuity and workload: 
+o Either Elective CS activity OR obstetric theatre team unavailable. 
+o Neonatal Unit closed and high-risk obstetric patients likely to birth. 
+o Inability to support labouring women and people at home. 
+ 
+Review situation hourly 
+ UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 7 of 43 
+ 
+ Triggers 
+• Inability to resolve Red Triggers within 4 hours. 
+• Inability to provide 1:1 care in labour. 
+• Decisions taken to suspend maternity services, unable to manage demand within 
+UH Sussex Maternity Units and no other actions are possible to improve the 
+situation. 
+• The UH Sussex Maternity Units are unable to accommodate labouring women and 
+people. 
+ 
+Review situation hourly UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 8 of 43 
+ 
+Declare to 
+Integrated Care 
+System (ICS) 
+See Appendix 14 
+7.0 Escalation Process: Red - MOPEL Level 3 
+ 
+In Hours Out of Hours 
+ 
+Decide Decide 
+
+Delivery 
+Suite 
+Coordinator Consultant 
+Obstetrician 
+ 
+DoM/HoM 
+Delivery 
+Suite 
+Coordinator 
+
+Maternity Consultant 
+Obstetrician 
+Manager On-call 
+
+Divisional 
+Director Maternity 
+Safety 
+Champion 
+
+Review 
+
+Head of Site Clinical Site 
+Manager 
+Senior Manager 
+On-call Maternity 
+Manager 
+On-Call 
+(Tactical Commander) (Tactical Commander) 
+
+Chief Operating Officer 
+(Strategic Commander) Director On-call 
+(Strategic Commander) 
+Review 
+DoM/HoM 
+Divisional 
+Director UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 9 of 43 
+ 8.0 Risk assessments and mitigation of risk reviews 
+ 
+At the start of each shift and at regular safety huddles; escalation levels should be MOPEL 
+rated to assess alert levels. 
+ 
+Staffing Safety huddles are to be held twice daily AM and PM. 
+ 
+AM: to be attended by the Obstetric Consultant On-Call, Delivery suite coordinator, Nurse in 
+charge on the neonatal unit and representatives from the clinical areas. 
+ 
+PM: to be attended by the Delivery suite coordinator, Nurse in charge on the neonatal unit 
+and representatives from the clinical areas. 
+ 
+The Trust should assess the impact and likelihood of incidents disrupting the delivery of 
+routine services in order to effectively mitigate the impacts of these. 
+ 
+Identification of warning signs that the maternity unit is potentially unable to provide safe 
+care; (see Midwifery Red Flags below) a review via a safety huddle needs to be undertaken. 
+The following actions will need to be taken: 
+ 
+• The midwives in charge from across the maternity unit should be notified. 
+• The senior manager/midwife in charge should determine whether the midwifery 
+staffing levels is the cause, and the action that is needed such as redeployment of 
+staff. 
+• Essential activities that present as red flags should be reported by the Birthrate+ 
+acuity tool. Clinical staff should review any midwifery red flags; individual risk 
+assessments need to be made and 2 hourly huddles should be commenced if 
+there are acuity/activity concerns. Any change to the MOPEL rating should be 
+escalated to the key staff in section 7.0; the decision will be made to raise a DATIX 
+and alert the Integrated Care System (ICS). 
+ 
+Midwifery red flag events 
+These are warning signs that the maternity service is unable to provide safe care to women 
+and people and babies. This situation is likely to last more than an hour in either the hospital 
+or birth centres. 
+• Co-ordinator unable to be supernumerary. 
+• Delayed or cancelled critical activity. 
+• Missed or delayed care, such as delay of 60 minutes or more in washing and suturing. 
+• Missed medication during an admission to hospital or the birth centre. 
+• Delay of more than 30 minutes or more in providing pain relief. 
+• Delay of 30 minutes or more between presentation and triage. 
+• Full clinical examination not carried out when presenting in labour. 
+• Delay of two hours or more between admission for induction and beginning of the 
+process. 
+(NICE 2015 ) UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 10 of 43 
+ Main causes of red flags are usually: 
+ 
+8.1 Insufficient staff 
+ 
+• Daily review of the staffing levels should be undertaken at the staff of each shift; 
+any staffing concerns should be highlighted and discussed at the twice daily safety 
+huddles. Please refer to SP21002 Daily process for managing maternity staffing 
+(legacy West) and MD086 Maternity Services Staffing (legacy East). 
+• Any acute shortages that potentially impact the acuity and activity across the 
+maternity unit should trigger 2 hourly safety huddles. 
+• Acute staff shortages, e.g. through sickness or special leave, may be covered with 
+Bank Staff if the shift cannot be covered through redistribution of remaining staff. 
+This can only be sanctioned by one of the Maternity Managers, or in their absence 
+the Delivery Suite Band 7 coordinator. 
+• Maternity Managers will review duty rotas daily which must be prepared in line with 
+Annual / Study Leave guidelines to enable an even distribution of staff throughout 
+the week. Any shortfalls will need to be escalated, and an action plan put into place. 
+• Skill mix should be addressed by reviewing the availability and support from the 
+Practice Development Team and other senior midwives on the unit. 
+• Explore the possibility of transferring midwives from an alternative practice area 
+(e.g. specialist midwives). In conjunction with the consultant obstetrician, consider 
+rescheduling non -urgent activity. 
+• When all these measures have been taken and the problem is not resolved, the 
+Escalation Policy should be followed. 
+ 
+8.2 Insufficient beds 
+ 
+• Maternity services can lead to peaks in activities that exceed capacity. If the 
+problem is a shortage of Delivery Suite beds, careful assessment of those women 
+and people on the Delivery Suite should be made to see if any can be safely 
+diverted to either of the UH Sussex sites (SRH, WH, PRH or RSCH) or home. 
+• In any situation where capacity is a problem, consideration must be given to the 
+midwife : woman and person ratio which can quickly become a problem. 
+• Self-caring women and people without clinical need, e.g. those who are inpatients 
+because their baby is in the Neonatal Unit, could potentially be accommodated 
+overnight in Neonatal Unit rooming -in facility, where available. 
+• Problems can occur with a shortage of space on the Fetal and Day Assessment 
+Units. Careful assessment and triage of existing women and people should be 
+made to see if any may be safely transferred to another area, e.g. Delivery Suite. 
+• Careful telephone triage systems may also reduce the need for admissions at this 
+critical time and consideration can be given to support via the community midwifery 
+services. 
+ 
+8.3 Closure of the neonatal unit 
+ 
+• Closure of the neonatal unit is defined as no emergency cot available for any 
+expected or unexpected neonatal admissions. UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 11 of 43 
+ • Review of the activity and acuity on the Neonatal unit will need to be reviewed at 
+the maternity workforce safety huddles. Staffing concerns and cot available need 
+OPEL rating. 
+• The closure of the Neonatal Unit impacts on the patients already present on the 
+Delivery Suite and pending admissions. All key staff in Section 7.0 will need to be 
+informed and raised as a red flag. 
+• A risk assessment must be undertaken for each woman andperson on the Delivery 
+Suite, maternity wards and all elective work at the time of the neonatal escalation 
+to decide the likelihood of requiring a neonatal cot. 
+• All elective activity for either labouring women and people at term, those requiring 
+induction of labour without any fetal indication, and those for elective CS (category 
+4) at term without any fetal risk factors should continue as usual. 
+• If the baby is at high risk of requiring admission to the Neonatal Unit, a 
+multidisciplinary decision must be made as to whether the woman and person is 
+safe to transfer to another unit or to remain. 
+• If the neonatal unit enters BLACK OPEL status all key roles will identify if this 
+needs to be escalated to raise a serious incident. 
+• Risk assessment should be undertaken to identify any vulnerable patients that 
+require complex care needs that cannot be safely met and will need to be 
+transferred to another acute Trust. 
+• All departments including the community will need to be informed and the potential 
+impact assessed. 
+ 
+8.4 Provision of urgent or emergency care 
+ 
+Where a pregnant woman and person requires urgent or emergency maternity care, this 
+should be provided at the nearest available maternity/obstetric unit, irrespective of whether 
+that unit has been required to suspend their service. 
+ 
+Every maternity care provider has an obligation and duty of care to provide emergency 
+maternity care, irrespective of where the woman and person has booked for antenatal and/or 
+labour care. Women and people have been classified as urgent or an emergency by the 
+Ambulance Service must be admitted to the closest unit even if services are suspended. 
+ 
+9.0 Notifying service users 
+ 
+When women and people telephone during the period of closure: 
+ 
+• The pregnant woman and person must be informed of the reason for closure, 
+apologies made and which hospitals are accepting referrals. 
+• The pregnant woman and person’s name, address and telephone number are to 
+be taken and document on MIS as well as on ‘Record of women and people 
+diverted’ ( Appendix 13 ). 
+• The midwife on the Delivery Suite / Maternity Telephone Triage (delegated by the 
+delivery suite coordinator) will ring the neighbouring unit to find out if they can 
+accept this woman and person. Complete ‘List of maternity units contacted’ 
+(Appendix 11 ). UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 12 of 43 
+ • The midwife will then ring the woman and person back and inform them which unit 
+will be able to take them. The woman and person must be given directions of how 
+to reach the neighbouring hospital, or arrange ambulance transfer for the woman 
+and person, whichever is the most appropriate for that person. 
+• In all situations careful consideration must be given to any local emergency 
+referrals that will have to be accommodated. 
+• See appendix 17 for handover of documentation following divert or transfer of 
+patient across hospital sites. 
+ 
+10.0 Notifying other departments/aligned specialties and Ambulance Control 
+ 
+The Communication Checklist (see appendix 9) for diverting from a maternity unit or closing 
+all UH Sussex Maternity units should be completed by Maternity Manager or Delivery Suite 
+Coordinator (or delegated person) when in MOPEL 2/3/4 – AMBER/RED/BLACK. 
+ 
+For notifying Ambulance services of closure of the maternity unit/maternity units the Tactical 
+Commander (Head of Site / Senior Manager On -Call) will liaise with the Strategic 
+Commander (Chief Operating Officer / Director On -call) who is responsible for liaising with 
+the Ambulance service: 
+ 
+• For SECAmb: the Strategic Commander (Chief Operating Officer / Director On - 
+call) requesting a Divert will contact SECAmb’s Emergency Operations Centre 
+(EOC) requesting a Divert, details in Appendix 10a &10b . This must be followed up 
+by completing section A on the Divert request form and emailing it to 
+divert@secamb.nhs.uk copying in the Urgent Care/Incident email address and the 
+Integrated Care System Incident Coordination Centre for the relevant Integrated 
+Care System. 
+ 
+• For SCAS: contact SCAS On -Call duty Director of Operations via the Clinical 
+Coordination Centre and inform them of the suspension of services and of who the 
+receiving trust is going to be. Inform the appropriate Incident Coordination Centre 
+for the Integrated Care System. 
+ 
+Both the Tactical Commander (Head of Site / Senior Manager On -Call) and the Strategic 
+Commander (Chief Operating Officer / Director On-call) can be contacted via switchboard. 
+ 
+11.0 Reopening the unit and follow -up 
+ 
+• As soon as the situation resolves and there are adequate facilities and /or staff the 
+reverse process applies. 
+• Reopening should be communicated to all the appropriate departments (appendix 9). 
+This will include switchboard and Ambulance Control. Communication with 
+Ambulance Control will be backed up with an email from the Strategic Commander 
+informing them that the Unit has reopened. 
+• Contact should be made with the accepting unit and thanks offered for their 
+cooperation. Details of any women and people who have been cared for in the other 
+units should be confirmed. UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 13 of 43 
+ • The Director/Head of Midwifery (or in their absence, their deputy), will ensure that a 
+letter of apology is sent to every woman and person who is referred to another unit. 
+This letter will offer further explanation as to the reasons why referral became 
+necessary (see Appendix 15 ). 
+
+12.0 Monitoring 
+ 
+Monitoring of compliance with this policy will be through completion and audit of: 
+ 
+• Birthrate+ acuity or Maternity Risk Assessment form (Appendix 8) 
+• Communication checklist for closing the Maternity Unit (Appendix 9) 
+• List of Maternity Units contacted (Appendix 11) 
+• Record of women and people diverted (Appendix 13) 
+
+References 
+ 
+NHS England. 2021. NHSEI Regional Team: Guidance regarding Requests for Mutual Aid in 
+Maternity Services in the South East. UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 14 of 43 
+ Appendix 1: STRATEGIC COMMANDER 
+ 
+Role performed by: Chief Operating Officer (day) / Director On-Call (out-of-hours) 
+Responsible to: Chief Executive 
+Key responsibilities: To formally approve ambulance divert, strategic coordination of the 
+Trusts incident response, engaging with Director level local acute 
+partners throughout the divert, engaging ambulance service 
+strategic command throughout incident. 
+ 
+Green – MOPEL Level 1 Actions 
+• None 
+ 
+Amber – MOPEL Level 2 Actions 
+• None 
+ 
+Red – MOPEL Level 3 Actions 
+• Inform ICS 
+• Inform ambulance service (see section 10.0 and appendix 10a &10b ) 
+ 
+Black – MOPEL Level 4 Actions 
+• Inform ICS 
+• Inform ambulance service (see section 10.0 and appendix 10a &10b ) UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 15 of 43 
+ Appendix 2: TACTICAL COMMANDER 
+ 
+Role performed by: Head of Site (day) / Senior Manager On-Call (out of hours) 
+Responsible to: Strategic Commander 
+Key responsibilities: To escalate and communicate with the Strategic Commander 
+(Chief Operating officer / Director On-Call) 
+ 
+Green – MOPEL Level 1 Actions 
+• None 
+ 
+Amber – MOPEL Level 2 Actions 
+• None 
+ 
+Red – MOPEL Level 3 Actions 
+• Liaise with Strategic Commander, who is responsible notifying Ambulance services of 
+closure of the maternity unit/maternity and commencing ambulance diversion. 
+ 
+Black – MOPEL Level 4 Actions 
+• Liaise with Strategic Commander, who is responsible notifying Ambulance services of 
+closure of the maternity unit/maternity and commencing ambulance diversion. UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 16 of 43 
+ Appendix 3: CLINICAL SITE MANAGER 
+ 
+Role performed by: Divisional Director (day) / Clinical Site Manager (night) 
+Responsible to: Senior Manager On-Call for site 
+Key responsibilities: To provide a single point of contact the rest of the Trust and to 
+ensure the coordination of the safety of patients and staff. 
+ 
+Green – MOPEL Level 1 Actions 
+• None 
+ 
+Amber – MOPEL Level 2 Actions 
+• None 
+ 
+Red – MOPEL Level 3 Actions 
+• Liaise with the Tactical Commander 
+ 
+Black – MOPEL Level 4 Actions 
+• Liaise with the Tactical Commander UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 17 of 43 
+ Appendix 4: MATERNITY MANAGER ON-CALL 
+ 
+Role performed by: Maternity Manager On-Call or Matron 
+Responsible to: Tactical Commander 
+Key responsibilities: Overview of whole unit to assess if any redeployment of staff and 
+patient discharges can be identified and managed. 
+ 
+Green – MOPEL Level 1 Actions 
+• Regular review of activity / staffing. 
+ 
+Amber – MOPEL Level 2 Actions 
+• Determine activity and staffing in all maternity areas - including the community and 
+specialist areas. 
+• Consider: 
+o Redeploying staff (SRH& WH - See Homebirth & Freebirthing guideline appendix 6 
+Provision of homebirth service - for reallocation considerations for community staff 
+into the hospital.) 
+o Requesting additional staff 
+o Reviewing elective activity and escalate the decision to cancel or delay where 
+safely possible (IOL and CS). 
+o Request extra bank or agency staff, where available, to meet the required staffing 
+levels. 
+• Identify inpatients waiting for treatment or investigations who could be reviewed, 
+investigations/treatment expedited and discharged. 
+• Increase bed capacity by requesting emergency ward rounds on Delivery Suite and 
+Antenatal/Postnatal Wards by on -call consultant/middle grade obstetrician. 
+• Agree a practical review period until green status achieved. 
+• Discharge all well inpatients and babies. 
+• Ensure inpatients not requiring care on delivery suite are transferred to wards. 
+• Discharge home those inpatients no longer requiring hospital care. 
+• Women and people having homebirths need to be planned carefully and monitored if 
+Community Service has the staffing to support. 
+• Identify inpatients waiting for treatment or investigations who could be reviewed, 
+investigations/treatment expedited and discharged. 
+• Utilise beds on MLU. 
+• Redeploy midwives not currently performing clinical work (managers/specialist midwives). 
+• Cancel non-essential meetings. 
+• Task shift to Nurses and MSWs if adequately skilled. 
+• Communicate to all key roles. 
+ 
+Normal working hours: Monday -Friday, 8am-8pm - 
+• Review support from the wider team inclusive of specialists and managers. 
+• The Delivery Suite Coordinator or Senior Sister should call an emergency huddle with all 
+key roles. UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 18 of 43 
+
+Red – MOPEL Level 3 Actions 
+• Discuss the unit acuity and challenges with the delivery suite co-ordinator. 
+• If there is no improvement in the situation on-site attendance is expected. 
+• If there is no improvement in the situation, inform: 
+o Tactical Commander (Head of Site / Senior Manager On-Call for site) who will contact 
+the Strategic Commander (Chief Operating Officer / Director On -Call). 
+o DoM/HoM must be informed. 
+• In the event of a neonatal divert, close partnership working should be achieved and each 
+case should be discussed. Agreement should be reached on which maternity admissions 
+should be diverted, based on a risk threshold. 
+• In conjunction with the Consultant On-Call consider whether elective activity, e.g. IOL and 
+elective CS is paused. 
+• Follow up confirmation of escalation with email to key roles. 
+• Review status of unit hourly. 
+• Confirm availability of neighbouring Maternity Units to accept clinical activity (appendix 11). 
+• Contact other staff to help (Gynae team, midwives in other areas). 
+• Call in the on-call staff and request extra bank or agency staff, where available, to meet the 
+required staffing levels. (SRH& WH - See Homebirth & Freebirthing guideline appendix 6: 
+Provision of homebirth service - for reallocation considerations for community staff into the 
+hospital.) 
+• Keep all staff informed of situation. 
+• Contact the Site manager for support. 
+• If situation not improving after 2 hours, escalate to Black MOPEL Level 4 actions. 
+• Ensure all maternity activity and staffing have been reviewed. 
+• Assess the impact to services. 
+• In the event that neighbouring Trusts are unable to accept the women and people then the 
+key roles will need to revisit plan and form further actions. 
+ 
+Black – MOPEL Level 4 Actions 
+• Onsite attendance is expected and the below actions should be taken from the delivery 
+suite coordinator to release them to continue clinical management of the shift. 
+• Inform DoM/HoM or Matron (if not already present) by telephone 24/7. 
+• Consideration of de-escalation of response if the situation is judged to have improved 
+sufficiently. 
+• In conjunction with the Consultant On-call consider whether elective activity, e.g. IOL and 
+elective CS is paused. 
+• Home birth suspended. 
+• Inform the Tactical Commander (Head of Site / Senior Manager On-Call for site) who will 
+contact the Strategic Commander (Chief Operating Officer / Director On -Call). 
+• Strategic Commander to contact ambulance service (see section 10.0 and appendix 10a 
+&10b ); follow up with an email with the details of accepting Trust and number of patients 
+able to accept. This action is no longer the responsibility of the Delivery Suite • Agree a practical review period, usually 2 hourly until green status achieved. UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 19 of 43 
+ 
+ Coordinator / Maternity Manager On-Call. 
+• Contact the Site manager for support. 
+• Assess all callers contacting the unit/ birth centre according to clinical need. 
+• Consider accommodating high risk women and people, e.g. insulin dependent diabetic, 
+bleeding, women and people in premature labour. 
+• Inform all callers of the reason for the diversion, apologies made and the caller informed 
+as to which hospitals are accepting referrals. 
+• Document the woman and person’s name, address and telephone number of all women 
+and people who are diverted to other Trusts when the unit / birth centre is closed. (See 
+Appendix 13 ) as well as on the Maternity IT system. 
+• On no account are callers to be advised to telephone other maternity units 
+themselves. It is the responsibility of the unit taking the call to contact other units. 
+• If a unit is not sourced or the woman and person calls back and is felt to be progressing in 
+labour, or the severity of the situation is high, they must be invited to the unit for 
+assessment or advised to go to A&E. 
+• Before a request to divert outside of UH Sussex is made, the status of the neighbouring 
+maternity units should be ascertained and communicated to the Tactical Commander. 
+• 1 hourly safety huddles to review situation and monitor the situation. The diversion should 
+be lifted as soon as it is safe to do so. UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 20 of 43 
+ Appendix 5: CONSULTANT OBSTETRICIAN ON-CALL 
+ 
+Role performed by: Consultant Obstetrician On-Call 
+Responsible to: Tactical Commander 
+Key responsibilities: Clinical reviews and risk assess individual cases that may require 
+delay to care/need to transfer to another Trust. 
+ 
+Green – MOPEL Level 1 Actions 
+• 4 hourly review of activity / staffing. 
+ 
+Amber – MOPEL Level 2 Actions 
+• Identify inpatients waiting for treatment or investigations who could be reviewed. 
+Investigations / treatment expedited and discharged. 
+• Agree a practical review period until green status achieved. 
+• Discharge all well inpatients and babies. 
+• Ensure inpatients not requiring care on delivery suite are transferred to wards. 
+• Increase bed capacity by undertaking emergency ward rounds on delivery suite and 
+Antenatal/Postnatal Ward areas. 
+• 2 hourly review of activity / staffing. 
+ 
+Red – MOPEL Level 3 Actions 
+Consider: 
+• Redeploying obstetric staff to area of need. 
+• Requesting additional staff. 
+• Ensure inpatients not requiring care on delivery suite are transferred to wards. 
+• Increase bed capacity by undertaking emergency ward rounds on delivery suite and 
+Antenatal/Postnatal Ward areas. 
+• Reviewing elective activity and escalate the decision to cancel or delay with the Labour 
+Ward Lead Consultant. 
+• In the event of a neonatal divert, close partnership working should be achieved and each 
+case should be discussed. Agreement should be reached on which maternity admissions 
+should be diverted, based on risk assessment. 
+• Review status of unit at hourly safety huddles. 
+ 
+Black – MOPEL Level 4 Actions 
+• Contact the Clinical Director and Labour Ward Lead Consultant via telephone 24/7. 
+• Consideration of de-escalation of response as soon as possible if the situation is judged to 
+have improved sufficiently. 
+• Hourly safety huddles to review situation and monitor the situation. The diversion should 
+be lifted as soon as it is safe to do so. 
+• Maintain on-site presence whilst maternity is in Black escalation. UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 21 of 43 
+ Appendix 6: DELIVERY SUITE COORDINATOR 
+ 
+Role performed by: Delivery Suite Coordinator 
+Responsible to: DoM/HoM (day) / Maternity Manager On-Call (out of hours) 
+Key responsibilities: To assess staffing and workload. 
+ 
+Green – MOPEL Level 1 Actions 
+• 4 hourly review of activity / staffing. 
+ 
+Amber – MOPEL Level 2 Actions 
+• Determine activity and staffing in all maternity areas - including the community and 
+specialist areas. 
+• Consider: 
+o Redeploying staff 
+o Requesting additional staff 
+o Reviewing elective activity and escalate the decision to cancel or delay where 
+safely possible (IOL and CS). 
+o Request extra bank where available, to meet the required staffing levels. 
+• Identify inpatients waiting for treatment or investigations who could be reviewed, 
+investigations/treatment expedited and discharged. 
+• Increase bed capacity by requesting emergency ward rounds on Delivery suite and 
+Antenatal/Postnatal Wards by on -call consultant/middle grade obstetrician. 
+• Inform: 
+o Maternity Manager 
+o Consultant Obstetrician On-Call 
+o Neonatal Nurse in Charge 
+o Clinical Site Manager in order to be aware of pressures in unit. 
+• Agree a practical review period until green status achieved. 
+• Discharge all well inpatients and babies. 
+• Ensure inpatients not requiring care on delivery suite are transferred to wards. 
+• Discharge home those inpatients no longer requiring hospital care. 
+• Women and people having homebirths need to be planned carefully and monitored if 
+Community Service has the staffing to support. 
+• Identify inpatients waiting for treatment or investigations who could be reviewed, 
+investigations/treatment expedited and discharged. 
+• Consider Divert to other UH Sussex sites. 
+• Redeploy midwives not currently performing clinical work (managers/specialist midwives). 
+• Cancel non-essential meetings. 
+• Task shift to Nurses and MSWs if adequately skilled. 
+• Communicate to all key roles. 
+ 
+Normal working hours: Monday -Friday, 8am-8pm - 
+• Review support from the wider team inclusive of specialists and managers. 
+• The Delivery Suite Coordinator and Matron should call an emergency huddle with all key 
+roles. UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 22 of 43 
+
+Red – MOPEL Level 3 Actions 
+• If there is no improvement in the situation, Maternity Manager On-Call, Clinical Site 
+Manager and DoM/HoM/ or Matron must be contacted. 
+• The site team must be updated. 
+• In the event of a neonatal divert, close partnership working should be achieved and each 
+case should be discussed. Agreement should be reached on which maternity admissions 
+should be diverted, based on a risk threshold. 
+• Follow up confirmation of escalation with email to key roles. 
+• Review status of unit hourly. 
+• Confirm availability of other UH Sussex Maternity Units to accept clinical activity 
+• Contact other staff to help (Gynae team, midwives in other areas). 
+• Call in the on-call staff and request extra bank staff, where available, to meet the required 
+staffing levels. 
+• Keep all staff informed of situation. 
+• If situation not improving after 2 hours, escalate to Black actions. 
+• Ensure all maternity activity and staffing has been reviewed. 
+• Assess the impact to services. 
+• In the event that other UH Sussex maternity units are unable to accept the women and 
+people then the key roles will need to revisit plan and form further actions. 
+ 
+Black – MOPEL Level 4 Actions 
+ 
+It is recommended that one person is designated to coordinate the procedures to 
+place the maternity unit on divert and that they have no other responsibilities during 
+the process (ideally the Maternity Manager On -Call so that the Delivery Suite 
+Coordinator can be released to continue clinical oversight of the shift). 
+ 
+• Inform DoM/HoM or deputy via telephone 24/7. 
+• Consideration of de-escalation of response if the situation is judged to have improved 
+sufficiently. 
+• Inform the Senior Maternity Manager On-Call (MOC). 
+• Inform the Tactical Commander (Head of Site / Senior Manager On-Call for site) (contact 
+via switchboard) who will contact the Strategic Commander (Chief Operating Officer / 
+Director On -Call). 
+• Assess all callers contacting the unit/ birth centre according to clinical need. 
+• Consider accommodating high risk women and people, e.g. insulin dependent diabetic, 
+bleeding, women and people in premature labour. 
+• Inform all callers of the reason for the diversion, apologies made and the caller informed 
+as to which hospitals are accepting referrals. • Agree a practical review period, usually 2 hourly until green status achieved. 
+ 
+Overnight working and weekends hours: 8pm-8am - 
+• The Delivery Suite Coordinator should call the Maternity Manager On-Call for support and 
+advice. UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 23 of 43 
+ 
+ • Document the woman and person’s name, address and telephone number of all women 
+and people who are diverted to other Trusts when the unit / birth centre is closed. (See 
+Appendix 13 ) as well as on the Maternity IT system. 
+• On no account are callers to be advised to telephone other maternity units 
+themselves. It is the responsibility of the unit taking the call to contact other units. 
+• If a unit is not sourced or the woman and person calls back and is felt to be progressing in 
+labour, or the severity of the situation is high, they must be invited to the unit for 
+assessment or advised to go to A&E. 
+• Before a request to divert outside of UH Sussex is made, the status of the neighbouring 
+maternity units should be ascertained and communicated to the decision maker. 
+• On the decision to divert new admissions: 
+o Inform Maternity Telephone Triage 
+o Strategic Commander to contact ambulance service (see section 10.0 and appendix 
+10a &10b ); follow up with an email with the details of accepting Trust and number of 
+patients able to accept. This action is no longer the responsibility of the Delivery 
+Suite Coordinator / Maternity Manager On -Call. 
+• 1 hourly safety huddles to review situation and monitor the situation. The diversion should 
+be lifted as soon as it is safe to do so. UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 24 of 43 
+ Appendix 7: NEONATAL CONSULTANT 
+ 
+Role performed by: Neonatal Consultant 
+Responsible to: Tactical Commander 
+Key responsibilities: Clinical reviews and risk assess individual cases that may require 
+delay to care/ need to transfer to another Trust. 
+ 
+Green – MOPEL Level 1 Actions 
+• 4 hourly review of activity / staffing. 
+ 
+Amber – MOPEL Level 2 Actions 
+• Identify neonates waiting for treatment or investigations which could be reviewed. 
+Investigations / treatment expedited and discharged. 
+• Agree a practical review period until green status achieved. 
+• Discharge all well babies. 
+• Increase bed capacity by undertaking emergency ward rounds on delivery suite and 
+Antenatal/Postnatal Ward areas, assess any neonates that are waiting for review or 
+outstanding NIPEs. 
+• 2 hourly review of activity / staffing. 
+ 
+Red – MOPEL Level 3 Actions 
+Consider: 
+• Redeploying paediatric staff to help complete any outstanding reviews to area of need. 
+• Increase bed capacity by undertaking emergency ward rounds on delivery suite and 
+Antenatal/Postnatal Ward areas, assess any neonates that are waiting for review or 
+outstanding NIPEs. 
+• Review elective procedures alongside the Obstetric Consultant On-Call to risk assess 
+delaying, cancelling activities or appropriate transferring of patients. 
+• In the event of a neonatal divert, close partnership working should be achieved and each 
+case should be discussed. Agreement should be reached on which maternity admissions 
+should be diverted, based on risk assessment. 
+• Review status of unit at hourly safety huddles. 
+ 
+Black – MOPEL Level 4 Actions 
+• Hourly safety huddles to review situation and monitor the situation. The diversion should 
+be lifted as soon as it is safe to do so. 
+• Maintain on-site presence whilst maternity is in Black escalation. UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 25 of 43 
+ Appendix 8: Maternity Risk Assessment form 
+ 
+To be completed by MATERNITY MANAGER / DELIVERY SUITE COORDINATOR: 
+• Two hourly when in MOPEL 2 (Amber) 
+• Hourly when in MOPEL 3/4 (Red/Black) 
+ 
+Date: Time: Completed by: 
+ 
+Title Name Contact No. 
+Maternity Manager 
+On-call Consultant Obstetrician 
+On-call Consultant Neonatologist 
+UNIT STATUS 
+Staffing 
+Hospital Midwives 
+Community Midwives 
+Specialist Midwives 
+Antenatal Clinic Midwives 
+MCAs 
+Bed Availability 
+Labour 
+Antenatal/Postnatal Ward 
+Neonatal Unit 
+Workload 
+High Dependency Case 
+Others requiring 1:1 care 
+(including women and people 
+with epidurals and homebirths) 
+No. of IOLs 
+No. of electives LSCS 
+No. of post-op cases (under 24 
+hours) 
+Acuity on Delivery Suite 
+ 
+Actions taken UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 26 of 43 
+ Appendix 9: Communication checklist for diverting from a maternity unit or closing all UH Sussex Maternity units 
+ 
+To be completed by MATERNITY MANAGER / DELIVERY SUITE COORDINATOR (or delegated person) 
+when in MOPEL 2/3/4 – AMBER/RED/BLACK 
+ 
+Maternity Unit closed (MOPEL Amber/Red) 
+Date: 
+Time: 
+Completed by: 
+UH Sussex Maternity Units Closed (MOPEL Black) 
+Date: 
+Time: 
+Completed by: 
+ 
+ Time 
+informed 
+Comments 
+Initials Time 
+informed 
+open Initials 
+Neonatal Unit 
+A&E 
+Maternity Manager On-call 
+DoM/HoM 
+Consultant Obstetrician On-call 
+Consultant Neonatologist On-call 
+Senior Manager On-call (via 
+switchboard) 
+Clinical Site Team (via UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 27 of 43 
+ 
+switchboard) 
+Ambulance Control (to be 
+contacted by the Strategic 
+Commander only). 
+General Manager for Women and 
+Children’s (via switchboard) 
+Divisional Director of Operations 
+for Planned Care (via switchboard) 
+Divisional Director of Nursing (via 
+switchboard) 
+Community Midwifery Team 
+Leaders (office hours only) 
+Maternity Telephone Triage 
+Antenatal Clinic / DAU 
+UH Sussex Maternity Units: 
+SRH 
+WH 
+PRH 
+RSCH Appendix 10a: Implementation of a Divert SECAmb only 
+UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 28 of 43 
+ When the Divert has ended, SECAmb 
+will complete section B of the ambulance 
+Divert request form .The completed form 
+will be emailed to 
+divert@secamb.nhs.uk, the COO / -all 
+Director of the requesting trust, The 
+COO /on -call Director of the receiving 
+trust and the Urgent Care/Incident email 
+address for relevant INTEGRATED 
+CARE SYSTEM. 
+If the request for a Divert is unable to be 
+supported, the relevant INTEGRATED 
+CARE SYSTEM/ICC on-call director may 
+decide to set up and chair a system wide 
+conference call to consider next steps. 
+This may include contacting the NHSE/I 
+on-call Director to join the call. 
+RCA completed within 7 days; this will be led by the relevant INTEGRATED CARE SYSTEM/ICC 
+who will be responsible for sharing any lessons learnt. 
+
+ A decision to request a Divert will be taken by a hospitals COO / on-call Director when the 
+hospital trust has exhausted all internal escalatory actions and business continuity plans. 
+A COO /on-call Director to COO/on -call Director agreement will be in place between the Trust 
+requesting a Divert and an identified (next nearest/most appropriate) Trust(s) /hospital sites 
+within the relevant INTEGRATED CARE SYSTEM. 
+The COO /-all Director requesting a Divert will contact SECAmb’s Emergency Operations Centre 
+(EOC) requesting a Divert. This will also be followed up by completing section A, on the Divert 
+request form and emailing it to divert@secamb.nhs.uk. and copying in the Urgent Care/Incident 
+email address for relevant INTEGRATED CARE SYSTEM 
+SECAmb’s Strategic Commander will respond to the request by email within 20 minutes of 
+receipt of the Divert request form. If the request can be supported, the Divert will be 
+implemented. If, during the Divert however the receiving hospital(s) becomes compromised, or 
+SECAmb’s ability to support the Divert becomes compromised, then the Divert will cease. 
+
+Divert supported 
+& implemented 
+
+Divert unable to 
+be supported UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 29 of 43 
+ Appendix 10b: Ambulance Specialist Divert Request form (SECAmb only) 
+ 
+To be completed by DIRECTOR ON-CALL 
+ 
+• For SCAS the diverting trust will inform SCAS contact centre of the maternity provider agreeing to the Divert. 
+• All requests for an Ambulance Divert involving SECAmb must be made by the requesting trusts Acute Trust 
+Executive Director Level by telephoning: SECAmb on 0300 123 9883 (Surrey and West Sussex including 
+Brighton ) or 0300 123 5818 (Kent and East Sussex) and asking for The Strategic on call manager. 
+• This must be followed by completing section A and emailing the form to: divert@secamb.nhs.uk 
+• SECAmb will complete section B and the form must be emailed to the on -call CCG Executive Director the next 
+day. 
+ 
+Section A: To be completed by Director On-Call at the requesting Trust 
+Date & time: 
+Name of Trust requesting a divert: University Hospitals Sussex 
+What divert is being requested: 
+Full, Specialist or Border 
+Reason for divert request: 
+Name, telephone number and email address 
+of Executive Director at the hospital 
+requesting a divert: 
+Estimated duration of divert: 
+(4 hours maximum) 
+Name, telephone number and email address 
+of COO / on-call Director at the trust(s) 
+receiving a divert: 
+Name of receiving trust who have agreed to 
+accept the divert: 
+Name of Executive Director and contact 
+number at the receiving trust who has agreed 
+the divert: (DOC) 
+Confirm that request for divert (border or full) 
+has been supported by the Executive CCG 
+on call Director and that the check list has 
+been completed: 
+Name of Executive Director telephone 
+number and email address at the CCG: 
+Telephone number of conference call set up 
+by the trust requesting a divert: 
+Section B: To be completed by SECAmb 
+Date & time initial request received by 
+SECAmb: 
+Name of SECAmb Strategic Director on call: 
+Divert supported – YES / NO 
+Provide details and rationale: 
+Does this divert affect neighbouring UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 30 of 43 
+ 
+Ambulance service? – YES / NO 
+If yes provide details of contact made to the 
+relevant ambulance services. 
+Time when divert started and stopped: 
+Number of patients diverted: UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 31 of 43 
+ Appendix 11: List of maternity units contacted 
+ 
+LIST OF MATERNITY UNITS CONTACTED 
+Completed by: 
+(name & position) 
+Date: 
+ 
+Name of unit Date/time of call Able to accept 
+yes/no NICU available 
+yes/no 
+
+ UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 32 of 43 
+ Appendix 12: Contact telephone numbers 
+
+HOSPITAL TELEPHONE NUMBERS 
+Kent and Medway 
+ 
+Medway Foundation Trust (FT) SWITCH 01634 830000 
+SCBU 01634830000 
+LW 01634975108 
+
+Dartford and Gravesham NHS FT SWITCH 01322 428100 
+SCBU Ext 8986 – Walnut Ward 
+LW Ext 4925/4313 
+
+East Kent Hospital Trust NHS FT SWITCH 01227 866450 
+LCU 01233 616204 
+LW 01233 616124/ 01843 
+234290 
+ 
+Maidstone and Tunbridge Wells 
+NHS Trust SWITCH 01892 823535 
+LNU 01892 633359 / 638360 
+LW 01892 633634 
+Sussex 
+University Hospitals Sussex – 
+Princess Royal Hospital SWITCH 01444 441881 
+SCBU 01444 448733 
+LW Ext 68484 
+University Hospitals Sussex – 
+Royal Sussex County Hospital SWITCH 01273 696955 
+SCBU 01273 523450 
+LW Ext 64373 / 64374 
+University Hospitals Sussex – 
+St Richards Hospital SWITCH 01243 788122 
+SCBU Ext 32986 
+LW Ext 32961 / 32962 
+University Hospitals Sussex – 
+Worthing Hospital SWITCH 01903 205111 
+SCBU Ext 84682 
+LW Ext 85138 / 85262 / 85943 
+Surrey 
+ 
+Surrey and Sussex Hospitals NHS FT SWITCH 01737 768 511 
+SCBU 01737 231 765 
+LW 01737 231764 
+
+Royal Surrey County NHS FT SWITCH 01483 571 122 
+SCBU 01483 464 834 
+LW 01483 464 133 
+ 
+Ashford and St Peters NHS FT SWITCH 01784 884488/ 01932 
+872000 UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 33 of 43 
+ 
+ LNU 01932 722667 
+LW 01932 722663 
+BOB 
+ 
+Buckinghamshire Healthcare NHS Trust SWITCH 01296 315000 
+NNU 01296 316113 
+LW 01296 316102 
+
+Oxford University Hospital NHS FT SWITCH 0300 304 7777 
+SCBU 01865 221355 
+LW 01865 221651 
+
+Royal Berkshire NHS FT SWITCH 0118 322 7431 
+SCBU 0118 322 5111 
+LW 0118 322 7304 
+Frimley 
+ 
+Frimley Healthcare NHS FT SWITCH 0300 6145000 
+SCBU 0300 6134357 
+LW 0300 6134527 
+SHIP 
+University Hospital of Southampton 
+NHS Trust SWITCH 023 8077 7222 
+SCBU 023 8120 6001 
+LW 023 8120 6002 
+
+Isle of Wight NHS Trust SWITCH 01983 -822099 
+SCBU 01983 822099 Ext. 4337 
+LW 01983 534392 
+
+Portsmouth Hospital NHS Trust SWITCH 02392 286000 
+SCBU 02392 283231/32 
+LW 0300 1239001 
+
+Hampshire Hospital NHS FT SWITCH 01256 473202 
+SCBU 01256 313686/ 01962 
+824200 
+LW 0300 123 9001 UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 34 of 43 
+ Appendix 13: Record of women and people diverted 
+ 
+To be completed by person arranging divert 
+ 
+RECORD OF WOMEN AND PEOPLE DIVERTED 
+ 
+Name & position of person 
+completing form: 
+Name: Clinical Situation: Accepting unit: 
+Gest: 
+Hospital no: Parity: 
+Safeguarding issues: 
+DOB: Previous History: Transport: 
+Tel: 
+Outcome for mother or birthing person: 
+Type of delivery: 
+Any obstetric problems: 
+Follow up required: 
+Outcome for baby: 
+Any health concerns: 
+Follow up required: UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 35 of 43 
+ 
+Appendix 14: Mutual Aid document 
+ 
+Guidance regarding 
+Requests for Mutual A UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 36 of 43 
+ Appendix 15: Client letter 
+
+Dear 
+ 
+I would like to apologise for the fact that you had to be referred to another maternity unit on 
+(insert date ) owing to the temporary closure of the maternity unit at (insert name of 
+hospital), University Hospitals Sussex NHS Trust. As I believe you were informed at the 
+time, this was due to an exceptionally busy day, resulting in a shortage of beds/shortage 
+of midwives (delete as appropriate ). 
+ 
+Please be assured that your health and safety, and that of your baby, was our prime 
+concern when the decision to refer you to another hospital was made. A decision to close 
+the unit is always made as a last resort but I understand how stressful this late change 
+must have been for you. 
+ 
+I would also like to take this opportunity to offer you further explanation if you should feel 
+you need it. This can be done in a number of ways either through a meeting or a phone 
+call. If you would like to take up this opportunity, please do not hesitate to phone, on 
+…………………… extension ……….. 
+Yours sincerely, 
+
+Director / Head of Midwifery UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 37 of 43 
+ 
+Appendix 16: Request for mutual aid from other NHS Trusts 
+ 
+Maternity Unit requests mutual aid by triggering trust escalation procedures. 
+Clinical Director confirms need for trust suspension of new maternity admissions 
+
+Trust Silver/Gold command to inform System ICC 
+of need for mutual aid and number and condition 
+of women and people 
+ 
+System to confirm that trust actions 
+complete and qualify for mutual aid 
+No 
+Yes 
+System to review ICS pressures to 
+identify any mutual aid available within 
+ICS Mutual aid either 
+received or no longer 
+needed, women and 
+people are safe. No 
+further action required 
+by ICS and Region. 
+ 
+System to request action from other providers to maximise 
+system capacity and exhaust all capacity within the ICS 
+before requesting mutual aid from other ICSs 
+ 
+No 
+Yes 
+ 
+ICS ICC to contact neighbouring ICS ICCs and all SE ICS ICCs to request mutual 
+aid and copy in Regional Operational Centre (ROC) and Regional Chief Midwife 
+for information ( if out of hours ICS to call and update NHSEI Director on call) 
+Yes 
+No: not all ICSs have 
+responded 
+ICS ICC to follow -up with system to system 
+calls to establish if other ICSs have capacity 
+Yes 
+No 
+Escalating ICS to email ROC to summarise position ( if out of hours ICS to 
+call and update NHSEI Director on call ) 
+Copy the Regional Chief Midwife for information purposes 
+ 
+In hours : System to confirm that they have already contacted all neighbouring systems and South East systems for mutual aid 
+and none were able to provide it, and that regional support is being requested. ROC Director, along with escalating ICS to confirm 
+position and to liaise and confirm neighbouring regions ability to provide inter -regional mutual aid 
+Out of hours : NHSE/I On-call Director to call On call Director in neighbouring regions requesting mutual aid Has the situation changed so that 
+the unit is now safe either by 
+receiving mutual aid or capacity 
+having been made available or 
+managed in alternative ways? Has capacity 
+mutual aid been 
+found? System agrees further 
+escalation required System agrees further 
+escalation required UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 38 of 43 
+ 
+Divert or transfer 
+from site at UH 
+Sussex 
+Co-ordinator to Co-ordinator phone call to agree 
+divert. 
+Obstetrician to Obstetrician if any complexities. 
+Handover of records to identify risk. 
+Transfer of 
+records when 
+using BadgerNet 
+Transfer of 
+records when not 
+using BadgerNet 
+•The diverting hospital should email the Labour Ward 
+co-ordinator a full summary of care / copy of 
+pregnancy records prior to the divert / transfer. 
+Using the SINGLE CARE RECORD FUNCTION if a 
+woman and person in the course of their pregnancy 
+moves between units using BadgerNet, all units can 
+view and contribute to that record, using the 
+"breaking glass" facility. Appendix 17: Handover of documentation following divert / transfer of patient 
+across hospital sites 
+
+Repatriation to 
+booking 
+Hospital / Site 
+
+Antenatal 
+
+Postnatal 
+
+• Update of records if BadgerNet - then as above, 
+inform unit via delivery suite by phone of 
+discharge home. 
+• Non BadgerNet - inform booking hospital via 
+delivery suite of discharge, print documentation for 
+patients records. 
+• Update of records if BadgerNet - inform unit via 
+postnatal ward by phone of discharge home. 
+• Non BadgerNet - inform booking hospital via 
+postnatal ward of discharge, print documentation 
+for patients records. UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 39 of 43 
+ Practice Supervisor and Student discuss concerns. 
+Can supervision be increased? Appendix 18: UHS Student escalation 
+ 
+Risk Identified 
+• Student feels unsupported or not adequately supervised whilst on clinical placement. 
+• PS feels unable to support/supervise student adequately whilst on clinical placement. 
+• UHS Midwifery Acuity tool scored Red. 
+
+Yes: Supervision /support can be 
+increased in current area. NO: Unable to increase support / 
+supervision due to acuity and / or 
+student’s stage of training (ability). 
+
+Discuss with senior midwife (matron / co-ordinator) 
+
+Support provided for student to 
+stay in original area. 
+
+Student able to be supported in 
+alternative area and can remain 
+in placement. 
+Please ensure university and 
+PEF have been informed. Unable to support in original 
+area – alternative location 
+discussed. 
+*In red acuity student may be 
+able to work on DS if 1:1 care 
+being provided. 
+Inform university - Contact 
+details are site specific 
+Inform PEF - 
+uhsussex.maternitystudents@ 
+nhs.net 
+
+Student unable to be supported 
+adequately and will need to 
+leave placement and undertake 
+independent study for that shift. 
+Please ensure university and 
+PEF have been informed. UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 40 of 43 
+ Due Regard Assessment Screening 
+ 
+University Hospitals Sussex NHS Foundation Trust has a statutory duty to assess and 
+consult on whether planning, policies and processes impact service users, staff and other 
+stakeholders with regard to age, disability, gender (sex), gender identity, marriage or civil 
+partnership, pregnancy and maternity, race (ethnicity, nationality, colour), religion or belief 
+and sexual orientation. It recognises that some people may face multiple discrimination 
+based on their identity. A review of the assessed impact of this policy against these criteria 
+can be seen on Appendix 17 . 
+ 
+Section 1 – About the Policy, Service, Function, Proposal, Strategy or Consultation 
+1.1 Name of Policy, Service, Function, 
+Proposal, Strategy or Consultation 
+University Hospitals Sussex Maternity 
+Escalation Policy v1.2 
+1.2 Name of person completing this 
+assessment (and role / department) 
+Gail Addison, Acting Head of Midwifery 
+(West) 
+1.3 Brief description of the aims of the 
+policy, service, function, proposal, 
+strategy or consultation? 
+(include details of who is affected by, 
+involved in and / or benefits from it) 
+The purpose of this document is to provide a 
+framework for the declaration and response 
+to a Maternity Divert for use by maternity 
+departments across UH Sussex. 
+1.4 Which department owns the policy, 
+service, function, proposal, strategy or 
+consultation? 
+Women and Children’s, UH Sussex 
+1.6 Does the policy, service, function, 
+proposal, strategy or consultation have 
+direct consequences or implications for 
+service users and / or staff? Yes / No 
+(If no then it is not relevant to Equality 
+Duties. Please complete statement in 
+section 3 and send the completed form 
+for approval to the Care Group Manager / 
+Head of Service to sign off as shown. If 
+yes, please also complete section 2) PURPOSE OF DUE REGARD ASSESSMENT 
+ 
+The DRA should: 
+• Inform the Trust if any groups are, or could be, disadvantaged by a policy, service change 
+or reconfiguration and if so clarify / propose action to mitigate that impact 
+• Enable the Trust to identify where policy changes may be needed to actively promote 
+equality / inclusivity and eliminate inequality 
+• Remind all involved in delivering services of the determination to promote equality 
+• If advice is required in completing the DRA please contact an HR Advisor or Inclusion Team UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 41 of 43 
+ Section 2 – Equality Impacts 
+2.1 Have you made sure that the views of stakeholders, including key people likely to 
+face exclusion have been influential in the development of the policy, service, 
+function, proposal, strategy? (please indicate which) 
+External 
+Partners 
+Internal 
+ 
+Service user 
+interviews Care Quality 
+Commission 
+Staff event 
+Focus Groups Multi Agency event Staff interviews 
+Public events Joint Working group Staff workshop/focus 
+groups 
+Patient experience surveys Regional Minority network Management Board 
+Voluntary organizations Regional equality forum Trust Executive Committee 
+(x) 
+Minority group 
+events/forums GP Practice groups Diversity Matters Group 
+Carer Forum Local/County Council Staff side reps 
+LINks Equality and Human 
+Rights Commission 
+(EHRC) Staff Network Groups (e.g. 
+Disability, BAME, LGBTQ+, 
+religion/beliefs) (please 
+state) 
+HOSC Equality and Human 
+Rights Commission 
+(EHRC) Trust Board 
+On line forums Staff survey results 
+Local media Annual General Meeting 
+Published research into 
+minority needs 
+Census data or other 
+external demographic 
+reports 
+Comments: 
+ 
+This policy will be shared with the Maternity voices Partnership. 
+The Local Maternity and Neonatal System Senior Quality & Safety Manager assisted in 
+development of this policy. UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 42 of 43 
+ Due Regard Assessment Tool 
+ 
+To be completed and attached to any policy when submitted to the appropriate committee for 
+consideration and approval. 
+ Yes/No Comments 
+1. Does the document/guidance affect one group less or more 
+favourably than another on the basis of: 
+ • Age No 
+ • Disability No 
+ • Gender (Sex) No 
+ • Gender Identity No 
+ • Marriage and civil partnership No 
+ • Pregnancy and maternity No 
+ • Race (ethnicity, nationality, colour) No 
+ • Religion or Belief No 
+ • Sexual orientation, including lesbian, gay and bisexual people No 
+2. Is there any evidence that some groups are affected differently 
+and what is/are the evidence source(s)? No 
+3. If you have identified potential discrimination, are there any 
+exceptions valid, legal and/or justifiable? N/A 
+4. Is the impact of the document likely to be negative? No 
+5. If so, can the impact be avoided? N/A 
+6. What alternative is there to achieving the intent of the document 
+without the impact? Nil 
+7. Can we reduce the impact by taking different action and, if not, 
+what, if any, are the reasons why the policy should continue in 
+its current form? N/A 
+8. Has the document been assessed to ensure service users, staff 
+and other stakeholders are treated in line with Human Rights 
+FREDA principles (fairness, respect, equality, dignity and 
+autonomy)? N/A 
+ 
+If you have identified a potential discriminatory impact of this policy, please refer it to [Insert Name] , 
+together with any suggestions as to the action required to avoid/reduce this impact. For advice in 
+respect of answering the above questions, please contact uhsussex.equality@nhs.net 01273 
+664685). UHSC022 - UH Sussex Maternity Escalation Policy v1.2 Nov 2023 
+Please check online that this printout is the most recent version of this document Page 43 of 43 
+ Dissemination, Implementation and Access Plan 
+To be completed and attached to any policy when submitted to Corporate Governance for 
+consideration and TEC approval. 
+ 
+ Dissemination Plan Comments 
+1. Identify: 
+ • Which members of staff or staff groups 
+will be affected by this policy? Midwives and obstetricians 
+ • How will you confirm that they have 
+received the policy and understood its 
+implications? Circulated widely prior to approval on both 
+Legacy East and Legacy West Sites. 
+ • How have you linked the dissemination 
+of the policy with induction training, 
+continuous professional development 
+and clinical supervision as appropriate? This policy will be shared amongst staff who 
+will use it and training will be offered. 
+2. How and where will staff access the 
+document (at operational level)? Available on Staffnet / Info-Net 
+ 
+ Yes/No Comments 
+3. Have you made any plans to remove old 
+versions of the policy or related documents 
+from circulation? Yes Old versions will be archived 
+on the Maternity Server, 
+deleted from Staffnet/Info -Net 
+and replaced with the new 
+version. 
+4. Have you ensured staff are aware the 
+document is logged on the organisation’s 
+register? Yes An email will be sent to all 
+obstetricians and midwives 
+altering them to the new policy 
+which can be found on Staffnet 
+/ Info-Net. 
+Co-ordinators will be trained in 
+use of this escalation policy.

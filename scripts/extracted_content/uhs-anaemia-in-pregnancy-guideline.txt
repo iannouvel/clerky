@@ -1,0 +1,830 @@
+# Extracted from: UHS Anaemia in pregnancy guideline.pdf
+# Guideline ID: uhs-anaemia-in-pregnancy-guideline
+# Content length: 40805 characters
+# Processing date: 1750066902.0520518
+
+UHS -CG-0008 -2023 Anaemia during Pregnancy v1.0 Oct 2023 Page 1 of 23 
+Please check the intranet that this printout is the most recent version of this document before use. 
+
+Anaemia during Pregnancy 
+Summary statement: How does the 
+document support patient care? By providing evidence based guidance for Obstetric, 
+Midwifery and Haematology staff on the parameters and 
+treatment for anaemia during pregnancy and the postnatal 
+period. 
+Staff/stakeholders involved in 
+development: Labour Ward Leads (Obstetric and Midwifery), Anaesthetists, 
+Senior midwives, Haematology Consultants, Pharmacy 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: CE Team & Specialist Midwife 
+For use by: Midwives, Obstetricians, Haematology staff and General 
+Practitioners 
+Purpose: To provide evidence based guidance for staff when caring for 
+women and people with anaemia during pregnancy and the 
+postnatal period. 
+This document supports: NICE: Antenatal Care for uncomplicated pregnancies CG 62 
+(2019) 
+British Committee for Standards in Haematology (2019) 
+Key related documents: UH Sussex Maternity SRH&WH guidelines: Antenatal 
+Care and Patient Information, Antepartum & Intrapartum 
+Haemorrhage, Postpartum Haemorrhage 
+UH Sussex Maternity PRH&RSCH guidelines: Obstetric 
+heamorrhage, Provison and schedule of antenatal care 
+Approved by: Joint Obstetric Guideline Group (JOGG): 18th October 2023 
+Medicines Governance Committee: 8th August 2023 
+Approval date: 18th October 2023 Date uploaded: 18th October 2023 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable -Divisional Ratification only required 
+Ratification Date: Not Applicable -Divisional Ratification only required 
+Expiry Date: October 2026 
+Review date: April 2026 
+If you require this document in another format such as Braille, large print, 
+audio or another language please contact the Trusts Communications Team 
+Reference Number: UHS-CG-0008 -2023 UHS -CG-0008 -2023 Anaemia during Pregnancy v1.0 Oct 2023 Page 2 of 23 
+Please check the intranet that this printout is the most recent version of this document before use. 
+
+Version Date Author Status Comment 
+1.0 October 2023 CE Team (SRH&WH) 
+H.Woods, Specialist 
+Lead Midwife SMMC Live New UH Sussex Maternity 
+guideline adapted from CG12025 
+Anaemia in Pregnancy Guideline 
+(legacy West). 
+
+The interpretation and application of clinical guidelines will remain the responsibility of 
+the individual clinician. 
+If in doubt contact a senior colleague or expert. UHS -CG-0008 -2023 Anaemia during Pregnancy v1.0 Oct 2023 Page 3 of 23 
+Please check the intranet that this printout is the most recent version of this document before use. 
+ 
+Contents 
+1.0 Aim ................................ ................................ ................................ ............................ 4 
+2.0 Scope ................................ ................................ ................................ ........................ 4 
+3.0 Introduction ................................ ................................ ................................ ................ 4 
+4.0 Abbreviations used in this guideline ................................ ................................ ........... 4 
+5.0 Responsibilities ................................ ................................ ................................ .......... 5 
+6.0 Background ................................ ................................ ................................ ................ 5 
+6.1 Causes of anaemia in pregnancy ................................ ................................ ............... 5 
+6.2 Clinical signs and symptoms ................................ ................................ ...................... 6 
+6.3 Consequences of anaemia ................................ ................................ ......................... 6 
+7.0 Diagnosis ................................ ................................ ................................ ................... 7 
+7.1 Screening ................................ ................................ ................................ ................... 7 
+7.2 Haemoglobinopathy ................................ ................................ ................................ ... 7 
+7.3 Non-anaemic women and people at risk of iron deficiency ................................ ......... 7 
+7.4 Laboratory testing ................................ ................................ ................................ ...... 8 
+8.0 Management of iron deficiency in pregnancy ................................ .............................. 8 
+8.1 Dietary Advice ................................ ................................ ................................ ............ 8 
+8.2 Oral Iron Replacement ................................ ................................ ............................... 9 
+8.3 Side effects of oral iron................................ ................................ ............................... 9 
+8.4 Hb Monitoring ................................ ................................ ................................ .......... 10 
+8.5 Summary of antenatal management of anaemia ................................ ...................... 11 
+9.0 Intravenous Iron Therapy ................................ ................................ ......................... 12 
+9.1 Indications ................................ ................................ ................................ ................ 12 
+9.2 Contraindications ................................ ................................ ................................ ..... 12 
+9.3 Preparation used ................................ ................................ ................................ ...... 12 
+9.4 During the Infusion & techniques to minimise the risk of iron staining ....................... 13 
+9.5 Management of hypersensitivity reaction (HSR) ................................ ....................... 14 
+9.6 Acute Management of iron extravasation (iron staining) ................................ ........... 14 
+10.0 Management at birth ................................ ................................ ................................ 15 
+11.0 Postnatal care ................................ ................................ ................................ .......... 15 
+11.1 Management ................................ ................................ ................................ ............ 15 
+11.2 Summary of postnatal management of anaemia ................................ ...................... 16 
+12.0 Blood transfusion ................................ ................................ ................................ ..... 16 
+References ................................ ................................ ................................ .......................... 17 
+Appendix 1: Ferric Derisomaltose Pharmacosmos iron infusion ................................ ........... 18 
+Appendix 2: IV Iron Nurse Checklist ................................ ................................ .................... 20 
+Appendix 2: IV Iron Nurse Checklist cont ................................ ................................ ............. 21 
+Appendix 2: IV Iron Nurse Checklist cont ................................ ................................ ............. 22 
+Appendix 3: Medication Safety Incident Learning on Extravasation ................................ ...... 23 UHS -CG-0008 -2023 Anaemia during Pregnancy v1.0 Oct 2023 Page 4 of 23 
+Please check the intranet that this printout is the most recent version of this document before use. 
+ Anaemia during Pregnancy 
+1.0 Aim 
+ 
+To provide evidence based and up to date guidance for healthcare professionals in the 
+diagnosis and treatment of anaemia during pregnancy and in the postnatal period. This 
+guidance also covers guidance for pregnant women and people who are at risk of becoming 
+iron deficient, or who are non -anaemic with iron deficiency. Iron deficiency anaemia has 
+been linked to poor maternal and fetal outcomes. 
+ 
+2.0 Scope 
+ 
+This guideline applies to: 
+ 
+• Midwives 
+• Obstetricians 
+• General Practitioners 
+ 
+3.0 Introduction 
+ 
+Anaemia is defined as a low haemoglobin (Hb) concentration. The lower limit of current 
+reference range is two standard deviations below the mean in a healthy population (WHO, 
+2015). The definitions in pregnancy are: 
+ 
+ Hb <110 g/l in the first trimester 
+ Hb <105 g/l in second and third trimester 
+ Hb <100 g/l postpartum. 
+ 
+Prevalence 
+ 
+• Iron deficiency is the most common cause of anaemia in pregnancy. 
+• Globally, iron deficiency is the most common nutritional deficiency and is the 
+leading cause of anaemia. An estimated 40% of women and people worldwide are 
+anaemic (WHO, 2015). 
+• In the UK Nair et al conducted a retrospective cohort analysis of 14,001 women 
+and people with singleton pregnancies >24 weeks at Guy’s and St Thomas and 
+Wolverhampton hospitals between 2013 and 2015. They found that 46% of 
+women and people had anaemia at some point during their pregnancy (Nair 
+et al., 2015). 
+ 
+4.0 Abbreviations used in this guideline 
+ 
+BJH - British Journal of Haematology EBL - Estimated blood loss 
+FBC - Full blood count Fe - Iron 
+GI - Gastrointestinal Hb - Haemoglobin 
+HSR - Hypersensitivity reaction TIBC - Total iron-binding capacity UHS -CG-0008 -2023 Anaemia during Pregnancy v1.0 Oct 2023 Page 5 of 23 
+Please check the intranet that this printout is the most recent version of this document before use. 
+ 
+IM - Intra Muscular IOL - Induction of labour 
+IV - Intravenous MCH - Mean corpuscular haemoglobin 
+MCHC - Mean corpuscular haemoglobin 
+concentration MCV - Mean cell volume 
+MEOWS - Modified Early Obstetric 
+Warning Score MET - Medical emergency team 
+OD - Once a day PPH - Postpartum Haemorrhage 
+PO - By mouth RBC - Red Blood Cells 
+RDA - Recommended daily amount SLE - Systemic Lupus Erythematosus 
+IBW - Ideal birth weight MIS - Maternity Information System eg 
+Badgernet 
+ 
+5.0 Responsibilities 
+ 
+Midwives & obstetricians have a responsibility to: 
+ 
+• To access, read, understand and follow this guidance. 
+• To use their professional judgement in application of this guideline. 
+ 
+Management have a responsibility to: 
+ 
+• To ensure the guideline is reviewed as required in line with Trust and National 
+recommendations. 
+• To ensure the guideline is accessible to all relevant staff. 
+
+6.0 Background 
+6.1 Causes of anaemia in pregnancy 
+Iron Deficiency 
+The most common cause of anaemia during pregnancy is deficiency of iron. In iron 
+depletion, the body's stored iron is reduced and individuals are at greater risk of anaemia in 
+situations of increased demand, such as pregnancy. Iron utilisation is significantly increased 
+during pregnancy, as iron is required for fetal growth and development and for maternal and 
+birthing parent erythropoiesis. Iron deficiency, with or without anaemia, can cause maternal 
+and birthing parent fatigue. Anaemia is also associated with poorer maternal and birthing 
+parent and perinatal outcomes including preterm birth, small for gestational age neonates, 
+perinatal death, maternal and birthing parent postpartum haemorrhage (PPH) and need for 
+blood transfusion. 
+ 
+Other cause of anaemia 
+ 
+Less common causes of anaemia include vitamin B12 and folate deficiency, the presence of 
+a variant haemoglobin or thalassaemia, inflammatory disorders such as Crohn’s or ulcerative UHS -CG-0008 -2023 Anaemia during Pregnancy v1.0 Oct 2023 Page 6 of 23 
+Please check the intranet that this printout is the most recent version of this document before use. 
+ 
+colitis, malabsorption, haemolysis and blood loss. If there are uncertainties seek medical 
+advice. 
+
+B12 related anaemia 
+ 
+In the young maternal and birthing parent population with a reasonably normal diet this is an 
+unlikely cause of anaemia. Serum B12 levels are physiologically reduced in pregnancy (table 
+below) and confirming significant deficiency is not reliably possible in pregnancy (BJH). 
+Senior medical advice should be sought if there are particular reasons why B12 anaemia 
+might be present (other red blood cell changes (macrocytosis), previous gastric surgery or 
+conditions influencing normal gastric secretion and absorption and ileal small bowel 
+disease). 
+ 
+Advice from the British Journal of haematology concludes that during pregnancy, in the 
+presence of a strong suspicion of underlying deficiency, a short course of empirical 
+hydroxocobalamin should be given, with further investigations post -partum – either one 
+intramuscular 1 mg hydroxocobalamin or oral cyanocobalamin 50-150 micrograms daily. 
+ 
+Vitamin B12 , cobalamin (serum) 
+Units Non-pregnant 
+Adult First Trimester Second Trimester Third Trimester 
+ng/L 279 - 966 118 - 438 130 - 656 99 – 526 
+pmol/L 206 - 713 87 - 323 96 - 484 73 – 388 
+
+6.2 Clinical signs and symptoms 
+ 
+Anaemia may be asymptomatic, and therefore only diagnosed at routine screening. The 
+signs and symptoms of anaemia are non -specific. However, fatigue is the most common 
+symptom reported by patients. Other symptoms include dizziness, syncope, palpitations, 
+shortness of breath and headaches. These symptoms may occur even in women and people 
+with low Fe (iron) stores but as yet normal Hb. 
+
+6.3 Consequences of anaemia 
+ 
+Maternal and birthing parent anaemia has been associated with a significantly higher risk of 
+perinatal and neonatal mortality, low birth weight and pre ‐term birth, and maternal and 
+birthing parent morbidity and mortality. UHS -CG-0008 -2023 Anaemia during Pregnancy v1.0 Oct 2023 Page 7 of 23 
+Please check the intranet that this printout is the most recent version of this document before use. 
+ 
+7.0 Diagnosis 
+7.1 Screening 
+ 
+All women and people are recommended to have a FBC taken at booking and 28 weeks, to 
+screen for anaemia. If a woman and person is found to be anaemic at screening they should 
+be started on oral iron, this is helpful for both diagnosis and management. A rise in Hb 
+should be seen after 2 -3 weeks when it should be rechecked: this supports the diagnosis of 
+iron deficiency. 
+ 
+Anaemia in pregnancy is diagnosed if: 
+ 
+• Hb <110 g/l in the first trimester 
+• Hb <105 g/l in second and third trimester 
+
+7.2 Haemoglobinopathy 
+ 
+Women and people with a known haemoglobinopathy should have a serum ferritin taken to 
+identify concomitant iron deﬁciency and exclude iron loading states. In these patients oral 
+iron should not be started without a ferritin result and they should be referred to the maternal 
+medicine consultant. Anaemia can be ‘normal’ for people with haemoglobinopathies. 
+
+7.3 Non-anaemic women and people at risk of iron deficiency 
+ 
+At booking women and people who are at high risk for iron deficiency should be identified. 
+The British Haematology Society gives guidance on the management of women and people 
+at risk of iron deficiency. Their advice states that this group of women and people should be 
+started on a prophylactic dose of iron empirically or have serum ferritin checked first and iron 
+replaced if ferritin <30 even if Hb is in normal range (Pavord et al., 2020). This should be 
+with oral Iron. 
+ 
+Ferritin of <30 is indicative of iron deficiency. 
+ 
+Risks of iron deficiency include: 
+ 
+• Previous anaemia 
+• Multiparity > or equal to 3 
+• Twin pregnancy 
+• <1 year since last pregnancy 
+• Poor diet 
+• Vegetarian/vegan diet 
+• Pregnant teenagers 
+• Recent history of significant bleeding 
+• Declines blood products 
+• Previous bariatric surgery UHS -CG-0008 -2023 Anaemia during Pregnancy v1.0 Oct 2023 Page 8 of 23 
+Please check the intranet that this printout is the most recent version of this document before use. 
+
+Non‐anaemic women and people where serum ferritin analysis may be necessary: 
+ 
+• High risk of bleeding during pregnancy or at birth. 
+• Women and people declining blood products, such as Jehovah's Witnesses. 
+• Women and people for whom providing compatible blood is challenging. 
+
+7.4 Laboratory testing 
+Red cell indices 
+A low Hb, mean cell volume (MCV), mean cell haemoglobin (MCH) and mean cell 
+haemoglobin concentration (MCHC) are suggestive of iron deficiency, but need to be 
+interpreted with caution in view of the physiological increase of MCV in pregnancy, of around 
+6 fl (Chanarin et al, 1977 ). Microcytic, hypochromic indices may also occur in 
+haemoglobinopathies. 
+ 
+Ferritin <30 
+ 
+A low ferritin (<30) despite having a normal Hb is diagnostic of iron deficiency. These women 
+and people should be started on oral iron. However if the woman and person is symptomatic 
+they may be considered for an iron infusion as first line. These patients should be discussed 
+with a consultant if any concerns. Beware that a normal ferritin level does not exclude iron 
+deficiency because it is an acute phase protein which can be raised in pregnancy. 
+Unselected routine screening with ferritin is not recommended. 
+ 
+Other biomarkers 
+ 
+Transferrin saturation, serum Fe, TIBC etc. have not been formally evaluated in pregnancy 
+and should not be used therefore do not request. 
+
+8.0 Management of iron deficiency in pregnancy 
+8.1 Dietary Advice 
+ 
+All women and people should receive dietary advice at their booking appointment . In 
+pregnancy the physiological iron requirements increase from 1 -2 mg to 6 mg per day, with 
+increasing demand as pregnancy progresses. The recommended daily intake (RDA) of iron 
+in pregnancy is 27 mg (twice that of a non -pregnant woman and person). Once a woman 
+and person becomes iron -deficient it is not possible to ensure that repletion is through diet 
+alone and oral supplementation is needed. 
+ 
+Iron Rich Foods include: 
+ 
+• Meat 
+• Nuts UHS -CG-0008 -2023 Anaemia during Pregnancy v1.0 Oct 2023 Page 9 of 23 
+Please check the intranet that this printout is the most recent version of this document before use. 
+ Recommended dose of oral Iron: 
+200mg Ferrous sulphate / 210mg Ferrous Fumarate orally once per day in the 
+morning on empty stomach with vitamin C 
+Note: This can be reduced to an alternate day dosage if patient is having difficulty with 
+side effects 
+• Beans 
+• Dried fruit 
+• Wholegrain foods 
+• Fortified breakfast cereals 
+• Soybean flour 
+• Most dark green leafy vegetables 
+ 
+Reducing tea and coffee intake can also help to improve iron levels. Over the counter iron 
+supplements are not sufficient once iron deficiency has occurred. 
+
+8.2 Oral Iron Replacement 
+ 
+If anaemia is diagnosed, oral iron replacement therapy should be recommended: 
+
+Oral iron preparations are safe and effective but often have significant side effects. Recent 
+studies have shown that a lower daily or alternate day dose is associated with better 
+absorption with less side -effects. Therefore an elemental iron dose of 40-80 mg each 
+morning or alternate day is recommended . Preparations are shown in the table below. 
+Higher doses are not necessarily absorbed and have worse side effects due to the excess 
+unabsorbed iron remaining in the gastrointestinal tract. 
+ 
+IRON SALT PREPARATION ELEMENTAL IRON CONTENT * 
+Ferrous Fumarate 210 mg 65 mg 
+Ferrous Gluconate 300 mg 35 mg 
+Ferrous Sulphate 200 mg 65 mg 
+Ferrous Feredetate 190 mg/5ml 27.5 mg/5ml 
+Pregaday® 
+(includes 350mcg Folic acid) 322mg 100mg 
+For vegetarians or vegans: please note that there can be animal derived excipients in solid 
+form iron preparations eg gelatin shellac and lactose. Please discuss with pharmacist for a 
+suitable alternative. 
+8.3 Side effects of oral iron 
+ 
+Typical side effects include gastric irritation, nausea, and disturbed bowel function. Side 
+effects are normally directly related to the elemental dose of iron in each preparation. 
+Therefore, it is recommended that dose should be reduced to alternate day dosing if a Please check the intranet that this printout is the most recent version of this document before use. 
+ 
+patient is having difficulty with side effects with daily dose. Advise women and people that it 
+is common for their stool to change colour on iron therapy. 
+ 
+Women and people should be warned about the most likely side effects and given written 
+information about iron supplements in pregnancy. Advice should be given to take oral iron 
+supplementation on an empty stomach, with water or a source of vitamin C to enhance 
+absorption. 
+
+8.4 Hb Monitoring 
+ 
+FBC should be re -checked 2 -3 weeks after commencing oral iron. If iron deficiency is the 
+cause of anaemia a patient’s Hb should rise after treatment with compliance with daily oral 
+iron for 2 -3 weeks. 
+ 
+The timing of further checks will depend upon the degree of anaemia and period of 
+gestation. Once the Hb is in the normal range, treatment should be continued for a further 3 
+months and until at least until 6 weeks postpartum to replenish iron stores. 
+ 
+Compliance 
+ 
+In cases of a poor response on oral iron, maternal and birthing parent compliance should be 
+checked. If there is good compliance and poor response alternative causes of anaemia 
+should be considered. Discussion with senior medical staff is recommended if there are 
+uncertainties. 
+
+UHS -CG-0008 -2023 Anaemia during Pregnancy v1.0 Oct 2023 Page 10 of 23 Please check the intranet that this printout is the most recent version of this document before use. 
+ UHS-CG-0008 -2023 mia during Pregnancy v1.0 Oct 2023 Page 11 of 23 
+Hb ≥110 g/L 
+•Commence Ferrous Sulphate 200mg OD. 
+•Advise to take with water or a source of Vitamin 
+C (e.g. orange juice) on an empty stomach. Take 
+separately to other medications. 
+Hb < 110 but > 85 g/L or Ferritin <30ug/l 
+(If Hb <85: refer to consultant) 
+•Do not start oral Iron 
+without medical advice. 
+•Test serum Ferritin. 
+•Refer to Maternal 
+Medicine Team 
+Known 
+haemoglobinopathy 
+At booking – Do screening FBC. 
+Give dietary advice and review risk factors for iron deficiency. 
+•Known haemoglobinopathy 
+•Known previous anaemia 
+•Multiple pregnancy (check after 1st scan and do next opportunity) 
+•Parity ≥3 
+•<1 year from last birth to booking 
+•Maternal age <20 
+•Vegan/vegetarian diet 
+•Past bariatric surgery 
+•Women/people who decline blood products 
+Obtain serum FERRITIN If a woman/person has risk factors for iron deficiency 
+and start oral iron if ferritin <30 - this is indicative of iron depletion. 
+Note: There is insufficient 
+evidence to support the use of 
+Iron supplementation for all 
+women and people in pregnancy 
+regardless of anaemia. 
+Continue oral iron 
+Reduce to alternate days if 
+troublesome side effects. Hb <110 g/L and 
+compliant 
+Hb <110 g/L and side-effects 
+Hb <105g/L 
+8.5 Summary of antenatal management of anaemia 
+
+No further antenatal 
+checks continue oral Recheck FBC in 2-3 weeks from starting oral 
+
+Reduce to alternate day dosing, 
+Address compliance issues 
+
+Check FBC at 28/40 
+
+• Commence oral iron if not already. 
+• If taking, check compliance and 
+consider alternative preparation. 
+• Recheck FBC at 2-3 weeks after 
+starting oral iron. 
+• Check ferritin and 
+folate and discuss 
+results with 
+Consultant. 
+• Recommend 
+pregnancy vitamins 
+if limited diet. 
+If Hb >85 <105 g/L: 
+• Check ferritin and folate and 
+recommend pregnancy vitamin if 
+limited diet. 
+• Start oral iron if not already 
+taking. Re -check FBC in 2 weeks 
+after starting oral iron. If no 
+increase or already on oral iron, 
+consider referral to consultant for 
+consideration of IV Iron 
+If Hb < 85 and planning vaginal birth 
+or <90 and planning ELCS (esp. if 
+>34/40): 
+• Refer to consultant for 
+iron if already taking Anae • If Hb <85, refer to consultant. consideration of IV Iron. Hb ≥105 Pre-pregnancy: 
+BJH advises that women and 
+people planning a pregnancy 
+should consider a balanced diet 
+that includes sources of iron, 
+folate and vitamin D. 
+Women/people should be 
+advised to use supplements if 
+their diet does not include 
+sources of these. 
+N.B The RDA of iron in 
+pregnancy is 27mg (Twice that 
+of a non-pregnant woman and 
+person) 
+ 
+ Hb ≥110 g/L 
++/- Ferritin ≥30ug/l 
+ 
+ UHS -CG-0008 -2023 Anaemia during Pregnancy v1.0 Oct 2023 Page 12 of 23 
+Please check the intranet that this printout is the most recent version of this document before use. 
+ 
+9.0 Intravenous Iron Therapy 
+ 
+IV iron therapy can be considered beyond the first trimester (ideally >14 -15 weeks’ 
+gestation) and has been shown to achieve target Hb more often with fewer side effects. Oral 
+therapy is preferred and should be tried first if there is no reason to the contrary. If IV iron 
+therapy is required, the woman and person should be advised that oral iron therapy should 
+be withheld for 5 days post IV iron infusion. Hb levels should be rechecked in 3-4 weeks post 
+iron therapy. 
+ 
+9.1 Indications 
+ 
+IV iron therapy is indicated when there is non -compliance and or intolerance of oral 
+preparations, proven malabsorption (which includes post -bariatric surgery), GI diseases 
+such as Crohns/ulcerative colitis or in late gestation (>34 weeks) where a more rapid Hb 
+response is required (Pavord et al., 2020). IV iron is also indicated where there is a poor 
+response to oral Iron. 
+ 
+Thresholds for IV iron therapy should be individualised according to medical and obstetric 
+factors, but should be considered in the third trimester in women and people who present 
+after 34 weeks’ gestation with confirmed iron deficiency and a Hb<100 g/l. Ideally IV iron 
+therapy should be administered 3 -4 weeks prior to birth to allow time for absorption. 
+ 
+Any woman and person consented for IV iron therapy should be given the Trusts patient 
+information leaflet ‘'Treatment for iron deficiency anaemia with intravenous iron' available on 
+the intranet. 
+ 
+IV iron therapy should not be administered out of hours to reduce the risk in cases where 
+there is an adverse reaction. 
+ 
+9.2 Contraindications 
+ 
+• History of anaphylaxis or serious reactions to parenteral iron therapy. 
+• Risk of hypersensitivity reactions are enhanced in patients with known allergies 
+including drug allergies and in patients with a history of severe asthma, eczema or 
+atopic allergy. There is also increased risk in women and people with active 
+immune or inflammatory conditions (e.g. SLE, rheumatoid arthritis). 
+• First trimester of pregnancy (if indicated in 1st trimester discuss with senior medical 
+staff). 
+• Active acute or chronic bacteraemia. 
+• Decompensated liver disease. 
+ 
+9.3 Preparation used 
+ 
+The preparation currently in use is Ferric Derisomaltose Pharmacosmos (previously 
+known as Monofer) which should be prescribed as per the trust guideline after informed 
+consent from patient – see ( Appendix 1 ). UHS -CG-0008 -2023 Anaemia during Pregnancy v1.0 Oct 2023 Page 13 of 23 
+Please check the intranet that this printout is the most recent version of this document before use. 
+ 
+9.4 During the Infusion & techniques to minimise the risk of iron staining 
+ 
+• Please use the IV iron Nurse Checklist ( Appendix 2 ) for the prescribing, 
+monitoring of the infusion and discharge checklist. The Patient Information Leaflet 
+must be provided to all women and people receiving IV iron therapy. 
+• Avoid intravenous iron administration via cannulation at sites of flexion (e.g. 
+antecubital fossa, wrist) or on the back of the hand. The distal veins of the forearm 
+are the preferred site. If site of flexion is only option, use smaller cannula and slow 
+down infusion. 
+• Use an appropriate cannula size (20- to 24-gauge). 
+• Minimise the number of cannulation attempts - ask for help if difficult to cannulate. 
+• Secure the cannula and use an extension set to minimise catheter movement. 
+• Never cover the injection site with a bandage. 
+• Ensure the patency of the vein before administration – cannula must flush easily. 
+If patency is uncertain, do not administer intravenous iron, re -site cannula. 
+• Do not give infusions at night -time or if patient is unable to report symptoms. 
+• The cannula should be monitored throughout the infusion for any signs of 
+extravasation. Iron infusions can cause permanent staining in the event of 
+extravasation (See Appendix 2 ). 
+• CTG monitoring is advised during administration of IV iron. This is because fetal 
+bradycardia may occur following administration of IV iron doses; this is usually 
+transient and a consequence of a hypersensitivity reaction in the mother and 
+/birthing parent. If unresolved, an emergency caesarean birth may be required. 
+• Record baseline observations of pulse, blood pressure, respiration rate and 
+temperature, and repeat after 15 minutes, and at the end of the infusion. Record 
+all observations on MEOWS score on MIS. 
+• Monitor women and people carefully for signs and symptoms of hypersensitivity 
+reactions during and following each administration of iron infusion. These include 
+urticaria, rashes, itching, nausea and shivering. Administration must be stopped 
+immediately if any of these signs occur (see also section 9.5 ). Acute severe 
+anaphylactic reactions are uncommon but usually occur within the first few 
+minutes of administration and are generally characterised by sudden onset 
+respiratory difficulty and/or cardiovascular collapse. If this is to occur call 
+for medical help immediately, consider calling the Medical Emergency Team 
+(MET) and treat as per anaphylaxis protocol. 
+• Parenteral iron should be used with caution in presence of acute or chronic 
+infection. 
+• Ferric Derisomaltose Pharmacosmos (previously known as Monofer) should not 
+be used in patients with on -going bacteraemia. 
+• Parenteral iron should only be administered when staff trained to evaluate and 
+manage anaphylactic reactions are immediately available in an environment with 
+full resuscitation facilities. 
+• Hypotensive episodes may occur if intravenous injection is administered too 
+rapidly. 
+• The patient should be observed for adverse effects for at least 30 minutes 
+following an iron infusion. UHS -CG-0008 -2023 Anaemia during Pregnancy v1.0 Oct 2023 Page 14 of 23 
+Please check the intranet that this printout is the most recent version of this document before use. 
+ 
+• Delayed reactions may also occur and include arthralgia, myalgia and sometimes 
+fever. Onset varies from several hours up to 4 days after administration. 
+Symptoms last two to four days and settle spontaneously or following use of 
+simple analgesics. In addition, exacerbation of joint pain in rheumatoid arthritis 
+can occur and local reactions may cause pain and inflammation at or near 
+injection site and a local phlebitic reaction. 
+ 
+9.5 Management of hypersensitivity reaction (HSR) 
+ 
+Mild/moderate (also known as a Fishbane reaction): 
+ 
+• Stay calm, stop the infusion. 
+• Monitor patients for signs of developing a severe hypersensitivity reaction. This is 
+extremely rare and isolated symptoms generally resolve without intervention. 
+• It is usually safe to restart when the symptoms pass (usually around 10 mins) but 
+at half the rate, so over 1 hour instead of 30 mins. 
+• It is unnecessary to treat Mild/Moderate HSR’s unless urticaria occurs and this 
+can be treated in the usual way with anti -histamine if indicated. Mild/moderate 
+hypersensitivity reactions do not require adrenaline. 
+ 
+Severe Hypersensitivity/anaphylaxis: 
+ 
+• Stop the infusion immediately. 
+• Call for urgent medical assistance - put out a MET call (2222 adult medical 
+emergency). 
+• Treat as per Resusitation Council UK Anaphylaxis algorithm 2021 
+• For anaphylaxis Adrenaline 1 in 1000 (1mg in 1ml) 500 micrograms IM 
+injection should already be prescribed on the IV Infusion Administration of Ferric 
+Derisomaltose Pharmacosmos ( appendix 2 ). 
+• Monitor observations continuously. 
+• Ensure a DATIX is completed. 
+ 
+9.6 Acute Management of iron extravasation (iron staining) 
+(See appendix 3) 
+ 
+• If the patient complains of pain, swelling, soreness at the injection site or there is 
+any obvious swelling or discolouration, stop the infusion immediately and 
+assess the site. Disconnect the giving set. 
+• Aspirate any residual drug from the cannula DO NOT FLUSH. 
+• Remove the cannula. 
+• Document volume of infused fluid. 
+• Apply a cold pack if there is swelling or soreness, keep arm level for as long as 
+possible to avoid spread of stain, consider drawing around stain to assess spread. 
+• Inform Obs Reg and arrange outpatient follow up - dermatology referral may be 
+needed if severe. 
+• Ensure a DATIX is completed. UHS -CG-0008 -2023 Anaemia during Pregnancy v1.0 Oct 2023 Page 15 of 23 
+Please check the intranet that this printout is the most recent version of this document before use. 
+ 
+10.0 Management at birth 
+ 
+There should be efforts to maximise Hb prior to labour. Iron deficiency anaemia alone 
+should not influence the mode and timing of birth. There is no place for offering routine 
+Induction of labour (IOL), based on iron deficiency anaemia alone. 
+ 
+Maternal anaemia increases the risk of PPH and has an association with postpartum sepsis. 
+Women and people with an Hb <100 approaching term should be considered for iron 
+infusion ideally 3 -4 weeks prior to birth to allow time for absorption and have an 
+individualised care plan in place (consider IV access in labour, birth in an obstetrician led 
+unit, and active management in the third stage of labour). Hb should be checked on 
+admission to hospital. 
+ 
+11.0 Postnatal care 
+ 
+Women and people with a blood loss >500 ml, who are symptomatic of anaemia or who had 
+uncorrected antenatal anaemia should have their Hb checked within 48 hours of birth. 
+Interpretation of results should take into account intrapartum events and likely further 
+redistribution of intra and extravascular volumes. 
+ 
+11.1 Management 
+ 
+• Hb ≥ 100 g/L: continued healthy diet and lifestyle. Consider plans for 
+breastfeeding. 
+• Hb <100 g/L, haemodynamically stable with mild or no symptoms: offer oral iron 
+replacement for at least 3 months (Ferrous sulphate 200mg PO OD) or alternate 
+day dosing if not tolerated. 
+• Hb <100 g/L , with mild/moderate symptoms of anaemia (exaggerated fatigue, 
+dizziness on standing, etc.): consider IV iron therapy or blood transfusion. Senior 
+medical advice or review recommended. UHS -CG-0008 -2023 Anaemia during Pregnancy v1.0 Oct 2023 Page 16 of 23 
+Please check the intranet that this printout is the most recent version of this document before use. 
+ 
+Hb <100 and 
+hemodynamically 
+stable, asymptomatic, 
+or mildly symptomatic 
+Estimated Blood loss (EBL)>500, 
+uncorrected anaemia prior to 
+delivery, or symptomatic of 
+anaemia 
+FBC within 48 hours 
+postpartum 
+IV iron should be 
+considered to avoid 
+blood transfusion Oral iron OD for at least 
+3 months - alternate day 
+dosing if not tolerated 
+ 
+11.2 Summary of postnatal management of anaemia 
+
+12.0 Blood transfusion 
+ 
+Decision for transfusion should be by careful evaluation, and oral or IV iron replacement 
+should be considered as alternatives. Women and people who do receive a RBC transfusion 
+should be given full explanation of why transfusion is needed (risk vs benefits); option for 
+alternative treatment should be explained. This discussion needs to be documented along 
+with clear documentation of consent on MIS. Hb <100 and very 
+symptomatic, or do 
+not tolerate/respond 
+to oral Iron Hb >100 continue healthy 
+lifestyle. If already taking oral 
+iron this should continue for 6 
+weeks post -partum UHS -CG-0008 -2023 Anaemia during Pregnancy v1.0 Oct 2023 Page 17 of 23 
+Please check the intranet that this printout is the most recent version of this document before use. 
+ 
+References 
+ 
+Pavord S. (2019) BSH. UK guidelines on the management of iron deficiency in pregnancy 
+ 
+WHO (2011) The Global prevalence of anaemia. 
+ 
+Resuscitation Council UK (2008) Anaphylaxis algorithm . 
+ 
+Devalia et al (2014). Guidelines for the diagnosis and treatment of cobalamin and folate 
+disorders. British Journal of Hematology. 
+ 
+Ge et al. (2023) Rhabdomylosis and intravenous iron sucrose infusion during pregnancy. 
+Obsterics & Gynaecology. 
+ 
+Noran. M. (2015) The impact of maternal iron deficiency and iron deficiency anaemia on 
+child’s health. 
+ 
+Alhossain A. Khalafallah (2015). Iron Deficiency Anaemia in Pregnancy and Postpartum: 
+Pathophysiology and Effect of Oral versus Intravenous Iron Therapy. 
+ 
+Barroso F. (2011). Prevalence of maternal anaemia and its predictors: a multi -centre study. 
+Nair M (2017). Association between maternal haemoglobin and stillbirth: a cohort study 
+among a multi -ethnic population in England. 
+ 
+Briley A (2014). Reporting errors, incidence and risk factors for postpartum haemorrhage 
+and progression to severe PPH: a prospective observational study. 
+ 
+Muzos M. (2017). International consensus statement on the peri-operative management of 
+anaemia and iron deficiency. 
+ 
+Avani T (2015) The safety of intravenous iron preparations: systematic review and meta - 
+analysis. 
+ 
+EMA (2013) Intravenous iron-containing medicinal products 
+ 
+M. Canning (2020) A stain on iron therapy. Australian Prescriber 
+ 
+University hospital Southampton (2020) Management of Anaemia in Pregnancy. UHS -CG-0008 -2023 Anaemia during Pregnancy v1.0 Oct 2023 Page 18 of 23 
+Please check the intranet that this printout is the most recent version of this document before use. 
+ 
+Appendix 1: Ferric Derisomaltose Pharmacosmos iron infusion 
+(previously known as Monofer) 
+
+Patient body weight is determined by booking weight . 
+ 
+If a patient has a BMI >30 use the Ideal Body Weight (IBW) below. 
+ 
+IBW (female) = 45.5kg + 2.3kg for each inch over 5 feet. This is summarised in the table 1 
+below: 
+ 
+Height 
+(feet and 
+inches) Height 
+(cm) IBW 
+(kg) 
+5ft 152 45.5 
+5ft 1in 154.5 47.8 
+5ft 2in 157 50.1 
+5ft 3in 159.5 52.4 
+5ft 4in 162 54.7 
+5ft 5in 164.5 57 
+5ft 6in 167 59.3 
+5ft 7in 169.5 61.6 
+5ft’ 8in 172 63.9 
+5ft 9in 174.5 66.2 
+5ft 10in 177 68.5 
+5ft 11in 179.5 70.8 
+6ft 182 73.1 
+6ft 1in 184.5 75.4 
+6ft 2in 187 77.7 
+6ft 3in 189.5 80 
+6ft 4in 192 82.3 
+6ft 5in 194.5 84.6 
+Table 1: Ideal body weight for BMI >30 
+
+Ferric derisomaltose Pharmacosmos (previously Monofer) doses for pregnant and 
+postnatal patients. 
+ 
+• Table 2 assumes a target Hb of 110 -120g/L and doses do not exceed 20mg/kg so 
+can be given as a single infusion. Doses are expressed in mg of iron. Use booking 
+weight unless patient is obese (BMI > 30) when the ideal body weight should be 
+used. 
+• If the prescriber requires support with deciding on an appropriate dose, please 
+contact pharmacist for advice. UHS -CG-0008 -2023 Anaemia during Pregnancy v1.0 Oct 2023 Page 19 of 23 
+Please check the intranet that this printout is the most recent version of this document before use. 
+
+ Actual Hb (g/L) 
+Weight 
+(kg) Max 
+dose 
+20mg/kg 50-59 60-69 70-79 80-89 90-100 
+40-44kg 800 800 800 800 700 600 
+45-49kg 900 900 900 900 800 700 
+50-54kg 1000 1000 1000 900 800 700 
+55-59kg 1100 1100 1100 1000 800 700 
+60-64kg 1200 1200 1200 1000 900 700 
+65-69kg 1300 1300 1200 1100 900 800 
+70-74kg 1400 1400 1300 1100 1000 800 
+75-79kg 1500 1500 1400 1200 1000 800 
+80-84kg 1600 1600 1400 1200 1000 800 
+85-89kg 1700 1700 1500 1300 1100 900 
+90-95kg 1800 1700 1500 1300 1100 900 
+Table 2: Ferric derisomaltose pharmacosmos (previously Monofer) doses for 
+pregnant and 
+postnatal patients 
+
+Administration of Ferric Derisomaltose Pharmacosmos: 
+ 
+• Dilute the dose of Ferric Derisomaltose Pharmacosmos to 250 mls of sodium 
+chloride 0.9%. For stability reasons, Ferric Derisomaltose Pharmacosmos should not 
+be diluted to concentrations less than 1 mg iron/ml (not including the volume of the 
+ferric derisomaltose pharmacosmos solution) and never diluted in more than 500 ml. 
+ 
+Iron dose Minimum administration time 
+≤1000 mg 
+>1000 mg More than 15 minutes 
+30 minutes or more 
+ 
+Medusa Injectable Medicines Administration Guide UHS -CG-0008 -2023 Anaemia during Pregnancy v1.0 Oct 2023 Page 20 of 23 
+Please check the intranet that this printout is the most recent version of this document before use. 
+
+Appendix 2: IV Iron Nurse Checklist 
+DO NOT PRINT FROM GUIDELINE 
+ 
+ Appendix 2: IV Iron Nurse Checklist cont. 
+DO NOT PRINT FROM GUIDELINE 
+UHS -CG-0008 -2023 Anaemia during Pregnancy v1.0 Oct 2023 Page 21 of 23 
+Please check the intranet that this printout is the most recent version of this document before use. 
+
+Appendix 2: IV Iron Nurse Checklist cont. 
+DO NOT PRINT FROM GUIDELINE 
+UHS -CG-0008 -2023 Anaemia during Pregnancy v1.0 Oct 2023 Page 22 of 23 
+Please check the intranet that this printout is the most recent version of this document before use. 
+
+UHS -CG-0008 -2023 Anaemia during Pregnancy v1.0 Oct 2023 Page 23 of 23 
+Please check the intranet that this printout is the most recent version of this document before use. 
+
+Appendix 3: Medication Safety Incident Learning on Extravasation

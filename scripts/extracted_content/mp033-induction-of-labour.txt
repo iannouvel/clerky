@@ -1,0 +1,600 @@
+# Extracted from: MP033 Induction of labour.pdf
+# Guideline ID: mp033-induction-of-labour
+# Content length: 28962 characters
+# Processing date: 1750066901.353395
+
+Brighton & Sussex University Hospital Page 2 of 18 
+
+Induction of L abour 
+
+Maternity Protocol: MP033 
+ 
+Date agre ed: March 2019 
+
+ Induction of Labour (RSCH PRH only ) MP033 
+ 
+Brighton & Sussex University Hospital Page 3 of 18 
+
+Guideline Review er: David Utting 
+Manager responsible: Jo Sinclair 
+Version: 4 
+Approval Committee: Wome n’s Safety and Quality Comm ittee 
+Date Review ed: March 2019 
+Review date: March 2022 
+Cross reference: MP001 Provision and Sche dule of Antenatal Care 
+MP018 Diabetes 
+MP032 Rupture of Membranes (Term and Pre-term) 
+MP034 Vagi nal birth after Caesar ean Section (VBA C) 
+MP037 Fetal Heart monitoring 
+MP041 Delay in labour and use of O xytocin 
+MP046 Breech & ECV 
+MP073 Management of Pregnancy losses above 14 weeks 
+ 
+Brighton & Sussex University Hospital Page 4 of 18 
+Contents 
+Key Principles ................................ ................................ ................................ ......................... 6 
+Scope ................................ ................................ ................................ ................................ .... 6 
+Responsibilites ................................ ................................ ................................ ....................... 6 
+1 Information and decision -making ................................ ................................ ................. 7 
+1.1 Membrane sweeping: ................................ ................................ ................................ .............. 7 
+2 Induction of labour in specific circumstances ................................ ................................ 8 
+2.1 Prevention of prolonged pregnancy ................................ ................................ .................... 8 
+2.2 Preterm pre -labour rupture of membranes ................................ ................................ ....... 8 
+2.3 Pre-labour rupture of membranes at term ................................ ................................ ......... 8 
+3 Previous caesarean section ................................ ................................ .......................... 9 
+4 Maternal request ................................ ................................ ................................ ......... 9 
+5 Breech presentation ................................ ................................ ................................ .... 9 
+6 Fetal growth restriction ................................ ................................ ............................... 9 
+7 History of precipitate labour ................................ ................................ ........................ 9 
+8 Intrauterine fetal death ................................ ................................ ............................... 9 
+9 Suspected fetal macrosomia ................................ ................................ ...................... 10 
+10 Diabetes ................................ ................................ ................................ .................... 10 
+11 Hypertension ................................ ................................ ................................ ............. 10 
+12 Membrane sweeping ................................ ................................ ................................ . 10 
+13 Pharmacological methods ................................ ................................ .......................... 11 
+14 If Propess Comes Out ................................ ................................ ................................ . 12 
+15 Non -pharmacological methods ................................ ................................ .................. 12 
+16 Surgical methods ................................ ................................ ................................ ....... 13 
+17 Mechanical methods ................................ ................................ ................................ .. 13 
+18 Setting and timing ................................ ................................ ................................ ..... 13 
+19 Monitoring and pain relief ................................ ................................ ......................... 14 
+19.1 Monitoring ................................ ................................ ................................ ......................... 14 
+20 In-patient Management ................................ ................................ ............................. 14 
+20.1 Obstetrician ................................ ................................ ................................ ...................... 14 
+20.2 Midwife ................................ ................................ ................................ ............................. 14 
+20.3 Established Labour ................................ ................................ ................................ ............ 14 
+20.4 Pain relief ................................ ................................ ................................ .......................... 15 
+ Induction of Labour (RSCH PRH only ) MP033 
+ 
+Brighton & Sussex University Hospital Page 5 of 18 21 Prevention and management of complications ................................ ........................... 15 
+21.1 Uterine hyper -stimulation ................................ ................................ .............................. 15 
+21.2 Failed induction ................................ ................................ ................................ ............... 15 
+21.3 Cord prolapse MP047 ................................ ................................ ................................ ..... 16 
+21.4 Uterine rupture ................................ ................................ ................................ ................ 16 
+22 References ................................ ................................ ................................ ................. 16 
+23 Patient Information Leaflet is available at www.mypregnancymatters.org.uk ............ 16 
+24 Appendix A - Research Evidence on Perinatal risks of prolonged pregnancy ................ 16 
+25 Appendix B ................................ ................................ ................................ ................ 17 
+
+ Induction of Labour (RSCH PRH only ) MP033 
+ 
+Brighton & Sussex University Hospital Page 6 of 18 Key Prin ciples 
+
+A protocol is a set of measurable, objective standa rds to determi ne a course of action. 
+Professional judgement may be used in the application of a protocol. 
+
+Scope 
+
+This protocol applies to: 
+• All pregnant women 
+
+Responsibilites 
+
+Midwives & Obstetricia ns: 
+• To access, read, understand and follow this guidance 
+• To use their professional judgement in application of this protocol 
+
+Management 
+• To ensure the protocol is reviewed as required in line with Trust and National 
+recomm endations 
+• To ensure the protocol is accessible to all relevant staff 
+• To ensure the protocol is availa ble to service users on request 
+ 
+Brighton & Sussex University Hospital Page 7 of 18 
+1 Information and decision -making 
+ 
+Women should be informed that most women wi ll go into labour spontaneously by 42 weeks. At the 38 
+week antenatal vis it, all women should be offered information about the risks associated with 
+pregnancies that last longer than 42 weeks, and their options. 
+ 
+Healthcare professionals should always check that there are no signs of a low -lying placental site before 
+membrane sweeping and before induction of labour. 
+ 
+The information should cover: 
+1.1 Membrane sweeping: 
+1.1.1 That membrane sweeping makes spontaneous labour more likely, and so reduces 
+the need for formal induction of labour to prevent prolonged pregnancy 
+1.1.2 What a membrane sweep is 
+1.1.3 That discomfort and vaginal bleeding are possible from the procedure 
+1.1.4 Induction of labour between 41+0 and 42+0 weeks 
+1.1.5 Expectant management 
+ 
+1.2 Healthcare professionals should explain the following points to women being offered 
+induction of labour: 
+1.2.1 The reasons for induction being offered 
+1.2.2 When, where and how induction could be carried out 
+1.2.3 The arrangements for support and pain relief (recognising that women are likely to 
+find induced labour more painful than spontaneous labour) 
+1.2.4 The alternative options if the woman chooses not to have induction of labour 
+1.2.5 The risks and benefits of induction of labour in specific circumstances and the 
+proposed induction methods 
+1.2.6 That induction may not be successful and what the woman's options would be. 
+ 
+1.3 Healthcare professionals offering induction of labour should: 
+1.3.1 Allow the woman time to discuss the information with her partner before coming to 
+a decision 
+1.3.2 Encourage the woman to look at a variety of sources of information 
+ 
+1.3.3 Invite the woman to ask questions, and encourage her to think about her options 
+1.3.4 Support the woman in whatever decision she makes 
+
+Induction of Labour MP033 
+ 
+Brighton & Sussex University Hospital Page 8 of 18 
+ 2 Induction of labour in specific circumstances 
+ 
+2.1 Prevention of prolonged pregnancy 
+ 
+2.1.1 Women with uncomplicated pregnancies should be given every opportunity to go 
+into spontaneous labour. 
+2.1.2 Women with uncomplicated pregnancies should usually be offered induction of 
+labour between 41+0 and 42+0 weeks to avoid th e risks of prolonged pregnancy. 
+The exact timing should take into account the woma n's preferences and local 
+circumstances. 
+2.1.3 If a woman chooses not to have induction of labour, her decision should be 
+respected. Healthcare professionals should di scuss the woman's care with her from 
+then on. 
+2.1.4 From 42 weeks, women who decline induction of l abour should be offered 
+increased antenatal monitoring cons isting of at least twice -weekly 
+cardiotocography and ultrasound estimation of maximum amniotic pool depth. 
+ 
+2.2 Preterm pre -labour rupture of membranes 
+2.2.1 If a woman has preterm pre -labour rupture of membranes, induction of labour 
+should not be carried out before 34 weeks unless there are additional obstetric 
+indications (for example, infection or fetal compromise). 
+ 
+2.2.2 If a woman has preterm pre -labour rupture of membranes after 34 weeks, the 
+maternity team should discuss the following factors with her before a decision is 
+made about whether to induce labour, using vaginal PGE2 
+2.2.3 Risks to the woman (for example, sepsis, possible need for caesarean section) 
+2.2.4 Risks to the baby (for example, sepsis, problems relating to preterm birth) 
+2.2.5 Local availability of neonat al intensive care facilities. 
+ 
+2.3 Pre-labour rupture of membranes at term 
+2.3.1 Women with pre -labour rupture of membranes at term (at or over 37 weeks) 
+should be offered a choice of induction of labour with vaginal PGE2 or expectant 
+management. 
+2.3.2 Induction of labour is appropriate approximately 24 hours after pre -labour rupture 
+of the membranes at term. 
+ 
+Please see Maternity Protocol MP032: Rupt ure of Membranes (Term and Pre-term) 
+ 
+Summary of products characteristics says Prostin is contraindicated with ruptured membranes, 
+however a single dose of Prostin followed by Oxytocin is appropriate. The prescriber should follow 
+ 
+Induction of Labour MP033 
+ 
+Brighton & Sussex University Hospital Page 9 of 18 
+ relevant professional guidance, taking full responsibility for the decision. Informed consent should be 
+obtained and documented. See the General Medical Council’s Good practice in prescribing and 
+managing medicines and devices for further information 
+ 
+Document findings on Appendix B - IOL Proforma 
+ 
+3 Previous caesarean section 
+ 
+If for VBAC induction of labour with Amniotomy . See protocol MP034 Vaginal Birth after Caesarean 
+Section 
+4 Maternal request 
+ 
+Induction of labour should not routinely be off ered on maternal request alone. However, under 
+exceptional circumstances (for example, if the woman's partner is soon to be posted abroad with the 
+armed forces), induction may be considered at or after 40 weeks. 
+ 
+5 Breech presentation 
+ 
+Induction of labour is not generally recommen ded if a woman's baby is in the breech presentation. If 
+external cephalic versi on is unsuccessful, declined or contraindicated, and the woman chooses no t to 
+have an elective caesarean section, induction of labour should be offered, if delivery is indicated, 
+after discussing the associated risks with the woman. 
+ 
+6 Fetal growth restriction 
+ 
+If there is severe fetal growth restriction w ith confirmed fetal compromise, inductio n of labour is not 
+recommended. 
+ 
+7 History of precipitate labour 
+ 
+Induction of labour to avoid a birth unattended by healthcare prof essionals should not be routinely 
+offered to women with a history of precipitate labour. 
+ 
+8 Intrauterine fetal death 
+ 
+In the event of an intrauterine fetal death, health care professionals should offer support to help 
+women and their partners and/or family c ope with the emotional and physical consequences of the 
+deat h. This should include offering information about specialist support. 
+ 
+In the event of an intrauterine fetal death, if the woman appears to be physically well, her 
+membranes are intact and there is no evi dence of infection or bleeding, she should be offered a 
+choice of immediate i nduction of labour or expectant management. 
+
+Induction of Labour MP033 
+ 
+Brighton & Sussex University Hospital Page 10 of 18 
+ In the event of an intrauterine fetal death, i f there is evidence of ruptured membranes, infection or 
+bleeding, immediate indu ction of labour is the preferred management option. 
+ 
+If a woman who has had an intrauterine feta l death chooses to proceed with induction of labour, oral 
+mifepristone, foll owed by vaginal PGE2 or vaginal misoprostol, should be offered. The choice and 
+dose of vaginal prostaglandin should take into account the clinical circumstance s, availability of 
+preparations and local protocol. 
+ 
+For women who have intrauterine fetal de ath and who have had a previous caesarean section, the 
+risk of uterine rupture is increa sed. The dose of vaginal prostaglandin should be reduced accordi ngly, 
+particularly in the third trimester. 
+See MP073 Pregnancy Loss 
+ 
+9 Suspected fetal macrosomia 
+ 
+In the absence of any other indications, in duction of labour should not be carried out simply because 
+a healthcare profession al suspects a baby is large for gestational age (macrosomic). 
+ 
+10 Diabetes 
+ 
+Please see Maternity Protocol MP018 
+ 
+11 Hypertension 
+ 
+Please see Maternity Protocol MP019 
+ 
+12 Membrane sweeping 
+ 
+Recommended methods for induction of labour 
+ 
+Membrane sweeping involves the examining finger passing through the cervix to rotate against the wall of 
+the uterus, to separate the chorionic membrane from the decidua. If the cervix will not admit a finger, 
+massaging around the cervix in the vaginal fornices may achieve a similar effect. For the purpose of this 
+guideline, membrane sweeping is regarded as an adjunct to induction of labour rather than an actual 
+method of induction. 
+ 
+The Bishop score is a group of measurements made by doing a vaginal examination, and is based on the 
+station, dilation, effacement (or length), position and consistency of the cervix. A score of eight or more 
+generally indicates that the cervix is ripe, or 'favourable' – when there is a high chance of spontaneous 
+labour, or response to interventions made to induce labour. 
+
+Induction of Labour MP033 
+ 
+Brighton & Sussex University Hospital Page 11 of 18 
+ 12.1 Prior to formal induction of labour, wo men should be offered a vaginal examination for 
+membrane sweeping. 
+12.2 At the 40 and 41 week antenatal visits, nulliparous women should be offered a vaginal 
+examination for membrane sweeping. 
+12.3 At the 41 week antenatal visit, parous women should be offered a vaginal examination for 
+membrane sweeping. 
+12.4 When a vaginal examination is carried out to assess the cervix, the opportunity should be 
+taken to offer the woman a membrane sweep. 
+ 
+12.5 Additional membrane sweeping may be offered if labour does not start spontaneously. 
+ 
+13 Pharmacological methods 
+ 
+Vaginal PGE2 is the preferred method of induct ion of labour, unless there are specific clinical reasons for 
+not using it (in particular the risk of uterine hyper -stimulation). It should be administered as a ge l, tablet 
+or controlled release pessary. 
+ 
+The recommended regimens are: 
+ 
+• One cycle of vaginal PGE2 controlled -release pessary: one dose over 24 hours. 
+ 
+• One cycle of vaginal PGE2 tablets or gel: one dose, followed by a second dose after 
+6 hours if labour is not established (up to a maximum of two doses in 24 hours ) 
+ 
+When offering PGE2 for induction of labour, healthcare professionals should inform women about the 
+associated risks of uterine hyper -stimulation. 
+
+Induction of Labour MP033 
+ 
+Brighton & Sussex University Hospital Page 12 of 18 
+ 13.1 The Propess pessary is inserted as follows: 
+13.1.1 A vagi nal exami nation will be performed, using only water based gel for lubrication. 
+To prevent non intentional displacement at the time of insertion, it is advised to 
+loop the tape at the pessary end. 
+13.1.2 Once the cervix is located and assess ed, insert the Propess® pessary in-between 
+fingers and slide pessary into the posterior fornix. 
+13.1.3 Turn pessary into transverse position in the posterior fornix, withdraw fingers 
+carefully allowing pessary tape to run the length of the vagina and tuck the end of 
+the tape into the vagina 
+13.1.4 Ask the woman to remain semi recumbent on the bed for 30 mi nutes following 
+insertion. Advise her to take care when visiting the toilet not to pull on the tape, if at 
+all concerned request the woman to inform a Midwife. 
+13.2 If SROM occurs after propess has been inserted but labour is not established DO NOT 
+remove pessary, observe uterine activity and assess the fetal heart by intermittent 
+auscultation. If there are any concerns undertake a CTG a nd full set of ma ternal 
+observations. 
+ 
+13.3 Women should be advised that if SROM occurs whilst they are at home after Propess has 
+been inserted that they should phone the maternity unit for advice. (see maternity protocol 
+MP032: Term and Pre-term Rupt ure of Membranes) 
+ 
+14 If Propess Comes Out 
+ 
+14.1 If at any point the Propess pessary falls out or is inadvertently pulled out, or is removed in 
+error before the woman is in established labour then the same Propess can be reinserted 
+provided it has remained clean. 
+14.2 If the Propess pessary falls out and becomes contaminated, a new Propess pessary can be 
+inserted (this will need to be re-prescribed by an Obstetricia n). 
+14.3 If reinsertion is required, total pessary time rema ins 24 hours from insertion of the first 
+pessary . 
+14.4 If women are at home when the propess pessary falls out then they should phone the 
+maternity unit for advice. If between 8-5pm women should be advised to return to 
+MAU/triage for assessm ent and reinsertion. If overnight women should be asked to come to 
+MAU/triage at 8am for assessme nt and reinsertion. 
+ 
+15 Non -pharmacological methods 
+ 
+Healthcare professionals should inform women t hat the available evidence does not support the 
+following methods for induction of labour: 
+ 
+• herbal supplements 
+ 
+Induction of Labour MP033 
+ 
+Brighton & Sussex University Hospital Page 13 of 18 
+ • Acupuncture 
+• Homeopathy 
+• castor oil 
+• hot baths 
+• Enemas 
+• Sexual intercourse 
+ 
+16 Surgical methods 
+ 
+Amniotomy alone or with oxytocin, should not be used as a primary method of induction of labour 
+unless there is specific clinical reasons for not using vaginal PGE2, in particular the risk of uterine 
+hyperstimulation. 
+17 Mechanical methods 
+ 
+Mechanical procedures (balloon catheters and laminaria tents) should not be used rou tinely for 
+induction of labour. 
+18 Setting and timing 
+18.1 In the outpatient setting, induction of labour should only be carried out if safety and s upport 
+procedures are in place. 
+18.2 The practice of induction of labour in an outpa tient setting should be audited continuously. 
+18.3 In the inpatient setting, induction of labour using vaginal PGE2 should be carried out at the 
+earliest availability . 
+18.4 If the IOL is for a low risk woman with an uncomplicated pregnancy and the IOL is between 
+41+0 and 41+5 (prolonged pregnancy) the woman should be offered IOL using Propess as an 
+outpatient. Women choosing to have IOL with propess and not go home should be 
+supported in this choice. 
+
+Induction of Labour MP033 
+ 
+Brighton & Sussex University Hospital Page 14 of 18 
+ 19 Monitoring and pain relief 
+19.1 Monitoring 
+19.1.1 Wherever induction of labour is carried out, facilities should be available for 
+continuous electronic fetal heart rate and uterine contraction monitoring. 
+19.1.2 Before induction of labour is carried out, Bishop Score should be assessed and 
+recorded. A normal fetal heart rate pattern should be confirmed using electronic 
+fetal monitoring. 
+19.1.3 After administration of vaginal PGE2, when contractions begin, fetal wellbeing 
+should be assessed with continuous electronic fetal monitoring. Once the 
+cardiotocogram is confirmed as normal, intermittent auscultation should be used 
+unless there are clear indications for continuous electronic fetal monitoring. 
+19.1.4 If the fetal heart rate is abnormal after administration of vaginal PGE2, escalation 
+and recommendations on m anagement of fetal compromise should be followed. 
+19.1.5 Bishop score should be reassessed 6 hours after vaginal PGE2 tablet or 24 hours 
+after vaginal PGE2 controlled -release pessary insertion, to monitor progress. 
+19.1.6 If a woman returns home after ins ertion of vaginal PGE2 she should be asked to 
+contact Triage : 
+• When contractions begin 
+• SROM 
+• Any PV bleeding 
+• Or any Maternal or Fetal concerns 
+20 In-patient Management 
+ 
+20.1 Obstetrician 
+20.1.1 Review on admission including individualised care plan to be documented in 
+maternal notes 
+20.1.2 Prostaglandin drug documented and prescribed 
+20.1.3 Documentation of f requency of fetal CTG monitoring if required 
+20.2 Midwife 
+20.2.1 Review 6 hourly including : 
+• Fetal Movements 
+• Fetal Heart Auscultation 
+• Uterine activity 
+• Analgesia requirements 
+• PV loss 
+20.3 Established Labour 
+ 
+Once in established maternal and fetal monitoring should be carried out per MP035 Care of 
+women in labour protocol. 
+ 
+Induction of Labour MP033 
+ 
+Brighton & Sussex University Hospital Page 15 of 18 
+ 
+20.4 Pain relief 
+20.4.1 Women being offered induction of labour should be informed that induced labour is 
+likely to be more painful than spontaneous labour. 
+20.4.2 Women should be informed of the availability of pain relief options in different 
+settings. 
+20.4.3 During induction of labour, healthcare professionals should provide women with 
+the pain relief appropriate for them and their pain. This can range from simple 
+analgesics to epidural analgesia. 
+20.4.4 Birth attendants (carers and healthcare professionals) should offer women support 
+and analgesia as required, and should encourage women to use their own coping 
+strategies for pain relief. 
+ 
+20.4.5 The opportunity to labour in water is recommended for pain relief 
+ 
+21 Prevention and management of complications 
+ 
+21.1 Uterine hyper -stimulation 
+Tocolysis should be considered if uterine hyper -stimulation occurs during induction of labour 
+inform Midwife in charge if any concerns arise: 
+21.1.1 Prolonged Bradycardia / Abnormal CTG 
+Rem ove Propess and give 250 mcg Terbu taline (subcutaneous) and transfer to labour 
+ward for urgent Obstetric review 
+21.1.2 Non -reassuring CTG 
+21.1.2.1 If in established labour: remove Propess, continue CTG and for obstetric 
+review 
+21.1.2.2 If not in established labour: For Obstetric review, Inform MW in charge and 
+consider transfer to labour ward 
+21.2 Failed induction 
+ 
+• Failed induction is defined as labour not starting after one cycle of treatment. 
+• If induction fails, healthcare professionals should discuss this with the woman and 
+provide support. The woman's condition and the pregnancy in general should be fully 
+reassessed, and fetal wellbeing should be assessed using electronic fetal monitoring. 
+• If induction fails, decisions about further management should be made in accordance 
+with the woman's wishes, and should take into account the clinical circumstances. 
+ 
+Induction of Labour MP033 
+ 
+Brighton & Sussex University Hospital Page 16 of 18 
+ 21.2.1 If induction fails, the subsequent management options include: 
+• A further attempt to induce labour (the timing should depend on the clinical 
+situation and the woman's wishes) 
+• Caesarean section 
+21.3 Cord prolapse MP047 
+ 
+To reduce the likelihood of cord prolapse, which may occur at the time of amniotomy, the 
+following precautions should be taken: 
+ 
+• Before induction, engagement of the presenting part should be assessed. 
+• Obstetricians and midwives should palpate for umbilical cord presentation during the 
+preliminary vaginal examination and avoid dislodging the baby's head. 
+• Amniotomy should be avoided if the baby's head is high. 
+21.4 Uterine rupture 
+ 
+• If uterine rupture is suspected during induced labour, the baby should be delivered by 
+emergency caesarean section. 
+22 References 
+ 
+1) National Institute for Health and Clinical Excellence. (2008). Induction of labour. London: NICE. 
+23 Patient Information Leaflet is available at www.mypregnancymatters.org.uk 
+24 Appendix A - Research Evidence on Perinatal risks of prolonged pregnangyuwerghweg cy 
+ 
+NICE IOL guideline 2008: 
+ 
+Epidemiological evidence supports the view that a pregnancy which goes beyond 40 weeks of 
+gestation is associa ted with increased perinatal risks. 
+ 
+UK data on perinatal deaths: 
+39 weeks: 5.3 / per 1000 births 
+40 weeks: 4.2 / per 1000 births 
+41 weeks: 3.7 / per 1000 births 
+42 weeks: 6.0 / per 1000 births 
+43 weeks: 5.8 / per 1000 births 
+(P26 table 4.2) 
+
+Com pared with expectant management, induction of labour after 41 completed weeks is 
+associa ted with fewer perinatal deaths (0/2986 versus 7/2953), excluding congenital abnormality. 
+ 
+The odds of increased perinatal mortality may be higher for south Asian women than for white 
+or black wome n, and at term the odds increased fastest in south Asian women (P28) 
+
+Induction of Labour MP033 
+ 
+Brighton & Sussex University Hospital Page 17 of 18 
+ 25 Appendix B : Induction o f Labour Proforma 
+See next page. Print pages 18 -19. 
+
+Induction of Labour MP033 
+ 
+Brighton & Sussex University Hospital Page 18 of 18 
+ Induction of Labour Proforma 
+Name: Assessment No. Indication for IOL: 
+Hospital ID: DOB: IOL procedure discussed? Yes / No 
+ 
+Informed consent ga ined? Yes / No 
+Method of IOL Propess 10mg PV Inpatient Outpatient 
+Prostaglandin Prescribed? Yes / No Prostin 3mg PV Inpatient 
+ 
+Vaginal Examination 
+Consent Gained: □ Chaperone if required: □ Bishop Score: 
+Bishop Score 0 1 2 3 
+Dilation 0 1-2 3-4 5-6 
+Consistency Firm Medium Soft 
+Length >2 1 - 2 0.5 - 1 <0.5 
+Position Posterior Mid Anterior 
+Station -3 -2 -1 0 / Spines 
+CTG review pre-prosta glandin CTG review post pro staglandin 
+ Antenatal CTG 
+ Reassuring Non -Reassuring 
+Baseline rate 
+(bpm) ▪ 110-160 ▪ <109 
+▪ >160 
+Variability (bpm) ▪ >5 ▪ <5 for 50 mins 
+▪ Sinusioidal pattern for >30 
+mins 
+▪ >25 for 25 mins 
+Accelerations ▪ Present 
+ ▪ None for 50 minutes 
+Decelerations ▪ None ▪ 1 or more unprovoked 
+deceleration 
+▪ Decelerations related to 
+uterine tightenings (not in 
+labour) 
+Opinion Normal 
+(All 4 features are 
+reassuring) Abnormal 
+(1 or more non -reassuring features) 
+Indication for CTG: 
+ 
+Action: (An abnormal CTG requires prompt review by obstetrician/senior midwife) 
+ Antenatal CTG 
+ Reassuring Non -Reassuring 
+Baseline rate 
+(bpm) ▪ 110-160 ▪ <109 
+▪ >160 
+Variability (bpm) ▪ >5 ▪ <5 for 50 mins 
+▪ Sinusioidal pattern for >30 
+mins 
+▪ >25 for 25 mins 
+Accelerations ▪ Present 
+ ▪ None for 50 minutes 
+Decelerations ▪ None ▪ 1 or more unprovoked 
+deceleration 
+▪ Decelerations related to 
+uterine tightenings (not in 
+labour) 
+Opinion Normal 
+(All 4 features are 
+reassuring) Abnormal 
+(1 or more non -reassuring features) 
+Indication for CTG: 
+ 
+Action: (An abnormal CTG requires prompt review by obstetrician/senior midwife) 
+Prostaglandin given ? Y / N ARM? Y / N Date: Time: 
+Name: Signature: Role: 
+Date / time : Management plan: Signature 
+ 
+ Cont… Clinical Picture 
+Date: Time: Location: 
+Gravida: Parity: Gestation by USS: Placental Site: 
+Maternal / Fetal risk factors: 
+ 
+Maternal observations BP: Pulse: Temp: 
+Urinalysis: FMF: 
+Abdominal palpation SFH: Presentation: Engagement: 
+Lie: Position: USS if BMI>35 
+Membranes Intact / SROM : Date / time of SROM: Liquor Colour: 
+ 
+Induction of Labour MP033 
+ 
+Brighton & Sussex University Hospital Page 19 of 18 
+ Date / time : Management plan: Signature 
+
+26

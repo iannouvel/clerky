@@ -1,0 +1,1189 @@
+# Extracted from: CG12029 PPH guideline.pdf
+# Guideline ID: cg12029-pph-guideline
+# Content length: 59994 characters
+# Processing date: 1750066900.2262907
+
+CG12029 Postpartum haemorrhage management guideline v5.3 Oct 2021 Page 1 of 29 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Postpartum Haemorrhage Management Guideline 
+Summary statement: How does the 
+document support patient care? The purpose of this guideline is to provide good practice 
+guidelines for staff involved in the management of 
+postpartum haemorrhage . 
+Staff/stakeholders involved in 
+development: Obstetric anaesthetists, obstetric consultants and senior 
+midwifery staff. 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Consultant Obstetrician 
+For use by: All staff involved in the management of postpartum 
+haemorrhage . 
+Purpose: To provide evidence based guidance on postpartum 
+haemorrhage . 
+This document supports: 
+ RCOG Green top guideline 52 (2016) Prevention and 
+Management of Postpartum Haemorrhage . 
+MBRRACE report 2017 . 
+NICE (2017) Intrapartum care CG190 . 
+NICE 2019. NG121 Intrapartum care for women with existing 
+medical conditions or obstetric complications and their babies 
+Key related documents: UH Sussex (SRH&WH) Maternity Guidelines : CG1148 
+Recognition and Management of Severely Ill Pregnant 
+Women , CG12030 Caesarean section birth , CG11103 
+Recovery post regional and GA anaesthesia , CG1112 
+Management of severe pre -eclampsia & eclampsia , CG1149 
+Shoulder dystocia , CG1139 Obesity , CG1146 Retained 
+placenta , CG12004 APH intrapartum haemorrhage , 
+CG1131 Perineal trauma and repair , CG12025 Anaemia in 
+pregnancy , CG21009 Maternity fluid management as an in -
+patient or in labour guideline , CG1151 Uterine rupture 
+Trust Guidelines : Management of Massive Blood Loss, 
+Policy for the Provision of Intraoperative Cell Salvage, 
+Managem ent of Patients who Refuse a Blood Transfusion. 
+Approved by: Joint Obstetric Guideline Group 
+Approval date: 27 October 2021 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable – Divisional Ratification only required 
+Ratification Date: Not Applicable – Divisional Ratification only required 
+Expiry Date: May 2024 
+Review date: April 2024 
+If you require this document in another format such as Braille, large print, audio or another language 
+please contact the Trusts Communications Team 
+Reference Number: CG12029 
+CG12029 Postpartum haemorrhage management guideline v5.3 Oct 2021 Page 2 of 29 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+The interpretation and application of clinical guidelines will remain the responsibility 
+of the individual clinician. 
+ 
+If in doubt contact a senior colleague or exper t. 
+
+ Version Date Author Status Comment 
+1.0 July 2010 Consultant obstetrician Archived New Trust Wide Guideline 
+2.0 February 2011 Lead CNST midwife Archived Administrative update 
+4.0 July 2012 Obstetric, Anaesthetic and 
+Haematology Consultants, 
+Senior Midwives Archived Amendments made with 
+regard to emergency calls 
+and new flow chart 
+4.1 August 2013 Multidisciplinary team Archived Guideline updated 
+following Major Obstetric 
+Haemorrhage Meeting 
+5.0 February 2019 Consultant obstetrician and 
+JOGG Archived Guideline updated in line 
+with National Guidance 
+(RCOG). Haemorrhage 
+definitions change. 
+5.1 May 2019 Clinical Effectiveness Midwife Archived Updated appendix 6 
+following introduction of 
+Maternity Local Safety 
+Standard for procedural 
+counts policy 
+5.2 February 2021 Clinical Effectiveness 
+Support Midwife (Jo Collard) Archived Guideline amended in line 
+with NG121 Intrapartum 
+care for women with 
+existing medical 
+conditions or obstetric 
+complications and their 
+babies – Women /people 
+with asthma not to be 
+given carboprost to 
+manage PPH. 
+5.3 October 2021 Clinical Effectiveness 
+Support Midwife (Jo Collard) LIVE Added Appendix 7: Fluid 
+therapy and blood product 
+transfusion. 
+Pronouns changed. 
+CG12029 Postpartum haemorrhage management guideline v5.3 Oct 2021 Page 3 of 29 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Index 
+ 
+1.0 Aim ................................ ................................ ................................ ............................ 5 
+2.0 Scope ................................ ................................ ................................ ........................ 5 
+3.0 Abbreviations ................................ ................................ ................................ ............. 5 
+4.0 Responsibilities ................................ ................................ ................................ .......... 5 
+5.0 Introduction ................................ ................................ ................................ ................ 6 
+6.0 Definitions ................................ ................................ ................................ .................. 6 
+6.1 PPH timing ................................ ................................ ................................ ................ 6 
+6.2 Volume ................................ ................................ ................................ ...................... 6 
+6.3 Estimation of loss ................................ ................................ ................................ ...... 6 
+7.0 Prevention of PPH ................................ ................................ ................................ ..... 7 
+7.1 Risk fac tors and prevention ................................ ................................ ....................... 7 
+7.2 Minimising risk – reducing blood loss at birth ................................ ............................. 7 
+7.3 Prostaglandins in the prevention of PPH ................................ ................................ .... 7 
+7.4 Carbotocin ................................ ................................ ................................ ................. 8 
+7.5 Tranexamic Acid ................................ ................................ ................................ ........ 8 
+8.0 Management of PPH ................................ ................................ ................................ . 8 
+9.0 Communication and multi -disciplinary care ................................ ................................ 8 
+9.1 Communication with the woman/person ................................ ................................ .... 8 
+9.2 Communication with the multidisciplinary team ................................ .......................... 8 
+9.3 Emergency calls for PPH/MOH ................................ ................................ .................. 9 
+9.3.1 Minor PPH - blood loss 500 ml -1000 ml and without clinical shock ........................... 9 
+9.3.2 Major PPH - (EBL greater than 1000ml) or where there is evidence of 
+haemodynamic instability ................................ ................................ ........................... 9 
+9.3.3 Severe Major Obstetric haemorrhage – blood loss greater than 2000mls ................ 10 
+9.3.4 Retrospective PPH diagnosis ................................ ................................ .................. 10 
+10.0 Assessment and resuscitation ................................ ................................ ................. 10 
+10.1 Measures for Minor PPH - blood loss 500 -1000mls without clinical shock ............... 10 
+10.2 Measures for Major PPH – blood loss >1000ml & continuing to bleed or clinical 
+shock ................................ ................................ ................................ ....................... 11 
+10.3 Stop bleeding ................................ ................................ ................................ ........... 11 
+10.3.1 Tone ................................ ................................ ................................ ........................ 11 
+10.3.2 Tissue ................................ ................................ ................................ ...................... 12 
+10.3.4 Trauma ................................ ................................ ................................ .................... 12 
+10.3.5 Thrombin ................................ ................................ ................................ ................. 13 
+11.0 Communication with blood transfusion service ................................ ........................ 13 
+11.1 RCOG use of additional blood products recommendations: ................................ ..... 14 
+12.0 Use of intraoperative cell salvage (ICS) ................................ ................................ ... 15 
+13.0 Surgical measures ................................ ................................ ................................ ... 15 
+13.1 Exami nation under anaesthesia (EUA) in theatre ................................ .................... 16 
+13.2 Intrauterine balloon tamponade ................................ ................................ ............... 16 
+13.3 Haemostatic brace suturing ................................ ................................ ..................... 16 
+13.4 Aortic compression ................................ ................................ ................................ .. 16 
+13.5 Stepwise uterine devascularisation ................................ ................................ .......... 16 
+CG12029 Postpartum haemorrhage management guideline v5.3 Oct 2021 Page 4 of 29 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. 
+13.6 Internal iliac (hypogastric) arteries ................................ ................................ ........... 17 
+13.7 Selective arterial embolisation - Interventional Radiology ................................ ........ 17 
+13.8 Hysterectomy ................................ ................................ ................................ ........... 17 
+13.9 Ongoing man agement ................................ ................................ ............................. 17 
+14.0 Management of secondary PPH ................................ ................................ .............. 17 
+15.0 Management of minor PPH at home births (500ml – 1000ml without clinical shock) 18 
+16.0 Aftercare ................................ ................................ ................................ .................. 19 
+17.0 Staff training ................................ ................................ ................................ ............ 19 
+18.0 Risk management and patient safety ................................ ................................ ....... 19 
+19.0 Audit & quality monitoring ................................ ................................ ........................ 20 
+References ................................ ................................ ................................ ......................... 21 
+Appendix 1 PPH: Causes and risk factors ................................ ................................ ........... 22 
+Appendix 2: Management of Major Obstetric Haemorrhage ................................ ................ 23 
+Appendix 3: PPH Proforma ................................ ................................ ................................ . 24 
+Appendix 3: PPH Proforma ................................ ................................ ................................ . 25 
+Appendix 4: Swab washing ................................ ................................ ................................ . 26 
+Appendix 5: B -Lynch Suture ................................ ................................ ................................ 27 
+Appendix 6: Maternity Estimated Blood loss form ................................ ............................... 28 
+Appendix 7: Fluid therapy and blood product transfusion ................................ .................... 29 
+
+CG12029 Postpartum haemorrhage management guideline v5.3 Oct 2021 Page 5 of 29 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Postpartum Haemorrhage Management Guideline 
+ 
+1.0 Aim 
+ 
+The aim of this guideline is to provide evidence -based guidance on the management of 
+women /people with postpartum haemorrhage, and ensure that their care is safe, effective 
+and timely. 
+ 
+2.0 Scope 
+ 
+This guideline covers postpartum haemorrhage (PPH) and major obstetric haemorrhage 
+(MOH). 
+ 
+3.0 Abbreviations 
+ 
+MEOWS - Maternity Early Observation 
+Warning System RCOG - Royal College of Obstetricians and 
+Gynaecologist’s 
+MOH - Major obstetric haemorrhage Hb - Haemoglobin 
+CS - Caesarean section FBC - Full blood count 
+IM - Intramuscular FFP - Fresh Frozen Plasma 
+IV - Intravenous PPH - Postpartum haemorrhage 
+ODP - Operating department practitioner ICS - Intraoperative Cell Salvage 
+EBL - Estimated blood loss EUA - Examination under anaesthesia 
+SHO - Senior house officer 
+ 
+4.0 Responsibilities 
+ 
+This guideline applies to the following: 
+ 
+ Midwives 
+ Obstetricians 
+ Maternity assistants 
+ Obstetric anaesthetists and operating department practitioners 
+ Students (midwifery and medical) 
+ Blood transfusion personnel 
+ Haematology consultants 
+ Porters 
+ Clinical managers/matrons and all other relevant staff 
+ 
+This guideline will be reviewed as required in line with Trust and National recommendations 
+and will be available via the Trust Intranet to ensure the guideline is accessible to all relevant 
+staff. 
+ 
+CG12029 Postpartum haemorrhage management guideline v5.3 Oct 2021 Page 6 of 29 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. 
+5.0 Introduction 
+ 
+Postpartum haemorrhage remains one of the leading direct causes of maternal death in the 
+UK, and early intervention and a team approach to caring for women experiencing PPH are 
+vital if avoidable maternal deaths are to b e prevented. Many cases reviewed in recent 
+MBRRACE -UK reports are associated with poor communication and significantly 
+substandard care. 
+ 
+Pregnant women /people must be asked at booking whether they would consent to receiving 
+blood products. If the woman /person would not accept blood products, an appointment 
+should be made to see an Obstetrician in the Antenatal Clinic. At this appointment, a 
+management plan for labour should be made in accordance with the Trust policy on ‘Refusal 
+of Blood Products’ and the details clearly documented in the antenatal record. 
+ 
+6.0 Definitions 
+ 
+6.1 PPH timing 
+ 
+ Primary PPH - blood loss of greater than 500mls within 24 hours of delivery . 
+ Secondary PPH – abnormal or excessive bleeding from the genital tract between 
+24 hours and 12 weeks postnatally. 
+ 
+6.2 Volume 
+ 
+ PPH – blood loss greater than 500mls . 
+ Minor PPH – blood loss 500 -1000mls without clinical shock . 
+ Major obstetric haemorrhage (MOH) - blood loss greater than 1000mls and 
+continuing to bleed or clinical shock. 
+ Moderate MOH - blood loss of 1000 -2000mls . 
+ Severe MOH – blood loss greater than 2000mls . 
+ 
+For women /people with a booking weight of less than 60kg, a smaller volume of blood loss 
+may be clinically significant. 
+ 
+6.3 Estimation of loss 
+ 
+Clinicians should be aware that estimation of blood loss visually is highly inaccurate. Every 
+effort should be made to weigh blood loss volume early in any haemorrhage and clinical 
+signs and symptoms should be inc luded in the assessment of PPH ( see Appendi x 6 for 
+Blood Loss Estimation form ). 
+ 
+Haemorrhage should be considered when classic signs of hypovolaemia are present 
+(tachycardia and/or agitation and the l ate sign of hypotension) even in th e absence of 
+revealed bleeding (MBRRACE -UK 2017) . 
+ 
+CG12029 Postpartum haemorrhage management guideline v5.3 Oct 2021 Page 7 of 29 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. 
+7.0 Prevention of PPH 
+ 
+7.1 Risk factors and prevention 
+ 
+ Risk factors may present antenatally or intrapartum; care plans must be modified 
+as and when risk factors arise ( see Appendix 1 for risk factors). 
+ Clinicians must be aware of risk factors for PPH and should take these into 
+account when counselling women /people about place of birth. 
+ Women /people with known risk factors for PPH should be advised to give birth in 
+a hospital with a blood bank on site. 
+ 
+7.2 Minimising risk – reducing blood loss at birth 
+ 
+ Antenatal anaemia should be investigated and treated as outlined in the ‘Anaemia 
+in pregnancy gui deline’ . CG12025 Anemia during pregnancy 
+ Prophylactic uterotonics should be offered routinely in management of the third 
+stage of labour in all women /people as they reduce the risk of PPH. 
+ For women /people without risk factors for PPH giving birth vaginally oxytocin 
+10units intramuscularly is the agent of choice. 
+ Higher doses of oxytocin do not appear to reduce the risk of PPH. 
+ For women /people having a caesarean section, oxytocin 5 units by slow 
+intravenous injection is used. 
+ Ergometrine/oxytocin (Syntometrine) may be used in the absence of hypertension 
+in women /people at higher risk of PPH, as it reduces the risk of PPH, but it is 
+associated with a five -fold increased risk of nausea, vomiting and hypertension. 
+ Clinicians should consider the use of intravenous tranexamic acid in addition to 
+oxytocin at CS in women /people at increased risk of PPH. 
+ Active management of the third stage, including early clam ping of the umbilical 
+cord, uterotonics and controlled cord traction reduces the risk of PPH. However, 
+delayed cord clamping for at least 2 minutes is beneficial to the newborn, with 
+benefits extending into infancy. Therefore active management of the third stage 
+including early cord clamping is no longer recommended unless the 
+woman /person is bleeding or at significant risk of bleeding. 
+ For active management of 3rd stage in vaginal births , oxytocin 10 units IM should 
+be given with the birth of the anterior shoulder, or immediately after the birth of the 
+baby and before the cord is clamped and cut (NICE 2017 ). 
+ There is some evidence that intravenous oxytocin 10 units is more effective than 
+intramuscular oxytocin at reducing PPH, without increasin g side effects (Adnan et 
+al, 2018). The intravenous route should be considered in any woman /person who 
+already has intravenous access. 
+ 
+7.3 Prostaglandins in the prevention of PPH 
+ 
+ Neither carboprost nor misoprostol have been shown to be preferable to 
+oxytocin/ ergometrine in routine prophylaxis of PPH . However , carboprost is 
+CG12029 Postpartum haemorrhage management guideline v5.3 Oct 2021 Page 8 of 29 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. 
+contraindicated in women /people with asthma due to the risk of bronchospasm 
+(NICE , NG121 2019 ). 
+ Oxytocin was found to be superior to mi soprostol in prevention of PPH in a 
+systematic review. 
+ 
+7.4 Carbotocin 
+ 
+Carbotocin is a long acting oxytocin derivative, licensed for the prevention of PPH at 
+caesarean. It reduces the need for further uterotonics, but there are no statistically significan t 
+differences between carbotocin and oxytocin in prevention of PPH. 
+ 
+7.5 Tranexamic Acid 
+ 
+ Reduces the risk of PPH greater than 1000mls in women /people having CS but 
+not vaginal birth. 
+ The role of tranexamic acid in active bleeding is clear, but has not yet been 
+established in prevention of bleeding. 
+ 
+8.0 Management of PPH 
+ 
+Clinicians should be prepared to use a combination of pharmacological, mechanical and 
+surgical methods to stop bleeding in PPH. These methods should be based upon the 
+causative factor(s). 
+ 
+Consider cause of bleeding – ‘Four T’s’ to direct management ( Appendix 1) 
+ 
+ Tone 
+ Tissue 
+ Trauma 
+ Thrombin 
+ 
+9.0 Communication and multi -disciplinary care 
+ 
+9.1 Communication with the woman /person 
+ 
+ Clear communication with the woman /person and their birthing partner is 
+important, and clear information of what is happening should be given from the 
+outset. 
+ 
+9.2 Communication with the multidisciplinary team 
+ 
+ It is important to be aware that PPH can easily progress to MOH and this is 
+sometimes unrecognised, therefore early intervention and involvement of senior 
+staff is essential. 
+ 
+CG12029 Postpartum haemorrhage management guideline v5.3 Oct 2021 Page 9 of 29 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. 
+To ensure good teamwork and communication, delegation of the following tasks during 
+event should be clear: 
+ 
+ Who is leading the resuscitation? This m ay change as more staff arrive . 
+ Nominate a scribe to complete the proforma ( appendix 3 ). 
+ Maintain running total of blood loss and fluid replacement – inform scribe . 
+ Monitoring vital signs and inform scribe . 
+ Nominate a me mber of staff to support family . 
+ Nominated liaison for blood transfusion . 
+ 
+Closed loop communication should be practiced in all emergency situations. For example, 
+once the team leader has either requested information or asked for a procedure to be 
+performed by a named person, they should then acknowledge the request explicitly and then 
+state when it is d one. This allows for clarification of requests if needed and avoids errors of 
+omission. Closed -loop communication allows the sender to know that their requests have 
+been heard and understood. 
+ 
+9.3 Emergency calls for PPH/MOH 
+ 
+9.3.1 Minor PPH - blood loss 5 00 ml -1000 ml and without clinical shock 
+ 
+ Call for help (emergency buzzer) . 
+ Alert Obstetric team: Dial 2222 and state ‘ Obstetric Emergency ’ and location. 
+ 
+This will summon: 
+ 
+ Labour ward wo-ordinator . 
+ Obstetric registrar . 
+ Obstetric SHO . 
+ Obstetric anaesthetic registrar and operating department practitioner (ODP) . 
+ Alerts the on call obstetric consultant (during normal working hours) . 
+ 
+9.3.2 Major PPH - (EBL greater than 1000ml) or where there is evidence of 
+haemodynamic instability 
+ 
+ Dial 2222 and state ‘Major Obstetric Haemorrhage’ (MOH). 
+ 
+The MOH Call includes all those above and will also alert: 
+ 
+ The nominated porter(s) w ho will go to blood transfusion. 
+ Blood transfusion . 
+ Obstetric consultant (by telephone out -of-hours via switchboard) . 
+
+CG12029 Postpartum haemorrhage management guideline v5.3 Oct 2021 Page 10 of 29 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. 
+9.3.3 Severe Major Obstetric haemorrhage – blood loss greater than 2000mls 
+ 
+ Dial 2222 and declare a ‘ Severe MOH’ . 
+ The switchboard operator will call the on call obstetric consultant to inform them. 
+ The consultant is expected to attend unless the blood l oss has stopped. 
+ If there is ongoing bleeding, the consultant obstetrician should contact the 
+consultant haematologist, and ensure that the consultant anaesthetist has been 
+made aware of the situation. 
+ The RCOG recommends that the consultant obstetrician should attend when there 
+is a blood loss of more than 1500ml where the haemorrhage is continuing. 
+ Following the ‘2222’ MOH call, the Blood Transfusion Department should be 
+contacted by a nominated liaison individual to give patient details, clinical sit uation 
+and blood requirements. 
+ The management of PPH requires a multidisciplinary approach: the anaesthetist 
+plays a crucial role in maintaining haemodynamic stability and if necessary, in 
+determining and administering the most appropriate method of anaest hesia. 
+ The obstetric anaesthetic registrar is responsible for making the decision to inform 
+the obstetric anaesthetic consultant once a MOH has been called and to liaise 
+with the consultant anaesthetist regarding attendance and further anaesthetic 
+support . 
+ In circumstances when it has been determined blood products are not required, 
+the lead clinician (or nominated deputy) is responsible for informing Blood 
+Transfusion. Blood transfusion personnel are then responsible for ‘standing down’ 
+the porter(s). 
+ 
+Remember 2222 ‘Cardiac Arrest or Medical Emergency’ calls can be used if indicated 
+ 
+9.3.4 Retrospective PPH diagnosis 
+ 
+In cases where a PPH is diagnosed retrospectively (e.g. following weighing of all the blood 
+loss) and the patient is stable, the most senior clinician should assess the situation, 
+document a plan and alert Blood Transfusion if blood products are required. It is not 
+necessary to put out a 2222 call in this situation if woman /person is medically stable . 
+ 
+10.0 Assessment and resuscitation 
+ 
+ Shock is a late sign . 
+ Estimate blood loss and keep ongoing record - weigh swabs and pads . 
+ 
+10.1 Measures for Minor PPH - blood loss 500 -1000mls without clinical shock 
+ 
+ IV access – one 14 gauge cannula . 
+ Bloods (20ml) for group and screen, FBC and coagulatio n including fibrinogen . 
+ Pulse, respiratory rate and blood pressure recorded every 15 minutes . 
+ Commence warmed crystalloid. 
+CG12029 Postpartum haemorrhage management guideline v5.3 Oct 2021 Page 11 of 29 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+10.2 Measures for Major PPH – blood loss >1000ml & continuing to bleed or 
+clinical shock 
+ 
+ Rapid evaluation: ABC – Airway, Breathing and Circulation . 
+ Lie patient flat . 
+ Insert two intravenous cannulae (14 gauge) . 
+ Take blood for FBC, Clotting screen (including fibrinogen) . 
+o Urgent cross match (4 - 6 units) . 
+o Baseline renal and liver function . 
+ Give oxygen (O2) by mask at 10 -15 L/mi n regardless of maternal oxygen 
+concentration . 
+ Monitor blood pressure, pulse, respirations, O2 saturations, colour, cerebral 
+function (AVPU) every 5 minutes – use oximeter, automated BP machine and 
+cardiac monitor where available. Record on MEOWS or Patien track. 
+ Record temperature every 15 minutes – use active warming (Bair -Hugger) if 
+indicated. 
+ Catheterise if ongoing bleeding and monitor urine output, using an urometer and 
+fluid balance chart. (See CG21009 Maternity fluid management as an in -patient or 
+in labour guideline ). 
+ Near patient testing for Hb – Hemacue or venous gas – is recommended which 
+should be interpreted with caution with an acute bleed. 
+ Central venous pressure and arterial line monitoring should be considered early, 
+along with blood gases and acid base status. 
+ Transfuse blood as soon as possible if clinically required . 
+ Until blood available infuse up to 3.5 litres of warmed clear fluids, initially 2 litres of 
+warmed isotonic crystalloid. Further fluid resuscitation can continue with additional 
+isotonic crystalloid or colloid (succinylinated gelat in). Hydroxyethyl starch should 
+not be used. 
+ The best equipment available should be used to achieve r apid warmed infusion of 
+fluids - rapid infusers are available on each site and should be kept on the labour 
+ward for this eventuality. 
+ Special blood filter s should not be used as they slow infusions . 
+ See appendix 2 for flow chart and appendix 3 for proforma. 
+ 
+10.3 Stop bleeding 
+ 
+10.3.1 Tone 
+ 
+The following mechanical and pharmacological measures should be instituted /administered 
+in turn: 
+ Massage uterus firmly - rub up contraction and expel any clots . 
+ Remember to empty bladder . 
+ Oxytocin 5 -10 units intravenously (slow IV injection) may have a repeat dose . 
+CG12029 Postpartum haemorrhage management guideline v5.3 Oct 2021 Page 12 of 29 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Ergometrine 0.5 mg IM or IV (slow IV injection). Ergometrine is contra -indicated in 
+women /people with hypertension. 
+ Oxytocin (40 units in 500mls 0.9% sodium chloride at 125 mls/hr) . 
+ Syntometrine™ 1 ml IM (if not hypertensive) is an alternative but is not mentioned 
+in the RCOG guideline . 
+ Carboprost (Hemabate™) intramuscularly (IM) 0.25 milligrams (mg) ever y 15 mins 
+to a maximum of 8 doses ( contraindicated in women /people with asthma). 
+Carboprost must never be given IV. It is not licensed to give carboprost by direct 
+intramyometrial injection however this can be considered by a senior obstetrician . 
+ If signif icant atonic haemorrhage continues after a third dose of carboprost without 
+significant improvement i.e. 30 minutes or more after the first dose was given the 
+team should consider transfer to the operating theatre for an examination under 
+anaesthesia, with an awareness for the impending need for a laparotomy or 
+hysterectomy. 
+ Misoprostol 800 micrograms sublingually – recommendation from The World 
+Health Organisation and International F ederation of Gynaecology and Obstetrics. 
+There is no evidence to support giving both carboprost and misoprostol 
+concurrently, and the combination tends to cause significant side effects for the 
+woman /person , with little or no evidence of benefit. Studies suggest that 
+misoprostol takes 1 -2.5 hours to increase uterine tone, and i s no more effective 
+than an oxytocin infusion (RCOG 2016 ). 
+ 
+10.3.2 Tissue 
+ 
+ Deliver placenta – check completeness . 
+ If retained placenta with PPH - urgent transfer to theatre for manual removal and 
+administer syntocinon infusion after delivery of the placenta . 
+ Consider possibility of placenta accrete . 
+ Consider possibility of uterine inversion . 
+ 
+10.3.4 Trauma 
+ 
+ Apply pressure as initial measure . 
+ Stabilise the mother . 
+ Repair the tear/episiotomy as soon as possible (transfer to theatre may be 
+required) . 
+ Regularly check the estimated blood loss, and maternal condition, particularly 
+suturing is taking longer than average . 
+ Remember document swab and instrument counts in all cases . 
+ 
+In cases where a vaginal pack is used: 
+ 
+ Vagina l packs should be moistened with sterile saline or aqueous lubricant gel 
+only as chlorhexidine based products e.g. Hibitaine can cause severe localised 
+skin damage. 
+CG12029 Postpartum haemorrhage management guideline v5.3 Oct 2021 Page 13 of 29 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+To minimise the risk of inadvertent retention of the pack: 
+ Clearly document and ensure pat ient is aware of it. 
+ Ensure pack externally visible . 
+ Patient to remain on Labour Ward until pack removed . 
+ Presence of pack to be documented on Labour Ward board . 
+ Red wrist band to be applied, stating ‘Vaginal Pack inserted’ 
+ When pack removed this should be witnessed and signed by 2 members of staff. 
+ 
+10.3.5 Thrombin 
+ 
+ In the presence of no previously known clotting concerns, coagulopathy is a late 
+sign in PPH. 
+ Consider whether the patient has taken aspirin, antidepressants (SSRI), low 
+molecular weight hepa rin and document last dose on proforma . 
+ Check coagulation results . 
+ Liaise with haematology if abnormal results – remember fibrinogen <2 is 
+abnormal in the obstetric patient . 
+ 
+11.0 Communication with blood transfusion service 
+ 
+ Liaise with blood transfusio n early . 
+ A standard form of words should be used to request blood from the laboratory – 
+agreed between the laboratory and maternity staff and shared with all new 
+members of staff – it should always be clear what timescale is expected. 
+ Cross matching vs electronic issue of blood – the laboratory uses automated 
+testing for blood group and antibodies and in the absence of any significant 
+antibodies can immediately supply ABO and RhD compatible blood, as long as the 
+woman /person has been ad equately tested in pregnancy and identified to the 
+laboratory. 
+ The terms – ‘controlled major obstetric haemorrhage and ongoing major 
+obstetric haemorrhage’ may be helpful in defining the urgency of the situation. 
+ If clinically significant red cell antibo dies are present, close liaison with the 
+transfusion laboratory and consultant haematologist is essential to avoid delay in 
+transfusion in life threatening haemorrhage. 
+ Cytomegalovirus (CMV) status – for elective transfusion in the antenatal period 
+CMV ne gative b lood is selected. In a PPH or antenatal emergency, standard 
+leucocyte depleted blood or blood products should be given. 
+ There are no firm criteria for initiating red cell transfusion. The decision to provide 
+blood transfusion should be based on both clinical and haematological 
+assessment. In non -urgent situations, women /people should be given the Trust 
+blood transfusion leaflet . 
+ Blood transfusion is almost always needed when the Hb is less than 60 g/l and 
+rarely needed if the Hb is greater than 1 00g/l. However, blood results are not 
+CG12029 Postpartum haemorrhage management guideline v5.3 Oct 2021 Page 14 of 29 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. 
+available immediately and in a rapidly changing situation near patient testing can 
+give misleading results. Serial measurements should be done if the clinical picture 
+is unclear. 
+ Patients with acute haemorrhage can ha ve a normal haemoglobin and clinical 
+evaluation in this situation is therefore extremely important. Between 2009 and 
+2012 there were at least 3 maternal deaths where an acute point of care Hb 
+measurement result is thought to have falsely reassured staff. 
+ If clinical condition warrants i.e. bleeding very heavy with or without maternal 
+compromise, consider O Rh -negative (and K -negative) blood, although group -
+specific blood is preferable and usually available within 15 minutes. 
+ For women /people booking late and those unbooked, a second sample of blood 
+must be sent to the lab if requested for cross -check. This will not delay the issuing 
+of O negative blood in an emergency. 
+ All maternity units maintain a supply of group O Rhesus D -negative blood. 
+ If clinically significant red cell antibodies are present, close liaison with the 
+transfusion laboratory is essential to avoid delay in transfusion in life -threatening 
+haemorrhage. If identified antenatally, a group and save sample should be sent on 
+admission in labour and the laboratory technician informed of the clinical situation. 
+ Record blood products given using correct documentation and ensure traceability 
+tags are returned to blood transfusion. 
+ Guidelines from the European Society of Anesthesiology recommend that 
+repeated measurements of serum lactate and base deficit together with 
+haematocrit and Hb are made during haemorrhage and resuscitation to assess 
+tissue perfusion and oxygenation. 
+ The use of additional blood products such as Fresh Frozen Plasma (FFP) , 
+platelets and cryoprecipitate should be discussed with the consultant 
+haematologist. In cases of Massive Obstetric Haemorrhage the blood transfusion 
+technician can release blood products at the request of the consultant obstetrician 
+or anaesthetist. 
+ 
+11.1 RCOG use of additional blood products recommendations: 
+ 
+ Fresh frozen plasma (FFP) – if no clotting results are available and bleeding is 
+continuing, then after 4 units of red blood cells, FFP should be infused at a dose of 
+12-15mg/kg until haemostatic test r esults are known. 
+ If no haemostatic tests are available, early FFP should be considered for 
+conditions with a suspected coagulopathy such as placental abruption or amniotic 
+fluid embolism, or where detection of PPH has been delayed. 
+ If prothrombin time/a ctivated partial thromboplastin time is more than 1.5 times 
+normal and haemorrhage is ongoing, volumes of FFP in excess of 15mls/kg are 
+likely to be needed to correct the coagulopathy. 
+ Clinicians should be aware that these components must be requested as soon as 
+the need for them is anticipated, as there will always be a short delay due to 
+thawing. 
+CG12029 Postpartum haemorrhage management guideline v5.3 Oct 2021 Page 15 of 29 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Fibrinogen – a plasma fibrinogen greater than 2g/l should be maintained during 
+ongoing PPH. Cryoprecipitate should be used for fibrinogen replacement. 
+ Platelet s – during PPH, platelets should be transfused when the platelet count is 
+less than 75 x 10 9/l based on laboratory monitoring. 
+ Tranexamic Acid – Consider when blood loss greater than 1000ml. The dose is 
+1g intravenously over 5 -10 minutes, a further 1g can be given after 30 minutes if 
+continued bleeding or evidence of coagulopathy. Further doses are rarely required 
+in obstetric haemorrhage, and evidence is limited, but may be considered at the 
+discretion of the consultants involved. Tranexamic acid can als o be applied locally 
+via a pack in pelvis in selected cases, although evidence for this is lacking. 
+ Factor VIIa – Recombinant Factor VIIa is no longer considered useful in the acute 
+management of major haemorrhage. The Consultant Haematologist will advise on 
+whether its use should be considered in specific cases . 
+ Prothrombin Complex Concentrate (Beriplex) is only indicated in the correction 
+of warfarin -induced bleeding, and as warfarin is very rarely used in obstetric care, 
+specialist advice should be sought before use. 
+ Record strict fluid balance – input and output . 
+ Documentation of discussion and decisions in maternity record. 
+ See appendix 7: Fluid therapy and blood product transfusion . 
+ 
+12.0 Use of intraoperative cell salvage (ICS) 
+ 
+ ICS is recommended for all cases of Obstetric Haemorrhage where the 
+anticipated blood loss is greater than 20% of the patient’s estimated blood volume 
+(in pregnancy approximately 100ml/kg) e.g. 1200ml PPH i n a 60kg 
+woman /person . Blood can be collected from the cell salvage suction or from 
+swabs ( see appendix 4 for swab washing procedure). Consider whether the 
+woman /person should be transferred to main theatre. 
+ The Trust p olicy on ICS states that: ‘Wherever possible the advantages and risks 
+of ICS and allogeneic blood transfusion should be discussed with the patient prior 
+to undergoing an obstetrical surgical procedure and documented in the clinical 
+record. This should incl ude patients with an anticipated blood loss of >1000mls 
+e.g. placenta accreta, large uterine fibroids and other predictable causes of major 
+obstetric haemorrhage’. 
+ The decision to employ ICS should be made by the operating obstetrician and 
+anaesthetist based on clinical need. Staff must complete the required ICS training 
+and competency assessment before using ICS. 
+ 
+13.0 Surgical measures 
+ 
+If pharmacological measures fail to control the haemorrhage, commence surgical 
+haemostasis sooner rather than later. The following conservative surgical interventions may 
+be attempted, depending on clinical circumstances and available expertise: 
+ 
+CG12029 Postpartum haemorrhage management guideline v5.3 Oct 2021 Page 16 of 29 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. 
+13.1 Examination under anaesthesia (EUA) in theatre 
+ 
+If the bleeding is not rapidly brought under control in the room, there should be early 
+consideration of transfer to theatre for examination under anaesthetic (EUA), particularly to 
+identify and manage uterine inversion, retained products or genital tract trauma. The choice 
+of anaesthetic is the anaesthetist’s decision. The ob stetrician should clearly communicate 
+the woman /person ’s current condition, EBL, risks of coagulopathy and procedures that are 
+planned or may become necessary. 
+ 
+13.2 Intrauterine balloon tamponade 
+ 
+This is a n appropriate first line ‘surgical’ interventi on for most women /people where uterine 
+atony is the only or main cause of haemorrhage. The intrauterine tamponade balloon 
+catheter can be inserted into the uterus and filled up with sterile normal saline until the 
+bleeding is controlled (maximum capacity 5 00mls). Remember to check expiry date on the 
+balloon catheter and that the balloon is patent before insertion. It is important to continue a 
+Syntocinon infusion to keep the uterus contracted around the balloon. The balloon should 
+remain in situ for up to 2 4 hours before decompressing. In most cases, 4 -6 hours of 
+tamponade will be adequate to achieve haemostasis. The balloon should be removed in 
+daylight hours with senior staff and theatres available, in case further intervention is 
+necessary. Intravenous a ntibiotics are recommended as long as the balloon is in situ. 
+Women /people should be advised to take clear fluids only while the balloon is in situ, 
+because of the risk of return to theatre. 
+ 
+13.3 Haemostatic brace suturing 
+ 
+Such as using procedures described by B -Lynch or modified compression sutures - see 
+appendix 5 ). A laminated diagram of the procedure is kept in the obstetric theatre along with 
+the appropriate suture. 
+ 
+13.4 Aortic compression 
+ 
+A temporary , but effective me asure , to allow time for resuscitation to catch up with volume 
+replacement , and appropriate surgical support to arrive. 
+ 
+13.5 Stepwise uterine devascularisation 
+ 
+i) One uterine artery 
+ii) Both uterine arteries 
+iii) Low uterine arteries 
+iv) O ne ovarian ar tery 
+v) Both ovarian arteries 
+ 
+This was described in a series of 103 patients with intractable PPH not responding to 
+medical management and was effective in all cases without the need for hysterectomy. 
+ 
+CG12029 Postpartum haemorrhage management guideline v5.3 Oct 2021 Page 17 of 29 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. 
+13.6 Internal iliac (hypogastric) arteries 
+ 
+A senior gynaecologist or vascular surgeon or general surgical consultant should be called 
+early since this technique requires a high degree of surgical skill and training and may be 
+associated with ureteric injury . 
+ 
+13.7 Selective arterial embolisation - Interventional Radiology 
+ 
+ Consider, depending on clinical situation and availability of interventional 
+radiologist. 
+ There is an elective arrangement whereby consultant obstetricians can discuss 
+the management of high risk cases; such as major placenta praevia, placenta 
+accreta or previous major obstetric haemorrhage, with a Consultant Interventional 
+Radiologist in the antenatal period. 
+ There is currently no formal arrangement for emergency cases. It is recommended 
+that in normal working hours cases of severe major obstetric haemorrhage where 
+interventional radiology would be helpful, can be discussed with a consultant 
+interventional radiologist via switchboard as early as possible. 
+ 
+13.8 Hysterectomy 
+ 
+It is considered good practice to liaise with a se cond consultant obstetrician/ gynaecologist if 
+hysterectomy is considered, and a second consultant should be involved in most 
+circumstances. A subtotal hysterectomy is usually recommended for peripartum 
+hysterectomy. Consider hysterectomy sooner rather than later (especially in cases of 
+placenta accreta or uterine rupture), or if the woman /person declines blood transfusion. 
+ 
+13.9 Ongoing management 
+ 
+Consideration should be given for the most appropriate place of care for women /people who 
+have suffered a sev ere MOH. A multidisciplinary discussion should take place to advise 
+whether the woman /person should be transferred to the general ITU or HDU or remain on 
+the labour ward. 
+ 
+14.0 Management of secondary PPH 
+ 
+This is usually due to retained products of conception (RPOC) or infection. 
+ 
+ High vaginal and endo -cervical swabs should be taken and appropriate 
+antimicrobial therapy started when endometritis is suspected. 
+ The diagnosis of retained products is clinical and an ultrasound scan is rarely 
+helpful. Ev acuation of the uterus is indicated if the bleeding is heavy or if the 
+uterus is bulky with an open cervix. Intravenous antibiotics should be given prior to 
+surgical evacuation, and the procedure should be supervised by a senior 
+obstetrician due to the inc reased risk of perforation and the risk of subsequent 
+Ashermann’s syndrome (synechiae or intrauterine adhesions). 
+CG12029 Postpartum haemorrhage management guideline v5.3 Oct 2021 Page 18 of 29 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ If the clinical picture is consistent with endometritis and the bleeding is not heavy, 
+commence oral antibiotics and review. Only if there are clinical signs of severe 
+infection are intravenous (IV) antibiotics necessary. Discussion with a 
+Microbiologist is suggested in this situation. Start a Sepsis Assessment Tool. 
+ In the case of repeated presentation in the postpartum period with abnormal 
+bleeding, an obstetric registrar or consultant should review and an ultrasound 
+scan should be considered even in the presence of a closed cervix to exclude 
+RPOC. A pelvic ultrasound scan may help to exclude the presence of retained 
+products of conception, alt hough the diagnosis of retained products is unreliable. 
+Trophoblastic disease should be considered. 
+ Rare but important causes of secondary PPH are post -traumatic uterine artery 
+pseudoanuerysm and aterio -venous fistula. These can cause torrential 
+haemorrha ge, particularly at ERPC and are often managed most effectively by 
+interventional radiology techniques. The RCOG guideline proposes that colour 
+flow Doppler imaging should be included in the evaluation of the post -partum 
+uterus to identify these, although there is no strong evidence to support its use . 
+ 
+15.0 Management of minor PPH at home births (500ml – 1000ml without 
+clinical shock ) 
+ 
+The following mechanical and pharmacological measures should be commenced. 
+ 
+ Massage uterus firmly - rub up contraction and expel any clots . 
+ Remember to empty bladder. 
+ Oxytocin 10 units IM, may have a repeat dose . 
+ Call 999 for immediate transfer to hospital if woman /person ’s condition 
+deteriorates and/or bleeding does not cease. 
+ Low threshold for transfer to hospital. Inform Labour Ward Coordinator at earliest 
+detection of PPH. 
+ Ergometrine 0.5 mg IM. Ergometrine is contra -indicated in women /people with 
+hypertension. 
+ Syntometrine™ 1 ml IM (if not hypertensive) is an alternative . 
+ If bleeding continues perform bimanual compression . 
+ Low threshold for transfer to hospital. Inform Labour Ward Coordinator at earliest 
+detection of PPH. 
+ Weigh blood loss for accuracy if possible in the home setting. 
+ Bloods (20ml) for group and screen, FBC and coagulation includ ing fibrinogen 
+sent urgently to lab. Consider last Hb. 
+ Pulse, respiratory rate and blood pressure recorded every 15 minutes until stable 
+ Consider need for IV access and IV fluids. Only cannulate if transfer is anticipated . 
+ Aim to return to the home within 4 hours and ensure family have contact details if 
+concerned. 
+
+CG12029 Postpartum haemorrhage management guideline v5.3 Oct 2021 Page 19 of 29 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. 
+16.0 Aftercare 
+ 
+Accurate and timely documentation is essential . 
+ 
+It is important to complete the PPH proforma and EBL estimation tool and record the 
+following : 
+ 
+ Staff in attendance and time they arrive . 
+ Sequence of events . 
+ Administration of different pharmacological agents, their timing and sequence . 
+ Time of surgical intervention where relevant . 
+ Condition of the mother throughout the different steps . 
+ Timing of the fluid and blood products giv en. 
+ Total EBL and time bleeding considered settled . 
+ Datix incident reporting form . 
+ 
+During and after a Severe MOH, one member of staff should be assigned to keep the 
+partner/family informed until the obstetric consultant is available to see them. The 
+woman /person should be offered as much information as they wish about what happened, 
+as soon as she is well enough. An opportunity to discuss the events surrounding the 
+obstetric haemorrhage should be offered to the woman /person and their birthing partner at a 
+mutually convenient time. 
+ 
+The woman /person should be offered referral to the Birth Afterthoughts service and a 
+consultant follow up appointment for 6 -8 weeks, particularly if there are outstanding issues. 
+ 
+Consideration is required for the impact of a mas sive obstetric haemorrhage upon staff 
+involved. The co -ordinator and consultant on call should facilitate a staff debriefing for those 
+involved at the earliest opportunity following the event. 
+ 
+17.0 Staff training 
+ 
+The maternity service’s expectations for staff training are evidenced in the maternity training 
+needs analysis. All staff involved in maternity care should receive annual training in the 
+management of obstetric emergencies, including PPH. Training for PPH should be multi -
+professional and include skills drills. 
+ 
+18.0 Risk management and patient safety 
+ 
+All cases of PPH involving a blood loss of greater than 1500ml are subject to a clinical 
+incident review. 
+ 
+CG12029 Postpartum haemorrhage management guideline v5.3 Oct 2021 Page 20 of 29 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. 
+19.0 Audit & q uality monitoring 
+ 
+Suggested audit points: 
+ 
+ Was the woman /person screened for antenatal anaemia? 
+ 
+ When antenatal anaemia was detected, was it appropriately managed? 
+ 
+ Was the woman /person risk assessed for factors for PPH when they presented in 
+labour? 
+ 
+ Was the woman /person offered uterotonics for the third stage of labour? 
+ 
+ Appropriate documentation of management, especially with the timing of events for 
+women /people who have had PPH? Was the PPH proforma completed for each 
+incident? 
+ 
+ Notification to the risk management team of women /people with PPH involving a 
+blood loss greater than1500 ml? 
+ 
+ Proportion of the multidisciplinary team who have undergone skills drills training in 
+PPH. 
+
+CG12029 Postpartum haemorrhage management guideline v5.3 Oct 2021 Page 21 of 29 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+References 
+ 
+Adnan et al, BMJ 2018; 362:k3546 
+Auckland District Health Board 2009 National Women’s Health Clinical Guideline/ 
+Recommended Best Practice – Postpartum Haemorrhage, 
+onlinehttp://nationalwomenshealth.adhb.govt.nz/Portals/0/Documents/Policies/Postpartum%
+20Haemorrhage_.pdf 
+ 
+Bakri et al 2001. Tamponade -balloon for obstetrical bleeding. Int J Gynaecol Obstet 74: 139 -
+142. 
+ 
+B-Lynch et al 1997. The B -Lynch surgical technique for the control of massive postpartum 
+haemorrhage: an alternative to hysterectomy? Five cases reported. British J Obstet Gynecol 
+104: 372 -375. 
+ 
+Mousa HA, Alfirevic Z. Treatment for primary postpartum haemorrhage. The Cochrane 
+Database of Systematic Reviews 2003, Issue 1. 
+ 
+MBRRACE UK 2017 Maternal Mortality Report 
+ 
+MOET Course Manual 2003. Ed Johansen R, Cox C, Grady K, Howell C. RCOG Press, 
+London 
+ 
+NICE (2017) Clinical Guideline 190: Intrapartum care 
+https://www.nice.org.uk/guidance/cg190 
+ 
+NICE 2019. NG121 Intrapartum care for women with existing medical condit ions or obstetric 
+complications and their babies 
+ 
+RCOG Green -top Guideline 52 (2016) – Prevention and management of post -partum 
+haemorrhage. https://obgyn.onlinelibrary.wiley.com/doi/epdf/10.1111/1471 -0528.14178 
+
+CG12029 Postpartum haemorrhage management guideline v5.3 Oct 2021 Page 22 of 29 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 1 PPH: Causes and risk factors 
+The four T’s Risk factors/notes 
+Tone: abnormalities of uterine contraction 
+Uterine atonia Physiological or prolonged 3rd stage, high parity 
+Overdistention of the uterus Polyhydramnios, multiple gestation, macrosomia 
+Intra-amniotic infection Fever, prolonged rupture of membranes 
+Functional/anatomical distortion of the 
+uterus Rapid labour, prolonged labour, fibroids, 
+placenta praevia, uterine anomalies 
+Uterine relaxants e.g. magnesium, 
+nifedipine Terbutaline, GTN, anaesthetics 
+Bladder distention May prevent uterine contraction 
+Tissue: retained products of conception 
+Retained cotyledon or succenturiate lobe Incomplete placenta at delivery 
+Retained blood clots 
+Placenta accreta or percreta Abnormal placenta on scan 
+Trauma: genital tract injury 
+Lacerations of the cervix, vagina or 
+perineum Precipitate delivery, operative delivery 
+Extensions, lacerations at caesarean 
+section Malposition, deep engagement 
+Uterine rupture Previous uterine surgery 
+Uterine inversion High parity, excessive cord traction 
+Thrombin: abnormalities of coagulation 
+Pre-existing states: 
+Haemophilia A History of hereditary coagulopathies or liver 
+disease 
+Idiopathic thrombocytopenic purpura Bruising 
+von Willebrand’s disease 
+History of previous PPH 
+Acquired in pregnancy: 
+Gestational thrombocytopenia Bruising 
+Pre-eclampsia with thrombocytopenia Raised blood pressure 
+Disseminated intravascular coagulopathy: 
+PET/HELLP/AFLP coagulopathy 
+Intrauterine fetal death Fetal demise 
+Severe infection Fever, neutrophilia/neutropenia 
+Abruption Antepartum haemorrhage 
+Amniotic fluid embolus Maternal collapse 
+Therapeutic anticoagulation History of thromboembolic disease 
+CG12029 Postpartum haemorrhage management guideline v5.3 Oct 2021 Page 23 of 29 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 2 : Management of Major Obstetric Haemorrhage 
+
+Continuous Vital 
+Signs 
+BP, Pulse, Perfusion, 
+Assess volume blood loss 
+If ongoing bleeding 
+>1000mls and / or unstable 
+call 2222 Major Obstetric 
+Haemorrhage (MOH) 
+Cause of Bleeding ? 
+Tone, Tissue, Trauma, 
+Thrombin 
+Empty bladder 
+Blood Investigations 
+FBC, Clotting (inc 
+Fibrinogen),U&E’s, LFTs 
+Urgent X-match 4 -6 units 
+Baseline U&E 
+Bedside Hb, ABG and lactate 
+Keep warm – Bair Hugger 
+Severe Major Obstetric 
+Haemorrhage >2 000 mls 
+(and/or unstable) 
+Involvement of Consultant 
+Obstetrician, Anaesthetist and 
+Haematologist 
+Massage Uterus 
+Expel clot /deliver & 
+check placenta 
+Foley Catheter 
+Ensure bladder empty 
+ 
+Oxytocin 5 -10 units 
+(IM/IV) and/or 
+*Ergometrine 0.5 mgs 
+(IM or slow IV injection) 
+Oxytocin infusion 
+40 units Syntocinon in 500 
+mls 0.9% sodium chloride 
+ 
+Carboprost* IM or 
+Misoprostol (800microg 
+sublingual ) if asthmatic 
+IV Access 
+14/16 g cannula X2 
+Rapid Infusion 
+E.g. w armed 
+crystalloid 2L, 
+use rapid infusor 
+Give Blood 
+MOH – liaise with 
+laboratory 
+Severe Major 
+Obstetric 
+Haemorrhage – give 
+blood and products as 
+clinically indicated 
+Resuscitation 
+ABC 
+ARREST of 
+BLEEDING 
+Replacement of fluids 
+Tranexamic acid 1g IV 
+Transfer to theatre if unstable or ongoing bleeding 
+ 
+Consider: Bimanual Compression 
+EUA 
+Balloon tamponade 
+Brace suture 
+Cell salvage 
+Aortic compression 
+Interventional radiology 
+Stepwise devascularisation 
+Hysterectomy 
+ Call for help - pull emergency bell 
+CG12029 Postpartum haemorrhage management guideline v5.3 Oct 2021 Page 24 of 29 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 3: PPH Proforma 
+(not to be printed from guideline) 
+
+CG12029 Postpartum haemorrhage management guideline v5.3 Oct 2021 Page 25 of 29 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 3: PPH Proforma 
+(not to be printed from guideline) 
+Names and Grades of Staff involv ed in Postpartum Haemorrhage 
+
+Date: 
+Name of Lead Clinician (most senior clinician): 
+Name of Liaison with Blood Transfusion: 
+Name of scribe: Please complete or affix patient l abel 
+Unit No: ………………………………………… 
+NHS No: ……………………………………….. 
+Name: ……………………………………….. 
+Clinicians Present Name Arrival/contact time (if 
+not already present) 
+Labour Ward Co -ordinator 
+Midwives 
+
+Obstetric Consultant(s) 
+ 
+Obstetric Registrar 
+Obstetric SHO 
+Anaesthetic Consultant(s) 
+ 
+Anaesthetic Registrar 
+Anaesthetic ODP 
+Maternity Care Assistant 
+Scrub Nurse 
+Clinicians contacted 
+Blood Transfusion 
+ 
+Porter(s) 
+ 
+CG12029 Postpartum haemorrhage management guideline v5.3 Oct 2021 Page 26 of 29 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 4 : Swab washing 
+Up to 50% of the total surgical blood loss may be contained within the surgical swabs, so 
+swab washing will significantly improve the efficiency and yield of intra operative cell salvage 
+(ICS). 
+ 
+Procedure: 
+ 
+1. Set up a sterile bowl with 1000ml sterile 0.9% sodium chloride. 
+2. Weigh the swabs aseptically by placing them on sterile sheet on the weighing scales. 
+3. Immediately after weighing, place blood soiled swabs for a few minutes in the sterile 
+bowl of saline and soak for a few minutes to extract the red cells. 
+4. Remove the swabs after gentle co mpression to express any residual solution. 
+5. At the end of the procedure aspirate the swab wash solution from the bowl into the 
+cell salvage reservoir using the ICS suction. 
+ 
+Notes: 
+ 
+Avoid washing swabs contaminated with betadine or other substances contraindicated in cell 
+salvage. 
+ 
+The swab wash should not be left for more than 6 hours without processing. 
+ 
+In cases of significant ongoing blood loss consider suction the swab washings into the Cell 
+saver collection reservoir regularly and replenishing swab washing bowl with a further 
+1000ml sterile 0.9%sodium chloride before the end of the case. 
+ 
+References: 
+ 
+Better blood transfusion toolkit http://www.transfusionguidelines.org.uk UK Cell Salvage 
+Action Group >technical factsheets>ICS in obstetrics 
+ 
+CG12029 Postpartum haemorrhage management guideline v5.3 Oct 2021 Page 27 of 29 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 5 : B-Lynch Suture 
+
+The B -Lynch Suture is a brac e-type suture that mimics the effect of bimanual compression. 
+A stitch is passed through the anterior wall of the uterus at the level of the uterine incision, 
+over the right cornu, horizontally through the lower posterior wall, over the left cornu, back 
+through the anterior wall at the right side of the uterine incision and tied in front. A large 
+needle and absorbable suture are required. A 48mm blunt tapercut needle with 1 -Maxon is 
+available in theatre). 
+ 
+If the uterus has not been opened, a modified techn ique can be used. If used with a 
+tamponade balloon, insert the suture first, to reduce the risk of puncture to the balloon. 
+ 
+CG12029 Postpartum haemorrhage management guideline v5.3 Oct 2021 Page 28 of 29 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 6 : Maternity Estimated Blood loss form 
+(not to be printed from guideline ) 
+
+CG12029 Postpartum haemorrhage management guideline v5.3 Oct 2021 Page 29 of 29 
+ 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 7: Fluid therapy and blood product transfusion 
+ 
+Crystalloid Up to 2L isotonic crystalloid. 
+Colloid Up to 1.5 L colloid until blood arrives. 
+Blood If immediate transfusion is indicated, give emergency group O, rhesus D 
+(RhD) -negative, K -negative red cell units. Switch to group -specific red cells as 
+soon as feasible. 
+Fresh frozen 
+plasma (FFP) Administration of FFP should be guided by haemostatic testing and whether 
+haemorrhage is continuing: 
+ If prothrombin time (PT) or activated partial thromboplastin time (APTT) 
+are prolonged and haemorrhage is ongoing, administer 12 –15 ml/kg of 
+FFP. 
+ If haemorrhage continues after 4 units of red blood cells (RBCs) and 
+haemostatic tests are unavailable, administer 4 units of FFP. 
+ 
+Platelet 
+concentrates Administer 1 pool of platelets if haemorrhage is ongoing and platelet count 
+less than 75 × 109/L. 
+ 
+Cryoprecipitate Administer 2 pools of cryoprecipitate if haemorrhage is ongoing and fibrinogen 
+less than 2 g/L. 
+ 
+Green Top Guideline No52. Prevention and Management of Postpartum Haemorrhage 
+RCOG (2017)

@@ -1,0 +1,3090 @@
+# Extracted from: BJOG - 2024 - DeÂ Silva - Outpatient Hysteroscopy.pdf
+# Guideline ID: bjog-2024-de-silva-outpatient-hysteroscopy
+# Content length: 152141 characters
+# Processing date: 1740444794.3629835
+
+BJOG . 2024;00:1–25. | 1
+ wileyonlinelibrary.com/journal/bjoRCOG GREEN- TOP GUIDELINE
+Outpatient Hysteroscopy
+(Green-top Guideline no. 59)
+Prathiba M. De Silva | Paul P. Smith | Natalie A. M. Cooper | T. Justin Clark | 
+on behalf of the Royal College of Obstetricians and GynaecologistsDOI: 10.1111/1471-0528.17907 
+© 2024 Royal College of Obstetricians and Gynaecologists.Key recommendations
+• All gynaecology departments should provide a dedicated outpatient hysteroscopy 
+service to aid care of women and people with abnormal uterine bleeding, repro -
+ductive problems, and insertion/retrieval of intrauterine devices. [Grade A]
+• Written information should be provided to the woman prior to their appointment. 
+This should include details about the procedure, the benefits and risks, advice re -
+garding pre- operative analgesia, as well as alternative options for care and contact 
+details for the hysteroscopy unit. [Good Practice Point]
+• Women should be made aware of other settings and modes of anaesthesia for hys -
+teroscopy (e.g. under general or regional anaesthesia or intravenous sedation). 
+[GPP]
+• The woman should be advised that if they find the procedure too painful or dis -
+tressing at any point, they must alert the clinical team who will stop the procedure 
+immediately. The clinical team should alert the hysteroscopist if the woman ap -
+pears to be in too much pain or is experiencing a vasovagal episode and therefore 
+unable to voice the concerns so that the procedure can be stopped. [GPP]
+• Women should be advised to take standard doses of oral non- steroidal anti- 
+inflammatory agents (NSAIDs) one hour before their scheduled appointment.
+• Vaginoscopy should be the standard technique for outpatient hysteroscopy unless 
+the use of a vaginal speculum is required (e.g. for administering local cervical an -
+aesthesia or dilating the cervix). [Grade A]
+• When performing operative hysteroscopy, the smallest diameter hysteroscope 
+should be used, with consideration given to the use of hysteroscopes with expand -
+able outer working channels because they are associated with less pain. [Grade B]
+• Mechanical hysteroscopic tissue removal systems should be preferred over minia -
+ture bipolar electrodes to remove endometrial polyps. [Grade A]
+• Local anaesthesia should not be routinely administered prior to outpatient hys -
+teroscopy where a vaginoscopic approach is used. It should be considered where 
+use of a vaginal speculum is planned e.g. for cervical dilatation if anticipated, due 
+to either cervical stenosis and/or the utilisation of larger- diameter hysteroscopes 
+(≥5mm outer diameter). [Grade A]
+• Saline should be instilled at the lowest possible pressure to achieve a satisfactory 
+view. [Grade A]
+• Conscious sedation should not be routinely used in outpatient hysteroscopic pro -
+cedures. [Grade B]Correspondence
+Royal College of Obstetricians and 
+Gynaecologists, 10–18 Union Street, London 
+SE1 1SZ.
+Email: clinicaleffectiveness@rcog.org.uk
+This is the second edition of this guideline. 
+The first edition of the guideline was published 
+under the Best Practice in Outpatient 
+Hysteroscopy title in 2011. 
+2 | 
+GREEN- TOP GUIDELINE NO. 59
+1 | PURPOSE AND SCOPE
+The aim of this guideline is to provide clinicians with up 
+to date, evidence- based information regarding outpatient 
+hysteroscopy, with particular reference to minimising pain 
+and optimising the experience of the woman or person. 
+The scope has been widened since the first edition to cover 
+operative outpatient hysteroscopy, prevention of infection, 
+training, and documentation. This guideline should be read 
+in conjunction with the RCOG Good Practice Paper No. 16 
+Pain Relief and Informed Decision Making for Outpatient 
+Hysteroscopy .1
+It is important to acknowledge that it is not only women 
+for whom it is necessary to access women's health and re -
+productive services in order to maintain their gynaecolog -
+ical health and reproductive wellbeing. Gynaecological and 
+obstetric services and delivery of care must therefore be ap -
+propriate, inclusive and sensitive to the needs of those in -
+dividuals whose gender identity does not align with the sex 
+recorded at birth.
+2 | INTRODUCTION AND 
+BACKGROUND EPIDEMIOLOGY
+Outpatient hysteroscopy is an established diagnostic and 
+therapeutic procedure,2- 4 widely used across the UK.5- 7 
+The procedure involves the use of miniaturised endoscopic 
+equipment to directly visualise the uterine cavity, without 
+the need for intravenous sedation or regional/general an -
+aesthesia necessitating the use of formal theatre facilities.8 
+However, women or people should be made aware of other 
+settings and modes of anaesthesia for hysteroscopy (e.g. 
+procedure under general or regional anaesthesia, intrave -
+nous sedation) as an alternative to outpatient hysteroscopy. 
+Outpatient hysteroscopy is indicated primarily in the assess -
+ment of women or people with abnormal uterine bleeding2- 4 
+but is also employed in the diagnostic work up of reproduc -
+tive problems. Advances in endoscopic technology and an -
+cillary instrumentation have facilitated the development of 
+operative hysteroscopic procedures in an outpatient setting 
+with or without the use of local anaesthesia. Common pro -
+cedures include endometrial polypectomy,7,9,10 removal of 
+submucous fibroids,11 endometrial ablation,12- 15 removal of 
+chronic retained products of conception16 and retrieval of 
+lost intrauterine devices.17
+Outpatient hysteroscopy, whether diagnostic2,18 or opera -
+tive7,9–17 is successful, safe and well tolerated by most women. 
+However, as with any procedure requiring instrumentation 
+of the uterus, outpatient hysteroscopy can be associated 
+with significant pain,19,20 anxiety and embarrassment.21,22 This not only impacts upon the satisfaction of women with 
+their experience, but also limits the feasibility and possibly 
+the safety, accuracy and effectiveness of the procedure. In 
+order to minimise pain and discomfort, variations in hys -
+teroscopic equipment, adaptations in technique and use of 
+pharmacological agents have been advocated. This guideline 
+assesses these components along with issues relating to opti -
+mal service provision.
+3 | IDENTIFICATION AND 
+ASSESSMENT OF EVIDENCE
+Four databases (MEDLINE, EMBASE, CINAHL, Cochrane) 
+were systematically searched from inception to March 2023. 
+No restrictions were placed on the searches in an attempt 
+to reduce selection bias. The databases were searched using 
+relevant MeSH terms and keywords. The main keywords 
+used were ‘hysteroscopy’, outpatient’, ‘office’ and ‘ambula -
+tory’ which were combined with the following words de -
+pending upon the area of hysteroscopy being examined; 
+‘analgesia’, ‘analgesic’, ‘local anesthetic’, ‘local anesthesia’, 
+‘local anaesthetic’, ‘local anaesthesia’, ‘local infiltration’, 
+‘tetracaine’, ‘procaine’, ‘prilocaine’, ‘lidocaine’, ‘ethyl chlo -
+ride’, ‘emla cream’, ‘cocaine’, ‘bupivacaine’, ‘benzocaine’, 
+‘sedation’, ‘sedative’, ‘hypnotic’, ‘tranquilizing agents’, ‘cer -
+vical ripening’, ‘prostaglandin’, ‘estrogen’, ‘oestrogen’, ‘pro -
+gestin’, ‘laminaria’, ‘mifepristone’, ‘dilapan’, ‘progesterone’, 
+‘gestagen’, ‘cervical dilatation’, ‘cervical ripening’, ‘cervical 
+preparation’, ‘cervix dilatation and effacement’, ‘no touch’, 
+‘vaginoscopy’, ‘vaginoscopic’, ‘sodium chloride’, ‘carbon 
+dioxide’, ‘glycine’, ‘mannitol’, ‘sorbitol’, ‘saline’, ‘dextrans’, 
+‘glucose’, ‘distension media’, ‘distension medium’, ‘hystero -
+scope’, ‘endometrial ablation’, ‘flexible’, ‘rigid’, ‘diameter’, 
+‘size’, ‘angle’, ‘infection’, ‘sepsis’, ‘endometritis’, ‘antibiotic’, 
+and ‘pyometra’. The results of the searches were systemati -
+cally reviewed to include randomised controlled trials or 
+systematic reviews of randomised controlled trials only, in 
+order to capture the highest level of evidence for the basis of 
+this guideline. The definitions of the types of evidence used 
+in this guideline originate from the Scottish Intercollegiate 
+Guideline Network (SIGN) methodology and developed in 
+accordance with the standard methodology for producing 
+RCOG Green- top Guidelines.23
+Where possible, recommendations are based on, and ex -
+plicitly linked to, the evidence that supports them. Areas 
+lacking evidence are highlighted and annotated as ‘good 
+practice points’ (GPP), which were agreed upon by consensus 
+at the British Society for Gynaecological Endoscopy (BSGE) 
+Ambulatory Care Network (ACN) Meeting, held virtually 
+on Friday 18th June 2021.24
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17907 by Test, Wiley Online Library on [22/09/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | 3
+OUTPATIENT HYSTEROSCOPY
+4 | SERVICE PROVISION
+4.1 | What are the requirements for running 
+an effective outpatient hysteroscopy service?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+All gynaecology 
+departments should 
+provide a dedicated 
+outpatient hysteroscopy 
+service to aid care of 
+women or people with 
+abnormal uterine 
+bleeding, reproductive 
+problems, and insertion/
+retrieval of intrauterine 
+devices.1+ A One randomised 
+controlled trial (RCT)25 
+showed that outpatient 
+hysteroscopy provides 
+quicker mobilisation and 
+recovery, less time off 
+work, less lost income and 
+lower travel costs when 
+compared to hysteroscopy 
+performed under general 
+anaesthesia, while 
+maintaining equivalently 
+high levels of satisfaction 
+for the woman.
+Outpatient hysteroscopy 
+should be conducted 
+outside of the formal 
+operating theatre setting 
+in an appropriately 
+sized, equipped and 
+staffed treatment room 
+with adjoining, private 
+changing facilities and 
+toilet. This may be a 
+dedicated hysteroscopy 
+suite or a multipurpose 
+facility.4 GPP An operating theatre 
+environment is likely to 
+provoke anxiety in the 
+woman and negate the 
+advantages associated 
+with the outpatient 
+setting.
+There should be a 
+minimum of two support 
+staff consisting of at least 
+one registered nurse and 
+one healthcare assistant.4 GPP Staff should provide 
+reassurance, explanation 
+and support; one of the 
+support staff should be 
+dedicated to act as an 
+advocate for the woman.1
+An outpatient hysteroscopy service offers a safe, conve -
+nient and cost- effective means of diagnosing and treating 
+abnormal uterine bleeding, as well as aiding the manage -
+ment of reproductive problems and insertion/retrieval of 
+intrauterine devices.26 A randomised controlled trial re -
+ported rapid mobilisation post- operatively (0 minutes [0–5] 
+versus 105 minutes [80–120], P <0.001) and quicker recovery 
+to pre- operative levels (2 days [range 1–2.7] versus 3 days, 
+P<0.05) favouring diagnostic outpatient hysteroscopy com -
+pared with traditional day- case hysteroscopy under gen -
+eral anaesthesia.24 The same study demonstrated high and 
+equivalent levels of satisfaction with outpatient hysteroscopy 
+when compared to hysteroscopy under general anaesthesia. 
+Women undergoing outpatient hysteroscopy also required 
+significantly less time off work (0.8 days versus 3.3 days, 
+P<0.001), lost less income and incurred lower travel costs.27 
+[Evidence level 1+]
+Outpatient hysteroscopy should be performed in an ap -
+propriately sized and fully equipped treatment room. This 
+may be a dedicated hysteroscopy suite or a multipurpose 
+facility. Outpatient hysteroscopy can be associated with 
+substantial anxiety21 and so the treatment room should be 
+private and patient friendly, with a separate, and ideally adjoining, changing area with a toilet. Adequate resusci -
+tation facilities must be available, as should a comfortable 
+recovery area with refreshment making facilities. Access to 
+on site or off- site decontamination facilities of an appropri -
+ate standard is necessary. Outpatient hysteroscopy should 
+not be performed in a formal, operating theatre setting be -
+cause this environment is likely to provoke anxiety in the 
+woman and negate the economic advantages associated with 
+the outpatient setting. Music28,29 and the use of virtual re -
+ality headsets30 have been shown to reduce the pain and/or 
+anxiety associated with outpatient hysteroscopy. However, if 
+these are to be used then units must ensure that communi -
+cation with healthcare staff is not affected and be aware that 
+such adjuncts may not be suitable for all women or people. 
+[Evidence level 4]
+Appropriate staffing levels are required and these will vary 
+according to local circumstances (patient populations, num -
+bers seen per clinic) and the type of service offered (concom -
+itant pelvic ultrasound, pure diagnostic service or diagnostic 
+and therapeutic service). In general, there will be a comple -
+ment of ideally three, but a minimum of two, support staff, 
+consisting of at least one registered nurse and one healthcare 
+assistant. One of the staff members should act as an advocate 
+for the women during the procedure to provide reassurance, 
+explanation and support. Communication with the woman 
+in this way may help alleviate anxiety. If the woman wishes 
+for a partner or friend to be present during their appoint -
+ment, this wish should be accommodated, unless infection 
+control precautions prevent this.1 [Evidence level 4]
+4.2 | What information should be provided 
+prior to outpatient hysteroscopy?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Written information 
+should be provided 
+to the woman prior 
+to their appointment. 
+This should include 
+details about the 
+procedure, the 
+benefits and risks, 
+advice regarding pre- 
+operative analgesia 
+as well as alternative 
+options for care and 
+contact details for the 
+hysteroscopy unit.4 GPP Pre- procedural 
+information is essential 
+to allow women 
+and people to make 
+informed decisions 
+regarding their care, 
+which can be clarified 
+and discussed further 
+at the time of their 
+appointment.1
+Women and people 
+should be made aware 
+of other settings and 
+modes of anaesthesia 
+for hysteroscopy (e.g. 
+under general or 
+regional anaesthesia or 
+intravenous sedation).4 GPP
+Adequate, clear and simple, written information should 
+be provided to the woman with the appointment letter, in 
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17907 by Test, Wiley Online Library on [22/09/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+4 | 
+GREEN- TOP GUIDELINE NO. 59
+the preferred language for the woman where possible. This 
+information should include the recommendation to take 
+oral pain relief (see section  5) one hour before their sched -
+uled appointment. It should also provide details about 
+what the procedure entails, benefits and risks (including 
+pain), and alternative options for care (e.g. alternatives 
+to undergoing an outpatient hysteroscopic procedure) 
+and pain- relief (e.g. inhaled analgesia, local anaesthesia 
+etc.). Where simultaneous treatments are offered (‘see and 
+treat’ services), it is important that this fact is reflected in 
+the patient information to facilitate informed choice. In 
+addition, the provided information should make women 
+aware that there are alternative types of pain management 
+(e.g. intravenous sedation, regional or general anaesthe -
+sia) that they can choose if they have concerns about un -
+dergoing hysteroscopy in the outpatient setting or if the 
+procedure needs to be abandoned at the woman's request. 
+Women and people should be aware that these alternative 
+options can be discussed at their clinic appointment and 
+that their hysteroscopy can be rescheduled to accommo -
+date their preferred model of care and pain management 
+as necessary.8
+It is important to recognise that hysteroscopy can cause 
+more pain and trauma for some women, but predicting such 
+adverse experiences can be difficult. However, women should 
+be made aware that an outpatient procedure may be more 
+painful and traumatic for them if they have experienced:
+• Faintness during their menstrual period because of pain
+• Severe pain or anxiety during previous vaginal examina -
+tions, including undergoing cervical smears
+• Traumatic events especially sexual violence.
+Women should also be provided with up to date local 
+contact details, should they have any questions or concerns 
+before their procedure.
+If a woman attending her appointment is unaware that 
+she has been referred for an OPH, then she should be given 
+the opportunity to reschedule the hysteroscopy after being 
+given written and verbal information, once she has had time 
+to consider her options. Similarly, any woman who is un -
+sure whether she wants to proceed with an OPH should be 
+allowed more time to make a decision and offered a further 
+appointment.
+Units are advised to access the joint Royal College of 
+Obstetricians and Gynaecologists (RCOG) and British 
+Society for Gynaecological Endoscopy (BSGE) standards for 
+further guidance,1 however, the information may vary ac -
+cording to local circumstances and the type of service of -
+fered. Women should be directed to, or provided with, the 
+joint Royal College of Obstetricians and Gynaecologists 
+(RCOG) and British Society for Gynaecological Endoscopy 
+(BSGE) patient information on outpatient hysteroscopy, in 
+the absence of adequate, contemporary local patient infor -
+mation based on the RCOG patient information or to sup -
+plement the local resources.314.3 | How should consent be obtained prior 
+to outpatient hysteroscopy?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Verbal and / or written 
+informed consent 
+should be given by the 
+woman during their 
+appointment, prior 
+to hysteroscopy being 
+performed.4 GPP This is considered 
+good clinical 
+practice.1
+The woman should be 
+advised that if they 
+find the procedure too 
+painful or distressing 
+at any point, they 
+must alert the clinical 
+team who will stop the 
+procedure immediate ly. 
+The clinical team 
+should alert the 
+hysteroscopist if the 
+woman appears to 
+be in too much pain 
+or is experiencing a 
+vasovagal episode and 
+is therefore unable to 
+voice the concerns so 
+that the procedure can 
+be stopped.4 GPP This is considered 
+good clinical 
+practice.1
+The clinical team should be mindful of the fact that ar -
+rival of the woman or person at the clinic does not imply 
+consent has been given for the procedure. The hysterosco -
+pist is the responsible clinician and must be certain that the 
+woman has had sufficient information and enough time for 
+consideration to give informed verbal and written consent 
+on the day of their procedure. Units should consider provid -
+ing women with a pre- prepared written or electronic consent 
+form for them to review before attending their appointment. 
+Their appointment should be rescheduled if the women feels 
+that they need more time to consider their decision, espe -
+cially if they have not received or read the pre- procedural 
+patient information prior to attending.1
+The hysteroscopist must inform the woman that they are 
+likely to experience period- like cramping and lower abdom -
+inal pain during and/or after the procedure. However, the 
+woman or person should be advised that if they find the pro -
+cedure too painful or distressing at any point, then they must 
+alert the clinical team who will stop the procedure immedi -
+ately. The clinical team should alert the hysteroscopist if the 
+woman appears to be in too much pain or is experiencing a 
+vasovagal episode and therefore is unable to voice their con -
+cerns so that the procedure can be stopped. The team should 
+then make subsequent arrangements for the hysteroscopy 
+to be rescheduled and to involve an alternative type of pain 
+management (e.g. intravenous sedation, regional and gen -
+eral anaesthesia) or consider alternative options for ongoing 
+management in agreement with the woman.1
+The RCOG and BSGE, in conjunction with NHS England 
+and NHS Improvement “Getting it Right First Time 
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17907 by Test, Wiley Online Library on [22/09/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | 5
+OUTPATIENT HYSTEROSCOPY
+(GIRFT)” programme, have recently developed relevant 
+standardised consent documents for outpatient hysteros -
+copy, operative hysteroscopy and endometrial ablation.32- 34 
+This should include the indication for the procedure, what 
+it involves, any additional procedures that may be necessary, 
+possible adverse effects, and the benefits and risks when 
+compared to other alternative options for care, which should 
+encompass other settings and modes of anaesthesia for hys -
+teroscopy. [Evidence level 4]
+4.4 | Should a pre- procedural safety checklist 
+be performed prior to outpatient hysteroscopy?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Completion of a 
+safety checklist 
+should be 
+considered prior 
+to outpatient 
+hysteroscopy.4 GPP This can help ensure that 
+essential information 
+such as patient identity 
+checks and allergy status 
+is not missed.25
+Pregnancy should 
+be excluded in all 
+women who are 
+premenopausal 
+and sexually active.4 GPP A urinary pregnancy 
+test should either be 
+undertaken routinely in 
+women or people who 
+are premenopausal and 
+sexually active, or based 
+upon the timing of their 
+last menstrual period and 
+history of unprotected 
+sexual intercourse.1
+Units should consider using a checklist (e.g. a specifically 
+adapted World Health Organisation [WHO] surgical safety 
+checklist35 or a locally developed outpatient procedure safety 
+standard checklist) to make sure essential elements such as 
+patient identity checks, allergy status and exclusion of preg -
+nancy are recorded where appropriate.1 If the woman or per -
+son declines to provide a pregnancy test and states that they 
+are definitely not pregnant, their wishes should be respected 
+should they want to proceed with hysteroscopy. While in -
+volving women in a checklist can be empowering, for others, 
+it may make the outpatient setting feel more like an operat -
+ing theatre and induce anxiety. Units should therefore con -
+sider how and when they complete the safety checklist prior 
+to the outpatient hysteroscopy. In self- contained, enclosed 
+clinical areas with adjoining procedure rooms and chang -
+ing areas, safety checks can be completed with the woman 
+during the pre- procedural consultation. If safety checks are 
+undertaken in the procedure room, women should not be 
+unnecessarily exposed during the process.
+A urinary pregnancy test should either be undertaken 
+routinely in women who are premenopausal and sexually ac -
+tive, or based upon the timing of their last menstrual period 
+and history of unprotected sexual intercourse.1 If unable to 
+exclude a pregnancy, based upon recent unprotected sexual 
+intercourse and the fact that it may be too early for a urinary 
+pregnancy test to provide a reliable result, then the woman or person should be offered the chance for their appointment 
+to be deferred. However, if the woman prefers to proceed 
+with hysteroscopy, then this should be respected.
+A checklist which captures the following information is 
+suitable for use in outpatient hysteroscopy:
+• Date
+• Confirmation of identification (3 identifiers; e.g. name, 
+date of birth, address)
+• Discussion of alternative pain management and settings 
+in which these will be offered (e.g. intravenous sedation, 
+regional/general anaesthesia in a day- case theatre setting)
+• Consent performed (verbal and / or written)
+• Allergy status
+• Exclusion of pregnancy (with urinary pregnancy test if 
+applicable)
+• Details of whether and what pre- procedural analgesia has 
+been taken (including timing and dose). [Evidence level 4]
+4.5 | How should care after outpatient 
+hysteroscopy be provided?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Clinical findings, 
+further care and likely 
+timescales of results, 
+where appropriate, 
+should be discussed 
+with the woman once 
+they are changed and 
+comfortable. A written 
+summary of this 
+information should be 
+provided to the woman 
+and their general 
+practitioner (GP).4 GPP This is considered good 
+clinical practice.1
+Women should be 
+provided with both 
+verbal and written 
+information as to when 
+and how to contact 
+their local unit.4 GPP This allows for the 
+woman to be reviewed 
+in the case of severe 
+pain, heavy bleeding 
+and/or signs and 
+symptoms of genital 
+tract sepsis.1
+Units should have a 
+dedicated recovery 
+area with comfortable 
+chairs/recliners 
+and curtained off 
+areas with bed(s)/
+trolley(s). Access 
+should be available 
+to extended recovery 
+when pain cannot be 
+easily controlled, or 
+complications have 
+arisen during the 
+procedure.4 GPP This allows for the 
+woman's condition, 
+comfort and pain 
+control to be assessed 
+and monitored, and 
+analgesia be provided 
+when necessary.1
+Following the procedure, the woman or person should 
+be given time to change back into their clothes for a post- 
+procedure consultation, which should ideally take place 
+away from the procedure area. The hysteroscopist should 
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17907 by Test, Wiley Online Library on [22/09/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+6 | 
+GREEN- TOP GUIDELINE NO. 59
+explain the clinical findings and explain when and how his -
+tological/cytological/microbiological results will be commu -
+nicated, if appropriate. If further care is required, it should 
+be discussed in light of the clinical findings, and the woman 
+should be informed when and how this will take place. This 
+information should be summarised and written copies given 
+to both the woman and their general practitioner (GP).1 
+[Evidence level 4]
+The woman should be given post- procedural informa -
+tion, ideally both verbally and written.1 This should include 
+contact numbers (e.g. a direct line to the clinic and an out of 
+hours contact number) should the woman have any problems 
+or concerns over the next two weeks. In particular, women 
+should be told to make contact if they experience abdominal 
+pain not controlled with simple analgesia, bleeding heavier 
+than a period, or symptoms/signs of sepsis (fever, rigors and/
+or malodourous vaginal discharge). [Evidence level 4]
+Women or people may prefer to leave after their post- 
+procedure consultation without staying for a period of ob -
+servation. However, recuperation and refreshments should 
+be offered to all women in a dedicated recovery area with 
+comfortable chairs/recliners and privacy (e.g. curtained off 
+areas with bed(s)/trolley(s)). The woman's condition, com -
+fort and pain control should be assessed, monitored and 
+analgesia be provided when necessary. Access should be 
+available to a longer duration recovery area when pain can -
+not be easily managed or complications have arisen during 
+the procedure.1 [Evidence level 4]
+4.6 | How should training and standards 
+in outpatient hysteroscopy be provided and 
+assessed?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+A hysteroscopic 
+training programme 
+should include 
+knowledge and 
+understanding of both 
+basic and advanced 
+skills relevant 
+to hysteroscopic 
+procedures alongside 
+aspects of clinical 
+governance in 
+hysteroscopy.4 GPP Hysteroscopists 
+should be proficient 
+in outpatient 
+procedures and also 
+have a thorough 
+understanding of pre- 
+operative planning, case 
+selection and service 
+development.
+Simulation should 
+be considered an 
+important adjunct to 
+hysteroscopy training.2++ B This allows 
+hysteroscopists in- 
+training to learn basic 
+manoeuvres without 
+impacting adversely on 
+the woman's experience.
+The RCOG offers a Special Interest Training Module in 
+“Therapeutic Hysteroscopy” which requires competence in 
+hysteroscopy.36 The European Society for Gynaecological Endoscopy (ESGE) has developed a diploma programme 
+for laparoscopic and hysteroscopic skills training, known 
+as the Gynaecological Endoscopic Surgical Education and 
+Assessment Minimally Invasive Gynaecological Surgery 
+(GESEA MIGS) Diploma, of which there are two hysteros -
+copy modules of different levels of difficulty (Hysteroscopic 
+Skills Training and Testing method [HYSTT® 1 and 2]).37 
+These curricula not only cover hysteroscopic procedures but 
+also pre- operative planning, case selection and service de -
+velopment. [Evidence level 4]
+Achievement of competency in outpatient hysteroscopy 
+requires having the opportunity to undertake training in 
+the clinical setting on women while they are awake. It is 
+important to consider, however, that this may lead to a pro -
+longed procedure time and in turn impact upon the woman 
+or person's experience. Training packages have tried to ad -
+dress this by using various models and simulators in order 
+to improve psychomotor skills and performance. As illus -
+trated by a systematic review on training and assessment 
+of hysteroscopic skills, vegetables (e.g. potatoes, pears, but -
+ternut squash etc.), animal organs (e.g. porcine hearts, pig 
+bladders, cattle uteri, etc.) and synthetic models (e.g. HYSTT 
+box trainer [European Academy of Gynecological Surgery, 
+Leuven, Belgium]) have been used to simulate intrauterine 
+pathology, allowing for the development of a variety of dif -
+ferent hysteroscopic skills (e.g. fibroid resection, septoplasty, 
+etc.).38 Virtual reality simulators (e.g. HystSimTM [VirtaMed 
+AG, Zurich, Switzerland]) have a variety of pathologies and 
+cases that the user can access, allowing for a standardised 
+environment where data can be collected to allow an objec -
+tive assessment of the trainee's performance.
+Clinicians undertaking outpatient hysteroscopy clinics 
+should have sufficient workload in the job plan to main -
+tain competencies and enhance their skills. Clinicians are 
+expected to review their clinical outcomes and participate 
+in audits for quality assurance purposes (refer to Auditable 
+Topics ).
+5 | Analgesia
+5.1 | What analgesia should be recommended 
+prior to outpatient hysteroscopy and how should 
+it be given in order to reduce the pain felt by 
+women during and after their procedure?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Women or people 
+should be advised to 
+take standard doses of 
+oral non- steroidal anti- 
+inflammatory agents 
+(NSAIDs) one hour 
+before their scheduled 
+appointment.1++ A Meta- analysis39 showed 
+that NSAIDs are the 
+only medication that 
+have been shown to 
+reduce pain both during 
+and after hysteroscopy 
+without an increase in 
+side- effects.
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17907 by Test, Wiley Online Library on [22/09/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | 7
+OUTPATIENT HYSTEROSCOPY
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Where NSAIDs are 
+contraindicated (e.g. 
+in certain asthmatics, 
+women or people with 
+renal impairment 
+or gastric ulceration 
+etc.) or declined, the 
+use of transcutaneous 
+electrical nerve 
+stimulation (TENS), 
+could be considered. 
+Oral opioid or 
+antispasmodic agents 
+can be used for women 
+with contraindications 
+to NSAIDs, provided 
+they are made aware 
+of the increased risk of 
+adverse effects.1++ A Meta- analysis39 showed 
+that TENS reduced pain 
+without an increase in 
+side- effects. As these 
+devices are not widely 
+available, opioids and 
+antispasmodics can be 
+used instead, so long as 
+women are made aware 
+of the increased risk of 
+drowsiness with opioids 
+and vasovagal episodes 
+with antispasmodics.
+Women or people 
+should be offered 
+inhaled nitrous oxide 
+(at an equimolar 
+gas mixture of 50% 
+nitrous oxide and 50% 
+oxygen). Penthrox® 
+should be considered 
+for the reduction 
+of pain associated 
+with outpatient 
+hysteroscopy.1+ B One RCT40 
+demonstrated a 
+reduction in intra- 
+procedural pain with 
+the use of inhaled 
+nitrous oxide, although 
+some women felt 
+dizziness. One small 
+RCT66 has comparing 
+Penthrox® with 
+placebo did not find a 
+significant reduction 
+in pain with the use 
+of Penthrox® during 
+diagnostic hysteroscopy 
+but found a significant 
+reduction in pain where 
+subsequent operative 
+procedures were 
+undertaken, such as the 
+excision of polyps or 
+fibroids, the insertion 
+of intrauterine devices 
+or when an endometrial 
+biopsy was taken.
+A systematic review and meta- analysis39 identified 
+twenty- two randomised controlled trials (RCTs)41- 62 exam -
+ining the use of analgesics against a control prior to outpa -
+tient hysteroscopy for the reduction of pain.
+Meta- analysis showed a statistically significant re -
+duction in intra- procedural (standardized mean differ -
+ence [SMD] −0.72; 95% confidence interval [CI] −1.27 to 
+−0.16)50,52,55,57,58,59,62 and post- procedural (SMD −0.55; 95% 
+CI −0.97 to −0.13)50,52,55,57,59,62 pain when giving an NSAID 
+compared to a control. Subgroup analysis showed that the oral 
+route52,55,57,59,62 was associated with the greatest reduction in 
+pain both during (SMD −0.87; 95% CI −1.59 to −0.15) and after 
+(SMD −0.56; 95% CI −1.02 to −0.10) hysteroscopy. The NSAID 
+was given one hour prior to the procedure55,57,59,62 in all but 
+one52 study. There was no significant difference in side- effects 
+(namely in the form of vasovagal reactions [e.g. nausea, vomit -
+ing, sweating, dizziness, vertigo, bradycardia, hypotension]) in 
+women randomised to NSAIDs or their controls (Peto OR 1.01; 
+95% CI 0.52–1.98).46,47,49,52,57,59,62 [Evidence level 1++]There was a statistically significant reduction in intra- 
+procedural (SMD −0.99; 95% CI −1.67 to −0.31)54,61 and 
+post- procedural (SMD −0.54; 95% CI −0.95 to −0.12)61 pain 
+when comparing TENS to a control. Reported side- effects 
+were vasovagal episodes, but there was no significant differ -
+ence between women receiving TENS or a suitable control 
+(Peto OR 0.86; 95% CI 0.46–1.61). [Evidence level 1++]
+A statistically significant reduction in intra- procedural 
+(SMD −0.50; 95% CI −0.97 to −0.03)43,51,53,59 and post- 
+procedural (SMD −0.73; 95% CI −1.07 to −0.39)43,59 pain was 
+demonstrated when giving an opioid (given 40–60 minutes 
+prior to commencing hysteroscopy) compared to a control. 
+Women randomised to opioids were also significantly more 
+likely to suffer from side- effects when compared to their 
+controls (Peto OR 7.30; 95% CI 3.96–13.47),43,45,53,59 with 
+drowsiness being commonly cited. [Evidence level 1++]
+Meta- analysis showed a statistically significant reduc -
+tion in intra- procedural (SMD −1.48; 95% CI −1.82 to −1.13) 
+and post- procedural (SMD −1.02; 95% CI −1.34 to −0.69) 
+pain55,62 when giving an antispasmodic one hour prior to 
+hysteroscopy, compared to a control. The risk of side- effects, 
+however, primarily in the form of vasovagal episodes, was 
+significantly greater (Peto OR 11.34; 95% CI 3.96—13.47).62
+Three trials40,63,64 have been published since the afore -
+mentioned systematic review39 was performed. The first 
+trial64 randomised postmenopausal women undergoing di -
+agnostic hysteroscopy to tramadol or placebo, and was in 
+keeping with the conclusions of the aforementioned system -
+atic review. The second trial63 randomised women undergo -
+ing diagnostic hysteroscopy and directed biopsy or operative 
+hysteroscopy to either oral diclofenac, oral diclofenac and 
+hyoscine, or placebo. Their findings contrasted slightly with 
+the systematic review because a significant reduction in 
+intra- procedural pain with oral diclofenac was restricted to 
+women with a prior history of chronic pelvic pain ( P=0.04). 
+The third trial40 evaluated the use of inhaled nitrous oxide (at 
+an equimolar gas mixture of 50% nitrous oxide and 50% ox -
+ygen, also known as Entonox®) compared to inhaled air and 
+to a paracervical block using 1% lidocaine. Approximately 
+one third of the 314 participants had a diagnostic hysteros -
+copy and directed biopsy with the remainder undergoing 
+operative hysteroscopy. A significant reduction in pain re -
+corded 5–10 minutes after the procedure was demonstrated 
+in women randomised to nitrous oxide compared to inhaled 
+air alone ( P=0.001). No significant difference in adverse 
+events ( P=0.26) was found between these groups (attributed 
+to pain, anxiety and vasovagal symptoms), although it was 
+noted that 5% of women reported dizziness with nitrous 
+oxide. [Evidence level 1+]
+There has been recent interest in using another inhala -
+tional agent called Penthrox® (methoxyflurane) as an easily 
+administered, short acting, pain control solution for ambu -
+latory procedures like hysteroscopy. Penthrox® is anaesthetic 
+agent which is self- administered through a custom- built 
+handheld inhaler and is currently used for the relief of 
+moderate to severe trauma- associated pain in emergency 
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17907 by Test, Wiley Online Library on [22/09/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+8 | 
+GREEN- TOP GUIDELINE NO. 59
+settings.65,66 One small RCT has compared Penthrox® with 
+placebo for the reduction of pain in outpatient hysteros -
+copy. This RCT did not find a significant reduction in pain 
+with the use of Penthrox® during diagnostic hysteroscopy 
+(34.2 ±28.0 [n = 45] versus 43.2 ±29.8 [n = 44]; P = 0.05) on 
+a 100mm visual analogue scale (VAS), but found a signifi -
+cant reduction in pain (20.4 ±25.2 [n = 35] versus 34.6 ±30.1 
+[n = 32]; P = 0.03) where subsequent operative procedures 
+were undertaken such as the excision of polyps or fibroids, 
+the insertion of intrauterine devices or when an endometrial 
+biopsy was taken. The pain scores 15 minutes after hysteros -
+copy were not significantly different in patients randomised 
+to Penthrox® or placebo ( P > 0.05).67
+6 | CERVICAL PREPARATION
+6.1 | Should cervical preparation be used in 
+order to facilitate outpatient hysteroscopy?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Cervical preparation 
+should not be used 
+routinely.1++ A Meta- analysis68 
+showed that vaginal 
+prostaglandins reduced 
+pain, although they 
+are associated with 
+genital tract bleeding, 
+abdominal pain 
+and gastrointestinal 
+side- effects. The 
+risk of failure and 
+complications such as 
+cervical trauma and 
+uterine perforation was 
+not reduced.
+If vaginal 
+prostaglandins are 
+to be administered, 
+they should be given 
+12 hours before 
+hysteroscopy. However, 
+clinicians should 
+consider the feasibility 
+of administration, 
+side- effect profile and 
+alternative options 
+(including the use of 
+local anaesthesia and 
+cervical dilatation).1++ A Two RCTs69,70 showed 
+that giving vaginal 
+prostaglandins 12 hours 
+before hysteroscopy 
+provided better pain 
+relief than when given 3 
+hours before.
+Cervical preparation 
+with vaginal 
+prostaglandins can be 
+considered in selected 
+cases (e.g. where 
+cervical stenosis is 
+anticipated or there 
+is need to dilate the 
+cervix beyond 6mm to 
+accommodate uterine 
+instrumentation).4 GPP There is no robust 
+evidence to identify 
+specific groups of 
+women or people who 
+may benefit most from 
+cervical preparation.
+Uterine trauma (lacerations to the cervix or uterine perfo -
+ration) is recognised with blind and endoscopic instrumen -
+tation of the uterus,2,71,72,73,74 with an estimated incidence of perforation of 0.002–1.7%. The incidence of uterine trauma 
+is low for diagnostic outpatient hysteroscopy performed 
+with small diameter endoscopes (≤3.5mm outer sheath di -
+ameter) under direct vision, however, cervical preparation 
+has been historically used to dilate the cervix to facilitate 
+easier hysteroscopic entry and reduce the risk of uterine 
+trauma.2 Factors associated with uterine trauma include the 
+need for blind dilatation beyond 6mm for intrauterine in -
+strumentation (e.g. for the use of larger- diameter operative 
+hysteroscopes), cervical stenosis (e.g. due to atrophy, cervi -
+cal surgery, previous caesarean section, nulliparity), a tor -
+tuous cervical canal (e.g. in association with fibroids) and a 
+deviated uterine cavity (e.g. acute flexion, pelvic adhesions, 
+fibroids).1,18
+A systematic review and meta- analysis68 investigating the 
+impact of cervical preparation on pain during hysteroscopy, 
+identified twenty- four46,49,69,75–95 RCTs. Administration of a 
+cervical preparation (between 3–24 hours prior), when com -
+pared against a placebo, significantly reduced intra- procedural 
+pain (SMD –0.67, 95% CI –1.05 to –0.29).76,77,79,81,84,87–90,92,93 
+Subgroup analysis according to the agent given found that 
+misoprostol (SMD –0.64; 95% CI –0.97 to –0.31),76,81,84,87–89,92,93 
+and dinoprostone (SMD –2.24; 95% CI –2.75 to –1.74)90 sig-
+nificantly reduced intra- procedural pain, however, mifepri -
+stone (SMD  –0.13; 95% CI –0.65 to 0.38),77 and carboprost 
+(SMD 0.09; 95% CI–0.02 to 0.20)79 did not. Subgroup analysis 
+based on route of administration of misoprostol showed pain 
+was only reduced during hysteroscopy when given vaginally 
+(SMD –0.68, 95% CI –1.04 to –0.32),76,81,84,87,89 rather than 
+orally (SMD –0.52, 95% CI –1.54 to 0.51).92,93 Subgroup analy -
+sis based on menopausal status found that misoprostol reduced 
+intra- procedural pain in premenopausal women (SMD –0.86, 
+95% CI –1.18 to –0.54),76,81,84,87,92,93 but not postmenopausal 
+women (SMD 0.10, 95% CI –0.30 to 0.51).88,93 Only two stud -
+ies76,80 randomised women to different doses of cervical prosta -
+glandins, where 400 micrograms of vaginal misoprostol did not 
+show any significant reduction in pain when compared to 200 
+micrograms ( P=0.32). Only one study69 randomised women 
+to receive a cervical preparation at different times and found 
+that pain was only significantly reduced when 400 micrograms 
+vaginal misoprostol was given 12 hours, rather than 3 hours 
+before hysteroscopy ( P<0.001). Since this systematic review68 
+was published, a further randomised controlled trial has sup -
+ported these findings, with 3 milligram vaginal dinoprostone 
+only showing a significant reduction in intra- procedural pain 
+when given 12 hours ( P<0.001), rather than 3 hours ( P=0.1) be -
+fore outpatient hysteroscopy.70
+Prostaglandins are associated with gastrointestinal 
+side- effects and are contraindicated in severe uncontrolled 
+asthma, chronic adrenal failure, acute porphyria and renal 
+or hepatic impairment.96 In the systematic review68 de-
+scribed above, meta- analysis of adverse events in women 
+randomised to either a cervical preparation or placebo prior 
+to outpatient hysteroscopy found a significant increase in 
+their incidence when a cervical preparation was given (OR 
+2.94, 95% CI 1.58–5.47).46,49,76,78,79,81,84,86–94 These included 
+genital tract bleeding, abdominal pain/cramping, nausea, 
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17907 by Test, Wiley Online Library on [22/09/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | 9
+OUTPATIENT HYSTEROSCOPY
+vomiting, diarrhoea, pyrexia/fever and vasovagal episodes. 
+The incidence of complications were too small and balanced 
+between groups for meta- analysis, and were only reported 
+in studies randomising women to either misoprostol or 
+placebo/nil .46,49,76,78,81,84,86–89,91–94 These included cervi -
+cal trauma (n = 7), false passage (n = 4), severe pain (n = 4), 
+uterine perforation (n = 1), infection (n = 1) and genital tract 
+bleeding requiring emergency department admission (n = 1) 
+in women randomised to misoprostol (n=18/711; 2.5%) and 
+cervical trauma (n = 4), false passage (n = 5), uterine perfora -
+tion (n = 3) and severe pain (n = 1) in women randomised to 
+placebo/nil (total 13/694; 1.9%).
+One of the main reasons for failure to successfully per -
+form an outpatient hysteroscopy is the inability to access 
+the uterine cavity due to cervical stenosis, and this is most 
+commonly encountered in a postmenopausal population.1 
+The previously mentioned systematic review,68 showed that 
+administration of cervical preparation was associated with 
+significantly greater cervical dilatation prior to hysteroscopy 
+(gauged by the size of Hegar dilator the cervical canal could 
+accommodate), when compared with placebo (SMD 0.81, 
+95% CI 0.08–1.53).76,77,79 In addition, meta- analysis of ease 
+of hysterosopic entry, as scored by the operator on either a 
+5- point Likert scale or 10cm Visual Analogue Scale (VAS), 
+showed that giving a cervical preparation was associated 
+with significantly easier hysteroscopic entry when compared 
+to placebo (SMD 0.89, 95% CI 0.32–1.46).76,81,84,87,89,90 The 
+incidence of failed hysteroscopies due to cervical steno -
+sis, however, was too small for meta- analysis, with 29/2001 
+(1.4%) women randomised to a cervical preparation and 
+32/1183 (2.7%) women randomised to placebo/nil.
+No comparative studies were identified for other methods of 
+cervical dilatation prior to outpatient hysteroscopy (e.g. local / 
+systemic administration of oestrogens or osmotic agents).
+7 | TYPE OF HYSTEROSCOPE
+7.1 | What size and angle of hysteroscope 
+should be used in the outpatient setting?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Hysteroscopes of 3.5 mm 
+or less in outer diameter 
+should be used for 
+diagnostic outpatient 
+hysteroscopy.1+ A Meta- analysis97 
+showed that miniature 
+hysteroscopes confer less 
+pain to women during 
+hysteroscopy.
+When performing 
+operative hysteroscopy, 
+the smallest diameter 
+hysteroscope should be 
+used, with consideration 
+given to the use of 
+hysteroscopes with 
+expandable outer 
+working channels 
+because they are 
+associated with less pain.1+ B One RCT98 showed that 
+a hysteroscope with a 
+smaller initial diameter 
+but larger resultant 
+diameter confers 
+less pain than a rigid 
+hysteroscope.RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+When performing 
+operative hysteroscopy 
+using mechanical 
+hysteroscopic tissue 
+removal systems, the 
+smallest diameter 
+system available that 
+is appropriate for the 
+procedure should be 
+used.4 GPP This is considered best 
+practice.
+Choice of hysteroscope 
+lens angle should be left 
+to the discretion of the 
+clinician.4 GPP There is insufficient 
+evidence to recommend 
+0° or fore- oblique 
+optical lenses for routine 
+outpatient hysteroscopy.
+A systematic review and meta- analysis97 identified 
+seven RCTs99- 105 examining how the diameter of the outer 
+sheath of the hysteroscope affected pain during outpatient 
+hysteroscopy. Women randomised to mini- hysteroscopes 
+(outer diameter 3–3.5mm) experienced significantly less 
+pain during hysteroscopy when compared to women ran -
+domised to conventional hysteroscopes (outer diameter 
+≥5mm) (SMD –3.64; 95% CI –5.16 to –2.12). Data pertain -
+ing to image quality, failure rate, procedural timing and 
+adverse events were not meta- analysed. Image quality was 
+either not reported,100,101 showed no significant difference 
+between scope sizes,99,102,103 or found significantly better 
+visualisation with the use of a smaller- diameter hystero -
+scope.104 In one study,105 was significantly less conclusive 
+with the use of a miniature hysteroscope but this was due to 
+the leakage of carbon dioxide distension media, rather than 
+due to the device used. Two studies104,105 reported a signifi -
+cant increase in success when using a smaller- diameter hys -
+teroscope, whereas the other three studies99- 101 reporting 
+failure showed no significant difference between groups. 
+In the three studies commenting on procedural duration, 
+a significantly shorter time was required with the use of a 
+miniaturised hysteroscope in two,99,101 with no significant 
+difference found between scope sizes in the other.100 The 
+incidence of vasovagal reactions was significantly lower 
+when using a smaller- diameter hysteroscope in one study,99 
+with the rest100- 104 showing no significant difference be -
+tween the two groups.
+A systematic review106 identifying the operative devices 
+used in outpatient hysteroscopy to determine which technol -
+ogies confer the least pain, found one randomised controlled 
+trial98 comparing hysteroscope diameters for operative hys -
+teroscopy in the outpatient setting. Women randomised to 
+the use of a semi- rigid hysteroscopic system (AlphascopeTM 
+[Gynecare, division of Ethicon, NJ, USA]) with a collapsible 
+sheath (3.5mm diameter) and 7Fr forceps (total diameter 
+5.8mm) found polypectomy significantly less painful than 
+when randomised to a lens based hysteroscope with 5Fr for -
+ceps (total diameter 5mm) ( P < 0.05), despite the resulting 
+hysteroscopic diameter being greater, with the incidence 
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17907 by Test, Wiley Online Library on [22/09/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+10 | 
+GREEN- TOP GUIDELINE NO. 59
+of adverse events minimal and balanced between groups 
+(P = 0.09). [Evidence level 1++]
+There were no studies comparing the outer diameters of 
+mechanical hysteroscopic tissue removal (mHTR) systems 
+for the reduction of pain in operative hysteroscopy, however, 
+these are generally between 5 and 6.25mm which are suitable 
+for use in the outpatient setting.107 [Evidence level 3]
+No studies were identified that compared 0° hystero -
+scopes with off- set distal lenses (e.g. 12°, 30°). Off- set lenses 
+offer a wider field of view and this property can be advan -
+tageous in visualising the corneal recesses and tubal ostia 
+within the uterine cavity with minimal external movement 
+of the hysteroscope. Fore- oblique lenses facilitate visualisa -
+tion of ancillary instrumentation and so are advantageous 
+for operative hysteroscopy. However, 0° hysteroscopes are 
+more intuitive, facilitating entry into the uterine cavity 
+through the cervical canal which may reduce the need for 
+cervical dilatation, as well as minimising discomfort and 
+uterine trauma. [Evidence level 4]
+7.2 | Should rigid or flexible hysteroscopes be 
+used routinely in the outpatient setting?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Choice of whether 
+a rigid or flexible 
+hysteroscope is 
+used should be left 
+to the discretion of 
+the hysteroscopist.1+ B Two RCTs108,109 have 
+shown that flexible 
+hysteroscopes are 
+associated with less 
+pain during diagnostic 
+outpatient hysteroscopy. 
+However, rigid 
+hysteroscopes may 
+provide better images, 
+fewer failed procedures, 
+quicker examination 
+time and reduced cost.
+Two, small randomised controlled trials compared the 
+pain experienced during outpatient hysteroscopy with 
+the use of a flexible hysteroscope versus a rigid hystero -
+scope.108,109 Both found that the use of the flexible hys -
+teroscope significantly reduced pain during the procedure 
+(P = 0.0001 and P < 0.001, respectively). One of these studies 
+reported no difference between the flexible and rigid groups 
+in terms of procedure time and image view, with no failed 
+hysteroscopies in either group.109 The other study found 
+that rigid scopes gave significantly better image quality ( P 
+< 0.001), significantly shortened the time taken to perform 
+the procedure ( P = 0.003), were cheaper to purchase and eas -
+ier to sterilise and maintain.108 In addition, while there were 
+no failed hysteroscopies when rigid scopes were used, seven 
+women randomised to flexible scopes had a failed procedure 
+due to the inability to negotiate the cervical canal (n = 5) and 
+an inadequate view (n = 2). Both these trials were published 
+over twenty years ago and so their findings may not reflect 
+the relative advances in technologies and techniques, such as 
+vaginoscopy.1087.3 | What devices should be used for 
+operative procedures in the outpatient setting?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Mechanical 
+hysteroscopic tissue 
+removal systems 
+should be preferred 
+over miniature bipolar 
+electrodes to remove 
+endometrial polyps.1+ A One RCT110 showed 
+that mechanical 
+hysteroscopic tissue 
+removal systems are 
+less painful, quicker, 
+more successful and 
+more acceptable to 
+women for the removal 
+of endometrial polyps 
+when compared to 
+using a miniature 
+bipolar electrode.
+The choice of device for 
+outpatient endometrial 
+ablation should be left 
+to clinician discretion 
+and familiarity.4 GPP There is an absence 
+of comparative data 
+examining newer 
+generation (quicker 
+and smaller- diameter) 
+ablative devices.
+Inactivated mechanical 
+mini- scissors should 
+be preferred over 
+miniature bipolar 
+electrodes to remove 
+uterine septa.1+ B One RCT111 showed that 
+inactivated mechanical 
+mini- scissors is 
+associated with less 
+pain than the use of 
+a miniature bipolar 
+electrode.
+A systematic review106 identifying the operative devices 
+used in outpatient hysteroscopy to determine which technolo -
+gies confer the least pain, found seven randomised controlled 
+trials98,110,112–116 investigating technologies for endometrial 
+polypectomy, two trials117,118 investigating endometrial abla -
+tion devices, and one trial111 for uterine septoplasty.
+Two tria ls110,113 compared the use of a bipolar electrode 
+(using a 5Fr VersapointTM [Gynecare, division of Ethicon, 
+NJ, USA] mini- electrode) for polypectomy, against a mHTR 
+system (TruclearTM 5mm system [Medtronic, MN, USA]) 
+that allows for simultaneous cutting and aspiration of polyp 
+tissue. While the earlier study, which was larger and of 
+higher quality, found a significant reduction in pain during 
+polypectomy when using a mHTR system ( P < 0.001),110 
+the later one did not ( P > 0.05).113 This difference in find -
+ings may be explained by the fact that the earlier study110 
+compared a 5mm diameter mHTR system (TruclearTM 5mm 
+system [Medtronic, MN, USA]) with an expandable 3.5mm 
+(Alphascope® [Gynecare, division of Ethicon, NJ, USA]) or 
+rigid 5mm operative hysteroscope (Bettocchi® [Karl Storz, 
+Tuttlingen, Germany]), whereas the later study113 com-
+pared the same 5mm diameter mHTR system with a larger 
+5.5mm diameter hysteroscope (Olympus GmbH, Hamburg, 
+Germany). Both studies showed that morcellation was sig -
+nificantly faster ( P < 0.001) and associated with a higher suc -
+cess rate. While the incidence of adverse events was higher 
+in women randomised to a bipolar electrode in both studies, 
+the majority of these related to procedural failure, with no 
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17907 by Test, Wiley Online Library on [22/09/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | 11
+OUTPATIENT HYSTEROSCOPY
+serious complications (e.g. uterine perforation), reported 
+in either group. When patient satisfaction was reported, 
+there was a statistically significant preference for the use of 
+the mHTR system ( P = 0.009).110 Another trial114 found no 
+significant difference in pain experienced by women un -
+dergoing polypectomy using a diode laser (980nm Ceralas® 
+HPD laser [Biolitec AG, Vienna, Austria]) when compared 
+to a bipolar electrode (5Fr VersapointTM [Gynecare, division 
+of Ethicon, NJ, USA] mini- electrode) ( P > 0.05), however, it 
+should be noted that laser fibres like these are not in wide -
+spread use and comparisons with modern mechanical hys -
+teroscopic tissue removal (mHTR) systems are lacking.
+In the two trials117,118 comparing endometrial ablation 
+devices, women were randomised to either bipolar radiofre -
+quency impedance- controlled ablation (Novasure® [Hologic, 
+MA, USA]), thermal balloon ablation (Thermachoice III® 
+[Gynecare, division of Ethicon, NJ, USA] or Thermablate® 
+[Idoman Teoranta, Toronto, Canada]). Pain scores were not 
+significantly different with the use of either device type, 
+however, these older devices have been replaced by smaller- 
+diameter and more rapid ablative technologies (e.g. Novasure® 
+ADVANCED [Hologic, MA, USA], LiNA LibrataTM [LiNA 
+Medical, Glostrup, Denmark], MinitouchTM [MicroCube, 
+Fremont, CA, USA] etc.). [Evidence level 4]
+One small randomised controlled trial111 compared the 
+use of inactivated 7Fr mini- scissors against a bipolar elec -
+trode (using a 5Fr VersapointTM [Gynecare, division of 
+Ethicon, NJ, USA] mini- electrode) through an expandable 
+3.5mm (Alphascope® [Gynecare, division of Ethicon, NJ, 
+USA]) operative hysteroscope for resection of sonograph -
+ically diagnosed uterine septa <2cm, and found that me -
+chanical resection was significantly less painful ( P = 0.013), 
+with similar operative times ( P = 0.25) and no adverse 
+events recorded with either technique. All women, regard -
+less of which technique was used, had complete resection of 
+their septum noted at hysterosalpingogram 3 months post- 
+procedure. [Evidence level 1+]
+8 | DISTENSION MEDIUM
+8.1 | Which uterine distension medium 
+should be used during outpatient hysteroscopy?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Saline is 
+recommended 
+as the distension 
+medium for 
+outpatient 
+hysteroscopy.1++ A Meta- analysis119 
+showed that saline is 
+associated with less 
+post- procedural pain, 
+better image quality, 
+fewer side- effects, shorter 
+procedural time, greater 
+patient satisfaction and 
+allows for operative 
+hysteroscopy.
+A systematic review and meta- analysis119 investigating the 
+optimal distension media for outpatient hysteroscopy identified 18 RCTs.49,102,120–135 The only distension media types that were 
+compared in this systematic review were saline and carbon 
+dioxide.
+Meta- analysis showed no significant difference in 
+intra- procedural pain102,120–126 (SMD −0.12; 95% CI 
+−0.36 to 0.13) or post- procedural pain (immediately 
+after,122 1 minute after127 and 15 minutes102 after hysteros -
+copy) (SMD 5.54; 95% CI −2.34 to 13.43) between saline 
+and carbon dioxide, however, after excluding the lower 
+quality study,127 a statistically significant reduction in 
+post- procedural pain was demonstrated with the use of 
+saline102,122 (SMD −0.65; 95% CI −1.14 to −0.16). There 
+was a statistically significant reduction in hysteroscopies 
+with an unsatisfactory view with saline (Peto OR, 0.38; 
+95% CI 0.22−0.66).102,120,122,124,126 Women randomised to 
+saline had significantly fewer side- effects compared to 
+women randomised to carbon dioxide (Peto OR, 0.29; 95% 
+CI 0.20−0.40).102,120–127 Vasovagal symptoms (e.g. nausea, 
+vomiting, dizziness, and fainting) (n = 38/50, 76%) were 
+the main side- effects attributed to saline, however, shoul -
+der pain (n = 8/50, 16%) and bleeding (n = 4, 8%) were also 
+cited. Similarly, vasovagal symptoms (n = 71/134, 53%) 
+were the predominant side- effects noted with carbon di -
+oxide, however, shoulder pain was much more prevalent 
+(n = 49/134, 44%) and bleeding (n = 4/134, 3%) was also re -
+ported. Complications either did not occur or were not re -
+corded. A statistically significant reduction in procedural 
+time was found when carbon dioxide was used (SMD 5.46; 
+95% CI 0.96−9.96),120,121,122,125,127 however, when subgroup 
+analysis was performed according to risk of bias, the high -
+est quality studies122,125 showed a significant reduction 
+in time taken when saline was used (SMD −0.40; 95% CI 
+−0.74 to −0.05). Finally, a significant increase in patient 
+satisfaction was noted when using saline compared to car -
+bon dioxide (SMD 1.39; 95% CI 0.51−2.28).121,122
+Saline allows for the efficient practice of “see and treat” 
+services, where diagnosis is immediately followed by treat -
+ment, in the same outpatient hysteroscopy appointment. 
+Furthermore, it is isotonic, which minimises risks associ -
+ated with fluid overload and conducts electricity to allow 
+for the operation of miniature bipolar electrosurgical elec -
+trodes.136 Finally, saline is the distension medium of choice 
+when using hysteroscopic tissue retrieval systems, as the use 
+of carbon dioxide with these devices has not been evaluated. 
+[Evidence level 3]
+8.2 | How should uterine distension media be 
+delivered during outpatient hysteroscopy?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Saline should be 
+instilled at the 
+lowest possible 
+pressure to achieve 
+a satisfactory view.1++ A Meta- analysis119 showed 
+that higher uterine 
+distension pressures 
+cause more pain.
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17907 by Test, Wiley Online Library on [22/09/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+12 | 
+GREEN- TOP GUIDELINE NO. 59
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Warming saline 
+to approximate 
+body temperature 
+for outpatient 
+hysteroscopy can 
+be considered.1- B Meta- analysis119 did not 
+show a reduction in pain 
+with warmed saline, 
+however, one RCT133 
+showed improved patient 
+satisfaction.
+Fluid instillation methods and the effect on pain, accept -
+ability and feasibility have not been compared for outpatient 
+hysteroscopy, however, current approaches include:25,107
+• Use of automated fluid management systems, e.g. setting 
+initial intrauterine pressures at 40–50 mmHg and increas -
+ing to the minimum needed to obtain a satisfactory view.
+• Manually distilling fluid via a syringe and titrating 
+distention.
+• Titrating inflow using the tap on the inflow channel (and/
+or outflow channel if a continuous flow hysteroscope).
+• Using continuous flow via a gravity feed or external com -
+pression, although care needs to be taken to ensure initial 
+pressure is kept low and that it is maintained to ensure the 
+view is adequate.
+A systematic review and meta- analysis119 identified four 
+randomised control trials128- 131 randomising women to re -
+ceive saline distension media at different filling pressures, 
+of which three studies128- 130 compared more than one pres -
+sure threshold. Women randomised to undergo hysteros -
+copy at pressures of ≤40 mmHg had intra- procedural pain 
+scores that were significantly reduced when compared to 
+women undergoing hysteroscopy at pressures above this 
+threshold (SMD, −0.67; 95% CI −1.09 to −0.26). When com -
+paring women receiving filling pressures of ≤50mmHg ver -
+sus >50mmHg, ≤60mmHg versus >60mmHg, ≤70mmHg 
+versus >70mmHg and ≤80mmHg versus >80mmHg, no sig -
+nificant difference in pain scores could be found. With re -
+gards to post- procedural pain, any reduction in distension 
+media pressure resulted in a statistically significant reduc -
+tion in pain. Despite lower filling pressures being associated 
+with less pain, it also resulted in lower likelihood of a satis -
+factory view. At pressures of 30–40mmHg, the proportion 
+of satisfactory hysteroscopies was between 81.25–88.75%, 
+whereas at pressures of 50–100mmHg, the proportion in -
+creased to a range between 94.87–98.75%.128- 130 There was 
+insufficient data available to comment upon the impact of 
+filling pressure on procedural time and side- effects. No se -
+rious complications were reported in the studies investigat -
+ing distension media filling pressure. Data relating to the 
+impact of distension media filling pressure on pain asso -
+ciated with outpatient hysteroscopy should be interpreted 
+cautiously because unless using modern fluid management 
+systems (which themselves are not completely reliable due 
+to dynamic fluid losses through the fallopian tubes, cer -
+vix, intravascularly etc.), then intrauterine pressures are 
+not being accurately measured. Finally, one must consider that the flow rate of distension media through the hystero -
+scope and subsequent uterine pressure will depend on the 
+hysteroscope diameter, fluid reservoir height and dynamic 
+losses.
+Four randomised controlled trials132- 135 allowed for the 
+meta- analysis of pain scores of women randomised to either 
+saline at room temperature or warmed saline in the previ -
+ously mentioned systematic review,119 of which three132- 134 
+reported intra- procedural pain and all four reported post- 
+procedural pain (recorded immediately after,135 and at 1,132 
+5134 and 15133 minutes following the end of hysteroscopy). 
+No significant difference in pain was observed either during 
+(SMD 0.59; 95% CI −0.14 to 1.33) or after (SMD 0.22; 95% CI 
+−0.35 to 0.79) hysteroscopy. Additionally, no significant dif -
+ference was found regarding procedural time (SMD −0.17; 
+95% CI −0.47 to 0.13). Adverse events or failure either did 
+not occur or were not reported. Three of the trials, how -
+ever, did comment on patient satisfaction,132- 134 with only 
+one study133 finding a significant difference, where women 
+randomised to warmed saline reported higher satisfaction 
+rates ( P = 0.05). Since the publication of the aforementioned 
+systematic review,119 a quasi- randomised control trial inves -
+tigating the impact of warmed saline against room tempera -
+ture found that warming was associated with a significant 
+reduction in intra- procedural ( P = 0.02) and post- procedural 
+(P = 0.003) pain at diagnostic hysteroscopy, although the 
+clinical significance of the observed reduction in pain is 
+unclear.137 Again, no adverse events were recorded in either 
+group.
+9 | LOCAL ANAESTHESIA AND 
+CERVICAL DILATATION
+9.1 | Should routine dilatation of the cervical 
+canal be performed prior to insertion of the 
+hysteroscope in the outpatient setting?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Routine cervical 
+dilatation should 
+be avoided prior 
+to outpatient 
+hysteroscopy.2+ C This practice is 
+associated with pain, 
+vasovagal reactions and 
+uterine trauma, and 
+is unnecessary where 
+miniature hysteroscopes 
+(with an outer diameter 
+≤3.5mm) are used.
+Blind dilatation of the cervix in order to instrument 
+the uterine cavity is commonly performed under general 
+anaesthesia and is associated with cervical and uterine 
+trauma.2,71–74 However, in the outpatient setting, dilatation 
+of the cervix causes pain and discomfort and generally re -
+quires the use of local anaesthesia.1 No RCTs examining the 
+routine or selective use of blind cervical dilatation prior to 
+outpatient hysteroscopy were identified.68
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17907 by Test, Wiley Online Library on [22/09/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | 13
+OUTPATIENT HYSTEROSCOPY
+9.2 | Should local anaesthesia be 
+administered prior to outpatient hysteroscopy?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Local anaesthesia 
+should not be 
+routinely administered 
+prior to outpatient 
+hysteroscopy where a 
+vaginoscopic approach 
+is used. It should be 
+considered where use 
+of a vaginal speculum 
+is planned e.g. where 
+cervical dilatation is 
+anticipated, due to 
+either cervical stenosis 
+and/or the utilisation 
+of larger- diameter 
+hysteroscopes (≥5mm 
+outer diameter).1++ A While meta- analysis138 
+showed that local 
+anaesthesia reduces 
+pain during and after 
+outpatient hysteroscopy, 
+the clinical benefit 
+regarding its analgesic 
+benefit is uncertain 
+when compared to the 
+use of vaginoscopy. The 
+same meta- analysis 
+does not show that 
+local anaesthesia 
+reduces the risk of 
+vasovagal episodes nor 
+the chances of a failed 
+procedure.
+A systematic review and meta- analysis138 identified 37 
+RCTs42,47,51,55,58,82,105,124,139–167 examining pain in women 
+undergoing outpatient hysteroscopy randomised to re -
+ceive either a local anaesthetic or a control. Meta- analysis 
+showed that administering local anaesthesia significantly 
+reduced pain during outpatient hysteroscopy (SMD –0.57, 
+95% CI –0.79 to –0.34) when compared against placebo or 
+nil.51,105,124,139–145,147,149,152,156–160,163–165 Local anaesthesia also 
+reduced pain after outpatient hysteroscopy (SMD –0.30, 95% 
+CI –0.54 to –0.06), when aggregated from pain scores recorded 
+at 5,143 10,139 15,144,145,152 30141,149,156,157,159,160 and 60158 min -
+utes following hysteroscopy. Local anaesthesia did not, how -
+ever, reduce the incidence of vasovagal episodes (OR 0.73, 95% 
+CI 0.50–1.09),47,105,139,140,144,145,148,152,153,156,158–160,162,163,165,167 
+nor reduce the rate of failure (OR 0.72, 95 % CI 0.47–
+1.11),105,140,141,143–149,152,153,156,158–160,162–165 when compared 
+against placebo or nil. The incidence of complications was too 
+small to determine an association to either local anaesthesia or 
+its control.
+The clinical significance for the demonstrated reduction 
+in average pain scores remains unclear, especially when con -
+sidering that few studies commented on the impact of the 
+reduction in pain on satisfaction and acceptability of admin -
+istration of local anaesthesia when compared to their con -
+trol. In studies where a placebo was administered, instead of 
+a local anaesthetic, a lower than expected difference in mean 
+pain was likely observed because instillation of placebo into 
+the cervix/uterus still causes pain. A systematic review168 in-
+vestigating the impact of the vaginoscopic approach on pain 
+in outpatient hysteroscopy identified one RCT randomising 
+women to either hysteroscopy with intracervical mepivacaine 
+or to hysteroscopy using the vaginoscopic approach.169 This 
+found a significant reduction in pain both during (3.8±2.7 versus 5.34±3.23) and after (3.02±2.50 versus 4.57±3.30) di -
+agnostic hysteroscopy when the vaginoscopic approach was 
+used, despite using a hysteroscope with a 3.7mm diameter. 
+The adoption of vaginoscopy has been facilitated by the de -
+velopment of miniature hysteroscopes (≤3.5mm outer diam -
+eter), and so as this has been found to confer less pain and 
+side- effects, this supports the use of local anaesthesia only 
+when cervical dilation is anticipated.168
+9.3 | Which local anaesthesia should be 
+administered and how should it be given prior to 
+outpatient hysteroscopy?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+The choice of local 
+anaesthetic agent 
+for outpatient 
+hysteroscopy 
+should be left to 
+the discretion of 
+the hysteroscopist.1++ A While meta- analysis138 
+showed that mepivacaine 
+and bupivacaine were the 
+only agents associated 
+with both a reduction 
+in pain during and after 
+outpatient hysteroscopy 
+and mepivacaine was 
+the only agent to reduce 
+vasovagal episodes, there 
+are no direct head- to- head 
+comparisons between 
+anaesthetic agents to 
+make robust conclusions 
+as the existing 
+comparisons are against 
+either nil or placebo.
+The choice 
+of route(s) of 
+administration of 
+local anaesthesia 
+for outpatient 
+hysteroscopy 
+should be left to 
+the discretion of 
+the hysteroscopist, 
+however, 
+intrauterine 
+fundal anaesthesia 
+should be 
+considered for the 
+reduction of pain 
+during outpatient 
+endometrial 
+ablation.1++ A Meta- analysis138 
+showed that all routes of 
+administration of local 
+anaesthesia prior to 
+outpatient hysteroscopy 
+reduce pain during 
+the procedure. One 
+RCT158 demonstrated 
+a significant reduction 
+in pain during 
+endometrial ablation 
+when intrauterine fundal 
+anaesthesia was given.
+Short- acting local 
+anaesthetics (e.g. 
+mepivacaine, 
+lidocaine and 
+prilocaine) require 
+at least 2 minutes 
+and longer acting 
+agents (e.g. 
+bupivacaine) 
+require at least 5 
+minutes to allow 
+for onset of effect.1++ A Meta- analysis138 
+showed that the interval 
+between administration 
+of local anaesthesia 
+and commencement 
+of the procedure will 
+depend upon the 
+pharmacokinetics of the 
+local anaesthetic and how 
+it is administered.
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17907 by Test, Wiley Online Library on [22/09/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+14 | 
+GREEN- TOP GUIDELINE NO. 59
+In the previously mentioned systematic review and 
+meta- analysis,138 subgroup analyses were performed in 
+order to identify the specific local anaesthetic agents 
+that were effective in reducing pain during and after out -
+patient hysteroscopy, when compared to nil or placebo. 
+Bupivacaine, a long- acting local anaesthetic, produced the 
+greatest reduction in intraprocedural pain (SMD –4.27, 
+95% CI –5.06 to –3.49).139 There was a significant reduction 
+in pain during hysteroscopy with the use of short acting 
+local anaesthetics (lidocaine [SMD –0.34, 95% CI –0.52 to 
+–0.16];124,141,143,147,149,152,156,159,160,163,165 mepivacaine [SMD 
+–0.60, 95% CI –1.03 to –0.17]51,105,144,145,164 and prilocaine 
+[SMD –0.40, 95% CI –0.68 to –0.12]).157 Mepivacaine (SMD 
+–0.66; 95% CI –1.19 to –0.14)144,145 and bupivacaine (SMD 
+–1.55; 95% CI –2.05 to –1.06)139 were the only local anaes -
+thetics to significantly reduce pain after hysteroscopy. While 
+meta- analysis of vasovagal episodes did not show any benefit 
+when local anaesthesia was given, subgroup analysis accord -
+ing to the type of local anaesthetic given found a significant 
+reduction in vasovagal episodes, only when mepivacaine was 
+given (OR 0.33, 95% CI 0.19–0.60).105,144,145,162,167
+The same systematic review and meta- analysis138 also per -
+formed subgroup analyses to identify which specific routes 
+of local anaesthesia administration led to a reduction in pain 
+during and after outpatient hysteroscopy. Topical (application 
+of local anaesthesia directly onto the ectocervix), transcer -
+vical (instillation of local anaesthesia through the cervix via 
+either a cannula or within the distension medium), intracer -
+vical (injection of local anaesthesia directly into the ectocer -
+vix) and paracervical (injection of local anaesthesia into the 
+cervicovaginal junction) routes were investigated when given 
+in an outpatient setting. All routes of administration were 
+associated with a significant reduction in pain during out -
+patient hysteroscopy when compared against placebo or nil; 
+this encompassed the topical (SMD –0.36, 95% CI –0.66 to 
+–0.06),140,156,163,165 transcervical (SMD –0.33, 95% CI –0.64 
+to –0.02),124,144,147,152,156,160 intracervical (SMD –0.38, 95% CI 
+–0.57 to –0.19)51,141,149,157 and paracervical (SMD –1.09, 95% CI 
+–0.90 to –0.31)105,139,143,145,159,164 routes. In contrast, no specific 
+route of administration of local anaesthesia led to a significant 
+reduction in pain following hysteroscopy. When subgroup 
+analysis was performed to determine the optimal route of 
+administration for the reduction of vasovagal episodes, a sig -
+nificant reduction was observed only when given through the 
+transcervical route (OR 0.39, 95 % CI 0.18–0.83).47,144,156,160,167 
+A randomised controlled trial found that giving intrauterine 
+fundal anaesthesia, using a combination of mepivacaine and 
+bupivacaine, during outpatient hysteroscopy three minutes 
+prior to outpatient endometrial ablation, showed a statistically 
+significant reduction in intra- procedural (SMD –0.49, 95 % 
+CI –0.90 to –0.07) but not post- procedural (SMD 0.00, 95% CI 
+–0.40 to 0.41) pain, when compared against placebo.158 The 
+incidence of vasovagal episodes was balanced between groups 
+(OR 2.44, 95% CI 0.53–11.32).
+Unless given within the distension media,124 local an -
+aesthesia in the aforementioned systematic review and 
+meta- analysis138 was given two minutes (lidocaine),147,152 five minutes (lidocaine,141,143,156,159,160,163,164 mepiva -
+caine,51,105,144,164 bupivacaine139) or ten minutes (EMLATM,140 
+mepivacaine145) before outpatient hysteroscopy. No RCTs 
+randomised women to receive the same local anaesthetic 
+route or agent at different times prior to outpatient hys -
+teroscopy. In the absence of data to support a specific local 
+anaesthetic regime, standard local protocols regarding the 
+type, maximum dosage and route of administration of local 
+anaesthesia should be implemented to ensure adequacy of 
+anaesthesia and help both recognise and prevent rare, but 
+potentially serious side- effects resulting from systemic vas -
+cular absorption.170
+10 | CONSCIOUS SEDATION
+10.1 | Should conscious sedation be used 
+to reduce pain associated with outpatient 
+hysteroscopic procedures?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Conscious sedation 
+should not be routinely 
+used in outpatient 
+hysteroscopic 
+procedures.1– B Meta- analysis171 
+showed no benefit of 
+intravenous conscious 
+sedation and led to 
+more side- effects. 
+There were no data 
+regarding adverse 
+events available to 
+make recommendations 
+for the use of inhaled 
+conscious sedation.
+If conscious sedation is 
+to be employed, women 
+and people must be 
+appropriately selected 
+beforehand and 
+hysteroscopy must be 
+performed in a suitable 
+environment, where 
+there is a separate staff 
+member who has the 
+skills and equipment 
+necessary to monitor 
+vital observations and 
+recognise and care for 
+women and people who 
+are over- sedated.4 GPP Life threatening 
+complications can 
+result from the use of 
+conscious sedation and 
+so it is imperative that 
+guidance produced by 
+the Academy of Medical 
+Royal Colleges in the 
+safe use of conscious 
+sedation is followed.172
+Sedation induces a depression in consciousness, which 
+ranges from minimal sedation and anxiolysis, through to 
+moderate or ‘conscious’ sedation, deep sedation, and finally 
+ending with general anaesthesia. While responsiveness is al -
+ways suppressed, as the level of sedation becomes deeper, so 
+does the potential ability of the woman to maintain their air -
+way, ventilation and cardiovascular function.173 Conscious 
+sedation is therefore defined as a “drug- induced depression 
+of consciousness during which women respond purposefully 
+to verbal commands, either alone or accompanied by light 
+tactile stimulation” (i.e. not a painful stimulus) where “no 
+interventions are required to maintain a patent airway when 
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17907 by Test, Wiley Online Library on [22/09/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | 15
+OUTPATIENT HYSTEROSCOPY
+spontaneous ventilation is adequate” and “cardiovascular 
+function is usually maintained”.174
+A systematic review and meta- analysis171 investigating 
+the role of conscious sedation against suitable controls for the 
+control of pain for outpatient hysteroscopy, included seven 
+RCTs.44,55,56,60,151,175,176 Intravenous conscious sedation, 
+when compared with local anaesthesia, reduced pain during 
+(SMD –0.26, 95% CI –0.51 to –0.01), but not after (SMD 
+–0.18, 95% CI –0.43 to 0.07) outpatient hysteroscopy.55,151 
+No significant difference in side- effects were noted when the 
+studies were pooled (OR 15.58, 95% CI 0.08–2891.91).55,151 
+Intravenous conscious sedation, when compared to an oral 
+analgesic and antispasmodic, was associated with increased 
+pain, both during (SMD 1.03, 95% CI 0.56–1.49) and after 
+(SMD 0.49, 95% CI 0.04–0.93) hysteroscopy and was associ -
+ated with significantly more side- effects (OR 134.33, 95% CI 
+16.14–1118.17).55 Side- effects in women randomised to con -
+scious sedation were either vasovagal symptoms occurring 
+at the time of or shortly after hysteroscopy, or dizziness that 
+persisted longer than one hour following the end of hysteros -
+copy. Intravenous sedation, when compared with an oral 
+analgesic alone, did not show any significant difference in 
+intra- procedural pain (SMD –0.16, 95% CI –0.59 to 0.26).56 
+[Evidence level 1++]
+Inhaled conscious sedation (in the form of 70% N2O/30% 
+O3), when compared to oral analgesia and anxiolysis, showed 
+the greatest reduction in pain during hysteroscopy (SMD 
+–1.04, 95% CI –1.57 to –0.52), however side- effects were not 
+recorded, and so its use cannot be supported outside of a re -
+search context.60 [Evidence level 1++]
+Because sedative drugs depress the central nervous sys -
+tem and have the potential to impair respiration, circulation 
+or both, close monitoring of the woman or person must be 
+undertaken by a designated staff member, separate to the 
+hysteroscopist, to ensure maintenance of vital observations 
+(heart rate, blood pressure, respiratory rate, pulse oxime -
+try, with electrocardiography and capnography performed 
+where appropriate) peri- and post- procedurally, in accor -
+dance with guidance produced by the Academy of Medical 
+Royal Colleges.172 This individual must be able to identify 
+a woman who becomes over- sedated and ensure the appro -
+priate response is taken such as requiring the administra -
+tion of a reversal agent, airway maintenance, and, rarely, full 
+cardiopulmonary resuscitation. Patient selection is of para -
+mount importance, in order to minimise the risks associated 
+with conscious sedation, where obese, elderly and/or comor -
+bid women may either not be suitable or require different 
+sedating regimes. Many centres do not have the equipment, 
+clinic space and staff necessary to deliver conscious seda -
+tion safely in the outpatient setting, which require facilities 
+to convert to a general anaesthetic in the event of cardio- 
+respiratory compromise. In those that do, it is performed in 
+an endoscopy suite, and does not confer the benefits of being 
+in an “office setting”; women still need to arrive at the start 
+of the session to be seen by an anaesthetist, be fasted prior 
+to their procedure, and cannot be discharged until the ef -
+fects of the conscious sedative wear away, often necessitating a hospital bed. In keeping with this, the European Society 
+for Gynaecological Endoscopy (ESGE), the American 
+Association of Gynecologic Laparoscopy (AAGL) and the 
+Global Congress of Hysteroscopy (GCH) recently produced 
+a standardised nomenclature to enable consistency in re -
+porting of hysteroscopic procedures, where the facility to 
+administer parenteral medications with a sedative effect, 
+or regional/general anaesthesia is considered an operating 
+room, as opposed to an outpatient setting.8 [Evidence level 4]
+11 | VAGI NO S C OPY
+11.1 | Does a vaginoscopic approach to 
+outpatient hysteroscopy reduce pain and 
+increase the feasibility of the procedure?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Vaginoscopy should be 
+the standard technique 
+for outpatient 
+hysteroscopy unless 
+the use of a vaginal 
+speculum is required 
+(e.g. when dilating the 
+cervix or obtaining 
+a blind endometrial 
+biopsy).1++ A Meta- analysis168 showed 
+that vaginoscopy 
+is significantly less 
+painful, quicker and 
+associated with fewer 
+vasovagal episodes 
+when compared to 
+the use of a vaginal 
+speculum.
+Vaginoscopy should 
+still be considered 
+after using a 
+vaginal speculum 
+to administer local 
+anaesthesia to the 
+cervix and/or cervical 
+dilatation in order 
+to reduce the pain 
+associated with genital 
+tract instrumentation 
+and increase 
+manoeuvrability of the 
+hysteroscope.4 GPP This is in order to 
+reduce the pain 
+associated with genital 
+tract instrumentation 
+and increase 
+manoeuvrability of the 
+hysteroscope.
+Vaginoscopy or the ‘no touch’ approach to hysteroscopy re -
+fers to a technique where the hysteroscope is introduced into the 
+vagina, through the cervical canal and into the uterine cavity 
+without the need for a vaginal speculum or cervical instrumen -
+tation. By performing hysteroscopy without a vaginal specu -
+lum, which causes lower genital tract pain, manoeuvrability of 
+the hysteroscope within the uterine cavity is improved because 
+there is no vaginal speculum restricting movement. This is 
+particularly advantageous in women and people who cannot 
+lie supine due to medical comorbidities (e.g. heart failure, re -
+spiratory disease etc.), are obese, who have acutely flexed uteri 
+and in those who have restricted hip movement. Women who 
+are nulliparous, suffer from vaginismus, are virgo intact and/or 
+suffer from genital tract atrophy may also benefit from vaginos -
+copy, where distension of the vagina is minimised. A systematic 
+review and meta- analysis168 identified seven RCTs comparing 
+vaginoscopic versus traditional outpatient hysteroscopy, which 
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17907 by Test, Wiley Online Library on [22/09/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+16 | 
+GREEN- TOP GUIDELINE NO. 59
+employed the use of a vaginal speculum as a minimum.169,177–182 
+The vaginoscopic approach was significantly less painful 
+during (SMD –0.27, 95% CI –0.48 to –0.06)169,177,180,182 and 
+15 minutes after hysteroscopy (SMD –0.55, 95 % CI –0.91 to 
+–0.18).169 Vaginoscopy was also significantly quicker (SMD 
+–0.25, 95 % CI –0.43 to –0.08)169,177,178–180,182 and associated 
+with significantly fewer vasovagal episodes (OR 0.35, 95 % CI 
+0.15–0.82).169,177,182 Complications were only found in one of 
+the six trials;182 this reported no significant difference in the 
+incidence of post- operative infection between the two meth -
+ods; infection was reported in 27/798 women (3.4%) who had 
+vaginoscopy, compared with 31/799 women (3.9%) who un -
+derwent the traditional approach ( P = 0.60). All other compli -
+cations that were reported occurred in women randomised to 
+the use of a vaginal speculum and included cervical trauma 
+(n = 2), admission for analgesia (n = 2) and postprocedural hae -
+morrhage (n = 1). Neither the vaginoscopic technique nor the 
+traditional approach reduced failure rates (OR 0.98, 95 % CI 
+0.69–1.38).169,177–182
+In women who require a vaginal speculum for administra -
+tion of local anaesthesia, many clinicians remove the speculum 
+before performing hysteroscopy to invoke the aforementioned 
+benefits of the vaginoscopic approach.47,82,140,157
+12 | PREVENTION OF INFECTION
+12.1 | Should routine antibiotic prophylaxis 
+be employed in outpatient hysteroscopic 
+procedures to reduce the incidence of 
+procedural- related infection?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+Routine antibiotic 
+prophylaxis is not 
+recommended for 
+outpatient hysteroscopic 
+procedures.1++ A One RCT183 found no 
+benefit in administering 
+antimicrobial 
+prophylaxis for the 
+reduction of post- 
+procedural infection. 
+Clinicians should 
+also bear in mind that 
+there is no evidence 
+to support the use of 
+prophylactic antibiotics 
+when performing an 
+endometrial ablation.
+Outpatient hysteroscopy 
+should be delayed and 
+genital tract swabs taken 
+and / or antibiotics 
+administered if pelvic 
+infection is suspected 
+and confirmed 
+microbiological infection 
+should be treated with 
+antibiotics. If a pyometra 
+is diagnosed at the time of 
+outpatient hysteroscopy, 
+antibiotics should be 
+administered immediately 
+to minimise the risk of 
+systemic infection.3 D This recommendation 
+was made based on a 
+survey of practice.184Only one RCT examined the incidence of post- procedural 
+infection in women undergoing outpatient hysteroscopy 
+randomised to receive either antibiotic prophylaxis (in the 
+form of 1g cefazolin intramuscularly) or placebo (10ml sa -
+line intramuscularly).183 No trials have investigated the role 
+of prophylactic antibiotics for the reduction of post- operative 
+infection following endometrial ablation. All procedures 
+were therapeutic; including hysteroscopic polypectomy, sep -
+toplasty, myomectomy and intrauterine adhesiolysis. Post- 
+procedural infection was diagnosed if two or more of the 
+following criteria were met in the 5 days post- hysteroscopy: 
+“(i) fever (body temperature greater than 38°C or 100.4°F at 
+repeated measurements over a period of at least 48 hours); 
+(ii) lower abdominal pain; (iii) uterine, adnexal, or cervical 
+motion tenderness; (iv) purulent leucorrhoea; (v) vaginal 
+discharge or itchiness; and (vi) dysuria”. In the 1046 women 
+who underwent hysteroscopy, only 12 (1.15%) were found to 
+meet the criteria of post- procedural infection, where 5/523 
+women (1.0%) were initially allocated cefazolin and 7/523 
+women (1.3%) were allocated placebo ( P > 0.05). Antibiotics 
+were prescribed in all cases, leading to complete resolution of 
+infection in all cases, with no women developing upper gen -
+ital tract/pelvic infection, as confirmed by clinical and sono -
+graphic examination. No trials have investigated the role of 
+prophylactic antibiotics for the reduction of post- operative 
+infection following endometrial ablation. [Evidence level 1++]
+Despite the low incidence of pelvic infection following hys -
+teroscopy185 and the absence of evidence for reduction of post- 
+operative infection with the routine use of antibiotics, women 
+with symptoms and signs of genital tract infection, including a 
+pyometra, should have their procedure deferred, genital tract 
+swabs taken and/or empirical antibiotics administered. In post- 
+menopausal women, a non- sterile pyometra should be sus -
+pected when intrauterine fluid is seen on pelvic scanning and/
+or there is a mucoid vaginal discharge. If a pyometra is diag -
+nosed during an outpatient hysteroscopy there is a risk of rapid 
+dissemination of pelvic and systemic infection and so antibiot -
+ics should be administered as soon as possible, with the initial 
+dose ideally administered intravenously to optimise the onset 
+of action followed by a full oral course.184 [Evidence level 3]
+13 | DOCUMENTATION
+13.1 | How should procedural technique and 
+findings at hysteroscopy be recorded?
+RecommendationEvidence 
+quality StrengthRationale for the 
+recommendation
+A standardised 
+proforma is 
+recommended 
+for the 
+documentation 
+of hysteroscopic 
+technique and 
+findings.4 GPP This is considered 
+best practice.25
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17907 by Test, Wiley Online Library on [22/09/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | 17
+OUTPATIENT HYSTEROSCOPY
+The majority of units use either a written or digital/com -
+puterised standardised proforma to record procedural tech -
+nique and findings. [Evidence level 4]
+Items that should be recorded pertaining to technique 
+include:
+• Operator / surgeon
+• Hysteroscope/operative device used, including instru -
+ment diameter as a minimum
+• Approach (vaginoscopy or speculum)
+• Distension medium used
+• Local anaesthesia (agent, volume, route)
+• Cervical instrumentation (tenaculum, cervical dilatation)
+• Biopsy performed (and if so, method used e.g. directed/
+blind and device used i.e. Pipelle or other device)
+• Operative procedure performed, if applicable (e.g. polyp -
+ectomy, myomectomy, septoplasty, coil removal, removal 
+of retained pregnancy tissue etc.)
+• Use of oral or inhalational medications with an analgesic 
+or sedative effect (e.g. Entonox®, Penthrox®)
+• Procedural success (yes/no) and reasons for abandonment 
+(e.g. intolerable pain, poor visualisation etc.), if applicable
+• Complications (e.g. vasovagal reaction, uterine perfora -
+tion, heavy bleeding etc.) [Evidence level 4]
+Items that should be recorded regarding findings include:
+• Impression and description of vulva, vagina, cervix and 
+endometrium (functional or pathological)
+• Visualisation of both ostia
+• Details of any congenital (hypoplastic ‘T’ or ‘Y’ shaped 
+uterus, septum, other structural anomalies) or ac -
+quired uterine pathology (adhesions, cervical niches, 
+fibroids FIGO Type 0–3, polyps, retained products of 
+conception)
+• The uterocervical length should be recorded when a global 
+biopsy is taken or an intrauterine device fitted. [Evidence 
+level 4]
+Pictures and/or diagrams may also be helpful in re -
+cording findings at hysteroscopy. Where possible, digital 
+images of the uterine cavity and/or cervix (e.g. panoramic 
+view of the cavity, magnified views of the tubal ostia/cor -
+nual regions, fundus, uterine walls, cervical canal etc.) 
+should be captured, especially where there is any intra -
+uterine pathology (e.g. global endometrial appearances 
+such as vascularity, thickening, irregularity, necrosis; 
+focal endometrial lesions such as polyps, fibroids, ad -
+hesions, congenital uterine anomalies, embedded coils 
+etc.).25 [Evidence level 4]
+14 | RECOMMENDATIONS 
+FOR RESEARCH
+• Effect of cervical preparation with prostaglandins on pain 
+relief and feasibility in outpatient hysteroscopy.• Safety, acceptability and feasibility of hysteroscopy ac -
+cording to angle of distal optical lens.
+• Effectiveness of the vaginoscopic approach to outpatient 
+hysteroscopy in relieving pain compared with traditional 
+approaches with local anaesthesia.
+• Relative effectiveness of different types, routes, doses and 
+timings of local anaesthesia on pain and incidence of va -
+sovagal reactions.
+• Effectiveness of warming fluid distension media on pain 
+relief and satisfaction.
+• Effectiveness of methoxyflurane (Penthrox®) on pain re -
+lief and satisfaction.
+• Assessment of specific operative hysteroscopic technol -
+ogies including endometrial ablative devices, regarding 
+pain, acceptability, feasibility and effectiveness.
+• Evaluation of technical, analgesic, anaesthetic and sed -
+ative interventions for specific operative outpatient hys -
+teroscopic procedures.
+• Qualitative research exploring patient experience and 
+preferences.
+• Qualitative research exploring patient recovery and re -
+turn to daily activity following outpatient hysteroscopy.
+15 | AUDITABLE TOPICS
+Units should consider collecting data for quality assurance 
+purposes. The lower estimate of the confidence intervals 
+have been used to define the minimum audit standard or 
+where data are lacking or considered inappropriate, expert 
+opinion has been relied upon (BSGE Ambulatory Care 
+Network).23 However, the data sources have been provided 
+to allow units / practitioners to set and aim for higher stand -
+ards as appropriate where units / practitioners should strive 
+for continual improvement.
+Criteria Procedure(s) Standard Source(s)
+WOMAN- CENTRED
+Provision of 
+pre- appointment 
+written 
+information on 
+OPH≥ 95% 88.7% (95% CI 
+87.8%–89.5%)22 
+however expert 
+opinion23 
+felt that the 
+standard should 
+be higher
+Mean peak 
+intra- procedural 
+pain score (on an 
+11- point Visual 
+Analogue Scale)Diagnostic 
+hysteroscopy +/- 
+global endometrial 
+biopsy≤ 5.2 ≤5.2 (95% CI 
+5.12–5.29)22
+Insertion/retrieval 
+of intrauterine 
+device (IUD)≤ 5.2 ≤5.16 (95% CI 
+4.91–5.41)22
+Hysteroscopic 
+polypectomy≤ 5.1 ≤5.1 (95% CI 
+4.91–5.29)22
+Hysteroscopic 
+myomectomy≤ 6.4 ≤6.37 (95% CI 
+5.37–7.36)22
+Endometrial 
+ablation≤ 6.5 ≤6.48 (95% CI 
+5.8–7.16)22
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17907 by Test, Wiley Online Library on [22/09/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+18 | 
+GREEN- TOP GUIDELINE NO. 59
+Criteria Procedure(s) Standard Source(s)
+Procedure 
+acceptability (yes/
+no)Diagnostic 
+hysteroscopy≥ 97% ≥97.8% (95% CI 
+97.0–98.5%)182
+Hysteroscopic 
+polypectomy≥ 95% 97.8% (95% CI 
+94.9%–99.3%)186; 
+99.2% (95% CI 
+95.4%–99.9%)110
+Endometrial 
+ablation≥ 77% 93.6% (95% CI 
+78.6–99.2%)117; 
+77%–94%187
+Mean overall level 
+of careAll hysteroscopies 
+& endometrial 
+ablation9.7/10 ≥9.73 (95% CI 
+9.70–9.75)22
+PROCEDURAL
+Compliance with 
+safety checklistsAll hysteroscopies 
+& endometrial 
+ablation≥ 99% Expert 
+opinion23
+Documentation 
+completion ratesoAll hysteroscopies 
+& endometrial 
+ablation≥ 99% Expert 
+opinion23
+Vasovagal reaction Diagnostic 
+hysteroscopy≤ 2% 1.1% (95% CI 
+0.7%–1.9%)182
+Hysteroscopic 
+polypectomy 
+& endometrial 
+ablation*< 12% 5.8% (95% CI 
+2.4%–11.6%)110
+Uterine / cervical 
+traumaAll hysteroscopies 
+& endometrial 
+ablation*≤ 0.5% ≤0.1% (95% CI 
+0.02–0.50%)182; 
+0%186
+Infection All hysteroscopies#≤ 5% ≤3.6% (95% CI 
+2.80–4.70%)182
+Endometrial 
+ablation≤ 16% 4.8% (95% CI 
+0.6%–16.1%)117
+Hospital admission All hysteroscopies 
+& endometrial 
+ablation+< 5% ≤2.0% (90% CI 
+0.3%– 4.8%)188
+Hospital 
+readmissionAll hysteroscopies 
+& endometrial 
+ablation+≤3 .5% ≤1.5%; (90% CI 
+0.1%–3.5%)188
+Nb. There are no reliable data for operative outpatient 
+myomectomy or removal of retained products of conception
+* No data available for outpatient endometrial ablation
+# No data available for outpatient hysteroscopic polypec -
+tomy or outpatient endometrial ablation
++ No data available for outpatient hysteroscopic polypec -
+tomy or outpatient endometrial ablation
+o documentation should cover the points listed in sec -
+tion  13.1 of the GTG
+16 | USEFUL LINKS
+The following British Society for Gynaecological Endoscopy 
+(BSGE) quality assurance tools for outpatient hysteroscopy 
+are recommended:
+• BSGE outpatient hysteroscopy patient satisfaction sur -
+vey, allowing for local data to compared with national 
+standards.22 A template of the survey be accessed from: https:// www. bsge. org. uk/ wp- conte nt/ uploa ds/ 2019/ 09/ 
+Outpa tient - hyste rosco py- patie nt- surve y- FINAL - 010919. 
+pdf
+• BSGE Surgical Information Collection System (BSGE 
+SICS) to collect data on demographic, technologies, feasi -
+bility and complications of outpatient hysteroscopic pro -
+cedures (diagnostic outpatient hysteroscopy, polypectomy, 
+myomectomy, septoplasty, removal retained products of 
+conception, tubal cannulation / sterilisation, endometrial 
+ablation). This can be accessed from: https:// www. bsges 
+ics. com/ 
+ACKNOWLEDGEMENTS
+The authors acknowledge the contributions of Dr A Mahmud 
+PhD MRCOG PGDip (MedEd), Dr H Stevenson MRCOG 
+MSc MEd, Dr A Carnegy BMedSc (Hons) MBChB, Dr L 
+Wilson BSc, MBChB (Hons), Dr CS Graham BSc (Hons) 
+FRCA and Ms L Davies.
+FUNDING INFORMATION
+All those involved in the development of the Green- top 
+Guidelines, including the Guidelines Committee, Guidelines 
+Committee co- chairs, guideline developers, peer reviewers 
+and other reviewers, are unpaid volunteers and receive no 
+direct funding for their work in producing the guideline. 
+The exception to this are the RCOG staff involved who are 
+salaried employees of the College and Guidelines Committee 
+members who receive reimbursement for expenses for at- 
+tending Guidelines Committee meetings. Please see more 
+information on travel expense rules on the RCOG website.
+CONFLICT OF INTEREST STATEMENT
+PMD has received part funding for a PhD stipend 
+from Tommys and the Birmingham Women's Hospital 
+Ambulatory Gynaecology Fund and travel and accommoda -
+tion funding for attending a meeting from Hologic (Smith & 
+Nephew). PPS has received an honorarium for speaking from 
+Medtronic (Smith & Nephew). NAMC has received an hono -
+rarium for attending an advisory meeting from Hologic. 
+TJC has received research grants, honoraria for speaking 
+and running courses, and honoraria for attending advisory 
+board meetings from Hologic (Cytyc) and Medtronic (Smith 
+& Nephew); he is also a former president of the British 
+Society for Gynaecology and Endoscopy (BSGE).
+REFERENCES
+ 1. Royal College of Obstetricians and Gynaecologists. RCOG Good 
+Practice Paper No. 16: Pain relief and informed decision- making 
+for outpatient hysteroscopy and procedures. London: RCOG; 2022. 
+Available from: https:// www. rcog. org. uk/ caree rs- and- train ing/ 
+train ing/ curri culum/ og- curri culum - 2024/ backg round/ 
+ 2. Clark TJ, Voit D, Gupta JK, Hyde C, Song F, Khan KS. Accuracy 
+of hysteroscopy in the diagnosis of endometrial cancer and hy -
+perplasia: a systematic quantitative review. JAMA. 2002 Oct 
+2;288(13):1610–21.
+ 3. Farquhar C, Ekeroma A, Furness S, Arroll B. A systematic review 
+of transvaginal ultrasonography, sonohysterography and hysteros -
+copy for the investigation of abnormal uterine bleeding in premeno -
+pausal women. Acta Obstet Gynecol Scand. 2003 Jun;82(6):493–504.
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17907 by Test, Wiley Online Library on [22/09/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | 19
+OUTPATIENT HYSTEROSCOPY
+ 4. van Dongen H, de Kroon CD, Jacobi CE, Trimbos JB, Jansen FW. 
+Diagnostic hysteroscopy in abnormal uterine bleeding: a system -
+atic review and meta- analysis. BJOG Int J Obstet Gynaecol. 2007 
+Jun;114(6):664–75.
+ 5. Hospital outpatient activity: treatment specialty, 2007- 08. The 
+Health and Social Care Information Centre; 2009. (Hospital Episode 
+Statistics). Report No.: 5.
+ 6. Hospital Outpatient Activity: Main procedure and interventions, 
+2007- 08. The Health and Social Care Information Centre; 2009. 
+(Hospital Episode Statistics). Report No.: 47.
+ 7. Clark TJ, Khan KS, Gupta JK. Current practice for the treatment 
+of benign intrauterine polyps: a national questionnaire survey of 
+consultant gynaecologists in UK. Eur J Obstet Gynecol Reprod Biol. 
+2002 Jun 10;103(1):65–7.
+ 8. Carugno J, Grimbizis G, Franchini M, Alonso L, Bradley L, Campo 
+R, et  al. International Consensus Statement for Recommended 
+Terminology Describing Hysteroscopic Procedures. J Minim 
+Invasive Gynecol. 2021 Oct 12;S1553- 4650(21)01214-0.
+ 9. Litta P, Cosmi E, Saccardi C, Esposito C, Rui R, Ambrosini G. 
+Outpatient operative polypectomy using a 5 mm- hysteroscope 
+without anaesthesia and/or analgesia: advantages and limits. Eur J 
+Obstet Gynecol Reprod Biol. 2008 Aug;139(2):210–4.
+ 10. Marsh FA, Rogerson LJ, Duffy SRG. A randomised controlled trial 
+comparing outpatient versus daycase endometrial polypectomy. 
+BJOG Int J Obstet Gynaecol. 2006 Aug;113(8):896–901.
+ 11. Clark TJ, Mahajan D, Sunder P, Gupta JK. Hysteroscopic treatment 
+of symptomatic submucous fibroids using a bipolar intrauterine 
+system: a feasibility study. Eur J Obstet Gynecol Reprod Biol. 2002 
+Jan 10;100(2):237–42.
+ 12. Prasad P, Powell MC. Prospective observational study of 
+Thermablate Endometrial Ablation System as an outpatient proce -
+dure. J Minim Invasive Gynecol. 2008 Aug;15(4):476–9.
+ 13. Andersson S, Mints M. Thermal balloon ablation for the treat -
+ment of menorrhagia in an outpatient setting. Acta Obstet Gynecol 
+Scand. 2007;86(4):480–3.
+ 14. Jack SA, Cooper KG, Seymour J, Graham W, Fitzmaurice A, Perez 
+J. A randomised controlled trial of microwave endometrial ablation 
+without endometrial preparation in the outpatient setting: patient 
+acceptability, treatment outcome and costs. BJOG Int J Obstet 
+Gynaecol. 2005 Aug;112(8):1109–16.
+ 15. Clark TJ, Gupta JK. Outpatient thermal balloon ablation of the en -
+dometrium. Fertil Steril. 2004 Nov;82(5):1395–401.
+ 16. Hamerlynck TWO, Blikkendaal MD, Schoot BC, Hanstede MMF, 
+Jansen FW. An alternative approach for removal of placental rem-
+nants: hysteroscopic morcellation. J Minim Invasive Gynecol. 2013 
+Dec;20(6):796–802.
+ 17. Vitale SG, Di Spiezio SA, Riemma G, De Franciscis P, Alonso 
+Pacheco L, Carugno J. In- office hysteroscopic removal of re -
+tained or fragmented intrauterine device without anesthesia: a 
+cross- sectional analysis of an international survey. Updat Surg. 
+2022;74(3):1079–85. https:// doi. org/ 10. 1007/ s13304- 022- 01246- 0
+ 18. Nagele F, O'Connor H, Davies A, Badawy A, Mohamed H, Magos 
+A. 2500 Outpatient diagnostic hysteroscopies. Obstet Gynecol. 1996 
+Jul;88(1):87–92.
+ 19. Jivraj S, Dass M, Panikkar J, Brown V. Outpatient hysteroscopy: 
+an observational study of patient acceptability. Med Kaunas Lith. 
+2004;40(12):1207–10.
+ 20. Morgan M, Dodds W, Wolfe C, Raju S. Women's views and experi -
+ences of outpatient hysteroscopy: implications for a patient- centered 
+service. Nurs Health Sci. 2004 Dec;6(4):315–20.
+ 21. Gupta JK, Clark TJ, More S, Pattison H. Patient anxiety and experi -
+ences associated with an outpatient “one- stop” “see and treat” hys -
+teroscopy clinic. Surg Endosc. 2004 Jul;18(7):1099–104.
+ 22. Mahmud A, Smith P, Clark TJ. Benchmarking services in outpatient 
+hysteroscopy (OPH): A quality improvement project. Eur J Obstet 
+Gynecol Reprod Biol. 2021 Apr;259:211–21.
+ 23. Royal College of Obstetricians and Gynaecologist. Developing a 
+Green- top Guideline: guidance for developers. London: RCOG; 2020. 24. British Society for Gynaecological Endoscopy. Ambulatory Care 
+Network Meeting 2021 [Internet]. British Society for Gynaecological 
+Endoscopy; 2021 [cited 2022 Feb 10]. Available from: https:// www. 
+bsge. org. uk/ news/ 21444 - 2/ 
+ 25. Kremer C, Duffy S, Moroney M. Patient satisfaction with outpatient 
+hysteroscopy versus day case hysteroscopy: randomised controlled 
+trial. BMJ. 2000 Jan 29;320(7230):279–82.
+ 26. Clark TJ, Gupta JK. Handbook of outpatient hysteroscopy: a com -
+plete guide to diagnosis and therapy. London: New York: Hodder 
+Arnold; Distributed in the United States of America by Oxford 
+University Press; 2005. p. 289.
+ 27. Marsh F, Kremer C, Duffy S. Delivering an effective outpatient ser -
+vice in gynaecology. A randomised controlled trial analysing the 
+cost of outpatient versus daycase hysteroscopy. BJOG Int J Obstet 
+Gynaecol. 2004 Mar;111(3):243–8.
+ 28. Angioli R, De Cicco Nardone C, Plotti F, Cafà EV, Dugo N, Damiani 
+P, et al. Use of Music to Reduce Anxiety during Office Hysteroscopy: 
+Prospective Randomized Trial. J Minim Invasive Gynecol. 2014 
+May;21(3):454–9.
+ 29. Law HY, Ng DYT, Chung CD. Use of music in reducing pain during 
+outpatient hysteroscopy: Prospective randomized trial. J Obstet 
+Gynaecol Res. 2021 Mar;47(3):904–12.
+ 30. Deo N, Khan K, Mak J, Allotey J, Gonzalez Carreras F, Fusari G, 
+et  al. Virtual reality for acute pain in outpatient hysteroscopy: a 
+randomised controlled trial. BJOG Int J Obstet Gynaecol. 2021 
+Jan;128(1):87–95.
+ 31. Royal College of Obstetricians and Gynaecologists BS for GE. 
+RCOG/BSGE Outpatient Hysteroscopy Patient Information Leaflet. 
+RCOG; 2018. Available from: https:// www. rcog. org. uk/ for- the- pub-
+lic/ brows e- our- patie nt- infor mation/ outpa tient - hyste rosco py/ 
+ 32. Royal College of Obstetricians and Gynaecologists BS for GE. 
+RCOG/BSGE Outpatient Hysteroscopy Consent Form [Internet]. 
+RCOG; 2022. Available from: https:// www. bsge. org. uk/ wp- conte 
+nt/ uploa ds/ 2022/ 03/ 03022 022- Opera tive- Hyste rosco py- Conse nt- 
+Form- DRAFT_ v3_ clean. pdf
+ 33. Royal College of Obstetricians and Gynaecologists BS for GE. 
+RCOG/BSGE Operative Hysteroscopy Consent Form [Internet]. 
+RCOG; 2022. Available from: https:// www. bsge. org. uk/ wp- conte 
+nt/ uploa ds/ 2022/ 03/ 03022 022- Opera tive- Hyste rosco py- Conse nt- 
+Form- DRAFT_ v3_ clean. pdf
+ 34. Royal College of Obstetricians and Gynaecologists BS for GE. 
+RCOG/BSGE Endometrial Ablation Consent Form [Internet]. 
+London: RCOG; 2022. Available from: TBA
+ 35. WHO Patient Safety, World Health Organization. WHO Guidelines 
+for Safe Surgery. Safe Surg Saves Lives. 2009;(WHO/IER/
+PSP/2008.08-1E):124.
+ 36. Royal College of Obstetricians and Gynaecologists. RCOG 
+Advanced Training in Obstetrics & Gynaecology [Internet]. 
+London: RCOG; 2019 [cited 2021 Feb 14]. Available from: https:// 
+www. rcog. org. uk/ caree rs- and- train ing/ train ing/ curri culum/ og- 
+curri culum - 2024/ backg round/ 
+ 37. European Society for Gynaecological Endoscopy. GESEA MIGS 
+Diploma [Internet]. ESGE; 2022 [cited 2022 Feb 14]. Available from: 
+https:// gesea. eu/ pathw ays/ migs# level - 1
+ 38. Savran MM, Sørensen SMD, Konge L, Tolsgaard MG, Bjerrum F. 
+Training and Assessment of Hysteroscopic Skills: A Systematic 
+Review. J Surg Educ. 2016 Oct;73(5):906–18.
+ 39. De Silva PM, Mahmud A, Smith PP, Clark TJ. Analgesia for Office 
+Hysteroscopy: A Systematic Review and Meta- analysis. J Minim 
+Invasive Gynecol. 2020 Jul;27(5):1034–47.
+ 40. Solano Calvo J, Valle Rubido C, Rodríguez- Miguel A, Abajo F, 
+Delgado Espeja J, González Hinojosa J, et  al. Nitrous oxide ver -
+sus lidocaine versus no analgesic for in- office hysteroscopy: a 
+randomised clinical trial. BJOG Int J Obstet Gynaecol. 2021 
+Jul;128(8):1364–72.
+ 41. Nagele F, Lockwood G, Magos AL. Randomised placebo controlled 
+trial of mefenamic acid for premedication at outpatient hysteros -
+copy: a pilot study. Br J Obstet Gynaecol. 1997 Jul;104(7):842–4.
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17907 by Test, Wiley Online Library on [22/09/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+20 | 
+GREEN- TOP GUIDELINE NO. 59
+ 42. Mercorio F, De Simone R, Landi P, Sarchianaki A, Tessitore G, 
+Nappi C. Oral dexketoprofen for pain treatment during diag -
+nostic hysteroscopy in postmenopausal women. Maturitas. 2002 
+Dec;43(4):277–81.
+ 43. Floris S, Piras B, Orrù M, Silvetti E, Tusconi A, Melis F, et al. Efficacy 
+of intravenous tramadol treatment for reducing pain during office 
+diagnostic hysteroscopy. Fertil Steril. 2007 Jan;87(1):147–51.
+ 44. Schneider EN, Riley R, Espey E, Mishra SI, Singh RH. Nitrous 
+oxide for pain management during in- office hysteroscopic ster -
+ilization: a randomized controlled trial. Contraception. 2017 
+Mar;95(3):239–44.
+ 45. Hassan A, Haggag H. Role of oral tramadol 50 mg in reducing pain 
+associated with outpatient hysteroscopy: A randomised double- 
+blind placebo- controlled trial. Aust N Z J Obstet Gynaecol. 2016 
+Feb;56(1):102–6.
+ 46. Hassa H, Aydin Y, Oge T, Cicek K. Effectiveness of Vaginal 
+Misoprostol and Rectal Nonsteroidal Anti- Inflammatory Drug in 
+Vaginoscopic Diagnostic Outpatient Hysteroscopy in Primarily 
+Infertile Women: Double- Blind, Randomized, Controlled Trial. J 
+Minim Invasive Gynecol. 2013 Nov;20(6):880–5.
+ 47. Senturk MB, Guraslan H, Babaoğlu B, Yaşar L, Polat M. The Effect 
+of Intrauterine Lidocaine and Rectal Indomethacin on Pain during 
+Office Vaginoscopic Hysteroscopy: Randomized Double- Blind 
+Controlled Study. Gynecol Obstet Invest. 2015 Nov 20;81(3):280–4.
+ 48. Kadiroğulları P, Seçkin KD, Yücel B, Çetin BA, Barut SA, Yıldırım 
+G. Analgesic Efficiency of Tramadol Administered Prior to 
+Hysteroscopy Procedure. Gynecol Obstet Reprod Med. 2016 Dec 
+28;22(3):152–5.
+ 49. Issat T, Beta J, Nowicka MA, Maciejewski T, Jakimiuk AJ. A 
+Randomized, Single Blind, Placebo- Controlled Trial for the Pain 
+Reduction During the Outpatient Hysteroscopy After Ketoprofen 
+or Intravaginal Misoprostol. J Minim Invasive Gynecol. 2014 
+Sep;21(5):921–7.
+ 50. Caligiani L, Pera L, Scuderi A, Ferrarello S. Analgesia for 
+out- patients’ hysteroscopy in postmenopausal bleeding. Acta 
+Anaesthesiol Ital. 1994;45(2 Suppl):251–6.
+ 51. Bellati U, Bonaventura A, Costanza A, Zulli S, Gentile C. Tramadol 
+hydrochloride versus mepivacaine hydrochloride: comparison 
+between two analgesic procedures in hysteroscopy. G Ital Ostet E 
+Ginecol. 1998;20:469–72.
+ 52. Tam WH, Yuen PM. Use of diclofenac as an analgesic in outpatient 
+hysteroscopy: a randomized, double- blind, placebo- controlled 
+study. Fertil Steril. 2001 Nov;76(5):1070–2.
+ 53. Lin YH, Hwang JL, Huang LW, Chen HJ. Use of sublingual bu -
+prenorphine for pain relief in office hysteroscopy. J Minim Invasive 
+Gynecol. 2005 Aug;12(4):347–50.
+ 54. De Angelis C. Suppression of pelvic pain during hysteroscopy with 
+a transcutaneous electrical nerve stimulation device. Fertil Steril. 
+2003 Jun;79(6):1422–7.
+ 55. Sharma J, Aruna J, Kumar P, Roy K, Malhotra N, Kumar S. 
+Comparison of efficacy of oral drotaverine plus mefenamic acid 
+with paracervical block and with intravenous sedation for pain re -
+lief during hysteroscopy and endometrial biopsy. Indian J Med Sci. 
+2009;63(6):244.
+ 56. Thiel JA, Lukwinski A, Kamencic H, Lim H. Oral Analgesia vs 
+Intravenous Conscious Sedation during Essure Micro- Insert 
+Sterilization Procedure: Randomized, Double- Blind, Controlled 
+Trial. J Minim Invasive Gynecol. 2011 Jan;18(1):108–11.
+ 57. Teran- Alonso MJ, Santiago JD, Usandizaga R, Zapardiel I. 
+Evaluation of pain in office hysteroscopy with prior analgesic 
+medication: a prospective randomized study. Eur J Obstet Gynecol 
+Reprod Biol. 2014 Jul;178:123–7.
+ 58. Mohammadi SS, Abdi M, Movafegh A. Comparing Transcervical 
+Intrauterine Lidocaine Instillation with Rectal Diclofenac for Pain 
+Relief During Outpatient Hysteroscopy: A Randomized Controlled 
+Trial. Oman Med J. 2015 May 15;30(3):157–61.
+ 59. Hassan A, Wahba A, Haggag H. Tramadol versus Celecoxib 
+for reducing pain associated with outpatient hysteroscopy: a randomized double- blind placebo- controlled trial. Hum Reprod. 
+2016 Jan;31(1):60–6.
+ 60. Asgari Z, Razavi M, Hosseini R, Nataj M, Rezaeinejad M, 
+Sepidarkish M. Evaluation of Paracervical Block and IV Sedation 
+for Pain Management during Hysteroscopic Polypectomy: A 
+Randomized Clinical Trial. Pain Res Manag. 2017;2017:1–7.
+ 61. Lisón JF, Amer- Cuenca JJ, Piquer- Martí S, Benavent- Caballer V, 
+Biviá- Roig G, Marín- Buck A. Transcutaneous Nerve Stimulation for 
+Pain Relief During Office Hysteroscopy: A Randomized Controlled 
+Trial. Obstet Gynecol. 2017 Feb;129(2):363–70.
+ 62. Abbas AM, Elzargha AM, Ahmed AGM, Mohamed II, Altraigey 
+A, Abdelbadee AY. Oral Diclofenac Potassium Versus Hyoscine- 
+N- Butyl Bromide in Reducing Pain Perception during Office 
+Hysteroscopy: ARandomized Double- blind Placebo- controlled 
+Trial. J Minim Invasive Gynecol. 2019 May;26(4):709–16.
+ 63. Souza CAB, Genro VK, Tarrasconi DV, Oppermann MLR, Cunha 
+Filho JSL. Diclofenac versus a combination of hyoscine and di -
+clofenac for outpatient hysteroscopy: A placebo controlled ran -
+domized clinical trial. Eur J Obstet Gynecol Reprod Biol. 2020 
+Apr;247:1–5.
+ 64. Samy A, Nabil H, Abdelhakim AM, Mahy ME, Abdel- Latif AA, 
+Metwally AA. Pain management during diagnostic office hysteros -
+copy in postmenopausal women: a randomized study. Climacteric. 
+2020 Jul 3;23(4):397–403.
+ 65. electronic medicines compendium. PENTHROX 99.9%, 3 ml inha -
+lation vapour, liquid - Summary of Product Characteristics (SmPC) 
+- (emc) [Internet]. [cited 2023 Jun 20]. Available from: https:// www. 
+medic ines. org. uk/ emc/ produ ct/ 1939/ smpc# gref
+ 66. Smith MD, Rowan E, Spaight R, Siriwardena AN. Evaluation of the 
+effectiveness and costs of inhaled methoxyflurane versus usual an -
+algesia for prehospital injury and trauma: non- randomised clinical 
+study. BMC Emerg Med. 2022 Jul 7;22(1):122.
+ 67. Twidale E, Neutens S, Streeton C, Mudzamiri T, Hunt L, Dudley N. 
+Methoxyflurane Analgesia for Conscious Hysteroscopy: A Double- 
+Blind Randomised Placebo- Controlled Trial (MACH Trial). J 
+Minim Invasive Gynecol. 2023 Nov;30(11):S12.
+ 68. De Silva P, Wilson L, Carnegy A, Smith P, Clark T. Cervical dila -
+tation and preparation prior to outpatient hysteroscopy: a system -
+atic review and meta- analysis. BJOG Int J Obstet Gynaecol. 2021 
+Jun;128(7):1112–23.
+ 69. Fouda UM, Gad Allah SH, Elshaer HS. Optimal timing of miso -
+prostol administration in nulliparous women undergoing office 
+hysteroscopy: a randomized double- blind placebo- controlled study. 
+Fertil Steril. 2016 Jul;106(1):196–201.
+ 70. Rund NMA, El Shenoufy H, Islam BA, El Husseiny T, Nassar SA, 
+Mohsen RA, et  al. Determining the Optimal Time Interval be -
+tween Vaginal Dinoprostone Administration and Diagnostic Office 
+Hysteroscopy in Nulliparous Women: A Randomized, Double- 
+blind Trial. J Minim Invasive Gynecol. 2022 Jan;29(1):85–93.
+ 71. Pasini A, Belloni C. [Intraoperative complications of 697 consecutive 
+operative hysteroscopies]. Minerva Ginecol. 2001 Feb;53(1):13–20.
+ 72. Jansen FW, Vredevoogd CB, van Ulzen K, Hermans J, Trimbos JB, 
+Trimbos- Kemper TC. Complications of hysteroscopy: a prospec-
+tive, multicenter study. Obstet Gynecol. 2000 Aug;96(2):266–70.
+ 73. Berek JS, Stubblefield PG. Anatomic and clinical correlates of uter -
+ine perforation. Am J Obstet Gynecol. 1979 Sep 15;135(2):181–4.
+ 74. Radman HM, Korman W. Uterine perforation during dilatation 
+and curettage. Obstet Gynecol. 1963 Feb;21:210–5.
+ 75. Abulnour AAER, Mohamed MEM, Khalaf WM. Dinoprostone 
+versus Misoprostol for Cervical Ripening before Diagnostic 
+Hysteroscopy in Nulliparous Women : A Randomized Controlled 
+Trial. Egypt J Hosp Med. 2018 Apr;71(1):2287–93.
+ 76. Bastu E, Celik C, Nehir A, Dogan M, Yuksel B, Ergun B. Cervical 
+Priming Before Diagnostic Operative Hysteroscopy in Infertile 
+Women: A Randomized, Double- Blind, Controlled Comparison of 
+2 Vaginal Misoprostol Doses. Int Surg. 2013 May 1;98(2):140–4.
+ 77. Ben- Chetrit A, Eldar- Geva T, Lindenberg T, Farhat M, Shimonovitz 
+S, Zacut D, et  al. Mifepristone does not induce cervical 
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17907 by Test, Wiley Online Library on [22/09/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | 21
+OUTPATIENT HYSTEROSCOPY
+softening in non- pregnant women. Hum Reprod Oxf Engl. 2004 
+Oct;19(10):2372–6.
+ 78. da Costa AR, Pinto- Neto AM, Amorim M, Paiva LHSC, Scavuzzi A, 
+Schettini J. Use of misoprostol prior to hysteroscopy in postmeno -
+pausal women: a randomized, placebo- controlled clinical trial. J 
+Minim Invasive Gynecol. 2008 Feb;15(1):67–73.
+ 79. Duan H, Hao M, Wang SM, Meng YJ, Wang Y, Yuan R, et  al. 
+[Clinical multicenter study of carboprost methylate suppository for 
+cervical ripening prior to diagnostic hysteroscopy]. Zhonghua Fu 
+Chan Ke Za Zhi. 2018 Sep 25;53(9):602–7.
+ 80. El- Khayat W, Dwidar L, Elsawah H, Idris O. A double- blind ran -
+domized controlled trial of two different doses of misoprostol for 
+cervical priming prior to office hysteroscopy. Middle East Fertil Soc 
+J. 2015 Mar;20(1):1–5.
+ 81. El- Mazny A, Abou- Salem N. A double- blind randomized controlled 
+trial of vaginal misoprostol for cervical priming before outpatient 
+hysteroscopy. Fertil Steril. 2011 Oct;96(4):962–5.
+ 82. Esin S, Baser E, Okuyan E, Kucukozkan T. Comparison of 
+Sublingual Misoprostol With Lidocaine Spray for Pain Relief in 
+Office Hysteroscopy: A Randomized, Double- Blind, Placebo- 
+Controlled Trial. J Minim Invasive Gynecol. 2013 Jul;20(4):499–504.
+ 83. Fouda UM, Elshaer HS, Elsetohy KA, Youssef MA. Misoprostol 
+versus uterine straightening by bladder distension for pain relief 
+in postmenopausal patients undergoing diagnostic office hysteros -
+copy: a randomised controlled non- inferiority trial. Eur J Obstet 
+Gynecol Reprod Biol. 2016 Aug;203:326–30.
+ 84. Fouda UM, Elsetohy KA, Elshaer HS, Hammad BEM, Shaban 
+MM, Youssef MA, et  al. Misoprostol Prior to Diagnostic Office 
+Hysteroscopy in the Subgroup of Patients with No Risk Factors for 
+Cervical Stenosis: A Randomized Double Blind Placebo- Controlled 
+Trial. Gynecol Obstet Invest. 2018;83(5):455–60.
+ 85. Hwang JY, Song SH. Optimal Dose of Vaginal Misoprostol for 
+Cervical Ripening before Hysteroscopy: A Randomized Double- 
+Blind Study. J Minim Invasive Gynecol. 2018 Sep;25(6):1031–4.
+ 86. Gokmen Karasu AF, Aydin S, Ates S, Takmaz T, Comba C. 
+Administration of rectal cytotec versus rectal buscopan before hys -
+teroscopy. Minim Invasive Ther Allied Technol MITAT Off J Soc 
+Minim Invasive Ther. 2020 Jun 3;1–5.
+ 87. Nair VG, Roy KK, Rai R, Das A, Bharti J, Zangmo R. Effectiveness of 
+Misoprostol in Office Hysteroscopy in Premenopausal Nulliparous 
+Women: A Prospective Randomized Double- Blind Placebo- 
+Controlled Trial. J Hum Reprod Sci. 2020 Jun;13(2):104–9.
+ 88. Nakano FY, Yela DA, Pinto JPL, Riegas T, Benetti- Pinto CL, Pedro 
+AO, et al. Efficacy of misoprostol before diagnostic hysteroscopy in 
+postmenopausal women: a randomized clinical trial. Menopause. 
+2018 Jul;25(7):789–94.
+ 89. Nandhini B, Maurya DK, Keepanasseril A, Kubera NS. Effect of cer -
+vical priming with misoprostol on cervical entry in women under -
+going vaginoscopic hysteroscopy for evaluation of abnormal uterine 
+bleeding: a randomized controlled trial. Arch Gynecol Obstet. 2018 
+Jul;298(1):133–7.
+ 90. Samy A, Abbas AM, Rashwan ASSA, Talaat B, Eissa AI, Metwally 
+AA, et  al. Vaginal Dinoprostone in Reducing Pain Perception 
+During Diagnostic Office Hysteroscopy in Postmenopausal 
+Women: A Randomized, Double- Blind, Placebo- Controlled Trial. 
+J Minim Invasive Gynecol. 2020 May;27(4):847–53.
+ 91. Singh N, Ghosh B, Naha M, Mittal S. Vaginal misoprostol for cer -
+vical priming prior to diagnostic hysteroscopy–efficacy, safety and 
+patient satisfaction: a randomized controlled trial. Arch Gynecol 
+Obstet. 2009 Jan;279(1):37–40.
+ 92. Sordia- Hernández LH, Rosales- Tristan E, Vazquez- Mendez J, 
+Merino M, Iglesias JL, Garza- Leal JG, et al. Effectiveness of miso -
+prostol for office hysteroscopy without anesthesia in infertile pa -
+tients. Fertil Steril. 2011 Feb;95(2):759–61.
+ 93. Tasma M, Louwerse M, Hehenkamp W, Geomini P, Bongers M, 
+Veersema S, et  al. Misoprostol for cervical priming prior to hys -
+teroscopy in postmenopausal and premenopausal nulliparous women; a multicentre randomised placebo controlled trial. BJOG 
+Int J Obstet Gynaecol. 2018 Jan;125(1):81–9.
+ 94. Valente EP, de Amorim MMR, Costa AAR, de Miranda DV. Vaginal 
+misoprostol prior to diagnostic hysteroscopy in patients of repro -
+ductive age: a randomized clinical trial. J Minim Invasive Gynecol. 
+2008 Aug;15(4):452–8.
+ 95. Xu D, Zhang X, He J. A Prospective, Randomized Comparison of 
+Intramuscular Phloroglucinol Versus Oral Misoprostol for Cervix 
+Pretreatment Before Diagnostic Hysteroscopy. Int Surg. 2015 
+Jul;100(7–8):1207–11.
+ 96. Martin J, editor. British National Formulary [Internet]. 57th ed. 
+London: BMJ group and RPS publishing; 2009 Available from: 
+http:// bnf. org/ bnf/ 
+ 97. Paulo AAS, Solheiro MHR, Paulo COS. Is pain better tolerated with 
+mini- hysteroscopy than with conventional device? A systematic 
+review and meta- analysis: Hysteroscopy scope size and pain. Arch 
+Gynecol Obstet. 2015 Nov;292(5):987–94.
+ 98. Cicinelli E, Tinelli R, Loiudice L, Loiudice I, Quattromini P, 
+Fusco A, et al. AlphaScope vs Lens- Based Hysteroscope for Office 
+Polypectomy without Anesthesia: Randomized Controlled Study. J 
+Minim Invasive Gynecol. 2011 Nov;18(6):796–9.
+ 99. Cicinelli E, Schönauer LM, Barba B, Tartagni M, Luisi D, Di 
+Naro E. Tolerability and Cardiovascular Complications of 
+Outpatient Diagnostic Minihysteroscopy Compared with 
+Conventional Hysteroscopy. J Am Assoc Gynecol Laparosc. 2003 
+Aug;10(3):399–402.
+ 100. De Angelis C, Santoro G, Re ME, Nofroni I. Office hysteroscopy and 
+compliance: mini- hysteroscopy versus traditional hysteroscopy in a 
+randomized trial. Hum Reprod Oxf Engl. 2003 Nov;18(11):2441–5.
+ 101. Kassem GA, El- Brombly WH, El Huseiny AM. Outpatient mini -
+hysteroscopy and conventional hysteroscopy: a comparative study. 
+Middle East Fertility Soc J. 2005;10:231–7.
+ 102. Pluchino N, Ninni F, Angioni S, Artini P, Araujo VG, Massimetti G, 
+et al. Office Vaginoscopic Hysteroscopy in Infertile Women: Effects 
+of Gynecologist Experience, Instrument Size, and Distention 
+Medium on Patient Discomfort. J Minim Invasive Gynecol. 2010 
+May;17(3):344–50.
+ 103. Rullo S, Sorrenti G, Marziali M, Ermini B, Sesti F, Piccione E. Office 
+hysteroscopy: comparison of 2.7- and 4- mm hysteroscopes for ac-
+ceptability, feasibility and diagnostic accuracy. J Reprod Med. 2005 
+Jan;50(1):45–8.
+ 104. Campo R, Molinas CR, Rombauts L, Mestdagh G, Lauwers M, 
+Braekmans P, et al. Prospective multicentre randomized controlled 
+trial to evaluate factors influencing the success rate of office diag -
+nostic hysteroscopy. Hum Reprod Oxf Engl. 2005 Jan;20(1):258–63.
+ 105. Giorda G, Scarabelli C, Franceschi S, Campagnutta E. Feasibility 
+and pain control in outpatient hysteroscopy in postmenopausal 
+women: a randomized trial. Acta Obstet Gynecol Scand. 2000 
+Jul;79(7):593–7.
+ 106. De Silva PM, Stevenson H, Smith PP, Clark TJ. Pain and oper -
+ative technologies used in office hysteroscopy: a systematic re -
+view of randomized controlled trials. J Minim Invasive Gynecol. 
+2021;28(10):1699–711.
+ 107. Connor M, Clark TJ, editors. Diagnostic and operative hysteros -
+copy. Cambridge, United Kingdom; New York, NY: Cambridge 
+University Press; 2020. p. 1.
+ 108. Unfried G, Wieser F, Albrecht A, Kaider A, Nagele F. Flexible versus 
+rigid endoscopes for outpatient hysteroscopy: a prospective ran -
+domized clinical trial. Hum Reprod Oxf Engl. 2001 Jan;16(1):168–71.
+ 109. Baxter AJ, Beck B, Phillips K. A randomized prospective trial of rigid 
+and flexible hysteroscopy in an outpatient setting: RANDOMIZED 
+PROSPECTIVE TRIAL OF RIGID AND FLEXIBLE 
+HYSTEROSCOPY. Gynaecol Endosc. 2002 Dec;11(6):357–64.
+ 110. Smith PP, Middleton LJ, Connor M, Clark TJ. Hysteroscopic 
+Morcellation Compared With Electrical Resection of Endometrial 
+Polyps: A Randomized Controlled Trial. Obstet Gynecol. 2014 
+Apr;123(4):745–51.
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17907 by Test, Wiley Online Library on [22/09/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+22 | 
+GREEN- TOP GUIDELINE NO. 59
+ 111. Kamel MAM, El- Tawab SS, El- Ashkar OS, Hassan MIA. Mini- 
+Scissor Versus Bipolar Twizzle in Ambulatory Hysteroscopic 
+Metroplasty: A Prospective Randomized Study. J Gynecol Surg. 2014 
+Jun;30(3):147–51.
+ 112. Muzii L, Bellati F, Pernice M, Manci N, Angioli R, Panici PB. 
+Resectoscopic versus bipolar electrode excision of endometrial pol-
+yps: a randomized study. Fertil Steril. 2007 Apr;87(4):909–17.
+ 113. Pampalona JR, Bastos MD, Moreno GM, Pust AB, Montesdeoca 
+GE, Guerra Garcia A, et  al. A Comparison of Hysteroscopic 
+Mechanical Tissue Removal With Bipolar Electrical Resection for 
+the Management of Endometrial Polyps in an Ambulatory Care 
+Setting: Preliminary Results. J Minim Invasive Gynecol. 2015 
+Mar;22(3):439–45.
+ 114. Lara- Domínguez MD, Arjona- Berral JE, Dios- Palomares R, 
+Castelo- Branco C. Outpatient hysteroscopic polypectomy: bipolar 
+energy system (Versapoint®) versus diode laser – randomized clini -
+cal trial. Gynecol Endocrinol. 2016 Mar 3;32(3):196–200.
+ 115. Sudano MC, Vitale SG, Rapisarda AMC, Carastro D, Tropea A, 
+Zizza G. The REP- b (removal of endometrial pathologies- basket) 
+in- office hysteroscopy. Updat Surg. 2016 Dec;68(4):407–12.
+ 116. Remondi C, Sesti F, Sorrenti G, Venezia G, Sorge R, Pietropolli A, 
+et al. Hysteroscopic polypectomy: a comparison between 22 Fr and 
+26 Fr resectoscopes under paracervical block anesthesia, a random -
+ized controlled study. Minim Invasive Ther Allied Technol. 2018 
+Nov 2;27(6):339–46.
+ 117. Clark TJ, Samuel N, Malick S, Middleton LJ, Daniels J, Gupta 
+JK. Bipolar Radiofrequency Compared With Thermal Balloon 
+Endometrial Ablation in the Office: A Randomized Controlled 
+Trial. Obstet Gynecol. 2011 Jan;117(1):109–18.
+ 118. Penninx JPM, Herman MC, Kruitwagen RFPM, Ter Haar AJF, Mol 
+BW, Bongers MY. Bipolar versus balloon endometrial ablation in 
+the office: a randomized controlled trial. Eur J Obstet Gynecol 
+Reprod Biol. 2016 Jan;196:52–6.
+ 119. De Silva PM, Stevenson H, Smith PP, Justin Clark T. A Systematic 
+Review of the Effect of Type, Pressure, and Temperature of the 
+Distension Medium on Pain During Office Hysteroscopy. J Minim 
+Invasive Gynecol. 2021 Jun;28(6):1148-1159.e2.
+ 120. Nagele F, Bournas N, O'Connor H, Broadbent M, Richardson R, 
+Magos A. Comparison of carbon dioxide and normal saline for 
+uterine distension in outpatient hysteroscopy. Fertil Steril. 1996 
+Feb;65(2):305–9.
+ 121. Litta P, Bonora M, Pozzan C, Merlin F, Sacco G, Fracas M, et  al. 
+Carbon dioxide versus normal saline in outpatient hysteroscopy. 
+Hum Reprod Oxf Engl. 2003 Nov;18(11):2446–9.
+ 122. Pellicano M, Guida M, Zullo F, Lavitola G, Cirillo D, Nappi C. 
+Carbon dioxide versus normal saline as a uterine distension me -
+dium for diagnostic vaginoscopic hysteroscopy in infertile patients: 
+a prospective, randomized, multicenter study. Fertil Steril. 2003 
+Feb;79(2):418–21.
+ 123. Paschopoulos M, Kaponis A, Makrydimas G, Zikopoulos K, 
+Alamanos Y, O'Donovan P, et al. Selecting distending medium for 
+out- patient hysteroscopy. Does it really matter? Hum Reprod. 2004 
+Nov 1;19(11):2619–25.
+ 124. Shankar M, Davidson A, Taub N, Habiba M. Randomised compar -
+ison of distension media for outpatient hysteroscopy. BJOG Int J 
+Obstet Gynaecol. 2004 Jan;111(1):57–62.
+ 125. Raimondo G, Raimondo D, D'Aniello G, Russo C, Ronga A, 
+Gabbanini M, et al. A randomized controlled study comparing car -
+bon dioxide versus normal saline as distension media in diagnostic 
+office hysteroscopy: is the distension with carbon dioxide a prob -
+lem? Fertil Steril. 2010 Nov;94(6):2319–22.
+ 126. Mazzon I, Favilli A, Grasso M, Horvath S, Bini V, Di Renzo GC, et al. 
+Pain in diagnostic hysteroscopy: a multivariate analysis after a ran -
+domized, controlled trial. Fertil Steril. 2014 Nov;102(5):1398–403.
+ 127. Tagliaferri V, Ricciardi L, Ricciardi R, Pinto LR, Lanzone A, 
+Scambia G, et al. Carbon dioxide in office diagnostic hysteroscopy: 
+An open question. A multicenter randomized trial on 1982 proce -
+dures. Eur J Obstet Gynecol Reprod Biol. 2019 Apr;235:97–101. 128. Shahid A, Pathak M, Gulumser C, Parker S, Palmer E, Saridogan 
+E. Optimum uterine filling pressure for outpatient diagnostic hys -
+teroscopy: a double- blind, randomized controlled trial. Reprod 
+Biomed Online. 2014 Jan;28(1):86–91.
+ 129. Haggag HM, Hassan AMA. The impact of altering filling pressures 
+in diagnostic outpatient hysteroscopy on the procedure completion 
+rates and associated pain: a randomised double- blind controlled 
+trial. Aust N Z J Obstet Gynaecol. 2016 Feb;56(1):97–101.
+ 130. Haggag H, Hassan A, Wahba A, Joukhadar R. A randomized double- 
+blind controlled trial of different filling pressures in operative out -
+patient hysteroscopy. Int J Gynecol Obstet. 2017 Oct;139(1):55–60.
+ 131. Karaman E, Kolusarı A, Çetin O, Çim N, Alkış İ, Karaman Y, 
+et  al. What should the optimal intrauterine pressure be during 
+outpatient diagnostic hysteroscopy? A randomized comparative 
+study: Optimal intrauterine pressure during hysteroscopy. J Obstet 
+Gynaecol Res. 2017 May;43(5):902–8.
+ 132. Evangelista A, Oliveira MAP, Crispi CP, Lamblet MF, Raymundo 
+TS, Santos LC. Diagnostic Hysteroscopy Using Liquid Distention 
+Medium: Comparison of Pain with Warmed Saline Solution vs 
+Room- Temperature Saline Solution. J Minim Invasive Gynecol. 
+2011 Jan;18(1):104–7.
+ 133. Tawfek ME, Hemeda HM, Ibrahim AI. Effectiveness of Warm 
+Saline Distension Media on Relieving Pain in Outpatient Office 
+Hysteroscopy: A Randomized Controlled Clinical Trial. J Gynecol 
+Reprod Med. 2019 Jan 30;3(1):1–7.
+ 134. Kapur S, Gruber A, Sekar H, Mafuta J, Lodhi W, Sivashanmugarajan 
+V, et al. Does temperature of distending medium matter in outpa -
+tient hysteroscopy? A double- blinded cohort control observational 
+study of room temperature versus warmed saline. J Obstet Gynaecol 
+Res. 2020 Mar;46(3):485–9.
+ 135. Salazar CA, Wong MC, Miller VE, Morris SN, Isaacson KB. The 
+Effect of Warmed Hysteroscopic Fluid- Distention Medium on 
+Postoperative Core Body Temperature: A Randomized Trial. J 
+Gynecol Surg. 2019 Aug;35(4):239–45.
+ 136. Umranikar S, Clark TJ, Saridogan E, Miligkos D, Arambage K, Torbe 
+E, et al. BSGE/ESGE guideline on management of fluid distension 
+media in operative hysteroscopy. Gynecol Surg. 2016;13(4):289–303.
+ 137. Gulucu S, Cakmak B. Warm distension fluid reduces pain severity 
+in office hysteroscopy: a randomized controlled trial. Ann Saudi 
+Med. 2021 Jun;41(3):135–40.
+ 138. De Silva PM, Carnegy A, Smith PP, Clark TJ. Local anaesthesia for 
+office hysteroscopy: A systematic review & meta- analysis. Eur J 
+Obstet Gynecol Reprod Biol. 2020 Sep;252:70–81.
+ 139. Al- Sunaidi M, Tulandi T. A randomized trial comparing local intra -
+cervical and combined local and paracervical anesthesia in outpa -
+tient hysteroscopy. J Minim Invasive Gynecol. 2007 Apr;14(2):153–5.
+ 140. Arnau B, Jovell E, Redón S, Canals M, Mir V, Jiménez E. Lidocaine- 
+prilocaine (EMLA®) cream as analgesia in hysteroscopy practice: 
+a prospective, randomized, non- blinded, controlled study. Acta 
+Obstet Gynecol Scand. 2013 Aug;92(8):978–81.
+ 141. Broadbent JA, Hill NC, Molnár BG, Rolfe KJ, Magos AL. 
+Randomized placebo controlled trial to assess the role of intracer -
+vical lignocaine in outpatient hysteroscopy. Br J Obstet Gynaecol. 
+1992 Sep;99(9):777–9.
+ 142. Chapa HO, Venegas G, VanDuyne CP, Suvunrungsi L, Antonetti 
+AG, Sandate J. In- office thermachoice III ablation: a com -
+parison of two anesthetic techniques. Gynecol Obstet Invest. 
+2010;69(2):140–4.
+ 143. Chudnoff S, Einstein M, Levie M. Paracervical block efficacy in 
+office hysteroscopic sterilization: a randomized controlled trial. 
+Obstet Gynecol. 2010 Jan;115(1):26–34.
+ 144. Cicinelli E, Didonna T, Ambrosi G, Schönauer LM, Fiore G, 
+Matteo MG. Topical anaesthesia for diagnostic hysteroscopy and 
+endometrial biopsy in postmenopausal women: a randomised 
+placebo- controlled double- blind study. Br J Obstet Gynaecol. 1997 
+Mar;104(3):316–9.
+ 145. Cicinelli E, Didonna T, Schonauer LM, Stragapede S, Falco N, Pansini 
+N. Paracervical anesthesia for hysteroscopy and endometrial biopsy 
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17907 by Test, Wiley Online Library on [22/09/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | 23
+OUTPATIENT HYSTEROSCOPY
+in postmenopausal women. A randomized, double- blind, placebo- 
+controlled study. J Reprod Med. 1998 Dec;43(12):1014–8.
+ 146. Clark S, Vonau B, Macdonald R. Topical anaesthesia in outpatient 
+hysteroscopy. Gynaecol Endosc. 1996;5:141–4.
+ 147. Costello MF, Horrowitz SD, Williamson M. A prospective random -
+ized double- blind placebo- controlled study of local anaesthetic 
+injected through the hysteroscope for outpatient hysteroscopy and 
+endometrial biopsy. Gynaecol Endosc. 1998 Jun;7(3):121–6.
+ 148. Davies A, Richardson RE, O'Connor H, Baskett TF, Nagele F, Magos 
+AL. Lignocaine aerosol spray in outpatient hysteroscopy: a ran -
+domized double- blind placebo- controlled trial. Fertil Steril. 1997 
+Jun;67(6):1019–23.
+ 149. Esteve M, Schindler S, Borges Machado S, Argollo Borges S, Ramos 
+Santos C, Coutinho E. The efficacy of intracervical lidocaine in out -
+patient hysteroscopy. Gynaecol Endosc. 2002 Feb;11(1):33–6.
+ 150. Finikiotis G, Tsocanos S. Outpatient Hysteroscopy: A Comparison 
+of 2 Methods of Local Analgesia. Aust N Z J Obstet Gynaecol. 1992 
+Nov;32(4):373–4.
+ 151. Guida M. Outpatient operative hysteroscopy with bipolar elec-
+trode: a prospective multicentre randomized study between local 
+anaesthesia and conscious sedation. Hum Reprod. 2003 Apr 
+1;18(4):840–3.
+ 152. Gupta N, Gupta B, Dadhwal V, Mittal S. Efficacy of intrauterine lig -
+nocaine plus vaginal misoprostol for pain relief in premenopausal 
+women undergoing endometrial aspiration and ambulatory hys -
+teroscopy. Acta Obstet Gynecol Scand. 2010 Aug;89(8):1066–70.
+ 153. Hong J, Kim J. Use of paracervical analgesia for outpatient hystero -
+scopic surgery: A randomized, double- blind, placebo- controlled 
+study. Ambul Surg. 2006 Jul;12(4):181–5.
+ 154. Isley MM, Jensen JT, Nichols MD, Lehman A, Bednarek P, Edelman 
+A. Intrauterine lidocaine infusion for pain management during out -
+patient transcervical tubal sterilization: a randomized controlled 
+trial. Contraception. 2012 Mar;85(3):275–81.
+ 155. Kabli N, Tulandi T. A randomized trial of outpatient hysteros -
+copy with and without intrauterine anesthesia. J Minim Invasive 
+Gynecol. 2008 Jun;15(3):308–10.
+ 156. Karakuş R, Namazov A, Ayas S, Polat M, Arinkan SA, Angın 
+AD, et  al. OFİS HİSTEROSKOPİDE ANALJEZİ AMAÇLI 
+LOKAL ANESTEZİ YÖNTEMLERİNİN ETKİNLİĞİNİN 
+KARŞILAŞTIRILMASI (Efficacy of Local Anesthesia for Office 
+Hysteroscopy). Zeynep Kamil Tıp Bül. 2014 Aug 6;45(3):136.
+ 157. Kokanalı MK, Güzel Aİ, Özer İ, Topçu HO, Cavkaytar S, Doğanay M. 
+Pain experienced during and after office hysteroscopy with and with-
+out intracervical anesthesia. J Exp Ther Oncol. 2014;10(4):243–6.
+ 158. Kumar V, Tryposkiadis K, Gupta JK. Hysteroscopic local anesthetic 
+intrauterine cornual block in office endometrial ablation: a ran -
+domized controlled trial. Fertil Steril. 2016 Feb;105(2):474-480.e1.
+ 159. Lau WC, Lo WK, Tam WH, Yuen PM. Paracervical anaesthesia 
+in outpatient hysteroscopy: a randomised double- blind placebo- 
+controlled trial. Br J Obstet Gynaecol. 1999 Apr;106(4):356–9.
+ 160. Lau WC, Tam WH, Lo WK, Yuen PM. A randomised double- blind 
+placebo- controlled trial of transcervical intrauterine local anaes -
+thesia in outpatient hysteroscopy. BJOG Int J Obstet Gynaecol. 2000 
+May;107(5):610–3.
+ 161. Lukes AS, Roy KH, Presthus JB, Diamond MP, Berman JM, Konsker 
+KA. Randomized comparative trial of cervical block protocols for 
+pain management during hysteroscopic removal of polyps and my -
+omas. Int J Women's Health. 2015;7:833–9. https:// doi. org/ 10. 2147/ 
+IJWH. S50101 . Erratum in: Int J Womens Health. 2015;7:871.
+ 162. Makris N, Xygakis A, Dachlythras M, Prevedourakis C, Michalas 
+S. Mepivacaine Local Cervical Anesthesia for Diagnostic 
+Hysteroscopy: A Randomized Placebo- Controlled Study. J Gynecol 
+Surg. 2001 Mar;17(1):7–11.
+ 163. Soriano D, Ajaj S, Chuong T, Deval B, Fauconnier A, Daraï E. 
+Lidocaine spray and outpatient hysteroscopy: randomized placebo- 
+controlled trial. Obstet Gynecol. 2000 Nov;96(5 Pt 1):661–4.
+ 164. Vercellini P, Colombo A, Mauro F, Oldani S, Bramante T, Crosignani 
+PG. Paracervical anesthesia for outpatient hysteroscopy. Fertil 
+Steril. 1994 Nov;62(5):1083–5. 165. Wong AY, Wong K, Tang LC. Stepwise pain score analysis of the 
+effect of local lignocaine on outpatient hysteroscopy: a random-
+ized, double- blind, placebo- controlled trial. Fertil Steril. 2000 
+Jun;73(6):1234–7.
+ 166. Zullo F, Pellicano M, Stigliano CM, Di Carlo C, Fabrizio A, Nappi C. 
+Topical anesthesia for office hysteroscopy. A prospective, randomized 
+study comparing two modalities. J Reprod Med. 1999 Oct;44(10):865–9.
+ 167. Zupi E, Luciano AA, Marconi D, Valli E, Patrizi G, Romanini C. The 
+use of topical anesthesia in diagnostic hysteroscopy and endome -
+trial biopsy. J Am Assoc Gynecol Laparosc. 1994 May;1(3):249–52.
+ 168. De Silva PM, Carnegy A, Smith PP, Clark TJ. Vaginoscopy for office 
+hysteroscopy: A systematic review & meta- analysis. Eur J Obstet 
+Gynecol Reprod Biol. 2020 Sep;252:278–85.
+ 169. Sagiv R, Sadan O, Boaz M, Dishi M, Schechter E, Golan A. A new 
+approach to office hysteroscopy compared with traditional hys -
+teroscopy: a randomized controlled trial. Obstet Gynecol. 2006 
+Aug;108(2):387–92.
+ 170. Christie LE, Picard J, Weinberg GL. Local anaesthetic systemic tox -
+icity. BJA Educ. 2015 Jun;15(3):136–42.
+ 171. De Silva PM, Carnegy A, Graham C, Smith PP, Clark TJ. Conscious 
+sedation for office hysteroscopy: A systematic review and meta- 
+analysis. Eur J Obstet Gynecol Reprod Biol. 2021 Nov;266:89–98.
+ 172. Academy of Medical Royal Colleges. Safe Sedation Practice for 
+Healthcare Procedures: Standards and Guidance. London: Academy 
+of Medical Royal Colleges; 2013.
+ 173. American Society of Anesthesiologists. Continuum of Depth of 
+Sedation: Definition of General Anesthesia and Levels of Sedation/
+Analgesia. Washington DC: American Society of Anesthesiologists; 
+2019.
+ 174. Practice Guidelines for Moderate Procedural Sedation and Analgesia 
+2018: A Report by the American Society of Anesthesiologists Task 
+Force on Moderate Procedural Sedation and Analgesia, the American 
+Association of Oral and Maxillofacial Surgeons, American College 
+of Radiology, American Dental Association, American Society of 
+Dentist Anesthesiologists, and Society of Interventional Radiology. 
+Anesthesiology. 2018 Mar 1;128(3):437–79.
+ 175. Bingol Tanriverdi T, Koceroglu I, Devrim S, Gura Celik M. 
+Comparison of sedation with dexmedetomidine vs propofol during 
+hysteroscopic surgery: Single- centre randomized controlled trial. J 
+Clin Pharm Ther. 2019 Apr;44(2):312–7.
+ 176. Goswami D, Nisa N, Sharma A, Dadhwal V, Baidya DK, Arora M. 
+Low- Dose Ketamine for Outpatient Hysteroscopy: A Prospective, 
+Randomised, Double- Blind Study. Turk J Anaesthesiol Reanim. 
+2020 Apr;48(2):134–41.
+ 177. Garbin O, Kutnahorsky R, Göllner JL, Vayssiere C. Vaginoscopic 
+versus conventional approaches to outpatient diagnostic hysteros -
+copy: a two- centre randomized prospective study. Hum Reprod Oxf 
+Engl. 2006 Nov;21(11):2996–3000.
+ 178. Guida M, Di Spiezio Sardo A, Acunzo G, Sparice S, Bramante S, 
+Piccoli R, et  al. Vaginoscopic versus traditional office hysteros -
+copy: a randomized controlled study. Hum Reprod Oxf Engl. 2006 
+Dec;21(12):3253–7.
+ 179. Sharma M, Taylor A, di Spiezio Sardo A, Buck L, Mastrogamvrakis G, 
+Kosmas I, et al. Outpatient hysteroscopy: traditional versus the “no- 
+touch” technique. BJOG Int J Obstet Gynaecol. 2005 Jul;112(7):963–7.
+ 180. Ngu SF, Cheung VYT, Pun TC. Randomized Study of Vaginoscopy 
+and H Pipelle vs Traditional Hysteroscopy and Standard Pipelle. J 
+Minim Invasive Gynecol. 2012 Mar;19(2):206–11.
+ 181. Chapa HO, Venegas G. Vaginoscopy compared to traditional hys -
+teroscopy for hysteroscopic sterilization. A randomized trial. J 
+Reprod Med. 2015 Feb;60(1–2):43–7.
+ 182. Smith P, Kolhe S, O'Connor S, Clark T. Vaginoscopy Against 
+Standard Treatment: a randomised controlled trial. BJOG Int J 
+Obstet Gynaecol. 2019 Jun;126(7):891–9.
+ 183. Nappi L, Sardo ADS, Spinelli M, Guida M, Mencaglia L, Greco 
+P, et  al. A Multicenter, Double- Blind, Randomized, Placebo- 
+Controlled Study to Assess Whether Antibiotic Administration 
+Should Be Recommended During Office Operative Hysteroscopy. 
+Reprod Sci. 2013 Jul;20(7):755–61.
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17907 by Test, Wiley Online Library on [22/09/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+24 | 
+GREEN- TOP GUIDELINE NO. 59
+ 184. Janjua A, Smith P, Dawoud K, Gray J, Clark J. Fatal systemic infec-
+tion following an outpatient hysteroscopic diagnosis of a chronic 
+pyometra: a case report and survey of practice. Eur J Obstet Gynecol 
+Reprod Biol. 2015 Nov;194:250–1.
+ 185. Guo T, Zeng N, Yang J, Wu P, Liu P, Liu Z, et al. The clinical effects 
+of antibiotic prophylaxis for hysteroscopic procedures: A meta- 
+analysis. Medicine (Baltimore). 2019 Aug;98(34):e16964.
+ 186. Clark TJ, Middleton LJ, Cooper NA, Diwakar L, Denny E, Smith 
+P, et  al. A randomised controlled trial of Outpatient versus inpa -
+tient Polyp Treatment (OPT) for abnormal uterine bleeding. Health 
+Technol Assess Winch Engl. 2015 Jul;19(61):1–194.
+ 187. Reinders I, Geomini P, Timmermans A, de Lange M, Bongers M. 
+Local anaesthesia during endometrial ablation: a systematic review. 
+BJOG Int J Obstet Gynaecol. 2017 Jan;124(2):190–9. 188. Royal College of Obstetricians and Gynaecologists & London School 
+of Hygeine & Tropical Medicine. Patterns of Benign Gynaecology 
+Care in English NHS Hospital Trusts 2015- 2016 [Internet]. [cited 
+2022 Aug 14]. Available from: http:// allca tsrgr ey. org. uk/ wp/ downl 
+oad/ obste trics_2/ benig n- gynae - indic ators - repor t- 2015- 16. pdf
+How to cite this article: De Silva PM, Smith PP, 
+Cooper NAM, Clark TJ. Outpatient Hysteroscopy. 
+BJOG. 2024;00:1–25. https://doi.org/10.1111/1471-
+0528.17907
+A PPE N DI X 1: Explanation of grades and evidence levels
+Classification of evidence levels
+1++ High- quality meta- analyses, systematic reviews of randomised controlled trials or randomised controlled trials with 
+a very low risk of bias
+1+ Well- conducted meta- analyses, systematic reviews of randomised controlled trials or randomised controlled trials 
+with a low risk of bias
+1– Meta- analyses, systematic reviews of randomised controlled trials or randomised controlled trials with a high risk of 
+bias
+2++ High- quality systematic reviews of case–control or cohort studies or high- quality
+case–control or cohort studies with a very low risk of confounding, bias or chance and a
+high probability that the relationship is causal
+2+ Well- conducted case–control or cohort studies with a low risk of confounding, bias or chance
+and a moderate probability that the relationship is causal
+2– Case–control or cohort studies with a high risk of confounding, bias or chance and a
+significant risk that the relationship is not causal
+3 Non- analytical studies, e.g. case reports, case series
+4 Expert opinion
+Grades of Recommendation
+AAt least one meta- analysis, systematic reviews or RCT rated as 1++, and directly applicable to the target population; 
+or a systematic review of RCTs or a body of evidence consisting principally of studies rated as 1+, directly applicable 
+to the target population and demonstrating overall consistency of results
+BA body of evidence including studies rated as 2++ directly applicable to the target population, and demonstrating 
+overall consistency of results; or
+Extrapolated evidence from studies rated as 1++ or 1+
+CA body of evidence including studies rated as 2+ directly applicable to the target population, and demonstrating 
+overall consistency of results; or
+Extrapolated evidence from studies rated as 2++
+DEvidence level 3 or 4; or
+Extrapolated evidence from studies rated as 2+
+Good Practice Points
+GPP Recommended best practice based on the clinical experience of the guideline development group. *
+* on the occasion when the guideline development group find there is an important practical point that they wish to emphasise but for which there is not, nor is there likely 
+to be any research evidence. This will typically be where some aspect of treatment is regarded as such sound clinical practice that nobody is likely to question it. These are 
+marked in the guideline, and are indicated by ✓ . It must be emphasised that these are NOT an alternative to evidence- based recommendations, and should only be used where 
+there is no alternative means of highlighting the issue.
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17907 by Test, Wiley Online Library on [22/09/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ | 25
+OUTPATIENT HYSTEROSCOPY
+The guideline will be considered for update 3 years after 
+publication, with an intermediate assessment of the need to 
+update 2 years after publication.This guideline was produced on behalf of the 
+British Society of Gynaecological Endoscopists 
+and the Royal College of Obstetricians and 
+Gynaecologists by:
+Dr PM De Silva PhD MRCOG PGCert(MedEd), 
+Birmingham; Mr PP Smith PhD MRCOG, 
+Birmingham; Dr NAM Cooper PhD MRCOG, 
+London; Professor TJ Clark MD(Hons) FRCOG, 
+Birmingham
+The authors acknowledge the contributions of: 
+Dr A Mahmud PhD MRCOG PGDip(MedEd), 
+Dr H Stevenson MRCOG MSc MEd, Dr A 
+Carnegy BMedSc(Hons) MBChB, Dr L Wilson 
+BSc, MBChB (Hons), Dr CS Graham BSc(Hons) 
+FRCA and Ms L Davies.
+Peer reviewers: Ms L Shilcock Patient, Leicester; 
+Royal College of Anaesthetist; Mrs J Bushell, Didcot; 
+P Howe, Patient; Dr J Lord FRCOG, London; Ms G 
+Connor, Patient; Dr J Harrington, Patient; FEmISA; 
+Campaign Against Painful Hysteroscopy; Ms C 
+Mardon, Patient; MG Munro FRCSC FACOG, 
+Los Angeles; Ms G Johnson Patient, Newcastle 
+Upon Tyne; A Wright, Newcastle; S Knights BSc, 
+Colchester; Ms T Parsons Patient, Suffolk; Patient 
+Safety Learning; Ms C Wood Patient, Colchester; 
+Dr J K Gupta FRCOG, Birmingham; Dr M Shahin 
+MRCOG, Stoke on Trent; Mr J Nicholls FRCOG, 
+Oxford; Dr S Mabbutt MRCOG, Northampton.
+Committee lead reviewers were: Dr A Macleod 
+FRCOG, Edinburgh;1 Dr M Madhra MRCOG, 
+Edinburgh2; Dr G Ahmad FRCOG, Manchester;3 
+Mr K Jayaprakasan FRCOG, Nottingham.4
+The co- Chairs of the Guidelines Committee 
+were: Dr MA Ledingham MRCOG, Glasgow;1 
+Dr B Magowan FRCOG, Melrose;2 Ms N Potdar 
+FRCOG, Leicester;3 Mr A McKelvey MRCOG, 
+Norwich.3
+All RCOG guidance developers are asked to declare 
+any conflicts of interest. A statement summarising 
+any conflicts of interest for this guideline is avail -
+able from : https:// www. rcog. org. uk/ en/ guide lines - 
+resea rch- servi ces/ guide lines/ gtg59 .
+The final version is the responsibility of the 
+Guidelines Committee of the RCOG.DISCLAIMER
+The Royal College of Obstetricians and 
+Gynaecologists produces guidelines as an educa -
+tional aid to good clinical practice. They present 
+recognised methods and techniques of clinical 
+practice, based on published evidence, for consid -
+eration by obstetricians and gynaecologists and 
+other relevant health professionals. The ultimate 
+judgement regarding a particular clinical proce -
+dure or treatment plan must be made by the doctor 
+or other attendant in the light of clinical data pre -
+sented by the patient and the diagnostic and treat -
+ment options available.
+This means that RCOG Guidelines are unlike pro -
+tocols or guidelines issued by employers, as they 
+are not intended to be prescriptive directions de -
+fining a single course of management. Departure 
+from the local prescriptive protocols or guidelines 
+should be fully documented in the patient's case 
+notes at the time the relevant decision is taken.
+1until May 2020; 2until May 2022; 3from June 2020; 4from 
+June 2022.
+1until December 2020; 2until June 2020; 3from January 2021.
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17907 by Test, Wiley Online Library on [22/09/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License

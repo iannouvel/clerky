@@ -1,0 +1,886 @@
+# Extracted from: GTG 2012 - Initial Mx of Chronic Pelvic Pain.pdf
+# Guideline ID: gtg-2012-initial-mx-of-chronic-pelvic-pain
+# Content length: 57433 characters
+# Processing date: 1732953490.8998735
+
+The Initial Management of Chronic 
+Pelvic Pain 
+Green-top Guideline No. 41 
+May 2012 
+The Initial Management of Chronic Pelvic Pain 
+This is the second edition of this guideline. The first edition was published in 2005 under the same title. 
+1.Purpose and scope 
+The purpose of this guideline is to provide an evidence-based summary for the generalist to facilitate 
+appropriate investigation and management of women presenting for the first time with chronic pelvic 
+pain. 
+2.Background and introduction 
+Chronic pelvic pain can be defined as intermittent or constant pain in the lower abdomen or pelvis of a 
+woman of at least 6months in duration, not occurring exclusively with menstruation or intercourse and not 
+associated with pregnancy. It is a symptom not a diagnosis. Chronic pelvic pain presents in primary care as 
+frequently as migraine or low-back pain 1and may significantly impact on a woman’s ability to function. 2
+Living with any chronic pain carries a heavy economic and social burden. Aiming for accurate diagnosis and 
+effective management from the first presentation may help to reduce the disruption of the woman’s life and 
+may avoid an endless succession of referrals, investigations and operations. This guideline provides an 
+evidence-based framework for the initial assessment of women with chronic pelvic pain. It is intended for the 
+general gynaecologist but may be of use to the general practitioner in deciding when to refer and to whom. 
+3.Identification and assessment of evidence 
+The Cochrane Library and the Cochrane Register of Controlled Trials were searched for relevant 
+randomised controlled trials, systematic reviews and meta-analyses. A search of Medline from 1966 to July 
+2011 was also carried out. The database was searched using the MeSH terms ‘pelvic pain’, ‘dysmenorrhoea’ 
+and ‘chronic disease’ including all sub-headings. This was combined with a keywords search using the 
+terms ‘chronic pelvic pain’ and ‘dysmenorrhoea’. 
+The definitions of types of evidence used in this guideline are detailed in RCOG Clinical Governance 
+Advice No. 1a–c .3–5 Where possible, recommendations are based on, and explicitly linked to, the evidence 
+that supports them although, unfortunately, little good-quality evidence exists. Areas lacking evidence are 
+highlighted and annotated as ‘good practice points’. 
+4.What are the possible aetiological factors in the genesis of chronic pelvic pain? 
+There is frequently more than one component to chronic pelvic pain. Assessment should aim to identify 
+contributory factors rather than assign causality to a single pathology.
+At the initial assessment, it may not be possible to identify confidently the cause of the pain. 
+Pain is, by definition, a sensory and emotional experience associated with actual or potential tissue damage 
+or described in those terms. 6The experience of pain will inevitably be affected by physical, psychological 
+and social factors. The woman is often aware of these influences but may choose not to discuss them, 
+fearing that her pain will be dismissed as psychological or that non-gynaecological symptoms will be 
+considered irrelevant. 
+RCOG Green-top Guideline No. 41 2of 16 © Royal College of Obstetricians and Gynaecologists P
+PCareful scrutiny of the woman’s history and physical findings will frequently reveal factors that may be 
+contributing to the pain and can therefore be at least partially treated. Given the incomplete understanding 
+of the genesis of pelvic pain, it may be necessary to keep an open mind about the cause and consider 
+unusual diagnoses ,such as hernias or retroperitoneal tumours, or consider causes which until recently 
+might have been dismissed as rarities, such as musculoskeletal pain. It is important not to leave the woman 
+with the feeling that nothing more can be done to help her. 
+4.1 Central and peripheral nervous system 
+Acute pain reflects fresh tissue damage and resolves as the tissues heal. In chronic pain, additional factors 
+come into play and pain may persist long after the original tissue injury or exist in the absence of any 
+such injury. Major changes are seen in both afferent and efferent nerve pathways in the central and 
+peripheral nervous systems. 
+Local factors, such as tumour necrosis factor alpha (TNF -/H9251)and chemokines, may change peripheral nerve 
+function and/or stimulate normally quiescent fibres, resulting in altered sensation over a wider area than 
+that originally affected. A persistent barrage of pain may lead to changes within the central nervous system, 
+which magnify the original signal. 7
+Descending information from the central nervous system, possibly influenced by previous experiences and 
+current circumstances, may modify pain perception and visceral function. Alteration in visceral sensation 
+and function, provoked by a variety of neurological factors, has been termed ‘visceral hyperalgesia ’. Nerve 
+damage following surgery, trauma, inflammation, fibrosis or infection may play a part in this process. 8,9 
+Pain as a result of changes in the nerve itself is termed ‘neuropathic pain ’ and is characteristically, but not 
+exclusively, burning, aching or shooting in nature. 10 
+Possible contributory factors are separated out for the purposes of discussion but the problem must be 
+seen as a whole by both the woman and her doctor. 
+4.2 Endometriosis and adenomyosis 
+Pelvic pain which varies markedly over the menstrual cycle is likely to be attributable to a hormonally 
+driven condition such as endometriosis. 
+Pelvic pain which varies markedly over the menstrual cycle is likely to be attributable to a 
+hormonally driven condition such as endometriosis. The cardinal symptoms of dysmenorrhoea, 
+dyspareunia and chronic pelvic pain are said to be characteristic of endometriosis or 
+adenomyosis. 11 In a prospective study of 90 women undergoing laparoscopy or laparotomy, the 
+combination of clinical examination and transvaginal ultrasound accurately identified ovarian 
+endometriosis but not peritoneal disease. Symptoms alone were a poor predictor of finding 
+endometriosis at surgery, 12 but a causal association between the disease and severe dysmen -
+orrhoea probably exists. 13 In a recent case –control study comparing symptoms among 255 
+women undergoing hysterectomy, pain symptoms predicted a higher likelihood of adenomysosis 
+and fibroids rather than fibroids alone being found on histology. 14 It is important that dysmen -
+orrhoea in adolescents is not overlooked as adenomyosis and endometriosis certainly occurs in 
+the group. 15 
+The existence of pelvic venous congestion as a cause of chronic pelvic pain remains controversial. A recent 
+systematic review of diagnosis and management of this condition found no valid diagnostic tests, although 
+ovarian suppression was effective in treating pelvic pain symptoms. In women suspected of having this 
+condition, both progestins and gonadotrophin-releasing hormone (GnRH )agonists were shown in randomised 
+controlled trials to effectively decrease pain during therapy, with GnRH agonists showing higher efficacy. 16 
+© Royal College of Obstetricians and Gynaecologists 3of 16 RCOG Green-top Guideline No. 41 D
+Evidence 
+level 
+2+ to 4 Although many symptom complexes such as irritable bowel syndrome (IBS) and pain perception itself 17 
+may vary a little with the menstrual cycle (with 50% of women experiencing a worsening of their 
+symptoms in association with their period 18 ), strikingly cyclical pain is likely to be gynaecological in nature. 
+4.3 Adhesions 
+There is no evidence to support the division of fine adhesions in women with chronic pelvic pain. 
+Division of dense vascular adhesion should be considered as this is associated with pain relief. 
+Adhesions may be a cause of pain, particularly on organ distension or stretching. Dense vascular 
+adhesions may cause chronic pelvic pain. However, adhesions may be asymptomatic. Evidence 
+to demonstrate that adhesions cause pain or that laparoscopic division of adhesions relieves pain 
+is lacking. However ,in a randomised controlled trial, 48 women with chronic pelvic pain 
+underwent laparotomy with or without division of adhesions. Although overall there was no 
+difference between the two groups, a subset analysis showed that division of dense, vascular 
+adhesions produced significant pain relief. 19 In a 2003 study of 100 women, no difference in pain 
+scores was found between a group undergoing laparoscopic adhesiolysis and those having 
+laparoscopy alone. 20 
+Adhesions may be caused by endometriosis, previous surgery or previous infection. Two distinct forms of 
+adhesive disease are recognised: residual ovary syndrome (a small amount of ovarian tissue inadvertently 
+left behind following oophorectomy which may become buried in adhesions) and trapped ovary syndrome 
+(in which a retained ovary becomes buried in dense adhesions post-hysterectomy). Removal of all ovarian 
+tissue or suppression using a GnRH analogue may relieve pain. 
+4.4 IBS and interstitial cystitis 
+Symptoms suggestive of IBS or interstitial cystitis are often present in women with chronic pelvic pain.
+These conditions may be a primary cause of chronic pelvic pain, a component of chronic pelvic pain or a 
+secondary effect caused by efferent neurological dysfunction in the presence of chronic pain (see section 
+3.4). 
+In a study of 798 women attending a gynaecology clinic, 50% of women referred because of pain 
+had symptoms suggestive of IBS compared with 28% of women attending ear, nose and throat 
+or dermatology clinics. 21 In three observational studies of women with chronic pelvic pain 
+presenting to secondary care, 38–84% had symptoms suggestive of interstitial cystitis. 22–24 
+4.5 Musculoskeletal 
+Musculoskeletal pain may be a primary source of pelvic pain or an additional component resulting from 
+postural changes. 
+Pain may arise from the joints in the pelvis or from damage to the muscles in the abdominal wall or pelvic 
+floor. Pelvic organ prolapse may also be a source of pain. 25 Increasing interest is also being shown in trigger 
+points –localised areas of deep tenderness in a tight band of muscle, the aetiology of which is not fully 
+under stood. It may relate to chronic contraction of the muscle, with the stimulus coming from misalign -
+ment of the pelvis or a discrete pain such as endometriosis. The pain from a trigger point may then become 
+self-perpetuating. 26,27 Clear evidence regarding diagnostic tests and therapeutic options is lacking. 
+RCOG Green-top Guideline No. 41 4of 16 © Royal College of Obstetricians and Gynaecologists P
+P
+Evidence 
+level 1+ 
+C
+Evidence 
+level 2+ 
+CIn a consecutive series of 26 women with laparoscopy-negative chronic pelvic pain undergoing 
+magnetic resonance imaging (MRI ), 20 were found to have injuries to the levator ani. In a pain- 
+free control group undergoing MRI, none of the 20 nulliparous and two of the 32 multiparous 
+women had such injuries. 28 Spasm of the muscles of the pelvic floor is proposed as a cause of 
+pelvic pain which can be reduced by botulinum toxin injections. 29,30 A number of controlled and 
+non-controlled observational studies have demonstrated a high prevalence of primary or 
+secondary musculoskeletal abnormalities in women with chronic pelvic pain. 31–34 
+4.6 Nerve entrapment 
+Nerve entrapment in scar tissue, fascia or a narrow foramen may result in pain and dysfunction in the 
+distribution of that nerve. 
+The incidence of nerve entrapment (defined as highly localised, sharp, stabbing or aching pain, 
+exacerbated by particular movements, and persisting beyond 5weeks or occurring after a pain- 
+free interval) after one Pfannenstiel incision is 3.7%. 35,36 
+4.7 Psychological and social issues 
+Enquiry should be made regarding psychological and social issues which commonly occur in association 
+with chronic pelvic pain; addressing these issues may be important in resolving symptoms.
+Depression and sleep disorders are common in women with chronic pain. This may be a 
+consequence rather than a cause of their pain, but specific treatment may improve the woman’s 
+ability to function. 37 Similarly, women with chronic pelvic pain tend to suppress their unwanted 
+thoughts and feelings either as a cause or consequence of their pain. 38 
+The relationship between chronic pelvic pain and sexual or physical abuse is complex. Studies 
+are difficult to interpret because many have a retrospective design and are performed in 
+secondary care. In this secondary care population it appears that women with chronic pain in 
+general are more likely to report physical or sexual abuse as children than pain-free women. 
+Those who experience chronic pelvic pain specifically are more likely to report sexual abuse 
+than women with another chronic pain complaint. 39–42 However, using multiple regression 
+analysis, it appears that child sexual abuse may be a marker for continuing abuse and the 
+development of depression, anxiety or somatisation ,which then predispose the individual to the 
+development or presentation of chronic pelvic pain. 43,44 In a primary care population, 26% of 
+women reported child sexual abuse and 28% reported adult sexual abuse ,but only those 
+reporting both were more likely to have increased pain symptoms (dysmenorrhoea, dyspareunia 
+or chronic pelvic pain) than women reporting no abuse. 45 Interestingly ,in a prospective study 
+of young adults who had been abused there was no increase in medically unexplained 
+symptoms (albeit the study subjects were only followed into their 20s) compared with those 
+not known to have been abused, but those who did have unexplained symptoms were more 
+likely to report their history of abuse. 46 
+In summary ,it may be that ,for some individuals, child sexual abuse may initiate a cascade of events or 
+reactions which make an individual more vulnerable to the development of chronic pelvic pain as an 
+adult. Women who continue to be abused are particularly at risk. 
+© Royal College of Obstetricians and Gynaecologists 5of 16 RCOG Green-top Guideline No. 41 Evidence 
+level 
+1+ to 3 
+D
+Evidence 
+level 3/4 
+B
+Evidence 
+level 
+1+/3 
+Evidence 
+level 3 5.What should underline the initial assessment of chronic pelvic pain? 
+Adequate time should be allowed for the initial assessment of women with chronic pelvic pain. They 
+need to feel that they have been able to tell their story and that they have been listened to and believed. 
+Many women present because they want an explanation for their pain. Often they already have a theory 
+or a concern about the origin of the pain. These ideas should ideally be discussed in the initial consult -
+ation.
+It has been shown that consultations which elicit the patient’s ideas will result in a better doctor –patient 
+relationship and improved concordance with investigation and treatment. 47 Women with chronic pelvic 
+pain want their experience to be heard and validated and they want to receive personal care to help them 
+understand and manage their pain. 48–50 
+Particularly if they have had negative experiences previously, women may need to be encouraged to talk 
+about their symptoms and ideas, allowing them to influence and shape the doctor –patient relationship as 
+a partnership. In a study of 105 consecutive referrals to a university gynaecology clinic, a favourable patient 
+rating at the initial consultation was associated with complete recovery at follow-up. 51 
+The multifactorial nature of chronic pelvic pain should be discussed and explored from the start. The aim 
+should be to develop a partnership between the clinician and the woman to plan a management 
+programme.
+In the only study of its kind, 106 women with chronic pelvic pain were randomised to an 
+integrated approach or standard treatment, which involved exclusion of organic causes followed 
+by a laparoscopy. If the laparoscopy was negative, attention was then given to psychological 
+factors. In the integrated approach, equal attention was devoted to possible organic, 
+psychological, dietary and environmental causes of the pain. In this group, laparoscopy was not 
+routinely performed; a consultation with a physiotherapist was included and provocation tests 
+were performed. After 1year, the integrated approach group reported significantly greater pain 
+relief than the standard treatment group. 52 
+In a meta-analysis of pain management in a related condition involving over 3000 women, a 
+multidisciplinary approach to chronic back pain has been shown to be effective both in 
+reducing subjective pain measures and in improving work and social functioning. 53 When an 
+interdisciplinary approach is adopted for the management of chronic pelvic pain, improvement 
+is seen only when all components of the programme are in place. 54 
+In a study of 53 women with chronic pelvic pain undergoing weekly psychological and physio -
+therapy-based treatment in small groups over 10 weeks, significant and sustained improvement 
+was seen in pain scores, analgesia intake, use of health service resources and ability to work. 
+Over the course of treatment, women seemed to develop greater self-knowledge and to take 
+more responsibility for, and control over, their own health. 55 
+Many women with chronic pelvic pain can be managed in primary care. General practitioners might 
+consider referral when the pain has not been explained to the woman’s satisfaction or when pain is 
+inadequately controlled. 
+RCOG Green-top Guideline No. 41 6of 16 © Royal College of Obstetricians and Gynaecologists P
+P
+B
+Evidence 
+level 1+ 
+Evidence 
+level 
+1+ to 3 
+Evidence 
+level 2+ 5.1 History 
+The initial history should include questions about the pattern of the pain and its association with other 
+problems, such as psychological, bladder and bowel symptoms, and the effect of movement and posture 
+on the pain. 
+Symptoms alone may be used to diagnose IBS positively in this group (see Appendix 1). 
+On taking the woman’s history, special note should be taken of any ‘red flag ’symptoms (see Appendix 2)
+which may need further investigation and referral to a specialist. If the situation allows ,it may be helpful 
+to ask directly about past or present sexual assault, particularly intimate partner violence. The doctor must 
+be prepared to listen and accept these experiences as stated and know where to access specialist support. 
+Completing a daily pain diary for two to three menstrual cycles may help the woman and the doctor 
+identify provoking factors or temporal associations. The information may be useful in understanding the 
+cause of the pain. 
+It may be helpful to establish the woman’s level of function at the start of treatment (e.g. time off work, 
+avoiding activities), both to monitor progress and to emphasise the value of functional goals. Asking which 
+drugs have been used previously, and whether or not they helped, may be helpful both to aid diagnosis 
+and to plan effective management. 
+Symptom-based diagnostic criteria can be used with confidence to make the diagnosis of IBS 
+with a positive predictive value of 98%. 56,57 Long-term follow-up of women in whom a positive 
+diagnosis of IBS is made suggests that the diagnosis is unlikely to be changed. 58 
+A number of validated symptom-based tools are also available for the detection of psychological 
+comorbidity. However, simply enquiring generally about things at home and symptoms such as sleep or 
+appetite disturbance and tearfulness may be enough. 
+If the history suggests to the woman and doctor that there is a specific non-gynaecological component 
+to the pain, referral to the relevant healthcare professional – such as gastroenterologist, urologist,
+genitourinary medicine physician, physiotherapist, psychologist or psychosexual counsellor – should 
+be considered, usually via the GP. 
+5.2 Examination 
+The examination is most usefully undertaken when there is time to explore the woman’s fears and 
+anxieties. The examiner should be prepared for new information to be revealed at this point.
+The assessment should include abdominal and pelvic examination, looking particularly for focal tenderness, 
+enlargement, distortion or tethering, or prolapse. Highly localised trigger points may be identified in the 
+abdominal wall and/or pelvic floor. The sacroiliac joints or the symphysis pubis may also be tender, 
+suggestive of a musculoskeletal origin to the pain. 
+6. What investigations should be undertaken? 
+6.1 Screening for infection 
+Suitable samples to screen for infection, particularly Chlamydia trachomatis and gonorrhoea, should be 
+taken if there is any suspicion of pelvic inflammatory disease (PID).
+© Royal College of Obstetricians and Gynaecologists 7of 16 RCOG Green-top Guideline No. 41 P
+B
+P
+P
+PEvidence 
+level 
+2++ to 4 All sexually active women with chronic pelvic pain should be offered screening for sexually transmitted 
+infections (STIs). 
+A positive endocervical sample supports but does not prove the diagnosis of PID. The absence 
+of a result positive for Chlamydia trachomatis or gonococcus does not rule out the diagnosis 
+of PID. 59 
+If PID is suspected clinically, this condition is best managed in conjunction with a genitourinary 
+medicine physician in order that up -to -date microbiological advice and contact tracing can be 
+arranged. Sexually active women with chronic pelvic pain should be offered screening for STIs .60 
+6.2 Transvaginal scanning (TVS) and MRI 
+TVS is an appropriate investigation to identify and assess adnexal masses.
+TVS and MRI are useful tests to diagnose adenomyosis. 
+The role of MRI in diagnosing small deposits of endometriosis is uncertain.
+A systematic review of the value of TVS in the diagnosis of endometriosis found that endo -
+metriomas may be accurately distinguished from other adnexal masses. 61 
+It is also useful in identifying structural abnormalities such as hydrosalpinges or fibroids, which may be 
+relevant even if not the cause of the pain. 
+TVS is of little value for the positive identification of other causes of chronic pelvic pain ,
+including peritoneal endometriosis. However, in a study of 120 consecutive women with 
+chronic pelvic pain undergoing TVS prior to laparoscopy, the presence of soft markers such as 
+tenderness or poor ovarian mobility improved the prelaparoscopy probability of identifying 
+relevant pathology at laparoscopy from 58% to 73% (likelihood ratio [LR ]1.9, 95% CI 1.2 –3.1). 
+In the absence of soft markers, the prelaparoscopy likelihood of pathology fell to 20% (LR 0.18, 
+95% CI 0.09 –0.34). TVS may therefore have a role in identifying those women who are less likely 
+to obtain a positive diagnosis from a diagnostic laparoscopy. 62 
+The sensitivities of MRI and TVS for the diagnosis of adenomyosis are comparable in the best 
+hands. Sensitivities of 70–78% and specificities of 86–93% for MRI, with figures of 65–68% and 
+65–98% for TVS, were achieved in two prospective blinded studies of consecutive patients 
+undergoing hysterectomy and in a systematic review, using histopathology as the gold 
+standard. 63–66 A systematic review of 14 trials examining the diagnostic accuracy of TVS for 
+diagnosing adenomyosis found a sensitivity of 82.5% and specificity of 84.6% .64 
+While MRI lacks sensitivity in the detection of endometriotic deposits, it may be useful in the 
+assessment of palpable nodules in the pelvis or when symptoms suggest the presence of 
+rectovaginal disease. 67 It may also reveal rare pathology. 
+6.3 Diagnostic laparoscopy 
+Diagnostic laparoscopy has been regarded in the past as the ‘gold standard’ in the diagnosis of chronic 
+pelvic pain. It may be better seen as a second-line investigation if other therapeutic interventions fail. 
+Diagnostic laparoscopy may have a role in developing the woman’s beliefs about her pain. 
+RCOG Green-top Guideline No. 41 8of 16 © Royal College of Obstetricians and Gynaecologists D
+Evidence 
+level 4 
+Evidence 
+level 4 
+B
+B
+P
+Evidence 
+level 2++ 
+Evidence 
+level 2+ 
+Evidence 
+level 
+1++/2++ 
+Evidence 
+level 4 
+D
+PDiagnostic laparoscopy is the only test capable of reliably diagnosing peritoneal endometriosis 
+and adhesions. Gynaecologists have therefore seen it as an essential tool in the assessment of 
+women with chronic pelvic pain. However, it carries significant risks: an estimated risk of death 
+of approximately 1 in 10 000, and a risk of injury to bowel, bladder or blood vessel of approx -
+imately 2.4 in 1000, of whom two-thirds will require laparotomy. 68–70 
+Clearly, conditions such as IBS and adenomyosis are not visible at laparoscopy ,but there is also 
+a risk that some forms of endometriosis will be missed. Endometriosis is a disease with a large 
+variety of appearances and many authorities consider that it is significantly underdiagnosed at 
+laparoscopy. Some recommend that all suspicious areas should be biopsied. It is well known that 
+the existing scoring systems do not correlate with severity of pain and that deeply infiltrating 
+endometriosis, which is strongly correlated with pain, may be misinterpreted as minimal 
+disease. 71 
+One -third to one -half of diagnostic laparoscopies will be negative and much of the pathology 
+identified is not necessarily the cause of pain. There may be adverse consequences of a negative 
+laparoscopy. Many women may feel disappointed that no diagnosis has been made. 72 This set of 
+events may lead to disengagement with the medical process. 49 
+The risks and benefits of diagnostic laparoscopy and the possibility of negative findings should be 
+discussed before the decision is made to perform a laparoscopy. Perhaps it should be performed only 
+when the index of suspicion of adhesive disease or endometriosis requiring surgical intervention is high, 
+or when the patient has specific concerns which could be addressed by diagnostic laparoscopy such as 
+the existence of endometriosis or adhesions potentially affecting her fertility. 
+Microlaparoscopy or ‘conscious pain mapping’ has been proposed as an alternative to diagnostic 
+laparoscopy under general anaesthetic. Although the technique seems to provide an opportunity 
+to confirm particular lesions as the source of the patient’s pain, it has not been widely adopted, 
+and questions remain as to the acceptability, reproducibility and validity of this technique. 73 In 
+a recent study of 43 women undergoing conscious pain mapping, 39 had a successful procedure, 
+but in only seven was a different diagnosis or treatment suggested by the awake laparoscopy 
+compared with one performed under general anaesthetic. 74 
+In a postal questionnaire study of 63 women following a diagnostic laparoscopy, their sub -
+sequent pain experience and quality of life were not affected by the result of the laparoscopy. 75 
+Similarly, in a prospective study of 71 women undergoing laparoscopy for chronic pelvic pain, 
+women were interviewed before and after their operation. The only factor identified through 
+regression analysis which predicted an improvement in pain scores was a change in health 
+beliefs as a result of having a laparoscopy. This finding applied to women with positive or 
+negative findings at laparoscopy. 76 Simply showing women a photograph of their pelvis does not 
+seem to affect their health beliefs or their pain outcome. 77 
+6.4 CA125 
+Women reporting any of the following symptoms persistently or frequently (more than 12 times per 
+month) –bloating, early satiety, pelvic pain or urinary urgency or frequency – should have a serum CA125 
+measurement taken. Particularly in women over the age of 50 years, any new IBS symptoms should prompt 
+such action. 78 
+© Royal College of Obstetricians and Gynaecologists 9of 16 RCOG Green-top Guideline No. 41 Evidence 
+level 4 
+Evidence 
+level 4 Evidence 
+level 3/4 
+Evidence 
+level 2+/3 
+Evidence 
+level 
+1+ to 3 7. What therapeutic options are available? 
+Women with cyclical pain should be offered a therapeutic trial using hormonal treatment for a period of 
+3–6 months before having a diagnostic laparoscopy. 
+Women with IBS should be offered a trial with antispasmodics. 
+Women with IBS should be encouraged to amend their diet to attempt to control symptoms.
+Women should be offered appropriate analgesia to control their pain even if no other therapeutic 
+manoeuvres are yet to be initiated. If pain is not adequately controlled, consideration should be given to 
+referral to a pain management team or a specialist pelvic pain clinic.
+Ovarian suppression can be an effective treatment for cyclical pain associated with endo -
+metriosis. The effect can be achieved with the combined oral contraceptive, progestogens, 
+danazol or GnRH analogues, all of which are equally effective but have differing adverse effect 
+profiles. 67,79 The levonorgestrel-releasing intrauterine system (Mirena®; Bayer) could also be 
+considered, even in adolescents. 80 Non-endometriosis -related cyclical pain also appears to be 
+well controlled by these treatments. 81–83 
+In a randomised controlled trial, 100 women with clinically suspected endometriosis received 
+either a GnRH analogue or placebo without a pretreatment laparoscopy. After 12 weeks, the 
+treatment group had significantly less pain than women taking placebo. 84 This trial is the only 
+study in which the effectiveness of this treatment approach has been evaluated. However, there 
+is a growing consensus which supports this strategy. 11,84–86 An economic evaluation of the use 
+of GnRH analogues as empirical treatment for cyclical pain prior to laparoscopy demonstrated 
+improved patient and physician satisfaction at reduced cost. 87 
+For further advice on the management of IBS, please see NICE clinical guideline 61. 88 
+A systematic review has concluded that smooth -muscle relaxants such as mebeverine 
+hydrochloride are beneficial in the treatment of IBS where abdominal pain is a prominent 
+feature. The efficacy of bulking agents has not been established but they are commonly used. 57,89 
+In a study of 200 women suffering from IBS using an exclusion diet, 36% were able to identify 
+one or more dietary components, the avoidance of which led to sustained improvement in 
+symptoms. The most commonly implicated foods were dairy products and grains .90 
+Dietary manipulation may therefore be worth considering for an individual woman but evidence is lacking. 
+Regular non -steroidal anti-inflammatory drugs with or without paracetamol may be particularly useful in 
+this context. Compound analgesics such as co -dydramol may be appropriate. For the general gynaecologist 
+it is probably unwise to prescribe opioids for regular use in women with chronic pelvic pain. 91 Adjuvant 
+treatments such as amitriptyline or gabapentin may be useful in the treatment of neuropathic pain. 92 For 
+further information on the management of neuropathic pain ,please see NICE clinical guideline 96. 93 Non- 
+pharma cological modalities such as transcutaneous nerve stimulation, acupuncture and other 
+comple mentary therapies may be helpful for some women. Dietary modification may also relieve pain. 
+Laparoscopic uterosacral nerve ablation (LUNA) is ineffective in the management of chronic pelvic 
+pain. 94,95 
+RCOG Green-top Guideline No. 41 10 of 16 © Royal College of Obstetricians and Gynaecologists B
+PA
+C
+Evidence 
+level 
+1+ to 4 
+Evidence 
+level 
+1+ to 4 
+Evidence 
+level 
+1++/4 
+Evidence 
+level 
+3Voluntary organisations such as Endometriosis UK can be an important source of information and support 
+for some patients. A list of such organisations is given in section 10. Self-management techniques as 
+suggested by the Department of Health’s Expert Patient Initiative may also be of value to some women . 
+8. Summary 
+Chronic pelvic pain is common ,affecting perhaps one in six of the adult female population. 96 Much 
+remains unclear about its aetiology , but chronic pelvic pain should be seen as a symptom with a number 
+of contributory factors rather than as a diagnosis in itself. As with all chronic pain it is important to consider 
+psychological and social factors as well as physical causes of pain. Many non-gynaecological conditions 
+such as nerve entrapment or IBS may be relevant. Women often present because they seek an explanation 
+for their pain. 
+The assessment process should allow enough time for the woman to be able to tell her story. This may be 
+therapeutic in itself. A pain diary may be helpful in tracking symptoms or activities associated with the pain. 
+Where pain is strikingly cyclical and no abnormality is palpable at vaginal examination, a therapeutic trial 
+of ovarian suppression may be more helpful than a diagnostic laparoscopy. Other conditions such as IBS 
+require specific treatment. Even if no explanation for the pain can be found initially, attempts should be 
+made to treat the pain empirically and to develop a management plan in partnership with the woman. 
+9.Suggested audit topics 
+GWhat proportion of sexually active women with chronic pelvic pain are tested for STIs? 
+GWhat proportion of women have an ultrasound scan performed prior to diagnostic laparoscopy? 
+GWhat proportion of women with cyclical chronic pelvic pain are offered a therapeutic trial of 
+hormonal treatment for 3 –6 months before having a diagnostic laparoscopy? 
+10.Organisations providing further information and/or support 
+GEndometriosis UK www.endometriosis-uk.org 
+GIBS Network www.theibsnetwork.org 
+GCystitis and Overactive Bladder foundation www.cobfoundation.org 
+GWomen’s Health www.womens-health.co.uk or womenshealth.gov 
+GPelvic Pain Support Network www.pelvicpain.org.uk 
+GDepartment of Health Expert Patient Initiative www.expertpatients.co.uk/ 
+References 
+© Royal College of Obstetricians and Gynaecologists 11 of 16 RCOG Green-top Guideline No. 41 1. Zondervan KT, Yudkin PL, Vessey MP , Dawes MG, Barlow DH, 
+Kennedy SH. Prevalence and incidence of chronic pelvic pain 
+in primary care: evidence from a national general practice 
+database. Br J Obstet Gynaecol 1999;106:1149–55. 
+2. Grace V , Zondervan K . Chronic pelvic pain in women in New 
+Zealand: comparative well-being, comorbidity, and impact on 
+work and other activities. Health Care Women Int 
+2006;27:585–99. 
+3. Royal College of Obstetricians and Gynaecologists . Develop -
+ment of RCOG Green-top Guidelines: Policies and Processes.
+Clinical Governance Advice No. 1a. London: RCOG; 2006 
+[www.rcog.org.uk/green-top-development ]. 
+4. Royal College of Obstetricians and Gynaecologists. Develop -
+ment of RCOG Green-top Guidelines: Producing a Scope.
+Clinical Governance Advice No. 1b. London: RCOG; 2006 
+[www.rcog.org.uk/womens-health/clinical-guidance/ 
+development-rcog-green-top-guidelines-producing-scope ]. 5. Royal College of Obstetricians and Gynaecologists. Develop -
+ment of RCOG Green-top Guidelines: Producing a Clinical 
+Practice Guideline. Clinical Governance Advice No. 1c. 
+London: RCOG; 2006 [ www.rcog.org.uk/womens-health/ 
+clinical-guidance/development-rcog-green-top-guide lines-pro 
+ducing-clinical-practice-gu ]. 
+6. Merskey H, Bogduk N (editors); International Association for 
+the Study of Pain Task Force on Taxonomy. C lassification of 
+Chronic Pain . Second edition. Seattle: IASP Press ; 1994. 
+7. Malykhina AP . Neural mechanisms of pelvic organ cross-sensiti -
+zation. Neuroscience 2007;149:660–72. 
+8. McMahon SB, Dmitrieva N, Koltzenburg M. Visceral pain. Br J 
+Anaesthesia 1995;75:132–44. 
+9. Wesselmann U. Neurogenic inflammation and chronic pelvic 
+pain. World J Urol 2001;19:180–5. 
+10. Baranowski AP . Chronic pelvic pain. Best Pract Res Cli 
+Gastroenterol 2009;23:593–610. 11. Scialli AR. Evaluating chronic pelvic pain. A consensus 
+recommendation. Pelvic Pain Expert Working Group. J Reprod 
+Med 1999;44:945–52. 
+12. Eskenazi B, Warner M, Bonsignore L, Olive D, Samuels S, 
+Vercillini P . Validation study of nonsurgical diagnosis of 
+endometriosis. Fertil Steril 2001;76:929–35. 
+13. Fauconnier A, Chapron C. Endometriosis and pelvic pain: 
+epidemiological evidence of the relationship and implications. 
+Hum Reprod Update 2005;11:595–606. 
+14. Taran FA, Weaver AL, Coddington CC, Stewart EA. Character -
+istics indicating adenomyosis coexisting with leiomyomas: a 
+case–control study . Hum Reprod 2010;25:1177–82. 
+15. Dietrich JE. An update on adenomyosis in the adolescent. Curr 
+Opin Obstet Gynecol 2010;22:388–92. 
+16. Giamberardino MA, Berkley KJ, Iezzi S, de Bigontina P , Vecchiet 
+L. Pain threshold variations in somatic wall tissues as a function 
+of menstrual cycle, segmental site and tissue depth in non- 
+dysmenorrheic women, dysmenorrheic women and men. Pain 
+1997;71:187–97. 
+17. Moore J, Barlow D, Jewell D, Kennedy SH. Do gastrointestinal 
+symptoms vary with the menstrual cycle? Br J Obstet 
+Gynaecol 1998;105:1322–5. 
+18. Peters AA, Trimbos-Kemper GC, Admiraal C, Trimbos JB, 
+Hermans J. A randomized clinical trial of the benefits of adhesi -
+olysis in patients with intraperitoneal adhesions and chronic 
+pelvic pain. Br J Obstet Gynaecol 1992;99:59–62. 
+19. Swank DJ, Swank-Bordewijk SC, Hop WC, Van Erp WF , Janssen 
+IM, Bonjer HJ, et al. Laparoscopic adhesiolysis in patients with 
+chronic abdominal pain: a blinded randomised controlled 
+multi-centre trial. Lancet 2003;361:1247–51. 
+20. Prior A, Wilson K, Whorwell PJ, Faragher EB. Irritable bowel 
+syndrome in the gynecological clinic. Survey of 798 new 
+referrals. Dig Dis Sci 1989;34:1820–4. 
+21. Parsons CL, Dell J, Stanford EJ, Bullen M, Kahn BS, Willems JJ. 
+The prevalence of interstitial cystitis in gynecologic patients 
+with pelvic pain, as detected by intravesical potassium 
+sensitivity. Am J Obstet Gynecol 2002;187:1395–400. 
+22. Clemons JL, Arya LA, Myers DL. Diagnosing interstitial cystitis 
+in women with chronic pelvic pain. Obstet Gynecol 
+2002;100:337–41. 
+23. van Os-Bossagh P , Pols T, Hop WC, Bohnen AM, Vierhout ME, 
+Drogendijk AC. Voiding symptoms in chronic pelvic pain 
+(CPP). Eur J Obstet Gynecol Reprod Biol 2003;107:185–90. 
+24. Reddy J, Barber MD, Walters MD, Paraiso MF , Jelovsek JE. Lower 
+abdominal and pelvic pain with advanced pelvic organ 
+prolapse: a case –control study. Am J Obstet Gynecol 
+2011;204:537.e1–5. 
+25. Montenegro ML, Gomide LB, Mateus-Vasconcelos EL, Rosa-e- 
+Silva JC, Candido-dos-Reis FJ, Nogueira AA, Poli-Neto OB. 
+Abdominal myofascial pain syndrome must be considered in 
+the differential diagnosis of chronic pelvic pain. Eur J Obstet 
+Gynecol Reprod Biol 2009;147:21–4. 
+26. Lavell ED, Lavelle W, Smith HS. Myofascial trigger points. 
+Anesthesiol Clin 2007;25:841–51 , vii–ii. 
+27. Lucas N, Macaskill P , Irwig L, Moran R, Bogduk N. Reliability of 
+physical examination for the diagnosis of myofascial trigger 
+points: a systematic review of the literature. Clin J Pain 
+2009;25:80–9. 
+28. Quinn M. Injuries to the levator ani in unexplained, chronic 
+pelvic pain. J Obstet Gynaecol 2007;27:828–31. 
+29. Abbott JA, Jarvis SK, Lyons SD, Thomson A, Vancaille TG. 
+Botulinum toxin type A for chronic pain and pelvic floor 
+spasm in women: a randomized controlled trial. Obstet 
+Gynecol 2006;108:915–23. 
+30. Sinha D, Thomson AJ. Botulinum toxin for pelvic pain in 
+women. Womens Health (Lond Engl) 2008;4:173–81. 31. King PM, Myers CA, Ling FW , Rosenthal RH. Musculoskeletal 
+factors in chronic pelvic pain. J Psychosom Obstet Gynaecol 
+1991;12:87–98. 
+32. Montenegro ML, Vasconcelos EC, Candido Dos Reis FJ, 
+Nogueira AA, Poli-Neto OB. Physical therapy in the manage -
+ment of women with chronic pelvic pain. Int J Clin Pract 
+2008;62:263–9. 
+33. Tu FF , As-Sanie S, Steege JF . Prevalence of pelvic musculoskeletal 
+disorders in a female chronic pelvic pain clinic. J Reprod Med 
+2006;51:185–9. 
+34. Tu FF , Holt J, Gonzales J, Fitzgerald CM. Physical therapy 
+evaluation of patients with chronic pelvic pain: a controlled 
+study. Am J Obstet Gynecol 2008;198:272 .e1– 7. 
+35. Luijendijk RW, Jeekel J, Storm RK, Schutte PJ, Hop WC, 
+Drogendijk AC, et al. The low transverse Pfannenstiel incision 
+and the prevalence of incisional hernia and nerve entrapment. 
+Ann Surg 1997;225:365–9. 
+36. Perry CP . Peripheral neuropathies causing chronic pelvic pain. 
+J Am Assoc Gynecol Laparosc 2000;7:281–7. 
+37. McGowan LP , Clark-Carter DD, Pitts MK. Chronic pelvic pain: 
+a meta-analytic review. Psychol Health 1998;13:937–51. 
+38. Thomas E, Moss-Morris R, Faquhar C. Coping with emotions 
+and abuse history in women with chronic pelvic pain. J
+Psychosom Res 2006;60:109–12. 
+39. Collett BJ, Cordle CJ, Stewart CR, Jagger C. A comparative study 
+of women with chronic pelvic pain, chronic nonpelvic pain 
+and those with no history of pain attending general practi -
+tioners. Br J Obstet Gynaecol 1998;105:87–92. 
+40. Walling MK, Reiter RC, O ’Hara MW , Milburn AK, Lilly G, Vincent 
+SD. Abuse history and chronic pain in women: I. Prevalences of 
+sexual abuse and physical abuse. Obstet Gynecol 1994;84:193 –9. 
+41. Lampe A, Sölder E, Ennemoser A, Schubert C, Rumpold G, 
+Söllner W. Chronic pelvic pain and previous sexual abuse. 
+Obstet Gynecol 2000;96:929–33. 
+42. Lampe A, Doering S, Rumpold G, Sölder E, Krismer M, Kantner- 
+Rumplmair W , et al . Chronic pain syndromes and their relation 
+to childhood abuse and stressful life events. J Psychsom Res 
+2003;54:361–7. 
+43. Toomey TC, Seville JL, Mann JD, Abashian SW, Grant JR. 
+Relationship of sexual and physical abuse to pain description, 
+coping, psychological distress, and health -care utilization in a 
+chronic pain sample. Clin J Pain 1995;11:307–15. 
+44. Walling MK, O’Hara MW , Reiter RC, Milburn AK, Lilly G, Vincent 
+SD. Abuse history and chronic pain in women: II. A multivariate 
+analysis of abuse and psychological morbidity. Obstet Gynecol 
+1994;84:200–6. 
+45. Jamieson DJ, Steege JF . The association of sexual abuse with 
+pelvic pain complaints in a primary care population. Am J 
+Obstet Gynecol 1997;177:1408–12. 
+46. Raphael KG, Widom CS, Lange G. Childhood victimization and 
+pain in adulthood: a prospective investigation. Pain 
+2001;92:283–93. 
+47. Tu FF , Hahn D, Steege JF . Pelvic congestion syndrome- 
+associated pelvic pain: a systematic review of diagnosis and 
+management. Obstet Gynecol Surv 2010;65:332–40. 
+48. Silverman J, Kurtz S, Draper J. Skills for communicating with 
+patients . Oxford: Radcliffe Medical Press (Oxford); 1998. 
+49. McGowan L, Luker K, Creed F , Chew-Graham CA. How do you 
+explain a pain that can ’t be seen?: the narratives of women 
+with chronic pelvic pain and their disengagement with the 
+diagnostic cycle. Br J Health Psychol 2007;12:261–74. 
+50. Price J, Farmer G, Harris J, Hope T, Kennedy S, Mayou R, et al. 
+Attitudes of women with chronic pelvic pain to the gynaeco -
+logical consultation: a qualitative study. BJOG 2006;113: 
+446–52. 
+51. Selfe SA, Matthews Z, Stones RW . Factors influencing outcome 
+RCOG Green-top Guideline No. 41 12 of 16 © Royal College of Obstetricians and Gynaecologists in consultations for chronic pelvic pain. J Womens Health 
+1998;7:1041–8. 
+52. Peters AA, van Dorst E, Jellis B, van Zuuren E, Hermans J, 
+Trimbos JB. A randomized clinical trial to compare two 
+different approaches in women with chronic pelvic pain. 
+Obstet Gynecol 1991;77:740–4. 
+53. Flor H, Fydrich T, Turk DC. Efficacy of multidisciplinary pain 
+treatment centers: a meta-analytic review. Pain 1992;49:221 –30. 
+54. Kames LD, Rapkin AJ, Naliboff BD, Afifi S, Ferrer-Brechner T. 
+Effectiveness of an interdisciplinary pain management program 
+for the treatment of chronic pelvic pain. Pain 1990;41:41–6. 
+55. Albert H. Psychosomatic group treatment helps women with 
+chronic pelvic pain. J Psychosom Obstet Gynaecol 
+1999;20:216–25. 
+56. Fass R, Longstreth GF , Pimentel M, Fullerton S, Russak SM, 
+Chiou CF , et al. Evidence- and consensus-based practice 
+guidelines for the diagnosis of irritable bowel syndrome. Arch 
+Intern Med 2001;161:2081–8. 
+57. Spiller R, Aziz Q, Creed F , Emmanuel A, Houghton L, Hungin P , 
+et al .; Clinical Services Committee of The British Society of 
+Gastroenterology. Guidelines on the irritable bowel syndrome: 
+mechanisms and practical management. Gut 2007;56:1770 –98 
+58. Olden KW . Diagnosis of irritable bowel syndrome. Gastroen -
+terology 2002;122:1701–14. 
+59. Royal College of Obstetricians and Gynaecologists . Manage -
+ment of acute pelvic inflammatory disease . Green-top 
+Guideline No. 32. London: RCOG; 2008 [www.rcog.org.uk/ 
+womens-health/clinical-guidance/management-acute-pelvic- 
+inflammatory-disease-32 ]. 
+60. Scottish Intercollegiate Guidelines Network. Management of 
+genital Chlamydia trachomatis infection . A national clinical 
+guideline . Clinical Guideline no. 109. Edinburgh: SIGN; 2009 
+[http://www.sign.ac.uk/guidelines/fulltext/109/index.html ]. 
+61. Moore J, Copley S, Morris J, Lindsell D, Golding S, Kennedy S. A 
+systematic review of the accuracy of ultrasound in the 
+diagnosis of endometriosis. Ultrasound Obstet Gynecol 
+2002;20:630–4. 
+62. Okaro E, Condous G, Khalid A, Timmerman D, Ameye L, Huffel 
+SV , et al. The use of ultrasound-based ‘soft markers ’for the 
+prediction of pelvic pathology in women with chronic pelvic 
+pain – can we reduce the need for laparoscopy? BJOG 
+2006;113:251–6. 
+63. Dueholm M, Lundorf E, Hansen ES, Sorensen JS, Ledertoug S, 
+Olesen F . Magnetic resonance imaging and transvaginal 
+ultrasonography for the diagnosis of adenomyosis. Fertil Steril 
+2001;76:588–94. 
+64. Bazot M, Cortez A, Darai E, Rouger J, Chopier J, Antoine JM, et 
+al. Ultrasonography compared with magnetic resonance 
+imaging for the diagnosis of adenomyosis: correlation with 
+histopathology. Hum Reprod 2001;16:2427–33. 
+65. Champaneria R, Abedin P , Daniels J, Balogun M, Khan KS. 
+Ultrasound scan and magnetic resonance imaging for the 
+diagnosis of adenomyosis: systematic review comparing test 
+accuracy. Acta Obstet Gynecol Scand 2010;89:1374–84. 
+66. Meredith SM, Sanchez-Ramos L, Kaunitz AM. Diagnostic 
+accuracy of transvaginal sonography for the diagnosis of 
+adenomyosis: systematic review and metaanalysis. Am J Obstet 
+Gynecol 2009 ;201:107.e1–6. 
+67. Royal College of Obstetricians and Gynaecologists. The investi -
+gation and management of endometriosis . Green-top 
+Guide line No. 24. London: RCOG; 2008 [http://www. 
+rcog.org.uk/womens-health/clinical-guidance/ investigation- 
+and-management-endometriosis-green-top-24 ]. 
+68. Jansen FW , Kapiteyn K, Trimbos-Kemper T, Hermans J, Trimbos 
+JB. Complications of laparoscopy: a prospective multicentre 
+observational study. Br J Obstet Gynaecol 1997;104:595–600. 69. Chapron C, Querleu D, Bruhat M, Madelenat P , Fernandez H, 
+Pierre F , et al. Surgical complications of diagnostic and oper -
+ative gynaecological laparoscopy: a series of 29,966 cases. 
+Hum Reprod 1998;13:867–72. 
+70. Royal College of Obstetricians and Gynaecologists. Preventing 
+entry-related gynaecological laparoscopic injuries . Green- 
+top Guideline No. 49. London: RCOG; 2008 [http://www.rcog. 
+org.uk/womens-health/clinical-guidance/preventing-entry- 
+related-gynaecological-laparoscopic-injuries-green- ]. 
+71. Howard FM. The role of laparoscopy as a diagnostic tool in 
+chronic pelvic pain. Baillieres Best Pract Res Clin Obstet 
+Gynaecol 2000;14:467–94. 
+72. Moore J, Ziebland S, Kennedy S. “People sometimes react funny 
+if they’re not told enough”: women’s views about the risks of 
+diagnostic laparoscopy. Health Expect 2002;5:302–9. 
+73. Palter SF . Microlaparoscopy under local anesthesia and 
+conscious pain mapping for the diagnosis and management of 
+pelvic pain. Curr Opin Obstet Gynecol 1999;11:387–93. 
+74. Swanton A, Iyer L, Reginald PW. Diagnosis, treatment and 
+follow up of women undergoing conscious pain mapping for 
+chronic pelvic pain: a prospective cohort study. BJOG 
+2006;113:792 –6. 
+75. Cox L, Ayers S, Nala K, Penny J. Chronic pelvic pain and quality 
+of life after laparoscopy. Eur J Obstet Gynecol Reprod Biol 
+2007;132:214–9. 
+76. Elcombe S, Gath D, Day A. The psychological effects of 
+laparoscopy on women with chronic pelvic pain. Psychol Med 
+1997;27:1041–50. 
+77. Onwude JL, Thornton JG, Morley S, Lilleymen J, Currie I, Lilford 
+RJ. A randomised trial of photographic reinforcement during 
+postoperative counselling after diagnostic laparoscopy for 
+pelvic pain. Eur J Obstet Gynecol Reprod Biol 2004;112:89 –94. 
+78. National Institute for Health and Clinical Excellence. Ovarian 
+cancer. The recognition and initial management of ovarian 
+cancer.NICE clinical guideline 122. London: NICE; 2011 [http:// 
+guidance.nice.org.uk/CG122/NICEGuidance/pdf/English]. 
+79. Surrey ES. Gonadotropin-releasing hormone agonist and add- 
+back therapy: what do the data show? Curr Opin Obstet 
+Gynecol 2010;22:283–8. 
+80. Aslam N, Blunt S, Latthe P . Effectiveness and tolerability of 
+levonorgestrel intrauterine system in adolescents. J Obstet 
+Gynaecol 2010;30:489–91. 
+81. Soysal ME, Soysal S, Kubilay V , Ozer S. A randomized controlled 
+trial of goserelin and medroxyprogesterone acetate in the 
+treatment of pelvic congestion. Hum Reprod 2001;16:931–9. 
+82. Shokeir T, Amr M, Abdelshaheed M. The efficacy of Implanon 
+for the treatment of chronic pelvic pain associated with pelvic 
+congestion: 1-year randomized controlled pilot study. Arch 
+Gynecol Obstet 2009;280:437–43. 
+83. Ling FW. Randomized controlled trial of depot leuprolide in 
+patients with chronic pelvic pain and clinically suspected 
+endometriosis . Pelvic Pain Study Group. Obstet Gynecol 
+1999;93:51–8. 
+84. Barbieri RL. Primary gonadotropin-releasing hormone agonist 
+therapy for suspected endometriosis: a nonsurgical approach 
+to the diagnosis and treatment of chronic pelvic pain. Am J 
+Manag Care 1997;3:285–90. 
+85. Gambone JC, Mittman BS, Munro MG, Scialli AR, Winkel CA; 
+Chronic Pelvic Pain/Endometriosis Working Group. Consensus 
+statement for the management of chronic pelvic pain and 
+endometriosis: proceedings of an expert-panel consensus 
+process. Fertil Steril 2002;78:961–72. 
+86. ACOG Committee on Practice Bulletins–Gynecology. ACOG 
+Practice Bulletin No. 51. Chronic pelvic pain. Obstet Gynecol 
+2004;103;589–605. 
+87. Kephart W . Evaluation of Lovelace Health Systems chronic pelvic 
+© Royal College of Obstetricians and Gynaecologists 13 of 16 RCOG Green-top Guideline No. 41 pain protocol. Am J Manage Care 1999;5 Suppl 5 :309 –15. 
+88. National Institute for Health and Clinical Excellence. Irritable 
+bowel syndrome in adults. Diagnosis and management of 
+irritable bowel syndrome in primary care. NICE clinical 
+guideline 61. London: NICE; 2008 [http://www.nice.org.uk/ 
+guidance/CG61/NICEGuidance]. 
+89. Jaiwala J, Imperiale TF , Kroenke K. Pharmacologic treatment of 
+the irritable bowel syndrome: a systematic review of random -
+ized, controlled trials. Ann Intern Med 2000;133:136–47. 
+90. Nanda R, James R, Smith H, Dudley CR, Jewell DP . Food intol -
+erance and the irritable bowel syndrome. Gut 1989;30: 
+1099–104. 
+91. The British Pain Society. Opioids for persistent pain: Good 
+practice . A consensus statement prepared on behalf of the 
+British pain Society, the Faculty of Pain Medicine of the Royal 
+College of Anaesthetists, the Royal College of General Practi -
+tioners and the Faculty of the Royal College of Psychiatrists. 
+London: The British Pain Society; 2010 [ https://www.british -
+painsociety.org/static/uploads/resources/files/book_opioid_ 
+main.pdf ]. 92. Wiffen P , Collins S, McQuay H, Carroll D, Jadad A, Moore A. 
+Anticonvulsant drugs for acute and chronic pain. Cochrane 
+Database Syst Rev 2005;(3):CD001133. 
+93. National Institute for Health and Clinical Excellence. 
+Neuropathic pain. The pharmacological management of 
+neuropathic pain in adults in non-specialist settings . NICE 
+clinical guideline 96. London: NICE; 2010 [http://guidance. 
+nice.org.uk/CG96/NICEguidance/pdf/English]. 
+94. Daniels J, Gray R, Hills RK, Latthe P , Buckley L, Gupta J, et al.; 
+LUNA Trial Collaboration. Laparoscopic uterosacral nerve 
+ablation for alleviating chronic pelvic pain: a randomized 
+controlled trial. JAMA 2009;302:955–61. 
+95. National Institute for Health and Clinical Excellence. Laparo -
+scopic uterine nerve ablation (LUNA) for chronic pelvic pain.
+Interventional procedure guidance 234. London: NICE; 2007 
+[http://www.nice.org.uk/guidance/IPG234/Guidance/pdf]. 
+96. Zondervan KT, Yudkin PL, Vessey MP , Jenkinson CP , Dawes MG, 
+Barlow DH, et al .The community prevalence of chronic pelvic 
+pain in women and associated illness behaviour. Br J Gen 
+Pract 2001;51:541–7. 
+RCOG Green-top Guideline No. 41 14 of 16 © Royal College of Obstetricians and Gynaecologists APPENDIX 1: Rome III criteria for the diagnosis of IBS 
+Continuous or recurrent abdominal pain or discomfort on at least 3 days a month in the last 3 months, with 
+the onset at least 6 months previously, associated with at least two of the following: 
+Gimprovement with defecation 
+Gonset associated with a change in frequency of stool 
+Gonset associated with a change in the form of stool. 
+Symptoms such as abdominal bloating and the passage of mucus are commonly present and are suggestive 
+of IBS. Extraintestinal symptoms such as lethargy, back ache, urinary frequency and dyspareunia may also 
+occur in association with IBS. 
+APPENDIX 2: ‘Red flag’ symptoms and signs 
+GBleeding per rectum 
+GNew bowel symptoms over 50 years of age 
+GNew pain after the menopause 
+GPelvic mass 
+GSuicidal ideation 
+GExcessive weight loss 
+GIrregular vaginal bleeding over 40 years of age 
+GPostcoital bleeding APPENDIX 3 
+© Royal College of Obstetricians and Gynaecologists 15 of 16 RCOG Green-top Guideline No. 41 Grades of recommendations 
+At least one meta-analysis, systematic review or 
+randomised controlled trial rated as 1++ and 
+directly applicable to the target population; or 
+A systematic review of randomised controlled 
+trials or a body of evidence consisting 
+principally of studies rated as 1+ directly 
+applicable to the target population and 
+demonstrating overall consistency of results 
+A body of evidence including studies rated as 
+2++ directly applicable to the target 
+population, and demonstrating overall 
+consistency of results; or 
+Extrapolated evidence from studies rated as 
+1++ or 1+ 
+A body of evidence including studies rated as 
+2+ directly applicable to the target population 
+and demonstrating overall consistency of 
+results; or 
+Extrapolated evidence from studies rated as 
+2++ 
+Evidence level 3 or 4; or 
+Extrapolated evidence from studies rated as 2+ 
+Good practice point 
+Recommended best practice based on the 
+clinical experience of the guideline 
+development group Classification of evidence levels 
+1++ High-quality meta-analyses, systematic 
+reviews of randomised controlled trials 
+or randomised controlled trials with a 
+very low risk of bias 
+1+ Well-conducted meta-analyses, systematic 
+reviews of randomised controlled trials 
+or randomised controlled trials with a 
+low risk of bias 
+1– Meta-analyses, systematic reviews of 
+randomised controlled trials or 
+randomised controlled trials with a high 
+risk of bias 
+2++ High-quality systematic reviews of case– 
+control or cohort studies or high-quality 
+case–control or cohort studies with a 
+very low risk of confounding, bias or 
+chance and a high probability that the 
+relationship is causal 
+2+ Well-conducted case–control or cohort 
+studies with a low risk of confounding, 
+bias or chance and a moderate 
+probability that the relationship is causal 
+2- Case–control or cohort studies with a 
+high risk of confounding, bias or chance 
+and a significant risk that the 
+relationship is not causal 
+3Non-analytical studies, e.g. case reports, 
+case series 
+4Expert opinion PC
+DBARCOG Green-top Guideline No. 41 16 of 16 © Royal College of Obstetricians and Gynaecologists DISCLAIMER 
+The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical practice. 
+They present recognised methods and techniques of clinical practice, based on published evidence, for consideration by 
+obstetricians and gynaecologists and other relevant health professionals. The ultimate judgement regarding a particular 
+clinical procedure or treatment plan must be made by the doctor or other attendant in the light of clinical data presented 
+by the patient and the diagnostic and treatment options available. 
+This means that RCOG guidelines are unlike protocols or guidelines issued by employers, as they are not intended to be 
+prescriptive directions defining a single course of management. Departure from the local prescriptive protocols or 
+guidelines should be fully documented in the patient’s case notes at the time the relevant decision is taken. This guideline was produced on behalf of the Guidelines Committee of the Royal College of Obstetricians and 
+Gynaecologists by: 
+Ms SJ Moore MRCOG, Oxford and Mr SH Kennedy MRCOG, Oxford 
+and peer reviewed by: Dr U Krishnamoorthy, East Lancashire ; College of Emergency Medicine ; Consumers’ Forum; 
+Obstetric Anaesthetists ’ Association (OAA ); Royal College of Midwives (RCM); Women’s Health Pharmacist Group .
+The Guidelines Committee lead reviewers were: Dr AJ Thomson MRCOG Paisley, Scotland and Dr KR Harding FRCOG, 
+London. 
+Conflicts of interest :none declared. 
+The final version is the responsibility of the Guidelines Committee of the RCOG. © Royal College of Obstetricians and Gynaecologists 17 of 16 RCOG Green-top Guideline No. 41 RCOG Green-top Guideline No. 41 18 of 16 © Royal College of Obstetricians and Gynaecologists

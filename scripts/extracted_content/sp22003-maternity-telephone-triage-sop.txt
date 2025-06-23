@@ -1,0 +1,286 @@
+# Extracted from: SP22003 Maternity Telephone Triage SOP.pdf
+# Guideline ID: sp22003-maternity-telephone-triage-sop
+# Content length: 13014 characters
+# Processing date: 1750066901.9036133
+
+SP22003 Maternity Telephone Triage SOP v1.1 July 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 1 of 10 
+
+Maternity Telephone Triage Standard Operating Procedure (SOP) 
+Summary statement: How does the 
+document support patient care? This SOP is to ensure that all clinical staff working within 
+Maternity Services with the essential guidance on the 
+telephone management of all women/people who refer into 
+the service at UH Sussex SRH & WH. 
+Staff/stakeholders involved in 
+development: Head of Midwifery Labour Ward Leads (Midwifery), Matron 
+In-patients for Maternity 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Acting Head of Midwifery 
+For use by: All Midwifery staff at UH Sussex SRH & WH. 
+Purpose: To provide a standard operating procedure for maternity staff 
+to follow when performing telephone triage at maternity units 
+in UH Sussex SRH & WH. 
+This document supports: 
+Key related documents: UH Sussex SRH &WH Maternity Guidelines: CG13019 
+Triage of maternity patients 
+Approved by: Joint Obstetric Guideline Group 
+Approval date: 19th July 2023 Date uploaded: 24TH July 2023 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable – Divisional Ratification only required 
+Ratification Date: Not Applicable – Divisional Ratification only required 
+Expiry Date: March 2025 
+Review date: September 2024 
+If you require this document in another format such as Braille, large print, audio or another 
+language please contact the Trusts Communications Team 
+Reference Number: SP22003 SP22003 Maternity Telephone Triage SOP v1.1 July 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 2 of 10 
+
+Version Date Author Status Comment 
+1.0 March 2022 G. Addison, Acting 
+Head of Midwifery Archived New SOP in response to CQC 
+recommendations. 
+1.1 July 2023 CE Team LIVE Pathway added for escalating 
+concerns with care raised by 
+women/people. 
+Flowchart for early pregnancy 
+bleeding added. 
+ 
+The interpretation and application of clinical guidelines will remain the 
+responsibility of the individual clinician. 
+If in doubt contact a senior colleague or expert. SP22003 Maternity Telephone Triage SOP v1.1 July 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 3 of 10 
+
+Contents 
+1.0 Aim of this document ................................ ................................ ................................ .... 4 
+2.0 Scope ................................ ................................ ................................ .......................... 4 
+3.0 Introduction ................................ ................................ ................................ .................. 4 
+4.0 Abbreviations used in this guideline ................................ ................................ .............. 4 
+5.0 Responsibilities ................................ ................................ ................................ ............ 4 
+6.0 Staffing ................................ ................................ ................................ ......................... 5 
+7.0 Assessment ................................ ................................ ................................ ................. 5 
+7.1 Pathway for managing concerns with care raised by women/people ............................ 6 
+8.0 Documentation of telephone advice ................................ ................................ .............. 6 
+9.0 Number of calls to Maternity Telephone Triage ................................ ............................ 6 
+Appendix 1: Telephone Triage Assessment Card................................ ................................ .... 7 
+Appendix 2: Escalation pathway when women/people raise concerns with their care .............. 8 
+Appendix 3: Patient information poster for raising concerns ................................ .................... 9 
+Appendix 4: Telephone triage of early pregnancy vaginal bleeding ................................ ....... 10 
+ SP22003 Maternity Telephone Triage SOP v1.1 July 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 4 of 10 
+
+Maternity Telephone Triage 
+Standard Operating Procure (SOP) 
+ 
+1.0 Aim of this document 
+ 
+The purpose of this Standard Operating Procedure is to provide all clinical staff working 
+within Maternity Services at UH Sussex SRH & WH with the essential guidance on the 
+telephone management of all women/people who refer into the service, promoting quality, 
+safety and patient satisfaction. 
+ 
+To promote consistency in delivery of care to the required standard across the service. 
+ 
+Provide a key element of information / training to assist staff in delivering their roles and 
+responsibilities in this area of the service. 
+ 
+2.0 Scope 
+ 
+This guideline applies to: 
+ 
+• Midwives 
+• All medical staff working within Maternity Services 
+ 
+3.0 Introduction 
+ 
+The Maternity Services Telephone Triage will provide an appropriate environment for the 
+assessment and management of all antenatal and postnatal women/people who refer to the 
+service for telephone advice. 
+ 
+It will provide an efficient service to meet local needs whilst promoting quality, safety and 
+patient satisfaction. 
+ 
+4.0 Abbreviations used in this guideline 
+ 
+UH Sussex - University Hospitals Sussex SOP - Standard Operating Procedure 
+MIS - Maternity Information System 
+ 
+5.0 Responsibilities 
+ 
+Midwives: 
+ 
+• To access, read, understand and follow this SOP. 
+• To use their professional judgement in application of this SOP. SP22003 Maternity Telephone Triage SOP v1.1 July 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 5 of 10 
+ Management: 
+ 
+• To ensure this SOP is reviewed as required in line with Trust and National 
+recommendations. 
+• To ensure this SOP is accessible to all relevant staff. 
+ 
+6.0 Staffing 
+ 
+Staffing of the maternity telephone triage is twofold: 
+ 
+• Telephone calls will either be triaged by a member of the telephone triage team 
+using the NetCall system or the phone line will be diverted to the labour ward and 
+will be answered by a member of staff working on the unit. 
+ 
+• When the telephone triage system (NetCall) is in use, staff trained in the system 
+will be based at either Worthing or St Richard’s hospitals operating the dedicated 
+telephone triage phone line. 
+ 
+• Midwives working the telephone system should liaise with the labour Ward 
+Coordinator at the beginning of each shift to ascertain the acuity and capacity in 
+each unit. 
+ 
+• All midwives using the telephone triage system should be band 6 or 7. Band 5 
+midwives will be given supernumerary shifts on the telephone line as will student 
+midwives. 
+ 
+• If the telephone triage line is unable to be staffed or not in operation then the 
+phone is diverted to each labour ward. When the phone is diverted to the labour 
+wards then calls requiring a patient assessment must be discussed with the labour 
+ward co -ordinator before being invited into the unit. 
+ 
+7.0 Assessment 
+ 
+At point of referral, an initial telephone assessment will be made and an appropriate care 
+pathway instigated: 
+ 
+• Admission to Labour Ward. 
+• Admission to Maternity Triage. 
+• Admission to Day Assessment Unit. 
+• Care by Community midwife. 
+• Care by GP. 
+• Support and reassurance given as no review required. 
+• Refferal to the Early Pregnancy Assessment Clinic (EPAC) following flowchart on 
+Appendix 3 . SP22003 Maternity Telephone Triage SOP v1.1 July 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 6 of 10 
+ 7.1 Pathway for managing concerns with care raised by women/people 
+ 
+For women/people who express a concern with their care, the Triage Midwife should follow 
+the flowchart in appendix 2 . 
+ 
+8.0 Documentation of telephone advice 
+ 
+Details of the phone call, advice given and plans made must be recorded on MIS. The phone 
+book is only to be used only in the event where MIS is offline or otherwise inaccessible. 
+(Appendix 1 ). 
+ 
+9.0 Number of calls to Maternity Telephone Triage. 
+ 
+The patient must be advised to come in on 3rd call unless phoning to inform that there are no 
+further concerns. SP22003 Maternity Telephone Triage SOP v1.1 July 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 7 of 10 
+ 
+Appendix 1: Telephone Triage Assessment Card 
+ SP22003 Maternity Telephone Triage SOP v1.1 July 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 8 of 10 
+ • ANC appointment - Take details from the person and escalate to the ANC Manager / Lead Midwife 
+(Monday - Friday). Inform the person that someone will get back to them ASAP. 
+• Labour ward review - Take details from the person and escalate to a Matron or labour ward manager 
+(Monday - Friday). Inform the person that someone will get back to them ASAP. 
+If concerns are regarding fetal and/or maternal well -being contact labour ward coordinator 
+immediately to discuss appropriate care plan. May need discussion with on call consultant. 
+• Community midwife - Take details from the person and escalate to the Community Team Leader 
+(Monday - Friday). Inform the person that someone will get back to them ASAP. 
+• Labour ward midwife - Take details from the person and escalate to the Coordinator or Matron 
+(Monday - Friday). Inform the person that someone will get back to them ASAP. 
+• ANC midwife - Take details from the person and escalate to the ANC Manager / Lead Midwife (Monday - 
+Friday). Inform the person that someone will get back to them ASAP. 
+If concerns are regarding fetal and/or maternal well -being contact labour ward coordinator 
+immediately to discuss appropriate care plan. May need discussion with on call consultant. 
+• Registrars; Foundation Year or Specialist Trainees (SHO) - Take details from the person and escalate to 
+the on -call Consultant. Inform the person that someone will get back to them ASAP. 
+If concerns are regarding fetal and/or maternal well -being contact labour ward coordinator 
+immediately to discuss appropriate care plan. May need discussion with on call consultant. 
+• Any other Registered Professional (anaesthetists, nurses etc); and Support Workers, Nursery Nurses 
+etc- Take details from the person and escalate to the Matrons (Monday - Friday). Inform the person that 
+someone will get back to them ASAP. 
+If concerns are regarding fetal and/or maternal well -being contact labour ward coordinator 
+immediately to discuss appropriate care plan. May need discussion with on call consultant. 
+Appendix 2: Escalation pathway when women/people raise concerns with their care 
+
+Woman/Person 
+contacts with 
+concern following 
+recent 
+professional 
+contact within 
+maternity Please check against Staffnet that this printout is the most recent version of this document. 
+
+Appendix 3: Patient information poster for raising concerns 
+
+SP22003 Maternity Telephone Triage SOP v1.1 July 2023 Page 9 of 10 
+SP22003 Maternity Telephone Triage SOP v1.1 July 2023 
+Please check against Staffnet that this printout is the most recent version of this document. Page 10 of 10 
+
+Appendix 4: Telephone triage of early pregnancy vaginal bleeding 
+
+Vaginal Bleeding Positive Pregnancy Test & 
+Last Menstrual Period 5-14 weeks ago 
+ 
+Other signs & symptoms 
+
+Less than/like period 
+bleeding 
+
+Safety -net (A&E) & 
+ 
+Unmanageable bleeding 
+associated with dizziness, 
+feeling unwell, clots the 
+size of a fist 
+
+Mild suprapubic with 
+bleeding 
+ 
+Abdominal Pain 
+
+One sided pain 
++/- bleeding. 
+Feels unwell. • Dizziness, fainting, shoulder -tip 
+pain, diarrhoea, pain on 
+defecation or difficulty passing 
+urine, shortness of breath. 
+refer to EPAC Advise patient to 
+attend to A&E 
+
+Referral to EPAC 
+
+Advice simple analgesia 
+Safety -net (A&E) & 
+refer to EPAC 
+
+Advise 
+patient to 
+attend to 
+A&E Advise patient to 
+attend to A&E 
+ 
+WH 
+ 
+Phone GDU 85147 
+Mon-Fri - 07:30 -19:30 
+ 
+Outside of these hours email: 
+epac.wgh@nhs.net SRH 
+Complete referral and e-mail to 
+epac.srh@nhs.net 
+or 
+Phone GOPD 32874 
+Mon-Fri - 08:00 -18:00 
+Outside of these hours email: 
+epac.srh@nhs.net or place referral in folder o 
+Labour Ward 
+Following EPAC referral please inform the patient: 
+Bleeding in early pregnancy is understandably worrying. 
+Although bleeding is associated with early pregnancy loss it does not mean 
+that this will definitely happen to you. The EPAC is a specialist clinic run by 
+gynaecology nurses and trained ultrasound operators and is the best place 
+to assess you and your pregnancy however we understand that it is 
+upsetting to have to wait for a review. The team will receive your referral 
+and contact you with a plan. This may or may not include a scan.

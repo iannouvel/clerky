@@ -1,0 +1,1253 @@
+# Extracted from: MP003 Antenatal Screening - Sickle Cell and Thalassaemia.pdf
+# Guideline ID: mp003-antenatal-screening-sickle-cell-and-thalassaemia
+# Content length: 63372 characters
+# Processing date: 1750066901.0749736
+
+Antenatal screening 
+for Sickle Cell and 
+Thalassemia 
+
+Maternity Protocol MP003 
+ 
+Date Agreed: November 2019 
+
+Antenatal Screening for Sick le Cell MP003 
+and Thalassaemia (RSCH PRH only ) 
+Page 2 of 33 
+Brighton and Sussex University Hospitals NHS Trust 
+
+Guideline Reviewer: 
+Manager Responsible: 
+Version: 
+Approval Committee: 
+
+Mel Sanders 
+Karen Gregory 
+4 
+Women’s Services Safety and Quality Committee 
+Date agreed: November 2019 
+Review date: November 2022 
+Cross Reference: MP001 Provision & Schedule of Antenatal Care 
+MP079 Newborn Bloodspot Screening 
+MP036 Care in Labour of women with Haemoglobinopathies 
+
+Antenatal Screening for Sick le Cell MP003 
+and Thalassaemia (RSCH PRH only ) 
+Page 3 of 33 
+Brighton and Sussex University Hospitals NHS Trust 
+Table of Contents 
+Antenatal screening for Sickle Cell and Thalassemia ................................ ............................... 1 
+Key Principles ................................ ................................ ................................ ........................ 5 
+Scope ................................ ................................ ................................ ................................ ... 5 
+Responsibilities ................................ ................................ ................................ ..................... 5 
+Objective Standards ................................ ................................ ................................ .............. 6 
+1 Antenatal Screening Sickle Cell and Thalassaemia ................................ ........................ 6 
+2 Pre-Screening information ................................ ................................ .......................... 7 
+3 Offering Screening In Pregnancy ................................ ................................ .................. 7 
+4 Limitations to Screening ................................ ................................ .............................. 8 
+5 Pre-Test Discussion ................................ ................................ ................................ ..... 9 
+6 Using The Family Origin Questionnaire (FOQ) / Booking Blood Request Form ............ 10 
+7 Women who book late or arrived unbooked in labour ................................ ............... 11 
+8 Women who transfer in ................................ ................................ ............................ 11 
+9 Declining screening ................................ ................................ ................................ ... 12 
+10 Taking the Sample (From the Woman) ................................ ................................ ....... 12 
+11 Unacceptable Samples ................................ ................................ .............................. 12 
+12 Results Processes ................................ ................................ ................................ ...... 13 
+13 Failsafe ................................ ................................ ................................ ..................... 13 
+14 Screening Results: Interpreting Results and Follow Up ................................ ............... 14 
+15 Taking the sample from the baby’s father or second biological parent ....................... 17 
+16 Care Following Diagnosis Of At -Risk Couple ................................ ............................... 20 
+17 Screening Results ................................ ................................ ................................ ...... 22 
+18 Failsafe arrangements ................................ ................................ ............................... 22 
+19 Governance ................................ ................................ ................................ .............. 23 
+20 Training ................................ ................................ ................................ .................... 23 
+21 Data and Monitoring ................................ ................................ ................................ . 24 
+22 References ................................ ................................ ................................ ................ 24 
+23 Patient information ................................ ................................ ................................ ... 26 
+ 
+Antenatal Screening for Sick le Cell MP003 
+and Thalassaemia (RSCH PRH only ) 
+Page 4 of 33 
+Brighton and Sussex University Hospitals NHS Trust 24 Appendix A - Background informa tion ................................ ................................ ....... 26 
+25 Appendix B – Proforma for recording screening results at 10 days ............................. 27 
+26 Appendix C - CARE PATHWAY: Antenatal Screening for Sickle Cell and Thalassaemia .. 28 
+27 Appendix D – Letter for Carrier Mums Inviting Dad for a Screening Test ..................... 29 
+28 Appendix E - letter inviting baby’s father for screening ................................ .............. 30 
+29 Appendix F - BSUH Contacts ................................ ................................ ...................... 31 
+30 Appendix G - External Contacts ................................ ................................ ................. 32 
+31 Appendix H - Support groups and further information ................................ ............... 33 
+
+Antenatal Screening for Sick le Cell MP003 
+and Thalassaemia (RSCH PRH only ) 
+Page 5 of 33 
+Brighton and Sussex University Hospitals NHS Trust Key Principles 
+ 
+A protocol is a set of measurable, objective standards to determine a course of action. Professional 
+judgement may be used in the application of a protocol. 
+ 
+Scope 
+ 
+This protocol applies to: 
+• Women who do not attend appointments 
+ 
+Responsibilities 
+ 
+Midwives & Obstetricians 
+• To access, read, understand and follow this guidance 
+• To use their professional judgement in application of this protocol 
+ 
+Management 
+• To ensure the protocol is reviewed as required in line with Trust and National recommendations 
+• To ensure the protocol is accessible to all relevant staff 
+
+Antenatal Screening for Sick le Cell MP003 
+and Thalassaemia (RSCH PRH only ) 
+Page 6 of 33 
+Brighton and Sussex University Hospitals NHS Trust Objective Standards 
+ 
+1 Antenatal Screening Sickle Cell and Thalassaemia 
+ 
+Background to the screening programme is given in Appendix A. 
+ 
+The antenatal screening programme is linked to the newborn blood spot screening programme. 
+ 
+1.1 Aims 
+ 
+The NHS Sickle Cell & Thalassaemia (SC&T) Screening Programme aims to: 
+ 
+• Ensure a high quality, accessible screening programme throughout England 
+• Support people to make informed choices during pregnancy and ensure timely 
+transition into appropriate follow up and treatment 
+• Improve infant health though prompt identification of affected babies and timely 
+transition into clinical care 
+• Promote greater understanding and awareness of the conditions and the value of 
+screening (NHS England 2018) 
+ 
+1.2 Antenatal Sickle cell and thalassaemia screening programme: Objectives and Outcomes 
+ 
+To offer timely antenatal sickle cell and thalassaemia screening to all women, to 
+Identify women and then couples, who are at increased risk of an affected pregnancy. 
+ 
+To facilitate informed decision making to those women [and couples] who are at 
+increased risk, with the option of prenatal diagnosis and the option of termination or 
+continuation of an affected pregnancy (NHS England 2018 
+For those women accepting prenatal diagnosis, 50% of prenatal diagnoses to be 
+performed before 12weeks 6 days (NHS England 2018). 
+ 
+1.3 Newborn Sickle Cell Screening programme: Objectives and outcomes 
+ 
+To identify babies born with conditions where early intervention is likely to be beneficial 
+(NHS England 2018) 
+ 
+To achieve the lowest possible childhood death rate and to minimise childhood morbidity 
+from sickle cell diseases (NHS England 2018. 
+ 
+Please refer to the protocol for newborn screening for further information about these 
+aims and objective: MP079 Newborn bloodspot screening. 
+
+Antenatal Screening for Sick le Cell MP003 
+and Thalassaemia (RSCH PRH only ) 
+Page 7 of 33 
+Brighton and Sussex University Hospitals NHS Trust 1.4 Linked Antenatal and Newborn Sickle Cell and Thalassaemia Screening Programme 
+ 
+Aim: to link results from antenatal screening tests taken by parents -to-be with their 
+baby’s test result (NHS England 2016) 
+ 
+Objectives and Outcomes [NHS England 2016]: 
+• To ensure an appropriate level of understanding about screening and these 
+conditions among professionals involved with the programme 
+• To review the results from antenatal testing before, during and after the newborn 
+test is offered and to check that the results are congruent 
+• To prepare parents for their babies screening result 
+ 
+1.5 For designated programme leads for maternity services and link speciality staff . Please see 
+Appendix B 
+ 
+2 Pre-Screening information 
+ 
+2.1 All women should be given verbal and written information about screening for sickle cell 
+and thalassaemia in pregnancy during the first contact with the midwife. 
+2.2 The trust uses the UK National Screening Committee [UK NSC] national patient 
+information leaflet ‘Screening tests for you and your baby’. This includes the section 
+‘Sickle cell and thalassaemia.’ This leaflet may be sent to the woman by post prior to the 
+first appointment or given out at the first appointment. The midwife must document in 
+the hand held notes that the leaflet has been received by the woman. 
+2.3 Copies of ‘Screening tests for you and your baby’ are available in other languages and can 
+be downloaded from: https://www.gov.uk/government/publications/screening -tests -for-
+you-and-your -baby -description -in-brief . If the leaflet is not available in the language 
+required from the national website, it is possible to ask for the leaflet to be translated via 
+the trust ’s Equality and Diversity Team. 
+2.4 Where there are specific communication requirements [e.g. English is not the woman’s 
+first language, visual/ hearing impairment] appropriate interpretation services should be 
+used at booking and all subsequent stages in the screening pathway. 
+3 Offering Screening In Pregnancy 
+ 
+3.1 The Eligible Population 
+ 
+All pregnant women are eligible for screening 
+
+Antenatal Screening for Sick le Cell MP003 
+and Thalassaemia (RSCH PRH only ) 
+Page 8 of 33 
+Brighton and Sussex University Hospitals NHS Trust Screening for sickle cell, other haemoglobin variants and thalassaemia should be offered 
+to all women as early as possible in pregnancy (NICE 2008; section 1.6.3.3, NHS England 
+2018). 
+ 
+The aim is to screen women before 10 weeks ( i.e. by 9+6 weeks at the latest). Offering 
+screening later may limit the choices available to parents should they be diagnosed as 
+being at -risk of having a baby with a major haemoglobin disorder as screening decisions 
+are often gestation dependent (Streetly 2001). However, screening can be offered at any 
+point during the pregnancy. See section 3.7 for women booking late in pregnancy. 
+ 
+Screening should be offered in each pregnancy, regardless of past results. If a woman has 
+been tested previously and haemoglobin carrier status is known, the test should still be 
+repeated in a new pregnancy. 
+ 
+Screening should be offered even if information about the baby’s father or second 
+biological parent is unavailable 
+ 
+3.2 Known At -Risk Couples 
+ 
+Couples identified at booking as already knowing their carrier status (at –risk couples) 
+should be referred immediately to the antenatal screening midwives for assessment and 
+offer of prenatal diagnosis. Referral by the community midwife should be made by phone 
+or email. 
+ 
+3.3 The type of screening offered depends upon the prevalence of sickle cell in the local 
+population [NICE 2008]: currently BSUH NHS TRUST is designated as a low prevalence 
+trust [NHS England 2017 
+As a low prevalence trust, all women are offered screening for thalassaemia using routine 
+red blood cell indices. 
+ 
+As a low prevalence trust, screening for sickle cell and haemoglobin variants takes place 
+initially using the Family Origin Questionnaire (FOQ). The FOQ assesses the risk of either 
+the woman or the baby’s father or second biological parent, being a carrier for sickle cell 
+or other haemoglobin variants, or severe alpha thalassaemia. The laboratory uses this 
+information as a basis for determining which women to test for the haemoglobin variants 
+and helps in the interpretation of laboratory results. 
+ 
+At BSUH the FOQ has been incorporated in the antenatal booking blood form. 
+4 Limitations to Screening 
+ 
+1 in 1000 Caucasian people are carriers for a haemoglobin disorder, it is recognised by the 
+National Programme Centre that selective screening based on the Family Origin Questionnaire 
+(FOQ), will not identify all carriers of a haemoglobin disorder. Women should be informed of 
+this in the pre -test discussion with the midwife. 
+ 
+Antenatal Screening for Sick le Cell MP003 
+and Thalassaemia (RSCH PRH only ) 
+Page 9 of 33 
+Brighton and Sussex University Hospitals NHS Trust 5 Pre-Test Discussion 
+ 
+At booking the midwife should discuss the reasons why screening is recommended. Pre -test 
+discussion should ideally include the following according to individual client need: 
+The nature and effects of haemoglobin disorders 
+The test (noting that an extra sample is NOT required) 
+The chance of being a carrier according to family origin 
+The limitations of screening (as per 3.4) 
+These are screening not diagnostic tests and they will not identify all haemoglobinopathies 
+The results process 
+Options for pre -natal diagnosis and continuing the pregnancy or termination should a baby be 
+diagnosed with a major haemoglobinopathy. 
+ 
+The midwife should document in the hand held notes that discussion has taken place and the 
+woman’s decision to accept (consent to screen) or decline screening. Screening should only be 
+performed after documented informed consent; this does not require a signature from the 
+woman. 
+ 
+The midwife can refer to the antenatal screening midwives by phone or email if parents require 
+more detailed information or discussion at any stage in the screening pathway. The phone 
+number for the antenatal screening midwives can also be given direct to the parents (see 
+contacts Appendix B). 
+
+Antenatal Screening for Sick le Cell MP003 
+and Thalassaemia (RSCH PRH only ) 
+Page 10 of 33 
+Brighton and Sussex University Hospitals NHS Trust 6 Using The Family Origin Questionnaire (FOQ) / Booking Blood Request 
+Form 
+ 
+6.1 The FOQ is incorporated into the booking blood request form which has been approved 
+for use by the National Programme Team. 
+6.2 All sections of the form must be completed in full in legible handwriting. The request form 
+is in triplicate. Therefore when completing the form, ensure that the three sheets are 
+aligned and that the writing has transferred to all three sheets. Where a sticky patient 
+identification label is used, this must be affixed to all three sheets. 
+6.3 Ask the woman and baby’s father or second biological parent, if they or their blood 
+relatives originating from any of the areas listed on the form, for as many generations 
+back as they are aware of. It may be necessary to tick more than one box for each parent 
+if they have origins from more than one country. 
+6.4 Remember the partner may not be the father or second biological parent of the baby and 
+so it is important to ask about the baby’s biological father or second biological parent 
+rather than partner. 
+6.5 In the case of pregnancies conceived by sperm and / or egg donation, the family origins of 
+the donor/s are required and included on the form if known. 
+6.6 If the family origins of either biological parent is not known [for example if adopted or if 
+the origins of a donor egg/ sperm are not known], then please tick the ‘don’t know’ 
+adoption/unknown ancestry box. It is important to clarify whether the pregnancy was 
+conceived by sperm and/or egg donor if known. 
+6.7 If the woman or pregnant person has had a bone marrow transplant please tick the box. 
+The baby's biological father or second biological parent must be tested as the results 
+obtained will reflect the bone marrow transplant donor and not represent the genetic 
+status of the fetus. 
+6.8 If either parent has been previously tested and the result is known, then please write this 
+on the FOQ. 
+6.9 Any tick in a yellow box indicates to the laboratory staff that a fu ll haemoglobinopathy 
+screen is required. 
+6.10 Insert expected date of delivery, gestation and parity. 
+6.11 If screening is declined, please tick appropriate box. 
+6.12 The section on blood transfusion history must be completed as this information is 
+essential for interpreting results of sickle cell and thalassaemia screening. Results may be 
+misleading if there has been a blood transfusion in the last four months. 
+
+Antenatal Screening for Sick le Cell MP003 
+and Thalassaemia (RSCH PRH only ) 
+Page 11 of 33 
+Brighton and Sussex University Hospitals NHS Trust 7 Women who book late or arrived unbooked in labour 
+ 
+7.1 Women booking late must be offered screening at the first appointment with the 
+midwife. 
+7.2 Note that when screening takes place in the mid or third trimester, and the couple are 
+found to be at -risk, the options available to the couple may be limited. The consequences 
+of late screening should be discussed prior to screening. 
+7.3 For women arriving unbooked in labour, whilst it may be too late to detect an at -risk 
+couple prior to the birth, it is still important to know if a woman is a sickle cell carrier, as 
+this may impact medically (for example with anaesthesia), and is important to know for 
+future pregnancies. 
+ 
+8 Women who transfer in 
+ 
+8.1 Women who booked elsewhere prior to transferring care to BSUH NHS TRUST should be 
+offered repeat screening. This ensures a result is available in -house for all staff to access 
+electronically if the hand held notes are not available. 
+8.2 If a woman declines repeat testing having been screened elsewhere, then a copy of the 
+original result from the unit of first booking must be inserted in the hand held notes and 
+hospital notes. 
+8.3 Women who have had screening outside of the UK must be advised that a repeat screen 
+is recommended as their original screening test may not meet UK standards and may omit 
+screening for certain conditions. 
+
+Antenatal Screening for Sick le Cell MP003 
+and Thalassaemia (RSCH PRH only ) 
+Page 12 of 33 
+Brighton and Sussex University Hospitals NHS Trust 9 Declining screening 
+9.1 Screening is optional. All women have the right to decline screening. 
+9.2 Where screening is declined, the midwife at booking should continue to complete the 
+FOQ section of the antenatal booking blood form and tick the box which states ‘screening 
+test declined’. If known, the reason for declining should be entered onto the form. The 
+form should be forwarded to the laboratory either with the other blood samples (if 
+screening for other tests accepted) OR via internal post if all blood tests were declined. 
+9.3 The decision to decline screening must be clearly documented by the midwife in the hand 
+held notes. 
+9.4 Where women decline screening, ensure they are aware that they can opt to accept 
+screening at a later date. Screening can be arranged through their community midwife at 
+subsequent appointments. In such cases the antenatal booking blood form must be used 
+for screening as it incorporates the FOQ which is an essential component of the screening 
+test. 
+ 
+10 Taking the Sample (From the Woman) 
+ 
+10.1 The sample may be taken at booking by the midwife, practice nurse or phlebotomist 
+according to local arrangements: 
+ 
+• A 4ml sample of blood is required in an EDTA tube [purple top with black ring]. 
+The test can be performed on the same sample as used for the full blood count 
+• The Antenatal Booking Blood Request Form, must be completed fully prior to 
+taking blood as per section 3.6 and accompany the sample to the laboratory 
+10.2 Samples are sent to BSUH Pathology for processing and should arrive within one working 
+day of sample collection. 
+ 
+11 Unacceptable Samples 
+ 
+Where the sample is deemed to be unacceptable by the laboratory because of insufficient 
+blood, incomplete data on the request form, mislabeling of sample bottle or for any other 
+reason, the laboratory will inform the antenatal screening midwives by email. The screening 
+midwives will inform the relevant community midwife team leader in order that they may 
+action a repeat sample or a repeat FOQ. 
+ 
+Samples/FOQs should ideally be repeated within 10 working days of the request being received 
+by the maternity unit. 
+
+Antenatal Screening for Sick le Cell MP003 
+and Thalassaemia (RSCH PRH only ) 
+Page 13 of 33 
+Brighton and Sussex University Hospitals NHS Trust 11.1 Where repeat samples take longer than 10 working days to arrange (for example the 
+woman is away or declines to attend for repeat sampling within 10 days), the midwife 
+should document reasons why there has been a delay. 
+11.2 The midwife responsible for actioning the repeat must always follow up the results and 
+arrange a plan to deliver the results to the woman being mindful that there has already 
+been a delay in obtaining a result because of the need to repeat. 
+11.3 The laboratory team enters the details of every rejected sample or FOQ onto a database 
+and updates the entry when the repeated sample has been received in the laboratory. 
+The database is accessible by the screening midwives who review every Wednesday and 
+action any outstanding repeats. 
+ 
+12 Results Processes 
+ 
+12.1 Accessing results (Including fail -safes to ensure all women who accept screening receive a 
+result) 
+ 
+12.1.1 Results will be available to staff within 3 working days of sample receipt in the 
+laboratory. Results will be available on ICE (the electronic pathology results 
+reporting programme). 
+12.1.2 While the majority of results will be available within 5 working days, in the case 
+of some rare haemoglobin disorders, final diagnosis may take some weeks. In 
+these cases the laboratory team will inform the antenatal screening midwives in 
+order to advise the woman and CMW of the reason for the delay. 
+13 Failsafe 
+10 day check 
+It is the responsibility of the sample requestor to follow up results within 10 working days of the 
+sample being taken. The sample requestor should ensure carrier results have been acted upon 
+and follow up missing results or laboratory requests for a repeat sample. The sample requestor 
+must document that results were followed up and acted on. An example proforma that can be 
+used for recording that results were followed up is given in appendix F. 
+If any results are missing at the 10 day check the laboratory should be contacted to confirm a 
+result is being processed. If a result is found to be missing during a weekend clinic the 
+community midwifery leads should be emailed to action the missing result on the next working 
+day. A confirmation email will be sent back to the midwife who found the result to be missing, 
+once the community leads have the result. 
+Whilst every attempt should be made to check results after 10 working days it is recognised 
+that some community clinics do not have facilities for venepuncture and therefore women 
+attend hospital phlebotomy to have bloods taken. In such cases, the sample requestor will not 
+ 
+Antenatal Screening for Sick le Cell MP003 
+and Thalassaemia (RSCH PRH only ) 
+Page 14 of 33 
+Brighton and Sussex University Hospitals NHS Trust know when the bloods were actually taken and so cannot follow up results at 10 days. In such 
+cases it is essential that the requestor follows up results at the next AN appointment. 
+ 
+Next AN appointment 
+It is the responsibility of the health professional (midwife or doctor) providing care at the next 
+antenatal appointment (usually at the 16 week appointment) to check the results, document 
+results (with informedconsent) in the hand held notes and inform the woman of the results 
+during the appointment. 
+ 
+Results check at time of dating scan 
+As an additional failsafe, the Antenatal Screening Support Worker (ASSW)will ensure a full set of 
+booking blood results are available at the time women attend dating scan. Where the woman 
+has not yet had screening, this can be offered at the time of scan. 
+ 
+Women who miscarry or terminate following screening 
+All women should be notified of their results following testing and this includes women who 
+terminate or miscarry following screening. This is especially important with women who are 
+found to be carriers, as this affords the opportunity for partner screening in advance of a future 
+pregnancy. Carrier women will be informed by the screening midwives in order to discuss 
+implications for a future pregnancy. Non -carrier women should be informed by the midwife 
+who requested the sample. 
+ 
+14 Screening Results: Interpreting Results and Follow Up 
+ 
+Results will fall into one of four possible categories: 
+• Nothing abnormal detected: Non -carrier result 
+• Inconclusive result 
+• Clinically significant haemoglobin disorder 
+• Genetic carrier 
+ 
+If there is any uncertainty about a result, contact either the screening midwives in the first 
+instance or the laboratory staff for further advice. 
+ 
+14.1 Nothing abnormal detected: Non -carrier results 
+ 
+ These will be either one of the following: 
+Not a carrier of thalassaemia, sickle cell or haemoglobin variant (women assessed as 
+high risk by FOQ). The woman was screened for sickle cell, Hb variants and thalassaemia 
+and nothing abnormal was detected. 
+ 
+Not a carrier of thalassaemia (for women assessed as low risk by FOQ) 
+ 
+Antenatal Screening for Sick le Cell MP003 
+and Thalassaemia (RSCH PRH only ) 
+Page 15 of 33 
+Brighton and Sussex University Hospitals NHS Trust The woman was screened for thalassaemia only, because neither she nor her partner 
+had family origins from an at risk region. Nothing abnormal was detected. 
+However as she werewas only assessed for thalassaemia, there is still a small chance 
+that she could be an undiagnosed carrier of sickle cell or Hb variant (see section 3.4). 
+ 
+In both cases the woman should be informed that nothing abnormal has been detected 
+and there is no indication to test the baby’s father or second biological parent. However 
+screening is not diagnostic and will not detect all carriers. Therefore we cannot exclude 
+the small chance of the woman being an undiagnosed carrier. 
+ 
+There is no further action in these cases as testing of the baby’s father or second 
+biological parent is NOT indicated. 
+It is appropriate for the community midwife to discuss these results with women. 
+ 
+14.2 Inconclusive Result 
+ 
+These results must be actioned by the screening midwife team. When community 
+midwives discover an inconclusive result whilst following up booking screening results, 
+they should contact the screening midwife team by email or phone to ensure they are 
+aware of the result. 
+ 
+Some haemoglobin variants are difficult to identify and analysis of the original sample 
+may take longer. Occasionally further tests on the woman may be indicated. 
+In such cases the laboratory will email the antenatal sc reening midwives to advise that 
+the results is inconclusive and whether further tests should be offered. Testing the baby’s 
+father or second biological parent is advised f nothing abnormal is detected, the risk to 
+the baby can be excluded. 
+The screening midwives will inform the woman of the inconclusive result and possible 
+implications. The screening midwives will discuss and offer testing of the father or second 
+biological parent and arrange this where accepted. 
+ 
+14.3 Clinically significant haemoglobin disorder 
+ 
+These results must be actioned by the screening midwife team. When community 
+midwives discover a significant haemoglobin result whilst following up booking screening 
+results, they should contact the screening midwife team by email or phone to ensure they 
+are aware of the result. 
+ 
+While most people will know if they have a significant haemoglobin disorder, in rare cases 
+this is only detected for the first time at antenatal screening. In such cases the laboratory 
+will email the antenatal screening midwives to advise that the woman has a significant 
+haemoglobin disorder. 
+
+Antenatal Screening for Sick le Cell MP003 
+and Thalassaemia (RSCH PRH only ) 
+Page 16 of 33 
+Brighton and Sussex University Hospitals NHS Trust The screening midwives will inform the woman of the result and possible implications for 
+both the woman and unborn baby. The screening midwives will discuss and offer testing 
+of the baby’s father or second biological parent and arrange this where accepted. 
+ 
+In addition the antenatal screening midwives will refer to the consultant obstetrician and 
+haematology services to ensure appropriate care is offered with regard the woman and 
+theirher pregnancy (refer to protocol: MP036 Care in Labour of women with 
+Haemoglobinopathies). 
+ 
+14.4 Genetic carrier: Action following identification of maternal haemoglobinopathy carriers 
+ 
+These results must be actioned by the screening midwife team. When community 
+midwives discover a carrier result whilst following up booking screening results, they 
+should contact the screening midwife team by email or phone to ensure they are aware of 
+the result. 
+ 
+In such cases the laboratory will email the antenatal screening midwives to advise that 
+the woman is a carrier or suspected of being a carrier for a haemoglobin disorder. 
+ 
+The screening midwives will inform the woman of the result and possible implications. 
+The screening midwives will discuss and offer testing of the baby’s father and arrange this 
+where accepted. 
+ 
+Informing women of carrier results and offering testing of baby’s father 
+ 
+If the woman has an inconclusive result, is a carrier of a significant haemoglobinopathy or 
+diagnosed with a haemoglobin disorder, then both the woman and the father of her baby 
+should be offered counselling and paternal screening without delay. 
+ 
+It is the responsibility of the antenatal screening midwives to contact the mother and 
+explain the significance of the result and offer screening for the baby’s father for sickle 
+cell, other haemoglobin variants and thalassaemia. 
+ 
+Women should be contacted within 5 working days of the result being generated by the 
+laboratory. 
+ 
+The antenatal screening midwives contact the woman by phone to inform her of the 
+result and offer an appointment for further discussion. 
+ 
+If it is not possible to contact the woman by phone, a letter should be sent the same 
+working day asking the woman to contact the screening midwives to discuss the carrier 
+status. An example template letter is given in Appendix D. 
+A letter inviting the father for screening can also be enclosed with the mother’s letter that 
+she can give to him. An example letter template is given in Appendix E. 
+
+Antenatal Screening for Sick le Cell MP003 
+and Thalassaemia (RSCH PRH only ) 
+Page 17 of 33 
+Brighton and Sussex University Hospitals NHS Trust Further counselling may take place in person face -to-face or over the phone according to 
+client’s preference. 
+ 
+Discussion of the result should include the following: 
+ 
+• Haemoglobin disorders and the specific Hb type found in the mother 
+• The screening test for dads 
+• Inheritance patterns and possible risks of the baby inheriting a condition if the father is 
+found to be a carrier 
+• Choices available to the baby’s parents should they be found to be at risk of having a 
+baby with a major haemoglobin disorder [to include the option of prenatal diagnosis, 
+postnatal diagnosis, continuing or ending a pregnancy should the baby be affected] 
+ 
+Verbal information should be backed up with written information. National patient information 
+leaflets explaining the commonly diagnosed carrier traits can be found at 
+https://www.gov.uk/government/collections/adult -carriers -sickle -cell-thalassaemia -unusual -
+haemoglobin 
+ 
+Additional resources to help explain carrier status and inheritance to parents can be found at 
+the APoGI website (see contacts Appendix ). 
+ 
+The National Information Leaflet: ‘Sickle cell and thalassaemia screening: information for 
+fathers’ [a non -gendered version is not currently available] should be offered to all women to 
+give to their baby’s father (and be enclosed in the letter Appendix E). The leaflet is accessible 
+online at: 
+https://www.gov.uk/government/publications/tests -for-dads -sickle -cell-and-thalassaemia -
+screening 
+ 
+The baby’s father should be counselled and paternal blood samples taken [where accepted] 
+ideally by the end of 11 weeks of pregnancy (NHS England 2016). 
+ 
+All discussions must be documented in the hand held or hospital notes by the midwife 
+counselling the couple. 
+15 Taking the sample from the baby’s father or second biological parent 
+ 
+15.1 Where a woman is identified as being a carrier and baby’s father or second biological 
+parent has accepted screening: 
+ 
+• A 4ml sample of blood in an EDTA tube should be sent to the laboratory 
+• A routine blood sciences form should be used requesting ‘Hb electrophoresis’. This 
+should be completed in full by the midwife arranging the test. 
+• The form must include written details of who the partner of (give mother or birthing 
+parent’s name and date of birth). This ensures samples can be tracked and matched 
+up with the correct woman. 
+ 
+Antenatal Screening for Sick le Cell MP003 
+and Thalassaemia (RSCH PRH only ) 
+Page 18 of 33 
+Brighton and Sussex University Hospitals NHS Trust 
+Where available the father or second biological parent’s NHS number and hospital ID 
+number should be used. Where there is no NHS / Hospital ID number the sample 
+requestor must write the following on the form: Acceptance of sample without NHS/ 
+Hospital ID number has been agreed by haemoglobinopathy laboratory and AN screening 
+team. 
+The paternal or second biological parent’s blood sample may be taken at the GP surgery, 
+antenatal clinic or phlebotomy department by the midwife / practice nurse / 
+phlebotomist: whichever allows the earliest opportunity for sampling. The father or 
+second biological parent should be given the correct form to take along, completed as 
+detailed in section 
+ 
+15.2 Taking the sample from the baby’s father or second biological parent where indicated. 
+ 
+If the baby’s father or second biological parent consents to testing, their permission must 
+be sought to share information about their haemoglobin type with the baby’s mother or 
+birthin parent. The baby’s father or second biological parent’s results cannot be released 
+to the woman or birthing parent without their consent. 
+ 
+A plan should be made by the antenatal screening midwife to communicate the father or 
+second biological parent’s result back to the parents in the hand held notes. Results will 
+normally take no more than 5 working days. 
+ 
+The laboratory email the father or second biological parent’s result to the screening 
+midwife team as soon as it is known to facilitate prompt follow up. 
+ 
+Record of care, information given, partner consent to testing and results process should 
+be documented in the hand held or hospital notes. 
+15.3 Where the baby’s father or second biological parent has been screened previously 
+If the baby’s father or second biological parent has been tested previously, a repeat 
+screening test should be performed for all subsequent pregnancies “ For every 
+pregnancy we need to test both parents to see if there is any risk for your baby”. (PHE 
+2018) 
+If the father or second biological parent declines a repeat test, a copy of the first result 
+should ideally be obtained. 
+ 
+In the absence of a written result or if obtaining a copy of the result is likely to take more 
+than a week, then a repeat screening test should be recommended. 
+ 
+Note that if the father or second biological parent has only ever been screened outside of 
+the UK then a repeat screen should always be recommended. This is because their 
+original screening test may not meet UK standards and may omit screening for certain 
+conditions. 
+
+Antenatal Screening for Sick le Cell MP003 
+and Thalassaemia (RSCH PRH only ) 
+Page 19 of 33 
+Brighton and Sussex University Hospitals NHS Trust 15.4 Where the baby’s father or second biological parent declines screening or is not available 
+ 
+If the baby’s father or second biological parent is not available for screening or declines 
+screening and haemoglobinopathy status is unknown, further advice should be given to 
+the mother as to the likelihood of him being a carrier based on his family origins (if 
+known). 
+ 
+In such cases pre -natal diagnosis should be offered to the woman. Discussion should 
+include information about the risk of miscarriage from prenatal diagnosis. The risk of 
+miscarriage should be balanced against the likelihood of the father or second biological 
+parent being a carrier. 
+ 
+These cases should be managed on an individual basis in conjunction with the fetal 
+medicine team. Where prenatal diagnosis is requested, these cases MUST be discussed 
+with the appropriate prenatal diagnostic laboratory (see contacts) prior to testing to 
+ascertain whether additional blood samples are required from the mother or birthing 
+parent and to clarify to likelihood of limitations to testing with the absence of paternal or 
+second biological parent DNA diagnosis. 
+15.5 Follow up of Paternal Blood Results 
+ 
+15.5.1 Nothing abnormal detected on screening of baby’s father: 
+The parents should be informed by the screening midwife that they are not at 
+risk of having a baby with a major haemoglobin disorder. However there is a 50% 
+chance that their baby will inherit the same heamoglobin type as found in the 
+mother. The implications of this [according to haemoglobin type] should be 
+discussed with parents. 
+ 
+• If the mother is a carrier of sickle cell or other unusual heamoglobin 
+variant, the newborn blood spot screening programme will usually detect 
+whether the baby has inherited this. Parents will be informed by their 
+health visitor. 
+ 
+• If the mother is a carrier of thalassaemia, then this will not be detected on 
+newborn blood spot screening and parents will not know if their baby is a 
+carrier unless tested for other reasons. 
+ 
+In all cases, the screening midwife should send a letter to the parents confirming 
+the results. A copy should be sent to the w oman’s GP, community midwife . A 
+copy should be filed in the hospital notes. 
+15.5.2 Where the father is found to be a carrier at-risk couple identified 
+ 
+Ideally, at -risk couples (where both mother and father are identified as carriers 
+of a significant haemoglobin disorder) should be identified by 12weeks 6 days of 
+pregnancy (NHS England 2016). 
+ 
+Antenatal Screening for Sick le Cell MP003 
+and Thalassaemia (RSCH PRH only ) 
+Page 20 of 33 
+Brighton and Sussex University Hospitals NHS Trust 16 Care Following Diagnosis Of At -Risk Couple 
+ 
+A couple may be diagnosed at -risk of having a baby with a major haemoglobin disorder either 
+pre-conceptually or through the antenatal screening programme. 
+ 
+Known at -risk couples should be referred direct to the antenatal screening midwives at booking 
+to expedite discussions about prenatal diagnosis. 
+ 
+Couples identified as being at -risk on the AN screening pathway should be offered an 
+appointment in antenatal clinic at the earliest opportunity (ideally within 5 working days of 
+partner result). This appointment may be with either a consultant obstetrician or midwife who 
+has undergone additional training (antenatal screening midwife who has completed a genetic 
+risk assessment and counselling module). 
+ 
+Discussion should include the possible outcomes for their baby regarding haemoglobin type 
+(inheritance patterns) and implications for an affected baby, methods and risks of prenatal 
+diagnosis and the options available should a major haemoglobin disorder be identified 
+(including continuing or terminating the pregnancy). 
+ 
+Where unusual haemoglobin types are identified, specialist counselling can be accessed by 
+referring the couple in writing to the haematology department (prenatal diagnosis team) at 
+Kings College Hospital (contact details given in Appendix G). 
+ 
+The option of discussing care for a baby with a major heamoglobinpathy with a paediatrician 
+should also be given. See contacts for referral details. 
+ 
+Written information should be provided along with written confirmation of carrier status. The 
+following leaflets are available: 
+ 
+Haemoglobin blood test results: information for a couple at risk of having a baby with sickle cell 
+disease . Available at www.gov.uk/government/publications/baby -at-risk-of-having -sickle -cell-
+disease -description -in-brief 
+ 
+Haemoglobin blood test results: information for a couple at risk of having a baby with 
+thalassaemia major . www.gov.uk/government/publications/baby -at-risk-of-having -
+thalassaemia -description -in-brief 
+ 
+Further support: For all at -risk couples, extra support surrounding testing, diagnosis and either 
+continuing or terminating an affected pregnancy is available through the charity ARC – 
+Antenatal, Results and Choices. Both the Sickle Cell Society and the UK Thalassaemia Society 
+also provide useful information and support. Contact details are given at the end of this 
+document. 
+ 
+All discussions and subsequent decisions made by the parents should be documented in hand 
+heldmaternal notes by the screening midwife or doctor. The woman’s GP, community midwife 
+and health visitor should be informed of the outcome by letter. 
+ 
+Antenatal Screening for Sick le Cell MP003 
+and Thalassaemia (RSCH PRH only ) 
+Page 21 of 33 
+Brighton and Sussex University Hospitals NHS Trust 16.1 Couples declining prenatal diagnosis 
+ 
+For parents declining pre -natal diagnosis, a plan for post natal diagnosis should be made 
+in advance of the birth (see section 3.9). 
+ 
+The screening midwife will inform the paediatricians, GP, CMW and HV that the couple 
+has declined prenatal diagnosis in writing. 
+ 
+16.2 Couples Accepting Prenatal Diagnosis 
+ 
+If pre -natal diagnosis (PND) is requested, referral is made for CVS or amniocentesis 
+(choice of test is gestation dependent) within 5 working days. CVS is preferable to 
+amniocentesis as it provides more DNA. If amniocentesis is performed and parents 
+request screening for aneuploidy, a 20ml sample is required. 
+ 
+Cases must be discussed with the PND lab at the Kings Red Cell Centre lab before the 
+invasive test is performed as they may also require extra blood samples from the parents 
+to be sent with the invasive sample. The lab will advise regarding turn -around time for 
+results. 
+ 
+Testing for aneuploidy is also available to parents and should be offered as part of the 
+pre-test counselling. If parents requested combined screening, the NT measurement 
+should be recorded prior to invasive testing, and if 3.5mm or more, CGH array is offered 
+for chromosomal analysis. For further information see protocol MP002 Fetal Anomaly 
+Screening Programme 
+ 
+The sample should be sent to the cytogenetics lab at Guys hospital with both a Guys 
+request form (for aneuploidy testing) and the Kings Red Cell Centre lab request form for 
+prenatal diagnosis of haemoglobinopathy. 
+ 
+The Guys lab will extract DNA from the sample and forward it to the Kings red Cell Centre 
+lab for the Haemoglobinopathy test. 
+ 
+PND test results should be available within 4 working days of the procedure. 
+NHS Sickle Cell and Thalassaemia Screening Programme 2006: objective P3. 
+Results are emailed to the antenatal screening midwife team. 
+ 
+Parents are informed of the results and may be given over the phone or in person at a 
+hospital appointment according to couple choice, by either a consultant or midwife with 
+PEGASUS training or equivalent i.e Genetic Risk Assessment & Counselling Module.. 
+Written confirmation should always be sent to the parents. 
+
+Antenatal Screening for Sick le Cell MP003 
+and Thalassaemia (RSCH PRH only ) 
+Page 22 of 33 
+Brighton and Sussex University Hospitals NHS Trust 17 Screening Results 
+17.1 Testing babies born to known at -risk couples. 
+ 
+It is recognised that couples known to be at high risk (1 in 4) of having a baby with sickle 
+cell disease or thalassaemia major, who declined prenatal diagnosis, might wish to know 
+the result for their child before the normal time for reporting the result from the newborn 
+bloodspot screening programme. 
+ 
+To be a known ‘1 in 4’ high risk pregnancy, the haemoglobin results must be known on 
+both parents. 
+ 
+This service should be seen as a special ‘on -demand’ service to alleviate parental anxiety 
+and not as a fail -safe or substitute for the newborn bloodspot screening programme, nor 
+to gain a more rapid entry into clinical care. 
+ 
+Where parents request postnatal testing, a liquid capillary blood specimen (not cord 
+blood) should be taken from the baby for analysis soon after birth. 
+ 
+The specimen should be taken in a clinical setting by the neonatal team. 
+ 
+This blood specimen should be sent to a specialist laboratory, which has expertise in 
+analysing and interpreting results on newborn babies. Therefore samples taken at BSUH 
+CANNOT be analysed in -house and must be sent to the Red Cell Centre at Kings College 
+Hospital, London (See contacts). 
+ 
+The neonatal team have responsibility for following up the results and arranging to 
+communicate these with the parents. 
+ 
+The fact that such a specimen has been taken should be noted by the midwife on the 
+newborn screening bloodspot card. The screening laboratory will undertake the routine 
+screen as usual and the test will act as a ‘failsafe’ and quality check. It is imperative 
+that the test result is given to the parents as soon as possible to decrease their na tural 
+anxiety about the status of their child. Testing of the liqu id specimen should be seen as a 
+parallel test to the screening specimen and not a substitute. 
+ 
+Further information and best practice guidance on screening is available in the Laboratory 
+Handbook (Oct 2017 ) developed by the NHS Sickle Cell & Thalassaemia Screening 
+Programme Centre. 
+ 
+18 Failsafe arrangements 
+ 
+The antenatal screening midwives maintain a shared database of all carrier women recording 
+offer, acceptance or decline of partner test, partner test results and outcomes for at -risk 
+couples. 
+ 
+Antenatal Screening for Sick le Cell MP003 
+and Thalassaemia (RSCH PRH only ) 
+Page 23 of 33 
+Brighton and Sussex University Hospitals NHS Trust 
+On a weekly basis (every Wednesday) the antenatal screening midwives cross check their 
+database of carrier women with the list of carriers held by the laboratory. This ensures that the 
+screening midwives have been informed of all carrier women. 
+ 
+This is reviewed on a weekly basis to ensure all the results are followed up in a timely manner. 
+Data and audit findings will be included in the Annual Screening Report compiled by the 
+Antenatal Screening Co -ordinator. 
+ 
+19 Governance 
+ 
+All incidents relating to antenatal screening for sickle cell and thalassaemia screening are 
+reported via the trusts internal reporting system known as DATIX. 
+ 
+All incidents related to screening for sickle cell and thalassaemia should also be reported to the 
+Antenatal screening co -ordinator who will liaise with the and where necessary complete a SIAF 
+(Screening incident assessment form) in order to notify the Regional QA screening team and the 
+Screening and Immunisations Lead. 
+ 
+All incidents related to screening for sickle cell and thalassaemia should also be reported to the 
+laboratory and the Pathology Quality Team. 
+ 
+For further information relating to management of incidents please refer to the protocol: 
+MP085 Maternity & Gynaecology Risk Management Strategy. 
+ 
+The Antenatal Screening board for sickle cell and thalassaemia meets quarterly and will address 
+all issues pertaining to the programme at BSUH. 
+ 
+20 Training 
+ 
+All midwives must attend a yearly update on antenatal screening for sickle cell and 
+thalassaemia as part of their mandatory education update sessions. 
+ 
+All midwives new to the trust should complete the Antenatal & Newborn Screening eLearning 
+Module. 
+ 
+All band 5 midwives must complete the Antenatal & Newborn Screening eLearning Module. 
+as part of their competencies before they can apply for a band 6. 
+ 
+All screening midwives must complete a course in genetic risk assessment and 
+haemoglobinopathy screening in order to counsel at -risk couples. 
+
+Antenatal Screening for Sick le Cell MP003 
+and Thalassaemia (RSCH PRH only ) 
+Page 24 of 33 
+Brighton and Sussex University Hospitals NHS Trust 21 Data and Monitoring 
+ 
+Minimum auditable standards: the following data is collected 
+• number of bookings 
+• number of women tested 
+• number of women tested by 10 weeks 
+• number of women identified as carriers for haemoglobinopathies 
+• number of partners tested 
+• number of partners tested by 13 weeks 
+• number of at -risk couples 
+• outcome of at -risk pregnancies 
+ 
+The above data is reported on an annual basis to the following organisations (See Contact list in 
+Appendix F & G): 
+ 
+• Regional Screening and Immunisation Lead 
+• Regional Quality Assurance Screening Lead 
+ 
+Data for the NSC Key Performance Indicators for SC&T screening collected and submitted on a 
+quarterly basis. Current KPI data requirements for SC &T screening are available at 
+http://www.screening.nhs.uk/kpi 
+ 
+An annual audit of women’s notes will take place to review documentation processes. 
+ 
+Data and audit findings will be included in the BSUH Trust Annual Antenatal and Neonatal 
+Screening Report compiled by the Antenatal Screening Co -ordinator. 
+ 
+22 References 
+ 
+Department of Health [2000] The NHS plan: A plan for investment, a plan for reform. London. 
+ 
+NHS England [2016] NHS public health functions agreement 2016 -17. Service specification no. 
+18 NHS Sickle Cell and Thalassaemia Screening Programme. Publi cation date: 5th February 
+2016. 
+ 
+National Institute for Clinical Excellence – NICE [2008] Clinical guideline 62 – Antenatal care for 
+uncomplicated pregnancies. March 
+2008: updated Feb 2019 
+https://www.nice.org.uk/guidance/cg62 
+ 
+Streetly, A [2001] A survey of Haemoglobinopathy Screening Policy and Practice in England. NHS 
+Screening Programme. 
+
+Antenatal Screening for Sick le Cell MP003 
+and Thalassaemia (RSCH PRH only ) 
+Page 25 of 33 
+Brighton and Sussex University Hospitals NHS Trust NHS Sickle Cell & Thalassaemia Screening Programme [2011 a] Standards for the linked 
+Antenatal and Newborn Screening Programme. 2nd Edition. 
+https://www.gov.uk/government/publications/standards -for-sickle -cell-and-thalassaemia -
+screening 
+ 
+NHS Sickle Cell & Thalassaemia Screening Programme [2011 b] Summary of changes :Standards 
+for the linked Antenatal and Newborn Screening Programme 
+https://www.gov.uk/government/publications/standards -for-sickle -cell-and-thalassaemia -
+screening 
+ 
+NHS 2017 NHS trusts: area prevalence for sickle cell and thalassaemia 
+https://www.gov.uk/government/publications/nhs -trusts -area -prevalence -for-sickle -cell-and-
+thalassaemia 
+ 
+NHS 2018 Guidance Antenatal screening Updated 6 July 2018 
+https://www.gov.uk/government/publications/handbook -for-sickle -cell-and-thalassaemia -
+screening/antenatal -screening 
+PHE 2018 
+NHS Sickle Cell and Thalassaemia Screening Programme 
+Information for fathers invited for a screening test for sickle cell disease and thalassaemia major 
+ 
+NHS Sickle Cell and Thalassaemia Screening Programme [20172] Sickle Cell 
+and Thalassaemia: Handbook for Laboratories. October 2017 
+https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_dat
+a/file/656094/Antenatal_Laboratory_Handbook.pdf 
+
+Antenatal Screening for Sick le Cell MP003 
+and Thalassaemia (RSCH PRH only ) 
+Page 26 of 33 
+Brighton and Sussex University Hospitals NHS Trust 23 Patient information 
+ 
+UK National Screening Committee [2008] ‘Screening Tests for You and Your 
+Baby’. Click on this link to view/ download a copy of the information leaflet ‘Screening for sickle 
+cell and thalassaemia in early pregnancy’ 
+Patient information : http://infectiousdiseases.screening.nhs.uk/public 
+ 
+24 Appendix A - Background information: Antenatal screening for sickle cell 
+and thalassaemia 
+ 
+Background 
+ 
+The NHS Sickle Cell & Thalassaemia (SC&T) Screening Programme was set up in England in 2001 
+following Government commitment in the NHS Plan (2000). 
+ 
+Sickle cell disease and Thalassaemia disorders, also known as haemoglobinopathies or haemoglobin 
+disorders, are autosomal recessive conditions affecting the haemoglobin in the red blood cells. They 
+are classified into 2 forms: qualitative or quantitative: 
+ 
+Sickle Cell disorders: These are qualitative disorders affecting the quality of haemoglobin produced. As 
+the structure of the globin chain is abnormal, they are also termed structural variants. The significant 
+haemoglobin variants are haemoglobin S (sickle), C, D (Punjab), E and O (Arab). This condition is 
+characterised by a chronic haemolytic anaemia, vaso -occlusion, pain of varying intensity, subsequent 
+organ damage, chronic ill health and reduced life expectancy .Sickle cell disease has a high mortality 
+and morbidity rate in young children if left untreated. 
+ 
+Thalassaemias are quantitative disorders, including alpha (α), beta (β), delta beta (δβ) and 
+haemoglobin Lepore, and affect the quantity of haemoglobin produced. This results in partial or no 
+production of the globin chains [which are of normal structure] that form the structure of haemoglobin 
+within the red blood cells. This can result in severe anaemia. Regular treatments, including blood 
+transfusions and chelation therapy, are required from a very early age to enhance quality of life and 
+long -term survival. 
+ 
+There are over 1000 known variants of these 2 forms, but most do not give any clinical symptoms. It is 
+possible to carry both conditions. An infant may inherit one form from each parent, which can give rise 
+to a more serious clinical situation. 
+ 
+These disorders are mainly found in individuals who have originated from Africa, Asia, the Caribbean, 
+the Middle East, and the Mediterranean, however because of migration and subsequent integration, 
+they can affect any ethnic group. 
+ 
+Antenatal Screening for Sick le Cell MP003 
+and Thalassaemia (RSCH PRH only ) 
+Page 27 of 33 
+Brighton and Sussex University Hospitals NHS Trust 25 Appendix B – Proforma for recording screening results at 10 days 
+ 
+BOOKING SCREENING RESULTS TO BE CHECKED 2 WEEKS AFTER TAKEN: 
+Clinic ______________________________[surgery / children’s centre] 
+ 
+Name, DOB, ID number 
+
+ Accepted 
+/declined Result Date 
+result MW 
+checking 
+Group & Rhesus 
+Hb 
+Sickle and thal 
+Rubella 
+Syphilis 
+HIV 
+Hep B 
+ 
+Downs screen Accepted / Declined Tick if transfer 
+booking: Anomaly scan Accepted / Declined 
+ Comments: results missing/ 
+repeat required/ decline 
+form sent/ referrals made? 
+
+ Gest at 
+booking MW at 
+booking 
+Date booked Date booking 
+bloods taken 
+
+ 26 Appendix C - CARE PATHWAY: Antenatal Screening for Sickle Cell 
+and Thalassaemia 
+
+ Provide written and verbal information and offer screening to all women at booking [Ideally < 10 weeks]. 
+Declin e 
+Complete FOQ and send with 
+sample to lab Accept 
+Send completed FOQ marked 
+‘declined’ to lab Known at -risk 
+couple 
+Baby’s father consents to screen Offer screening for baby’s 
+father Nothing 
+abnormal 
+detected Lab reports results 
+Inconclusive 
+result Carrier mother 
+Affected mother 
+[Hbo disorder] –
+refer to obs cons 
+Baby’s father unavailable or declines 
+NTS to screen Offer Pre 
+Natal 
+Diagnosis 
+Confirmed carrier 
+or affected in both 
+parents Nothing abnormal 
+detected 
+Accept Decline 
+Continue pregnancy 
+– write results on 
+newborn blood spot 
+screening card 
+See newborn blood spot 
+screening protocol Result reported – 
+parents informed Carrier or 
+normal 
+Termination – with 
+follow up support Baby affected –
+major Hbo 
+disorder. Pre-term Labour MP031 
+ 
+Page 29 of 33 
+Brighton & Sussex University Hospitals 
+ 27 Appendix D – Letter for Carrier Mums Inviting Dad for a Screening 
+Test 
+ 
+Dear (insert woman’s name) 
+ 
+Antenatal sickle cell and thalassaemia screening 
+ 
+Your test result is : (insert result) 
+ 
+The substance in your blood that carries oxygen around your body is called haemoglobin. You 
+had a blood test recently to check whether you carry a gene for unusual haemoglobin. The 
+test result shows that you are a (insert result) carrier. Being a carrier means that you are 
+healthy. You do not have a condition that requires any treatment and will never develop one. 
+ 
+Enclosed is a leaflet explaining about being a (insert result) carrier. 
+ 
+This result could have implications for your baby if the baby’s (delete as appropriate: 
+biological father/second biological parent) also carries a gene to make unusual haemoglobin. 
+For this reason we are inviting you and your baby’s (delete as appropriate: biological 
+father/second biological parent) to an appointment to discuss your test result. At that time, 
+we will offer the baby’s (delete as appropriate: father/second biological parent) a quick and 
+simple screening blood test for unusual haemoglobin. 
+ 
+Your joint appointment is on (insert date /time/place) 
+ 
+If either of you are unable to attend this appointment, please call (name and number) to let 
+us know and to arrange another appointment. 
+ 
+We have enclosed a letter and a leaflet for your baby’s (delete as appropriate: father/second 
+biological parent). Please could you pass this on to him? When considering his test, it is 
+important to know: 
+ 
+• Your baby’s father will not know if he is a carrier unless he has this specific blood test 
+• If both parents are carriers, there is a 1 in 4 (25%) chance that your baby could inherit 
+a haemoglobin disorder 
+• There are many different types of haemoglobin disorders - some more serious than 
+others. The most serious conditions are sickle cell disease and thalassaemia major 
+ 
+If you have any questions please do not hesitate to contact us. 
+ 
+Yours sincerely, 
+
+https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/422529/Let
+ter_for_carrier_mums_and_inviting_dad_for_screening_test_V1.0_2013_07_23.doc Pre-term Labour MP031 
+ 
+Page 30 of 33 
+Brighton & Sussex University Hospitals 
+ 28 Appendix E - letter inviting baby’s father for screening 
+ 
+Dear………………………… 
+ 
+Your invitation to screening for sickle cell and thalassaemia 
+ 
+Recent blood tests done antenatally have shown that the mother of your baby carries a gene 
+for unusual haemoglobin. Haemoglobin is the substance in your blood that transports oxygen 
+around your body. 
+ 
+We are inviting your baby’s mother (or if possible insert her name) to an appointment to 
+discuss this result. We would also like to invite you to attend at the same time so that we can 
+offer you a screening blood test. This quick and simple test will give you important 
+information about whether you are a carrier and if this could affect the health of your unborn 
+baby. 
+ 
+Your appointment is at: 
+Date, time, place 
+ 
+If you cannot make this appointment and would like to arrange another time or if you would 
+like to talk to us confidentially please call (HCP name and number). 
+ 
+Your blood test will show if you are also a carrier for unusual haemoglobin. If both parents are 
+carriers, there is a 1 in 4 (25%) chance that your baby could inherit a haemoglobin disorder. 
+Some of these disorders are serious – and include conditions such as sickle cell disease and 
+thalassaemia major. 
+You can decide whether or not to have this blood test but we strongly recommend that you 
+read the enclosed leaflet, Tests for dads. This explains about the test and why it is important 
+for your baby. 
+ 
+When thinking about the blood test, it is important to note: 
+• If you are a carrier, you are usually well. You will not know your carrier status unless 
+you have had a specific blood test 
+• Your baby can only inherit a haemoglobin disorder if both you and your baby’s mother 
+are carriers. 
+ 
+It is a simple blood test lasting just a few minutes. Your results are confidential to you and 
+your baby’s mother. They will only be used for the health care of you and your baby and will 
+not be passed to any other organisation 
+ 
+Yours sincerely, 
+
+https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/408715/Let
+ter_inviting_dad_for_screening_test_V1.0_2013_07.23.pdf Pre-term Labour MP031 
+ 
+Page 31 of 33 
+Brighton & Sussex University Hospitals 
+ 29 Appendix F - BSUH Contacts 
+ 
+BSUH designated programme leads for maternity services 
+Midwifery: Karen Gregory – Antenatal screening co -ordinator 
+Obstetrics: Jo Sinclair Consultant obstetrician 
+ 
+Leads for laboratory 
+Lab Leads Alison Laverick(Senior BMS) and Sue To (Manager). 
+Quality Officer Helen Frost. 
+Pathology Quality Manager John McBride. 
+ 
+Antenatal Screening midwives: 
+Antenatal Screening Co -ordinator at BSUH [cross site] 
+Karen Gregory karen.gregory12@nhs.netMobile: 07876 357 423 
+Office: 01273 696955 X67477 
+ 
+Antenatal Screening Support Midwives [BSUH] 
+ 
+Mel Sanders [part time] 
+Melanie.sanders1@nhs.net 
+Screening Office: PRH: 01444 441881 X 5404 
+Screening Office RSCH: 01273 696955 X 67477 Trust shared antenatal screening 
+NHS net email account 
+bsu-tr.antenatalscreening@nhs.net 
+ 
+Fetal Medicine Consultants at BSUH 
+Win Khine: w.khine@nhs.net Sec: Benedetto Lorusso X 64388 
+
+ Pre-term Labour MP031 
+ 
+Page 32 of 33 
+Brighton & Sussex University Hospitals 
+ 30 Appendix G - External Contacts 
+ 
+Cytogenetics [used by PRH and RSCH] 
+Cytogenetics Laboratory, Genetics Centre, Guys Hospital, 5th Floor Tower Wing, Great Maze 
+Pond, London, SE1 9RT Tel: 020 7188 1709 
+Fax: 020 7188 1697 
+
+DEPARTMENT OF HAEMATOLOGICAL MEDICINE 
+South Thames Regional Centre for Prenatal Diagnosis of Blood Disorders 
+Red Cell Centre 
+Kings College Hospital, Denmark Hill, London SE5 9RS Tel: 020 3299 4337 (office) 
+020 3299 2265 (lab) 
+Fax : 020 3299 1267 
+E-mail : pnd@kch.nhs.uk 
+Website: kingspath.co.uk/ 
+
+Public Health England leads the NHS Screening Programmes: 
+ 
+Screening Quality Assurance Service (South Regional Screening QA Team) 
+Public Health England South East 
+York House, Massetts Road, 
+Horley, Surrey, RH6 7DE 
+ 
+DD: 01138 248045 
+Fax: 01293 778888 
+ 
+https://www.nhs.uk/conditions/pregnancy -and-baby/screening -tests -abnormality -pregnant/ 
+
+ Pre-term Labour MP031 
+ 
+Page 33 of 33 
+Brighton & Sussex University Hospitals 
+ 31 Appendix H - Support groups and further information 
+ 
+Antenatal Results and Choices [ARC] 
+Helpline: 0845 077 2290 
+E-mail: info@arc -uk.org 
+Web site: www.arc -uk.org 
+
+UK Thalassaemia Society [UKTS] 
+Telephone: 020 8882 0011 
+Web site: www.ukts.org 
+E-mail: office@ukts.org 
+ 
+Sickle Cell Society 
+Telephone: 0208961 7795 / 8346 
+Web site: www.sicklecellsociety.org 
+
+APOGI (Accessible publishing of genetic information) 
+www.chime.ucl.ac.uk/APoGI

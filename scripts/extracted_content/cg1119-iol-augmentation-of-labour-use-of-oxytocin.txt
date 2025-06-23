@@ -1,0 +1,1762 @@
+# Extracted from: CG1119 IOL & Augmentation of Labour & Use of Oxytocin.pdf
+# Guideline ID: cg1119-iol-augmentation-of-labour-use-of-oxytocin
+# Content length: 86811 characters
+# Processing date: 1750066899.9093363
+
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 1 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+ 
+Induction and Augmentation of Labour and Use of Oxytocin Guideline 
+Summary statement: How does the document 
+support patient care? The purpose of this guideline is to provide good practice evidence 
+for staff in the care of women /people undergoing induction and / or 
+augmentation of labour 
+Staff/stakeh olders involved in development: Obstetric Consultants, Senior Midwives, Joint Obstetric Guidelines 
+Group. 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Labour Ward Lead Consultant , matrons, midwives 
+For use by: All Medical and Midwifery staff 
+Purpose: To provide evidence based guidance on induction of labour and use 
+of oxytocin 
+This document supports: 
+ Care Quality Commission Fundamental Standards (2017) , NICE 
+Inducing of Labour CG70 (2008) , NICE Intrapartum ca re for healthy 
+women and babies CG190 , NICE Intrapartum care for women with 
+existing medical conditions or obstetric complications and their 
+babies NG121 (2019) , NICE Insertion of a double balloon catheter 
+for induction of labour in pregnant women without pr evious 
+caesarean section (2015) 
+Key related documents: UHSussex ( SRH & WH ) Maternity Guidelines: Care of Women in 
+Labour , Intrauterine Death Including Induction for Fetal Abnormality , 
+Birth After Caesarean Section , Severe Pre - Eclampsia and 
+Eclampsia , Diabetes in Pregnancy , Preterm Labour and Birth 
+(including Preterm Pre -labour Rupture of Membranes) , Caesarean 
+Birth, Management of Women and Neonates with Risk Facto rs for 
+Neonatal Sepsis (including Group B Streptococcus) 
+Approved by: Joint Obstetric Guideline Group : 19th July 2023 
+Medicines Governance Committee: 4th April 2023 
+Approval date: Date Uploaded : 24th July 2023 
+Ratified by Board of Directors / Committee of 
+the Board of Directors Not Applicable – Divisional Ratification only required 
+Ratification Date: Not Applicable – Divisional Ratification only required 
+Expiry Date: October 2023 
+Review date: April 2023 
+If you require this document in ano ther format such as Braille, large print, audio or another 
+language please contact the Trusts Communications Team 
+Reference Number: CG1119 
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 2 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+ 
+Version Date Author Status Comment 
+1.0 January 2011 Labour ward lead 
+Consultant Archived New Trust -wide guideli ne 
+2.0 February 
+2011 Clinical Governance 
+(CNST Lead) Archived Admin. update 
+3.0 Dec 2011 CNST Midwife and IT, 
+Audit & Clinical 
+Effectiveness Midwife Archived Amendments made following risk 
+recommendations 
+4.0 January 2013 CNST Midwife and IT, 
+Audit & Cl inical 
+Effectiveness Midwife Archived Minor clarifications 
+5.0 November 
+2013 Consultant Obstetrician 
+& CNST Midwife 
+Archived 3 year review and inclusion of 
+Propess inductions discharged 
+overnight 
+6.0 2017 Oct JOGG Archived 3 yearly review with addition of 
+Pathways 
+7.0 January 2019 Matrons, ward 
+managers and 
+Consultant labour ward 
+leads 
+Clinical effectiveness 
+midwife 
+JOGG Archived Full 3 yearly review with addition of 
+new pathway. Addition of Cook’s 
+Ripening Balloon to pathway. 
+Appendices updated. 
+7.1 April 2019 Matrons, Clinical 
+effectiveness midwife 
+JOGG Archived Small changes to SOP for CRB 
+removal based upon PDSA cycle. 
+Addition of appendix 6 (CRB 
+removal sticker) 
+7.2 January 2020 HoM, inpatient 
+matrons , MDT meeting Archived Change of CRB volume to 40mls 
+(80ml total) following review of cord 
+prolapse incidents during 2019. 
+8 October 2020 Labour ward co -
+ordinator (Gillian 
+Coyle) Patient Safety 
+Midwife (Susanna 
+Colwood) , Stacie Glass 
+(Clinical effectiveness 
+midwife) Archived Updated following HSIB case 
+recommendations . 
+8.1 July 2021 Clinical Effectiveness 
+Support Midwife (J. 
+Collard) Archived 
+(not 
+made 
+live) Link added to CG20013 Preterm 
+Birth Risk Pathway in section 15.4. 
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 3 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+8.2 September 
+2021 Clinical Effectiveness 
+Support Midwife (J. 
+Collard) Archived Clarity added to 6.1 – only an 
+obstetrician can recommend sweeps 
+before 40 weeks. 
+13.1 All women undergoing IOL to 
+have fluid balance charts. 
+9.0 June 2022 A. McAvoy, Obstetric 
+Consultant 
+N. Maguire, Obstetric 
+Consultant 
+J. Collard, Clinical 
+Effecti veness Support 
+Midwife Archived  Update d to align with NICE NG207 
+Inducing labour 2021 
+ Offer IOL by 40 weeks for those 
+with a BMI >30kg/m2 added in line 
+with RCOG (2019) GTG no. 72 
+Care of Women with Obesity in 
+Pregnancy 
+9.1 January 2023 C. Parr, Clinical 
+Governance Lead Archived  Clarification of Bishop score . 
+ Dawes Redman can be used as 
+method of assessing fetal 
+wellbeing with use of dinoprostone 
+if no uterine activity. 
+ ARM p rimary method of induc tion 
+in line with NICE . 
+ Neonatal sepsis obs update d to 
+align with CG11100 Management 
+of risk factors for neonatal Sepsis. 
+ Statement regarding Dawes 
+Redman added. 
+9.2 July 2023 Claire Parr 
+Maternity Governance 
+Lead LIVE  Amendment to 11.9- low threshold 
+for scanning post balloon removal 
+and prior to ARM for women / 
+people with risk factors . 
+ 
+The interpretation and app lication of clinical guidelines will remain 
+the responsibi lity of the individual clinician. 
+ 
+If in doubt contact a senior colleague or expert . 
+
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 4 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+ 
+Contents 
+ 
+1.0 Aims ................................ ................................ ................................ .......................... 6 
+2.0 Scope ................................ ................................ ................................ ........................ 6 
+3.0 Responsibilities ................................ ................................ ................................ .......... 6 
+4.0 Abbreviations used in this guideline ................................ ................................ ........... 6 
+5.0 Introduction ................................ ................................ ................................ ................ 7 
+6.0 Information and decision making ................................ ................................ ............... 7 
+7.0 Methods of induction of labour ................................ ................................ ................. 10 
+7.1 Situations when induction of labour should not be routinely undertaken .................. 11 
+8.0 Assessment before commencing induction including membrane sweeps ................ 11 
+8.1 Bishop Score ................................ ................................ ................................ ........... 12 
+9.0 Membrane sweep ................................ ................................ ................................ .... 13 
+10.0 Required observations during IOL (prior t o established labour) ............................... 14 
+10.1 Maternal/birthing parent observations ................................ ................................ ...... 15 
+10.2 Fetal observations ................................ ................................ ................................ ... 15 
+11.0 Cervical Ripening Balloon ................................ ................................ ........................ 15 
+11.1 Situations where the CRB should not be used ................................ ......................... 15 
+11.2 Furthe r considerations ................................ ................................ ............................. 16 
+11.3 Criteria for outpatient CRB ................................ ................................ ....................... 16 
+11.4 Criteria for inpatient CRB ................................ ................................ ......................... 17 
+11.5 Insertion of Cervical Ripening Balloon Catheter ................................ ....................... 17 
+11.6 Removal of CRB ................................ ................................ ................................ ...... 17 
+11.7 Spontaneous ruptur e of membranes (SROM) and CRB ................................ .......... 17 
+11.8 Potential problems following CRB insertion ................................ ............................. 17 
+11.9 In the event the balloon falls out ................................ ................................ .............. 18 
+11.10 Active vaginal bleeding ................................ ................................ ............................ 18 
+11.11 Women/people who are assessed as unsuitable for ARM 12 hours post -CRB ........ 18 
+11.12 Urinary retention ................................ ................................ ................................ ...... 19 
+11.13 Cord presentation / prolapse ................................ ................................ .................... 19 
+12.0 Dinoprostone ( Prostin /Propess) ................................ ................................ .............. 19 
+12.1 Post dinoprostone (Prostin) administration ................................ .............................. 19 
+12.2 Potential side effects/maternal reaction ................................ ................................ ... 20 
+13.0 Artificial rupture of membranes (ARM) ................................ ................................ ..... 21 
+14.0 Use of intravenous (IV) oxytocin (Syntocinon) ................................ ......................... 21 
+14.1 Obstetric assessment prior to commencing IV oxytocin (Syntocinon) ...................... 21 
+14.2 Maternal and fetal observations during IV oxytocin (Syntocinon) infusion ................ 22 
+14.3 Continuous electronic fetal monitoring during IV oxytocin (Syntocinon) infusion ...... 22 
+14.4 Indications to stop IV oxytocin (Syntocinon ) infusion ................................ ................ 22 
+14.5 Oxytocin (Syntocinon) Infusion rate ................................ ................................ ......... 23 
+14.6 Use of IV oxytocin (Syntocinon) during second stage of labour ............................... 23 
+14.7 Women/people requiring fluid restriction ................................ ................................ .. 24 
+15.0 Special circumstances ................................ ................................ ............................. 24 
+15.1 Induction of preterm labour (prior to 37 weeks) with or without 
+rupture of membranes ................................ ................................ ............................. 24 
+15.2 Intrauterine fetal death ................................ ................................ ............................. 24 
+15.3 Fetal abnormality ................................ ................................ ................................ ..... 24 
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 5 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+15.4 Previous caesarean section ................................ ................................ ..................... 24 
+15.5 Diabetes ................................ ................................ ................................ .................. 25 
+15.6 Obesity ................................ ................................ ................................ .................... 25 
+15.7 Maternal/birthing parent request ................................ ................................ .............. 25 
+16.0 Pre-labour rupture of membranes at 37 we eks or over ................................ ............ 25 
+16.1 PROM at term with meconium stained liquor ................................ ........................... 26 
+16.2 PROM at term with Group B Streptococcus (GBS) ................................ .................. 26 
+16.3 Expectant management of lower risk PROM ................................ ........................... 26 
+17.0 Unsuccessful induction of labour ................................ ................................ ............. 26 
+18.0 Declining induction of labour for prolonged pregnancy ................................ ............. 27 
+19.0 Uterine hyper stimulation ................................ ................................ ......................... 28 
+20.0 Uterine ruptu re ................................ ................................ ................................ ......... 28 
+21.0 Audit and monitoring ................................ ................................ ................................ 29 
+References ................................ ................................ ................................ ......................... 29 
+Appendix 1: Cervi cal Ripening Balloon Pathway ................................ ................................ . 31 
+Appendix 2: Cervical Ripening Balloon Standard Operating Procedure (SOP) .................... 32 
+Appendix 3: Balloon ca theter insertion sticker for notes ................................ ...................... 34 
+Appendix 4: Balloon catheter removal sticker for notes ................................ ....................... 35 
+Appendix 5: CRB audit monitoring p roforma ................................ ................................ ....... 36 
+Appendix 6: Pre -labour Rupture of Membranes Pathway ................................ .................... 37 
+Appendix 7: Reduced volume oxytocin (Syntocinon) regime ................................ ............... 38 
+Appendix 8: Recommendation regarding use of Dawes Redman ................................ ........ 39 
+
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 6 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+
+Induction and augmentation of labour 
+and use of oxytocin guideline 
+ 
+1.0 Aims 
+ 
+ To provide clear ev idence -based guidance for midwives and obstetricians with 
+regard to indications for induction of labour and the process for induction in a 
+variety of clinical situations . 
+ To provide clear guidance on the process for augmentation of labour in the f irst 
+and second stage of labour . 
+ To ensure the best possi ble outcome for mother /birth parent and baby 
+ 
+2.0 Scope 
+ 
+This guideline applies to all midwives and obstetricians . 
+ 
+For induction of labour following intrauterine death please refer to CG1120 Intrauterine death 
+including induction for a fetal abnormality . 
+ 
+3.0 Responsibilities 
+ 
+Midwives and o bstetr icians: 
+ 
+ To access, read, understand and follow this guidance. 
+ To use their professional judgement in application of this guideline. 
+ 
+Management: 
+ 
+ To ensure the guideline is reviewed as required in line with Trust and National 
+recommendations. 
+ To ensure t he guideline is accessible to all relevant staff and disseminated widely. 
+ 
+4.0 Abbreviations used in this guideline 
+ 
+UH Sussex – University Hospitals 
+Sussex PPROM Preterm pre -labour rupture of 
+membranes 
+QDS Four times per day FSE Fetal scalp electrode 
+FHR Fetal heart rate CTG Cardiotocograph 
+IOL Induction of labour ARM Artificial rupture of membranes 
+DAU Day assessment unit SROM Spontaneous rupture of membranes 
+IV Intravenous VTE Venous Thromboembolism 
+BAC Birth after Caesarean PROM Prolonged Rupture of Membranes 
+IM Intramuscular VBAC Vaginal birth after caesarean 
+CRB Cervical Ripening Balloon MIS Maternity Information System 
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 7 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+ 
+5.0 Introduction 
+ 
+Population studies indicate that the risk of stillbirth increases from 1 per 3000 o ngoing 
+pregnancies at 37 weeks to 3 per 3000 ongoing pregnancies at 42 weeks and to 6 per 3000 
+ongoing pregnancies at 43 weeks. 
+ 
+NHS Mater nity Statistics, England - 2020 -21 - NHS Digital showed that 34 % of 
+women /people in England had their labours induced. 
+ 
+UH Sussex (SRH & WH) data for 2021 - 22 showed that of 4626 birthing women/people, 
+32.04 % (1482) had their labour induced. This compare s to 45% (2087) who had 
+spontaneous labour and 22.85% (1057) that had caesarean birth with no labour. 
+ 
+Of these women /people that were induced: 
+ 
+ 56.14 % (832) had a spontaneous vaginal birth . 
+ 27.80 % (412) had a caesarean section . 
+ 16.06 % (238) had an instru mental birth (medical assistance to birth vaginally) . 
+ 
+Staff should be aware that according to the MBRRACE -UK 2020 report on perinatal 
+mortality, women /people from some minority ethnic backgrounds or who live in deprived 
+areas have an increased risk of stillbirth and may benefit from closer monitoring and 
+additional support. The report showed that across all births (not just those induced): 
+ 
+• Compared with white babies (34/10,000), the stillbirth rate is 
+- More than twice as high in black babies (74/10,000) 
+- Around 50% higher in Asian babies (53/10,000) 
+• The stillbirth rate increases according to the level of deprivation in the area the 
+mother lives in, with almost twice as many stillbirths for women /people living in the 
+most deprived areas (47/10,000) compared with the least deprived areas 
+(26/10,000). 
+ 
+6.0 Information and decision making 
+ 
+At the booking appointment, the clinician should signpost the woman/person to online 
+maternity information . This in formation provision should be documented on the Maternity 
+Information System (MIS). 
+ 
+At 38 weeks w omen/people should be informed that most women/people will go into labour 
+spontaneously by 42 weeks. See table 1 below: 
+ 
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 8 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+ 
+Gestational age at which labour sta rted, as a proportion of labours 
+which started spontaneously 
+Gestational age 
+(weeks) Proportion of spontaneous 
+labours that started at this 
+gestational age Cumulative proportion of 
+spontaneous labours that 
+started by this gestational age 
+31 weeks and un der 2.40% 2.40% 
+32+0 to 36+6 weeks 5.30% 7.70% 
+37+0 to 37+6 weeks 5.10% 12.80% 
+38+0 to 38+6 weeks 12.10% 24.90% 
+39+0 to 39+6 weeks 25.40% 50.30% 
+40+0 to 40+6 weeks 32.50% 82.80% 
+41+0 to 41+6 weeks 16.20% 99.00% 
+42+0 weeks and over 0.90% 100% 
+Table 1: NHS Hospital Episode Statistics / Maternity Services Data 2019 -20 
+ 
+Explain to women/people that induction of labour is a medical inter vention that will affect 
+their birth options and their experience of the birth process. This could include that: 
+ 
+ The reasons for induction being offered. 
+ When, where, and how induction can be carried out. 
+ The risks and benefits of IOL in specific circum stances and the proposed induction 
+methods. 
+ The alternative options if the woman/ person chooses not to have an IOL with clear 
+documentation as to why the woman/person declines and the discussions that 
+have taken place along with plan of action (see Section 1 8.0). This should also 
+include a plan for follow up with senior involvement at regular intervals to give the 
+woman/person opportunities to discuss plan going forward. 
+ That induction may not be successful and what the woman’s options would be. 
+ The alternative options if the woman /person chooses not to have induction of 
+labour, or decides at a later stage, that she no longer wishes to proceed with the 
+induction process. 
+ The clinician should signpost the woman/person to online maternity information . 
+ Women/people should be informed when thei r IOL is booked that there is a 
+possibility that their induction may not be undertaken on the day offered 
+depending on the unit activity. 
+ The decision to delay any induction should be made jointly between the labour 
+ward coordinator and the obstetric consultant in line with escalation guidance. 
+ If an IOL is delayed, a plan should be made by the obstetric consultant and 
+documented in the Delayed Induction Book . This should include wheth er a CTG 
+should be offered (including frequency) whilst awaiting IOL. If the woman/person 
+is not admitted, they should be contacted every 6 hours by the co-ordinator to 
+update the situation and asked to ring Triage if they have any concerns regarding 
+thems elves or fetal wellbeing. 
+
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 9 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+ 
+It is also important that women/people are made aware that induction of labour involves: 
+ 
+ Vaginal examinations to assess the cervix are needed before and during 
+induction, to determine the best method of induction and to monit or progress. 
+ Their choice of place of birth will be limited, as they may be recommended 
+interventions (for example, oxytocin infusion, continuous fetal heart rate 
+monitoring and epidurals) that are not available for home birth or in midwife -led 
+birth unit s. 
+ There may be limitations on the use of a birthing pool. 
+ There may be a need for an assisted vaginal birth (using forceps or ventouse), 
+with the associated increased risk of obstetric anal sphincter injury (for example, 
+third- or fourth -degree perineal t ears). The woman/person should be made aware 
+that this risk also exists with a spontaneous onset of labour. 
+ Pharmacological methods of induction can cause hyperstimulation – this is when 
+the uterus contracts too frequently or contractions last too long, w hich can lead to 
+changes in fetal heart rate and result in fetal compromise. This can usually be 
+treated with a dose of terbutaline which can help to relax the uterus to stop the 
+contractions. 
+ The arrangements for support and pain relief as an induced lab our may be more 
+painful than a spontaneous labour. This should include all forms of analgesia and 
+a discussion of the risks and benefits of each. 
+ Their hospital stay may be longer than with a spontaneous labour. 
+ 
+All involved clinical staff need to invite the woman/person to ask questions and involve them 
+in any decision making. When offering induction of labour: 
+ 
+ Give pregnant women/people time to discuss this information with others (for 
+example, their partners, birthing companion or family) if they wish to do so before 
+making a decision. 
+ Ensure women/people have the opportunity to ask questions, and time to think 
+about their options. 
+ Recognise that women/people can decide to proceed with, delay, decline or stop 
+an induction. Respect the woman/person’s de cision, even if healthcare 
+professionals disagree with it, and do not allow personal views to influence the 
+care they are given. Recor d the woman/person’s decision on the Maternity 
+Information System (MIS) . 
+ Women/people should be made aware that there may be delays to the induction 
+process at times when acuity is high, and that this is to allow safe 1:1 care. 
+ 
+Induction of labour can be booked via labour ward and antenatal clinic and recorded on MIS . 
+ 
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 10 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+7.0 Methods of induction of labour 
+ 
+As of January 201 9, UH Sussex ( SRH & WH ) offers the following methods for preparing for 
+and inducing labour: 
+ 
+ Membrane sweep . 
+ Cervical balloon catheter for cervical ripening (see Section 1 1.0) – this is currently 
+first line choice fo r inducing labour however, this should be in discussion with the 
+woman/person to decide the most favourable method in their circumstances and 
+counselled on the risks vs benefits accordingly. 
+ Dinoprostone v aginal PGE2 (Prostin/ Propess) (see Section 1 2.0) 
+ Artificial rupture of membranes (see Section 1 3.0) 
+ Oxytocin ( Syntocinon ) IV infusion ( see Section 1 4.0) 
+ 
+The risks and benefits of different methods to ind uce labour should be discussed with the 
+woman/person. Include that: 
+ 
+ Dinoprostone vaginal PGE2 (Prostin/ Propess) can cause hyperstimulation (see 
+NICE Appendix C: Risks of hyperstimulation associated with different 
+pharmacological methods of inducing labour ). 
+ When using pharmacological methods of ind uction, uterine activity and fetal 
+condition must be monitored regularly. 
+ If hyperstimulation does occur, the induction treatment will be stopped by giving 
+no further medication, or by removal of vaginally administered products when 
+possible. Terbutaline m ay also be considered to help relax the uterus. 
+ There are differences in the ease with which different vaginal products can be 
+removed, for example, dinoprostone controlled -release vaginal delivery systems 
+(Propess) can be more easily removed than gel or vaginal tablets (Prostin). 
+ Hyperstimulation can be treated with tocolysis, but hyperstimulation caused by 
+misoprostol may be more difficult to reverse. Misoprostol is not currently 
+recommended for routine use in UH Sussex ( SRH & WH ). 
+ Mechanical methods are less likely to cause hyperstimulation than 
+pharmacological methods. 
+ Follow the manufacturers’ guidance on the use of Propess or Prostin preparations 
+for the induction of labour, including when to remove dinoprostone controlled -
+release vaginal delivery sys tems. 
+ 
+The following do not have available evidence to support the use as a method of inducing 
+labour: 
+ 
+ Oral dinoprostone 
+ Intravenous dinoprostone 
+ Extra -amniotic dinoprostone 
+or PGF2 
+ Intracervical dinoprostone 
+ Vaginal PGF2 
+ Intravenous oxytocin alone  Hyalur onidase 
+ Corticosteroids 
+ Oestrogen 
+ Relaxin 
+ Mifepristone (except in combination 
+for intrauterine fetal death) 
+ Vaginal nitric oxide donors. 
+ 
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 11 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+Be aware that the available evidence does not support the following methods for induction of 
+labour: 
+ Herbal supplemen ts 
+ Acupuncture 
+ Homeopathy 
+ Castor oil  Hot baths 
+ Enemas 
+ Sexual intercourse 
+
+7.1 Situations when induction of labour should not be routinely undertaken 
+ 
+ History of precipitate labour. 
+ Suspected large baby. 
+ Maternal /birthing parent request alone (without r isk factors). 
+ Fetal growth restriction with compromise (abnormal dopplers). 
+ Breech presentation, however it may be considered if the birth needs to be 
+expedited, and external cephalic version is unsuccessful, declined or 
+contraindicated, and the pregnant w oman/person chooses not to have a planned 
+caesarean birth. This would not be recommended at UH Sussex (SRH&WH) but if 
+requested by the woman/person would need to be discussed with obstetric 
+consultants. 
+ 
+The decision for IOL for women/people with additiona l risk factors (including IOL prior to 41 
+weeks) should be made by the obstetric consultant or there should be documented evidence 
+of a discussion with an obstetric consultant. 
+ 
+There should be a documented plan in the maternal notes to include timings of obstetric 
+reviews and plans for fetal surveillance . 
+ 
+8.0 Assessment before commencing induction including membrane sweeps 
+ 
+Before commencing induction of labour , including membrane sweeps, ensure the position of 
+the baby and the woman /person ’s condition ar e suitable for induction the following should be 
+performed. 
+ 
+ Assess maternal/birthing parent wellbeing. 
+ Review the antenatal notes in the Maternity Information System. 
+ Check the gestation dates by the dating scan and the indication for induction of 
+labour. 
+ Confirm no evidence of a low -lying placenta on previous scans before membrane 
+sweeping and induction of labour. 
+ Abdominally assessing the level and stability of the fetal head in the lower part of 
+the uterus at or near the pelvic brim. 
+ Confirming a normal fetal heart rate pattern using either intermittent auscultation if 
+low risk or antenatal cardiotocography interpretation (until Dawes Redman criteria 
+met) if risk factors present. 
+ Confirming the absence of significant uterine contractions (not Braxton -Hicks) 
+using cardiotocography or palpation if cardiotocograph is not indicated. Be mindful 
+that a toco does not indicate strength or duration of contraction, factors such as 
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 12 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+misplacement or maternal position can fail to detect contractions accurately. 
+Manual palpation of contractions should always be performed assessing 
+frequency, strength and resting tone between contractions, and this assessment 
+documented. 
+ The midwife should ensure that women/people have a chance to ask questions 
+and that informed consent i s gained and documented in the maternal/birthing 
+parent notes. 
+ 
+For progression to dinoprostone (Prostin/Propess ) or Cervical Ripening Ballon or oxytocin 
+(syntocinon ) infusion also perform: 
+ 
+ National guidance recommends carrying out an ultrasound scan if there are any 
+concerns about the position of the baby (for example, if it might be in the breech 
+position). At UH Sussex ( SRH & WH ) a presentation scan is recommended prior 
+to each induction of labour. 
+ Confirming a normal fetal heart rate pattern using ant enatal cardiotocography 
+interpretation (Dawes Redman criteria met) . 
+ Registrar or consultant review for any woman/person with medical, obstetric or 
+social risk factors. For women/people who are assessed as high risk, induction of 
+labour should be obstetrici an-led. 
+ Any concerns regarding this need to be communicated to the Labour Ward 
+coordinator who will discuss the case with the obstetric registrar or consultant on 
+Labour Ward. 
+ Commence the ‘Labour Risk Assessment’ within the labour care record. This 
+includes maternal/birthing parent and fetal observations as well as a review of the 
+antenatal notes and Medway. 
+ Presentation scan to assess for undiagnosed breech . 
+ 
+8.1 Bishop Score 
+ 
+ The Bishop Score is a group of measurements made by doing a vaginal 
+examinati on, and is based on the station, dilation, effacement (or length), position, 
+and consistency of the cervix. 
+ During this preliminary vaginal examination, obstetricians and midwives should 
+palpate for umbilical cord presentation and avoid dislodging the baby 's head. 
+ The Bishop score is a numerical value obtained by doing a vaginal examination, 
+and is based on the dilation, effacement (or length), position and consistency of 
+the cervix and the station of the head with respect to the ischial spines of the 
+pelvis. A score of 8 or more generally indicates that the cervix is ready to dilate, 
+(previously the terms 'ripe' or 'favourable' were widely used) and when there is a 
+high chance of spontaneous labour, or response to interventions made to induce 
+labour. For th e purposes of this guideline, a Bishop score of less than or equal to 
+6, or a score greater than 6, was used to help determine choice of 
+pharmacological or mechanical methods to induce labour. ( NICE 2021 ) 
+
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 13 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+ BISHOP SCORE 
+Cervical Feature O 1 2 3 
+Position Post centre Anterior - 
+Consistency Firm med Soft - 
+Length (cm) 3 2 1 0 
+Dilatation (cm) 0 1-2 3-4 >4 
+Station to spines -3 -2 -1 0 
+ 
+For women in whom the Bishop Score is assessed as ‘ favourable’ or more than 6, artificial 
+rupture of membranes , followed by and intravenous oxytocin infusion can be considered as 
+a primary method of inducing labour . (See section 13.0) 
+ 
+For women/people in whom the Bishop Score is assessed as 6 or less, a Cervical Ripening 
+Balloon Catheter (CRB) will be offered. (See section 11.0) 
+ 
+If the CRB is not recommended, for example high head, or cannot be inse rted, offer 
+induction of labour with dinoprostone as vaginal tablet, vaginal gel (Prostin) or controlled -
+release vaginal delivery system (Propess). ( See section 12.0) 
+ 
+9.0 Membrane sweep 
+ 
+At the 38 week antenatal appointme nt, pregnant women/people should be offered 
+information about the risks associated with pregnancies that last longer than 42 weeks, and 
+their options. The information should cover: 
+ 
+ Membrane sweeping makes spontaneous labour more likely, and so reduces th e 
+need for formal induction of labour to prevent prolonged pregnancy. 
+ What the membrane sweep procedure involves and that it is a vaginal 
+examination to assess the readiness of the cervix (recorded as the Bishop score) 
+will help to decide which method of induction they will be offered first. 
+ Discomfort and vaginal bleeding are possible from the procedure. 
+ Induction of labour offered between 41+0 and 42+0 weeks due to increasing 
+likelihood of caesarean birth, the baby needing admission to a neonatal intens ive 
+care unit and increased likelihood of stillbirth and neonatal death. (See table 2 
+below) 
+ Induction of labour from 41+1 weeks may reduce these risks, but the impact of 
+induction on their birth experience should also be considered when making their 
+decis ion. 
+Outcomes Induction of 
+labour at 39 
+weeks Induction of 
+labour at 40 -42 
+weeks Risk difference 
+Caesarean birth About 1,860 per 
+10,000 
+women /people 
+would be About 2,220 per 
+10,000 
+women /people 
+would be About 360 more women /people 
+per 10,000 whose labour was 
+induced at 40 -42 weeks would be 
+expected to have a caesarean 
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 14 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+Table 2: Risks associated with different induction of labour timing strategies NICE 2021 
+ 
+Pregnant women/people aiming for a vagi nal birth should be offered a vaginal examination 
+for membrane sweeping from 39 weeks, additional sweeps may be offered if labour does not 
+start spontaneously following the first sweep. 
+ 
+ An obstetrician may make a plan with the woman/person for sweeps bef ore 39 
+weeks if medically indicated; this should be fully documented on MIS . This needs 
+to be decided on an individual basis. 
+ Additional membrane sweeping may be offered if labour does not start 
+spontaneously. 
+ Sweeps can be done in the community or hosp ital setting by midwives or 
+obstetricians. 
+ 
+Women/people who have BMI 30 or more: 
+ 
+ Women/people with a BMI 30 or more should have IOL discussed at 36 -38 weeks 
+and be offered IOL by 40 weeks. Elective induction of labour at term in obese 
+women/people may r educe the chance of caesarean birth without increasing the 
+risk of adverse outcomes; the option of induction should be discussed with each 
+woman/person on an individual basis. RCOG Green -top Guideline No. 72 (2018) 
+ 
+10.0 Required observations during IOL (prior to established labour) 
+ 
+Women/people undergoing IOL should be made aware to contact their midwife, maternity 
+unit (if an out -patient IOL) or obstetrician: 
+ 
+ When contractions begin . 
+ Contractions start (in an agreed timeframe, depending on the method used) . 
+ Membranes rupture . 
+ PV bleeding . 
+ Any other concerns, such as reduced or altered fetal movements, excessive pain 
+or uterine contractions, side -effects or loss o f the pessary/CRB. 
+ expected to 
+have a 
+caesarean birth 
+(so 8,140 would 
+not). expected to 
+have a 
+caesarean birth 
+(so 7,780 would 
+not). birth; so for 9,640 per 10,000 the 
+outcome would be the same 
+irrespective of the timing of 
+induction. 
+NICU admission About 1,170 per 
+10,000 babies 
+would be 
+expected to be 
+admitted to 
+NICU (so 8,830 
+would not). About 1,300 per 
+10,000 babies 
+would be 
+expected to be 
+admitted to 
+NICU (so 8,700 
+would not). About 130 more babies per 
+10,000 whose mothers /birthing 
+parents ' birth was induced at 40 -
+42 weeks would be expected to 
+be admitted to NICU; so for 9,870 
+the outcome would be the same 
+irrespective of the timing of 
+induction. 
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 15 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+10.1 Maternal /birthing parent observations 
+ 
+ Maternal /birthing parent observations must include an assessment of temperature, 
+pulse, and blood pressure and respiration rate on admission for IOL. 
+ A fluid balance chart should be commend ed for all women/people undergoing 
+induction. (See CG21009 Maternity Fluid Management as an in patient or in 
+labour ). 
+ Antenatal inpatients should have a m inimum of 4 -hourly observations which 
+should be recorded on the MEOWS chart. 
+ 
+10.2 Fetal observations 
+ 
+ Observe fetal movements. 
+ Abdominal palpation to establish presentation, lie, and engagement. 
+ Four-hourly assessment of fetal wellbeing with auscultation of fetal heart or CTG if 
+indicated (see CG1116 Fetal Monitoring Guideline ). 
+ Risk assessment based on individual clinical context. 
+ 
+Once in established labour commence care as per CG1196 Care in labour 
+ 
+11.0 Cervical Ripening Balloon 
+ 
+The CRB is the recommended method of cervical ripening at UH Sussex ( SRH & WH ) 
+unless otherwise indicated. 
+ 
+The woman/person should be informed that the CRB works over a 12 -hour period to ripen 
+the cervix mechanically prior to artificial rupture of membranes (ARM) and a s such the next 
+planned examination will not be performed until 12 hours after insertion unless indicated. 
+ 
+11.1 Situations where the CRB should not be used 
+ 
+ Placenta praevia, vasa praevia, or placenta percreta . 
+ Abnormal lie or breech . 
+ Prolapsed umbilical cord. 
+ Previous hysterotomy, classic uterine incision, myomectomy or any other full -
+thickness upper segment uterine incision (including uterine perforation) 
+ Pelvic structural abnormality 
+ Active primary genital herpes infection 
+ Invasive cervical cancer 
+ Abnor mal fetal heart -rate patterns 
+ Any contraindication to labour induction 
+ Ruptured membranes 
+(Cook Medical G19891 - BALLOON, CERVICAL RIPENING accessed 21/02/22) 
+
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 16 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+11.2 Further considerations 
+ 
+Cook Medical G19891 - BALLOON, CERVICAL RIPENING recommends that CRB should 
+not be used in the following circumstances however this may be considered on an individual 
+basis: 
+ Multiple gestational pregnancy 
+ Polyhydramnios 
+ Presenting part above the pelvic inlet 
+ Severe maternal hypertension 
+ Previous lower segment caesarean birth 
+ 
+11.3 Criteria for outp atient CRB 
+ 
+ The benefits and risks of returning home as an outpatient should be discussed 
+with the woman/person, and their decision respected. 
+ Women/people should be made aware that timing of CRB removal and 
+subsequent planned ARM may be influenced by acu ity on labour ward. 
+ Social considerations - the baby of the woman/person should not be subject to a 
+Child Protection Plan. Discuss plan of care of women/people with babies on a 
+Child Protection Plan with the safeguarding team and community midwife. 
+ Gestat ional age of at least 38 weeks. 
+ Have the capacity to consent . 
+ The woman /person should have birth partner who will stay with them at home on 
+the day . 
+ The woman /person should have access to a working phone. 
+ Cephalic presentation – the fetal head must be enga ged in the pelvis . 
+ The woman/person must be happy to go home and have transport to return. 
+ Consideration should be given to the distance from home, and road/weather 
+conditions. 
+ Normal cardiotocograph (CTG) pre and post insertion of the CRB. Dawes Redman 
+analysis can be used pre and post CRB insertion as long as there are no palpable 
+or reported uterine activity . 
+ 
+A plan for outpatient CRB can be made on an individual basis for women /people having 
+consultant -led care with medical or obstetric conditions that do not increase their risk during 
+induction. The discussion must be documented on MIS . 
+ 
+MIS must be reviewed by the on -call obstetric consultant to check suitability for discharge 
+home following the insertion of the CRB. 
+ 
+Ensure the woman /person is aware of both the reasons to contact the hospital and the time 
+to return and ensure DS has an accurate contact number for the woman /person . 
+ 
+They should be given a time to return to Labour Ward 12 hours later and this should be 
+booked through the Labour Ward co ordinator. The Labour Ward coordinator must take these 
+women /people into account when they are assessing acuity as they are not suitable for 
+divert in cases of unit escalation. An assessment should be undertaken at 12 hours and if 
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 17 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+induction cannot proceed immediately due to acuity there must be a discussion with the co -
+ordinator and obstetrician, this discussion should be fully documented on MIS including any 
+phone calls made by the woman/person or by the mate rnity unit to the woman/ person. 
+ 
+11.4 Criteria for inpatient CRB 
+ 
+ Women /people risk assessed as requiring consultant -led care and/or risk factors 
+on assessment should be admitted as an inpatient on the Maternity Ward for 
+observations throughout. 
+ Low risk women /people being induced solely for prolonged pregnancy (between 
+41+0 and 42 weeks gestation) who have chosen to remain in hospital should be 
+admitted to the Antenatal Ward . 
+ 
+11.5 Insertion of Cervical Ripening Balloon Catheter 
+ 
+ Perform assessment from section 8.0. 
+ See Appendix 2 for standard operating procedure. 
+ 
+11.6 Removal of CRB 
+ 
+ See Appendix 2 for standard operating procedure. 
+ Commence IV oxytocin ( Syntocinon ) following ARM (see section 14.0). 
+ A personalised plan to be made if ut erine activity present in multi parous 
+women /people e.g. mobilising for 1 -2 hours before ARM. This plan should be 
+clearly documented on MIS . 
+ 
+11.7 Spontaneous rupture of membranes (SROM) and CRB 
+ 
+If SROM occurs prior to induction, CRB should not be used. If labour augmentation is 
+required with prostaglandins then Prostin should be prescribed and administered. 
+ 
+If SROM occurs after CRB has been inserted it should be remov ed, observe uterine activity, 
+assess the fetal wellbeing with a CTG and perform a full set of maternal /birthing parent 
+observations (consider if VE indicated as part of these observations). If there are no fetal 
+concerns and uterine activity is insignifica nt, an IV oxytocin ( Syntocinon ) infusion should be 
+commenced as soon as possible after removal of the CRB. 
+ 
+If the woman/person is at home, they should be invited into the unit for assessment, if the 
+woman/person declines this, it should be documented on M IS. 
+ 
+11.8 Potential problems following CRB insertion 
+ 
+Risks associated with use of the Cervical Ripening Balloon and labour induction may 
+include, but are not limited to: 
+ Placental abruption 
+ Uterine rupture 
+ Spontaneous rupture of membranes 
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 18 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+ Spontaneous ons et of labour 
+ Device expulsion 
+ Device entrapment and/or fragmentation 
+ Maternal discomfort during and after insertion 
+ Failed dilation or need for caesarean birth 
+ Cervical laceration 
+ Bleeding 
+ Risk of pre -term labour and birth in subsequent pregnancy 
+(Cook Medical G19891 - BALLOON, CERVICAL RIPENING accessed 21/02/22) 
+ 
+11.9 In the event the balloon falls out 
+ 
+If at any point the CRB falls out, an ass essment should be performed to ARM and IV 
+oxytocin ( Syntocinon ) started if there is obvious uterine activity. 
+ 
+If the woman/person is at home, they should be invited into the unit for assessment, if the 
+woman/person declines this, it should be documented on MIS. 
+ 
+There should be low threshold for a presentation scan following balloon removal/falling out 
+and prior to ARM for all women/people with risk factors such as: raised BMI, high head, 
+borderline polyhydramnios. 
+ 
+11.10 Active vaginal bleeding 
+ 
+Active v aginal bleeding requires an urgent obstetric registrar or consultant review, 
+commencement of CTG and immediate removal of the CRB. 
+ 
+If women /people are at home when the bleeding occurs they should phone the maternity unit 
+for advice. They should be asked to attend Labour Ward immediately or call an ambulance if 
+substantial bleeding. This advice should be documented clearly on MIS . 
+ 
+11.11 Women /people who are assessed as unsuitable for ARM 12 hours post -CRB 
+ 
+The obstetrician should consider, discuss and do cument any of the following options with the 
+woman /person : 
+ 
+ ARM (if possible) 
+ Rest for 24 hours 
+ Use of Prostin (BNF guide for dosing) 
+ Caesarean section 
+ 
+Decision about further management should be in accordance with the woman /person ’s 
+wishes, and should take into account the clinical circumstances. 
+ 
+The obstetrician should agree and document an individualised management plan following 
+discussion with the woman /person . 
+ 
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 19 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+11.12 Urinary retention 
+ 
+In some women /people , the CRB may cause temporary urinary retention due to the 
+presence of the uterine balloon. If this occurs, the uterine balloon can be deflated to 20mls . 
+In the presence of urinary retention, the midwife shou ld discuss the plan of care with a 
+registrar / consultant. 
+ 
+11.13 Cord presentation / prolapse 
+ 
+In December 2019, a number of cord presentation/prolapse incidences were investigated 
+following CRB for induction of labour. Although there was no direct link to the use of the 
+balloon, it was decided via multi -disciplinary team decision to reduce the CRB volume to 
+40mls (for each uterine and vaginal balloon) to see if the volume was causing head 
+displacement. It is the responsibility of the assessing professio nal to do thorough abdominal 
+and vaginal examinations prior to performing an ARM for suitability. Findings, judgements, 
+and actions taken should be documented in detail on MIS . 
+ 
+Carry out continuous cardiotocography during induction after the membranes ha ve ruptured, 
+if the presenting part is not stable and not well -applied to the cervix. In this situation, discuss 
+the risks and benefits of induction of labour with the woman /person , and if necessary 
+consider caesarean birth. If the presenting part stabilis es and the cardiotocogram is normal, 
+use intermittent auscultation unless there are clear indications for further cardiotocography. If 
+the woman/person is at home, they should be invited into the unit for assessment, if the 
+woman/person declines this, it s hould be documented on MIS. 
+ 
+12.0 Dinoprostone ( Prostin /Propess ) 
+ 
+If deemed more appropriate, dinoprostone Prostin gel may be administered and should be 
+inserted into the posterior fornix of the vagina. Dinoprostone Propess ® may be kept in stock 
+for emer gency use when Prostin is unavailable – see BNF here . 
+ 
+Use of dinoprostone (Prostin ) should be discussed on an individual basis with the 
+woman /person and a senior obste trician. 
+ 
+Prostin E2® gel dosing r egime (BNF) : 
+ 
+ Primigravida (unfavourable Bishop Score): 2mg gel inserted into posterior fornix, 
+followed by 1 -2 mg gel if required af ter 6 hours. Maximum 4 mg per course. 
+ Multiparous: 1mg gel inserted into posterior fornix, followed by 1 -2 mg gel if required 
+after 6 hours. Maximum 3mg per course. 
+ 
+12.1 Post dinoprostone ( Prostin ) administration 
+ 
+ CTG should be continued for a minimum of 20 minutes . Dawes Redman analysis 
+can be used pre and post dinoprostone (Prostin) as long as there are no palpable 
+or reported uterine activity. Please see Fetal Heart Monitoring (including Fetal 
+Blood Sampling) guideline. 
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 20 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+ Following this, if CTG has met criteria, the woman/person can then move around, 
+eat and drink as normal and should be encouraged to be as active as possible. 
+ The woman/person c an then be transferred to the antenatal ward for 4 hourly fetal 
+wellbeing assessments. 
+ The woman/person should be advised to inform the midwife if she has any 
+concerns, increase in contractions, SROM, vaginal bleeding or decreased fetal 
+movements. 
+ Bishop Score should be reassessed 6 hrs after insertion of Prostin, to monitor 
+progress, with a view to performing an ARM or senior obstetrician review. 
+ 
+When uterine contractions begin after administering dinoprostone, assess fetal wellbeing 
+and uterine contract ions with intrapartum cardiotocography interpretation and: 
+ 
+ If the cardiotocogram is confirmed as normal, review the individual circumstances 
+and, if considered low risk, use intermittent auscultation unless there are clear 
+indications for further cardioto cography. 
+ If the fetal heart rate is abnormal or there are excessive uterine contractions: 
+- Continue or restart continuous cardiotocography. 
+- Do not administer any more doses. 
+- Remove any vaginal pessaries if possible. 
+- Consider terbutaline . 
+- Seek o bstetric review. 
+ 
+If labour has not established 6 hours after Prostin gel and ARM is not possible, or there are 
+any problems, the woman/person should be referred for obstetric review. 
+ 
+Labour Ward should be informed and transfer arranged if the following occur: 
+ 
+ Labour becomes established 
+ SROM 
+ Evidence of fetal compromise 
+ Contractions greater than 5 in 10 minutes 
+ Vaginal bleeding 
+ Maternal /birthing parent complications 
+ Decreased fetal movements. 
+ 
+12.2 Potential side effects/maternal reaction 
+ 
+ Nausea or vo miting 
+ Diarrhoea 
+ Hypotension 
+ Maternal tachycardia 
+ Genital oedema 
+ Hyperstimulation (see guidance on use of Terbutaline in Section 1 9.0) 
+ 
+If there is any maternal reaction to Prostin the m idwife providing ca re must infor m the Labour 
+Ward c oordinator and discuss with the on -call obstetric r egistrar. 
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 21 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+
+13.0 Artificial rupture of membranes (ARM) 
+ 
+For pregnant women/ people with a Bishop Score of 6 or more discuss with them that they 
+can have an amniotomy as a primary method of induction of labour . It is advisable to 
+commence an oxytocin infusion immediately , unless they are having uterine contractions . If 
+a woman/ person chooses to delay starting this , they should be made aware that this may 
+mean labour takes longer and there may be an incre ased risk of neonatal infection (NICE 
+2021 ). If a pregnant woman/ person has chosen not to commence an oxytocin infusion a 
+discussion should be had with a senior obstetrician and individ ual plan made as to whether 
+the woman or person stays on labour ward or transfers to the antenatal ward. This 
+discussion should be fully documented on MIS . 
+ 
+14.0 Use of intravenous (IV) oxytocin (Syntocinon) 
+ 
+IV Syntocinon should be used: 
+ 
+ When in -coordin ate contractions or failure to progress in spontaneous labour is 
+diagnosed (see Care in Labour Guideline ). 
+ During the induction of labou r process (in the absence of membranes). 
+ 
+IV oxytocin ( Syntocinon ) should not be commenced within 6 hours 
+of Prostin administration 
+IV oxytocin ( Syntocinon ) must be prescribed by a senior obstetrician/ 
+consultant 
+for all women/people 
+ 
+14.1 Obstetric a ssessment prior to commencing IV oxytocin ( Syntocinon ) 
+ 
+A senior obstetrician should perform and document an assessment and individualised 
+management plan in the labour record prior to commencement of IV oxytocin ( Syntocinon ). 
+This may include the followin g: 
+ 
+ Parity 
+ Maternal or fetal risk factors 
+ Review of CTG 
+ Abdominal palpation 
+ Cervical assessment 
+ Dose schedule for oxytocin ( Syntocinon ), including frequency of increment. 
+ When oxytocin ( Syntocinon ) should be stopped. 
+ Monitoring arrangements for the woman/ person and fetus. 
+ Time of next re -assessment. 
+ 
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 22 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+ 
+14.2 Maternal and fetal observations during IV oxytocin ( Syntocinon ) infusion 
+ 
+ A baseline CTG should be taken at least 30 mins prior to commencing oxytocin 
+(Syntocinon ). 
+ All women/people with oxytocin ( Syntocinon ) must have continuous CTG. 
+ Apply a fetal scalp electrode (FSE) with consent if external monitoring is 
+ineffective. 
+ Record maternal pulse hourly and blood pressure, respirations and temperature 4 
+hourly (more often if any evidence of hypertension). 
+ Fluid balance hourly with 4 hourly cumulative balance as per CG21009 Maternity 
+fluid management as an in -patient or in labour 
+ Commence partogram when starting oxytocin ( Syntocinon ). 
+ The woman/person should be offered a vaginal examination 4 hours after 
+commencing oxytocin ( Syntocinon ) in established labour. 
+ If there is less than 2 cm progress after 4 hours of oxytocin ( Syntocinon ), further 
+obstetric review is required to consider caesarean section. 
+ If there is 2 cm or more progress, vaginal examinations should be performed 4 
+hourly. 
+ Discuss maternal analgesia choices and review as required. 
+ 
+14.3 Continuous electronic f etal monitoring during IV oxytocin ( Syntocinon ) 
+infusion 
+ 
+If the FHR trace is normal, oxytocin (Syntocinon ) may be continued until the woman/person 
+is experiencing 4 or 5 contractions every 10 minutes. Oxytocin ( Syntocinon ) should be 
+reduced if contraction s occur more frequently than 5 contractions in 10 minutes. 
+ 
+If the FHR trace is classified as suspicious, this should be reviewed by an obstetrician and 
+the oxytocin ( Syntocinon) dose should only be increased to achieve 4 or 5 contractions 
+every 10 minutes . 
+ 
+If the FHR trace is classified as pathological, oxytocin ( Syntocinon) should be stopped and a 
+full assessment of the fetal condition undertaken by an obstetrician before oxytocin 
+(Syntocinon) is recommenced. 
+ 
+14.4 Indications to stop IV oxytocin (Synt ocinon ) infusion 
+ 
+ Pathological CTG (or other fetal concerns). 
+ Prior to transfer to theatre for emergency birth (may be recommenced once in 
+theatre e.g. for instrumental birth). 
+ 
+This should be documented on MIS . Urgent obstetric review is required with the above 
+indications. 
+
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 23 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+14.5 Oxytocin ( Syntocinon ) Infusion rate 
+ 
+IV oxytocin ( Syntocinon ) will be prescribed as: 
+10 international units oxytocin ( Syntocinon ) in 
+500mls Normal Saline 
+ 
+TIME RATE DOSE 
+Start 3 ml/hr 1 milliunits/min 
+30 mins 6 ml/hr 2 milliunits /min 
+60 mins 12 ml/hr 4 milliunits /min 
+90 mins 24 ml/hr 8 milliunits /min 
+120 mins 36 ml/hr 12 milliunits /min 
+150 mins 48 ml/hr 16 milliunits /min 
+180 mins 60 ml/hr 20 milliunits /min 
+ 
+Commence infusion at 3mls per hour. 
+ 
+ Increase the infusi on rate every 30 minutes until contractions are 4 -5 in 10 minutes . 
+ Where contractions exceed 5 in 10 minutes, reduce oxytocin ( Syntocin on), inform 
+labour ward Co -ordinator and consider tocolysis using Terbutaline 0.25 mg 
+subcutaneously . 
+ 
+If further increas e needed, this should be discussed with the available registrar or 
+consultant. 
+ 
+TIME RATE DOSE 
+210 mins 72 ml/hr 24 milliunits /min 
+240 mins 84 ml/hr 28 milliunits /min 
+270 mins 96 ml/hr 32 milliunits /min 
+ 
+14.6 Use of IV oxytocin ( Syntocinon ) during second stage of labour 
+ 
+If a woman /person reaches full cervical dilatation and the contractions are felt to be 
+inadequate ; or they have had a prolonged 1st stage, they must be reviewed early in the 
+second stage (or, ideally in late first stage) by the obst etric registrar or consultant for the 
+consideration of a oxytocin ( Syntocinon) infusion. 
+ 
+If starting oxytocin ( Syntocinon ) in the second stage, the infusion rate can start at 12 
+ml/hr. 
+
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 24 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+14.7 Women/people requiring fluid restriction 
+ 
+For women/people on fluid restriction due to severe pre -eclampsia, use modified oxytocin 
+(Syntocinon ) regime (see Appendix 7 ). 
+
+15.0 Special circumstances 
+15.1 Induction of preterm labour (prior to 37 weeks) with or without 
+ ruptur e of membranes 
+ 
+It is important that a consultant obstetrician or senior registrar fully counsel’s women /people 
+when IOL is indicated prior to or at 37 weeks gestation including indication, methods, and 
+the risk / benefits. 
+ 
+If the fetal head is not suffi ciently engaged into the pelvis prior to induction, options should 
+be carefully considered and discussed with the woman /person on an individual basis to 
+ensure the best outcome. 
+ 
+Sensitive consideration should be applied for women /people induced due to pr evious 
+pregnancy loss, ensuring they are fully counselled on the risks and benefits of induction and 
+gestation of induction. 
+ 
+Please see CG20013 Preterm birth risk pathway for managing preterm birth. 
+ 
+15.2 Intrauterine fetal death 
+ 
+Where intrauterine fetal death has been confirmed, care should proceed in accordance with 
+the guideline for intra -uterine fetal death. See CG1120 Intrauterine death including i nduction 
+for a fetal abnormality 
+ 
+15.3 Fetal abnormality 
+ 
+In cases where there is a known fetal abnormality the neonatal team should be involved 
+before commencing IOL. The woman/person (and partner where appropriate) and the 
+midwife providing care should be fully involved in these discussions and the decisions made . 
+ 
+15.4 Previous caesarean section 
+ 
+The plan for IOL as documented within the Birth After Cae sarean Section Guideline should 
+be followed. Use of a CRB can be considered . (See section 11.0) 
+ 
+Advise women/people that they can choose not to have induction of labour or caesarean 
+birth, even when it may benefit their or their baby's health. 
+
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 25 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+15.5 Diabetes 
+ 
+Timing of IOL for diabetes should be managed in accordance with the Diabetes in 
+Pregnan cy Guideline and the plan documented on MIS . 
+ 
+15.6 Obesity 
+ 
+Elective induction of labour by 40 weeks in women with a BMI 30kg/m2 or more may reduce 
+the chance of caesarean birth without increasing the risk of adverse outcomes; the option of 
+induction sho uld be discussed with each woman on an individual basis. RCOG (2018) 
+Green -top Guideline No. 72 
+ 
+15.7 Maternal /birthing parent request 
+ 
+Induction of labour should not ro utinely be offered on maternal /birthing parent request alone 
+prior to 39 weeks gestation. This decision must be undertaken by, or following consultation 
+with, a senior obstetrician . 
+ 
+Women /people requesting IOL for non -medical reasons should be seen in th e hospital 
+Antenatal Clinic to fully discuss the risks and benefits of their request. They should be made 
+aware that early IOL carries an increased risk of failure and requirement for instrumental 
+birth. Early IOL should be discouraged where possible. 
+
+16.0 Pre-labour rupture of membranes at 37 weeks or over 
+ 
+If spontaneous rupture of membranes over 37 weeks is reported without contractions the 
+woman /person should be assessed as soon as possible (home assessment or to attend the 
+hospital out of hours). (See appendix 6 ) Complete the BSOTs ‘Antenatal Triage assessment 
+care for ruptured membranes’. 
+ 
+Where women/people have additional risks consider immediate assessment. 
+ 
+ Fetal movement, heart rate and liquor colour s hould be assessed at this initial 
+contact . 
+ 
+If pre -labour rupture of membranes is confirmed, offer pregnant women/people a choice of 
+expectant management for up to 24 hours, or induction of labour with dinoprostone vaginal 
+PGE2 as soon as possible. Discus s the benefits and risks of these options with the woman, 
+and take into account her individual circumstances and preferences. This discussion should 
+be documented on MIS . The woman/ person should be informed that: 
+ 
+ 60% of women/people with SROM labour withi n 24 hours. 
+ The risk of serious neonatal infection doubles from 1 in 200 to 1 in 100 after 24 
+hours of ruptured membranes (i.e. from 0.5% to 1%). 
+ Delaying starting induction for 24 hours following SROM may mean there is an 
+increased risk of neonatal infec tion. 
+ 
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 26 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+16.1 PROM at term with meconium stained liquor 
+ 
+Where there is any meconium -stained liquor the woman /person should be reviewed as soon 
+as possible by an Obstetrician for an individualised plan of care. 
+ 
+16.2 PROM at term with Group B Streptococcu s (GBS) 
+ 
+Pregnant women/people with a history o f GBS, should be asked to come to Labour Ward 
+and be induced as soon as possib le using a oxytocin ( Syntocinon ) infusion. See CG11100 
+Management of women/people and neonates with risk factors for neonatal sepsis (inc GBS) 
+ 
+16.3 Expectant management of lower risk PROM 
+ 
+For women/people who choose expectant management after prelabour rupture of the 
+membranes at term (at or over 37+0 weeks), offer induction of labour if labour has not 
+started naturally after approximately 24 hours. 
+ 
+Respect the woman/person’s choice if they wish to wait for spontaneous onset o f labour for 
+over 24 hours after prelabour rupture of membranes at term. Discuss the woman/person's 
+options for birth from this point onwards with them. 
+ 
+Until IOL is commenced or if expectant management beyond 24 hours is chosen by the 
+woman/person: 
+ 
+ Lower vaginal swabs and maternal C -reactive protein are not indicated. 
+ Women /people should be advised to record their temperature every 4 hours during 
+waking hours and to report immediately any developing pyrexia or change in the 
+colour or smell of their vagi nal loss to detect any i nfection that may be developing. 
+ Women /people should be informed that bathing or showering is not associated with 
+an increase in infection, but that h aving sexual intercourse may be. 
+ Fetal movement and fetal heart rate should be mon itored at initial contact, and every 
+24 hours following SROM until established labour. Women /people should be advised 
+to report any decrease or change in fetal movements. 
+ If labour has not started 24 hours after rupture of the membranes, advise the 
+woman/p erson to give birth where there is access to neonatal services and neonatal 
+sepsis observations should be performed at birth, 1 and 2 hours of age, followed by 
+observations every 2 hours until 12 hours of age (see CG11100 Management of 
+women/people and neonates with risk factors for neonatal sepsis (inc GBS) ). 
+ 
+17.0 Unsuccessful induction of labour 
+ 
+Unsu ccessful induction is defined as labour not starting despite all efforts / methods ( ARM 
+not possible after CRB insertion and / or 2 doses Prostin 6 hours apart ). 
+ 
+If induction is unsuccessful, healthcare professionals should discuss this with the 
+woman /person and provide support. The woman /person ’s condition and the pregnancy in 
+general should be fully reassessed, and fetal wellbeing should be assessed using CTG. 
+ 
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 27 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+Decisions about further management should be made in accordance wi th the 
+woman/ person’s wish es, with obstetric consultant opinion, and should take into account the 
+clinical circumstances. This could include: 
+ 
+ Offering a rest period if clinically appropriate and then re -assessing the 
+woman /person. 
+ Expectant management 
+ Further attempts to induce la bour with further prostaglandins 
+ Caesarean birth within the next 24 - 48 hours as long as fetal and 
+maternal /birthing parent well-being is maintained. 
+ 
+For women/people who choose caesarean birth after an unsuccessful induction, 
+recommendations in the CG12030 Caesarean Section Birth should be followed. 
+ 
+The decision and discussions to abandon IOL should be documented on MIS . 
+ 
+18.0 Declining induction of labour for prolonged pregnancy 
+ 
+If a woman/person declines to have induction of labour , their decision should be respected. 
+Healthcare professionals should document the woman/person’s decision on MIS and 
+discuss the woman/person’s options from this point on, for example expectant management 
+or caesarean birth, and document an agree d care plan. 
+ 
+If there are no additional risk factors and there is a documented discussion of the risks and 
+benefits, women/people do not need to be seen initially by an obstetrician. The plan of care 
+should be documented on MIS by the midwife providing care. 
+ 
+Offer women/people who choose to await the spontaneous onset of labour the opportunity to 
+discuss their decision again at all subsequent reviews, i f they wish to do so. 
+ 
+Advise women/people to contact their midwife or maternity unit if they change their mind 
+before their next appointment, or as soon as possible if they have concerns about their baby 
+(for example reduced or altered fetal movements). 
+ 
+If the baby is not born by 40+10 weeks , the woman /person should be reviewed by a member 
+of the obstetric team for an ongoing individualised plan of care. 
+ 
+Pregnant w omen /people may be offered (from 42 weeks) twice weekly CTG in the Day 
+Assessment Unit and weekly ultrasound scan to revie w maximum amniotic pool depth. If 
+either of these checks is not within normal limits, immediate referral to an obstetrician 
+(registrar or consultant) should be made. 
+
+Advise pregnant women/people that: 
+ 
+ Monitoring only gives a snapshot of the current situation, and cannot predict 
+reliably any changes after monitoring ends, but provides information on how their 
+baby is at the moment and so may help them make a decision on options for birth. 
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 28 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+ Adverse effects on the baby (includi ng stillbirth), and when these events might 
+happen, cannot be predicted reliably or prevented even with monitoring. 
+ 
+If there are additional risk factors identified women/people should be offered an appointment 
+with an obstetrician (registrar or consultant level) and /or midwife manager. 
+ 
+19.0 Uterine hyper stimulation 
+ 
+Hyper stimulation has been shown to be rare when using the CRB , although can happen 
+with dinoprostone (see NICE Appendix C: Risks of hyperstimulation associated with different 
+pharmacological methods of inducing labour ). 
+ 
+If uterine hyper stimulation occurs (more or equal to 5 contractions per 10 minutes) during 
+induction of labour: 
+ 
+ Carry out a fetal assessment . 
+ Do not administer any more doses of medicines to induce labour and remove any 
+vaginal pessaries or CRB if possible . 
+ 
+Inform the on -call registrar / consultant and request a review. Tocolysis should be 
+considered with abnormal FHR patterns. 
+ 
+The suggested regime is Terbutaline 0.25 mg subcutaneously, which should be given after 
+obstetric review - See BNF . 
+ 
+20.0 Uterine rupture 
+ 
+If uterine rupture is suspected during induced labour, carry out an immediate category 1 
+caesarean birth. (See CG1151 Uterine Rupture ) 
+
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 29 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+21.0 Audit and monitoring 
+ 
+CRB audit proforma can be found in Appendix 7 . 
+ 
+Adverse outcomes are monitored via patient safety and the incident revi ew process. 
+
+References 
+ 
+Cook Medical. 2019. Cervical ripening balloon product information . 
+ 
+Dowswell, T, et al. 2010. Different methods for the induction of labour in outpatient settings . 
+Cochrane Database of Systematic Reviews 8. 
+ 
+Haugland B, et al. 2 012. Induction of labor with single ‐ versus double ‐balloon catheter ‐ a 
+randomized controlled trial. Acta Obstetricia et Gynecologica Scandinavica 91(159): 84 ‐5. 
+ 
+Henry, A. et al. 2013. Outpatient Foley catheter versus inpatient prostaglandin E2 gel for 
+induction of labour: a randomised tri al. BMC Pregnancy and Childbirth 13: 25. 
+ 
+Jozwiak, M. et al. 2011 . Foley catheter versus vaginal prostaglandin E2 gel for induction of 
+labour at term (PROBAAT trial): an open -label, randomised controlled trial . Lancet 378: 
+2095 –103. 
+ 
+Kelly A .J., Kavanagh J., and Thomas J. 2003 . Vaginal prostaglandin (PGE2 and PGF2a) for 
+induction of labour at term. The Cochrane Database of Systematic Reviews 4: CD003101. 
+DOI:10.1002/14651858.CD003101 . 
+ 
+Lyrenas, S. et al. 2001. In vivo controlled release of PGE2 from a vag inal insert (0.8mm, 
+10mg) during induction of labour . BJOG 108: 169-178. 
+ 
+National Institute for H ealth and Clinical Excellence. 2008. CG70 Inducing labour. London: 
+NICE. Available at: www.nice.org.uk . 
+ 
+National In stitute for H ealth and Clinical Excellence. 2014 . CG190 Intrapartum care: Care of 
+healthy women and their babies during childbirth. London: NICE. Available at: 
+www.nice.org.uk . 
+ 
+National Institute for Clinical Exce llence. 2011. C129 Multiple pregnancy: antenatal care f or 
+twin and triplet pregnancies. London: NICE. Available at: www.nice.org.uk . 
+ 
+National Institute for Clinical Excellence. 2015. NICE interventional procedure guidance 
+IPG528: i nsertion of double balloon catheter for induction of labour in pregnant women 
+without previous caesarean section. London: NICE. Available at: www.nice.org.uk . 
+ 
+National Institute for Health and Cl inical Excell ence. 2013. Induction of Labour Evidence. 
+London: NICE. Available at: www.nice.org.uk . 
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 30 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+ 
+National Institute for Health and Clinical Excellence. 2021. NG207 Inducing labour 
+ 
+NHS Maternity Statistics . 2017. NHS Maternity Statistics, England 2016 -17. Available at: 
+https://digital.nhs.uk/data -and-information/publications/statistical/nhs -maternity -
+statistics/2016 -17 
+ 
+Nursi ng and Midwifery Council. 2015. The Code: Professional standards of practice and 
+behaviour for nurses, midwives and nursing associates . London : Nursing and Midwifery 
+Council . 
+ 
+RCOG (2019) GTG no. 72 Care of Women with Obesity in Pregnancy 
+ 
+Singh, A. et al . 2010. The use of the Cook’s Cervical Ripening Balloon for induction of labour 
+in women with a previous Caesarean section . Kings College Hospital, United Kingdom. 
+ 
+Vaknin, Z., Kurzweil, Y., and Sherman, D. 2010. Foley catheter balloon vs locally applied 
+prostaglandins for cervical ripening and labor induction: a systematic review and meta -
+analysis. American Journal of Obstetrics and Gynecology 203: 418 -29. 
+ 
+Van Baaren , G.J. et al. 2013. Cost-effectiveness of induction of labour at term with a Foley 
+catheter compared to vaginal prostaglandin E ₂ gel (PROBAAT trial) . British Journal of 
+Obstetrics and Gynaecology 120(8): 987 -995. 
+
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 31 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+Appendix 1: Cervical R ipening Balloon Pathway 
+
+Step 1 
+Book b alloon cervical ripening 
+appointment for delivery suite /CLS at 
+allocated times (usually 2 w omen 
+each day per site) 
+Potential additional slot to be 
+discussed with co -ordinator/manager 
+ 
+Step 2 
+Routine admission assessment (see 
+section 8.0 ): 
+Review pregnancy hi story on MIS 
+Perform maternal observations and 
+record on MEOWS 
+Perform and document abdominal 
+palpation and CTG using Dawes -Redman 
+Step 4: Balloon removal (12 hours post insertion) 
+If outpatient - woman to attend delivery suite 12 hours post i nsertion for balloon removal, palpation and 
+cervical re-assessment. 
+Perform CTG until Dawes Redman criteria met (for a minimum of 20 minutes).Remove balloon. 
+Repeat CTG until Dawes Redman criteria met (for a minimum of 20 minutes) in upright maternal 
+position to allo w presenting part to descend into pelvis. 
+Proceed to ARM if appropriate and follow ARM/SROM pathway. 
+If inpatient - As above with transfer to on delivery suite for assessment 12 hours post -insertion. 
+All women/people - 
+If ARM not possible, request obstetri c review to consider and discuss options such as prostaglandins. 
+If SROM, remove balloon and follow SROM pathway. 
+If balloon falls out naturally, offer cervical assessment. 
+Step 3 : outpatient (low risk 
+women/person) 
+Procedure: 
+Assess suitability for pr ocedure 
+(see section 11.3 & 11.4) 
+Discuss procedure and gain 
+maternal consent 
+Insert balloon as per standard 
+operating procedure (SOP) 
+If ARM deemed mo re appropriate, 
+proceed to step 4. 
+Repeat CTG following balloon 
+insertion using Dawes -Redman 
+Perform maternal observations 
+ensuring maternal and fetal 
+wellbeing. 
+Enquire about uterine activity, PV 
+loss and fetal movements. 
+Assess suitability to return h ome 
+until balloon removal (12 hours) 
+based upon risk assessment. 
+Complete relevant documentation 
+Ensure balloon removal and ARM 
+time booked and woman /person 
+aware of contact numbers and 
+signs of concern. 
+ 
+Step 3 : inpatient (identified risk 
+factors) 
+Proc edure: 
+Assess suitability for procedure 
+(see section 11.3 & 11.4) 
+Discuss procedure and gain maternal 
+consent. 
+Insert balloon as per standard operatin g 
+procedure (SOP) 
+If ARM deemed more appropriate, 
+proceed to step 4. 
+Repeat CTG following balloon insertion 
+using Dawes -Redman 
+Complete relevant documentation 
+Transfer to Bramber/Tangmere ward 
+Assess frequency of and perform 
+maternal observations as per r isk 
+assessment. 
+Twice daily CTG’s 
+For obstetric review as usual/as 
+required. 
+
+CG1119 Induction and Augmentation of Labour and Use of Oxytocin Guideline v 9.1 Jan 2023 Page 32 of 39 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 2: Cervical Ripening B alloon Standard Operating P rocedure (SOP) 
+ Steps Details 
+1. Prepare room 
+  Ensure appropriate privacy . 
+ Have Entonox available . 
+2. 
+Prepare trolley 
+  Clean trolley . 
+ VE/ catheter pack and Norma sol . 
+ X 2 pairs of Sterile Gloves . 
+ Lubricating Gel . 
+ Normal saline 0.9% 250ml bag . 
+ Scissors . 
+ Blue plastic tray . 
+ 50ml Luer lock s yringe and white bung . 
+ Cervical Balloon Catheter (do not open catheter until assessment complete and 
+catheter required) . 
+ Pads . 
+3. Prepare 
+woman /people 
+  Discuss procedure . 
+ Gain Consent . 
+ Advise to empty bladder/ urine sample . 
+ Maternal observations and Ri sk assessment . 
+ Check on MIS for induction of labour plan . 
+ Palpation . 
+ CTG using Dawes Redman . 
+4. Insertion of 
+balloon catheter 
+(see diagram 
+below) 
+  Ensure the trolley is prepared and ready for use . 
+ Place woman /person’s legs in lithotomy . 
+ Wash hands and don gloves . 
+ Clean vaginal entrance using the ASNTT . 
+ Change Gloves . 
+ Perform vaginal examination using Bishop’s score assessment . 
+ CRB can be inserted digitally or using a speculum to visualise the cervix. 
+o Speculum : Using a Rampley’s sponge holder advance the catheter 
+through the cervix until both balloons have passed the internal os. 
+o Digital : Keeping fingers in the cervix, guide the catheter through the cervix 
+until both balloons have passed the internal os. 
+ Once the uterine balloon is above the level of the internal Os the midwife 
+stabilises the catheter while the assistant removes the stylet before continuing 
+with the procedure. 
+ Assistant to Empty Normal s aline into large bowl, draw up 4 0mls of 0.9% 
+Normal saline in the syringe ( prepare prior to procedu re). 
+ Assistant to inflate the uterine balloon (marked U) red check flo valve, slowly 
+with 40mls of 0.9% saline. 
+ Once the uterine balloon is inflated pull back until the balloon is against the 
+internal OS . 
+ The vaginal balloon should now be felt outside the external cervical Os 
+ Assistant to inflate the vaginal balloon with 20mls of 0.9% normal saline through 
+the green check flo valve (marked V) . 
+ Once the balloons have been situated on each side of the cervix add more 0.9% 
+normal saline slowly in 20ml increm ents until each balloon contains 40 mls 
+maximum . 
+ Use proforma check list to verify quantity in each balloon . 
+ Remove legs from lithotomy . 
+ CTG using Dawes Redman . 
+ Offer sanitary pad and double Netty knickers to secure balloon . 
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 33 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+ Steps Details 
+5. Prepare 
+woman /person 
+for the next 12 
+hours  Give advice, direct to online maternity information . 
+ Document procedure on MIS , complete proforma and scan in to MIS. 
+ Ensure appointment booked on labour ward for 12 hours . 
+ Give syringe with Bung for removing water from the balloon. 
+6. Removal of 
+balloon  Deflate balloons through the valves & remove catheter. 
+ Perform CTG until Dawes Redman criteria met (for a minimum of 20 minutes) in 
+upright maternal position to allow presenting part to de scend into pelvis. 
+ Palpation to assess suitabili ty of ARM and ensure assessment documented on 
+MIS. 
+ Perform a VE to assess suitability for ARM (if no spontaneous rupture of 
+membranes). This includes application of head onto cervix ( THINK cord 
+presentation/prolapse ). 
+ ARM should be performed on labour war d at earliest opportunity after 12 hours , 
+dependent upon workload . If delay in ARM, CRB can be left in place (for up to 
+24 hours only and only if delay is due to acuity/staffing issues). Repeat CTG as 
+above. 
+ Document procedure in the relevant records. 
+ Repeat CTG as above. 
+ Document procedure and consent on MIS . 
+
+CG1119 Induction and Augmentation of Labour and Use of Oxytocin Guideline v 9.1 Jan 2023 Page 34 of 39 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 3: Balloon catheter insertion sticker for notes 
+ 
+Date: 
+ Reason for IOL: 
+Consent gained and documented: University Hospitals Sussex 
+(SRH & WH) 
+Palpation Lie 
+ Presentation Position 1/5th s FH 
+CTG Dawes Redman Criteria Met : Y / N ARM: Y / N Time: 
+ 
+Liquor : C / M / BS 
+ 
+0 1 2 3 Uterine Balloon 
+Vaginal Balloon 
+
+Position Post 
+ Central 
+ Ant 
+ 
+ 1. 
+20mls 2. 
+20mls 
+Consistency 
+Firm Medium Soft 3. 
+20mls 4. 
+20mls 
+Length (cm) 
+3 2 1 0 Balloon Inserted Time Inserted : 
+Dilation (cm) 
+Closed 1-2 3-4 >4 
+Station to spines 
+- 3 - 2 -1 At Spines Signature/Stamp 1: 
+ 
+Bishop’s Score: Signature/Stamp 2: 
+
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 35 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+Appendix 4: Balloon catheter removal sticker for notes 
+ 
+University 
+Hospi tals 
+Sussex 
+(SRH &WH) Cervical Ripening Balloon – Removal 
+Date: Time on LW: 
+ 
+CTG 1 
+FH Baseline : …………… bpm Dawes Redman criteria Met: Y / N 
+ 
+Cervical Ripening Balloon Removed Time: ……..:………. 
+ 
+Uterine Balloon deflated: ……………….mls Vaginal Balloon deflated:……………… mls 
+Sit woman upright/mobilise whilst monitoring : wait 20 – 30 mins prior to ARM 
+Palpation Lie 
+ Presentation Position 1/5ths FH 
+V/E Position Consisten cy Length (cm) Dilation (cm) Station to spines 
+ 
+ARM performed: Y / N Time : ………:……… Liquor: C / Mec / BS 
+CTG 2 FH Baseline : …………… bpm Dawes Redman criteria Met: Y / N 
+1. 2. 
+ Signature : …………………………………………………………. Signature : …………………………………… 
+ Stamp : Stamp : 
+
+CG1119 Induction and Augmentation of Labour and Use of Oxytocin Guideline v 9.1 Jan 2023 Page 36 of 39 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 5: CRB audit monitoring proforma 
+Hospital number 
+Date of induction 
+Planned time of admission 
+Gestation 
+Parity 
+Reason for IOL 
+Leaflet given to woman /person Yes No 
+Method of IOL Balloon ARM* Prostin 
+Balloon inserted Yes No N/A Time: 
+Difficult insertion of balloon Yes No 
+If balloon insertion unsuccessful, state 
+reason : 
+Prostin inserted Yes No Time: 
+Discharged/transferred to Home Ward Time: 
+Time returned to DS/CLS for ARM Date: Time: 
+Any urinary retention with balloon Yes No 
+Balloon fell out Yes No 
+Balloon removed Date: Time: 
+ARM performed Date: Time: 
+If ARM not possible, state reason 
+If ARM delayed, state reason 
+Oxytocin ( Syntocinon ) infusion required Yes No Time: 
+Date and time of birth Date: Time: 
+Mode of birth SVD Cat 2 CS 
+Instrumental Cat 1 CS 
+Reason for LSCS 
+Apgars 1 min: 5 mins: 10 mins: 
+Maternal comments on process 
+Name of clinician completing audit (print / 
+stamp and sign) 
+Date of audit 
+ 
+Scan into MIS once comp leted 
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 37 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+Appendix 6: Pre -labour Rupture of Membrane s Pathway 
+
+Step 1 
+Triage assessment to confirm: 
+Gestation and history 
+Date and time of suspected SROM 
+Colour of PV fluid 
+Uterine activity 
+Fetal movements 
+Query SROM 
+Confirmed SROM 
+Step 2 confirmation 
+Arrange community visit if >37 weeks ( between 09. 00-17.00) 
+Arrange hospital assessment if out of hours. 
+If <37 weeks arrange hospital assessment and follow CG20013 Preterm 
+Birth Risk Pathway 
+Step 4 Obstetric review 
+If BSOTs is green: 
+Discuss and offer a choice of expectant management of up to 24 hours or 
+induction with dinoprostone (Prostin) as soon as unit can facilit ate. 
+Arrange time for the woman/person to come into the unit. 
+If woman/person declines - discuss risks and benefits of augmentation, 
+document this discussion and and offer fetal monitoring. 
+If cervix favourable commence oxytocin (Syntocinon) infusion. 
+If cervix unfavourable, give dinoprostone (Prostin) and commence 
+oxytocin (Syntocinon) infusion 6 hours after. 
+If BSOTs yellow, orange or red follow algorithm on the BSOTs card. 
+Step 3 hospital assessment of SROM 
+Complete BSOTs ‘Antenatal Triage assessment care for ruptured membranes’. 
+Review pregnancy notes and history. 
+Perform maternal observations document on MEOWS . 
+Perform CTG to assess fetal wellbeing including FM’s. 
+Review PV loss . 
+Minimum maternal and fetal observations required during oxytocin ( Syntocinon ) infusion 
+Continuous CTG 
+Documentation of partogram 
+Maternal pulse minimum 1 hourly 
+Maternal BP, temperature and respirations minimum 4 hourly 
+Fluid balance hourly with 4 hourly cumulative balance as per CG21009 Maternity fluid 
+management as an in -patient or in labour unless more frequent monitoring indicated. 
+
+CG1119 Induction and Augmentation of Labour and Use of Oxytocin Guideline v 9.1 Jan 2023 Page 38 of 39 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Appendix 7: Reduced volume oxytocin ( Syntocinon ) regime 
+
+Labour induction/augmentation: 
+Dilute 10 units of oxytocin ( Syntocinon) (1ml) with 49 ml Normal Saline and run thro ugh a 
+syringe driver at the following rates: 
+ 
+Concentration Infusion rate 
+1 milliunits /min 0.3ml/hr 
+2 milliunits /min 0.6ml/hr 
+4 milliunits /min 1.2ml/hr 
+8 milliunits /min 2.4ml/hr 
+12 milliunits /min 3.6ml/hr 
+16 milliunits /min 4.8ml/hr 
+20 milliuni ts /min 6.0ml/hr 
+24 milliunits /min 7.2ml/hr 
+28 milliunits /min 8.4ml/hr 
+32 milliunits /min 9.6ml/hr 
+ 
+Increase the infusion rate every 30 minutes until regular contraction achieved. 
+The giving set and adapter must be primed with the oxytocin ( Syntocino n) infusion before 
+attaching it to the woman/person to remove the ‘dead space’ and ensure the correct dose of 
+oxytocin ( Syntocinon) is provided. 
+ 
+Reduced volume oxytocin ( Syntocinon ) regime – following postpartum haemorrhage: 
+ Dilute 40 units (4 ml) oxytoci n (Syntocinon ) with 46ml 0.9% Normal Saline and run at 
+12.5 ml/hr over 4 hours through a syringe driver. 
+
+CG1119 IOL & A ugmentation of Labour & use of Oxytocin v9.2 June 2023 Page 39 of 39 
+Pre-JOGG. Please check on the intranet that this printout is the most recent version of this document before use . 
+Appendix 8: Recommendation regarding use of Dawes Redman

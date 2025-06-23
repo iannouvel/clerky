@@ -1,0 +1,1194 @@
+# Extracted from: BJOG - 2022 - Shennan - Cervical Cerclage.pdf
+# Guideline ID: bjog-2022-shennan-cervical-cerclage
+# Content length: 107483 characters
+# Processing date: 1732953490.8410184
+
+Cervical Cerclage
+Green-top Guideline No. 75
+June 2022
+Please cite this paper as: Shennan AH, Story L; the Royal College of Obstetricians, Gynaecologists. Cervical Cerclage.
+BJOG 2022;129:1178 –1210.
+DOI: 10.1111/1471-0528.17003 RCOG Green-top Guideline
+Cervical Cerclage
+AH Shennan, L Story on behalf of the Royal College of Obstetricians, Gynaecologists
+Correspondence: Royal College of Obstetricians and Gynaecologists, 10-18 Union Street, London SE1 1SZ, UK. Email:
+clinicaleffectiveness@rcog.org.uk
+This is the second edition of this guideline; the ﬁrst edition was published in 2011 under the same name. It
+supplements NICE guideline NG25 Preterm labour and birth .
+1. Key recommendations
+/C15 Women with singleton pregnancies and three or more previous preterm births should be offered a
+history-indicated cervical cerclage. [Grade B]
+/C15 Women with a singleton pregnancy and a history of spontaneous second trimester loss or preterm birthwho have not undergone a history-indicated cerclage may be offered serial sonographic surveillance, asthose who experience cervical shortening may beneﬁt from ultrasound-indicated cerclage while thosewhose cervix remains long (greater than 25mm) have a low risk of second-trimester loss/preterm birth.[Grade B]
+/C15 For women with a singleton pregnancy and no other risk factors for preterm birth, insertion of cervicalcerclage is not recommended in women who have an incidentally identiﬁed short cervix. [Grade B]
+/C15 In women with a previous unsuccessful transvaginal cerclage, insertion of a transabdominal cerclage may bediscussed and considered. [Grade A] [Correction added on 10 March 2023, after original publication: Inbullet 4 of the Key Recommendations, the evidence level has been changed from Grade D to Grade A.]
+/C15 In women with a singleton pregnancy insertion of a emergency cerclage may delay birth by an average of34 days, compared with expectant management/bed rest alone in suitable cases. It may also be associatedwith a two-fold reduction in the chance of birth before 34 weeks of gestation. However, there are onlylimited data to support an associated improvement in neonatal mortality or morbidity. [Grade B]
+/C15 The choice of transvaginal cerclage technique (high cervical insertion with bladder mobilization or lowcervical insertion) should be at the discretion of the surgeon [Grade C], but the cerclage should beplaced as high as is practically possible. [Grade C]
+2. Background and scope
+Cerclage remains one of the standard options for prophylactic intervention in the care of women at risk of pretermbirth and second trimester fetal loss and is used by most obstetricians, despite difﬁculties in identifying thepopulation of women who would most beneﬁt. The procedure, a stitch inserted into the cervix, was ﬁrst performedin 1902 in women with a history of second trimester loss or spontaneous preterm birth suggestive of cervicalinsufﬁciency, with the aim of preventing recurrent loss.
+RCOG Green-top Guideline No. 129 1179 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Cervical insufﬁciency is an imprecise clinical diagnosis frequently applied to women with such a history, where it is
+assumed that the cervix is ‘weak’ and unable to remain closed during the pregnancy. Recent evidence suggests that,
+rather than being a dichotomous variable, cervical integrity is likely to be a continuum inﬂuenced by factors relatednot solely to the intrinsic structure of the cervix but also to processes driving premature effacement and dilatation.While cerclage may provide a degree of structural support to a ‘weak’ cervix, its role in maintaining the cervicallength and the endocervical mucus plug as a mechanical barrier to ascending infection may be more important.
+There is lack of consensus on the optimal cerclage technique, timing of suture placement, the role of amniocentesis
+before emergency cerclage insertion and optimal care following insertion. Complications are not well documented
+and often difﬁcult to separate from risks inherent to the underlying condition. The purpose of this guideline is toreview the literature and provide evidence-based guidance on the use of cerclage in women at risk of preterm birthand second trimester loss. This guideline supplements NICE guideline [NG25] Preterm labour and birth.
+1
+Within this document we use the terms woman and women’s health. However, it is important to acknowledge thatit is not only people who identify as women for whom it is necessary to access women’s health and reproductive
+services in order to maintain their gynaecological health and reproductive wellbeing. Gynaecological and obstetric
+services and delivery of care must therefore be appropriate, inclusive and sensitive to the needs of those individualswhose gender identity does not align with the sex they were assigned at birth.
+3. Identi ﬁcation and assessment of evidence
+This Royal College of Obstetricians and Gynaecologists (RCOG) guideline was developed in accordance with the
+standard methodology for producing RCOG Green-top Guidelines.2
+The Cochrane Library (including the Cochrane Database of Systematic Reviews), DARE, EMBASE, TRIP, Medline andPubMed (electronic databases) were searched for relevant randomized control trials, systematic reviews and meta-analyses. The search was restricted to articles published between 2011 and April 2020. The databases were searchedusing the relevant MeSH terms, including all subheadings and this was combined with a keyword search. Searchwords included ‘cervical cerclage’, ‘cervical suture’, ‘cervical stitch’, ‘midtrimester miscarriage’, ‘McDonald cerclage’,‘Shirodkar cerclage’, ‘infection and cerclage’, ‘tocolytics and cerclage’ and ‘inﬂammatory mediators and cerclage’; thesearch was limited to humans and the English language. The National Library for Health and National GuidelinesClearing House were also searched for relevant guidelines and reviews. The full search strategy is available to viewonline as supporting information (Appendices S1 and S2).
+4. De ﬁnitions
+Previous terminology (prophylactic, as a planned procedure, emergency, urgent, rescue) of cervical sutures/cerclage
+can be ambiguous. More appropriate nomenclature based on indication for cervical suture is recommended. Theterms below are increasingly used in the scientiﬁc literature.
+History-indicated cerclage
+Insertion of a cerclage as a result of factors in a woman’s obstetric or gynaecological history, which increase the riskof spontaneous second trimester loss or preterm birth.
+3A history-indicated suture is performed as a prophylactic
+measure in asymptomatic women and usually inserted as a planned procedure at 11 –14 weeks of gestation.
+RCOG Green-top Guideline No. 129 1180 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Preterm Birth
+Birth before to 37+0weeks’ gestation.
+Ultrasound-indicated cerclage
+Insertion of a cerclage as a therapeutic measure in cases of cervical length shortening seen on transvaginal
+ultrasound.3Ultrasound-indicated cerclage is performed on asymptomatic women who do not have exposed fetal
+membranes in the vagina. Sonographic assessment of the cervix is usually performed between 14 and 24 weeks ofgestation by transvaginal scan and with an empty maternal bladder.
+Emergency cerclage (also known as physical exam-indicated or emergency cerclage)
+Insertion of cerclage as a salvage measure in the case of premature cervical dilatation with exposed fetal membranesin the vagina.
+3This may be discovered by ultrasound examination of the cervix or as a result of a speculum/physical
+examination performed for symptoms such as vaginal discharge, bleeding or ‘sensation of pressure’. It can beconsidered up to 27
++6weeks gestation.1
+Transvaginal cerclage (McDonald)
+A transvaginal purse-string suture placed at the cervical isthmus junction, without bladder mobilization.4
+High transvaginal cerclage requiring bladder mobilization (including Shirodkar)
+A transvaginal purse-string suture placed following bladder mobilization, to allow insertion above the level of the
+cardinal ligaments.5
+Transabdominal cerclage
+A suture performed via a laparotomy or laparoscopy, placing the suture at the cervicoisthmic junction.6
+Occlusion cerclage
+Occlusion of the external os by placement of a continuous non-absorbable suture. The theory behind the potentialbeneﬁt of occlusion cerclage is retention of the mucus plug.
+7
+RCOG Green-top Guideline No. 129 1181 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+5. History-indicated cerclage
+5.1. When should a history-indicated cerclage be offered?
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+Women with singleton pregnancies and
+three or more previous preterm birthsshould be offered a history-indicatedcervical cerclage1+ B A subgroup analysis of the Medical
+Research Council (MRC)/RCOG multicentretrial found bene ﬁt was only conferred for
+women with a history of three or moreprevious preterm births and/or secondtrimester losses
+History-indicated cerclage should not
+routinely be offered to women with lessthan three previous preterm births and/orsecond trimester losses without additionalrisk factors1+ B Subgroup analysis of the MRC/RCOG
+multicentre trial showed no bene ﬁt
+conferred
+It is unknown if the speci ﬁc characteristics
+of the previous adverse event are helpfulin the decision to place a history-indicated cerclage. (e.g. painless
+dilatation, rupture of membranes, prior
+cervical surgery)4 GPP Good quality data are currently lacking to
+inform this practice
+Cochrane review concluded that, in women with a singleton pregnancy, there was a signiﬁcant reduction
+in preterm births compared to controls before 37, 34 and 28 weeks of gestation in women who hadcerclage compared to no cerclage (average risk ratio [RR] 0.77, 95% conﬁdence interval [CI] 0.66 –0.89,
+incorporating nine studies with 2415 women). Subgroup analysis (assessing history-indicated; short cervixbased on one off ultrasound in women at high risk; short cervix found by serial scan measurements inwomen at high risk; examination indicated; and short cervix found on scan in populations with low ormixed risk) had too few numbers to draw signiﬁcant conclusions.
+3Evidence
+level 1 +
+There is no evidence to suggest an effect on perinatal death. Although the authors concluded that
+cerclage probably leads to a reduced risk of perinatal death when compared to no cerclage, the CIcrossed the line of no effect (RR 0.82, 95% CI 0.65 –1.04, based on 10 studies including 2927 women).
+When stillbirths and neonatal deaths were considered separately the number of events and sample sizewere reduced considerably. Neonatal morbidity was similar with and without cerclage.
+3Evidence
+Level 1 +
+A pre-speciﬁed subgroup analysis of an international multicentre trial, which recruited 1292 women to
+cerclage or no cerclage, coordinated by the MRC and RCOG, found that only women with a history ofthree or more pregnancies ending before 37 weeks of gestation ( n=104) beneﬁtted from cerclage, which
+halved the incidence of preterm birth before 33 weeks of gestation (15% versus 32% P>0.05). No effect
+was observed in those with only one (birth before 33 weeks of gestation in the cerclage group 14%versus 17% in the expectant group) or two previous early births (birth before 33 weeks of gestation inthe cerclage group 12% versus 14% in the expectant group).
+8Evidence
+level 1 +
+RCOG Green-top Guideline No. 129 1182 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Subgroup analysis of this study also found no beneﬁt for a history-indicated cerclage in women with
+previous cervical surgery or uterine abnormalities; the authors concluded that the relatively small numbersin each group limited the reliability of these results.
+8Evidence
+level 1 +
+The studies that have examined the use of pre-pregnancy techniques (e.g. hysterography, cervical
+resistance indices, insertion of cervical dilators) to assess cervical weakness were observational and not
+designed to test the hypothesis that their use optimized the selection of women for history-indicatedcerclage.
+9,10Evidence
+level 3
+6. Ultrasound-indicated cerclage
+6.1. When should an ultrasound-indicated cerclage be offered?
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+For women with a singleton pregnancy
+and no other risk factors for preterm birth,
+insertion of cervical cerclage is notrecommended in women who have a shortcervix incidentally identi ﬁed on a late
+second trimester ultrasound scan1++ B A number of randomized controlled trials
+(RCTs) and a meta-analysis have found no
+bene ﬁt of cerclage in women with a
+cervical length less than 25 mm with noother risk factors for preterm birth
+To et al.
+11screened 47 123 women at 22 –24 weeks of gestation using transvaginal ultrasound to measure
+cervical length; in 470 women (1%), the cervix was 15 mm or less. Of these women, 253 (54%) agreedto participate in a randomized study comparing Shirodkar cerclage ( n=127) with expectant management
+(n=126). The incidence of preterm birth before 33 weeks of gestation was similar in both groups,
+at 22% (28 of 127) in the cerclage group versus 26% (33 of 126) in the control group (RR 0.84;95% CI 0.54 –1.3; P=0.44), with no signiﬁcant differences in perinatal or maternal morbidity or mortality.Evidence
+level 1 ++
+This was further conﬁrmed in an individual patient data (IPD) meta-analysis of four RCTs of cerclage
+versus expectant management in women with a short cervix (in which women from the previouslydiscussed RCT were included). This meta-analysis reported no overall evidence of beneﬁt of cerclage inwomen with cervical length less than 25mm who had no other risk factors for spontaneous pretermbirth.
+12Evidence
+level 1 ++
+Routine surveillance of women at low risk is not currently recommended by the National Screening Committee.
+RCOG Green-top Guideline No. 129 1183 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+6.1.1. Women with a singleton pregnancy and a history of spontaneous second trimester loss or preterm birth
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+Women with a history of one or more
+spontaneous second trimester loss orpreterm births who are undergoingultrasound surveillance of cervical lengthshould be offered cerclage if the cervix is25mm or less at gestations less than
+24 weeks1++ A A meta-analysis including data from four
+RCTs shows that an ultrasound indicatedcerclage for cervical shortening (less than25 mm) in the presence of a history of oneor more spontaneous second trimesterlosses or preterm births, reduces preterm
+birth prior to 35 weeks gestation
+An ultrasound-indicated cerclage is not
+recommended for funnelling of the cervix(dilatation of the internal os on
+ultrasound) in the absence of cervical
+shortening to 25 mm or less (the closedlength of the cervix)2++ C Observational studies have indicated no
+association between preterm birth andfunnelling alone in the absence of a short
+cervix
+An RCT of ultrasound-indicated cerclage with singleton pregnancies with a history of spontaneous
+preterm birth between 17
++0and 33+6weeks of gestation, who were found to have a cervical length of
+less than 25mm detected during serial sonographic examinations between 16+0and 21+6weeks of
+gestation, reported that when compared with expectant management, cerclage reduced pre-viable birth(at less than 24
++0weeks of gestation: 6.1% versus 14%; P=0.03) and perinatal death (8.8% versus 16%;
+P=0.046) but did not prevent birth at less than 35+0weeks of gestation (32% versus 42%; odds ratio
+[OR] 0.67; 95% CI 0.42 –1.07) unless cervical length was less than 15 mm (OR 0.23; 95% CI 0.08 –0.66).13Evidence
+level 1 ++
+Similar results were reported from a meta-analysis that included 607 pregnancies from four RCTs of
+ultrasound-indicated cerclage.14This study reported that in the subgroup of women with singleton
+pregnancies with a history of preterm second trimester loss (16+0–23+0weeks of gestation) or birth
+before 36 weeks of gestation, cerclage resulted in a signiﬁcant reduction in birth before 35 weeks ofgestation (RR 0.57; 95% CI 0.33 –0.99 and RR 0.61; 95% CI 0.40 –0.92, respectively) when compared with
+expectant management; this reduction was of a similar magnitude to that observed in the previousstudy.
+13Evidence
+level 1 ++
+There are no studies evaluating ultrasound-indicated cerclage performed solely on the presence of
+funnelling. However, studies have demonstrated that funnelling is a function of cervical shortening anddoes not appear to independently add to the risk of preterm birth associated with cervical length.
+15,16Evidence
+level 2 ++
+RCOG Green-top Guideline No. 129 1184 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+6.2. Who should be offered serial sonographic surveillance with a view to ultrasound-indicated
+cerclage?
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+Women with a history of spontaneous
+second trimester loss or preterm birthwho have not undergone a history-indicated cerclage may be offered serialsonographic surveillance, as those whoexperience cervical shortening (less than25mm) may bene ﬁt from ultrasound-
+indicated cerclage (see 6.1)2++ B A meta-analysis showed similar incidences
+of preterm birth with history andultrasound indicated cerclage in women athigh risk
+In studies where serial sonographic surveillance of cervical length has been carried out in women with a
+history of second trimester loss and/or spontaneous preterm birth, 40% –70% of women maintain a
+cervical length of more than 25mm before 24
++0weeks of gestation.8,13,16 –19In three of these studies, 90%
+of women who maintained a cervical length of more than 25mm (and therefore did not receive cerclage)gave birth after 34 weeks of gestation. This suggests that serial sonographic surveillance may differentiatebetween women with a prior second trimester loss/preterm birth who might beneﬁt from cerclage andwomen who do not need interventionEvidence
+level 2 ++
+A meta-analysis by Berghella et al.20compared pregnancy outcomes in singleton gestations with prior
+preterm birth that were managed either by cervical length screening with cerclage for short cervicallength or history-indicated cerclage. Cervical length screening with cerclage for short cervical length wasassociated with similar incidences of preterm birth before 37 weeks (31% compared with 32%, RR 0.97;95% CI 0.73 –1.29), preterm birth before 34 weeks (17% compared with 23%, RR 0.76; 95% CI 0.48 –1.2)
+and perinatal mortality (5% compared with 3%, RR 1.77; 95% CI 0.58 –5.35) compared with history-
+indicated cerclage. In the transvaginal ultrasound group, only 42% developed a short cervix and requiredcerclage. These data support the recommendation that women with a previous second trimester loss/preterm birth can be safely cared for by serial ultrasound surveillance and that this may reduce thenumber of cerclages performedEvidence
+level 2 ++
+Ultrasound surveillance of cervical length is advocated in women at high and intermediate risk in Element 5 of the
+Saving Babies Lives Care Bundle,21the timing of which is dependent on the women’s history.
+Women at high risk include:
+/C15those with a previous preterm birth or second trimester loss (16 –34 weeks’ gestation)
+/C15previous preterm prelabour rupture of membranes (PPROM) less than 34 weeks
+/C15previous use of cerclage
+/C15known uterine variant
+/C15intrauterine adhesions
+RCOG Green-top Guideline No. 129 1185 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+/C15history of trachelectomy.
+These women are recommended to be reviewed by a preterm prevention specialist by 12 weeks where possible, or
+with the dating scan whichever is sooner, and offered transvaginal cervix scanning as a secondary screening testevery 2 –4 weeks between 16 and 24 weeks.
+Women at intermediate risk include:
+/C15women including those who have a history of a previous full dilatation C-section
+/C15signiﬁcant cervical excisional surgery i.e. large loop excision of the transformation zone (LLETZ)
+with an excision depth greater than 1 cm, more than one procedure or a cone biopsy.
+These women should undergo a single transvaginal cervix scan no later than 18 –22 weeks as a minimum.
+These timings are based on a consensus of experts from the UK Preterm Clinical Network.22Evidence
+level 4
+There is, however, uncertainty as to how to care for these w omen if a short cervix is identiﬁed in women who have had
+serial screening but do not have a history of a previous preter m birth; an ultrasound indicated cerclage may be considered.
+7. Can cervical cerclage be recommended in any other groups of women considered at increased
+risk of preterm birth?
+7.1. Multiple pregnancy
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+The insertion of a history- or ultrasound-
+indicated cerclage in women withmultiple pregnancies is notrecommended1++ B Data from meta analyses indicates no
+bene ﬁt of cerclage in multiple pregnancies
+without additional risk factors
+A meta-analysis of ﬁve trials assessed the use of cerclage in multiple pregnancies; 122 women had twin
+pregnancies and six had triplet pregnancies. Included studies assessed history-indicated cerclage,ultrasound indicated cerclage and physical exam-indicated cerclage. No statistical difference in perinataldeath was found between cerclage and no cerclage (19.2% versus 9.5%; RR 1.74, 95% CI 0.92 –3.28, ﬁve
+trials n=262), signiﬁcant neonatal morbidity (15.8% versus 13.6%; average RR 0.96, 95% CI 0.13 –7.10,
+three trials n=116) or composite perinatal death and neonatal morbidity (40.4% versus 20.3%; average
+RR 1.54, 95% CI 0.58 –4.11, three trials n=116). No signiﬁcant differences were found in secondary
+outcomes such as preterm birth less than 34 weeks, birth weight below 2500 g, respiratory distresssyndrome, caesarean section rates and maternal side-effects. Subgroups were also assessed: ultrasoundindicated cerclage was associated with an increased risk of low birth weight (below 2500 g) compared tono cerclage (average RR 1.39, 95% CI 1.06 –1.83), very low birth weight (below 1500g) (average RR 3.31,
+95% CI 1.58 –6.91) and respiratory distress syndrome (average RR 5.07, 95% CI 1.75 –14.7). However, the
+numbers in these subgroups were small so results should be interpreted with caution.
+23Evidence
+level 1 ++
+RCOG Green-top Guideline No. 129 1186 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Jarde et al.24also assessed the efﬁcacy of twin pregnancies treated with progesterone, pessary or cerclage
+in a meta-analysis. No intervention signiﬁcantly reduced the risk of preterm birth less than 34 or
+37 weeks’ gestation, or neonatal death compared to a control group.Evidence
+level 1 +
+Data from a multicentre retrospective cohort study in twins, where women with a cervix less than 25mm
+between 16 and 24 weeks’ gestation either had ultrasound indicated cerclage ( n=57), or no cerclage
+(n=83) found that there were no differences in gestational age at birth or spontaneous preterm birth
+less than 28 weeks (12 versus 20 adjusted OR 0.3 95% CI 0.68 –1.37). In the subgroup of women with
+cervical length less than 15 mm (cerclage n=32 and controls n=39) the interval between diagnosis to
+birth was signiﬁcantly prolonged (12.5 /C64.5 versus 8.8 /C64.6 weeks, P<0.001); spontaneous preterm
+birth less than 34 weeks was signiﬁcantly decreased (16 versus 31 adjusted OR 0.51; 95% CI 0.31 –0.83) as
+was admission to neonatal intensive care unit when the ultrasound indicated group was compared withthe control group. However, there was no difference in rates of preterm birth at gestations less than 32weeks, less than 28 weeks and less than 24 weeks and no effect on perinatal mortality (11.3% versus16.6% P=0.46). Numbers in this study are small and further RCTs are therefore required to assess the
+effect of ultrasound indicated cerclage based on different cervical lengths.
+25Evidence
+level 2 ++
+STOPPIT-2 is a randomised trial of the Arabin pessary to prevent preterm birth in twin pregnancies with a short
+cervix. Data collection is now complete and the results are currently being analysed.26
+7.2. Cervical surgery, trauma and uterine abnormalities
+Recommendation Evidence
+qualityStrength Rationale for the
+recommendation
+The role of history- or ultrasound-indicated
+cerclage is uncertain in other high-risk groups,who display no additional risk factors, such as
+women with Mullerian anomalies, previous
+cervical surgery (cone biopsy, LLETZ or destructiveprocedures such as laser ablation or diathermy) ormultiple dilatation and evacuation1+ B An IPD meta-analysis showed no
+difference in preterm birth before35 weeks
+Local excisional treatment of the cervix has been shown to be associated with an increased risk of
+preterm birth. A meta-analysis of 27 retrospective cohort studies showed an increased risk of pretermbirth less than 37 weeks’ gestation when cold knife conisation was compared to no treatment(14% versus 5%; RR 2.59, 95% CI 1.8 –3.72) and LLETZ versus no treatment (11% versus 7%; RR 1.7,
+95% CI 1.24 –2.35). No increased risk was associated with laser ablation.
+27Women with cervical
+intraepithelial neoplasia have been shown to have an increased background risk of preterm birth
+compared to the general population (5.9% versus 5.6%; RR 1.24, 95% CI 1.14 –1.35) but the risk of
+preterm birth is higher in women who have undergone more than one treatment (13.2% versus 4.1%;RR 3.78, 95% CI 2.65 –5.39) and with increasing depth of excision ( ≤10–12mm: 7.1% versus 3.4%; RR
+1.54, 95% CI 1.09 –2.18; ≥10–12mm: 9.8% versus 3.4%; RR 1.93, 95% CI 1.62 –2.31; ≥15–17mm: 10.1%
+versus 3.4%; RR 2.77, 95% CI 1.95 –3.93; ≥20mm: 10.2% versus 3.4%; RR 4.91, 95% CI 2.06 –11.68).
+28Evidence
+level 1 +
+RCOG Green-top Guideline No. 129 1187 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Kindinger et al.29aimed to develop a screening model to differentiate women into high and low risk for
+preterm birth after excisional treatment for cervical intraepithelial neoplasia. Longitudinal cervical length
+data from 725 pregnant women post treatment attending preterm surveillance clinics over a ten-year
+period was analysed. Of these, 13.5% of women received an ultrasound indicated cerclage and 9.7% gavebirth prior to 37 weeks’ gestation; 24.5% of these despite receiving cervical cerclage. Accuracy parametersof interval reduction in cervical length between longitudinal second trimester measurements wereundertaken and a reduction in cervical length of less than 10% between measurements identiﬁed womenat low risk of preterm birth who did not require further surveillance. However, the study wasretrospective and a direct comparison population was lacking. Prospective studies are required toinvestigate this further.Evidence
+level 2 +
+A consensus of experts from the UK Preterm Clinical Network has recommended women with a history
+of signiﬁcant cervical excisional surgery i.e. LLETZ where greater than 10mm excised, or more than oneLLETZ procedure, or a cone biopsy should be referred to a preterm birth prevention specialist and asingle transvaginal cervical scan should be performed between 18 –22 weeks as a minimum. Women with a
+known uterine variant should be referred to a preterm prevention specialist by 12 weeks’ gestation wherepossible and offered transvaginal screening every 2 –4 weeks between 16 and 24 weeks’ gestation.
+22Evidence
+level 4
+The existing published studies are either inadequately controlled or include insufﬁcient numbers to be able
+to make evidence-based recommendations regarding efﬁcacy of cerclage in these groups of women. TheIPD meta-analysis of ultrasound-indicated cerclage
+14(subgroup analysis of those women with a history of
+cone biopsy [ n=64] or more than one dilatation and evacuation [ n=131]) showed no difference in
+preterm birth before 35 weeks of gestation in the cerclage group compared with the expectantmanagement group (RR 1.18, 95% CI 0.57 –2.45 and RR 0.91, 95% CI 0.57 –1.47, respectively); however,
+the authors concluded that the results should be interpreted with caution owing to the small numbers ofwomen. There were insufﬁcient women with Mullerian anomalies or diethylstilbestrol exposure toperform subgroup analyses.Evidence
+level 1 –
+The MRC/RCOG study of history-indicated cerclage reported that, in a subgroup analysis of women with
+a history of cone biopsy or cervical amputation ( n=138), there was no signiﬁcant difference in birth
+before 33+0weeks of gestation in the cerclage group compared with the expectant group (19% versus
+22%).8Evidence
+level 1 +
+7.3. Women with raised BMI
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+Cerclage is effective in
+women with a raised BMI1– B A secondary analysis of an RCT showed no evidence
+cerclage was less effective in women with a raised BMI
+RCOG Green-top Guideline No. 129 1188 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+A secondary analysis of a multicentre RCT included women with an increased BMI (above 25kg/m2)a n d
+cervical shortening (less than 25 mm) who were randomly assigned to cerclage or no cerclage. BMI has
+purported to be associated with preterm birth due to a heightened inﬂammatory response. In the
+cerclage group ( n=148) BMI had no effect but in the non-cerclage group ( P=153), increasing BMI was
+inversely associated with gestational age at birth; however, the result was driven by several women withan extremely high BMI (above 47kg/m
+2).30Evidence
+level 1 –
+8. Transabdominal cerclage
+8.1. When should a transabdominal cerclage be considered?
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+In women with a previous unsuccessful
+transvaginal cerclage, insertion of a
+transabdominal cerclage may be discussedand considered1+ A Evidence is derived from a multi-centre
+RCT randomising women to trans
+abdominal cerclage high vaginal or lowvaginally placed cerclage
+Transabdominal cerclage can be
+performed pre-conceptually or in earlypregnancy. Pre-conceptual proceduresmay be more effective and are notassociated with sub-fertility4 GPP Pre-conceptional insertion should be
+considered as it does not affect fertilityrates and technically may be easier withlower anaesthetic and fetal risks
+A transabdominal cerclage is usually inserted following an unsuccessful vaginal cerclage or extensive
+cervical surgery. The MAVRIC study, a multicentre randomized controlled trial of transabdominal versustransvaginal cerclage randomized women to receive transabdominal cerclage, high vaginal cerclage or lowvaginal cerclage either before conception or at less than 14 weeks of gestation. The data for 111 of 139women who were recruited and who conceived were analysed: 39 had transabdominal cerclage, 39 hadhigh vaginal cerclage and 33 had low vaginal cerclage. Rates of preterm birth less than 32 weeks’ gestationwere signiﬁcantly lower in women who received transabdominal cerclage compared with low vaginalcerclage (8% versus 33%, RR 0.23: 95% CI, 0.07 –0.76; P=0.0157). The number needed to treat to
+prevent one preterm birth was 3.9 (95% CI, 2.32 –12.1). There was no difference in preterm birth rates
+between high and low vaginal cerclage.
+31However, a previous retrospective study has indicated that the
+higher a cerclage is placed in cases of short cervix the lower the subsequent odds of preterm birth.32Evidence
+level 2 –
+There are no RCT studies directly comparing the insertion of a pre-conceptual transabdominal cerclage
+with insertion in early pregnancy. Tulandi et al.33evaluated 16 studies of abdominal cerclage involving 678
+cases, ﬁnding no difference in the live birth rate when the cerclage was performed before or duringpregnancy. However, pre-conceptual insertion should be considered when possible because of reducedanaesthetics risk and the technical advantage of operating on the uterus of a woman who is not pregnant.Furthermore, there is no evidence that pre-conceptual transabdominal cerclage has any detrimental impacton fertility or care and treatment of early miscarriage. Evidence
+level 2 +
+RCOG Green-top Guideline No. 129 1189 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Subgroup analysis of an RCT comparing abdominal cerclage with vaginal cerclage (low or high) included
+women with a history of previous second trimester loss or preterm birth despite having a previous lowvaginal cerclage. Women in the abdominal cerclage group had the surgery before conception. There wasno difference between time to conception between the two groups (hazard ratio 1.34; 95% CI 0.72 –2.5
+P=0.35); rates of conception at 6, 12 and 18 months were similar.
+34Evidence
+level 1 +
+8.2. Should an abdominal cerclage be performed laparoscopically?
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+Laparoscopic and open abdominal
+cerclage have similar ef ﬁcacy. The
+laparoscopic approach is associated withfewer complications, and can beconsidered where suitable surgicalexpertise is available2+ C A meta-analysis has indicated no difference
+in second trimester loss or birth rates after34 weeks between insertion laparoscopy orlaparotomy
+Tulandi et al.
+33evaluated the efﬁcacy of abdominal cerclage via laparoscopy versus laparotomy including 16
+studies and a total of 678 cases. They found no difference in the rates of third trimester birth and livebirth rates via laparoscopy or laparotomy (97.3% –100% and 100% respectively).Evidence
+level 1 +
+A prospective cohort study assessed women who underwent laparoscopic abdominal cervical cerclage and
+compared them with a historical cohort of women who underwent the same procedure via laparotomy.
+Fetal survival rate post cerclage was similar in the two groups (98% versus 100%) but complications weremore common in the laparotomy group (22% versus 2%). There were no conversions to laparotomy inthe laparoscopy group.
+35Evidence
+level 2 +
+A meta-analysis including six studies using the laparoscopic approach and 26 studies using the abdominal
+approach found no difference in second trimester loss (8.1% laparoscopic versus 7.8%) or birth rates after34 weeks (78.5% versus 84.8%) in the two groups. However, this was not a direct comparison of the twomodalities.
+36A further meta-analysis comparing laparoscopic versus open abdominal cerclage found no
+difference in third trimester birth or live birth rates.33Evidence
+level 2 +
+Case reports have also been published regarding the insertion of an abdominal cerclage using a robotic
+assisted technique.37,38Further studies are needed to assess its efﬁcacyEvidence
+level 3
+RCOG Green-top Guideline No. 129 1190 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+8.3. How should women who experience delayed miscarriage or fetal death be cared for?
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+Decisions on care and treatment in cases
+of delayed miscarriage or fetal death inwomen with an abdominal cerclage canbe dif ﬁcult and women ’s decision making
+should be aided by a senior obstetrician4 GPP No studies have been performed but
+senior clinicians should be involved inthese decisions
+Complete evacuation through the stitch by
+suction curettage or by dilatation andevacuation (up to 18 weeks of gestation)may be performed; alternatively, thesuture may be cut, usually via a posteriorcolpotomy. Failing this, a hysterotomy may
+be required or caesarean section may be
+necessary; the woman ’s decision should
+be aided by a senior obstetrician4D Case reports have been published
+regarding evacuation through atransabdominal cerclage or cutting of thesuture
+Carers should be aware of the potential psychological sequelae associated with fetal death and miscarriage, and
+women and their families supported by debrieﬁng services and the offer of counselling. Families should also besignposted to the relevant patient support groups.
+There are no studies evaluating the different methods of uterine evacuation in the event of fetal demise
+or the need to terminate a pregnancy. The use of techniques described above has been reported by
+experienced clinicians and in case reports.
+39,40Evidence
+level 3
+9. Emergency cerclage
+9.1. When should a rescue cerclage be discussed and considered?
+Recommendation Evidence
+qualityStrength Rationale for the
+recommendation
+The decision to place a emergency suture
+should be individualised, taking the parents ’
+views carefully into account. The balance isbetween a useful prolongation of pregnancywith its reduced neonatal morbidity andmortality, against the possibility of prolongedsevere neonatal morbidity in a baby that mightotherwise die. The woman ’s decision should be
+aided by a senior obstetrician2+ D Individualisation of care is paramount
+considering the risks and bene ﬁts.
+Insertion of a emergency cerclage may delay
+birth by approximately 34 days in suitablecases (CI =18–50 days), compared with
+expectant management/bed rest alone. It may2– B A systematic review including cohort
+studies (both prospective andretrospective) and RCTs.
+RCOG Green-top Guideline No. 129 1191 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+(Continued)
+Recommendation Evidence
+qualityStrength Rationale for the
+recommendation
+also be associated with a two-fold reduction in
+the chance of birth before 34 weeks ofgestation. However, there are only limited datato support an associated improvement inneonatal mortality or morbidity
+Advanced dilatation of the cervix (more than
+4cm) or membrane prolapse beyond theexternal os appears to be associated with ahigh chance of cerclage failure3D Data are derived from uncontrolled
+studies
+Eshanipor et al.
+41undertook a systematic review to estimate the effectiveness of physical examination-
+indicated cerclage in the presence of cervical dilatation and exposed membranes in the second trimester.Both cohort studies and RCTs were included comparing women who underwent expectant managementwith cervical dilatation between 14 and 27 weeks’ gestation. Ten studies were included although only onewas an RCT, two were prospective cohort studies and seven were retrospective cohort studies; 64%(485) underwent cerclage and 36% (272) had expectant management. Cerclage was associated withincreased neonatal survival (71% compared with 43%; RR 1.65, 95% CI 1.19 –2.28) and prolongation of
+pregnancy (mean difference 33.98 days, 95% CI 17.88 –50.08). Birth at all preterm gestations except those
+prior to 24 weeks was reduced. However, details regarding the exact degree of dilatation at time ofcerclage were not given. Randomised controlled trials are warranted to identify the women most likely tobeneﬁt from emergency cerclage
+Evidence
+level 2 +
+There is no clear evidence that the gestation at which the cerclage is inserted affects the magnitude of prolongation
+of the pregnancy; however, consideration should be given to the fact that, in cases presenting before 20 weeks ofgestation, insertion of a emergency cerclage is highly likely to result in a preterm birth before 28 weeks of gestation.Furthermore, emergency cerclage can rarely be justiﬁed beyond 24 weeks’ gestation due to the potential risk ofiatrogenic membrane rupture and subsequent preterm birth.
+The aforementioned studies have not provided an analysis of prolongation of pregnancy in relation to
+cervical dilatation. However, several other uncontrolled studies have suggested the presence of membraneprolapse beyond the external os and/or cervical dilatation greater than 4cm are signiﬁcant predictors ofcerclage failure. In view of the absence of a control group in these studies, it is not clear whether thisobservation relates to treatment failure or a more advanced underlying process that makes this group ofwomen inherently more likely to give birth.
+42-44Evidence
+level 2 –
+RCOG Green-top Guideline No. 129 1192 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+9.2. What are the contraindications to cerclage insertion?
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+The contraindications to
+cerclage insertion are:
+/C15active preterm labour/C15clinical evidence of
+chorioamnionitis/C15continuing vaginal bleeding/C15PPROM/C15evidence of fetalcompromise
+/C15lethal fetal defect/C15fetal death4 GPP It is important to offer the procedure to the
+women most likely to bene ﬁt
+9.3. What information should be given to women before cerclage insertion?
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+Before history- or ultrasound-indicated
+cerclage insertion women should be given
+verbal and written information aboutpotential complications.Before any type of cerclage insertion,women should be informed of thefollowing:
+/C15There is a small risk of intraoperative
+bladder damage, cervical trauma,membrane rupture and bleeding duringinsertion of cervical cerclage.2– D Date limited to case series and case
+reports
+/C15Cervical cerclage may be associated
+with a risk of cervical laceration/traumaif there is spontaneous labour with thesuture in place.2– D Data are limited to case reports and
+series
+/C15High vaginal cerclage, inserted with
+bladder mobilisation, usually requiresanaesthetic for removal and thereforecarries the risk of an additionalanaesthetic.4 GPP
+For women undergoing non- “emergency ”
+cerclage:
+/C15Vaginal cerclage insertion is not
+associated with an increased risk ofPPROM, chorioamnionitis, induction oflabour or caesarean section.1+ B There is no evidence to suggest there is a
+correlation from existing studies
+/C15The insertion of a cervical suture is not
+associated with an increased risk ofpreterm birth or second trimester loss.1+ B An IPD meta-analysis showed no increase
+in preterm birth or second trimester loss
+/C15Cervical cerclage may be associated
+with a risk of cervical laceration/traumaif there is spontaneous labour with thesuture in place.1+ B An IPD meta-analysis showed a doubling
+of the risk of pyrexia but no apparent
+increase in chorioamnionitis
+RCOG Green-top Guideline No. 129 1193 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Although women are often routinely informed of a number of potential complications associated with
+cerclage insertion, including PPROM, second trimester loss, preterm labour, infection, bleeding and
+bladder or cervical damage, there is little published evidence to support this. None of the randomized
+studies of cervical cerclage have been designed or adequately powered to assess the risk of maternalmorbidity and, to date, none of the larger studies of history- or ultrasound-indicated cerclage havereported an increase in PPROM, preterm birth or second trimester loss.
+8,13,45Intraoperative
+complications including bladder damage, cervical trauma, membrane rupture and bleeding are reported butare rare (less than 1%).
+8,11,13Fistula formation has been reported as a late, rare complication.46Evidence
+level 2 –
+An IPD meta-analysis of seven randomized studies of cerclage insertion (combining data from studies of
+both history-indicated and ultrasound-indicated cerclage) found that cerclage was associated with anincreased risk of maternal pyrexia (OR 2.35; 95% CI 1.37 –4.05), but there was no evidence of an increase
+in chorioamnionitis (OR 0.73; 95% CI 0.36 –1.46), PPROM (OR 0.92; 95% CI 0.62 –1.35), induction of
+labour or caesarean birth (OR for spontaneous labour for no cerclage 0.81; 95% CI 0.65 –1.02).
+47Evidence
+level 1 +
+In a retrospective review of 251 cerclages (including 49 rescue and 202 history-indicated sutures) over a
+7.5–year period, cervical laceration requiring suturing at the time of birth was reported in 11% of
+Shirodkar and 14% of McDonald procedures, which was higher than that reported in 55 688 other birthsoccurring during the same period (2%).
+48Although this was statistically signiﬁcant ( P<0.025), this result
+is highly susceptible to reporting biasEvidence
+level 2 –
+Several case series have reported high risks of membrane rupture and infection associated with
+emergency cerclage; however, the lack of a control group makes it difﬁcult to separate the procedure-related risk from that inherent to the underlying condition.
+49Evidence
+level 2 –
+Prior to cerclage insertion, women should be given appropriate verbal and written information; patient information
+can be found on the RCOG website.50
+10. Pre-operative management
+10.1. What investigations should be performed before insertion of cervical cerclage?
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+Women should be offered a ﬁrst trimester
+ultrasound scan and screening foraneuploidy before the insertion of ahistory-indicated suture to ensure bothviability, singleton pregnancy, and theabsence of lethal/major fetal anomaly4 GPP This is considered good practice
+Before ultrasound-indicated or emergency
+cerclage, it is preferable to ensure ananomaly scan has been performed4 GPP This is considered good practice
+RCOG Green-top Guideline No. 129 1194 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+(Continued)
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+Maternal white cell count and C-reactive
+protein to detect chorioamnionitis beforeinsertion of a emergency cerclage can beused to aid management. The decision toperform these tests should be based onthe overall clinical picture, but in theabsence of clinical signs of
+chorioamnionitis, the decision for
+emergency cerclage need not be delayed2– D There is limited evidence to inform this
+however it is good practice to ensurethere are no signs of developing infectionin the mother
+Several studies have linked a raised maternal C-reactive protein level with histological evidence of
+chorioamnionitis in cases of preterm labour or PPROM, however the sensitivity and speciﬁcity areconsidered poor and they should be used in conjunction with clinical features.
+51,52In an uncontrolled
+retrospective review of 17 cases of emergency cerclage, the authors reported that a preoperative C-reactive protein value below 4.0 mg/dl and a maternal white cell count less than 14 000/microlitre wereassociated with prolongation of pregnancy compared with women with values above these cut-offs.Interpretation of these results was confounded by the degree of cervical dilatation, such that thosewomen with higher values also had more advanced cervical dilatationEvidence
+level 2 –
+10.2. Should amniocentesis to detect infection be performed before rescue or ultrasound-
+indicated cerclage?
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+There is insuf ﬁcient evidence to
+recommend routine amniocentesis beforerescue or ultrasound-indicated cerclage asthere are no clear data demonstratingimproved outcomes4 GPP There is no evidence to support routine
+amniocentesis prior to emergency cerclage
+In selected cases where there is suspicion of
+intra-amniotic infection, amniocentesis maybe performed to aid the decision aboutemergency cerclage, as the presence ofinfection is associated with a poorprognosis3D No RCTs have investigated the use of
+amniocentesis prior to emergency cerclagebut it may be considered on an individualbasis
+Amniocentesis before emergency cerclage
+does not appear to increase the risk ofpreterm birth before 28 weeks ofgestation but there is likely to be some
+risk to from the procedure2+ D This is based on limited numbers of
+women
+RCOG Green-top Guideline No. 129 1195 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Several studies have reported an association between poor pregnancy outcome and the presence of intra-
+amniotic infection/inﬂammation, diagnosed by amniocentesis, in women presenting with a dilated cervix,
+whether or not they undergo emergency cerclage.53,54However, none of these studies were randomized
+and are therefore susceptible to selection bias, with the majority of women undergoing amniocentesis atthe discretion of the individual physician. Rates of intra-amniotic infection vary from 13% to 51%depending on the criteria used to deﬁne a ‘positive’ result and the population selected.
+55-57Furthermore,
+the low speciﬁcity of amniocentesis could deny women cerclage who may have beneﬁted from theprocedure. The incidence of intra-amniotic infection in ultrasound-indicated cerclage is about 1 –2%.Evidence
+level 3
+Airoldi et al.55identiﬁed 122 women between 15+0and 25+6weeks of gestation with a dilated cervix
+(1–4 cm). Twenty-four (20%) of these had an amniocentesis performed. Following multivariate regression
+analysis, the authors concluded that an amniocentesis did not independently contribute to preterm birthbefore 28 weeks of gestation ( P=0.90).Evidence
+level 2 +
+10.2.1. Is amnioreduction before emergency cerclage recommended?
+Recommendation Evidence
+qualityStrength Rationale for the
+recommendation
+There is an absence of data to either refute or support the use
+of amnioreduction before insertion of a emergency cerclageand this should therefore not be carried out3D Data are currently
+lacking.
+Several small studies have reported successful prolongation of pregnancy using amnioreduction before
+cerclage, but the absence of a valid control group makes it impossible to draw any evidence-basedconclusion as to its contribution to the outcome.
+58-60Evidence
+level 3
+10.2.2. Should a latency period be observed between presentation and insertion of a rescue or ultrasound-
+indicated cerclage?
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+Each case should be
+managed on an individualbasis4 GPP There are no studies to support immediate versus delayed
+cerclage insertion in either rescue or ultrasound-indicatedprocedures
+The interval between presentation and suture insertion varies between studies. Any delay must balance the risk of
+inserting a suture in a cervix that is inevitably going to continue dilating against the increased risk of ascendinginfection.
+RCOG Green-top Guideline No. 129 1196 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+10.2.3. Should routine genital tract screening for infection be carried out before cerclage insertion?
+Recommendation Evidence
+qualityStrength Rationale for the
+recommendation
+Routine genital tract screening should not be undertaken
+before cerclage insertion4 GPP Data are currently lacking
+to support this practice
+In the presence of a positive culture from a genital swab,
+antimicrobial therapy should be decided on an individualbasis after discussion with the microbiology team4 GPP This should be considered
+on an individual basis
+No prospective studies have assessed the beneﬁt of microbial screening prior to cerclage insertion.
+However, a small retrospective study of 65 consecutive cases found variable colonization and antibioticsensitivities and no antibiotic would empirically treat all pathogens.
+61Evidence
+level 3
+11. Operative issues
+11.1. Should perioperative tocolysis be used for insertion of cerclage?
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+There is no evidence to support the use of
+routine perioperative tocolysis in womenundergoing insertion of cerclage; this shouldbe considered on an individual basis4 GPP There are no data to support the use
+of tocolysis at the time of cerclageinsertion at present
+In most of the existing randomized studies, the majority of women allocated cerclage also received
+perioperative tocolysis, most commonly indomethacin. Consequently, there is no control group availablefor comparison. However, a retrospective cohort study involving 101 women who underwent ultrasound-indicated cerclage reported that the rate of preterm birth before 35 weeks of gestation was notsigniﬁcantly different in women who received indomethacin for 48 hours following the procedurecompared with those who did not (39% versus 34%).
+62There is a paucity of adequately powered trials to
+compare the use of perioperative tocolytic with cerclage alone.Evidence
+level 4
+11.2. Should perioperative antibiotics be given?
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+The decision for antibiotic prophylaxis at the
+time of cerclage placement should be at thediscretion of the operating team1– C Data to support antibiotic use are
+limited to one RCT also assessing theuse of indomethacin
+RCOG Green-top Guideline No. 129 1197 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+An RCT was conducted evaluating perioperative indomethacin and antibiotic administration at the time of
+examination indicated cerclage. Fifty-three women were enrolled and three were lost to follow up. A
+greater proportion of pregnancies were prolonged by 28 days among women who received indomethacin
+and perioperative antibiotics ( P=0.01).63However numbers were limited and concerns have been raised
+regarding the use of indomethacin due to premature closure of the ductus arteriosus in the baby.Evidence
+level 1 –
+11.3. What method of anaesthesia should be employed for the insertion of cerclage?
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+The choice of anaesthesia should be
+made by the operating team inconjunction with the woman2+ B Data from a multicentre retrospective cohort
+study indicates that both general and regionalanaesthesia are safe. The decision should bemade on a case by case basis and justi ﬁed
+There are no RCTs comparing general with regional anaesthesia for insertion of cervical cerclage. A
+multicentre retrospective cohort study of 487 cases of cervical cerclage compared the type of anaesthesiawith obstetric outcomes, ﬁnding that both general and regional anaesthesia could be safely used. Generalanaesthetic was associated with a shorter recovery time but a higher demand for opioid and non-opioidanalgesia.
+64The choice of anaesthesia should be made on a case by case basis.Evidence
+level 2 +
+11.4. Can cerclage be performed as a day-case procedure?
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+Elective transvaginal cerclage can
+safely be performed as a day-caseprocedure2+ C A retrospective study has shown no difference in
+short term complications between day case andinpatient procedures
+Golan et al.
+65retrospectively compared 125 cases of elective outpatient cerclage with 101 cases of
+inpatient cerclage, during which women received complete bed rest in hospital for 48 hourspostoperatively. There was no signiﬁcant difference in short-term complications or pregnancy outcome,but hospital stay was signiﬁcantly shorter for those managed as planned day cases. Evidence
+level 2 +
+RCOG Green-top Guideline No. 129 1198 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+11.5. Which technique and material should be used?
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+The choice of suture material should be at
+the discretion of the surgeon; a non-absorbable suture should be used4 GPP Trials are currently in progress to inform
+the use of suture material at present thisshould be at the discretion of the surgeon
+The choice of transvaginal cerclage
+technique (high cervical insertion withbladder mobilization or low cervicalinsertion) should be at the discretion ofthe surgeon, but the cerclage should beplaced as high as is practically possible2+ C Secondary analysis of data and small RCTs
+have found no difference in outcomesbetween the techniques of cerclage. Thisshould therefore be at the discretion ofthe surgeon
+There is no difference between using two
+purse-string sutures and one single sutureand should be at the discretion of thesurgeon1+ B Limited data from small RCTs indicates
+there is no evidence to support theplacement of two sutures in preference toone
+The insertion of cervical occlusion suture
+in addition to the primary cerclage is notroutinely recommended1– C There is no evidence to support this
+practice. One RCT has been performed butwas stopped due to slow recruitment andlack of ef ﬁcacy
+There is insufﬁcient evidence to support any speciﬁc technique for cerclage insertion. One small RCT
+compared Shirodkar ( n=34) and McDonald Cerclage ( n=34) versus bed rest ( n=30) in women with
+no evidence of infection. No difference in the preterm birth or perinatal outcomes was found betweenthe three groups.
+66Evidence
+level 1 –
+In a secondary analysis of singleton pregnancy data from four randomized trials of cervical cerclage in
+women with a short cervix, there was no signiﬁcant difference in the rate of birth before 33 weeks ofgestation in those with a McDonald cerclage compared with those with a Shirodkar suture, once adjustedfor confounding factors (OR 0.55; 95% CI 0.2 –1.3).
+67These results should be interpreted with caution
+since the study was not sufﬁciently powered to detect a statistically signiﬁcant difference in this outcome.Evidence
+level 2 +
+A secondary analysis was conducted from a multicentre trial of ultrasound indicated cerclage for short
+cervical length in which women with a prior spontaneous preterm birth 16 –34 weeks with a singleton
+pregnancy and cervical length less than 25mm between 16 and 23 weeks were randomized to McDonaldcerclage or no cerclage. Outcomes of women who underwent cerclage were analysed by the type ofsuture material comparing polyester braided thread to mersilene tape. One hundred and thirty-eightwomen were included: 84 had polyester braided thread, 56 had mersilene tape; eight had monoﬁlamentand were excluded from the analysis. Rates of preterm birth less than 35 weeks were similar betweenpolyester braided thread and mersilene tape.
+68An RCT is currently ongoing assessing the type of suture
+material.69Evidence
+level 2 +
+RCOG Green-top Guideline No. 129 1199 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Two RCTs have been performed comparing the efﬁcacy of single versus double cerclage. Both concluded
+there was no signiﬁcance in preterm birth rates. One, comprising of 33 women, found that the preterm
+birth rate less than 34 weeks was comparable between the two groups (10.5% versus 35.7%; P=0.106).70
+The second found there was no signiﬁcant difference in prolongation of the pregnancy between single and
+double cerclage, however, preterm birth less than 33 weeks was not experienced by any of the women inthe double cerclage group and ﬁve in the single cerclage group.
+71The total number of participants in both
+studies was very small so limited conclusions can be drawn. Further RCTs are warranted to assesswhether double cerclage may be superior to single.Evidence
+level 1 –
+There are limited data on the role of cervical occlusion at the time of cerclage. The only multi centre RCT
+was stopped early due to slow recruitment and an interim analysis showing no beneﬁt of occlusion.72Evidence
+level 1 –
+12. Adjuvant management
+12.1. Bed rest
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+Bed rest in women who have undergone
+cerclage should not be routinelyrecommended but should beindividualised, taking into account theclinical circumstances and potentialadverse effects that bed rest could have
+on women and their families, in addition
+to increased costs for the healthcaresystem4 GPP Limited data exists to support the use of
+bed rest but individualisation of care shouldbe considered as well as the risksassociated with prolonged immobilization
+There are no studies comparing bed rest in women undergoing cervical cerclage. A Cochrane review of bed
+rest in women at high risk of preterm birth identiﬁed only one randomized cluster study of uncertainmethodological quality. A comparison was made between 432 women prescribed bed rest and 834 womenprescribed no intervention/placebo. Preterm birth before 37 weeks of gestation was similar in both groups(7.9% in the intervention group versus 8.5% in the control group: RR 0.92; 95% CI 0.62 –1.37).
+73Evidence
+level 1 –
+12.2. Sexual intercourse
+Recommendation Evidence
+qualityStrength Rationale for the
+recommendation
+Abstinence from sexual intercourse following
+cerclage insertion should not be routinelyrecommended4 GPP There is no evidence to
+recommend abstinence from sexualintercourse
+RCOG Green-top Guideline No. 129 1200 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+There are no studies evaluating the effect of sexual intercourse on the risk of second trimester loss or preterm
+birth in women with cervical cerclage.
+12.3. Is there a role for post-cerclage serial sonographic surveillance of cervical length?
+Recommendation Evidence
+qualityStrength Rationale for the
+recommendation
+While routine serial sonographic measurement of the
+cervix is not recommended it may be useful in
+individual cases following ultrasound-indicated cerclageto offer timely administration of steroids or in uterotransfer3D This is considered good
+practice
+In the presence of history-indicated cerclage additional
+ultrasound-indicated cerclage is not routinelyrecommended as, compared with expectantmanagement, it may be associated with an increase inboth pregnancy loss and birth before 35 weeks ofgestation3D Data are limited to
+retrospective studies withsmall numbers
+The decision to place a emergency cerclage following
+an elective or ultrasound-indicated cerclage should bemade on an individual basis taking into account theclinical circumstances4 GPP Care should be individualised
+Several studies have shown a signiﬁcant increase in cervical length following the insertion of elective,
+ultrasound-indicated and emergency cerclage.
+32,74-77A number of retrospective studies have indicated that
+the higher the cerclage is placed the lower the risk of subsequent preterm delivery.32,78Evidence
+level 2 –
+In a retrospective cohort study involving 24 women with a history-indicated cerclage and subsequent
+cervical length shortening to less than 25mm on ultrasound, 19 women had expectant management andﬁve women underwent insertion of a reinforcing cerclage.
+79Repeat suture insertion was associated with a
+signiﬁcantly earlier gestational age at birth (21 versus 33 weeks of gestation; P=0.002) and an increased
+second trimester loss rate (80% versus 15%; P=0.01). However, the numbers are small and selection
+criteria for choosing expectant management over repeat suture insertion were not deﬁned and hencethese results may be subject to bias. This ﬁnding was supported by a further retrospective cohort studyby Simcox et al.
+80which assessed 25 women with a previous cerclage and evidence of membranes
+prolapsing through the ﬁrst suture. Of these women, 13 had a second reinforcing suture and 12 hadexpectant management. Women with a reinforcing cerclage were more likely to give birth at an earliergestation compared with those who had expectant management (26
++0[/C65+1] compared with 31+1[/C67+0]
+weeks P=0.047). Numbers are, however, again limited.Evidence
+level 3
+RCOG Green-top Guideline No. 129 1201 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+12.4. Is fetal ﬁbronectin testing useful following insertion of a cervical cerclage?
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+Routine fetal ﬁbronectin testing is not
+recommended post-cerclage. However, thehigh negative predictive value of fetalﬁbronectin testing for subsequent birth at
+less than 30 weeks of gestation inasymptomatic high-risk women with acerclage in place may provide reassuranceto women and clinicians in individual cases2+ C Limited data exist indicates however, there
+is a high negative predictive value of fetalﬁbronectin following cerclage
+In a retrospective observational study involving 910 asymptomatic women at high risk of preterm birth,
+including 159 with a cervical cerclage in place, fetal ﬁbronectin testing for the prediction of birth before30 weeks of gestation was shown to have a similar negative predictive value in both groups (over 98%)but a signiﬁcantly lower speciﬁcity (77% versus 90%; P<0.001) in those with a suture.
+81Evidence
+level 2 +
+A further small study by Benson et al.82undertook 71 ﬁbronectin tests in women presenting with
+symptoms of labour post cervical cerclage between 23 and 34 weeks’ gestation ﬁnding the sensitivity,speciﬁcity, positive predictive value and negative predictive value for birth within 2 weeks of fFN testingwere 100, 78, 28 and 100% respectively. Evidence
+level 2 +
+Although other tests are commercially available for the prediction of preterm birth, such as Partosure and Actim
+Partus no studies to date have evaluted their use following cervical cerclage insertion.
+12.5. Should women receive supplement progesterone following cerclage?
+Recommendation Evidence
+qualityStrength Rationale for the
+recommendation
+Routine use of progesterone supplementation following
+cerclage is not recommended4 GPP NG 25 recommendation
+Current NICE guidelines do not advise progesterone administration following cervical cerclage.83 Evidence
+level 4
+One RCT of 100 women compared the use of emergency cerclage in women in addition to progesterone
+treatment. Those with cerclage and progesterone had in increase in pregnancy prolongation compared toprogesterone alone (28.44 /C612.73 days versus 9.96 /C63.27). Neonatal outcomes, early neonatal deaths
+were also lower in this group.
+84However, it should be noted the entry criteria was deﬁned as ‘trueEvidence
+level 1 –
+RCOG Green-top Guideline No. 129 1202 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+labour pains and diagnosed as starting preterm labour’ and no details regarding dilatation or cervical
+length were reported.
+Jarde et al.85assessed whether combining interventions improved outcome in a systematic review. This
+included both randomized and non-randomized studies where asymptomatic women at risk of pretermbirth received any combination of progesterone, pessary, cerclage or pessary compared with either oneor no intervention. No differences in preterm birth before 37 weeks were found when comparingcerclage and progesterone with cerclage alone (RR 1.04, 95% CI 0.71 –2.42).Evidence
+level 2 +
+There are no comparative studies on the use of progesterone in women who have undergone cerclage. In
+an RCT of ultrasound-indicated cerclage involving 302 women with singleton pregnancies and a history ofspontaneous preterm birth between 17
++0and 33+6weeks of gestation, an analysis of the woman’s
+recorded intention to use supplemental progesterone did not appear to have any effect on birth before35
++0weeks of gestation (OR 0.97; 95% CI 0.6 –1.6).13Evidence
+level 1 +
+12.6. Should women be offered an Arabin pessary or progesterone instead of a cerclage?
+Recommendation Evidence
+qualityStrength Rationale for the
+recommendation
+There is no evidence that either progesterone or Arabin
+pessary alone are more or less effective than cervical
+cerclage1– C Data are currently lacking
+but trials are ongoing
+Multiple studies have compared different agents (cerclage, progesterone and pessaries) for the prevention of preterm
+birth, however these often do not control for clinician preference and many of the studies are retrospective innature.
+The 2017 Cochrane review assessed the efﬁcacy of cerclage versus progesterone in high risk women for
+preventing preterm birth. Two trials were included comprising of 129 women with a short cervix onultrasound. However, numbers were too small to detect signiﬁcant differences.
+3Evidence
+level 1 –
+A meta-analysis was undertaken by Jarde assessing the effectiveness of progesterone, cerclage and Arabin
+pessary insertion for preventing preterm birth in singleton pregnancies, which included 36 trials(9425 women). Progesterone was most effective, reducing preterm birth less than 34 weeks (OR 0.44;95% CI 0.22 –0.79; NNT 9), less than 37 weeks (OR 0.58; 95% CI 0.41 –0.79; NNT 9) and neonatal death
+(OR 0.5; 95% CI 0.28 –0.58) compared with control but the data was heterogeneous and the indication for
+treatment included women with just a history of previous preterm birth and others who had asonographically short cervix. Results should therefore be interpreted with caution.
+86Evidence
+level 1 +
+Conde-Agudelo et al.87also compared the efﬁcacy of vaginal progesterone and cerclage in preventing preterm birth
+and adverse perinatal outcomes in women with a singleton gestation, previous spontaneous preterm birth and shortcervix undertaking a meta-analysis of RCTs comparing vaginal progesterone to placebo/no treatment or cerclage to
+RCOG Green-top Guideline No. 129 1203 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+no cerclage in women with a singleton gestation, previous spontaneous preterm birth and a sonographic cervical
+length less than 25 mm. Five trials comparing vaginal progesterone versus placebo and ﬁve comparing cerclage versus
+no cerclage were included. Both progesterone and cerclage were equally effective for preventing preterm birth andimproving perinatal outcomes. However, cerclage and progesterone were not compared directly.
+A number of randomized controlled trials are planned comparing the efﬁcacy of cerclage versus pessary versus
+progesterone.
+83,88
+13. When should the cerclage be removed?
+Recommendation Evidence
+qualityStrength Rationale for the
+recommendation
+A transvaginal cervical cerclage should be removed before
+labour, usually between 36+1and 37+0weeks of gestation,
+unless birth is by pre-labour caesarean section, in which casesuture removal could be delayed until this time4 GPP This is considered
+good practice
+In women presenting in established preterm labour, the
+cerclage should be removed to minimize potential trauma to
+the cervix4 GPP This is considered
+good practice
+A high (inserted with bladder mobilization) cervical cerclage
+will usually require anaesthesia for removal4 GPP This is considered
+good practice
+All women with a transabdominal cerclage require birth by
+caesarean birth, and the abdominal suture may be left in placefollowing birth4 GPP This is considered
+good practice
+There are no studies comparing elective removal of transvaginal cerclage with removal in labour. However, in the
+absence of preterm labour, elective removal at 36 –37 weeks of gestation is advisable owing to the potential risk of
+cervical injury in labour and the minimal risk to a neonate born at this gestation.
+There are no studies regarding the use of anaesthesia in the removal of a cerclage inserted with bladder mobilization
+but, given that the technique involves burial of the suture, an anaesthetic is likely to be necessary for removal.Decisions regarding use of anaesthetic should be taken jointly with the woman.
+There are no published studies on long-term outcome comparing a policy of removing a transabdominal cerclage to
+it remaining in place. However, if further pregnancies are contemplated, it is reasonable to recommend leaving thecerclage in place. There have been anecdotal reports of suture ‘pulling through’ prior to labour, and a vaginal birthcan occur safely if this is identiﬁed.
+RCOG Green-top Guideline No. 129 1204 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+13.1. Should the cerclage be removed following PPROM?
+Recommendation Evidence
+qualityStrength Rationale for the recommendation
+In women with PPROM between 24 and
+34 weeks of gestation and without
+evidence of infection or preterm labour,delayed removal of the cerclage for48 hours can be considered to facilitate inutero transfer4 GPP Care should be individualised
+Delayed suture removal until labour
+ensues, or birth is indicated, is associatedwith an increased risk of maternal/fetalsepsis and is not recommended1– C Data are derived from one RCT which was
+terminated early but interim analysisindicated there is no increasedprolongation of pregnancy
+Given the risk of neonatal and/or maternal
+sepsis and the minimal bene ﬁto f4 8h o u r s
+of latency in pregnancy with PPROMbefore 23 and after 34 weeks of gestation,delayed suture removal is unlikely to beadvantageous in this situation1– C Data are derived from the same RCT and
+there was a suggestion leaving thecerclage in place was associated withhigher rates of chorioamnionitis
+A multicentre RCT conducted by Galyean et al.
+89assessed women where a cerclage was placed less than
+24 weeks’ gestation in singleton or twin pregnancies with a subsequent rupture of membranes between22 and 33 weeks’ gestation. Women were then randomized to retention or removal of the cerclage.Expectant management was then performed and birth expedited in the presence of chorioamnionitis, fetaldistress or other medical or obstetric indications. The study was terminated after 56 women wererecruited in 10 years as, even if the intended sample size of 142 was reached, interim statistical analysisdemonstrated that it was unlikely that leaving a cerclage in situ after PPROM would prolong gestation.There was also the suggestion that leaving the suture in place was associated with higher rates ofchorioamnionitis and no beneﬁt in terms of steroid administration.
+Evidence
+level 1 –
+14. Recommendations for future research
+/C15To further assess the role of combination therapies in the management of women at high risk of preterm
+delivery, speciﬁcally progesterone with cerclage.
+/C15To further evaluate the role of cerclage in speciﬁc women with cervical damage i.e. women with isolate loopexcisions, cone biopsies and full dilatation C-sections
+/C15To assess the role of adjuvant diagnostics and therapies at the time of cerclage such as anti-inﬂammatorybiomarkers and antibiotics.
+/C15The details of surgical intervention including women undergoing transabdominal cerclage such as the role ofoperator experience and surgical technique.
+15. Suggested audit topics
+/C15Number of women referred to a consultant obstetrician (or a specialist prematurity clinic) before 12 weeks ofgestation as a proportion of those eligible for history indicated cerclage (100%).
+RCOG Green-top Guideline No. 129 1205 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+/C15Percentage of women having cerclage in line with indications in local protocols (greater than90%).
+/C15Proportion of women offered aneuploidy screening before history-indicated cerclage insertion (100%).
+16. Useful links and support
+/C15Cervical Stitch RCOG Patient Information Leaﬂet [https://www.rcog.org.uk/en/patients/patient-leaﬂets/cervical-
+stitch/]
+/C15Tommy’s Charity information regarding cervical incompetence [https://www.tommys.org/pregnancy-complications/prem-birth/treatment/cervical-incompetence]
+/C15NICE guideline [NG25] Preterm labour and birth [https://www.nice.org.uk/guidance/ng25]
+Acknowledgments
+The developers would like to acknowledge Miss Meekai To for their work as co-developer of the previous edition of
+this guideline.
+Disclosure of interests
+AHS has declared no conﬂicts of interest. LS has declared no conﬂicts of interest. Full disclosure of interests areavailable to view online as supporting information.
+Funding
+All those involved in the development of the Green-top Guidelines, including the Guidelines Committee, GuidelinesCommittee co-chairs, guideline developers, peer reviewers and other reviewers, are unpaid volunteers and receiveno direct funding for their work in producing the guideline. The exception to this are the RCOG staff involved whoare salaried employees of the College and GC members who receive reimbursement for expenses for attending GCmeetings. Please see more information on travel expense rules on the RCOG website.
+Supporting Information
+Additional supporting information may be found online in the Supporting Information section at the end of thearticle.
+Appendix S1 . Cervical cerclage literature search strategy.
+Appendix S2 . Cervical cerclage search strategy top up.
+References
+1. National Institute for Health and Care Excellence. Preterm Labour
+and Birth. NICE Guideline 25 . London: NICE; 2015.
+2. Royal College of Obstetricians and Gynaecologists. Development of
+RCOG Green-top Guidelines: Policies and Processes. Clinical Governance
+Advice No. 1 . London: RCOG; 2006.
+3. Alﬁrevic Z, Stampalija T, Medley N. Cervical stitch (cerclage) for
+preventing preterm birth in singleton pregnancy. Cochrane
+Database Syst Rev 2017;6:CD008991.
+4. McDonald IA. Suture of the cervix for inevitable miscarriage.
+J Obstet Gynaecol Br Emp 1957;64:346 –50.5. Vn S. A new method of operative treatment for habitual
+abortion in the second trimester of pregnancy. Antiseptic
+1955;52:299 –300.
+6. Benson RC, Durfee RB. Transabdominal cervico uterine cerclage
+during pregnancy for the treatment of cervical incompetency.
+Obstet Gynecol 1965;25:145 –55.
+7. Secher NJ, McCormack CD, Weber T, Hein M, Helmig RB.
+Cervical occlusion in women with cervical insufﬁciency: protocol
+for a randomised, controlled trial with cerclage, with and without
+cervical occlusion. BJOG 2007;114:649 –e6.
+RCOG Green-top Guideline No. 129 1206 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+8. Final report of the Medical Research Council/Royal College of
+Obstetricians and Gynaecologists multicentre randomised trial of
+cervical cerclage. MRC/RCOG Working Party on CervicalCerclage. BJOG 1993;100:516 –23.
+9. Zlatnik FJ, Burmeister LF. Interval evaluation of the cervix for
+predicting pregnancy outcome and diagnosing cervical
+incompetence. J Reprod Med 1993;38:365 –9.
+10. Anthony GS, Walker RG, Robins JB, Cameron AD, Calder AA.
+Management of cervical weakness based on the measurement of
+cervical resistance index. Eur J Obstet Gynecol Reprod Biol
+2007;134:174 –8.
+11. To MS, Alﬁrevic Z, Heath VC, et al. Cervical cerclage for
+prevention of preterm delivery in women with short cervix:
+randomised controlled trial. Lancet 2004;363:1849 –53.
+12. Berghella V, Baxter JK, Hendrix NW. Cervical assessment by
+ultrasound for preventing preterm delivery. Cochrane Database
+Syst Rev 2013;1:CD007235.
+13. Owen J, Hankins G, Iams JD, Berghella V, Shefﬁeld JS, Perez-
+Delboy A, et al. Multicenter randomized trial of cerclage for
+preterm birth prevention in high-risk women with shortened
+midtrimester cervical length. Am J Obstet Gynecol 2009;201:375.e1 –
+375.e8.
+14. Berghella V, Odibo AO, To MS, Rust OA, Althuisius SM. Cerclage
+for short cervix on ultrasonography: meta-analysis of trials using
+individual patient-level data. Obstet Gynecol 2005;106:181 –9.
+15. Owen J, Yost N, Berghella V, et al. Mid-trimester endovaginal
+sonography in women at high risk for spontaneous preterm birth.
+JAMA 2001;286:1340 –8.
+16. To MS, Skentou C, Liao AW, Cacho A, Nicolaides KH. Cervical
+length and funneling at 23 weeks of gestation in the prediction of
+spontaneous early preterm delivery. Ultrasound Obstet Gynecol
+2001;18:200 –3.
+17. Berghella V, Haas S, Chervoneva I, Hyslop T. Patients with prior
+second-trimester loss: prophylactic cerclage or serial transvaginal
+sonograms? Am J Obstet Gynecol 2002;187:747 –51.
+18. Althuisius SM, Dekker GA, van Geijn HP, Bekedam DJ, Hummel
+P. Cervical incompetence prevention randomized cerclage trial(CIPRACT): study design and preliminary results. Am J Obstet
+Gynecol 2000;183:823 –9.
+19. To MS, Palaniappan V, Skentou C, Gibb D, Nicolaides KH.
+Elective cerclage vs. ultrasound-indicated cerclage in high-riskpregnancies. Ultrasound Obstet Gynecol 2002;19:475 –7.
+20. Berghella V, Mackeen AD. Cervical length screening with
+ultrasound-indicated cerclage compared with history-indicatedcerclage for prevention of preterm birth: a meta-analysis.
+Obstet Gynecol 2011;118:148 –55.
+21. National Health Service England. Saving Babies’ Lives Version
+Two: A care bundle for reducing perinatal mortality. NHSE;England: 2019. [https://www.england.nhs.uk/publication/saving-
+babies-lives-version-two-a-care-bundle-for-reducing-perinatal-
+mortality/]. Accessed 8 October 2019.
+22. Network UPC. Reducing Preterm Birth: Guidelines for
+Commissioners and Providers; 2019.
+23. Rafael TJ, Berghella V, Alﬁrevic Z. Cervical stitch (cerclage) for
+preventing preterm birth in multiple pregnancy. Cochrane Database
+Syst Rev 2014;CD009166.
+24. Jarde A, Lutsiv O, Park CK, Barrett J, Beyene J, Saito S, et al.
+Preterm birth prevention in twin pregnancies with progesterone,pessary, or cerclage: a systematic review and meta-analysis. BJOG
+2017;124:1163 –73.
+25. Roman A, Rochelson B, Fox NS, Hoffman M, Berghella V, Patel V,
+et al. Efﬁcacy of ultrasound-indicated cerclage in twin pregnancies.Am J Obstet Gynecol 2015;212:788.e1 –788.e6.26. Norman JE, Norrie J, Maclennan G, et al. Open randomised trial
+of the (Arabin) pessary to prevent preterm birth in twin
+pregnancy with health economics and acceptability: STOPPIT-2-astudy protocol. BMJ Open 2018;8:e026430.
+27. Kyrgiou M, Koliopoulos G, Martin-Hirsch P, Arbyn M, Prendiville
+W, Paraskevaidis E. Obstetric outcomes after conservative
+treatment for intraepithelial or early invasive cervical lesions:systematic review and meta-analysis. Lancet 2006;367:489 –98.
+28. Kyrgiou M, Athanasiou A, Paraskevaidi M, Mitra A, Kalliala I,
+Martin-Hirsch P, et al. Adverse obstetric outcomes after localtreatment for cervical preinvasive and early invasive diseaseaccording to cone depth: systematic review and meta-analysis.
+BMJ 2016;354: i3633.
+29. Kindinger LM, Kyrgiou M, MacIntyre DA, Cacciatore S, Yulia A,
+Cook J, et al. Preterm birth prevention post-conization: a modelof cervical length screening with targeted cerclage. PLoS One
+2016;11:e0163793.
+30. Farinelli CK, Wing DA, Szychowski JM, Owen J, Hankins G, Iams
+JD, et al. Association between body mass index and pregnancy
+outcome in a randomized trial of cerclage for short cervix.
+Ultrasound Obstet Gynecol 2012;40:669 –73.
+31. Shennan A, Chandiramani M, Bennett P, David AL, Girling J,
+Ridout A, et al. MAVRIC: a multicenter randomized controlled
+trial of transabdominal vs transvaginal cervical cerclage.
+Am J Obstet Gynecol 2020;222:261.e1 –261.e9.
+32. Cook JR, Chatﬁeld S, Chandiramani M, Kindinger L, Cacciatore S,
+Sykes L, et al. Cerclage position, cervical length and preterm
+delivery in women undergoing ultrasound indicated cervical
+cerclage: a retrospective cohort study. PLoS One 2017;12:
+e0178072.
+33. Tulandi T, Alghanaim N, Hakeem G, Tan X. Pre and post-
+conceptional abdominal cerclage by laparoscopy or laparotomy.J Minim Invasive Gynecol 2014;21:987 –93.
+34. Vousden NJ, Carter J, Seed PT, Shennan AH. What is the impact
+of preconception abdominal cerclage on fertility: evidence from a
+randomized controlled trial. Acta Obstet Gynecol Scand
+2017;96:543 –6.
+35. Ades A, Dobromilsky KC, Cheung KT, Umstad MP.
+Transabdominal cervical cerclage: laparoscopy versus laparotomy.
+J Minim Invasive Gynecol 2015;22:968 –73.
+36. Burger NB, Brolmann HA, Einarsson JI, Langebrekke A, Huirne JA.
+Effectiveness of abdominal cerc lage placed via laparotomy or
+laparoscopy: systematic review. J Minim Invasive Gynecol 2011;18:696 –704.
+37. Menderes G, Clark M, Clark-Donat L, Azodi M. Robotic-assisted
+abdominal cerclage placement during pregnancy and its challenges.
+J Minim Invasive Gynecol 2015;22:713 –4.
+38. Walsh TM, Borahay MA, Fox KA, Kilic GS. Robotic-assisted,
+ultrasound-guided abdominal cerclage during pregnancy:overcoming minimally invasive surgery limitations? J Minim Invasive
+Gynecol 2013;20:398 –400.
+39. Martin A, Lathrop E. Controversies in family planning:
+management of second-trimester losses in the setting of anabdominal cerclage. Contraception 2013;87:728 –31.
+40. Chandiramani M, Chappell L, Radford S, Shennan A. Successful
+pregnancy following mid-trimester evacuation through atransabdominal cervical cerclage. BMJ Case Rep 2011:
+bcr0220113841.
+41. Ehsanipoor RM, Seligman NS, Saccone G, Szymanski LM,
+Wissinger C, Werner EF, et al. Physical examination-indicated
+cerclage: a systematic review and meta-analysis. Obstet Gynecol
+2015;126:125 –35.
+42. Schorr SJ, Morales WJ. Obstetric management of incompetent
+cervix and bulging fetal membranes. J Reprod Med 1996;41:235 –8.
+RCOG Green-top Guideline No. 129 1207 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+43. Kokia E, Dor J, Blankenstein J, Seidman DS, Lipitz S, Serr DM,
+et al. A simple scoring system for the treatment of cervical
+incompetence diagnosed during the second trimester. Gynecol
+Obstet Invest 1991;31:12 –6.
+44. Terkildsen MF, Parilla BV, Kumar P, Grobman WA. Factors
+associated with success of emergent second-trimester cerclage.
+Obstet Gynecol 2003;101:565 –9.
+45. Berghella V, Odibo AO, Tolosa JE. Cerclage for prevention of
+preterm birth in women with a short cervix found on transvaginal
+ultrasound examination: a randomized trial. Am J Obstet Gynecol
+2004;191:1311 –7.
+46. Massengill JC, Baker TM, Von Pechmann WS, Horbach NS,
+Hurtado EA. Commonalities of cerclage-related genitourinary
+ﬁstulas. Female Pelvic Med Reconstr Surg 2012;18:362 –5.
+47. Jorgensen AL, Alﬁrevic Z, Tudur Smith C, Williamson PR,
+cerclage IPDM-aG. Cervical stitch (cerclage) for preventing
+pregnancy loss: individual patient data meta-analysis. BJOG
+2007;114:1460 –76.
+48. Harger JH. Comparison of success and morbidity in cervical
+cerclage procedures. Obstet Gynecol 1980;56:543 –8.
+49. Aarnoudse JG, Huisjes HJ. Complications of cerclage. Acta Obstet
+Gynecol Scand 1979;58:255 –7.
+50. Royal College of Obstetricians and Gynaecologists. Cervical Stitch .
+Information for you. London: RCOG; 2018.
+51. Trochez-Martinez RD, Smith P, Lamont RF. Use of C-reactive protein
+as a predictor of chorioamnionitis in preterm prelabour rupture ofmembranes: a systematic review. BJOG 2007;114:796 –801.
+52. Wiwanitkit V. Maternal C-reactive protein for detection of
+chorioamnionitis: an appraisal. Infect Dis Obstet Gynecol
+2005;13:179 –81.
+53. Weiner CP, Lee KY, Buhimschi CS, Christner R, Buhimschi IA.
+Proteomic biomarkers that predict the clinical success of rescuecerclage. Am J Obstet Gynecol 2005;192:710 –8.
+54. Mays JK, Figueroa R, Shah J, Khakoo H, Kaminsky S, Tejani N.
+Amniocentesis for selection before rescue cerclage. Obstet Gynecol
+2000;95:652 –5.
+55. Airoldi J, Pereira L, Cotter A, Gomez R, Berghella V,
+Prasertcharoensuk W, et al. Amniocentesis prior to physical
+exam-indicated cerclage in women with midtrimester cervical
+dilation: results from the expectant management compared toPhysical Exam-indicated Cerclage international cohort study.Am J Perinatol 2009;26:63 –8.
+56. Lee SE, Romero R, Park CW, Jun JK, Yoon BH. The frequency
+and signiﬁcance of intraamniotic inﬂammation in patients withcervical insufﬁciency. Am J Obstet Gynecol 2008;198:633.e1 –
+633.e8.
+57. Romero R, Gonzalez R, Sepulveda W, Brandt F, Ramirez M,
+Sorokin Y, et al. Infection and labor. VIII. Microbial invasion of theamniotic cavity in patients with suspected cervical incompetence:
+prevalence and clinical signiﬁcance. Am J Obstet Gynecol
+1992;167:1086 –91.
+58. Cerqui AJ, Olive E, Bennett MJ, Challis D. Emergency cervical
+cerclage. Is there a role for amnioreduction? Aust N Z J Obstet
+Gynaecol 1999;39:155 –
+8.
+59. Makino Y, Makino I, Tsujioka H, Kawarabayashi T.
+Amnioreduction in patients with bulging prolapsed membranes
+out of the cervix and vaginal oriﬁce in cervical cerclage. J Perinat Med
+2004;32:140 –8.
+60. Locatelli A, Vergani P, Bellini P, Strobelt N, Arreghini A, Ghidini
+A. Amnioreduction in emergency cerclage with prolapsed
+membranes: comparison of two methods for reducing the
+membranes. Am J Perinatol 1999;16:73 –7.61. Moisidis-Tesch CM, Ginsberg NA, Uleer C, Mobus VJ. The role of
+cervical cultures to guide perioperative antibiotics in cervical
+cerclage - a retrospective analysis of 65 consecutive cases.J Matern Fetal Neonatal Med 2016;29:3629 –33.
+62. Visintine J, Airoldi J, Berghella V. Indomethacin administration at
+the time of ultrasound-indicated cerclage: is there an association
+with a reduction in spontaneous preterm birth? Am J Obstet
+Gynecol 2008;198:643.e1 –643.e3.
+63. Miller ES, Grobman WA, Fonseca L, Robinson BK. Indomethacin
+and antibiotics in examination-indicated cerclage: a randomizedcontrolled trial. Obstet Gynecol 2014;123:1311 –6.
+64. Ioscovich A, Popov A, Gimelfarb Y, Gozal Y, Orbach-Zinger S,
+Shapiro J, et al. Anesthetic management of prophylactic cervical
+cerclage: a retrospective multicenter cohort study. Arch Gynecol
+Obstet 2015;291:509 –12.
+65. Golan A, Wolman I, Barnan R, Niv D, David MP. Outpatient
+versus inpatient cervical cerclage. J Reprod Med 1994;39:788 –90.
+66. Otsuki K, Nakai A, Matsuda Y, Shinozuka N, Kawabata I, Makino
+Y, et al. Randomized trial of ultrasound-indicated cerclage in
+singleton women without lower genital tract inﬂammation.
+J Obstet Gynaecol Res 2016;42:148 –57.
+67. Odibo AO, Berghella V, To MS, Rust OA, Althuisius SM,
+Nicolaides KH. Shirodkar versus McDonald cerclage for the
+prevention of preterm birth in women with short cervical length.
+Am J Perinatol 2007;24:55 –60.
+68. Berghella V, Szychowski JM, Owen J, Hankins G, Iams JD, Shefﬁeld
+JS, et al. Suture type and ultrasound-indicated cerclage efﬁcacy.
+J Matern Fetal Neonatal Med 2012;25:2287 –90.
+69. Israﬁl-Bayli F, Toozs-Hobson P, Lees C, Slack M, Ismail K.
+Cerclage outcome by the type of suture material (COTS): study
+protocol for a pilot and feasibility randomised controlled trial.
+Trials 2014;15:415.
+70. Zolghadri J, Younesi M, Asadi N, Khosravi D, Behdin S, Tavana Z,
+et al. Double versus single cervical cerclage for patients with
+recurrent pregnancy loss: a randomized clinical trial. J Obstet
+Gynaecol Res 2014;40:375 –80.
+71. Broumand F, Bahadori F, Behrouzilak T, Yekta Z, Ashraﬁ F. Viable
+extreme preterm birth and some neonatal outcomes in double
+cerclage versus traditional cerclage: a randomized clinical trial.
+ScientiﬁcWorldJournal 2011;11:1660 –6.
+72. Brix N, Secher NJ, McCormack CD, Helmig RB, Hein M,
+Weber T, et al. Randomised trial of cervical cerclage, with
+and without occlusion, for the prevention of preterm birth in
+women suspected for cervical insufﬁciency. BJOG 2013;120:
+613–20.
+73. Sosa C, Althabe F, Belizan J, Bergel E. Bed rest in singleton
+pregnancies for preventing preterm birth.
+Cochrane Database Syst Rev
+2004;CD003581.
+74. Funai EF, Paidas MJ, Rebarber A, O’Neill L, Rosen TJ, Young BK.
+Change in cervical length after prophylactic cerclage. Obstet
+Gynecol 1999;94:117 –9.
+75. Guzman ER, Houlihan C, Vintzileos A, Ivan J, Benito C, Kappy K.
+The signiﬁcance of transvaginal ultrasonographic evaluation of the
+cervix in women treated with emergency cerclage. Am J Obstet
+Gynecol 1996;175:471 –6.
+76. Dijkstra K, Funai EF, O’Neill L, Rebarber A, Paidas MJ, Young BK.
+Change in cervical length after cerclage as a predictor of preterm
+delivery. Obstet Gynecol 2000;96:346 –50.
+77. Sim S, Da Silva CF, Araujo Junior E, Sheehan PM. Factors
+associated with spontaneous preterm birth risk assessed by
+transvaginal ultrasound following cervical cerclage. Aust N Z J
+Obstet Gynaecol 2015;55:344 –9.
+RCOG Green-top Guideline No. 129 1208 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+78. Scheib S, Visintine JF, Miroshnichenko G, Harvey C, Rychlak K,
+Berghella V. Is cerclage height associated with the incidence of
+preterm birth in women with an ultrasound-indicated cerclage?Am J Obstet Gynecol 2009;200:e12 –5.
+79. Baxter JK, Airoldi J, Berghella V. Short cervical length after
+history-indicated cerclage: is a reinforcing cerclage beneﬁcial? Am J
+Obstet Gynecol 2005;193:1204 –7.
+80. Simcox R, Shennan A. Reinforcing cerclage in the prevention of
+preterm birth in women at high risk: a retrospective case-
+controlled study. Aust N Z J Obstet Gynaecol 2012;52:224 –8.
+81. Duhig KE, Chandiramani M, Seed PT, Briley AL, Kenyon AP,
+Shennan AH. Fetal ﬁbronectin as a predictor of spontaneous
+preterm labour in asymptomatic women with a cervical cerclage.
+BJOG 2009;116:799 –803.
+82. Benson JE, Landy HJ, Ghidini A, Drassinower D, Poggi SH.
+Fetal ﬁbronectin for evaluation of preterm labor in the setting
+of cervical cerclage. J Matern Fetal Neonatal Med 2012;25:
+2330 –2.
+83. Koullali B, van Kempen LEM, van Zijl MD, Naaktgeboren CA,
+Schuit E, Bekedam DJ, et al. A multi-centre, non-inferiority,
+randomised controlled trial to compare a cervical pessary with acervical cerclage in the prevention of preterm delivery in womenwith short cervical length and a history of preterm birth - PC study.
+BMC Pregnancy Childbirth 2017;17:215.
+84. Ragab A, Mesbah Y. To do or not to do emergency cervical
+cerclage (a rescue stitch) at 24 –28 weeks gestation in addition toprogesterone for patients coming early in labor? A prospective
+randomized trial for efﬁcacy and safety. Arch Gynecol Obstet
+2015;292:1255 –60.
+85. Jarde A, Lewis-Mikhael A-M, Dodd JM, Barrett J, Saito S, Beyene J,
+et al. The more, the better? Combining interventions to prevent
+preterm birth in women at risk: a systematic review and meta-
+analysis. J Obstet Gynaecol Can 2017;39:1192 –202.
+86. Jarde A, Lutsiv O, Park CK, Beyene J, Dodd JM, Barrett J, et al.
+Effectiveness of progesterone, cerclage and pessary for preventing
+preterm birth in singleton pregnancies: a systematic review andnetwork meta-analysis. BJOG 2017;124:1176 –89.
+87. Conde-Agudelo A, Romero R, Da Fonseca E, et al. Vaginal
+progesterone is as effective as cervical cerclage to prevent
+preterm birth in women with a singleton gestation, previousspontaneous preterm birth, and a short cervix: updated indirectcomparison meta-analysis. Am J Obstet Gynecol 2018;219:10 –25.
+88. Hezelgrave NL, Watson HA, Ridout A, Diab F, Seed PT, Chin-
+Smith E, et al. Rationale and design of SuPPoRT: a multi-centrerandomised controlled trial to compare three treatments: cervical
+cerclage, cervical pessary and vaginal progesterone, for the
+prevention of preterm birth in women who develop a shortcervix. BMC Pregnancy Childbirth 2016;16:358.
+89. Galyean A, Garite TJ, Maurel K, Abril D, Adair CD, Browne P,
+et al. Removal versus retention of cerclage in preterm premature
+rupture of membranes: a randomized controlled trial. Am J Obstet
+Gynecol 2014;211:399.e1 –399.e7.
+RCOG Green-top Guideline No. 129 1209 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+This guideline was produced on behalf of the Royal College of Obstetricians and Gynaecologists by: Professor Andrew
+H Shennan FRCOG, London; Dr Lisa Story MRCOG, London .
+and peer reviewed by:Miss A Gorry MRCOG, London; Dr G Kumar FRCOG, Wrexham; Mr D Fraser FRCOG, Norwich; Dr P Maouris FRCOG,
+Perth, Western Australia; Mr B Kumar FRCOG, Wrexham; Dr KC Dundas FRCOG, Edinburgh; Miss M To MRCOG,London; Professor JE Norman FRCOG, Bristol; RCOG Women’s Network; Imperial College Academic Health Science
+Centre.
+Committee lead reviewers were: Dr A Macleod FRCOG,
+1Edinburgh, Dr B Magowan FRCOG, Melrose2and Mr A
+McKelvey MRCOG, Norfolk.3
+1until December 2020;2until May 2021;3from December 2021.
+The chair of the Guidelines Committee was: Dr MA Ledingham MRCOG, Glasgow; Dr B Magowan FRCOG, Melrose.
+All RCOG guidance developers are asked to declare any conﬂicts of interest. A statement summarising
+any conﬂicts of interest for this guideline is available from: https://www.rcog.org.uk/en/guidelines-research-services/guidelines/gtg75.
+The ﬁnal version is the responsibility of the Guidelines Committee of the RCOG.
+The guideline will be considered for update 3 years after publication, with an intermediate assessment of the need to update
+2 years after publication.
+DISCLAIMER
+The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical practice.They present recognised methods and techniques of clinical practice, based on published evidence, for consideration byobstetricians and gynaecologists and other relevant health professionals. The ultimate judgement regarding a particular
+clinical procedure or treatment plan must be made by the doctor or other attendant in the light of clinical data presented
+by the patient and the diagnostic and treatment options available.
+This means that RCOG Guidelines are unlike protocols or guidelines issued by employers, as they are not intended to be
+prescriptive directions deﬁning a single course of management. Departure from the local prescriptive protocols orguidelines should be fully documented in the patient’s case notes at the time the relevant decision is taken.
+RCOG Green-top Guideline No. 129 1210 of 1210 ª2022 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2022, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.17003 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License

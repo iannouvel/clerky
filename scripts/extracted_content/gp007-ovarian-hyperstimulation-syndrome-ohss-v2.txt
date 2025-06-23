@@ -1,0 +1,382 @@
+# Extracted from: GP007 Ovarian Hyperstimulation Syndrome (OHSS) V2.pdf
+# Guideline ID: gp007-ovarian-hyperstimulation-syndrome-ohss-v2
+# Content length: 16603 characters
+# Processing date: 1750066900.842981
+
+Brighton & Sussex University Hospitals NHS Trust 1 
+Maternity Protocol: Ovarian Hyperstimulation Syndrome (OHSS) 
+Date Agreed : July 2012 Amended Date : 27th November 2015 Review Date: November 2018 
+
+GP007 Ovarian Hyperstimulation 
+Syndrome (OHSS) 
+ 
+The Care & Management of Women with 
+Ovarian Hyperstimualtion Syndrome 
+
+Manager responsible : Ehab Kelada 
+Author : Ehab Kelada/Hannah Tompsett 
+Protocol Title : Ovarian Hype rstimulation Syndrome 
+Protocol Number: GP007 
+Version number: 2.0 
+Approving Committee: Women ’s Safety & Quality Committee 
+Date agreed: 27th July 2012 
+Amended Date: 27th November 2015 
+Review Date: 27th November 2018 
+
+ Brighton & Sussex University Hospitals NHS Trust 2 
+Maternity Protocol: Ovarian Hyperstimulation Syndrome (OHSS) 
+Date Agreed : July 2012 Amended Date : 27th November 2015 Review Date: November 2018 
+
+GP007 Ovarian Hypers timulation 
+Syndrome (OHSS) 
+ 
+The Care & Management of Women with 
+Ovarian Hyperstimualtion Syndrome 
+
+Consultation committee: Protocol and Guideline Group 
+Date: 12th November 2015 
+
+Ratification committee: Womens’ Safety & Q uality Committee 
+Date: 27th November 2015 
+ 
+ Brighton & Sussex University Hospitals NHS Trust 3 
+Maternity Protocol: Ovarian Hyperstimulation Syndrome (OHSS) 
+Date Agreed : July 2012 Amended Date : 27th November 2015 Review Date: November 2018 Contents 
+
+Section Title Page 
+ Key Principles 4 
+ Scope 4 
+ Responsibilities 4 
+ Objective standards 4 
+1.0 Introduction & definition 5 
+2.0 Diagnosis 5 
+3.0 Differential diagnosis 5 
+4.0 Assessing se verity and reporting adverse outcomes 6 
+5.0 Classification of severity 6 
+6.0 Clinical management 7 
+7.0 Out-patient management 7 
+8.0 In-patient management 7 
+9.0 Discharge and follow up 9 
+10.0 References 9 
+11.0 Appendix A – Gynaecology Core Care Plan 10 
+
+ Brighton & Sussex University Hospitals NHS Trust 4 
+Maternity Protocol: Ovarian Hyperstimulation Syndrome (OHSS) 
+Date Agreed : July 2012 Amended Date : 27th November 2015 Review Date: November 2018 KEY PRINCIPLES 
+ 
+A protocol is a set of measurable, objective standards to determine a course of 
+action. 
+Professional judgement may be use in the application of a protocol. 
+
+SCOPE 
+ 
+This guideline applies to: 
+ All staff producing protocols and guidelines for maternity care 
+ All members of the Maternity and Gynaecology Risk Management Group 
+ All members of the Protocol and Guideline Group 
+
+RESPONSIBILITES 
+
+ Clinicians and Nurses : 
+o To access, read, understand and follow th is guidance 
+o To use their professional judgement in application of this protocol 
+ A&E Clinical Staff : 
+o To access, read, understand and follow this guidance 
+o To use their professional judgement in application of this protocol 
+ Management : 
+o To ensure the protoco l is reviewed as required in line with Trust and 
+National recommendations 
+o To ensure the protocol is accessible to all relevant staff 
+o To ensure that protocols are available for service users on request 
+
+ Brighton & Sussex University Hospitals NHS Trust 5 
+Maternity Protocol: Ovarian Hyperstimulation Syndrome (OHSS) 
+Date Agreed : July 2012 Amended Date : 27th November 2015 Review Date: November 2018 OBJECTIVE STANDARDS 
+ 
+1.0 INTRODUCTION & DEFINITION 
+ 
+1.1 OHSS is an iatrogenic condition that happens only after taking medications to 
+stimulate the ovaries for fertility treatment . It is a systemic disease resulting 
+from vasoactive products released by hyperstimulated ovaries. 
+ 
+1.2 The pathophysiolo gy of OHSS is characterised by increased capillary 
+permeability, leading to leakage of fluid from the vascular compartment, with 
+third space fluid accumulation and intravascular dehydration. 
+ 
+1.3 Severe manifestations include a tendency to develop thrombosis, renal and 
+liver dysfunction and acute respiratory distress syndrome (ARDS), causing 
+serious morbidity. Although the true incidence of mortality from OHSS is 
+unknown, and possibly under -reported, deaths from OHSS are rare. The 
+reported causes of death incl ude ARDS, cerebral infarction and hepatorenal 
+failure in a woman with pre -existing hepatitis C. (RCOG Green -top Guideline 
+2006). 
+ 
+1.4 All patients with suspected OHSS should be seen in GAU (RSCH) or A&E 
+(PRH) and reviewed by the SpR or Consultant on duty. Ultr asound scan 
+should be requested to assess the size of the ovaries and presence of ascites. 
+Blood should be sent for FBC, U&Es and LFTs. HCG level should be checked 
+in blood only if the date of admission is more than 12 days from egg collection. 
+
+2.0 DIAGNOSI S 
+ 
+2.1 Diagnosis of OHSS is usually straightforward, given a history of ovarian 
+stimulation, either by gonadotrophins (FSH injections) or antiestrogens 
+(Clomid, Letrozole or Tamoxifen) followed by the typical symptoms of 
+abdominal distension, abdominal p ain, nausea and vomiting 
+
+3.0 DIFFERENTIAL DIAGNOSIS 
+ 
+3.1 Alternative diagnoses should always be considered, such as: 
+ Complication of an ovarian cyst (torsion, haemorrhage), 
+ Pelvic infection, 
+ Intra-abdominal haemorrhage, 
+ Ectopic pregnancy 
+ Appendicitis 
+
+ Brighton & Sussex University Hospitals NHS Trust 6 
+Maternity Protocol: Ovarian Hyperstimulation Syndrome (OHSS) 
+Date Agreed : July 2012 Amended Date : 27th November 2015 Review Date: November 2018 4.0 ASSESSING SEVERITY & REPORTING ADVERSE OUTCOMES 
+ 
+4.1 Women with OHSS should have the severity of their condition assessed and 
+documented as management should be guided by the severity of the 
+condition. It should be remembered that the severity could worse n over time 
+as the condition evolves (See table) 
+ 
+4.2 In the UK, any death related to OHSS must be reported to the Confidential 
+Enquiries into Maternal Deaths, irrespective of whether the woman was 
+pregnant. The treating IVF centre should be informed of the ad mission. The 
+IVF centre should follow relevant Human Fertilisation and Embryology 
+Authority (HFEA) guidelines for reporting severe untoward incidents by 
+telephone within 12 working hours of the identification of the incident and 
+submission of an Incident R eport Form within 24 working hours 
+
+5.0 CLASSIFICATION OF SEVERITY 
+ 
+Grade Symptoms, Signs & Investigations results 
+ 
+Mild OHSS Abdominal bloating 
+Mild abdominal pain 
+Ovarian size usually < 8 cm 
+ 
+Moderate OHSS Moderate abdominal pain 
+Nausea ± vomit ing 
+Ultrasound evidence of ascites 
+Ovarian size usually 8 –12 cm 
+ 
+Severe OHSS Clinical ascites (occasionally hydrothorax) 
+Oliguria 
+Haemoconcentration haematocrit > 45% 
+Hypoproteinaemia 
+Ovarian size usually > 12 cm 
+ 
+Critical OHSS Tense ascites or large hydrothorax 
+Haematocrit > 55% 
+White cell count > 25 000/ml 
+Oligo/anuria 
+Thromboembolism 
+Acute respiratory distress syndrome 
+
+ Brighton & Sussex University Hospitals NHS Trust 7 
+Maternity Protocol: Ovarian Hyperstimulation Syndrome (OHSS) 
+Date Agreed : July 2012 Amended Date : 27th November 2015 Review Date: November 2018 6.0 CLINICAL MANAGEMENT 
+ 
+6.1 The management of OHSS is essentially supportive until the condition 
+resolves spontaneously 
+ 
+6.2 All women with suspected OHSS should have blood taken for FBC, U&Es, 
+LFTs and clotting screen. Also, they should all have ultrasound scan to assess 
+ovarian si ze and the presence of ascites 
+ 
+6.3 Symptomatic relief is important, particularly regarding pain and nausea 
+
+7.0 OUTPATIENT MANAGEMENT 
+ 
+7.1 Treatment for women with mild OHSS and many with moderate OHSS can be 
+managed on an outpatient basis 
+ 
+7.2 Women can sta y at home and review can be done every 3 days by running 
+blood for FBC, U&Es and LFTs. Ultrasound scan may have to b e repeated 
+depending on severity of symptoms. This should be arranged through GAU 
+(RSCH) and Horsted Keynes Ward (PRH) 
+
+7.3 Urgent clinical review is necessary if the woman develops increasing severity 
+of pain, increasing abdominal distension, shortness of br eath and a subjective 
+impression of reduced urine outpu t 
+ 
+7.4 The following should be advised: 
+7.4.1 Analgesia using paracetamol or codeine is appropriate. Non -steroidal 
+anti-inflamm atory drugs should not be used 
+7.4.2 Women should be encouraged to drink to thirst, rather than to excess 
+7.4.3 Strenuous exercise and sexual intercourse should be avoided for fear 
+of injury or torsion of hyperstimulated ovaries. 
+
+8.0 INPATIENT MANAGEMENT 
+ 
+8.1 All women with severe or critical OHSS should be admitted to hospital until 
+resolution of the condition. Also, women with moderate OHSS who are unable 
+to achieve control of their pain and/or nausea with oral treatment should also 
+be admitted. 
+
+ Brighton & Sussex University Hospitals NHS Trust 8 
+Maternity Protocol: Ovarian Hyperstimulation Syndrome (OHSS) 
+Date Agreed : July 2012 Amended Date : 27th November 2015 Review Date: November 2018 8.2 The medical staff should work in conjunction with the nursing staff to ensure 
+the following is completed on admission (See also appendix A) : 
+8.2.1 Observation chart should be started for pulse, blood pressure, 
+respiratory rate, weight, abdominal girth and urine output. Pulse, blood 
+pressure, respiratory rate and fluid input/urine outpu t should be 
+monit ored 4 -hourly 
+8.2.2 Weight and abdominal girth should be repeated daily 
+8.2.3 FBC, U&Es, LFTs and clotting screen. FBC, U&Es an d LFTs should be 
+repeated daily 
+8.2.4 Ultrasound scan for ovarian size and ascite s 
+8.2.5 Chest X -ray or ultrasound if respiratory symptoms or hydrothorax is 
+suspected 
+8.2.6 ECG and echocardiogram if pericardial effusion is suspected 
+8.2.7 Pain relief is best provided with paracetamol and if necessary oral or 
+parenteral opiates 
+8.2.8 Antiemetic drugs used should be those appropriate for the possibility of 
+early pregnancy, su ch as Cyclizine (1st line) or Metoclopramide. 
+8.2.9 VTE assessment must be completed and venous support st ockings and 
+prophylactic Tinzaparin should be used to minimi se the risk of thrombo -
+embolism 
+8.2.10 Where oral intake cannot be maintained, intravenous crystalloid s, such 
+as normal saline, should be used. Most women will need a fluid intake 
+of 2–3 litres in 24 hours, guided by a strict fluid balance chart 
+8.2.11 Women with haemoconcentration (haemoglobin greater than 14g/dl, 
+haematocrit greater than 45% may need more inten sive initial 
+rehydration, such as 1 lit re of normal saline over 1 hour 
+8.2.12 Women with persistent haemoconcentration and/or urine output less 
+than 0.5ml/kg/ hour may benefit from colloids. Human albumin, 6% 
+hydroxyethylstarch (HES), dextran, mannitol and Haemac cel h ave been 
+used for this purpose 
+8.2.13 If haemoconcentration and/or oliguria persist despite these measures, 
+paracentesis should be considered. Paracentesis should be considered 
+in women with discomfort or respiratory embarrassment because of 
+severe abdominal distension, abdominal pa racentesis should be 
+considered 
+8.2.14 Further fluid management may be guided by central venous pressure 
+monitoring and an aesthetists should be involved 
+8.2.15 Aspiration of ascites should take place under ultrasound guidance to 
+minimise the ris k of injury to enlarged, vascular ovaries 
+8.2.16 Repeated paracenteses may be avoided by the use of pigtail or 
+suprapubic catheter that can be left in place 
+8.2.17 Drainage of ascites alone may suffice to resolve hydrothorax, if present, 
+but symptomatic hydrothorax that persists despite abdominal 
+parac entesis may be drained directly 
+8.2.18 If thromboembolism is suspected, therapeutic anticoagulation should be 
+commenced, and additional diagnostic measures performed such as 
+arterial blood gases, and ventilation/perfusion scan 
+ 
+ Brighton & Sussex University Hospitals NHS Trust 9 
+Maternity Protocol: Ovarian Hyperstimulation Syndrome (OHSS) 
+Date Agreed : July 2012 Amended Date : 27th November 2015 Review Date: November 2018 8.2.19 Ovarian torsion should be suspected in the presence of further ovarian 
+enlargement, worsening particularly unilateral pain, nausea, 
+leucocytosis and anaemia. Colour Doppler assessment of ovarian 
+blood flow may help in diagnosis. Untwisting of the twisted ad nexa 
+followed by observation of improved colour at laparoscopy or 
+laparotomy is associated with a favourable prognosis for ovarian 
+function 
+8.2.20 Features of critical OHSS should prompt consideration of the need for 
+intensive care 
+ 
+8.3 Patients who are pregnant should continue taking the following medications if 
+they are already taking any of them: 
+8.3.1 Progesterone (Cyclogest) 400mg vaginal pessaries, once or twice daily. 
+8.3.2 Gestone (Progesterone) 100mg daily intramuscular injections. 
+8.3.3 Oral Aspirin 75mg a day. 
+8.3.4 Heparin ( Clexane) 40mg, daily subcutaneous injections. 
+8.3.5 Prednisolone 20 -25mg daily oral dose 
+
+9.0 DISCHARGE & FOLLOW UP 
+ 
+9.1 All women should inform primary clinician of admission and a discharge letter 
+must be sent to the referring clinic and GP 
+ 
+9.2 Women must be discharge d with their usual medications 
+ 
+9.3 All women must be given patient information leaflet and contact numbers 
+
+10.0 REFERENCES 
+ 
+RCOG Green -top guideline, September 2006 
+
+ Brighton & Sussex University Hospitals NHS Trust 10 
+Maternity Protocol: Ovarian Hyperstimulation Syndrome (OHSS) 
+Date Agreed : July 2012 Amended Date : 27th November 2015 Review Date: November 2018 
+
+ 11.0 APPENDIX 
+ 
+GYNAECOLOGY CORE CAR E PLAN: 
+ 
+CARE OF PATIENT WITH OVARIAN HYPERST IMULATION 
+SYNDROME (OHSS) 
+ 
+Ward: 
+ 
+PROBLEM: This woman has OHSS and is experiencing: abdominal 
+distension, pain, nausea / vomiting, dehydration &/or oliguria. (delete as 
+according to individual patient) 
+GOAL: To help manage the woman’s symptoms (abov e) to a level acceptable 
+to the patient so that she can be independent in activities of daily living. 
+ACTIONS (Circle appropriate actions) AMENDMENTS 
+(Date/Signature) 
+1. 1. Admit to ward. 
+2. Ensure that this woman understands why all the information 
+requested is required and that she has given consent for all 
+investigations. 
+ Complete admission documentation including all risk 
+assessments. Complete full set of observations using NEWS 
+to provide baseline and to identify trigger for their subsequent 
+frequency. 
+ Record patient weight & abdominal girth stating the time 
+measured. This will need to be recorded daily. 
+ Obtain urine specimen for a pregnancy test and to monitor for 
+infection. 
+ Ensure patient aware of maintaining a low sodium diet and the 
+kitchen staff are aware for meal times and choices. 
+ Ensure that current signs and severity of symptoms are 
+identified. E.g.: Abdominal distension, temperature, pain. 
+These will act as baseline to identify efficacy of treatment 
+when symptoms start to resolve 
+2. This woman needs an early consultant involvement. Once the 
+doctors have examined this patient: 
+ Ensure FBC, U&E’s, LFTs, coagulation and creatinine levels 
+taken; identify when these need to be repeated. 
+ Ultrasound of the abdomen and pelvis is requested/performed 
+and r eviewed. 
+ Chest XRAY requested (if applicable) 
+ Decision on whether patient needs an indwelling catheter for 
+accurate fluid balance. If so manage the catheter as per Core 
+Plan for Ongoing Care of Indwelling Catheter. 
+ Appropriate medications have been prescri bed 
+ VTE assessment completed. 
+ 
+3. Ensure that IV cannula is sited and commence IV rehydration 
+therapy. 
+ Manage the cannula as per Core Plan for Ongoing Care of 
+Peripheral Cannula. 
+ Maintain a strict fluid balance chart for the patients stay. 
+ Brighton & Sussex University Hospitals NHS Trust 11 
+Maternity Protocol: Ovarian Hyperstimulation Syndrome (OHSS) 
+Date Agreed : July 2012 Amended Date : 27th November 2015 Review Date: November 2018 4. Admini ster pain relief if required, initiating Pain Management Core 
+Care Plan for Gynaecology Patients 
+5. Administer anti emetics as required. Ensuring adequate anti emetic 
+medications prescribed evaluating their effectiveness. 
+6. If a paracentesis is requ ired as part of the patient’s plan of care 
+initiate Abdominal Paracentesis Core Care Plan . This may need 
+individualising to include albumin infusion and wedge pressure 
+measurements (if applicable) 
+8. Give emotional support and reassurance consistently ensuring 
+adequate explanation of issues . Offer health promotion where 
+possible. 
+9. Discharge home and advise to contact GAU if any concerns 
+Signature of nurse generating care plan: 
+ Date: 
+Evidence: 
+Royal College of Obstetricians & Gynaecologist s - The Management of Ovarian 
+hyperstimulation syndrome (2006) 
+ 
+GIRTH MEASUREMENT 
+CHART (OHSS) 
+ 
+DATE TIME ABDOMINAL GIRTH Weight (KG) SIGN

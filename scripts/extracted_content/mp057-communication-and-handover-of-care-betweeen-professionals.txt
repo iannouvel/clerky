@@ -1,0 +1,279 @@
+# Extracted from: MP057 Communication and Handover of Care betweeen Professionals.pdf
+# Guideline ID: mp057-communication-and-handover-of-care-betweeen-professionals
+# Content length: 14296 characters
+# Processing date: 1750066901.574795
+
+Communication and 
+Handover of Care 
+between 
+Professionals 
+
+Maternity Protocol: MP057 
+ 
+Date Agreed: August 2020 
+Communication and Handover of Care between Professionals (RSCH PRH only ) MP057 
+ 
+Brighton & Sussex University Hospitals Page 2 of 15 
+
+Guideline Reviewer: Sarah Ward & Sonya Brear 
+Manager responsible: Amanda Clifton 
+Version: 3 
+Approval Committee: Women’s Safety and Quality Committee 
+Date agreed: August 2020 
+Review date: August 2023 
+Cross reference: MP023 Maternal and In Utero Transfers 
+MP056 High Dependency Care (HDU) 
+ Communication and Handover of Care between Professionals (RSCH PRH only ) MP057 
+ 
+Brighton & Sussex University Hospitals Page 3 of 15 Contents 
+Key Principles ................................ ................................ ................................ ........................ 4 
+Scope ................................ ................................ ................................ ................................ ... 4 
+Responsibilities ................................ ................................ ................................ ..................... 4 
+1 Handover of care between professionals ................................ ................................ ..... 5 
+2 Purpose ................................ ................................ ................................ ....................... 5 
+3 Documentation ................................ ................................ ................................ ........... 6 
+4 Handover at the change of shift for each staff group: ................................ ................... 6 
+5 Medical staff ................................ ................................ ................................ ............... 7 
+6 Locum Obstetric Registrar and/or SHO ................................ ................................ ........ 7 
+7 Handover for Transfer between Care Settings ................................ .............................. 7 
+8 References ................................ ................................ ................................ .................. 9 
+Appendix A: SBAR stickers for handover of care between health care professionals: ............ 10 
+Apppendix B: SBAR Escalation ................................ ................................ ............................. 11 
+ 
+ Communication and Handover of Care between Professionals (RSCH PRH only ) MP057 
+ 
+Brighton & Sussex University Hospitals Page 4 of 15 Key Principles 
+ 
+A protocol is a set of measurable, objective standards to determine a course of action. 
+Professional judgement may be use in the application of a protocol. 
+ 
+Scope 
+ 
+This protocol applies to: 
+• All midwifery and obstetric staff in all care settings 
+ 
+Responsibilities 
+ 
+Midwives & Obstetricians: 
+• To access, read, understand and follow this guidance 
+• To use their professional judgement in application of this protocol 
+ 
+Management 
+• To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations 
+• To ensure the protocol is accessible to all relevant staff 
+ 
+ Communication and Handover of Care between Professionals (RSCH PRH only ) MP057 
+ 
+Brighton & Sussex University Hospitals Page 5 of 15 1 Handover of care between p rofessionals 
+ 
+A handover involves the transfer of professional responsibility and accountability for 
+some or all aspects of care for a patient, or groups of patients to another person , on a 
+permanent or temporary basis 
+1.1 Handover of Care 
+1.1.1 Shift change hand -over is a critical time when information can be lost. 
+Barriers which impede effective communication include: hierarchy, 
+gender, ethnic background and differences in communication styles 
+between midwives, nurses and doctors. 
+1.1.2 A structured hand -over tool should be used to improve communication 
+on the labour ward and throughout ward areas. 
+1.1.3 Effective communication is recognised as central to promoting patient 
+safety and reducing the number of serious clinical incidents 
+1.1.4 An effective working relationship between the multi -disciplinary team 
+and a clear organisational structure for midwives and medical staff with 
+explicit and transparent lines of communication is crucial to ensure 
+optimum care for women and babies. For a consistent approach to 
+communication and documentation of handover of care a locally 
+agreed tool called SBAR i s used: 
+• Situation 
+• Background 
+• Assessment 
+• Recommendation 
+ 
+2 PURPOSE 
+ 
+2.1 To give and receive information 
+2.2 To ensure all discussions, decisions, advice, actions, plans of care and 
+management between healthcare professionals and parents are communicated 
+effectively and documented contemporaneously, accurately and concisely. 
+2.3 Good documentation and communication will ensure decisions are transparent, 
+that care planning is more effective, avoiding delays and that all who are 
+involved with the mother and baby provide safe, consistent, quality care that 
+ensures fetal, neonatal and maternal wellbeing. 
+2.4 It is important to optimise communication of critical information as an essential 
+component of risk management and patient safety. (RCOG) 
+ Communication and Handover of Care between Professionals (RSCH PRH only ) MP057 
+ 
+Brighton & Sussex University Hospitals Page 6 of 15 3 Documentation 
+ 
+3.1 All care, advice and medication given should be documented in the mother’s 
+handheld notes using the SBAR format where appropriate. If women are triaged 
+by telephone all discussions should be documented on the triage documentation 
+paperwork. 
+3.2 Once a mother is admitted a plan of care should be documented as soon as 
+possible. This plan needs reviewing every 4 hours or sooner if indicated by a 
+change in maternal or fetal condition. All plans and updates must be 
+documented accordingly. 
+3.3 Handover communication at change of shift or any temporary handover of care 
+should be documented using SBAR in the notes by staff handing over and staff 
+taking over care 
+3.4 Handover communication when transferring between care settings should be 
+documented in the maternal notes by staff handing over and staff taking over 
+care (RCOG) 
+3.5 Midwives must ensure that their documentation is in accordance to the NMC 
+guidelines on record keeping and maternity record keeping documentation for 
+the Trust. 
+3.5.1 This must include; 
+• Correct date and time of entry 
+• Women’s name, Hospital number and date of birth 
+• From whom care is being taken over and who is providing care 
+• The midwife's name must be printed clearly in the maternity record 
+• Black ink must be used 
+• All entries must be legible 
+• The plan of care must be clear 
+• Details and status of anyone involved in care and planning 
+ 
+4 Handover at the change of shift for each staff group: 
+ 
+4.1 Midwife to Midwife 
+4.1.1 At a change of shift the co -ordinator will give a brief synopsis of all 
+patients using SBAR format highlighting important risk factors that may 
+influence care. 
+4.1.2 The coordinator will refer to the white board/ communication diary to 
+inform staff of any important notices. 
+ Communication and Handover of Care between Professionals (RSCH PRH only ) MP057 
+ 
+Brighton & Sussex University Hospitals Page 7 of 15 4.1.3 Information will be given as to the bed state on the wards and 
+availability of neonatal cots. 
+4.1.4 The coordinator will then allocate the available midwives to provide 
+care for each woman. 
+4.1.5 There will be a personal handover of care between midwives at every 
+change of shift or change of carer. This must be documented clearly 
+each ti me a change has occurred in notes using SBAR sticker . 
+4.1.6 Handover to include Message of the week 
+ 
+5 Medical staff 
+ 
+5.1 There is a personal hand over of care on the labour ward w hen medical staff 
+change between shifts. 
+5.2 There is a Consultant ward round which occurs every weekday morning on 
+labour ward to be attended by the whole multidisciplinary team (both oncoming 
+and finishing), including obstetric, anaesthetic (where possible) and input from 
+the labour ward coordinator. At weekends the Consultant on call will be present 
+for 4 hours . 
+5.3 As part of the Consultant ward round all high risk cases are to be discussed with 
+care/management planning whether on any maternity ward or any other 
+inpatient ward in the hospital including outliers, surgical, IYU/HDU. 
+5.4 Handover to include ‘message of the week’. 
+6 Locum Obstetric Registrar and/or SHO 
+6.1 Where a locum Registrar / SHO is employed a full handover should occur on 
+their first shift. This will involve orientation to the unit, bleep systems, crash calls 
+and channels of referral to the Consultant on call. 
+7 Handover for Transfer b etween Care Settings 
+ 
+7.1 Transfer to and Handover of Care to ITU/HDU 
+7.1.1 The decision to transfer a woman to HDU or ITU is made jointly by an 
+7.1.2 Obstetric Consultant and Anaesthetic Consultant in liaison with 
+HDU/ITU (please see Maternity Protocol MP056: High Dependency 
+Care ) 
+ Communication and Handover of Care between Professionals (RSCH PRH only ) MP057 
+ 
+Brighton & Sussex University Hospitals Page 8 of 15 7.1.3 Both teams should liaise with ITU/HDU and plan care that is 
+appropriate to the individual patient. 
+7.1.4 This procedure must be followed even if no ITU beds are available, as 
+alternative arrangements for ITU admissions may be required with 
+input from the Outreach team 
+7.1.5 On transfer there must be full verbal handover of care to HDU/ITU staff 
+from the Obstetric, Midwifery and Anaesthetic Teams u sing the SBAR 
+systematic tool 
+7.1.6 Before transfer, the midwife in charge of the case must arrange care for 
+the baby (on the postnatal ward, the neonatal unit or by a family 
+member until the mother returns to the maternity unit. 
+7.1.7 The Labour Ward Co -ordinator must ensure mother’s name and details 
+will be entered on to the Labour Ward whiteboard with the medical 
+team being updated daily (including the on -call Consultant) and ensure 
+that the woman receives midwifery/obstetric input while on ITU/HDU. 
+7.2 Handover of Care when Transferring Women from the Antenatal Ward to the 
+Labour Ward 
+7.2.1 The labour ward coordinator should be informed of the reason for 
+transferring the woman and a room arranged (in advance of the 
+physical transfer). If the reason for transfer is an emergency this must 
+be clearly conveyed to the coordinator. If the emergency situation 
+arises during a shift handover this must not delay the appropriate 
+action being taken. The labour ward coordinators going off and coming 
+on shift should agree which staffs are to be deployed to manage the 
+emergency. 
+7.2.2 A personal handover of care must be given to the receiving Midwife. 
+This should be undertaken using the SBAR system. The time of transfer 
+and handover should be clearly documented in the labour notes and on 
+the t ransfer form. 
+7.3 Handover of Care when Transferring Women from Labour Ward to the Postnatal 
+Ward 
+7.3.1 Transfer should be documented in both the maternal and baby notes. 
+A personal handover of care must be given from the midwife currently 
+providing care to the receiving midwife and the relevant 
+documentation completed in the postnatal maternity booklet. 
+7.3.2 The midwife giving the handover is responsible for ensuring the 
+following is handed over verbally and is clearly documented in the 
+maternal notes: Communication and Handover of Care between Professionals (RSCH PRH only ) MP057 
+ 
+Brighton & Sussex University Hospitals Page 9 of 15 7.3.2.1 Relevant historical and current medical, social, psychological 
+and obstetric factors from the antenatal, intrapartum and 
+immediate postnatal period. 
+7.3.2.2 Details of the health care professionals involved in her care 
+and that of the baby. 
+7.3.2.3 Method of infant feeding and feeding that has already 
+occurred 
+7.3.3 The receiving midwife is responsible for: 
+7.3.3.1 Welcoming the woman / family onto the postnatal ward 
+7.3.3.2 Orientating the woman to the ward layout and ward processes 
+(access to assistance, infant feeding areas, food, drinks, call 
+bells and visiting times) 
+7.3.3.3 Ensuring a postna tal VTE assessment is completed and 
+prescribed if required 
+7.3.3.4 Making an individual plan of care with the woman for the 
+expected duration of her postnatal stay 
+7.3.3.5 Documenting all of the above in the postnatal notes 
+7.3.3.6 Checking the all documents are complete and no papers are 
+loose 
+7.3.4 The ward clerks or Midwife are responsible for ensuring all transfers, 
+admissions and discharges are logged as contemporaneously as 
+possible on the Maternity IT system. 
+8 References 
+
+Ottewill M, Urben J, Elson D .Safe handover: Safe care. Midwives RCM December 2007 
+Volume 10 No 11 
+ 
+Royal College of Anaesthetists, Royal College of Midwives, Royal College of 
+Obstetricians and Gynaecologists, Royal College of Paediatrics and Child Health. 
+(2007). Safer Childbirth: Minimum Standards for the Organisation and Delivery of Care 
+in Labour . London: RCOG Press. Available at: www.rcog.org.uk 
+ 
+Royal College of Obstetricians and Gynaecologists (2010) Improving Patient Handover. 
+RCOG. https://www.rcpch.ac.uk/sites/default/files/2018 -
+02/bma_handover_college_tutors.pdf 
+ 
+ Communication and Handover of Care between Professionals (RSCH PRH only ) MP057 
+ 
+Brighton & Sussex University Hospitals Page 10 of 15 Appendix A: SBAR stickers for handover of care between health care 
+professionals: 
+
+Communication and Handover of Care between Professionals (RSCH PRH only ) MP057 
+ 
+Brighton & Sussex University Hospitals Page 11 of 15 9 Apppendix B: SBAR Escalation 
+ 
+Communication and Handover of Care between Professionals (RSCH PRH only ) MP057 
+ 
+Brighton & Sussex University Hospitals Page 12 of 15 Apppendix C: Antenatal Assessment Form 
+
+Communication and Handover of Care between Professionals (RSCH PRH only ) MP057 
+ 
+Brighton & Sussex University Hospitals Page 13 of 15 
+ 
+Communication and Handover of Care between Professionals (RSCH PRH only ) MP057 
+ 
+Brighton & Sussex University Hospitals Page 14 of 15 Apppendix D: Post natal Assessment Form 
+
+Communication and Handover of Care between Professionals (RSCH PRH only ) MP057 
+ 
+Brighton & Sussex University Hospitals Page 15 of 15

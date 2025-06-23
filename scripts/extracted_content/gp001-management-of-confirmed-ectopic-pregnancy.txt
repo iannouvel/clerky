@@ -1,0 +1,501 @@
+# Extracted from: GP001 - Management of Confirmed Ectopic Pregnancy.pdf
+# Guideline ID: gp001-management-of-confirmed-ectopic-pregnancy
+# Content length: 22624 characters
+# Processing date: 1750066900.733015
+
+Management of Confirmed 
+Ectopic Pregnancy Guideline 
+
+Maternity Protocol: GP001 Management of Confirmed Ectopic Pregnancy 
+Date agreed: January 20 21 
+Management of Confirmed Ectopic Pregnancy GP001 
+Page 2 of 19 
+University Hospitals Sussex 
+
+Guideline Reviewer: Tasneem Singhal 
+Version: 2 
+Approval Committee: Women’s Services Safety and Quality Committee 
+Date agreed: 
+Date Amended: January 2021 
+ 
+Review date: January 2025 
+ 
+ Management of Confirmed Ectopic Pregnancy GP001 
+Page 3 of 19 
+University Hospitals Sussex 
+Contents 
+ 
+Contents ................................ ................................ ................................ ............................... 3 
+Key Principles ................................ ................................ ................................ ........................ 4 
+Scope ................................ ................................ ................................ ................................ ... 4 
+Responsibilities ................................ ................................ ................................ ..................... 4 
+1 Introduction: ................................ ................................ ................................ ............... 5 
+2 Management o f a confirmed tubal ectopic pregnancy ................................ .................. 6 
+3 Expectant Management ................................ ................................ .............................. 7 
+4 Medical Management ................................ ................................ ................................ . 7 
+5 Surgical Management ................................ ................................ ................................ 11 
+6 Anti -D rhesus prophylaxis ................................ ................................ .......................... 12 
+7 Post -treatment care ................................ ................................ ................................ .. 12 
+8 Management of persistent trophoblast ................................ ................................ ..... 13 
+References ................................ ................................ ................................ .......................... 14 
+Appendix I : Flow Chart for Calculating & Obtaining IM Methotrexate………………………….14 
+Appendix II: Methotrexate pre -filled pens held in Pharmacy…………………………………………15 
+Appendix III: Z technique for IM administration…………………………………………………………….16 
+
+ Management of Confirmed Ectopic Pregnancy GP001 
+Page 4 of 19 
+University Hospitals Sussex 
+ 
+Key Principles 
+ 
+These guidelines and algorithms are aimed to assist in decision making. They are not 
+designed to be prescriptive and you are not expected to use them in exclusion of discussions 
+with senior colleagues. 
+ 
+Evidence used to inform these guidelines had been drawn from National Institute for Health 
+and Clinical Excellence (NICE) and Royal College of Obstetricians and Gynaecologists (RCOG ) 
+guidelines. Where appli cable other references are quoted. 
+ 
+These guidelines have been reviewed by all clinicians involved in early pregnancy care, 
+including consultants, trainees , pharmacists , and specialist and senior nursing staff. 
+ 
+A protocol is a set of measurable, objective standards to determine a course of action. 
+Professional judgement may be used in the application of a protocol. 
+
+Scope 
+ 
+These guidelines apply to women who have a confirmed diagnosis of Ectopic pregnancy. 
+ 
+Responsibilities 
+ 
+Nurses, Midwives & Gynaecologi sts & Obstetricians: 
+ 
+ To access, read, understand and follow this guidance 
+ To use their professional judgement in application of this guidance 
+ 
+Management Team 
+ 
+ To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations 
+ To ensure the protocol is accessible to all relevant staff 
+ To ensure protocols are available to service users on request 
+ Management of Confirmed Ectopic Pregnancy GP001 
+Page 5 of 19 
+University Hospitals Sussex 
+
+1 Introduction: 
+ 
+Ectopic pregnancy is defined as implantation of the pregnancy outside the normal 
+endometrial cavity. 
+ 
+1.1 Commonly occurring symptoms 
+ Abdominal/ pelvic pain (often unilateral) 
+ PV bleeding (with or without clots or tissue) or amenorrhoea 
+ Syncope, dizziness 
+ Shoulder -tip pain 
+ Urinary and bowel symptoms (tenesmus/ diarrhoea) 
+1.2 Risk Factors 
+ Previous pelvic surgery 
+ Pelvic infection (PID) 
+ Smoking 
+ IVF pregnancy 
+ Subfertility 
+ Contraception failure (particularly Intrauterine device ( IUD) or Progesterogen -only 
+pill (POP )) 
+ Previous ectopic pregnancy 
+1.3 Clinical Signs 
+ Lower abdominal or pelvic tenderness 
+ Cervical motion tenderness and mass in adnexa 
+ 
+One third of women with ectopic pregnancy will have no clinical signs and 9% are 
+asymptomatic. 
+ 
+For management of non -tubal ectopic pregnancies – i.e. interstitial, corneal, ovarian, 
+abdominal, cervical and caesarean scar pregnancies please refer to: Diagnosis and 
+Management of Ectopic Pregnancy. Green -top Guideline No. 21 RCOG/AEPU Joint 
+Guideline | November 2016 
+
+ Management of Confirmed Ectopic Pregnancy GP001 
+Page 6 of 19 
+University Hospitals Sussex 
+
+2 Management of a confirmed tuba l ectopic pregnancy 
+ 
+Verbal and written information needs to be given to patients with confirmed ectopic 
+pregnancy. 
+ 
+Management of all women with an ectopic pregnancy must be discussed with the 
+consultant on call. 
+
+Confrimed ectopic pregnancy 
+clinically stable with minimum 
+symptoms and initial BHCG under 
+1500 IU/L and decreasing . 
+offer expectant management, add 
+to PUL book, follow up with hCG as 
+per protocol. 
+clinically stable with the following: 
+1. No significant pain 
+2. Adnexal mass under 35mm with 
+no heartbeat and is unruptured 
+3. Serum hCG < 5000 IU/L 
+4. No intrauterine pregnancy 1 
+offer medical management with 
+methotrexate (see section 4), add to 
+PUL book, follow up with hCG as per 
+protocol. 
+clinically stable but declines 
+expectant or medical management 
+or 
+declines follow up 
+or 
+clinically unstable 
+offer surgical management, inform 
+on call registrar at RSCH and transfer 
+to RSCH. Management of Confirmed Ectopic Pregnancy GP001 
+Page 7 of 19 
+University Hospitals Sussex 
+3 Expectant Management 
+ 
+Can be offered to women with an initial level of ≤1500 IU/L and decreasing. 
+ 
+3.1 The beta -Human chorionic gonadotrophin (BHCG ) levels are repeated after 
+48 and 96h ours . Ultrasound scan (USS) is repeated in a week 
+3.2 The hCG levels must drop to < 50% of the initial value in 7days and there 
+should be a reduction in the size of the adnexal mass 
+3.3 If the hCG level is dropping , it is repeated weekly until it drops to < 15IU /L or 
+the patient has a negative pregnancy test. ( See Section 9 for explanation ) 
+3.4 An ultr asound scan is repeated weekly 
+3.5 If the hCG levels are rising or static, consider medical or surgical 
+management as appropriate 
+3.6 There may be mild separation pain 
+3.7 If there is any pain clinically assess the woman and arrange an urgent scan 
+3.8 In suitable women this form of management is successful in 70% of women 
+3.9 25-30% may require further treatment with Methotrexate or surgery 
+3.10 Advise women to avoid sexual intercourse until the ectopic pregnancy is 
+completely resolved 
+3.11 Advise the women to attend A&E should they experience severe pain or feel 
+unwell. 
+ 
+4 Medical Management 
+ 
+Methotrexate can be offered to women with an unruptured ectopic pregnancy, with no 
+foetal heartbeat and an adnexal mass of size less than 35mm in diameter and the hCG is < 
+5000IU /L 
+4.1 Contraindications 
+ Significant renal disease 
+ Hepatic dysfunction ( raised transaminases (ALT, AST or GGT) >2 times 
+upper limit of normal) Management of Confirmed Ectopic Pregnancy GP001 
+Page 8 of 19 
+University Hospitals Sussex  Leukopenia (WBC <3 x 109/L) 
+ Thrombocytopenia (platelet count <150 x 109/L) 
+ Significant an aemia (Hgb <10 0 g/L ) 
+ Active peptic ulcer disease 
+ Immunodeficiency 
+ Breastfeeding 
+ Known sensitivity to methotrexate 
+ Desired coexistent intrauterine pregnancy (heterotopic pregnancy) 
+ Active pulmonary disease 
+ Haemodynamic instability 
+ If patient unable to comply with follow -up 
+4.2 The woman should be given a leaflet and the treatment plan should be 
+explained in detail 
+4.3 The following blood tests are to be performed on Day 1 and Day 7 FBC, LFTs 
+and U&E . 
+4.4 Document on the patients’ drug chart, maternal weight (kg) and height (cm) 
+4.5 Methotrexate dose (50mg/m2), to be prescribed by a consultant only (see 
+below for Dosage Calculations). 
+ 
+ Please see Appendix I -Flowchart for Calculating & Obtaining IM 
+ Methotrexate for Medical Management of Confirmed Ectopic Pregnancy 
+ 
+ Dosage Calculations: 
+ 
+ Calculate the Body Surface Area (BSA), to 1 decimal place, using the patient’s 
+ height and weight. The BSA is calculated using the formula shown below, 
+ however to reduce user error it is recommended that an online BSA calculator 
+ tool is used (please see link below). 
+ 
+BSA (m2) = ([H(cm) x W(kg)] /3600)1/2 
+ 
+ Dosage of IM Methotrexate: 50 mg x BSA(m2) = Total dose to be given (mg) 
+ 
+ The following link for an approved online calculator can be used to calculate 
+ the dose of IM Methotrexate: 
+ 
+https://www.calculosaurus.com/methotrexate -dose -calculator 
+ 
+ Obtaining IM Methotrexate: 
+ 
+ Contact Pharmacy who will inform regarding the closest available dose (+/ -5%) Management of Confirmed Ectopic Pregnancy GP001 
+Page 9 of 19 
+University Hospitals Sussex in prefilled pen s. The consultant should then prescribe accordingly. 
+ 
+ For Pharmacy requests for IM methotrexate during : 
+ Normal work days (Monday –Friday 8am -4pm excluding bank 
+holidays), the Aseptics Team should be contacted on ext. 4045 . 
+The Aseptics pharmacist will advise on dosage and their capacity to 
+dispense a syringe with the exact dose of methotrexate or provide 
+pre-filled pen(s) to the nearest available dose (within 5% of the 
+calculated dose). If Aseptics do not have cap acity to dispense a 
+syringe with the exact dose the patients’ treatment may need to be 
+delayed**. 
+ Weekends & Bank Holidays (9.30am -1.30pm) , the Dispensary in the 
+main Pharmacy department (RSCH) should be contacted on ext. 
+3119. 
+ Out of Hours , contact the On -Call pharmacist (RSCH) via swi tchboard. 
+ 
+ The D ispensary /On-Call pharmacist will advise on dosage and whether 
+ they can provide the closest available dose (within 5% of the calculated 
+ dose) as pre -filled pens or wh ether Aseptics will need to make/supply 
+ the dose during pharmacy opening hours. If Aseptics are required to 
+ make the dose, they will need to be contacted during opening hours 
+ which may require the patients dose to be delayed **. 
+ 
+ ** Please note the Aseptics Unit is not open at weekends and bank holidays 
+ therefore patients’ treatment may potentially be delayed by up to 1 -2 
+ working days if the exact dose is required to be made/ supplied by Aseptics 
+ 
+ The Pharmacy carry several different strengths of Methotrexate prefilled 
+ Pens and the patient may require more than 1 injection to make up the 
+ necessary dose. 
+ 
+Please see Appendix II regarding Methotrexate pre -filled pens held in pharmacy. 
+ 
+If the closest available dose is more than +/ - 5% of the calculated dose, and Aseptics 
+have confirmed their capacity to supply, then prescribe the exact dose but it may be 
+necessary to inform the wo man that there could be a delay of 1-2 working days until 
+the methotrexate is available. 
+ Management of Confirmed Ectopic Pregnancy GP001 
+Page 10 of 19 
+University Hospitals Sussex -Once IM methotrexate dose has been agreed with the Pharmacist , the 
+Consultant should prescribe in the ‘ONCE ONLY PRESCRIPTIONS’ section on 
+the front of the patients’ drug chart. The patients ’ drug chart must then be 
+sent to Aseptics/main Pharmacy on Level 3, Tower block for dispensing . 
+4.6 Methotrexate is to be administered intramuscularly using the Z tech nique via 
+the prefilled pens which have sub -cutaneous needles (See Appendix II) or 
+syringes prepared by Aseptics . 
+4.7 Methotrexate must not be administered by registrars or SHOs on their own. 
+4.8 Methotrexate may be administered by: 
+ junior doctors who have adequate training and under the direct 
+supervision of a consultant 
+ nursing staff who have witnessed and been observed administrating 
+IM Methotrexate and been signed off by their line manager (or 
+equivalent) to perform the procedure unsupervised. 
+4.9 All staff administering IM Methotrexate must have completed the relevant 
+Trust training packages including administration, disposal of a cytotoxic agent 
+and dealing with spillages of cytotoxic agents, 
+See MM0007: Policy for Dealing with Cytotoxic Spillages in Ward s and 
+Departments; MM0001: Cytotoxic Chemotherapy policy; Appendix III for 
+guidance on Z -technique. 
+ Management of Confirmed Ectopic Pregnancy GP001 
+Page 11 of 19 
+University Hospitals Sussex 4.10 Serum beta -hCG levels need to be measured on Day 4 and Day 7 post 
+treatment 
+4.11 Then one serum beta -HCG measurement per week is required until the 
+results are <15IU/L 
+4.12 Discuss further management with the consultant if h CG levels plateau or 
+increase. 
+4.13 Advise the woman to avoid alcohol, sexual intercourse and use of folic acid 
+containing vitamins until hCG < 15IU/L or the patient has a negative 
+pregnancy test. (see explanation in Section 9 ). 
+4.14 The hCG level may increase or she may have pain at D ay 4- therefore a 
+reassessment is needed 
+4.15 If the hCG is not <15% of initial value at Day 7 repeat a transvaginal 
+ultrasound scan to rule out f oetal cardiac activity or signific ant 
+haemoperitoneum. 
+4.16 If above is ruled out on scan, consider second dose of methotrexate or 
+laparoscopy. Explain to the woman that if her HCG level is more than 
+2000IU /L, the second dose of methotrexate is more likely to be unsuccessful. 
+4.17 If a second dose of methotrexate is given,(3 -27% of women may need a 
+second dose) serum beta -hCG levels need to be measured on Day 4 and Day 
+7 post treatment. If the hCG is not <15% of initial value (before second dose) 
+at Day 7 discuss management with the Consultant on ca ll, and consider 
+surgery. 
+4.18 The decision for intervention at all times is based on the woman’s clinical 
+condition and her wishes and must be discussed with the Consultant on call. 
+Treat the woman, not the numbers. 
+4.19 She must avoid pregnancy for 3 months afte r methotrexate treatment 
+4.20 The side effects of Methotrexate are nausea and vomiting, gastritis, 
+diarrhoea, stomatitis, conjunctivitis and transient elevation of liver enzymes 
+4.21 Inform the consultant if Hb has fallen by >1 0g/L, ALT rise >25% or urea and 
+creatinine rise >25% 
+5 Surgical Management 
+5.1 When surgical treatment is indicated for women with an ectopic pregnancy, it 
+should be performed laparoscopically whenever possible, taking into account 
+the condition of the woman and the complexity of the surgical procedure. 
+5.2 Surgeons providing care to women with ectopic pregnancy should be 
+competent to perform laparoscopic surgery. Management of Confirmed Ectopic Pregnancy GP001 
+Page 12 of 19 
+University Hospitals Sussex 5.3 Offer a salpingectomy to women undergoing surgery for an ectopic 
+pregnancy unless they have other risk factors for infertility. 
+5.4 Conside r salpingotomy as an alternative to salpingectomy for women with 
+risk factors for infertility such as contralateral tube damage. 
+5.5 Inform women having a salpingotomy that up to 1 in 5 women may need 
+further treatment. This treatment may include methotrexate and/or a 
+salpingectomy. 
+5.6 For women who have had a salpingotomy, take 1 serum hCG measurement 7 
+days after surgery, then 1 serum hCG measu rement per week until hCG is 
+<5IU/L or negative pregnancy test. 
+5.7 Advise women who have had a salpingectomy that they sho uld take a urine 
+pregnancy test (UPT) after 3 weeks. Advise women to return for further 
+assessment if the test is positive. 
+ 
+6 Anti -D rhesus prophylaxis 
+6.1 Offer anti -D rhesus prophylaxis at a dose of 250 IU (50 micrograms) to all 
+rhesus negative women who have a surgical procedure to manage an ect opic 
+pregnancy or a miscarriage 
+6.2 Do not offer anti -D rhesus prophylaxis to women who receive solely medical 
+management for an ectopic pregnancy 
+6.3 Do not use a Kleihauer test for quantifying f oeto–maternal haemorrhage. 
+7 Post -treatment care 
+7.1 Debriefing and discussion with the patient and family is recommended. 
+ 
+7.2 Inform patients they can self -refer to the Early Pregnancy Assessment Clinic 
+(EPAC ) for early USS in future pregnanc ies if they are concerned. 
+7.3 Information on who to contact and where to go in emergencies , needs to be 
+discussed. 
+7.4 Any follow -up arrangements need to be documented clearly in the discharge 
+letter and the patient needs to be informed. 
+ Management of Confirmed Ectopic Pregnancy GP001 
+Page 13 of 19 
+University Hospitals Sussex 8 Management of persistent trophoblast 
+8.1 This is diagnosed when the fall in hCG has failed to reach less than 10% of the 
+initial value after 14 days (without treatment, or following salpingotomy). 
+8.2 Out-patient medical therapy with single -dose methotrexate is the treatment 
+of choice, in the haemodynamically stable patient as a c onsultant decision. 
+8.3 Check hCG at D4, D7 and D14 
+8.4 If trophoblast is still persistent then the case should be discussed with a 
+consultant and consideration be given to a further dose of methotrexate or 
+laparoscopy. 
+8.5 Patients with significant pain may require further surgical intervention 
+8.6 All women being managed with methotrexate should be given information 
+leaflet on ‘Management of persistent trophoblast’ and Methotrexate Leaflet 
+8.7 Persistent Pregnancy of Unknown Location (PUL) may in some circumstances 
+be treat ed with Methotrexate if decided by the consultant gynaecologist. 
+9 Notes for all EPAC Nurses 
+ 
+There are 3 conditions in which w omen ar e follow ed up with weekly HCGs. 
+ 
+1- Women with PUL 
+2- Women with expectant management of ectopic pregnancy 
+3- Women with medical management of ectopic pregnancy . 
+ 
+There has been some confusion with regards to their follow up mainly because of how the 
+original guidelines were written. Some state follow up until HCG <20IU/L , while others say 
+<15IU/L or< 5IU/L, and some say until UPT is negative. 
+ 
+For practical purposes ALL of the original papers on which these guidelines are based follow 
+up women until to a Negative pregnancy test result . 
+ 
+For this reason and to reduce the number of unnecessary blood tests and vi sits to EPAC , the 
+Trust policy is as follows: . 
+ 
+If in any of the above 3 conditions where a woman’s HCG has been DECREASING over the 
+weeks with an HCG result which is less than 50 IU/L, but more than 15 IU/L, instead of asking 
+for a further blood test in a week , we will ask the woman to do a pregnancy test at home in 
+a week and we will ring her for the results. 
+ 
+If the UPT is negative – no further follow up is required 
+ Management of Confirmed Ectopic Pregnancy GP001 
+Page 14 of 19 
+University Hospitals Sussex If the UPT is positive -offer a further blood test. 
+ 
+So, ALL women will be followed up to a n HCG less than 15 IU/L or a NEGATIVE pregnancy 
+test. 
+ 
+The most important aspect of the follow up is the safety netting . This is because woman can 
+need emergency surgery for a bleeding ectopic pregnancy even with a decreasing HCG or 
+after a negative pregnancy test. 
+ 
+The HCG levels provide a trend view only. Treat the woman, not the numbers. 
+
+References 
+ 
+1. National Institute for Heal th and Clinical Excellence (2019 ) Ectopic pregnancy and 
+miscarriage: diagnosis and initial ma nagement (NG126) . London. NICE. | 17 April 2019 
+
+2. Diagnosis and Management of Ectopic Pregnancy. Green -top Guideline No. 21 
+RCOG/AEPU Joint Guideline | November 2016 
+
+ Management of Confirmed Ectopic Pregnancy GP001 
+Page 15 of 19 
+University Hospitals Sussex Appendix I : Flow Chart for Calculating & O btaining IM Methotrexate for Management of 
+Confirmed Ectopic Pregnancy 
+
+Confirmed ectopic pregnancy requiring IM 
+Methotrexate 
+Measure patients Height (in cm) & Weight (in kg) 
+Contact Aseptics Team 
+(ext. 4045) 
+Calculate patients Body Surface Area (BSA) (to 1 d.p.) 
+using an online calculator or the equation below :
+
+Calculate Methotrexate dose (50mg/m2) 
+Monday – Friday 
+(excluding Bank Holidays) 
+8am-4pm 
+Out of Hours 
+Contact Pharmacy 
+department (RSCH) 
+(ext. 3119) 
+Contact On -call 
+pharmacist (RSCH) 
+via switchboard 
+Aseptics pharmacist to 
+advise on dosage, and 
+whether they have 
+capacity to dispense 
+syringe with exact dos e, 
+or provide pre-filled 
+pen(s) to nearest 
+available dose. 
+N.B. If Aseptics do not have 
+capacity to dispense syringe 
+with exact dose the patients’ 
+dose may need to be 
+delayed . 
+Pharmacist to advise on dosage and whether: 
+-to provide closest available dose (+/ - 5% of 
+calcul ated dose) as a prefilled pen(s) 
+OR 
+-Aseptics will need to make/supply dose during 
+pharmacy opening hours. 
+N.B. The patients’ dose may need to be delayed by 1 -2 
+working days. 
+ 
+If supply from 
+Aseptics required, 
+contact during 
+opening hours 
+shown above. 
+ 
+Weekends 
+& Bank holidays 
+9.30am -1.30pm 
+**Once the dose is agreed with the pharmacist, Consultant to prescribe in the ‘ONCE ONLY 
+PRESCRIPTIONS’ section on the front of the patients’ drug chart. Drug chart then to be sent to 
+Aseptics/Main Pharmacy for dispensing.** 
+ Management of Confirmed Ectopic Pregnancy GP001 
+Page 16 of 19 
+University Hospitals Sussex Appendix II 
+Pharmacy should hold sufficient stock of methotrexate pre -filled pens in 20mg and 30mg 
+strength to cover doses of 50mg -120mg. Other strengths may be available, but direct 
+discussions with Pharmacy will be required to confirm availability. 
+ 
+Pharmacy currently stocks Metoject pre -filled pens which are a licensed product within the 
+UK but are not licensed to be used intramuscularly. Currently in the UK, there are no 
+available pre -filled products that are licensed for use intramuscularly. When such product 
+becomes available we will be obliged to switch to the licensed bra nd. 
+
+ Management of Confirmed Ectopic Pregnancy GP001 
+Page 17 of 19 
+University Hospitals Sussex Appendix III 
+
+Management of Confirmed Ectopic Pregnancy GP001 
+Page 18 of 19 
+University Hospitals Sussex 
+
+Management of Confirmed Ectopic Pregnancy GP001 
+Page 19 of 19 
+University Hospitals Sussex

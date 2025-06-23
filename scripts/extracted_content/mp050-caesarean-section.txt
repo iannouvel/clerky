@@ -1,0 +1,1119 @@
+# Extracted from: MP050 Caesarean Section.pdf
+# Guideline ID: mp050-caesarean-section
+# Content length: 57352 characters
+# Processing date: 1750066901.5113914
+
+MP050 
+
+Caesarean Section 
+
+Maternity Protocol: MP050 
+ 
+Date agreed: April 2022 
+
+Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 2 of 37 
+
+ Guideline Reviewer: Katie Fraser 
+Manager responsible: Katie Fraser 
+Version: 4.2 
+Approval Committee: Protocol Steering Group 
+First agreed: 
+Updated: September 2018 
+April 2022 
+Next Review date: April 2025 
+ 
+Cross reference: C005 Policy for Consent to Examination or Treatment 
+MP012 Venous Thrombosis (VTE) 
+MP020 Multiple pregnancy 
+MP034 Vaginal Birth after LSCS (VBAC) 
+MP040 Bladder Care 
+MP043 Prevention of Acid Aspiration Syndrome 
+MP046 Breech and ECV 
+MP051 Recovery 
+MP053 Obstetric Haemorrhage Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 3 of 37 Table of Contents 
+Key Principles ................................ ................................ ................................ ........................ 5 
+Scope ................................ ................................ ................................ ................................ ... 5 
+Responsibilities ................................ ................................ ................................ ..................... 5 
+1 Classification of Caesarean Section (as agreed by Maternity Service) ........................... 6 
+2 General Preparation and Management of Caesarean Section ................................ ....... 7 
+3 Responsibilities of staff group ................................ ................................ ..................... 7 
+4 Pre-Operative brief and WHO Safety Surgical Checklist ................................ ................ 8 
+5 Considerations for all caesarean births ................................ ................................ ........ 9 
+6 Category 1: Emergency Caesarean Section ................................ ................................ . 13 
+7 Category 2: Urgent Caesarean Section ................................ ................................ ....... 14 
+8 Category 3/4: Caesarean Section ................................ ................................ .............. 14 
+8.1 Indication ................................ ................................ ................................ ................. 14 
+8.2 Timing ................................ ................................ ................................ ...................... 14 
+8.3 Antenatal Steroids ................................ ................................ ................................ .... 15 
+8.4 Consent ................................ ................................ ................................ .................... 16 
+8.5 Enhanced Recovery ................................ ................................ ................................ . 16 
+9 Post -Operative care ................................ ................................ ................................ .. 19 
+9.1 Recovery care ................................ ................................ ................................ ........... 19 
+9.2 Pain Management ................................ ................................ ................................ ..... 19 
+9.2.3 See Appendix D : Guideline for Post -operative Analgesia in Obstetrics ............ 19 
+9.3 Removal of Urinary Catheter ................................ ................................ ................... 19 
+9.4 Urinary Symptoms ................................ ................................ ................................ ... 19 
+9.5 Wound Care ................................ ................................ ................................ ............. 20 
+9.6 Post-partum bleeding ................................ ................................ ............................... 20 
+9.7 Thrombo -embolic Disease ................................ ................................ ....................... 20 
+9.8 Debriefing ................................ ................................ ................................ ................ 20 
+9.9 Discharge ................................ ................................ ................................ ................. 21 
+10 References ................................ ................................ ................................ ................ 22 
+Appendix A - Indications for Elective CS ................................ ................................ ............... 23 
+Appendix B. Discussions Regarding Birth Options ................................ ................................ . 27 
+Discuss the benefits and risks of both caesarean and vaginal birth with pregnant women / 
+people, taking into account their circumstances, concerns, priorities and plans for future 
+pregnancies. ................................ ................................ ................................ ........................ 27 Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 4 of 37 APPENDIX C – ENHANCED RECOVERY IN OBSTETRICS PATHWAY FORM ................................ 30 
+APPENDIX D – Indications for Referal to the ARC ................................ ................................ . 32 
+Appendix E: Postoperative Analgesia ................................ ................................ ................... 33 
+Appendix F - Flowchart for opening Second Theatre (PRH) ................................ ................... 34 
+Appendix G - Flowchart for opening a second theatre (RSCH) ................................ ............... 35 
+Appendix H – Post -delivery VBAC leaflet ................................ ................................ .............. 36 
+Appendix E: Complex Care Booking form. ................................ ................................ ........... 37 
+
+ Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 5 of 37 Key Principles 
+ 
+A protocol is a set of measurable, objective standards to determine a course of action 
+Professional judgement may be used in the application of a protocol. 
+ 
+Scope 
+ 
+This protocol applies to: Any woman / person requiring or requesting a caesarean section 
+ 
+Responsibilities 
+ 
+Midwives & Obstetricians: 
+• To access, read, understand and follow this guidance 
+• To use their professional judgement in application of this protocol 
+ 
+Management: 
+• To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations 
+• To ensure the protocol is accessible to all relevant staff 
+• To ensure the protocol is available for service users on request Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 6 of 37 1 Classification of Caesarean Section (as agreed by Maternity 
+Service) 
+All categories below follow NICE 2021 - the preferred classification system 
+Category 1 (Emergency) 
+Definition Decision to delivery time Actions 
+ 
+Immediate threat to the life of 
+the woman / person or fetus 
+eg. suspected uterine rupture, major placental 
+abruption, cord prolapse, fetal hypoxia or 
+persistent fetal bradycardia As soon as possible, and in 
+most situations within 30 mins 
+of making the decision Call 2222 and declare 
+‘CATEGORY 1 CAESAREAN 
+SECTION’ 
+ 
+Category 2 (Urgent) 
+Definition Decision to delivery time Actions 
+Maternal or fetal 
+compromise which was not 
+immediately life -threatening As soon as possible, and in 
+most situations within 75 
+mins of making the decision Call 2222 and declare 
+‘CATEGORY 2 CAESAREAN 
+SECTION’ 
+ 
+Category 3 (Scheduled) 
+Definition Decision to delivery time Actions 
+No maternal or fetal 
+compromise but needs 
+early birth Cat 3 LSCS should be as soon 
+as possible within a 24 hour 
+period and depending on 
+clinical activity. Inform LW coordinator, 
+Obstetric team, Anaesthetic 
+team and theatre team 
+ 
+Category 4 (Elective) 
+Definition Decision to delivery time Actions 
+Birth timed to suit woman / 
+person or healthcare 
+provider N/A Book LSCS in the online 
+diary 
+Assess for ERP 
+Complete consent form 
+Book pre -assessment clinic 
+Organise relevant blood 
+products 
+ 
+ Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 7 of 37 1.1 The four point classification determines the urgency of performing the 
+caesarean. 
+1.2 There may be cause to downgrade or upgrade the category of caesarean 
+once in theatre – ensure the final decision is documented clearly. 
+2 General Preparation and Management of Caesarean Section 
+2.1 Documentation 
+2.1.1 The classification and reason for performing any caesarean section 
+must be documented on Badgernet by the person who makes the 
+decision 
+2.1.2 The yellow part of the completed paper consent form should be 
+given to the patient, the white copy to be filed securely in the brown 
+folder. 
+2.1.3 If the maximum decision to delivery interval is exceeded, the reason 
+should be documented clearly on Badgernet and reported on DATIX 
+2.1.4 Where appropriate discuss suitability of enhanced recovery with the 
+pregnant woman / person information leaflet given. 
+2.1.5 Any discussions with patient regarding the procedure must be 
+documented on Badgernet 
+2.1.6 WHO checklist s must be completed prior to and after procedure 
+(Section 4) 
+2.1.7 Theatre log book to be completed by all staff before leaving theatre 
+2.1.8 Procedure should be appropriately documented on Badgernet 
+2.1.9 The post -operative plan must be clearly documented on Badgernet. 
+ 
+3 Responsibilities of staff group 
+3.1 Attending Obstetrician: 
+• Communicate effectively with the pregnant woman/ person (and 
+birthing partner), explain the reasons for the decision for caesarean, 
+ensure adequate understanding and written informed consent . Verbal 
+consent may be appropriate in an emergency. 
+• Document al discussions, the reason and decision time for LSCS on 
+Badgernet 
+• Discuss with the Consultant obstetrician on call (where time permits - 
+see below) 
+• Stop Oxytocin if in use 
+• Assist with transfer to theatre 
+• Communicate with the midwifery team / coordinator Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 8 of 37 • Document procedure on Badgernet 
+ 
+3.2 Attending Midwife / Coordinator: 
+• Provide advocacy and support for the pregnant woman/ person and their 
+birth partner 
+• Inform the anaesthetist and ODP (& main theatres) 
+• Assist with t ransfer to theatre 
+• To insert the Foley catheter 
+• Ensure name band details are correct 
+• Call for neonatal assistance if required 
+• Complete the Badgernet notes 
+3.3 Attending Anaesthetist 
+ 
+• Pre-assess and consent for anesthesia 
+• Review b loods and assess if available for electronic issue (when possible) 
+• Effective communication with obstetric and theatre team 
+• Document on anesthetic charts 
+• Hand over to recovery team MP051 Recovery 
+4 Pre-Operative brief and WHO Safety Surgical Checklist 
+4.1 All members of the MDT expected to be present in theatre (obstetricians, 
+anaesthetists , anaesthetic assistant ODP , theatre staff, midwives and 
+students), should meet for a pre -theatre brief to discuss each case and 
+highlight any key concerns and order of cases. (This may not be achievable if 
+the clinical picture indicates immediate delivery). 
+4.2 Forward planning for any unusual steps can be discussed at brief; eg. Cell 
+salvage, uterotonic agents, blood product availability, expected anaesthetic 
+or surgical complication, specific dressing requirements etc. (This may not be 
+achievable if the clinical picture indicates immediate delivery). 
+4.3 The WHO Surgical Safety Checklist for Maternity ‘SIGN IN’ to be completed on 
+arrival to theatre 
+4.4 The WHO Surgical Safety Checklist for Maternity ‘TIME OUT’ must be 
+completed before commencing surgery with all theatre team present. 
+4.5 Aim to involve patient and partner unless clinical needs otherwise dictate 
+4.6 The WHO Surgical Safety Checklist for Maternity ‘SIGN OUT’ must be 
+completed before any members of the theatre team leave the operating 
+theatre 
+ Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 9 of 37 4.7 The WHO post -operative debrief/review should take place after the 
+operation or elective session and involve all members of the team to discuss 
+any potential learning points 
+5 Considerations for all caesarean births 
+5.1 Intra -operative Cell salvage (ICS) 
+5.1.1 Cell salvage can reduce the incidence of transfusion reactions and 
+transfusion -related infection, compared with allogenic transfusion, 
+and may also be useful when there are difficultie s with cross -
+matching. 
+5.1.2 The use of Intra -operative Cell Salvage reduces the demand on 
+allogeneic (donor) red cells and is a cost effective measure 
+5.1.3 Staff should be competent in using cell salvage and have regular 
+exposure to equipment to ensure safe and effective use 
+5.1.4 Pregnant women / people should be informed of the use of cell 
+salvage. There is a theoretical risk of amniotic fluid embolism and 
+infusion of fetal cells, which could potentially cau se haemolytic 
+disease in future pregnancies – this has not been seen in clinical 
+practice. 
+5.1.5 When obtaining consent for caesarean section, the obstetrician or 
+anaesthetist should discuss the risks and benefits of ICS and 
+document this. 
+5.1.6 For elective caesareans , all should be signposted to the ICS 
+information sheet either at the antenatal appointment or as part of 
+the pre -operative information . 
+5.1.7 Cell salvage should be considered in all cases but particularly: 
+• Placenta praevia, or suspected (previous LSCS with anterior 
+placenta) 
+• Expected Classical incision 
+• Past history of uterine atony / PPH 
+• Maternal bleeding disorders 
+• Women with Hb <110 g/dl 
+• Women who decline blood products / Jehovah witness and who 
+are accepting of ICS 
+• When there is difficulty with cross -matching due to antibodies 
+• Fibroid uterus 
+• Prolonged labour on Oxytocin / fully dilated LSCS / failed 
+instrumental 
+• Pregnant women / people with Antepartum Haemorrhage / 
+Suspected abruption 
+• Laparotomy following post -partum haemorrhage Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 10 of 37 • Multiple pregnancy 
+• Extreme prematurity / classical LSCS 
+• Expected complex surgery 
+ 
+Please refer to Trust Guideline : Intra -Operative Cell Salvage and MPXXX rhesus Policy for 
+further information 
+ 
+5.2 Blood transfusion 
+5.2.1 Pregnant women / people should give verbal and/or written consent 
+to blood transfusion as part of the consent for caesarean section 
+5.2.2 Blood should be cross -matched if: 
+• Haemoglobin <100 g/dl 
+• Placenta praevia / accreta (or suspected) 
+• Antepartum Haemorrhage / Suspected abruption 
+• Abnormal antibodies where there is an anticipated delay for cross -
+matched blood 
+5.3 PPI / Sodium Citrate 
+5.3.1 All high risk patients in labour should receive oral lanzoprazole 15-
+30mg , or omeproazole 20 -40mg. 
+5.3.2 30ml of 0.3M Sodium C itrate may be given orally immediately pre -
+induction of general anaesthetic if necessary. If time permits, give 
+PPI at this time if time. 
+ 
+5.4 Antibiotics 
+5.4.1 Recommend prophylactic antibiotics before skin incision for all 
+women / people having caesarean birth to reduce the risk of 
+endometritis (occurs in 8%), urinary tract and wound infections. 
+Inform that there is no known effect on the baby. 
+5.4.2 Cefuroxime 1.5g IV should be given prior knife -to-skin 
+5.4.3 If penicillin allergic, give Clindamycin 600mg IV prior to KTS and 
+Gentamicin 160mg IV post cord -clamping 
+5.4.4 Consider a longer course of antibiotics in 
+• Women with sepsis in labour 
+• Complicated second stage caesarean / failed instrumental 
+• Prolonged surgery 
+• Bakri balloon 
+• BMI >40 Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 11 of 37 5.5 Surgical Techniques for Caesarean 
+5.5.1 Reducing Infection 
+• Use alcohol -based chlorhexidine skin preparation before 
+caesarean birth to reduce the risk of wound infections. If alcohol -
+based chlorhexidine skin preparation is not available, alcohol -
+based iodine skin preparation can be used. 
+• Use aqueous iodine vaginal preparation before caesarean birth in 
+those with ruptured membranes to reduce the risk of 
+endometritis. If aqueous iodine vaginal preparation is not 
+available or is contraindicated, aqueous chlorhexidine vaginal 
+preparation can be used. 
+5.5.2 Incision / Entry Technique 
+• Perform caesarean birth using a transverse abdominal incision (a 
+straight skin incision, 3 cm above the symphysis pubis) - reduced post -
+operative pain 
+• Subsequent tissue layers are opened bluntly and, if necessary, 
+extended with scissors and not a knife - allows for shorter operating 
+times and reduces postoperative febrile morbidity 
+• Do not use separate surgical knives to incise the skin and the deeper 
+tissues in caesarean birth, as it does not decrease wound infection 
+• When there is a well formed lower uterine segment, use blunt rather 
+than sharp extension of the uterine incision to reduce blood loss, 
+incidences of postpartum haemorrhage and the need for transfusion 
+during caesarean birth. 
+• Remove the placenta in caesarean birth using controlled cord traction 
+(in preference to manual removal) to reduce the risk of endometritis. 
+• Perform intra -peritoneal repair of the uterus for caesarean birth. 
+Routine exteriorisation of the uterus is not recommended because it 
+is associated with more pain and does not improve operative 
+outcomes such as haemorrhage and infection. (It may be necessary 
+for complex uterine extension / repairs, raised BMI) 
+• Use single layer or double layer uterine closure in caesarean birth, 
+depending on the clinical circumstances. Note that single layer closure 
+does not increase the risk of postoperative bleeding or uterine 
+rupture in a subsequent pregnancy. 
+• Do not routinely suture the visceral or the parietal peritoneum in 
+caesarean birth to reduce operating time and the need for 
+postoperative analgesia, and improve maternal satisfaction. 
+• Do not routinely close the subcutaneous tissue space in caesarean 
+unless the subcutaneous fat >2cm. Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 12 of 37 • Close the skin with sutures rather than staples to reduce the risk of 
+superficial wound dehiscence. 
+• Do not routinely use superficial wound drains in caesarean birth as 
+they do not decrease the incidence of wound infection or wound 
+haematoma 
+• Consider negative pressure wound therapy after caesarean birth for 
+those with a BMI of 35 kg/m2 or more to reduce the risk of wound 
+infections (NB this is NICE but is not our current PICO guidance) 
+5.6 Forceps use at Caesarean Section 
+ 
+Only use forceps in caesarean birth if there is difficulty delivering the baby's head. 
+The effect on neonatal morbidity of the routine use of forceps at caesarean birth 
+remains uncertain. 
+ 
+5.7 Cord clamping 
+5.7.1 Delayed cord clamping (at least 1 minute from delivery) should be 
+considered routine for deliveries by caesarean 
+5.7.2 Do not delay cord clamping in cases of emergency or where there 
+are concerns for fetal wellbeing (heart rate <60bpm) or significant 
+concerns for maternal haemorrhage 
+5.7.3 Cord milking is beneficial in cases where delayed clampi ng is not 
+appropriate . Perform milking four times for those babies whom 
+delayed cord clamping is deemed not feasible. 
+ 
+5.8 Cord Blood Sampling 
+5.8.1 Cord blood samples should be taken in any Category 1 or 2 LSCS 
+5.8.2 Cord blood samples are required where the pregnant woman / 
+person has known abnormal antibodies, or Rh -ve 
+5.8.3 Cord blood sampling is not routine in elective surgery unless there is 
+considerable delay in delivery during surgery, the baby has lower 
+APGARS than expected, there is maternal compromise at LSCS or GA 
+ 
+5.9 Oxytocin 
+5.9.1 Oxytocin 5 units should be given as a slow intravenous injection after 
+the cord is clamped 
+5.9.2 Oxytocin 40 units infusion should not be routinely used 
+ Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 13 of 37 5.9.3 Oxytocin 40units infusion should be considered prophylactically for 
+patients who are at risk of PPH: 
+• APH / abruption 
+• Placenta praevia 
+• Multiple pregnancy 
+• Prolonged labour / use of Oxytocin 
+• Fibroid uterus 
+ 
+See M aternity Protocol MP053 Obstetric Haemorrhage 
+ 
+5.10 Care of the baby born by caesarean birth 
+5.10.1 An appropriately trained practitioner skilled in the resuscitation of 
+newborn babies is present for caesarean birth performed under 
+general anaesthesia, or if there is evidence of fetal compromise. 
+5.10.2 Offer and facilitate early skin -to-skin contact between the woman / 
+person and their baby where possible 
+5.10.3 Support women / people who have had a caesarean birth and who 
+wish to breast / chest feed to start as soon as possible after the birth 
+of their baby. 
+ 
+6 Category 1: Emergency Caesarean Section 
+ 
+6.1 A 2222 call stating ‘ Category 1 Caesarean Section’ should be made as soon as 
+the decision is made. The operator will send out an emergency bleep stating 
+‘Category 1 caesarean section’ to the following people: on call anaesthetists, 
+on call ODP, on call obstetric consultant (bleep), registrar and SHO, on call 
+neonatologist (or ANNP), labour ward coordinator. 
+6.2 Out of hours, the consultant will need to be informed via direct telephone call 
+from the obstetric registrar, or other member o fthe team if the obstetric 
+registrar is unable. 
+6.3 Written consent should be taken where possible, v erbal may be necessary 
+depending on the cause of the emergency. 
+6.4 There should be maximum decision t o delivery time of 30 minutes, however 
+decision to delivery time for category 1 caesarean sections should be as short 
+as possible 
+ Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 14 of 37 6.5 The senior obstetrician on site and the senior anaesthetist should 
+communicate about the reason for LSCS, categorization, urgency and agree 
+on the anaesthesia to be used - depending on the time this will take and the 
+urgency of delivery or if maternal/fetal condition stabilises. 
+6.6 It may be necessary to revert to GA if achieving adequate regional block is 
+taking too long . The decision should be made with the senior obstetrician 
+after discussion with the attending anaesthetist taking in to consideration the 
+whole clinical picture. 
+ 
+7 Category 2: Urgent Caesarean Section 
+7.1 The aim should be to perform the caesarean as quickly as possible, and with a 
+maximum decision -to-delivery interval of 75 minutes 
+7.2 A 2222 call stating ‘ Category 2 Caesarean Section’ should be made. The 
+operator will send out a bleep stating ‘ Category 2 caesarean section’ to the 
+following people: on call anaesthetists, on call ODP, on call obstetric 
+consultant (bleep), registrar and SHO, on call neonatologist (or ANNP), labour 
+ward coordinator. 
+7.3 Out of hours, the consultant will need to be informed via direct telephone call 
+from the obstetric registrar, or another member of the team if the obstetric 
+registrar is unable. 
+7.4 Category 2 caesarean is usually achievable under regional block (unless 
+contraindicated) 
+ 
+8 Category 3/4: Caesarean Section 
+8.1 Indication 
+8.1.1 For indications for elective caesarean please see APPENDIX A 
+8.1.2 Ensure all details are filled in on the LSCS online diary including 
+indications, risk factors and any specific requirements (eg. 
+Crossmatch, cell saver anaesthetic concerns, antenatal issues, 
+mental health considerations, social concerns) 
+8.2 Timing 
+8.2.1 Planned caesarean should not routinely be carried out before 39 
+weeks unless there is a recognised and documented clinical 
+indication 
+8.2.2 The risk of respiratory morbidity is increased in babies born by 
+caesarean before labour, but this risk decreases significantly after 39 
+weeks 
+ Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 15 of 37 8.2.3 For multiple pregnancies (see Protocol MP 020) 
+8.2.4 Other indications for delivering prior to 39 weeks are likely due to 
+fetal or maternal compromise and decision for elective delivery 
+should be made by the consultant / MDT. 
+8.3 Antenatal Steroids 
+8.3.1 Antenatal corticosteroids should be given to all those for whom an 
+elective caesarean section is planned prior to 38+6 weeks of 
+gestation 
+8.3.2 Antenatal corticosteroids should be offered to all pregnant 
+women/people for whom an elective caesarean section is planned 
+prior to 39 weeks of gestation 
+8.3.3 For those undergoing planned caesarean birth between 37+0 and 
+38+6 weeks an informed discussion should take place about the 
+potential risks and benefits of a course of antenatal corticosteroids. 
+Although antenatal corticosteroids may reduce admission to the 
+neonatal unit (NNU) for respiratory morbidity, it is uncertain if there 
+is any reduction in RDS, transient tachypnoea of the newborn (TTN) 
+or NNU admission overall, and antenatal corticosteroids may result 
+in harm to the neonate which includes hypoglycaemia and potential 
+developmental delay. 
+8.3.4 Two doses of dexamethasone phosphate 12mg IM, minimum of 12 
+hours apart 
+8.3.5 Optimal timing of steroids should be at least 24 hours between the 
+2nd dose and within 7 -days of planned caesarean 
+
+Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 16 of 37 8.4 Consent 
+8.4.1 All pregnant women / people should be given the opportunity to ask 
+questions and discuss their options regarding their mode of delivery 
+with a consultant o bstetrician when requested . 
+8.4.2 Maternal informed consent for caesarean section should be gained 
+and the consent form signed in ANC when the decision regarding 
+mode of delivery is agreed between the o bstetrician and pregnant 
+woman / person . 
+8.4.3 The patient demographic sticker should be used on the Consent 
+Form 
+8.4.4 A caesarean section consent ‘sticker’ should be fixed to the consent 
+form and the yellow copy given to the woman / person . 
+8.4.5 Where there is a language barrier, request the presence of a 
+professional interpreter. Family members should not be used for 
+interpreting. 
+8.4.6 Any extra particular risks individual to a particular clinical situation 
+should be handwritten on the consent form 
+8.4.7 A summary of all discussions should be documented on Badgernet. 
+8.4.8 Please refer to policy MP 053 Obstectric Haemorrhage for those who 
+declin e blood products 
+ 
+8.5 Enhanced Recovery 
+The Enhanced Recovery in Obstetrics is devised to reduce hospital stay, improve 
+patient experience and return to normality. 
+8.5.1 All non -complex obstetric / surgical patients should be considered 
+for Enhanced Recovery when booking an elective caesarean 
+8.5.2 Those not suitable for enhanced recovery include those with other 
+medical co -morbidities and those with a predicted longer postnatal 
+care (eg. hypertensive patients) 
+8.6 Pre-operative testing assessment clinic and preparation for caesarean birth 
+8.6.1 All pregnant women / people having planned caesarean birth should 
+have pre -op booked at the DAU / MAU in the preceding 24 -48-hours 
+8.6.2 Carry out a full blood count to identify anaemia, antibody screening, 
+and blood grouping with saving of serum 
+ Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 17 of 37 8.6.3 Do not routinely carry out the following tests before caesarean birth: 
+• cross -matching of blood 
+• a clotting screen 
+• preoperative ultrasound for localisation of the placenta. 
+8.6.4 COVID PCR swab should be organised in the preceding 48 -hours. 
+If the result is positive, elective birth should be delayed, where clinically 
+possible, until Day 10. 
+Where delivery cannot be delayed, a plan must be made with the team 
+regarding admission location, anaesthesia and recovery. 
+(See COVID guidance on timing of swabs, lateral flows for birthing partner / 
+positive testing partners) 
+8.6.5 Any woman / person who does not qualify as low risk should be 
+discussed with the on call obstetric anaesthetist, if not already 
+previously referred to high risk clinic antenatally. 
+8.6.6 Obstetric Anaesthetic Review Clinic - ARC 
+Please refer to Appendix D for indications for referral to the anaesthetic 
+team. 
+8.6.1 Antacid regime : 
+Omeprazole 20mg (preferred) or lansoprazole 30mg if no 
+omeprazole available at 22:00hrs (evening before surgery) and 
+06:00hrs (morning of surgery) 
+(TTO packs should be used to supply this medicine as per MM0026 Policy for the Safe 
+and Secure Handling of Medicines appendix 4 ) 
+8.6.2 Metoclopramide 10mg PO at 06:00hrs (morning of surgery) to be 
+prescribed in pre -op clerking clinic 
+(TTO packs should be used to supply this medicine as per MM0026 Policy for the Safe 
+and Secure Handling of Medicines appendix 4 ) 
+8.6.3 Surgical consent should have been completed in clinic by the 
+obstetrician booking surgery 
+8.6.4 Ensure pregnant women / people receive information leaflets 
+including 
+• LSCS leaflet: https://www.bsuh.nhs.uk/wp -
+content/uploads/sites/5/2016/09/Information -for-women -having -an-
+elective -planned -caesarean.pdf 
+Or, can ‘push’ this leaflet on Badgernet 
+• Anaesthesia for birth by caesarean section leaflet 
+• ERP leaflet: https://www.bsuh.nhs.uk/wp -
+content/uploads/sites/5/2016/09/Enhanced -recovery -programme -for-
+patients -requiring -elective -caesarean -section.pdf Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 18 of 37 8.7 Day of Elective Caesarean Section: 
+ 
+• No food from 02.00hrs 
+• Pre-op 500mls Lucozade Sport until 07.00hrs (not if diabetic) 
+• Can have fluids as per the enhanced recovery plan protocol, until 2 hours prior 
+to admission time or clear non -particulate fluid if diabetic. 
+• Admit to labour ward on day of C/S 
+• For elective LSCS for breech presentation all pregnant women / people 
+should have a presentaiton scan on admission to confirm if caesarean is still 
+indicated . 
+If the baby i s found to be cephalic the LSCS, women / people should be 
+encouraged to aim for vaginal birth. 
+See maternity protocol MP046 Breech and ECV 
+• Alert the neonatal team if they need to be present in theatre for delivery 
+ 
+8.8 Spontaneous Labour before Elective section date 
+8.8.1 The obstetric team should review any pregnant woman / person 
+presenting in spontaneous labour before the elective LSCS date to 
+ascertain whether the indication for elective CS still applies. 
+8.8.2 If indicated, then the CS should be carried out as soon as possible. 
+8.8.3 If the indication is no longer relevant or there are new factors to 
+consider, this should be discussed carefully with the woman / person 
+(involve Consultant/LW coordinator where necessary) and vaginal 
+delivery encouraged. 
+Pregnant women / people should be counselled about this possibility 
+at the time of decision for elective LSCS is made 
+8.8.4 Despite counselling of risks and benefits, if the pregnant woman / 
+person still wishes for LSCS, this should be accepted by the team. 
+8.9 Thromboprophylaxis 
+8.9.1 All pregnant women / people should have VTE risk assessment and 
+have be assessed and thromboprophylaxis prescribed appropriately 
+8.9.2 For those already on LMWH in pregnancy, refer to Maternity 
+Protocol MP012: Venous Thrombosis (VTE) 
+ Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 19 of 37 9 Post -Operative care 
+9.1 Recovery care 
+9.1.1 Women / people should be observed on a one -to-one basis by an 
+appropriately trained member of staff until they have regained 
+airway control and cardiorespiratory stability and are able to 
+communicate (for GA CS) and until they have regained movement in 
+their lower limbs (post spinal CS) 
+ 
+See Maternity Protocol MP051: Recovery for details on care in the first 24 hours 
+ 
+9.2 Pain Management 
+9.2.1 Regular post -operative analgesia is prescribed for all those having 
+caesarean sections and should be given. This keeps pain scores lower 
+and improves patient satisfaction. 
+9.2.2 Providing there is no contraindication, non -steroidal anti -
+inflammatory drugs should be offered post -CS as an adjunct to other 
+analgesics, because they reduce the need for opioids. 
+9.2.3 See Appendix D : Guideline for Post -operative Analgesia in Obstetrics 
+ 
+9.3 Removal of Urinary Catheter 
+9.3.1 Removal of the urinary bladder cathet er should be carried out once a 
+woman / person is mobile after a regional anaesthetic and not 
+sooner than six hours after the last epidural ‘top up’ dose. 
+9.3.2 The obstetrician should document any reason for delayed removal of 
+catheter in the post -op plan 
+9.3.3 Follow the ERP as appropriate 
+ 
+9.4 Urinary Symptoms 
+9.4.1 When caring for post -natal women / people who have had a 
+caesarean birth who have urinary symptoms, consider possible 
+diagnoses of: 
+• urinary tract infection 
+• stress incontinence (4%) 
+• urinary tract injury (1/1,000) 
+• urinary retention Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 20 of 37 9.5 Wound Care 
+9.5.1 Consider negative pressure wound therapy after caesarean birth for 
+those with a BMI of 35 kg/m2 or more to reduce the risk of wound 
+infections. These should remain on for 7 -days. 
+9.5.2 When using standard (not negative pressure) wound dressings after 
+caesare an birth take into account that no type of wound dressing has 
+been shown to be better than another at reducing the risk of wound 
+infections 
+9.5.3 For a non -negative pressure dressing, removing standard dressings 6 
+to 24 hours after the caesarean birth 
+9.5.4 Assess the wound for signs of infection (such as increasing pain, 
+redness or discharge), separation or dehiscence 
+9.5.5 Encourage loose, comfortable clothes and cotton underwear 
+9.5.6 Advise gentle daily cleaning and drying of the wound 
+9.5.7 Ensure plan put in place for the removal of sutures or clips if 
+required. 
+9.6 Post -partum bleeding 
+9.6.1 When caring for women / people who have had a caesarean birth 
+who have heavy and/or irregular vaginal bleeding, consider whether 
+this is more likely to be because of endometritis than retained 
+products of conception, and manage accordingly. 
+9.6.2 Escalate to senior obstetric team to review where bleeding does not 
+settle, or where passing clots despite antibiotic treatment 
+ 
+9.7 Thrombo -embolic Disease 
+9.7.1 All women / people should have VTE risk assessment and have be 
+assessed and thromboprophylaxis prescribed appropriately 
+9.7.2 Be alert to increased risk of VTE and pay pa rticular attention to 
+women / people who have respiratory symptoms (such as cough or 
+shortness of breath) or leg symptoms (such as painful swollen calf). 
+ 
+9.8 Debriefing 
+9.8.1 All mothers / parents should have a discussion about the 
+implications for future pregnancies before they are discharged 
+including suitability for VBAC 
+ Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 21 of 37 9.8.2 All mothers / parents should have the opportunity to discuss with an 
+Obstetric Registrar (or Consultant) the reason for their LSCS, any 
+complications during surgery and the implications of having a LSCS 
+on their future pregnancies before discharge home 
+9.8.3 This discussion must be documented on Badgernet. 
+9.8.4 Mothers / parents who have had non -elective LSCS should be 
+provided with information about the Birth Stories service and this 
+should be documented in the maternal postnatal notes. 
+9.8.5 Some mothers / parents may warrant referral to see a consultant for 
+a debrief in clinic. Please discuss this with the consultant 
+beforehand. 
+9.8.6 Discuss with women / people who have had a caesarean birth that 
+there is not at increased risk of depression, post -traumatic stress 
+symptoms, pain on sexual intercourse, faecal incontinence or 
+difficulties with breastfeeding. 
+ 
+9.9 Discharge 
+9.9.1 Ensure that the discharge summary is complete with relevant 
+information about category of caesarean, any complications. 
+9.9.2 Inform the GP if follow -up investigations are needed after discharge 
+from hospital (for example, a repeat full blood count if there has 
+been a large amount of blood loss), and include details of the plan or 
+course of action if the results are abnormal. 
+9.9.3 Inform women / people who have had a caesarean birth that they 
+can resume activities such as driving a vehicle, carrying heavy items, 
+formal exercise and sexual intercourse when they feel they have fully 
+recovered from the caesarean birth (including any physical 
+restrictions or pain). 
+ 
+ Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 22 of 37 10 References 
+ 
+NICE NG 192, 2021: Recommendations | Caesarean birth | Guidance | NICE 
+ 
+RCOG Caesarean Section (Consent Advice No. 7) | RCOG 
+ 
+RCOG Green Top Guideline 27: Placenta Praevia and Placenta Accreta: Diagnosis and 
+Management (Green -top Guideline No. 27a) | RCOG 
+ 
+RCOG Green Top Guideline 74: Antenatal corticosteroids to reduce neonatal morbidity 
+and mortality (wiley.com) 
+ 
+NICE IPG 144: Intraoperative blood cell salvage in obstetrics, 
+https://www.nice.org.uk/guidance/ipg144/chapter/2 -The-procedure 
+ 
+RCOG / BASHH Management of Herpes in Pregnancy, 2014: 
+https://www.rcog.org.uk/globalassets/documents/guidelines/management -genital -
+herpes.pdf 
+ 
+RCOG Green Top Guideline 31: Small -for-Gestational -Age Fetus, Investigation and 
+Management (Green -top Guideline No. 31) | RCOG 
+ Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 23 of 37 Appendix A - Indications for Elective CS 
+ 
+The following guidance is provided by NICE 
+ 
+Breech presentation 
+ 
+Pregnant women / people with a singleton breech presentation at term, for whom 
+external cephalic version is contraindicated or has been unsuccessful, can be offered an 
+elective LSCS. 
+Pregnant women / people should also be given information about their options for 
+mode of delivery and supported to make an informed choice. 
+(See Maternity Protocol MP046: Breech and ECV ). 
+ 
+Multiple pregnancy 
+ 
+Discussion of timing and mode of delivery in multiple pregnancies should have been 
+discussed throughout the pregnancy in antenatal clinic. 
+In twin pregnancies where the first twin is not cephalic, offer a planned CS. 
+In otherwise uncomplicated twin pregnancies at term where the presentation of the first 
+twin is cephalic, perinatal morbidity and mortality is increased for the second twin, 
+however the effect of planned CS in improving outcome for the second twin remains 
+uncertain and therefore CS should not routinely be offered. 
+ 
+See MP020 Multiple pregnancy for further information regarding timing, mode of 
+delivery and preparation for delivery . 
+ 
+Placenta praevia 
+• Offer elective caesarean section for all pregnant women /people where the placental 
+edge is less than 2 cm from the internal os , or is covering the os, at 36 -weeks scan 
+• Delivery timing should be tailored according to antenatal symptoms and, for those 
+presenting with uncomplicated placenta praevia, delivery should be considered 
+between 36+0 and 37+0 weeks of gestation. 
+• Consultant obstetrician either to perform or directly supervise / assist registrar at 
+delivery 
+• Consultant anaesthetist present and directly supervising anaesthetic at delivery 
+• Blood (at least 3 units RBC) and blood products should be available – and transfusion 
+aware of case 
+• Multidisciplinary involvement in pre -op planning : if multiple risk factors, or accreta 
+then should plan for delivery at RSCH and suitable handover from PRH to organise 
+this 
+• Discussion with woman / person and consent includes possible interventions (such 
+as hysterectomy, leaving the placenta in place, cell salvage, Bakri balloon and 
+intervention radiology) 
+• local availability of a level 2 critical care bed is considered good practice Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 24 of 37 Morbidly adherent placenta 
+ 
+For pregnant women / people who have had a previous caesarean birth with a low -lying 
+placenta at the anomaly scan, advise MRI scan: 
+• discuss with the woman / person how MRI in addition to ultrasound can help diagnose 
+morbidly adherent placenta and clarify the degree of invasion, particularly with a 
+posterior placenta 
+• explain what to expect during an MRI procedure 
+• inform the woman / person that current experience suggests that MRI is safe, but that 
+there is a lack of evidence about any long -term risks to the baby. 
+Where morbidly adherent placenta is diagnosed: 
+Ensure MDT (obstetrics, LW lead midwife, anaesthetist, interventional radiology where 
+required, main theatres) informed 
+Refer to the Complex Care Meeting if required. 
+Involve the MDT and pregnant woman / person in discussions about birth options (for 
+example, timing of birth, operative interventions including possibility of hysterectomy, need 
+for blood transfusion). 
+When performing a caesarean birth for a woman / person suspected to have a morbidly 
+adherent placenta, the MDT should agree which other healthcare professionals need to be 
+consulted or present, and the responsibilities of each team member. Ensure that: 
+• a consultant obstetrician and a consultant anaesthetist are present in the operating 
+theatre 
+• a paediatric registrar, consultant, or equivalent, is present 
+• a haematology registrar, consultant, or equivalent, is available for advice 
+• a critical care bed is available 
+• sufficient cross -matched blood and blood products are readily available. 
+ 
+Small for gestational age / Intra -uterine growth restriction 
+ 
+• In the SGA fetus with umbilical artery AREDV delivery by caesarean section is recommended. 
+ 
+• In the SGA fetus with normal umbilical artery Doppler or with abnormal umbilical artery PI but 
+end–diastolic velocities present, induction of labour can be offered but rates of emergency 
+caesarean section are increased and continuous fetal heart rate monitoring is recommended Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 25 of 37 from the onset of uterine contractions. Caesarean section can be offered in these cases. (RCOG 
+SGA) 
+ 
+Mother / parent -to-child transmission of maternal infections 
+HIV 
+• Follow the detailed birth plan on Badgernet from the relevant specialists 
+• Contact the HIV Registra r or consultant on call if required 
+• Refer to protocol MP004 infectious diseases HIV 
+• BHIVA guidelines on the management of HIV in pregnancy and postpartum 2018 
+(2019 interim update) https://www.bhiva.org/pregnancy -guidelines for further 
+information 
+Hepatitis B 
+• Follow detailed birth plan on Badgernet from specialist team 
+• Contact Lead Anti -microbial Pharmacist if any question re: treatment 
+• Refer to protocol MP006 Infectious diseases Hepatitis B 
+ 
+Herpes Simplex virus 
+• Pregnant women / people with primary genital herpes simplex virus (HSV) infection 
+occurring in the third trimester of pregnancy should be offered planned CS because 
+it decreases the risk of neonatal HSV infection. 
+• In pregnant women / people with recurrent HSV, low risk of transmission risk is, 
+should not be offered a CS. Can offer prophylactic acyclovir from 36/40 (4) 
+
+Previous Caesarean 
+ 
+• All pregnant women / people who are suitable for VBAC should be referred to the 
+birth options clinic. 
+• For information on VBAC advice see Maternity Protocol MP034 Vaginal Birth after 
+LSCS (VBAC). 
+• Caesarean section should be planned in pregnant women / people with previous 
+uterine rupture or classical caesarean scar and in those who have other absolute 
+contraindications to vaginal birth that apply irrespective of the presence or absence 
+of a scar (e.g. major placenta praevia, breech). 
+• In pregnant women / people with complicated uterine scars, caution should be 
+exercised and decisions should be made on a case -by-case basis by a senior 
+obstetrician with access to the details of previous surgery. 
+• Caesarean section should be offered to pregnant women / people who have had two 
+or more prior lower segment caesarean deliveries. 
+
+ Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 26 of 37 
+Maternal request for caesarean birth 
+ 
+• When a woman / person with no medical indication for a caesarean birth requests a 
+caesarean birth, explore, discuss and record the specific reasons for the request. 
+• If a woman / person requests a caesarean birth, discuss the overall benefits and risks of 
+caesarean birth compared with vaginal birth (see the section on planning mode of birth ) and 
+record that this discussion has taken place 
+• If a woman / person requests a caesarean birth, offer discussions with the consultant 
+midwife team or LW lead midwives and/or obstetrician and other members of the team if 
+necessary, for example an anaesthetist, to explore the reasons for the request, and ensure 
+the woman / person has accurate information. 
+• If a woman / person requests a caesarean birth because she has tocophobia or other severe 
+anxiety about childbirth (for example, following abuse or a previous traumatic event), offer 
+referral to a healthcare professional with expertise in providing perinatal mental health 
+support to help with her anxiety. 
+• If a vaginal birth is still not an acceptable option after discussion of the benefits and risks and 
+offer of support (including perinatal mental health support if appropriate; see 
+recommendation ), offer a planned caesarean birth for pregnant women / people requesting 
+a caesarean birth. 
+• An individual obstetrician has the right to decline a request for LSCS in the absence 
+of an identifiable reason. However the woman / person ’s decision should be 
+respected and i f a woman / person requests a caesarean birth but their current healthcare 
+team are unwilling to offer this, refer the woman / person to an obstetrician willing to 
+perform a caesarean birth. 
+
+Intrauterine Death 
+• Consultant to be present for all LSCS in the case of intra -uterine death. Where 
+waiting for a consultant may delay an emergency or life threatening situation for the 
+mother / parent , the registrar should start the case but the consultant should be 
+called in to attend as soon as safely possible. 
+ 
+ Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 27 of 37 
+Appendix B. Discussions Regarding Birth Options 
+Discuss the benefits and risks of both caesarean and vaginal birth with 
+pregnant women / people, taking into account their circumstances, 
+concerns, priorities and plans for future pregnancies. 
+The below figures are quoted in the NICE guidance and may be offered to help aid 
+discussion with pregnant women / people who are undecided about their mode of delivery. 
+Explain that 
+• there are benefits and risks associated with both vaginal and caesarean birth, some of 
+which are very small absolute risks and some are greater absolute risks, and they will 
+need to decide which risks are more (or less) acceptable to them 
+• there are other risks not included in these tables that might be relevant to their 
+individual circumstances (for example placental adherence problems from multiple 
+caesarean births, fetal lacerations in caesarean birth, term birth injuries with vaginal 
+birth or caesarean birth) 
+Risks which should be discussed for caesarean section (as per the RCOG guidance for 
+consent, and as per the consent sticker ): 
+Serious risks : 
+• Emergency hysterectomy, 7 -8/1000 (uncommon) 
+• Need for further surgery at a later date, including curettage, 5/1000 (uncommon) 
+• Admission to intensive care unit, 9/1000 (uncommon) 
+• Thromboembolic disease, 4 -16/ 10 000 (rare) 
+• Injury to bladder (1/1000 – rare) , ureter (3/10,000 - rare) 
+• Death, 1/12,000 (very rare). 
+• Uterine rupture during subsequent pregnancies/deliveries, 2 -7/1000 (uncommon) 
+• Increased risk of antepartum stillbirth in future pregnancy, 1 -4/1000 (uncommon) 
+• Placenta praevia and placenta accrete in subsequent pregnany – 4-8/1000 (uncommon) 
+ 
+Frequent risks 
+• Persistent wound and abdominal discomfort 9/100 (common) 
+• Increased risk of repeat caesarean section when vaginal delivery attempted in 
+subsequent pregnancies, 1/4 (very common) 
+• Readmission to hospital, 5/ 100 (common) 
+• Haemorrhage, 5/ 1000 (uncommon) 
+• infection, 6/ 100 (common). 
+• Fetal lacerations, 1 -2/ 100 (common). 
+Any extra procedures which may become necessary during the procedure include 
+hysterectomy, Blood transfusion, Repair of damage to bowel, bladder or blood vessels 
+ 
+ Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 28 of 37 
+NICE guidance report the following difference in risks for each mode of delivery: 
+Increased risk with caesarean section of: 
+Outcome Risk with caesarean Risk with vaginal 
+Peripartum hysterectomy 150/100000 80/100,000 
+Maternal death 24/100,000 4,1000 
+Hospital Stay (average) 4 days 2 days 
+Placenta accreta (future 
+pregnancy) 100/100,000 (increasing with 
+each LSCS) 40/100,000 
+Uterine rupture in future 
+pregnancy 1020/100,000 40/100,000 
+Neonatal mortality 50/100,000 30/100,000 
+Asthma 1810/100,000 1500/100,000 
+Childhood obesity 4560/100,000 4050/100,000 
+ 
+Increased Risks for Vaginal Delivery 
+Outcome Risk with Caesarean Risk with Vaginal Birth 
+Urinary incontinence (>1 
+year) 27,520 / 100,000 48,700/100,000 
+Faecal incontinence (>1 
+year( 7410/100,000 15,100/100,000 for 
+those having assisted 
+vaginal delivery 
+OASIS – 3rd and 4th degree 
+tear 0/100,000 560/100,000 
+Pain 
+Emergency Caesarean - For our Trust, x % of 
+catergory 1 / 2 LSCS 
+ Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 29 of 37 
+Outcomes that are similar for caesarean or vaginal birth 
+Pregnant women / people Babies 
+VTE Admission to neonatal unit 
+Major obstetric haemorrhage Infection 
+Post natal depression Persistent verbal delay 
+ Infant mortatility (upto 1 year) 
+ 
+Outcomes for pregnant women / people and babies that have conflicting or limited 
+evidence about the risk include ITU admission, stillbirth in a subsequent pregnancy; and for 
+babies - neonatal respiratory morbidity, cerebral palsy, autism spectrum condition and type 
+1 diabetes 
+
+ Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 30 of 37 APPENDIX C – ENHANCED RECOVERY IN OBSTETRICS PATHWAY 
+FORM 
+
+Programme (ERP) 
+
+TO BE COMPLETED AT PRE-OP CLINIC 
+Planned date of admission 
+ 
+ Planned time of admission 
+ 
+Woman informed on Enhanced Recovery & given written information 
+ Yes / No 
+Woman advised to purchase analgesia 
+ Yes / No 
+Woman informed of planned early mobilisation and discharge on Day 1 
+ Yes / No 
+Informed may eat until night before admission 
+ -------------- (insert time) Yes / No 
+Isotonic Drink (Lucozade Sport) 500mls 
+ -------------- (insert amount) Yes /No 
+Informed may drink water until 
+ -------------- (insert time) Yes / No 
+ 
+Pre-op Midwife (sign): Print: 
+ 
+TO BE COMPLETED 6 HOURS POST-OP 
+TTO written in theatre Yes / No 
+ 
+Woman eating and drinking? 
+ Yes / No 
+IV line removed? 
+ Yes / No 
+Observations stable? 
+ Yes / No 
+Woman mobilising 
+ Yes / No 
+Woman comfortable and pain controlled? 
+ Yes / No 
+Woman self- medicating? 
+ Yes / No 
+Catheter removed 6 hours post-op? (Record on TWOC chart) Yes / No 
+ 
+ CONSULTANT TO COMPLETE IN CLINIC 
+Date of clinic appointment 
+ Consultant Name: 
+Woman informed of ER pathway Yes / No 
+ Woman’s Name: 
+
+Hospital number: 
+
+Date of birth: 
+ 
+Or attach PAS label Suitable for midwifery led discharge? 
+ Yes / No 
+Consent form completed & top copy 
+given to woman? 
+ Yes / No 
+Consultant signature: 
+
+ ENHANCED RECOVERY 
+ 
+OBSTETRIC PATHWAY To be used for ALL planned 
+Caesarean Sections Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 31 of 37 
+ 
+Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 32 of 37 APPENDIX D – Indications for Referal to the ARC 
+ 
+Please refer pregnant women / people to be seen from 24 weeks of pregnancy. 
+This is not an exhaustive list – please discuss other referrals with the Obstetric Anaesthetist 
+on bleep 8140 (RSCH) or bleep 6327 (PRH). 
+Anaesthetic clinics operate cross -site, therefore pregnant women / people should be 
+advised that appointments could be offered for either PRH/RSCH clinic subject to availability 
+– this will not affect their booked site for delivery. 
+
+ Obstetric only if severe or unusual e.g. placenta accreta/percreta, major placenta praevia 
+Neurological history of brain surgery/tumour, multiple sclerosis, spina bifida, neuropathy, 
+myopathy, poorly controlled epilepsy 
+Cardiovascular all pregnant women / people with significant cardiac disease to be referred to the 
+Combined Obstetric, Cardiology & Anaesthetic (COCA) clinic, not the Obstetric ARC 
+Respiratory only if severe and requiring hospital admissions in adulthood and/or under 
+respiratory specialists e.g. severe asthma, cystic fibrosis, bronchiectasis 
+Anaesthetic previous anaesthetic problems: general anaesthesia problems e.g. airway/intubation 
+difficulties, malignant hyperthermia, suxamethonium apnoea. Pregnant women / 
+people insisting on general anaesthesia. Failed regional anaesthesia. 
+Drug reactions 
+(severe) Unexplained anaphylaxis. Mild reactions such as vomiting or rash with drugs such as 
+morphine or NSAIDs do not require referral 
+Haematological Bleeding problems e.g., platelets < 100, those on anticoagulation (LMWH or DOAC), 
+haemophilia, von Willebrand's disease, sickle disease or sickle C or sickle trait (the 
+latter only if previous crises). Jehovah’s Witnesses or those declining blood products 
+Musculoskeletal Refer: Back pain or slipped discs with neurology e.g. sciatica, leg weakness, 
+numbness. Back surgery involving metalwork. Moderate to severe scoliosis with 
+neurology or requiring treatment e.g. brace or surgery; severe neck problems or 
+movement restriction. Achondroplasia 
+NOT for routine referral : Straightforward discectomy, mild scoliosis or back ache 
+without neurological symptoms. 
+Endocrine in general, only if severe, e.g. diabetics with severe neuropathy/renal impairment, 
+phaeochromocytoma 
+Anxiety severe anxiety relating to anaesthesia, severe needle phobia or other severe mental 
+health disorders that might impact on provision of anaesthesia/analgesia 
+Obesity Any pregnant woman / person with BMI ≥ 50 . 
+Refer those with BMI< 50 ONLY if pre -existing co -morbidities e.g., hypertension, 
+asthma, diabetes, sleep apnoea. If no co -morbidities, please give all pregnant 
+women / people with raised BMI 30 -50 the leaflet ‘Obesity in pregnancy – what it 
+means for you’ which details anaesthetic implications 
+Miscellaneous severe SLE, antiphospholipid syndrome or systemic sclerosis, liver disease, renal 
+failure, major abdominal surgery MP050 
+Appendix E: Postoperative Analgesia 
+ MP050 
+Appendix F - Flowchart for opening Second Theatre (PRH) 
+
+Consultant decision/agreement for C/S 
+ 
+Can C/S wait for obstetric theatre? 
+ 
+YES 
+ 
+NO 
+ 
+Prepare the woman and 
+await obstetric theatre 
+ 
+Inform nurse in charge of main theatres of the need to 
+open a second theatre - ext 8173 
+Inform anaesthetic team - bleep 26327 
+ 
+Porters to take a working Neonatal resuscitaire to main 
+theatres : ext 8284 bleep 26008 
+Continue to monitor 
+maternal and fetal 
+wellbeing to ensure that 
+case does not become 
+more urgent 
+ 
+Keep woman on delivery suite until main theatre is ready 
+ 
+Ensure that the paper work is up to date and kept with the woman. Including the consent 
+form and theatre pathway 
+ 
+Phone porters to assist 8284 / bleep 26008 
+Take CTG machine with you to theatre 
+ 
+Ensure obstetrician is available Registrar - bleep 26036 
+ 
+Alert the Neonatal Team of impending C/S in main theatre bleep 26029 
+ 
+Transport woman to main theatre, ensuring that a midwife stays with her at all times 
+ 
+Caesarean section 
+ 
+Once finished in main theatre, ensure that all equipment is 
+taken back to delivery suite , cleaned and restocked 
+ 
+Ensure a quick 
+turnaround for cleaning 
+theatre 
+ 
+If all theatres are busy, an anaesthetic r oom in main theatre can be used 
+ Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 35 of 37 Appendix G - Flowchart for opening a second theatre (RSCH) 
+
+Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 36 of 37 Appendix H – Post -delivery VBAC leaflet 
+ 
+ - Have you had a Caesarean? 
+ 
+You may not be thinking about future pregnancies just yet, but having had a caesarean 
+does not necessarily mean this is the only method of birth available to you… 
+ 
+A normal birth may still be possible! 
+This is referred to as a VBAC 
+(Vaginal Birth After Caesarean) 
+ 
+More information is available from the midwives and doctors on the ward 
+
+Caesarean Section (RSCH PRH only ) MP050 
+University Hospitals Sussex NHS Trust East Page 37 of 37 Appendix E: Complex Care Booking form.

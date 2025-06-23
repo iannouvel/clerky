@@ -1,0 +1,314 @@
+# Extracted from: UHSussex - Nausea and Vomiting in Pregnancy + Hyperemesis Gravidarum - 2025.pdf
+# Guideline ID: uhsussex-nausea-and-vomiting-in-pregnancy-hyperemesis-gravidarum-2025
+# Content length: 18854 characters
+# Processing date: 1746034540.4527266
+
+1 
+ 
+ SHCP APC 03/25 Review 03/27 Expires 03/28 
+Management of Nausea and Vomiting in 
+Pregnancy and Hyperemesis Gravidarum 
+ 
+This guideline is to support the management of people experiencing nausea and vomiting 
+of pregnancy (NVP) and hyperemesis gravidarum (HG) in General Practice and specialist 
+care settings in Sussex. It is based on The Royal College of Obstetricians and 
+Gyna ecologists guidance, The Management of Nausea and Vomiting of Pregnancy and 
+Hyperemesis Gravidarum , where additional information can be found if required. 
+ 
+1 Introduction ................................ ................................ ................................ ................... 2 
+2 Medication to manage symptoms of NVP and HG ................................ ........................ 3 
+3 Practice points for general practitioners ................................ ................................ ........ 5 
+4 Practice points for Secondary Care (Inpatient Management) ................................ .......6 
+5 Medication risk in pregnancy ................................ ................................ ........................ 8 
+6 Consideration of termination of pregnancy ................................ ................................ ...9 
+7 How to refer for specialist support ................................ ................................ ............... 9 
+8 Useful resources and Signposting information ................................ .............................. 9 
+APPENDIX 1. S ummary for general practitioners ................................ .............................. 10 
+APPENDIX 2. S ummary for management in general practice ................................ ........... 11 
+APPENDIX 3. S ummary for ambulatory care ................................ ................................ ..... 12 
+APPENDIX 4. S ummary for emergency department staff ................................ .................. 13 
+APPENDIX 5. S ummary for inpatient care ................................ ................................ ......... 13 
+
+2 
+ 
+ SHCP APC 03/25 Review 03/27 Expires 03/28 
+
+1. INTRODUCTION 
+This guideline is based on The Royal College of Obstetricians and Gynaecologists (RCOG) 
+guidance, The Management of Nausea and Vomiting of Pregnancy and Hyperemesis Gravidarum , 
+where additional information can be found if necessary. 
+Nausea and vomiting of pregnancy (NVP) is defined as nausea and/or vomiting during pregnancy, 
+when onset is prior to 16 weeks gestation and there are no other causes. NVP affects up to 90% of 
+people during pregnancy and is one of the most common reasons for a hospital admission during 
+pregnancy. 
+NVP is often referred to as morning sickness, which is inaccurate given symptoms do not only occur 
+in the morning. It also trivialises the condition and should therefore be avoided. 
+Most pregnant people experiencing NVP can be successfully managed in General Practice. It is 
+common for people with NVP to present to their GP because symptoms often occur prior to their 
+pregnancy being booked by a midwife. 
+In many cases, people would have tried non -medical options to manage symptoms of NVP prior to 
+presenting to a healthcare setting, therefore they may be experiencing severe symptoms at the point 
+of first being seen by a GP. 
+Hyperemesis Gravidarum (HG) is a severe form of NVP, which affects up to 3.6% of pregnant 
+people, significantly interfering with quality of life and the ability to eat and drink normally. HG can 
+often be managed by GPs, but in some cases referral for speci alist support, e.g., to Secondary Care 
+or via the Maternal Medicine Centre, is necessary. The PUQE score [A ppendix 2.] is used to 
+differentiate NVP from HG. 
+NVP and HG are associated with serious health consequences for both mother and baby, especially 
+if the mother is unable to take regular medication for a chronic health condition as a result. Prompt 
+effective management of NVP and HG improves quality of life and pregn ancy outcomes. 
+
+3 
+ 
+ SHCP APC 03/25 Review 03/27 Expires 03/28 
+
+2. MEDICATION TO MANAGE SYMPTOMS OF NVP AND HG 
+• All the antiemetic medications included in this guideline can be taken in all trimesters of 
+pregnancy. Information regarding risk of medication use in pregnancy can be found in section 
+5. 
+• When managing pregnant people who experienced NVP or HG in a previous pregnancy, offer 
+the medication that previously optimally managed their symptoms. 
+• When someone who is pregnant for the first time presents with NVP or HG, start treatment 
+with either pyridoxine hydrochloride/doxylamine succinate (Xonvea ), which is licensed for use 
+in pregnancy, or cyclizine. 
+• Many people respond to pyridoxine hydrochloride/doxylamine succinate (Xonvea) when 
+cyclizine has been ineffective. 
+• Combinations of antiemetics should be used in pregnant people who do not respond to a 
+single agent, with some people requiring more than two medications to effectively manage 
+their symptoms. 
+• Encourage use of antenatal vitamins at night to reduce possible influence on symptoms. 
+• Consider offering thiamine 100mg three times a day to patients with ≥13 PUQE score. 
+
+Pregnancy -Unique Quantification of Emesis (PUQE) : a validated scoring system that may be used to 
+assess the severity of symptoms of nausea and vomiting in pregnancy. 
+PUQE -24 scoring system 
+In the last 24 hours, for how long have you felt nauseated or sick to your stomach? 
+Not at all (1) 1 hour or less (2) 2–3 hours (3) 4–6 hours (4) >6 hours (5) 
+In the last 24 hours have you vomited? 
+Did not throw up 
+(1) 1-2 times (2) 3–4 times (3) 5-6 times (4) 7 or more times (5) 
+In the last 24 hours how many times have you had retching or dry heaves without bringing anything 
+up? 
+No time s (1) 1–2 times (2) 3–4 times (3) 5–6 times (4) 7 or more times (5) 
+ 
+Total score indicating severity of symptoms is the sum of replies to each of the three questions: 
+mild <= 6; moderate 7 –12; severe 13 –15. A score of 13 or greater has been used as a criterion for 
+admission to hospital in women with severe nausea and vomiting of pregnancy. 
+ 
+General practitioners see Appendix 1 and 2 
+Secondary care practitioners see Appendix 3, 4, and 5 
+ 
+4 
+ 
+ SHCP APC 03/25 Review 03/27 Expires 03/28 
+
+5 
+ 
+ SHCP APC 03/25 Review 03/27 Expires 03/28 
+3. PRACTICE POINTS FOR GENERAL PRACTITIONERS 
+See Appendix 1 and Appendix 2 
+It is unusual for NVP or HG to start after 16 weeks of pregnancy, therefore alternative causes of 
+symptoms should be considered, e.g. UTI, cholecystitis, infective gastroenteritis. 
+Assessment and monitoring 
+• Use the PUQE score to assess NVP or HG severity [A ppendix 3]. Ketonuria is not an indicator 
+of dehydration and should not be used to assess the severity of NVP or HG. 
+• Assess and regularly (e.g., weekly) monitor renal function, weight, and hydration. It is likely 
+that vitamin deficiencies will occur if food intake is severely limited for a protracted period; 
+assess FBC, iron, B12, and folate. 
+• Risk assess in line with national guidance for venous thromboembolism (VTE), given 
+dehydration increases VTE risk , and initiate prophylactic low molecular weight heparin 
+(LMWH ) if necessar y (ambulatory care centre may need to be contacted ; see section 7). 
+- RCOG: Reducing the Risk of Thrombosis and Embolism during Pregnancy and the 
+Puerperium . 
+• Undertake an assessment of mental health, given the negative effect s of nausea and vomiting 
+on wellbeing and the experience of pregnancy is often underestimated . Some people with 
+poorly controlled NVP or HG become so depressed, with psychosis experienced in extreme 
+cases, that a termination of pregnancy is sought to escape their overwhelming symptoms. 
+o Specialist perinatal mental health services information 
+o 24/7 mental health crisis line information 
+o NICE guidance: Antenatal and postnatal mental health checklist 
+• Regularly follow -up to reassess symptoms and modify treatment if necessary. Consider 
+admission for rehydration if symptoms worsen or not improve with oral antiemetics / red flags 
+are present; contact on -call obstetrics and gynaecology team (see section 7). 
+ 
+Counselling 
+• Validate the person’s experience of symptoms and do not minimise or undermine the 
+perceived severity (Appendix 2). 
+• Do not falsely reassure someone with moderate to severe NVP or HG that their symptoms 
+will dissipate by the second trimester of pregnancy; a significant number of people experience 
+symptoms throughout the pregnancy. 
+• Advise that they may benefit from rest and time off work. Consider writing a sick note . 
+• Provide the RCOG pregnancy sickness patient information leaflet . 
+• Share details of Pregnancy Sickness Support , an organisation providing support to people 
+experiencing NVP and HG that accepts self -referrals. 
+ 
+6 
+ 
+ SHCP APC 03/25 Review 03/27 Expires 03/28 
+
+Prescribing 
+• Do not depend solely on non -drug management. 
+• The risk of inadequate nutrition and inability to take regular medications outweigh the small 
+risks presented by antiemetic medications, all of which are considered safe in pregnancy. 
+• People taking critical medications, e.g., antiepileptics, biologic agents, and 
+immunosuppressants, should be referred to the maternal medicine hub for advice / review 
+and/or site maternal medicine clinics at the point of presentation, given the impact of missing 
+medications can be life threatening. 
+• People with severe symptoms will require prescribing of multiple antiemetics concurrently. 
+• Optimise management of associated gastro -oesophageal reflux disease, oesophagitis, or 
+gastritis symptoms. 
+• Consider avoiding medications that may contribute to NVP or HG symptoms, e.g., iron -
+containing preparations, utilising clinical judgement. 
+• Refer for ambulatory care (See section 7) in the instance of clinical dehydration, as IV fluids 
+IV thiamine and IV antiemetics should be administered. 
+• Pregnant people who are taking three antiemetic medications or have persistent or recurrent 
+symptoms despite adequate ambulatory day care treatment should be cared for as inpatients 
+because of associated complications such as electrolyte imbalance, nutritional deficiencies, 
+and VTE (see section 7). 
+• It may be possible to stop antiemetic medication at around 12 –16 weeks of pregnancy, when 
+symptoms have usually improved. However, some people continue to experience NVP or HG 
+beyond this gestation. 
+• Gradually tapering the combination of antiemetics, or dose if only one agent is being used, 
+may reduce the risk of symptoms recurring. 
+• NVP or HG are likely to recur in subsequent pregnancies; pre -emptive use of medication 
+before vomiting starts can reduce the severity of disease in this instance. 
+• A non -medical prescriber, e.g., potentially a practice pharmacist or nurse, who are competent 
+in the management of NVP and HG can follow people up. 
+4. PRACTICE POINTS FOR SECONDARY CARE (INPATIENT MANAGEMENT) 
+• Review risks and consider prescribing LMWH as per local guideline. 
+• Refer to the flowchart for an overview of inpatient management. 
+o Appendix 3. Summary for ambulatory care 
+o Appendix 4. Summary for emergency department staff 
+o Appendix 5. Summary for inpatient care 
+• Refer to section 2 for antiemetic medication guidance , and section 5 for information regarding 
+risk of medication in pregnancy. 
+7 
+ 
+ SHCP APC 03/25 Review 03/27 Expires 03/28 • Levels of ketones should not be used to inform clinical decision 
+making about treatments or hydration status. 
+• Dextrose -containing solutions can precipitate Wernicke ’s encephalopathy in thiamine -
+deficient states ; hence they should be avoided . High doses of thiamine should be given to 
+prevent Wernicke’s encephalopathy, e.g. thiamine 250mg IV once daily for 3 days or 
+Pabrinex given in line with local guidance. Dextrose containing fluids are appropriate for 
+nausea and vomiting in the third trimester to prevent and treat starvation ketosis . 
+• Ensure suitable parental potassium supplementation occurs [see Appendix 6 ]. 
+• Refer to dieticians for input in severe cases or in the context of significant weight loss (5% of 
+pre-pregnancy body weight) . The nutrition team maybe required for advice regarding the 
+need for nasogastric or nasojejunal administration of feeds / parental nutrition in extreme 
+cases of HG . Please discuss plan with input from maternal medicine team. 
+• Corticosteroids should be reserved for cases where standard therapies have failed; when 
+initiated they should be prescribed in addition to previously started effective antiemetics . 
+Decision to be made by senior obstetrician or maternal medicine team. 
+o Consider hydrocortisone 100 mg twice daily IV, converted to prednisolone 40 –50 mg 
+orally daily once clinical improvement occurs, with the dose gradually tapered by 5 -10 
+mg per week until the lowest maintenance dose that controls the symptoms is reached. 
+o Pregnant person taking corticosteroids should have their blood pressure regularly 
+monitored and be screened for gestational diabetes mellitus with glucose tolerance 
+test (refer to NICE guidance: Diabetes in pregnancy ). 
+o If no improvement occurs with corticosteroids within one week of commencing 
+treatment then discuss with maternal medicine team . 
+• Discharge should only occur once 
+o appropriate antiemetic therapy has been tolerated , 
+o adequate oral nutrition and hydration has been tolerated , 
+o management of concurrent conditions is complete . 
+• At the time of discharge, it is essential that advice is given to continue with antiemetics where 
+appropriate and that how to access further care if described . 
+• People with severe NVP or HG who have continued symptoms into the late second or third 
+trimester should be offered serial scans to monitor fetal growth. 
+• Practitioners should carry out a full assessment of both physical and mental health status 
+during the pregnancy and refer for psychological support if necessary. 
+• Information about support groups should be provided to a nyone admitted with NVP or HG. 
+• People with previous HG should be advised that there is a risk of recurrence in future 
+pregnancies. Early use of lifestyle/dietary modifications and antiemetics that were useful in 
+the index pregnancy is advisable to reduce the risk of NVP and HG in any other pregnanc ies. 
+
+8 
+ 
+ SHCP APC 03/25 Review 03/27 Expires 03/28 
+5. MEDICATION RISK IN PREGNANCY 
+Refer to the UK Teratology Information Service , for evidence -based safety information about 
+medication, vaccine, chemical and radiological exposures in pregnancy. 
+It is important to complete an individual risk assessment for pregnant people you are considering 
+prescribing for, and to apply the principles of prescribing during pregnancy when considering 
+available information and making treatment decisions. Check to see if a risk assessment has already 
+been completed. 
+When balancing risks, note that untreated or inadequately treated severe or chronic nausea and 
+vomiting can have adverse effects on the mother and baby. 
+Ondansetron 
+Despite concerns about orofacial clefting with ondansetron use in the first trimester, there is 
+evidence that ondansetron use is linked to only a very small increase in absolute risk (Figure 1. and 
+Figure 2.). 
+The use of ondansetron should not be discouraged if first line antiemetics are ineffective, and the 
+pregnant person can be reassured (potentially utilising the visual risk summary ) that the increased 
+risk of orofacial clefting associated with ondansetron use is very small. This very small increase in 
+risk of orofacial clefting should be balanced against the risks of poorly managed NVP or HG. 
+
+9 
+ 
+ SHCP APC 03/25 Review 03/27 Expires 03/28 
+6. CONSIDERATION OF TERMINATION OF PREGNANCY 
+All treatment options, including antiemetics, corticosteroids, enteral tube and parenteral feeding, 
+and correction of electrolyte or metabolic disturbances should be considered before deciding that 
+the only option is termination of pregnancy. 
+A decision to terminate a pregnancy needs to be multidisciplinary. Psychiatric opinion should be 
+sought if there are concerns regarding mental health. In the instance NVP or HG treatment failure 
+is the reason for termination of pregnancy, this should be cl early documented. 
+Any pregnant person consideration termination of pregnancy because of NVP or HG should be 
+offered counselling before and after a decision of pregnancy termination is made. 
+7. HOW TO REFER FOR SPECIALIST SUPPORT / AM BULATORY CARE 
+Princess Royal Hospital 
+ uhsussex.sussexmmc@nhs.net / on call gynae cology 
+registrar via switchboard 01444 441881 
+Royal Sussex County Hospital uhsussex.sussexmmc@nhs.net / on call gynaecology 
+registrar via switchboard 01273 696955 
+Conquest Hospital & Eastbourne 
+DGH esht.maternal -medicine@nhs.net 0300 131 4480  
+(early pregnancy) 
+St Richards Hospital, Chichester uhsussex.srhmaternalmedicine@nhs.net on call 
+gynaecology registrar via switchboard 01243 788122 
+Worthing Hospital uhsussex.wor -mmc@nhs.net / on call gynaecology 
+registrar via switchboard 01903 205111 
+Maternal Medicine Hub helpline (Sussex -wide support): uhsussex.smmchelpline@nhs.net 
+8. USEFUL RESOURCES AND SIGNPOSTING INFORMATION 
+• The Management of Nausea and Vomiting of Pregnancy and Hyperemesis Gravidarum 
+• RCOG pregnancy sickness patient information leaflet 
+• Pregnancy Sickness Support , an organisation providing support to people experiencing NVP 
+and HG that accepts self -referrals. 
+• Pregnancy Sickness Support information about treatments for NVP and HG 
+• UK Teratology Information Service , for evidence -based safety information about medication, 
+vaccine, chemical and radiological exposures in pregnancy. 
+• Specialist Pharmacy Service: Nausea and Vomiting: treatment during pregnancy 
+• Specialist Pharmacy Service: Assessing risk and informing the risk versus benefit decision 
+for medicines in pregnancy 
+• HER Foundation - hyperemesis awareness, support, and research 
+ 
+10 
+ 
+ SHCP APC 03/25 Review 03/27 Expires 03/28 APPENDIX 1. SUMMARY FOR GENERAL PRACTITIONERS 
+The Management of Nausea and Vomiting of Pregnancy and Hyperemesis Gravidarum 
+Note PUQE score available in APPENDIX 2. 
+
+11 
+ 
+ SHCP APC 03/25 Review 03/27 Expires 03/28 APPENDIX 2. SUMMARY FOR MANAGEMENT IN GENERAL 
+PRACTICE 
+
+12 
+ 
+ SHCP APC 03/25 Review 03/27 Expires 03/28 APPENDIX 3. SUMMARY FOR AMBULATORY CARE 
+See antiemetic therapy table for information in APPENDIX 1. 
+
+ Trust maybe using IV thiamine see local policy 
+ 
+13 
+ 
+ SHCP APC 03/25 Review 03/27 Expires 03/28 APPENDIX 4. SUMMARY FOR EMERGENCY DEPARTMENT STAFF 
+
+ Trust maybe using IV thiamine see local policy 
+ 
+14 
+ 
+ SHCP APC 03/25 Review 03/27 Expires 03/28 
+APPENDIX 5. SUMMARY FOR INPATIENT CARE 
+
+ Trust maybe using IV thiamine see local policy

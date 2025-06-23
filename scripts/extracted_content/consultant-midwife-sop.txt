@@ -1,0 +1,761 @@
+# Extracted from: Consultant Midwife SOP.pdf
+# Guideline ID: consultant-midwife-sop
+# Content length: 39216 characters
+# Processing date: 1750066900.6870847
+
+SP23006 Consultant Midwife Additional Care & Support Plan Clinic / Meetings SOP v1.0 March 2023 Page 1 of 21 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+Consultant Midwife Additional Care & 
+Support Plan Clinic / Meetings SOP 
+Summary statement: How does the 
+document support patient care? This SOP is to support maternity professionals when 
+care planning for pregnant women and people who 
+wish to make choices which deviate from National/local 
+guidance. 
+Staff/stakeholders involved in 
+development: Consultant Midwife, HOM’s, Obstetric leads, Midwifery 
+Clinical Governance Managers for UH Sussex. 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Consultant Midwife UH Sussex 
+For use by: All midwives, obstetricians & anaesthetists who come 
+into contact with pregnant women and people during 
+the antenatal, intrapartum or postnatal periods. 
+Purpose: To ensure clear, individualised care plans are made for 
+women and people who chose to deviate from 
+National/local guidance and that they are provided with 
+accurate evidence -based information to base these 
+choices on. 
+This document supports: https://www.nmc.org.uk/standards/code/ 
+Key related documents: UH Sussex Maternity Guidelines for provision of 
+antenatal, intrapartum and postnatal care. 
+Approved by & date: Joint Obstetric Guideline Group (SRH&WH): 15th March 
+2023 
+Protocol Steering Group (PRH&RSCH): February 2023 
+Date uploaded: 16th March 2023 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable – Divisional Ratification only required 
+Ratification Date: Not Applicable – Divisional Ratification only required 
+Expiry Date: March 2026 
+Review date: September 2025 
+If you require this document in another format such as Braille, large print, audio or another 
+language please contact the Trusts Communications Team 
+Reference Number: SP23006 SP23006 Consultant Midwife Additional Care & Support Plan Clinic / Meetings SOP v1.0 March 2023 Page 2 of 21 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+Version Date Author Status Comment 
+1.0 March 
+2023 Katie Christie, 
+Consultant 
+Midwife UH 
+Sussex LIVE New SOP outline role and 
+responsibilities of Consultant 
+Midwife 
+ 
+The interpretation and application of clinical guidelines will remain the 
+responsibility of the individual clinician. 
+If in doubt contact a senior colleague or expert. SP23006 Consultant Midwife Additional Care & Support Plan Clinic / Meetings SOP v1.0 March 2023 Page 3 of 21 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+Contents 
+1.0 Key principles ................................ ................................ ................................ ............. 4 
+2.0 Scope ................................ ................................ ................................ ........................ 4 
+3.0 Responsibilities ................................ ................................ ................................ .......... 4 
+4.0 Abbreviations used within this SOP ................................ ................................ ............ 4 
+5.0 Definitions ................................ ................................ ................................ .................. 5 
+6.0 Aims ................................ ................................ ................................ ........................... 5 
+7.0 Indications ................................ ................................ ................................ .................. 6 
+7.1 Supporting evidence for the service ................................ ................................ ........... 6 
+8.0 Pathway ................................ ................................ ................................ ..................... 6 
+9.0 Referral process ................................ ................................ ................................ ......... 7 
+9.1 Routine referrals ................................ ................................ ................................ ........ 7 
+9.2 Urgent referrals ................................ ................................ ................................ .......... 8 
+10.0 Consultations and care planning ................................ ................................ ................ 8 
+10.1 Consultant Midwife Clinic ................................ ................................ ........................... 8 
+10.2 Late gestations and urgent referrals ................................ ................................ ........... 9 
+11.0 Review, monitoring and compliance ................................ ................................ ......... 10 
+11.1 Data collection ................................ ................................ ................................ ......... 10 
+11.2 Review ................................ ................................ ................................ ..................... 10 
+11.3 Monitoring and compliance ................................ ................................ ...................... 10 
+12.0 References ................................ ................................ ................................ .............. 10 
+12.1 Further reading ................................ ................................ ................................ ........ 11 
+Appendix 1: Complex Care Planning MDT Meeting: TOR’s ................................ ........................ 12 
+Appendix 2: Consultant Midwife Clinic Care Planning – Agreement Worthing/St Richard’s 13 
+Appendix 3: Badgernet Referral Process ................................ ................................ ............. 16 
+Appendix 4: Referral Pathway Consultant Midwife Clinic ................................ ..................... 20 
+Appendix 5: Personalised Place of Birth Assessment TOOL ................................ ................ 21 SP23006 Consultant Midwife Additional Care & Support Plan Clinic / Meetings SOP v1.0 March 2023 Page 4 of 21 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Consultant Midwife Additional Care & 
+Support Plan Clinic / Meetings SOP 
+ 
+1.0 Key principles 
+ 
+A standard operating procedure (SOP) is a set of step by step instructions ensuring that a 
+potentially complex process can be undertaken in a timely way. Professional judgement may 
+be used in the application of a SOP. 
+ 
+2.0 Scope 
+ 
+This SOP applies to: 
+• All members of staff who come into contact with the pregnant woman and person, 
+being referred during the antenatal, intrapartum and postpartum periods. 
+• Pregnant women and people whose care is being transferred from home to 
+hospital, from site to site and from this Trust to another Trust. 
+ 
+3.0 Responsibilities 
+ 
+It is the responsibility of all Midwifery and medical staff to: 
+• Access, read, understand, and apply this guidance. 
+• Attend any mandatory training pertaining to this guidance. 
+ 
+It is the responsibility of the division to: 
+• Review the SOP in line with national recommendations. 
+• Ensure the SOP is accessible to all relevant staff. 
+• Monitor outcomes of the SOP. 
+
+4.0 Abbreviations used within this SOP 
+ 
+SOP Standard Operating Procedure IOL Induction of Labour 
+AAR Action After Review PCSP Personalised Care and Support Plan 
+VBAC Vaginal Birth After Caesarean MVP Maternity Voices Partnership 
+MDT Multidisciplinary Team LGA Large for Gestational dates 
+GDM Gestational Diabetes Mellitus VE Vaginal Examination 
+MROP Manual Removal of Placenta CCU Critical Care Unit 
+ITU Intensive Care Unit IUGR Intrauterine Growth Restriction 
+SROM Spontaneous Rupture of 
+Membranes HB Homebirth 
+GBS Group B Streptococcus PROM Prolonged Rupture of Membranes 
+SGA Small for Gestational Age MLU Midwifery Led Unit 
+MIS Maternity Information System PPH Postpartum Haemorrhage SP23006 Consultant Midwife Additional Care & Support Plan Clinic / Meetings SOP v1.0 March 2023 Page 5 of 21 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+5.0 Definitions 
+ 
+Induction of Labour (IOL) is defined as when a labour is induced artificially as it is 
+considered that the safest course of action is to end the pregnancy. This can be due to the 
+maternal or fetal condition. 
+ 
+Planned Vaginal Breech Birth is defined as when, during the antenatal period, the fetus is 
+presenting in the breech position and the pregnant woman or person, has decided to birth 
+vaginally. 
+ 
+Deviating from protocol/guidelines is defined as when the birthing woman or person, 
+chooses a pathway of care outside of either local or national guidance. 
+ 
+Clinician is defined as any registered practitioner who is responsible for the delivery of care, 
+for example a Midwife or Obstetrician. 
+ 
+High Risk is defined as when the care of a pregnant woman or person requires a referral for 
+obstetric or medical input into their care. 
+ 
+Homebirth is defined as when a pregnant woman or person chooses to birth at their 
+domestic address. 
+ 
+After Action review (AAR) is defined as a supportive conversation between the multi - 
+disciplinary team, led by a maternity professional peer, following an event that requires 
+discussion or resolution. 
+ 
+Personalised Care and Support Plan (PCSP) renamed ‘My choices for pregnancy birth 
+and beyond’ is defined as an individualised care plan available to all pregnant women and 
+people within maternity care to support their choices and individual preferences. 
+ 
+6.0 Aims 
+ 
+• To support maternity professionals when care planning for pregnant women and 
+people who wish to make choices which deviate from National/local guidance. 
+• To provide an opportunity for pregnant women and people to, with a Consultant 
+Midwife, discuss their individual needs and choices in addition to the routine 
+pathway of care. 
+• To provide pregnant women and people with accurate and contemporaneous 
+evidence -based information as per national guidance to support an informed 
+decision alongside their personal choices and wishes. 
+• To ensure multidisciplinary team involvement in care planning and facilitate 
+pregnant women and people with relevant healthcare professionals, where 
+necessary. 
+• For pregnant women and people to feel listened to, understood and that their 
+choice is respected. SP23006 Consultant Midwife Additional Care & Support Plan Clinic / Meetings SOP v1.0 March 2023 Page 6 of 21 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ • To provide clear documentation of the care plan. 
+• To ensure care plans are shared and accessible to maternity staff involved in their 
+care within the Maternity Information System (MIS) eg Badgernet or Medway, or 
+their hospital maternity notes. 
+ 
+7.0 Indications 
+ 
+Midwives and obstetricians at UH Sussex offer evidence based information and choice 
+during women’s & people’s pregnancy, labour and postnatal period in alignment with local 
+and national guidance. The consultant midwife clinic has been developed in response to the 
+needs of those pregnant women & people who wish to make choices which are not aligned 
+with this guidance, and provide additional support alongside their routine antenatal care. 
+ 
+The consultant midwife clinic has been developed in response to the needs of these 
+pregnant women & people and their need for additional support alongside their routine 
+antenatal care. 
+ 
+7.1 Supporting evidence for the service 
+ 
+The importance of close multi -professional working between clinicians to ensure good 
+outcomes for mothers and babies was highlighted in the Report of the Morecombe Bay 
+Investigation. In addition the recent Ockenden report in 2020 stated that where a complex 
+pregnancy is identified there must be early specialist involvement and management plans 
+agreed between the pregnant woman or person and the multi -disciplinary team. 
+ 
+The Ockenden report in 2020 recommended pregnant women & people must be enabled to 
+participate equally in all decision making processes and make informed choices about their 
+care. The National Maternity Review ‘Better Births’ identified the need to develop safer and 
+more personalised care through a process of support that empowers pregnant women and 
+people to make decisions about their care through on -going dialogue. As Midwives and 
+Obstetricians we have a responsibility to treat pregnant women and people as individuals, to 
+listen, share the information required in order for them to make a decision, respond to their 
+preferences and concerns and act in the best interest of the woman or person at all times All 
+women and people have the right to make their own decisions as a basic human right, 
+protected by the common law unless they lack the mental capacity to decide. 
+ 
+Regular feedback received from the MVP (Maternity voices Partnership) when undertaking 
+their ‘Walk the patches’ continues to identified the need for complex care planning. It has 
+also been identified through Datix and AAR’s that further complex care planning is required 
+to meet women & people and the named clinicians needs and experiences. 
+ 
+8.0 Pathway 
+ 
+When a pregnant woman or person advises that they are considering a pathway that 
+deviates from guidance or protocol the reviewing clinician should explain current guidelines, SP23006 Consultant Midwife Additional Care & Support Plan Clinic / Meetings SOP v1.0 March 2023 Page 7 of 21 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ explore the wishes of the pregnant woman or person and discuss any risks of this. All 
+discussions must be clearly documented. 
+ 
+• If there is agreement on the new pathway between the named clinician and the 
+pregnant woman or person, then the named lead clinician can continue delivering 
+the care if they feel that this sits within their remit. 
+• If the clinician feels that the request from the pregnant woman or person is outside 
+of their sphere of practice, a referral to the Consultant Midwives must be made in 
+a timely way dependent on gestation and urgency. 
+• Examples of where referrals may be made (but not exclusive to) are: 
+o Those women/people wishing to consider a twin birth with midwifery led 
+care or in water 
+o Vaginal breech birth 
+o VBAC after 2 or more caesareans with midwifery led care 
+o Woman/person with significant medical or mental health complexities 
+wishing to give birth with midwifery led care. 
+ 
+9.0 Referral process 
+9.1 Routine referrals 
+ 
+Should be made as soon as they are identified and ideally prior to 36 -weeks. 
+Please see Appendix 5 (Personalised Place of Birth Assessment Tool for guidance) 
+ 
+Routine referrals for women & people deciding to deviate in pregnancy should be made as 
+soon as they are identified and ideally prior to 36 weeks. Once a routine referral is received 
+the Consultant Midwife will aim to triage it within a working week (Exception made to annual 
+leave when response times could be longer). 
+ 
+Referrals should be made via Badgernet referrals (Brighton and Haywards Heath) (See 
+Appendix 3 ) or direct email with the woman or person‘s details and sent to: 
+uhsussex.consultantmidwife@nhs.net (Worthing and Chichester). 
+ 
+Once the referral is received it will be prioritised based on gestation and clinical need. A 
+decision will be made to either: 
+ 
+• Book an appointment for the pregnant woman or person in the Consultant 
+midwife’s clinic named the ‘ Midwifery Additional Care ’ Clinic. 
+• Offer advice for the lead clinician so that they can deliver the support and care 
+planning themselves. 
+ 
+Late referrals may be required for pregnant women or people whose pregnancies are 
+postdates and undecided about induction or there is unexpected complication later in 
+pregnancy such as breech presentation where the named clinician requires additional input. 
+ 
+The consultant Midwife can be contacted via email or telephone. This will usually be office 
+hours and their availability can be learned from the management rota on labour ward. SP23006 Consultant Midwife Additional Care & Support Plan Clinic / Meetings SOP v1.0 March 2023 Page 8 of 21 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+9.2 Urgent referrals 
+ 
+Urgent referrals may be required for pregnant women or people who are postdates and 
+declining induction or they are in labour with an unexpected complication such as 
+undiagnosed breech presentation. The Consultant Midwife can be contacted directly via 
+telephone. This will usually be office hours and their availability can be learned from the 
+management rota on labour ward. 
+ 
+The Consultant Midwife will discuss with referring clinician via telephone or email and 
+contact the pregnant woman as soon as possible. 
+ 
+NB: If the referral is after 36/40 or urgent and the Consultant Midwife is not available 
+then the labour ward lead or co -ordinator should be contacted for immediate advice 
+and support. 
+ 
+10.0 Consultations and care planning 
+10.1 Consultant Midwife Clinic 
+ 
+The Consultant Midwife will work across all four UH Sussex sites, across Brighton, 
+Haywards Heath, Worthing and Chichester. The clinics will be running at differing sites each 
+week, dependent on demand. 
+ 
+Once the referral has been triaged, the consultant midwife will respond to the named 
+clinician and offer either supportive discussions or detail about a plan to attend the clinic. 
+The lead clinician for the woman or person can develop the birth plan if they feel comfortable 
+and competent in having discussions when birthing out of guidance for ‘green’ and ‘yellow’ 
+level clients ( See Appendix 5). Referrals should still be made for ‘info only’ to the Consultant 
+Midwife. 
+ 
+For ‘Amber’ and ‘Red’ level clients, referrals should be made to the Consultant Midwife and 
+Consultant Obstetrician for review. 
+ 
+People can attend the clinics face to face, virtually via Microsoft teams or via telephone. 
+Appointments will include an opportunity for the pregnant woman or person to discuss their 
+individual preferences to ensure a shared understanding. Information will be provided in line 
+with current evidence, local guidance and trust protocols. Risks and benefits will be 
+discussed to assist in decision making. 
+ 
+An agreement will be made together and documented on the care plan. All discussions 
+should be clearly documented and shared with the woman or person. 
+ 
+Any care planning deviating from guidance, will include the Multi -disciplinary team. It is the 
+responsibility of the consultant midwife to lead on shared planning and refer appropriately to 
+all specialists, obstetric, neonatal, anaesthetic and medical teams for input as necessary. 
+The Consultant Midwife will refer directly to the Obstetrician or refer to the ‘Complex Care 
+Meeting’ (See Appendix 1 ) for additional guidance from the wider MDT. SP23006 Consultant Midwife Additional Care & Support Plan Clinic / Meetings SOP v1.0 March 2023 Page 9 of 21 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+The pregnant woman or person will be offered a multi -disciplinary meeting to discuss their 
+care plan where required or requested following the Obstetric input or Complex Care 
+Meeting. 
+ 
+For Brighton and Haywards Heath Service Users: 
+ 
+An agreed plan of care will be made together and all discussions will be clearly documented 
+on Badgernet in the Antenatal Management plan section. It is also recorded in the Antenatal 
+attendance section and an alert identifying that the person has been seen in the consultant 
+Midwife clinic is added on. 
+ 
+For Worthing and Chichester Services Users: 
+ 
+Once the final care plan has been agreed and finalised, it is the Consultant Midwife’s 
+responsibility to disseminate this care plan to the named clinician, the pregnant woman or 
+person, the lead Midwives and the Midwifery Matrons via email. A copy will also be kept in 
+the Consultant Midwife T -Drive. The format will use Appendix 3 . 
+ 
+An agreed plan of care will be made together and all discussions will be clearly documented 
+in their hand held notes if available and the hospital maternity notes and on MIS. 
+ 
+10.2 Late gestations and urgent referrals 
+ 
+Late and urgent referrals will be discussed directly with the referring clinician via telephone 
+or email. 
+ 
+Pregnant women & people will be seen in the clinical setting or contacted directly via 
+telephone. 
+ 
+The Consultant Midwife will provide an opportunity for the pregnant woman or person to 
+discuss their individual preferences to ensure a shared understanding. Information will be 
+provided in line with current evidence, local guidance and trust protocols. Risks and benefits 
+will be discussed to assist in decision making. An agreed plan of care will be made together 
+and all discussions will be clearly documented on Badgernet (Brighton and Hayward Heath) 
+or in their hand held notes if available and the hospital maternity notes and MIS (Worthing 
+and Chichester). 
+ 
+Any care planning deviating from guidance, will include the Multi -disciplinary team and any 
+other specialists that require input. SP23006 Consultant Midwife Additional Care & Support Plan Clinic / Meetings SOP v1.0 March 2023 Page 10 of 21 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+11.0 Review, monitoring and compliance 
+ 
+11.1 Data collection 
+ 
+The Consultant Midwives will have access to a database to input and store relevant data 
+when pregnant women & people have been referred to the clinic. 
+ 
+A dashboard has been designed that will collect a measureable list of clinical outcomes for 
+pregnant women & people. 
+ 
+11.2 Review 
+ 
+This Standard Operating Procedure will be reviewed and updated in 6 months to ensure it 
+aligns with the on -going development of the Consultant Midwife clinic for routine referrals 
+and personalised care and support planning for late/urgent referrals. 
+ 
+11.3 Monitoring and compliance 
+ 
+Annual audit and presentation to Quality and Safety meeting will be undertaken against the 
+standards within the document to consider: 
+ 
+• Number of referrals 
+• Timing of referrals 
+• Appropriateness of referrals 
+• Outcomes of women/people compared with care plans 
+• Staff access and understanding of the Consultant Midwives Personalised Care 
+and Support Plan Meetings and the clinic. 
+ 
+12.0 References 
+ 
+Kirkup B. (2015) The Report of the Morecombe Bay Investigation. The Stationary Office 
+Ockenden Report (2020) Maternity services at the Shrewsbury and Telford Hospital NHS 
+Trust. Emerging Findings and Recommendations from the Independent Review. 10 
+December 
+ 
+National Maternity Review. (2016) Better Births: Improving outcomes of maternity services in 
+England, London 
+ 
+Nursing and Midwifery Council. (2015) Code. Nursing and Midwifery Council, London. 
+General Medical Council. (2008) Consent: patients and doctors making decisions together, 
+General Medical Council, London. 
+ 
+Montgomery v Lanarkshire Health Board (2015) UKSC 11 SP23006 Consultant Midwife Additional Care & Support Plan Clinic / Meetings SOP v1.0 March 2023 Page 11 of 21 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 12.1 Further reading 
+ 
+Hall J, Collins B, Ireland J, and Hundley V. (2016) Interim report: The Human Rights & 
+Dignity Experience of Disabled Women during Pregnancy, Childbirth and Early Parenting . 
+Centre for Midwifery Maternal and Perinatal Health, Bournemouth University: Bournemouth. 
+ 
+Morad S, Parry -Smith W and McSherry W. (2013) Dignity in maternity care. Evidence Based 
+Midwifery: June 2013 Department of Health. Final report on the review of the Department of 
+Health Dignity in Care Campaign. November 2009 
+ 
+Why Human Rights in Childbirth Matter (2017) Rebecca Schiller, Printer & Martin. SP23006 Consultant Midwife Additional Care & Support Plan Clinic / Meetings SOP v1.0 March 2023 Page 12 of 21 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Appendix 1: Complex Care Planning MDT Meeting: TOR’s 
+ 
+1. This group will meet to discuss pregnant women/people with complex care needs. 
+2. The aims of the meeting are: 
+a) To facilitate an MDT approach and timely discussion with the relevant health 
+care professionals where women & people are choosing care outside of 
+guidance or a complex pregnancy is identified requiring specialist input. 
+b) To ensure all clinicians are supported by the MDT team within pregnant women 
+& people’s plan of care for complex pregnancies or choices outside of 
+guidance. 
+c) To respect all pregnant women & people’s individual choices and understand 
+their needs alongside MDT input and discussion of local and evidence based 
+recommendation. 
+d) To agree a recommended management plan with the MDT to discuss with 
+pregnant women & people alongside their own individual choice and need. 
+3. The meeting will run monthly as a minimum on Thursday afternoons 
+4. The core members of the group are the Obstetric team and Consultant Midwife. 
+Other team members required to attend are the Antenatal/community, Labour ward 
+and postnatal Midwifery leads. Additional expertise for specific cases that may wish 
+to attend or be invited are Inpatient and community Maternity Matrons, 
+Anaesthetic/Obstetric leads, Neonatal teams, PNMH professionals, named Midwives, 
+specialist Midwives including safeguarding, mental health, teenage and substance 
+use leads. 
+5. All referrals for complex care planning from named Midwives will initially be referred 
+to the Obstetric team or the Consultant Midwife. 
+6. Following referral individual cases will be triaged by the Obstetric team and 
+Consultant Midwives. Cases requiring additional MDT discussion and planning will be 
+taken to the monthly complex care planning meeting. 
+7. The meeting currently will be held via Microsoft teams and recorded. 
+8. Women’s/people’s complex pregnancies will be shared at the meeting where 
+possible prior to meeting with the woman/person to gather information and support a 
+shared understanding of their needs. Referrals later in pregnancy that have required 
+immediate management plans with the pregnant woman or person from the 
+Obstetrician or Consultant Midwife may be discussed at the meeting for any 
+additional input required from the MDT. 
+9. Following the meeting a consultation will be arranged with the pregnant woman or 
+person and relevant professionals to discuss their wishes/choices, provide the 
+evidence from the MDT recommendation and implement a collaborative plan of care. 
+10. Individual management plans and care choices will be recorded on the MDT care 
+plan form and should be distributed to the relevant teams in preparation for 
+admission and care. 
+11. All shared information will remain within the healthcare setting and data protection 
+guidance and disseminated only to those care givers who will be involved and the 
+pregnant person. SP23006 Consultant Midwife Additional Care & Support Plan Clinic / Meetings SOP v1.0 March 2023 Page 13 of 21 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Appendix 2: Consultant Midwife Clinic Care Planning – Agreement Worthing/St 
+Richard’s 
+ 
+Consultant Midwife Clinic: Care Planning Agreement form 
+Any correspondence please email: uhsussex.consultantmidwife@nhs.net 
+Personal details: 
+Name: DOB: 
+Hospital No: EDD: 
+NHS No: Parity: 
+Tel no: Appointment 
+date: 
+Email: Gestation at 
+appointment: 
+Key Professionals 
+Name Role/organisation Contact Number 
+ Community Midwife 
+ Consultant Obstetrician 
+ GP 
+ Social Worker 
+ Neonatologist 
+ Interpreter & Language 
+ Other: 
+Reason for Referral 
+ 
+Previous Births/ Relevant obstetric & medical history 
+ 
+Birth wishes including risks and benefits already discussed (please attach birth plan or any other 
+supporting evidence already discussed outside of this clinic) SP23006 Consultant Midwife Additional Care & Support Plan Clinic / Meetings SOP v1.0 March 2023 Page 14 of 21 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+Protocols/ Evidence Provided SP23006 Consultant Midwife Additional Care & Support Plan Clinic / Meetings SOP v1.0 March 2023 Page 15 of 21 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Discussion and finalised care plan made 
+ 
+Consultant Midwife signature 
+and Date: I confirm that I have provided up to date information and guidance and 
+discussed any risks which may be associated with the above request. I 
+also believe that this person has the capacity to make decisions that are 
+documented above: SP23006 Consultant Midwife Additional Care & Support Plan Clinic / Meetings SOP v1.0 March 2023 Page 16 of 21 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ Appendix 3: Badgernet Referral Process 
+ 
+Step Action Badgernet Image 
+1 Using ‘Enter new note…’ function, 
+search for Referral. Click 
+“Referral (Woman)” to open. 
+ 
+2 There will then be a pop up box 
+that opens. 
+Ensure that the date and time are 
+correct. In the second drop down 
+box, titled ‘Referral To’, click in 
+the box or on the downwards 
+arrow open more options. 
+ 
+3 From the list select ‘Consultant 
+midwives Referral’. Then click the 
+button titled ‘Accept and Close’. 
+ 
+SP23006 Consultant Midwife Additional Care & Support Plan Clinic / Meetings SOP v1.0 March 2023 Page 17 of 21 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Step Action Badgernet Image 
+4 Then please complete the rest of 
+the ‘Referral (Woman)’. 
+• Please select all that has 
+been discussed in the box 
+‘Items Discussed With 
+Woman’. 
+• In ‘Referrer’, click the ‘Use 
+current user..’ button or if 
+referring on behalf of 
+someone else, click in the box 
+and search for the user using 
+the find function. 
+• Role of Referrer will 
+automatically fill with ‘ Midwife’ 
+unless deleted and changed 
+manually. 
+• Manually type a contact 
+telephone number or email 
+address in ‘Contact number 
+and/or email address of 
+referrer’, this streamlines the 
+process of the Consultant 
+Midwife being able to action 
+the referral. 
+• Select either ‘Yes’ or ‘No’ to 
+advise the Consultant Midwife 
+that aware whether the 
+Woman or person is aware of 
+the referral to the service or 
+not. This question is 
+mandatory. 
+ 
+SP23006 Consultant Midwife Additional Care & Support Plan Clinic / Meetings SOP v1.0 March 2023 Page 18 of 21 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Step Action Badgernet Image 
+5 Click the custom referral tab, on 
+left side of ‘Referral (Woman)’ 
+box. 
+• If Boxes 1, 2 and 3 have been 
+completed in the ‘Referral 
+details’ section, these boxes 
+do not need to be filled in 
+again. 
+• Click in the ‘Reason for 
+Referral’ box or click the 
+downward arrow. A new pop 
+up will appear. Select 
+‘Consultant Midwife input 
+needed’ and then click the 
+‘Accept and close’ button to 
+save the answer. This 
+question is mandatory. 
+• Complete the box named 
+‘Additional notes’, with free 
+text and add as much 
+information as possible. This 
+allows Consultant Midwife to 
+know the reason for the 
+referral. 
+When form is complete click 
+‘Save and Close’. 
+ 
+6 The referral is not yet sent. The 
+next pop up box enables you to 
+preview the referral prior to 
+sending. When the box pops up 
+select ‘Yes’ to view it now. 
+ 
+SP23006 Consultant Midwife Additional Care & Support Plan Clinic / Meetings SOP v1.0 March 2023 Page 19 of 21 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Step Action Badgernet Image 
+7 Check over the referral 
+information. When happy click 
+button in top right of the box 
+‘Confirm and Send’ 
+ 
+8 Addition comments can be added 
+that will be added to the text of 
+the email but this box does not 
+necessarily need to be filled in. 
+To add digital signature, click 
+‘Authorise’ and enter Badgernet 
+Login and password. 
+Click ‘Save and Close’ 
+ 
+9 The referral has now been sent. 
+ 
+Note: Badgernet does not use inclusive language and when forms refer to ‘Women’ this is 
+inclusive of all birthing people. Also, for this table, a test patient was used to demonstrate the 
+process but all names were removed in case of any coincidences with real patients or staff. 
+Appendix 4: Referral Pathway Consultant Midwife Clinic 
+SP23006 Consultant Midwife Additional Care & Support Plan Clinic / Meetings SOP v1.0 March 2023 Page 20 of 21 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Referral to Cons MW clinic identified 
+• Deviating from protocol/guidance within maternity care 
+• High risk homebirths 
+• Complex pregnancies midwifery care planning 
+• Planned Vaginal Breech births 
+
+• Risk and benefits discussed by named midwife obstetrician within their scope of practice. 
+• Documented within the pregnant woman or person’s notes that discussion took place and care plan updated. 
+
+• Pregnant woman or person and 
+named midwife/obstetrician agree 
+with care plan. 
+• Named clinician to continue to lead 
+unless further discussions arise 
+that require referral Routine referral 
+Woman or persons details 
+sent to Consultant Midwife 
+Urgent Referrals 
+Can be made by telephone, 
+to be triaged, seen and 
+documented by Consultant 
+midwife ASAP (contact info 
+on manger on call rota on 
+Worthing/Chichester 
+Sent via Email to 
+uhsussex.consultant 
+midwife@nhs.net Brighton/Haywards 
+Heath 
+Referral sent via Badgernet labour wards). 
+
+If the referral is after 36/40 or 
+urgent and the Consultant 
+Midwife is not available then 
+the labour ward lead or co - 
+Referrals Triaged within one working week 
+• Seen in Consultant midwives clinic 
+• Refer back to midwife/obstetrician for support ordinator should be contacted 
+for immediate advice and 
+support. 
+
+If seen in Consultant Midwife clinic, a birth care planning agreement will be formulated and shared with the 
+appropriate MDT. Additional Obstetric input may be requested for complex cases or referral to the complex care Appendix 5: Personalised Place of Birth Assessment TOOL 
+SP23006 Consultant Midwife Additional Care & Support Plan Clinic / Meetings SOP v1.0 March 2023 Page 21 of 21 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Risk assessment begins in the antenatal period at the booking visit. Every further contact with a woman or person is an opportunity to reassess and identify any individual factors during the 
+antenatal, intrapartum and postnatal period. All midwives are expected to identify deviations from the norm in a timely fashi on and act on these findings appropriately, ensuring effective 
+communication with the woman or person, their birthing partners and the multidisciplinary team (MDT). This is specifically around ‘place of birth’ discussions and a lot of these women and people 
+will be under the care of the MDT already. 
+Recommend midwifery led care in labour Recommend MDT care in labour – individual assessment Recommend Obstetric led care in labour 
+Green – minimal individual factors 
+Suggested place of birth at home, MLU 
+(Chichester) or Hospital Yellow – individual factors 
+Suggested place of birth planning on 
+discussion with clinician/midwife competent in 
+complex care discussions. (If planning a 
+homebirth then to make referral to Consultant 
+Midwife for information only or for further 
+support) Amber – individual factors 
+Suggested place of birth labour 
+ward. 
+(To contact Consultant MW if 
+wanting a homebirth) Red – significant individual factors 
+Suggested place of birth labour ward, with birth planning 
+support led by obstetric team 
+• Uncomplicated pregnancy, medical and 
+obstetric history 
+• Singleton pregnancy 
+• Gestation 37-41+6 weeks 
+• Para 4 and below 
+• Spontaneous onset of labour 
+• Cephalic presentation 
+• Booking BMI with uncomplicated pregnancy: - 
+BMI 18 -35 
+• GBS positive (treatment dependant) 
+• Labour within 24 hours of SROM 
+• Established labour following postdates 
+induction. (excluding HB and MLU) 
+• Haemoglobin >100g/l • Previous PPH up to 1000mls, or MROP 
+• Previous third or fourth degree tear 
+• Primiparous with BMI up to 35 
+• Women/people aged <16 or 40 & over at 
+booking 
+• Recurrent HSV (genital herpes) 
+• Haemoglobin 95-105g/l 
+• LGA without other medical/ obstetric factors 
+• Previous reduced fetal movements (RFM) 
+with reassuring assessment of fetal 
+wellbeing 
+• Significant social, safeguarding or mental 
+health factors 
+• Grand multiparity 
+• Low BMI =/<18.5 
+• Declining IOL for Postdates (joint 
+management with MAU) 
+• Declining VE’s in labour 
+• VBAC -1 with no extra risks • Previous shoulder dystocia 
+• BMI>/= 40 
+• Previous PPH >1000mls or 
+requiring blood transfusion 
+• VBAC -1 (following 1 previous 
+caesarean birth) 
+• Fibroids 
+• Moderate -severe asthma 
+• SGA =/< 10th centile 
+• Well controlled GDM on diet 
+• Refusal of blood products 
+• GBS 
+• Vaginal Breech • VBAC -2 (following 2 or more previous caesarean births) 
+• Primary HSV (genital herpes) 
+• Pre-existing diabetes or medicated GDM 
+• Current substance misuse 
+• Maternal medical conditions e.g. hypertension, epilepsy, 
+neurological, cardiac disease, abnormal liver function, 
+previous ITU/CCU admission Pregnancy specific factors: 
+• Oligo/ polyhydramnios 
+• Multiple pregnancy 
+• Malpresentation 
+• Preterm =/42 weeks gestation 
+• Abnormal fetal growth. Eg IUGR 
+• Placenta Previa 
+• Congential abnormality 
+• Any vaginal blood loss other than a show 
+• PROM, augmentation for SROM 
+• Unbooked pregnancy 
+• Abnormal fetal heart rate in labour 
+The following are not possible at Home: 
+• Continuous monitoring of fetal heart rate 
+• Oxytocin augmentation in labour 
+• Epidural 
+• Instrumental Birth 
+• Planned neonatal attendance at birth 
+• IV antibiotics Choices surrounding place of birth: We offer personalised care and choice of place of birth; if a woman or person would like to explore a place of 
+birth that is not consistent with the recommendations that have been made, then they should be referred in a timely manner to the Consultant 
+Midwife (amber) and/or Consultant Obstetrician (red) during the antenatal period to fully discuss birth preferences, explore benefits and risks, 
+alternative options and individual factors, and develop and document an individualised plan of care. If a midwife feels uncertain about their scope 
+of professional practice and is not comfortable in taking responsibility for a woman whose care planning falls outside of rec ommendations, they 
+should refer to the Consultant Midwife and/or Consultant Obstetrician.

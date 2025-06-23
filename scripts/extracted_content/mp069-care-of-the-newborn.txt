@@ -1,0 +1,1477 @@
+# Extracted from: MP069 Care of the Newborn.pdf
+# Guideline ID: mp069-care-of-the-newborn
+# Content length: 75569 characters
+# Processing date: 1750066901.6394792
+
+CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 1 of 37 Please note, IF DOCUMENT IS PRIN TED, IT MAY BECOME OUT OF DATE 
+ 
+TRUST CLINICAL GUIDELINE 
+ 
+Care of the Newborn 
+
+OVERVIEW 
+ 
+To provide evidence -based guidance on the care of the newborn. 
+ 
+This guideline applies to: 
+ 
+• Midwives 
+• Maternity support staff 
+• Paediatricians 
+• Neonatal Staff 
+
+OWNER Clinical Director 
+AUTHOR/FURTHER INFORMATION Nicola Hilton, Postnatal Lead Midwife 
+GUIDELINE VERSION v3.0 
+RELATED POLICIES None 
+RELATED DOCUMENTS MP008 Infections in pregnancy 
+MP015 Substance Use in Pregnancy 
+MP066 Neonatal Resuscitation 
+MP068 Admissions Neonatal Unit (NICU/SCBU) 
+MP072 Newborn Feeding 
+MP070 Examination of the Newborn 
+STANDARDS 
+SUPERSEDED DOCUMENTS N/A 
+REVIEW DUE November 2027 
+REFERENCE NUMBER MP069 
+DATE UPLOADED 07/11/2024 CLINICAL GUIDELINE 
+Due for review: February 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 2 of 37 
+ 
+Approval 
+JOGG Date approved 21st February 2024 
+Women & Children’s Clinical Effectiveness 
+Meeting Date approved 18th April 2024 
+Medicines Governance Committee Date approved 3rd October 2024 
+Consultation 
+Katy Barnes , Neonatal Governance Lead Date approved 23rd October 2023 
+Ratification 
+Clinical Document Approval Group Date approved 1st November 2024 
+
+ CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 3 of 37 TABLE OF CONTENTS 
+ 
+1.0 Introduction ................................ ................................ ................................ ......................... 5 
+2.0 Definitions and abbreviations used in this document ................................ ........................... 5 
+3.0 Duties and responsibilities ................................ ................................ ................................ .. 5 
+4.0 Care of the newborn immediately after birth ................................ ................................ ........ 6 
+4.1 Skin-to-skin contact ................................ ................................ ................................ ............. 6 
+5.0 Routine postnatal care of the baby ................................ ................................ ...................... 7 
+6.0 Management of the newborn with meconium -stained liquor at birth ................................ ... 8 
+6.1 At birth ................................ ................................ ................................ ................................ 8 
+6.2 Immediately following birth - Vigorous screaming baby ................................ ....................... 8 
+6.3 Immediately following birth - non-vigorous baby and/or not breathing well .......................... 8 
+6.4 Well babies ................................ ................................ ................................ ......................... 9 
+6.5 Significant meconium ................................ ................................ ................................ .......... 9 
+6.6 Light meconium ................................ ................................ ................................ ................... 9 
+7.0 Hypothermia ................................ ................................ ................................ ..................... 10 
+7.1 Definition (all axillary temperatures) ................................ ................................ .................. 10 
+7.2 Prevention of hypothermia ................................ ................................ ................................ 10 
+7.3 Clinical signs of hypothermia ................................ ................................ ............................. 11 
+7.4 Management of hypothermia ................................ ................................ ............................. 11 
+7.4.1 Mild hypothermia (36 -36.5oC) ................................ ................................ ........................... 11 
+7.4.2 Moderate hypothermia (32 -35.9oC) ................................ ................................ ................... 11 
+7.4.3 Severe hypothermia (<32oC) ................................ ................................ ............................. 11 
+7.5 Using a heated mattress ‘HOT COT’ to maintain the baby’s temperature within normal 
+range ................................ ................................ ................................ ................................ 12 
+7.6 Clinical signs of hyperthermia ................................ ................................ ........................... 12 
+8.0 Jaundice ................................ ................................ ................................ ........................... 12 
+8.1 Introduction ................................ ................................ ................................ ....................... 12 
+8.3 Postnatal ................................ ................................ ................................ ........................... 13 
+8.4 Risk factors for jaundice needing treatment ................................ ................................ ...... 13 
+8.5 Visual inspection for Jaundice ................................ ................................ ........................... 13 
+8.6 Jaundice within 24 hours of birth ................................ ................................ ....................... 14 
+8.7 Jaundice between 24 -72 hours of birth ................................ ................................ ............. 14 
+8.8 Measuring the bilirubin level ................................ ................................ .............................. 14 
+8.9 Additional care ................................ ................................ ................................ .................. 14 
+8.10 Use of treatment threshold graphs ................................ ................................ .................... 14 
+8.11 Care of the neonate receiving phototherapy ................................ ................................ ...... 15 
+8.12 Information for parents or carers with infants on phototherapy ................................ .......... 15 
+8.13 General care of the infant during phototherapy ................................ ................................ . 15 
+8.14 Monitoring the infant during phototherapy ................................ ................................ ......... 16 
+9.0 Hypoglycaemia ................................ ................................ ................................ ................. 16 
+8.1 Background ................................ ................................ ................................ ....................... 16 
+9.2 Prevention and detection of hypoglycaemia in the newborn ................................ .............. 16 
+9.3 Identification and management of at -risk newborns ................................ .......................... 17 
+9.4 Signs and symptoms of hypoglycaemia ................................ ................................ ............ 17 
+9.5 Measurement and diagnosis of hypoglycaemia ................................ ................................ . 18 
+10.0 Management of newborns at risk of early and late neonatal infections .............................. 18 
+10.1 Background and definition ................................ ................................ ................................ . 18 
+10.2 Early onset sepsis management ................................ ................................ ....................... 18 
+10.3 Early onset sepsis calculator ................................ ................................ ............................. 19 
+10.4 Investigations ................................ ................................ ................................ .................... 20 
+10.5 Antibiotic treatment ................................ ................................ ................................ ........... 21 
+10.5.1 Early and late onset sepsis ................................ ................................ ............................... 21 CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 4 of 37 10.5.2 Focal infection: ................................ ................................ ................................ .................. 21 
+10.6 Group B Streptococcus (GBS) ................................ ................................ .......................... 21 
+10.6.1 Observations ................................ ................................ ................................ ..................... 22 
+11.0 Care of newborns exposed to unprescribed medication or substance misuse .................. 22 
+11.1 Unprescribed medication or substances (substance use in pregnancy) ............................ 22 
+12.0 Newborn pulse oximetry screening ................................ ................................ ................... 22 
+12.1 Rationale ................................ ................................ ................................ ........................... 22 
+12.2 Method and timing ................................ ................................ ................................ ............ 22 
+13.0 Care of the late preterm baby ................................ ................................ ............................ 23 
+13.1 Risks associated with the late preterm infant ................................ ................................ .... 23 
+13.2 Late preterm infant feeding ................................ ................................ ............................... 24 
+14.3 Thermal care ................................ ................................ ................................ ..................... 24 
+14.4 Weighing ................................ ................................ ................................ ........................... 24 
+14.5 Discharge from the postnatal ward ................................ ................................ .................... 25 
+15.0 Documentation ................................ ................................ ................................ .................. 25 
+Appendix 1: Vitamin K Prescription Form ................................ ................................ ........................ 26 
+Appendix 2: BadgerNet Maternity observations chart and escalation ................................ .............. 27 
+Appendix 3: Risk factors for neonatal hypoglycaemia ................................ ................................ ..... 28 
+Appendix 4: Flow chart for the management of asymptomatic babies at risk of hypoglycaemia on 
+postnatal wards ................................ ................................ ................................ ................. 29 
+Appendix 5: Risk factors for Early Onset Neonatal Sepsis ................................ .............................. 30 
+Appendix 6: Failed O2 saturation flowchart ................................ ................................ ..................... 31 
+Appendix 7: Monitoring ................................ ................................ ................................ ................... 32 
+Appendix 8: Guideline Version Control Log ................................ ................................ ..................... 33 
+Appendix 9: Due Regard Assessment Tool ................................ ................................ ..................... 34 
+Appenidx 10: Template Dissemination, Implementation and Access Plan ................................ ....... 35 
+Appendix 11: Additional guidance and information ................................ ................................ .......... 36 
+
+ CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 5 of 37 Care of the newborn 
+1.0 Introduction 
+This guideline provides evidence -based guidance on the care of the newborn. It applies to: 
+• Midwives 
+• Maternity support staff 
+• Paediatricians 
+• Neonatal Staff 
+2.0 Definitions and abbreviations used in this document 
+EONS - Early Onset Neonatal Sepsis NEWTT - Newborn Early Warning Trigger & 
+Track 
+GTT - Glucose Tolerance Test TMBU - Trevor Mann Baby Unit 
+SCBU - Special Care Baby Unit IPPV - Intermittent Positive Pressure 
+Ventilation 
+SBAR - Situation, Background, 
+Assessment, Recommendation ANNP - Advanced Neonatal Nurse Practitioner 
+TCB - Transcutaneous bilirubinometer BGL - blood glucose measurement 
+PRH - Princess Royal Hospital RSCH - Royal Sussex County Hospital 
+GBS - Group B Streptococcal FBC - Full Blood Count 
+CRP - C-Reactive Protein IV - Intravenous 
+RGN - Registered General Nurse SHO - Senior House Officer 
+CHD - Coronary Heart Disease SATs - Oxygen Saturation 
+Kg - Kilograms 
+ 
+Full set of observations is defined as : 
+• General wellbeing and behaviour . 
+• Chest movements, grunting and nasal flaring skin colour including perfusion, by testing 
+capilla ry refill time. 
+• Feeding 
+• Muscle tone 
+• Temperature 
+• Heart rate and respiration rate. 
+3.0 Duties and responsibilities 
+All midwives, maternity 
+support staff, 
+paediatricians, 
+neonatal staff working 
+in the Trust • To access, read, understand and follow this guideline . 
+• To use their professional judgement in application of this 
+guideline . CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 6 of 37 Maternity Managers • To ensure the guideline is reviewed three yearly and aligns with 
+national standards. 
+• To ensure the guideline is accessible to all relevant staff. 
+4.0 Care of the newborn immediately after birth 
+• Most newborns will breathe within ninety seconds of birth and very few need 
+resuscitation. However, every newborn should be individually assessed. 
+• Ensure the newborn is born in a warm environment. Wet newborns lose heat, can 
+become hypoxic, hypothermic and develop metabolic acidosis. 
+• Prevent heat loss by drying the newborn at birth with a warm towel; remove the wet 
+towels and cover. 
+• If baby is born in the pool, bring to the surface gently and face first. Keep the baby’s 
+body under the water and ensure the face is out of the water. 
+• Whilst drying the newborn assess their condition, colour, tone, breathing and heart rate. 
+• A newborn that is not breathing adequately or is blue or floppy should be dried covered 
+and placed under a radiant heat source so that further resuscitation can take place. 
+• CALL FOR HELP IF YOU NEED IT. Ring 2222 and ask for a ‘NEONATAL 
+EMERGENCY’ stating your location 
+• Keep the newborn warm and promote skin -to-skin contact with the mother or birthing 
+person , when possible, in a well newborn (see below). 
+• Early feeding is recommended within the first hour of life and with uninterrupted skin -to-
+skin contact in a well newborn (see section 6 MP072 Newborn Feeding protocol ). 
+4.1 Skin -to-skin contact 
+• Observations of the mother or birthing p erson ’s vital signs and level of consciousness 
+should be continued throughout the period of skin -to-skin contact. Mother and birthing 
+person may be very tired following birth and so may need constant support and 
+supervision to observe changes in their baby’s condition or to reposition their baby when 
+needed . 
+• Many mother s and birthing p eople can continue to hold their baby in skin -to-skin contact 
+during perineal suturing, providing they have adequate pain relief. However, a mother or 
+birthing person who is in pain may not be able to hold her baby safely. Babies should not 
+be in skin -to-skin contact with their mother or birthing person when they are receiving 
+Entonox or other analgesics that impact consciousness. As an alternative, staff could 
+support the birth partner to have skin -to-skin contact until the procedure is completed. 
+• During skin -to-skin the baby’s position should be checked to ensure that a clear airway is 
+maintained. 
+• Observation should be made of the: 
+­ Respiratory rate and chest movement. 
+­ Unusual breathing sounds or absence of noise from the baby 
+­ Changes in colour, the baby should be assessed by looking at the whole of the 
+baby’s body as the limbs can often be discoloured first. Subtle changes to colour 
+indicate changes in the baby’s condition (this can be difficult to assess depending 
+on lighting conditions). CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 7 of 37 ­ Tone – the baby should have a good tone and not be limp or unresponsive 
+­ Temperature – ensure the baby is kept warm during skin -to-skin contact. 
+• Separation of a woman or birthing parent and their baby within the first hour of the birth 
+for routine postnatal procedures, for example weighing and checking should be avoided 
+unless these measures are requested by the woman and person or are necessary for 
+the immediate care of the baby. 
+• Body temperature and birth weight should be recorded soon after the first hour following 
+birth. 
+• An initial examination should be undertaken by a midwife, neonatal nurse or 
+paediatrician to detect any major physical abnormality and to identify any problems that 
+require referral. 
+• Any examination or treatment of the baby should be undertaken with the consent and in 
+the presence of the parents or, if this is not possible, with their knowledge. 
+• Administer Vitamin K according to the parents’ wishes and with their consent. Provide 
+the Vitamin K information leaflet if the parents are undecided. Accessible at: Vitamin -K-
+deficiency -of-the-newborn (uhsussex.nhs.uk) 
+• See Appendix 1 for Vitamin K prescription chart . 
+5.0 Routine postnatal care of the baby 
+• At each postnatal contact, ask parents if they have any concerns about their baby's 
+general wellbeing, feeding or development. Review the history and assess the baby's 
+health, including physical inspection and observation. If there are any concerns, take 
+appropriate further action. 
+• Be aware that if the baby has not passed meconium within 24 hours of birth, this may 
+indicate a serious disorder and requires medical advice. 
+• Carry out a complete examination of the baby within 72 hours of the birth and at 6 to 8 
+weeks after the birth (see the Public Health England newborn and infant physical 
+examination [NIPE] screening programme . Trust guideline: MP070 Examination of the 
+Newborn 
+• For advice on identifying and managing jaundice, see section 8.0 . 
+• If there are concerns about the baby's growth, see the NICE guideline on Faltering 
+growth. 
+• Carry out newborn blood spot screening in line with the NHS newborn screening . 
+• The blood spot sample should be taken on day 5 for all babies. For the purpose of 
+screening, day of birth is day 0. 
+• In exceptional circumstances the sample can be taken between day 5 and 
+day 8. 
+• Carry out newborn hearing screening in line with the NHS newborn hearing screening 
+programme. Newborn blood spot sampling guidelines: quick reference guide - GOV.UK 
+(www.gov.uk) 
+• Give parents information about: 
+­ How to bathe their baby and care for their skin . 
+­ Care of the umbilical stump . 
+­ Feeding (see recommendations on planning and support ing babies' feeding). CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 8 of 37 ­ Bonding and emotional attachment (see recommendations on promoting emotional 
+attachment). 
+­ How to recognise if the baby is unwell, and how to seek help (see 
+recommendations on symptoms and signs of illness in babies) . 
+­ Established guidance on safer sleeping (including recommendations on bed 
+sharing) . 
+­ Maintaining a smoke -free environment for the baby (see also the NICE guideline 
+on smoking: stopping in pregnancy and after childbirth) . 
+­ Vitamin D supplements for babies in line with the NICE guideline on vitamin D 
+supplement use . 
+­ Immunising the baby in line with Public Health England's routine childhood 
+immunisations schedule. 
+• Advise parents to seek advice from a healthcare professional if they think their baby is 
+unwell, and to contact emergency services (call 999) if they think their baby is seriously 
+ill. 
+6.0 Management of the newborn with meconium -stained liquor 
+at birth 
+Meconium -stained liqu or occurs in 10 – 20% of births, which increase s to over 20% after 42 weeks' 
+gestation. Meconium aspiration syndrome occurs in 2 -5% of babies born through meconium -
+stained liquor. 
+6.1 At birth 
+• A neonatologist or advanced neonatal nurse practitioner (ANNP) to be called to att end 
+all births with meconium -stained liquor ( Pre-delivery Communication and Neonatal team 
+attendance at delivery MP067 ). 
+• CALL FOR HELP IF YOU NEED IT. Ring 2222 and ask for a ‘NEONATAL 
+EMERGENCY’ stating your location . 
+6.2 Immediately following birth - Vigorous screaming baby 
+• Do not suction the airway, there is no evidence that this improves outcome. 
+• If heart rate over 100 bpm, baby crying with normal r espiratory rate between 30 -60 per 
+minute and spontaneous movements – dry and hand to mother or birthing p erson . 
+6.3 Immediately following birth - non-vigorous baby and/or not breathing well 
+• Dry and wrap the baby 
+• Assess: colour, tone, heart rate, breathing and document APGAR score, call for help if 
+indicated. 
+• Place baby into neutral position 
+• If no meconium present, follow resuscitation protocol 
+• If meconium present – suction the oral cavity only if you are unable to inflate the chest. 
+• Do not lavage trachea 
+• Take paired cord samples for blood gas analysis. CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 9 of 37 • Neonatal Resuscitation (Term & Pre -term) MP066 
+6.4 Well babies 
+Babies who are well following birth should be transferred with the mother or birthing p erson to the 
+postnatal ward after the following observations have been performed . 
+All observations should include: 
+• General wellbeing and behaviour . 
+• Chest movements, grunting and nasal flaring skin colour including perfusion, by testing 
+capilla ry refill time. 
+• Feeding 
+• Muscle tone 
+• Temperature 
+• Heart rate and respiration rate. 
+ 
+All observations should be documented on BadgerNet Maternity using the newborn observation 
+tab. 
+If any observations are outside normal limits or concerns raised, the health care professional 
+should request a review by a neonatologist accordingly to NEWS score chart. ( Appendix 2 ) 
+6.5 Significant meconium 
+• If there has been significant meconium staining (defined as either dark green or black 
+amniotic fluid which is thick or tenacious (sticky) or any type of amniotic fluid that 
+contains lumps of meconium) and the baby is in good condition, the baby should be 
+closely observed. These observations should be performed at 1 and 2 hours of age and 
+then 2 hourly until 12 hours of age. If not clearly thick or light meconium, then the 12 
+hours of observations should be performed . 
+• If thick meconium is present, then antibiotics for the baby should be considered see 
+Early Onset Neonatal Sepsis (EON S) check list and inform neonatal Team . 
+• Babies born through significant meconium who require on -going IPPV or have on -going 
+respiratory distress should be discussed with the neonatal team for admission to 
+TMBU/SCBU. 
+6.6 Light meconium 
+• If there has been light meconium staining, the baby should be similarly observed by the 
+healthcare professional at 1 and 2 hours and only then discontinued if within normal 
+limits. If the baby’s condition causes concern at any time, he/she should be reviewed by 
+a neonatologist urgently. 
+ 
+Although NICE does not make a distinction between the type of meconium in labour, for the 
+purpose of neonatal care the above can still apply. 
+ CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 10 of 37 If there is any doubt regarding whether it is light meconium or not always opt for the full 12 hours of 
+monitoring. 
+7.0 Hypothermia 
+7.1 Definit ion (all axillary temperatures) 
+Normal 36.6 – 37.2oC 
+Mild 36.0 – 36.5oC 
+Moderate 32.0 – 35.9oC 
+Severe below 32oC 
+ 
+7.2 Prevention of hypothermia 
+• The risk of developing hypothermia is greatest immediately after delivery and in the first 
+24 hours . 
+• Preterm babies (<37 weeks) and low-birth weight babies (<2.5kg) are at greatest risk. 
+Also consider for babies of a diabetic mother or birthing p erson , macrosomic babies and 
+polycythaemic babies. Temperature instability can be seen in these cases. 
+• Hypothermia may also be a sign of sepsis. Hypothermia is associated with increased 
+mortality and morbidity, especially in low-birth weight and/or p reterm babies. The risk of 
+mortality increases by 28% for every degree of temperature lost < 36.5oC in these 
+babies. 
+• Babies should be dried promptly after delivery (unless in the pool when the baby’s body 
+should be kept under the water with the face out of the water) . 
+• Towels and blankets should be pre -warmed . 
+• Babies should be covered and be cared for in warm, draught free rooms. 
+• Maintain room temperatures above 20oC, if a preterm birth is expected, the delivery 
+room/theatre temperature should be increased to at least 25oC 
+• For waterbirth maintain water temperature about 37oC for birth and post birth period . 
+• Keep babies away from windows or cold walls and keep windows closed in the first 24 
+hours to avoid heat loss . 
+• Detection of hypothermia; babies should have their axillary temperature taken as part of 
+their routine check following birth, using an electronic thermometer NOT a Tempadot. 
+The temperature probe should be placed alongside the body in a vertical direction into 
+the axilla, removing any vernix from there first. 
+• The midwife and nursery nurse should observe the baby for clinical signs of hypothermia 
+as part of their routine care (see below) . 
+• Babies who are under 37 weeks or less than 2.5kg birth weight should have 4hrly 
+temperature for 24 hours post birth . 
+• All observations and any clinical signs of hypothermia should be documented in the 
+baby’s postnatal notes along with a management plan . CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 11 of 37 7.3 Clinical signs of hypothermia 
+• Bradycardia 
+• Grunting 
+• Apnoea 
+• Hypotension 
+• Lethargy 
+7.4 Management of hypothermia 
+7.4.1 Mild hypothermia (36 -36.5oC) 
+• Skin-to-skin contact with either parent, ensuring the baby’s body is covered with a 
+blanket. 
+• If the baby is not having skin -to-skin contact , dress them in 2 layers (vest and baby -
+grow), hat and blanket. Place the baby feet to the foot of the cot position i n the cot, tuck 
+the baby in well with the blanket. Ensure clothes are well -fitting and not too big. 
+• Consider the use of a radiant warmer if skin -to-skin cannot occur, or if after an hour it 
+does not improve baby’s temperature. If under a radiant heater, a full set of observations 
+to be taken every 15 minutes and documented clearly. A direct heat source can influence 
+vasodilation, overheating and hypotension. Whilst baby is under the radiant heater, 
+remove all clothing, leave nappy in situ. Maintain a warm, draught free room. 
+• Check the baby’s temperature hourly once normal and removed from radiant heat until 
+the decision is made that the infant can maintain its own temperature. 
+• Using SBAR, inform senior midwife and junior member of the neonatal team. Bleep 
+Neonatal SHO/ANNP . 
+7.4.2 Moderate hypothermia (32 -35.9oC) 
+• Using SBAR inform senior midwife and senior member of the neonatal team. Bleep 
+neonatal registrar/ANNP . 
+• Use a radiant heater, full observations every 15 minutes, until normal temperature and 
+document. 
+• If radiant heat source not available, dress the baby in 3 layers, with a hat and blanket. 
+Check baby’s temperature every hour until normal and stable. Knitted hats and blankets 
+are more effective. 
+• Measure blood glucose level . 
+• Follow neonatal plan . 
+• Discus with the neonatal team about the need for transfer to TMBU/SCBU . 
+7.4.3 Severe hypothermia (<32oC) 
+• Midwife/nursery nurse to call 2222, state ‘neonatal emergency’ and consider involvement 
+of neonatal consultant. 
+• Put baby under radiant heater, continuous temperature monitory (using Panda probe), 
+complete and document full set of observations every 15 minutes, until neonatal review. CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 12 of 37 • Transfer baby to TMBU/SCBU to be nursed in a warmed incubator 
+• Feeding should continue to provide calories and fluid which will help to maintain blood 
+glucose levels . 
+7.5 Using a heated mattress ‘HOT COT’ to maintain the baby’s temperature within normal 
+range 
+• Follow manufacturer's instructions. 
+• Once cot temperature is at 37ºC place the baby in it. 
+• Position a lightly dressed baby (nappy, long sleeved baby vest or baby grow, cotton hat) 
+on its back on the hot cot and cover the baby with 1 - 3 layers of cotton blanket. 
+• Check baby’s temperature every hour until normal tempe rature is achieved (36.6 - 
+37.2ºC), check temperature 4 hourly thereafter. 
+• Once baby’s temperature is normal on 2 consecutive occasions, and after a neonatal 
+review, it can be removed from the hot cot, dressed in 3 layers of clothes and a hat and 
+1-3 blankets, and placed in a normal cot. Layers can be slowly removed once baby’s 
+temperature has remained normal on 2 further consecutive occasions. 
+• If the temperature is above 37.2 ºC take them out of the hot cot but dress them with 
+extra layers as indicated in the bullet above and re-check temp hourly until within the 
+normal range again. 
+7.6 Clinical signs of hyperthermia 
+Please be aware of signs of hyperthermia and if concerned call neonatal team: 
+• Tachycardia 
+• Tachypnoea 
+• Hypertension 
+• Flushing (in term Newborns) 
+• Sweating 
+• Restlessness (term Newborn) 
+8.0 Jaundice 
+8.1 Introduction 
+• Jaundice is one of the most common conditions needing medical attention in newborn 
+babies. 
+• Approximately 60% of term and 80% of preterm babies develop jaundice in the first 
+week of life, and about 10% of breastfed babies are still jaundiced at 1 month of age. In 
+most babies' early jaundice is harmless. However, a few babies will develop very high 
+levels of bilirubin, which can be harmful if not treated. 
+Clinical recognition and assessment of jaundice can be difficult, particularly in babies with dark 
+skin tones . 
+ 
+ CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 13 of 37 8.2 Antenatal 
+ 
+If there is anticipated haemolytic disease from maternal or birthing person antibodies antenatally, 
+this should be discussed with a neonatologist so a postnatal plan can be made. Referrals are 
+made by the screening midwifery team once a concern is identified. This plan should be followed 
+postnatally should also be flagged to the neonatologist / ANNP immediately after birth. 
+8.3 Postnatal 
+Parents/carers should be given information about neonatal jaundice. This can be written and /or 
+verbal. Information should include: 
+• Risk factors for developing jaundice. 
+• How to check the baby for jaundice. 
+• What to do if they suspect jaundice. 
+• The importance of recognising jaundice in the first 24 hours and of seeking urgent 
+medical advice. 
+• The importance of checking the baby’s nappies for dark urine or pale chalky stools. 
+• The fact that neonatal jaundice is common and reassurance that it is usually transient 
+and harmless but further investigations will be undertaken if there are any concerns . 
+• Reassurance that breastfeeding can usually continue unless advised otherwise . 
+• Encourage mother s and birthing people of breastfed babies with jaundice to breastfeed 
+frequently, and to wake the baby for feeds if necessary. 
+• Provide lactation/feeding support to the breastfeeding mother or birthing p erson whose 
+baby is visibly jaundiced. 
+• Please note that sunlight is not a treatment for jaundice . 
+8.4 Risk factors for jaundice needing treatment 
+• Gestational age under 38 weeks . 
+• A previous sibling with neonatal jaundice requiring phototherapy . 
+• Visible jaundice in the first 24 hours of life. Any jaundice within the first 24 hours will 
+require urgent investigation. 
+• Exclusive breastfeeding; ensure adequate support is offered to all women and birthing 
+parents that are intending to breastfeed exclusively. 
+ 
+In all babies: 
+• Check whether there are risk factors. 
+• Examine the baby for jaundice at each contact, especially in the first 72 hours. 
+8.5 Visual inspection for Jaundice 
+Parents, carers and healthcare professionals should all look for jaundice (visual inspection) in 
+babies. 
+When performing a visual inspection: CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 14 of 37 • Check the naked baby in bright and preferably natural light. 
+• Examination of the sclerae, gums and blanched skin is useful across all skin tones. 
+• Do not rely on visual inspection alone to estimate the bilirubin level in a baby with 
+suspected jaundice (see below) . 
+8.6 Jaundice within 24 hours of birth 
+• Babies who appear jaundiced on visual inspection pre -24hrs always need to be 
+assessed by a neonatologist / ANNP. 
+• Measure and plot serum bilirubin immediately . 
+• Full set of observations must be performed . 
+• Please note that measurement of jaundice levels using a transcutaneous bilirubinometer 
+is contraindicated in infants less than 24 hours age . 
+8.7 Jaundice between 24 -72 hours of birth 
+• Initial measurement can be performed using the transcutaneous bilirubinometer 
+• Serum bilirubin must be used in absence of TCB or if infant less than 35 weeks 
+• Full set of observations must be performed 
+8.8 Measuring the bilirubin level 
+• Use a TCB in babies with a gestational age of 35 weeks or more and a postnatal age 
+over 24 hours . 
+• If a TCB is not available, the serum bilirubin level should be checked immediately . 
+• If a TCB measurement indicates a bilirubin level greater than 250 micromol/litre check 
+the result by measuring the serum bilirubin . 
+• Always use serum bilirubin as first line management to determine the bilirubin level in 
+babies: 
+­ With jaundice in the first 24 hours of life . 
+­ Less than 35 weeks gestational age . 
+­ Babies at or above the relevant treatment thresholds according to TCB reading for 
+their postnatal age, and for all subsequent measurements . 
+8.9 Additional care 
+• Ensure babies with factors associated with an increased likelihood of developing 
+significant hyperbilirubinemia receive an additional visual inspection by a healthcare 
+professional during the first 48 hours of life. 
+8.10 Use of treatment threshold graphs 
+• Treatment threshold graphs will help staff assess whether babies with jaundice should 
+be given phototherapy or exchange transfusion . 
+• Ensure gestational age of the neonate is correct and chart appropriate for gestation is 
+selected (use gestation at birth) . CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 15 of 37 • Be sure to plot TCB results under the correct note in BadgerNet Maternity . 
+• Be sure to plot Serum bilirubin under the correct ‘bloods’ note in BadgerNet Maternity 
+and plot it to the graph. 
+• If the decision is made to commence phototherapy, please refer to the neonatal 
+hyperbilirubinemia guideline on SharePoint for on -going plans of care. 
+8.11 Care of the neonate receiving phototherapy 
+• Initially, refer to neonatology / ANNP plan . 
+• A serum bilirubin test is usually performed 4 -6 hours after initiating phototherapy . 
+• Once the bilirubin level is stable or falling serum bilirubin is checked every 6 -12 hours 
+unless otherwise stated in neonatology / ANNP pla n. 
+• Phototherapy is usually stopped once bilirubin levels is >50 micromol/ litre below the 
+treatment threshold, a rebound level is checked 12 -18 hours after stopping. 
+• If the rebound level is acceptable (discuss with neonatologist / ANNP) then baby can 
+return to routine care and repeat only if further clinical concerns. 
+8.12 Information for parents or carers with infants on phototherapy 
+Offer parents or carers verbal and written information on phototherapy including the following: 
+• Why phototherapy is being considered and needed . 
+• Possible adverse effects of phototherapy . 
+• The need for eye protection and routine eye care where overhead phototherapy lights 
+are being used . 
+• Reassurance that shorts breaks (a max imum of 30 minutes) for feeding, nappy 
+changing, and cuddles will be encouraged. 
+• What happen s if phototherapy does not work. 
+• Rebound jaundice . 
+• Potential impact on breastfeeding and how to minimise this . 
+8.13 General care of the infant during phototherapy 
+• Ensure infant is in a supine position . 
+• Expose the maximum area of skin possible to the phototherapy lights. 
+• Monitor the infant’s temperature regularly and ensure that infant’s environment is warm 
+and draft free . 
+• Monitor hydration by daily weighing of the infant and assessing for appropriate numbers 
+of wet nappies according to the baby’s age by days 
+• Support parents and carers to interact with their infant . 
+• Give the infant eye protection and routine eye care where appropriate . 
+• Provide support with lactation where necessary . 
+• Where parents are breastfeeding, ensure they are expressing after breastfeeds. This 
+protects the milk supply and reduces the risk of formula supplementation . CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 16 of 37 8.14 Monitoring the infant during phototherapy 
+During phototherapy: 
+• Using clinical judgement, encourage short breaks (of up to 30 minutes) for feeding, 
+nappy changing and cuddles 
+• Continue lactation / feeding support 
+• Do not give additional fluids to otherwise well babies who are breastfed 
+• Maternal or birthing person expressed milk is the additional fe ed of choice if available, 
+and when additional feeds are indicated. 
+9.0 Hypoglycaemia 
+For full protocol: Hypoglycemia and Hyperglycemia (Neonatology Brighton PRH).docx 
+8.1 Background 
+Definition of hypoglycaemia : 
+• Birth to 72 hours of life (term) or 96 hours of life (preterm): < 2.6 mmol/l (plasma) . 
+• 72 hours of life (term) or 96 hours (preterm) of life: < 3.4 mmol/l (plasma) . 
+ 
+Aetiology: 
+• Low glycogen stores or early depletion of the glycogen stores . 
+• Impaired gluconeogenesis . 
+• Hyperinsulinism or lack of counter insulinaemic hormones solely or in combination . 
+ 
+Complications : 
+• Plasma Glucose < 1.1 mmol/l for > 2 h cause cerebral neuronal necrosis in primates. 
+• Plasma Glucose < 2.6 mmol/l on > 5 single days/occasions or for > 48 h is associated 
+with neurodevelopmental and physical growth deficits. 
+ 
+Prevention: 
+• Maintenance of normal body temperature 
+• Early feeding within first 3 hours of life 
+• Prompt management of other clinical concerns 
+9.2 Prevention and detection of hypoglycaemia in the newborn 
+• Health professional providing care should undertake a risk assessment for each 
+individual parent and baby and identify babies at risk of hypoglycaemia . CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 17 of 37 9.3 Identification and management of at -risk newborns 
+• Newborns identified at being at risk should be monitored and placed on the 
+hypoglycaemia pathway - for list of risk factors for commencing the hypoglycaemia 
+pathway and growth charts with thresholds for gestation and weights to identify babies at 
+risk (see Appendix 3 ). 
+• Document birth weight on BadgerNet Maternity and confirm with neonatal centile chart 
+that weight does not trigger for hypoglycaemia pathway. 
+• All infants identified as at risk, require 4 hourly BGL monitoring. Monitoring can be 
+stopped after 12 hours in newborns of diabetic mother s and birthing people and large for 
+gestational age newborns, and those with siblings greater than the 91st centile. All other 
+newborns require monitoring for at least 24 hours. Do not discharge babies into 
+community until they are at least 24 hours, maintaining their blood glucose level and 
+feeding well. 
+• Follow hypoglycaemia algorithm ( Appendix 4 ). 
+• Glucose 40% oral gel is part of the management of hypoglycaemia see algorithm. This is 
+categorised as a food supplement and does not need to be prescribed. Squeeze some 
+of the gel from the tube into a small medicine pot. Use a 2.5mg syringe and draw up 
+dose (0.5mls/kg). Dry the baby’s mouth with gauze and massage the gel into the buccal 
+mucosa. The baby should then be encouraged to feed. Discard the open tube and 
+contents of the pot. Glucogel should only be administered twice before admission to 
+TMBU/SCBU is considered. 
+• If risk factors are identified antenatally then a management plan should be clearly 
+documented in the maternal or birthing person’s notes relating to the care and 
+management of the newborn baby, by the health professional providing antenatal care. 
+This is usually found under “Scanned Documents” on BadgerNet Maternity . 
+• Explain plan of care to parents. It is best practice to provide written information alongside 
+verbal. 
+• If no risks are identified and the baby is full term no blood glucose monitoring should be 
+required unless symptoms become apparent . 
+ 
+Preventative measures should be undertaken for all newborns: 
+• Maintain normal body temperature (skin -to-skin contact ). 
+• Early feeding (Feed baby within 1 hour of birth i.e. put to breast and provide support and 
+guidance where required) . 
+• Manage other clinical concerns promptly . 
+• Measure blood glucose IMMEDIATELY if hypoglycaemia is suspected . 
+9.4 Signs and symptoms of hypoglycaemia 
+Urgent neonatal review if any of the following signs or symptoms are evident : 
+• Irritability 
+• Lethargy/stupor/tremor 
+• Poor feeding & dry nappies 
+• Hypothermia 
+• Hypotonia CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 18 of 37 • Tachypnoea 
+• Jitteriness 
+• Seizures 
+• Apnoea – 2222 neonatal emergency 
+9.5 Measurement and diagnosis of hypoglycaemia 
+• If suspected, a blood glucose measurement ( BGL) should be undertaken from a heel -
+prick sample. 
+• Point -of-Care (hand -held or blood gas machine) devices are used for routine 
+assessment of blood sugar. 
+• The decision to undertake a BGL should only be made by a midwife, ANNP or 
+neonatologist. 
+• The health professional providing care should inform the parent of the indication and 
+implication for BGL monitoring and gain informed consent. Inform parents of the care of 
+wound site following the procedure. 
+• A BGL can be undertaken by an appropriately trained health professional 
+• Babies should be kept warm and as calm as possible during the procedure. It is 
+preferable that the parents are not separated from their baby for this procedure. 
+• Aseptic technique should be employed by the health profession 
+• The blood glucose monitoring machine is used for routine assessment of blood sugar. 
+The normal range is 2.6 – 4.5mmol/L in plasma. Blood glucose concentrations from 
+handheld devices can vary substantially from plasma concentrations (especially when < 
+2.6 mmol/l) as they are based on whole blood measurements. For more accurate 
+results, wipe the first two drops of blood from the baby’s heel prior to collecting a sample. 
+• At RSCH and PRH a blood gas machine is available on TMB U and SCBU for borderline 
+Glucose results (needs 35 microliter of blood in a capillary tube). 
+• Always aim to perform a plasma blood Glucose (venous sample) immediately, if the 
+glucometer or gas machine reading is < 2.6 mmol/l. 
+• All results should be documented, by the health professional performing the test, under 
+“Baby”, “Summary of Care”, Blood Tests and Results”. Ensure the accurate time of 
+sample is recorded. 
+10.0 Management of newborns at risk of early and late neonatal infections 
+For full protocol go to : Care of Newborns at Risk of Early and Late Neonatal Infections 
+10.1 Background and definition 
+• Early -onset neonatal infection: Infection with onset in the first 72h of life . 
+• Late-onset neonatal infection: Infection with onset after the first 72h of life . 
+10.2 Early onset sepsis management 
+• All infants that have an identified risk factor for sepsis should be commenced on the 
+following observations : CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 19 of 37 ­ At 1 & 2 hours of age followed by 2 hourly observations for 10 hours, then 4 hourly 
+depending on risk factors, clinical condition and antibiotic treatment. These should 
+be documented on the neonatal observation chart on BadgerNet Maternity . 
+• Observations must include: 
+­ Body temperature and overall wellbeing and behaviour . 
+­ Skin colour, including capillary refill time . 
+­ Grunting, nasal flaring, chest movements, respiratory rate, heart rate, feeding . 
+­ Muscle tone . 
+• It is the health care professional’s responsibility to assess for and identify risk factors for 
+sepsis in either the mother or birthing p erson, or baby that occurred antenatally, 
+intrapartum or in the postnatal period. 
+• The prompt card Appendix 5 should be used to identify risk. 
+• If any risk factors are present in the mother or birthing p erson, or baby inform the 
+Neonatal SHO/ ANNP immediately and bleep for review. 
+• The following information will also need to be provided in order for a full assessment to 
+take place. 
+­ Highest maternal or birthing person antepartum / intrapartum temperature 
+(°C) 
+­ Duration of rupture of membranes (hours) 
+­ Maternal or birthing person GBS status 
+­ Maternal or birthing person intrapartum antibiotic prophylaxis 
+­ Gestational age 
+• The neonatal team will then decide if there are any maternal or birthing person, or 
+neonatal red flags that require an immediate start of IV Antibiotics and documented care 
+plan including frequency and duration of observations . 
+10.3 Early onset sepsis calculator 
+For all NON -RED FLAG sepsis risk factors the neonatologist will use the risk calculator. It 
+provides an EOS risk/1000 births. 
+Neonatal Early -Onset Sepsis Calculator, Kaiser Permanente 
+See Eolas Medical for antibiotic guidance. 
+The following management pathway will then be used as indicated by the calculator 
+(Green/Amber/Red) combined with the classification of the clinical examination Well/ 
+Equivocal/ Clinically Unwell as defined by the calculator: N.B Temperature instability 
+(> 100.4˚F or < 97.5˚F) = (<36.4 - >37.9°C) 
+No culture 
+No 
+antibiotics • Observations at 1 & 2 h followed by 2 hou rly observations for 10 h (total 12 h). 
+• Babies with abnormal observations or other concerning signs will require a neonatal 
+review. 
+• Babies with completely normal observations will need a final neonatal review before 
+discharge. CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 20 of 37 
+• The clinical examination as well as the Sepsis Calculator outcome must be documented 
+on BadgerNet Maternity . 
+• Give the parental information leaflet and explain the management pathway. 
+• The Post -natal doctor/ANNP to complete and update the EOS audit tool. 
+(T drive/TMBUSHO/Postnatal Ward Handover/KP Audit Data Collection) . 
+10.4 Investigations 
+• Always ensure adequate analgesia for procedures . 
+• FBC, CRP, Blood culture will be taken before starting antibiotics . 
+• Repeat FBC and CRP >6h <24h after the first blood test . 
+• Chest x -ray if chest pathology signs/symptoms present . 
+• CSF – LP, if it does not delay treatment, for: 
+­ Septic shock (very unwell newborn) irrespective of CRP . 
+­ Unwell baby with a CRP ≥10 –20 mg/l . 
+­ Any baby with high CRP ≥20mg/l . 
+­ Positive blood culture irrespective of CRP . 
+­ CNS signs/symptoms (encephalopathic) irrespective of CRP considering 
+differential diagnoses . No culture 
+No 
+antibiotics • Observations at 1 & 2 h followed by 2 hou rly observations for 10 h and then 4 
+hourly observations for 12 h (total 24 h). 
+• Babies with abnormal observations or other concerning signs will require a neonatal 
+review . 
+• Babies with completely normal observations will need a final neonatal review before 
+discharge. 
+Blood 
+Culture 
+ • Observations at 1 & 2 h followed by 2 hourly observations for 10 h and then 4 hourly 
+observations for 12 h (total 24 h). 
+• Investigations: FBC, CRP, Blood culture . Consider chest x -ray if chest pathology 
+signs/symptoms present. 
+• Hold IV antibiotics pending results. 
+• Repeat FBC and CRP >6 h <24 h after the first blood test. 
+• Babies with abnormal investigations or observations or other concerning signs will 
+require a neonatal review and consideration of IV antibiotics . 
+• Discharge only once all results are back and reassuring. 
+• Babies with completely normal observations and not started on IV antibiotics will 
+need a final neonatal review before discharge. 
+Empiric 
+antibiotics • Observations at 1 & 2 h followed by 2 hourly observations for 10 h and then 4 
+hourly observations until antibiotics stopped. 
+• Investigations: FBC, CRP, Blood culture. Consider chest x -ray if chest pathology 
+signs/symptoms present. 
+• Aim to adm inister IV antibiotics within 1h of the decision to treat. 
+• Repeat FBC and CRP >6 h <24 h after the first blood test. 
+• Babies started on IV antibiotics should remain on 4 h observations until antibiotics 
+are stopped . 
+• Discharge once results are back , reassuring and antibiotic treatment completed . CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 21 of 37 ­ Poor response to antibiotic treatment present . 
+­ Skin or eye swabs only if signs/symptoms of local infection or for specific 
+indications, e.g. suspected HSV . 
+10.5 Antibiotic treatment 
+10.5.1 Early and late onset s epsis 
+• Cefotaxime is the first line treatment for the postnatal ward (see local formulary) . 
+• Cefotaxime is administered on the postnatal ward by a Neonatal Nurse and checked by 
+a Midwife/ Maternity RGN . 
+• The loading dose of Cefotaxime is 50mg/kg. The second dose needs to be given not 
+less than 5 hours and not more than 16 hours after the loading dose. 
+• All doses of Cefotaxime following the loading dose are administered at 25mg/kg unless 
+documented by neonatal team that increased to 50mg/kg due to clinical condition. 
+10.5.2 Focal infection: 
+• Flucloxacillin (+/ - Gentamicin) for soft tissue infection including omphalitis . 
+• Chloramphenicol (topical) for bacterial conjunctivitis . 
+• A minimum of 36 -48h of antibiotics is recommended in any case 
+• Stop treatment after 36 -48h: 
+­ If blood culture negative 
+AND 
+­ Low level of suspicion 
+AND 
+­ Well baby 
+AND 
+­ CRP <10mg/l and no other abnormal laboratory markers . 
+• Continue treatment otherwise: 
+­ For as long as needed, if blood culture negative, but baby is unwell (review need 
+for antibiotics every 24h) . 
+­ For 7 days if blood culture positive . 
+­ For >7 -10 days if blood culture positive and baby unwell . 
+­ For 14 days if GBS meningitis present . 
+­ For 21 days if Gram -negative meningitis present . 
+• Discuss with Microbiology Consultant as needed . 
+10.6 Group B Streptococcus (GBS) 
+Management of a newborn where there is known GBS present in either parent or newborn: 
+Parents should be informed about GBS, the risks, available evidence and recommendations for 
+observations and treatment. Parents should be supported to make an informed decision about care 
+and treatment for their baby. 
+For information on which women and birthing people should have prophylactic antibiotics see 
+MP008 Infections in pregnancy: GBS, Herpes, Varicella and UTI’s. CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 22 of 37 10.6.1 Observations 
+• All observations should be documented in the neonatal observations tab on BadgerNet 
+Maternity . If all observations are within normal limits they can be discontinued after 12 or 
+24 hours as applicable. Babies of mother s and birthing people with previous GBS 
+infection should be monitored for 12 hours. If any other Early Onset Neonatal Risk 
+Factors (see Appendix 5 ) are identified, please consult with ANNP/Neonatal SHO. If 
+baby is born via elective caesarean (not in labour) and no PROM, observations are not 
+required. 
+• If observations are abnormal or the baby shows clinical signs of being unwell it should 
+be immediately reviewed by a member of the neonatal team. 
+• Mother s and birthing people of a baby born with pre -labour rupture of membranes 
+should be asked to inform their midwife or GP immediately of any concerns about their 
+baby’s wellbeing in the first 5 days following birth, particularly in the first 12hours when 
+the infection risk is the greatest . 
+11.0 Care of newborns exposed to unprescribed medication or 
+substance misuse 
+Available from: Neonatal Abstinence and Abnormal Postnatal Adaptation Syndrome (Neonatology 
+Brighton PRH).docx 
+11.1 Unprescribed medication or substances (substance use in pregnancy) 
+Documented One -Stop letters and plans (from 32 weeks) are available from BadgerNet Maternity 
+NB. ‘Mini -morph’ is not currently admi nistered on the postnatal ward. 
+Exposure to prescribed medication in Pregnancy, available from: Exposure to Prescribed 
+Medication During Pregnancy (Neonatology Brighton PRH).docx 
+12.0 Newborn pulse oximetry screening 
+12.1 Rationale 
+This is a non -invasive test measuring oxygen concentration in the blood using a sensor applied to 
+the right hand and foot. Lower oxygen levels may be indicative of CHD and other significant non 
+cardiac conditions, such as, pulmonary hypertension, sepsis and pneumothorax that require further 
+investigation. 
+12.2 Method and timing 
+• Screening should be performed by midwives or nursery nurses . 
+• Screening should take place between 4 -8 hours of age. 
+• Staff should use the portable SATs machine. 
+• Staff should take readings from the right hand and any foot. 
+• Oxygen saturations should be completed alongside routine observations prior to 4hrs 
+and after 8hrs if clinically needed or if the baby becomes unwell. CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 23 of 37 • Follow Flow Chart if results abnormal and refer to neonatologist (Appendix 6 ). 
+• Results should be documented on BadgerNet Maternity under observations . 
+• Clear documentation needs to be made if there is a screen positive test regarding 
+discussion with neonatal team and plan made . 
+13.0 Care of the late preterm baby 
+13.1 Risks associated with the late preterm infant 
+The late preterm infant is at increased risk of the following - 
+Hypoglycaemia: 
+• Higher metabolic rate. 
+• Limited brown fat stores. 
+• Low glycogen stores. 
+• Temperature instability. 
+• Ineffective feeding due to weak suck and/or fatigue. 
+ 
+Hypothermia: 
+• Decreased brown fat for thermogenesis and white fat for insulation. 
+• Increased heat loss due to higher surface -area-to-mass -ratio. 
+ 
+Respiratory distress and/or apnoea: 
+• Immature lung development. 
+• Decreased surfactant. 
+• Immature breathing control. 
+• Reduced clearance of lung fluid. 
+• Decreased airway muscle tone. 
+ 
+Sepsis: 
+• Immaturity of the immune system. 
+• Precipitating factors of preterm birth - e.g.: chorioamnionitis, pre -labour rupture of 
+membranes. 
+• GBS positive. 
+• Exposure to nosocomial pathogens. 
+• Invasive procedures. 
+• Potential delay in initiation and establishment of breastfeeding. 
+ 
+Hyperbilirubinemia: 
+• Slower passage of meconium. 
+• Decreased bilirubin -conjugating glucuronyl transferase. CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 24 of 37 • Poor arousal and immature suck reflex lea ding to ineffective feeding and increased risk 
+of dehydration and jaundice. 
+• Peak serum bilirubin at 5 -7 days rather than 2 -3 days. 
+• Have a h igher incidence of kernicterus , with an up to 10 -fold increase in risk for re -
+hospitalisation for phototherapy. 
+ 
+Feeding difficulties: 
+• Immature suck/swallow/breathing co -ordination 
+• Low oromotor tone, central nervous system (CNS) immaturity, limited brown fat stores, 
+poor regulation of state behaviour and excessive sleepiness contribute to feeding 
+issues. 
+• Separation from mother or birthing person affecting milk supply and establishment of 
+breastfeeding. 
+ 
+Poor weight gain: 
+• Poor suck feeding. 
+• Use of supplementation (formula, fortification, vitamins) may be medically indicated. 
+ 
+Psychosocial issues: 
+• Higher incidence of breast -feeding problems in mother s and birthing people of late 
+preterm infants due to separation and associated maternal or birthing person morbidity 
+(e.g. diabetes, pre -eclampsia). 
+• Maternal or birthing person anxiety and fatigue. 
+• Medicalised and stressful environment of the neonatal unit. 
+13.2 Late preterm infant feeding 
+ 
+For support and guidance on feeding the late preterm infant, guidance for discharge and support in 
+the community please go MP072 Newborn Feeding . 
+14.3 Thermal care 
+• Ensure temperature is maintained and that proactive measures are taken to increase 
+temperature if needed . These include skin -to-skin and/or increased layers of clothing . 
+• 4 hourly temperatures should be taken alongside blood sugar monitoring . 
+14.4 Weighing 
+Poor weight gain or considerable weight loss is almost always the result of inadequate milk intake. 
+This could be a result of insufficient milk production or inability of the baby to take in sufficient milk, 
+or a combination of both. 
+Day 3 : CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 25 of 37 • Late preterm babies should be weighed on Day 3 to monitor and address excessive 
+weight loss or dehydration. 
+• Feeding should be observed and assessed thoroughly, regardless of feeding methods. 
+• Please refer to the infant feeding protocol for weight loss . 
+14.5 Discharge from the postnatal ward 
+• Late preterm babies that are sent home before they are ready have an increased risk of 
+readmission to hospital. They are at greater risk for readmission with hyperbilirubinemia, 
+feeding problems, respiratory concerns (including apnoea) and suspected sepsis (often 
+due to low temperature and poor feeding). 
+• A late preterm baby may be considered for discharge from the postnatal ward after 72 
+hours of age if they fulfil all of the following criteria: 
+­ Established feeding MP072 Newborn Feeding 
+­ Temperature stability 
+­ Community discharge plan in place 
+15.0 Documentation 
+Full and contemporaneous records of any preventative measures, detection / testing, and 
+management should be documented on BadgerNet Maternity by the staff providing care . 
+The following are minimum documentation requirements in the postnatal tab on BadgerNet 
+Maternity : 
+• Details of the prevention, detection and management of hypoglycaemia in the newborn . 
+• Details of the prevention, detection and management of hypoglycaemia in the newborn 
+of women with diabetes . 
+• Details of the prevention, detection and management of hypothermia in the newborn . 
+• Details of the management of a newborn with meconium -stained liquor present at 
+delivery . 
+• Details of the management of a newborn where there is known group B haemolytic 
+streptococcus present in either mother or birthing p erson, or newborn . 
+• Details of the management of the newborn of women and birthing people known to have 
+misused substances in pregnancy . 
+• All discussions and advice given to mother s and birthing p eople / parents should be 
+documented in the maternal or birthing person’s , or baby’s notes (including leaflets 
+given) by the person providing care. 
+
+ CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 26 of 37 Appendix 1: Vitamin K Prescription Form 
+ 
+ Newborn Vitamin K Prescription and Administration Chart 
+(PRH&RSCH Maternity Use Only) 
+Name: 
+Date of Birth: 
+Time of Birth: 
+NHS Number: 
+Hospital Number: 
+Vitamin K leaflet given □ Counselled by Midwifery team □ Informed consent gained 
+Newborn Infants over 36 weeks gestation 
+Midwife Exemptions for Administration – Single IM Phytomenadione dose 
+Day Drug Dose Route Given By Date Time 
+Birth Phytomenadione 
+(Vitamin K) 1mg IM 
+ 
+Newborn Infants over 36 weeks gestation 
+Midwife Exemptions for Supply – First Oral dose 
+Day Drug Dose Route Given By Date Time 
+Birth Phytomenadione 
+(Vitamin K) 2mg Oral 
+ 
+TTO supply under Midwife Exemptions for Supply for 2nd and 3rd Oral Dose over 36 weeks gestation 
+Day Drug Dose Route Signed Dispensed Date Time 
+4-7 Phytomenadione 
+(Vitamin K) 2mg Oral 
+1 month* Phytomenadione 
+(Vitamin K) 2mg Oral 
+*Third oral dose at 1 month only necessary if baby exclusively breastfeeding 
+Newborn Infants under 36week Gestation – BY ANNP/DOCTOR PRESCRIPTION ONLY 
+Infants >2.5kg = 1mg Infants <2.5kg <36w = 0.4mg/kg 
+Day Drug Dose Route Prescribed 
+By Given By Date Time 
+Birth Phytomenadione 
+(Vitamin K) 
+
+Once completed, give 1 copy to parents, scan into BadgerNet Maternity 
+
+CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 27 of 37 Appendix 2: BadgerNet Maternity observations chart and escalation 
+ 
+ 3 2 1 0 1 2 3 Mandatory/
+optional Data 
+entry 
+Type 
+Temperature <32 32 - 
+35.9 36.0 - 
+36.5 36.6 - 
+37.2 37.3 – 
+37.9 >37.9 Mandatory Numeric 
+Pulse <80 80 - 99 100 - 
+119 120 - 
+159 160 - 179 180 - 219 >219 Mandatory Numeric 
+Respiration Rate <20 20 - 29 30 - 60 61 - 69 >69 Mandatory Numeric 
+Respiratory 
+Distress Absent Present Mandatory List 
+Conscious Level Alert Irritable, 
+ Jittery Lethargic Unrespo
+nsive Mandatory List 
+Blood sugar (pre 
+feed) mmol <1.5 1.5 - 
+2.5 N/A, 
+ 2.6 - 
+5.9 >5.9 Optional Numeric 
+Vomited Green 
+Bile N Y Mandatory List (Y/N) 
+ EWS 
+Score Current 
+Assessed 
+Status Obs Summary Guidance Text Alert 
+Severity Neonatal 
+Doctor 
+Seniority Response 
+Due Alert 
+Reminder Obs 
+Profile 
+0 0 Default Review observation frequency as per 
+trans care pathway and set appropriate 
+profile 0 ~ ~ ~ 1hr 
+1 Using SBAR Inform senior midwife and 
+junior member of the neonatal team. 
+Bleep Neonatal SHO/ANNP 
+ 
+Review observation frequency as per 
+trans care pathway and set appropriate 
+profile SHO/AN
+NP 30mins 1hr 
+2 Using SBAR inform senior midwife and 
+senior member of the neonatal team. 
+Bleep neonatal registrar/ANNP 
+ 
+Review observation frequency as per 
+trans care pathway and set appropriate 
+profile Reg/AN
+NP 30mins 1hr 
+3 Call 2222 state Neonatal Emergency. 
+Consider involvement of neonatal 
+consultant 
+Review observation frequency as per 
+trans care pathway and set appropriate 
+profile Reg/AN
+NP 30mins 1hr CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 28 of 37 Appendix 3: Risk factors for neonatal hypoglycaemia 
+The following Newborns should be monitored and placed on the hypoglycaemia pathway 
+NEONATAL HYPOGLYCAEMIA PATHWAY TRIGGERS 
+Risk Factors for Hypoglycaemia 
+Maternal or birthing person 
+• Diagnosed pre -eclampsia/eclampsia or pregnancy induced or essential hypertension . 
+• Diabetic mother or birthing p erson (any diabetes type) . 
+• Earlier pregnancy with a macrosomic infant (>91st centile) . 
+• Treatment with beta adrenergic tocolytics within 7 days of delivery, most common examples 
+are MgSO4 and nifedipine . 
+• Treatment with tricyclic antidepressants or serotonin -norepinephrine reuptake inhibitors. 
+Examples include Amitriptyline, duloxetine and venlafaxine . 
+• Treatment with beta blockers for example labetalol and propanalol . 
+• Symptoms of neonatal abstinence syndrome (this can mask symptoms of hypoglycaemia) . 
+• Maternal or birthing person glucose infusion . 
+ 
+Neonatal 
+• Cord pH < 7.1 
+• < 37 weeks gestation . 
+• Small for gestational age (< 9th centile) or Intrauterine Growth Restriction, see chart and check 
+BadgerNet Maternity when inputting birth weight. 
+• Macrosomia plus abnormal HbA1c or GTT in mother or birthing p erson (OR > 91st percentile 
+alone if HbA1C or GTT not done) . 
+• Discordant twin (weight discordance > 10%) . 
+• Infections (i.e. babies on IV antibiotics in first 24 hours of life or those older than 24 hours who 
+are clinically unwell or who have evidence of infection) . 
+• Endocrine disorders: ( e.g. congenital adrenal hyperplasia, adrenal insufficiency, growth 
+hormone deficiency, pituitary disorders etc.) 
+• Inborn errors of metabolism: ( e.g. maple syrup urine disease, organic acidaemias, disorders of 
+carbohydrate metabolism, mitochondrial disorder, disorders of fatty acid oxidation) . 
+• Hypoxic -ischaemic encephalopathy or CPR at birth . 
+• Known genetic conditions, e.g. Beckwith -Wiedemann . 
+ 
+Neonatal Red Flags that develop within the postnatal period that require neonatal review 
+and requirement to commence hypoglycaemia pathway 
+• Hypothermia . 
+• Infants with respiratory distress . 
+• Delayed Feeding (e.g. feeding intolerance (especially persistent vomiting), lack of milk supply) 
+also see Newborn feeding protocol MP072 Appendix 2B . 
+• Plethoric infant/ hyperviscosity, but also severe haemolytic disease . 
+• Symptoms of neonatal abstinence syndrome (this can mask symptoms of hypoglycaemia) . 
+ CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 29 of 37 Appendix 4: Flow chart for the management of asymptomatic babies at risk of hypoglycaemia on postnatal wards 
+Hypoglycaemia Algorithm 
+ 
+CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 30 of 37 Appendix 5: Risk factors for Early Onset Neonatal Sepsis 
+ PROMPT CARD for Risk Factors for EONS on labour / postnatal ward 
+If any risk factors are present, please bleep the neonatal SHO for review. Please have the following information ready: Gesta tion, 
+Duration of ROM, Max maternal or birthing person temp, GBS status and if IVABs administered in labour 
+ 
+Are there any risk factors in the mother or birthing 
+person ? 
+ 
+• Maternal or birthing person sepsis. 
+• Chorioamnionitis. 
+• Previous baby with invasive GBS infection. 
+• Maternal or birthing person GBS colonisation, bacteriuria or 
+infection in this pregnancy. 
+• Maternal or birthing person rupture of membranes > 24 hours 
+PROM. 
+• Maternal or birthing person fever before (> 37.5°C on 2 or 
+more occasions at least 1 hour apart, or a single temperature 
+> 38°C, before or during birth. 
+• Prematurity < 35 weeks. 
+• Low Birth Weight < 2500g. 
+• Meconium Liquor. 
+Are there any risk factors in the baby? 
+ 
+• Apgar <5 at 5 mins. 
+• Siblings from the same pregnancy started on IVABs. 
+• Temperature instability. 
+• Respiratory distress (respiratory rate>60bpm, grunting, flaring 
+or retracting). 
+• Bradycardia or Tachycardia. 
+• Poor feeding, vomiting, signs and symptoms of abdominal 
+pathology or Oliguria > 24 hrs after birth. 
+• Hypo/Hyperglycemia, metabolic acidosis BE > 7 mmol/l. 
+• Petechiae, other signs and symptoms of bleeding disorder. 
+• Jaundice < 24 hrs, umbilical flair, signs/ symptoms 
+of local infection. 
+• Abnormal muscle tone. Signs and symptoms of mild 
+encephalopathy. 
+• Abnormal vigilance state, irritability lethargy. CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 31 of 37 Appendix 6: Failed O2 saturation flowchart 
+CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 32 of 37 Appendix 7: Monitoring 
+ 
+Issue being 
+monitored Monitoring 
+method Responsibility Frequency Reviewed by 
+and actions 
+arising followed 
+up by 
+All Term 
+Admissions 
+including those 
+related to 
+hypothermia, 
+hypo glycaemia , 
+respiratory 
+distress and 
+jaundice Weekly case 
+review at ATAIN 
+(Avoiding Term 
+Admissions into 
+Neonatal Units) ATAIN lead 
+Postnatal (PN) 
+Leads Quarterly 
+reports Neonatal 
+Governance 
+team 
+Maternity 
+Governance 
+Team 
+Reports to 
+neonatal safety 
+champion and 
+Trust Board 
+Transitional Care 
+& Late Preterm) Audit PN Leads Quarterly 
+Reports Neonatal 
+Governance 
+team 
+Maternity 
+GovernanceTeam 
+Reports to 
+neonatal safety 
+champion and 
+Trust Board 
+Sepsis 
+(kaiserpermanente 
+tool) Audit Neonatal Team Ongoing Neonatal 
+Governance 
+Lead/ Infection 
+Lead 
+Neonatal Pulse 
+Oximetry Snapshot audit of 
+compliance and 
+outcomes PN Leads 3 yearly Neonatal 
+Governance 
+ 
+• Any neonatal issues that arise within clinical practice will be escalated to neonatal and safety 
+Gover nance leads 
+ 
+ CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 33 of 37 Appendix 8: Guideline Version Control Log 
+Change Log – Care of the Newborn 
+ 
+Version Date Author(s) Reason for change 
+3.0 February 
+2024 Nicola Hilton, 
+Postnatal Lead 
+Midwife Update following review and addition of aspects of 
+care not previously covered. To bring in line with 
+protocols and guidance from TMBU . 
+ 
+ CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 34 of 37 Appendix 9: Due Regard Assessment Tool 
+To be completed and attached to any guideline when submitted to the appropriate committee for 
+consideration and approval. 
+ Yes/No Comments 
+1. Does the document/guidance affect one group less or 
+more favourably than another on the basis of: 
+ Age No 
+ · Disability No 
+ · Gender (Sex) No 
+ · Gender Identity No 
+ · Marriage and civil partnership No 
+ · Pregnancy and maternity No 
+ · Race (ethnicity, nationality, colour) No 
+ · Religion or Belief No 
+ · Sexual orientation, including lesbian, gay and bisexual 
+people No 
+2. Is there any evidence that some groups are affected 
+differently and what is/are the evidence source(s)? No 
+3. If you have identified potential discrimination, are there 
+any exceptions valid, legal and/or justifiable? NA 
+4. Is the impact of the document likely to be negative? No 
+5. If so, can the impact be avoided? NA 
+6. What alternative is there to achieving the intent of the 
+document without the impact? NA 
+7. Can we reduce the impact by taking different action 
+and, if not, what, if any, are the reasons why the 
+guideline should continue in its current form? NA 
+8. Has the document been assessed to ensure service 
+users, staff and other stakeholders are treated in line 
+with Human Rights FREDA principles (fairness, respect, 
+equality, dignity and autonomy)? Yes 
+ 
+If you have identified a potential discriminatory impact of this guideline , please refer it to [Insert 
+Name], together with any suggestions as to the action required to avoid/reduce this impact. For 
+advice in respect of answering the above questions, please contact uhsussex.equality@nhs.net 
+01273 664685). 
+
+ CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 35 of 37 Appendix 10: Template Dissemination, Implementation and Access Plan 
+ 
+To be completed and attached to any guideline when submitted to Corporate Governance for 
+consideration and TMB approval. 
+ 
+ Dissemination Plan Comments 
+1. Identify: 
+ Which members of staff or staff groups will be affected 
+by this guideline ? Midwives and obstetricians 
+ How will you confirm that they have received the 
+guideline and understood its implications? Dissemination through the 
+usual Communication 
+channels and highlighted at 
+Safety Huddles. 
+ How have you linked the dissemination of the guideline 
+with induction training, continuous professional 
+development and clinical supervision as appropriate? All new members of staff 
+shown where to access 
+Clinical documents that are 
+relevant to their area of 
+practice. 
+2. How and where will staff access the document (at 
+operational level)? Accessed by staff via 
+Sharepoint 
+ 
+ Yes/No Comments 
+3. Have you made any plans to remove 
+old versions of the guideline or related 
+documents from circulation? Yes Previous version s will be 
+archived. 
+4. Have you ensured staff are aware the 
+document is logged on the 
+organisation’s register? Yes Dissemination plan includes 
+notifying staff via email, safety 
+noticeboards, departmental 
+newsletter and departmental 
+social media page . 
+
+ CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 36 of 37 Appendix 11: Additional guidance and information 
+ 
+BAPM 2017 Identification and Management of Hypoglycaemia in the full term infant. For information 
+leaflet go to Appendix 1 
+CG21010 Care of Late Peterm Newborn V1.1 
+ 
+HSIP (2020) National Learning Report. Neonatal Collapse alongside skin to skin contact 
+ 
+Jones,T ( 2020) Management of Thermal stability IN Boxwell,G, Petty J and 
+ 
+Kaiser,L  Neonatal Intensive Care Nursing chapter 11 pp 248 -267. Oxon,Routledge 
+ 
+NHS Improvement (2017) Reducing harm leading to avoidable admissions of full -term babies into 
+neonatal units. 
+ 
+NICE 2016 CG98 Jaundice in newborn babies under28 days 
+ 
+NICE 2021 NG194 Postnatal Care 
+ 
+NICE 2021 Neonatal Infection: Antibiotics for Prevention and Treatment 
+ 
+NICE 2022 CG190 Intrapartum Care for healthy women and babies 
+ 
+PHE 2016 Newborn Pulse Oximetry Feeding Pilot End Project Report 
+ 
+https://www.unicef.org.uk/babyfriendly/baby -friendly -resources/implementing -standards -
+resources/skin -to-skin-contact/ 
+ 
+Unicef UK Baby Friendly Initiative: Sample Infant feeding policy (maternity) 
+ 
+https://www.unicef.org.uk/ 
+ 
+www.babyfriendly/baby -friendly -resources/implementing -standards -resources/sample -infant -
+feeding -policies/ 
+ 
+TMBU 2021 Management of Newborns at Risk of Early and Late Onset Sepsis 
+Management of Newborns at Risk of Early and Late Onset Sepsis 
+
+TMBU 2022 Management of Hypoglycemia and Hyperglycemia 
+Hypoglycemia and Hyperglycemia 
+ 
+TMBU 2022 Care of newborns Exposed to Unprescribed Medications and Substance Misuse 
+Management of Neonatal Abstinence and Abnormal Postnatal Adaptation Syndrome 
+ CLINICAL GUIDELINE 
+Due for review: November 2027 
+Name of Guideline : Care of the Newborn v3.0 
+For use at : PRH, RSCH 
+
+Page 37 of 37 TMBU 2022 Exposure to prescribed medication During Pregnancy Exposure to Prescribed 
+Medication During Pregnancy 
+ 
+Newborn blood spot sampling guidelines: quick reference guide - GOV.UK (www.gov.uk)

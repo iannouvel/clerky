@@ -1,0 +1,3489 @@
+# Extracted from: RCOG - 2025 - GTG 76 -Management of Thyroid Disorders in Pregnancy.pdf
+# Guideline ID: rcog-2025-gtg-76-management-of-thyroid-disorders-in-pregnancy
+# Content length: 186331 characters
+# Processing date: 1746336520.3947272
+
+BJOG: An International Journal of Obstetrics & Gynaecology, 2025; 0:1–32
+https://doi.org/10.1111/1471-0528.180881 of 32
+BJOG: An International Journal of Obstetrics & Gynaecology
+RCOG GUIDELINE
+Management of Thyroid Disorders in Pregnancy
+Green- top Guideline No. 76
+Shiao-Yng Chan | Michael S. Marsh | Jackie Gilbert | Kristien Boelaert | Carol Evans | Rima Dhillon-Smith | 
+on behalf of the Royal College of Obstetricians and Gynaecologists
+Correspondence: Royal College of Obstetricians and Gynaecologists, 10–18 Union Street, London SE1 1SZ. | Email: clinicaleffectiveness@rcog.org.uk
+Funding: All those involved in the development of the Green- top Guidelines, including the Guidelines Committee, Guidelines Committee co- chairs, 
+guideline developers, peer reviewers and other reviewers, are unpaid volunteers and receive no direct funding for their work in producing the guideline. The 
+exception to this are the RCOG staff involved who are salaried employees of the College and Guidelines Committee members who receive reimbursement for 
+expenses for attending Guidelines Committee meetings. Please see more information on travel expense rules on the RCOG website.
+This is the first edition of this guideline. KEY RECOMMENDATIONS
+• To diagnose thyroid dysfunction during pregnancy, trimester- and manufacturer- specific pregnancy reference ranges for 
+serum thyroid stimulating hormone (TSH) and free thyroxine (fT4) are recommended for correct interpretation of thyroid 
+function tests. [Grade B]
+• To achieve the recommended daily iodine intake of 200–250μg when planning pregnancy, and during pregnancy and 
+breastfeeding, consideration should be given to increasing dietary intake of iodine- rich foods or consuming daily oral sup -
+plementation of 150μg iodine in the form of potassium iodide, as present in common prenatal supplements. [Grade C]
+• Subpopulations with specific risk factors who are known to have a higher prevalence of overt thyroid disorders should be 
+tested for thyroid dysfunction as soon as possible in pregnancy, preferably in the first trimester. [Grade D]
+• Pre- pregnancy, in women with overt hypothyroidism and severe subclinical hypothyroidism (SCH) (TSH >10 mU/L, accom -
+panied by normal fT4), titration of levothyroxine to achieve a preconception TSH ≤ 2.5 mU/L is recommended. [Grade B]
+• Women should be counselled to self- initiate an empirical increase in their dose of levothyroxine as soon as they have a 
+positive pregnancy test by doubling the dose of levothyroxine on 2 days of each week. [Grade A]
+• For pregnant women treated with levothyroxine for hypothyroidism, TSH and fT4 concentrations should be checked every 
+4–6 weeks until 20 weeks of gestation then once again at 28 weeks of gestation. [Grade A]
+• Aim to keep the TSH below 2.5 mU/L while keeping the fT4 within the normal trimester- and manufacturer- specific preg -
+nancy reference range. [Grade C]
+• Pre- pregnancy, in women with SCH (TSH between the upper limit of the non- pregnant range and 10 mU/L, accompanied 
+by normal fT4), particularly those already known to be thyroid peroxidase antibody (TPOAb) positive, treatment with lev -
+othyroxine should be considered preconception, with titration to achieve a preconception TSH ≤ 2.5 mU/L. [Grade C]
+• During pregnancy, in women with SCH (TSH between the upper limit of the trimester- and manufacturer- specific preg -
+nancy reference range and 10 mU/L, accompanied by normal fT4), levothyroxine should be considered, especially if newly 
+diagnosed in the first trimester of pregnancy. [Grade C]
+• Routine testing for TPOAb in women with euthyroidism is not recommended in pregnancy. [Grade B]
+• Levothyroxine treatment is not recommended for women with TPOAb in the absence of thyroid dysfunction during preg -
+nancy. [Grade A]
+© 2025 Royal College of Obstetricians and Gynaecologists.
+2 of 32 BJOG: An International Journal of Obstetrics & Gynaecology, 20251 | Purpose and Scope
+Thyroid disease is a common endocrine disorder in women 
+of childbearing age. There is variation in clinical practice and 
+ approach to thyroid diseases globally, in part influenced by 
+differences in population iodine status. There remains contro -
+versy regarding testing for and management of thyroid disor -
+ders before conception, during pregnancy and postpartum. This 
+guideline presents the available evidence for best practice and, 
+where evidence is lacking, consensus opinion by a multidisci -
+plinary, cross- specialty team of authors is presented.
+Preconception testing for thyroid dysfunction in the subfertile 
+and recurrent miscarriage populations is not within the scope 
+of this guideline and is addressed in a separate RCOG Scientific 
+Impact Paper [ 1].
+This guideline is for healthcare professionals who care for 
+women, non- binary and trans people with thyroid disorders in 
+pregnancy.
+Within this document we use the terms woman and women's 
+health. However, it is important to acknowledge that it is not 
+only women for whom it is necessary to access women's health 
+and reproductive services in order to maintain their gynaeco -
+logical health and reproductive wellbeing. Gynaecological and 
+obstetric services and delivery of care must therefore be appro -
+priate, inclusive and sensitive to the needs of those individuals 
+whose gender identity does not align with the sex they were 
+ assigned at birth.
+2 | Introduction and Background Epidemiology
+Dynamic changes occur in thyroid function through the course 
+of pregnancy, to provide adequate concentrations of thyroid hormone to the woman and fetus [ 2–4]. Overall, demands on 
+maternal thyroid hormone production increase by approxi -
+mately 50% during pregnancy; this requires both an adequate 
+supply of iodine for the biosynthesis of thyroid hormones and 
+the absence of significant thyroid disease.
+Increased oestrogen in pregnancy raises thyroxine- binding 
+globulin concentrations, starting very early in pregnancy, and 
+plateauing by approximately 18–20 weeks of gestation. To main -
+tain adequate free thyroid hormone concentrations, thyroxine 
+(T4) and tri- iodothyronine (T3) production by the thyroid gland 
+increases during the first half of pregnancy, a new steady- state 
+is reached by mid- gestation and the synthesis of thyroid hor -
+mones returns to pre- pregnancy rates. First trimester increases 
+in human chorionic gonadotrophin (hCG), which has weak 
+thyroid- stimulating activity, transiently increases free thyrox -
+ine (fT4) and free tri- iodothyronine (fT3) and decrease thyroid 
+stimulating hormone (TSH) [ 5]. From mid- gestation, as hCG 
+declines, serum fT4 and fT3 concentrations decline gradually, 
+while serum TSH concentrations rise slightly.
+Iodine requirement increases considerably during pregnancy as 
+there is increased consumption of iodine for thyroid hormone 
+synthesis and increased renal iodine clearance [ 6]. The placenta 
+may also be an organ of storage for iodine [ 7]. The fetal thyroid 
+begins to take up iodine from 10 to 12 weeks of gestation and 
+begins to produce and release appreciable amounts of thyroid 
+hormone from 18 to 22 weeks of gestation. Breast milk produc -
+tion from the second half of gestation adds further to maternal 
+iodine demand [ 8].
+Maternal thyroid hormones are essential for the maintenance 
+of pregnancy and may influence placental development [ 9]. 
+Transplacental passage of maternal T4 is essential for normal 
+fetal development, especially neurodevelopment during the first 
+half of gestation [ 10–12 ]. The fetus is completely dependent upon • If a woman is already known to be positive for TPOAb but euthyroid, they should be offered thyroid function test measure -
+ments in the first trimester (preferably at first contact with a healthcare professional, including primary care booking) and 
+at 20 weeks of pregnancy to detect development of hypothyroidism. [Grade C]
+• For hyperthyroidism requiring treatment with antithyroid drugs while trying to conceive, use propylthiouracil (PTU) in 
+preference to carbimazole (CMZ), at the lowest effective dose to maintain fT4 concentrations in the upper half of the refer -
+ence range. [Grade B]
+• When pregnant, where a woman with a history of hyperthyroidism has been euthyroid for 6 months or more on a low dose 
+of an antithyroid drug, consider discontinuing antithyroid drugs with close thyroid function monitoring. [Grade D]
+• If antithyroid drug treatment is required, PTU is the recommended drug during early pregnancy. If a woman conceives on 
+CMZ a switch to PTU should be made as soon as possible before 10 weeks' gestation. [Grade D]
+• During the first half of pregnancy, women on antithyroid drugs should have thyroid function monitored every 2–4 weeks 
+with measurement of serum TSH and fT4. After 20 weeks of pregnancy, 4–8 weekly testing may be appropriate. [Grade D]
+• Titration of antithyroid drugs should target fT4 concentrations in the upper half of the trimester- and manufacturer- specific 
+pregnancy reference range. [Grade D]
+• With the new finding of a suppressed serum TSH accompanied by an increased fT4 concentration in pregnancy, Graves' dis -
+ease should be distinguished from gestational transient thyrotoxicosis using a range of clinical features, and measurements 
+of TSH- receptor antibodies (TRAb) and free tri- iodothyronine (fT3). [Grade C]
+• Gestational transient thyrotoxicosis requires symptomatic and supportive management only. [Grade C]
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18088 by Test, Wiley Online Library on [30/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+3 of 32maternal T4 prior to commencing production of its own thyroid 
+hormone but remains reliant on maternal supply of iodine [ 2] 
+and continues to receive maternal T4 until birth [ 13].
+Worldwide, iodine deficiency is the leading cause of preventable 
+neurodevelopmental defects [ 14]. Among populations of severe 
+iodine deficiency (defined by a median urinary iodine concen -
+tration in a population of below 20μg/L) there is increased risks 
+of endemic goitre, hypothyroidism, neurological and develop -
+mental impairment, subfertility, miscarriage, infant mortality, 
+trophoblastic or embryonic/fetal disorders, profound intellec -
+tual impairment, deaf- mutism and motor rigidity in children, 
+and childhood and adult learning difficulties [ 15]. In these areas 
+of severe iodine deficiency, thyroid nodules have been reported 
+in up to 30% of pregnant women [ 16]. In regions of mild to mod -
+erate iodine deficiency, pregnant women are also at increased 
+risk for the development of goitre [ 17] and thyroid disorders 
+[18], with one observational study reporting an association with 
+small- for- gestational- age (SGA) fetuses and preterm birth [ 19]; 
+others showed no association with any adverse obstetric out -
+come [ 20]. However, associations between lower maternal uri -
+nary iodine concentrations and altered executive function [ 21], 
+attention deficit and hyperactivity disorders in children [ 22] and 
+impaired cognitive outcomes [ 21, 23, 24 ] have been reported. 
+Meanwhile, in areas with adequate dietary iodine intake, vari -
+ations in maternal urinary iodine concentrations have been 
+shown to have limited influence on neonatal and infant devel -
+opmental outcomes.
+In iodine- replete and mildly iodine deficient populations, 
+ autoimmunity is the commonest aetiology for thyroid disorders 
+(Table  1). Untreated and inadequately- treated overt hypothy-
+roidism (OH) is associated with an increased risk of spontaneous 
+miscarriage, perinatal death, pre- eclampsia, pregnancy- induced 
+hypertension, preterm birth, low birth weight and postpartum 
+haemorrhage [ 25–27 ]. Untreated overt hyperthyroidism, com -
+monly due to Graves' disease, is also associated with increased risks, in particular pre- eclampsia, preterm birth, fetal growth 
+restriction and maternal heart failure [ 28–30 ].
+Gestational transient thyrotoxicosis is common, affecting 
+1%–5% of pregnancies in Europe [ 28], and is usually benign and 
+self- limiting. Hyperthyroidism in pregnancy is rarer and usually 
+caused by Graves' disease; prevalence in pregnancy: 0.5%–1.3% 
+pre- existing Graves', 0.05% new onset Graves', 0.1% toxic nod -
+ular disease [ 4, 29 ]. Autoimmune Graves' disease is mediated 
+by the presence of stimulating TSH- receptor antibodies (TRAb), 
+and commonly improves with advancing gestation. Gestational 
+transient thyrotoxicosis usually does not require treatment, 
+whereas hyperthyroidism (caused by Graves' or toxic nodular 
+disease) does. Subclinical hyperthyroidism is defined as below 
+normal serum TSH concentrations with normal concentrations 
+of circulating thyroid hormones. Current evidence indicates that 
+it is not associated with adverse fetal or pregnancy outcomes and 
+therefore, does not require treatment (see Appendix F ) [31, 32 ].
+Thyroid autoimmunity is the presence of circulating antithy -
+roid autoantibodies that are targeted against the thyroid, with 
+or without thyroid dysfunction. Thyroid peroxidase antibod -
+ies (TPOAb) are the most common antithyroid autoantibodies. 
+The prevalence of thyroid autoantibodies varies between 5% 
+and 31% across studies and populations [ 33]. In a large cohort 
+of 19 556 women with a history of miscarriage or subfertil -
+ity, thyroid autoantibodies were present in approximately 10% 
+[34]. Euthyroidism with thyroid autoimmunity has been asso -
+ciated with increased risk of miscarriage, preterm birth and 
+postpartum thyroiditis (PPT) [ 33, 35 ]. When looking at thyroid 
+autoimmunity in conjunction with thyroid dysfunction, there 
+may additionally be an association with increased risks of pre- 
+eclampsia and gestational diabetes [ 36–38 ].
+The incidence of clinically apparent nodules or goitre presenting 
+in pregnancy in iodine- replete and mildly iodine- deficient areas 
+is low [ 39]. Ultrasound- detected nodules are more common with TABLE 1 | Common thyroid function disorders in pregnancy.
+ConditionDefinition by thyroid function testing
+Reported prevalence in pregnanciesaTSH concentration fT4 concentration
+Overt hypothyroidism (OH) Increased Decreased 0.2%–1% (including undiagnosed, 
+partially- treated and adequately- 
+treated hypothyroidism)
+Subclinical hypothyroidism (SCH) Increased Normal 2.2%–10%
+Isolated hypothyroxinaemia (IH) Normal Decreased 1.3%–8%
+Gestational transient thyrotoxicosis 
+and other types of thyrotoxicosisbSuppressed Increased 1%–5%
+Overt hyperthyroidismb (Graves' 
+disease and toxic nodular 
+hyperthyroidism)Suppressed Increased 0.05%–1.3%
+Subclinical hyperthyroidism Decreased Normal 1.5%–2.0%
+Abbreviations: fT4, free thyroxine; TSH, thyroid stimulating hormone.
+aUsing trimester- specific pregnancy reference ranges in iodine replete and mild–moderately iodine deficient populations. Excludes populations with severe iodine 
+deficiency.
+bHyperthyroidism is the increased production and secretion of thyroid hormones whereas thyrotoxicosis refers to the clinical symptoms and signs of excess circulating 
+thyroid hormones, which may not be due to excess thyroid hormone production or hyperthyroidism. Hence, hyperthyroidism comprises a subset of thyrotoxic cases.
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18088 by Test, Wiley Online Library on [30/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+4 of 32 BJOG: An International Journal of Obstetrics & Gynaecology, 2025increasing parity and age [ 40, 41 ]. When a new thyroid nodule 
+or goitre is diagnosed in pregnancy, local symptoms such as 
+tracheal compression should be assessed, and malignancy and 
+ hyperthyroidism excluded.
+There is controversy concerning the need and cost- effectiveness 
+of routinely testing for thyroid disease (Table  1) and for thyroid 
+autoimmunity in the first trimester of pregnancy or in women 
+who are planning for pregnancy. Whether levothyroxine treat -
+ment improves pregnancy and offspring outcomes in subclinical 
+hypothyroidism (SCH) and isolated hypothyroxinaemia (IH) 
+ remains debatable. Controversies in the care of these conditions 
+for the general obstetric population will be discussed in this 
+guideline. Uncertainties in the management of thyroid function 
+abnormalities in the care of subfertility and recurrent miscar -
+riage is addressed specifically in a separate RCOG Scientific 
+Impact Paper [ 1].
+Both inadequate and excessive treatment of thyroid disorders, 
+the choice of treatment, as well as delayed commencement and 
+adjustment of treatment, can also result in detrimental effects 
+on the pregnancy and fetus. Therefore, care should be opti -
+mised prior to conception, during pregnancy and after birth, 
+and should be provided by clinicians with appropriate expe -
+rience (see Appendix  C for suggested designated roles and 
+responsibilities of healthcare professionals, and care path -
+ways). There should be a clear designated primary clinician 
+and this will depend upon local expertise. This is important 
+to ensure continuity of care over the course of pregnancy, 
+ minimise confusion with regards to treatment adjustments 
+and to improve overall experience. Where possible, women 
+and people with thyroid disorders should be seen in joint 
+multidisciplinary clinics, both when planning pregnancy and 
+during pregnancy, comprising clinicians with obstetric and 
+endocrine expertise.
+3 | Identification and Assessment of Evidence
+This guideline was developed using standard methodol -
+ogy for developing RCOG Green- top Guidelines (GTGs) [ 42]. 
+The Cochrane Library (including the Cochrane Database of 
+Systematic Reviews, the Database of Abstracts of Reviews of 
+Effects [DARE] and the Cochrane Central Register of Controlled 
+Trials [CENTRAL]), EMBASE, MEDLINE and Trip were 
+searched for relevant papers. The search was inclusive of all 
+relevant articles published until July 2023. The databases were 
+searched using the relevant Medical Subject Headings (MeSH) 
+terms, including all subheadings and synonyms, and this was 
+combined with a keyword search. Search terms included ‘*thy -
+roid diseases’, ‘*euthyroid sick syndromes’, ‘*goitre’, ‘*hyperthy -
+roidism’, ‘*hyperthyroxinemia’, ‘*thyroid dysgenesis’, ‘*thyroid 
+nodule' and ‘*thyroiditis'. The search was limited to studies on 
+humans and papers in the English language. Relevant guidelines 
+were also searched for using the same criteria in the National 
+Guideline Clearinghouse and the National Institute for Health 
+and Care Excellence (NICE) Evidence Search.
+Where possible, recommendations are based on available 
+ evidence. Areas lacking evidence are highlighted and graded 
+accordingly. Further information about the assessment of evidence and the grading of recommendations may be found in 
+Appendix  A.
+4 | Thyroid Function Tests in Pregnancy
+4.1 | What Are the Reference Ranges for Thyroid 
+Function Tests in Each Trimester?
+RecommendationEvidence 
+quality StrengthRationale for 
+recommendation
+To diagnose thyroid 
+dysfunction during 
+pregnancy, trimester- 
+and manufacturer- 
+specific pregnancy 
+reference ranges for 
+serum TSH and fT4 
+are recommended for 
+correct interpretation of 
+thyroid function tests2+ B Thyroid function 
+changes 
+significantly with 
+gestational age. 
+There is significant 
+variation in the 
+manufacturers' 
+assays used to 
+measure TSH 
+and fT4
+Where your laboratory 
+does not provide such 
+pregnancy reference 
+ranges those in 
+Appendix D may be 
+used for guidance. 
+In the absence of 
+appropriate information 
+it is reasonable to set an 
+upper limit for TSH of 
+4.0 mU/L in pregnancy3 C Use of a TSH of 
+4.0 mU/L as the 
+upper limit of the 
+first trimester 
+reference range is 
+a pragmatic choice, 
+and many studies 
+use this threshold 
+in reporting 
+associations with 
+risk of pregnancy 
+complications
+For pregnant women 
+who are on any thyroid- 
+related medication, use 
+of specific treatment 
+targets for TSH and fT4 
+are recommended (see 
+Sections  7–9), instead 
+of using diagnostic 
+pregnancy reference 
+ranges2+ C Use of treatment 
+targets for TSH 
+and fT4 in 
+thyroid disease 
+management are 
+associated with 
+overall improved 
+outcomes
+Treatment targets 
+should not be used as 
+pregnancy reference 
+ranges when thyroid 
+function tests are 
+performed to diagnose 
+thyroid dysfunction2+ B Trimester- related 
+pregnancy 
+reference ranges 
+reflect the normal 
+physiological 
+changes in 
+pregnancy and are 
+more appropriate 
+for diagnosis 
+of new- onset 
+thyroid disease
+Due to pregnancy- induced changes in thyroid function, use of 
+reference ranges derived from non- pregnant individuals are 
+not applicable [ 43] and carry the risk of misdiagnosis [ 44, 45 ]. 
+[Evidence level 2+]
+Furthermore, the physiological changes that occur in normal 
+pregnancy affect measurement of fT4 using immunoassay in a 
+variable way, depending on the manufacturer's method being 
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18088 by Test, Wiley Online Library on [30/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+5 of 32used. To overcome these issues and for correct interpretation of 
+thyroid function tests it is recommended that thyroid dysfunc -
+tion in pregnant women is diagnosed using trimester- and man -
+ufacturer- specific pregnancy reference ranges for serum TSH 
+and fT4 [ 45–47 ]. [Evidence level 2+]
+Ideally these references should be derived on a population with 
+similar iodine status and family origin to the population to 
+which they are being applied, and these should be provided by 
+the laboratory.
+Where such pregnancy reference ranges are not issued by the 
+laboratory alongside thyroid function test results, published 
+thyroid function reference ranges in pregnancy for the particu -
+lar assay manufacturer may be applied (see Appendix  D for the 
+commonly used assays in the UK) [ 46], and the laboratory should 
+also inform clinicians when there are changes in assays used.
+In conditions where hCG may be higher such as multiple preg -
+nancies, TSH concentrations are correspondingly lower [ 48]. 
+[Evidence level 2+]
+5 | Iodine and Supplementation in Pregnancy
+5.1 | What Is the Recommended Total Daily Iodine 
+Intake in Women and People in the UK Who Are 
+Planning Pregnancy, Who Are Pregnant and Who 
+Are Breastfeeding?
+RecommendationEvidence 
+quality StrengthRationale for 
+recommendation
+All pregnant and 
+breastfeeding women 
+should have a total daily 
+intake of approximately 
+200–250μg iodine1+ B To avoid iodine 
+deficiency in 
+pregnant and 
+lactating women 
+and in the fetus/
+newborn
+To achieve the 
+recommended daily 
+iodine intake of 
+200–250μg when 
+planning pregnancy, 
+and during pregnancy 
+and breastfeeding, 
+consideration should 
+be given to increasing 
+dietary intake of 
+iodine- rich foods or 
+consuming daily oral 
+supplementation of 
+150μg iodine in the 
+form of potassium 
+iodide, as present in 
+common prenatal 
+supplements2— C To avoid iodine 
+deficiency at the 
+time of conception, 
+and during 
+pregnancy and 
+breastfeeding
+If deemed appropriate, 
+supplementation should 
+ideally be started 3 
+months in advance of 
+pregnancy or as soon as 
+possible in pregnancy4 GPP Iodine status and 
+thyroid function 
+should be optimal 
+at the point of 
+conception to avoid 
+iodine deficiency 
+in pregnancyRecommendationEvidence 
+quality StrengthRationale for 
+recommendation
+Women should take 
+a single rather than 
+multiple iodine- 
+containing supplements 
+at the same time4 GPP To avoid excess 
+iodine intake
+Sustained iodine intake 
+from diet and dietary 
+supplements exceeding 
+500μg daily should 
+be avoided during 
+pregnancy2+ C Excess iodine intake 
+could potentially 
+lead to development 
+of fetal and maternal 
+thyroid dysfunction
+Individual assessment 
+of iodine status in 
+pregnancy and in 
+women planning 
+pregnancy is not 
+recommended2++ B Single spot or 24- h 
+urinary iodine 
+quantification and 
+thyroid function 
+tests are not valid 
+markers for the 
+iodine nutritional 
+status of individual 
+women
+Iodine requirements vary depending on age and physiological 
+status [ 49], with pregnant and lactating women and people hav -
+ing the highest requirements. [Evidence level 2++]
+There is international consensus about the required total iodine 
+intake being 200–250μg iodine daily. However, different organ -
+isations have made slightly different recommendations on how 
+the increased iodine needs could be met [ 14, 50–52 ]. An import -
+ant distinction needs to be made between total iodine ingested 
+and the dietary supplementation that may be required to achieve 
+the total daily iodine intake.
+Iodine content is low in most naturally occurring foods [ 53] 
+and for most people across the world, the chief source of 
+ dietary iodine is added iodine, either from salt- fortification or 
+from dairy products where iodine is added to animal feed or 
+because of the use of iodine- containing antiseptics. Important 
+sources of iodine in the diet include cow's milk (non- organic 
+milk 50–100μg per 200 mL), yoghurt (50–100μg per 150 g), and 
+eggs (20–26μg per egg), and the iodine content of fish such as 
+cod (~70–190μg per 100 g) and haddock (~325–430μg per 100 g) 
+is high. In general, marine fish (average ~20μg per 100 g) have 
+a higher iodine content than freshwater fish (average ~6.5μg 
+per 100 g) [54]. Given the concern of mercury contamination, 
+pregnant women should not consume more than 2–3 servings 
+of fish a week. Individuals who have a low intake of foods with 
+higher iodine content (e.g., dairy products, fish and iodised 
+salt) could be considered at risk of having low iodine intake, 
+and iodine supplementation should be recommended. In par -
+ticular, women with a predominantly plant- based diet are at 
+risk of iodine insufficiency [ 55]. Food factsheets for women in 
+the UK are available [ 56]. However, excessive intake of highly 
+iodine- rich foods should be avoided.
+Median urinary iodine concentrations are markers of population 
+iodine status. Urinary iodine testing is not beneficial for individ -
+ual assessment since there is substantial diurnal and day- to- day 
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18088 by Test, Wiley Online Library on [30/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+6 of 32 BJOG: An International Journal of Obstetrics & Gynaecology, 2025variation in urinary iodine excretion and, therefore, urinary 
+ iodine concentrations cannot be used to identify particular indi -
+viduals with iodine deficiency [ 57, 58 ]. [Evidence level 2++]
+Surveys of urinary iodine in some geographical areas around the 
+world continue to reveal significant numbers of young women 
+with suboptimal iodine nutrition, particularly during pregnancy 
+and lactation, even in areas where iodisation of salt has been 
+implemented [ 59–61 ]. [Evidence level 2+]
+There is controversy about whether women and people of 
+ reproductive years in the UK are deficient in iodine. A previ -
+ous nationwide UK study of 14–15- year- old girls in 2009 found 
+mild iodine deficiency [ 62] but the National Diet and Nutrition 
+Survey [ 63] found, on average, adequate iodine status in women 
+of childbearing age (16–49 years of age) and children (4–18 years 
+of age) by 2016. A more recent study [ 64] of urinary iodine 
+concentrations in pregnancy in three UK cities demonstrated 
+ iodine concentrations were insufficient in the second and third 
+trimesters of pregnancy. In the UK, there is an absence of con -
+clusive evidence to date regarding sufficiency of iodine intake 
+by women in the reproductive years and there is evidence that 
+at least 50% of women are iodine deficient in the first trimester 
+of pregnancy. In addition, studies have shown that knowledge of 
+iodine requirements and sources is very poor among pregnant 
+women and people in the UK [ 64].
+The timing of supplementation is likely to be important. If 
+ iodine supplementation is commenced pre- pregnancy in iodine- 
+deficient populations, improved maternal thyroid function can 
+be observed, depending on dose and the timing of initiation; 
+beneficial effects of iodine on fetal development are likely to be 
+greater with commencement of supplementation at an earlier 
+gestation [ 65]. [Evidence level 3]
+While there is strong evidence that correction of severe iodine 
+deficiency at a population level will reduce intellectual impair -
+ment in children [ 66, 67 ], studies investigating the benefits of 
+individual iodine supplementation in pregnancy in populations 
+of mild–moderate iodine- deficiency have shown inconsistent 
+ results [ 68–74 ].
+A 2017 Cochrane meta- analysis included over 2700 women, 
+mostly from populations of mild to moderate iodine deficiency 
+[75]. Iodine supplementation decreased the likelihood of post -
+partum hyperthyroidism and increased the likelihood of gas -
+trointestinal symptoms in pregnancy. There were no clear 
+differences between groups for prevalence of hyperthyroidism 
+in pregnancy, hypothyroidism or maternal TPOAb positivity in 
+pregnancy or postpartum, or preterm birth. Iodine supplemen -
+tation was associated with a non- significant trend of a lower 
+perinatal mortality, with all of the observed perinatal deaths 
+occurring in one trial conducted in a severely iodine deficient 
+setting. There were no clear differences in neonatal outcomes. 
+[Evidence level 2–]
+A study of daily iodine supplementation commencing in the 
+early second trimester in pregnant women from a mild to 
+moderately iodine deficient population demonstrated small 
+negative effects on maternal T4 concentrations, but no effects 
+on child development [ 76]. [Evidence level 1–] The median urinary iodine concentration in the placebo group in this study 
+remained within the recommended range in the second and 
+third trimesters, which may have been caused by a physiologi -
+cal increase in renal iodine clearance, or the recruited women 
+may have had adequate iodine exposure before pregnancy, 
+or because women enrolled in the study were told about the 
+importance of iodine in pregnancy and may have increased 
+their iodine intake [ 77].
+There were insufficient data to reach any meaningful conclu -
+sions on the benefits and harms of routine iodine supplementa -
+tion before, during or after pregnancy. Because of study design 
+limitations and wide confidence intervals, and due to the small 
+number of trials included, these findings must be interpreted 
+with caution. Almost all the evidence came from settings with 
+mild to moderate iodine deficiency and, therefore, may not be 
+applicable to settings with severe deficiency, but may be applica -
+ble to the UK population. Modelling has suggested that univer -
+sal iodine supplementation in pregnancy could be cost- effective 
+[8, 78 ], but this is not yet practised in the UK.
+Excess iodine exposure in pregnancy at sustained levels exceed -
+ing 500μg daily can cause serious adverse health effects for both 
+the women and fetus, and should be avoided. This may occur 
+through ingestion of supplements, water or foods with high 
+ iodine content, or because of medical treatments or procedures. 
+Acute iodine poisoning may cause gastrointestinal or cardio -
+vascular symptoms and coma [ 79], and tends to occur in iodine 
+replete areas. It is unlikely that oral iodine supplementation in 
+doses present in common prenatal supplements taken during 
+pregnancy and breastfeeding by UK woman will lead to iodine 
+levels that will cause such adverse health effects in women and 
+their babies. [Evidence level 3]
+Women with diagnosed and treated overt thyroid disorders 
+may safely consume common prenatal supplements containing 
+ iodine (approximately 150μg daily). [Evidence level 4]
+6 | Testing for Thyroid Disease During Pregnancy
+6.1 | Should all Pregnant Women Be Tested 
+for Thyroid Dysfunction at Pregnancy Booking?
+RecommendationEvidence 
+quality StrengthRationale for 
+recommendation
+Universal testing for 
+thyroid dysfunction 
+during pregnancy is 
+not recommended2+ C Current available 
+evidence shows no 
+improvement in 
+overall population 
+pregnancy outcomes 
+with universal testing
+Proponents of universal testing have argued that a case for test -
+ing to diagnose OH can be made since it is a prevalent condition 
+(0.2%–1% of pregnancies) [ 80–89 ] that has serious consequences 
+if untreated (adverse pregnancy and neurodevelopmental 
+ effects), it can be asymptomatic in approximately 70% [ 90], it is 
+safely detectable by a thyroid function test, and can be treated 
+with levothyroxine to avert adverse consequences. However, 
+the overall cost- effectiveness remains debatable. If a universal 
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18088 by Test, Wiley Online Library on [30/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+7 of 32approach for thyroid function testing is adopted, OH will only 
+constitute a small proportion of abnormal results with the vast 
+majority falling into the gestational transient thyrotoxicosis, 
+SCH and IH groups, where the benefit of treatment is not yet 
+proven.
+The Controlled Antenatal Thyroid Screening (CATS) study 
+in the UK and Italy was a prospective randomised controlled 
+trial (RCT) investigating the benefit of pregnant population 
+screening ( n = 21 846) for an increased TSH concentration (SCH 
+or OH) or a low fT4 concentration (IH) for improving neuro -
+cognitive outcomes of children [ 91]. In total 5% screened posi -
+tive, of which 390 were in the intervention group who initiated 
+levothyroxine 150μg per day at a mean of 13+3 weeks of gesta -
+tion, and 404 were in the control untreated group. This study 
+demonstrated no difference between groups in child cognitive 
+function at 3 years of age.
+Another study in the US screened 97 228 pregnant women 
+ between 8 and 20 weeks of gestation and found 6.8% of results 
+abnormal, consisting of 0.5% with OH, 0.3% overt hyperthy -
+roidism, 3% SCH and 3% IH. Women with SCH ( n = 677) and 
+IH ( n = 526) were randomised in a placebo- controlled trial 
+which showed no significant effect of levothyroxine ther -
+apy, when commenced at a median gestation of 17 weeks 
+(beyond the first trimester when maternal thyroid hormones are 
+believed to have the greatest effect), on child cognitive func -
+tion and other indexes of neurodevelopment up to 5 years of 
+age, as well as on adverse pregnancy and neonatal outcomes 
+[92]. [Evidence level 1–]
+6.2 | Should Thyroid Function Testing Be Carried 
+out in a Targeted Population of Pregnant Women 
+Who Are at Risk of Thyroid Dysfunction?
+RecommendationEvidence 
+quality StrengthRationale for 
+recommendation
+Subpopulations 
+with specific risk 
+factors who are 
+known to have a 
+higher prevalence 
+of overt thyroid 
+disorders should be 
+tested for thyroid 
+dysfunction as 
+soon as possible 
+in pregnancy 
+(preferably in the 
+first trimester)2— D A risk- based approach to 
+thyroid function testing 
+during pregnancy 
+remains controversial as 
+there is a lack of global 
+consensus on the factors 
+that should trigger 
+such testing. However, 
+there are some well- 
+established risk factors, 
+and early identification 
+and treatment of overt 
+thyroid disorders 
+improves pregnancy 
+outcomes, therefore a 
+risk- based approach 
+is justified
+Risk- based testing 
+in pregnancy 
+should be for 
+TSH and fT4 
+simultaneously4 GPP This avoids any 
+additional delays in 
+making a diagnosis 
+and facilitates starting 
+treatment in the first 
+trimester where possibleSince untreated overt thyroid dysfunction is associated with 
+poorer pregnancy and child outcomes, it is reasonable to con -
+sider targeted testing strategies based on existing observational 
+data until new information comes to light. However, test -
+ing is more likely to uncover subclinical thyroid conditions. 
+Subclinical thyroid dysfunction in obstetric populations is typi -
+cally not the dominant factor dictating obstetric and childhood 
+outcomes, but could add significantly to the risk imposed by 
+co- morbidities. Therefore, treatment efficacy and cost effective -
+ness is likely not equivalent in women of low and high obstetric 
+risk, although no such comparative study has been conducted.
+Targeted testing as soon as possible in pregnancy, preferably at 
+first contact with a healthcare professional by the middle of the 
+first trimester, should be offered to women at an increased risk 
+of thyroid dysfunction. Consideration for testing should be given 
+to three broad groups of women (Table 2 ).
+6.2.1 | Women With a Personal History of a Thyroid 
+Disorder or at Risk of Progressive Thyroid Dysfunction 
+in Pregnancy
+These include those with a history of any thyroid disorder or thy -
+roid insult, women on thyroid disruptive medication or with typ -
+ical discriminatory signs and symptoms of a thyroid disorder. It 
+has been shown that at 8 years post head or neck irradiation, 67% 
+of women developed hypothyroidism [ 93]. After post- partum 
+thyroiditis, 10% remain permanently hypothyroid while approxi -
+mately 20%–30% become hypothyroid in 3–5 years and 50%–60% 
+by 8–10 years post- birth [ 94–98 ]. One later study even reported 
+a rate of permanent hypothyroidism as high as 54% at the end 
+of the first postpartum year. Study differences are likely due to 
+differences in population iodine status and participant charac -
+teristics, and study methodology. [Evidence level 2++]
+In cases of thyroid autoimmunity and previous thyroid dam -
+age, in addition to the established risk of progression when not 
+pregnant, the risk of development of hypothyroidism further 
+ increases in pregnancy [ 99, 100 ].
+6.2.2 | Women With Autoimmune Conditions Who Are 
+at Risk of Hypothyroidism and Obstetric Complications
+Autoimmune disorders in general are associated with a higher 
+prevalence of hypothyroidism and hyperthyroidism. It is espe -
+cially important to diagnose overt thyroid diseases in women 
+known to have an autoimmune disorder that already puts 
+them at a higher risk of pregnancy complications. The inci -
+dence of newly diagnosed OH in pregnancy in type 1 diabetes 
+and systemic lupus erythematosus (SLE) have been reported to 
+be 16% [ 101] and 11% [ 102], respectively. Importantly, preterm 
+birth occurred in 18% of women with euthyroidism with SLE 
+compared with 65% if the woman had SLE with thyroid dys -
+function detected at any time in pregnancy or postpartum 
+[102], suggesting a synergistic effect of thyroid dysfunction 
+and SLE on pregnancy risk. Also the risk of congenital heart 
+block in cases of maternal positivity for anti- Ro or anti- La was 
+also higher if the woman had concurrent thyroid dysfunction 
+[103]. [Evidence level 3]
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18088 by Test, Wiley Online Library on [30/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+8 of 32 BJOG: An International Journal of Obstetrics & Gynaecology, 20256.2.3 | Women With a History of Late Miscarriage 
+or Stillbirth
+Observational studies have linked overt and subclinical thy -
+roid dysfunction with late pregnancy loss [ 104, 105 ]. [Evidence 
+level 2–]
+In line with RCOG Green- top Guideline No. 55 Late Intrauterine 
+Fetal Death and Stillbirth [ 106], which recommends thyroid 
+function testing as part of the immediate post- partum investiga -
+tion for stillbirth, thyroid function testing should be considered 
+in women with a previous history of stillbirth or second trimes -
+ter miscarriage if they had not previously had a normal thyroid 
+function test documented post- adverse event.
+7 | Hypothyroidism
+Retrospective observational studies of presumed treated OH 
+have shown no difference in pregnancy outcome compared with 
+women without OH. However, the adequacy of OH treatment 
+or the absence of hypothyroidism in the control group was not 
+specifically ascertained [ 107]. Treatment needs to be adequate, 
+and ideally optimised pre- conception, with appropriate advice 
+given before pregnancy on instituting an empirical dose increase 
+upon conception to prevent hypothyroidism in early pregnancy. 
+Adverse pregnancy outcomes including premature birth, low 
+birth weight, pregnancy loss, and impaired neurological develop -
+ment in babies are more common and severe in OH than in SCH. 
+A retrospective study of more than 1000 pregnant women on 
+levothyroxine replacement therapy, demonstrated that the risk 
+of pregnancy loss increased proportionally to the degree of TSH 
+elevation above 4.5 mU/L in the first trimester [ 108]. Similarly, the incidence of neurodevelopmental defects and lowering of 
+children's IQ at 7–9 years of age demonstrated a graded response 
+with higher maternal TSH concentrations during pregnancy 
+ associated with higher risk to children [ 109]. [Evidence level 2+]
+The goal of levothyroxine treatment is to normalise and main -
+tain maternal serum TSH values within the trimester- specific 
+pregnancy reference range, and to mimic physiological changes 
+and prospectively prevent abnormalities in thyroid function. 
+Hence, dose titration using the lower half of the TSH reference 
+range as a guide is commonly adopted during pregnancy (i.e., 
+0.1–2.5 mU/L) [ 110]. [Evidence level 2–]
+In pregnancy, SCH may be defined as an increased TSH above 
+the upper limit of the trimester- specific pregnancy reference 
+range, with severe SCH defined as cases with TSH greater 
+than 10 mU/L, accompanied by normal concentrations of thy -
+roid hormones. The annual rate of progression of SCH to OH in 
+the non- pregnant population ranges from 2% to 6% [ 111]. Risk 
+factors for progression include increased TPOAb and an initial 
+TSH above 10 mU/L [ 112]. In pregnant women who are TPOAb 
+positive, post- hemithyroidectomy, or treated with radioactive 
+iodine, progression to OH is more likely due to the inability of 
+the thyroid to augment production when needed during preg -
+nancy. [Evidence level 2+]
+Observational studies have linked SCH with adverse preg -
+nancy outcomes. Meta- analyses of individual participant data 
+(n = 47 045, 19 cohorts) showed that SCH was associated with 
+a higher risk of pre- eclampsia (odds ratio [OR] 1.53; 95% confi -
+dence interval [CI] 1.09–2.15) [ 113], preterm birth (OR 1.29; CI 
+1.01–1.64) [ 114], and SGA at birth (OR 1.24; CI 1.04–1.48) [ 115]. 
+[Evidence level 2+]TABLE 2 | Conditions and risk factors that should trigger thyroid function testing in early pregnancy.
+Personal history of a thyroid condition or 
+previous insultAutoimmune conditions 
+associated with obstetric 
+complication Previous late pregnancy loss
+Surgical/structural
+• Previous thyroid surgery
+• Goitre
+• Thyroid nodule
+Autoimmune/infection
+• Previous overt or subclinical thyroid 
+dysfunction
+• Previous thyroiditis (autoimmune or infectious 
+or postpartum)
+• Known TPOAb positivity
+Medical
+• Previous radioiodine ablation
+• Recent/current thyroid disruptive medication 
+(e.g., amiodarone, lithium)
+• Previous head/neck irradiation
+Discriminatory signs and symptoms
+• Cardiac dysrhythmia
+• Significant preconception weight loss
+• Enlarging thyroid gland• Type 1 diabetes mellitus
+• Systemic Lupus Erythematosus
+• Anti- Ro/Anti- La positivity
+• Anti- phospholipid syndrome• Stillbirth
+• Second trimester miscarriage
+
+*testing recommended if not 
+previously tested at the time of 
+pregnancy loss or post- adverse event
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18088 by Test, Wiley Online Library on [30/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+9 of 32Other meta- analyses reported increased risks of pregnancy 
+loss (OR 1.93; CI 1.40–2.64); hypertensive disorders of preg -
+nancy (OR 1.54; CI 1.21–1.96) [ 116]; placental abruption (OR 
+2.16; CI 1.15–4.06) [ 117]; breech presentation at term (OR 2.3; 
+CI 1.50–3.51); and an increased incidence of neurodevelop -
+mental defects (correlated with degree of TSH elevation) [ 109]. 
+[Evidence level 2–]
+Levothyroxine treatment is recommended for pregnant 
+women with severe SCH (TSH above 10 mU/L) where there is 
+considerable risk of further progression to OH. Levothyroxine 
+treatment should also be considered for those with SCH where 
+the TSH is between the upper limit of the pregnancy reference 
+range and 10 mU/L, particularly if TPOAb positive, in order to 
+reduce the risk of developing OH and associated complications 
+in pregnancy [ 51, 118 ]. Even though the two largest trials of 
+treatment of SCH [ 91, 92 ] (discussed in Section  6) reported no 
+difference in maternal and child outcomes with levothyroxine 
+treatment, they were still limited statistically by both sample 
+size and late commencement of treatment, usually from the 
+second trimester of pregnancy. When these trials were con -
+sidered together with others in a systematic review and meta- 
+analysis totalling seven RCTs and six observational studies 
+(N = 7342) [ 119] it was concluded that levothyroxine treat -
+ment of SCH may reduce the risk of pregnancy loss (relative 
+risk [RR] 0.79; CI 0.67–0.93) and neonatal death (RR 0.35; CI 
+0.17–0.72). [Evidence level 2–]
+Another meta- analysis included only studies which defined SCH 
+in pregnancy using a TSH threshold of greater than 4 mU/L; 
+this study which included three RCTs and three observational 
+studies ( N = 7955) [ 120] reported a reduction in pregnancy loss 
+(OR 0.55; CI 0.43–0.7), as well as preterm birth (OR 0.63; CI 
+0.41–0.98) and gestational hypertension (OR 0.78; CI 0.63–0.97) 
+with levothyroxine treatment. [Evidence level 2–]
+IH is considered to be a distinct biochemical entity, usually 
+defined as a fT4 concentration below the 2.5th percentile, 
+with a TSH within the reference range. However, there 
+ remains some variability of IH definition, and an absence of 
+established regional reference ranges (that account for iodine 
+status) in TPOAb negative populations could lead to misclas -
+sification of IH status [ 121]. The most common cause of IH is 
+ iodine deficiency [ 84]. Other proposed causes include obesity 
+[122], iron deficiency [ 123], and exposure to organochlorine 
+pesticides [ 124].
+Some studies have shown an association between hypothy -
+roxinaemia and poorer cognitive development of the children 
+[125–127 ]. Results from observational studies of IH on preg -
+nancy outcomes are conflicting and a meta- analysis identified 
+placental abruption alone to be increased in women with IH 
+(pooled OR 2.3; CI 1.1–4.8) [ 117, 128 ] but a causal link has not 
+been established. [Evidence level 2–]
+Existing randomised trials of women with SCH and IH diag -
+nosed in pregnancy, with levothyroxine treatment mostly com -
+menced in the second trimester of pregnancy, did not show 
+improvement in child neurodevelopmental outcomes [ 91, 92 ], 
+however, they were underpowered to assess efficacy within the 
+subgroup of women who commenced levothyroxine in the first trimester of pregnancy (less than 12 weeks of gestation). The 
+potential consequences of levothyroxine overtreatment should 
+also be considered (see below).
+Transplacental delivery of specifically maternal T4 is essen -
+tial for the developing fetal brain from early first trimester of 
+pregnancy [ 12, 126 ]. The recommended treatment of maternal 
+hypothyroidism is oral levothyroxine. It is strongly recom -
+mended that other thyroid preparations that contain non- T4 
+forms of thyroid hormone, such as desiccated thyroid or com -
+bined levothyroxine and liothyronine therapy are not used 
+in pregnancy, as these may result in insufficient transfer of 
+maternal T4 to the fetal brain. Women already on such treat -
+ments should be strongly advised to switch to a levothyrox -
+ine only preparation, but a graded switch can be considered. 
+[Evidence level 3]
+7.1 | How Should Women With Hypothyroidism 
+and SCH Be Cared for Before Pregnancy?
+RecommendationEvidence 
+quality StrengthRationale for 
+recommendation
+Pre- pregnancy, in women with 
+overt hypothyroidism and severe 
+subclinical hypothyroidism 
+(TSH > 10 mU/L, accompanied 
+by normal fT4), titration of 
+levothyroxine to achieve a 
+preconception TSH ≤ 2.5 mU/L 
+is recommended2+ B TSH > 10 mU/L is a risk 
+factor for progression 
+to OH. A preconception 
+TSH ≤ 2.5 mU/L is 
+associated with a lower 
+risk of hypothyroidism 
+in the first trimester 
+of pregnancy
+Pre- pregnancy, in women with 
+subclinical hypothyroidism 
+(TSH between the upper limit 
+of the non- pregnant range 
+and 10 mU/L, accompanied 
+by normal fT4), particularly 
+those already known to be 
+TPOAb positive, treatment 
+with levothyroxine should 
+be considered starting 
+preconception, with titration to 
+achieve a preconception TSH 
+≤ 2.5 mU/L2— C To reduce the risk of 
+overt hypothyroidism 
+and associated 
+complications in 
+pregnancy
+Women with an isolated low 
+fT4 concentration (with normal 
+TSH) diagnosed outside of 
+pregnancy, should be referred 
+to the Endocrinology team for 
+further investigation2— C To evaluate for 
+possible secondary 
+hypothyroidism and 
+exclude pituitary 
+pathology
+Women on levothyroxine 
+therapy for hypothyroidism 
+should be counselled to self- 
+initiate an empirical increase 
+in their dose of levothyroxine 
+by approximately 25%–30% as 
+soon as they have a positive 
+pregnancy test. This may be 
+achieved by either:
+– doubling the dose of 
+levothyroxine on two days of 
+each week or
+– implementing a dose 
+increment of:
+• 25μg per day for women 
+taking 100μg or less 
+levothyroxine daily
+• 50μg per day for women 
+taking greater than 100μg 
+levothyroxine daily1+ A This reduces the 
+risk of developing 
+hypothyroidism in 
+the first trimester as 
+increased requirement 
+for exogenous 
+levothyroxine occurs 
+as early as 4–6 weeks 
+of gestation. Dose 
+increments based on 
+baseline levothyroxine 
+dose or doubling the 
+levothyroxine dose on 
+two days of the week 
+are equally valid
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18088 by Test, Wiley Online Library on [30/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+10 of 32 BJOG: An International Journal of Obstetrics & Gynaecology, 2025In women with known OH and SCH, a preconception TSH of 
+2.5 mU/L or less is recommended as it may offer some protection 
+against the development of hypothyroidism in early pregnancy 
+[129, 130 ]. When pregnant, the required levothyroxine dose 
+ increment may vary from 25% to 50%, depending upon the aeti -
+ology of hypothyroidism and pre- pregnancy TSH value. Given 
+the median gestation of requiring a dose increase in pregnancy 
+is around 5 weeks' gestation [ 131], a self- initiated empirical dose 
+increase by approximately 25%–30% as soon as there is a positive 
+pregnancy test can significantly reduce the risk of developing 
+ hypothyroidism in pregnancy, without any adverse consequences 
+on the pregnancy, provided regular thyroid function monitoring 
+in pregnancy is instituted [ 132, 133 ]. [Evidence level 1+]
+7.2 | How Should Newly Diagnosed 
+Hypothyroidism, SCH and IH Be Treated in 
+Pregnancy? (see Appendix E)
+RecommendationEvidence 
+quality StrengthRationale for 
+recommendation
+In women 
+with overt 
+hypothyroidism and 
+severe subclinical 
+hypothyroidism 
+(TSH > 10 mU/L, 
+accompanied by 
+normal fT4), newly 
+diagnosed at any 
+time in pregnancy, 
+commence 
+levothyroxine 
+treatment as soon 
+as possible at a 
+suggested dose of 
+1.6μg per kg per day 
+with repeat thyroid 
+function tests in 
+4 weeks2++ B For timely achievement 
+of target TSH
+During pregnancy, 
+in women with 
+subclinical 
+hypothyroidism 
+(TSH between 
+the upper limit of 
+the trimester- and 
+manufacturer- 
+specific pregnancy 
+reference range 
+and 10 mU/L, 
+accompanied 
+by normal fT4), 
+especially if newly 
+diagnosed in the 
+first trimester 
+of pregnancy, 
+levothyroxine 
+should be 
+considered, at a 
+suggested dose of 
+1.0–1.2μg per kg 
+per day. Otherwise 
+perform thyroid 
+function tests at 
+4–6 week intervals 
+up to 20 weeks' 
+gestation and at 
+28 weeks' gestation2+ C Possible benefit may be 
+greater if starting treatment 
+as soon as possible in the 
+first trimester, particularly if 
+already known to be TPOAb 
+positive. The recommended 
+levothyroxine dose could 
+achieve the desired TSH 
+safely. If not treated there is 
+risk of disease progression 
+especially given the 
+increased thyroid demands 
+of pregnancy, and close 
+monitoring in pregnancy 
+is then essential to detect 
+development of overt 
+hypothyroidism or severe 
+subclinical hypothyroidism 
+which would require 
+levothyroxine treatmentRecommendationEvidence 
+quality StrengthRationale for 
+recommendation
+In women with IH 
+(fT4 concentration 
+below the trimester- 
+and manufacturer- 
+specific pregnancy 
+reference range, 
+with normal 
+TSH), routine 
+levothyroxine 
+therapy is not 
+recommended. 
+Thyroid function 
+tests could 
+be rechecked 
+4–6 weeks after 
+initial testing to 
+ensure stability2— C There is no evidence of 
+improved pregnancy 
+and child outcomes with 
+levothyroxine treatment. 
+Surveillance alone to ensure 
+stability is appropriate in 
+the majority of cases
+Thyroxine dosing strategies may be based on body weight, TSH 
+values or utilisation of a standard starting dose. When OH is newly 
+diagnosed during pregnancy, levothyroxine treatment may be 
+initiated at a dose of 1.6μg per kg per day ( www.bnf.nice.org.uk/
+drugs/levothyroxine-sodium/ ). [Evidence level 2++]
+Following the finding of SCH, there is insufficient evidence to 
+recommend testing for TPOAb in pregnancy to guide care. Such 
+an approach could also delay initiation of considered levothyrox -
+ine treatment. [Evidence level 4]
+For SCH, levothyroxine may be initiated at doses of 1.0–1.20μg 
+per kg per day [ 130, 134, 135 ]. [Evidence level 2+]
+Other international professional guidelines have delegated 
+the choice of treatment of IH to the discretion of the caregiver 
+[136], with the 2014 European Thyroid Association guide -
+lines recommending consideration of treatment only in the 
+first trimester of pregnancy [ 135], when the greatest negative 
+ impact of IH on brain development is expected to possibly take 
+place. If considering treatment of IH, potential consequences 
+of overtreatment with levothyroxine should be considered (see 
+below).
+7.3 | How Should Levothyroxine Be Titrated in 
+Pregnancy and Adjusted After Birth?
+RecommendationEvidence 
+quality StrengthRationale for 
+recommendation
+For pregnant 
+women treated with 
+levothyroxine for 
+hypothyroidism, 
+TSH and fT4 
+concentrations 
+should be checked 
+every 4–6 weeks 
+until 20 weeks of 
+gestation then once 
+again at 28 weeks of 
+gestation1++ A To mimic physiological 
+changes in pregnancy 
+and prospectively 
+prevent abnormalities 
+in thyroid function
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18088 by Test, Wiley Online Library on [30/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+11 of 32RecommendationEvidence 
+quality StrengthRationale for 
+recommendation
+Aim to keep TSH 
+below 2.5 mU/L 
+while keeping the 
+fT4 within the 
+normal trimester- 
+and manufacturer- 
+specific pregnancy 
+reference range2+ C A commonly adopted 
+approach is to maintain 
+maternal serum TSH values 
+in the lower half of the 
+trimester- specific pregnancy 
+reference range. This reduces 
+the risk of developing 
+OH during pregnancy
+Following birth, 
+for those who 
+were already 
+adequately replaced 
+on levothyroxine 
+preconception, revert 
+to the preconception 
+dose of levothyroxine 
+2 weeks postpartum3 D Thyroxine- binding 
+globulin concentrations 
+may take up to 4 weeks to 
+return to pre- pregnancy 
+levels following birth
+In women not 
+taking levothyroxine 
+preconception, 
+stop levothyroxine 
+following birth, 
+and check thyroid 
+function 6 weeks 
+postpartum3 D This enables reassessment 
+of thyroid function and 
+thyroxine requirements 
+following reversion back 
+to a non- pregnant state
+Following the initial empirical dose increase in women who 
+were on levothyroxine prior to conception, up to 40% may require 
+further dose adjustments during pregnancy [ 133]. Therefore, 
+regular thyroid function monitoring is required, especially in 
+the first 20 weeks of gestation, the period over which thyroxine- 
+binding globulin concentrations rise, in conjunction with the 
+other previously outlined physiological changes in pregnancy 
+before steady- state is achieved. [Evidence level 1++]
+The aim of dose titration to keep the TSH below 2.5 mU/L is to 
+prevent even transient abnormalities in thyroid function tests 
+by anticipating the normal dynamic changes of pregnancy that 
+ affect thyroid hormone requirements.
+Thyroid function monitoring is also required to prevent the 
+potential risks of overtreatment with levothyroxine. A Danish 
+registry linkage study reported an association of maternal 
+ hyperthyroidism with a higher risk of attention deficit 
+ hyperactivity disorder being diagnosed in their children [ 137]. 
+Naturally higher maternal fT4 concentrations during preg -
+nancy in women who were not on levothyroxine replacement 
+were also associated with lower birthweight [ 115] and increased 
+offspring risk of autistic traits [ 127] in meta- analyses, as well 
+as reduced brain cortical volumes and lower IQ (reduction 
+in mean of 1.4–3.7 points) in a population- based study [ 138]. 
+[Evidence level 2+]
+However, no studies have reported on the neurodevelopmental 
+effects of overtreatment with levothyroxine on the offspring in 
+a hypothyroid pregnant population. Nonetheless it is prudent 
+to maintain fT4 concentrations within the normal trimester- 
+and manufacturer- specific pregnancy reference range [ 110] 
+[Evidence level 4] in addition to keeping the TSH concentration 
+below 2.5 mU/L. [Evidence level 2+]TSH suppression with free thyroid hormones within the normal 
+pregnancy reference ranges was not associated with adverse 
+ effects [ 31, 32 ]. [Evidence level 2+]
+In women who experience nausea and vomiting of pregnancy, 
+administration of levothyroxine at a time of day when they 
+are less likely to be sick is a useful strategy. Alternatively, the 
+daily levothyroxine dose can be split into two doses over this 
+period of pregnancy to reduce the chances of the medication 
+being incompletely absorbed. If they are unable to tolerate 
+any oral levothyroxine, parenteral options (e.g., intravenous 
+liothyronine) should be discussed with an endocrinologist. 
+[Evidence level 4]
+Following birth, maternal levothyroxine dosing should be 
+ restored to pre- pregnancy levels, if this provided adequate 
+ replacement, with a serum TSH measured 6–8 weeks thereaf -
+ter. As thyroxine- binding globulin concentration may take up to 
+4 weeks to return back to pre- pregnancy levels following birth 
+[139], with reported associations between hypothyroidism and 
+reduced breastfeeding success [ 140], [Evidence level 3] it is rea -
+sonable to return to pre- pregnancy doses 2 weeks postpartum 
+[117]. [Evidence level 4]
+8 | Thyroid Antibodies and Adverse Pregnancy 
+Outcomes
+8.1 | Should Women Without Thyroid Disease Be 
+Offered a TPOAb Test in Pregnancy?
+RecommendationEvidence 
+quality StrengthRationale for 
+recommendation
+Routine testing for TPOAb in 
+women with euthyroidism is not 
+recommended in pregnancy2++ B There is no 
+intervention to 
+improve outcomes 
+in euthyroid 
+TPOAb positive 
+women so universal 
+testing cannot be 
+recommended
+If a woman is already known 
+to be positive for TPOAb but 
+euthyroid, they should be 
+offered thyroid function test 
+measurements in the first 
+trimester (preferably at first 
+contact with a healthcare 
+professional, including 
+primary care booking) and at 
+20 weeks of pregnancy to detect 
+development of hypothyroidism 
+(see Appendix E )2++ C Large cohort studies 
+have demonstrated 
+increased risk of 
+progression to 
+thyroid dysfunction 
+during pregnancy 
+in TPOAb positive 
+women, especially 
+during the first half 
+of gestation when 
+physiological thyroid 
+demand is increasing
+Levothyroxine treatment is not 
+recommended for women with 
+TPOAb in the absence of thyroid 
+dysfunction during pregnancy1++ A There is no difference 
+in outcomes with 
+levothyroxine 
+treatment if euthyroid
+The presence of TPO antibodies, even in women with a nor -
+mal thyroid function, has been shown to be associated with an 
+ increase in adverse pregnancy outcomes, such as miscarriage 
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18088 by Test, Wiley Online Library on [30/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+12 of 32 BJOG: An International Journal of Obstetrics & Gynaecology, 2025(OR 3.90, CI 2.48–6.12; p < 0.001) [ 33, 141 ] and preterm birth (OR 
+1.33, CI 1.15–1.56) [ 114]. [Evidence level 2+]
+There have been several randomised studies investigating 
+whether levothyroxine treatment can improve pregnancy out -
+comes in women positive for TPOAb [ 99, 142 ]. The largest trial 
+on the subject (TABLET trial) randomised 952 euthyroid TPOAb 
+positive women, with a history of either subfertility or miscar -
+riage, to receive levothyroxine 50μg once daily or placebo com -
+menced preconception [ 99]. There was no improvement in live 
+birth outcome at or beyond 34 weeks in those taking levothy -
+roxine and no difference in any of the secondary pregnancy or 
+neonatal outcomes. [Evidence level 1++]
+However, around 7% of women with euthyroidism with TPOAb, 
+went on to develop hypothyroidism, either within 1 year of try -
+ing to conceive or during the first and second trimesters of preg -
+nancy [ 143]. [Evidence level 2++]
+Currently, there is no evidence that any treatment improves 
+pregnancy outcomes for women with euthyroidism with TPOAb 
+[144], therefore, TPOAb testing should not be routinely offered 
+in pregnancy. [Evidence level 1+]
+Maternal passage of TPOAb across the placenta is not associ -
+ated with clinically relevant fetal thyroid dysfunction [ 145, 146 ]. 
+[Evidence level 3]
+9 | Hyperthyroidism and Thyrotoxicosis
+Untreated or poorly controlled hyperthyroidism is associated 
+with a number of adverse outcomes, but it remains unclear 
+whether these consequences relate to maternal hyperthyroid -
+ism, to fetal hyperthyroidism (caused by transplacental transfer 
+of thyroxine or stimulating TSH- receptor antibodies [TRAb]) or 
+to antithyroid drug treatment, which may cause fetal hypothy -
+roidism as well as direct toxicity [ 147]. Large record linkage stud -
+ies [148–151 ] have confirmed increased risks of pre- eclampsia, 
+stillbirth, maternal admission to intensive care unit, lower birth 
+weight and higher rates of attention deficit hyperactivity disor -
+der and autism in children when comparing women with hyper -
+thyroidism and control subjects [ 152, 153 ]. Observational studies 
+reported increased risks of intrauterine growth restriction, pre- 
+eclampsia, preterm birth and maternal heart failure [ 154–157 ]. 
+[Evidence level 2++]
+The risk is directly related to control of maternal hyperthyroid -
+ism, both in terms of severity of hyperthyroidism and how soon 
+in pregnancy euthyroidism is achieved [ 147, 158, 159 ]. [Evidence 
+level 2+]
+Maintenance of euthyroidism with optimal treatment through -
+out pregnancy coupled with adequate antenatal care, has not 
+been associated with increased obstetric risks except for a possi -
+ble residual risk of placental abruption [ 154, 156 ] [Evidence level 
+2+] and antithyroid drug associated teratogenicity [Evidence 
+level 2++] , where applicable (see Section 9.2 ).9.1 | How Should Women With Graves' Disease Be 
+Counselled Before Pregnancy?
+RecommendationEvidence 
+quality StrengthRationale for 
+recommendation
+Pre- pregnancy counselling 
+is recommended in women 
+with hyperthyroidism to 
+minimise maternal and fetal 
+adverse outcomes4 GPP The risks to the woman 
+and fetus are directly 
+related to control 
+of hyperthyroidism 
+early in pregnancy
+The option of definitive 
+treatment with radioactive 
+iodine or thyroidectomy 
+should be discussed, 
+especially in women with 
+more severe disease. 
+Following definitive 
+treatment, women should 
+wait at least 6 months before 
+attempting to conceive. They 
+should also have had serum 
+fT4 within the reference 
+range on two measurements 
+3 months apart [ 160]2+ C Maintenance of 
+euthyroidism during 
+pregnancy is easier in 
+women who have been 
+rendered hypothyroid 
+by definitive treatment. 
+They would require 
+levothyroxine 
+replacement, with dose 
+titrations in pregnancy. 
+Further, the risk of 
+teratogenicity with 
+antithyroid drugs 
+can be avoided
+A persistently increased TSH- 
+receptor antibody (TRAb) 
+level (usually taken as greater 
+than 3 times the threshold for 
+positivity) assessed around 
+6 months post- treatment is 
+associated with increased 
+risk of fetal Graves' disease 
+and consideration may 
+be given to further delay 
+conception3 D Retrospective studies 
+show increased risks 
+of fetal/neonatal 
+Graves' disease with 
+TRAb more than 
+3 times the assay 
+threshold for positivity. 
+TRAb levels decrease 
+slowly following 
+definitive treatment
+Hyperthyroidism requiring 
+treatment with antithyroid 
+drugs while trying to 
+conceive should use 
+propylthiouracil (PTU) in 
+preference to carbimazole 
+(CMZ), at the lowest effective 
+dose to maintain fT4 
+concentrations in the upper 
+half of the reference range2++ B PTU is associated with 
+less teratogenic risks. 
+Higher cumulative 
+doses of antithyroid 
+drugs are associated 
+with increased risk 
+of teratogenicity. 
+The risk of inducing 
+fetal hypothyroidism 
+through transplacental 
+passage of the drugs 
+should be kept low 
+by maintaining fT4 
+in the upper half of 
+the reference range
+All women of childbearing age who develop hyperthyroid -
+ism should have a discussion regarding potential future 
+pregnancy. The risks and benefits of all treatment options, 
+including antithyroid drugs, radioactive iodine (131I) admin -
+istration or surgery should be discussed [ 160]. With defini -
+tive treatment, maintenance of euthyroidism with exogenous 
+levothyroxine is simpler to achieve during pregnancy without 
+risk of antithyroid drug- associated teratogenicity. [Evidence 
+level 2+]
+If the woman is on levothyroxine replacement following defin -
+itive thyroid ablation or thyroidectomy, then optimal TSH and 
+fT4 concentrations should be achieved prior to trying concep -
+tion, and they should be advised of an empirical dose increase 
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18088 by Test, Wiley Online Library on [30/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+13 of 32upon conception, in accordance with guidance for treatment of 
+autoimmune hypothyroidism (Section  7.1).
+Following radioiodine treatment, TRAb concentrations may 
+rise [ 155, 156 ], increasing the risk of fetal Graves' disease caused 
+by transplacental passage of maternal TRAb [ 157] even when 
+ maternal thyroid function tests are normal [Evidence level 2–] . 
+Hence, pregnancy should be delayed by 6 months [ 161].
+Surgery may be the better option in women with high TRAb 
+concentrations since antibody levels usually normalise within 
+months following thyroidectomy [ 153], and cure is immediate. 
+However, the risks of surgery and lifelong need for levothyrox -
+ine treatment will need to be considered. [Evidence level 3]
+If the woman continues on antithyroid drugs, propylthiouracil 
+(PTU) is the recommended drug preconception and during the 
+first trimester. A large cohort study found that higher cumula -
+tive doses of antithyroid drugs are associated with increased risk 
+of teratogenicity [ 154]. [Evidence level 2++]
+The fT4 concentrations should be maintained in the upper half 
+of the normal range, and a low TSH concentration would be 
+ acceptable in this context. [Evidence level 3]
+Consideration should be given to discontinuing antithyroid drugs 
+preconception once euthyroidism (TSH in the reference range) is 
+maintained for at least 6 months on a low dose [ 51]. Early discon -
+tinuation to reduce teratogenic risks needs to be weighed against 
+risks of a hyperthyroid flare in the periconception period which 
+has the attendant risks of adverse effects in pregnancy (see 
+Section  9.2. for a full discussion). [Evidence level 3]
+9.2 | What Is the Optimal Care of Women With 
+Graves' Hyperthyroidism in Pregnancy? (see 
+Appendix F)
+RecommendationEvidence 
+quality StrengthRationale for 
+recommendation
+When pregnant, where a 
+woman with a history of 
+hyperthyroidism has been 
+euthyroid (preconception TSH 
+in the non- pregnant reference 
+range) for 6 months or more on a 
+low dose of an antithyroid drug 
+(CMZ < 10 mg or PTU < 200 mg 
+daily), consider discontinuing 
+antithyroid drugs with close 
+thyroid function monitoring4 D Women who are 
+in remission from 
+Graves' disease are 
+unlikely to relapse 
+during pregnancy 
+and the teratogenic 
+risks of antithyroid 
+drugs outweigh 
+the risk of relapsed 
+Graves' disease
+If antithyroid drug treatment 
+is required, PTU is the 
+recommended drug during 
+early pregnancy. If a woman 
+conceives on CMZ a switch to 
+PTU should be made as soon 
+as possible before 10 weeks' 
+gestation, with an advised dose 
+ratio of 1:20 (CMZ:PTU). There 
+is no benefit of switching to 
+PTU if a woman presents after 
+10 weeks' gestation3 D PTU is the preferred 
+antithyroid drug 
+during the period of 
+organogenesis as it is 
+associated with less 
+teratogenic risksRecommendationEvidence 
+quality StrengthRationale for 
+recommendation
+During the first half of 
+pregnancy, women on 
+antithyroid drugs should have 
+thyroid function monitored 
+every 2–4 weeks with 
+measurement of serum TSH and 
+fT4. When stopping antithyroid 
+drug treatment, when switching 
+between antithyroid drugs and 
+following dose adjustments, 
+give consideration to fortnightly 
+testing. After 20 weeks of 
+pregnancy 4–8 weekly testing 
+may be appropriate3 D Thyroid function 
+may change rapidly 
+during pregnancy 
+in women on 
+antithyroid drugs 
+so regular testing 
+is advisable
+Titration of antithyroid drugs 
+should target fT4 concentrations 
+in the upper half of the 
+trimester- and manufacturer- 
+specific pregnancy reference 
+range3 D Transplacental 
+passage of 
+antithyroid drugs 
+may induce fetal 
+hypothyroidism and 
+should be avoided 
+by maintaining fT4 
+in the high normal 
+pregnancy reference 
+range. Serum 
+TSH may remain 
+low throughout 
+pregnancy and 
+fT4 testing is more 
+informative in 
+this situation
+Serial ultrasound scans to assess 
+fetal biometry with umbilical 
+artery Doppler at monthly 
+intervals from 26 to 28 weeks is 
+recommended in those who at 
+any time during pregnancy had 
+uncontrolled Graves' disease, 
+required antithyroid drug 
+treatment or had a TRAb level 
+three times above the threshold 
+for positivity3 D Uncontrolled 
+hyperthyroidism and 
+high levels of TRAb 
+are associated with 
+intrauterine growth 
+restriction and fetal 
+Graves' disease. A 
+TRAb level usually 
+three times above 
+the threshold 
+for positivity is 
+associated with 
+increased risk of 
+fetal/neonatal 
+Graves' disease
+TRAb measurement in the 
+first trimester is recommended 
+in all women with a history 
+of Graves' disease, even 
+following definitive treatment. 
+If it is above the threshold for 
+positivity or if the woman is 
+on antithyroid drugs, a further 
+measurement at 20 and 28 weeks 
+of gestation is recommended3 D TRAb can remain 
+raised even after 
+definitive treatment. 
+The fetal thyroid 
+begins to produce 
+appreciable amounts 
+of thyroid hormone 
+and can respond to 
+transplacental TRAb 
+from 18- 20 weeks 
+of gestation. TRAb 
+levels usually 
+gradually decline 
+after 20 weeks 
+of gestation and 
+rarely increase 
+beyond this point
+Neonates of women with 
+known Graves' disease, of 
+those receiving antithyroid 
+medication during pregnancy 
+and those with increased TRAb 
+levels should have their thyroid 
+function monitored soon after 
+birth and at 1–2 weeks post- birth3 D Transplacental TRAb 
+or antithyroid drugs 
+can induce neonatal 
+hyperthyroidism 
+or hypothyroidism, 
+respectively. 
+Early detection 
+and treatment of 
+the neonate can 
+minimise adverse 
+health consequences
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18088 by Test, Wiley Online Library on [30/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+14 of 32 BJOG: An International Journal of Obstetrics & Gynaecology, 2025Treatment with antithyroid drugs (thionamides) represents the 
+mainstay of treatment of active hyperthyroidism in pregnancy. 
+Carbimazole (CMZ, used mainly in the UK), its active metabo -
+lite methimazole (MMI, used in the USA; 20 mg CMZ is equiv -
+alent to 15 mg MMI), and propylthiouracil (PTU) are the main 
+antithyroid drugs. Minor adverse effects of antithyroid drugs, 
+including skin rash, occur in 3%–5% of women. Serious adverse 
+effects are rare and include agranulocytosis occurring in 0.15% 
+with either drug and liver failure in 0.1%, the latter pertaining 
+almost exclusively to PTU [ 162].
+Potential teratogenic effects have been mainly linked to CMZ/
+MMI, and to a lesser extent, PTU. CMZ/MMI may induce an 
+embryopathy, including dysmorphic features, aplasia cutis, cho -
+anal and oesophageal atresia, abdominal wall defects, urinary 
+and eye abnormalities, and ventricular septal defects. In addi -
+tion to the background risks, teratogenic effects may be present 
+in 2%–4% of pregnancies if exposure occurs during 6–10 weeks 
+of gestation [ 159, 163, 164 ]. [Evidence level 2–]
+A meta- analysis has found CMZ/MMI exposure to be associated 
+with an increased odds of congenital anomalies of 1.88 (95% CI 
+1.33–2.65) compared with no antithyroid drug exposure, with 
+an escalating gradient of risk with increasing CMZ/MMI dose 
+[165]. [Evidence level 2++]
+PTU has been linked to less severe and potentially resolvable 
+birth defects, including face and neck cysts and urinary tract 
+abnormalities, which may occur in 2%–3% of children exposed 
+to the drug during early pregnancy [ 163]. These studies on both 
+drugs do not take account of pregnancies terminated for congen -
+ital anomalies, and may therefore represent an underestimate of 
+the teratogenic risk.
+For PTU the largest studies conducted using national registries 
+found odds ratios of 1.16–1.41 for congenital anomalies [ 163, 165 ] 
+but a meta- analysis of smaller studies showed no significant dif -
+ferences compared with the unexposed [ 166]. Of note, the range 
+of defects associated with CMZ/MMI and PTU is different 
+and they should be considered as two separate teratogens. The 
+potential for a higher teratogenic risk with double exposure (the 
+switching of one to the other drug during the first trimester) has 
+not been borne out by a statistically significant increased odds in 
+studies thus far, possibly due to small sample sizes [ 163, 165, 166 ]. 
+If the woman is already past 10 weeks of gestation there is lim -
+ited benefit in switching from CMZ/MMI to PTU as the highest 
+risk period for teratogenesis is over. [Evidence level 3]
+If a woman has been euthyroid (TSH in reference range) for 
+6 months or more on low dose antithyroid drugs (defined as 
+CMZ less than 10 mg daily or PTU less than 200 mg daily), con -
+sideration should be given to discontinuing antithyroid drugs, 
+before the period of highest teratogenic risk (6–10 weeks of ges -
+tation) [ 51, 164, 167 ]. This period of time also coincides with 
+rising hCG concentrations which may exacerbate any residual 
+hyperthyroidism, thus close thyroid function monitoring every 
+2 weeks until the mid- trimester of pregnancy (when hCG begins 
+to decline) is recommended. [Evidence level 3]
+Many women will require reducing doses of antithyroid medica -
+tion as gestation progresses, and most can discontinue treatment in the late second or early third trimester of pregnancy as thy -
+roid autoimmunity subsides [ 168]. If treatment with antithyroid 
+drugs is still required beyond 20 weeks of pregnancy, a switch 
+to CMZ should be considered in view of risk of PTU- associated 
+hepatotoxicity [ 30, 51 ]. A recommended conversion dose ratio is 
+20:1 (200 mg PTU = 10 mg CBZ). [Evidence level 3]
+The lowest effective dose of antithyroid drugs should be used 
+targeting serum fT4 at the upper half of the pregnancy ref -
+erence range (or total T4 at 1–1.5 times the upper limit of the 
+non- pregnant reference range) in order to minimise the risk of 
+fetal hypothyroidism from transplacental passage of the drug 
+[169, 170 ]. Titration should not be primarily based on TSH con -
+centrations (which may be low), and there is no role for fT3 or 
+total T3 measurements. [Evidence level 2+]
+Women who have discontinued antithyroid drugs in pregnancy 
+and maintained normal fT4 concentrations on two consecutive 
+occasions 2–4 weeks apart following cessation of treatment may 
+have less frequent thyroid function monitoring. This can be done 
+at 4–8 week intervals for the remainder of pregnancy. [Evidence 
+level 3]
+Women in remission from Graves' hyperthyroidism who entered 
+pregnancy whilst not taking antithyroid drugs and who have a 
+low or undetectable TRAb level preconception or at pregnancy 
+booking should have thyroid function testing every four weeks 
+until mid- trimester. If euthyroidism is maintained then thyroid 
+function monitoring at 4–8 week intervals for the remainder of 
+pregnancy is acceptable. [Evidence level 3]
+The management of toxic nodular hyperthyroidism with antithy -
+roid drug therapy in pregnant women is similar to Graves' hyper -
+thyroidism except that it is associated with an even higher risk 
+of fetal hypothyroidism since the fetal thyroid is not stimulated 
+by TRAb. Thus, the dose of antithyroid drugs must be kept to the 
+minimum with frequent thyroid function monitoring targeting 
+the upper half of the pregnancy reference range. [Evidence level 3]
+9.2.1 | Rare or Infrequent Situations
+Block and replace regimens with high doses of antithyroid drugs 
+and levothyroxine are not recommended as this increases both 
+maternal and fetal risks. Furthermore, antithyroid drugs cross 
+the placenta more efficiently than levothyroxine, and the fetal 
+thyroid is very sensitive to antithyroid drugs, resulting in in -
+creased risks of fetal hypothyroidism and goitre [ 51, 153, 171 ]. 
+In rare cases of isolated fetal hyperthyroidism a block replace 
+regimen may be indicated [ 172]. [Evidence level 3]
+In selected cases of severe maternal adverse effects to antithy -
+roid drugs, or in cases of a large goitre with potential compro -
+mise of the airway, thyroidectomy may be indicated and ideally 
+should be undertaken in the second trimester of pregnancy [ 51]. 
+Thyroidectomy beyond 22 weeks of pregnancy is associated 
+with increased risks of preterm birth [ 173] and should therefore 
+be avoided where possible and undertaken with caution when 
+it cannot be safely deferred. Close peri- operative management 
+of fT4 and calcium concentrations is needed to minimise risks. 
+[Evidence level 3]
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18088 by Test, Wiley Online Library on [30/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+15 of 32Beta- adrenergic blocking agents such as propranolol, may be 
+used temporarily for control of hyperthyroid symptoms as long 
+as benefits outweigh risks. The lowest possible dose should be 
+used for the shortest possible duration, to minimise potential 
+risks of infants being SGA at birth [ 174]. [Evidence level 2–]
+9.2.2 | Fetal Monitoring
+The half- life of PTU and CBZ/MMI are all less than 48 h so 
+ exposure prior to the last menstrual period is unlikely to affect 
+the fetus. The woman should be made aware of the limitations 
+of ultrasonography at their 20 week fetal anomaly scan, as it can 
+only detect some but not all anomalies associated with antithyroid 
+drugs. Anomalies such as aplasia cutis, eye abnormalities and cho -
+anal atresia are very challenging to detect by ultrasonography.
+Women with a history of hyperthyroidism but who have 
+ remained in remission without antithyroid drug treatment or 
+any previous definitive radioiodine thyroid ablation/thyroid -
+ectomy, with undetectable circulating TRAb, and have been 
+euthyroid during the pregnancy, do not require additional fetal 
+surveillance. In these scenarios, a history of hyperthyroidism 
+would not be considered a risk factor for having a SGA fetus, 
+consistent with another RCOG guideline [ 175]. [Evidence level 3]
+In those who at any time during pregnancy display Graves' 
+ hyperthyroidism, require antithyroid drug treatment, or have 
+ detectable TRAb, there is an increased risk of intrauterine growth 
+restriction and fetal Graves' disease. The underlying mechanisms 
+may not only be placental- mediated, but transplacental TRAb, 
+antithyroid drugs and increased fetal thyroid hormones may 
+disrupt metabolic regulation, growth and development of the 
+fetus. Results of a 20–24 week uterine artery Doppler would not 
+alter care and is therefore not necessary. Instead, serial ultraso -
+nographic scans of fetal biometry with umbilical artery Doppler 
+at monthly intervals from 26- 28 weeks is recommended. Any 
+abnormal findings should be managed in accordance with rec -
+ommendations contained in the RCOG guidelines on the man -
+agement of the SGA fetus [ 175]. [Evidence level 3]
+Fetal and neonatal hyperthyroidism is estimated to occur in 
+1%–5% of women with active or previous Graves' hyperthyroid -
+ism and is associated with significant morbidity and mortality 
+[176]. Measurement of TRAb during early pregnancy is advised, 
+and if increased a repeat measurement at 20 and 28 weeks of 
+pregnancy is recommended [ 51]. The fetus is particularly at 
+risk of fetal Graves' disease or in utero hyperthyroidism and 
+growth restriction if TRAb levels are significantly raised (more 
+than 3 times the threshold of positivity) [ 177, 178 ], if maternal 
+hyperthyroidism is uncontrolled and if pre- eclampsia or utero -
+placental insufficiency is present. Increased fetal surveillance 
+should include 2–4 weekly auscultation of fetal heart rate for 
+fetal tachycardia (greater than 170 bpm persistent for more than 
+10 min). With a significantly raised TRAb level, consider start -
+ing monthly ultrasonography earlier, from 20 weeks of gestation 
+onwards (which is when appreciable endogenous fetal thyroid 
+activity commences). This allows monitoring of fetal growth, 
+amniotic fluid volume (severe polyhydramnios secondary to 
+external compression of oesophagus by a goitre and reduced 
+swallowing), presence of cardiac dysrhythmia and failure, fetal hydrops and, where expertise is available, presence of fetal goitre 
+[179, 180 ]. When fetal Graves' disease is detected or suspected, 
+care should be undertaken in a multidisciplinary setting, includ -
+ing Fetal Medicine specialists. [Evidence level 3]
+9.2.3 | Peripartum Care and Neonatal Hyperthyroidism
+Timing and mode of birth is mostly dictated by obstetric 
+indications. In those who at any time during pregnancy display 
+Graves' hyperthyroidism, require antithyroid drug treatment, 
+or have detectable TRAb, continuous fetal monitoring during 
+labour and birth in a consultant- led unit should be considered. 
+[Evidence level 4]
+Maintaining euthyroidism will reduce maternal cardiovas -
+cular risks during labour and in the immediate post- partum 
+period, and anaesthetic risks if assisted birth is required. 
+Following birth, neonates of women with known Graves' dis -
+ease, of those receiving antithyroid medication during preg -
+nancy and those with increased TRAb levels should have their 
+thyroid function monitored soon after birth and at 1–2 weeks 
+post- birth for signs of neonatal hyperthyroidism. Such moni -
+toring should be undertaken by the neonatal/paediatric team. 
+Neonatal hypothyroidism can also arise due to maternal over- 
+treatment with antithyroid drugs, hence the need for careful 
+antenatal thyroid function monitoring and titration. [Evidence 
+level 2–]
+9.3 | What Is Appropriate Care for Gestational 
+Transient Thyrotoxicosis?
+RecommendationEvidence 
+quality StrengthRationale for 
+recommendation
+Severe nausea and 
+vomiting alone in 
+pregnancy should not 
+prompt thyroid function 
+testing in the absence of 
+specific symptoms and 
+signs of thyrotoxicosis 
+or a personal history of 
+thyroid dysfunction3 D Nausea and vomiting 
+are not symptoms of 
+thyrotoxicosis. Specific 
+symptoms and signs 
+of thyrotoxicosis 
+(including weight loss 
+prior to pregnancy, the 
+presence of a goitre 
+or ophthalmopathy, 
+cardiac dysrhythmias 
+as well as a personal 
+or family history of 
+hyperthyroidism) point 
+towards Graves' disease 
+rather than gestational 
+transient thyrotoxicosis
+With the new finding 
+of a suppressed serum 
+TSH accompanied 
+by an increased fT4 
+concentration in 
+pregnancy, Graves' 
+disease should be 
+distinguished from 
+gestational transient 
+thyrotoxicosis using a 
+range of clinical features, 
+and measurements 
+of TRAb and fT3 (see 
+Table 3 )3 C New onset Graves' 
+disease in pregnancy 
+is often associated 
+with pre- pregnancy 
+symptoms, a goitre, a 
+relevant personal/family 
+history and is likely 
+to be associated with 
+raised TRAb and fT3 
+measurements. These 
+should be performed 
+to avoid unnecessary 
+starting of antithyroid 
+drugs in women with 
+gestational transient 
+thyrotoxicosis
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18088 by Test, Wiley Online Library on [30/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+16 of 32 BJOG: An International Journal of Obstetrics & Gynaecology, 2025RecommendationEvidence 
+quality StrengthRationale for 
+recommendation
+Gestational transient 
+thyrotoxicosis requires 
+symptomatic and 
+supportive management 
+only3 C In gestational transient 
+thyrotoxicosis, there is no 
+evidence that treatment 
+with antithyroid drugs 
+improves obstetric 
+and fetal outcomes
+Gestational transient thyrotoxicosis is caused by high concen -
+trations of hCG stimulating the TSH receptors of the thyroid 
+gland [ 171] giving rise to low serum TSH and high fT4 concen -
+trations. Where hCG concentrations are higher, for example, in 
+multiple pregnancies, hydatiform mole and choriocarcinoma, 
+gestational transient thyrotoxicosis is more common [ 29, 30 ]. 
+Since hCG levels peak around 10 weeks of gestation and subside 
+by 18–20 weeks of gestation, gestational transient thyrotoxico -
+sis usually presents in the first and early second trimesters of 
+pregnancy. This condition is transient, self- limiting and is not 
+associated with adverse pregnancy outcomes. [Evidence level 2–]
+Thyrotoxicosis that is hCG- induced is more common in women 
+who also experience hyperemesis gravidarum, but nausea and 
+vomiting are not symptoms of hyperthyroidism, and each may 
+occur independently. [Evidence level 3]
+If a thyroid function test shows thyrotoxicosis, gestational tran -
+sient thyrotoxicosis should be distinguished from Graves' disease 
+and nodule- related hyperthyroidism. New onset Graves' disease 
+and nodular hyperthyroidism require prompt treatment in preg -
+nancy (0.05% of pregnancies) and are far less common than gesta -
+tional transient thyrotoxicosis (1%–5% of pregnancies) [ 28, 29, 171 ]. 
+A number of clinical and laboratory features help in the distinc -
+tion between these conditions (Table  3). Clinical features, includ -
+ing palpitations, tremor, anxiety, heat intolerance and tachycardia, 
+are non- discriminatory. A lack of symptoms of thyrotoxicosis and 
+weight loss prior to pregnancy, the absence of a goitre, ophthal -
+mopathy or a personal/family history of thyroid disease, as well 
+as the presence of significant nausea and vomiting are more indic -
+ative of gestational transient thyrotoxicosis. TRAb and serum T3 
+concentrations are raised in Graves' disease but generally not in 
+gestational transient thyrotoxicosis [ 29, 51, 171 ]. [Evidence level 3]
+Serum hCG concentrations are not useful in distinguishing 
+ between Graves' disease and gestational transient thyrotoxicosis 
+[182]. Where there is doubt, a repeat thyroid function test 2 weeks 
+later, demonstrating a declining fT4 concentration without anti -
+thyroid treatment, would be supportive of gestational transient 
+thyrotoxicosis. TSH concentrations will take longer to recover, 
+often remaining suppressed, and are less helpful. [Evidence level 3]
+Management of gestational transient thyrotoxicosis, if symp -
+tomatic, is largely supportive with anti- emetics, maintenance 
+of hydration and correction of electrolyte imbalances if the 
+women has hyperemesis gravidarum. Transient treatment with 
+beta blockers may be used to control symptoms of thyrotoxico -
+sis and tachycardia [ 29, 30 ]. There is no evidence that treatment 
+with antithyroid drugs improves obstetric and fetal outcomes in 
+women with gestational transient thyrotoxicosis [ 183]. [Evidence 
+level 3]9.4 | How Should Women With a History 
+of Hyperthyroidism Be Cared for in the Postpartum 
+Period?
+RecommendationEvidence 
+quality StrengthRationale for 
+recommendation
+A thyroid function test is 
+recommended 6–8 weeks 
+after birth in women with 
+a history of pre- existing 
+hyperthyroidism3 C Increased autoimmunity 
+postpartum increases 
+the risk of relapsed 
+Graves' disease
+Both CMZ and PTU are 
+considered safe during 
+breastfeeding and the 
+lowest effective dose should 
+be administered during 
+the period of lactation, if 
+necessary, with monitoring 
+of the child's growth and 
+development3 C There is minimal transfer 
+of these antithyroid 
+drugs to breast milk. 
+After initial surveillance 
+for neonatal thyroid 
+dysfunction is completed, 
+thyroid function testing 
+of breastfed babies is not 
+recommended unless 
+there are concerns 
+about infant wellbeing
+Consideration may be given 
+to administering the total 
+daily dose of CMZ or PTU in 
+two or three smaller doses 
+a day4 GPP Splitting the dose 
+reduces peak circulating 
+concentrations and hence 
+the transfer to breast milk
+The most common cause of thyrotoxicosis in the postpar -
+tum period in the general obstetric population is PPT (see 
+Section  11). However, the increased autoimmunity in the 
+postpartum period is also associated with a 3–4 times higher TABLE 3 | Features distinguishing gestational transient 
+thyrotoxicosis from Graves' hyperthyroid disease [ 29, 51, 171 ].
+FeatureGestational 
+transient 
+thyrotoxicosisGraves' 
+hyperthyroid 
+disease
+Symptoms of 
+thyrotoxicosis 
+BEFORE 
+pregnancyNo Often
+Symptoms of 
+hyperemesis 
+gravidarum 
+(nausea/vomiting)Yes (~60% of 
+gestational 
+transient 
+thyrotoxicosis 
+cases)Often not present
+Personal or family 
+history of thyroid 
+diseaseOften absent Present in about 
+50% [ 181]
+Presence of goitre No Diffuse goitre 
+in 90% [ 181]
+Signs of thyroid 
+eye diseaseNo In around 
+20% [ 181]
+fT3 concentration Normal in 85% Increased
+TRAb 
+measurementNormal Increased
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18088 by Test, Wiley Online Library on [30/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+17 of 32risk in the incidence of new onset Graves' hyperthyroid dis -
+ease [ 168] and higher rates of relapsed Graves' disease in 
+those with a pre- existing diagnosis prior to pregnancy [ 184]. 
+Management differs by aetiology, and in this section, only the 
+management of pre- existing hyperthyroidism and Graves' dis -
+ease is discussed.
+Antithyroid drugs are the preferred therapeutic option in post -
+partum hyperthyroidism since the administration of radioactive 
+iodine is difficult in view of radiation protection guidance and 
+surgery is invasive, and both may pose practical difficulties in 
+women with young children [ 29, 30 ].
+Observational studies indicate that both CMZ (up to a daily 
+dose of 20 mg) and PTU (up to a daily dose of 450 mg) are safe 
+during breastfeeding [ 185, 186 ]. CMZ [ 187] and to a lesser extent 
+PTU [ 188] are transferred into breast milk in small amounts: 
+0.1%–0.2% and 0.007%–0.077% of the ingested amount, respec -
+tively. [Evidence level 3]
+Antithyroid drugs in breast milk may delay the manifestation 
+or reduce the risk of neonatal hyperthyroidism caused by per -
+sistent in utero- derived TRAb. The growth and development of 
+breastfed infants of women taking antithyroid drugs should be 
+monitored, but routine assessment of thyroid function (beyond 
+the initial surveillance for neonatal thyroid dysfunction) in the 
+infant during breastfeeding is not required, unless antithyroid 
+drug doses exceed the recommendations above [ 51] or there are 
+concerns about infant wellbeing. [Evidence level 3]
+10 | Thyroid Nodules and Thyroid Cancer
+The prevalence of thyroid nodules in pregnancy based on 
+ ultrasound studies in areas with mild- to- moderate iodine defi -
+ciency varies between 15% and 21% [ 40, 41 ], but the incidence 
+of clinically apparent nodules presenting in pregnancy in non- 
+iodine- deficient areas is likely to be under 1% [ 39]. [Evidence 
+level 2+]
+Ultrasound- detected nodules are more common with increasing 
+parity and age [ 40, 41 ], and may increase in size during preg -
+nancy [ 40, 189 ]. Thyroid cancer in association with pregnancy 
+is very rare, with a prevalence of 14 in 100 000 [ 190] and is more 
+likely to be diagnosed postpartum than at other times in preg -
+nancy [ 39, 190 ]. [Evidence level 2+]
+10.1 | What Is the Management of Thyroid 
+Nodules in Pregnancy?
+RecommendationEvidence 
+quality StrengthRationale for 
+recommendation
+In all women with new 
+or enlarging clinically 
+detectable thyroid 
+nodules or goitre in 
+pregnancy, check thyroid 
+function and refer to an 
+appropriate specialist for 
+assessment3 D To ensure appropriate 
+management of possible 
+thyroid dysfunction and 
+airway obstruction in 
+pregnancy and labour, as 
+well as exclude malignancyRecommendationEvidence 
+quality StrengthRationale for 
+recommendation
+If there is suspicion 
+of malignancy on 
+ultrasound, a fine 
+needle aspiration can be 
+safely performed at any 
+gestation2+ B Proven diagnostic use 
+and safety in pregnancy
+If thyroid surgery is 
+required this should 
+ideally be performed 
+between 14 and 22 weeks 
+of gestation3 C To reduce the risk 
+of miscarriage and 
+preterm labour
+Women with an enlarged 
+thyroid in pregnancy 
+should be reviewed by an 
+obstetric anaesthetist3 D To manage possible airway 
+obstruction and anticipate 
+risk of a difficult intubation 
+in the event a general 
+anaesthetic is required
+Women with compressive symptoms from thyroid enlargement 
+should be referred urgently to an ENT surgeon/Endocrinologist 
+(depending on local expertise) for airway assessment and con -
+sideration of surgical intervention. Surgical intervention should 
+ideally be made between 14 and 22 weeks' gestation, where pos -
+sible, to minimise maternal and fetal morbidity, pregnancy loss 
+and preterm birth [ 173, 191 ]. [Evidence level 3]
+The primary aims in care when a new thyroid nodule is diag -
+nosed are three- fold: to assess local symptoms, and to exclude ma -
+lignancy and hyperthyroidism. Ultrasound is the most sensitive 
+test for detecting thyroid nodules, measuring their dimensions, 
+identifying their content and evaluating any associated changes 
+in the thyroid gland [ 192]. Radioactive agents should be avoided 
+for diagnostic or therapeutic purposes in pregnancy [ 193]. If fine 
+needle aspiration is required for diagnostic purposes this may be 
+performed at any gestation [ 136, 194–196 ]. [Evidence level 2+]
+10.2 | What Is the Effect of Pregnancy on the Risk 
+of Progression and Recurrence of Thyroid Cancer?
+RecommendationEvidence 
+quality StrengthRationale for 
+recommendation
+Women should be counselled that 
+there is no difference in the rate of 
+recurrence or long- term survival 
+with well- differentiated thyroid 
+cancer identified during pregnancy 
+compared with those diagnosed 
+outside of pregnancy2+ B Current literature 
+including 
+meta- analysis of 
+cohort studies
+Studies have compared the diagnostic features and prognosis 
+of women diagnosed with differentiated thyroid cancer either 
+during pregnancy or within the first year postpartum to non- 
+pregnant women [ 197–201 ]. All are retrospective, and the size of 
+many of the studies was limited or did not use the contemporary 
+tools for the detection of recurrence. Most clinical outcome data 
+show no difference in the rate of recurrence or long- term sur -
+vival of women following treatment for well- differentiated thy -
+roid cancer identified during pregnancy [ 194]. A meta- analysis 
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18088 by Test, Wiley Online Library on [30/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+18 of 32 BJOG: An International Journal of Obstetrics & Gynaecology, 2025[202] with a total of 406 329 cases found that women who devel -
+oped thyroid carcinoma during pregnancy did not exhibit a sig -
+nificantly increased risk of lymphatic metastasis (OR 0.94, 95% 
+CI 0.53–1.67) or distant metastasis (OR 1.03, 95% CI 0.86–1.24). 
+[Evidence level 2+]
+Generally, surgery for most common thyroid cancers diagnosed 
+in pregnancy can be deferred until after birth unless there is 
+substantial growth, significant airway compression, or rapidly 
+progressive disease. [Evidence level 3]
+11 | Postpartum Thyroiditis
+PPT is defined as the development of thyroid dys -
+function, excluding other thyroid diseases, within the 
+first 12 months following a pregnancy in a previously 
+euthyroid woman [ 203]. This is an autoimmune disorder asso -
+ciated with antibodies to TPO and thyroglobulin [ 204], caused 
+by a reactivation of the immune system following the relative 
+ immune suppression during pregnancy [ 205].
+PPT occurs in 5%–10% of unselected pregnancies [ 206]. Women 
+with other autoimmune disorders are at increased risk, in par -
+ticular, those with type 1 diabetes mellitus [ 207], systemic lupus 
+erythematosus [ 102] and a previous history of Graves' disease 
+[208]. PPT may also occur in those with Hashimoto's thyroid -
+itis [ 209] or with a personal or family history of thyroid disease 
+[205]. Overall, 30%–50% of women with positive TPOAb develop 
+PPT with higher risk in those with higher TPO antibody concen -
+trations [ 210]. [Evidence level 3]
+The classical form of PPT is triphasic with an initial thyrotoxic 
+phase followed by a transient hypothyroid phase and then a return 
+to euthyroidism. The clinical course is variable with 20%–40% of 
+women exhibiting the classical form, 20%–30% developing only 
+thyrotoxicosis and 40%–50% presenting with isolated hypothy-
+roidism [ 205, 210 ]. The thyrotoxic phase usually occurs between 
+2 and 6 months postpartum but may present up to 12 months fol -
+lowing birth. The hypothyroid phase typically presents between 
+3 and 12 months postpartum and results in permanent hypo -
+thyroidism in up to 50% [ 51, 211, 212 ]. Risk factors for perma -
+nent hypothyroidism include multiparity, higher concentrations 
+of TPOAb, greater maternal age, more severe hypothyroidism, 
+thyroid hypoechogenicity on ultrasound scanning and a history of 
+pregnancy loss [ 51, 205, 213 ]. The risk of relapse of PPT with subse -
+quent pregnancies is as high as 70%, especially in TPOAb positive 
+women [ 205]. Some studies have indicated a link between TPOAb 
+positivity [ 214–216 ], PPT [ 217] and postpartum depression, but an 
+RCT of levothyroxine prophylaxis in TPOAb positive women did 
+not lower rates of postpartum depression [ 218]. [Evidence level 1+]
+11.1 | How Should Postpartum Thyroiditis Be 
+Diagnosed?
+RecommendationEvidence 
+quality StrengthRationale for 
+recommendation
+Routine testing for PPT is 
+not recommended4 D This condition is 
+mostly self- limitingRecommendationEvidence 
+quality StrengthRationale for 
+recommendation
+In women with risk 
+factors for PPT who 
+experience symptoms of 
+thyrotoxicosis, thyroid 
+function tests should be 
+performed4 D Case series have shown 
+higher risk of PPT in 
+women with these risk 
+factors and symptoms
+To confirm the diagnosis 
+of PPT in the presence 
+of an abnormal thyroid 
+function test, perform 
+serial thyroid function 
+testing every 6 weeks with 
+symptom assessment, 
+and exclude other 
+aetiologies. At any point, 
+if thyroid function tests 
+show thyrotoxicosis 
+measure TRAb and 
+consider isotope scans 
+to distinguish between 
+Graves' disease and PPT2— C PPT is characterised 
+by evolving clinical 
+features and biochemistry 
+indicative of thyroid 
+dysfunction. Increased 
+TRAb and diffuse uptake 
+of isotopes are consistent 
+with Graves' disease
+The thyroidal inflammation in PPT is usually painless and 
+many women are asymptomatic, but a small diffuse goitre 
+may be present. During the thyrotoxic phase, irritability, pal -
+pitations or heat intolerance may develop [ 51, 205, 219 ]. The 
+hypothyroid phase is more frequently symptomatic and cold 
+intolerance, dry skin, fatigue and concentration difficulties 
+may be present [ 220]. TPOAb positive women with PPT usually 
+have more symptoms than those without raised concentrations 
+of TPOAb [ 221].
+The major challenge is to distinguish thyrotoxicosis caused by 
+PPT from de novo or recurrent Graves' disease in the postpar -
+tum period. Thyrotoxic symptoms during the first 3 months 
+postpartum are more likely due to PPT and those presenting 
+6 months following birth are often caused by Graves' disease 
+[222]. Ophthalmopathy, a large goitre with bruit, and raised 
+TRAb levels confirm Graves' disease whereas a raised T4:T3 
+ratio is found in PPT. Uptake of radioactive isotope (Technetium 
+[99mTc] or radioiodine [123I]) is increased in Graves' disease and 
+low in PPT. Both isotopes may be used in breastfeeding women 
+as long as the breast milk is discarded for at least 3 days after the 
+radioisotope investigation [ 51, 205, 223 ]. Thyroid ultrasonogra -
+phy usually reveals a non- homogeneous hypoechogenic texture 
+[224] and histopathological evaluation demonstrates lympho -
+cytic infiltration in PPT [ 205].
+11.2 | What Is the Optimal Care of Postpartum 
+Thyroiditis if Diagnosed?
+RecommendationEvidence 
+quality StrengthRationale for 
+recommendation
+Antithyroid drugs are not 
+indicated in the management 
+of the thyrotoxic phase of 
+PPT2+ B The thyrotoxic phase 
+is caused by transient 
+destructive thyroiditis. 
+Antithyroid drugs inhibit 
+thyroid hormone production 
+and cannot address the 
+pathology of PPT
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18088 by Test, Wiley Online Library on [30/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+19 of 32RecommendationEvidence 
+quality StrengthRationale for 
+recommendation
+Consider treatment of 
+symptomatic women in 
+the thyrotoxic phase with 
+beta- blockers4 C Beta blockers are very 
+effective in controlling 
+symptoms of thyrotoxicosis, 
+if required. Propranolol 
+and metoprolol are safe 
+in breastfeeding
+Levothyroxine replacement is 
+appropriate for women who 
+are very symptomatic during 
+the hypothyroid phase of PPT 
+or actively trying to become 
+pregnant4 D Levothyroxine is a safe 
+and effective treatment to 
+relieve symptoms, including 
+during breastfeeding. If 
+planning pregnancy, optimal 
+control of thyroid function 
+is associated with improved 
+pregnancy outcomes
+Those who are not 
+treated can be managed 
+expectantly with thyroid 
+function monitoring every 
+6 weeks until restoration of 
+euthyroidism4 D PPT usually resolves 
+spontaneously but a 
+proportion of women 
+will develop permanent 
+hypothyroidism
+Following restoration of 
+euthyroidism, monitor serum 
+TSH annually in women 
+with a history of PPT as 
+they continue to be at risk 
+of developing permanent 
+hypothyroidism2++ C Approximately 50% of women 
+with a history of PPT develop 
+permanent hypothyroidism
+In women with a history 
+of PPT, test for thyroid 
+dysfunction when planning 
+to get pregnant and as soon 
+as possible in pregnancy2++ C Optimal control of thyroid 
+function preconception 
+and in pregnancy is 
+associated with improved 
+pregnancy outcomes
+There is insufficient evidence 
+to recommend levothyroxine 
+prophylaxis, or either iodine 
+or selenium supplementation 
+to prevent or treat PPT1— B The evidence from small 
+RCTs is inconclusive
+If levothyroxine is started in the hypothyroid phase, tapering off 
+the dose may be attempted after 12 months, although this is not 
+appropriate if women are actively trying for pregnancy and indi -
+vidualised treatment decisions should be taken [ 51, 205 ]. In view 
+of the relatively high risk of development of permanent hypothy -
+roidism [Evidence level 2++] , serum TSH should be monitored 
+annually in women with a history of PPT [ 211, 225 ]. Additional 
+testing may be appropriate when they are trying to conceive and 
+as soon as possible when pregnant.
+Two RCTs of levothyroxine or iodine supplementation during and 
+after pregnancy in TPOAb positive women have failed to demon -
+strate efficacy in prevention of PPT [ 226, 227 ]. One single trial has 
+indicated potential benefit of selenium supplementation in pre -
+venting PPT in TPOAb positive women [ 228]. However, there is 
+insufficient evidence to recommend its routine use in this setting.
+12 | Recommendations for Future Research
+• Further controlled trials of iodine supplementation from 
+preconception or early gestation in women in the UK and in 
+other iodine replete or mildly iodine deficient populations, 
+with follow up of the children for measurement of neuro -
+cognitive and behavioural outcomes.• Cost–benefit analyses of universal versus risk- based thy -
+roid function testing in different health settings and 
+subpopulations.
+• Treatment of SCH and IH from preconception or early preg -
+nancy for improvement of pregnancy and child outcomes, 
+ especially in obstetric populations deemed at high- risk due to 
+co- morbidities.
+• Clinical trials comparing different management approaches 
+of hyperthyroidism before and during pregnancy, and eval -
+uating impact on obstetric and fetal outcomes.
+13 | Auditable Topics
+• At least 95% of thyroid function tests performed and 
+ reported in pregnancy should have used or quoted trimes -
+ter- and manufacturer- specific pregnancy reference ranges, 
+where available.
+• At least 90% of women with risk factors for thyroid dys -
+function (in accordance with this guideline, Section  6) 
+should have been offered testing during the first trimes -
+ter with thyroid function tests comprising TSH and fT4 
+simultaneously.
+• Levothyroxine treatment for OH and SCH should be offered 
+at appropriate TSH thresholds in accordance with this 
+guideline on 95% of occasions.
+• At least 90% of women who were already on levothyroxine 
+treatment pre- pregnancy for hypothyroidism should have 
+been counselled before pregnancy or in early pregnancy to 
+empirically increase their levothyroxine dose by an appro -
+priate amount as soon as possible in pregnancy.
+• Following each dose change of levothyroxine, repeat thy -
+roid function tests should be performed in 4–6 weeks and 
+levothyroxine dose titrated in accordance with this guide -
+line on 95% of occasions.
+• Prior to conception, all women of childbearing age who 
+develop hyperthyroidism should have had an informed dis -
+cussion regarding management options and preparation for 
+potential future pregnancy.
+• At least 90% of women who conceived on CMZ should have 
+been advised to either stop treatment or change to PTU 
+ before 10 weeks of gestation, as clinically appropriate, in 
+accordance with this guideline.
+• In women on antithyroid drugs in pregnancy, frequency 
+of thyroid function monitoring and appropriate titration of 
+medication should be conducted in accordance with this 
+guideline (to maintain fT4 concentrations in the upper half 
+of the trimester- specific pregnancy reference range) on 95% 
+of occasions.
+14 | Useful Links and Support Groups
+British Thyroid Association ( https:// www. briti sh- thyro id- assoc 
+iation. org/ ).
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18088 by Test, Wiley Online Library on [30/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+20 of 32 BJOG: An International Journal of Obstetrics & Gynaecology, 2025British Thyroid Foundation ( https:// www. btf- thyro id. org/ ).
+The UK Iodine group ( https:/ / www. ukiod ine. org/ ).
+Conflicts of Interest
+SC is part of an academic consortium that has received grants from 
+Société Des Produits Nestlé S.A. and Bayer, and is a co- inventor on 
+patent filings by Nestlé S.A. unrelated to the published work. SC has 
+received reimbursement from the Expert Group on Inositol in Basic 
+and Clinical Research (EGOI; a not- for- profit academic organisation) 
+and honoraria from Nestlé Nutrition Institute for speaking at confer -
+ences. JG is a co- inventor of patent filings by King’s College London 
+unrelated to the published work. KB has received consulting fees from 
+Eli Lilly, Immunovant, SERB, and Egetis Pharmaceuticals, unrelated 
+to the published work; she has received speaker honoraria from the 
+Gulf Association for Endocrinology and Diabetes (GAED) and from 
+SERB; she is Associate Editor for the Journal of the Endocrine Society 
+for which she receives honoraria. RS received reimbursement to attend 
+scientific conferences from IBSA Pharma and Theramex, and speaker 
+honoraria from Ferring. All other authors declare no Conflicts of 
+Interest.
+References
+1. R. K. Dhillon- Smith, K. Boelaert, Y. B. Jeve, et  al., “Subclinical 
+Hypothyroidism and Antithyroid Autoantibodies in Women With 
+Subfertility or Recurrent Pregnancy Loss: Scientific Impact Paper No. 
+70 June 2022: Scientific Impact Paper No. 70 June 2022,” British Journal 
+of Obstetrics and Gynaecology 129, no. 12 (2022): e75–e88, https:// doi. 
+org/ 10. 1111/ 1471- 0528. 17187 .
+2. D. Glinoer, “The Regulation of Thyroid Function During Normal 
+Pregnancy: Importance of the Iodine Nutrition Status,” Best Practice & 
+Research Clinical Endocrinology & Metabolism 18, no. 2 (2004): 133–152, 
+https:// doi. org/ 10. 1016/j. beem. 2004. 03. 001.
+3. J. M. Hershman, “Physiological and Pathological Aspects of the 
+Effect of Human Chorionic Gonadotropin on the Thyroid,” Best Practice 
+& Research Clinical Endocrinology & Metabolism 18, no. 2 (2004): 249–
+265, https:// doi. org/ 10. 1016/j. beem. 2004. 03. 010.
+4. M. Medici, T. I. Korevaar, W. E. Visser, T. J. Visser, and R. P. Peeters, 
+“Thyroid Function in Pregnancy: What Is Normal?,” Clinical Chemistry 
+61, no. 5 (2015): 704–713, https:// doi. org/ 10. 1373/ clinc hem. 2014. 
+236646 .
+5. D. Glinoer, “The Regulation of Thyroid Function in Pregnancy: 
+Pathways of Endocrine Adaptation From Physiology to Pathology,” 
+Endocrine Reviews 18, no. 3 (1997): 404–433, https:// doi. org/ 10. 1210/ 
+edrv. 18.3. 0300 .
+6. D. Glinoer, “The Importance of Iodine Nutrition During Pregnancy,” 
+Public Health Nutrition 10, no. 12A (2007): 1542–1546, https:// doi. org/ 
+10. 1017/ S1368 98000 7360886 .
+7. R. Burns, C. O'Herlihy, and P. P. Smyth, “The Placenta as a 
+Compensatory Iodine Storage Organ,” Thyroid 21, no. 5 (2011): 541–546, 
+https:// doi. org/ 10. 1089/ thy. 2010. 0203 .
+8. M. B. Zimmermann, “The Effects of Iodine Deficiency in Pregnancy 
+and Infancy,” Paediatric and Perinatal Epidemiology 26, no. Suppl 1 
+(2012): 108–117, https:// doi. org/ 10. 1111/j. 1365- 3016. 2012. 01275. x.
+9. M. D. Kilby, K. Barber, E. Hobbs, and J. A. Franklyn, “Thyroid 
+Hormone Action in the Placenta,” Placenta 26, no. 2–3 (2005): 105–113, 
+https:// doi. org/ 10. 1016/j. place nta. 2004. 08. 004.
+10. G. R. Williams, “Neurodevelopmental and Neurophysiological 
+Actions of Thyroid Hormone,” Journal of Neuroendocrinology 20, no. 6 
+(2008): 784–794, https:// doi. org/ 10. 1111/j. 1365- 2826. 2008. 01733. x.11. G. M. de Escobar, M. J. Obregón, and F. E. del Rey, “Maternal 
+Thyroid Hormones Early in Pregnancy and Fetal Brain Development,” 
+Best Practice & Research Clinical Endocrinology & Metabolism 18, no. 2 
+(2004): 225–248, https:// doi. org/ 10. 1016/j. beem. 2004. 03. 012 .
+12. S. Y. Chan, E. Vasilopoulou, and M. D. Kilby, “The Role of the 
+Placenta in Thyroid Hormone Delivery to the Fetus,” Nature Clinical 
+Practice Endocrinology & Metabolism 5, no. 1 (2009): 45–54, https:// doi. 
+org/ 10. 1038/ ncpen dmet1026 .
+13. T. Vulsma, M. H. Gons, and J. J. de Vijlder, “Maternal- Fetal Transfer of 
+Thyroxine in Congenital Hypothyroidism Due to a Total Organification 
+Defect or Thyroid Agenesis,” New England Journal of Medicine 321, no. 1 
+(1989): 13–16, https:// doi. org/ 10. 1056/ NEJM1 98907 06321 0103 .
+14. World Health Organization. Assessment of the Iodine Deficiency 
+Disorders and Monitoring Their Elimination (Geneva, Switzerland: 
+WHO Press, 2007), https:// apps. who. int/ iris/ bitst ream/ handle/ 10665/ 
+43781/ 97892 41595 827_ eng. pdf? seque nce= 1.
+15. F. M. Delange and J. T. Dunn, “Iodine Deficiency,” in The Thyroid: A 
+Fundamental and Clinical Text , 9th ed., eds. C. Sidney, S. H. I. Werner, L. 
+E. Braverman, and R. D. Utiger (Philadelphia, PA: Lippincott Williams 
+& Wilkins, 2005), 264–288.
+16. S. B. Sahin, S. Ogullar, U. M. Ural, K. Ilkkilic, Y. Metin, and T. Ayaz, 
+“Alterations of Thyroid Volume and Nodular Size During and After 
+Pregnancy in a Severe Iodine- Deficient Area,” Clinical Endocrinology 
+81, no. 5 (2014): 762–768, https:// doi. org/ 10. 1111/ cen. 12490 .
+17. A. Berghout and W. Wiersinga, “Thyroid Size and Thyroid Function 
+During Pregnancy: An Analysis,” European Journal of Endocrinology 
+138, no. 5 (1998): 536–542, https:// doi. org/ 10. 1530/ eje.0. 1380536 .
+18. R. Moreno- Reyes, D. Glinoer, H. Van Oyen, and S. Vandevijvere, 
+“High Prevalence of Thyroid Disorders in Pregnant Women in a 
+Mildly Iodine- Deficient Country: A Population- Based Study,” Journal 
+of Clinical Endocrinology and Metabolism 98, no. 9 (2013): 3694–3701, 
+https:// doi. org/ 10. 1210/ jc. 2013- 2149 .
+19. C. Charoenratana, P. Leelapat, K. Traisrisilp, and T. Tongsong, 
+“Maternal Iodine Insufficiency and Adverse Pregnancy Outcomes,” 
+Maternal & Child Nutrition 12, no. 4 (2016): 680–687, https:// doi. org/ 
+10. 1111/ mcn. 12211 .
+20. B. Torlinska, S. C. Bath, A. Janjua, K. Boelaert, and S. Y. Chan, 
+“Iodine Status During Pregnancy in a Region of Mild- To- Moderate 
+Iodine Deficiency Is Not Associated With Adverse Obstetric Outcomes; 
+Results From the Avon Longitudinal Study of Parents and Children 
+(ALSPAC),” Nutrients 10, no. 3 (2018): 291, https:// doi. org/ 10. 3390/ 
+nu100 30291 .
+21. N. H. van Mil, H. Tiemeier, J. J. Bongers- Schokking, et al., “Low 
+Urinary Iodine Excretion During Early Pregnancy Is Associated 
+With Alterations in Executive Functioning in Children,” Journal of 
+Nutrition 142, no. 12 (2012): 2167–2174, https:// doi. org/ 10. 3945/ jn. 
+112. 161950 .
+22. F. Vermiglio, V. P. Lo Presti, M. Moleti, et  al., “Attention Deficit 
+and Hyperactivity Disorders in the Offspring of Mothers Exposed to 
+Mild- Moderate Iodine Deficiency: A Possible Novel Iodine Deficiency 
+Disorder in Developed Countries,” Journal of Clinical Endocrinology 
+and Metabolism 89, no. 12 (2004): 6054–6060, https:// doi. org/ 10. 1210/ 
+jc. 2004- 0571 .
+23. S. C. Bath, C. D. Steer, J. Golding, P. Emmett, and M. P. Rayman, 
+“Effect of Inadequate Iodine Status in UK Pregnant Women on Cognitive 
+Outcomes in Their Children: Results From the Avon Longitudinal 
+Study of Parents and Children (ALSPAC),” Lancet 382, no. 9889 (2013): 
+331–337, https:// doi. org/ 10. 1016/ S0140 - 6736(13) 60436 - 5.
+24. K. L. Hynes, P. Otahal, I. Hay, and J. R. Burgess, “Mild Iodine 
+Deficiency During Pregnancy Is Associated With Reduced Educational 
+Outcomes in the Offspring: 9- Year Follow- Up of the Gestational Iodine 
+Cohort,” Journal of Clinical Endocrinology and Metabolism 98, no. 5 
+(2013): 1954–1962, https:// doi. org/ 10. 1210/ jc. 2012- 4249 .
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18088 by Test, Wiley Online Library on [30/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+21 of 3225. G. E. Krassas, K. Poppe, and D. Glinoer, “Thyroid Function and 
+Human Reproductive Health,” Endocrine Reviews 31, no. 5 (2010): 702–
+755, https:// doi. org/ 10. 1210/ er. 2009- 0041 .
+26. S. H. LaFranchi, J. E. Haddow, and J. G. Hollowell, “Is Thyroid 
+Inadequacy During Gestation a Risk Factor for Adverse Pregnancy and 
+Developmental Outcomes?,” Thyroid 15, no. 1 (2005): 60–71, https:// doi. 
+org/ 10. 1089/ thy. 2005. 15. 60.
+27. M. Abalovich, S. Gutierrez, G. Alcaraz, G. Maccallini, A. Garcia, 
+and O. Levalle, “Overt and Subclinical Hypothyroidism Complicating 
+Pregnancy,” Thyroid 12, no. 1 (2002): 63–68, https:// doi. org/ 10. 1089/ 
+10507 25027 53451986 .
+28. H. Marx, P. Amin, and J. H. Lazarus, “Hyperthyroidism and 
+Pregnancy,” BMJ 336, no. 7645 (2008): 663–667, https:// doi. org/ 10. 1136/ 
+bmj. 39462. 709005. AE.
+29. D. S. Cooper and P. Laurberg, “Hyperthyroidism in Pregnancy,” 
+Lancet Diabetes and Endocrinology 1, no. 3 (2013): 238–249, https:// doi. 
+org/ 10. 1016/ S2213 - 8587(13) 70086 - X.
+30. C. T. Nguyen, E. B. Sasso, L. Barton, and J. H. Mestman, “Graves' 
+Hyperthyroidism in Pregnancy: A Clinical Review,” Clinical 
+Diabetes and Endocrinology 4 (2018): 4, https:// doi. org/ 10. 1186/ s4084 
+2- 018- 0054- 7.
+31. A. Carlé, S. L. Andersen, K. Boelaert, and P. Laurberg, “Management 
+of Endocrine Disease: Subclinical Thyrotoxicosis: Prevalence, Causes 
+and Choice of Therapy,” European Journal of Endocrinology 176, no. 6 
+(2017): R325–R337, https:// doi. org/ 10. 1530/ EJE- 16- 0276 .
+32. B. M. Casey, J. S. Dashe, C. E. Wells, D. D. McIntire, K. J. Leveno, 
+and F. G. Cunningham, “Subclinical Hyperthyroidism and Pregnancy 
+Outcomes,” Obstetrics & Gynecology 107, no. 2 Pt 1 (2006): 337–341, 
+https:// doi. org/ 10. 1097/ 01. AOG. 00001 97991. 64246. 9a .
+33. S. Thangaratinam, A. Tan, E. Knox, M. D. Kilby, J. Franklyn, and 
+A. Coomarasamy, “Association Between Thyroid Autoantibodies and 
+Miscarriage and Preterm Birth: Meta- Analysis of Evidence,” BMJ 342 
+(2011): d2616, https:// doi. org/ 10. 1136/ bmj. d2616 .
+34. R. K. Dhillon- Smith, A. Tobias, P. P. Smith, et al., “The Prevalence 
+of Thyroid Dysfunction and Autoimmunity in Women With History 
+of Miscarriage or Subfertility,” Journal of Clinical Endocrinology and 
+Metabolism 105, no. 8 (2020): 2667–2677, https:// doi. org/ 10. 1210/ cli-
+nem/ dgaa302 .
+35. E. van den Boogaard, R. Vissenberg, J. A. Land, et al., “Significance 
+of (Sub)clinical Thyroid Dysfunction and Thyroid Autoimmunity 
+Before Conception and in Early Pregnancy: A Systematic Review,” 
+Human Reproduction Update 17, no. 5 (2011): 605–619, https:// doi. org/ 
+10. 1093/ humupd/ dmr024 .
+36. F. Saki, M. H. Dabbaghmanesh, S. Z. Ghaemi, S. Forouhari, G. 
+R. Omrani, and M. Bakhshayeshkaram, “Thyroid Autoimmunity in 
+Pregnancy and Its Influences on Maternal and Fetal Outcome in Iran 
+(a Prospective Study),” Endocrine Research 40, no. 3 (2015): 139–145, 
+https:// doi. org/ 10. 3109/ 07435 800. 2014. 966384 .
+37. P. Karakosta, D. Alegakis, V. Georgiou, et al., “Thyroid Dysfunction 
+and Autoantibodies in Early Pregnancy Are Associated With Increased 
+Risk of Gestational Diabetes and Adverse Birth Outcomes,” Journal of 
+Clinical Endocrinology and Metabolism 97, no. 12 (2012): 4464–4472, 
+https:// doi. org/ 10. 1210/ jc. 2012- 2540.
+38. O. Bitterman, M. Bongiovanni, C. Giuliani, G. Roma, V. Toscano, 
+and A. Napoli, “Anti Thyroperoxidase and Anti Thyroglobulin 
+Antibodies in Diabetic Pregnancies,” Journal of Endocrinological 
+Investigation 37, no. 10 (2014): 911–915, https:// doi. org/ 10. 1007/ s4061 
+8- 014- 0087- 4.
+39. S. L. Andersen, J. Olsen, and P. Laurberg, “Maternal Thyroid Disease 
+in the Danish National Birth Cohort: Prevalence and Risk Factors,” 
+European Journal of Endocrinology 174, no. 2 (2016): 203–212, https:// 
+doi. org/ 10. 1530/ EJE- 15- 0816 .40. C. W. Struve, S. Haupt, and S. Ohlen, “Influence of Frequency of 
+Previous Pregnancies on the Prevalence of Thyroid Nodules in Women 
+Without Clinical Evidence of Thyroid Disease,” Thyroid 3, no. 1 (1993): 
+7–9, https:// doi. org/ 10. 1089/ thy. 1993.3. 7.
+41. A. W. Kung, M. T. Chau, T. T. Lao, S. C. Tam, and L. C. Low, “The 
+Effect of Pregnancy on Thyroid Nodule Formation,” Journal of Clinical 
+Endocrinology and Metabolism 87, no. 3 (2002): 1010–1014, https:// doi. 
+org/ 10. 1210/ jcem. 87.3. 8285 .
+42. Royal College of Obstetricians and Gynaecologists, Developing a 
+Green- Top Guideline: Guidance for Developers (London: RCOG, 2020).
+43. J. H. Lazarus, O. P. Soldin, and C. Evans, “Assessing Thyroid 
+Function in Pregnancy,” in Thyroid Function Testing , ed. G. Brent (New 
+York: Springer, 2010).
+44. R. M. Gilbert, N. C. Hadlow, J. P. Walsh, et  al., “Assessment of 
+Thyroid Function During Pregnancy: First- Trimester (Weeks 9- 13) 
+Reference Intervals Derived From Western Australian Women,” 
+Medical Journal of Australia 189, no. 5 (2008): 250–253, https:// doi. org/ 
+10. 5694/j. 1326- 5377. 2008. tb020 15. x.
+45. A. R. McNeil and P. E. Stanford, “Reporting Thyroid Function Tests 
+in Pregnancy,” Clinical Biochemistry Reviews 36, no. 4 (2015): 109–126.
+46. O. E. Okosieme, M. Agrawal, D. Usman, and C. Evans, “Method- 
+Dependent Variation in TSH and FT4 Reference Intervals in Pregnancy: 
+A Systematic Review,” Annals of Clinical Biochemistry 58 (2021): 537–
+546, https:// doi. org/ 10. 1177/ 00045 63221 1026955 .
+47. J. A. J. Osinga, A. Derakhshan, G. E. Palomaki, et al., “TSH and FT4 
+Reference Intervals in Pregnancy: A Systematic Review and Individual 
+Participant Data Meta- Analysis,” Journal of Clinical Endocrinology and 
+Metabolism 107, no. 10 (2022): 2925–2933, https:// doi. org/ 10. 1210/ cli-
+nem/ dgac425 .
+48. G. Ashoor, O. Muto, L. C. Poon, M. Muhaisen, and K. H. Nicolaides, 
+“Maternal Thyroid Function at Gestational Weeks 11- 13 in Twin 
+Pregnancies,” Thyroid 23, no. 9 (2013): 1165–1171, https:// doi. org/ 10. 
+1089/ thy. 2012. 0537 .
+49. Institute of Medicine (US) Panel on Micronutrients, “Dietary 
+Reference Intakes for Vitamin A, Vitamin K, Arsenic, Boron, 
+Chromium, Copper, Iodine, Iron, Manganese, Molybdenum, Nickel, 
+Silicon, Vanadium, and Zinc,” 2001.
+50. P. Trumbo, A. A. Yates, S. Schlicker, and M. Poos, “Dietary Reference 
+Intakes: Vitamin A, Vitamin K, Arsenic, Boron, Chromium, Copper, 
+Iodine, Iron, Manganese, Molybdenum, Nickel, Silicon, Vanadium, and 
+Zinc,” Journal of the American Dietetic Association 101, no. 3 (2001): 
+294–301, https:// doi. org/ 10. 1016/ S0002 - 8223(01) 00078 - 5.
+51. E. K. Alexander, E. N. Pearce, G. A. Brent, et  al., “2017 
+Guidelines of the American Thyroid Association for the Diagnosis 
+and Management of Thyroid Disease During Pregnancy and the 
+Postpartum,” Thyroid 27, no. 3 (2017): 315–389, https:// doi. org/ 10. 
+1089/ thy. 2016. 0457 .
+52. EFSA Panel on Dietetic Products NaAN, “Scientific Opinion on 
+Dietary Values for Iodine,” EFSA Journal 12, no. 5 (2014): 3660.
+53. F. Rohner, M. Zimmermann, P. Jooste, et  al., “Biomarkers of 
+Nutrition for Development—Iodine Review,” Journal of Nutrition 144, 
+no. 8 (2014): 1322S–1342S, https:// doi. org/ 10. 3945/ jn. 113. 181974 .
+54. M. Sprague, T. C. Chau, and D. I. Givens, “Iodine Content of Wild 
+and Farmed Seafood and Its Estimated Contribution to UK Dietary 
+Iodine Intake,” Nutrients 14, no. 1 (2021): 195, https:// doi. org/ 10. 3390/ 
+nu140 10195 .
+55. D. E. Threapleton, D. Waiblinger, C. J. P. Snart, et  al., “Prenatal 
+and Postpartum Maternal Iodide Intake From Diet and Supplements, 
+Urinary Iodine and Thyroid Hormone Concentrations in a Region of the 
+United Kingdom With Mild- to- Moderate Iodine Deficiency,” Nutrients 
+13, no. 1 (2021): 230, https:// doi. org/ 10. 3390/ nu130 10230 .
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18088 by Test, Wiley Online Library on [30/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+22 of 32 BJOG: An International Journal of Obstetrics & Gynaecology, 202556. S. Bath and M. Rayman, “Iodine Food Fact Sheet. The British 
+Dietetic Association (BDA),” https:// www. bda. uk. com/ resou rce/ io-
+dine. html .
+57. S. Andersen, J. Karmisholt, K. M. Pedersen, and P. Laurberg, 
+“Reliability of Studies of Iodine Intake and Recommendations for Number 
+of Samples in Groups and in Individuals,” British Journal of Nutrition 99, 
+no. 4 (2008): 813–818, https:// doi. org/ 10. 1017/ S0007 11450 7842292 .
+58. F. König, M. Andersson, K. Hotz, I. Aeberli, and M. B. Zimmermann, 
+“Ten Repeat Collections for Urinary Iodine From Spot Samples or 24- 
+Hour Samples Are Needed to Reliably Estimate Individual Iodine Status 
+in Women,” Journal of Nutrition 141, no. 11 (2011): 2049–2054, https:// 
+doi. org/ 10. 3945/ jn. 111. 144071 .
+59. M. Andersson, B. de Benoist, F. Delange, J. Zupan, and W. Secretariat, 
+“Prevention and Control of Iodine Deficiency in Pregnant and Lactating 
+Women and in Children Less Than 2- Years- Old: Conclusions and 
+Recommendations of the Technical Consultation,” Public Health 
+Nutrition 10, no. 12A (2007): 1606–1611, https:// doi. org/ 10. 1017/ S1368 
+98000 7361004 .
+60. F. Delange, “Optimal Iodine Nutrition During Pregnancy, Lactation 
+and the Neonatal Period,” International Journal of Endocrinology and 
+Metabolism 2 (2004): 1–12.
+61. N. Campbell, O. Dary, F. P. Cappuccio, L. M. Neufeld, K. B. Harding, 
+and M. B. Zimmermann, “Collaboration to Optimize Dietary Intakes of 
+Salt and Iodine: A Critical but Overlooked Public Health Issue,” Bulletin 
+of the World Health Organization 90, no. 1 (2012): 73–74, https:// doi. org/ 
+10. 2471/ BLT. 11. 092080.
+62. M. P. Vanderpump, J. H. Lazarus, P. P. Smyth, et al., “Iodine Status of 
+UK Schoolgirls: A Cross- Sectional Survey,” Lancet 377, no. 9782 (2011): 
+2007–2012, https:// doi. org/ 10. 1016/ S0140 - 6736(11) 60693 - 4.
+63. Iodine Global Network, “Global Scorecard of Iodine Nutrition in 
+2016 Based on School- Age Children and Adults,” https:/ / www. ign. org/ 
+cm_ data/ 2016_ SAC. pdf.
+64. E. Combet, M. Bouga, B. Pan, M. E. Lean, and C. O. Christopher, 
+“Iodine and Pregnancy—a UK Cross- Sectional Survey of Dietary 
+Intake, Knowledge and Awareness,” British Journal of Nutrition 114, no. 
+1 (2015): 108–117, https:// doi. org/ 10. 1017/ S0007 11451 5001464 .
+65. S. Vandevijvere, S. Amsalkhir, A. B. Mourri, H. Van Oyen, and R. 
+Moreno- Reyes, “Iodine Deficiency Among Belgian Pregnant Women 
+Not Fully Corrected by Iodine- Containing Multivitamins: A National 
+Cross- Sectional Survey,” British Journal of Nutrition 109, no. 12 (2013): 
+2276–2284, https:// doi. org/ 10. 1017/ S0007 11451 2004473 .
+66. P. Pharoah, I. H. Buttfield, and B. S. Hetzel, “Neurological Damage to 
+the Fetus Resulting From Severe Iodine Deficiency During Pregnancy,” 
+International Journal of Epidemiology 41, no. 3 (2012): 589–592, https:// 
+doi. org/ 10. 1093/ ije/ dys070 .
+67. C. H. Thilly, F. Delange, R. Lagasse, et al., “Fetal Hypothyroidism 
+and Maternal Thyroid Status in Severe Endemic Goiter,” Journal of 
+Clinical Endocrinology and Metabolism 47, no. 2 (1978): 354–360, 
+https:// doi. org/ 10. 1210/ jcem- 47- 2- 354.
+68. P. Santiago, I. Velasco, J. A. Muela, et  al., “Infant Neurocognitive 
+Development Is Independent of the Use of Iodised Salt or Iodine 
+Supplements Given During Pregnancy,” British Journal of Nutrition 110, 
+no. 5 (2013): 831–839, https:// doi. org/ 10. 1017/ S0007 11451 2005880 .
+69. K. J. O'Donnell, M. A. Rakeman, D. Zhi- Hong, et al., “Effects of Iodine 
+Supplementation During Pregnancy on Child Growth and Development 
+at School Age,” Developmental Medicine and Child Neurology 44, no. 2 
+(2002): 76–81, https:// doi. org/ 10. 1017/ s0012 16220 1001712 .
+70. P. Berbel, J. L. Mestre, A. Santamaría, et  al., “Delayed 
+Neurobehavioral Development in Children Born to Pregnant Women 
+With Mild Hypothyroxinemia During the First Month of Gestation: The 
+Importance of Early Iodine Supplementation,” Thyroid 19, no. 5 (2009): 
+511–519, https:// doi. org/ 10. 1089/ thy. 2008. 0341 .71. M. Rebagliato, M. Murcia, M. Alvarez- Pedrerol, et  al., “Iodine 
+Supplementation During Pregnancy and Infant Neuropsychological 
+Development. INMA Mother and Child Cohort Study,” American 
+Journal of Epidemiology 177, no. 9 (2013): 944–953, https:// doi. org/ 10. 
+1093/ aje/ kws333 .
+72. S. J. Zhou, S. A. Skeaff, P. Ryan, et  al., “The Effect of Iodine 
+Supplementation in Pregnancy on Early Childhood Neurodevelopment 
+and Clinical Outcomes: Results of an Aborted Randomised Placebo- 
+Controlled Trial,” Trials 16 (2015): 563, https:// doi. org/ 10. 1186/ s1306 
+3- 015- 1080- 8.
+73. P. N. Taylor, O. E. Okosieme, C. M. Dayan, and J. H. Lazarus, 
+“Therapy of Endocrine Disease: Impact of Iodine Supplementation in 
+Mild- To- Moderate Iodine Deficiency: Systematic Review and Meta- 
+Analysis,” European Journal of Endocrinology 170, no. 1 (2014): R1–R15, 
+https:// doi. org/ 10. 1530/ EJE- 13- 0651 .
+74. D. E. Threapleton, C. J. P. Snart, C. Keeble, et al., “Maternal Iodine 
+Status in a Multi- Ethnic UK Birth Cohort: Associations With Child 
+Cognitive and Educational Development,” Paediatric and Perinatal 
+Epidemiology 35, no. 2 (2021): 236–246, https:// doi. org/ 10. 1111/ ppe. 
+12719 .
+75. K. B. Harding, J. P. Peña- Rosas, A. C. Webster, et  al., “Iodine 
+Supplementation for Women During the Preconception, Pregnancy and 
+Postpartum Period,” Cochrane Database of Systematic Reviews 3 (2017): 
+CD011761, https:// doi. org/ 10. 1002/ 14651 858. CD011 761. pub2 .
+76. S. Gowachirapant, N. Jaiswal, A. Melse- Boonstra, et  al., 
+“Effect of Iodine Supplementation in Pregnant Women on Child 
+Neurodevelopment: A Randomised, Double- Blind, Placebo- Controlled 
+Trial,” Lancet Diabetes and Endocrinology 5, no. 11 (2017): 853–863, 
+https:// doi. org/ 10. 1016/ S2213 - 8587(17) 30332 - 7.
+77. S. C. Bath, “Iodine Supplementation in Pregnancy in Mildly 
+Deficient Regions,” Lancet Diabetes and Endocrinology 5, no. 11 (2017): 
+840–841, https:// doi. org/ 10. 1016/ S2213 - 8587(17) 30331 - 5.
+78. M. Monahan, K. Boelaert, K. Jolly, S. Chan, P. Barton, and T. E. 
+Roberts, “Costs and Benefits of Iodine Supplementation for Pregnant 
+Women in a Mildly to Moderately Iodine- Deficient Population: A 
+Modelling Analysis,” Lancet Diabetes and Endocrinology 3, no. 9 (2015): 
+715–722, https:// doi. org/ 10. 1016/ S2213 - 8587(15) 00212 - 0.
+79. D. H. Baker, “Iodine Toxicity and Its Amelioration,” Experimental 
+Biology and Medicine (Maywood, N.J.) 229, no. 6 (2004): 473–478, 
+https:// doi. org/ 10. 1177/ 15353 70204 22900604 .
+80. A. J. Blatt, J. M. Nakamoto, and H. W. Kaufman, “National Status 
+of Testing for Hypothyroidism During Pregnancy and Postpartum,” 
+Journal of Clinical Endocrinology and Metabolism 97, no. 3 (2012): 777–
+784, https:// doi. org/ 10. 1210/ jc. 2011- 2038 .
+81. S. N. Bryant, D. B. Nelson, D. D. McIntire, B. M. Casey, and F. G. 
+Cunningham, “An Analysis of Population- Based Prenatal Screening 
+for Overt Hypothyroidism,” American Journal of Obstetrics and 
+Gynecology 213, no. 4 (2015): 565.e1–e6., https:// doi. org/ 10. 1016/j. ajog. 
+2015. 06. 061.
+82. J. G. Hollowell, N. W. Staehling, W. D. Flanders, et al., “T(4), and 
+Thyroid Antibodies in the United States Population (1988 to 1994): 
+National Health and Nutrition Examination Survey (NHANES III),” 
+Journal of Clinical Endocrinology and Metabolism 87, no. 2 (2002): 489–
+499, https:// doi. org/ 10. 1210/ jcem. 87.2. 8182 .
+83. J. Horacek, S. Spitalnikova, B. Dlabalova, et al., “Universal Screening 
+Detects Two- Times More Thyroid Disorders in Early Pregnancy Than 
+Targeted High- Risk Case Finding,” European Journal of Endocrinology 
+163, no. 4 (2010): 645–650, https:// doi. org/ 10. 1530/ EJE- 10- 0516 .
+84. M. Moleti, V. P. Lo Presti, F. Mattina, et  al., “Gestational Thyroid 
+Function Abnormalities in Conditions of Mild Iodine Deficiency: Early 
+Screening Versus Continuous Monitoring of Maternal Thyroid Status,” 
+European Journal of Endocrinology 160, no. 4 (2009): 611–617, https:// 
+doi. org/ 10. 1530/ EJE- 08- 0709 .
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18088 by Test, Wiley Online Library on [30/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+23 of 3285. R. Negro, A. Schwartz, R. Gismondi, A. Tinelli, T. Mangieri, and 
+A. Stagnaro- Green, “Universal Screening Versus Case Finding for 
+Detection and Treatment of Thyroid Hormonal Dysfunction During 
+Pregnancy,” Journal of Clinical Endocrinology and Metabolism 95, no. 4 
+(2010): 1699–1707, https:// doi. org/ 10. 1210/ jc. 2009- 2009 .
+86. T. Männistö, M. Vääräsmäki, A. Pouta, et al., “Perinatal Outcome 
+of Children Born to Mothers With Thyroid Dysfunction or Antibodies: 
+A Prospective Population- Based Cohort Study,” Journal of Clinical 
+Endocrinology and Metabolism 94, no. 3 (2009): 772–779, https:// doi. 
+org/ 10. 1210/ jc. 2008- 1520 .
+87. M. T. Sahu, V. Das, S. Mittal, A. Agarwal, and M. Sahu, “Overt and 
+Subclinical Thyroid Dysfunction Among Indian Pregnant Women and 
+Its Effect on Maternal and Fetal Outcome,” Archives of Gynecology and 
+Obstetrics 281, no. 2 (2010): 215–220, https:// doi. org/ 10. 1007/ s0040 
+4- 009- 1105- 1 .
+88. B. Vaidya, S. Anthony, M. Bilous, et  al., “Detection of Thyroid 
+Dysfunction in Early Pregnancy: Universal Screening or Targeted High- 
+Risk Case Finding?,” Journal of Clinical Endocrinology and Metabolism 
+92, no. 1 (2007): 203–207, https:// doi. org/ 10. 1210/ jc. 2006- 1748 .
+89. L. Vila, I. Velasco, S. González, et  al., “Detection of Thyroid 
+Dysfunction in Pregnant Women: Universal Screening Is Justified,” 
+Endocrinología y Nutrición 59, no. 9 (2012): 547–560, https:// doi. org/ 10. 
+1016/j. endonu. 2012. 06. 014.
+90. G. J. Canaris, N. R. Manowitz, G. Mayor, and E. C. Ridgway, “The 
+Colorado Thyroid Disease Prevalence Study,” Archives of Internal 
+Medicine 160, no. 4 (2000): 526–534, https:// doi. org/ 10. 1001/ archi nte. 
+160.4. 526.
+91. J. H. Lazarus, J. P. Bestwick, S. Channon, et al., “Antenatal Thyroid 
+Screening and Childhood Cognitive Function,” New England Journal 
+of Medicine 366, no. 6 (2012): 493–501, https:// doi. org/ 10. 1056/ NEJMo 
+a1106104 .
+92. B. M. Casey, E. A. Thom, A. M. Peaceman, et  al., “Treatment of 
+Subclinical Hypothyroidism or Hypothyroxinemia in Pregnancy,” New 
+England Journal of Medicine 376, no. 9 (2017): 815–825, https:// doi. org/ 
+10. 1056/ NEJMo a1606205 .
+93. G. Mercado, D. J. Adelstein, J. P. Saxton, M. Secic, M. A. Larto, and 
+P. Lavertu, “Hypothyroidism: A Frequent Event After Radiotherapy and 
+After Radiotherapy With Chemotherapy for Patients With Head and 
+Neck Carcinoma,” Cancer 92, no. 11 (2001): 2892–2897, https:// doi. org/ 
+10. 1002/ 1097- 0142(20011 201) 92: 11< 2892:: aid- cncr1 0134> 3.0. co; 2- t.
+94. F. Azizi, “The Occurrence of Permanent Thyroid Failure in Patients 
+With Subclinical Postpartum Thyroiditis,” European Journal of 
+Endocrinology 153, no. 3 (2005): 367–371, https:// doi. org/ 10. 1530/ eje.1. 
+01976 .
+95. A. Lucas, E. Pizarro, M. L. Granada, I. Salinas, J. Roca, and A. 
+Sanmartí, “Postpartum Thyroiditis: Long- Term Follow- Up,” Thyroid 
+15, no. 10 (2005): 1177–1181, https:// doi. org/ 10. 1089/ thy. 2005. 15. 1177 .
+96. T. F. Nikolai, S. L. Turney, and R. C. Roberts, “Postpartum 
+Lymphocytic Thyroiditis. Prevalence, Clinical Course, and Long- Term 
+Follow- Up,” Archives of Internal Medicine 147, no. 2 (1987): 221–224, 
+https:// doi. org/ 10. 1001/ archi nte. 147.2. 221.
+97. S. Othman, D. I. Phillips, A. B. Parkes, et  al., “A Long- Term 
+Follow- Up of Postpartum Thyroiditis,” Clinical Endocrinology 32, no. 
+5 (1990): 559–564, https:// doi. org/ 10. 1111/j. 1365- 2265. 1990. tb008 98. x.
+98. L. D. Premawardhana, A. B. Parkes, F. Ammari, et al., “Postpartum 
+Thyroiditis and Long- Term Thyroid Status: Prognostic Influence of 
+Thyroid Peroxidase Antibodies and Ultrasound Echogenicity,” Journal 
+of Clinical Endocrinology and Metabolism 85, no. 1 (2000): 71–75, 
+https:// doi. org/ 10. 1210/ jcem. 85.1. 6227 .
+99. R. K. Dhillon- Smith, L. J. Middleton, K. K. Sunner, et  al., 
+“Levothyroxine in Women With Thyroid Peroxidase Antibodies Before 
+Conception,” New England Journal of Medicine 380, no. 14 (2019): 1316–
+1325, https:// doi. org/ 10. 1056/ NEJMo a1812537 .100. D. Glinoer, M. Riahi, J. P. Grun, and J. Kinthaert, “Risk of 
+Subclinical Hypothyroidism in Pregnant Women With Asymptomatic 
+Autoimmune Thyroid Disorders,” Journal of Clinical Endocrinology and 
+Metabolism 79, no. 1 (1994): 197–204, https:// doi. org/ 10. 1210/ jcem. 79.1. 
+8027226 .
+101. L. Jovanovic- Peterson and C. M. Peterson, “De Novo Clinical 
+Hypothyroidism in Pregnancies Complicated by Type I Diabetes, 
+Subclinical Hypothyroidism, and Proteinuria: A New Syndrome,” 
+American Journal of Obstetrics and Gynecology 159, no. 2 (1988): 442–
+446, https:// doi. org/ 10. 1016/ s0002 - 9378(88) 80104 - 2.
+102. A. Stagnaro- Green, E. Akhter, C. Yim, T. F. Davies, L. Magder, and 
+M. Petri, “Thyroid Disease in Pregnant Women With Systemic Lupus 
+Erythematosus: Increased Preterm Delivery,” Lupus 20, no. 7 (2011): 
+690–699, https:// doi. org/ 10. 1177/ 09612 03310 394894 .
+103. D. Spence, L. Hornberger, R. Hamilton, and E. D. Silverman, 
+“Increased Risk of Complete Congenital Heart Block in Infants Born to 
+Women With Hypothyroidism and Anti- Ro and/or Anti- La Antibodies,” 
+Journal of Rheumatology 33, no. 1 (2006): 167–170.
+104. W. C. Allan, J. E. Haddow, G. E. Palomaki, et  al., “Maternal 
+Thyroid Deficiency and Pregnancy Complications: Implications for 
+Population Screening,” Journal of Medical Screening 7, no. 3 (2000): 
+127–130, https:// doi. org/ 10. 1136/ jms.7. 3. 127 .
+105. N. Benhadi, W. M. Wiersinga, J. B. Reitsma, T. G. Vrijkotte, and G. 
+J. Bonsel, “Higher Maternal TSH Levels in Pregnancy Are Associated 
+With Increased Risk for Miscarriage, Fetal or Neonatal Death,” 
+European Journal of Endocrinology 160, no. 6 (2009): 985–991, https:// 
+doi. org/ 10. 1530/ EJE- 08- 0953 .
+106. RCOG, Late Intrauterine Fetal Death and Stillbirth . Green-Top 
+Guideline No. 55 (London: RCOG, 2010).
+107. E. Oken, L. E. Braverman, D. Platek, M. L. Mitchell, S. L. Lee, and 
+E. N. Pearce, “Neonatal Thyroxine, Maternal Thyroid Function, and 
+Child Cognition,” Journal of Clinical Endocrinology and Metabolism 94, 
+no. 2 (2009): 497–503, https:// doi. org/ 10. 1210/ jc. 2008- 0936 .
+108. P. N. Taylor, C. Minassian, A. Rehman, et al., “TSH Levels and Risk 
+of Miscarriage in Women on Long- Term Levothyroxine: A Community- 
+Based Study,” Journal of Clinical Endocrinology and Metabolism 99, no. 
+10 (2014): 3895–3902, https:// doi. org/ 10. 1210/ jc. 2014- 1954 .
+109. J. E. Haddow, G. E. Palomaki, W. C. Allan, et al., “Maternal Thyroid 
+Deficiency During Pregnancy and Subsequent Neuropsychological 
+Development of the Child,” New England Journal of Medicine 341, no. 8 
+(1999): 549–555, https:// doi. org/ 10. 1056/ NEJM1 99908 19341 0801 .
+110. S. W. Li and S. Y. Chan, “Management of Overt Hypothyroidism 
+During Pregnancy,” Best Practice & Research. Clinical Endocrinology 
+& Metabolism 34, no. 4 (2020): 101439, https:// doi. org/ 10. 1016/j. beem. 
+2020. 101439 .
+111. J. Meyerovitch, P. Rotman- Pikielny, M. Sherf, E. Battat, Y. Levy, 
+and M. I. Surks, “Serum Thyrotropin Measurements in the Community: 
+Five- Year Follow- Up in a Large Network of Primary Care Physicians,” 
+Archives of Internal Medicine 167, no. 14 (2007): 1533–1538, https:// doi. 
+org/ 10. 1001/ archi nte. 167. 14. 1533 .
+112. M. P. Vanderpump, W. M. Tunbrldge, J. French, et  al., “The 
+Incidence of Thyroid Disorders in the Community: A Twenty- Year 
+Follow- Up of the Whickham Survey,” Clinical Endocrinology 43, no. 1 
+(1995): 55–68, https:// doi. org/ 10. 1111/j. 1365- 2265. 1995. tb018 94. x.
+113. F. J. K. Toloza, A. Derakhshan, T. Mannisto, et al., “Association 
+Between Maternal Thyroid Function and Risk of Gestational 
+Hypertension and Pre- Eclampsia: A Systematic Review and Individual- 
+Participant Data Meta- Analysis,” Lancet Diabetes and Endocrinology 
+10, no. 4 (2022): 243–252, https:// doi. org/ 10. 1016/ S2213 - 8587(22) 
+00007 - 9.
+114. Consortium on Thyroid and Pregnancy—Study Group on Preterm 
+Birth, T. I. M. Korevaar, et al., “Association of Thyroid Function Test 
+Abnormalities and Thyroid Autoimmunity With Preterm Birth: A 
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18088 by Test, Wiley Online Library on [30/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+24 of 32 BJOG: An International Journal of Obstetrics & Gynaecology, 2025Systematic Review and Meta- Analysis,” Journal of the American 
+Medical Association 322, no. 7 (2019): 632–641, https:// doi. org/ 10. 1001/ 
+jama. 2019. 10931 .
+115. A. Derakhshan, R. P. Peeters, P. N. Taylor, et al., “Association of 
+Maternal Thyroid Function With Birthweight: A Systematic Review 
+and Individual- Participant Data Meta- Analysis,” Lancet Diabetes and 
+Endocrinology 8, no. 6 (2020): 501–510, https:// doi. org/ 10. 1016/ S2213 
+- 8587(20) 30061 - 9.
+116. Y. Han, J. Wang, X. Wang, L. Ouyang, and Y. Li, “Relationship 
+Between Subclinical Hypothyroidism in Pregnancy and Hypertensive 
+Disorder of Pregnancy: A Systematic Review and Meta- Analysis,” 
+Frontiers in Endocrinology 13 (2022): 823710, https:// doi. org/ 10. 3389/ 
+fendo. 2022. 823710 .
+117. S. Chan and K. Boelaert, “Optimal Management of Hypothyroidism, 
+Hypothyroxinaemia and Euthyroid TPO Antibody Positivity 
+Preconception and in Pregnancy,” Clinical Endocrinology 82, no. 3 
+(2015): 313–326, https:// doi. org/ 10. 1111/ cen. 12605 .
+118. H. Liu, Z. Shan, C. Li, et al., “Maternal Subclinical Hypothyroidism, 
+Thyroid Autoimmunity, and the Risk of Miscarriage: A Prospective 
+Cohort Study,” Thyroid 24, no. 11 (2014): 1642–1649, https:// doi. org/ 10. 
+1089/ thy. 2014. 0029 .
+119. M. Bein, O. H. Y. Yu, S. M. Grandi, F. Y. E. Frati, I. Kandil, and K. 
+B. Filion, “Levothyroxine and the Risk of Adverse Pregnancy Outcomes 
+in Women With Subclinical Hypothyroidism: A Systematic Review and 
+Meta- Analysis,” BMC Endocrine Disorders 21, no. 1 (2021): 34, https:// 
+doi. org/ 10. 1186/ s1290 2- 021- 00699 - 5.
+120. Z. Ding, Y. Liu, S. Maraka, et  al., “Pregnancy and Neonatal 
+Outcomes With Levothyroxine Treatment in Women With Subclinical 
+Hypothyroidism Based on New Diagnostic Criteria: A Systematic 
+Review and Meta- Analysis,” Frontiers in Endocrinology 12 (2021): 
+797423, https:// doi. org/ 10. 3389/ fendo. 2021. 797423 .
+121. A. Stagnaro- Green, M. Abalovich, E. Alexander, et al., “Guidelines 
+of the American Thyroid Association for the Diagnosis and Management 
+of Thyroid Disease During Pregnancy and Postpartum,” Thyroid 21, no. 
+10 (2011): 1081–1125, https:// doi. org/ 10. 1089/ thy. 2011. 0087 .
+122. C. Han, C. Li, J. Mao, et al., “High Body Mass Index Is an Indicator of 
+Maternal Hypothyroidism, Hypothyroxinemia, and Thyroid- Peroxidase 
+Antibody Positivity During Early Pregnancy,” BioMed Research 
+International 2015 (2015): 351831, https:// doi. org/ 10. 1155/ 2015/ 351831 .
+123. X. Yu, Z. Shan, C. Li, et al., “Iron Deficiency, an Independent Risk 
+Factor for Isolated Hypothyroxinemia in Pregnant and Nonpregnant 
+Women of Childbearing Age in China,” Journal of Clinical Endocrinology 
+and Metabolism 100, no. 4 (2015): 1594–1601, https:// doi. org/ 10. 1210/ jc. 
+2014- 3887 .
+124. J. Chevrier, B. Eskenazi, N. Holland, A. Bradman, and D. B. Barr, 
+“Effects of Exposure to Polychlorinated Biphenyls and Organochlorine 
+Pesticides on Thyroid Function During Pregnancy,” American Journal 
+of Epidemiology 168, no. 3 (2008): 298–310, https:// doi. org/ 10. 1093/ aje/ 
+kwn136 .
+125. J. H. Lazarus and P. N. Taylor, “Hypothyroxinaemia and Brain 
+Development,” Acta Endocrinol (Buchar) 12, no. 1 (2016): 1–6, https:// 
+doi. org/ 10. 4183/ aeb. 2016. 1 .
+126. J. Henrichs, A. Ghassabian, R. P. Peeters, and H. Tiemeier, 
+“Maternal Hypothyroxinemia and Effects on Cognitive Functioning 
+in Childhood: How and Why?,” Clinical Endocrinology 79, no. 2 (2013): 
+152–162, https:// doi. org/ 10. 1111/ cen. 12227 .
+127. D. Levie, T. I. M. Korevaar, S. C. Bath, et al., “Thyroid Function in Early 
+Pregnancy, Child IQ, and Autistic Traits: A Meta- Analysis of Individual 
+Participant Data,” Journal of Clinical Endocrinology and Metabolism 103, 
+no. 8 (2018): 2967–2979, https:// doi. org/ 10. 1210/ jc. 2018- 00224 .
+128. F. Ramezani Tehrani, S. Nazarpour, and S. Behboudi- Gandevani, 
+“Isolated Maternal Hypothyroxinemia and Adverse Pregnancy 
+Outcomes: A Systematic Review,” Journal of Gynecology Obstetrics and Human Reproduction 50, no. 7 (2021): 102057, https:// doi. org/ 10. 1016/j. 
+jogoh. 2020. 102057 .
+129. M. Abalovich, G. Alcaraz, J. Kleiman- Rubinsztein, et  al., “The 
+Relationship of Preconception Thyrotropin Levels to Requirements for 
+Increasing the Levothyroxine Dose During Pregnancy in Women With 
+Primary Hypothyroidism,” Thyroid 20, no. 10 (2010): 1175–1178, https:// 
+doi. org/ 10. 1089/ thy. 2009. 0457 .
+130. M. Abalovich, A. Vazquez, G. Alcaraz, et  al., “Adequate 
+Levothyroxine Doses for the Treatment of Hypothyroidism Newly 
+Discovered During Pregnancy,” Thyroid 23, no. 11 (2013): 1479–1483, 
+https:// doi. org/ 10. 1089/ thy. 2013. 0024 .
+131. S. J. Mandel, “Hypothyroidism and Chronic Autoimmune 
+Thyroiditis in the Pregnant State: Maternal Aspects,” Best Practice & 
+Research. Clinical Endocrinology & Metabolism 18, no. 2 (2004): 213–
+224, https:// doi. org/ 10. 1016/j. beem. 2004. 03. 006.
+132. E. K. Alexander, E. Marqusee, J. Lawrence, P. Jarolim, G. A. Fischer, 
+and P. R. Larsen, “Timing and Magnitude of Increases in Levothyroxine 
+Requirements During Pregnancy in Women With Hypothyroidism,” 
+New England Journal of Medicine 351, no. 3 (2004): 241–249, https:// doi. 
+org/ 10. 1056/ NEJMo a040079 .
+133. L. Yassa, E. Marqusee, R. Fawcett, and E. K. Alexander, “Thyroid 
+Hormone Early Adjustment in Pregnancy (The THERAPY) Trial,” 
+Journal of Clinical Endocrinology and Metabolism 95, no. 7 (2010): 
+3234–3241, https:// doi. org/ 10. 1210/ jc. 2010- 0013 .
+134. C. Baumgartner, M. R. Blum, and N. Rodondi, “Subclinical 
+Hypothyroidism: Summary of Evidence in 2014,” Swiss Medical Weekly 
+144 (2014): w14058, https:// doi. org/ 10. 4414/ smw. 2014. 14058 .
+135. J. Lazarus, R. S. Brown, C. Daumerie, A. Hubalewska- Dydejczyk, R. 
+Negro, and B. Vaidya, “2014 European Thyroid Association Guidelines 
+for the Management of Subclinical Hypothyroidism in Pregnancy and 
+in Children,” European Thyroid Journal 3, no. 2 (2014): 76–94, https:// 
+doi. org/ 10. 1159/ 00036 2597 .
+136. L. De Groot, M. Abalovich, E. K. Alexander, et al., “Management of 
+Thyroid Dysfunction During Pregnancy and Postpartum: An Endocrine 
+Society Clinical Practice Guideline,” Journal of Clinical Endocrinology 
+and Metabolism 97, no. 8 (2012): 2543–2565, https:// doi. org/ 10. 1210/ jc. 
+2011- 2803 .
+137. S. L. Andersen and J. Olsen, “Early Pregnancy Thyroid Function 
+Test Abnormalities in Biobank Sera From Women Clinically Diagnosed 
+With Thyroid Dysfunction Before or After Pregnancy,” Thyroid 27, no. 3 
+(2017): 451–459, https:// doi. org/ 10. 1089/ thy. 2016. 0542 .
+138. T. I. Korevaar, R. Muetzel, M. Medici, et  al., “Association of 
+Maternal Thyroid Function During Early Pregnancy With Offspring IQ 
+and Brain Morphology in Childhood: A Population- Based Prospective 
+Cohort Study,” Lancet Diabetes and Endocrinology 4, no. 1 (2016): 35–
+43, https:// doi. org/ 10. 1016/ S2213 - 8587(15) 00327 - 7.
+139. R. Wilson, J. H. McKillop, J. J. Walker, C. E. Gray, and J. A. Thomson, 
+“The Incidence of Clinical Thyroid Dysfunction in an Unselected Group 
+of Pregnant and Post Partum Women,” Scottish Medical Journal 35, no. 
+6 (1990): 170–173, https:// doi. org/ 10. 1177/ 00369 33090 03500604 .
+140. E. Speller and W. Brodribb, “Breastfeeding and Thyroid Disease: A 
+Literature Review,” Breastfeeding Review 20, no. 2 (2012): 41–47.
+141. R. K. Dhillon- Smith and A. Coomarasamy, “TPO Antibody 
+Positivity and Adverse Pregnancy Outcomes,” Best Practice & Research. 
+Clinical Endocrinology & Metabolism 34, no. 4 (2020): 101433, https:// 
+doi. org/ 10. 1016/j. beem. 2020. 101433 .
+142. S. Nazarpour, F. Ramezani Tehrani, M. Simbar, M. Tohidi, H. Alavi 
+Majd, and F. Azizi, “Effects of Levothyroxine Treatment on Pregnancy 
+Outcomes in Pregnant Women With Autoimmune Thyroid Disease,” 
+European Journal of Endocrinology 176, no. 2 (2017): 253–265, https:// 
+doi. org/ 10. 1530/ EJE- 16- 0548 .
+143. S. Gill, V. Cheed, V. A. H. Morton, et al., “Evaluating the Progression 
+to Hypothyroidism in Preconception Euthyroid Thyroid- Peroxidase 
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18088 by Test, Wiley Online Library on [30/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+25 of 32Antibody Positive Women,” Journal of Clinical Endocrinology and 
+Metabolism 108 (2022): 124–134, https:// doi. org/ 10. 1210/ clinem/ 
+dgac525 .
+144. L. Lau, J. L. Benham, P. Lemieux, J. Yamamoto, and L. E. Donovan, 
+“Impact of Levothyroxine in Women With Positive Thyroid Antibodies 
+on Pregnancy Outcomes: A Systematic Review and Meta- Analysis of 
+Randomised Controlled Trials,” BMJ Open 11, no. 2 (2021): e043751, 
+https:// doi. org/ 10. 1136/ bmjop en- 2020- 043751 .
+145. J. Seror, G. Amand, J. Guibourdenche, P. F. Ceccaldi, and D. Luton, 
+“Anti- TPO Antibodies Diffusion Through the Placental Barrier During 
+Pregnancy,” PLoS One 9, no. 1 (2014): e84647, https:// doi. org/ 10. 1371/ 
+journ al. pone. 0084647 .
+146. R. S. Brown, “Autoimmune Thyroid Disease in Pregnant Women 
+and Their Offspring,” Endocrine Practice 2, no. 1 (1996): 53–61, https:// 
+doi. org/ 10. 4158/ EP.2. 1. 53.
+147. S. L. Andersen, S. Andersen, P. Vestergaard, and J. Olsen, “Maternal 
+Thyroid Function in Early Pregnancy and Child Neurodevelopmental 
+Disorders: A Danish Nationwide Case- Cohort Study,” Thyroid 28, no. 4 
+(2018): 537–546, https:// doi. org/ 10. 1089/ thy. 2017. 0425 .
+148. N. Pillar, A. Levy, G. Holcberg, and E. Sheiner, “Pregnancy and 
+Perinatal Outcome in Women With Hyperthyroidism,” International 
+Journal of Gynaecology and Obstetrics 108, no. 1 (2010): 61–64, https:// 
+doi. org/ 10. 1016/j. ijgo. 2009. 08. 006.
+149. J. S. Sheffield and F. G. Cunningham, “Thyrotoxicosis and Heart 
+Failure That Complicate Pregnancy,” American Journal of Obstetrics 
+and Gynecology 190, no. 1 (2004): 211–217, https:// doi. org/ 10. 1016/ 
+s0002 - 9378(03) 00944 - x.
+150. L. K. Millar, D. A. Wing, A. S. Leung, P. P. Koonings, M. N. Montoro, 
+and J. H. Mestman, “Low Birth Weight and Preeclampsia in Pregnancies 
+Complicated by Hyperthyroidism,” Obstetrics & Gynecology 84, no. 6 
+(1994): 946–949.
+151. N. Aggarawal, V. Suri, R. Singla, et  al., “Pregnancy Outcome in 
+Hyperthyroidism: A Case Control Study,” Gynecologic and Obstetric 
+Investigation 77, no. 2 (2014): 94–99, https:// doi. org/ 10. 1159/ 00035 7615 .
+152. S. Turunen, M. Vääräsmäki, A. M. Lahesmaa- Korpinen, et  al., 
+“Maternal Hyperthyroidism and Pregnancy Outcomes: A Population- 
+Based Cohort Study,” Clinical Endocrinology 93, no. 6 (2020): 721–728, 
+https:// doi. org/ 10. 1111/ cen. 14282 .
+153. P. Laurberg, C. Bournaud, J. Karmisholt, and J. Orgiazzi, 
+“Management of Graves' Hyperthyroidism in Pregnancy: Focus on Both 
+Maternal and Foetal Thyroid Function, and Caution Against Surgical 
+Thyroidectomy in Pregnancy,” European Journal of Endocrinology 160, 
+no. 1 (2009): 1–8, https:// doi. org/ 10. 1530/ EJE- 08- 0663 .
+154. D. Glinoer and C. A. Spencer, “Serum TSH Determinations in 
+Pregnancy: How, When and Why?,” Nature Reviews. Endocrinology 6, 
+no. 9 (2010): 526–529, https:// doi. org/ 10. 1038/ nrendo. 2010. 91.
+155. E. K. Alexander and P. R. Larsen, “High Dose of (131)I Therapy for 
+the Treatment of Hyperthyroidism Caused by Graves' Disease,” Journal 
+of Clinical Endocrinology and Metabolism 87, no. 3 (2002): 1073–1077, 
+https:// doi. org/ 10. 1210/ jcem. 87.3. 8333 .
+156. D. F. Schneider, P. E. Sonderman, M. F. Jones, et  al., “Failure of 
+Radioactive Iodine in the Treatment of Hyperthyroidism,” Annals of 
+Surgical Oncology 21, no. 13 (2014): 4174–4180, https:// doi. org/ 10. 1245/ 
+s1043 4- 014- 3858- 4.
+157. P. Laurberg, G. Wallin, L. Tallstedt, M. Abraham- Nordling, G. 
+Lundell, and O. Tørring, “TSH- Receptor Autoimmunity in Graves' 
+Disease After Therapy With Anti- Thyroid Drugs, Surgery, or 
+Radioiodine: A 5- Year Prospective Randomized Study,” European 
+Journal of Endocrinology 158, no. 1 (2008): 69–75, https:// doi. org/ 10. 
+1530/ EJE- 07- 0450 .
+158. S. L. Andersen, J. Olsen, C. S. Wu, and P. Laurberg, “Low Birth 
+Weight in Children Born to Mothers With Hyperthyroidism and High Birth Weight in Hypothyroidism, Whereas Preterm Birth Is Common 
+in Both Conditions: A Danish National Hospital Register Study,” 
+European Thyroid Journal 2, no. 2 (2013): 135–144, https:// doi. org/ 10. 
+1159/ 00035 0513 .
+159. A. Yoshihara, J. Noh, T. Yamaguchi, et al., “Treatment of graves' 
+Disease With Antithyroid Drugs in the First Trimester of Pregnancy 
+and the Prevalence of Congenital Malformation,” Journal of Clinical 
+Endocrinology and Metabolism 97, no. 7 (2012): 2396–2403, https:// doi. 
+org/ 10. 1210/ jc. 2011- 2860 .
+160. National Institute for Health and Care Excellence, Thyroid Disease: 
+Assessment and Management (London: NICE, 2019).
+161. Royal College of Physicians, Radioiodine in the Management of 
+Benign Thyroid Disease (London: Royal College of Physicians, 2007).
+162. P. N. Taylor and B. Vaidya, “Side Effects of Anti- Thyroid Drugs 
+and Their Impact on the Choice of Treatment for Thyrotoxicosis in 
+Pregnancy,” European Thyroid Journal 1, no. 3 (2012): 176–185, https:// 
+doi. org/ 10. 1159/ 00034 2920 .
+163. S. L. Andersen, J. Olsen, C. S. Wu, and P. Laurberg, “Birth Defects 
+After Early Pregnancy Use of Antithyroid Drugs: A Danish Nationwide 
+Study,” Journal of Clinical Endocrinology and Metabolism 98, no. 11 
+(2013): 4373–4381, https:// doi. org/ 10. 1210/ jc. 2013- 2831 .
+164. P. Laurberg and S. L. Andersen, “Therapy of Endocrine Disease: 
+Antithyroid Drug Use in Early Pregnancy and Birth Defects: Time 
+Windows of Relative Safety and High Risk?,” European Journal of 
+Endocrinology 171, no. 1 (2014): R13–R20, https:// doi. org/ 10. 1530/ 
+EJE- 14- 0135 .
+165. G. H. Seo, T. H. Kim, and J. H. Chung, “Antithyroid Drugs and 
+Congenital Malformations: A Nationwide Korean Cohort Study,” 
+Annals of Internal Medicine 168, no. 6 (2018): 405–413, https:// doi. org/ 
+10. 7326/ M17- 1398 .
+166. R. Song, H. Lin, Y. Chen, X. Zhang, and W. Feng, “Effects of 
+Methimazole and Propylthiouracil Exposure During Pregnancy on the 
+Risk of Neonatal Congenital Malformations: A Meta- Analysis,” PLoS 
+One 12, no. 7 (2017): e0180108, https:// doi. org/ 10. 1371/ journ al. pone. 
+0180108 .
+167. B. G. Nedrebo, P. I. Holm, S. Uhlving, et al., “Predictors of Outcome 
+and Comparison of Different Drug Regimens for the Prevention of Relapse 
+in Patients With Graves' Disease,” European Journal of Endocrinology 
+147, no. 5 (2002): 583–589, https:// doi. org/ 10. 1530/ eje.0. 1470583 .
+168. S. L. Andersen, J. Olsen, A. Carlé, and P. Laurberg, 
+“Hyperthyroidism Incidence Fluctuates Widely in and Around 
+Pregnancy and Is at Variance With Some Other Autoimmune Diseases: 
+A Danish Population- Based Study,” Journal of Clinical Endocrinology 
+and Metabolism 100, no. 3 (2015): 1164–1171, https:// doi. org/ 10. 1210/ jc. 
+2014- 3588 .
+169. K. Patil- Sisodia and J. H. Mestman, “Graves Hyperthyroidism and 
+Pregnancy: A Clinical Update,” Endocrine Practice 16, no. 1 (2010): 118–
+129, https:// doi. org/ 10. 4158/ EP092 33. RA.
+170. N. Momotani, J. Noh, H. Oyanagi, N. Ishikawa, and K. Ito, 
+“Antithyroid Drug Therapy for Graves' Disease During Pregnancy. 
+Optimal Regimen for Fetal Thyroid Status,” New England Journal of 
+Medicine 315, no. 1 (1986): 24–28, https:// doi. org/ 10. 1056/ NEJM1 98607 
+03315 0104 .
+171. T. I. M. Korevaar, M. Medici, T. J. Visser, and R. P. Peeters, 
+“Thyroid Disease in Pregnancy: New Insights in Diagnosis and Clinical 
+Management,” Nature Reviews. Endocrinology 13, no. 10 (2017): 610–
+622, https:// doi. org/ 10. 1038/ nrendo. 2017. 93.
+172. T. McNab and J. Ginsberg, “Use of Anti- Thyroid Drugs in 
+Euthyroid Pregnant Women With Previous Graves' Disease,” Clinical 
+and Investigative Medicine 28, no. 3 (2005): 127–131.
+173. R. P. Owen, K. J. Chou, C. E. Silver, et al., “Thyroid and Parathyroid 
+Surgery in Pregnancy,” European Archives of Oto- Rhino- Laryngology 
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18088 by Test, Wiley Online Library on [30/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+26 of 32 BJOG: An International Journal of Obstetrics & Gynaecology, 2025267, no. 12 (2010): 1825–1835, https:// doi. org/ 10. 1007/ s0040 
+5- 010- 1390- 0 .
+174. L. A. Magee and L. Duley, “Oral Beta- Blockers for Mild to Moderate 
+Hypertension During Pregnancy,” Cochrane Database of Systematic 
+Reviews 2012, no. 8 (2003): CD002863, https:// doi. org/ 10. 1002/ 14651 
+858. CD002863 .
+175. R. Morris, Investigation and Care of a Small- For- Gestational- Age 
+Fetus and a Growth Restricted Fetus (London: RCOG, 2022).
+176. D. Zimmerman, “Fetal and Neonatal Hyperthyroidism,” Thyroid 9, 
+no. 7 (1999): 727–733, https:// doi. org/ 10. 1089/ thy. 1999.9. 727.
+177. A. Besançon, J. Beltrand, I. Le Gac, D. Luton, and M. Polak, 
+“Management of Neonates Born to Women With Graves' Disease: A 
+Cohort Study,” European Journal of Endocrinology 170, no. 6 (2014): 
+855–862, https:// doi. org/ 10. 1530/ EJE- 13- 0994 .
+178. J. Abeillon- du Payrat, K. Chikh, N. Bossard, et  al., “Predictive 
+Value of Maternal Second- Generation Thyroid- Binding Inhibitory 
+Immunoglobulin Assay for Neonatal Autoimmune Hyperthyroidism,” 
+European Journal of Endocrinology 171, no. 4 (2014): 451–460, https:// 
+doi. org/ 10. 1530/ EJE- 14- 0254 .
+179. O. Cohen, O. Pinhas- Hamiel, E. Sivan, M. Dolitski, S. Lipitz, and R. 
+Achiron, “Serial In Utero Ultrasonographic Measurements of the Fetal 
+Thyroid: A New Complementary Tool in the Management of Maternal 
+Hyperthyroidism in Pregnancy,” Prenatal Diagnosis 23, no. 9 (2003): 
+740–742, https:// doi. org/ 10. 1002/ pd. 685.
+180. C. Huel, J. Guibourdenche, E. Vuillard, et al., “Use of Ultrasound 
+to Distinguish Between Fetal Hyperthyroidism and Hypothyroidism on 
+Discovery of a Goiter,” Ultrasound in Obstetrics & Gynecology 33, no. 4 
+(2009): 412–420, https:// doi. org/ 10. 1002/ uog. 6315 .
+181. N. Manji, J. D. Carr- Smith, K. Boelaert, et al., “Influences of Age, 
+Gender, Smoking, and Family History on Autoimmune Thyroid Disease 
+Phenotype,” Journal of Clinical Endocrinology and Metabolism 91, no. 
+12 (2006): 4873–4880, https:// doi. org/ 10. 1210/ jc. 2006- 1402 .
+182. A. Yoshihara, J. Y. Noh, K. Mukasa, et  al., “Serum Human 
+Chorionic Gonadotropin Levels and Thyroid Hormone Levels in 
+Gestational Transient Thyrotoxicosis: Is the Serum hCG Level Useful 
+for Differentiating Between Active Graves' Disease and GTT?,” 
+Endocrine Journal 62, no. 6 (2015): 557–560, https:// doi. org/ 10. 1507/ 
+endoc rj. EJ14- 0596 .
+183. R. Bouillon, M. Naesens, F. A. Van Assche, et al., “Thyroid Function 
+in Patients With Hyperemesis Gravidarum,” American Journal of 
+Obstetrics and Gynecology 143, no. 8 (1982): 922–926, https:// doi. org/ 10. 
+1016/ 0002- 9378(82) 90475 - 6.
+184. M. Rotondi, C. Cappelli, B. Pirali, et al., “The Effect of Pregnancy 
+on Subsequent Relapse From Graves' Disease After a Successful Course 
+of Antithyroid Drug Therapy,” Journal of Clinical Endocrinology and 
+Metabolism 93, no. 10 (2008): 3985–3988, https:// doi. org/ 10. 1210/ jc. 
+2008- 0966 .
+185. F. Azizi, M. Bahrainian, M. E. Khamseh, and M. Khoshniat, 
+“Intellectual Development and Thyroid Function in Children Who 
+Were Breast- Fed by Thyrotoxic Mothers Taking Methimazole,” Journal 
+of Pediatric Endocrinology & Metabolism 16, no. 9 (2003): 1239–1243, 
+https:// doi. org/ 10. 1515/ jpem. 2003. 16.9. 1239 .
+186. F. Azizi, “Effect of Methimazole Treatment of Maternal 
+Thyrotoxicosis on Thyroid Function in Breast- Feeding Infants,” 
+Journal of Pediatrics 128, no. 6 (1996): 855–858, https:// doi. org/ 10. 1016/ 
+s0022 - 3476(96) 70342 - 6.
+187. K. Johansen, A. N. Andersen, J. P. Kampmann, J. M. Mølholm 
+Hansen, and H. B. Mortensen, “Excretion of Methimazole in Human 
+Milk,” European Journal of Clinical Pharmacology 23, no. 4 (1982): 339–
+341, https:// doi. org/ 10. 1007/ BF006 13617 .
+188. J. P. Kampmann, K. Johansen, J. M. Hansen, and J. Helweg, 
+“Propylthiouracil in Human Milk. Revision of a Dogma,” Lancet 1, no. 
+8171 (1980): 736–737, https:// doi. org/ 10. 1016/ s0140 - 6736(80) 91233 - 7.189. D. Glinoer, M. F. Soto, P. Bourdoux, et  al., “Pregnancy in 
+Patients With Mild Thyroid Abnormalities: Maternal and Neonatal 
+Repercussions,” Journal of Clinical Endocrinology and Metabolism 73, 
+no. 2 (1991): 421–427, https:// doi. org/ 10. 1210/ jcem- 73- 2- 421.
+190. L. H. Smith, B. Danielsen, M. E. Allen, and R. Cress, “Cancer 
+Associated With Obstetric Delivery: Results of Linkage With the 
+California Cancer Registry,” American Journal of Obstetrics and 
+Gynecology 189, no. 4 (2003): 1128–1135, https:// doi. org/ 10. 1067/ s0002 
+- 9378(03) 00537 - 4.
+191. J. H. Mestman, T. M. Goodwin, and M. M. Montoro, “Thyroid 
+Disorders of Pregnancy,” Endocrinology and Metabolism Clinics of 
+North America 24, no. 1 (1995): 41–71.
+192. Thyroid Ultrasound and Ultrasound- Guided FNA (Boston, MA: 
+Springer, 2000).
+193. D. A. Meier, D. R. Brill, D. V. Becker, et al., “Procedure Guideline 
+for Therapy of Thyroid Disease With (131)iodine,” Journal of Nuclear 
+Medicine 43, no. 6 (2002): 856–861.
+194. B. R. Haugen, E. K. Alexander, K. C. Bible, et al., “2015 American 
+Thyroid Association Management Guidelines for Adult Patients With 
+Thyroid Nodules and Differentiated Thyroid Cancer: The American 
+Thyroid Association Guidelines Task Force on Thyroid Nodules and 
+Differentiated Thyroid Cancer,” Thyroid 26, no. 1 (2016): 1–133, https:// 
+doi. org/ 10. 1089/ thy. 2015. 0020 .
+195. P. Perros, K. Boelaert, S. Colley, et  al., “Guidelines for the 
+Management of Thyroid Cancer,” Clinical Endocrinology 81, no. Suppl 1 
+(2014): 1–122, https:// doi. org/ 10. 1111/ cen. 12515 .
+196. E. Papini, R. Negro, A. Pinchera, et  al., “Thyroid Nodule and 
+Differentiated Thyroid Cancer Management in Pregnancy. An Italian 
+Association of Clinical Endocrinologists (AME) and Italian Thyroid 
+Association (AIT) Joint Statement for Clinical Practice,” Journal of 
+Endocrinological Investigation 33, no. 8 (2010): 579–586, https:// doi. org/ 
+10. 1007/ BF033 46652 .
+197. F. S. Herzon, D. M. Morris, M. N. Segal, G. Rauch, and T. 
+Parnell, “Coexistent Thyroid Cancer and Pregnancy,” Archives of 
+Otolaryngology–Head & Neck Surgery 120, no. 11 (1994): 1191–1193, 
+https:// doi. org/ 10. 1001/ archo tol. 1994. 01880 35000 9002 .
+198. M. Moosa and E. L. Mazzaferri, “Outcome of Differentiated 
+Thyroid Cancer Diagnosed in Pregnant Women,” Journal of Clinical 
+Endocrinology and Metabolism 82, no. 9 (1997): 2862–2866, https:// doi. 
+org/ 10. 1210/ jcem. 82.9. 4247 .
+199. S. Yasmeen, R. Cress, P. S. Romano, et  al., “Thyroid Cancer in 
+Pregnancy,” International Journal of Gynaecology and Obstetrics 91, no. 
+1 (2005): 15–20, https:// doi. org/ 10. 1016/j. ijgo. 2005. 06. 022.
+200. G. Vannucchi, M. Perrino, S. Rossi, et al., “Clinical and Molecular 
+Features of Differentiated Thyroid Cancer Diagnosed During 
+Pregnancy,” European Journal of Endocrinology 162, no. 1 (2010): 145–
+151, https:// doi. org/ 10. 1530/ EJE- 09- 0761 .
+201. I. Messuti, S. Corvisieri, F. Bardesono, et al., “Impact of Pregnancy 
+on Prognosis of Differentiated Thyroid Cancer: Clinical and Molecular 
+Features,” European Journal of Endocrinology 170, no. 5 (2014): 659–
+666, https:// doi. org/ 10. 1530/ EJE- 13- 0903 .
+202. Y. Q. Zhou, Z. Zhou, M. F. Qian, T. Gong, and J. D. Wang, 
+“Association of Thyroid Carcinoma With Pregnancy: A Meta- Analysis,” 
+Molecular and Clinical Oncology 3, no. 2 (2015): 341–346, https:// doi. 
+org/ 10. 3892/ mco. 2014. 472 .
+203. N. Amino, H. Mori, Y. Iwatani, et al., “High Prevalence of Transient 
+Post- Partum Thyrotoxicosis and Hypothyroidism,” New England 
+Journal of Medicine 306, no. 14 (1982): 849–852, https:// doi. org/ 10. 1056/ 
+NEJM1 98204 08306 1405 .
+204. N. Amino, H. Tada, and Y. Hidaka, “Postpartum Autoimmune 
+Thyroid Syndrome: A Model of Aggravation of Autoimmune Disease,” 
+Thyroid 9, no. 7 (1999): 705–713, https:// doi. org/ 10. 1089/ thy. 1999.9. 705.
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18088 by Test, Wiley Online Library on [30/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+27 of 32205. M. H. Samuels, “Subacute, Silent, and Postpartum Thyroiditis,” 
+Medical Clinics of North America 96, no. 2 (2012): 223–233, https:// doi. 
+org/ 10. 1016/j. mcna. 2012. 01. 003.
+206. W. K. Nicholson, K. A. Robinson, R. C. Smallridge, P. W. Ladenson, 
+and N. R. Powe, “Prevalence of Postpartum Thyroid Dysfunction: A 
+Quantitative Review,” Thyroid 16, no. 6 (2006): 573–582, https:// doi. org/ 
+10. 1089/ thy. 2006. 16. 573.
+207. M. Alvarez- Marfany, S. H. Roman, A. J. Drexler, C. Robertson, 
+and A. Stagnaro- Green, “Long- Term Prospective Study of Postpartum 
+Thyroid Dysfunction in Women With Insulin Dependent Diabetes 
+Mellitus,” Journal of Clinical Endocrinology and Metabolism 79, no. 1 
+(1994): 10–16, https:// doi. org/ 10. 1210/ jcem. 79.1. 8027213 .
+208. T. Tagami, H. Hagiwara, T. Kimura, T. Usui, A. Shimatsu, and 
+M. Naruse, “The Incidence of Gestational Hyperthyroidism and 
+Postpartum Thyroiditis in Treated Patients With Graves' Disease,” 
+Thyroid 17, no. 8 (2007): 767–772, https:// doi. org/ 10. 1089/ thy. 2007. 0003 .
+209. A. Caixàs, M. Albareda, A. García- Patterson, J. Rodríguez- 
+Espinosa, A. de Leiva, and R. Corcoy, “Postpartum Thyroiditis in 
+Women With Hypothyroidism Antedating Pregnancy?,” Journal of 
+Clinical Endocrinology and Metabolism 84, no. 11 (1999): 4000–4005, 
+https:// doi. org/ 10. 1210/ jcem. 84. 11. 6144 .
+210. A. Stagnaro- Green, “Approach to the Patient With Postpartum 
+Thyroiditis,” Journal of Clinical Endocrinology and Metabolism 97, no. 2 
+(2012): 334–342, https:// doi. org/ 10. 1210/ jc. 2011- 2576 .
+211. A. Stagnaro- Green, A. Schwartz, R. Gismondi, A. Tinelli, T. 
+Mangieri, and R. Negro, “High Rate of Persistent Hypothyroidism in 
+a Large- Scale Prospective Study of Postpartum Thyroiditis in Southern 
+Italy,” Journal of Clinical Endocrinology and Metabolism 96, no. 3 (2011): 
+652–657, https:// doi. org/ 10. 1210/ jc. 2010- 1980 .
+212. C. T. Nguyen and J. H. Mestman, “Postpartum Thyroiditis,” 
+Clinical Obstetrics and Gynecology 62, no. 2 (2019): 359–364, https:// doi. 
+org/ 10. 1097/ GRF. 00000 00000 000430 .
+213. B. G. Stuckey, G. N. Kent, L. C. Ward, S. J. Brown, and J. P. 
+Walsh, “Postpartum Thyroid Dysfunction and the Long- Term Risk 
+of Hypothyroidism: Results From a 12- Year Follow- Up Study of 
+Women With and Without Postpartum Thyroid Dysfunction,” Clinical 
+Endocrinology 73, no. 3 (2010): 389–395, https:// doi. org/ 10. 1111/j. 1365- 
+2265. 2010. 03797. x.
+214. R. Wesseloo, A. M. Kamperman, V. Bergink, and V. J. M. Pop, 
+“Thyroid Peroxidase Antibodies During Early Gestation and the 
+Subsequent Risk of First- Onset Postpartum Depression: A Prospective 
+Cohort Study,” Journal of Affective Disorders 225 (2018): 399–403, 
+https:// doi. org/ 10. 1016/j. jad. 2017. 08. 058.
+215. B. Harris, S. Othman, J. A. Davies, et  al., “Association Between 
+Postpartum Thyroid Dysfunction and Thyroid Antibodies and 
+Depression,” BMJ 305, no. 6846 (1992): 152–156, https:// doi. org/ 10. 
+1136/ bmj. 305. 6846. 152.
+216. M. Dama, M. Steiner, and R. V. Lieshout, “Thyroid Peroxidase 
+Autoantibodies and Perinatal Depression Risk: A Systematic Review,” 
+Journal of Affective Disorders 198 (2016): 108–121, https:// doi. org/ 10. 
+1016/j. jad. 2016. 03. 021.
+217. A. Lucas, E. Pizarro, M. L. Granada, I. Salinas, and A. Sanmartí, 
+“Postpartum Thyroid Dysfunction and Postpartum Depression: Are 
+They Two Linked Disorders?,” Clinical Endocrinology 55, no. 6 (2001): 
+809–814, https:// doi. org/ 10. 1046/j. 1365- 2265. 2001. 01421. x.
+218. B. Harris, R. Oretti, J. Lazarus, et  al., “Randomised Trial of 
+Thyroxine to Prevent Postnatal Depression in Thyroid- Antibody- 
+Positive Women,” British Journal of Psychiatry 180 (2002): 327–330, 
+https:// doi. org/ 10. 1192/ bjp. 180.4. 327.
+219. P. G. Walfish, J. Meyerson, J. P. Provias, M. T. Vargas, and F. R. 
+Papsin, “Prevalence and Characteristics of Post- Partum Thyroid 
+Dysfunction: Results of a Survey From Toronto, Canada,” Journal of Endocrinological Investigation 15, no. 4 (1992): 265–272, https:// doi. org/ 
+10. 1007/ BF033 48726 .
+220. J. H. Lazarus, “Clinical Manifestations of Postpartum Thyroid 
+Disease,” Thyroid 9, no. 7 (1999): 685–689, https:// doi. org/ 10. 1089/ thy. 
+1999.9. 685.
+221. J. L. Kuijpens, H. L. Vader, H. A. Drexhage, W. M. Wiersinga, 
+M. J. van Son, and V. J. Pop, “Thyroid Peroxidase Antibodies During 
+Gestation Are a Marker for Subsequent Depression Postpartum,” 
+European Journal of Endocrinology 145, no. 5 (2001): 579–584, https:// 
+doi. org/ 10. 1530/ eje.0. 1450579 .
+222. A. Ide, N. Amino, S. Kang, et  al., “Differentiation of Postpartum 
+Graves' Thyrotoxicosis From Postpartum Destructive Thyrotoxicosis 
+Using Antithyrotropin Receptor Antibodies and Thyroid Blood Flow,” 
+Thyroid 24, no. 6 (2014): 1027–1031, https:// doi. org/ 10. 1089/ thy. 2013. 0585 .
+223. Administration of Radioactive Substances Advisory 
+Committee, Notes for Guidance on the Clinical Administration of 
+Radiopharmaceuticals and Use of Sealed Radioactive Sources (London: 
+UK Health Security Agency, 2022).
+224. H. B. Shahbazian, F. Sarvghadi, and F. Azizi, “Ultrasonographic 
+Characteristics and Follow- Up in Post- Partum Thyroiditis,” Journal of 
+Endocrinological Investigation 28, no. 5 (2005): 410–412, https:// doi. org/ 
+10. 1007/ BF033 47219 .
+225. J. H. Lazarus, F. Ammari, R. Oretti, A. B. Parkes, C. J. Richards, 
+and B. Harris, “Clinical Aspects of Recurrent Postpartum Thyroiditis,” 
+British Journal of General Practice 47, no. 418 (1997): 305–308.
+226. O. Kämpe, R. Jansson, and F. A. Karlsson, “Effects of L- 
+Thyroxine and Iodide on the Development of Autoimmune Postpartum 
+Thyroiditis,” Journal of Clinical Endocrinology and Metabolism 70, no. 4 
+(1990): 1014–1018, https:// doi. org/ 10. 1210/ jcem- 70- 4- 1014 .
+227. S. B. Nøhr, A. Jørgensen, K. M. Pedersen, and P. Laurberg, 
+“Postpartum Thyroid Dysfunction in Pregnant Thyroid Peroxidase 
+Antibody- Positive Women Living in an Area With Mild to Moderate 
+Iodine Deficiency: Is Iodine Supplementation Safe?,” Journal of Clinical 
+Endocrinology and Metabolism 85, no. 9 (2000): 3191–3198, https:// doi. 
+org/ 10. 1210/ jcem. 85.9. 6799 .
+228. R. Negro, G. Greco, T. Mangieri, A. Pezzarossa, D. Dazzi, and H. 
+Hassan, “The Influence of Selenium Supplementation on Postpartum 
+Thyroid Status in Pregnant Women With Thyroid Peroxidase 
+Autoantibodies,” Journal of Clinical Endocrinology and Metabolism 92, 
+no. 4 (2007): 1263–1268, https:// doi. org/ 10. 1210/ jc. 2006- 1821 .
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18088 by Test, Wiley Online Library on [30/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+28 of 32 BJOG: An International Journal of Obstetrics & Gynaecology, 2025The guideline will be considered for update 3 years after publi-
+cation, with an intermediate assessment of the need to update 
+2 years after publication.This guideline was produced on behalf of the Royal 
+College of Obstetricians and Gynaecologists by: 
+Dr SY Chan FRCOG, National University of Singa -
+pore and National University Hospital, Singapore; 
+Mr MS Marsh FRCOG, King’s College Hospital NHS 
+Foundation Trust, London; Dr J Gilbert FRCP, King’s 
+College Hospital NHS Foundation Trust, London; 
+Prof K Boelaert FRCP, University of Birmingham 
+and University Hospitals NHS Foundation Trust; 
+Dr C Evans FRCPath, University Hospitals Cardiff and 
+Vale NHS Trust; Dr R Dhillon-Smith MRCOG, Univer -
+sity of Birmingham and Birmingham Women’s and 
+Children’s Hospital NHS Foundation Trust .
+and peer reviewed by: British Maternal and Fetal Medicine 
+Society; Royal College of Midwives; Royal College of 
+Paediatrics and Child Health; Dr MYS El-Zibdeh FRCOG, 
+Amman, Jordan; M Maguire MCLIP, Exeter; MJ Andrews 
+FRCP (Edin), Norwich; Dr AD Jakes MRCOG, London.
+Committee lead reviewers were: Dr MA Ledingham FRCOG 
+Glasgow1; Mr B Kumar FRCOG, Wrexham2; Dr J Pierce 
+MRCOG, Leeds3; and Dr R Bahl FRCOG, Bristol4.
+1until December 2021; 2until May 2019; 3from June 2019; 
+4from January 2022.
+The Co- Chairs of the Guidelines Committee were: Dr MA 
+Ledingham FRCOG, Glasgow1; Dr B Magowan FRCOG, 
+Melrose2; Mr A McKelvey MRCOG, Norwich3 and Dr N 
+Potdar FRCOG, Leicester3.
+The final version is the responsibility of the Guidelines 
+Committee of the RCOG.Disclaimer
+The Royal College of Obstetricians and Gynaecologists pro -
+duces guidelines as an educational aid to good clinical prac -
+tice. They present recognised methods and techniques of 
+clinical practice, based on published evidence, for consider -
+ation by obstetricians and gynaecologists and other relevant 
+health professionals. The ultimate judgement regarding 
+a particular clinical procedure or treatment plan must be 
+made by the doctor or other attendant in the light of clinical 
+data presented by the patient and the diagnostic and treat -
+ment options available.
+This means that RCOG Guidelines are unlike protocols or 
+guidelines issued by employers, as they are not intended to 
+be prescriptive directions defining a single course of man -
+agement. Departure from the local prescriptive protocols or 
+guidelines should be fully documented in the patient's case 
+notes at the time the relevant decision is taken.
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18088 by Test, Wiley Online Library on [30/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+29 of 32Appendix A
+Explanation of Grades and Evidence Levels
+Classification of evidence levels
+1++ High- quality meta- analyses, systematic reviews of randomised controlled trials or randomised controlled trials with a very low risk 
+of bias
+1+ Well- conducted meta- analyses, systematic reviews of randomised controlled trials or randomised controlled trials with a low risk 
+of bias
+1— Meta- analyses, systematic reviews of randomised controlled trials or randomised controlled trials with a high risk of bias
+2++ High- quality systematic reviews of case–control or cohort studies or high- quality case–control or cohort studies with a very low risk 
+of confounding, bias or chance and a high probability that the relationship is causal
+2+ Well- conducted case–control or cohort studies with a low risk of confounding, bias or chance and a moderate probability that the 
+relationship is causal
+2— Case–control or cohort studies with a high risk of confounding, bias or chance and a significant risk that the relationship is not 
+causal
+3 Non- analytical studies, e.g. case reports, case series
+4 Expert opinion
+Grades of recommendation
+AAt least one meta- analysis, systematic review or RCT rated as 1++, and directly applicable to the target population; or a systematic 
+review of RCTs or a body of evidence consisting principally of studies rated as 1+, directly applicable to the target population and 
+demonstrating overall consistency of results
+BA body of evidence including studies rated as 2++ directly applicable to the target population, and demonstrating overall consistency 
+of results; or extrapolated evidence from studies rated as 1++ or 1+
+CA body of evidence including studies rated as 2+ directly applicable to the target population, and demonstrating overall consistency 
+of results; or extrapolated evidence from studies rated as 2++
+DEvidence level 3 or 4; or extrapolated evidence from studies rated as 2+
+Good Practice Points (GPP)
+GPPRecommended best practice based on the clinical experience of the guideline development groupa
+a On the occasion when the guideline development group find there is an important practical point that they wish to emphasise but for which there is not, nor is there 
+likely to be any research evidence. This will typically be where some aspect of treatment is regarded as such sound clinical practice that nobody is likely to question it. 
+These are marked in the guideline, and are indicated by ✓ or GPP. It must be emphasised that these are NOT an alternative to evidence- based recommendations, and 
+should only be used where there is no alternative means of highlighting the issue.
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18088 by Test, Wiley Online Library on [30/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+30 of 32 BJOG: An International Journal of Obstetrics & Gynaecology, 2025Appendix B
+Glossary of Abbreviations
+CI Confidence interval
+CMZ Carbimazole
+fT3 Free tri- iodothyronine
+fT4 Free thyroxine
+hCG Human chorionic gonadotrophin
+IH Isolated hypothyroxinaemia
+MMI Methimazole
+OH Overt hypothyroidism
+OR Odds ratio
+PPT Postpartum thyroiditis
+PTU Propylthiouracil
+RCT Randomised controlled trial
+SCH Subclinical hypothyroidism
+SGA Small- for- gestational- age
+T3 Tri- iodothyronine
+T4 Thyroxine
+TPOAb Thyroid peroxidase antibodies
+TRAb Thyroid stimulating hormone receptor antibodies
+TSH Thyroid stimulating hormone
+Appendix C
+Suggested Designated Roles and Responsibilities of Healthcare Professionals and Care Pathways
+GP/midwife/any healthcare professional: 
+First contact in pregnancy 
+Perform thyroid func/g415on test s
+Consider if medica/g415on needs changing
+-If on levothyroxine: advise empirical dose 
+increase 
+-If on CMZ: convert to PTU if <10 weeks
+If necessary, refer early to specialist 
+endocrinologist/obstetrician/other depending on
+local set upWoman with known thyroid disease before pregnanc y
+Endocrinologist/GP: 
+Discuss implica/g415ons of disease for pregnancy, op/g415mise thyroid 
+control according to treatment targets 
+GP to follow-up (in accordance with this guideline) un/g415l 
+appointment available in specialist clinic for further 
+follow-up during pregnanc yWoman with no history of thyroid disease
+ GP/midwife/any healthcare professional: 
+First contact in pregnancy 
+Perform risk assessment (according to sec/g415on 6)
+If at risk, oﬀer screening for thyroid dysfunc/g415on and 
+perform thyroid func/g415on tests as soon as possible, 
+preferably by the middle of the ﬁrst trimester 
+GP/midwife/any healthcare professional: 
+Interpret results using trimester-speciﬁc reference ranges
+If abnormal, commence treatment if appropriate (in 
+accordance with this guideline )
+If necessary, refer early to specialist 
+endocrinologist/obstetrician/other depending on local set 
+up for further management in pregnanc y
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18088 by Test, Wiley Online Library on [30/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+31 of 32Appendix D
+Thyroid Function Reference Ranges in Pregnancy
+Where trimester- and manufacturer- specific pregnancy reference ranges are not issued by the laboratory, the published thyroid function reference 
+ranges in pregnancy for the specific assay manufacturer may be applied [ 46]. The reference ranges of commonly used manufacturers in the UK can 
+be found in the table below.
+Abbott Architect Beckman Access/Dxl Roche Cobas/Elecsys Siemens Advia Centaur
+First trimester TSH: 0.09–3.46 TSH: 0.06–3.32 TSH: 0.12–4.10 TSH: 0.06–3.67
+fT4: 10.9–18.7 fT4: 8.7–15.6 fT4: 11.6–20.3 fT4: 11.9–19.2
+Second trimester TSH: 0.32–3.31 TSH: 0.32–3.31 TSH: 0.11–4.26 TSH: 0.47–4.46
+f T4: 9.7–17.2 fT4: 6.8–12.4 f T4: 9.9–17.7 fT4: 11.6–17.6
+Third trimester TSH: 0.38–4.34 TSH: 0.34–5.02 TSH: 0.50–4.71 TSH: 0.60–4.60
+fT4: 8.8–14.9 fT4: 6.0–11.7 fT4: 8.7–15.2 fT4: 9.6–16.5
+Median upper and lower limit of thyroid stimulating hormone (TSH; expressed in mU/L) and free thyroxine (fT4; expressed in pmol/L) for studies 
+published between January 2000 to December 2020. Articles in which thyroid hormones were measured using one of four assay methods: Abbott 
+Architect, Beckman Access or Dxl, Roche Cobas or Elecsys, and Siemens Advia Centaur, were selected. Only studies that reported reference intervals 
+as 2.5–97.5 centiles with gestational age information at time of blood sampling were included. Studies were excluded if they were not in English, had 
+less than 120 participants, did not exclude women with positive antibodies or thyroid disease, or were conducted in areas with excess or deficient 
+iodine nutrition status.
+Appendix E
+Management of Hypothyroidism and Related Disorders in Pregnancy
+Note: Universal testing for thyroid dysfunction and TPOAb is not recommended in pregnancy.
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18088 by Test, Wiley Online Library on [30/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+32 of 32 BJOG: An International Journal of Obstetrics & Gynaecology, 2025Appendix F
+Management of Hyperthyroidism, Thyrotoxicosis and Related Disorders Diagnosed During Pregnancy
+Note: Universal testing for thyroid dysfunction is not recommended in pregnancy.
+ 14710528, 0, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.18088 by Test, Wiley Online Library on [30/04/2025]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License

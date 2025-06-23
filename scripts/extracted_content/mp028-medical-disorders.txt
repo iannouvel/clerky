@@ -1,0 +1,2121 @@
+# Extracted from: MP028 Medical Disorders.pdf
+# Guideline ID: mp028-medical-disorders
+# Content length: 91971 characters
+# Processing date: 1750066901.3208609
+
+University Hospitals Sussex NHS Trust East Page 1 of 52 
+
+ Medical Disorders 
+
+Maternity Protocol: MP028 
+Date agreed: March 2022 
+ 
+Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 2 of 52 
+
+Guideline Reviewer: Abirami Kalaparan 
+Version: 2 
+Approval Committee: Women’s Services Safety and Quality Committee 
+Date agreed: March 2022 
+Review date: March 2025 
+ 
+ Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 3 of 52 
+ Contents 
+ 
+Cardiac Disease in Pregnancy ................................ ................................ ....................... 6 
+1.0 Background ................................ ................................ ................................ ...... 6 
+ Antepartum ................................ ................................ ................................ .... 6 
+ Intrapartum ................................ ................................ ................................ .... 6 
+2.0 Pre-pregnancy Assessment ................................ ................................ ............. 7 
+3.0 Antenatal Management ................................ ................................ .................. 7 
+4.0 Antenatal In -patient Care ................................ ................................ ................ 9 
+5.0 Labour and Delivery ................................ ................................ ........................ 9 
+6.0 Delivery in Cardiac Theatres ................................ ................................ ......... 10 
+7.0 Post -Partum Care ................................ ................................ ......................... 11 
+Appendix 1: Modified WHO classification of maternal cardiovascular risk: 
+principles ................................ ................................ ................................ .................. 12 
+Appendix 2: New York Heart Association classification of heart failure ................. 14 
+Reference List: ................................ ............................ Error! Bookmark not defined. 
+ 
+Epilepsy ................................ ................................ ................................ ........................ 15 
+1.0 Epilepsy In Pregnancy ................................ ................................ .................... 15 
+2.0 Causes of Epilepsy ................................ ................................ ......................... 15 
+3.0 Risks of Epilepsy in Pregnancy ................................ ................................ ....... 15 
+4.0 Management of Women with Epilepsy ................................ ......................... 17 
+4.1 Pre-conception ................................ ................................ .......................... 17 
+4.2 Antenatal care ................................ ................................ ........................... 17 
+4.3 Labour ................................ ................................ ................................ ........ 19 
+4.4 Acute Management of Seizures ................................ ................................ . 21 
+4.5 Status Epilepticus ................................ ................................ ....................... 22 
+ 4.6 Postnatal ................................ ................................ ................................ ... 23 
+Appendix 1: Drugs ................................ ........................... Error! Bookmark not defined. 
+ Non -enzyme inducing Antiepileptic Drugs ............... Error! Bookmark not defined. 
+ References ................................ ................................ Error! Bookmark not defined. 
+Appendix 2 – Epilepsy Patient Proforma ........................ Error! Bookmark not defined. 
+ 
+Hypothyroidism and Hyperthyroidism in pregnancy ................................ ................. 24 
+1.0 Hypothyroidism in pregnancy - Introduction ................................ ................ 24 
+1.1 Known Primary Hypothyroidism ................................ ................................ ... 24 Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 4 of 52 
+ 1.2 Screening for thyroid dysfunction in pregnancy ................................ ........... 25 
+1.3 New diagnosis of Hypothyroidism or Subclinical hypothyroidism in 
+pregnancy ................................ ................................ ................................ ................. 25 
+2.0 Hyperthyroidism in pregnancy - Introduction ................................ .............. 26 
+2.1 Known Hyperthyroidism ................................ ................................ ............... 27 
+2.2 Woman who have been previously treated for hyperthyroidism ................ 29 
+2.3 New Diagnosis of Hyperthyroidism in pregnancy ................................ ......... 29 
+3.0 Post -partum thyroiditis ................................ ................................ ................. 30 
+References ................................ ................................ .. Error! Bookmark not defined. 
+ 
+Inflammatory Bowel Disease ................................ ................................ ...................... 31 
+1.0 Introduction ................................ ................................ ................................ ... 31 
+2.0 Plan for patients with IBD during pregnancy on the RSCH site .............. Error! 
+Bookmark not defined. 
+ 
+Renal Disease in Pregnancy ................................ ................................ ........................ 34 
+Introduction: Renal physiological changes in pregnancy ................................ ..... 34 
+1.0 Referral criteria to MEDIOBS (PRH)/Maternal medicine clinic (RSCH) ......... 35 
+2.0 Woman who require Consultant led antenatal care ................................ .... 35 
+3.0 Urinary tract infection ................................ ................................ ................... 35 
+3.1 Acute cystitis ................................ ................................ ................................ . 36 
+3.2 Management of asymptomatic bacteriuria and acute cystitis ..................... 36 
+3.3 Prophylaxis for recurrent UTI ................................ ................................ ........ 37 
+3.4 Acute Pyelonephritis ................................ ................................ ..................... 37 
+3.5 Management of acute pyelonephritis ................................ ........................... 38 
+4.0 Chronic Kidney disease ................................ ................................ ..................... 39 
+4.1 Pre-pregnancy advice and counseling ................................ ........................... 39 
+4.2 Midwifery care of a patient with CKD ................................ ........................... 40 
+4.3 Obstetric antenatal management of patients with CKD ............................... 41 
+4.4 Post partum management of Patients with Kidney disease ......................... 42 
+5.0 Pregnancy in woman on dialysis ................................ ................................ ... 43 
+5.1 Incidence ................................ ................................ ................................ ....... 43 
+5.2 Pregnancy outcome ................................ ................................ ...................... 43 
+5.3 Recommendations for management ................................ ............................ 43 
+5.4 Management of anaemia ................................ ................................ .............. 44 
+6.0 Pregnancy in renal transplant recipients ................................ ...................... 44 Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 5 of 52 
+ 6.1 Pregnancy outcome ................................ ................................ ...................... 45 
+6.2 Timing of pregnancy ................................ ................................ ...................... 45 
+6.3 Pre-Pregnancy counseling ................................ ................................ ............. 46 
+6.4 Management of immunosuppressive regimens ................................ ........... 46 
+6.5 Antenatal management ................................ ................................ ................ 46 
+6.6 Management of hypertension ................................ ................................ ...... 47 
+6.7 Labour management ................................ ................................ ..................... 47 
+6.8 Neonatal problems ................................ ................................ ........................ 48 
+Appendix 1 - Conditions to be referred directly to Maternal Medicine/MEDIOBS 
+and pregnancy effect ................................ ................................ ............................... 49 
+Appendix 2 – Renal patient proforma ................................ ................................ ..... 50 
+Appendix 3 - Anti-hypertensive medications in CKD and Pregnancy ...................... 51 
+
+ Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 6 of 52 
+ Cardiac Disease in Pregnancy 
+ 
+1.0 Background 
+ 
+Cardiac disease remains the largest single cause of indirect maternal deaths in the 
+UK (MBRRACE report 2020 showed that 23% of maternal deaths were due to cardiac 
+disease ). Most ca rdiac morbidity and mortality are due to acquired heart disease 
+(e.g. ischaemic heart disease, cardiomyopathy) and sudden adult death syndrome 
+rather than congenital heart disease. The main focus of this guideline is the care of 
+women with pre -existing heart disease. 
+ 
+There are several physiological changes in pregnancy that place additional pressure 
+on the hearts of woman / pregnant person with cardiac disease. These include: 
+ 
+Antepartum 
+ 
+• Systemic vasodilation: occurs early in pregnancy, starting by week 5 and 
+reaching its maximum by the middle of the second trimester. 
+• Cardiac output: increases throughout pregnancy. By 24 weeks gestation the 
+increase in cardiac output is around 40% above the non-pregnant state. This 
+increase is 15% higher in a twin pregnancy.vi 
+• Heart rate: increases by 10 -20 bpm by term, representing a 20 -25% increase. 
+• Pulmonary vascular resistance: decreases. 
+• Left ventricular contractility: despite these haemodynamic changes, 
+contractility and left ventricular ejection fraction do not appear to alter in 
+pregnancy . 
+ 
+Intrapartum 
+ 
+• Cardiac output: maximum increase occurs during labour and immediately 
+after delivery. This increased cardiac output reflects increased pre -load from 
+uterine contractions due to an auto -transfusion of 300 -500mls of blood from 
+the uterus, increased catecholamine levels and increases in heart rate. v Pain 
+and anxiety will also increase the maternal heart rate. 
+ 
+• With these changes in mind it is clear to see that woman with cardiovascular 
+compromise are at highest risk of pulmonary oedema during the second 
+stage of labou r and immediately postpartum. The haemodynamic changes of 
+pregnancy largely return to non -pregnant values by 2 weeks post -delivery.vi 
+
+ Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 7 of 52 
+ 2.0 Pre-pregnancy Assessment 
+ 
+2.1 Women/pregnant people with known congenital or acquired heart 
+disease should be referred for pre -pregnancy review and counselling . 
+ 
+2.2 The European Society of Cardiology has recommended that maternal 
+risk assessment be undertaken according to the modified World Health 
+Orga nisation (WHO) classification ( appendix 1. Other risk scoring tools 
+exist, which incorporate clinical factors known to be predictive e.g. 
+previous arrhythmia, heart failure and functional class (ref CARPEG & 
+ZAHARA). However, it should be remembered that these risk scores are 
+obtained from cohorts of women with structural and congenital heart 
+disease and do not include other cardiac disease e.g. ischaemic hear t 
+disease or other co -morbidity. 
+ 
+2.3 Regardless of the cause of cardiac insufficiency, the ability of the heart 
+to tolerate pregnancy will be related to 
+1. Presence of pulmonary hypertension 
+2. Haemodynamic significance of any lesion 
+3. Functional class (NYHA class – see appendix 2) 
+4. Presence of cyanosis 
+ 
+2.4 Other predicators of cardiac events in pregnant women with heart 
+disease include: 
+1. History of transient ischaemic attack (TIA) or arrhythmia 
+2. History of heart failure 
+3. Left heart obstruction (mitral valve area <2 cm2, aortic valve area 
+<1.5cm2, aortic valve gradient >30mmHg) 
+4. Myocardial dysfunction (left ejection fraction <40%) 
+ 
+2.5 If patients have a poor functional status pre -pregnancy (NYHA III –IV), then the 
+outcome of pregnancy is likely to be poor regardless of the underlying 
+pathology. However special consideration should be taken in women with: 
+1. Mitral stenosis (increased risk of pulmonary oedema) 
+2. Marfan syndrome and other aortopathies (risk of aortic dissection or 
+rupture) 
+3. Pulmonary hypertension) risk of maternal death) 
+ 
+3.0 Antenatal Management 
+ 
+3.1 All women / pregnant people with acquired or congenital cardiac disease listed 
+in Table 1 (but not exhaustive) should be referred early in pregnancy to the 
+Combined Cardiac Obstetric clinic [CCO). This is generally held on the first 
+Thursday of each month in the antenatal clinic. 
+ Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 8 of 52 
+ 3.2 Referrals should be made by letter to Dr Rachael James (if urgent this can be 
+done by email using Dr James’ BSUH email account) and copied to the assistant 
+admin manager Sharon Norris via her BSUH email account. Appointments are 
+booked by Sharon Norris who also women written information about the clinic 
+prior to the appointment. 
+ 
+3.3 A woman / pregnant person without documented heart disease who 
+develops cardiac symptoms in pregnancy should be discussed with a 
+consultant obstetrician. If further investigation is required, referral should be 
+to Dr James and the woman will be seen in her general clinic. 
+ 
+Table 1: Conditions to be referred early to CCO 
+
+3.4 In the Combined Cardiac Obstetric clinic women will be seen by a Consultant 
+Cardiologist (Dr Rachael James), a Consultant Obstetrician , a Consultant 
+Anaesthetist (Dr Vanessa Fludder) and a Senior Midwife. 
+ 
+3.5 All patients should have a named midwife. 
+ 
+3.6 If possible patients on Warfarin should be converted to LMWH as early as 
+possible. If this is not possible (e.g. patients with metallic heart valves who 
+are not felt to be suitable for treatment with LMWH) Warfarin should be 
+changed to LMWH by 36 weeks at the latest or at least 5 days prior to 
+planned delivery if earlier than 36weeks, due to risk of fetal intracranial 
+haemorrhage. 
+ 
+3.7 The expectation for those women in WHO Class I and majority of Class II and 
+II/III is for their antenatal care to be delivered at their local maternity unit. 
+ 
+3.8 Some women will require on -going surveillance in the CCO clinic at BSUH. 
+ 
+3.9 Women /pregnant people in class III and IV should receive their antenatal 
+care at BSUH. Conditions where early referral is indicated 
+• Ischaemic heart disease (previous MI, PCI) 
+• Native valve disease 
+• Heart valve replacement 
+• Cardiomyopathy (dilated cardiomyopathy, hypertrophic 
+cardiomyopathy, previous peri -partum cardiomyopathy) 
+• Marfan syndrome, bicuspid valve aortopathy, type IV Ehlers Danlos 
+(vascular) 
+• Treated cardiac arrhythmia (SVT, AF, VT) 
+• Congenital heart disease 
+• Pulmonary hypertension Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 9 of 52 
+ 
+3.10 A minority of woman / pregnant people in class III and IV will require delivery 
+in a specialist congenital cardiac centre or one with expertise in managing 
+pulmonary hypertension. 
+ 
+3.11 Some women /pregnant people will be advised to deliver at RSCH where 
+there is specialist cardiology provision 24 hours a day 7 days a week due to 
+the nature of their cardiac lesion or condition. 
+ 
+4.0 Antenatal In -patient Care 
+ 
+4.1 All women / pregnant people with congenital heart disease (or if their partner 
+has congenital heart disease) should be referred for a fetal echocardiogram at 
+the Evelina Children’s Hospital (St Thomas’ hospital) in London. 
+ 
+4.2 If a woman is decompensating she should be admitted for close observation. 
+• Admission will usually be to the cardiology ward 6A. 
+• Admission should be in discussion with Dr James who will typically be the 
+named consultant. 
+• Anaesthetic , obstetric and midwifery teams should review the woman 
+daily. 
+ 
+4.3 Antenatal steroids should be discussed with Dr James (smaller divided doses 
+maybe advised if the woma n is at risk of fluid overload) . 
+ 
+4.4 A Consultant Neonatologist should counsel the woman if delivery is planned 
+prior to 34 weeks gestation. 
+ 
+4.5 VTE prophylaxis should be reviewed regularly. 
+ 
+4.6 Dose and timing of VTE prophylaxis in relation to planned IOL/operative 
+delivery date should be considered (LMWH prophylaxis should not be given 
+12 hours prior to delivery and treatment dose not for at least 24 hours). 
+ 
+5.0 Labour and Delivery 
+ 
+5.1 A delivery plan should be made in the CCO clinic by 36 weeks. A copy of this 
+should be kept in the patient’s maternity notes and in the high -risk folder on 
+labour ward. 
+ 
+5.2 Most women / pregnant people with cardiac disease are able to deliver 
+vaginally. 
+ 
+5.3 Spontaneous labour is preferable. If induction of labour is necessary 
+consideration as to the method of induction should be made in conjunction Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 10 of 52 
+ with the CCO clinic, particularly if a drop in systemic vascular resistance may be 
+detrimental which is a potenti al side effect of prostaglandins . 
+ 
+5.4 If a woman / pregnant person with cardiac disease have been advised by the 
+CCO clinic to attend as soon as possible if she feels that she is in labour for an 
+early epidural, then she MUST NOT is turned away. 
+ 
+5.5 As soon as a woman with cardiac disease is admitted to labour ward she 
+should be brought to the attention of the obstetric registrar/consultant as 
+well as the anaesthetic registrar/consultant. 
+ 
+5.6 Midwifery team, obstetric and anaesthetic teams should read the labour 
+plan. 
+ 
+5.7 Specific consideration to use of fluids with regards to the risk of fluid 
+overlo ad, safety of bolused Oxytocin and use of Ergometrine and other 
+uterotonics should be documented in the management plan made in the CCO 
+clinic. 
+ 
+5.8 Whe re possible women / pregnant people on treatment dose LMWH should 
+stop 24 hours prior to labour. Where this is not practical due to VTE risk, the 
+woman should be commenced on an unfractionated heparin infusion 24 
+hours prior to a planned delivery. This should be stopped 4 -6 hours prior to 
+delivery and re -commenced 4 hours following delivery provided there are no 
+concerns regarding haemostasis. 
+ 
+6.0 Delivery in Cardiac Theatres 
+ 
+6.1 Occasionally the mother’s condition will necessitate delivery in cardiac 
+theatres. 
+ 
+6.2 The decision will be made by the multidisciplinary maternal cardiology team 
+and a written pla n will be made and circulated. A Consultant Cardiac Surgeon 
+will liaise with the cardiac theatre team. Where appropriate the neonatology 
+team will be contacted to arrange delivery at a mutually convenient time. 
+ 
+6.3 In the event of delivery in cardiac theatres some drugs and equipment will 
+need to be taken: 
+▪ LSCS tray 
+▪ Uterotonic drugs: Oxytocin (5 vials), Syntometrine (1 Vial), Ergometrine 
+(2 vials), heamobate (8 vials), Misoprostol (5 tablets) , TXA (2 vials) 
+▪ Regional anaesthesia set (epidural set, spinal set, appropriate drapes) 
+▪ Resuscitaire (fully checked by midwife attending delivery) 
+ 
+ Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 11 of 52 
+ 7.0 Post -Partum Care 
+ 
+7.1 Specific post -partum considerations will be documented in the CCO clinic 
+delivery plan. 
+ 
+7.2 Women / pregnant people who deliver in cardia c theatres will often need 
+post natal care on the ca rdiac ICU or CCU. These women should receive daily 
+cardiology, midwifery and obstetric reviews. 
+ Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 12 of 52 
+ Appendix 1: Modified WHO classification of maternal cardiovascular risk: principles 
+ 
+Risk Class Risk of pregnancy by medical condition 
+I No detectable increased risk of maternal mortality and no/mild 
+increase in morbidity 
+II Small increased risk of maternal mortality and moderate increase 
+maternal morbidity 
+III Significantly increased risk of maternal mortality or severe morbidity. 
+Expert counseling is required. If pregnancy is decided upon, intensive 
+specialist cardiac and obstetric monitoring is needed throughout 
+pregnancy, childbirth and the puerperium 
+IV Extremely high risk of maternal mortality or severe morbidity; 
+pregnancy contraindicated. If pregnancy occurs termination should be 
+discussed. If pregnancy continues care should be as for class III. 
+ 
+Modified World Health Organization (WHO) Classification of Maternal 
+Cardiovascular Risk: application1 
+ 
+WHO Class I Uncomplicated small or mild 
+• Pulmonary stenosis 
+• Patent ductus arteriosus (PDA) 
+• Mitral valve prolapse 
+Successfully repaired simple lesions 
+• Ventricular septal defect (VSD) 
+• Atrial septal defect (ASD) 
+• Anomalous pulmonary venous drainage 
+• PDA 
+ 
+WHO Class II 
+ 
+(restricted to patients 
+previously well and 
+uncomplicated) 
+ • Unoperated ASD or VSD 
+• Repaired Tetralogy of Fallot (without sequalae) 
+• Most arrhythmias 
+
+ Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 13 of 52 
+ WHO Class II -III 
+ 
+(depending on the 
+individual) • Mild left ventricular impairment 
+• Hypertrophic cardiomyopathy 
+• Native valve disease or tissue heart valve 
+replacement not considered in class I or IV 
+• Marfan syndrome without aortic dilation 
+• Aorta <45mm associated with bicuspid aortic 
+valve disease 
+• Repaired aortic coarctation 
+WHO Class III • Mechanical valve replacement 
+• Systemic right ventricle 
+• Fontan circulation 
+• Cyanotic heart disease (unrepaired) 
+• Other complex congenital heart disease 
+• Marfan syndrome with aortic dilation 40 -45mm 
+• Aortic dilation 45 -50mm associated with 
+bicuspid aortic valve disease 
+WHO Class IV 
+ 
+(Pregnancy 
+contraindicated) • Pulmonary hypertension 
+• Severe systemic ventricular dysfunction (LV EF 
+<30%, NYHA class III -IV) 
+• Previous peripartum cardiomyopathy with 
+residual impairment of left ventricular function 
+• Severe mitral/severe symptomatic aortic 
+stenosis 
+• Marfan syndrome with aortic dilation >45mm 
+• Aortic dilation >50mm associated with bicuspid 
+aortic valve disease 
+• Native severe aortic coarctation 
+ 
+ Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 14 of 52 
+ Appendix 2: New York Heart Association classification of heart failure 
+ 
+Class Patient symptoms 
+Class I (mild) No limitation of physical activity. Ordinary physical activity 
+does not cause undue fatigue, rapid/irregular heartbeat 
+(palpitation) or shortness of breath (dyspnea). 
+Class II (mild) Slight limitation of physical activity. Comfortable at rest, but 
+ordinary activity causes fatigue, rapid/irregular heartbeat 
+(palpitation) or shortness of breath (dyspnea). 
+Class III (moderate) Marked limitation of physical activity. Comfortable at rest, 
+but less than ordinary activity causes fatigue, rapid/irregular 
+heartbeat (palpitation) or shortness of breath (dyspnea). 
+Class IV (severe) Unable to carry out physical activity without discomfort. 
+Symptoms of fatigue, rapid/irregular heart beat (palpitation) 
+or shortness of breath (dyspnea) are present at rest. If any 
+physical activity is undertaken discomfort increases. 
+ 
+ Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 15 of 52 
+ Epilepsy 
+ 
+1.0 Epilepsy i n Pregnancy 
+ 
+1.1. Epilepsy is a chronic neurological d isorder of various aetiologies characterised 
+by recurrent unprovoked seizures and is the commonest neurological 
+disorder (NICE 2012). Epilepsy complicates approximately 0.5% to 1 of 
+pregnancies. 
+1.2. Mate rnal mortality rate is 2 -3 times higher in people with epilepsy, this 
+increases 10 fold in pregnancy, 
+1.3. MMBRAC E UK report -2016 -18 showed that twice as many women with 
+epilepsy (22) died during or up to one year from causes related to epilepsy. 
+1.4. SUDEP was the main cause of death of these women (15), majority had 
+uncontrolled epilepsy pre -pregnancy. 
+2.0 Causes of Epilepsy 
+ 
+2.1 30% Idiopathic 
+ 
+2.2 Diagnosis should be made by a specialist medical practitioner – usually a 
+neurologist with experience in epilepsy 
+ 
+2.3 Different types of Epilepsy based on varying clinical characteristics and seizure 
+activity e.g. Tonic -clonic seizures, absent seizures. 
+ 
+2.4 Epilepsy is the tendency to have spontaneously reoccurring seizures but do not 
+assume a habitual seizure until the following have been ruled out 
+ 
+2.5 Other causes of seizures in pregnancy 
+ 
+2.6 Eclampsia. It is important to remember that epileptic women can also have 
+Eclampsia and this diagnosis should be excluded first. 
+ 
+2.7 Substance misuse, drug or alcohol withdrawal. 
+ 
+2.8 Medical : diabetes, liver failure, hypopituitarism, hypoadrenalism. 
+ 
+2.9 Electrolyte imbalance: hyponatraemia, hypocalcaemia 
+ 
+2.10 Neurological: intracranial bleed / mass or cerebral infarction/ intracranial VTE. 
+ 
+2.11 Sepsis and other infections including meningitis 
+ 
+3.0 Risks of Epilepsy in Pregnancy 
+ Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 16 of 52 
+ 3.1 While 2/3 women /pregnant people with epilepsy will have no 
+significant change in their seizure frequency during pregnancy, there is 
+a group of such patients 33% who will have increased seizures. 
+ 
+3.2 The experience in a previous pregnancy is not a reliable indicator of 
+what will happen in subsequent pregnancies. 
+ 
+3.3 Adjustment to medication is likely to be required as anticonvulsant 
+concentrations decline as pregnancy progresses due to the 
+physiological changes in fluid volume that occur in pregnancy 
+ 
+3.4 Effect of epilepsy (Lancet 2015 – Epilepsy in pregnancy and 
+reproductive outcomes – systematic review) 
+• Miscarriage 
+• Hypertensive disorders 
+• Fetal bradycardia 
+• Still birth 
+• Maternal and fetal hypoxia and acidosis 
+• Abruption and PPH 
+ 
+3.5 Increase r isk of Pre Term Delivery (OR 1.16) 
+ 
+3.6 Risk IUGR and SGA 7-10% in both treated and untreated women with 
+epilepsy. 
+ 
+3.7 Stillbirth and neonatal death significantly higher in infants. Children had a 
+threefold increased risk for developing seizures themselves. 
+ 
+3.8 Increased rate of congenital malformation in offspring of mothers with 
+epilepsy appears to be related to anti -epileptic drug exposure in utero. Risk 
+is dependent on the type number and dose of Anti Epileptic drugs. 
+ 
+3.9 Most common malformations are neural tube defect, cardiac malformations, 
+facial clefts and skeletal malformations. 
+ 
+AED Congenital malformation Risk 
+ 
+None 2-2.3% 
+Carbam azepine Cardiac and facial cleft 2 -5% 
+Lamotrigine Cardiac and facial cleft 2 -5% 
+Levetriacetam Cardiac ad neural tube defect 1-2% 
+Sodium valproate Neural tube, facial left, 
+hypospadias, poor cognitive 
+development 6 -10% 
+Phenytoin Facial clefts, poor cognitive 
+development 1-2 % Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 17 of 52 
+ 
+Monotherapy 3 -5% 
+Polytherapy 56-8% 
+ 
+Polytherapy with valproate 10% 
+ 
+3.10 Lamotrigine and Carbamazepine monotherapy in lower doses are considered 
+the safest. 
+ 
+3.11 The concerns regarding congenital malformations may cause compliance 
+issues with patients. It is important to counsel these women about the risks 
+and benefits of the medications and written information should also be 
+given. 
+ 
+4.0 Management of Women with Epilepsy 
+4.1 Pre-conception 
+ 
+4.1.1 Information and counselling about contraception – conception, 
+pregnancy, caring for children and breastfeeding should be given to 
+childbearing age women with epilepsy to enable them to make 
+informed decisions and choices (NICE guidelines 2004). 
+ 
+4.1.2 Women /pregnant people with epilepsy should be referred to 
+maternal medicine clinic/MEDIOBS or their neurologist for pre -
+conceptual advice via their GP 
+ 
+4.1.3 Women / pregnant people with epilepsy should have their 
+medication (including AEDs) reviewed pre -pregnancy. Lamotrigine 
+and carbamazepine are considered the safest agent. 
+ 
+4.1.4 The risk of congenital malformation is increased with polytherapy. 
+This should be minimised by changing medication prior to pregnancy 
+and the lowest effective dose of AEDs should always be used. If taking 
+sodium valproate consider weaning off to an alternative AED on the 
+advice of a neuro logist. Avoid any abrupt withdrawal of AEDs. 
+ 
+4.1.5 All women / pregnant people with Epilepsy should take 5 mgs of Folic 
+acid before pregnancy (RCOG 2016) and continue until at least 12 
+weeks gestation 
+4.2 Antenatal care 
+ 
+4.2.1 Women / pregnant people with epilepsy should be attending the 
+Medical Obstetric Clinic/ Maternal Medicine clinic as early as Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 18 of 52 
+ possible. There after they should be seen as appropriate (usually 20, 
+28, 32, 36 weeks). 
+ 
+4.2.2 Inform their Neurologist if on AEDs or the Epilepsy nurse s that they 
+are pregnanct. 
+ 
+4.2.3 All pregnant people should be encouraged to notify their pregnancy 
+or allow their clinician to notify the pregnancy to UK Epilepsy and 
+Pregnancy Register. ( www.epilepsy andpregnancy.co.uk) Tel 0800 
+389 1298. 
+ 
+4.2.4 Aim for seizure free pregnancy. Women / pregnant people who plan 
+to stop AED therapy during pregnancy should be informed of the 
+possibility of Status Epilepticus and sudden and sudden unexplained 
+death in epilepsy (SUDEP) 
+ 
+4.2.5 Morning sickness may require an alteration in drug times – woman 
+who has hyperemesis gravidarum consider giving drugs via an 
+alternative route. 
+ 
+4.2.6 Routine monitoring of AED plasma levels is not recommended , 
+unless seizure frequency increases in pregnancy or if they are on 
+lamotrigine. Change the dose of lamotrigine accordingly, aiming for a 
+therapeutic level. 
+ 
+4.2.7 Usual 12 -13 week scan for dating and to check for anencephaly and 
+other neural tube defects and at 20 -22 weeks for anatomical 
+anomalies. 
+ 
+4.2.8 Referral to Evelina Hospital for a fetal cardiac scan between 18 – 22 
+weeks should be made for be all women / pregnant people with 
+epilepsy taking AEDs. 
+ 
+4.2.9 Serial growth serial scans from 28 weeks are required for women 
+/pregnant people with epilepsy treated with AEDs with review in 
+Maternal medicine (RSCH)/ MEDIOBS (PRH) 
+ 
+4.2.10 Women / pregnant people with generalised Tonic -Clonic seizures 
+should be informed that the fetus may be at relatively higher risk of 
+harm during a seizure although the absolute risk remains very low 
+and may depend on seizure frequency. 
+ 
+4.2.11 There is insufficient evidence to recommend routine use of oral 
+Vitamin K for mothers taking AEDs to prevent haemorrhagic disease 
+of the new born. 
+ 
+ Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 19 of 52 
+ 4.3 Labour 
+ 
+4.3.1 Women should be reassured that most will have normal labour and 
+delivery 
+ 
+4.3.2 Women with epilepsy should have their care in the obstetric units 
+with facilities for maternal and neonatal resuscitation. 
+ 
+4.3.3 Home birth is not recommended. Any woman with epilepsy planning 
+a home birth should have a documented discussion about place of 
+birth with her obstetrician and a supervisor of midwives. 
+ 
+4.3.4 Decision regarding suitability of water birth should individualise and 
+based on the seizure status of the women; advice from the epilepsy 
+specialist and the availability of safety prec aution or equipment like 
+a net should be sought. Women must be made aware of their risk of 
+drowning whilst having a seizure in water 
+ 
+4.3.5 Continuous fetal monitoring is recommended only in women at high 
+risk of seizures or following an intrapartum seizure. 
+ 
+4.3.6 A diagnosis of epilepsy is not an indication for induction of labour. 
+ 
+4.3.7 Caesarean section is only indicated for obstetric indications unless 
+epilepsy is poorly controlled and there is a significant risk of seizures 
+in labour. 
+ 
+4.3.8 Lack of sleep, pain and dehydration increase the risk of a seizure 
+during labour, it is therefore important to avoid these triggers in 
+labour. 
+ 
+4.3.9 Women should continue with the medication during labour orally or 
+parentally. 
+ 
+4.3.10 Risk of seizure is approximately 3.5% for women in labour with 
+known epilepsy. 
+ 
+4.3.11 Risk of seizure in the first 24 hours is 1 -2%. Those at high risk 
+seizures consider prophylactic use of Benzodiazepines e.g. Clobazam 
+(10mg) 
+ 
+4.3.12 IV access should be obtained at the onset of labour in women in 
+whom IV access is likely to be difficult (e.g. raised BMI) or in women 
+who are having repeated seizures. 
+ 
+4.3.13 TENS machine may be used in labour (Epilepsy action 2005) 
+ Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 20 of 52 
+ 4.3.14 Entonox can be used. Avoid hyperventilation as this can trigger a 
+seizure (Epilepsy Action 2005) 
+ 
+4.3.15 Pethidine should only be used with caution as it can induce seizure. 
+Diamorphine should be used in preference (Epilepsy Action (2005) 
+ 
+4.3.16 Epidural and spinal can be used 
+ Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 21 of 52 
+ 4.4 Acute Management of Seizures 
+ 
+4.4.1 ABC Airway: Place woman in left lateral or displace gravid uterus to 
+maternal right. 
+4.4.2 Breathing: Give oxygen by face mask 
+ 
+4.4.3 Circulation: Observation, check pulse, blood pressure and urine 
+output. 
+ 
+4.4.4 Call for help – fast bleep 2222 (maternal collapse) 
+ 
+4.4.5 Intravenous access 14g take blood, uric acid, platelet count, clotting, 
+liver function test, blood glucose, serum calcium, serum sodium 
+ 
+4.4.6 Exclude Eclampsia, if there is clinical uncertainty then start MgSO4 as 
+per Eclampsia protocol 
+ 
+4.4.7 Seizure should be treated as soon as possible to reduce the risk of 
+maternal and fetal hypoxia 
+ 
+4.4.8 If seizure requires terminating (on -going > 2minutes) give IV 
+Lorazepam (4 mg over 2 minutes) repeated every 10 -20 minutes or 
+Diazepam 10mg IV or PR 
+ 
+4.4.9 In refractory cases, iv Phenytoin can be used. Loading dose 18mg/kg 
+to a maximum rate of 50mg/ 
+ 
+4.4.10 CTG should be started immediately after a seizure Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 22 of 52 
+ 4.5 Status Epilepticus 
+ 
+4.5.1 Status Epilepticus is a life threatening medical emergency defined as 
+a seizure lasting ≥ 5 minutes, or ≥ 2 seizures without return to 
+consciousness, or ≥3 Tonic -Clonic seizures within 1 hour 
+
+ Stage 1: 0 -10 minutes 
+Start Benzodiazepine treatment ASAP 
+• Resuscitate, secure airway, give oxygen, left lateral tilt or displace gravid 
+uterus to maternal right. 
+• Establish IV access in largest vein possible 
+• IV benzodiazepine 
+o Lorazepam 4mg IV bolus 
+Alternate: Diazepam 10mg IV bolus or Diazepam 10mg PR (if no Lorazepam) 
+• Give second dose of Lorazepam 4mg IV bolus (or diazepam 10mg IV/PR) after 
+10 minutes if seizures continue unless cyanosed or hypoxic. 
+ 
+Stage 2: 10 - 30 minutes 
+Call MET team on 2222: Start emergency antiepileptic drug therapy ASAP 
+ 
+• Regular monitoring: neurology Obs + HR, BP, Temp, Sats, RR, BM 
+• Consider non -convulsive status. 
+• Start IV anti-epileptic drug ASAP 
+o Phenytoin 20mg/kg IV infusion 
+Alternatives: Sodium Valproate 30mg/kg IV infusion or Leveiracetam IV 
+infusion 30mg/kg 
+• Investigations: ECG, ABG, bloods (FBC, U&Es, LFTs, Ca2+, Mg2+, clotting, 
+antiepileptic drug levels 
+• If history of alcohol excess, consider 50% glucose IV and/or Pabrinex IV 
+ 
+Stage 3: 30 -60 minutes 
+Alert Anaesthetist/ITU 
+• Establish aetiology, identify and treat medical complications. 
+• Further investigations: CXR, brain imaging, LP 
+• All post -ictal patients must have a written management plan to include 
+planned and active monitoring (including those that have regained 
+consciousness) 
+ 
+Stage 4: 30 -90 minutes 
+Primary end point – suppression of epileptic activity on EEG 
+• Transfer to ITU; establish intensive care, EEG monitoring & ICP monitoring 
+where appropriate. 
+• Initiate long -term maintenance anti -epileptic therapy (restart patients usual 
+antiepileptic drugs). 
+ Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 23 of 52 
+ 4.6 Postnatal 
+ 
+Risk of seizure is higher compared to in pregnancy, this is due to increased 
+stress, sl eep deprivation and reduced AED compliance. 
+ 
+4.6.1 All babies born to mothers taking enzyme -inducing AED should be 
+offered Vitamin K IM at delivery to prevent haemorrhagic disease of 
+the new born 
+ 
+4.6.2 Women /pregnant people who have had their AED increased in 
+pregnancy should have their medication reviewed after discussion 
+with neurology within one month of delivery. They may need to be 
+reduced to pre -pregnancy level to avoid toxicity 
+ 
+4.6.3 Women / pregnant people should be encouraged to breastfeed as 
+evidence suggests that the risk of adverse cognitive outcomes is not 
+increased in children exposed to AEDs in breast milk. 
+ 
+4.6.4 Any woman / pregnant person who has had a seizure during labour 
+should be observed closely for the next 72 hours. 
+ 
+4.6.5 Parents should be informed about which safety measures May 
+reduce the risk of accidents. Leaflets are available from the British 
+Epilepsy Association – but they should be reassured that the risk to 
+the infant caused by maternal seizure is low. 
+ 
+4.6.6 Ensure that referral to the contracept ion service is made in the 
+post natal period. 
+ 
+4.6.7 Barrier contraception should be discussed for use prior to review by 
+the contraception service. 
+ Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 24 of 52 
+ Hypothyroidism and Hyperthyroidism in 
+pregnancy 
+ 
+1.0 Hypothyroidism in pregnancy - Introduction 
+ 
+Hypothyroidism is a common condition that affects about 1% of the pregnant 
+population. Prior to the development of the f etal thyroid axis, the fetus is 
+dependent on maternal levothyroxine and this is essential for fetal 
+neurodevelopment. 
+ 
+Pregnant people who are diagnosed with untreated hypothyroidism in the first 
+trimester require rapid treatment with levothyroxine to achieve euthyroidism. This 
+also applies to women / pregnant people who have under treated pre -existing 
+primary hypothyroidism. 
+ 
+Patient information leaflet (Pregnancy and Hypothyroidism) available at - 
+http://www.bsuh.nhs.uk/departments/diabetes -and-endocrinology/patient -
+information -leaflets/ 
+ 
+1.1 Known Primary Hypothyroidism 
+ 
+1.1.1. Confirm (from the woman’s / pregnant person’s past medical 
+history) the cause of her primary hypothyroidism. Most women will 
+have autoimmune primary hypothyroidism, some may be 
+hypothyroid after treatment for hyperthyroidism with surgery or 
+radioiodine (see additional information in section 2.3). 
+ 
+1.1.2. Thyroid function should be optimised pre -conception, aiming for a 
+TSH ≤2.5mIU/l, without causing TSH suppression . 
+ 
+1.1.3. Thyroid function tests should be checked once in each trimester 
+(first one at booking). Following any adjustments in thyroxine dose, 
+thyroid function should be checked in 4 -6 weeks. 
+ 
+1.1.4. Women should be advised to take levothyroxine on an empty 
+stomach. The levothyroxine should be taken at a different time to 
+their vitamins or mineral supplements. 
+ 
+1.1.5. Women with morning sickness or hyperemesis gravidarum should 
+be advised to take their levothyroxine last thing at night. 
+ 
+1.1.6. Obstetric reviews should be carried out at 24 and 32 weeks, with 
+thyroid function tests if due. 
+ Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 25 of 52 
+ 1.1.7. Assuming optimised control pre -pregnancy, levothyroxine should 
+be reduced to pre -pregnancy doses immediately following delivery. 
+ 
+1.1.8. Thyroid function tests should be performed 6 -8 weeks post -partum. 
+The patient should be informed of this and it should be 
+documented on the discharge summary. The GP can then titrate 
+the dose of levothyroxine if necessary. 
+ 
+1.1.9. ‘T3’ (tri -iodothyronine) does not cross the placenta: women on 
+T4/T3 combination therapy should be converted to levothyroxine 
+alone with appropriate dose titration. Women taking T3 therapy 
+should be referred to their endocrinologist preferably in the pre -
+conception period, or discussed urgently as soon as a pregnancy is 
+confirmed. 
+ 
+1.2 Screening for thyroid dysfunction in pregnancy 
+ 
+1.2.1 Thyroid function tests should be checked pre -conception and/or as 
+early in pregnancy as possible in all women with Type 1 diabetes or 
+other autoimmune endocrine conditions, or a personal or family 
+history of thyroid disease. 
+ 
+1.3 New diagnosis of Hypothyroidism or Subclinical hypothyroidism in 
+ pregnancy 
+ 
+1.3.1 Women with newly diagnosed hypothyroidism in pregnancy should 
+be started on levothyroxine as soon as possible. The starting dose 
+can be discussed with the Endocrinology team (Endocrinology SpR 
+on Bleep 8809 or Endocrine Secretaries on x 64311). 
+ 
+1.3.2 Treatment of subclinical hypothyroidism (a normal fT4 and an 
+elevated TSH) in pregnancy is the same as treatment of known or 
+newly diagnosed hypothyroidism, though the starting dose of 
+levothyroxine may be different. 
+ 
+1.3.3 Thyroid function tests should be repeated every 4 -6 weeks until 
+euthyroidism is achieved 
+ 
+1.3.4 The dose of levothyroxine should be up -titrated rapidly aiming for 
+a TSH >0.1 but <2.5mUI/l. 
+ 
+1.3.5 Once euthyroidism is achieved follow the “known hypothyroidism” 
+guidelines. 
+ Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 26 of 52 
+ 1.3.6 The levothyroxine dose is likely to need reducing in the post natal 
+period but again this depends on the pre -pregnancy thyroid 
+function tests. It may be reasonable to opt for a trial off the 
+levothyroxine, and for the GP to reassess symptoms and 
+biochemistry 6 -8 weeks post -partum. The Endocrine Team are 
+happy to discuss individual cases. 
+ 
+2.0 Hyperthyroidism in pregnancy - Introduction 
+ 
+Hyperthyroidism affects about 2 per 1000 pregnancies. The vast majori ty (about 
+95%) of pregnant people with hyperthyroidism will have autoimmune 
+hyperthyroidism (Graves’ disease). In general the diagnosis will have been made 
+prior to pregnancy and the majority of woman will already be on treatment. 
+ 
+People who become pregnant with untreated hyperthyroidism have increased risks 
+of miscarriage, intrauterine growth restriction, premature labour and perinatal 
+mortality. On very rare occasions there can be an extension of a retrosternal goitre 
+causing tracheal obstruction. This complication is of particular relevance if 
+intubation is required. 
+ 
+The importance of Graves’ disease for the fetus is that thyroid -stimulating antibodies 
+(TSH receptor stimulating antibodies) can cross the placenta causing fetal or 
+neonatal thyrotoxicosis. Women who have been treated for Graves’ disease in the 
+past (with surgery or radioiodine therapy) and are now hypothyroid (on 
+levothyroxine) or euthyroid, may still have circulating antibodies. 
+ 
+Like many other autoimmune diseases Graves’ disease will have a tendency to 
+improve during pregnancy with the titre of TSH receptor stimulating antibodies 
+falling. This means that often the requirement for anti -thyroid treatment will fall. 
+Exacerbations may occur in the first trimester mostly related to the thyroid 
+stimulating effect of beta -HCG. Auto -immune hyperthyroidism may also flare in the 
+puerperium as the pregnancy induced reduction of the TSH receptor stimulating 
+antibodies is lost. 
+ 
+Hyperemesis gravidarum can be associated with a transient hyperthyroid state. 
+Beta -HCG and TSH have a common subunit and hence beta -HCG can stimulate the 
+thyroid to release T4. The hyperthyroidism will normally resolve when the 
+hyperemesis resolves. 
+The patient will have high levels of T4 and low TSH as in hyperthyroidism. The 
+differentiating features will be that the TSH receptor stimulating antibodies will be 
+negative and the clinical features associated with hyperthyroidism such as 
+exophthalmos will be absent. 
+The main stay of treatment is to control the symptoms from the high levels of T4 
+(such as tremors, sweats, palpitations and anxiety). This can be achieved using beta -
+blockers such as propranolol. However, if the patient is not very symptomatic and 
+the thyrotoxicosis is transient, they can be managed expectantly without the need Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 27 of 52 
+ for treatment. Treatment with anti -thyroid drugs should be avoided as when the 
+hyperthyroidism resolves there is a risk of hypothyroidism affecting the fetus. 
+2.1 Known Hyperthyroidism 
+ 
+2.1.1 Women / pregnant people with hyperthyroidism due to Graves’ disease or a 
+toxic thyroid nodule will in general be under an endocrinologist. 
+ 
+2.1.2 The endocrinologist should be informed as soon as pregnancy is confirmed. 
+ 
+2.1.3 If a patient is on block and replace treatment (with carbimazole or 
+propylthiouracil [PTU] in combination with levothyroxine) and considering 
+pregnancy this should ideally be changed to a dose titration regime prior to 
+conception. 
+ 
+2.1.4 Urgent discussion should be made for those women that become pregnant 
+whilst on block and replace therapy (high dose carbimazole or PTU in 
+combination with levothyroxine). This should be done by telephone 
+discussion with their Endocrinologist, and subsequent referral for follow -up 
+in pregnancy. 
+ 
+2.1.5 Current recommendations are to treat hyperthyroidism in pregnancy with 
+PTU in the first trimester then switch to carbimazole for the second and 
+third trimestersi, swapping back to PTU whilst breast feeding. Medication 
+changes should be undertaken by the woman’s Endocrinologist. 
+ 
+2.1.6 The target fT4 should be in the upper third of the non -pregnant reference 
+range to avoid fetal hypothyroidism. 
+ 
+ TSH (mU/L) Thyroxine (pmol/L) Tri-iodothyronine(pmol/L) 
+Non - pregnant 0.27 - 4.2 12 - 22 3.1 – 6.8 
+First trimester 0 - 5.5 10 - 16 3 – 7 
+Second trimester 0.5 -3.5 9 – 15.5 3 – 5.5 
+Third trimester 0.5 - 4 8 – 14.5 2.5 – 5.5 
+ 
+2.1.7 For women / pregnant people with symptoms of hyperthyroidism 
+(tachycardia, tremor or anxiety) they can continue with beta -blockers 
+(propranolol) as the risks of IUGR are outweighed by the maternal and fetal 
+benefits.ii 
+ 
+2.1.8 The woman / pregnant person should be reviewed following the 20 week 
+anomalies scan in an ANC. TSH receptor antibody titre (request as TRAb on 
+blood form and send in yellow top bottle) should be sent at this time as well 
+as thyroid function. 
+ 
+2.1.9 All women / pregnant people with positive antibodies should be highlighted 
+to the neonatal team, as there is the possibility of neonatal thyrotoxicosis. Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 28 of 52 
+ 
+2.1.10 For TRAB positive women, a growth scan, antenatal clinic review and 
+thyroid function testing should be arranged for 28 weeks gestation, with 
+additional scans if there is any concern regarding fetal growth. 
+ 
+2.1.11 For TRAB negative women, a growth scan and antenatal clinic review with 
+thyroid function testing should be arranged for 28 weeks gestation, with 
+additional scans if there is any concern regarding fetal growth. 
+ 
+2.1.12 Blood for thyroid function tests should be taken by the community midwife 
+1 week prior to the ANC appointments at 28 and 34 weeks so that results 
+are available to inform obstetric reviews. 
+ 
+2.1.13 If surgery for thyroidectomy becomes necessary it is best performed in the 
+second trimester. Indications for surgery could include dysphagia, stridor 
+(related to goitre), suspected/confirmed malignancy or allergy to 
+antithyroid medication, in discussion with the endocrinologists and thyroid 
+surgeon. 
+ 
+2.1.14 Treatment with radioactive iodine is absolutely contraindicated in 
+pregnancy. 
+ 
+2.1.15 Women / pregnant people with Graves’ disease should be made aware of 
+the increased risk of relapse in the post -partum period. 
+ 
+2.1.16 Post -partum, anti -thyroid medication should be taken immediately after 
+breast feeding. PTU is the antithyroid drug of choice in breast feeding 
+women. 
+ 
+2.1.17 A patient information leaflet (Pregnancy and Hyperthyroidism) is available 
+on the BSUH intranet and should be made available to the patient. 
+http://www.bsuh.nhs.uk/departments/diabetes -and-
+endocrinology/patient -information -leaflets/ 
+ 
+2.1.18 The reported fetal risks associated with propylthiouracil and 
+Carbimazole 
+ 
+Major: 
+Choanal atresia, Cardiovascular abnormalities, Oesophageal atresia, Anal and 
+intestinal abnormalities, Omphalocele and ompha lomesenteric duct 
+abnormalities, Cardiovascular abnormalities, Renal/urinary tract 
+abnormalities. 
+ 
+Minor: 
+Aplasia cutis. Facial abnormalities, skeletal and limb abnormalities, 
+renal/urinary tract abnormalities. 
+ Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 29 of 52 
+ The reported risks associated with untreated hyperthyroidism in pregnancy 
+include: increased risk of miscarriage, intrauterine growth restriction, low 
+birth weight, premature labour, preeclampsia, congestive heart failure and 
+fetal death. 
+2.2 Woman / pregnant people who have been previously 
+treated for hyperthyroidism 
+ 
+2.2.1 Woman / pregnant people who have been previously treated for 
+hyperthyroidism due to Graves’ and are now euthyroid or 
+hypothyroid may still have circ ulating antibodies. These patients 
+should also have their TSH receptor -stimulating antibody levels 
+checked with follow -up as indicated (see section 2.2.8 – 2.2.11). 
+ 
+2.3 New Diagnosis of Hyperthyroidism in pregnancy 
+ 
+2.3.1 It is important to differentiate between new onset hyperthyroidism 
+and gestational hyperthyroidism (associated with hyperemesis). 
+ 
+2.3.2 An endocrine assessment may be useful. 
+ 
+2.3.3 Careful history as to the timing of when the symptoms of 
+hyperthyroidism (e.g. heat intolerance, anxiety, palpitations) 
+occurred. If they began concurrently with the symptoms of 
+excessive vomiting then the hyperthyroidism is more likely to be 
+associated with hyperemesis gravidarum. 
+ 
+2.3.4 A personal or strong family history of thyroid disease or other 
+autoimmune disorders may support a diagnosis of Graves’ disease 
+ 
+2.3.5 Clinical assessment of the patient for stigmata of hyperthyroidism 
+should be carried out. If exophthalmos and a goitre with a bruit on 
+auscultation are present this supports the diagnosis of Graves’ 
+disease. 
+ 
+2.3.6 Thyroid auto -antibodies (antiTPO AB and TRAB, sent in a 5ml yellow 
+top bottle) should be sent. If positive this again supports the 
+diagnosis of Graves’. 
+ 
+2.3.7 Initial treatment should be for symptomatic benefit if associated 
+with hyperemesis gravidarum, using propranolol. The hyperthyroid 
+biochemical picture will resolve following resolution of the 
+hyperemesis. 
+ 
+2.3.8 If there is a strong suspicion of Graves’ disease , discuss with an 
+Endocrinologist. Generally, treat with high doses of carbimazole (45 -Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 30 of 52 
+ 60mg) or PTU (450 -600mg) daily, repeat TFTs in 4 weeks and 
+gradually reduce the dose. 
+ 
+2.3.9 Neonatal/feta thyrotoxicosis 
+ 
+This results from transplacental passage of thyroid -stimulating antibodies . It 
+occurs in 1% of babies born to mothers with a past or current history of 
+Grave’s disease. 
+ 
+TSH receptor -stimulating antibodies should be checked in the first trimester, 
+if titre is high or in subsequent measurements the titre has not fallen , fetal 
+thyrotoxicosis should be anticipated and ultrasound should be organised to 
+check for fetal growth, heart rate and fetal neck (goitre). 
+ 
+Treatment is with anti -thyroid drugs; these are given to the mother and if she 
+is euthyroid to combine it with levothyroxine. 
+ 
+3.0 Post -partum thyroiditis 
+ 
+3.0.1 Post -partum thyroiditis may occur up to 1 year after the baby has been born. 
+ 
+3.0.2 Women with Type 1 diabetes or a personal or family history of thyroid 
+disease are more at risk. 
+ 
+3.0.3 There should be a low threshold for checking thyroid function tests. 
+ 
+3.0.4 An endocrine assessment may be he lpful if results are abnormal. 
+ 
+3.0.5 The Endocrine Society Clinical Guidelines recommend post -partum screening 
+thyroid function tests at 3 a nd 6 months for high risk women / pregnant 
+people. 
+
+ Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 31 of 52 
+ Inflammatory Bowel Disease 
+ 
+1.0 Introduction 
+ 
+Inflammatory bowel disease (IBD) is a group of chronic bowel disease, including 
+Crohn’s disease (CD) and ulcerative colitis (UC). 50% of patients are diagnosed 
+before 35 years of age. 
+ 
+UC is characterised by relapsing and remitting episodes of inflammation limited to 
+the mucosal layer of the colon. CD can affect any part of the gastrointestinal system 
+from the mouth to perianal area and is characterised by transmural inflammation 
+and skip lesions. 
+ 
+Clinical features of UC are: 
+- Liquid diarrhoea 
+- Lower abdominal pain 
+- Urgency of def aecation 
+- Passage of blood and mucus per rectum 
+Compilations include colonic dilation (t oxic megacolon) and malignancy 
+ 
+Clinical features of CD are: 
+ -Crampy abdominal pain 
+ - Diarrhoea 
+ - Weight loss 
+ 
+Complications include bowel perforation, stricture formation, peri -anal disease, 
+fistular, malabsorption and abscess formation. 
+ 
+Effects of pregnancy on IBD 
+ 
+Women with IBD have similar fertility rates to the general population . The 
+exceptions are women / pregnant people with active disease or those who have 
+undergone extensive abdominal surgery. 
+ 
+Women in remission at the time of conception are more likely (80 -90%) to have a 
+normal pregnancy. The risk of relapse is similar to a non -pregnant state which is 
+30%. 
+ 
+2/3 of patients with active disease at conception will have persistent flare -ups during 
+pregnancy. Higher rates of miscarriage, preterm birth and IUGR have been found in 
+those with active disease. 
+ 
+Pre-pregnancy counselling 
+ Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 32 of 52 
+ Patients planning on getting pregnant should have an education session with their 
+IBD nurse specialist . It is useful to summarise their illness, treatment to date and 
+possible treatment plans in the events of relapse during pregnancy. 
+It is important to advise them to conceive during remission and that good control 
+during pregnancy reduces the risk of adverse pregnancy outcomes. 
+ 
+Women / pregnant people should be reassured about the safety profiles of their 
+medications and encouraged to take them. The smallest dose to treat an d maintain 
+remission should be used. 
+ 
+Mycophenolate and methotrexate should be stopped and replaced by suitable 
+alternatives at least 3 months prior to conception. 
+ 
+Medications used to treat IBD 
+ 
+Drug Use in pregnancy Safe in 
+breastfeeding Comments 
+Aminosalicyates Yes Yes High dose folic 
+supplementation (5mg/day) 
+Metronidazole Yes Yes Use short course for flare of 
+CD and perianal CD 
+Steriods 
+(prednisolone and 
+hydrocortisone) Yes Yes Can achieve rapid disease 
+remission 40mg OD weaning 
+by 5mg/week 
+Thiopurines 
+(azathipoprine and 
+mercaptopurine) Yes Yes 
+Calcineurin 
+Inhibitors Yes Yes Use for fulminant colitis and 
+rescue therapy in steroid -
+refractory U C 
+Biologics 
+(infliximab and 
+adalimumab) Yes Yes Discontinue by early third 
+trimester 
+Avoid live vaccines in 
+newborns 
+Mycophenolate No No Associated with multiple 
+congenital abnormalities 
+Methotrexate No No Tetratogenic 
+
+Antenatal management: 
+ 
+Patients with IBD identified at booking should be referred to a Materna l Medicine 
+clinic following their dating scan (Monday pm at PRH or Monday pm at RSCH Sussex 
+House). 
+ Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 33 of 52 
+ The Obstetrician should notify the IBD nurse at RSCH or the patient’s 
+gastroenterologist that the patient is pregnant and organise MDT follow up. 
+ 
+Take a detailed history of their diagnosis, current medication and last flare up. 
+Identify any previous surgeries and if there are any complications of IBD (such as 
+perianal disease / fistulae). 
+ 
+Counsel the patient that the risk of exacerbation is around 30% and more likely to 
+have a postpartum flare up. 
+ 
+Organise growth scans at 28, 32 and 36 weeks and review after each scan to check 
+for IUGR. 
+ 
+Women with prior surgery, including ileostomy and proctocolectomy and pouch 
+surgery tolerate pregnancy well. Vaginal deliveries are possible following ileoanal 
+anastomosis . 
+ 
+Caesarean section is usually only required for obstetric indications. In cases of severe 
+peri-anal disease resulting in scarred rectum and perineum, vaginal delivery should 
+be avoided. Pelvic MRI can be used in pregnancy to assess fistulae and help inform 
+decisions regarding mode of delivery. 
+ 
+ Induction of labour should be reserved for obstetric reasons unless the disease 
+remains active near or at term when optimal treatment cannot be provided because 
+of the pregnancy. 
+ 
+Women / pregnant people on regular steroids will require hydrocortisone in labour 
+(100mg every 6 -8 hours) to avoid an adrenal crisis. 
+ 
+Anyone with complex decisions to be made, or who have refractory disease should 
+be referred into the joint Medical Obstetric clinic at RSCH on a Wednesday morning 
+run by Dr Carol Postlethwaite . 
+
+Diagnosis of IBD disease activity in pregnancy 
+ 
+The criteria for diagnosis of active disease is similar to those in the non pregnant 
+state. 
+ 
+Symptoms including abdominal pain, stool frequency and rectal bleeding. Tests to 
+look at include FBC,U &E, CRP, Albumin and Faecal calprotectin (non invasive marker 
+for intestinal inflammation). 
+ 
+Ultrasound examination of the abdomen is the imaging of choice however MRI 
+without contrast in the second and third trimester should be reserved for more 
+complex cases or where ultrasound is inconclusive. 
+ Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 34 of 52 
+ Treatment should be discussed with the Gastroenterology Ref team and if they 
+require inpatient admission a review by the medical team should be organised . 
+Renal Disease in Pregnancy 
+ 
+ Introduction: Renal physiological changes in pregnancy 
+ 
+ Pregnancy is associated with substantial alterations to renal structure and 
+ function: 
+ 
+• Renal blood flow and glomerular filtration rate (GFR) mirrors cardiac output. 
+GFR increases by approximately 80% above non -pregnant levels by the 2nd 
+trimester. It then falls to about 45% above non pregnant levels by term. 
+• The increase in blood flow results in an increase in kidney length by about 1 
+cm. 
+• Progestogenic effects and later in pregnancy compression from the gravid 
+uterus causes dilation of the renal calyces, ureters and bladder. This is more 
+marked on the right due to the physiological uterine dextrotation (due to the 
+sigmoid colon). 
+• Renal hydronephrosis is considered normal up to a pelvi -calyceal diameter of 
+5 mm on the left and 15 mm on the right. The ureters can be dilated up to 2 
+cm in the third trimester. 
+• Ureteric dilation is rarely seen below the pelvic brim. 
+ 
+ Renal Function tests in pregnancy 
+
+ Physiological variable Direction of 
+change % Increase OR normal 
+levels for Pregnancy 
+Renal Plasma Flow  60% - 80% 
+Glomerular filtration rate  55% 
+Creatinine Clearance  120 – 160 mL/min 
+Protein excretion  ≤ 300mg/24hr 
+Urea  2.0 – 4.5 mmol/L 
+Creatinine  25 – 75 mmol/L 
+Bicarbonate  18 – 22 mmol/L 
+Uric acid  1st tri- 0.14-0.23 
+2nd tri.- 0.14 – 0.29 
+3rd tri.- 0.21 -0.38 Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 35 of 52 
+ 1.0 Referral criteria to MEDIOBS (PRH)/Maternal medicine 
+clinic (RSCH) 
+ 
+1.1. Pregnant women with chronic renal d isease (see list in appendix 1) 
+ 
+1.2. Pregnant women on dialysis or post renal transplant 
+ 
+2.0 Woman who require Consultant led antenatal care 
+ 
+2.1 Pregnant people with a history of recurrent urinary tract infections (UTI). This is 
+defined as three or more culture proven UTIs in one year outside of pregnancy 
+or 2 UTIs in pregnancy. 
+ 
+2.2 Pregnant people aged > or = 40 years old with hypertension > or = 140/90 with 
+a urine protein creatinine ratio >30 mg/mmol (significant proteinuria). These 
+woman should be referred as early as possible 
+ 
+2.3 Pregnant people on treatment for essential hypertension with or without 
+significant proteinuria. 
+ 
+3.0 Urinary tract infection 
+ 
+3.0.1 This is a common and important diagn osis in pregnancy. Asymptomtic 
+bacteriuria will affect 2 -7% of pregnant woman /people , acute cystitis will 
+complicate about 1% of pregnancies and 1 -2% of preg nancies will be 
+complicated by acute pyelonephritis. 
+ 
+3.0.2 Asymptomatic bacteriuria (ASB) 
+ 
+3.0.3 ASB is defined as the colonization of the urinary tract system in the absence 
+of clinical symptoms of urinary tract infection. 
+ 
+3.0.4 Screening for ASB can be carried out using urine reagent strips. These strips 
+will detect 50% of woman with ASB if the strip tests positive for >trace 
+protein, >trace of blood, positive for nitrites or leucocytes. 
+ 
+3.0.5 Midstream urine (MSU) culture is the gold standard for diagnosing ASB and 
+also allows for antibiotic sensitivity to be determined. 
+ 
+3.0.6 Bacteriuria is only considered significant if the colony count exceeds 
+100,000/ml on a urine MSU specimen. 
+ 
+3.0.7 Urine culture resulting in a non -significant or mixed growth should be 
+repeated on a fresh MSU specimen. Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 36 of 52 
+ 
+3.1 Acute cystitis 
+ 
+3.1.1 Clinical features include urinary frequency, urgency, dysuria, haematuria, 
+proteinuria, pyrexia and suprapubic pain. 
+ 
+3.1.2 Dipstick urine and send mid -stream urine (MSU) for culture and sensitivity. 
+The presence of nitrites and leucocytes on a urine dip is suggestive of a UTI 
+but not diagnostic. 
+ 
+3.1.3 UTI is confirmed by significant bacteriuria following culture of an MSU sample 
+in the presence of symptoms of cystitis. 
+ 
+3.1.4 If cystitis is considered to be the most likely clinical diagnosis even with a 
+dipstick negative for leucocytes and nitrites treat the woman for UTI. 
+Provided other possible diagnoses for the symptoms have been ruled out. 
+3.2 Management of asymptomatic bacteriuria and acute 
+cystitis 
+ 
+3.2.1 As a result of increased urinary stasis and upper urinary tract dilation 
+ associated with pregnancy there is an increased risk of pyelonephritis. It is 
+ therefore important that asymptomatic bacteriuria and acute cystitis is 
+ treated. 
+ 
+3.2.2 Choice of antibiotic treatment of asymptomatic bacteriuria depends upon the 
+sensitivity of the causative organism. 
+ 
+3.2.3 In the presence of symptoms of acute cystitis 7 -day course of treatment with 
+broad -spectrum antibiotic such as Cefalexin, Nitrofurantoin or amoxicillin based 
+on recent culture and susceptibility result s 
+ 
+3.2.4 Cefalexin 500 mg BD given for 7 days is effective against the majority urinary 
+pathogens. 
+ 
+3.2.5 Nitrofurantoin 50mg Q DS IR or 100mg BD MR is an alternative if the patient is 
+allergic to penicillin and less than 26 weeks. It should be avoided in the third 
+trimester due the risk of precipitating neonatal haemolytic anaemia. 
+ 
+3.2.6 Trimethoprim 200mg BD can be used in the 2nd and 3rd trimester. It should 
+be avoided in the 1st trimest er due to its antifolate action or Amoxicillin 
+500mg TDS 
+ 
+3.2.7 Complicated cases and cases of multiple resistances should be discussed with 
+a microbiologist. 
+ Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 37 of 52 
+
+3.3 Prophylaxis for recurrent UTI 
+ 
+3.3.1 Once a woman / pregnant person has had three or more microbiology 
+confirmed UTIs in pregnancy antibiotic prophylaxis should be commenced. 
+ 
+3.3.1 An ultrasound scan of the renal tract should be arranged. 
+ 
+Check sensitivity results from MSU samples before commencing prophylactic 
+antibiotic. 
+ 
+3.3.2 Low dose cephalosporins (cephalexin 125 mg ON ) is commonly used. If 
+allergic then discuss with microbiology about appropriate prophylaxis. 
+ 
+3.3.3 Woman / pregnant people who usually take prophylaxis outside of pregnancy 
+should continue with antibiotic prophylaxis appropriate for pregnancy. 
+ 
+3.4 Acute Pyelonephritis 
+ 
+3.4.1 Acute pyelonephritis complicates about 1 -2% of pregnancies. Bacteraemia 
+ complicates about 15 -20% of cases. Rarely it will be a cause of septic shock. 
+ E.coli is the most common causative organism. Symptomatic for UTI Antenatal clinic or DAU referral 
+NO 
+YES YES 
+Dipstick Positive +MSU shows 
+significant Bacteriuria 
+NO 
+YES YES 
+No evidence 
+of UTI 
+Evaluate for 
+other causes Treat as acute cystitis 
+with oral antibiotics 
+(See guidelines) Lower UTI 
+symptoms Upper UTI 
+symptoms 
+Urine 
+dipstick & 
+MSU Urine dipstick & 
+MSU. FBC, U&E, 
+blood culture 
+Treat as acute pyelonephritis 
+Inpatient treatment with IV 
+antibiotics 
+(See guidelines) Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 38 of 52 
+ 
+3.4.2 Clinical features include fever, loin and/or abdominal pain, nausea and 
+vomiting, rigors and haematuria. These are normally associated with 
+concurrent symptoms of cystitis. 
+ 
+3.4.3 The diagnosis is confirmed by the finding of significant bacteriuria following 
+the culture of a MSU (midstream urine) specimen. 
+ 
+3.4.4 The diagnosis is associated with pre -term labour and low birth weight babies. 
+ 
+3.5 Management of acute pyelonephritis 
+ 
+3.5.1 Women / pregnant people with symptoms of acute pyelonephritis should be 
+admitted to the antenatal ward for treatment. 
+ 
+3.5.2 All patients admitted with pyelonephritis should be discussed with the on -call 
+consultant or registrar. 
+ 
+3.5.3 Initial investigation should include a MSU, blood tests for FBC, U&Es, CRP and 
+blood cultures. If patient is clinically septic a lactate level should also be 
+obtained using a venous blood gas. 
+ 
+3.5.4 Treatment with broad -spectrum IV antibiotics should be commenced 
+immediately without waiting for culture results. The woman should be kept 
+well hydrated with a low threshold for IV fluids. 
+ 
+3.5.5 IV cefuroxime 1.5 g TDS 
+ 
+3.5.6 If the woman / pregnant person is penicillin allergic then commence 
+Gentamycin with Microbiology advice 
+ 
+3.5.7 Following discussion with microbiology gentamycin maybe used as adjunctive 
+treatment in severe cases. If used levels must be monitored according to 
+hospital guidelines. 
+ 
+3.5.8 The antibiotics should be rationalised and changed as appropriate according 
+to culture results. 
+ 
+3.5.9 IV antibiotics should be continued until the woman has been apyrexial for 24 
+hours then converted to appropriate oral antibiotics for 7 days. 
+ 
+3.5.10 Women who do not respond to treatment after 48 -72 hours of treatment 
+should have imaging of the renal tract by ultrasound to detect anomalies, 
+obstruction and stones. 
+ Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 39 of 52 
+ 3.5.11 Women / pregnant people who grow Klebsiella or Proteus or those organisms 
+associated with renal stones should also have imaging of the renal tract by 
+USS. 
+ 
+4. Chronic Kidney disease 
+ 
+Chronic kidney disease (CKD) is rare in pregnancy (affecting 0.15% of all 
+pregnancies). This is in part due to the associated reduced fertility. Diabetes 
+and hypertension are the commonest causes of CKD. Other common causes 
+of CKD are chronic pyelonephritis and primary glomerulonephritis. 
+ 
+Pregnant people can present with a variety of pre -existing renal conditions. 
+Examples of these and their effects on pregnancy can be found in Appendix 
+2. Please note that this is not an exhaustive list. 
+ 
+Special consideration should be given to those patients who require dialysis 
+and who have had transplants. Please refer to sections 5 and 6 for specific 
+guidance for these patients. 
+ 
+4.1 Pre-pregnancy advice and counselling 
+ 
+4.1.1 The GP should refer all women with CKD to a preconception clinic for review 
+as fertility and pregnancy outcome will be affected by the degree of renal 
+insufficiency. 
+ 
+4.1.2 The outcome of pregnancy will depend upon the degree of renal 
+impairment, the presence and degree of hypertension, the presence and 
+degree of proteinuria and underlying renal disease. 
+ 
+4.1.3 The possible risks to the mother include accelerated loss of renal function, 
+escalating hypertension during pregnancy and increasing proteinuria. Those 
+at highest risk of accelerated loss are those with stage 3 and 4 chronic 
+kidney disease (see table below). 
+ Stage Description e-GFR 
+(ml/min/1.73sq.m) 
+1 Kidney damage and normal /raised GFR >90 
+2 Kidney damage and mildly reduced GFR 60 - 90 
+3 Moderately reduced GFR 30 - 59 
+4 Severely reduced GFR 15 - 29 
+5 Kidney failure < 15 ( or dialysis) Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 40 of 52 
+ 4.1.4 Women / pregnant people with stage 1 and 2 disease can be advised that 
+pregnancy outcome is normally good without adverse outcome on the long 
+term course of their disease although they are still at risk of antenatal 
+complications. 
+ 
+4.1.5 Woman / pregnant person should be advised against pregnancy if suffering 
+from severe renal insufficiency or those requiring dialysis, severe or 
+uncontrolled hypertension, nephrotic syndrome, scleroderma, polyarteritis 
+nodosa, active lupus nephritis or diabetic nephropathy (if serum creatinine 
+>124µmol/l as there is a 40% risk of accelerated renal deterioration). 
+ 
+4.1.6 The effects that renal disease has on pregnancy include increased rates of 
+miscarriage, increased risk of IUGR, increased risk of pre -eclmapsia, pre -
+mature birth and intrauterine death. 
+ 
+4.1.7 Renal function should be assessed pre -pregnancy and the woman 
+appropriate counseled as to the risk pregnancy will have to her renal 
+function. 
+ 
+4.1.8 Hypertension should be controlled pre -pregnancy. Ideally this should be 
+<140/90. In women with longstanding hypertension consider 
+echocardiography. 
+ 
+4.1.9 Where hypertension is controlled using ACE inhibitors these should be 
+changed pre -conception or shortly after pregnancy is confirmed. Safe 
+alternatives would include labetalol, methyldopa or nifedipine. 
+ 
+4.1.10 Statins should be stopped pre -conception. 
+ 
+4.2 Midwifery care of a patient with CKD 
+ 
+4.2.1 At booking the midwife should identify the history of chronic kidney disease, 
+document current medication, measure baseline blood pressure, perform 
+urinalysis, send a urine sample for PCR (Protein Creatinine Ratio), send blood 
+for FBC, U&Es and arrange a baseline renal ultrasound scan. 
+ 
+4.2.2 The renal patient proforma should be printed and placed in the patients 
+handheld notes (Appendix 2). The results of the investigations in section 4.2.1 
+should be documented on the renal disease proforma. 
+ 
+4.2.1 If the patient is taking ACE inhibitors these should be stopped and discussion 
+with either a Consultant obstetrician or their Renal physician immediately. 
+ 
+4.2.2 Recommend high dose folic acid (5 mg OD) if not already taking this. 
+ Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 41 of 52 
+ 4.2.3 At booking low dose aspirin ( 150mg OD ) should be commenced from 12 
+weeks to reduce the risk of pre -eclampsia. 
+ 
+4.2.4 The patient should be referred to the maternal medicine clinic (RSCH) or 
+MEDIOBS (PRH) and should be seen prior to 12 weeks. 
+ 
+4.2.5 Blood pressure and urine dip should be performed at least every 2 weeks 
+from 22 weeks gestation. Blood pressure should be controlled at a level 
+<135/85 where possible. Increasing hypertension and/or increasing 
+proteinuria should prompt referral to the Day Assessment Unit for 
+assessment by a registrar. 
+ 
+4.2.6 A low threshold for treatment of asymptomatic bateriuria and acute cystitis 
+will help prevent preterm labour. (see section 3.3) 
+ 
+4.2.7 VTE risk should be assessed using the VTE algorithm in the obstetric notes. 
+If a woman has a PCR >300 (or proteinuria >3 g/ 24 hours) she should be 
+commenced on prophylactic LMWH throughout pregnancy and post partum 
+for 6 weeks unless contraindicated by the severity of renal failure. Lesser 
+degrees of proteinuria constitute a risk for VTE and may influence decision 
+to start LMWH prophylaxis. 
+ 
+4.3 Obstetric antenatal management of patients with CKD 
+ 
+4.3.1 All patients with CKD should be referred to the maternal medicine clinic 
+(RSCH) or MEDIOBS (PRH) clinic and should be seen before 12 weeks. 
+ 
+4.3.1 All patients should have a dating scan, combined screen and fetal anomaly 
+ scan as per normal. 
+ 
+4.3.2 Growth scans should be arranged for 28, 32 and 36 weeks. Arrange a 24 -
+week growth scan if the clinical picture is moderate to severe. 
+ 
+4.3.3 Woman / pregnant person with CKD should be reviewed in maternal 
+medicine clinic or MEDIOBS at least every 4 weeks 
+ 
+Investigations to perform before each appointment include: 
+4.3.4 U&Es to assess for any deterioration in renal function. This should be done 
+more frequently (every fortnight) if felt to be clinically necessary. 
+ 
+4.3.5 A FBC to assess for anaemia and thrombocytopenia. Woman with chronic 
+renal failure are more likely to become anaemic due to poor production of 
+erythropoietin and shortened red cell life span. If found to be anaemic 
+request bloods for ferratin, B12 and folate levels. Treat the anaemina with 
+ferrous sulphate if iron deficiency is the cause (most likely) 
+ Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 42 of 52 
+ 4.3.6 Liver function tests (more frequently in heavy proteinuria) to monitor 
+albumin levels. 
+ 
+4.3.7 PCR or 24 -hour urine collection should be performed every 4 weeks. 
+4.3.8 An MSU should be sent every 4 weeks (regardless of dipstick result) to 
+assess for asymptomatic bacteriuria. Management of asymptomatic 
+bacteriuria is the same as for patients without CKD (see section 3.3). 
+ 
+4.3.9 If haematuria is present on a dipstick then microscopy should be requested 
+to check for red cell casts. If red cell cast are present this suggests active 
+renal parenchymal pathology and urgent advice should be sought from a 
+renal physician. Normal red cell morphology should be discussed with the 
+Urology team as this suggests lower renal tract pathology. 
+ 
+4.3.10 Renal biopsy may be indicated in the presence of florid nephrotic syndrome 
+before 16 -20 weeks or suspected rapidly progressing glomerulonephritis. 
+This decision should be made in conjunction with a Consultant Renal 
+physician. 
+ 
+4.3.11 Admission to the antenatal ward should occur if there is uncontrolled 
+hypertension, deteriorating renal function or proteinuria, superimposed 
+pre-eclampsia or polyhydramnios. 
+ 
+4.3.12 Whilst admitted to the antenatal ward women with CKD should be 
+discussed with their renal physician as depending upon the clinical situation 
+dialysis may become necessary. 
+ 
+4.3.13 Delivery should be considered if there is deterioration of the renal function, 
+superimposed pre -eclampsia or evidence of IUGR with abnormal dopplers 
+(absent/reversed end -diastolic flow or evidence of redistribution). 
+ 
+4.3.14 Mode of delivery will be determined by normal obstetric considerations. 
+ 
+4.3.15 If there is no deterioration in the clinical picture IOL should be 
+recommended no later than 40 weeks gestation. 
+4.4 Post -partum management of Patients with Kidney disease 
+ 
+4.4.1 Patients with known or newly diagnosed kidney disease in pregnancy should 
+resume their established care with an early planned postpartum review in 
+the renal clinic. 
+ 
+4.4.2 Patients with known or newly diagnosed renal disease in pregnancy should 
+be offered contraceptive advice. 
+ 
+4.4.3 Breast -feeding should be encouraged in woman with chronic kidney disease. Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 43 of 52 
+ 5.0 Pregnancy in woman / pregnant person on dialysis 
+5.1 Incidence 
+ 
+5.1.1 Frequency of pregnancy in women /pregnant person on chronic dialysis 
+appears to be increasing, ranging 1 –7%. 
+ 
+5.1.2 Conception is more likely in women with residual renal function and those 
+just beginning dialysis. 
+ 
+5.1.3 The incidence of pregnancy is lower in women on peritoneal dialysis than on 
+haemodialysis. 
+ 
+5.2 Pregnancy outcome 
+ 
+5.2.1 Spontaneous miscarriage is common and occurs in 21% of pregnancies 
+ reaching the second trimester. 
+ 
+5.2.2 Preterm delivery is common. 
+ 
+5.2.3 The mean gestational age at delivery is 32 weeks. 
+ 
+5.2.4 Premature deaths contribute to the low infant survival rate of 30 –
+50%. Perinatal outcome is better for women who conceive prior to starting 
+dialysis than those who conceive after starting dialysis (73.6% versus 
+40.2%). 
+ 
+5.2.5 There is no significant difference in overall infant survival between women 
+who receive peritoneal dialysis and those who receive haemodialysis. 
+ 
+5.2.6 Maternal complications include hypertension (40 –80%), hypertensive crisis, 
+pre-eclampsia, anaemia and placental abruption. 
+ 
+5.2.7 Approximately half of these women / pregnant people will be delivered by 
+caesarean section 
+Recommendations for management 
+ 
+5.3.1 All women / pregnant people will need folate supplementation in the 
+dosage of 5mg/day. 
+ 
+5.2.8 Nephrologist and dietician should be consulted regarding managing patients 
+Nutrition. 
+ 
+5.2.9 Protein intake, calcium requirement and weight gain should be planned and 
+monitored in conjunction with dietician and nephrologist . Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 44 of 52 
+ 
+5.2.10 Fluid intake should be determined individually, taking into account urine 
+output and the type/frequency of renal replacement therapy the woman is 
+receiving. 
+ 
+5.2.11 They also need measurement of 25 -hydroxy vitamin D levels in each 
+trimester and supplementation if these are found to be low. 
+ 
+5.2.12 Most people on dialysis tend to have high phosphate levels but if the levels 
+are low, oral phosphate supplements can be used. 
+ 
+5.2.13 In addition, vitamin C, thiamine, riboflavin, niacin and vitamin B6 need to be 
+supplemented 
+ 
+5.2.14 Management of haemodialysis and peritoneal dialysis should be Planned 
+and managed in conjunction with the renal physician and according to local 
+renal unit protocol 
+ 
+5.2.15 The aim is to maintain a predialysis blood urea of <15 –20 mmol/l. 
+ 
+5.2.16 The maternal diastolic blood pressure should be maintained at between 80 –
+90 mmHg. 
+ 
+5.2.17 Peritoneal dialysis can be continued safely during pregnancy. As pregnancy 
+progresses, due to the size of the enlarging uterus it may become 
+impossible to continue with peritoneal dialysis and there should be a switch 
+to haemodialysis. Although the possibility of peritonitis exists, increased 
+incidence has not been reported during pregnancy. 
+ 
+5.2.18 If caesarean section is necessary those on peritoneal dialysis will need to be 
+changed temporarily to haemodialysis . 
+ 
+Management of anaemia 
+ 
+5.2.19 The erythropoietin dose may need to be increased by 50 –100% to maintain 
+the haemoglobin between 10 –11 g/dL 
+ 
+5.2.20 In addition, intravenous iron supplementation may be required to maintain 
+iron saturation of at least 30%. 
+ 
+6.0 Pregnancy in renal transplant recipients 
+ 
+6.0.1 Incidence 
+ Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 45 of 52 
+ Pregnancy is estimated to occur in 12% of transplanted women of 
+childbearing age and the number of kidney transplant recipients who 
+conceive seems to be increasing. 
+6.1 Pregnancy outcome 
+ 
+6.1.1 The miscarriage rate is similar to the general population 
+ 
+6.1.2 Ninety -five percent of gestations end successfully. 
+ 
+6.1.3 The incidence of congenital anomalies is similar to the general 
+population. 
+ 
+6.1.4 The ectopic pregnancy rate is higher and this is related to adhesions 
+from previous surgery and peritoneal dialysis. 
+ 
+6.1.5 Hypertension pre -dates pregnancy in about 70% of kidney transplant 
+recipients. 
+ 
+6.1.6 Superimposed pre -eclampsia and urinary tract infection occur in up to 
+40% of these women. 
+ 
+6.1.7 Acute bacterial pyelonephritis is relatively common. 
+ 
+6.1.8 There is also a higher risk of developing gestational diabetes. 
+ 
+6.1.9 The incidence of preterm delivery, preterm premature rupture of 
+membranes and fetal growth restriction is as high as 60%. 
+ 
+6.1.10 Opportunistic infections are more common in immunosuppressed, 
+pregnant kidney transplant patients. Of these, rubella, 
+cytomegalovirus, toxoplasmosis, herpes simplex and hepatitis B and C 
+can affect the fetus. 
+6.2 Timing of pregnancy 
+ 
+6.2.1 The following guidelines have been recommended for women who have had 
+renal transplants who are contemplating pregnancy. 
+ 
+6.2.2 There should have been no rejection in the previous year. 
+ 
+6.2.3 Graft function should be adequate and stable 
+ 
+6.2.4 There should be no or minimal proteinuria (<500 mg/24 hours) 
+ 
+6.2.5 The woman / pregnant people should be on maintenance 
+immunosuppression and stable dosage (for example, prednisolone ≤15 
+mg/day, azathioprine ≤2 mg/kg/day, ciclosporin ≤5 mg/kg/day). Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 46 of 52 
+ 
+6.2.6 There should be no acute infections that can affect the fetus (for example, 
+cytomegalovirus). 
+ 
+6.2.7 Co-morbid conditions (for example, hypertension, diabetes) should be 
+optimally assessed and managed. 
+6.3 Pre-Pregnancy counselling 
+ 
+6.3.1 This must include a discussion on the impact of pregnancy on acute rejection 
+and graft loss. 
+ 
+6.3.2 The risk of acute rejection correlat es with the pre -pregnancy serum 
+creatinine levels as well as the interval between transplant and pregnancy. 
+ 
+6.3.3 Long -term survival of the graft appears similar in those undertaking 
+pregnancy to those who do not become pregnant. Acute rejection in 
+pregnancy occurs in 9 –14% of women but the incidence of serious episodes 
+of rejection is 5%, which is similar to the rates observed in non -pregnant 
+transplant patients. 
+ 
+6.3.4 Little is known about the impact of pregnancy on chronic rejection. 
+
+6.4 Management of immunosuppressive regimens 
+ 
+6.4.1 Immunosuppressive agents should be continued at pre -pregnancy 
+dosages. 
+ 
+6.4.1 Prednisolone, azathioprine, ciclosporin and tacrolimus are all safe to use in 
+pregnancy. 
+ 
+6.4.2 Mycophenolate mofetil (‘MMF’) is best avoided in pregnancy due to risk of 
+it causing facial malformation: rituximab, sirolimus or everolimus should 
+also be avoided. 
+ 
+6.4.3 Breastfeeding while on immunosuppressive drugs is controversial because 
+of concerns for the effects on the baby. However, these recommendations 
+are not absolute. New evidence is emerging regarding low levels of drug 
+excretion into breast milk (for example, on azathioprine). 
+ 
+6.5 Antenatal management 
+ 
+6.5.1 Multidisciplinary care needed with involvement of senior obstetrician, renal 
+physician and specialist midwife. This can be done in the Joint Obstetric 
+Medicine clinic at RSCH under Dr Carol Postlethwaite. Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 47 of 52 
+ 
+6.5.2 Women / pregnant people should be tested for cytomegalovirus, HIV, herpes 
+simplex virus and hepatitis B and C. 
+ 
+6.5.3 Those found to be cytomegalovirus negative should have their titres 
+rechecked in each trimester. 
+ 
+6.5.4 Oral glucose tolerance tests or, in cases where there is strong suspicion, 
+blood sugar monitoring, should be arranged to diagnose gestational 
+diabetes. 
+ 
+6.6 Management of hypertension 
+ 
+6.6.1 Methyldopa, Labetalol and N ifedipine are safe to use in these women. 
+ 
+6.6.1 Blood pressure should be maintained at a level of <1 35/85 ideally. 
+ 
+6.6.2 Magnesium sulphate prophylaxis can also be used safely in severe pre -
+eclampsia. The loading dose of magnesium remains the same. 
+ 
+6.6.3 The infusion of magnesium must be decreased according to the level of 
+elevated creatinine over the normal pregnancy level and should be 
+discussed with renal physician. 
+ 
+6.6.4 Uric acid is a less helpful marker since it can be raised in transplant patients 
+without pre -eclampsia. 
+ 
+6.7 Labour management 
+ 
+6.7.1 In the absence of any obstetric complicatio ns, delivery is timed for 38 –40 
+weeks of gestation. 
+ 
+6.7.2 Vagina l birth is the preferred route of delivery. 
+ 
+6.7.3 Prostaglandins and Oxytocin are both safe to use for cervical ripening or 
+induction. 
+ 
+6.7.4 The allograft, located in the false pelvis, does not obstruct delivery of the 
+fetus. 
+ 
+6.7.5 Caesarean section may be necessary for obstetric indications or if there are 
+concerns related to severe pelvic osteodystrophy. 
+ 
+6.7.6 Early liaison with and involvement of the urology surgical team or renal 
+transplant surgeons is advisable when elective caesarean section is planned. 
+ Medical Disorders (RSCH PRH only ) 
+ MP028 
+ 
+University Hospital Sussex NHS Trust East Page 48 of 52 
+ 6.7.7 Labour should be covered with hydrocortisone (100mg 6 -8hourly) in women 
+who are on immunosuppressive dosages of steroids. 
+ 
+6.8 Neonatal problems 
+ 
+6.8.1 Paediatrician should be informed. 
+ 
+6.8.2 Neonates can have thymic atrophy, transient leucopenia or 
+ thrombocytopenia, adrenocortical insufficiency, septicaemia and 
+ cyto megalovirus/hepatitis infectionUniversity Hospitals Sussex NHS Trust East Page 49 of 52 
+ Appendix 1 - Conditions to be referred directly to Maternal Medicine/MEDIOBS 
+and pregnancy effect 
+ 
+Renal Disease Effect 
+Chronic Glomerulonephritis 
+& Focal Glomeruonephritis Usually no adverse effect in the absence of hypertension. 
+Urinary Tract infection is more common 
+IgA nephropathy Risk of uncontrolled/sudden escalating hypertension and worsening 
+renal function. 
+Pylonephritis Bacteriuria in pregnancy can lead to exacerbation 
+Multi organ failure, inc luding acute respiratory distress syndrome 
+may ensue 
+Reflux nephropathy Thought to be risk of sudden escalating hypertension; however, 
+consensus now is that results are satisfactory when preconception 
+function is only mildly affected & hypertension is absent. 
+Vigilant screening for urinary tract infection is necessary. 
+Urolithiasis Infection may be more frequent 
+Stents can be successfully placed and ureterostomy performed 
+during pregnancy. 
+There is limited data on lithotripsy in pregnancy. 
+Polycystic Kidney Disease Functional impairment and hypertension are minimal during 
+childbearing years 
+Diabetic nephropathy Usually there is no adverse effect on the renal lesion but there is 
+increases risk of infection and pre -eclampsia. 
+Systemic lupus 
+erythematosus The prognosis is most favourable if disease is in remission for > 6 
+months preconception 
+Higher doses of steroids may be needed postpartum 
+Flare of lupus nephritis in pregnancy should be discussed with 
+consultant obstetrician as severe lupus nephritis can be potentially 
+life threatening, needing immediate treatment and termination may 
+be needed. 
+Polyarteritis nodosa Fetal prognosis is poor and maternal death often occurs. 
+Therapeutic termination should be considered 
+Scleroderma If the onset occurs during pregnancy there can be rapid overall 
+deterioration. 
+Reactivation of quiescent disease can occur postpartum 
+Previous urinary tract surgery May be associated with other malformations of the urogenital tract. 
+Urinary tract infection is common 
+Renal function may undergo reversible decrease 
+Caesarean section may be n ecessary to maintain continence 
+mechanism if an artificial sphincter is in situ 
+There are no other significant obstructive problems 
+After nephrectomy, 
+solitary/ pelvic kidney May be associated with other malformation. 
+Pregnancy well tolerated 
+Dystocia rarely occurs with pelvic kidney 
+
+ Medical Disorders MP028 
+University Hospital Sussex NHS Trust Page 50 of 52 
+ Appendix 2 – Renal patient proforma 
+
+Gestation 
+(Weeks) Haemaglobin Creatinine Urea Albumin PCR MSU sent? 
+YES/NO BP 
+(mmHg) 
+12 
+14 
+16 
+18 
+20 
+22 
+24 
+26 
+28 
+30 
+32 
+34 
+36 
+Shaded boxes only required if severe renal disease or deteriorating disease. Attach patient label here EDD by LMP: ______/_____/_________ 
+ 
+EDD by USS : _____/______/_________ 
+Underlying renal condition 
+ 
+______________________________________
+_________ 
+Recommended 5mg Folic acid? YES / NO (if NO why? ______________________) 
+ 
+Recommended 150 mg Aspirin OD? YES / NO (if NO Why? _____________________) 
+ 
+ACE Inhibitors Stopped? YES / NO (if NO Why? _______________________________) 
+Baseline renal scan requested? ☐ 
+Growth scans arranged for 28 / 32 / 36 weeks? ☐ Baseline Bloods (Send FBC, U&Es & LFTs at booking) 
+ 
+Hb: ________ g/dL Plt: ________ Albumin 
+_______ 
+ 
+Cr: ________ mmol/L Urea: ________ eGFR: 
+________ 
+ 
+ Baseline urine PCR: ________ 
+ 
+MSU Sent at booking? 
+ 
+YES / NO 
+ Booking BP _________/ __________ mmHg Medical Disorders MP028 
+University Hospital Sussex NHS Trust Page 51 of 52 
+
+Reference List: 
+ 
+1. Modified Thorne S, MacGregor A, Nelson -Piercy C. Risks of contraception and 
+pregnancy in heart disease. Heart 2006; 92:1520 -1525. 
+ 
+2. Saving lives, improving mother’s care. MBRRACE 2020 
+ 
+3. Cardiovascular physiology of pregnancy. Sanghavi M, Rutherford JD. 
+Circulation 2014; 130: 1003 -1008 
+ 
+4. RCOG Green -top Guideline No. 68. Epilepsy in pregnancy 
+ 
+5. Management of pregnant women with epilepsy: a multidisciplinary 
+collaborative approach to care. The Obstetrician & Gynaecologist / volume 
+19, Issue 4 August 2017 
+ 
+6. Girling J. Thyroid disease in pregnancy. The Obstetrician & Gynaecologist 
+2008;10:237 –243 
+ 
+7. Management of thyroid dysfunction during pregnancy and post -partum: an 
+Endocrine Society Clinical Practice Guideline. J Clin Endocrinol Metab, 97: 
+2543–2565, 2012. 
+ 
+8. Inflammatory bowel disease in pregnancy. Dipawita Kapoor. The Obstetrician 
+& Gynaecologist / Volume 18, Issue 3 
+
+9. NICE Fertility , pregnancy, and breastfeeding with Crohn’s disease. August 
+2020 
+ 
+10. Handbook of Obstetric Medicine. Catherine Nelson -Piercy 
+
+ Medical Disorders MP028 
+University Hospital Sussex NHS Trust Page 52 of 52 
+ 
+Appendix 3 - Anti -hypertensive medications in CKD and Pregnancy 
+ 
+Commonly used rarely used Contraindicated 
+Nifedipine Beta -blockers ACE inhibitors 
+Labetalol Alpha -blockers Angiotensin receptor blockers 
+Methyldopa Amlodipine Aliskiren 
+Hydralazine Verapamil Spironolactone 
+ Moxonidine 
+ Minoxidil (3rd trimester) 
+ Thiazide diuretics 
+ Diltiazem

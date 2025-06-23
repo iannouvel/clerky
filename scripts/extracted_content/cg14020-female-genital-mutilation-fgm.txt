@@ -1,0 +1,1041 @@
+# Extracted from: CG14020 Female Genital Mutilation (FGM).pdf
+# Guideline ID: cg14020-female-genital-mutilation-fgm
+# Content length: 51704 characters
+# Processing date: 1750066900.3618248
+
+CG14020 Female Genital Mutilation (FGM) guideline v3.0 June 2022 Page 1 of 26 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Female Genital Mutilation (FGM) Guideline 
+Summary statement: How does the 
+document support patient care? By providing evidence based guidance with regard to the 
+management of FGM. 
+Staff/stakeholders involved in 
+development: Named Midwife Safeguarding 
+Named Nurse Safeguarding 
+Obstetric Anaesthetists, Obstetric Consultants and Senior 
+Midwifery Staff 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Named Midwife for Safeguarding 
+Maternity Chapter – Obstetric Consultant 
+For use by: Staff involved in the recognition and management or FGM. 
+Mandatory reporting and mandatory recording of FGM. 
+Purpose: To provide evidence -based guidance in the recognition, 
+recording, reporting and management of FGM. 
+This document supports: Department of Health (2015), WHO guidelines on the 
+management of health complications from Female Genital 
+Mutilation. (2016) 
+Key related documents: Protocol for Safeguarding Children 
+Protocol for Safeguarding Adults 
+Maternity Guidelines 
+Approved by: Joint Obstetric Guideline Group (JOGG) 
+Approval date: 15th June 2022 Date uploaded: 29th June 2022 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors N/A 
+Ratification Date: N/A 
+Expiry Date: June 2025 
+Review date: December 2024 
+If you require this document in another format such as Braille, large print, audio or 
+another language please contact the Trusts Communications Team 
+Reference Number: CG14020 CG14020 Female Genital Mutilation (FGM) guideline v3.0 June 2022 Page 2 of 26 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Version Date Author Status Comment 
+1.0 April 2016 Gail Addison Archived New Trust -wide Guideline 
+2.0 May 2019 Gail Addison Archived Addition of appendices 3 & 
+7. Review to ensure 
+mandatory reporting 
+procedure. 
+3.0 June 2022 A.Stienen -Durand 
+Obstetric Registrar LIVE 3 year review 
+No significant amendments 
+made. 
+Guideline now Maternity 
+specific. Trust safeguarding 
+policy has an FGM section 
+and now references to this 
+guideline. CG14020 Female Genital Mutilation (FGM) guideline v3.0 June 2022 Page 3 of 26 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Contents 
+1.0 Introduction and scope ................................ ................................ ................................ 4 
+2.0 Aim ................................ ................................ ................................ .............................. 4 
+3.0 Abbreviations used in this document ................................ ................................ ........... 4 
+4.0 Definition ................................ ................................ ................................ ..................... 4 
+5.0 Types of FGM ................................ ................................ ................................ ............. 4 
+6.0 The legal and regulatory responsibilities of UK health professionals ............................ 5 
+6.1 Serious Crime Act 2015 ................................ ................................ ............................... 5 
+7.0 Prevalence ................................ ................................ ................................ .................. 5 
+8.0 Safeguarding ................................ ................................ ................................ ............... 6 
+9.0 Mandatory reporting ................................ ................................ ................................ .... 6 
+9.1 How to report FGM ................................ ................................ ................................ ...... 6 
+10.0 Guidance ................................ ................................ ................................ ..................... 7 
+11.0 Mandatory recording ................................ ................................ ................................ .... 8 
+11.1 Female Genital Mutilation Datasets ................................ ................................ ............. 8 
+11.3 Patient objections ................................ ................................ ................................ ........ 8 
+12.0 FGM Information Sharing (FGM -IS) ................................ ................................ ............. 9 
+13.0 Maternity specific guidance ................................ ................................ ......................... 9 
+13.1 Identification of FGM ................................ ................................ ................................ ... 9 
+13.1.1 At booking ................................ ................................ ................................ ................... 9 
+13.1.2 Antenatal care ................................ ................................ ................................ ........... 10 
+13.1.3 De-infibulation ................................ ................................ ................................ ........... 10 
+13.1.4 Potential Complications of FGM ................................ ................................ ................ 11 
+13.1.5 Intrapartum Care ................................ ................................ ................................ ....... 11 
+13.1.6 Postnatal Care ................................ ................................ ................................ .......... 12 
+14.0 Support & advice ................................ ................................ ................................ ....... 12 
+Audit ................................ ................................ ................................ ................................ ..... 14 
+References ................................ ................................ ................................ ........................... 15 
+Appendix 1: Plan of care for Women with FGM in Pregnancy ................................ ............... 16 
+Appendix 2: FGM Proforma ................................ ................................ ................................ .. 17 
+Appendix 3: FGM safeguarding flowchart ................................ ................................ .............. 19 
+Appendix 4: FGM risk flowchart for unborn female child or other female child in 
+the family ................................ ................................ ................................ ................... 20 
+Appendix 5: Child / young adult (under 18 yrs) at risk of FGM ................................ ............... 22 
+Appendix 6: FGM flowchart for non-pregnant women over 18 yrs ................................ ......... 24 
+Appendix 7: Prevalence of FGM ................................ ................................ ........................... 26 CG14020 Female Genital Mutilation (FGM) guideline v3.0 June 2022 Page 4 of 26 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Female Genital Mutilation (FGM) Guideline 
+ 
+1.0 Introduction and scope 
+ 
+University Hospitals Sussex (SRH & WH) is committed to the well -being and safety of 
+women and children who present to this organisation. This guideline outlines the legislation, 
+principles and guidance that inform the practise of all health care professionals in all areas 
+that deliver services to women and their children in relation to the practice of Female Genital 
+Mutilation (FGM). 
+ 
+2.0 Aim 
+ 
+This guideline aims to provide support and advice to all staff who have a responsibility to 
+safeguard children and protect and support adults from the abuses associated with FGM. 
+ 
+3.0 Abbreviations used in this document 
+ 
+FGM - Female Genital Mutilation HSCIC - Health & Social Care Information 
+Centre 
+WHO - World Health Organisation FGM -IS - FGM Information Sharing 
+ 
+4.0 Definition 
+ 
+FGM comprises all procedures involving partial or total removal of the external female 
+genitalia or other injury to the female genital organs for non -medical reasons. 
+It has no health benefits and harms girls and women in many ways. 
+ 
+FGM is most often carried out on girls between infancy and fifteen years of age. It is also 
+referred to as cutting, female circumcision, cutting and infibulation. It has no health benefits 
+and is a severe form of violence against women and girls. 
+ 
+5.0 Types of FGM 
+ 
+The four FGM types defined by the World Health Organisation (2016) are: 
+ 
+• Type 1 – Partial or total removal of the clitoris (clitoridectomy) and/or the prepuce. 
+• Type 2 – Partial or total removal of the clitoris and the labia minora, with or without 
+excision of the labia majora (excision). 
+• Type 3 – Narrowing of the vaginal orifice with creation of a covering seal by cutting 
+and appositioning the labia minora and/or the labia majora, with or without excision 
+of the clitoris (infibulation). CG14020 Female Genital Mutilation (FGM) guideline v3.0 June 2022 Page 5 of 26 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+• Type 4 – All other harmful procedures to the female genitalia for non-medical 
+purposes, for example: pricking, pulling, piercing, incising, scraping and 
+cauterization. 
+ 
+6.0 The legal and regulatory responsibilities of UK health professionals 
+ 
+All health professionals should be aware of the Female Genital Mutilation Act 2003 which 
+makes it illegal (regardless of their nationality or residence status) to: 
+ 
+• Perform FGM in England and Wales (Section 1 of the 2003 Act). 
+• Assist a girl to carry out FGM on herself in England and Wales (Section 2 of the 
+2003 Act). 
+• Assist (from England or Wales), a non-UK person to carry out FGM outside the UK 
+on a UK national or UK resident (Section 3 of the 2003 Act). 
+• If the mutilation takes place in England or Wales, the nationality or residence 
+status of the victim is irrelevant. 
+• If an offence under sections 1,2 or 3 of the 2003 Act is committed against a girl 
+under the age of 16, each person who is responsible for the girl at the time the 
+FGM occurred could be guilty of an offence under Section 3A of the 2003 Act. 
+• The 2003 Act places a mandatory duty on health and social care professionals and 
+teachers to notify the police where they discover that FGM has been carried out on 
+a girl under 18 years of age during the course of their work. 
+6.1 Serious Crime Act 2015 
+ 
+• Introduced a new offence of failing to protect a girl from FGM. 
+• Provided lifelong anonymity for victims. 
+• Introduced an FGM protection order which might include surrendering a person’s 
+passport. 
+• Introduced mandatory reporting to the police for cases where FGM is identified in a 
+person under 18 years of age. 
+ 
+7.0 Prevalence 
+ 
+FGM is practised in at least 30 African countries (appendix 7). The single most important risk 
+factor determining whether a person undergoes a ritual procedure is her country of origin. 
+The majority of women who come from Somalia, Sudan, Ethiopia and Sierra Leone will have 
+some form of FGM. The global incidence of FGM is over 200 million and every year some 3 
+million girls and women are at risk of FGM (WHO). 
+ 
+Prevalence in the UK is difficult to estimate because of the hidden nature of the crime. 
+However, it is estimated that over 20 000 girls under the age of 15 are at risk from FGM in 
+the UK each year and that 66 000 women in the UK are living with the consequences of FGM 
+(NSPCC, 2016). 
+There is likely to be an uneven distribution of cases of FGM around the country, with more 
+occurring in those areas of the UK with larger communities from the practising countries. CG14020 Female Genital Mutilation (FGM) guideline v3.0 June 2022 Page 6 of 26 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Since October 2014, the Health and Social Care Information Centre have regularly published 
+official statistics relating to the number of patients treated in the NHS. All reports are 
+published at www.hscic.gov.uk/fgm and since January 2015, these have included some 
+statistics relating to patient numbers at local acute trust level. 
+ 
+8.0 Safeguarding 
+ 
+FGM is not an issue that can be decided on by personal preference – it is an illegal, 
+extremely harmful practice and a form of child abuse and violence against women and girls. 
+ 
+Safeguarding girls at risk of harm of FGM poses specific challenges because the families 
+involved may give no other cause for concern with regard to their parenting responsibilities or 
+relationships with their children. However there still remains a duty for all professionals to act 
+to safeguard people at risk. 
+ 
+There are four key issues to consider: 
+ 
+1. An illegal act being performed on a female, regardless of age. 
+2. The need to safeguard girls and young women at risk of FGM. 
+3. The risk to girls and young women where a relative has undergone FGM. 
+4. Situations where a girl may be removed from the country to undergo FGM. 
+ 
+Anyone who has concerns about a child’s welfare should make a referral to the local 
+authority children’s social care. If professionals believe that an individual has undergone 
+FGM, they must consider the risks to other girls and women who may be related to or living 
+with her and / or her family. 
+ 
+9.0 Mandatory reporting 
+ 
+From October 31st 2015 a mandatory duty to report cases of FGM was introduced through 
+the Serious Crime Act 2015. 
+ 
+All regulated health or social care professionals must report cases of FGM to the police if: 
+ 
+• A girl under 18 tells them they have had FGM. 
+• They see physical signs that a girl has had FGM. 
+ 
+This applies to registered professionals in NHS and private healthcare settings, during the 
+course of their work. 
+ 
+9.1 How to report FGM 
+ 
+If you are concerned that a child may have had FGM or be at risk of it, and they tell you that 
+they have FGM or you observe physical signs that appear to show FGM, the mandatory 
+reporting duty applies and you must call 101 (the police non-emergency number) to make a 
+report. CG14020 Female Genital Mutilation (FGM) guideline v3.0 June 2022 Page 7 of 26 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+You must: 
+ 
+• Report the case as soon as possible (at latest before the end of the next working 
+day). 
+• Record all decisions and actions. 
+• Be prepared for a police officer to call you back. 
+• Inform your local safeguarding lead of the case. 
+ 
+For Further information and guidance refer to: 
+https://www.gov.uk/government/publications/fgm -mandatory -reporting -in-healthcare 
+ 
+10.0 Guidance 
+ 
+Appendix 4 and appendix 6 are pathways that offer professionals guidance to identify and 
+consider risks relating to female genital mutilation, and to support the discussion with the 
+patient and family members. 
+They should be used it to help assess whether the patient you are treating is either at risk of 
+harm in relation to FGM or has had FGM, and whether your patient has children who are 
+potentially at risk of FGM, or if there are other children in the family/close friends who might 
+be at risk. 
+ 
+If, when asking questions based on this guide, any answer gives you cause for concern, you 
+should continue the discussion in this area, and consider asking other related questions to 
+further explore this concern. Please remember either the assessment or the information 
+obtained must be recorded within the patient’s healthcare record. The templates also require 
+that you record when and by whom it and at what point in the patient’s pathway this has been 
+completed. 
+ 
+Having used the guide, you will need to decide: 
+• Do you need to make a referral through the local safeguarding processes, and is 
+that an urgent or standard referral? 
+• Do you need to seek help from my local safeguarding lead or other professional 
+support before making your decision? You may wish to consult with a colleague at 
+a Multi -Agency Safeguarding Hub, Children’s Social Services or the local Police 
+Force for additional support. 
+• If you do not believe the risk has altered since your last contact with the family, or if 
+the risk is not at the point where you need to refer to an external body, then you 
+must ensure you record and share information about your decision accordingly. 
+For further copies of risk assessment tools visit: 
+http://www.westsussexscb.org.uk/professionals/female -genital -mutilation/ 
+ 
+Or they can be found on the Trust intranet at: 
+http://nww.westernsussexhospitals.nhs.uk/safety/child -protection -and- 
+safeguarding/prevent/ CG14020 Female Genital Mutilation (FGM) guideline v3.0 June 2022 Page 8 of 26 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Patient and staff information leaflets can also be found on the Trust intranet. 
+ 
+11.0 Mandatory recording 
+ 
+There is a mandatory requirement for trusts to submit patient specific details whenever FGM 
+is identified or when patients have been treated in relation to FGM. Although the data set 
+contains person identifiable information these data are only used for data quality purposes. 
+Personal details collected via this data collection are not disclosed or used for any other 
+purpose. 
+ 
+Data is currently collected from Sexual Health, Gynaecology and Paediatric services, on the 
+basis these areas are most likely to encounter FGM but officially, all specialties should be 
+covered by the data collection. 
+ 
+11.1 Female Genital Mutilation Datasets 
+ 
+The Female Genital Mutilation Enhanced Dataset began collecting data on 1 April 2015. 
+ 
+The Health & Social Care Information Centre (HSCIC) is collecting data on FGM within 
+England on behalf of the Department of Health and NHS England. This is to support the 
+Department of Health’s and NHS England FGM Prevention Programme. The data is 
+collected to improve the NHS response to FGM and to help commission the services to 
+support women who have experienced FGM as well as safeguarding women and girls at risk 
+of FGM. 
+ 
+11.2 What does it measure? 
+ 
+The FGM Enhanced Information Standard (SCCI 2026) instructs all clinicians to record into 
+clinical notes when a patient with FGM is identified, and what the type of FGM is. 
+ 
+Data should be submitted every time the woman or girl has treatment related to her FGM or 
+gives birth to a baby girl, and every time FGM is identified (by a clinician or self-reported), not 
+just the first time. 
+ 
+The dataset includes: patient demographic data, specific FGM information, referral and 
+treatment information. 
+ 
+The FGM Datasets use the World Health Organisation's (WHO) definitions for the four types 
+of FGM. 
+ 
+11.3 Patient objections 
+ 
+If a patient raises an objection within the care delivery setting (i.e. within the GP surgery or 
+the hospital), the local organisation must consider this objection within their own processes, 
+and ensure they record within the healthcare record the outcome of this decision (i.e. 
+whether or not to disclose information to HSCIC). CG14020 Female Genital Mutilation (FGM) guideline v3.0 June 2022 Page 9 of 26 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+If the objection is not raised at this point, and the patient's information is submitted, they can 
+still choose to contact HSCIC at a later date to raise an objection at the following email 
+address: enquiries@hscic.gov.uk . The objection will be automatically enforced and the 
+patient's data will be removed from the dataset. If the objection is raised with the HSCIC, 
+they do not automatically have to accept this request and remove the information. However, 
+due to commitments made by the Secretary of State for Health, patient objections for FGM 
+data collection must always be treated as an automatic 'stop processing' request. This is a 
+Government policy decision that goes beyond the law's requirements. 
+ 
+The FGM mandatory recording dataset tool can be found: 
+http://nww.westernsussexhospitals.nhs.uk/safety/child -protection -and- 
+safeguarding/fgm/?from_search=FGM 
+ 
+Locally all cases of FGM are reported to Information.Team@wsht.nhs.uk 
+ 
+12.0 FGM Information Sharing (FGM -IS) 
+ 
+FGM -IS is a national IT system for health that allows clinicians across England to note on a 
+girl's record within the NHS Summary Care Record application that they are potentially at risk 
+of FGM. The FGM -IS allows the potential risk of FGM to be shared confidentially with health 
+professionals across all care settings until a girl is 18 years old. Authorised health 
+professionals with the relevant security permissions on their NHS Smartcard are able to 
+access FGM Information Sharing. 
+The main groups of health professionals who use the system to add or view information are 
+those most likely to observe and identify the warning signs associated with the potential risk 
+of FGM. This system can be viewed by clinicians working in the organisation including 
+clinical staff working in sexual health, maternity, gynaecology and A&E. For further details of 
+this system and responsibilities details can be found at FGM enhanced dataset: NHS staff 
+responsibilities - GOV.UK (www.gov.uk) . 
+ 
+13.0 Maternity specific guidance 
+13.1 Identification of FGM 
+ 
+13.1.1 At booking 
+ 
+All women, irrespective of their country of origin, should be sensitively asked for a history of 
+FGM at their booking antenatal visit so that FGM can be identified early in the pregnancy. It 
+must be appreciated that these women do not choose to undergo FGM and come from areas 
+where this is considered the “norm”. Therefore, they need to be treated in a non - 
+judgemental manner. 
+ 
+If required, an interpreter who is not a family member is recommended, giving careful 
+consideration to the sensitive nature of FGM as well as professional issues (i.e. 
+confidentiality). CG14020 Female Genital Mutilation (FGM) guideline v3.0 June 2022 Page 10 of 26 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Some suggested lead questions may be: “Have you been closed?” or “Did you have the cut 
+or the operation as a child?” Further questions could be: “Do you have any problems passing 
+urine or with menstruation?” or “How long does it take to pass urine?” 
+ 
+Identification of FGM must be fully recorded within the maternity information system. 
+ 
+13.1.2 Antenatal care 
+ 
+Once FGM has been identified it is important that the woman receives support, information, 
+advice and counselling. The midwife should offer referral to a consultant with adequate 
+experience in the field of FGM. Some women will prefer to see a female doctor. Where 
+possible this request should be accommodated. There is a designated lead on both sites for 
+FGM and antenatal clinic will ensure appropriate referral. 
+ 
+Referral must be done as early as possible (to enable antenatal intervention if necessary). If 
+a woman declines a referral this should be documented. It is imperative that these women 
+are treated in a kind and sympathetic manner. 
+ 
+At this initial appointment an assessment should be carried out by the named consultant 
+using the proforma (Appendix 2) to record the type of FGM and the plan for de-infibulation. 
+ 
+13.1.3 De-infibulation 
+ 
+Women with type 3 FGM will require antenatal de -infibulation for a vaginal birth. This should 
+be offered antenatally and should ideally be performed at around 20 weeks of gestation. This 
+both reduces the risk of miscarriage and allows time for healing before birth. If this is 
+declined they should be seen again at 30 weeks for further discussion regarding plans 
+surrounding birth. The decision on this and procedure must be carried out by a senior 
+obstetrician with adequate experience in this field. 
+ 
+The procedure may be performed under a local or regional anaesthesia depending on 
+maternal choice following an informed discussion. Adequate analgesia is essential to limit the 
+risk of further psychological harm. 
+ 
+Before de-infibulation, the following should be carried out: 
+ 
+• MSU for bacteriuria. 
+• Group and save (due to potential risk of haemorrhage). 
+ 
+Technique for de-infibulation: 
+ 
+• Identify urethra and insert urinary catheter if possible. 
+• Infiltrate infibulation scar with local anaesthetic whilst placing surgical forceps 
+behind the scar to prevent injury to underlying tissues . 
+• Incise along midline infibulation scar either with scissors or a knife and extend 
+anteriorly until the external urethral meatus is visible. CG14020 Female Genital Mutilation (FGM) guideline v3.0 June 2022 Page 11 of 26 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+• Cutting diathermy can be used to reduce bleeding. 
+• Use fine absorbable suture material. 
+• Consider prophylactic antibiotics 
+ 
+Intrapartum de-infibulation can be carried out in the first stage if there is inadequate access 
+for vaginal examinations but this will increase the risk of bleeding. An epidural must be 
+offered. It is preferable to perform intrapartum de -infibulation as the head is crowning to 
+reduce the chance of bleeding. In this situation the on -call Consultant should attend and 
+should supervise or perform the repair. Ideally consent for this should be taken antenatally. 
+ 
+It is important to remember that de-infibulation does not restore physical or emotional 
+normality. 
+ 
+Note: it is possible that obstetricians / midwives may be asked to re -infibulate a woman 
+following a vaginal birth. Any postnatal repair, whether following spontaneous tearing or 
+deliberate de -infibulation, should ensure bleeding is controlled, but must not reproduce the 
+original infibulation or result in a vaginal opening that makes intercourse difficult or 
+impossible. Infibulation under any circumstances is a criminal offence in the UK. The WHO 
+recommends suturing of raw edges to prevent spontaneous re-infibulation, but this should be 
+done with a continuous locked stitch to allow the raw edges to heal independently. 
+ 
+13.1.4 Potential Complications of FGM 
+ 
+The following are potential difficulties or complications that may occur during the antenatal or 
+intrapartum period and should be discussed antenatally with the woman and her partner: 
+ 
+• An increased risk of urinary tract infection 
+• Difficulty performing internal examinations 
+• Difficulty in catheterising the bladder 
+• Difficulty in applying a fetal scalp electrode 
+• Delay in second stage 
+• Risk of spontaneous perineal laceration 
+• The need for an anterior midline episiotomy 
+• Experience of “flashbacks” to time of FGM during vaginal examination 
+ 
+13.1.5 Intrapartum Care 
+Mode of birth 
+Caesarean birth is not absolutely indicated unless de-infibulation is not possible, this decision 
+must be made with the woman by the named lead Consultant for women with FGM. 
+ 
+Women with profound psychological effects (particularly if FGM was carried out in 
+adolescence) may request an elective caesarean, however most women with FGM would 
+prefer a vaginal birth and are successful. CG14020 Female Genital Mutilation (FGM) guideline v3.0 June 2022 Page 12 of 26 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Recommendations for vaginal births 
+ 
+• Birth on the labour ward. 
+• IV access and group and save. 
+• Epidural analgesia is recommended if anterior episiotomy will be required in labour 
+• The Birth Centre can be considered if successful de-infibulation and the woman 
+has had a previous vaginal birth without complications. 
+ 
+13.1.6 Postnatal Care 
+ 
+The aim of postnatal care should be to provide support for the women and her baby for any 
+physical and psychological complications that may arise. The midwife should provide this in 
+the postnatal period with appropriate referral after this time. If de -infibulation has occurred 
+the woman will experience changes in micturition, menstruation and coitus. 
+ 
+It is also important to consider whether child protection is an issue when a female child is 
+born (see Appendix 5 ). 
+ 
+14.0 Support & advice 
+ 
+Female Genital Mutilation Risk and Safeguarding Guidance for professionals' (2015) 
+https:// www.gov.uk/government/uploads/system/uploads/attachment_data/file/418564/29038 
+00_DH_FGM_Accessible_v0.1.pdf 
+ 
+https://www.gov.uk/government/publications/fgm -mandatory -reporting -in-healthcare 
+ 
+Home Office: Mandatory Reporting procedural information 
+https://www.gov.uk/government/publications/mandatory -reporting -of-female -genital - 
+mutilation -procedural -information 
+ 
+Safeguarding women and girls at risk of FGM 
+https://www.gov.uk/government/publications/safeguarding -women -and-girls-at-risk-of-fgm 
+ 
+Female Genital Mutilation: Multi - Agency Practice Guidelines 
+https://www.gov.uk/government/publications/female -genital -mutilation -guidelines 
+ 
+Health Education England FGM e -Learning programme 
+www.e -lfh.org.uk/programmes/female -genital -mutilation/ 
+ 
+NSPCC FGM Helpline 0800 028 3550 
+fgmhelp@nspcc.org.uk 
+ 
+NHS Choices FGM webpage for professionals 
+www.nhs.uk/fgmguidelines 
+ 
+Pan Sussex Child Protection and Safeguarding Procedures 
+http://sussexchildprotection.procedures.org.uk CG14020 Female Genital Mutilation (FGM) guideline v3.0 June 2022 Page 13 of 26 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+WSSCB – www.westsussexscb.org.uk 
+ 
+Working Together to Safeguard Children (2015) 
+http://www.workingtogetheronline.co.uk/ 
+ 
+FGM enhanced dataset: NHS staff responsibilities - GOV.UK (www.gov.uk) CG14020 Female Genital Mutilation (FGM) guideline v3.0 June 2022 Page 14 of 26 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Audit 
+ 
+Suggested auditable questions: 
+ 
+All women, irrespective of their country of origin, have been sensitively asked for a history of 
+FGM at their booking antenatal visit so that FGM can be identified early in the pregnancy. 
+ 
+Any cases of FGM have been reported to the police by the healthcare professional if: 
+ 
+• A girl under 18 tells them they have had FGM. 
+• They see physical signs that a girl has had FGM. 
+All cases of FGM must be: 
+• Reported as soon as possible (at latest before the end of the next working day). 
+• Recorded and all decisions and actions documented. 
+• The health professional should be prepared for a police officer to call them back. 
+• Local safeguarding lead must be informed of the case. 
+ 
+Any women who have had FGM have been referred for obstetric review with the designated 
+lead for FGM. 
+ 
+Defibrillation should be offered around 20 weeks and re-offered at 30 weeks if declined. CG14020 Female Genital Mutilation (FGM) guideline v3.0 June 2022 Page 15 of 26 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+References 
+ 
+British Medical Association (1996) Female Genital Mutilation: Caring for Patients and Child 
+Protection. London. Revised 2001. 
+Department of Health: Commissioning services to support women and girls with female 
+genital mutilation (March 2015). 
+Department of Health: Female Genital Mutilation Risk and Safeguarding Guidance for 
+professionals (March 2015). 
+Department of Health: FGM Prevention Programme Understanding the FGM Enhanced 
+dataset – updated guidance and clarification to support implementation.(September 2015). 
+Female Genital Mutilation Act (2003) The Stationary Office Ltd. London 
+Gordon,H. (1998) Female Genital Mutilation. The Diplomate 1998; 5:86-90 
+HM Government (2014) Multi -Agency Practice Guidelines: Female Genital Mutilation. 
+HM Stationary Office: Tattooing of Minors Act 1969. 
+Momoh,C. (2000) Female Genital Mutilation also known as Female Circumcision: Information 
+for Health Professionals 2nd edition, Guy’s & St Thomas’ Hospital Trust. London 
+Multi -Agency Practice Guidelines: Female Genital Mutilation (Feb 2011) HM Government. 
+Department of Health. 
+Prohibition of Female Circumcision (1985). The Stationary Office London 
+Royal College of Midwives (1998). Female Genital Mutilation (Female Circumcision) 
+Position Paper 21. London. 
+Royal College of Obstetricians and Gynaecologists (1997) Female Circumcision. 
+World Health Organisation (2016). WHO guidelines on the management of health 
+complications from Female Genital Mutilation. Geneva: World Health Organisation. 
+Royal College of Obstetricians and Gynaecologists (2015) Female Genital Mutilation and its 
+Management, Green -top Guideline No. 53. CG14020 Female Genital Mutilation (FGM) guideline v3.0 June 2022 Page 16 of 26 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Appendix 1: Plan of care for Women with FGM in Pregnancy 
+Flow chart taken from RCOG Green -top guideline no. 53 (2015) 
+ CG14020 Female Genital Mutilation (FGM) guideline v3.0 June 2022 Page 17 of 26 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Appendix 2: FGM Proforma 
+Please do not print this document from the guideline 
+ CG14020 Female Genital Mutilation (FGM) guideline v3.0 June 2022 Page 18 of 26 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+CG14020 Female Genital Mutilation (FGM) guideline v3.0 June 2022 Page 19 of 26 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Local contact details: 
+Children’s Safeguarding Team – 
+07825257118 
+uhsussex.childrenssafeguarding@nhs.net 
+ 
+Midwifery Safeguarding Team 
+uhsussex.safeguardingmidwives@nhs.net 
+NSPCC FGM Helpline: 0800 028 3550 Appendix 3: FGM safeguarding flowchart 
+Does the patient originate from an area where cutting or circumcision is practised? 
+
+NO – no further action required Yes 
+
+Do you believe the patient has been cut? 
+
+Yes 
+No – but family history 
+
+Patient is under 18 or 
+vulnerable adult Patient is under 18 
+
+If you suspect she may 
+be at risk of FGM: 
+Use the safeguarding risk 
+assessment guidance to 
+help decide what action to 
+take. 
+* If child is at imminent 
+risk of harm, initiate 
+urgent safeguarding 
+response. 
+Call 101 to report basic 
+details of the case to the 
+Police under 
+Mandatory reporting 
+duty 
+Police will initiate a multi - 
+agency safeguarding 
+response . Does she have any female children or 
+siblings at risk of FGM? 
+• If pregnant inform named midwife for 
+safeguarding to complete FGMIS. 
+• If non pregnant inform children’s 
+safeguarding team to complete FGMIS 
+• Complete the children’s safeguarding 
+online information sharing form. 
+• Safeguarding team to decide whether 
+referral to social care is required. 
+* consider if a child social 
+care referral is needed. For all patients who have had any type of FGM 
+Complete FGM enhanced dataset (can be found on Staffnet: 
+http://nww.westernsussexhospitals.nhs.uk/safety/child - 
+protection -and-safeguarding/prevent/ 
+Noting all relevant codes and send to: 
+uhsussex.information.team@nhs.net 
+Inform relevant safeguarding team 
+
+For all patients : 
+Clearly document all discussion and actions with patient 
+/family in patient’s medical record. 
+Explain FGM is illegal in the UK. 
+Discuss the adverse health consequences of FGM. 
+Share safeguarding information with Health Visitor, School 
+Nurse & GP. 
+ 
+If a girl appears to have been recently cut or you believe she is at imminent risk, act immediately – this may include 
+phoning 999. 
+REMEMBER: Mandatory reporting is only one part of safeguarding against FGM and other abuse. 
+Always ask your local safeguarding lead if in doubt Patient is over 18 CG14020 Female Genital Mutilation (FGM) guideline v3.0 June 2022 Page 20 of 26 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+•Offer appropriate support and onward referral to GP (2) 
+•Hand out FGM information leaflet (3) 
+•Complete enhanced national data set (4) 
+•Collect number of newly identified cases for CCG collection (5) 
+If over 18yrs follow over 
+18 yrs pathway 
+If under 18yrs follow 
+under 18 flowchart 
+No apparent Risk of FGM 
+to adult or unborn child 
+(record in records) 
+History taking of all pregnant women to include 
+asking if FGM has taken place and if not if there 
+is a risk of this happening. 
+Complete risk assessment tool (1) Appendix 4: FGM risk flowchart for unborn female child or other female child in 
+the family 
+ 
+Pregnant Women – deciding whether the 
+unborn child (or other female child in the family) are 
+at risk of FGM or whether the women herself is at risk 
+
+FGM has been 
+undertaken Potential Risk of 
+FGM to adult or unborn child 
+or Extended family CG14020 Female Genital Mutilation (FGM) guideline v3.0 June 2022 Page 21 of 26 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+1. Risk Assessment Tool for Pregnant Women 
+Part One (a): PREGNANT WOMEN 
+This is to help you make a decision as to whether the 
+unborn child (or other female children in the family) are at 
+risk of FGM or whether the woman herself is at risk of 
+further harm in relation to FGM. 
+ 
+2. Client may need referral for counselling, surgery etc. make referral to GP. 
+3. Information Leaflet. 
+4. For further information on hscic FGM enhanced dataset visit: Female Genital 
+Mutilation (FGM) enhanced dataset: GDPR information - NHS Digital 
+5. Inform your named nurse/safeguarding lead that you have seen newly identified 
+case of FGM. Named Nurses/Lead for Safeguarding to submit numbers to 
+Designated Nurses bi - monthly. Indicator Yes No Details 
+CONSIDER RISK 
+Woman comes from a community known to practice FGM. 
+Woman has undergone FGM herself. 
+Husband/partner comes from a community known to 
+practice FGM. 
+A female family elder is involved/will be involved in care of 
+children /unborn child or is influential in the family. 
+Women/family has limited integration in UK community. 
+Women and/or husband/partner have limited/no 
+understanding of harm of FGM or UK law. 
+Women’s nieces or siblings and/or in-laws have undergone 
+FGM. 
+Woman has failed to attend follow -up appointment with an 
+FGM clinic/FGM related appointment. 
+Woman’s husband/partner/other family members are very 
+dominant in the family and have not been present during 
+consultations with the woman. 
+Woman is reluctant to undergo genital examination. 
+SIGNIFICANT OR IMMEDIATE RISK 
+Woman already has daughters who have undergone FGM. 
+Woman requesting reinfibulation following child birth. 
+Woman is considered to be a vulnerable adult and 
+therefore issues of mental capacity and consent should be 
+considered if she found to have FGM. 
+Woman says that FGM is integral to cultural or religious 
+identity. 
+Family are already known to social care services – if known, 
+and you have identified FGM within a family, you must 
+share this information with social services. 
+ ACTION 
+Ask more questions - if one 
+indicator leads to potential area of 
+concern, continue the discussion 
+in this area. 
+Consider risk – if one or more 
+indicators are identified, you need 
+to consider what action to take. If 
+unsure whether the level of risk 
+requires referral at this point, 
+discuss with your 
+named/designated safeguarding 
+lead. 
+Significant or immediate risk – if 
+you identify one or more serious 
+or immediate risk, or the other 
+risks are, by your judgment, 
+sufficient to be considered 
+serious, you should look to refer 
+to Social Services/CAIT 
+Team/Police/MASH, in 
+accordance with your local 
+safeguarding procedures. 
+If the risk of harm is imminent, 
+emergency measures may be 
+required and any action taken 
+must reflect the required 
+urgency. 
+In all cases: - 
+• Share information of any 
+identified risk with the patient’s 
+GP. 
+• Document in notes. 
+• Discuss the health complications 
+of FGM and the law in the UK. 
+Date:…………………………………………………. 
+ 
+Completed by:………………………………………. 
+Initial/On -going Assessment CG14020 Female Genital Mutilation (FGM) guideline v3.0 June 2022 Page 22 of 26 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Appendix 5: Child / young adult (under 18 yrs) at risk of FGM 
+Child/Young Adult (under 18rs) is at risk of FGM 
+NB. If has already undergone FGM -> MASH/Children’s services -> Strategy (1) 
+ 
+Child at risk identified by risk 
+assessment tool completed 
+on mother/relation. Child alerted as at risk via 
+separate route 
+E.g. verbal concern raised by 
+child transfer in handover etc. 
+
+Complete assessment tool (2) 
+• Child only 
+• With parent 
+• Parent only 
+NB Consider all Family Members 
+
+Outcome of Assessment reviewed 
+by Named Nurse/ Lead for 
+Safeguarding (3) 
+
+Standard Risk 
+to Child Significant/Immediate Risk 
+to Child 
+
+Inform GP, school/ 
+relevant professional Refer to Children services 
+who will inform police 
+
+Information leaflet (4) Inform GP, HV, school/ 
+relevant professional 
+
+Minimum age for further risk assessments to be undertaken : 
+4yrs of age 
+10yrs of age 
+NB other factors may influence a risk assessment being brought forward (5) CG14020 Female Genital Mutilation (FGM) guideline v3.0 June 2022 Page 23 of 26 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Indicator Yes No Details 
+CONSIDER RISK 
+Girl is reluctant to undergo any medical examination. 
+Girl has difficulty walking, sitting or standing or looks uncomfortable. 
+Girl finds it hard to sit for long periods of time, which was not a problem previously. 
+Girl presents to GP or A&E with frequent urine, menstrual or stomach problems. 
+Increased emotional and psychological needs e.g. withdrawal, depression or 
+significant change in behaviour. 
+Girl avoiding physical exercise or requiring to be excused from PE lessons without a 
+GP’s letter. 
+Girl has spoken about having been on a long holiday to her country of origin/another 
+country where the practice is prevalent. 
+Girl spends a long time in the bathroom/toilet/long periods of time away from the 
+classroom. 
+Girl talks about pain or discomfort between her legs. 
+SIGNIFICANT OR IMMEDIATE RISK 
+Girl asks for help. 
+Girl confides in a professional that FGM has taken place. 
+Mother/family member discloses that female child has had FGM. 
+Family/child are already known to social services – if known, and you have identified 
+FGM within the family, you must share this information with social services. 
+ ACTION 
+Ask more questions - if one indicator leads to 
+potential area of concern, continue the 
+discussion in this area. 
+Consider risk – if one or more indicators are 
+identified, you need to consider what action to 
+take. If unsure whether the level of risk 
+requires referral at this point, discuss with your 
+named/designated safeguarding lead. 
+Significant or immediate risk – if you identify 
+one or more serious or immediate risk, or the 
+other risks are, by your judgment, sufficient to 
+be considered serious, you should look to refer 
+to Social Services/CAIT Team/Police/MASH, in 
+accordance with your local safeguarding 
+procedures. 
+If the risk of harm is imminent, emergency 
+measures may be required and any action 
+taken must reflect the required urgency. 
+In all cases: - 
+• Share information of any identified risk with 
+the patient’s GP. 
+• Document in notes. 
+• Discuss the health complications of FGM and 
+the law in the UK. 
+1. Tool to help when considering whether a child has FGM 
+Part 3: CHILD/YOUNG ADULT (under 18 years old) 
+This is to help when considering whether a child has had FGM. 
+
+2. Risk Assessment Tool for Child/Young Adult under 18 years of age 
+Part 2: CHILD/YOUNG ADULT (under 18 years old) 
+Date:………………….. Completed by………………………………..……. 
+Initial/On -going Assessment This is to help when considering whether a child is AT RISK of FGM, or whether there are 
+other children in the family for whom a risk assessment may be required. 
+Indicator Yes No Details ACTION 
+Ask more questions - if one indicator leads to 
+potential area of concern, continue the 
+discussion in this area. 
+Consider risk – if one or more indicators are 
+identified, you need to consider what action to 
+take. If unsure whether the level of risk 
+requires referral at this point, discuss with your 
+named/designated safeguarding lead. 
+Significant or immediate risk – if you identify 
+one or more serious or immediate risk, or the 
+other risks are, by your judgment, sufficient to 
+be considered serious, you should look to refer 
+to Social Services/CAIT Team/Police/MASH, in 
+accordance with your local safeguarding 
+procedures. 
+If the risk of harm is imminent, emergency 
+measures may be required and any action 
+taken must reflect the required urgency. 
+In all cases: - 
+• Share information of any identified risk with 
+the patient’s GP. 
+• Document in notes. 
+• Discuss the health complications of FGM and 
+the law in the UK. CONSIDER RISK 
+Child’s mother has undergone FGM. 
+Other female family members have had FGM. 
+Father comes from a community known to practice FGM. 
+A family elder such as Grandmother is very influential within the family and is/will be 
+involved in the care of a girl. 
+Mother/Father have limited contact with people outside of her family. 
+Parents have poor access to information about FGM and do not known about the 
+harmful effects of FGM or UK Law. 
+Parents say that they or a relative will be taking the girl abroad for a prolonged period 
+– this may not only be to a country with high prevalence, but this would more likely 
+lead to a concern. 
+Girl has spoken about a long holiday to her country or origin/another country where 
+the practice is prevalent. 
+Girl has attended a travel clinic or equivalent for vaccinations/anti -malarials. 
+FGM is referred to in conversation by the child, family or close friends of the child 
+(see Appendix Three for traditional and local terms) – The context of the discussion 
+will be important. 
+ 
+Sections missing from the Red book. Consider if the child has received 
+immunisations, do they attend clinics etc. 
+Girl withdrawn from PHSE lessons or from learning about FGM – School Nurse should 
+have conversation with child. 
+Girl presents symptoms that could be related to FGM – continue with questions in 
+part 3. 
+Family not engaging with professionals (health, school, or other). 
+Any other safeguarding alert already associated with the ‘Always check whether 
+family are already known to Social Care’. 
+ 
+3. Complete Risk Assessment Tool for Child/Young Adult under 18 years of age and review your assessment findings with Named Nurse or lead for 
+Safeguarding. 
+4. FGM information leaflet. 
+5. The risk of FGM can change at any time and therefore whist the child/young’s people risk should be reassessed at 4 year and 10 years, any significant 
+changes i.e. influential family member who believes in FGM moves into the family home etc. should result in assessment of cur rent risk. 
+Date:………………….. Completed by………………………………..……. 
+Initial/On -going Assessment CG14020 Female Genital Mutilation (FGM) guideline v3.0 June 2022 Page 24 of 26 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Routine enquiry or unplanned disclosure of FGM or 
+potential FGM risk to self or others Appendix 6: FGM flowchart for non-pregnant women over 18 yrs 
+ 
+Non Pregnant Adult Women (over 18yrs) 
+
+Potential Risk of FGM 
+
+Complete risk assessment 
+tool and review with Named 
+Nurse/ Lead for 
+Safeguarding (1) 
+
+Risk to adult Risk to children 
+
+Low Immediate Follow under 18 year 
+pathway 
+
+Give 
+information 
+leaflet (3) Onward 
+Referral to 
+Police/Adult social 
+care Has Undergone FGM 
+ 
+Onward referral to GP (2) 
+Provide information leaflet (3) 
+Complete enhanced national data set (4) 
+Collect data for Named Nurse (5) 
+Discuss with client reporting crime to police 
+Consider all Family Members 
+ CG14020 Female Genital Mutilation (FGM) guideline v3.0 June 2022 Page 25 of 26 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+1 Risk Assessment Tool for Non-Pregnant Women 
+ 
+Part One (b): NON -PREGNANT ADULT WOMAN (over 18) 
+This is to help decide whether any female children are at 
+risk of FGM whether there are other children in the family 
+for whom a risk assessment may be required or whether 
+the woman herself is at risk of further harm in relation to 
+FGM. 
+ 
+Please remember: any child under 18 who has undergone FGM should be referred to police and social services. 
+2. Client may need referral for counselling, surgery etc make referral to GP 
+3. Information Leaflet 
+4. For further information on hscic FGM enhanced dataset visit: Female Genital Mutilation 
+(FGM) enhanced dataset: GDPR information - NHS Digital 
+5. Inform your named nurse/safeguarding lead that you have seen newly identified case of 
+FGM. Named Nurses/Lead for Safeguarding to submit numbers to Designated Nurses bi- 
+monthly Indicator Yes No Details 
+CONSIDER RISK 
+Woman already has daughters who have undergone FGM – 
+who are over 18 years of age 
+Husband/partner comes from a community known to 
+practice FGM. 
+Grandmother (maternal or paternal) is influenced in family 
+or female family elder is involved in care of children. 
+Woman and family have limited integrated in UK 
+community 
+Woman’s husband/partner/other family member may be 
+very dominant in the family and have not been present 
+during consultations with the woman. 
+Woman/family have been limited/no understanding of 
+harm of FGM or UK law. 
+Women’s nieces (by sibling or in laws) have undergone 
+FGM. Please note – if they are under 18 years you have a 
+professional duty of care to refer to social care. 
+Woman has failed to attend follow up appointment with an 
+FGM clinic/FGM related appointment. 
+Family are already known to social services – if known, and 
+you have identified FGM within a family, you must share 
+this information with social services. 
+SIGNIFICANT OR IMMEDIATE RISK 
+Woman/family believe FGM is integral to cultural or 
+religious identity. 
+Woman already has daughters who have undergone FGM - 
+who are under 18 years of age. 
+Woman is considered to be a vulnerable adult and 
+therefore issues of mental capacity and consent should be 
+triggered if she is found to have FGM. 
+ ACTION 
+Ask more questions - if one 
+indicator leads to potential area of 
+concern, continue the discussion in 
+this area. 
+Consider risk – if one or more 
+indicators are identified, you need to 
+consider what action to take. If 
+unsure whether the level of risk 
+requires referral at this point, discuss 
+with your named/designated 
+safeguarding lead. 
+Significant or immediate risk – if 
+you identify one or more serious or 
+immediate risk, or the other risks are, 
+by your judgment, sufficient to be 
+considered serious , you should look 
+to refer to Social Services/CAIT 
+Team/Police/MASH, in accordance 
+with your local safeguarding 
+procedures. 
+If the risk of harm is imminent, 
+emergency measures may be 
+required and any action taken 
+must reflect the required urgency. 
+In all cases: - 
+• Share information of any identified 
+risk with the patient’s GP. 
+• Document in notes. 
+• Discuss the health complications of 
+FGM and the law in the UK. Date:…………………………………………… 
+Completed by:…………………………………….. 
+Initial/On -going Assessment CG14020 Female Genital Mutilation (FGM) guideline v3.0 June 2022 Page 26 of 26 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Appendix 7: Prevalence of FGM

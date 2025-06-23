@@ -1,0 +1,1014 @@
+# Extracted from: NICE Guideline - 2021 - IOL.pdf
+# Guideline ID: nice-guideline-2021-iol
+# Content length: 67703 characters
+# Processing date: 1732953490.9915414
+
+Inducing labour 
+NICE guideline 
+Published: 4 No vember 2021 
+www .nice.or g.uk/guidance/ng20 7 
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Your r esponsi bility 
+The r ecommendations in t his guideline r epresent t he view of NICE, arriv ed at aft er car eful 
+consideration of t he evidence a vailable. When e xercising t heir judgement, pr ofessionals 
+and practitioners ar e expect ed to tak e this guideline fully int o account, alongside t he 
+individual needs, pr eferences and v alues of t heir patient s or t he people using t heir ser vice. 
+It is not mandat ory to apply t he recommendations, and t he guideline does not o verride t he 
+responsibility t o mak e decisions appr opriat e to the cir cumstances of t he individual, in 
+consultation wit h them and t heir f amilies and car ers or guar dian. 
+All pr oblems (adv erse e vents) related to a medicine or medical de vice used f or treatment 
+or in a pr ocedur e should be r epor ted to the Medicines and Healt hcare product s Regulat ory 
+Agency using t he Yellow Car d Scheme . 
+Local commissioners and pr oviders of healt hcare have a responsibility t o enable t he 
+guideline t o be applied when individual pr ofessionals and people using ser vices wish t o 
+use it. The y should do so in t he cont ext of local and national priorities f or funding and 
+developing ser vices, and in light of t heir duties t o have due r egar d to the need t o eliminat e 
+unlawful discrimination, t o adv ance equality of oppor tunity and t o reduce healt h 
+inequalities. Not hing in t his guideline should be int erpreted in a wa y that w ould be 
+inconsist ent wit h complying wit h those duties. 
+Commissioners and pr oviders ha ve a responsibility t o promot e an en vironmentally 
+sustainable healt h and car e syst em and should assess and r educe t he en vironmental 
+impact of implementing NICE r ecommendations wher ever possible. Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 2 of
+41Contents 
+Overview ..................................................................................................................................... 4 
+Who is it f or? ......................................................................................................................................... 4 
+Recommendations ...................................................................................................................... 5 
+1.1 Information and decision making ................................................................................................... 5 
+1.2 Induction of labour in specific cir cumstances ............................................................................. 7 
+1.3 Met hods f or induction of labour ................................................................................................... 16 
+1.4 Met hods t hat ar e not r ecommended f or induction of labour ..................................................... 18 
+1.5 Assessment bef ore induction, monit oring and pain r elief .......................................................... 20 
+1.6 Outpatient induction ....................................................................................................................... 22 
+1.7 Prevention and management of complications ........................................................................... 23 
+Terms used in t his guideline ................................................................................................................ 25 
+Recommendations f or resear ch ................................................................................................ 27 
+Key recommendations f or resear ch ................................................................................................... 27 
+Rationale and impact .................................................................................................................. 31 
+Induction of labour f or pr egnancy lasting longer t han 4 1 weeks .................................................... 31 
+Induction of labour f or pr elabour ruptur e of t he membranes .......................................................... 32 
+Induction of labour f or suspect ed fetal macr osomia ........................................................................ 33 
+Induction of labour f or intraut erine f etal deat h aft er pr evious caesar ean bir th ............................ 33 
+Methods f or induction of labour ......................................................................................................... 35 
+Cont ext ........................................................................................................................................ 37 
+Finding mor e information and committ ee details .................................................................... 39 
+Updat e information .................................................................................................................... 40 Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 3 of
+41This guideline r eplaces CG7 0 and ESUOM11 . 
+This guideline is t he basis of QS60 . 
+Overview 
+This guideline co vers t he cir cumstances f or inducing labour , met hods of induction, 
+assessment, monit oring, pain r elief and managing complications. It aims t o impr ove advice 
+and car e for pr egnant w omen who ar e thinking about or ha ving induction of labour . 
+In this guideline w e use t he terms 'w oman' and 'w omen' , based on t he evidence used in it s 
+development. The r ecommendations will also apply t o people who do not identify as 
+women but ar e pregnant or ha ve giv en bir th. 
+Who is i t for? 
+• Healt hcare professionals 
+• Commissioners and pr oviders 
+• Pregnant w omen, t heir f amilies and car ers Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 4 of
+41Recommenda tions 
+People ha ve the right t o be in volved in discussions and mak e informed decisions 
+about t heir car e, as described in NICE's inf ormation on making decisions about y our 
+care. 
+Making decisions using NICE guidelines explains ho w we use w ords to sho w the 
+strengt h (or cer tainty) of our r ecommendations, and has inf ormation about 
+prescribing medicines (including off -label use), pr ofessional guidelines, standar ds 
+and laws (including on consent and mental capacity), and saf eguar ding. 
+1.1 Informa tion and de cision making 
+This section should be r ead in conjunction wit h the NICE guidelines on ant enatal car e, 
+caesar ean bir th and intrapar tum car e. 
+1.1.1 Discuss pr eferences about mode of bir th wit h women early on in t heir 
+pregnancy . Take into account t heir individual cir cumstances, and discuss 
+that options f or bir th can include: 
+• expectant management , or 
+• induction of labour , or 
+• planned caesar ean bir th (see t he NICE guideline on caesar ean bir th). 
+Record these discussions and t he w oman's pr eferences in her not es. [2008 , 
+amended 2021] 
+1.1.2 Confirm a w oman's pr eferences f or bir th at ant enatal visit s towards the 
+end of pr egnancy , as t hese ma y have changed since earlier discussions. 
+[2008 , amended 2021] 
+1.1.3 Explain t o women t hat induction of labour is a medical int ervention t hat 
+will aff ect t heir bir th options and t heir e xperience of t he bir th process. 
+This could include t hat: Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 5 of
+41• vaginal e xaminations t o assess t he cer vix ar e needed bef ore and during 
+induction, t o det ermine t he best met hod of induction and t o monit or pr ogress 
+• their choice of place of bir th will be limit ed, as t hey ma y be r ecommended 
+interventions (f or example, o xytocin infusion, continuous f etal hear t rate 
+monit oring and epidurals) t hat ar e not a vailable f or home bir th or in midwif e-led 
+birth unit s 
+• there ma y be limitations on t he use of a bir thing pool 
+• there ma y be a need f or an assist ed vaginal bir th (using f orceps or v entouse), 
+with the associat ed incr eased risk of obst etric anal sphinct er injur y (for 
+example, t hird- or f ourth-degr ee perineal t ears) 
+• pharmacological met hods of induction can cause hyperstimulation – this is 
+when t he ut erus contract s too fr equent ly or contractions last t oo long, which 
+can lead t o changes in f etal hear t rate and r esult in f etal compr omise 
+• an induced labour ma y be mor e painful t han a spontaneous labour 
+• their hospital sta y ma y be longer t han wit h a spontaneous labour . [2021] 
+1.1.4 Discuss wit h women being off ered induction of labour: 
+• the reasons f or induction being off ered 
+• when, wher e and ho w induction could be carried out 
+• the arrangement s for suppor t and pain r elief (see also recommendations on 
+pain r elief) 
+• the alt ernativ e options if t he w oman chooses not t o have induction of labour , or 
+decides at a lat er stage t hat she no longer wishes t o proceed wit h the 
+induction pr ocess 
+• the risks and benefit s of induction of labour in specific cir cumstances, and t he 
+proposed induction met hods 
+• that induction ma y not be successful, and ho w this w ould aff ect t he w oman's 
+options (see t he recommendations on unsuccessful induction ). [2008 , 
+amended 2021] 
+1.1.5 When off ering induction of labour: Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 6 of
+41• give women time t o discuss t his inf ormation wit h others (f or example, t heir 
+partners, bir thing companion or f amily) if t hey wish t o do so bef ore making a 
+decision 
+• encourage w omen t o look at ot her inf ormation (f or example, b y providing 
+writt en inf ormation leaflet s or encouraging t hem t o look at information on t he 
+NHS w ebsit e) 
+• ensur e women ha ve the oppor tunity t o ask questions, and time t o think about 
+their options 
+• recognise t hat w omen can decide t o proceed wit h, dela y, decline or st op an 
+induction. R espect t he w oman's decision, e ven if healt hcare professionals 
+disagr ee wit h it, and do not allo w personal views t o influence t he car e they are 
+given. R ecord the w oman's decision in her not es. [2008 , amended 2021] 
+1.1.6 Provide inf ormation on induction of labour in line wit h the NICE guideline 
+on patient e xperience in adult NHS ser vices . [2021] 
+For a shor t explanation of wh y the committ ee made t hese r ecommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on induction of labour 
+for pr egnancy lasting longer t han 4 1 weeks . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview C: 
+induction of labour f or pr evention of pr olonged pr egnancy . 
+1.2 Induc tion o f labour in spe cific cir cumstanc es 
+Pregnanc y lasting long er than 41 w eeks 
+1.2.1 Give women wit h uncomplicat ed pr egnancies e very oppor tunity t o go 
+into spontaneous labour . [2008] 
+1.2.2 Explain t o women t hat labour usually star ts naturally bef ore 42+0 weeks, 
+based on t he gestational age estimat ed by their dating scan (see table 
+1). [2008 , amended 2021] Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 7 of
+41Table 1 . Gestational age at which labour star ted, as a pr opor tion of labours which 
+star ted spontaneously 
+Gestational 
+age 
+(weeks) Propor tion of spontaneous 
+labours t hat star ted at t his 
+gestational age Cumulativ e propor tion of spontaneous 
+labours t hat star ted b y this 
+gestational age 
+31 w eeks 
+and under 2.4% 2.4% 
+32+0 t o 
+36+6 
+weeks 5.3% 7.7% 
+37+0 t o 
+37+6 
+weeks 5.1% 12.8% 
+38+0 t o 
+38+6 
+weeks 12.1% 24.9% 
+39+0 t o 
+39+6 
+weeks 25.4% 50.3% 
+40+0 t o 
+40+6 
+weeks 32.5% 82.8% 
+41+0 t o 
+41+6 
+weeks 16.2% 99.0% 
+42+0 
+weeks and 
+over 0.9% 100% 
+Data fr om NHS Hospital Episode Statistics/Mat ernity Ser vices Data set 2019- 20. 
+1.2.3 Using t he inf ormation in appendix A , explain t o women t hat some risks 
+associat ed wit h a pr egnancy continuing be yond 4 1+0 weeks ma y 
+increase o ver time and t hese include: Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 8 of
+41• increased lik elihood of caesar ean bir th 
+• increased lik elihood of t he bab y needing admission t o a neonatal int ensiv e car e 
+unit 
+• increased lik elihood of stillbir th and neonatal deat h. [2021] 
+1.2.4 Discuss wit h women t hat induction of labour fr om 4 1+0 weeks ma y 
+reduce t hese risks, but t hat t hey will also need t o consider t he impact of 
+induction on t heir bir th experience (see recommendations on inf ormation 
+and decision making ) when making t heir decision. [2021] 
+1.2.5 Be awar e that, accor ding t o the 2020 MBRRA CE-UK r epor t on perinatal 
+mortality , women fr om some minority et hnic back grounds or who liv e in 
+depriv ed ar eas ha ve an incr eased risk of stillbir th and ma y benefit fr om 
+closer monit oring and additional suppor t. The r epor t sho wed that acr oss 
+all bir ths (not just t hose induced): 
+• compar ed wit h whit e babies (34/10 ,000), t he stillbir th rat e is 
+－ more than twice as high in black babies (7 4/10,000) 
+－ around 50% higher in Asian babies (53/10 ,000) 
+• the stillbir th rat e incr eases accor ding t o the le vel of depriv ation in t he ar ea the 
+mother liv es in, wit h almost twice as man y stillbir ths for women living in t he 
+most depriv ed ar eas (47/10 ,000) compar ed wit h the least depriv ed ar eas (26/
+10,000). [2021] 
+1.2.6 If a w oman chooses not t o have induction of labour , discuss t he w oman's 
+options fr om t his point on wit h her (f or example, e xpectant management 
+or caesar ean bir th) and r ecord the w oman's decision in her not es. [2008 , 
+amended 2021] 
+1.2.7 Discuss wit h women who choose not t o have their labour induced if t hey 
+wish t o have additional f etal monit oring fr om 42 weeks. Advise w omen 
+that: Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 9 of
+41• monit oring only giv es a snapshot of t he curr ent situation, and cannot pr edict 
+reliably an y changes aft er monit oring ends, but pr ovides inf ormation on ho w 
+their bab y is at t he moment and so ma y help t hem mak e a decision on options 
+for bir th 
+• adverse eff ects on t he bab y (including stillbir th), and when t hese e vents might 
+happen, cannot be pr edict ed reliably or pr evented even wit h monit oring 
+• fetal monit oring might consist of twice-w eekly car diotocograph y and 
+ultrasound estimation of maximum amniotic pool dept h. [2008 , amended 
+2021] 
+1.2.8 Offer women who choose t o await t he spontaneous onset of labour t he 
+oppor tunity t o discuss t heir decision again at all subsequent r eviews, if 
+they wish t o do so. [2021] 
+1.2.9 Advise w omen t o contact t heir midwif e or mat ernity unit if t hey change 
+their mind bef ore their ne xt appointment, or as soon as possible if t hey 
+have concerns about t heir bab y (for example r educed or alt ered fetal 
+movement s). [2021] 
+For a shor t explanation of wh y the committ ee made t hese r ecommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on induction of labour 
+for pr egnancy lasting longer t han 4 1 weeks . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview C: 
+induction of labour f or pr evention of pr olonged pr egnancy . 
+Preterm pr elabour ruptur e of membr anes 
+1.2.10 If a w oman has pr eterm pr elabour ruptur e of membranes, do not carr y 
+out induction of labour bef ore 34+0 w eeks unless t here are additional 
+obstetric indications (f or example, inf ection or f etal compr omise). Off er 
+expectant management until 37+0 w eeks. [2008 , amended 2021] 
+1.2.11 If a woman has pr eterm pr elabour ruptur e of membranes aft er 34+0 
+weeks, but bef ore 37+0 w eeks, discuss t he options of e xpectant 
+management until 37+0 w eeks or induction of labour wit h her . When Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 10
+of 41making a shar ed decision, tak e into consideration t he following f actors: 
+• risks t o the w oman (f or example, sepsis, possible need f or caesar ean bir th) 
+• risks t o the bab y (for example, sepsis, pr oblems r elating t o preterm bir th) 
+• local a vailability of neonatal int ensiv e car e facilities 
+• the w oman's individual cir cumstances and her pr eferences [2008 , amended 
+2021] 
+1.2.12 If a w oman has pr eterm pr elabour ruptur e of membranes aft er 34+0 
+weeks (but bef ore 37+0 w eeks), and has had a positiv e group B 
+streptococcus t est at an y time in t heir curr ent pr egnancy , offer 
+immediat e induction of labour or caesar ean bir th. See t he NICE 
+guidelines on neonatal inf ection and preterm labour and bir th. [2021] 
+Prelabour ruptur e of membr ane a t term 
+1.2.13 Offer women wit h prelabour ruptur e of membranes at t erm (at or aft er 
+37+0 w eeks) a choice of: 
+• expectant management f or up t o 24 hours, or 
+• induction of labour as soon as possible. 
+Discuss t he benefit s and risks of t hese options wit h the w oman, and tak e into 
+account her individual cir cumstances and pr eferences. [2008 , amended 2021] 
+1.2.14 For women who choose e xpectant management aft er pr elabour ruptur e 
+of the membranes at t erm (at or aft er 37+0 w eeks), off er induction of 
+labour if labour has not star ted naturally aft er appr oximat ely 2 4 hours. 
+See t he NICE guideline on intrapar tum car e. [2008 , amended 2021] 
+1.2.15 Respect t he w oman's decision if she chooses t o wait f or spontaneous 
+onset of labour f or over 24 hours aft er pr elabour ruptur e of membranes 
+at term. Discuss t he w oman's options f or bir th from t his point onwar ds 
+with her . [2021] 
+1.2.16 If a w oman has pr elabour ruptur e of membranes at t erm (at or aft er 37+0 Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 11 of
+41weeks) and has had a positiv e group B str eptococcus t est at an y time in 
+their curr ent pr egnancy , offer immediat e induction of labour or caesar ean 
+birth. See t he NICE guideline on neonatal inf ection f or advice on 
+intrapar tum antibiotics . [2021] 
+For a shor t explanation of wh y the committ ee made t hese r ecommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on induction of labour 
+for pr elabour ruptur e of membranes . 
+Previous c aesar ean bir th 
+1.2.17 Discuss met hods of induction wit h a w oman who has had a pr evious 
+caesar ean bir th, so t hat she can mak e an inf ormed decision about t he 
+most appr opriat e choice. This should co ver the following: 
+• induction of labour can lead t o an incr eased risk of emer gency caesar ean bir th 
+• induction of labour can lead t o a risk of ut erine ruptur e 
+• the suitability of mechanical met hods of induction, including t he risk of 
+infection 
+• the mark eting aut horisations f or dinopr ostone and misopr ostol contraindicat e 
+their use f or inducing labour in w omen wit h a ut erine scar , because t hey 
+increase t he risk of ut erine ruptur e 
+• the risks and consequences of caesar ean bir th, including bot h shor t- and long-
+term morbidity . [2008 , amended 2021] 
+1.2.18 If bir th needs t o be e xpedit ed, off er women who ha ve had a pr evious 
+caesar ean bir th a choice of: 
+• induction of labour , or 
+• planned caesar ean bir th. 
+Take into account t he w oman's cir cumstances and pr eferences and r ecord the 
+discussions and plan in t he w oman's not es. [2008 , amended 2021] Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 12
+of 411.2.19 Advise w omen t hat t hey can choose not t o have induction of labour or 
+caesar ean bir th, even when it ma y benefit t heir or t heir bab y's healt h 
+[2008 , amended 2021] 
+Maternal r equest 
+1.2.20 Consider r equest s for induction of labour only aft er discussing t he 
+benefit s and risks wit h the w oman, taking int o account t he w oman's 
+circumstances and pr eferences. [2008 , amended 2021] 
+Breech posi tion 
+1.2.21 Induction of labour is not generally r ecommended if a w oman's bab y is in 
+the br eech position. [2008 , amended 2021] 
+1.2.22 Consider induction of labour f or babies in t he br eech position if: 
+• birth needs t o be e xpedit ed, and 
+• external cephalic v ersion is unsuccessful, declined or contraindicat ed, and 
+• the w oman chooses not t o have a planned caesar ean bir th. 
+Discuss t he benefit s and risks associat ed wit h induction of labour wit h the 
+woman. [2008 , amended 2021] 
+Fetal gr owth r estric tion 
+1.2.23 Do not induce labour if t here is f etal gr owth restriction wit h confirmed 
+fetal compr omise. Off er caesar ean bir th inst ead. [2008 , amended 2021] 
+Suspe cted fetal macr osomia 
+1.2.24 Using t he inf ormation in appendix B , discuss wit h women wit hout 
+diabet es and wit h suspect ed fetal macr osomia that: 
+• the options f or bir th are expectant management, induction of labour or 
+caesar ean bir th (see t he NICE guideline on caesar ean bir th) Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 13
+of 41• there is uncer tainty about t he benefit s and risks of induction of labour 
+compar ed to expectant management, but: 
+－ with induction of labour t he risk of shoulder dyst ocia r educed compar ed 
+with expectant management 
+－ with induction of labour t he risk of t hird- or f ourth-degr ee perineal t ears is 
+increased compar ed wit h expectant management 
+－ there is e vidence t hat t he risk of perinatal deat h, brachial ple xus injuries in 
+the bab y, or t he need f or emer gency caesar ean bir th is t he same betw een 
+the 2 options 
+• they will also need t o consider t he impact of induction on t heir bir th experience 
+and on t heir bab y (see recommendation 1 .1.3). 
+Discuss t he options f or bir th wit h the w oman, taking int o account her individual 
+circumstances and her pr eferences, and r espect her decision. Suppor t 
+recruitment int o clinical trials, if a vailable. [2021] 
+1.2.25 For guidance on suspect ed fetal macr osomia in w omen wit h pre-existing 
+or gestational diabet es see t he NICE guideline on diabet es in pr egnancy . 
+[2021] 
+For a shor t explanation of wh y the committ ee made t hese r ecommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on induction of labour 
+for suspect ed fetal macr osomia . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview A: 
+induction of labour f or suspect ed fetal macr osomia . 
+Histor y of precipitate labour 
+1.2.26 Do not r outinely off er induction of labour t o women wit h a hist ory of 
+precipitat e labour to avoid a bir th unatt ended b y healt hcare 
+professionals. [2008] Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 14
+of 41Intrauterine f etal de ath – all w omen 
+1.2.27 In the event of an intraut erine f etal deat h, off er suppor t to help w omen 
+and t heir par tners and f amily cope wit h the emotional and ph ysical 
+consequences of t he deat h. Off er them inf ormation about specialist 
+suppor t. [2008] 
+1.2.28 In the event of an intraut erine f etal deat h, if t he w oman appears t o be 
+physically w ell, her membranes ar e intact and t here is no e vidence of 
+infection or bleeding, discuss t he options f or bir th (expectant 
+management, induction of labour or caesar ean bir th) and r espect t he 
+woman's decision. [2008 , amended 2021] 
+1.2.29 In the event of an intraut erine f etal deat h, if t here is e vidence of ruptur ed 
+membranes, inf ection or bleeding, off er immediat e induction of labour or 
+caesar ean bir th. [2008 , amended 2021] 
+1.2.30 If a w oman wit h an intraut erine f etal deat h chooses an induced labour , 
+follow the recommendations on monit oring of ut erine contractions 
+(preferably using manual assessment) and pr ovide one-t o-one midwif ery 
+care of t he w oman during labour and bir th. [2021] 
+Intrauterine f etal deat h – w omen wit h a non-scarr ed ut erus 
+1.2.31 If a w oman wit h an intraut erine f etal deat h chooses an induced labour , 
+offer: 
+• oral mif eprist one 200 mg followed by vaginal dinopr ostone or oral or v aginal 
+misopr ostol. Base t he choice and dosage of drug used on clinical 
+circumstances and national pr otocols, or 
+• a mechanical met hod of induction. [2008 , amended 2021] 
+In No vember 2021 , some uses of mif eprist one, dinopr ostone and misopr ostol 
+were off label. See NICE's inf ormation on pr escribing medicines . 
+Intrauterine f etal deat h – w omen who ha ve had a pr evious caesar ean bir th 
+1.2.32 Discuss met hods of induction wit h a w oman who has had intraut erine Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 15
+of 41fetal deat h and a pr evious caesar ean bir th, so t hat she can mak e an 
+informed decision about t he most appr opriat e choice. This should co ver 
+the following: 
+• induction of labour can lead t o a risk of ut erine ruptur e 
+• the suitability of mechanical met hods of induction, including t he risk of 
+infection 
+• the mark eting aut horisations f or dinopr ostone and misopr ostol contraindicat e 
+their use f or inducing labour in w omen wit h a ut erine scar , because t hey 
+increase t he risk of ut erine ruptur e 
+• the risks and consequences of caesar ean bir th, including bot h shor t- and long-
+term morbidity . [2021] 
+For a shor t explanation of wh y the committ ee made t hese r ecommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on induction of labour 
+for intraut erine f etal deat h aft er pr evious caesar ean bir th. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview D: 
+induction of labour f or intraut erine f etal deat h aft er pr evious caesar ean bir th. 
+1.3 Methods f or induc tion o f labour 
+Membr ane sw eeping 
+1.3.1 Explain t o women: 
+• what a membrane sw eep is 
+• that membrane sw eeping might mak e it mor e likely that labour will star t 
+without t he need f or additional pharmacological or mechanical met hods of 
+induction 
+• that pain, discomf ort and v aginal bleeding ar e possible fr om t he pr ocedur e. 
+[2008 , amended 2021] Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 16
+of 411.3.2 At ant enatal visit s after 39+0 w eeks, discuss wit h women if t hey would 
+like a v aginal e xamination f or membrane sw eeping, and if so obtain 
+verbal consent fr om t hem bef ore carr ying out t he membrane sw eep. 
+[2008 , amended 2021] 
+1.3.3 Discuss wit h women whet her t hey would lik e to have additional 
+membrane sw eeping if labour does not star t spontaneously f ollowing t he 
+first sw eep. [2008 , amended 2021] 
+Pharmac ological and me chanic al me thods f or inducing labour 
+1.3.4 Explain t o women t hat a v aginal e xamination t o assess t he readiness of 
+the cer vix (r ecorded as t he Bishop scor e) will help t o decide which 
+method of induction t hey will be off ered first, and obtain consent t o carr y 
+this out. [2021] 
+1.3.5 Discuss wit h women t he risks and benefit s of diff erent met hods t o 
+induce labour . Include t hat: 
+• both dinopr ostone and misopr ostol can cause h yperstimulation (see 
+information on h yperstimulation rat es in appendix C ) 
+• when using pharmacological met hods of induction, ut erine activity and f etal 
+condition must be monit ored regularly 
+• if hyperstimulation does occur , the induction tr eatment will be st opped b y 
+giving no fur ther medication, or b y removal of v aginally administ ered pr oduct s 
+when possible 
+• there are diff erences in t he ease wit h which diff erent v aginal pr oduct s can be 
+removed (f or example, dinopr ostone contr olled-r elease v aginal deliv ery 
+systems can be mor e easily r emoved than gel or v aginal tablet s) 
+• hyperstimulation can be tr eated wit h tocolysis, but h yperstimulation caused b y 
+misopr ostol ma y be mor e difficult t o reverse 
+• mechanical met hods ar e less lik ely to cause h yperstimulation t han 
+pharmacological met hods. [2021] 
+1.3.6 Follow the manuf actur ers' guidance on t he use of dinopr ostone and Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 17
+of 41misopr ostol preparations f or the induction of labour , including when t o 
+remove dinopr ostone contr olled-r elease v aginal deliv ery syst ems. [2021] 
+1.3.7 For women wit h a Bishop scor e of 6 or less, off er induction of labour wit h 
+dinopr ostone as v aginal tablet, v aginal gel or contr olled-r elease v aginal 
+deliv ery syst em or wit h low dose (25 microgram) oral misopr ostol tablet s. 
+[2021] 
+1.3.8 For women wit h a Bishop scor e of 6 or less, consider a mechanical 
+method t o induce labour (f or example, a balloon cat heter or osmotic 
+cervical dilat or) if: 
+• pharmacological met hods ar e not suitable (f or example, in w omen wit h a higher 
+risk of , or fr om, h yperstimulation, or t hose who ha ve had a pr evious caesar ean 
+birth), or 
+• the w oman chooses t o use a mechanical met hod. 
+See t he NICE int erventional pr ocedur es guidance on double balloon cat heters 
+for induction . [2021] 
+1.3.9 For women wit h a Bishop scor e of mor e than 6 , offer induction of labour 
+with amniot omy and an intra venous o xytocin infusion. [2021] 
+1.3.10 Advise w omen t hat t hey can ha ve an amniot omy and can choose 
+whet her or not t o have an o xytocin infusion, or can dela y star ting t his, 
+but t hat t his ma y mean labour tak es longer and t here ma y be an 
+increased risk of neonatal inf ection. [2021] 
+For a shor t explanation of wh y the committ ee made t hese r ecommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on met hods f or 
+induction of labour . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview B: 
+methods f or induction of labour . 
+1.4 Methods tha t are not r ecommende d for Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 18
+of 41induc tion o f labour 
+Pharmac ological me thods 
+1.4.1 Be awar e that t he available e vidence does not suppor t the use of t he 
+following met hods f or induction of labour: 
+• oral dinopr ostone 
+• intravenous dinopr ostone 
+• extra-amniotic dinopr ostone or PGF 2 
+• intracer vical dinopr ostone 
+• vaginal PGF 2 
+• intravenous o xytocin alone 
+• hyaluronidase 
+• corticost eroids 
+• oestr ogen 
+• relaxin 
+• mifeprist one ( except in combination f or intraut erine f etal deat h, see 
+recommendation 1 .2.31) 
+• vaginal nitric o xide donors. [2008 , amended 2021] 
+Non-pharmac ological me thods 
+1.4.2 Be awar e that t he available e vidence does not suppor t the following 
+methods f or induction of labour: 
+• herbal supplement s 
+• acupunctur e 
+• homeopat hy Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 19
+of 41• castor oil 
+• hot bat hs 
+• enemas 
+• sexual int ercourse. [2008] 
+1.5 Assessmen t bef ore induc tion, moni toring and 
+pain r elief 
+Assessmen t bef ore induc tion 
+1.5.1 Ensur e the position of t he bab y and t he w oman's condition ar e suitable 
+for induction b y: 
+• abdominally assessing t he le vel and stability of t he fetal head in t he lo wer par t 
+of the ut erus at or near t he pelvic brim 
+• carrying out an ultrasound scan if t here are any concerns about t he position of 
+the bab y (for example, if it might be in t he br eech position) 
+• assessing and r ecording t he Bishop scor e 
+• confirming a normal f etal hear t rate patt ern using ant enatal car diotocograph y 
+interpretation 
+• confirming t he absence of significant ut erine contractions (not Braxt on-Hicks) 
+using car diotocograph y. [2008 , amended 2021] 
+1.5.2 Ensur e facilities ar e available f or car diotocograph y wher ever induction of 
+labour is star ted. [2008 , amended 2021] Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 20
+of 41Monitoring 
+Note that t he summaries of pr oduct charact eristics f or diff erent pr eparations of 
+dinopr ostone contain diff erent monit oring r equir ement s. Alwa ys use t he NICE 
+guidance on dinopr ostone in conjunction wit h the relevant summar y of pr oduct 
+charact eristics. 
+1.5.3 When ut erine contractions begin aft er administ ering dinopr ostone or 
+misopr ostol, assess f etal w ellbeing and ut erine contractions wit h 
+intrapar tum car diotocograph y interpretation and: 
+• if the car diotocogram is confirmed as normal, r eview t he individual 
+circumstances and, if consider ed lo w risk, use int ermitt ent auscultation unless 
+there are clear indications f or fur ther car diotocograph y 
+• if the fetal hear t rate is abnormal or t here are excessiv e uterine contractions: 
+－ continue or r estar t continuous car diotocograph y 
+－ do not administ er an y mor e doses, and 
+－ remove any vaginal pessaries or deliv ery syst ems if possible. 
+Follow the advice on monit oring during labour in t he NICE guideline on f etal 
+monit oring in labour . [2008 , amended 2021] 
+1.5.4 Offer to reassess t he w ellbeing of t he w oman and bab y and t he Bishop 
+score at appr opriat e intervals to monit or pr ogress, depending on t he 
+method of induction being used, and t he clinical condition of t he w oman. 
+[2008 , amended 2021] 
+1.5.5 Once activ e labour is established, carr y out mat ernal and f etal monit oring 
+as described in t he NICE guideline on f etal monit oring in labour . [2008] 
+Pain r elief 
+1.5.6 Explain t o women t hat induced labour ma y be mor e painful t han 
+spontaneous labour . [2008] Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 21
+of 411.5.7 Discuss t he available pain r elief options in diff erent settings wit h women. 
+[2008] 
+1.5.8 During induction of labour , provide w omen wit h the pain r elief 
+appr opriat e for them and t heir pain as described in t he NICE guideline on 
+intrapar tum car e. This can include simple analgesia, labour in wat er and 
+epidural analgesia. [2008 , amended 2021] 
+1.6 Outpatient induc tion 
+Note that t he summaries of pr oduct charact eristics f or diff erent pr eparations of 
+dinopr ostone contain diff erent monit oring r equir ement s. Alwa ys use t he NICE 
+guidance on dinopr ostone in conjunction wit h the relevant summar y of pr oduct 
+charact eristics. 
+1.6.1 Consider outpatient induction of labour wit h vaginal dinopr ostone 
+preparations or mechanical met hods in w omen who wish t o return home, 
+and who ha ve no co-e xisting medical conditions or obst etric 
+complications. Discuss wit h the w oman t he benefit s and risks of 
+returning home, and r espect her decision. [2008 , amended 2021] 
+1.6.2 Carry out a full clinical assessment of t he w oman and bab y (see 
+recommendations 1 .5.1 and 1 .5.2) and ensur e saf ety and suppor t 
+procedur es ar e in place. [2008 , amended 2021] 
+1.6.3 For induction being under taken on an outpatient basis, agr ee a r eview 
+plan wit h the w oman bef ore she r eturns home. [2008 , amended 2021] 
+1.6.4 Ask w omen t o contact t heir midwif e, mat ernity unit or obst etrician: 
+• when contractions begin, or 
+• if there are no contractions (in an agr eed timeframe, depending on t he met hod 
+used), or 
+• if her membranes ruptur e, or 
+• if she de velops bleeding, or Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 22
+of 41• if she has an y other concerns, such as r educed or alt ered fetal mo vement s, 
+excessiv e pain or ut erine contractions, side-eff ects or loss of t he pessar y. 
+[2008 , amended 2021] 
+1.7 Prevention and manag emen t of complications 
+Uterine h yper stim ulation 
+1.7.1 If uterine h yperstimulation occurs during induction of labour: 
+• carry out a f etal assessment 
+• do not administ er an y mor e doses of medicines t o induce labour and r emove 
+any vaginal pessaries or deliv ery syst ems if possible 
+• consider t ocolysis. [2008 , amended 2021] 
+Unsuc cessful induc tion 
+1.7.2 If induction is unsuccessful , discuss t his wit h the w oman and pr ovide 
+suppor t. Fully r eassess t he w oman's condition and t he pr egnancy in 
+general, and assess f etal w ellbeing using ant enatal car diotocograph y 
+interpretation. [2008 , amended 2021] 
+1.7.3 If induction is unsuccessful, discuss and agr ee a plan f or fur ther 
+management wit h the w oman, including whet her she w ould lik e fur ther 
+attempt s at induction, taking int o account t he clinical cir cumstances and 
+her pr eferences. [2008 , amended 2021] 
+1.7.4 If induction is unsuccessful, t he subsequent management options 
+include: 
+• offering a r est period if clinically appr opriat e and t hen r e-assessing t he w oman 
+• expectant management 
+• further att empt s to induce labour Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 23
+of 41• caesar ean bir th. See t he NICE guideline on caesar ean bir th. [2008 , amended 
+2021] 
+Cord prolapse 
+1.7.5 Take the following pr ecautions t o avoid t he adv erse eff ects of cor d 
+prolapse, which ma y occur if labour is induced: 
+• before induction, abdominally assess t he le vel and stability of t he fetal head in 
+the lo wer par t of t he ut erus at or near t he pelvic brim (see t he 
+recommendations on assessment bef ore induction ) 
+• during t he pr eliminar y vaginal e xamination, obst etricians and midwiv es should 
+palpat e for umbilical cor d presentation and a void dislodging t he bab y's head 
+• carry out continuous car diotocograph y during induction aft er the membranes 
+have ruptur ed, if t he pr esenting par t is not stable and not w ell-applied t o the 
+cervix. In t his situation, discuss t he risks and benefit s of induction of labour 
+with the w oman, and if necessar y consider caesar ean bir th. If t he pr esenting 
+part stabilises and t he car diotocogram is normal, use int ermitt ent auscultation 
+unless t here are clear indications f or fur ther car diotocograph y. [2008 , 
+amended 2021] 
+Placenta pr aevia, lo w-lying p lacenta or a pr evious histor y of 
+antepar tum haemorr hage 
+1.7.6 Check t hat t here is no e vidence of a lo w-lying placenta on pr evious 
+scans bef ore membrane sw eeping and bef ore induction of labour . [2008 , 
+amended 2021] 
+Uterine ruptur e 
+1.7.7 If uterine ruptur e is suspect ed during induced labour , carr y out an 
+immediat e cat egor y 1 caesar ean bir th. See t he NICE guideline on 
+caesar ean bir th. [2008 , amended 2021] Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 2 4
+of 41Terms use d in this guideline 
+This section defines t erms t hat ha ve been used in a par ticular wa y for this guideline. F or 
+other definitions see t he NICE glossar y and t he Think Local, Act P ersonal Car e and 
+Suppor t Jargon Bust er. 
+Bishop sc ore 
+The Bishop scor e is a numerical v alue obtained b y doing a v aginal e xamination, and is 
+based on t he dilation, eff acement ( or lengt h), position and consist ency of t he cer vix and 
+the station of t he head wit h respect t o the ischial spines of t he pelvis. A scor e of 8 or mor e 
+generally indicat es that t he cer vix is r eady t o dilat e, (pr eviously t he terms 'ripe' or 
+'favourable' w ere widely used) and when t here is a high chance of spontaneous labour , or 
+response t o interventions made t o induce labour . For the purposes of t his guideline, a 
+Bishop scor e of less t han or equal t o 6, or a scor e greater than 6 , was used t o help 
+determine choice of pharmacological or mechanical met hods t o induce labour . 
+Dinopr ostone 
+Dinopr ostone is t he int ernational non-pr oprietar y name f or pr ostaglandin E2. Pr evious 
+versions of t his guideline r eferred to prostaglandin E2, or PGE2, but in or der t o ensur e 
+uniformity wit h the naming con ventions in t he BNF , this v ersion r efers t o this medication as 
+dinopr ostone. 
+Expe ctant manag emen t 
+A management appr oach, also called 'wat ch and wait' , when no medical or sur gical 
+treatment is giv en. The aim is t o allo w labour t o begin naturally . 
+Hyper stim ulation 
+This is o veractivity of t he ut erus as a r esult of induction of labour . It is v ariously defined as 
+uterine tach ysyst ole (mor e than 5 contractions per 10 minut es for at least 20 minut es) and 
+uterine h ypersyst ole/h yper tonicity (a contraction lasting at least 2 minut es). These ma y or 
+may not be associat ed wit h changes in t he fetal hear t rate patt ern (persist ent 
+decelerations, tach ycardia or incr eased/decr eased shor t term v ariability). Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 25
+of 41Membr ane sw eeping 
+Membrane sw eeping in volves the examining finger passing t hrough t he cer vix to rotate 
+against t he wall of t he ut erus, t o separat e the chorionic membrane fr om t he decidua of t he 
+uterus. If t he cer vix will not admit a finger , massaging ar ound t he cer vix in t he vaginal 
+fornices ma y achie ve a similar eff ect. 
+MBRRACE-UK 
+Mothers and babies: r educing risk t hrough audit s and confidential enquiries acr oss t he UK 
+(MBRRA CE-UK) is a series of audit s carried out wit h the aim of identifying causes of 
+maternal and perinatal deat h and morbidity and making r ecommendations t o inform 
+maternity car e and so r educe t hese poor out comes. 
+Osmotic c ervical dila tor 
+A medical de vice used t o dilat e the ut erine cer vix b y sw elling as it absorbs fluid fr om 
+surrounding tissue. 
+Precipitate labour 
+A labour t hat is v ery quick and shor t, and t he bab y is born less t han 3 hours aft er the star t 
+of ut erine contractions. 
+Suspe cted fetal macr osomia 
+A bab y that is belie ved to be lar ge for its gestational age, defined f or the purposes of t his 
+guideline as an estimat ed fetal w eight abo ve the 95t h per centile, at or aft er 36 weeks of 
+pregnancy . 
+Unsuc cessful induc tion 
+Unsuccessful induction is defined as labour not star ting aft er one cy cle of tr eatment. Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 26
+of 41Recommenda tions f or research 
+The guideline committ ee has made t he following r ecommendations f or resear ch. 
+Key recommenda tions f or research 
+1 Prevention o f prolong ed pregnanc y 
+At what gestational age should induction of labour be off ered in t he subgr oups of w omen 
+who ma y be mor e likely to experience adv erse out comes if pr egnancy continues? [2021] 
+For a shor t explanation of wh y the committ ee made t he recommendation f or resear ch, 
+see t he rationale section on induction of labour f or pr egnancy lasting longer t han 4 1 
+weeks . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview C: 
+induction of labour f or pr evention of pr olonged pr egnancy . 
+2 Prevention o f prolong ed pregnanc y 
+Based on individual patient data meta-analysis, what is t he optimal timing of induction of 
+labour? [2021] 
+For a shor t explanation of wh y the committ ee made t he recommendation f or resear ch, 
+see t he rationale section on induction of labour f or pr egnancy lasting longer t han 4 1 
+weeks . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview C: 
+induction of labour f or pr evention of pr olonged pr egnancy . Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 27
+of 413 Preterm pr elabour ruptur e of membr anes 
+What ar e the relativ e risks and benefit s of induced labour v ersus e xpectant management 
+in women whose membranes ha ve ruptur ed spontaneously betw een 34 and 37 weeks? 
+[2008] 
+Why this is im portant 
+Intraut erine sepsis is mor e likely to develop in pr egnancies t hat continue aft er the 
+membranes ha ve ruptur ed, putting bot h the w oman and t he bab y at risk. In some such 
+pregnancies, labour begins spontaneously at a v ariable int erval aft er the membranes ha ve 
+ruptur ed, a voiding t he need f or induction. The v alue of antibiotic t herap y and t he 
+administration of cor ticost eroids t o the w oman is unclear in t his situation. A randomised 
+study of activ e versus e xpectant management, taking account of time since membrane 
+ruptur e, gestational age and mat ernal t herap y, would be v aluable. 
+4 Intrauterine f etal de ath af ter pr evious c aesar ean bir th 
+How should labour be induced in w omen wit h intraut erine f etal deat h who ha ve had a 
+previous caesar ean bir th, and who choose t o be induced? [2021] 
+For a shor t explanation of wh y the committ ee made t he recommendation f or resear ch, 
+see t he rationale section on induction of labour f or intraut erine f etal deat h aft er 
+previous caesar ean bir th. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview D: 
+induction of labour f or intraut erine f etal deat h aft er pr evious caesar ean bir th. 
+5 Membr ane sw eeping 
+What ar e the eff ectiv eness and acceptability of , and mat ernal satisf action wit h, the 
+following: 
+• multiple v ersus once-only membrane sw eeping, at v arying gestational ages, 
+depending on parity 
+• membrane sw eeping v ersus cer vical massage? [2008] Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 28
+of 41Why this is im portant 
+Membrane sw eeping is consider ed to be a r elativ ely simple int ervention t hat ma y 
+positiv ely influence t he transition fr om maint enance of pr egnancy t o the onset of labour , 
+reducing t he need f or formal induction of labour . However, there are disadv antages, such 
+as possible v aginal bleeding and discomf ort. Resear ch int o when and ho w frequent ly 
+membrane sw eeping should be carried out t o maximise it s effectiv eness and acceptability 
+would be of v alue. 
+6 Vaginal dinopr ostone 
+What ar e the eff ectiv eness, saf ety and mat ernal acceptability of: 
+• different r egimens of v aginal dinopr ostone, stratified b y: clinical indications; cer vical 
+and membrane status; parity; and pr evious caesar ean bir th 
+• different management policies f or unsuccessful induction of labour wit h vaginal 
+dinopr ostone (additional dinopr ostone, o xytocin, electiv e caesar ean bir th or dela y of 
+induction, if appr opriat e). [2008] 
+Why this is im portant 
+Despit e extensiv e studies carried out o ver the past 30 y ears t o det ermine t he most 
+effectiv e wa ys of inducing labour wit h vaginal dinopr ostone, uncer tainties r emain about 
+how best t o apply t hese agent s in t erms of t heir dosage and timing. It w ould be 
+particularly useful t o understand mor e clearly wh y vaginal dinopr ostone is unsuccessful in 
+inducing labour in some w omen. 
+7 Setting f or induc tion o f labour 
+Is it saf e, eff ectiv e and cost eff ectiv e to carr y out induction of labour in an outpatient 
+setting? What ar e the adv antages and disadv antages of such an appr oach, taking int o 
+account w omen's views? [2008] 
+Why this is im portant 
+In line wit h the wa y healt hcare has de veloped in man y areas of acut e car e, there is an 
+increasing desir e to reduce t he time w omen spend in hospital. Se veral unit s are already Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 29
+of 41exploring outpatient induction of labour policies and t here is a need t o study t his appr oach 
+in order t o det ermine r elativ e risks and benefit s, as w ell as acceptability t o women. Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 30
+of 41Rationale and im pact 
+These sections briefly e xplain wh y the committ ee made t he recommendations and ho w 
+they might aff ect practice. 
+Induc tion o f labour f or pr egnanc y lasting long er 
+than 41 w eeks 
+Recommendations 1 .1.3 and 1 .1.6, and recommendations 1 .2.3 to 1.2.5, 1.2.8 and 1 .2.9 
+Why the c ommi ttee made the r ecommenda tions 
+Based on t heir kno wledge and e xperience t he committ ee made r ecommendations on t he 
+advice t hat should be pr ovided t o all w omen in early pr egnancy about mode of bir th, the 
+process of inducing labour , and t he impact t his ma y have on t heir place of bir th, mode of 
+birth and on t heir e xperience of bir th. The committ ee also made r ecommendations about 
+how these discussions ma y need t o be r evisited in lat er pr egnancy , or if w omen decline 
+induction. 
+Ther e was e vidence t hat caesar ean bir th, perinatal mor tality and neonatal int ensiv e car e 
+unit admission ar e reduced b y earlier induction of labour (at 4 1+0 w eeks) compar ed to 
+later induction (at 42+0 w eeks or aft er). Ho wever, there was not enough e vidence, so t he 
+committ ee made a recommendation f or resear ch to identify t he optimal timing of induction 
+more precisely . 
+The committ ee w ere awar e that data fr om t he 2020 MBRRA CE-UK r epor t on perinatal 
+mortality had sho wn that babies born t o cer tain gr oups of w omen ma y be at higher risk of 
+stillbir th and chose t o highlight t his in t he guideline. As there was no e vidence, t he 
+committ ee made a recommendation f or resear ch to identify t he optimal timing of induction 
+in groups of w omen who ma y be at higher risk of stillbir th. 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendations decr ease t he gestational age at which induction of labour is 
+discussed t o prevent pr olonged pr egnancy , and ma y incr ease t he number of w omen who Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 31
+of 41under go induction. The r ecommendations on monit oring ma y also incr ease t he number of 
+women who decline induction and t hen choose t o have additional monit oring. Bot h these 
+factors ma y incr ease r esour ce use in t he NHS. 
+Return t o recommendations 1 .1.3 and 1 .1.6 
+Return t o recommendations 1 .2.3 to 1.2.5, 1.2.8 and 1 .2.9 
+Induc tion o f labour f or pr elabour ruptur e of the 
+membr anes 
+Recommendations 1 .2.12, 1.2.15 and 1 .2.16 
+Why the c ommi ttee made the r ecommenda tions 
+The committ ee w ere awar e of t he recommendations in t he NICE guideline on neonatal 
+infection t hat advised immediat e induction of labour or caesar ean bir th aft er pr eterm 
+prelabour ruptur e of t he membranes betw een 34+0 w eeks and 37+0 w eeks in w omen 
+with a positiv e group B str eptococcus t est, and so added t his recommendation t o this 
+section of t he guideline. 
+Based on t heir kno wledge and e xperience of t he risks of gr oup B str eptococcal inf ection t o 
+the bab y aft er ruptur e of t he membranes, t he committ ee agr eed t hat wit h prelabour 
+ruptur e of t he membranes aft er 37+0 w eeks in w omen wit h a positiv e group B 
+streptococcus t est, immediat e induction of labour or caesar ean bir th would also be 
+recommended. 
+In women who did not ha ve a positiv e group B str eptococcus t est, but who had pr elabour 
+ruptur e of t he membranes aft er 37+0 w eeks, t he committ ee w ere awar e that e xpectant 
+management f or 24 hours was an option as t he risk of inf ection t o the bab y was lo w. 
+However, after that period, induction should be advised as t he committ ee w ere awar e that 
+prolonged pr egnancy at t erm aft er ruptur e of t he membranes can incr ease risks t o the 
+baby, and t hey therefore advised t hat bir th options should be discussed wit h women who 
+choose not t o have induction of labour aft er 24 hours. Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 32
+of 41How the r ecommenda tions mig ht affect practice 
+The r ecommendations will r einforce curr ent practice. 
+Return t o recommendations 
+Induc tion o f labour f or suspe cted fetal macr osomia 
+Recommendations 1 .2.24 and 1 .2.25 
+Why the c ommi ttee made the r ecommenda tions 
+Ther e was some e vidence of bot h benefit s and harms f or induction of labour and f or 
+expectant management in w omen wit hout diabet es wit h suspect ed fetal macr osomia, but 
+there was uncer tainty ar ound t his e vidence, par ticularly r elating t o the risk of perineal 
+tears. As t here was not enough e vidence t o recommend one met hod o ver anot her, the 
+committ ee recommended t hat w omen should be pr ovided wit h information about diff erent 
+modes of bir th so t hey can mak e an inf ormed decision, and t hat r ecruitment int o relevant 
+clinical trials should be suppor ted. 
+How the r ecommenda tions mig ht affect practice 
+Currently, there is v ariation in clinical practice and so t he recommendations ma y mean an 
+increase in consultation time t o counsel w omen appr opriat ely in some ar eas. This is not 
+expect ed to lead t o a substantial r esour ce impact at national le vel. 
+Return t o recommendations 
+Induc tion o f labour f or in trauterine f etal de ath 
+after pr evious c aesar ean bir th 
+Recommendations 1 .2.30 and 1 .2.32 
+Why the c ommi ttee made the r ecommenda tions 
+In the absence of e vidence, t he committ ee made r ecommendations based on t heir Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 33
+of 41knowledge and e xperience and also made a recommendation f or resear ch on intraut erine 
+fetal deat h aft er pr evious caesar ean bir th. The committ ee agr eed t hat t he diff erent 
+options f or bir th should be discussed wit h women aft er intraut erine f etal deat h if t hey 
+have had a pr evious caesar ean bir th, and t heir choice should be r espect ed. The y also 
+agreed t hat w omen wit h IUFD should be car ed for on a one-t o-one basis and monit ored. 
+The committ ee explained t hat, aft er intraut erine f etal deat h, women wit h a scarr ed ut erus 
+are at incr eased risk of ut erine ruptur e. This should be tak en int o account when 
+considering options f or bir th and if induction is carried out, ut erine contractions should be 
+carefully monit ored. 
+The committ ee discussed t hat mif eprist one 600 mg daily f or 2 days is appr oved for the 
+induction of labour f ollowing intraut erine f etal deat h when pr ostaglandin or o xytocin 
+cannot be used, but t hat no e vidence f or its saf ety or efficacy in w omen wit h a pr evious 
+caesar ean bir th had been identified and so t hey were unable t o recommend it. The 
+committ ee discussed t hat in w omen wit h intraut erine f etal deat h and no pr evious 
+caesar ean bir th a lo wer dose of mif eprist one was used t o sensitise t he m yometrium t o 
+prostaglandin-induced contractions, f ollowed by a pr ostaglandin ( dinopr ostone or 
+misopr ostol). Ho wever, the committ ee w ere awar e that bot h dinopr ostone and misopr ostol 
+are contraindicat ed aft er pr evious caesar ean bir th and so made a r ecommendation t o 
+state this. 
+The committ ee recognised t hat mechanical met hods of induction ma y be saf e to use in 
+women wit h a pr evious caesar ean bir th, and so t hey advised t hat t hese could be 
+consider ed. This also br ought t he recommendations f or induction aft er a pr evious 
+caesar ean bir th for women wit h live babies or aft er intraut erine f etal deat h, in line wit h 
+each ot her. 
+How the r ecommenda tions mig ht affect practice 
+Currently, there is v ariation in t he management of w omen aft er an intraut erine f etal deat h 
+who ha ve had pr evious caesar ean bir th, so t he recommendations ma y mean an incr ease in 
+consultation time t o counsel w omen appr opriat ely in some ar eas, and an incr ease in 
+monit oring t o reduce t he risk of ut erine ruptur e. This is not e xpect ed to lead t o a 
+substantial r esour ce impact at national le vel. 
+Return t o recommendations Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 34
+of 41Methods f or induc tion o f labour 
+Recommendations 1 .3.4 to 1.3.10 
+Why the c ommi ttee made the r ecommenda tions 
+The committ ee agr eed t hat, in t heir e xperience, w omen v alue being inf ormed about t he 
+reason wh y cer tain tr eatment s are off ered, and t hat it should be made clear t o women t hat 
+the possible met hods f or induction of labour will depend primarily on t he readiness of t heir 
+cervix, which is assessed wit h a v aginal e xamination and r ecorded as t he Bishop scor e. 
+Ther e was good e vidence t hat v aginal dinopr ostone was eff ectiv e at pr omoting v aginal 
+birth wit hin 2 4 hours f or women wit h a Bishop scor e of 6 or less, wit hout significant ly 
+increasing t he risk of adv erse out comes f or the w oman or her bab y. When t he diff erent 
+preparations of v aginal dinopr ostone w ere compar ed, t here was litt le evidence t o 
+demonstrat e that one pr eparation was superior t o anot her. Ther efore, the committ ee 
+agreed t hat it was appr opriat e to off er a choice of pr eparation, depending on a vailability 
+and t he w oman's pr eference. Ther e was some e vidence t hat dinopr ostone pr eparations 
+could lead t o hyperstimulation wit h fetal hear t rate changes. 
+Misopr ostol was as eff ectiv e as dinopr ostone at pr omoting v aginal bir th wit hin 2 4 hours. 
+Ther e was e vidence sho wing a risk of h yperstimulation wit h misopr ostol, alt hough t his was 
+predominant ly wit h higher doses and v aginal pr eparations, and t he committ ee took int o 
+consideration pr evious MHRA warnings r elating t o the misopr ostol vaginal inser t about t his 
+risk. The committ ee not ed that, f or the lo w dose oral pr eparations of misopr ostol, the risk 
+of hyperstimulation appear ed to be t he same or lo wer than wit h the dinopr ostone v aginal 
+preparations. Ther efore, the committ ee agr eed t hat misopr ostol could be an alt ernativ e to 
+dinopr ostone f or induction of labour , par ticularly f or women who w ould pr efer an oral 
+preparation. 
+Ther e was e vidence t hat t here was no incr eased risk of h yperstimulation when using 
+mechanical met hods f or induction of labour (including osmotic cer vical dilat ors and 
+balloon cat heters). Balloon cat heters w ere also eff ectiv e at pr omoting v aginal bir th wit hin 
+24 hours and did not appear t o mark edly incr ease t he risk of ot her adv erse out comes. 
+Ther e was no e vidence f or the eff ectiv eness of osmotic cer vical dilat ors at pr omoting 
+vaginal bir th wit hin 2 4 hours, but t hey too did not appear t o mark edly incr ease t he risk of 
+other adv erse out comes. Ther efore, the committ ee agr eed t hat t hese mechanical met hods 
+could be consider ed for induction of labour f or women, par ticularly when t here is a Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 35
+of 41concern about h yperstimulation. 
+Ther e was v ery little evidence f or women wit h a Bishop scor e of mor e than 6 . However, 
+the committ ee not ed that amniot omy and intra venous o xytocin was t he most eff ectiv e 
+method t o promot e vaginal bir th wit hin 2 4 hours acr oss t he whole population. This was in 
+keeping wit h their clinical e xperience, so t hey agr eed t hat t his should be t he first choice 
+for induction of labour f or women in t his gr oup. 
+How the r ecommenda tions mig ht affect practice 
+Most hospitals use t he recommended met hods f or induction of labour alr eady , so t hese 
+recommendations will not r esult in a significant change of practice. The advice specific t o 
+women wit h a Bishop scor e of mor e than 6 should pr ovide mor e individualised car e and 
+standar dise practice f or this subgr oup of w omen. 
+Return t o recommendations Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 36
+of 41Context 
+Induced labour ma y be r ecommended in cir cumstances when it appears t hat t he benefit s 
+outw eigh t he risks f or the mot her and bab y of continuing wit h the pr egnancy , but wit h the 
+aim of still enabling a v aginal bir th. Ho wever, induction has an impact on t he bir th 
+experience of w omen as it: 
+• removes the satisf action of achie ving t he mor e natural bir th that man y woman hope 
+for 
+• is generally mor e painful t han spontaneous labour 
+• is mor e likely to lead t o additional int erventions such as assist ed or operativ e bir th, 
+including caesar ean bir th, and 
+• is mor e likely to need epidural analgesia. 
+Induction of labour is a common pr ocedur e, wit h appr oximat ely a t hird of all w omen in t he 
+UK under going induction, and t here are a v ariety of met hods a vailable using bot h 
+pharmacological tr eatment s and mechanical met hods. The choice of met hod depends on 
+the readiness of t he w oman's cer vix (assessed using a v aginal e xamination, and 
+categorised using t he Bishop scor e), whet her t he membranes ha ve ruptur ed, and t he 
+woman's pr eferences. The options a vailable should be discussed and t his discussion 
+should include: 
+• an awar eness of t he efficacy and possible adv erse eff ects for the w oman and her 
+baby associat ed wit h each met hod, and 
+• the lik elihood t hat additional int erventions (such as emer gency caesar ean bir th) might 
+be needed if t he induction is not successful. 
+Women can choose not t o have induction of labour , and appr opriat e car e should t hen be 
+offered to optimise t he out come of t he pr egnancy while r especting t he w oman's wishes. 
+The aim of t his guideline is t o giv e advice t o healt hcare professionals pr oviding obst etric 
+services, and t o pregnant w omen, on t he inf ormation and suppor t women and t heir 
+families and bir th par tners should be off ered when making decisions about induction of 
+labour . It also aims t o define t he cir cumstances when induction of labour ma y be 
+appr opriat e, and identify t he most eff ectiv e wa y to induce labour , including choice of Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 37
+of 41method, setting, timing, monit oring and pain r elief. Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 38
+of 41Finding mor e inf orma tion and c ommi ttee 
+details 
+To find NICE guidance on r elated topics, including guidance in de velopment, see the NICE 
+topic page on intrapar tum car e. 
+For full details of t he evidence and t he guideline committ ee's discussions, see t he 
+evidence r eviews . You can also find inf ormation about how the guideline was de veloped , 
+including details of t he committ ee. 
+NICE has pr oduced tools and r esour ces t o help y ou put t his guideline int o practice . For 
+general help and advice on putting our guidelines int o practice, see resour ces t o help y ou 
+put NICE guidance int o practice . Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 39
+of 41Update inf orma tion 
+November 2021: We have review ed the evidence and made new r ecommendations on t he 
+induction of labour f or pr evention of pr olonged pr egnancy , induction of labour in 
+suspect ed fetal macr osomia, induction of labour f or intraut erine f etal deat h aft er pr evious 
+caesar ean bir th and pharmacological and mechanical met hods t o induce labour . These 
+recommendations ar e mark ed [2021] . 
+We have also made some changes wit hout an e vidence r eview . These r ecommendations 
+are mark ed [2008 , amended 2021] . 
+Recommendations mark ed [2008] last had an e vidence r eview in 2008 . In some cases 
+minor changes ha ve been made t o the w ording t o bring t he language and style up t o dat e, 
+without changing t he meaning. 
+Changes t o the 2008 r ecommendations, sho wing t he original and updat ed w ording f or 
+comparison, ar e list ed in supplement 6 . 
+Minor changes since publication 
+October 2023: We updat ed the links t o the NICE guideline on intrapar tum car e, which has 
+been updat ed. 
+May 2023 : Following stak eholder f eedback, w e amended r ecommendations 1 .2.17 and 
+1.2.32 to mak e it clear t hat w omen should ha ve a discussion about met hods of induction 
+covering matt ers r elevant t o all possible options. 
+December 2022: We updat ed the links in r ecommendations 1 .5.3 and 1 .5.5 to refer to the 
+NICE guideline on f etal monit oring in labour . 
+ISBN: 9 78-1-47 31-4327- 2 Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 40
+of 41Accreditation Inducing labour (NG20 7)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 4 1
+of 41

@@ -1,0 +1,1969 @@
+# Extracted from: BMS - 2024 - Management of unscheduled bleeding on HRT.pdf
+# Guideline ID: bms-2024-management-of-unscheduled-bleeding-on-hrt
+# Content length: 131769 characters
+# Processing date: 1735630252.4687278
+
+BMS | GUIDELINE1 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.This joint guideline has been prepared on behalf of the British Menopause Society, 
+in partnership with the British Society of Gynaecological Endoscopy, British 
+Gynaecological Cancer Society, Faculty of Sexual & Reproductive Healthcare, 
+Getting It Right First Time (GIRFT), Royal College of General Practitioners and the 
+Royal College of Obstetricians & Gynaecologists.Management of unscheduled bleeding 
+on hormone replacement therapy (HRT)
+The British Menopause Society (BMS) is the specialist authority for 
+menopause and post reproductive health in the UK. The BMS educates, 
+informs and guides healthcare professionals, working in both 
+primary and secondary care, on menopause and all aspects of post 
+reproductive health.
+BMS guidelines, prepared by the BMS medical advisory council in partnership 
+with other specialist organisations and Royal Colleges, address key disorders 
+and controversial topics relating to menopause and post reproductive health. 
+They reflect new studies together with recent medical and scientific information 
+from articles in professional journals, plus informal consensus.
+The guidelines are evidence-based, comprehensively referenced and peer 
+reviewed and they are regularly updated. 
+BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)2 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.CONTENTS
+Contributors
+Key Messages
+Introduction
+1. Assessment of women presenting with unscheduled bleeding on HRT 
+2. Endometrial cancer risk factors in women taking HRT 
+3. When to investigate unscheduled bleeding on HRT 
+4. How should unscheduled bleeding on HRT be investigated 
+5. Adjusting HRT to reduce unscheduled bleeding episodes 
+Abbreviations and Key terms 
+References
+Appendices
+1. Licensed estrogen dose and proportionate progestogen dose
+2. Endometrial ultrasound reporting criteria for women with unscheduled bleeding 
+3. Recommendations following investigations in women taking HRT
+4. Auditable topics 
+5. Research prioritiesBMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)3 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.Contributors
+Lead Authors on behalf of the British Menopause Society (BMS)
+Dr Kristyn Manley Consultant Gynaecologist, University Hospitals Bristol & Weston NHS 
+Foundation Trust
+Mr Timothy Hillard Consultant Gynaecologist, University Hospitals Dorset NHS Trust, Poole
+Guideline Development Working Group
+Dr Katie Barber Primary Care Physician, Oxford
+ British Menopause Society
+Professor Justin Clark Consultant Gynaecologist, Birmingham Women’s Hospital
+ British Gynaecological Endoscopy Society
+Mr Haitham Hamoda Consultant Gynaecologist, King’s College Hospital, London 
+ British Menopause Society 
+Ms Debra Holloway Consultant Gynaecology Nurse, Guys and St Thomas’ Hospital, London
+Mrs Geeta Kumar Consultant Gynaecologist, Betsi Cadwaladr University Health Board, 
+Wales
+ Royal College of Obstetricians and Gynaecologists
+Dr Bronwyn Middleton Consultant Gynaecologist, University Hospitals Sussex NHS Trust
+Dr Jo Morrison Consultant Gynaecological Oncologist, Taunton
+ British Gynaecological Cancer Society
+Mrs Maria Oyston Programme Manager, NHS England, Elective Recovery and 
+Transformation Team
+Mr Mark Pickering Post CCT Fellow, Gynaecology, University Hospitals Dorset NHS Trust
+Dr Jenifer Sassarini Consultant Gynaecologist, NHS Greater Glasgow and Clyde
+ Scottish Menopause Network
+Dr Nicola Williams Primary Care Physician, Wandsworth, London
+Additional Contributors
+• British Menopause Society Medical Advisory Council
+• British Gynaecological Cancer Society Scientific Advisory Council
+• Royal College of Obstetricians and Gynaecologists Clinical Quality Board
+• Scottish Menopause Network
+• SWAG Cancer Alliance 
+• Dr Janet Barter, President of the Faculty of Sexual and Reproductive Healthcare
+• Dr Heather Currie, Associate Specialist Gynaecologist, Dumfries and Galloway Royal Infirmary
+• Dr Heike Gleser, Consultant, Tayside Sexual and Reproductive Health Service
+• Dr Tracy Jackson, Gynaecological Cancer Unit Lead, Leeds Teaching Hospitals NHS Trust
+• Dr Amy Keightly, Gynaecological Cancer Unit Lead, Great Western Hospital, Swindon
+• Dr Amy Kerstein, Primary Care Physician, Oxford
+• Dr Andrew Phillips, Consultant Gynaecological Oncologist, University Hospitals Derby NHS Trust
+• Dr Sarah Quinn, Gynaecology Specialist Registrar and RCOG Trainees’ Committee Member 
+• Mr David Richmond, GIRFT Gynaecology National LeadBMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)4 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.Key Messages 
+Assessment of women presenting with unscheduled bleeding on HRT
+• When women present with unscheduled bleeding on HRT, clinical assessment 
+should start with a comprehensive review detailing bleeding patterns, HRT 
+preparations and individual risk factors for cancer. Offer an examination 
+(abdominal, pelvic) and, where relevant, initial investigations such as cervical 
+screening, lower genital tract swabs and body-mass index (BMI).
+Endometrial cancer risk factors in women taking HRT
+• Risk factors for endometrial hyperplasia and cancer, independent of 
+HRT, should be identified. Major risk factors are BMI ≥ 40 and hereditary 
+conditions such as Lynch or Cowden syndrome. Minor risk factors include 
+BMI 30-39, diabetes and polycystic ovarian syndrome (PCOS). Optimisation 
+of modifiable factors can, in themselves, reduce episodes of unscheduled 
+bleeding on HRT and endometrial cancer risk.
+• A monthly progestogen dose, in proportion to the estrogen dose, is 
+recommended in women with a uterus. 
+• In women using sequential HRT (sHRT), offer a minimum of 10 days 
+norethisterone (NET) or medroxyprogesterone acetate (MPA), or 12 days of 
+micronised progesterone, per month.
+• Women taking a sequential preparation (sHRT) over the age of 45 should be 
+offered, after five years of use or by age 54 (whichever comes first), a change 
+to continuous combined (ccHRT). 
+When to investigate unscheduled bleeding on HRT 
+• In the absence of risk factors for endometrial cancer, offer adjustments in the 
+progestogen or HRT preparation, for 6 months in total, if unscheduled bleeding 
+a) occurs within six months of starting HRT or b) is persisting three months after a 
+change in HRT dose or preparation. 
+• If unscheduled bleeding continues in low-risk women, after six months of 
+adjustments, discuss the options of an urgent ultrasound (within six weeks) 
+versus weaning off HRT and consideration of non-hormonal alternatives (to avoid 
+invasive investigations). 
+• For those women who elect to stop HRT, if the bleeding has settled at a 4-week 
+follow-up, and continued cessation of HRT is acceptable, no further investigations 
+are required. If the bleeding has settled at a 4-week follow-up and there is a 
+preference to restart HRT, offer adjustments in HRT for six months and then an 
+urgent ultrasound if bleeding is heavy / persistent during the 6 months or, is 
+continuing after this interval.
+• Offer an urgent TVS (within 6 weeks) if the first presentation with bleeding occurs 
+more than six months after initiating, or three months after changing, the HRT 
+preparation.
+• Offer an urgent TVS (within 6 weeks), irrespective of interval since starting, or 
+changing, HRT preparations if a) bleeding is prolonged / heavy or, b) there are 2 
+minor risk factors for endometrial cancer.
+• Offer an urgent suspicion of cancer pathway (USCP) referral to women with one 
+major or three minor risk factors for endometrial cancer – irrespective of bleeding 
+type or interval since starting or changing HRT preparations. Adjustments to the 
+progestogen, or stopping HRT, should be offered whilst awaiting assessment.BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)5 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.How should unscheduled bleeding on HRT be investigated 
+• Women with unscheduled bleeding, in the presence of a uniform 
+endometrium which is fully visualised, and measures ≤ 4 mm with ccHRT or ≤ 
+7 mm with sHRT, can be reassured that the risk of endometrial cancer is low. 
+Offer HRT adjustments for 6 months and then offer endometrial assessment, 
+on an urgent pathway, if bleeding increases during the 6 months or, is 
+continuing after this interval.
+• Women with a thickened endometrium on TVS (> 4 mm for ccHRT or > 7 
+mm for sHRT) should be offered referral to the urgent suspicion of cancer 
+pathway (USCP) for endometrial assessment (biopsy and / or hysteroscopy). 
+• In the presence of a normal endometrial biopsy, discuss adjustments in the 
+progestogen and provide reassurance for three months. If hysteroscopy and 
+biopsy are normal, reassurance can be provided for six months.
+Adjusting HRT to reduce unscheduled bleeding episodes 
+• Assess adherence and understanding of how to use the prescribed 
+preparation including dose and duration of progestogen – for example, 
+would a combined patch or pill reduce administration errors when compared 
+to a separate estrogen and progestogen component. 
+• Offer all women a 52 mg LNG-IUD; this preparation reduces episodes of 
+unscheduled bleeding when compared to all other preparations.
+• Oral preparations provide higher rates of amenorrhoea when compared to 
+transdermal preparations and could be offered, if there are no risk factors 
+for thrombosis, as a) a first-line therapy or b) to women who have recurrent 
+unscheduled bleeding with transdermal preparations.
+• Offer vaginal estrogens if there are atrophic findings on examination.BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)6 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.UNSCHEDULED BLEEDING ON HRT 
+1. Assess cancer risk factors and bleeding pattern 
+2. Identify HRT regimen, duration, compliance 
+3. Offer examination
+4. Offer investigations if indicated e.g. cervical screening/genital swabs
+ULTRASOUND 
+• sHRT ET > 7 mm 
+• ccHRT ET > 4 mm
+• Endometrium incompletely visualised
+MINOR risk factors for endometrial cancer 
+• BMI 30-39
+• Unopposed estrogen > 3 months but < 6 months
+• Tricycling HRT (quarterly progestogen) for > 6 but < 12 months
+• > 6 months but < 12 months of using norethisterone or 
+medroxyprogesteorne acetate for < 10 days / month or, micronised 
+progesterone for < 12 days / month, as part of a sequential regimen
+• Where the progestogen dose is not in proportion to the estrogen 
+dose for > 12 months (including expired 52 mg LNG-IUD)
+• Anovulatory cycles, such as in Polycystic ovarian syndrome
+• DiabetesMAJOR risk factors for endometrial cancer 
+• BMI ≥ 40
+• Genetic predisposition (Lynch / Cowden syndrome)
+• Estrogen-only HRT for > 6 months in women with a uterus 
+• Tricycling HRT (quarterly progestogen) for > 12 months
+• Prolonged sHRT regimen: use for more than 5 years when started in 
+women aged ≥ 45
+• 12 months or more of using norethisterone or 
+medroxyprogesterone acetate for < 10 days / month or, micronised 
+progesterone for < 12 days / month, as part of a sequential regimenOPTIMISE HRT 
+Endometrial assessment 
+if bleeding ongoing 
+after 6 months• Heavy / persistent bleeding, or
+• 2 minor cancer risk factors, or
+• More than 6 months since starting HRT, or
+• More than 3 months after a change in dose 
+or preparation1 major or 3 minor risk factors 
+for endometrial cancer?
+Urgent suspicion 
+of cancer 
+pathway; for TVS
+USCP for 
+endometrial 
+assessmentOPTIMISE HRT 
+for 6 months
+Bleeding 
+ongoing or 
+increasing?
+Primary Care Primary or 
+secondary care 
+responsibilitysHRT: sequential ccHRT: continuous combined 
+ET: endometrial thickness TVS: transvaginal ultrasound
+USCP: urgent suspicion of cancer pathwayUSCPUrgent TVS
+(within 6 weeks)YES
+YES
+YESYESNO
+NO
+NOBMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)7 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.Introduction
+Unscheduled bleeding on hormone replacement therapy (HRT) is defined as irregular 
+bleeding which occurs after initiating, or changing, a HRT preparation which should 
+be ‘bleed free’ – continuous combined hormone replacement therapy (ccHRT) or, 
+which occurs, in addition to the scheduled monthly withdrawal bleed in persons 
+taking sequential preparations (sHRT).(1) Unscheduled bleeding within the first six 
+months of initiating HRT or, within three months of a change in dose or preparation 
+in those already established on HRT, is common. It can affect up to 38% of people 
+using sHRT and 41% using ccHRT.(2) It is a major factor leading to repeat consultations 
+and cessation of HRT.(3) 
+HRT was prescribed to 1.9 million women in the UK in 2021/2022 – a 35% increase 
+from the preceding year. Over the past decade, prescriptions have increased annually, 
+by 13.6%, in women aged 50 years or older.(4) In England, estradiol gel and micronised 
+progesterone were the top two prescribed HRT items in 2022 with total number 
+of identified persons prescribed micronised progesterone increasing by 125%.(5) In 
+parallel with this increase in prescribing there has been a rapid rise in unscheduled 
+bleeding on HRT and a 43% increase, over the past 3 years, in referrals to the Urgent 
+Suspicion of Cancer Pathway (USCP). Overall this change in referral pattern does not 
+appear to have resulted in more cancers being diagnosed, which rose by 2% over the 
+same interval.(1, 6, 7) An increase in referrals, for those who appear to be at lower risk of 
+endometrial cancer, may impact on the ability of organisational structures to attain 
+the national ‘28-day faster cancer diagnosis recommendations’ and increase anxiety 
+in women awaiting assessment.
+The reasons behind this increase are multiple. As well as the steady increase in the use 
+of HRT since the NICE guidance in 2015(8), there has been an increase in use of HRT 
+amongst peri-menopausal women who, by definition, often have irregular bleeding. 
+The wider availability of transdermal preparations has enabled women with complex 
+comorbidities, which may be independent risk factors for endometrial cancer, to 
+access HRT. In addition, there is an increasing tendency for off-license prescribing of 
+higher dose estrogen with sub-optimal dosages of progestogen. Whilst all irregular 
+bleeding is distressing, there is a need to prioritise investigations for those with a 
+potential increased risk of endometrial cancer, over those in whom endometrial 
+cancer is unlikely.
+The purpose of this guideline is to provide recommendations which stratify 
+management for unscheduled bleeding according to risk of endometrial cancer, 
+ensuring best outcomes for all women whilst using NHS resources appropriately. BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)8 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.Methodology
+On behalf of the British Menopause Society (BMS) an expert review panel was 
+established, including primary and secondary care clinicians with expertise in the 
+management of menopause, with representatives from key related organisations, 
+including the Royal College of Obstetricians & Gynaecologists (RCOG), the British 
+Gynaecological Cancer Society (BGCS) and the British Society for Gynaecological 
+Endoscopy (BSGE), and service development partners from NHS England and GIRFT 
+(Getting it Right First Time). For each topic, a focused literature review was completed 
+to develop evidence led recommendations which were ratified by consensus 
+review within the panel and by guideline groups. In many areas there is a paucity 
+of evidence and the recommendations are based on expert opinion. This is a live 
+document and as new evidence becomes available, the guidance in these areas will 
+be updated. 
+No modelling or cost analyses have been performed in drawing up this guideline. 
+This is a clinical guideline designed to facilitate and standardise the management 
+of women presenting with unscheduled bleeding on HRT. Our focus is on utilising 
+resources efficiently to ensure women are not over investigated whilst at the same 
+time not missing those in whom endometrial cancer is a possibility. It is recognised 
+that many organisations have already drawn up their own guidelines based on their 
+own resources and it is hoped this document will serve as a guide to support and 
+inform the further development of these guidelines. Suggested topics for audit are 
+included.
+Within this document we use the terms woman and women’s health. However, it 
+is important to acknowledge that it is not only women for whom it is necessary 
+to access women’s health and reproductive services in order to maintain their 
+gynaecological health. Gynaecological services and delivery of care must be 
+appropriate, inclusive and sensitive to the needs of those individuals whose gender 
+identity does not align with the sex they were assigned at birth.BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)9 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.Section 1: Assessment of women presenting with unscheduled bleeding 
+on HRT
+When women present with unscheduled bleeding on HRT, clinical assessment 
+should start with a comprehensive review detailing bleeding patterns, HRT 
+preparations and individual risk factors for cancer. Offer an examination 
+(abdominal, pelvic) and, where relevant, initial investigations such as cervical 
+screening, lower genital tract swabs and body-mass index (BMI).
+History
+• Last menstrual period or withdrawal bleed (before and during HRT)
+• Bleeding pattern before starting HRT
+• Pelvic pain and / or deep dyspareunia
+• Discharge
+• Vulvovaginal and / or urinary symptoms
+• Bleeding pattern: 
+— Number of episodes per month
+— Type; spotting, period-like, flooding
+— Duration of bleeding; if prolonged, is it days or weeks
+— Regularity; such as mid-cycle or before a withdrawal bleed
+— Precipitating factors; such as wiping after urinating or post-coital 
+• HRT use: 
+— Duration since initiation or change in HRT preparation
+— Current preparation, including dose of estrogen and progestogen
+— Type of progestogen, total days in the month it is taken and route (oral / 
+vaginal)
+— Levonorgestrel intrauterine device (52 mg LNG IUD) – type, dose, insertion 
+date, thread checks and whether correctly sited
+— Adherence to estrogen and progestogen regimen
+— Prior preparations and interval of use (including adverse effects that led to 
+cessation)
+• Application: 
+— Where is it applied
+— If a patch is used, is it sticking well and is there any irritation
+— Awareness of taking the correct order of patches or pills if a sequential 
+preparation
+— Other sources of estrogen (such as herbal/bioidentical)
+— Contraceptive usage, if any(9)
+— Pregnancy risk; compliance with progestogen-only pill (POP), date of last 
+medroxyprogesterone injection, insertion date of implant
+— Cervical screening history: do not delay ongoing assessment if the bleeding 
+pattern prevents smear taking
+— Sexual history
+— Drug interactions; such as anti-epileptics, anti-fungals, COVID vaccinations, 
+St John’s Wort 
+• Malabsorption syndromes 
+• Endometrial cancer risk factors; such as genetic predisposition to endometrial 
+cancer (Lynch / Cowden Syndrome), BMI ≥ 30, polycystic ovary syndrome (PCOS) 
+and diabetes.BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)10 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.Examination and initial investigations
+To enable informed consent, discuss what the examination is likely to involve, the 
+intended benefits of completing these and the benefits and risks of any alternate 
+options, including no examination or investigations. Offer, where appropriate and 
+acceptable, the following assessments: 
+• Abdominal; assess for fibroids, ovarian mass, pain
+• Vulvo-vaginal; assess for atrophy, dermatoses, mass, ulceration, prolapse
+• Cervical appearance; assess for mass, polyp, ectropion with contact bleeding, 
+visible IUD threads 
+• Genital tract swabs; vulvovaginal including chlamydia / gonorrhoea (CT/GC) 
+screen – if indicated by sexual history i.e. new partner(s) in the past two years, no 
+exclusive relationship or current sexually transmitted infection symptoms
+• Cervical screening if overdue
+• Pregnancy test (if appropriate)
+• BMIBMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)1 1 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.Section 2: Endometrial cancer risk factors in women taking HRT
+The incidence of endometrial cancer in relation to a woman’s individual risk factors 
+and specific HRT preparation are outlined in this section. Table 1 summarises this 
+evidence and categorises these risk factors into major or minor, to enable triage 
+of women who present with unscheduled bleeding onto the correct assessment 
+pathway (non-urgent, urgent and urgent suspicion of cancer pathway (USCP)) as 
+outlined in Sections 3 and 4. 
+Tables 2 and 3 (combined in Appendix 1) outline prescribed estrogen dosages, 
+in relation to specific transdermal and oral preparations, and the recommended 
+progestogen dose, for ultra-low to high dose estrogen. 
+Table 1: Major and minor factors affecting risk of endometrial cancer in women 
+taking HRT
+Major risk factors • BMI ≥ 40
+ • Genetic predisposition to endometrial cancer (Lynch / 
+Cowden syndrome)
+ • Estrogen-only HRT for more than 6 months in women 
+with a uterus 
+ • Tricycling HRT (quarterly progestogen course) for more 
+than 12 months
+ • Prolonged sHRT regimen: use for more than 5 years 
+when started in women aged ≥ 45
+ • 12 months or more of using norethisterone or 
+medroxyprogesterone acetate for < 10 days / month or, 
+micronised progesterone for < 12 days / month, as part 
+of a sequential regimen
+Minor risk factors • BMI 30-39
+ • Unopposed estrogen for more than 3 months but less 
+than 6 months
+ • Tricycling HRT (quarterly progestogen course) for more 
+than 6 months but less than 12 months
+ • More than 6 months, but less than 12 months, of using 
+norethisterone or medroxyprogesterone acetate for < 
+10 days / month or, micronised progesterone for < 12 
+days / month, as part of a sequential regimen
+ • Where the progestogen dose is not in proportion to the 
+estrogen dose for > 12 months (including expired 52 
+mg LNG-IUD)*
+ • Anovulatory cycles, such as in PCOS
+ • Diabetes
+* There is limited evidence relating to the impact on endometrial cancer risk; this should be a research priority to enable improved stratification of 
+risk/pathways (see Table 3).BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)12 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.Endometrial cancer risk factors independent of HRT use
+• Risk factors for endometrial hyperplasia, independent of HRT, should be 
+identified. Major risk factors include BMI ≥ 40 and hereditary conditions 
+such as Lynch or Cowden syndrome. Minor risk factors include BMI 30-39, 
+diabetes and polycystic ovarian syndrome. Optimisation of modifiable 
+factors can, in themselves, reduce episodes of unscheduled bleeding on HRT 
+and endometrial cancer risk.
+Endometrial cancer is the fourth most common cancer in the UK; the reported 
+incidence in women who present with postmenopausal bleeding (PMB), i.e. those 
+who are not taking HRT, is 3-10%.(10, 11) The incidence increases with age; rates (per 
+100,000 women) rise sharply from the age of 55 and reach a peak at age 70 to 74. 
+The age-related incidence in the UK is 0.7% for women aged 50-54, 1.2% aged 55-59, 
+1.3% aged 60-64, and 1.5% aged 65-74.(12) 
+Genetic factors can increase risk by 30-50%, with conditions such as Lynch and 
+Cowden syndrome considered major factors.(13) Obesity is the strongest risk 
+factor for endometrial cancer with 40% of cases associated with this; BMI ≥ 40 
+confers a tenfold higher risk when compared to a BMI within the normal range.
+(14) Consideration of weight loss strategies, and support for this, is associated with a 
+reduction in endometrial hyperplasia and cancer risk.(15, 16) Other factors that affect the 
+bioavailability of estrogen and insulin-like growth factor-1 (IGF-1), such as diabetes, 
+PCOS and unstable liver disease, can increase endometrial cancer risk.(11) 
+Risk of endometrial cancer in HRT users who DO NOT report unscheduled 
+bleeding 
+Effect of HRT preparation on endometrial cancer risk
+• Inform amenorrhoeic postmenopausal women taking a continuous 
+combined preparation (ccHRT), which contains standard dose estrogen and a 
+proportionate progestogen dose, that endometrial cancer risk appears to be 
+lower than in non-HRT users. 
+• Women taking a sequential preparation (sHRT) over the age of 45 should be 
+offered, after five years of use or by age 54 (whichever comes first), a change 
+to ccHRT.
+• In women using sHRT, offer a minimum of 10 days norethisterone (NET) or 
+medroxyprogesterone acetate (MPA), or 12 days of micronised progesterone, 
+per month; recommending two weeks per 28 day cycle with progestogen 
+and two weeks without may help to reduce administration and prescribing 
+errors. 
+• A monthly progestogen dose, in proportion to the estrogen dose, is 
+recommended in women with a uterus. It should be noted that more than 
+six months of unopposed estrogen or 12 months of tricycling (estrogen 
+daily with a progestogen course every 3 months), are major risk factors for 
+endometrial cancer.
+• Counsel women there are limited data relating to the optimal progestogen 
+dose needed to provide endometrial protection in women taking high dose 
+estrogen (particularly in perimenopausal women taking sHRT).BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)13 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.Continuous combined HRT (ccHRT): 
+Administration of daily (continuous) progestogen suppresses endometrial 
+growth leading to amenorrhoea and atrophy.(17) This appears to reduce the risk 
+of endometrial cancer, compared with non-users, with the greatest effect seen in 
+women with a BMI ≥ 30.(18-20) In women who do not report unscheduled bleeding, 
+the risk of endometrial cancer with ultra-low to standard dose estrogen, and a 
+progestogen dose which is in proportion, is < 1%.(21) There are limited data assessing 
+risk with moderate or high dose estradiol use. Table 2 outlines prescribed estrogen, 
+in relation to specific transdermal and oral preparations for ultra-low, low, standard, 
+moderate and high dosages.
+Table 2: Prescribed estrogen dose for ultra-low, low, standard, moderate and 
+high dose regimens
+ Ultra-low dose Low Dose Standard dose Moderate dose High dose
+Oestrogel ½ pump 1 pump 2 pumps 3 pumps 4 pumps
+Sandrena 0.25 mg 0.5 mg 1 mg 1.5-2 mg 3 mg*
+Lenzetto spray 1 spray 2 sprays 3 sprays 4-5 sprays* 6 sprays*
+Patch 12.5 µg 25 µg 50 µg 75 µg 100 µg
+Oral estradiol 0.5 mg 1 mg 2 mg 3 mg^ 4 mg^
+* Off-license use ^ Off-license use – rarely required to achieve symptom control
+mg = milligrams µg = micrograms
+Sequential/cyclical HRT (sHRT): 
+In women over 50, who have no unscheduled bleeding and use 
+medroxyprogesterone acetate (MPA) or norethisterone (NET) for 10-12 days of 
+the month, the relative risk of endometrial cancer is similar to non-users. If these 
+progestogens are used for less than 10 days, this risk is three-fold higher after 
+six months use (RR 3.1, 95% CI 1.7-5.7).(21-23) Micronised progesterone (MP), in 
+conjunction with standard dose estrogen, provides endometrial protection if given at 
+a dose of 200mg for 12-14 days of the month for up to five years use.(24) 
+When compared to non-users, if sHRT (progestogen for 10-12 days) is used for 
+more than five years, the risk of endometrial cancer is almost three times higher (RR 
+2.9 (95% CI 1.8-4.6)).(21-23) In women who are perimenopausal at the natural age (≥ 
+age 45), switching to ccHRT should be offered after five years of sHRT or by age 54 
+(whichever comes first). It can also be considered after 12-18 months of sequential 
+use, if women want to try ccHRT to see if they can achieve a bleed-free regimen at an 
+earlier point.(25)
+Tricycling (Long-cycle) Progestogen use and shortened progestogen regimens
+This is where estrogen is given daily but a reduced progestogen course (7-10 days) 
+is given every three months. When compared to use of a monthly progestogen 
+course – NET or MPA for 10-12 days – the incidence of endometrial hyperplasia and 
+cancer is higher; 7.5% vs 0% at 12 months (p=0.005) and 11% vs 1.4% by 36 months 
+(p=0.01).(26, 27) The risk of endometrial cancer when tricycling incorporates moderate 
+or high dose estrogen, or micronised progesterone, is unknown.BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)14 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.If a shortened duration of progestogen is considered in women with an intolerance 
+to all progestogen types (including 52 mg LNG-IUD and off-license use of standard 
+dose estrogen with 150 micrograms of daily desogestrel or x3 noriday tablets i.e. 
+1.05 mg NET), and in whom hysterectomy is not suitable or acceptable, informed 
+counselling about endometrial risk, and the lack of evidence to support surveillance 
+accuracy (six monthly ultrasound), should be discussed and documented.
+Unopposed estrogen
+There is strong evidence to support an increased risk of endometrial cancer with 
+unopposed estrogen (i.e no progestogen use) in people with a uterus. A Cochrane 
+review(27) reported high rates of endometrial hyperplasia, compared with placebo, 
+after 12 and 24 months of standard dose unopposed estrogen use; OR 8.4 (95% CI 
+5.5-12.9) and OR 11.9 (95% CI 7.8-18.1) respectively. At one, two and three years, the 
+proportion of women diagnosed with endometrial hyperplasia was 14.7%, 35.5% and 
+62% (respectively) – compared with 0.3% in the placebo group. There are limited data 
+on risk with moderate or high dose unopposed estrogen use.
+Progestogen type and endometrial protection
+• Counsel peri- and postmenopausal women considering use of a 52 mg LNG-
+IUD that it can be used for endometrial protection with ultra-low to high 
+estrogen dosages for up to five years. 
+• Counsel women that a) tibolone and, b) progestogens (norethisterone, 
+medroxyprogesterone acetate, levonorgestrel, dydrogesterone, micronised 
+progesterone) when combined with standard dose estrogen, provide 
+equivalent protection against endometrial cancer. 
+• Women taking moderate or high dose estrogen should be informed that the 
+adequacy of endometrial protection provided by micronised progesterone 
+is uncertain. The use of 200 mg as a continuous preparation, and 300 mg as 
+a sequential preparation, should be offered if using high dose estrogen or if 
+unscheduled bleeding occurs with ultra-low to moderate dose estrogen. 
+Levonorgestrel 52 mg intra-uterine device (LNG-IUD) 
+Mirena® (52 mg LNG IUD) has a four-year license in the UK for progestogenic 
+opposition of estrogen within HRT. The Food and Drug administration recommends 
+use with a uterine depth less than or equal to 10 cm and NICE(28) advises against use if 
+submucosal fibroids are more than 3 cm. 
+Studies have shown all 52 mg LNG IUD offer sufficient endometrial protection 
+against ultra-low to high dose estrogen for up to five years of use in both peri- and 
+postmenopausal women.(29-33) As a result, it is common and safe practice to use the 
+52 mg LNG IUD for five years within HRT regimens (outside manufacturer’s license). 
+There are a paucity of data relating to endometrial protection when estrogen above 
+high dose is used and whether additional progestogen is required. Women should be 
+counselled about this and the limitations of ultrasound in assessing the endometrium 
+if unscheduled bleeding occurs (with the higher likelihood that hysteroscopy may 
+be required). If at 4 years of use, new unscheduled bleeding develops, a change of 52 
+mg LNG IUD should be offered (if cancer exclusion tests are normal), particularly in 
+women using over licensed estrogen dosages and in those with a BMI ≥ 40.BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)15 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.There are insufficient data to guide whether a malpositioned 52 mg LNG IUD 
+provides adequate endometrial protection when used as part of HRT. Discuss with 
+the woman a 52 mg LNG IUD may need to be correctly positioned at the fundus 
+for maximum effectiveness. In relation to contraceptive use, the FSRH suggest ‘ as a 
+general guide any of the following findings would usually be an indication to suggest 
+that the IUC is removed and replaced: IUC > 2 cm from the fundus; IUC within the cervical 
+canal (fully or partially); or IUC user experiencing symptoms that may be related to 
+malpositioned IUC (e.g. pain or bleeding) ’.(29) One study(34) reported an association with 
+irregular endometrial suppression and breakthrough bleeding when a specially 
+designed intracervical LNG-IUD was compared to fundal placement; until high-
+quality studies assess efficacy for endometrial protection in HRT users, women who 
+present with unscheduled bleeding and a malpositioned 52 mg LNG IUD should be 
+offered alternate progestogens until IUD replacement.
+Synthetic Progestogens
+Synthetic progestogens such as NET, MPA, levonorgestrel and dydrogesterone, 
+provide equivalent endometrial protection when the dose is in proportion to ultra-
+low, low, standard or moderate dose estrogen (see Table 3).(27, 35, 36) There are limited 
+data assessing optimal dose for endometrial protection when high dose estrogen is 
+prescribed. 
+Micronised progesterone (MP); dose and duration of use
+MP can be used as an oral or vaginal (off-license) preparation. The Kronos Early 
+Estrogen Prevention Study (KEEPs) and Postmenopausal Estrogen/Progestin 
+Interventions trials (PEPI)(37, 38) compared sHRT (200 mg MP with standard dose 
+estrogen) to placebo, over four years, and both reported equivalent endometrial 
+cancer rates. The E3N cohort study(39) assessed endometrial cancer rates in 65,630 HRT 
+users over ten years of whom 40% were taking oral MP; use for less than five years did 
+not appear to increase risk (hazard ratio (HR) 1.39, 95% CI 0.99-1.97). 
+There is limited evidence assessing the long-term endometrial protective effect (> 
+5 years) when micronised progesterone is used as a continuous preparation and 
+this should be considered a research priority. Although the European Prospective 
+Investigation into Cancer and Nutrition (EPIC) study reported a two-fold association 
+between micronised progesterone use and endometrial cancer, when compared with 
+non-users (HR 2.42, 95% CI 1.53–3.83), the majority of participants used sequential, 
+rather than continuous preparations, and duration of HRT was not adjusted for.(35) 
+There are insufficient data to advise on endometrial cancer risk when micronised 
+progesterone, at a dose used for low or standard dose estrogen, is used in 
+combination with moderate or high dose estrogen. Until evidence relating to safety 
+with moderate and high dose estrogen is available, a pragmatic approach needs 
+to be considered, as the risk to breast tissue from increasing the progesterone dose 
+is also unknown; the use of 200 mg as a continuous preparation and 300 mg as a 
+sequential preparation should be offered if using high dose estrogen(24, 39-42) or, if 
+unscheduled bleeding occurs with low to moderate dose estrogen (Table 3). This 
+should be considered a research priority as high-quality outcomes may enable 
+lower dosage use in women taking high-dose estrogen or, conversely, may stratify 
+if women with risk factors for endometrial cancer (diabetes, raised BMI) should be 
+offered increased dose micronised progesterone with lower estrogen dosages.BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)16 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.Unbalanced estrogen to progestogen dose 
+British Menopause Society (BMS) guidance(25) recommends a progestogen dose in 
+proportion to the estrogen dose in people who have a uterus, to reduce unscheduled 
+bleeding and endometrial cancer risk.(20, 24, 25, 41) Table 3 summarises this section 
+and outlines the progestogen dose that appears to provide adequate endometrial 
+protection for different strengths of licensed estrogen dosages (ultra-low, low, 
+standard, moderate and high). 
+Table 3: Progestogen dose per licensed estrogen dose in the baseline 
+population
+Estrogen dose Micronised Progesterone Medroxy progesterone Norethisterone LNG-IUD
+ continuous sequential continuous sequential continuous sequential (52mg)
+Ultra/Low 100 mg 200 mg 2.5 mg 10 mg 5 mg* 5 mg* 
+One – forStandard 100 mg 200 mg 2.5-5 mg 10 mg 5 mg* 5 mg* up to 5
+Moderate 100 mg 200 mg 5 mg 10 mg 5 mg 5 mg years of
+High 200 mg 300 mg 10 mg^ 20 mg^ 5 mg 5 mg use
+ 
+* 1 mg provides endometrial protection for ultra-low to standard dose estrogen but the lowest stand-alone dose currently available in the UK is 
+5 mg (off-license use of three noriday POP i.e 1.05 mg, could be considered if 5 mg is not tolerated). 
+^ There is limited evidence in relation to optimal MPA dose with high dose estrogen; the advised dose is based on studies reporting 10 mg 
+providing protection with up to moderate dose estrogen.
+Oral versus vaginal (off-license) micronised progesterone(MP) 
+A systematic review of 14 studies(24) assessed the impact, on endometrial histology, of 
+using vaginal micronised progesterone. Of the five randomised controlled trials (RCTs) 
+included, the comparator groups were 52 mg LNG-IUD, transdermal NET and oral MPA. 
+Using vaginal micronised progesterone as either a sequential (200 mg for 12 days) 
+or continuous preparation (100 mg / day), for three years, were sufficient to provide 
+endometrial protection with standard or low-dose estrogen. There are insufficient data 
+to advise on endometrial protection when vaginal MP is used 100 mg alternate days, 
+100 mg as a sequential preparation,(24, 25, 41) or for more than three years.
+A double-blind placebo-controlled trial with a follow-up of 4.8 years(43), reported that 
+45 mg of vaginal MP used for 10 days of the month, in combination with low dose 
+estradiol, resulted in higher rates of endometrial hyperplasia (12.7% vs 3.1%, p<0.001).
+Histological outcomes in women presenting with unscheduled bleeding on HRT 
+and a thickened endometrium on transvaginal ultrasound
+• In the absence of individual risk factors for endometrial cancer, 
+perimenopausal women taking sHRT, containing ultra-low to standard dose 
+estrogen, who have unscheduled bleeding and a thickened endometrium 
+should be counselled that endometrial hyperplasia and cancer risk appears 
+lower than in women with postmenopausal bleeding. The continuing need 
+for sHRT should be regularly assessed as risk increases with duration of use 
+(more than 5 years).BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)17 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.• In the absence of individual risk factors for endometrial cancer, 
+postmenopausal women taking ccHRT, containing low or standard dose 
+estrogen, who have unscheduled bleeding and a thickened endometrium 
+should be counselled that endometrial hyperplasia and cancer risk appears 
+lower than women with postmenopausal bleeding. However, the continuing 
+need for long-term ccHRT should be regularly assessed as risk appears to 
+increase with duration of use (more than 5 years). 
+• Women should be counselled that risk of endometrial cancer with moderate 
+or high dose estrogen plus micronised progesterone is unknown in the 
+presence of unscheduled bleeding.
+There are limited data on the rates of endometrial cancer in women who present 
+with unscheduled bleeding on HRT. Endometrial outcomes in women with a 
+thickened endometrium and unscheduled bleeding are summarised in Table 4 (1, 44-
+49) – the studies relating to HRT users, although adjusting for confounders such as 
+BMI / diabetes, included women using standard dose estrogen, for less than 5 years, 
+often in combination with a daily synthetic progestogen and were not adequately 
+powered precluding a more robust evaluation of the relative risks of endometrial 
+cancer. Where reported, an endometrial thickness of 5 mm or more was used for both 
+ccHRT and sHRT. There are limited data assessing outcomes with moderate or high 
+dose estrogen (particularly in perimenopausal women who may have intermittent 
+endogenous ovarian activity), micronised progesterone or use of ccHRT for more 
+than five years – these areas should be considered research priorities.
+Table 4: Histological outcomes in women taking standard dose estrogen who 
+have unscheduled bleeding and a thickened endometrium on ultrasound scan 
+ ccHRT sHRT PMB
+Atrophy / Inactive 38-66%* 58%^ 52%
+Polyp 6.8-31% 22% 9%
+Hyperplasia 1-2% 2.5-16% 11%
+Endometrial Cancer 1.3-2% 5% 9%
+* The majority of endometrial biopsies in women taking ccHRT are reported as inactive endometrium.
+^ The majority of endometrial biopsies in women taking sHRT are reported as weakly proliferative.
+These data suggest that over half the women who present with unscheduled 
+bleeding and a thickened endometrium will have a normal biopsy and up to 30% will 
+have a polyp.(50) 
+Endometrial hyperplasia and cancer risk in users of ccHRT containing standard 
+dose estrogen appears lower than non-users with PMB. However, risk of diagnosing 
+endometrial cancer in women with unscheduled bleeding on ccHRT may increase 
+with duration of use; 4:1000 with up to three years use, 9:1000 with 4-6 years use and 
+19:1000 with more than six years use.(1) Endometrial cancer risk in women using sHRT 
+appears lower than non-users with PMB, but higher than users of ccHRT; risk may 
+relate to total duration of sHRT use, progestogen dose and / or total number of days 
+in the month of progestogen use – it is important to ascertain these factors when 
+discussing and stratifying risk.BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)18 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.Section 3: When to investigate unscheduled bleeding on HRT 
+• In the absence of risk factors for endometrial cancer, offer adjustments in 
+the progestogen or HRT preparation for 6 months in total, if unscheduled 
+bleeding a) occurs within six months of starting HRT or b) is persisting three 
+months after a change in HRT dose or preparation. 
+• If unscheduled bleeding continues in low-risk women, after six months of 
+adjustments, discuss an urgent ultrasound (within six weeks) versus weaning 
+off HRT and consideration of non-hormonal alternatives (to avoid invasive 
+investigations) – according to the woman’s preference. 
+• Offer an urgent TVS (within 6 weeks) if the first presentation with bleeding 
+occurs more than six months after initiating, or three months after changing, 
+the HRT preparation.
+• Offer an urgent TVS (within 6 weeks), irrespective of interval since starting, 
+or changing, HRT preparations if a) bleeding is prolonged / heavy or, b) there 
+are 2 minor risk factors for endometrial cancer.
+• Offer an urgent suspicion of cancer pathway (USCP) referral to women with 
+one major or three minor risk factors for endometrial cancer – irrespective 
+of bleeding type or interval since starting or changing HRT preparations. 
+Adjustments to the progestogen, or stopping HRT, should be offered whilst 
+awaiting assessment.
+Which bleeding patterns are considered normal for HRT
+It is important when assessing and counselling women who present with 
+bleeding on HRT, to understand what is normal for the preparation they are taking. 
+Unscheduled bleeding within the first six months of starting any type of HRT occurs 
+in up to 40% of women.(51) 
+Sequential or cyclical HRT (sHRT) 
+This preparation is prescribed for women who are still having periods in the 12 
+months preceding the start of HRT (peri-menopausal). Estrogen is used every day 
+and a progestogen is given for 10-14 days of the month (dependent upon the type 
+prescribed). 90% of women on this preparation will have a cyclical bleed (usually 
+at the end of the progestogen phase), lasting 3-7 days which is generally lighter 
+than premenopausal menstruation. Prolonged or heavy withdrawal bleeding is not 
+normal, nor is persistent (almost daily) bleeding. 
+Continuous combined HRT (ccHRT)
+This preparation is recommended for women who have had amenorrhoea for 12 
+months before starting HRT (including women on contraception or post-ablation). 
+Women are expected to be amenorrhoeic on this preparation six months after 
+initiation.(25, 51) ccHRT is associated with less unscheduled bleeding than sHRT in 
+postmenopausal women.(21, 52-54) If given to perimenopausal women who still have 
+menstrual cycles, endogenous follicular activity can lead to irregular bleeding.
+Triaging unscheduled bleeding episodes
+Once the initial assessment, as outlined in Section 1, has been completed, the 
+bleeding pattern and underlying individual risk factors for endometrial cancer 
+need to be considered to enable a rational basis for triaging women to either a) 
+conservative management (continue with HRT +/- adjust the current preparation) or 
+b) refer for investigations (primary care direct access or gynaecological services). BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)19 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.Table 5 defines the clinical pathways for assessment of women with unscheduled 
+bleeding, detailing the intervals in which investigations should be offered and by 
+which health care provider. These definitions and time-frames are adapted from 
+the criteria recommended in the NICE guideline ‘Suspected cancer: recognition and 
+referral (NG12)’ .(55) While the time-frames for referral should remain standardised, 
+the model of care in terms of referral pathway, to reduce the burden on the USCP , 
+will vary according to local infrastructure. For example, if resources within primary 
+care services cannot provide direct access urgent ultrasound then development of 
+an urgent unscheduled bleeding clinic within the gynaecological services could be 
+considered. Or, if there is a paucity of experience at adjusting HRT regimens, consider 
+gynaecological advice and guidance platforms.
+Table 5: Clinical pathways and time-frames for investigating unscheduled 
+bleeding on HRT 
+Interval in which a 
+review or investigation 
+should be completed
+PATHWAY Non-urgent Urgent USCP
+Direct Access: 
+The assessment and 
+investigation requests are 
+completed through primary 
+care who retain clinical 
+responsibility throughout, 
+including acting on the result. Within 12 weeks
+No risk factors for 
+endometrial cancerWithin 6 weeks 
+< 3% risk of endometrial 
+cancer
+Gynaecological service: 
+Seen within a 
+gynaecological service e.g 
+one-stop, unscheduled 
+bleeding or hysteroscopy 
+clinic. The service takes the 
+responsibility for clinical 
+management.Within 6 weeks 
+< 3% risk of endometrial 
+cancer
+Urgent Suspicion of 
+Cancer (USCP):
+Seen within a fast-track 
+gynaecological service (e.g. 
+oncology, rapid-access one 
+stop or hysteroscopy clinic), 
+within the national targets in 
+England, Wales or Scotland 
+for suspected cancer 
+referrals. The service takes 
+the responsibility for clinical 
+management.Within 2 weeks
+> 3% risk of endometrial 
+cancerBMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)20 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.When to manage conservatively and offer adjustments to the HRT
+The following conservative management strategies can be offered through primary 
+care (or an unscheduled bleeding service) for women with no risk factors for 
+endometrial cancer , who have had a thorough assessment as outlined in Section 1 
+and who do not report heavy, prolonged or daily bleeding. 
+• Unscheduled bleeding which occurs within 6 months of initiating either 
+ccHRT or sHRT: 
+Offer an adjustment in the progestogen or preparation (such as vaginal 
+estrogen if vulvovaginal atrophy is present (see Section 5)), totalling six months 
+of adjustments after the initial presentation. Ensure that the progestogen is in 
+balance with the estrogen dose (see Appendix 1).
+• Unscheduled bleeding continuing 3 months after a change in HRT dose or 
+preparation:
+ If the HRT preparation is changed (such as from a pill to a patch), or the dose is 
+increased, ensure the progestogen is in proportion. If unscheduled bleeding is 
+occurring three months after this change, offer adjustments to the preparation 
+(see Section 5) for six months in total. 
+If unscheduled bleeding continues after six months of adjustments, offer an urgent 
+(within 6 weeks) direct access transvaginal ultrasound (TVS) with continued changes 
+to the progestogen component or, weaning off HRT and consideration of non-
+hormonal alternatives (if there is a preference to avoid invasive investigations). 
+When to refer for an ultrasound
+Urgent pathway (within 6 weeks):
+For women who meet the following criteria, offer a direct access urgent TVS (or 
+urgent gynaecological service review – dependent upon local resources) versus 
+weaning off HRT and consideration of non-hormonal alternatives (to avoid invasive 
+investigations). If continuing HRT and attending for ultrasound is the woman’s 
+preference, continue to make changes to the progestogen component whilst 
+awaiting investigation. 
+• Within any time-frame of starting ccHRT / sHRT presenting with:
+— Prolonged withdrawal bleeds (more than 7 days), and / or
+— Heavy bleeding (flooding and / or clots), and / or
+— Persistent bleeding, even light, which occurs most days for 4 weeks or more, 
+and / or
+— Two minor risk factors for endometrial cancer
+• More than six months after starting HRT and:
+— Reports bleeding with ccHRT after an interval of amenorrhoea
+— Develops unscheduled bleeding on sHRT having had prior, light regular 
+withdrawal bleeds
+If the endometrial thickness is above the recommended range (> 4 mm if ccHRT 
+and > 7 mm if sHRT – see Section 4), refer to the USCP . If the endometrium is within 
+recommended ultrasound limits, offer HRT adjustments (see section 5) and if 
+unscheduled bleeding persists six months after these changes, or the bleeding 
+increases in intensity or frequency during the six months of adjustments, recommend 
+referral to the USCP . BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)21 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.Urgent Suspicion of Cancer Pathway: 
+Refer women with unscheduled bleeding and one major, or three minor, risk factors 
+(Table 1) to the USCP irrespective of bleeding pattern or interval since starting, or 
+changing, the HRT preparation. 
+Can HRT be continued if referring for urgent or USCP assessment 
+• If women are referred for histological assessment of the endometrium following 
+ultrasound, and HRT is continued, it will not affect the accuracy of the pathological 
+assessment, but interpretation would be aided by providing information to the 
+histopathologist on the type of HRT regimen (such as sHRT, ccHRT, 52 mg LNG-IUD) 
+and additional contraceptives such as the copper IUD or progestogen-only pill.
+• In women with no risk factors for cancer who are offered TVS on an urgent 
+pathway, discuss ongoing adjustments to the progestogen whilst awaiting 
+investigation.
+• If there is a strong preference to avoid ultrasound, and there are no risk factors for 
+endometrial cancer, discuss weaning off HRT (i.e. reduction in dose over weeks 
+until cessation, rather than an abrupt stop) and offer non-hormonal options to 
+manage symptoms. 
+— If bleeding ceases at a 4 week follow-up, and continuing without HRT is 
+acceptable, then no further investigations are required.
+— If the bleeding ceases at a 4-week follow-up and there is a preference to restart 
+HRT, offer adjustments in HRT for six months. If the bleeding becomes heavy 
+/ prolonged / persistent, or continues after the six months of adjustments, 
+recommend urgent ultrasound.
+— If bleeding continues despite stopping HRT, recommend an USCP referral.
+• If an USCP referral is recommended and acceptable, discuss the advantage of 
+continuing HRT (ongoing menopausal symptom control) versus the potential 
+disadvantage of exacerbating an estrogen driven endometrial cancer.
+• If an USCP referral is recommended, and investigations are declined, recommend 
+weaning off HRT and offer non-hormonal alternatives. Offer follow-up at 4 weeks; 
+recommend USCP referral if bleeding continues on stopping HRT. If bleeding 
+ceases and there is a preference to restart HRT, offer adjustments for three months 
+before recommending a TVS on an urgent pathway if bleeding is continuing after 
+this interval.BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)22 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.Section 4: How should unscheduled bleeding be investigated
+This chapter outlines evidence relating to initial investigations for unscheduled 
+bleeding in women who meet the referral criteria in Section 3. Recommendations for 
+method of endometrial assessment in women who have a thickened endometrium 
+on TVS, and management options relating to subsequent histological outcomes, 
+are discussed. Appendix 2 contains suggested ultrasound reporting criteria and 
+Appendix 3 summarises the ultrasound and histological outcome recommendations 
+made in this section.
+Ultrasound
+Ultrasound provides high diagnostic accuracy as a first line investigation for women 
+who present with postmenopausal bleeding (PMB)(56-60) and is more acceptable to 
+women than hysteroscopy or biopsy.(61, 62) Transvaginal ultrasound (TVS) is more 
+accurate than transabdominal (TAS) with double-layer endometrial thickness (ET) 
+measured at the point of maximal width.(57) Evidence in relation to the sensitivity of 
+TVS in predicting cancer risk in women with unscheduled bleeding on HRT is scarce, 
+as large studies assessing this in women with PMB often exclude HRT users or do not 
+provide subgroup analyses of HRT preparation or dose.
+Endometrial measurements which should determine further investigations
+• Women with unscheduled bleeding, in the presence of a uniform 
+endometrium which is fully visualised, and measures ≤ 4 mm with ccHRT or ≤ 
+7 mm with sHRT, can be reassured that the risk of endometrial cancer is low. 
+Offer HRT adjustments for 6 months and then offer endometrial assessment, 
+on an urgent pathway, if bleeding becomes persistent or heavy during the 6 
+months or, is continuing after this interval of adjustments.
+• Women with a thickened endometrium on TVS (> 4 mm for ccHRT or > 7 
+mm for sHRT) should be offered referral to the urgent suspicion of cancer 
+pathway (USCP) for endometrial assessment (biopsy and / or hysteroscopy). 
+• When the entire endometrium cannot be visualised on TVS, but the area 
+measured is within normal ultrasound limits, offer urgent endometrial 
+assessment (within 6 weeks). 
+• In the absence of unscheduled bleeding, women with an endometrium ≥ 10 
+mm should be offered endometrial assessment – consider endometrial blind 
+biopsy if direct access hysteroscopy is not acceptable or feasible (within unit 
+resources). If major risk factors for endometrial cancer are present, refer on 
+an USCP and, in their absence, refer on an urgent pathway (within six weeks).
+• In the absence of unscheduled bleeding, women who have one major or two 
+minor risk factors for endometrial cancer, and an incidental ET > 4 mm on 
+ccHRT or > 7 mm on sHRT, should be offered endometrial assessment on a 
+USCP .BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)23 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.Continuous combined preparations 
+In studies of women with PMB, TVS ET cut offs of 3 mm, 4 mm and 5 mm are reported 
+to have a sensitivity of 98%, 95% and 90% respectively for predicting endometrial 
+cancer.(56-60) Based on a 26% (95% CI 25-27%) prevalence (pre-test) probability of 
+endometrial disease (carcinoma and hyperplasia) in women with PMB, the post-test 
+probability after a negative scan is reduced to 2.4% (95% CI 1.3–3.9%) when an ET 
+of ≤ 4 mm is used and 5.0% (95% CI 2.9–9.1%) when ≤ 5 mm is used.(58) TVS ET is less 
+accurate at predicting endometrial cancer in Black women because of the higher 
+prevalence of fibroids and non-endometrioid histologic subtypes, when compared 
+with Caucasian women; sensitivity 47.5% vs 97.9% for an ET > 4 mm and of 43.7% vs 
+86% for an ET > 5 mm.(63) A cut-off of > 5 mm would reduce the number of women 
+who are referred for further invasive investigations but, when compared to > 4 mm, 
+it would reduce the sensitivity and negative predictive value (NPV) of TVS ET for 
+endometrial cancer detection in all women.(63-65) 
+Women taking ccHRT who have unscheduled bleeding and a ET > 4 mm, should 
+currently be managed in a similar way to non-users who present with PMB(66); 
+referral to the USCP for endometrial assessment. Blind endometrial biopsy is not 
+recommended if the ET is within normal limits as more than two-thirds will have an 
+insufficient sample.(67) High quality data, in cHRT users, which assesses endometrial 
+pathology in relation to ET should be a research priority as higher ET cut-offs, and 
+stratification to an urgent pathway, or prolonged conservative management, may be 
+enabled dependent upon estrogen dose, duration of HRT use and progestogen type. 
+Sequential (cyclical) preparations 
+Studies using standard dose estrogen with 12 days of 200 mg micronised 
+progesterone or 10 days of 10 mg MPA report a high NPV (99%) for endometrial 
+cancer when an ET of 7 mm or less is visualised.(68, 69) Until high quality evidence 
+assesses ultrasonographic variation at different intervals in the cycle (such as 
+mid-cycle and immediately after the withdrawal bleed), and correlates this with 
+histological outcomes, women taking sHRT who have unscheduled bleeding and an 
+ET of > 7mm should be offered referral to the USCP for endometrial assessment. 
+Incomplete visualisation of the entire endometrium
+Unsatisfactory ultrasound examinations, where the view of the endometrium is 
+limited (IUD, fibroids, prior ablation, TAS as TVS declined or not appropriate e.g. 
+transgender women who are not sexually active or those with a prior history of 
+assault), have been associated with higher rates of endometrial hyperplasia (27% 
+vs 7%).(63, 69) Offer an urgent (within 6 weeks) endometrial assessment – discuss 
+hysteroscopy (unit resources dependent) over blind biopsy if the endometrium is 
+distorted by fibroids – versus weaning off HRT and consideration of non-hormonal 
+alternatives (to avoid invasive investigations). 
+Recurrent unscheduled bleeding with a normal endometrial profile
+Women who have a normal ET on TVS (≤ 4 mm with ccHRT or ≤ 7 mm with sHRT) but 
+recurrent bleeding that is ongoing six months after adjustments in the progestogen 
+should be offered endometrial assessment on an urgent pathway. If the bleeding 
+increases in intensity or frequency – persistent, almost daily bleeding, prolonged 
+withdrawal bleeds or flooding – referral should be recommended prior to the six BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)24 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.months. Discuss hysteroscopy, over blind biopsy (dependent upon unit resources), 
+as it facilitates a ‘see and treat’ approach, as more than one third of women with 
+recurrent unscheduled bleeding will have polyps on assessment.(1, 44-46, 50) 
+Fluid in the endometrial cavity but a normal endometrial thickness
+The risk of cancer in postmenopausal women with intracavity fluid appears to be 
+increased in the presence of genital symptoms (vaginal discharge, abnormal vaginal 
+bleeding), a history of colorectal cancer or an abnormal TVS finding (focal cavity 
+lesions e.g. polyps).(70) The decision for endometrial evaluation, in the presence of 
+endometrial fluid and a normal ET, should be based upon symptoms and cancer risk 
+factors (Table 1) – as is the case in women without intracavity fluid. 
+Asymptomatic (no unscheduled bleeding) with an incidental thickened 
+endometrium 
+The diagnostic value of TVS ET in asymptomatic postmenopausal women for 
+endometrial cancer is contentious; the diagnostic yield (and prevalence) of 
+premalignant and malignant endometrial cells is lower than in women who report 
+bleeding (< 1% vs 5%).(71-73) A systematic review concluded that the use of TVS ET as 
+a screening test for endometrial cancer could not be justified because of its relatively 
+poor predictive ability and the low prevalence; the UK Collaborative Trial of Ovarian 
+Cancer Screening (UKCTOCs)(72) advise a TVS ET threshold value > 10 mm to minimise 
+unnecessary biopsies (high specificity) whilst facilitating the diagnosis of endometrial 
+cancer (moderate sensitivity). In the absence of robust accuracy data, the UKCTOCs 
+and British Gynaecological Cancer Society (BGCS) 10 mm threshold is recommended 
+in women taking HRT.(72, 74) Discuss hysteroscopy as a first line investigation, on 
+an urgent pathway, due to the high prevalence of endometrial polyps with a 
+substantially thickened endometrium(50, 75) or offer endometrial biopsy if hysteroscopy 
+is not acceptable or feasible (within unit resources).
+Asymptomatic women with an ET of < 10 mm, who have no major risk factors for 
+endometrial cancer, can be offered adjustments in their progestogen. Only offer 
+endometrial sampling, on an urgent pathway, if unscheduled bleeding occurs.(66) 
+Asymptomatic women who have one major or two minor risk factors for endometrial 
+cancer, and an ET > 4 mm on ccHRT or > 7 mm on sHRT, should be offered 
+endometrial assessment on an USCP(14, 15) – adjustments to the progestogen should 
+be offered at the time of referral.
+Endometrial assessment options if a thickened endometrium on TVS
+• Offer endometrial assessment if unscheduled bleeding and a thickened 
+endometrium on ultrasound. A blind outpatient endometrial biopsy can be 
+performed or, hysteroscopy with endometrial sampling, if acceptable to the 
+woman and within unit resources
+Blind outpatient endometrial biopsy, in comparison to hysteroscopy, is cost-effective 
+and quicker to achieve.(64) A systematic review reported that in postmenopausal 
+women who had an adequate pipelle biopsy, the post-test probability of cancer 
+being present with a positive result was 81.7% (95% CI 59.7 – 92.9%) and 0.9% (95% 
+CI 0.4 – 2.4%) with a negative result.(10) The failure rate of blind ‘pipelle’ endometrial 
+biopsy, in postmenopausal women, is 12% and inadequate rates are 22%. In women 
+taking HRT these proportions may be lower owing to reduced rates of atrophic BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)25 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.changes. They concluded that ‘a positive test result is more accurate for ruling in 
+disease than a negative test result is for ruling it out’ , indicating that if hysteroscopy is 
+not possible as a first line investigation, it should be offered, if within unit resources 
+and dependent upon acceptability to the woman, when outpatient biopsy is 
+inadequate or if recurrent episodes occur after a normal blind biopsy and appropriate 
+adjustments in the progestogen.(50, 76)
+Hysteroscopy has a lower failure rate (3.4%) compared to blind endometrial sampling 
+in postmenopausal women. The post-test cancer probability is 71.8% after a positive 
+result and 0.6% with a negative result; sensitivity 86.4% and specificity 99.2%.(10) 
+Removing focal lesions like polyps, as part of a ‘see-and-treat’ procedure, may improve 
+patient experience by reducing the total number of appointments and procedures 
+but has to be tempered with available resources and patient choice. A randomised 
+control trial reported that half of the women who present with PMB, a TVS ET ≥ 4 
+mm and a subsequent negative blind endometrial biopsy will have an endometrial 
+polyp and of these polyps, 6% contain endometrial cancer or atypical endometrial 
+hyperplasia.(50) However, removal of polyps in the PMB population does not appear 
+to reduce bleeding episodes(50) and there is a lack of evidence relating to efficacy with 
+recurrent unscheduled bleeding episodes. 
+Recommendations for management according to endometrial histology
+• If blind endometrial biopsy is reported as normal, offer reassurance and 
+adjustments in the progestogen for 3 months. If unscheduled bleeding 
+persists after this interval, or becomes heavy / prolonged, offer hysteroscopic 
+assessment on an urgent pathway (within six weeks).
+• In the presence of a normal biopsy and hysteroscopy, discuss adjustments 
+in the progestogen and provide reassurance for six months. If unscheduled 
+bleeding persists after this interval, or becomes heavy / prolonged, offer a 
+repeat TVS on an urgent pathway.
+• A hysteroscopy should be offered, on an urgent pathway (within six weeks), 
+in the presence of a thickened ET on TVS and a blind biopsy which is reported 
+as an ‘insufficient sample’ . 
+• If proliferative endometrium is reported on blind biopsy and there are risk 
+factors for endometrial cancer (1 major or 2 minor) and the preparation used 
+is ccHRT, offer hysteroscopy. 
+• If hyperplasia with atypia or endometrial cancer is reported, advise weaning 
+off HRT, discuss non-hormonal alternatives and refer to gynaecology 
+oncology on an USCP . 
+In the presence of an insufficient sample on blind biopsy, hysteroscopy (outpatient 
+or daycase) should be discussed. Biopsies with insufficient tissue for diagnosis can be 
+categorised as ‘atrophic’ (inactive), and the woman reassured, if the result is consistent 
+with the hysteroscopic appearance of the endometrium.(77) If an insufficient sample 
+is obtained, and is inconsistent with the hysteroscopic endometrial appearance, a 
+repeat hysteroscopy should be offered, considering different pain control options 
+(regional or general anaesthetic) to potentially facilitate an increased endometrial 
+tissue yield. BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)26 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.If recommendations for endometrial assessment are offered, based on criteria in 
+sections 3 and 4, and there is a preference to avoid biopsy and / or hysteroscopy, 
+recommend weaning off HRT and offer non-hormonal alternatives; offer follow-up at 
+4 weeks and if bleeding continues after stopping HRT rediscuss the available options. 
+If bleeding ceases, and continuing without HRT is acceptable, then no further 
+investigations are required. If the bleeding ceases at a 4-week follow-up and there is a 
+preference to restart HRT, offer adjustments in HRT for three months. If the bleeding 
+becomes heavy / prolonged / persistent, or continues after the three months of 
+adjustments, recommend urgent endometrial assessment and cessation of HRT if 
+cancer exclusion tests cannot be completed.
+In the absence of evidence relating to women with unscheduled bleeding but, in line 
+with the recommendations in the (archived) SIGN PMB Guideline(78), women who have a 
+normal hysteroscopy and biopsy can be reassured for six months after this outcome even 
+if unscheduled bleeding continues. Adjustments to the progestogen, and management 
+strategies to reduce cancer risk factors such as diabetes and BMI (if > 30) should be offered 
+to reduce the likelihood of recurrent episodes. Reassessment (TVS within 6 weeks) should 
+be offered before six months if the nature of the bleeding changes e.g. heavier or more 
+persistent. In the absence of evidence relating to women with unscheduled bleeding 
+but, in line with expert opinion, if a blind endometrial biopsy without concomitant 
+hysteroscopic assessment is reported as normal, reassurance can be provided for three 
+months; studies assessing whether this interval can be increased should be a research 
+priority. If bleeding is ongoing, despite adjustments in the progestogen, hysteroscopic 
+assessment should be offered on an urgent pathway. Reassessment before three months 
+should be offered if the nature of the bleeding changes e.g. heavier or more persistent.
+If there is proliferative endometrium reported on blind biopsy, there are risk factors 
+for endometrial cancer (one major or two minor) and the preparation used is ccHRT, 
+offer hysteroscopy to enable targeted assessment of the whole endometrium. If the 
+hysteroscopy is normal but unscheduled bleeding continues despite six months of 
+adjustment in progestogen dose or type, offer repeat endometrial assessment. If 
+proliferation is reported on blind endometrial biopsy in women using sHRT or, there are no 
+risk factors for endometrial cancer and using ccHRT, offer adjustments in the progestogen 
+for six months; if bleeding persists after this interval, or the nature of the bleeding changes 
+e.g. heavier or more persistent prior to the six months, offer hysteroscopic assessment. 
+If the endometrial biopsy reports hyperplasia without atypia, manage in line with the 
+RCOG/BSGE Green-top Guideline No. 67 Management of Endometrial Hyperplasia:(79)
+— Women taking a sequential preparation who wish to continue HRT (having been 
+offered, and declined, non-hormonal alternatives), should be advised to change to 
+ccHRT – a daily progestogen – offering the 52 mg LNG-IUD first-line or oral high-dose 
+NET / MPA (if the LNG-IUD is not acceptable). Discuss a reduction to standard dose 
+estrogen, if using moderate or high-dose, whilst awaiting follow-up biopsy results.
+— Women taking ccHRT should have their need to continue HRT reviewed. Discuss 
+weaning off HRT and starting non-hormonal alternatives versus use of a 52 mg LNG-
+IUD as a source of progestogen replacement. If a 52 mg LNG-IUD is already in-situ, 
+and within the recommended interval of use, explain the limitations of the available 
+evidence in optimising progestogens to lead to reversal of hyperplasia if HRT is 
+continued; if weaning off HRT and starting non-hormonal options is not acceptable, 
+consider the pros and cons of a hysterectomy.BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)27 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.Section 5: Adjusting HRT to reduce unscheduled bleeding episodes
+Does progestogen type affect rates of unscheduled bleeding?
+Levonorgestrel 52 mg intra-uterine device (LNG-IUD) 
+The 52 mg LNG-IUD reduces systemic progestogenic adverse effects, is a licensed 
+contraceptive, can reduce polyp formation and induce atrophic changes. Non-
+proliferative endometrium is reported on histology in 89.5% at 12 months, increasing 
+to 94.8% at two years and 97.5% at five years.(80-83) 
+Cumulative amenorrhoea with moderate and high dose estrogen has not been 
+assessed in any of the pivotal studies. In postmenopausal women taking standard 
+dose estrogen, amenorrhoea rates at 12 months with either a 52 mg LNG-IUD, 100 
+mg daily oral micronised progesterone (MP) or 100 mg vaginal MP are reported as 
+80%, 67% and 53% respectively.(84, 85) 
+In perimenopausal women taking standard dose estrogen with either the 52 mg LNG-
+IUD or NET, irregular spotting is higher in the 52 mg LNG-IUD group at 3 months (33 vs 
+10%) but at 12 months there is no reported difference (80% amenorrhoea).(83) When 
+sequential oral MPA (5 mg) was compared to the 52 mg LNG-IUD, proliferation and 
+irregular spotting, after 12 months use was higher in the MPA users (38% vs 0%).(86) 
+Tibolone 
+This oral preparation has estrogenic, progestogenic and androgenic effects; it should 
+be considered ccHRT. A RCT of 3240 women reported, at 12 months, higher rates of 
+amenorrhoea (78.7%) in those using tibolone when compared to use of standard 
+dose estrogen with 2.5 mg/day MPA (44.9%).(87) This finding, and its equivocal 
+endometrial safety profile, has been corroborated in other large RCTs.(36) Use of 
+tibolone, however, should be cautioned in women over 60 due to the increased risk 
+of cerebrovascular events.
+Synthetic progestogens
+Higher rates of cumulative amenorrhoea, when compared to micronised 
+progesterone (MP), have been reported in preparations which contain synthetic 
+progestogens (NET, MPA, levonorgestrel) as they are less rapidly metabolised and 
+provide high oral bioavailability.(53, 88) Although breast cancer risk may be marginally 
+higher with these preparations, in comparison to MP , the pros and cons of use should 
+be discussed in women with recurrent unscheduled bleeding.
+Micronised progesterone (MP)
+Cohort studies have assessed rates of atrophy and proliferation in women taking oral 
+MP . In women using ccHRT (standard dose estrogen), atrophic/inactive endometrial 
+changes were reported in 100% of women using 200 mg/day(89) and 56.4% if using 
+100 mg for 25 of 28 days.(90) In women using sHRT, 12 days of 200 mg MP with low to 
+standard dose estrogen, atrophy rates were 20.8% – 56%(91, 92) and proliferation 31%.
+(92) Cumulative amenorrhoea rates with moderate or high dose estrogen have not 
+been reported.BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)28 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.Oral bioavailability can be improved if given with food, but this also affects the 
+adverse effect profile (such as sedation and progestogenic tolerance). Whether 
+this improves episodes of unscheduled bleeding is unclear. In comparison to 
+dydrogesterone, there are some data to suggest MP may have a more favourable 
+bleeding profile.(88)
+Does route of HRT (oral, transdermal, vaginal) affect bleeding profile?
+Transdermal versus oral preparations
+A systematic review of 45 studies compared bleeding profiles over one year in 
+women taking ccHRT as an oral versus transdermal preparation. By three months, 
+amenorrhoea was noted in 65-91% of those taking oral preparations and in 40-
+65% of those taking transdermal preparations. Cumulative amenorrhoea over 12 
+months was lower in the transdermal preparations (9-27%), when compared to oral 
+preparations (18-61%), irrespective of the constituents.(93)
+As perimenopausal women have higher rates of unscheduled bleeding and 
+proliferation on biopsy, than postmenopausal women,(94, 95) an oral preparation (if 
+no risk factors for thrombosis), could be offered as either, a first-line therapy or, to 
+women whose initial preference was for transdermal but have unscheduled bleeding 
+episodes despite adjustments.
+Vaginal versus oral micronised progesterone (MP) 
+There is no evidence to provide recommendations on whether vaginal MP reduces 
+unscheduled bleeding episodes compared to oral use or when compared to other 
+progestogens. It would, however, be reasonable to trial this (off-license) over three 
+months to assess the impact in women who cannot tolerate other progestogens. 
+Reducing recurrent episodes of unscheduled bleeding
+Although unscheduled bleeding on HRT is common, there are few studies reporting 
+on interventions that reduce recurrent episodes. The suggestions outlined in this 
+section are based on the available evidence and clinical experience; see summary in 
+Table 6.
+These changes can be instituted in primary care settings (GP practices or community 
+women’s health ‘hubs’), following queries to gynaecology advice and guidance 
+platforms or through secondary care unscheduled bleeding, hysteroscopy or USCP 
+clinics.BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)29 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.Table 6: Recommendations for reducing and managing unscheduled bleeding 
+on HRT
+Problem Potential adjustments
+General Principles • Assess compliance + / – order of pills or patches if using sHRT
+ • At initiation of HRT, consider starting with a low dose preparation
+ • At initiation of HRT, offer a sequential preparation if women are still 
+menstruating and < 55
+ • Time the start of sHRT to their natural cycle
+ • Offer ccHRT if a) initiating HRT and are postmenopausal or 
+b) have been using sHRT for 5 years and are aged more than 50.
+ • Offer the 52 mg LNG-IUD, if appropriate, to women initiating HRT, 
+particularly if contraception is also required.
+ • Offer change of 52 mg LNG IUD if new onset unscheduled bleeding at 
+4 years of use and investigations are normal (particularly if BMI ≥ 40)
+ • Offer vaginal estrogen if atrophic findings on examination.
+Poor compliance of • Change to a combined patch
+non-combined • Change to a combined oral preparation – consider one containing
+preparations micronised progesterone (MP) if synthetic progestogens not acceptable
+ • Take MP at the same time as applying the daily gel
+ • Offer the 52 mg LNG-IUD.
+Submucosal / • Offer the 52 mg LNG-IUD (if submucosal < 3cm and cavity < 10 cm)
+intramural fibroids • Trial an increase in the MP dose
+ • Switch to a synthetic progestogen or give additional progestogens
+ • Consider resection if submucosal and progestogen adjustments are not 
+acceptable or prevents LNG-IUD insertion
+ • Reduce to a lower dose estrogen preparation and supplement with 
+non-hormonal options if required.
+BMI ≥ 30 • Offer weight management strategies
+ • Offer the 52 mg LNG-IUD
+ • Increase MP to 200 mg continuous or 300 mg sequential
+ • Reduce to a lower dose estrogen preparation and supplement with 
+non-hormonal options if required.
+Perimenopausal and • Desogestrel can suppress endogenous ovarian activity
+unscheduled bleeding • If < 50 and low thrombotic (VTE) risk consider switching HRT to a COC
+with sHRT • Change to an oral preparation (if BMI < 30 and low risk of VTE)
+ • Offer the 52 mg LNG-IUD
+ • Increase the MP dose or change to a synthetic progestogen
+ • 3-month trial of an additional progestogen on top of the current 
+preparation
+ • Reduce the estrogen dose and offer non-hormonal alternatives.
+Unscheduled bleeding • Change to an oral preparation (if BMI < 30 and low risk of VTE)
+with ccHRT • Offer the 52 mg LNG-IUD
+ • Increase the MP dose or change to a synthetic progestogen
+ • 3-month trial of an additional progestogen on top of the current 
+preparation (including women already using a 52 mg LNG IUD)
+ • Consider a 6-month trial of sHRT if recently postmenopausal
+ • Reduce the estrogen dose and offer non-hormonal alternatives.BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)30 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.Basic principles
+• Ensure compliance; would a combined patch, changed twice weekly, or a daily 
+pill be easier than a separate estrogen and progestogen component. Consider 
+calendar or phone reminders to enable progestogen component adherence in a 
+sequential preparation.
+• Assess understanding of how to use products, i.e. taking correct order of pills or patches 
+if a sequential preparation and how / where they are applying topical products.
+• Ensure the progestogen dose is proportionate to the estrogen dose (See Appendix 1).
+• Ensure the correct preparation: sHRT if perimenopausal and ccHRT if menopausal/
+prior ablation/amenorrhoea with contraceptive.
+• Lower dose HRT achieves greater rates of amenorrhoea and if women have mild 
+symptoms, this should be considered when initiating sHRT or ccHRT. 
+• Assess lifestyle factors – offer weight loss strategies and support if a raised BMI (≥ 
+30) and optimise medical comorbidities.
+• Offer vaginal estrogens and/or moisturisers if evidence of localised atrophic 
+changes on the vulva and/or vagina.
+• Offer all women with a uterus the 52 mg LNG-IUD at the initial HRT consultation 
+if appropriate (may not be suitable if uterine malformation, submucosal fibroids 
+> 3 cm, history of trauma, endometrial ablation). In particular, counsel women 
+who have existing endometrial cancer risk factors (Table 1) about use as the 
+progestogenic component.
+• Assess contraceptive requirements to reduce unplanned pregnancies.
+Managing unscheduled bleeding with sequential preparations (sHRT)
+• Irregular bleeding is more common in perimenopausal than pre-menopausal 
+women. Unlike contraceptives, HRT will not suppress endogenous ovarian 
+activity. Ways to manage this include:
+ — Timing the start of a sequential preparation to their natural cycle, i.e. starting 
+the estrogen component on day 1 of their period and the progestogen on day 
+15 for a 28-day cycle or day 21 for a 35-day cycle. This facilitates the withdrawal 
+bleed and their natural cycle bleed occuring at the same time. 
+ — Offer desogestrel in addition to HRT. There are a lack of safety data relating 
+to endometrial safety with 75 microgram desogestrel in conjunction with 
+estrogen replacement; although some studies have reported safety with 
+desogestrel 150 micrograms, it is not currently licensed for this use. 
+ — Consider a combined oral contraceptive (COC) in women < 50 who are at low 
+risk of thrombosis(9) and require contraceptive. Options which contain estradiol 
+can provide good symptom control in perimenopausal women. 
+• In women using a progestogen separate to the estrogen i.e. non-combined 
+preparations, discuss using the progestogen ‘two weeks on and two weeks off’ (rather 
+than 10-12 days of the month) to reduce prescribing and administration errors.
+• Oral preparations may achieve greater cumulative rates of amenorrhoea than 
+transdermal; women using sHRT should be < 55 and if low risk for thrombosis this 
+change, in itself, may reduce irregular bleeding.
+• Increasing the progestogen dose or changing the progestogen type can be beneficial:
+ — Increase oral micronised progesterone (MP) to 300 mg for 14 days of the month(24, 25)
+ — Consider using 200 mg MP vaginally for 14 days of the month (off-license use)
+ — Change to transdermal estrogen and either oral MPA or NET (if they do not 
+absorb estrogen through an oral route, have ongoing bleeding despite 
+adjustments in MP dose / route, would not accept a 52 mg LNG-IUD and are 
+low risk for thrombosis). BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)31 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited. — If taking a combined preparation, give an additional progestogen (100 mg 
+MP , 10 mg MPA or 5 mg NET) for three months. If unscheduled bleeding 
+settles with use, but recurs with cessation, discuss long-term use (with the 
+potential increased effect on breast tissue and clot risk) if other options are not 
+acceptable or efficacious.
+ — If separate oral norethisterone leads to cessation of bleeding but the 5 mg 
+dose causes adverse progestogenic side effects, consider off-license use of x3 
+noriday tablets (1.05 mg norethisterone in total) for 10-14 days in combination 
+with low or standard dose estrogen.
+ — Re-offer the 52 mg LNG-IUD.
+ • If a woman reports spotting before the withdrawal bleed, this may represent 
+inadequate stromal formation and increasing the estrogen can, in women 
+taking low dose preparations, be of benefit.(96) Ensure the progestogen dose is in 
+proportion to the estrogen dose.
+ • Reduce the estrogen dose and offer non-hormonal alternatives (lifestyle, 
+complementary, pharmacological).
+Managing unscheduled bleeding with continuous combined preparations 
+(ccHRT)
+• Starting ccHRT in women who are perimenopausal can lead to irregular bleeding 
+patterns. Switching to sHRT would be appropriate in women who had menstrual 
+cycles in the 12 months preceding HRT initiation. 
+• If switching to ccHRT from sHRT, amenorrhoea may be achieved more quickly if a 
+washout period (1 month) is offered to women who have recurrent unscheduled 
+bleeding on sHRT(97, 98) – but this advice needs to be balanced with a transient 
+deterioration in menopausal symptoms.
+• Lower dose HRT achieves greater rates of amenorrhoea and if women have mild 
+symptoms, this could be considered (particularly in women > 60 years).
+• If using micronised progesterone (MP), prescribe daily use, rather than days 
+1-25 to reduce administration errors. 
+• Increasing the progestogen dose or changing the progestogen type can be beneficial:
+ — Increase MP to 200 mg per day.(24, 25)
+ — Increase MP to 200 mg on days 1-25 of a 28-day cycle (ensure understanding to 
+reduce adherence errors)
+ — Consider using 200 mg MP vaginally (off-license use)
+ — Change to transdermal estrogen and either oral MPA or NET (if they do not 
+absorb estrogen through an oral route, find a 52 mg LNG-IUD unacceptable, 
+have recurrent bleeding despite adjustments in MP and are low-risk for 
+thrombosis). 
+ — If taking a combined preparation, an additional progestogen dose can be 
+given (100 mg MP , 5 mg MPA or 5 mg NET). Trial for three months to reduce 
+endometrial proliferation and if this leads to amenorrhoea during use, but 
+bleeding recurrence on cessation, then discuss long-term use (with the 
+potential increased effect on breast tissue and clot risk) if other options are not 
+acceptable or efficacious.
+— If separate oral norethisterone leads to cessation of bleeding but the 5 mg dose 
+causes adverse progestogenic side effects, consider daily off-license use of x3 
+noriday tablets (1.05 mg norethisterone in total) in combination with low or 
+standard dose estrogen.
+— Re-offer the 52 mg LNG-IUD.BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)32 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.— If at 4 years of use, new unscheduled bleeding develops, offer a change of 52 mg 
+LNG IUD, if cancer exclusion investigations are normal – particularly in women 
+using more than high dose estrogen and in those with a BMI ≥ 40.
+• Oral preparations may achieve greater cumulative rates of amenorrhoea than 
+transdermal. If older than age 60, oral preparations are a risk factor for thrombosis, 
+but if stopping HRT and switching to non-hormonal alternatives is not acceptable, 
+because of quality-of-life effects, then the pros and cons of combined ultra-low 
+and low-dose oral preparations, which contain micronised progesterone or 
+dydrogesterone (lower breast and thrombotic effects), may be of benefit.
+• If unscheduled bleeding persists, despite trying multiple adjustments, discuss 
+changing to a sequential regimen for 6-12 months.
+• Discuss reducing the estrogen dose and offer non-hormonal alternatives (lifestyle, 
+complementary, pharmacological).
+Surgical options
+Hysteroscopic myomectomy
+This can be considered an option in women with heavy bleeding and a normal 
+endometrial assessment who have submucosal fibroids which prevent insertion of 
+a 52 mg LNG-IUD. Consider if changes to the HRT preparation are not acceptable or 
+efficacious. After informed counselling, small, non-vascular and mostly intracavity 
+submucosal fibroids (FIGO type 0 and 1) may be suitable for resection in an 
+outpatient setting with appropriate pain-relief. However, most submucosal fibroids 
+require removal as a day case procedure under regional or general anaesthesia. 
+Preparation for hysteroscopic myomectomy may require assessment of fitness 
+for a general anaesthetic, a degree of intravascular fluid absorption as well as a 
+laparoscopy if uterine perforation occurs. It may also require down-regulation (GnRH 
+analogues) with a potential reduction in estrogen dose if moderate or high-dose 
+preparations are currently used (which can affect menopause symptom control).
+Endometrial Ablation
+This day case / outpatient procedure is not recommended as a management option 
+in women who have recurrent unscheduled bleeding. Uterine cavity adhesions after 
+endometrial ablation often prevent further endometrial evaluation with ultrasound, 
+hysteroscopy and/or endometrial biopsy if further episodes of unscheduled bleeding 
+occur (which may then necessitate a hysterectomy).
+Hysterectomy
+This is a major operation and risks of the procedure (bleeding, infection, hernia 
+formation, risk of prolapse and bladder dysfunction, plus injury to surrounding 
+structures including bladder, bowel and ureters) need to outweigh the benefits 
+(management of unscheduled bleeding). All avenues of managing the bleeding 
+pattern, including reducing the estrogen dose, stopping HRT with consideration 
+of non-hormonal options / lifestyle measures and reasons for 52 mg LNG-IUD non-
+acceptability, if relevant, should be explored and documented before considering 
+hysterectomy. Medical and individual comorbidities (such as an elevated BMI) can 
+increase intraoperative and postoperative surgical and anaesthetic risks; these factors 
+would need to be optimised before considering major elective surgery (which may in 
+itself improve unscheduled bleeding episodes). BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)33 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.Abbreviations and key terms
+Term Description
+BGCS British Gynaecological Cancer Society
+BSGE British Society for Gynaecological Endoscopy
+Direct access When an assessment is done by primary care, who then retain clinical 
+responsibility throughout, including acting on the result
+BMS British Menopause Society
+ccHRT Continuous combined HRT: estrogen and progestogen every day
+ET Endometrial thickness
+HRT Hormone replacement therapy
+Hyperplasia Precancerous change
+LNG IUD 52 mg levonorgestrel Intrauterine Device 
+MP Micronised progesterone 
+NICE National Institute of Clinical Excellence
+PMB Postmenopausal bleeding
+Progestogen Encompasses synthetic progestogens and progesterone unless 
+specifically stated otherwise
+RCOG Royal College of Obstetricians and Gynaecologists
+RCT Randomised control trial
+sHRT Sequential (also known as cyclical) HRT: estrogen every day and, 
+depending on the specific preparation, a progestogen for 10 to 14 days 
+per month
+Synthetic progestogens:
+NET Norethisterone
+MPA Medroxyprogesterone acetate
+Livial Tibolone 
+TCRF Transcervical resection of fibroids
+Tricycling / Long-cycle Estrogen daily and a reduced progestogen course (every three months)
+TVS Transvaginal ultrasound
+TAS Transabdominal ultrasound
+Urgent pathway Investigation to be complete within 6 weeks
+USCP Urgent suspicion of cancer pathway 
+VTE Venous thromboembolismBMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)34 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.References
+1. Burbos N, Musonda P , Duncan TJ, Crocker SG, Nieto JJ, Morris EP . Postmenopausal 
+vaginal bleeding in women using hormone replacement therapy. Menopause Int. 
+2012;18(1):5-9.
+2. Ettinger B, Li DK, Klein R. Unexpected vaginal bleeding and associated 
+gynecologic care in postmenopausal women using hormone replacement 
+therapy: comparison of cyclic versus continuous combined schedules. Fertil Steril. 
+1998;69(5):865-9.
+3. al-Azzawi F, Habiba M. Regular bleeding on hormone replacement therapy: a 
+myth? Br J Obstet Gynaecol. 1994;101(8):661-2.
+4. Alsugeir D, Wei L, Adesuyan M, Cook S, Panay N, Brauer R. Hormone replacement 
+therapy prescribing in menopausal women in the UK: a descriptive study. BJGP 
+Open. 2022;6(4).
+5. NBS Authority. HRT England monthly summary2022. Available from: https://
+nhsbsa-opendata.s3.eu-west-2.amazonaws.com/hrt/hrt_June_2022_v001.html.
+6. Cheshire and Mersyside Cancer Alliance. Kaye S. Rethinking gynaecology 
+pathways for patients with vaginal bleeding on HRT. 2023.
+7. NHS England. Cancer Waiting Times. Cancer Alliance Insights Team [Internet]. 
+2023. Available from: https://www.england.nhs.uk/statistics/statistical-work-
+areas/cancer-waiting-times/.
+8. Lumsden MA. The NICE Guideline – Menopause: diagnosis and management. 
+Climacteric. 2016;19(5):426-9.
+9. Faculty of Sexual and Reproductive Healthcare (FSRH). Contraception for women 
+aged over 40 years2023. Available from: https://www.fsrh.org/documents/fsrh-
+guidance-contraception-for-women-aged-over-40-years-2017/.
+10. Clark TJ, Mann CH, Shah N, Khan KS, Song F, Gupta JK. Accuracy of outpatient 
+endometrial biopsy in the diagnosis of endometrial cancer: a systematic quantitative 
+review. Bjog. 2002;109(3):313-21.
+11. Crosbie EJ, Kitson SJ, McAlpine JN, Mukhopadhyay A, Powell ME, Singh N. 
+Endometrial cancer. Lancet. 2022;399(10333):1412-28.
+12. Cancer research UK. Uterine cancer incidence statistics: 2021 [Available from: https://
+www.cancerresearchuk.org/health-professional/cancer-statistics/statistics-by-
+cancer-type/uterine-cancer/incidence#heading-Two.
+13. Jones ER, O’Flynn H, Njoku K, Crosbie EJ. Detecting endometrial cancer. The 
+Obstetrician & Gynaecologist. 2021;23(2):103-12.
+14. Crosbie EJ, Zwahlen M, Kitchener HC, Egger M, Renehan AG. Body mass index, 
+hormone replacement therapy, and endometrial cancer risk: a meta-analysis. Cancer 
+Epidemiol Biomarkers Prev. 2010;19(12):3119-30.
+15. MacKintosh ML, Derbyshire AE, McVey RJ, Bolton J, Nickkho-Amiry M, Higgins CL, et 
+al. The impact of obesity and bariatric surgery on circulating and tissue biomarkers of 
+endometrial cancer risk. Int J Cancer. 2019;144(3):641-50.
+16. Renehan AG. Bariatric surgery, weight reduction, and cancer prevention. Lancet 
+Oncol. 2009;10(7):640-1.
+17. Udoff L, Langenberg P , Adashi EY. Combined continuous hormone replacement 
+therapy: a critical review. Obstet Gynecol. 1995;86(2):306-16.
+18. Anderson GL, Judd HL, Kaunitz AM, Barad DH, Beresford SA, Pettinger M, et al. 
+Effects of estrogen plus progestin on gynecologic cancers and associated diagnostic 
+procedures: the Women’s Health Initiative randomized trial. Jama. 2003;290(13):1739-
+48.BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)35 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.19. Rossouw JE, Anderson GL, Prentice RL, LaCroix AZ, Kooperberg C, Stefanick ML, 
+et al. Risks and benefits of estrogen plus progestin in healthy postmenopausal 
+women: principal results From the Women’s Health Initiative randomized 
+controlled trial. Jama. 2002;288(3):321-33.
+20. The Writing Group for the PEPI Trial. Effects of hormone replacement therapy 
+on endometrial histology in postmenopausal women. The Postmenopausal 
+Estrogen/Progestin Interventions (PEPI) Trial. Jama. 1996;275(5):370-5.
+21. Archer DF, Pickar JH, Bottiglioni F. Bleeding patterns in postmenopausal women 
+taking continuous combined or sequential regimens of conjugated estrogens 
+with medroxyprogesterone acetate. Menopause Study Group. Obstet Gynecol. 
+1994;83(5 Pt 1):686-92.
+22. Beresford SA, Weiss NS, Voigt LF, McKnight B. Risk of endometrial cancer in 
+relation to use of oestrogen combined with cyclic progestagen therapy in 
+postmenopausal women. Lancet. 1997;349(9050):458-61.
+23. Weiderpass E, Adami HO, Baron JA, Magnusson C, Bergström R, Lindgren A, et 
+al. Risk of endometrial cancer following estrogen replacement with and without 
+progestins. J Natl Cancer Inst. 1999;91(13):1131-7.
+24. Stute P , Neulen J, Wildt L. The impact of micronized progesterone on the 
+endometrium: a systematic review. Climacteric. 2016;19(4):316-28.
+25. Hamoda H. British Menopause Society tools for clinicians: Progestogens and 
+endometrial protection. Post Reprod Health. 2022;28(1):40-6.
+26. Cerin A, Heldaas K, Moeller B. Adverse endometrial effects of long-cycle estrogen 
+and progestogen replacement therapy. The Scandinavian LongCycle Study 
+Group. N Engl J Med. 1996;334(10):668-9.
+27. Furness S, Roberts H, Marjoribanks J, Lethaby A. Hormone therapy in 
+postmenopausal women and risk of endometrial hyperplasia. Cochrane Database 
+Syst Rev. 2012;2012(8):Cd000402.
+28. National Institute for Health and Care Excellence: Clinical Guidelines. Heavy 
+menstrual bleeding: assessment and management. London: National Institute for 
+Health and Care Excellence (NICE) 2021.
+29. Faculty of Sexual and Reproductive Healthcare Guideline (FSRH): Intrauterine 
+Contraceptive2023 21st November 2023. Available from: www.fsrh-clinical-
+guideline-intrauterine-contraception-amended-11jul2023-.pdf.
+30. Hampton NR, Rees MC, Lowe DG, Rauramo I, Barlow D, Guillebaud J. 
+Levonorgestrel intrauterine system (LNG-IUS) with conjugated oral equine 
+estrogen: a successful regimen for HRT in perimenopausal women. Hum Reprod. 
+2005;20(9):2653-60.
+31. Varila E, Wahlström T, Rauramo I. A 5-year follow-up study on the use of a 
+levonorgestrel intrauterine system in women receiving hormone replacement 
+therapy. Fertil Steril. 2001;76(5):969-73.
+32. Suvanto-Luukkonen E, Kauppila A. The levonorgestrel intrauterine system in 
+menopausal hormone replacement therapy: five-year experience. Fertil Steril. 
+1999;72(1):161-3.
+33. Bednarek PH, Jensen JT. Safety, efficacy and patient acceptability of the 
+contraceptive and non-contraceptive uses of the LNG-IUS. Int J Womens Health. 
+2010;1:45-58.
+34. Pakarinen PI, Suvisaari J, Luukkainen T, Lähteenmäki P . Intracervical and fundal 
+administration of levonorgestrel for contraception: endometrial thickness, 
+patterns of bleeding, and persisting ovarian follicles. Fertil Steril. 1997;68(1):59-64.BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)36 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.35. Allen NE, Tsilidis KK, Key TJ, Dossus L, Kaaks R, Lund E, et al. Menopausal hormone 
+therapy and risk of endometrial carcinoma among postmenopausal women 
+in the European Prospective Investigation Into Cancer and Nutrition. Am J 
+Epidemiol. 2010;172(12):1394-403.
+36. Langer RD, Landgren BM, Rymer J, Helmond FA. Effects of tibolone and 
+continuous combined conjugated equine estrogen/medroxyprogesterone 
+acetate on the endometrium and vaginal bleeding: results of the OPAL study. Am 
+J Obstet Gynecol. 2006;195(5):1320-7.
+37. The Writing Group for the PEPI Trial. Effects of estrogen or estrogen/
+progestin regimens on heart disease risk factors in postmenopausal women. 
+The Postmenopausal Estrogen/Progestin Interventions (PEPI) Trial. Jama. 
+1995;273(3):199-208.
+38. Harman SM, Black DM, Naftolin F, Brinton EA, Budoff MJ, Cedars MI, et al. Arterial 
+imaging outcomes and cardiovascular risk factors in recently menopausal 
+women: a randomized trial. Ann Intern Med. 2014;161(4):249-60.
+39. Fournier A, Dossus L, Mesrine S, Vilier A, Boutron-Ruault MC, Clavel-Chapelon F, et 
+al. Risks of endometrial cancer associated with different hormone replacement 
+therapies in the E3N cohort, 1992-2008. Am J Epidemiol. 2014;180(5):508-17.
+40. Birkhäuser MH, Panay N, Archer DF, Barlow D, Burger H, Gambacciani M, et al. 
+Updated practical recommendations for hormone replacement therapy in the 
+peri- and postmenopause. Climacteric. 2008;11(2):108-23.
+41. Hodis HN, Mack WJ, Henderson VW, Shoupe D, Budoff MJ, Hwang-Levine J, et al. 
+Vascular Effects of Early versus Late Postmenopausal Treatment with Estradiol. N 
+Engl J Med. 2016;374(13):1221-31.
+42. Hipolito Rodrigues MA, Gompel A. Micronized progesterone, progestins, and 
+menopause hormone therapy. Women Health. 2021;61(1):3-14.
+43. Sriprasert I, Mert M, Mack WJ, Hodis HN, Shoupe D. Use of oral estradiol 
+plus vaginal progesterone in healthy postmenopausal women. Maturitas. 
+2021;154:13-9.
+44. Abdullahi Idle S, Hamoda H. Outcomes of endometrial assessment in women 
+with unscheduled bleeding on hormone replacement therapy. Post Reprod 
+Health. 2019;25(2):95-9.
+45. Feeley KM, Wells M. Hormone replacement therapy and the endometrium. J Clin 
+Pathol. 2001;54(6):435-40.
+46. Levine D, Gosink BB, Johnson LA. Change in endometrial thickness in 
+postmenopausal women undergoing hormone replacement therapy. Radiology. 
+1995;197(3):603-8.
+47. Sturdee DW, Ulrich LG, Barlow DH, Wells M, Campbell MJ, Vessey MP , et al. The 
+endometrial response to sequential and continuous combined oestrogen-
+progestogen replacement therapy. Bjog. 2000;107(11):1392-400.
+48. Clarke MA, Long BJ, Del Mar Morillo A, Arbyn M, Bakkum-Gamez JN, Wentzensen 
+N. Association of Endometrial Cancer Risk With Postmenopausal Bleeding 
+in Women: A Systematic Review and Meta-analysis. JAMA Intern Med. 
+2018;178(9):1210-22.
+49. Gredmark T, Kvint S, Havel G, Mattsson LA. Histopathological findings in women 
+with postmenopausal bleeding. Br J Obstet Gynaecol. 1995;102(2):133-6.
+50. van Hanegem N, Breijer MC, Slockers SA, Zafarmand MH, Geomini P , Catshoek R, 
+et al. Diagnostic workup for postmenopausal bleeding: a randomised controlled 
+trial. Bjog. 2017;124(2):231-40.BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)37 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.51. Mattsson L, Ipsen HE, Granqvist CJ, Kokot-Kierepa M. Ultra-low-dose estradiol and 
+norethisterone acetate: bleeding patterns and other outcomes over 52 weeks of 
+therapy. Climacteric. 2015;18(3):419-25.
+52. Habiba MA, Bell SC, Abrams K, al-Azzawi F. Endometrial responses to hormone 
+replacement therapy: the bleeding pattern. Hum Reprod. 1996;11(3):503-8.
+53. Thorneycroft IH, Gibbons WE. Vaginal bleeding patterns in women receiving 
+hormone replacement therapy. Impact of various progestogen regimens. J 
+Reprod Med. 1999;44(2 Suppl):209-14.
+54. Ylikorkala O, Rozenberg S. Efficacy and tolerability of fully transdermal hormone 
+replacement in sequential or continuous therapy at two doses of progestogen in 
+postmenopausal women. Maturitas. 2000;37(2):83-93.
+55. NICE. National Institute for Health and Clinical Excellence Guideline. Suspected 
+Cancer: Recognition and Referral NG122023 21st November 2023. Available from: 
+https://www.nice.org.uk/guidance/ng12.
+56. Ferrazzi E, Torri V, Trio D, Zannoni E, Filiberto S, Dordoni D. Sonographic 
+endometrial thickness: a useful test to predict atrophy in patients with 
+postmenopausal bleeding. An Italian multicenter study. Ultrasound Obstet 
+Gynecol. 1996;7(5):315-21.
+57. Gull B, Karlsson B, Milsom I, Granberg S. Can ultrasound replace dilation 
+and curettage? A longitudinal evaluation of postmenopausal bleeding and 
+transvaginal sonographic measurement of the endometrium as predictors of 
+endometrial cancer. Am J Obstet Gynecol. 2003;188(2):401-8.
+58. Gupta JK, Chien PF, Voit D, Clark TJ, Khan KS. Ultrasonographic endometrial 
+thickness for diagnosing endometrial pathology in women with postmenopausal 
+bleeding: a meta-analysis. Acta Obstet Gynecol Scand. 2002;81(9):799-816.
+59. Timmermans A, Opmeer BC, Khan KS, Bachmann LM, Epstein E, Clark TJ, et al. 
+Endometrial thickness measurement for detecting endometrial cancer in women 
+with postmenopausal bleeding: a systematic review and meta-analysis. Obstet 
+Gynecol. 2010;116(1):160-7.
+60. Wong AS, Lao TT, Cheung CW, Yeung SW, Fan HL, Ng PS, et al. Reappraisal 
+of endometrial thickness for the detection of endometrial cancer in 
+postmenopausal bleeding: a retrospective cohort study. Bjog. 2016;123(3):439-46.
+61. Timmermans A, Opmeer BC, Veersema S, Mol BW. Patients’ preferences in the 
+evaluation of postmenopausal bleeding. Bjog. 2007;114(9):1146-9.
+62. Fung LWY, Cheung ECW, Wong ASW, Sahota DS, Lao TTH. Patient acceptance 
+of transvaginal sonographic endometrial thickness assessment compared 
+with hysteroscopy and biopsy for exclusion of endometrial cancer in cases of 
+postmenopausal bleeding. Hong Kong Med J. 2022;28(2):133-9.
+63. Doll KM, Romano SS, Marsh EE, Robinson WR. Estimated Performance of 
+Transvaginal Ultrasonography for Evaluation of Postmenopausal Bleeding 
+in a Simulated Cohort of Black and White Women in the US. JAMA Oncol. 
+2021;7(8):1158-65.
+64. Clark TJ, Barton PM, Coomarasamy A, Gupta JK, Khan KS. Investigating 
+postmenopausal bleeding for endometrial cancer: cost-effectiveness of initial 
+diagnostic strategies. Bjog. 2006;113(5):502-10.
+65. Cooper NA, Barton PM, Breijer M, Caffrey O, Opmeer BC, Timmermans A, et al. 
+Cost-effectiveness of diagnostic strategies for the management of abnormal 
+uterine bleeding (heavy menstrual bleeding and post-menopausal bleeding): a 
+decision analysis. Health Technol Assess. 2014;18(24):1-201, v-vi.BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)38 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.66. Morrison J, Balega J, Buckley L, Clamp A, Crosbie E, Drew Y, et al. British 
+Gynaecological Cancer Society (BGCS) uterine cancer guidelines: 
+Recommendations for practice. Eur J Obstet Gynecol Reprod Biol. 2022;270:50-89.
+67. Van den Bosch T, Van Schoubroeck D, Domali E, Vergote I, Moerman P , Amant F, et 
+al. A thin and regular endometrium on ultrasound is very unlikely in patients with 
+endometrial malignancy. Ultrasound Obstet Gynecol. 2007;29(6):674-9.
+68. Affinito P , Palomba S, Pellicano M, Sorrentino C, Di Carlo C, Morgera R, et al. 
+Ultrasonographic measurement of endometrial thickness during hormonal 
+replacement therapy in postmenopausal women. Ultrasound Obstet Gynecol. 
+1998;11(5):343-6.
+69. Langer RD, Pierce JJ, O’Hanlan KA, Johnson SR, Espeland MA, Trabal JF, et 
+al. Transvaginal ultrasonography compared with endometrial biopsy for 
+the detection of endometrial disease. Postmenopausal Estrogen/Progestin 
+Interventions Trial. N Engl J Med. 1997;337(25):1792-8.
+70. Li Z, Li L. The incidence and predictors of gynecologic malignancies among 
+postmenopausal patients with endometrial fluid collection. Arch Gynecol Obstet. 
+2019;299(4):1071-6.
+71. Breijer MC, Peeters JA, Opmeer BC, Clark TJ, Verheijen RH, Mol BW, et al. Capacity 
+of endometrial thickness measurement to diagnose endometrial carcinoma in 
+asymptomatic postmenopausal women: a systematic review and meta-analysis. 
+Ultrasound Obstet Gynecol. 2012;40(6):621-9.
+72. Jacobs I, Gentry-Maharaj A, Burnell M, Manchanda R, Singh N, Sharma A, et 
+al. Sensitivity of transvaginal ultrasound screening for endometrial cancer in 
+postmenopausal women: a case-control study within the UKCTOCS cohort. 
+Lancet Oncol. 2011;12(1):38-48.
+73. Vitale SG, Riemma G, Haimovich S, Carugno J, Alonso Pacheco L, Perez-Medina T, et 
+al. Risk of endometrial cancer in asymptomatic postmenopausal women in relation 
+to ultrasonographic endometrial thickness: systematic review and diagnostic test 
+accuracy meta-analysis. Am J Obstet Gynecol. 2023;228(1):22-35.e2.
+74. Smith-Bindman R, Weiss E, Feldstein V. How thick is too thick? When endometrial 
+thickness should prompt biopsy in postmenopausal women without vaginal 
+bleeding. Ultrasound Obstet Gynecol. 2004;24(5):558-65.
+75. Ghoubara A, Emovon E, Sundar S, Ewies A. Thickened endometrium in 
+asymptomatic postmenopausal women – determining an optimum threshold for 
+prediction of atypical hyperplasia and cancer. J Obstet Gynaecol. 2018;38(8):1146-9.
+76. Clark TJ. Hysteroscopy is needed in the diagnostic workup of postmenopausal 
+bleeding. Bjog. 2017;124(2):241.
+77. EMA. Committee for Medicinal Products for Human Use European Medicines 
+Agency: Guideline on the clinical investigation of medicinal products for 
+hormone replacement therapy of oestrogen deficiency symptoms in 
+postmenopausal women. EMEA/CHMP/021/972005 21st November 2023. 
+Available from: https://www.ema.europa.eu/en/clinical-investigation-medicinal-
+products-hormone-replacement-therapy-oestrogen-deficiency-symptoms.
+78. SIGN. Scottish Intercollegiate Guidelines Network: Investigation of 
+postmenopausal bleeding: a national clinical guideline2002 21st November 2023. 
+Available from: Investigation of post-menopausal bleeding (sign.ac.uk).
+79. RCOG. Royal College of Obstetricians and Gynaecologists: Management of 
+Endometrial Hyperplasia Greentop Guideline No 672016 21st November 2023. 
+Available from: https://www.rcog.org.uk/media/knmjbj5c/gtg_67_endometrial_
+hyperplasia.pdf.BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)39 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.80. Suhonen SP , Allonen HO, Lähteenmäki P . Sustained-release estradiol implants and 
+a levonorgestrel-releasing intrauterine device in hormone replacement therapy. 
+Am J Obstet Gynecol. 1995;172(2 Pt 1):562-7.
+81. Antoniou G, Kalogirou D, Karakitsos P , Antoniou D, Kalogirou O, Giannikos L. 
+Transdermal estrogen with a levonorgestrel-releasing intrauterine device for 
+climacteric complaints versus estradiol-releasing vaginal ring with a vaginal 
+progesterone suppository: clinical and endometrial responses. Maturitas. 
+1997;26(2):103-11.
+82. Depypere HT, Hillard T, Erkkola R, Lukkari-Lax E, Kunz M, Rautiainen P , et al. A 
+60-month non-comparative study on bleeding profiles with the levonorgestrel 
+intrauterine system from the late transition period to estrogen supplemented 
+menopause. Eur J Obstet Gynecol Reprod Biol. 2010;153(2):176-80.
+83. Raudaskoski TH, Lahti EI, Kauppila AJ, Apaja-Sarkkinen MA, Laatikainen TJ. 
+Transdermal estrogen with a levonorgestrel-releasing intrauterine device for 
+climacteric complaints: clinical and endometrial responses. Am J Obstet Gynecol. 
+1995;172(1 Pt 1):114-9.
+84. Suvanto-Luukkonen E, Sundström H, Penttinen J, Läärä E, Pramila S, Kauppila 
+A. Percutaneous estradiol gel with an intrauterine levonorgestrel releasing 
+device or natural progesterone in hormone replacement therapy. Maturitas. 
+1997;26(3):211-7.
+85. Suvanto-Luukkonen E, Malinen H, Sundström H, Penttinen J, Kauppila A. 
+Endometrial morphology during hormone replacement therapy with estradiol 
+gel combined to levonorgestrel-releasing intrauterine device or natural 
+progesterone. Acta Obstet Gynecol Scand. 1998;77(7):758-63.
+86. Raudaskoski T, Tapanainen J, Tomás E, Luotola H, Pekonen F, Ronni-Sivula H, et al. 
+Intrauterine 10 microg and 20 microg levonorgestrel systems in postmenopausal 
+women receiving oral oestrogen replacement therapy: clinical, endometrial and 
+metabolic response. Bjog. 2002;109(2):136-44.
+87. Archer DF, Hendrix S, Gallagher JC, Rymer J, Skouby S, Ferenczy A, et al. 
+Endometrial effects of tibolone. J Clin Endocrinol Metab. 2007;92(3):911-8.
+88. Di Carlo C, Sammartino A, Di Spiezio Sardo A, Tommaselli GA, Guida M, Mandato 
+VD, et al. Bleeding patterns during continuous estradiol with different sequential 
+progestogens therapy. Menopause. 2005;12(5):520-5.
+89. Darj E, Nilsson S, Axelsson O, Hellberg D. Clinical and endometrial effects 
+of oestradiol and progesterone in post-menopausal women. Maturitas. 
+1991;13(2):109-15.
+90. Gillet JY, Andre G, Faguer B, Erny R, Buvat-Herbaut M, Domin MA, et al. Induction 
+of amenorrhea during hormone replacement therapy: optimal micronized 
+progesterone dose. A multicenter study. Maturitas. 1994;19(2):103-15.
+91. Pélissier C, Maroni M, Yaneva H, Brin S, Peltier-Pujol F, Jondet M. Chlormadinone 
+acetate versus micronized progesterone in the sequential combined hormone 
+replacement therapy of the menopause. Maturitas. 2001;40(1):85-94.
+92. Dupont A, Dupont P , Cusan L, Tremblay M, Rioux J, Cloutier D, et al. Comparative 
+endocrinological and clinical effects of percutaneous estradiol and oral 
+conjugated estrogens as replacement therapy in menopausal women. Maturitas. 
+1991;13(4):297-311.
+93. Pickar JH, Archer DF, Goldstein SR, Kagan R, Bernick B, Mirkin S. Uterine bleeding 
+with hormone therapies in menopausal women: a systematic review. Climacteric. 
+2020;23(6):550-8.BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)40 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.94. von Holst T, Lang E, Winkler U, Keil D. Bleeding patterns in peri and 
+postmenopausal women taking a continuous combined regimen of estradiol 
+with norethisterone acetate or a conventional sequential regimen of conjugated 
+equine estrogens with medrogestone. Maturitas. 2002;43(4):265-75.
+95. Rouskova D, Mittmann K, Schumacher U, Dietrich H, Zimmermann T. 
+Effectiveness, tolerability and acceptance of an oral estradiol/levonorgestrel 
+formulation for the treatment of menopausal complaints: a non-interventional 
+observational study over six cycles of 28 days. Gynecol Endocrinol. 
+2014;30(10):712-6.
+96. Lou YY, Kannappar J, Sathiyathasan S. Unscheduled bleeding on HRT – do we 
+always need to investigate for endometrial pathology? International Journal of 
+Reproduction, Contraception, Obstetrics and Gynecology. 2017;6(10):4174-8.
+97. Hillard T. Management of bleeding problems with hormone replacement therapy. 
+J Fam Plann Reprod Health Care. 2002;28(4):182-4.
+98. Hillard T, Lunsden LM, Rees M. Bleeding on sequential HRT and endometrial 
+thickness predict success of transition from sequential hormone replacement 
+therapy to continuous combined transdermal hormone replacement therapy. J Br 
+Menopause Soc 2001;7:18-9.
+PUBLISHED: APRIL 2024 
+NEXT REVIEW DATE: APRIL 2027 BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)41 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.Appendices
+Appendix 1: Licensed estrogen dose and proportionate progestogen dose
+Appendix 2: Endometrial ultrasound reporting criteria for women with 
+unscheduled bleeding
+Appendix 3: Recommendations pertaining to investigation outcomes in 
+women taking HRT 
+Appendix 4: Auditable topics
+Appendix 5: Research prioritiesBMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)42 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.Appendix 1: Licensed estrogen dose and proportionate progestogen dose
+‘The dose of the progestogen should be proportionate to the dose of estrogen. Women 
+who require high dose estrogen intake should consider having their progestogen dose 
+increased to ensure adequate endometrial protection. ’ 
+BMS 2022 Recommendation
+Key: Prescribed estrogen dose for ultra-low, low, standard, moderate and high 
+dose regimens
+ Ultra-low dose Low Dose Standard dose Moderate dose High dose
+Oestrogel ½ pump 1 pump 2 pumps 3 pumps 4 pumps
+Sandrena 0.25 mg 0.5 mg 1 mg 1.5-2 mg 3 mg*
+Lenzetto spray 1 spray 2 sprays 3 sprays 4-5 sprays* 6 sprays*
+Patch 12.5 µg 25 µg 50 µg 75 µg 100 µg
+Oral estradiol 0.5 mg 1 mg 2 mg 3 mg^ 4 mg^
+* Off-license use ^ Off-license use – rarely required to achieve symptom control
+mg = milligrams µg = micrograms
+Progestogen dose per licensed estrogen dose in the baseline population
+Estrogen dose Micronised Progesterone Medroxy progesterone Norethisterone LNG-IUD
+ continuous sequential continuous sequential continuous sequential (52mg)
+Ultra/Low 100 mg 200 mg 2.5 mg 10 mg 5 mg* 5 mg* 
+One – forStandard 100 mg 200 mg 2.5-5 mg 10 mg 5 mg* 5 mg* up to 5
+Moderate 100 mg 200 mg 5 mg 10 mg 5 mg 5 mg years of
+High 200 mg+ 300 mg+ 10 mg^ 20 mg^ 5 mg 5 mg use
+ 
+* 1 mg provides endometrial protection for ultra-low to standard dose estrogen but the lowest stand-alone dose currently available in the UK is 
+5 mg (off-license use of three noriday POP i.e 1.05 mg, could be considered if 5 mg is not tolerated). 
+^ There is limited evidence in relation to optimal MPA dose with high dose estrogen; the advised dose is based on studies reporting 10 mg 
+providing protection with up to moderate dose estrogen.
++ There are limited evidence in relation to optimal micronised progesterone dose for moderate or high dose estrogen; until evidence is available 
+to guide practice, the advised dose is based on studies reporting 100 mg/day providing protection with up to standard dose estrogen. 
+If unscheduled bleeding occurs with ultra-low to moderate dose estrogen, and other progestogens are not acceptable, offer micronised 
+progesterone at the dosage recommended for high dose estrogen.BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)43 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.Appendix 2: Endometrial ultrasound reporting and referral criteria for 
+unscheduled bleeding with HRT
+Referral criteria for endometrial thickness (ET) on ultrasound
+USCP – urgent suspicion of cancer pathway sHRT – sequential HRT ccHRT – continuous combined HRT
+Continuous combined HRT (ccHRT): daily progestogen & estrogen
+Preparation given to postmenopausal women i.e. ‘bleed free’ preparation
+All patients should be offered a transvaginal ultrasound scan if possible, if 
+transabdominal please indicate on the report.
+• The upper limit for AP measurement for patients with unscheduled bleeding on 
+ccHRT is 4 mm. If > 4 mm advise an urgent suspicion of cancer pathway referral, if 
+not already under their care. 
+ “The endometrium is thickened and measures XX mm: malignancy should be 
+excluded and referral to the gynaecology urgent suspicion of cancer pathway is 
+advised”
+• If the measurements are ≤ 4 mm report the endometrial thickness using the 
+following phrasing: 
+ “The endometrium measures XX mm: This result is considered reassuring for 
+patients taking ccHRT but should be interpreted by the referring clinician in 
+the context of the patient’s individual risk factors for endometrial cancer and 
+bleeding pattern. ” HRT preparation ≤ 4 mm > 4 to 
+≤ 7 mm> 7mm Incomplete endometrial 
+assessment but 
+visualised ET within 
+normal limits 
+ccHRT 
+(Postmenopausal – 
+daily estrogen and 
+progestogen)Result considered 
+normal but 
+interpreted by 
+referring clinician 
+in context of 
+patient’s cancer 
+risksUSCP USCP Endometrial assessment 
+on an urgent pathway 
+(within 6 weeks)
+sHRT 
+(Perimenopausal – 
+daily estrogen and a 
+progestogen for 10 to 14 
+days of the month)Result considered 
+normal but 
+interpreted by 
+referring clinician 
+in context of 
+patient’s cancer 
+risksResult 
+considered 
+normal but 
+interpreted 
+by referring 
+clinician in 
+context of 
+patient’s cancer 
+risksUSCP Endometrial assessment 
+on an urgent pathway 
+(within 6 weeks)BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)44 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.Sequential / cyclical HRT (sHRT): daily estrogen and progestogen for 10-14 
+days of the month 
+These women are perimenopausal and are still having monthly withdrawal bleeds.
+All patients should be offered a transvaginal ultrasound scan if possible, 
+if transabdominal please indicate on the report
+• The upper limit for AP measurement for patients with unscheduled bleeding 
+on sequential HRT (progestogen for 10-14 days days of the month) should be ≤ 
+7 mm because of the additional progestogen from mid-cycle. If > 7 mm, advise an 
+urgent suspicion of cancer pathway referral, if not already under their care. 
+ “The endometrium is thickened and measures XX mm: malignancy should be 
+excluded and referral to the gynaecology urgent suspicion of cancer pathway is 
+advised”
+• If the AP measurements are ≤ 7 mm report the endometrial thickness using the 
+following: 
+ “The endometrium measures XX mm. This result is considered reassuring for 
+patients taking sHRT but should be interpreted by the referring clinician in 
+the context of the patient’s individual risk factors for endometrial cancer and 
+bleeding pattern. ” 
+Endometrium appears within normal limits but not entirely visualised
+If it is not possible to accurately assess the endometrium, or obtain an AP 
+measurement of the endometrial thickness owing to factors such as fibroids, IUCD, 
+prior ablation etc, then use: 
+“The endometrium cannot be assessed in its entirety because of the presence of 
+XXXXXX, therefore endometrial pathology cannot be excluded; the visualised 
+portion measures XX mm. Referral to the gynaecology urgent suspicion of cancer 
+pathway, for endometrial assessment, is advised if the visualised portion is 
+thickened (> 4 mm for ccHRT and >7 mm if sHRT) or on an urgent pathway 
+(within 6 weeks) if the visualised portion is within normal limits” BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)45 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.Appendix 3: Recommendations pertaining to investigation outcomes in 
+women taking HRT 
+Investigation Result Pathway Management Recommendation
+TVS : Endometrial thickness (ET) ≤ 4 mm if 
+ccHRT and ≤ 7 mm if sHRTN/A Offer adjustments to the HRT preparation for 
+6 months
+TVS : ET > 4 mm if ccHRT and > 7 mm if sHRT 
+(thickened endometrium)USCP Endometrial assessment 
+(endometrial biopsy and / or hysteroscopy)
+TVS : Incomplete assessment of the 
+endometrium (e.g. fibroids/IUD 
+obscuring) but visualised portion 
+within normal ultrasound limitsUrgent 
+(within 6 
+weeks)Endometrial assessment 
+(endometrial biopsy and / or hysteroscopy)
+TVS : Asymptomatic (no unscheduled 
+bleeding) with incidental ET ≥ 10 mm 
+and no risk factors for endometrial 
+cancer.Urgent Hysteroscopy + biopsy (preferable) or blind 
+biopsy alone – resources dependent
+TVS : Asymptomatic (no unscheduled 
+bleeding) but incidental ET ≥ 10 
+mm with risk factors for endometrial 
+cancer (x1 major or x2 minor)USCP Hysteroscopy + biopsy (preferable) or blind 
+biopsy alone – resources dependent
+TVS : Normal ET (≤ 4 mm if ccHRT and ≤ 7 
+mm if sHRT) but, 
+• Recurrent unscheduled bleeding six 
+months after HRT adjustments or,
+• Heavy or Persistent (almost daily) bleeding 
+or,
+• Intracavity fluid and x1 major or x2 minor 
+risk factors for endometrial cancerUrgent Endometrial assessment 
+(endometrial biopsy and / or hysteroscopy)
+Blind endometrial biopsy : 
+Normal (inactive/atrophic if ccHRT use or 
+inactive / proliferative for sHRT) N/A Offer adjustments in HRT preparation for 3 
+months
+Blind endometrial biopsy : 
+Normal but bleeding ongoing 3 months 
+laterUrgent Hysteroscopy + / – targeted biopsy
+Blind endometrial biopsy : 
+Inadequate sample and thickened ET on 
+TVS.USCP Hysteroscopy + targeted biopsy
+Blind endometrial biopsy : 
+Proliferation in women using ccHRT who 
+have x1 major or x2 minor risk factors for 
+endometrial cancerUrgent Hysteroscopy + / – targeted biopsy
+Hysteroscopy and biopsy: 
+Normal but bleeding ongoing 6 months 
+laterUrgent TVS: endometrial assessment if thickened 
+endometrium
+Blind or targeted endometrial biopsy : 
+Hyperplasia (with or without atypia)USCP Management: RCOG endometrial 
+hyperplasia guidelineBMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)46 | 47
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.Appendix 4: Auditable topics
+1. Women prescribed stand-alone estradiol products (oral / transdermal) with 
+concurrent issue of appropriate dose and total days per month progestogen or 
+progesterone (100%)
+2. Women prescribed stand-alone estradiol products (oral / transdermal) in the 
+presence of an ‘in-date’ 52 mg LNG–IUD (five or less years since insertion) (100%)
+3. Women who started HRT ≥ 45 years of age switched to ccHRT after 5 years of 
+sequential HRT or by age 54 (whichever occurs first) (100%)
+4. Percentage of women presenting with unscheduled bleeding meeting criteria for 
+USCP referred by a USCP (100%)
+5. Percentage of women presenting with unscheduled bleeding on HRT meeting the 
+criteria for referral on USCP meeting 28-day faster diagnosis target (85%)
+6. Percentage of women referred for urgent (6 week) TVS seen by 6 weeks (85%)
+7. Percentage of women referred on an urgent (6 week) pathway, with endometrial 
+assessment by 6 weeks (85%)BMS | GUIDELINE Management of unscheduled bleeding 
+ on hormone replacement therapy (HRT)
+Copyright © 2024 British Menopause Society. All rights reserved.
+Permission granted to reproduce for personal and educational use only. Commercial copying and distribution is prohibited.Appendix 5: Research Priorities
+1. Assessment of endometrial cancer risk in women who have unscheduled bleeding 
+on ccHRT including variables relating to moderate / high dose estrogen and/or 
+micronised progesterone. 
+2. Assessment of endometrial cancer risk in perimenopausal women who have 
+unscheduled bleeding on sHRT including variables relating to moderate / high 
+dose estrogen and/or micronised progesterone. 
+3. Acquire evidence assessing endometrial cancer risk dependent upon total 
+duration of HRT use. This should be stratified by progestogen type and dose (with 
+priority given to micronised progesterone).
+4. Assessment of endometrial protection with LNG IUD as progestogenic 
+component of HRT:
+ a. When lower dose (13.3 and 19.5 mg) LNG IUD is used
+ b. When 52 mg LNG IUD is sited in the lower endometrial cavity (more than 2 cm 
+from the fundus) 
+ c. When 52 mg LNG IUD is used in conjunction with estrogen use above high dose.
+5. Acquire evidence correlating endometrial thickness (ET) with endometrial disease 
+(hyperplasia with / without cytological atypia and endometrial cancer) in women 
+who have unscheduled bleeding on HRT. Priority should be given to women 
+taking sequential HRT; assessment of ultrasonographic variation at different 
+intervals in the cycle, with histological correlation, may enable higher cut-offs at 
+the end of the progestogen phase which would reduce the number of women 
+offered invasive testing.
+6. Assessment of optimal interval for endometrial reassessment (ultrasound 
+or biopsy) in women who have recurrent unscheduled bleeding, despite 
+progestogen adjustments, and a normal biopsy and / or hysteroscopy.
+7. Assessment of the prevalence of endometrial hyperplasia / cancer in 
+hysteroscopically diagnosed focal endometrial pathology in women with 
+unscheduled bleeding on HRT.
+www.thebms.org.uk
+Reg Charity No: 1015144
+Company Reg No: 02759439www.womens-health-concern.org
+Reg Charity No: 279651
+Company Reg No: 1432023For further details – please visit
+www.thebms.org.uk or telephone 01628 890 199
+Q3P2324

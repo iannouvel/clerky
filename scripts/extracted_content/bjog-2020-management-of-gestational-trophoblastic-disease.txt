@@ -1,0 +1,871 @@
+# Extracted from: BJOG - 2020 -  Management of Gestational Trophoblastic Disease.pdf
+# Guideline ID: bjog-2020-management-of-gestational-trophoblastic-disease
+# Content length: 85339 characters
+# Processing date: 1732953490.8162546
+
+Management of Gestational Trophoblastic
+Disease
+Green-top Guideline No. 38
+September 2020
+Please cite this paper as: Tidy J, Seckl M, Hancock BW, on behalf of the Royal College of Obstetricians and
+Gynaecologists. Management of Gestational Trophoblastic Disease. BJOG 2021;128:e1 –e27.
+DOI: 10.1111/1471-0528.16266 RCOG Green-top Guidelines
+Management of Gestational Trophoblastic Disease
+Tidy J, Seckl M, Hancock BW on behalf of the Royal College of Obstetricians and Gynaecologists
+Correspondence: Royal College of Obstetricians and Gynaecologists, 10–18 Union Street, London SE1 1SZ.
+Email: clinicaleffectiveness@rcog.org.uk
+This is the fourth edition of this guideline. The third edition was published in 2010 under the same title. The second
+edition was published in 2004 titled The Management of Gestational Trophoblastic Neoplasia , which replaced The
+Management of Gestational Trophoblastic Disease , published in April 1999.
+Executive summary
+How do molar pregnancies present to the clinician?
+Clinicians should be aware of the symptoms and signs of molar pregnancy. The most common
+presentation is irregular vaginal bleeding, a positive pregnancy test and supportingultrasonographic evidence.C
+Less common presentations of molar pregnancies include hyperemesis, excessive uterineenlargement, hyperthyroidism, early-onset pre-eclampsia and abdominal distension due totheca lutein cysts. [New 2020]P
+Very rarely women can present with haemoptysis or seizures due to metastatic disease
+affecting the lungs or brain. [New 2020]P
+How are molar pregnancies diagnosed?
+The de ﬁnitive diagnosis of a molar pregnancy is made by histological examination.D
+Removal of a molar pregnancy
+What is the best method for removal of a molar pregnancy?
+Suction curettage is the method of choice for removal of complete molar pregnancies.P
+Ultrasound guidance during removal and curettage may be of use to minimise the chance of
+perforation and to ensure that as much tissue as possible is removed.P
+Suction curettage is the method of choice for removal of partial molar pregnancies except when the
+size of fetal parts deters the use of suction curettage and then medical removal can be used.P
+RCOG Green-top Guideline No. 38 e2 of e27 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2021, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16266 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Anti-D prophylaxis is recommended following removal of a molar pregnancy.P
+Is it safe to prepare the cervix prior to surgical removal?
+Preparation of the cervix immediately prior to uterine removal is safe.D
+Can oxytocic infusions be used during surgical removal?
+Excessive vaginal bleeding can be associated with surgical management of molar pregnancy and
+the involvement of an experienced clinician is advised.P
+The use of oxytocic infusion prior to completion of the removal is not recommended.P
+If the woman is experiencing signi ﬁcant haemorrhage prior to or during removal, surgical removal
+should be expedited and the need for oxytocin infusion weighed up against the risk of tissueembolisation.P
+In what circumstances should a repeat surgical removal be indicated and what is the timing?
+There is almost always a role for urgent surgical management for the woman who isexperiencing heavy or persistent vaginal bleeding causing acute haemodynamic compromise,particularly in the presence of retained pregnancy tissue on ultrasound. [New 2020]P
+Outside the context of acute compromise, there should be consultation with the relevant GTD
+referral centre before performing surgical management for the second time in the same pregnancy.D
+Histological examination of pregnancy tissue in the diagnosis of GTD
+Should pregnancy tissue from all miscarriages be examined histologically?
+The histological assessment of material obtained from the medical or surgical management ofall miscarriages is recommended to exclude trophoblastic neoplasia if no fetal parts areidenti ﬁed at any stage of the pregnancy.D
+Women who receive care for a miscarriage should be recommended to do a urinary pregnancy
+test 3 weeks after miscarriage. [New 2020]P
+Should pregnancy tissue be sent for examination after abortion?
+There is no need to routinely send pregnancy tissue for histological examination following
+therapeutic abortion, provided that fetal parts have been identi ﬁed at the time of surgical
+abortion or on prior ultrasound examination.D
+Women who undergo medical abortion should be recommended to do a urinary pregnancy test3 weeks after the procedure. [New 2020]P
+RCOG Green-top Guideline No. 38 e3 of e27 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2021, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16266 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+How should women with an elevated human chorionic gonadotrophin after a possible pregnancy
+event be managed?
+Referral to a GTD centre should be considered for all women with persistently elevated
+human chorionic gonadotrophin (hCG) either after an ectopic pregnancy has been excluded, orafter two consecutive treatments with methotrexate for a pregnancy of unknown location.[New 2020]P
+Which women should be investigated for GTN after a non-molar pregnancy?
+Any woman who develops persistent vaginal bleeding after a pregnancy event is at risk of
+having GTN.D
+A urine hCG test should be performed in all cases of persistent or irregular vaginal bleedinglasting more than 8 weeks after a pregnancy event.P
+Symptoms from metastatic disease, such as dyspnoea and haemoptysis, or new onset ofseizures or paralysis, can occur very rarely.D
+Biopsy of secondary deposits in the vagina can cause major haemorrhage and is notrecommended.P
+How should suspected ectopic molar pregnancy in women be managed?
+Cases of women with ectopic pregnancy suspected to be molar in nature should be managed as
+any other case of ectopic pregnancy. If there is a local tissue diagnosis of ectopic molarpregnancy, the tissue should be sent to a centre with appropriate expertise for pathologicalreview. [New 2020]P
+How is twin pregnancy of a viable fetus and presumptive coexistent molar pregnancy managed?
+Women diagnosed with a combined molar pregnancy and viable twin, or where there is
+diagnostic doubt, should be referred to a regional fetal medicine centre and GTD centre.P
+In the situation of a twin pregnancy where there is one viable fetus and the other pregnancy ismolar, the woman should be counselled about the potential increased risk of perinatalmorbidity and the outcome for GTN.D
+Prenatal invasive testing for fetal karyotype should be considered in cases where it is unclear ifthe pregnancy is a complete mole with a coexisting normal twin or a possible singleton partialmolar pregnancy. Prenatal invasive testing for fetal karyotype should also be considered incases of abnormal placenta, such as suspected mesenchymal hyperplasia of the placenta. D
+RCOG Green-top Guideline No. 38 e4 of e27 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2021, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16266 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+How should a placental site trophoblastic tumour or epithelioid trophoblastic tumour be managed?
+All women with placental site trophoblastic tumour (PSTT) or epithelioid trophoblastic tumour
+(ETT) should be registered with and cared for within a GTD centre. [New 2020]D
+How should a placental site nodule or atypical placental site nodule be managed?
+Women with an atypical placental site nodule (PSN) or where the local pathology is uncertain
+should have their histology reviewed centrally. All women with atypical PSN will then be calledup for central review to discuss the existing data, perform staging investigations and todetermine further management. Women with typical PSN do not currently require furtherinvestigation or review. [New 2020]P
+Which women should be registered at GTD centres?
+All women diagnosed with GTD should be provided with written information about the
+condition and the need for referral for follow-up by a GTD centre should be explained.D
+Clinicians should be aware that outcomes for women with GTN and GTD are better withongoing care from GTD centres. The registration of affected women with a GTD centrerepresents a minimum standard of care. [New 2020]P
+Women with the following diagnoses should be registered and require follow-up as determined
+by the screening centre:
+/C15complete molar pregnancy/partial molar pregnancy
+/C15twin pregnancy with complete or partial molar pregnancy
+/C15limited macroscopic or microscopic molar change suggesting possible early complete orpartial molar pregnancy/choriocarcinoma
+/C15PSTT or ETT
+/C15atypical PSN. [New 2020]D
+What is the optimum follow-up following a diagnosis of GTD?
+For complete molar pregnancy, if hCG has reverted to normal within 56 days of the pregnancy
+event then follow-up will be for 6 months from the date of uterine removal.C
+If hCG has not reverted to normal within 56 days of the pregnancy event then follow-up will befor 6 months from normalisation of the hCG level.C
+Follow-up for partial molar pregnancy is concluded once the hCG has returned to normal ontwo samples, at least 4 weeks apart. [New 2020]C
+RCOG Green-top Guideline No. 38 e5 of e27 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2021, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16266 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Women who have not received chemotherapy no longer need to have hCG measured after any
+subsequent pregnancy event. [New 2020]C
+What is the optimum treatment for GTN?
+Women with GTN may be treated with single-agent or multi-agent chemotherapy.B
+Treatment used is based on the FIGO 2000 scoring system for GTN following assessment at the
+treatment centre. [New 2020]B
+PSTT and ETT are now recognised as variants of GTN. They may be treated with surgery
+because they are less sensitive to chemotherapy.D
+What is the recommended interval between a complete or partial molar pregnancy and trying toconceive in the future, what is the monitoring of women following a successful pregnancy after aprevious molar pregnancy and what is the outcome of subsequent pregnancies?
+Women are advised not to conceive until their follow-up is complete.
+C
+Women who undergo chemotherapy are advised not to conceive for 1 year after completion of
+treatment, as a precautionary measure.C
+Women who have a pregnancy following a previous molar pregnancy, which has not requiredtreatment for GTN, do not need to send a post-pregnancy hCG sample. Histological examinationof placental tissue from any normal pregnancy, after a molar pregnancy, is not indicated. [New
+2020]D
+What is the long-term outcome of women treated for GTN?
+The outlook for women treated for GTN is generally excellent with an overall cure rate close to
+100%. [New 2020]B
+Further pregnancies are achieved in approximately 80% of women following treatment for GTN
+with either methotrexate alone or multi-agent chemotherapy. [New 2020]B
+There is an increased risk of premature menopause for women treated with combination
+agent chemotherapy. Women, especially those approaching the age of 40 years, should bewarned of the potential negative impact on fertility, particularly when treated with high-dosechemotherapy.B
+RCOG Green-top Guideline No. 38 e6 of e27 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2021, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16266 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+What is safe contraception following treatment of GTD and when should it be commenced?
+It is important that women who have had a removal of a molar pregnancy are advised not to
+become pregnant until they have completed their hCG follow-up. [New 2020]D
+Advice on contraception after a molar pregnancy can be found in the Faculty of Sexual and
+Reproductive Health Guideline Executive Summary Contraception After Pregnancy. [New 2020]D
+Is the use of exogenous estrogens and other fertility drugs safe for women undergoing assisted
+reproductive treatment after a molar pregnancy?
+The use of exogenous estrogens and other fertility drugs may be used once hCG levels have
+returned to normal. [New 2020]P
+Is hormone replacement therapy safe for women to use after GTD?
+Hormone replacement therapy may be used once hCG levels have returned to normal.P
+Impact of diagnosis on women and their familiesGTD centres now provide individualised support to women and their families throughout their
+GTD journey, through dedicated GTD nurse specialists and advisors, who can be accessed eitherthrough attending a GTD centre or via phone, or both. Online support groups are available(molarpregnancy.co.uk) alongside regular drop-in support groups at Charing Cross Hospital,London and Weston Park Hospital, Shef ﬁeld. Further information is available from each centre.
+[New 2020] P
+1. De ﬁnitions
+Gestational trophoblastic disease (GTD) comprises a group of disorders spanning the premalignant conditions of
+complete and partial molar pregnancies (also known as hydatidiform moles) through to the malignant conditions ofinvasive mole, choriocarcinoma and the very rare placental site trophoblastic tumour (PSTT) and epithelioidtrophoblastic tumour (ETT). The malignant potential of atypical placental site nodules (PSNs) remains unclear.
+If there is any evidence of persistence of GTD after primary treatment, most commonly deﬁned as a persistent
+elevation of human chorionic gonadotrophin (hCG), the condition is referred to as gestational trophoblasticneoplasia (GTN). The diagnosis of GTN does not require histological conﬁrmation. The diagnosis of complete mole,partial mole, atypical PSN and PSTT/ETT does require histological conﬁrmation.
+2. Purpose and scope
+The purpose of this guideline is to describe the presentation, diagnosis, management, treatment and follow-up ofGTD and GTN. It also provides advice on future pregnancy outcomes and the use of contraception.
+RCOG Green-top Guideline No. 38 e7 of e27 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2021, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16266 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+3. Introduction and background epidemiology
+Molar pregnancies can be subdivided into complete and partial molar pregnancies based on genetic and
+histopathological features. Complete molar pregnancies are diploid and androgenic in origin, with no evidence of fetal
+tissue. Complete molar pregnancies usually (75 –80%) arise as a consequence of duplication of a single sperm following
+fertilisation of an ‘empty’ ovum. Some complete moles (20 –25%) can arise after dispermic fertilisation of an ‘empty’
+ovum. Partial molar pregnancies are usually (90%) triploid in origin, with two sets of paternal haploid chromosomesand one set of maternal haploid chromosomes. Partial molar pregnancies occur, in almost all cases, following dispermicfertilisation of an ovum. Occasionally molar pregnancies represent tetraploid or mosaic conceptions. In a partial mole,there is usually evidence of a fetus or fetal red blood cells. Not all triploid or tetraploid pregnancies are partial moles.For the diagnosis of a partial mole, there must be histopathological evidence of trophoblast hyperplasia.
+GTD (hydatidiform mole, invasive mole, choriocarcinoma, PSTT) is an uncommon occurrence in the UK, with a
+calculated incidence of 1 in 714 live births. There is evidence of ethnic variation in the incidence of GTD in the UK,with women from Asia having a higher incidence compared with non-Asian women (1 in 387 versus 1 in 752 livebirths, respectively).
+1The incidence of GTD is associated with age at conception, being higher in the extremes of
+age (women aged less than 15 years, 1 in 500 pregnancies; women aged more than 50 years, 1 in 8 pregnancies).2,3
+However, these ﬁgures may under-represent the true incidence of the disease because of problems with reporting,particularly in regard to partial moles. GTN may develop after a molar pregnancy, a non-molar pregnancy or a livebirth. The incidence after a live birth is estimated at 1 in 50 000. On average, a consultant obstetrician andgynaecologist may only deal with one new case every 2 years.
+In the UK, there exists an effective registration and treatment programme. The programme has a cure rate of 98 –100%, and
+a chemotherapy rate of 0.5 –1.0% for GTN after partial molar pregnancy and 13 –16% after complete molar pregnancy.
+2,4–6
+Clinicians should be aware that outcomes for women with GTN and GTD are better with ongoing management from GTD
+centres. The registration of affected women with a GTD centre represents a minimum standard of care.
+4. Identi ﬁcation and assessment of evidence
+This guideline was developed using standard methodology for developing RCOG Green-top Guidelines. The Cochrane
+Library (including the Cochrane Database of Systematic Reviews, the Database of Abstracts of Reviews of Effects[DARE] and the Cochrane Central Register of Controlled Trials [CENTRAL]), EMBASE, MEDLINE and Trip weresearched for relevant papers. The search was inclusive of all relevant articles published between January 2008 and June2019. The databases were searched using the relevant Medical Subject Headings (MeSH) terms, including allsubheadings and synonyms, and this was combined with a keyword search. Search terms included ‘trophoblasticneoplasms’, ‘trophoblastic disease’, ‘trophoblastic tumour’, ‘hydatidiform’ and ‘molar pregnancy’. The search was limitedto studies on humans and papers in the English language. Relevant guidelines were also searched for using the samecriteria in the National Guideline Clearinghouse and the National Institute for Health and Care Excellence (NICE)Evidence Search. The full search strategy is available to view online as supporting information (Appendix S1 and S2).
+Where possible, recommendations are based on available evidence. Areas lacking evidence are highlighted and
+annotated as ‘good practice points’. Further information about the assessment of evidence and the grading ofrecommendations may be found in Appendix 1.
+RCOG Green-top Guideline No. 38 e8 of e27 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2021, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16266 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+5. How do molar pregnancies present to the clinician?
+Clinicians should be aware of the symptoms and signs of molar pregnancy. The most common
+presentation is irregular vaginal bleeding, a positive pregnancy test and supporting
+ultrasonographic evidence.C
+Less common presentations of molar pregnancies include hyperemesis, excessive uterineenlargement, hyperthyroidism, early-onset pre-eclampsia and abdominal distension due totheca lutein cysts.P
+Very rarely women can present with haemoptysis or seizures due to metastatic diseaseaffecting the lungs or brain.P
+Vaginal bleeding remains the most common presenting symptom of molar pregnancy and is associated
+with approximately 60% of presentations. This symptom has not changed despite a reduction in thegestation at presentation (from 11 to 10 weeks) between 1996 and 2006. The percentage of womenpresenting with an abnormal ultrasound result, as the only presenting feature, increased from 1% to 12%over the same time period.
+7Evidence
+level 2 +
+The use of ultrasound in early pregnancy has led to the earlier diagnosis of molar pregnancy. Soto-Wright
+et al.8demonstrated a reduction in the mean gestation at presentation, from 16 weeks of gestation
+between 1965 and 1975 to 12 weeks of gestation between 1988 and 1993. There has been a furtherreduction in gestational age at diagnosis to 9 weeks of gestation between 1994 and 2013.
+9The majority of
+histologically proven molar pregnancies are associated with an ultrasound diagnosis of delayed miscarriageor anembryonic pregnancy.
+10In one study, the pre-removal diagnosis of molar pregnancy increased with
+gestational age: 35 –40% correctly identiﬁed before 14 weeks of gestation, increasing to 60% after
+14 weeks of gestation.11A further study reported that ultrasound examination correctly identiﬁed 56% of
+molar pregnancies in women with suspected missed miscarriage.12When pregnancy tissue was routinely
+examined after surgical removal, the incidence of molar pregnancy and atypical PSNs, unrecognised priorto removal, was 2.7%.
+13Evidence
+level 2 +
+Ultrasound features suggestive of a complete molar pregnancy include a polypoid mass between 5 and
+7 weeks of gestation and thickened cystic appearance of the villous tissue after 8 weeks of gestation withno identiﬁable gestational sac.
+14,15Partial molar pregnancies are associated with an enlarged placenta or
+cystic changes within the decidual reaction in association with either an empty sac or a delayedmiscarriage. Using these criteria, a reasonable sensitivity for complete mole is 95% and 20% for partialmole. The positive predictive value is low for both complete (40%) and partial (22%) moles.
+16A review of
+the ultrasound features of partial and complete molar pregnancies found the ultrasound diagnosis of apartial molar pregnancy to be more subtle, reporting the ﬁnding of multiple soft markers, including cysticspaces in the placenta, and ratio of transverse to anteroposterior dimension of the gestational sac greaterthan 1:1.5. These features may be of help in the diagnosis of a partial molar pregnancy.
+17,18Using these
+extra criteria, 41.4% of partial molar pregnancies are correctly diagnosed prior to removal compared with86.4% of complete molar pregnancies.
+18A study of women presenting to an early pregnancy unit reported
+ultrasound correctly identiﬁed 88.2% of complete molar pregnancies and 56% of partial molarpregnancies.
+19Evidence
+level 2 +
+RCOG Green-top Guideline No. 38 e9 of e27 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2021, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16266 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+The estimation of hCG levels may be of value in diagnosing molar pregnancies: in a small study of 51
+suspected cases of molar pregnancy hCG levels were signiﬁcantly higher for both complete and partial
+molar pregnancies.12Evidence
+level 2 +
+Rarer presentations include hyperthyroidism, early-onset pre-eclampsia or abdominal distension due to
+theca lutein cysts.20Very rarely, women can present with haemoptysis, acute respiratory failure or
+neurological symptoms, such as seizures, likely to be due to metastatic disease.21Evidence
+level 4
+6. How are molar pregnancies diagnosed?
+The de ﬁnitive diagnosis of a molar pregnancy is made by histological examination.D
+Pathological features consistent with the diagnosis of complete molar pregnancies include: absence of fetal
+tissue; extensive hydropic change to the villi; and excess trophoblast proliferation. Features of a partialmolar pregnancy include: presence of fetal tissue; focal hydropic change to the villi; and some excesstrophoblast proliferation. Ploidy status and immunohistochemistry staining for p57, a paternally imprinted
+gene, may help in distinguishing partial from complete molar pregnancies.
+22,23Evidence
+level 2 +
+7. Removal of a molar pregnancy
+7.1. What is the best method for removal of a molar pregnancy?
+Suction curettage is the method of choice for removal of complete molar pregnancies.P
+Ultrasound guidance during removal and curettage may be of use to minimise the chance of
+perforation and to ensure that as much tissue as possible is removed.P
+Suction curettage is the method of choice for removal of partial molar pregnancies exceptwhen the size of fetal parts deters the use of suction curettage and then medical removal canbe used.P
+Anti-D prophylaxis is recommended following removal of a molar pregnancy.P
+Complete molar pregnancies are not associated with fetal parts, and therefore, suction removal is the method of
+choice for uterine removal irrespective of uterine size. Medical removal of a complete molar pregnancy should beavoided if possible, irrespective of the agents used.
+24In a review of 4247 women with GTD, the risk of developing
+GTN and requiring chemotherapy was 16-fold higher when medical methods of removal were used compared withsurgical removal.
+25In addition, there is theoretical concern, supported by clinical experience, over the routine use
+RCOG Green-top Guideline No. 38 e10 of e27 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2021, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16266 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+of potent oxytocic agents because of the potential to embolise and disseminate trophoblastic tissue through the
+venous system leading to adult respiratory distress syndrome, similar in presentation to amniotic ﬂuid embolism.26
+For twin pregnancies where there is a non-molar pregnancy alongside a molar pregnancy and the woman
+has decided to terminate the pregnancy (or there has been demise of the coexisting twin) and the size ofthe fetal parts deters the use of suction curettage, medical removal can be used.Evidence
+level 2 +
+There is a higher rate of incomplete removal with medical methods. The risk of this increasing the need
+for treatment for GTN is 13 –16% with complete molar pregnancies and 0.5 –1.0% with partial molar
+pregnancies.2–4Evidence
+level 2 +
+A review of the literature found no published evidence examining the use of ultrasound at the time of uterine
+removal for GTN. There is a consensus view, however, that this may be the preferred surgical option.27
+Women who have an unrecognised molar pregnancy and undergo medical or surgical abortion of thepregnancy are at increased risk of life-threatening complications of GTN, require more surgicalintervention and chemotherapy.
+28Evidence
+level 3
+Poor vascularisation of the chorionic villi and absence of the D antigen by trophoblast cells means that
+anti-D prophylaxis is not required for complete molar pregnancies.29However, it is required for partial
+molar pregnancies. Conﬁrmation of the diagnosis of complete molar pregnancy may not occur for sometime after removal, which could delay administration of anti-D. If the diagnosis of complete molarpregnancy cannot be established within 72 hours, anti-D prophylaxis can be administered for practicalreasons.Evidence
+level 4
+7.2. Is it safe to prepare the cervix prior to surgical removal?
+Preparation of the cervix immediately prior to uterine removal is safe.D
+Ripening of the cervix with either physical dilators or prostaglandins prior to uterine removal is not
+associated with an increased risk of developing GTN. In a case –control study of 219 patients, there was
+no evidence that the ripening of the cervix prior to uterine removal is linked to a higher risk of needingchemotherapy.
+30Evidence
+level 2 +
+7.3. Can oxytocic infusions be used during surgical removal?
+Excessive vaginal bleeding can be associated with surgical management of molar pregnancy and
+the involvement of an experienced clinician is advised.P
+The use of oxytocic infusion prior to completion of the removal is not recommended.P
+RCOG Green-top Guideline No. 38 e11 of e27 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2021, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16266 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+If the woman is experiencing signi ﬁcant haemorrhage prior to or during removal, surgical
+removal should be expedited and the need for oxytocin infusion weighed up against the risk oftissue embolisation.P
+Excessive vaginal bleeding can be associated with surgical management of molar pregnancy. There is
+theoretical concern over the routine use of oxytocic agents, including ergometrine and misoprostol,because of the potential to embolise and disseminate trophoblastic tissue through the venous system.
+26
+This is known to occur in normal pregnancy, especially when uterine activity is increased, such as with
+placental abruption. The contraction of the myometrium may force tissue into the venous spaces at the
+site of the placental bed. The dissemination of this tissue may lead to profound deterioration in thepatient, with embolic and metastatic disease occurring in the lungs. In the event of life-threateninghaemorrhage or ongoing bleeding, oxytocic infusions may be used.Evidence
+level 4
+7.4. In what circumstances should a repeat surgical removal be indicated and what is the
+timing?
+There is almost always a role for urgent surgical management for the woman who is
+experiencing heavy or persistent vaginal bleeding causing acute haemodynamic compromise,particularly in the presence of retained pregnancy tissue on ultrasound.P
+Outside the context of acute compromise, there should be consultation with the relevant GTDreferral centre before performing surgical management for the second time in the samepregnancy .D
+Women with persistent heavy vaginal bleeding and evidence of retained pregnancy tissue on ultrasound
+examination may need a repeat surgical removal. This remains true when a woman has had a priorsurgical removal for suspected GTD. Expediting surgical management in the case of acutehaemodynamic compromise is the priority and delay can be harmful. Consideration should be given to
+balloon tamponade and to uterine artery embolisation to reduce the risk of hysterectomy for women
+who wish to preserve fertility. Embolisation will not always stop the bleeding but will permitmanagement of blood loss. Bleeding from vaginal metastases can be reduced by compression from avaginal pack.Evidence
+level 4
+Several case series have found there may be a role for second removal in selected cases when the
+hCG is less than 5000 units/l.31–34A prospective phase II trial of second removal for GTN reported
+40% of women avoided chemotherapy as a consequence of undergoing second removal with lowcomplication rates. In three out of 34 cases in which primary treatment failed, the histological ﬁndingson second removal were signiﬁcantly different (PSTT) when compared with initial diagnosis (molarpregnancy).
+34Evidence
+level 3
+RCOG Green-top Guideline No. 38 e12 of e27 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2021, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16266 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+8. Histological examination of pregnancy tissue in the diagnosis of GTD
+8.1 Should pregnancy tissue from all miscarriages be examined histologically?
+The histological assessment of material obtained from the medical or surgical management of
+all miscarriages is recommended to exclude trophoblastic neoplasia if no fetal parts areidenti ﬁed at any stage of the pregnancy.D
+Women who receive care for a miscarriage should be recommended to do a urinary pregnancy
+test 3 weeks after miscarriage.P
+As GTD can be difﬁcult to recognise at the time of miscarriage it is recommended that either:
+/C15All material obtained from the medical or surgical management of miscarriage be sent topathology.
+or
+/C15If no tissue has been sent to pathology, a pregnancy test should be carried out 3 weeks afterthe miscarriage. If this is still positive, serum levels should be tracked to ensure that the levelis falling and, if not, an ultrasound is arranged to look for further pregnancy tissue. All tissueobtained in this situation should be sent to pathology. The incidence of GTD, unrecognisedprior to removal, is 2.7%.
+13Evidence
+level 2 +
+8.2. Should pregnancy tissue be sent for examination after abortion?
+There is no need to routinely send pregnancy tissue for histological examination following
+therapeutic abortion, provided that fetal parts have been identi ﬁed at the time of surgical
+abortion or on prior ultrasound examination.D
+Women who undergo medical abortion should be recommended to do a urinary pregnancy test3 weeks after the procedure.P
+Seckl et al.28reviewed the risk of GTN developing after conﬁrmed therapeutic abortion. The rate is
+estimated to be 1 in 20 000. However, the failure to diagnose GTD at the time of abortion leads toadverse outcomes, with a signiﬁcantly higher risk of life-threatening complications, surgical intervention,including hysterectomy, and multi-agent chemotherapy. Evidence
+level 3
+9. How should women with an elevated hCG after a possible pregnancy event be managed?
+Referral to a GTD centre should be considered for all women with persistently elevated hCG
+either after an ectopic pregnancy has been excluded, or after two consecutive treatments withmethotrexate for a pregnancy of unknown location.P
+RCOG Green-top Guideline No. 38 e13 of e27 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2021, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16266 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+GTN can develop after any pregnancy event and failure to treat GTN can be fatal. GTN requires more
+intensive chemotherapy than treatment of a pregnancy of unknown location. Very rarely, some women
+will have familial raised hCG with hCG levels between 10 IU/l and 200 IU/l. These women have menstrual
+cycles and can conceive.35,36Low levels of hCG elevation are also associated with malignant female germ
+cell tumours and any epithelial cancers including bladder, breast, lung, gastric and colorectal cancers.37
+Low levels of hCG elevation can also be caused by the presence of pituitary hCG or the presence ofhuman anti-mouse antibodies.
+38Evidence
+level 4
+The hCG glyco-protein can be present in many forms, in both serum and urine, including intact hCG, free hCG b
+subunit, nicked hCG and hCG b-core fragment. Molar pregnancies and GTN can produce all these variants of hCG.
+Most commercial hCG assays for routine laboratory use do not measure all hCG variants. The three UK GTDcentres use specialised in-house hCG assays to detect all forms of hCG.
+39
+10. Which women should be investigated for GTN after a non-molar pregnancy?
+Any woman who develops persistent vaginal bleeding after a pregnancy event is at risk of having GTN.D
+A urine hCG test should be performed in all cases of persistent or irregular vaginal bleeding
+lasting more than 8 weeks after a pregnancy event.P
+Symptoms from metastatic disease, such as dyspnoea and haemoptysis, or new onset ofseizures or paralysis, can occur very rarely.D
+Biopsy of secondary deposits in the vagina can cause major haemorrhage and is notrecommended.P
+GTN can develop after miscarriage, therapeutic abortion and term pregnancy. Choriocarcinoma is estimated to
+occur after approximately 1 in 50 000 pregnancies.40,41It is uncommon (less than 1%) for GTN to develop in
+women who have had a normal hCG urine or serum level within 8 weeks of removal of a molar pregnancy.42–44Evidence
+level 3
+Several case series have shown that vaginal bleeding is the most common presenting symptom of GTN
+diagnosed after miscarriage, therapeutic abortion or postpartum.40,41,45 –48Evidence
+level 2 +
+The prognosis for a woman with GTN after a non-molar pregnancy may be worse owing to delay in
+diagnosis or advanced disease, such as liver or central nervous system disease, at presentation.41,42,45 –48Evidence
+level 2 +
+RCOG Green-top Guideline No. 38 e14 of e27 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2021, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16266 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+11. How should suspected ectopic molar pregnancy in women be managed?
+Cases of women with ectopic pregnancy suspected to be molar in nature should be managed as
+any other case of ectopic pregnancy. If there is a local tissue diagnosis of ectopic molar pregnancy,
+the tissue should be sent to a centre with appropriate expertise for pathological review.P
+Ectopic molar pregnancy is a rare event. Symptoms and signs are the same as any other ectopic
+pregnancy. The histopathological features of an early complete ectopic molar pregnancy can be confusedwith choriocarcinoma.
+49–51Evidence
+level 4
+12. How is twin pregnancy of a viable fetus and presumptive coexistent molar pregnancy
+managed?
+Women diagnosed with a combined molar pregnancy and viable twin, or where there is
+diagnostic doubt, should be referred to a regional fetal medicine centre and GTD centre.P
+In the situation of a twin pregnancy where there is one viable fetus and the other pregnancy ismolar, the woman should be counselled about the potential increased risk of perinatalmorbidity and the outcome for GTN.D
+Prenatal invasive testing for fetal karyotype should be considered in cases where it is unclear ifthe pregnancy is a complete mole with a coexisting normal twin or a possible singleton partialmolar pregnancy. Prenatal invasive testing for fetal karyotype should also be considered incases of abnormal placenta, such as suspected mesenchymal hyperplasia of the placenta. D
+There is an increased risk of early fetal loss (40%) and premature birth (36%) in a twin pregnancy of a viable
+fetus and coexisting molar pregnancy. The incidence of pre-eclampsia is variable, with rates as high as 20%reported. However, in a large UK series, the incidence was only 4% and there were no maternal deaths.
+52,53
+In the same UK series, there was no increase in the risk of developing GTN after such a twin pregnancy andoutcome after chemotherapy was unaffected. Analysis of a further 153 UK cases conﬁrmed the earlierexperience, with a slightly higher rate of babies surviving (51%), no maternal deaths and no increase in theneed for chemotherapy (15%) in the women who gave birth after 26 weeks of gestation.
+52,53Evidence
+level 2 +
+Some women may wish to continue with their pregnancy. Increased monitoring for pre-eclampsia, and
+fetal and maternal wellbeing during such ongoing pregnancies is sensible. Histological examination of theplacenta is recommended and all conﬁrmed cases of GTD registered with a GTD centre.Evidence
+level 4
+13. How should a placental site trophoblastic tumour or epithelioid trophoblastic tumour be
+managed?
+All women with PSTT or ETT should be registered with and cared for within a GTD centre.D
+RCOG Green-top Guideline No. 38 e15 of e27 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2021, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16266 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+PSTTs and ETTs are rare forms of GTD diagnosed by histological examination of retained pregnancy
+tissue. Their presentation and behaviour are different and less predictable. Hysterectomy is curative in
+many cases with localised disease. In women with a long time period since the antecedent pregnancy and/
+or with distant and/or extensive metastatic disease, intensive chemotherapy plays a major role.54,55Evidence
+level 2 +
+14. How should a placental site nodule or atypical placental site nodule be managed?
+Women with an atypical PSN or where the local pathology is uncertain should have their
+histology reviewed centrally. All women with atypical PSN will then be called up for centralreview to discuss the existing data, perform staging investigations and to determine furthermanagement. Women with typical PSN do not currently require further investigation or review.P
+PSNs have been, for many years, regarded as a benign ﬁnding of little clinical signiﬁcance. There have been
+reports of PSNs with or without atypical features, which have either been admixed with PSTTs or ETTs,or that have subsequently progressed over time to PSTTs or ETTs. This link to cancer appears strongestwith atypical PSNs and may occur in 10 –15% of women.
+56The condition often presents with vaginal
+bleeding resulting in endometrial biopsy, or because of a hysteroscopic biopsy performed for otherreasons. Those women who have completed their families may wish to consider a hysterectomy in theabsence of metastatic disease. Women who desire more children require careful counselling and furthertesting.Evidence
+level 3
+15. Which women should be registered at GTD centres?
+All women diagnosed with GTD should be provided with written information about the
+condition and the need for referral for follow-up by a GTD centre should be explained.D
+Clinicians should be aware that outcomes for women with GTN and GTD are better withongoing care from GTD centres. The registration of affected women with a GTD centrerepresents a minimum standard of care.P
+Women with the following diagnoses should be registered and require follow-up as determinedby the screening centre:
+/C15complete molar pregnancy/partial molar pregnancy
+/C15twin pregnancy with complete or partial molar pregnancy
+/C15limited macroscopic or microscopic molar change suggesting possible early complete orpartial molar pregnancy/choriocarcinoma
+/C15PSTT or ETT
+/C15atypical PSN.D
+The overall risk of requiring chemotherapy for GTN is around 13 –16% for complete molar pregnancy and
+0.5–1.0% for partial molar pregnancy,2,4,5hence the need for registration and follow-up, which consists ofEvidence
+level 2 +
+RCOG Green-top Guideline No. 38 e16 of e27 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2021, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16266 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+serial estimations of hCG levels, either in blood or urine. Choriocarcinoma, if not treated early, is potentially
+lethal and requires immediate registration, specialist assessment and treatment. PSTTs and ETTs are rare andunpredictable tumours that need specialist assessment and treatment.
+54Atypical PSNs may transform into
+PSTT/ETT so all women with this condition should be registered.56Evidence
+level 2 +
+16. What is the optimum follow-up following a diagnosis of GTD?
+For complete molar pregnancy, if hCG has reverted to normal within 56 days of the pregnancy
+event then follow-up will be for 6 months from the date of uterine removal.C
+If hCG has not reverted to normal within 56 days of the pregnancy event then follow-up will befor 6 months from normalisation of the hCG level.C
+Follow-up for partial molar pregnancy is concluded once the hCG has returned to normal ontwo samples, at least 4 weeks apart.C
+Women who have not received chemotherapy no longer need to have hCG measured after anysubsequent pregnancy event.C
+Several large case series have shown that once the hCG reverts to normal the possibility of GTN
+developing is very low.42–44,57The incidence of GTD in a subsequent pregnancy event is very low (1:4011)
+in women who have not received chemotherapy for a prior molar pregnancy.58Evidence
+level 2 +
+17. What is the optimum treatment for GTN?
+Women with GTN may be treated with single-agent or multi-agent chemotherapy.B
+Treatment used is based on the International Federation of Gynecology and Obstetrics (FIGO)
+2000 scoring system for GTN following assessment at the treatment centre.B
+PSTT and ETT are now recognised as variants of GTN. They may be treated with surgerybecause they are less sensitive to chemotherapy.D
+Women are assessed before chemotherapy using the FIGO 2000 scoring system (Table 1).27,59Women with
+scores of 6 or less are at low risk and are treated with single-agent intramuscular methotrexate, alternating dailywith folinic acid for 1 week followed by 6 rest days. Women with scores of 7 or greater are at high risk andare treated with intravenous multi-agent chemotherapy, which includes combinations of methotrexate,dactinomycin, etoposide, cyclophosphamide and vincristine. Treatment is continued, in all cases, until the hCGlevel has returned to normal and then for a further 6 consecutive weeks. Women suspected of choriocarcinoma
+RCOG Green-top Guideline No. 38 e17 of e27 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2021, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16266 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+require more extensive investigation in the specialist centre, including computed tomography of the chest and
+abdomen, or magnetic resonance imaging of the head and pelvis, all with contrast in addition to the serum hCG
+and a Doppler ultrasound of the pelvis. Any woman with a score of 13 or greater is now recognised to have ahigher risk of early death (within 4 weeks), often due to bleeding into organs, or late death due to multi-drug-resistant disease.
+The cure rate for women with a score of 6 or less is almost 100%, while the rate for women with a
+score of 7 or greater is 94%. Rarely, women with multi-relapsed disease will require high-dosechemotherapy with stem cell recovery.
+6,55Evidence
+level 2 ++
+PSTT and ETT are the rarest forms of GTN comprising about 0.2% of all GTD. They tend to produce less
+hCG, are conﬁned to the uterus for longer, more often involve lymphatics and are more chemoresistant thanother forms of GTN. For these reasons, they are not managed according to their FIGO score. Evidenceshows that the most important prognostic factor for adverse outcome is the interval to presentation fromthe last known and presumed causative pregnancy. An interval of more than 48 months previously has beenassociated with a 100% death rate regardless of stage and despite initial favourable responses to treatments.In contrast, women presenting within 48 months are nearly all long-term survivors. A more recent serieswhere more intensive treatments were given to PSTT/ETT patients with a long interval from their causativepregnancy reported improved survival, but still over 50% died in this group. Stage IV disease has also nowemerged as an independent poor prognostic factor.
+55Surgery plays a very important role in the management
+of PSTT and ETT, which is tailored around stage and risk factors. Thus, for women with stage I disease,hysterectomy is the mainstay of management and intensive platinum-based combination agent chemotherapyis only required if the interval is more than 48 months. Rarely, women with multi-relapsed disease willrequire high-dose chemotherapy with stem cell recovery, or treatment with immunotherapy which has beenapproved by NHS England for GTN cases in this situation.
+54,55,60Evidence
+level 2 +Table 1. FIGO scoring system
+FIGO scoring 0 1 2 4
+Age (years) <40 ≥40 ——
+Antecedent pregnancy Mole Abortion (including miscarriage) Birth —
+Interval months from end of index
+pregnancy to treatment<44 t o <77 t o <13 ≥13
+Pretreatment serum hCG (IU/l) <103103to<104104to<105≥105
+Largest tumour size, including uterus (cm) <33 t o <5 ≥5 –
+Size of metastases Lung Spleen, kidney Gastrointestinal Liver, brainNumber of metastases — 1–45 –8 >8
+Previous failed chemotherapy —— Single drug Two or more drugs
+RCOG Green-top Guideline No. 38 e18 of e27 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2021, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16266 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+18. What is the recommended interval between a complete or partial molar pregnancy and trying
+to conceive in the future, what is the monitoring of women following a successful pregnancyafter a previous molar pregnancy and what is the outcome of subsequent pregnancies?
+Women are advised not to conceive until their follow-up is complete.
+C
+Women who undergo chemotherapy are advised not to conceive for 1 year after completion of
+treatment, as a precautionary measure.C
+Women who have a pregnancy following a previous molar pregnancy, which has not requiredtreatment for GTN, do not need to send a post-pregnancy hCG sample. Histological examinationof placental tissue from any normal pregnancy, after a molar pregnancy, is not indicated.D
+The risk of a further molar pregnancy is low (approximately 1%) and is associated more with complete
+than partial molar pregnancy.61Women who become pregnant following a molar pregnancy are not at
+increased risk of maternal complications. However, women exposed to a molar pregnancy prior to theindex birth were at an almost 25% increased risk of preterm birth (OR 1.23, 95% CI 1.06 –1.43), whereas
+women with at least one birth between the molar pregnancy and the index birth were at an increasedrisk of a large-for-gestational-age birth and stillbirth (OR 1.35, 95% CI 1.10 –1.67 and OR 1.81, 95% CI
+1.11–2.96, respectively).
+62Evidence
+level 2 +
+In a study of 230 women who conceived within 12 months of completing chemotherapy, there was an
+increased risk of miscarriage and higher rate of abortion in women who received multi-agentchemotherapy compared with women who received single-agent chemotherapy. The increased rate ofabortion may, in part, reﬂect an increase in concern relating to teratogenicity after receiving multi-agentchemotherapy. The rate of congenital abnormality was low (1.8%), irrespective of the type ofchemotherapy used.
+63The rate of stillbirth was elevated compared with the normal population (18.6 in
+1000 births).64However, in another UK study of 241 treated patients who had a pregnancy within
+12 months of chemotherapy, there was no signiﬁcant increased risk of miscarriage, ectopic pregnancy,second molar pregnancy or stillbirth compared to the general UK population. There was no increase inthe risk of relapse in women who conceived early compared to those who conceived after 12 months.
+65Evidence
+level 2 +
+A UK national retrospective evaluation has concluded that the ‘pick-up’ rate for recurrent GTD on
+routine post-pregnancy screening of previously uncomplicated molar pregnancy is extremely low and may
+be safely discontinued.57However, those that have required chemotherapy for GTN do still need to have
+hCG levels checked following subsequent pregnancies. Moreover, another UK retrospective evaluation ofover 4000 patients treated with chemotherapy for low- or high-risk GTN concluded that hCG follow-upcan be safely stopped after 10 years.
+66Evidence
+level 2 +
+RCOG Green-top Guideline No. 38 e19 of e27 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2021, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16266 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+19. What is the long-term outcome of women treated for GTN?
+The outlook for women treated for GTN is generally excellent with an overall cure rate close to
+100%.B
+Further pregnancies are achieved in approximately 80% of women following treatment for GTN
+with either methotrexate alone or multi-agent chemotherapy.B
+There is an increased risk of premature menopause for women treated with combination agentchemotherapy. Women, especially those approaching the age of 40 years, should be warned ofthe potential negative impact on fertility, particularly when treated with high-dose chemotherapy.B
+Although it is common for periods to stop during treatment, they nearly always restart within a few
+weeks to months after completing chemotherapy. Indeed, the chances of having a pregnancy appear to beequally good, at around 83%, after either methotrexate alone or multi-agent chemotherapy, such as EMA/CO (etoposide, methotrexate, actinomycin D, cyclophosphamide, vincristine [oncovin]). However,menopause can occur earlier than expected for women treated with combination agent chemotherapy;13% will have had premature menopause by the age of 40 years and 36% by the age of 45 years.
+67
+Therefore, women approaching 40 years of age should be counselled regarding the possible negativeimpact on fertility. Moreover, women who receive high-dose chemotherapy are unlikely to regain ovarianfunction. Those seeking a fertility review after chemotherapy for GTN should be advised that the anti-m€ullerian hormone test can give misleading low results that do not reﬂect the true ability to conceive.Evidence
+level 3
+The potential risk of second cancers induced by chemotherapeutic drugs is very low. The largest GTN
+study to date, with over 30 000 patient-years of follow-up, reported no overall increased risk of secondcancers for women treated with methotrexate alone or EMA/CO.
+67Evidence
+level 2 +
+20. What is safe contraception following treatment of GTD and when should it be commenced?
+It is important that women who have had a removal of a molar pregnancy are advised not to
+become pregnant until they have completed their hCG follow-up.D
+Advice on contraception after a molar pregnancy can be found in the Faculty of Sexual andReproductive Health (FSRH) Guideline Executive Summary Contraception After Pregnancy.D
+Elevated hCG during the follow-up period may indicate recurrence. Pregnancy is best avoided during the
+follow-up period until the success of treatment has been established.Evidence
+level 3
+Please refer to the FSRH Guideline Contraception After Pregnancy for information on contraception after a
+molar pregnancy.68Evidence
+level 4
+RCOG Green-top Guideline No. 38 e20 of e27 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2021, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16266 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+21. Is the use of exogenous estrogens and other fertility drugs safe for women undergoing
+assisted reproductive treatment after a molar pregnancy?
+The use of exogenous estrogens and other fertility drugs may be used once hCG levels have
+returned to normal.P
+There appears to be no evidence of risk that the use of exogenous estrogens and other fertility drugs
+affects the outcome of GTN.Evidence
+level 4
+22. Is hormone replacement therapy safe for women to use after GTD?
+Hormone replacement therapy may be used once hCG levels have returned to normal.P
+There appears to be no evidence that the use of hormone replacement therapy affects the outcome of GTN.Evidence
+level 4
+23. Impact of diagnosis on women and their families
+GTD centres now provide individualised support to women and their families throughout their
+GTD journey, through dedicated GTD nurse specialists and advisors, who can be accessed eitherthrough attending a GTD centre or via phone, or both. Online support groups are available(molarpregnancy.co.uk) alongside regular drop-in support groups at Charing Cross Hospital,London and Weston Park Hospital, Shef ﬁeld. Further information is available from each centre.P
+Evidence suggests GTD can be an isolating and frightening experience where women are affected
+physically, emotionally and socially by their experience.69A systematic review of patient-reported
+outcomes found GTD had a negative effect on short-term health-related quality of life, including clinicallysigniﬁcant levels of anxiety, depression, sexual dysfunction and fertility-related distress relating to thecondition.
+69For long-term survivors of GTD, quality of life was at or above population norms.Evidence
+level 3
+24. GTD treatment centres (UK)
+The following treatment centres are recommended:
+Trophoblastic Tumour Screening and Treatment Centre
+Department of Medical OncologyCharing Cross HospitalFulham Palace RoadLondon W6 8RFTel:+44 (20) 8846 1409
+Fax:+44 (20) 8748 5665
+Website: hmole-chorio.org.uk
+RCOG Green-top Guideline No. 38 e21 of e27 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2021, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16266 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Shefﬁeld Trophoblastic Disease Centre
+Weston Park Hospital
+Whitham RoadShefﬁeld S10 2SJTel:+44 (0) 114 226 5205
+Fax:+44 (0) 114 226 5511
+Website: stdc.group.shef.ac.uk
+Hydatidiform Mole Follow-up (Scotland)
+Department of Obstetrics and GynaecologyNinewells HospitalDundee DD1 9SYTel:+44 (0) 1382 632748
+Fax:+44 (0) 1382 632096
+Website: www.nsd.scot.nhs.uk/services/specserv/hydmole
+25. Recommendations for future research
+/C15Investigations to identify role of tumour vascularity, Doppler ultrasound pulsatility index and the
+biology and molecular mechanisms in predicting which molar pregnancies will resolve spontaneously,persist as GTN or transform into choriocarcinoma, PSTT or ETT.
+/C15Evaluation of the use of ultrasound at the time of uterine removal for molar pregnancies in thereduction of persistent gynaecological symptoms, second removal for persistent gynaecologicalsymptoms and the need for chemotherapy.
+/C15The aetiology of atypical PSN, do all PSNs progress to atypical PSNs?
+/C15Research in reﬁning the FIGO scoring system to predict resistance to single-agent chemotherapy.Currently, 70% of women with a low-risk mole that scores 5 or 6 can expect to end up needingmulti-agent chemotherapy to eliminate their disease.
+/C15Evaluation of checkpoint immunotherapies, such as pembrolizumab, in the management of multi-relapsed disease.
+27
+/C15Improved understanding of the impact of GTD on women, their partners and families, and how theymay suffer. Problems identiﬁed include psychosexual issues and increased anxiety and further work isrequired to better understand how we can help women to overcome these by developing and utilising
+patient-reported outcomes.
+69
+26. Auditable topics
+/C15Proportion of women with GTN registered with the relevant screening centre (100%), including:
+–complete molar pregnancy/partial molar pregnancy
+–twin pregnancy with complete or partial molar pregnancy
+–limited macroscopic or microscopic molar change suggesting possible complete or partial molar
+pregnancy/choriocarcinoma
+–PSTT or ETT
+–atypical PSNs.
+/C15Proportion of women with a histological diagnosis of complete molar pregnancy who have an
+ultrasound diagnosis of molar pregnancy prior to uterine removal.
+RCOG Green-top Guideline No. 38 e22 of e27 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2021, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16266 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+/C15Proportion of women who undergo medical management for removal of pregnancy tissue with an
+ultrasound diagnosis of complete molar pregnancy.
+27. Useful links and support groups
+/C15Royal College of Obstetricians and Gynaecologists. Gestational trophoblastic disease. Information for you.
+London: RCOG; 2011.
+/C15Molar Pregnancy –Support & Information [http://www.molarpregnancy.co.uk].
+/C15Charing Cross Gestational Trophoblast Disease Service [www.hmole-chorio.org.uk/].
+/C15The Shefﬁeld Trophoblastic Disease Centre [http://stdc.group.shef.ac.uk/].
+/C15Tommy’s – Molar pregnancy stories [https://www.tommys.org/pregnancy-information/pregnancy-
+complications/pregnancy-loss/molar-pregnancy/molar-pregnancy-stories].
+/C15Miscarriage Association [www.miscarriageassociation.org.uk/information/molar-pregnancy/].
+Disclosures of interest
+JT has declared no conﬂicts of interest. BWH has declared no conﬂicts of interest. MS has declared no conﬂicts of
+interest. Full disclosures of interest for the developers, Guidelines Committee and peer reviewers are available toview online as supporting information.
+Funding
+All those involved in the development of the Green-top Guidelines, including the Guidelines Committee, GuidelinesCommittee co-chairs, guideline developers, peer reviewers and other reviewers, are unpaid volunteers and receiveno direct funding for their involvement in producing the guideline. The only exception to this are the GuidelinesCommittee members who receive reimbursement for the expenses for attending the Guidelines Committeemeetings for standard RCOG activities; this is standard as per RCOG rules.
+References
+1. Tham BW, Everard JE, Tidy JA, Drew D, Hancock BW.
+Gestational trophoblastic di sease in the Asian population
+of Northern England and North Wales. BJOG
+2003;110:555 –9.
+2. Savage PM, Sita-Lumsden A, Dickson S, Iyer R, Everard J,
+Coleman R, et al. The relationship of maternal age to molarpregnancy incidence, risks for chemotherapy and subsequent
+pregnancy outcome. J Obstet Gynaecol 2013;33:406 –11.
+3 . G o c k l e yA A ,M e l a m e dA ,J o s e p hN T ,C l a p pM ,S u nS Y ,G o l d s t e i nD P ,
+et al. The effect of adolescence and advanced maternal age on theincidence of complete and partial molar pregnancy. Gynecol Oncol
+2016;140:470 –3.
+4. Seckl MJ, Sebire NJ, Berkowitz RS. Gestational trophoblastic
+disease. Lancet 2010;376:717 –29.
+5. Taylor F, Grew T, Everard J, Ellis L, Winter MC, Tidy J, et al. The
+outcome of patients with low risk gestational trophoblasticdisease treated with single agent intramuscular methotrexate andoral folinic acid. Eur J Cancer 2013;49:3184 –90.
+6. Agarwal R, Alifrangis C, Everard J, Savage PM, Short D, Tidy J,
+et al. Management and survival of patients with FIGO high-riskgestational trophoblastic neoplasia: the U.K. experience, 1995 –
+2010. J Repro Med 2014;59:7 –12.7. Killick S, Cook J, Gillett S, Ellis L, Tidy J, Hancock BW. Initial
+presenting features in gestational trophoblastic neoplasia: does a
+decade make a difference? J Reprod Med 2012;57:279 –82.
+8. Soto-Wright V, Berstein M, Goldstein DP, Berkowitz RS. The
+changing clinical presentation of complete molar pregnancy. Obstet
+Gynecol 1995;86:775 –9.
+9. Sun SY, Melamed A, Goldstein DP, Bernstein MR, Horowitz NS,
+Moron AF, et al. Changing presentation of complete hydatidiformmole at the New England Trophoblast Disease Center over thepast three decades: does early diagnosis alter risk for gestational
+trophoblastic neoplasia? Gynecol Oncol 2015;138:46 –9.
+10. Sebire NJ, Rees H, Paradinas F, Seckl M, Newlands E. The
+diagnostic implications of routine ultrasound examination in
+histologically conﬁrmed early molar pregnancies. Ultrasound Obstet
+Gynecol 2001;18:662 –5.
+11. Fowler DJ, Lindsay I, Seckl MJ, Sebire NJ. Routine pre-evacuation
+ultrasound diagnosis of hydatidiform mole: experience of more
+than 1000 cases from a regional referral center. Ultrasound Obstet
+Gynecol 2006;27:56 –60.
+12. Johns J, Greenwold N, Buckley S, Jauniaux E. A prospective study
+of ultrasound screening for molar pregnancies in missed
+miscarriages. Ultrasound Obstet Gynecol 2005;25:493 –7.
+RCOG Green-top Guideline No. 38 e23 of e27 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2021, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16266 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+13. Tasci Y, Dilbaz S, Secilmis O, Dilbaz B, Ozfuttu A, Haberal A.
+Routine histopathologic analysis of product of conception
+following ﬁrst-trimester spontaneous miscarriages. J Obstet
+Gynaecol Res 2005;31:579 –82.
+14. Savage JL, Maturen KE, Mowers EL, Pasque KB, Wasnik AP, Dalton
+VK, et al. Sonographic diagnosis of partial versus complete molar
+pregnancy: a reappraisal. J Clin Ultrasound 2017;45:72 –8.
+15. Jauniaux E, Memtsa M, Johns J, Ross JA, Jurkovic D. New insights
+in the pathophysiology of complete hydatidiform mole. Placenta
+2018;62:28 –33.
+16. Kirk E, Papageorghiou AT, Condous G, Bottomley C, Bourne T.
+The accuracy of ﬁrst trimester ultrasound in the diagnosis of
+hydatidiform mole. Ultrasound Obstet Gynecol 2007;29:70 –5.
+17. Fine C, Bundy AL, Berkowitz RS, Boswell SB, Berezin AF,
+Doubilet PM. Sonographic diagnosis of partial hydatidiform mole.Obstet Gynecol 1989;73:414 –8.
+18. Benson CB, Genest DR, Bernstein MR, Soto-Wright V, Goldstein DP,
+Berkowitz RS. Sonographic appearance of ﬁrst trimester completehydatidiform moles. J Ultrasound Obstet Gynecol 2000;16:188 –91.
+19. Ross JA, Unipan A, Clarke J, Magee C, Johns J. Ultrasound
+diagnosis of molar pregnancy. Ultrasound 2018;26:153 –9.
+20. Walkington L, Webster J, Hancock BW, Everard J, Coleman RE.
+Hyperthyroidism and human chorionic gonadotrophin production
+in gestational trophoblastic disease. Br J Cancer 2011;104:1665 –9.
+21. Driver E, May T, Vargas R, Bernstein M, Goldstein D, Berkowitz R.
+Changes in clinical presentation of postterm choriocarcinoma atthe New England Trophoblast Center in recent years. Gynecol Oncol
+2013;130:483 –6.
+22. Wells M. The pathology of gestational trophoblastic disease:
+recent advances. Pathology 2007;39:88 –96.
+2 3 . S e b i r eN J ,K a u rB ,W e l l sM .P a t h o l o g y .I n :H a n c o c kB W ,S e c k lM J ,
+Berkowitz RS, editors. Gestational Trophoblastic Disease .4 t he d n .
+International Society for the Stud y of Trophoblastic Diseases; 2015
+[https://isstd.org/uploadedfiles/chap ter-4-pathology.pd f]. Accessed 05 Aug
+2020.
+24. Stone M, Bagshawe KD. An analysis of the inﬂuences of maternal age,
+gestational age, contraceptive method, and the mode of primarytreatment of patients with hydatidiform moles on the incidence of
+subsequent chemotherapy. Br J Obstet Gynaecol 1979;86:782 –92.
+25. Tidy JA, Gillespie AM, Bright N, Radstone CR, Coleman RE,
+Hancock BW. Gestational trophoblastic disease: a study of modeof evacuation and subsequent need for treatment with
+chemotherapy. Gynecol Oncol 2000;78:309 –12.
+26. Attwood HD, Park WW. Embolism to the lungs by trophoblast.
+J Obstet Gynaecol Br Commonw 1961;68:611 –7.
+27. Ngan HYS, Seckl MJ, Berkowtix RS, Xiang Y, Golﬁer F, Sekharan PK,
+et al. Update on the diagnosis and management of gestationaltrophoblastic disease. FIGO Cancer Report 2018. Int J Gynecol Obstet
+2018;143 (Suppl 2):79 –85.
+28. Seckl MJ, Gillmore R, Foskett MA, Sebire NJ, Rees H, Newlands
+ES. Routine terminations of pregnancies
+–should we screen for
+gestational trophoblastic neoplasia? Lancet 2004;364:705 –7.
+29. Benachi A, Garritsen HS, Howard CM, Bennett P, Fisk NM. Lack
+of expression of Rh-D in human trophoblast cell. Am J Obstet
+Gynecol 1998;178:294 –9.
+30. Flam F, Lundstr €om V, Pettersson F. Medical induction prior to
+surgical evacuation of hydatidiform mole: is there a greater risk of
+persistent trophoblastic disease? Eur J Obstet Gynecol Reprod Biol
+1991;42:57 –60.
+31. Pezeshki M, Hancock BW, Silcocks P, Everard JE, Coleman J,
+Gillespie AM, et al. The role of repeat uterine evacuation in the
+management of persistent gestational trophoblastic disease.Gynecol Oncol 2004;95:423 –9.32. Savage P, Short D, Fuller S, Seckl MJ. Review of the role of
+second uterine evacuation in the management of molar pregnancy.
+Gynecol Oncol 2005;99:251 –2.
+33. van Trommel NE, Massuger LF, Verheijen RH, Sweep FC, Thomas CM.
+The curative effect of a second curettage in persistent trophoblastic
+disease: a retrospective cohort survey. Gynecol Oncol 2005;99:6 –13.
+34. Osborne RJ, Filiaci VL, Schink JC, Mannel RS, Behbakht K, Hoffman JS,
+et al. Second curettage for low-risk nonmetastatic gestational
+trophoblastic neoplasia. Obstet Gynecol 2016;128:535 –42.
+35. Cole LA. Familial HCG syndrome. J Reprod Immunol 2012;93:52 –7.
+36. Angelopoulos G, Palmer JE, Hancock BW, Tidy JA. Healthy
+women with persistently elevated hCG levels: a case series of
+fourteen women. J Reprod Med 2012;57:249 –53.
+37. Stenman UH, Alfthan H, Hotakainen K. Human chorionic
+gonadotropin in cancer. Clin Biochem 2004;37:549 –61.
+38. Sturgeon CM, Viljoen A. Analytical error and interference in
+immunoassay: minimizing risk. Ann Clin Biochem 2011;48:418 –32.
+39. Harvey RA. Measurement of Human Chorionic Gonadotrophin
+(hCG) in the Management of Trophoblastic Disease. In: Hancock
+BW, Seckl MJ, Berkowitz RS, editors. Gestational Trophoblastic
+Disease . 4th edn. International Society for the Study of
+Trophoblastic Diseases; 2015 [https://isstd.org/uploadedfiles/chapter-5-hcg.pdf]. Accessed 05 Aug 2020.
+40. Tidy JA, Rustin GJS, Newlands ES, Foskett M, Fuller S, Short D, et al.
+Presentation and management of women with choriocarcinoma afternonmolar pregnancy. Br J Obstet Gynaecol 1995;102:715 –9.
+41. Macdonald MC, Ram R, Tidy JA, Hancock BW. Choriocarcinoma
+after a nonterm pregnancy. J Repro Med 2010;55:213 –8.
+42. Alazzam M, Young T, Coleman R, Hancock B, Drew D, Wilson P,
+et al. Predicting gestational trophoblastic neoplasia (GTN): is urine
+hCG the answer? Gynecol Oncol 2011;122:595 –9.
+43. Sebire NJ, Foskett M, Short D, Savage P, Stewart W, Thomson M,
+et al. Shortened duration of human chorionic gonadotrophin
+surveillance following complete or partial hydatidiform mole:
+evidence for revised protocol of a UK regional trophoblastic
+disease unit. BJOG 2007;114:760 –2.
+44. Coyle C, Short D, Jackson L, Sebire NJ, Kaur B, Harvey R, et al.
+What is the optimal duration of human chorionic gonadotrophin
+surveillance following evacuation of a molar pregnancy? A
+retrospective analysis on over 20,000 consecutive patients.Gynecol Oncol 2018;148:254 –7.
+45. Bower M, Newlands ES, Holden L, Short D, Brock C, Rustin GJ,
+et al. EMA/CO for high-risk gestational trophoblastic tumours:
+results from a cohort of 272 patients. J Clin Oncol 1997;15:2636 –43.
+46. Nugent D, Hassadia A, Everard J, Hancock BW, Tidy JA.
+Postpartum choriocarcinoma presentation, management and
+survival. J Reprod Med 2006;51:819 –24.
+47. Powles T, Young A, Sanitt A, Stebbing J, Short D, Bower M, et al.
+The signiﬁcance of the time interval between antecedent
+pregnancy and diagnosis of high-risk gestational trophoblastic
+tumours. Br J Cancer 2006;95:1145 –7.
+48. Ma Y, Xiang Y, Wan XR, Chen Y, Feng FZ, Lei CZ, et al. The
+prognostic analysis of 123 postpartum choriocarcinoma cases.
+Int J Gynecol Cancer 2008;18:1097 –101.
+49. Hassadia A, Kew FM, Tidy JA, Wells M, Hancock BW. Ectopic
+gestational trophoblastic disease: a case series review. J Reprod Med
+2012;57:297 –300.
+50. Burton JL, Lidbury EA, Gillespie AM, Tidy JA, Smith O, Lawry J,
+et al. Over-diagnosis of hydatidiform mole in early tubal ectopicpregnancy. Histopathology 2001;38:409 –17.
+51. Sebire NJ, Lindsay I, Fisher RA, Savage P, Seckl MJ. Overdiagnosis
+of complete and partial hydatidiform mole in tubal ectopicpregnancies. Int J Gynecol Pathol 2005;24:260 –4.
+RCOG Green-top Guideline No. 38 e24 of e27 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2021, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16266 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+52. Sebire NJ, Foskett M, Paradinas FJ, Fisher RA, Francis RJ, Short D,
+et al. Outcome of twin pregnancies with complete hydatidiform
+mole and healthy co-twin. Lancet 2002;359:2165 –6.
+53. Russell JC, Niemann I, Sebire NJ, Kaur B, Fisher RA, Short D,
+et al. Outcomes in Twin Pregnancies with Complete Hydatidiform
+Mole and Normal Co-Twin: A Retrospective National Cohort
+Study in 153 New Cases. 20th Biennial World Congress onGestational Trophoblastic Diseases, 20–23 October 2019,
+Toronto, Canada.
+54. Schmid P, Nagai Y, Agarwal R, Hancock B, Savage PM, Sebire NJ,
+et al. Prognostic markers and long-term outcome of placental-sitetrophoblastic tumours: a retrospective observational study. Lancet
+2009;374:48 –55.
+55. Frijstein MM, Lok CAR, Short D, Singh K, Fisher RA, Hancock BW,
+et al. The results of treatment with high-dose chemotherapy andperipheral blood stem cell support for gestational trophoblastic
+neoplasia. Eur J Cancer 2019;109:162 –71.
+56. Kaur B, Short D, Fisher RA, Savage PM, Seckl MJ, Sebire NJ.
+Atypical placental site nodule (APSN) and association with
+malignant gestational trophoblastic disease; a clinicopathologic
+study of 21 cases. Int J Gynecol Pathol 2015;34:152 –8.
+57. Pisal N, Tidy J, Hancock B. Gestational trophoblastic disease: is
+intensive follow up essential in all women? BJOG 2004;111:1449 –51.
+58. Earp KE, Hancock BW, Short D, Harvey RA, Fisher RA, Drew D,
+et al. Do we need post-pregnancy screening with humanchorionic gonadotrophin after previous hydatidiform mole toidentify patients with recurrent gestational disease. Eur J Obstet
+Gynecol Reprod Biol 2019;234:117 –9.
+59. FIGO Oncology Committee. FIGO staging for gestational
+trophoblastic neoplasia 2000. FIGO Oncology Committee. Int J
+Gynecol Obstet 2000;77:285 –7.
+60. Ghorani E, Kaur B, Fisher RA, Short D, Joneborg U, Carlson JW,
+et al. Pembrolizumab is effective for drug-resistant gestationaltrophoblastic neoplasia. Lancet 2017;390:2343 –5.61. Eagles N, Sebire NJ, Short D, Savage PM, Seckl MJ, Fisher RA.
+Risk of recurrent molar pregnancies following complete and
+partial hydatidiform moles. Hum Reprod 2016;31:1379.
+62. Joneborg U, Eloranta S, Johansson ALV, Marions L, Weibull CE,
+Lambe M. Hydatidiform mole and subsequent pregnancy outcome:
+a population-based cohort study. Am J Obstet Gynecol 2014;211:681.
+63. Blagden SP, Foskett MA, Fisher RA, Short D, Fuller S, Newlands ES,
+et al. The effect of early pregnancy following chemotherapy on
+disease relapse and foetal outcome in women treated for
+gestational trophoblastic tumours. Br J Cancer 2002;86:26 –30.
+64. Woolas RP, Bower M, Newlands ES, Seckl M, Short D, Holden L.
+Inﬂuence of chemotherapy for gestational trophoblastic disease on
+subsequent pregnancy outcome. Br J Obstet Gynaecol 1998;105:
+1032–5.
+65. Williams J, Short D, Dayal L, Strickland S, Harvey R, Tin T, et al.
+Effect of early pregnancy following chemotherapy on disease
+relapse and fetal outcome in women treated for gestational
+trophoblastic neoplasia. J Reprod Med 2014;59:248 –54.
+66. Balachandran K, Salawu A, Ghorani E, Kaur B, Sebire NJ, Short D,
+et al. When to stop human chorionic gonadotrophin (hCG)
+surveillance after treatment with chemotherapy for gestationaltrophoblastic neoplasia (GTN): a national analysis on over 4,000patients. Gynecol Oncol 2019;155:8 –12.
+67. Savage P, Cooke R, O’Nions J, Krell J, Kwan A, Camarata M,
+et al. Effects of single-agent and combination chemotherapy for
+gestational trophoblastic tumours on risks of second malignancyand early menopause. J Clin Oncol 2014;33:472 –8.
+68. The Faculty of Sexual & Reproductive Healthcare. Contraception
+After Pregnancy. FSRH Guideline Executive Summary . London: FSRH;
+2017.
+69. Ireson J, Jones G, Winter MC, Radley SC, Hancock BW, Tidy JA.
+Systematic review of health-related quality of life and patient-reported outcome measures in gestational trophoblastic disease: aparallel synthesis approach. Lancet Oncol 2018;19:e56 –64.
+RCOG Green-top Guideline No. 38 e25 of e27 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2021, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16266 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Appendix 1: Explanation of guidelines and evidence levels
+Clinical guidelines are: ‘systematically developed statements which assist clinicians and patients in making decisions
+about appropriate treatment for speciﬁc conditions’. Each guideline is systematically developed using a standardised
+methodology. Exact details of this process can be found in Clinical Governance Advice No. 1 Development of RCOG
+Green-top Guidelines (available on the RCOG website at http://www.rcog.org.uk/green-top-development). These
+recommendations are not intended to dictate an exclusive course of management or treatment. They must beevaluated with reference to individual patient needs, resources and limitations unique to the institution and variationsin local populations. It is hoped that this process of local ownership will help to incorporate these guidelines intoroutine practice. Attention is drawn to areas of clinical uncertainty where further research may be indicated.
+The evidence used in this guideline was graded using the scheme below and the recommendations formulated in a
+similar fashion with a standardised grading scheme.
+Classi ﬁcation of evidence levels Grades of recommendation
+1++ High-quality meta-analyses, systematic reviews of
+randomised controlled trials (RCTs) or RCTs witha very low risk of bias
+AAt least one meta-analysis, systematicreviews or RCT rated as 1 ++, and directly
+applicable to the target population; or asystematic review of RCTs or a body ofevidence consisting principally of studiesrated as 1 +, directly applicable to the
+target population and demonstrating
+overall consistency of results1+ Well-conducted meta-analyses, systematic
+reviews of RCTs or RCTs with a low risk of bias
+BA body of evidence including studiesrated as 2 ++directly applicable to the
+target population, and demonstratingoverall consistency of results; or
+Extrapolated evidence from studies rated
+as 1++or 1+1– Meta-analyses, systematic reviews of RCTs or
+RCTs with a high risk of bias
+CA body of evidence including studiesrated as 2 +directly applicable to the
+target population, and demonstrating
+overall consistency of results; or
+Extrapolated evidence from studies rated
+as 2++2++ High-quality systematic reviews of case –control
+or cohort studies or high-quality
+case–control or cohort studies with a very low
+risk of confounding, bias or chance and ahigh probability that the relationship is causal
+DEvidence level 3 or 4; or
+Extrapolated evidence from studies rated
+as 2+2+ Well-conducted case –control or cohort studies
+with a low risk of confounding, bias or chanceand a moderate probability that the relationshipis causal
+Good Practice Points2– Case–control or cohort studies with a high risk of
+confounding, bias or chance and a
+signiﬁcant risk that the relationship is not causal
+PRecommended best practice based on the
+clinical experience of the guidelinedevelopment group3 Non-analytical studies, e.g. case reports, case
+series
+4 Expert opinion
+RCOG Green-top Guideline No. 38 e26 of e27 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2021, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16266 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+This guideline was produced on behalf of the Royal College of Obstetricians and Gynaecologists by:
+Professor J Tidy FRCOG, Shefﬁeld; Professor M Seckl, Imperial College London;Professor BW Hancock FRCP, University of Shefﬁeld
+and peer-reviewed by:
+Dr RS Berkowitz MD, Boston, MA, USA; British Society of Urogynaecology; Dr PFW Chien FRCOG, Dundee; Mrs A Diyaf
+MRCOG, Bridgend; Mr D Fraser FRCOG, Norwich; Ms A Gorry MRCOG, London; Dr M Gupta MBBS, MRCOG,Leicester; Professor P Martin-Hirsch, Lancashire Teaching Hospitals; Miscarriage Association; UK National ScreeningCommittee; Dr JA Ross FRCOG, London; Professor NJ Sebire FRCOG, London; Dr E Toeima, MRCOG, London; and
+Dr NE van Trommel MD, PhD, Amsterdam.
+Committee lead reviewers were: Dr A El-Ghobashy MRCOG, Wolverhampton; Dr R Davies, Thames Valley
+1; and
+Dr S Hussain, Guildford2.
+1from October 20182until October 2018
+The chairs of the Guidelines Committee were: Dr MA Ledingham FRCOG, Glasgow1; Dr B Magowan FRCOG, Melrose1;
+and Dr AJ Thomson MRCOG, Paisley2.
+1co-chairs from June 20182until May 2018
+All RCOG guidance developers are asked to declare any conﬂicts of interest. A statement summarising any
+conﬂicts of interest for thi s guideline is available from: https://www.rc og.org.uk/en/gui delines-research-
+services/guide lines/gtg38/ .
+The ﬁnal version is the responsibility of the Guidelines Committee of the RCOG.
+The guideline will be considered for update 3 years after publication, with an
+intermediate assessment of the need to update 2 years after publication.
+DISCLAIMER
+The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical practice.
+They present recognised methods and techniques of clinical practice, based on published evidence, for consideration byobstetricians and gynaecologists and other relevant health professionals. The ultimate judgement regarding a particular
+clinical procedure or treatment plan must be made by the doctor or other attendant in the light of clinical data presented
+by the patient and the diagnostic and treatment options available.
+This means that RCOG Guidelines are unlike protocols or guidelines issued by employers, as they are not intended to be
+prescriptive directions deﬁning a single course of management. Departure from the local prescriptive protocols orguidelines should be fully documented in the patient’s case notes at the time the relevant decision is taken.
+RCOG Green-top Guideline No. 38 e27 of e27 ª2020 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2021, 3, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.16266 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License

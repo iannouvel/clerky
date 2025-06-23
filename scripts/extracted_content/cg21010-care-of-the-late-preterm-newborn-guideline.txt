@@ -1,0 +1,1436 @@
+# Extracted from: CG21010 Care of the Late Preterm Newborn Guideline.pdf
+# Guideline ID: cg21010-care-of-the-late-preterm-newborn-guideline
+# Content length: 67471 characters
+# Processing date: 1750066900.6320884
+
+CG21010 Care of the Late Preterm Newborn v1. 1 Page 1 of 30 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+ 
+Care of the Late Preterm Ne wborn 
+Summary statement: How does the document 
+support patient care? The purpose of this guideline is to provide guidance to 
+support neonates who are late preterm, usually being cared 
+for in Transitional Care on the Postnatal Wards. 
+Staff/stakeholders involved in development: 
+Job titles only Infant Feeding Lead, Neonatal Managers, Neonatal Matron, 
+Paediatric Consultants, Midwifery Matrons, Maternity 
+Postnatal Ward Managers. 
+Division: Women and Child ren’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Claire Parr, Public Health M idwife/BFI Lead (Infant Feeding 
+Lead ) 
+For use by: All Obstetric , Paediatric and Midwifery staff 
+Purpose: To provide evidence based guidance … 
+This document supports: 
+Standards and legislation Transitional Care Guideline for the safe care of late preterm 
+babies cared for on the maternity postnatal ward. 
+Key related documents: UH Sussex (SRH & WH) Maternity Guidelines : CG20015 
+Parent -to-baby skin -to-skin contact guideline , CG1102 
+Guideline for Admission to Neonatal or Transitional Care , 
+GG1118 Neonatal Hypothermia Guideline , CG12035 
+Neonatal Jaundice Guideline , CG12033 Tongue -tie 
+guideline 
+Approved by : 
+Divisional Governance/Management Group Maternity Joint Obstetric Guideline Group (JOGG) 
+Neonatal and Maternity guideline review meeting : 21st 
+February 2023 
+Approval date: 21st December 2022 Date uploaded: 4th May 2023 
+Ratified by Board of Directors/ Committee of 
+the Board of Directors Not Applicable – Divisional Ratification only required 
+Ratification Date: Not Applicable – Divisional Ratification only required 
+Expiry Date: October 2024 
+Review date: April 2024 
+If you require this document in another format such as Braille, large print, 
+audio or another language please contact the Trusts Communications Team 
+Reference Number: CG21010 
+ 
+CG21010 Care of the Late Preterm Newborn v1. 1 Page 2 of 30 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+
+The interpretation and application of clinical guidelines will remain the 
+responsibility of the individual clinician. 
+If in doubt contact a senior colleague or expert . 
+ Version Date Author Status Comment 
+1.0 October 2021 Claire Parr Archived New Guideline 
+1.1 August 2022 G. Thomson LIVE Update d to include Nursery 
+Nurses. 
+Changes to grammar 
+throughout – no clinical 
+changes . 
+Gender inclusive language 
+added. 
+CG21010 Care of the Late Preterm Newborn v1. 1 Page 3 of 30 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+Index 
+ 
+1.0. Aim ................................ ................................ ................................ ............................ 4 
+2.0. Scope ................................ ................................ ................................ ........................ 4 
+3.0. Responsibilities ................................ ................................ ................................ .......... 4 
+4.0. Introduction ................................ ................................ ................................ ................ 4 
+4.1 Abbreviations used in this guideline ................................ ................................ ........... 4 
+4.2 Risks Associated with the Late Preterm Infant ................................ ........................... 5 
+4.3 Neonatal Transition Care ................................ ................................ ........................... 6 
+5.0 Organisation and Work Flow ................................ ................................ ...................... 7 
+6.0 Birth ................................ ................................ ................................ ........................... 8 
+6.1 Breastfeeding ................................ ................................ ................................ ............. 8 
+6.2 Formula Feeding ................................ ................................ ................................ ........ 9 
+6.3 Transfer to postnatal ward ................................ ................................ ......................... 9 
+6.4 Identification of Transitional Care Babies on Postnatal Ward ................................ ..... 9 
+7.0 Observations ................................ ................................ ................................ .............. 9 
+7.1 Thermal care ................................ ................................ ................................ ............. 10 
+7.2 Blood Glucose Monitoring ................................ ................................ ......................... 11 
+8.0 Jaundice ................................ ................................ ................................ ................... 11 
+9.0 Weighing ................................ ................................ ................................ ................... 11 
+10.0 Breastfeeding ................................ ................................ ................................ ............ 12 
+10.1 Inefficient Feeding (sleepy or reluctant to feed) ................................ ......................... 13 
+10.2 Insufficient Milk Intake (weight loss or reduced output) ................................ ............. 14 
+11.0 Formula feeding ................................ ................................ ................................ ........ 15 
+12.0 Schedule of midwifery care for women /people whose babies are being cared for on 
+NTC ................................ ................................ ................................ .......................... 16 
+13.0 Discharge from postnatal ward ................................ ................................ .................. 16 
+14.0 Community midwifery care ................................ ................................ ........................ 17 
+15.0 Outreach care ................................ ................................ ................................ ........... 18 
+16.0 Parent information ................................ ................................ ................................ .....18 
+16.1 Prior to birth ................................ ................................ ................................ .............. 19 
+16.2 Inform ation whilst inpatient ................................ ................................ ........................ 19 
+16.3 First day home information ................................ ................................ ........................ 19 
+References ................................ ................................ ................................ ........................... 21 
+Appendix 1: Referral Pathway from Community <28 Days (readmission) ............................. 22 
+Appendix 2: Observations and Feeding Plan from Birth of Late Preterm Infant .................... 23 
+Appendix 3: Late Preterm Hypoglycaemia Pathway ................................ ............................. 24 
+Appendix 4: Inefficient Feeding (Sleepy or Reluctant to Feed) - Late Preterm ....................... 25 
+Appendix 5: Insufficient Milk Intake (weight loss or reduced output) of Late Preterm ........... 26 
+Appendix 6: Discharge Risk Assessment & Follow Up ................................ ......................... 27 
+Appendix 7: Overall Care Flow Chart - Care of the Late Preterm Baby ................................ 30 
+
+CG21010 Care of the Late Preterm Newborn v1. 1 Page 4 of 30 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+Care of the Late Preterm Neonate 
+ 
+1.0. Aim 
+ 
+To provide guidance to support neon ates who are late preterm or early term, usually being 
+cared for in Transitional Care on the Postnatal Ward s. 
+ 
+2.0. Scope 
+ 
+For the criteria for Admission to Additional/ Transitional Care or Beeding/ SCB U please refer 
+to the CG1102 Guideline for Admission to Neonatal or Transitional Care . 
+ 
+3.0. Responsibilities 
+ 
+A guideline is a set of measurable, objective standards to determine a course of action. 
+Professional judgement may be use in the application of a guideline. 
+ 
+Midwives & maternity staff : 
+ To access, read, understand and follow this guidance 
+ To use their profe ssional judgement in application of this guideline 
+ 
+Management: 
+ To ensure the guideline is reviewed as required in line with Trust and National 
+recommendations . 
+ To ensure the guideline is accessible to all relevant staff . 
+ 
+4.0. Introduction 
+ 
+Late preterm infants are those born between 34 and 36 +6 w eeks. Because these babies 
+often look and seem normal, at least at first, much less attention is focused on this group 
+than on babies born more prematurely. This guideline aims to support the clinical care of 
+these potentially vulnerable, late -preterm babies whilst on the maternity postnatal ward. 
+ 
+4.1 Abbreviations used in this guideline 
+ 
+GBS - Group -B Streptococcus NIPE - Newborn and Infant Physical 
+Examination 
+NTC- Neonatal Transitional Care WOB - Work of B reathing 
+NNU - Neonatal Unit TCB- Transcutaneous Bilirubinometer 
+BGL - Blood Glucose L evel NTC- Newborn Transitional C are 
+NEWTT - Newborn Early Warning Trigger 
+and Track NOS - Neonatal Outreach Sisters 
+
+CG21010 Care of the Late Preterm Newborn v1. 1 Page 5 of 30 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+4.2 Risks Associated with the Late Preterm Infant 
+ 
+The late preterm infant is at increased risk of the following: 
+ 
+Hypoglycaemia: 
+ 
+ Higher metabolic rate . 
+ Limited brown fat stores . 
+ Low glycogen stores . 
+ Temperature instability . 
+ Ineffective feeding due to weak suck and/or fatigue . 
+ 
+Hypothermia: 
+ 
+ Decreased brown fat for thermogenesis and white fat for insulation . 
+ Increased heat loss due to higher surface -area-to-mass -ratio. 
+ 
+Respiratory distress and/or apnoea: 
+ 
+ Immature lung development . 
+ Decreased surfactant . 
+ Immature breathing control . 
+ Reduced clearance of lung fluid . 
+ Decreased airway muscle tone . 
+ 
+Sepsis: 
+ 
+ Immaturity of the immune system . 
+ Precipitating factors of preterm birth - eg: chorioamnionitis, pre -labour rupture of 
+membranes . 
+ GBS positive . 
+ Exposure to nosocomial pathogens . 
+ Invasive procedures . 
+ Potential delay in initiation and establishment o f breastfeeding . 
+ 
+Hyperbilirubinemia: 
+ 
+ Slower passage of meconium . 
+ Decreased bilirubin -conjugating glucuronyl transferase . 
+ Poor arousal and immature suck reflex leading to ineffective feeding and increased 
+risk of dehydration and jaundice . 
+ Peak serum bilir ubin at 5 -7 days rather than 2 -3 days . 
+ Higher incidence of kernicterus up to 10 -fold increase in risk for re -hospitalisation 
+for phototherapy . 
+
+CG21010 Care of the Late Preterm Newborn v1. 1 Page 6 of 30 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+Feeding difficulties: 
+ 
+ Immature suck/swallow/breathing co -ordination 
+ Low oromotor tone, central nervous system (CNS) immaturity, limited brown fat 
+stores, poor regulation of state behaviour and excessive sleepiness contribute to 
+feeding issues . 
+ Separation from mother /birthing parent affecting milk supply and establishment of 
+breastfeeding . 
+ 
+Poor weight gain: 
+ 
+ Poor suck feeding . 
+ Use of supplementation (formula, fortification, vitamins) may be medically 
+indicated . 
+ 
+Psychosocial issues: 
+ 
+ Higher incidence of breast feeding problems in mothers /birthing parents of late 
+preterm infants due to separation and associated mate rnal morbidity (eg diabetes, 
+pre-eclampsia) . 
+ Maternal anxiety and fatigue . 
+ Medicalised and stressful environment of the neonatal unit . 
+ 
+4.3 Neonatal Transition Care 
+ 
+Neonatal Transitional Care (NTC) is care additional to normal infant care, provided in a 
+postnatal clinical environment by the mother /birthing parent or an alternative resident carer, 
+supported by appropriately trained healthcare professionals. 
+ 
+Keeping mothers /birthing parents and babies together should be the cornerstone of newborn 
+care. NTC supports resident mothers /birthing parents to fulfil the role as primary care 
+providers for their babies and manage their expected additional care requirements , without 
+requiring admission to the SCBU . 
+ 
+Implementation of NTC has the potential to prevent thousands of admissions annually to UK 
+neonatal units, and also to provide additional support for small and/or late preterm babies 
+and their families. NTC also helps to ensure a smooth transition to discharge home from the 
+neonatal unit for sick or preterm babies who have spent time in a neonatal unit, often at 
+some considerable distance from home. 
+ 
+NTC is multidisciplinary and should be flexible and responsive to mother /birthing parent and 
+baby’s physical and emotional needs as well as the rest of the family. A recent systematic 
+review concluded that “transitional care benefits the health outcomes of moderately 
+compromised infants and mothers /birthing parents in terms of de -medicalising care, 
+improving mother /birthing parent and baby attachments, avoiding separation, developing 
+parenting skills for dependent infants and raising the potential for shorter length of 
+CG21010 Care of the Late Preterm Newborn v1. 1 Page 7 of 30 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+hospitalisation”. British Association of Perinatal Medicine (BAPM) Neonatal Transitional Care 
+- A Framework for Practice (2017). A BAPM Framework for Practice 
+
+Potential benefits of transitional care: 
+ 
+For mum and baby: 
+ 
+ Optimised attachment process . 
+ Maximal opportunities for skin -to-skin contact . 
+ Facilitation of baby -led feedin g and establishment of breast feeding . 
+ Access to 24 hour practical support with feeding and /or prompt medical review if 
+required – helping to build self -efficacy and thus confidence in parenting . 
+ Immediate access to skilled midwifery support for routine po stnatal care . 
+ Family -friendly environment . 
+ Potentially reduced risk of hospital -acquired infection . 
+ 
+For maternity and neonatal services: 
+ 
+ Reduced length of neonatal stay . 
+ Improved team working within maternity and neonatal services . 
+ Greater parental confi dence, with reduced rates of re -admission . 
+ Increased breast feeding rates . 
+ Improved neonatal patient flow with potenti al for more efficient use of SCBU cots. 
+ Additional professional opportunities for midwives . 
+ 
+5.0 Organisation and Work Flow 
+ 
+Late preterm infants may experience delayed or inadequate transition to the extra -uterine 
+environment, so careful consideration of staffing ratios to address the additional support 
+required during transition for this population of infan ts is necessary. CG1102 Guideline for 
+Admission to Neonatal or Transitional Care 
+ 
+ Mothers /birthing parents and their babies will be admitted to NTC from various 
+sources including Labour Ward, Birth Centre, Postnata l Ward and the Special Care 
+Baby Unit (SCB U) or readmitted from the community (≤10 days) following 
+assessment/discussion with the ward and neonatal staff. (See Appendix 1 ) 
+ Babies who are unwell in the transitional car e unit will be transferred to SCB U after 
+discussion and review by the paediatric team . 
+ Mothers /birthing parents will have a daily postnatal examination by a midwife as 
+part of routine postnatal care . Mothers /birthing parents can be discharged from 
+obstetrics but remain on the ward and stay with their babies until they are fit to be 
+discharged home together. 
+ Babies will be discussed at the daily Neonatal Handover and will be reviewed daily 
+by a member of the paediatric team . 
+CG21010 Care of the Late Preterm Newborn v1. 1 Page 8 of 30 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+ If a woman /person is unwell and /or unable to care for their own baby, the baby 
+should be assessed on an individual basis and cared for by an appropriate family 
+member supported by the st aff on the postnatal ward or SCBU as appropriate. 
+ Parents will be encouraged to actively participate in the care of their babies on 
+NTC. 
+ NIPE and ideally hearing screening will be undertaken prior to dischar ge. 
+ Discharge arrangements will be planned on an individual basis, and follow -up 
+appointments will be made as necessary. Outpatient appointments will be made at 
+the time of discharge. 
+ Referrals to the neonatal outreach team will be made if the baby requires specialist 
+follow up in the community . 
+ A discharge letter will be generated to inform health care professionals of the 
+planned ongoing care for the baby. 
+o For mothers /birthing parents this is generated through the Maternity 
+Information System and Badgern et for the baby. 
+ 
+6.0 Birth 
+ 
+Facilitate skin -to-skin contact immediately after birth and continue for a minimum of 1 hour , if 
+mother /birthing parent and baby’s condition allows, to improve postpartum stabilis ation of 
+heart rate, respiratory effort, temperature control, blood glucose, metabolic stability, and early 
+breastfeeding. CG20015 Parent -to-baby skin-to-skin c ontact guideline . 
+ 
+Dry infant on mother's /birthing parent’s chest, remove wet wrap, cover infant with dry warm 
+wraps and cover head with a woollen hat. 
+ 
+Perform weight (using a pre -warmed towel) and newborn check after the first feed (in skin 
+contact). Commence the neonatal hypoglycaemia protocol and e nsure a blood glucose level 
+(BGL) is performed prior to leaving birthing area (within 2 -4 hours of birth, prior to second 
+feed). 
+ 
+To determine plac e of transfer and care see CG1102 Guideline for Admission to Neonatal or 
+Transitional Care . 
+ 
+6.1 Breastfeeding 
+ 
+Aim for baby to feed within the first hour following birth. Ensure that the baby has 
+uninterrupted skin to skin to give breastfeeding within this timeframe the best possible 
+opportunity. 
+ 
+If the baby does not feed within an hour after b irth, support the mother /birthing parent to 
+hand express and give expressed colostr um to the infant with a syringe . If the baby does 
+feed at the breast, encourage the mother /birthing parent to hand express and harvest 
+colostrum for future feeds . Continue with a minimum of 3 hourly feeds and observe for 
+feeding cues . 
+
+CG21010 Care of the Late Preterm Newborn v1. 1 Page 9 of 30 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+6.2 Formula Feeding 
+ 
+Aim for baby to feed within the first hour following birth using paced feed technique to avoid 
+overwhelming baby and to allow baby to control feed . Ensure that the baby has uninterrupted 
+skin to skin and that the first feed is given in skin to skin. 
+ 
+Continue with a minimum of 3 hourly feeds. 
+ 
+6.3 Transfer to postnatal ward 
+ 
+Prior to transfer to the postnatal ward, the baby must have fed , had its first blood glucose 
+level measured, and have stable observations which have been documented on the 
+Newborn Early Warning Trigger and Track (NEWTT) chart for late preterm babies . 
+ 
+Discharge before 72 hours of age has been shown to increase this risk of readmission and 
+complications associated with it. Staff must be mindful that the late preterm baby is not a 
+healthy term baby and should actively ensure they are not managed as if they were. These 
+babies may have similar weights to some of their term counterparts and visu ally look very 
+similar but are much more susceptible to problems associated with prematurity such as 
+hypothermia, hypoglycaemia, jaundice and respiratory complications. 
+ 
+Staff caring for these babies should emphasise this difference to parents early on . Parents 
+should be made aware of the need for provision of extra care and support before discharge , 
+regardless of neonatal progress, and that this will involve staying for a minimum of 3 days . 
+ 
+6.4 Identification of Transitional Care Babies on Postnatal Ward 
+ 
+Babies who are under transitional care on the postnatal ward will be identified by : 
+ 
+ A ‘Red Hat’ laminated card will be placed on the baby’s cot to identify NTC 
+ A marker will be placed on the ward white board to identify NTC babies. This will 
+either be a magnet on the physical board or highlighted text on the online 
+electronic handover sheet and appropriately updated . 
+ Staff handover sheets will have the gestation at birth of all babies 
+ 
+7.0 Observations 
+ 
+Babies who require NTC must be properly and continually assessed by an appropriately 
+experienced and trained member of the midwifery and/or neonatal team . 
+ 
+After initial stabilisation following birth, perform a full set of neonatal observations every 30 
+minutes for 2 hours . Provided these are stable and within the expected range then 
+observations can be performed every 4 hours for first 24 hours, then at every shift (once per 
+day and night) until discharge. This is to rule out physiologic instability (e.g., hypothermia, 
+apnoea, tachypn oea, oxygen desaturation, hypoglycaemia , poor feeding). (See Appendix 2 ). 
+ 
+Close attention should be made to : 
+CG21010 Care of the Late Preterm Newborn v1. 1 Page 10 of 30 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+ 
+ Respiratory rate including work of breathing (WOB) 
+ Temperature 
+ Heart Rate 
+ Colour and tone 
+ 
+All observations must be plotted on the NEWTT charts . NEWTT chart entries help to provide 
+a trend. 
+ 
+It is important that any abnormal signs are escalated in a prompt manner. If eithe r 2 amber 
+scores or 1 red score are identified then this should be escalated to the paediatric team for 
+medical review , as stated on the NEWTT chart . 
+
+7.1 Thermal care 
+ 
+Normal body temperature of a late preterm baby is between 36.5ﹾc - 37.5ﹾC. Howe ver when 
+late preterm baby’s temperature is between 36.5-36.7ﹾC, proactive measures should be 
+taken to increase temperature. These include skin to skin or increasing clothing (hat, layers ) - 
+please note skin to skin is preferable and should be implemented prior additional methods 
+such as a hot cot . Once hypother mia initially identified escalate to midwife in charge of care if 
+not already aware. 
+ 
+The temperature should be rechecked in 30 minutes following the introduction of these 
+measures to ensure it is improving/stable. When a further fall in temperature is no ted upon 
+re-check then a neonatal team review should be sought (see neonatal hypothermia 
+guideline) and a hot cot should be considered. 
+ 
+Explain to parents that their baby is at increased risk for hypothermia: 
+ 
+ Decreased brown fat (thermogenesis) and white fat (insulation). 
+ Increased heat loss due to higher surface -area-to-mass ratio. 
+ 
+Teach importance of safe skin -to-skin contact in keeping infant warm. Stress importance of 
+adequate clothing when not in skin -to-skin contact. 
+ 
+ Frequent, prolonged, safe skin to skin should be encouraged to promote optimal 
+physiological stability. It can also be used to support babies to initiate a breastfeed 
+and will help breastmilk supply. When the mother/birthing parent is asl eep or if 
+unable to perform skin to skin, the baby should be in a hot cot. However if the 
+temperature is within the expected range or if a hot cot is not available then the 
+baby should have a double blanket and hat, as well as usual clothing. 
+ Please be awa re that monitoring room temp in the warmer months remains vital as 
+it is important to avoid over heating . CG20015 Parent -to-baby skin-to-skin c ontact 
+guideline 
+ Please review the trend in the baby’s observations via the NEWTT chart when 
+plotting each set of observations. Please ensure additional actions , such as 
+CG21010 Care of the Late Preterm Newborn v1. 1 Page 11 of 30 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+escalation to the paediatric team and increasing monitor ing, are implemented if 
+any abnormali ties or changes are identified. For example, a baby who has been 
+easily maintaining a good core t emp and suddenly drops to a temperature of 
+approximately 36.6oc may need further investigation . 
+ If there are any concerns with temperature, or additional clinical concerns due to 
+infection, a full set of observations (including heart rate and respiratory rate) should 
+be documented on the NEWTT chart. Staff need to be aware that temperature 
+instability may be a sign of sepsis and should be reported to the paediatric team 
+for further investigation. 
+ Intermittent use of a hot cot may be required to maintain normothermia . CG1118 
+Neonatal Hypothermia Guideline 
+ 
+7.2 Blood Glucose Monitoring 
+ 
+Preterm infants have lower reserves than term infan ts and are more prone to slower 
+establishment of feeds and difficulties with thermoregulation. 
+ 
+Please follow the hypoglycaemia pathway in Appendix 3 for late preterm babies. 
+ 
+8.0 Jaundice 
+ 
+Late preterm and early term infants should be followed closely with a low threshold for 
+checking bilirubin levels. This can be initially be completed using a Transcutaneous 
+Bilirubinometer (TCB) test as per CG12035 Neonatal Jaundice Guideline , provided the baby 
+is above 35 weeks gestation and is over 24 hours old. 
+ 
+The late preterm baby is at increas ed risk for hyperbilirubinemia due to delay in bilirubin 
+metabolism and excretion, with peak bilirubin levels at days 5 –7 after birth. These babies are 
+twice as likely to have significantly high bilirubin levels and more susceptible to bilirubin 
+toxicity. 
+ 
+All late preterm infants , bilirubin level should be measured at 72 hours prior to discharge from 
+hospital via a TCB. If jaundice is obvious or suspected prior this then their levels should be 
+measured upon identifying the jaundice and escalated to the pa ediatric team . 
+ 
+9.0 Weighing 
+ 
+Poor weight gain or considerable weight loss is almost always the result of inadequate milk 
+intake. This could be a result of insufficient milk production or inability of the baby to transfer 
+sufficient milk, or a combination of both. The measures described in 10.0 should maximise 
+milk intake howeve r the following actions should be taken for the following weight losses for 
+the late preterm baby. 
+ 
+Day 3 
+All late preterm babies should be weighed at 72 hours to identify developing problems and 
+avoid excessive weight loss or dehydration. Losses greater than 7% of birth weight by 72 
+CG21010 Care of the Late Preterm Newborn v1. 1 Page 12 of 30 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+hours merit further evaluation which may require further monitoring and adjustment of 
+medical and breastfeeding support. 
+ 
+Feeding should be observed and assessed thoroughly, regardless of feeding methods. 
+ 
+Day 5 
+A threshold maximum of 7% weight loss is more appropriate for the late preterm, smaller 
+and/or growth restricted infant. 
+ 
+Feeding should be observed and assessed thoroughly, regardless of feeding method. 
+ 
+For management of weight loss in the breastfeeding infant see section 10.2 and Appendix 5 
+insufficient milk intake for recommended plan. 
+
+10.0 Breastf eeding 
+ 
+Late preterm and early term infants should be considered as populations at risk for shortened 
+breastfeeding duration and the need to create specific breastfeeding support and education 
+for parents and those health professionals caring for them. 
+ 
+Early and frequent feeding is vital for the late preterm baby. 
+ 
+Feeding can be more difficult to assess in the late preterm than in term babies as they tire 
+more easily and can give the impression of having taken a suitable feed and fallen asleep at 
+the breast . This is because, even when well positioned and deeply attached at the breast, 
+and encouraged to feed as often and long as they want, they often just don’t have enough 
+energy yet to take what they need from the breast. This is d ue to being physiologically 
+imma ture and may have difficulty with their suck/swallow coordination , so may tire from this 
+rather than from satiety. This increases the risk of weight lo ss, jaundice and hypernatremia 
+as well as impact breastmilk supply which in itself can be a vicious cycle if not managed 
+appropriately. 
+ 
+All breastfeeding preterm babies should have a full feed observed and assessed thoroughly 
+on a twice daily basis. This should be documented in the Baby Postnatal Record 
+Breastfeeding Assessment table. 
+ 
+Support for the breastfeeding late preterm infant should include : 
+ 
+ Support and education of feeding cues for all mothers /birthing parents to actively 
+encouraged responding to these at the earliest opportunity , every time and achieve 
+8-12 effective feeds in 24 hours. If ba by hasn’t fed 3 hourly from the start of each 
+feed, wake them . Late preterm babies do not always wake themselves. 
+ Principles of positioning and attachment should be discussed. Breast 
+compressions should be taught and added as a proactive measure during eve ry 
+feed. This will increase milk transfer and can keep baby interested in 
+CG21010 Care of the Late Preterm Newborn v1. 1 Page 13 of 30 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+breastfeeding. This will also assist in breast emptying to ultimately maintain 
+adequate breastmilk supply. 
+ Strip baby down to their nappy, th ey will feed more effectively when in skin to skin 
+contact. Ensure a warm blanket is draped over babies back to keep exposed skin, 
+warm. Ensure the room is warm and there are no direct drafts. 
+ If mother /birthing parent is struggling to wake baby try to give some colostrum by 
+syringe. This boos t of energy may help them wake and breastfeed and only needs 
+to be a drop or two . 
+ Proactive hand expression should be encouraged after each breastfeed to empty 
+the breasts as much as possible. If the baby breastfed well then this milk can be 
+stored in the fridge or freezer as per hospital milk storage guidance. 
+ Baby driven positions such as laid back nursing should be the position of choice 
+due to the reduced amount of effort required of the baby to attach to the breast. 
+ Baby should always be offered the s econd breast at each feed . 
+ Safe skin to skin should be encouraged to support babies to initiate a breastfeed 
+and will help breastmilk sup ply. CG20015 Parent -to-baby skin-to-skin c ontact 
+guideline 
+o Keeping babies tummy down towards their mother’s/birthing parent’s chest 
+(with their head to the side to allow a clear airway) on their mother’s /birthing 
+parents semi -reclined body , directly on their chest for extended periods of 
+time, during the first 3 days increases breastfeeding duration. 
+o Holding can also be encouraged lightly clothed. When late preterm babies 
+are swaddled and laid in the cot, they are more likely to sleep longer and 
+show fewer feeding cues, which can lead to underfeeding. 
+ Allow uninterrupted periods of rest between feedin gs, and limiting stimulation will 
+optimise the baby’s ability to feed well when awake. 
+(See Appendix 2 ) 
+ 
+10.1 Inefficient feeding (sleepy or reluctant to feed) 
+ 
+ Sleepy babies can be identified by observing a feed. If the active feeding phase 
+has been only a few minutes add in switch feeding which should maintain their 
+interest in feeding. 
+o The baby is switched to the other breast once they have slowed their active 
+feeding down or become sleepy . The new side wi ll have a faster flow and will 
+initiate the baby to suck and swallow again. Like before, once feeding is 
+slowed they should be switched back to the other side and so on at least 3 -4 
+times, until baby no longer wants to go back on. Breast compressions durin g 
+switch feeding will also maximise the amount of breastmilk transferred to 
+baby too. 
+o Try to use upright feeding positions as these can also help baby to stay 
+awake. 
+ If baby does not latch or if feeding has not been vigorous with at least 5 -20 
+minutes of active feeding at the breast (and switch feeding or breast compressions 
+have not helped) then th e mother/birthing parent should be encouraged to hand 
+express (ad d in use of a breast pump support if required ) and give baby the 
+collected expressed breastmilk. Baby should then ideally be brought back to the 
+CG21010 Care of the Late Preterm Newborn v1. 1 Page 14 of 30 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+breast to finish a feed , or just be close to the mother’s /birthing parent’s breast, as 
+often as possible to avoid dissatisfaction at the breast and undermin ing the 
+mother’s /birthing parent’s confidence. 
+o If the mother /birthing parent has not been able to hand express any 
+breastmilk then consideration must be given to formula supplementation in 
+this situati on (a supplementation audit should be completed). Reas sure the 
+mother /birthing parent that expressing can take some time to produce 
+greater volumes of breastmilk. Reassure mother /birthing parent that ‘dry 
+pumping/expressing’ will still be beneficial as it offers stimulation to breast. 
+o Expressing doesn’t need to be regular; even if this means expressing several 
+times close together (babies often feed like this too!). Aim for at least 8 -10 
+expressions in 24 hours. Ensure no more than about 6 hours go by without 
+removing milk, as this causes milk making hormone levels to fall. The 
+number of times a mother /birthing parent expresses per day is more 
+important than the total period of time they express for. 
+o Whilst in hospital give any additional supplement of expressed breastmilk or 
+formula via finger feeding and tub e. This works really well for late preterm 
+babies who may then start to directly breastfeed whilst in inpatient care. 
+o In community any supplements should be given via paced bottle feeding. 
+ If the baby remains sleepy by day 4 or 5 and the suck seems weak th en it may be 
+appropriate to offer feeding with a nipple shield. The firm shield may help the baby 
+with a weak suck to grasp and remove milk more effectively from the breast. 
+Caution around using these should be made in view of possible effect on 
+breastmilk supply . The principles of effective positioning and attachment should be 
+applied, alongside observing feeds for active f eeding with swallows seen/heard, 
+even when using a nipple shield. 
+(See Appendix 4 ) 
+
+10.2 Insufficient Milk Intake (weight loss or reduced output) 
+ 
+Any signs that the baby is not taking enough milk (excessive weight loss see point 9.0 , 
+reduced wet and/or dirty nappies), should be offered additional milk on top of the breastfeed 
+as a supplement to breastfeeding . Ideally this should be expressed breastmilk, however if 
+this is not available then formula should be considered and discussed with the 
+mother /birthing parent (follow process for continuous supplementation audit) . 
+ 
+ The in fant should be observed breastfeeding with attention to the latch, suck, and 
+swallow. 
+o If there are latch difficulties despite optimising positioning consider referral to 
+the Tongue Tie Clinic for review or the oral function CG12033 Tongue -tie 
+guideline 
+ Increase the frequency of breastfeeds. Just adding in 1 additional feed per 24 
+hours can greatly improve output and weight gain. 
+ Start supplementing (preferably with expressed breast milk) after breastfeeding or 
+increase the amount of supplement already being given. Baby should then ideally 
+be brought back to the breast to finish a feed, or just be close to the 
+CG21010 Care of the Late Preterm Newborn v1. 1 Page 15 of 30 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+mother’s /birthing parent’s breast, as oft en as possible to avoid dissatisfaction at 
+the breast and undermining the mother’s /birthing parent’s confidence. 
+ If the baby is still on the breast, awake and feeding after 30-40 minutes, o ffer a 
+supplement. Additional time suckling may tire the infant without significantly 
+increasing intake. However if effective sucking and swallowing observed ( suck, 
+swallow or suck, suck, swallow) during this time keep baby at breast. 
+ Increase frequency of expre ssing (hand or pump), especially after a breastfeed if 
+the breasts are not well drained. If already using a breast pump appropriately, 
+switch to a more effective type (e.g., h and to mechanical, mechanical with hand s 
+on pumping , or a more efficient mechanic al pump). Expressing more than six times 
+a day may not be feasible for many mothers /birthing parents once their infant is 
+home, whereas expressing eight or more times a day may be necessary to 
+maximis e milk removal. Discussion around expectations and mother’s /birthing 
+parent’s ability to do this must be sensitively explored. 
+ Explore ways for the mother to relax while expressing. 
+ Triple feeding regimens (breastfeeding, followed by supplementation and then 
+expressing) for every feed are effective, but they may not be sustainable for some 
+mothers, especially if they have limited support at home. The mother’s /birthing 
+parent’s ability to cope and manage breastfeeding and expressing must be taken 
+into account when devising a feeding plan. 
+ The baby should be reviewed after 24 -48 hours after initiating a new feeding plan 
+depending on the situation - see infant feeding guideline . The measures put in 
+place should ideally slow the weight loss and increase the baby’s output . Once 
+weight begins to increase t here is an expectation that babi es will put on 
+approximately 30 grams/day. 
+
+11.0 Formula feeding 
+ 
+Early and frequent feeding is vital for the late preterm baby. 
+ 
+Feeding can be more difficult to assess in the late preterm than in term babies as they tire 
+more easily. This is due to being physiologically immature and may have difficulty with their 
+suck/swallow coordination, so may tire from this rather than from satiety. This increases the 
+risk of weight loss, jaundice and hyper natremia. 
+ 
+Paced bottle feeding is the optimum method of feeding the late preterm baby, to ensu re that 
+the baby can manage the flow of milk and not be overwhelmed by overfeeding. Similar to 
+breastfeeding these babies can tire from feeding rather than satie ty. It is important to ensure 
+that an adequate volume is taken whilst being led by the baby. If a baby only takes a small 
+volume of the prepared decanted formula feed then attempts to wake the baby by changing 
+nappy and/or giving skin to skin may reinitiate the baby’s eagerness to feed. 
+ 
+Mother’s /birthing parent’s should be shown how to pace bottle feed their baby, preferably 
+with the bottle they will be using at home. This is so they can get use to their preferred bottle 
+type and get support if ha ving difficulty. 
+ 
+CG21010 Care of the Late Preterm Newborn v1. 1 Page 16 of 30 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+12.0 Schedule of midwifery care for women /people whose babies are being 
+cared for on NTC 
+ 
+Maternal /Birthing parent lengths of stay on the postnatal ward tend to be longer when the 
+baby is being cared for within the NTC pathway. The midwi fery care of the mother /birthing 
+parent should follow the normal postnatal schedule of care, according to the mother ’s/birthing 
+parent’s clinical condition and individualised need. 
+ 
+Midwifery examinations should be provided in line with normal postnatal care schedule and is 
+not required on a daily basis after day 2 unless clinically indicated. Ongoing postnatal 
+midwifery care should be provided on an individualised basis according to clinical need. 
+ 
+13.0 Discharge from postnatal ward 
+ 
+Late preterm babies that are sent home before they are ready have an increased risk o f 
+readmission to hospital . They are at greater risk for readmission with hyperbilirubinemia, 
+feeding problems, apnoea and respiratory concerns and suspected sepsis (often due to low 
+temperature and poor feeding). 
+ 
+A baby may be considered for discharge from the maternity ward after 72 hours of age if they 
+fulfil all of the following criteria. 
+ 
+ 24 hours of successful fee ding of late preterm infants must be established before 
+discharge home. Feeding methods suitable for discharge are breast or paced 
+bottle feeds or a combination of them both. 
+ 24 hours of temperature stability in a normal cot in normal clothing with room 
+temperature 20 -25°C. Normal body temperature of a late preterm baby is between 
+36.5ﹾC - 37.5ﹾC. 
+ It is important to let parents know that a home brought thermometer is a useful 
+piece of equipment to assist in recognising their baby’s temperature. 
+ Discharge plans must take into account the health, parenting and feeding skills of 
+the mother /birthing parent and the availability of support in the home. 
+ Preferably, weight should be no more than 7% below birth weight, although all 
+aspects of the mother/ birthing pa rent-infant dyad and measures taken to address 
+these should be taken into account. 
+ If the baby meets the criteria as outlined in point 15.0, t he baby should be 
+discussed with the neonatal outreach team prior to discharge. It is anticipated that 
+late preterm babies who meet this criterion will have a neonatal outreach follow up 
+if discharged from the maternity ward . However the majority of 36 wee k gestation 
+babies will be mainly followed up by the midwives . 
+ Babies th at have required admission to SCB U for feeding support may be 
+discharged from SCB U on NGT feeds as per the outreach policy once 
+mothers /birthing parents have been trained in this. Thes e babies must satisfy all 
+other discharge criteria to be accepted for home feeding support. 
+ Transcutaneous bilirubin level should be undertaken on all late preterm babies on 
+72 hours prior to consideration for discharge. 
+CG21010 Care of the Late Preterm Newborn v1. 1 Page 17 of 30 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+o Levels less than 50 below the treatment threshold may indicate that feeding 
+is not adequate even if assessment has suggested it may be and these 
+infants should remain in hospital for further feeding support / consideration of 
+supplemental feeds and have a repeat level 18 -24 hours later . 
+ 
+A Discharge Risk Assessment (Appendix 6) should be completed on day 3 (not before 72 
+hours) . If a baby has met all of the criteria they can be considered for discharge. If they have 
+not then they should remain in hospital until they achieve these and each area be reviewed 
+on a daily basis. If baby is not ready for discharge on day 5 discuss with paediatric team for 
+consideration of transfer to SCBU parent room (rooming in room) . 
+ 
+Prior to discharge parents should be informed about safer sleeping and ICON in relation to 
+the preterm baby . (Link) 
+ 
+Recommending The Lullaby Trust, Baby Check App and signposting to Family Assist will 
+offer the parents more ongoing information on the well -being of their baby . 
+ 
+Complete Community Follow Up Plan (see Appendix 7 ) 
+ 
+14.0 Community midwifery care 
+ 
+All late preterm babies discharged should have a face to face review and jaundice 
+assessment as a priority visit in the morning of the day following discharge. At this visit the 
+midwife should carry out normal baby (and maternal) checks and they should reiterate : 
+ 
+ Safer sleeping 
+ ICON 
+ Signs of illness including temperature control for this age group 
+ Feeding (see above for principles ) 
+ Well-fitting baby clothes to help maintain temperature 
+ To delay bathing or taking outside (unless absolutely necessary) for about a week. 
+This will give the baby time to a djust to the different environment at home. 
+ Try to limit the number of visitors initially and to avoid crowded public places to 
+reduce the risk of infection. 
+ 
+A full feeding assessment should be carried out at the first home visit. This will help confirm 
+the current feeding plan and determine the plan for ongoing care. This should be 
+documented on the Feeding Assessment page if breastfeeding. However the principles for 
+both bottle and breastfeeding remain : 
+ 
+ Frequency and approximate duration (in a 24 hour period) 
+ Volume of formula (bottle feeding) or supplementation (breastfeeding) 
+ Urine output in relation to age 
+ Colour of stools depending on age (should stool at least twice a day) 
+ Baby’s behaviour (i.e. crying, not satisfied after a feed, sleepy an d difficult to wake 
+during a feed etc) . 
+CG21010 Care of the Late Preterm Newborn v1. 1 Page 18 of 30 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+ 
+Caution should be given if a mother /birthing parent wishes to reduce any supplementation. 
+This needs careful assessment and is likely to be carried out under Health Visiting care due 
+to the time required to ensure f eeding, weight gain is moving in the right direction. 
+ 
+15.0 Outreach care 
+ 
+The Neonatal Outreach Sisters (NOS) can provide additional support in the community for 
+babies under the below criterion . As nurse specialist in neonatal nursing, they work 
+collaboratively within the multi -disciplinary team to support families of babies who may need 
+ongoing medical support at home (including beyond the scope of midwifery services for NTC 
+babies ), to reduce length of stay in hospital, e.g. undertaking blood te sts (SBRs, U&Es), 
+assess weight gain and nutrition and involve dietician if necessary, for a maximum of 4 
+weeks from discharge. If medical needs are ongoing, the Children’s Community Nursing 
+team may take over. 
+ 
+Neonatal referral criteria: 
+ 
+ Below 2 kg at discharge 
+ Nutritional concerns 
+ Oxygen dependant 
+ NGT feeding 
+ Congenital abnormalities – at request of consultant 
+ Needs blood tests 
+ Drug withdrawal – on morphine 
+ Multiple births 
+ Consultant request 
+ Child protection issues – on discussion 
+ Post-surgery wound care 
+ Children’s Community Nurses Referral 
+ Babies born 23 -28 weeks 
+ Babies 29 -31 weeks birthweight <2nd centile or <1.5kg 
+ 
+The Neonatal team should decide if the baby requires outreach care and will be responsible 
+for liaison to the Outreach Team. The NOS sh ould be contacted as soon as a baby’s 
+discharge date is arranged and requires outreach care. The NOS will aim to meet parents 
+where possible prior to discharge, to give information leaflet and to arrange a visit within 48 
+hours of discharge. 
+ 
+16.0 Parent information 
+ 
+Discharge before 72 hours of age has been shown to increase the risk of readmission and 
+complications associated with it. Staff must be mindful that the late preterm baby is not a 
+healthy term baby and should actively ensure they are not managed as if they were. These 
+babies may have similar weights to some of their term counterparts and visually look very 
+similar but are much more susceptible to problems associated with prematurity such as 
+hypothermia, hypoglycaemia, jaundice and respirat ory complications. 
+CG21010 Care of the Late Preterm Newborn v1. 1 Page 19 of 30 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+ 
+Staff caring for these babies should emphasise this differ ence to parents early on and that 
+they need extra care and support before discharge and that this will in volve staying for a 
+minimum of 72 hours even when the baby does not have any obvious immediate difficulties. 
+ 
+16.1 Prior to birth 
+ 
+Stress importance of immediate postpartum skin -to-skin contact with mother /birthing parent 
+to: 
+ 
+ Stabilise infant and support optimal transition after birth including optimal cord 
+management . 
+ Promote physiological stability in heart rate, respiratory rate, oxygen saturation, 
+temperature, and glucose levels . 
+ Facilitate infant’s first feed. 
+ 
+Stress the value to mother /birthing parent and baby of exclusive breastmilk feeding : 
+ 
+ Explain the value of colostrum in providing immune protection and nutrition. 
+ Reassure mothers /birthing parents that small amounts of colostrum are usually 
+adequate in the first few days if baby is feeding frequently enough . 
+ 
+16.2 Information whilst inpatient 
+ 
+Give Late Prete rm Pack to parent. 
+ 
+ Teach how to recognise signs of respiratory distress and apnoea and when to alert 
+staff for immediate review of the baby. 
+ Teach importance of safe skin-to-skin contact in keeping infant warm . 
+ Stress importance of adequate clothing when not in skin -to-skin contact . 
+ Teach how to take infant’s temperature accurately . 
+ Educate on feeding cues and probable need to wake baby for 3 hourly feeds 
+(babies will transition to full cue -based feeds when closer to term gestational age . 
+ Stress importanc e of feeding infant frequently, at least 8 –12 breastfeed s or 8–10 
+formula feedings per day . 
+ Principles of positioning and attachment for breastfeeding and paced bottle feeding 
+if formula feeding or offering supplements of expressed breastmilk or formula . 
+ Nappy output in relation to age . 
+ ICON in relation to the late preterm . 
+ Safer Sleeping advice in relation to the late preterm . 
+ 
+16.3 First day home information 
+ 
+ Teach how to recognise early signs of infection. 
+ Teach ways to reduce illness. 
+o Wash hands, limit visitors, avoid crowds, protect against contact with sick 
+people. 
+CG21010 Care of the Late Preterm Newborn v1. 1 Page 20 of 30 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+ Inform when to alert healthcare professional for immediate review of the baby. 
+ Deepening yellow skin and eye colo ur (visual assessment alone is not reliable) . 
+ Teach how to recognise signs and symptoms of hyperbilirubinemia and when to 
+alert staff . 
+o Sleepiness and lethargy 
+o Decreased feeding 
+o Increased irritability and high -pitched cry 
+ Breastfeed for as long as possible during the first year after birth or longer . 
+ Responding to baby’s needs for cuddles and closeness as well as feeding . 
+ 
+https://www.laleche.org.uk/feeding -late-preterm -babies/?fbclid=IwAR06iK 67FC -
+9h_Kc8YVIbnFm4DcAhc -2qZWPGR8OML05z6Hw0rEs79wBs6c 
+
+CG21010 Care of the Late Preterm Newborn v1. 1 Page 21 of 30 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+References 
+ 
+Barfield, W.D., Lee, K.G. (2016) Late Preterm Infants 
+ 
+British Association of Perinatal Medicine (BAPM) Neonatal Transitional Care - A Framework 
+for Practice (2017) . A BAPM Framework for Practice 
+ 
+Colson S, DeRooy L & Hawdon J ( 2003) Biological nurturing increases duration of 
+breastfeeding for a vulnerable cohort. MIDIRS Midwifery Digest 13 (1) 92 -97 
+ 
+Douglas & Keogh. J Hum Lact 2017; 33(3); 509 -18 
+ 
+Engle WA. A recommendation for the definition of "late preterm" (near -term) and the birth 
+weight -gestational age classification system. Semin Perinatol. 2006 Feb;30(1):2 -7. 
+http://doi.org/10.1053/j.semperi.2006.01.007 PMID: 16549206. 
+ 
+Escobar, G.J.., Clark, R.H., Greene, J.D. (2006) Short -term outcomes of infants born at 35 
+and 36 weeks gestation: we need to ask more questions. Elsevier Seminars In Perinatology. 
+ 
+Eyla G. Boies, Yvonne E. Vaucher, and the Academy of Bre astfeeding Medicine, ABM 
+Clinical Protocol #10: Breastfeeding the Late Preterm (34 –36 6/7 Weeks of Gestation) and 
+Early Term Infants (37 –38 6/7 Weeks of Gestation), Second Revision Breastfeeding 
+Medicine Volume 11, Number 10, 2016 
+ 
+Kellams A, Harrel C, Omage S, Gregory C, Rosen -Carole C, and the Ac ademy of 
+Breastfeeding Medicine. ABM Clinical Protocol #3: Supplementary Feedings in the Healthy 
+Term Breastfed Neonate, Revised 2017 BREASTFEEDING MEDICINE Volume 12, Number 
+3, 2017 
+ 
+Mohrbacher N (2020) Breast feeding Answers. Second Edition 
+ 
+National Perinatal Association (2012), Multidisciplinary Guidelines for the Care of Late 
+Prete rm Infants 
+ 
+Nelson AM. (2017) Risks and benefits of swaddling healthy infants: An integrative review. 
+MCN American Journal of Maternal and Child Nursing 42 (4) 216 -225 
+ 
+Nicole M. Hackman, Natasha Alligood -Percoco, Ashley Martin, Junjia Zhu, and Kristen H. 
+Kjerulff. Reduced Breastfeeding Rates in Firstborn Late Preterm and Early Term Infants. 
+Breastfeeding Medicine. Apr 2016.119 -125.http://doi.org/10.1089/bfm.2015.0122 
+ 
+Le Leche League GB, Feeding late preterm babies - La Leche League GB 
+ 
+Wambach K & Spencer B . (2021) Breastfeeding and Human Lactation. Sixth Edition 
+ 
+WHO: Born Too Soon: The Global Action Report on Preterm Birth 
+ 
+CG21010 Care of the Late Preterm Newborn v1. 1 Page 22 of 30 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+Appendix 1: Referral Pathway from Community <28 Days ( readmission) 
+
+If observations normal 
+and issues is feeding or 
+weight loss related admit 
+to TANGMERE or 
+BRAMBER Ward 
+Babies over 72 hrs of age 
+Jaundice, feeding concerns, 
+excessive weight loss 
+Direct to TANGMERE or 
+BRAMBER Ward 
+ 
+Follow jaundice / 
+weight loss guidanc e 
+Liaise with Infant 
+Feeding Team 
+Regular Paediatric 
+Review (daily at 
+least) 
+If unwell admit to 
+Howard or Bluefin 
+Ward 
+If jaundice within 24 hrs 
+of age (any gestation) 
+NNU - SRH / Bluefin - WH 
+Within 2 hours for SBR 
+ 
+If baby unwell floppy, unrespo nsive, hypothermic, 
+respiratory concerns 
+CALL 999 and inform Paediatrician 
+Paediatric Referral Readmission 
+Paediatrician to be informed of any readmission 
+SRH - Bleep 6511 / WH - Bleep 1865 
+ 
+24- 72 hrs of age 
+If feeding concerns or 
+jaundice 
+Direct to TANGMERE or 
+BRAMBER Ward 
+ 
+IF UNWELL - ANY AGE 
+ Direct to Children’s 
+Assessment Unit 
+For Medical review 
+ 
+Liaise with Infant 
+Feeding Team 
+ 
+Discharge from Any Clinical Area 
+ 
+Please liaise back to community midwife - inform them of plan +/ - 
+outstanding results via Postnatal Ward Clark (to place on discharge 
+spreadsheet) 
+ 
+If no admission please 
+liaise back to 
+community midwife - 
+inform them of plan +/ - 
+outstanding results 
+ 
+CG21010 Care of the Late Preterm Newborn v1. 1 Page 23 of 30 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+Appendix 2 : Observation s and Feeding Plan from Birth of Late Preterm Infant 
+
+ Late Preterm 
+Birth 
+35-36+6 weeks 
+gestation 
+ 
+Feed within the 
+first hour in 
+skin contact Uninterrupted 
+skin-to-skin Assess newborn 
+every 30 minutes 
+for 2 hours until 
+stable. 
+NEWTT 
+To determine place of transfe r and care see ‘Criteria of Admission for the Neonate’ guideline 
+Carry out 
+observations 
+once per shift 
+(day and night). 
+NEWTT Carry out 
+observations , 
+ 4 hourly for 24 
+hours - 
+NEWTT Pulse Oximetry 
+after 4 hours of 
+age at NIPE 
+only, unless 
+any concerns If baby does not 
+feed, hand 
+express & give 
+colostrum via 
+syringe Measure Blood 
+Glucose at 2 
+hours of age , 
+before transfer 
+to ward 
+Feed 3 hourly 
+from the start of 
+each feed . 
+3x Pre Feed 
+BMs. 
+
+Observations - 
+ Respiratory rate, including 
+work of breath (WOB) 
+ Temperature (36.5 ﹾc - 
+37.5ﹾc). Proactive measures 
+to be made from 36.5 -36.7ﹾc 
+ Heart rate 
+ Blood glucose 
+ Bilirubin levels (low 
+threshold & 72 hours) 
+ Weigh (72 hours, day 5 and 
+onwards planning) 
+ Urine output 
+ Stooling (at least 2 per day, 
+changing) 
+ 
+Uninterrupted periods of rest 
+essential Feeding - 
+ Observe and assess feed twice daily 
+ 8-12 effective feeds in 24 hours. Wake baby 
+3 hourly from th e start of each feed 
+ Laid back nursing is position of choice due to 
+the reduced amount of effort required of the 
+baby to attach to the breast 
+ Breast compressions added per feed 
+ Struggling to wake baby - give colostrum by 
+syringe. This boost of energy may help them 
+wake an d breastfeed , only needs to be a drop 
+or two 
+ Lots of skin to skin with warm blanket draped 
+over baby’s back 
+ Proactive hand expression after each 
+breastfeed to empty the breasts as much as 
+possible . If the baby breastfed well then this 
+milk can be stored for use later, if needed. 
+If baby is less than 
+36 weeks at birth 
+paediatric team to 
+prescribe Abidec & 
+Sytron 
+Use Late Preterm 
+NEWTT Chart from 
+birth 
+CG21010 Care of the Late Preterm Newborn v1. 1 Page 24 of 30 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+Appendix 3: Late Preterm Hypoglycaemia Pathway 
+
+If BG ≥ 2.6 mmol/L 
+ If the BG ≥ 1.4 mmol/L and < 2.6 mmol/L 
+Give 3 hourly feeds (from start of 
+feed). 
+BF- breast compressions during 
+feed & proactive hand expressing 
+and save EBM. 
+If ineffective BF give EBM if <5mls 
+consider formula 
+AF- give minimum 60mls/kg/24hrs 
+Give buccal dextrose gel 200mg/kg (0.5ml/kg). Inform Neonatal 
+Team for review 
+ 
+Give 2 hourly feeds. 
+BF- support breastfeeding, breast compressions during feed. 
+Proactive hand expressing & if expressing <5mls consider 
+supplementing via NGT. 
+AF- give minimum 60mls/kg/24hrs 
+Once 3x Pre -Feed BG ≥ 2.6 
+mmol/L no further BG monitoring 
+needed unless any abnormal 
+clinical signs. 
+ 
+Contin ue 3 hourly feeds. 
+If ≥ 2.6 mmol/L move 
+to top of green pathway 
+Do a pre -feed BG 
+Repeat buccal dextrose gel 200mg/kg (0.5ml/kg). 
+Insert an NG tube and give 60mls/kg/24hrs. 
+Continue to support breastfeeding. 
+Inform Neonatal team for review, individual plan or possible 
+admission to NNU 
+Do a pre -feed BG 
+BG ≥ 2.6mmol/L 
+Maintain plan which achieved BG 
+for 3x BG ≥ 2.6mmol/L. Discuss 
+further plan with Neonatal team 
+3rd BG ≥ 1.4mmol/L and 
+<2.6mmol/L 
+Move to red pathway. For urgent 
+paediatric review. Admit to NNU if 
+not already there. 
+IF ANY OF BELOW 
+Symptomatic at any 
+time 
+3 BG levels 
+<2.6mmol/L in 1st 48 
+hours 
+BG level <1.4mmol/L 
+at any time 
+Treat as a medical 
+emergency 
+Give buccal dextrose 
+200mg/kg 
+Inform Neonatal team 
+immediately and admit 
+to NNU 
+Signs of Symptomatic 
+Hypoglycaemia 
+Lethagy 
+Abnormal feeding 
+behaviour especially 
+after a period of 
+feeding well 
+High pitched cry 
+Altered level of 
+consciousness 
+Hypotonia 
+Seizures 
+Hypothermia 
+Cyanosis 
+Apnoea 
+Adapted from Evans J. 
+Preterm bundle for 
+babies at risk of 
+hypoglycaemia following 
+birth July 2020 Swansea 
+If ≥ 1.4 mmol/L and <2.6 mmol/L 
+CG21010 Care of the Late Preterm Newborn v1. 1 Page 25 of 30 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+Appendix 4 : Inefficient Feeding (Sle epy or Reluctant to Feed) - Late Preterm 
+
+ Safe Skin to Skin 
+Lots of skin contact 
+to support feeding 
+and as a 
+preventative 
+measure to avoid 
+hypothermia. 
+Breast 
+Compressions 
+Palm of hand 
+compresses breast 
+during whilst the 
+baby is sucking. This 
+will increase speed 
+of milk transfer and 
+keep baby’s interest 
+in feeding Feeding Positions 
+Upright feeding 
+positions can help 
+baby stay awake. 
+- Koala 
+- Laid Back 
+Nursing 
+- Side sitting rugby 
+ball 
+Switch Feeding 
+Baby is switched to 
+the other breast 
+once they have 
+slowed their active 
+feeding down or 
+become sleepy. 
+They are then 
+switched back to the 
+other side and so on 
+at least 3 -4 times Sleepy babies can be identified by 
+observing a feed. 
+ 
+Give a drop or two of colostrum. This boost of 
+energy may help them wake and breastfeed. 
+If baby does not latch or if feeding has not 
+been vigorous with at least 5 -20 minutes of 
+active feeding at the breast try these 
+measures. 
+If this does not work, hand express colostrum 
+(add in hands on pumping from day 2 -3), and 
+give the baby the collected expressed 
+breast milk. 
+Bring baby back to breast to finish feed to 
+avoid dissatisfaction at breast & undermining 
+mother’s/birthing parent’s confidence. 
+More information can be 
+found in the Preterm 
+Guideline point 10. 
+CG21010 Care of the Late Preterm Newborn v1. 1 Page 26 of 30 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+Appendix 5 : Insufficient Milk Intake (weight loss or reduced output) 
+of Late Preterm 
+
+ Weight Loss 
+ 
+72 hours and Day 5 ≥ 7% of birth 
+weight is considered for urgent 
+evaluation and adjustment of care 
+plan. 
+ 
+NB: weight must be rechecked and 
+recalculated to confirm % to avoid 
+unnecessary intervention or inaction. 
+Ensure scales used are calibrated. 
+ 
+Remember weight is one part of the 
+whole assessment. 
+
+ Normal Output 
+Urine 
+Number of wet nappies corresponds to 
+days old, until day 6 when 6+ heavy wet 
+nappies are expected. 
+Stool 
+At least 2 stools per day for breastfed 
+infants and 1 per day for exclusive 
+formula fed infants. Colour should 
+change and by day 5, becoming yellow 
+and looser in consistency. 
+Anything less than above requires urgent 
+evaluation and adjustment of care plan. 
+Weight should be reassessed 24 -48 hours after initiating plan. 
+All plans must be made in conjunction with the mother /birthing parent . They must be 
+sustainable. Discussion around expectations and mother’s /birthing parent’s ability to 
+do this must be sensitively explored. Assess full 
+feed •BF- look at attachment, position, suck and swallow pattern. 
+Always offer 2nd breast 
+• Remember breast compressions. Add in switch feed if baby is 
+sleepy to sustain interest in feed 
+•AF- review volume, frequency 
+Volume •BF- add in additional breastfeeds per 24 hours (move from 3 
+hourly to 2 hourly) 
+•AF- increase volume and/or add in additional feed per 24 hours 
+Supplement •Add EBM following a breastfeed if not already supplemented 
+•If supplementing, increase amount of EBM supplement or add in 
+formula with parental consent 
+• If baby awake at the breast at 30 -40 minutes offer supplement to 
+avoid tiring (unless active suck/swallows observed) 
+Supply •Increase frequency of expressing to 8 times a day, especially after a 
+breastfeed if the breasts are not well drained 
+•Assess/observe pumping (hand or pump). Add in hands on pumping 
+CG21010 Care of the Late Preterm Newborn v1. 1 Page 27 of 30 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+Appendix 6 : Discharge Risk Assessment & Follow Up 
+PLEASE DO NOT PRINT FROM GUIDELINE 
+ 
+Discharge Risk Assessment for Late -Preterm 
+Part A Day 3 (not prior to 72 hours old) 
+ 
+Gestation at birth………………. weeks 
+Birth weight……………. grams Date 
+achieved Signature 
+Feeding Achieved a minimum of 24 hours successful 
+feeding (either breast or bottle or mixed ). 
+Education provided on feeding cues and when to 
+be concerned about feeding info in Baby’s 
+Postnatal Record 
+Information provided to parents on urine and 
+stool output required for baby info in Baby’s 
+Postnatal Record 
+Temperature 
+control. 24 hours stability in normal clothes and normal 
+cot with room temperature 20 -25° 
+Teach how to take infant's temperature 
+accurately. Ensure parents have a thermometer. 
+Normal body temperature of a late preterm baby 
+is between 36.5 ﹾc - 37.5ﹾc. 
+Day 3 weight 
+ Weight…………….. % weight loss………. % 
+If <7% loss continue to assess for discharge. 
+≥7% loss. Medical review and baby to stay in 
+until day 5 weight check 
+Day 3 
+jaundice 
+assessment Review bilirubin chart 
+If baby has NOT had phototherapy 
+ Do a TCB reading………………… 
+ Plot on chart. 
+If >50 below phototherapy line. Continue to 
+assess for home. 
+If <50 below the line. Review feeding, keep in 
+hospital and repeat in 18 -24 hours. 
+CG21010 Care of the Late Preterm Newborn v1. 1 Page 28 of 30 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+If baby has had phototherapy 
+ Paediatric review of jaundice 
+ If levels are stable or falling and >50 
+below treatment line and baby has been 
+off phototherapy for at least 12 hours 
+continue to assess for home. 
+Outreach plan Does the baby meet Outreach criteria? 
+Yes- ask Neonatal team to set up liaison prior to 
+discharge 
+ 
+Part B - Follow up community care plan 
+signature 
+All elements of the day 3 risk assessment for safe discharge have been 
+met 
+Community midwife follow up. Face to face review and jaundice 
+assessment the day after discharge. 
+Date and time of visit…………………. 
+Neonatal 
+outreach. Do they plan to see baby in community as well? 
+Yes / No 
+Have they met with the parents? 
+Yes / No 
+Date and time for agreed follow up if needed 
+………………………………………………… 
+Parent 
+Education 
+in relation 
+to Preterm ICON 
+Safer Sleeping (inc co -sleeping) 
+Responsive Parenting 
+Information on signs of illness in babies (inc respiratory 
+distress and apnoea ) 
+Jaundice 
+o Sleepiness and lethargy 
+o Decreased feeding 
+o Increased irritability and high -pitched cry 
+Parents have maternity triage number for contact if 
+concerned 
+CG21010 Care of the Late Preterm Newborn v1. 1 Page 29 of 30 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+Feeding 
+Plan Attachment & Positioning Plan: 
+
+Increasing Intake: 
+
+Protecting Breastmilk Supply: 
+
+Discussed plan with parent and agreed 
+
+CG21010 Care of the Late Preterm Newborn v1. 1 Page 30 of 30 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+Appendix 7 : Overall Care Flow Chart - Care of the Late Preterm Baby 
+ 
+ Identification •'Red Hats' placed on cots of all Neonatal Transitional Care (NTC) babies 
+•Ensure 'Ward Board' highlights NTC babies 
+•Handover sheets have gestation at birth of all babies on Postnatal 
+Wards 
+•Complete NTC Status Link between NNU and Postnatal Ward twice a 
+day 
+Considerations 
+of Care •NEWTT - Follow Appendix 2 for observations required. Routine observations on 
+Postnatal Ward are 4 hourly for 24 hours then twice per 24 hours (one day and 
+one night shift). Use Late Preterm NEWTT Chart. 
+•Hypoglycaemia Pathway - 3x Pre Feed Blood Glucose levels - see Appendix 3 for 
+pathway 
+•Feeding - 3 hourly feeds (from start of feed). Give parent feed chart to complete 
+whilst . See Appendix 4 for additional support if inefficent feeds 
+•Weighing - 72 hours, Day 5 and DIscharge from Community (add additional weighs 
+if required). See Appendix 5 for actions required. 
+Parent 
+Information •Information required prior to birth, during inpatient stay and in 
+community at first day home 
+•Give out Patient Info Pack for the Late Preterm after birth, this includes 
+(feeding chart, inpatient information leaflets, going home with baby 
+leaflet) 
+•See point 16 in Care of Late Preterm Guideline 
+Discharge 
+Planning 
+•Discharge before 72 hours of age has been shown to increase this risk 
+of readmission and complications associated with it. 
+•Complete Part A of Appendix 6 to risk assess for the baby's possible 
+discharge 
+•Complete Part B of Appendix 6 for community care planning 
+•Follow Appendix A if a baby is required to be readmitted under 28 days

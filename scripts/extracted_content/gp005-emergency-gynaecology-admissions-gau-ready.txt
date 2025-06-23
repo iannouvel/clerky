@@ -1,0 +1,849 @@
+# Extracted from: GP005 Emergency Gynaecology Admissions  GAU READY.pdf
+# Guideline ID: gp005-emergency-gynaecology-admissions-gau-ready
+# Content length: 33434 characters
+# Processing date: 1750066900.8156884
+
+Emergency Gynaecology 
+Admissions & Gynaecology 
+Assessment Unit (GAU) 
+
+Gynaecology Protocol: GP005 
+ 
+Date Agreed: May 2020 
+
+Emergency Gynaecology Admissions GP005 
+& Gynaecology Assessment Unit (GAU) 
+ 
+Brighton & Sussex University Hospitals Page 2 of 21 
+
+ Guideline Reviewer: Tosin Ajala 
+Version: 3.0 
+Approval Committee: Women’s Services Safety and Quality Committee 
+Amended Date: May 2020 
+Review date: May 2023 Emergency Gynaecology Admissions GP005 
+& Gynaecology Assessment Unit (GAU) 
+ 
+Brighton & Sussex University Hospitals Page 3 of 21 
+ Contents 
+Key Principles ................................ ................................ ................................ ........................ 4 
+Scope ................................ ................................ ................................ ................................ ... 4 
+Responsibilities ................................ ................................ ................................ ..................... 4 
+1 Introduction ................................ ................................ ................................ ................ 5 
+2 Women Presenting With Acute Gynaecological Conditions ................................ .......... 5 
+3 Women Presenting With an Early Pregnancy P roblem ................................ ................. 7 
+4 Ectopic Pregnancy ................................ ................................ ................................ ....... 7 
+5 Clinical Management of Women with Acute Gynaecological Conditions ....................... 8 
+6 Women Presenting To RSCH ................................ ................................ ........................ 8 
+7 Women Presenting To RSCH Requiring CEPOD ................................ ............................. 8 
+8 Women Presenting To PRH ................................ ................................ .......................... 9 
+9 Transf erring Women from PRH To RSCH ................................ ................................ .... 10 
+10 Gynaecology Admissions to other Hospital Departments ................................ ........... 11 
+11 Gynaecology Assessment Unit (GAU) - Objective Standards ................................ ....... 11 
+12 Services ................................ ................................ ................................ ..................... 12 
+13 Access Criteria ................................ ................................ ................................ ........... 13 
+14 Patient Flow & Bed Management ................................ ................................ .............. 13 
+15 Financial Management ................................ ................................ .............................. 15 
+16 Medical Management ................................ ................................ ............................... 15 
+17 Nursing Management ................................ ................................ ................................ 15 
+18 Discharge Planning ................................ ................................ ................................ .... 15 
+19 Communication ................................ ................................ ................................ ......... 16 
+20 Appendix A – ED Referral Pathway ................................ ................................ ............ 17 
+21 Appendix B – GP Referral Pathway ................................ ................................ ............ 18 
+22 Appendix C – Pregnancy Related Referral Location ................................ .................... 19 
+23 Appendix D – Pregnancy Relates Referrals ................................ ................................ . 20 
+24 Appendix E – Obstetrics & Gynaecology contacts ................................ ....................... 21 
+ Emergency Gynaecology Admissions GP005 
+& Gynaecology Assessment Unit (GAU) 
+ 
+Brighton & Sussex University Hospitals Page 4 of 21 
+ 
+Key Principles 
+ 
+These guidelines and algorithms are aimed to assist in decision making. They are not designed 
+to be prescriptive and you are not expected to use them in exclusion of discussions with 
+senior colleagues. 
+ 
+These guidelines have been reviewed by all clinicians involved in emergency gynaecological 
+care, including consultants, specialist and senior nursing staff. 
+ 
+A protocol is a set of measurable, objective standards to determine a course of action. 
+Professional judgement may be used in the application of a protocol. 
+ 
+Scope 
+ 
+This guideline applies to: 
+ All staff in Women’s Directorate 
+ All members of the Women’ s Safety & Quality Committee (WS&QC) 
+ All members of the Protocol and Guideline Group 
+
+Responsibilities 
+ 
+Clinicians and Nurses: 
+ To access, read, understand and follow this guidance 
+ To use their professional judgement in application of this protocol 
+ 
+Emergency Department Clinical Staff: 
+ To access, read, understand and follow this guidance 
+ To use their professional judgement in application of this protocol 
+ 
+Management: 
+ To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations 
+ To ensure the protocol is accessible to all relevant staff 
+
+ Emergency Gynaecology Admissions GP005 
+& Gynaecology Assessment Unit (GAU) 
+ 
+Brighton & Sussex University Hospitals Page 5 of 21 
+
+1 Introduction 
+ 
+1.1 Its aim is to support clinicians, nurses and careers in the delivery of safe and 
+effective care to women with acute gynaecological conditions. 
+1.2 Women may present or be referred by one of the following; 
+1.2.1 GP referral 
+1.2.2 Emergency Department (ED) 
+1.2.3 1.3.2 Non –obstetric wards (other wards in the hospital) 
+1.2.4 1.3.3 Urgent Care Centre (out of hours GP) 
+1.2.5 1.3.4 Gynaecology Assessment Unit (GAU) 
+1.2.6 Early Pregnancy Assessment Unit (EPU) 
+1.2.7 Out-patient department 
+1.2.8 From another speciality 
+ 
+2 Women Presenting With Acute Gynaecological Conditions 
+2.1 All women must have a baseline set of observations taken which must include 
+blood pressure, pulse, temperature, saturations and respiration with a NEWS 2 
+recorded in the Acute Gynaecology Proforma. 
+ 
+2.2 A comprehensive history should be taken and recorded in the Acute 
+Gynaecology proforma. The history is to include a safeguarding risk assessment 
+and consider domestic abuse, sexual abuse and sexual exploitation. 
+ 
+2.3 Pregnancy testing must be offered to all women of child -bearing age with 
+potentially pregnancy related condition. A urinalysis must also be performed for 
+all women these must be recorded in the Acute Gynaecology Proforma. 
+ Emergency Gynaecology Admissions GP005 
+& Gynaecology Assessment Unit (GAU) 
+ 
+Brighton & Sussex University Hospitals Page 6 of 21 
+ 2.4 Expected gynaecological conditions include: 
+2.4.1 Hyperemesis gravidarum 
+2.4.2 Severe heavy menstrual bleeding 
+2.4.3 Acute pelvic pain 
+2.4.4 Acute pelvic inflammatory disease 
+2.4.5 Abnormal vaginal bleeding 
+2.4.6 Ascites, secondary to known underlying gynaecological cancer 
+2.4.7 Bartholin’s/ Vulval abscess/cyst 
+2.4.8 Post -operative complications within 30 days of procedure 
+2.4.8.1 UTI 
+2.4.8.2 Wound infection 
+2.4.8.3 Wound break down 
+2.4.8.4 Vaginal bleeding/ discharge 
+2.4.9 Retained products of conception 
+2.4.10 Abdominal pain 
+2.4.11 Uterovaginal prolapse 
+2.4.12 Acute urinary retention 
+2.4.13 Foreign body retention 
+2.4.14 Post natal women over 10 days that have been discharge by the 
+midwife 
+2.5 All women attending ED should be se en within the recommended 4 hour waiting 
+time by ED and referred to the gynaecology registrar if specialist review is 
+required. 
+2.6 All patients requiring admission MUST be seen by the registrar on call prior to 
+admission. 
+2.7 Any patient that is discharged but r equires follow -up such as a further review or 
+elective procedure must be seen by the registrar and where appropriate 
+discussed with the consultant on call. 
+ 
+ Emergency Gynaecology Admissions GP005 
+& Gynaecology Assessment Unit (GAU) 
+ 
+Brighton & Sussex University Hospitals Page 7 of 21 
+ 3 Women Presenting With a n Early Pregnancy Problem 
+3.1 All women presenting with an early pregnancy pro blem of less than 14 weeks 
+gestation to ED/UCC should initially be assessed by the ED doctor. If clinically 
+stable and does not require ‘same day review’ to be booked into the next 
+available EPU slot. 
+3.2 If requires same day review the ED doctor should conta ct the on call 
+Gynaecology Registrar by bleep and inform them of the patient history and ask 
+them to review the patient. 
+3.3 EPU can see patients up to 14 weeks gestation if a booked appointment is made. 
+Women over 14 week’s gestation needing ‘same day review’ must be referred to 
+DAU or the Labour Ward Triage. 
+4 Ectopic Pregnancy 
+4.1 Ectopic pregnancies must be managed according to EPU guidelines. 
+4.2 All women of childbearing age that present with unexplained abdominal pain 
+must have a urine pregnancy test and e ctopic pregnancy exclud ed. 
+4.3 All ED staff should be aware of the dangers o f ectopic pregnancy and have an 
+awareness of the atypical clinical presentations (up to 25% may present without 
+a history of per vaginal bleeding). 
+4.4 Guidelines for the management of ec topic pregnancy should be included in all 
+induction programs for all ED and Obstetrics and Gynaecology staff. 
+4.5 Haemodynamically stable suspected ectopic pregnancies for emergency surgery 
+are category 2 (revised NCEPOD classification of interventions). This means that 
+these patients must be operated on within a maximum of 6 hours of 
+presentation. Between the hours of 22:00 and 08:00 decision to operate must 
+be made by the consultant on call. 
+4.6 Haemodynamically stable confirmed ectopic pregnancies for emergency surgery 
+are category 1. 
+4.7 Haemodynamically compromised patients are category 1 of the classification 
+and must be operated on immediately. 
+4.8 Where there is a significant unavoidable delays with CEPOD the possibility of 
+utilising elective gynaecology list must be explored by the Ward Manager in 
+conjunction with the directorate Manager and on -call Consultant . 
+ 
+ Emergency Gynaecology Admissions GP005 
+& Gynaecology Assessment Unit (GAU) 
+ 
+Brighton & Sussex University Hospitals Page 8 of 21 
+ 5 Clinical Management of Women with Acute Gynaecological 
+Conditions 
+ 
+5.1 Women that present with other acute gynaecological conditions should be 
+managed according to individual policy these include: 
+5.1.1 GP003 Pelvic Inflammatory Disease (PID) 
+5.1.2 GP002 Vomiting in pregnancy and Hyperemesis 
+5.1.3 GP006 Management of Bartholin’s cyst/abscess and vulval abscess 
+5.1.4 GP007 Management of Ovarian Hyperstimulation (OHSS) 
+5.1.5 Early Pregnancy Unit 
+ 
+5.2 Suspected ovaria n torsion for emergency surgery are category 2 (revised 
+NCEPOD classification of interventions). This means that these patients must be 
+operated on within 6 hours of diagnosis following Ultrasound scan. 
+ 
+6 Women Presenting To RSCH 
+ 
+6.1 Women presenting at the Royal Sussex County Hospital should be referred 
+directly to Gynaecology Assessment Unit (GAU) via the Gynae registrar providing 
+they are clinically stable. 
+6.2 GAU operational guidelines must be followed to ensure the referral and tran sfer 
+is managed correctly. See appendix A & B. 
+6.3 The ward nurses must be informed of the referral and the patient’s information 
+must be written on the GAU expected white board. 
+6.4 The triage pathway is to be followed by the registrars when taking referrals. 
+7 Women Presenting To RSCH Requiring CEPOD 
+7.1 All women requiring emergency surgery must have a registrar review 
+7.2 The CEPOD form must be completed and booked with the CEPOD co -ordinator 
+in theatre on Level 5 
+7.3 All patient are to have 2 group and saves blood sample s taken prior to going to 
+theatre and must be consented for the procedure 
+ Emergency Gynaecology Admissions GP005 
+& Gynaecology Assessment Unit (GAU) 
+ 
+Brighton & Sussex University Hospitals Page 9 of 21 
+ 7.4 Consideration must be made for cases that could be managed on the fast track 
+CEPOD pathway or on an elective day case list. Elective cases must be booked 
+via the Patient Access Cler k on ext. 62863. Patients booked via the Fast -Track 
+CEPOD pathway must have the checklist completed. 
+ 
+7.5 CEPOD Delays 
+7.5.1 Women requiring emergency surg ery on CEPOD who have been 
+post poned or delayed for more than 24 hours must be reviewed by a 
+consultant . 
+7.5.2 Whe re there is a significant unavoidable delays with CEPOD the 
+possibility of utilising elective gynaecology list must be explored by the 
+Ward Manager and on -call Consultant this should include Day Surgery 
+Lists and In -patient Lists. 
+ 
+8 Women Presenting To PRH 
+ 
+8.1 There is currently no CEPOD service at Princess Royal Hospital (PRH). Therefore, 
+all patients that present to the PRH with a gynaecological emergency that may 
+require surgery should be transferred to the Royal Sussex County Hospital 
+(RSCH) unless their co ndition is immediately life threatening when surgery 
+should be performed at the PRH. This is a surgical decision. 
+8.2 Emergency gynaecology procedures allowed at PRH 
+8.2.1 Life threatening conditions such as an unstable ectopic pregnancy 
+8.2.2 Life threatening post -operat ive complications 
+8.3 For these cases, the consultant anaesthetist and gynaecology consultant on call 
+should be contacted initially. 
+8.4 Patients with a possible ectopic or any other acute gynaecological emergency 
+that may require emergency surgery should NOT be admitted to PRH. They 
+should all be sent to RSCH as soon as possible unless haemodynamically 
+unstable requiring immediate tran sfer to the operating theatre. 
+8.5 Women who do not require transfer to RSCH must be seen and treated within 
+the 4 hour ED standard. For Women requiring Hyperemesis management or 
+follow up on Horsted Keynes must be discussed with the nurse in charge and 
+arrangements are to be made for ambulatory treatment . 
+8.6 All ward attenders must be correctly coded on Medway within a 2 week period. 
+ Emergency Gynaecology Admissions GP005 
+& Gynaecology Assessment Unit (GAU) 
+ 
+Brighton & Sussex University Hospitals Page 10 of 21 
+ 9 Transfer ring Women f rom PRH To RSCH 
+ 
+9.1 All stable gynaecology patients that require emergency surgery should be 
+transferred from PRH to RSCH. 
+Prerequisites: 
+9.1.1 Patient should have a full clinical assessment by the gynaecology 
+registrar on call at PRH 
+9.1.2 The transfer must be agreed by the consultant on call at PRH 
+9.1.3 The transfer must be discussed with the middle grade gynaecologist on -
+call at RSCH 
+9.1.4 If there is any doubt about the Cardiovas cular stability or suitability for 
+transfer then the case should be discussed between the PRH and RSCH 
+consultants and where necessary to include the ITU anaesthetist (6010) 
+9.2 The Clinical Site Manager on bleep 6014 and the nurse in charge of the 
+transferr ing unit (Horsted Keynes Gynaecology Ward/A&E) must be informed of 
+the transfer. The CSM must confirm the bed location of the transfer; preferably 
+L11 Gynaecology Ward 
+9.3 The transferring unit must book the transport and verbally handover to the 
+receiving uni t. The nursing transfer checklist must be completed and sent with 
+the notes to the receiving ward. Medway must be updated once the patient has 
+left the PRH. 
+9.4 A ‘blue light’ transfer with a paramedic crew must be booked for the transfer 
+with Sussex Ambulanc e Control on ext. *8004 
+ 
+9.5 The patient should be stabilised in the appropriate holding area. All indwelling 
+equipment must be secured and the level of monitoring should be determined 
+by the potential problems anticipated. 
+9.6 Full discussion should occur betwee n the transferring team and the receiving 
+team at RSCH and the urgency of transfer should be specified depending on the 
+urgency for the treatment at receiving end . 
+9.7 Documentation – BSUH transfer forms (2 forms): one for preparation of transfer 
+and the 2nd for the actual transfer. 
+
+ Emergency Gynaecology Admissions GP005 
+& Gynaecology Assessment Unit (GAU) 
+ 
+Brighton & Sussex University Hospitals Page 11 of 21 
+ 10 Gynaecology Admissions t o other Hospital Departments 
+10.1 Gynaecology patients admitted outside of the gynaecology wards must have 
+daily review by a registrar/consultant. The gynaecology ward co -ordinator must 
+attend these ward rounds on either site if matron not present. 
+10.2 All outliers are to be written on the gynaecology ward white boards stating the 
+location of the patient. 
+10.3 The ward co -ordinator must liaise with the Clinical Site Management team and 
+repatriate to gynaecology wa rd as soon as able, prioritising with clinical need. If 
+this is not possible the patient must be seen daily by the gynaecology team. 
+10.4 The patient must be provided with information as to why they are not nursed in 
+the specialised areas and offered apologies . The co -ordinator must ensure the 
+outlying ward team caring for the patients are happy with caring for the 
+condition and are aware to contact either Horsted Keynes ward PRH or Level 11 
+RSCH for advice as required. 
+10.5 The patient must be provided with writte n information backed up with verbal 
+support prior to discharge and contact details for the gynaecology ward should 
+they have any further questions following discharge 
+10.6 The details of pregnant women admitted to other departments in the hospital 
+must be writt en on the gynaecology white board and recorded in the outlier’s 
+book by the clinician who is first told of the admission. These women should be 
+seen as above. 
+11 Gynaecology Assessment Unit (GAU) - Objective Standards 
+11.1 General Organisation 
+11.1.1 The Gynaecology Assessment unit is in Level 11 of the Tower Block, 
+Royal Sussex County Hospital 
+11.1.2 It is operational 24 hours a day 7 days a week 
+11.1.3 The GAU will share its environment with L11 gynaecology 9 bedded 
+ward allowing timely emergency admissions 
+11.1.4 There is a dedicated desk space for medical and nursing staff with an 
+Medway terminal, printer for results and telephone (ext. 4013/4022). 
+11.1.5 PACS is linked to the ultrasound machine and must be used to report 
+any ultrasound scan. 
+11.1.6 There is read only access to symphony to which must be monitored to 
+identify gynaecology patients that are in ED. Arrangements must be 
+made with ED to transfer patients where able. 
+11.1.7 The unit comprises of the following: Emergency Gynaecology Admissions GP005 
+& Gynaecology Assessment Unit (GAU) 
+ 
+Brighton & Sussex University Hospitals Page 12 of 21 
+ 11.1.7.1 Ultrasound/Examination couch 
+11.1.7.2 Ultrasound machine with vaginal and abdominal probes, g el 
+covers, antiseptic wipes 
+11.1.7.3 Examination lamp 
+11.1.7.4 Office/consultation room with PC 
+11.1.7.5 Fully kitted gynaecological trolley: 
+ Speculums 
+ Microbiology swabs 
+ Blood bottles and vacutainers 
+ Vaginal packs 
+ Repair/suture packs 
+ Silver nitrate sticks 
+ Local anaesthetics 
+ Dental needles and syringes 
+ Sponge holders 
+ Ring/shelf pessaries 
+ Pipelle 
+ Histology containers 
+ Bonano catheters and urine drainage bags 
+ Word catheter 
+ Urinary catheters 
+ Antiseptic 
+ 
+12 Services 
+12.1 Access to specialist nursing and medical teams 
+12.2 Diagnostic bloods and examinations as required 
+12.3 Diagnostic Ultrasound on arrival if trained practitioner available or by booked 
+appointment in the main x -ray department on L5. If out of hours , access to fast 
+track scanning the following day is available. The appointments are ke pt in a 
+folder held at ED reception and are available to all special ities. Up to 1 
+gynaecology patient daily Monday – Friday if required may be booked into these 
+appointments (excluding pregnancy related scans which are to be booked in the 
+Early Pregnancy Unit). 
+12.4 Referral to appropriate clinics, treatment plans and referral to other specialties 
+or safe and early discharge home 
+12.5 If required admission to L11 Gynaecology Ward. 
+ 
+ Emergency Gynaecology Admissions GP005 
+& Gynaecology Assessment Unit (GAU) 
+ 
+Brighton & Sussex University Hospitals Page 13 of 21 
+ 13 Access Criteria 
+13.1 Access to the GAU will be via: (See Appendix A & Appendix B ): 
+13.1.1 ED 
+13.1.2 Urgent Care Centre 
+13.1.3 Direct GP referral via Gynaecological SPR on call/telephone 
+13.1.4 Other specialities within the Trust 
+13.1.5 Prior arranged self -referrals (no walk in service available) 
+13.2 All haemodynamically stable non pregnant women with suspected sub - 
+acute/acute gynaecological conditions, this including patients with hyperemesis 
+Gravidarum 
+13.3 Early pregnancy cases presenting outside of EPU working hours (EPU 
+Operational hours 08:00 to 18:0 0 hours week days except Fridays ) 
+13.4 Exclusion Criteria: 
+13.4.1 Patients that are haemodynamically unstable with a NEWS 2 score 
+above 4 or have 3 or more in one parameter on the NEWS 2. 
+13.4.2 Patients that will require stabilisation followed by immediate transfer 
+to theatre , e.g. excessive vaginal bleeding 
+13.4.3 Women presenting under 14 weeks gestation should be referred to 
+GAU. Women over 14 weeks gestation should be referred to DAU or 
+Labour Ward Triage. The exact location of where the woman needs to 
+be seen will depend on cli nical circumstances (See Appendix C ). 
+ 
+14 Patient Flow & Bed Management 
+14.1 Women that present in ED must be registered on symphony and triaged. 
+Providing they fulfil the access criteria they should then be referred directly to 
+GAU 
+14.2 The patient is transferred with a copy of their medical notes 
+14.3 Women who are experiencing problems with early pregnancy should be referred 
+directly to the Early Pregnancy Unit (EPU) for the next available appointment 
+and not the GAU unless unfit for dischar ge from ED or out of hours 
+14.4 The assessment process should be no longer than 2 hours from time of arrival to 
+GAU and if require s admission should have a bed within 4 hours. Women 
+requiring day treatment should stay no longer than 6 hours Emergency Gynaecology Admissions GP005 
+& Gynaecology Assessment Unit (GAU) 
+ 
+Brighton & Sussex University Hospitals Page 14 of 21 
+ 14.5 The maximum length of stay will be 6 hours with admission straight onto the 
+Gynae ward as required 
+14.6 Women who are assessed with no gynaecology cause found for their symptoms 
+will be referred directly by the registrar to the appropriate speciality and the 
+clinical site managem ent (CSM) team informed for appropriate placement of the 
+woman 
+14.7 If no beds available within the gynaecology ward on RSCH site bed utilisation will 
+be explored in other areas of the Trust by the bed manager. It may be necessary 
+to explore using Horsted Keyne s PRH site or flexib le use of beds on L12 
+ante/post natal maternity ward. The CSM team will be contacted regarding 
+appropriate placement for the woman. 
+14.8 If GAU is full and unable to accept patients and if it is required the on -call 
+registrar will go and revi ew the gynaecological patients in ED leaving the SHO 
+L11/GAU 
+ 
+14.9 Ultrasound slots (1 slot per day) are available on Level 5 for patients seen out of 
+hours who are clinically stable to be discharged. These scans are carried out the 
+next day and the patient will be advised to return to GAU following the scan for 
+review. Patients should not be advised to return to GAU for ultrasound scans as 
+there are designated slots for ultrasound scans in the unit. 
+14.10 Were appropriate patients will be referred to other units/ specialities for 
+ further management such as - 
+14.10.1 CEPOD pathway or e lective list 
+14.10.2 Chronic pain clinic 
+14.10.3 Gynae -oncology team 
+14.10.4 Urodynamics 
+14.10.5 Gynae -outpatient clinic 
+14.10.6 Endometriosis clinic 
+ Emergency Gynaecology Admissions GP005 
+& Gynaecology Assessment Unit (GAU) 
+ 
+Brighton & Sussex University Hospitals Page 15 of 21 
+ 15 Financial Management 
+15.1 The Gynaecological Assessment Unit will be managed under a separate cost 
+code with the Ward Manager responsible for managin g the budget 
+15.2 The Directorate Manager will be responsible for coding reviews and 
+ commissioning arrangements. 
+16 Medical Management 
+16.1 The overall clinical lead for the GAU is the Clinical Lead for Emergency 
+ Gynaecology 
+16.2 The patients will be reviewed on arriv al by the SHO/SPR on call for 
+gynaecology on bleeps 8611 and 8618 respectively 
+16.3 The acute gynaecological proforma must be completed 
+16.4 The unit is consultant led, with the gynaecology consultant on call responsible 
+for the care of the patients 
+16.5 All initial d ecisions for admission and discharge must be made at registrar level 
+or above. This must include face to face review. Telephone consultations with 
+the gynaecological registrar on call are not acceptable. 
+16.6 For patients that are admitted an estimated date for discharge must be clearly 
+document ed Nurse Led Di scharge must also be documented in the notes and 
+facilitated by the Ward Manager. 
+ 
+17 Nursing Management 
+ 
+17.1 The Ward Manager is responsible for the overall management of the 
+ area, including budget contro l, directly reporting to the Matron . 
+17.2 Guidelines have been formulated to assist the sh ift co -ordinator in their role. 
+18 Discharge Planning 
+ 
+18.1 All alternatives to admission that meet the patients’ needs must be explored . An 
+estimated medically fit for discharge date should be documented for all 
+admissions. 
+18.2 TTO’s should be written in a timely manner by the F2/ST1 -2 who is on call and 
+based in the GAU/L11.TTO’s may be discharged from the ward or the use of 
+Pharm@Sea 
+ Emergency Gynaecology Admissions GP005 
+& Gynaecology Assessment Unit (GAU) 
+ 
+Brighton & Sussex University Hospitals Page 16 of 21 
+ 18.3 A discharge letter is to be formulated for dir ect discharge from GAU. They will 
+not use the electronic discharge systems as not admitted as inpatients on 
+Medway but as attenders 
+18.4 All patients to be coded by the Ward Clerk once discharged within a 2 week 
+period. 
+19 Communication 
+ 
+19.1 On arrival, literature is available to women and their families/carers outlining 
+the philosophy of the unit and any gynaecological conditions. 
+19.2 The internal and external webpage will provide information to staff, 
+ patients, relatives and outside partners (GP’s) which must be up t o date. Emergency Gynaecology Admissions GP005 
+& Gynaecology Assessment Unit (GAU) 
+ 
+Brighton & Sussex University Hospitals Page 17 of 21 
+ 20 Appendix A – ED Referral Pathway 
+
+Start Here 
+ED attendance 
+(self referral or GP 
+referral) 
+N
+o 
+Is the woman haemodynamically 
+stable?: 
+- BP ≥ 100mmHG systolic 
+- Pulse ≤ 90bpm 
+- NEWS score < 4 
+- Able to sit in chair/Ambulant? 
+Y 
+Y
+e
+Book onto 
+Symphony 
+N
+o 
+Contact GAU Nurse to 
+arrange transfer 
+(ext. 64013/64022) 
+Discharge off 
+Symphony 
+ED Nurse assessed 
+for suitability for 
+transfer to GAU 
+Contact on -call g ynaecology team 
+to review in ED 
+Registrar bleep 8618 
+ 
+Is patient known to be 
+pregnant? 
+Is the woman greater than 14 
+weeks pregnant? 
+Y
+e
+Contact co -ordinating 
+midwife on Level 13 
+(ext. 64373) 
+No or 
+uncertain of 
+dates 
+Contact EP U to book 
+appointment 
+Direct line ext. 4402 
+Out of hours contact 
+level 11 direct ext 4013 
+Is the woman experiencing? 
+- Having bleeding less or 
+the same as a normal 
+period 
+- Complaining of diffuse 
+non-localising pain 
+ 
+Y
+e
+N
+o Gynaecology Assessment Unit Pathway 
+Use to assess and manage all female patients presenting with a history suggestive of an underlying gynaecological 
+condition 
+ 
+ Emergency Gynaecology Admissions GP005 
+& Gynaecology Assessment Unit (GAU) 
+ 
+Brighton & Sussex University Hospitals Page 18 of 21 
+ 21 Appendix B – GP Referral Pathway 
+ 
+Y
+e
+N
+o 
+Y
+e
+N
+o 
+GP referral 
+After discussion does the 
+case require review 
+urgently? 
+Is there any suspicion that 
+the patient is 
+haemodynamically 
+unstable? 
+N
+On-call Gynaecology 
+registrar contacted 01273 
+696955 bleep 8618 
+N
+Offer/request: 
+appropriate clinical 
+advice 
+and/or request a 
+routine referral letter 
+from GP for routine 
+GOPD appointment 
+Y
+e
+Does the case require 
+review within 10 working 
+days of referral? 
+Rapid Access 
+Gynaecology Clinic 
+Confirm: 
+Patient will be seen 
+within 10 working 
+days in outpatients. 
+Fax referral letter to 
+(01273 523130) 
+Mark for attention of 
+Carl Hussey 
+Request: 
+Immediate 
+attendance at A&E 
+Notify A&E of patient 
+details 
+Is the woman known to be 
+pregnant? 
+Offer/request to attend 
+GAU: 
+patient to be seen same 
+day or within 24 hours in 
+booked slot. 
+Contact GAU/ward to 
+confirm time. 
+If referral made after 
+5.00pm liaise with ward 
+regarding timing of 
+attendance 
+Confirm details with 
+GP/patient 
+Request clinical information 
+to come with patient if 
+possible 
+Y
+e
+Is there any suspicion that 
+the woman may have an 
+ectopic pregnancy? 
+ (presence of localising pain 
+and/or relevant risk factors ) 
+N
+o 
+Offer/request to attend 
+EPU: 
+patient to be seen in next 
+available booked slot. 
+Avoid overbooking clinics 
+Contact EPU/ward to 
+confirm time. 
+Confirm details with 
+GP/patient 
+Y
+eEmergency Gynaecology Admissions GP005 
+& Gynaecology Assessment Unit (GAU) 
+ 
+Brighton & Sussex University Hospitals Page 19 of 21 
+ 22 Appendix C – Pregnancy Related Referral Location 
+ 
+ DAU Triage /MAU Labour ward EPU GAU 
+Minor PV bleeding 
+>14 weeks 
+ Minor PV bleeding 
+>14 weeks (when 
+DAU shut) Significant PV 
+bleeding >14 
+weeks PV bleeding 
+<14 weeks - booked 
+appointment PV bleeding <14 
+weeks (out of EPU 
+hours) 
+Abdominal pain in 
+pregnancy >14 
+weeks (emergency) 
+ Abdominal pain in 
+pregnancy >14 weeks 
+(emergency) when 
+DAU shut or 
+dependant on clinical 
+condition Abdominal pain in 
+pregnancy >14 
+weeks 
+(emergency) when 
+DAU shut or 
+dependant on 
+clinical condition Abdominal Pain ≤ 
+14 - booked 
+appointment Abdominal Pain 
+<14 weeks 
+(emergency) 
+No fetal heart audible 
+>14 weeks SROM (any gestation) Obstetric 
+emergencies Hyperemesis under 
+14 weeks 
+Preterm pre -labour 
+ROM (ongoing 
+reviews) Labouring women for 
+assessment (any 
+gestation) Labouring women 
+with birth imminent 
+Reduced fetal 
+movements In-utero transfers 
+Post dates > 
+40+12 declining IOL 
+Itching / rash in 
+pregnancy 
+Raised BP/ PET 
+ 
+Pre-op clerking for 
+obstetric surgery 
+Musculo -skeletal pain 
+ 
+Suspected small for 
+dates fetus 
+Suspected 
+malpresentation 
+Suspected oligo / 
+polyhydramnious 
+Fetal heart rate 
+irregularities 
+Non-specific unwell 
+women 
+Suspected UTI or 
+other infection 
+Out-patient IOL using 
+Propess 
+GTT’s ( RSCH only) 
+ 
+ANC referrals 
+ Emergency Gynaecology Admissions GP005 
+& Gynaecology Assessment Unit (GAU) 
+ 
+Brighton & Sussex University Hospitals Page 20 of 21 
+ 23 Appendix D – Pregnancy Related Referrals 
+ 
+No 
+Yes 
+No 
+Discuss with on -
+call 
+Gynaecology 
+Registrar (bleep 
+8618) if less 
+than 14 weeks 
+gestation 
+ 
+Discuss with on -
+call Obstetric 
+Registrar (bleep 
+8612) if greater 
+than 14 weeks 
+gestation 
+ 
+Registrars to 
+discuss all cases 
+with Consultant 
+Obstetrician on 
+call 
+Yes 
+Discuss with Midwife in charge and obstetric team 
+Please inform with suspected diagnosis and location in 
+hospital 
+ 
+Patients will be discussed on the labour ward round the 
+following morning and arrangements for review made 
+ 
+Does she require review 
+prior to admission? 
+ 
+See SAU 
+Abdominal Pain 
+Pathway 
+Is the woman known to be 
+pregnant? 
+Is the woman presenting or 
+being admitted with a non -
+obstetric problem 
+Yes 
+No Emergency Gynaecology Admissions GP005 
+& Gynaecology Assessment Unit (GAU) 
+ 
+Brighton & Sussex University Hospitals Page 21 of 21 
+ 24 Appendix E – Obstetrics & Gynaecology contacts 
+
+ RSCH Ext PRH Ext 
+Obstetric SHO Bleep 8610 Obstetric SHO Bleep 6035 
+Gynae SHO Bleep 8611 Gynae SHO Bleep 6037 
+Obstetrics SPR Bleep 8612 Obstetrics SPR Bleep 6036 
+Gynae SPR Bleep 8618 Gynae SPR Bleep 6223 
+ 
+Please Note: 
+ 
+SHO & SPR on call cover both Obstetrics 
+and Gynaecology between the hours of 
+20:30 – 08.30 and weekends 
+Obstetric and Gynaecological 
+ 
+Consultants can be reached via switch 
+board Please Note: 
+ 
+SHO & SPR on call cover both Obstetrics 
+and Gynaecology between the hours of 
+20:30 – 08.30 and weekends 
+ 
+Obstetric and Gynaecological Consultants 
+can be reached via switch board 
+ 
+The Labour Ward Ext 4373 or 
+4374 Central Delivery Suite (CDS) Ext 8485 
+Can be contacted at all times for advice 
+regarding all pregnant women and their 
+babies Can be contacted at all times for advice 
+regarding all pregnant women and their 
+babies 
+The Day Assessment Unit Ext 4392 or 
+7622 The Day Assessment Unit Ext 5486 
+Can be contacted from 09:00 to 17:00 
+hours Mondays to Fridays Can be contacted 08:30 to 18:00 
+Mondays to Fridays 
+Labour Triage Ext 4793 Labour Triage Ext 8412 
+For patients suspected to be in early 
+labour 24 hours For patients suspected to be in early labour 
+24 hours 
+Early Pregnancy 
+Assessment Unit (EPU) Ext 4402 Early Pregnancy Assessment 
+Unit (EPU) Ext 5685 
+08:00 – 16:00 on Mondays - Fridays 
+(for early pregnancy review/assessment 
+up to 18 weeks gestation) 
+Closed on Tuesday and Thursday 
+Gynaecological 
+ward/Gynaecology 
+Assessment Unit (GAU) Ext 4022 or 
+4013 
+Gynaecological ward Ext 
+5685/5686 
+Can be used to book patients into the 
+EPU out of the hours stated above Can be used to book patients into the EPU 
+out of the hours stated above

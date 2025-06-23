@@ -1,0 +1,925 @@
+# Extracted from: GTG 2015 - Chickenpox in Pregnancy.pdf
+# Guideline ID: gtg-2015-chickenpox-in-pregnancy
+# Content length: 59474 characters
+# Processing date: 1732953490.9247983
+
+Chickenpox in Pregnancy
+Green-top Guideline No. 13
+January 2015RCOG Green-top Guideline No. 13 © Royal College of Obstetricians and Gynaecologists2 of 17Chickenpox in Pregnancy
+This is the fourth edition of this guideline, originally published in 1997 and reviewed in 2001 and 2007 
+under the same title.
+Executive summary of recommendations
+Varicella prevention
+Can the non-immune woman be immunised prior to pregnancy or postnatally?
+Varicella vaccination prepregnancy or postpartum is an option that should be considered for 
+women who are found to be seronegative for varicella-zoster virus immunoglobulin G (VZV IgG). 
+While universal serological antenatal testing is not recommended in the UK (see below), 
+seronegative women identified in pregnancy could be offered postpartum immunisation.
+Women who are vaccinated postpartum can be reassured that it is safe to breastfeed.
+Can varicella be prevented in the pregnant woman at her initial antenatal visit?
+Women booking for antenatal care should be asked about previous chickenpox/shingles infection. 
+Women who have not had chickenpox, or are known to be seronegative for chickenpox, should be 
+advised to avoid contact with chickenpox and shingles during pregnancy and to inform healthcare 
+workers of a potential exposure without delay.
+Can varicella infection be prevented in the pregnant woman who gives a history of contact with 
+chickenpox or shingles?
+When contact occurs with chickenpox or shingles, a careful history must be taken to confirm the 
+significance of the contact and the susceptibility of the patient. 
+Pregnant women with an uncertain or no previous history of chickenpox, or who come from tropical 
+or subtropical countries, who have been exposed to infection should have a blood test to determine 
+VZV immunity or non-immunity. 
+If the pregnant woman is not immune to VZV and she has had a significant exposure, she should be 
+offered varicella-zoster immunoglobulin (VZIG) as soon as possible. VZIG is effective when given 
+up to 10 days after contact (in the case of continuous exposures, this is defined as 10 days from the 
+appearance of the rash in the index case). 
+Non-immune pregnant women who have been exposed to chickenpox should be managed as 
+potentially infectious from 8–28 days after exposure if they receive VZIG and from 8–21 days after 
+exposure if they do not receive VZIG. 
+When supplies are limited, issues to pregnant women may be restricted and clinicians are advised 
+to establish the availability of VZIG before offering it to pregnant women. 
+Women who have had exposure to chickenpox or shingles (regardless of whether or not they have 
+received VZIG) should be asked to notify their doctor or midwife early if a rash develops. 
+A pregnant woman who develops a chickenpox rash should be isolated from other pregnant women 
+when she attends a general practice surgery or a hospital for assessment. D
+DD
+PD
+P
+P
+D
+D
+D
+P
+PRCOG Green-top Guideline No. 13 © Royal College of Obstetricians and Gynaecologists3 of 17A second dose of VZIG may be required if a further exposure is reported and 3 weeks have elapsed 
+since the last dose. 
+The pregnant woman who develops chickenpox
+What are the maternal risks of varicella in pregnancy?
+Clinicians should be aware of the increased morbidity associated with varicella infection in adults, 
+including pneumonia, hepatitis and encephalitis. Rarely, it may result in death. 
+How should the pregnant woman who develops chickenpox be cared for?
+Pregnant women who develop a chickenpox rash should immediately contact their general 
+practitioner. 
+Women should avoid contact with potentially susceptible individuals, e.g. other pregnant women 
+and neonates, until the lesions have crusted over. This is usually about 5 days after the onset of 
+the rash. 
+Symptomatic treatment and hygiene is advised to prevent secondary bacterial infection of the 
+lesions. 
+Oral aciclovir should be prescribed for pregnant women with chickenpox if they present within 24 
+hours of the onset of the rash and if they are 20+0 weeks of gestation or beyond. Use of aciclovir 
+before 20+0 weeks should also be considered. 
+Aciclovir is not licensed for use in pregnancy and the risks and benefits of its use should be 
+discussed with the woman. 
+Intravenous aciclovir should be given to all pregnant women with severe chickenpox. 
+VZIG has no therapeutic benefit once chickenpox has developed and should therefore not be used 
+in pregnant women who have developed a chickenpox rash. 
+Should women be referred to hospital?
+The pregnant woman with chickenpox should be asked to contact her doctor immediately if she 
+develops respiratory symptoms or any other deterioration in her condition. Women who develop 
+the symptoms or signs of severe chickenpox should be referred immediately to hospital. 
+A hospital assessment should be considered in a woman at high risk of severe or complicated 
+chickenpox even in the absence of concerning symptoms or signs. This assessment needs to take 
+place in an area where she will not come into contact with other pregnant women. Appropriate 
+treatment should be decided in consultation with a multidisciplinary team that includes an 
+obstetrician or fetal medicine specialist, a virologist and a neonatologist. 
+Women hospitalised with varicella should be nursed in isolation from babies, potentially 
+susceptible pregnant women or non-immune staff. 
+When and how should the woman with chickenpox be delivered?
+The timing and mode of delivery of the pregnant woman with chickenpox must be individualised. 
+When epidural or spinal anaesthesia is undertaken in women with chickenpox, a site free of 
+cutaneous lesions should be chosen for needle placement. P
+P
+P
+P
+C
+P
+DC
+D
+D
+P
+P
+D
+DRCOG Green-top Guideline No. 13 © Royal College of Obstetricians and Gynaecologists4 of 17Risks of maternal varicella infection to the fetus or baby
+What are the risks to the fetus of varicella infection in pregnancy and can they be prevented or ameliorated?
+Women should be advised that the risk of spontaneous miscarriage does not appear to be increased 
+if chickenpox occurs in the first trimester. 
+If the pregnant woman develops varicella or shows serological conversion in the first 28 weeks of 
+pregnancy, she has a small risk of fetal varicella syndrome (FVS) and she should be informed of 
+the implications. 
+Can varicella infection of the fetus be diagnosed prenatally?
+Women who develop chickenpox in pregnancy should be referred to a fetal medicine specialist, at 
+16–20 weeks or 5 weeks after infection, for discussion and detailed ultrasound examination. 
+Given that amniocentesis has a strong negative predictive value but a poor positive predictive 
+value in detecting fetal damage that cannot be detected by non-invasive methods, women who 
+develop varicella infection during pregnancy should be counselled about the risks versus benefits 
+of amniocentesis to detect varicella DNA by polymerase chain reaction (PCR). 
+Amniocentesis should not be performed before the skin lesions have completely healed. 
+What are the neonatal risks of varicella infection in pregnancy and can they be prevented or ameliorated? 
+If maternal infection occurs in the last 4 weeks of a woman’s pregnancy, there is a significant risk 
+of varicella infection of the newborn. A planned delivery should normally be avoided for at least 
+7 days after the onset of the maternal rash to allow for the passive transfer of antibodies from 
+mother to child, provided that continuing the pregnancy does not pose any additional risks to the 
+mother or baby. 
+A neonatologist should be informed of the birth of all babies born to women who have developed 
+chickenpox at any gestation during pregnancy. 
+Women with chickenpox should breastfeed if they wish to and are well enough to do so. 
+1. Purpose and scope
+Varicella, the primary infection with varicella-zoster virus (VZV; human herpesvirus 3), in pregnancy may 
+cause maternal mortality or serious morbidity. It may also cause fetal varicella syndrome (FVS) and varicella 
+infection of the newborn, which includes congenital varicella syndrome (CVS) and neonatal varicella. 
+This guideline addresses the role of varicella vaccination in susceptible women of reproductive age. The 
+guideline also assesses the evidence regarding the maternal and fetal risks of VZV infection in pregnancy 
+and whether or not these complications can be prevented or modified beneficially by the administration 
+of varicella-zoster immunoglobulin (VZIG) or by treatment of infected individuals with aciclovir. This 
+information should guide the prudent use of VZIG, which is manufactured from the plasma of human 
+blood donors and hence is a limited and expensive resource. The management of neonates is outside the 
+scope of this guideline. Guidance on neonatal exposure and disease is available from other sources.1,2
+2. Introduction and background epidemiology
+VZV is a DNA virus of the herpes family that is highly contagious and transmitted by respiratory droplets 
+and by direct personal contact with vesicle fluid or indirectly via fomites (e.g. skin cells, hair, clothing 
+and bedding). The primary infection is characterised by fever, malaise and a pruritic rash that develops 
+into crops of maculopapules, which become vesicular and crust over before healing. The incubation C
+C
+P
+P
+P
+P
+PDRCOG Green-top Guideline No. 13 © Royal College of Obstetricians and Gynaecologists5 of 17period is between 1 and 3 weeks and the disease is infectious 48 hours before the rash appears and 
+continues to be infectious until the vesicles crust over. The vesicles usually crust over within 5 days. 
+Chickenpox (or primary VZV infection) is a common childhood disease that usually causes a mild 
+infection. Over 90% of individuals over 15 years of age in England and Wales are seropositive for VZV 
+immunoglobulin G (IgG) antibody.3 Studies of pregnant women in Spain and France found that 96.1% 
+and 98.8% respectively were immune to varicella.4,5 For this reason, although contact with chickenpox is 
+common in pregnancy, especially in women with young children, primary VZV infection in pregnancy 
+is uncommon; it is estimated to complicate 3 in every 1000 pregnancies.6 Women from tropical and 
+subtropical areas are more likely to be seronegative for VZV IgG and are therefore more susceptible to 
+the development of chickenpox in pregnancy.7 
+Following the primary infection, the virus remains dormant in sensory nerve root ganglia but can be 
+reactivated to cause a vesicular erythematous skin rash in a dermatomal distribution known as herpes 
+zoster, also called ‘zoster’ or ‘shingles’. The risk of acquiring infection from an immunocompetent 
+individual with herpes zoster in non-exposed sites (e.g. thoracolumbar) is remote but can occur.8 
+However, disseminated zoster or exposed zoster (e.g. ophthalmic) in any individual or localised zoster in 
+an immunosuppressed patient should be considered to be infectious as the viral shedding may be greater.1 
+3. Identification and assessment of evidence
+The Cochrane Library, including the Cochrane Central Register of Controlled Trials, was searched for 
+relevant randomised controlled trials, systematic reviews and meta-analyses. A search of MEDLINE and 
+PubMed (electronic databases) from 1966 to January 2013 was also carried out. The databases were 
+searched using the relevant Medical Subject Headings (MeSH) terms, including all subheadings, and this 
+was combined with a keyword search using the terms ‘chickenpox’, ‘varicella zoster’ and ‘pregnancy’.
+The definitions of the types of evidence used in this guideline originate from the Scottish Intercollegiate 
+Guidelines Network (SIGN) Grading Review Group.9 Where possible, recommendations are based 
+on and explicitly linked to the evidence that supports them. Recommendations lacking evidence are 
+highlighted and annotated as ‘Good Practice Points’.
+4. Varicella prevention
+4.1 Can the non-immune woman be immunised prior to pregnancy or postnatally?
+Varicella vaccination prepregnancy or postpartum is an option that should be considered for 
+women who are found to be seronegative for VZV IgG. 
+While universal serological antenatal testing is not recommended in the UK (see below), 
+seronegative women identified in pregnancy could be offered postpartum immunisation. 
+Women who are vaccinated postpartum can be reassured that it is safe to breastfeed. 
+Varicella vaccine contains live attenuated virus derived from the Oka strain of VZV and has 
+been licensed for use in the USA since March 1995. Following its introduction, the incidence 
+of primary infection (chickenpox) in the general population has fallen by over 80% and the 
+mortality related to the condition has decreased by two-thirds.10 Immunity from the vaccine 
+persists for up to 20 years.11,12 Two varicella vaccines are licensed for use in the UK for the 
+prevention of chickenpox: Varivax® (Oka/Merck; Sanofi Pasteur MSD Limited, Maidenhead, 
+Berkshire, UK) and Varilrix® (Oka–RIT; GlaxoSmithKline UK, Uxbridge, Middlesex, UK). 
+Both are live attenuated vaccines administered in two separate doses 4–8 weeks apart. D
+DD
+Evidence 
+level 2+RCOG Green-top Guideline No. 13 © Royal College of Obstetricians and Gynaecologists6 of 17The varicella immune status of women planning a pregnancy or receiving treatment for 
+infertility can be determined by obtaining a past history of chickenpox and by testing 
+the serum for varicella antibodies in those who have no history or an uncertain history of 
+previous infection. In 2009, the UK National Screening Committee reviewed the evidence for 
+antenatal screening for susceptibility to varicella-zoster infection. The committee concluded 
+that there was insufficient evidence to support antenatal screening because of a lack of 
+reliable information on the true incidence of VZV infection in pregnancy and on the outcomes 
+following treatment.13
+An economic model of postpartum vaccination of women who are seronegative for chickenpox 
+indicates that it is cost-effective.15 However, this is currently not listed as an indication for 
+varicella immunisation in the National Health Service and women in this category may have 
+to discuss the provision of free vaccination with their general practitioners.1 
+If a woman of reproductive age is vaccinated, she should be advised to avoid pregnancy for 
+4 weeks after completing the two-dose vaccine schedule and to avoid contact with susceptible 
+pregnant women should a post-vaccination rash occur. Transmission of vaccine virus is rare, 
+despite it being a live attenuated virus. Inadvertent exposures to the vaccine in pregnancy 
+have been reported to a register. There have been no cases of FVS and no increase in the risk 
+of fetal abnormality above the background risk.14 
+Small studies have not detected the varicella vaccine in the breast milk of women who have 
+been vaccinated postpartum.16,17
+4.2 Can varicella be prevented in the pregnant woman at her initial antenatal visit?
+Women booking for antenatal care should be asked about previous chickenpox/shingles infection. 
+Women who have not had chickenpox, or are known to be seronegative for chickenpox, should be 
+advised to avoid contact with chickenpox and shingles during pregnancy and to inform healthcare 
+workers of a potential exposure without delay. 
+A previous history of chickenpox infection had a 97.9–99.7% positive predictive value for the 
+presence of serum varicella antibodies in women booking for antenatal care in the USA.18 In a 
+study of British healthcare workers, 95% of those who reported previous chickenpox infection 
+had antibodies.19 Individuals born and raised in tropical climates are less likely to be immune 
+to varicella7,20 and a history of chickenpox can be a less reliable predictor of immunity in this 
+population.19 It may be appropriate to undertake serum screening routinely in this group of 
+women. If seronegativity is identified, postpartum vaccination could be considered. 
+4.3 Can varicella infection be prevented in the pregnant woman who gives a history of 
+contact with chickenpox or shingles?
+When contact occurs with chickenpox or shingles, a careful history must be taken to confirm the 
+significance of the contact and the susceptibility of the patient. 
+Pregnant women with an uncertain or no previous history of chickenpox, or who come from tropical 
+or subtropical countries, who have been exposed to infection should have a blood test to determine 
+VZV immunity or non-immunity. 
+If the pregnant woman is not immune to VZV and she has had a significant exposure, she should 
+be offered VZIG as soon as possible. VZIG is effective when given up to 10 days after contact 
+(in the case of continuous exposures, this is defined as 10 days from the appearance of the rash in 
+the index case). PDEvidence 
+level 4
+Evidence 
+level 2–
+Evidence 
+level 3
+Evidence 
+level 3
+PP
+DRCOG Green-top Guideline No. 13 © Royal College of Obstetricians and Gynaecologists7 of 17Non-immune pregnant women who have been exposed to chickenpox should be managed as 
+potentially infectious from 8–28 days after exposure if they receive VZIG and from 8–21 days after 
+exposure if they do not receive VZIG. 
+When supplies are limited, issues to pregnant women may be restricted and clinicians are advised 
+to establish the availability of VZIG before offering it to pregnant women. 
+Women who have had exposure to chickenpox or shingles (regardless of whether or not they have 
+received VZIG) should be asked to notify their doctor or midwife early if a rash develops. 
+A pregnant woman who develops a chickenpox rash should be isolated from other pregnant women 
+when she attends a general practice surgery or a hospital for assessment. 
+A second dose of VZIG may be required if a further exposure is reported and 3 weeks have elapsed 
+since the last dose. 
+The history must be confirmed with particular respect to:
+l the type of VZV infection 
+l the timing of the exposure 
+l the closeness and duration of contact. 
+Chickenpox is infectious for 2 days before the appearance of the rash and for the duration of 
+the illness while the skin lesions are active. It ceases to be infectious when the lesions have 
+crusted over. Herpes zoster (shingles) also poses a risk if it is disseminated or it occurs in an 
+exposed area of the body (e.g. ophthalmic shingles) or in an immunocompromised individual 
+where viral shedding may be greater. The risk of infection following contact with herpes 
+zoster that is not in an exposed area (e.g. thoracolumbar shingles) is remote but can occur.8
+Significant contact is defined as contact in the same room for 15 minutes or more, face-to-face 
+contact or contact in the setting of a large open ward.1 The susceptibility of the woman should 
+then be determined by eliciting a past history of chickenpox or shingles. If there is a definite 
+past history of chickenpox, it is reasonable to assume that she is immune to varicella infection. 
+If the woman’s immunity to chickenpox is unknown and if there is any doubt about previous 
+infection, or if there is no previous history of chickenpox or shingles, serum should be tested 
+for VZV IgG. This can usually be performed within 24–48 hours and often within a few hours 
+if the laboratory can access serum stored from an antenatal booking blood sample. At least 
+80% of women tested will have VZV IgG and can be reassured.21 
+If the pregnant woman is not immune to VZV and she has had a significant exposure to 
+chickenpox or shingles, she should be offered VZIG as soon as possible or at the very latest 
+within 10 days of the exposure (in the case of continuous household exposures, within 10 days 
+of appearance of the rash in the index case).22 VZIG is indicated after significant exposure to 
+VZV at any stage of pregnancy, and postnatally if birth occurs within 10 days of exposure.22 If 
+the immune status of the woman is unknown, the administration of VZIG can be delayed until 
+serology results are available (if the laboratory turnaround time is 24–48 hours). The rationale 
+for administration of VZIG is that it may prevent or attenuate chickenpox in non-immune 
+individuals1 and it may reduce the risk of development of FVS.23 In an observational study of 
+212 seronegative women who received an appropriate dose of VZIG, either intramuscular 
+or intravenous, within 10 days of significant exposure to chickenpox, half of the women 
+developed either a normal or an attenuated form of chickenpox and a further 5% had a 
+subclinical infection.24 A recent meta-analysis of three case series has shown that 0/142 babies 
+of women who developed varicella during pregnancy despite receiving VZIG suffered from 
+FVS, compared with 14/498 (2.8%) among those who did not receive VZIG.23 However, a case D
+Evidence 
+level 4
+Evidence 
+level 3D
+P
+P
+PRCOG Green-top Guideline No. 13 © Royal College of Obstetricians and Gynaecologists8 of 17series of 106 women who developed chickenpox in the first 20 weeks of pregnancy included 
+five women who had been treated with VZIG, one of whom delivered a baby with congenital 
+varicella syndrome.25 This evidence supports the use of VZIG to prevent FVS but is based on 
+observational data and may be subject to reporting bias. 
+VZIG is a human immunoglobulin product manufactured from the plasma of non-UK donors 
+with high VZV antibody titres. Issues to pregnant women may be restricted when supplies are 
+limited and hence clinicians are advised to establish the availability of VZIG before offering it 
+to pregnant women.1
+Adverse effects of VZIG include pain and erythema at the injection site. The risk of anaphylaxis 
+is cited as less than 0.1% by the US Centers for Disease Control and Prevention26 and ‘very rare’ 
+by Public Health England.1 Patients with hypogammaglobinaemia with immunoglobulin A 
+antibodies who are already receiving replacement therapy with immunoglobulin do not 
+require VZIG and are at increased risk of anaphylactic reactions. No case of blood-borne 
+infection has been reported with the use of VZIG.1
+Susceptible women who have had contact with chickenpox or shingles (regardless of whether or not 
+they have received VZIG) should be asked to notify their doctor or midwife early if a rash develops. 
+Despite the benefits of VZIG in preventing or attenuating the disease, pregnant women may still become 
+seriously ill. 
+5. The pregnant woman who develops chickenpox
+5.1 What are the maternal risks of varicella in pregnancy?
+Clinicians should be aware of the increased morbidity associated with varicella infection in adults, 
+including pneumonia, hepatitis and encephalitis. Rarely, it may result in death. 
+Although varicella infection is much less common in adults than in children, it is associated 
+with a greater morbidity, namely pneumonia, hepatitis and encephalitis. As recently as the 
+1990s, chickenpox resulted in the deaths of 25 people per year in England and Wales; 80% of 
+these deaths occurred in adults.27 
+The incidence of pneumonia complicating varicella in pregnancy has been quoted at 10–
+14% ,28 but these rates are based on small case series. In a series of 347 cases of varicella 
+infection in pregnancy, prospectively documented, 5% of women developed pneumonia.29 
+The overall mortality rate in case series of varicella pneumonia in pregnancy published in 
+the English language literature in the pre-antiviral era was 10/28 (36%), which may reflect 
+publication bias.30 More recent case series report mortality rates of 0–14%, with improvements 
+attributed to antiviral therapy and improved intensive care.29,31,32 Between 1985 and 1999 there 
+were nine indirect maternal deaths and one late maternal death reported in the UK from 
+complications of maternal varicella infection,33–37 suggesting a low case fatality rate. There has 
+been no maternal death from varicella reported in the subsequent confidential enquiries.38–40 
+Pneumonia may be more severe at later gestational ages due to the effects of the gravid uterus 
+on respiratory function.28 
+5.2 How should the pregnant woman who develops chickenpox be cared for?
+Pregnant women who develop a chickenpox rash should immediately contact their general 
+practitioner. Evidence 
+level 3
+Evidence 
+level 4
+Evidence 
+level 3
+Evidence 
+level 2+C
+PRCOG Green-top Guideline No. 13 © Royal College of Obstetricians and Gynaecologists9 of 17Women should avoid contact with potentially susceptible individuals, e.g. other pregnant women 
+and neonates, until the lesions have crusted over. This is usually about 5 days after the onset of 
+the rash. 
+Symptomatic treatment and hygiene is advised to prevent secondary bacterial infection of the 
+lesions. 
+Oral aciclovir should be prescribed for pregnant women with chickenpox if they present within 24 
+hours of the onset of the rash and if they are 20+0 weeks of gestation or beyond. Use of aciclovir 
+before 20+0 weeks should also be considered. 
+Aciclovir is not licensed for use in pregnancy and the risks and benefits of its use should be 
+discussed with the woman. 
+Intravenous aciclovir should be given to all pregnant women with severe chickenpox. 
+VZIG has no therapeutic benefit once chickenpox has developed and should therefore not be used 
+in pregnant women who have developed a chickenpox rash. 
+Aciclovir is a synthetic nucleoside analogue that inhibits replication of the varicella-zoster 
+virus. A randomised controlled trial has shown that aciclovir administered orally (800 mg 
+five times a day for 7 days) reduces the duration of fever and symptomatology of varicella 
+infection in immunocompetent adults if commenced within 24 hours of developing the rash 
+when compared to placebo. This randomised controlled trial did not have sufficient power to 
+comment on the impact of early oral aciclovir on the serious complications of chickenpox.41 
+Data are accumulating to suggest that there is no increase in the risk of major fetal malformation 
+with aciclovir exposure in pregnancy.42–44 A Danish registry-based cohort study of 837 795 live 
+births between 1996 and 200843 reported the pregnancy outcome in 1804 pregnancies exposed 
+to aciclovir, valciclovir or famciclovir in the first trimester. The rate of major birth defects in 
+the exposed group was 2.2% compared to 2.4% in the unexposed (adjusted prevalence odds 
+ratio 0.89, 95% CI 0.65–1.22). The most common antiviral drug used was aciclovir. Among 
+1561 pregnancies exposed to aciclovir, 32 babies (2.0%) had a major anomaly compared with 
+2.4% of controls. The study is limited in that it is based on records of prescriptions that were 
+filled and this is indirect evidence of exposure. In addition, the study did not have the power 
+to exclude an increased risk of any individual defect.44 
+While some multidisciplinary publications45–47 recommend the use of antiviral agents in all 
+pregnant women with chickenpox, the Swiss and Canadian national guidelines dissent.48,49 
+The UK Advisory Group on Chickenpox recommends oral aciclovir for pregnant women with 
+chickenpox if they present within 24 hours of the onset of the rash and if they are more than 20 
+weeks of gestation.50 Use of aciclovir before 20 weeks should also be considered.51 Guidelines 
+are unanimous, however, in recommending that intravenous aciclovir be administered in 
+cases of severe maternal infection.45–50
+VZIG is recommended for post-exposure prophylaxis and is not appropriate treatment for 
+patients with clinical chickenpox.1 This recommendation is based on the opinion of experts 
+and reflects the accepted understanding of how VZIG works. 
+5.3 Should women be referred to hospital?
+The pregnant woman with chickenpox should be asked to contact her doctor immediately if she 
+develops respiratory symptoms or any other deterioration in her condition. Women who develop 
+the symptoms or signs of severe chickenpox should be referred immediately to hospital. P
+P
+C
+DDP
+Evidence 
+level 1–
+Evidence 
+level 2–
+Evidence 
+level 4
+DRCOG Green-top Guideline No. 13 © Royal College of Obstetricians and Gynaecologists10 of 17A hospital assessment should be considered in a woman at high risk of severe or complicated 
+chickenpox even in the absence of concerning symptoms or signs. This assessment needs to take 
+place in an area where she will not come into contact with other pregnant women. Appropriate 
+treatment should be decided in consultation with a multidisciplinary team that includes an 
+obstetrician or fetal medicine specialist, a virologist and a neonatologist. 
+Women hospitalised with varicella should be nursed in isolation from babies, potentially 
+susceptible pregnant women or non-immune staff. 
+Respiratory symptoms, neurological symptoms such as photophobia, seizures or drowsiness, a 
+haemorrhagic rash or bleeding, or a dense rash with or without mucosal lesions are indicative 
+of potentially life-threatening chickenpox and are indications for referral to a hospital 
+with intensive care access. If the woman smokes cigarettes, has chronic lung disease, is 
+immunosuppressed (including those who have taken systemic corticosteroids in the preceding 
+3 months) or is in the second half of pregnancy, a hospital assessment should be considered 
+even in the absence of complications.50
+5.4 When and how should the woman with chickenpox be delivered?
+The timing and mode of delivery of the pregnant woman with chickenpox must be individualised. 
+When epidural or spinal anaesthesia is undertaken in women with chickenpox, a site free of 
+cutaneous lesions should be chosen for needle placement. 
+Depending on the severity of the maternal condition, a respiratory physician and intensive 
+care specialist may be involved in peripartum care. Delivery during the viraemic period, while 
+the chickenpox vesicles are active, may be extremely hazardous. Delivery may precipitate 
+maternal haemorrhage and/or coagulopathy due to thrombocytopenia or hepatitis. There is 
+also a high risk of varicella infection of the newborn with significant morbidity and mortality.52,53 
+Supportive treatment and intravenous aciclovir are therefore desirable, allowing resolution of 
+the rash, immune recovery and transfer of protective antibodies from the mother to the fetus. 
+Ideally, a minimum of 7 days should elapse between onset of the rash and delivery. However, 
+delivery may be required to facilitate assisted ventilation in cases where varicella pneumonia 
+is complicated by respiratory failure. 
+There is no evidence available to inform decisions about the optimum method of anaesthesia 
+for women requiring delivery by caesarean section. General anaesthesia may exacerbate the 
+respiratory compromise associated with varicella pneumonia. There is a theoretical risk of 
+transmitting the varicella-zoster virus from skin lesions to the central nervous system via 
+spinal anaesthesia. As the dura is not penetrated, epidural anaesthesia may be safer than 
+spinal anaesthesia, however the larger needle required for epidural anaesthesia carries the 
+theoretical risk of transferring a greater viral load from the skin to the epidural space. A site 
+free of cutaneous lesions should be chosen for needle placement.54
+6. Risks of maternal varicella infection to the fetus or baby
+6.1 What are the risks to the fetus of varicella infection in pregnancy and can they be 
+prevented or ameliorated?
+Women should be advised that the risk of spontaneous miscarriage does not appear to be increased 
+if chickenpox occurs in the first trimester. 
+If the pregnant woman develops varicella or shows serological conversion in the first 28 weeks of 
+pregnancy, she has a small risk of FVS and she should be informed of the implications. Evidence 
+level 4P
+P
+DD
+Evidence 
+level 3
+CCRCOG Green-top Guideline No. 13 © Royal College of Obstetricians and Gynaecologists11 of 17Spontaneous miscarriage does not appear to be increased if chickenpox occurs in the first 
+trimester.25 
+FVS is characterised by one or more of the following: skin scarring in a dermatomal distribution; 
+eye defects (microphthalmia, chorioretinitis or cataracts); hypoplasia of the limbs; and 
+neurological abnormalities (microcephaly, cortical atrophy, mental retardation or dysfunction 
+of bowel and bladder sphincters).25,55 It does not occur at the time of initial fetal infection but 
+results from a subsequent herpes zoster reactivation in utero and only occurs in a minority of 
+infected fetuses. 
+FVS has been reported to complicate maternal chickenpox occurring as early as 3 weeks55 and 
+as late as 28 weeks56 of gestation. Pooled data from nine cohort studies detected 13 cases of 
+FVS following 1423 cases of maternal chickenpox occurring before 20 weeks of gestation: an 
+incidence of 0.91%.28 The risk appears to be lower in the first trimester (0.55%).28 These cohort 
+studies identified one case of FVS occurring among approximately 180 women who developed 
+chickenpox between 20 and 28 weeks of gestation.28 In addition, this review identified seven 
+case reports of FVS following maternal infection from 20–28 weeks and one where maternal 
+infection occurred at 28 weeks.28,56 These case reports provide no denominators, so an 
+incidence rate for FVS following late second trimester infection cannot be quoted, but they 
+make the point that FVS is not confined to cases of maternal infection before 20 weeks. The 
+observational evidence presented in section 4.3 suggests that post-exposure prophylaxis in 
+susceptible pregnant women reduces the risk of developing FVS. 
+ 
+6.2 Can varicella infection of the fetus be diagnosed prenatally?
+Women who develop chickenpox in pregnancy should be referred to a fetal medicine specialist, at 
+16–20 weeks or 5 weeks after infection, for discussion and detailed ultrasound examination. 
+Given that amniocentesis has a strong negative predictive value but a poor positive predictive 
+value in detecting fetal damage that cannot be detected by non-invasive methods, women who 
+develop varicella infection during pregnancy should be counselled about the risks versus benefits 
+of amniocentesis to detect varicella DNA by polymerase chain reaction (PCR). 
+Amniocentesis should not be performed before the skin lesions have completely healed. 
+Prenatal diagnosis of FVS is possible by ultrasound when findings such as limb deformity, 
+microcephaly, hydrocephalus, soft tissue calcification and fetal growth restriction can be 
+detected. A time lag of at least 5 weeks after the primary maternal infection is advised because 
+ultrasound performed at 4 weeks has failed to detect the abnormalities.57 Fetal magnetic 
+resonance imaging (MRI) may provide additional information in cases where ultrasound has 
+identified morphological abnormalities.58
+VZV DNA can be detected in amniotic fluid by PCR. The presence of VZV DNA has a high 
+sensitivity but a low specificity for the development of FVS. In one observational study,59 nine 
+(8.4%) out of 107 women who developed chickenpox before 24 weeks of gestation had VZV 
+DNA detected in the amniotic fluid. Amniotic fluid PCR for VZV DNA correctly identified the 
+two cases of FVS that occurred in this series, but was positive in seven other cases, five of 
+which ended in the birth of a normal baby, one in a termination where there was no evidence 
+of FVS in the fetus and one where intrauterine death occurred in a baby with triploidy and no 
+evidence of FVS. 
+Ultrasound was abnormal in two of the nine cases with positive VZV PCR: a case where 
+FVS was confirmed following termination of pregnancy and a case where ultrasound showed Evidence 
+level 2–
+Evidence 
+level 2+
+Evidence 
+level 2–
+P
+P
+P
+Evidence 
+level 4
+Evidence 
+level 3RCOG Green-top Guideline No. 13 © Royal College of Obstetricians and Gynaecologists12 of 17microcalcifications of the liver but no evidence of FVS at delivery. One of the two cases of FVS, 
+a baby born at term with bilateral micropthalmia, was not detected by ultrasound. No case 
+of FVS occurred when amniocentesis was negative for VZV DNA.59 The negative predictive 
+value of this combination of amniotic fluid PCR testing and ultrasound is good but the positive 
+predictive value is poor. 
+6.3. What are the neonatal risks of varicella infection in pregnancy and can they be prevented 
+or ameliorated? 
+If maternal infection occurs in the last 4 weeks of a woman’s pregnancy, there is a significant risk 
+of varicella infection of the newborn. A planned delivery should normally be avoided for at least 
+7 days after the onset of the maternal rash to allow for the passive transfer of antibodies from 
+mother to child, provided that continuing the pregnancy does not pose any additional risks to the 
+mother or baby. 
+A neonatologist should be informed of the birth of all babies born to women who have developed 
+chickenpox at any gestation during pregnancy. 
+Women with chickenpox should breastfeed if they wish to and are well enough to do so. 
+Varicella infection of the newborn (previously called congenital varicella) refers to VZV 
+infection in early neonatal life resulting from maternal infection near the time of delivery or 
+immediately postpartum, or from contact with a person other than the mother with chickenpox 
+or shingles during this time. The route of infection could be transplacental, ascending vaginal 
+or result from direct contact with lesions during or after delivery. If maternal infection occurs 
+1–4 weeks before delivery, up to 50% of babies are infected and approximately 23% develop 
+clinical varicella, despite high titres of passively acquired maternal antibody. Severe chickenpox 
+is most likely to occur if the infant is born within 7 days of onset of the mother’s rash or if the 
+mother develops the rash up to 7 days after delivery.52 For babies born to mothers who have 
+had chickenpox within the period 7 days before to 7 days after delivery, it is therefore vital 
+that the neonate receives prophylaxis as soon as possible with VZIG with or without aciclovir; 
+there is no need to test in these circumstances.1,2
+Women with chickenpox should breastfeed if they wish to and are well enough to do so. If 
+there are active chickenpox lesions close to the nipple, they should express breast milk from 
+the affected breast until the lesions have crusted over. The expressed breast milk may be fed 
+to the baby who is receiving treatment with VZIG and/or aciclovir.22
+7. Recommendations for future research
+l A randomised controlled trial should be performed in a population of women who were not born 
+in the UK, comparing a policy of serological screening at the antenatal booking visit with the 
+current practice of testing only if a varicella contact occurs. Measurable outcomes would be use of 
+VZIG, rates of postnatal vaccination and cost. 
+l Given the apparent equipoise in the literature regarding the benefit or otherwise of aciclovir, 
+women with mild cases of chickenpox in pregnancy could be recruited to a randomised controlled 
+trial of oral aciclovir versus placebo. 
+8. Auditable topics
+l The proportion of pregnant women who are not immune to VZV who are offered VZIG following a 
+significant exposure (100%).Evidence 
+level 3
+Evidence 
+level 3
+Evidence 
+level 4P
+PDRCOG Green-top Guideline No. 13 © Royal College of Obstetricians and Gynaecologists13 of 17l The proportion of women who develop chickenpox in pregnancy who are referred to a fetal 
+medicine specialist at 16–20 weeks of gestation or 5 weeks after infection (100%).
+l The proportion of pregnant women with severe chickenpox who are given intravenous aciclovir 
+(100%).
+l The proportion of cases where a neonatologist has been informed of the birth of a baby born to a 
+woman who developed chickenpox during pregnancy (100%).
+9. Useful links and support groups 
+l NHS Choices. What are the risks of chickenpox during pregnancy? 
+[http://www.nhs.uk/chq/pages/1109.aspx?categoryid=54&subcategoryid=137]
+l RCOG patient information leaflet. Chickenpox in pregnancy: what you need to know 
+[https://www.rcog.org.uk/en/patients/patient-leaflets/chickenpox-in-pregnancy/]
+l Royal College of Physicians, Faculty of Occupational Medicine, NHS Plus. Varicella zoster virus: 
+occupational aspects of management. A national guideline . London: RCP; 2010 
+[https://www.rcplondon.ac.uk/sites/default/files/varicella-zoster-guidelines-web-navigable.pdf].
+References 
+1. Public Health England. Varicella: the green book, 
+chapter 34 . London: Public Health England; 2012 
+[https://www.gov.uk/government/publications/
+varicella-the-green-book-chapter-34]. 
+2. Sharland M, Cant A, Davies EG, Elliman DA, Esposito S, 
+Finn A, et al., editors. Chicken Pox—Varicella Zoster. In: 
+Manual of Childhood Infections. The Blue Book . Oxford: 
+Oxford University Press; 2011. p. 467–74.
+3. Vyse AJ, Gay NJ, Hesketh LM, Morgan-Capner P, Miller 
+E. Seroprevalence of antibody to varicella zoster virus 
+in England and Wales in children and young adults. 
+Epidemiol Infect 2004;132:1129–34. 
+4. Plans P, Costa J, Espuñes J, Plasència A, Salleras L. Prevalence 
+of varicella-zoster antibodies in pregnant women in 
+Catalonia (Spain). Rationale for varicella vaccination of 
+women of childbearing age. BJOG 2007;114:1122–7.
+5. Saadatian-Elahi M, Mekki Y, Del Signore C, Lina B, 
+Derrough T, Caulin E, et al. Seroprevalence of varicella 
+antibodies among pregnant women in Lyon-France. Eur J 
+Epidemiol 2007;22:405–9. 
+6. Miller E, Marshall R, Vurdien JE. Epidemiology, outcome 
+and control of varicella-zoster infection. Rev Med Microbiol 
+1993;4:222–30.
+7. Lee BW. Review of varicella zoster seroepidemiology in India 
+and South-east Asia. Trop Med Int Health 1998;3:886–90.
+8. Breuer J. Herpes zoster: new insights provide an important 
+wake-up call for management of nosocomial transmission. 
+J Infect Dis 2008;197:635–7.
+9. Scottish Intercollegiate Guidelines Network. SIGN 50: A 
+guideline developer’s handbook . Edinburgh: SIGN; 2011 
+[http://www.sign.ac.uk/pdf/sign50.pdf].
+10. Nguyen HQ, Jumaan AO, Stewart JF. Decline in mortality 
+due to varicella after implementation of varicella vaccine 
+in the United States. N Engl J Med 2005;352:450–8. 
+11. Johnson CE, Stancin T, Fattlar D, Rome LP, Kumar ML. A 
+long-term prospective study of varicella vaccine in healthy 
+children. Pediatrics 1997;100:761–6.
+12. Asano Y, Suga S, Yoshikawa T, Kobayashi I, Yazaki T, 
+Shibata M, et al. Experience and reason: twenty-year 
+follow-up of protective immunity of the Oka strain live 
+varicella vaccine. Pediatrics 1994;94:524–6. 
+13. Manikkavasagan G, Bedford H, Peckham C, Dezateux C. 
+Antenatal Screening for Susceptibility to Varicella Zoster 
+Virus (VZV) in the United Kingdom: A review 
+commissioned by the National Screening Committee . 
+London: MRC Centre of Epidemiology for Child Health; 2009. 14. Merck & Co Inc., Centers for Disease Control and 
+Prevention. Merck/CDC Pregnancy Registry for 
+varicella-containing vaccines (VARIVAX®, ProQuad® 
+& ZOSTAVAX®). The 14th annual report, 2009; covering 
+the period from approval of VARIVAX® (March 17, 1995) 
+through March 16, 2009 . Whitehouse Station, New Jersey: 
+Merck & Co Inc.; 2009.
+15. Pinot de Moira A, Edmunds WJ, Breuer J. The cost-
+effectiveness of antenatal varicella screening with 
+post-partum vaccination of susceptibles. Vaccine 
+2006;24:1298–307.
+16. Dolbear GL, Moffat J, Falkner C, Wojtowycz M. A pilot 
+study: is attenuated varicella virus present in breast milk 
+after postpartum immunization? Obstet Gynecol 2003;101 
+Suppl 4:47S. 
+17. Bohlke K, Galil K, Jackson LA, Schmid DS, Starkovich P, 
+Loparev VN, et al. Postpartum varicella vaccination: is 
+the vaccine virus excreted in breast milk? Obstet Gynecol 
+2003;102:970–7.
+18. Watson B, Civen R, Reynolds M, Heath K, Perella D, 
+Carbajal T, et al. Validity of self-reported varicella disease 
+history in pregnant women attending prenatal clinics. 
+Public Health Rep 2007;122:499–506.
+19. MacMahon E, Brown LJ, Bexley S, Snashall DC, Patel 
+D. Identification of potential candidates for varicella 
+vaccination by history: questionnaire and seroprevalence 
+study. BMJ 2004;329:551–2. 
+20. Talukder YS, Kafatos G, Pinot de Moira A, Aquilina J, 
+Parker SP, Crowcroft NS, et al. The seroepidemiology of 
+varicella zoster virus among pregnant Bangladeshi and 
+white British women in the London Borough of Tower 
+Hamlets, UK. Epidemiol Infect 2007;135:1344–53.
+21. McGregor JA, Mark S, Crawford GP, Levin MJ. Varicella 
+zoster antibody testing in the care of pregnant women 
+exposed to varicella. Am J Obstet Gynecol 1987;157:281–4.
+22. Health Protection Agency. Guidance on Viral Rash 
+in Pregnancy: Investigation, Diagnosis and Management 
+of Viral Rash Illness, or Exposure to Viral Rash 
+Illness, in Pregnancy . London: Health Protection Agency; 
+2011 [https://www.gov.uk/government/publications/
+viral-rash-in-pregnancy]. 
+23. Cohen A, Moschopoulos P, Stiehm RE, Koren G. 
+Congenital varicella syndrome: the evidence for secondary 
+prevention with varicella-zoster immune globulin. 
+CMAJ 2011;183:204–6.RCOG Green-top Guideline No. 13 © Royal College of Obstetricians and Gynaecologists14 of 1724. Enders G, Miller E. Varicella and herpes zoster in 
+pregnancy and the newborn. In: Arvin AM, Gershon AA, 
+editors. Varicella-Zoster Virus: Virology and Clinical 
+Management . Cambridge: Cambridge University Press; 
+2000. p. 317–47.
+25. Pastuszak AL, Levy M, Schick B, Zuber C, Feldkamp M, 
+Gladstone J, et al. Outcome after maternal varicella 
+infection in the first 20 weeks of pregnancy. N Engl J Med 
+1994;330:901–5. 
+26. Centers for Disease Control and Prevention. Prevention of 
+varicella: Recommendations of the Advisory Committee 
+on Immunizaton Practices (ACIP). MMWR Recomm Rep 
+1996:45:1–25. 
+27. Rawson H, Crampin A, Noah N. Deaths from chickenpox 
+in England and Wales 1995-7: analysis of routine mortality 
+data. BMJ 2001;323:1091–3.
+28. Tan MP, Koren G. Chickenpox in pregnancy: revisited. 
+Reprod Toxicol 2006;21:410–20.
+29. Harger JH, Ernest JM, Thurnau GR, Moawad A, Momirova 
+V, Landon MB, et al. Risk factors and outcome of varicella-
+zoster virus pneumonia in pregnant women. J Infect Dis 
+2002;185;422–7.
+30. Broussard RC, Payne DK, George RB. Treatment of 
+varicella pneumonia in pregnancy. Chest 1991;99;1045–7.
+31. Smego RA Jr, Asperilla MO. Use of acyclovir for 
+varicella pneumonia during pregnancy. Obstet Gynecol 
+1991;78:1112–6.
+32. Schutte TJ, Rogers LC, Copas PR. Varicella pneumonia 
+complicating pregnancy: a report of seven cases. Infect 
+Dis Obstet Gynecol 1996;4:338–46. 
+33. Department of Health; Welsh Office; Scottish Home and 
+Health Department; Department of Health and Social 
+Sevices, Northern Ireland. Report on Confidential 
+Enquiries into Maternal Deaths in the United Kingdom 
+1985-87 . London: HMSO; 1991.
+34. Department of Health; Welsh Office; Scottish Office 
+Home and Health Department; Department of Health and 
+Social Security, Northern Ireland. Report on Confidential 
+Enquiries into Maternal Deaths in the United Kingdom 
+1988–1990 . London: HMSO; 1994.
+35. Department of Health; Welsh Office; Scottish Department 
+of Health; Department of Health and Social Services, 
+Northern Ireland. Report on Confidential Enquiries into 
+Maternal Deaths in the United Kingdom 1991-1993 . 
+London: HMSO; 1996.
+36. Department of Health; Welsh Office; Scottish Office 
+Department of Health; Department of Health and Social 
+Services, Northern Ireland. Why Mothers Die. Report 
+on Confidential Enquiries into Maternal Deaths in the 
+United Kingdom 1994-1996 . London: TSO; 1998.
+37. Lewis G, editor. The National Institute for Clinical 
+Excellence; The Scottish Executive Health Department; 
+The Department of Health, Social Services and Public 
+Safety: Northern Ireland. Why Mothers Die 1997-1999. 
+The fifth report of the Confidential Enquiries into 
+Maternal Deaths in the United Kingdom . London: RCOG 
+Press; 2001.
+38. Confidential Enquiry into Child and Maternal Health. 
+Why Mothers Die 2000–2002. The Sixth Report of the 
+Confidential Enquiries into Maternal Deaths in the 
+United Kingdom . London: RCOG Press; 2004.
+39. Confidential Enquiry into Child and Maternal Health. 
+Saving Mothers’ Lives: Reviewing maternal deaths to 
+make motherhood safer - 2003-2005. The Seventh Report 
+of the Confidential Enquiries into Maternal Deaths in 
+the United Kingdom . London: CEMACH; 2007.
+40. Centre for Maternal and Child Enquiries (CMACE). Saving 
+Mothers’ Lives: Reviewing maternal deaths to make 
+motherhood safer: 2006–2008. The Eighth Report of the 
+Confidential Enquiries into Maternal Deaths in the United 
+Kingdom. BJOG 2011;118 Suppl 1:1–203.41. Wallace MR, Bowler WA, Murray NB, Brodine SK, Oldfield 
+EC 3rd. Treatment of adult varicella with oral acyclovir. 
+A randomized, placebo-controlled trial. Ann Intern Med 
+1992;117:358–63.
+42. Stone KM, Reiff-Eldridge R, White AD, Cordero JF, Brown 
+Z, Alexander ER, et al. Pregnancy outcomes following 
+systemic prenatal acyclovir exposure: Conclusions from 
+the international acyclovir pregnancy registry, 1984–99. 
+Birth Defects Res A Clin Mol Teratol 2004;70:201–7.
+43. Pasternak B, Hviid A. Use of acyclovir, valacyclovir and 
+famciclovir in the first trimester of pregnancy and the risk 
+of birth defects. JAMA 2010;304:859–66.
+44. Mills JL, Carter TC. Acyclovir exposure and birth defects: 
+an important advance, but more are needed. JAMA 
+2010;304:905–6.
+45. Daley AJ, Thorpe S, Garland SM. Varicella and the pregnant 
+woman: prevention and management. Aust N Z J Obstet 
+Gynaecol 2008;48:26–33.
+46. Lamont RF, Sobel JD, Carrington D, Mazaki-Tovi S, Kusanovic 
+JP, Vaisbuch E, et al. Varicella-zoster virus (chickenpox) 
+infection in pregnancy. BJOG 2011;118:1155–62.
+47. Gardella C, Brown ZA. Managing varicella zoster infection 
+in pregnancy. Cleve Clin J Med 2007;74:290–6.
+48. Kempf W, Meylan P, Gerber S, Aebi C, Agosti R, Büchner S, et 
+al. Swiss recommendations for the management of varicella 
+zoster virus infections. Swiss Med Wkly 2007;137:239–51.
+49. Shrim A, Koren G, Yudin MH, Farine D; Maternal Fetal 
+Medicine Committee. Management of varicella infection 
+(chickenpox) in pregnancy. SOGC Clinical Practice 
+Guideline No. 274. J Obstet Gynaecol Can 2012;34:287–92.
+50. Nathwani D, Maclean A, Conway S, Carrington D. Varicella 
+infections in pregnancy and the newborn. A review 
+prepared for the UK Advisory Group on Chickenpox on 
+behalf of the British Society for the Study of Infection. J 
+Infect 1998;36 Suppl 1:59–71.
+51. Tunbridge AJ, Breuer J, Jeffery KJ; British Infection 
+Society. Chickenpox in adults – clinical management. J 
+Infect 2008;57:95–102.
+52. Miller E, Cradock-Watson JE, Ridehalgh MK. Outcome in 
+newborn babies given anti-varicella-zoster immunoglobulin 
+after perinatal maternal infection with varicella-zoster 
+virus. Lancet 1989;2:371–3.
+53. Meyers JD. Congenital varicella in term infants: risks 
+reconsidered. J Infect Dis 1974;129:215–7.
+54. Brown NW, Parsons AP, Kam PC. Anaesthetic considerations 
+in a parturient with varicella presenting for Caesarean 
+section. Anaesthesia 2003;58:1092–5.
+55. Enders G, Miller E, Cradock-Watson J, Bolley I, Ridehalgh M. 
+Consequences of varicella and herpes zoster in pregnancy: 
+prospective study of 1739 cases. Lancet 1994;343:1548–51.
+56. Bai PV, John TJ. Congenital skin ulcers following varicella 
+in late pregnancy. J Pediatr 1979;94:65–7. 
+57. Pretorius DH, Hayward I, Jones KL, Stamm E. Sonographic 
+evaluation of pregnancies with maternal varicella infection. 
+J Ultrasound Med 1992;11:459–63.
+58. Verstraelen H, Vanzieleghem B, Defoort P, Vanhaesebrouck 
+P, Temmerman M. Prenatal ultrasound and magnetic 
+resonance imaging in fetal varicella syndrome: correlation 
+with pathology findings. Prenat Diag 2003;23:705–9.
+59. Mouly F, Mirlesse V, Méritet JF, Rozenberg F, Poissonier 
+MH, Lebon P, et al. Prenatal diagnosis of fetal varicella-
+zoster virus infection with polymerase chain reaction 
+of amniotic fluid in 107 cases. Am J Obstet Gynecol 
+1997;177:894–8.RCOG Green-top Guideline No. 13 © Royal College of Obstetricians and Gynaecologists15 of 17Varicella-zoster contact – 
+clarify significance of the contact
+Presents with chickenpox – 
+initial contact should be 
+with the woman’s GPUncertain or no past history of 
+chickenpox, or woman from a 
+tropical or subtropical country 
+Check blood 
+(booking sample if available) 
+for VZV IgG
+No action needed. 
+Reassure and return to 
+normal antenatal careVZV IgG 
+presentVZV IgG not 
+presentPast history of 
+chickenpox
+• Give VZIG if less than 10 days since contact or, for 
+continuous exposure, less than 10 days since the 
+appearance of the rash in the index case
+• Advise the woman that she is potentially infectious 
+from 8–28 days after contact
+• Discuss postpartum varicella immunisation
+• Women who develop severe infection and women 
+at high risk of complicated chickenpox should be 
+referred to hospital
+• Intravenous aciclovir should be given
+• Inform women that infection at < 28+0 weeks is 
+associated with a small (~1%) risk of FVS
+• Refer to a fetal medicine specialist at 16–20 weeks 
+or 5 weeks after infection
+• Amniocentesis to detect varicella DNA may be 
+considered• Avoid contact with potentially 
+susceptible individuals 
+(e.g. neonates and other 
+pregnant women)
+• Symptomatic treatment and 
+hygiene should be advised
+• If the woman presents < 24 hours 
+of the appearance of the rash 
+and she is ≥ 20+0 weeks of 
+gestation, prescribe aciclovir
+• If the woman presents < 24 hours 
+of the appearance of the rash 
+and she is < 20+0 weeks of 
+gestation, consider aciclovir
+• Avoid delivery of the baby 
+until at least 7 days since the 
+rash appearedWoman 
+develops 
+chickenpox 
+despite VZIG
+Severe 
+infection
+Infection at 
+less than 
+28 weeks 
+of gestation
+Abbreviations: FVS fetal varicella syndrome; GP general practitioner; IgG immunoglobulin G; 
+ VZIG varicella-zoster immunoglobulin; VZV varicella-zoster virusAppendix I: Algorithm for the management of varicella-zoster contact in pregnancyRCOG Green-top Guideline No. 13 © Royal College of Obstetricians and Gynaecologists16 of 17Appendix II: Explanation of guidelines and evidence levels
+Clinical guidelines are: ‘systematically developed statements which assist clinicians and patients in 
+making decisions about appropriate treatment for specific conditions’. Each guideline is systematically 
+developed using a standardised methodology. Exact details of this process can be found in Clinical 
+Governance Advice No. 1 Development of RCOG Green-top Guidelines (available on the RCOG website 
+at http://www.rcog.org.uk/green-top-development ). These recommendations are not intended to dictate 
+an exclusive course of management or treatment. They must be evaluated with reference to individual 
+patient needs, resources and limitations unique to the institution and variations in local populations. 
+It is hoped that this process of local ownership will help to incorporate these guidelines into routine 
+practice. Attention is drawn to areas of clinical uncertainty where further research may be indicated. 
+The evidence used in this guideline was graded using the scheme below and the recommendations 
+formulated in a similar fashion with a standardised grading scheme.
+At least one meta-analysis, systematic reviews 
+or randomised controlled trial rated as 1++, and 
+directly applicable to the target population; or 
+ 
+A systematic review of randomised controlled 
+trials or a body of evidence consisting 
+principally of studies rated as 1+, directly 
+applicable to the target population and 
+demonstrating overall consistency of results
+A body of evidence including studies rated 
+as 2++ directly applicable to the target 
+population, and demonstrating overall 
+consistency of results; or 
+Extrapolated evidence from studies rated as 
+1++ or 1+
+A body of evidence including studies rated as 
+2+ directly applicable to the target population, 
+and demonstrating overall consistency of 
+results; or 
+Extrapolated evidence from studies rated as 
+2++
+Evidence level 3 or 4; or 
+Extrapolated evidence from studies rated as 2+1++ High-quality meta-analyses, systematic 
+reviews of randomised controlled trials or 
+randomised controlled trials with a very 
+low risk of bias
+1+ Well-conducted meta-analyses, systematic 
+reviews of randomised controlled trials 
+or randomised controlled trials with a 
+low risk of bias
+1– Meta-analyses, systematic reviews of 
+randomised controlled trials or 
+randomised controlled trials with a high 
+risk of bias
+2++ High-quality systematic reviews of 
+case–control or cohort studies or high-
+quality case–control or cohort studies 
+with a very low risk of confounding, bias 
+or chance and a high probability that the 
+relationship is causal
+2+ Well-conducted case–control or cohort 
+studies with a low risk of confounding, 
+bias or chance and a moderate 
+probability that the relationship is causal
+2– Case–control or cohort studies with a 
+high risk of confounding, bias or chance 
+and a significant risk that the 
+relationship is not causal
+3 Non-analytical studies, e.g. case reports, 
+case series
+4 Expert opinionClassification of evidence levels Grades of recommendations
+Good practice point
+Recommended best practice based on the 
+clinical experience of the guideline 
+development groupDCBA
+PRCOG Green-top Guideline No. 13 © Royal College of Obstetricians and Gynaecologists17 of 17DISCLAIMER
+ The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical practice. 
+They present recognised methods and techniques of clinical practice, based on published evidence, for consideration by 
+obstetricians and gynaecologists and other relevant health professionals. The ultimate judgement regarding a particular 
+clinical procedure or treatment plan must be made by the doctor or other attendant in the light of clinical data presented 
+by the patient and the diagnostic and treatment options available.
+This means that RCOG Guidelines are unlike protocols or guidelines issued by employers, as they are not intended to 
+be prescriptive directions defining a single course of management. Departure from the local prescriptive protocols 
+or guidelines should be fully documented in the patient’s case notes at the time the relevant decision is taken. This guideline was produced on behalf of the Royal College of Obstetricians and Gynaecologists by: 
+Dr BMP Byrne FRCOG, Dublin; Dr PA Crowley FRCOG, Dublin; and Dr C Aitken FRCPath, Glasgow 
+and peer reviewed by: 
+Dr HM Cameron FRCOG, Sunderland; Mrs AHD Diyaf MRCOG, Barnstaple; Dr PP Fogarty FRCOG, County Down; 
+Professor P Heath, Paediatric Infectious Diseases Research Group, St George’s, University of London; 
+Dr M Khare FRCOG, Leicester; Mr S Maiti FRCOG, Manchester; Professor E Miller OBE FMedSci, Immunisation 
+Hepatitis and Blood Safety Department, Public Health England; Dr H Narayan FRCOG, Swindon; 
+Dr C O’Sullivan, Paediatric Infectious Diseases Research Group, St George’s, University of London; RCOG Women’s 
+Network; Royal College of Paediatrics and Child Health; Royal College of Pathologists; Dr S Sabir MRCOG, Bradford; 
+Dr P Sarkar FRCOG, Slough; Dr JB Wright FRCOG, Bradford; Dr GL Young MA FRCGP, Penrith.
+Committee lead reviewers were: 
+Dr S Ismail MRCOG, Brighton; Dr P Owen FRCOG, Glasgow; and Dr AJ Thomson MRCOG, Paisley.
+Conflicts of interest: none declared.
+The final version is the responsibility of the Guidelines Committee of the RCOG. 
+The review process will commence in 2018, unless otherwise indicated.

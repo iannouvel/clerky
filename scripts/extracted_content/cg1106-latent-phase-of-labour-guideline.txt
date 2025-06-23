@@ -1,0 +1,485 @@
+# Extracted from: CG1106 Latent phase of labour guideline.pdf
+# Guideline ID: cg1106-latent-phase-of-labour-guideline
+# Content length: 24741 characters
+# Processing date: 1750066899.8173206
+
+CG1106 Latent phase of labour guideline v2.0 A ugust 2022 Page 1 of 13 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Care during the L atent Phase of Labour Guideline 
+Summary statement: How does the document 
+support patient care? The purpose of this guideline is to provide good 
+practice for care of women /people in the early stages 
+of labour . 
+Staff/stakeholders involved in development: 
+ Matron 
+Clinical Effectiveness Midwife 
+Division: Women & Children ’s 
+Department: Maternity 
+Responsible Person: Head of service 
+Author: Matron 
+For use by: Midwifery staff and Obstetricians 
+Purpose: To provide clear guidance for staff caring for 
+women /people in the latent phase of labour . 
+This document supports: 
+ NICE (2017 ) Intrapartum Care for Healthy Women 
+and Babies 
+Key related documents: UH Sussex (SRH&WH) maternity guidelines: Care in 
+Labour 
+Guidance for the use of Aromatherapy 
+Approved by: Joint Obstetric Guideline Group (JOGG) 
+Approval date: 17th August 2022 Date uploaded: 23/08/22 
+Ratified by Board of Directors/ Committee of 
+the Board of Directors N/A 
+Ratification Date: N/A 
+Expiry Date: August 2025 
+Review date: February 2025 
+If you require this document in another format such as Braille, large print, 
+audio or another language please contact the Trusts Communications Team 
+Reference Number: CG1106 
+
+CG1106 Latent phase of labour guideline v2.0 A ugust 2022 Page 2 of 13 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+The interpretation and application of clinical guidelines will remain the 
+responsibility of the individual clinician. 
+If in doubt contact a senior colleague or expert . Version Date Author Status Comment 
+1.0 October 2019 Gail Addison 
+Stacie Davies Archived New Trust guideline 
+Approved in August – finalised in 
+November 2019 following 
+pharmacy approval. 
+2.0 April 2022 K. Henton, 
+Community TL 
+J. Collard, Clinical 
+Effectiveness 
+Support Midwife Live 3-yearly review . 
+Criteria for obstetric review 
+expanded in line with NICE 
+2021 
+CG1106 Latent phase of labour guideline v2.0 A ugust 2022 Page 3 of 13 
+Please check against Staffnet that this printout is the most recent version of this document. 
+
+Contents 
+ 
+1.0 Introduction ................................ ................................ ................................ ....... 4 
+2.0 Aim................................ ................................ ................................ .................... 4 
+3.0 Scope ................................ ................................ ................................ ................ 4 
+4.0 Responsibilities ................................ ................................ ................................ . 4 
+5.0 Abbreviations used within this guideline ................................ ........................... 5 
+6.0 Definitions of the latent and established first stages of labour .......................... 5 
+7.0 Inclusion criteria ................................ ................................ ................................ 5 
+8.0 Antenatal education of the latent phase of labour ................................ ............. 5 
+9.0 Telephone advice ................................ ................................ ............................. 6 
+10.0 Clinical assessment of the latent phase ................................ ............................ 6 
+11.0 Fetal heart rate auscultation ................................ ................................ ............. 8 
+12.0 Considerations ................................ ................................ ................................ .. 9 
+13.0 Pain management during the latent phase ................................ ....................... 9 
+14.0 Patient Information ................................ ................................ .......................... 11 
+References ................................ ................................ ................................ ................ 12 
+Appendix 1 Care during the latent phase of labour pathway ................................ ..... 13 
+
+CG1106 Latent phase of labour guideline v2.0 A ugust 2022 Page 4 of 13 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ 
+Care during the Latent Phas e of Labour Guideline 
+
+1.0 Introduction 
+ 
+Clinically the latent phase of labour is poorly understood and can be hard to define. The 
+concept of the latent phase has significance in understanding normal childbirth because 
+labour is considerably longer when a latent phase is included (Mcdonald , 2010) . 
+ 
+The management of a woman /person ’s care during this phase of labour has implications for 
+their entire labour experience. Moreover the latent phase of labour is considered to be more 
+sensitive to external influen ces than the active phase of labour; especially with regard to its 
+duration. Accordingly, the care provided to women /people in the latent phase of labour 
+should focus on allaying their fears, giving them information, and providing reassurance, 
+emotional an d physical support (Munro & Jokinen , 2009) . 
+ 
+2.0 Aim 
+ 
+The aim of this guideline is to provide clear guidance for midwives to ensure improved 
+consistency of support for women /people who experience a difficult and or long latent phase 
+of labour. 
+ 
+3.0 Scope 
+ 
+This guideline applies to: 
+ Midwives 
+ Obstetricians 
+ Maternity assistants 
+ 
+4.0 Responsibilities 
+ 
+Midwives & Obstetricians: 
+ To access, read, understand and follow this guidance 
+ To use their professional judgement in application of this guideline 
+ 
+Management: 
+ To ensure the guideline is reviewed as required in line with Trust and National 
+recommendations. 
+ To ensure the guideline is accessible to all relevant staff. 
+CG1106 Latent phase of labour guideline v2.0 A ugust 2022 Page 5 of 13 
+Please check against Staffnet that this printout is the most recent version of this document. 
+5.0 Abbreviations used within this guideline 
+ 
+OP - Occipital position CBC - Central Birthing Cen tre 
+FH - Fetal heart rate CTG - Cardiotocograph 
+SROM - Spontaneous rupture of 
+membranes 
+ 
+6.0 Definitions of the latent and established first stages of labour 
+ The l atent phase or early stage of labour is defined a period of time, not 
+necessarily conti nuous, when women /people experience painful contractions and 
+there is some cervical change, including cervical effac ement and dilatation up to 4 
+cm (NICE , 2007) . 
+ There is no definition for a prolonged latent phase within the literature and 
+anecdotally it can last for 2 -3 days. 
+ Malpositions especially the occipital position (OP) may lead to a prolonged latent 
+phase. If OP position is suspected, early support and advice to women /people from 
+the midwife on how to cope and for promoting optimal fetal position ing. 
+ Established first stage of labour is defined as the presence of regular painful 
+contraction and progressive cervical dilatation from 4cm (NICE, 2007). 
+ 
+7.0 Inclusion criteria 
+ 
+This guideline is a pplicable to all low risk women /people between 37 – 42 weeks gestation. 
+This guideline should be considered in conjunction with CG1196 Care in labour . 
+ 
+8.0 Antenatal education of the latent phase of labour 
+ 
+It is good practic e for the midwife to discuss with all pregnant women /people and ideally th eir 
+birth partner s what to expect during the latent phase of labour at the 28 week appointment 
+when the woman /person ’s birth preferences are considered (following an initial discussion of 
+birth preferences at 16 -17 weeks) . Informatio n should include : 
+ 
+ Management of pain and pain relief options . 
+ Coping strategies (such as use of water , mobilisation and maternal positioning) and 
+nutrition and hydration advice. 
+ How and when to contact the maternity unit . 
+ How to differentiate between Braxton Hicks contractions and active labour 
+contractions . 
+ The expected frequency of contractions and how long they last . 
+ Recognition of amniotic fluid ('waters breaking') . 
+ Description of no rmal vaginal loss. 
+ What signs and symptoms to report to us and what to do in an emergency . 
+ 
+CG1106 Latent phase of labour guideline v2.0 A ugust 2022 Page 6 of 13 
+Please check against Staffnet that this printout is the most recent version of this document. 
+The latent phase of labour will be discussed during all parent education classes including 
+hypnobirthing and parent education classes. 
+ 
+Pregnant women/people should be signposted to online maternity information on tips to help 
+you during early labour . 
+ 
+9.0 Telephone advice 
+ 
+Women /people should be advised that they can call the telephone triage line at any time. 
+They should be given sufficient time to explain their s ymptoms during each call so the 
+midwife can make an assessment of their needs. This information and the advice given 
+should be recorded within the telephone tria ge workflow within the maternity information 
+system . 
+ 
+Information should be provided about : 
+ 
+ What to expect in the latent first stage of labour and how to work with any pain 
+experience d. 
+ What to expect when they accesses care . 
+ Agree a plan of care with the woman /person , including guidance about who they 
+should contact next and when . 
+ Provide guidanc e and support to the woman /person 's birth companion(s) . 
+ 
+Midwives should exercise professional judgement when advising women /people by telephone 
+and only where appropriate encourage women /people to stay at home following discussion of 
+possible coping strat egies. 
+ 
+The woman /person should be offered an assessment if they have made more than two 
+telephone calls for advice. Should face to face assessment be required , home assessment 
+could be considered especially for women /people in their first pregnancy. 
+ 
+If home assessment is not possible, low risk women /people should be assessed on the 
+Central Birthing Centre (CBC ) at SRH, or on Delivery Suite at Worthing . 
+
+10.0 Clinical assessment of the latent phase 
+ 
+The criterion for this assessment is discussed in the T rust clinical guideline CG1196 Care in 
+labour . 
+ 
+Review maternal and pregnancy history and listen to the woman /person ’s story . Record the 
+following in mat ernal notes and electronic records: 
+ 
+ Assess and document confirmation that the woman /person is suitable for low risk 
+care. 
+CG1106 Latent phase of labour guideline v2.0 A ugust 2022 Page 7 of 13 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Perform maternal observations to assess wellbeing - record blood pressure, 
+temperature, pulse rate and urinalysis . 
+ Abdominal palpati on - fundal height measurement , fetal lie, presentation, position and 
+engagement . 
+ Length, strength and frequency of contractions . 
+ Vaginal loss - show, liquor, absence of blood 
+ Assessment of the woman /person ’s pain, including their wishes for coping with l abour 
+and the options available for pain relief. 
+ Assess fetal wellbeing - the fetal heart rate (FHR) should be auscultated for a 
+minimum of 1 minute following a contraction. The maternal pulse should be noted to 
+differentiate between maternal pulse and FHR . Enquire about fetal movements within 
+the past 24 hours. If there are any concerns regarding fetal movements or FHR, a 
+CTG should be performed to confirm fetal wellbeing. 
+ 
+This assessment should form the basis of a risk assessment and therefore clinical judgement 
+for a woman /person to continue on the low risk care pathway. If an obstetric opinion is 
+required, consult an obstetrician to assess the woman /person and document a plan of care. 
+ 
+NICE (2007) recommends that this assessment of one -to-one midwifer y care should take 
+approximately one hour. If it is deemed appropriate for the woman /person to go home , they 
+must stay in the unit for at least one hour following a vaginal examination in the event that 
+this stimulates labour progress. If a vaginal assessm ent is undertaken by a midwife at home, 
+clinical judgement should be used as to suitability to remain at home based upon findings, 
+parity and previous birth history. 
+ 
+A prolonged latent phase can be a disheartening and exhausting experience for 
+women /peop le. If a woman /person attends the unit for a third time or having a third 
+assessment and is still considered to be in the latent phase she must have a review by a 
+senior clinical midwifery manager or obstetrician for a plan . Assessment and confirmation of 
+both maternal and fetal wellbeing is essential for all attendances . 
+ 
+If any of the following signs or symptoms are present during this third (or any other) 
+assessment then referral to an obstetrician is required : 
+ 
+Maternal /birthing parent : 
+ 
+ Maternal /birthi ng parent exhaustion . 
+ Pyrexia over 38oC or above on a single reading or 37.5oC or above taken on two 
+consecutive readings 1 hour apart. 
+ Tachycardia over 120bpm on two occasions 30 minutes apart. 
+ A single reading of either raised diastolic blood pressure of 110 mmHg or more or 
+raised systolic blood pressure of 160 mmHg or more . 
+ Either raised diastolic blood pressure of 90 mmHg or more or raised systolic blood 
+pressure of 140 mmHg or more on 2 consecutive readings taken 30 minutes apart . 
+CG1106 Latent phase of labour guideline v2.0 A ugust 2022 Page 8 of 13 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ A reading of 2+ of protein on urinalysis and a single reading of either raised 
+diastolic blood pressure (90 mmHg or more) or raised systolic blood pressure 
+(140 mmHg or more) . 
+ Any vaginal loss other than a show. 
+ Rupture of membranes more than 24 hours before the onset of labou r. 
+ Pain reported by the woman /person that differs from the pain normally associated 
+with contractions . 
+ Dehydration, presence of ketones in urine. 
+ 
+Fetal: 
+ 
+ Any abnormal presentation, including cord presentation 
+ Transverse or oblique lie 
+ High (4/5 to 5/5 palpable) or free -floating head in a nulliparous woman 
+ Suspected fetal growth restriction or macrosomia 
+ Suspected anhydramnios or polyhydramnios 
+ Fetal heart rate below 110 or above 160 beats/minute 
+ A deceleration in fetal heart rate heard on intermittent ausc ultation 
+ Reduced fetal movements in the last 24 hours reported by the woman. 
+ The presence of significant meconium. 
+ Failure of descent of the presenting part or failure of cervical dilatation despite 
+regular uterine contractions. 
+ Maternal request for review . 
+ 
+If any of these arise, perform a cardiotocograph (CTG) to determine fetal wellbeing and 
+perform a full set of maternal observations and document accordingly. 
+ 
+The midwife is responsible for referring any woman /person for obstetric review where there is 
+a deviation from low risk care. 
+ 
+11.0 Fetal heart rate auscultation 
+ 
+Be aware that for women /people at low risk of complications there is insufficient evidence 
+about whether cardiotocograph (CTG) as part of the initial assessment either improves 
+outcomes or results in harm for women and their babies, compared with intermittent 
+auscultation alone (NICE, 2017). The fetal heart rate (FHR) should be assessed and 
+recorded at each face -face assessment. For low risk women /people , it is best practice to first 
+use a pinnards stethoscope to hear the FHR and then use a handheld Doppler for the benefit 
+of the parents. Maternal pulse should always be taken and recorded at each FHR 
+assessment. 
+ 
+For women /people who are admitted to the ward during latent phase of labour , especially 
+those who require analgesia, to regularly monitor fetal movements and FHR. For consistency 
+of care , it is advisable to do so every 4 hourly or sooner depending on clinical judgement. 
+CG1106 Latent phase of labour guideline v2.0 A ugust 2022 Page 9 of 13 
+Please check against Staffnet that this printout is the most recent version of this document. 
+Once active first stage of labour is suspected, a full re -assessment is recommended and if 
+confirmed, to follow active labour guidelines. 
+ 
+If a woman /person receives opiate analgesia, FHR auscultation is required 2 hourly for 4 
+hours post administration. 
+ 
+The frequency of fetal monitoring with intermittent auscul tation varies according to the labour 
+phase and yet the transitions from the latent to the active phase and from the active to the 
+second stage may occur unnoticed. There needs to be a careful balance between too 
+frequent, intrusive assessments of progress ive cervical dilatation and the risks associated 
+with inadequate fetal monitoring (RCOG, 2017) . 
+ 
+12.0 Considerations 
+ 
+ Recognise that a woman /people may experience painful contractions without 
+cervical change, and although they are described as not being in labour, they may 
+well think of themselves as being 'in labour' by their own definition. It is important 
+staff listen and respond sensitively to women /people and take seriously anything a 
+woman /person is concerned about. 
+ The midwife assessing the woman /person in latent stage of labour should consider 
+the risk of birthing without a midwife present if advising the woman /person to stay 
+at home or to return home following assessment. 
+
+13.0 Pain management during the latent phase 
+ 
+During the latent phase of labour , women /people should be encouraged to stay at home and 
+carry on with normal activities for as long as they can. Staying at home in their own 
+environment will encourage the production of oxytocin as well as endorphins and therefore 
+allow the natural labour process to progress. 
+ 
+The midwife should advise the woman /person and their birth partner that breathing exercises, 
+immersion in water and massage may reduce pain during the latent phase of labour. 
+ 
+Should the woman /person choose to use aromatherap y, yoga or acupressure for pain relief 
+during the latent phase of labour then their wishes should be respected. 
+ 
+ Whilst women are at home they should be encouraged to: 
+ 
+ Perform normal activities as much as possible . 
+ Go for a walk and be as mobile as pos sible when not resting . 
+ Use of water (warm shower/baths) . 
+ Distractions though listening to music, watching television/ DVD . 
+ TENS machine when they become uncomfortable . 
+CG1106 Latent phase of labour guideline v2.0 A ugust 2022 Page 10 of 13 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Self-medication of Paracetamol - Midwives must ensure women /people are aware 
+of dosa ge and frequency of administration and determine allergies. 
+ Focus on breathing techniques and relaxation . 
+ Utilise hypnobirthing techniques if attended course . 
+ Aromatherapy if advised by a qualified professional . 
+ Trying different positions and use of birth ing ball . 
+ Use of hot water bottle / heatpad . 
+ Try massage. Wo men/people with babies in the occipito -posterior position often 
+experience increased back pain; massage and back rubbing may help this. 
+ Trying to sleep/ rest/ nap . 
+ Keep well hydrated . 
+ Eat well at this stage, in order to maintain energy levels throughout labour . 
+ Monitor fetal movements . 
+ To be aware of signs of spontaneous rupture of membranes (SROM). 
+ 
+Women/people who stay in hospital during the latent phase may be offered further analgesia 
+if options above have been tried and are unsuccessful . 
+ 
+This may include: 
+ 
+ Paracetamol – check if woman /person has already self-medicate d at home. 
+ Codeine based tablets (check self -medication) . 
+ Opiates – as per T rust Medicines Management policy . 
+ Before use, staff should counsel women /people about the potential side -effects of 
+opioids, including maternal drowsiness, nausea and vomiting, and neonatal 
+respiratory depression, and about the alternative pain relief options available 
+(WHO, 2018). 
+ Oramorph can be of fered if all other options listed above have been exhausted and 
+the woman /person is requesting further analgesia. 
+ Oramorph 10 -20mg (depending on maternal BMI , repeated after 2 -4 hours if 
+needed, a maximum of 2 doses (40mg max) can be given (Patient Group Direction 
+or prescription). If after 2 doses the woman /person is still not in active labour and is 
+not coping with the pain , request a midwifery co -ordinator/obstetrician review 
+depending on circumstances and risk assessment. 
+ If the woman /person has had c odein e before moving on to Oramorph ( 60mg of 
+Codeine is equivalent to 6mg Oramorph ) – this needs to be taken account of and 
+documented accordingly. 
+ Intramuscular versus oral opiates should be considered based upon professional 
+judgement – consult an obste trician as required. Oramorph should be the option of 
+choice as much as possible. 
+ Women /people who have received opiates in the latent phase are able to use the 
+birthing p ool once in established labour , 2-4 hours post administration. 
+Professional judgment should be applied following risk assessment if less than 2 
+hours post administration of opiates . 
+CG1106 Latent phase of labour guideline v2.0 A ugust 2022 Page 11 of 13 
+Please check against Staffnet that this printout is the most recent version of this document. 
+ Suitability to retur n home following Oramorph should be assessed and 
+documented in the maternity care records. 
+ 
+Consider use of sedatives (Temazepam) if lack of sleep main factor for woman /person ’s 
+perception of not coping with early labour, in liaison with (and prescription from) an 
+obstetrician. 
+ 
+14.0 Patient Information 
+ 
+All women /people should be advised of the telephone triage contact number and the 
+symptoms that would require them to contact us immediately, such as: 
+ 
+ Reduced fetal movements 
+ Vaginal bleeding 
+ Spontaneous rupture of membranes 
+ Meconium liquor 
+ 
+CG1106 Latent phase of labour guideline v2.0 A ugust 2022 Page 12 of 13 
+Please check against Staffnet that this printout is the most recent version of this document. 
+References 
+ 
+Munro J. and Jokinen M. (2008) Latent Phase Midwifery Practice Guideline in RCM Evid ence 
+based guidelines for midwifery – led care in labour 4th edition. Available online at: 
+www.rcm.org.uk 
+ 
+McDonald G. (2010) Diagnosing the latent phase of labour: use of the partogram. British 
+Journal of Midwifery. V ol 18 (10). 
+ 
+National Institute for Health Care Excellence. NICE NG201 Antenatal Care 2021 
+ 
+National Institute for Health Care Excellence, Intrapartum care for healthy women and 
+babies. CG190 London Pu blished 2014 Updated Feb 2017. 
+ 
+World Health Organisation (WHO) (2018) WHO recommendation on opioid analgesia for pain 
+relief during labour. Accessed online https://extranet.who.int/rhl/topics/preconception -
+pregnancy -childbirth -and-postpartum -care/care -during -childbirth/care -during -labour -1st-
+stage/who -recommendation -opioid -analgesia -pain-relief -during -labour July 2019 
+
+CG1106 Latent phase of labour guideline v2.0 A ugust 2022 Page 13 of 13 
+Please check against Staffnet that this printout is the most recent version of this document. 
+After two doses (up to 40 mg) of 
+Oramorph /IM opiates 
+ Assess maternal and fetal wellbeing. 
+ Assess whether labour established. 
+ Request midwifery co -ordinator 
+/obstetrician review . 
+ Advise coping strategies and discuss 
+analgesia options. 
+ Plan of care by obstetrician if labour 
+not established and further do sages 
+required. Appendix 1 Care during the l atent phase of labour pathway 
+ 
+ Low risk wome n (37 -42 weeks) in latent phase of labour 
+ 
+Triage call assessment (s) 
+1st and 2nd call 
+Reassure, advise and assess 
+suitability to remain at home 
+until regu lar contractions 
+On 3rd call 
+Advise and arrange face -
+face assessment either at 
+home, Birth Centre (SRH) or 
+Labour Ward (WH) Face -face assessment (s) - outpatient attendance or inpatient 
+1st and 2nd face-face assessment 
+Assess maternal and fetal wellbeing 
+Determine suitability and maternal 
+preferences to return home. 
+Advise coping strategies . 
+At 3rd face-face assessment 
+ 
+ Assess maternal and fetal wellbeing . 
+ Request senior midwifery review (co-
+ordinator/ward manager) . 
+ Request obstetrician review if 
+presenting risk factors. 
+ Advise coping strategies and discuss 
+analgesia options . Subsequent reviews (if low risk) 
+ Assess maternal and fetal 
+wellbeing. 
+ Request senior midwifery review of 
+care plan . 
+ Request obstetrician review if 
+presenting risk factors. 
+ Advise coping str ategies and 
+discuss analgesia options . 
+ Discuss option to be admitted to 
+ward for monitoring and support.

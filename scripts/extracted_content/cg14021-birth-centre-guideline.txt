@@ -1,0 +1,365 @@
+# Extracted from: CG14021 Birth Centre guideline.pdf
+# Guideline ID: cg14021-birth-centre-guideline
+# Content length: 17009 characters
+# Processing date: 1750066900.3676794
+
+CG14021 Birth Centre Guideline V 4.0 J uly 2023 Page 1 of 10 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+Birth Centre Guideline 
+Summary statement: How does the document 
+support patient care? By providing guidance for maternity staff; both when 
+supporting women /people in choice of place of birth and 
+when to transfer to the Central Labour Suite from the Bir th 
+Centre . 
+Staff/stakeholders involved in development: 
+ Senior midwives, Obstetric Consultants and Joint Obstetric 
+Guidelines Group , Supervisors of Midwives 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Auth or: Community Matron 
+For use by: Midwifery and Obstetric medical staff 
+Purpose: To provide guidance for maternity staff when supporting 
+women in their place of birth and caring for women /people 
+on the Birth Centre . 
+This document supports: 
+ NICE (2007 / updated February 2017) 
+Key related documents: UH Sussex (SRH & WH) Maternity Guidelines: Antenatal 
+Care and Patient Information, Risk Assessment in Labour, 
+Homebirth , Care of Women in Labour 
+Approv ed by: Joint Obstetric Guideline Group 
+Approval date: 19th July 2023 Date Uploaded: 24th July 2023 
+Ratified by Board of Directors/ Committee of 
+the Board of Directors Not Applicable -Divisional Ratification only required 
+Ratification Date: Not Ap plicable -Divisional Ratification only required 
+Expiry Date: July 202 6 
+Review date: January 202 6 
+ 
+If you require this document in another format such as Braille, large print, 
+audio or another language please contact the Trusts Communications Team 
+ 
+Refer ence Number: CG14021 
+ 
+CG14021 Birth Centre Guideline V 4.0 J uly 2023 Page 2 of 10 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+Version Date Author Status Comment 
+1.0 October 2014 B. Corney Archive New T rust maternity guideline 
+2.0 August 2017 G. Addison Archived Triannual update 
+3.0 July 2020 S. Harris , G. Addison Archived 3 yearly review – 5.2 updated, 
+addition of appendix A 
+4.0 July 2023 K. Henton 
+Community Team 
+Leader LIVE 3 yearly review 
+
+CG14021 Birth Centre Guideline V 4.0 J uly 2023 Page 3 of 10 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+Contents 
+ 
+1.0 Aim ................................ ................................ ................................ ............................ 4 
+2.0 Scope ................................ ................................ ................................ ........................ 4 
+3.0 Responsibilities ................................ ................................ ................................ .......... 4 
+4.0 Abbreviations used in this guideline ................................ ................................ ........... 4 
+5.0 Introduction/Philosophy ................................ ................................ .............................. 4 
+6.0 Criteria for Admission ................................ ................................ ................................ . 5 
+6.1 Women/ people at low risk of complications ................................ ................................ 5 
+6.2 Women/people with significant risk factors ................................ ................................ . 5 
+7.0 Indications for transfer to Central Labour Suite ................................ .......................... 5 
+7.1 Obstetric and neonatal indicators ................................ ................................ ............... 5 
+7.2 Observations of the woman/person ................................ ................................ ............ 6 
+8.0 Process for immedi ate care and emergency transfer ................................ ................. 7 
+9.0 Postnatal Transfer ................................ ................................ ................................ ...... 7 
+10.0 Monitoring ................................ ................................ ................................ .................. 8 
+References ................................ ................................ ................................ ............................ 8 
+Appendix 1: Medical conditions and complications indic ating increased risk suggesting 
+planned birth at an obstetric unit ................................ ................................ ............................ 9 
+
+CG14021 Birth Centre Guideline V 4.0 J uly 2023 Page 4 of 10 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Birth Ce ntre Guideline 
+ 
+1.0 Aim 
+ 
+The aim of this guideline is to provide guidance for midwifery and obstet ric staff when 
+offering birth options to women /people with regard to using the Birth Centre. The guideline 
+also covers when transfer to the Central Labour Suite ( CLS - SRH ) / Delivery suite (WH) is 
+indicated . 
+
+2.0 Scope 
+ 
+ Midwives 
+ Obstetricians . 
+
+3.0 Responsibilities 
+ 
+Midwives and Obstetricians are expected: 
+ To access, read, understand and follow this guidance . 
+ To use their professional judgement in the application of th is guideline . 
+ 
+Management are expected: 
+ To ensure the guideline is reviewed as required in line with the Trust and National 
+recommendations . 
+ To ensure the guideline is accessible to all relevant staff . 
+ 
+4.0 Abbreviations used in this guideline 
+ 
+CLS - Central L abour Suite FHR - Fetal Heart Rate 
+SRH - St Richard’s Hospital APH - Antepartum Haemorrhage 
+WH - Worthing Hospital PPH - Post Partum Haemorrhage 
+NIPE - Newborn Infant Physical Examination 
+screen NNBS - National Newborn Bloodspot 
+Screening 
+MIS - Mater nity Information System 
+
+5.0 Introduction/Philosophy 
+ 
+Midwifery -led care is committed to the rights of women to have good information and be 
+involved in decisions about their care. It is important that guidelines are not prescriptive but 
+encouraged discussi on and information sharing by doing so with the women /people in our 
+care we can establish their needs help them to make informed choice and offer true 
+woman /person centred care. The challenge for midwives is to practice through listening to 
+the women /people in their care with patience and empathy. 
+
+CG14021 Birth Centre Guideline V 4.0 J uly 2023 Page 5 of 10 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+The aim of the Birth Centre is to provide a relaxed, friendly and safe environment in which 
+women /people experiencing low risk pregnancy can be facilitated to have the birth of their 
+choice as a normal and natura l process. 
+
+6.0 Criteria for Admission 
+ 
+6.1 Women /people at low risk of complications 
+ 
+The normal criteria for admission to the birth centre are the same as those used for 
+women/ people opting to have a home birth. These are lower risk women /people with the 
+following : 
+ 
+ 37 – 42 weeks 
+ Singleton 
+ Cephalic presentation . 
+
+6.2 Women /people with significant risk factors 
+ 
+We recognise the physiological importance of birth environment for women /people and also 
+their right to make an informed decision on place of birth based on their own ability and 
+autonomy to balance the risks against the benefits. Where a woman /person has risk factors 
+for birth, the alongside birth centre may still be an option for them provided they understand 
+the potential benefits, risks and alter natives. The w oman /person , midwife and/or obstetrician 
+can make a plan with agreed thresholds for transfer to the Central Labour Suite. Each 
+woman ’s/person’s individual choice to birth on the birth centre should be respected – the 
+criteria within this docu ment are for guidance only. Agreed plans of care must be 
+documented onto maternity information system (MIS) . It is the senior m idwives responsibility 
+to ensure all staff involved in the care , are advised of the plan. 
+ 
+Please see Appendix 1 for a list of medical conditions and complications recommended by 
+NICE ( CG190 ) as indicat ing increased risk suggesting planned birth at an obstetric unit . 
+Please be aware, t his list is not exhaustive - any concerns should be discussed with a senior 
+midwife or the on -call c onsultant obstetrician . 
+
+7.0 Indications for transfer to Central Labour Suite 
+ 
+The following are indications where transfer should be considered. Transfer shoul d take 
+place in discussion with the Co-ordinator and with the woman or person . 
+ 
+7.1 Obstetric and neonatal indicators 
+ 
+ Any risk fact ors recorded in the woman or person’s notes that indicate the need for 
+obstetric led care . 
+ Delay in the first or second stage of labour . 
+ Any vaginal blood loss other than a show . 
+ 
+CG14021 Birth Centre Guideline V 4.0 J uly 2023 Page 6 of 10 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+ Rupture of membranes more than 24 hours before the onset of established labour 
+ Pain reported by the woman or person that differs from the pain normally associated 
+with contractions . 
+ Maternal /birthin g parent request for epidural in labour . 
+ Fetal heart ra te below 110 or above 160 beats per minute . 
+ A deceleration in fetal heart rate he ard on intermittent auscultation . 
+ Need for continuous electronic fetal heart rate monitoring due to non -reassuring fetal 
+heart rate . 
+ Inability to locate or monitor fetal heart rate . 
+ Any meconium stained liquor (taking into consideration stage of labour and 
+imminence of birth). 
+ Retained placenta 
+ Third / fourth degree tear or other complicated perineal trauma . 
+ Any abnormal pr esentation, including cord presentation . 
+ Suspected anhydramnios or polyhydramnios . 
+ Requests from the woman/ person for cardiotocography (after risks, benefits and 
+limitations have been discussed). 
+ Obstetric emergency 
+ Suspected chorioamnionitis 
+ Need for con tinuous electronic fetal heart rate monitoring due to hyperstimulation 
+(more than 4:10). 
+
+7.2 Observations of the woman /person 
+ 
+ Pulse over 120 beats/minute on 2 occasions 30 minutes apart . 
+ A single reading of either raised diastolic blood pressure of 11 0 mmHg or more or 
+raised systolic blood pressure of 160 mmHg or more . 
+ Either raised diastolic blood pressure of 90 mmHg or more or raised systolic blood 
+pressure of 140 mmHg or more on 2 consecutive readings taken 30 minutes apart . 
+ A reading of 2+ of prote in on urinalysis and a single reading of either raised diastolic 
+blood pressure (90 mmHg or more) or raised systolic blood pressure (140 mmHg or 
+more) . 
+ Temperature of 38°C or above on a single reading, or 37.5°C or above on 2 
+consecutive readings 1 hour ap art. 
+ Maternal/birthing parent pyrexia (38oC once or 37.5oC on 2 occasions) . 
+ Either r aised diastolic (> 90mm Hg ) or raised systolic (> 140mm Hg ) on two 
+consecutive readings taken 30 minutes apart . 
+ Post-birth the woman /person has been unable to void urine in the 6 hours prior and 
+their bladder is palpable . 
+ 
+If any of the factors above are observed but birth is imminent, assess whether birth in the 
+current location is preferable to transferring the woman /person to an obstetric unit and 
+discuss this with the co ordinating midwife and woman /person . 
+ 
+Communication between CLS co-ordinator and birth centre staff will take place before shift 
+handovers and as needed during shifts and prior to any transfers. 
+ 
+CG14021 Birth Centre Guideline V 4.0 J uly 2023 Page 7 of 10 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+8.0 Process for immediate care and emergency transfer 
+ 
+The mid wife will provide immediate emergency care where required prior to transfer and 
+make immediate assessment regarding the need for any emergency calls and safe time to 
+transfer to the CLS if needed. In the event of an obstetric / medical / neonatal emergency the 
+emergency bell must be pulled , which will alert and summon CLS staff. This must be 
+followed by dialling ‘2222’ and requesting the appropriate emergency team. 
+ 
+This will include the following clinical situations: 
+ 
+ Cord presentation / prolapse 
+ Fetal dis tress / bradycardia 
+ Maternal collapse or seizure 
+ APH / PPH 
+ Shoulder Dystocia 
+ Advanced n eonatal resuscitation 
+ Cardiac arrest . 
+
+9.0 Postnatal Transfer 
+ 
+If low risk following birth, the woman /person can choose to go home from the Birth C entre or 
+transfer to the postnatal ward . 
+ 
+It is important to remember communication of discharge and plan for visit, newborn infant 
+physical examination screen (NIPE) and checking if Anti -D required if rhesus negative. 
+ 
+Complete checks, paperwork (including NBBS stickers ) and d ischarge on MIS and PAS . 
+ 
+A baby temperature should be taken prior to discharge and documented on MIS. 
+ 
+Ensure community team aware of discharge and that discharge address and telephone 
+number is checked. 
+ 
+Ensure the patient has the telephone numbers of the maternity unit and their community 
+team before discharge. 
+
+CG14021 Birth Centre Guideline V 4.0 J uly 2023 Page 8 of 10 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+
+10.0 Monitoring 
+ 
+Auditable standards can be found in the NICE intrapartum care Quality Standards 
+(QS105) . 
+
+References 
+ 
+National Institut e for Health and C linical Excellence (NICE) (2007) Intrapartum Care: Care of 
+healthy women and their babies during childbirth (Updated February 2017) . 
+ 
+National Collaborating Centre for Woman’s and Ch ildren’s Health. RCOG Press: London 
+National Institute for Clinical Excellence 
+
+CG14021 Birth Centre Guideline V 4.0 J uly 2023 Page 9 of 10 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+Appendix 1: Medical conditions and complications indicating increased risk 
+suggesting planned birth at an obstetric unit (NICE CG190) 
+ 
+Medical conditions : 
+ 
+ BMI <18 or > 35 
+ Diabetes 
+ Epilepsy 
+ Hypertension 
+ Haematological conditions 
+ Previous cerebrovascular injuries 
+ Anaemia - Hb less than 90 g/l 
+ Asthma - requiring an increase in medication during pregnancy 
+ Cystic Fibrosis 
+ Cardiac disease – requiring antibiotics in labour 
+ History of thrombosis / clotting disorders 
+ Hepatitis B / C with abnormal liver function tests 
+ Hyperthyroidism 
+ HIV 
+ Active tuberculosis 
+ Current active Chicken pox, Rubella, Genital herpes 
+ Toxoplasmosis - requiring treatment 
+ Systemic lupus erythematosus 
+ Scleroderm a 
+ Renal issues – abnormal renal function, disease requiring specialist supervision 
+ Myasthenia gravis (neuromuscular disorder) 
+ Liver disease with current abnormal liver function tests 
+ Atypical antibodies which carry a risk of haemolytic disease of the newbo rn 
+ Psychiatric disorder requiring current inpatient care or where indicated by Consultant 
+psychiatrist or Consultant obstetrician 
+ 
+Current Pregnancy Complications : 
+ 
+ Multiple birth 
+ Grand multiparity 
+ Maternal age of 35 years or older 
+ Placenta praevia 
+ Pre-eclampsia or pregnancy induced hypertension 
+ Preterm labour or preterm rupture of membranes 
+ Placental abruption 
+ Confirmed intrauterine death 
+ Alcohol and substance misuse 
+ Gestational diabetes 
+ Malpresentation / any abnormal presentation, including cord present ation 
+ Transverse or oblique lie 
+ High (4/5 –5/5 palpable) or free floating head in a nulliparous woman 
+ 
+CG14021 Birth Centre Guideline V 4.0 J uly 2023 Page 10 of 10 
+Please check on the intranet that this printout is the most recent version of this document before use. 
+ 
+ Recurrent antepartum haemorrhage 
+ Haemolytic Strep B positive – individual assessment on staffing levels and availability 
+of staff competent to administer I V antibiotics aiming to avoid unnecessary transfers 
+ Induction of labour 
+ 
+Previous Obstetric Complications : 
+ 
+ Unexplained still birth / intrauterine death or previous death related to intrapartum 
+difficulty 
+ Previous baby with neonatal encephalopathy 
+ Placent al abruption with adverse outcome 
+ Eclampsia 
+ Uterine rupture 
+ Primary postpartum haemorrhage (requiring additional treatment or blood transfusion) 
+ Caesarean section 
+ Confirmed shoulder dystocia 
+ Pre-eclampsia requiring preterm birth 
+ Retained placenta requiring manual removal in theatre 
+ 
+Fetal Complications : 
+ 
+ Suspected fetal growth restriction or macrosomia 
+ Antenatal abnormal fetal heart rate (FHR) or Doppler studies 
+ Ultrasound diagnosis of anhydramnios, oligohydramnios or polyhydramnios 
+ Reduced fetal movements in the last 24 hours reported by the woman or person 
+ Any meconium 
+ Identified major anomalies confirmed by ultrasound/screening 
+ 
+Previous gynaecological history : 
+ 
+ Myomectomy 
+ Hysterotomy 
+ Existing uterine abnormalities

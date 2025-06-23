@@ -1,0 +1,1434 @@
+# Extracted from: MP005 Perinatal Care for Transgender  Non-Binary People.pdf
+# Guideline ID: mp005-perinatal-care-for-transgender-non-binary-people
+# Content length: 82350 characters
+# Processing date: 1750066901.104264
+
+Perinatal Care for 
+Trans and Non -Binary 
+People 
+
+Maternity Protocol: MP005 
+ 
+Date agreed: 17th December 2020 
+ 
+Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 2 of 42 
+ Authors: 
+
+External Reviewers: 
+
+ Helen Green Gender Inclusion Midwife 
+Ash Riddington Gender Inclusion Midwife 
+ 
+Dr Jonny Coxon General Practitioner, Clinical Assistant in 
+ Endocrinology at Gender Identity Clinic 
+Rachel Epstein LGBTQ+ Parenting Activist, Researcher 
+Dr Samuel Hall GP Partner 
+Gray Hutchins The Clare Project 
+Ronald Lloyd -Baxter Non-binary Birthing Parent 
+Scott Lloyd -Baxter Trans Masculine Birthing Parent 
+A.J. Lowik Researcher 
+Freddy McConnell Trans Birthing Dad and Advocate 
+Dr Jay McNeil Clinical Psychologist, Researcher and 
+ trans person 
+Juno Obedin -Maliver, Obstetrician/Gynaecologist, Researcher, 
+MD, MPH, MAS Parent 
+Dr Ruth Pearce Researcher, Trans Learning Partnership 
+ and University of Leeds 
+Maeve Regan Midwife, Researcher 
+Kim Roberts Full Spectrum Queer Doula 
+A.J. Silver Doula, Non -binary Birthing Parent, 
+ Author, Educator 
+Jacob Stokoe Trans Masculine Birthing Parent 
+Yuval Topper -Erez Trans Birthing Parent 
+Harri Weeks Stakeholder Engagement Manager for 
+ National LGB&T Partnership 
+
+Key Internal Reviews: 
+
+Dr Neil Aiton Consultant Neonatologist 
+Dr Heather Brown Consultant Obstetrician 
+Nick Groves Convenor of BSUH LGBTQ+ Network and 
+ Associate Director, Workforce Strategy & 
+ Transformation 
+Barbara Harris Head of Inclusion 
+Neil Hopkins Interim Project Manager, Stonewall WEI 
+Dr Kate Nambiar Speciality Doctor in Sexual & 
+Reproductive Health -Clinic T, Speciality Doctor in Gender 
+ Identity Medicine 
+
+ Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 3 of 42 
+
+Version: 
+
+1 
+Approval Committee: Women’s Services Safety and Quality Committee 
+Date agreed: December 2020 
+Review date: December 2023 
+Cross reference: BSUH Gender Inclusive Language in Perinatal Care: Mission 
+Statement and Guide 
+BSUH ED&I Guideline for Supporting Trans Patients and Staff 
+BSUH MP001 Provision and Schedule of Antenatal Care 
+BSUH MP040 Bladder Care 
+BSUH MP071 Provisions and Schedules of Postnatal Care 
+BSUH MP072 Newborn Feeding 
+BSUH MP073 Pregnancy Loss 
+BSUH C038 Chaperone Policy for Patients Undergoing 
+Intimate Examinations and Treatment 
+NICE CG190 Intrapartum Care for Healthy Women and Babies 
+NICE CG110 Pregnancy and Complex Social Factors Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 4 of 42 
+ Key Principles 
+A protocol is a set of measurable, objective standards to determine a course of action. 
+Professional judgement may be used in the application of a protocol. 
+ 
+Scope 
+This protocol applies to: 
+• All childbearing people who self-identify as transgender (trans), non -binary, or any 
+other non -cisgender (non -cis) identity 
+• All other protocols that refer to “women” and “mothers” receiving care, can also be 
+considered to apply to all childbearing people, regardless of gender identity or 
+intersex status 
+ 
+Responsibilities 
+Midwives & Obstetricians: 
+• To access, read, understand and follow this guidance 
+• To use their professional judgement in application of this protocol 
+• This guidance is for midwives and doctors working in and with Brighton & Sussex 
+University Hospitals Trust Maternity Services. The guidance is not rigid and should be 
+tailored to the individual circumstances of each person. If the guidance is not being 
+followed, documentation of the reasoning and/or justification is essential, with clear 
+documentation of alternative plans and discussions. 
+ 
+Management Team: 
+• To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations 
+• To ensure the protocol is accessible to all relevant staff 
+• To ensure the protocol is available to service users on request. 
+ Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 5 of 42 
+ Contents 
+Perinatal Care for Trans and Non -Binary People ................................ ................................ ..... 1 
+Key Principles ................................ ................................ ................................ ........................ 4 
+Scope ................................ ................................ ................................ ................................ ... 4 
+Responsibilities ................................ ................................ ................................ ..................... 4 
+1 General Approach ................................ ................................ ................................ ....... 7 
+1.1 Validity and Rights ................................ ................................ ................................ ...... 7 
+1.2 Language ................................ ................................ ................................ ..................... 8 
+1.3 Environment ................................ ................................ ................................ ................ 8 
+1.4 Communication ................................ ................................ ................................ ........... 9 
+1.6 Documentation ................................ ................................ ................................ .......... 11 
+1.7 In-patient Care ................................ ................................ ................................ ........... 12 
+2 Pre-conception Care ................................ ................................ ................................ .. 13 
+3 Antenatal Care ................................ ................................ ................................ .......... 13 
+3.1 Booking & Referrals ................................ ................................ ................................ . 13 
+3.2 Community Midwifery Care ................................ ................................ ..................... 15 
+3.3 Gender Inclusion Midwife ................................ ................................ ........................ 15 
+3.4 Obstetric Considerations ................................ ................................ ........................... 16 
+3.5 Physical Changes ................................ ................................ ................................ ....... 16 
+3.6 Emotional Health ................................ ................................ ................................ ....... 17 
+4 Intrapartum Care ................................ ................................ ................................ ...... 18 
+4.1 General Approach ................................ ................................ ................................ ..... 18 
+4.2 Communication ................................ ................................ ................................ ......... 18 
+4.3 Clinical Care ................................ ................................ ................................ .............. 18 
+4.4 Catheters ................................ ................................ ................................ .................... 19 
+5 Postnatal Care ................................ ................................ ................................ ........... 20 
+5.1 Privacy ................................ ................................ ................................ ....................... 20 
+5.2 Clinical Care ................................ ................................ ................................ .............. 20 
+5.3 Communication ................................ ................................ ................................ ......... 21 
+5.4 Emotional Health ................................ ................................ ................................ ....... 21 
+5.5 Infant Feeding ................................ ................................ ................................ ........... 21 
+5.6 Resumption of Testosterone ................................ ................................ ...................... 22 
+5.7 Birth Registration ................................ ................................ ................................ ...... 23 
+5.8 Contraception and Screening ................................ ................................ .................... 23 
+6 Audit and Service Development ................................ ................................ ................. 24 Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 6 of 42 
+ 7 Appendices ................................ ................................ ................................ ............... 26 
+Appendix 1 – Gender Inclusion Team Contact Details ................................ ........................... 26 
+Appendix 2 – Definitions ................................ ................................ ................................ ...... 27 
+Appendix 3 – Trans and Non -Binary Antenatal Care Pathway ................................ ............... 33 
+Appendix 4 – Trans and Non -Binary Postnatal Care Pathway ................................ ................ 34 
+Appendix 5 – Pronoun Stickers ................................ ................................ ............................ 35 
+Appendix 6 – Referral to Gender Inclusion Midwives ................................ ........................... 36 
+Appendix 7 – My Language Preferences ................................ ................................ ............... 37 
+Appendix 8 – Prescribed Medication Referral Form ................................ .............................. 38 
+Appendix 9 – Resources ................................ ................................ ................................ ....... 39 
+8 References ................................ ................................ ................................ ................ 40 
+
+ Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 7 of 42 
+ 1 General Approach 
+1.1 Validity and Rights 
+1.1.1 Transgender (trans) and non -binary people may face personal, social, 
+economic, institutional and structural barriers to accessing 
+appropriate and affirmative care.1 They are likely to have had 
+negative experiences in healthcare settings previously, and may worry 
+that healthcare professionals will not understand their specific 
+identity, needs and concerns.2 
+1.1.2 Gender reassignment is a protected characteristic under the Equality 
+Act 2010.3 This applies whether the person has proposed, is currently 
+undergoing, or has completed any part of their transition process. 
+Medical assistance is not a necessary component of the transition 
+process for this protection in law to apply.3 
+1.1.3 Maternity services have typically been designed as a cisgender (cis) 
+women -only service, which may not serve the needs of trans and non -
+binary individuals. When providing perinatal care to trans or non -
+binary people, the Trust and its employees should treat service users 
+according to their self -identified gender, not the sex they were 
+assigned at birth.4 
+1.1.4 Pregnant people and new parents are entitled to safe and respectful 
+perinatal care regardless of gender identity, or history of medical 
+and/or social transition. Respectful care recognises and affirms the 
+gender identity of the pregnant person, and normalises the 
+experience of carrying a pregnancy whilst trans or non -binary. 
+Professionals should recognise that the desire to conceive, birth and 
+feed a baby can be shared by people of any gender identity. 5 
+1.1.5 It is unlawful to discriminate against, harass, or victimise a pregnant 
+person due to their gender reassignment. This includes, but is not 
+limited to, refusal to provide care to a trans or non -binary person; 
+ongoing usage of wrong pronouns despite feedback; or treating 
+someone badly because they have made a complaint regarding their 
+treatment as a trans person. Negative treatment does not have to be 
+intentional to be unlawful.4 (BSUH ED&I Guideline) 
+1.1.6 Some staff may voice objections towards treating trans or non -binary 
+service users on the grounds of their religion or beliefs – this would be 
+classed as discrimination. Managers must be prepared to deal with 
+this in the same manner as for any other similar objection (for 
+example on the grounds of sexual orientation), in line with the 
+Equality, Diversity and Inclusion Policy. Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 8 of 42 
+ 1.1.7 It is unlawful to disclose a patient’s gender history without consent, 
+and professionals should not disclose a patient’s gender history unless 
+it is directly relevant to the condition or its likely treatment. 6 This 
+guidance applies to general medical care that is unrelated to 
+reproductive organs. However, in the context of providing perinatal 
+care, the presence of reproductive organs is a pre -requisite to 
+accessing these services. Respecting a person’s identity and using 
+correct pronouns and terminology is not a breach of this guidance. 
+1.1.8 Remember that the presence of a trans or non -binary person in your 
+ward or department is not a training opportunity for other staff. Many 
+trans and non -binary people have had hospital staff call in others to 
+observe their bodies and the interactions between a patient and 
+healthcare provider, often out of an impulse to train junior staff, 
+however this may not be conducive to a positive experience of health 
+care for the person. (BSUH ED&I Guideline) 
+ 
+1.2 Language 
+1.2.1 The language used to refer to our service users, their bodies, and how 
+they use their bodies, can impact on individuals’ emotional wellbeing 
+and ability to access healthcare. ‘BSUH Gender Inclusive Language in 
+Perinatal Care: Mission Statement and Guide’, provides detailed 
+rationale and support for gender -inclusive language. 
+ 
+1.3 Environment 
+1.3.1 All care environments should be welcoming to service -users 
+regardless of gender identity. Signs should use gender -neutral or 
+gender -inclusive language. Posters and photo displays should 
+recognise the diversity of our client base, including a variety of gender 
+identities and expressions. 
+1.3.2 Toilets and changing facilities can be labelled according to who can 
+access them, but this should not be in terms of sex or gender. For 
+example, toilets in the Postnatal Ward should be labelled as “Birthing 
+Women & People Only”, rather than “Women Only”. Sanitary bins 
+should be provided in all toilets. 
+ Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 9 of 42 
+ 1.4 Communication 
+1.4.1 The ability to use appropriate language is an important skill that 
+professionals should develop, particularly in perinatal care settings 
+where feminine pronouns and descriptors are the norm.5 
+1.4.2 Every client should be asked which pronouns they use as part of 
+routine enquiry.7 For example, when confirming demographic data 
+such as name, professionals can ask: 
+• “Do you prefer to be known by a particular name? And 
+what pronouns would you like me to use for you?” 
+• “What pronouns do you use?” 
+• “How would you like me to refer to you?” 
+• “How would you like to be addressed?” 
+• “Can you remind me which pronouns you like for 
+yourself?” 
+• “My name is Sam and my pronouns are she/her. What 
+about you?” 
+1.4.3 Professionals should always refer to people using the pronouns and 
+language of their choice. For some people, their pronouns may 
+change over time, so professionals should be led by the way in which 
+an individual refers to themselves. Misgendering someone (e.g. using 
+“she” instead of “he”, using the wrong name, or referring to someone 
+as “mother” when they do not identify that way) may inadvertently 
+cause harm to trans and non -binary people, and intensify gender 
+dysphoria.5 
+1.4.4 If you misgender someone, briefly apologise, correct yourself, and 
+move on with the conversation.8 Do not continue to draw attention to 
+the error as it will continue to make you -and the person you are 
+addressing -feel awkward. 
+1.4.5 If you hear another member of staff misgender a service user, correct 
+them. If their behaviour is persistent or deliberate, escalate to a 
+manager. Evidence suggests that allies from less marginalised groups 
+can confront and address others’ discriminatory behaviour more 
+effectively than members of targeted groups alone.9 
+
+ Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 10 of 42 
+ 1.4.6 Pronouns are essential information during handover of care, to allow 
+respectful communication from all members of staff. This also applies 
+to names, if someone uses a different name than is currently on their 
+NHS record. 
+1.4.7 Parents will make their own choices about how they wish to refer to 
+themselves. Staff should not use terms such as “mother” or “mum” as 
+default for trans and non -binary parents, unless this is their expressed 
+preference, in order to avoid causing harm and intensifying gender 
+dysphoria.5 
+1.4.8 Some individuals may have preferred terminology for their own 
+anatomy, or for activities that they use their body for. These should 
+be respected and used wherever possible. Professionals should refer 
+to the “My Language Preferences” insert, where these preferences 
+can be recorded ( see Appendix 7 ). For example, some people may 
+refer to their “chest” and “chestfeeding” rather than their “breasts” 
+and “breastfeeding”. Some people may talk about their “front hole” 
+or “genital opening” rather than “vagina”. 
+1.4.9 When asking sensitive questions, for example regarding hormone 
+therapy or surgical history, professionals should explain why this 
+information is relevant, and ensure enquiries are clinically meaningful 
+rather than motivated by curiosity.10 
+1.4.10 When talking about groups of people, or referencing statistics, use 
+gender inclusive or neutral language. For example, if discussing 
+vaginal birth after Caesarean, say, “The success rate for women and 
+people planning VBAC is 72 -75%”, rather than, “The success rate for 
+women planning VBAC is 72 -75%”. 
+1.4.11 When talking to groups of people, such as during Parentcraft Classes, 
+always use gender inclusive language. For example say, “Pregnant 
+women and people can choose to birth at hospital or at home”, rather 
+than, “Pregnant women can choose to birth at hospital or at home”. 
+Using gender inclusive language is important, regardless of whether 
+trans or non -binary people are known to be in the space. In this way, 
+we validate and normalise the diverse gender identities of all those 
+who give birth. 
+1.4.12 There is considerable variation in the experiences of trans and non -
+binary birthing parents. 5 Professionals should be led by the pregnant 
+person on how they view the narrative of their pregnancy and 
+birthing journey. 
+ Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 11 of 42 
+ 1.6 Documentation 
+1.6.1 Some individuals may not have updated their health records to reflect 
+their preferred name, gender identity or title. If the individual has not 
+updated their name on SPINE, the preferred name should still be used 
+in verbal and written communication, in addition to their NHS 
+number, to ensure that the correct medical record is tracked. An 
+exception may apply to laboratory samples, where all patient details 
+must match information recorded on ICE. 
+1.6.2 Individuals can be advised they have the right to change their name, 
+title and sex/gender marker on all health care records. This can be 
+arranged through their GP surgery, and does not require any legal 
+recognition or process.6 
+1.6.3 Pronouns may be documented on custom -made stickers ( Appendix 5: 
+Pronoun Stickers ). Pronoun stickers should be available at all sites 
+where antenatal, intrapartum or postnatal care is given. The use of 
+these stickers is specific to the context of perinatal care where 
+gendered language (woman, mother, she etc.) is often used as the 
+default. They should be offered to clients who are trans or non -binary, 
+whatever pronouns they use. For example, you could say, “You will 
+meet a variety of professionals on your pregnancy journey. We offer 
+pronoun stickers that you can put on your notes, to communicate 
+your pronouns to staff —is that something you would be interested 
+in?” 
+1.6.4 Stickers should only be applied to patient notes with informed 
+consent. They can be applied to the front or inside of the Pregnancy 
+Care, Labour and Birth Care, and Postnatal Care Records. The 
+intended benefits of using pronoun stickers are to reduce the burden 
+on service users to disclose their pronouns to each new professional 
+they encounter. These stickers may not be appropriate for individuals 
+who prefer to disclose their gender identity and pronouns to only a 
+select few professionals. These stickers will be most beneficial if they 
+are just used for trans and non -binary people, and may go unnoticed 
+if used for everyone. 
+1.6.5 Preferred terms for anatomy or activities can be recorded on a 
+custom made insert ( Appendix 7: My Language Preference ) which can 
+be attached to the Antenatal Care Record. On admission in labour, 
+this should be photocopied and copies placed in the Labour and Birth 
+Care Record and Postnatal Record. 
+1.6.6 It is not yet known how the Trust’s various IT systems will handle 
+coding perinatal care for sex/gender markers other than female. 
+Problems encountered with IT systems should be referred to the 
+Digital Lead Midwife and Gender Inclusion Midwives CC’d in 
+(bsuh.genderinclusionmidwives@nhs.net ). Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 12 of 42 
+ 1.7 In-patient Care 
+1.7.1 Care should be taken to meet service users’ needs for privacy and 
+dignity whilst receiving care in hospital.11 This includes taking into 
+consideration who may overhear conversations about medical history, 
+or discussions of emotional wellbeing, which may include references 
+to gender dysphoria or previous gender -related treatments. 
+1.7.2 On shared wards that are typically used for cis women, trans and non -
+binary individuals should be offered the choice between a side room, 
+or shared accommodation on the ward. Examples include the 
+Antenatal Ward and the Postnatal Ward. When a trans or non -binary 
+service user’s preference is for a side room, but one is not currently 
+available, alternative accommodation should be sought. For example, 
+a parent who has just recently given birth may remain on Labour 
+Ward/Central Delivery Suite until a side room o n Postnatal Ward is 
+available. 
+ Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 13 of 42 
+ 2 Pre-conception Care 
+2.1 Trans and non -binary individuals may wish to access the patient information 
+leaflet “Support for trans and non -binary people during pregnancy, birth and 
+afterwards”. This can be accessed via the BSUH Maternity website . 
+2.2 Trans and non -binary individuals may seek clinical advice before starting a 
+family, especially if they are using hormone therapy. Testosterone is a 
+teratogen, and often suppresses ovulation, but is not an effective form of 
+contraception. Therefore, all individuals taking testosterone should be advised 
+to discontinue use prior to conception.10 
+2.3 Conception and successful pregnancy can occur even after long -term 
+testosterone usage.10 Stopping testosterone therapy can result in the return of 
+menstruation and fertility.12 The potential need for assisted reproductive 
+technologies will depend on the resumption of a normal menstrual cycle, the 
+reproductive capacity of the co -parent, parental preferences and medical 
+advice. 
+2.4 Lower surgeries (gender affirming genital surgery - such as metoidioplasty, 
+scrotoplasty or phalloplasty; without hysterectomy or vaginectomy) do not, by 
+themselves, impair future reproductive options in terms of conception, but 
+would likely necessitate a caesarean birth10. 
+3 Antenatal Care 
+3.1 Booking & Referrals 
+3.1.1 At the first booking appointment, the community midwife should ask 
+all service users about the name they prefer to go by, and ask for the 
+client’s pronouns. Since gender identity and expression exist on a 
+wide spectrum, assumptions about gender and pronouns should not 
+be made based on the individual’s appearance or behaviour5. 
+Pronoun stickers should be offered to anyone who is trans or non -
+binary, whichever pronouns they use (see 1.5.3). 
+3.1.2 Trans and non -binary individuals should be offered the patient 
+information leaflet “Support for trans and non -binary people during 
+pregnancy, birth and the postnatal period”, available on the BSUH 
+Maternity website. Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 14 of 42 
+ 3.1.3 As part of medical history taking and risk assessment, it is acceptable 
+to ask trans and non -binary clients if they have previously used 
+hormone therapy, and if they have undergone any surgeries as part of 
+their transition. These questions are relevant because they facilitate 
+accurate information provision regarding mode of birth and infant 
+feeding options. Many individuals may appreciate an explanation of 
+why a thorough medical history is necessary, to allay potential 
+concerns that questions are motivated by professional curiosity rather 
+than clinical need. 
+3.1.4 The current clinical consensus is that individuals who conceived whilst 
+taking testosterone should be advised to stop taking it, if they plan to 
+continue with the pregnancy. Testosterone is considered a teratogen, 
+with potential implications for reproductive development of the 
+fetus.10 If a pregnant person reports taking testosterone at any point 
+during pregnancy please refer immediately to the Gender Inclusion 
+Midwives who will co -ordinate advice and support. Referral to the 
+Gender Inclusion Team’s named Consultant Neonatologist ( see 
+Appendix 1 ) Prescribed Medicines Clinic is recommended in order to 
+discuss potential implications and liaise with obstetric services for 
+additional surveillance if required (See Appendix 8- Prescribed 
+Medication Referral Form ) 
+3.1.5 Previous testosterone usage, that was discontinued prior to 
+conception, does not require referral to obstetric or neonatal care. 
+3.1.6 People who have had genital surgeries should be offered referral to 
+the Gender Inclusion Team’s named Consultant Obstetrician (see 
+Appendix 1 ), to discuss options for mode of birth, and to formulate a 
+birth plan. 
+3.1.7 General referrals for obstetric input (e.g. medical conditions, previous 
+obstetric history etc.) should also be directed to the Gender Inclusion 
+Team’s named Consultant Obstetrician ( see Appendix 1 ). 
+3.1.8 Some trans and non -binary birth parents may express a wish to birth 
+via Caesarean section, due to concerns that physiological birth may 
+trigger gender dysphoria. Referrals should be made to the Gender 
+Inclusion Team’s named Consultant Obstetrician ( see Appendix 1 ), 
+either by the community midwife, or the Gender Inclusion midwife. 
+ Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 15 of 42 
+ 3.2 Community Midwifery Care 
+3.2.1 Ongoing antenatal care may be offered as standard in the individual’s 
+Children Centre or GP surgery. Some people may prefer to book 
+appointment slots at the beginning or end of the day, when the 
+waiting room is quieter. Alternatively, the community midwife can 
+provide antenatal appointments at home, or another location, for 
+those preferring greater privacy. 
+3.3 Gender Inclusion Midwife 
+3.3.1 If the pregnant person, or their partner, discloses trans or non -binary 
+identity, they should be offered referral to the Gender Inclusion 
+Midwives (see Appendix 6 – Referral to Gender Inclusion Midwife ). 
+3.3.2 The Gender Inclusion Midwife may provide ongoing non -clinical 
+support, depending on the individual’s needs, including: 
+• Support via telephone/email/text throughout pregnancy and 
+postnatal period 
+• Support visits at home throughout pregnancy and postnatal 
+period 
+• Telephoning ahead of other appointments, such as scans, to 
+notify reception and clinical staff, and ensure an awareness 
+of pronouns 
+• Attendance and advocacy at appointments, including 
+Antenatal Clinic and ultrasound scans 
+• Liaison with other professionals including Health Visitors to 
+ensure information is shared according to the family’s wishes 
+• 1:1 birth and infant feeding preparation at home (personal 
+antenatal class) 
+• Assistance in producing a personalised birth plan 
+• Assistance filling out My Language Preferences sheet 
+• Producing a personalised infant feeding plan, with potential 
+input from the Gender Inclusion Team’s named Specialist 
+Infant Feeding Midwife (see Appendix 1 ). 
+• Tour of hospital facilities Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 16 of 42 
+ 3.3.3 If a pregnant trans or non -binary person does not want additional 
+support from the Gender Inclusion Midwives, they should be 
+supported in this decision. Professionals should let them know they 
+can change their mind, and a referral can be made at any point whilst 
+they are accessing midwifery services. If a referral is declined, please 
+still complete the referral form and forward to the Gender Inclusion 
+Midwives stating they do not wish to access support, for audit 
+purposes (see -Audit and Service Development ). 
+ 
+3.4 Obstetric Considerations 
+3.4.1 Some trans and non -binary people may request elective Caesarean 
+due to potential gender dysphoria surrounding physiological birth. 
+Gender dysphoria is a valid reason for elective Caesarean, and 
+individuals should be supported in this choice, alongside other 
+supportive measures such as tour of the hospital facilities and theatre. 
+3.4.2 People who have had lower surgery (gender affirming genital surgery 
+such as metoidioplasty, scrotoplasty or phalloplasty; without 
+hysterectomy or vaginectomy) will be offered referral to Antenatal 
+Clinic, to discuss mode of birth and any additional considerations. 
+Depending on the individual’s surgical history, Caesarean birth may be 
+recommended10, although this decision should be made on a case -
+by-case basis. Since there is a wide range of surgical techniques, 
+discussion with the person’s surgeon may be beneficial. 
+3.4.3 People who conceived while taking testosterone should be offered 
+referral to the Gender Inclusion Team’s named Consultant 
+Neonatologist’s ( see Appendix 1 ) Prescribed Medicines Clinic, where 
+potential implications for fetal development will be discussed. This 
+clinic may then refer on to Antenatal Clinic if additional surveillance is 
+required. 
+3.4.4 The role of previous testosterone treatment, discontinued prior to 
+conception, in relation to obstetric complications is not known, so 
+management should be according to current obstetric best practice, 
+not according to testosterone usage or gender identity. 13 
+ 
+3.5 Physical Changes 
+3.5.1 Parents may have questions about how their body will change during 
+pregnancy, with respect to their previous medical treatments, and 
+professionals should endeavour to answer these questions as far as 
+their knowledge allows. The Gender Inclusion midwife can discuss in 
+more detail: 
+ Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 17 of 42 
+ • Medical literature reports that many changes induced by 
+testosterone are permanent12,14 
+• However, some people report partial reversal of some of 
+these changes on cessation of testosterone, and also during 
+pregnancy 
+• Reversible changes are most likely to include muscle and fat 
+redistribution, and may include reduced facial hair and a 
+higher -pitched voice 
+• Some people who have had top surgery report increase in 
+chest size during pregnancy, with varying degrees, while 
+other parents report no change in chest size at all5 
+3.6 Emotional Health 
+3.6.1 Identifying as trans or non -binary is not classified as a mental illness, 
+but some individuals will have experienced gender dysphoria. Gender 
+dysphoria may be exacerbated, remain the same or be improved 
+during pregnancy, depending on the individual. 
+3.6.2 Gender dysphoria during pregnancy may be separated into two 
+sources, which health care providers should understand.5 Dysphoria 
+can be rooted in an individual’s feelings about their body, and the 
+physical changes that are associated with pregnancy. Dysphoria may 
+also be triggered by social interactions, both with individual 
+practitioners, and through engaging with a gendered system.10 
+3.6.3 Professionals should be alert to the potential for worsening dysphoria, 
+and encourage pregnant people to seek the support of a gender 
+aware therapist or counsellor if required (see Appendix 9: Resources ). 
+3.6.4 Referrals to Perinatal Mental Health Team should not be made due to 
+trans or non -binary identity alone. Assessments and referrals should 
+be made according to standard criteria, as for cisgender women. 
+ Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 18 of 42 
+ 4 Intrapartum Care 
+4.1 General Approach 
+4.1.1 According to NICE guidelines, professionals should, “Treat all [people] 
+in labour with respect. Ensure that the [individual] is in control of and 
+involved in what is happening to [them], and recognise the way in 
+which care is given is key to this. To facilitate this, establish a rapport 
+with the [individual], ask [them] about [their] wants and expectations 
+for labour, and be aware of the importance of tone and demeanour, 
+and of the actual words used. Use this information to support and 
+guide [them] through [their] labour.”15 
+ 
+4.2 Communication 
+4.2.1 Professionals should refer to the Birth Plan page and My Language 
+Preferences insert in order to facilitate respectful communication 
+during labour. For example, some people may refer to their “front 
+hole” or “genital opening” rather than “vagina”. 
+4.2.2 If a My Language Preferences sheet has not been completed, or the 
+particular clinical scenario has not been covered, ask the individual 
+how they refer to their body parts. For example, “In order to provide 
+you the best healthcare possible, I wonder, what language do you use 
+to refer to your body parts?”8 
+ 
+4.3 Clinical Care 
+4.3.1 Professionals should be aware of the potential history of sexual abuse 
+and trauma for all service users. A significant proportion of trans and 
+non-binary people have experienced sexual harassment and report a 
+history of childhood abuse.2 A universal approach of trauma -informed 
+care can benefit all service users, including trans and non -binary 
+individuals. Examples of trauma -informed care include: 
+• Explaining the rationale and procedure of intimate 
+examinations, before asking for informed consent 
+• Ask if there is any particular part of the procedure that they 
+feel anxious about, and what you can do to make it more 
+comfortable for them 
+• Discuss in advance that the patient can dictate the pace of 
+the examination and can signal to you (through verbal or 
+nonverbal signals) if there is any discomfort or a break is 
+needed Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 19 of 42 
+ • Ask the person if they would like someone else in the room 
+with them for support, as per CO38 Chaperone Policy 
+• Discuss the procedure, gain consent, and gather all 
+necessary equipment before the service user removes their 
+clothing 
+• Ask the patient to move their own clothing out of the way, 
+instead of doing it yourself 
+• Describe ways in which the examination may interact with 
+senses (e.g., “You may hear clicks when the speculum is 
+opened”, “The lubrication gel may feel cool”) 
+• Offer self -insertion for speculum examinations 
+• Offer self -swabbing if appropriate 
+• Practice suggestive instead of instructive language (e.g., 
+replace the phrase “Take a deep breath and relax” with 
+“Some people find it helpful to take a deep breath during 
+this part of the examination”)16 
+ 
+4.4 Catheters 
+4.4.1 For people who have not had lower surgery (gender affirming genital 
+surgery), catheter selection and insertion is in line with protocol 
+MP040 Bladder Care . 
+4.4.2 Standard length catheters (40cm) should be used for all pregnant and 
+birthing women and people, whether they have had lower surgery or 
+not, in line with Trust guidance . 
+4.4.3 People who have had lower surgery may have also had their urethra 
+relocated and/or lengthened. In these situations, professionals should 
+ask the individual about the location and length of their urethra prior 
+to attempting catheterisation. Potential locations for the urethra 
+include: 
+• In its original position 
+• At the tip of the penis/phallus 
+• At the base of the penis/phallus 
+• Behind the scrotum 
+ Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 20 of 42 
+ 4.4.4 Insertion technique is the same for all people who do not have a 
+prostate – i.e. cis women, trans men and non -binary people assigned 
+female at birth. Therefore, all health care professionals trained to 
+insert or remove catheters for cis women are also suitably qualified to 
+undertake these procedures for pregnant and birthing people who 
+have had lower surgery. 
+4.4.5 An aseptic non -touch technique should be used for catheter insertion, 
+using the non -dominant hand to stabilise the penis/phallus, or any 
+other tissues, as necessary. 
+4.4.6 In/out catheters may be too short for people who have had lower 
+surgery which includes urethral lengthening. In these circumstances, 
+standard length indwelling catheters (40cm) can be inserted 
+temporarily, effectively functioning as in/out catheters. 
+ 
+5 Postnatal Care 
+5.1 Privacy 
+5.1.1 On shared wards that are typically used for cis women, trans and non -
+binary individuals should be offered the choice between a side -room 
+or shared accommodation on the ward, including the Postnatal Ward. 
+When a trans or non -binary service user’s preference is for a side 
+room, but one is not currently available, alternative accommodation 
+should be sought. For example, a parent who has just recently given 
+birth may remain on Labour Ward/Central Delivery Suite until a side 
+room on Postnatal Ward is available. 
+ 
+5.2 Clinical Care 
+5.2.1 Postnatal checks should be performed as per MP071 Provisions and 
+Schedules of Postnatal Care Pathway , taking into account additional 
+communication needs (see 5.3) while also ensuring safe and thorough 
+care. 
+5.2.2 Assessment of chest health is important, including for people who 
+have had top surgery (gender affirming surgery to alter the size and 
+shape of the chest), as usually some mammary tissue still remains. 
+Professionals should discuss signs and symptoms of mastitis, 
+particularly if the individual has had their nipples grafted or removed 
+altogether. 
+ Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 21 of 42 
+ 5.3 Communication 
+5.3.1 Refer to the My Language Preferences sheet (see Appendix 7 ), a copy 
+of which should be transferred over from the Antenatal Care Record. 
+For example, some people may refer to their “chest” and 
+“chestfeeding” rather than their “breasts” and “breastfeeding”. Some 
+people may talk about their “front hole” or “genital opening”, rather 
+than “vagina”. 
+5.3.2 If a My Language Preferences sheet has not been completed, or the 
+particular clinical scenario has not been covered, ask the service user 
+how they refer to their body parts and activities involving their body 
+(such as infant feeding). For example, “In order to provide you the 
+best healthcare possible, I wonder, what language do you use to refer 
+to your body parts?”.8 
+5.4 Emotional Health 
+5.4.1 Professionals should discuss the potential for postnatal depression 
+with all gestational parents. Those who have previously taken 
+testosterone may be more at risk, or their experience of postnatal 
+depression may be different to cis women.10 
+ 
+5.5 Infant Feeding 
+5.5.1 Trans and non -binary parents should be supported in their choices 
+regarding infant feeding. Some parents may be very motivated to 
+breast/chestfeed, and may have chosen to delay top surgery in order 
+to do so.5 Other parents may make an advanced decision not to 
+breast/chestfeed, whether they have had top surgery or not. Finally, 
+some parents may change their mind about how they wish to feed 
+their baby, once their baby has been born. 
+5.5.2 Breast/chestfeeding or expressing may still be possible after top 
+surgery, as long as the nipples have not been permanently removed. 
+In rare cases, successful expression of colostrum or milk has been 
+reported even after free nipple grafting. It is not possible to predict 
+the extent of milk supply in advance10 and full milk supply may not be 
+possible in some cases.5 Parents should be especially aware of signs of 
+effective milk transfer, and expected newborn behaviour and output 
+to ensure adequate milk intake. 
+5.5.3 Following top surgery there may be less soft tissue available for the 
+baby to latch on to, however some parents have reported success 
+with using their fingers to firmly shape their chest (known as the 
+“sandwich” technique).17 
+ Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 22 of 42 
+ 5.5.4 Parents who have not had top surgery may wish to bind their chest 
+during times they are not actively feeding or expressing.5 Binding may 
+increase the chances of mastitis, so parents should be made aware 
+the signs and management of mastitis, and may wish to wear a larger 
+size binder than they wore previously. 
+5.5.5 If a parent is certain they do not want to breast/chestfeed or express, 
+prevention of lactation can be offered to help minimise swelling of 
+the chest in the early postnatal period, which may contribute to 
+dysphoria. This option can be offered regardless of whether they have 
+had top surgery or not, as mammary tissue will still be present post -
+surgery. If prevention of lactation is desired, then cabergoline can be 
+offered following birth to suppress lactation18, as per MP073 
+Pregnancy Loss protocol . 
+5.5.6 If breast/chestfeeding is not possible, or desired, discuss other 
+methods of infant feeding and promotion of attachment, including 
+skin-to-skin contact and responsive bottle feeding. 
+5.5.7 Non -gestational parents may wish to participate in feeding their 
+infants using their own bodies. Cis women who have previously 
+breastfed may have the most success in relactating. Trans women and 
+cis women who have not been pregnant may also be able to induce 
+lactation to some extent.19,20,21,33 Methods for inducing lactation 
+include using galactagoues and physical stimulation. Alternatively, 
+some families choose to use supplemental nursing systems with 
+expressed milk or formula. 
+ 
+5.6 Resumption of Testosterone 
+5.6.1 Some parents may be keen to initiate, or resume, testosterone 
+therapy soon after they have birthed. 
+5.6.2 Testosterone should not be considered an effective form of 
+contraception.10 Professionals should still counsel individuals 
+resuming testosterone to consider their contraceptive options, if 
+appropriate to their sexual relationships, especially with regard to the 
+teratogenic effects of testosterone. Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 23 of 42 
+ 5.6.3 he literature is not clear regarding testosterone transmission into 
+human milk, or potential impact on milk supply, although some 
+evidence suggests high testosterone levels may impair 
+lactation.21,22,2 3,24 Whilst there are possible risks to the infant, there is 
+no clear evidence of harm10, however it should be noted that the 
+evidence -base for this conclusion is very limited. The individual is best 
+placed to assess the benefits of resuming testosterone in terms of 
+their own emotional, physical, social and mental wellbeing10 with 
+additional advice and support. Referrals can be made to the Gender 
+Inclusion Team’s named Consultant Neonatologist (see Appendix 1 ), 
+who can discuss the potential risks, liaise with their endocrinologist, 
+and develop an individualised care plan. 
+ 
+5.7 Birth Registration 
+5.7.1 The current legal process for registration of birth in the UK stipulates 
+that the birth parent is always recorded as “Mother” regardless of 
+gender identity or legal sex.25 New parents may benefit from being 
+advised of this in advance, as it may cause distress for some. 
+ 
+5.8 Contraception and Screening 
+5.8.1 Contraception is recommended for all birthing parents, if they engage 
+in sexual activity that could result in conception. 
+5.8.2 Testosterone is not a contraceptive, so contraception is still advised 
+for people considering resuming testosterone, if they have sexual 
+activity with a partner who produces sperm.26 Copper intrauterine 
+devices are safe and do not interfere with hormonal treatment. 
+Progestogen -only contraceptive methods are not thought to interact 
+with hormonal treatment and are generally acceptable. The use of 
+combined hormonal contraceptives are generally not recommended 
+for trans men and non -binary people who are taking testosterone, 
+because the oestrogen component will counteract the effects of 
+testosterone.27 
+5.8.3 Trans and non -binary people are often omitted from sex -specific 
+screening algorithms if their NHS gender markers have been updated 
+to reflect their gender identity.28 Therefore birthing parents can be 
+reminded postnatally that they are eligible for routine cervical 
+screening, but may not receive invitations to appointments. Cervical 
+screening can be arranged with their GP surgery or with Clinic T (part 
+of Brighton Sexual Health & Contraception Services), and these 
+services can make a request to the NHS Cervical Screening 
+Programme so that invitations are sent correctly.28 
+ Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 24 of 42 
+ 6 Audit and Service Development 
+6.1 Trans and non -binary birthing parents can reasonably be considered to be 
+experiencing a complex social factor, as per CG110 ‘Pregnancy and complex 
+social factors: a model for service provision for pregnant women with complex 
+social factors’. 29 This model denotes a number of responsibilities for service 
+organisation and development. 
+6.2 Using NICE CG110 as a model for improving access to perinatal care for 
+vulnerable groups, commissioners should ensure the following are recorded, in 
+order to inform mapping of their local population to guide service provision: 
+ 
+o The number of trans or non -binary people who: 
+- are pregnant locally 
+- present for antenatal care 
+- attend for booking by 10, 12+6 and 20 weeks 
+- attend the recommended number of antenatal appointments, in 
+line with national guidance 
+- experience, or have babies who experience, mortality or 
+significant morbidity 
+o For each trans or non -binary pregnant person: 
+- the number of appointments they attend 
+- the number of scheduled appointments they do not attend29 
+6.3 Using this model, commissioners should ensure that trans or non -binary 
+people presenting for antenatal care are asked about their satisfaction with 
+the services provided; and ensure their responses are: 
+o recorded and monitored 
+o used to guide service development29 
+6.4 Commissioners should involve trans and non -binary people and their families 
+in determining local needs and how these might be met.29 
+6.5 All staff providing clinical perinatal care should be given training on gender 
+inclusive perinatal care, which should include: 
+o Basic concepts: sex, gender identity, gender expression, sexuality, 
+transition 
+o Respectful communication and pronoun usage 
+o Health and social inequalities 
+o Barriers to accessing care 
+o Spectrum of experiences and needs of trans and non -binary parents Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 25 of 42 
+ 6.6 Receptionists and administrative staff who are public facing should also be 
+given training, which should include: 
+o Basic concepts: sex, gender identity, gender expression, sexuality, 
+transition 
+o Respectful communication and pronoun usage Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 26 of 42 
+ 7 Appendices 
+Appendix 1 – Gender Inclusion Team Contact Details 
+ 
+Gender Inclusion Midwives Team 
+Helen Green 
+Pronouns: she/they 
+Role: Service development and networking, hospital midwife 
+Ash Riddington 
+Pronouns: he/him 
+Role: Non -clinical support for families, staff training, community midwife 
+Team email address: bsuh.genderinclusionmidwives@nhs.net 
+ 
+Consultant Obstetrician 
+Dr Heather Brown 
+Pronouns: she/her 
+Role: Obstetric care for high risk pregnancies where the birth parent is trans or non -binary, 
+requests for elective Caesarean due to gender dysphoria 
+Email: heather.brown27@nhs.net 
+ 
+Consultant Neonatologist 
+Dr Neil Aiton 
+Pronouns: he/him 
+Role: Medical advice regarding testosterone use during pregnancy or breast/chestfeeding 
+Email: neil.aiton@nhs.net 
+ 
+Consultant Endocrinologist 
+Dr Anna Crown 
+Pronouns: she/her 
+Role: Advice regarding hormones during pregnancy and breast/chestfeeding 
+Email: a.crown@nhs.net 
+ 
+Speciality Doctor in Sexual & Reproductive Health 
+Dr Kate Nambiar 
+Pronouns: she/her 
+Role: Pre -conception advice including fertility planning, sexual health, and postnatal 
+contraception 
+Email: kate.nambiar1@nhs.net 
+ 
+Specialist Infant Feeding Midwife 
+Carla Mastroianni 
+Pronouns: she/her 
+Role: Additional infant feeding support, including creating feeding plans antenatally 
+Email: carla.mastroianni@nhs.net 
+ 
+ Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 27 of 42 
+ Appendix 2 – Definitions 
+The language regarding gender identity is fast evolving, so the following definitions may be 
+updated in subsequent editions of this protocol. 
+ 
+AFAB Shorthand for people who were assigned female at birth. This 
+includes cisgender women, trans men, and non -binary people who 
+were assigned female at birth. Do not use “female bodied”.8 
+AIAB Shorthand for people who were assigned intersex at birth. 
+AMAB Shorthand for people who were assigned male at birth. This includes 
+cisgender men, trans women, and non -binary people who were 
+assigned male at birth. Do not use “male bodied”.8 
+Binding The practice of flattening the chest using compression garments or 
+bandage wrappings.5 
+Bottom surgery Colloquial term for genital surgeries that are gender affirming. These 
+surgeries can form part of medical transition. Options for trans 
+masculine people include metoidioplasty and phalloplasty. Options 
+for trans feminine people include orchidectomy and vaginaplasty. Do 
+not use the terms “sex change” or “the surgery”, and be aware that 
+not all trans or non -binary people seek bottom surgery.8 Also known 
+as “lower surgery”. 
+Button -hole A type of top surgery to remove a large proportion of mammary 
+tissue and create masculine chest contour. Two broad incisions below 
+mammary tissue, and repositioning of nipple -areloar complex without 
+severing the pedicle. 
+Chestfeeding The act of feeding one’s baby using one’s chest and/or milk. This is an 
+alternative term for “breastfeeding”. 
+Cisgender A person whose sex attributed at birth aligns with their gender 
+identity and that is confirmed by them as an individual. The term 
+cisgender is often shortened to “cis”. 
+Deadnaming Calling someone by their birth name after they have changed their 
+name. This term is often associated with trans people who have 
+changed their name as part of their transition. Intentional 
+deadnaming is a form of harassment and abuse and can trigger 
+dysphoria in the person affected. 
+Direct discrimination This happens when someone is treated worse than another person in 
+a similar situation because they are trans.4 
+Double incision A type of top surgery to remove a large proportion of mammary 
+tissue to create masculine chest contour. This generally involves 
+temporary removal of the nipple -areolar complex, which may be re -
+sized and re -shaped, before being re -positioned and re -attached by 
+skin graft. Sometimes the nipple -areolar complex is not reattached. 
+FTM Someone who has transitioned from female to male. This term should 
+only be used by people to refer to themselves, and not to refer to all 
+trans men, as not all people will be comfortable with this terminology. 
+Gender Gender is used to refer to a person’s gender identity, which is self -
+defined and not subject to external validation. Gender is all of the Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 28 of 42 
+ socio -political meaning that we ascribe to sex and bodies, including 
+gender norms, roles, expectations and stereotypes, which differ 
+across time and space. 
+Gender dysphoria Used to describe when a person experiences discomfort or distress 
+because there is a mismatch between their sex assigned at birth and 
+their gender identity. This is also the clinical diagnosis for someone 
+who doesn’t feel comfortable with the sex they were assigned at 
+birth. Gender dysphoria can be rooted in the individual’s feelings 
+about their own body, and/or be triggered by social interactions.5 
+Gender expression How a person presents themselves on any given day in terms of, for 
+example: the clothes they wear, how they speak, how they walk and 
+so forth. Gender expression does not always match gender identity. 
+Gender identity A person’s innate sense of their own gender, whether male, female or 
+something else (such as non -binary), which may or may not 
+correspond to the sex assigned at birth.34 
+Gender Also referred to as gender affirmation or gender confirmation. 
+reassignment ‘Gender reassignment’ usually means to undergo some sort of 
+medical procedures which change the body to align with a person’s 
+gender, but it can also mean changing names, pronouns, dressing 
+differently and for a person to live in their self -identified gender. 
+Gender reassignment is a characteristic that is protected by the 
+Equality Act 2010, and it is further interpreted in the Equality Act 2010 
+approved code of practice. 
+Gender A GRC enables a trans person to be legally recognised in an affirmed 
+Recognition gender and to be issued with a new birth certificate. Not all trans 
+Certificate people will apply for a GRC, and at the time of writing they have to be 
+over 18 to apply. They do not need a GRC to change their gender 
+markers at work or to legally change their gender on other documents 
+such as a passport . 
+Harassment Harassment is when someone is made to feel humiliated, offended or 
+degraded based in any factor, including because of their gender 
+identity or expression.4 
+Hormone therapy Some, but not all, trans and non -binary people use hormone therapy. 
+Hormone therapy induces physical, and sometimes emotional 
+changes, aiming to reduce gender dysphoria while improving well -
+being and quality of life.31 
+For trans men and non -binary AFAB people, this consists of 
+testosterone supplementation: 
+o Various routes: depot intra -muscular injections, topical gel 
+application, or subcutaneous pellets 
+o Virilising effects, some of which may be permanent: body 
+and facial hair growth, voice deepening, redistribution of 
+body fat, increased muscle mass, male -pattern baldness, 
+acne, clitoral growth, suppression of ovulation and 
+cessation of menses12,14,32 Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 29 of 42 
+ o Cessation of testosterone therapy can result in the return 
+of menses and fertility12 however some people can 
+conceive while taking testosterone14 
+Hormone therapy for trans women and non -binary AMAB people may 
+include suppression of endogenous testosterone and 
+supplementation of oestrogen: 
+o Testosterone suppression can be achieved 
+pharmacologically with blockers such as decapeptyl, or 
+surgically through removal of the testicles 
+o Oestrogen supplementation can be given through oral pills 
+or topical gels 
+o Trans feminine hormone therapy redistributes muscle and 
+body fat and stimulates breast development, with maximal 
+breast development at about 2 -3 years33. Hormone 
+therapy also suppresses sperm production, but not 
+completely for every individual36 so should not be relied on 
+as a form of contraception. Stopping oestrogen can result 
+in the return of spermatogenesis. 
+Indirect Indirect discrimination happens when an organisation has a particular 
+discrimination policy or way of working that puts trans people at a disadvantage.4 
+Intersex Intersex people are born with physical sex characteristics that don’t fit 
+medical and social norms for female or male bodies. Intersex traits 
+are natural manifestations of human bodily diversity. Intersex 
+variations are not the same as gender identity (who you are – man, 
+woman, gender non -conforming, non -binary, transgender) or sexual 
+orientation (who you are attracted to – heterosexual, bisexual, 
+lesbian, gay, asexual, pansexual). People born with intersex variations 
+have the same diversity in sexual orientation and gender identity as 
+everyone else. While LGBT activists and Intersex activists may work 
+together, it is important to be clear about the difference and prevent 
+misunderstanding. 
+Lower surgery Colloquial term for genital surgeries that are gender affirming. These 
+surgeries can form part of medical transition. Options for trans men 
+and non -binary AFAB people include metoidioplasty and phalloplasty. 
+Options for trans women and non -binary AMAB people include 
+orchidectomy and vaginaplasty. Do not use the terms “sex change” or 
+“the surgery”, and be aware that not all trans or non -binary people 
+seek lower surgery.8 Also known as “bottom surgery”. 
+Metoidioplasty Often referred to colloquially as “meta”. Genital surgery to create a 
+small sensate penis, using the enlarged clitoris and local tissue. May 
+be combined with testicular implants and surgical refashioning of the 
+labia majora. May be combined with urethral lengthening, or the 
+urethra may be left in its natal position. Vaginectomy, with or without 
+hysterectomy, may be performed at the same time, before, or after. Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 30 of 42 
+ Misgender “Misgendering refers to the practice of using words (nouns, adjectives 
+and pronouns) that do not correctly reflect the gender with which 
+someone identifies. Recognise that misgendering can include 
+misnaming (calling a person by the incorrect name), using the 
+incorrect pronouns (for example, using he/him/his for someone who 
+uses she/her/her), or using other incorrect gendered language (for 
+example, using “sir” for someone who identifies as a woman, or 
+calling a trans man’s chest their “breasts”). Recognise that whether 
+intentional or not, misgendering has a negative impact on trans 
+people, and persistent misgendering is an act of transphobia.”8 
+MTF Someone who has transitioned from male to female. This term should 
+only be used by people to refer to themselves, and not to refer to all 
+trans men, as not all people will be comfortable with this terminology. 
+Non -binary Non -binary is an umbrella terms used to describe all people who do 
+not experience themselves as being a man or woman (i.e. within the 
+socially constructed gender binary). Non -binary people may feel 
+neither ‘man’ nor ‘woman’, or may feel that they identify with both in 
+differing degrees. Non -binary people fall under the wider definition of 
+transgender given that they have not remained in the gender they 
+were assigned at birth. However, not all non -binary people use the 
+term trans to describe themselves. This is a general term which 
+includes agender, bigender, gender -queer, gender -fluid and other 
+gender identities. 
+Outed When a lesbian, gay, bi or trans person’s sexual orientation or gender 
+identity is disclosed to someone else without their consent. 
+Passing If someone is regarded, at a glance, to be a cisgender man or 
+cisgender woman. This might include physical gender cues (hair or 
+clothing) and/or behaviour which is historically or culturally 
+associated with a particular gender. 
+Peri-areolar A type of top surgery to remove a large proportion of mammary 
+tissues and create masculine chest contour. Does not involve removal 
+or repositioning of the nipple -areolar complex, so the nipple stalk is 
+left intact. 
+Phalloplasty Often referred to colloquially as “phallo”. A series of surgeries to 
+create a penis using donor tissue, usually radial forearm flap or 
+antero -lateral thigh. The hormonally -enlarged clitoris is often buried 
+in the base. May involve urethral lengthening, or the urethral exit may 
+remain in its natal position, or between the penis base and the 
+scrotum if scrotoplasty has been performed. Hysterectomy and 
+vaginectomy may be performed at various points in the process, or 
+not at all. 
+Pronouns Words we use to refer to other people in conversation - for example, 
+“he”, “she” and “they”. Some people may prefer others to refer to Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 31 of 42 
+ them in gender neutral language and use pronouns such as they/their 
+and ze/zir. 
+Sex A term used to denote male/female/intersex variations, largely based 
+on visible physical differences and attributes. In general, a sex 
+attributed at birth is based on visual indicators. However, sex 
+attributes are often (in most countries) tied to binary gender 
+constructs – what it means to be a man/woman. So, sex and gender 
+are related, although they are not the same. It is important to 
+remember this, because people who have intersex variations are also 
+located on the spectrum of sex attributes and do not have sufficient 
+measures to protect their rights and bodily autonomy. This is an area 
+that is currently without legal protection, which makes intersex 
+individuals vulnerable to medical interventions without consent. 
+Top surgery Colloquial term for gender affirming surgeries to the chest. For trans 
+men and non -binary AFAB people, this refers to a variety of surgical 
+techniques to remove a large proportion of mammary tissue to create 
+a “masculine” contoured chest. Examples include double incision, 
+button -hole, T -anchor, and peri -areloar techniques. For trans women 
+and non -binary AMAB people, this refers to breast augmentation. Do 
+not use the terms “sex change” or “the surgery”, and be aware that 
+not all trans or non -binary people seek top surgery.8 
+Trans Short for “transgender”. Trans is an adjective used to describe a 
+person whose gender identity does not match, or fully align with, the 
+sex assigned at birth. (Note: please do not use the terms ‘transsexual’, 
+‘transvestite’, ‘sex change’ ‘gender identity disorder’ unless used by 
+the person themselves – whilst some individuals may use them, they 
+are now contentious and considered offensive by many trans people 
+and allies.) 
+Transition Used to describe the point at which a permanent change of gender 
+role is undertaken, in all spheres of life – in the family, at work, in 
+leisure pursuits and in society generally. Some people make this 
+change gradually, however, others emerge much quicker. Transition is 
+an umbrella term covering the variety of social and medical changes 
+that affirm a trans or non -binary person’s gender identity. Some 
+people describe their transition as directional, for example female -to-
+male transition (FTM) or male -to-female transition (MTF). Social 
+transition may include changing name, title, pronouns, clothing, 
+haircut and speaking style. Medical transition refers to a variety of 
+treatments and surgeries that are gender affirming. These may 
+include hormone therapy, surgery to the chest, and a variety of 
+genital surgeries. Not all trans people pursue medical transition, and 
+the combination of chosen therapies and/or surgeries is unique to 
+each individual. Do not use the term “sex change”.8 
+Trans man A person who identifies as a man, but was assigned female at birth.2 
+Trans woman A person who identifies as a woman, but was assigned male at birth.2 
+Transphobia The fear or dislike of someone based on the fact they are trans or 
+non-binary, including the denial/refusal to accept their gender Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 32 of 42 
+ identity. A hate crime is when transphobia is acted out against 
+someone and it amounts to a criminal offence. Any form of 
+discrimination and hate crime is not tolerated within the Trust, and 
+there is a process for reporting such incidents. It is important that 
+behaviour of this nature is reported, to ensure that the incident/crime 
+is investigated appropriately and the right level of support can be 
+offered to the victim and bystanders. All managers must be aware of 
+how to report hate crimes. If you are unclear of the process contact 
+BSUH.Equality@NHS.net. 
+Victimisation Victimisation is when an individual is treated badly because they have 
+made a complaint of gender reassignment related discrimination 
+under the Equality Act. It can also occur if they are supporting 
+someone who has made a complaint of gender reassignment related 
+discrimination.4 
+ Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 33 of 42 
+ Appendix 3 – Trans and Non -Binary Antenatal Care Pathway 
+
+Trans / non -binary birth parent 
+Refer to Gender 
+Inclusion Midwives 
+for additional non -
+clinical support Refer to Heather Brown 
+via Tocophobia Pathway 
+if requesting CS due to 
+gender dysphoria Discuss place of 
+AN care options with 
+CMW Booking: CMW to ask ALL service 
+users and partners about gender 
+identity and pronouns 
+No further action 
+Have they had lower 
+surgery (gender 
+affirming genital 
+surgery)? Refer to Heather Brown 
+in Antenatal Clinic for 
+discussion of birth 
+options 
+No further action Y Testosterone use 
+during pregnancy?
+No further action Advise to stop 
+testosterone & refer to 
+Prescribed Medicines 
+Clinic Y 
+N 
+N Home, or elsewhere, if 
+preferring greater 
+privacy At CMW’s regular 
+clinic, consider 
+beginning or end of day 
+if preferring quieter 
+waiting room Apply stickers to AN 
+notes only with consent 
+Put pronoun sticker 
+sheet in back of notes Birth parent is cisgender woman 
+Offer patient 
+information leaflet and 
+pronoun stickers 
+Telephone support 
+Resource sharing 
+Advocacy at appointments 
+Support visits at home 
+Hospital tour 
+1:1 antenatal education 
+1:1 birth & feeding 
+planning 
+Language Preferences 
+sheet Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 34 of 42 
+ Appendix 4 – Trans and Non -Binary Postnatal Care Pathway 
+ 
+Transfer copy of My Language Preferences sheet to PN 
+notes 
+Communicate pronouns for birth parent & co -parent to 
+PN ward staff Apply pronoun stickers to PN notes & drug chart 
+ 
+Offer side room on postnatal ward, i f not available, to 
+remain on labour ward if they would prefer not be in a 
+shared ward 
+ Consider offering cabergoline if definitely not 
+breast/chestfeeding or expressin g 
+ 
+Apply pronoun sticker to CMW discharge form 
+Email Gender Inclusion midwives 
+(bsuh.genderinclusionmidwives@nhs.net) 
+ Consider potential need for targeted care If breast/ chestfeeding after top surgery, refer to antenatal 
+feeding plan (if applicable), consider “sandwich” 
+technique ; ensure parent knows signs of effective milk 
+transfer, expected stool/urine output & signs of mastitis 
+Continuity of carer where possible 
+If wanting to restart testosterone whil st 
+breast/chestfe eding or expressing, offer refer ral to Neil 
+Aiton (neil.aiton@nhs.net) If breast/ chestfeeding after top surgery, teach “sandwich” 
+technique , ensure parent knows signs of effective milk 
+transfer, expected stool/urine output, and signs of 
+mastitis . Consider referral for additional feeding support 
+(carla.mastroianni@nhs.net) 
+Watch out for signs of postnatal depression , and be aware 
+presentation may be different Community Midwives Discharge to 
+Community Postnatal Ward Transfer to Postnatal 
+Ward Labour Ward 
+or 
+Homebirth Midwife 
+If not breast/chestfeeding, discuss signs & management of 
+mastitis, particularly if history of top surgery with nipple 
+grafts or nipples removed entirely Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 35 of 42 
+ Appendix 5 – Pronoun Stickers 
+Perinatal Care for Trans and Non -Binary People (RSCH PRH only ) MP005 
+Brighton & Sussex University Hospitals NHS Trust Page 36 of 42 
+ 
+Appendix 6 – Referral to Gender Inclusion Midwives 
+Referral to Gender Inclusion Midwives 
+Support from a Gender Inclusion Midwife is available to any birthing parent, or partner, who identifies 
+as trans, non -binary, genderqueer, or any other non -cis identity. 
+You will continue to see your community midwife for your care, with the Gender Inclusion midwife 
+providing a variety of support services in addition. 
+We are here to support you on your own unique journey to parenthood. 
+ 
+Send by email to: bsuh.genderinclusionmidwives@nhs.net (Preferred) First Name 
+ Surname 
+ 
+Gender Identity 
+ Pronouns 
+ 
+Address 
+ 
+Email 
+ Mobile 
+ 
+DOB 
+ NHS / Hospital Number 
+ 
+GP Surgery 
+ Community Midwife / Team 
+ 
+Estimated Due Date 
+ Number of Previous Births 
+ 
+Partner’s Name (if applicable) 
+ Partner’s Pronouns (if applicable) 
+ 
+What services might you be interested in accessing from the Gender Inclusion Midwife? 
+□ Telephone/email/text support 
+□ Support visits at home 
+□ Company and advocacy at other appointments or scans 
+□ Individual birth, feeding and parenting preparation class at home 
+□ Assistance writing a birth plan, including language preferences 
+□ Tour of hospital facilities 
+□ Other: 
+□ None (referral for audit purposes only – no need to include contact details or partner’s details) 
+ 
+Referring midwife Date 
+Brighton & Sussex University Hospitals NHS Trust Version 1 March 2020 
+
+ Appendix 7 – My Language Preferences Birth parent: Pronouns: 
+Co-parent/s: Pronouns: 
+Additional support person: Pronouns: 
+Anatomical Term Preferred Term Example 
+Breast/s 
+Breastfeeding 
+Breastmilk 
+Cervix 
+Clitoris 
+Labia 
+Perineum 
+Uterus 
+Vagina 
+Vaginal examination 
+Vulva 
+
+NICE CG190, 2014: 
+Treat all [people] in labour with respect. Ensure that [they] are in control of and involved in what is happening to [them], and 
+recognise that the way in which care is given is key to this. To facilitate this, establish a rapport with the [birthing pers on], ask 
+[them] about [their] wants and expectations for labour, and be aware of the importance of tone and demeanour, and of the 
+actual words used . Use this information to support and guide [them] through [their] labour. NMC The Code, 2015: 
+1 Treat people as individuals and uphold their dignity 
+1.3 avoid making assumptions and recognise diversity and individual choice 
+2 Listen to people and respond to their preferences and concerns 
+ 2.2 recognise and respect the contribution that people can make to their own health and wellbeing 
+7 Communicate clearly 
+7.2 take reasonable steps to meet people’s language and communication needs , providing, wherever possible, 
+assistance to those who need help to communicate their own or other people’s needs 
+Name: NHS No. 
+MY LANGUAGE PREFERENCES 
+Brighton & Sussex University Hospitals NHS Trust Version 1 March 2020 Perinatal Care for Trans and Non -Binary People MP005 
+ 
+Brighto n & Sussex University Hospitals Page 38 of 42 Appendix 8 – Prescribed Medication Referral Form 
+Please ensure all sections of this form are complete before submission – thank you 
+Name of Referrer Referring Team 
+Contact Number Postal and/or email 
+Address 
+ Patient Name 
+ID Hospital/NHS 
+DOB Date of 
+Referral 
+Address 
+Post Code EDD Parity 
+Contact 
+Number(s) Patient 
+Pronouns 
+ Gestation weeks when medication taken – please tick relevant boxes 
+Medication Pre
+5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 On-
+going 
+
+Other Agencies Name Contact Number 
+GP 
+
+Please ensure that the patient is made aware that a referral is being made to this clinic – thank you 
+ 
+COMMENTS 
+
+ Please email to: jane.battersby@bsuh.nhs.uk (bsuh accounts only) or j.batterby@nhs.net 
+Or send to: Jane Battersby, Secretary to Dr Neil Ai ton, One Stop Clinic, TMBU, L14 Thomas Kemp Tower, 
+Royal Sussex County Hospital , East ern Road, Brighton BN2 5BE Perinatal Care for Trans and Non -Binary People MP005 
+ 
+Brighto n & Sussex University Hospitals Page 39 of 42 Appendix 9 – Resources 
+o Gender Identity Research & Education Society 
+https://www.gires.org.uk/ 
+ 
+o Gendered Intelligence Network for Therapists and Counsellors 
+http://genderedintelligence.co.uk/professionals/therapists -and-counsellors 
+ 
+o Trans Pregnancy research project 
+https://transpregnancy.leeds.ac.uk/ 
+ 
+o E-LfH Gender Variance e -learning 
+https://www.e -lfh.org.uk/programmes/gender -variance/ 
+ 
+o La Leche League breast/chestfeeding support 
+https://www.laleche.org.uk/support -transgender -non-binary -parents/ 
+ 
+o Birth for Every Body 
+http://www.birthforeverybody.org/ 
+
+ Perinatal Care for Trans and Non -Binary People MP005 
+ 
+Brighto n & Sussex University Hospitals Page 40 of 42 8 References 
+ 
+1. Women and Equalities Committee. (2015). Transgender Equality: First report of session 2015 -
+16. London: House of Commons. 
+2. McNeil, J., Bailey, L., Ellis, S., Morton, J., & Regan, M. (2012). Trans Mental Health and 
+Emotional Wellbeing Study. Scottish Transgender Alliance. 
+3. Equality Act. (2010). London: The Stationery Office. 
+4. Equality and Human Rights Commission. (2019, May 15). Gender Reassignment Discrimination. 
+Retrieved November 24, 2019, from Equality and Human Rights Commission: 
+https://www.equalityhumanrights.com/en/advice -and-guidance/gender -reassignment -
+discrimination 
+5. MacDonald, T., Noel -Weiss, J., West, D., Walks, M., Biener, M., Kibbe, A., & Myler, E. (2016). 
+Transmasculine individuals' experiences with lactation, chestfeeding, and gender identity: a 
+qualitative study. BMC Pregnany and Childbirth, 16 (106). Retrieved from 
+https://bmcpregnancychildbirth.biomedcentral.com/articles/10.1186/s12884 -016-0907 -
+y#citeas 
+6. General Medical Council. (n.d.). Trans healthcare. Retrieved Novemeber 5, 2019, from Ethical 
+guidance: https://www.gmc -uk.org/ethical -guidance/ethical -hub/trans -healthcare 
+7. Makadon, H., Mayer, K., & Potter, J. (2015). Fenway Guide to Lesbian, Gay, Bisexual and 
+Transgender Health (2nd ed.). Philadelphia: American College of Physicians. 
+8. Lowik. A. (2018). Trans -Inclusive Abortion Services: A Manual for Operationalizing Trans -
+Inclusive Policies and Practices in an Abortion Setting, Nova Scotia. FQPN and Halifax Sexual 
+Health Centre. Retrieved online from http://www.ajlowik.com/transinclusive -abortion 
+9. West, M., Dawson, J., & Kaur, M. (2015). Making the difference: Diversity and inclusion in the 
+NHS. London: The Kings Fund. 
+10. Hoffkling, A., Obedin -Maliver, J., & Sevelius, J. (2017). From erasure to opportunity: a 
+qualitative study of the experiences of transgender men around pregnancy and 
+recommendations for providers. BMC Pregnancy and Childbirth , 7-20. 
+11. Burrows, G., Middleton, I., Thomas, G., Ridley, R., Walsh, D., Wells, A., & Wray, J. (2017). Fair 
+care for trans patients: an RCN guide for nursing and health car professionals (2nd ed.). 
+London: RCN. 
+12. Steinle, K. (2011). Hormonal management of the female -to-male transgender patient. Journal 
+of Midwifery and Women's Health (56), 293 -302. 
+13. Obedin -Maliver, J., & Makadon, H. (2016). Transgender men and pregnancy. Obstetric 
+Medicine , 4-8. 
+14. LGBT Health Program. (2009). Guidelines and protocols for comprehensive primary health care 
+for trans clients. Toronto: Sherourne Health Centre. Perinatal Care for Trans and Non -Binary People MP005 
+ 
+Brighto n & Sussex University Hospitals Page 41 of 42 15. NICE. (2017). Intrapartum Care for Healthy Women and Babies (CG190). 
+16. Ravi, A., & Little, V. (2017). Providing Trauma -Informed Care. American Family Physician , 655 -
+657. 
+17. MacDonald, T. (2018, January 15). Transgender parents and chest/breastfeeding. Retrieved 
+November 25, 2019, from Kelly Mom: https://kellymom.com/bf/got -milk/transgender -
+parents -chestbreastfeeding/ 
+18. NICE. (n.d.). BNF. Retrieved from Cabergoline: 
+https://bnf.nice.org.uk/drug/cabergoline.html#indicationsAndDoses 
+19. Biervliet, F. P., Maguiness, S. D., Hay, D. M., Killick, S. R., & Atkin, S. L. (2001). Induction of 
+lactation in the intended mother of a surrogate pregnancy: Case report. Human Reproduction , 
+581-583. 
+20. Shiva, M., Frotan, M., Arabipoor, A., & Mirzaaga, E. (2010). A successful induction of lactation 
+in surrogate pregnancy with metoclopramide and review of lactation induction. Royan Institue 
+Journal for Fertility and Sterility , 191 -194. 
+21. MacDonald, T. (2013, May 9). Trans Women and Breastfeeding: A Personal Interview. 
+Retrieved November 25, 2019, from Milk Junkies: http://www.milkjunkies.net/2013/05/trans -
+women -and-breastfeeding -personal.html 
+22. Glaser, R. L., Newman, M., Parsons, M., Zava, D., & Glaser, G. (2009). Safety of maternal 
+testosterone therapy during breastfeeding. International Journal of Pharmaceutical 
+Compounding , 314 -7. 
+23. Hoover, K. L., Barbalinardo, L. H., & Platia, M. P. (2002). Delayed lactogenesis II 
+secondary to gestational ovarian theca lutein cysts in two normal singleton 
+pregnancies. Journal of Human Lactation , 18(3), 264 -268. 
+24. Morris, J. A. et al (1970). Inhibition of puerperal lactation: a double blind comparison 
+of chlorothianesene, testosterone enanthate with estradiol valerate and placebo. 
+Obstetrics & Gynecology , 36(1), 107 -114. 
+25. White, F. R. (2018). Trans Pregnancy, An International Exploration of Transmasculine Practices 
+of Reproduction, Law and Policy Review United Kingdon. London: University of Westminster. 
+26. Faculty of Sexual & Reproductive Healthcare of the Royal College of Obstetricians & 
+Gynaecologists. (2017). FSRH CEU Statement: Contraceptive Choices and Sexual Health for 
+Transgender and Non -binary People. London: FSRH CEU. 
+27. Beere, D. e. (2019). BASHH Recommendations for integrated sexual health services for trans, 
+including non -binary, people [draft]. British Association for Sexual Health and HIV. 
+28. Public Health England. (2019, May 20). NHS Population Screening: Information for Trans and 
+Non-binary People. Retrieved August 22, 2019, from 
+https://www.gov.uk/government/publications/nhs -population -screening -information -for-
+transgender -people/nhs -population -screening -information -for-trans -people#breast -screening Perinatal Care for Trans and Non -Binary People MP005 
+ 
+Brighto n & Sussex University Hospitals Page 42 of 42 29. NICE. (2010). Pregnancy and complex social factors: a model for service provision for pregnant 
+women with complex social factors (CG110). Retrieved November 25, 2019, from National 
+Institue for Health and Care Excellence: https://www.nice.org.uk/guidance/cg110/resources 
+30. World Professional Association for Transgender Health. (2011). Standards of Care for the 
+Health of Transsexual, Transgender, and Gender Nonconforming People - Version 7. Retrieved 
+March 3, 2019, from WPATH: https://www.wpath.org/publications/soc 
+31. Fabris, B., Bernardi, S., & Trombetta, C. (2015). Cross -sex hormone therapy for gender 
+dysphoria. Journal of Endocrinological Investigation, 3 (38), 269 -82. doi:10.1007/s40618 -014-
+0186 -2 
+32. The Endocrine Society. (2009). Endocrine treatment of transsexual persons: an 
+Endocrine Society clinical practice guideline. Journal of Clinical Endocrinology and 
+Metabolism, 9 (94), 3132 -3154. 
+33. Sonnenblick, E. B., Shah, A. D., Goldstein, Z., & Reisman, T. (2018). Breast imaging of 
+transgender individuals: a review. Current Radiology Reports, 1 (6), 1. 
+doi:10.1007/s40134 -018-0260 -1 
+34. Stonewall. (no date) Glossary of terms. Retrieved March 3, 2020, from Stonwall: 
+https://www.stonewall.org.uk/help -advice/glossary -terms#g 
+35. Reisman, T. & Goldstein, Z. (2018). Case Report: Induced Lactation in a Transgender 
+Woman. Transgender Health, 3 (1), 24 -26. doi: 10.1089/trgh.2017.0044 
+36. Kent, M. A., Winoker, J. S., Grotas, A. B. (2018). Effects of Feminizing Hormones on 
+Sperm Production and Malignant Changes: Microscopic Examination of Post 
+Orchiectomy Specimens in Transwomen. Urology, 121 , 93096. 
+doi:10.1016/j.urology.2018.07.023

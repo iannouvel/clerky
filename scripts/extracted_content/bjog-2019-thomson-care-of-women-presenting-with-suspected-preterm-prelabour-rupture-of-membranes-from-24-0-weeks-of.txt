@@ -1,0 +1,591 @@
+# Extracted from: BJOG - 2019 - Thomson - Care of Women Presenting with Suspected Preterm Prelabour Rupture of Membranes from 24 0 Weeks of.pdf
+# Guideline ID: bjog-2019-thomson-care-of-women-presenting-with-suspected-preterm-prelabour-rupture-of-membranes-from-24-0-weeks-of
+# Content length: 49672 characters
+# Processing date: 1732953490.8078668
+
+Care of Women Presenting with Suspected
+Preterm Prelabour Rupture of Membranes
+from 24+0Weeks of Gestation
+Green-top Guideline No. 73
+June 2019
+Please cite this paper as: Thomson AJ, on behalf of the Royal College of Obstetricians and Gynaecologists. Care of
+Women Presenting with Suspected Preterm Prelabour Rupture of Membranes from 24+0Weeks of Gestation. BJOG
+2019;126:e152 –166
+Tweetable abstract: #GreenTopGuideline No. 73 recommends how to diagnose & care for suspected #PPROM from
+24+0t o3 6 +6 weeks of gestation.
+DOI: 10.1111/1471-0528.15803 RCOG Green-top Guidelines
+Care of Women Presenting with Suspected Preterm Prelabour Rupture of
+Membranes from 24+0Weeks of Gestation
+AJ Thomson, on behalf of the Royal College of Obstetricians and Gynaecologists
+Correspondence: Royal College of Obstetricians and Gynaecologists, 27 Sussex Place, Regent’s Park, London NW1 4RG.
+Email: clinicaleffectiveness@rcog.org.uk
+1. Key recommendations
+/C15 The diagnosis of spontaneous rupture of the membranes is made by maternal history followed by a
+sterile speculum examination. [Grade D]
+/C15 If, on speculum examination, no amniotic ﬂuid is observed, clinicians should consider performing aninsulin-like growth factor-binding protein 1 (IGFBP-1) or placental alpha microglobulin-1 (PAMG-1) testof vaginal ﬂuid to guide further management. [Grade B]
+/C15 Following the diagnosis of preterm prelabour rupture of the membranes, (PPROM) an antibiotic(preferably erythromycin) should be given for 10 days or until the woman is in established labour(whichever is sooner). [Grade A]
+/C15 Women who have PPROM between 24+0and 33+6weeks’ gestation should be offered corticosteroids;
+steroids can be considered up to 35+6weeks’ gestation. [Grade A]
+/C15 A combination of clinical assessment, maternal blood tests (C-reactive protein and white cell count) andfetal heart rate should be used to diagnose chorioamnionitis in women with PPROM; these parametersshould not be used in isolation. [Grade D]
+/C15 Women whose pregnancy is complicated by PPROM after 24+0weeks’ gestation and who have no
+contraindications to continuing the pregnancy should be offered expectant management until 37+0weeks;
+timing of birth should be discussed with each woman on an individual basis with careful consideration ofpatient preference and ongoing clinical assessment. [Grade A]
+/C15 In women who have PPROM and are in established labour or having a planned preterm birth within 24 hours,intravenous magnesium sulfate should be offered between 24
++0and 29+6weeks of gestation. [Grade A]
+2. Background and scope
+Preterm prelabour rupture of membranes (PPROM) complicates up to 3% of pregnancies and is associated with 30 –
+40% of preterm births.1PPROM can result in signiﬁcant neonatal morbidity and mortality, primarily from
+prematurity, sepsis, cord prolapse and pulmonary hypoplasia. In addition, there are risks associated withchorioamnionitis and placental abruption.
+2
+The median latency after PPROM is 7 days and tends to shorten as the gestational age at PPROM advances.3,4
+This guideline comprises recommendations relating to the diagnosis, assessment, care and timing of birth of womenpresenting with suspected PPROM from 24
++0to 36+6weeks of gestation. It also addresses care in a subsequent
+pregnancy. An infographic and audio version to supplement this guideline are available online (Infographic S1,
+RCOG Green-top Guideline No. 73 e153 of e166 ª2019 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15803 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Audio S1). It supplements NICE guideline (NG25), Preterm labour and birth (published November 2015).5Relevant
+recommendations can also be found in the Royal College of Obstetricians and Gynaecologists (RCOG) Green-top
+Guideline [GTG no. 36], Early-onset of Group B Streptococcal Disease .6
+3. Identi ﬁcation and assessment of evidence
+The Cochrane Library and electronic databases (DARE, EMBASE, Trip, MEDLINE and PubMed) were searched
+looking for the following terms in the title or abstract ‘preterm prelabour rupture of membranes’, ‘amnioinfusion’,‘chorioamnionitis,’ ‘intra-amniotic infection’, ‘IGFBP-1’, ‘PAMG-1’, ‘amniocentesis’, ‘antenatal corticosteroids’ and‘tocolytics’. The search was restricted to articles published until January 2019. The full search strategy is available toview online as supporting information (Appendix S1 and S2).
+This guideline was developed using the methodology described in Clinical Governance Advice 1 (a-c).
+7
+4. Diagnosis
+4.1 How is the diagnosis of PPROM made?
+Recommendation Evidence
+LevelStrength Rationale for the recommendation
+The diagnosis of spontaneous rupture of
+the membranes is made by maternalhistory followed by a sterile speculumexamination demonstrating liquor4D Given that this is the ‘gold standard ’,
+further trials are unlikely to add to theevidence for this recommendation
+If, on speculum examination, no amniotic
+ﬂuid is observed, clinicians should
+consider performing an IGFBP-1 orPAMG-1 test of vaginal ﬂuid to guide
+further management2++ B Recommended in NG25.
+5Studies have
+reported high levels of sensitivity andspeci ﬁcity for these markers
+The role of ultrasound assessment of
+amniotic ﬂuid volume is unclear4 U No speci ﬁc studies identi ﬁed in the role of
+liquor volume in supporting the diagnosisof PPROM
+The presence of a pool of ﬂuid in the vagina at sterile speculum examination is highly suggestive of
+membrane rupture, and when this is clearly observed no further diagnostic tests are required.
+5Some
+clinicians recommend that the woman lies ﬂat or in the left lateral for a period of time before speculumexamination to allow the amniotic ﬂuid to accumulate, though no evidence was identiﬁed to support thesepractices. Based on clinical evaluation, the diagnosis of PPROM can be equivocal in 10 –20% of cases.
+When a pool of amniotic ﬂuid is not clearly observed, consideration should be given to testing for IGFBP-1 or PAMG-1 if these tests are available, and further management undertaken as per NG25.
+5Several
+studies investigating these biochemical markers have found high levels of sensitivity and speciﬁcity.8,9
+NG 25 emphasises that the test results for IGFBP-1 or PAMG-1 should not be used alone to decide whatcare to offer the woman and that clinical condition, medical and pregnancy history, and gestational ageEvidence
+level 4
+RCOG Green-top Guideline No. 73 e154 of e166 ª2019 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15803 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+should be taken in to account. Testing for nitrazine is not recommended, and no further tests are
+required if the woman is in established labour.5
+No studies were identiﬁed speciﬁcally addressing ultrasound to determine amniotic ﬂuid volumes in womenpresenting with suspected PPROM. Ultrasound examination demonstrating oligohydramnios may be useful to supportthe clinical diagnosis of PPROM.
+If PPROM is not conﬁrmed, the woman can return to her previous schedule of antenatal care; NG25
+recommends that women should be advised to return if they have any further symptoms suggestive ofPPROM or preterm labour.
+5Evidence
+level 4
+It is routine practice in the UK to obtain a vaginal swab for microbiological testing while diagnosing
+PPROM, although evidence to support this practice is lacking. Group B streptococcus colonization may beidentiﬁed, which would inﬂuence the timing of birth (section 7.1). A prospective cohort study assessed thevaginal microbiome in women following PPROM; this concluded that following PPROM the vaginalmicrobiome was abnormal but the proﬁle did not correlate with latency duration.
+10Evidence
+level 2 +
+5. Assessment
+5.1 What is required antenatally to identify infection?
+Recommendation Evidence
+LevelStrength Rationale for the recommendation
+Acombination of clinical assessment,
+maternal blood tests (C-reactive protein and
+white cell count) and fetal heart rate should
+be used to diagnose chorioamnionitis inwomen with PPROM; these parametersshould not be used in isolation4D Recommended by NG25
+5
+Women should be advised of, and observed
+for, symptoms of clinical chorioamnionitis(lower abdominal pain, abnormal vaginaldischarge, fever, malaise and reduced fetalmovements)4D Recommended by NG25
+5
+One of the risks associated with PPROM is ascending infection leading to chorioamnionitis, and subsequent
+fetal and neonatal infection. NG255recommends that a combination of clinical assessment (pulse, blood
+pressure, temperature and symptoms), maternal blood tests (C-reactive protein and white cell count) and fetalheart rate using cardiotocography, should be employed to diagnose clinical infection. If the results of the clinicalassessment or any of the tests are not consistent with each other, it is recommended that the woman shouldcontinue to be observed and consideration should be given to repeating the tests as per NG25.
+5Evidence
+level 4
+The white cell count will rise 24 hours following administration of corticosteroids and should return to
+baseline 3 days following administration.11While a study investigating several maternal serum markers
+for predicting histological chorioamnionitis after PPROM concluded that a raised C-reactive protein wasmost informative,
+12a systematic review and meta-analysis of 13 observational studies found thatEvidence
+level 2 ++
+RCOG Green-top Guideline No. 73 e155 of e166 ª2019 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15803 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+C-reactive protein has a sensitivity of only 68.7% and speciﬁcity of 77.1% in diagnosing histological
+chorioamnionitis.13
+When cared for as an inpatient, women with PPROM should have their vital signs, including pulse, blood pressure,respiratory rate and temperature, recorded on an obstetric early warning chart.
+14They should also be observed for
+clinical symptoms and signs of infection. When cared for as an outpatient, women should be advised of thesymptoms of chorioamnionitis and be reviewed regularly (including blood tests [white cell count and C-reactiveprotein], clinical recordings and fetal heart rate monitoring), for example, in a day care unit, maternity triage orantenatal ward, one or two times each week; if the woman has any concerns, she should attend the hospitalimmediately.
+5.2 Should neonatologists be involved in the woman’s care?
+Recommendation Evidence
+LevelStrength Rationale for the recommendation
+Neonatologists should be informed when
+the diagnosis of PPROM is con ﬁrmed and
+delivery is anticipated4 U It is important to ensure that the neonatal
+unit has the appropriate staff and facilitiesto care for the neonate should deliveryoccur
+Women with PPROM should have the
+opportunity to meet with a neonatologistantenatally to discuss their baby ’s care4 U This would be regarded as good practice
+PPROM is associated with increased perinatal morbidity and mortality, and often leads to preterm birth.
+1
+Neonatologists should be informed once the diagnosis of PPROM has been made and delivery is anticipated to
+ensure that the neonatal unit has the appropriate staff and facilities to care for the neonate should deliveryoccur.
+Where possible, once the diagnosis has been conﬁrmed, women with PPROM and their partners should be offered
+the opportunity to meet with a neonatologist to discuss their baby’s care.
+6. Management
+6.1 Should antibiotics be given?
+Recommendation Evidence
+LevelStrength Rationale for the recommendation
+Erythromycin should be given for 10 days
+following the diagnosis of PPROM, oruntil the woman is in established labour(whichever is sooner)1++ A A Cochrane review found bene ﬁts when
+antibiotics were administered: reducedchorioamnionitis, prolonged latency andimproved neonatal outcomesRecommended by NG 25
+5
+RCOG Green-top Guideline No. 73 e156 of e166 ª2019 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15803 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+A Cochrane review investigating the role of antibiotics for women with conﬁrmed PPROM found that the
+use of antibiotics is associated with a statistically signiﬁcant reduction in chorioamnionitis (RR 0.66, 95% CI
+0.46–0.96). There was a signiﬁcant reduction in the numbers of babies born within 48 hours (RR 0.71, 95%
+CI 0.58 –0.87) and 7 days (RR 0.79, 95% CI 0.71 –0.89). Neonatal infection, use of surfactant, oxygen therapy
+and abnormal cerebral ultrasound prior to discharge from hospital was also reduced. There was nosigniﬁcant reduction in perinatal mortality
+15or on the health of the children at 7 years of age.16The
+antibiotic of choice and optimal duration of treatment are not clear; erythromycin 250 mg four times a dayfor 10 days or until the woman is in established labour (whichever is sooner), is recommended in NG25.
+5
+Penicillin may be used in women who cannot tolerate erythromycin. Alternative antibiotic regimens havebeen investigated.
+17,18Co-amoxiclav should be avoided as it is associated with an increased risk of neonatal
+necrotising enterocolitis,19and antibiotics should not be given unless the diagnosis of PPROM is conﬁrmed.Evidence
+level 1 ++
+6.2 What is the role of antenatal corticosteroids?
+Recommendation Evidence
+LevelStrength Rationale for the recommendation
+In women who have PPROM from 24+0
+weeks, antenatal corticosteroids
+should be:Corticosteroids recommended by NG255and
+supported by a meta-analysis of randomisedcontrolled trials
+/C15offered between 24+0and 25+6
+weeks of gestation2++ B Large cohort studies demonstrate bene ﬁts of
+steroids for babies born between 24+0and
+25+6weeks of gestation
+/C15offered between 26+0and 33+6
+weeks of gestation1++ A High-quality evidence that steroids reduce
+the incidence of intraventricularhaemorrhage and the need for mechanicalventilation in PPROM
+/C15considered between 34+0and
+35+6weeks of gestation1++ A Given the high ‘number to treat ’and the
+potential side effects of steroids,administration should be evaluated on anindividual basis
+A meta-analysis of 17 randomised controlled trials has demo nstrated that the administration of corticosteroids to
+women with PPROM reduces the risks of respiratory distress syndrome (RR 0.81, 95% CI 0.67 –0.98) and
+intraventricular haemorrhage (RR 0.49, 95% CI 0.25 –0.96). No difference was observed between steroid and
+control groups concerning the risk for necrotising entero colitis, neonatal sepsis and Apgar score of less than 7 at
+5 minutes. Perinatal mortality was similar between steroid and control groups.
+20A meta-analysis of observational
+studies suggest no increased risk of chorioamnionitis or neonatal sepsis with maternal steroid use.21Evidence
+level 1 ++
+NG255addresses the administration of corticosteroids to women with PPROM from 24+0until
+35+6weeks of gestation, recommending that when offering or considering corticosteroids a discussion
+should take place with the woman about how steroids may help and the potential risks associated withtheir administration. Furthermore, NG25 recommends that repeat courses of corticosteroids should notbe routinely offered but that the interval since the last course, the gestational age and the likelihood ofbirth in the next 48 hours, should be taken in to account.
+5Evidence
+level 4
+RCOG Green-top Guideline No. 73 e157 of e166 ª2019 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15803 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+This Green-top Guideline covers the care of women presenting with suspected PPROM from 24+0weeks’
+gestation. NG255recommends that corticosteroids should be considered between 24+0and 25+6weeks’
+gestation. There is now good evidence that corticosteroid administration has beneﬁts when given to
+women who give birth at less than 25+6weeks’ and indeed, at less than 24+0weeks’.22,23In contrast to
+NG255we therefore recommend that corticosteroids should be offered from at least 24+0weeks’
+gestation.Evidence
+level 2 +
+6.3 What is the role of magnesium sulfate for neuroprotection of the baby?
+Recommendation Evidence
+LevelStrength Rationale for the recommendation
+In women who have PPROM and are in
+established labour or having a plannedpreterm birth within 24 hours, intravenousmagnesium sulfate should be offeredbetween 24
++0and 29+6weeks of gestation1++ A Recommended by NG255and supported
+by meta-analyses of randomisedcontrolled trials that have shown areduction in cerebral palsy
+Meta-analyses of randomised controlled trials have demonstrated that the administration of magnesium
+sulfate to women in established preterm labour or having a planned preterm birth in the following24 hours, reduces cerebral palsy (RR 0.69, 95% CI 0.55 –0.88) and motor dysfunction in the offspring
+(RR 0.6, 95% CI 0.43 –0.83).
+24–26The beneﬁt is greatest before 30+0weeks of gestation.25Evidence
+level 1 ++
+The neuroprotective effect of magnesium sulfate in women with PPROM has been demonstrated in a
+cohort study.27Evidence
+level 2 ++
+The RCOG28and NG255recommend offering magnesium sulfate to women at risk of giving birth before
+30+0weeks of gestation. NG255recommends that magnesium sulfate should be considered when preterm
+birth is anticipated between 30+0and 33+6weeks.Evidence
+level 4
+6.4 Should tocolytic agents be used?
+Recommendation Evidence
+LevelStrength Rationale for the recommendation
+Tocolysis in patients with PPROM is not
+recommended1++ A A Cochrane review found that tocolysis
+does not signi ﬁcantly improve perinatal
+outcome and might be associated with an
+increased risk of chorioamnionitis
+A Cochrane review found that, compared with placebo, tocolysis in PPROM is associated with an average
+73 hours longer latency of delivery (95% CI 20 –126) and fewer births within 48 hours (RR 0.55, 95% CI
+0.32–0.95).29Tocolysis was associated with an increased risk of a 5-minute Apgar score of less than 7 and
+an increased need for ventilation support. For women before 34+0weeks of gestation, tocolysis increased
+the risk of chorioamnionitis. The review concluded that there is insufﬁcient evidence to support the useof tocolysis in women with PPROM, as there is an increase in maternal chorioamnionitis withoutsigniﬁcant beneﬁts to the neonateEvidence
+level 1 +
+RCOG Green-top Guideline No. 73 e158 of e166 ª2019 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15803 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+More recent publications have shown that compared with no tocolysis, tocolysis is not associated with
+improved neonatal outcomes.30,31 Evidence
+level 1 +
+6.5 Can women be monitored at home?
+Recommendation Evidence
+LevelStrength Rationale for the recommendation
+The decision to offer outpatient care to
+women with PPROM should be made onan individual basis, taking into accountmarkers of delivery latency3 U Retrospective cohort studies found no
+differences in maternal or neonataloutcomes when planned home versushospital care was compared
+The optimal method of monitoring to
+predict adverse fetal outcome afterPPROM has not been determined2++ B A Cochrane review found insuf ﬁcient
+evidence to allow recommendations
+A Cochrane review to assess the safety, cost and women’s views about planned home versus hospital
+care for women with PPROM identiﬁed only two relatively small trials (116 women) so that meaningfuldifferences between the groups could not be detected.
+32Retrospective cohort studies from Canada (173
+women),33and France (414 women),34found no difference in maternal morbidity, or neonatal morbidity
+or mortality between the groupsEvidence
+level 3
+If delivery seems imminent, then in-patient care is indicated to prepare the woman for birth (including, if relevant,
+the administration of intravenous magnesium sulphate).
+The decision to offer outpatient care to women with PPROM, following a period of in-patient care, should
+be made on an individual basis. Factors including past obstetric history, support at home and distancefrom the hospital should be taken into account in discussion with the woman about her preferences, andmarkers of delivery latency should be assessed (the presence of antepartum haemorrhage, amniotic ﬂuidvolume, gestational age at which PPROM occurs and clinical and laboratory markers of infection).
+34,35
+When considering the gestational age at which PPROM occurs, delivery latency remains relatively constantfrom 24
++0to 28+0weeks’ gestation at 8 –10 days (median) and then decreases to 5 days (median) at
+31+0weeks.3Evidence
+level 3
+Ac a s e –control study has shown that women with clinically diagnosed PPROM who have reduced
+amniotic ﬂuid volumes on ultrasound are more likely to give birth within 7 days from membranerupture.
+36Evidence
+level 2 +
+A retrospective cohort study of women with PPROM who had planned home care, found that membrane
+rupture occurring before 26+0weeks’, non-cephalic presentation and oligohydramnios were associated
+with an increased risk of ‘complication’ (deﬁned as fetal death, placental abruption, umbilical cordprolapse, delivery outside of hospital and neonatal death). The authors concluded that hospital based careshould be recommended to women who have all three of these features.
+37Evidence
+level 2 /C0
+A survey of fetal medicine specialists in the United States found substantial variations in fetal monitoring
+following PPROM.38In the UK, most clinicians would monitor fetal growth on ultrasound scan fortnightly,
+and assess amniotic ﬂuid and umbilical artery Doppler studies weekly, although a Cochrane review onEvidence
+level 1 ++
+RCOG Green-top Guideline No. 73 e159 of e166 ª2019 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15803 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+methods to monitor the fetus following PPROM found insufﬁcient evidence (three randomised controlled
+trials) to allow recommendations to be made.39
+6.6 Is there a role for amnioinfusion in PPROM?
+Recommendation Evidence
+LevelStrength Rationale for the recommendation
+In PPROM, amnioinfusion is not
+recommended as part of routine clinicalpractice1+ B Cochrane review found some bene ﬁts of
+amnioinfusion, but questioned the qualityof the evidence
+Amnioinfusion might improve neonatal outcomes in PPROM by preventing umbilical cord compression,
+postural deformities, pulmonary hypoplasia and intrauterine infection.
+40A Cochrane systematic review of
+ﬁve trials (using the data from four) found that amnioinfusion is associated with: improved fetal umbilicalartery pH at delivery, reduced variable decelerations in labour, neonatal death, neonatal sepsis, pulmonaryhypoplasia and puerperal sepsis.
+40Since the positive ﬁndings were due to one trial with unclear allocation
+concealment, the review authors conclude that further evidence is required before amnioinfusion forPPROM can be recommended for routine clinical practiceEvidence
+level 1 +
+A further Cochrane review investigating amnioinfusion in PPROM occurring before 26 weeks of gestation found no
+eligible trials.41
+6.7 Should women with PPROM be offered emotional support?
+Recommendation Evidence
+LevelStrength Rationale for the recommendation
+Women with PPROM and their
+partners should be offered additional
+emotional support during pregnancy
+and postnatally.4 U Cohort studies have shown that
+posttraumatic stress disorder occurs in a
+substantial number of women whose
+pregnancy is complicated by PPROM.
+Prospective cohort studies have shown that posttraumatic stress disorder is more common in women
+whose pregnancies were complicated by PPROM compared to uncomplicated controls (14% versus 2%antenatally, and 17% versus 3% at 6 weeks postnatal).
+42Evidence
+level 2 +
+Women with PPROM and their partners should be offered access to additional emotional support, both during
+pregnancy and postnatally.
+RCOG Green-top Guideline No. 73 e160 of e166 ª2019 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15803 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+7. Birth
+7.1 When is the appropriate time to deliver the baby?
+Recommendation Evidence
+LevelStrength Rationale for the recommendation
+Women whose pregnancy is complicated
+by PPROM after 24+0weeks ’gestation
+and who have no contraindications tocontinuing the pregnancy should beoffered expectant management until37
++0weeks; timing of birth should be
+discussed with each woman on anindividual basis with careful consideration
+of patient preference and ongoing clinical
+assessment1++ A A Cochrane review found bene ﬁts from
+expectant management, rather than earlydelivery, following PPROM in women withotherwise uncomplicted pregnancies.
+The care of women with PPROM who are
+known to be colonised with group B
+streptococcus, is addressed in Green-top
+Guideline No. 364D See RCOG Green-top Guideline No. 36.
+6
+The previous edition of this Green-top Guideline recommended that delivery of the baby should be considered
+at 34+0weeks’ gestation. More recently, a Cochrane review of 3617 women explored the effect of planned early
+delivery versus expectant management for women with PPROM.43The authors conclude that in women with
+PPROM ‘with no contraindications to continuing the pregnancy, expectant management with careful monitoringis associated with better outcomes for the mother and baby’. The Cochrane review found no differencesbetween early birth and expectant management in neonatal sepsis or infection. Early delivery increased theincidence of respiratory distress syndrome (RR 1.26, 95% CI 1.05 –1.53), and an increased rate of caesarean
+section (RR 1.26, 95% CI 1.11 –1.44). There were no differences in overall perinatal mortality or intrauterine
+deaths when comparing early delivery with expectant management. Early birth was associated with a higher rateof neonatal death (RR 2.55, 95% CI 1.17 –5.56) and need for ventilation (RR 1.27, 95% CI 1.02 –1.58).
+43Evidence
+level 1 ++
+The results and conclusions of the Cochrane review are inﬂuenced by those trials assessing ‘late’ PPROM (34+0to
+36+6weeks’ gestation) such as the PPROMPT trial2and it is less clear whether expectant management to
+37+0weeks’ gestation is appropriate for women who experience PPROM at earlier gestations. The Cochrane review
+acknowledges that research is required to determine which groups of women with PPROM would not beneﬁt fromexpectant management, including gestational age at presentation.
+The individual studies included in the Cochrane review
+43had a number of ‘exclusion criteria’ including: active labour,
+chorioamnionitis, concerns about fetal wellbeing, monochorionic multiple pregnancy, hypertensive disorders andother contraindications to continuing the pregnancy. Therefore the timing of birth should be discussed with eachwoman on an individual basis with careful consideration of patient preference and ongoing clinical assessment.
+RCOG Green-top Guideline No. 36
+6addresses the management of PPROM in women known to be
+colonized with group B streptococcusEvidence
+level 4
+RCOG Green-top Guideline No. 73 e161 of e166 ª2019 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15803 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+8. Care in a subsequent pregnancy following PPROM
+8.1 Who should care for woman in a subsequent pregnancy?
+Recommendation Evidence
+QualityStrength Rationale for the recommendation
+In a subsequent pregnancy following
+PPROM, women should be cared for by an
+obstetrician with an interest in pretermbirth4 U The risk of PPROM in subsequent
+pregnancies is increased
+A population based cohort study found that pregnancies complicated by PPROM are at increased risk of
+recurrent PPROM in subsequent pregnancies (OR 8.7, 95% CI 6.7 –11.4 in white women and OR 7.2, 95%
+CI 5.1 –10.1 in African American women).
+44This study also found that a short inter-pregnancy interval is
+associated with greater riskEvidence
+level 2 +
+In pregnancies following PPROM, women should be cared for by an obstetrician with an interest in preterm birth;
+ideally this would be in a dedicated preterm labour clinic. Modiﬁable risk factors, such as smoking45and respiratory
+diseases46should be addressed. There is evidence that screening for lower genital tract infections and midwife
+continuity throughout antenatal care are beneﬁcial in preventing preterm birth.47Clinicians may offer these women
+genital tract screening for infection and/or serial transvaginal ultrasound scans to determine the cervical length, butthe evidence to support these interventions is lacking.
+5
+9. Recommendations for future research
+/C15Studies are required to determine the antibiotic of choice and duration of treatment following PPROM.
+/C15Controlled trials are required to determine whether magnesium sulphate has a role in PPROM when delivery isanticipated between 30
++0and 33+6weeks of gestation.
+/C15Studies comparing a single bolus of magnesium sulphate with a longer intravenous infusion are required.
+/C15Methods to monitor the fetus following PPROM require further investigation.
+/C15The role of sealants to ‘repair’ fetal membranes is currently under investigation.
+/C15Studies are required to determine whether there is a role for amnioinfusion in PPROM.
+/C15Trials are needed to determine which groups of women with PPROM would not beneﬁt from expectant management.
+10. Auditable topics
+/C15Proportion of women with PPROM who are offered antibiotics for 10 days following PPROM, or until the
+woman is in established labour (100%).
+/C15Proportion of women who experience PPROM between 24+0and 33+6weeks of gestation who are offered
+corticosteroids (100%).
+/C15Proportion of women less than 30+0weeks’ gestation who receive magnesium sulphate within 24 hours prior to
+birth (100%).
+/C15Proportion of women with PPROM who are given the opportunity to discuss their care with a neonatologist (100%).
+/C15Proportion of women with PPROM who birth in a centre without adequate facilities to care for their baby (0%)
+RCOG Green-top Guideline No. 73 e162 of e166 ª2019 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15803 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+11. Useful links and support groups
+/C15Royal College of Obstetricians and Gynaecologists. When your waters break early. Information for you. London:
+RCOG; 2019.
+/C15Little Heartbeats, a support group that promotes the awareness of PPROM [www.little-heartbeats.org.uk].
+Acknowledgments
+The RCOG would like to thank Dr Sarah Prince for her assistance in developing the new Green-top Guideline
+format.
+Disclosure of interest
+AJT has declared no conﬂicts of interest. Full disclosure of interests for the developer, Guidelines Committee andpeer reviewers are available to view online as supporting information.
+Funding
+All those involved in the development of the Green-top Guidelines, including the Guidelines Committee, GuidelinesCommittee co-chairs, guideline developers, peer reviewers and other reviewers, are unpaid volunteers and receiveno direct funding for their work in producing the guideline. The only exception to this are the GuidelinesCommittee members who receive reimbursement for expenses for attending Guidelines Committee meetings forstandard RCOG activities; this is standard as per RCOG rules.
+Supporting Information
+Additional supporting information may be found online in the Supporting Information section at the end of thearticle.
+Infographic S1. Infographic version of the guideline
+Audio S1. Audio version of the guidelineAppendix S1. PPROM literature search strategyAppendix S2. PPROM search strategy top up
+References
+1. Mercer BM. Preterm premature rupture of the membranes.
+Obstet Gynecol 2003;101:178 –93.
+2. Morris JM, Roberts CL, Bowen JPJ, Bond DM, Algert CS,
+Thornton JG, Crowther CA. Immediate delivery compared withexpectant management after preterm pre-labour rupture of the
+membranes close to term (PPROMT trial): a randomised
+controlled trial. Lancet 2016;387:444 –52.
+3. Peaceman AM, Lai Y, Rouse DJ, Spong CY, Mercer BM, Varner MW,
+et al. Length of latency with preterm premature rupture of
+membranes before 32 weeks’ gestation. Am J Perinatol 2015;32:57 –62.
+4. Dale PO, Tanbo T, Bendvold E, Moe N. Duration of the latency
+period in preterm premature rupture of the membranes.
+Maternal and neonatal consequences of expectant management.
+Eur J Obstet Gynecol Reprod Biol 1989;30:257 –62.5. National Institute for Health and Care Excellence. Preterm Labour
+and Birth . NICE guideline 25. London: NICE; 2015.
+6. Hughes RG, Brocklehurst P, Steer PJ, Heath P, Stenson BM on
+behalf of the Royal College ofObstetricians and Gynaecologists.Prevention of early-onset neonatal group B streptococcal
+disease. Green-top GuidelineNo. 36. BJOG 2017;124:e280 –
+e305.
+7. Royal College of Obstetricians and Gynaecologists. Development of
+RCOG Green-top Guidelines . Clinical Governance Advice No. 1.
+London: RCOG; 2015.
+8. Palacio M, K €uhnert M, Berger R, Larios CL, Marcellin L.
+Meta-analysis of studies on biochemical marker tests for the
+diagnosis of premature rupture of membranes: comparison of
+performance indexes. BMC Pregnancy Childbirth 2014;14:183.
+RCOG Green-top Guideline No. 73 e163 of e166 ª2019 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15803 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+9. Igbinosa I, Moore FA 3rd, Johnson C, Block JE. Comparison of
+rapid immunoassays for rupture of fetal membranes. BMC
+Pregnancy Childbirth 2017;17:128.
+10. Jayaprakash TP, Wagner EC, van Schalkwyk J, Albert AYK, Hill JE,
+Money DM, PPROM Study Group. High diversity and variability in
+the vaginal microbiome in women following preterm premature
+rupture of membranes (PPROM): a prospective cohort study.PLoS ONE 2016;11:e0166794.
+11. Danesh A, Janghorbani M, Khalatbari S. Effects of antenatal
+corticosteroids on maternal serum indicators of infection inwomen at risk for preterm delivery: a randomized trial comparingbetamethasone and dexamethasone. J Res Med Sci 2012;17:911.
+12. Caloone J, Rabilloud M, Boutitie F, Traverse-Glehen A,
+Allias-Montmayeur F, Denis L, et al. Accuracy of several maternalseric markers for predicting histological chorioamnionitis afterpreterm premature rupture of membranes: a prospective and
+multicentric study. Eur J Obstet Gynecol Reprod Med 2016;205:133 –40.
+13. Sabogal CP, Fonseca J, Garc /C19ıa-Perdomo HA. Validation of
+disgnostic tests for histologic chorioamnionitis: systematic review
+and meta-analysis. Eur J Obstet Gynecol Reprod Biol 2018;228:13 –26.
+14. Knight M, Nair M, Tuffnell D, Kenyon S, Shakespeare J,
+Brocklehurst P, et al. Saving Lives, Improving Mothers’ Care -
+Surveillance of Maternal Deaths in the UK 2012-14 and Lessons Learned
+to Inform Maternity Care from the UK and Ireland Conﬁdential Enquiries
+into Maternal Deaths and Morbidity 2009-14 . Oxford: National
+Perinatal Epidemiology Unit, University of Oxford; 2016.
+15. Kenyon S, Boulvain M, Neilson JP. Antibiotics for preterm rupture
+of membranes. Cochrane Database Syst Rev 2013;:CD001058.
+16. Kenyon S, Pike K, Jones DR, Brocklehurst P, Marlow N, Salt A,
+et al. Childhood outcomes after prescription of antibiotics to
+pregnant women with preterm rupture of the membranes: 7-year
+follow-up of the ORACLE I trial. Lancet 2008;372:1310 –8.
+17. Lee JH, Romero R, Kim SM, Chaemsaithong P, Park CW, Park JS,
+et al. A new anti-microbial combination prolongs the latency
+period, reduces acute histologic chorioamnionitis as well as
+funisitis, and improves neonatal outcomes in preterm PROM.J Matern Fetal Neonatal Med 2016;29:707 –20.
+18. Chang KH, Kim HJ, Yu HJ, Lee J, Kim JS, Choi SJ, et al.
+Comparison of antibiotic regimens in preterm premature rupture
+of membranes: neonatal morbidity and 2-year follow-up ofneurologic outcome. J Matern Fetal Neonatal Med 2017;30:2212 –8.
+19. Kenyon SL, Taylor DJ, Tarnow-Mordi W, for the ORACLE
+Collaborative Group. Broad spectrum antibiotics for preterm,
+prelabour rupture of fetal membranes: the ORACLE I randomizedtrial. Lancet 2001;357:979 –88.
+20. Magann EF, Haram K, Ounpraseuth S, Mortensen JH, Spencer HJ,
+Morrison JC. Use of corticosteroids in special circumstances: acomprehensive review. Acta Obstet Gynecol Scand 2017;96:395 –409.
+21. Been JV, Degraeuwe PL, Kramer BW, Zimmermann LJ. Antenatal
+steroids and neonatal outcome after chorioamnionitis: a meta-
+analysis. BJOG 2011;118:113 –22.
+22. Travers CP, Clark RH, Spitzer AR, Das A, Garite TJ, Carlo WA.
+Exposure to any antenatal corticosteroids and outcomes in
+preterm infants by gestational age: prospective cohort study. BMJ
+2017;356:j1039.
+23. Ehret DE, Edwards EM, Greenberg LT, Bernstein IM, Buzas JS,
+Soll RF, et al. Association of antenatal steroid exposure with
+survival among infants receiving postnatal life support at 22 to 25weeks’ gestation. JAMA Network Open 2018;1:e183235.
+24. Doyle LW, Crowther CA, Middleton P, Marret S, Rouse D.
+Magnesium sulphate for women at risk of preterm birth for
+neuroprotection of the fetus. Cochrane Database Syst Rev 2009;:
+CD004661.25. Costantine MM, Weiner SJ, Eunice Kennedy Shriver National
+Institute of Child Health and Human Development Maternal-Fetal
+Medicine Units Network. Effects of antenatal exposure tomagnesium sulfate on neuroprotection and mortality in preterminfants: a meta-analysis. Obstet Gynecol 2009;114:354 –64.
+26. Conde-Agudelo A, Romero R. Antenatal magnesium sulfate for
+the prevention of cerebral palsy in preterm infants less than34 weeks of gestation: a systematic review and metaanalysis.
+Am J Obstet Gynecol 2009;200:595 –609.
+27. Jung EJ, Byun JM, Kim YN, Lee KB, Sung MS, Kim KT, et al.
+Antenatal magnesium sulfate for both tocolysis and fetalneuroprotection in premature rupture of the membranes before
+32 weeks’ gestation. J Matern Fetal Neonatal Med 2018;31:1431 –41.
+28. Royal College of Obstetricians and Gynaecologists. Magnesium
+Sulphate to Prevent Cerebral Palsy following Preterm Birth . Scientiﬁc
+Impact Paper No. 29. London: RCOG; 2011.
+29. Mackeen AD, Seibel-Seamon J, Muhammad J, Baxter JK, Berghella
+V. Tocolytics for preterm premature rupture of membranes.Cochrane Database Syst Rev 2014;:CD007062.
+30. Nijman TAJ, van Vliet EOG, Naaktgeboren CA, Oude RK, de LT,
+Bax CJ, et al. Nifedipine versus placebo in the treatment ofpreterm prelabor rupture of membranes: a randomised controlledtrial. Assessment of perinatal outcome by use of tocolysis in early
+labor –APOSTEL IV trial. Eur J Obstet Gynecol Reprod Med
+2016;205:79 –84.
+31. Lorthe E, Gofﬁnet F, Marret S, Vayssiere C, Flamant C, Quere M,
+et al. Tocolysis after preterm premature rupture of membranes
+and neonatal outcome: a propensity-score analysis. Am J Obstet
+Gynecol 2017;217:212.
+32. Abou El Senoun G, Dowswell T, Mousa HA. Planned home versus
+hospital care for preterm prelabour rupture of the membranes
+(PPROM) prior to 37 weeks’ gestation. Cochrane Database Syst Rev
+2014;:CD008053.
+33. Palmer L, Grabowska K, Burrows J, Rowe H, Billing E, Metcalfe A.
+A retrospective cohort study of hospital versus home care for
+pregnant women with preterm prelabor rupture of membranes.Int J Gynecol Obstet 2017;137:180 –4.
+34. Dussaux C, Senat MV, Bouchghoul H, Benachi A, Mandelbrot L,
+Kayem G. Preterm premature rupture of membranbes: is home
+care acceptable? J Matern Fetal Neonatal Med 2018;17:2284 –
+92.
+35. Phupong V, Kulmala L. Factors associated with latency period in
+preterm prelabor rupture of membranes. J Matern Fetal Neonatal
+Med 2016;29:2650 –3.
+36. Mehra S, Amon E, Hopkins S, Gavard JA, Shyken J. Transvaginal
+cervical length and amniotic ﬂuid index: can it predict delivery
+latency following preterm premature rupture of membranes?Am J Obstet Gynecol 2015;212:400.
+37. Petit C, Deruelle P, Behal H, Rakza T, Balagny S, Subtil D, et al.
+Preterm premature rupture of membranes: which criteria
+contradict home care management? Acta Obstet Gynecol Scand
+2018;97:1499 –507.
+38. Ramsey PS, Nuthalapaty FS, Lu G, Ramin S, Nuthalapaty ES, Ramin
+KD. Contemporary management of preterm premature rupture
+of membranes (PPROM): a survey of maternal-fetal medicineproviders. Am J Obstet Gynecol 2004;191:1497 –502.
+39. Sharp GC, Stock SJ, Norman JE. Fetal assessment methods for
+improving neonatal and maternal outcomes in preterm prelabourrupture of membranes. Cochrane Database Syst Rev 2014;:
+CD010209.
+40. Hofmeyr GJ, Eke AC, Lawrie TA. Amnioinfusion for third
+trimester preterm premature rupture of membranes. Cochrane
+Database Syst Rev 2014;:CD000942.
+RCOG Green-top Guideline No. 73 e164 of e166 ª2019 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15803 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+41. Van Teeffelen S, Pajkrt E, Willekes C, Van Kuijk SM, Mol BW.
+Transabdominal amnioinfusion for improving fetal outcomes after
+oligohydramnios secondary to preterm prelabour rupture ofmembranes before 26 weeks. Cochrane Database Syst Rev 2013;:
+CD009952.
+42. Stamrood CAI, Wesses I, Doornbos B, Aarnoudse JG, van den
+Berg PP, Schultz W, et al. Posttraumatic stress disorder followingpreeclampsia and PPROM: a prospective study with 15 months
+follow-up. Reprod Sci 2011;18:645 –53.
+43. Bond DM, Middleton P, Levett KM, van der Ham DP, Crowther
+CA, Buchanan SL, et al. Planned early birth versus expectantmanagement for women with preterm prelabour rupture of
+membranes prior to 37 weeks’ gestation for improving
+pregnancy outcome. Cochrane Database of Syst Rev 2017;:
+CD004735.44. Getahun D, Strickland D, Ananth CV, Fassett MJ, Sacks DA, Kirby
+RS, et al. Recurrence of preterm premature rupture of
+membranes in relation to interval between pregnancies.Am J Obstet Gynecol 2010;202:570.e1 –6.
+45. England MC, Benjamin A, Abenhaim HA. Increased risk of preterm
+premature rupture of membranes at early gestational ages among
+maternal cigarette smokers. Am J Perinatol 2013;30:821 –6.
+46. Getahun D, Ananth CV, Oyelese Y, Peltier MR, Smulian JC,
+Vintzileos AM. Acute and chronic respiratory diseases in
+pregnancy: association with spontaneous premature rupture ofmembranes. J Matern Fetal Neonatal Med 2007;20:669 –75.
+47. Medley N, Vogel JP, Care A, Alﬁrevic Z. Interventions during
+pregnancy to prevent preterm birth: an overview of Cochrane
+systematic reviews. Cochrane Database of Syst Revs 2018;
+CD012505.
+RCOG Green-top Guideline No. 73 e165 of e166 ª2019 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15803 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+This guideline was produced on behalf of the Royal College of Obstetricians and Gynaecologists by:
+Dr AJ Thomson MRCOG, Paisley.and peer reviewed by:Professor AL David FRCOG, University College London, London; E Lorthe, RM, PhD, Paris; M Grifﬁths, Bedfordshire; MA
+Oudijk, Amsterdam UMC, the Netherlands; S Kenyon RM, MA, PhD, University of Birmingham, Birmingham; Miss S JhaMD, FRCOG, Shefﬁeld Teaching Hospitals NHS Foundation Trust, Shefﬁeld; A Pickersgill FRCOG, Manchester University
+NHS Foundation Trust, Manchester; L Thomas, RCOG, Epsom; Professor JE Norman, University of Edinburgh, Edinburgh;
+M Costantine, MD, The University of Texas Medical Branch, Houston, TX, USA; V Phupong FRTCOG, ChulalongkornUniversity, Bangkok; Dr NA Khan, Al Qassmiya Women’s and Child Hospital, Sharjah, United Arab Emirates; UK National
+Screening Committee Evidence Team; G Kumar FRCOG, Wrexham Maelor Hospital, Wrexham; D Fraser FRCOG,
+Norfolk and Norwich University Hospitals NHS Foundation Trust, Norwich; S Roy MA MRCS MRCP, CambridgeUniversity Hospitals NHSFT, Cambridge; Little Heartbeats; H Eadon, BPharm MSc MRPharmS, National Guideline Alliance,London; Harris Wellbeing Preterm Birth Centre; J Girling, Chelsea and Westminster Hospital NHS Foundation Trust,
+London; EF Magann FACOG, University of Arkansas for Medical Sciences, Little Rock, AR, USA; Birth Trauma Association;
+PS Yeh MRCOG, London North West University Healthcare NHS Trust, London; RCOG Women’s Network; ProfessorDOC Anumba, MBBS FWACS FRCOG MD LL.M (Medical Law), The University of Shefﬁeld, Shefﬁeld; L Chappell, King’s
+College London, London; H Mactier, Honorary Secretary of the British Association of Perinatal Medicine, Glasgow.
+Committee lead reviewers were: Dr B Kumar FRCOG, Wrexham and Dr B Magowan FRCOG, Melrose
+The chair of the Guidelines Committee were: Dr MA Ledingham FRCOG, Glasgow
+1; Dr B Magowan FRCOG, Melrose1;
+and Dr AM Thomson MRCOG, Paisley2.
+1co-chairs from June 20182until May 2018
+All RCOG guidance developers are asked to declare any conﬂicts of interest. A statement summarising any
+conﬂicts of interest for this guideline is available from: https://www.rcog.org.uk/en/guidelines-research-
+services/guidelines/gtg73/.
+The ﬁnal version is the responsibility of the Guidelines Committee of the RCOG.
+The guideline will be considered for update 3 years after publication, with an intermediate
+assessment of the need to update 2 years after publication.
+DISCLAIMER
+The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical practice.
+They present recognised methods and techniques of clinical practice, based on published evidence, for consideration byobstetricians and gynaecologists and other relevant health professionals. The ultimate judgement regarding a particular
+clinical procedure or treatment plan must be made by the doctor or other attendant in the light of clinical data presented
+by the patient and the diagnostic and treatment options available.
+This means that RCOG Guidelines are unlike protocols or guidelines issued by employers, as they are not intended to be
+prescriptive directions deﬁning a single course of management. Departure from the local prescriptive protocols orguidelines should be fully documented in the patient’s case notes at the time the relevant decision is taken
+RCOG Green-top Guideline No. 73 e166 of e166 ª2019 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2019, 9, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.15803 by Cochrane France, Wiley Online Library on [27/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License

@@ -1,0 +1,1099 @@
+# Extracted from: UHSussex - Obstetric VTE - 2025.pdf
+# Guideline ID: uhsussex-obstetric-vte-2025
+# Content length: 57184 characters
+# Processing date: 1746336520.4084098
+
+CLINICAL GUIDELINE Due for review : December 2027 
+Name of Guideline : Obstetric VTE v1.0 
+For use at : PRH, RSCH. SRH, WH 
+ 
+ Page 1 of 31 
+Please note, IF DOCUMENT IS PRI NTED, IT MAY BECOME OUT OF DATE 
+ 
+TRUST CLINICAL GUIDELINE 
+Obstetric VTE 
+Prevention and Management of Venous Thromboembolism (VTE) 
+in Pregnancy and the Postnatal Period 
+ 
+Overview 
+ 
+The purpose of this guideline is to provide good practice evidence for staff regarding prevention 
+and management of venous thromboembolism during pregnancy and postnatally. 
+ 
+This guideline applies to: 
+ 
+• Midwives 
+• Obstetricians 
+• Anaesthetists 
+• Maternity recovery staff 
+• Operating Department Practitioners 
+• Any physician looking after pregnant patients 
+• Emergency floor staff 
+
+Owner S. Adamson & F. Usifo 
+Author/further information Sophia Stone, Obstetric Consultant 
+Jo Sinclair, Obstetric Consultant 
+David Annandale, W&C Pharmacist 
+Guideline version v1.0 
+Related policies None 
+Related protocols/ procedures SRH & WH: CG1196 Care in labour , CG1103 
+Antenatal Care & Patient Information , CG1134 
+Postnatal Care , CG1148 Recognition & 
+management of severely ill pregnant woman or 
+person 
+PRH/RSCH: MP035 Care of women in labour , 
+MP001 Provision and schedule of Antenatal 
+Care , MP071 Provision and schedule of Postnatal 
+Care , MP056 Obstetric High Dependency Care 
+Standards RCOG (2015) Guideline 37a and 37b 
+NG182 Caesarean birth CLINICAL GUIDELINE Due for review : December 2027 
+Name of Guideline : Obstetric VTE v1.0 
+For use at : PRH, RSCH. SRH, WH 
+ 
+ Page 2 of 31 
+NICE NG89 Venous thromboembolism in over 
+16s: reducing the risk of hospital -acquired deep 
+vein thrombosis or pulmonary embolism 2019 
+MBRRACE -UK 2023 
+Superseded documents CG1153 Prevention and Management of Venous 
+Thromboembolism (VTE) in pregnancy guideline 
+MP012 Venous thrombosis 
+Review due December 2027 
+Date uploaded 2nd January 2025 
+
+Approval 
+Joint Obstetric Guideline Group: Date approved : 13/09/2024 
+W&C Clinical Effectiveness Group Date approved: 29/10 /2024 
+Consultation - as required: 
+Medicines Governance Committee Date approved : 27/11/24 
+Thrombosis Committee Date approved : 24/10/2024 
+Ratification 
+Clinical Document Approval Group Date approved : 20th December 
+2024 
+
+ CLINICAL GUIDELINE Due for review : December 2027 
+Name of Guideline : Obstetric VTE v1.0 
+For use at : PRH, RSCH. SRH, WH 
+ 
+ Page 3 of 31 
+ 
+Table of contents 
+ 
+1.0 Introduction ................................ ................................ ................................ ........................... 5 
+2.0 Definitions and abbreviations used within this guideline ................................ ........................ 5 
+3.0 Terminology ................................ ................................ ................................ .......................... 6 
+4.0 Contents ................................ ................................ ................................ ................................ 6 
+5.0 Duties and responsibilities ................................ ................................ ................................ ..... 6 
+ 
+Section 1: Prevention of VTE in pregnancy ................................ ................................ .................. 7 
+6.0 Pre-pregnancy risk assessment and counselling ................................ ................................ ... 7 
+7.0 Risk assessment in pregnancy ................................ ................................ .............................. 7 
+8.0 Pregnant women and birthing people with a history of VTE ................................ ................... 9 
+8.1 Single episode of VTE ................................ ................................ ................................ ........... 9 
+8.2 Recurrent episodes of VTE ................................ ................................ ................................ .. 10 
+8.3 Women and birthing people with a history of thrombophilia: Heritable (i.e. antithrombin 
+deficiency) and Acquired (i.e. antiphospholipid syndrome) ................................ .................. 10 
+9.0 Antenatal and postnatal thromboprophylaxis dosing ................................ ............................ 11 
+10.0 Pausing thromboprophylaxis for vaginal bleeding, labour, induction of labour or 
+caesarean birth ................................ ................................ ................................ .................... 11 
+10.1 Intrapartum considerations including regional analgesia ................................ ...................... 12 
+10.2 Induction of labour ................................ ................................ ................................ ............... 12 
+11.0 Postnatal thromboprophylaxis ................................ ................................ ............................. 12 
+12.0 Prevention of VTE in pregnant women and birthing people with COVID -19 ......................... 13 
+13.0 Agents used for thromboprophylaxis ................................ ................................ ................... 13 
+13.1 Low-molecular -weight Heparin (LMWH) ................................ ................................ .............. 13 
+14.0 Contraindications to LMWH ................................ ................................ ................................ . 14 
+14.1 Other agents ................................ ................................ ................................ ....................... 14 
+ 
+Section 2: Diagnosis and management of DVT and PE in pregnancy ................................ ...... 16 
+15.0 Introduction ................................ ................................ ................................ ......................... 16 
+16.0 Diagnosis of DVT and PE or suspected DVT or PE in the pregnant patient, after birth, 
+miscarriage, termination or ectopic pregnancy ................................ ................................ ..... 16 
+17.0 Further information on diagnostic tests ................................ ................................ ................ 17 
+17.2 CTPA ................................ ................................ ................................ ................................ .. 17 
+18.0 Treatment of VTE in pregnancy and postnatally ................................ ................................ .. 18 
+18.1 Analgesia ................................ ................................ ................................ ............................ 18 
+18.2 Unfractionated heparin in life -threatening/massive PE ................................ ......................... 18 
+18.3 Blood test monitoring in pregnant women and birthing people on heparin ........................... 19 
+18.4 Additional /alternative therapies ................................ ................................ ........................... 19 
+19.0 Following diagnosis of VTE ................................ ................................ ................................ . 19 
+20.0 Postnatal Clinic review ................................ ................................ ................................ ........ 20 
+ 
+Appendix 1: VTE risk assessment for use on non -maternity wards ................................ ................. 21 
+Appendix 3: Patient information ................................ ................................ ................................ ...... 23 
+Appendix 4: Administration chart for treatment doses ................................ ................................ ..... 24 CLINICAL GUIDELINE Due for review : December 2027 
+Name of Guideline : Obstetric VTE v1.0 
+For use at : PRH, RSCH. SRH, WH 
+ 
+ Page 4 of 31 
+Appendix 5: Pathway for diagnosis and management of PE in pregnancy and puerperium ............ 25 
+Appendix 6: Suspected PE in Pregnancy Care Bundle in A&E ................................ ....................... 26 
+Appendix 7: Monitoring the effectiveness of this guideline ................................ .............................. 27 
+Appendix 8: Guideline Version Control Log ................................ ................................ ..................... 28 
+Appendix 9: Due Regard Assessment Tool ................................ ................................ ..................... 29 
+Appendix 10: Template Dissemination, Implementation and Access Plan ................................ ....... 30 
+Appendix 10: Additional guidance and information ................................ ................................ .......... 31 
+
+ CLINICAL GUIDELINE Due for review : December 2027 
+Name of Guideline : Obstetric VTE v1.0 
+For use at : PRH, RSCH. SRH, WH 
+ 
+ Page 5 of 31 
+Obstetric VTE : 
+Prevention and Management of Venous Thromboembolism (VTE) in 
+Pregnancy and the Postnatal Period 
+ 
+1.0 Introduction 
+This guideline aims to ensure measures are taken to prevent venous thromboembolism, and to 
+ensure optimal investigation, treatment and outcome for pregnant women and birthing people with 
+suspected thrombosis during pregnancy. 
+To provide information regarding : 
+• The prevention of venous thromboembolism (VTE) during pregnancy, birth and 
+puerperium. 
+• The immediate investigation and management of women and birthing people in whom 
+VTE is suspected during pregnancy or puerperium. 
+ 
+Normal physiological changes of pregnancy and the puerperium result in a relatively pro ‐thrombotic 
+state, which starts in early pregnancy and persists for at least 12 weeks postpartum. Venous 
+thrombo -embolism (VTE) remains the leading direct cause of maternal death in the UK. This 
+accounts for deaths during pregnancy and up to 6 weeks after t he end of pregnancy. Between 2016 
+- 2018, there were 34 maternal deaths from venous thromboembolism. The maternal mortality rate 
+from VTE in the UK was 0.92 per 100,000 maternities in 2017 - 2019, 1.38 in 2018 - 2020, and 1.60 
+in 2019 -2021 ( MBRRACE -UK 2023 ) 
+2.0 Definitions and abbreviations used within this guideline 
+AES Anti-embolism Stockings CRP C-reactive Protein 
+CTPA CT Pulmonary Angiogram DOACs Direct Oral Anticoagulant 
+DVT Deep Vein Thrombosis ECG Electrocardiogram 
+EPMA Electronic Prescribing and Medicine 
+Administration GFR Glomerular Filtration Rate 
+HG Hyperemesis Gravidarum JOHC Joint obstetric Haematology Clinic 
+LFT Liver Function Test LMWH Low Molecular Weight Heparin 
+LSCS Lower Segment Caesarean Section PE Pulmonary Embolism 
+PPH Postpartum Haemorrhage RCOG Royal College of Obstetricians & 
+Gynaecologists 
+SLR Straight leg raise SROM Spontaneous Rupture of Membranes 
+TED Thrombo –Embolus deterrent TTO To take out 
+UFH Unfractionated Heparin U&E Urea & Electrolytes 
+V/Q Ventilation/Perfusion scan VTE Venous Thromboembolism 
+ CLINICAL GUIDELINE Due for review : December 2027 
+Name of Guideline : Obstetric VTE v1.0 
+For use at : PRH, RSCH. SRH, WH 
+ 
+ Page 6 of 31 
+3.0 Terminology 
+Joint Obstetric 
+Haematology 
+Clinic (JOHC) MDT clinic facilitated by Consultant Haematologists and Obstetricians 
+held m onthly at St Richards and Worthing Hospitals and Princess Royal 
+Hospital (PRH) . 
+ 
+4.0 Contents 
+• Section 1 : Discusse s antenatal risk assessment, antenatal and postnatal 
+thrombo prophylaxis recommendations for women and birthing people at risk of VTE . 
+• Section 2: Discusse s the diagnosis and management of DVTs or PEs and links to the 
+acute medicine DVT/ PE pathways in operation across the Trust . 
+5.0 Duties and responsibilities 
+All staff working in the Trust To access, read, understand and follow this guideline . 
+To use their professional judgement in application of this guideline . 
+Managers To ensure the guideline is reviewed as required in line with Trust 
+and National recommendations . 
+To ensure the guideline is accessible to all relevant staff . 
+ 
+ CLINICAL GUIDELINE Due for review : December 2027 
+Name of Guideline : Obstetric VTE v1.0 
+For use at : PRH, RSCH. SRH, WH 
+ 
+ Page 7 of 31 
+Section 1 : Prevention of VTE in pregnancy 
+ 
+6.0 Pre-pregnancy risk assessment and counselling 
+ 
+Pregnant women and birthing people at high risk of or with previous confirmed VTE should be 
+offered an appointment in the obstetric medicine clinic for pre -pregnancy counselling and antenatal, 
+intrapartum and postpartum planning: 
+• Pregnant w omen and birthing people (with or without personal history of VTE) planning 
+pregnancy who have a strong family history of an unprovoked or oestrogen -provoked 
+VTE in a first -degree relative when aged <50 years should be tested for antithrombin 
+deficiency. If the relative has a known thrombophilia, consider testing for same 
+thrombophilic tendency. Please discuss with haematologists before offering testing. 
+• Prior to testing for thrombophilia, pregnant women and birthing people should be 
+counselled regarding the implications to themselves and family members of a positive or 
+negative result. Clinicians with specific expertise in this area should interpret the results . 
+• Thrombophilia testing is not required if the pregnant woman or birthing person has other 
+risk factors for VTE in pregnancy indicating a need for thromboprophylaxis. 
+ 
+7.0 Risk assessment in pregnancy 
+• All pregnant women and birthing people should be weighed and have a risk assessment 
+for VTE at booking or at their first antenatal visit. 
+• Antenatal venous thromboembolism (VTE) risk assessment should be completed on the 
+BadgerNet Maternity . 
+• Pregnant women and birthing people at high risk of or with previous confirmed VTE 
+should be referred at earliest opportunity to an obstetrician or clinician with expertise in 
+thrombosis for discussion and initiation of thromboprophylaxis if indicated. 
+• For women and birthing people who are currently prescribed or due to be prescribed 
+LMWH , re-weigh at 28 weeks and check that the appropriate prophylactic dose of LMWH 
+is prescribed according to their new weight. 
+• VTE Risk assessment should also be repeated if ANY new risk factors are noted, for 
+example if a pregnant woman or birthing person is admitted to hospital , if long-distance 
+travel of more than 4 hours is planned or if there is significant weight gain at any stage in 
+pregnancy and immediately postpartum and prescribe appropriate thromboprophylactic 
+dose unless there is a specific contraindication such as active bleeding, bleeding disorder 
+or imminent birth. 
+• For pregnant women and birthing people admitted under the medical team, the patient’s 
+VTE risk will be recorded on the pregnancy -specific VTE risk assessment chart appendix 
+1 and on EPMA. Where possible, this should occur within 14 hours of admission. 
+• VTE prophylaxis should be administered daily at 18.00 hours (unless special 
+circumstances or contraindications exist). 
+• The risk of VTE must be reassessed on the consultant -led ward round within 24 hours of 
+admission, at 72 hours after admission, and whenever there is a change in clinical 
+condition. CLINICAL GUIDELINE Due for review : December 2027 
+Name of Guideline : Obstetric VTE v1.0 
+For use at : PRH, RSCH. SRH, WH 
+ 
+ Page 8 of 31 
+• Consider VTE risk and thromboprophylaxis after ectopic pregnancy , miscarriage or 2nd 
+and 3rd trimester intrauterine death . Stillbirth has been shown to be a risk factor for 
+VTE 
+• NB the medical co -morbidities are only a risk for VTE if the disease is ACTIVE - if the 
+disease is treated with drugs and in remission, it does not score 
+ 
+Following clinical review and scoring of VTE risk factors ( appendix 1 ) consider the following 
+prophylactic LMWH regimens in Table 1 below: 
+ 
+Define individual risk Thromboprophylaxis management 
+Women and birthing 
+people with 4 current risk 
+factors (other than 
+previous VTE or major 
+thrombophilia) 
+ • Offer prophylactic low molecular weight heparin (LMWH) 
+throughout the antenatal period from as early as possible . 
+• May require prophylactic LMWH for 6 weeks postnatally, following 
+a postnatal reassessment . 
+Women and birthing 
+people with 3 current risk 
+factors (other than 
+previous VTE or major 
+thrombophilia) • Offer thromboprophylaxis with LMWH from 28 weeks gestation. 
+• May require prophylactic LMWH for 6 weeks postnatally, following 
+a postnatal reassessment . 
+Women and birthing 
+people with 2 current risk 
+factors (other than 
+previous VTE or major 
+thrombophilia) • Offer thromboprophylaxis with LMWH for 10 days postpartum 
+following postnatal reassessment of risk factors . 
+Women and birthing 
+people with any previous 
+VTE (except a single 
+event related to major 
+surgery ) • Offer thromboprophylaxis with LMWH throughout the antenatal 
+period from as early as possible. 
+• Offer thromboprophylaxis with LMWH for 6 weeks after birth . 
+ 
+Women and birthing 
+people with VTE episode 
+provoked by surgery 
+from which they have 
+recovered, and NO other 
+risk factors . • Offer thromboprophylaxis with LMWH from 28 weeks gestation. 
+• Offer thromboprophylaxis with LMWH for 6 weeks after birth . CLINICAL GUIDELINE Due for review : December 2027 
+Name of Guideline : Obstetric VTE v1.0 
+For use at : PRH, RSCH. SRH, WH 
+ 
+ Page 9 of 31 
+ 
+Heritable major 
+thrombophilia : 
+-antithrombin 
+-protein C 
+-protein S 
+-homozygosity for fa ctor V 
+leiden 
+-combination of minor 
+thrombophilias i.e factor V 
+leiden gene + prothro mbin 
+ • Immediate referral to Maternal Medicine Clinic / Joint Obstetric 
+Haematology Clinic (JOHC) . 
+• See section 8.3 
+• RCOG PDF 
+Acquired thrombophilia 
+(antiphospholipid 
+syndrome) • Immediate referral to Maternal Medicine Clinic / JOHC 
+• See section 8.3 
+• RCOG PDF 
+All women and birthing 
+people admitted to 
+hospital during pregnancy • Offer thromboprophylaxis with LMWH for all pregnant women and 
+birthing people admitted to hospital unless there is a specific 
+contraindication, such as active bleeding or labour 
+• All women and birthing people admitted to hospital with COVID -19 
+require thromboprophylaxis with LMWH during their inpatient stay 
+and for 10 days after discharge. 
+Women and birthing 
+people with ovarian 
+hyperstimulation 
+syndrome • Offer thromboprophylaxis with LMWH throughout the first trimester 
+Women and birthing 
+people with Hyperemesis 
+Gravidarum (HG) 
+• Women and birthing people admitted with HG should be offered 
+thromboprophylaxis with LMWH and those being managed in the 
+community should be assessed for VTE risk. 
+• Thromboprophylaxis can be discontinued upon discharge 
+providing no other indications exist for continuation of 
+thromboprophylaxis. If one or more additional VTE risk factors 
+then continue thromboprophylaxis until hyperemesis resolves. 
+
+8.0 Pregnant w omen and birthing people with a history of VTE 
+8.1 Single episode of VTE 
+• Pregnant w omen and birthing people with a history of VTE should ideally be referred for 
+Obstetric review prior to pregnancy. CLINICAL GUIDELINE Due for review : December 2027 
+Name of Guideline : Obstetric VTE v1.0 
+For use at : PRH, RSCH. SRH, WH 
+ 
+ Page 10 of 31 
+• In those who become pregnant before receiving such counselling, refer immediately to 
+the Antenatal clinic for consideration of thromboprophylaxis with LMWH and an obstetric 
+management plan . 
+• Where clinical documentation from previous medical history is not available, the previous 
+diagnosis of VTE can be assumed in cases where the woman or birthing person gives a 
+good history and received prolonged (greater than 6 weeks) therapeutic anticoagulation. 
+ 
+ 8.2 Recurrent episodes of VTE 
+• Refer patient to JOHC. 
+• Women and birthing people of childbearing age who are on warfarin should be counselled 
+about the teratogenic effects of the drug and consider appropriate contraception (See 
+UKMEC guideline). Warfarin crosses the placenta leading to an increased risk of 
+congenital abnormaliti es including a characteristic warfarin embryopathy (hypoplasia of 
+nasal bridge, congenital heart defects, ventriculomegaly, agenesis of the corpus callosum, 
+stippled epiphyses) in approximately 5% of fetuses ’ exposed between 6 and 12 wee ks of 
+gestation. 
+• Women and birthing people on Warfarin or other long term anti -coagulants (eg DOAC’s) 
+should be counselled about the risks of these agents in pregnancy and with the support of 
+their GP or Obstetric team, be advised to stop their anticoagulant therapy and change to 
+LMWH as soon as the pregnancy is confirmed. This should take place as soon as 
+possible but ideally prior to the sixth week of pregnancy. 
+• Reassure women and birthing people who require postnatal anticoagulation that both 
+warfarin and LMWH are safe in breastfeeding. DOAC’S are not advised for use during 
+breastfeeding. 
+• For women and birthing people with history of recurrent VTE, offer thromboprophylaxis 
+with LMWH for 6 weeks after birth or until pre -pregnancy anticoagulation regime is 
+resumed. 
+ 
+8.3 Women and birthing people with a history of thrombophilia: Heritable (i.e. 
+asymptomatic antithrombin deficiency , protein S or protein C deficiency or those with 
+more than one thromb ophilic defect ) and Acquired (i.e. antiphospholipid syndrome) 
+ Ideally refer for pre-pregnancy counselling to JOHC 
+ In those who become pregnant before receiving such counselling, refer immediately to 
+the Antenatal Clinic for consideration of thromboprophylaxis with LMWH +- aspirin and an 
+obstetric management plan. 
+ JOHC team will provide a clearly documented antenatal, intrapartum and postnatal plan in 
+the antenatal notes and maternity computerised system following discussion at the 
+regional maternal medicine network MDT for obstetric haematology for category C 
+conditions . This may include antenatal anti -Xa monitoring and the potential for 
+antithrombin replacement at initiation of labour or prior to caesarean birth. 
+ Different subtypes of antithrombin deficiency are associated with different levels of VTE 
+risk and therefore advice should be sought from a local expert in this area. CLINICAL GUIDELINE Due for review : December 2027 
+Name of Guideline : Obstetric VTE v1.0 
+For use at : PRH, RSCH. SRH, WH 
+ 
+ Page 11 of 31 
+9.0 Antenatal and postnatal thromboprophylaxis dosing 
+Current weight * Enoxaparin Dose (Inhixa) 
+< 50 kg 20 mg daily subcutaneously 
+50 – 90 kg 40 mg daily subcutaneously 
+91 – 130 kg 60 mg daily subcutaneously 
+131 – 170 kg 80 mg daily subcutaneously 
+> 170 kg Seek specialist advice 
+High prophylactic dose for women and 
+birthing people weighing 50 – 90 kg 
+consider if at very high risk* 40 mg twice daily subcutaneously 
+Consult with JOHC before prescribing as 
+some of these patients may need full 
+treatment dose on discussion . 
+ Dose must be calculated on current weight . 
+Antenatally : Women and birthing people should be reweighed at 28 weeks and dose 
+recalculated if prophylaxis started prior to this. 
+Postnatally: Weigh the woman or birthing person post birth and calculate dose using this 
+weight. If immobile post birth (for instance post caesarean birth), use the most recent 
+weight to calculate LMWH dose. Re -weigh and recalculate as soon as able to mobilise. 
+ Very high risk: Consult with JOHC before prescribing as some of these patients may need 
+full treatment dose anticoagulation. (RCOG 2023 ). This group includes previous VTE on 
+long term oral anticoagulant, antithrombin deficiency or antiphospholipid syndrome with 
+previous VTE. For women and birthing people with either a weight either below 50kg or 
+above 90kg requiring intermediate dose, please consult with a consu ltant haematologist. 
+ Cardiac valves: Need full treatment dose LMWH and discussion with Haematology 
+Consultant regarding management . 
+ 
+• Antenatal thromboprophylaxis should begin as early in the pregnancy as practical 
+• All pregnant women and birthing people started on LMWH should be offered the RCOG 
+patient information leaflet . 
+• An individualised plan of when to stop prophylactic antenatal LMWH should be 
+documented on BadgerNet Maternity . 
+• If no individualised plan has been documented, LMWH should be stopped the night 
+before planned birth or early labour . 
+10.0 Pausing thromboprophylaxis for vaginal bleeding, labour, induction of labour 
+or caesarean birth 
+• Pregnant w omen and birthing people receiving antenatal LMWH should be advised not to 
+inject any further LMWH if they have any vaginal bleeding , SROM or if labour is 
+suspected /begins . Advise them to contact Maternity Triage for advice . 
+• Pregnant women and birthing people should be reassessed on admission to hospital and 
+further doses should be prescribed on EPMA by medical staff . CLINICAL GUIDELINE Due for review : December 2027 
+Name of Guideline : Obstetric VTE v1.0 
+For use at : PRH, RSCH. SRH, WH 
+ 
+ Page 12 of 31 
+• If a pregnant woman or birthing person is admitted to hospital or midwife -led unit , with 
+suspected ruptured ectopic pregnancy, vaginal bleeding or in active labour, 
+pharmacological VTE prophylaxis should not be offered. 
+• Pregnant w omen and birthing people who are receiving antenatal LMWH should omit 
+their morning dose if coming in for LSCS or Induction of labour. 
+10.1 Intrapartum considerations including regional analgesia 
+• All women and birthing people should be encouraged to mobilise during labour and 
+postpartum; avoid dehydration and offer anti -embolic (TED) stockings. 
+• Regional analgesia techniques should be avoided until at least 12 hours from last 
+prophylactic dose of LMWH and at least 24 hours from last high prophylactic and 
+treatment dose of LMWH. 
+• In women and birthing people receiving treatment doses of LMWH, wound drains 
+(abdominal and rectus sheath) should be considered at caesarean section and the skin 
+incision should be closed with interrupted sutures to allow drainage of any haematoma. 
+ 
+10.2 Induction of labour 
+• Women and birthing p eople who have been prescribed prophylactic or treatment dose 
+anticoagulation and who are waiting for an induction of labour should be reviewed by a 
+consultant and prioritised in order to reduce the time they are not receiving their LMWH . 
+• If vaginal assessment for induction is unfavourable and the next dose of LMWH is due 
+discuss with senior obstetrician and consider giving LMWH. 
+• Women and birthing people on high prophylactic or therapeutic doses for recent VTE or 
+very high risk of recurrent VTE will have an individualised plan made by the JOHC team 
+with anaesthetic input and should be prioritised to avoid prolonged period of no 
+anticoagulation . 
+ 
+11.0 Postnatal thromboprophylaxis 
+• In women and birthing people who have given birth, aim to start LMWH 6 hours 
+afterwards unless there are specific contraindications. 
+• LMWH should not be given for 4 hours after the epidural catheter has been removed and 
+the catheter should not be removed within 12 hours of the most recent injection. 
+• Any woman or birthing person who has undergone spinal anaesthesia will have a yellow 
+wristband attached by the anaesthetist. The woman or birthing person, or any health 
+care professional, should asses s for straight leg rise after 4 hours. If able to straight leg 
+rise (SLR), yellow wristband can be removed. If unable to SLR, notify the anaesthetist 
+and leave yellow wristband in place. LMWH should only be given once the regional 
+anaesthetic block has resolved and the woman or birthing person is able to 
+straight leg raise (SLR). 
+• Ensure the woman or birthing person is reweighed post birth (postnatal weight) and VTE 
+score is recalculated, before starting or recommencing VTE prophylaxis or treatment , to 
+ensure correct dose is prescribed. If the woman or birthing person is immobile post birth 
+(for instance post caesarean birth) , use the most recent weight to calculate LMWH dose . 
+Re-weigh and recalculate as soon as able to mobilise. CLINICAL GUIDELINE Due for review : December 2027 
+Name of Guideline : Obstetric VTE v1.0 
+For use at : PRH, RSCH. SRH, WH 
+ 
+ Page 13 of 31 
+• If a woman or birthing person develops a haemorrhagic problem while on LMWH, the 
+treatment should be stopped and case discussed with on -call consultant obstetrician who 
+may wish to discuss with a haematologist. Thromboprophylaxis should be started or 
+reinstituted as soon as the immediate risk of haemorrhage is reduced. 
+• Postnatal thromboprophylaxis must be prescribed on EPMA and this can provide 
+evidence that it has been administered and a full -course of TTO anticoagulation therapy 
+must be given to take home (including 6 week course). 
+• Women and birthing people at high risk of haemorrhage with risk factors including major 
+antepartum haemorrhage, coagulopathy, progressive wound haematoma, suspected 
+intra-abdominal bleeding and postpartum haemorrhage may be managed with anti -
+embolism stock ings (AES), foot impulse devices or intermittent pneumatic compression 
+devices. Re -start LMWH as soon as it is safe to do so, and discuss with consultant 
+obstetrician/haematologist if significant risk of VTE. 
+• In women and birthing people receiving treatment doses of LMWH following birth, there 
+is a significant risk of secondary PPH. These women and birthing people should be 
+reviewed by senior obstetrician before transfer off the labour ward and again reviewed b y 
+senior obstetrician on day 1 on the postnatal ward. The women and birthing people 
+should not be offered early postnatal discharge. 
+12.0 Prevention of VTE in pregnant women and birthing people with COVID -19 
+• COVID -19 has been identified as a pro -thrombotic illness. 
+• The RCOG recommend that all women and birthing people self -isolating with symptoms 
+or confirmed COVID -19 and who are pregnant, stay well -hydrated. 
+• COVID -19 should be considered as a transient factor in the VTE risk assessment and 
+therefore this should trigger reassessment . 
+• Thromboprophylaxis for women and birthing people who are self -isolating should cease 
+when the illness has recovered and women and birthing people are mobile. 
+• All pregnant women and birthing people admitted to hospital with COVID -19 should 
+receive thromboprophylaxis during admission and for 10 days after discharge. 
+13.0 Agents used for thromboprophylaxis 
+13.1 Low-molecular -weight Heparin (LMWH) 
+• LMWHs are the agents of choice for antenatal and postnatal thromboprophylaxis. 
+• Doses of LMWH are based on weight. For thromboprophylaxis and treatment the actual 
+(most recent) weight is recommended. 
+• It is only necessary to monitor the platelet count for HIT complications if the woman or 
+birthing person has had recent exposure to unfractionated heparin (UFH). 
+• Monitoring of anti -Xa levels is not required when LMWH is used for thromboprophylaxis. 
+ 
+NB Porcine origin of LMWH(s) - Enoxaparin sodium is a biological substance obtained by alkaline 
+depolymerization of heparin benzyl ester derived from porcine intestinal mucosa . Please refer to 
+What factors to consider when advising on medicines suitable for a Halal diet? – SPS - Specialist 
+Pharmacy Service – The first stop for professional medicines advice and discuss with 
+haematologists for further advice . CLINICAL GUIDELINE Due for review : December 2027 
+Name of Guideline : Obstetric VTE v1.0 
+For use at : PRH, RSCH. SRH, WH 
+ 
+ Page 14 of 31 
+14.0 Contraindications to LMWH 
+• Women and birthing people with previous or current allergic reactions to LMWH should 
+be offered an alternative preparation or alternative form of prophylaxis. Refer to JOHC. 
+• Seek advice from JOHC on the management of a woman with both VTE risk factors and 
+bleeding risk factors or LMWH allergy. 
+ 
+Contraindications/cautions to LMWH use : 
+• Known bleeding disorder (e.g. haemophilia, von Willebrand’s disease or acquired 
+coagulopathy . 
+• Active antenatal or postpartum bleeding . 
+• Women and birthing people considered at increased risk of major haemorrhage (e.g. 
+placenta praevia). 
+• Thrombocytopenia (platelet count < 75 × 109 /l) . 
+• Acute stroke in previous 4 weeks (haemorrhagic or ischaemic) . 
+• Severe renal disease (glomerular filtration r ate [GFR] < 30 ml/minute/1.73m2 ). 
+• Severe liver disease (prothrombin time above normal range or known varices) . 
+• Uncontrolled hypertension (blood pressure > 200 mmHg systolic or > 120 mmHg 
+diastolic). 
+Clinical and laboratory thresholds are taken from the Department of Health’s guidelines 
+based on evidence from the nonpregnant population. Table from Green -top Guideline No. 
+37a. 
+ 
+14.1 Other agents 
+ 
+• Danaparoid 
+Potential use of danaparoid should be discussed with consultant haematologist with 
+expertise in haemostasis and pregnancy (JOHC) . 
+ 
+• Fondaparinux 
+Fondaparinux should be reserved for women and birthing people intolerant of heparin 
+compounds or patients needing to avoid porcine products based on their faith, cultural 
+beliefs or dietary preferences. 
+Fondaparinux use in pregnancy should be in conjunction with consultant haematologist 
+with expertise in haemostasis and pregnancy (JOHC). 
+ 
+• Aspirin 
+Aspirin is not recommended for thromboprophylaxis in obstetric patients, but aspirin can 
+use be used concurrently with LMWH if both are indicated for separate clinical reasons 
+(or in women and birthing people with antiphospholipid syndrome). 
+ 
+• Warfarin 
+Warfarin use in pregnancy is restricted to the few situations where heparin is considered 
+unsuitable, e.g. Some women and birthing people with mechanical heart valves. Decision CLINICAL GUIDELINE Due for review : December 2027 
+Name of Guideline : Obstetric VTE v1.0 
+For use at : PRH, RSCH. SRH, WH 
+ 
+ Page 15 of 31 
+to use warfarin in pregnancy is a MDT decision involving senior clinicians and members of 
+the JOHC . 
+ 
+Women and birthing people receiving long -term anticoagulation with warfarin can be 
+converted from LMWH to warfarin postpartum when the risk of haemorrhage is reduced, 
+typically 5 days after birth and after senior clinical review. Warfarin is safe whilst 
+breastfeeding. 
+ 
+• Oral thrombin and xa inhibitors (DOACS) 
+DOACS cross the placenta and should be avoided in pregnant women and birthing 
+people. Inadvertent pregnancy on a DOAC is not currently considered grounds for 
+termination. Refer to fetal medicine clinic. 
+ 
+Use of DOACS is not currently recommended in women and birthing people who are 
+breastfeeding but can be considered postpartum if not breastfeeding as an alternative to 
+warfarin or long -term treatment dose LMWH (discuss with consultant haematologist first). 
+ 
+• Anti-embolism stockings 
+The use of properly applied anti -embolism stockings (AES) of appropriate size and 
+providing graduated compression with a calf pressure of 14 -15mmhg is recommended in 
+pregnancy and the puerperium for women and birthing people who are hospitalised and 
+have a contraindication to LMWH. 
+
+ CLINICAL GUIDELINE Due for review : December 2027 
+Name of Guideline : Obstetric VTE v1.0 
+For use at : PRH, RSCH. SRH, WH 
+ 
+ Page 16 of 31 
+Section 2: Diagnosis and management of DVT and PE in pregnancy 
+15.0 Introduction 
+ 
+VTE is a condition in which a blood clot (a thrombus) forms in a vein. It most commonly occurs in 
+the deep veins of the legs (and/or the pelvic veins in pregnancy) ; this is called deep vein 
+thrombosis. The thrombus may dislodge from its site of origin to travel in the blood – a phenomenon 
+called embolism. 
+ 
+Symptomatic venous thrombosis carries a considerable burden of morbidity, sometimes long term, 
+because of chronic venous insufficiency. This in turn can cause post -thrombotic syndrome (chronic 
+limb pain, swelling and skin changes and ultimately venous ulce ration). 
+ 
+Non-fatal complications of DVT and PE including pulmonary hypertension have significant impact 
+on long term health. 
+ 
+VTE remains the leading direct cause of maternal death in the UK. Imaging and initiation of 
+treatment should not be delayed because the patient is pregnant. 
+ 
+Women and birthing people with suspected DVT or PE should be given the RCOG patient 
+information : Diagnosis and treatment of venous thrombosis in pregnancy and after birth | RCOG . 
+
+16.0 Diagnosis of DVT and PE o r suspected DVT or PE in the pregnant patient, after 
+birth, miscarriage, termination or ectopic pregnancy 
+ 
+All women and birthing people with suspected VTE must be referred to, or discussed 
+with, ED / Eme rgency Floor / Acute Medical Unit to ensure quick access to 
+appropriate imaging . 
+ 
+Follow local acute medicine pathways for referral and investigation: 
+ 
+UH Sussex Brighton/PRH : Suspected Lower Limb DVT Pathway for A+E Presentations.docx , 
+ Primary Care - Referral Pathway for GP DVT.docx 
+ 
+UH Sussex SRH/WH : GB55 Query DVT pathway 
+GB66 Query PE Pathway (SRH Worthing) 
+GB65 VTE superficial vein thrombophlebitis 
+GB59 Confirmed VTE pathway 
+ 
+• See appendix 5 - Pathway for diagnosis and management of PE in pregnancy and 
+puerperium (adapted from the RCOG 37b green top guideline ) and appendix 6 for useful 
+care bundle checklist for management of PE in pregnanc y. CLINICAL GUIDELINE Due for review : December 2027 
+Name of Guideline : Obstetric VTE v1.0 
+For use at : PRH, RSCH. SRH, WH 
+ 
+ Page 17 of 31 
+• Acute VTE should be suspected during pregnancy in women and birthing people with 
+symptoms and signs consistent with possible VTE, particularly if there are other risk 
+factors. 
+• The majority of women and birthing people with VTE in pregnancy have clinical 
+symptoms : 
+­ The symptoms and signs of DVT include : leg pain and swelling (usually 
+unilateral) and lower abdominal pain (reflecting extension of thrombus into the 
+pelvic vessels and/or development of a collateral circulation. 
+­ The symptoms of PE include : dyspnoea (breathlessness), chest pain, 
+haemoptysis (coughing -up blood) and collapse. 
+• It is important to note that a low -grade pyrexia and leucocytosis can occur with VTE, 
+which may mimic signs of infection. 
+• Neurological examination including fundoscopy is mandatory in all women and birthing 
+people with new onset headaches or headache with atypical symptoms for cerebral 
+venous sinus thrombosi s. 
+17.0 Further information on diagnostic tests 
+• In women and birthing people with suspected PE who also have symptoms and signs of 
+DVT, compression duplex ultrasound should be performed. If compression 
+ultrasonography confirms the presence of DVT, no further investigation is necessary and 
+treatment for VTE should continue. 
+• Discuss with Radiologists on individual basis regarding which test may be offered most 
+expediently (differs on each site) and/or is most appropriate . 
+ 
+17.1 VQ SCAN 
+• V/Q scanning may be recommended as first -line investigation in pregnancy because of 
+its high negative predictive value in this situation and its substantially lower radiation 
+dose to pregnant breast tissue. Advise women and birthing people this carries slightly 
+increased risk of childhood cancer but associated with a lower risk of maternal breast 
+cancer (in both situations the absolute risk is very small. V/Q investigation of first choice 
+for young women and birthing people especially if family history of breast cancer or the 
+patient has had previous chest CT scan (Appendix 2 patient information ). 
+ 
+17.2 CTPA 
+• CTPA is more readily available and may be first -line because it can identify other 
+pathology including pneumonia, pulmonary oedema and rarely aortic dissection. The 
+radiation dose to the fetus is small but the maternal risk of breast cancer is higher though 
+absolute risk is very small. Perform CTPA as first line if chest X -ray is abnormal and 
+there is a clinical suspicion of PE. 
+• NB due to the increased blood velocity of pregnancy, the timing of the contrast injection 
+in CTPA is earlier but errors due to this can result in inconclusive or suboptimal 
+opacificati on of the pulmonary arteries - which is why in cases with high likelihood of PE, 
+the VQ is still the first choice . CLINICAL GUIDELINE Due for review : December 2027 
+Name of Guideline : Obstetric VTE v1.0 
+For use at : PRH, RSCH. SRH, WH 
+ 
+ Page 18 of 31 
+• If a woman or birthing person is unstable or requires rapid diagnosis or dual pathology , 
+then CTPA is first line. Patient will require review and counselling with the experience to 
+weigh up risk/ benefit of radiation to the mother or birthing parent and the fetus. 
+• Document counselling and verbal consent . 
+• Alternative or repeat testing should be carried out where V/Q scan or CTPA is normal but 
+the clinical suspicion of PE remains in consultation with Consultant Radiologist . 
+• Ensuring that a Doppler ultrasound is done if CTPA or isotope imaging is negative for PE 
+but there was a clinical suspicion of DVT. 
+• Anticoagulant treatment should be continued until PE is definitively excluded. 
+• Out of hours/weekends the Consultant Obstetrician should discuss these patients 
+directly with a Consultant Radiologist if a prompt diagnosis needs to be reached 
+especially if high risk of imminent birth. 
+• If ultrasound is negative but high level of clinical suspicion of DVT, then for discussion 
+with the medical team to stop anticoagulation and repeat the ultrasound in 3 to 7 days. 
+ 
+18.0 Treatment of VTE in pregnancy and post partum 
+ 
+• VTE occurring in pregnancy is managed on a dose of enoxaparin 1mg/kg BD ie 1mg/kg 
+twice daily from diagnosis at any week of pregnancy (NB this LMWH has porcine origin. 
+Please see section 14.1 for alternative) 
+ Doses are b ased on the woman or birthing person ’s actual weight following MBRRACE -
+UK 2023 recommendation. Lower doses of enoxaparin should be used if the creatinine 
+clearance is <30ml/min , expert help should be sought. 
+ If the woman or birthing person is immobile post birth (for instance post caesarean birth), 
+use the 28 -week weight to calculate LMWH dose. Re -weigh and recalculate dose as 
+soon as able to mobilise. 
+• See Appendix 4: Administration Chart for Treatment Doses 
+ 
+18.1 Analgesia 
+• Paracetamol 1g QDS PO unless BW less than 50kg then 15mg/kg as oral solution. 
+Morphine oral solution 5 -10mg 4 hourly for severe pain to promote mobility start with 
+lowest dose. 
+ 
+18.2 Unfractionated heparin in life -threatening/massive PE 
+• UFH not recommended in UH Sussex for use on the labour ward. However in a life -
+threatening massive PE peri -partum, the use of UFH is a decision to be made in 
+conjunction with Consultant Physician, Haematologist, Obstetrician and Anaesthetist/ 
+Intensivist (section 6.4 of RCOG GTG37b How should massive life -threatening PE in 
+pregnancy and the puerperium be managed? ). 
+ CLINICAL GUIDELINE Due for review : December 2027 
+Name of Guideline : Obstetric VTE v1.0 
+For use at : PRH, RSCH. SRH, WH 
+ 
+ Page 19 of 31 
+18.3 Blood test monitoring in pregnant women and birthing people on heparin 
+• Routine measurement of peak anti -Xa activity for patients on LMWH for treatment of acute 
+VTE in pregnancy or postpartum is not recommended except in women and birthing people 
+at extremes of body weight or with other complicating factors (for example, with renal 
+impairment or recurrent VTE (peak anti -Xa activity, 3 hours post -injection, of 0.5 –1.2 u/ml ). 
+For metallic heart valves - these patients should be discussed with or reviewed in JOHC and 
+an individual management plan made as they may require higher anti -Xa targets . 
+ 
+18.4 Additional /alternative therapies 
+• Graduated elastic compression stockings : Recommend follow up with GP 2 weeks 
+after initiating treatment for DVT and refer for consideration of graduated elastic 
+compression stockings if the leg remains swollen. 
+• Inferior vena cava filters: Their use is not recommended – there may be some 
+exceptional circumstances peripa rtum. This decision must be made at consultant level 
+only (ln discussion with obstetrician, physicians, haematologist and radiologists ). 
+• Consideration can be given to the use of newer anticoagulants (fondaparinux, argatroban 
+or r-hirudin) in pregnant women and birthing people who are unable to tolerate heparin or 
+LMWH, danaparoid and who require continuing anticoagulant therapy. 
+19.0 Following diagnosis of VTE 
+• Follow -up for all women and birthing people with a confirmed VTE in pregnancy must be 
+in the JOHC. A treatment plan should be documented on EVOLVE / PANDA and 
+BadgerNet Maternity for labour and birth, and a referral to the anaesthetic team. 
+• Women and birthing people who had an episode of VTE in pregnancy should be treated 
+with a therapeutic dose of LMWH for rest of the pregnancy and for at least 6 weeks 
+postnatally. Patient should complete at least 3 - 6 months of treatment in total . Length 
+of anticoagulation to be determined by Consultant Haematologist in JOHC . 
+• Vaginal birth is the preferred mode of birth and is not contraindicated if >1 week from 
+diagnosis. 
+• If the VTE occurred <1 week prior to birth, the mode of birth should be a multidisciplinary 
+decision by Consultant Obstetrician, Haematologist and Radiologist. 
+• Postpartum when restarting treatment dose LMWH for an acute VTE event, the patient 
+should be reweighed after birth and once daily doses (1.5mg/kg) recalc ulated before 
+hospital discharge . Discuss the option to switch to DOAC if not breastfeeding or warfarin 
+if breastfeeding . 
+• Women and birthing people should be offered a choice of LMWH or warfarin for postnatal 
+therapy after discussion regarding the need for regular blood test monitoring of warfarin, 
+particularly during the first 10 days of treatment. If warfarin is planned this should 
+commence from day 5. CLINICAL GUIDELINE Due for review : December 2027 
+Name of Guideline : Obstetric VTE v1.0 
+For use at : PRH, RSCH. SRH, WH 
+ 
+ Page 20 of 31 
+20.0 Postnatal Clinic review 
+• An appointment should be offered for within 6 months post birth with either the maternal 
+medicine consultant or at the haematology clinic to discuss management of a future 
+pregnancy . 
+• Women and birthing people must be advised to avoid oestrogen containing contraception . 
+• Pre-pregnancy advice – Advise to seek advice prior to planning next pregnancy so that 
+medication can be reviewed and a plan of care made for the pregnancy. CLINICAL GUIDELINE Due for review : December 2027 
+Name of Guideline : Obstetric VTE v1.0 
+For use at : PRH, RSCH. SRH, WH 
+ 
+ Page 21 of 31 
+Appendix 1: VTE risk assessment for use on non -maternity ward s 
+(RCOG Green -top guideline 37a, 2015 ) 
+PLEASE DO NOT PRINT FROM GUIDELINE . Printable version available on SharePoint. 
+CLINICAL GUIDELINE Due for review : December 2027 
+Name of Guideline : Obstetric VTE v1.0 
+For use at : PRH, RSCH. SRH, WH 
+ 
+ Page 22 of 31 
+Appendix 2: Patient information - Radionuclide scan 
+ 
+Instructions for breastfeeding mothers or birthing people 
+We have been asked to perform a radionuclide scan. This will involve injecting a very small amount 
+of radioactivity so that we can examine your lungs. 
+Although the radiation is not dangerous, we do try to keep the dose to babies as low as possible, 
+which is why we ask you to take the following steps: 
+Breastfeeding 
+A small amount of radiation will be present in breast milk, please express and throw away the milk 
+produced for the next 12 hours. Milk produced after this will not contain radiation. The appointment 
+will be arranged so that you have a chance to express enough milk to feed your baby. 
+Close Contact 
+After treatment you will give off very small amounts of radiation so we would discourage prolonged 
+handling of your baby (including feeding) for 12 hours afterwards. This will reduce the radiation 
+dose to your baby. Contact should be kept to a minimum, i f at all possible, for these 12 hours. 
+ 
+I, ………………………………………………………….……….. 
+ (insert name) 
+am willing to undergo the Radioisotope Lung Scan. I understand the implications of breastfeeding 
+after the scan. I will stop breastfeeding for 12 hours after the scan and will express and discard all 
+milk produced during this period. 
+I also understand that I should avoid prolonged contact with my child (including feeding) for the next 
+12 hours. 
+ 
+Signed: ………………………………………………………… 
+
+Date: ………………………………..………………………… 
+
+ CLINICAL GUIDELINE Due for review : December 2027 
+Name of Guideline : Obstetric VTE v1.0 
+For use at : PRH, RSCH. SRH, WH 
+ 
+ Page 23 of 31 
+Appendix 3: Patient information 
+ 
+RCOG patient information 
+ 
+Patient Video Techdow Pharma England Ltd (techdow -pharma.co.uk) 
+ 
+Inhixa_injection_-_P
+atient_Instructions.pdf
+
+ CLINICAL GUIDELINE Due for review : December 2027 
+Name of Guideline : Obstetric VTE v1.0 
+For use at : PRH, RSCH. SRH, WH 
+ 
+ Page 24 of 31 
+Appendix 4: Administration chart for treatment doses 
+ 
+STANDARD Strength Syringes →100mg/mL 
+Syringes Available Dose Syringe and Volume to Administer 
+(mL) 
+ 
+60mg/0.60mL 40mg 0.40mL 
+50mg 0.50mL 
+60mg 0.60mL 
+ 
+80mg/0.80mL 70mg 0.70mL 
+80mg 0.80mL 
+ 
+100mg/1mL 90mg 0.90mL 
+100mg 1mL 
+For treatment dose enoxaparin the manufacturer does not recommend to use the 20mg and 40mg prophylactic 
+syringes. 
+HIGH Strength Syringes → 150mg/mL* 
+Syringes Available Dose Syringe and Volume to Administer 
+(mL) 
+120mg/0.80mL 120mg 0.80mL 
+ 
+150mg/1mL 135mg 0.90mL 
+150mg 1mL 
+*Please note increments on high strength syringes are every 15mg 
+Multiple syringes required 
+Dose Syringe and Volume to Administer 
+180mg 1mL (100mg/mL) 0.8mL (80mg/0.8mL) 
+>180mg Round the dose . The dose is not capped. 
+ 
+ CLINICAL GUIDELINE Due for review : December 2027 
+Name of Guideline : Obstetric VTE v1.0 
+For use at : PRH, RSCH. SRH, WH 
+ 
+ Page 25 of 31 
+Appendix 5: Pathway for diagnosis and management of PE in pregnancy and 
+puerperium (adapted from the RCOG 37b green top guideline) 
+
+CLINICAL GUIDELINE Due for review : December 2027 
+Name of Guideline : Obstetric VTE v1.0 
+For use at : PRH, RSCH. SRH, WH 
+ 
+ Page 26 of 31 
+Appendix 6: Suspected PE in Pregnancy Care Bundle in A&E 
+Date: …................................................ 
+Clinician: .............................................. 
+
+Initial Assessment ❑ Blood pressure, heart rate, respiratory rate, temperature 
+and oxygen saturations (including ambulatory). 
+❑ Symptoms and clinical signs of DVT (including calf 
+measurements) documented. 
+❑ Bloods tests (FBC, U&E, CRP, Trop I, Clotting), Arterial 
+Blood Gas, 12 -lead ECG. 
+❑ Chest X -ray with abdominal shield. 
+Information giving and 
+shared decision making ❑ Patient provided with "Information for patients with a 
+suspected blood clot in pregnancy" leaflet. 
+❑ Increased risk to patient breast tissue with CTPA 
+explained to patient. 
+❑ Increased risk of childhood cancer with VQ scan 
+explained to patient. 
+❑ Post imaging precautions with VQ scan explained to 
+patient. 
+Is the patient to be 
+treated through 
+ambulatory care? 
+(To manage the patient 
+as an outpatient all the 
+following criteria MUST 
+apply) ❑ Haemodynamically stable (using MEOWS chart). 
+❑ Reviewed by O&G and discussed with acute medicine. 
+❑ Troponin normal. 
+❑ ECG normal (looking for signs of right heart strain. 
+❑ The patient is able to self -inject treatment dose LMWH 
+(10 days supply and sharps bin). 
+Referral to ambulatory 
+care ❑ Discussed with acute medicine. 
+❑ If returning the next day, ensure correct patient details 
+are on whiteboard. 
+Imaging modality 
+requested ❑ Ultrasound doppler 
+❑ CTPA 
+❑ V/Q Scan 
+Patient has consented 
+to imaging modality ❑ Yes 
+Imaging outcome ❑ Positive for DVT 
+❑ Positive for PE 
+❑ Negative for PE 
+In positive findings (DVT 
+and/or PE) ❑ Referral made to joint haematology + obstetric clinic 
+ Patient Name: ........................................ 
+DOB : ...................................................... 
+Hosp No: ……………………...…………….. CLINICAL GUIDELINE Due for review : December 2027 
+Name of Guideline : Obstetric VTE v1.0 
+For use at : PRH, RSCH. SRH, WH 
+ 
+ Page 27 of 31 
+Appendix 7: Monitoring the effectiveness of this guideline 
+ 
+Issue being 
+monitored Monitoring 
+method Responsibility Frequency Reviewed by 
+and actions 
+arising followed 
+up by 
+Cases of PE Incident review Patient Safety 
+Midwife On-going Maternity 
+Governance 
+Lead 
+ 
+ CLINICAL GUIDELINE Due for review : December 2027 
+Name of Guideline : Obstetric VTE v1.0 
+For use at : PRH, RSCH. SRH, WH 
+ 
+ Page 28 of 31 
+Appendix 8: Guideline Version Control Log 
+This should be included for all updated policies, summarising the changes between the current and 
+previous version. (Earlier changes should be deleted from the list when the guideline is updated.) 
+Do not list minor and stylistic changes or changes which do not alter the processes described. 
+If the update includes a significant reorganisation of the material, indicate this and list the main 
+areas where the process itself has changed. 
+Change Log – Obstetric VTE 
+
+ Version Date Author Status Comment 
+1.0 July 2024 Sophia Stone, 
+Obstetric Consultant 
+Jo Sinclair, Obstetric 
+Consultant 
+David Annandale, 
+W&C Pharmacist LIVE New Trust wide Maternity 
+guideline replacing 
+• CG1153 Prevention and 
+Management of Venous 
+Thromboembolism (VTE) in 
+pregnancy guideline 
+(SRH/WH) 
+• MP012 Venous thrombosis 
+(PRH/RSCH) CLINICAL GUIDELINE Due for review : December 2027 
+Name of Guideline : Obstetric VTE v1.0 
+For use at : PRH, RSCH. SRH, WH 
+ 
+ Page 29 of 31 
+Appendix 9: Due Regard Assessment Tool 
+To be completed and attached to any guideline when submitted to the appropriate committee for 
+consideration and approval. 
+ Yes/No Comments 
+1. Does the document/guidance affect one group less or 
+more favourably than another on the basis of: 
+ Age No 
+ · Disability No 
+ · Gender (Sex) No 
+ · Gender Identity No 
+ · Marriage and civil partnership No 
+ · Pregnancy and maternity No 
+ · Race (ethnicity, nationality, colour) No 
+ · Religion or Belief No 
+ · Sexual orientation, including lesbian, gay and bisexual 
+people No 
+2. Is there any evidence that some groups are affected 
+differently and what is/are the evidence source(s)? No 
+3. If you have identified potential discrimination, are there 
+any exceptions valid, legal and/or justifiable? NA 
+4. Is the impact of the document likely to be negative? No 
+5. If so, can the impact be avoided? NA 
+6. What alternative is there to achieving the intent of the 
+document without the impact? NA 
+7. Can we reduce the impact by taking different action 
+and, if not, what, if any, are the reasons why the 
+guideline should continue in its current form? NA 
+8. Has the document been assessed to ensure service 
+users, staff and other stakeholders are treated in line 
+with Human Rights FREDA principles (fairness, respect, 
+equality, dignity and autonomy)? Yes 
+ 
+If you have identified a potential discriminatory impact of this guideline , please refer it to [ Insert 
+Name ], together with any suggestions as to the action required to avoid/reduce this impact. For 
+advice in respect of answering the above questions, please contact uhsussex.equality@nhs.net 
+01273 664685). 
+
+ CLINICAL GUIDELINE Due for review : December 2027 
+Name of Guideline : Obstetric VTE v1.0 
+For use at : PRH, RSCH. SRH, WH 
+ 
+ Page 30 of 31 
+Appendix 1 0: Template Dissemination, Implementation and Access Plan 
+ 
+To be completed and attached to any guideline when submitted to Corporate Governance for 
+consideration and TMB approval. 
+ 
+ Dissemination Plan Comments 
+1. Identify: 
+ Which members of staff or staff groups will be affected 
+by this guideline? Midwives and obstetricians 
+ How will you confirm that they have received the 
+guideline and understood its implications? Dissemination through the 
+usual Communication 
+channels and highlighted at 
+Safety Huddles. 
+A&E Leads will be asked to 
+disseminate to their staff. 
+ How have you linked the dissemination of the guideline 
+with induction training, continuous professional 
+development, and clinical supervision as appropriate? All new members of staff are 
+shown where to access 
+Clinical documents that are 
+relevant to their area of 
+practice. 
+2. How and where will staff access the document (at 
+operational level)? Accessed by staff via 
+Sharepoint 
+ 
+ Yes/No Comments 
+3. Have you made any plans to remove 
+old versions of the guideline or related 
+documents from circulation? Yes Previous versions will be 
+archived as part of the 
+uploading onto sharepoint 
+process. 
+4. Have you ensured staff are aware the 
+document is logged on the 
+organisation’s register? Yes Dissemination plan includes 
+notifying staff via email, safety 
+noticeboards, departmental 
+newsletter and social media. 
+ CLINICAL GUIDELINE Due for review : December 2027 
+Name of Guideline : Obstetric VTE v1.0 
+For use at : PRH, RSCH. SRH, WH 
+ 
+ Page 31 of 31 
+Appendix 10: Additional guidance and information 
+NICE CG132 Caesarean Section 2019 
+NICE (2024) NG182 Caesarean birth 
+NICE NG89 Venous thromboembolism in over 16s: reducing the risk of hospital -acquired deep vein 
+thrombosis or pulmonary embolism 2019 
+MBRRACE -UK 2023 
+RCOG (2015) Reducing the Risk of Thrombosis and Embolism during Pregnancy and the 
+Puerperium (Green -top Guideline No. 37a) 
+RCOG (2015) Thrombosis and Embolism during Pregnancy and the Puerperium: Acute 
+Management (Green -top Guideline No. 37b) 
+Patient information 
+Diagnosis and treatment of venous thrombosis in pregnancy and after birth | RCOG 
+Reducing the risk of venous thrombosis in pregnancy and after birth | RCOG

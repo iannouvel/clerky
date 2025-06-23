@@ -1,0 +1,1730 @@
+# Extracted from: GTG 2014 - Endometrial Hyperplasia.pdf
+# Guideline ID: gtg-2014-endometrial-hyperplasia
+# Content length: 111246 characters
+# Processing date: 1733440274.880443
+
+Management of Endometrial 
+Hyperplasia
+Green-top Guideline No. 67
+RCOG/BSGE Joint Guideline | February 2016
+Management of Endometrial Hyperplasia
+This is the first edition of this guideline.This is a joint guideline between the Royal College of Obs tetricians
+and Gynaecologists (RCOG) and the British Society for Gynaecological Endoscopy (BSGE).
+Executive summary of recommendations
+What are the risk factors for endometrial hyperplasia?
+Endometrial hyperplasia is often associated with mu ltiple identifiable risk factors and assessment
+should aim to identify and monitor these factors.
+How should endometrial hyperplasia be classified?
+The revised 2014 World Health Organization (WHO) cl assification is recommended. This separates
+endometrial hyperplasia into two groups based upon the presence of cytological atypia: i.e. (i)
+hyperplasia without atypia and (ii) atypical hyperp lasia.
+What diagnostic and surveillance methods are available for endometrial hyperplasia?
+Diagnosis of endometrial hyperplasia requires histo logical examination of the endometrial tissue.
+Endometrial surveillance should include endometrial sampling by outpatient endometrial biopsy.
+Diagnostic hysteroscopy should be considered to fac ilitate or obtain an endometrial sample, especially
+where outpatient sampling fails or is nondiagnostic . 
+Transvaginal ultrasound may have a role in diagnosi ng endometrial hyperplasia in pre- and
+postmenopausal women. 
+Direct visualisation and biopsy of the uterine cavi ty using hysteroscopy should be undertaken where
+endometrial hyperplasia has been diagnosed within a polyp or other discrete focal lesion.
+There is insufficient evidence evaluating computeri sed tomography (CT), diffusion-weighted magnetic
+resonance imaging (MRI) or biomarkers as aids in th e management of endometrial hyperplasia and
+their use is not routinely recommended.
+How should endometrial hyperplasia without atypia be managed? 
+What should the initial management of hyperplasia without atypia be?
+Women should be informed that the risk of endometri al hyperplasia without atypia progressing to
+endometrial cancer is less than 5% over 20 years an d that the majority of cases of endometrial
+hyperplasia without atypia will regress spontaneous ly during follow-up.
+Reversible risk factors such as obesity and the use of hormone replacement therapy (HRT) should be
+identified and addressed if possible.
+Observation alone with follow-up endometrial biopsi es to ensure disease regression can be considered,
+especially when identifiable risk factors can be re versed. However, women should be informed that
+treatment with progestogens has a higher disease re gression rate compared with observation alone.
+Progestogen treatment is indicated in women who fai l to regress following observation alone and in
+symptomatic women with abnormal uterine bleeding.
+RCOG/BSGE Green-top Guideline No. 67 2of 30 © Royal College of Obstetricians and GynaecologistsP
+D
+B
+B
+B
+CP
+P
+P
+P
+PWhat should the first-line medical treatment of hyperplasia without atypia be?
+Both continuous oral and local intrauterine (levono rgestrel-releasing intrauterine system [LNG-IUS])
+progestogens are effective in achieving regression of endometrial hyperplasia without atypia.
+The LNG-IUS should be the first-line medical treatm ent because compared with oral progestogens it
+has a higher disease regression rate with a more fa vourable bleeding profile and it is associated with
+fewer adverse effects.
+Continuous progestogens should be used (medroxyprog esterone 10–20 mg/day or norethisterone 
+10–15 mg/day) for women who decline the LNG-IUS.
+Cyclical progestogens should not be used because th ey are less effective in inducing regression of
+endometrial hyperplasia without atypia compared wit h continuous oral progestogens or the LNG-IUS.
+What should the duration of treatment and follow-up of hyperplasia without atypia be?
+Treatment with oral progestogens or the LNG-IUS sho uld be for a minimum of 6 months in order to
+induce histological regression of endometrial hyper plasia without atypia.
+If adverse effects are tolerable and fertility is n ot desired, women should be encouraged to retain th e
+LNG-IUS for up to 5 years as this reduces the risk of relapse, especially if it alleviates abnormal ut erine
+bleeding symptoms. 
+Endometrial surveillance incorporating outpatient e ndometrial biopsy is recommended after a
+diagnosis of hyperplasia without atypia.
+Endometrial surveillance should be arranged at a mi nimum of 6-monthly intervals, although review
+schedules should be individualised and responsive t o changes in a woman’s clinical condition. 
+At least two consecutive 6-monthly negative biopsie s should be obtained prior to discharge.
+Women should be advised to seek a further referral if abnormal vaginal bleeding recurs after
+completion of treatment because this may indicate d isease relapse.
+In women at higher risk of relapse, such as women w ith a body mass index (BMI) of 35 or greater or
+those treated with oral progestogens, 6-monthly end ometrial biopsies are recommended. Once two
+consecutive negative endometrial biopsies have been obtained then long-term follow-up should be
+considered with annual endometrial biopsies.
+When is surgical management appropriate for women with endometrial hyperplasia without atypia?
+Hysterectomy should not be considered as a first-li ne treatment for hyperplasia without atypia because
+progestogen therapy induces histological and sympto matic remission in the majority of women and
+avoids the morbidity associated with major surgery.
+Hysterectomy is indicated in women not wanting to p reserve their fertility when (i) progression to
+atypical hyperplasia occurs during follow-up, or (i i) there is no histological regression of hyperplas ia
+despite 12 months of treatment, or (iii) there is r elapse of endometrial hyperplasia after completing
+progestogen treatment, or (iv) there is persistence of bleeding symptoms, or (v) the woman declines
+to undergo endometrial surveillance or comply with medical treatment.
+© Royal College of Obstetricians and Gynaecologists 3of 30 RCOG/BSGE Green-top Guideline No. 67A
+A
+B
+A
+B
+C
+D
+D
+C
+CP
+PPostmenopausal women requiring surgical management for endometrial hyperplasia without atypia
+should be offered a bilateral salpingo-oophorectomy together with the total hysterectomy.
+For premenopausal women, the decision to remove the ovaries should be individualised; however,
+bilateral salpingectomy should be considered as thi s may reduce the risk of a future ovarian
+malignancy.
+A laparoscopic approach to total hysterectomy is pr eferable to an abdominal approach as it is
+associated with a shorter hospital stay, less posto perative pain and quicker recovery. 
+Endometrial ablation is not recommended for the tre atment of endometrial hyperplasia because
+complete and persistent endometrial destruction can not be ensured and intrauterine adhesion
+formation may preclude future endometrial histologi cal surveillance.
+How should atypical hyperplasia be managed?
+What should the initial management of atypical hyperplasia be? 
+Women with atypical hyperplasia should undergo a to tal hysterectomy because of the risk of
+underlying malignancy or progression to cancer. 
+A laparoscopic approach to total hysterectomy is pr eferable to an abdominal approach as it is
+associated with a shorter hospital stay, less posto perative pain and quicker recovery.
+There is no benefit from intraoperative frozen sect ion analysis of the endometrium or routine
+lymphadenectomy. 
+Postmenopausal women with atypical hyperplasia shou ld be offered bilateral salpingo-oophorectomy
+together with the total hysterectomy.
+For premenopausal women, the decision to remove the ovaries should be individualised; however,
+bilateral salpingectomy should be considered as thi s may reduce the risk of a future ovarian
+malignancy.
+Endometrial ablation is not recommended because com plete and persistent endometrial destruction
+cannot be ensured and intrauterine adhesion formati on may preclude endometrial histological
+surveillance.
+How should women with atypical hyperplasia who wish to preserve their fertility or who are not
+suitable for surgery be managed?
+Women wishing to retain their fertility should be c ounselled about the risks of underlying malignancy
+and subsequent progression to endometrial cancer.
+Pretreatment investigations should aim to rule out invasive endometrial cancer or co-existing ovarian
+cancer.
+Histology, imaging and tumour marker results should be reviewed in a multidisciplinary meeting and
+a plan for management and ongoing endometrial surve illance formulated.
+First-line treatment with the LNG-IUS should be rec ommended, with oral progestogens as a 
+second-best alternative (see section 7.2).
+RCOG/BSGE Green-top Guideline No. 67 4of 30 © Royal College of Obstetricians and GynaecologistsD
+B
+D
+D
+BCCBBP
+P
+P
+P
+POnce fertility is no longer required, hysterectomy should be offered in view of the high risk of disea se
+relapse.
+How should women with atypical hyperplasia not undergoing hysterectomy be followed up?
+Routine endometrial surveillance should include end ometrial biopsy. Review schedules should be
+individualised and be responsive to changes in a wo man’s clinical condition. Review intervals should
+be every 3 months until two consecutive negative bi opsies are obtained.
+In asymptomatic women with a uterus and evidence of histological disease regression, based upon a
+minimum of two consecutive negative endometrial bio psies, long-term follow-up with endometrial
+biopsy every 6–12 months is recommended until a hys terectomy is performed.
+How should endometrial hyperplasia be managed in women wishing to conceive?
+Disease regression should be achieved on at least o ne endometrial sample before women attempt to
+conceive.
+Women with endometrial hyperplasia who wish to conc eive should be referred to a fertility specialist
+to discuss the options for attempting conception, f urther assessment and appropriate treatment.
+Assisted reproduction may be considered as the live birth rate is higher and it may prevent relapse
+compared with women who attempt natural conception.
+Prior to assisted reproduction, regression of endom etrial hyperplasia should be achieved as this is
+associated with higher implantation and clinical pr egnancy rates. 
+HRT and endometrial hyperplasia 
+Systemic estrogen-only HRT should not be used in wo men with a uterus.
+All women taking HRT should be encouraged to report any unscheduled vaginal bleeding promptly. 
+Women with endometrial hyperplasia taking a sequent ial HRT preparation who wish to continue HRT
+should be advised to change to continuous progestog en intake using the LNG-IUS or a continuous
+combined HRT preparation. Subsequent management sho uld be as described in the preceding sections
+of the guideline.
+Women with endometrial hyperplasia taking a continu ous combined preparation who wish to continue
+HRT should have their need to continue HRT reviewed . Discuss the limitations of the available evidence
+regarding the optimal progestogen regimen in this c ontext. Consider using the LNG-IUS as a source of
+progestogen replacement. Subsequent management shou ld be as described in the preceding sections
+of the guideline.
+How should endometrial hyperplasia be managed in wo men on adjuvant treatment for breast cancer? 
+What is the risk of developing endometrial hyperplasia on adjuvant treatment for breast cancer?
+Women taking tamoxifen should be informed about the increased risks of developing endometrial
+hyperplasia and cancer. They should be encouraged t o report any abnormal vaginal bleeding or
+discharge promptly.
+© Royal College of Obstetricians and Gynaecologists 5of 30 RCOG/BSGE Green-top Guideline No. 67B
+D
+D
+C
+B
+A
+B
+DP
+P
+P
+PWomen taking aromatase inhibitors (such as anastroz ole, exemestane and letrozole) should be
+informed that these medications are not known to in crease the risk of endometrial hyperplasia and
+cancer. 
+Should women on tamoxifen be treated with prophylactic progestogen therapy?
+There is evidence that the LNG-IUS prevents polyp f ormation and that it reduces the incidence of
+endometrial hyperplasia in women on tamoxifen. The effect of the LNG-IUS on breast cancer recurrence
+risk remains uncertain so its routine use cannot be recommended.
+How should women who develop endometrial hyperplasia while on tamoxifen treatment for breast
+cancer be managed?
+The need for tamoxifen should be reassessed and man agement should be according to the histological
+classification of endometrial hyperplasia and in co njunction with the woman’s oncologist.
+How should endometrial hyperplasia confined to an endometrial polyp be managed?
+Complete removal of the uterine polyp(s) is recomme nded and an endometrial biopsy should be
+obtained to sample the background endometrium.
+Subsequent management should be according to the hi stological classification of endometrial
+hyperplasia.
+1. Purpose and scope
+The aim of this guideline is to provide clinicians with up-to-date evidence-based information regardin g
+the management of endometrial hyperplasia. 
+2. Introduction and background epidemiology
+Endometrial hyperplasia is defined as irregular pro liferation of the endometrial glands with an increa se
+in the gland to stroma ratio when compared with proliferative endometrium.1
+Endometrial cancer is the most common gynaecologica l malignancy in the Western world and
+endometrial hyperplasia is its precursor.2In the UK, 8617 new cases of endometrial cancer wer e
+registered in 2012.3The incidence of endometrial hyperplasia is estimated to be at least three times
+higher than endometrial cancer and if left untreated it can progress to cancer.2,4
+The most common presentation of endometrial hyperpl asia is abnormal uterine bleeding. This
+includes heavy menstrual bleeding, intermenstrual b leeding, irregular bleeding, unscheduled bleeding
+on hormone replacement therapy (HRT) and postmenopausal bleeding.2
+3. Identification and assessment of evidence
+This guideline was developed using standard methodo logy for developing RCOG Green-top
+Guidelines. The Cochrane Library (including the Coc hrane Database of Systematic Reviews, the
+Database of Abstracts of Reviews of Effects [DARE] and the Cochrane Central Register of Controlled
+Trials [CENTRAL]), EMBASE, MEDLINE and CINAHL were searched for relevant papers. The search was
+inclusive of all relevant articles published until June 2015. The databases were searched using the
+relevant Medical Subject Headings (MeSH) terms, including all subheadings and synonyms, and this
+was combined with a keyword search. The search incl uded the following terms: (endometr*
+RCOG/BSGE Green-top Guideline No. 67 6of 30 © Royal College of Obstetricians and GynaecologistsA
+DP
+P
+Phyperplas* or premalignant endometr* or precancer* endometr* or endometrial neoplasms or
+endometr* cancer) AND (intrauterine devices or mire na or progest* or LNG-IU* or gestag* or fertility-
+sparing therapy or conservative therapy or hormon* therapy or estrogen replacement therapy or
+hormone replacement therapy or tamoxifen or progest ins or hysterectomy or ultrasound or magnetic
+resonance imaging or computed tomography or endometr* biopsy or hysteroscopy or infertility or
+endometrial ablation). The search was limited to hu mans and papers in the English language. Relevant
+guidelines were also searched for using the same criteria in the National Guideline Clearinghouse,
+National Institute for Health and Care Excellence (NICE) Evidence Search and the Canadian Medical
+Association (CMA) Infobase.
+Where possible, recommendations are based on availa ble evidence. Areas lacking evidence are
+highlighted and annotated as ‘good practice points’ . Further information about the assessment of
+evidence and the grading of recommendations may be found in Appendix I.
+4. What are the risk factors for endometrial hyperpl asia?
+Endometrial hyperplasia is often associated with mu ltiple identifiable risk factors and assessment
+should aim to identify and monitor these factors.
+Endometrial hyperplasia develops when estrogen, unopposed by progesterone, stimulates
+endometrial cell growth by binding to estrogen rece ptors in the nuclei of endometrial cells.
+Known risk factors for endometrial hyperplasia reflect this aetiology: increased body mass
+index (BMI) with excessive peripheral conversion of androgens in adipose tissue to
+estrogen; anovulation associated with the perimenop ause or polycystic ovary syndrome
+(PCOS); estrogen-secreting ovarian tumours, e.g. granulosa cell tumours (with up to 40%
+prevalence of endometrial hyperplasia); and drug-in duced endometrial stimulation, e.g. the
+use of systemic estrogen replacement therapy or long-term tamoxifen.5–10
+A Cochrane meta-analysis found that unopposed estro gen replacement therapy is associated
+with an increased incidence of hyperplasia at all doses and is not recommended for use in
+women with a uterus.9
+While estrogenic stimulation of the endometrium is believed to be the main aetiological
+risk factor for developing the condition, other elements such as immunosuppression and
+infection may also be involved.10A retrospective analysis of 45 renal graft recipients with
+abnormal bleeding found a two-fold increased incidence of endometrial hyperplasia (69%
+versus 33%) compared with nontransplanted controls.10
+5. How should endometrial hyperplasia be classified?
+The revised 2014 World Health Organization (WHO) cl assification is recommended. This separates
+endometrial hyperplasia into two groups based upon the presence of cytological atypia: i.e. (i)
+hyperplasia without atypia and (ii) atypical hyperp lasia. 
+Classification systems for endometrial hyperplasia were developed based upon histological 
+characteristics and oncogenic potential. 
+The widely adopted 1994 WHO classification of endometrial hyperplasia was based upon
+both the complexity of the glandular architecture a nd the presence of nuclear atypia.1It
+com prised four categories: (i) simple hyperplasia, (ii) complex hyperplasia, (iii) simple
+hyperplasia with atypia and (iv) complex hyperplasi a with atypia. The association of 
+cyto logical atypia with an increased risk of endom etrial cancer has been known since 1985.2
+© Royal College of Obstetricians and Gynaecologists 7of 30 RCOG/BSGE Green-top Guideline No. 67DEvidence
+level 2+
+Evidence
+level 1++
+Evidence
+level 3
+Evidence
+level 4PThe endometrial intraepithelial neoplasia (EIN) cla ssification is an alternative system of
+nomenclature proposed in 2003,11the purpose of which was to improve prediction of
+clinical outcomes, improve inter-observer reproduci bility and reduce subjective bias
+inherent to the 1994 WHO classification. The EIN di agnostic schema comprises three
+categories – benign (endometrial hyperplasia), prem alignant (a diagnosis of EIN based upon
+five subjective histological criteria) and malignan t (endometrial cancer) – but this 
+classification is not extensively used in the UK. 
+The 2014 revised WHO classification1simply separates endometrial hyperplasia into two
+groups based upon the presence or absence of cytolo gical atypia, i.e. (i) hyperplasia without
+atypia and (ii) atypical hyperplasia; the complexity of architecture is no longer part of the
+classification. The diagnosis of EIN in the new WHO classification is considered 
+interchange able with atypical hyperplasia. This guideline has adopted the new 2014 WHO
+classification of endometrial hyperplasia, although much of the supporting evidence
+identified has used the 1994 WHO nomenclature categorising hyperplasia morphologically
+as simple or complex. 
+6. What diagnostic and surveillance methods are avai lable for endometrial hyperplasia?
+Diagnosis of endometrial hyperplasia requires histo logical examination of the endometrial tissue.
+Endometrial surveillance should include endometrial sampling by outpatient endometrial biopsy. 
+Diagnostic hysteroscopy should be considered to fac ilitate or obtain an endometrial sample, especially
+where outpatient sampling fails or is nondiagnostic .
+Transvaginal ultrasound may have a role in diagnosi ng endometrial hyperplasia in pre- and 
+post menopausal women.
+Direct visualisation and biopsy of the uterine cavi ty using hysteroscopy should be undertaken where
+endometrial hyperplasia has been diagnosed within a polyp or other discrete focal lesion.
+There is insufficient evidence evaluating computeri sed tomography (CT), diffusion-weighted magnetic
+resonance imaging (MRI) or biomarkers as aids in th e management of endometrial hyperplasia and
+their use is not routinely recommended.
+Endometrial hyperplasia is often suspected in women presenting with abnormal uterine bleeding.
+However, confirmation of diagnosis requires histolo gical analysis of endometrial tissue specimens
+obtained either by using miniature outpatient sucti on devices designed to blindly abrade and/or
+aspirate endometrial tissue from the uterine cavity or by inpatient endometrial sampling, such as
+dilatation and curettage performed under general an aesthesia. Endometrial sampling is also
+fundamental in monitoring regression, persistence or progression.
+Outpatient endometrial biopsy is convenient and has high overall accuracy for diagnosing
+endometrial cancer.12The accuracy for hyperplasia is more modest, with a systematic review
+reporting a pooled likelihood ratio (LR) of 12.0 (9 5% CI 7.8–18.6) for a positive test and 0.2
+(95% CI 0.1–0.3) for a negative test result.13Despite a negative biopsy result, 2% of women
+will still have endometrial hyperplasia.13
+A transvaginal ultrasound scan (TVS) that detects an irregularity of the endometrial profile
+or an abnormal double layer endometrial thickness m easurement would give further reason
+to perform an endometrial biopsy in women with postmenopausal bleeding.14,15Systematic
+reviews have suggested a cut-off of 3 mm or 4 mm for ruling out endometrial cancer and
+RCOG/BSGE Green-top Guideline No. 67 8of 30 © Royal College of Obstetricians and GynaecologistsEvidence
+level 4
+B
+P
+P
+B
+Evidence
+level 2++Phave shown that the probability of cancer is reduced to less than 1% when the endometrial
+thickness is less than the cut-off.14,16–18However, a larger cut-off value has been suggested for
+women taking HRT or tamoxifen, whether presenting with abnormal uterine bleeding or
+asymptomatic.15,19
+The role of ultrasound in premenopausal women is re stricted to identifying structural
+abnormalities, as there seems to be an overlap between normal endometrial thickness and
+that caused by endometrial disease.20However, for women with PCOS and absent
+withdrawal bleeds or abnormal uterine bleeding, a T VS should be considered, as advised by
+RCOG guidance.21A prospective study of 56 women with PCOS found that no woman with
+an endometrial thickness of less than 7 mm had endometrial hyperplasia.22As a result, the
+RCOG guidance supports the conclusion that below this cut-off endometrial hyperplasia is
+unlikely.21
+Hysteroscopy with additional endometrial assessment may be necessary if abnormal
+bleeding persists or if intrauterine structural abn ormalities such as polyps are suspected on
+TVS or endometrial biopsy. A small cohort study has shown that up to 10% of endometrial
+pathology can be missed even with inpatient endomet rial sampling.23However, in
+premenopausal women who wish to preserve their fertility, repeated curettage should be
+minimised to reduce the incidence of Asherman’s syndrome.
+Hysteroscopy can detect focal lesions such as polyp s that may be missed by blind sampling.24
+A population-based cross-sectional study diagnosed focal endometrial pathology in
+ approximately 10% (64/684) of women who volunteere d to undergo a saline contrast 
+sono hysterography as part of the research; two of these were found to have hyperplasia
+without atypia.25
+In addition, hysteroscopy can be used to facilitate or complement the endometrial biopsy,
+especially where sampling is not possible or is non diagnostic. Directed biopsies can be
+taken through the operating channel of a continuous flow operating hysteroscope24,26or
+blindly through the outer sheath after removing the telescope.27
+Diagnostic hysteroscopy can be conducted in the out patient setting using miniature
+ hysteroscopes and without the need for anaesthesia or vaginal instrumentation.28The
+accuracy of hysteroscopy in diagnosing cancer and h yperplasia in women with abnormal
+bleeding has been evaluated in a systematic quantit ative review of data from 26 346 women.29
+A positive hysteroscopy result (positive LR 60.9) i ncreased the probability of cancer to 71.8%
+from a pretest probability of 3.9%, whereas a negat ive hysteroscopy result (negative LR 0.15)
+reduced the probability of cancer to 0.6%.29A hysteroscopy suggestive of endometrial disease
+(i.e. cancer or endometrial hyperplasia of any type ) increased the probability of disease from
+a pretest probability of 10.6% to 55.2% (positive L R 10.4). A negative or normal hysteroscopy
+reduced the probability of endometrial disease from 10.6% to 2.8% (negative LR 0.24).29
+Hence, hysteroscopy is more accurate in detecting t han excluding endometrial disease and
+has a higher accuracy for endometrial cancer than e ndometrial hyperplasia.29
+CT or MRI to aid the diagnosis of hyperplasia is not commonly used. It is reported that a
+preoperative CT scan of women who have atypical end ometrial hyperplasia or grade 1
+endometrial cancer could alter management in 4.3% o f cases.30However, there are no
+studies evaluating its use for following up women w ith endometrial hyperplasia when
+treated conservatively. It is an expensive test and because of the radiation associated with
+its application it should not be routinely recommended. Diffusion-weighted MRI may help
+in identifying women with invasive cancer and it ha s the future potential to diagnose
+© Royal College of Obstetricians and Gynaecologists 9of 30 RCOG/BSGE Green-top Guideline No. 67Evidence
+level 2++
+Evidence
+level 2+
+Evidence
+level 2–
+Evidence
+level 2++
+Evidence
+level 1–
+Evidence
+level 2++endometrial hyperplasia and other endometrial lesions.31Thus, it could become a useful
+technology in women undergoing surveillance for aty pical endometrial hyperplasia as a
+predictor for malignant change, but more evidence is needed.
+Several biomarkers associated with endometrial hyperplasia have been investigated, but as
+of yet none of them predicts disease or prognosis accurately enough to be clinically useful.
+A systematic review evaluated 123 observational immunohistochemical studies and found
+that the phosphatase and tensin homolog (PTEN), per haps in combination with B-cell
+lymphoma 2 (BCL-2) and BCL-2-like protein 4 (BAX), could be potentially useful, but more
+research is needed before use.32
+7. How should endometrial hyperplasia without atypia be managed? 
+7.1 What should the initial management of hyperplasia without atypia be?
+Women should be informed that the risk of endometri al hyperplasia without atypia progressing to
+endometrial cancer is less than 5% over 20 years an d that the majority of cases of endometrial
+hyperplasia without atypia will regress spontaneous ly during follow-up. 
+Reversible risk factors such as obesity and the use of HRT should be identified and addressed if
+possible. 
+Observation alone with follow-up endometrial biopsi es to ensure disease regression can be considered,
+especially when identifiable risk factors can be re versed. However, women should be informed that
+treatment with progestogens has a higher disease re gression rate compared with observation alone. 
+Progestogen treatment is indicated in women who fai l to regress following observation alone and in
+symptomatic women with abnormal uterine bleeding.
+There are two cohort studies and a case–control stu dy describing the natural history of
+hyperplasia without atypia and its risk for progression to cancer.2,33,34A 20-year follow-up
+study found that, among women with hyperplasia with out atypia, previously known as
+women with simple or complex hyperplasia, the cumulative long-term risk for progression
+to cancer is less than 5%.33An earlier study with a mean follow-up duration of 13.4 years
+found that progression to cancer occurred in 1/93 ( 1%) women with simple hyperplasia
+compared with 1/29 (3%) women with complex hyperplasia.2A nested case–control study
+of endometrial hyperplasia found a significant incr ease in risk of progression to endometrial
+cancer for women with complex hyperplasia compared with matched controls with
+disordered proliferative endometrium (rate ratio 2. 8, 95% CI 1–7.9), although not for simple
+hyperplasia (rate ratio 2.0, 95% CI 0.9–4.5).34
+Spontaneous regression often occurs in women with h yperplasia without atypia. Two cohort
+studies have followed up women diagnosed with endom etrial hyperplasia who had no
+treatment. The first study was a multicentre prospe ctive study where 35 women with simple
+hyperplasia and four women with complex hyperplasia were followed up for 24 weeks
+without any treatment. They underwent endometrial sampling at 4, 8, 12 and 24 weeks of
+follow-up.35For women with simple hyperplasia, regression to no rmal endometrium
+occurred in 74% of women (26/35), while 17% (6/35) had persistent hyperplasia and 9%
+(3/35) progressed to atypical hyperplasia after 24 weeks of follow-up.35For women with
+complex hyperplasia, regression to normal endometrium was observed in 75% of women
+(3/4) and one woman had persistent complex hyperplasia after 24 weeks.35
+RCOG/BSGE Green-top Guideline No. 67 10of 30 © Royal College of Obstetricians and GynaecologistsEvidence
+level 2++
+B
+CP
+P
+Evidence
+level 2++The second study was a retrospective cohort study, which followed up 93 women with
+simple hyperplasia and 24 women with complex hyperplasia who were not treated for 12
+years. Regression to normal endometrium occurred in 81% of women (74/93) with simple
+hyperplasia, while 18% (17/93) had persistent disea se and 1% (1/93) progressed to
+endometrial cancer.2For women with complex hyperplasia, 79% (19/24) reg ressed to
+normal endometrium and the remaining 21% (5/24) had persistent complex hyperplasia.2
+There are several reversible risk factors for endom etrial hyperplasia. The slow progression of
+endometrial hyperplasia without atypia to cancer of fers a window of opportunity to address these
+factors. Obesity is a major risk factor and advising obese women to lose weight is recommended, but
+there is no evidence on weight loss strategies and their impact on progression or relapse outcomes
+during follow-up. 
+Observational studies have demonstrated that up to 10% of severely obese women could
+harbour asymptomatic endometrial hyperplasia and ba riatric surgery may reduce this 
+risk.36–38Another observational study described the acceptability of bariatric referrals when
+offered by gynaecological oncologists to 106 women and found that more than 90% would
+be happy to discuss weight loss and approximately h alf accepted a medical referral to a
+bariatric specialist with or without surgical referral.39
+Clinicians should take a detailed history of any use of exogenous hormones that includes
+both prescribed HRT preparations and over-the-count er preparations that may contain high
+potency estrogens. Clinicians should be aware that nonprescribed estrogen intake may take
+various forms.40
+The indication and type of combined HRT regimen sho uld be reviewed, especially as regards the
+relative dosages of estrogen and progestogen as wel l as the mode of administration of these hormones.
+A manipulation of the combined HRT regimen alone is often sufficient in inducing regression of
+endometrial hyperplasia without atypia. This is particularly important for postmenopausal women as
+they have a higher risk of developing endometrial h yperplasia and cancer because of unopposed
+extraovarian estrogenic stimulation.
+Ongoing tamoxifen treatment should be reviewed in conjunction with the woman’s oncologist. 
+Anovulatory cycles are often causal of endometrial hyperplasia in women who have PCOS
+or who are perimenopausal and they are likely to re gress to normal once women with PCOS
+resume ovulation or perimenopausal women reach the menopause.41For further guidance
+on PCOS, please see RCOG Green-top Guideline No. 33.21
+Many women with endometrial hyperplasia without aty pia will present through 
+postmeno pausal bleeding pathways and it is likely that they will have undergone a baseline
+pelvic ultrasound. If not, this should be arranged to exclude the possibility of an estrogen-
+secreting granulosa cell tumour of the ovary. If an ovarian cyst is detected on pelvic
+ultrasound, then blood for ovarian tumour markers should be obtained as recommended
+by the RCOG.42,43In the absence of other identifiable risk factors f or endometrial hyperplasia,
+a serum inhibin level together with an estradiol level may be considered if a granulosa cell
+tumour is suspected.44,45
+Progestogen treatment appears to have higher regression rates (89–96%)46compared with
+observation only (74.2–81%)2,35and it may reduce the risk of progression to cancer4and
+the need for hysterectomy.47However, these estimates are derived from small observational
+studies with varying completeness and lengths of follow-up.2,35,46
+© Royal College of Obstetricians and Gynaecologists 11of 30 RCOG/BSGE Green-top Guideline No. 67Evidence
+level 2+
+Evidence
+level 2–
+Evidence
+level 2++
+Evidence
+level 2–
+Evidence
+level 2+No comparative studies were identified that compared medical treatment with observation only for
+women with endometrial hyperplasia without atypia. In view of a high spontaneous regression rate
+and uncommon progression to more severe disease, it is uncertain whether medical management is
+appropriate for all women. 
+Many women are diagnosed with endometrial hyperplas ia while undergoing investigation of abnormal
+uterine bleeding. Thus, treatment may be required on symptomatic grounds. Because of the risk of
+progression to cancer, women who fail to regress wi th observation alone should be treated and
+followed up to ensure regression. Observation alone is expected to fail where there is no identifiable
+reversible risk factor causing the endometrial hyperplasia, but there is limited evidence. 
+7.2 What should the first-line medical treatment of hyperplasia without atypia be?
+Both continuous oral and local intrauterine (levono rgestrel-releasing intrauterine system [LNG-IUS])
+progestogens are effective in achieving regression of endometrial hyperplasia without atypia.
+The LNG-IUS should be the first-line medical treatm ent because compared with oral progestogens it
+has a higher disease regression rate with a more fa vourable bleeding profile and it is associated with
+fewer adverse effects.
+Continuous progestogens should be used (medroxyprog esterone 10–20 mg/day or norethisterone 
+10–15 mg/day) for women who decline the LNG-IUS.
+Cyclical progestogens should not be used because th ey are less effective in inducing regression of
+endometrial hyperplasia without atypia compared wit h continuous oral progestogens or the LNG-IUS. 
+Progestogens have been advocated to treat endometri al hyperplasia because they modify the
+proliferative effects of estrogen on the endometriu m. Treatment with progestogens was originally
+limited to oral progestogens such as norethisterone , medroxyprogesterone acetate and megestrol
+acetate. 
+Oral progestogens can have significant adverse effe cts and norethisterone at a high dose
+has similar contraindications to combined contraceptive pills.48More recently, intrauterine
+delivery of progestogens via the LNG-IUS has been s uccessfully used for this purpose.46
+The intrauterine release of the levonorgestrel mini mises the systemic absorption of the
+hormone and aids compliance by reducing adverse effects. The LNG-IUS achieves a higher
+concentration of levonorgestrel at the level of the endometrium compared with oral
+progestogens.49
+In women of reproductive age the LNG-IUS can also provide effective contraception and it
+is recommended as first-line treatment for heavy menstrual bleeding.50
+Evidence comparing use of the LNG-IUS and oral prog estogens was identified from seven
+randomised controlled trials, involving a total of 766 women, with a moderate risk of bias.51–57
+The available randomised controlled trials are summ arised in a meta-analysis that found that
+the LNG-IUS achieved a higher regression rate compa red with oral progestogens after 3
+months (OR 2.30, 95% CI 1.39–3.82), 6 months (OR 3. 16, 95% CI 1.84–5.45), 12 months
+(OR 5.73, 95% CI 2.67–12.33) and 24 months of treat ment (OR 7.46, 95% CI 2.55–21.78).
+Women treated with a LNG-IUS compared with oral pro gestogens were less likely to need
+hysterectomy during follow-up (OR 0.26, 95% CI 0.15 –0.45). No difference was found in the
+frequency of irregular vaginal bleeding in the two groups (OR 1.12, 95% CI 0.54–2.32).58
+RCOG/BSGE Green-top Guideline No. 67 12of 30 © Royal College of Obstetricians and GynaecologistsA
+A
+B
+A
+Evidence
+level 4
+Evidence
+level 1+Only one randomised controlled trial was identified that compared different types, doses
+and regimens for oral progestogens. This trial comp ared the efficacies of three different 
+10-day cyclical progestogens when used for 3 months for the treatment of simple hyperplasia
+without atypia. The observed disease regression rat es were similar for all drugs: 60% (18/30)
+for medroxyprogesterone (10 mg/day), 44% (11/25) for lynestrenol (15 mg/day) and 59%
+(16/27) for norethisterone (15 mg/day).55
+Meta-analyses of seven randomised controlled trials and 24 uncontrolled observational
+studies found that the most commonly used progestog ens were medroxyprogesterone 
+(dose range 10–20 mg/day) and norethisterone (dose range 10–15 mg/day).46,57
+7.3 What should the duration of treatment and follow-up of hyperplasia without atypia be?
+Treatment with oral progestogens or the LNG-IUS sho uld be for a minimum of 6 months in order to
+induce histological regression of endometrial hyper plasia without atypia.
+If adverse effects are tolerable and fertility is n ot desired, women should be encouraged to retain th e
+LNG-IUS for up to 5 years as this reduces the risk of relapse, especially if it alleviates abnormal ut erine
+bleeding symptoms.
+Endometrial surveillance incorporating outpatient e ndometrial biopsy is recommended after a
+diagnosis of hyperplasia without atypia.
+Endometrial surveillance should be arranged at a mi nimum of 6-monthly intervals, although review
+schedules should be individualised and responsive t o changes in a woman’s clinical condition. 
+At least two consecutive 6-monthly negative biopsie s should be obtained prior to discharge. 
+Women should be advised to seek a further referral if abnormal vaginal bleeding recurs after
+completion of treatment because this may indicate d isease relapse.
+In women at higher risk of relapse, such as women w ith a BMI of 35 or greater or those treated with or al
+progestogens, 6-monthly endometrial biopsies are re commended. Once two consecutive negative
+endometrial biopsies have been obtained then long-t erm follow-up should be considered with annual
+endometrial biopsies. 
+Higher regression rates have been shown from increa sing the duration of medical treatment
+from 3 to 6 months. One trial randomised women betw een the LNG-IUS and oral
+contin uous medroxyprogesterone and reported histol ogical regression rates for endometrial
+hyperplasia without atypia according to the duration of therapy. Between 3 and 6 months
+the regression rates improved for the LNG-IUS from 84% to 100% and for oral
+medroxyprogesterone from 50% to 64%.53
+In one trial women were randomised to LNG-IUS or two regimens of oral progestogens for
+6 months. The LNG-IUS was removed after 6 months. The authors found that relapse was
+common (33%) and did not differ among the three groups.56
+A meta-analysis of 11 observational uncontrolled st udies found that oral progestogens were
+generally given for 3–6 months, whereas the LNG-IUS was usually used beyond this time and
+for up to 5 years.46
+© Royal College of Obstetricians and Gynaecologists 13of 30 RCOG/BSGE Green-top Guideline No. 67Evidence
+level 1–
+Evidence
+level 1+
+PB
+C
+D
+DP
+Evidence
+level 1–
+Evidence
+level 1+
+Evidence
+level 2++Two long-term prospective cohort studies provide in formation about the duration of
+follow-up and relapse rates following successful regression of endometrial hyperplasia.59,60
+In the largest cohort, relapse of complex endometri al hyperplasia following initial regression
+occurred in 12.7% (18/142) of women treated with th e LNG-IUS compared with 28.3%
+(17/60) of women treated with oral progestogens (hazard ratio 0.37, 95% CI 0.18–0.73).59
+Women from the same cohort were stratified accordin g to their BMI. For those women
+treated with the LNG-IUS, only 3% of women with a B MI under 35 relapsed during follow-up
+compared with 33% of women with a BMI of 35 or grea ter over a median follow-up of 
+67 months (hazard ratio 5.51, 95% CI 1.05–28.87). In contrast, in women treated with oral
+progestogens, a woman’s BMI was not found to be predictive of relapse. 
+Another observational study of women treated with the LNG-IUS found that 26% (9/34) of
+women underwent hysterectomy after evidence of regr ession of the hyperplastic process
+and in more than half (5/9) of these women there wa s evidence of relapse of hyperplasia on
+the final hysterectomy specimen. The authors recomm ended periodic endometrial sampling
+for at least 2 years after stopping treatment.60The optimal schedule for clinical follow-up is
+uncertain because of the limited availability of pu blished data, but the observational studies
+available support endometrial biopsies every 6 mont hs and at least two consecutive negative
+biopsies to confirm disease regression to normality.59,60In women at higher risk of disease
+relapse, persistence or progression, such as those with a BMI of 35 or greater or treated
+with short courses of oral progestogens, biopsies at 6-monthly intervals for at least 2 years
+should be considered and long-term follow-up on an annual basis thereafter.
+In view of the risk of relapse of endometrial hyperplasia, it is reasonable to continue with
+LNG-IUS treatment despite a regression of the hyper plasia. In the absence of adverse effects,
+the final decision to persist with treatment or rem ove the device should be made in
+ consult ation with the woman and according to her preferences. If adverse effects are
+tolerable and fertility is not desired, women should be encouraged to retain the LNG-IUS
+for the 5-year duration, especially if it alleviates abnormal uterine bleeding symptoms. For
+oral progest ogens, there is evidence from randomis ed trials that 6 months of therapy is
+more efficacious than 3 months, but there are no co mparative data for longer therapy
+durations.53Data reporting longer term courses of continuous oral progestogens beyond 
+6 months to maintain disease remission are unavaila ble. Cessation of oral progestogens
+after 3–6 months of therapy appears to be commonly practised46,59and this may relate to
+fears over potential adverse effects arising from c hronic administration of high-dose
+continuous oral progestogens and compliance issues. In the absence of safety and efficacy
+data, the routine use of longer term oral regimens cannot be supported. Women
+experiencing abnormal vaginal bleeding after the en d of treatment should be advised to
+seek a further referral as this may signify relapse.
+In summary, there is evidence from randomised trial s that treatment with progestogens should last for
+at least 6 months. If endometrial hyperplasia persi sts for 12 months despite treatment, the risk of
+underlying cancer is high and the chances of diseas e regression are low, such that hysterectomy is
+advised. Observational evidence shows that a BMI of 35 or greater or treatment of endometrial
+hyperplasia without atypia by oral progestogens carries a higher risk of relapse and long-term follow-
+up may be warranted. Annual endometrial biopsies can be considered for these high-risk women, but
+follow-up schedules should be individualised. They should take into account the baseline cancer risk,
+medical comorbidities, presence of abnormal bleedin g and treatment factors such as response,
+tolerance and compliance, as well as the wishes of the patient. 
+RCOG/BSGE Green-top Guideline No. 67 14of 30 © Royal College of Obstetricians and GynaecologistsEvidence
+level 2+
+Evidence
+level 2++7.4 When is surgical management appropriate for women with endometrial hyperplasia
+without atypia?
+Hysterectomy should not be considered as a first-li ne treatment for hyperplasia without atypia because
+progestogen therapy induces histological and sympto matic remission in the majority of women and
+avoids the morbidity associated with major surgery.
+Hysterectomy is indicated in women not wanting to p reserve their fertility when (i) progression to
+atypical hyperplasia occurs during follow-up, or (i i) there is no histological regression of hyperplas ia
+despite 12 months of treatment, or (iii) there is r elapse of endometrial hyperplasia after completing
+progestogen treatment, or (iv) there is persistence of bleeding symptoms, or (v) the woman declines
+to undergo endometrial surveillance or comply with medical treatment.
+Postmenopausal women requiring surgical management for endometrial hyperplasia without atypia
+should be offered a bilateral salpingo-oophorectomy together with the total hysterectomy.
+For premenopausal women, the decision to remove the ovaries should be individualised; however,
+bilateral salpingectomy should be considered as thi s may reduce the risk of a future ovarian
+malignancy.
+A laparoscopic approach to total hysterectomy is pr eferable to an abdominal approach as it is
+associated with a shorter hospital stay, less posto perative pain and quicker recovery. 
+Endometrial ablation is not recommended for the tre atment of endometrial hyperplasia because
+complete and persistent endometrial destruction can not be ensured and intrauterine adhesion
+formation may preclude future endometrial histologi cal surveillance.
+The majority of women will experience regression of their endometrial hyperplasia without
+atypia following progestogen treatment.46However, some cases will persist or may relapse
+during follow-up. There is limited research on the best approach for those women. A
+prospective cohort study followed up women treated with the LNG-IUS for complex
+hyperplasia.47The 16 women with complex hyperplasia who did not achieve regression in
+this study were offered hysterectomy. This was performed in 13 of them and a diagnosis of
+cancer was made in 23.1% of these women (3/13).47Thus, the data from this cohort suggest
+that after 12 months of progestogen treatment, if t here is no evidence of regression of
+endometrial hyperplasia then the risk of cancer is high and hysterectomy is warranted.61
+The small increase in overall regression rates of endometrial hyperplasia observed in the
+above cohort beyond 12 months of treatment has to b e balanced against the risks of
+histological undercall and thus endometrial cancer. While 39 of 68 (57%) refractory women
+subsequently regressed between 12 and 24 months in the above study, a decision to persist
+with the LNG-IUS beyond 12 months should only be taken after careful consideration and
+thorough discussion with the patient regarding the risks and benefits of prolonged medical
+treatment compared with hysterectomy.47It is advisable to obtain a multidisciplinary opini on
+in such cases.
+In the same cohort study of 219 women with mainly c omplex endometrial hyperplasia
+(202/219) treated with either the LNG-IUS or oral p rogestogens, 19% (41/219) relapsed after
+initial disease regression. Relapse occurred more o ften with the oral progestogens than with
+the LNG-IUS (30% versus 14%; OR 0.34, 95% CI 0.17–0.7, P= 0.005). Of the 41 relapsed
+women, only 17 underwent hysterectomy and two were diagnosed with cancer (11.7%).61
+One woman initially diagnosed with complex endometrial hyperplasia and treated with the
+LNG-IUS progressed to endometrioid cancer with a concomitant granulosa cell tumour of
+© Royal College of Obstetricians and Gynaecologists 15of 30 RCOG/BSGE Green-top Guideline No. 67C
+C
+D
+B
+DP
+Evidence
+level 2+the ovary, while the second woman who progressed to cancer was initially diagnosed with
+atypical endometrial hyperplasia.61These data further highlight the significant risk o f
+underlying endometrial cancer in persisting or relapsing endometrial hyperplasia without
+atypia and a total hysterectomy should be recommended in these circumstances.
+A first-line hysterectomy should also be considered in women diagnosed with endometrial hyperplasia
+without atypia who have abnormal bleeding or who ar e not prepared to undergo endometrial
+surveillance. Furthermore, a hysterectomy may be indicated in women not wishing or not suitable to
+receive hormonal therapy where there are concerns o ver treatment or surveillance compliance.
+However, these indications should be considered in the context of baseline cancer risk, co-existing
+medical morbidities and patient preferences. In wom en in whom endometrial hyperplasia without
+atypia fails to regress with progestogen treatment, a hysterectomy should be carried out. 
+The current surgical standard for endometrial hyper plasia without atypia is to perform a
+total hysterectomy with bilateral salpingo-oophorectomy for postmenopausal women. For
+premenopausal women, the decision to remove the ovaries depends on patient wishes and
+malignancy risk factors. However, a bilateral salpi ngectomy while preserving the ovaries can
+be considered as this may reduce the woman’s risk o f a future ovarian malignancy.62
+Supra cervical hysterectomy should be avoided to en sure that all premalignant disease is
+eliminated.63
+We did not identify any specific evidence evaluatin g the different routes of hysterectomy for
+hyperplasia without atypia. However, there is evide nce that a laparoscopic approach may be
+preferable to the abdominal approach for women with atypical hyperplasia or stage I
+endometrial cancer (see section 8.1) as it is assoc iated with a shorter hospital stay, less
+postoperative pain and quicker recovery.64
+Endometrial ablation has been used as an alternativ e surgical approach to treat endometrial
+hyperplasia without atypia and is also effective in reducing heavy menstrual loss.64–66In one
+randomised controlled trial, women with endometrial hyperplasia without atypia (n = 34)
+were randomised to either thermal balloon ablation or progestogen therapy. In the thermal
+balloon ablation group, 24% (4/17) failed to regress compared with 35% (6/17) in the oral
+progestogen group.67However, complete endometrial destruction cannot be guaranteed
+and regeneration of ablated endometrial tissue may occur.68Subsequent endometrial
+assessment with hysteroscopy or endometrial biopsy may be compromised because of
+intrauterine adhesions. Hence, this method cannot be recommended routinely.
+8. How should atypical hyperplasia be managed?
+8.1 What should the initial management of atypical hyperplasia be? 
+Women with atypical hyperplasia should undergo a to tal hysterectomy because of the risk of
+underlying malignancy or progression to cancer.
+A laparoscopic approach to total hysterectomy is pr eferable to an abdominal approach as it is
+associated with a shorter hospital stay, less posto perative pain and quicker recovery.
+There is no benefit from intraoperative frozen sect ion analysis of the endometrium or routine 
+lymph adenectomy.
+Postmenopausal women with atypical hyperplasia shou ld be offered bilateral salpingo-oophorectomy
+together with the total hysterectomy. 
+RCOG/BSGE Green-top Guideline No. 67 16of 30 © Royal College of Obstetricians and GynaecologistsEvidence
+level 2+
+Evidence
+level 4
+Evidence
+level 1+
+Evidence
+level 1–
+PB
+B
+CFor premenopausal women, the decision to remove the ovaries should be individualised; however,
+bilateral salpingectomy should be considered as thi s may reduce the risk of a future ovarian
+malignancy. 
+Endometrial ablation is not recommended because com plete and persistent endometrial destruction
+cannot be ensured and intrauterine adhesion formati on may preclude endometrial histological
+surveillance.
+The risk of developing endometrial cancer is highest in atypical hyperplasia. A case–control
+study nested in a cohort of 7947 women diagnosed wi th atypical hyperplasia found that the
+cumulative risk of cancer in 4 years was 8% (95% CI 1.31–14.6), which increased to 12.4%
+(95% CI 3.0–20.8) after 9 years and to 27.5% (95% C I 8.6–42.5) after 19 years.33Atypical
+hyperplasia has also been associated with a rate of concomitant carcinoma of up to 43% in
+women undergoing hysterectomy.69
+No comparative studies were identified that compare d surgical with fertility-sparing
+manage ment for women with atypical hyperplasia. Du e to the risk of underlying malignancy
+or progression to cancer, a total hysterectomy is a dvised. The method chosen for
+hysterectomy should allow assessment for further di sease if necessary. Minimal access
+techniques do allow staging and there is some evidence to suggest that they are beneficial
+when done by appro priately trained surgeons. A ran domised trial comparing total
+laparoscopic hysterectomy with total abdominal hyst erectomy via a midline incision was
+conducted in the Netherlands with 283 women with either stage I endometrial cancer or
+atypical hyperplasia.64There was no difference in major complications betw een laparoscopic
+and abdominal approaches. However, laparoscopic hysterectomy was superior in terms of
+a shorter hospital stay, less pain and quicker resumption of daily activities.64
+Due to the risks of disseminating malignancy, morce llation of the uterus should be avoided.
+Supracervical hysterectomy should not be performed.63
+Intraoperative frozen analysis of the endometrium i s not a reliable indicator of final
+pathology in women with a preoperative diagnosis of atypical hyperplasia. Indermaur et al.
+performed a retrospective review of frozen and fina l pathology in women with a
+preoperative diagnosis of atypical hyperplasia. In 61% (15/23) of the cases, the frozen and
+final pathology reports disagreed.70Eight of 14 women (57%) initially diagnosed with
+atypical hyperplasia by frozen section were diagnos ed with endometrial cancer on final
+pathology.70
+Lymphadenectomy should not be routinely performed in atypical hyperplasia because this
+would result in unnecessary surgical risk for the majority of women. Although endometrial
+cancer has been reported in 43% of cases during hysterectomy, the cancer was usually early
+stage with low risk of lymphovascular disease.69
+Furthermore, two randomised trials showed no benefi t of routine lymphadenectomy in
+early endometrial cancers.71,72
+Due to the risk of underlying malignancy, bilateral salpingo-oophorectomy should be performed in all
+peri- and postmenopausal women undergoing hysterectomy for atypical hyperplasia. 
+However, the evidence is less clear about premenopausal women diagnosed with atypical
+hyperplasia and the risks of surgical menopause hav e to be balanced against the risk of
+underlying cancer and the need for further surgery to remove the ovaries. The Nurses’
+© Royal College of Obstetricians and Gynaecologists 17of 30 RCOG/BSGE Green-top Guideline No. 67D
+C
+Evidence
+level 2++
+Evidence
+level 1+
+Evidence
+level 4
+Evidence
+level 2+
+Evidence
+level 2++
+Evidence
+level 1+
+Evidence
+level 2++Health Study did show that bilateral salpingo-oopho rectomy is associated with increased
+mortality in women aged less than 50 years who had hysterectomy for benign disease.73
+Premenopausal women who undergo hysterectomy and bi lateral salpingo-oophorectomy
+for endometrial hyperplasia should consider the use of estrogen replacement, in the absence
+of contraindications to its use, until the age of the natural menopause to minimise the risks
+of surgical menopause. These considerations should be discussed with the woman.
+As an alternative to hysterectomy, endometrial abla tion and resection has also 
+been reported, although complete endometrial destru ction cannot be guaranteed and
+regen eration of ablated endometrial tissue may occur.68,74As with hysterectomy, this is not
+a fertility-sparing procedure and intrauterine adhe sion formation can render future
+endo metrial surveillance with hysteroscopy and/or endometrial biopsy problematic. 
+8.2 How should women with atypical hyperplasia who wish to preserve their fertility or who
+are not suitable for surgery be managed?
+Women wishing to retain their fertility should be c ounselled about the risks of underlying malignancy
+and subsequent progression to endometrial cancer. 
+Pretreatment investigations should aim to rule out invasive endometrial cancer or co-existing ovarian
+cancer.
+Histology, imaging and tumour marker results should be reviewed in a multidisciplinary meeting and
+a plan for management and ongoing endometrial surve illance formulated.
+First-line treatment with the LNG-IUS should be rec ommended, with oral progestogens as a 
+second-best alternative (see section 7.2).
+Once fertility is no longer required, hysterectomy should be offered in view of the high risk of disea se
+relapse.
+Fertility-sparing therapy has been advocated for wo men who desire future fertility or who have medical
+comorbidities precluding surgical management. Howev er, women need careful counselling of the
+risks involved with this option: co-existent or progression to endometrial cancer, co-existent ovarian
+cancer, metastatic disease and death. 
+In a systematic review of uncontrolled observationa l studies of women with atypical
+hyper plasia, the risk of co-existing ovarian cancer was up to 4%, the risk of progression to
+higher than stage I endometrial cancer was about 2% and the risk of metastatic disease and
+death was about 0.5%.75Pretreatment investigations were proposed for identifying women
+with undiagnosed advanced endometrial or ovarian ca ncer.75The review authors separately
+examined women who underwent pretreatment investiga tions (MRI, CT, TVS and serum
+CA125) and those who did not.75No significant difference was found in ovarian cancer or
+advanced endometrial cancer diagnosis or prevalence of metastasis and death.75
+However, in the absence of robust comparative evide nce, investigations prior to fertility-sparing
+treatment should be undertaken and these include tumour markers such as CA125 and imaging with
+TVS and/or MRI scan to rule out co-existing ovarian cancer and invasive endometrial cancer. 
+Several hormonal therapies have been used to treat this group of women and these include oral
+progestogens, the LNG-IUS, aromatase inhibitors and gonadotrophin-releasing hormone agonists. 
+RCOG/BSGE Green-top Guideline No. 67 18of 30 © Royal College of Obstetricians and GynaecologistsEvidence
+level 2++
+Evidence
+level 2+
+P
+BP
+BP
+Evidence
+level 2++In a large retrospective cohort study following up 242 women with atypical endometrial
+hyperplasia, the risk of progression to cancer was reduced five-fold, from 101.4 to 20.5 per
+1000 woman-years, with the use of progestogens.76Interestingly, in this study there were 
+22 diagnoses of endometrial cancer and 21 were stag e I (endometrioid grade 1 = 8, 
+grade 2 = 6, grade 3 = 1, unknown grade = 4; papillary serous = 2) and one woman was
+diagnosed with stage II grade 1 endometrioid cancer.76
+To date, there have been no randomised trials comparing different regimens of hormonal treatments.
+Several observational studies have reported rates of regression, relapse and progression to
+endometrial cancer together with reproductive outco mes following the use of hormonal
+therapy. A meta-analysis of observational studies o f fertility-sparing treatment for women
+with atypical hyperplasia reported summary rates for disease regression of 85.6%, a relapse
+rate of 26% and a live birth rate of 26.3%.75Due to the high relapse rate and because the
+primary studies did not engage in long-term follow-up, the authors warn that true relapse
+rates may be even higher and advise that once ferti lity is no longer required, a hysterectomy
+should be performed. However, the review only repor ted on 151 women from 14 small
+noncomparative studies of limited quality with diverse populations and interventions. As a
+result, no comparison between treatments was possib le, but oral progestogens and the
+LNG-IUS were the most commonly used therapies.75
+In summary, fertility-sparing management of atypica l hyperplasia is possible, with one-quarter of
+women achieving a live birth, but the evidence is weak and based almost exclusively on small studies.
+The safety is uncertain as estimates of cancer diagnosis and stage during follow-up are imprecise. It is
+essential that initial diagnosis is confirmed on formal hysteroscopy to minimise the chance of missing
+cancer. The optimal treatment regimen is also ill-defined. In addition, the length of follow-up after
+fertility-sparing treatment has been short, such that the risk of relapse in the longer term is uncertain.
+Careful counselling about the risks of fertility-sp aring treatment is of paramount importance, togethe r
+with pretreatment work-up to rule out advanced endometrial or ovarian cancer. Because of the rarity
+and complexity of this clinical scenario, gynaecolo gists should seek gynaecological oncology
+multidisciplinary advice, where the available histo logy, imaging and tumour markers are examined. The
+advice should include a plan for endometrial biopsi es and follow-up, together with a maximum
+recom mended duration of fertility-sparing treatment before a hysterectomy is performed. 
+8.3 How should women with atypical hyperplasia not und ergoing hysterectomy be followed up?
+Routine endometrial surveillance should include end ometrial biopsy. Review schedules should be
+individualised and be responsive to changes in a wo man’s clinical condition. Review intervals should
+be every 3 months until two consecutive negative bi opsies are obtained.
+In asymptomatic women with a uterus and evidence of histological disease regression, based upon a
+minimum of two consecutive negative endometrial bio psies, long-term follow-up with endometrial
+biopsy every 6–12 months is recommended until a hys terectomy is performed.
+The follow-up should be customised to each woman, t aking into account baseline risk
+factors, associated symptoms and response to treatm ent. Obesity is associated with a 
+higher risk of failure to regress and relapse and should be taken into consideration when
+arranging follow-up.59,77This is best decided in the context of a gynaecolog ical oncology
+multidisciplinary meeting and women who decline or are unfit to undergo a hysterectomy
+can be considered for discussion.
+© Royal College of Obstetricians and Gynaecologists 19of 30 RCOG/BSGE Green-top Guideline No. 67Evidence
+level 2++
+Evidence
+level 2++
+D
+P
+Evidence
+level 2+The minimum investigations required to monitor the endometrium during follow-up include a
+detailed history for the presence of symptoms and s igns suggestive of progressive disease, pelvic
+examination and an endometrial biopsy. Hysteroscopy should be considered where an endometrial
+biopsy cannot be satisfactorily obtained or where sampling is nondiagnostic. TVS has a role in ruling
+out ovarian disease if this has not already been pe rformed, although assessment of endometrial
+thickness is unlikely to be useful in view of the a bsence of validated reference ranges and the diffic ulty
+in obtaining accurate measurements with the LNG-IUS in place. There are no data to support the
+routine use of MRI or CT during follow-up.
+The optimal follow-up schedule is unknown, but in v iew of the risk of progression to
+endometrial cancer and in the absence of research data, most clinicians would recommend
+endometrial evaluation every 3 months initially,78until two consecutive negative biopsies are
+obtained.47
+Failure of atypical endometrial hyperplasia to regr ess is a worrying sign for underlying
+endometrial cancer. If fertility-sparing therapy fa ils to induce regression of atypical
+hyperplasia by 12 months or there is evidence of progression to cancer, women should be
+strongly recommended to undergo hysterectomy.75The risk of relapse is especially high in
+the first 2 years from diagnosis. If relapse occurs during follow-up, women should also be
+advised to undergo hysterectomy as it is often asso ciated with endometrial cancer at the
+final hysterectomy specimen.75
+If this is not possible or declined, a further cycl e of progestogen treatment can be attempted.
+In a study of 33 women with relapsed atypical hyper plasia, 85% (28/33) regressed following
+retreatment with oral medroxyprogesterone given for 6 months.79Beyond 2 years, in
+asymptomatic women with a uterus and histologically regressed disease, recourse to annual
+follow-up with endometrial biopsy was advised.79
+9. How should endometrial hyperplasia be managed in women wishing to conceive?
+Disease regression should be achieved on at least o ne endometrial sample before women attempt to
+conceive.
+Women with endometrial hyperplasia who wish to conc eive should be referred to a fertility specialist
+to discuss the options for attempting conception, f urther assessment and appropriate treatment.
+Assisted reproduction may be considered as the live birth rate is higher and it may prevent relapse
+compared with women who attempt natural conception.
+Prior to assisted reproduction, regression of endom etrial hyperplasia should be achieved as this is
+associated with higher implantation and clinical pr egnancy rates. 
+Women with endometrial hyperplasia who wish to conc eive should be followed up to
+ensure disease regression. Once regression of the e ndometrial hyperplasia is achieved,
+women can be advised to attempt natural conception. However, as a hyperplastic
+endometrium may predispose women to infertility, an early referral for fertility specialist
+consultation can be offered as per national recomme ndations.80Obese women should aim
+for a BMI of less than 30.80
+A meta-analysis of observational studies has report ed the live birth rates of 126 women who
+had fertility-sparing treatment for atypical hyperplasia. The study found that the live birth
+rate was 26.3% (31/126).75The live birth rate for women appeared to be higher with assisted
+RCOG/BSGE Green-top Guideline No. 67 20of 30 © Royal College of Obstetricians and GynaecologistsEvidence
+level 4
+Evidence
+level 2++
+Evidence
+level 2–
+P
+D
+C
+B
+Evidence
+level 4
+Evidence
+level 2++reproductive technology compared with natural conce ption following regression of atypical
+hyperplasia or well-differentiated endometrial cancer.75However, it was often not reported
+in the primary studies exactly how many women were actively trying to conceive naturally.
+Indirect comparison showed this difference between assisted reproduction and natural
+conception to be statistically significant ( P= 0.001).75Immediate assisted reproductive
+technology avoids a prolonged interval of time with out progestogen treatment, which could
+cause women to relapse. A decision to initiate assisted reproduction immediately following
+cessation of progestogen treatment should be made within a multidisciplinary team setting
+taking into account risks of disease progression and fertility prospects.
+Relevant to women with endometrial hyperplasia with out atypia, a small randomised
+controlled trial was performed in women with simple hyperplasia and PCOS undergoing 
+in vitro fertilisation (IVF). The trial compared LN G-IUS treatment with observation alone
+and found that women treated with the LNG-IUS were more likely to achieve regression
+(88% versus 15%) and also had higher implantation ( 29% versus 17%, P <0.05) and clinical
+pregnancy rates (46% versus 28%, P <0.05) following IVF treatment. None of the women
+in the LNG-IUS group progressed to worsening hyperp lasia but three women progressed in
+the observation-alone group.81
+A hysterectomy should be recommended to women with atypical endometrial hyperplasia
+once fertility is no longer required because of the high relapse rate of disease and the
+potential for disease progression (see section 8.2).75
+10. HRT and endometrial hyperplasia 
+Systemic estrogen-only HRT should not be used in wo men with a uterus.
+All women taking HRT should be encouraged to report any unscheduled vaginal bleeding promptly. 
+Women with endometrial hyperplasia taking a sequent ial HRT preparation who wish to continue HRT
+should be advised to change to continuous progestog en intake using the LNG-IUS or a continuous
+combined HRT preparation. Subsequent management sho uld be as described in the preceding sections
+of the guideline. 
+Women with endometrial hyperplasia taking a continu ous combined preparation who wish to continue
+HRT should have their need to continue HRT reviewed . Discuss the limitations of the available evidence
+regarding the optimal progestogen regimen in this c ontext. Consider using the LNG-IUS as a source of
+progestogen replacement. Subsequent management shou ld be as described in the preceding sections
+of the guideline.
+A Cochrane review of randomised trials has shown a significantly increased risk of
+hyperplasia with unopposed estrogen replacement therapy for 2 to 3 years, with evidence
+of a dose–response relationship.9The addition of a progestogen (a minimum of 1 mg/day
+norethisterone or 1.5 mg/day medroxyprogesterone) t o the unopposed estrogen
+replace ment therapy resulted in fewer cases of end ometrial hyperplasia when either
+sequential or continuous combined HRT regimens were adopted.9
+The Cochrane review pointed towards a reduced cumul ative endometrial hyperplasia
+prevalence at 3 years of follow-up with continuous combined HRT compared with sequential
+regimens, but this difference did not reach statist ical significance (Peto OR 0.23, 95% CI
+0.05–1.02).9
+© Royal College of Obstetricians and Gynaecologists 21of 30 RCOG/BSGE Green-top Guideline No. 67Evidence
+level 2++
+Evidence
+level 1–
+Evidence
+level 2++
+PA
+PB
+Evidence
+level 1++All women taking HRT should report any unscheduled vaginal bleeding promptly and be referred for
+further investigation.
+In the Postmenopausal Estrogen/Progestin Interventi ons (PEPI) trial, 45 women were
+diagnosed with endometrial hyperplasia on sequentia l HRT. The HRT was stopped and most
+women were treated with oral progestogens, from whi ch 94% (34/36) achieved regression.82
+In a large observational study, there were no cases of endometrial hyperplasia in 526 women
+on continuous combined HRT. However, there were 21 cases of hyperplasia without atypia
+among 360 women who had been taking sequential comb ined HRT. The hyperplasia
+regressed to normal endometrium when women were cha nged to continuous combined
+HRT preparations.83An observational study included 2028 women who at entry point were
+either taking sequential HRT or were not on HRT. Al l women were given or switched to
+continuous combined HRT and endometrial response wa s assessed 9 months later. The
+study showed no increase in the risk of endometrial hyperplasia with continuous combined
+HRT and showed conversion of the endometrium back t o normal in women who had
+hyperplasia on sequential HRT at entry to the study .84A further study showed similar findings
+and included 22 women with hyperplasia with or without atypia at entry. All cases reverted
+back to normal histology within 6 months of continuous combined HRT treatment.85
+Stopping sequential combined HRT may be sufficient to induce regression of endometrial hyperplasia.
+Subsequent management should be as described in the preceding sections of this guideline, in
+accordance with the particular histological classification of hyperplasia. Further research is needed to
+evaluate the effect on the hyperplastic process of changing or supplementing a combined HRT regimen
+with local progestogens delivered via the LNG-IUS or whether combined HRT can be safely restarted
+once hyperplasia has regressed. 
+11. How should endometrial hyperplasia be managed in women on adjuvant treatment for
+breast cancer? 
+11.1 What is the risk of developing endometrial hyperplasia on adjuvant treatment for breast
+cancer?
+Women taking tamoxifen should be informed about the increased risks of developing endometrial
+hyperplasia and cancer. They should be encouraged t o report any abnormal vaginal bleeding or
+discharge promptly.
+Women taking aromatase inhibitors (such as anastroz ole, exemestane and letrozole) should be
+informed that these medications are not known to in crease the risk of endometrial hyperplasia and
+cancer. 
+Tamoxifen is a selective estrogen receptor modulato r that inhibits proliferation of breast
+cancer by competitive antagonism at estrogen receptors. However, it has a partial agonist
+action on other tissues, including the vagina and t he uterus. This estrogenic effect may
+promote the development of fibroids, endometrial polyps and hyperplasia86,87and increase
+the risk of endometrial cancer.88,89The risk increases with both dose and duration of
+treatment.88,89Women taking tamoxifen should be informed of these risks and advised to
+contact their doctor promptly if they experience abnormal vaginal bleeding or discharge.90
+The ability of tamoxifen to induce endometrial canc er and other pathologies varies between
+pre- and postmenopausal women. The National Surgica l Adjuvant Breast and Bowel Project
+Breast Cancer Prevention Trial (P-1), which compared tamoxifen with placebo in women at
+high risk of breast cancer, reported that the risk of endometrial cancer in tamoxifen users
+RCOG/BSGE Green-top Guideline No. 67 22of 30 © Royal College of Obstetricians and GynaecologistsEvidence
+level 1+
+Evidence
+level 2++
+D
+P
+Evidence
+level 1+was not statistically significant in women aged 49 years or younger (risk ratio 1.42, 95% CI
+0.55–3.81), but that there was a statistically significant increase in risk in women aged 50
+years or older (risk ratio 5.33, 95% CI 2.47–13.17).89
+Aromatase inhibitors inhibit estrogen synthesis in the peripheral tissues and have a similar
+tumour-regressing effect to tamoxifen. A Cochrane review has included randomised trials
+comparing aromatase inhibitors, such as anastrozole, exemestane and letrozole, used for
+adjuvant therapy of early breast cancer with other endocrine therapies and found that they
+do not increase the risk of endometrial pathology or vaginal bleeding.91
+Aromatase inhibitors have also been explored as a t reatment option for endometrial
+hyperplasia in small observational studies with varied success.92,93
+11.2 Should women on tamoxifen be treated with prophylactic progestogen therapy?
+There is evidence that the LNG-IUS prevents polyp f ormation and that it reduces the incidence of
+endometrial hyperplasia in women on tamoxifen. The effect of the LNG-IUS on breast cancer recurrence
+risk remains uncertain so its routine use cannot be recommended.
+A 2009 Cochrane review found that the LNG-IUS reduc ed the incidence of new endometrial
+polyps in women on tamoxifen for breast cancer over a 1-year period (Peto OR 0.14, 95%
+CI 0.03–0.61).94There was no clear evidence that the LNG-IUS preven ted endometrial
+hyperplasia or cancer in these women.94An updated subgroup analysis has confirmed that
+endometrial hyperplasia is reduced as well as endometrial polyp formation.95
+A randomised controlled trial has compared the prop hylactic use of the LNG-IUS to prevent
+endometrial pathology with a control group in women prior to starting tamoxifen therapy
+for breast cancer. Although use of the LNG-IUS significantly reduced de novo endometrial
+polyp formation over a 5-year follow-up period, its impact on preventing endometrial
+hyperplasia remained unclear because no cases were diagnosed in either group. There was
+no statistically significant increase in breast cancer recurrence rate for those treated with a
+LNG-IUS compared with untreated controls (17.2% versus 10.0%) or cancer-related deaths
+(10.3% versus 8.3%), but the study was underpowered.96
+A small observational study did not find an increas ed risk of breast cancer recurrence
+associated with use of the LNG-IUS.97
+11.3 How should women who develop endometrial hyperplasia while on tamoxifen treatment
+for breast cancer be managed?
+The need for tamoxifen should be reassessed and man agement should be according to the histological
+classification of endometrial hyperplasia and in co njunction with the woman’s oncologist.
+The partial agonist action of tamoxifen in the geni tal tract is associated with an increased risk
+of endometrial cancer.88,89
+In the presence of hyperplasia, it is presumed that this risk is even higher, although we found no
+studies addressing this issue. Therefore, the use o f tamoxifen should be reassessed in conjunction
+with the woman’s oncologist and an alternative trea tment sought if appropriate. In the absence of
+evidence specific to this group of women, it is reasonable to treat them according to their histological
+classification of hyperplasia.
+© Royal College of Obstetricians and Gynaecologists 23of 30 RCOG/BSGE Green-top Guideline No. 67Evidence
+level 1+
+Evidence
+level 1++
+Evidence
+level 3
+A
+Evidence
+level 1++
+Evidence
+level 1–
+Evidence
+level 3
+P
+Evidence
+level 1++12. How should endometrial hyperplasia confined to a n endometrial polyp be managed?
+Complete removal of the uterine polyp(s) is recomme nded and an endometrial biopsy should be
+obtained to sample the background endometrium.
+Subsequent management should be according to the hi stological classification of endometrial
+hyperplasia. 
+Endometrial polyps are discrete overgrowths of endometrium and atypia may be restricted
+to foci within the polyp. In the absence of background endometrial hyperplasia, it seems
+reasonable to assume that removal of the polyp may be curative. However, there is very little
+evidence to help guide the management of these wome n. There has been only a small quasi-
+randomised trial of 21 women, which compared use of the LNG-IUS with no treatment after
+removal of polyps with focal atypical hyperplasia.98They found that after 5 years’ follow-up
+there was no recurrence of atypia in either group.98
+It is also important to ensure that histological analysis of the background endometrium is
+performed even if the endometrium looks healthy on hysteroscopy. In a small observational
+study, 52% (14/27) of women had endometrial hyperplasia concurrently in a polyp and the
+background endometrium.99Women with atypical hyperplasia in a polyp were sli ghtly more
+likely to have hyperplasia in the surrounding endom etrium than those with hyperplasia
+without atypia.99Evidence level 3
+Following removal of the polyp, management should be according to the histological classification of
+endometrial hyperplasia.
+13. Recommendations for future research
+●The role of clinical factors and biomarkers in the diagnosis and follow-up of endometrial
+hyper plasia.
+●The effect of weight loss, community-based obesity services, lifestyle programmes and bariatric
+surgery on regression of endometrial hyperplasia.
+●The optimal duration of oral and local progestogen treatment for endometrial hyperplasia to
+induce and maintain disease regression.
+●Evaluation of endometrial surveillance regimens.
+●Prospective long-term follow-up of women observed o r treated for endometrial hyperplasia to
+provide more precise estimates of the natural history of endometrial disease and to delineate risk
+factors predictive of disease persistence, progression and relapse.
+●The role of the LNG-IUS in HRT-associated endometri al hyperplasia and whether it is safe to restart
+HRT once hyperplasia has been successfully treated.
+14. Auditable topics
+●100% of women with endometrial hyperplasia with a BMI greater than 30 should be advised to 
+lose weight.
+●100% of women with endometrial hyperplasia without atypia should have at least two negative
+endometrial biopsies prior to discharge.
+●100% of postmenopausal women with atypical hyperplasia should undergo a total hysterectomy
+and bilateral salpingo-oophorectomy if not medically contraindicated.
+RCOG/BSGE Green-top Guideline No. 67 24of 30 © Royal College of Obstetricians and GynaecologistsPD
+Evidence
+level 1–
+Evidence
+level 315. Useful links and support groups
+●Cancer Research UK. Endometrial hyperplasia [http://www.cancerresearchuk.org/about-cancer/
+cancers-in-general/cancer-questions/endometrial-hyperplasia].
+●Patient. Endometrial Hyperplasia [http://patient.info/doctor/endometrial-hyperplasia].
+References
+© Royal College of Obstetricians and Gynaecologists 25of 30 RCOG/BSGE Green-top Guideline No. 671. Kurman RJ, Carcangiu ML, Herrington CS, Young RH ,
+editors. WHO Classification of Tumours of Female
+Repro ductive Organs . 4th ed. [Lyon]: IARC; 2014.
+2. Kurman RJ, Kaminski PF, Norris HJ. The behavior of
+endometrial hyperplasia. A long-term study of “untr eated”
+hyperplasia in 170 patients. Cancer1985;56:403–12.
+3. Cancer Research UK. Uterine cancer incidence stat istics.
+Uterine cancer incidence by UK region [http://www.
+cancerresearchuk.org/health-professional/cancer-sta tistics/
+statistics-by-cancer-type/uterine-cancer/incidence#heading
+-Zero]. Accessed 2015 Nov 25.
+4. Reed SD, Newton KM, Clinton WL, Epplein M, Garci a R,
+Allison K, et al. Incidence of endometrial hyperpla sia. 
+Am J Obstet Gynecol 2009;200:678.e1–6.
+5. Farquhar CM, Lethaby A, Sowter M, Verry J, Baran yai J. An
+evaluation of risk factors for endometrial hyperpla sia in
+premenopausal women with abnormal menstrual
+bleeding. Am J Obstet Gynecol 1999;181:525–9.
+6. Ricci E, Moroni S, Parazzini F, Surace M, Benzi G, Salerio B,
+et al. Risk factors for endometrial hyperplasia: re sults 
+from a case-control study. Int J Gynecol Cancer 2002;12:
+257–60.
+7. Epplein M, Reed SD, Voigt LF, Newton KM, Holt VL , 
+Weiss NS. Risk of complex and atypical endometrial
+hyperplasia in relation to anthropometric measures 
+and reproductive history. Am J Epidemiol 2008;168:
+563–70.
+8. Viola AS, Gouveia D, Andrade L, Aldrighi JM, Vio la CF,
+Bahamondes L. Prevalence of endometrial cancer and
+hyperplasia in non-symptomatic overweight and obese
+women. Aust N Z J Obstet Gynaecol 2008;48:207–13.
+9. Furness S, Roberts H, Marjoribanks J, Lethaby A. 
+Hormone therapy in postmenopausal women and risk of
+endometrial hyperplasia. Cochrane Database Syst Rev
+2012;(8):CD000402.
+10. Bobrowska K, Kami ´nski P, Cyganek A, Pietrzak B,
+Jabiry-Zieniewicz Z, Durlik M, et al. High rate of
+endometrial hyperplasia in renal transplanted women .
+Transplant Proc 2006;38:177–9.
+11. Mutter GL, Bergeron C, Deligdisch L, Ferenczy A , Glant M,
+Merino M, et al. The spectrum of endometrial pathol ogy
+induced by progesterone receptor modulators. Mod Pathol
+2008;21:591–8.
+12. Clark TJ, Mann CH, Shah N, Khan KS, Song F, Gup ta JK.
+Accuracy of outpatient endometrial biopsy in the di agnosis
+of endometrial cancer: a systematic quantitative re view.
+BJOG2002;109:313–21.
+13. Clark TJ, Mann CH, Shah N, Khan KS, Song F, Gup ta JK.
+Accuracy of outpatient endometrial biopsy in the di agnosis
+of endometrial hyperplasia. Acta Obstet Gynecol Scand
+2001;80:784–93.
+14. Timmermans A, Opmeer BC, Khan KS, Bachmann LM,
+Epstein E, Clark TJ, et al. Endometrial thickness
+measure ment for detecting endometrial cancer in wo men
+with postmenopausal bleeding: a systematic review a nd
+meta-analysis. Obstet Gynecol 2010;116:160–7.
+15. Scottish Intercollegiate Guidelines Network (SI GN).
+Investigation of post-menopausal bleeding . SIGN
+publication no. 61. Edinburgh: SIGN; 2002.16. Tabor A, Watt HC, Wald NJ. Endometrial thicknes s as a test
+for endometrial cancer in women with postmenopausal
+vaginal bleeding. Obstet Gynecol 2002;99:663–70.
+17. Gupta JK, Chien PF, Voit D, Clark TJ, Khan KS.
+Ultrasonographic endometrial thickness for diagnosi ng
+endometrial pathology in women with postmenopausal
+bleeding: a meta-analysis. Acta Obstet Gynecol Scand
+2002;81:799–816.
+18. Smith-Bindman R, Kerlikowske K, Feldstein VA, S ubak L,
+Scheidler J, Segal M, et al. Endovaginal ultrasound to
+exclude endometrial cancer and other endometrial
+abnormalities. JAMA1998;280:1510–7.
+19. Wolfman W, Leyland N, Heywood M, Singh SS, Ritt enberg
+DA, Soucy R, et al.; Society of Obstetricians and
+Gynaecologists of Canada. Asymptomatic endometrial
+thickening. J Obstet Gynaecol Can 2010;32:990–9. 
+20. Getpook C, Wattanakumtornkul S. Endometrial thi ckness
+screening in premenopausal women with abnormal
+uterine bleeding. J Obstet Gynaecol Res 2006;32:588–92.
+21. Royal College of Obstetricians and Gynaecologist s.
+Long-term Consequences of Polycystic Ovary Syndrome .
+Green-top Guideline No. 33. London: RCOG; 2014.
+22. Cheung AP. Ultrasound and menstrual history in predicting
+endometrial hyperplasia in polycystic ovary syndrom e.
+Obstet Gynecol 2001;98:325–31.
+23. Grimes DA. Diagnostic dilation and curettage: a
+reappraisal. Am J Obstet Gynecol 1982;142:1–6.
+24. Gimpelson RJ, Rappold HO. A comparative study b etween
+panoramic hysteroscopy with directed biopsies and
+dilatation and curettage. A review of 276 cases. Am J Obstet
+Gynecol1988;158:489–92.
+25. Dreisler E, Stampe Sorensen S, Ibsen PH, Lose G .
+Prevalence of endometrial polyps and abnormal uteri ne
+bleeding in a Danish population aged 20–74 years.
+Ultrasound Obstet Gynecol 2009;33:102–8. 
+26. Bedner R, Rzepka-Górska I. Hysteroscopy with di rected
+biopsy versus dilatation and curettage for the diag nosis of
+endometrial hyperplasia and cancer in perimenopausa l
+women. Eur J Gynaecol Oncol 2007;28:400–2.
+27. Madari S, Al-Shabibi N, Papalampros P, Papadimi triou A,
+Magos A. A randomised trial comparing the H Pipelle with
+the standard Pipelle for endometrial sampling at ‘n o-touch’
+(vaginoscopic) hysteroscopy. BJOG2009;116:32–7.
+28. Cooper NA, Clark TJ. Ambulatory hysteroscopy. The
+Obstetrician & Gynaecologist 2013;15:159–66.
+29. Clark TJ, Voit D, Gupta JK, Hyde C, Song F, Kha n KS.
+Accuracy of hysteroscopy in the diagnosis of endome trial
+cancer and hyperplasia: a systematic quantitative r eview.
+JAMA2002;288:1610–21.
+30. Bansal N, Herzog TJ, Brunner-Brown A, Wethingto n SL,
+Cohen CJ, Burke WM, et al. The utility and cost
+effectiveness of preoperative computed tomography f or
+patients with uterine malignancies. Gynecol Oncol
+2008;111:208–12.
+31. Jacobs I, Gentry-Maharaj A, Burnell M, Manchand a R, Singh
+N, Sharma A, et al. Sensitivity of transvaginal ult rasound
+screening for endometrial cancer in postmenopausal
+women: a case-control study within the UKCTOCS coho rt.
+Lancet Oncol 2011;12:38–48.32. Allison KH, Tenpenny E, Reed SD, Swisher EM, Ga rica RL.
+Immunohistochemical markers in endometrial hyper -
+plasia: is there a panel with promise? A review. Appl
+Immunohistochem Mol Morphol 2008;16:329–43.
+33. Lacey JV Jr, Sherman ME, Rush BB, Ronnett BM, I offe OB,
+Duggan MA, et al. Absolute risk of endometrial carc inoma
+during 20-year follow-up among women with endometri al
+hyperplasia. J Clin Oncol 2010;28:788–92.
+34. Lacey JV Jr, Ioffe OB, Ronnett BM, Rush BB, Ric hesson DA,
+Chatterjee N, et al. Endometrial carcinoma risk amo ng
+women diagnosed with endometrial hyperplasia: the
+34-year experience in a large health plan. Br J Cancer
+2008;98:45–53.
+35. Terakawa N, Kigawa J, Taketani Y, Yoshikawa H, Yajima A,
+Noda K, et al.; Endometrial Hyperplasia Study Group . The
+behavior of endometrial hyperplasia: a prospective study. 
+J Obstet Gynaecol Res 1997;23:223–30.
+36. Argenta PA, Kassing M, Truskinovsky AM, Svendse n CA.
+Bariatric surgery and endometrial pathology in
+asym ptomatic morbidly obese women: a prospective, pilot
+study. BJOG2013;120:795–800.
+37. Modesitt SC, Hallowell PT, Slack-Davis JK, Mich alek RD,
+Atkins KA, Kelley SL, et al. Women at extreme risk for
+obesity-related carcinogenesis: Baseline endometria l
+pathology and impact of bariatric surgery on weight ,
+metabolic profiles and quality of life. Gynecol Oncol
+2015;138:238–45. 
+38. Kaiyrlykyzy A, Freese KE, Elishaev E, Bovbjerg DH,
+Ramanathan R, Hamad GG, et al. Endometrial histolog y in
+severely obese bariatric surgery candidates: an exp loratory
+analysis. Surg Obes Relat Dis 2015;11:653–8. 
+39. Jernigan AM, Maurer KA, Cooper K, Schauer PR, R ose PG,
+Michener CM. Referring survivors of endometrial can cer
+and complex atypical hyperplasia to bariatric speci alists: a
+prospective cohort study. Am J Obstet Gynecol 2015;213:
+350.e1–10. 
+40. Bandera EV, Williams MG, Sima C, Bayuga S, Puli ck K,
+Wilcox H, et al. Phytoestrogen consumption and
+endometrial cancer risk: a population-based case–co ntrol
+study in New Jersey. Cancer Causes Control 2009;20:
+1117–27. 
+41. Vakiani M, Vavilis D, Agorastos T, Stamatopoulo s P,
+Assimaki A, Bontis J. Histopathological findings of the
+endometrium in patients with dysfunctional uterine
+bleeding. Clin Exp Obstet Gynecol 1996;23:236–9.
+42. Royal College of Obstetricians and Gynaecologis ts.
+Ovarian Cysts in Postmenopausal Women . Green-top
+Guideline No. 34. London: RCOG; 2003.
+43. Royal College of Obstetricians and Gynaecologis ts, British
+Society of Gynaecological Endoscopy. Management of
+Suspected Ovarian Masses in Premenopausal Women .
+Green-top Guideline No. 62. London: RCOG; 2011.
+44. Lappöhn RE, Burger HG, Bouma J, Bangah M, Krans M.
+Inhibin as a marker for granulosa cell tumor. Acta Obstet
+Gynecol Scand Suppl 1992;155:61–5.
+45. Schumer ST, Cannistra SA. Granulosa cell tumor of the
+ovary. J Clin Oncol 2003;21:1180–9.
+46. Gallos ID, Shehmar M, Thangaratinam S, Papapost olou TK,
+Coomarasamy A, Gupta JK. Oral progestogens vs
+levon orgestrel-releasing intrauterine system for
+endometrial hyperplasia: a systematic review and
+metaanalysis. Am J Obstet Gynecol 2010;203:547.e1–10.
+47. Gallos ID, Krishan P, Shehmar M, Ganesan R, Gup ta JK.
+LNG-IUS versus oral progestogen treatment for
+endometrial hyperplasia: a long-term comparative co hort
+study. Hum Reprod 2013;28:2966–71.
+48. Mansour D. Safer prescribing of therapeutic nor ethisterone
+for women at risk of venous thromboembolism. J Fam
+Plann Reprod Health Care 2012;38:148–9. 49. Nilsson CG, Haukkamaa M, Vierola H, Luukkainen T,
+Arcangeli P. Tissue concentrations of levonorgestre l in
+women using a levonorgestrel-releasing IUD. Clin
+Endo crinol (Oxf) 1982;17:529–36.
+50. Lethaby A, Cooke I, Rees MC. Progesterone or
+progest ogen-releasing intrauterine systems for hea vy
+menstrual bleeding. Cochrane Database Syst Rev
+2005;(4):CD002126.
+51. Ismail MT, Fahmy DM, Elshmaa NS. Efficacy of
+levon orgestrel-releasing intrauterine system versu s oral
+progest ins in treatment of simple endometrial hype rplasia
+without atypia. Reprod Sci 2013;20:45–50.
+52. Abu Hashim H, Zayed A, Ghayaty E, El Rakhawy M.
+LNG-IUS treatment of non-atypical endometrial
+hyperplasia in perimenopausal women: a randomized
+controlled trial. J Gynecol Oncol 2013;24:128–34.
+53. Dolapcioglu K, Boz A, Baloglu A. The efficacy o f
+intrauterine versus oral progestin for the treatmen t of
+endometrial hyperplasia. A prospective randomized
+comparative study. Clin Exp Obstet Gynecol 2013;40:122–6.
+54. Behnamfar F, Ghahiri A, Tavakoli M. Levonorgest rel-
+releasing intrauterine system (Mirena) in compare t o
+medroxy progesterone acetate as a therapy for endom etrial
+hyperplasia. J Res Med Sci 2014;19:686–90.
+55. Ozdegirmenci O, Kayikcioglu F, Bozkurt U, Akgul MA,
+Haberal A. Comparison of the efficacy of three prog estins
+in the treatment of simple endometrial hyperplasia without
+atypia. Gynecol Obstet Invest 2011;72:10–4.
+56. Ørbo A, Vereide AB, Arnes M, Pettersen I, Strau me B.
+Levon orgestrel-impregnated intrauterine device as
+treatment for endometrial hyperplasia: a national
+multicentre randomised trial. BJOG 2014;121:477–86.
+57. Abdelaziz AM, Abosrie M. Levonorgestrel-releasin g
+intrauterine system is an efficient therapeutic mod ality 
+for simple endometrial hyperplasia. J Am Sci 2013;
+9:417–24. 
+58. Abu Hashim H, Ghayaty E, El Rakhawy M. Levonorg estrel-
+releasing intrauterine system vs oral progestins fo r
+non-atypical endometrial hyperplasia: a systematic review
+and metaanalysis of randomized trials. Am J Obstet Gynecol
+2015;213:469–78. 
+59. Gallos ID, Ganesan R, Gupta JK. Prediction of r egression
+and relapse of endometrial hyperplasia with conserv ative
+therapy. Obstet Gynecol 2013;121:1165–71. 
+60. Scarselli G, Bargelli G, Taddei GL, Marchionni M, Peruzzi E,
+Pieralli A, et al. Levonorgestrel-releasing intraut erine
+system (LNG-IUS) as an effective treatment option f or
+endometrial hyper plasia: a 15-year follow-up study . Fertil
+Steril2011;95:420–2.
+61. Gallos ID, Krishan P, Shehmar M, Ganesan R, Gup ta JK.
+Relapse of endometrial hyperplasia after conservati ve
+treat ment: a cohort study with long-term follow-up . Hum
+Reprod2013;28:1231–6.
+62. Royal College of Obstetricians and Gynaecologis ts. The
+Distal Fallopian Tube as the Origin of Non-Uterine Pelvic
+High-Grade Serous Carcinomas . Scientific Impact Paper
+No. 44. London: RCOG; 2014.
+63. American College of Obstetricians and Gynecolog ists.
+Supracervical hysterectomy. ACOG Committee Opinion
+No. 388. Obstet Gynecol 2007;110:1215–7.
+64. Mourits MJ, Bijen CB, Arts HJ, ter Brugge HG, v an der Sijde
+R, Paulsen L, et al. Safety of laparoscopy versus l aparotomy
+in early-stage endometrial cancer: a randomised tri al.
+Lancet Oncol 2010;11:763–71.
+65. Cianferoni L, Giannini A, Franchini M. Hysteros copic
+resection of endometrial hyperplasia. J Am Assoc Gynecol
+Laparosc 1999;6:151–4.
+66. Avci ME, Sadik S, Uçar MG. A prospective study of rollerball
+endometrial ablation in the management of refractor y
+RCOG/BSGE Green-top Guideline No. 67 26of 30 © Royal College of Obstetricians and Gynaecologistsrecurrent symptomatic endometrial hyperplasia witho ut
+atypia. Gynecol Obstet Invest 2012;74:282–7.
+67. Järvelä IY, Santala M. Treatment of non-atypic endometrial
+hyperplasia using thermal balloon endometrial ablat ion
+therapy. Gynecol Obstet Invest 2005;59:202–6.
+68. Edris F, Vilos GA, Al-Mubarak A, Ettler HC, Hol lett-Caines J,
+Abu-Rafea B. Resectoscopic surgery may be an altern ative to
+hysterectomy in high-risk women with atypical endom etrial
+hyperplasia. J Minim Invasive Gynecol 2007;14:68–73.
+69. Trimble CL, Kauderer J, Zaino R, Silverberg S, Lim PC,
+Burke JJ 2nd, et al. Concurrent endometrial carcino ma in
+women with a biopsy diagnosis of atypical endometri al
+hyperplasia: a Gynecologic Oncology Group study. Cancer
+2006;106:812–9.
+70. Indermaur MD, Shoup B, Tebes S, Lancaster JM. T he
+accuracy of frozen pathology at time of hysterectom y in
+patients with complex atypical hyperplasia on preop erative
+biopsy. Am J Obstet Gynecol 2007;196:e40–2.
+71. ASTEC study group, Kitchener H, Swart AM, Qian W, 
+Amos C, Parmar MK. Efficacy of systematic pelvic
+lymph adenectomy in endometrial cancer (MRC ASTEC
+trial): a randomised study. Lancet2009;373:125–36.
+72. Benedetti Panici P, Basile S, Maneschi F, Alber to Lissoni A,
+Signorelli M, Scambia G, et al. Systematic pelvic
+lymph adenectomy vs no lymphadenectomy in early-sta ge
+endo metrial carcinoma: randomized clinical trial. J Natl
+Cancer Inst 2008;100:1707–16.
+73. Parker WH, Feskanich D, Broder MS, Chang E, Sho upe D,
+Farquhar CM, et al. Long-term mortality associated with
+oophorectomy compared with ovarian conservation in the
+nurses’ health study. Obstet Gynecol 2013;121:709–16.
+74. Vilos GA. Intrauterine surgery using a new coax ial bipolar
+electrode in normal saline solution (Versapoint): a pilot
+study. Fertil Steril 1999;72:740–3.
+75. Gallos ID, Yap J, Rajkhowa M, Luesley DM, Cooma rasamy
+A, Gupta JK. Regression, relapse, and live birth ra tes 
+with fertility-sparing therapy for endometrial canc er and
+atypical complex endometrial hyperplasia: a systema tic
+review and metaanalysis. Am J Obstet Gynecol 2012;
+207:266.e1–12.
+76. Reed SD, Newton KM, Garcia RL, Allison KH, Voig t LF,
+Jordan CD, et al. Complex hyperplasia with and with out
+atypia: clinical outcomes and implications of proge stin
+therapy. Obstet Gynecol 2010;116:365–73.
+77. Penner KR, Dorigo O, Aoyama C, Ostrzega N, Balz er BL,
+Rao J, et al. Predictors of resolution of complex a typical
+hyperplasia or grade 1 endometrial adenocarcinoma i n
+premenopausal women treated with progestin therapy.
+Gynecol Oncol 2012;124:542–8.
+78. American College of Obstetricians and Gynecolog ists, Society
+of Gynecologic Oncology. Practice Bulletin No. 149:
+Endometrial cancer. Obstet Gynecol 2015;125:1006–26. 
+79. Park JY, Lee SH, Seong SJ, Kim DY, Kim TJ, Kim JW, 
+et al. Progestin re-treatment in patients with recu rrent
+endo metrial adenocarcinoma after successful fertil ity-
+sparing management using progestin. Gynecol Oncol
+2013;129:7–11.
+80. National Institute for Health and Care Excellen ce. Fertility
+problems: assessment and treatment . NICE clinical
+guideline 156. Manchester: NICE; 2013.
+81. Bian J, Shao H, Liu H, Li H, Fang L, Xing C, et al. Efficacy
+of the levonorgestrel-releasing intrauterine system on
+IVF-ET outcomes in PCOS with simple endometrial
+hyperplasia. Reprod Sci 2015;22:758–66. 
+82. Judd HL, Mebane-Sims I, Legault C, Wasilauskas C, Johnson S,
+Merino M, et al. Effects of hormone replacement the rapy
+on endometrial histology in postmenopausal women. T he
+Postmenopausal Estrogen/Progestin Interventions (PE PI)
+Trial. JAMA1996;275:370–5.83. Wells M, Sturdee DW, Barlow DH, Ulrich LG, O’Br ien K,
+Campbell MJ, et al. Effect on endometrium of long 
+term treatment with continuous combined oestrogen-
+progest ogen replacement therapy: follow up study. BMJ
+2002;325:239.
+84. Sturdee DW, Ulrich LG, Barlow DH, Wells M, Camp bell MJ,
+Vessey MP, et al. The endometrial response to seque ntial
+and continuous combined oestrogen-progestogen
+replacement therapy. BJOG2000;107:1392–400. 
+85. Staland B. Continuous treatment with a combinat ion of
+estrogen and gestagen – a way of avoiding endometri al
+stimulation. Clinical experiences with Kliogest. Acta Obstet
+Gynecol Scand Suppl 1985;130:29–35. 
+86. Cohen I. Endometrial pathologies associated wit h
+post menopausal tamoxifen treatment. Gynecol Oncol
+2004;94:256–66.
+87. Kedar RP, Bourne TH, Powles TJ, Collins WP, Ash ley SE,
+Cosgrove DO, et al. Effects of tamoxifen on uterus and
+ovaries of postmenopausal women in a randomised bre ast
+cancer prevention trial. Lancet1994;343:1318–21.
+88. van Leeuwen FE, Benraadt J, Coebergh JW, Kiemen ey LA,
+Gimbrère CH, Otter R, et al. Risk of endometrial ca ncer
+after tamoxifen treatment of breast cancer. Lancet
+1994;343:448–52.
+89. Fisher B, Costantino JP, Wickerham DL, Cecchini RS,
+Cronin WM, Robidoux A, et al. Tamoxifen for the
+prevention of breast cancer: current status of the National
+Surgical Adjuvant Breast and Bowel Project P-1 stud y. 
+J Natl Cancer Inst 2005;97:1652–62.
+90. Joint Formulary Committee. British National Formulary .
+69th ed. London: BMJ Group and Pharmaceutical Press ;
+2015. 
+91. Gibson L, Lawrence D, Dawson C, Bliss J. Aromat ase
+inhib itors for treatment of advanced breast cancer in
+postmenopausal women. Cochrane Database Syst Rev
+2009;(4):CD003370. 
+92. Barker LC, Brand IR, Crawford SM. Sustained eff ect of the
+aroma tase inhibitors anastrozole and letrozole on
+endo metrial thickness in patients with endometrial
+hyperplasia and endometrial carcinoma. Curr Med Res
+Opin2009;25:1105–9. 
+93. Agorastos T, Vaitsi V, Pantazis K, Efstathiadis E, Vavilis D,
+Bontis JN. Aromatase inhibitor anastrozole for trea ting
+endometrial hyperplasia in obese postmenopausal wom en.
+Eur J Obstet Gynecol Reprod Biol 2005;118:239–40. 
+94. Chin J, Konje JC, Hickey M. Levonorgestrel intr auterine
+system for endometrial protection in women with bre ast
+cancer on adjuvant tamoxifen. Cochrane Database Syst Rev
+2009;(4):CD007245.
+95. Shi Q, Li J, Li M, Wu J, Yao Q, Xing A. The rol e of
+levonor gestrel-releasing intrauterine system for
+endometrial protection in women with breast cancer
+taking tamoxifen. Eur J Gynaecol Oncol 2014;35:492–8. 
+96. Wong AW, Chan SS, Yeo W, Yu MY, Tam WH. Prophylactic use
+of levonorgestrel-releasing intrauterine system in women
+with breast cancer treated with tamoxifen: a random ized
+controlled trial. Obstet Gynecol 2013;121:943–50.
+97. Trinh XB, Tjalma WA, Makar AP, Buytaert G, Weyl er J, 
+ van Dam PA. Use of the levonorgestrel-releasing
+intrauterine system in breast cancer patients. Fertil Steril
+2008;90:17–22.
+98. Scrimin F, Wiesenfeld U, Candiotto A, Inglese S , Ronfani L,
+Guaschino S. Resectoscopic treatment of atypical
+endo metrial polyps in fertile women. Am J Obstet Gynecol
+2008;199:365.e1–3.
+99. Kelly P, Dobbs SP, McCluggage WG. Endometrial
+hyperplasia involving endometrial polyps: report of a
+series and discussion of the significance in an end ometrial
+biopsy specimen. BJOG2007;114:944–50.
+© Royal College of Obstetricians and Gynaecologists 27of 30 RCOG/BSGE Green-top Guideline No. 67RCOG/BSGE Green-top Guideline No. 67 28of 30 © Royal College of Obstetricians and GynaecologistsGrades of recommendations
+At least one meta-analysis, systematic review or
+randomised controlled trial rated as 1++, and
+directly applicable to the target population; or 
+A systematic review of randomised controlled
+trials or a body of evidence consisting
+principally of studies rated as 1+, directly
+applicable to the target population and
+demonstrating overall consistency of results
+A body of evidence including studies rated as
+2++ directly applicable to the target
+population, and demonstrating overall
+consistency of results; or 
+Extrapolated evidence from studies rated as
+1++ or 1+
+A body of evidence including studies rated as
+2+ directly applicable to the target population
+and demonstrating overall consistency of
+results; or 
+Extrapolated evidence from studies rated as
+2++
+Evidence level 3 or 4; or 
+Extrapolated evidence from studies rated as 2+
+Good practice point
+Recommended best practice based on the
+clinical experience of the guideline
+development groupClassification of evidence levels
+1++ High-quality meta-analyses, systematic
+reviews of randomised controlled trials
+or randomised controlled trials with a
+very low risk of bias
+1+ Well-conducted meta-analyses, systematic
+reviews of randomised controlled trials
+or randomised controlled trials with a
+low risk of bias
+1– Meta-analyses, systematic reviews of
+randomised controlled trials or
+randomised controlled trials with a high
+risk of bias
+2++ High-quality systematic reviews of case–
+control or cohort studies or high-quality
+case–control or cohort studies with a
+very low risk of confounding, bias or
+chance and a high probability that the
+relationship is causal
+2+ Well-conducted case–control or cohort
+studies with a low risk of confounding,
+bias or chance and a moderate
+probability that the relationship is causal
+2– Case–control or cohort studies with a
+high risk of confounding, bias or chance
+and a significant risk that the
+relationship is not causal
+3 Non-analytical studies, e.g. case reports,
+case series
+4 Expert opinionPC
+DBAAppendix I: Explanation of guidelines and evidence levels
+Clinical guidelines are: ‘systematically developed statements which assist clinicians and patients in
+making decisions about appropriate treatment for sp ecific conditions’. Each guideline is systematical ly
+developed using a standardised methodology. Exact d etails of this process can be found in Clinical
+Governance Advice No.1 Development of RCOG Green-top Guidelines (available on the RCOG website
+at http://www.rcog.org.uk/green-top-development ). These recommendations are not intended to dictat e
+an exclusive course of management or treatment. The y must be evaluated with reference to individual
+patient needs, resources and limitations unique to the institution and variations in local populations .
+It is hoped that this process of local ownership wi ll help to incorporate these guidelines into routin e
+practice. Attention is drawn to areas of clinical u ncertainty where further research may be indicated. 
+The evidence used in this guideline was graded using the scheme below and the recommendations
+formulated in a similar fashion with a standardised grading scheme.Appendix II: Algorithm for the management of endometrial hyperpl asia
+© Royal College of Obstetricians and Gynaecologists 29of 30 RCOG/BSGE Green-top Guideline No. 67Algorithm for the management of endometrial hyperplasia
+Endometrial hyperplasia 
+without atypia (EH)Atypical hyperplasia (AH)
+Address risk factorsa
+Observation
+LNG-IUS (first line)
+Oral progestogen (second line) Fertility required or surgery
+contraindicated
+Endometrial biopsy (EB) 
+to be taken:
+EH at 6 months
+AH at 3 monthscTotal hysterectomy ±BSOb
+RegressiondPersistencedProgressiond
+Arrange follow-up (medical
+management )
+EHBMI <35: ≥two consecutive
+negative EBs at 6-month
+intervals, then dischargeg
+BMI ≥35 or treated with oral
+progestogens: ≥two
+consecutive negative EBs at 
+6-month intervals, thereafter
+annual EB and reviewh
+AH≥two consecutive negative
+EBs at 3-month intervals,
+thereafter 6–12-monthly EB
+and reviewhArrange follow-up
+No ECReview at 6 weeks and
+discharge
+ECManage according to local
+cancer guidelineReview treatment
+LNG-IUS – continue for 5 yearse
+Oral progestogen – stop after 6
+months
+Total hysterectomy ±BSObif
+ongoing AUBReview treatment
+EHStart medical treatment if
+observation failedf 
+Advise total hysterectomy ±
+BSObif persistence after 12
+months of medical treatment
+AHAdvise total hysterectomy ±
+BSObReview treatment
+AHTotal hysterectomy ±BSOb
+ECManage according to local
+cancer guideline
+Relapsed
+Advise total hysterectomy ±BSObNotes:
+a. Risk factors include obesity, HRT regimens, tamoxifen therapy and anovulation.
+b. Consider ovarian conservation according to age, me nopausal status and patient
+preferences. In addition to nonregression of EH or persistence of AUB symptoms
+following nonsurgical treatments, a total hysterect omy may be indicated where there are
+(i) adverse effects associated with medical treatment, (ii) concerns over compliance with
+treatment or follow-up, or (iii) patient preferences e.g. high levels of anxiety. 
+c. The follow-up interval should be customised to eac h woman, taking into account baseline
+risk factors, associated symptoms and response to treatment.
+d. Regression – nonhyperplastic or nonmalignant endom etrial sample or nondiagnostic
+endometrial sample from an appropriately placed end ometrial sampling device;
+persistence – no regression or progression of initial EH subtype after 3 or more months;
+progression – development of AH or EC; relapse – recurrence of EH or AH after one or
+more negative EB result(s). 
+e. In general, advise continuation of the LNG-IUS for the duration of its 5-year use,
+especially if EH associated with AUB or other basel ine risk factorsaand no adverse effects.
+f. Start medical management if EH not treated initia lly. The decision to persist with medical
+management should be taken after careful consideration and thorough discussion with
+the woman regarding the risks and benefits of prolonged medical treatment compared
+with total hysterectomy with or without BSO. Persis tence beyond 12 months is associated
+with a significant risk of underlying malignancy and a high risk of failure to regress such
+that a total hysterectomy with or without BSO should be recommended.
+g. At discharge, inform the woman of her estimated in dividual risk of recurrence, of the
+need to continue any risk-reducing strategies and to present for an urgent review if any
+further episodes of AUB.
+h. Review the appropriateness of ongoing endometrial surveillance, continuation of medical
+management or total hysterectomy with or without BS O based on factors such as baseline
+risk factors including BMI, AUB symptoms, fertility requirements, compliance with
+treatment and follow-up, medical comorbidities and risk–benefit ratio for total
+hysterectomy with or without BSO. Abbreviations:
+AHatypical hyperplasia; 
+AUBabnormal uterine bleeding; 
+BMIbody mass index; 
+BSObilateral salpingo-oophorectomy; 
+EB endometrial biopsy; 
+ECendometrial cancer; 
+EHendometrial hyperplasia without atypia;
+HRThormone replacement therapy; 
+LNG-IUS levonorgestrel-releasing
+intrauterine system. RCOG/BSGE Green-top Guideline No. 67 30of 30 © Royal College of Obstetricians and GynaecologistsDISCLAIMER
+The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical
+practice. They present recognised methods and techniques of clinical practice, based on published evidence, for
+consideration by obstetricians and gynaecologists and other relevant health professionals. The ultimate
+judgement regarding a particular clinical procedure or treatment plan must be made by the doctor or other
+attendant in the light of clinical data presented by the patient and the diagnostic and treatment options available.
+This means that RCOG Guidelines are unlike protocols or guidelines issued by employers, as they are not
+intended to be prescriptive directions defining a single course of management. Departure from the local
+prescriptive protocols or guidelines should be fully documented in the patient’s case notes at the time the
+relevant decision is taken.This guideline was produced on behalf of the Royal College of Obstetricians and Gynaecologists and the 
+British Society for Gynaecological Endoscopy by: 
+Mr ID Gallos1 MRCOG, Birmingham; Mr M Alazzam1MRCOG, Dublin; Professor TJ Clark1MRCOG,
+Birmingham; Mr R Faraj1MRCOG, Rotherham; Mr AN Rosenthal2FRCOG, London; Dr PP Smith1MB ChB,
+Birmingham; and Professor JK Gupta1FRCOG, Birmingham 
+1on behalf of the BSGE2 on behalf of the RCOG
+and peer reviewed by: 
+Professor H Abu Hashim MRCOG, Mansoura, Egypt; Mr SO Ajayi MRCOG, Blackpool; Mr MTMS Bekhit FRCOG,
+Liverpool; Mr PJ Bulmer MRCOG, London; Miss ME Connor FRCOG, Sheffield; Mr RAF Crawford FRCOG, Cambridge; 
+Mr KK Dhar FRCOG, Swansea; Professor M Fambrini, University of Florence, Italy; Mr PD Kaloo MRCOG, Cheltenham;
+Mr B Kumar FRCOG, Wrexham; Professor WL Ledger FRCOG, Sydney, Australia; Dr RJ Luker MRCOG, Bath; 
+Dr GL Mutter, Brigham and Women’s Hospital, Boston, USA; RCOG Women’s Network; Dr GC Rieck MRCOG, Bangor; 
+Mr DJ Rowlands FRCOG, Wirral; Mr P Saha FRCOG, Birmingham; Dr F Sanaullah FRCOG, York; Dr F Scrimin, Institute for
+Maternal and Child Health, IRCCS Burlo Garofolo, Trieste, Italy; Dr WH Tam, The Chinese University of Hong Kong,
+Hong Kong, China; and Dr U Wiesenfeld, Institute for Maternal and Child Health, IRCCS Burlo Garofolo, Trieste, Italy.
+Committee lead reviewers were: Dr PS Arunakumari FRCOG, Basildon; Mr DJ Cruickshank FRCOG, Middlesbrough; 
+Dr M Gupta MRCOG, London; Mrs G Kumar FRCOG, Wrexham; and Dr M Mehasseb MRCOG, Glasgow.
+The chairs of the RCOG Guidelines Committee were: Dr M Gupta1MRCOG, London; Dr P Owen2FRCOG, Glasgow;
+and Dr AJ Thomson1MRCOG, Paisley. 
+1co-chairs from June 2014 2until May 2014.
+The developers acknowledge Dr S Khazali MRCOG, Surrey, and Dr E Cordle MRCOG, London.
+All RCOG guidance developers are asked to declare any conflicts of interest. A statement summarising any
+conflicts of interest for this guideline is available from: https://www.rcog.org.uk/en/guidelines-research-
+services/guidelines/gtg67/ .
+The final version is the responsibility of the Guidelines Committee of the RCOG.
+The review process will commence in 2019, unless otherwise indicated.

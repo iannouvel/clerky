@@ -1,0 +1,134 @@
+# Extracted from: 2020-10 SECAmb Suspected Preterm Labour Guidance v0.0.1.pdf
+# Guideline ID: 2020-10-secamb-suspected-preterm-labour-guidance-v0-0-1
+# Content length: 5234 characters
+# Processing date: 1750066899.7563553
+
+Suspected 
+Preterm Labour
+Background
+Types of neonatal unit Regional contact details (!)Guidance for Frontline Clinicians
+Suspected Preterm Labour: Guidance for Frontline Clinicians SPTLG/v0.1/A4/2020-10Page 1 of 2Over the last 25 years the prospects for babies who 
+are born very premature, have congenital anomalies 
+requiring surgery, or who develop illnesses after 
+birth, have improved greatly. For example, in babies 
+born at extremely low gestational ages (23-25 weeks of 
+gestation) survival increased between 1995 and 2006 by 
+15%, and since then has continued to improve year on 
+year (https://fn.bmj.com/content/105/3/232).
+Alongside this, services have been re-organised into a 
+series of networks so that hospitals can work together 
+to ensure that expert care can be delivered when it 
+is needed. These centres are required to look after a 
+minimum number of very small infants and infants 
+requiring intensive care; in order to maintain expertise.
+Improving outcomes should not mean we are compla-
+cent. The evidence shows that there are further gains 
+that can and should be achieved. We know that some 
+of the variation in outcomes is due to babies being born in maternity units without intensive care services. Whilst 
+every hospital with a labour ward has the capability to 
+look after a sick or preterm baby who needs intensive 
+care as an emergency; and can do so for a brief period 
+of time – the expertise of an intensive care unit is 
+demonstrated to improve outcomes for these infants. 
+Additionally babies who are born in the wrong centre 
+will then need to undergo a transfer ex-utero, which has 
+also been associated with a worse outcome; as well as 
+causing increased demand for neonatal transfer services.
+Achieving more than 85% of extremely preterm births 
+(<27 weeks) in the right place is a national standard 
+(KLOE 20/21); and having in place a perinatal pathway to 
+facilitate this is a NICE quality standard.
+In an emergency, it is always the right decision to go 
+to the nearest hospital (with a labour ward). If there 
+is a choice, the aim of this flow chart is to aid decision 
+making to support delivery in the right centre.NICU LNU SCUNeonatal Intensive Care Unit (level 3)
+• In-patient care of mothers expected to deliver at less 
+than 27 weeks gestation
+• In-patient care of mothers at 27 weeks gestation and 
+above who are considered to be at high risk (identified 
+in clinical guidelines – for example, severe early onset 
+pre-eclampsia; fibronectin positive; cervical length 
+decrease at 24 – 27 weeks)
+• Babies needing intensive care (excluding short-term 
+intensive care in level 2 units)
+• Babies needing intensive or high dependency care 
+following surgery
+• Babies needing high dependency and special care
+Local Neonatal Unit (level 2)
+• Deliveries at 28 weeks gestation and above 
+considered to be medium risk.
+Special Care Unit (level 1)
+• Deliveries at 32 weeks gestation and above 
+considered to be low riskMedway Maritime, GillinghamNICU020 8812 3456
+Royal Sussex County, BrightonNICU020 8812 3456
+St Peter’s, ChertseyNICU020 8812 3456
+William Harvey, AshfordNICU020 8812 3456
+East Surrey, RedhillLNU020 8812 3456
+Frimley Park, FrimleyLNU020 8812 3456
+Tunbridge Wells, PemburyLNU020 8812 3456
+Conquest, HastingsSCU020 8812 3456
+Darent Valley, DartfordSCU020 8812 3456
+Princess Royal, Haywards HeathSCU020 8812 3456
+QEQM, MargateSCU020 8812 3456
+Royal Surrey, GuildfordSCU020 8812 3456
+WorthingSCU020 8812 3456Suspected Preterm Labour Decision Tree
+Suspected Preterm Labour: Guidance for Frontline Clinicians SPTLG/v0.1/A4/2020-10Page 2 of 2Do you need senior help?
+Consider discussing with CCP/CCDGestation 22-27 weeks
+• Suspected preterm labour: 
+PV bleeding
+• Contractions
+• Ruptured membranes
+Gestation 27-32 weeks
+• Threatened preterm labour
+Gestation <22 or >32 weeks
+• Threatened preterm labour
+• Concern for foetal wellbeing
+• Concern for maternal health
+Antenatal history
+Known need to deliver at hospital with NICU: e.g. growth restriction 
+(weight <800g), significant congenital anomaly or maternal condition
+Delivery on scene or en route
+• Preterm <32 weeks
+• Any gestation need for maternal or infant resuscitationPass pre-alert call to receiving unit• Transfer to maternity with 
+NICU if ETA <30 minutes
+• Contact critical care desk if ETA 
+>30 minutes
+• Transfer to nearest 
+emergency department• Transfer to maternity with 
+LNU if ETA <30 minutes
+• May benefit from transfer to 
+maternity with NICU
+• Transfer to nearest maternity 
+centre with a neonatal unit
+• May benefit from transfer to 
+maternity with NICU
+• Contact critical care for adviceAssess clinical status
+• Maternal baseline observations
+• Blood pressure
+• Frequency of contractions
+• History of blood loss
+• Foetal movements
+• Antenatal historyDISPATCH TO PREGNANCY 
+RELATED CONCERNS
+Medway Maritime
+NICU ME7 5NYSt Peter’s
+NICU KT16 0PZ
+East Surrey
+LNU RH1 5RHDarent Valley
+SCU DA2 8DAFrimley Park
+LNU GU16 7UJ
+QEQM
+SCU CT9 4AN
+William Harvey
+NICU TN24 0LZ
+Tunbridge Wells
+LNU TN2 4QJ
+Royal Sussex County
+NICU BN2 5BE
+Royal Surrey
+SCU GU2 7XX
+Conquest
+SCU TN37 7RD
+Princess Royal
+SCU BR6 8NDWorthing
+SCU BN11 2DHKent, Surrey, Sussex neonatal unit locations 30 min drive to NICU 30 min drive to LNU

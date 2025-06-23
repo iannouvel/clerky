@@ -1,0 +1,378 @@
+# Extracted from: MP064 Hyponatraemia in Labour.pdf
+# Guideline ID: mp064-hyponatraemia-in-labour
+# Content length: 18482 characters
+# Processing date: 1750066901.5897207
+
+Hyponatraemia 
+in Labour 
+
+Maternity Protocol: MP064 
+Date Agreed: January 2021 
+
+Hyponatraemia in Labour (RSCH PRH only ) MP064 
+University Hospitals Sussex NHS Trust East Page 2 of 13 
+
+Guideline Reviewer: Romesh Rasanayagam & Charlotte Renders 
+Manager responsible: Kate Hasson 
+Version: 1.1 
+Approval Committee: Women’s Safety and Quality Committee 
+Date agreed: January 2021 
+Amended date: November 2022 
+Review date: January 2024 
+ 
+ Hyponatraemia in Labour (RSCH PRH only ) MP064 
+University Hospitals Sussex NHS Trust East Page 3 of 13 
+Contents 
+Key Principles ................................ ................................ ................................ ................................ .......... 4 
+Scope ................................ ................................ ................................ ................................ ....................... 4 
+Responsibilities ................................ ................................ ................................ ................................ ....... 4 
+1 Background and Hyponatraemia in Labour ................................ ................................ .................... 5 
+2 General Prevention of Hyponatraemia in Labour ................................ ................................ ........... 6 
+3 3. Care of Low -risk Women and People in Labour ................................ ................................ ......... 7 
+4 4. Care of High -risk Women and People in Labour ................................ ................................ ......... 8 
+5 Use of Oxytocin ................................ ................................ ................................ ............................... 9 
+5.1 Augmentation Oxytocin regime ................................ ................................ .............................. 9 
+5.2 Second stage Oxytocin Augmentation ................................ ................................ .................. 10 
+5.3 Oxytocin regime in management of Postpartum Haemorrhage ................................ .......... 10 
+6 Flowchart for Management of Hyponatraemia ................................ ................................ ............ 11 
+7 Treatment of Severe Hyponatraemia ................................ ................................ ........................... 12 
+
+ Hyponatraemia in Labour (RSCH PRH only ) MP064 
+University Hospitals Sussex NHS Trust East Page 4 of 13 Key Principles 
+ 
+This guide is a set of measurable, objective standards to determine a course of action. 
+Professional judgment may be used in the application of such guidance. 
+ 
+Scope 
+ 
+This guideline applies to: 
+ 
+• All women and women and people receiving labour care. 
+ 
+Responsibilities 
+ 
+Midwives & Obstetricians 
+• To access, read, understand and follow this guidance 
+• To use their professional judgement in application of this guidance 
+ 
+Management 
+• To ensure the guidance is reviewed as required in line with Trust and National 
+recommendations 
+• To ensure the guidance is accessible to all relevant staff 
+
+ Hyponatraemia in Labour (RSCH PRH only ) MP064 
+University Hospitals Sussex NHS Trust East Page 5 of 13 1 Background and Hyponatraemia in Labour 
+1.1 Hyponatraemia, defined during pregnancy as a serum sodium concentration of 
+below 130mmol/L, is the most common electrolyte abnormality in hospitalised 
+patients. It is most commonly either: 
+• Hypervolaemic hyponatraemia : caused by an excess of total body water 
+usually resulting from an excessive intake of water alongside impairment 
+of water excretion, leading to dilution of serum sodium concentration. 
+• Or Hypovolaemic hyponatraemia : caused by a depletion of both water 
+and sodium, leading to a relative excess of sodium loss. 
+1.2 Hyponatraemia can cause both morbidity and mortality, so must be recognised 
+and treated appropriately. 
+1.3 While symptoms of hyponatraemia can often initially be non -specific, they are 
+likely to include: 
+• Headache 
+• Lethargy 
+• Drowsiness 
+• Confusion/Disorientation 
+• Agitation 
+• Seizure 
+• Coma 
+1.4 Pregnant women and people are at greater risk of developing hyponatraemia 
+than the non -pregnant population as they become less able to excrete excess 
+free water in the third trimester, and have a lower baseline plasma sodium. 
+Labour also further compounds the risk as pain, stress and fear can cause an 
+increase in anti -diuretic hormone (ADH), sweating and vomiting are common 
+(which can lead to hypovolaemic hyponatraemia), use of Ent onox® (nitrous 
+oxide) can cause increased feelings of dry mouth and thirst leading to excess 
+water intake, and oxytocin itself (either endogenous or synthetic) has an anti -
+diuretic effect. Women and people in labour are also often given IV fluids 
+alongside their oral intake, leading to an excessive amount of water being 
+taken in. 
+ Hyponatraemia in Labour (RSCH PRH only ) MP064 
+University Hospitals Sussex NHS Trust East Page 6 of 13 1.5 Maternal or parental hyponatraemia also has serious implications for the 
+fetus. Water freely diffuses across the placenta causing fetal blood sodium 
+concentration to reflect that of the pregnant woman or person . Therefore 
+maternal or parental hyponatraemia can lead to neonatal hyponatraemia. 
+Knowing t he signs and symptoms of fluid im balance in the body is a crucial 
+aspect of care. It is assessed in 3 ways: fluid balance charts, physical 
+assessment of fluid balance, and monitoring of blood results. It is important 
+to identify either a positive (increased input) or negative (increased output) 
+balance swiftly, in order to either restrict or replace fluids and achieve stability. 
+2 General P revention of H yponatraemia in L abour 
+2.1 While oral intake should be encouraged in labour to prevent dehydration, 
+women and people should not be encouraged to drink beyond their own 
+body’s thirst impulse. 
+2.2 All labouring women and people should be made aware of the need for good 
+fluid balance, and of t he risks of drinking in excess. 
+ 
+2.2.1 While it is difficult to monitor exact fluid balance in the latent phase 
+of labour while the birthing woman or person is at home, all women 
+and people in the latent phase should be given advice on maintaining 
+good fluid balance , the risks of drinking in excess and encouraged to 
+roughly monitor their own input and output while at home. 
+2.3 Sports drinks are preferable to water for consumption in labour. However, 
+while these drinks are often described as “isotonic” on their labelling, their 
+osmolality is largely made up of carbohydrates, and they still have a low 
+sodium content. Therefore they can still lead to hyponatraemia if consumed in 
+excess. 
+2.4 Food and snacks with higher sodium content (such as crisps or salted nuts) 
+should be suggested in labour, alongside oral fluid intake. 
+2.5 A fluid balance chart should be kept for all women and people in labour. For 
+high -risk women and people , input and output should be accurately measured 
+and calculated. For low -risk women and people , input and output can be more 
+roughly estimated, but should still be monitored closely. See sec tions 3 and 4 
+below for more details. 
+2.6 Good bladder care should be practised in labour. See MP040 Bladder Care for 
+further information on good b ladder care principles . 
+ 
+2.6.1 Women and people in labour may be unaware of a need to empty 
+their bladder, either due to epidural analgesia, or the pain associated 
+with labour masking the sensation of a full bladder. They should be 
+actively encouraged t o void their bladder at least 2 -4 hourly . 
+ Hyponatraemia in Labour (RSCH PRH only ) MP064 
+University Hospitals Sussex NHS Trust East Page 7 of 13 2.6.2 If women and people are unable to void their bladder in labour, or 
+they are only voiding small amounts and have a palpable bladder, 
+there should be a low threshold for catheterisation. Catheterise using 
+an in/out catheter as first choice, but if an in/out catheter is required 
+a second time, and then consider an indwelling catheter. 
+2.7 Urine may appear concentrated in labour due to oxytocin (either endogenous 
+or synthetic) acting as an ADH, preventing water excretion. Therefore, excess 
+water intake should not be encouraged in order to dilute the appearance of 
+urine. 
+2.8 Urinary ketones are common in labour due to physical exertion. Urinary 
+ketones should not be treated with IV fluids or oral water intake alone, but 
+with sports drinks and sugary or salty foods/snacks as well . 
+ 
+3 Care of Low -risk Women and People in Labour 
+ The following is to be implemented in addition to the points in section 2 above. 
+3.1 Fluid balance should be monitored and documented on the labour partogram 
+at least every 4 hours, but exact input and output can be roughly estimated. 
+3.1.1 If a woman or person changes from low -risk to high -risk at any time 
+(e.g following commencement of oxytocin infusion, or insertion of an 
+epidural), a more accurate and detailed fluid balance chart should 
+then be commenced. 
+3.1.2 If a positive fluid balance of more than 1500mls is identified or 
+suspected , a more accurate and detailed fluid balance chart should 
+then be commenced. 
+3.2 Women and people should be encouraged to void their bladder at least 2 -4 
+hourly. Urine output should be monitored. See MP040 Bladder Care and point 
+2.6 above for further information. 
+3.3 Any other fluid losses (e.g vomit) should also be monitored and noted on the 
+fluid balance. 
+ Hyponatraemia in Labour (RSCH PRH only ) MP064 
+University Hospitals Sussex NHS Trust East Page 8 of 13 3.4 If a positive fluid balance of more than 1500mls is suspected or confirmed, a 
+venous blood sample must be taken and sent for Urea and Electrolytes (Us+Es) 
+to check sodium levels. If at home, discuss the risks and inform that transfer 
+into hospital is indicated at this stage. Contact the Labour ward coordinator to 
+inform of plan. 
+3.4.1 If the sodium result is within normal range (>130mmol/L), then 
+continue low -risk care as above. 
+3.4.2 If the sodium result is outside of nor mal range (<130mmol/L), inform 
+registrar and anaesthetist for review and see sections 5 & 6 below for 
+treatment. 
+3.4.3 The blood gas analyser may be used to check sodium levels quickly, if 
+a VBG (venous blood gas) sample is obtained by a doctor. 
+3.5 Inform neonatal team of any babies born to women and people with 
+hyponatraemia. 
+ 
+4 Care of High -risk Women and People in Labour 
+ The following is to be implemented in addition to the points in section 2 above. 
+ High -risk women and people include those with: epidural analgesia, oxytocin infusion, 
+variable rate insulin infusion (sliding scale), IV fluids, preeclampsia, long latent phase, 
+any other obstetric or medical risk factors. 
+4.1 An accurate and detailed fluid balance chart should be commenced within the 
+electronic notes. All fluid input and output should be measured and calculated 
+hour ly. 
+4.1.1 Urine voids sh ould be measured and documented 
+4.1.2 All other fluid losses (e.g vomit) sh ould be measured and documented 
+on electronic fluid balance chart 
+4.1.3 Input from IV fluids should be accurately calculated and documented. 
+4.2 A clinical indication for any IV fluids should be clearly documented. 
+4.3 All IV fluids should be run via a volumetric pump , except in a resuscitation 
+scenario. 
+4.4 IV fluids commenced solely due to insertion of an epidural run as per Epidural 
+Protocol (see MP042: epidurals in labour) 
+4.5 Women and people should be encouraged to void their bladder at least 2 -4 
+hourly. Urine output should be measured a nd documented. See MP040 
+Bladder Care and point 2.6 above for further information. 
+ Hyponatraemia in Labour (RSCH PRH only ) MP064 
+University Hospitals Sussex NHS Trust East Page 9 of 13 4.6 A venous blood sample must be taken and sent for Urea and Electrolytes 
+(Us+Es) to check sodium levels if: a positive fluid balance of >1500mls is found 
+or the 3rd bag of IV fluids is commenced or an oxytocin infusion is commenced. 
+If at home, discuss the risks and inform that transfer into hospital is indicated 
+at this stage. Contact the Labour ward coordinator to inform of plan. 
+ 
+4.6.1 Blood samples should be taken from an upper limb which does not 
+have IV fluids running through it. If both upper limbs have IV fluids, 
+one should be paused for approximately 10 minutes (if possible) 
+before the sample is then taken from that side. 
+4.6.2 If the sodium result is within normal range (>130mmol/L), then 
+continue care as above. R epeat the test 8 hourly, unless positive 
+fluids balance of >1500mls is identified, in which case repeat the test 
+immediately at this point. 
+4.6.3 If the sodium result is outside of nor mal range (<130mmol/L), inform 
+registrar and anaesthetist for review and see sections 5 & 6 below for 
+treatment. 
+4.6.4 It is not necessary to await the results of the blood sample before 
+commencing the oxytocin infusion. 
+4.6.5 The blood gas analyser may be used to check sodium levels quickly, if 
+a VBG (venous blood gas) sample is obtained by a doctor. 
+4.7 Sodium level should be checked every 4 hours if a woman or person is on a 
+variable rate in sulin infusion (VRII) . 
+4.8 If cord gases are taken after delivery and baby’s sodium is outside normal 
+range (<130mmol/L) a venous sample should be sent for Us+Es to check 
+maternal sodium level . 
+4.9 Inform neonatal team of any babies born to women and people with 
+hyponatraemia 
+
+5 Use of Oxytocin 
+5.1 Augmentation Oxytocin regime 
+5.1.1 Dilute 10 units of Oxytocin (1ml) with 49 ml Normal Saline and run 
+through a syringe driver at the following rates: 
+
+FIRST STAGE OF LABOUR Hyponatraemia in Labour (RSCH PRH only ) MP064 
+University Hospitals Sussex NHS Trust East Page 10 of 13 Time after starting (mins) dose (mu/min) pump rate ( mls/hr) 
+0 1 0.3 
+30 2 0.6 
+60 4 1.2 
+90 8 2.4 
+120 12 3.6 
+150 16 4.8 
+180 20 6.0 
+210 24 7.2 
+240 28 8.4 
+270 32 9.6 
+ 
+5.2 Second stage Oxytocin Augmentation 
+
+5.3 Oxytocin regime in m anagement of Postpartum Haemorrhage 
+5.3.1 Dilute 40 units of Oxytocin (1ml) with 49 ml Normal Saline and run 
+through a syringe driver at the following rates: 
+
+ Second Stage of Labour 
+Time after starting 
+(mins) Oxytocin dose (mu/min) Oxytocin pump rate ( mls/hr) 
+0 10 3.0 
+10 12 3.6 
+20 14 4.2 
+30 16 4.8 
+40 18 5.4 
+50 20 6.0 
+60 22 6.6 
+Management of PPH 
+40iu Oxytocin 49ml Normal Saline Pump rate 12.5 (ml/hr) Hyponatraemia in Labour (RSCH PRH only ) MP064 
+University Hospitals Sussex NHS Trust East Page 11 of 13 6 Fowchart for Management of Hyponatraemia 
+
+≥130 mmol/L 
+ 125-129 mmol/L 
+ <125 mmol/L 
+•Repeat sodium 8 hourly* 
+•If positive fluid balance 
+>1500mls found, repeat 
+sodium immediately 
+*If sodium has changed by more than 
+1 mmol per hour, then repeat sodium 
+4 hourly 
+•Repeat sodium 4 hourly 
+•Fluid restrict to 80mls/hr 
+•Inform obstetric team 
+•Continue oxytocin (if 
+applicable) 
+•If on VRII reduce dextrose 
+10% to 50ml/hr and r educe 
+insulin as per diabetes 
+guideline 
+•Observe for any symptoms 
+•Inform neonatal team of 
+delivery 
+•Repeat sodium 2 hourly 
+•Fluid restrict to 30mls/hr 
+•Inform obstetric and 
+anaesthetic teams 
+•Inform ITU/Critical Care 
+Outreach team 
+•Stop oxytocin (if 
+applicable) 
+•If on VRII reduce 
+dextrose 10% to 50ml/hr 
+and r educe insulin as per 
+diabetes guideline 
+•Inform neonatal team of 
+delivery 
+•Treat as shown below if 
+symptomatic 
+•No further testing or 
+treatment needed, unless 
+clinically indicated 
+•Repeat sodium within 8 
+hours 
+•Observe for any symptoms 
+•Continue accurate fluid 
+balance monitoring 
+•No fluid restriction 
+necessary unless otherwise 
+indicated 
+•Fluid restrict to 30mls/hr 
+•Repeat sodium within 4 
+hours 
+•Observe for any symptoms 
+•Continue accurate fluid 
+balance monitoring 
+•Inform obstetric and 
+anaesthetic teams 
+•Treat as shown below if 
+symptomatic 
+ 
+≥130 mmol/L 
+125-129 mmol/L & 
+asymptomatic 
+<125 mmol/L OR 
+symptomatic <130mmol/L Hyponatraemia in Labour (RSCH PRH only ) MP064 
+University Hospitals Sussex NHS Trust East Page 12 of 13 7 Treatment of Severe Hyponatraemia 
+Severe hyponatraemia (sodium < 125mmol/L + sy mptoms) is a medical emergency . 
+The aim of treatment is to improve symptoms and not to correct the sodium to normal. 
+
+•Urgent senior obstetric and anaesthetic 
+review 
+•Inform ITU/Critical Care Outreach team 
+•Consider transfer to Level 2 care in ITU if 
+possible 
+•Check sodium concentration 
+•Continue strict fluid restriction of 30mls/hr 
+•Continue accurate fluid balance monitoring 
+•Repeat sodium hourly 
+•Request 1.8% So dium Chloride bags from 
+ITU 
+•1.8% Sodium Chloride given in 150ml bolus 
+ONLY under instruction or supervision 
+from ITU 
+•If no improvement consider 2nd bolus 
+150mls 1.8% Sodium Chloride ONLY under 
+instruction or supervision from ITU 
+•Continue fluid restriction and fluid balance 
+monitoring until asymptomatic 
+•Aim to increase sodium by no greater than 
+10mmol/L in 24 hours Hyponatraemia in Labour (RSCH PRH only ) MP064 
+University Hospitals Sussex NHS Trust East Page 13 of 13 References 
+Dineen R, Thompso n C, Sherlock M. Hyponat raemia - Presentations and M anagement. Clin 
+Med (Lond) . 2017 Jun; 17(3): 263 –269. 
+Johansson S, Lindow S, Kapadia H, Norman M. Perinatal Water Intoxication Due to Excessive 
+Oral Intake During Labour. Acta Paediatr . 2002; 91(7):811 -4. 
+Kearney R, Cutner A. Post -partum Voiding D ysfunction. Obs & Gynaecol. 2008; 10(2) :71-74. 
+Moen V, Brudin L, Rundgren M, Irestedt L. Hyponatremia Complicating Labour —Rare or 
+Unrecognised? A Prospective Observational S tudy. BJOG . 2009 Mar; 116(4): 552 –561. 
+Ophir E, Solt I, Odeh M, Bornstein J. Water Intoxication - A Dangerous Condition in Labor and 
+Delivery Rooms. Obstet Gynecol Surv . 2007 Nov; 62(11):731 -8. 
+Paul S, Smith B, Luthra K. A Pinch of Salt. Pract Midwife . 2013 Feb; 16(2):13 -6. 
+The Regulation and Quality Improvement Authority (RQIA): Guideline a nd Audit 
+Implementation Network . Guideline for the Prevention, Diagnosis and Management of 
+Hyponatraemia in Labour and the Immediate Postpartum Period . Belfast: RQIA; 2017. 
+The Regulation and Quality Improvement Authority (RQIA): Guideline a nd Audit 
+Implementation Network . Hyponatraemia in Adults (on or aft er 16th birthday ). Belfast: RQIA; 
+2010. 
+Solomon N, Many A, Orbach R, Mandel D, Shinar S. Mate rnal and Neonatal Hyponatremia 
+During Labour: A Case Series. J Matern Fetal Neonatal Med . 2019 Aug; 32(16):2711 -2715.

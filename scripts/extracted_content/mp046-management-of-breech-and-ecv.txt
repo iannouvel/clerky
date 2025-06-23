@@ -1,0 +1,989 @@
+# Extracted from: MP046 Management of Breech and ECV.pdf
+# Guideline ID: mp046-management-of-breech-and-ecv
+# Content length: 53351 characters
+# Processing date: 1750066901.479604
+
+Management of Breech 
+Presentation and ECV 
+
+Maternity Protocol: MP046 
+ 
+Date agreed: April 2022 
+
+Management of Breech Presentation and ECV (RSCH PRH only ) MP046 
+ 
+Univer sity Hospitals Sussex NHS Trust East Page 2 of 29 
+
+Author: Katie Fraser 
+Manager responsible: Katie Fraser / Heather Brown 
+Version: 2 
+Approval Committee: Women’s Safety and Quality Committee / Protocol Steering Group 
+Date agreed: September 2015 (Version 1, Heather Brown) 
+Amended date: December 2015 
+March 2022 (Version 2) 
+Review date: March 2025 (NB ECV review by RCOG due 2023) Management of Breech Presentation and ECV (RSCH PRH only ) MP046 
+ 
+Univer sity Hospitals Sussex NHS Trust East Page 3 of 29 
+ Contents 
+ 
+1. Introduction ................................ ................................ ................................ ................ 4 
+2. Antenatal management of suspected breech presentation ................................ .......... 4 
+3. Antenatal management of confirmed breech presentation ................................ .......... 4 
+4. External cephalic version (ECV) ................................ ................................ .................... 5 
+5. Information for those with persistent breech, or declining ECV ................................ .... 7 
+6. Those choosing an elective LSCS for breech presentation ................................ ............. 9 
+7. Pregnant women / people choosing a vaginal breech birth ................................ .......... 9 
+8. Planned Vaginal Breech Birth - Intrapartum Care ................................ ....................... 11 
+9. Intrapartum assessment and management of those presenting with previously undiagnosed 
+breech presentation in labour ................................ ................................ .............................. 14 
+10. Progress and Delay in the First Stage of Labour ................................ .......................... 15 
+11. Care During the Second Stage of Labour - General Principles ................................ ...... 15 
+12. Progressive Descent of the Breech ................................ ................................ ............. 16 
+13. Active second stage and assisted vaginal breech manoeuvres ................................ .... 16 
+Delay with the Body of the Baby ................................ ................................ .......................... 17 
+14. Physiological Breech Birth ................................ ................................ ......................... 19 
+15. Management of the preterm breech ................................ ................................ .......... 21 
+16. Management of the twin pregnancy with a breech presentation ............................... 21 
+17. Organisational and governance to support and guide a vaginal breech delivery service 21 
+References / Useful Links ................................ ................................ ................................ ..... 22 
+Appendix A: ................................ ................................ ................................ ......................... 23 
+Appendix B: ECV Profoma ................................ ................................ ................................ 24 
+Appendix C: Breech Decision Making Toolkit ................................ ................................ ... 25 
+Appendix D: Breech PROMPT card ................................ ........... Error! Bookmark not defined. 
+Appendix E: Breech delivery proforma ................................ ................................ ............ 29 
+ Management of Breech Presentation and ECV (RSCH PRH only ) MP046 
+ 
+Univer sity Hospitals Sussex NHS Trust East Page 4 of 29 
+ 1 Introduction 
+ 
+Breech presentation is defined as a fetus in longitudinal lie with the buttocks, legs or feet in the lower 
+uterine segment closest to the cervix. 
+ 
+The incidence of breech presentation decreases with advancing gestational age from approximately 
+20% at 28 weeks of gestation to 16% at 32 weeks of gestation. 
+The incidence of breech at term is 3 –4%. 
+ 
+Perinatal mortality and morbidity are increased with breech presentation compared with cephalic 
+presentation irrespective of route of delivery. 
+1.1 Types of breech presentation 
+ 
+• Frank or extended breech – breech with extended legs and flexed hips. 
+• Complete or flexed breech – hips and knees remain in a flexed attitude but feet are not 
+below the fetal buttocks. 
+• Footling breech – legs and thighs are both extended so one or both feet become the 
+presenting part. 
+• Kneeling Breech – one or both knees are presenting. 
+ 
+2 Antenatal management of suspected breech presentation 
+ 
+2.1 Pregnant women / people who have suspected breech presentation prior to 36 weeks 
+gestation should be informed that the majority of babies will turn to cephalic by 37 weeks 
+and only 3 -4% will remain breech. 
+2.2 Pregnant women / people with suspected breech presentation >36 weeks gestation should 
+be referred to the Day Assessment Unit (DAU). 
+An appointment in DAU can be made at the next available time (ideally within a week) when 
+convenient for the woman for a presentation scan by the DAU or on -call obstetrician or a 
+midwife with scanning skills. 
+3 Antenatal management of confirmed breech presentation 
+ 
+3.1 All pregnant women / people with confirmed breech presentation at term should be directed 
+to the RCOG leaflet: ’A Breech Baby at the end of Pregnancy’’. 
+3.2 Breech baby at the end of pregnancy patient information leaflet (rcog.org.uk) 
+3.3 Those with confirmed breech presentation should be seen by an obstetric consultant or 
+registrar to discuss their options: ECV, vaginal breech birth or elective Caesarean section after 
+39 weeks of gestation. 
+ Management of Breech Presentation and ECV (RSCH PRH only ) MP046 
+ 
+Univer sity Hospitals Sussex NHS Trust East Page 5 of 29 
+ 3.4 External cephalic version (ECV) should be offered unless there is an absolute contraindication 
+to vaginal birth (see section 4.4 ). 
+3.5 ECV should be booked on the LSCS calendar online for gestation of 36 weeks pregnant (for 
+nulliparous) or 37 weeks (for multiparous). 
+3.6 Pregnant women / people who would like more information should be offered an antenatal 
+clinic appointment with a consultant obstetrician and / or consultant midwife at the next 
+available appointment. 
+4 External cephalic version (ECV) 
+ 
+External cephalic version is the manipulation of the fetus, through the maternal abdomen, to a 
+cephalic presentation. The rationale behind ECV is to reduce the incidence of breech presentation at 
+term and therefore the associated risks, particularly of avoidable caesarean section. 
+4.1 Consultation and Consent for ECV 
+ 
+Pregnant women / people should be informed that: 
+4.1.1 The overall success rate of ECV is approximately 50% (40% for nulliparous, 60% for 
+parous). 
+4.1.2 After an unsuccessful ECV attempt at 36+0 weeks of gestation or later, only a few 
+babies presenting by the breech will spontaneously turn to cephalic presentation (3 -
+7%) 
+4.1.3 Few babies revert to breech after successful ECV (3%). 
+4.1.4 A successful ECV reduces the chance of caesarean section 
+4.1.5 Labour after ECV is associated with a slightly increased rate of caesarean section and 
+instrumental delivery when compared with spo ntaneous cephalic presentation. 
+4.2 Pregnant women / people should be counselled that with appropriate precautions, ECV has a 
+very low complication rate. 
+4.2.1 Although most women tolerate ECV, they should be informed that ECV can be a 
+painful procedure (75% experience mild, 33% moderate, 5% very high pain) 
+4.2.2 Risks of ECV, which must be discussed and documented include: 
+• Cord Prolapse: 0.18% (1.8 in 1000) 
+• Placental abruption 0.09% (<1 in 1000) 
+• Additional procedure – Emergency caesarean section 0.5% (5:1000) 
+• Fetal bradycardia / non -reassuring CTG: Unknown significance Management of Breech Presentation and ECV (RSCH PRH only ) MP046 
+ 
+Univer sity Hospitals Sussex NHS Trust East Page 6 of 29 
+ 4.2.3 Written consent should be completed using the sticker (Appendix 1) 
+4.2.4 Pregnant women / people who decline ECV should be given information about their 
+birth options (see section 5) 
+4.3 Complementary therapies 
+4.3.1 Pregnant women / people may wish to consider the use of moxibustion for breech 
+presentation at 33 –35 weeks of gestation, under the guidance of a trained 
+practitioner. 
+4.3.2 Pregnant women / people should be advised that there is no evidence that postural 
+management alone promotes spontaneous version to cephalic presentation. 
+4.4 Exclusion criteria for ECV: 
+4.4.1 Pregnant women / people should be informed that ECV after one caesarean delivery 
+appears to have no greater risk than with an unscarred uterus. The decision to 
+perform ECV in this situation may vary across clinician and cases, therefore please 
+inform the oncall consultant obstetrician for that day. 
+4.4.2 Women with BMI >35 have a lower chance of successful ECV although this is not 
+necessarily a contraindication. 
+ 
+4.4.3 Absolute contraindications for ECV that are likely to be associated with increased 
+mortality or morbidity: 
+• Where caesarean birth is required, e.g. placenta praevia 
+• Antepartum haemorrhage within the last 7 days, placental abruption 
+• Severe pre -eclampsia 
+• Abnormal cardiotocography 
+• Abnormal fetal dopplers 
+• Major uterine anomaly 
+• Ruptured fetal membranes 
+• Multiple pregnancy (except for twin 2 – after delivery of twin 1) 
+4.4.4 Relative contraindications where ECV might be more complicated: 
+• Small -for-gestational -age fetus with normal doppler parameters (< 10th 
+Centile) 
+• Mild to moderate pre -eclampsia or pregnancy -induced hypertension 
+• Oligohydramnios 
+• Scarred uterus (e.g. two or more previous LSCS, subse rosal or intramural 
+myomectomy, septum resection) 
+• Rhesus isoimmunisation 
+4.4.5 Unstable Lie 
+With an unstable lie, ECV is reasonable in the course of a stabilising induction. There 
+are limited data on this procedure, but potential risks include cord prolapse, 
+transverse lie in labour and fetal heart rate abnormalities. ECV should only be 
+performed if there is a valid indication for induction. Management of Breech Presentation and ECV (RSCH PRH only ) MP046 
+ 
+Univer sity Hospitals Sussex NHS Trust East Page 7 of 29 
+ 4.5 Undertaking an ECV 
+4.5.1 All ECV are to be undertaken on Labour ward. 
+4.5.2 All ECVs should be undertaken by obstetricians trained and competent to do so. 
+4.5.3 The standard preoperative preparations for caesarean section (starving or pre -meds) 
+are not recommended for those undergoing ECV, as their risk of emergency 
+caesarean is less than that of a low -risk labouring woman / person. 
+4.5.4 Routine use of regional analgesia or neuraxial blockade is not recommended, but 
+may be considered for a repeat attempt or for women unable to tolerate ECV 
+without analgesia. 
+
+4.5.5 Following a successful ECV the obstetrician should refer the pregnant women / 
+person back to midwifery led care. 
+4.5.6 Following an unsuccessful ECV, the obstetrician should offer the pregnant women / 
+person the choice of a second ECV with a different clinician. 
+4.5.7 If a second ECV is declined then information about options should be given. Planned 
+LSCS should be advised and planned vaginal breech birth offered. 
+5 Information for those with persistent breech, or declining ECV 
+ ECV Procedure 
+ 
+• Admit to labour ward at allotted time. 
+• Observations of temperature, pulse and blood pressure 
+• Ensure theatre available 
+• Scan to confirm breech presentation 
+• Perform 20 minute CTG prior to ECV to confirm fetal wellbeing 
+• Trust consent form (using ECV sticker, Appendix A ) signed prior to procedure 
+• Bladder should be emptied 
+• Administer tocolysis 15 -20 minutes before ECV - Terbutaline s/c 250 micrograms 
+(mcg) 
+• Monitor fetal heart intermittently thoughout ECV 
+• Scan to confirm success 
+• Abandon ECV if too painful 
+• Perform 30 minute CTG following procedure (whether successful or not) 
+• Perform Kleihauer test and administer Anti D 1500 units if woman rhesus negative 
+and the fetus is D positive on cfDNA testing 
+• Document procedure and outcome within antenatal record using the ECV 
+proforma ( Appendix B ) and scan to Badgernet (until the form is embedded) 
+ Management of Breech Presentation and ECV (RSCH PRH only ) MP046 
+ 
+Univer sity Hospitals Sussex NHS Trust East Page 8 of 29 
+ 5.1 Clinicians should counsel pregnant women / people in an unbiased way that ensures a proper 
+understanding of the absolute and relative risks of their options. 
+5.2 Risks to baby 
+ 
+Pregnant women / people should be informed that 
+5.2.1 Planned caesarean section leads to a small reduction in perinatal mortality 
+compared with planned vaginal breech delivery. 
+Any decision to perform a caesarean section needs to be balanced against the 
+potential adverse consequences that may result from this. 
+ 
+The reduced risk is due to three factors: the avoidance of stillbirth after 39 weeks of 
+gestation, the avoidance of intrapartum risks and the risks of vaginal breech birth, 
+and that only the last is unique to a breech baby. 
+5.2.2 When planning delivery for a breech baby, the risk of perinatal mortality is 
+approximately 
+0.5/1000 with caesarean section after 39+0 weeks of gestation; and 
+2.0/1000 with planned vaginal breech birth. 
+1.0/1000 with planned cephalic birth. 
+5.2.3 Planned vaginal breech birth increases the risk of low Apgar scores and serious short -
+term complications, but has not been shown to increase the risk of long -term 
+morbidity. 
+5.3 Risk to mother / parent 
+ 
+Pregnant women / people should be informed that 
+5.3.1 Maternal / parental complications are least with successful vaginal birth 
+5.3.2 Planned caesarean section for breech presentation at term carries a small increase in 
+immediate complications for the mother / parent compared with planned vaginal 
+birth. 
+5.3.3 The risk for maternal / parental complication is highest with emergency caesarean 
+section (which is needed in approximately 40% of those planning a vaginal breech 
+birth.) 
+5.3.4 Caesarean section increases the risk of complications in future pregnancy, including 
+the risks of opting for vaginal birth after caesarean section, the increased risk of 
+complications at repeat caesarean section and the risk of an abnormally invasive 
+placenta. 
+ 
+5.3.5 Pregnant women / people should be informed that caesarean section has been 
+associated with a small increase in the risk of stillbirth for subsequent babies 
+although this may not be causal. 
+ Management of Breech Presentation and ECV (RSCH PRH only ) MP046 
+ 
+Univer sity Hospitals Sussex NHS Trust East Page 9 of 29 
+ 5.4 There should be an individualised assessment of the long -term risks of caesarean section 
+based on individual risk proﬁle and reproductive intentions, and counselled accordingly. 
+5.5 All pregnant women / people should be supported to make a fully informed choice as to their 
+care & birth options 
+5.6 All information given, discussions and choices offered must be clearly documented, by the 
+person giving it, in the maternal notes / Badgernet 
+ 
+6 Those choosing an elective LSCS for breech presentation 
+ 
+6.1 Pregnant women / people who make an informed choice to have their baby delivered by 
+elective LSCS should be booked as near to 39 -weeks gestation as possible. 
+6.2 The pregnant woman / person should be informed that if the baby turns to cephalic 
+presentation at any point prior to surgery, the LSCS should not proceed. On admission for 
+caesarean, breech presentation should be confirmed on USS. If the baby has turned cephalic 
+the LSCS should not proceed and the pregnant woman / person should return to midwifery 
+led ca re and aim for a vaginal birth. If the pregnant woman / person requests to continue 
+with caesarean this must be discussed with consultant on the labour ward. 
+6.3 The pregnant woman / person should be informed that if they go into labour before their 
+booked LSCS date they should contact labour ward immediately. Unless birth is imminent 
+they should be offered a LSCS, but should also be made aware there may not be opportunity 
+to perform a LSCS and a vaginal birth may occur. 
+6.4 See Maternity Protocol MP050 Caesarean Section (LSCS) for details of LSCS procedure. 
+ 
+7 Pregnant women / people choosing a vaginal breech birth 
+ 
+7.1 Antenatal Assessment 
+7.1.1 Pregnant women / people opting for vaginal breech delivery should be referred to 
+the consultant midwife clinic and / or the consultant obstetric clinic. 
+ 
+7.1.2 There should be a thorough assessment for risk factors for a poorer outcome in 
+planned vaginal breech birth. Higher risk planned vaginal breech birth is expected 
+where there are independent indications for caesarean section and in the following 
+circumstances: 
+● Hyperextended neck on ultrasound. 
+● High estimated fetal weight (more than 3.8 kg). 
+● Low estimated weight (less than tenth centile). 
+● Footling presentation. 
+● Evidence of antenatal fetal compromise. 
+ Management of Breech Presentation and ECV (RSCH PRH only ) MP046 
+ 
+Univer sity Hospitals Sussex NHS Trust East Page 10 of 29 
+ 7.1.3 If any risk factor is identiﬁed, pregnant women / people should be counselled that 
+planned vaginal birth is likely to be associated with increased perinatal risk and that 
+delivery by caesarean section is recommended 
+7.1.4 All information given, any discussion or decisions made and referrals offered should 
+be documented clearly in the notes by the clinician providing care. (Appendix C – 
+Counselling proforma ) 
+7.2 Birth Plan 
+7.2.1 A detailed birth plan should be made with the pregnant women / person following 
+discussion with a consultant midwife and consultant obstetrician. 
+7.2.2 The birth plan should shared with pregnant woman / person, the consultant 
+obstetrician, the matron and labour ward leads. 
+ 
+7.2.3 There should be clear documentation in the Badgernet notes. 
+7.2.4 Pregnant women / people should be informed that induction of labour is not 
+recommended (see Section 7.5) 
+ 
+7.3 Place of Birth 
+ 
+7.3.1 Pregnant women / people should be recommended to have their labour and birth in 
+an obstetric unit with access to theatres for immediate caesarean section and 
+neonatal support. 
+7.3.2 Birth in an operating theatre is not routinely recommended. 
+ 
+7.3.3 Following discussion about risks and benefits according to the best available 
+evidence, those who make an informed decision about having their baby at home 
+should be referred to the consultant midwife, where a clear birth plan can be 
+agreed, documented and shared to the team and the pregnant woman / person. 
+7.3.3.1 The midwife providing care at home must update the labour ward 
+coordinator by phone on a regular (2hrly) basis. 
+7.3.3.2 If delay during labour is suspected the midwife should advise transfer into 
+the maternity unit immediately by ‘999’ Cat 1 Response 
+7.3.3.3 Discussion with the Manager on call/Matron at the discretion of the LWC if 
+concerns regarding skill mix, staffing levels as per escalation policy. 
+ 
+7.4 Pre-labour advice (for those opting for planned vaginal breech birth) 
+ 
+Women should be advised to phone the maternity unit la bour ward: Management of Breech Presentation and ECV (RSCH PRH only ) MP046 
+ 
+Univer sity Hospitals Sussex NHS Trust East Page 11 of 29 
+ 7.4.1 Immediately if they have spontaneous rupture of membranes (SROM) 
+If women phone the maternity unit reporting SROM, they should be asked the usual 
+questions relating to fetal movements and colour of liquor. They should be invited in 
+for a review at the earliest opportunity (due to the inc reased risk of cord prolapse). 
+7.4.2 If they are concerned about fetal movements 
+7.4.3 They want advice or guidance 
+7.4.4 Midwives should invite women into labour ward or triage earlier than they would for 
+women with cephalic babies (rationale: Breech labours are often rapid and there are 
+additional risk factors such as cord prolap se that need to be considered). 
+7.4.5 If birth is planned at home then a midwife should attend to assess and provide 
+support earlier in the labour. 
+ 
+7.5 Induction of labour 
+7.5.1 Induction of labour is not recommended if a woman's baby is in the breech position 
+7.5.2 Only consider induction of labour for babies in the breech position if: 
+• Birth needs to be expedited, and 
+• External cephalic version is unsuccessful, declined or contraindicated, and 
+• The woman chooses not to h ave a planned caesarean birth. 
+7.5.3 Discussion of the benefits and risks associated with induction of labour must be 
+reviewed by an obstetric consultant and the consultant midwife. The MDT discussion 
+and plan should be documented on Badgernet. 
+ 
+8 Planned Vaginal Breech Birth - Intrapartum Care 
+ 
+8.1 General Considerations 
+ 
+Where there is undiagnosed breech in labour please refer to section 9 
+ 
+It is recognised that experience and skill of the health professional can have an impact on the 
+perinatal outcome and it is strongly recommended that there is a multidisciplinary team 
+approach to labour and birth care. 
+ 
+If the team on the labour ward do not feel able to support the birth plan, the woman / person 
+should be informed as such and offered a caesarean section / re -discuss ion of options. 
+8.2 Once labour is established it is recommended that: 
+8.2.1 The labour ward Co -ordinator and obstetric registrar must be informed to reviews 
+the notes, birth plan and situation. 
+ Management of Breech Presentation and ECV (RSCH PRH only ) MP046 
+ 
+Univer sity Hospitals Sussex NHS Trust East Page 12 of 29 
+ 8.2.2 The Consultant Obstetrician must be informed and should attend when requested to 
+support the team 
+8.2.3 The Neonatology team must be informed 
+8.2.4 Plans of care for labour and birth are made with the mother, midwife providing care 
+and on call obstetric registrar with reference to the antenatal birth plan documented 
+on Badgernet. 
+8.2.5 Women should be encouraged to agree to a multidisciplinary approach especially if 
+complications arise, and this should be documented in the birth plan. 
+8.2.6 Care should be provided by a midwife who is competent and confident with breech 
+labour and birth care with support from the labour ward coordinator ad obstetric 
+team 
+8.2.7 The midwife providing labour care frequently (at least 2 hourly) updates the on call 
+obstetric registrar and labour ward co -ordinator on the clinical situation, progress 
+and maternal and fetal wellbeing. 
+ 
+8.2.8 Any deviations from the expected norm are noted by the midwife and the on call 
+Obstetric Registrar and labour ward co -ordinator informed immediately. 
+8.2.9 Should a deviation from norm occur the on call obstetric registrar must review the 
+clinical situation and lead clinical care with support and discussion with the 
+midwifery staff. The on call Consultant Obstetrician should be informed and, if 
+required, attend to provide support and guidance 
+8.2.10 Birthing women / people should be asked to allow less experienced midwives or 
+doctors to observe the birth of their baby to help maintain skills in vaginal breech 
+delivery 
+8.2.11 If labour and birth is planned at home then the midwife providing care should call 
+the labour ward coordinator every 2 hours to update on progress and wellbeing, or 
+immediately should a deviation from normal occur. Birthing women / people should 
+be strongly advised to be transferred to the maternity unit if a deviation from norm 
+is identified. 
+8.3 Fetal Monitoring 
+ 
+8.3.1 All birthing women / people should be offered and advised to have continuous CTG 
+in established labour. (Should be informed that while evidence is lacking, continuous 
+fetal monitoring may lead to improved neonatal outcomes and is recommended) 
+8.3.2 If women make an informed choice to have intermittent auscultation this should be 
+undertaken as per protocol & NICE guidelines. 
+ Management of Breech Presentation and ECV (RSCH PRH only ) MP046 
+ 
+Univer sity Hospitals Sussex NHS Trust East Page 13 of 29 
+ 8.3.3 If IA is being undertaken and there are concerns about progress in labour, CTG 
+should again be recommended. 
+8.3.4 If there are concerns about the fetal heart during decent of the breech in the second 
+stage then LSCS or assistance should be considered. 
+ 
+8.4 Meconium 
+8.4.1 Passage of fresh meconium is more common during a labour with a breech 
+presentation especially in the late first and second stages and does not require any 
+intervention if the CTG is normal. 
+8.4.2 If there is no CTG as the women has made an informed choice to have intermittent 
+auscultation, then a CTG should again be recommended at this point 
+ 
+8.4.3 Meconium stained liquor prior to labour is still suggestive of fetal distress 
+ 
+8.5 Maternal observations 
+ 
+8.5.1 Should be performed the same as in any labour. 
+8.5.2 Abdominal palpation and vaginal examinations should be offered 4 hourly 
+throughout labour in the expectation that progress will be observed. 
+8.5.3 The position and descent of the sacrum should be noted at each assessme nt. 
+8.5.4 Assessment of the presenting part is vital as a breech can change from being flexed 
+or extended to footling to knee presentation as labour progresses; this may impact 
+on labour progress and risk of cord prolapse and must be considered in care 
+planning. If a footling breech is discovered during labour a LSCS should be 
+recommended unless birth is imminent. 
+ 
+8.6 IV Cannula 
+An intravenous cannula is recommended on admission in labour only where difficulty with IV 
+access is anticipated e.g. raised BMI. 
+ 
+8.7 Birthing Position 
+8.7.1 Birthing women / people should be encouraged to adopt an upright position and be 
+mobile in labour. Either a dorsal (semi -recumbent using the foot rests with the 
+bottom of the bed removed) or all -fours position may be adopted for delivery and 
+should depend on the preference of the birthing person, and the experience of the 
+attendant. 
+ Management of Breech Presentation and ECV (RSCH PRH only ) MP046 
+ 
+Univer sity Hospitals Sussex NHS Trust East Page 14 of 29 
+ 8.7.2 If the all -fours position is used, women should be advised that recourse to the semi -
+recumbent position may become necessary. 
+ 
+8.8 Pain Relief 
+8.8.1 All birthing women / people have the full range of pain relief options available to 
+them. 
+8.8.2 An epidural is not mandatory. 
+ 
+8.8.3 All should be informed that the effect of epidural analgesia on the success of vaginal 
+breech birth is unclear, but that it is likely to increase the risk of intervention. 
+8.8.4 There is no current evidence to support or refute the use of the pool for labour and 
+birth but there is very limited experience of this in this Trust and is not 
+recommended. 
+8.9 Support 
+Birthing women / people should feel calm, in control and supported during their labour and 
+birth; this will promote the release of oxytocin, promote contractions and promote good 
+labour progress. 
+8.10 Documentation 
+All discussions, information and care plans should be documented clearly on Badgernet. 
+ 
+9 Intrapartum assessment and management of those presenting with an 
+undiagnosed breech presentation in labour 
+ 
+9.1 Where a pregnant woman / person presents with an unplanned vaginal breech labour, 
+management should depend on the stage of labour, whether factors associated with 
+increased complications are present, availability of appropriate clinical expertise and 
+informed consent. 
+9.2 Birthing women / people near or in active second stage of labour should not be routinely 
+offered caesarean section. 
+9.3 Where labour is progressing rapidly, there is a balance of risks: attempting caesarean section 
+where the breech is very low is likely to be associated with increased perinatal and maternal 
+risk; assessment should include what is feasible. 
+ Management of Breech Presentation and ECV (RSCH PRH only ) MP046 
+ 
+Univer sity Hospitals Sussex NHS Trust East Page 15 of 29 
+ 9.4 Attempts at vaginal delivery in theatre with spinal anaesthesia or caesarean section with the 
+breech on the perineum are likely to be associated with both increased perinatal and 
+maternal risk. 
+9.5 Where time and circumstances permit, the position of the fetal neck and legs, and the fetal 
+weight should be assessed using ultrasound, and the birthing woman / person counselled as 
+with planned vaginal breech birth. 
+9.6 All maternity units must be able to provide skilled supervision for vaginal breech birth where 
+a birthing woman / person is admitted in advanced labour. 
+ 
+10 Progress and Delay in the First Stage of Labour 
+ 
+Progress in labour is linked to perinatal outcome; a well progressing labour is more likely to 
+suggest a good outcome at birth. 
+ 
+10.1 The ﬁrst stage of labour should be managed according to the same principles as with a 
+cephalic presentation. 
+10.2 There should be lower tolerance for slow or static progress in breech labours than cephalic 
+labours and a low threshold for advising LSCS. 
+10.3 Progress of labour should be assessed frequently through strengths, length and frequency of 
+contractions, maternal / parental behaviour and cervical dilatation and documented on the 
+partogram. 
+10.4 Slow progress should be discussed with the on -call obstetric team who may decide that an 
+examination by a doctor and/or examination 2 hourly is required to monitor progress. 
+10.5 If SROM occurs during labour the midwife should assess the colour of liquor, assess fetal 
+wellbeing and recommend a palpation and vaginal examination to exclude cord prolapse. 
+10.6 To reduce the risk of cord compression, amniotomy is reserved for deﬁnite clinical 
+indications. 
+10.7 Augmentation of slow progress with oxytocin should only be in discussion with the consultant 
+obstetrician. 
+ 
+11 Care d uring the Second Stage of Labour - General Principles 
+11.1 The full MDT (including neonatal team) should be informed that second stage has 
+commenced. 
+11.2 The neonatal resuscitaire should be brought into the room, prepared and room warmed for 
+the birth. The neonatologist should be present at birth unless declined by the birthing woman 
+/ person. 
+ Management of Breech Presentation and ECV (RSCH PRH only ) MP046 
+ 
+Univer sity Hospitals Sussex NHS Trust East Page 16 of 29 
+ 11.3 The labour ward coordinator and on call Obstetric Registrar should be informed of the onset 
+of the second stage and should be available on labour ward where possible. 
+11.4 A passive second stage to allow the descent of the breech to the perineum prior to active 
+pushing is recommended (see section 12) 
+11.5 If the breech is not visible within 2 hours of the passive second stage, caesarean section 
+should be recommended. 
+ 
+11.6 Women who start pushing spontaneously should be offered a vaginal examination to assess 
+cervical dilation, presenting part and confirmation there is no cord presention / prolapse. 
+11.7 The midwife / doctor should watch for signs of descent and progress (anal dilation, birthing 
+person’ s behaviours/communication, contractions, visual presenting part) throughout the 
+second stage of labour. 
+ 
+12 Progressive Descent of the Breech 
+ 
+There should be expected progressive descent of the breech in the second stage of labour. 
+12.1 Urgent Obstetric Registrar or Consultant review/referral is required if delay occurs eg: 
+• There are poor contractions or maternal pushing 
+• The breech is above the ischial spines after one hour of passive second stage 
+• The breech is not visible after 2 hrs of passive second stage 
+• If the breech does not descend with active pushing 
+• The buttocks are undelivered within 30mins of pushing 
+• An expected frank breech becomes a footling breech 
+• Fetal heart rate abnormalities 
+12.2 There should be a low tolerance for poor progress and clinicians should consider 
+recommendation of a LSCS if delay occurs . Delay at this stage often precedes delays in later 
+stages which can be more challenging to manage. 
+12.3 If LSCS is declined by the mother then the consultant must be informed to be present. 
+12.4 Oxytocin IVI may only be considered by the consultant. 
+ 
+12.5 If the baby has been born past the level of the umbilicus then the manoeuvres described in 
+section 13 should be employed rather than a LSCS. 
+ 
+13 Active second stage and assisted vaginal breech manoeuvres 
+ 
+These manoeuvres can be undertaken with or without contractions present but the birthing woman / 
+person should be encouraged to push once the legs and arms have been released and/or the head has 
+been flexed. Management of Breech Presentation and ECV (RSCH PRH only ) MP046 
+ 
+Univer sity Hospitals Sussex NHS Trust East Page 17 of 29 
+ 13.1 Adequate descent of the breech in the passive second stage is a prerequisite for 
+encouragement of the active second stage. 
+ 
+13.2 In general, intervention to expedite breech birth is required if there is evidence of poor fetal 
+condition or if there is a delay of more than 5 minutes from delivery of the buttocks to the 
+head, or of more than 3 minutes from the umbilicus to the head 
+13.3 In total, from ‘rumping’ i.e. crowning of the buttocks, to delivery of the baby should be no 
+longer than 7 minutes . 
+13.4 All obstetricians and midwives should be familiar with the techniques that can be used to 
+assist vaginal breech birth. The choice of manoeuvres used, if required to assist with delivery 
+of the breech, should depend on the individual experience / preference of the attending 
+doctor or midwife. 
+13.5 A semirecumbent or an all -fours position may be adopted for delivery and should depend on 
+maternal preference and the experience of the attendant. If the latter position is used, 
+women should be advised that recourse to the semirecumbent position may become 
+necessary. 
+13.6 While involuntary pushing may occur earlier, encouragement of maternal effort should not 
+start until the breech is visible. 
+13.7 Once the buttocks have passed the perineum, signiﬁcant cord compression is common. 
+13.8 Once buttocks are on the perineum start documenting on the breech delivery proforma 
+(Appendix D) 
+13.9 Where birth is progressive, with good descent and normal fetal monitoring, a ‘hands -poised’ 
+or ‘hands off’ approach. 
+13.10 Tactile stimulation of the fetus may result in reﬂex extension of the arms or head, and should 
+be minimised. 
+13.11 Traction should never be applied to the breech in any circumstance as this increases the 
+chances of extended arms and difficulty in head delivery. 
+13.12 Intervention only when appropriate and timely where progress is not made and care must be 
+taken in all manoeuvres to avoid fetal trauma - the fetus should be held around the pelvic 
+girdle (i.e holding bony, not soft tissues) and the neck should never be hyperextended. 
+13.13 Selective rather than routine episiotomy is recommended. 
+ 
+13.14 Signs that delivery should be assisted include lack of tone or colour, or delay, commonly due 
+to extended arms or an extended neck. 
+14 Delay with the Body of the Baby 
+ 
+Once the breech has passed over the perineum (rumping), descent of the body should be visible with 
+each contraction and pushing Management of Breech Presentation and ECV (RSCH PRH only ) MP046 
+ 
+Univer sity Hospitals Sussex NHS Trust East Page 18 of 29 
+ The descent from here should be with the baby in a sacro -anterior position – this will be seen as ‘tum 
+to bum’ position if in all fours. It may be necessary to rotate the baby to this position after rumping. 
+If there is no or very poor descent with a contraction and good pushes then the obstetric registrar 
+should immediately attend & review and the on call consultant obstetrician must be informed. 
+14.1 Delay with Legs: 
+ 
+Find the popliteal area (behind the knee) and apply gentle pressure to encourage the leg to 
+flex) and abduct the legs out in the direction of the hip and deliver. 
+There should be no downward traction with this manoeuvre 
+ 
+14.2 Delay with the Arms: 
+ 
+A vaginal examination should be performed to exclude the possibility of extended arms above the 
+head. 
+If arms are not deliverable then the Lővset’s manoeuvre should be undertaken, taking care to hold 
+the baby by the bony pelvis / prominences to minimise trauma to the baby. 
+
+14.3 Delay in delivery of the after -coming head: 
+ 
+Mauriceau -Smellie -Veit (MSV) manoeuvre should be undertaken to encourage flexion of the fetal 
+head. 
+
+ Lovsett’s manoeuvre: 
+Rotate the baby by 90’ to bring the anterior shoulder underneath symphysis pubis, to 
+engage and deliver anterior arm 
+Rotate 180’ counter -rotation to engage the posterior arm, which is then 
+delivered. 
+ 
+*tip: use left finger to release left arm and right hand to release right arm 
+The fetus is placed in a ‘horse -riding position’ on the inner aspect of the non -dominant 
+forearm. 
+Two fingers of that hand should be placed over the malar prominences (cheek bones) . 
+NB Fingers should not be placed inside the fetal mouth as this may be associated with jaw 
+traction and subsequen t dislocation or even fracture. 
+The dominant hand should be placed over the fetal back with middle finger on the fetal 
+occiput to promote flexion and the index and ring fingers on each of the fetal shoulders to 
+promote traction. 
+Both hands are used to promote flexion of the head. The fetal body is raised upwar d in an arc 
+completing delivery (whilst maintaining neck flexion) 
+ Management of Breech Presentation and ECV (RSCH PRH only ) MP046 
+ 
+Univer sity Hospitals Sussex NHS Trust East Page 19 of 29 
+ 
+An assistant may apply suprapubic pressure to further promote flexion (note the difference in position of 
+the hand applying pressure is different to that used for shoulder dystocia). 
+ 
+If not initially successful then following should be attempted: 
+ 
+• Use of forceps 
+ 
+Forceps should be considered if the head has not delivered within 2 –3 
+minutes of attempting the MSV manoeuvre. 
+ 
+Long handled forceps - Kielland's forceps or NB -forceps should be the 
+instrument of choice. 
+Wrigley's forceps should not be used for vaginal breech delivery. 
+ 
+An episiotomy should be considered / performed if indicated to apply 
+forceps blades facilitate delivery. 
+ 
+An assistant should gently lift and support the baby without applying 
+traction. The baby can be wrapped in a towel to keep it warm. 
+ 
+The forceps should be applied in the same manner as is used for cephalic 
+presentation. 
+Delivery of the fetal head should be controlled and slow; gentle downward traction should be applied and 
+upward traction should commence when the fetal chin reaches the perineum . 
+ 
+• Symphysiotomy 
+ 
+In the rare event of head entrapment a symphysiotomy should be undertaken by senior obstetrician after 
+discussion and agreement with the Consultant Obstetrician (if the obstetrician has the knowledge, skills 
+and experience to perform this manoeuvre) 
+15 Physiological Breech Birth 
+ 
+Physiological breech birth is usually performed in the ‘All -Fours’ or upright position. 
+It is not a complete ‘hands -off’ approach - as per delivery in lithotomy, it is important that the time from 
+‘rumping’ to delivery remains within 7 minutes, with correct application of manoeuvres where delay 
+occurs. 
+ 
+Management of Breech Presentation and ECV (RSCH PRH only ) MP046 
+ 
+Univer sity Hospitals Sussex NHS Trust East Page 20 of 29 
+ Where trained / experienced, manoeuvres which may be used are essentially the same as in lithotomy but 
+in a different orientation: 
+ 
+15.1 Delay with the body: 
+- Ensure that the baby is ‘tum -to-bum’ - rotate if not 
+- Encourage maternal movement or ‘wiggle’ 
+15.2 Delay with the arms: 
+- Reverse moanouvre similar to Lovsets – rotate to 90’ and deliver the arm which is now 
+the ‘pubic arm’ (i.e is anterior arm in relation to the mother / parent), then rotate back 
+180’ and deliver the remaining pubic arm. 
+- 
+
+Image credit: Shawn Walker – Breech Birth Network 
+ 
+15.3 Delayed after -coming head: 
+- Maternal / Parental Buttock -lift – if descent is impeded by the perineum tight on the 
+baby’s forehead (bregma), an assistant can augment the manoeuvre by lifting the 
+woman’s buttocks up and out. This lifts the perineum over the bregma and is especially 
+helpful when the mother / parent is obese, or the perineum is especially tight. 
+
+Management of Breech Presentation and ECV (RSCH PRH only ) MP046 
+ 
+Univer sity Hospitals Sussex NHS Trust East Page 21 of 29 
+ 16 Management of the preterm breech 
+ 
+16.1 Planned caesarean section is recommended for preterm breech presentation where delivery 
+is planned due to maternal and/or fetal compromise. 
+16.2 Caesarean section for breech presentation in spontaneous preterm labour is not routinely 
+recommended. 
+16.3 Mode of delivery should be individualised based on the stage of labour, type of breech 
+presentation, fetal wellbeing and availability of an operator skilled in vaginal breech delivery. 
+ 
+16.4 Caesarean section for breech presentation in spontaneous preterm labour at the threshold of 
+viability (22 –25+6 weeks of gestation) is not recommended. 
+16.5 Labour with a preterm breech should be managed as with a term breech. 
+16.6 Cervical head entrapment during a preterm breech delivery can be managed by cervical 
+incisions at 2 O’ clock and 10 O’ clock positions. (Lateral incision will risk damage to the 
+uterine vessels / ureters and anterior incisions risk damage to the bladder). Such incisions will 
+require exploration and repair under GA. 
+ 
+17 Management of the twin pregnancy with a breech presentation 
+ 
+17.1 Pregnant women / people should be informed that the evidence is limited, but that planned 
+caesarean section is recommended for a twin pregnancy where the presenting twin is breech. 
+17.2 Routine emergency caesarean section for a breech first twin in spontaneous labour, however, 
+is not always recommended. The mode of delivery should be individualised based on cervical 
+dilatation, station of the presenting part, type of breech presentation, fetal wellbeing and 
+availability of an operator skilled in vaginal breech delivery. 
+17.3 Routine caesarean section for breech presentation of the second twin (where twin 1 is 
+cephalic) is not recommended in either term or preterm deliveries 
+18 Organisational and governance to support and guide a vaginal breech 
+delivery service 
+ 
+18.1 It is recognised that maintaining competence in assisting a vaginal breech birth is challenging 
+where regular exposure and experience is limited. 
+18.2 The skills of the attending clinicians at the time of a breech birth should be made clear to the 
+birthing woman / person in order to aid in their decision making process. 
+18.3 Skills and drills training should be provided using adequate simulation equipment should to 
+rehearse the skills that are needed during vaginal breech birth 
+ Management of Breech Presentation and ECV (RSCH PRH only ) MP046 
+ 
+Univer sity Hospitals Sussex NHS Trust East Page 22 of 29 
+ 18.4 All doctors and midwives are expected to attend skills and drills training in vaginal breech 
+birth at least once per year. 
+18.5 Experience in vaginal breech delivery is considered competent if performed approximately 
+every 6 -months – regardless of number of previous breech deliveries attended. 
+18.6 It is important to recognise that the most skilled person on the delivery suite for managing 
+the vaginal breech may not the obstetrician –this should be discussed within the MDT and 
+with the woman/ person in labour to establish the safest birth plan for them. 
+18.7 All counselling for vaginal breech birth must be given in line with the guidance and proforma / 
+checklist in appendix x. 
+18.8 Yearly audit of vaginal breech deliveries should be carried out. 
+ 
+19 References / Useful Links 
+ 
+RCOG Green Top Guideline No 20b: Management of Breech Presentation 
+Management of Breech Presentation (Green -top Guideline No. 20b) (rcog.org.uk) 
+ 
+RCOG Green -top Guideline No. 20a: External Cephalic Version and Reducing the Incidence of Term Breech 
+Presentation 
+External Cephalic Version and Reducing the Incidence of Term Breech Presentation (rcog.org.uk) 
+ 
+NICE Guidance NG 207, 2021: Inducing Labour 
+Recommendations | Inducing labour | Guidance | NICE 
+ 
+StratOg: Breech presentation | eLearning (rcog.org.uk) 
+ 
+PROMPT – Practical Obstetric Multi -professional Training 
+PROMPT Training videos | PROMPT Maternity Foundation 
+ 
+Physiological Breech Birth 
+https://breechbirth.org.uk/ 
+
+ Management of Breech Presentation and ECV (RSCH PRH only ) MP046 
+ 
+Univer sity Hospitals Sussex NHS Trust East Page 23 of 29 
+ Appendix A: ECV consent sticker 
+
+Management of Breech Presentation and ECV (RSCH PRH only ) MP046 
+ 
+Univer sity Hospitals Sussex NHS Trust East Page 24 of 29 
+ Appendix B: ECV Profoma 
+
+Gravida…….. Parity…….. EDD……………. Gestation ………… BMI ……….. 
+Blood group …….……… Anti-D in pregnancy Yes / No 
+Medications / Allergies …………………………………………………………………………………… 
+Relevant obstetric history / previous deliveries 
+……………………………………………………………………………………………………………………….. 
+Any contraindications to ECV (refer to protocol section) Yes / No 
+(if yes which, document reasons for continuing ECV) 
+……………………………………………………………………………………………………………………….. 
+ 
+Admission observations 
+Maternal : BP ……………. Mat pulse ……………. Mat temp. ……………. Urinalysis ……………. 
+Covid screen ……………. 
+ 
+Fetal: Position on palpation …………………………….. 
+ 
+USS: 
+Fetal position ………………………………. 
+Legs – extended (frank) / flexed (complete) / Footling 
+Head – flexed / extended 
+Liquor – DVP ………………….. 
+Placental position ….…………………………………………… 
+ 
+Clinician Performing ECV (name / sign) 
+………………………………………………………….. Grade ……………………… 
+Consent form completed: YES / NO 
+Time terbutalline (250mcg s/c) given ………………… 
+ 
+ECV Procedure 
+Time started ………………… Time completed ………………… FH checked during procedure YES / NO 
+Number of attempts at Forward roll: ………………… Backward roll: ______________ 
+ECV successful YES / NO If no, second attempt offered YES / NO 
+ 
+Post -ECV 
+Mat BP ……………. Mat pulse ……………. 
+ 
+Anti-D given YES / NO 
+ 
+Ongoing plan: 
+Repeat ECV Date Booked ……………. 
+Elective Caesarean Date Booked ……………. 
+Vaginal breech birth Follow up booked……………. 
+(Please document discussion according to the birth options 
+proforma ) Patient Sticker 
+Antenatal CTG sticker 
+Antenatal CTG sticker Management of Breech Presentation and ECV (RSCH PRH only ) MP046 
+ 
+Univer sity Hospitals Sussex NHS Trust East Page 25 of 29 
+ 
+Appendix C: Breech Decision Making Toolkit 
+ Y / N Discussion / Decision 
+We have discussed the recommendation for ECV 
+- Benefits: overall success rate of ECV ~50% , 3% babies revert to 
+breech after successful ECV, successful ECV reduces chance of 
+caesarean 
+- Risk: Pain, fetal distress requiring CS, rare - placental abruption. 
+Labour after ECV has slightly increased rate of CS and instrumental 
+delivery 
+We have discussed the risk of perinatal mortality for breech delivery : 
+- 0.5/1000 with caesarean section after 39+0 weeks of gestation; 
+- 2.0/1000 with planned vaginal breech birth 
+- 1.0/1000 with planned cephalic birth 
+We have discussed vaginal breech birth 
+ - Increased risk of perinatal mortality (as above) 
+- Increased risk of low Apgar scores and serious short -term 
+complications, (no increase the risk of long -term morbidity) 
+- Maternal complications are least with successful vaginal birth, 
+highest with emergency caesarean section (40% of women 
+planning a vaginal breech birth) 
+- Advise delivery in an obstetric unit with continuous fetal 
+monitoring in labour 
+- Level of skill and competency in safe delivery of vaginal breech 
+is variable on each shift and may not be suitable to support 
+vaginal delivery on a particular day. 
+We have discussed planned caesarean section 
+- - Small reduction in perinatal mortality compared with planned 
+vaginal breech delivery 
+The reduced risk is due to three factors: the avoidance of 
+stillbirth after 39 weeks of gestation, the avoidance of 
+intrapartum risks and the risks of vaginal breech birth, and that 
+only the last is unique to a breech baby. 
+- Small increase in immediate complications for the mother 
+compared with planned vaginal birth 
+(infection, bleeding, VTE) 
+- Increased risk of complications in future pregnancy 
+(VBAC, complications at repeat caesarean section, abnormally 
+invasive placenta, slightly increased risk of stillbirth) 
+ 
+Individual Risk Assessment – 
+ 
+FETAL 
+ Hyperextended neck on ultrasound 
+High estimated fetal weight (more than 3.8 kg). 
+Low estimated weight (less than tenth centile). 
+Footling presentation. 
+Evidence of antenatal fetal compromise. 
+ 
+If any risk factor is identiﬁed, planned vaginal birth is likely to be associated with increased perinatal risk and delivery by 
+caesarean section is recommended. If wishes to continue vaginal delivery must be discussed with obstetric consultant. 
+
+ MATERNAL 
+Previous LSCS 
+Raised BMI 
+Maternal age >40years 
+Other obstetric complication in 
+previous or current pregnancy Management of Breech Presentation and ECV (RSCH PRH only ) MP046 
+ 
+Univer sity Hospitals Sussex NHS Trust East Page 26 of 29 
+
+Information for pregnant women and people regarding potential change in birth plans: 
+There may be situations where the agreed birthing plans will need to change: 
+- If opting for caesarean section, if the baby has turned cephalic at the time of the planned caesarean 
+date, the procedure should be cancelled and a further discussion for birth planning / vaginal delivery. 
+- If you have a planned caesarean booked but you go into spontaneous labour then you should call to 
+the department where they will invite you in for a caesarean as an emergency procedure 
+- If opting for vaginal breech, please be aware that in some circumstances (fetal distress and / or staff 
+competency, poor progression) it will not be appropriate to facilitate safe vaginal birth and you will be 
+advised to have an emergency caesarean. 
+- 
+Declaration of 
+Staff member name and grade: 
+I have provided the information relative to breech delivery and the recommended options. I have provided 
+an information leaflet. The above documentation in representative of the discussions and birth plan 
+ 
+Pregnant woman / person 
+I feel fully informed of the regarding breech birth options and I understand the benefits and risks for both 
+options. 
+My birth choice is vaginal breech / elective caesarean (delete as appropriate). 
+I am aware that I can change my birth preference at any point and can contact ……………………………… ………. . 
+in the event of this. 
+
+ Summary of discussion / final plan / deviation from usual guidance 
+ Management of Breech Presentation and ECV (RSCH PRH only ) MP046 
+ 
+Univer sity Hospitals Sussex NHS Trust East Page 27 of 29 
+ Breech Decision Making Tool and Consent (Labour) 
+ 
+NB: the numbers quoted are for ’planned’ vaginal breech birth and ‘planned’ caesarean. 
+Risks for unplanned vaginal breech and emergency caesarean are both increased 
+Individual risk assessment must be quickly undertaken. 
+ 
+ Y / N Discussion / Decision 
+We have discussed the risk of perinatal mortality for breech delivery : 
+- 0.5/1000 with caesarean section after 39+0 weeks of gestation; 
+- 2.0/1000 with planned vaginal breech birth 
+- 1.0/1000 with planned cephalic birth 
+We have discussed vaginal breech birth 
+ - Increased risk of perinatal mortality (as above) 
+- Increased risk of low Apgar scores and serious short -term 
+complications, (no increase the risk of long -term morbidity) 
+- Maternal complications are least with successful vaginal birth, 
+highest with emergency caesarean section 
+- Advise delivery in an obstetric unit with continuous fetal 
+monitoring in labour 
+- Level of skill and competency in safe delivery of vaginal breech 
+is variable on each shift – explain the current availability 
+We have discussed caesarean section 
+- - reduction in perinatal mortality compared with vaginal breech 
+delivery 
+- increase in immediate complications for the mother compared 
+with planned vaginal birth 
+(infection, bleeding, VTE) 
+- Increased risk of complications in future pregnancy 
+(VBAC, complications at repeat caesarean section, abnormally invasive 
+placenta, slightly increased risk of stillbirth) 
+ 
+Individual Risk Assessment 
+FETAL 
+ Hyperextended neck on ultrasound 
+High estimated fetal weight (more than 
+3.8 kg). 
+Low estimated weight (less than tenth 
+centile). 
+ Footling presentation. 
+Evidence of antenatal fetal 
+compromise. 
+ 
+If any risk factor is identiﬁed, planned vaginal birth is likely to be associated with increased perinatal risk 
+and delivery by caesarean section is recommended. 
+Caesarean should be recommended for a unplanned vaginal breech presenting in the first stage of labour, 
+but not in the rapidly progressing second stage of labour 
+ MATERNAL 
+Previous LSCS 
+Raised BMI 
+Maternal age >40years 
+Other obstetric complication in 
+previous or current pregnancy 
+Slow progress of labour thus far 
+or in first (latent) phase Management of Breech Presentation and ECV (RSCH PRH only ) MP046 
+ 
+Univer sity Hospitals Sussex NHS Trust East Page 28 of 29 
+ Appendix D: Breech PROMPT Card 
+ 
+Management of Breech Presentation and ECV (RSCH PRH only ) MP046 
+ 
+Univer sity Hospitals Sussex NHS Trust East Page 29 of 29 
+ Appendix E: Breech delivery profor ma

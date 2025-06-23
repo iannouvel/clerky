@@ -1,0 +1,644 @@
+# Extracted from: CG1134 Postnatal Care.pdf
+# Guideline ID: cg1134-postnatal-care
+# Content length: 33367 characters
+# Processing date: 1750066900.0244102
+
+CG1134 Postnatal Care Guideline v6.1 August 2023 
+Please check against the intranet that this printout is the most recent version of this document. Postnatal Care Guideline 
+Summary statement: How does the 
+document support patient care? By providing evidence based guidance for staff caring for 
+postnatal women and people and newborn babies 
+Staff/stakeholders involved in 
+development: 
+ Leads for Matern ity Risk Management (Obstetric and 
+Midwifery), Labour Ward Leads (Obstetric and Midwifery), 
+Joint Obstetric Guidelines Group 
+Division: Women and Child rens 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Community Team Leader and CNS T Midwife 
+For use by: All UH Sussex (SRH & WH) Medical and Midwifery staff 
+involved in the care of postnatal women and people and their 
+babies 
+Purpose: To provide clear evidence -based guidance on planning and 
+providing postnatal care. 
+This document supp orts: NICE NG194 Postnatal Care 2021 
+Key related documents: UH Sussex (SRH&WH) Maternity Guidelines: CG1129 
+Guideline fo Newborn Feeding , CG1150 Support for Parents 
+Guideline , Perinatal Mental Health CG12031 Guideline on 
+Safe Sleeping of Babies and Reducing the Risk of Sudden 
+Infant Death 
+Approved by: Joint Obstetric Guid eline Group 
+Approval date: 16th August 2023 Date uploaded: 21st August 2023 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable – Divisional Ratification only required 
+Ratification Date: Not Applicable – Divisional Ra tification only required 
+Expiry Date: August 2024 
+Review date: February 2024 
+If you require this document in another format such as Braille, large print, audio or 
+another language please contact the Trusts Communications Team 
+Reference Number: CG1134 
+
+CG1134 Postnatal Care Guideline v6.1 August 2023 
+Please check against the intranet that this printout is the most recent version of this document. 
+
+ Version Date Author Status Comment 
+1.0 November 2010 Community Team 
+Leader and CNST 
+Midwife Archived New Trustwide guideline 
+2.0 February 2011 CNST Lead Midwife Archived Administrative update 
+3.0 October 2012 CNST Midwife Archived Clarity included re garding 
+coordinating health care 
+professional for complicated 
+cases 
+3.1 November 2013 CNST Midwife Archived 3 year update -minor 
+amendments 
+4.0 June 2017 Midwifery Matron - 
+Community Archived Triannual Review and update 
+5.0 September 2019 Postnatal ward 
+manager Archived Out of area discharge process 
+reviewed and clarified. Addition 
+of PN ward discharge checklist 
+for parents. 
+6.0 August 2021 J. Collard, Clinical 
+Effectiveness 
+Support Midwife Archived Triannual review and updated in 
+line with NICE NG194 Postnatal 
+Care 2021 
+Information to be given to 
+women and people updated. 
+Red flag symptoms added. ICON 
+added. Discharge process to 
+community and health visitor 
+clarified. 
+6.1 August 2023 CE Team LIVE All babies should have their 
+temperature taken and recorded 
+prior as part of the discharge 
+check prior to discharge from the 
+postnatal ward. 
+CG1134 Postnatal Care Guideline v6.1 August 2023 
+Please check against the intranet that this printout is the most recent version of this document. 
+ 
+Contents 
+
+1.0 Aim ................................ ................................ ................................ ............................. 4 
+2.0 Scope ................................ ................................ ................................ ......................... 4 
+3.0 Responsibilities ................................ ................................ ................................ ........... 4 
+4.0 Abbreviations used within this guideline ................................ ................................ ...... 4 
+5.0 Postnatal care planning & documentation ................................ ................................ ... 4 
+6.0 Mater nal and birthing parent postnatal care ................................ ................................ 5 
+6.1 Perineal healing assessment and advice ................................ ................................ ... 6 
+6.2 Lochia after birth ................................ ................................ ................................ ........ 7 
+6.3 In patient care ................................ ................................ ................................ ............ 7 
+6.4 Discharge to community care from hospital ................................ ................................ 8 
+6.5 Community postnatal visiting pattern ................................ ................................ .......... 8 
+6.6 Community care ................................ ................................ ................................ ......... 9 
+7.0 Baby postnatal care ................................ ................................ ................................ .... 9 
+7.1 Jaundice ................................ ................................ ................................ ................... 10 
+7.2 In patient ................................ ................................ ................................ ................... 10 
+7.3 Community care ................................ ................................ ................................ ........ 11 
+7.4 Discharge to health visitor from community midwifery care ................................ .......12 
+8.0 Reasons to continue visiting from day 10 onwards ................................ .................... 12 
+9.0 Women and people with complex needs ................................ ................................ ... 13 
+10.0 Language support ................................ ................................ ................................ ..... 13 
+11.0 Postnatal follow -up appointments ................................ ................................ .............. 13 
+12.0 Postnatal readmissions ................................ ................................ ............................. 13 
+13.0 Audit ................................ ................................ ................................ ......................... 14 
+References ................................ ................................ ................................ ........................... 14 
+Appendix 1: Out of area discharge information for women and people ................................ . 15 
+Appendix 2: Postnatal ward discharge checklist for parents ................................ ................. 16 
+
+CG1134 Postnatal Care Guideline v6.1 August 2023 
+Please check against the intranet that this printout is the most recent version of this document. 
+Postnatal Care Guidel ine 
+ 
+1.0 Aim 
+ 
+The aim of the guideline is to provide clear guidelines for all staff involved in planning and 
+providing postnatal care. 
+ 
+2.0 Scope 
+ 
+This guideline applies to all staff caring for postnatal women and people and their babies. 
+ 
+3.0 Responsibil ities 
+ 
+Midwives, maternity support workers, maternity care assistants & obstetricians: 
+ To access, read, understand and follow this guidance. 
+ To use their professional judgement in application of this guideline. 
+ This guidance is for staff employed by UH Sus sex (SRH &WH). The guidance is 
+not rigid and should be tailored to the individual circumstances of each woman and 
+person . If the guidance is not being followed, documentation of the reasoning 
+and/or justification is essential, with clear documentation of a lternative plans and 
+discussions. 
+ 
+Management: 
+ To ensure the guideline is reviewed as required in line with Trust and National 
+recommendations. 
+ To ensure the guideline is accessible to all relevant staff. 
+ 
+4.0 Abbreviations used within this guideline 
+ 
+MIS - Maternity Information System eg 
+BadgerNet NIPE - Newborn and Infant Physical 
+Examination 
+VTE - Venous Thromboembolism MEOWs - Modified Early Obstetric Warning 
+Score 
+ 
+5.0 Postnatal care planning & documentation 
+ 
+ Postnatal care should be a continuation of the care the woman and person 
+received during their pregnancy, labour and birth irrespective of location. 
+ An individualised plan of care should be documented on MIS , includi ng a risk 
+assessment at arrival on th e postnatal ward and on discharge to the community. 
+ This plan should be developed by the midwife with the woman and person and 
+reviewed at each contact. 
+ Any referrals should be on MIS. 
+CG1134 Postnatal Care Guideline v6.1 August 2023 
+Please check against the intranet that this printout is the most recent version of this document.  It is the re sponsibility of the midwife and other health workers to document on MIS 
+all discussions at each contact and ensure the woman and person and their family 
+understand the information being given. Regular opportunities should be provided 
+for them to ask questions, and enough time should be set aside to discuss any 
+concerns. 
+ 
+When planning care and performing postnatal assessments, be aware that the MBRRACE -
+UK 2020 report on maternal and perinatal mortality showed that women and people and 
+babies from some minority ethnic backgrounds and those who live in deprived areas, have 
+an increa sed risk of death and may need closer monitoring. The reports showed that: 
+ 
+ Compared with white women and people (8 per 100,000), the risk of maternal 
+death during pregnancy and up to 6 weeks after birth is: 
+o 4 times higher in black women and people (34 pe r 100,000). 
+o 3 times higher in mixed ethnicity women and people (25 per 100,000). 
+o 2 times higher in Asian women and people (15 per 100,000; does not include 
+Chinese women and people ). 
+ The neonatal mortality rate is around 50% higher in black and Asian babie s 
+compared with white babies (17 compared with 25 per 10,000). 
+ Women and people living in the most deprived areas are more than 2.5 times more 
+likely to die compared with those living in the least deprived areas (6 compared 
+with 15 per 100,000). 
+ The neonat al mortality rate increases according to the level of deprivation in the 
+area the mother and person lives in, with almost twice as many babies dying in the 
+most deprived areas compared with the least deprived areas (12 compared with 22 
+per 10,000). 
+ 
+6.0 Maternal and birthing parent postnatal care 
+ 
+The following issues should be discussed at each postnatal contact: 
+ 
+ Emotional and psychological wellbeing, including emotional attachment to the 
+baby. Where infant attachment problems are identified, families sho uld be referred 
+to community based services designed to improve the relationship. 
+ Support network to be discussed/acknowledged at each appointment. 
+ Safer infant sleeping. 
+ Identification of any new risk factors. 
+ Be given the opportunity to discuss their bir th with a midwife. All women and 
+people should be given information on the ‘Birth Afterthoughts’ (also know n as 
+Birth Stories ) service, which provides access to a counselling service. 
+ 
+Ask the woman and person about their general health and whether they have any concerns, 
+and assess t heir general wellbeing. Discuss topics that may be affecting their daily life, and 
+provide information, reassurance and further care as appropriate. Topics to discuss may 
+include: 
+ 
+CG1134 Postnatal Care Guideline v6.1 August 2023 
+Please check against the intranet that this printout is the most recent version of this document.  The postnatal period and what to expect. 
+ Symptoms and signs of potential p ostnatal mental health problems and how to 
+seek help. 
+ Symptoms and signs of potential postnatal physical problems and how to seek 
+help. 
+ The importance of pelvic floor exercises, how to do them and when to seek help. 
+ Fatigue. 
+ Factors such as nutrition and diet, physical activity, smoking, alcohol consumption 
+and recreational drug use. 
+ Contraception. 
+ Sexual intercourse. 
+ Safeguarding concerns, including domestic abuse. 
+ 
+All women and people should be signposted to the Wellbeing and Exercise in Pregnancy 
+Programme (WEPP) which also has resources suitable for the postnatal period. Postnatal 
+exercise videos can be used from 6 -8 weeks after the birth as long as the individual is 
+medically fit and well. Additional resources may be helpful prior to this: 
+https://sussexlmns.org/wepp 
+ 
+Assess the woman and person's physical health, including the following: 
+ 
+ Symptoms and signs of infection. 
+ Pain. 
+ Vaginal discharge and bleeding. 
+ Bladder function. 
+ Bowel function. 
+ Nipple and breast discomfort and symptoms of inflammation. 
+ Symptoms and signs of thromboembolism. 
+ Symptoms and signs of anaemia. 
+ Symptoms and signs of pre -eclampsia. 
+ Perineal healing for women and people who have had a vaginal birth. 
+ Wound healing for women and peop le who have had a caesarean birth. 
+ Symptoms of wound infection. 
+ 
+All healthcare professionals should ensure appropriate referral if there are concerns about 
+the woman and person's health. 
+ 
+Within 24 hours of birth, or before leaving after a homebirth, ens ure the woman and person is 
+aware page ‘Potential Serious Health Conditions in women’ in the Postnatal Book on MIS. If 
+any of these occur, they should be aware seek medical advice wi thout delay. 
+ 
+6.1 Perineal healing assessment and advice 
+ 
+At each postnatal contact ask the woman and person if they have any concerns and ask 
+about: 
+CG1134 Postnatal Care Guideline v6.1 August 2023 
+Please check against the intranet that this printout is the most recent version of this document. 
+ Pain not resolving or worsening. 
+ Increasing need for pain relief. 
+ Discharge that has a strong or unpleas ant smell. 
+ Swelling. 
+ Wound breakdown. 
+ 
+Advise the woman and person about the importance of good perineal hygiene, including daily 
+showering of the perineum, frequent changing of sanitary pads, and hand washing before 
+and after doing this. 
+ 
+If the perineal wound breaks down or there are ongoing healing concerns, refer the woman 
+and person urgently into the maternity unit (to be seen the same day in the case of a perineal 
+wound breakdown). 
+ 
+6.2 Lochia after birth 
+ 
+Discuss with women and person what vaginal bl eeding to expect after the birth (lochia), and 
+advise them to seek medical advice if: 
+ 
+ The vaginal bleeding is sudden or very heavy. 
+ The bleeding increases. 
+ They pass clots, placental tissue or membranes. 
+ They have symptoms of possible infection, such as abdominal, pelvic or perineal 
+pain, fever, shivering, or vaginal bleeding or discharge has an unpleasant smell. 
+ They have concerns about vaginal bleeding after the birth. 
+ 
+If a woman and person seeks medical advice about vaginal bleeding after the birth, a ssess 
+the severity, and be aware of the risk factors for postpartum haemorrhage. ( See CG12029 
+PPH guideline ) 
+ 
+Be aware that anaemia and weight at booki ng appointment of less than 50kg may worsen 
+the consequences of secondary postpartum haemorrhage. 
+ 
+6.3 In patient care 
+ 
+ Women and people receiving midwifery led care should have at least one set of 
+complete observations once every shift (every 12 hours). 
+ Assessment of maternal and birthing parent wellbeing should be undertaken and 
+documented at least once every 24 hours. 
+ Where a woman and person requires observations for a required period (as per 
+individualised plan), ensure these are completed as per plan, and have been 
+reviewed as satisfactory prior to considering discharge. 
+ A woman and person may be supported by their partner in the postnatal period. 
+Involve them according to the woman and person's wishes. 
+CG1134 Postnatal Care Guideline v6.1 August 2023 
+Please check against the intranet that this printout is the most recent version of this document.  The obstetric team should carry out a daily ward round on the Postnatal Ward and 
+review all ‘high risk’ postnatal women and people. Any concerns should be 
+escalated to a senior obstetrician. 
+ Women and people requiring referral to other specialists should be informed and a 
+referral arranged as soon as po ssible. 
+ 
+6.4 Discharge to community care from hospital 
+ 
+ Offer each woman and person a ward discharge checklist to facilitate 
+communication around the discharge process (see appendix 2 ). This is to inform 
+parents o f the process and the required steps before discharge can take place. 
+ Complete Transfer of Care form on MIS . 
+ Check the woman and person knows how to contact a midwife if they have any 
+concerns when home . Check the woman and person still has access to the 
+Emergency Contact Card given at their Booking Appointment . This has the Triage 
+number on the front and the woman and person’s community midwifery teams 
+contact number on the revers. Give out a new card if needed. 
+ For women and people discharged to a different health authority, an information 
+sheet with local contact numbers should be provided (see appendix 1 ). 
+ Prior to discharge home, midwives should document on MIS that the woman and 
+person has been advised that postnatal adv ice can be accessed on MIS. 
+ 
+It is the responsibility of the postnatal ward staff to ensure that the community teams are 
+aware of all discharges. The discharge spreadsheet should be completed with all relevant 
+information and out of are a discharges documented on the spreadsheet, and emailed out to 
+the relevant out of area community team. 
+ 
+ Any outstanding results should be checked prior to discharge. If no result available 
+and the woman and person are assessed at fit to be discharged to t he community 
+midwives without results, ensure this is documented on the discharge spreadsheet 
+for community midwives to follow -up and ask the woman and person to contact 
+Triage to check results. 
+ If the mother and birthing parent and baby are not going home to the same 
+address, for example when a baby is going to a foster placement, then it is the 
+discharging midwife’s responsibility to ensure that there are clear instructions as to 
+what address the mother and person and the baby are being discharged to. 
+ The newborn screening coordinator should also be advised to ensure that the 
+Hearing screening, NIPE and Newborn Bloodspot are all completed. 
+
+6.5 Community postnatal visiting pattern 
+ 
+The process for postnatal visiting following discharge from hospital shou ld be discussed with 
+the woman and person and documented on MIS . 
+ 
+As a minimum this should be : 
+CG1134 Postnatal Care Guideline v6.1 August 2023 
+Please check against the intranet that this printout is the most recent version of this document. 
+ Midwife visit following day after discharge. 
+ Midwife and/or Maternity support worker by day 5 to offer Newborn Hearing 
+Screening, baby weight and Newborn Bloodspot Screening. 
+ Midwife discharge visit for final review and baby weight (if clinically indicated). This 
+appointment may be at a Postnatal Discharge Clinic or at home and can be up to 
+day 20 for low risk women and people with no concerns regarding weight gain for 
+the baby. 
+ 
+Other postnatal visits by the midwife or the maternity support worker will be arranged at the 
+discretion of the midwife/maternity support worker and in discussion with th e woman and 
+person. 
+ 
+6.6 Community care 
+ 
+ On the first day home the community midwife must undertake a full set of 
+maternal observations and again at final point of contact. This shoul d be record ed 
+on MIS . 
+ At the first community postnatal midwife contact, remind women and people again 
+of the page ‘Potential Serious Health Conditions in women’ in the Postnatal Book 
+on MIS. If any of these occur, they should seek medical advice without delay. 
+ Check the woman and person is aware of the ‘Recovery from a Spinal or Epidural’ 
+leaflet on MIS . 
+ 
+7.0 Baby postnatal care 
+ 
+Within 24 of birth parents/carers of the baby should be signposted to Lullabytrust - Baby 
+check guidance on MIS to help them assess whether their baby is unwell. Safe sleeping and 
+safe sleeping products should also be discussed, parents should be shown where nearest 
+poster is on the ward which discusses the do’s and don’ts. These should be discusses again 
+as part of the Discharge Talk. 
+ 
+All maternity staff involved in postnatal care should recognise the following as ‘red flags’ for 
+serious illness in young babies: 
+
+Red Flags for serious illness in young babies 
+ Appearing ill to a healthcare professio nal. 
+ Appearing pale, ashen, mottled or blue 
+(cyanosis). 
+ Unresponsive or unrousable. 
+ Having a weak, abnormally high -pitched 
+or continuous cry. 
+ Abnormal breathing pattern, such as  Non-blanching rash. 
+ Bulging fontanelle. 
+ Neck stiffness. 
+ Seizures. 
+ Focal neurological signs. 
+ Diarrhoea associated with dehydration. 
+ Frequent forceful (projectile) vomiting. 
+CG1134 Postnatal Care Guideline v6.1 August 2023 
+Please check against the intranet that this printout is the most recent version of this document. grunting respirations, increased 
+respiratory rate (over 60 per min), chest 
+indrawing. 
+ Temperature of 38°C or over or under 
+36°C.  Bilious vomiting (green or yel low-green 
+vomit). 
+
+If a baby is thought to be seriously unwell based on a ‘red flag’ or on an overall assessment 
+of their condition, arrange an immediate paediatric assessment or an appropriate emergency 
+service depending on whether the baby is in the ho spital or at home. If the baby is at home 
+and their condition is immediately life -threatening, dial 999. 
+ 
+Be aware that the presence or absence of individual symptoms or signs may be of limited 
+value in identifying or ruling out serious illness in a young baby. 
+ 
+7.1 Jaundice 
+ 
+ If there are concerns with regard to neonatal jaundice please refer to CG12035 
+Neonatal Jaundice guideline . 
+ Any baby jau ndiced within 24hrs should have immediate review with a 
+paediatrician. 
+ Any baby jaundiced within 72 hours should be referred back to the hospital for full 
+assessment and feeding plan. 
+ 
+7.2 In patient 
+ 
+ When caring for a baby, remember that those with parent al responsibility have the 
+right be involved in the baby’s care, if they choose. 
+ Babies should have (as a minimum) an assessment of wellbeing documented 
+along with a temperature once every 24 hours unless clinically indicated more 
+frequently. 
+ Within the fi rst 72 hours following birth then the baby’s age should be documented 
+in hours after that it can be recorded in days. 
+ Within 72 hours Newborn Infant Physical Examination (NIPE) should have been 
+completed and entered onto NIPE Smart. 
+ Consider re -weighing ba by if remains in hospital post day 3. 
+ If the baby requires observations for a required period (as per individualised plan), 
+ensure these are completed and have been reviewed as satisfactory prior to 
+considering discharge. CG11100 Management of risk factors for neonatal sepsis 
+including GBS 
+ All babies should have a further temperature recorded at the d ischarge check prior 
+to being discharged from the postnatal ward. 
+ Ensure a full newborn feeding assessment is performed and a plan is discussed if 
+necessary with the woman and person and documented on MIS . Prior to discharge 
+from hosp ital, feeding should be established. Refer t o CG1129 Newborn feeding 
+Guideline . 
+CG1134 Postnatal Care Guideline v6.1 August 2023 
+Please check against the intranet that this printout is the most recent version of this document.  Complete Transfer of Care form on MIS. 
+ 
+Parents sho uld be given information about: 
+ 
+ How to bathe their baby and care for their skin. 
+ Care of the umbilical stump. 
+ Check that parents are aware of the following leaflets on MIS : 
+o Off to the Best Start 
+o How to tell if breastfeed ing is going well 
+o Information on Five to Thrive. 
+As well as care of your baby in the Postnatal Booklet on MIS. 
+ Established guidance on safer sleeping (including recommendations on bed 
+sharing). CG12031 Safe sleeping of babies and reducing the risk of SIDS 
+ Confirm ICON (infant crying and how to cope ) has been received on MIS. Discuss 
+the crying curve, hope to cope and suggest comfort methods. Never shake or hurt 
+the baby, discussion of crying plan and support networks available. 
+ Reminder of safe sleeping and safe sleep products. 
+ Signpost partners and fath er’s to DadPad for further guidance and support. 
+ Maintaining a smoke -free environment for the baby. 
+ Vitamin D supplements for babies in line with the NICE guideline on vitamin D 
+supplement use. NICE - Vitamin D: supplement use in specific population groups 
+ Immunising the baby in line with PHE: Routine Childhood Immunisation Schedule . 
+ 
+7.3 Community care 
+ 
+ Parents/carers of the baby should be reminded of the signs and symptoms of 
+serious illness on first postnatal visit at home. 
+ Remind parents/carers of the Baby Check assessment tool: Lullabytrust - Baby 
+check guidance on MI S to help them assess whether their baby is unwell. 
+ Discuss ICON advice again at discharge and crying plan to be put into red book. 
+ At each postnatal contact, ask parents if they have any concerns about their 
+baby’s general wellbeing, feeding or development. Review the history and assess 
+the baby’s health, including physical inspection and observation. If there are any 
+concerns, take appropriate further action. 
+ Ensure a full newborn feeding assessment is performed and a plan is discussed if 
+necessary with the woman and person and documented on MIS . 
+ If the baby has not passed any meconium, advise the parents that if the baby does 
+not do so within 24 hours of birth, they should seek advice from a healthcare 
+professional. Be aware that if the baby has not passed meconium within 24 hours 
+of birth, this may indicate a serious disorder and requires medical advice. 
+
+CG1134 Postnatal Care Guideline v6.1 August 2023 
+Please check against the intranet that this printout is the most recent version of this document. 7.4 Discharge to health visitor from community midwifery care 
+ 
+ Whooley Questions should be asked o n transfer to the Health Visitor or before if 
+there are concerns about the woman and person ’s psychological wellbeing. 
+Referral to perinatal mental health services should be made if appropriate. 
+ A complete set of observations should be undertaken on the d ay the woman and 
+person is discharged from midwifery care. 
+ 
+On discharge on MIS, the mi dwife should ensure the following information is on MIS for 
+mother and birthing parent, and in Red Book (Personal child health record) for baby to 
+handover to the health visitor : 
+ 
+ The pregnancy, birth, postnatal period and any complications. 
+ The plan of ongoing care, including any condition that needs long -term 
+management. 
+ Problems related to previous pregnancies that may be relevant to current care. 
+ Previous or current mental health concerns. 
+ Female genital mutilation (mother or birthing parent or previous child). 
+ Who has parental responsibility for the baby, if known. 
+ The woman and person ’s next of kin. 
+ Safeguarding issues. 
+ Concerns about the woman and person’s health and care, rais ed by them, their 
+partner or a healthcare professional. 
+ Concerns about the baby’s health and care, raised by the parents or a healthcare 
+professional. 
+ The baby’s feeding. 
+ 
+8.0 Reasons to continue visiting from day 10 onwards 
+ 
+The midwife does have a profes sional responsibility to continue postnatal visits beyond day 
+10 if indicated. Reasons for this include: 
+ 
+ Safeguarding concerns. 
+ Infant feeding concerns and weight loss. 
+ Neonatal Jaundice. 
+ Perineal/wound infection/breakdown. 
+ Emotional support. 
+ Unstable hyp ertension. 
+ Following readmission. 
+ If newborn hearing screen has not yet been offered or completed. 
+ 
+Professional judgement is required if further visits are required and document reason. It is 
+important to liaise with health visitor/practice nurses/GP in o rder to maintain effective 
+communication. 
+ 
+CG1134 Postnatal Care Guideline v6.1 August 2023 
+Please check against the intranet that this printout is the most recent version of this document. 
+9.0 Women and people with complex needs 
+ 
+ Women and people with multidisciplinary/multiagency needs require a named 
+coordinating health professional. By default these women and people have 
+complex needs and as suc h may have more than one involved health professional. 
+ This could be the continuation of the antenatal health professional such as 
+safeguarding, Young Parents or vulnerable in Pregnancy Midwife or it could be the 
+named Consultant for the women with comple x medical needs. 
+ However in the postnatal period the roles of the involved health professionals may 
+change through multidisciplinary care planning. 
+ Postnatally the lead / coordinating health professional should be documented in 
+the health record to ensur e optimal communication. 
+ Where there are noteworthy medical or social issues these must be documented 
+on MIS. 
+ 
+10.0 Language support 
+ 
+For providing help for patients requiring language support, staff can access interpreting 
+services by opening this this link: 
+ 
+Interpretation & Translation Toolkit 
+
+11.0 Postnatal follow -up appointments 
+ 
+Follow up appointments should be arranged as documented in the plan made by the on -call 
+obstetrician in the debrief with the woman and person followi ng birth. 
+
+12.0 Postnatal readmissions 
+ 
+ All women and people who are re -admitted to hospital within 6 weeks postnatally 
+should be reviewed by the Obstetric Registrar on labour ward. 
+ A Datix incident report is required for all mothers/people and babies readmitted to 
+hospital. 
+ A clinical assessment should take place using the Maternity MEOWS and VTE 
+assessment. 
+ Any required referrals should take place in a timely manner and be documented on 
+MIS. 
+ A letter should be sent to the patients GP informing them of the reason for re -
+admission. 
+CG1134 Postnatal Care Guideline v6.1 August 2023 
+Please check against the intranet that this printout is the most recent version of this document. 13.0 Audit 
+ 
+ Women and people or main carer s of babies are advised, within 24 hours of the 
+birth, of the symptoms and signs of serious illness in the baby that require them to 
+contact emergency services. 
+ 
+ Women and people are advised at the first postnatal midwife contact, of the 
+symptoms and signs of potentially serious conditions that require them to see 
+medical advice without delay. 
+ 
+ Women and people, their partner or main carers of babies have discussions with 
+their healthcare professional about safer bed -sharing practices. 
+ 
+ Women and people rec eive breastfeeding support from a service that uses an 
+evaluated, structured programme. 
+ 
+ Information about bottle feeding is discussed with women and people or main 
+carers of formula -fed babies. 
+ 
+ Women and people have an assessment of their emotional wellb eing, including 
+bonding with their baby, at each postnatal contact. 
+ 
+(NICE QS32 Postnatal care April 2021 ) 
+
+References 
+ 
+National Institute for Health and Clinical Excellence (2006) Postnatal care up t o 8 weeks after 
+birth. London: NICE https://www.nice.org.uk/guidance/cg37 
+ 
+Department of Health (2007). Maternity Matters: Choice, Access and Continuity of Care in a 
+safe service. London www.dh.gov.uk 
+ 
+Department of Health (2004). Maternity Standard, National Framework for Children, Young 
+People and Maternity Services. London. www.dh.gov.uk 
+ 
+NICE 2021 Postnatal Quality Standar ds NICE QS32 Postnatal care April 2021 
+ 
+NICE 2021 NICE194 Postnatal Care 2021 
+
+CG1134 Postnatal Care Guideline v6.1 August 2023 
+Please check against the intranet that this printout is the most recent version of this document. 
+Appendix 1: Out of area discharge information for women and peopl e 
+Discharge information for women and people 
+Transferring to community postnatal care out of area 
+Congratulations on the birth of your baby, now you are going home please be aware of the 
+following: 
+ A midwife from your local area should see you on your fir st day home, this maybe at 
+your home or in a local centre. If they have not made contact by 3pm on your first 
+day home please call your local hospital (numbers below). If you cannot get in touch 
+with your local community midwife, call us on 01903 285269 so that we can help 
+you. 
+ Within the first 3 days from birth your baby will have had their Newborn Examination 
+undertaken by either a specially trained midwife or a paediatrician. This may have 
+been done in hospital before you left. 
+ A hearing screening appo intment should be made for you prior to discharge from the 
+ward. 
+ You will be offered a screening test for your baby on day 5; a Newborn Blood Spot 
+Test (a small heel prick blood test). 
+ 
+There is information regarding all of the screening tests within the b ooklet “ Screening Tests 
+for You and Your Baby”: 
+https://www.gov.uk/government/publications/screening -tests -for-you-and-your-baby -
+descriptio n-in-brief 
+ 
+BSUH 01273 664793 
+ 
+ESHT 01737 23 1764 
+ 
+PRH 01444 448608/ 01444 441881 
+ 
+QA 02380540777 
+ 
+CG1134 Postnatal Care Guideline v6.1 August 2023 
+Please check against the intranet that this printout is the most recent version of this document. 
+Appendix 2: Postnatal ward discharge checklist for parents 
+Do not print from guideline

@@ -1,0 +1,577 @@
+# Extracted from: BJOG - 2017 -  External Cephalic Version and Reducing the Incidence of Term Breech Presentation.pdf
+# Guideline ID: bjog-2017-external-cephalic-version-and-reducing-the-incidence-of-term-breech-presentation
+# Content length: 49010 characters
+# Processing date: 1732953490.757032
+
+External Cephalic Version and Reducing
+the Incidence of Term Breech Presentation
+Green-top Guideline No. 20a
+March 2017
+Please cite this paper as: Impey LWM, Murphy DJ, Grifﬁths M, Penna LK on behalf of the Royal College of Obstetricians
+and Gynaecologists. External Cephalic Version and Reducing the Incidence of Term Breech Presentation. BJOG 2017 ; 124:
+e178 –e192.
+DOI: 10.1111/1471-0528.14466
+External Cephalic Version and Reducing the Incidence of Term Breech
+Presentation
+This is the second edition of this guideline originally published in 2006.
+Executive summary of recommendations
+External cephalic version (ECV)
+How effective is ECV in preventing noncephalic birth?
+Women should be informed that the success rate of ECV is approximately 50%.A
+Women should be informed that after an unsuccessful ECV attempt at 36+0weeks of gestation
+or later, only a few babies presenting by the breech will spontaneously turn to cephalicpresentation. [ New 2017 ]B
+Women should be informed that few babies revert to breech after successful ECV. [ New 2017 ]B
+Women should be informed that a successful ECV reduces the chance of caesarean section.A
+Does ECV affect the outcome of labour?
+Women should be informed that labour after ECV is associated with a slightly increased rate of
+caesarean section and instrumental delivery when compared with spontaneous cephalicpresentation.B
+Can the success of an ECV attempt be predicted?
+ECV success can be predicted to some extent, but the use of models to predict success shouldnot be used routinely to determine whether ECV can be attempted. [ New 2017 ]B
+What methods can be used to improve the success rate of ECV?
+Use of tocolysis with betamimetics improves the success rates of ECV.A
+Routine use of regional analgesia or neuraxial blockade is not recommended, but may be
+considered for a repeat attempt or for women unable to tolerate ECV without analgesia.[New 2017 ]B
+RCOG Guideline No. 20a e179 of e192 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14466 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+When should ECV be offered?
+ECV should be offered at term from 37+0weeks of gestation.B
+In nulliparous women, ECV may be offered from 36+0weeks of gestation./check
+What are the contraindications to ECV?
+There is no general consensus on the eligibility for, or contraindications to, ECV.C
+Women should be informed that ECV after one caesarean delivery appears to have no greater
+risk than with an unscarred uterus. [ New 2017 ]C
+What are the risks of ECV?
+Women should be counselled that with appropriate precautions, ECV has a very low
+complication rate.B
+What measures are appropriate to ensure fetal safety?
+ECV should be performed where facilities for monitoring and surgical delivery are available./check
+The standard preoperative preparations for caesarean section are not recommended forwomen undergoing ECV./check
+Following ECV, EFM is recommended./check
+Women undergoing ECV who are D negative should undergo testing for fetomaternalhaemorrhage and be offered anti-D. [ New 2017 ]D
+Who should perform ECV?
+ECV should only be performed by a trained practitioner or by a trainee working under direct
+supervision. [ New 2017 ] /check
+How acceptable is ECV to women?
+Although most women tolerate ECV, they should be informed that ECV can be a painful
+procedure.C
+How could the uptake of ECV be increased?
+The uptake of ECV is best increased by timely identi ﬁcation of the baby presenting by the
+breech and provision of evidence-based information.C
+RCOG Guideline No. 20a e180 of e192 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14466 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+How can an ECV service be developed and audited?
+There is no evidence to support any particular service model although larger institutions may
+consider a dedicated ECV clinic. [ New 2017 ] /check
+What is the role of non-ECV methods?
+Women may wish to consider the use of moxibustion for breech presentation at 33 –35 weeks
+of gestation, under the guidance of a trained practitioner. [ New 2017 ]C
+Women should be advised that there is no evidence that postural management alone promotes
+spontaneous version to cephalic presentation.B
+1. Purpose and scope
+External cephalic version (ECV) is the manipulation of the fetus, through the maternal abdomen, to a cephalic
+presentation. The purpose of this guideline is to describe and summarise the best evidence concerning methods toprevent noncephalic presentation at delivery and therefore, caesarean section and its sequelae. The evidenceconcerning mode and technique of the delivery of breech presentation is summarised in the Royal College ofObstetricians and Gynaecologists (RCOG) Green-top Guideline No. 20b Management of Breech Presentation .
+1
+2. Introduction and background epidemiology
+Breech presentation complicates 3 –4% of term deliveries and is more common in nulliparous women and in preterm
+deliveries. Following the publication of the Term Breech Trial,2there was a signiﬁcant decrease in the number of
+women undergoing vaginal breech birth.3In many countries, including the UK, planned vaginal breech birth remains
+rare and attempts to prevent breech presentation at delivery remain important.
+3. Identi ﬁcation and assessment of evidence
+This guideline was developed using standard methodology for developing RCOG Green-top Guidelines. The
+Cochrane Library (including the Cochrane Database of Systematic Reviews, the Database of Abstracts of Reviews ofEffects [DARE] and the Cochrane Central Register of Controlled Trials [CENTRAL]), EMBASE, MEDLINE and Tripwere searched for relevant papers. The search was inclusive of all relevant articles published between August 2005and April 2016. The databases were searched using the relevant Medical Subject Headings (MeSH) terms, including allsubheadings and synonyms, and this was combined with a keyword search. Search terms included ‘breech’, ‘breechnear presentation’, ‘breech presentation’, ‘breech near delivery’, ‘breech delivery’, ‘breech presentation and delivery’,‘breech near extraction’, ‘breech extraction’, ‘Mauriceau-Smellie-Veit’, ‘Burns-Marshall’, ‘after-coming head’ and‘external cephalic version’. The search was limited to studies on humans and papers in the English language. Relevantguidelines were also searched for using the same criteria in the National Guideline Clearinghouse and the NationalInstitute for Health and Care Excellence (NICE) Evidence Search.
+Where possible, recommendations are based on available evidence. Areas lacking evidence are highlighted and
+annotated as ‘good practice points’. Further information about the assessment of evidence and the grading ofrecommendations may be found in Appendix I.
+RCOG Guideline No. 20a e181 of e192 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14466 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+4. External cephalic version (ECV)
+4.1 How effective is ECV in preventing noncephalic birth?
+Women should be informed that the success rate of ECV is approximately 50%.A
+Women should be informed that after an unsuccessful ECV attempt at 36+0weeks of gestation
+or later, only a few babies presenting by the breech will spontaneously turn to cephalicpresentation.B
+Women should be informed that few babies revert to breech after successful ECV.B
+Women should be informed that a successful ECV reduces the chance of caesarean section.A
+A systematic review of eight trials including 1308 women demonstrated that ECV at term reduces
+noncephalic presentation at delivery (RR 0.42, 95% CI 0.29 –0.61).4Evidence
+level 1 ++
+Success rates of ECV vary, but in a large series, 47% of women following an ECV attempt had a cephalic
+presentation at birth.5Overall success levels are greater for multiparous women (60%) than for nulliparous
+women (40%).6
+Spontaneous version from breech to cephalic is unusual at term7and occurs in only 8% of primigravid
+women after 36 weeks of gestation.8Where ECV at term has been unsuccessful, two large series9,10
+demonstrated that only 3 –7% of babies will spontaneously turn to cephalic presentation. Spontaneous
+reversion to breech after a successful ECV is rare, occurring in only 3% in the largest of the series thatassessed this.
+10Evidence
+level 2 +
+A systematic review demonstrated that attempting ECV at term reduces the chance of caesarean section
+(RR 0.57, 95% CI 0.40 –0.82).4Evidence
+level 1 ++
+4.2 Does ECV affect the outcome of labour?
+Women should be informed that labour after ECV is associated with a slightly increased rate of
+caesarean section and instrumental delivery when compared with spontaneous cephalicpresentation.B
+In a systematic review of three cohort and eight case –control studies, de Hundt et al.11concluded that even after
+successful ECV, women remained at increased risk of caesarean delivery (when compared with babies that havebeen cephalic) for both obstructed labour (OR 2.2, 95% CI 1.6 –3.0) and fetal distress (OR 2.2, 95% CI 1.6 –2.9).
+There is also an increased risk of instrumental vaginal delivery (OR 1.4, 95% CI 1.1 –1.7). The risk of caesarean
+delivery may be greater with a shorter ECV to labour interval.
+12Evidence
+level 2 ++
+RCOG Guideline No. 20a e182 of e192 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14466 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+4.3 Can the success of an ECV attempt be predicted?
+ECV success can be predicted to some extent, but the use of models to predict success should
+not be used routinely to determine whether ECV can be attempted.B
+Success rates depend on multiple variables. It is likely that case selection considerably affects success rates.
+In a meta-analysis, Kok et al.13showed that multiparity (OR 2.5, 95% CI 2.3 –2.8), nonengagement of the
+breech (OR 9.4, 95% CI 6.3 –14), use of tocolysis (OR 18, 95% CI 12 –29), a palpable fetal head
+(OR 6.3, 95% CI 4.3 –9.2) and a maternal weight of less than 65 kg (OR 1.8, 95% CI 1.2 –2.6) were
+predictors for successful ECV. Other factors, such as posterior placental location (OR 1.9, 95% CI 1.5 –2.4),
+complete breech position (OR 2.3, 95% CI 1.9 –2.8) and an amniotic ﬂuid index greater than 10
+(OR 1.8, 95% CI 1.5 –2.1), are also predictors for successful ECV.14There are limited data to suggest that
+estimated fetal weight affects success rates.Evidence
+level 2 ++
+Models have been developed15,16to predict ECV success; different strategies are summarised by Leung and
+Lau.17These models are of insufﬁcient predictive value to alter practice and, given the beneﬁts and safety
+of ECV, a low probability of success should not prevent an attempt.Evidence
+level 2 +
+4.4 What methods can be used to improve the success rate of ECV?
+Use of tocolysis with betamimetics improves the success rates of ECV.A
+Routine use of regional analgesia or neuraxial blockade is not recommended, but may be
+considered for a repeat attempt or for women unable to tolerate ECV without analgesia.B
+A 2015 Cochrane review18concluded that betamimetics are the best evaluated of all tocolytics, and
+increased cephalic presentation in labour (RR 1.68, 95% CI 1.14 –2.48) and reduced the number of
+caesarean sections (RR 0.77, 95% CI 0.67 –0.88). The effect applied to both multiparous and nulliparous
+women.
+There is inadequate information comparing different betamimetic drugs on the success rates of ECV.
+Wilcox et al.,19in a systematic review of three studies (n =176), found no evidence to support the use of
+nifedipine as a tocolytic. There are insufﬁcient data to support the use of nifedipine or atosiban comparedwith betamimetics.
+18In a randomised controlled trial of 59 women, intravenous glyceryl trinitrate was
+inferior to subcutaneous terbutaline for tocolysis.20Evidence
+level 1 /C0
+Betamimetic drugs may be administered routinely, reserved for where the uterus is tense or for where a
+previous attempt without tocolysis has been unsuccessful. A signiﬁcant reduction in the incidence ofcaesarean (RR 0.33, 95% CI 0.14 –0.80) has been demonstrated with the administration of betamimetic
+drugs where a previous attempt without tocolysis has been unsuccessful.
+21Evidence
+level 1 +
+A pragmatic regimen consists of 250 micrograms of salbutamol in 25 ml of normal saline (10 micrograms/ml) by slow
+intravenous injection, or 250 micrograms of terbutaline subcutaneously.
+RCOG Guideline No. 20a e183 of e192 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14466 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Betamimetics should not be used in women with signiﬁcant cardiac disease or hypertension, and will not
+be effective in those taking beta-blockers. Maternal palpitations,20tachycardia, ﬂushing, tremor and
+occasional nausea may be experienced.Evidence
+level 3
+Regional anaesthesia requires less force22and may reduce failure rates,23–25particularly in conjunction with
+tocolysis (RR 0.61, 95% CI 0.43 –0.86).18The effect of regional anaesthesia on caesarean section rates,
+however, is less clear.26Nevertheless, previous studies of neuraxial block report wide variations in
+technique and sensory block targets;27anaesthetic doses might be more effective than analgesic doses.
+There is no evidence that complication rates of ECV are higher when regional anaesthesia has been used.25
+Regional blockade for ECV should not be used routinely, but may be considered for women unable totolerate the procedure. Some women might be helped by the use of clinical hypnosis prior to ECV.
+28Evidence
+level 2 +
+4.5 When should ECV be offered?
+ECV should be offered at term from 37+0weeks of gestation.B
+In nulliparous women, ECV may be offered from 36+0weeks of gestation./check
+Gestation (at term) does not appear to affect success rates.13There is no upper gestation limit for when
+ECV can be offered, but contraindications may be more common.Evidence
+level 2 +
+Hutton et al.,29using ECV at 34 –35+6weeks of gestation compared with 37 weeks of gestation or after,
+found a reduced rate of noncephalic presentation at birth (RR 0.81, 95% CI 0.74 –0.90), but no signiﬁcant
+effect on caesarean section rates (RR 0.92, 95% CI 0.85 –1.00). A systematic review, however, conﬁrmed a
+signiﬁcant increase in preterm births (RR 1.51, 95% CI 1.03 –2.21).30There is no clear beneﬁt to ECV prior
+to 36 weeks of gestation.Evidence
+level 1 +
+In nulliparous women who have a low chance of spontaneous version, ECV from 36+0weeks of gestation
+seems pragmatic; spontaneous version in multiparous women is more common.7Evidence
+level 2 +
+There is a paucity of data on intrapartum ECV, but success has been reported.31,32Intrapartum ECV may
+be considered if informed consent is possible, providing the membranes are intact and no contraindicationsexist (see section 4.6).Evidence
+level 3
+With an unstable lie, ECV is reasonable in the course of a stabilising induction. There are limited data on this
+procedure, but potential risks include cord prolapse, transverse lie in labour and fetal heart rate abnormalities. ECVshould only be performed if there is a valid indication for induction.
+4.6 What are the contraindications to ECV?
+There is no general consensus on the eligibility for, or contraindications to, ECV.C
+Women should be informed that ECV after one caesarean delivery appears to have no greater
+risk than with an unscarred uterus.C
+RCOG Guideline No. 20a e184 of e192 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14466 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+There is limited evidence concerning contraindications for ECV. Only placental abruption, severe pre-
+eclampsia, and abnormal fetal Doppler or cardiotocography (CTG) are supported by any evidence.33
+ECV is contraindicated where an absolute reason for caesarean section already exists (e.g. placenta praeviamajor). It is generally considered to be contraindicated in a multiple pregnancy (except after delivery of aﬁrst twin), where there is rhesus isoimmunisation, current or recent (less than 1 week) vaginal bleeding,abnormal electronic fetal monitoring (EFM), rupture of the membranes, or where the mother declines oris unable to give informed consent. ECV should be performed with additional caution where there isoligohydramnios or hypertension.
+33Evidence
+level 4
+The role of ECV with a previous caesarean section has been controversial. The largest analysis compared
+70 ECVs performed in women with previous caesarean section with 387 ECVs performed in othermultiparous women
+34and concluded that ECV is safe and successful in women with one previous
+caesarean delivery as with other multiparous women. In this series, and in another prospective series, nocomplications and no cases of uterine rupture were reported in the previous caesarean section cohort.
+10
+There are insufﬁcient numbers to determine the low risk of uterine rupture.Evidence
+level 2 +
+4.7 What are the risks of ECV?
+Women should be counselled that with appropriate precautions, ECV has a very low
+complication rate.B
+Although case reports of placental abruption and large fetomaternal haemorrhage exist, complications
+associated with ECV are very rare. In a 2015 Cochrane systematic review, Hofmeyr et al.4reported no
+signiﬁcant differences in Apgar scores of less than 7 at 1 minute and 5 minutes, or in low umbilical vein pHlevels, neonatal admission or perinatal death according to whether ECV had been performed. A number oflarge consecutive series
+5,6,9,10,35have reported no fetal deaths attributable to the procedure. Meta-analyses
+and systematic reviews36–38although subject to reporting bias, also show complications to be rare.
+The reported risk of emergency caesarean section within 24 hours is approximately 0.5%, with the
+indication in over 90% being vaginal bleeding or an abnormal CTG following the procedure.6,10Evidence
+level 2 ++
+However, a population-based cohort study39comparing breech births where there had been unsuccessful
+ECV with those where ECV had not been attempted showed a small increase in short-term adverseoutcomes (adjusted OR for neonatal unit admission 1.48, 95% CI 1.20 –1.82) after an unsuccessful attempt
+at ECV. This was irrespective of whether labour was attempted. Longer term outcomes were not analysedand comparison with successful ECVs was not performed.
+Boucher et al.
+40performed Kleihauer testing shortly after an ECV attempt. In 1244 women with a negative
+Kleihauer test prior to ECV, fetomaternal haemorrhage was detected in 2.4% of women, a third of whichhad more than 1 ml. In one woman, the estimated fetomaternal haemorrhage was more than 30 ml.Evidence
+level 2 +
+RCOG Guideline No. 20a e185 of e192 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14466 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+4.8 What measures are appropriate to ensure fetal safety?
+ECV should be performed where facilities for monitoring and surgical delivery are available./check
+The standard preoperative preparations for caesarean section are not recommended for
+women undergoing ECV. /check
+Following ECV, EFM is recommended./check
+Women undergoing ECV who are D negative should undergo testing for fetomaternalhaemorrhage and be offered anti-D.D
+There is limited evidence to guide practice. No more than four attempts are advised, for a suggested
+maximum of 10 minutes overall.10EFM prior to the attempt is advised. ECV should be performed where
+facilities for ultrasound, EFM and surgical delivery are available. However, fasting, administration ofanaesthetic premedication or insertion of intravenous access (unless for tocolysis) are not recommendedas the need for caesarean delivery is less likely
+10than for women in normal labour.
+Ultrasound should be used during and after the ECV to conﬁrm a normal fetal heart rate. A transient (less
+than 3 minutes) fetal bradycardia after ECV is common,10but should instigate continuous monitoring in a
+left lateral position, and if persistent and not improving after 6 minutes, should prompt preparation forcategory I caesarean section.Evidence
+level 3
+Urgent delivery should also be advised following the procedure if there is vaginal bleeding or unexplained abdominal
+pain, or if an abnormal CTG persists.
+Anti-D immunoglobulin is recommended for women undergoing ECV who are D negative unless the baby
+is known to be D negative also. A minimum of 500 iu is recommended within 72 hours. Routine screeningfor fetomaternal haemorrhage is recommended by the British Committee for Standards in Haematology
+41
+to assess which D-negative women might beneﬁt from additional anti-D. A strongly positive (e.g. morethan 30 ml) Kleihauer should prompt immediate fetal review.Evidence
+level 4
+4.9 Who should perform ECV?
+ECV should only be performed by a trained practitioner or by a trainee working under direct
+supervision. /check
+Beuckens et al.5trained midwives in the theory and practice of ECV and reported low complication rates
+among 2546 attempts. The RCOG Advanced Training Skills Module in Advanced Labour Ward PracticeCurriculum requires ECV competence among trainees. Training models may help
+42but are not widely available.Evidence
+level 4
+4.10 How acceptable is ECV to women?
+Although most women tolerate ECV, they should be informed that ECV can be a painful
+procedure.C
+RCOG Guideline No. 20a e186 of e192 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14466 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+ECV is not universally acceptable to women. Hemelaar et al.43reported that 9% of women declined ECV.
+Barriers include fear of pain and vaginal birth, and accounts of others’ experiences.44,45
+Maternal experience of ECV varies enormously. Rijnders et al.46reported that one-third of women
+experienced signiﬁcant pain, while Bogner et al.47reported general satisfaction if the ECV was successful.
+Fok et al.48reported median pain scores of 5.7. In one trial,21three-quarters of women described the
+procedure as uncomfortable or worse, and 5% of women reported high pain scores.Evidence
+level 2 /C0
+4.11 How could the uptake of ECV be increased?
+The uptake of ECV is best increased by timely identi ﬁcation of the baby presenting by the
+breech and provision of evidence-based information.C
+ECV is not practised in many parts of the world.49In the UK, the views of obstetricians on ECV are
+generally positive, but there are some negative perceptions among women.44Patient acceptance could
+improve if accurate information on the beneﬁts and risks are given.43
+The greatest impediment to the use of ECV is the nonidentiﬁcation of breech presentation. Theproportion of undetected breech presentation at term has been reported in as high as 20.0 –32.5% of all
+breech presentations
+43,50and these have worse outcomes.51The possibility of breech presentation should
+always be considered at clinical examination although abdominal palpation has a sensitivity of only 70%.52In
+the absence of routine third trimester ultrasound, particular care should be taken with high-risk groups,e.g. where a previous baby has been breech. Recurrence rate after one breech presentation is 9.9%(RR adjusted 3.2, 95% CI 2.8 –3.6).
+53Access to a presentation scan after 36+0weeks of gestation is
+essential.Evidence
+level 2 +
+4.12 How can an ECV service be developed and audited?
+There is no evidence to support any particular service model although larger institutions may
+consider a dedicated ECV clinic. /check
+There is minimal evidence concerning how an ECV service is best delivered. This service should be staffed by
+appropriately trained practitioners. Comprehensive local data collection, including success rates and outcomes,should be gathered in order for women to make an informed choice.
+4.13 What is the role of non-ECV methods?
+Women may wish to consider the use of moxibustion for breech presentation at 33 –35 weeks
+of gestation, under the guidance of a trained practitioner.C
+Women should be advised that there is no evidence that postural management alone promotesspontaneous version to cephalic presentation.B
+RCOG Guideline No. 20a e187 of e192 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14466 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Moxibustion, a traditional Chinese medicine therapy using moxa made from dried mugwort, has been used
+from 32 weeks of gestation to promote spontaneous version. It is unclear how moxibustion might promoteversion, but it is thought to promote fetal activity. The quality of data is poor and the effectiveness ofmoxibustion should be considered in light of the number of breech presentations that exist at 32 weeks ofgestation, reported as 43% by Westgren et al.
+8Coyle et al.,54in a systematic review, concluded that although
+moxibustion did not reduce the number of noncephalic births when compared with no treatment, it may doso when combined with postural management techniques. In addition, moxibustion, when combined withacupuncture, may result in fewer births by caesarean section.
+Subsequently, Vas et al.
+55randomised 406 women with a proven breech presentation at 33 –35 weeks of
+gestation to 2 weeks of daily moxibustion, ‘sham’ moxibustion or usual care. A signiﬁcant increase in cephalicpresentation at delivery was noted in the moxibustion group when compared with the sham or usual care(moxibustion versus usual care; RR 1.29, 95% CI 1.02 –1.64) groups, with no signiﬁcant change in caesarean
+delivery rates (moxibustion versus usual care; RR 0.85, 95% CI 0.67 –1.07). No data on ECV rates in the
+groups were presented.
+There is insufﬁcient evidence to support the use of postural management for breech presentation.
+56Evidence
+level 1 /C0
+5. Recommendations for future research
+/C15Methods to improve the antenatal detection of breech presentation, applicable in a low resource setting.
+/C15Methods to improve the uptake of ECV.
+/C15Methods to improve the success rate of ECV.
+6. Auditable topics
+/C15Antenatal detection of breech presentation.
+/C15Proportion of women with a breech presentation offered ECV in the absence of contraindications (100%).
+/C15Success rates of ECV (50%).
+/C15Complications of/after ECV.
+/C15Maternal perceptions/experience of ECV.
+7. Useful links and support groups
+/C15NHS Choices. Baby positions in the womb. [http://www.nhs.uk/conditions/pregnancy-and-baby/pages/breech-birth.
+aspx] .
+/C15Royal College of Midwives. Vaginal or caesarean delivery? How research has turned breech birth around. [https://www.
+rcm.org.uk/learning-and-career/learning-and-research/ebm-articles/vaginal-or-caesarean-delivery-how-research].
+/C15Newcastle University. Breech decisions. [http://research.ncl.ac.uk/breech-decisions/].
+/C15NHS choices. Breech births: your choices. [http://www.nhs.uk/Video/Pages/breech-births.aspx].
+/C15Royal College of Obstetricians and Gynaecologists. Breech baby at the end of pregnancy. Information for you. London:
+RCOG; 2008 [https://www.rcog.org.uk/en/patients/patient-leaﬂets/breech-baby-at-the-end-of-pregnancy/].
+/C15Royal College of Obstetricians and Gynaecologists. Turning a breech baby in the womb (external cephalic version).
+Information for you. [https://www.rcog.org.uk/en/patients/patient-leaﬂets/turning-a-breech-baby-in-the-womb/].
+RCOG Guideline No. 20a e188 of e192 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14466 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+References
+1. Royal College of Obstetricians and Gynaecologists. Management
+of Breech Presentation . Green-top Guideline No. 20b. London:
+RCOG; 2017.
+2. Hannah ME, Hannah WJ, Hewson SA, Hodnett ED, Saigal S,
+Willan AR. Planned caesarean section versus planned vaginal birth
+for breech presentation at term: a randomised multicentre trial.Term Breech Trial Collaborative Group. Lancet 2000;356:1375 –83.
+3. Rietberg CC, Elferink-Stinkens PM, Visser GH. The effect of the
+Term Breech Trial on medical intervention behaviour and
+neonatal outcome in The Netherlands: an analysis of 35,453 termbreech infants. BJOG 2005;112:205 –9.
+4. Hofmeyr GJ, Kulier R, West HM. External cephalic version for
+breech presentation at term. Cochrane Database Syst Rev 2015;(4):
+CD000083.
+5. Beuckens A, Rijnders M, Verburgt-Doeleman GH,
+Rijninks-van Driel GC, Thorpe J, Hutton EK. An observational
+study of the success and complications of 2546 external cephalicversions in low-risk pregnant women performed by trainedmidwives. BJOG 2015;123:415 –23.
+6. Tong Leung VK, Suen SS, Singh Sahota D, Lau TK, Yeung Leung T.
+External cephalic version does not increase the risk ofintra-uterine death: a 17-year experience and literature review.J Matern Fetal Neonatal Med 2012;25:1774 –8.
+7. Ferreira JC, Borowski D, Czuba B, Cnota W, Wloch A,
+Sodowski K, et al. The evolution of fetal presentation duringpregnancy: a retrospective, descriptive cross-sectional study. Acta
+Obstet Gynecol Scand 2015;94:660 –3.
+8. Westgren M, Edvall H, Nordstr €om L, Svalenius E, Ranstam J.
+Spontaneous cephalic version of breech presentation in the lasttrimester. Br J Obstet Gynaecol 1985;92:19 –22.
+9. Ben-Meir A, Elram T, Tsafrir A, Elchalal U, Ezra Y. The incidence
+of spontaneous version after failed external cephalic version.Am J Obstet Gynecol 2007;196:157.e1 –3.
+10. Collins S, Ellaway P, Harrington D, Pandit M, Impey LW. The
+complications of external cephalic version: results from 805
+consecutive attempts. BJOG 2007;114:636 –8.
+11. de Hundt M, Velzel J, de Groot CJ, Mol BW, Kok M. Mode
+of delivery after successful external cephalic version: a
+systematic review and meta-analysis. Obstet Gynecol 2014;123:
+1327 –34.
+12. Kabiri D, Elram T, Aboo-Dia M, Elami-Suzin M, Elchalal U, Ezra Y.
+Timing of delivery after external cephalic version and the risk for
+cesarean delivery. Obstet Gynecol 2011;118:209 –13.
+13. Kok M, Cnossen J, Gravendeel L, van der Post J, Opmeer B,
+Mol BW. Clinical factors to predict the outcome of external
+cephalic version: a metaanalysis. Am J Obstet Gynecol
+2008;199:630.e1 –7; discussion e1 –5.
+14. Kok M, Cnossen J, Gravendeel L, Van Der Post JA, Mol BW.
+Ultrasound factors to predict the outcome of external cephalic
+version: a meta-analysis. Ultrasound Obstet Gynecol 2009;33:76 –84.
+15. Kok M, van der Steeg JW, van der Post JA, Mol BW. Prediction
+of success of external cephalic version after 36 weeks. Am J
+Perinatol 2011;28:103 –10.
+16. Velzel J, de Hundt M, Mulder FM, Molkenboer JF, Van der Post JA,
+Mol BW, et al. Prediction models for successful external cephalicversion: a systematic review. Eur J Obstet Gynecol Reprod Biol
+2015;195:160 –7.
+17. Leung TY, Lau TK. Prediction of outcome of external cephalic
+version for breech presentation at term. Fetal Matern Med Rev
+2005;16:245 –62.18. Cluver C, Gyte GM, Sinclair M, Dowswell T, Hofmeyr GJ.
+Interventions for helping to turn term breech babies to head ﬁrst
+presentation when using external cephalic version. Cochrane
+Database Syst Rev 2015;(2):CD000184.
+19. Wilcox CB, Nassar N, Roberts CL. Effectiveness of nifedipine
+tocolysis to facilitate external cephalic version: a systematicreview. BJOG 2011;118:423 –8.
+20. El-Sayed YY, Pullen K, Riley ET, Lyell D, Druzin ML, Cohen SE,
+et al. Randomized comparison of intravenous nitroglycerin and
+subcutaneous terbutaline for external cephalic version undertocolysis. Am J Obstet Gynecol 2004;191:2051 –5.
+21. Impey L, Pandit M. Tocolysis for repeat external cephalic version
+in breech presentation at term: a randomised, double-blinded,
+placebo-controlled trial. BJOG 2005;112:627 –31.
+22. Suen SS, Khaw KS, Law LW, Sahota DS, Lee SW, Lau TK, et al.
+The force applied to successfully turn a foetus during reattempts
+of external cephalic version is substantially reduced whenperformed under spinal analgesia. J Matern Fetal Neonatal Med
+2012;25:719 –22.
+23. Weiniger CF, Ginosar Y, Elchalal U, Sela HY, Weissman C,
+Ezra Y. Randomized controlled trial of external cephalic versionin term multiparae with or without spinal analgesia. Br J Anaesth
+2010;104:613 –8.
+24. Khaw KS, Lee SW, Ngan Kee WD, Law LW, Lau TK, Ng FF,
+et al. Randomized trial of anaesthetic interventions in externalcephalic version for breech presentation. Br J Anaesth
+2015;114:944 –50.
+25. Sultan P, Carvalho B. Neuraxial blockade for external cephalic
+version: a systematic review. Int J Obstet Anesth 2011;20:299 –306.
+26. Goetzinger KR, Harper LM, Tuuli MG, Macones GA, Colditz GA.
+Effect of regional anesthesia on the success rate of external
+cephalic version: a systematic review and meta-analysis. Obstet
+Gynecol 2011;118:1137 –44.
+27. Lavoie A, Guay J. Anesthetic dose neuraxial blockade increases
+the success rate of external fetal version: a meta-analysis. Can J
+Anaesth 2010;57:408 –14.
+28. Reinhard J, Heinrich TM, Reitter A, Herrmann E, Smart W,
+Louwen F. Clinical hypnosis before external cephalic version. Am J
+Clin Hypn 2012;55:184 –92.
+29. Hutton EK, Hannah ME, Ross SJ, Delisle MF, Carson GD,
+Windrim R, et al.; Early ECV2 Trial Collaborative Group. The
+Early External Cephalic Version (ECV) 2 Trial: an international
+multicentre randomised controlled trial of timing of ECV forbreech pregnancies. BJOG 2011;118:564 –77.
+30. Hutton EK, Hofmeyr GJ, Dowswell T. External cephalic version
+for breech presentation before term. Cochrane Database Syst Rev
+2015;(7):CD000084.
+31. Ferguson JE 2nd, Dyson DC. Intrapartum external cephalic
+version. Am J Obstet Gynecol 1985;152:297
+–8.
+32. Kaneti H, Rosen D, Markov S, Beyth Y, Fejgin MD. Intrapartum
+external cephalic version of footling-breech presentation. Acta
+Obstet Gynecol Scand 2000;79:1083 –5.
+33. Rosman AN, Guijt A, Vlemmix F, Rijnders M, Mol BW, Kok M.
+Contraindications for external cephalic version in breech position
+at term: a systematic review. Acta Obstet Gynecol Scand
+2013;92:137 –42.
+34. Burgos J, Cobos P, Rodr /C19ıguez L, Osuna C, Centeno MM,
+Mart/C19ınez-Astorquiza T, et al. Is external cephalic version at term
+contraindicated in previous caesarean section? A prospectivecomparative cohort study BJOG 2014;121:230 –5; discussion 235.
+RCOG Guideline No. 20a e189 of e192 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14466 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+35. Rijnders M, Herschderfer K, Prins M, van Baaren R, van Veelen AJ,
+Sch€onbeck Y, et al. A retrospective study of the success, safety
+and effectiveness of external cephalic version without tocolysis ina specialised midwifery centre in the Netherlands. Midwifery
+2008;24:38 –45.
+36. Grootscholten K, Kok M, Oei SG, Mol BW, van der Post JA.
+External cephalic version-related risks: a meta-analysis. Obstet
+Gynecol 2008;112:1143 –51.
+37. Nassar N, Roberts CL, Barratt A, Bell JC, Olive EC, Peat B.
+Systematic review of adverse outcomes of external cephalicversion and persisting breech presentation at term. Paediatr
+Perinat Epidemiol 2006;20:163 –71.
+38. Collaris RJ, Oei SG. External cephalic version: a safe procedure?
+A systematic review of version-related risks. Acta Obstet Gynecol
+Scand 2004;83:511 –8.
+39. Balayla J, Dahdouh EM, Villeneuve S, Boucher M, Gauthier RJ,
+Audibert F, et al. Obstetrical and neonatal outcomes following
+unsuccessful external cephalic version: a stratiﬁed analysisamongst failures, successes, and controls. J Matern Fetal Neonatal
+Med 2015;28:605 –10.
+40. Boucher M, Marquette GP, Varin J, Champagne J, Bujold E.
+Fetomaternal hemorrhage during external cephalic version. Obstet
+Gynecol 2008;112:79 –84.
+41. Qureshi H, Massey E, Kirwan D, Davies T, Robson S, White J,
+et al.; British Society for Haematology. BCSH guideline forthe use of anti-D immunoglobulin for the prevention ofhaemolytic disease of the fetus and newborn. Transfus Med
+2014;24:8 –20.
+42. Burr R, Helyer P, Robson SC. A training model for external
+cephalic version. Eur J Obstet Gynecol Reprod Biol 2001;99:199 –
+200.
+43. Hemelaar J, Lim LN, Impey LW. The impact of an ECV service is
+limited by antenatal breech detection: a retrospective cohortstudy. Birth 2015;42:165 –72.
+44. Say R, Thomson R, Robson S, Exley C. A qualitative interview
+study exploring pregnant women’s and health professionals’attitudes to external cephalic version. BMC Pregnancy Childbirth
+2013;13:4.
+45. Rosman AN, Vlemmix F, Fleuren MA, Rijnders ME, Beuckens A,
+Opmeer BC, et al. Patients’ and professionals’ barriers andfacilitators to external cephalic version for breech presentation at
+term, a qualitative analysis in the Netherlands. Midwifery
+2014;30:324 –30.
+46. Rijnders M, Offerhaus P, van Dommelen P, Wiegers T, Buitendijk S.
+Prevalence, outcome, and women’s experiences of external
+cephalic version in a low-risk population. Birth 2010;37:124 –33.
+47. Bogner G, Hammer BE, Schausberger C, Fischer T, Reisenberger K,
+Jacobs V. Patient satisfaction with childbirth after external cephalic
+version. Arch Gynecol Obstet 2014;289:523 –31.
+48. Fok WY, Chan LW, Leung TY, Lau TK. Maternal experience of
+pain during external cephalic version at term. Acta Obstet Gynecol
+Scand 2005;84:748 –51.
+49. Mukaindo AM, Wanyonyi SZ, Stones WR. External cephalic
+version in East, Central, and Southern Africa. Int J Gynaecol Obstet
+2012;116:228 –
+31.
+50. Nassar N, Roberts CL, Cameron CA, Peat B. Outcomes of external
+cephalic version and breech presentation at term, an audit of
+deliveries at a Sydney tertiary obstetric hospital, 1997-2004. Acta
+Obstet Gynecol Scand 2006;85:1231 –8.
+51. Su M, McLeod L, Ross S, Willan A, Hannah WJ, Hutton E, et al.;
+Term Breech Trial Collaborative Group Factors associated withadverse perinatal outcome in the Term Breech Trial. Am J Obstet
+Gynecol 2003;189:740 –5.
+52. Nassar N, Roberts CL, Cameron CA, Olive EC. Diagnostic
+accuracy of clinical examination for detection of non-cephalicpresentation in late pregnancy: cross sectional analytic study. BMJ
+2006;333:578 –80.
+53. Ford JB, Roberts CL, Nassar N, Giles W, Morris JM. Recurrence
+of breech presentation in consecutive pregnancies. BJOG
+2010;117:830 –6.
+54. Coyle ME, Smith CA, Peat B. Cephalic version by moxibustion for
+breech presentation. Cochrane Database Syst Rev 2012;(5):
+CD003928.
+55. Vas J, Aranda-Regules JM, Modesto M, Ramos-Monserrat M,
+Bar/C19on M, Aguilar I, et al. Using moxibustion in primary healthcare
+to correct non-vertex presentation: a multicentre randomisedcontrolled trial. Acupunct Med 2013;31:31 –8.
+56. Hofmeyr GJ, Kulier R. Cephalic version by postural management
+for breech presentation. Cochrane Database Syst Rev 2012;(10):
+CD000051.
+RCOG Guideline No. 20a e190 of e192 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14466 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+Appendix I: Explanation of guidelines and evidence levels
+Clinical guidelines are: ‘systematically developed statements which assist clinicians and patients in making decisions
+about appropriate treatment for speciﬁc conditions’. Each guideline is systematically developed using a standardised
+methodology. Exact details of this process can be found in Clinical Governance Advice No.1 Development of RCOG
+Green-top Guidelines (available on the RCOG website at http://www.rcog.org.uk/green-top-development ). These
+recommendations are not intended to dictate an exclusive course of management or treatment. They must beevaluated with reference to individual patient needs, resources and limitations unique to the institution and variationsin local populations. It is hoped that this process of local ownership will help to incorporate these guidelines intoroutine practice. Attention is drawn to areas of clinical uncertainty where further research may be indicated.
+The evidence used in this guideline was graded using the scheme below and the recommendations formulated in a
+similar fashion with a standardised grading scheme.
+Classiﬁcation of evidence levels Grades of recommendations
+1++ High-quality meta-analyses, systematic reviews
+of randomised controlled trials or randomised
+controlled trials with a very low risk of biasAAt least one meta-analysis, systematic reviews or
+RCT rated as 1 ++, and directly applicable to the
+target population; orA systematic review of RCTs or a bodyof evidence consisting principally of studiesrated as 1 +, directly applicable to the target
+population and demonstrating overallconsistency of results1+ Well-conducted meta-analyses, systematic
+reviews of randomised controlled trials or
+randomised controlled trials with a low risk of
+bias
+1– Meta-analyses, systematic reviews of
+randomised controlled trials or randomised
+controlled trials with a high risk of bias
+BA body of evidence including studies ratedas 2++directly applicable to the target
+population, and demonstrating overallconsistency of results; orExtrapolated evidence from studies
+rated as 1 ++or 1+2++ High-quality systematic reviews of case –control
+or cohort studies or high-quality case –control
+or cohort studies with a very low risk of
+confounding, bias or chance and a highprobability that the relationship is causal
+2+ Well-conducted case –control or cohort
+studies with a low risk of confounding, bias orchance and a moderate probability that therelationship is causal
+CA body of evidence including studies ratedas 2+directly applicable to the target
+population, and demonstrating overall
+consistency of results; orExtrapolated evidence from studiesrated as 2 ++
+2– Case –control or cohort studies with a high
+risk of confounding, bias or chance and asigniﬁcant risk that the relationship is notcausal
+3 Non-analytical studies, e.g. case reports,
+case series DEvidence level 3 or 4; orExtrapolated evidence from studies rated as 2 +
+4 Expert opinionGood practice point
+/checkRecommended best practice based on the
+clinical experience of the guideline development
+group
+RCOG Guideline No. 20a e191 of e192 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14466 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+This guideline was produced on behalf of the Royal College of Obstetricians and Gynaecologists by:
+Mr LWM Impey FRCOG, Oxford; Professor DJ Murphy FRCOG, Dublin; Mr M Grifﬁths FRCOG,Eaton Bray; and Dr LK Penna FRCOG, London
+and peer reviewed by:
+Dr A Aggarwal MRCOG, York; Dr G Akaba, University of Abuja Teaching Hospital, Gwagwalada, Nigeria; American
+College of Obstetricians and Gynaecologists; Dr JFR Barrett, Sunnybrook Health Sciences Centre, Toronto, Ontario,Canada; Dr G Bogner, Paracelsus Medical University Salzburg, Austria; Dr PJ Danielian FRCOG, Aberdeen; Dr M de Hundt,Medical Centre Alkmaar, the Netherlands; Mrs A Diyaf MRCOG, Barnstaple; Dr Y El-Sayed, Stanford University Medical
+Center, California, USA; Dr R Fernando, University College London; Dr JC Gillham MRCOG, St Mary’s Hospital
+(Manchester); Dr J Hemelaar MRCOG, Oxford; Dr HKS Hinshaw FRCOG, Sunderland; Mr B Kumar FRCOG, Wrexham;Professor TY Leung FRCOG, Hong Kong; Dr EG McGregor, Bedford; Miss S Paterson-Brown FRCOG, London;
+RCOG Women’s Network; Dr S Robinson, Guy’s and St Thomas’ NHS Foundation Trust, London; Royal College of
+Anaesthetists; Dr RE Say, Royal Victoria Inﬁrmary, Newcastle upon Tyne; Professor L Sentilhes, French College ofGynaecologists and Obstetricians, Bordeaux, France; Ms M Sheridan, Florence Nightingale School of Nursing and Midwifery,
+Kings College London; Dr HP Sung, School of Medical Sciences, University of Science, Malaysia; Dr F Vlemmix, Academic
+Medical Center, University of Amsterdam, the Netherlands; Dr CF Weiniger, The Hebrew University of Jerusalem, Israel.
+Committee lead reviewers were: Dr M Gupta MRCOG, London and Miss P Sarkar FRCOG, Gerrards Cross.
+The chairs of the Guidelines Committee were: Dr M Gupta
+1MRCOG, London; Dr P Owen2FRCOG, Glasgow; and
+Dr AJ Thomson1MRCOG, Paisley.
+1co-chairs from June 20142until May 2014.
+All RCOG guidance developers are asked to declare any conﬂicts of interest. A statement summarising
+any conﬂicts of interest for this guideline is available from: https://www.rcog.org.uk/en/guidelines-
+research-services/guidelines/gtg20a/
+The ﬁnal version is the responsibility of the Guidelines Committee of the RCOG.
+The review process will commence in 2020, unless otherwise indicated.
+DISCLAIMER
+The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical practice.
+They present recognised methods and techniques of clinical practice, based on published evidence, for consideration byobstetricians and gynaecologists and other relevant health professionals. The ultimate judgement regarding a particular
+clinical procedure or treatment plan must be made by the doctor or other attendant in the light of clinical data presented
+by the patient and the diagnostic and treatment options available.
+This means that RCOG Guidelines are unlike protocols or guidelines issued by employers, as they are not intended to be
+prescriptive directions deﬁning a single course of management. Departure from the local prescriptive protocols orguidelines should be fully documented in the patient’s case notes at the time the relevant decision is taken.
+RCOG Guideline No. 20a e192 of e192 ª2017 Royal College of Obstetricians and Gynaecologists
+ 14710528, 2017, 7, Downloaded from https://obgyn.onlinelibrary.wiley.com/doi/10.1111/1471-0528.14466 by Cochrane France, Wiley Online Library on [28/05/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License

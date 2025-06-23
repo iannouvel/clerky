@@ -1,0 +1,627 @@
+# Extracted from: CG1139 Obesity in Pregnancy.pdf
+# Guideline ID: cg1139-obesity-in-pregnancy
+# Content length: 33517 characters
+# Processing date: 1750066900.0404563
+
+CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Obesity in Pregnancy v6.0 
+For use at: SRH & WH 
+
+Page 1 of 17 Please note, IF DOCUMENT IS PRIN TED, IT MAY BECOME OUT OF DATE 
+ 
+TRUST CLINICAL GUIDELINE 
+ 
+Obesity in Pregnancy 
+
+OVERVIEW 
+ 
+This guideline provide s clear guidance for staff in the management of obesity during pregnancy, 
+labour and postnatal periods. It aims to minimise complications associated with obesity by 
+ensuring that appropriate care is delivered during and pregnancy and labour. 
+ 
+For use by : 
+• Midwives 
+• Obstetricians 
+• Anaesthetists 
+• Support staff 
+
+OWNER S. Adamson 
+AUTHOR/FURTHER INFORMATION Ahmed Elgarhy, Consultant Obsetrician 
+Weight Management Midwives 
+PROTOCOL VERSION v6.0 
+RELATED POLICIES N/a 
+RELATED DOCUMENTS Maternity Guidelines (SRH&WH): Venous 
+Thromboembolism, Waterbirth, Antenatal 
+Clinical Risk Assessment , Diabetes in 
+Pregnancy, Labour Risk Assessment, 
+Caesarean Section, Fetal Surveillance 
+STANDARDS NG121 Intrapartum care for women with 
+existing medical conditions or obstetric 
+complications and their babies 2019 
+RCOG (2018) Green -top Guideline No. 72 
+SUPERSEDED DOCUMENTS N/A 
+REVIEW DUE August 2027 
+REFERENCE NUMBER CG1139 CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Obesity in Pregnancy v6.0 
+For use at: SRH & WH 
+
+Page 2 of 17 
+Approval 
+Joint Obstetrics Guideline Group Date approved 21st February 2024 
+Women & Children’s Clinical Effectiveness 
+Meeting Date approved 21st March 2024 
+Consultation 
+Medicines Governance Committee Date approved 11th June 2024 
+Anaesthetic Leads (SRH&WH) Date approved 5th & 6th August 2024 
+Ratification 
+Clinical Document Approval Group Date approved 21st August 2024 
+
+ CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Obesity in Pregnancy v6.0 
+For use at: SRH & WH 
+
+Page 3 of 17 
+TABLE OF CONTENTS 
+ 
+1.0 Introduction ................................ ................................ ................................ ........................... 4 
+2.0 Definitions and abbreviations used in this document ................................ ............................. 4 
+3.0 Duties and Responsibilities ................................ ................................ ................................ .... 5 
+4.0 Pre-pregnancy care ................................ ................................ ................................ ............... 5 
+5.0 Antenatal Care ................................ ................................ ................................ ...................... 5 
+5.1 Excessive weight gain in pregnancy ................................ ................................ ...................... 6 
+5.2 Antenatal discussion of infant feeding ................................ ................................ ................... 6 
+5.3 Care pathway for BMI ≥30 ................................ ................................ ................................ ..... 6 
+5.4 Additional Care for BMI ≥35 ................................ ................................ ................................ ... 7 
+5.5 Additional Care for BMI ≥ 40 ................................ ................................ ................................ .. 7 
+5.6 Maternal and birthing person surveillance ................................ ................................ ............. 7 
+5.7 VTE assessment & thromboprophylaxis ................................ ................................ ................ 8 
+6.0 Manual handling requirements and tissue viability ................................ ................................ . 8 
+7.0 Induction of labour ................................ ................................ ................................ ................. 9 
+8.0 Intrapartum Care ................................ ................................ ................................ ................... 9 
+9.0 Postnatal care ................................ ................................ ................................ ..................... 10 
+10.0 Pregnancy following bariatric surgery ................................ ................................ .................. 10 
+Appendix 1: Appendix 1: GP letter for folic acid & vitamin D information ................................ ......... 11 
+Appendix 2: Manual handling equipment for raised BMI ................................ ................................ . 12 
+Monitoring the effectiveness of this guideline ................................ ................................ .................. 13 
+Guideline Version Control Log ................................ ................................ ................................ ........ 14 
+Template Dissemination, Implementation and Access Plan ................................ ............................. 16 
+Additional guidance and information ................................ ................................ ............................... 17 
+
+ CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Obesity in Pregnancy v6.0 
+For use at: SRH & WH 
+
+Page 4 of 17 Obesity in Pregnancy 
+1.0 Introduction 
+This guideline is to minimise complications associated with obesity by ensuring that appropriate 
+care is delivered during pregnancy and labour. 
+Obesity in pregnancy is associated with an increased risk of a number of serious adverse outcomes, 
+including miscarriage, fetal congenital anomaly, thromboembolism, gestational diabetes, pre -
+eclampsia, dysfunctional labour, postpartum haemorrhage, wound infections, stillbirth and neonatal 
+death. There is a higher caesarean birth rate and lower breastfeeding rate in this group of women 
+and birthing people nationally compared to women and birthing people with a normal BMI. There is 
+also evidence to suggest that obesity may be a risk factor involved in maternal and birthing person 
+death ( MBRRACE -UK Report, 2019 ). 
+2.0 Definitions and abbreviations used in this document 
+BMI - Body Mass Index WBIP - Wellbeing in Pregnancy 
+SFH - Symph sis Fundal Height VTE - Venous Thromboembolism 
+MIS - Maternity Information System WEPP - Wellbeing and Exercise in Pregnancy 
+Programme 
+ 
+Obesity is measured by calculating the body mass index (BMI) using the formula: 
+BMI = weight (kg) / height (m)2. 
+This calculation is invalid for women and birthing people <18 years – use percentile charts instead . 
+According to World Health Organization criteria adults can be classified according to BMI as shown 
+below: 
+Classification BMI 
+Underweight BMI <18.50 
+Normal range BMI 18.50 –24.99 
+Overweight BMI ≥25.00 
+Preobese BMI 25.00 –29.99 
+Obese class I BMI 30.00 –34.99 
+Obese class II BMI 35.00 –39.9 
+Obese class III BMI 40 or more 
+ 
+Recommendations in this guideline are based on the booking BMI unless specified 
+otherwise . CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Obesity in Pregnancy v6.0 
+For use at: SRH & WH 
+
+Page 5 of 17 People with a South Asian, Chinese, other Asian, Middle Eastern, Black African or African -
+Caribbean family background are prone to central adiposity and their cardiometabolic risk occurs at 
+a lower BMI, so use lower BMI thresholds as a practical measure of overweight and obesity: 
+- Overweight: BMI 23 kg/m2 to 27.4 kg/m2 
+- Obesity: BMI 27.5 kg/m2 or above 
+ 
+For people in these groups, obesity classes 2 and 3 are usually identified by reducing the thresholds 
+highlighted before by 2.5 kg/m2. 
+3.0 Duties and responsibilities 
+Midwives, o bstetricians 
+& anaesthetists • To access, read, understand and follow this guideline . 
+• To use their professional judgement in application of this 
+guideline . 
+Maternity Managers • To ensure the guideline is reviewed three yearly and aligns with 
+national standards. 
+• To ensure the guideline is accessible to all relevant staff. 
+4.0 Pre-pregnancy care 
+The following information is based on best practice and should be available to women and birthing 
+people through primary care services: 
+Women and birthing people of childbearing age with a BMI ≥30 should receive written information 
+and advice about the risks of obesity during pregnancy and childbirth, and be supported to lose 
+weight before conception through exercise and healthy eating/lifestyle. 
+Women and birthing people with a BMI ≥30 wishing to become pregnant should be advised to take 
+5mg folic acid supplementation daily, starting at least one month before conception and continuing 
+during the first trimester of pregnancy . 
+Obese women and birthing people are at high risk of vitamin D deficiency. However, although 
+vitamin D supplementation may ensure that pregnant women and birthing people are vitamin D 
+replete, the evidence on whether routine vitamin D should be given to improve maternal or birthing 
+person and offspring outcomes remains uncertain RCOG (2018) Care of Women with Obesity in 
+Pregnancy (Green -top Guideline No. 72) . 
+Pregnant women and birthing people should be advised that supplementation of 10 mcg per day (as 
+part of a pregnancy multivitamin) is now thought to be sufficient unless deficiency has been 
+identified in serum at which point a higher dose can be given. See Appendix 1: GP letter for Vitamin 
+D. 
+5.0 Antenatal care 
+Pregnant women and birthing people should have their weight and height measured using 
+appropriate equipment, and their BMI calculated at the antenatal booking visit, first hospital visit or CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Obesity in Pregnancy v6.0 
+For use at: SRH & WH 
+
+Page 6 of 17 at the time of the combined screening test. This should be recorded on the electronic maternity 
+information system (MIS). 
+Pregnant women and birthing people should be directed towards the Wellbeing and exercise in 
+Pregnancy Programme (WEPP) If they are not already aware of the programme. WEPP provides 
+free online exercise videos and resources and is also suitable for use in the postnatal period. If 
+anyone is anxious about embarking on an exercise programme and/or you think it may facilitate 
+motivation, the self -screening section on WEPP can be reviewed with the individual during the 
+appointment. 
+Anyone declining attendance at the wellbeing Groups should still be commenced on the pathway 
+which will include scans, weighing etc. 
+The NICE Clinical Guideline on Hypertensive Disorders during Pregnancy states that pregnant 
+women and birthing people with ≥1 moderate risk factors for pre -eclampsia (including obesity, first 
+pregnancy, maternal age >40 years, family history of pre -eclampsia, multiple pregnancy) may 
+benefit from taking 150mg aspirin daily at night with food from 12 weeks’ gestation until 36 weeks or 
+as advised by an obstetrician. The healthcare professional should arrange for a prescription (as 
+recommended by NICE NG133 Hypertension in Pregnancy 2019 and Saving babies’ lives version 
+three (2023) . 
+5.1 Excessive weight gain in pregnancy 
+For pregnant women and birthing people who start their pregnancy with a BMI<30, please see 
+weight management in pregnancy in CG1103 Guideline for antenatal care and patient information to 
+assess and manage potential excessive weight gain in pregnancy . WEPP resources will be 
+particularly useful for this group of pregnant women and birthing people. 
+5.2 Antenatal discussion of infant feeding 
+Pregnant w omen and birthing people should be offered infant feeding advice at Baby Matters and 
+infant feeding assessme nt should be completed. They should be advised that breastfeeding is 
+recommended to reduce risk factor for obesity in the next generation. If a pregnant w oman or 
+birthing person’s choice is to formula feed following an informed discussion, pace feeding a nd 
+volume should be discussed. 
+5.3 Care pathway for BMI ≥30 
+Pregnant women and birthing people with BMI ≥30 should have a BMI ≥30 pathway of care 
+commenced following booking. 
+Pregnant women and birthing people with BMI ≥30 will be given an appointment to attend the WBIP. 
+This specialised programme provides accurate information about the maternal or birthing person 
+and fetal risks associated with obesity in pregnancy and how they may be minimised. The 
+programme also works closely with the WEPP team. 
+If there additional co morbidities are present the usual risk assessment process undertaken at 
+booking will apply. CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Obesity in Pregnancy v6.0 
+For use at: SRH & WH 
+
+Page 7 of 17 Where pregnant women and birthing people decline the WBIP their named midwife should continue 
+the BMI ≥30 Pathway of Care which includes the provision of an individualised birth plan and 
+discussion of possible intrapartum complications, this can be with the community midwife or if 
+attending antenatal clinic it can be discussed there. This discussion should be clearly documented. 
+Pregnant women and birthing people with a booking BMI ≥30 should be screened for gestational 
+diabetes at booking and 28 wee ks’ gestation - see Maternity Diabetes guida nce. 
+5.4 Additional Care for BMI ≥35 
+Pregnant women and birthing people with a booking BMI ≥35 should be advised to give birth in an 
+obstetric led unit. 
+Pregnant women and birthing people with a booking BMI ≥35 with no additional risk factor s can 
+have community monitoring for pre -eclampsia at a minimum of 3 weekly intervals between 24 and 
+32 weeks gestation, and 2 weekly int ervals from 32 weeks to birth. 
+Pregnant women and birthing people with BMI ≥35 will be offered a fetal growth ultrasound every 4 
+weeks from 32 weeks . 
+Pregnant women and birthing people should be advised of the potential for poor ultrasound 
+visualisation of their baby and consequent difficulties in fetal surveillance and screening for 
+anomalie s including prenatal diagnosis. They should be given the patient information leaflet 
+Anaesthetic information for pregnant women with a high BMI - University Hospitals Sussex NHS 
+Foundation Trust (uhsussex.nhs.uk) . 
+5.5 Additional care for BMI ≥ 40 
+An anaesthetic antenatal appointment should be arranged for: 
+• All pregnant women and birthing people with BMI ≥ 40 with co -morbidities. 
+• All pregnant women and birthing people with BMI >45. 
+ 
+During this appointment an anaesthetic management plan for labour and birth should be discussed 
+with the pregnant women and birthing people and documented on MIS. This should include 
+discussion of difficulty in siting epidurals with raised BMI particularly in emergency situations, risks 
+associated with general anaesthesia and consideration of early epidural to reduce risks. They 
+should be given the patient information leaflet Anaesthetic information for pregnant women with a 
+high BMI - University Hospitals Sussex NHS Foundation Trust (uhsussex.nhs.uk) . 
+Pregnant women and birthing people with BMI ≥ 40 are provided with a creating comfort / manual 
+handling and birth plan discussion from the WBIP midwives or their community midwife. Refer to 
+local processes. See appendix 2 for examples of equipment available. 
+This should be documented in the third trimester within the BMI ≥ 30 Pathway of Care. 
+5.6 Maternal and birthing person surveillance 
+An appropriate size of arm cuff should be used for blood pressure measurements taken at the 
+booking visit and all subsequent antenatal consultations. CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Obesity in Pregnancy v6.0 
+For use at: SRH & WH 
+
+Page 8 of 17 Measuring cuff size 
+Measure around the upper arm at the midpoint between the shoulder and elbow, and choose the 
+cuff size from the chart below. 
+Upper Arm Blood Pressure Monitor cuff sizes 
+Measurement (cm) Measurement (inches) Cuff size 
+18-22 cm 7.1-8.7” Small 
+22-32 cm 8.8-12.8” Medium 
+32-45 cm 12.8-18” Large 
+ 
+Larger sizes such as thigh cuffs are available, if needed. Liaise with ward manager or community 
+team leaders to arrange for this. 
+5.7 VTE assessment & thromboprophylaxis 
+All pregnant women and birthing people should be assessed at their first antenatal visit, throughout 
+pregnancy and post -birth for the risk of thromboembolism and managed according to maternity 
+venous thromboembolism guidelines. 
+Pregnant women and birthing people should be re -weighed before commencing thromboprophylaxis 
+antenatally or postnatally to ensure an ap propriate dosage is prescribed. 
+6.0 Manual handling requirements and tissue viability 
+Tissue viability issues are assessed for pregnant women and birthing people on admission in labour 
+/ for elective caesarean birth in line with maternity pressure area care guidelines and appropriate 
+care arranged. The assessment should be documented on MIS as appropriate . 
+Carry out a risk assessment to ensure that essential equipment, in a size -appropriate form, is 
+available for the intrapartum care of pregnant women and birthing people with a BMI over 30 kg/m2 
+at the booking appointment, including: 
+• Surgical, obstetric and anaesthetic equipment 
+• Blood pressure cuffs 
+• Operating theatre tables 
+• Lifting and lateral transfer equipment 
+• Anti-embolism stockings 
+• Wheelchairs 
+• Monitoring and measuring equipment. 
+(NG121 Intrapartum care for women with existing medical conditions or obstetric complications and 
+their babies 2019 ) 
+Within the Trust, there are suitable beds, chairs, commodes and hoists which are available for 
+pregnant women and birthing people with a raised BMI. If required, this will be highlighted during the 
+manual handling assessment and arrangements for admission can be made. Both hospitals CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Obesity in Pregnancy v6.0 
+For use at: SRH & WH 
+
+Page 9 of 17 possess a ‘Tenor Hoist’ which can be used for moving patients of 50 stone; this can be located by 
+contacting the medical leads/matrons at any time. 
+The patslide ™ should be used for the lateral transfer of immobile pregnant women and birthing 
+people from bed to operating table and vice versa. If the safe working load is exceeded, an Air 
+Assisted Jack and Mattress can be used. If unsure, contact Manual Handling Team for advice . 
+The Back Care Advisor / Manual Handling Team can be contacted for any advice on manual 
+handling requirements. 
+Health professionals involved in maternity care should receive training in manual handling 
+techniques and the use of specialist equipment which may be required for pregnant and postnatal 
+women and birthing people with o besity. 
+Note: GP surgeries and children centres will have their own environmental risk assessments for 
+pregnant women and birthing people with a raised BMI. 
+See appendix 2 : Manual handling equipment for raised BMI . 
+7.0 Induction of labour 
+Pregnant women and birthing people with a BMI 30 or more should have IOL discussed at 36 -38 
+weeks and be offered IOL by 40 weeks. Elective induction of labour at term in obese pregnant 
+women and birthing people may reduce the chance of caesarean birth without increasing the risk of 
+adverse outcomes; the option of induction should be discussed with each pregnant woman or 
+birthing person on an individual basis. RCOG (2018) Green -top Guideline No. 72 
+8.0 Intrapartum care 
+Consider ultrasound scanning at the start of established labour if the baby’s presentation is 
+uncertain for pregnant women and birthing people with a BMI over 30 kg/m2 at the booking 
+appointment, particularly those with a BMI over 35 kg/m2 (NG121 Intrapartum care for women with 
+existing medical conditions or obstetric complications and their babies 2019 ). 
+Pregnant women and birthing people with a BMI ≥30 should be recommended to have active 
+management of the third stage of labour. This should be documented on MIS. 
+Pregnant women and birthing people with a BMI over 30 kg/m2 at the booking appointment, and 
+reduced mobility in the third trimester, consider advising the lateral positio n in the second stage of 
+labour (NG121 Intrapartum care for women with existing medical conditions or obstetric 
+complications and their babies 2019 ). 
+Pregnant women and birthing people with BMI ≥ 35, at booking, should be discouraged from using 
+the birthing pool due to the risk factors associated with a raised BMI. All these issues must be 
+discussed with the pregnant woman or birthing person and documented in the individualised birth 
+plan. 
+Operating theatre staff should be alerted regarding any pregnant women and birthing people whose 
+weight exceeds 120 kg where an operative delivery is anticipated. The operating table on both 
+labour wards can support a weight of 150 kg, and all patients can be transferred between bed and 
+operating table using a Pat Slide (providing the safe working load is not exceeded -see above). CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Obesity in Pregnancy v6.0 
+For use at: SRH & WH 
+
+Page 10 of 17 In pregnant women and birthing people with raised BMI, if continuous fetal monitoring is indicated, 
+labour may be complicated by difficulty with achieving an accurate assessment. Fetal scalp 
+monitoring may provide a clearer assessment of fetal cardiac activity. 
+Pregnant women and birthing people undergoing caesarean section, who have more than 2cm 
+subcutaneous fat, should have suturing of the subcutaneous tissue space in order to reduce the risk 
+of wound infection and wound separation. 
+PICO dressings are recommended for women and birthing people with BMI 35 or more. See 
+caesarean birth guideline. 
+ 
+BMI ≥40 
+The on -call senior obstetrician should be informed and be available for advice during the care of 
+pregnant women and birthing people with a BMI ≥40 during labour and birth. This includes attending 
+operative vaginal or caesarean birth. 
+RCOG Good practice no.8 (March 2009) recommends that if the trainee obstetrician on duty for the 
+labour ward requests assistance, the c onsultant on -call for labour ward should attend in person. 
+The on -call anaesthetic registrar should be informed when a pregnant woman or birthing person 
+with a BMI ≥40 is admitted t o the labour ward. The on -call consultant a naesthetist should also be 
+informed prior to delivery and this information must be documented on MIS. 
+When in established labour, pregnant women and birthing people with a BMI ≥40 should have 
+venous access established and should have their oral intake restricted to isotonic fluids only 
+because of the increased risk of requiring an anaesthetic. 
+9.0 Postnatal care 
+The obesity in pregnancy care pathway will highlight any equipment needed in the postnatal period. 
+This will ensure that any appropriate equipment will be available on the postnatal ward. If any 
+advice is needed , the Back Care Advisor can be contacted. 
+Pregnant women and birthing people with a booking BMI ≥30 should be encouraged to continue to 
+attend the WBIP up to 12 weeks post -birth. They should be advised that postnatal WEPP videos are 
+suitable from 6 -8 weeks postnatal as long as they are medically fit. If support is wanted after this, or 
+any wom an or birthing person with a BMI of 25 or more would like help with managing their weight 
+and healthy eating, they can be signposted towards a self -referral service at West Sussex Wellbeing 
+- Healthy Eating Services (NICE (Updated 2015) PH42 . 
+10.0 Pregnancy following bariatric surgery 
+Please see maternity guid ance CG16016 Bariatric Surgery . 
+ 
+ CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Obesity in Pregnancy v6.0 
+For use at: SRH & WH 
+
+Page 11 of 17 Appendix 1: Appendix 1: GP letter for folic acid & vitamin D information 
+
+Date: 
+ 
+Dear 
+ 
+RE: 
+ 
+NHS number: 
+ 
+Your patient …………………… has been identified as having a BMI >30 at their booking 
+appointment. 
+ 
+Pregnant women and birthing people are recommended to have 5mg Folic Acid in the first trimester 
+and we would appreciate you prescribing this . 
+ 
+Obese women and birthing people are at high risk of vitamin D deficiency. However, although 
+vitamin D supplementation may ensure that pregnant women and birthing people are vitamin D 
+replete, the evidence on whether routine vitamin D should be given to improve maternal and 
+offspring outcomes remains uncertain RCOG (2018) Care of Women with Obesity in Pregnancy 
+(Green -top Guideline No. 72) . 
+ 
+Pregnant women and birthing people should be advised that supplementation of 10 mcg per day (as 
+part of a pregnancy multivitamin) is now thought to be sufficient unless deficiency has been 
+identified in serum at which point a higher dose of 25mcg Vitamin D can be given. If this has been 
+identified by yourselves, please could you provide a prescription. 
+ 
+Yours sincerely, 
+
+MidwifeCLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Obesity in Pregnancy v6.0 
+For use at: SRH & WH 
+
+Page 12 of 17 The larger patient
+•Theatre table
+•Birthing bed
+•Electric profiling bed
+A lateral
+•Theatre table
+•Birthing bed
+•Electric profiling bed
+To repostion
+•Birthing bed
+•Electric profiling bed
+Appendix 2: Manual handling equipment for raised BMI 
+ 
+ CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Obesity in Pregnancy v6.0 
+For use at: SRH & WH 
+
+Page 13 of 17 Monitoring the effectiveness of this guideline 
+Suggested auditable standards for this pathway: 
+• Pregnant women and birthing people with a body mass index of 30 kg/m2 or more at the 
+booking appointment should be offered personalised advice from WMIP. 
+• All pregnant women and birthing people with body mass index of 40 kg/m2 or more should 
+have an anaesthetic review and anaesthetic management plan for labour and birth should 
+be documented in antenatal notes. 
+• Pregnant women and birthing people with BMI ≥35 should be offered a fetal growth 
+ultrasound every 4 weeks from 32 weeks . 
+ 
+ CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Obesity in Pregnancy v6.0 
+For use at: SRH & WH 
+
+Page 14 of 17 Guideline Version Control Log 
+Change Log – Obesity in Pregnancy 
+ 
+Version Date Author(s) Reason for change 
+1.0 September 
+2010 Obstetric Consultant 
+and Midwifery Public 
+Health Lead New Trust guidance. 
+2.0 February 
+2011 CNST Lead Administrative update 
+3.0 October 
+2012 Midwifery Public 
+Health Lead Amended to include 2012 -13 CNST standards 
+3.1 September 
+2013 WBIP Midwives & 
+CNST Midwife 3 yearly review and update 
+4.0 December 
+2016 Public Health Lead 
+Midwife 3 yearly review and update 
+5.0 January 
+2020 C. Parr, Public Health 
+lead, Weight 
+management/wellbeing 
+midwives, 
+Clinical Effectiveness 
+Support Midwife Guideline amended to comply with NICE (2019) 
+NG121 Intrapartum care for women with existing 
+medical conditions or obstetric complications and 
+their babies 2019 . 
+NICE (Updated 2015) PH42 Obesity: working with 
+local communities. 
+5.1 March 
+2022 Clinical Effectiveness 
+Support Midwife • Offer IOL at term for those with a BMI >30 
+added in line with: RCOG (2018) GTG no. 72 
+Care of Women with Obesity in Pregnancy 
+• Excessive weight gain in pregnancy link added. 
+• Post CS a PICO dressing recommended for 
+those with BMI 35 or more. 
+• Re-weigh before commencing or re -
+commencing VTE prophylaxis. 
+• Folic Acid added to GP prescription request 
+letter. 
+5.2 January 
+2022 CE Team • Recommendation for higher does Vitamin D 
+supplementation removed in line with RCOG 
+(2018) Care of Women with Obesity in 
+Pregnancy (Green -top Guideline No. 72) 
+• New appendix 2: Manual handling equipment 
+for raised BMI. 
+6.0 February 
+2024 Weight Management 
+Midwives 
+A. Elgarhy, Consultant 
+O&G • Wellbeing and exercise in Pregnancy 
+Programme (WEPP) instead of WMIPP 
+• BMI classification 
+• BMI 30 or more should have IOL discussed at 
+36-38 weeks and be offered IOL by 40 weeks. CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Obesity in Pregnancy v6.0 
+For use at: SRH & WH 
+
+Page 15 of 17 Due Regard Assessment Tool 
+To be completed and attached to any guideline when submitted to the appropriate committee for 
+consideration and approval. 
+ Yes/No Comments 
+1. Does the document/guidance affect one group less or 
+more favourably than another on the basis of: 
+ Age No 
+ · Disability No 
+ · Gender (Sex) No 
+ · Gender Identity No 
+ · Marriage and civil partnership No 
+ · Pregnancy and maternity No 
+ · Race (ethnicity, nationality, colour) No 
+ · Religion or Belief No 
+ · Sexual orientation, including lesbian, gay and bisexual 
+people No 
+2. Is there any evidence that some groups are affected 
+differently and what is/are the evidence source(s)? No 
+3. If you have identified potential discrimination, are there 
+any exceptions valid, legal and/or justifiable? NA 
+4. Is the impact of the document likely to be negative? No 
+5. If so, can the impact be avoided? NA 
+6. What alternative is there to achieving the intent of the 
+document without the impact? NA 
+7. Can we reduce the impact by taking different action 
+and, if not, what, if any, are the reasons why the 
+guideline should continue in its current form? NA 
+8. Has the document been assessed to ensure service 
+users, staff and other stakeholders are treated in line 
+with Human Rights FREDA principles (fairness, respect, 
+equality, dignity and autonomy)? Yes 
+ 
+If you have identified a potential discriminatory impact of this guideline , please refer it to [Insert 
+Name], together with any suggestions as to the action required to avoid/reduce this impact. For 
+advice in respect of answering the above questions, please contact uhsussex.equality@nhs.net 
+01273 664685). 
+
+ CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Obesity in Pregnancy v6.0 
+For use at: SRH & WH 
+
+Page 16 of 17 Template Dissemination, Implementation and Access Plan 
+ 
+To be completed and attached to any guideline when submitted to Corporate Governance for 
+consideration and TMB approval. 
+ 
+ Dissemination Plan Comments 
+1. Identify: 
+ Which members of staff or staff groups will be affected 
+by this guideline ? Midwives , obstetricians , 
+anaesthetists. 
+ How will you confirm that they have received the 
+guideline and understood its implications? Dissemination through the 
+usual Communication 
+channels and highlighted at 
+Safety Huddles. 
+ How have you linked the dissemination of the guideline 
+with induction training, continuous professional 
+development and clinical supervision as appropriate? All new members of staff 
+shown where to access 
+Clinical documents that are 
+relevant to their area of 
+practice. 
+2. How and where will staff access the document (at 
+operational level)? Accessed by staff via 
+Sharepoint 
+ 
+ Yes/No Comments 
+3. Have you made any plans to remove 
+old versions of the guideline or related 
+documents from circulation? Yes Previous version s will be 
+archived. 
+4. Have you ensured staff are aware the 
+document is logged on the 
+organisation’s register? Yes Dissemination plan includes 
+notifying staff via email, safety 
+noticeboards, departmental 
+newsletter and social media. 
+
+ CLINICAL GUIDELINE 
+Due for review: 21st August 2027 
+Name of Guideline : Obesity in Pregnancy v6.0 
+For use at: SRH & WH 
+
+Page 17 of 17 Additional guidance and information 
+Caro JF (2002) Definitions and Classification of women with Obesity 
+http://www.endotext.org/obesity1.htm 
+CMACE/RCOG joint guideline (2010) Management of women with obesity in pregnancy 
+Confidential Enquiry into Maternal and Child Health (CEMACH) ‘Saving Mothers Lives 2003 -2005’, 
+RCOG Press 
+Cooley S.M, Donnelly J, Walsh T, Sarkar R, Munaza S, Geary M, Gillan J, Macmaron C. (2005). The 
+influence of body mass index (BMI) on maternal and fetal wellbeing. A prospective study. Journal of 
+Obstetrics and Gynaecology 25 S43. 
+Dao T, Kuhn J, Ehmer D, Fisher T, McCarty T (2006) Pregnancy outcomes after gastric -bypass 
+surgery. American Journal of Surgery 192(6):762 -6. 
+Kabiru W, Raynor B.D. (2004) Obstetric outcomes associated with increase in BMI category during 
+pregnancy. American Journal of Obstetrics and Gynaecology 191(3) 928 -932. 
+MBRRACE -UK Report Nov 2019 
+NHS England (2023) Saving babies’ lives version three: a care bundle for reducing perinatal 
+mortality 
+NICE (2006) Obesity. Guidance on the prevention, identification, assessment and management of 
+overweight and obesity in adults and children. 
+NICE (2021) NG201 Antenatal Care 
+NICE (2010) Weight Management before, during and after pregnancy 
+NICE (2019) NG133 Hypertension in Pregnancy 2019 
+NICE (2019) NG121 Intrapartum care for women with existing medical conditions or obstetric 
+complications and their babies 2019 . 
+NICE (Updated 2015) PH42 Obesity: working with local communities. 
+Royal College of Obstetrics and Gynaecology (20 15). Thrombosis and embolism during pregnancy: 
+reducing the risk (Green -top 37a) 
+RCOG (2018) Care of Women with Obesity in Pregnancy (Green -top Guideline No. 72) 
+Sebire NJ, Jolly M, et al. (2001) Maternal obesity and pregnancy outcome: a study of 287,213 
+pregnancies in London. International Journal of Obesity & Related Metabolic Disorders: Journal of 
+the International Association for the Study of Obesity 25(8):1175 -82. 
+Singhal T, Vogiatzi M, Parmeshwaran S, Howarth E.S. (2005) Maternal obesity and its impact on 
+pregnancy outcome. Journal of Obstetrics and Gynaecology 25 S39. 
+Thorsdottir I (2002). Weight gain in women of normal weight before pregnancy: complications in 
+pregnancy or delivery and birth outcome. In Obstetrics and Gynaecology 799 -806

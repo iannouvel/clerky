@@ -1,0 +1,1289 @@
+# Extracted from: CG1129 Newborn Feeding.pdf
+# Guideline ID: cg1129-newborn-feeding
+# Content length: 73774 characters
+# Processing date: 1750066899.9927835
+
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 1 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+ 
+Newborn Feeding Guideline 
+Summary statement: How does the document 
+support patient care? By providing evidence based guidance to support and assist 
+women /people in newborn feeding in accordance with UNICEF 
+Baby Friendly Initiation standards . 
+Staff/stake holders involved in development: 
+ Midwives, Maternity Support Workers, Neonatal Nurses, Consultant 
+Paediatricians, Consultant Obstetricians 
+Division: Women and Child ren’s 
+Department: Maternity & Paediatrics 
+Responsible Person: Chief of Service 
+Author: Public Health Midwife 
+For use by: All medical, midwifery , nursing & support staff involved in supporting 
+mothers /birthing parents with newborn feeding . 
+Purpose: To provide clear guidance on supporting mothers /birthing parents 
+with feeding their babies . 
+This document supports: Baby Friendly Initiative (WHO/UNICEF) 
+Key related documents: Maternity Guidelines: Tongue Tie (Ankyloglossia) Division 
+Guideline ; Safe Sleeping of Babies and Reducing the Risk of 
+Sudden Infant Death ; Neonatal Hypoglycaemia Guideli ne 
+Approved by: Joint Obstetric Guideline Group 
+Approval date: 16th March 2022 Date uploaded: 22/03/22 
+Ratified by Board of Directors/ Committee of 
+the Board of Directors N/A 
+Ratification Date: N/A 
+Expiry Date: March 2025 
+Review date: Septembe r 2024 
+If you require this document in another format such as Braille, large print, audio or 
+another language please contact the Trusts Communications Team 
+Reference Number: CG1129 
+
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 2 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+ 
+Version Date Author Status Comment 
+1.0 November 2010 Infant Fee ding 
+Specialists Archived New Trust wide guideline 
+2.0 February 2011 CNST Midwife Archived Admin. additions 
+3.0 January 2012 Infant Feeding 
+Specialists Archived BFI additions added 
+4.0 January 2013 CNST Midwife Archived Minor amendment 
+5.0 November 201 3 Infant Feeding 
+Specialists Archived BFI information updated and 3 
+year update 
+6.0 May 2017 Public Health Midwife Archived BFI information updated to 
+include new standards and 
+Neonatal standards 
+7.0 October 2019 Public Health Midwife Archived Additional information re formula; 
+finger feeding; volumes 
+8.0 February 2022 F. Humberstone 
+Infant -Feeding Lead LIVE  Aim added -An increase in the 
+number of babies receiving 
+breastmilk on the neonatal 
+unit. 
+ Staff responsibilities to the 
+BFI code rew orded. 
+ 8.0 Supplementation section 
+amended. 
+ 9.1 Inpatient formula milk 
+provision amended. 
+ Parent information on 
+supplementation added. (see 
+appendix 4) 
+ 
+The interpretation and application of clinical guidelines will remain the 
+responsibility of the indiv idual clinician. 
+If in doubt contact a senior colleague or expert . 
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 3 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+Index 
+ 
+1.0 Aim ................................ ................................ ................................ ............................ 4 
+1.1 Outcomes ................................ ................................ ................................ .................. 4 
+2.0 Scope ................................ ................................ ................................ ........................ 4 
+3.0 Abbreviations used within this guideline ................................ ................................ ..... 5 
+4.0 Responsibilities ................................ ................................ ................................ .......... 5 
+4.1 Commitment ................................ ................................ ................................ .............. 5 
+5.0 In support of the guidance ................................ ................................ ......................... 6 
+6.0 Baby Friendly Initiative Care Stand ard ................................ ................................ ....... 7 
+6.1 Pregnancy ................................ ................................ ................................ .................. 7 
+6.2 Hand expressing / colostrum harvesting in pregnancy ................................ ............... 7 
+6.3 Birth ................................ ................................ ................................ ........................... 8 
+6.4 Mothers/birthing parents separated from thei r baby on the neonatal unit ................... 9 
+6.5 Safety considerations ................................ ................................ ................................ . 9 
+7.0 Support for breastfeeding / feeding assessments ................................ ...................... 10 
+7.1 Responsive feeding ................................ ................................ ................................ ..10 
+7.2 Exclusive breastfeeding ................................ ................................ ............................ 11 
+7.3 Modified feeding regimes ................................ ................................ .......................... 11 
+8.0 Supplementation ................................ ................................ ................................ .......11 
+8.1 Finger feeding using a syringe ................................ ................................ .................. 12 
+8.3 Cup feeding ................................ ................................ ................................ .............. 14 
+9.0 Artificial feeding ................................ ................................ ................................ ......... 15 
+9.1 Inpatient formula milk provision ................................ ................................ ................. 16 
+10.0 Early postnatal period: support for parenting and close relationships ........................ 16 
+11.0 Recommendations for health professionals on discussing bed -sharing 
+ with parents ................................ ................................ ................................ .............. 16 
+12.0 Care Standards for babies in the Neonatal Unit ................................ ........................ 17 
+12.1 Supporting parents to have a close and loving relationship with their baby ............... 17 
+12.2 Enabling babies to receive breastmilk and to breastfeed ................................ ........... 18 
+12.3 Valuing parents as partners in care ................................ ................................ ........... 19 
+13.0 Rooming in ................................ ................................ ................................ ................ 19 
+14.0 Weighing newborns ................................ ................................ ................................ ..19 
+15.0 Feeding problems ................................ ................................ ................................ .....20 
+16.0 Training ................................ ................................ ................................ ..................... 21 
+17.0 Monitoring / Audit ................................ ................................ ................................ ......22 
+References ................................ ................................ ................................ ........................... 23 
+Appendix 1: Baby Friendly Initiative Stages ................................ ................................ .......... 24 
+Appendix 2: Staff information sheet ................................ ................................ ...................... 25 
+Appendix 3: A guide for health professionals: Safe Sleeping ................................ ................ 29 
+Appendix 4: Pare nt information - Supplementation ................................ ............................... 33 
+ 
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 4 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+Newborn Feeding Guideline 
+
+1.0 Aim 
+ 
+The purpose of this guideline is to ensure that all staff understands their role and 
+responsibilities in supporting expectant and new mothers /birthing parents and their partners 
+to feed and care for their baby in ways which support optimum health and well -being. 
+ 
+The Baby Friendly Initiative is a worldwide programme of the Worl d Health Organi sation and 
+UNICEF . It is designed to support breastfeeding an d parent infant relationships by working 
+with public services to improve standards of care. It is the first ever national intervention to 
+have a positive effect on breastfeeding rates in the UK and to practise in accordance with the 
+Internation al Code of M arketing of Breast M ilk Substitutes (See Appendix 1 ). 
+ 
+This guideline aims to create an environment where more women /people choose to 
+breastfeed their babies by giving them information , advice and support to enable them to 
+breastfeed according to the World Health Organisation recommendations of exclusive 
+breastfeeding for 6 months and then as part of their infant’s diet to the end of the first year 
+and beyond. However following this information, if a woman /person chooses to formula feed 
+their baby, Trust staff will not discriminate against their chosen method of feeding and will 
+fully support them when they have made a choice. 
+ 
+1.1 Outcomes 
+ 
+This guideline aims to ensure that the care provided improves outcomes for children and 
+families, specifically to deliver: 
+ 
+ An increase in breastfeeding initiation rates . 
+ An increase in breastfeeding rates at 10 days . 
+ Amongst mothers /birthing parents who choose to formula feed, an increase in 
+those doing so as safely as possible, in li ne with nationally agreed guidance . 
+ Improvements in parents’ experiences of care . 
+ A reduction in the number of re -admissions for feeding problems . 
+ An increase in the number of babies receiving breastmilk on the neonatal unit . 
+ 
+2.0 Scope 
+ 
+This guideline applies to: 
+ 
+ All members of staff involved in the immediate care of newborn babies . 
+ All newborn babies and their mothers /birthing parents . 
+ 
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 5 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+It is crucial that staff adhere to the guideline to avoid conflicting advice. Any deviation must 
+be justified and recorded in the mother /birthing parent’s Postnatal Care Record and baby 
+record . 
+ 
+3.0 Abbreviations used within this guideline 
+ 
+NEC - Necrotising Enterocolitis EBM - Expressed Breast Milk 
+NNU - Neonatal Unit BFI - Baby Friendly Initiative 
+ 
+4.0 Respons ibilities 
+ 
+Midwives, Health Care Assistan ts, Maternity C are Assistants, Maternity Support Workers, 
+Obstetricians , Paediatricians, Neonatal Nurses and Nursery Nurses : 
+ 
+ To access, read, understand and follow this guidance . 
+ To use their professional judgement in application of this guidance . 
+ This guidance is for staff employed by Western Sussex Hospitals Trust. The 
+guidance is not rigid and should be tailored to the individual circumstances of each 
+woman. If the guidance is not being followed, documentation of the reasoning 
+and/or justification is essential, with clear documentation of alternative plans and 
+discussions. 
+ 
+4.1 Commitment 
+ 
+The Women & Children’s Division is committed to: 
+ 
+ Providing the highest standard of care to support expectant and new 
+mothe rs/birthing parents and their partners to feed their baby and build strong and 
+loving parent - infant relationships. This is in recognition of the profound importance 
+of early relationships to future health and well -being, and the significant 
+contribution t hat breastfeeding makes to good physical and emotional health 
+outcomes for children and mothers /birthing parents . 
+ Ensuring that all care is mother /birthing parent and family centred, non -
+judgemental and those mothers ’/birthing parents’ decisions are suppor ted and 
+respected. 
+ Working together across disciplines and or ganisations to improve mothers’ / 
+/birthing parents’ /parents’ experiences of care. 
+ 
+As part of this commitment the service will ensure that: 
+ 
+ All new staff are familiarised with this policy on co mmencement of employment. 
+ All staff receives training to enable them to implement the policy as appropriate to 
+their role. New staff receives this training within six months of commencement of 
+employment. 
+ All documentation fully supports the implementation of these standards. 
+ Parents’ experiences of care will be listened to through: regular audit, parents’ 
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 6 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+experience surveys (e.g. Care Quali ty Commission survey of women’s/birthing 
+parent’s experiences of maternity services, Friends & Family, COOS Cards, 
+Feedback via social network forums administrated by the Trust and the Maternity 
+Voices Partnership ). 
+ This guidance is to be communicated to all health care staff having any contact 
+with pregnant women /people and mothers /birthing parents . 
+ The International Co de of Marketing of Breast -milk Substitutes is implemented 
+throughout the service. 
+ 
+5.0 In support of the guidance 
+ 
+The International Code of Marketing of Breast -milk Substitutes 
+
+The International Code of Marketing of Breast -milk Substitutes (the Code) was adopted by a 
+resolution of the World Health Assembly in 1981. Any facility seeking Baby Friendly 
+accreditation must adhere to the requirements of the Code and any subsequent World Health 
+Assembly resolutions relating to the Code. Click here for the ful l Code . 
+ 
+The Code prohibits all promotion of milks and equipment related to bottle feeding and sets 
+out requirements for labelling and information on infant feeding. Any a ctivity that undermines 
+breastfeeding also violates the aim and spirit of the Code. The Code and its subsequent 
+resolutions are intended as a minimum requirement in all countries, and are written into the 
+United Nations Convention on the Rights of the Chil d, to which the UK is a signatory. 
+ 
+All breastmilk substitutes are covered by the Code. This means products that can be 
+marketed in a way which suggests they could replace breastfeeding, even if the product is 
+not suitable for that purpose. They may includ e: 
+ 
+ Infant formula 
+ Follow -on formula 
+ Baby foods 
+ Bottles/teats and related equipment. 
+ 
+The companies may not: 
+ 
+ Promote their products in hospitals, shops or to the general public . 
+ Give free samples to mothers /birthing parents or free or subsidised suppli es to 
+hospitals or maternity wards . 
+ Give gifts to health workers or mothers . 
+ Promote their products to health workers: any information provided by companies 
+must contain only scientific and factual information . 
+ Promote foods or drinks for babies . 
+ Give m isleading information . 
+ Have direct contact with mothers /birthing parents . 
+ 
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 7 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+Staff responsibilities in relation to the code : 
+ 
+Appropriate and factual information on infant formula will be provided. 
+ 
+ This should include that first milk formulas should be us ed for the first year and 
+that they adhere to the same standards, despite huge variety in cost. 
+ Parents will be directed towards ‘first steps nutrition’ Family assist and the baby 
+postnatal notes for further information. 
+ No antenatal group instruction will be given around artificial feeding. 
+ Employees will never promote a particular brand of formula. 
+ 
+6.0 Baby Friendly Initiative Care Standard 
+ 
+This section of the guidance sets out the care that the Trust is committed to giving each and 
+every expectant an d new mother /birthing par ent. It is based on the UNICEF UK Baby 
+Friendly Initiative standards for maternity services and rele vant NICE guidance . 
+ 
+6.1 Pregnancy 
+ 
+All pregnant women /people will have the opportunity to discuss feeding and caring for their 
+baby with a health professional. The value of connecting with their growing baby in utero will 
+be discussed. Also the importance of skin to skin contact as well as the importance of 
+responding to their babies needs for comfort, closeness and feeding after th e birth. 
+ 
+This discussion will involve an exploration of what parents already know about breastfeeding. 
+The value of breastfeeding as protection, comfort and food and getting breastfeeding off to a 
+good start will be discussed. All women /people will be inv ited to the Baby Matters parent 
+education session run by the Trust. 
+ 
+6.2 Hand expre ssing / colostrum harvesting in pregnancy 
+ 
+Research has shown that women /people who hand express in pregnancy are more confident 
+and better prepared to breastfeed their bab ies. This is a useful skill to learn and it will take 
+practice so encourage wome n to learn this from 36 weeks gestation onwards . 
+ 
+Women /people should be given a colostrum harvesting pack with sterile syringes, labels and 
+patient information. They can obta in this via their community midwife or via antenatal clinic. 
+ 
+If colostrum is obtained during hand expressing then this can be stored, saved and frozen in 
+the sterile syringes ready to use if required after the baby is born. Using the harvested 
+colostrum w ill support breastfeeding for those occasions where mothers /birthing parents and 
+their babies have a difficult start with birth and breastfeeding whilst they are supported with 
+feeding in the early days. 
+ 
+Women /people should be encouraged , whatever their f eeding intention in pregnancy, to 
+consider expressing their colostrum in pregnancy, to enable them to learn this skill in 
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 8 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+pregnancy, and for freezing for use if needed once the baby is born, especially if they are 
+spontaneously producing breastmilk in thei r pregnancy. Why colostrum is important in the 
+early days should be discussed. 
+ 
+ Colostrum coming in naturally small volumes so as not to overload the baby’s 
+system with additional water, which both mature breastmilk and formula milk 
+contain. 
+ Colostrum, li ke mature breastmilk, is tailored specifically for their baby. It will 
+contain antibodies of viruses the mother /birthing parent has had in the past. 
+ Colostrum is high in anti -infective and anti -viral properties and is important for 
+priming and protecting a baby’s delicate gut. It will help protect a premature or sick 
+baby’s delicate gut from developing necrotising enterocolitis (NEC) . 
+ Colostrum contains the perfect balance of proteins, fats and micronutrients needed 
+for babies as well as acting as a laxativ e to help the passing of the first meconium 
+stools. 
+ 
+6.3 Birth 
+ 
+ All mothers /birthing parents will be offered the opportunity to have uninterrupted 
+skin contact with their baby as close to birth as possible and at least until after the 
+first feed and for as long as they want, so that the instinctive behaviour of breast 
+seeking (baby) and nurturing (mother) is given an opportunity to emerge. 
+ Skin-to-skin contact should never be interrupted at staff's instigation to carry out 
+routine procedures (such as weighi ng baby) . This is because the baby’s innate 
+reflexes during skin -to-skin will not recommence where left and the process will be 
+started again. This increases the baby’s risk of becoming sleepy and reluctant to 
+feed. If skin -to-skin contact is interrupted for clinical indication or maternal choice it 
+should be re -instigated as soon as mother /birthing parent and baby are able . 
+Evidence supports that early skin to skin contact should be normal practice for 
+healthy newborns including those born by cae sarean an d babies born early at 35 
+weeks or more . Consider transferring to the postnatal ward in skin to skin ensuring 
+the baby is secure in the mother’s //birthing parent ’s arms. 
+ All mothers /birthing parents will be encouraged to offer the first breastfeed in skin 
+contact when the baby shows signs of readiness to feed. The aim is not to rush the 
+baby to the breast but to be sensitive to the baby’s instinctive process towards self-
+attachment . 
+ When mothers /birthing parents choose to formula feed they will be encourage d to 
+offer the first feed in skin contact. 
+ Those mothers /birthing parents who are unable (or do not wish) to have skin 
+contact immediately after birth, will be encouraged to commence skin contact as 
+soon as they are able, or so wish. 
+ 
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 9 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+6.4 Mothers /birthing parents separated from their baby on the neonatal unit are: 
+ 
+ Supported to start expressing milk as soon as possible after birth ( ideally to start 
+within the first hour but definitely within six hours) . Expressing will be dependent on 
+maternal //birthing parent condition. If mother /birthing parent and baby have been 
+separated due to maternal /birthing parent condition this may not be immediately 
+possible. However regular communication should take place between the staff 
+caring for the mother /birthing parent and those caring for the baby to ensure 
+expressing can be commenced as soon as possible. 
+ Supported to express effectively in the environment the mother /birthing parent is 
+being cared for . An expressing pack should be given to the mother /birthing parent 
+including sterile syringes, patient information and an expressing log. 
+ Given resources to enable effective hormone release. These can include a 
+comforter from baby or photos, videos etc. 
+ Mothers /birthing parents with a baby on the neonatal unit will be suppor ted to 
+express as effectively as possible and encouraged to express at least 8 times in 24 
+hours including once during the night. They will be shown how to express by both 
+hand and pump. 
+ 
+It is the joint responsibility of midwifery and neonatal unit staff to ensure that mothers /birthing 
+parents who are separated from their baby receive this information and support. 
+ 
+6.5 Safety considerations 
+ 
+Vigilance as to the baby’s well -being is a fundamental part of postnatal care in the first few 
+hours after birth. For this reason, normal observations of the baby’s temperature, breathing, 
+colour and tone should continue throughout the period of skin contact, in the same way as 
+would occur if the baby were in a cot. Observations should also be made of the 
+mother /birth ing parent , with prompt removal of the baby if the health of either gives rise to 
+concern. 
+ 
+It is important to ensure that mothers /birthing parents are aware of the need to keep their 
+baby safe and should be aware of the protecting the baby so it cannot f all on to the floor or 
+become trapped in bedding or by the mother’s /birthing parent ’s body. Particular care should 
+be taken with the position of the baby, ensuring the head is supported so the infant’s airway 
+does not become obstructed. 
+ 
+Many mothers /birthing parents can continue to hold their baby in skin -to-skin contact during 
+perineal suturing, but adequate pain relief must be provided. However, m others /birthing 
+parents should be discouraged from holding their baby when receiving analgesia which 
+causes drowsiness or alters their state of awareness (e.g. Entonox ). 
+ 
+Where mothers /birthing parents choose to give a first feed of formula milk in skin contact, 
+particular care should be taken to ensure the baby is kept warm. 
+ 
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 10 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+7.0 Support for breastfeeding / feeding assessments 
+ 
+ Mothers /birthing parents should be supported to enable them to achieve effective 
+breastfeeding according to their needs (including appropriate support with 
+positioning and attachment, hand expression, understand ing signs of effective 
+feeding ). This will continue until the mother and baby are feeding confidently. 
+ Mothers /birthing parents will have an opportunity to discuss breastfeeding in the 
+first few hours after birth as appropriate to their own needs and those of their baby . 
+This wil l include information on responsive feeding and feeding cues. Watch how 
+the baby is attaching to the breast. 
+ A formal feeding assessment will be carried out as often as required in the first 
+week with a minimum of two assessments to ensure effective feedin g and the well -
+being of mother /birthing parent and baby (found in the postnatal baby record) . This 
+will include a dialogue with the mother /birthing parent to reinforce what is going 
+well and where necessary , develop an appropriate plan of care to address a ny 
+issues identified. 
+ Prior to transfer home, all breastfeeding mothers /birthing parents will receive 
+information, both verbally and in writing (postnatal baby record) , about how to 
+recognis e effect ive feeding and where to call for additional help if they have any 
+concerns. This will include the locally run MILK breastfeeding drop -ins situated in 
+the West Sussex community . All breastfeeding mothers /birth ing parents will have a 
+feeding assessment prior to discharge. 
+ For those mothers /birthing parents who require additional support for more 
+complex breastfeeding challenges please signpost to the community MILK 
+breastfeeding drop -ins, or other locally run br eastfeeding support groups . If they 
+are still an inpatient, discussion of the issue should take place between the midwife 
+and maternity support worke r and possibly the paediatrician dependant on the 
+concern. Please also see NICE Guidance on Postnatal care up to 8 weeks after 
+birth (CG37) and NICE Clinical Knowledge Summaries on Breastfeeding 
+Problems . Alternatively , section 13 of this guidance may offer some solutions to 
+more commonly occurring issues. 
+ Where there is a suspected tongue tie, a referral to the Infant Feeding Clinic 
+(situated at both St Richard’s & Worthing Hospital on a weekly basis ) should be 
+made. A referral of babies with a tongue tie should be made where there are 
+concerns about feeding and where a feeding assessment has taken place . 
+Mothers will be informed of this pathway and referral by the health care 
+professi onal assessing the feeding. For more information please refer to the 
+WSHT Division of Tongue Tie Guideline . 
+ 
+7.1 Responsive feeding 
+ 
+The term responsive feeding is used to describe a feeding relationship which is sensitive, 
+reciprocal, and about more tha n nutrition. Staff should ensure that mothers /birthing parents 
+have the opportunity to discuss this aspect of feeding and reassure mothers that: 
+breastfeeding can be used to feed, comfort and calm babies; breastfed babies cannot be 
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 11 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+overfed or ‘spoiled’ by too much feeding and breastfeeding will not, tire mothers /birthing 
+parents any more than caring for a new baby without breastfeeding. 
+ 
+Find out more in Unicef UK’s responsive feeding infosheet: http://unic ef.uk/responsivefeeding 
+ 
+7.2 Exclusive breastfeeding 
+ 
+ Mothers /birthing parents who breastfeed will be provided with information about 
+why exclusive breastfeeding leads to the best outcomes for their baby and why it is 
+particularly important during the e stablishment of breastfeeding. 
+ When exclusive breastfeeding is not possible, the value of continuing partia l 
+breastfeeding will be emphasis ed and moth ers will be supported to maximis e the 
+amount of breastmilk their baby receives. 
+ 
+7.3 Modified feeding reg imes 
+ 
+There are a number of clinical indications for a short term modified /managed feeding regime 
+in the early days after birth. Examples include: preterm or small for gestational age babies 
+and those who are excessively sleepy after birth. Please see CG1104 Guideline for neonatal 
+hypoglycaemia including the reluctant feeder for those babies at risk of hyperglycaemia and 
+the assessment and treatment required for this group of babies. Frequent feeding, including 
+a minimum number of feeds in 24 hours, should be offered to ensure safety. This guidance 
+also offers a guide to reluctant feeders/ sleepy babi es also. 
+ 
+8.0 Supplementation 
+ 
+Artificial feed s should not be given to a breastfed baby except in cases of clinical indication 
+or fully informed parental choice. A single supplementation can have a significant effect on 
+milk supply as well as undermine th e mother’s /birthing parent’s confidence in their ability to 
+breastfeed their baby. 
+ 
+The supplementation information sheet will be provided and discussed with the 
+mother /birthing parent , prior to the supplement being given. 
+ 
+A record of all supplements give n will be made using the supplementation stickers provided 
+on the ward , including the rationale for supplementation and that a discussion has taken 
+place with the parent. 
+ 
+ Mothers /birthing parents who give other feeds in conjunction with breastfeeding 
+will be enabled to do so as safely as possible with the least disruption to 
+breastfeeding. This will include appropriate information and a discussion regarding 
+the potential impact of introducing a teat when a baby is learning to breastfeed 
+(see these methods below). 
+ The supplementation amount does not need to be calculated in a term, healthy 
+baby. The supplement should be offered responsively, taking care to ensure the 
+baby takes what it wants, rather than a specific amount. 
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 12 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+ Supplementation rates will be audit ed continuous ly, supported by monthly 
+sampling and reviews of records. 
+ 
+A breastfeed should always be the first method of feeding prior to supplementation to 
+encourage direct breastfeeding an d with the aim of increasing breastmilk supply. 
+ 
+The following should be encouraged to support continued breastfeeding: 
+ 
+ Maintain prolonged skin -to-skin contact whenever possible. 
+ Look out for and be ready to respond to baby’s early feeding cues, such as poking 
+out their tongue, rooting, making seeking movements, fidg eting and more alert 
+behaviour . Prior to supplementation help the mother /birthing parents position and 
+attach the baby at the breast. 
+ Express frequently (at least 8 times in 24 hours including once at night) by hand 
+initially, and then in combination with a pump. This is essential to secure milk 
+supply at this time. 
+ 
+8.1 Finger feeding using a syringe 
+ 
+No more than 2mls per feed should be given directly to the baby by syringe using this 
+method . This is because of the increased risk of aspiration of milk into the lungs . If a larger 
+volume is required then please consider one of the other options below. Less than 2mls can 
+be given via sterile syringe or spoon . It is usually used as a short term measure. 
+ 
+Advantages : 
+ 
+ Finger feeding with a syringe is useful fo r giving small amounts of colostrum which 
+is usually of a thicker consistency. 
+ Protects breastfeeding by offering a small volume of supplementation (expressed 
+breastmilk or formula) without the use of a teat. 
+ Can encourage the baby to feed from breast if s leepy and not wanting to latch . The 
+supplementation, especially if it is colostrum, will be highly calorific and will 
+stimulate a sleepy baby and encourage it to feed from the breast. 
+ Using a finger will s timulate the suckle reflex if baby is unable to lat ch and 
+breastfeed. 
+ It’s a suitable option for very young babies as the baby can pace the feed. 
+ 
+Disadvantages: 
+ 
+ The potential for some spillages which can cause waste . Mothers /birthing parents 
+can feel particularly frustrated, especially if expressed breas tmilk was obtained. 
+ Risk of the milk being aspirated into baby’s lungs, if used when a baby is too 
+sleepy and with poor technique 
+ It can be a slower way to feed so will take patience. 
+
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 13 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+How to finger feed using syringe: 
+ 
+ If the mother /birthing parent ’s wishes to use her finger , ensure that they wash and 
+dries their hands before the start, making sure nails are not too long, and use a 
+sterile syringe each time. If a staff member is using their finger please ensure 
+gloves are worn. 
+ Hold the baby in an uprigh t position. 
+ Gently stroke down over baby’s top lip to encourage rooting and mouth opening. 
+ Once baby opens their mouth place the pad of your finger to the roof of baby’s 
+mouth, taking care not to make the baby gag. If this happens pull back your finger 
+so it’s more comfortable for the baby. 
+ Place the top part of the syringe into the baby’s cheek between your finger and 
+baby’s gum. 
+ Push the plunger gently so that the baby suckles your finger while drinking in the 
+milk a little at a time (0.1 -2ml). 
+ Continue u ntil all the milk has gone. 
+ Continue to give the milk in this way until the baby feeds reliably at the breast, and 
+consider cup feeding, or finger feeding with a tube, as milk volumes increase. 
+Please note that this method should not be used in the communi ty. 
+ 
+Larger volumes of expressed breastmilk or formula can be administered using this method. 
+ 
+Advantages: 
+ 
+ Finger feeding with a tube is used for larger amounts when the milk is more liquid. 
+ Protects breastfeeding by offering a larger volume of supplement ation (expressed 
+breastmilk or formula) without the use of a teat. 
+ Using a finger will stimulate the suckle reflex if baby is unable to latch and 
+breastfeed. 
+ Taping the tube close to the breast will enable a baby to help increase maternal 
+breastmilk supply whilst receiving the supplementation for those babies able to 
+latch . 
+ The baby will be actively pacing the feed. 
+ Supplementation can be delivered in skin to skin with the mother /birthing parents 
+even when using the tube & finger method. 
+ 
+Disadvantages: 
+ 
+ Potential for milk waste in the tube, however this is estimated to be approximately 
+0.2-0.3mls. Therefore volumes 2mls and under should be given via finger and 
+syringe. 
+ If using the finger method a staff member should do this. This is because the 
+practice is new to the department. 
+
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 14 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+How to finger feed with tube: 
+ 
+ Wash and dry your hands before beginning, using a fresh sterile tube and syringe 
+each time. 
+ Hold baby in a position ensuring the baby can have eye contact with mother and 
+feeder. 
+ Draw up the requir ed volume into a 10ml or 20ml syringe (this isn’t the volume of 
+feed but using this size barrel is most effective). 
+ Attach syringe to tube (size 5.0) and ensure milk is pushed to end of the tube. 
+ Place the tip of tube near the tip of your gloved finger, a nd secure with tape. 
+o If taping to breast, support the mother to attach baby in the normal way. 
+However you may need to hold the tube as baby latches to ensure it is taken 
+in by the baby with the breast. 
+ The syringe can be placed next to the baby/mother /birthing parent in a clean 
+environment (always ensure the plunger is in place) 
+ Gently stroke down over baby’s top lip to encourage rooting and mouth opening. 
+ Once baby opens their mouth place the pad of your finger to the roof of baby’s 
+mouth, taking care no t to make the baby gag. If this happens pull back your finger 
+towards the front of the mouth so it’s more comfortable for the baby. 
+ Allow baby to suck your finger and the milk will gradually be drawn along the tube. 
+ Allow the baby to pause so they can pace the feed at a rate that’s comfortable for 
+them. 
+ Please note that this method should not be used in the community. 
+ 
+8.3 Cup feeding 
+ 
+Larger volumes of expressed breastmilk or formula can be administered using this method. 
+The baby will lap/ slurp the milk. A suitable soft curved cup should be used to avoid damage 
+to lips. It is usually used as a short term measure . 
+ 
+Please note: this method should never be used in a sleepy/lethargic baby due to risk of 
+aspiration. 
+ 
+Advantages: 
+ 
+ Protects breastfeeding by off ering a larger volume of supplementation (expressed 
+breastmilk or formula) without the use of a teat. 
+ It’s a suitable option for very young babies as the baby can pace the feed. 
+ 
+Disadvantages: 
+ 
+ The potential for some spillages which can cause waste. 
+ Risk of the milk being aspirated into baby’s lungs . 
+ It can be a slower way to feed. 
+
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 15 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+How to cup feed: 
+ 
+ Support the baby in an upright position on your lap so t hat you are both 
+comfortable. 
+ Fill cup with required volume (bear in mind that the milk can only be out in the cup 
+for 1 hour) . 
+ Stroke your finger over baby’s top li p to encourage mouth opening. 
+ Place the cup towards the corners of their mouth, with the cup res ting gently on the 
+lower lip. 
+ Angle the cup just enough so the milk is just touching the lower lip. 
+ Wait for the baby to lap the mil k, they might smell it first. 
+ It should not be poured into the baby’s mouth. 
+ Gently increase the angle of the cup as the milk is swallowed, so that m ilk is 
+always at the rim. 
+ Allow baby to have short breaks as that way baby will pace the feed and take what 
+is needed at each feed, but keep the cu p in place during the breaks. 
+ The baby will stop when enough milk is taken by closing their mouth. 
+ The cup can be wash ed and re -sterilise d for future use for the same baby . 
+ 
+9.0 Artificial feeding 
+ 
+ Mothers /birthing parents who formula feed will be enabled to do so as safely as 
+possible through the offer of a discussion about how to prepare infant formula. 
+ 
+ Mothers /birthing parents who formula feed will have a discussion about the 
+importance of responsive feeding and be encouraged to: 
+ 
+o Offer the first feed in skin -to skin contact. 
+o Respond to cues that their baby is hungry . 
+o Invite their baby to draw in the teat rather than forcing the teat into their 
+baby’s mouth by encouraging r ooting response . 
+o Pace the feed so that their baby is not forced to feed more than they want to . 
+Keep the bottle horizontal. 
+o Recognise cues that the baby has had enough milk. Such as splay ing of their 
+hands and feet, dribbling milk from the mouth or pushi ng the the teat from 
+their mouth using the tongue. 
+o Be encouraged to swap sides when bottle feeding to ensure equal 
+strengthen ing of the orbital muscles . 
+o Limit who feeds the baby to 2 people at most with the idea lly the mother or 
+main carer for at least the first few weeks. 
+o Give eye contact and hold baby close . 
+ 
+ Ensure that mothers /birthing parents are aware that all UK brought ‘First Milk’ 
+formula is made to the same standard across all brands. The only variation is cost. 
+
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 16 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+9.1 Inpatient formula milk provision 
+ 
+ Mothers /birthing parents who have decided in pregnancy to formula feed are to 
+bring ready -made formula with them to the hospital. This must be kept in their side 
+cupboard and each bottle when in use, to be stored in our fridge. 
+ All feeds to be d ecanted into our clear plastic bottles, in line with the international 
+code for marketing of breastmilk substitutes. 
+ We will always provide formula milk for babies with a medical indication for 
+supplementation and where the mother is unable to express suff icient breast milk 
+for the baby’s needs. 
+ We recommend that if midwives are asked which formula we are stocking that they 
+advise women that the milk is infant first milk formula, suitable for newborn babies, 
+and that there is no evidence of difference betwe en the brands. 
+ See Appendix 2 for separate guides for each of the following groups : 
+A) Parents who have chosen in pregnancy to formula feed or mix feed from 
+birth. 
+B) Parents who have not planned to formula feed but choose to supplement 
+their babies whilst inpatients . 
+C) Parents whose babies have a medical indication for supplementation with 
+formula milk . 
+ 
+10.0 Early postnatal period: support for parenting and close relationships 
+ 
+ Skin-to-skin contact will be encouraged thr oughout the postnatal period. 
+ All parents will be supported to understand a newborn baby’s needs (including 
+encouraging frequent touch and sensitive verbal/visual communication, keeping 
+babies close, responsive feeding and safe sleeping practice). The Baby Postnatal 
+Record contains within it some parent information regarding the local ‘Five to 
+Thrive’ scheme. 
+ Mothers /birthing parents who bottle feed will be encouraged to hold their baby 
+close during feeds and offer the majority of feeds to their baby themse lves to help 
+enhance the mother /birthing parents -baby relationship. 
+ Parents will be given information about local parenting support that is available. 
+This includes the locally run MILK breastfeeding drop -ins situated in the West 
+Sussex community . 
+ 
+11.0 Recommendations for health professionals on discussing bed -sharing 
+ with parents 
+ 
+Simplistic messages in relation to where a baby sleeps should be av oided; neither blanket 
+prohibitions nor blanket permissions reflect the current research evidence. 
+ 
+The current body of evidence overwhelmingly supports the following key messages, which 
+shoul d be conveyed to all parents: 
+ 
+ The safest place for your baby t o sleep is in a cot by your bed. 
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 17 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+ Sleeping with your baby on a sofa put s your baby at greatest risk. 
+ Your baby should not share a bed with anyone who: 
+o Is a smoker 
+o Has consumed alcohol 
+o Has taken drugs (legal or illegal) that make them sleepy. 
+ 
+The incide nce of SIDS (often called “cot death”) is higher in the following groups: 
+ 
+ Parents in low socio -economic groups . 
+ Parents who c urrently abuse alcohol or drugs . 
+ Young m others /birthing parents with more than one child . 
+ Premature infants and those with low bi rthweight . 
+ 
+Parents within these groups will need more face to face discussion to ensure that these key 
+messages are explored and understood. They may need some practical help, possibly from 
+other agencies, to enable them to put them into practice. 
+ 
+The infographic and guidance is designed to support health professionals when discussing 
+co-sleeping and SIDS with parents (see Appendix 3 ). Giving them all the facts and figures, 
+this accessible guide assists health profess ionals to take a sensible, proportionate parent -
+centred approach in order to find practical solutions to this complex issue. 
+ 
+12.0 Care Standards for babies in the Neonatal Unit 
+ 
+12.1 Supporting parents to have a close and loving relationship with their baby 
+ 
+This service recognises the profound importance of secure parent -infant attachment for the 
+future health and well -being of the infant and the challenges that the experience of having a 
+sick or premature baby can present to the development of this re lationship. Therefore, this 
+service is committed to care which actively supports parents to develop a close and loving 
+bond with their baby. All parents will: 
+ 
+ Have a discussion with an appropriate member of staff as soon as possible (either 
+before or afte r their baby’s birth) about the importance of touch, comfort and 
+communication for their baby’s health and development 
+ Be actively encouraged and enabled to provide touch, comfort and emotional 
+support to their baby throughout their baby’s stay on the neon atal unit 
+ Be enabled to have frequent and prolonged skin contact with their baby as soon as 
+possible after birth and throughout the baby’s stay on the neonatal unit . Local 
+guidance from South Central Neonatal Network Quality Care Group for skin -to- 
+skin on the NNU (Guideline framework for kangaroo care) can be found here. 
+Additional information can also be found on the Bliss website . 
+ 
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 18 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+12.2 Enabling babies to receive breastmilk and to breastfeed 
+ 
+This service recognises the importance of breastmilk for babies’ survival and health. 
+Therefore, this service will ensure that: 
+ 
+ A mother’s /birthing parent’s own breastmilk is always the first choice of feed for 
+their baby . 
+ Mothers /birthing parents have a discussion regarding the importance of their 
+breastmilk for their preterm or ill baby as soon as is appropriate (women /birthing 
+parents will have received disc ussion regarding importance of breastmilk in the 
+pregnancy but this should be reiterated in relation to their preterm or ill baby) . 
+ When a baby is admitted to NNU it is the shared responsibility of the neonatal 
+nurse and mother's /birthing parent’s midwife to ensure the mother /birthing parent 
+is given sufficient help to express their milk by hand and by pump in order to 
+establish and maintain lactation. This should ideally be commenced within 6 hours 
+of birth but preferably within the first hour where possib le. 
+ A suitable environment conducive to effective expression is created ideally near to 
+their baby to optimise hormonal response . 
+ Mothers /birthing parents have access to effective breast pumps and equipment . 
+ Mothers /birthing parents are enabled to express breastmilk for their baby, including 
+support to: 
+o Express as early as possible after birth (ideally within six hours) . 
+o Learn how to express effectively, including by hand and by pump . 
+o Learn how to use pump equipment and store milk safely (BfN leaflet ). 
+o Express frequently (at least eight times in 24 hours, including at least once at 
+night) especially in the first two to three weeks following delivery, in order to 
+optimise lo ng-term milk supply . 
+o Overcome expressing difficulties where necessary, particularly where milk 
+supply is inadequate, or if less than 750ml in 24 hours is expressed by day 
+10. 
+o Stay close to their baby when expressing milk . 
+o Use their milk for mouth care, and later to tempt their baby to feed . 
+ A formal review of expressing is undertaken a minimum of four times in the first 
+two week s (and carried out at least once within the first 12 hours following birth) to 
+support early expressing to support optimum expre ssing and milk supply . Please 
+use the local expressing assessment tool and log. 
+ Mothers /birthing parents receive care that supports the transition to breastfeeding, 
+including support to: 
+o Recognise and respond to feeding cues . 
+o Use skin -to-skin contact to encourage instinctive feeding behaviour . 
+o Position and attach their baby for breastfeeding . 
+o Recognise effective feeding . 
+o Overcome challenges when needed . 
+ Mothers //birthing parents are provided with details of voluntary support for 
+breastfeeding which th ey can choose to access at any time during their baby’s 
+stay. 
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 19 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+ Mothers /birthing parents are supported through the transition to discharge home 
+from hospital, including having the opportunity to stay overnight/for extended 
+periods to support the development of mothers’ /birthing parents’ confidence and 
+modified responsive4 feeding. 
+ 
+12.3 Valuing parents as partners in care 
+ 
+This service recognises that parents are vital to ensuring the best possible short and long 
+term outcomes for babies and therefore, shoul d be considered as the primary partners in 
+care. 
+ 
+The service will ensure that parents: 
+ 
+ Have unrestricted access to their baby unless individual restrictions can be justified 
+in the baby’s best interest . 
+ Are fully involved in their baby’s care, with all care possible entrusted to them . 
+ Are listened to, including their observations, feelings and wishes regarding their 
+baby’s care . 
+ Have full information regarding their baby’s condition and treatment to enable 
+informed decision -making . 
+ Are made comfortable w hen on the unit, with the aim of enabling them to spend as 
+much time as is possible with their baby. 
+ 
+The service will ensure that parents who formula feed: 
+ 
+ Receive information about how to clean/sterilise equipment and make up a bottle 
+of formula milk . 
+ Are able to feed this to their baby using a safe technique. 
+ 
+13.0 Rooming in 
+ 
+Mothers /birthing parents will normally assume primary responsibility for the care of the 
+babies but will be supported with any questions or concerns they may have . 
+ 
+Babies will not be routinely separated from their mothers /birthing parents at night. 
+Mothers /birthing parents who are unable to care for their baby due to illness or temporary 
+problem will be given appropriate care and staff will support the mother /birthing parent and/or 
+partner to continue routine care of their babies . 
+ 
+14.0 Weighing newborns 
+ 
+Birth weight, correctly taken and recorded, and related to gestational age, is an essential first 
+step in growth monitoring. Weight gain in the first few weeks of life is occ asionally a cause for 
+concern but there is little evidence on optimal frequency of weighing in the neonate. 
+ 
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 20 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+Re-weighing a baby who has remained on the postnatal ward beyond 3 days for a feeding 
+concern is recommended to minimise the potential for readmiss ion for abnormal weight loss 
+on day 5. 
+ 
+Babies should be weighed at birth, on day 5 and day 10 or prior to discharge to the health 
+visitor. This must be documented in the baby postnatal record and in the Personal Child 
+Health R ecord aka ‘red book’ where th is is available . 
+ 
+Baby scales within th e Trust are calibrated annually. 
+ 
+15.0 Feeding problems 
+ 
+The mothers /birthing parents must be given details of local support groups and telephone 
+numbers of feeding advisors. Please signpost breastfeeding mothers to their local MILK! 
+Group. 
+ 
+If a feeding problem is suspected a feeding assessment should take place (found in the 
+postnatal baby record) and a plan p ut in place to support the mother /birthing parents . If the 
+feeding assessment highlights any concerns then a Midwife or Maternity Support Worker 
+must watch a full breastfeed, develop a care plan including revisiting positioning and 
+attachment. Where weight l oss is between 8 and 10% at day 5 and there have been feeding 
+problems identified, extra feeding support should be considered. 
+ 
+For babies who lose over 10% of their birth weight on day 5, the advice of a paediatrician 
+must be sought. This can be done via the neonatal unit or by bleeping the on -call 
+paediatrician directly. 
+ 
+For those mothers /birthing parents who require additional support for more complex 
+breastfeeding challenges please highlight to an advanced trained maternity support worker 
+or midwife o r to the community MILK breastfeeding drop -ins. Please also see NICE 
+Guidance on Postnatal care up to 8 weeks after birth (CG37) and NICE Clinical Knowledg e 
+Summaries on Breastfeeding Problems 
+ 
+Where there is a suspected tongue tie, a referral to the Infant Feeding Clinic (situated at both 
+St Richard’s & Worthing Hospital) should be made. A referral of babies with a tongue tie 
+should be made where there are concerns about feeding and where a feeding assessment 
+has taken place. Mothers /birthing parents will be informed of this pathway and referral by the 
+health care professional ass essing the feeding. For more information please refer to 
+CG12033 Tongue -tie guideline . 
+ 
+The system for reporting newborns who are re -admitted with feeding problems during the 
+first 28 days of life is for the health professional involved to complete the Trust web -based 
+Clinical Incident Form (Datix). The incident will be allocated to the most appropriate senior 
+midwife for review and feedback any lessons identified on review. 
+
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 21 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+16.0 Training 
+ 
+Midwives have the primary responsibility for protecting and promoting breastfeeding and 
+helping women /birthing parents overcome related problems. Professional and support staff 
+who have contact with pregnant wome n/people and mothers /birthing parents will receive 
+training in breastfeeding support at a level appropriate to their professional group. 
+ 
+Staff will have a mandatory infant feeding update annually. 
+ 
+Clerical and ancillary staff will be made aware of the breast feeding policy and receive advice 
+to enable them to refer breast feeding queries appropriately 
+ 
+The responsibility for providing training lies with the Trust and details are contained within the 
+Maternity Training Needs Analysis document . 
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 22 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+ 
+17.0 Monitoring / Audit 
+ 
+The process for audit and monitoring of this guideline is completed in the following ways: 
+ 
+a) Compliance with this guidance is audited at least annually using the UNICEF UK Baby 
+Friendly Initiative audit. Audit results will be reported to t he head of service and head of 
+division and an action plan will be agreed by Infant Feeding Group to address any 
+areas of non -compliance that have been identified. 
+b) Outcomes will be monitored by: 
+ Guideline is monitored through Baby Friendly Initiative (BFI ) audit cycles 
+specifically the continuous supplementation audit, as supplementation rates are 
+indicative of the level of individualised care and promotion of breastfeeding. BFI 
+also request staff knowledge and maternal /birthing parent satisfaction audits 
+which help target training requirements fo r midwives and support workers 
+ Monitor attendance of women /people & their partners to the Baby Matters 
+antenatal session 
+ Staff Training in relation to infant feeding - Training Needs Analysis audit 
+ Monitoring brea stfeeding initiation rates & retention rates at 10 days 
+c) Outcomes will be reported to: 
+ Infant Feeding Group 
+ Public Health Meeting 
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 23 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+References 
+ 
+ABM [Academy of Breastfeeding Medicine] Clinical Protocol #3: Hospital guidelines for the 
+use of supplementary fee dings in the healthy term breastfed neonate, revised 2009. 
+Breastfeed Med. 2009; 4(3):175 -82. 
+ 
+Anderson GC, Moore E, Hepworth J, Bergman N. Early skin -to-skin contact for mothers and 
+their healthy newborn infants (Cochrane Review). In: The Cochrane Library , Issue 2 2003. 
+Oxford: Update Software. 
+ 
+Baby Friendly Initiative Standards www.unicef.org.uk/babyfriendly/standards 
+ 
+Ball, H. L. et al (2016). Bed -sharing by breastfeeding mothers: who bed -shares and what is 
+the relationship with breastfeeding duration? Acta Paediatrica, DOI: 10.1111/apa.13354. 
+ 
+Blair PS, Sidebo P, Evason -Coombe C et al (2009) Hazardous co -sleeping environments 
+and risk factors amenable to change: case -control study of SIDS in south west England. 
+BMJ; 339:b3666 
+ 
+Flint, A., New, K. and Davies, M. (2016) ‘Cup -feeding versus other forms of supplemental 
+enteral feeding for newborn babies unable to fully breastfeed’ Cochrane Review 31 August 
+2016 . 
+ 
+Horsley T et al. (2007) Benefits and harms associated with the practice of bed sharing. Arch 
+Pediatr Adolecs Med; 161 (3): 237 -245 
+ 
+NICE postnatal care guidance: http://www.nice.org.uk/cg37 
+ 
+NICE guidance on maternal and child nutrition: http://www.nice.org.uk/ph11 
+ 
+The international Cod e of Marketing of Breastmilk Substitutes 
+http://www.unicef.org.uk/BabyFriendly/Health -Professionals/Going -
+BabyFriendly/Maternity/The -International -Code -of-Marketing -of-Breastmilk -Substitutes -/ 
+ 
+Unicef (January 2015) Sample infant feeding policy (maternity) 
+ 
+Victora et al (2015). Association between breastfeeding and intelligence, educational 
+attainment, and income at 30 years of age: a prospective birth cohort study from Brazil. 
+Lancet Glob Health, 3: e199 –205 
+ 
+WBTi UK Report 2016 https://ukbreastfeeding.org/wbtiuk2016/ 
+ 
+World Health Or ganisation 2003 Global Strategy for Infant and Young Child Feeding 
+World Health Organisation/UNICEF/ Baby Friendly Initiative UK. 
+
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 24 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+Appendix 1 : Baby Friendly Initiative Stages 
+ 
+Stage 1 
+Building a firm foundation 
+ 
+1. Have written policies and guidelines to support the standards. 
+2. Plan an education programme that will allow staff to implement the standards 
+according to their role. 
+3. Have processes for implementing, auditing and evaluating the standards. 
+4. Ensure that there is no promotion of breastmilk substitutes , bottles, teats or 
+dummies in any part of the facility or by any of the staff. 
+ 
+Stage 2 
+An educated workforce 
+ 
+1. Educate staff to implement the standards according to their role and the service 
+provided. 
+ 
+Stage 3 
+Parents’ experiences of maternity services - 
+ 
+1. Support pregnant women /people to recognise the importance of breastfeeding and 
+early relationships for the health and well -being of their baby. 
+2. Support all mothers /birthing parents and babies to initiate a close relationship and 
+feeding soon after birth. 
+3. Enable mothers /birthing parents to get breastfeeding off to a good start. 
+4. Support mothers /birthing parents to make informed decisions regarding the 
+introduction of food or fluids other than breastmilk. 
+5. Support parents to have a close and loving relationshi p with their baby. 
+ 
+Parents’ experiences of neonatal units: 
+ 
+1. Support parents to have a close and loving relationship with their baby. 
+2. Enable babies to receive breastmilk and to breastfeed when possible. 
+3. Value parents as partners in care. 
+ 
+Re-accreditation - 
+ 
+1. Demonstrate innovation to achieve excellent outcomes for mothers /birthing 
+parents , babies and their families. 
+ 
+Click here for a flowchart overview of BFI accreditation. For more information and guidance 
+around the BFI stages please visit the UNICEF BFI website here 
+
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 25 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+Appendix 2 : Staff information sheet 
+ 
+A. For parents who have chosen in pregnancy to formula feed or mix feed from the 
+outset, they will be asked to provide formula milk for their babies whilst inpatients. 
+ 
+They will be asked to bring in a ‘ Starter Pack’ of ‘Ready to Feed’ first infant formula, which 
+are available from most supermarkets and pharmacies. Healthy Start vouchers can be used 
+to purchase these packs. We are advising that women /people should expect their babies to 
+need around 8 teat s and bottles per day, although the number of bottles may be reduced if 
+we can decant and minimise wastage. 
+ 
+For these women /people , midwives are asked to: 
+ 
+ Check with the parents that the Starter Pack formula milk they have brought is a first 
+milk for new born babies and the expiry date. An open bottle should be discarded 
+within 1 hour from opening if the baby drinks directly from it. However if decanting this 
+can be refrigerated at kept at the back of the fridge for 24 hours. 
+ 
+ Discuss colostrum and collec ting and offer an antenatal expressing pack. 
+ 
+ Demonstrate responsive bottle feeding and discuss feeding cues. 
+ 
+ Demonstrate how to make up formula from powder safely and understand the 
+importance of washing and sterilising the necessary equipment before dis charge. 
+Reiterate the importance of using boiling water as there is a misconception that using 
+cooled boiled water is ok. Boiling water is essential for killing the bacteria in the 
+powder, not to sterilise the water alone. 
+ 
+ Ensuring that they position them selves and their baby safely, in order to look into 
+baby’s eyes, and to pace the feeds so as not to overload the baby. 
+ 
+ The ‘Perfect Prep Machine’ and other mechanical bottle preparation technology is 
+currently not recommended. 
+ 
+ Use the Guide to Bottle fe eding booklet found here: 
+https://www.unicef.org.uk/babyfriendly/wp -
+content/uploads/sites/2/2008/02/start4life_guide_to_bottle_ -feeding.pdf 
+ 
+ For a simple guide on which type of formula and how to feed responsively please see 
+the information contained within the Baby Postnatal Record. 
+ 
+B. Parents who have not planned to formula feed but choose to supplement their 
+babies whilst in patients 
+ 
+For these women /people , midwives are asked to: 
+ 
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 26 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+ Continue to maximise support and encouragement for breastfeeding and expression 
+of breast milk, seeking additional support where necessary. Ensure women /people 
+are fully informed about the impact o n breastmilk supply when supplementing with 
+formula and the risk of nipple confusion when using a bottle teat. 
+ 
+ Give to the baby in the least disruptive way to breastfeeding (cup/ finger feeding), 
+especially if this is the eventual feeding intention. See Section 8.0 for other methods 
+of feeding. 
+ 
+ In the circumstance where parents decide that they wish to give their baby formula, 
+we will provide them with formula milk for the next time their baby needs to feed, unti l 
+their partner or family member is able to bring in formula milk for the baby. Formula 
+milk ‘starter packs’ are available at a range of supermarkets and pharmacies close to 
+the Trust hospitals. 
+ 
+ If formula milk is requested before any ‘Ready Made’ formula can be brought in for 
+the baby, please decant any formula milk provided by the ward in a non -branded 
+bottle. Decant the amount required into a neutral sterile container and place the rest 
+into the fridge indicating date and time of opening (use the refrig erated milk within 24 
+hours). The remaining milk can be used for this or other babies within 24 hours of 
+opening so long as it remains refrigerated. 
+ 
+ Inform the parents that the decanted formula should be used within 1 hour 
+ 
+ If using a bottle demonstrate responsive bottle feeding technique 
+ 
+ Ensuring that they position themselves and their baby safely, in order to look into 
+baby’s eyes, and to pace the feeds so as not to overload the baby. 
+ 
+ The ‘Perfect Prep Machine’ and other mechanical bottle preparation technology is 
+currently not recommended. 
+ 
+ Use the Guide to Bottle feeding booklet found 
+here: https://www.unicef.org.uk/babyfrie ndly/wp -
+content/uploads/sites/2/2008/02/start4life_guide_to_bottle_ -feeding.pdf 
+ 
+ For a simple guide on which type of formula and how to feed responsively please see 
+the information contained within the Baby Postnatal Record. 
+ 
+ If parents will continue to give infant formula on discharge from hospital, they should 
+be shown how to make up infant formula from powder safely, and understand the 
+importance of washing and sterilising the necessary equipment prior to discharge. 
+Reiterate the importance of using bo iling water as there is a misconception that using 
+cooled boiled water is ok. Boiling water is essential for killing the bacteria in the 
+powder, not to sterilise the water alone. 
+ 
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 27 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+C. For parents whose baby needs formula milk as a supplementation for a medi cal 
+reason 
+ 
+We will always provide formula milk for babies with a medical indication for supplementation 
+and where the mother /birthing parent is unable to express sufficient breast milk for the baby’s 
+needs. 
+ 
+For these women /people midwives are asked to: 
+ 
+ Discuss the medical reason for supplementing, on the basis of a documented 
+paediatric recommendation. 
+ 
+ Support mother /birthing parents to keep on breastfeeding and/or expressing. Where 
+possible babies should breastfeed or receive expressed breast milk prior to a formula 
+supplementation. This will help the mother /birthing parents maintain or increase milk 
+supply. 
+ 
+ Each ward will have a supply of a single brand of formula milk. Check the expiry date 
+on the individual bottle. 
+ 
+ Decant the amount required in to a non -branded sterile container and place the rest 
+into the fridge indicating date and time of opening (use the refrigerated milk within 24 
+hours). The remaining milk can be used for this or other babies within 24 hours of 
+opening so long as it remains refrigerated. 
+ 
+ Inform the parents that the decanted formula should be used within 1 hour 
+ 
+ Give to the baby in the least disruptive way to breastfeeding (cup/ finger feeding). 
+See Section 8.0 for other methods of feeding. 
+ 
+ If using a bottle demonstrate responsive bottle feeding technique 
+ 
+ Ensuring that they position themselves and their baby safely, in order to look into 
+baby’s eyes, and to pace the feeds so as not to overload the baby. 
+ 
+ Use the Guide to Bottle fee ding booklet found 
+here: https://www.unicef.org.uk/babyfriendly/wp -
+content/uploads/sites/2/2008/02/start4life_guide_to_bottle_ -feeding.pdf 
+ 
+ For a simple guide on which type of formula and how to feed responsively please see 
+the information contained within the Baby Postnatal Record. 
+ 
+ If parents decide to switch to formula but no longer with a medical indication, then ask 
+them to b ring a Starter Pack of ‘Ready to Use’ formula into hospital. These are 
+available from supermarkets and pharmacies. 
+ 
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 28 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+ If parents will continue to give infant formula on discharge from hospital, they should 
+be shown how to make up infant formula from powder safely, and understand the 
+importance of washing and sterilising the necessary equipment prior to discharge. 
+
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 29 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+Appendix 3 : A guide for health professionals: Safe Sleeping 
+
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 30 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+ 
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 31 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+ 
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 32 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+ 
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 33 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+Appendix 4: Parent information - Supplementation 
+ 
+Possible effects of offering a formula supplementation to a 
+breastfeeding baby 
+
+Breastfeeding is generally recognised to be the most beneficial feeding method for both 
+mother and baby in terms of health outcomes (NICE 2006). Breastfeeding provides a 
+complete food, and is act ively protective for both mother and baby, whilst formula, although 
+meeting with European nutritional standards (Commission Directive 2006), does not provide 
+immunity or contain any of the other ingredients that breastmilk does. 
+ 
+Some mothers worry that t heir colostrum is not enough for their baby. This milk is very 
+special and full of factors that protect your baby and colostrum is naturally produced in 
+smaller quantities in the first two days after birth. 
+ 
+New babies can be unsettled, fussy or sleepy a nd sometimes mothers ask for formula 
+supplements without realising the possible problems of giving formula to their breastfed 
+newborn. Staff can suggest ways of soothing your baby, support you to recognise effective 
+feeding, and help you hand express your breastmilk in the first instance. 
+ 
+ If you are thinking of giving your breastfed baby formula milk, here is some important 
+information to consider to help you make an informed decision. 
+Helpful Hints… 
+ 
+ Skin to skin is wonderful at calming your baby; encourages their instinctive re sponse to 
+breastfeed and will increase your breastmilk supply. They are happiest being held. 
+ Breastfed babies will normally feed 8 -12 times in twenty four hours. Feed your baby at 
+the earliest feeding cues. Ring your call -bell so we can help guide you w ith optimal 
+positioning and attachment of your baby to your breast to get the most out of the 
+breastfeed. 
+ Try a laid back (baby driven) position which will encourage your baby’s instinctive 
+behaviour to self -attach. 
+ If your baby seems to be sleepy wh ilst breastfeeding, compress the breast your baby is 
+feeding from, with your hand, which will increase milk flow and encourage your baby to 
+actively feed. Alongside this switch your baby to the other breast when they are no 
+longer actively feeding which wi ll bring a new ‘let down’ of milk and will encourage baby 
+to actively feed. Switch over 3 -4 times until your baby is done. 
+ Express small but frequent amounts and give this to your baby regularly on a finger or 
+syringe which will stimulate a sleepy baby. 
+CG1129 Newborn Feeding Guideline v8.0 March 2022 Page 34 of 34 
+Please check against Staffnet that this printout is the most recent version of this docume nt. 
+Some things to consider… 
+ 
+ Effects on breastmilk supply: Offering formula milk may affect your breastmilk supply 
+as breastfeeding works best if you repeatedly put your baby to your breast again and 
+again. This extra stimulation will improve your supply and help settle your baby. By 
+replacing a breastfeed with formula, your breasts can become over -full (engorged), 
+which can be painful and can cause some difficulty in attaching your baby to the breast. 
+If this is not re solved quickly (by getting your baby to feed from your breasts or by 
+expressing your breastmilk) it can lead to reduced milk supply. It could also lead to 
+mastitis. 
+ Increased chance of gut infections: breastfed babies have a lower gut pH level (this 
+means that their gut is more acidic) during the first six weeks of life. This is beneficial as 
+it reduces harmful germs in the gut. If formula supplements are given in the first seven 
+days, the development of the lower pH in the gut is slowed. 
+ Increased chance of cow’s milk allergy: Giving formula milk to a breastfed baby can 
+increase their chance of developing Cow’s Milk Protein Allergy (CMPA). 
+ Nipple confusion: Sucking on a bottle teat may make it more difficult for the baby to 
+latch to the breast e ffectively as the action the baby makes with its mouth when feeding 
+from a teat is very different. 
+ Over -feed: Babies given larger volumes of formula milk can take more than required 
+during a feed and can be less satisfied on subsequent breastfeeds. Bre astfeeds are 
+naturally smaller in volume while delivering the exact nutritional needs to your baby. 
+Medical reasons: Occasionally, there are medical reasons to offer a breastfed baby 
+supplements of formula milk. The health professionals working with you will advise you if 
+your baby has a medical need for supplemental milk. The healthiest supplement is the 
+mother’s expressed breast milk followed by formula milk. 
+ 
+Supporting breastfeeding while giving a formula supplement... 
+ Offer the formula milk in sm all amounts to mimic how breastfeeding works. 
+ Staff will help you to use a cup or tube (supplementary nursing system) to avoid possible 
+teat confusion. 
+ Express your breastmilk so that your supply is maintained. As babies grow, latching 
+issues can i mprove and you may wish to remove the added formula supplement. Decisions… 
+If you do decide to give formula milk after reading this information and considering your 
+options, staff will be sensitive to your informed decision, and will support you to keep your 
+options open to continue breastfeeding.

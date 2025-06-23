@@ -1,0 +1,783 @@
+# Extracted from: SP22006 In-Patient Maternity Observations SOP.pdf
+# Guideline ID: sp22006-in-patient-maternity-observations-sop
+# Content length: 34254 characters
+# Processing date: 1750066901.9214609
+
+SP22006 In-Patient Maternity Observations and Monitoring SOP v1.0 November 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 1 of 19 
+ 
+In-Patient Maternity Observations and Monitoring 
+Standard Operating Procedure (SOP) 
+Summary statement: How does the 
+document support patient care? To ensure that all pregnant or newly birthed women/people 
+admitted as maternity inpatients within University Hospitals 
+Sussex (UH Sussex) West receive appropriate observations 
+and monitoring, according to their clinical condition, or as 
+required by the treatment they are undergoing, wherever they 
+are located. 
+Staff/stakeholders involved in 
+development: Clinical Governance Midwife, HoM, Ward Managers, 
+Maternity In -Patient Matron 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Clinical Effectiveness Support Midwife 
+For use by: All staff who perform observations on pregnant or newly birth 
+women/people. 
+Purpose: To ensure the pregnant women / people admitted to hospital 
+have observations performed and assessed in structured 
+manner using the Maternity Care Bundle with observations 
+increased and escalated appropriately should the clinical 
+situation indicate. 
+This document supports: UH Sussex Patient Observations and Monitoring on Adult 
+Ward Areas Policy v6.0 
+Maternity Observations Bundle 
+Key related documents: UH Sussex (SRH & WH) Maternity Guidelines: Caesarean 
+Birth Guideline , Maternity Escalation Policy , Maternity Fluid 
+Management as an In-Patient or During Labour ,Induction and 
+Augmentation of Labour and Use of Oxytocin Guideline, 
+Postnatal Care Guideline 
+Approved by: Joint Obstetric Guideline Group 
+Approval date: 16th November 2022 Date Uploaded: 30th November 2022 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable – Divisional Ratification only required 
+Ratification Date: Not Applicable – Divisional Ratification only required 
+Expiry Date: November 2025 
+Review date: May 2025 
+If you require this document in another format such as Braille, large print, 
+audio or another language please contact the Trusts Communications Team 
+Reference Number: SP22006 SP22006 In-Patient Maternity Observations and Monitoring SOP v1.0 November 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 2 of 19 
+ 
+Version Date Author Status Comment 
+1.0 November 2022 J. Collard, Clinical 
+Effectiveness 
+Support Midwife Live New SOP specifically for 
+maternity in response to UH 
+Sussex Patient Observations 
+and Monitoring on Adult Ward 
+Areas Policy v6.0 and to 
+clarify frequency of 
+observations. 
+ 
+The interpretation and application of clinical guidelines will remain the 
+responsibility of the individual clinician. 
+If in doubt contact a senior colleague or expert. SP22006 In-Patient Maternity Observations and Monitoring SOP v1.0 November 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 3 of 19 
+
+Contents 
+1.0 Aim of this document ................................ ................................ ................................ ... 4 
+2.0 Scope ................................ ................................ ................................ .......................... 4 
+3.0 Abbreviations used in this guideline ................................ ................................ ............. 4 
+4.0 Introduction ................................ ................................ ................................ ................. 5 
+4.1 MEOWS physiological parameters ................................ ................................ .............. 5 
+5.0 Responsibilities ................................ ................................ ................................ ........... 5 
+5.1 Registered staff ................................ ................................ ................................ ........... 5 
+5.2 Maternity care assistants / students / unregistered staff ................................ ............... 6 
+5.3 Medical Staff ................................ ................................ ................................ ............... 6 
+5.4 Management, Matrons and Co-ordinators ................................ ................................ .... 7 
+6.0 Training ................................ ................................ ................................ ....................... 8 
+7.0 Assessment and monitoring in Maternity ................................ ................................ ..... 8 
+8.0 Frequency of maternal/birthing parent observations ................................ ..................... 9 
+9.0 Audit ................................ ................................ ................................ .......................... 10 
+Appendix 1: MEOWS Escalation ................................ ................................ ........................... 12 
+Appendix 2: Maternal Observation Bundle ................................ ................................ ............ 13 
+Appendix 3: Method and rationale for observations ................................ ............................... 14 
+Appendix 4: SBAR ................................ ................................ ................................ ................ 18 
+Appendix 5: MET call criteria ................................ ................................ ................................ 19 
+ SP22006 In-Patient Maternity Observations and Monitoring SOP v1.0 November 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 4 of 19 
+ In-Patient Maternity Observations and Monitoring 
+Standard Operating Procedure (SOP) 
+ 
+1.0 Aim of this document 
+ 
+• To ensure that all pregnant or newly birthed women/people admitted as maternity 
+inpatients within University Hospitals Sussex (UH Sussex) SRH&WH receive 
+appropriate observations and monitoring, according to their clinical condition, or as 
+required by the treatment they are undergoing, wherever they are located. 
+• The standard for training, competence and undertaking of patient observations is 
+consistent throughout Maternity, providing reliability and accuracy of patient 
+observations. 
+• All staff involved in taking observations and monitoring maternity patients are 
+trained in the use of the Maternal Observation Bundle to support patient safety and 
+early reporting of changes indicating deterioration in a patient’s condition to the 
+relevant clinical teams. 
+• They are trained in the use of any equipment/ electronic systems that will support 
+this. 
+• To ensure that the Maternal Observation Bundle is used to full capacity to support 
+patient safety and early reporting of changes in a woman/person’s condition to the 
+relevant clinical teams. 
+ 
+2.0 Scope 
+ 
+This guideline applies to: 
+ 
+• Midwives 
+• Obstetricians 
+• Anaesthetists 
+• Maternity recovery staff 
+• Operating Department Practitioners 
+• Maternity Assistants 
+• Any staff member performing observations or monitoring of pregnant or newly 
+birthed women/people. 
+ 
+3.0 Abbreviations used in this guideline 
+ 
+SOP - Standard Operating Procedure MEOWS - Modified Early Obstetric Warning 
+System 
+MCA - Maternity Care Assistant VIP - Visual Infusion Phlebitis Score 
+P - Pulse T - Temperature 
+RR - Respiration Rate BP - Blood Pressure SP22006 In-Patient Maternity Observations and Monitoring SOP v1.0 November 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 5 of 19 
+ 4.0 Introduction 
+ 
+This SOP has been devised to ensure that all pregnant or newly birthed women/people 
+admitted to UH Sussex SRH&WH receive the appropriate level of monitoring and that 
+vital signs will be recorded according to their clinical condition. 
+ 
+All staff who record clinical observations should have had appropriate training and are 
+therefore competent to do so, thus ensuring any changes to a woman/person’s vital signs are 
+noted and responded to appropriately. 
+ 
+4.1 MEOWS physiological parameters 
+ 
+The MEOWS chart of the Maternal Observation Bundle is a modified version of the NEWS2 
+chart used within the wider Trust specifically for pregnant/newly birthed women/people. It is a 
+scoring tool using the following basic physiological parameters: 
+ 
+• Temperature 
+• Pulse 
+• Respiratory rate 
+• Oxygen saturation 
+• Systolic and diastolic blood pressure 
+• Neurological response (AVPU) 
+• Pain score 
+• Lochia/wound 
+• Appearance/looks unwell 
+ 
+All parameters must be assessed at each set of observations in order to provide an accurate 
+MEOWS score. 
+ 
+The MEOWS Observation Bundle also contains the Maternity Fluid Balance Chart, Post 
+Anaesthetic Monitoring, Pressure Ulcer Risk Assessment and Visual Infusion Phlebitis (VIP) 
+Score. 
+ 
+5.0 Responsibilities 
+5.1 Registered staff 
+ 
+Midwives, nurses and other registered staff should ensure: 
+ 
+• They have accessed, read, understood and followed this SOP. 
+• Used their professional judgement in application of this SOP. 
+• They have the appropriate level of knowledge and skill required to undertake and 
+record patient’s vital signs/ observations. They have full understanding of Maternal 
+Observation Bundle and its application. 
+• They are competent and trained in the use of monitoring equipment used to record 
+patient observations. SP22006 In-Patient Maternity Observations and Monitoring SOP v1.0 November 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 6 of 19 
+ • The Registered professional must make known any limitations they have to the 
+Co-ordinator/Manager as they are accountable for their practice and the practice of 
+those unregistered health care support workers who they delegate tasks to. 
+• When recording patient observations it is essential that these are entered in a 
+timely manner onto the Maternal Observation Bundle. Observations should not be 
+documented at a later time. 
+• When recording vital signs various factors may affect the readings, it may be 
+difficult to obtain accurate data, this must be documented in patients notes and 
+taking into consideration when assessing the woman/person’s condition. 
+• They change the frequency of patient observations as per MEOWS Escalation 
+section on the front of the Maternal Observation Bundle. 
+• Any changes to woman/person’s condition in the maternity notes with clear record 
+of actions taken and plan of care. 
+ 
+5.2 Maternity care assistants / students / unregistered staff 
+ 
+Maternity Care Assistants (MCAs) should ensure that: 
+ 
+• They have the appropriate level of knowledge and skill to undertake and record the 
+woman/person’s vital signs/observations. 
+• They are competent and trained in the use of MEOWS and monitoring equipment 
+used to record patient observations. 
+• They make known any limitations in vital sign recording or use of equipment they 
+have to the co -ordinator/manager in charge of the shift. 
+• When recording patient observations it is essential that these are entered in a 
+timely manner onto the MEOWS chart ie as soon as recorded. 
+• When recording vital signs various factors may affect the readings, it may be 
+difficult to obtain accurate data; this must be reported to the midwife responsible 
+for the woman/person who will ensure it is documented in their maternity notes. 
+• If the MEOWS score is more than 0 this must be reported to the midwife 
+responsible for that woman/person. 
+• If the score is 0 but they have any concerns that the woman/person’s clinical 
+condition has changed or deteriorated, this must be reported to the midwife 
+responsible for that woman/person. 
+ 
+5.3 Medical Staff 
+ 
+Medical staff should ensure that: 
+ 
+• They leave clear instructions for the maternity team of any changes to frequency or 
+observation requirements; this must be documented in the woman/person’s 
+maternity notes. 
+• Must leave clear instruction for midwifery staff regarding when they would like to 
+be informed should patient MEOWS score or parameters change. 
+• There is a timely response to MEOWS score generated from the observations 
+recorded when requested by the midwife or co -ordinator. 
+• Their response should be clearly documented in woman/person’s maternity notes SP22006 In-Patient Maternity Observations and Monitoring SOP v1.0 November 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 7 of 19 
+ 
+5.4 Management, Matrons and Co-ordinators 
+ 
+Management, Matrons and Co-ordinators should ensure that: 
+ 
+• This SOP is reviewed as required in line with Trust and National 
+recommendations. 
+• This SOP is accessible to all relevant staff. 
+• They remain competent in vital sign taking and recording and are competent in use 
+of Maternal Observation Bundle, to be able to support clinically in the maternity 
+unit and supporting junior staff. 
+• They undertake review of compliance with observation timeliness, recording of vital 
+signs and escalation protocols when reviewing care of women/people for incidents 
+or complaints, ensuring thorough investigation, and any learning for the staff 
+involved, ward team or wider divisional sharing occurs, with action plans in place if 
+needed. 
+• They review monitoring of women/people when undertaking other documentation 
+audits that may be requested. 
+• They are fully aware of the acuity within their areas of responsibility to support 
+ward. 
+• Shortfall of resources either staffing or equipment has been identified are 
+managed. 
+• Processes are in place to ensure bank and agency staff are trained and provided 
+access to the Maternal Observation Bundle within clinical areas. 
+• All staff who undertake observations and monitoring are trained and competent in 
+the accurate undertaking and recording of all vital signs using the appropriate 
+equipment and completion of documentation. This includes the ability in 
+interpreting these to recognise the deteriorating patient. 
+• An appropriate number of observation recording machines (manual and electronic) 
+are readily available, with appropriate disposables, for the above monitoring to be 
+undertaken with ease. 
+• Monitors and equipment are kept in good service, with regular planned servicing 
+by the bio -medical engineering department. Defective equipment is withdrawn 
+immediately from patient use and sent to biomedical engineering / Medical 
+Electronics Department if medical equipment. 
+• Appropriate Maternal Observation Bundles are readily available to record the 
+observations. 
+• They are aware of the acuity within their areas of responsibility and support staff 
+on the wards when shortfall of resources has been identified. Staffing levels should 
+be in place that reflects the acuity of the patients within the ward ensuring that the 
+recording of observation as per MEOWS scoring is facilitated. 
+• The Co -ordinator/Ward Manager should assist in re -allocating workload of the 
+midwife caring for a woman/person’s whose MEOWS has generated a higher 
+score and an elevation in the frequency of observations is required, to enable them 
+to undertake this level of monitoring and ensure patient safety is maintained. SP22006 In-Patient Maternity Observations and Monitoring SOP v1.0 November 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 8 of 19 
+ • If the staffing is not adequate to meet this need, then this should be escalated as 
+per UHSC022 Maternity Escalation Policy with the matron being notified 
+immediately in order to enable support to the ward if possible. 
+• Training records or induction checklists should be completed to demonstrate 
+competence and assessment has taken place. 
+ 
+6.0 Training 
+ 
+• All staff using equipment must be trained in its use (e.g. oral/tympanic/infrared 
+thermometers, pulse oximetry, manual sphygmomanometers, automated blood 
+pressure monitors, ECG monitors etc). 
+• Any member of staff asked to use equipment to which they are not competent 
+must declare their limitation and ask for training before using independently. 
+• Senior midwives should ensure that all new registered midwives/HCAs (if 
+undertaking observation monitoring) have both the practical and cognitive skills 
+required to undertake the observations as listed in section 4.1. Competence should 
+be signed off in their Trust induction folders. Deficiency in capability/competence 
+must be dealt with by the Line Manager/Matron. 
+• Student midwives undertaking observations should be assessed by their mentor 
+using the university practice competency document. Deficiencies should be fed 
+back to the university link tutor and recorded in their practice book. Local 
+processes for completing the Maternal Observation Bundle will need to be 
+completed on the ward at the start of placements. 
+ 
+7.0 Assessment and monitoring in Maternity 
+ 
+• The midwife or registered professional caring for the woman/person is accountable 
+for the frequency with which the observations should be undertaken. Guided by the 
+previous observations, MEOWS score and escalation pathway on the front of the 
+Maternal Observation Bundle, plus any extra care the patient is receiving, for 
+instance induction of labour, PET or caesarean section. 
+• The midwife or registered professional should use clinical judgement to assess 
+frequency of observations, where other signs or symptoms exist and are cause for 
+concern, despite a low or normal MEOWS score, and increase frequency of 
+observations and escalate to co -ordinator and obstetric team as appropriate. 
+• Baseline measurements of vital signs must be recorded on admission for all 
+women/people admitted to the maternity unit or being seen in DAU/Triage. 
+• MEOWS score should be calculated with each set of observations recorded and 
+acted on as indicated by the MEOWS Escalation table on the front of the Maternal 
+Observation Bundle. (See Appendix 1 ) 
+• SOP to be used in conjunction with CG21009 Maternity Fluid Management as an 
+In-Patient or During Labour Guideline. SP22006 In-Patient Maternity Observations and Monitoring SOP v1.0 November 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 9 of 19 
+ 
+8.0 Frequency of maternal/birthing parent observations 
+The flowchart below is a guide of minimum observations that should be 
+performed. Frequency should be increased according to individual clinical 
+need, MEOWS escalation pathway and obstetric plan. For fetal heart 
+monitoring frequency please see CG1116 Fetal monitoring guideline . 
+ 
+Antenatal Admission 
+4-hourly: BP, P, RR, Temp, 
+cumulative fluid balance. IOL 
+4-hourly: BP, P, RR, Temp, 
+cumulative fluid balance. Other & High Risk 
+Observations to be increased as per individual obstetric plan, 
+MEOWS escalation pathway and individual applicable guideline 
+eg Hypertensive Disorders in Pregnancy Guideline. 
+
+Low Risk Labour 
+First stage: 
+Hourly: Pulse 
+4-hourly: BP, Temp, RR, cumulative 
+fluid balance. 
+Second stage: 
+Every 15 mins – Pulse 
+Hourly - BP 
+4-hourly - Temp, cumulative fluid 
+balance. 
+(Waterbirth: Temp ½ hourly) 
+Active 3rd stage: 
+BP, P, Temp after delivery of 
+placenta. 
+Physiological 3rd stage: 
+BP, P after 30 mins 
+BP, P & Temp after delivery of 
+placenta. IOL 
+ 
+Observations as per 
+‘Low Risk Labour’ 
+except for 
+High risk: 
+Fluid monitoring 
+increases to hourly fluid 
+balance with 
+4-houly cumulative fluid 
+balance. Epidural 
+Set up of epidural: 
+Every 5 mins for 20 mins: 
+BP, P 
+Then every 30 mins: BP, P 
+Hourly: fluid balance 
+4-hourly: RR, T, cumulative 
+fluid balance 
+Second Stage: 
+Every 15 mins – Pulse 
+½ hourly - BP 
+Hourly: fluid balance. 
+Active 3rd stage: 
+BP, P, Temp after delivery of 
+placenta. Other & High Risk 
+Labour 
+Observations as per 
+‘Low Risk Labour’ 
+except for 
+Fluid monitoring increases to 
+hourly fluid balance with 
+4-houly cumulative fluid 
+balance. 
+Observations to be increased 
+as per individual obstetric 
+plan, MEOWS escalation 
+pathway and individual 
+applicable guideline 
+eg Severe PET & Eclampsia 
+Guideline. 
+
+Low Risk 
+ 
+BP, P, RR, Temp 
+prior to transfer to 
+ward. 
+4-hourly 
+cumulative fluid 
+balance continues. Caesarean Birth 
+Every 5 mins for 15 mins: BP, P, RR 
+2 x ½ hourly: BP, P, RR 
+Hourly for 2 hours: urine output & 
+temp. 
+Hourly: BP, P, RR until Recovery 
+Checklist Criteria met. 
+4 hourly motor & sensory block review 
+for 24 hours. 
+Post Recovery criteria met: 
+4-hourly: BP, P, RR, T, cumulative 
+fluid balance. Epidural or Spinal 
+Observations as per ‘Post Birth 
+Caesarean Birth’. 
+If at higher risk of respiratory depression*: 
+12-hours: Continuous pulse oximetry. 
+Hourly: BP, P, RR, T 
+Once stable commence 4-hourly 
+observations. 
+4 hourly motor & sensory block review for 
+24 hours. 
+* eg significantly raised BMI or sleep apnoea Other & High 
+Risk 
+Observations to be 
+increased as per 
+individual obstetric 
+plan, MEOWS 
+escalation pathway 
+and individual 
+applicable guideline 
+eg Severe PET & 
+Eclampsia Guideline. 
+
+Low risk 
+First 24 hours: 
+12-hourly: BP, P, RR, T measure 2x 
+urine post birth then discontinue fluid 
+balance 
+Post 24 hours until discharge: 
+Once daily BP, P, RR, T with 
+postnatal check. Caesarean Birth 
+First 24 hours: 
+4-hourly: BP, P, RR, T, cumulative 
+fluid balance until catheter removed. 
+Post 24 hours until discharge: 
+12-hourly: BP, P, RR, T. 
+Once catheter removed and TWOC 
+successfully completed fluid balance 
+can be stopped. Epidural or 
+Spinal 
+Observations 
+as per 
+‘Postnatal 
+Caesarean 
+Birth.’ Other & High Risk 
+Observations to be increased 
+as per individual obstetric plan 
+MEOWS escalation pathway 
+and individual applicable 
+guideline eg Hypertensive 
+Disorders in Pregnancy. 
+Key 
+BP – Blood Pressure 
+P – Pulse 
+RR – Respiration Rate 
+Temp – Temperature Antenatal 
+Admission 
+on ward Postnatal Ward Labour Post Birth SP22006 In-Patient Maternity Observations and Monitoring SOP v1.0 November 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 10 of 19 
+ 9.0 Audit 
+ 
+Suggested auditable questions: 
+ 
+On AN ward – observations every 4 hours 
+For CS or operative delivery pathway - post-op observations taken as per guideline 
+For vaginal / non-theatre delivery pathway – post-delivery observations taken as per 
+guideline 
+ 
+On PN Wards - observations every 4 hours for 24 hours post -LSCS 
+For vaginal / non-theatre delivery – PN observations completed as per guideline 
+ 
+If Yellow/Red scores identified - evidence of increased observations 
+If Yellow/ Red scores identified - evidence of escalation documented by midwife 
+If escalated to obstetrician - evidence of plan documented in notes by doctor 
+All observations completed on Maternal Observation Bundle SP22006 In-Patient Maternity Observations and Monitoring SOP v1.0 November 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 11 of 19 
+ References 
+ 
+National Institute for Health and Clinical Excellence 2019 CG190 Intrapartum care for healthy 
+women and babies NICE 
+ 
+National Institute for Health and Clinical Excellence 2021 NG192 Caesarean birth NICE 
+ 
+National Institute for Health and Clinical Excellence 2021 NG194 Postnatal care NICE 
+ 
+National Institute for Health and Clinical Excellence 2021 NG201 Antenatal care NICE SP22006 In-Patient Maternity Observations and Monitoring SOP v1.0 November 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 12 of 19 
+ Appendix 1: MEOWS Escalation 
+
+Escalation Pathway 
+
+1 Yellow • Repeat observations between 30-60 minutes 
+• Midwife to assess patient. If any immediate clinical concerns to inform Ward Coordinator 
+• Review and document plan of care 
+ 
+2 or more Yellow and/or 
+any Red • Repeat observations between 15-30 minutes 
+• Inform labour ward coordinator for review 
+• Obstetric review within 30 minutes 
+• Review and document plan of care 
+
+2 Red • Repeat observations every 15 minutes 
+• Inform Labour Ward Coordinator for immediate review 
+• Obstetric Registrar review within 20 minutes 
+• Prompt transfer to labour ward 
+• Review and document plan of care 
+
+More than 2 Red • Repeat observations every 15 minutes 
+• Inform Labour Ward Coordinator for immediate review 
+• Obstetric Registrar review within 20 minutes 
+• Increase observations to every 5 minutes if rapid deterioration 
+• Check oxygen saturations and administer oxygen as appropriate 
+• Inform on call Anaesthetist 
+• Consider calling Obstetric / Medical emergency (2222) 
+• Consider HDU transfer 
+• Review and document plan of care 
+ 
+If patient deteriorates 
+further or fails to respond 
+to treatment • Contact Consultant Obstetrician and Anaesthetist 
+• Pull emergency bell for immediate help 
+• Call Obstetric / Medical emergency (2222) 
+• Consider immediate HDU / ITU transfer 
+• Review and document plan of care. 
+
+Fluid Balance • 1500mls positive balance or over, review by Obstetric Registrar. A blood sodium level 
+should be checked and the Peripartum Sodium Monitoring Pathway commenced. If at 
+homebirth transfer to Labour Ward 
+• Blood Sodium ≥130mmol/l - requires no action, however continue to closely monitor and 
+record the fluid balance 
+• Blood Sodium 125-129mmol/l - Immediate review required by Obstetric Registrar, fluid 
+restrict to 80mls/hr, repeat Sodium 4 hourly. Inform Neonatal Team 
+• Blood Sodium <125mmol/L - Immediate Obstetric and Anaesthetic review. Fluid restrict 
+to 30ml/hr. Stop Oxytocin. Check plasma & urinary osmolality. Consider discussion with 
+Medical Team. Team to inform ITU and Neonatal Team. SP22006 In-Patient Maternity Observations and Monitoring SOP v1.0 November 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 13 of 19 
+ 
+Appendix 2: Maternal Observation Bundle 
+Example of Maternity Observation Bundle – DO NOT PRINT FROM GUIDELINE 
+
+ SP22006 In-Patient Maternity Observations and Monitoring SOP v1.0 November 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 14 of 19 
+ 
+Appendix 3: Method and rationale for observations 
+ 
+Respiratory Rate (RR) 
+Method Rationale Comments 
+
+Count for 1 minute 
+(Can be discretely taken 
+at the same time as the 
+pulse is noted) 
+To assess respiratory rate, 
+depth, pattern and ease of 
+breathing. 
+ 
+Less obvious, therefore less 
+likely to cause patient to alter 
+their respiratory pattern 
+• RR is a sensitive marker of acute illness. It can also be affected by changes in metabolic, 
+neurological and cardiac status. 
+• Looking at the patients breathing pattern and colour (cyanosis) - Assessment may vary 
+depending on patients skin tone, consider assessing conjunctiva and nail beds for pallor as 
+cyanosis may be more difficult to determine. 
+• Listening for additional breath, sounds such as an audible wheeze and feeling the patients 
+skin: are they cool and clammy? 
+Oxygen Saturation (using pulse oximetry) 
+Method Rationale Comments 
+ 
+Using finger or dedicated 
+ear probe. 
+ 
+Ensure adequate 
+waveform. It is an adjunct to assess 
+oxygenation and / 
+effectiveness of oxygen 
+therapy (if applicable). 
+ 
+It does not replace RR 
+measurement • If a patient is poorly perfused the accuracy of the reading will be affected – a poor waveform 
+or inability to give % would generally suggest poor perfusion. More central placement such 
+as ear lobe may improve waveform. 
+• If the patient is anaemic it will not give an accurate reflection of oxygenation. 
+• Consideration should be given to the accuracy of saturation readings in those with dark skin 
+and clinical assessment and other methods such as ABGs taken to verify the oxygenation 
+levels. 
+• Ensure use correct probe for position taken eg not finger probe on ear and vice versa. SP22006 In-Patient Maternity Observations and Monitoring SOP v1.0 November 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 15 of 19 
+ 
+Blood Pressure (BP) 
+Method Rationale Comments 
+For antenatal 
+women/people BP 
+manual readings should 
+be taken (using 
+auscultation method with 
+sphygmomanometer and 
+stethoscope). 
+ 
+For postnatal 
+women/people an 
+automated BP machine 
+(ABP uses oscillation 
+method) can be used. 
+ 
+For accuracy in both 
+methods the 
+appropriate size cuff 
+must be used. 
+ 
+A lying and standing BP 
+may be required to 
+assess the patient for 
+postural hypotension. 
+ABP are useful for repeated 
+reading on same patient 
+however should not be used 
+on pregnant women/people. 
+ 
+Risk of inaccurate readings if 
+inappropriate size cuff used. 
+ 
+Under size cuff cuffing – 
+due to a too narrow or too 
+small bladder can lead to an 
+over estimation of BP. 
+ 
+Over -sized cuff can under 
+estimate BP. 
+ 
+Cuff must be placed on the 
+arm with the centre of the 
+bladder over the brachial 
+artery (usually marked on the 
+cuff). 
+
+• A decrease in BP is usually a late sign of acute illness it therefore must be treated 
+promptly. 
+• Manual method is more accurate for low BP readings and arrhythmias. Students and 
+maternity care assistances should be encouraged to continually develop their clinical skills 
+of auscultatory method by using this method in preference to the automated BP system. 
+• A lying and standing manual BP may also be required to assess the patient for postural 
+hypotension (a risk factor for patient falls). 
+• Automated system should not be used for patients with arrhythmias, are pregnant, have 
+pre-eclampsia and some vascular diseases. 
+• Refer to manufacturer’s instructions for details on use of ABP (to be held in resource file on 
+ward). 
+• Re-useable cuffs wear out. As soon as Velcro stops “holding” on inflation cuff it should be 
+replaced. 
+• Ward manager should be informed and ensure adequate supply for department. SP22006 In-Patient Maternity Observations and Monitoring SOP v1.0 November 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 16 of 19 
+ 
+Pulse 
+Method Rationale Comments 
+Take radial pulse 
+manually for at least 30 
+seconds. 
+ 
+It must not be read from 
+the pulse oximeter or 
+automatic BP monitor. To assess rate, volume, 
+regularity. 
+ 
+Taking manual pulse also 
+aids other assessments e.g. 
+skin temperature. 
+ 
+• If unable to obtain radial pulse due to poor perfusion - use the carotid artery to assess 
+central pulse. 
+• If no radial pulse MCAs and student nurses should summon help immediately. 
+Conscious Level 
+Method Rationale Comments 
+ 
+A - Alert 
+C - New or worsening 
+confusion 
+V - Responds to Voice 
+P - Responds to Pain 
+U - Unresponsive 
+This is a simple 
+assessment tool. 
+ 
+If the patient does not 
+measure “A” or “V” a more 
+detailed Glasgow coma 
+scale should be used. • Conscious level is a sensitive marker of changes in the patient’s condition. 
+• Any new or worsening confusion could be a sign of hypoxia, sepsis, poor cerebral perfusion 
+or electrolyte imbalance. 
+• If a patient is only responsive to pain “P” or unresponsive “U” seek help immediately – 
+check blood sugar for signs of hypoglycaemia. 
+• Correctly perform ACVPU on all patients, (if asleep/post sedation etc) if any doubt about 
+actual conscious level undertake full GCS. 
+• If a patient communicates via sign language or does not use spoken word the relevant 
+communication support service should be accessed for overseas speakers and British Sign 
+language. SP22006 In-Patient Maternity Observations and Monitoring SOP v1.0 November 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 17 of 19 
+ 
+Temperature 
+Method Rationale Comments 
+Tempadot 
+Single patient use 
+plastic strip with heat 
+sensitive spots. 
+Place under tongue or 
+axilla. 
+ 
+Tympanic 
+Core temperature 
+reading using infrared 
+machine with disposable 
+probe covers. Discard 
+after use. 
+ 
+HuBDIC Therofinder 
+Infrared forehead 
+thermometer. 
+ 
+Oral – disposable probe 
+covers, discard after use. 1 minute for oral temperature 
+reading. 
+3 minutes for axillary reading. 
+
+Reading within seconds. 
+Ensure. using correct 
+technique to gain accurate 
+reading. 
+
+Non-contact, measure 2- 
+3cm from temple. 
+Reading within seconds. 
+
+1 minute for oral temperature 
+reading. 
+
+Tempadot accuracy of reading can be affected by: 
+• Own body temperature (Do not carry strips in pockets) 
+• Sunlight – Do not leave in sunlight 
+If reading cannot be obtained use tympanic thermometer. 
+Oral: 
+• Do not use if patient has recently had a warm drink, is confused or is at risk of seizures. 
+• Ensure oral probe is correctly placed sublingually, and patient has not recently had a hot or 
+cold drink. SP22006 In-Patient Maternity Observations and Monitoring SOP v1.0 November 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 18 of 19 
+ 
+Appendix 4: SBAR 
+
+ SP22006 In-Patient Maternity Observations and Monitoring SOP v1.0 November 2022 
+Please check against Staffnet that this printout is the most recent version of this document. Page 19 of 19 
+ 
+Appendix 5: MET call criteria 
+ 
+Criteria for calling Emergency Teams 2222 
+ 
+Criteria MET, Anaesthetic Emergency or Cardiac Arrest (2222) 
+ 
+Airway • Upper airway obstruction / stridor /snoring. 
+• Support required because of loss of consciousness. 
+• Anaphylaxis / choking. 
+ 
+Breathing • Respiratory Rate: Acute change to > 30 / min or < 8 / min. 
+• Oxygen saturations: Acute change to < 90% despite O2 
+therapy. 
+Circulation • Systolic BP: Acute change to < 90mmHg. 
+• Heart Rate: Acute change to <40 / min or >130 / min. 
+Disability 
+(conscious level ) • Acute change in conscious state. 
+• Seizures. 
+• Hypoglycaemia, blood glucose 4mmol/l or less. 
+Exposure • Blood loss (unexpected blood loss from wound, PV, PR 
+etc.). 
+Urine Output • Acute change to < 50mls over last 4 hrs. 
+ 
+Other • Staff member worried about the patient despite the above 
+criteria not being met. 
+• Chest pain / stroke -like symptoms. 
+• Continued raise in MEOWs score above 2 red despite 
+review and interventions.

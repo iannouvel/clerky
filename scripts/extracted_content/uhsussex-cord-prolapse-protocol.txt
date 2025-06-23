@@ -1,0 +1,350 @@
+# Extracted from: UHSussex - Cord Prolapse Protocol.pdf
+# Guideline ID: uhsussex-cord-prolapse-protocol
+# Content length: 18833 characters
+# Processing date: 1741722684.9891806
+
+Page 1 of 10 
+ CLINICAL PROTOCOL Due for review : November 2027 
+Name of P rotocol : Cord Prolapse Management v1.0 
+For use at : PRH, RSCH, SRH, WH 
+
+CLINICAL PROTOCOL 
+Cord Prolapse Management Protocol 
+
+Contents 
+ 
+1.0 Introduction ................................ ................................ ................................ .............................. 2 
+2.0 Definition ................................ ................................ ................................ ................................ . 2 
+3.0 Incidence ................................ ................................ ................................ ................................ . 2 
+4.0 Risk factors associated with cord prolapse ................................ ................................ .............. 2 
+4.1 Additional risk associated with balloon induction of labour* ................................ ...................... 3 
+5.0 Antenatal care for those pregnant women and birthing people with predisposing factors ......... 3 
+6.0 Cord presentation ................................ ................................ ................................ .................... 3 
+7.0 Diagnosis ................................ ................................ ................................ ................................ . 3 
+7.0 Initial management of cord prolapse in the hospital setting ................................ ...................... 4 
+7.1 Method for bladder filling ................................ ................................ ................................ .......... 5 
+8.0 Initial Management of cord prolapse in the community setting ................................ ................. 5 
+9.0 Debriefing ................................ ................................ ................................ ................................ 6 
+10.0 Training ................................ ................................ ................................ ................................ .... 6 
+11.0 Monitoring ................................ ................................ ................................ ................................ 6 
+References ................................ ................................ ................................ ................................ ....... 7 
+Appendix 1: Suggested actions for management of Cord Prolapse Flowchart (RCOG, 2017) ........... 8 
+Clinical protocol governance and approval ................................ ................................ ........................ 9 
+Protocol version control log ................................ ................................ ................................ ............. 10 
+
+Page 2 of 10 
+ CLINICAL PROTOCOL Due for review : November 2027 
+Name of P rotocol : Cord Prolapse Management v1.0 
+For use at : PRH, RSCH, SRH, WH 
+
+1.0 Introduction 
+Professional judgement may be used in the application of this protocol for the management of 
+prolapse of the umbilical cord to improve perinatal outcome. 
+This protocol aims t o safely and efficiently manage umbilical cord prolapse to minimise maternal or 
+birthing parent and fetal risk. 
+Cases of cord prolapse feature consistently in perinatal mortality enquiries. Prematurity and 
+congenital malformations account for the majority of adverse outcomes in hospital, but birth 
+asphyxia is also associated with cord prolapse. Perinatal death has been described with term 
+babies with no known anomalies, particularly with planned home birth. Delay in transfer to hospital 
+appears to be an important contributing factor. 
+2.0 Definition 
+Cord prolapse is defined as the descent of the umbilical cord through the cervix alongside (occult) 
+or past the presenting part (overt) in the presence of ruptured membranes (RCOG 201 4). Cord 
+presentation is the presence of the umbilical cord between the presenting part and the cervix, with 
+or without membrane rupture. 
+3.0 Incidence 
+The overall incidence of cord prolapse ranges from 0.1% to 0.6%. In the case of the breech 
+presentation, the incidence is slightly higher than 1% (RCOG 201 4). 
+4.0 Risk factors associated with cord prolapse 
+Fetal Maternal Iatrogenic 
+Cord - long cord/cord 
+presentation Multi -parity Artificial rupture of membranes 
+Breech presentation Placenta -low-lying 
+placenta, other abnormal 
+placentation External cephalic version 
+Transverse, oblique and 
+unstable lie (Unengaged 
+presenting part , malpresentation ) Contracted pelvis. 
+Pelvic exostoses 
+spondylolisthesis. 
+ Stabilising induction of labour 
+Prematurity <37 weeks gestation Pelvic tumour - Anterior 
+sacrococcygeal Large balloon catheter IOL* 
+Low birth weight – less than 
+2.5kg Internal podalic version 
+Fetal congenital anomalies - 
+hydrocephalus 
+Multiple pregnancy (second twin) 
+Polyhydramnios 
+(Ahmend & Hamdy 2018) 
+Page 3 of 10 
+ CLINICAL PROTOCOL Due for review : November 2027 
+Name of P rotocol : Cord Prolapse Management v1.0 
+For use at : PRH, RSCH, SRH, WH 
+
+4.1 Additional risk associated with balloon induction of labour * 
+Since the introduction of balloon induction with Cook’s Ripening Ballon, a number of cord 
+presentation/prolapse incidences have been noted and investigated. Although no direct link was 
+found, it was decided to reduce the volume of both the uterine and vaginal balloons to 40mls in 
+order to see if the volume in the balloons was causing head displacement and contributing to cord 
+presentation/prolapse. 
+It is the responsibility of the assessing professional to do a thorough ab dominal and vaginal 
+examination prior to ARM for suitability. 
+5.0 Antenatal care for those pregnant women and birthing people with 
+predisposing factors 
+Pregnant w omen and birthing people with transverse, oblique or unstable lie, or polyhydramnios , 
+after 37+0 weeks of gestation or non-cephalic presentations and preterm pre -labour rupture 
+membranes should be reviewed by Obstetric Consultant/Obstetric Registrar . 
+Advised w hen in the community to present urgently if there are signs of labour or suspicion of 
+membrane rupture . 
+Expectant management should be discussed for cord prolapse complicating pregnancies with 
+gestational age at the threshold of viability (23+0 to 24+6 weeks) . 
+Artificial rupture of membranes should be avoided whenever possible if the presenting part is mobile. 
+If it becomes necessary to rupture the membranes, this should be performed with arrangements in 
+place for immediate caesarean birth. 
+6.0 Cord presentation 
+When cord presentation (with intact membranes) is diagnosed in established labour caesarean birth 
+is usually indicated. Where there are no signs of fetal compromise, this can be classified as 
+category 2 caesarean section. 
+7.0 Diagnosis 
+Rapid identification and response may save the life of the baby. Speculum or vaginal examination 
+should be undertaken immediately to confirm diagnosis of prolapsed cord and to ascertain cervical 
+dilatation in order to plan management. Prompt vaginal examination is the most important aspect of 
+diagnosis even in a premature labour when prolapsed cord is suspected. 
+The prolapse can be identified by: 
+1. Visual inspection 
+2. Palpation on immediate vaginal examination 
+3. The cord may be extruded from the vagina or wrapped around the presenting part. 
+A vaginal examination should be performed in labour and after spontaneous rupture of membranes 
+(SROM) if risk factors for cord prolapse are present or cardiotocograph abnormalities commence 
+soon after SROM. 
+Page 4 of 10 
+ CLINICAL PROTOCOL Due for review : November 2027 
+Name of P rotocol : Cord Prolapse Management v1.0 
+For use at : PRH, RSCH, SRH, WH 
+
+With SROM in the presence of a normal fetal heart rate and the absence of risk factors for cord 
+prolapse, routine vaginal examination is not indicated if the liquor is clear. 
+7.0 Initial management of cord prolapse in the hospital setting 
+• On discovering a prolapsed cord, summon help by asking relative to pull emergency 
+buzzer but do not remove your fingers from the vagina (unless no one else in room) . 
+Push presenting part high but avoid palpating the cord. 
+• When cord prolapse is diagnosed before full dilatation - Call for help immediately - Dial 
+2222 stating “Cat 1 Caesarean Section” according to hospital site . 
+• This call will initiate an emergency bleep to include senior midwife, obstetric registrar, 
+anaesthetist and neonatologist/ANNP. 
+• Mode of birth should be decided by the Obstetric Consultant/ Registrar. 
+• Preparations (IV access, group and save , U&Es ) made for a caesarean birth as the 
+recommended mode of birth in cases of cord prolapse when vaginal birth is not imminent 
+(Winter et al. 2017) . 
+• Verbal consent is satisfactory for category 1 caesarean birth. 
+• A category 1 caesarean birth should be performed with the aim of birth within 30mins or 
+less if there is a cord prolapse associated with a non -reassuring or abnormal fetal heart 
+rate pattern but without unduly risking maternal safety . 
+• A category 2 caesarean birth is appropriate for women and birthing people in whom fetal 
+heart rate pattern is norma l. 
+• Communicate clearly with the woman or birthing person and any birthing partners about 
+the situation and what is happening. Gain consent for procedures as required. Remember 
+contemporaneous documentation on BadgerNet Maternity - nominate a scribe as soon as 
+possible . 
+• Cord compression can be reduced by the woman or birthing person adopting the knee - 
+chest position ( Trendelenburg position) or head down tilt (preferably in the left lateral). If 
+an epidural is sited, place the mother in the left lateral position. 
+• Use CTG and/or ultrasound scan to ascertain the fetal heart rate (FHR) and presentation. 
+• Discontinue Oxytocin if in use. 
+• Discussion with the anaesthetist should take place to decide on the appropriate form of 
+anaesthesia. Regional anaesthesia can be considered in consultation with an 
+experienced anaesthetist. 
+• Tocolysis can be considered while preparing for caesarean section ( Stat dose 
+TERBUTALINE 0.25 milligrams subcutaneously ). 
+• If delay to theatre is expected, measures to relieve cord compression should be 
+attempted such as Vago’s method (bladder filling) (Ahmed & Hamdy 2018). 
+• Consider bladder filling by inserting a Foley’s catheter (see below). This will keep the 
+presenting part out of the pelvis thereby alleviating compression of the cord. 
+
+Page 5 of 10 
+ CLINICAL PROTOCOL Due for review : November 2027 
+Name of P rotocol : Cord Prolapse Management v1.0 
+For use at : PRH, RSCH, SRH, WH 
+
+7.1 Method for bladder filling 
+ 
+Attach a standard infusion set to a 16g indwelling 
+Foley’s catheter. A full bladder can inhibit uterine activity and 
+reduce compression on the cord by raising 
+the presenting part. 
+Instil sodium chloride 0.9% infusion into the 
+catheter until the distended bladder is visible above 
+the symphysis pubis. 500ml of solution (warmed or at room 
+temperature) is generally sufficient to fill an 
+empty bladder. Do not use more than 750ml 
+solution. Caution is advised if the woman has 
+not recently voided. 
+Clamp the catheter and attach to a drainage bag 
+(use cord clamp in the community, if catheter 
+clamp not available -ensure cord clamp remover is 
+available) 
+Remove the clamp and allow urine to drain when 
+the time is appropriate in theatre. The infusion clamp should be removed and 
+the bladder emptied just before entering the 
+peritoneal cavity during caesarean section. 
+ 
+• Transfer to theatre immediately unless cervix fully dilated and presenting part is at or 
+below ischial spines so that immediate forceps or ventouse can be performed. Forceps 
+birth carries a risk of trauma to or compression of the cord; but may be the most 
+appropriate way to expedite birth. 
+• If the cord prolapsed outside vagina and delay in transfer to theatre is anticipated, 
+consider wrapping the cord in warm wet packs. However, there should be minimal 
+handling to prevent vasospasm. 
+• A practitioner competent in the resuscitation of the newborn should attend all births with 
+cord prolapse. Paired cord blood samples should be taken for pH, base excess and 
+lactate measurements. 
+• Vaginal birth, in most cases operative, can be attempted at full dilatation if it is anticipated 
+that birth would be accomplished quickly and safely. Breech extraction can be performed 
+under some circumstances, such as after internal podalic version for the second twin. 
+• If no fetal heart auscultated confirm intrauterine death using ultrasound and aim for a 
+vaginal birth. 
+• If non -viable gestation discuss with senior obstetric staff and aim for a vaginal birth. 
+• Complete incident reporting form (Datix). 
+8.0 Initial Management of cord prolapse in the community setting 
+• If diagnosed at home, ask a relative to dial 999 and urgently call a paramedic ambulance 
+for immediate transfer to Labour Ward (Appendix 1). 
+• Inform maternity unit of situation, imminent arrival and theatre preparation. 
+• All women and birthing people should be transferred to the maternity unit for birth, unless 
+an immediate vaginal examination by a professional reveal that a spontaneous vaginal 
+birth is imminent. Preparations for transfer should still be made (NICE 2023). 
+• Women and birthing people should be advised over the telephone if necessary to assume 
+the knee –chest face -down position while waiting for hospital transfer. 
+Page 6 of 10 
+ CLINICAL PROTOCOL Due for review : November 2027 
+Name of P rotocol : Cord Prolapse Management v1.0 
+For use at : PRH, RSCH, SRH, WH 
+
+• The presenting part should be elevated during transfer by either manual elevation or 
+consideration should be given where possible to filling the bladder to relieve pressure on 
+the cord (see above). 
+• During emergency ambulance transfer the knee chest is potentially unsafe . Use the 
+exaggerated sims position and the left lateral position should be used preferably with 
+head down and pillow under the left hip. 
+• To prevent vasospasm, there should be minimal handling of loops of cord lying outside 
+the vagina . 
+• Complete incident reporting form (Datix). 
+9.0 Debriefing 
+Postnatal debriefing should be offered to all women and birthing people with cord prolapse as this 
+can reduce the incidence of post-traumatic stress disorder, fear of further childbirth and postnatal 
+depression. 
+This should ideally be undertaken by a registrar or consultant involved in the care before the woman 
+or birthing person is discharged home. It should involve discussing what happened and why and 
+answering any questions the mother or birthing person / family have. Referral to a Midwife 
+Counsellor is recommended. Signpost women and birthing people to the RCOG patient information 
+leaflet . 
+10.0 Training 
+Midwives and medical staff involved in maternity care will receive at least annual training in the 
+management of obstetric emergencies including the management of cord prolapse – see UHSC072 
+Maternity Education Strategy . 
+11.0 Monitoring 
+Clinical incident forms should be submitted for all cases of cord prolapse. 
+RCOG (2017) recommended auditable topics: 
+• Audit of the management of cord prolapse in hospital settings. 
+• Audit of the management of cord prolapse in community settings. 
+• Proportion of cases of cord prolapse that were incident reported. 
+• Synthesis of critical analyses of adverse outcomes related to cord prolapse. 
+ 
+Page 7 of 10 
+ CLINICAL PROTOCOL Due for review : November 2027 
+Name of P rotocol : Cord Prolapse Management v1.0 
+For use at : PRH, RSCH, SRH, WH 
+
+References 
+ 
+NICE (2023 ) Intrapartum Care for Healthy Women and Babies National Collaborating Centre for 
+Women and Children. RCOG press p.127 -128 
+RCOG (2014) reviewed (2017) Umbilical Cord Prolapse, Green Top guideline no . 50 
+http://www.rcog.org.uk 
+RCOG (2015) Umbilical cord prolapse in late pregnancy information for you, setting standards to 
+improve women’s health (patient information leaflet). 
+Sayed Ahmed WA, Hamdy MA. (2018 ) Optimal management of umbilical cord prolapse . Int J 
+Womens Health. 10:459 -465. doi : 10.2147/IJWH.S130879. PMID: 30174462; PMCID: 
+PMC6109652. 
+Winter C, Crofts J, Laxton C, Barnfield S, Draycott T, editors. (2017) PROMPT: PRactical Obstetric 
+Multi -Professional Training. Practical locally based training for obstetric emergencies. Module 10. 
+Cord Prolapse. Course Manual. 2nd ed. Cambridge: Cambridge University Press; p.169 –78 
+
+Page 8 of 10 
+ CLINICAL PROTOCOL Due for review : November 2027 
+Name of P rotocol : Cord Prolapse Management v1.0 
+For use at : PRH, RSCH, SRH, WH 
+
+Appendix 1 : Suggested actions for management of Cord Prolapse Flowchart (RCOG, 
+2017) 
+ 
+C.O.R.D 
+
+ Consider • At every VE in labour 
+• If abnormal Fetal heart with SROM 
+• After ARM with risk factors 
+Organise Help Obstetricians & Midwives 
+Theatre team (anaesthetics) 
+Neonatal team 
+Relieve 
+Pressure • Manually elevate presenting part or 
+fill bladder 
+• Encourage knee to chest position 
+• Consider tocolysis 
+Decision for 
+birth • Emergency transfer to 
+hospital/theatre 
+• Assess & assist birth by quickest & 
+safest means 
+• Urgency of birth dependent upon 
+FH & gestational age 
+• If CS, consider if regional 
+anaesthesia appropriate 
+• Empty bladder if filled to relieve 
+pressure. 
+Page 9 of 10 
+ CLINICAL PROTOCOL Due for review : November 2027 
+Name of P rotocol : Cord Prolapse Management v1.0 
+For use at : PRH, RSCH, SRH, WH 
+
+Clinical protocol governance and approval 
+Owner S. Adamson & F . Usifo 
+Author/further information S. Madell, Guideline & Audit Midwife 
+Protocol version v1.0 
+Related policies UHSC072 Maternity Education Strategy 
+Related documents MP050 Caesarean Section 2022 
+CG120 30 Caesarean Section Birth Guideline 2023 
+Standards NICE (2023) Intrapartum Care for Healthy Women and 
+Babies National Collaborating Centre for Women and 
+Children. RCOG press p.127 -128 
+RCOG (2014) reviewed (2017) Umbilical Cord Prolapse, 
+Green Top guideline no. 50 http://www.rcog.org.uk 
+Superseded documents MP047 Cord Prolapse 
+CG12026 Cord Prolapse Guideline 
+Review due November 2027 
+Date uploaded 07/11/2024 
+ 
+Approval 
+Departmental Joint Obstetric Guideline Group 
+(JOGG ) Date approved: 19/06/2024 
+Women’s and Children D ivisional 
+Governance Group Date approved: 19/10/ 2024 
+ 
+Consultation 
+Medicines Governance Committee Date approved: 16/10/2024 
+ 
+Ratification 
+Clinical Document Approval Group Date approved: 01/11/2024 
+
+Page 10 of 10 
+ CLINICAL PROTOCOL Due for review : November 2027 
+Name of P rotocol : Cord Prolapse Management v1.0 
+For use at : PRH, RSCH, SRH, WH 
+
+Protocol version control log 
+Version Date Author(s) Comment 
+1.0 June 2024 S. Madell, 
+Guideline & 
+Audit Midwife New UH Sussex merged protocol replacing: 
+• MP047 Cord Prolapse 
+• CG12026 Cord Prolapse

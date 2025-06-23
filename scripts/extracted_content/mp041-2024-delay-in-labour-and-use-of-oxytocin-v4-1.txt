@@ -1,0 +1,527 @@
+# Extracted from: MP041 (2024) Delay in Labour and use of Oxytocin v4.1.pdf
+# Guideline ID: mp041-2024-delay-in-labour-and-use-of-oxytocin-v4-1
+# Content length: 24774 characters
+# Processing date: 1750066901.4238636
+
+Delay in Labour and 
+use of Oxytocin 
+
+Maternity Protocol: MP041 
+Date agreed: February 2022 
+Amended December 2024 
+Delay In Labour 
+& Use of Oxytocin (RSCH PRH only December 2024 update ) MP041 
+University Hospital Sussex NHS Trust East Page 2 of 15 
+
+Guideline Reviewer: Oksana Dickenson & Sarah Robson 
+Manager responsible: Jo Sinclair 
+Version: 4.1 
+Approval Committee: Women’s Safety and Quality Committee 
+Date agreed: January 2022 
+Amended Date: 8am 10th December 2024 
+Review date: January 2025 
+Cross reference: MP034 Vaginal Birth After Caesarean Section (VBAC) 
+MP035 Care of Women in Labour 
+MP037 Fetal Heart Monitoring 
+MP049 Operative Vaginal Delivery 
+MP053 Obstetric Haemorrhage Delay In Labour 
+& Use of Oxytocin (RSCH PRH only December 2024 update ) MP041 
+University Hospital Sussex NHS Trust East Page 3 of 15 
+ Contents 
+Key principles ................................ ................................ ................................ ..................... 3 
+Scope ................................ ................................ ................................ ................................ . 4 
+1 Delay in Labour and use of Oxytocin ................................ ................................ ......... 5 
+2 Midwifery Care and Use of Oxytocin ................................ ................................ ......... 7 
+3 Oxytocin Regime - First Stage Labour ................................ ................................ ........ 9 
+4 Management of pregnant women and people on Oxytocin (First Stage) .................. 10 
+5 Identified Delay in Second Stage ................................ ................................ ............. 11 
+6 Oxytocin Regime for Second Stage ................................ ................................ .......... 14 
+7 Delivery ................................ ................................ ................................ .................. 15 
+8 Post Delivery ................................ ................................ ................................ .......... 15 
+9 References ................................ ................................ ................................ ............. 15 
+
+ Delay In Labour 
+& Use of Oxytocin (RSCH PRH only December 2024 update ) MP041 
+University Hospital Sussex NHS Trust East Page 4 of 15 
+ 
+Key principles 
+ 
+A protocol is a set of measurable, objective standards to determine a course of 
+action. Professional judgement may be used in the application of a protocol. 
+Scope 
+ 
+This protocol applies to: 
+Any pregnant women and people with delay in labour potentially requiring Oxytocin 
+Guideline will cover 
+• Recognition of delay in labour 
+• Assessment prior to commencement of oxytocin 
+• Monitoring arrangements for the woman and fetus necessary for 
+augmentation 
+• The documentation and the management of care planning necessary when 
+augmenting labour 
+• When Oxytocin infusion should be reduced / stopped 
+
+Responsibilities: 
+ 
+Midwives & Obstetricians: 
+To access, read, understand and follow this guidance 
+To use their professional judgement in application of this protocol 
+ 
+Management 
+• To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations 
+• To ensure the protocol is accessible to all relevant staff 
+• To ensure the protocol is available to service users on request University Hospital Sussex NHS Trust East Page 5 of 15 Delay In Labour 
+& Use of Oxytocin (RSCH PRH only – December 2024 Update ) MP041 
+ 1 Delay in Labour and use of Oxytocin 
+1.1 Diagnosis of Delay in First Stage 
+ 
+Please see Maternity Protocol MP035: Care of Women and People in Labour for 
+details on identifying delay in labour 
+1.2 Inform pregnant women and people that while the length of established first 
+stage of labour varies between women and people: 
+ 
+• First labours last on average 8 hours and are unlikely to last over 18 hours 
+• Second and subsequent labours last on average 5 hours and are unlikely 
+to last over 12 hours (NICE 2007) 
+1.3 A diagnosis of delay in the active 1st stage of labour needs to consider all 
+aspects of progress in labour and should include the following: 
+ 
+• Cervical dilatation of less than 2 cm in 4 hrs for first labours 
+• Cervical dilatation of less than 2 cm in 4 hrs or a slowing in the progress of 
+labour for second or subsequent labours 
+• Lack of decent and rotation of the fetal head. 
+ 
+Changes in strength, duration and frequency of uterine contractions (NICE 2007) 
+For all pregnant women and people with confirmed delay in the established first stage 
+of labour: 
+ 
+1.1.1 Transfer the woman or person to obstetric -led care for an obstetric 
+review and a decision about management options, including the use of 
+oxytocin (follow the general principles for transfer of care described 
+in section 1.6) (NICE 2014) 
+1.1.2 Explain to them that using oxytocin after spontaneous or artificial 
+rupture of the membranes will bring forward the time of birth but will 
+not influence the mode of birth or other outcomes (NICE 2007) 
+1.2 Care & Management 
+ 
+Pregnant women and people should be offered support, hydration and 
+appropriate pain relief (this can include non-pharmacological and pharmacological 
+pain relief). 
+ 
+1.2.1 Abdominal palpation and VE’s 
+Should be offered 2-4 hourly, in labouring pregnant women and people 
+in whom progress is, or is anticipated to be, slow 
+ 
+If delay in the established first stage of labour is suspected, amniotomy 
+should be considered for all pregnant women and people with intact 
+membranes University Hospital Sussex NHS Trust East Page 6 of 15 Delay In Labour 
+& Use of Oxytocin (RSCH PRH only – December 2024 Update ) MP041 
+ 1.2.2 Amniotomy 
+• Should be advised for 1st stage delay and with 
+documented maternal or parental informed consent 
+• Amniotomy should only be carried out after full maternal 
+or parental and fetal assessment including abdominal 
+palpation and estimation of fetal head engagement and 
+excluding cord presentation on vaginal examination 
+• An abdominal palpation and vaginal examination should 
+be offered 2 hours after amniotomy 
+• If the pregnant woman and person declines amniotomy, 
+VE should be advised 2 hours later, and if progress is less 
+than 1cm a diagnosis of delay should be made 
+ 
+1.2.3 Information / consent 
+• Explain that the use of oxytocin after spontaneous or artificial rupture 
+of the membranes will bring forward the time of birth but will not 
+influence the mode of birth or other outcomes (NICE 2007) 
+• Explanation should be made about the procedure and 
+advice given 
+• Inform the woman or person that oxytocin will increase 
+the frequency and strength of their contractions and that 
+its use will mean that their baby should be monitored 
+continuously (except for toilet breaks) 
+• Women and people should be informed that oxytocin may 
+increase the pain from contractions and appropriate pain 
+relief should be offered 
+• Offer the woman or person an epidural before oxytocin is 
+started (NICE 2007) 
+ 
+When delay in the established first stage of labour is confirmed, the pregnant 
+woman or person should be referred to the Obstetric Registrar for review and 
+subsequent plan 
+1.4 Assessment of pregnant women and people prior to commencing oxytocin 
+ 
+An assessment should be undertaken prior to the commencement of oxytocin: 
+1.4.1 Assessment of frequency and strength of contractions, abdominal 
+palpation and vaginal loss 
+1.4.2 Pregnant women and people requiring oxytocin should be seen by an 
+obstetrician who should perform a full assessment before making a 
+decision on the use of oxytocin: 
+• Review of individual clinical situation including fetal wellbeing 
+abdominal palpation 
+• VE 
+• Discussion with pregnant woman or person to agree a plan of 
+care University Hospital Sussex NHS Trust East Page 7 of 15 Delay In Labour 
+& Use of Oxytocin (RSCH PRH only – December 2024 Update ) MP041 
+ • Discussion about pain relief in labour including risks, benefits 
+and timing of epidural 
+1.4.3 All observations, discussions and decisions should be documented 
+clearly in the maternal or parental notes and the oxytocin template 
+should be filled out by the obstetrician and midwife caring for the 
+woman or person 
+ 
+2 Midwifery Care and Use of Oxytocin 
+ 
+Pregnant women and people on oxytocin infusions require one to one care at all times 
+2.1 Contra indications for use of oxytocin 
+2.1.1 Uterine hyperstimulation 
+2.1.2 Suspected obstructed labour 
+2.1.3 Abnormal CTG 
+2.1.4 Within 6 hours of prostaglandin administration 
+2.1.5 Woman or person declines or removes consent 
+2.2 Middle grade/Consultant review 
+When oxytocin is to be used the labouring woman or person must first be 
+reviewed (see above) by the middle grade doctor or consultant obstetrician who 
+Will prescribe on drug chart and complete relevant section within notes. 
+2.3 Reducing/stopping the oxytocin infusion 
+2.3.1 When to reduce the infusion rate: 
+NICE1 recommends oxytocin should be reduced if contractions occur 
+more frequently than 4 in 10 minutes 
+2.3.2 When oxytocin should be stopped: 
+• If continuous electronic monitoring cannot be provided or is 
+declined by the woman or person 
+• If the CTG is classified as abnormal and the obstetric middle 
+grade/consultant is not immediately available 
+• Malpresentation e.g. breech, arm 
+• Intrapartum haemorrhage 
+• Suspicion of uterine rupture 
+• Signs of obstructed labour 
+• Cord prolapse 
+• If a decision for Caesarean section has been made 
+ 
+The time of discontinuation / reduction in oxytocin infusion should be 
+documented in the intrapartum notes and on the partogram 
+2.4 Management of hyperstimulation 
+ 
+2.4.1 Hyperstimulation is uterine over activity defined as contraction 
+frequency ≥6 in 10 minutes for at least 20 minutes (tachysystole) or University Hospital Sussex NHS Trust East Page 8 of 15 Delay In Labour 
+& Use of Oxytocin (RSCH PRH only – December 2024 Update ) MP041 
+ uterine hypersystole/hypertonicity (contraction exceeding 2 minutes in 
+duration). These may or may not be associated with CTG changes. (NICE 
+Clinical Guideline: Induction of labour, July 2008). If not corrected, 
+hyperstimulation can lead to fetal hypoxia and even uterine rupture. 
+ 
+2.4.2 If the CTG s normal, oxytocin may be continued until the woman or 
+person is experiencing 3-4 contractions every 10 minutes. Oxytocin 
+should be reduced if contractions occur more frequently than 4 in 10 
+minutes 
+ 
+2.4.3 If the CTG is abnormal, oxytocin should be stopped and a full 
+assessment of fetal condition undertaken by an obstetrician 
+2.5 Actions to consider if CTG is non-reassuring or abnormal 
+2.5.1 General measures (turn patient to left lateral position/start IV fluids) 
+2.5.2 Reduce oxytocin unless prolonged contractions singularly define 
+hyperstimulation. Reduce oxytocin to the previous dose level if 
+contractions are more frequent than 4 contractions in 10 minutes. 
+Reduce to previous dose again every 15 minutes if the problem persists 
+2.5.3 Stop oxytocin if CTG abnormalities. A full assessment of the fetal 
+condition undertaken by an obstetrician before oxytocin is 
+recommenced (NICE 2014) . The infusion should be recommenced at 4 
+milliunits/min (1.2 millilitres /hr), or half or less of the pre-stoppage 
+dose. 
+2.5.4 If non-reassuring or abnormal CTG as a result of hyperstimulation, 
+consider tocolysis (subcutaneous terbutaline 0.25 mg) 
+2.5.5 Consider FBS if CTG abnormalities or prepare for possible delivery (see 
+MP038 Fetal Blood Sampling) 
+
+Hyperstimlation General 
+measures Spontaneous labour 
+(no drugs) Prostin/Propess Oxytocin 
+Normal CTG √ Observe CTG Observe CTG Reduce 
+Oxytocin by half 
+Non-reassuring CTG √ Consider tocolysis Remove propess; 
+consider tocolysis Stop oxytocin, 
+consider 
+tocolysis 
+Abnormal CTG √ Carefully assess clinical 
+situation; urgently 
+consider tocolysis, FBS 
+or delivery Remove propess; 
+urgently consider 
+tocolysis Stop Oxytocin, 
+urgently 
+consider 
+tocolysis University Hospital Sussex NHS Trust East Page 9 of 15 Delay In Labour 
+& Use of Oxytocin (RSCH PRH only) MP041 
+ 2.6 If previous Caesarean section the threshold for intervention should be lower and 
+a doctor’s assessment should be carried out urgently because of the increased 
+risk of uterine rupture. 
+ 
+3 Oxytocin Regime - First Stage Labour 
+ 
+Dose schedules including frequency of increment 
+3.1 Label additive and secure to the bag prior to commencing infusion 
+3.2 Commence IV with 10 units of oxytocin in 50 millilitre s of 0.9% sodium Chloride 
+3.3 Infusion must be run through an infusion pump (Alaris or Baxter) 
+ 
+3.4 Start oxytocin infusion at 1 milliunits /min (0.3 millilitres /hr) 
+3.5 Increase every 30 minutes to a maximum of 32 milliunits/min (9.6 millilitres /hr) 
+to achieve 3 to 4 uterine contractions every 10 minutes (see table below) . If the 
+woman and birthing person has contractions more frequently than 4 in 10 
+minutes, reduce or stop the oxytocin until the woman or birthing person is 
+having 4 or fewer contractions in 10 minutes . 
+3.6 The time between increments of the dose should be no more frequent than 
+every 30 minutes 
+3.7 Monitor uterine contractions on CTG and by palpation 
+3.8 Document commencement, dosages and increments rises in the maternal 
+BadgerNet record and on the CTG tracing 
+ 
+FIRST STAGE OF LABOUR Oxytocin 
+Time after starting (mins) dose 
+(milliunits/min) pump rate 
+(millilitres /hr) 
+0 1 0.3 
+30 2 0.6 
+60 4 1.2 
+90 8 2.4 
+120 12 3.6 
+150 16 4.8 
+180 20 6.0 
+210 24 7.2 
+240 28 8.4 Delay In Labour 
+& Use of Oxytocin (RSCH PRH only) MP041 
+University Hospital Sussex NHS Trust East Page 10 of 15 
+ 
+270 32 9.6 
+
+NB Oxytocin augmentation should not continue for longer than six hours 
+with inadequate progress unless the case has been discussed with 
+the Consultant on call 
+ 
+If oxytocin is used for induction of labour and regular contractions 
+are not established after 6 hours, then induction should be stopped 
+and discussed with the obstetrician (RCOG Evidence based guideline 
+number 9) 
+If increase needed above 20 milliunits/min (6.0 millilitres/hour), 
+this should be discussed with the available registrar or consultant 
+as rates over this are contraindicated in the BNF and will be an off -
+label use. 
+
+4 Management of pregnant women and people on Oxytocin (First 
+Stage) 
+ 
+Water intoxication and electrolyte imbalance 
+4.1 As oxytocin has anti-diuretic properties, prolonged use at high dosage with high 
+volumes of non-electrolyte containing fluids can result in hyponatraemia with 
+water intoxication which present as occasional epileptiform fits and rarely 
+pontine myelinolysis. Patients should hence, be monitored for symptoms of 
+headache and drowsiness. MP064 Hyponatraemia 
+4.2 Monitoring arrangements – Mother or Birthing Parent 
+4.2.1 An individual management plan should be clearly documented in the 
+notes by the reviewing obstetrician before oxytocin is commenced 
+4.2.2 Recommend abdominal palpation and vaginal examination after 4 
+hours of regular uterine contractions (4 in 10) following 
+commencement of oxytocin and 2-4 hourly thereafter, in discussion 
+with middle grade Obstetrician. All observations and vaginal 
+examinations can be undertaken by the midwife providing care unless 
+otherwise documented in the plan of care 
+• If there is less than 2cm progress after 4 hours of oxytocin, 
+further obstetric review is required to consider caesarean 
+section 
+• If there is 2 cm or more progress, vaginal examinations should 
+be advised 4 hourly Delay In Labour 
+& Use of Oxytocin (RSCH PRH only) MP041 
+University Hospital Sussex NHS Trust East Page 11 of 15 
+ 4.2.3 Routine maternal or parental labour observations (Please see Maternity 
+Protocol MP035: Care of Women in Labour ) 
+ 
+4.2.4 Maternal or parental fluid balance monitoring as oxytocin is an 
+antidiuretic, documented on fluid balance chart 
+4.2.5 Omeprazole 20mg should be given orally prior to commencing the 
+Oxytocin 
+4.2.6 When augmenting labour in a woman or person with a previous 
+caesarean section the case must be discussed with the middle grade or 
+Consultant Obstetrician on call. (Please see Maternity Protocol MP034: 
+Vaginal Birth After Caesarean Section (VBAC) 
+
+4.3 Monitoring arrangements – Fetus: 
+4.3.1 Pregnant women and people must have continuous electronic 
+monitoring of fetal heart rate (CTG) and uterine activity (through 
+abdominal palpation assessment by the clinician and 
+observations/communication with the mother) 
+4.3.2 Any concerns about fetal wellbeing during labour requires an obstetric 
+review 
+4.4 Documentation 
+ 
+Full contemporaneous documentation must be included in the notes including: 
+4.4.1 Documentation of the assessment prior to commencement of oxytocin, 
+4.3.1 Dose schedules and frequency of increment as per protocol 
+4.3.2 Documentation of an individualised management plan 
+4.3.3 Documentation of monitoring arrangement for woman or person and 
+fetus and any observations 
+4.3.4 Documentation of times and reasons why oxytocin infusion is reduced 
+or stopped 
+ 
+5 Identified Delay in Second Stage 
+ 
+For definition of delay in the second stage please see Maternity Protocol MP035: Care 
+of Women and People in Labour 
+ 
+5.1 For suspected delay in Second Stage: 
+• Consider emptying the bladder 
+• Commence electronic fetal monitoring 
+5.1.1 For a nulliparous woman or person: 
+birth would be expected to take place within 3 hours of the start of the 
+active second stage in most women or people diagnose delay in the 
+active second stage when it has lasted 2 hours and refer the woman or Delay In Labour 
+& Use of Oxytocin (RSCH PRH only) MP041 
+University Hospital Sussex NHS Trust East Page 12 of 15 
+ person to a healthcare professional trained to undertake an operative 
+vaginal birth if birth is not imminent (NICE 2007) 
+5.1.2 For a multiparous woman or person: 
+Birth would be expected to take place within 2 hours of the start of the 
+active second stage in most women and people diagnose delay in the 
+active second stage when it has lasted 1 hour and refer the woman or 
+person to a healthcare professional trained to undertake an operative 
+vaginal birth if birth is not imminent. (NICE 2007) 
+5.1.3 For a nulliparous woman or person, suspect delay if progress (in terms 
+of rotation and/or descent of the presenting part) is inadequate after 
+1 hour of active second stage. Offer vaginal examination and then offer 
+amniotomy if the membranes are intact (2007, amended 2014) 
+5.1.4 For a multiparous woman or person, suspect delay if progress (in terms 
+of rotation and/or descent of the presenting part) is inadequate after 
+30 minutes of active second stage. Offer vaginal examination and then 
+offer amniotomy if the membranes are intact (2014) 
+5.1.5 If full dilation of the cervix has been confirmed in a woman or person 
+without region al anaesthesia, but she does not get the urge to push, 
+carry out further assessment after 1 hour (NICE 2014) 
+ 
+Lack of continuing progress in second stage of labour with adequate 
+contractions can be defined as follows: 
+ 
+ Primip 
+(no epidural) Primip 
+(with epidural) Multip 
+(with or without epidural) 
+Passive 1 hour 1-2 hours 1 hour 
+Active 2 hours 2 hours 1 hour 
+
+5.1.6 After diagnosis of full dilatation in a woman or person with regional 
+anaesthesia , agree a plan with the woman or person in order to 
+ensure that birth will have occurred within 4 hours regardless of 
+parity (NICE 2007) 
+5.2 Management: All pregnant women and people 
+ 
+5.2.1 In the absence of descent after one hour of ACTIVE pushing, a referral 
+to the obstetric registrar should be considered for a review and plans 
+for Obstetric team referral is indicated if delivery not imminent: 
+5.2.1.1 After 2 hours of active pushing for primiparous women and 
+people University Hospital Sussex NHS Trust East Page 13 of 15 Delay In Labour MP041 
+ & Use of Oxytocin (RSCH PRH only) 
+5.2.1.2 After 1 hour of active pushing for multiparous women and 
+people 
+5.2.2 Consideration should be given to the use of oxytocin, with the offer of 
+regional analgesia, for nulliparous pregnant women and people if 
+contractions are inadequate at the onset of the second stage. (NICE 
+2007) 
+5.2.3 Contraindications to use of oxytocin in Second stage of labour, 
+5.2.3.1 Absolute contraindications 
+• Possible obstructed labour 
+• Significant feto-pelvic disproportion (e.g. large fetal head 
+or body, suspected pelvic contraction after pelvic fracture 
+etc.) 
+• Malpresentation (e.g. brow, mento -posterior face, 
+transverse lie, oblique lie) 
+5.2.3.2 Relative contraindications 
+• Scar on uterus (e.g. previous caesarean section) must be a 
+Consultant decision 
+• Known or suspected potential for feto-placental 
+insufficiency 
+5.2.3.3 Information / consent 
+• Explanation should be made about the procedure and 
+advice given 
+• Inform the woman or person that oxytocin will increase 
+the frequency and strength of their contractions and that 
+its use will mean that their baby should be monitored 
+continuously (except for toilet breaks) 
+• Women and people should be informed that oxytocin may 
+increase the pain from contractions and appropriate pain 
+relief should be offered 
+• Offer the woman or person an epidural before oxytocin is 
+started (NICE 2007) University Hospital Sussex NHS Trust East Page 14 of 15 Delay In Labour 
+& Use of Oxytocin (RSCH PRH only) MP041 
+ 5.2.4 Oxytocin should only be started after a full clinical examination (see 
+above) 
+5.2.5 Pregnant women and people with confirmed delay in the active second 
+stage should be assessed by an obstetrician. Decision to start 2nd stage 
+Oxytocin should be made by a Consultant or ST6-7 ideally with 
+consultant input 
+5.2.6 Omeprazole 20mg should be given orally prior to commencing the 
+Oxytocin 
+5.2.7 After initial obstetric assessment of a pregnant woman or person with 
+delay in second stage, maintain ongoing obstetric review every 15 to 30 
+minutes (NICE 2007) 
+
+6 Oxytocin Regime for Second Stage 
+ 
+Dose schedules including frequency of increment. 
+ 
+6.1 Augmentation in the second stage of labour uses 10 units of oxytocin in 50 
+millilitres of 0.9% sodium Chloride 
+6.2 The infusion must be put through a syringe driver that has been primed with the 
+oxytocin infusion and purge the cannula to ensure that the medication starts to be 
+administered immediately 
+6.3 If starting oxytocin (Syntocinon) in the second stage, the infusion rate can 
+start at 4 milliunits/min ( 1.2 millilitres per hour ) and increased no more 
+frequently than every 30 minutes . (NICE 2023) 
+6.4 Augmentation should aim for contractions of 3-4:10 and not be increased above 
+the infusion which achieves this. If the woman and birthing person has 
+contractions more frequently than 4 in 10 minutes, reduce or stop the oxytocin 
+until the woman or birthing person is having 4 or fewer contractions in 10 
+minutes . 
+ 
+SECOND STAGE OF LABOUR Oxytocin 
+Time after starting (mins) dose 
+(milliunits/min) pump rate 
+(millilitres /hr) 
+0 4 1.2 
+30 8 2.4 University Hospital Sussex NHS Trust East Page 15 of 15 Delay In Labour 
+& Use of Oxytocin (RSCH PRH only) MP041 
+ 60 12 3.6 
+90 16 4.8 
+120 20 6.0 
+150 24 7.2 
+180 28 8.4 
+210 32 9.6 
+NB The myometrium becomes more sensitive to oxytocin in later stages 
+of labour. The oxytocin dose may need to be reduced 
+If increase needed above 20 milliunits/min (6.0 millilitres/hour), this 
+should be discussed with the available registrar or consultant as rates 
+over this are contraindicated in the BNF and will be an off -label use. 
+
+7 Delivery 
+7.1 Instrumental birth should be considered if there is concern about the fetal 
+wellbeing or for prolonged second stage 
+7.2 The choice of instrument depends on the balance of clinical circumstances and 
+practitioner experience. Please see Maternity Protocol MP049: Operative 
+Vaginal Delivery 
+7.3 If going for caesarean section - disconnect giving set of oxytocin. 
+7.4 An active management of the third stage should be recommended for all 
+pregnant women and people who have had an oxytocin infusion. 
+ 
+8 Post Delivery 
+8.1 If oxytocin has been used to augment labour, the infusion should be 
+discontinued immediately following completion of the third stage of labour. If a 
+PPH occurs management should be as per Maternity Protocol MP053: Obstetric 
+Haemorrhage 
+ 
+9 References 
+ 
+National Institute for Health Care Excellence, Intrapartum care for healthy women and babies. 
+CG190 London Published 2014 Updated Feb 2017 
+ 
+National Institute for Health Care Excellence, Intrapartum care . NG235. Published September 
+2023 . 
+ 
+National Institute for Health and Care Excellence (2021) Inducing Labour 
+(Clinical Guideline NG207) Available at: https:// www.nice.org.uk/guidance/NG207

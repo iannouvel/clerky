@@ -1,0 +1,606 @@
+# Extracted from: GTG 2010 - Malaria in Pregnancy - Prevention.pdf
+# Guideline ID: gtg-2010-malaria-in-pregnancy-prevention
+# Content length: 49312 characters
+# Processing date: 1735631948.1569383
+
+The prevention of malaria in pregnancy
+Green–top Guideline No. 54a
+April 2010RCOG Green-top Guideline No. 54a 2o f 1 4 © Royal College of Obstetricians and GynaecologistsThe prevention of malaria in pregnancy
+This is the first edition of this guideline.
+1. Purpose and scope
+The aim of this guideline is to provide clinicians with evidenced based, up-to-date information about the
+prevention of malaria in pregnancy in situations that are likely to be encountered in UK medical facilities (thatis, UK-based residents visiting malaria endemic areas). These guidelines are not necessarily appropriate forthose residing in endemic areas.
+1This guideline covers malaria prevention travel recommendations in:
+●women planning a pregnancy
+●those already pregnant or breast feeding.
+Drug recommendations for malaria prophylaxis can change, owing to resistance, and up-to-date informationon drugs can be obtained using online resources as described in this guideline.
+2. Background
+Malaria can be life-threatening but it is preventable. Malaria is caused by the bite of the female Anopheles
+mosquito, which results in infection of the red blood cell. The species determines the pattern of the disease.The species of the 1370 imported infections reported in the UK in 2008 were: 79.3% (1087) 
+P . falciparum ,
+12.9% (170) P. v i v a x , 5.5% (76) P. o v a l e , 2.1% (20) P . malariae , one unspecified infection and, of all these, nine
+were mixed infections.2In 2006, there was one case report of primate malaria ( P . knowlesi ) in a UK traveller
+returning from Brunei.2In 2008, there were six deaths reported in the UK from malaria.2By far the heaviest
+burden of malaria in travellers from the UK is P . falciparum from Africa (mainly West Africa, particularly
+Nigeria and Ghana).3P . falciparum is the most dangerous species of malaria and causes the vast majority of
+deaths worldwide. In UK travellers to Asia, particularly to the Indian subcontinent, infection with P. v i v a x is
+more likely and this can cause a relapsing type of malaria. P . ovale can also cause relapsing malaria and P.
+malariae is unique, owing to late recrudescence after many years. Other places where UK travellers have
+acquired malaria include South and Central America (including Great Exuma in the Bahamas), Hispaniola,Oceania and the Middle East.
+2In the UK, the majority of travellers with imported malaria report visiting
+friends and relatives in their families’ country of origin, especially in West Africa.4–7The uptake of chemopro-
+phylaxis among people residing in the UK who present with malaria in the UK is low.8Special effort to tailor
+malaria prevention messages to migrant groups could reduce the risk of travel-associated malaria significantly.8
+Pregnant women are not specifically identified in the UK surveillance data.2A report published by the Health
+Protection Agency does not mention pregnancy.8Most of the literature on imported malaria worldwide is
+based on a few reports of isolated cases9–11with the most comprehensive series of 14 pregnant women
+reported by French investigators in Marseille.12Perhaps the message contained in this limited literature is
+found in surveillance from the USA: pregnant women comprised 1.6% of malaria cases (24/1505) during 2008and none had adhered to a complete preventive drug regimen.
+13
+3. Identification and assessment of the evidence
+A literature search was performed using Medline (1983 to November 2009). The keywords used were‘malaria’, ‘prevention’, ‘travellers’, ‘UK’, ‘imported malaria’, ‘pregnancy’ and ‘breast feeding’. Reference lists ofthe articles identified were hand searched for additional articles. Other sources included malaria-related pagesfrom the websites of the Health Protection Agency [www.hpa.org.uk/HPA], the National Travel HealthNetwork and Centre [www.nathnac.org], European Network on Imported Infectious Disease Surveillance[www.tropnet.net], Centers for Disease Control and Prevention [www.cdc.gov/Malaria] and TOXBASE, theprimary clinical toxicology database of the National Poisons Information Service [www.toxbase.org].© Royal College of Obstetricians and Gynaecologists 3o f 1 4 RCOG Green-top Guideline No. 54a4. What are the medical complications of malaria in pregnancy?
+Malaria infection in pregnancy carries significant risks to mother and baby.
+UK-based residents have low premunition and high susceptibility to malaria infection.Malaria infection in pregnancy may result in reduced birth weight in the fetus and this may have health
+consequences in later life.
+Malaria in pregnancy adversely affects the mother and fetus (Table 1).14,15Maternal mortality or
+pregnancy loss from miscarriage, stillbirth and premature labour are the main complications ofmalaria in women with low premunition and complications are likely to be equivalent or worse inwomen who are not immune.
+16–18The principal effect of malaria in pregnancy in women from
+endemic countries is low birth weight and this could have consequences on health in adulthood.19
+The extent of this effect in returned travellers has not been well documented.12In endemic areas,
+pregnant women are twice as likely to be bitten by anopheline mosquitoes20,21and to contract and
+die from malaria22,23than their non-pregnant counterparts. The clinical manifestations in pregnancy
+depend on premunition; that is, the degree of naturally acquired host immunity to malaria (Table1).
+14,18,24,25Premunition depends on repeated exposure to infectious anopheline bites, so UK-based
+residents will have low or no premunition.
+5. Prevention of malaria infection in pregnancy
+5.1 What advice should pregnant women be given if they are considering travel to a malaria endemic area?
+Pregnant women should consider the risks of travel to malaria endemic countries and consider
+postponing their trip, unless travel is unavoidable.
+A health professional advising a prospective UK resident who is pregnant or thinking about becoming
+pregnant and who is intending to go to a malaria endemic area should suggest that the woman considers notgoing or postponing their trip until they are no longer pregnant (Table 1).
+26Evidence
+level 2++C
+B
+B
+Table 1. Summary of the main consequences of malaria in pregnancy in non-immune female UK-based
+residents, with different levels of premunition to malaria (severity indicated by + when known)
+Consequence Severity Premunition
+Low High
+Susceptibility to infection ++++ +++ ++
+Risk of illness ++++ +++ +Severe anaemia Not known +++ +++Severe/cerebral malaria ++++ +++ -Maternal and fetal mortality (woman dies with the baby undelivered) ++++ +++ +Reduction of birth weight Not known ++ ++Miscarriage, premature birth, stillbirth ++++ ++++ +Gravida at risk All All Primiparous
+Placental parasitaemia Not known + +++C5.2 If travel is unavoidable what advice should pregnant women receive about preventing malaria infection?
+Advise the woman to seek guidance from a centre with expertise on malaria risks and avoidance
+strategies.
+Advise women that a fever or flu-like illness while travelling or upon returning home, up to 1 year or
+more, may indicate malaria and requires medical attention.
+Advise the woman on the risk of being exposed to malaria at her intended area of travel.
+There are no measures specific to pregnancy that can be taken to prevent malaria beyond those that non-
+pregnant travellers can apply.27,28
+The ‘ABCD’ of malaria prevention is a useful formula to remember the components of malaria prevention:
+●Awareness of risk (see Section 5.2.1)
+●Bite prevention (see Section 5.3)
+●Chemoprophylaxis (see Section 5.4)
+●Diagnosis and treatment which must be prompt (see 5.5).
+Women need to be educated about possible measures and, where possible, provided with written information
+in their own language.1
+The Department of Health produces Think Malaria leaflets (order code MAL/1) which are available in 11
+different languages and can be obtained from DH Publications by writing to: DH Publications Orderline, POBox 777, London SE1 6XH, or by telephoning 03001231002, or by email to dh@prolog.uk.com or for furtherinformation see the Department of Health website [www.orderline.dh.gov.uk].
+5.2.1 What needs to be done to raise pregnant traveller’s awareness of the risk of malaria?
+The risk of malaria is dependent on a variety of factors, including the level of transmission in the area(s) oftravel and the time of year (rainy or dry season), the presence of drug resistant strains of 
+P . falciparum or P.
+vivax , whether rural or urban sleepovers are planned, length of travel and the availability and the likelihood
+of uptake of malaria prevention interventions.29For example, if a woman proposes to go to urban tourist areas
+of Southeast Asia, such as Bangkok and Phuket, and stay in air-conditioned hotels, the risks are consideredminimal for malaria, whereas urban travel in sub-Saharan Africa and New Guinea (Papua New Guinea andPapua) constitutes a significant risk of infection. For UK residents, the risk remains disproportionately high inthe African Diaspora of travellers visiting friends and relatives in West Africa, particularly Nigeria, Ghana andUganda.
+8The risk of contracting malaria during a 1 month stay without chemoprophylaxis (regardless of
+country of residence of the traveller) has been estimated from retrospective studies of large numbers oftravellers (Table 2).
+30–32
+RCOG Green-top Guideline No. 54a 4o f 1 4 © Royal College of Obstetricians and GynaecologistsB
+B
+B
+Table 2. Risk of contracting malaria during a 1-month stay without chemoprophylaxis
+Area Risk
+Oceania (Papua New Guinea, Papua, Solomon Islands and Vanuatu) 1:20
+Sub-Saharan Africa 1:50
+Indian subcontinent 1:500
+Southeast Asia 1:500
+South America 1:2500
+Central America and the Caribbean 1:10 000RCOG Green-top Guideline No. 54a 7o f 1 4 © Royal College of Obstetricians and GynaecologistsThe choice of drug and advice about chemoprophylaxis in pregnant women depends on the level of
+chloroquine-resistant P . falciparum and P. v i v a x malaria and the trimester of pregnancy. There are malaria
+prevention guidelines produced for travellers who are UK residents and these are detailed: by country andpopular destination and updated regularly.
+1It is not the aim of this guideline to reproduce these guidelines
+here. They can be directly accessed on the Health Protection Agency website [www.hpa.org.uk/HPA/Topics/InfectiousDiseases/InfectionsAZ] and clicking on malaria. Updates to guidelines, such as change in resistanceor transmission, can be found at the same place.
+Chemoprophylaxis for malaria can be causal or suppressive. Causal prophylaxis is directed against
+liver schizont stage, which takes approximately 7 days to develop so these drugs (for example,atovaquone-proguanil (Malarone®) need to be continued for 7 days after leaving a malarious area.
+80
+Suppressive prophylaxis (such as mefloquine) is directed against the red blood cell stages of themalaria parasite and so should be continued for 4 weeks after leaving a malarious area.
+81The full
+listings of drug actions, dosages, adverse effects, interactions and contraindications is contained inthe British National Formulary [www.bnf.org] and will not be repeated here. Women should bewarned that drugs purchased in endemic countries or over the internet may be cheaper but theymay be fake.
+82–84
+5.4.1 Chemoprophylaxis for women planning a pregnancyWomen planning pregnancy and travelling to a destination where there is a risk of contracting malaria shouldbe advised there may be harmful consequences for the pregnancy. Prophylaxis is not 100% effective andmalaria is associated with increased risk of miscarriage. Women should be advised not to travel or to choosean alternative destination. If it not possible to delay either the pregnancy or the travel plan, advice from aspecialist with current experience of malaria should be sought (Box 2). Chloroquine and proguanil are notefficacious in chloroquine-resistant areas and cannot be recommended because of this.
+85There are very few
+chloroquine-sensitive areas remaining.
+To avoid completely any potential adverse drug effects from preconceptual and first-trimester exposure, it is
+advisable to wait for complete excretion of the drug, if it was taken for prophylaxis, before becomingpregnant (Table 3). Nevertheless, unplanned conception while taking malaria prophylaxis is not considered areason to recommend termination of pregnancy, owing to the low risk of teratogenicity.
+5.4.2 Chemoprophylaxis for pregnant or breastfeeding women
+Mefloquine (5mg/kg once a week) is the recommended drug of choice for prophylaxis in the second and thirdtrimesters for chloroquine-resistant areas. With very few areas in the world free from chloroquine resistance,mefloquine is essentially the only drug considered safe for prophylaxis in pregnant travellers (Table 4).
+7
+The majority of observational and clinical data, mostly second and third trimesters, suggest that thedrug does not result in an increased risk of stillbirth or congenital malformation at prophylacticdoses.
+104,108,109One study found an association with increased risk of still birth at treatment doses (25
+mg/kg) for chloroquine-resistant P . falciparum malaria110but other studies where the drug has beenEvidence
+level 1+
+Box 2 . Expert centres in the UK on chemoprophylaxis
+Malaria Reference Laboratory [www.malaria-reference.co.uk]
+Possible to send risk assessment via fax (template available on website) and receive results in 3 days.Tel: 020 763 70248.
+National Travel Health Network and Centre [www.nathnac.org]
+Advice line for healthcare professionals.Tel. 0845 602 6712.
+Liverpool School of Tropical Medicine [www.liv.ac.uk/lstm]
+TRAVAX: the A–Z of Healthy Travel (Health Protection Scotland and NHS Scotland) [www.travax.nhs.uk]Evidence
+level 1-used for treatment or intermittent preventive treatment or in combination with artesunate have not
+reported this association.109–114The use of mefloquine in the first trimester may still be justified in
+areas of high risk of acquiring falciparum malaria. In the UK, this can be discussed with a specialistwith current experience of managing malaria (Box 2). There are strict contraindications tomefloquine, including current or previous history of depression, neuropsychiatric disorders,epilepsy or hypersensitivity to quinine or mefloquine.
+1
+8 of 14 RCOG Green-top Guideline No. 54a © Royal College of Obstetricians and GynaecologistsTable 4. Dosing regimen for chemoprophylaxis in pregnancy
+Regimen Dose for chemoprophylaxis Usual amount/tablet (mg) P . falciparum resistance n
+Mefloquine 1 tablet weekly 250 Chloroquine resistant
+Atovaquone-proguanila1 tablet daily 250 atovaquone + 100 proguanil Chloroquine resistant & mefloquine
+not tolerated or contraindicated ORMefloquine resistant
+Proguanila plus chloroquine 2 tablets daily plus 100 proguanil + 150 No chloroquine resistance
+2 tablets weekly (chloroquine; base)
+aFolic acid supplements (5 mg daily) need to be taken if proguanil is used in those who are pregnant or seeking to become pregna ntEvidence
+level 1-Table 3. Suggested waiting times before becoming pregnant, with animal and human first-trimester data on
+teratogenicity
+Drug Estimated half life Excretion time Data
+Animal Human
+Mefloquine 14–21 days 3 months Skeletal and muscular Post-marketing surveillance
+malformation in rats at 5–20 system of the manufacturertimes the therapeutic dose
+87(Hoffman-LaRoche) or case 
+reports focusing on the effects of
+mefloquine prophylaxis88–90do 
+not support the hypothesis thatmefloquine is associated with embryo toxicity even in the firsttrimester [Evidence level 1–]
+Doxycycline 12–24 hours 1 week Chick embryos: abnormal Disturbances of bone growth of
+skeletal development and the fetus; congenital cataract92
+reduced fetal growth;91rats: [Evidence level 3]
+discolouration of the lens92
+Malarone ® 2–3 days 2 weeks Three women inadvertentlyAtovaquone exposed at the time of conception,
+all with normal pregnancy outcomes
+94
+[Evidence level 3]
+Proguanil 14–21 hours 1 week Proguanil as chemoprophylaxis in
+pregnant women demonstrated noevidence of toxic fetal effects afterdecades of use;
+95cycloguanil, the
+active metabolite of proguanil, is toxicat the stage of cleavage of the ovum
+96
+[Evidence level 3]
+Chloroquine 1–2 months Not applicable Embryotoxicity in rat culture at No adverse effects in first trimester
+doses close to therapeutic range, reported from malaria literature100-107
+including developmental nor from a meta-analysis on womenabnormalities of neural tube; treated with high doses ofmicro-ophthalmia and optic hydroxychloroquine forprimordium;
+97altered cranial autoimmune disease108
+neural tube development and Evidence level 1++]morphology of neural crest 
+cells98,99No teratogenicity shown in animal studies with the combinationof both drugs
+93RCOG Green-top Guideline No. 54a 9o f 1 4 © Royal College of Obstetricians and GynaecologistsAtovaquone and proguanil (Malarone®) is potentially a good candidate for prophylaxis in the
+second and third trimesters but it is not recommended, owing to insufficient data on its safety inpregnancy.
+115To date, only treatment data on pregnant women have been published; the drug was
+effective and well tolerated with no adverse effects detected.93,116–119If travel to a chloroquine-
+resistant area is essential in pregnancy and mefloquine cannot be tolerated or is contraindicated,atovaquone and proguanil use can be considered in consultation with a specialist with currentexperience of managing malaria (Box 2).
+7
+Doxycycline and primaquine are contraindicated as chemoprophylaxis in pregnant women.Doxycyline has been reported to disturb bone growth of the fetus
+120and to cause irreversible teeth
+coloration when given in the third trimester121and congenital cataract has been reported.122
+Primaquine can cause haemolysis, particularly in G6PD deficiency. Fetal red blood cells are moresensitive to haemolysis and the G6PD status of the fetus cannot be determined.
+123,124
+While chloroquine and proguanil are safe, they are no longer efficacious in areas of chloroquineresistance and provide women with suboptimal prophylaxis if recommended.
+1
+Recommendations for breastfeeding mothers are the same as for pregnancy. There are few data onthe use mefloquine during breastfeeding
+125and, while it is excreted into breast milk in small
+amounts, there are not enough data to draw conclusions regarding harm.126
+Atovaquone and proguanil may also be considered in consultation with an infectious diseases physician for apregnant woman travelling to a mefloquine-resistant area.
+7
+5.5 Emergency standby treatment in pregnancy?
+Written instructions should be given to a pregnant traveller regarding emergency standby malaria
+treatment in the event of suspected malaria without access to medical care.
+Suspected malaria is a medical emergency and women should seek diagnosis and treatment at a
+health facility at the earliest opportunity.1,28Early diagnosis and stand-by emergency treatment have
+been promoted in the event of remote travel without access to medical care within 24 hours ofsymptoms. In theory, this should be an extremely rare situation in pregnant women, as this type oftravel could be hazardous in pregnancy. Owing to reports of the misuse of standby treatment
+127,128
+and the importance that it is given correctly, written instructions should be issued. An exampletemplate is available from the Health Protection Agency Malaria Guideline, on page 54 of the 2007edition [www.hpa.org.uk/webw/HPAweb&HPAwebStandard/HPAweb_C/1203496943315?p=1249920576136].
+1
+Standby treatment should be started if malaria is suspected (flu-like illness) and temperature is 38°C or above.Medical treatment for a full medical evaluation and, in the event that the fever has another cause, must be soughtat the earliest possibility. Antipyretics should be used for fever. The only recommended treatment in the UK forpregnant women is quinine (300 mg tablets, two tablets three times a day for 7 days) and clinda-mycin (150 mgcapsules, three capsules three times a day for 5–7 days). If a dose is vomited within 30 minutes, the full doseshould be repeated and if the dose is vomited after 30–60 minutes, half the dose should be repeated. Thetreatment should be finished and mefloquine should be commenced 1 week after the last treatment dose.
+Drugs that are highly efficacious and well tolerated are likely to be the best candidate drugs for stand-byemergency treatment. Quinine may be efficacious in most parts of the world but it is not well tolerated. Co-artem (Riamet®) or atovaquone-proguanil (Malarone®) (if not used as prophylaxis) could be used as stand-by emergency treatment and evidence to support the use of these drugs in uncomplicated malaria inpregnancy is detailed in Part B of this guideline.
+129Evidence
+level 3
+Evidence
+level 1+
+Evidence
+level 3
+D
+Evidence
+level 3References
+1. Chiodini P , Hill D, Lalloo D, Lea G, Walker E, Whitty C, et al.
+Advisory Committee on Malaria Prevention in UK Travellers.
+Guidelines for Malaria Prevention in Travellers from the
+United Kingdom 2007 . London: Health Protection Agency;
+2009 [www.hpa.org.uk/web/HPAweb&HPAwebStandard/HPAweb_C/1195733830209].
+2. Health Protection Agency. Imported malaria cases and deaths,
+United Kingdom: 1989–2008; data from the HPA MalariaReference Laboratory [www.hpa.org.uk/webw/HPAweb&HPAwebStandard/HPAweb_C/1195733773780?p=1191942128262].
+3. Health Protection Agency. Malaria imported into the United
+Kingdom in 2008: implications for those advising travellers.Health Protection Report 2009;3(16) [www.hpa.org.uk/hpr/
+archives/2009/news1609.htm#malaria08].
+4. Haegi V . [New aspects of tuberculosis therapy]. Schweiz Med
+Wochenschr 1975;105:245–50.
+5. Health Protection Agency. Migrant Health: Infectious Diseases
+in Non-UK born Populations in England, Wales and
+Northern Ireland . A Baseline Report – 2006. London: HPA;
+2006 [www.hpa.org.uk/webw/HPAweb&HPAwebStandard/HPAweb_C/1201767921328?p=1158945066450].
+6. Health Protection Agency. Foreign Travel-associated Illness: A
+Focus on Those Visiting Friends and Relatives: 2008 Report .
+London: Health Protection Agency; 2008 [www.hpa.org.uk/web/HPAwebFile/HPAweb_C/1231419800356].
+7. Schlagenhauf P , Petersen E. Malaria chemoprophylaxis:
+strategies for risk groups. Clin Microbiol Rev 2008;21:466–72.
+8. Smith AD, Bradley DJ, Smith V , Blaze M, Behrens RH, Chiodini
+PL, et al. Imported malaria and high risk groups: observational
+study using UK surveillance data 1987–2006. BMJ
+2008;337:a120.
+9. Kain KC, MacPherson DW , Kelton T, Keystone JS, Mendelson J,
+MacLean JD. Malaria deaths in visitors to Canada and inCanadian travellers: a case series. CMAJ 2001;164:654–9.
+10. Foca A, Matera G, Barreca GS, Gagliardi F , Apuzzo G,
+Guaglianone L. Imported malaria in pregnancy due toPlasmodium falciparum. J Travel Med 2001;8:331–2.
+11. Subramanian D, Moise KJ Jr, White AC Jr. Imported malaria in
+pregnancy: report of four cases and review of management.Clin Infect Dis 1992;15:408–13.
+12. Botelho-Nevers E, Laurencin S, Delmont J, Parola P . Imported
+malaria in pregnancy: a retrospective study of 18 cases inMarseilles, France. Ann Trop Med Parasitol 2005;99:715–18.
+13. Mali S, Steele S, Slutsker L, Arguin PM; Centers for Disease
+Control and Prevention. Malaria surveillance: United States,2007. MMWR Surveill Summ 2009;57(5):24–39.
+14. Brabin BJ. An analysis of malaria in pregnancy in Africa. Bull
+World Health Organ 1983;61:1005–16.
+15. Brabin BJ, Ginny M, Sapau J, Galme K, Paino J. Consequences of
+maternal anaemia on outcome of pregnancy in a malariaendemic area in Papua New Guinea. Ann Trop Med Parasitol
+1990;84:11–24.
+16. Christophers SR. Malaria in the Punjab. Scientific Memoirs by
+Officers of the Medical and Sanitary Departments of the
+Government of India 1911;(46):1–135.
+17. Wickramasuriya GAW . Some observations of malaria occurring
+in association with pregnancy. J Obstet Gynaecol Br Emp
+1935;42:816–34.
+18. Desai M, ter Kuile FO, Nosten F , McGready R, Asamoa K, Brabin
+B, et al. Epidemiology and burden of malaria in pregnancy.
+Lancet Infect Dis 2007;7:93–104.
+19. Prentice AM, Moore SE. Early programming of adult diseases in
+resource poor countries. Arch Dis Child 2005;90:429–32.
+20. Ansell J, Hamilton KA, Pinder M, Walraven GE, Lindsay SW . Short-
+range attractiveness of pregnant women to Anopheles gambiaemosquitoes. Trans R Soc Trop Med Hyg 2002;96:113–16.
+21. Lindsay S, Ansell J, Selman C, Cox V , Hamilton K, Walraven G.
+Effect of pregnancy on exposure to malaria mosquitoes. Lancet
+2000;355:1972.22. Luxemburger C, Ricci F , Nosten F , Raimond D, Bathet S, White
+NJ. The epidemiology of severe malaria in an area of lowtransmission in Thailand. Trans R Soc Trop Med Hyg
+1997;91:256–62.
+23. Steketee RW , Nahlen BL, Parise ME, Menendez C. The burden of
+malaria in pregnancy in malaria-endemic areas. Am J Trop Med
+Hyg2001;64:28–35.
+24. Nosten F , Rogerson SJ, Beeson JG, McGready R, Mutabingwa TK,
+Brabin B. Malaria in pregnancy and the endemicity spectrum:what can we learn? Trends Parasitol 2004;20:425–32.
+25. Nosten F , ter Kuile F , Maelankirri L, Decludt B, White NJ. Malaria
+during pregnancy in an area of unstable endemicity. Trans R
+Soc Trop Med Hyg 1991;85:424–9.
+26. Wilder-Smith A, Martinez L, Rietveld A, Duclos P , Hardiman M,
+Gollogly L. World Health Organization and International Traveland Health. Travel Med Infect Dis 2007;5:147–9.
+27. Bradley DJ, Warhurst DC. Guidelines for the prevention of
+malaria in travellers from the United Kingdom. PHLS MalariaReference Laboratory, London School of Hygiene and TropicalMedicine. Commun Dis Rep CDR Rev 1997;7:R137–52.
+28. Chiodini J. The ABCD of Malaria Prevention. Practice Nurse
+1999;18:10.
+29. Canadian recommendations for the prevention and treatment
+of malaria among international travellers 2009. Can Commun
+Dis Rep 2009;35 Suppl 1:1–82.
+30. Leder K, Black J, O'Brien D, Greenwood Z, Kain KC, Schwartz
+E, et al. Malaria in travelers: a review of the GeoSentinel
+surveillance network. Clin Infect Dis 2004;39:1104–12.
+31. Loutan L. Malaria: still a threat to travellers. Int J Antimicrob
+Agents 2003;21:158–63.
+32. Steffen R, deBernardis C, Banos A. Travel epidemiology–a global
+perspective. Int J Antimicrob Agents 2003;21:89–95.
+33. Leonard L, Van Landingham M. Adherence to travel health
+guidelines: the experience of Nigerian immigrants in Houston,Texas. J Immigr Health 2001;3:31–45.
+34. Morgan M, Figueroa-Munoz JI. Barriers to uptake and
+adherence with malaria prophylaxis by the African communityin London, England: focus group study. Ethn Health
+2005;10:355–72.
+35. Curtis CF . Malaria control through anti-mosquito measures. J R
+Soc Med 1989;82 Suppl 17:18–22.
+36. Fradin MS. Mosquitoes and mosquito repellents: a clinician's
+guide. Ann Intern Med 1998;128:931–40.
+37. McGready R, Hamilton KA, Simpson JA, Cho T, Luxemburger C,
+Edwards R, et al. Safety of the insect repellent N,N-diethyl-M-
+toluamide (DEET) in pregnancy. Am J Trop Med Hyg
+2001;65:285–9.
+38. McGready R, Simpson JA, Htway M, White NJ, Nosten F , Lindsay
+SW . A double-blind randomized therapeutic trial of insectrepellents for the prevention of malaria in pregnancy. Trans R
+Soc Trop Med Hyg 2001;95:137–8.
+39. Koren G, Matsui D, Bailey B. DEET-based insect repellents: safety
+implications for children and pregnant and lactating women.CMAJ 2003;169:209–12.
+40. Veltri JC, Osimitz TG, Bradford DC, Page BC. Retrospective
+analysis of calls to poison control centers resulting fromexposure to the insect repellent N,N-diethyl-m-toluamide(DEET) from 1985–1989. J Toxicol Clin Toxicol 1994;32:1–16.
+41. Wright DM, Hardin BD, Goad PW , Chrislip DW . Reproductive
+and developmental toxicity of N,N-diethyl-m-toluamide in rats.Fundam Appl Toxicol 1992;19:33–42.
+42. Costantini C, Badolo A, Ilboudo-Sanogo E. Field evaluation of
+the efficacy and persistence of insect repellents DEET, IR3535,and KBR 3023 against Anopheles gambiae complex and otherAfrotropical vector mosquitoes. Trans R Soc Trop Med Hyg
+2004;98:644–52.
+43. Frances SP , Waterson DG, Beebe NW , Cooper RD. Field
+evaluation of repellent formulations containing deet andpicaridin against mosquitoes in Northern Territory, Australia. J
+Med Entomol 2004;41:414–7.
+10 of 14 RCOG Green-top Guideline No. 54a © Royal College of Obstetricians and GynaecologistsRCOG Green-top Guideline No. 54a 11 of 14 © Royal College of Obstetricians and Gynaecologists44. Govere J, Durrheim DN, Baker L, Hunt R, Coetzee M. Efficacy of
+three insect repellents against the malaria vector Anopheles
+arabiensis. Med Vet Entomol 2000;14:441–4.
+45. Uzzan B, Konate L, Diop A, Nicolas P , Dia I, Dieng Y , et al.
+Efficacy of four insect repellents against mosquito bites: adouble-blind randomized placebo-controlled field study inSenegal. Fundam Clin Pharmacol 2009;23:589–94.
+46. Moore SJ, Davies CR, Hill N, Cameron MM. Are mosquitoes
+diverted from repellent-using individuals to non-users? Resultsof a field study in Bolivia. Trop Med Int Health 2007;12:532–9.
+47. Faye O, Diallo S, Gaye O, Diouf M, Gueye A. [Evaluation of the
+efficacity of PESGUARD-PS 201 ultra low volume (ULV)spraying against mosquitoes in the Pout area (Thies, Senegal)].Dakar Med 1991;36:178–84.
+48. Jakob WL, Maddock DR, Schoof HF , Porter JE. Gas-propelled
+aerosols and micronized dusts for control of insects in aircraft.5. Effectiveness against insects of public health importance. J
+Econ Entomol 1972;65:1454–8.
+49. Srinivasan R, Kalyanasundaram M. Ultra low volume aerosol
+application of deltacide (deltamethrin 0.5% w/v, S-bioallethrin0.71% w/v & piperonyl butoxide 8.9% w/v) againstmosquitoes. Indian J Med Res 2006;123:55–60.
+50. Weathersbee AA 3rd, Dame DA, Inman A, Polk CP , Jones JW ,
+Efird P , et al. Susceptibility of riceland Anopheles
+quadrimaculatus to Baytex and Scourge ground ULVapplications. J Am Mosq Control Assoc 1989;5:606–7.
+51. Bouma MJ, Parvez SD, Nesbit R, Winkler AM. Malaria control
+using permethrin applied to tents of nomadic Afghan refugeesin northern Pakistan. Bull World Health Organ
+1996;74:413–21.
+52. Efird PK, Inman AD, Dame DA, Meisch MV . Efficacy of various
+ground-applied cold aerosol adulticides against Anopheles
+quadrimaculatus. J Am Mosq Control Assoc 1991;7:207–9.
+53. Guillet P , Germain MC, Giacomini T, Chandre F , Akogbeto M,
+Faye O, et al. Origin and prevention of airport malaria in
+France. Trop Med Int Health 1998;3:700–5.
+54. Yap HH, Lee YW , Zairi J, Jahangir K, Adanan CR. Indoor thermal
+fogging application of pesguard FG 161, a mixture ofd–tetramethrin and cyphenothrin, using portable sprayeragainst vector mosquitoes in the tropical environment. J Am
+Mosq Control Assoc 2001;17:28–32.
+55. Mbaye A, Richardson K, Balajo B, Dunyo S, Shulman C, Milligan
+P, et al. A randomized, placebo-controlled trial of intermittent
+preventive treatment with sulphadoxine–pyrimethamine inGambian multigravidae. Trop Med Int Health
+2006;11:992–1002.
+56. Njagi JK, Magnussen P , Estambale B, Ouma J, Mugo B.
+Prevention of anaemia in pregnancy using insecticide-treatedbednets and sulfadoxine–pyrimethamine in a highly malariousarea of Kenya: a randomized controlled trial. Trans R Soc Trop
+Med Hyg 2003;97:277–82.
+57. Browne EN, Maude GH, Binka FN. The impact of
+insecticide–treated bednets on malaria and anaemia inpregnancy in Kassena-Nankana district, Ghana: a randomizedcontrolled trial. Trop Med Int Health 2001;6:667–76.
+58. Mnyika SK, Kabalimu TK, Mbaruku G, Masisila R, Mpanju-
+Shumbusho W . Randomised trial of alternative malariachemoprophylaxis strategies among pregnant women inKigoma, Tanzania: II. Results from baseline studies. East Afr
+Med J 2000;77:105–10.
+59. Shulman CE, Dorman EK, Talisuna AO, Lowe BS, Nevill C, Snow
+RW, et al. A community randomized controlled trial of
+insecticide–treated bednets for the prevention of malaria andanaemia among primigravid women on the Kenyan coast. Trop
+Med Int Health 1998;3:197–204.
+60. Gamble C, Ekwaru JP , ter Kuile FO. Insecticide-treated nets for
+preventing malaria in pregnancy. Cochrane Database Syst Rev
+2006:CD003755.
+61. Gamble C, Ekwaru PJ, Garner P , ter Kuile FO. Insecticide-treated
+nets for the prevention of malaria in pregnancy: a systematicreview of randomised controlled trials. PLoS Med 2007;4:e107.
+62. Breman JG. Eradicating malaria. Sci Prog 2009;92:1–38.63. Petersen E. Malaria chemoprophylaxis: when should we use it
+and what are the options? Expert Rev Anti Infect Ther
+2004;2:119–32.
+64. Lines JD, Myamba J, Curtis CF . Experimental hut trials of
+permethrin–impregnated mosquito nets and eave curtains
+against malaria vectors in Tanzania. Med Vet Entomol
+1987;1:37–51.
+65. Hougard JM, Martin T, Guillet PF , Coosemans M, Itoh T, Akogbeto
+M, et al. Preliminary field testing of a long-lasting insecticide-
+treated hammock against Anopheles gambiae and Mansoniaspp. (Diptera: Culicidae) in West Africa. J Med Entomol
+2007;44:651–5.
+66. Magris M, Rubio-Palis Y , Alexander N, Ruiz B, Galvan N, Frias D,
+et al. Community-randomized trial of lambdacyhalothrin-
+treated hammock nets for malaria control in Yanomamicommunities in the Amazon region of Venezuela. Trop Med Int
+Health 2007;12:392–403.
+67. Deparis X, Frere B, Lamizana M, N'Guessan R, Leroux F , Lefevre
+P, et al. Efficacy of permethrin-treated uniforms in combination
+with DEET topical repellent for protection of French militarytroops in Cote d'Ivoire. J Med Entomol 2004;41:914–21.
+68. Faulde M, Uedelhoven W . A new clothing impregnation method
+for personal protection against ticks and biting insects. Int J
+Med Microbiol 2006;296 Suppl 40:225–9.
+69. Kimani EW , Vulule JM, Kuria IW , Mugisha F . Use of insecticide-
+treated clothes for personal protection against malaria: acommunity trial. Malar J 2006;5:63.
+70. Lane RS. Treatment of clothing with a permethrin spray for
+personal protection against the western black-legged tick,Ixodes pacificus (Acari: Ixodidae). Exp Appl Acarol
+1989;6:343–52.
+71. Schreck CE, Snoddy EL, Spielman A. Pressurized sprays of
+permethrin or deet on military clothing for personalprotection against Ixodes dammini (Acari: Ixodidae). J Med
+Entomol 1986;23:396–9.
+72. Snodgrass HL. Permethrin transfer from treated cloth to the
+skin surface: potential for exposure in humans. J Toxicol
+Environ Health 1992;35:91–105.
+73. Rossbach B, Appel KE, Mross KG, Letzel S. Uptake of
+permethrin from impregnated clothing. Toxicol Lett 2009.
+74. Amalraj DD, Sivagnaname N, Boopathidoss PS, Das PK.
+Bioefficacy of mosquito mat, coil and dispenser formulationscontaining allethrin group of synthetic pyrethroids againstmosquito vectors. J Commun Dis 1996;28:85–93.
+75. Holzer RB. [Malaria prevention without drugs]. Schweiz
+Rundsch Med Prax 1993;82:139–43.
+76. Low Dog T. The use of botanicals during pregnancy and
+lactation. Altern Ther Health Med 2009;15:54–8.
+77. Marcus DM, Snodgrass WR. Do no harm: avoidance of herbal
+medicines during pregnancy. Obstet Gynecol 2005;105:1119–22.
+78. Refuerzo JS, Blackwell SC, Sokol RJ, Lajeunesse L, Firchau K,
+Kruger M, et al. Use of over-the-counter medications and
+herbal remedies in pregnancy. Am J Perinatol 2005;22:321–4.
+79. Fradin MS, Day JF . Comparative efficacy of insect repellents
+against mosquito bites. N Engl J Med 2002;347:13–8.
+80. Chulay JD. Challenges in the development of antimalarial drugs
+with causal prophylactic activity. Trans R Soc Trop Med Hyg
+1998;92:577–9.
+81. Franco-Paredes C, Santos-Preciado JI. Problem pathogens:
+prevention of malaria in travellers. Lancet Infect Dis
+2006;6:139–49.
+82. Atemnkeng MA, De Cock K, Plaizier-Vercammen J. Quality
+control of active ingredients in artemisinin-derivativeantimalarials within Kenya and DR Congo. Trop Med Int
+Health 2007;12:68–74.
+83. Newton PN, McGready R, Fernandez F , Green MD, Sunjio M,
+Bruneton C, et al. Manslaughter by fake artesunate in Asia: will
+Africa be next? PLoS Med 2006;3:e197.
+84. Newton PN, Fernandez FM, Plancon A, Mildenhall DC, Green
+MD, Ziyong L, et al. A collaborative epidemiological
+investigation into the criminal fake artesunate trade in SouthEast Asia. PLoS Med 2008;5:e32.85. Hogh B, Clarke PD, Camus D, Nothdurft HD, Overbosch D,
+Gunther M, et al. Atovaquone-proguanil versus chloroquine-
+proguanil for malaria prophylaxis in non-immune travellers: arandomised, double-blind study. Malarone International StudyTeam. Lancet 2000;356:1888–94.
+86. Cantor GH, Pontzer CH, Palmer GH. Opsonization of
+Anaplasma marginale mediated by bovine antibody against
+surface protein MSP–1. Vet Immunol Immunopathol
+1993;37:343–50.
+87. Phillips-Howard PA, Steffen R, Kerr L, Vanhauwere B,
+Schildknecht J, Fuchs E, et al. Safety of mefloquine and other
+antimalarial agents in the first trimester of pregnancy. J Travel
+Med 1998;5:121–6.
+88. Smoak BL, Writer JV , Keep LW , Cowan J, Chantelois JL. The
+effects of inadvertent exposure of mefloquinechemoprophylaxis on pregnancy outcomes and infants of USArmy servicewomen. J Infect Dis 1997;176:831–3.
+89. Vanhauwere B, Maradit H, Kerr L. Post-marketing surveillance
+of prophylactic mefloquine (Lariam) use in pregnancy. Am J
+Trop Med Hyg 1998;58:17–21.
+90. Cohlan SQ. Teratogenic agents and congenital malformations. J
+Pediatr 1963;63:650–9.
+91. Westring DW , Pisciotta AV . Anemia, cataracts, and seizures in
+patient with glucose-6-phosphate dehydrogenase deficiency.Arch Intern Med 1966;118:385–90.
+92. GlaxoSmithKline Inc. Malarone . GSK Product Monograph.
+Research Triangle Park, NC: GSK; 2009.
+93. McGready R, Keo NK, Villegas L, White NJ, Looareesuwan S,
+Nosten F . Artesunate-atovaquone-proguanil rescue treatment ofmultidrug-resistant Plasmodium falciparum malaria in
+pregnancy: a preliminary report. Trans R Soc Trop Med Hyg
+2003;97:592–4.
+94. Phillips-Howard PA, Wood D. The safety of antimalarial drugs in
+pregnancy. Drug Saf 1996;14:131–45.
+95. Cutting W . Antifertility effects of biguanides. Antibiot
+Chemother 1962;12:671–5.
+96. Tagoe CN, Ofori-Adjei D. Effects of chloroquine and its
+enantiomers on the development of rat embryos in vitro.Teratology 1995;52:137–42.
+97. Ambroso JL, Harris C. Chloroquine embryotoxicity in the post-
+implantation rat conceptus in vitro. Teratology 1993;48:213–26.
+98. Ambroso JL, Harris C. Chloroquine accumulation and
+alterations of proteolysis and pinocytosis in the rat conceptusin vitro. Biochem Pharmacol 1994;47:679–88.
+99. Drouin J, Rock G, Jolly EE. Plasmodium falciparum malaria
+mimicking autoimmune hemolytic anemia during pregnancy.Can Med Assoc J 1985;132:265–7.
+100. Hart CW , Naunton RF . The ototoxicity of chloroquine
+phosphate. Arch Otolaryngol 1964;80:407–12.
+101. Levy M, Buskila D, Gladman DD, Urowitz MB, Koren G.
+Pregnancy outcome following first trimester exposure tochloroquine. Am J Perinatol 1991;8:174–8.
+102. Nosten F , McGready R, Simpson JA, Thwai KL, Balkan S, Cho T, et
+al. Effects of Plasmodium vivax malaria in pregnancy. Lancet
+1999;354:546–9.
+103. Singh N, Mehra RK, Srivastava N. Malaria during pregnancy and
+infancy, in an area of intense malaria transmission in centralIndia. Ann Trop Med Parasitol 2001;95:19–29.
+104. Steketee RW , Wirima JJ, Slutsker L, Khoromana CO, Heymann
+DL, Breman JG. Malaria treatment and prevention in pregnancy:indications for use and adverse events associated with use ofchloroquine or mefloquine. Am J Trop Med Hyg 1996;55:50–6.
+105. Villegas L, McGready R, Htway M, Paw MK, Pimanpanarak M,
+Arunjerdja R, et al. Chloroquine prophylaxis against vivax
+malaria in pregnancy: a randomized, double-blind, placebo-
+controlled trial. Trop Med Int Health 2007;12:209–18.
+106. Wolfe MS, Cordero JF . Safety of chloroquine in
+chemosuppression of malaria during pregnancy. Br Med J
+1985;290:1466–7.
+107. Sperber K, Hom C, Chao CP , Shapiro D, Ash J. Systematic review
+of hydroxychloroquine use in pregnant patients withautoimmune diseases. Pediatr Rheumatol Online J 2009;7:9.109. Nosten F , ter Kuile F , Maelankiri L, Chongsuphajaisiddhi T,
+Nopdonrattakoon L, Tangkitchot S, et al. Mefloquine
+prophylaxis prevents malaria during pregnancy: a double-blind,placebo-controlled study. J Infect Dis 1994;169:595–603.
+109. Steketee RW , Wirima JJ, Slutsker L, Roberts JM, Khoromana CO,
+Heymann DL, et al. Malaria parasite infection during pregnancy
+and at delivery in mother, placenta, and newborn: efficacy ofchloroquine and mefloquine in rural Malawi. Am J Trop MedHyg 1996;55:24–32.
+110. Nosten F , Vincenti M, Simpson J, Yei P , Thwai KL, de Vries A, et al.
+The effects of mefloquine treatment in pregnancy. Clin Infect
+Dis1999;28:808–15.
+111. Briand V , Bottero J, Noel H, Masse V , Cordel H, Guerra J, et al.
+Intermittent treatment for the prevention of malaria duringpregnancy in Benin: a randomized, open-label equivalence trialcomparing sulfadoxine–pyrimethamine with mefloquine. J
+Infect Dis 2009;200:991–1001.
+112. Harinasuta T, Kietinun S, Somlaw S, Bunnag D, Sheth UK,
+Wernsdorfer W . A clinical trial of mefloquine on multi-resistantfalciparum malaria in pregnant women in Thailand. Bull Soc Fr
+Parasitol 1990:429.
+113. McGready R, Brockman A, Cho T, Cho D, van Vugt M,
+Luxemburger C, et al. Randomized comparison of mefloquine-
+artesunate versus quinine in the treatment of multidrug-resistant falciparum malaria in pregnancy. Trans R Soc Trop
+Med Hyg 2000;94:689–93.
+114. McGready R, Cho T, Hkirijaroen L, Simpson J,
+Chongsuphajaisiddhi T, White NJ, et al. Quinine and mefloquine
+in the treatment of multidrug-resistant Plasmodium
+falciparum malaria in pregnancy. Ann Trop Med Parasitol
+1998;92:643–53.
+115. Boggild AK, Parise ME, Lewis LS, Kain KC. Atovaquone-
+proguanil: report from the CDC expert meeting on malariachemoprophylaxis (II). Am J Trop Med Hyg 2007;76:208–23.
+116. McGready R, Stepniewska K, Edstein MD, Cho T, Gilveray G,
+Looareesuwan S, et al. The pharmacokinetics of atovaquone
+and proguanil in pregnant women with acute falciparummalaria. Eur J Clin Pharmacol 2003;59:545–52.
+117. Na-Bangchang K, Manyando C, Ruengweerayut R, Kioy D,
+Mulenga M, Miller GB, et al. The pharmacokinetics and pharma-
+codynamics of atovaquone and proguanil for the treatment ofuncomplicated falciparum malaria in third-trimester pregnantwomen. Eur J Clin Pharmacol 2005;61:573–82.
+118. McGready R, Ashley EA, Moo E, Cho T, Barends M, Hutagalung
+R, et al. A randomized comparison of artesunate-atovaquone-
+proguanil versus quinine in treatment for uncomplicatedfalciparum malaria during pregnancy. J Infect Dis
+2005;192:846–53.
+119. Okoyeh JN, Lege-Oguntoye L, Emembolu JO, Sarki U. Sensitivity
+of Plasmodium falciparum to reduced dose of mefloquine in
+pregnant women in Nigeria. Acta Trop 1996;61:1–8.
+120. Cohlan SQ, Bevelander G, Tiamsic T. Growth inhibition of
+prematures receiving tetracycline. Am J Dis Child
+1963;105:453–61.
+121. Manson JD. Tetracyclines and the teeth. Lancet 1966;1:1104.
+122. Krejci L, Brettschneider I. Congenital cataract due to
+tetracycline. 
+Ophthalmic Paediatr Genet 1983;3:59–60.
+123. Rietveld AE. Special groups: pregnant women, infants and
+young children. In: Schlagenhauf-Lawlor O, editor. Malaria . 1st
+ed. Hamilton, BC: Decker Inc; 2001. p. 303–23.
+124. National Travel Health Network and Centre. Use of Mefloquine
+During Breastfeeding . London: NaTHNaC; 2009
+[www.nathnac.org/pro/factsheets/mefloquine_breastfeeding060709.htm].
+125. Clyde DF . Clinical problems associated with the use of
+primaquine as a tissue schizontocidal and gametocytocidaldrug. Bull World Health Organ 1981;59:391–5.
+126. Edstein MD, Veenendaal JR, Hyslop R. Excretion of mefloquine
+in human breast milk. Chemotherapy 1988;34:165–9.
+127. Chen LH, Keystone JS. New strategies for the prevention of
+malaria in travelers. Infect Dis Clin North Am
+2005;19:185–210.
+12 of 14 RCOG Green-top Guideline No. 54a © Royal College of Obstetricians and Gynaecologists13 of 14 RCOG Green-top Guideline No. 54a © Royal College of Obstetricians and GynaecologistsGrades of recommendations
+At least one meta-analysis, systematic reviews
+or randomised controlled trial rated as 1++and directly applicable to the targetpopulation; orA systematic review of randomised controlledtrials or a body of evidence consistingprincipally of studies rated as 1+, directlyapplicable to the target population anddemonstrating overall consistency of results
+A body of evidence including studies rated as
+2++ directly applicable to the targetpopulation and demonstrating overallconsistency of results; orExtrapolated evidence from studies rated as1++ or 1+
+A body of evidence including studies rated as
+2+ directly applicable to the target populationand demonstrating overall consistency ofresults; orExtrapolated evidence from studies rated as2++
+Evidence level 3 or 4; or
+Extrapolated evidence from studies rated as2+
+Good practice point
+Recommended best practice based on theclinical experience of the guidelinedevelopment groupClassification of evidence levels
+1++ High-quality meta-analyses, systematicreviews of randomised controlled trials orrandomised controlled trials with a very lowrisk of bias
+1+ Well-conducted meta-analyses, systematic
+reviews of randomised controlled trialsor randomised controlled trials with alow risk of bias
+1– Meta-analyses, systematic reviews of
+randomised controlled trials orrandomised controlled trials with a highrisk of bias
+2++ High-quality systematic reviews of
+case–control or cohort studies or high-quality case–control or cohort studieswith a very low risk of confounding, biasor chance and a high probability that therelationship is causal
+2+ Well-conducted case–control or cohort
+studies with a low risk of confounding,bias or chance and a moderate prob-ability that the relationship is causal
+2– Case–control or cohort studies with a
+high risk of confounding, bias or chanceand a significant risk that therelationship is not causal
+3 Non-analytical studies; e.g. case reports,
+case series
+4 Expert opinion
+PC
+DBAAPPENDIX 
+Clinical guidelines are: ‘systematically developed statements which assist clinicians and patients in
+making decisions about appropriate treatment for specific conditions’. Each guideline is systematicallydeveloped using a standardised methodology. Exact details of this process can be found in ClinicalGovernance Advice No. 1: Development of RCOG Green-top Guidelines (available on the RCOG website
+at 
+www.rcog.org.uk/womens-health/clinical-guidance/development-rcog-green-top-guidelines-
+policies-and-processes ). These recommendations are not intended to dictate an exclusive course of
+management or treatment. They must be evaluated with reference to individual patient needs, resourcesand limitations unique to the institution and variations in local populations. It is hoped that this process oflocal ownership will help to incorporate these guidelines into routine practice. Attention is drawn to areasof clinical uncertainty where further research may be indicated within the appropriate health services.
+The evidence used in this guideline was graded using the scheme below and the recommendations
+formulated in a similar fashion with a standardised grading scheme. Once adapted for local use, theseguidelines are no longer representative of the RCOG.128. Swales CA, Chiodini PL, Bannister BA. New guidelines on
+malaria prevention: A summary. J Infect 2007;54:107–10.129. Royal College of Obstetricians and Gynaecologists. The
+Diagnosis and Treatment of Malaria in Pregnancy . Green-
+top Guideline No. 54B. London: RCOG; 2010.This Guideline was produced on behalf of the Guidelines Committee of the Royal College of Obstetricians and
+Gynaecologists by: Dr R McGready PhD Dip RANZCOG, Mae Sot, Thailand; Dr EA Ashley PhD, London; Professor FNosten MD PhD, Mae Sot, Thailand; Dr M Rijken MD PhD, Mae Sot, Thailand.
+It was peer reviewed by: Dr A Diaf MRCOG, Birmingham; RCOG Consumers’ Forum; Mr SA Walkinshaw MRCOG,
+Liverpool; Dr C Whitty FRCP , London; the Advisory Committee on Malaria Prevention in UK Travellers: Dr BA BannisterFRCP , London; Dr D Lalloo FRCP , Liverpool; Professor P Chiodini FRCP , London.
+The Guidelines Committee lead peer reviewers were: Dr ALM David MRCOG, London, and Professor F McAuliffe
+FRCOG, Dublin.
+The final version is the responsibility of the Guidelines Committee of the RCOG.
+The guideline review process will commence in 2013
+unless otherwise indicated
+DISCLAIMER
+The Royal College of Obstetricians and Gynaecologists produces guidelines as an educational aid to good clinical
+practice. They present recognised methods and techniques of clinical practice, based on published evidence, forconsideration by obstetricians and gynaecologists and other relevant health professionals. The ultimate judgementregarding a particular clinical procedure or treatment plan must be made by the doctor or other attendant in the lightof clinical data presented by the patient and the diagnostic and treatment options available within the appropriatehealth services.
+This means that RCOG Guidelines are unlike protocols or guidelines issued by employers, as they are not intended to
+be prescriptive directions defining a single course of management. Departure from the local prescriptive protocols orguidelines should be fully documented in the patient’s case notes at the time the relevant decision is taken. Onceadapted for local use, these guidelines no longer represent the views of the RCOG.
+© Royal College of Obstetricians and Gynaecologists 14 of 14 RCOG Green-top Guideline No. 54a

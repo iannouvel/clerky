@@ -1,0 +1,942 @@
+# Extracted from: CG12004 APH & Intrapartum Haemorrhage.pdf
+# Guideline ID: cg12004-aph-intrapartum-haemorrhage
+# Content length: 44307 characters
+# Processing date: 1750066900.1890237
+
+CG12004 Antepartum & Intrapartum Haemorrhage Guideline v4.2 Jan 2023 Page 1 of 20 
+Please check on the intranet that this printout is the most version of this document before use . 
+
+Antepartum & Intrapartum Haemorrhage 
+Guideline 
+(Including antenatal management of placenta praevia & placenta accreta) 
+Summary statement: How does the 
+document support patient care? By providing evidence based guidance in the management 
+of antepartum and intrapartum haemorrhage . 
+Staff/stakeholders involved in 
+development: Labour Ward Leads (Obstetric and Midwifery), Consultant 
+Obstetricians, Senior midwives, Joint Obstetric Guidelines 
+Group. 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Consultant Obstetrician and Maternity Clinical Effectiveness 
+team 
+For use by: All medical , obstetric, midwifery and anaesthetic staff 
+Purpose: To provide evidence based guidance on the management of 
+antepartum and intrapartum haemorrhage . 
+This document supports: 
+ CEMACH 2007, RCOG 2011, 2018, MBRRACE -UK 2019 
+NICE NG121 (2019) 
+Key related documents: UH Sussex (SRH&WH) Maternity Guidelines: Postpartum 
+Haemorrhage, Care of Severely III Pregnant 
+Woman/Transfer to High Dependency Unit, Induction of 
+Labour following Intrauterine Death/Fetal Abnormality, 
+Venous Thromboembolism, Uterine Rupture, Anti D, 
+Preterm Labour and Delivery 
+Approved by: JOGG: 18th January 2023 
+Medicines Governance Committee: 13th June 2023 
+Date uploaded : 14th July 2023 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors Not Applicable – Divisional Ratification only required 
+Ratification Date: Not Applicable – Divisional Ratification only required 
+Expiry Date: December 2023 
+Review date: June 2023 
+If you require this document in another format such as Braille, large print, 
+audio or another language please contact the Trusts Communications Team 
+Reference Number: CG12004 
+
+CG12004 Antepartum & Intrapartum Haemorrhage Guideline v4.2 Jan 2023 Page 2 of 20 
+Please check on the intranet that this printout is the most version of this document before use . 
+
+Version Date Author Status Comment 
+1.0 January 2021 Consultant 
+Obstetricians & 
+CNST Midwife Archived New Trustwide guideline 
+2.0 November 2014 N. Maguire and 
+H. Clarke Archived Antenatal management of 
+placenta praevia and accreta 
+added 
+3.0 January 2018 A. Crocker Archived 3 yearly review with addition 
+of MBBRACE 
+recommendations 
+3.1 September 2019 S. Davies Archived Minor update to reflect leaflet 
+changes. For full review as 
+planned September 2020 
+4.0 March 2021 A. Elgarh y, 
+Obstetrician & 
+J. Collard , Clinical 
+Effectiveness 
+Support Midwife Archived Name change to add 
+Intrapartum Haemorrhage to 
+title. 
+3 yearly review and NICE 
+NG121 Intrapartum care for 
+women with existing medical 
+conditions or obstetric 
+complications and their 
+babies recommendations on 
+Intrapartum haemorrhage 
+added . 
+4.1 September 2022 J. Collard, Clinical 
+Effectiveness 
+Support Midwife Archived  Link to CG21008 
+Management of high risk 
+maternal medicine 
+conditions section on 
+suspected cervical cancer 
+add to 9.0 Local Causes. 
+ APH & Intrapartum 
+Haemorrhage proforma 
+added. 
+ Massive APH changed to 
+Severe Major APH to 
+avoid confusion with PPH 
+terms. 
+4.2 January 2023 CE Team LIVE  5.1 Screening team to be 
+notified of significant or 
+recurrent bleeds for FGR 
+assessment purposes. 
+
+The interpretation and application of clinical guidelines will remain the responsibility 
+of the individual clinician. If in doubt contact a senior colleague or expert . 
+
+CG12004 Antepartum & Intrapartum Haemorrhage Guideline v4.2 Jan 2023 Page 3 of 20 
+Please check on the intranet that this printout is the most version of this document before use . 
+
+Contents 
+ 
+1.0 Aim ................................ ................................ ................................ ............................ 4 
+2.0 Scope ................................ ................................ ................................ ........................ 4 
+3.0 Responsibilities ................................ ................................ ................................ .......... 4 
+4.0 Abbreviations used within this guidance ................................ ................................ .... 4 
+5.0 Introduction ................................ ................................ ................................ ................ 5 
+5.1 Definition ................................ ................................ ................................ ................... 5 
+5.2 Causes ................................ ................................ ................................ ...................... 6 
+5.3 Complications of APH & intrapartum haemorrhage ................................ .................... 6 
+6.0 Placenta praevia ................................ ................................ ................................ ........ 7 
+6.1 Risk factors ................................ ................................ ................................ ................ 7 
+6.2 Diagnosis ................................ ................................ ................................ ................... 7 
+6.3 Antenatal screening and management of placenta praevia ................................ ........ 7 
+6.4 Inpatient/outpatient management of placenta praevia ................................ ................ 8 
+6.5 Signs suggestive of placenta praevia ................................ ................................ ......... 8 
+6.6 Acute management of placenta praevia ................................ ................................ ..... 9 
+6.7 Corticosteroid prophylaxis ................................ ................................ ........................ 10 
+7.0 Morbidly adherent placenta (including placenta accreta, incr eta and percreta ......... 10 
+7.1 Antenatal screening for morbidly adherent placenta (including placenta accreta, 
+placenta increta and placenta percreta) ................................ ................................ ... 10 
+7.2 Management of women/people with suspected morbidity adherent placenta: .......... 11 
+8.0 Placental abruption ................................ ................................ ................................ .. 11 
+8.1 Risk factors ................................ ................................ ................................ .............. 11 
+8.2 Signs suggestive of abruption ................................ ................................ .................. 12 
+8.3 Assessment on admission ................................ ................................ ....................... 12 
+8.4 Management of minor or small placental abruption ................................ .................. 12 
+8.5 Management of major placental abruption ................................ ............................... 12 
+9.0 Vasa praevia ................................ ................................ ................................ ............ 13 
+9.1 Diagnosis ................................ ................................ ................................ ................. 13 
+9.2 Management ................................ ................................ ................................ ............ 13 
+10.0 Local causes ................................ ................................ ................................ ............ 13 
+11.0 APH of unknown origin ................................ ................................ ............................ 14 
+12.0 Intrapartum haemorrhage ................................ ................................ ........................ 14 
+13.0 Emergency management of acute antepartum & intrapartum haemorrhage ........... 15 
+14.0 Management of extremely preterm (24 -26 weeks) pregnancy with APH .................. 16 
+15.0 Post-delivery management of major APH or intrapartum haemorrhage ................... 16 
+16.0 Audit ................................ ................................ ................................ ........................ 18 
+References ................................ ................................ ................................ ......................... 18 
+Appendix 1: Acute management of significant APH & intrapartum haemorrhage ................ 19 
+Appendix 2: Antepartum / Intrapartum Haemorrhage Proforma ................................ ........... 20 
+
+CG12004 Antepartum & Intrapartum Haemorrhage Guideline v4.2 Jan 2023 Page 4 of 20 
+Please check on the intranet that this printout is the most version of this document before use . 
+
+Antepartum & Intrapartum Haem orrhage Guideline 
+(including antenatal management of placenta praevia & placenta accreta) 
+
+1.0 Aim 
+ 
+To provide evidence -based guidance and ensure that care is safe, effective and timely for 
+the management of pregnant women /people with: 
+ 
+ Antepartum haemorrhage (APH) 
+ Intrapartum haemorrhage 
+ Placental abruption 
+ Placenta praevia 
+ Placenta accreta 
+ Vasa praevia 
+ 
+2.0 Scope 
+ 
+This guideline is for use by: 
+ 
+ Obstetricians 
+ Anaesthetists 
+ Midwives 
+ Sonographers 
+ 
+3.0 Responsibilities 
+ 
+Clinicians: 
+ 
+ To access, read, understand and follow this guidance . 
+ To use their professional judgement in application of this guideline . 
+ 
+Management: 
+ 
+ To ensure the guideline is reviewed as required in line with Trust and National 
+recommendations . 
+ To ensure the guideline is accessible to all relevant staff . 
+ 
+4.0 Abbreviations used within this guidance 
+ 
+APH - Antepartum Haemorrhage EPAC - Early Pregnancy Assessment Clinic 
+A&E - Accident and Emergency TVS - Transvaginal Scan 
+PAS - Placenta Accreta Spectrum disorder IR - Interventional Radiology 
+PPH - Postpartum Haemorrhage BMI - Body Mass Index 
+ 
+CG12004 Antepartum & Intrapartum Haemorrhage Guideline v4.2 Jan 2023 Page 5 of 20 
+Please check on the intranet that this printout is the most version of this document before use . 
+ 
+CTG - Cardiotocograph DIC - Disseminated Intravascular Coagulation 
+HELLP - Haemolysis Elevated Liver 
+Enzymes Low Platelets CS - Caesarean Birth 
+IV - Intravenous MEOWS - Modified Early Obstetric Warning 
+System 
+Us&Es - Uraea & Electrolytes CCU - Critical Care Unit 
+USS - Ultrasound Scan FH - Fetal Heart 
+P - Pulse T - Temperature 
+BP - Blood Pressure 
+ 
+5.0 Introduction 
+ 
+Antepartum haemorrhage (APH) complicates 3 -5% of pr egnancies and is a leading cause of 
+perinatal and maternal mortality worldwide. 
+ 
+The major causes for APH and intrapartum haemorrhage are placenta praevia (30%) and 
+placental abruption (20%) but the majority are of unknown aetiology (40%). Five per cent of 
+women have a low lying placenta at 20 weeks but only 0.5% persist past 37 weeks 
+gestation. Placental abruption occurs in 0.65% of pregnancies. 
+ 
+All pregnant women /people 16 weeks or more with significant revealed vaginal bleeding or 
+suspicion of concealed bleeding should be reviewed on triage/ Delivery Suite . 
+ 
+If a pregnant woman /person in labour has any vaginal blood loss other than a ‘show’, they 
+should be transferred to obstetric -led care and be reviewed by an obstetrician . 
+ 
+Pregnant w omen /people less t han16 weeks should be referred to A& E or to EPAC as 
+appropriate . 
+ 
+5.1 Definition 
+ 
+Bleeding from the genital tract between 24 weeks gestation and delivery, however, any 
+pregnant woman /person with bleeding after 16 weeks of pregnancy should be assessed in 
+the Delivery Suite/Labour Ward . 
+ 
+Classification of APH & intrapartum haemorrhage : 
+ 
+ Spotting – staining or streaking noted on underwear . 
+ Minor haemorrha ge – blood loss less than 50 ml which has settled . 
+ Major hae morrhage – blood loss of 50 -1000 ml, with no clinical signs of shock. 
+ Severe major haemorrhage - blood loss greater than 1000ml and/or signs of 
+shock . 
+ 
+If a pregnant woman /person in labour has vaginal blood loss typical of a ‘show’ , CG1196 
+Care in labour should be followed . 
+ 
+Please see Appendix 2: Antepartum/ Intrapartum Haemorrhage Proforma. 
+
+CG12004 Antepartum & Intrapartum Haemorrhage Guideline v4.2 Jan 2023 Page 6 of 20 
+Please check on the intranet that this printout is the most version of this document before use . 
+ 
+If the bleed is assessed as being significant or recurrent by the obstetrician, a new 
+plan will need to be dec ided. Once plan has been agreed and FGR risk amended 
+please inform t he Antenatal Clinic via email : 
+Worthing: uhsussex.wor.antenatalclinic@nhs.net 
+or 
+SRH : antenatalclinic1@nhs.net 
+to ensure the appropriate care planning is arranged. 
+
+5.2 Causes 
+ 
+ Placenta praevia 
+ Placental abruption 
+ Vasa praevia 
+ Local causes 
+ Undiagnosed 
+ Uterine rupture ( CG1151 Uterine rupture guideline ) 
+ 
+Pregnant women /people should be advised to report all vaginal blee ding to their health 
+professional. 
+ 
+All patients presenting with significant vaginal bleeding or a suspicion of concealed bleeding 
+must be admitted to hospital. The initial assessment should be carried out on the delivery 
+suite. Priority must be given to a ssessing maternal and fetal well -being. 
+ 
+Haemorrhage should be considered when classic signs of hypovolaemia are present 
+(tachycardia and/or agitation are late sign s of hypotension) even in the absence of revealed 
+bleeding . Recurrent bleeding, pain or agitation should be seen as ‘red flags’ in 
+women /people with placenta accret a and they should be advised to remain in hospital. 
+ 
+Whilst significant haemorrhage may be apparent from observed physiological disturbances, 
+young fit pregnant women /people compen sate remarkably well. A tachycardia commonly 
+develops but there can be a paradoxical bradycardia. Hypotension is always a very late sign, 
+therefore ongoing bleeding should be acted on without delay . 
+ 
+5.3 Complications of APH & intrapartum haemorrhage 
+ 
+Maternal Fetal 
+ Anaemia 
+ Infection 
+ Shock 
+ Renal tubular necrosis 
+ Consumptive coagulopathy 
+ Postpartum haemorrhage 
+ Prolonged hospital stay 
+ Psychological sequelae 
+ Complications of blood transfusion  Hypoxia 
+ Small for gestational age & 
+growth restriction 
+ Prematurity 
+ Fetal death 
+
+CG12004 Antepartum & Intrapartum Haemorrhage Guideline v4.2 Jan 2023 Page 7 of 20 
+Please check on the intranet that this printout is the most version of this document before use . 
+
+6.0 Placenta praevia 
+(RCOG GTG 27a 2018 ) 
+ 
+Placenta praevia is defined as bleeding from a placenta implanted wholly or partly in the 
+lower uterine segment and classified as: 
+ 
+ Placenta praevia: the placenta covers the internal os . 
+ Low lying placenta (previously m inor placenta praevia ): the leading edge is in the 
+lower uterine segment, but does not cover the internal os. On transvaginal scan, 
+low lying placenta praevia is confirmed when the placenta is less than or equal to 
+20 mm from the internal os. 
+ Placenta accreta: a morbidly adhere nt placenta (including accreta, increta and 
+percreta) . 
+ 
+The term placenta praevia should be used when the placenta lies directly over the internal 
+os. For pregnancies at more than 16 weeks of gestation the term low -lying placenta should 
+be used when the pl acental edge is less than 20 mm from the internal os on transabdominal 
+or transvaginal scanning (TVS). 
+ 
+6.1 Risk factors 
+ 
+ Previous caesarean section 
+ Previous placenta praevia 
+ Previous termination of pregnancy 
+ Multiparity 
+ Maternal age over 40 years 
+ Smoking 
+ Multiple pregnancy 
+ Assisted conception 
+ 
+6.2 Diagnosis 
+ 
+Usually made at the routine anomaly ultrasound examination, but should be suspected in 
+any pregnant woman /person with vaginal bleeding and a high presenting part or abnormal 
+lie, irrespective of previo us imaging results . If images are available from the 20 week 
+scan, these can be rechecked in the event of bleeding. 
+ 
+6.3 Antenatal screening and management of placenta praevia 
+ 
+ If placenta praevia is suspected at the anomaly scan, the diagnosis should be 
+confirmed by transvaginal scan (TVS). 25 -60% will be reclassified by use of TVS. 
+ Women /people diagnosed with a low lying placenta at the anomaly scan should 
+be given the RCOG patient information leaflet: Placenta praevia, placenta accreta 
+and vasa praevia should be given following the scan with appropriate counselling. 
+ 
+CG12004 Antepartum & Intrapartum Haemorrhage Guideline v4.2 Jan 2023 Page 8 of 20 
+Please check on the intranet that this printout is the most version of this document before use . 
+ 
+Follow up should be arranged for all women /people where the placenta covers or 
+overlaps the os at the anomaly scan. 
+ Asymptomatic women /people with suspected low lying placenta should be 
+rescanned at 3 2 weeks. If the leading edge of the placenta is greater than 20mm 
+from the internal os, a vaginal deliver y can be anticipated, however if the head 
+fails to engage by term, Consultant review should be arranged. If a low lying 
+placenta persists and the woman/person is asymptomatic , a further TVS at 36 
+weeks can be performed to inf orm discussion mode of birth (RCOG 2018 ). 
+ Asymptomatic women /people with suspected placenta praevia or a suspicion of 
+placenta accreta should be rescanned at around 32 weeks to clarify the diagnosis 
+and allow planning f or further imaging and birth (See section 7.0 for management 
+of suspected placenta accreta). 
+ Cervical length measurement may help facilitate management decisions in 
+asymptomatic women /people with placenta praevia. A short cervical length on 
+TVS before 34 weeks of gestation increases the risk of preterm emergency 
+delivery and massive ha emorrhage at caesarean birth (RCOG 2018 ). 
+ 
+6.4 Inpatient/ outpatient management of placenta praevia 
+ 
+ Pregnant w omen /people with placenta praevia in the third trimester should be 
+counselled about the risks of preterm birth and haemorrhage, and their care 
+should be tailored to their individual needs . 
+ Outpatient management should take into consideration proximity to the hospital, 
+transport, any communication issues, previous bleeding episodes, haematology 
+laboratory results, and acceptance of receiving donor blood or blood products. 
+Pregnant w omen /people should be advised to attend immediately on experiencing 
+any bleeding, contractions or pain, including vague suprapubic period -like 
+symptoms . 
+ Women /people with placenta praevia in the third trimester, or who have had 
+bleeding, may be advised to avoid intercourse . 
+ Availability of blood — inpatients with bleeding, should have a current group and 
+save (lasts 72 hours) . 
+ Women /people with atypical antibodies are a high risk group and their care should 
+be discussed with the Haematologist and blood bank. 
+ 
+6.5 Signs suggestive of placenta praevia 
+ 
+ The bleeding is usually fresh and painless and may vary from minimal to profuse. 
+ Abdominal examination reveals a soft non -tender uterus, though secondary 
+uterine contractions may occur. 
+ Unengaged head -which may be difficult to palpate with the ‘boggy’ lower segment. 
+ Malpresentation . 
+ The definitive diagnosis usually relies on ultrasound imaging . 
+ 
+N.B: A digital vaginal examination is potenti ally an extremely dangerous procedure when 
+placenta praevia is suspected and must never be carried out unless in theatre with the ability 
+to perform an immediate caesarean section. A careful speculum examination may be 
+indicated. 
+ 
+CG12004 Antepartum & Intrapartum Haemorrhage Guideline v4.2 Jan 2023 Page 9 of 20 
+Please check on the intranet that this printout is the most version of this document before use . 
+
+6.6 Acute management o f placenta praevia 
+ 
+Management is dependent on: 
+ 
+ Amount of bleeding 
+ Condition of the mother and fetus 
+ Location of the placenta 
+ Stage of the pregnancy 
+ 
+On admission take a full blood count, U&Es and a group and save; and liaise with the 
+haematologist . 
+ 
+Gestation more than 37 weeks or if significant bleeding continues and delivery is 
+indicated: 
+ 
+ Discuss with consultant on call. Obstetric consultants and consultant 
+anaesthetists should attend all caesarean sections for placenta praevia . 
+ Prepare for theatre. 
+ Inform Blood Transfusion and request 4 - 6 units of b lood to be cross -matched. An 
+O-negative paediatric pack for the baby is available from blood transfusion on 
+request; should the baby require it. 
+ Proceed to caesarean section if diagnosis confirme d. 
+ If the diagnosis is in doubt, if possible perform an ultrasound scan or perform a 
+careful examination in theatre. If fetal head is below a low lying placenta, perform 
+artificial rupture of membranes to induce labour; commence continuous electronic 
+fetal heart rate monitoring. 
+ If placenta praevia is confirmed proceed to caesarean section. 
+ Cell salvage should be set up for collection in all women with placenta praevia. 
+ A paediatrician should be present at delivery because of the risk of fetal 
+haemorrhage . 
+ 
+Gestational age less than 37 weeks and/or not significantly bleeding: 
+ 
+ Maintain nil by mouth, and intravenous infusion until the clinical situation becomes 
+clearer. 
+ Send group and save to laboratory, low threshold for cross matching blood 
+ Confirm diagnosi s of placenta praevia by ultrasound scan. 
+ If contractions and bleeding have settled patient can be transferred to the 
+antenatal ward . 
+ A plan for further management should be made by the Consultant Obstetrician. 
+ Late preterm (34+0 to 36+6 weeks of gestation ) birth should be considered for 
+women /people presenting with placenta praevia or a low -lying placenta and a 
+history of vaginal bleeding or other associated risk factors for preterm birth. 
+ 
+CG12004 Antepartum & Intrapartum Haemorrhage Guideline v4.2 Jan 2023 Page 10 of 20 
+Please check on the intranet that this printout is the most version of this document before use . 
+ 
+ Delivery timing should be tailored according to antenatal symptoms and, for 
+women /people presenting with uncomplicated placenta praevia, delivery should be 
+considered between 36+0 and 37+0 weeks of gestation. 
+ Whenever possible, CTG monitoring should be performed where knowledge of 
+fetal condition will influence the timing and mode of birth. 
+ 
+6.7 Corticosteroid prophylaxis 
+ 
+In women /people at higher risk of preterm birth, a single course of antenatal corticosteroid 
+therapy is recommended between 34+0 and 35+6 weeks of gestation for pregnant 
+women /people with a low -lying placenta or placenta praevia and is appropriate prior to 
+34+0 weeks of gestation (See CG20013 Preterm birth risk pathway ). 
+ 
+7.0 Morbidly adherent placenta (including placenta accret a, increta and 
+percreta 
+ 
+The highest risk factors for the development of a morbidly adherent placenta (including 
+placenta accret a, placenta increta and placenta percreta) are placenta praevia and previous 
+Caesarean birth (or uterine surgery). The risk in the presence of both of th ese risk factors is 
+around 5 -10%. 
+ 
+Placenta accreta should be suspected in any pregnant woman /person with an anterior 
+placenta praevia and a previous scar. 
+ 
+7.1 Antenatal screening for morbidly adherent placenta 
+(including placenta accret a, placenta increta and placenta percreta) 
+ 
+ If the pregnant woman/person has had previous uterine surgery (e.g. caesarean 
+birth, myomectomy), a TVS should be performed at the next available routine 
+appointment. The scan should be carried out by a consultant who is exp erienced 
+in diagnosing placenta accreta spectrum disorder (PAS). The following should be 
+assessed: 
+- Placental lacunae . 
+- Abnormal vessels on colour Doppler . 
+- Loss of retro -placental clear space . 
+- Bulging mass into the urinary bladder. 
+ If a consultant with the relevant experience is not available at Worthing ANC, a 
+referral should be made to St Richard’s ANC. 
+ If placenta accret a is confirmed or suspicion of placenta accret a continues after 
+this repeat scan, a referral to a Tertiary unit should be made for 32 weeks or after 
+to allow for birth planning. 
+ Women/people with uncomplicated placenta accreta , planned birth at 35+0 to 
+36+6 weeks of gestation provides the best balance between fetal maturity and the 
+risk of unscheduled delivery. 
+ Consideration may be made for an antenatal MRI only if the local experience and 
+expertise exists for making a diagnosis of placental morbid adherence. 
+ The referral to the St George’s Fetal Medicine Unit should indicate if a second 
+opinion is being requested and/or transfer of care if the diagnosis is confirmed. 
+
+CG12004 Antepartum & Intrapartum Haemorrhage Guideline v4.2 Jan 2023 Page 11 of 20 
+Please check on the intranet that this printout is the most version of this document before use . 
+ 
+7.2 Management of women /people with suspected morbidity adherent placenta: 
+ 
+ Discuss the interventions available for birth with women /person suspected to have 
+morbidly adherent placenta. 
+ Discussion and consent should include possible interventions (such as 
+hysterectomy, leaving placenta in situ, cell salvage and interventional radiology 
+(IR)). 
+ A consultant obstetrician with appropriate experience should plan and directly 
+supervise the birth. 
+ There s hould be multidisciplinary involvement in pre -operative planning. 
+ A plan should be made including which other healthcare professionals need to be 
+present at birth. 
+ A consultant obstetric anaesthetist should plan and directly supervise anaesthesia 
+at deliv ery. 
+ Ensure sufficient cross -matched blood and blood products are readily available. 
+ A senior haematologist is available for advice. 
+ An experienced paediatrician is present. 
+ There should be a level 2 critical care bed locally available. 
+ There should be a clear strategy for the management of unpredictable PPH within 
+the department. Where IR services are not available locally or there is no 
+continuous IR on call, it should be ensured that there is an agreed formal 
+arrangement for the provision of these servi ces either with a larger service nearby 
+or through formation of a network with surrounding organisations. 
+ 
+(South West Thames Regional Protocol for Screening, Diagnosis and Managemen t of 
+Morbidly Adherent Placenta - St George’s University Hospitals Foundat ion Trust 2014). 
+ 
+8.0 Placental abruption 
+ 
+Placental abruption is defined as bleeding due to the premature separation of a normally 
+situated placenta. The bleeding is from maternal venous sinuses and may be revealed, 
+partly revealed or concealed. 
+ 
+8.1 Risk factors 
+ 
+ Abruption in previous pregnancy (most predictive) . 
+ Hypertension/gestational hypertension/pre -eclampsia . 
+ Smoking and drug misuse . 
+ Obesity and low BMI . 
+ Trauma (consider domestic violence) . 
+ Fetal growth restriction . 
+ Polyhydramnios . 
+ Increased materna l age . 
+ Assisted conceptio n. 
+ Multiparity . 
+ Premature rupture of membranes . 
+ Intrauterine infection . 
+ 
+CG12004 Antepartum & Intrapartum Haemorrhage Guideline v4.2 Jan 2023 Page 12 of 20 
+Please check on the intranet that this printout is the most version of this document before use . 
+
+8.2 Signs suggestive of abruption 
+ 
+ A tense, tender, irritable uterus . 
+ Co-existing pre -eclampsia . 
+ Maternal haemodynamic compromise (shock) out of proportion to vaginal loss . 
+ History of previous placental abruption . 
+ 
+8.3 Assessment on admission 
+ 
+ Full clinical history including whether pain exists with haemorrhage . 
+ Identification of any risk factors . 
+ Clinical examination . 
+ Observations -pulse, respirations, blood pressure and temp) . 
+ CTG (if over 26 weeks) . 
+ Fetal heart check (if under 2 6 weeks) . 
+ Ultrasound if fetal heart not detected as above. 
+ 
+8.4 Management of minor or small placental abruption 
+ 
+ Pregnant w omen /people presenting with spotting who are no longer actively 
+bleeding and where placenta praevia has been excluded, can go home if clinical 
+assessments are reassuring. 
+ If abruption is small and the fetus is not compromised and the mother /person is 
+well, a conserva tive approach is possible. 
+ Admit for at least 24 hours post bleed (or until bleeding has stopped), and 
+consider an ultrasound scan is carried out to exude placenta praevia (if not 
+previously performed) and assess fetal growth and wellbeing . 
+ Insert a grey venflon and take bloods for full blood count and group & save . 
+ Following single or recurrent episodes of APH from a cervical ectropion, 
+subsequent antenatal care need not be altered. 
+ Following APH from placental abruption or unexplained APH, the pregnancy 
+should be reclassified as high risk and subsequent antenatal care should be 
+Consultant led. Serial scans for growth and fetal surveillance should be 
+considered. 
+ 
+Consider delivery after 38 weeks gestation, especially if recurrent/significant bleeds . 
+ 
+8.5 Management of major placental abruption 
+ 
+The specific treatment for placental abruption causing major haemorrhage is rapid birth after 
+adequate maternal resuscitation. 
+ 
+ If the fetus is alive and viable, caesarean birth is usually indicated unless a rapid 
+vaginal birth is anticipated. The fetal heart should be carefully and continuously 
+monitored. 
+ 
+CG12004 Antepartum & Intrapartum Haemorrhage Guideline v4.2 Jan 2023 Page 13 of 20 
+Please check on the intranet that this printout is the most version of this document before use . 
+ 
+ In cases where the fetus is dead or non -viable, labour should be induced unless 
+the maternal /birthing parent condition indicates immediat e birth by caesarean birth 
+(See CG1120 Intrauterine death including induction for a fetal abnormality ). 
+ Labour generally progresses well after induction. If this does not occur caesarean 
+birth may be necessary even in the presence of a non -viable or dead fetus. 
+ Post-delivery a syntocinon infusion (40 international units in 500 mls normal saline 
+at 125 mls pe r hour) should be commenced and continued for at least 4 hours due 
+to risk of postpartum haemorrhage consider risk of disseminated intravascular 
+coagulation (DIC) . 
+ Monitor blood pressure closely for underlying pre -eclampsia/ HELLP syndrome. 
+
+9.0 Vasa praevia 
+ 
+Vasa praevia is defined as fetal blood loss associated with velamentous insertion of the 
+umbilical cord where one of the fetal vessels crosses the membranes between the 
+presenting part of the fetus and the internal os of the uterus. The vessel may be torn when 
+the membranes rupture and a small amount of fetal bleeding will have a severe effect on the 
+fetus causing bradycardia or death. 
+ 
+9.1 Diagnosis 
+ 
+In the antenatal period, in the absence of vaginal bleeding, there is no method to diagnose 
+vasa praev ia clinically. It can be accurately diagnosed with transvaginal colour Doppler 
+ultrasonography. For cases identified in second trimester, imaging should be repeated in the 
+third trimester to confirm persistence. Vasa praevia can resolve in up to 15% of cas es with 
+advancing gestation. 
+ 
+Vasa praevia should not be routinely screened for at the anomaly scan, as it does not fulfil 
+the criteria for a screening programme . 
+ 
+During labour, in the absence of vaginal bleeding, vasa praevia can occasionally be 
+diagnose d clinically by the palpation of fetal vessels in the membrane during vaginal 
+examination. 
+ 
+9.2 Management 
+ 
+In cases of vaginal bleeding, especially associated with membrane rupture and fetal 
+compromise, delivery should not be delayed to try and diagnose vasa praevia. In these 
+cases, delivery should be by category 1 caesarean birth. 
+ 
+In confirmed cases of vasa p raevia at term, timely delivery should be carried out by elective 
+caesarean birth (CS). Remember use of corticosteroids where elective caesarean birth is 
+planned before 39 weeks. 
+ 
+10.0 Local causes 
+ 
+This is bleeding from the cervix or vagina. 
+ 
+CG12004 Antepartum & Intrapartum Haemorrhage Guideline v4.2 Jan 2023 Page 14 of 20 
+Please check on the intranet that this printout is the most version of this document before use . 
+
+ Usually due to ectropion or polyps but cervicitis and vaginitis also described. 
+ Cervical cancer is an uncommon cause of APH, but must be excluded by 
+inspection of the cervix (speculum examination) in all women /people with 
+recurrent bleeding in pregnancy. If any concer ns, refer to senior obstetrician . 
+ Pregnant women/people with recurrent admissions for persistent bleeding of 
+unknown origin, should be reviewed by an experienced obstetrician and a 
+speculum examination should be performed to exclude cervical cancer. 
+ Please see CG21008 Management of high risk maternal medicine conditions 
+section on ‘Suspected cervical cancer’. 
+ 
+11.0 APH of unknown origin 
+ 
+In many cases, the cause of bleeding is undetermined as it was assumed that these bleeds 
+are as a result of a min or degree of placental separation, they were commonly known as 
+“marginal bleeds”. 
+ 
+Pregnancies complicated by an unexplained APH are also at increased risk of adverse 
+maternal perinatal outcomes. Whether or not this is the case, the decision for timing, pl ace 
+and mode of birth should be at consultant level. 
+ 
+12.0 Intrapartum haemorrhage 
+ 
+If a woman /person in labour has any vaginal blood loss other than a ‘show’, possible causes 
+of bleeding should be considered: 
+ 
+ Placental abruption . 
+ Placenta praevia . 
+ Uterine rupture . 
+ Vasa praevia. 
+ 
+Take a history of the bleeding, asking about: 
+ 
+ Associated symptoms, including pain. 
+ Specific concerns the woman /person may have. 
+ Previous uterine surgery. 
+ Check previous scans for placental position. 
+ Assess the volume of blo od loss and characteristics of the blood, such as colour, 
+and presence of clots or amniotic fluid. 
+ 
+Obstetrician to review and c arry out a physical examination, including: 
+ 
+ Vital signs . 
+ Abdominal palpation . 
+ Speculum examination . 
+ Vaginal examination if placenta praevia has been excluded. 
+ Fetal heart auscultation and commence CTG if more than 26 weeks . 
+ Bloods for full blood count, U&Es blood group. 
+ 
+CG12004 Antepartum & Intrapartum Haemorrhage Guideline v4.2 Jan 2023 Page 15 of 20 
+Please check on the intranet that this printout is the most version of this document before use . 
+
+A plan of care should be documented following a review by a senior obstetrician and after 
+discussion with the pregnant woman /person and their birth partner. The labour ward co -
+ordinator and senior obstetric anaesthetist and paediatrician should be informed of 
+admission. If stable this should include: 
+ 
+ Establishing venous access . 
+ Maternal monitoring . 
+ CTG monitoring . 
+ 
+If a woma n/person with intrapartum bleeding has a large blood loss or her condition causes 
+concern, management should include: 
+ 
+ IV fluids and ensure fluid balance monitoring is performed . 
+ Fetal monitoring . 
+ Taking blood for clotting studies and blood gases . 
+ Cross matching blood . 
+ Triggering the local major haemorrhage protocol . 
+ Use of amniotomy or oxytocin . 
+ Expediting the birth. 
+ Obstetric consulta nt support. 
+ 
+13.0 Emergency management of acute antepartum & intrapartum 
+haemorrhage (see appendix 1 ) 
+ 
+The management will usually be led by the Obstetric Registrar and include the following 
+measures: 
+ 
+ Early involvement of anaesthetist if resuscitation required . 
+ If woman /person unstable call for help: ‘2222’ Obstetric Haemorrhage , (and 
+Neonatal Emergency - if indicated) . 
+ If the woman /person is in a compromised state, rapid assessment and 
+resuscitation should be commenced. In this situation, the woman/person is the 
+priority and should be stabilised prior to establishing the fetal condition. If 
+woman/person is unstable they should be immediate ly transferred to theatre for 
+stabilisation. 
+ Fluid resuscitation and blood transfusion should not be delayed because of false 
+reassurance from a single haemoglobin result. 
+ In a woman /person who is bleeding and is likely to develop a coagulopathy or has 
+evidence of a coagulopathy, it is prudent to give blood components before 
+coagulation indices deteriorate. This decision should be sanctioned by the 
+consultant haematologist. 
+ Regular observations of maternal /birthing parent pulse, blood pressure, 
+respirations, oxygen saturation and urine output, vaginal blood loss and uterine 
+activity based on the clinical situation, every 15 minutes or more if acute; every 30 
+minutes to hourly if more stable. Document these on MEOWS chart a nd refer if 
+indicated. 
+ 
+CG12004 Antepartum & Intrapartum Haemorrhage Guideline v4.2 Jan 2023 Page 16 of 20 
+Please check on the intranet that this printout is the most version of this document before use . 
+ 
+ Insert 2 intravenous infusion lines (16 gauge grey cannula ) and start IV 
+Hartmanns. 
+ Send a serum group and save and order immediate cross -matching of 4 -6 units 
+(depending on clinical picture) . 
+ Request urgent haemoglobin, platelet, cl otting studies and U&E’s. 
+ Give acid aspiration prophylaxis . 
+ The paediatric registrar and Special Baby Care Unit should both be informed if 
+delivery of a compromised or premature baby seems likely. 
+ CTG should be performed (greater than 26 weeks ). 
+ Ultrasound evaluation of placental site and liquor volume should be performed on 
+delivery suite if possible by the registrar. If fetal size assessment or a more expert 
+opinion is required this may have to wait until an ultrasonographer or obstetrician 
+with appropria te skills is available. 
+ Actively bleeding or unstable women /people should not be moved to the 
+ultrasound department . 
+ Anti D should be given to rhesus negative women /person if delivery not imminent 
+(independent of whether routine antenatal prophylactic Anti D has been given) . 
+ Consider steroids and magnesium sulphate if significant bleed or if bleed 
+precipitates pre -term labour (see CG20013 Preterm birth risk pathway ). 
+ 
+Tocolysis is contraindicated in the presence of a bleed. 
+Discuss with obstetric consultant. 
+ 
+14.0 Management of extremely preterm ( 24-26 weeks) pregnancy with APH 
+ 
+ Regardless of gestation, the woman /person ’s life should take priority. They should 
+be stabilised and resuscitated before any decision is made regarding birth. 
+ A senior paediatrician/ neonatologist should be involved in the counselling of 
+women /people at risk of extremely preterm birth. 
+ 
+15.0 Post -delivery management of major APH o r intrapartum haemorrhage 
+ 
+Following a major APH or intrapartum haemorrhage women /people are at an 
+increased risk of postpartum haemorrhage, DIC (30%), ARDS and renal and liver 
+failure. 
+ 
+ Prescribe and administer thromboprophylaxis; as there is increased risk of venous 
+thromboembolism as soon as risk of haemorrhage is reduced. 
+ Consider the most appropriate place for patients to be nursed e.g. delivery suite, 
+CCU . 
+ Consider CCU if large blood loss or co -morbidities. 
+ Patients are often anaemic and may require further transfusions. 
+ Renal function recovery may be slow and should be closely monitored by hourly 
+urine measurement and daily U&E’s. 
+ Transfer to postnatal ward should only occur after obstetric review and when 
+4 hourly observations are required. 
+ 
+CG12004 Antepartum & Intrapartum Haemorrhage Guideline v4.2 Jan 2023 Page 17 of 20 
+Please check on the intranet that this printout is the most version of this document before use . 
+ 
+ Patien ts should be seen by their consultant before discharge. A debrief should 
+take place allowing discussion of events with the woman /person and their partner 
+with the opportunity to ask questions. 
+ Offer ‘Birth Afterthoughts’ service and 6/52 consultant postnat al appointment for 
+thrombophilia screening and planning of future pregnancies. 
+ Where the APH has resulted in fetal demise, good communication between the 
+maternity unit and the woman /person ’s general practitioner and community 
+midwife is crucial. These iss ues are addressed in RCOG GTG55 Late intrauterine 
+fetal death and stillbirth (2010) . It may be appropriate for the consultant to contact 
+the general practitioner by telephone. 
+ Management of a major APH should be included in obstetric skills drills. 
+
+CG12004 Antepartum & Intrapartum Haemorrhage Guideline v4.2 Jan 2023 Page 18 of 20 
+Please check on the intranet that this printout is the most version of this document before use . 
+ 
+16.0 Audit 
+ 
+Suggested auditable standards (RCOG): 
+ 
+ Evidence of consultan t attendance at all CS for placenta praevia. 
+ 
+ Evidence that w omen /people with APH and less than 34+6 weeks gestation 
+receiv e corticosteroids. 
+ 
+ Documented management plan by consultant obstetrician if placenta praevia or 
+placenta accret a suspected or confirmed. 
+
+References 
+ 
+Confidential Enquiry into Maternal and Child Health. (2007). Saving Mothers’ Lives: 
+Reviewing maternal deaths to make motherhood safer - 2003 -2005. London: CEMACH. 
+ 
+MBRRACE -UK (201 9). Saving Lives, Improving Mothers’ Care: Lessons learned to inform 
+maternity care from the UK and Ireland Confidential Enquiries into Maternal Deaths a nd 
+Morbidity 201 5-17. MBRRACE -UK 2019 
+ 
+NICE (2019) NG121 Intrapartum care for women with existing medical conditions or obstetric 
+complications and their babies 
+ 
+RCOG (2018) Placenta praevia, placenta accreta and vasa praevia. Diagnosis and 
+management. (Green -top 27a) RCOG 2018 
+ 
+RCOG (2011) Antepartum Haemorrhage. Greentop Guideline No. 63. 
+ 
+RCOG (2018) Placenta praevia, placenta accreta and vasa praevia. Information for you. 
+https://www.rcoq.orq.uk/qlobalassets/documents/patients/patient -information -
+leaflets/preqnancy/pi - placenta -praevia -placenta -accreta -and-vasa -praevia.pdf 
+
+CG12004 Antepartum & Intrapartum Haemorrhage Guideline v4.2 Jan 2023 Page 19 of 20 
+Please check on the intranet that this printout is the most version of this document before use . 
+ 
+Appendix 1: Acute management of significant APH & intrapartum haemorrhage 
+
+ ON ADMISSION 
+ Inform obstetric registrar/consultant of admission. 
+ Assess blood loss & maternal general condition - Airway, Breathing, Circulation. 
+ Cannulate - X2 grey venflon & bloods for FBC, U&Es, clotting . Cross -match 4-6 units. 
+ Give acid aspiration prophylaxis. 
+ Determine cause of bleeding. 
+ Determine gestation clinically +/ - USS. 
+ Abdominal palpation. 
+ CTG if greater than 26 weeks gestation (FH if under 26/40) . 
+ If Rhesus negative, Kleihauer required and request Anti D. 
+ Consider steroids & magnesium sulphate (See CG20013 Preterm birth risk pathway ) 
+PLACENTAL ABRUPTION 
+Without maternal 
+or fetal compromise With maternal or 
+fetal compromise 
+ Inform & discuss 
+with consultant. 
+ Consider induction 
+of labour if 
+appropriate. 
+ Observe closely for 
+signs of DIC. 
+ Once stable 
+transfer to ward 
+with 4 hourly BP, T, 
+PR & PV loss.  Call for HELP 
+ ‘2222’ Obstetric 
+Emergency & 
+Neonatal 
+Emergency calls. 
+ Proceed to 
+immediate CS 
+unless vaginal 
+delivery is imminent. 
+ Call consultant. 
+ Observe closely for 
+DIC. PLACENTA PRAEVIA 
+Without maternal or 
+fetal compromise With maternal or 
+fetal compromise 
+ Inform & discuss 
+with consultant. 
+ Once stable transfer 
+to antenatal ward 
+with 4 hourly BP, 
+TPR and PV loss. 
+ Daily CTG and 
+review by consultant 
+for ongoing plan.  Call for HELP. 
+ 2222 Obstetric 
+Emergency & 
+Neonatal 
+Emergency calls. 
+ Prepare for 
+Category 1 
+caesarean section. 
+ Summon on -call 
+consultant 
+obstetrician. INTRAPARTUM HAEMORRHAGE 
+Without maternal or 
+fetal compromise With maternal or fetal 
+compromise 
+ Inform & discuss with 
+obstetrician . 
+ Consider amniotomy . 
+ Consider oxytocin 
+augmentation . 
+ Observe closely for 
+signs of DIC.  Call for HELP 
+ ‘2222’ Obstetric 
+Emergency & 
+Neonatal Emergency 
+calls. 
+ Proceed to immediate 
+CS unless vaginal 
+delivery is imminent. 
+ Call consultant. 
+ Manage risk of PPH . 
+ Observe closely for 
+DIC. 
+ 
+CG12004 Antepartum & Intrapartum Haemorrhage Guideline v4.2 Jan 2023 Page 20 of 20 
+Please check on the intranet that this printout is the most version of this document before use . 
+ 
+Appendix 2: Antepartum / Intrapartum Haemorrhage Proforma 
+PLEASE DO NOT PRINT FROM GUIDELINE

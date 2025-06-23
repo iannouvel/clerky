@@ -1,0 +1,648 @@
+# Extracted from: CG21009 Maternity Fluid Management as an In-patient or in Labour.pdf
+# Guideline ID: cg21009-maternity-fluid-management-as-an-in-patient-or-in-labour
+# Content length: 32519 characters
+# Processing date: 1750066900.6107917
+
+CG21009 Maternity Fluid Management as In -Patient or During Labour v1 Sept 2021 Page 1 of 15 
+ 
+Please check agains t Staffnet that this printout is the most recent issue of this document. 
+ 
+Maternity Fluid Management as an In -Patient or During Labour 
+Summary statement: How does the document 
+support patient care? The purpose of this guideline is to reduce the risk of 
+hyponatraemia through i ncreased awareness ; accurate fluid 
+balance manage ment and monitoring ; earlier detection. 
+Staff/stakeholders involved in development: 
+Job titles only Labour Ward Leads (Obstetric and Midwifery), Consultant 
+Obstetricians, Consultant Anaesthetists, Senior midwives, 
+Joint Obstetric Guidelines Group. 
+Divisi on: Women and Child ren’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Senior Midwifery Manager 
+For use by: All obstetric and midwifery staff 
+Purpose: To provide evidence based guidance for fluid balance 
+management of maternity in-patients and pregnant 
+women/people in labour. 
+This document supports: 
+Standards and legislation NG121 Intrapartum care for women with existing medical 
+conditions or obstetric complications (2019) 
+CG190 Intrapartum care for healthy women and babies 
+(2017) GAIN (2017) 
+Key related documents: UH Sussex (SR H & WH) Maternity Guidelines : CG21008 
+Management of High Risk Maternal Medicine conditions . 
+CG12004 APH & Intrapartum Haemorrhag e. CG13003 
+Management of Hyperemesis . CG1137 Bladder Care . 
+CG12030 Caesarean Section . CG1196 Care in Labour . 
+CG1119 Induction & Augmentation of Labour . CG12029 
+PPH. 
+Approved by: Maternity Joint Obstetric Guideline Group (JOGG) 
+Appr oval date: 22nd Sept 2021 
+Ratified by Board of Directors/ Committee of 
+the Board of Directors Not Applicable – Divisional Ratification only required 
+Ratification Date: Not Applicable – Divisional Ratification only required 
+Expiry Date: Sept 2024 
+Review date: April 2024 
+If you require this document in another format such as Braille, large print, 
+audio or another language please contact the Trusts Communications Team 
+Reference Number: CG21009 
+CG21009 Maternity Fluid Management as In -Patient or During Labour v1 Sept 2021 Page 2 of 15 
+ 
+Please check agains t Staffnet that this printout is the most recent issue of this document. 
+ 
+Version Date Author Status Comment 
+1.0 September 2021 T. Mudd, Senior 
+Midwifery Manager Live New UH Sussex (SRH & 
+WH) guideline for maternity 
+fluid management as an in -
+patient or in labour. 
+
+The interpretation and application of clinical guidelines will remain the 
+responsibility of the individual clinician. 
+If in doubt contact a senior colleague o r expert . 
+CG21009 Maternity Fluid Management as In -Patient or During Labour v1 Sept 2021 Page 3 of 15 
+ 
+Please check agains t Staffnet that this printout is the most recent issue of this document. 
+
+Index 
+
+1.0 Aim ................................ ................................ ................................ ............................. 4 
+2.0 Scope ................................ ................................ ................................ ......................... 4 
+3.0 Responsibilities ................................ ................................ ................................ ........... 4 
+4.0 Introduction ................................ ................................ ................................ ................. 4 
+5.0 Signs and symptoms of hyponatraemia ................................ ................................ ...... 5 
+6.0 Fluid and electrolyte balance in pregnancy ................................ ................................ . 6 
+7.0 Prevention and diagnosis of hyponatraemia in labour ................................ ................. 6 
+8.0 Peripartum fluid balance ................................ ................................ ............................. 6 
+8.1 Pregnant women/people having midwife led care ................................ ....................... 6 
+8.2 Pregnant women/peo ple undergoing induction of labour (IOL) and high risk labour .... 7 
+9.0 Sodium Monitoring ................................ ................................ ................................ ...... 8 
+9.1 Peripartum Sodium Monitoring ................................ ................................ .................... 8 
+9.2 Postpartum Sodium Monitoring ................................ ................................ ................... 9 
+10.0 Management of symptomatic hyponatraemia19 ................................ ........................... 9 
+11.0 Management of ketonuria in labour in non -diabetic pregnant women/people ............. 10 
+12.0 Audit ................................ ................................ ................................ .......................... 11 
+References ................................ ................................ ................................ ........................... 11 
+Appendix 1: Fluid Balance Chart ................................ ................................ ......................... 13 
+Appendix 2: Peripartum sodium monitoring pathway ................................ ............................ 14 
+Appendix 3:Management of ketonuria in labour in non -diabetic pregnant women/people .....15 
+
+CG21009 Maternity Fluid Management as In -Patient or During Labour v1 Sept 2021 Page 4 of 15 
+ 
+Please check agains t Staffnet that this printout is the most recent issue of this document. 
+Maternity Fluid Management as an 
+In-Patient & During Labour 
+ 
+1.0 Aim 
+ 
+To reduce the risk of hyponatraemia through: 
+ 
+ Increased awareness . 
+ Accurate fluid balance management and monitoring . 
+ Earlier detection . 
+ 
+2.0 Scope 
+ 
+This guideline is for use by: 
+ 
+ Obstetricians 
+ Anaesthetists 
+ Clinical maternity staff 
+ 
+3.0 Responsibilities 
+ 
+The guideline1 is relevant to all healthcare professionals who come into contact with all 
+pregnant women /people in labour and the immediate post -partum period, as well as to the 
+women themselves and their carers. 
+ 
+4.0 Introduction 
+ 
+The need for accurate monitoring of physiological status is strongly recommended by b oth 
+the National Patient Safety Agency (NPSA 2008) and the National Institute for Clinical 
+Excellence (NICE 2017, NICE 2020). The elements within this guideline are therefore aimed 
+at achieving this through the accurate measurement of fluid balance in conj unction with the 
+Trusts Fluid Balance Policy (2021). The need for accurate fluid balance is also a key 
+component of the Acutely Ill competencies produced by NICE guideline 50 (2020). 
+ 
+Women /people in labour are at greater risk of developing hyponatraemia t han non -pregnant 
+women /people because of lower baseline plasma sodium1, an impaired ability to excrete 
+water in the third trimester2 and exposure to the anti -diuretic effect of oxytocin 3. An acute fall 
+in the sodium level can result in cerebral oedema and life threatening symptoms. It can also 
+lead to neonatal hyponatraemia, as water freely diffuses across the placenta, causing fetal 
+blood sodium concentration and osmolality to reflect that of the mother 4,5,6,7. 
+ 
+Additional risk factors are the total volu me of fluid intake during labour, both intravenous and 
+oral, and exogenous oxytocin. This risk is significantly increased in women /people with 
+prolonged labour 8. The association between hyponatraemia and the use of large volumes of 
+hypotonic intravenous f luids and oxytocin for induction and augmentation of labour has long 
+been recognised 9,10,11. However, in recent cases, hyponatraemia occurred as a result of 
+CG21009 Maternity Fluid Management as In -Patient or During Labour v1 Sept 2021 Page 5 of 15 
+ 
+Please check agains t Staffnet that this printout is the most recent issue of this document. 
+excessive oral fluid intake in a setting where little or no oxytocin or intravenous fluids had 
+been given 12,13 ,14,15 . 
+ 
+A repetitive theme in these cases is the absence of accurate fluid balance monitoring and 
+recording. 
+ 
+The purpose of this guideline is to reduce the risk of hyponatraemia through: 
+ 
+ Increased awareness . 
+ Accurate fluid balance management and monitoring . 
+ Earlier detection . 
+ 
+Indications for commencement of fluid balance monitoring 
+ Actual or potential acute illness: AKI, Hyperemesis, known Hyponatraemia, 
+Eclampsia, PET, APH & Intrapartum Haemorrhage, PPH, Sepsis. 
+ Commencing o r prescribed IV fluids / IV oxytocin. 
+ Induction of Labour. 
+ Post-Operative management: elective or emergency caesarean section, operative 
+birth. 
+ Urinary catheter in situ. 
+ Labour. 
+ 
+5.0 Signs and symptoms of hyponatraemia 
+ 
+Signs and symptoms of hyponatraemi a are primarily related to dysfunction of the central 
+nervous system. Cerebral oedema may develop and early manifestations of hyponatraemia 
+include: 
+ 
+ Anorexia 
+ Nausea 
+ Lethargy 
+ Apathy 
+ Headache 
+ 
+Early symptoms are non -specific and may be attributed to p regnancy, labour and common 
+conditions such as pre -eclampsia. More advanced signs and symptoms include: 
+ 
+ Disorientation 
+ Agitation 
+ Seizures 
+ Depressed reflexes 
+ Focal neurological deficits 
+ Cheyne -Stokes respiration 
+ Coma 
+ 
+CG21009 Maternity Fluid Management as In -Patient or During Labour v1 Sept 2021 Page 6 of 15 
+ 
+Please check agains t Staffnet that this printout is the most recent issue of this document. 
+Symptoms cor relate with the severity of hyponatraemia and the speed of change in sodium 
+concentration. Rapid changes can cause fluid shifts between extracellular and intracellular 
+compartments with no opportunity for physiological compensation, leading to acute 
+sympto ms. 
+ 
+6.0 Fluid and electrolyte balance in pregnancy 
+ 
+Blood sodium concentration and osmolality are lower in pregnancy with 130 - 140 mmol/l 
+being considered the normal range , compared to 135 - 145 mmol/l in non -pregnant adults. 
+Blood osmolality is also low er at around 280mOsm/kg. In this guideline hyponatraemia in 
+pregnancy is defined as a blood sodium concentration less than 130 mmol/l. 
+ 
+7.0 Prevention and diagnosis of hyponatraemia in labour 
+ 
+Maternal dilutional hyponatraemia during labour can be prevent ed by keeping a neutral fluid 
+balance and can be recognised by fluid balance monitoring and clear documentation with 
+blood sodium testing when necessary. 
+ 
+ Pregnant w omen /people should not be encouraged to drink excessively beyond 
+their body’s own thirst i mpulse, and should be encouraged to drink isotonic/sports 
+drinks instead of water. 
+ Women /people should be made aware of the potential dangers of drinking in 
+excess, especially if not passing urine. 
+ Ketones in the urine should not be treated with fluid alo ne, but with sugary food 
+and drinks. 
+ 
+Healthy women /people in labour who are in a neutral fluid balance are at low risk of 
+developing hyponatraemia. As fluid intake in labour increases, so does the risk of 
+hyponatraemia. 
+
+8.0 Peripartum fluid balanc e 
+ 
+8.1 Pregnant w omen /people having midwife led care 
+ 
+ The importance of accurate fluid balance monitoring during labour should be 
+explained to all women /people . 
+ In normal spontaneous labour, fluid balance observations should be commenced 
+and recorded on the chart . A cumulative fluid balance of any oral intake should be 
+documented every 4 hours in mls . 
+ Women /people should be encouraged to void 4 hourly and to have urine output 
+volume measured and recorded. 
+ All other fluid losses should also be measured a nd recorded e.g. vomit , blood . Women/people who have a fluid balance of up to 1 litre positive in labour will 
+have a 1% incidence of hyponatraemia at delivery, between 1 to 2.5 litres 
+increases this to 5% and above 2.5 litres 26% will be hyponatraemic16 . 
+ 
+CG21009 Maternity Fluid Management as In -Patient or During Labour v1 Sept 2021 Page 7 of 15 
+ 
+Please check agains t Staffnet that this printout is the most recent issue of this document. 
+ If a low ris k woman/person has less than 15 00mls positive balance they would be 
+unlikely to have hyponatraemia. 
+ A 1500mls positive balance or over, should be discussed with the senior 
+obstetrician first and the whole clinica l picture should be taken into consideration 
+e.g. partogram, history, before taking a blood test to check her sodium levels. 
+Normal blood sodium (equal to or greater than 130 mmol/l) requires no action and 
+fluids do not require restriction, however continu e to closely monitor and record the 
+fluid balance. 
+ A sodium level less than 1 30 mmol/l or if sodium testing is not readily available, the 
+on call obstetric registrar should be contacted and clinical judgement used, 
+particularly with regard to parity and p rogress in labour, to decide whether transfer 
+to obstetric care is required. 
+ If intrapartum transfer of care to another clinical area is required, a cumulative fluid 
+balance total should be handed over. 
+ In the low risk woman /person the Fluid Balance Chart shoul d be an aide memoire 
+to think about fluids. It is important that this information is shared with the midwife 
+when transferring between clinical areas and the balance is checked and aim for a 
+neutral balance. 
+ 
+8.1.2 Fluid management in homebirth setting 
+ 
+ In a homebirth setting, if the pregnant person has not birthed or birth is not 
+imminent within two hours of the community midwives attendance then a fluid 
+balance should be monitored, taking into consider ation the whole clinical picture 
+(e.g. progress in l abour, maternal and fetal well-being). Should the pregnant 
+person be in positive fluid balance (more than 1500mls) consider transfer into the 
+labour ward. 
+ 
+8.2 Pregnant w omen /people undergoing induction of labour (IOL) and high risk 
+labour 
+ 
+ The importanc e of accurate fluid balance monitoring during labour should be 
+explained to all pregnant women /people . 
+ Fluid balance observations should be commenced and recorded on the fluid 
+balance chart. This should include all fluid losses measured and recorded e.g. 
+vomit , blood loss, urine output . 
+ 
+Low risk IOL: 
+ 
+ Pregnant w omen /people , without intravenous (IV) fluids , indwelling catheters or a 
+medical history requiring close fluid balance should be encouraged to record their 
+own oral fluid intake four hourly on a flu id balance chart . 
+ Women /people should be encouraged to void 4 hourly and record their own urine 
+output. 
+ 
+CG21009 Maternity Fluid Management as In -Patient or During Labour v1 Sept 2021 Page 8 of 15 
+ 
+Please check agains t Staffnet that this printout is the most recent issue of this document. 
+High risk IOL and high risk labour: 
+ 
+ For PET follow guidance in CG1112 Management of severe pre -eclampsia & 
+eclampsia . 
+ All women /people with IV fluids , indwelling catheters or a medical history requiring 
+close fluid balance should have their fluid balance ob servations recorded on the 
+hourly fluid balance chart by a clinician . 
+ If an in-dwelling catheter in situ output volume recorded when emptied or 4 hourly. 
+ IV fluids must have a prescribed reason documented on the fluid balance chart 
+(Refer to EPMA). 
+ IV fluids must be prescribed in millilitres (ml) per hour. 
+ IV fluids should be administered via volumetric pumps (with the exception of 
+circumstances such as fluid resuscitation during haemorrhage or hypotension). 
+ 
+Fluid balance totals : 
+ 
+ If a woman /person’s fluid balance exceeds 1500mls positive , a blood sodium 
+level should be checked and the patient commenced on the Peripartum Sodium 
+Monitoring Pathway. (See Appendix 1) 
+ Before transfer following the induction area to the ward , a cumulative fluid balance 
+total should be recorded on the fluid balance chart. 
+ 
+For women /people with epidural analgesia : 
+ 
+ All women /pregnant people having an epidural m ust have a cannula sited . 
+ The cannula must be flushed to ensure patency and connected to the IV line. 
+ But the fluid can be switched off as not routinely required unless the anaesthetist 
+requests it to be given based on clinical indication, such as to treat sudden 
+hypotension, or other epidural related emergencies. 
+ 
+To ‘impro ve the CTG’ in normotensive women /people with no signs of dehydration , 
+refer to the treatment of ketosis in non -diabetic women /people . (See Section 11.0) 
+ 
+9.0 Sodium Monitoring 
+ 
+9.1 Peripartum Sodium Monitoring 
+ 
+Women/people require sodium monitoring (Peripartum Sodium Monitoring Pathway - 
+Appendix 2 ) if they are: 
+ 
+ In labour and require IV insulin and dextrose. 
+ Baseline sodium to be taken if commencing oxytocinon IV in labour or after birth. 
+ Noted to have a blood sodium below 130 mmol/l for any reason. 
+ Greater than 1500 mls positive on their fluid balance. 
+ 
+CG21009 Maternity Fluid Management as In -Patient or During Labour v1 Sept 2021 Page 9 of 15 
+ 
+Please check agains t Staffnet that this printout is the most recent issue of this document. 
+A blood sodium level c an be checked using a venous sample in the labour ward blood gas 
+machine or sent to the lab. It is essential that blood samples are not taken from a limb 
+attached to an intravenous infusion as this may lead to inaccurate results. 
+ 
+Results should be referenced against the Peripartum Sodium Mo nitoring Pathway (see 
+Appendix 1) to guide frequency of repeat testing and further management. 
+ 
+All women /people requiring intravenous insulin and dextrose infusions during labour should 
+have a blood sodium level checked 6 - 8 hourly depending on stage of labour. 
+ 
+Oxytocin should be stopped in cases where the maternal sodium is below 125mmol/l and 
+senior clinical advice sought. The decision regarding further oxytocin administration should 
+be made following assessment of the woman /person ’s clinical condition and circumstanc es 
+after discussion with a consultant obstetrician. 
+ 
+9.2 Postpartum Sodium Monitoring 
+ 
+ The paediatric team should be made aware of babies born to hyponatremia 
+mothers /parents17,18 . 
+ Once a woman /person has a blood sodium level equal to or greater than 130 
+mmol/l no further sodium checks are necessary unless clinically indicated. 
+ If a woman /person has a sodium level below 130 mmol/l, they should be reviewed 
+by the obstetric team and consideration given to alternative causes, the patient’s 
+clinical conditio n and the severity of the hyponatraemia, and a decision made as to 
+whether they are suitable for discharge. 
+ 
+10.0 Management of symptomatic hyponatraemia19 
+ 
+An experienced clinician should be involved to guide further treatment. Severe 
+hyponatraemia is a medical emergency. Senior members of obstetric, anaesthetic and 
+medical teams should be involved and the patient transferred to HDU/ICU for ongoing 
+management. If sodium is less than 120mmol/L, team to inform ITU even if 
+asymptomatic. If no improvement in sodium despite treatment, inform ITU. 
+ 
+ Commence fluid restriction (30ml/hour) and 2 hourly sodium monitoring until 
+asymptomatic. 
+ If sodium less than 125mmol/L & symptoms of severe hyponatraemia – 
+(headache, confusion, reduced GCS , seizures , give 150 -200 m ls of 2.7% saline 
+immediately through a large bore cannula or central line over 30 minutes. 
+ Check sodium concentration. 
+ If no improvement in symptoms or deterioration, consider further 150ml 2.7% 
+sodium chloride (rarely needed as patients self -correct ra pidly after delivery). 
+ Rapid increases in blood sodium concentration can cause serious harm including 
+central pontine myelinolysis. Sodium level should rise by no more than 10 mmol/l 
+in a 24 hour period. 
+CG21009 Maternity Fluid Management as In -Patient or During Labour v1 Sept 2021 Page 10 of 15 
+ 
+Please check agains t Staffnet that this printout is the most recent issue of this document. 
+ Consider co -administration of 20 mg IV furosemide if there is any evidence of fluid 
+overload. This will raise serum sodium by approximately 2 – 4 mmol/l and will 
+reduce cerebral oedema. 
+ 
+11.0 Management of ketonuria in labour in non -diabetic pregnant 
+women/people 
+ 
+In labour, ketosis (the elevation of ket one bodies in the blood) is a common occurrence, due 
+to increased physical stress, which is often compounded by reduced oral intake. 
+ 
+The effect of ketosis on the pregnant woman/person and baby during labour is not clear, 
+therefore, there is uncertainty a s to whether ketosis is a normal physiological response or 
+whether women /people with ketosis in labour require intervention (such as intravenous fluids 
+or increased oral intake) for maternal and infant wellbeing. This uncertainty has resulted in 
+difference s in opinion and practice by those providing care for women /people in labour. 20 
+ 
+Ketonuria can be mild (>/=1+), moderate (>/=2+) or severe (>/=3+). 
+ 
+Women /people with a positive urine dipstick for ketones should have a clinical assessment 
+for signs of dehydration. Signs of dehydration: 
+ 
+ Thirst 
+ Tachycardia 
+ Hypotension 
+ Dry mucous membranes 
+ Reduced skin turgor / elasticity of skin 
+ Reduced urine output 
+ 
+Ketonuria in e arly labour : 
+ 
+ Women /people with mild to moderate ketonuria in early la bour should be encouraged 
+to have food as tolerated, specifically carbohydrates, and encouraged to drink to thirst. 
+ Intravenous fluid should only be prescribed after a clinical assessment and/or if 
+vomiting and unable to tolerate food. 
+ The volume of flui d given, whether oral or intravenous, should be recorded and a 
+cumulative fluid balance sheet should be completed. 
+ 
+Ketonuria in those f asting for caesarean section or in established labour : 
+ 
+Nutricia Pre -op (200mls) a high carbohydrate drink or equivalen t eg sports drink , may be 
+given to women up to 2 hours prior to regional anaesthesia. Nutricia Preop may be given to 
+reduce ketones and hypoglycaemia in: 
+ 
+ Women /people in established labour if operative delivery is not anticipated within 
+2 hours. 
+ Women /people who are fasting for over 12hrs for elective and semi elective 
+caesarean section . 
+CG21009 Maternity Fluid Management as In -Patient or During Labour v1 Sept 2021 Page 11 of 15 
+ 
+Please check agains t Staffnet that this printout is the most recent issue of this document. 
+12.0 Audit 
+ 
+Suggested auditable points: 
+ 
+A cumulative fluid balance total should be recorded on the fluid balance chart before transfer 
+between clinical areas . 
+ 
+Women /people having midwifery led care : 
+ Have a cumulative fluid balance of any oral intake documented every 4 hours in 
+mls. 
+ Document ed that they have been encouraged to void 4 hourly and to have urine 
+output volume measured and recorded. 
+ Any 1500 positive flu id balance should have a documented review by senior 
+obstetrician . 
+ 
+Women/people undergoing high risk IOL/labour: 
+ Hourly fluid balance observations recorded on the fluid balance chart for those with 
+IV fluids, indwelling catheters or a medical history requ iring close fluid balance 
+monitoring. 
+ If an in -dwelling catheter in situ output volume recorded when emptied or 4 hourly. 
+ If a woman/person’s fluid balance exceeds 1500mls positive , a blood sodium 
+level should be checked and the patient commenced on the Pe ripartum Sodium 
+Monitoring Pathway. 
+ Peripartum Sodium Pathway is commenced for any women/people i n labour and 
+require IV insulin and dextrose, noted to have a blood sodium below 130 mmol/l for 
+any reason , or g reater than 1500 mls positive on their fluid ba lance. 
+ All women/people requiring intravenous insulin and dextrose infusions during 
+labour should have a blood sodium level checked 6 - 8 hourly depending on stage 
+of labour. 
+ If a woman/person has a sodium level below 130 mmol/l, they should be reviewed 
+by the obstetric team and consideration given to alternative causes, the patient’s 
+clinical condition and the severity of the hyponatraemia, and a decision made as to 
+whether they are suitable for discharge. 
+
+References 
+ 
+1. Safer care for the acutely ill pati ent: learning from serious incidents. National Patient 
+Safety Agency, November 2008 
+2. Surveillance of acutely ill patients in hospital: recognising and responding to deterioration 
+(NICE guideline CG50) 
+3. 2020 -surveillance -of-acutely -ill-adults -in-hospital -recognising -and-responding -to-
+deterioration -nice-guideline -cg50 -pdf-9108149375941 
+4. Shakmatova EI, Osipova NA, Natochin YV. Changes in osmolality and blood serum ion 
+concentrations in pregnancy. Hum Physiology. 2000 26:92 
+CG21009 Maternity Fluid Management as In -Patient or During Labour v1 Sept 2021 Page 12 of 15 
+ 
+Please check agains t Staffnet that this printout is the most recent issue of this document. 
+5. Larsson A, Palm M, Hansson LO, Axelsso n O. Reference values for clinical chemistry 
+tests during normal pregnancy. BJOG 2008; 115:874 -81 
+6. Smith JG, Merrill DC. Oxytocin for induction of labour. Clinical Obstetrics and 
+Gynecology. 49(3):594 -608 
+7. Tarnow -Mordi WO, Shaw JCL, Liu D, Gardner DA, Flyn n FV. Iatrogenic hyponatraemia 
+of the newborn due to maternal fluid overload: a prospective study. BMJ. 1981 283:639 -
+643 
+8. Spencer SA, Mann NP, Smith ML, Woolfson AMJ, Benson S. The effect of intravenous 
+therapy during labour on maternal and cord serum sodiu m levels. BR J Obstet 
+Gynaecol. 1981 88:480 -483 
+9. Singhi S, Singh M. Asymptomatic transplacental hyponatraemia following oxytocin 
+infusion during labour. Indian J Med Res 1979;70:55 -7. 
+10. Dahlenburg GW, Burnell RH, Braybrook R. The relationship between cord s erum sodium 
+levels in newborn infants and maternal intravenous fluid therapy. Br J Obstet Gynaecol 
+1980; 87:519 -22. 
+11. Walmsley C, Wong T, Chilvers J. Does the use of a birthing pool in labour contribute to 
+maternal hyponatraemia? Two case reports. J Obstet Anaesth Crit Care 2017 
+12. Lind T. Fluid balance during labour a review. Journal of the Royal Society of Medicine. 
+1983. 76:870 -875 
+13. Bergum D. Lonnée H, Hakli TF. Oxytocin infusion: acute hyponatraemia, seizures and 
+coma. Acta Anaesthesiol Scand. 53:826 -827. 2009 
+14. Mckenna P, Shaw RW. Hyponatremic fits in oxytocin augmented labors. Int J Gynaecol 
+Obst. 1979. 17:250 -252 12 Graham K, Palmer J. Severe hyponatraemia as a result of 
+primary polydipsia in labour. Australian and New Zealand Journal of Obstetrics and 
+Gynaecology. 2004. 44:586 -587 
+15. Graham K, Palmer J. Severe hyponatraemia as a result of primary polydipsia in labour. 
+Australian and New Zealand Journal of Obstetrics and Gynaecology. 2004. 44:586 -587 
+16. Johansson S, Lindow S, Kapadia Hand Norman M. Perinatal wa ter intoxication due to 
+excessive oral intake during labour. Acta Pñ diatr 91: 811± 814. 2002 
+17. Green A, Popham P. Hyponatraemia complicating vaginal delivery. International Journal 
+of Obstetric Anesthesia. 2008. 17:93 -94 
+18. West CR, Harding JE. Maternal wate r intoxication as a cause of neonatal seizures. J. 
+Paediatric Child health. 2004. 40:709 -710 
+19. Guideline for the Prevention, Diagnosis and Management of Hyponatraemia in Labour 
+and the Immediate Postpartum Period, RQIA, Guideline Audit Implementation Networ k 
+2017 
+20. Moen, V, Brudin, L, Rundgren M, Irestedt, L. Hyponatraemia complicating labour - rare 
+or unrecognized? A prospective observational study. BJOG. 2009 116:552 -561 
+21. West CR, Harding JE. Maternal water intoxication as a cause of neonatal seizures. J. 
+Paediatric Child health. 2004. 40:709 -710 
+CG21009 Maternity Fluid Management as In -Patient or During Labour v1 Sept 2021 Page 13 of 15 
+ 
+Please check agains t Staffnet that this printout is the most recent issue of this document. 
+22. Walter KN, Montgomery J, Amess P, Rabe H. Hyponatraemia and brain oedema in 
+newborns following oral water intoxication during prolonged labour. Klinische Paädiatrie. 
+2012. 224(4):266 -267 
+23. Grant P, Ayuk J et al. The diagnosis and management of inpatient hyponatraemia and 
+SIADH, Eur J Clin Invest 2015;45(8):888 -894 
+24. Toohill J, Soong B, Flenady V. Interventions for ketosis during labour. Cochrane 
+Database of Systematic Reviews 2008, Issue 3. 
+25. UH Sussex Fluid balance policy for adult in -patient areas 
+ 
+CG21009 Maternity Fluid Management as In -Patient or During Labour v1 Sept 2021 Page 14 of 15 
+ 
+Please check agains t Staffnet that this printout is the most recent issue of this document. 
+ Appendix 1: Peripartum s odium monitoring pathway 
+
+ Signs of severe 
+hyponatraemia: 
+ Headache 
+ Confusion 
+ Reduced 
+consciousness 
+ Seizures 
+ Fluid balance monitoring. 
+Check blood sodium. 
+Blood sodium (mmol) Women /people on insulin 
+infusio n require 4 -6 hourly 
+sodium monitoring 
+130 or more 
+ 
+If fluid balance > 1500mls 
+or 
+If sodium has dropped by 
+> 1 mmol/hour – repeat 
+sodium 4 hourly . 
+130 or more 
+No further testing necessary 
+unless clinically indicated .  Inform Obstetric 
+Reg/Consultant . 
+ Repeat sodium 4 hourly. 
+ Fluid restrict to 80mls/hr. 
+ Inform neonatal. 
+ May continue oxytocin 
+once reviewed by 
+Reg/Consultant. 
+Delivery or completion of oxytocin infusion. 
+Most recent sodium result (mmol). 
+125 – 129 & asymptomatic 
+ Repeat sodium withi n 
+8 hrs. 
+ Monitor for symptoms 
+on LW until sodium 
+130mmol. 
+ Continue fluid balance 
+monitoring. 
+ No fluid restriction 
+necessary unless 
+otherwise indicated. 
+ Below 125 
+ Inform obstetric & 
+anaesthetic teams . 
+ Repeat sodium 2 h ourly. 
+ Fluid restrict 30 mls/hr . 
+ Stop oxytocin . 
+ Check plasma & urinary 
+osmolality and consider 
+discussion with medical 
+team . 
+ Inform neonatal team . 
+Below 125 or < 130 & 
+symptomatic 
+ Inform obstetric & 
+anaesthetic teams . 
+ Fluids restrict 30 ml/hr. 
+ Repeat sodium within 4 
+hrs. 
+ Monitor for symptoms on 
+LW until sodium 
+130mmol. 
+ Continue fluid balance 
+monitoring. 
+ Treat if severe 
+symptoms present . 125 - 129 
+CG21009 Maternity Fluid Management as In -Patient or During Labour v1 Sept 2021 Page 15 of 15 
+ 
+Please check agains t Staffnet that this printout is the most recent issue of this document. 
+Appendix 2: Management of ketonuria in labour in non -diabetic pregnant 
+women/people 
+ALL WOMEN/PEOPLE 
+Discuss with woman/person importance of accurate fluid balance monitoring during labour . 
+A cumulative fluid balance total must be recorded before transfer to another clinical area. 
+HAVING MIDWIFE -LED CARE 
+ Record fluid balance observations on fluid balance chart. 
+In labour: 
+ Record fluid balance in the comments section of the partogram: 
+- 4 hourly oral fluid intake. 
+- 4 hou rly urine output and all other fluid losses eg vomit. 
+- 4 hourly cumulative fluid balance on the partogram. 
+ If fluid balance exceeds positive 1500mls discuss with senior obstetrician whether to 
+check serum sodium and commence the Peripartum Sodium Monito ring Pathway. (See 
+appendix 1) 
+ In homebirth setting restrict fluid intake for the next 2 -4 hours and cons ider the whole 
+clinical picture. If continues in a positive fluid balance (more than 1500mls) discuss 
+transfer into the labour ward with co -ordinator . 
+UNDERGOING INDUCTION OF LABOUR – LOW RISK 
+ Record fluid balance observation on fluid balance chart: 
+- 4 hourly oral fluid intake and urine output. (Encourage pregnant 
+women/people to record this) 
+- All other fluid losses eg vomit. 
+ If fluid balance exceeds positive 1500mls check serum sodium and commence 
+the Peripartum Sodium Monitoring Pathway. (See appendix 1 ) 
+HIGH RISK INDUCTION OF LABOUR / HIGH RISK LABOUR 
+For PET follow guidance in CG1112 Management of Severe Pre -eclampsia & Eclampsia. 
+ Record fluid balance observation on fluid balance chart: 
+- 4 hourly oral fluid intake. 
+- 4 hourly urine output and all other fluid losses e.g. vomit. 
+- 1 hourly intrave nous (IV) fluid intake. 
+ IV fluids: 
+- Record reason for IV fluids prescribed on the fluid balance chart. 
+- Prescribed in millilitres (ml) per hour. 
+- Must be administered via volumetric pumps (unless fluid resuscitation during 
+haemorrhage/hypotension). 
+- Not routinely required with epidural analgesia but patent cannula must be in situ. 
+- IV fluids should not routinely be prescribed for the treatment of ketosis in 
+non-diabetic women/people. See section 11.0 on management of ketones. 
+ Sodium Monitoring Pathway required if (See appendix 1 ) if they are: 
+- In labour and require IV insulin and dextrose. 
+- Noted to ha ve blood sodium below 130 mmol/l for any reason. 
+- Greater than 1500mls positive on their fluid balance.

@@ -1,0 +1,589 @@
+# Extracted from: MP025 Day Assessment Unit (DAU).pdf
+# Guideline ID: mp025-day-assessment-unit-dau
+# Content length: 23195 characters
+# Processing date: 1750066901.2695184
+
+Day Assessment Unit 
+(DAU) 
+
+Maternity Protocol: MP025 
+ 
+Date agreed: January 2023 
+ 
+Day Assessment Unit (RSCH PRH only ) MP025 
+University Hospital Sussex NHS Trust’s East Page 2 of 17 
+
+Guideline Reviewer: Nikki Cree se & Deborah Stokeley 
+Version: 2 
+Approval Committee: Women’s Services Safety and Quality Committee 
+Date agreed: January 2023 uploaded February 2023 
+Amended Date: 
+Review date: January 2023 
+Cross reference: MP001 Provision and Schedule of Antenatal Care 
+MP008 Infections in Pregnancy 
+MP018 Diabetes 
+MP019 Hypertensive Diseases 
+MP021 Obstetric Cholestasis 
+MP024 Reduced Fetal Movements 
+MP032 Rupture of Membranes (RoM) Term and Pre -Term 
+MP033 I nduction of Labour 
+MP050 Caesarean Section 
+MP053 Obstetric Haemorrhage 
+ Day Assessment Unit (RSCH PRH only ) MP025 
+University Hospital Sussex NHS Trust’s East Page 3 of 17 
+ Contents 
+Key Principles ................................ ................................ ................................ ........................ 4 
+Scope ................................ ................................ ................................ ................................ ... 4 
+Responsibilities ................................ ................................ ................................ ..................... 4 
+1 Introduction ................................ ................................ ................................ ................ 5 
+2 Ultrasound Scans (USS) ................................ ................................ ............................... 9 
+3 EPU (refer to EPU protocol) ................................ ................................ ......................... 9 
+4 Referrals and Documentation ................................ ................................ .................... 10 
+5 Delivery Suite ................................ ................................ ................................ ............ 11 
+6 Clinical Conditions ................................ ................................ ................................ ..... 11 
+7 Vaginal Bleeding In Pregnancy ................................ ................................ ................... 12 
+8 Clinically Small for Dates ................................ ................................ ........................... 12 
+9 Care plan following UA & MCA dopplers ................................ ................................ .... 13 
+10 Suspected Large For Dates in Non Diabetic Women ................................ ................... 14 
+11 Indications for Growth Scans ................................ ................................ ..................... 15 
+12 Musculoskeletal Dysfunction in Pregnancy Pathway ................................ .................. 15 
+13 Propess IOL for Low Risk Pregnancy ................................ ................................ ........... 15 
+14 Women Who Decline IOL (42weeks) DAU: ................................ ................................ . 16 
+15 Elective Lower Segment Caesarean Section ................................ ............................... 11 
+16 GTT Booking: ................................ ................................ ................................ ............. 16 
+16.1 PRH GTT booking flowchart:. ................................ ................................ ............ 16 
+16.2 RSCH GTT booking flowchart: ................................ ................................ ........... 16 
+17 References: ................................ ................................ ................................ ............... 17 
+ 
+ Day Assessment Unit (RSCH PRH only ) MP025 
+University Hospital Sussex NHS Trust’s East Page 4 of 17 
+ Key Principles 
+ 
+A protocol is a set of measurable, objective standards to determine a course of action. 
+Professional judgement may be used in the application of a protocol. 
+ 
+Scope 
+ 
+This guideline applies to: 
+• All women attending DAU at PRH or RSCH 
+ 
+Responsibilities 
+ 
+Midwives & Obstetricians: 
+• To access, read, understand and follow this guidance 
+• To use this guideline when writing protocols and policies for maternity care 
+ 
+Management Team: 
+• To ensure the guideline is reviewed as required in line with Trust and National 
+recommendations 
+• To ensure the guideline is accessible to all relevant staff 
+• To ensure this guideline is available to service users on request 
+ Day Assessment Unit (RSCH PRH only ) MP025 
+University Hospital Sussex NHS Trust’s East Page 5 of 17 
+ 1 Introduction 
+ 
+1.1 Location of DAU 
+1.1.1 MAU is situated L12 , RSCH 
+1.1.2 DAU is situated within Antenatal Clinic, ground floor, PRH 
+1.2 Opening times of DAU & Contact details 
+1.2.1 PRH DAU is open from 08:30 -17:00 Monday 8.00 19:00 and Tuesday - -
+Thursday 08:00 – 18:00 and Friday 08:00 – 17:00 (ext. 65486 ) 
+1.2.2 RSCH MAU is open from 09.00 -18.00 Monday -Friday and 09.00 -17.00 
+on Saturday (ext. 64392). 
+1.3 Staffing of DAU 
+1.3.1 DAU is a consultant -led service run by midwifery staff with referral to 
+the on -call obstetric team when necessary. 
+1.4 Facilities at DAU 
+1.4.1 Each DAU has a waiting area, clinical assessment area and toilets. 
+Clinical rooms are available for consultations 
+ 
+1.5 Appointment and referral systems 
+ 
+1.5.1 There are a number of appointment slots that can be booked in 
+advance for planned attendance. T here are also appointment slots 
+available for on the day referrals. 
+1.5.2 There are 2 appointments available for women booking for ‘ outpatient ’ IOL using 
+propess at RSCH ( refer to Maternity Protocol MP033 I nduction of Labour) 
+ 
+1.6 Process 
+1.6.1 Complete the IOL booking via BadgerNet then email to: 
+UHSussex.rsch.ancreferrals@nhs.net Sussex house midwife will pick up 
+the referral and contact the women/person with a date and time to 
+attend for their IOL. If urgent IOL (to be commenced within 72hours) 
+contact MAU to booked IOLs 
+1.6.2 PRH ‘ outpatien t’ IOL is arranged though DAU or Triage (refer to 
+Maternity Protocol MP033 Induction of Labour 
+ Day Assessment Unit (RSCH PRH only ) MP025 
+University Hospital Sussex NHS Trust’s East Page 6 of 17 
+ 1.6.3 Referrals are accepted from all areas i.e. community or hospital, 
+however, referral should be triaged by the midwife or obstetrician 
+taking the phone call prior to admission (see 1.6 below). Drop -in 
+assessments are discouraged. 
+ 1.6 Indication for referral to the DAU and other clinical areas: 
+Sussex House DAU Triage Labour ward EPU GAU 
+<FM <26weeks 
+ Minor PV 
+bleeding >14 
+weeks 
+ Minor PV 
+bleeding >14 
+weeks (when 
+DAU closed) Significant 
+PV bleeding 
+>14 weeks PV bleeding 
+≤ 17+6 weeks 
+- booked 
+appointment PV bleeding 
+<14 weeks (out 
+of EPU hours) 
+Pre-op clerking for obstetric surgery 
+Abdominal pain 
+in pregnancy >14 
+weeks 
+(emergency) 
+ Abdominal pain 
+in pregnancy 
+>14 weeks 
+(emergency) 
+when DAU 
+closed or 
+dependant on 
+clinical condition Abdominal 
+pain in 
+pregnancy 
+>14 weeks 
+(emergency) 
+when DAU 
+closed or 
+dependant 
+on clinical 
+condition Abdominal 
+Pain ≤ 17+6 
+weeks - 
+booked 
+appointment Abdominal Pain 
+<14 weeks 
+(emergency) 
+Confirmed OC continued management No fetal heart 
+audible >14 
+weeks SROM (any 
+gestation) Obstetric 
+emergencies Hyperemesis 
+under 14 weeks 
+Suspected small for dates fetus 
+Request USS via Panda if unable to 
+perform please email: 
+UHSussex.urgentscanrequests@nhs.net Preterm pre -
+labour ROM 
+(ongoing 
+reviews) Labouring 
+women for 
+assessment (any 
+gestation) Labouring 
+women with 
+birth 
+imminent 
+Suspected malpresentation 
+Request USS by email ing: Reduced fetal 
+movements >26 Postdates > 
+40+12 declining In-utero 
+transfers Day Assessment Unit (RSCH PRH only ) MP025 
+University Hospital Sussex NHS Trust’s East Page 8 of 17 
+
+ UHSussex.urgentscanrequests@nhs.net weeks IOL 
+ 
+ First Presentation 
+Itching / rash in 
+pregnancy 
+ Raised BP/ PET 
+ 
+ Pre-op clerking 
+for obstetric 
+surgery at PRH 
+ Musculo -skeletal 
+pain 
+ Suspected oligo / 
+polyhydramnios 
+ Fetal heart rate 
+irregularities 
+ Non -specific 
+unwell women 2 Ultrasound Scans (USS) 
+ 
+Note: If possible please don’t attend with your children. Note they will not be able to attend 
+in the scanning department unless there are exceptional circumstances. 
+This needs to be escalated via the AN clinic leads / consultant Midwife. 
+2.1 All urgent day time scans will be booked through DAU. 
+ 
+2.1.1 For RSCH women, Complete Scan request on Bamboo out of hours, can 
+email urgentscanreferral.nhs.net for Sussex house MW’s to follow up . 
+2.1.2 PRH women who need a scan the same day, DAU (midwife) or registrar 
+will complete the request via bamboo. At PRH, for out of hour’s 
+women, who need a scan the following day, registrar needs to 
+complete a (INCLUDING a day time contact number of the woman . The 
+USS department will contact the woman /people the next working day . 
+2.1.3 There limited urgent scan slots available per day at PRH and RSCH, 
+please ensure appropriate patients are booked in these slots. As per 
+protocol 
+2.1.4 ultrasound scan indications ( please see Maternity Protocol MP032 
+Rupture of Membranes (RoM) Term and Pre -Term , and Maternity 
+Protocol MP024 Reduced Fetal Movements , section 14 below) 
+2.1.4.1 PPROM 
+2.1.4.2 Static growth on 2 occasions 
+2.1.4.3 SFH ≤3cms for below expected for gestation age 
+2.1.4.4 Reduced fetal movements after second presentation 
+2.1.4.5 Suspected malpresentation from 36 weeks 
+2.1.4.6 Fetal viability 
+2.1.4.7 Declining IOL >42 weeks 
+ 
+2.1.4.8 Suspected Polyhydramnios 
+ 
+2.2 All non -urgent, routine or follow -up scans should still be booked in the usual 
+way. 
+ 
+3 EPU (refer to EPU protocol) 
+ Day Assessment Unit (RSCH PRH only ) MP025 
+University Hospital Sussex NHS Trust’s East Page 10 of 17 
+ 3.1 EPU mainly sees women with early pregnancy related issues. DAU mainly sees 
+women with 2nd and 3rd trimester issues. Where there is discrepancy or a case 
+that is not covered by the guideline the lead nurse / gynaecologist and midwife / 
+obstetrician in each area should communicate and agree appropriate location 
+for care for that individual woman 
+3.1.1 PRH: The Early Pregnancy Unit (EPU) r uns Mon/Wed/Fri, 08:00 -12:00 & 
+and is covered by a nurse sonographer 09:00 – 17:00 and Thursday is 
+consultant led clinic 09:00 – 12:30 
+3.1.2 RSCH: The Early Pregnancy Unit (EPU) runs from Mon -Fri, 08:00 -16:00 
+3.1.3 Appointments are made by telephone 64402 (RSCH) and 65685/6 
+(PRH). 
+3.1.4 Women presenting out of hours are seen by the on call gynaecology 
+team in A&E 
+ 
+4 Referrals and Documentation 
+ 
+4.1 The role of the community midwife and GP 
+ 
+The DAU is designed to support primary and community care. Many enquiries or 
+referrals may be dealt more appropriately within primary care. Should community 
+midwifery or GP review be appropriate (see list for DAU referrals page 6), then the 
+caller would be advised to organise an appointment with CMW/GP and this advice 
+documented. However, in rare circumstances, this may be facilitated by DAU staff if the 
+caller experiences difficulty arranging the appointment. 
+4.2 Documentation 
+ 
+All calls (including women’s name and ID, gestations, history, reason for call, 
+advice given and mane and designation of the member of staff taking the call) 
+should be recorded in the DAU/MAU book by the person taking the phone call. 
+Triaging of telephone calls should be undertaken by experienced qualified 
+clinical staff. Student midwives must be supervised by their mentor when 
+working in DAU /MAU . All contacts, assessments, investigations and planning 
+must be documented 
+4.3 The Antenatal clinic support 
+ 
+Women who are receiving consultant led care in ANC may be seen in DAU between 
+appointments either as part of a management plan (e.g. to have a blood pressure 
+check) or as an additional issue (e.g. episode of reduced fetal movements). Should 
+referrals to other clinics be required (e.g. specialist clinics) this should be arranged by 
+the midwife or obstetrician. Urgent referrals should be made by the Registrar on call. 
+ Day Assessment Unit (RSCH PRH only ) MP025 
+University Hospital Sussex NHS Trust’s East Page 11 of 17 
+ 5 Delivery Suite 
+5.1 It may be evident during the telephone triage process that direct admission to 
+Delivery Suite or triage is more appropriate than DAU assessment. This decision 
+should be made by qualified staff and clearly documented in the DAU book. 
+ 
+5.2 Medical / obstetric review of women seen in DAU 
+5.2.1 Many conditions will not require any medical/ obstetric review. If an 
+obstetric review is required the on -call obstetric team must provide 
+medical support as requested by the midwife as per BSOTs pathway. 
+Hyperlink! 
+5.2.2 Referrals likely to result in an antenatal admission should still have their 
+initial review on the DAU/MAU. Most antenatal ward admissions stay 
+for 24 -48 hours or less. All investigations should be undertaken on 
+DAU/MAU prior to admission to antenatal ward 
+6 Other Clinical Conditions 
+ 
+6.1 Hypertension in Pregnancy 
+ Please refer to Maternity Protocol MP019 Hypertensive Disease 
+6.2 Itching in Pregnancy 
+ Please refer to Maternity Protocol MP021 Obstetric Cholestasis 
+6.3 Reduced Fetal Movement 
+ Please refer to Maternity Protocol MP024 Reduced Fetal Moveme nts 
+6.4 Preterm Pre -labour Rupture of Membranes 
+ Please refer to Maternity Protocol MP032 Pre -Labour Rupture of Membranes (RoM) 
+Term and Pre -Term 
+6.5 Viral Infections in Pregnancy 
+ Please refer to Maternity Protocol MP008 Infections in pregnancy 
+6.6 Elective Lower Segment Caesarean Section 
+ Please refer to Maternity Protocol MP050 Caesarean Section 
+ Day Assessment Unit (RSCH PRH only ) MP025 
+University Hospital Sussex NHS Trust’s East Page 12 of 17 
+ 7 Vaginal Bleeding In Pregnancy 
+ 
+8 Clinically Small f or Dates 
+ 
+From 24 weeks gestation, the community midwife will undertake a fetal assessment by 
+abdominal palpation, assessment of fetal movements and Symphysis Fundal Height (SFH). 
+The SFH measurement should be plotted on the SFH chart on BadgerNet 
+ 
+8.1 Symphysis Fundal Height (SFH) 
+8.1.1 The midwife should undertake a full maternal and fetal assessment if a 
+single SFH which plots below the 5th centile, or serial measurements 
+which demonstrate slow or static growth by crossing lower centiles (a 
+distance of approx. 3cms), should be referred via Panda for Urgent USS, 
+At RSCH if you are unable to complete a referral email 
+UHSussex.urgentscanrequests@nhs.net 
+ 
+•Take history and risk assessment where most appropriate location of attendance is 
+pregnant women or people experiencing fresh red bleeding, active bleeding passing clots, 
+abdominal pain should not be seen in DAU setting. 
+•Determine placental site if known, or LW scan if not 
+Pulse, blood pressure 
+•Abdominal palpation 
+•Fetal heart auscultation 
+•Estimation of the quantity of vaginal bleeding 
+ 
+Stable& minimal bleeding 
+Clinically unstable/or 
+Heavy bleeding/or 
+Bleeding with pain 
+•IV X 2 large bore cannulate 
+•With consent take FBC G&S 
+Immediate admission to labour ward 
+ 
+SHO/Registrar review, including speculum (& review 
+smear history). Only undertake speculum / VE once 
+placental site is known 
+Cervical cause, 
+(Bleeding ectropion or 
+erosion) 
+Reassure & home 
+Normal cervix 
+(I.e. no cause found for 
+bleeding) 
+If >22 w D/W the on call consultant & consider admission for 24 hours 
+Vaginal Bleeding ≥ 14 weeks 
+ 
+Refer to MP053 Obstetric 
+Haemorrhage for further management 
+ Day Assessment Unit (RSCH PRH only ) MP025 
+University Hospital Sussex NHS Trust’s East Page 13 of 17 
+ 8.1.2 If the woman reports concerns about fetal movements, there should be 
+an urgent referral and the woman should be seen in Sussex house if 
+below <26/40 in MAU from <26/40 onwards and assessed as per 
+MP026 BSOTs criteria and MP024 Reduced Fetal Movements 
+ 
+8.2 On arrival at DAU 
+ 
+The DAU midwife should undertake the following assessment as per BSOTs and Rag 
+rate urgency 
+8.2.1 Full maternal history and review of badger notes /notes 
+8.2.2 Risk assessment an d identification of risk factors 
+8.2.3 Maternal observations: temp, BP, pulse and urinalysis 
+8.2.4 Fetal assessment: abdominal palpation, SFH and fetal movements. If 
+reduced fetal movements are reported and ≥26 /40, undertake a CTG 
+Registrar to review and an individualised plan of care to be fully 
+documented 
+8.3 If any concerns, Registrar should discuss with the on -call consultant 
+ 
+9 Care plan following UA & MCA dopplers 
+ 
+9.1 Suggested algorithm after registrar/ consultant review of the scan following UA 
+and MCA Doppler 
+
+ Abnormal Doppler 
+MCA PI < 5th 
+UA PI >95th 
+Normal liquor volume Abnormal Doppler 
+Reverse or absent EDF MCA & UA Doppler & AFI assessment 
+Normal Doppler. 
+Normal AFI 
+Normal movements Abdominal Circumference on or < 5th centile 
+Discuss with consultant urgently 
+CTG as in -patient the plan of 
+management 
+ 
+Steroids if preterm 
+Delivery by C/S if viable Referral to Fetal Medicine (or on call) 
+consultant 
+ 
+Weekly Doppler & liquor volume 
+Fortnightly growth scan 
+Steroids if possible preterm delivery Discuss with consultant 
+ 
+Fortnightly growth scan & Dopplers 
+(Consider steroids) Day Assessment Unit (RSCH PRH only ) MP025 
+University Hospital Sussex NHS Trust’s East Page 14 of 17 
+ 10 Suspected Large For Dates in Non Diabetic Women 
+ 
+See Maternity Protocol MP001 Provision and schedule of Antenatal Care . 
+ 
+10.1 Women with a suspected large for dates fetus from clinical review and 
+abdominal palpation (>3cm more than gestation in weeks) should not be 
+referred for an ultrasound scan providing there are no other risk factors 
+identified (NICE, 2008). 
+10.2 Midwife to check for glycosuria ; if positive refer via BadgerNet for GTT on 
+BadgerNet and for RSCH make referral via 
+UHSussex.maternityadminrsch@nhs.net 
+10.3 Ensure you check the results and i f negative care can continue with normal A/N 
+care pathway. 
+10.4 If Polyhydramnios is suspected from clinical review and abdominal palpation 
+women should be referred in to DAU for an urgent obste tric review and referral 
+for ultrasound scan if clinical indicated 
+10.5 Algorithm for the diagnosis of large for g estational age (LGA) pregnancy in non -
+diabetic women 
+ 
+Clinically LGA by palpation (> 3cm ) 
+In the community : Check for glucose in urine, check previous GTT results (if relevant), check for clinical 
+evidence of increase amniotic fluid, check fetal movements 
+ 
+No other risk factors present 
+ 
+DAU Obstetric review & USS 
+within 48 hours on DAU 
+ 
+Normal GTT and normal 
+scan 
+
+Abnormal GTT 
+
+Return to routine Midwifery 
+Led Care 
+ 
+Refer to joint Diabetic 
+clinic 
+ 
+Increased AFI 
+Normal GTT and/or 
+EFW >95th centile 
+Refer to Consultant ANC 
+Reassure, no further action 
+ 
+If glucose in urine and / or 
+abnormal previous GTT 
+ 
+Book GTT via badger at PRH and 
+email 
+UHSussex.maternityadminrsch@
+nhs.net at RSCH 
+ 
+Suspect Polyhydramnios 
+ 
+Book USS via BadgerNet at PRH 
+or 
+UHSussex.maternityadminrsch
+@nhs.net at RSCH 
+Arrange GTT and USS 
+ 
+Refer to MP018 Diabetes 
+for further management 
+ Day Assessment Unit (RSCH PRH only ) MP025 
+University Hospital Sussex NHS Trust’s East Page 15 of 17 
+ 11 Indications for Growth Scans 
+11.1 In addition to the routine scans, additional scans maybe indicated for the 
+following maternal conditions. These scans are normally arranged and followed 
+up in the AN consultant clinics, however the result may be followed up in the 
+DAU or Su ssex House by the medical staff if needed 
+ 
+12 Musculoskeletal Dysfunction in Pregnancy Pathway 
+
+13 Propess IOL for Low Risk Pregnancy 
+ Please refer to the Maternity Protocol MP033 Induction of Labour 
+13.1 At PRH: contact triage to arrange a slot in the induction calendar and document 
+IOL booking on BadgerNet 
+13.2 At RSCH: Complete the IOL booking via BadgerNet then email to: 
+UHSussex.rsch.ancreferrals@nhs.net Sussex house midwife will pick up the 
+referral and contact the women/person with a date and time to attend for their 
+IOL. 
+ 
+Musculoskeletal problem, including SPD identified 
+Refer to DAU 
+ Refer to ANC for Medication & pain 
+management/ Function/ Social/ Birth plan 
+ 
+•Midwife: Initial assessment of mother & 
+baby 
+•Referral to Physiotherapy, (if not done) for 
+•Exercise, mobility and pain management 
+•Medical review for individualised 
+assessment if indicated 
+ 
+Not responding to simple advice/ analgesia by GP/CMW 
+& physiotherapy 
+Women/people can do a self -referral to physio via BadgerNet 
+Mild/moderate responding 
+to Physio/pain management 
+discharge with self -referral 
+option 
+Moderate to severe with 
+problems identified Day Assessment Unit (RSCH PRH only ) MP025 
+University Hospital Sussex NHS Trust’s East Page 16 of 17 
+ 13.2.1 If urgent IOL (to be commenced within 72hours) contact MAU to 
+booked 
+14 Women Who Decline IOL (42weeks) DAU: 
+ Please refer to Maternity Protocol MP033 Induction of Labour 
+15 GTT Booking: 
+15.1 PRH GTT booking flowchart: Women/people are referred directly to the 
+Phlebotomist. Results are sent back to the ANC 
+
+15.2 RSCH GTT booking flowchart: 
+
+Candidates fulfilling the maternity guidelines 
+criteria for GTT. i.e. obesity or diabetes 
+protocols from: 
+•Community 
+•DAU 
+•ANC 
+Phlebotomist 
+Take bloods 
+Pathology Lab sends results to ANC 
+for review by lead MW 
+Normal < 7.8mmol/L 
+No follow up 
+ 
+Abnormal: ≥ 7.8mmol/L 
+Refer to the Diabetic 
+team 
+ 
+Refer to MP018 Diabetes 
+for further management 
+ 
+Candidates fulfilling the maternity 
+guidelines criteria for GTT 
+Woman’s details and day time contact number are entered in the GTT 
+booking book Sussex house. 
+Date/ time and clear instruction about the te st are given to the 
+woman/person 
+Referral from primary care 
+On the day of the test the phlebotomist at main outpatients 
+oConfirm the patients details 
+oCollect & label the blood sample 
+oSend the sample to the Path Lab 
+oEnter woman’s details in result book 
+Next day: The women contact Sussex House for results 
+ 
+Normal result <7.8mmol/L 
+No follow up required 
+Abnormal: 
+Fasting: ≥ 5.6mmols/L 
+2 hour: ≥7.8mmol/L 
+Refer to the Diabetic team 
+Refer to MP018 Diabetes 
+for further management 
+ Day Assessment Unit (RSCH PRH only ) MP025 
+University Hospital Sussex NHS Trust’s East Page 17 of 17 
+ 16 References: 
+ 
+Abbreviations: ALP, alkaline phosphatise; ALT, alanine aminotransferase; AST, aspartate 
+aminotransferase; CRP, C reactive protein; fT3, free T3; fT4, free T4; GGT, gamma -glutamyl 
+transpeptidase; LFT’s, liver function tests; MCV, mean cell volume; TFT’s, thyroid function tests; 
+TSH, thyroid stimulating hormone; WBC, white blood cell. 
+ 
+National Institute for Health and Care Excellence (NICE). (2019) Antenatal care for 
+uncomplicated pregnancies. Clinical guideline [CG62] 
+ 
+Ockenden Maternity Review. 2022. [Online] Available at: 
+https://www.ockendenmaternityreview.org.uk/wp -
+content/uploads/2022/03/FINAL_INDEPENDENT_MATERNITY_REVIEW_OF_MATERNITY_SERV
+ICES_REPORT.pdf [Accessed 16 September 2022] 
+ 
+Saving Babies Lives v2. [Online] https://www.england.nhs.uk/publication/saving -babies -lives -
+version -two-a-care -bundle -for-reducing -perinatal -mortality/ [Accessed 16 September 2022]

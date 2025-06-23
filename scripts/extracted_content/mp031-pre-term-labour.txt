@@ -1,0 +1,666 @@
+# Extracted from: MP031 Pre-term labour.pdf
+# Guideline ID: mp031-pre-term-labour
+# Content length: 33918 characters
+# Processing date: 1750066901.3425329
+
+University Hospitals Sussex NHS Trust East Page 1 of 22 
+ 
+Pre-term Labour 
+ 
+Maternity Protocol: MP031 
+ 
+Date agreed: April 2022 
+ 
+Pre-Term Labour (RSCH PRH only ) MP031 
+ 
+University Hospitals Sussex NHS Trust East Page 2 
+
+Guideline Reviewer: Tony Kelly & Jo Sinclair 
+Version: 4 
+Approval Committee: Women’s Safety and Quality Committee 
+Date agreed: April 2022 
+Date amended: 
+Review date: April 2023 (MGC 2024) 
+Cross reference: MP001 Antenatal booking 
+MP019 Hypertensive Disease 
+MP023 Maternal & In Utero Transfers 
+MP032 Rupture of Membranes (RoM) 
+MP037 Fetal Heart monitoring 
+MP020 Multiple Pregnancy 
+MP050 Caesarean Section (LSCS) 
+MP066 Neonatal Resuscitation (term & pre -term) 
+MP068 Admission to NICU/SCBU 
+MP077 Cervical cerclage 
+
+ Pre-Term Labour (RSCH PRH only ) MP031 
+ 
+University Hospitals Sussex NHS Trust East Page 3 
+ Table of Contents 
+Key principles: ................................ ................................ ................................ ....................... 4 
+Scope: ................................ ................................ ................................ ................................ ... 4 
+Responsibilities: ................................ ................................ ................................ .................... 4 
+1 Pre-Term Labour ................................ ................................ ................................ ......... 5 
+2 Referral of pregnant people or women with suspected preterm labour ....................... 5 
+3 Fetal Fibronectin ................................ ................................ ................................ ......... 8 
+4 Obstetric review: ................................ ................................ ................................ ......... 9 
+5 Other Investigations ................................ ................................ ................................ .. 11 
+6 Rupture of Membranes ................................ ................................ ............................. 11 
+7 Antenatal Corticosteroids ................................ ................................ .......................... 12 
+8 Tocolysis ................................ ................................ ................................ ................... 13 
+9 Magnesium Sulphate and Neuroprotection of the Fetus ................................ ............ 14 
+10 Mode of Delivery and Fetal Monitoring ................................ ................................ ..... 15 
+Appendix A: Perinatal management of Extreme preterm birth before 27 weeks of 
+gestation ................................ ................................ ................................ ............................. 19 
+Appendix B: PIL - Expecting a very Premature Baby ................................ .............................. 22 
+Appendix C: PIL – For parents babies born early around 20 to 22 Weeks .............................. 22 
+Appendix D: PIL - For parents babies born early around 23 to 24 Weeks ............................... 22 
+Appendix E: PIL - For parents babies born at around 25 Weeks ................................ ............. 22 
+
+ Pre-Term Labour (RSCH PRH only ) MP031 
+ 
+University Hospitals Sussex NHS Trust East Page 4 
+ Key principles: 
+ 
+A protocol is a set of measurable, objective standards used to determine a course of action. 
+Professional judgement and clinical context should be considered in the application of a 
+protocol. 
+ 
+Scope: 
+ 
+This protocol applies to 
+• All pregnant people or women with threatened or actual pre-term labour 
+• All infants born under 37 weeks gestation requiring support at birth 
+ 
+Responsibilities : 
+ 
+Midwives, Obstetricians & Neonatologists : 
+• To access, read, understand and follow this guidance 
+• To use their professional judgement in application of this protocol 
+ 
+Management: 
+• To ensure the protocol is reviewed as required in line with Trust and National 
+recommendations 
+• To ensure the protocol is accessible to all relevant staff 
+• To ensure the protocol is available to service users on request 
+ 
+ Pre-Term Labour (RSCH PRH only ) MP031 
+ 
+University Hospitals Sussex NHS Trust East Page 5 
+ 1 Pre-Term Labour 
+ 
+Preterm birth is the most important single determinant of adverse infant outcome in 
+terms of survival and quality of life (RCOG 2011). 
+1.1 Definition: 
+Regular and painful uterine contraction s which lead to cervical change
+ (effacement and dilatation) prior to 37 completed weeks of gestation. 
+ 
+Threatened pre -term labour should be considered for any women presenting 
+at less than 37 weeks gestation with uterine contractions +/ - pre-term rupture 
+of membranes, even in the absence of cervical change. 
+1.2 Identification of risk factors at booking 
+ 
+Any pregnant person or woman with a history of preterm birth(s) <37 weeks, 
+or with a history of mid -trimester loss(es) should have consultant -led care and 
+be referred to antenatal clinic at booking. The following factors in the history 
+should generate a referral to preterm clinic by the booking midwife: 
+ 
+• All patients with 2+ previous preterm births or premature pre -labour 
+rupture of membranes (PPROM) and delivery before 35 weeks 
+• All patients with previous 2nd trimester loss or 2nd trimester 
+termination of pregnancy 
+• All patients who have had a previous elective or emergency cervical 
+cerclage 
+• All patients with a history of multiple LLETZ, single knife cone biopsy 
+or single LLETZ to a depth of >10mm 
+2 Referral of pregnant people or women with suspected preterm 
+labour 
+ 
+When taking a referral it is important to ask the following questions and document 
+information in the telephone log and on the triage board: 
+2.1 Patient’s demographics and contact telephone number 
+2.2 Obstetric history: gravidity / parity 
+2.3 Gestation and EDD 
+2.4 Any other pregnancy complications : e.g. Hypertension or fetal growth 
+restriction 
+ Pre-Term Labour (RSCH PRH only ) MP031 
+ 
+University Hospitals Sussex NHS Trust East Page 6 
+ 2.5 Presenting complaint: 
+2.5.1 Abdominal pain 
+• Constant or intermittent? 
+• What is the frequency, duration and strength of contractions 
+• Is there an urge to push? 
+2.5.2 Vaginal loss: 
+• Bleeding/discharge/liquor. 
+• Is there a history of PPROM? If so when and what colour is the liquor? 
+2.5.3 Maternal and fetal well -being i.e. does mum feel well and can she feel 
+baby moving? 
+2.6 Give the following information: 
+2.6.1 If in active labour / delivery imminent / concern for maternal or fetal 
+well-being then discuss with the labour ward coordinator and advise 
+the woman to come to labour ward for urgency assessment. Consider 
+ambulance transfer if necessary. 
+2.6.2 If there are no concerns, then ask the woman to come to MAU on L12 
+at the RSCH or triage/DAU at PRH for assessment as soon as possible. 
+2.6.3 The midwife or doctor taking the referral is responsible for informing 
+the labour ward coordinator and obstetric registrar or consultant of 
+the patient’s expected arrival. 
+2.7 Initial Assessment on arrival 
+ 
+On arrival, the admitting midwife should perform and document the following 
+and investigations with maternal informed consent: 
+2.7.1 Maternal observations 
+2.7.2 Urine dip and MSU 
+2.7.3 Confirm EDD 
+2.7.4 Enquire and document general maternal well -being and any medical 
+problems including the presenting complaint. 
+2.7.5 Enquire and document the obstetric history for this pregnancy and 
+other pregnancies, with particular attention to gestation and mode of 
+delivery. 
+ Pre-Term Labour (RSCH PRH only ) MP031 
+ 
+University Hospitals Sussex NHS Trust East Page 7 
+ 2.7.6 Palpation of the abdomen , symphysis -fundus height measurement 
+and assessment of lie/presentation. Record the strength, frequency 
+and duration of contractions. Consult the most recent USS report to 
+identify the placental location. 
+2.7.7 Assessment of fetal wellbeing: 
+2.7.7.1 Ask about movements 
+2.7.7.2 Perform a CTG from 26+0 weeks gestation , using antenatal 
+CTG criteria initially for interpretation. If the trace is not 
+normal, inform the senior midwife and obstetrician 
+immediately. 
+2.7.7.3 If between 24+0 and 25+6 weeks then auscultation by the 
+midwife is appropriate initially. A CTG may sometimes be 
+indicated between 24+0 and 25+6 weeks gestation, but only 
+after obstetric review and discussion with the obstetric 
+consultant. See section 2.9 below 
+2.7.8 Assessment of sanitary pad and question with regard to vaginal loss 
+i.e. is there a history rupture of membranes? 
+2.7.9 Obtain IV access if delivery is imminent or if there are risk factors for 
+post -partum haemorrhage. Take bloods for full blood count, CRP and 
+group and save if membranes have ruptured. 
+2.7.10 If in active labour, delivery is imminent or there are any concerns for 
+fetal or maternal well -being, then transfer to labour ward and inform 
+the senior midwife and obstetric ian immediately. Contact 
+TMBU /SCBU and the neonatal team as a matter of urgency. 
+2.8 No concerns on initial a ssessment 
+If there are no concerns and delivery is not imminent, then inform the 
+Obstetric registrar of findings and request a senior review. If there are any 
+changes in clinical condition of mother or fetus whilst awaiting obstetric 
+review, then inform the senior midwife and obstetrician immediately. 
+2.9 Gestation 22+0 – 27+6 
+There should be a multidisciplinary discussion between the obstetric team, 
+neonatal team and parent(s) to decide on whether active management is 
+appropriate in the context of the BAPM framework. Wherever possible, the 
+patient should be reviewed with both teams present to aid discussions. The 
+interventions of corticosteroids, tocolysis and magnesium sulphate (see 
+sections 8.0, 9.0 and 10.0) should only be offered where a decision has been 
+made to for active management. At the extremes of viability, it may be the 
+multidisciplinary decision that these interventions are currently not 
+appropriate. Pre-Term Labour (RSCH PRH only ) MP031 
+ 
+University Hospitals Sussex NHS Trust East Page 8 
+ 3 Fetal Fibronectin 
+ 
+3.1 Any woman who presents between 22+0 and 34+6 weeks gestation with a 
+history of tightening’s , who is not in active pre -term labour should be 
+recommended to have a fetal Fibronectin (FFN) test. 
+3.2 This test can only be routinely performed if the following criteria are fulfilled: 
+3.2.1 22+0 – 34+6 weeks 
+3.2.2 Membranes intact 
+3.2.3 No sexual intercourse in the past 24 hours 
+3.2.4 No speculum examination or VE within the last 24 hours 
+3.2.5 No aquagel use within the last 24 hours 
+3.2.6 No vaginal bleeding within the last 24 hours 
+ 
+3.3 If the above criteria are fulfilled then the test may be performed with maternal 
+consent documented. This involves a speculum examination without aquagel 
+in order to assess the cervix and then take a swab from the posterior fornix 
+(for approximately 10 seconds). The contents of the swab container are then 
+pipelled into a cassette which is read by the fetal fibronectin machine. It takes 
+25 minutes to produce a result. 
+3.4 Results and Actions: 
+3.4.1 Negative FFN – a negative fibronectin test (a value of less than 50) has 
+a high negative predictive value i.e. it confers a low risk of pre -term 
+labour. In this situation further investigations are needed to rule out 
+alternative causes of abdominal pain, including non -obstetric causes. 
+If the pain is severe or persistent, it may be appropriate to involve 
+other specialities in assessment eg. Surgical team, If non -obstetric 
+causes are thought to be unlikely, the woman may go home if she 
+feels well and has normal observations. 
+3.4.2 Positive FFN – A positive test (a value of greater than 50) confers a 
+higher risk that the woman will labour pre -term over the next 2 
+weeks. Hence a positive result usually necessitates admission to 
+hospital + steroids +/ - tocolytics. However treatment should be 
+adjusted in light of the numeric value according to the below table. 
+
+ Pre-Term Labour (RSCH PRH only ) MP031 
+ 
+University Hospitals Sussex NHS Trust East Page 9 
+ 3.5 Results and Actions Table: 
+ 
+FFN 
+value % who will 
+deliver within 
+2 weeks % who will 
+deliver at 
+<34 weeks Management guidelines 
+0 - 9 
+<2 <2 Discharge with routine midwife follow up 
+10 - 49 5 – 15 Discharge with routine midwife follow up 
+50 – 199 5 – 15 10 - 15 • Admit 
+• Give Dexamethasone Phosphate 12mg IM 12 
+hours apart 
+>200 
+499 30 30 • Admit 
+• Give Dexamethasone Phosphate 12mg IM 12 
+hours apart 
+• Tocolysis if tightening: See section 9.0 below 
+>500 50 75 • Admit 
+• Give Dexamethasone Phosphate 12mg IM 12 
+hours apart 
+• Tocolysis if tightening: See section 9.0 below 
+
+3.6 The obstetric registrar should be informed about the result of all FFN tests so 
+that a management plan may be made. 
+4 Obstetric review: 
+ 
+4.1 Verbal handover from Midwife on details of their initial assessment and care 
+using the SBAR tool and BSOTS 
+4.2 Review of information gathered from initial assessment including confirmation 
+of presenting complaint and obstetric history 
+4.3 General inspection of maternal condition and observations 
+4.4 With maternal informed consent: 
+• Abdominal palpation to confirm symphysis -fundal height 
+• Fetal lie, presentation and engagement of presenting part. USS may be 
+necessary to confirm fetal presentation 
+• Assessment of uterine activity, including frequency, duration and strength 
+of contractions 
+4.5 Review of CTG / enquire about fetal movement and review previous USS and 
+obstetric notes to identify any risk factors for pre -term labour e.g. history of 
+pre-term labour. 
+ Pre-Term Labour (RSCH PRH only ) MP031 
+ 
+University Hospitals Sussex NHS Trust East Page 10 
+ 4.6 With maternal informed consent: Perform a sterile speculum examination +/ - 
+fetal fibronectin test. If there has been rupture of membranes i.e. you can see 
+pooling of liquor in the posterior fornix then an HVS should be taken. See 
+MP032 Rupture of Membranes for further details. 
+4.7 If there are regular painful contractions and/or the cervix appears to be dilated 
+on speculum – gain consent to perform a vaginal examination to assess the 
+length, position, dilatation and effacement of the cervix - this will confirm 
+whether the woman is in labour. NB even with a closed, posterior cervix on 
+admission, changes may occur with ongoing contractions. 
+4.8 Any woman with a positive FFN or presenting in pre -term labour should be 
+admitted for observations and management. Women with a negative FFN 
+should have other causes for their abdominal pain excluded and then 
+discharged. 
+4.9 If in active labour with strong and frequent contractions then immediate 
+transfer to labour ward is necessary. It is the decision of the senior obstetrician 
+regarding the use of tocolytics, corticosteroids, continuous fetal monitoring 
+and if necessary, the timing and mode of delivery. The Labour ward 
+coordinator should be involved in these discussions and informed of any 
+care/management decisions ma de 
+4.10 TMBU /SCBU and the neonatal team should be informed as soon as possible by 
+the admitting doctor or midwife, to check cot availability and arrange for the 
+presence of a neonatal registrar at delivery. 
+4.11 TMBU can accept babies born from 22 weeks gestation and the SCBU at PRH 
+can accept babies born from 34 weeks gestation. Hence women presenting to 
+PRH with a positive FFN or in active pre -term labour at <34 weeks should be 
+transferred to the RSCH at the earliest appropriate time. 
+4.11.1 (Please see Maternity Protocol MP023: Maternal & In Utero Transfers ) 
+In the rare event that there is not a cot available on TMBU, the 
+obstetric registrar or senior midwife can organise for In utero transfer 
+to another unit, provided that this has been deemed safe/appropriate 
+by the obstetric consultant on call and initial management has been 
+instigated. There is a folder of contact details for neonatal units 
+available on labour ward. I deally the closest unit with an available cot 
+would be allocated. The transfer of a woman should be discussed with 
+a senior member of staff on the neonatal unit and the obstetric 
+registrar on-call in the receiving unit. 
+4.12 The admitting doctor should write a summary of the obstetric history, 
+examination findings and management plan so that the team in the receiving 
+hospital are aware of any issues. 
+ Pre-Term Labour (RSCH PRH only ) MP031 
+ 
+University Hospitals Sussex NHS Trust East Page 11 
+ 5 Other Investigations 
+5.1 MSU / HVS 
+It is the responsibility of the midwife and doctors looking after the patient to 
+chase the results of the MSU and HVS taken on admission (these are usually 
+available within 48 hours). The clinical team should check regularly to see if the 
+results are available. Treatment of an identified urinary tract infection or 
+vaginal infection should be guided by sensitivities. 
+5.2 Bloods 
+It is the responsibility of the midwife and doctors looking after the woman to 
+chase the results of blood tests taken on admission (these are usually available 
+within 2 hours of admission). The clinical team should check regularly to see if 
+the results are available. 
+5.3 Ultrasound Scan 
+For those women with threatened preterm labour +/ - PROM, a departmental 
+USS should be requested by the admitting doctor at the earliest opportunity in 
+order to assess fetal growth, liquor volume and dopplers if appropriate. This 
+should be reviewed by the obstetric registrar or consultant on call. 
+ 
+6 Rupture of Membranes 
+ 
+6.1 For information on the management of ROM (please see Maternity Protocol 
+MP032: Rupture of Membranes (RoM) for further details) 
+6.2 ROM should not affect the decision to give corticosteroids in threatened pre -
+term labour unless there are signs of sepsis. If unsure, ask the obstetric 
+registrar or consultant 
+6.3 Tocolytics can be used with Preterm ROM, unless there is a contraindication to 
+delaying delivery, to allow time for administration of corticosteroids 
+6.4 If there is a cervical suture then it should be removed when there is any 
+cervical dilatation or rupture of membranes. If membranes are ruptured but 
+there is no evidence of cervical dilatation or strong contractions, removal of a 
+cervical suture may be delayed in order to give time for ad ministration of 
+steroids and ma gnesium sulphate, or for intra -uterine transfer. The decision to 
+leave a suture in situ should be discussed with a consultant. The suture should, 
+however, be removed once these treatments are completed. 
+6.5 If Magnesium Sulphate is indicated (i.e. gestation less than 30 weeks) then it 
+should be used with caution due to tocolytic effect and only if there is no 
+evidence of infection 
+ Pre-Term Labour (RSCH PRH only ) MP031 
+ 
+University Hospitals Sussex NHS Trust East Page 12 
+ 7 Antenatal Corticosteroids 
+ 
+7.1 A single course of corticosteroids can be given to any women with threatened 
+pre-term labour from 23 - 34+6/40 gestation. Corticosteroids may sometimes 
+be considered at gestations from 22+0 to 22+6, but this decision should be 
+taken by the obstetric and neonatal consultants after consideration of active 
+management in line with the BAPM framework 
+7.2 Evidence reveals that in women with threatened pre -term labour receiving a 
+course of corticosteroids, there was a significant reduction in: 
+7.2.1 Neonatal respiratory distress 
+7.2.2 Intraventricular haemorrhage 
+7.2.3 Necrotising enterocolitis 
+7.2.4 Systemic infection in the first 48 hours of life 
+7.2.5 Admission to neonatal intensive care 
+7.2.6 Neonatal death 
+ 
+7.3 The recommended course of corticosteroids is : 
+7.3.1 Dexamethasone Phosphate 12mg IM – 2 doses given 12 hours apart 
+ 
+OR 
+Betamethasone 12mg IM – 2 doses given 12 hours apart 
+7.4 Both courses are effective at reducing neonatal morbidity, but betamethasone 
+use is associated with a greater reduction in neonatal death. 
+7.5 There have been no adverse effects on maternal or fetal health demonstrated 
+following a single course of steroids. 
+7.6 If antenatal corticosteroids have been given at gestations less than 26+0 weeks, 
+then consideration should be given to a further course if there is another 
+admission with suspected preterm labour under 32+0 weeks if delivery is 
+considered high ly likely to happen. More than 2 courses of steroids is not 
+recommended 
+7.7 The optimum effect of a steroid course is seen if delivery occurs between 24 
+hours and 7 days after the last dose. S teroids should not routinely be given 
+unless there is a serious anticipation that delivery may occur in the subsequent 
+week ( see fetal fibronectin table 3.5) A course of steroids can be initiated if 
+delivery is anticipated within 24 hours as there is still a beneficial effect on 
+neonatal death. 
+ Pre-Term Labour (RSCH PRH only ) MP031 
+ 
+University Hospitals Sussex NHS Trust East Page 13 
+ 7.8 NICE recommends that any woman with diabetes or gestational diabetes may 
+need to have a variable rate insulin infusion when receiving corticosteroids for 
+threatened pre -term labour.ward). Women already on insulin will need to be 
+admitted to labour ward for a sliding scale. For women with gestational 
+diabetes on diet or metformin only, please refer to MP018 Diabetes In 
+Pregnancy. 
+8 Tocolysis 
+ 
+8.1 A continuous CTG should be started prior to giving nifedipine and then 
+continued for at least 2 hours until the loading doses are given. 
+8.2 If tightening’s have not settled despite treatment then discuss with the 
+consultant on call. 
+8.3 The decision to give tocolytic drugs should be taken by the obstetric registrar 
+or consultant. 
+8.4 Tocolytics should not be used when there is a contraindication to delaying 
+delivery e.g. pre -eclampsia, antepartum haemorrhage or chorioamnionitis. 
+8.5 The use of nifedipine is contraindicated when there is severe hypovolaemia 
+e.g. in maternal sepsis or if there is a cardiac problem such as cardiomyopathy, 
+angina or recent MI. In the presence of any suspected contraindication contact 
+the obstetric consultant on call. N.B Nifedipine should be used with caution 
+when using magnesium sulphate. 
+8.6 Nifedipine regime 
+ 
+Stat dose 10mg Nifedipine Capsule (rapid acting) and 20mg Nifedipine MR 
+tablet (slow acting) PO stat 
+Regimen 10mg Nifedipine Capsule (rapid acting) PO every 15 minutes until 
+contractions cease or the maximum of 4 doses/40mg is reached. 
+This 40mg does NOT include the 10mg in the stat dose (50mg in 
+total 
+Maintenance dose 20mg Nifedipine MR Tablet (slow acting) PO 8 -12 hourly for 48 
+hours. The first dose should administered 8 hours after the stat 
+dose 
+ Pre-Term Labour (RSCH PRH only ) MP031 
+ 
+University Hospitals Sussex NHS Trust East Page 14 
+ 8.6.1 The aim of the maintenance dose is to maintain uterine quiescence 
+for the duration of in -utero transfer, or for 24 hours post 
+administration of the final dose of corticosteroids. 
+8.6.2 During treatment the midwife caring for the woman should use a 
+MEOWS chart to record observations (particularly blood pressure) 
+every 15 minutes for the first 2 hours, and then 4 hourly. 
+9 Magnesium Sulphate and Neuroprotection of the Fetus 
+9.1 Women a t risk of early preterm (<30/40 ) imminent birth may be considered. 
+Magnesium Sulphate ( Magnesium Sulphate) should be considered when one 
+or more of the following features are present: 
+9.1.1 There is suspected preterm labour (< 30 weeks) with a high risk of 
+delivery within 2 weeks according to a fetal fibronectin test (value 
+greater than 500) 
+9.1.2 Delivery below 30 week is being considered electively because of 
+maternal or fetal compromise 
+9.1.3 There is suspected preterm labour below 30 weeks and a FFN test was 
+not possible (e.g. premature rupture of the membranes) 
+9.2 The decision to use Magnesium Sulphate for fetal neuroprotection of the 
+preterm infant should be made by a Consultant Obstetrician. Delivery should 
+not be delayed for discussion or Magnesium Sulphate administration if there 
+are fetal or maternal indications for emergency delivery. 
+9.3 Magnesium Sulphate should be given in accordance with the protocol used for 
+the treatment of severe pre -eclampsia (MP019 Hypertensive diseases). The 
+following protocol for dosing and observations should be followed: 
+9.3.1 There is no clear consensus regarding the optimal dosing of 
+Magnesium Sulphate and therefore should be given in line with local 
+Magnesium Sulphate in Pre -eclampsia guidelines so as not to 
+introduce unnecessary confusion. To reduce risk of side effects, the 
+loading dose should be given over a longer period i.e. 20 -30min. 4g 
+loading dose, followed by 1g/hr. 
+ 
+ Loading Dose Maintenance Dose 
+4g Magnesium Sulphate (8mls of 50% 
+solution) 
+ 
+Mixed with 12 ml Sodium Chloride 0.9% 
+for injections 
+ 
+I.V. over 5 mins 10g Magnesium Sulphate (20mls) 
+ 
+Mixed with 30mls Sodium Chloride 0.9% 
+for injection to total volume 50ml 
+ 
+Infusion to run at a rate of 5mls/hour 
+(1g/hour) Pre-Term Labour (RSCH PRH only ) MP031 
+ 
+University Hospitals Sussex NHS Trust East Page 15 
+ 9.3.2 Regular measurement (at least hourly) of: BP, reflexes, respiratory 
+rate, urine output and VIP (venous infusion phlebitis) score. 
+9.3.3 It is only necessary to measure serum magnesium levels if toxicity is 
+suspected (therapeutic range 1.5 -3.0mmol/L) 
+9.3.4 The Magnesium Sulphate infusion should be stopped if: knee reflexes 
+are absent, urine output < 100mls/4 hours, respiratory rate < 12 
+breaths/min 
+9.4 The 2008 Cochrane Review (Doyle et al, 2008) concluded that antenatal 
+magnesium sulphate therapy given to women at risk of preterm birth 
+substantially reduces the risk of cerebral palsy in their children (RR 0.68, 95% 
+CI 0.54 to 0.87; five trials, 6145 infants). Despite this, there have been limited 
+changes in clinical practice across the UK and, although acknowledged, the 
+RCOG have not wholeheartedly endorsed standardised preventative treatment 
+with Magnesium Sulphate. The SAC Opinion Paper 29 (RCOG, 2011b) offered: 
+data from one study showing adverse neonatal outcomes following 
+magnesium sulphate; the lack of a statistically significant difference in primary 
+outcome measures from all the randomised controlled trials; and the large 
+number needed to treat for benefit (63 to benefit 1), as likely reasons for 
+reluctance in universally adopting this practice. 
+9.5 If Magnesium Sulphate is commenced for neuroprotection, tocolysis should be 
+ceased (as Magnesium Sulphate is itself a tocolytic). Hence Nifedipine therapy 
+should be stopped. (Please see Maternity Protocol MP019 – Hypertensive 
+Disease). 
+9.6 Magnesium Sulphate should be ceased if delivery is no longer imminent or 
+24hrs of therapy has been reached. 
+9.7 There is insufficient evidence to mandate a repeat course of Magnesium 
+Sulphate for fetal neuroprotection later in the pregnancy if delivery does not 
+occur, however it is reasonable to consider repeating the course if delivery 
+seems likely at a later date and the patient is still <30+0. 
+ 
+10 Mode of Delivery and Fetal Monitoring 
+10.1 If labour progresses despite treatment or active labour is diagnosed, confirm 
+presentation with USS and discuss mode of delivery with the Consultant 
+obstetrician. 
+10.2 A discussion with the woman about delivery should be clearly documented in 
+the notes by the senior obstetrician. The neonatal team should be involved in 
+decision making. This should include evidence of discussion an d decisions 
+about the following, 
+ Pre-Term Labour (RSCH PRH only ) MP031 
+ 
+University Hospitals Sussex NHS Trust East Page 16 
+ 10.2.1 Whether or not the woman will have continuous CTG in labour: 
+This will depend on gestation and other factors such as infection that 
+may affect the neonate’s chance of survival. In normal circumstances 
+CTG monitoring should be standard from 26+0 gestation, but can be 
+considered from 24+0 weeks. It should be taken into consideration 
+that a decision to offer CTG monitoring in labour is synonymous with 
+an agreement to deliver by caesarean section if the CTG becomes 
+abnormal. The risks to the woman (and any future pregnancies she 
+may have) of very preterm caesarean section should be discussed and 
+documented, including the unclear benefits to the baby at very 
+preterm gestations. After this discussion, there should be clear 
+documentation on monitoring and mode of delivery agreed if a CTG 
+becomes abnormal 
+10.3 The role of the neonatal team at delivery and what to expect 
+10.3.1 If gestation is < 27+6, the woman and family should be offered the 
+appropriate neonatal information leaflet (see appendix: B, C, D & E)
+ 
+10.3.2 All women in threatened preterm or preterm labour <34 weeks 
+gestation should be offered a neonatal review for counselling. At 
+gestations of <27+6, this review should ideally be joint with obstetrics 
+to allow full discussion on whether active management is appropriate 
+(see section 2.9 ) 
+10.4 Preterm vaginal delivery is a high risk labour so the following are 
+recommended: 
+10.4.1 Experienced midwife or doctor to deliver 
+10.4.2 Larger delivery room where possible 
+10.4.3 Continuous CTG from 26+0, where it has been decided that active 
+management is appropriate 
+10.4.4 IV antibiotics be routinely offered for neonatal Group B Strep 
+prevention required (NEW: RCOG 2017) in all preterm labours <36+6 
+ 
+First Line 
+Benzylpenicillin IV infusion 3g then 
+Benzylpenicillin IVI 1.5g every FOUR HOURS until delivery 
+Penicillin allergy 
+Cefuroxime IV STAT 1.5g then 
+Cefuroxime IV 750mg every EIGHT HOURS until delivery 
+Severe Penicillin allergy (e.g. anaphylaxis, angioedema or respitory distress) Pre-Term Labour (RSCH PRH only ) MP031 
+ 
+University Hospitals Sussex NHS Trust East Page 17 
+ Vancomycin IV 1g STAT (as per trust guidance) 
+Vancomycin every TWELVE HOURS until delivery 
+refer to Micro guide 
+ 
+10.4.5 Avoid FBS fetal blood sampling (FBS) and fetal scalp electrode (FSE) if 
+<34/40 as lack of clotting factors 
+10.4.6 Membranes left intact provided progress normal – risk of cord 
+prolapse secondary to unstable lie. 
+10.4.7 Short second stag e (one hour, consider Oxytocin ) 
+10.4.8 If an instrumental delivery is required, ventouse is absolutely contra -
+indicated at <34/40 gestation . Forceps may be considered depending 
+on the circumstances as there is no evidence for a lower gestational 
+limit for use of forceps. Forceps may also be considered for the after 
+coming head of the preterm breech baby. 
+10.4.9 Neonatal support (at RSCH this should be the middle grade plus 
+nursing support) at delivery - if possible delay cord clamping and 
+perform milking of cord (PRH this should be an ANNP plus nursing 
+support) 
+10.4.10 Cord gases 
+10.4.11 Try to avoid giving opiates in labour as this may further 
+suppress respiratory effort in the preterm neonate. 
+ 
+10.5 Caesarean Section: 
+10.5.1 Please see MP050: Caesarean Section (LSCS) 
+10.5.2 Only after discussion with consultant obstetrician on call – see section 
+above 
+10.5.3 Routine caesarean is not recommended for pre -term breech 
+presentation as there is no current evidence that it improves 
+outcomes for the neonate. The risk of complications such as head 
+entrapment should be discussed and weighed against the risks of 
+caesare an section (see MP046 Management of Breech ) 
+ Pre-Term Labour (RSCH PRH only ) MP031 
+ 
+University Hospitals Sussex NHS Trust East Page 18 
+ 10.5.4 Delivery may be difficult at early gestations – consider extending 
+incision or opting for classical scar (this is a consultant decision). J -
+incisions or classical caesarean scars may carry increased risks to 
+future pregnancy. The increased risks of caesarean section at early 
+gestations should be discussed with the pregnant person or woman 
+and taken into account when deciding on mode of delivery 
+10.5.5 Keep Neonatal team informed of progress in labour and estimated 
+time of delivery. 
+
+References 
+ 
+Preterm labour and tocolytic drugs, Green -top guideline 1B, RCOG (Feb 2011) 
+ 
+Preterm Labour and Birth, NICE Guideline no. 25, Nov 2015 
+ 
+Preterm prelabour rupture of membranes, Green -top guideline 44, RCOG (Oct 2010) 
+ 
+Antenatal corticosteroids to reduce neonatal morbidity, Green -top guideline 7, RCOG 
+(Oct 2010 ) 
+ 
+Group B Strep green topPrevention of Early -onset Neonatal Group B Streptococcal 
+Disease, Green -top Guideline no. 36, BJOG 2017 
+ 
+ NICE Guideline – Antenatal Ccare, NICE Guideline CG62 Jan 2017(June 2010) 
+ 
+ NICE Guideline – Intrapartum Ccare, NICE Guideline CG120 Feb 2017 
+ 
+ NICE Guideline – Diabetes mellitus Iin Ppregnancy, NICE Guideline NG3, Aug 2015 
+ Abbott DS, Radford SK, Seed PT, et al. (2012) Evaluation of a quantitative fetal 
+fibronectin test for spontaneous preterm birth in symptomatic women. Am J Obstet 
+Gynecol 2012;208 
+ 
+ Doyle LW, Crowther CA, Middleton P, Marret S, Rouse D. Magnesium sulphate for 
+women at risk of preterm birth for neuroprotection of the fetus. Cochrane Database 
+of Systematic Reviews 2009, Issue 1. Art. No.: CD004661. DOI: 
+10.1002/14651858.CD004661.pub3. 
+ 
+Magnesium Sulphate to Prevent Cerebral Palsy following Preterm Birth Scientific 
+Impact Paper No. 29. RCOG press. August 2011 . 
+
+ Pre-Term Labour (RSCH PRH only ) MP031 
+ 
+University Hospitals Sussex NHS Trust East Page 19 
+ Appendix A : Perinatal management of Extreme preterm birth before 27 weeks 
+of gestation 
+
+Pre-Term Labour (RSCH PRH only ) MP031 
+ 
+University Hospitals Sussex NHS Trust East Page 20 
+ 
+Pre-Term Labour (RSCH PRH only ) MP031 
+ 
+University Hospitals Sussex NHS Trust East Page 21 
+
+Pre-Term Labour (RSCH PRH only ) MP031 
+ 
+University Hospitals Sussex NHS Trust East Page 22 
+ Appendix B: PIL - Expecting a very Premature Baby 
+Appendix C: PIL – For parents babies born early around 20 to 22 
+Weeks 
+Appendix D: PIL - For parents ba bies born early around 23 to 24 
+Weeks 
+Appendix E: PIL - For parents babies born at around 25 Weeks

@@ -1,0 +1,1616 @@
+# Extracted from: CG1116 Fetal Heart Monitoring & Sampling.pdf
+# Guideline ID: cg1116-fetal-heart-monitoring-sampling
+# Content length: 80163 characters
+# Processing date: 1750066899.8858397
+
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 1 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+
+ Fetal Heart Monitoring (including Fetal Blood Sampling) 
+Summary statement: How does the 
+document support patient care? The purpose of this guideline is to provide good 
+practice evidence for staff with regard to fetal 
+heart rate monitoring. 
+Staff/stakeholders involved in 
+development: Labour Ward Leads (Obstetric and Midwifery), Audit 
+and Fetal wellbeing Practitioners. 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Fetal Well -being Practitioner/Obstetric Consultants 
+For use by: All Medical and Midwifery staff 
+Purpose: To provide evidence based guidance on fetal 
+monitoring and the use of fetal blood sampling 
+during labour. 
+This document supports: NICE CG190 (2017) Intrapartum care for healthy 
+women and babies 
+RCOG 
+Saving Babies Lives Care Bundle v2 2019 
+Key related documents: UH Sussex (SRH&WH) Maternity Guidelines: Care 
+of Women in Labour, Induction of Labour and Use of 
+Oxytocin, Caesarean Section. 
+Approved by: Joint Obstetric Guideline Group 
+Approval date: 17th January 2024 Date uploaded: 20th March 2024 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors CDAG – Clinical Document Approval Group 
+Ratification Date: 20th February 2024 
+Expiry Date: October 2025 
+Review date: May 2025 
+If you require this document in another format such as Braille, large print, 
+audio or another language please contact the Trusts Communications Team 
+Reference Number: CG1116 
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 2 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+ 
+Version Date Author Status Comment 
+1.0 November 
+2010 Labour ward 
+Coordinators Archived New Trust wide guideline 
+2.0 February 2011 CNST Lead Midwife Archived Admin update 
+3.0 May 2011 CNST Team Archived Amendments made to clinical 
+response to classification of 
+CTGs and information to 
+record at start of CTG 
+4.0 December 
+2011 CNST Midwife Archived Minor amendments to data at 
+start of CTG and cord blood 
+procedure 
+5.0 October 2012 CNST Midwife Archived Minor amendments including 
+CNST 2012 -13 updates and 
+new CTG assessment sticker 
+5.1 November 
+2013 CNST Midwife Archived 3 year review: minor 
+amendments and addition of 
+antenatal CTG assessment 
+sticker 
+5.2 May 2014 Patient Safety 
+Midwife Archived Addition of IOL for maternal / 
+fetal concerns to continuous 
+EFM in labour 
+5.3 October 2016 Clinical Effectiveness 
+Midwife Archived Addition of Dawes/Redman 
+Criteria and NICE Guidance 
+5.4 Jan 2017 Clinical Effectiveness 
+Midwife Archived Updated from NICE review Nov 
+2016 CTG classification 
+6.0 March 2017 Clinical Effectiveness 
+Midwife 
+Labour Ward 
+Consultan ts Archived NICE guidance CG190 
+updated Feb 2017 included 
+7.0 May 2021 S. Thompson, Fetal 
+Wellbeing 
+Practitioner 
+N. Ma guire & 
+S. Das, Labour Ward 
+Consultants Archived NHS England: Saving Babies’ 
+Lives Care Bundle - SBLCB 
+part 4 
+Huntleigh Diagnositics: Dawes -
+Redman CTG Analysis 
+8.0 October 2022 H. Close & N. Jarvis 
+Fetal Well Being 
+Midwives Archived Review by Fetal Wellbeing 
+Midwives. Amendments made 
+to include 26/40 CTG, IIA , 
+TREND and escalation 
+pathway 
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 3 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+ 
+The interpretation and application of clinical guidelines will remain the responsibility 
+of the individual clinician. If in doubt contact a senior colleague or expert . 8.1 March 2023 H.Close & N.Jarvis 
+Fetal Wellbeing 
+Midwives Archived 6.0 - Deviations from normal in 
+community setting to be 
+referred in to labour ward. 
+6.1- Addition to Dawes 
+Redman Criteria Use during 
+Induction of Labour . 
+New flow chart 
+8.2 January 2024 CE Team, 
+H. Close, N. Jarvis 
+Fetal Wellbeing 
+Midwi ves LIVE Amended to align with NICE 
+NG229 Fetal Monitoring 
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 4 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+
+Contents 
+ 
+1.0 Introduction ................................ ................................ ................................ ................ 6 
+2.0 Scope ................................ ................................ ................................ ........................ 6 
+3.0 Roles & responsibilities ................................ ................................ .............................. 6 
+4.0 Definitions and abbreviations used in this guideline ................................ ................... 7 
+5.0 Types of fetal monitoring ................................ ................................ ........................... 7 
+6.0 Antenatal fetal heart monitoring ................................ ................................ ................. 8 
+6.1 Dawes Redman Criteria ................................ ................................ ............................. 8 
+6.2 Contraindications to CTG ................................ ................................ ........................... 9 
+7.0 Equipment ................................ ................................ ................................ ................. 9 
+8.0 Labour fetal heart monitoring following low risk pregnancy Intelligent Intermittent 
+Auscultation ................................ ................................ ................................ ............... 9 
+8.1 Maternal and birthing parent request for CTG in low risk pregnancy ........................ 10 
+9.0 Indications for the use of continuous intrapartum electronic fetal monitoring ........... 11 
+9.1 The following table gives indications for continuous CEFM in labour: ...................... 11 
+9.2 CEFM with epidural analgesia - including patient controlled epidural analgesia ....... 12 
+10.0 CEFM and record keeping ................................ ................................ ....................... 13 
+10.1 Information to be recorded at start of the CTG ................................ ......................... 13 
+10.2 Documentation requirements during labour CTG monitoring ................................ ... 13 
+10.3 Information to be recorded at end of labour CTG ................................ ..................... 13 
+10.4 Documentation requirements when changed from IA to CEFM ................................ 13 
+10.5 TREND Analysis Function in labour ................................ ................................ ......... 14 
+11.0 Risk management ................................ ................................ ................................ .... 14 
+12.0 Interpretation and classification of EFM ................................ ................................ ... 15 
+12.1 Human Factors relating to CTG interpretation ................................ .......................... 15 
+12.2 Interpretation of CTG including ‘Fresh Eyes’ ................................ ............................ 16 
+12.3 Second stage of labour considerations a nd CTGs ................................ ................... 16 
+12.4 Full Description of cardiotocograph trace features and management ....................... 18 
+12.5 Clinical response to classification of CEFM ................................ .............................. 25 
+12.6 Escalation of concerns ................................ ................................ ............................. 25 
+13.0 Poor CTG quality ................................ ................................ ................................ ..... 26 
+14.0 Fetal blood sampling (FBS) ................................ ................................ ..................... 26 
+14.1 Criteria for considering fetal blood sampling ................................ ............................ 26 
+14.2 Contraindications ................................ ................................ ................................ ..... 26 
+14.3 Procedure ................................ ................................ ................................ ................ 27 
+15.0 Paired cord sampling ................................ ................................ ............................... 28 
+15.1 Procedure for taking cord blood ................................ ................................ ............... 29 
+16.0 Training ................................ ................................ ................................ ................... 29 
+17.0 Monitoring ................................ ................................ ................................ ................ 30 
+References ................................ ................................ ................................ ......................... 30 
+Appendix 1: Dawes Redman Criteria ................................ ................................ .................. 32 
+Appendix 2: Dawes Redman Criteria - reasons for criteria not met codes and 
+management ................................ ................................ ................................ ............ 33 
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 5 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+Appendix 2 continued: Huntleigh Diagnostics Quick User Guide ................................ ......... 34 
+Appendix 3: FBS flowchart ................................ ................................ ................................ .. 37 
+Appendix 4: How to perform IIA Intelligent Intermittent Auscultation ................................ .... 38 
+Appendix 5: Escalation of concerns ................................ ................................ .................... 39 
+Appendix 6: Dawes -Redman escalation flow chart ................................ .............................. 39 
+Appendix 7: Recommendation regarding use of Dawes Redman ................................ ........ 41 
+Appendix 8: Labour CTG assessment sticker for use in downtime ................................ ...... 42 
+Appendix 9: Antenatal CTG assessment sticker for use in downtime ................................ .. 43 
+ 
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 6 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+Fetal Heart Monitoring Guideline 
+
+1.0 Introduction 
+ 
+To provide evidence -based guidance for Midwives and Obstetricians during the antenatal 
+and intrapartum period with regard to: 
+ 
+ Intermittent Auscultation (including an introduction to Intelligent intermittent 
+auscultation) 
+ Continuous Electronic Fetal Monit oring 
+ Fetal blood sampling 
+ Cord blood sampling 
+ 
+The indications for and the method of fetal monitoring should always be discussed with the 
+pregnant woman and person as they have the right to make informed choices regarding their 
+care or treatment. These ch oices should be recognised as an integral part of the decision 
+making process. 
+ 
+The woman and person’s decision about fetal monitoring during labour should be supported. 
+Birthing companion(s) should be included in these discussions if appropriate, and if that is 
+what the woman/person wants. These discussions and decisions should be documented on 
+MIS. 
+ 
+Confirm with the woman and person which method of fetal monitoring has already been 
+advised antenatally. 
+ 
+Prior to any form of fetal heart rate monitoring, the pregnant woman and person’s pulse 
+should be palpated for 1 minute in order to differentiate between pregnant woman and 
+person’s and baby’s, and then documented on MIS. The assessment of fetal wellbeing is 
+only one component of intrapartum care. It is an important area where due consideration 
+must be given to pregnant woman and person’s preference and priorities in the light of 
+potential risk factors to both pregnant woman and person and baby . 
+
+2.0 Scope 
+ 
+This guideline applies to: 
+ Midwives 
+ Obstetric ians 
+
+3.0 Roles & r esponsibilities 
+ 
+Midwives & Obstetricians: 
+ To access, read, understand and follow this guidance . 
+ To use their professional judgement in application of this guideline . 
+ 
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 7 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+Management: 
+ 
+ To ensure the guideline is reviewed as required in line with Trust and National 
+recommendations . 
+ To ensure the guideline is accessible to all relevant staff. 
+
+4.0 Definitions and a bbreviations used in this guideline 
+ 
+BPM Beats Per Minute FSE Fetal Scalp Electrode 
+FHR Fetal Heart Rate CTG Cardiotocograph 
+IA Intermittent Auscultation CEFM Continuous E lectronic Fetal M onitoring 
+RCT Randomized Control Trials FBS Fetal Blood Sampling 
+CS Caesarean Section IIA Intelligent Intermittent Auscultation 
+MIS Maternity Information System FH Fetal Heart 
+ADAU Antenatal Day Assessment Unit CLS Central Labour Suite 
+IOL Induction of Labour RFM Reduced Fetal Movements 
+SGA Small for Gestational Age STV Short Term Variability 
+
+5.0 Types of fetal monitoring 
+ 
+Intermittent Auscultation (IA) - is a systematic method of listening to fetal heart tones with 
+a Pinards stethoscope or a hand -held Doppler, paying attention to Baseline rate, and 
+recording accelerations and decelerations if heard (In line with NICE guidance ) 
+ 
+Intelligent Intermittent A uscultation (IIA) – This method uses the same principles as 
+Intermittent Auscultation however includes a holistic approach to maternal and birthing 
+parent and fetal well -being, to include recognition of clinical findings and risk factors 
+(chandaharan 2010) The aim of Intelligent Intermittent Auscultation is to detect deviations 
+from the norm that may suggest a possible fetal compromise or identify a fetus requiring a 
+more intensive assessment (Lewis and Downe 2015) . 
+ 
+Continuous Electronic Fetal M onitoring (CEFM) – Cardiotocography (CTG) records 
+changes in the fetal heart rate and their relatio nship to uterine contractions. CTGs are to be 
+performed from 26 weeks gestation . CEFM is a screening tool for hypoxia and does not 
+replace the need for accurate clinical observations on which decisions should be made in 
+conjunction with the CTG. 
+ 
+Computerised CTG (cCTG ) – allows an analysis of different patterns to be graded in a 
+standardised and consistent way. It uses the computerised numerical analysis of the CTG 
+drawing on experience from archived records applying the Dawes Redman criteria. It can 
+eliminate the problems associated with individual visual interpretation. However the final 
+clinical judgements should be based on the entire clinical assessment with computerised 
+CTG forming a part of this holistic approach to pregnancy management. 
+
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 8 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+6.0 Antenatal fetal heart monitoring 
+ 
+Although antenatal auscultation of the fetal heart (FH) is not routinely clinically indicated, it 
+can support confirmation of fetal wellbeing and reassure the mother and birthing parent . It 
+can be offered from 16 weeks at antenatal appointments, and failure to hear the FH should 
+be followed up by an ultrasound scan at the earliest opportunity. Any abnormalities detected 
+in a community setting during auscultat ion should be referred into ADAU/ Delivery Suite. 
+Oral fluids to improve the fetal heart rate are not recommended. 
+ 
+Where CTG monitoring is required during the antenatal period or prior to established labour, 
+the antenatal CTG assessment should be completed and referral made according to 
+outcome findings . A computerised assessment to include Dawes -Redman analysis should 
+be used for all antenatal CTG’s unless contraindicated – see 6.2 
+ 
+If a CTG is visibly abnormal, classified as abnormal or does not meet Dawes -Redman 
+criteria then it must be reviewed by the obstetric team. If a woman and person has a CTG 
+that is classified as abnormal in any area other than labour ward they must be transferred to 
+ADAU/ labour ward for continuous CTG and review. 
+ 
+6.1 Dawes Redman Criteria 
+ 
+The Dawes Redman Criteria for normality is based on over 10 0,000 CTG traces, linked to 
+outcomes and can be used for antenatal traces where the fetal gestation is between 26+0 
+weeks and term and is associated with a significant reduction in perinatal mortality compared 
+with clinical CTG interpretation ( Appendix 1 ). Dawes -Redman analysis can be used for 
+gestations from 26 weeks, however although the analysis is valid it is not as precise as when 
+carried out at later gestations. (Redman et al 2022) 
+ 
+ If the CTG meets the Dawes Redman Criteria: It can be discontinued as long as 
+the clinician has assessed the CTG and clinical picture as a whole . Unless there 
+are other clinical concerns, for example maternal and birthing parent systemic 
+illness, ongoing b leeding or uterine pain, the CTG can be stopped. Ensure the 
+correct button is pressed in order for the printer to produce a report of the 
+analysis. A single midwife/clinician can sign and date the print out when the 
+Dawes Redman Criteria are met. 
+ Duration of Dawes -Redman criteria : If CTG is normal and the criteria met, this 
+can be stopped after 10 minutes. 
+ If the Dawes Redman Criteria is not met by 10 minutes: The CTG should 
+continue for up to the maximum record length of 60 minutes. Between 10 -60 
+minutes, once it meets the criteria it can be stopped . If the CTG is classified as 
+abnormal on an antenatal sticker the CTG should be continued and escalated to 
+an obstetrician. 
+ If the criteria have not met by 60 minutes: Obstetric review and discussion with 
+consultant regarding plan of care , this may include a repeat CTG depending on 
+the individual clinical picture . Please see Appendix 4 for management guidance 
+when criteria not met . 
+ Induction of Labour. Dawes -Redman ana lysis can be used during induction of 
+labour as long as there is no palpable or reported uterine activity, i.e. before and 
+after insertion of a cervical ripening balloon and before and after insertion of 
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 9 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+dinoprostone (Prostin or Propess). It is not to be used after spontaneous /artificial 
+rupture of membranes . 
+ 
+6.2 Contraindications to CTG 
+ 
+ Gestation <26 weeks 
+ Latent phase of labour 
+ Ongoing Induction of labour after administration of prostaglandi ns 
+ 
+7.0 Equipment 
+ 
+ For intermittent auscultation a Pinard ’s stethoscope is preferred or a handheld 
+fetal Doppler could be used. There is evidence that the Pinard’s stethoscope 
+reduces the potential for confusing maternal and fetal heart rates and for this 
+reason its use is recommended before starting IA /IIA or CEFM. It can continue to 
+be used for IA /IIA as appropriate. The operator must be trained in its use. 
+ For continuous electronic fetal monitoring a CTG monitor should be used. The 
+operator must be trained in its use. 
+ When starting a CTG, the operator must check that it is set to print at 1cm/minute 
+and also show the correct date and time (See sect ion 10.1). 
+ Do not rely solely on the CTG trace for fetal wellbeing and be aware of its 
+limitations and artefacts, such as double maternal and birthing parent heart rate 
+being displayed. The maternal and birthing parent pulse rate should be recorded 
+at least hourly . As well as palpating the maternal and birthing parent pulse it 
+may be helpful to use the pulse oximetry to record maternal and birthing 
+parent pulse, es pecially at the start of the CTG . If there are any concerns 
+with erroneous recording of the maternal and birthing parent heart rate a 
+maternal birthing parent pulse oximeter should be used. Remember that by 
+the time confusion is considered we may have been monitoring the maternal 
+and birthing parent heart rate for some time. 
+ Confirm fetal heart rate using independent means, Pinard or hand held doppler; if 
+there is any clinical uncertainty refer to an obstetrician and consider an ultrasound 
+scan . 
+ 
+8.0 Labour fetal heart monitoring following low risk pregnancy Intelligent 
+Intermittent Auscultation 
+ 
+(See appendix 4 ) 
+For a pregnant woman and person who is healthy and has had an otherwise uncomplicated 
+pregnancy, intelligent intermittent auscultation should be offered as the recommended way 
+to monitor fetal wellbeing. This s hould be clearly recorded on MIS. 
+ 
+Initial auscultation of the fetal heart is recommended at first contact in the latent phase of 
+labour and at each further assessment undertaken. To date there are no studies to assess 
+the optimal frequency for IIA in low risk labours, in any birth setting but it should detect 
+potential concerns about fetal wellbeing and the possible need to transfer to CEFM. 
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 10 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+However, the literature suggests in the active stage of labour , intelligent intermittent 
+auscultation shou ld be performed immediately after a contraction by palpating the abdomen 
+(so not to miss a late deceleration) , for at least 60 seconds and at least: 
+ 
+ Every 15 minutes in the first stag e, or more often if any cause for concern or signs 
+of the second stage . 
+ Every 5 minutes in the passive and active second stage. 
+NICE CG190 (updated 2014) 
+ 
+The clinician should listen after a contraction and the heart rate should be recorded as a 
+single figure on the parto gram in beats per minute so that the baseline can by observed 
+overtime . Listening before, during and after a contraction is not recommended as routine 
+practice as it is more important assessing how the baby copes after the contraction. Women 
+and people need to be able to move freely during a contraction and to have interruptions 
+minimised. We should only consider listening in this way if we have concerns about the 
+baby’s heart rate over -accelerating following a contraction (tachycardic overshoot) which 
+shows that the baby is having to use extra resources to recover its heart rate to its baseline 
+following the contraction . 
+ 
+If the fetal heart gives rise for concern , such as an increase in the fetal heart rate (as plotted 
+on the partogram) of 20 beats a mi nute or more from the start of labour, or a deceleration is 
+heard , auscultate the fetal heart after three consecutive contractions. Carry out a full review, 
+taking into account the whole clinical picture including antenatal and existing or new 
+intrapartum risk factors, maternal and birthing parent observations, contraction frequency 
+(including hypertonus) and the progress of labour. 
+ 
+If concerns persist escalate to the coordinator and commence a CTG should be commenced 
+following discussion with the pregnant woman and person and their partner . This change 
+should then be documented on MIS . 
+ 
+The pregnant woman and person ’s pulse should be palpated at least hourly to differentiate 
+between the pregnant woman and person ’s and fetal heart rates and should be documented 
+on the partogram. If there is a suspected fetal heart rate pattern abnormality, the pulse rate 
+should be palpated sooner and documented with a plan of care. 
+ 
+Following commencement of CEFM, the partogram must be used. 
+ 
+8.1 Maternal and birthing parent request for CTG in low risk pregnancy 
+ 
+Explain the woman and person that if there are no identified risk factors for fetal 
+compromise: 
+ 
+ There is a risk of increased interventions with continuous CTG monitoring 
+compared with intermittent auscultation, which may outweigh the benefits 
+AND 
+ Advice given by their midwife or obstetrician on the method of fetal heart rate 
+monitoring will take into account the whole clinical picture. 
+
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 11 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+9.0 Indications for the use of continuous i ntrapartum electronic fetal 
+ monitoring 
+9.1 The following table gives indications for continuous CEFM in labour: 
+ 
+This list is not exhaustive and an individualised risk assessment must be made in each case. 
+Multiple ‘minor’ risk factors for fetal compromis e should be considered an indication for 
+CEFM. 
+Consider continuous CTG monitoring if, based on clinical assessment and multidisciplinary 
+review, there are concerns about other antenatal factors not listed below that may lead to 
+fetal compromise. 
+Be aware t hat intrapartum risk factors may increase the risk of fetal compromise, and that 
+intrapartum risk factors that develop as labour progresses are particularly concerning. 
+
+CEFM Required 
+ Antepartum haemorrhage . 
+ Breech presentation . 
+ Contractions that last longer than 60 seconds (hypertonus), or more than 5 
+contractions in 10 minutes (tachysystole). 
+ A reading of 2+ of protein on urinalysis and a single reading of either raised systolic 
+blood pressure (140 mmHg or more) or raised diastolic blood pressure (90 mmHg or 
+more). 
+ Hypertension: either systolic blood pressure of 140 mmHg or more or diastolic blood 
+pressure of 90 mmHg or more on 2 consecutive readings taken 30 minutes apart, 
+measured between contractions. 
+ Severe hypertension: a Single reading of either systolic blood pressure of 160 
+mmHg or more or diastolic blood pressure of 110 mmHg or more, measured 
+between contractions. 
+ Diabetes (pre -existing and/or on medication). 
+ During establishment of e pidural analgesia for at least 30 minutes, be recommenced 
+for a further 30 minutes following a bolus of ≥10mls. 
+ Fetal Growth Restriction or any other fetal risk factors or concerns. 
+ Reduced fetal movements before the onset of contractions. 
+ Induction of labour for maternal or fetal risk factors and concerns. 
+ Maternal and birthing parent medical disease e.g. essential hypertension, 
+cholestasis. 
+ Multiple pregnancy. 
+ Oligohydramnios. 
+ Oxytocin use. 
+ Pain reported by the pregnant woman and person that differs from the pain normally 
+associated with contractions. 
+ Previ ous CS. Birth after Caesarean section (BAC) Guideline 
+ Prematurity (under 37 weeks). 
+ Pregnancy over 42 weeks. 
+ Meconium stained liquor (If meconium present carry out full risk assessment and 
+discuss with the woman and birthing parent risks and benefits of CEFM ). 
+ Suspected chorioamnionitis or sepsis. 
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 12 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+ Prolonged rupture of membranes over 24 hours. 
+ Induction for post maturity. 
+ Confirmed delay in the first or second stage of labour. 
+ 
+Explanation must be given as to why this is being offered. If the trace is normal after 20 
+minutes, return to intermittent auscultation unless the pregnant woman and person asks to 
+stay on CEFM. 
+ 
+If the woman and person is on the Birth Centre and there are concerns with the fetal heart, 
+the CTG can be performed on the Birth Cent re in the expectation that it will be able to be 
+discontinued in 20 minutes, and normal care resumed. However if concerns persist, obstetri c 
+review and transfer to CLS are indicated. 
+ 
+Offer telemetry to any pregnant woman/person who needs CEFM during labour when 
+available and applicable. If telemetry not available , document discussion of risks with the 
+woman and birthing person if CEFM is declined on MIS . 
+
+9.2 CEFM with epidural analgesia - including patient controlled epidural analgesia 
+ 
+Offer CEFM to all women and people on insertion of regional analgesia (for example, an 
+epidural) for at least 30 minutes during establishment of a regional analgesia . If the CTG is 
+normal this can be discontinued and IA used unless there are other risk factors that 
+indication CEFM throughout labour or the woman and person wishes to continue with CEFM. 
+CEFM must be recommenced for a further 30 minutes following a bolus of 10mls or more , if 
+no concerns are highlighted, then IA can be resumed. ( NICE 2022 ) 
+
+ Consider CEFM 
+Reasons for transfer from IA to CEFM in labour 
+ Abnormal FHR (less than 100 bpm, greater than 160 bpm or any deceleration after a 
+contraction. 
+ Increase in baseline rate >20bpm 
+ Maternal and birthing parent pyrexia (defined as 38.0 °C once or 37.5 °C on two 
+occasions 1 hour apart). 
+ Maternal and birthing parent pulse over 120 beats/minute on 2 occasions , 30 minutes 
+apart or earlier if any other risks. 
+ Fresh bleeding developing in labour. 
+ The pregnant woman and person ’s request. 
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 13 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+10.0 CEFM and record keeping 
+10.1 Information to be recorded at start of the CTG 
+ 
+Record the following information at the start of the CTG (using a CTG commencement 
+sticker): 
+ Name 
+ Hospital number 
+ Date and time of commencement (Check CTG set time as pre-programmed and 
+adjust the clock on the wall to match) 
+ Clinical indication for CTG (for example IOL, RFM) 
+ Maternal and birthing parent pulse 
+ Fetal heart rate as ausc ultated by handheld fetal dopple r or pinard. 
+ Printed name of clinician 
+ Connect CTG to Sonic Centrale system and input patient details, once 
+discontinued discharge patient from system 
+
+10.2 Documentation requirements during labour CTG monitoring 
+ 
+Any intrapartum events that may affect the fetal heart should be noted at the time, on the 
+CTG using the pre -set buttons , and then signed, with the date and time noted on MIS (for 
+example, vaginal examination, FBS or insertion of an epidural ). 
+ 
+Any member of staff who is asked to provide an opinion on a trace should categorise the 
+tracing according to NICE (normal, non -reassuring or abnormal) and document their findings 
+on MIS . 
+ 
+All CTGs both antenatal and intr apartum need to be connected to the Sonic Centrale system 
+and once discontinued the patient must be discharged. 
+
+10.3 Information to be recorded at end of labour CTG 
+ 
+Following birth, the healthcare professional should sign and note the date, time and mode of 
+birth on the CTG trace, (using the end CTG sticker). 
+ 
+10.4 Documentation requirements when changed from IA to CEFM 
+ 
+In cases where fetal monitoring in labour ch anges from intermittent auscultation the reason 
+for the change should be documented on MIS . 
+
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 14 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+
+10.5 TREND Analysis Function in labour 
+ 
+This is available with all CTG machines for use as an aid to CTG classification in the first 
+stage of labour. It measures the feta l heart rate parameters at regular intervals and describes 
+the trace in a quantitative way. The use of TREND DOES NOT replace the need for skilled 
+interpretation of the trace or second signature and Fresh eyes review. It is intended to ass ist 
+in assessing the quantitative changes over a period of time in labour. 
+ 
+Trend measurements are performed at 15 minutes, and every 15 minutes thereafter. It fits a 
+baseline using the last 60 minutes of fetal heart data collected, then calculates the fol lowing 
+parameters: 
+ 
+ Baseline heart rate (bpm) for the last 60 minutes 
+ Baseline heart rate (bpm) for the last 15 minutes 
+ Deceleration size (beats) for the last 60 minutes 
+ Deceleration size (beats) for the last 15 minutes 
+ Short term variation (ms) for the last 60 minutes. 
+ 
+A confidence indicator is shown as High, Medium or Low. If the confidence indicator is 
+medium or high, the results reliably reflect the fetal heart rate pattern. If the confidence 
+indicator is L ow, interpret the results in relation to the appearance of the trace (Huntleigh 
+2016) 
+ 
+11.0 Risk management 
+ 
+Following birth, the CTG printed recording should be safely stored in an approved CTG 
+envelope and the date and time recorded on the front of the envelope. 
+ 
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 15 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+FHR traces should be kept for 25 y ears. In cases of concern or investigation FHR traces 
+should be photocopied and stored. FHR traces should remain with the medical notes at all 
+times. 
+
+12.0 Interpretation and classification of EFM 
+12.1 Human Factors relating to CTG interpretation 
+ 
+There are many variables which make CTG interpretation challenging . Gordon Dupont’s Dirty 
+Dozen encapsulates the human factors that can affect CTG interpretation concisely ): 
+
+1 Lack of communication 
+2 Complacency 
+3 Lack of knowledge 
+4 Distraction 
+5 Lack of team work 
+6 Fatigue 
+7 Lack of resources 
+8 Pressure 
+9 Lack of assertiveness 
+10 Stress 
+11 Lack of awareness 
+12 Norms 
+
+When reviewing Electronic Fetal Heart Rate monitoring Healthcare professionals must take 
+into account the full picture. Including the mother and birthing parent ’s history, stage and 
+progress in labour, any antenatal and intrapartum risk factors and any other signs the baby 
+may not be coping with labour. CTGs should not be viewed as a stand -alone investigation 
+(EachBaby Counts 2015). 
+ 
+It is well recognis ed that Human Factors impact CTG misinterpretation or mismanagement, 
+this highlights the importance of maintaining situational awareness and considering the 
+whole clinical picture. 
+ 
+The need to be able to interpret a fetal heart rate correctly is as crucial as empowering all 
+staff to professionally question the interpretation of others when required. Effective 
+communication requires both sharing concerns and listening within the team with the 
+absence of bou ndaries creative by hierarchy and differing roles. This can be demonstrated 
+through robust escalation management planning and documentation. Clinical staff should be 
+empowered to seek advice from a colleague who can give an unbiased perspective. Decision 
+making is more difficult when staff feel stressed and tired. A difference perspective improves 
+the chance of making a safe decision (RCOG 2018). Refer to Appendix 5: Escalation of 
+concerns 
+
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 16 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+12.2 Interpretation of CTG including ‘Fresh Eyes’ 
+ 
+In established labour, the CTG should be reviewed at least hourly using the CTG review on 
+MIS and peer reviewed by 2 clinicians (junior sta ff should have a more senior member of 
+staff review with them) . This should include a r eassessment of fetal/maternal and birthing 
+parent risk factors to ensure fetal wellbeing, and as well as an assessment of the CTG . The 
+findings, including classification, must be documented on the CTG review on MIS . Use the 
+annotation on the CTG machine where available. If writing on the trace, take care not to 
+cover any printing on the paper. 
+ 
+Any loss of contact should be recorded on MIS , such as a change of position or when the 
+trace is on hold due to going to the toilet etc. If there is persistent los s of contact , consider 
+the use of FSE if not contraindicated. 
+ 
+This interpretation of the trace is guided by the NICE interpretation which includes baseline 
+rate, baseline rate variability, accelerations and decelerations. 
+ 
+During episodes of abnormal FHR patterns when the pregnant woman and person is lying 
+supine they should be advised to adopt the left -lateral position. 
+ 
+Any CTG abnormality in labour must not be interpreted in isolation but with all clinical 
+features of the case considered. All changes to the progress of labour, volume and colour of 
+liquor, general condition and any medication administered should be documented on MIS . 
+ 
+With regard to the use of pregnant woman and person facial oxygen therapy for fetal 
+compro mise, prolonged use maybe harmful to the fetus (baby) and should be avoided; 
+however there is no research evidence evaluating the benefits or risks associated with its 
+short -term use . 
+ 
+IV fluid boluses for CTG abnormalities should be avoided unless there is evidence of 
+maternal and birthing parent hypotension and/or dehydration. There is limited evidence to 
+support the use of repeated fluid boluses. There remains an increased risk of maternal and 
+birthing parent fluid overload leading to hyponatremia (see CG21009 Maternity Fluid 
+Management as an In -patient or During Labour Guideline) 
+ 
+Clinicians should take into account the time that it will take to achieve birth by both 
+instrumental vaginal birth and caesarean birth when making decisions regarding concern 
+over fetal wellbeing during labour. 
+ 
+12.3 Second stage of labour considerations and CTGs 
+ 
+During 2nd stage (including both passive and active stages) the CTG should be monitored 
+more closely, review with fresh eyes every half hour and timely referral made in the case of 
+any abnormality. 
+ 
+Take into ac count that interpretation of CTG traces in the second stage of labour is more 
+challenging than in the first stage of labour. Have a lower threshold for seeking a second 
+opinion or assistance. 
+ 
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 17 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+Ensure the fetal heart rate is differentiated from the maternal and heart rate at least once 
+every 5 minutes. 
+ 
+If fetal heart rate accelerations are recorded, be aware these are most likely to be maternal 
+and birthing parent pulse. Consider monitoring the baby with a fetal scalp electrode if there is 
+concern about confusing the heart rates, but if this cannot be achieved expedite birth. 
+ 
+If fetal heart rate decelerations are recorded, look for other signs of hypoxia (for example, a 
+rise in the baseline fetal heart rate or a reduction in variability). 
+ 
+Take into acco unt that onset of hypoxia is both more common and more rapid in the active 
+second stage of labour. Take an increase in the baseline fetal heart rate of 20 beats a minute 
+or more as a red feature in active second stage labour. 
+ 
+If CTG concerns arise in the active second stage of labour: 
+ 
+ Obtain an obstetric review. 
+ Consider discouraging pushing and stopping any oxytocin infusion to allow the 
+baby to recover, unless birth is imminent. 
+ Agree and document a clear plan with time limits for the next review. 
+
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 18 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+12.4 Full Description of cardiotocograph trace features and management 
+ 
+NICE ( NICE 2022 ) recommendations for interpretation of intrapartum FHR features are as follows : 
+ 
+Overall care 
+ Use CTG review on MIS along with a systematic assessment of the condition of the pregnant woman and person and unborn 
+baby, by the midwife caring for them and a second practitioner for “fresh eyes” rotating who this is to support objectivity. 
+ Every hour in the first stage and 30 mins in the second stage or more frequently if there are concerns. 
+ Do not make any decision about a pregnant woman and person ’s care in labour on the basis of CTG findings alone. 
+ Take into account the pregnant woman and person ’s preferences, parity, any anten atal and intrapartum risk factors, the current 
+wellbeing of the pregnant woman and person and unborn baby and the progress of labour. 
+ Ensure that the focus of care remains on the pregnant woman and person rather than the CTG trace. 
+ Remain with the pregnant woman and person in order to continue providing one -to-one support. 
+ Talk to the pregnant woman and person and their birth companion(s) about what is happening and take their preferences into 
+account. 
+ 
+Principles for intrapartum CTG trace interpretation 
+ When reviewing the CTG trace, assess and document contractions and all 4 features of fetal heart rate: baseline rate; baseline 
+variability; presence or absence of decelerations (and concerning characteristics of variable decelerations* if present); pre sence 
+of accelerations. 
+ If there is a stable baseline fetal heart rate between 110 and 160 beats/minute and normal variability, continue usual care a s the 
+risk of fetal hypoxia is lower. NB Consider gestational age for baseline rate variations . 
+ If it is difficu lt to categorise or interpret a CTG trace, obtain a review by a senior midwife or a senior obstetrician. 
+ 
+Rising Baseline Rate 
+ Normal baseline rate is between 110 -160bpm, however a change in baseline rate of more than 20bpm warrants 
+further consideration. Note a rising baseline rate even within normal range may be of concern if other non - 
+reassurin g /abnormal features exist. 
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 19 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+ It is important to consider the trend overtime. For example a FHR of 150bpm may be within the normal range, 
+but an increase from a ba seline rate of 110bpm from the beginning of the CTG to 150bpm needs to be taken 
+seriously to exclude evolving hypoxia and infection. 
+ Compare baseline rates of previous CTGs 
+Variability 
+Cycling is a sign of fetal wellbeing. It signifies normal fetal phys iology and is a reassuring feature. 
+If there is an absence of variability, carry out a review of the whole clinical picture with a low threshold for expedited bi rth, as this is 
+a very concerning feature. 
+Accelerations 
+ Transient increases in fetal heart rate of 15 beats a minute or more, lasting 15 seconds or more. 
+ The presence of fetal heart rate accelerations, even with reduced baseline variability, is generally a sign that the baby is healthy. 
+ Accelerations that coincide with the contractions especially in the second stage of labour should be investigated as possible 
+erroneous recording of the maternal and birthing parent pulse and a maternal and birthing parent pulse oximeter used. 
+Deceleration s 
+Transient episodes when the fetal heart rate slows to below the baseline level by more than 15 beats a minute, with each episode 
+lasting 15 seconds or more. An exception to this is that in a trace with reduced variability, decelerations may be ‘shallow’. 
+ 
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 20 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+ 
+Description Feature 
+Baseline 
+(beats/ minute) Baseline variability 
+(beats/ minute) Decelerations 
+ 
+White 110 to 160 5 to 25 None or early . 
+Variable decelerations with no concerning characteristics 
+ 
+Amber 100 to 109† 
+ Less than 5 for 30 
+to 50 minutes 
+ 
+Rise in Baseline 
+>20bpm from 
+start of CTG 
+ 
+Unable to 
+determine 
+baseline OR 
+More than 25 for 10 
+minutes OR 
+ Repetitive Variable decelerations with any concerning features < 30mins 
+
+OR 
+ Variable decelerations with any concerning features > 30mins 
+ 
+OR 
+Repetitive Late decelerations for <30 minutes 
+
+Red Below 100 
+OR 
+Above 160 Less than 5 for 
+more than 
+50 minutes OR 
+More than 25 for 
+more than 
+ 10 minutes 
+OR Sinusoidal Repetitive Variable decelerations with any concerning features> 30mins 
+ 
+OR 
+Repetitive late decelerations >30 minutes 
+OR 
+Acute bradycardia, or a single prolonged deceleration lasting 3 minutes or 
+more . 
+Abbreviation: CTG, cardiotocograph. 
+* Regard the following as concerning characteristics of variable decelerations: lasting more than 60 seconds; reduced baseline 
+variability within the deceleration; failure to return to baseline; biphasic (W) shape; no shouldering. 
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 21 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+† Although a baseline fetal heart rate between 100 and 109 beats/minute is a non -reassuring feature, continue us ual care if there is 
+normal baseline variability and no variable or late decelerations. 
+ 
+Management based on interpretation of CTG trace : 
+ 
+Category Definition Management 
+Normal All features are white  Continue CTG (unless it was started because of concerns arising from 
+intermittent auscultation and there are no ongoing risk factors) and usual 
+care. 
+ Talk to the pregnant woman/person and her birth companion(s) about what 
+is happening . 
+Suspicious 
+1 amber feature 
+AND 
+2 white features  Correct any underlying causes, such as hypotension or uterine 
+hyperstimulation . 
+ Perform a full set of maternal observations . 
+ Start 1 or more conservative measures* . 
+ Inform an obstetrician or a senior midwife . 
+ Document a plan for reviewing the whole clinical picture and the CTG 
+findings . 
+ Talk to the pregnant woman/person and their birth companion(s) about 
+what is happening and take their preferences into account . 
+Pathological 1 red feature 
+OR 
+2 amber features  Obtain a review by an obstetrician and a senior midwife . 
+ Exclude acute events (for example, cord prolapse, suspected placental 
+abruption or suspected uterine rupture) . 
+ Correct any underlying causes, such as hypotension or uterine 
+hyperstimulation . 
+ Start 1 or more conservative measures* . 
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 22 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+ Talk to the pregnant woman and person and their birth companion(s) about 
+what is happening and take their preferences into account . 
+ If the CTG trace is still pathological after implementing conservative 
+measures. 
+ Obtain a further review by an obstetrician and a senior midwife . 
+ Offer digital fetal scalp stimulation and document the outcome . 
+ If the CTG trace is still pathologica l after fetal scalp stimulation. 
+ Consider fetal blood sampling . 
+ Consider expediting the birth. 
+ Take the pregnant woman and person 's preferences into account . 
+Need for 
+urgent 
+intervention Acute bradycardia, or a single 
+prolonged deceleration for 
+3 minutes or more .  Urgently seek obstetric help. 
+ If there has been an acute event (for example, cord prolapse, suspected 
+placental abruption or suspected uterine rupture), expedite birth. 
+ Correct any underlying causes, such as hypotension or uterine 
+hyperstimulation. 
+ Start 1 or more conservative measures*. 
+ Make preparations for an urgent birth. 
+ Talk to the pregnant woman and person and their birth companion (s) about 
+what is happening and take her preferences into account. 
+ Expedite the birth if the acute bradycardia persists for 9 minutes. 
+ If the fetal heart rate recovers at any time up to 9 minutes, reassess any 
+decision to expedite the birth, in discussion with the pregnant woman and 
+person . 
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 23 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+Describe decelerations as 'early', 'variable' or 'late'. Do not use the terms 'typical' and 'atypical' because they can cause confusion. 
+Abbreviation: CTG - cardiotocography. 
+* If there are any concerns about the baby's wellbeing, be aware of the possible underlying causes and start one or more of the 
+following conservative measures based on an assessment of the most likely cause(s): 
+ Encourage the pregnant woman and person to mobilise or adopt an alternative posit ion (and to avoid being supine). 
+ If the pregnant woman and person is hypotensive o ffer intravenous fluids between 250 -500mls . 
+ Reduce contraction frequency by reducing or stopping oxytocin if it is being used and/or offering a tocolytic drug , (a suggested 
+regimen is subcutaneous terbutaline 0.25 mg). 
+
+If variable decelerations with no concerning characteristics are observed: 
+ 
+ Be aware that these are very common, can be a normal feature in an otherwise uncomplicated labour and birth, and are 
+usually a result of cord compression . 
+ Ask the pregnant woman/person to change position or mobilise. 
+
+Based on the individual features of the heart rate trace, baseline, variability, accelerations and decelerations the overall classification of 
+tracing should be classified as: 
+ 
+ Category Definition 
+Normal All four features are classified as white 
+Suspicious One feature classified as amber 
+Pathological Two or more features classified as amber or one or more classified 
+as red 
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 24 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+Types of Decelerations: 
+
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 25 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+12.5 Clinical response to classification of CEFM 
+ 
+When a CTG is defined as normal where there is continuous fetal monitoring, there should 
+be evidence of Registrar review at least every 4 hours documented on MIS (remember these 
+pregnant women and people are under Consultant led care.) 
+ 
+When a CTG is classified as suspicious , this should trigger a labour ward coordinator / 
+Obstetrician review. Following the review a plan should be documented on MIS. 
+ 
+When a CTG is classified as pathological , the on -call Obstetric Registrar (or Consultant if 
+Registrar is unavailable) must be informed and r eview the pregnant woman and person in 
+order to make an assessment to decide on the appropriate action needed. 
+ 
+This may include increased frequency of observation, Fetal scalp stimulation FBS or 
+emergency delivery if indicated. This review should be docum ented on MIS with a clear 
+management plan to include time of next review. 
+
+12.6 Escalation of concerns 
+ 
+In the analysis of Each Baby Counts 2017, at least one reviewer felt that ‘failure to 
+escalate/act upon risk/transfer appropriately’ occurred in 36% of reports. This was 
+considered to be as a result of either a lack of awareness of deterioration and the need to 
+escalate, or a breakdown in the process of attempted escalation. 
+ 
+All members of the multidisciplinary team must feel psychologically safe and empowered to 
+challenge a decision that they feel is incorrect. Where there is disagreement, a third party 
+should be called to provide another opinion and fresh perspecti ve. 
+ 
+If any member of the team feels that they disagree w ith the classification of a CTG then they 
+should feel confident to escalate. ( Appendix 5: Escalation of Concerns ). If a difference of 
+opinion, is documented on MIS, this should be the MDT discussion and the opinions of each 
+member of staff to include the midwife looking after the birthing woman and person, the 
+Coordinator, Obstetric Registrar and Consultant on call as well as the preference of the 
+birthing woman and person. 
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 26 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+
+13.0 Poor CTG quality 
+ 
+Possible c ause Actions required 
+Poor contact from abdominal 
+transducer Perform an abdominal palpation and listen to FHR with 
+Pinards stethoscope or hand held Doppler and re -
+position transducer. If not successful apply fetal 
+scalp electrode (FSE) . 
+FSE not working or detached Listen with transducer, check position of FSE . 
+Consider changing machine to a Teams 3 intrapartum 
+(newer model) 
+Telemetry – loss of contact Check that both transducers are fully charged. 
+Ensure antenna is in line of sight with the pregnant 
+woman/ person. If in the pool move the machine closer 
+to the pool for better signal. 
+If this does not resolve the loss of contact, assist 
+woman and person out of the pool and switch to wired 
+transducers from telemetry. 
+
+14.0 Fetal blood sampling (FBS) 
+ 
+(See Appendix 3: FBS Flowchart ) 
+ 
+ In the presence of a pathological CTG, FBS may be appropriate to determine if it 
+is safe to continue with the labour. 
+ In all situations the woman and person ’s preferences and the whole clinical picture 
+should be considered before deciding to proceed. 
+ The consultant on call should be consulted if a third FBS is being 
+considered. 
+
+14.1 Criteria for considering fetal blood sampling 
+ 
+ Pathological CTG . 
+ No contraindications to FBS (example s below) . 
+ Conservative measures and fetal scalp sti mulation have been unsuccessful. 
+
+14.2 Contraindications 
+ 
+ FBS should not be performed in any situation where the overall clinical 
+picture suggests that expediting birth is required . 
+ Caution: where meconium is present there is risk of contamination and false 
+reassurance. Discuss with on call consultant. 
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 27 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+ 
+Examples of situations where FBS SHOULD NOT be performed: 
+ 
+ Suspicion of acute maternal or fetal compromise, for instance: 
+o Bradycardia (over 3 minutes) . 
+o Cord prolapse. 
+o Uterine rupture. 
+o Placental abruption or other evidence of acute haemorrhage. 
+o Sinusoidal trace (or other suggestion of fetal haemorrhage). 
+o Immediately after recovery from prolonged deceleration. 
+ 
+ Evidence of maternal and birthing parent s epsis 
+o Persistent maternal and birthing parent or fetal tachycardia without a 
+reversible or known cause should promote a high suspicion of sepsis. 
+ Maternal and birthing parent infection with risk of materno -fetal transmission (E.g. 
+HIV w ith high titres, Hepatitis, herpes simplex). 
+ Risk of fetal bleeding disorders/ heritable bleeding disorders in mother and birthing 
+parent (including low platelets) . 
+ Prematurity <34/40. 
+ 
+The FBS procedure may take up to 15 to 20 minutes. If a woman and person is in the 
+second stage of labour, expediting birth by instrumental birth may reduce further 
+delay and is usually considered first line. 
+
+14.3 Procedure 
+ 
+ FBS should only be performed by staff who are trained and competent to perform 
+FBS. 
+ Obtain consent. The w oman and person must understand the possible outcomes 
+and subsequent actions that may be recommended (See table below). 
+ Check that the gas analyser is ready to receive samples. 
+ Ensure that all equipment is ready and staff are available to process the samples 
+immediately (delay can lead the gas analyser rejecting the specimen). 
+ Position in left lateral where possible. 
+ Ensure privacy and avoid unnecessary exposure. 
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 28 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+
+FETAL BLOOD SAMPLE RESULT ACTION 
+NORMAL 
+FBS result: 
+ pH 7.25 or greater 
+ Lactate 4.1 or below 
+OR 
+NO RESULT OBTAINED but good fetal 
+response to stimulation during 
+procedure with improvement in CTG . 
+ Continuing labour may be considered . 
+If CTG abnormality persists then consider repeat 
+FBS: 
+ Within 60minutes in the first stage 
+ Within 30 minutes in the second stage 
+BORDERLINE 
+FBS result: 
+ pH 7.21 – 7.24 
+ Lactate 4.2 – 4.8  Consider expediting birth if delivery is not 
+expected within 30 minutes . 
+ If labour is continued, a repeat sample 
+should be performed within 30 minutes . 
+ABNORMAL 
+FBS result: 
+ pH 7.20 or less 
+ Lactate 4.9 or above 
+OR 
+NO RESULT OBTAINED with 
+minimal/no fetal response to scalp 
+stimulation during procedure and no 
+improvement in CTG . 
+OR 
+Woman declines FBS 
+  Recommend expediting delivery 
+ Inform neonatal team 
+ Neonatal team should be present at birth 
+ 
+15.0 Paired cord sampling 
+ 
+ Paired cord blood gases do not need to be taken routinely. They should be taken 
+when there has been concern about the baby either in labour or immediately 
+following birth. Take for all babies on SGA/FGR pathway irrespective of condition 
+at birth . 
+ If it has been necessary to do a FBS sample during labour paired umbilical cord 
+samples should be taken. 
+ Paired cord sample results must documented on MIS and the print out must be 
+filed in the CTG envelope within the notes. 
+ 
+Ideally, sampling and analysis of cord blood should be performed as soon as possible after 
+birth. However, if absolutely necessary, clamped cord segments can be left for up to 60 
+minutes without significant chan ges in pH and C02. Care must be taken to avoid the 
+introduction of air into the blood gas analyser as this may cause unreliable readings. 
+ 
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 29 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+15.1 Procedure for taking cord blood 
+ 
+ Procedure should be explained to the parents and consent obtained . 
+ The need to take paired cord blood samples does not prevent optimal cord 
+clamping for up to 60 seconds. 
+ Following birth and before placental separation a segment of cord of at least 6 
+inches, where possible, should be isolated between 2 sets of clamps. The 
+segment of cord is then excised for immediate sampling, placed in a receiver and 
+given to a midwife/support worker trained in cord sampling and analysis . 
+ Using universal precautions, the cord should be wiped clean of blood and amniotic 
+fluid with a dry swab. Using 2 heparinised syringes with 21 gauge needles, blood 
+is withdrawn first from the umbilical artery and then from the vein. (The distended 
+vein stabilises the artery and makes access easier). The needle should be 
+inserted almost parallel to the vessels. As an aid to sample identification, a larger 
+quantity of blood should be taken from the vein. 
+ Any air bubbles should be expelled from the syringes and both samples analysed 
+(artery first) 
+ Input pregnant woman and person ’s details and input the sample details int o gas 
+analyser. 
+ 
+If for any reason cord blood samples are unable to be taken, this should be recorded on 
+MIS. 
+ 
+In relation to cord blood results, clinically well babies require a paediatric opinion when the 
+pH is more than 7 or base excess -16 or lower. 
+ 
+The cord gas results should be documented on MIS . 
+
+16.0 Training 
+ 
+All midwives and obstetricians involved in intrapartum care will attend the fetal monitoring 
+training day yearly. S taff are expected to complete yearly training via K2 and pass their 
+assessment for continuous electronic fetal monitoring before assessing CTG s, and should 
+be trained in escalation protocol . This is evidenced in the Maternity Education Strategy . Staff 
+not in date with their K2 training must not perform or i nterpret any fetal heart rate monitoring 
+(including IIA and CTG monitoring) 
+ 
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 30 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+17.0 Monitoring 
+ 
+Fresh eyes Audit – this will be collected by a retrospective data collection and Live audit 
+reviews of 12 labour cases each site monthly . 
+ 
+Intermittent Auscultation audit ( Intelligent Intermitt ent Auscultation (IIA) ) – this will be 
+collected by retrospective data collection and live audit 8 labour cases each site monthly 
+ 
+The fetal wellbeing lead midwives will be responsible for this. 
+ 
+The processes for audit and monitoring of the guideline are contained within: 
+ 
+ For training standards – the Maternity Education Strategy 
+
+References 
+ 
+ALSO (2003) Intrapartum Fetal Surveillance: Section E. 2003 4th Edition. Advanced Life 
+Support in Obstetrics Provider Manual 
+ 
+Chandraharan E (2010) Rationale approach to electronic fetal monitoring during labour in 
+‘all’ resource settings. Sri Lanka Journal of Obstetrics and Gynaecology. 32 pp77 -84 
+ 
+Dawes, C & Moulden , M (2020) Avoiding CTG misinterpretation: A review of the latest 
+DawesRedman CTG analysis 
+ 
+Grivell RM et al. Antenatal cardiotocography for fetal assessment Review The Cochrane 
+Library 2012, Issue 12 
+ 
+K2 (2002) Plymouth Fetal Monitoring Training System. K2 Medical Systems 
+ 
+NHS SEC ‘Fresh E yes’ Maternal Death Report 2009 
+ 
+Medical Devices Alert: Ref MDA/2010/054 Adverse outcomes are still being reported in the 
+presence of CTG traces that appear normal. 
+ 
+National Institute for Health and Clinical Excellence. (2008) Antenatal Care: Routine care for 
+the healthy pregnant woman. London. NICE 
+ 
+NICE guideline CG190 (2014 updated 2017) Intrapartum care for healthy women and babies 
+(nice.org.uk) 
+ 
+National Institute for Health and Cl inical Excellence. NG229 (2022) Fetal monitoring in 
+labour . London. NICE 
+ 
+Obianuju Nzelu, Edwin Chandrahharan, and Susana Pereira (2018) Human Factors: The 
+Dirty Dozen in CTG misinterpretation Global Journal of Reporductive Medicine 6(2) 
+ 
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 31 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+Royal College of Anaesthetists, Royal College of Midwives, Royal College of Obstetricians 
+and Gynaecologists, Royal College of Paediatrics and Child Health. (2007). Safer Childbirth: 
+Minimum Standards for the Organisation and Delivery of Care in Labour. London: RCOG 
+Press. Available at: www.rcog.org.uk 
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 32 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+Appendix 1: Dawes Redman Criteria 
+ 
+The CTG is compared with the database of over 100,000 CTG traces linked to outcomes 
+where the fetal gestation is between 26 weeks and term and to satisfy the criteria for 
+normality the trace should have: 
+ 
+ An episode of high variation above the first centile for the gestational age . 
+ 
+ No decelerations > 20 lost beats or >100 lost beats on records longer than 30 
+minutes . 
+ 
+ Basal heart rate between 110 and 160 bpm . 
+ 
+ At least one fetal movement or three accelerations. 
+ 
+ No evidence of a sinusoidal fetal heart rate rhythm. 
+ 
+ Short Term Variation of 3ms or greate r. 
+ 
+Short term variability (STV) is an important index of fetal wellbeing, but by no 
+means the only one. STV is, however, measurable by the external Doppler 
+detection systems that are universally used around the world. A low STV is most 
+commonly encounte red with growth retarded, chronically stressed fetuses. A 
+value of <4msecs is low, <3msecs is abnormal and <2msecs highly abnormal. 
+ 
+These thresholds are only valid when measured over the full period of 60 minutes. 
+It may happen that an operator gets co ncerned about a low STV and stops the 
+record prematurely. This is a mistake —such a trace maybe that of a baby having 
+a long quiet period who may wake up and show normal reactivity before the full 
+hour when criteria can be said to be not met. 
+ 
+However the strength of the Dawes Redman system is that the criteria encompass 
+several different aspects of fetal health. 
+ 
+ Either an acceleration or variability in high episodes >tenth centile and > 20 fetal 
+movements . 
+ 
+ No errors or decelerations at the end of the rec ord. 
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 33 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+Appendix 2: Dawes Redman Criteria - reasons for criteria not met codes 
+and management 
+ 
+1 Basal Heart Rate 
+outside normal range 
+(110-160bpm)  Discuss with senior obstetrician (SpR or consultant) , further 
+assessment of fetal wellbeing or delivery depending on clinical 
+picture. 
+ Inform senior midwife/co -ordinator. 
+2 Large decelerations  If the trace is otherwise normal and has one or two isolated 
+decelerations, repeat the trace in 2 -4 hours. 
+ For recurrent decelerations inform senior obstetrician (S pR or 
+consultant). 
+ Inform senior midwife/co -ordinator. 
+ Consider delivery . 
+3 No episodes of 
+high variation**  If STV is normal and there are accelerations, CTG can be 
+discontinued and repeated within 4 hours . 
+ Absence of an episode of high variation is strongly linked to 
+development of metabolic academia. This should be acted upon 
+in the same way as a reduced STV. 
+4 No movements and 
+fewer than 3 
+accelerations  Requires obstetric review . 
+ Inform senior midwife/co -ordinator. 
+ Repeat CTG within 4 hours . 
+5 Baseline fitting is 
+uncertain  If all else is fine and the baseline falls within normal parameters 
+then this can be ignore d. 
+or 
+ If concerned repeat within 4 hours . 
+6 Short term variation is 
+less than 3  Inform senior obstetrician (SpR or consultant) . 
+ Inform senior midwife/co -ordinator. 
+ Consider delivery . 
+7 Possible error at the 
+end of record  Continue CTG . 
+ Repeat CTG within 4 hours . 
+8 Deceleration at the 
+end of the record  Inform senior obstetrician (SpR or consultant) . 
+ Inform senior midwife/co -ordinator. 
+ Consider delivery or appropriate action based on clinical picture . 
+ Continue or repeat CTG as required . 
+9 High -frequency 
+sinusoidal rhythm  Discuss with senior obstetrician (SpR or consultant) . 
+ Inform senior midwife/co -ordinator. 
+ Consider immediate delivery . 
+10 Suspected 
+sinusoidal rhythm*  Maternal blood for Kleihaue r to test for degree of feto -maternal 
+haemorrhage and consider risk of fetal anaemia 
+ Inform senior obstetrician (SpR or consultant) . 
+ Inform senior midwife/co -ordinator. 
+ Consider delivery . 
+Differentiate from pseudo sinusoidal rhythm, if sinusoidal, alert 
+neonatal paediatricians 
+11 Long term variations 
+in high episodes 
+below acceptable 
+levels**  Discuss management plan with senior obstetrician (SpR or 
+consultant). 
+ Inform senior midwife/co -ordinator. 
+ Repeat CTG in 4 hours . 
+Absence of an episode of high variation is strongly linked to 
+development of metabolic academia. This should be acted upon in 
+the same way as a reduced STV. 
+12 No accelerations  Review by SPR/consultant . 
+ Inform senior midwife/co -ordinator. 
+ Continue CTG or repeat within 4 hours . 
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 34 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+Appendix 2 continued: Huntleigh Diagnostics Quick User Guide 
+ 
+This guide provides an overview guide to the use of the Care Analysis feature in the 
+FM800E range of fetal monitors. It MUST be used in conjun ction with the full FM800E 
+Instructions for Use & users must be fully trained in its use & on local protocols relating to its 
+use & application. 
+ 
+NB: This analysis is not for use in established labour & is a guide only – it is NOT a 
+diagnosis. Users must read & understand the full “Intended Use Statement” in the 
+Instructions for Use . 
+ 
+1. Check the Care analysis function is on . 
+(Enabled via the set -up menu – refer to Instructions for Use ) 
+2. Enter gestational age . 
+3. Start the trace (refer to Instructions for Use ). 
+4. 10 minutes of good quality data is required before the first analysis result is available . 
+5. A new analysis result will then be available after every additional 
+2 mins, upto max 60 mins . 
+6. The live analysis status is show n on the display (refer to Instructions for Use ). 
+7. The latest analysis result details can be viewed on the display via the set -up menu . 
+ 
+When the trace (printer) is stopped, the latest analysis result will be printed at the end of the 
+trace print -out. If stopped before 10 mins, no analysis will be performed. 
+ 
+Analysis Outcomes: 
+ 
+1. Dawes/Redman Criteria Met 
+Indicates criteria for normality have been met and the trace can be stopped (subject to 
+local protocols). 
+ 
+2. Dawes/Redman Criteria Not Met (at <60 mins) 
+Indicates trace has not YET met criteria for normality. Reason codes will be shown – 
+see below. Unless clearly pathological, continue the trace until the criteria are met . 
+ 
+3. Dawes/Redman Criteria Not Met (at 60 mins) 
+This is an abnormal outcome & appropriate clinical review / action must be taken. 
+Reason codes will be shown – see below. 
+ 
+Code Reason 
+1 Basal heart rate outside normal range 
+2 Large decelerations 
+3 No episodes of high variation 
+4 No movements and fewer than 3 accelerations 
+5 Baseline fitting is uncertain 
+6 Short -term variation is less than 3ms 
+7 Possible error at the end of the record 
+8 Deceleration at the end of the record 
+9 High-frequency sinusoidal rhythm 
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 35 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+10 Suspected sinusoidal rhythm 
+11 Long -term variation in high episodes below 
+acceptable level 
+12 No accelerations 
+
+Care Analysis - A user’s guide to terminology 
+ 
+Signal loss (%) The percentage of the trace for which there was no fetal heart rate 
+recorded. Signal loss is usually due to poor transducer positioning or 
+fetal movement. Reposition the transducer to get the best possible 
+signal, ensuring plenty of gel is used. If the signal loss is >50% 
+during accels or large decels, these will not be included in the 
+analysis results. 
+Contractio ns The software registers a contraction if there is a rise of 16% or more, 
+lasting for 30 seconds or more, from the resting ‘zero’ line. 
+Movements Simply counts fetal movements recorded by the mother. Note that 
+this will always be shown as zero for twins monitoring, as it is not 
+possible to tell which fetus is moving. 
+Basal Heart 
+Rate (bpm) This is the average rate measured normally during periods of low 
+variation. On very reactive traces it is assessed by a ‘best fit’ 
+method. It is similar to visually assessed baseline rate but may differ 
+with some trace patterns (eg. very reactive, large decels, etc.). 
+Users should always visually assess baseline rate independly from 
+the analysis. 
+Accelerations A rise from baseline rate of 10bpm or more, lasting 15 seconds or 
+more. Research has shown that a small percentage (5 -8%) of traces 
+without accelerations are in fact normal. It is not therefore essential 
+to have accelerations present for the trace to be interpreted as 
+normal. This is particularly true p re-30 weeks gestation. 
+Decelerations A decrease from baseline of at least 10bpm, lasting 60s or more, 
+with >5 ‘lost beats’, or a decrease of 20bpm lasting 30 seconds or 
+more, with >5 ‘lost beats’. See below for definition of ‘lost beats’. 
+High minutes 
+(mins) This is a measure of how reactive the trace is. Rather than relying 
+on accelerations (see above), this measures the amount of time the 
+change from one beat to the next exceeds a certain level. For a full 
+definition of this, refer to 
+ the user manua l, but in essence, it can be interpreted as the period 
+of time, during the trace, over which the FHR was highly reactive. 
+Most lost beats ‘Lost beats’ are a measure of the area or ‘size’ of the deceleration. 
+To understand this, consider a trace with a baseline rate of 120bpm 
+with a 1 minute deceleration. If the heart rate had stayed at the 
+baseline rate for this period, instead of decelera ting, there would 
+have been 120 heart beats in the one minute. Because of the 
+deceleration, the FHR slowed down and there were actually only, 
+say, 80 beats during the one minute. This means it ‘lost’ (120 -80 =) 
+40 beats – this is how Care Analaysis measu res decelerations, in 
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 36 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+‘Lost beats’. Most lost beats is simply the ‘size’ of the largest 
+deceleration. 
+Short Term 
+Variation (ms) This is a form of ‘variability’ or ‘baseline variation’. Traditionally, 
+variability is assessed visually as the difference b etween the highest 
+& lowest rates in a 1 minute period during a quiescent period (ie. no 
+accels or decels). Short Term Variation (STV) is essentially the 
+same, but measured over a much shorter time period than can be 
+done visually (3.75s). It is measured in milliseconds rather than 
+bpm. This is the time between beats, rather than the number of 
+beats per minute – just a different way of measuring heart beats. In 
+non-reactive traces, STV has been shown to correlate highly with the 
+development of metabolic hypoxaemia and intrauterine death. If 
+there is a consistent downward trend in STV towards or below 3ms 
+over period of days or weeks, delivery may need to be expedited. 
+ 
+For a more complete understanding of Care Analysis, refer to the FM800E Instruct ions for 
+Use and our website: www.huntleigh -diagnostics.com 
+
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 37 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+Appendix 3: FBS flowchart 
+
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 38 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+ 
+Appendix 4: How to perform IIA Intelligent Intermittent Auscultation 
+ 
+An understanding of how hypoxia evolves is crucial to assessing how the baby is coping with 
+labour and when escalation of care is required. Traditionally midwives listened before, during 
+and after a contraction but this is not recommended in the majority of cases now because it 
+is more relevant how the baby responds after the contraction. Therefore the key time to 
+listen is IMMEDIATELY after the contraction as this tells us how the baby has coped with it. 
+The technique is to count for at least a minute – counting in continuous 15 second blocks. 
+The numbers that are achieved will enable similarities and variations to be identified which 
+will enable the baseline rate to be worked out 
+For example if you counted in 15 second blocks for the traditional 60 seconds you may get 
+numbers suc h as: 29 28 35 39 = 131bpm 
+If you listened for longer 29 28 35 39 31 28 = 116bpm 
+With a slight variation in numbers of 1 to 2 beats per minute the 4 numbers that are similar 
+would add up to equal the baseline with the higher numbers in the middle indicating an 
+acceleration . In the majority of cases in labour the loss of accelerations are common 
+therefore for most counting in 15 second blocks for 60 seconds will be sufficient to achieve 
+the baseline rate. 
+If there are l arge variance in the numbers 28 30 3 8 44 at 60 seconds would = 1 40bpm. 
+This would suggest that there could be a wide variance in the actual steady baseline – a late 
+deceleration at the beginning of the count or an acceleration at the end therefore counting 
+for longer would be indicated. This is essential to ascertain if the baseline has risen to pick 
+up on the physiology of evolving hypoxia. 
+For documentation it is acceptable to write the individual numbers in the free text of the 
+notes to identify that IIA is being used and then added up and plotted as a single number o n 
+the partogram as the baseline rate. 
+Please refer to ELearning for Health and the Intelligent Intermittent Auscultation training 
+package 
+
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 39 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+Appendix 5: Escalation of concerns 
+ 
+Escalation Pathway for Suspicious or Pathological CTG 
+Usual pathway for 
+referral 
+Woman and person on CTG. 
+Hourly fresh eyes. 
+Continuous risk assessment. 
+Suspicious or pathological 
+features noted by midwife - 
+Refer to LW coordinator 
+CTG reviewed by ST3 or 
+above obstetrician in timely 
+manner. Plan of care 
+documented on MIS. 
+ST3 or above obstetrician not 
+available – 
+Refer to the labour ward 
+consultant or 
+consultant on -call. 
+Escalation for non -
+availability of medical 
+staff 
+CTG seen by consultant in 
+timely manner. Plan of care 
+documented on MIS. 
+If neither ST3 or above 
+obstetrician available, seek 
+advice from on -call midwifery 
+manager. 
+Trace seen by ST3 or above 
+obstetrician or consultant in 
+timely manner. Plan of care 
+documented on MIS. 
+Escalation for concerns 
+in interpreting the 
+features of a CTG 
+LW coordin ator does not 
+confirm suspicious / 
+pathological features but 
+midwife considers suspicious 
+/ pathological features 
+present. 
+Midwife to refer to ST3 or 
+above obstetrician for second 
+opinion. 
+CTG reviewed by ST3 or 
+above obstetrician in a timely 
+manner. Plan of care 
+documented on MIS. If not 
+available, follow escalation 
+for non -availability of medical 
+staff. 
+If differences of opinion still 
+expressed contact consultant 
+obstetrician to resolve. 
+LW coordinator agrees there 
+are suspicious or pathological 
+features on CTG trace – 
+Refer to ST3 or above 
+obstetrician on call for LW. 
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 40 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+Appendix 6: Dawes -Redman escalation flow chart 
+
+Visually assess to 
+exclude pathology 
+Computerised CTG with 
+Dawes -Redman Criteria 
+Dawes -Redman Criteria 
+Met 
+(Within 60 minutes) 
+ 
+Discontinue 
+CTG. 
+Consider CTG 
+findings in 
+context of the 
+whole clinical 
+picture. 
+ 
+Continue CTG. 
+Consider CTG 
+findings in context of 
+the whole clinical 
+picture. Complete 
+CTG review on MIS . 
+ 
+ Escalate abnormal 
+findings to obstetric 
+registrar/cons for 
+review. 
+ 
+Transfer to Labour 
+ward 
+ 
+The STV is not 
+relevant in a CTG <60 
+minutes and there fore 
+should not form part 
+of the review. 
+ 
+Normal CTG 
+ Abnormal CTG 
+Document 
+findings and 
+plan of care on 
+MIS. 
+Clinically 
+review as 
+indicated. 
+ 
+Dawes -Redman Criteria 
+NOT Met 
+(after 60 minutes) 
+ 
+Review by obstetric registrar or obstetric 
+consultant. 
+Consider quality of CTG recording. 
+Refer to ‘reasons for not meeting the criteria’ 
+codes. 
+ 
+Review STV. 
+Consider findings in context of the 
+whole clinical picture following a 
+holistic review. 
+If CTG 
+appears 
+normal and 
+STV > 4 
+If CTG appears normal and 
+STV < 4 or 
+If CTG appears abnormal 
+(regardless of STV) 
+Advise to 
+mobilise 
+Repeat CTG in 1 
+hour. 
+ 
+Escalate to registrar 
+ (in complex cases inform 
+consultant) 
+Transfer to Labour ward for 
+continuous CTG and 
+management plan. 
+ 
+Consider: 
+Acute hypoxia 
+ (pro-longed 
+deceleration >3 
+minutes) 
+ 
+Expedite birth by 
+LSCS 
+Chronic hypoxia (baseline 
+rate at upper end of normal, 
+reduced variability, lack of 
+cycling, infrequent 
+accelerations, shallow 
+decelerations) 
+ 
+Avoid further stress to the 
+fetus e.g ARM 
+Expedite birth by LSCS 
+Criteria NOT met 
+No evidence of acute or chronic hypoxia. 
+Consider correctable causes: maternal 
+dehydration, maternal hypotension, maternal 
+and birthing parent pyrexia. The influence of 
+sympatholytic drugs. 
+ 
+Arrange further assessment of fetal wellbeing. 
+(e.g ultrasound examination, further CTG 
+monitoring) – Care plans should be 
+individualised taking into consideration the 
+gestation and whole clinical picture. 
+Clearly document plan of care on MIS . If differences of opinion 
+continue, consider 
+consultant on call at 
+SRH/WH to review the 
+clinical picture and 
+CTG via the Sonic 
+centrale monitoring. 
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 41 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+Appendix 7: Recommendation regarding use of Dawes Redman 
+
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 42 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+Appendix 8: Labour CTG assessment sticker for use in downtime 
+Please do not print from guideline 
+
+CG1116 Fetal Monitoring G uideline v8.2 Jan 2024 Page 43 of 43 
+Please check online that this printout is the most recent version of this document before use . 
+ 
+Appendix 9: Antenatal CTG assessment sticker for use in downtime 
+Please do not print from guideline

@@ -1,0 +1,1076 @@
+# Extracted from: NICE Guidance - 2023 - Ectopic.pdf
+# Guideline ID: nice-guidance-2023-ectopic
+# Content length: 76774 characters
+# Processing date: 1732953490.9915414
+
+Ectopic pr egnanc y and 
+misc arriag e: diagnosis and 
+initial manag emen t 
+NICE guideline 
+Published: 17 April 2019 
+Last updat ed: 23 August 2023 
+www .nice.or g.uk/guidance/ng126 
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Your r esponsi bility 
+The r ecommendations in t his guideline r epresent t he view of NICE, arriv ed at aft er car eful 
+consideration of t he evidence a vailable. When e xercising t heir judgement, pr ofessionals 
+and practitioners ar e expect ed to tak e this guideline fully int o account, alongside t he 
+individual needs, pr eferences and v alues of t heir patient s or t he people using t heir ser vice. 
+It is not mandat ory to apply t he recommendations, and t he guideline does not o verride t he 
+responsibility t o mak e decisions appr opriat e to the cir cumstances of t he individual, in 
+consultation wit h them and t heir f amilies and car ers or guar dian. 
+All pr oblems (adv erse e vents) related to a medicine or medical de vice used f or treatment 
+or in a pr ocedur e should be r epor ted to the Medicines and Healt hcare product s Regulat ory 
+Agency using t he Yellow Car d Scheme . 
+Local commissioners and pr oviders of healt hcare have a responsibility t o enable t he 
+guideline t o be applied when individual pr ofessionals and people using ser vices wish t o 
+use it. The y should do so in t he cont ext of local and national priorities f or funding and 
+developing ser vices, and in light of t heir duties t o have due r egar d to the need t o eliminat e 
+unlawful discrimination, t o adv ance equality of oppor tunity and t o reduce healt h 
+inequalities. Not hing in t his guideline should be int erpreted in a wa y that w ould be 
+inconsist ent wit h complying wit h those duties. 
+Commissioners and pr oviders ha ve a responsibility t o promot e an en vironmentally 
+sustainable healt h and car e syst em and should assess and r educe t he en vironmental 
+impact of implementing NICE r ecommendations wher ever possible. Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 2 of
+41Contents 
+Overview ...................................................................................................................................... 4 
+Who is it f or? .......................................................................................................................................... 4 
+Recommendations ....................................................................................................................... 5 
+1.1 Suppor t and inf ormation giving ...................................................................................................... 5 
+1.2 Early pr egnancy assessment ser vices .......................................................................................... 7 
+1.3 Sympt oms and signs of ect opic pr egnancy and initial assessment ........................................... 8 
+1.4 Diagnosis of viable intraut erine pr egnancy and of tubal ect opic pr egnancy ............................ 12 
+1.5 Management of miscarriage ........................................................................................................... 18 
+1.6 Management of tubal ect opic pr egnancy ..................................................................................... 22 
+1.7 Anti-D immunoglobulin pr ophylaxis ............................................................................................... 26 
+Terms used in t his guideline ................................................................................................................. 27 
+Recommendations f or resear ch ................................................................................................. 28 
+1 Early pr egnancy assessment unit s ................................................................................................... 28 
+2 Ultrasound f or det ermining a viable intraut erine pr egnancy ......................................................... 29 
+3 Eff ectiv eness of pr ogest ogens in w omen wit h recurr ent miscarriage ......................................... 29 
+4 Eff ectiv eness of diff erent pr ogest ogens in w omen at risk of miscarriage ................................... 30 
+5 Management of miscarriage ............................................................................................................. 30 
+6 Comparison betw een e xpectant, medical or sur gical management of ect opic pr egnancy ....... 31 
+Rationale and impact ................................................................................................................... 32 
+Using ultrasound f or diagnosis of a tubal ect opic pr egnancy .......................................................... 32 
+Progest ogens f or pr eventing miscarriage ........................................................................................... 33 
+Medical management of miscarriage .................................................................................................. 34 
+Expectant management of tubal ect opic pr egnancy ......................................................................... 36 
+Cont ext ......................................................................................................................................... 37 
+Finding mor e information and committ ee details ..................................................................... 38 
+Updat e information ..................................................................................................................... 39 Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 3 of
+41This guideline r eplaces CG154 . 
+This guideline is t he basis of QS69 . 
+Overview 
+This guideline co vers diagnosing and managing ect opic pr egnancy and miscarriage in 
+women wit h complications, such as pain and bleeding, in early pr egnancy (t hat is, up t o 13 
+complet ed w eeks of pr egnancy). It aims t o impr ove how early pr egnancy loss is 
+diagnosed, and t he suppor t women ar e giv en, to limit t he psy chological impact of t heir 
+loss. 
+Who is i t for? 
+• Healt hcare professionals 
+• Commissioners 
+• Women wit h complications in early pr egnancy (up t o 13 complet ed w eeks of 
+pregnancy), t heir f amilies and car ers Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 4 of
+41Recommenda tions 
+People ha ve the right t o be in volved in discussions and mak e informed decisions 
+about t heir car e, as described in NICE's inf ormation on making decisions about y our 
+care. 
+NICE guidelines set out t he car e and ser vices suitable f or people wit h a specific 
+condition or need, and people in par ticular cir cumstances or settings. W e aim t o 
+improve quality b y ensuring t hat people r eceiv e the best car e and advice. Using 
+inclusiv e language in healt hcare is impor tant f or saf ety, and t o promot e equity , 
+respect and eff ectiv e communication wit h everyone. This guideline does not use 
+inclusiv e language in whole or in par t because: 
+• the evidence has not been r eview ed, and it is not cer tain fr om e xper t opinion 
+which gr oups t he advice co vers, or 
+• the evidence has been r eview ed, but t he inf ormation a vailable f or some gr oups 
+was t oo limit ed to mak e specific r ecommendations, or 
+• only a v ery limit ed number of r ecommendations ha ve been updat ed in dir ect 
+response t o new e vidence or t o reflect a change in practice. 
+Healt hcare professionals should use t heir clinical judgement when implementing 
+recommendations, taking int o account t he individual's cir cumstances, needs and 
+preferences, and ensuring all people ar e treated wit h dignity and r espect t hroughout 
+their car e. 
+Making decisions using NICE guidelines explains ho w we use w ords to sho w the 
+strengt h (or cer tainty) of our r ecommendations, and has inf ormation about 
+prescribing medicines (including off -label use), pr ofessional guidelines, standar ds 
+and laws (including on consent and mental capacity), and saf eguar ding. 
+1.1 Suppor t and inf orma tion g iving 
+1.1.1 Treat all w omen wit h early pr egnancy complications wit h dignity and 
+respect. Be awar e that w omen will r eact t o complications or t he loss of a Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 5 of
+41pregnancy in diff erent wa ys. Pr ovide all w omen wit h information and 
+suppor t in a sensitiv e manner , taking int o account t heir individual 
+circumstances and emotional r esponse. F or mor e guidance about 
+providing inf ormation, see t he NICE guideline on patient e xperience in 
+adult NHS ser vices . [2012] 
+1.1.2 Healt hcare professionals pr oviding car e for women wit h early pr egnancy 
+complications in an y setting should be awar e that early pr egnancy 
+complications can cause significant distr ess f or some w omen and t heir 
+partners. Healt hcare professionals pr oviding car e for these w omen 
+should be giv en training in ho w to communicat e sensitiv ely and br eaking 
+bad news. Non-clinical staff such as r eceptionist s working in settings 
+wher e early pr egnancy car e is pr ovided should also be giv en training on 
+how to communicat e sensitiv ely wit h women who e xperience early 
+pregnancy complications. F or mor e guidance about suppor t, see 
+recommendation 1 .9.4 on traumatic bir th, stillbir th and miscarriage in t he 
+NICE guideline on ant enatal and postnatal mental healt h. [2012, 
+amended 2019] 
+1.1.3 Throughout a w oman's car e, pr ovide t he w oman and (wit h her consent) 
+her par tner specific e vidence-based inf ormation in a v ariety of f ormat s. 
+This should include (as appr opriat e): 
+• when and ho w to seek help if e xisting sympt oms w orsen or new sympt oms 
+develop, including a 2 4-hour contact t elephone number 
+• what t o expect during t he time she is waiting f or an ultrasound scan 
+• what t o expect during t he course of her car e (including expectant 
+management ), such as t he pot ential lengt h and e xtent of pain and/or bleeding, 
+and possible side eff ects; this inf ormation should be tailor ed to the car e she 
+receiv es 
+• information about post operativ e car e (for women under going sur gery) 
+• what t o expect during t he recovery period – f or example, when it is possible t o 
+resume se xual activity and/or tr y to conceiv e again, and what t o do if she 
+becomes pr egnant again; t his inf ormation should be tailor ed to the car e she 
+receiv es Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 6 of
+41• information about t he lik ely impact of her tr eatment on futur e fertility 
+• wher e to access suppor t and counselling ser vices, including leaflet s, web 
+addr esses and helpline numbers f or suppor t organisations. 
+Ensur e that sufficient time is a vailable t o discuss t hese issues wit h women 
+during t he course of her car e and arrange an additional appointment if mor e 
+time is needed. [2012] 
+1.1.4 After an early pr egnancy loss, off er the w oman t he option of a f ollow-up 
+appointment wit h a healt hcare professional of her choice. [2012] 
+1.2 Early pregnanc y assessmen t ser vices 
+1.2.1 Regional ser vices should be or ganised so t hat an early pr egnancy 
+assessment ser vice is a vailable 7 days a w eek f or women wit h early 
+pregnancy complications, wher e scanning can be carried out and 
+decisions about management made. [2012] 
+1.2.2 An early pr egnancy assessment ser vice should: 
+• be a dedicat ed ser vice pr ovided b y healt hcare professionals compet ent t o 
+diagnose and car e for women wit h pain and/or bleeding in early pr egnancy and 
+• offer ultrasound and assessment of serum human chorionic gonadotr ophin 
+(hCG) le vels and 
+• be staff ed by healt hcare professionals wit h training in sensitiv e communication 
+and br eaking bad news. [2012] 
+1.2.3 Early pr egnancy assessment ser vices should accept self -referrals fr om 
+women who ha ve had r ecurr ent miscarriage or a pr evious ect opic or 
+molar pr egnancy . Although additional car e for women wit h recurr ent 
+miscarriage is not included in t he scope of t he guideline, t he Guideline 
+Development Gr oup r ecognised t hat it is common clinical practice t o 
+allow these w omen t o self -refer to an early pr egnancy assessment 
+service and wished t his to remain t he case. All ot her w omen wit h pain 
+and/or bleeding should be assessed b y a healt hcare professional (such 
+as a GP , accident and emer gency [A&E] doct or, midwif e or nurse) bef ore Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 7 of
+41referral t o an early pr egnancy assessment ser vice. [2012] 
+1.2.4 Ensur e that a syst em is in place t o enable w omen r eferred to their local 
+early pr egnancy assessment ser vice t o att end wit hin 2 4 hours if t he 
+clinical situation warrant s this. If t he ser vice is not a vailable, and t he 
+clinical sympt oms warrant fur ther assessment, r efer women t o the 
+nearest accessible f acility t hat off ers specialist clinical assessment and 
+ultrasound scanning (such as a gynaecology war d or A&E ser vice wit h 
+access t o specialist gynaecology suppor t). [2012] 
+1.3 Symptoms and signs o f ectopic pr egnanc y and 
+initial assessmen t 
+1.3.1 Refer women who ar e haemodynamically unstable, or in whom t here is 
+significant concern about t he degr ee of pain or bleeding, dir ectly to A&E. 
+[2012] 
+1.3.2 Be awar e that atypical pr esentation f or ect opic pr egnancy is common. 
+[2012] 
+1.3.3 Be awar e that ect opic pr egnancy can pr esent wit h a v ariety of 
+sympt oms. Ev en if a sympt om is less common, it ma y still be significant. 
+Sympt oms of ect opic pr egnancy include: 
+• common sympt oms: 
+－ abdominal or pelvic pain 
+－ amenorrhoea or missed period 
+－ vaginal bleeding wit h or wit hout clot s Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 8 of
+41• other r epor ted sympt oms: 
+－ breast t enderness 
+－ gastr ointestinal sympt oms 
+－ dizziness, f ainting or syncope 
+－ shoulder tip pain 
+－ urinar y sympt oms 
+－ passage of tissue 
+－ rectal pr essur e or pain on def ecation. [2012] 
+1.3.4 Be awar e that ect opic pr egnancy can pr esent wit h a v ariety of signs on 
+examination b y a healt hcare professional. Signs of ect opic pr egnancy 
+include: 
+• more common signs: 
+－ pelvic t enderness 
+－ adne xal tenderness 
+－ abdominal t enderness Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 9 of
+41• other r epor ted signs: 
+－ cervical motion t enderness 
+－ rebound t enderness or perit oneal signs 
+－ pallor 
+－ abdominal dist ension 
+－ enlar ged ut erus 
+－ tachycardia (mor e than 100 beat s per minut e) or h ypot ension (less t han 
+100/60 mmHg) 
+－ shock or collapse 
+－ orthostatic h ypot ension. [2012] 
+1.3.5 During clinical assessment of w omen of r eproductiv e age, be awar e that: 
+• they ma y be pr egnant, and t hink about off ering a pr egnancy t est e ven when 
+sympt oms ar e non-specific and 
+• the sympt oms and signs of ect opic pr egnancy can r esemble t he common 
+sympt oms and signs of ot her conditions – f or example, gastr ointestinal 
+conditions or urinar y tract inf ection. [2012] 
+1.3.6 All healt hcare professionals in volved in t he car e of w omen of 
+reproductiv e age should ha ve access t o pregnancy t ests. [2012] 
+1.3.7 Refer immediat ely to an early pr egnancy assessment ser vice ( or out -of-
+hours gynaecology ser vice if t he early pr egnancy assessment ser vice is 
+not a vailable) f or fur ther assessment of w omen wit h a positiv e 
+pregnancy t est and t he following on e xamination: 
+• pain and abdominal t enderness or 
+• pelvic t enderness or 
+• cervical motion t enderness. [2012] 
+1.3.8 Exclude t he possibility of ect opic pr egnancy , even in t he absence of risk Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 10
+of 41factors (such as pr evious ect opic pr egnancy), because about a t hird of 
+women wit h an ect opic pr egnancy will ha ve no kno wn risk f actors. 
+[2012] 
+1.3.9 Refer to an early pr egnancy assessment ser vice ( or out -of-hours 
+gynaecology ser vice if t he early pr egnancy assessment ser vice is not 
+available) w omen wit h bleeding or ot her sympt oms and signs of early 
+pregnancy complications who ha ve: 
+• pain or 
+• a pregnancy of 6 weeks' gestation or mor e or 
+• a pregnancy of uncer tain gestation. 
+The ur gency of t his referral depends on t he clinical situation. [2012] 
+1.3.10 Use e xpectant management f or women wit h a pr egnancy of less t han 
+6 weeks' gestation who ar e bleeding but not in pain, and who ha ve no 
+risk f actors, such as a pr evious ect opic pr egnancy . Advise t hese w omen: 
+• to return if bleeding continues or pain de velops 
+• to repeat a urine pr egnancy t est aft er 7 t o 10 days and t o return if it is positiv e 
+• a negativ e pregnancy t est means t hat t he pr egnancy has miscarried. [2012, 
+amended 2019] 
+1.3.11 Refer women who r eturn wit h worsening sympt oms and signs t hat could 
+suggest an ect opic pr egnancy t o an early pr egnancy assessment ser vice 
+(or out -of-hours gynaecology ser vice if t he early pr egnancy assessment 
+service is not a vailable) f or fur ther assessment. The decision about 
+whet her she should be seen immediat ely or wit hin 2 4 hours will depend 
+on the clinical situation. [2012] 
+1.3.12 If a w oman is r eferred to an early pr egnancy assessment ser vice ( or out -
+of-hours gynaecology ser vice if t he early pr egnancy assessment ser vice 
+is not a vailable), e xplain t he reasons f or the referral and what she can 
+expect when she arriv es there. [2012] Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 11 of
+411.4 Diagnosis o f viab le in trauterine pr egnanc y and 
+of tubal e ctopic pr egnanc y 
+1.4.1 Offer women who att end an early pr egnancy assessment ser vice ( or out -
+of-hours gynaecology ser vice if t he early pr egnancy assessment ser vice 
+is not a vailable) a transv aginal ultrasound scan t o identify t he location of 
+the pr egnancy and whet her t here is a f etal pole and hear tbeat. [2012] 
+1.4.2 Consider a transabdominal ultrasound scan f or women wit h an enlar ged 
+uterus or ot her pelvic pat hology , such as fibr oids or an o varian cyst. 
+[2012] 
+1.4.3 If a transv aginal ultrasound scan is unacceptable t o the w oman, off er a 
+transabdominal ultrasound scan and e xplain t he limitations of t his 
+method of scanning. [2012] 
+Using ul trasound sc ans f or diagnosis o f viab le in trauterine 
+pregnanc y 
+1.4.4 Inform w omen t hat t he diagnosis of miscarriage using 1 ultrasound scan 
+cannot be guarant eed t o be 100% accurat e and t here is a small chance 
+that t he diagnosis ma y be incorr ect, par ticularly at v ery early gestational 
+ages. [2012] 
+1.4.5 When per forming an ultrasound scan t o det ermine t he viability of an 
+intraut erine pr egnancy , first look t o identify a f etal hear tbeat. If t here is 
+no visible hear tbeat but t here is a visible f etal pole, measur e the 
+crown–rump lengt h. Only measur e the mean gestational sac diamet er if 
+the fetal pole is not visible. [2012] 
+1.4.6 If the cr own–rump lengt h is less t han 7 .0 mm wit h a transv aginal 
+ultrasound scan and t here is no visible hear tbeat, per form a second scan 
+a minimum of 7 days aft er the first bef ore making a diagnosis. F urther 
+scans ma y be needed bef ore a diagnosis can be made. [2012] 
+1.4.7 If the cr own–rump lengt h is 7 .0 mm or mor e wit h a transv aginal 
+ultrasound scan and t here is no visible hear tbeat: Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 12
+of 41• seek a second opinion on t he viability of t he pr egnancy and/or 
+• perform a second scan a minimum of 7 days aft er the first bef ore making a 
+diagnosis. [2012] 
+1.4.8 If there is no visible hear tbeat when t he cr own–rump lengt h is measur ed 
+using a transabdominal ultrasound scan: 
+• record the siz e of t he cr own–rump lengt h and 
+• perform a second scan a minimum of 14 days aft er the first bef ore making a 
+diagnosis. [2012] 
+1.4.9 If the mean gestational sac diamet er is less t han 25 .0 mm wit h a 
+transv aginal ultrasound scan and t here is no visible f etal pole, per form a 
+second scan a minimum of 7 days aft er the first bef ore making a 
+diagnosis. F urther scans ma y be needed bef ore a diagnosis can be 
+made. [2012] 
+1.4.10 If the mean gestational sac diamet er is 25 .0 mm or mor e using a 
+transv aginal ultrasound scan and t here is no visible f etal pole: 
+• seek a second opinion on t he viability of t he pr egnancy and/or 
+• perform a second scan a minimum of 7 days aft er the first bef ore making a 
+diagnosis. [2012] 
+1.4.11 If there is no visible f etal pole and t he mean gestational sac diamet er is 
+measur ed using a transabdominal ultrasound scan: 
+• record the siz e of t he mean gestational sac diamet er and 
+• perform a second scan a minimum of 14 days aft er the first bef ore making a 
+diagnosis. [2012] 
+1.4.12 Do not use gestational age fr om t he last menstrual period alone t o 
+determine whet her a f etal hear tbeat should be visible. [2012] 
+1.4.13 Inform w omen t hat t he dat e of t heir last menstrual period ma y not giv e 
+an accurat e representation of gestational age because of v ariability in 
+the menstrual cy cle. [2012] Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 13
+of 411.4.14 Inform w omen what t o expect while waiting f or a r epeat scan and t hat 
+waiting f or a r epeat scan has no detrimental eff ects on t he out come of 
+the pr egnancy . [2012] 
+1.4.15 Give women a 2 4-hour contact t elephone number so t hat t hey can speak 
+to someone wit h experience of caring f or women wit h early pr egnancy 
+complications who understands t heir needs and can advise on 
+appr opriat e car e. See also recommendation 1.1.3 for details of fur ther 
+information t hat should be pr ovided. [2012] 
+1.4.16 When diagnosing complet e miscarriage on an ultrasound scan, in t he 
+absence of a pr evious scan confirming an intraut erine pr egnancy , alwa ys 
+be awar e of t he possibility of a pr egnancy of unkno wn location. Advise 
+these w omen t o return f or follow-up (f or example, hCG le vels, ultrasound 
+scans) until a definitiv e diagnosis is obtained. (See also 
+recommendations on human chorionic gonadotr ophin measur ement s in 
+women wit h pregnancy of unkno wn location .) [2012, amended 2019] 
+Using ul trasound sc ans f or diagnosis o f tubal e ctopic pr egnanc y 
+1.4.17 When carr ying out a transv aginal ultrasound scan in early pr egnancy , 
+look f or these signs indicating t here is a tubal ect opic pr egnancy: 
+• an adne xal mass, mo ving separat e to the ovary (sometimes called t he 'sliding 
+sign'), comprising a gestational sac containing a y olk sac or 
+• an adne xal mass, mo ving separat ely to the ovary, comprising a gestational sac 
+and f etal pole (wit h or wit hout f etal hear tbeat). [2019] 
+1.4.18 When carr ying out a transv aginal ultrasound scan in early pr egnancy , 
+look f or these signs indicating a high pr obability of a tubal ect opic 
+pregnancy: 
+• an adne xal mass, mo ving separat ely to the ovary (sometimes called t he 'sliding 
+sign'), wit h an empty gestational sac (sometimes described as a 'tubal ring' or 
+'bagel sign') or Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 14
+of 41• a comple x, inhomogeneous adne xal mass, mo ving separat e to the ovary. 
+If these f eatur es ar e present, tak e into account ot her intraut erine and adne xal 
+featur es on t he scan, t he w oman's clinical pr esentation and serum hCG le vels 
+before making a diagnosis. [2019] 
+1.4.19 When carr ying out a transv aginal ultrasound scan in early pr egnancy , 
+look f or these signs indicating a possible ect opic pr egnancy: 
+• an empty ut erus or 
+• a collection of fluid wit hin the ut erine ca vity (sometimes described as a 
+pseudo-sac; t his collection of fluid must be diff erentiat ed fr om an early 
+intraut erine sac, which is identified b y the pr esence of an eccentrically locat ed 
+hypoechoic structur e wit h a double decidual sign [ gestational sac surr ounded 
+by 2 concentric echogenic rings] in t he endometrium). 
+If these f eatur es ar e present, tak e into account ot her intraut erine and adne xal 
+featur es on t he scan, t he w oman's clinical pr esentation and serum hCG le vels 
+before making a diagnosis. (See also recommendations on human chorionic 
+gonadotr ophin measur ement s in w omen wit h pregnancy of unkno wn location .) 
+[2019] 
+1.4.20 When carr ying out a transabdominal or transv aginal ultrasound scan in 
+early pr egnancy , look f or a moderat e to large amount of fr ee fluid in t he 
+perit oneal ca vity or P ouch of Douglas, which might r epresent 
+haemoperit oneum. If t his is pr esent, tak e into account ot her intraut erine 
+and adne xal featur es on t he scan, t he w oman's clinical pr esentation and 
+hCG le vels bef ore making a diagnosis. [2019] 
+1.4.21 When carr ying out a transabdominal or transv aginal ultrasound scan 
+during early pr egnancy , scan t he ut erus and adne xae t o see if t here is a 
+heterotopic pr egnancy . [2019] 
+1.4.22 All ultrasound scans should be per formed or dir ectly super vised and 
+review ed by appr opriat ely qualified healt hcare professionals wit h training 
+in, and e xperience of , diagnosing ect opic pr egnancies. [2012, amended 
+2019] Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 15
+of 41For a shor t explanation of wh y the committ ee made t hese r ecommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on using ultrasound 
+for diagnosis of a tubal ect opic pr egnancy . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview A: 
+diagnostic accuracy of ultrasound f eatur es for tubal ect opic pr egnancy . 
+Human chorionic g onadotr ophin me asur emen ts in w omen wi th 
+pregnanc y of unkno wn loc ation 
+1.4.23 Be awar e that w omen wit h a pregnancy of unkno wn location could ha ve 
+an ect opic pr egnancy until t he location is det ermined. [2012] 
+1.4.24 Do not use serum hCG measur ement s to det ermine t he location of t he 
+pregnancy . [2012] 
+1.4.25 In a w oman wit h a pr egnancy of unkno wn location, place mor e 
+impor tance on clinical sympt oms t han on serum hCG r esult s, and r eview 
+the w oman's condition if an y of her sympt oms change, r egar dless of 
+previous r esult s and assessment s. [2012] 
+1.4.26 Use serum hCG measur ement s only f or assessing tr ophoblastic 
+proliferation t o help t o det ermine subsequent management. [2012] 
+1.4.27 Take 2 serum hCG measur ement s as near as possible t o 48 hours apar t 
+(but no earlier) t o det ermine subsequent management of a pr egnancy of 
+unkno wn location. T ake fur ther measur ement s only aft er review b y a 
+senior healt hcare professional. [2012] 
+1.4.28 Regar dless of serum hCG le vels, giv e women wit h a pr egnancy of 
+unkno wn location writt en inf ormation about what t o do if t hey experience 
+any new or w orsening sympt oms, including details about ho w to access 
+emer gency car e 24 hours a da y. Advise w omen t o return if t here are new 
+sympt oms or if e xisting sympt oms w orsen. [2012] 
+1.4.29 For a w oman wit h an incr ease in serum hCG le vels gr eater than 63% aft er Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 16
+of 4148 hours: 
+• Inform her t hat she is lik ely to have a de veloping intraut erine pr egnancy 
+(although t he possibility of an ect opic pr egnancy cannot be e xcluded). 
+• Offer her a transv aginal ultrasound scan t o det ermine t he location of t he 
+pregnancy betw een 7 and 14 days lat er. Consider an earlier scan f or women 
+with a serum hCG le vel greater than or equal t o 1,500 IU/litre. 
+－ If a viable intraut erine pr egnancy is confirmed, off er her r outine ant enatal 
+care. See t he NICE guideline on ant enatal car e. 
+－ If a viable intraut erine pr egnancy is not confirmed, r efer her f or immediat e 
+clinical r eview b y a senior gynaecologist. [2012] 
+1.4.30 For a w oman wit h a decr ease in serum hCG le vels gr eater than 50% aft er 
+48 hours: 
+• inform her t hat t he pr egnancy is unlik ely to continue but t hat t his is not 
+confirmed and 
+• provide her wit h oral and writt en inf ormation about wher e she can access 
+suppor t and counselling ser vices; see also recommendation 1 .1.3 for details of 
+further inf ormation t hat should be pr ovided 
+• ask her t o tak e a urine pr egnancy t est 14 days aft er the second serum hCG 
+test, and e xplain t hat: 
+－ if the test is negativ e, no fur ther action is necessar y 
+－ if the test is positiv e, she should r eturn t o the early pr egnancy assessment 
+service f or clinical r eview wit hin 2 4 hours. [2012] 
+1.4.31 For a w oman wit h a decr ease in serum hCG le vels less t han 50%, or an 
+increase less t han 63%, r efer her f or clinical r eview in t he early 
+pregnancy assessment ser vice wit hin 2 4 hours. [2012, amended 2019] 
+1.4.32 For women wit h a pr egnancy of unkno wn location, when using serial 
+serum hCG measur ement s, do not use serum pr ogest erone 
+measur ement s as an adjunct t o diagnose eit her viable intraut erine 
+pregnancy or ect opic pr egnancy . [2012] Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 17
+of 411.5 Manag emen t of misc arriag e 
+Threatene d misc arriag e 
+1.5.1 Advise a w oman wit h a confirmed intraut erine pr egnancy wit h a fetal 
+hear tbeat who pr esent s wit h vaginal bleeding, but has no hist ory of 
+previous miscarriage, t hat: 
+• if her bleeding get s worse, or persist s beyond 14 days, she should r eturn f or 
+further assessment 
+• if the bleeding st ops, she should star t or continue r outine ant enatal car e. 
+[2012, amended 2021] 
+1.5.2 Offer vaginal micr onised pr ogest erone 400 mg twice daily t o women wit h 
+an intraut erine pr egnancy confirmed b y a scan, if t hey have vaginal 
+bleeding and ha ve previously had a miscarriage. [2021] 
+1.5.3 If a fetal hear tbeat is confirmed, continue pr ogest erone until 
+16 complet ed w eeks of pr egnancy . [2021] 
+In No vember 2021 , this was an off -label use of v aginal micr onised 
+progest erone. See NICE's inf ormation on pr escribing medicines . 
+For a shor t explanation of wh y the committ ee made t hese r ecommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on pr ogest ogens f or 
+preventing miscarriage . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview C: 
+progest ogens f or pr eventing miscarriage . 
+Expe ctant manag emen t 
+1.5.4 Use e xpectant management f or 7 to 14 days as t he first -line 
+management strat egy f or women wit h a confirmed diagnosis of 
+miscarriage. Explor e management options ot her t han e xpectant 
+management if: Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 18
+of 41• the w oman is at incr eased risk of haemorrhage (f or example, she is in t he lat e 
+first trimest er) or 
+• she has pr evious adv erse and/or traumatic e xperience associat ed wit h 
+pregnancy (f or example, stillbir th, miscarriage or ant epar tum haemorrhage) or 
+• she is at incr eased risk fr om t he eff ects of haemorrhage (f or example, if she 
+has coagulopat hies or is unable t o have a blood transfusion) or 
+• there is e vidence of inf ection. [2012] 
+1.5.5 Offer medical management t o women wit h a confirmed diagnosis of 
+miscarriage if e xpectant management is not acceptable t o the w oman. 
+[2012] 
+1.5.6 Explain what e xpectant management in volves and t hat most w omen will 
+need no fur ther tr eatment. Also pr ovide w omen wit h oral and writt en 
+information about fur ther tr eatment options. [2012] 
+1.5.7 Give all w omen under going e xpectant management of miscarriage oral 
+and writt en inf ormation about what t o expect t hroughout t he pr ocess, 
+advice on pain r elief and wher e and when to get help in an emer gency . 
+See also recommendation 1.1.3 for details of fur ther inf ormation t hat 
+should be pr ovided. [2012] 
+1.5.8 If the resolution of bleeding and pain indicat e that t he miscarriage has 
+complet ed during 7 t o 14 days of e xpectant management, pr ovide t he 
+woman or person wit h a urine pr egnancy t est t o carr y out at home 
+3 weeks aft er their miscarriage, and advise t hem t o return f or 
+individualised car e if it is positiv e. [2012, amended 2023] 
+1.5.9 Offer a r epeat scan if aft er the period of e xpectant management, t he 
+bleeding and pain: 
+• have not star ted (suggesting t hat t he pr ocess of miscarriage has not begun) or Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 19
+of 41• are persisting and/or incr easing (suggesting incomplet e miscarriage). 
+Discuss all tr eatment options ( continued e xpectant management, medical 
+management and sur gical management) wit h the w oman t o allo w her t o mak e 
+an inf ormed choice. [2012] 
+1.5.10 Review t he condition of a w oman who opt s for continued e xpectant 
+management of miscarriage at a minimum of 14 days aft er the first 
+follow-up appointment. [2012] 
+Medical manag emen t 
+In August 2023 , the use of mif eprist one and misopr ostol in r ecommendations 1 .5.11 
+and 1 .5.13 was off label. See NICE's inf ormation on pr escribing medicines . 
+1.5.11 For the medical management of missed miscarriage off er: 
+• 200 mg oral mif eprist one and 
+• 48 hours lat er, 800 micrograms misopr ostol (vaginal, oral or sublingual) unless 
+the gestational sac has alr eady been passed. [2012, amended 2023] 
+1.5.12 Advise t he w oman or person t hat if bleeding has not star ted wit hin 
+48 hours aft er misopr ostol treatment, t hey should contact t heir 
+healt hcare professional t o det ermine ongoing individualised car e. If t here 
+are concerns t hat t hey will not contact t he ser vice t hen t here should be 
+arrangement s for the ser vice t o follow up wit h these individuals. [2012, 
+amended 2023] 
+1.5.13 For the medical management of incomplet e miscarriage, use a single 
+dose of misopr ostol 600 micrograms (v aginal, oral or sublingual). 
+Misopr ostol 800 micrograms can be used as an alt ernativ e to allo w 
+alignment of tr eatment pr otocols f or bot h missed and incomplet e 
+miscarriage. [2012, amended 2023] 
+1.5.14 Do not off er mif eprist one as a tr eatment f or incomplet e miscarriage. 
+[2012, amended 2023] Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 20
+of 411.5.15 Offer all w omen and people r eceiving medical management of 
+miscarriage pain r elief and anti-emetics as needed. [2012] 
+1.5.16 Inform w omen and people r eceiving medical management of miscarriage 
+about what t o expect t hroughout t he pr ocess. Include t he lengt h and 
+extent of bleeding, pot ential side eff ects of tr eatment including pain, 
+diarrhoea and v omiting, and when and ho w to seek help. [2012, 
+amended 2023] 
+1.5.17 Provide w omen and people who ha ve had medical management of 
+miscarriage wit h a urine pr egnancy t est t o carr y out at home 3 weeks 
+after medical management of miscarriage unless t hey experience 
+worsening sympt oms, in which case advise t hem t o return t o the 
+healt hcare professional r esponsible f or pr oviding t heir medical 
+management. [2012, amended 2021] 
+1.5.18 Advise w omen and people wit h a positiv e urine pr egnancy t est aft er 
+3 weeks t o return f or a r eview t o the healt hcare professional r esponsible 
+for pr oviding t heir medical management t o rule out a r etained pr egnancy , 
+molar or ect opic pr egnancy , and assess t he need f or fur ther 
+investigations or tr eatment. [2012, amended 2023] 
+1.5.19 If the pr egnancy t est aft er 3 weeks is negativ e but t he w oman or person 
+is still bleeding hea vily or has ot her sympt oms (f or example, pelvic pain 
+or fever), t hen assess t he need f or fur ther in vestigations or tr eatment. 
+[2023] 
+For a shor t explanation of wh y the committ ee made t he 2023 r ecommendations and 
+how they might aff ect practice, see t he rationale and impact section on medical 
+management of miscarriage . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview D: 
+medical management of miscarriage . 
+Surgical manag emen t 
+1.5.20 Wher e clinically appr opriat e, off er women under going a miscarriage a Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 21
+of 41choice of: 
+• manual v acuum aspiration under local anaest hetic in an outpatient or clinic 
+setting or 
+• surgical management in a t heatr e under general anaest hetic. [2012] 
+1.5.21 Provide oral and writt en inf ormation t o all w omen under going sur gical 
+management of miscarriage about t he tr eatment options a vailable and 
+what t o expect during and aft er the pr ocedur e. See also recommendation 
+1.1.3 for details of fur ther inf ormation t hat should be pr ovided. [2012] 
+1.6 Manag emen t of tubal e ctopic pr egnanc y 
+1.6.1 Give all w omen wit h an ect opic pr egnancy oral and writt en inf ormation 
+about: 
+• the tr eatment options and what t o expect during and aft er treatment 
+• how they can contact a healt hcare professional f or advice aft er treatment if 
+needed, and who t his will be 
+• wher e and when to get help in an emer gency . 
+See also recommendation 1.1.3 for details of fur ther inf ormation t hat should be 
+provided. [2012, amended 2019] 
+1.6.2 Inform w omen who ha ve had an ect opic pr egnancy t hat t hey can self -
+refer to an early pr egnancy assessment ser vice in futur e pregnancies if 
+they have any early concerns. [2012] 
+Expe ctant manag emen t 
+1.6.3 Offer expectant management as an option t o women who: 
+• are clinically stable and pain fr ee and 
+• have a tubal ect opic pr egnancy measuring less t han 35 mm wit h no visible 
+hear tbeat on transv aginal ultrasound scan and Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 22
+of 41• have serum hCG le vels of 1 ,000 IU/L or less and 
+• are able t o return f or follow-up. [2019] 
+1.6.4 Consider e xpectant management as an option f or women who: 
+• are clinically stable and pain fr ee and 
+• have a tubal ect opic pr egnancy measuring less t han 35 mm wit h no visible 
+hear tbeat on transv aginal ultrasound scan and 
+• have serum hCG le vels abo ve 1,000 IU/L and belo w 1,500 IU/L and 
+• are able t o return f or follow-up. [2019] 
+1.6.5 For women wit h a tubal ect opic pr egnancy being managed e xpectant ly, 
+repeat hCG le vels on da ys 2, 4 and 7 aft er the original t est and: 
+• if hCG le vels dr op by 15% or mor e from t he pr evious v alue on da ys 2, 4 and 7, 
+then r epeat w eekly until a negativ e result (less t han 20 IU/L) is obtained or 
+• if hCG le vels do not f all by 15%, sta y the same or rise fr om t he pr evious v alue, 
+review t he w oman's clinical condition and seek senior advice t o help decide 
+further management. [2019] 
+1.6.6 Advise w omen t hat, based on limit ed evidence, t here seems t o be no 
+difference f ollowing e xpectant or medical management in: 
+• the rat e of ect opic pr egnancies ending naturally 
+• the risk of tubal ruptur e 
+• the need f or additional tr eatment, but t hat t hey might need t o be admitted 
+urgent ly if t heir condition det eriorat es 
+• healt h status, depr ession or anxiety scor es. [2019] 
+1.6.7 Advise w omen t hat t he time tak en for ect opic pr egnancies t o resolv e and 
+futur e fertility out comes ar e likely to be t he same wit h either e xpectant 
+or medical management. [2019] Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 23
+of 41For a shor t explanation of wh y the committ ee made t hese r ecommendations and ho w 
+they might aff ect practice, see t he rationale and impact section on e xpectant 
+management of tubal ect opic pr egnancy . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview B: 
+expectant v ersus medical management of ect opic pr egnancy . 
+Medical and sur gical manag emen t 
+In April 2019 , the use of met hotrexate in r ecommendations 1.6.8 to 1.6.11 was off label. 
+See NICE's inf ormation on pr escribing medicines . 
+1.6.8 Offer syst emic met hotrexate to women who: 
+• have no significant pain and 
+• have an unruptur ed tubal ect opic pr egnancy wit h an adne xal mass smaller t han 
+35 mm wit h no visible hear tbeat and 
+• have a serum hCG le vel less t han 1 ,500 IU/litre and 
+• do not ha ve an intraut erine pr egnancy (as confirmed on an ultrasound scan) 
+and 
+• are able t o return f or follow-up. 
+Methotrexate should only be off ered on a first visit when t here is a definitiv e 
+diagnosis of an ect opic pr egnancy , and a viable intraut erine pr egnancy has 
+been e xcluded. Off er sur gery wher e treatment wit h met hotrexate is not 
+acceptable t o the w oman. [2012, amended 2019] 
+1.6.9 Offer sur gery as a first -line tr eatment t o women who ar e unable t o return 
+for follow-up aft er met hotrexate treatment or who ha ve any of t he 
+following: 
+• an ect opic pr egnancy and significant pain Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 2 4
+of 41• an ect opic pr egnancy wit h an adne xal mass of 35 mm or lar ger 
+• an ect opic pr egnancy wit h a fetal hear tbeat visible on an ultrasound scan 
+• an ect opic pr egnancy and a serum hCG le vel of 5 ,000 IU/litre or mor e. [2012] 
+1.6.10 Offer the choice of eit her met hotrexate or sur gical management t o 
+women wit h an ect opic pr egnancy who ha ve a serum hCG le vel of at 
+least 1 ,500 IU/litre and less t han 5 ,000 IU/litre, who ar e able t o return f or 
+follow-up and who meet all of t he following crit eria: 
+• no significant pain 
+• an unruptur ed ect opic pr egnancy wit h an adne xal mass smaller t han 35 mm 
+with no visible hear tbeat 
+• no intraut erine pr egnancy (as confirmed on an ultrasound scan). 
+Advise w omen who choose met hotrexate that t heir chance of needing fur ther 
+intervention is incr eased and t hey ma y need t o be ur gent ly admitt ed if t heir 
+condition det eriorat es. [2012] 
+1.6.11 For women wit h ect opic pr egnancy who ha ve had met hotrexate, tak e 2 
+serum hCG measur ement s in t he first w eek ( days 4 and 7) aft er 
+treatment and t hen 1 serum hCG measur ement per w eek until a negativ e 
+result is obtained. If hCG le vels plat eau or rise, r eassess t he w oman's 
+condition f or fur ther tr eatment. [2012] 
+Performing lapar oscopy 
+1.6.12 When sur gical tr eatment is indicat ed for women wit h an ect opic 
+pregnancy , it should be per formed lapar oscopically whene ver possible, 
+taking int o account t he condition of t he w oman and t he comple xity of t he 
+surgical pr ocedur e. [2012] 
+1.6.13 Surgeons pr oviding car e to women wit h ect opic pr egnancy should be 
+compet ent t o per form lapar oscopic sur gery. [2012] 
+1.6.14 Commissioners and managers should ensur e that equipment f or 
+lapar oscopic sur gery is a vailable. [2012] Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 25
+of 41Salping ectomy and sal ping otom y 
+1.6.15 Offer a salpingect omy to women under going sur gery for an ect opic 
+pregnancy unless t hey have other risk f actors f or inf ertility. [2012] 
+1.6.16 Consider salpingot omy as an alt ernativ e to salpingect omy for women 
+with risk f actors f or inf ertility such as contralat eral tube damage. [2012] 
+1.6.17 Inform w omen ha ving a salpingot omy that up t o 1 in 5 women ma y need 
+further tr eatment. This tr eatment ma y include met hotrexate and/or a 
+salpingect omy. [2012] 
+1.6.18 For women who ha ve had a salpingot omy, take 1 serum hCG 
+measur ement at 7 days aft er sur gery, then 1 serum hCG measur ement 
+per w eek until a negativ e result is obtained. [2012] 
+1.6.19 Advise w omen who ha ve had a salpingect omy that t hey should tak e a 
+urine pr egnancy t est aft er 3 weeks. Advise w omen t o return f or fur ther 
+assessment if t he test is positiv e. [2012] 
+1.7 Anti-D imm unog lobulin pr ophylaxis 
+1.7.1 Offer anti-D immunoglobulin pr ophylaxis at a dose of 250 IU 
+(50 micrograms) t o all rhesus-negativ e women who ha ve a sur gical 
+procedur e to manage an ect opic pr egnancy or a miscarriage. [2012] 
+1.7.2 Do not off er anti-D immunoglobulin pr ophylaxis t o women who: 
+• receiv e solely medical management f or an ect opic pr egnancy or miscarriage or 
+• have a threatened miscarriage or 
+• have a complet e miscarriage or 
+• have a pr egnancy of unkno wn location. [2012] 
+1.7.3 Do not use a Kleihauer t est for quantifying f eto-mat ernal haemorrhage. 
+[2012] Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 26
+of 41Terms use d in this guideline 
+Early pregnanc y 
+Pregnancy in t he first trimest er (that is, up t o 13 complet ed w eeks of pr egnancy). 
+Expe ctant manag emen t 
+A management appr oach, also called 'wait and wat ch', when no medical or sur gical 
+treatment is giv en. The aim is t o see if t he condition will r esolv e naturally . 
+Pregnanc y of unkno wn loc ation 
+When a w oman has a positiv e pregnancy t est, but no intraut erine or e xtraut erine 
+pregnancy can be seen wit h a transv aginal ultrasound scan. Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 27
+of 41Recommenda tions f or research 
+The guideline committ ee has made t he following r ecommendations f or resear ch based on 
+its review of e vidence, t o impr ove NICE guidance and patient car e in t he futur e. The 
+Guideline De velopment Gr oup's full set of r ecommendations f or resear ch is detailed in t he 
+full guideline . 
+1 Ear ly pregnanc y assessmen t uni ts 
+A national e valuation of early pr egnancy assessment unit ser vice pr ovision should be 
+carried out t o identify f actors aff ecting out comes. Fact ors should include whet her car e is 
+provided in a dedicat ed unit, staffing configuration and opening hours of dedicat ed 
+services. Out comes should include bot h process (ser vice) out comes and pr egnancy-
+related out comes. Data collect ed should be used t o analyse t he cost eff ectiv eness of early 
+pregnancy assessment unit s compar ed wit h other models of car e. 
+Why this is im portant 
+The first r epor t of an early pr egnancy assessment unit in England was published o ver 
+20 years ago, and pr ompt ed the rapid de velopment of centr es for the management of 
+problems in early pr egnancy . Today there are an estimat ed 150 early pr egnancy 
+assessment unit s in England and W ales (Association of Early Pr egnancy Unit s, 2012). 
+However, there is considerable v ariation betw een centr es in access t o ser vices and le vels 
+of car e provided. In addition, t here has been v ery little good quality r esear ch on t he 
+effectiv eness of early pr egnancy assessment unit s in impr oving ph ysical and emotional 
+healt h compar ed wit h ser vices pr ovided out side of a dedicat ed unit. 
+A national audit of early pr egnancy assessment ser vices w ould help t o mak e up f or this 
+lack of inf ormation. Such an audit should be along t he lines of t he National Caesar ean 
+Section Sentinel Audit, a cr oss-sectional national sur vey of ser vice configuration and 
+outcomes. Data r ecorded w ould include ser vice location, opening hours and t he 
+healt hcare professionals in volved. Out comes w ould include time of att endance, lengt h of 
+stay, admission rat es, time t o treatment and w omen's e xperience. Obtaining some of t his 
+information w ould in volve early pr egnancy ser vices carr ying out mor e formal f ollow-up of 
+women t han t hey might do curr ently, for the duration of t he audit. The e valuation should 
+be structur ed to allo w for comparisons betw een diff erent models of car e. Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 28
+of 41Comparativ e out come data collect ed w ould be used t o conduct an analysis of t he cost 
+effectiv eness of early pr egnancy assessment unit s compar ed wit h other models of car e. 
+2 Ultrasound f or de termining a viab le in trauterine 
+pregnanc y 
+How does t he timing and fr equency of ultrasound e xamination aff ect diagnosis and 
+outcomes of early pr egnancy complications, including w omen's e xperience and cost 
+effectiv eness? 
+Why this is im portant 
+The rationale behind t he fr equency of ultrasound t o impr ove diagnosis and out comes of 
+early pr egnancy complications addr esses t he pr oblems associat ed wit h pregnancy of 
+unkno wn location and intraut erine pr egnancy of uncer tain viability . The e vidence base f or 
+the timing and fr equency of scanning in early pr egnancy is limit ed, and t he number of 
+scans is or ganised b y individual unit s accor ding t o capacity and demand. Some healt hcare 
+professionals choose t o wait 5 days betw een scans wher eas ot hers will wait 10 to 14 days. 
+These decisions ar e driv en by resour ce availability as w ell as clinical considerations, but in 
+particular t he eff ect of diff erent strat egies on cost and w omen's e xperience is not clear . 
+The lit eratur e suggest s that t here is no clear consensus, but t here is general agr eement 
+that b y 14 days a diagnosis will be clear . To establish t he most appr opriat e time f or scans, 
+the efficacy of scans tak en aft er 14 days could be compar ed wit h scans tak en aft er 7 days 
+for diagnosis of ect opic pr egnancy or viability . 
+3 Effectiveness o f progestog ens in w omen wi th 
+recurr ent misc arriag e 
+What is t he clinical and cost eff ectiv eness of pr ogest erone f or impr oving out comes in 
+women wit h une xplained r ecurr ent miscarriage? 
+Why this is im portant 
+Women wit h previous pr egnancy losses ha ve an incr eased risk of miscarriage in 
+subsequent pr egnancies. Pr ogest erone is essential f or maintaining a healt hy pregnancy , 
+and t here is e vidence t hat it is saf e for bot h women and f etuses. Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 29
+of 41A recent randomised contr olled trial assessed t he eff ectiv eness of micr onised v aginal 
+progest erone supplementation in w omen wit h 3 or mor e first -trimest er losses and did not 
+show a benefit wit h progest erone t herap y use during t he first trimest er, concluding t hat 
+there is not enough e vidence t o suppor t its use in w omen wit h une xplained r ecurr ent 
+miscarriage. Ho wever, this trial was designed t o look f or a 10% diff erence in liv e bir th 
+outcomes in t hose who r eceiv ed pr ogest erone v ersus t hose who did not r eceiv e it. A 
+larger randomised contr olled trial is needed t o det ermine if t here is a smaller diff erence 
+(for example 2. 5% to 5%) which w ould still lead t o a meaningful incr ease in liv e bir ths and 
+reduce t he trauma of a fur ther miscarriage f or a number of w omen. 
+4 Effectiveness o f different progestog ens in w omen 
+at risk o f misc arriag e 
+What is t he clinical and cost eff ectiv eness of v aginal micr onised pr ogest erone v ersus 
+other pr ogest erone pr eparations in impr oving out comes in w omen at risk of miscarriage? 
+Why this is im portant 
+Evidence fr om a r ecent randomised contr olled trial sho wed a small but impor tant benefit 
+for the out come of liv e bir th when v aginal micr onised pr ogest erone was giv en to women 
+with early pr egnancy bleeding and a hist ory of one or mor e previous miscarriages. 
+However, there was not enough e vidence a vailable t o assess whet her ot her f ormulations 
+of pr ogest erone w ould lead t o other beneficial out comes in t his gr oup of w omen. R esear ch 
+is needed t o identify whet her t here is a diff erence in t he eff ectiv eness of micr onised 
+versus non-micr onised pr ogest erone t herap y in w omen wit h early pr egnancy bleeding and 
+a hist ory of one or mor e previous miscarriages. 
+5 Manag emen t of misc arriag e 
+In women wit h confirmed miscarriage, does t he type of management strat egy ( expectant, 
+medical and sur gical) impact on w omen's e xperience, including psy chological and 
+emotional out comes? 
+Why this is im portant 
+The management of miscarriage in t he UK has changed in man y wa ys over the past 
+2 decades, par ticularly in t he shift fr om inpatient t o outpatient or da y case car e and t he Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 30
+of 41introduction of medical and e xpectant management as alt ernativ es to sur gery. 
+Despit e these changes t here is a lack of r esear ch int o the eff ects of t hese diff erent 
+appr oaches fr om t he w oman's perspectiv e, in par ticular t heir psy chological and emotional 
+impact. Miscarriage is distr essing f or most w omen, and t he type of management it self 
+might aff ect w omen's need f or counselling, wit h a resulting cost t o the NHS. Because of 
+this it is an impor tant ar ea for resear ch. 
+The deficiency in t he lit eratur e could be addr essed b y a comparativ e study of w omen 
+having t he diff erent management strat egies ( expectant, medical or sur gical) and in a 
+variety of clinical settings (f or example, early pr egnancy assessment unit, gynaecological 
+ward or gynaecological emer gency unit). The data collect ed could be bot h quantitativ e 
+(using v alidat ed psy chological healt h questionnair es) and qualitativ e (focusing par ticularly 
+on w omen's e xperience of t he par ticular type and setting of car e). 
+6 Com parison be tween expectant, me dical or 
+surgical manag emen t of ectopic pr egnanc y 
+In women wit h ect opic pr egnancy , does t he type of int ervention impact on w omen's 
+experience, including psy chological and emotional out comes? 
+Why this is im portant 
+Currently there is no e vidence e xploring t he psy chological impact of t he diff erent 
+treatment s for ect opic pr egnancy . However, the emotional impact of t he condition can be 
+significant, in some cir cumstances leading t o post -traumatic str ess disor der. A qualitativ e 
+comparativ e study should be carried out t o assess ho w this impact can be r educed. This 
+would help t o maximise w omen's emotional r ecovery in t he shor t and long t erm, enable 
+women and clinicians t o decide t he optimum tr eatment met hod and identify what suppor t 
+is needed f or women during and aft er the pr ocess. It could also r educe t he cost t o the 
+NHS of pr oviding long-t erm counselling f or aff ected w omen. Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 31
+of 41Rationale and im pact 
+These sections briefly e xplain wh y the committ ee made t he recommendations and ho w 
+they might aff ect practice. 
+Using ul trasound f or diagnosis o f a tubal e ctopic 
+pregnanc y 
+Recommendations 1 .4.17 to 1.4.21 
+Why the c ommi ttee made the r ecommenda tions 
+Ther e was good e vidence t hat, when seen on ultrasound, t he pr esence of an adne xal 
+mass wit h featur es of an early pr egnancy (a gestational sac containing a y olk sac or f etal 
+pole, wit h or wit hout a hear tbeat) was a r eliable indicat or for ect opic pr egnancy . 
+Other f eatur es such as a comple x inhomogeneous adne xal mass, adne xal mass wit h an 
+empty gestational sac, empty ut erus, a collection of fluid in t he ut erine ca vity or fr ee 
+perit oneal fluid might indicat e a suspicion of an ect opic pr egnancy , but t he evidence 
+showed they are not r eliable enough f eatur es on t heir o wn to diagnose an ect opic 
+pregnancy . The committ ee used t heir kno wledge and e xperience t o recommend t hat ot her 
+scan f eatur es, clinical pr esentation and serum human chorionic gonadotr ophin (hCG) 
+levels should t herefore be used as w ell to confirm or rule out t he diagnosis of ect opic 
+pregnancy . 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendations will not change t he amount of ultrasound scanning t hat is carried 
+out but will standar dise practice acr oss t he NHS. By defining t he featur es that should be 
+used t o indicat e the pr esence of an ect opic pr egnancy , or a suspicion of an ect opic 
+pregnancy (which can t hen be in vestigat ed fur ther), t he diagnosis of ect opic pr egnancy 
+should be impr oved and so risks t o women will be r educed. 
+Return t o recommendations Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 32
+of 41Progestog ens f or pr eventing misc arriag e 
+Recommendations 1 .5.2 and 1 .5.3 
+Why the c ommi ttee made the r ecommenda tions 
+Ther e was good e vidence t hat 400 mg twice daily of micr onised v aginal pr ogest erone 
+increases t he number of liv e bir ths in w omen wit h early pr egnancy bleeding and a pr evious 
+miscarriage. Ther e was no e vidence of benefit f or an y other pr eparations or doses of 
+progest erone, so t he committ ee made a recommendation f or resear ch. 
+Ther e was e vidence of no benefit in w omen wit h early pr egnancy bleeding but no pr evious 
+miscarriage, nor in w omen wit h previous miscarriage but no early pr egnancy bleeding in 
+the curr ent pr egnancy . The committ ee made a recommendation f or resear ch to fur ther 
+assess t he use of pr ogest erone in w omen wit h recurr ent miscarriage . Ther e was no 
+evidence of harm t o the mot her or bab y from t he use of pr ogest erone, alt hough t he 
+evidence is insufficient t o rule out t he possibility of rar e events. 
+To reduce t he risk of w omen wit h a pr egnancy of unkno wn location or an ect opic 
+pregnancy being giv en pr ogest erone, t he committ ee agr eed t hat, as in t he clinical studies, 
+progest erone should only be giv en to women wit h intraut erine pr egnancy confirmed wit h a 
+scan. T o avoid dela y in star ting tr eatment t he committ ee agr eed t hat pr ogest erone could 
+be star ted bef ore a fetal hear tbeat is det ected. The e vidence on which t he 
+recommendations w ere based had continued t he pr ogest erone tr eatment until 16 weeks of 
+pregnancy so t he committ ee used t his duration of tr eatment in t heir r ecommendations. 
+The committ ee discussed t hat as a scan was needed t o confirm t he intraut erine 
+pregnancy it w ould be appr opriat e for the initial pr escription f or pr ogest erone t o be 
+provided b y the Early Pr egnancy Unit, wit h prescribing continued t o 16 weeks (if a f etal 
+hear tbeat was det ected) b y the w oman's GP . However, the committ ee w ere awar e that 
+shared car e prescribing arrangement s are usually agr eed locally and so did not include t his 
+detail in t heir r ecommendations. 
+The committ ee confirmed t hat t he recommendations f or the use of pr ogest erone ar e only 
+for women wit h early pr egnancy bleeding and a hist ory of miscarriage. The 
+recommendations ar e not applicable in ot her cir cumstances, such as aft er the use of 
+mifeprist one. Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 33
+of 41How the r ecommenda tions mig ht affect practice 
+The r ecommendations will incr ease t he use of pr ogest ogens t o prevent miscarriage but 
+this is cost eff ectiv e. The r ecommendations will standar dise t he pr eparation of 
+progest erone used t o treat t hreatened miscarriage. 
+Return t o recommendations 
+Medical manag emen t of misc arriag e 
+Recommendations 1 .5.8 and 1 .5.11 to 1.5.19 
+Why the c ommi ttee made the r ecommenda tions 
+Ther e was e vidence t hat t he combination of mif eprist one and misopr ostol reduced t he 
+failure of t he gestational sac t o spontaneously pass b y 7 days and r educed t he need f or 
+surgical int ervention t o complet e the miscarriage up t o and aft er 7 days, compar ed to 
+misopr ostol alone, so t he committ ee recommended a combination tr eatment. 
+Time t o bleeding was not an out come r epor ted in t he evidence, but t he committ ee not ed 
+that t he evidence described t hat bleeding usually star ted 2 t o 3 days aft er misopr ostol 
+treatment, and t hat study par ticipant s were ask ed to repor t if bleeding had not star ted 
+within 48 hours. The committ ee agr eed t hat 2 4 hours was t oo shor t and so r ecommended 
+48 hours as a mor e realistic timeframe. Based on t heir kno wledge and e xperience, t he 
+committ ee not ed that t here ma y be some people who cannot easily contact early 
+pregnancy ser vices, so it r ecommended t hese individuals should be contact ed pr oactiv ely 
+to check t hat bleeding has begun. 
+The committ ee revised t he recommendations on incomplet e and missed miscarriage t o 
+clarify t he diff erences betw een t he tr eatment of t he 2 conditions. The committ ee review ed 
+new e vidence r elating t o the use of mif eprist one f or missed miscarriage and added t his to 
+the advice, but agr eed t hat t here was no new e vidence t o suppor t the use of mif eprist one 
+for incomplet e miscarriage. 
+The committ ee agr eed, based on t heir kno wledge and e xperience, t hat w omen and people 
+having a miscarriage should also be giv en advice on when and ho w to seek help during t he 
+miscarriage pr ocess, so it added t his to the existing advice. Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 34
+of 41The committ ee agr eed t hat a positiv e pregnancy t est ma y indicat e the pr esence of a 
+retained pr egnancy , so it added t his to the recommendation on when t o return f or review . 
+Based on e xper t advice, t he committ ee added additional advice t o cover the situation 
+wher e the pr egnancy t est is negativ e but t he w oman or person is still bleeding or has 
+developed ot her sympt oms. 
+The committ ee not ed that t he recommendation on e xpectant management of miscarriage 
+stated people should obtain a pr egnancy t est t hemselv es, wher eas t he guidance f ollowing 
+medical management of miscarriage advised t hat people should be supplied wit h a 
+pregnancy t est b y their car e team. T o ensur e parity of tr eatment betw een all gr oups 
+having a miscarriage, t he committ ee updat ed this recommendation based on e xper t 
+opinion and consensus. 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendation f or combination tr eatment will be a change in practice and w omen or 
+people being tr eated for missed miscarriage will no w need t o receiv e 2 medications 
+instead of 1 , administ ered 48 hours apar t. The use of mif eprist one f or the tr eatment of 
+missed miscarriage ma y also incr ease. Ho wever, as mif eprist one is alr eady used in clinical 
+practice f or missed miscarriage in man y early pr egnancy settings t his will standar dise 
+practice f or such settings acr oss t he NHS. The use of combination tr eatment will also 
+reduce t he need f or sur gical int ervention so will r educe cost s for the NHS. This has been 
+shown to be a cost -effectiv e treatment. 
+The change fr om 2 4 hours t o 48 hours in t he recommendation on star t of bleeding ma y 
+reduce t he number of people contacting early pr egnancy ser vices because bleeding has 
+not star ted. Ho wever, the recommendation t o proactiv ely follow up wit h people who do not 
+contact t he ser vice ma y incr ease r esour ce use, as staff time will be needed t o contact 
+these individuals. 
+This addition of advice on ho w and when t o seek help ma y incr ease t he number of people 
+seeking help during t he miscarriage pr ocess, and t his ma y incr ease r esour ce use f or the 
+NHS. 
+The r evised r ecommendation on positiv e urine pr egnancy t ests will not change t he number 
+of people who need r eview aft er 3 weeks, so t here will be no r esour ce impact fr om t his 
+change. Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 35
+of 41The change t o the expectant management advice t o giv e parity of car e will incr ease t he 
+number of urine pr egnancy t ests supplied b y the NHS, which will ha ve a resour ce impact, 
+but t his will r educe healt h inequalities and ensur e that all w omen and people ha ve access 
+to the pr egnancy t est t o complet e their management of miscarriage r egar dless of ability 
+(financial or ot herwise) t o obtain a pr egnancy t est t hemselv es. 
+Return t o recommendations 
+Expe ctant manag emen t of tubal e ctopic pr egnanc y 
+Recommendations 1 .6.3 to 1.6.7 
+Why the c ommi ttee made the r ecommenda tions 
+The e vidence sho wed no significant diff erences in t he number of ect opic pr egnancies 
+ending naturally , the need f or additional tr eatment, t he incidence of tubal ruptur e or t he 
+effect on healt h-related quality of lif e betw een e xpectant management and medical 
+management, so t he committ ee recommended t hat e xpectant management could be 
+offered to clinically stable w omen wit h small ect opic pr egnancies and lo w hCG le vels, and 
+should be consider ed for clinically stable w omen wit h small ect opic pr egnancies and 
+slight ly higher hCG le vels, as an alt ernativ e to medical management. 
+Ther e was no e vidence f or the time tak en for ect opic pr egnancies t o end naturally or t he 
+effects on futur e fertility but t he committ ee agr eed, based on t heir e xper tise and 
+experience, t hat t hese out comes w ere likely to be t he same wit h expectant management 
+compar ed wit h medical management. 
+How the r ecommenda tions mig ht affect practice 
+These r ecommendations will standar dise t he management of ect opic pr egnancy and mak e 
+expectant management a vailable f or women when it is clinically appr opriat e. Mor e women 
+might ha ve expectant management of ect opic pr egnancy as a r esult. This could r esult in 
+cost sa vings t hrough a r eduction in drug use and tr eatment of associat ed side eff ects. 
+Local pr otocols will be needed f or assessment, monit oring and f ollow-up of w omen 
+choosing e xpectant management. 
+Return t o recommendations Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 36
+of 41Context 
+Ectopic pr egnancy and miscarriage ha ve an adv erse eff ect on t he quality of lif e of man y 
+women. Appr oximat ely 20% of pr egnancies miscarr y, and miscarriages can cause 
+considerable distr ess. Early pr egnancy loss account s for over 50 ,000 admissions in t he UK 
+annually . The rat e of ect opic pr egnancy is 11 per 1 ,000 pr egnancies, wit h a mat ernal 
+mortality of 0 .2 per 1 ,000 estimat ed ect opic pr egnancies. About tw o-thirds of t hese 
+deat hs ar e associat ed wit h substandar d car e. 
+Women who do not access medical help r eadily (such as w omen who ar e recent migrant s, 
+asylum seek ers, r efugees, or w omen who ha ve difficulty r eading or speaking English) ar e 
+particularly vulnerable. Impr ovement in t he diagnosis and management of early pr egnancy 
+loss is t herefore of vital impor tance, in or der t o reduce t he incidence of t he associat ed 
+psychological morbidity and a void t he unnecessar y deat hs of w omen wit h ect opic 
+pregnancies. Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 37
+of 41Finding mor e inf orma tion and c ommi ttee 
+details 
+To find NICE guidance on r elated topics, including guidance in de velopment, see t he NICE 
+topic page on pr egnancy . 
+For full details of t he evidence and t he guideline committ ee's discussions f or the 2019 , 
+2021 and 2023 r ecommendations, see t he evidence r eviews . For details of t he evidence 
+and t he guideline committ ee's discussions f or the 2012 r ecommendations, see t he full 
+guideline . You can also find inf ormation about how the guideline was de veloped , including 
+details of t he committ ee. 
+NICE has pr oduced tools and r esour ces t o help y ou put t his guideline int o practice . For 
+general help and advice on putting NICE guidelines int o practice, see resour ces t o help 
+you put guidance int o practice . Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 38
+of 41Update inf orma tion 
+August 2023: We have review ed the evidence and made new and updat ed 
+recommendations on t he medical management of miscarriage. These r ecommendations 
+are mark ed [2012, amended 2023] or [2023] . In some cases, minor changes ha ve been 
+made t o recommendations t o bring t he language and style up t o dat e wit hout changing 
+the meaning. 
+November 2021: We have review ed the evidence and made new r ecommendations on t he 
+use of pr ogest erone in t hreatened miscarriage. These r ecommendations ar e mark ed 
+[2021] . 
+We have also made changes wit hout an e vidence r eview: 
+Recommendation 1 .5.1 has been amended t o clarify t hat t his applies t o women wit h early 
+pregnancy bleeding but no hist ory of pr evious miscarriage. 
+Recommendation 1 .5.17 has been amended t o advise t hat w omen should be pr ovided wit h 
+a urine pr egnancy t est. 
+These r ecommendations ar e mark ed [2012, amended 2021] . 
+April 2019: We have review ed the evidence and made new r ecommendations on t he 
+diagnosis of tubal ect opic pr egnancy using ultrasound and e xpectant management of 
+ectopic pr egnancy . These r ecommendations ar e mark ed [2019] . 
+We have also made some changes wit hout an e vidence r eview: 
+• Recommendation 1 .1.2 has had an additional link added t o related NICE guidance on 
+antenatal and postnatal healt h. 
+• Recommendation 1 .1.3 has been updat ed to bring t he w ording on obtaining consent in 
+line wit h other NICE guidance. 
+• Recommendation 1 .3.10 has been updat ed wit h extra inf ormation co vering a wider 
+range of f actors so t hat pot ential ect opic pr egnancies ar e not missed. Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 39
+of 41• The headings of section 1 .4 and 1 .6 have been updat ed to clarify it only r elates to tubal 
+ectopic pr egnancy . 
+• Recommendation 1 .4.16 has been updat ed to reflect t he possibility of a pr egnancy of 
+unkno wn location, and a cr oss r eference t o advice on pr egnancy of unkno wn location 
+added. 
+• Recommendation 1 .4.22 has been updat ed to reflect curr ent ultrasound practice. 
+• Recommendation 1 .6.1 has been updat ed to include advice on miscarriage in t he 
+ectopic pr egnancy section. 
+• Recommendation 1 .4.31 has been updat ed to mak e it clear t he decr ease in serum hCG 
+level is less t han 50%. 
+• Recommendation 1 .6.7 has been changed t o reflect curr ent practice and pr escribing 
+guidance on met hotrexate. 
+These r ecommendations ar e mark ed [2012, amended 2019] . 
+Recommendations mark ed [2012] last had an e vidence r eview in 2012. In some cases 
+minor changes ha ve been made t o the w ording t o bring t he language and style up t o dat e, 
+without changing t he meaning. 
+Minor changes since publication 
+October 2023: We have clarified advice on which healt hcare professional r ecommendation 
+1.5.18 refers t o. 
+Sept ember 2022: We have corr ected the references t o anti-D immunoglobulin pr ophylaxis 
+in section 1 .7. 
+ISBN: 9 78-1-47 31-5358-5 Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 40
+of 41Accreditation Ectopic pr egnancy and miscarriage: diagnosis and initial management (NG126)
+© NICE 2023 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 4 1
+of 41

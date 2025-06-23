@@ -1,0 +1,533 @@
+# Extracted from: CG1111 Screening for Downs Edwards and Pataus  Syndrome.pdf
+# Guideline ID: cg1111-screening-for-downs-edwards-and-pataus-syndrome
+# Content length: 25365 characters
+# Processing date: 1750066899.8505132
+
+CG1111 Screening for Down’s, Edward’s and Patau’s Syndrome Guideline v7.0 Oct 2023 Page 1 of 12 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+ 
+Screening fo r Down’s, Edward’s and Patau’s Syndrome Guideline 
+Summary statement: How does the document 
+support patient care? The purpose of this guideline is to provide evidence based 
+guidance for the process of screening for Down’s, Edward’s 
+and Patau’s syndrome 
+Staff/stakeholders involved in development: 
+ Antenatal Screening Co -ordinator, Joint Obstetric Guidelines 
+Group, Obstetric Consultants and Senior Midwifery Staff 
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Chief of Service 
+Author: Antenatal Screening Coordinator 
+For use by: Midwives and obstetricians 
+Purpose: To provide evidence -based guidance on screening for 
+Down’s, Edward’s and Patau’s syndrome 
+This document supports: 
+ Screening tests for you and your baby (STFYAYB) GOV.UK 
+August 2022 
+Key related documents: UH Sussex (SRH &WH) Maternity Guidelines: Antenatal 
+care and patient information , Referral when a fetal 
+abnormality is detected, Maternal antenatal screening t ests, 
+Small for gestational age and fetal growth restriction , 12 
+Week Scan: Combined test and declined combined test 
+ultrasound protocol 
+Approved by: 
+ Joint Obstetric Guideline Group 
+Approval date: 18th October 2023 Date uploaded: 18th October 20 23 
+Ratified by Board of Directors/ Committee of 
+the Board of Directors Not Applicable – Divisional Ratification only required 
+Ratification Date: Not Applicable – Divisional Ratification only required 
+Expiry Date: October 2026 
+Review date: April 2026 
+If you require this document in another format such as Braille, large print, audio or another language 
+please contact the Trusts Communications Team 
+Reference Number: CG1111 
+
+CG1111 Screening for Down’s, Edward’s and Patau’s Syndrome Guideline v7.0 Oct 2023 Page 2 of 12 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+ 
+Version Date Author Status Comment 
+1.0 
+2.0 February 2011 Antenatal Scr eening 
+Coordinator Archived New Trust Maternity guideline 
+3.0 August 2012 Antenatal Screening 
+Coordinator Archived Minor update to guideline 
+3.1 April 2014 Antenatal Screening 
+Coordinator Archived 3 year update 
+4.0 May 2015 Antenatal Screening 
+Coordinat or Archived Additions of Edward’s and 
+Patau’s syndrome 
+Additions of fail safes for Down’s 
+syndrome screening 
+ August 2017 Antenatal Screening 
+Coordinator Archived 3 year update 
+5.1 February 2019 Antenatal Screening 
+Coordinator Archived Addition of non - invasive 
+prenatal testing 
+Addition of Monitoring Standards 
+5.2 October 2019 Antenatal Screening 
+Coordinator Archived Amendment of time frame for 
+combined test . 
+Process for unexpected Down’s, 
+Edward’s or Patau’s at birth . 
+6.0 Octo ber 2021 Antenatal Screeni ng 
+Coordinator Archived Update to tests offered following 
+national PHE update June 2021 . 
+Updates include on-line national 
+info and Trust on -line scan 
+requests . 
+Amendments to audit section . 
+6.1 September 2022 K. Lundie, Antenatal 
+& Newborn 
+Screening 
+coordi nator Archived Update of failsafe procedure s, 
+sending of results and increased 
+NT pathway . Low PAPP A levels 
+to come in line with other written 
+information . 
+Update to education and training 
+requirements. 
+Removal of torch screen for 
+increased NT. No longer 
+required as part of the fetal 
+medicine investigations 
+7.0 October 2023 K. Lundie, Antenatal 
+& Newborn 
+Screening 
+coordinator Live 3 year review 
+
+CG1111 Screening for Down’s, Edward’s and Patau’s Syndrome Guideline v7.0 Oct 2023 Page 3 of 12 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+
+Contents 
+ 
+1.0 Aim ................................ ................................ ................................ ................................ ...... 4 
+2.0 Scope ................................ ................................ ................................ ................................ .. 4 
+3.0 Responsibilities ................................ ................................ ................................ .................... 4 
+4.0 Abbreviations used in this guideline ................................ ................................ ..................... 4 
+5.0 Introduction ................................ ................................ ................................ .......................... 5 
+6.0 Screening Care Pathway ................................ ................................ ................................ ..... 6 
+6.1 Offer of screenin g ................................ ................................ ................................ ................ 6 
+6.2 Consent process ................................ ................................ ................................ .................. 6 
+6.3 Screening declined ................................ ................................ ................................ .............. 6 
+6.4 Screen ing accepted ................................ ................................ ................................ ............. 6 
+6.5 Failsafe ................................ ................................ ................................ ................................ 7 
+7.0 Results ................................ ................................ ................................ ................................ 7 
+7.1 Low chance res ult ................................ ................................ ................................ ................ 7 
+7.2 High chance result ................................ ................................ ................................ ............... 8 
+7.3 Nuchal measurement equal to or above 3.5 mm ................................ ................................ .. 9 
+8.0 Process for unexpected Down’s, Edwards’s or Patau’s syndrome at birth ......................... 10 
+9.0 Low PAPP -A ................................ ................................ ................................ ...................... 10 
+10.0 Education and training ................................ ................................ ................................ ....... 10 
+11.0 Monitoring and Audit ................................ ................................ ................................ .......... 11 
+References ................................ ................................ ................................ ................................ ... 11 
+Appe ndix 1: T13, 18 and 21 Failsafe ................................ ................................ ............................. 12 
+
+The interpretation and application of clinical guidelines will remain the 
+responsibility of the individual clinician. 
+If in doubt contact a senior colleague or expert. 
+CG1111 Screening for Down’s, Edward’s and Patau’s Syndrome Guideline v7.0 Oct 2023 Page 4 of 12 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+Screening for D own’s, Edward’s and Patau’s guideline 
+ 
+1.0 Aim 
+ 
+ To provide adequate high quality information on the screening process to support each 
+woman and person to make an informed decision on whether to accept or decline the 
+offer of screening. 
+ To ensure that pre -test information, timeliness of results and offer of pre -natal diagnostic 
+testing are all given in a timescale meeting National Screening Committee (NSC) 
+recommendations. 
+ Provision of adequate information and support to enable the woman and person and 
+their partner to make a decision on the outcome of the pregnancy. 
+ For women and people with a confirmed diagnosis as the result of screening, who 
+choose to continue the pregnancy, provide optimal management of the pregnancy, birth 
+and newborn period. 
+ To provid e optimal care and support for women /people with a confirmed diagnosis as a 
+result of screening who opt for TOP. 
+ 
+2.0 Scope 
+ 
+This guideline applies to all staff involved in consenting pregnant women and people for screening 
+for Down’s (T21) , Edward’s (T18) and Patau’s (T13) syndrome and subsequent care. 
+ 
+3.0 Responsibilities 
+ 
+Midwives & obstetricians are expected: 
+ 
+ To access, read, understand and follow this guidance . 
+ To use their professional judgement in the application of this guideline . 
+ 
+Management are expected: 
+ 
+ To ensure the guideline is reviewed as required in line with Trust and National 
+Recommendations . 
+ To ensure the guideline is accessible to all relevant staff . 
+
+4.0 Abbreviations used in this guideline 
+ 
+T21- Down’s syndrome T18- Edward’s synd rome 
+T13- Patau’s syndrome NIPT - Non-invasive prenatal testing 
+IVF- in-vitro fertilis ation NT- Nuchal translucency 
+ARC - Antenatal Result and Choices ANC - Antenatal Clinic 
+SAFE - St George’s Antenatal Fetal 
+Evaluation NHSE - National Health Service Englan d 
+CG1111 Screening for Down’s, Edward’s and Patau’s Syndrome Guideline v7.0 Oct 2023 Page 5 of 12 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+PND - Prenatal diagnosis ASC - Antenatal screening co -ordinator 
+CVS- chorionic villus sampling MIS - Maternity Information System 
+ANST – Antenatal screening team NSC - National Screening Committee 
+CRL – Crown Rump Length FASP – Fetal Anomaly Screening Programme 
+MIS – Maternity Information System eg 
+Badgernet TOP – Termination of pregnancy 
+CMW – Community Midwife DNA – Did not attend 
+GP – General P ractitioner SBLv3 – Saving Babies Lives V3 
+ MA – Maternity Assistant 
+
+5.0 Introduction 
+ 
+This Trust wi ll: 
+ 
+ Offer screening to all eligible women and people in line with national standards NSC 
+standards. 
+ Provide all women and people with appropriate support and information at all stages of 
+the screening programme. This Information is available in digital fo rmat and written if 
+required. 
+ Process and report on FASP screening tests in a timely manner as detailed in the NHSE 
+Standards . 
+ 
+Screening standards: 
+ 
+ 1st trimester c ombined t est screening for Down’s (T21) and Edward’s (T18) / Patau’s 
+(T13) syndrome is off ered between 11+2 and 14+1 weeks , (CRL measurement between 
+45.0mm and 84mm). 
+ Second trimester q uadruple testing for T21 can be performed from 14+2 to 20 weeks 
+(CRL >84.0mm/HC 101mm and 172mm). 
+ Combined and quadruple screening can be offered t o twin and sin gleton pregnancies. 
+ Vanished Twins: If scan shows empty se cond pregnancy sac the combined test can be 
+offered. If the scan show s a vanished twin (a second sac containing a non -viable fetus) 
+there could be a contribution to the maternal biochemical markers for m any weeks. In 
+these cases the NT measurement of the viable fetus will be take n and a chance 
+calculation will be offered from this information alone. It should be noted that this falls 
+outside the scope FASP . 
+ Non-invasive prenatal testing (NIPT) is of fered to women and people with an increased 
+chance combined or quad test result for both singleton and twin pregnancies . 
+ If women and people access private NIPT prior to the screening window, they will still be 
+offered a scan and combined screening . 
+
+CG1111 Screening for Down’s, Edward’s and Patau’s Syndrome Guideline v7.0 Oct 2023 Page 6 of 12 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+6.0 Screening Care Pathway 
+ 
+6.1 Offer of screening 
+ 
+All women and people will be provided information on how to access the digital NHS E screening 
+information ‘Screening tests for you and your baby’ prior to the booking appointment. This is 
+available in some alternative languages . 
+ 
+The offer of screening and the decision to accept or decline will be recorded in the woman and 
+person’s MIS. 
+ 
+The b ooking midwife should discuss the r isks and benefits of screening. 
+
+6.2 Consent process 
+ 
+Consent must be obtained for: 
+ 
+ Down’s syndrome (T21) only 
+ Edward’s (T18) and Patau’s (T13) only 
+ Down’s (T21), Edward’s (T18) and Patau’s (T13) syndrome. 
+ 
+This should be documented in the woman and person ’s MIS. 
+
+6.3 Screening declined 
+ 
+If disclosed, the reason for decline should be documented in the notes and entered on the 
+Maternity Information System ( MIS). 
+ 
+In cases where combined/quad screening is initially consented to and subsequently declined with 
+the sonographer, the woman and person should be referred to the ANST for further counselling 
+and final decision. This final decision should be documented on MIS. 
+
+6.4 Screening accepted 
+ 
+ The CT/Dating ultrasound scan is requested by admin team at the time the online 
+referral is received from the women and person via the Trust on -line ‘ICE’ programme. 
+The CMW will document accepted or declines at time of booking on MIS. 
+ The appointment will be sent to the woman and person . 
+ NT scanning is undertaken and sonographer informs woman and person that they will 
+not receive the combined/quad result from scan, and that to complete the test she /they 
+needs to attend ANC for blood test and weight directly following scan. 
+ Blood is take n with consent, recorded on MIS, and completed test sent to Portsmouth 
+Downs (T21) Syndrome Screening laboratory. 
+CG1111 Screening for Down’s, Edward’s and Patau’s Syndrome Guideline v7.0 Oct 2023 Page 7 of 12 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+ Woman and person’s contact number checked and recorded . 
+ A list of samples sent is emailed to laboratory, this list forms a tracking and fails afe 
+system for each test; from sending of sample to receipt of result. 
+ If woman and person fails to attend for blood test following NT, they are contacted by 
+telephone and letter sent outlining timescale for completing test. 
+ If the pregnancy gestation is outside of combined screening cut -off (>14+1), she /they will 
+be counselled by the ANST and offered quad testing and appointment made if accepted. 
+If the woman and person leaves the department prior to discussing the quad test, they 
+should be con tacted by the ANST . 
+ Following 2 unsuccessful attempts to measure nuchal translucency, quad testing should 
+be explained as recommended in the FASP . This should be documented in MIS. 
+
+6.5 Failsafe 
+ 
+ The el igible population (i.e. Down’s (T21) and Edward’s (T18) / Patau’s (T13) screening 
+requested by woman and person ) will be identified using the MIS. 
+ The failsafe administrator/ASC will undertake a weekly check to identify women and 
+people within this eligible group who appear to have not been tested. These cases wi ll 
+be investigated and women and people who have not had screening and who booked 
+after 13+1 weeks will be offered quad testing. Those who booked < 13+1 weeks will be 
+investigated. I f the woman and person is found not to be at fault , a Trust funded NIPT 
+will be offered and a datix raised . The offer of NIPT fall outside the scope of the NSC 
+recommendations . 
+ The ‘CRIS’ radiology sy stem can be checked daily to match NT scans against blood test 
+attendees . 
+ Prior to taking screening bloods the MA will check that the woman and person have 
+been booked on MIS. If unbooked ANST are to be notified who will consent and take all 
+booking bloods as well as CT/Quad screening tests The CMW team leaders will be 
+notified and the ANST will update failsafe spread sheet. 
+ If a wom an and person DNA’s , their CT/Quad scan apt the ANST they will check the 
+MIS and miscarriage spread sheet to check to see if had miscarriage or TOP. If there is 
+no record the ANST will contact the CMW. If unable to establish why DNA the ANST 
+will arrange and send a repeat appointment to the woman and person either by email, 
+post, call or text. An email will be sent to SG team if there are any concerns . 
+
+7.0 Results 
+ 
+7.1 Low chance result 
+ 
+The woman and person will be sent a copy of her/their result by l etter within 10 working days of the 
+ANST receiving the result from the laboratories. The date of posting is to be recorded on the result 
+sent to the woman and person. 
+ 
+The result (including the PAPP -A MoM ) will be recorded within MIS. 
+CG1111 Screening for Down’s, Edward’s and Patau’s Syndrome Guideline v7.0 Oct 2023 Page 8 of 12 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+ 
+The CMW should check with the woman and person at their next appointment that they have 
+received a result in the post and has been recorded in MIS. If not the ANST should be contacted 
+to investigate. 
+
+7.2 High chance r esult 
+ 
+Since 1st June 2021 NHSE recommends the offer of NIPT screening for T21, T18 and T13, 
+following a higher chance result from the combined or quadruple test in singleton and twin 
+pregnancies. A higher chance result is between 1 in 2 and 1 in 150. This Trust uses the SAFE test 
+laboratory at St George’s for NIPT testing . 
+ 
+As part of the NHS FASP care pathway NIPT screens for T21, T18 and T13 and will not screen for 
+other chromosomal conditions or assess the baby’ s sex. 
+ 
+Following a higher chance result from the combined or quadruple test, the woman and person will 
+be contacted and counselled over the phone and/or offered an app ointment within 3 working days 
+to discuss the result. The following choices should be of fered: 
+ 
+ No further testing 
+ NIPT screening 
+ Prenatal diagnosis (PND), such as chorionic villus sampling (CVS) or amniocentesis . 
+Note: Where a woman and person is having a CVS or amniocentesis and taking low 
+dose heparin (dalteparin), this must be omitted on the day of the procedure; and can be 
+re-commenced the following day . 
+ 
+For women and people choosing to have NIPT, the options are: 
+ 
+ T21, T18 and T13 
+ T21 only 
+ T18 and T13 only 
+ 
+NIPT screening will report individual chance results for T21, T18 and T13. These results are 
+reported as either lower chance or higher chance; a numerical value is not reported. This test can 
+be performed up to 21+6 as part of the FASP pathway . 
+ 
+In twin pregnancies, the higher chance result report should state that one or both babies may have 
+the condition screened for. 
+ 
+Women and people should expect their NIPT results around 2 weeks from sample collection. 
+ 
+During this discussion, women and people should be informed that the laboratory may 
+keep NIPT screening samples for quality assurance (for example, validation) and testing 
+development purposes for up to 5 years. The healthcare professional should inform the laboratory 
+CG1111 Screening for Down’s, Edward’s and Patau’s Syndrome Guideline v7.0 Oct 2023 Page 9 of 12 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+if a woman and person does not want their sample to be kept for these purposes. These 
+discussi ons must be recorded in the woman and person’s MIS. 
+ 
+Women and people with in -vitro fertilisation (IVF) or donor egg pregnancies are eligible for the offer 
+of NIPT. The relevant details must be recorded accurately on the NIPT screening request form. 
+ 
+Women and p eople receiving a higher chance or ‘no result’ NIPT result should attend an 
+appointment in ≤ 3 working days of maternity services receiving the result (FASP NIPT -S04). 
+ 
+This appointment should be face to face or v irtual, depending on the woman/person’s choice, and 
+discuss the option of: 
+ 
+ No further testing . 
+ Having PND, which should be completed in ≤ 3 working days of the woman and person 
+receiving the NIPT result (FASP NIPT -S05). 
+ 
+The result should be given by the ANST who has knowledge of NIPT and the NHS FASP pathway. 
+This discussion, inclu ding decisions, sho uld be documented in the woman and person’s MIS. The 
+discussion should include that if accepting PND for an increased chance result with a normal NT 
+(less than 3.5 mm) a PCR result f or T21, 13 & 18 may only be issued. (CVS samples are 
+processed by other Trusts so we are bound by their guidelines for offering array CGH or PCR 
+only) . 
+ 
+Written information or link for NHSE digital information about all procedures should be given . 
+ 
+Contact number for support group Antenat al Result and Choices (ARC) should be offered . 
+ 
+Where an affected pregnancy is confirmed, the CMW and GP should be informed by the ANST . 
+
+7.3 Nuchal measurement equal to or above 3.5 mm 
+ 
+Compl ete combined test to assess chance for T21, T18 & T13 . 
+ 
+ANST will dis cuss with woma n/person subsequent management of raised nuchal translucency 
+regardless of combined test result. This includes: 
+ 
+ Offer of NIPT if CT results come back as an increased chance. Woman and person 
+should be advised will that this is not a diagnostic test and on ly screen s for T21/18/13. 
+No other chromosome abnormalities , cardiac or underlying genetic conditions can be 
+ruled out. 
+ Referral for specialist fetal cardiac scanning (<4mm fetal echo arranged between 21 -23 
+weeks' gestation; >4mm fetal echo arranged betw een 16 -18 weeks' gestation 
+ Result is entered on MIS system and maternal and birthing parent alert added . 
+ Offer referral to fetal medicine consultant . 
+ 
+CG1111 Screening for Down’s, Edward’s and Patau’s Syndrome Guideline v7.0 Oct 2023 Page 10 of 12 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+ 
+8.0 Process for unexpected Down’s , Edwards’s or Patau’s syndrome at birth 
+ 
+In cases where a baby is bor n with T21, T13 and T18 syndrome following low chance combined or 
+quad screening, the following processes should happen: 
+ 
+ Notify Portsmouth screening laboratory . 
+ Complete DATIX . 
+ Notify National Congenital Anomaly and Rare Disease Registration Service . 
+ Review of nuchal translucency and anomaly scans . 
+ Offer postnatal follow up with fetal medicine consultant . 
+
+9.0 Low PAPP -A 
+ 
+An incidental finding of low PAPP -A (≤ 0.41 MoM) will be identified by the ANST . The women and 
+person and GP will be notified to commen ce aspirin as per SBLV3 recommendations. UA dopplers 
+will be request at time of anomaly scan by the ANST. S ubsequent growth scan will be requested 
+in line with the Trust ‘Small for gestational age and Fetal growth restriction guideline’ 
+
+ 10.0 Education and training 
+ 
+Midwives are required to complete annual training . This is monitored by the practice devel opment 
+team who can be contacted for further information . 
+ 
+CG1111 Screening for Down’s, Edward’s and Patau’s Syndrome Guideline v7.0 Oct 2023 Page 11 of 12 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+11.0 Monitoring and Audit 
+ 
+Suggested audit questions: 
+ 
+ The number of women and people with nuchal translucency >3.5 mm where t he result was 
+reported by the lab within 3 days of receipt of the sam ple 
+ 
+ The number of women and people with nuchal translucency >3.5 mm with documented 
+evidence that the woman and person was offered further testing within 3 working days of 
+receipt of the result 
+ 
+ The number of women and people with nuchal translucency >3.5 mm who we re referred for 
+fetal echo by 23 weeks 
+ 
+ This guideline is also monitored through the quarterly and annual NHSE Key Performance 
+Indicators (KPIs). 
+
+References 
+ 
+Screening tests for you and your baby (STFYAYB) - GOV.UK (www.gov.uk 20 22) 
+ 
+Screening tests in pregnancy - NHS (www.nhs.uk 2021) 
+ 
+NHS Fetal Anomaly Screening Programme (FASP): programme overview - GOV.UK (www.gov.uk 
+2021) 
+ 
+Fetal anomaly screening programme handbook - GOV.UK (www.gov.uk 2023 
+ 
+Fetal anomaly screening programme: standards - GOV.UK (www.gov.uk 2021) 
+ 
+Screening for Down's syndrome, Edwards' syndrome and Patau's syndrome - NHS (www.nhs.uk 
+2021) 
+ 
+CVS and amniocentesis diagnostic tests: description in brief - GOV.UK (www.gov.uk 2021) 
+CG1111 Screening for Down’s, Edward’s and Patau’s Syndrome Guideline v7.0 Oct 2023 Page 12 of 12 
+ 
+Please check on the intranet that this printout is the most recent version of this document before use . 
+Appendix 1: T13, 18 and 21 Failsafe 
+
+Failafe officer/ASC to extract list from MIS of all women and 
+people between 13 -20 week s gestation. Save into failsafe 
+folder on server. 
+Last column should show test taken or declined, Any 
+incomplete boxes are checked as follows: 
+Check Maternity Information System to see if screening 
+completed 
+No 
+ Yes 
+Check Viewpoint to see 
+if scan compl eted 
+Complete column as “Test 
+Taken” 
+No 
+ Yes 
+Declined 
+ Miscarried 
+If screening accepted contact 
+woman and person to arrange to 
+come in for blood to be taken 
+Check CRIS or 
+Careflow for 
+appointment made 
+Document date 
+of appointment 
+on spreadsheet 
+and h ighlight 
+box 
+Document on 
+Maternity information 
+system and pass 
+details to Maternity 
+Administrator to close 
+pregnancy 
+Document on 
+Maternity 
+information 
+system and 
+update EDD 
+Contact 
+USS 
+department 
+and arrange 
+appointment 
+ASAP 
+Complete 
+spreadsheet as 
+declined 
+Complete 
+spreadsheet as 
+miscarriage 
+Check previous and current lists weekly. Move lists to Downs 
+Failsafe subfolder when completed. 
+Yes 
+ No

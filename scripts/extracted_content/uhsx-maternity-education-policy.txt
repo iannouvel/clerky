@@ -1,0 +1,772 @@
+# Extracted from: UHSx Maternity Education Policy.pdf
+# Guideline ID: uhsx-maternity-education-policy
+# Content length: 43573 characters
+# Processing date: 1750066902.1459575
+
+CLINICAL POLICY 
+Due for review: 30/04/2028 
+Name of Policy: Maternity Education Policy v2.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 1 of 21 
+ TRUST CLINICAL POLICY 
+ 
+Maternity Education Policy Please note, IF DOCUMENT IS PRINTED, IT MAY BECOME OUT OF DATE 
+
+Overview: Local maternity department training plan to 
+ensure delivery and monitoring of Trust 
+Statutory and Mandatory training and 
+maternity departmental training – in line with 
+the national maternity agenda. This will 
+support staff delivering up -to-date and 
+evidence -based care to women and people, 
+and their families. 
+Staff / stakeholders / Consultation 
+Groups), involved in development: Director of Midwifery, Heads of Midwifery, 
+Consultant Midwife, Practice Development 
+Midwives, Divisional Director for Obstetrics, 
+Obstetric Clinical Directors, The Local 
+Maternity and Neonatal Services, Fetal 
+Wellbeing Teams, Maternity Governance 
+Teams, Public Health Midwife SRH/WH, 
+Newborn Infant Physical Examination Lead 
+Midwife. 
+
+Division: Women and Children’s 
+Department: Maternity 
+Responsible Person: Quadrumvirate 
+Author/further information: Claire O’Brien, Lead Midwife for Training and 
+Education (SRH/WH) 
+For use by: All people who provide maternity care 
+
+This document supports: NHS England » Core competency framework 
+v2: Minimum standards and stretch targets 
+Maternity incentive scheme - NHS Resolution 
+NHS England » Saving babies’ lives: version 3 CLINICAL POLICY 
+Due for review: 30/04/2028 
+Name of Policy: Maternity Education Policy v2.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 2 of 21 
+ 
+ Findings, conclusions and essential actions 
+from the independent review of maternity 
+services at the Shrewsbury and Telford 
+Hospital NHS Trust - final Ockenden report 
+(publishing.service.gov.uk) 
+NHS England » Three year delivery plan for 
+maternity and neonatal services 
+NIPE peer review framework - GOV.UK 
+(www.gov.uk) 
+Key related documents: As above 
+Superseded documents: Maternity Education Strategy 
+Policy version: v2.0 
+Reference number: UHSC072 
+
+Approval 
+JOGG Date approved 24/03/2025 
+Women & Children’s Clinical Effectiveness 
+Meeting Date approved 17/04/2025 
+Ratification 
+Clinical Document Approval Group Date approved 30/04/2025 
+Review date: 30/04/2028 
+Date uploaded: 13/05/2025 CLINICAL POLICY 
+Due for review: 30/04/2028 
+Name of Policy: Maternity Education Policy v2.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 3 of 21 
+ Contents 
+1.0 Introduction ................................ ................................ ................................ ........................ 4 
+2.0 Purpose ................................ ................................ ................................ .............................. 4 
+3.0 Scope, application and exemptions ................................ ................................ .................... 4 
+4.0 Abbreviations used within this policy ................................ ................................ ................... 5 
+5.0 Definitions ................................ ................................ ................................ .......................... 5 
+6.0 Responsibilities, accountabilities and duties ................................ ................................ ....... 6 
+6.1 Director of Midwifery (DoM) ................................ ................................ ................................ 6 
+6.2 Head of Midwifery (HoM) ................................ ................................ ................................ .... 6 
+6.3 Divisional Director of Operations (DDO) ................................ ................................ ............. 6 
+6.4 Matrons ................................ ................................ ................................ .............................. 6 
+6.5 Leads for Education ................................ ................................ ................................ ........... 6 
+6.6 Practice Development Midwives (PDMs) (WH&SRH) and Clinical Skills Facilitators 
+(CSF) (PRH&RSCH) ................................ ................................ ................................ .......... 7 
+6.7 The Medical Workforce (obstetrics and anaesthetics) ................................ ......................... 7 
+6.8 The Maternity Rota Leads and Maternity Administrators ................................ ..................... 7 
+6.9 The Maternity Education Administrator ................................ ................................ ............... 7 
+6.10 Staff Members ................................ ................................ ................................ .................... 7 
+6.11 Non – Substantive Staff Bank Only Midwives ................................ ................................ ..... 8 
+6.12 Non-Substantive Medical Staff and Student Midwives ................................ ........................ 8 
+6.13 Fetal Monitoring Team ................................ ................................ ................................ ........ 8 
+6.14 Practice Education Facilitators (PEFs) ................................ ................................ ................ 9 
+6.15 Preceptorship Lead ................................ ................................ ................................ ............ 9 
+6.16 Clinical Skills Facilitators (CSFs) ................................ ................................ ........................ 9 
+6.17 Maternity Care Assistants (MCA), Maternity Support Workers, (MSW), & 
+Nursery Nurses ................................ ................................ ................................ .................. 9 
+6.18 Non-Registered Staff Band 2-4 ................................ ................................ ........................... 9 
+6.19 Governance ................................ ................................ ................................ ........................ 9 
+7.0 Training Requirements / Annual Program ................................ ................................ ......... 10 
+7.1 Skills Drills ................................ ................................ ................................ ........................ 10 
+7.2 Neonatal Life Support (NLS) ................................ ................................ ............................. 10 
+7.3 Fetal Monitoring ................................ ................................ ................................ ................ 10 
+7.4 Live drills/ In-situ Simulation (announced and unannounced and within the clinical area) 11 
+7.5 Trust Funding for CPD & external courses ................................ ................................ ........ 11 
+7.6 NIPE Core Competencies ................................ ................................ ................................ . 12 
+7.7 Baby Friendly Initiative (BFI) ................................ ................................ ............................. 12 
+7.8 Patient Group Directions (PGD) ................................ ................................ ........................ 12 
+7.9 Training & attendance records ................................ ................................ .......................... 12 
+8.0 Monitoring arrangements ................................ ................................ ................................ .. 13 
+9.0 Due Regard Assessment Screening ................................ ................................ ................. 14 
+Appendix 1: Non-attendance at departmental education day process ................................ .......... 15 
+Appendix 2: Fetal monitoring competency assessment failure process ................................ ........ 16 
+Appendix 3: Learning Agreement ................................ ................................ ................................ . 17 
+Appendix 4: Template Dissemination, Implementation and Access Plan ................................ ...... 19 
+Appendix 5: Policy Version Control Log ................................ ................................ ....................... 20 
+Appendix 6: Additional guidance and information ................................ ................................ ......... 21 CLINICAL POLICY 
+Due for review: 30/04/2028 
+Name of Policy: Maternity Education Policy v2.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 4 of 21 
+ Maternity Education Policy 
+
+1.0 Introduction 
+ 
+Continuing professional development (CPD) of maternity staff at University Hospitals Sussex (UH 
+Sussex) NHS Foundation Trust is pivotal to the Trust’s overall vision and objectives. Maternity 
+services are required to the deliver safe, effective and quality care to service users. 
+The Trust is committed to always improving care through the Patient First approach and ensures 
+enhanced education and training opportunities. 
+UH Sussex provides the maternity department with Statutory and Mandatory (STAM) training 
+requirements. 
+The Maternity Incentive Scheme (MIS) NHS Resolution asks for evidence that a local maternity 
+training plan is in place to ensure that all six core modules of the ‘Core Competency Framework’ 
+will be included over a three -year period. 
+ 
+2.0 Purpose 
+ 
+The purpose of this document is to provide Local maternity department training plan to ensure 
+delivery and monitoring of Trust Statutory and Mandatory training and maternity departmental 
+training – in line with the national maternity agenda. This will support staff delivering up-to-date 
+and evidence -based care to women and birthing people, and their families. 
+ 
+3.0 Scope, application and exemptions 
+ 
+This document will provide a training need analysis (TNA) and will set out the duties and 
+responsibilities of the service to ensure staff fulfil STAM training requirements, and maternity 
+specific mandatory training appropriate to their role, within their working hours. 
+Staff training spans a variety of delivery methods including online learning, classroom -based 
+teaching, clinical skills training and scenario -based training in clinical areas and simulation suites. 
+This policy applies to all staff who provide maternity care including: 
+ 
+• All registered midwives and registered nurses. 
+• Maternity care assistants (MCA)/Maternity Assistants (MA) 
+• Maternity support workers (MSW) 
+• Nursery nurses 
+• Obstetricians and trainees 
+• Obstetric anaesthetists and trainees CLINICAL POLICY 
+Due for review: 30/04/2028 
+Name of Policy: Maternity Education Policy v2.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 5 of 21 
+ 4.0 Abbreviations used within this policy 
+ 
+CDP Continuing Professional Development CQC Care Quality Commission 
+CSF Clinical Skills Facilitator DDO Divisional Director of Operations 
+DoM Director of Midwifery HoM Head of Midwifery 
+MDT Multi -Disciplinary Team MIS Maternity Incentive Scheme 
+PDM Practice Development Midwife PEF Practice Education Facilitator 
+PGD Patient Group Directives PRH Princess Royal Hospital 
+RSCH Royal Sussex Hospital SRH St. Richard’s Hospital 
+STAM Statutory and Mandatory TNA Training Needs Analysis 
+WH Worthing Hospital 
+
+5.0 Definitions 
+ 
+Term Definitions 
+Statutory Mandatory 
+(STAM) Training Statutory training is continuing learning / professional 
+development activity as defined by legislation. Mandatory training 
+is continuing learning / professional development activity that is 
+required to comply with Trust policy and ensure best practice, 
+defined at Trust level. The Trust’s Statutory and Mandatory 
+(STAM) Training Policy (2022) ensures that the STAM training 
+needs of all staff employed by the Trust are identified, and that 
+staff have up to date and appropriate knowledge and skills to 
+undertake their role. 
+Departmental 
+Learning Continuing learning / professional development activity that is 
+defined at department / team level e.g. equipment training, staff 
+development and updates, professional networking, patient first 
+training. This training in the maternity department includes multi - 
+disciplinary team (MDT) training and bespoke training for 
+midwives, nurses working in maternity, maternity care assistants, 
+maternity support workers, nursery nurses, obstetricians and 
+trainees, and anaesthetists and trainees. 
+In-Situ Skills Drills In-situ simulated skills drills that provide an opportunity for staff to 
+explore, practice and be clear about their roles and 
+responsibilities in managing emergencies as an MDT within the 
+clinical area they work in. These are in addition to the skills drills 
+with maternity MDT days. 
+Education Team The education team consist of all staff working within the 
+education faculty to teach, facilitate, support, organise training 
+and development programmes for all staff groups in maternity. CLINICAL POLICY 
+Due for review: 30/04/2028 
+Name of Policy: Maternity Education Policy v2.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 6 of 21 
+ 
+ They will work collaboratively with the Trust to ensure that training 
+is integrated at local level. 
+E-Learning Some STAM training will be accessed online via Iris (the Trust’s 
+learning management system), other online training platforms 
+such as e -Learning for Healthcare, K2MS ™ Perinatal 
+Training Programme (PTP). 
+
+6.0 Responsibilities, accountabilities and duties 
+ 
+6.1 Director of Midwifery (DoM) 
+ 
+The DoM holds overall accountability of ensuring midwifery, nursing and maternity support staff 
+within maternity services attends STAM and departmental training, across the whole Trust. They 
+have a joint responsibility with the wider midwifery team to promote a positive learning culture. 
+ 
+6.2 Head of Midwifery (HoM) 
+ 
+The HoM has the responsibility of ensuring midwifery, nursing and maternity support staff within 
+maternity services attends STAM and departmental training across the hospital sites relevant to 
+role. 
+ 
+6.3 Divisional Director of Operations (DDO) 
+ 
+The DDO holds overall accountability for ensuring that medical staff attend STAM and 
+departmental training. This is supported by the obstetric clinical director, college tutor, and the 
+divisional manager for Women and Children’s Health. They must also act on the findings of 
+reports/communication supplied from the Trust’s learning and development team and/or the 
+maternity education team in relation to attendance of STAM or departmental training. 
+ 
+6.4 Matrons 
+ 
+Matrons have the responsibility for ensuring that the maternity rota reflects the training days with 
+minimal impact on safe staffing levels within the clinical departments. They are also responsible 
+for ensuring the ‘non -attendance at departmental education day process’ is followed ( Appendix 
+1), working with the PDMs/CSFs to ensure appropriate follow -up, including re -booking of those 
+sessions missed. 
+ 
+6.5 Leads for Education 
+ 
+The Leads for Education and Training must report compliance of training for obstetric skills drills 
+and fetal monitoring to the appropriate HoM monthly and compliance of training in all core 
+competencies to the MIS, the Care Quality Commission (CQC) when required, and the Local 
+Maternity and Neonatal System (LMNS) as per perinatal quality surveillance operating model. CLINICAL POLICY 
+Due for review: 30/04/2028 
+Name of Policy: Maternity Education Policy v2.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 7 of 21 
+ The Leads for Education and Training are responsible for the updating and management of the 
+National Training Needs Analysis Mapping Tool in collaboration with the LMNS. For the most up 
+to date version for this Trust, please contact the Leads for Education and Training. 
+ 
+6.6 Practice Development Midwives (PDMs) (WH&SRH) and Clinical Skills Facilitators 
+(CSF) (PRH&RSCH) 
+PDMs/CSFs will work in collaboration with administrators to ensure employees are allocated 
+departmental education days in advance. The PDMs/CSFs will work in collaboration with matrons 
+and line managers to ensure all maternity staff members attend their departmental education 
+days when allocated. The PDMs/CSFs are responsible for the organisation, design, and 
+facilitation of training programmes. PDMs/CSFs must ensure that attendance and evaluations are 
+recorded and collate records of all annual training. 
+The PDMs/CSFs, in collaboration with the wider maternity education teams, are also responsible 
+for facilitating and recording all other maternity specific training updates. PDMs/CSFs will follow - 
+up on non -attendance (following the ‘non -attendance at departmental education day process’ 
+(Appendix 1 ), rebook the missed education and escalate to the appropriate line 
+manager/education clinical supervisor. 
+ 
+6.7 The Medical Workforce (obstetrics and anaesthetics) 
+ 
+The obstetric and anaesthetic leads, in collaboration with rota coordinators, are responsible for 
+providing the Leads for Education and Training with regular and up to date staff group lists to 
+ensure appropriate training is booked. The rota coordinator will ensure staff are given protected 
+time to attend mandatory booked and should be marked as study leave on their roster. Ockenden 
+(2022) stipulates that the Trust must provide protected time to ensure that all clinicians are able 
+to continuously update their knowledge, skills, and techniques relevant to their clinical work. 
+ 
+6.8 The Maternity Rota Leads and Maternity Administrators 
+ 
+The Maternity Rota Leads and Maternity Administrators are responsible for providing the PDMs 
+Leads for Education and Training with regular and up -to-date staff group lists to ensure 
+appropriate training is booked. This needs to be reflective of new starters, leavers, long-term sick 
+leave, and parenting leave. 
+ 
+6.9 The Maternity Education Administrator 
+ 
+The Maternity Education Administrator with the department lead managers will book staff in all 
+disciplines’ mandatory departmental education days. 
+ 
+6.10 Staff Members 
+ 
+Staff members are responsible for: 
+ 
+• Requesting the allocation of departmental educations days on Health Roster, attending 
+STAM and departmental training within date of expiry. In case of sickness staff member CLINICAL POLICY 
+Due for review: 30/04/2028 
+Name of Policy: Maternity Education Policy v2.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 8 of 21 
+ to call maternity bleep holder if unable to attend education day with less than 24 hours’ 
+notice. 
+• Member of staff to inform maternity bleep holder/line manager if unable to attend 
+training and for them to inform practice development team 
+• Attending and completing maternity mandatory training in addition to the trust Statutory 
+and Mandatory training. To accept personal responsibility for professional updating and 
+be aware of the training requirements for their role. 
+• Ensuring their Line Manager/Matron has authorised their release from the workplace to 
+undertake training. 
+• Participating fully in annual performance development Review meetings and take 
+responsibility for following through any objectives set. 
+• Developing a personal development plan in line with the results of their performance 
+development review (appraisal), and in agreement with their line manager. Keep 
+records of all training they have completed, as per revalidation requirement and 
+NMC/GMC Code and job role specification. 
+ 
+6.11 Non – Substantive Staff Bank Only Midwives 
+ 
+Non – Substantive Staff Bank Only Midwives are required to complete all statutory and 
+mandatory training and attend all mandatory departmental training every 12 months. 
+ 
+6.12 Non-Substantive Medical Staff and Student Midwives 
+ 
+Locum Doctors: It is the responsibility of the college tutor, on -call Consultant Obstetrician, 
+Neonatologist, Paediatrician or Anaesthetist to confirm the competency of Locum doctors, as per 
+the Guidance on the engagement of short -term locums in maternity care (rcog.org.uk) There is an 
+induction process in place, managed by the temporary staffing office. 
+Student Midwives: Whilst not mandatory, student midwives are invited to attend the same 
+training days as the midwives. This will be managed by the practice education facilitators (PEFs), 
+linking in with the PDMs/CSFs. 
+ 
+6.13 Fetal Monitoring Team 
+ 
+The Fetal Monitoring Team will champion fetal surveillance training, promote best practice and 
+provide expert opinion at incident reviews. The fetal monitoring team will provide annual MDT 
+fetal surveillance training for all obstetricians/trainees and midwives together. An annual 
+competency test is required for all obstetricians/trainees and midwives, and this will be provided 
+by the fetal monitoring team. Compliance and competency assessment rates to be reported 
+monthly via the Trust’s maternity safety and quality report, with onward reporting to the LMNS. If 
+competency in fetal monitoring is not met, then it is the responsibility of the fetal monitoring team 
+to record and escalate to line managers and/or the obstetric clinical lead. (See Appendix 2 for 
+midwives). CLINICAL POLICY 
+Due for review: 30/04/2028 
+Name of Policy: Maternity Education Policy v2.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 9 of 21 
+ 6.14 Practice Education Facilitators (PEFs) 
+ 
+PEFs will be responsible for students (midwifery and paramedic) in the unit. They will allocate 
+practice supervisors and practice assessors and provide a valuable source of support that 
+addresses clinical skill development and teaching for students. 
+ 
+6.15 Preceptorship Lead 
+ 
+The Preceptorship Midwife will ensure the development of the preceptorship programme, to be in 
+line with the national framework. They will also provide pastoral support for this staff group and 
+ensure all meetings and assessments are carried out in a timely manner, and the preceptorship 
+skills passports are completed, to progress to band 6. 
+ 
+6.16 Clinical Skills Facilitators (CSFs) 
+ 
+CSFs will ensure that newly qualified midwives are supported in completing their preceptorship 
+programme. They will provide support for preceptees in the clinical settings to consolidate. CSFs 
+will also offer clinical support to all other bands of staff when requested. 
+The CSF is responsible for the development, coordination, managing, facilitating, conducting, and 
+evaluating competency in the clinical setting for students in collaboration with Practice 
+Supervisors, Practice Assessors and Academic Assessors as required. (WH/SRH not 
+RSCH/PRH). CSFs will support the maternity education programme with development and 
+facilitation and conduct in -situ skills drills. CSFs will provide education and support for medical 
+students, in their 4th year, during rotation to obstetrics and gynaecology. 
+ 
+6.17 Maternity Care Assistants (MCA), Maternity Support Workers, (MSW), & Nursery 
+Nurses 
+These staff members are responsible for completing all Trust STAM and attending mandatory 
+departmental training. 
+ 
+6.18 Non-Registered Staff Band 2-4 
+ 
+Non-Registered Staff Band 2 -4 are responsible for ensuring they attend the relevant training 
+which will have been shared with them via their line manager. Challenges to attending will be 
+escalated by them, to their line manager enabling remedial action, including re -booking of 
+session, to occur. To complete the trust requirements for the care certificate, including the 
+standard 16 maternity clinical document within 3 months of commencing employment. 
+ 
+6.19 Governance 
+ 
+Maternity governance leads will work in collaboration with the practice development midwives to 
+ensure learning from local incidents is incorporated into the mandatory departmental training 
+programme and recommendations from local case reviews is disseminated through training in a 
+timely manner. CLINICAL POLICY 
+Due for review: 30/04/2028 
+Name of Policy: Maternity Education Policy v2.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 10 of 21 
+ 7.0 Training Requirements / Annual Program 
+ 
+Departmental learning is facilitated 12 months of the year . It is expected that all staff groups: 
+Obstetricians/trainees, Midwives, Anaesthetists/trainees, Registered Nurses in Maternity, 
+Maternity Support Workers, Nursery Nurses, and Maternity Care Assistants should form the 
+multi -disciplinary team (MDT) for training. Training will be reviewed annually in line with the Core 
+Competency Framework https://www.england.nhs.uk/wp -content/uploads/2023/05/PRN00239ii - 
+ccf-minimum -standards -and-stretch -targets.pdf . 
+A plan for the content listed within the framework will be agreed with the DOM, HOM’s, Leads for 
+Education and Training, Maternity Voice Partnership Chair, and Obstetric Clinical Lead. An 
+annual review will be undertaken to ensure learning from local cases remains relevant. 
+ 
+7.1 Skills Drills 
+ 
+The annual simulated skills drills training, as directed from the core competency framework, will 
+ensure that any local training needs identified from governance reports are addressed. 
+Skills drills sessions within the maternity education programme will be facilitated by an MDT 
+faculty who have allocated time within job plans. The named faculty members will be known 
+during the yearly planning cycle and allocated accordingly which will ensure any gaps within the 
+faculty are recognised early and mitigations put in place. 
+This training may be presented as multidisciplinary scenarios or a workstation and must be 
+representative of the local population. 
+All staff who provide clinical maternity care attend MDT skills drills annually. Staff who work 
+together must train together (Ockenden, 2022). Attendance records will be completed, and 
+attendance rates will form part of the monthly education report as part of the wider department 
+governance report. Attendance will be recorded using the maternity education database and 
+Trust IRIS training platform. 
+Maternity theatre staff working in maternity theatres for 1 session a week or more, will be invited 
+to attend a skills training day annually. This will be booked via to theatre education team, in 
+collaboration with the maternity education team. 
+ 
+7.2 Neonatal Life Support (NLS) 
+ 
+All staff caring for women and birthing people, babies and families must attend an annual 
+newborn life support training update. There is a national standard of this training being delivered 
+by an NLS instructor and supported by education teams. 
+ 
+7.3 Fetal Monitoring 
+ 
+The training is facilitated by the fetal monitoring lead midwives and obstetricians. Annual update 
+of fetal monitoring is fundamental to numerous national drivers. The fetal monitoring midwives, in 
+collaboration with the fetal monitoring obstetric leads, will lead in best practice, provide training 
+and support to staff as well as facilitating regular case sessions. CLINICAL POLICY 
+Due for review: 30/04/2028 
+Name of Policy: Maternity Education Policy v2.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 11 of 21 
+ All midwives and obstetricians are expected to attend MDT fetal monitoring training and pass a 
+competency assessment every 12 months. Time is given at the end of MDT training day to 
+complete. This is online, using the K2 fetal monitoring learning package. 
+ 
+7.4 Live drills/ In-situ Simulation (announced and unannounced and within the clinical 
+area) 
+Will be carried out in all areas across all 4 sites, a minimum of 2 per site and are in addition to the 
+maternity training programme MDT simulated skills. These will focus on the drills that do not form 
+part of the skills drills day as well as in response to recurring themes from clinical incidents, 
+ensuring learning from incidents is being triangulated back into practice. Immediately after any 
+skills drill a feedback/reflective discussion for all staff involved will take place and learning 
+disseminated with participants. These sessions will enable efficiency of technical systems, 
+multidisciplinary team working, including human factors and situational awareness to be tested. 
+The sessions will be coordinated by the education team, with the wider clinical team forming part 
+of the faculty. 
+ 
+7.5 Trust Funding for CPD & external courses 
+ 
+The Trust is fully committed to providing the highest quality care and as such acknowledges the 
+importance of providing accessible, essential, and suitable training that promotes a competent 
+and confident workforce. The NMC confirms the employer’s role in supporting and encouraging 
+CPD as an integral part of clinical governance and good employment practices. All staff will be 
+given the opportunity on a yearly basis to express interest for academic pathways and specialist 
+modules. 
+Education and training needs must be identified with line managers as part of the annual 
+appraisal process. Approval by the individual’s line manager and the practice development team 
+of UH Sussex is required. All mandatory training must be attended in working hours, any 
+essential learning to job role must be supported with paid working time. All other CPD attendance 
+in working hours must be discussed with the individual’s line manager. 
+As part of our commitment to safety and improving standard of care, courses such as Newborn 
+Life Support (NLS), Newborn and Infant Physical Examination (NIPE) will be considered essential 
+courses. Priority for NLS will be given to the maternity education team, labour ward coordinators, 
+community midwives attending home births and staff who are involved with hospital transfers. 
+The Leads for Education and Training are responsible for coordinating the process within 
+maternity that enable individual CPD requirements to be submitted to the wider Trust education 
+lead for funding to be considered. A yearly outlook of CPD funding that may be required in the 
+department must be submitted to the Trust’s practice development team at the beginning of every 
+financial year. 
+The Leads for Education and Training will maintain a CPD database to ensure equity of training 
+opportunities and for monitoring purposes. The consultant midwife, HoMs, and DoM will agree to 
+essential training needs for the service. CLINICAL POLICY 
+Due for review: 30/04/2028 
+Name of Policy: Maternity Education Policy v2.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 12 of 21 
+ Staff must sign a learning agreement when attending extra study organised by the maternity 
+department (Appendix 3) and use Trust’s learning platform, IRIS, to apply for study funding for 
+other external courses and complete learning declaration on there. 
+ 
+7.6 NIPE Core Competencies 
+ 
+The NIPE practitioner must demonstrate the following competencies as set out within NIPE peer 
+review framework 
+The annual assessment will be aligned to individual practitioner appraisal records, confirming 
+competence to practice. 
+A local register will be held of NIPE Practitioners who have attended annual update and have 
+attained/maintained competency will be maintained by the NIPE lead (RSCH/PRH) / Public 
+Health Midwife (WH/SRH) and shared with the PDMs/CSFs. This will then be reported on 
+annually via the education element of the governance report. 
+Newly qualified midwives are to complete 10 supervised and 10 unsupervised NIPEs after 
+qualifying and passing the NIPE module at their attended university and then adhere to the 
+above. This is a local agreement, with NIPE lead/public health midwife. 
+ 
+7.7 Baby Friendly Initiative (BFI) 
+ 
+Whilst the agreed length of training is at the discretion of the Trust, in order to meet the 
+requirements, it is recommended by UNICEF BFI that all new starters in maternity and neonatal 
+staff are orientated to the infant feeding policy during their induction period and attend a 2 -day 
+BFI Induction Day during their induction period, and always within 6 months of starting. 
+It is also recommended by BFI that all maternity staff do a full day face-to-face training once 
+every 3 years. Then updates yearly within the maternity update days. 
+ 
+7.8 Patient Group Directions (PGD) 
+ 
+Registered staff will complete a training package on IRIS regarding the use of PGDs. Staff will 
+then complete specific training on drugs used within their job role. This will be monitored by the 
+Practice Development Team and made available to all clinical areas. 
+ 
+7.9 Training & attendance records 
+ 
+The maternity service will implement a plan to achieve a minimum of 90% attendance per annum 
+by its staff at all departmental mandatory education days, including MDT skills drills, fetal 
+monitoring training and Trust STAM. This will be reported at the Trust’s maternity safety and 
+quality monthly meetings, both verbally and via the governance report. Onward monthly reporting 
+to the LMNS will occur as per the perinatal quality surveillance model. 
+Staff who are on long term sick leave or maternity leave will not be included in the figures but will 
+be allocated training dates upon their return to work. Rota leads and maternity administrators 
+must notify maternity education administrators and PDMs/CSFs of their return to duty. CLINICAL POLICY 
+Due for review: 30/04/2028 
+Name of Policy: Maternity Education Policy v2.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 13 of 21 
+ Staff will be allocated their relevant maternity education days by the maternity education team, 
+and this will be emailed out to individuals as well as booked on IRIS by the maternity education 
+team administrators. Staff training dates are added to the roster by individuals themselves, then 
+checked by the maternity education administrator (PRH/RSCH). 
+Maternity staff at SRH/WH will have training dates allocated by the PDT administrators and 
+agreed with their roster coordinators. These will be added to health roster and IRIS by the PDT 
+administrators and roster coordinators. 
+It is the responsibility of all clinical area matrons to ensure staff are given protected time to attend 
+all annual training. 
+Decisions to take midwifery and support staff off any mandatory departmental education days to 
+provide clinical care must only occur in extreme circumstances and this decision can only be 
+made by the Head of Midwifery or the person with delegated responsibility. The PDMs/CSFs 
+must be notified at the earliest opportunity to ensure the staff member can be rebooked onto the 
+next available session. This must also be reported by the Leads for Education and Training via 
+the monthly education feedback within the divisional safety and quality report - including which 
+education day, the number of staff affected and the staffing group. This will enable early 
+identification and mitigate against non -compliance with training trajectories. 
+Decisions to take obstetric staff off any training days to provide clinical care can only be made by 
+the Clinical Director or the person with delegated responsibility. The process follows the above. 
+It is the responsibility of all staff to ensure they attend their annual updates/ training to ensure 
+they are competent in the sphere of practice. 
+ 
+8.0 Monitoring arrangements 
+ 
+Leads for Education and Training to review annually in-line with recommendations released by 
+national drivers, service user input and local learning. 
+The Maternity Education Policy will be monitored by the maternity education team. 
+ 
+The maternity education team, will contribute to the monthly governance report, including the 
+following: 
+• Compliance of attendance of core competency training for all staffing groups, over a 
+rolling 12 -month period. 
+• Competence percentage for fetal monitoring assessment for relevant staffing groups, 
+over a rolling 12 -month, period. 
+• Quarterly attendance allocation and compliance against scheduled attendance. 
+• Monitoring that the steps identified in the pathway for staff non -attendance at training 
+has been followed for those who fail to attend and complete relevant training 
+programmes. CLINICAL POLICY 
+Due for review: 30/04/2028 
+Name of Policy: Maternity Education Policy v2.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 14 of 21 
+ Ensure that the results of audit, learning from Incidents, complaints, claims and other information 
+sources have been considered as part of the ongoing reviews of training. 
+Results will be analysed and, where deficiencies have been identified, an action plan will be 
+developed collaboratively by the maternity education team. 
+ 
+9.0 Due Regard Assessment Screening 
+ 
+University Hospitals Sussex NHS Foundation Trust has a statutory duty to assess and consult on 
+whether planning, policies and processes impact service users, staff and other stakeholders with 
+regard to age, disability, gender (sex), gender identity, marriage or civil partnership, pregnancy 
+and maternity, race (ethnicity, nationality, colour), religion or belief and sexual orientation. It 
+recognises that some people may face multiple discrimination based on their identity. A review of 
+the assessed impact of this policy against these criteria can be seen ( Appendix 4 ). CLINICAL POLICY 
+Due for review: 30/04/2028 
+Name of Policy: Maternity Education Policy v2.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 15 of 21 
+ Appendix 1: Non-attendance at departmental education day process 
+Page 16 of 21 
+ CLINICAL POLICY 
+Due for review: 30/04/2028 
+Name of Policy: Maternity Education Policy v2.0 
+For use at: PRH, RSCH, SRH & WH 
+ 
+Appendix 2: Fetal monitoring competency assessment failure process 
+CLINICAL POLICY 
+Due for review: 30/04/2028 
+Name of Policy: Maternity Education Policy v2.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 17 of 21 
+ Appendix 3: Learning Agreement 
+
+Thank you for taking the time to enhance your continuous professional development. Funding 
+for this course has been provided by the Trust. It is important that you are aware of the below 
+conditions to ensure all staff members have the best opportunity for learning. 
+Please read and sign the declaration below. Please tick each box; 
+ 
+ I confirm that I am up to date with all statutory and mandatory training, or if not yet completed; 
+I am booked to attend. 
+
+ I confirm that I have attended all mandatory maternity education days which I am required to 
+attend, or if not; I am booked to attend. 
+
+ I confirm that I am in date with my annual appraisal 
+
+ If for any reason I cannot attend this course/study/conference, I will advise the practice 
+development midwife and/or education administrator with at least 7 days’ notice so that my 
+place can be offered to someone else. 
+
+ If I am unable to attend due to sickness, I will inform the practice development midwife and/or 
+the education administrator with as much notice as possible so that my place can be offered to 
+someone else. 
+
+ Please tick to confirm if necessary to job role you are up to date with professional registration 
+and revalidation. 
+
+Please complete and return this form to: uhsussex.maternitypracticedevelopmentteam@nhs.net 
+
+Name:………………………………………………………………………………………………….. 
+
+Signature:……………………………………………….Date…………………………………………… CLINICAL POLICY 
+Due for review: 30/04/2028 
+Name of Policy: Maternity Education Policy v2.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 18 of 21 
+ Appendix 4: Due Regard Assessment Tool 
+To be completed and attached to any policy when submitted to the appropriate committee for 
+consideration and approval. 
+ 
+ Yes/ 
+No Comments 
+1. Does the document/guidance affect one group less or more 
+favourably than another on the basis of: 
+ Age No 
+ · Disability No 
+ · Gender (Sex) No 
+ · Gender Identity No 
+ · Marriage and civil partnership No 
+ · Pregnancy and maternity No 
+ · Race (ethnicity, nationality, colour) No 
+ · Religion or Belief No 
+ · Sexual orientation, including lesbian, gay and bisexual people No 
+2. Is there any evidence that some groups are affected differently and 
+what is/are the evidence source(s)? No Currently the WRES data is 
+unable to demonstrate the 
+impact on race and training 
+opportunities 
+3. If you have identified potential discrimination, are there any 
+exceptions valid, legal and/or justifiable? NA 
+4. Is the impact of the document likely to be negative? No 
+5. If so, can the impact be avoided? Currently the WRES data is 
+unable to demonstrate the 
+impact on race and training 
+opportunities 
+6. What alternative is there to achieving the intent of the document 
+without the impact? NA 
+7. Can we reduce the impact by taking different action and, if not, what, 
+if any, are the reasons why the policy should continue in its current 
+form? NA 
+8. Has the document been assessed to ensure service users, staff and 
+other stakeholders are treated in line with Human Rights FREDA 
+principles (fairness, respect, equality, dignity and autonomy)? No Review annually 
+ 
+If you have identified a potential discriminatory impact of this policy, please refer it to [Insert Name] , 
+together with any suggestions as to the action required to avoid/reduce this impact. For advice in 
+respect of answering the above questions, please contact uhsussex.equality@nhs.net (01273 
+664685). CLINICAL POLICY 
+Due for review: 30/04/2028 
+Name of Policy: Maternity Education Policy v2.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 19 of 21 
+ Appendix 4: Template Dissemination, Implementation and Access Plan 
+ 
+To be completed and attached to any policy when submitted to Corporate Governance for consideration 
+and TMB approval/ Clinical Documents Approval Group 
+To be completed and attached to any policy when submitted to Corporate Governance for 
+consideration and TMB approval. 
+ 
+ Dissemination Plan Comments 
+1. Identify: 
+ Which members of staff or staff groups will be affected 
+by this policy? Maternity Staff 
+ How will you confirm that they have received the policy 
+and understood its implications? Dissemination through the 
+usual communication channels 
+and highlighted at Safety 
+Huddles. 
+ How have you linked the dissemination of the policy 
+with induction training, continuous professional 
+development, and clinical supervision as appropriate? All new members of staff are 
+shown where to access 
+Clinical documents that are 
+relevant to their area of 
+practice. 
+2. How and where will staff access the document (at 
+operational level)? Accessed by staff via 
+Sharepoint. 
+
+ Yes/No Comments 
+3. Have you made any plans to remove 
+old versions of the policy or related 
+documents from circulation? Yes Previous versions will be 
+archived as part of the 
+uploading onto sharepoint 
+process. 
+4. Have you ensured staff are aware the 
+document is logged on the 
+organisation’s register? Yes Dissemination plan includes 
+notifying staff via email, 
+departmental noticeboards, 
+and safety huddles. CLINICAL POLICY 
+Due for review: 30/04/2028 
+Name of Policy: Maternity Education Policy v2.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 20 of 21 
+ Appendix 5: Policy Version Control Log 
+ 
+Version Date Author Comment 
+1.0 November 2023 Practice 
+Development 
+Midwives New Trust wide policy replacing Maternity 
+TNA policy UHSC073 
+2.0 December 2024 Claire O’Brien 
+Lead Midwife for 
+Training and 
+Education 
+(SRH/WH) Annual review. CLINICAL POLICY 
+Due for review: 30/04/2028 
+Name of Policy: Maternity Education Policy v2.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 21 of 21 
+ Appendix 6: Additional guidance and information 
+ 
+Guidance on the engagement of short -term locums in maternity care 
+ 
+https://www.england.nhs.uk/wp -content/uploads/2023/05/PRN00239ii -ccf-minimum -standards -and- 
+stretch -targets.pdf . 
+https://www.england.nhs.uk/publication/core -competency -framework -version -two/ 
+ 
+https://www.unicef.org.uk/babyfriendly/baby -friendly -resources/implementing -standards - 
+resources/achieving -sustainability -standards -guidance/ 
+OCKENDEN REPORT - FINAL 
+ 
+NIPE peer review framework - GOV.UK 
+
+Links to other Trust policies 
+ 
+Trust STAM policy: here

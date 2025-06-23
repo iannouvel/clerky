@@ -1,0 +1,1859 @@
+# Extracted from: UHSx Homebirth & Freebirth guideline.pdf
+# Guideline ID: uhsx-homebirth-freebirth-guideline
+# Content length: 96465 characters
+# Processing date: 1750066902.102643
+
+CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 1 of 43 
+ TRUST CLINICAL GUIDELINE 
+Homebirth & Freebirth 
+Overview 
+The purpose of this guideline is to provide evidence based guidelines for staff supporting 
+pregnant women and birthing people choosing homebirth or freebirth. Please note, IF DOCUMENT IS PRINTED, IT MAY BECOME OUT OF DATE. 
+
+Owner S. Adamson & F. Usifo 
+ 
+Author/further information G. Addison & B. Elms, Heads of Midwifery 
+J. Bell, Community Team Leader 
+Guideline version v1.0 
+Related policies None 
+
+Related protocols/procedures UHS Sussex (SRH&WH) Maternity 
+guidelines: Antenatal Care and Patient 
+Information, Maternal Transfer and On -site 
+Handover of Care, Care of Women in Labour, 
+Venous thromboembolism in Pregnancy, 
+Waterbirth, Postnatal Care. 
+UHS Sussex (PRN&RSCH) Maternity 
+guidelines: Care of the newborn immediately 
+after birth, Hyponatraemia in labour, Newborn 
+feeding, Waterbirth, Care of women / people in 
+labour, Venous thrombosis 
+
+Standards RCOG 2001 Intrapartum Care 
+RCOG 2016 Postpartum Haemorrhage, 
+Prevention and Management (Green -top 
+Guideline No. 52) 
+NICE 2017 Intrapartum Care 
+NMC The Code (2015) 
+
+Superseded documents • CG12032 Homebirth & Freebirth Guideline 
+(SRH & WH) 
+• MP060 Homebirth (PRH & RSCH) 
+• MP063 Free Birthing (PRH & RSCH) 
+Review due August 2027 CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 2 of 43 
+
+Approval 
+Joint Obstetric Guideline Group (JOGG) Date approved: 20th December 2023 
+W&C Clinical Effectiveness Group Date approved: 22nd May 2024 
+Consultation as relevant 
+Medicines Governance Committee Date approved: 13th March 2024 
+Ratification 
+Clinical Document Approval Group Date approved: 21st August 2024 CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 3 of 43 
+ Table of Contents 
+1.0 Introduction ................................ ................................ ................................ ................. 5 
+2.0 Scope ................................ ................................ ................................ .......................... 5 
+3.0 Responsibilities and sphere of practice ................................ ................................ ........ 5 
+4.0 Abbreviations used within this guideline ................................ ................................ ....... 6 
+5.0 Introduction ................................ ................................ ................................ ................. 6 
+5.1 Homebirth: Midwives guiding principles of care ................................ ............................ 6 
+5.2 Role of the Senior Midwifery Manager / Matron ................................ ........................... 7 
+5.3 Role of the Midwifery Manager On-Call ................................ ................................ ....... 7 
+6.0 Booking a homebirth ................................ ................................ ................................ .... 7 
+7.0 Homebirth outside of guidance ................................ ................................ .................... 8 
+7.1 Role of the Midwife ................................ ................................ ................................ ...... 8 
+7.2 Role of the Consultant Midwife ................................ ................................ .................... 8 
+7.3 Role of the Team Leader ................................ ................................ ............................. 9 
+8.0 Antenatal care ................................ ................................ ................................ ............. 9 
+9.0 Post dates plan of care ................................ ................................ .............................. 10 
+10.0 Thromboprophylaxis ................................ ................................ ................................ .. 10 
+10.0 Organising care in labour ................................ ................................ .......................... 11 
+10.1 SRH/WH ................................ ................................ ................................ ................... 11 
+10.2 PRH/RSCH ................................ ................................ ................................ ............... 11 
+11.0 Intrapartum Care ................................ ................................ ................................ ....... 12 
+12.0 Intrapartum transfer of pregnant women and birthing people from community 
+to hospital ................................ ................................ ................................ .................. 12 
+12.1 Indications for Transfer to Labour Ward ................................ ................................ ..... 13 
+12.2 Process for transfer ................................ ................................ ................................ ... 14 
+12.3 Care during transit ................................ ................................ ................................ ..... 14 
+12.3.1 Birth en-route to obstetric unit ................................ ................................ .................... 15 
+12.4 Hospital preparation ................................ ................................ ................................ .. 15 
+12.5 Handover ................................ ................................ ................................ .................. 16 
+12.6 Decline to be transferred into the obstetric unit ................................ .......................... 16 
+13.0 Transportation of specimens & equipment ................................ ................................ . 16 
+14.0 Postnatal Care ................................ ................................ ................................ .......... 17 
+14.1 Before leaving the home after a homebirth ................................ ................................ 17 
+14.2 On-going postnatal care ................................ ................................ ............................ 18 
+15.0 Outpatient induction of labour ................................ ................................ .................... 18 
+16.0 Freebirth and unattended homebirth (BBA) ................................ ................................ 18 
+16.1 Definition freebirth ................................ ................................ ................................ ..... 18 
+16.2 Freebirthing and the law ................................ ................................ ............................ 18 
+16.3 Freebirthing Choice ................................ ................................ ................................ ... 19 
+16.4 Professional’s communication with the pregnant woman or birthing person 
+and their partner ................................ ................................ ................................ ........ 19 
+16.5 Referral and escalation ................................ ................................ .............................. 20 
+16.6 Notification of birth: ................................ ................................ ................................ .... 21 
+16.7 Safeguarding ................................ ................................ ................................ ............. 21 
+16.8 Documentation ................................ ................................ ................................ .......... 21 
+16.9 Baby born before arrival (BBA) of medical or midwifery aid ................................ ........ 21 
+17.0 Suspension of Homebirth Service ................................ ................................ .............. 22 CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 4 of 43 
+ 18.0 Monitoring ................................ ................................ ................................ ................. 22 
+Appendix 1: Lone worker checklist ................................ ................................ ........................ 23 
+Appendix 2: Homebirth advice & checklist ................................ ................................ ............. 25 
+Appendix 3: Equipment and preparation for homebirth ................................ .......................... 29 
+Appendix 4: Storage of drugs carried by Community Midwives ................................ ............. 30 
+Appendix 5: Provision of homebirth service (SRH/WH only) ................................ .................. 31 
+Appendix 6: Prompt card for partner to call 999 ................................ ................................ ..... 33 
+Appendix 7: Ambulance transfer flowchart ................................ ................................ .......... 34 
+Appendix 8a: Releasing placentas to parents – Information sheet for parents ....................... 35 
+Appendix 8b: Release of Placenta form ................................ ................................ ................ 36 
+Appendix 9: Use of waterbirth pool at home ................................ ................................ .......... 37 
+Appendix 10: Homebirth Shift Night Time 19.30 -08.00 (PRH/RSCH only) ............................. 38 
+Appendix 11: Guideline Version Control Log ................................ ................................ ......... 39 
+Appendix 12: Due Regard Assessment Tool ................................ ................................ ......... 40 
+Appendix 13: Template Dissemination, Implementation and Access Plan ............................. 41 
+Appendix 14: Additional guidance and information ................................ ................................ 42 CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 5 of 43 
+ Homebirth & Freebirth 
+
+1.0 Introduction 
+ 
+This guideline aims to provide clear guidance for all staff involved in all aspects of homebirth and 
+freebirth. 
+ 
+These guidelines are intended to provide high quality, evidence -based care to pregnant women 
+and birthing people and babies under the care of the maternity units at University Hospitals 
+Sussex. 
+
+2.0 Scope 
+ 
+• All staff providing intrapartum care in the home setting. 
+
+3.0 Responsibilities and sphere of practice 
+ 
+Midwives: 
+ 
+• To access, read, understand and follow this guidance. 
+• To use their professional judgement in application of this guideline. This guidance is for 
+midwives working within University Hospitals Sussex maternity services. This guidance 
+is not rigid and should be tailored to the individual circumstances of each pregnant 
+woman or birthing person. If the guidance is not being followed, documentation on the 
+Maternity Information System (MIS) of the reasoning and/or justification is essential, 
+with clear documentation of alternative plans and discussions. 
+• To understand the midwives role, scope of practise, responsibilities and accountability 
+in relation to providing midwifery care, in accordance with standards as specified by the 
+Council, to a pregnant woman and birthing person and baby during the antenatal, 
+intrapartum and postnatal periods. 
+• Except in an emergency, a practising midwife shall not provide care, or undertake any 
+treatment which they have not been trained to give. 
+• In an emergency or where a deviation from the norm which is outside their current 
+scope of practice becomes apparent in a pregnant woman or birthing person or baby 
+during the antenatal, intrapartum or postnatal periods, a practising midwife shall call 
+such qualified health professional as may reasonably be expected to have the 
+necessary skills and experience to assist them in the provision of care. CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 6 of 43 
+ 4.0 Abbreviations used within this guideline 
+ 
+BBA - Born before arrival DAU - Day Assessment Unit 
+LMWH - Low Molecular Weight Heparin MAU - Maternity Assessment Unit 
+MIS - Maternity Information System eg 
+Badgernet TED - Thrombo -embolic Deterrent 
+SBAR - Situation, Background, 
+Assessment, Recommendations VTE - Venous Thromboembolism 
+
+5.0 Introduction 
+ 
+5.1 Homebirth: Midwives guiding principles of care 
+ 
+In the event of a pregnant woman or birthing person requesting a homebirth it is essential that the 
+midwife refer to the Trusts Homebirth & Freebirth guideline in providing care during the 
+pregnancy and labour ensuring the safety of both the pregnant woman or birthing person and 
+their baby. 
+ 
+The standard of practice in the delivery of midwifery care shall be that which is acceptable in the 
+context of current knowledge and clinical developments. In all circumstances the safety and 
+welfare of the pregnant woman or birthing person and their baby must be of primary importance. 
+ 
+It is essential that all midwives read and be familiar with their responsibility and accountability in 
+regard to the NMC The Code: Professional standards of practice and behaviour for nurses, 
+midwives and nursing associates . 
+ 
+Any midwife who is not competent to provide care in the home setting must raise their concerns 
+with their line manager in order that additional training can be arranged. 
+ 
+Midwives attending home birth must ensure they consider their own safety at all times and inform 
+labour ward of any concerns for their own or any other person’s safety. Please see Appendix 1 : 
+Lone worker checklist. 
+ 
+A midwife: 
+ 
+• Cannot arrange for anyone to act as a substitute, other than another practising midwife 
+or a registered medical practitioner. 
+• Must make sure the needs of the pregnant woman or birthing person or baby are the 
+primary focus of their practice. 
+• Should work in partnership with the pregnant woman or birthing person and their 
+family. 
+• Should enable the pregnant woman or birthing person to make decisions about their 
+care based on their individual needs, by discussing matters fully with them. 
+• Should respect the pregnant woman or birthing person’s right to refuse any advice 
+given. CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 7 of 43 
+ • Is responsible for maintaining and developing their own competencies and learning 
+new skills required in their practice. 
+• Is familiar with their employer’s policies and guidelines. 
+ 
+5.2 Role of the Senior Midwifery Manager / Matron 
+ 
+• To support the midwife in the event of a complicated homebirth to provide reflection 
+and advise if further training is required to improve the midwife’s competencies both 
+antenatally and in labour. 
+
+5.3 Role of the Midwifery Manager On-Call 
+ 
+• To provide support to midwives in the intrapartum period when pregnant women and 
+birthing people birth at home and the midwives need additional support. 
+
+6.0 Booking a homebirth 
+ 
+• Take the pregnant woman or birthing person’s obstetric history using the Antenatal 
+Risk Assessment on MIS including suitability for homebirth. 
+• PRH/RSCH - A home visit and risk assessment should be performed at 36 weeks. 
+• SRH/WH - A home assessment should be carried out at some point in the pregnancy, 
+this could be at Booking Appointment or later on in the pregnancy. With planned place 
+of birth being amended to home by 36 weeks. 
+• Ensure the pregnant woman or birthing person is aware of Homebirth information on 
+MIS. 
+• Complete the Smart homebirth assessment form on MIS and has the Homebirth Advice 
+& Checklist (see appendix 2 ). 
+• Midwives should pre-warn all planned homebirths that sometimes the service has to be 
+suspended for safety reasons. 
+ 
+6.1 Risk and pregnant women and birthing people’s choice 
+ 
+• Any midwife providing care regardless of setting must identify possible risk factors and 
+plan to mitigate those risks through their approach to care provision. 
+• For pregnant women and birthing people having a second or subsequent baby there 
+are no significant differences in adverse perinatal outcomes between planned home 
+births and planned births in obstetric units. 
+• For pregnant women and birthing people having a first baby who plan a home birth 
+there appears to be a slightly increased risk of an adverse outcome for the baby (9.3 
+adverse perinatal outcomes per 1000 planned home births compared with 5.3 per 1000 
+births for births planned in obstetric units (Hollowell, 2011) 
+• Pregnant women and birthing people who wish to have their baby at home should 
+ideally be in good general health with an uncomplicated obstetric and medical history. 
+They should ideally have a singleton pregnancy with a gestational age between 37 and 
+42 weeks and a cephalic presentation. CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 8 of 43 
+ • Pregnant women and birthing people who have a pre -existing medical or obstetric 
+condition or who have had a previous complicated birth should be advised to give birth 
+in an obstetric unit. 
+• Pregnant women and birthing people advised to give birth in an obstetric unit who wish 
+to continue with their plan for a homebirth should have their wishes respected and an 
+individualised plan of care should be made as per section 7.0 Homebirth outside of 
+guidance below. This can be facilitated and supported by referral to the consultant 
+midwives via the referral on MIS. 
+
+7.0 Homebirth outside of guidance 
+ 
+7.1 Role of the Midwife 
+ 
+• Perform risk Assessment and ensure that clear documentation on MIS of the reasons 
+why hospital birth is recommended. 
+• If a pregnant woman or birthing person is requesting a homebirth with a high -risk 
+pregnancy, the midwife must inform them that they will be referred to the consultant 
+midwife who will offer their support in individualised care planning. This referral should be 
+made as early on in the pregnancy as possible. 
+• Risk factors need to be reviewed and documented on MIS during every antenatal 
+appointment. 
+• Where the plan for home birth continues despite recognised risk factors, the midwife 
+providing care should obtain support from their line manager or team leaders. Support 
+can also be obtained from the labour ward coordinator/on -call manager. All discussions, 
+advice and referrals should be documented by the midwife on MIS. 
+• Throughout the pregnant woman or birthing person’s pregnancy, labour and postnatal 
+periods the midwife should continue to provide appropriate midwifery care. 
+ 
+7.2 Role of the Consultant Midwife 
+ 
+• The consultant midwife should make contact with the pregnant woman or birthing 
+person who request a homebirth outside of guidance and offer either a telephone 
+consultation or a face to face appointment with their named midwife to discuss their 
+birth preference. 
+• They should support the midwife and work with them and the pregnant woman or 
+birthing person giving evidence based information in order to help the pregnant woman 
+or birthing person make an informed choice about the place of birth. 
+• They should be giving full and unbiased information ensuring the pregnant woman or 
+birthing person’s understanding of their discussion and the reason for any concerns. 
+• This should be fully documented on MIS. 
+• The pregnant woman or birthing person’s details should be added to the high risk 
+homebirth spreadsheet which is forwarded to SECAMB monthly and an alert is added 
+to the address. CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 9 of 43 
+ 7.3 Role of the Team Leader 
+ 
+• RSCH/PRH: A list of high risk homebirths is shared monthly to community midwives, 
+labour wards and triage. 
+• SRH/WH: A list of all planned homebirths from 39 weeks is included on daily huddle 
+and high risk information is shared with all community midwives with information on 
+MIS. 
+• Team leaders must anticipate any training needs and arrange appropriate skills drills 
+with the maternity practise development team. 
+• Support midwives where the plan for home birth continues despite recognised risk 
+factors. 
+
+8.0 Antenatal care 
+ 
+• Routine antenatal care with risk assessments and appropriate referral if any deviation 
+from normal is identified as per associated antenatal care guidelines. 
+• By 34 - 36 weeks, the midwife will visit the pregnant woman or birthing person to 
+discuss birth at home and to complete the homebirth checklist on MIS. All discussions 
+should be documented MIS. Ideally at least one antenatal appointment should take 
+place in the home. 
+• The home birth assessment containing full contact and access details and any known 
+risk factors must be completed and clearly documented on MIS. 
+• Fluid balance and information leaflet on MIS to be discussed. A measuring jug to be 
+supplied by the pregnant woman or birthing person. This is to reduce the risk of 
+hyponatraemia in the mother or birthing parent and baby. 
+• Pregnant women and birthing people must be informed that emergency transfer will be 
+by ambulance is to the nearest obstetric unit. This discussion must be clearly 
+documented on the home assessment form as well. Pregnant women and birthing 
+people also need to be made aware of potential delays in transfer dependent on 
+category of call and other demands on the ambulance service. 
+• If a pregnant woman or birthing person chooses to birth at home without a midwife 
+present then the Senior Midwifery Manager / Matron should be informed. (See 
+Freebirth section 16.0 ). 
+• If a pregnant woman or birthing person has chosen the support of a Doula at their birth, 
+they should be asked if they wish the Doula to be involved in the birth preferences 
+discussion. 
+• By the start of labour, the midwife will ensure the pregnant woman or birthing person 
+has the required equipment for the birth as per appendix 2 . 
+• If a waterbirth is planned the pregnant woman or birthing person must be advised that 
+they should not enter the pool prior to the midwife arriving, as it is essential to confirm 
+maternal or birthing parent and fetal wellbeing before hydrotherapy is used for pain 
+relief in childbirth . 
+• The pregnant woman or birthing person must be informed of how and when to contact 
+the midwife when labour begins and/or in other instances when assistance is required. 
+• All community midwives should ensure that all their equipment is in good working order 
+and readily available. CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 10 of 43 
+ • The community midwife should arrange for presentation scan between 36 - 37 weeks 
+for all pregnant women or birthing people planning a homebirth. If this is declined 
+please document on MIS. 
+
+9.0 Post dates plan of care 
+ 
+• Induction of labour should be discussed as per associated induction of labour 
+guidelines. 
+• Where a pregnant woman or birthing person makes and informed decision to decline 
+induction of labour they must be advised that homebirth is not recommended after 42 
+weeks gestation (NICE 2017). 
+• Where a pregnant woman or birthing person makes an informed decision to continue 
+with a planned homebirth after 42 weeks gestation their choice should be respected. 
+• Pregnant women and birthing people should be recommended to discuss their options 
+with an obstetrician or consultant midwife. The midwife should offer a referral to Day 
+Assessment Unit (DAU) for an appointment in order that a plan for birth can be 
+discussed or the consultant midwife contacted. Full documentation of all discussions 
+and advice must be recorded on MIS. 
+
+10.0 Thromboprophylaxis 
+ 
+Community Midwife responsibilities: 
+ 
+• The midwife will assess the need for thromboprophylaxis and arrange an Antenatal 
+Clinic appointment for a prescription of Low Molecular Weight Heparin (LMWH) and 
+TED stockings. At this appointment administration will be discussed along with the risks 
+and benefits of treatment. (Refer associated maternity VTE guidelines). 
+• Check for allergies, interactions and contra -indications. 
+• Assess bleeding risk. 
+• Communicate with the pregnant woman or birthing person verbally the indication for 
+anticoagulation medication. 
+• Communicate with the pregnant woman or birthing person verbally how long the course 
+is for and when to stop LMWH. 
+• Inform the pregnant woman or birthing person that LMWH is porcine based. This may 
+be an issue for vegetarians/vegans and some religious groups. 
+• Train the patient on how to administer the injection; as they are self -administering, a 
+sharps bin should be provided. Signpost to online maternity information on reducing the 
+risk of blood clots. 
+• Inform the pregnant woman or birthing person of side effects of LMWH and the 
+importance of reporting any symptoms of bleeding to their GP or A&E if severe. 
+ 
+Antenatal Clinic responsibilities: 
+ 
+• Arrange for Obstetrician to review and prescribe the LMWH after receiving request 
+from the Midwife. CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 11 of 43 
+ • Discuss risks and benefits of treatment 
+• Discuss administration of LMWH. 
+• Arrange prescription and collection by the pregnant woman or birthing person. 
+• Ensure advice is given re disposal of sharps and sharps box given. 
+ 
+Patient/carer responsibilities: 
+ 
+• To be responsible for administering LMWH as prescribed. 
+• To understand the potential for adverse events and report these to the GP, Triage or 
+Community midwife. 
+• To check with the community pharmacist that there are no interactions with LMWH, 
+when buying any over the counter medicines or herbal/homoeopathic products. 
+• To check with dentists or other specialists who may prescribe medicines that there are 
+no interactions with LMWH. 
+• To inform healthcare professionals that they are prescribed LMWH. 
+
+10.0 Organising care in labour 
+ 
+10.1 SRH/WH 
+ 
+• When a pregnant woman or birthing person who is having a planned homebirth calls 
+Maternity Triage, the triage midwife will contact the labour ward coordinator. The 
+community team leader (during the day) or the Labour Ward Coordinator (during the 
+day or night) will contact the on -call community midwife to attend to assess if the 
+pregnant woman or birthing person is in established labour and provide appropriate 
+midwifery care. 
+• It is the responsibility of the attending midwife to request a 2nd midwife to attend the 
+birth or earlier should they require professional support. 
+ 
+10.2 PRH/RSCH 
+ 
+• Cover for homebirths is provided by the community midwives who carry all the required 
+equipment in the designated homebirth pool cars. 
+• The triage midwife will contact the community midwife and inform the labour ward 
+coordinator. 
+• If Telephone Triage is not manned, the calls are diverted to MAU and they will contact 
+the community midwife and inform labour ward coordinator. 
+• Homebirth equipment, including neonatal resuscitation equipment, in homebirth pool 
+cars must be checked daily and after each use by the community midwife using the 
+vehicle and documented in the homebirth checking log in the vehicle. Homebirth 
+equipment on labour wards must be checked daily and documented in the labour ward 
+equipment checking log. 
+• Homebirth midwives attending from the labour ward must collect the homebirth 
+equipment (unless using homebirth car where kit is already in situ) ensuring all drugs 
+are available. These must include syntometrine, oxytocin, ergometrine, lidocaine 1% for 
+maternal and vitamin K for neonatal administration. CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 12 of 43 
+ • Portable entonox cylinders for pain relief must be carried in the appropriate transport 
+bags and dealt with in accordance with the dangerous goods transport policy at all 
+times (see RM30 Transport of Dangerous goods policy) 
+
+11.0 Intrapartum Care 
+ 
+• Midwives should follow associated care in labour and waterbirth guidelines. 
+• Midwives should follow Maternity fluid management guidance. 
+• Following initial assessment the attending midwife must contact the labour ward 
+coordinator and update with an individualised care plan. For PRH/RSCH: Where no 
+reply is received from the labour ward the midwife must call the hotphone on 01273 
+664422 for RSCH and 014444 48666 for PRH. 
+• The midwife should communicate with Labour Ward at least every 4 hours to provide 
+an update and as soon as is indicated should a deviation from normal arise. 
+• If advice is required, the attending midwife should refer to the Coordinator on labour 
+ward, the community team leader or the On -Call Midwifery Manager. 
+• Two midwives should be present for the birth. The attending midwife must request 
+attendance of the second midwife by telephoning the labour ward and speaking to the 
+labour ward coordinator unless the second midwife has been informed in advance and 
+is contacted directly by the midwife in attendance at the birth. Pregnant women and 
+birthing people in the second stage of labour must not be discouraged from pushing on 
+the basis of waiting for the second midwife to arrive. 
+• It is the responsibility of the 2nd midwife to support the attending midwife and assist in 
+maintaining contemporaneous record keeping on MIS. 
+• If a midwife is attending a pregnant woman or birthing person at a homebirth, the 
+maternity service must send a second midwife at the request of the first midwife for 
+support. If there are difficulties in providing a second midwife due to other clinical 
+activity or staffing issues this must be escalated to the maternity manager on call. 
+• Where an attending midwife requires support in organising a second or relief midwife 
+they must contact the community coordinator (or labour ward coordinator out of hours) 
+who must deal with the request enabling the midwife to provide ongoing care. 
+• In circumstances where the home birth service is anticipated to be or is compromised 
+due to staffing levels or the homebirth midwives are attending other homebirths, then 
+early escalation is required by 
+- The homebirth midwife and labour ward coordinator (PRH/RSCH ) 
+- Community Team Leaders, on-call community midwives and labour ward 
+coordinator ( SRH/WH ) and see appendix 5 . 
+
+12.0 Intrapartum transfer of pregnant women and birthing people from 
+community to hospital 
+ 
+The following guidance has been developed to ensure that appropriate communication occurs 
+between the community midwife and the Labour ward and that care is maintained when any 
+pregnant woman or birthing person has been transferred in labour or postpartum for emergency 
+reasons. CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 13 of 43 
+ 
+12.1 Indications for Transfer to Labour Ward 
+ 
+Any indication for transfer into the obstetric unit must be discussed with the pregnant woman or 
+birthing person and their partner and consent for transfer obtained. All transfers must be by 
+ambulance. 
+ 
+Transfer should be considered in discussion with the Coordinator for the following indications 
+(this list is not exhaustive): 
+ 
+Maternal and birthing parent indicators 
+• Maternal or birthing parent request. 
+• Maternal or birthing parent request for epidural in labour. 
+• Concern regarding maternal or birthing parent observations. 
+• Antepartum haemorrhage. 
+• Positive fluid balance >1500mls. 
+• Rupture of membranes more than 24 hours before the onset of established labour. 
+Intrapartum indicators 
+• Delay in the first or second stage of labour. 
+• Intrapartum haemorrhage. 
+• Fetal heart rate below 110 or above 160 beats/minute. 
+• A deceleration in fetal heart rate heard on intermittent auscultation (unless birth is 
+imminent). 
+• Need for continuous electronic fetal heart rate monitoring due to non-reassuring 
+fetal heart rate. 
+• Need for continuous electronic fetal heart rate monitoring due to hypertonic uterus. 
+• Inability to locate or monitor fetal heart rate. 
+• Pain reported by the woman or birthing person that differs from the pain normally 
+associated with contractions. 
+• Any abnormal presentation, including cord presentation. 
+• Significant meconium stained liquor (taking into consideration stage of labour and 
+imminence of birth). 
+• Suspected anhydramnios or polyhydramnios. 
+• Suspected chorioamnionitis. 
+• Retained placenta. 
+• Obstetric emergency such as postpartum haemorrhage. 
+• Third / fourth degree tear or other complicated perineal trauma. 
+Neonatal indicators 
+• Neonatal resuscitation. 
+• Baby with suspected infection or unwell. 
+• Suspected birth trauma. CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 14 of 43 
+ 
+• Suspected congenital abnormalities. 
+• Baby who requires transitional care. 
+• Jaundice at birth. 
+
+12.2 Process for transfer 
+ 
+• Any call for ambulance attendance and support must not be delayed if resuscitation is 
+required. Organising appropriate additional support is the priority, with emergency 
+resuscitation commenced immediately by the second midwife, if present, or after 
+arranging assistance if only one midwife is in attendance. 
+• The lead midwife is to dial 999 and state 'obstetric emergency' if there is risk to the 
+mother or baby eg major APH, intrapartum haemorrhage or PPH, compromise of the 
+neonate / fetus, FH amomaly, thick meconium, maternal or birthing parent compromise, 
+undiagnosed breech, cord prolapse. 
+• If not an immediate risk to mother or baby, to state not an obstetric emergency but still 
+require ambulance support and answer call handlers questions to determine speed of 
+response indicated. 
+• If the clinical situation dictates the midwife should request the birth partner telephone 
+999 giving guidance by using the birth supporter prompt card (See appendix 6) from the 
+home birth equipment or giving verbal instructions. Consider having the phone on 
+loudspeaker. 
+• The midwife must contact the labour ward and inform the labour ward coordinator that 
+a transfer is being arranged. The midwife must ensure when speaking to the labour 
+ward coordinator that relevant, clear information is given using SBAR: 
+- Name and address of the pregnant woman or birthing person 
+- Gestation and parity 
+- Reason for transfer 
+- Length of time in labour 
+- Membranes intact or ruptured - colour of liquor 
+- Cervical dilatation 
+- Contractions - rate and strength 
+- Fetal heart rate 
+- Maternal or birthing parent condition 
+- Length of time with the pregnant woman or birthing person 
+- Blood loss where appropriate 
+• The pregnant woman or birthing person and their relatives must be kept informed at all 
+stages of the arrangements and transfer. 
+
+12.3 Care during transit 
+ 
+• On arrival of the ambulance the midwife remains the lead professional assisted by the 
+ambulance crew who will work collaboratively to ensure the safe transfer to hospital. 
+• The midwife must use professional judgement as to re-assessment of cervical dilatation 
+immediately prior to transfer. In some emergency situations birth of the baby at home 
+with support may be the safer option. CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 15 of 43 
+ • The midwife will need to be seated safely in the ambulance. The only mitigation to be 
+out of your seat in a moving ambulance is if the patient requires lifesaving/time critical 
+care/intervention. 
+• Inform labour ward of any changes in the situation on route via ambulance control. 
+• If the transfer is following the birth, and the baby is well, the baby can be put in the car 
+seat and transferred by car with a relative. The baby will be secured on the stretcher 
+using the ambulance child restraint straps. If mother or birthing parent is well/stable 
+they can travel with baby on a chair. A baby is never able to be free and lose in mother 
+or birthing parent’s arms. 
+• In absence of a second midwife, babies should be transferred under the sole care of 
+the ambulance crew. The midwife’s responsibility is to remain with the mother or 
+birthing parent until a minimum of one hour post-birth of the placenta and their condition 
+is stable. See Appendix 7 : Ambulance transfer flowchart. For a birth where both the 
+mother or birthing parent, and the baby require intervention, two ambulance vehicles 
+will be sent. 
+• The midwife must assess the need for intravenous cannulation at the start of the 
+emergency situation and in consultation with the ambulance crew prior to transfer if not 
+already done. 
+• The midwife must accompany the pregnant woman or birthing person in the ambulance 
+for all intrapartum transfers. In no circumstances should an emergency transfer be by 
+car. Should a pregnant woman or birthing person or their birth partner suggest 
+independent transfer they should be counselled against this and full documentation 
+must be made on MIS. The Manager on call will need to be informed. 
+
+12.3.1 Birth en-route to obstetric unit 
+ 
+• Request the ambulance to pull over enabling ambulance crew to give full support and 
+work collaboratively to attend to the birth. 
+• The midwife must ensure stabilisation of the mother or birthing parent and the 
+ambulance crew will assist with stabilisation of the baby to ensure the best possible 
+care is provided for both mother or birthing parent and baby. 
+• Following birth the ambulance crew will notify the nearest maternity unit of impending 
+arrival. This may not be the unit of original intention. If diverting to a secondary unit 
+they will inform original unit of change of plan. 
+
+12.4 Hospital preparation 
+ 
+The Senior Midwife on the labour ward will alert the Registrar on duty in readiness for the 
+pregnant woman or birthing person’s arrival. 
+ 
+• The labour ward coordinator must ensure a room is prepared and consider the need 
+for immediate admission to theatre or treatment in accident and emergency on arrival. 
+• The on-call obstetric registrar or consultant obstetrician, neonatologist and anaesthetist 
+must be informed as appropriate. It may also be necessary to ensure lifts are available 
+and doors open to ensure the earliest access to emergency treatment. CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 16 of 43 
+ 
+12.5 Handover 
+ 
+• The community midwife accompanying the pregnant woman or birthing person, should 
+complete an SBAR and use this to hand over relevant information about the case to the 
+Registrar and the hospital midwife providing care. The community midwife may wish or 
+be required to continue care until cover organised. Transfer must be reported on Datix. 
+ 
+12.6 Decline to be transferred into the obstetric unit 
+ 
+• If the pregnant woman or birthing person declines transfer they cannot be transferred 
+against their wishes. The attending midwife must ensure the pregnant woman or 
+birthing person has made a fully informed decision, and continue to provide care to the 
+best of their ability, seeking the support of labour ward coordinator and/or the manager 
+on call. 
+• Where the indication for transfer gives increased concern for the health of the baby the 
+potential delay in accessing full neonatal services must form part of the discussion with 
+parents. This should include possible recommendation for ex -utero transfer following 
+birth. 
+• All discussion, advice and decisions must be clearly documented on MIS. 
+• Out of hours the On -call Midwifery Manager should be informed. An ambulance should 
+be called, however it may be that the crew advise transfer but due to their capacity they 
+may not stay. 
+ 
+13.0 Transportation of specimens & equipment 
+Transportation method 
+ 
+Transportation of 
+Entonox Entonox cylinders need to be transported in the custom Entonox 
+transportation bags. It is vital that you display the green and yellow 
+diamond signs in your car window when transporting Entonox to 
+and from homebirths. 
+Sharps You should use sharps boxes with a purple lid at homebirths. This 
+is because oxytocin in all forms is cytostatic. 
+ 
+Placenta Placentas should be double bagged and transported in a yellow 
+box with a red lid. (Yellow boxes with orange lid are for non- 
+anatomical waste only). 
+
+Waste from 
+Homebirth Non-soiled waste can be disposed of in the house. 
+Blood stained (but not infectious) waste needs to be transported in 
+a UN3291 approved box for clinical waste. Offensive waste should 
+be transported in a yellow bag with black stripes (tiger bag). 
+Should there be an infectious case eg Hepatitis B then a Bio 
+Hazard box will need to be collected from the hospital to transport 
+the waste. 
+ 
+Instruments Instruments/disposable instruments need to be put in a 
+Tupperware box or the red bloods transporter box to bring them 
+back to the hospital. Please check that the clips on red blood 
+transporter boxes are secured firmly. CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 17 of 43 
+ 14.0 Postnatal Care 
+14.1 Before leaving the home after a homebirth 
+ 
+• Both midwives must stay at the home until placenta is safely delivered. Following 
+assessment of the health of the mother or birthing parent and baby and need for 
+support with any suturing the second midwife can leave the home. 
+• The primary midwife must remain in the home until satisfied the mother or birthing parent 
+and baby are in a stable condition with all observations within normal limit. (refer to 
+associated care in labour guidelines). 
+• Support with feeding must be given in accordance guidance on infant feeding. (refer to 
+associated infant feeding guidelines). 
+• SRH/WH - Breastfeeding support from a Maternity Support Worker should be offered 
+and Feeding Helpline details given. 
+• RSCH/PRH - Signpost the parents to Telephone Triage for feeding support overnight. 
+Further support can be provided by community midwives and maternity support 
+workers. 
+• The first void of urine must be documented and advice given (see maternity bladder 
+care guidelines). If not voided before midwife leaves a member of the homebirth team 
+will follow up and contact the pregnant woman or birthing person. 
+• The midwife to undertake oxygen saturation measurements on newborn prior to 
+leaving the home. If readings suboptimal and in the absence of any risk factors/other 
+concerns then the reading can be repeated in one hour. If the second reading remains 
+suboptimal then transfer in should be advised. If the reading is normal then the midwife 
+can leave the home. The reading must be repeated within the first 24hours of life. 
+• A full postnatal examination of the pregnant woman or birthing person and baby should 
+be carried out before the midwife leaves to return to the hospital, and documented on 
+MIS. 
+• Any deviations from normal regarding either the pregnant woman or birthing person or 
+the baby should be discussed with the labour ward coordinator or community team 
+leader. 
+• Before leaving, ensure the pregnant woman or birthing person is aware of the 
+information page ‘Potential Serious Conditions and Who to Contact’ on the Postnatal 
+Booklet on BadgerNotes. The pregnant woman or birthing person should be aware if 
+any of these occur, they should be aware seek medical advice without delay by calling 
+either 999 or Maternity Triage 01903 285269. 
+• Pregnant women and birthing people should be signposted to www.lullabytrust.org.uk 
+baby check pages to help them assess whether their baby is unwell and safer sleeping 
+advice. With ‘red flags’ for serious illness in young babies discussed. (Refer to 
+postnatal care guidleines) 
+• The midwife must assess when the next home visit will be required, and organise this 
+with the community midwives office. SRH/WH - this is done via the spreadsheet for 
+community visits. 
+• The midwife must ensure that arrangements are made for an examination of the 
+newborn to be carried out within 72 hours of birth. (Refer to neonatal examination 
+guidelines) CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 18 of 43 
+ • For those pregnant women and birthing people who choose to keep their placenta, give 
+them the information sheet and ask them to sign the release form and scan into MIS. 
+See appendix 8a and appendix 8b . 
+• If the pregnant woman or birthing person’s blood group is Rhesus Negative it is the 
+attending midwife’s responsibility to ensure cord and maternal or birthing parent blood 
+samples are taken and sent promptly to the laboratory. Within 24hrs (except at 
+weekends) the results should be obtained. If Anti -D is required then arrangements 
+must be made for administration within 72hrs of the birth within the hospital setting. 
+ 
+14.2 On-going postnatal care 
+ 
+• Selective home visits must be planned according to the pregnant woman or birthing 
+person’s individual needs. 
+• Appropriate care plans must be completed to ensure continuity of care during this 
+period. 
+• Handover to health visitor care appropriately timed from 10 days onwards with any 
+relevant information passed on. 
+• Please see postnatal guidelines for full recommendations on postnatal care. 
+
+15.0 Outpatient induction of labour 
+ 
+Should a pregnant woman or birthing person who has planned a homebirth require induction of 
+labour then the choice of place of birth should be reviewed and a hospital birth should be 
+recommended. 
+
+16.0 Freebirth and unattended homebirth (BBA) 
+16.1 Definition freebirth 
+ 
+Freebirthing is characterised as an active decision to birth without trained health professionals 
+present, but where maternity care is readily available (Feeley and Thomson, 2016). Pregnant 
+women and birthing people who choose to freebirth may engage in full or partial antenatal and 
+postnatal care, or they may opt out altogether and prefer to carry out their own wellbeing checks 
+(Feeley and Thomson, 2016). 
+ 
+16.2 Freebirthing and the law 
+ 
+Freebirthing is not against the law. Pregnant women and birthing people are not obliged to accept 
+any medical or midwifery care or treatment during childbirth and cannot be compelled to accept 
+care unless they lack mental capacity. (Birthrights 2017) No one can enforce their attendance at 
+a birth. 
+ 
+It is not appropriate for healthcare professionals to refer a pregnant woman or birthing person to 
+social services with concerns about the unborn baby, solely on the basis that they have declined 
+medical support, as they are legally entitled to do this (Birthrights, 2017). CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 19 of 43 
+ 
+It is illegal for anyone present during the labour or birth, to be undertaking the roles of a midwife 
+or doctor. According to Article 45 of the Nursing and Midwifery Order (2001), it is a criminal 
+offence for anyone other than a midwife or registered doctor to ‘attend’ a woman or person during 
+childbirth, except in an emergency. Birth partners, including doulas and family members, may be 
+present during childbirth, but must not assume responsibility, assist or assume the role of a 
+midwife or registered medical practitioner or give midwifery or medical care in childbirth. 
+ 
+16.3 Freebirthing Choice 
+ 
+All health professionals should understand that there are many reasons why pregnant women 
+and birthing people make the decision to have a ‘freebirth’. 
+ 
+• Some pregnant women and birthing people choosing to have an unassisted birth have 
+had a previous negative personal or traumatic experience of maternity services; they 
+perceive the risks of attending a hospital to give birth as being greater than giving birth 
+unassisted at home and they see ‘interference’ in the birth process as a risk. 
+• Pregnant women and birthing people may feel that freebirth is the only way that they 
+can retain choice, control and autonomy over their bodies during the birth process 
+(Feeley and Thomson, 2016; Holten and de Miranda, 2016; Plested, 2014; Jackson, 
+Dahlen and Schmied, 2012). 
+• During the COVID -19 pandemic there may be additional reasons why pregnant women 
+and birthing people do not wish to attend hospital to give birth; these relate to concerns 
+about them or their baby contracting the virus; or because they fear their partner may 
+not be able to be with them during labour and birth (particularly if their partner has 
+symptoms of COVID -19). 
+ 
+A number of key sections of the NMC Code set out the responsibilities of midwives, that can be 
+related to caring for pregnant women and birthing people who identify that they wish to give birth 
+without assistance or choosing to give birth at home outside of recommendations for homebirth. 
+(NMC 2018) 
+ 
+16.4 Professional’s communication with the pregnant woman or birthing person and 
+their partner 
+ 
+When a pregnant woman or birthing person indicates that they plan to give birth without 
+assistance, the community midwife should reach out to the pregnant woman or birthing person to 
+build a relationship and professional dialogue. 
+ 
+• Acknowledge the pregnant woman or birthing person’s choice as belonging to them. 
+• Arrange for an extended appointment to spend time talking with the pregnant woman or 
+birthing person (and their partner, if appropriate) to understand more fully their 
+concerns and reasons. 
+• During the conversation(s) give time for the pregnant woman or birthing person to 
+share what is important to them in relation to their psychological and physical safety. CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 20 of 43 
+ • Consider any underlying history such as previous birth trauma that may impact on 
+decision making. Consider potential benefits of offering psychological support via 
+Perinatal mental health Midwife/team or Consultant Midwife. 
+• Ensure that there is an opportunity to have a one to one conversation with the pregnant 
+woman or birthing person about their wishes and plans, without the presence of a 
+partner or other family members. Consideration should be given to the possibility of 
+coercion or pressure being placed on the woman or person to have an unassisted birth. 
+(See safeguarding section 16.7 ) 
+• Spend time explaining and providing the evidence about any particular individualised 
+risk factors for them and their baby of their intended birth plan. 
+• Identify any misconceptions or misunderstanding about current practice or service 
+provision in the area and provide the pregnant woman or birthing person with accurate 
+information. 
+• Indicate the need for the pregnant woman or birthing person to take full responsibility 
+for any outcome if a trained professional is not in attendance at the birth. 
+• Avoid comments that imply a judgemental approach about choices made, as labelling 
+pregnant women and birthing people as deviant or bad may reinforce their decision to 
+disengage with services (Nolan 2011). 
+• Avoid revisiting the information and discussions at every visit, this may be perceived as 
+bullying or coercive and is likely to alienate the pregnant woman or birthing person 
+(Nolan 2011). 
+• If possible, provide continuity of midwifery carer during the antenatal period to enable a 
+relationship of trust to build and support on -going dialogue. 
+• Work towards a plan of care, including how to seek help should any emergency 
+situation arise. 
+• Reassure the pregnant woman or birthing person that they will continue to be offered 
+usual antenatal and postnatal care even if they decide to have an unassisted birth. 
+• Reiterate that they can access care at any point should they need or want to and offer 
+referral to an obstetrician if any clinical assessments fall outside the norm. 
+• Ensure that the pregnant woman or birthing person has contact numbers for the 
+midwives, maternity and emergency services should they change their mind or need 
+assistance in an emergency. 
+• Advise the pregnant woman or birthing person how to notify and register the baby’s 
+birth (see section below). 
+• Inform the pregnant woman or birthing person about the role of the health visitor and 
+GP in relation to their child and advise that it is in the best interest of the child’s health 
+and wellbeing to engage with these professionals. 
+ 
+16.5 Referral and escalation 
+ 
+• Inform Community Team leader/Matrons of all pregnant women and birthing people 
+that plan to free birth. 
+• Pregnant women and birthing people to be offered a referral for additional birth 
+planning support with the teamleader or matron ideally < 36/40. 
+• Birth plan to be completed by community midwife or community team leader / matron 
+and ensure it is uploaded / evident on the maternity information system. CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 21 of 43 
+ 16.6 Notification of birth: 
+ 
+As there are legally defined time limitations for notification of birth which must be adhered to if the 
+midwife was not present at the birth (36 hours in the Notification of Births Act 1907), Parents must 
+be given information about the process for notification and registration of the birth. 
+ 
+16.7 Safeguarding 
+ 
+If midwives have worries about safeguarding or the mother or birthing parent’s psychological or 
+mental health they should be encouraged to consider the mother or birthing parent’s ‘capacity to 
+Act’ in line with the ‘Mental capacity Act’ 2018 (England and Wales)and have a low threshold for 
+advice/referral to appropriate professional. 
+ 
+Planning or having a freebirth in itself is not a reason to refer to social services. A holistic 
+assessment must be done, including if possible examining the pregnant woman or birthing 
+person’s reasons and motivations towards freebirth and eliminating the possibility of coercion 
+from any other person. However should there be concerns other than just the decision to freebirth 
+then a referral should be made. 
+ 
+If there are concerns that the pregnancy is concealed then refer to the Safeguarding guidance. 
+ 
+16.8 Documentation 
+ 
+All meetings and discussions with the pregnant woman or birthing person to be documented on 
+MIS in the relevant sections. 
+ 
+When completing and registering the birth on MIS, the birth currently will need to be declared as 
+a BBA. Please add in a clinical note if the birth was a freebirth for audit reasons. 
+
+16.9 Baby born before arrival (BBA) of medical or midwifery aid 
+ 
+On receiving information that a baby is being born without the presence of midwifery or medical 
+aid the midwife must: 
+ 
+• Contact ambulance control and request attendance at the home address of an 
+ambulance clearly stating all known details. 
+• Arrange for two homebirth midwives (unless ambulance crew present and baby and 
+placenta have been delivered) with appropriate equipment to attend the home without 
+delay ensuring they are aware of all known risk factors. The labour ward coordinator 
+should arrange for these two midwives to attend the address together. MIS should be 
+checked by the midwife taking the call to check for any issues. 
+• In the event of suspected freebirth and assistance by community midwives is declined, 
+midwives still have a duty of care. There will be guidance from the Local Maternity and 
+Neonatal System (LMNS) surrounding this in the future. The coordinator and on -call 
+obstetric registrar should offer to speak to the pregnant woman or birthing person. This 
+should be documented on MIS even if declined. CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 22 of 43 
+ • PRH/RSCH - If there is a delay in contacting a homebirth midwife, a midwife from the 
+labour ward should attend taking the appropriate home birth equipment. If unable to 
+facilitate sending a midwife from labour ward then escalate to manager on call / 
+community team leaders. 
+• On arrival the midwife must assess the safest course of action as to remaining in the 
+home or transferring to the nearest maternity unit. 
+• If both mother or birthing parent and baby are low risk, and all is well, the midwife can 
+suggest for them to remain at home. The midwife must ensure the pregnant woman or 
+birthing person has sufficient support and consents to remaining at home. 
+• If transfer to the maternity unit is indicated the process for transfer as above must be 
+followed. 
+• All equipment and clinical waste must be dealt with as for planned home birth as 
+above. 
+• All BBAs should be reported via Datix. 
+
+17.0 Suspension of Homebirth Service 
+ 
+The maternity service aims to provide a home birth service 24hrs a day, 7 days a week. The 
+suspension of the service should only be in extreme circumstances. 
+ 
+All decisions to suspend the home birth service should be taken in collaboration with the Senior 
+Midwifery Manager and the manager on call. See UHSC022 Maternity Escalation Policy . 
+
+18.0 Monitoring 
+ 
+• All BBAs (Born before Arrival) are reviewed as part of by the Patient Safety Team as 
+part of the DATIX system. 
+• Any planned homebirths that are transferred into hospital are reviewed by the Patient 
+Safety Team as part of the DATIX system. 
+ 
+SRH/WH - A spreadsheet of equipment checks is completed weekly by all community midwives 
+and compliance is audited. 
+ 
+PRH/RSCH - Equipment checks is completed daily by all community midwives and compliance is 
+audited. CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 23 of 43 
+ Appendix 1: Lone worker checklist 
+ 
+Before undertaking any home visits Tick when 
+complete/read 
+All community staff members to have completed mandatory training on 
+conflict resolution. 
+Ensure contact details for staff members are up to date and accessible. 
+Planning for a homebirth/home visit Tick when 
+complete/read 
+Staff to highlight any concerns about client / partner / family to Team 
+Leader / Community Manager. 
+Check MIS for alerts. 
+Check with GP surgery for alerts and update Team Leaders / Community 
+Manager. 
+Ensure homebirth risk assessment has been undertaken and documented 
+on MIS. 
+PRH&RSCH - Ensure community office aware of time of visit and 
+communicate with community office when visit is complete. 
+SRH&WH - Liaise with labour ward. 
+PRH&RSCH - Ensure that all visits are brought in or phoned into office at 
+end of shift. 
+Do not do lone visits if client / partner / family are known to be aggressive / 
+violent. Make clients aware that two health professionals will visit. 
+Document any concerns and escalate to Team Leader / Community 
+Manager. 
+PRH&RSCH - Check that first aid kit is available either in pool car of 
+homebirth bag. 
+During visit Tick when 
+complete/read 
+All community staff to keep mobiles with them switched on during 
+home visits at all times. 
+Keep ID badge visible. 
+Be alert to warning signs of aggressive behavior: All staff to have 
+completed conflict management (every 3 years). CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 24 of 43 
+ 
+If community staff feels that there is any risk, to leave appointment as 
+quickly and as safely as possible. If unable to leave then to call colleague 
+for help: 
+• Say on phone “ I am at patients name at address. Can you 
+check the red homebirth folder and let Sally O’Sullivan know 
+that I’m going to be late to see her please. ” 
+Colleague then should be prompted to say “do you need the police?” and 
+call for relevant help and escalate to managers. 
+When parking: 
+• Ensure that no personal possessions are visible 
+• Look out for street lamps and junctions and park nearby, so 
+that the car can be seen easily. 
+• Park car facing towards direction of exit. 
+When in client’s home always be aware of entrances and exits, to enable 
+quick escape if required. 
+Be aware of positioning of equipment that potentially could cause harm. 
+Be aware of your position in room in case of needing to escape, i.e. avoid 
+corners of rooms. 
+Use appropriate security measures e.g. mobile phones/trackers on cars. 
+If no contact from community staff member at agreed time with 
+community office / buddy / labour ward coordinator: 
+• Call community staff member. 
+• Check wellbeing by using passwords. 
+• If problem community staff member to say on phone “I am at 
+patients name at address. Can you check the red homebirth 
+folder and let Sally O’Sullivan know that I’m going to be late to 
+see her please.” 
+• Colleague then should be prompted to say “do you need the 
+police?” and call for relevant help and escalate to managers. 
+If unable to contact community staff member within reasonable time limit (30 
+minutes) or if they have any concerns to call police on 999. CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 25 of 43 
+ Appendix 2: Homebirth advice & checklist 
+ 
+HOMEBIRTH ADVICE 
+The aim of this leaflet is to provide you with information about having your baby at home. 
+If you are healthy and have had a normal pregnancy, home birth can be a safe option. Your 
+midwife will be happy to discuss this with you. 
+In exceptional circumstances if a midwife is not available to come to your home for the birth of 
+your baby you will be asked to come into the maternity unit. 
+Who will attend my baby’s birth? 
+During the day a midwife from your community team will attend your homebirth and at night there 
+is an on call system from the whole community midwifery team. Normally two midwives will be 
+present for the birth and (with your permission) a student midwife may also attend. Note: There 
+may be occasions when your team are unavailable during the day in which case another midwife 
+will attend. 
+How do I contact the midwife? 
+Contact the midwife via: 
+ 
+Telephone Triage 01903 285269 
+ 
+The midwife taking your call will take your details and discuss your stage of labour with you, 
+please ensure you advise the midwife the hospital you attended for scans. The midwife will 
+arrange for the community midwife to telephone or visit you depending on how quickly labour 
+seems to be progressing. 
+When should I phone? 
+You should contact the labour ward at any time of day or night if you have any worries or 
+concerns. If labour begins during the day it is helpful to inform us early in case the midwife needs 
+to reorganise her workload. If labour begins at night, contact the triage line when the contractions 
+are five minutes apart or whenever you feel the need for advice. If your waters break please 
+inform us as soon as possible. When your labour is confirmed, a midwife will stay with you. 
+How can I help the midwife get to my home? 
+It is helpful to use the ‘what3wordsapp’ especially if your home is not easy to find. If the midwife 
+is attending you at night please put on your house lights until she has arrived. Please advise 
+where to park if access is difficult. 
+Who can be with me during the birth? 
+You can have whoever you would like to be with you in labour. Most women choose to have a 
+birth partner (or support person) present for support in labour. This may be your baby’s father, a 
+relative, friend or doula. CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 26 of 43 
+ What about my children? 
+You may want your children to be with you or you may wish to arrange for them to stay with 
+family or friends. If your children stay, it is sensible to have someone to look after them especially 
+should you require to be transferred into the hospital. Feel free to discuss this with your midwife. 
+What do I need to arrange/supply? 
+• A good portable light with an adequate extension lead or a good torch with batteries in 
+and a willing hand to hold it! 
+• A handheld mirror for the midwife to visualise external progress if you are in certain 
+positions or in the pool. 
+• Adequate heating in the room you plan to give birth in Hot water bottle or radiator to warm 
+the baby's clothes 
+• A clean/hot water supply 
+• A measuring jug (to measure urine) 
+• Plastic sheet / shower curtain to protect bed and floor 
+• Old clean sheets and towels (a good supply) 
+• Packet of incontinence pads or bed / change mats 
+• Two packets of maternity sanitary towels and old or disposable underwear 
+• Overnight bag for you and baby in case transfer to hospital is needed 
+• Refreshments for the midwife would be appreciated. 
+• Please ensure that there is a good mobile phone signal or landline 
+ 
+For the baby: 
+• Two soft towels (old but clean) 
+• A vest 
+• A baby grow or night -dress 
+• A cardigan and hat 
+• Nappies Cotton wool Cot sheets and blankets 
+ 
+What equipment is carried by the midwives? 
+Your midwife will provide: 
+• Equipment for the birth Entonox (gas and air) 
+• Resuscitation equipment 
+• Paperwork 
+ 
+Pain Relief 
+You might like to hire an obstetric TENS machine to help with pain relief at home. Your midwife 
+can advise you where to hire one from and how to use it. 
+You may also like to use a pool for pain relief which you can either hire or buy. 
+Please do not get into the water until the midwife is with you. If you do hire a pool then please 
+discuss with your midwife how you would leave the pool in case of an emergency. CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 27 of 43 
+ How will the midwife monitor my wellbeing during labour? 
+Throughout your labour the midwife will take your temperature, pulse and blood pressure. 
+She will encourage you to empty your bladder at regular intervals for your comfort and to ensure 
+that the bladder does not become over full. 
+The midwife will ask you if she can listen to your baby’s heartbeat and rate at regular intervals. 
+She will use a handheld Sonicaid to do this (the same used by your community midwife at your 
+antenatal appointments). Every 15 minutes is recommended throughout the first stage of labour 
+(before you are fully dilated) for at least one minute following a contraction. In the second stage of 
+labour (when you are fully dilated and want to start pushing), the midwife will listen every five 
+minutes. 
+Transfer to Hospital 
+You may decide you want to transfer to hospital or the midwife may advise you that transfer is 
+necessary. If transfer is required, the journey will be made by ambulance so that traffic can be 
+easily negotiated and good communication links with the hospital team can be maintained in the 
+event of difficulty. The midwife will accompany you, and your partner will be asked to follow in 
+their vehicle. Any transfer is always discussed with you and your wishes taken into consideration. 
+In the unlikely event of you being unwilling to accept the advice of the midwife and you decline 
+hospital transfer, the midwife will inform the most senior midwife on shift or the midwifery 
+manager on call out of hours, and continue your care at home. 
+It must be appreciated that the midwife does not have access to the more sophisticated 
+equipment and medical expertise that is available in hospital. 
+Reasons to transfer : 
+• There is concern over the baby’s heart rate 
+• Abnormal bleeding 
+• Labour is not progressing 
+• The midwife has concerns about your wellbeing this will include urinary output 
+• There is significant meconium in your waters 
+• You have raised blood pressure 
+• You request stronger pain relief 
+• You need stitches and the tear is too complex to repair at home 
+• The placenta does not deliver 
+• There is concern about your baby after the birth 
+What happens after the birth? 
+The midwives will stay with you for at least one hour after the birth of your baby. They will check 
+you and your baby, write the notes, help with feeding and with your permission, administer 
+Vitamin K to your baby. When they are happy that all is satisfactory, they will leave you but will 
+ensure that you have telephone numbers which you can call if you have any worries or concerns 
+at any time (24 hour service). 
+Your midwife will discuss your postnatal care and make a plan of care with you. CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 28 of 43 
+ She will advise you when to expect your next visit. 
+A newborn check is arranged to take place within 24 hours of the birth, the newborn check will be 
+carried out in your home if possible but if this is not possible, you will be asked to take your baby 
+to the postnatal ward. 
+If you have a rhesus negative blood group and require postnatal Anti D, it will be necessary to 
+attend the hospital to have this administered as we do not give this injection at home. 
+What are the risks and benefits associated with a homebirth? 
+There are risks and benefits wherever you decide to have your baby, but giving birth is generally 
+very safe. Research shows that a planned homebirth is at least as safe as a hospital birth for 
+healthy women with normal pregnancies. It is associated with good outcomes for both mothers 
+and babies. Women who choose a homebirth are less likely to have a Caesarean section, less 
+likely to have an instrumental delivery and have a lower risk of haemorrhage. Babies who are 
+born at home are less likely to have birth injuries and are less likely to need resuscitation. 
+However, if a transfer to hospital during labour is necessary, there could be some delay while an 
+ambulance is organised and this may affect the outcome for you or your baby. 
+Research shows that 1 in 3 of first time mothers will require transfer from home to hospital. This 
+is often because a first labour can be longer. The transfer rate for women having their second / 
+subsequent baby is approximately 1 in 8. Induction of labour If you do not go into labour and an 
+induction of labour is arranged then your care will be transferred to the hospital team. CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 29 of 43 
+ Appendix 3: Equipment and preparation for homebirth 
+ 
+Equipment checking 
+• Each midwife is responsible for checking their equipment is clean and working and in date. 
+• SRH/WH - A spreadsheet of equipment checks is completed weekly by all community 
+midwives. 
+• PRH/RSCH - Equipment checks is completed daily by all community midwives. 
+• Midwives bag and homebirth equipment to be checked weekly and complete safety standard 
+spreadsheet. 
+• Observe the storage instructions for the following drugs: Konakion, Syntocinon, Syntometrine 
+and ergometrine (See Appendix 2 ). 
+• By 36 weeks - complete birth plan. 
+• Complete home birth checklist embed into MIS. 
+• Arrange for presentation scan between 36 - 37 weeks for all planned homebirths. 
+• SRH&WH - By 38 weeks for SRH midwives, or at time of labour for WH midwives, ensure 
+availability of Entonox (if required) and sheet of patient stickers, path forms if rhesus negative. 
+ 
+ Antiseptic hand gel 
+ Gloves – sterile & non-sterile 
+ Long gauntlet glover for pool births 
+ Aprons 
+ Mirror 
+ Amnihook 
+ Speculum 
+ Incopads 
+ Delivery pack 
+ Cord Clamps 
+ Lubricant gel sachets 
+ Instilagel 
+ Catheter in-dwelling 
+ Sterile water 
+ Catheter bag hanger 
+ Placenta bag & bin 
+ Tiger waste bag 
+ 
+Drugs: 
+ Vitamin K & oral syinges 
+ Lignocaine 1% 
+ Syntometrine 
+ Syntocinon 10 units 
+ Ergometrine Vaginal suture pack: 
+ Sterile swabs – variety of sizes 
+ Variety of needles and syringes 
+ Vicryl rapide 
+ Sharps box 
+ 
+IV cannulation kit: 
+ Venepuncture equipment 
+ Variety of venflons including grey 
+ Chloraprep 
+ Tegaderm dressing 
+ Disposable tourniques 
+ Non-sterile swabs 
+ Flush 
+ IV bungs / swan locks 
+ IV giving set 
+ 
+Resuscitation Kit: 
+ Adult pocket mask 
+ Neonatal ambi bag and size 1 and 00 
+masks 
+ I-gel airway 
+ Suction 
+*Diamorphine at homebirth – if a patient requests diamorphine, it is their responsibility to obtain a 
+prescription from the GP and return to pharmacy if unused*. CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 30 of 43 
+ Appendix 4: Storage of drugs carried by Community Midwives 
+ 
+Konakion MM Paediatric (Vitamin K- phytomenadione) 
+• Manufacturer: Cheplapharm Arzneimittel GmbH 
+• Ampoule solution should be stored below 25°C and be protected from light. The 
+solution should not be frozen. Do not use if the solution is turbid. 
+ 
+Syntocinon (Oxytocin) 
+• Manufacturer: Mylan/Novartis. 
+• Recommended storage conditions are between 2°C and 8°C. 
+• Can be stored at up to 30°C for up to 3 months, but must then be discarded. This 
+product should not be returned to the fridge. 
+
+Syntometrine (ergometrine with Oxytocin) 
+• Manufacturer: Alliance. 
+• Recommended storage conditions are between 2° and 8°C. Protect from light. 
+• According to Specialist Pharmacy Service, when protected from light, the product is 
+stable for up to 6 months at 25°C. Prolonged exposure to light may result in a loss of 
+active substance. 
+ 
+Ergometrine 
+• Manufacturer: Hameln. 
+• Recommended storage conditions are between 2°C and 8°C. Protect from light. 
+• Accelerated stability testing by the manufacturer found that a sample of 1000 
+ampoules of ergometrine were within licensed specification after 3 months at 25°C. 
+This testing was conducted under controlled conditions and may not be 
+representative of general practice, for example when stored in a healthcare 
+professional’s bag or exposed to light or fluctuations in temperature. 
+
+If different a manufacturer used please refer to: 
+https://www.sps.nhs.uk/home/tools/refrigerated -medicines -stability -tool/ CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 31 of 43 
+ Appendix 5: Provision of homebirth service (SRH/WH only) 
+ 
+When the home birth rota is affected either by sickness, community midwives being called into 
+the unit or community midwives at another homebirth the following options should be 
+considered before the homebirth service is suspended. 
+ 
+• Community midwife from opposite site (see below) 
+• Consider any assistance from the core midwives. 
+• Midwifery manager on call. 
+ 
+When the community midwife has worked for in excess of 12 hours without more than one 
+hour break then recognition must be given for their continued fitness to practise. 
+ 
+Consideration should be given to them being replaced by the second on call midwife if birth is 
+not imminent. Arrangements should then be made for a substitute second on call. This may be 
+from the list as described as above. 
+ 
+If there is no midwife to fall back upon then the last resort would be for the labouring woman to 
+be transferred into the unit. The Birth Centre should be her first option. 
+ 
+Homebirth Staffing arrangements for SRH/WH 
+ 
+• If both sites have 2 midwives the homebirth service runs independently on each site. 
+• If one site has 1 midwife and the other has 2 midwives - homebirth service can 
+continue with support from other site - this needs to be checked on case by case 
+basis - if 2 midwives already out then the single midwife can only attend a BBA. 
+• If both sites have 1 midwife - suspend on both sites unless the core midwives are 
+able to support. 
+ 
+Please note: 
+• Under no circumstances can a midwife be sent to a homebirth without confirmation 
+that the second midwife can attend. 
+• Need to take geography of where the midwives live and address of homebirth - 
+safety of travel time especially for the return journey into consideration. 
+• Consideration should be given to closing the homebirth service should there be 4 or 
+less midwives working in the units. 
+• If the community midwife is called in to work in the unit the agreement is that this is 
+for 4 hours. 
+• Consideration of the impact of calling in the community midwives especially at the 
+weekend - this severely depletes the capacity for covering community work the 
+following day. 
+• Community midwives are pre-warning all planned homebirths that sometimes the 
+service has to be suspended for safety reasons. CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 32 of 43 
+ • if a homebirth labours and is asked to come into the unit please consider the option 
+of calling in the community midwife so that they can provide care on the birth centre 
+at SRH or the low risk area in WH. CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 33 of 43 
+ Appendix 6: Prompt card for partner to call 999 
+ 
+Call 999 (first call) 
+Ask for An ambulance 
+Give Information required - name, address & contact number 
+Tell them Emergency at homebirth & the midwife is in attendance 
+
+Tell them The emergency is (the midwife will tell you which to say): 
+• Severe fetal distress (baby still inside) 
+• Shoulder dystocia (baby Is stuck) 
+• Unexpected breech birth (baby bottom/feet/foot 
+coming down first) 
+• Cord prolapse (cord coming down first) 
+• Antenatal haemorrhage or postpartum haemorrhage 
+(maternal bleeding) 
+• Baby requiring resuscitation 
+• Mother or birthing parent requiring resuscitation 
+Inform your hospital (second call) 
+PRH 01444 448666 (Labour ward hotline) 
+ 
+RSCH 
+01273 664422 (Labour ward hotline) 
+SRH 01243 788122 ext 32961 
+WH 01903 205262 
+Ask for Midwife in charge 
+
+Tell them • Home birth. 
+• Describe emergency as told by the midwife. 
+• Name of woman or birthing person, address and 
+contact number. 
+• Midwife in attendance. 
+• Ambulance called and on way. Page 34 of 43 
+ 
+Is birth of the baby imminent? 
+No 
+Alert Labour Ward and 
+proceed to labour ward 
+No 
+Does baby require medical 
+intervention or resuscitation? 
+Yes 
+Alert Labour Ward 
+and proceed to 
+labour ward 
+No 
+No 
+PRH / RSCH: Alert RACH A&E 
+and proceed to RACH A&E. 
+SRH / WH: Alert Labour Ward 
+and proceed to labour ward 
+Is baby arriving in separate 
+ambulance to the mother or 
+birthing parent? 
+Yes 
+Yes 
+Has baby been born pre-hospital? 
+Activate Neonatal Emergency 
+Call 2222 
+PRH / RSCH: Alert RACH ED 
+and proceed to RACH ED. 
+SRH / WH: Alert Labour Ward 
+and proceed to labour ward 
+Yes 
+Mother or birthing parent and/or baby requiring 
+ambulance transfer 
+Activate Obstetric & Neonatal 
+Emergency Call 2222 
+Please note: 
+Where both mother or birthing parent, and the baby need 
+intervention, two ambulances will be sent. CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+ 
+Appendix 7: 
+Ambulance transfer 
+flowchart 
+
+CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 35 of 43 
+ 
+Appendix 8a: Releasing placentas to parents – Information sheet for parents 
+ 
+This information is intended to guide you through how to safely transport and dispose of your 
+placenta if you decide to take it home with you (or to keep it at home following a home birth). 
+A placenta provides a perfect environment for micro -organisms to grow. There are some 
+standard precautions you should be aware of for your health and safety and that of others in 
+your household. In order to reduce the risk of spreading infections, the following steps should 
+be followed: 
+1. The placenta should be put in 2 bags, each sealed separately and then placed into a 
+leak-proof, sealed container to transport it home in. Once sealed, the container should 
+not be re -opened until you arrive home. 
+ 
+2. A placenta will deteriorate quickly and should be stored in a fridge that does not 
+contain any food for no more than 48 -72 hours before it is disposed of. 
+ 
+3. While the risk of getting an infection from a healthy placenta is low, standard hygiene 
+precautions should be followed, including handling it as little as possible, avoiding 
+contact with food and drink, wearing protective gloves and always washing your hands 
+thoroughly after any contact with it. 
+4. Avoid contact between blood from the placenta and breaks in the skin such as cuts, 
+burns or sores. If blood does contaminate any of these areas, wash the area 
+immediately with soap and water. 
+ 
+5. As a placenta is not considered ‘bodily remains’ there is no law to prevent you from 
+burying it at home. If you decide to do so, it is your responsibility to ask your local 
+council if there are any applicable guidelines and to follow them. 
+ 
+6. It is suggested that you bury the placenta at a depth of no less than 1 metre to prevent 
+it being dug up by animals and becoming a potential source of infection. 
+ 
+7. The placenta should be free of any plastic cord clamps and not be buried in a plastic 
+bag or container, due to not being biodegradable. 
+ 
+8. The placenta should not be buried in a location likely to contaminate a domestic water 
+supply, near a river or on public land. 
+ 
+9. If you decide that you do not want to bury the placenta, it cannot be disposed of in a 
+domestic waste bin. You may return it in a sealed container to the hospital for disposal. CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 36 of 43 
+ Patient label here 
+Appendix 8b: Release of Placenta form 
+ 
+• I have received the information sheet ‘Releasing placentas to parents’ and have had the 
+opportunity ask any questions. 
+ 
+• I understand that placental tissue is clinical waste and must be disposed of correctly. 
+ 
+• I take responsibility for the safe storage and disposal of the placenta. If not disposed of by 
+myself, I understand it can be returned to the hospital for disposal. 
+
+Recipient’s signature: 
+Print name: 
+Date: 
+
+Staff signature: 
+Print name: 
+Date: 
+
+Scan this form into MIS 
+ 
+ CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 37 of 43 
+ 
+Appendix 9: Use of waterbirth pool at home 
+ 
+The use of pools at home for labour and birth is considered a low risk option for pregnant women 
+and birthing people with uncomplicated pregnancies. Pools are recommended rather than baths, 
+as they are deeper, wider and more accessible. 
+ 
+The following is suggested advice for those parents considering this as an option: 
+ 
+• Pools for use in labour and birth can be hired and bought. It is advised that this is done 
+through reputable companies. 
+• It is the responsibility of the parents to ensure the equipment they use is safe and appropriate. 
+• It is recommended that the pool be disinfected with the appropriate cleaning solution to reduce 
+the risk of infection. If the pool is hired or a reusable inflatable pool, a liner should be used. 
+• The pool should be used in an appropriate room, this should include consideration for: 
+- The weight of a full pool the floor joists (ground floor is recommended where possible), 
+a surveyors report may be necessary if the pool is not situated on a ground floor dues 
+to its heavy weight. As a rough guide a fully filled birth pool has the equivalent weight of 
+10-13 adults. 
+- The pool needs to be accessible from all sides, to ensure access for midwives in an 
+emergency. 
+- Topping up with hot water to maintain recommended temperature and keeping the 
+water clean is the responsibility of the partner or doula. 
+- The room needs to be draught free but with ventilation. 
+- Consideration should be given for close access to a hot water supply and also 
+drainage for the pool. 
+- Consider how the pool will be topped up and emptied, during use. 
+- A heat supply in the room, but this needs to be away from the pool. 
+- Electrical sockets should not be near the pool. 
+- A step should be provided for ease of entrance, but also for exit from the pool. 
+- Have an area for pre and post birth care, outside of the pool area. 
+- 
+• You should check with your home insurance company and where applicable landlord, that 
+cover will be provided for use of the birthing pool at home. 
+• Waterproof covering of the area around the pool and /or material to ensure a slip free surface. 
+• A supply of large bath towels for mum and smaller towels for baby. 
+• It is useful to have a disposable sieve and a bath thermometer. 
+• You should have access to a constant supply of hot water, to ensure the correct temperature 
+at all times. Along with this you should always check the temperature of the pool before 
+entering it. CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 38 of 43 
+ 
+No 
+ Homebirth in progress 
+ Yes 
+•Please liaise with 2nd HB MW. 
+•Keep the LW at RSCH and 
+PRH updated. 
+•Liaise with the Supervisor of 
+Midwives for high risk HB and 
+call 2nd midwife early. 
+•Insist on an ambulance if 
+transfer request. 
+•Ensure presence of an 
+ambulance for BBA. 
+•Ensure on 2 MWs if CP or 
+safety concern. 
+•19.30 hours CMO. 
+Contact LW – homebirth and 
+brown folder and day HB MW 
+for full details. 
+•Arrange for your name and 
+mobile number to be put on 
+white board on LW. 
+•Collect car keys (sign out) 
+Ensure location of car Check 
+equipment is in place Collect 
+security device. 
+•Drive to address given. 
+•Ensure legal parking / request 
+assistance from partner with 
+equipment and route. 
+•SBAR handover, complete 
+handover sheet and contact 
+LWC regularly with updates. 
+•Restock equipment and sign. 
+•Sign pool car in at the end of 
+the day and clearly state 
+where the car is parked. • 19.30 hours CMO 
+Handover from day HB MW. 
+• Put your name and mobile 
+number on white board on 
+LW. 
+• Liaise with RSCH and PRH 
+HB MW Collect car keys (sign 
+out). 
+• Ensure location of car Check 
+equipment is in place. 
+• Notify the coordinator on 
+arrival and work on PN ward, 
+triage or LW depending on 
+preference/request. 
+• Please request 1st break to 
+ensure rest. 
+• 07.30 hours CMO. 
+• Handover to day HB MW. 
+Appendix 10: Homebirth Shift Night Time 19.30 -08.00 (PRH/RSCH only) 
+
+Remember you are working on the unit in a supernumerary agreement unless 
+specific request by team leader, community manager or labour ward coordinator. 
+You are not expected to; 
+• Provide 1:1 care or complete 
+drug rounds (unless 
+exceptional circumstances 
+which need reporting to your 
+TL for audit). 
+• You may be required to relieve 
+for breaks on LW, triage and 
+PN ward. 
+• Ensure communication with 
+coordinator and check mobile 
+phone for HB call out. CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 39 of 43 
+ Change Log – Homebirth & Freebirth 
+Appendix 11: Guideline Version Control Log 
+ 
+This should be included for all updated guidelines, summarising the changes between the current 
+and previous version. (Earlier changes should be deleted from the list when the guideline is 
+updated.) 
+Do not list minor and stylistic changes or changes which do not alter the processes described. 
+If the update includes a significant reorganisation of the material, indicate this and list the main 
+areas where the process itself has changed. 
+
+Version Date Author Status Comment 
+1.0 December 2023 G. Addison, HoM 
+(SRH&WH) 
+ 
+B. Elms, HoM 
+(PRH&RSCH) 
+ 
+J. Bell, Community 
+Team Leader 
+ 
+CE Team LIVE New Trust wide guideline 
+replacing: 
+• CG12032 Homebirth & 
+Freebirth Guideline (legacy 
+West) 
+• MP060 Homebirth (legacy 
+East) 
+• MP063 Free Birthing 
+(legacy East) CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 40 of 43 
+ 
+Appendix 12: Due Regard Assessment Tool 
+ 
+To be completed and attached to any guideline when submitted to the appropriate committee for 
+consideration and approval. 
+ 
+ Yes/No Comments 
+1. Does the document/guidance affect one group less or 
+more favourably than another on the basis of: 
+ Age No 
+ · Disability No 
+ · Gender (Sex) No 
+ · Gender Identity No 
+ · Marriage and civil partnership No 
+ · Pregnancy and maternity No 
+ · Race (ethnicity, nationality, colour) No 
+ · Religion or Belief No 
+ · Sexual orientation, including lesbian, gay and bisexual 
+people No 
+2. Is there any evidence that some groups are affected 
+differently and what is/are the evidence source(s)? No 
+3. If you have identified potential discrimination, are there 
+any exceptions valid, legal and/or justifiable? NA 
+4. Is the impact of the document likely to be negative? No 
+5. If so, can the impact be avoided? NA 
+6. What alternative is there to achieving the intent of the 
+document without the impact? NA 
+7. Can we reduce the impact by taking different action 
+and, if not, what, if any, are the reasons why the 
+guideline should continue in its current form? NA 
+8. Has the document been assessed to ensure service 
+users, staff and other stakeholders are treated in line 
+with Human Rights FREDA principles (fairness, respect, 
+equality, dignity and autonomy)? Yes 
+ 
+If you have identified a potential discriminatory impact of this guideline, please refer it to [Insert 
+Name], together with any suggestions as to the action required to avoid/reduce this impact. For 
+advice in respect of answering the above questions, please contact uhsussex.equality@nhs.net 
+01273 664685). CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 41 of 43 
+
+Appendix 13: Template Dissemination, Implementation and Access Plan 
+ 
+To be completed and attached to any guideline when submitted to Corporate Governance for 
+consideration and TMB approval. 
+ 
+ Dissemination Plan Comments 
+1. Identify: 
+ Which members of staff or staff groups will be affected 
+by this guideline? Midwives and obstetricians 
+ How will you confirm that they have received the 
+guideline and understood its implications? Dissemination through the 
+usual Communication 
+channels and highlighted at 
+Safety Huddles. 
+ How have you linked the dissemination of the guideline 
+with induction training, continuous professional 
+development, and clinical supervision as appropriate? All new members of staff are 
+shown where to access 
+Clinical documents that are 
+relevant to their area of 
+practice. 
+2. How and where will staff access the document (at 
+operational level)? Accessed by staff via 
+Sharepoint 
+ 
+ Yes/No Comments 
+3. Have you made any plans to remove 
+old versions of the guideline or related 
+documents from circulation? Yes Previous versions will be 
+archived as part of the 
+uploading onto sharepoint 
+process. 
+4. Have you ensured staff are aware the 
+document is logged on the 
+organisation’s register? Yes Dissemination plan includes 
+notifying staff via email, safety 
+noticeboards, departmental 
+newsletter and social media. CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 42 of 43 
+
+Appendix 14: Additional guidance and information 
+ 
+Birthrights (April 2017) Information about consenting to treatment and assessment of mental 
+capacity: https://www.birthrights.org.uk/factsheets/consenting -to-treatment/ 
+ 
+Birthrights (April 2017) Unassisted Birth Factsheet. Available at: 
+https://www.birthrights.org.uk/factsheets/unassisted -birth/ 
+ 
+Carr, N. (2008). Midwifery supervision and home birth against conventional advice. British 
+Journal of Midwifery 16 (11):743 -747 
+ 
+EMC: Konakion MM Paediatric 2 mg/0.2 ml solution for injection 
+https://www.medicines.org.uk/emc/product/9754/smpc#SHELF_LIFE 
+ 
+Feeley C & Thomson G (2016) Why do some women choose to freebirth in the UK? An 
+interpretative phenomenological study. BMC Pregnancy and Childbirth. Available at: 
+http://bmcpregnancychildbirth.biomedcentral.com/track/pdf/10.1186/s12884 -016-0847 - 
+6?site=bmcpregnancychildbirth.biomedcentral.com 
+ 
+Hollowell et al 2011. The Birthplace national prospective cohort study: perinatal and maternal 
+outcomes by planned place of birth. Birthplace in England research programme. NIHR Service 
+Delivery and Organisation Programme. 
+ 
+Holten L and de Miranda E 2016 Women’s motivations for having an unassisted childbirth or 
+high-risk homebirth: An exploration of the literature on ‘birthing outside the system’, Midwifery, vol 
+38, pp 55 -62. 
+https://www.ncbi.nlm.nih.gov/pubmed/?term=Women%D7%B3s+motivations+for+having+unassis 
+ted+childbirth+or+high - 
+risk+homebirth%3A+An+exploration+of+the+literature+on+%E2%80%98birthing+outside+the+sy 
+stem 
+ 
+Jackson et al (2020) Birthing outside the system: the motivation behind the choice to freebirth or 
+have a homebirth with risk factors in Australia, BMC Pregnancy and Childbirth, 
+https://bmcpregnancychildbirth.biomedcentral.com/articles/10.1186/s12884 -020-02944 -6 
+ 
+Mental capacity Act (2005) www.legislation.gov.uk 
+ 
+National Institute for Health and Clinical Excellence (2021) Antenatal Care – Routine Care for the 
+Healthy Pregnant Women. Available at https:/ /www.nice.org.uk/guidance/ng201 
+ 
+National Institute for Health and Clinical Excellence.2021. Intrapartum care: Care of healthy 
+women and their babies NICE: London available at https://www.nice.org.uk/guidance/cg190 
+ 
+National Institute for Health and Clinical Excellence. 2021. Postnatal Care NICE:London available 
+athttps:// www.nice.org.uk/guidance/ng194 CLINICAL GUIDELINE 
+Due for review : 21st August 2027 
+Name of Guideline : Homebirth & Freebirth v1.0 
+For use at: PRH, RSCH, SRH & WH 
+Page 43 of 43 
+
+Nolan, M. L., (2011) Home birth: The politics of difficult choices Routledge Oxon 
+ 
+Nursing and Midwifery Council (2018) The Code: Professional standards of practice and 
+behaviour for nurses and midwives. https://www.nmc.org.uk/standards/code/ 
+ 
+Nursing and Midwifery Council (2010) Supporting women in their choice for home birth London: 
+NMC. Annexe 2 M/10/15. 
+ 
+The Nursing and Midwifery Order (2001) 
+http://www.legislation.gov.uk/uksi/2002/253/contents/made 
+ 
+Perinatal and maternal outcomes by planned place of birth for healthy women with low risk 
+pregnancies: the Birthplace in England national prospective cohort studyBMJ 2011 ; 343 doi: 
+https://doi.org/10.1136/bmj.d7400 (Published 25 November 2011) Cite this as: BMJ 
+2011;343:d7400 
+ 
+Plested M and Kirkham M (2016) Risk and fear in the lived experience of birth without a midwife, 
+Midwifery, vol 38, pp 29 - 34 https://www.ncbi.nlm.nih.gov/pubmed/26948871 
+ 
+RCM (2020) Guidance for provision of midwife -led settings and home birth in the evolving 
+coronavirus pandemic, version 1.1, 17 April 2020 
+https://www.rcm.org.uk/media/3893/2020 -04-17-guidance -for-provision -of-midwife -led- 
+settings.pdf 
+ 
+RCM Clinical Briefing Sheet: ‘freebirth’ or ‘unassisted childbirth’ during the COVID -19 pandemic 
+freebirth_draft_30 -april-v2.pdf (rcm.org.uk) 
+ 
+Royal College of Obstetricians and Gynaecologists and Royal College of Midwives (2007) Home 
+Births – RCOG and RCM joint statement number 2. 
+ 
+Royal College of Obstetricians and Gynaecologists (2015) Reducing the Risk of Venous 
+Thromboembolism during Pregnancy and the Puerperium, Green -top Guideline No. 37a.

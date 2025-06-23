@@ -1,0 +1,1753 @@
+# Extracted from: twin-and-triplet-pregnancy-pdf-66141724389829.pdf
+# Guideline ID: twin-and-triplet-pregnancy-pdf-66141724389829
+# Content length: 127183 characters
+# Processing date: 1749584496.4834347
+
+Twin and trip let pregnanc y 
+NICE guideline 
+Published: 4 Sept ember 2019 
+Last updat ed: 9 April 202 4 
+www .nice.or g.uk/guidance/ng137 
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Your r esponsi bility 
+The r ecommendations in t his guideline r epresent t he view of NICE, arriv ed at aft er car eful 
+consideration of t he evidence a vailable. When e xercising t heir judgement, pr ofessionals 
+and practitioners ar e expect ed to tak e this guideline fully int o account, alongside t he 
+individual needs, pr eferences and v alues of t heir patient s or t he people using t heir ser vice. 
+It is not mandat ory to apply t he recommendations, and t he guideline does not o verride t he 
+responsibility t o mak e decisions appr opriat e to the cir cumstances of t he individual, in 
+consultation wit h them and t heir f amilies and car ers or guar dian. 
+All pr oblems (adv erse e vents) related to a medicine or medical de vice used f or treatment 
+or in a pr ocedur e should be r epor ted to the Medicines and Healt hcare product s Regulat ory 
+Agency using t he Yellow Car d Scheme . 
+Local commissioners and pr oviders of healt hcare have a responsibility t o enable t he 
+guideline t o be applied when individual pr ofessionals and people using ser vices wish t o 
+use it. The y should do so in t he cont ext of local and national priorities f or funding and 
+developing ser vices, and in light of t heir duties t o have due r egar d to the need t o eliminat e 
+unlawful discrimination, t o adv ance equality of oppor tunity and t o reduce healt h 
+inequalities. Not hing in t his guideline should be int erpreted in a wa y that w ould be 
+inconsist ent wit h complying wit h those duties. 
+Commissioners and pr oviders ha ve a responsibility t o promot e an en vironmentally 
+sustainable healt h and car e syst em and should assess and r educe t he en vironmental 
+impact of implementing NICE r ecommendations wher ever possible. Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 2 of
+68Contents 
+Overview ...................................................................................................................................... 5 
+Who is it f or? .......................................................................................................................................... 5 
+Recommendations ....................................................................................................................... 6 
+1.1 Det ermining gestational age and chorionicity ............................................................................... 7 
+1.2 General car e ..................................................................................................................................... 9 
+1.3 Deliv ery of ant enatal and intrapar tum car e .................................................................................. 10 
+1.4 Fetal complications ......................................................................................................................... 13 
+1.5 Preventing pr eterm bir th ................................................................................................................. 22 
+1.6 Mat ernal complications ................................................................................................................... 23 
+1.7 Indications f or referral t o a tertiary level fetal medicine centr e .................................................. 24 
+1.8 Planning bir th: inf ormation and suppor t ........................................................................................ 25 
+1.9 Timing of bir th ................................................................................................................................. 26 
+1.10 Mode of bir th .................................................................................................................................. 28 
+1.11 Fetal monit oring during labour in twin pr egnancy ....................................................................... 30 
+1.12 Analgesia ......................................................................................................................................... 34 
+1.13 Managing t he third stage of labour .............................................................................................. 35 
+Terms used in t his guideline ................................................................................................................. 37 
+Recommendations f or resear ch ................................................................................................. 40 
+Key recommendations f or resear ch .................................................................................................... 40 
+Other r ecommendations f or resear ch ................................................................................................. 41 
+Rationale and impact ................................................................................................................... 43 
+Intrapar tum car e .................................................................................................................................... 43 
+Screening f or chr omosomal conditions .............................................................................................. 43 
+Screening f or pr eterm bir th .................................................................................................................. 44 
+Screening f or fetal gr owth restriction and f eto-fetal transfusion syndr ome in t he first trimest er 44 
+Diagnostic monit oring f or fetal gr owth restriction in dichorionic twin and trichorionic triplet 
+pregnancies ........................................................................................................................................... 45 Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 3 of
+68Diagnostic monit oring f or feto-fetal transfusion syndr ome .............................................................. 47 
+Diagnostic monit oring f or fetal gr owth restriction in monochorionic twin and triplet pr egnancy .49 
+Diagnostic monit oring f or twin anaemia poly cythaemia sequence .................................................. 51 
+Preventing pr eterm bir th ...................................................................................................................... 52 
+Planning bir th: inf ormation and suppor t ............................................................................................. 54 
+Timing of bir th ....................................................................................................................................... 55 
+Mode of bir th ......................................................................................................................................... 57 
+Fetal monit oring during labour in twin pr egnancy ............................................................................. 58 
+Analgesia ................................................................................................................................................ 60 
+Managing t he third stage of labour ..................................................................................................... 61 
+Cont ext ......................................................................................................................................... 63 
+Finding mor e information and committ ee details ..................................................................... 65 
+Updat e information ..................................................................................................................... 66 Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 4 of
+68This guideline r eplaces CG129 . 
+This guideline par tially r eplaces CG132. 
+This guideline is t he basis of QS46 . 
+This guideline should be r ead in conjunction wit h NG201 , NG235 and NG229 . 
+Overview 
+This guideline co vers car e for pr egnant w omen and pr egnant people wit h a twin or triplet 
+pregnancy in addition t o routine car e during pr egnancy and labour . It aims t o reduce t he 
+risk of complications and impr ove out comes. 
+It should be r ead in conjunction wit h NICE's guidelines on ant enatal car e, intrapar tum car e 
+and fetal monit oring . 
+Who is i t for? 
+• Healt hcare professionals 
+• Commissioners and pr oviders 
+• Pregnant w omen and pr egnant people wit h a twin or triplet pr egnancy and t heir 
+families and car ers Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 5 of
+68Recommenda tions 
+People ha ve the right t o be in volved in discussions and mak e informed decisions 
+about t heir car e, as described in NICE's inf ormation on making decisions about y our 
+care. 
+Using inclusiv e language in healt hcare is impor tant f or saf ety, and t o promot e equity , 
+respect and eff ectiv e communication wit h everyone. This guideline does not use 
+inclusiv e language in whole or in par t because: 
+• the evidence has not been r eview ed, and it is not cer tain fr om e xper t opinion 
+which gr oups t he advice co vers, or 
+• the evidence has been r eview ed, but t he inf ormation a vailable f or some gr oups 
+was t oo limit ed to mak e specific r ecommendations, or 
+• only a v ery limit ed number of r ecommendations ha ve been updat ed in dir ect 
+response t o new e vidence or t o reflect a change in practice. 
+Healt hcare professionals should use t heir clinical judgement when implementing 
+recommendations, taking int o account t he individual's cir cumstances, needs and 
+preferences, and ensuring all people ar e treated wit h dignity and r espect t hroughout 
+their car e. 
+Making decisions using NICE guidance explains ho w we use w ords to sho w the 
+strengt h (or cer tainty) of our r ecommendations, and has inf ormation about 
+prescribing medicines (including off -label use), pr ofessional guidelines, standar ds 
+and laws (including on consent and mental capacity), and saf eguar ding. 
+Box 1 Chorionicity and amnionicity in twin and triplet pr egnancy 
+Type of pr egnancy Chorionicity and amnionicity 
+Dichorionic diamniotic twins Both babies ha ve a separat e placenta and amniotic sac. 
+Monochorionic diamniotic 
+twins Both babies shar e a placenta but ha ve separat e amniotic 
+sacs. Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 6 of
+68Type of pr egnancy Chorionicity and amnionicity 
+Monochorionic 
+monoamniotic twins Both babies shar e a placenta and amniotic sac. 
+Trichorionic triamniotic 
+triplet s Each bab y has a separat e placenta and amniotic sac. 
+Dichorionic triamniotic 
+triplet s One bab y has a separat e placenta and 2 of t he babies 
+share a placenta. 
+All 3 babies ha ve separat e amniotic sacs. 
+Dichorionic diamniotic 
+triplet s One bab y has a separat e placenta and amniotic sac. 
+Two of t he babies shar e a placenta and amniotic sac. 
+Monochorionic triamniotic 
+triplet s All 3 babies shar e 1 placenta. 
+All 3 babies ha ve separat e amniotic sacs. 
+Monochorionic diamniotic 
+triplet s All 3 babies shar e 1 placenta. 
+One bab y has a separat e amniotic sac and 2 babies 
+share 1 sac. 
+Monochorionic 
+monoamniotic triplet s All 3 babies shar e a placenta and amniotic sac. 
+1.1 De termining g estational ag e and chorionici ty 
+Gesta tional ag e 
+1.1.1 Offer women wit h a twin or triplet pr egnancy a first trimest er ultrasound scan t o 
+estimat e gestational age and det ermine chorionicity and amnionicity (ideally , 
+these should all be per formed at t he same scan; see t he recommendations on 
+determining chorionicity and amnionicity and assigning nomenclatur e). See t he 
+recommendations on scr eening f or chr omosomal conditions . [2011 , amended 
+2019] 
+1.1.2 Estimat e gestational age fr om t he lar gest bab y in a twin or triplet pr egnancy t o 
+avoid t he risk of estimating it fr om a bab y wit h early gr owth pat hology . [2011] Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 7 of
+68Chorionici ty and amnionici ty 
+1.1.3 Determine chorionicity and amnionicity at t he time of det ecting a twin or triplet 
+pregnancy b y ultrasound using: 
+• the number of placental masses 
+• the pr esence of amniotic membrane(s) and membrane t hickness 
+• the lambda or T -sign. [2011 , amended 2019] 
+1.1.4 Assign nomenclatur e to babies (f or example, upper and lo wer, or left and right) in 
+a twin or triplet pr egnancy , and document t his clearly in t he w oman's not es to 
+ensur e consist ency t hroughout pr egnancy . [2011] 
+1.1.5 If a w oman wit h a twin or triplet pr egnancy pr esent s after 14+0 w eeks, det ermine 
+chorionicity and amnionicity at t he earliest oppor tunity b y ultrasound using all of 
+the following: 
+• the number of placental masses 
+• the pr esence of amniotic membrane(s) and membrane t hickness 
+• the lambda or T -sign 
+• discor dant f etal se x. [2011 , amended 2019] 
+1.1.6 If it is not possible t o det ermine chorionicity or amnionicity b y ultrasound at t he 
+time of det ecting t he twin or triplet pr egnancy , seek a second opinion fr om a 
+senior sonographer or r efer the w oman t o a healt hcare professional who is 
+compet ent in det ermining chorionicity and amnionicity b y ultrasound scan as 
+soon as possible. [2011 , amended 2019] 
+1.1.7 If it is difficult t o det ermine chorionicity , even aft er referral (f or example, because 
+the w oman has book ed lat e in pr egnancy), manage t he pr egnancy as a 
+monochorionic pr egnancy until pr oven ot herwise. [2011] 
+1.1.8 Provide r egular training so t hat sonographers can identify t he lambda or T -sign 
+accurat ely and confident ly. Less e xperienced sonographers should ha ve suppor t 
+from senior colleagues. [2011] Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 8 of
+681.1.9 Training should co ver ultrasound scan measur ement s needed f or women who 
+book aft er 14+0 w eeks and should emphasise t hat t he risks associat ed wit h twin 
+and triplet pr egnancy ar e det ermined b y chorionicity and not zy gosity . [2011] 
+1.1.10 Conduct r egular clinical audit s to evaluat e the accuracy of det ermining 
+chorionicity and amnionicity . [2011 , amended 2019] 
+1.1.11 If transabdominal ultrasound scan views ar e poor because of a r etroverted ut erus 
+or a high BMI, use a transv aginal ultrasound scan t o det ermine chorionicity and 
+amnionicity . [2011 , amended 2019] 
+1.1.12 Do not use 3-dimensional (3D) ultrasound scans t o det ermine chorionicity and 
+amnionicity . [2011 , amended 2019] 
+1.1.13 Netw orks should agr ee car e pat hways for managing all twin and triplet 
+pregnancies t o ensur e that each w oman has a car e plan in place t hat is 
+appr opriat e for the chorionicity and amnionicity of her pr egnancy . [2011 , 
+amended 2019] 
+1.2 Gener al care 
+Informa tion and emotional suppor t 
+1.2.1 Explain sensitiv ely the aims and possible out comes of all scr eening and 
+diagnostic t ests to women wit h a twin or triplet pr egnancy t o minimise t heir 
+anxiety . [2011] 
+Diet, lifestyle and n utritional supp lemen ts 
+1.2.2 Give women wit h a twin or triplet pr egnancy t he same advice about diet, lif estyle 
+and nutritional supplement s as in r outine ant enatal car e (see NICE's guideline on 
+antenatal car e). [2011] 
+1.2.3 Be awar e of t he higher incidence of anaemia in w omen wit h a twin or triplet Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 9 of
+68pregnancy compar ed wit h women wit h a singlet on pr egnancy . [2011] 
+1.2.4 Perform a full blood count at 20 t o 24 weeks t o identify w omen wit h a twin or 
+triplet pr egnancy who need early supplementation wit h iron or f olic acid (t his is in 
+addition t o the test for anaemia at t he routine booking appointment 
+recommended in NICE's guideline on ant enatal car e). Repeat at 28 weeks as in 
+routine ant enatal car e. [2011] 
+1.3 Deli very of antena tal and in trapar tum c are 
+Antena tal c are 
+1.3.1 Antenatal clinical car e for women wit h a twin or triplet pr egnancy should be 
+provided b y a nominat ed multidisciplinar y team consisting of: 
+• a cor e team of named specialist obst etricians , specialist midwiv es and 
+sonographers, all of whom ha ve experience and kno wledge of managing twin 
+and triplet pr egnancies 
+• an enhanced t eam f or referrals, which should include: 
+－ a perinatal mental healt h professional 
+－ a women's healt h physiot herapist 
+－ an inf ant f eeding specialist 
+－ a dietitian. [2011 , amended 2019] 
+1.3.2 Members of t he enhanced t eam should ha ve experience and kno wledge r elevant 
+to twin and triplet pr egnancies. [2011] 
+1.3.3 Do not r outinely r efer all w omen wit h a twin or triplet pr egnancy t o the enhanced 
+team but base t he decision t o refer on each w oman's needs. [2011] 
+1.3.4 Coor dinat e clinical car e for women wit h a twin or triplet pr egnancy t o: 
+• minimise t he number of hospital visit s Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 10 of
+68• provide car e as close t o the w oman's home as possible 
+• provide continuity of car e wit hin and betw een hospitals and t he community . 
+[2011] 
+1.3.5 The cor e team should off er inf ormation and emotional suppor t specific t o twin 
+and triplet pr egnancies at t heir first contact wit h the w oman and pr ovide ongoing 
+oppor tunities f or fur ther discussion and advice including: 
+• antenatal and postnatal mental healt h and w ellbeing 
+• antenatal nutrition (see t he recommendation on giving advice in t he section 
+on diet, lif estyle and nutritional supplement s) 
+• the risks, sympt oms and signs of pr eterm labour and t he pot ential need f or 
+corticost eroids f or fetal lung maturation 
+• likely timing of bir th (see t he section on timing of bir th) and possible modes 
+of bir th (see t he section on mode of bir th) 
+• breastf eeding 
+• parenting. [2011] 
+Intrapar tum c are 
+1.3.6 Intrapar tum car e for women wit h a twin or triplet pr egnancy should be pr ovided 
+by a multidisciplinar y team of obst etricians and midwiv es who ha ve experience 
+and kno wledge of managing twin and triplet pr egnancies in t he intrapar tum 
+period. [2019] 
+For a shor t explanation of wh y the committ ee made t he 2019 r ecommendation and 
+how it might aff ect practice, see t he rationale and impact section on intrapar tum car e. 
+Sche dule o f spe cialist an tena tal appoin tmen ts 
+The schedule of specialist appointment s is also sho wn as par t of a multiple pr egnancy Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 11 of
+68antenatal car e resour ce produced b y Twins T rust and endorsed b y NICE. 
+Dichorionic diamniotic twin pr egnancy 
+1.3.7 Offer women wit h an uncomplicat ed dichorionic diamniotic twin pr egnancy at 
+least 8 antenatal appointment s wit h a healt hcare professional fr om t he cor e 
+team. A t least 2 of these appointment s should be wit h the specialist obst etrician. 
+• Combine appointment s wit h scans when cr own–rump lengt h measur es from 
+45.0 mm t o 84.0 mm (at appr oximat ely 11+ 2 weeks t o 14+1 w eeks) and t hen 
+at estimat ed gestations of 20 , 24, 28, 32 and 36 weeks. 
+• Offer additional appointment s wit hout scans at 16 and 34 weeks. [2011 , 
+amended 2019] 
+Monochorionic diamniotic twin pr egnancy 
+1.3.8 Offer women wit h an uncomplicat ed monochorionic diamniotic twin pr egnancy at 
+least 11 antenatal appointment s wit h a healt hcare professional fr om t he cor e 
+team. A t least 2 of these appointment s should be wit h the specialist obst etrician. 
+• Combine appointment s wit h scans when cr own–rump lengt h measur es from 
+45.0 mm t o 84.0 mm (at appr oximat ely 11+ 2 weeks t o 14+1 w eeks) and t hen 
+at estimat ed gestations of 16 , 18, 20, 22, 2 4, 26, 28, 30, 32 and 34 weeks. 
+[2011 , amended 2019] 
+Triamniotic triplet pr egnancy (trichorionic, dichorionic or monochorionic) 
+1.3.9 Offer women wit h an uncomplicat ed trichorionic triamniotic triplet pr egnancy at 
+least 9 antenatal appointment s wit h a healt hcare professional fr om t he cor e 
+team. A t least 2 of these appointment s should be wit h the specialist obst etrician. 
+• Combine appointment s wit h scans when cr own–rump lengt h measur es from 
+45.0 mm t o 84.0 mm (at appr oximat ely 11+ 2 weeks t o 14+1 w eeks) and t hen 
+at estimat ed gestations of 20 , 24, 26, 28, 30, 32 and 34 weeks. 
+• Offer an additional appointment wit hout a scan at 16 weeks. [2011 , amended Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 12 of
+682019] 
+1.3.10 Offer women wit h a dichorionic triamniotic or monochorionic triamniotic triplet 
+pregnancy at least 11 antenatal appointment s wit h a healt hcare professional fr om 
+the cor e team. A t least 5 of these appointment s should be wit h the specialist 
+obstetrician. 
+• Combine appointment s wit h scans when cr own–rump lengt h measur es from 
+45.0 mm t o 84.0 mm (at appr oximat ely 11+ 2 weeks t o 14+1 w eeks) and t hen 
+at estimat ed gestations of 16 , 18, 20, 22, 2 4, 26, 28, 30, 32 and 34 weeks. 
+[2011 , amended 2019] 
+Twin and triplet pr egnancies wit h a shar ed amnion 
+1.3.11 Offer women wit h a twin or triplet pr egnancy in volving a shar ed amnion 
+individualised car e from a consultant in a tertiary level fetal medicine centr e (see 
+the recommendation on indications f or referral t o a tertiary level fetal medicine 
+centr e). [2011] 
+1.4 Fetal c omplications 
+Informa tion abou t scr eening 
+1.4.1 A healt hcare professional wit h experience of caring f or women wit h twin and 
+triplet pr egnancies should off er inf ormation and counselling t o women bef ore and 
+after every scr eening t est. [2011] 
+1.4.2 Inform w omen wit h a twin or triplet pr egnancy about t he comple xity of decisions 
+they ma y need t o mak e depending on t he out comes of scr eening, including 
+different options accor ding t o the chorionicity and amnionicity of t he pr egnancy . 
+[2011 , amended 2019] Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 13 of
+68Screening f or chr omosomal c ondi tions 
+Twin pr egnancy 
+1.4.3 Offer women wit h a twin pr egnancy inf ormation on and scr eening f or Do wn's 
+syndr ome, Edwar ds' syndr ome and Patau's syndr ome as out lined in t he NHS f etal 
+anomaly scr eening pr ogramme (FASP). [2019] 
+Triplet pr egnancy 
+1.4.4 Before off ering scr eening f or Do wn's syndr ome, Edwar ds' syndr ome and Patau's 
+syndr ome, giv e women wit h a triplet pr egnancy inf ormation about: 
+• the gr eater lik elihood of Do wn's syndr ome, Edwar ds' syndr ome and Patau's 
+syndr ome in triplet pr egnancy 
+• the diff erent options f or scr eening 
+• the incr eased f alse positiv e rat e of scr eening t ests in triplet pr egnancy 
+• their gr eater lik elihood of being off ered in vasive testing 
+• their gr eater lik elihood of complications of in vasive testing 
+• the ph ysical risks and psy chological implications in t he shor t and long t erm 
+relating t o selectiv e fetal r eduction. [2011 , amended 2019] 
+1.4.5 Healt hcare professionals who scr een f or Do wn's syndr ome, Edwar ds' syndr ome 
+and Patau's syndr ome in trichorionic triplet pr egnancy should: 
+• map t he fetal positions 
+• use nuchal translucency and mat ernal age t o scr een f or Do wn's syndr ome, 
+Edwar ds' syndr ome and Patau's syndr ome when cr own–rump lengt h 
+measur es from 45 .0 mm t o 84.0 mm (at appr oximat ely 11+ 2 weeks t o 
+14+1 weeks) 
+• calculat e the chance of Do wn's syndr ome, Edwar ds' syndr ome and Patau's 
+syndr ome f or each f etus. [2011 , amended 2019] Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 14 of
+681.4.6 Refer women wit h a dichorionic and monochorionic triplet pr egnancy who want t o 
+have scr eening f or Do wn's syndr ome, Edwar ds' syndr ome and Patau's syndr ome 
+to a tertiary level fetal medicine centr e. [2019] 
+1.4.7 Do not use second trimest er serum scr eening f or Do wn's syndr ome in triplet 
+pregnancies. [2011 , amended 2019] 
+Referral aft er scr eening 
+1.4.8 Refer women wit h any type of triplet pr egnancy who ha ve a higher chance of 
+Down's syndr ome, Edwar ds' syndr ome or Patau's syndr ome (use a t hreshold of 1 
+in 150 at t erm) t o a fetal medicine specialist in a t ertiary level fetal medicine 
+centr e. [2011 , amended 2019] 
+For a shor t explanation of wh y the committ ee made t he 2019 r ecommendations and 
+how they might aff ect practice, see t he rationale and impact section on scr eening f or 
+chromosomal conditions . 
+Screening f or struc tural abnormali ties 
+1.4.9 Offer scr eening f or structural abnormalities (such as car diac abnormalities) in 
+twin and triplet pr egnancies as in r outine ant enatal car e; see NICE's guideline on 
+antenatal car e and t he NHS f etal anomaly scr eening pr ogramme . [2011] 
+1.4.10 Consider scheduling ultrasound scans in twin and triplet pr egnancies at a slight ly 
+later gestational age t han in singlet on pr egnancies and be awar e that t he scans 
+will tak e longer t o per form. [2011] 
+1.4.11 Allow 45 minut es for the anomaly scan in twin and triplet pr egnancies (as 
+recommended b y FASP). [2011] 
+1.4.12 Allow 30 minut es for gr owth scans in twin and triplet pr egnancies. [2011] Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 15 of
+68Screening f or pr eterm bir th 
+Also see t he section on pr eventing pr eterm bir th. 
+1.4.13 Explain t o women or pr egnant people and t heir f amily members or car ers (as 
+appr opriat e) that: 
+• they have a higher risk of spontaneous pr eterm bir th (see t he section on 
+timing of bir th) than w omen or pr egnant people wit h a singlet on pr egnancy 
+and 
+• this risk is fur ther incr eased if t hey have other risk f actors, such as a 
+spontaneous pr eterm bir th in a pr evious pr egnancy or t hey are found t o have 
+a shor t cer vix on cer vical lengt h scr eening. [2019 , amended 202 4] 
+1.4.14 Do not use f etal fibr onectin t esting alone t o predict t he risk of spontaneous 
+preterm bir th in twin and triplet pr egnancy . [2019] 
+1.4.15 Do not use home ut erine activity monit oring t o predict t he risk of spontaneous 
+preterm bir th in twin and triplet pr egnancy . [2019] 
+For a shor t explanation of wh y the committ ee made t he 2019 r ecommendations (and 
+why they did not mak e a recommendation on cer vical lengt h scr eening) and ho w they 
+might aff ect practice, see t he rationale and impact section on scr eening f or pr eterm 
+birth. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview D: 
+screening f or spontaneous pr eterm bir th. 
+Screening f or fetal gr owth r estric tion and f eto-fetal tr ansfusion 
+syndr ome in the fir st trimester 
+1.4.16 Do not off er women wit h a twin or triplet pr egnancy scr eening f or fetal gr owth 
+restriction or f eto-fetal transfusion syndr ome in t he first trimest er. [2019] Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 16 of
+68For a shor t explanation of wh y the committ ee made t his 2019 r ecommendation and 
+how it might aff ect practice, see t he rationale and impact section on scr eening f or 
+fetal gr owth restriction and f eto-fetal transfusion syndr ome in t he first trimest er. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview A: 
+screening f or feto-fetal transfusion syndr ome and evidence r eview B: scr eening f or 
+fetal gr owth restriction . 
+Diagnostic moni toring f or fetal gr owth r estric tion in dichorionic 
+twin and trichorionic trip let pregnancies 
+1.4.17 Do not use abdominal palpation or symph ysis–fundal height measur ement s to 
+monit or for fetal gr owth restriction in a dichorionic twin or trichorionic triplet 
+pregnancy . [2019] 
+1.4.18 At each ultrasound scan fr om 2 4 weeks, off er women wit h a dichorionic twin or 
+trichorionic triplet pr egnancy diagnostic monit oring f or fetal w eight discor dance 
+using 2 or mor e biometric paramet ers and amniotic fluid le vels. T o assess 
+amniotic fluid le vels, measur e the deepest v ertical pock et (D VP) on eit her side of 
+the amniotic membrane. [2019] 
+1.4.19 Continue monit oring f or fetal w eight discor dance at int ervals that do not e xceed: 
+• 28 da ys for women wit h a dichorionic twin pr egnancy 
+• 14 da ys for women wit h a trichorionic triplet pr egnancy . [2019] 
+1.4.20 Calculat e and document estimat ed fetal w eight (EFW) discor dance f or dichorionic 
+twins using t he formula belo w [2019] : 
+([EFW lar ger f etus − EFW smaller f etus] ÷ EFW lar ger f etus) × 100 
+1.4.21 Calculat e and document EFW discor dance f or trichorionic triplet s using t he 
+formula belo w [2019] : 
+([EFW lar gest f etus − EFW smallest f etus] ÷ EFW lar gest f etus) × 100 
+and 
+([EFW lar gest f etus − EFW middle f etus] ÷ EFW lar gest f etus) × 100 Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 17 of
+681.4.22 Increase diagnostic monit oring in t he second and t hird trimest ers t o at least 
+weekly , and include Doppler assessment of t he umbilical ar tery flow for each 
+baby, if: 
+• there is an EFW discor dance of 20% or mor e and/or 
+• the EFW of an y of t he babies is belo w the 10t h centile f or gestational age. 
+[2019] 
+1.4.23 Refer women wit h a dichorionic twin or trichorionic triplet pr egnancy t o a tertiary 
+level fetal medicine centr e if t here is an EFW discor dance of 25% or mor e and the 
+EFW of an y of t he babies is belo w the 10t h centile f or gestational age because 
+this is a clinically impor tant indicat or of selectiv e fetal gr owth restriction. [2019] 
+For a shor t explanation of wh y the committ ee made t he 2019 r ecommendations and 
+how they might aff ect practice, see t he rationale and impact section on diagnostic 
+monit oring f or fetal gr owth restriction in dichorionic twin and trichorionic triplet 
+pregnancies . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview B: 
+screening f or fetal gr owth restriction . 
+Diagnostic moni toring f or complications o f monochorionici ty in 
+twin and trip let pregnanc y 
+A monochorionic twin or triplet pr egnancy is one in which an y of t he babies shar e a 
+placenta and a chorionic ( outer) membrane. This includes monochorionic twins and 
+dichorionic and monochorionic triplet s. 
+1.4.24 Offer women simultaneous monit oring f or feto-fetal transfusion syndr ome, f etal 
+growth restriction and adv anced-stage twin anaemia poly cythaemia sequence 
+(TAPS) at e very ultrasound assessment t o monit or eff ectiv ely for all 
+complications of monochorionicity . Explain t hat t he relativ e likelihood of each 
+complication changes wit h adv ancing gestation but t hat t hey can all occur at an y 
+gestational age. [2019] Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 18 of
+68Feto-fetal tr ansfusion syndr ome 
+1.4.25 Offer diagnostic monit oring f or feto-fetal transfusion syndr ome t o women wit h a 
+monochorionic twin or triplet pr egnancy . Monit or wit h ultrasound e very 14 days 
+from 16 weeks until bir th. [2019] 
+1.4.26 Use ultrasound assessment, wit h a visible amniotic membrane wit hin the 
+measur ement image, t o monit or for feto-fetal transfusion syndr ome. Measur e the 
+DVP dept hs of amniotic fluid on eit her side of t he amniotic membrane. [2019] 
+1.4.27 Increase t he fr equency of diagnostic monit oring f or feto-fetal transfusion 
+syndr ome in t he w oman's second and t hird trimest er to at least w eekly if t here 
+are concerns about diff erences betw een t he babies' amniotic fluid le vel (a 
+difference in D VP dept h of 4 cm or mor e). Include Doppler assessment of t he 
+umbilical ar tery flow for each bab y. [2019] 
+1.4.28 Refer the w oman t o a tertiary level fetal medicine centr e if feto-fetal transfusion 
+syndr ome is diagnosed, based on t he following: 
+• the amniotic sac of 1 bab y has a D VP dept h of less t han 2 cm and 
+• the amniotic sac of anot her bab y has a D VP dept h of: 
+－ over 8 cm bef ore 20+0 weeks of pr egnancy or 
+－ over 10 cm fr om 20+0 weeks. [2019] 
+1.4.29 Refer the w oman t o her named specialist obst etrician f or multiple pr egnancy in 
+her second or t hird trimest er for fur ther assessment and monit oring if: 
+• the amniotic sac of 1 baby has a D VP dept h in t he normal range and 
+• the amniotic sac of anot her bab y has a D VP dept h of: 
+－ less t han 2 cm or 
+－ 8 cm or mor e. [2019] Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 19 of
+68For a shor t explanation of wh y the committ ee made t he 2019 r ecommendations and 
+how they might aff ect practice, see t he rationale and impact section on diagnostic 
+monit oring f or feto-fetal transfusion syndr ome. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview A: 
+screening f or feto-fetal transfusion syndr ome. 
+Fetal gr owth restriction in monochorionic pr egnancy 
+1.4.30 Do not use abdominal palpation or symph ysis–fundal height measur ement s to 
+monit or for fetal gr owth restriction in w omen wit h a monochorionic twin or triplet 
+pregnancy . [2019] 
+1.4.31 At each ultrasound scan fr om 16 weeks, off er women wit h a monochorionic twin 
+or triplet pr egnancy diagnostic monit oring f or fetal w eight discor dance using 2 or 
+more biometric paramet ers (in addition t o amniotic fluid le vel assessment). T o 
+assess amniotic fluid le vels, measur e the D VP on eit her side of t he amniotic 
+membrane. [2019] 
+1.4.32 Continue monit oring w omen wit h a monochorionic twin or triplet pr egnancy f or 
+fetal w eight discor dance at int ervals that should not e xceed 14 days. [2019] 
+1.4.33 Calculat e and document EFW discor dance in monochorionic twins using t he 
+formula belo w [2019] : 
+([EFW lar ger f etus − EFW smaller f etus] ÷ EFW lar ger f etus) × 100 
+1.4.34 The named specialist obst etrician should r eview t he estimat ed fetal w eight s of 
+dichorionic and monochorionic triplet s and calculat e EFW discor dance based on 
+their understanding of t he implications of chorionicity . [2019] 
+1.4.35 Increase diagnostic monit oring in t he second and t hird trimest ers t o at least 
+weekly , and include Doppler assessment of t he umbilical ar tery flow for each 
+baby, if: 
+• there is an EFW discor dance of 20% or mor e and/or Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 20 of
+68• the EFW of an y of t he babies is belo w the 10t h centile f or gestational age. 
+[2019] 
+1.4.36 Refer women wit h a monochorionic twin or triplet pr egnancy t o a tertiary level 
+fetal medicine centr e if t here is an EFW discor dance of 25% or mor e and the EFW 
+of an y of t he babies is belo w the 10t h centile f or gestational age because t his is a 
+clinically impor tant indicat or of selectiv e fetal gr owth restriction. [2019] 
+For a shor t explanation of wh y the committ ee made t he 2019 r ecommendations and 
+how they might aff ect practice, see rationale and impact section on diagnostic 
+monit oring f or fetal gr owth restriction in monochorionic pr egnancy . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview B: 
+screening f or fetal gr owth restriction . 
+Twin anaemia poly cythaemia sequence 
+1.4.37 Offer weekly ultrasound monit oring f or TAPS fr om 16 weeks of pr egnancy using 
+middle cer ebral ar tery peak syst olic v elocity (MCA-PSV) t o women whose 
+pregnancies ar e complicat ed by: 
+• feto-fetal transfusion syndr ome t hat has been tr eated by fetoscopic laser 
+therap y or 
+• selectiv e fetal gr owth restriction ( defined b y an EFW discor dance of 25% or 
+more and an EFW of an y of t he babies belo w the 10t h centile f or gestational 
+age). [2019] 
+1.4.38 For women wit h a monochorionic pr egnancy sho wing an y of t he following: 
+• cardiovascular compr omise (such as f etal h ydrops or car diomegaly) or 
+• unexplained isolat ed polyh ydramnios or 
+• abnormal umbilical ar tery. 
+Perform ultrasound MCA-PSV measur ement s to help det ect adv anced-stage Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 21 of
+68TAPS, and seek management advice immediat ely fr om a t ertiary level fetal 
+medicine specialist. [2019] 
+For a shor t explanation of wh y the committ ee made t he 2019 r ecommendations and 
+how they might aff ect practice, see t he rationale and impact section on diagnostic 
+monit oring f or TAPS. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview C: 
+screening f or TAPS. 
+1.5 Pr eventing pr eterm bir th 
+1.5.1 Discuss wit h women or pr egnant people wit h a twin or triplet pr egnancy t hat if a 
+cervical lengt h scan sho ws that t hey have a shor t cer vix (25 mm or less), 
+treatment wit h progest erone ma y reduce t he risk of pr eterm bir th. [202 4] 
+1.5.2 Offer a single cer vical lengt h scan betw een 16 and 20 weeks t o women or 
+pregnant people wit h a twin or triplet pr egnancy . [202 4] 
+1.5.3 Offer pr ogest erone 200 mg v aginal capsules once a da y at bedtime t o women or 
+pregnant people wit h a twin or triplet pr egnancy and a cer vical lengt h of 25 mm 
+or less. Continue tr eatment until 34 weeks ( or bir th if sooner). [202 4] 
+1.5.4 If a cer vical lengt h of 25 mm or less is f ound incidentally on a scan conduct ed 
+betw een 20 and 2 4 weeks, off er pr ogest erone 200 mg v aginal capsules once a 
+day at bedtime. Continue tr eatment until 34 weeks ( or bir th if sooner). [202 4] 
+In April 202 4, this was an off -label use of pr ogest erone 200 mg v aginal capsules. 
+See NICE's inf ormation on pr escribing medicines . 
+1.5.5 Do not off er intramuscular pr ogest erone t o prevent spontaneous pr eterm bir th in 
+women or pr egnant people wit h a twin or triplet pr egnancy . [2019] 
+1.5.6 Do not off er the following int erventions (alone or in combination) r outinely t o 
+prevent spontaneous pr eterm bir th in w omen or pr egnant people wit h a twin or Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 22 of
+68triplet pr egnancy: 
+• arabin pessar y 
+• bed r est 
+• cervical cer clage 
+• oral t ocolytics. [2019] 
+For a shor t explanation of wh y the committ ee made t he 2019 and 202 4 
+recommendations and ho w they might aff ect practice, see t he rationale and impact 
+section on pr eventing pr eterm bir th. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview E: 
+interventions t o prevent spontaneous pr eterm bir th for the 2019 r ecommendations 
+and evidence r eview K: pr ogest erone f or pr eventing spontaneous pr eterm bir th in twin 
+and triplet pr egnancy for the 202 4 recommendations. 
+Corticoster oids 
+1.5.7 Inform w omen wit h a twin or triplet pr egnancy of t heir incr eased risk of pr eterm 
+birth (see t he recommendation e xplaining scr eening f or pr eterm bir th to women 
+and t heir f amily members in t he section on scr eening f or pr eterm bir th) and about 
+the benefit s of tar geted cor ticost eroids. [2011] 
+1.5.8 Do not use single or multiple untar geted (r outine) courses of cor ticost eroids in 
+twin or triplet pr egnancy . Inform w omen t hat t here is no benefit in using 
+untar geted administration of cor ticost eroids. [2011] 
+1.6 Maternal c omplications 
+Hyper tension 
+1.6.1 Measur e blood pr essur e and t est urine f or pr oteinuria t o scr een f or hyper tensiv e Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 23 of
+68disor ders at each ant enatal appointment in a twin and triplet pr egnancy in line 
+with NICE's guideline on ant enatal car e. [2011] 
+1.6.2 Advise w omen wit h a twin or triplet pr egnancy t o tak e low-dose aspirin daily fr om 
+12 weeks until t he bir th of t he babies if t hey have 2 or mor e of t he risk f actors 
+specified in t he section on antiplat elet agent s in NICE's guideline on h yper tension 
+in pregnancy . [2011 , amended 2019] 
+In Sept ember 2019 , this was an off -label use of aspirin. See NICE's inf ormation on 
+prescribing medicines . 
+1.7 Indic ations f or referral to a ter tiary level fetal 
+medicine c entre 
+1.7.1 Seek a consultant opinion fr om a tertiary level fetal medicine centr e for: 
+• pregnancies wit h a shar ed amnion: 
+－ monochorionic monoamniotic twins 
+－ dichorionic diamniotic triplet s 
+－ monochorionic diamniotic triplet s 
+－ monochorionic monoamniotic triplet s 
+• pregnancies complicat ed by any of t he following: 
+－ fetal w eight discor dance ( of 25% or mor e) and an EFW of an y of t he 
+babies belo w the 10t h centile f or gestational age 
+－ fetal anomaly (structural or chr omosomal) 
+－ discor dant f etal deat h 
+－ feto-fetal transfusion syndr ome 
+－ twin r everse ar terial per fusion sequence (TRAP) Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 2 4 of
+68－ conjoined twins or triplet s 
+－ suspect ed TAPS (see t he recommendations in t he section on twin 
+anaemia poly cythaemia sequence ). [2011 , amended 2019] 
+1.8 P lanning bir th: inf orma tion and suppor t 
+1.8.1 From 2 4 weeks in a twin or triplet pr egnancy , discuss wit h the w oman (and her 
+family members or car ers, as appr opriat e) her plans and wishes f or the bir th of 
+her babies. Pr ovide inf ormation t hat is tailor ed to each w oman's pr egnancy , 
+taking int o account her needs and pr eferences. R evisit t hese con versations 
+whene ver clinically indicat ed and whene ver the w oman want s to. [2019] 
+1.8.2 Ensur e the following has been discussed b y 28 weeks at t he lat est: 
+• place of bir th and t he possible need t o transf er in case of pr eterm bir th 
+• timing and possible modes of bir th 
+• analgesia during labour ( or for caesar ean bir th) 
+• intrapar tum f etal hear t monit oring 
+• management of t he third stage of labour . [2019] 
+1.8.3 Follow NICE's guideline on patient e xperience in adult NHS ser vices for ho w to 
+provide inf ormation and communicat e wit h women and t heir f amilies and car ers. 
+[2019] 
+For a shor t explanation of wh y the committ ee made t he 2019 r ecommendations and 
+how they might aff ect practice, see t he rationale section on planning bir th. Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 25 of
+681.9 T iming o f bir th 
+Antena tal inf orma tion f or w omen 
+1.9.1 Explain t o women wit h a twin pr egnancy t hat about 60 in 100 twin pr egnancies 
+result in spontaneous bir th bef ore 37 weeks. [2019] 
+1.9.2 Explain t o women wit h a triplet pr egnancy t hat about 7 5 in 100 triplet pr egnancies 
+result in spontaneous bir th bef ore 35 weeks. [2019] 
+1.9.3 Explain t o women wit h a twin or triplet pr egnancy t hat spontaneous pr eterm bir th 
+and planned pr eterm bir th are associat ed wit h an incr eased risk of admission t o a 
+neonatal unit. [2019] 
+1.9.4 Explain t o women wit h an uncomplicat ed dichorionic diamniotic twin pr egnancy 
+that: 
+• planned bir th from 37+0 weeks does not appear t o be associat ed wit h an 
+increased risk of serious neonatal adv erse out comes and 
+• continuing t he pr egnancy be yond 37+6 weeks incr eases t he risk of f etal 
+deat h. [2019] 
+1.9.5 Explain t o women wit h an uncomplicat ed monochorionic diamniotic twin 
+pregnancy t hat: 
+• planned bir th from 36+0 w eeks does not appear t o be associat ed wit h an 
+increased risk of serious neonatal adv erse out comes and 
+• continuing t he pr egnancy be yond 36+6 w eeks incr eases t he risk of f etal 
+deat h. [2019] 
+1.9.6 Explain t o women wit h an uncomplicat ed monochorionic monoamniotic twin 
+pregnancy t hat planned bir th betw een 32+0 and 33+6 weeks does not appear t o 
+be associat ed wit h an incr eased risk of serious neonatal adv erse out comes. Also 
+explain t hat: 
+• these babies will usually need t o be admitted t o the neonatal unit and ha ve Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 26 of
+68an incr eased risk of r espirat ory problems 
+• continuing t he pr egnancy be yond 33+6 weeks incr eases t he risk of f etal 
+deat h. [2019] 
+1.9.7 Explain t o women wit h an uncomplicat ed trichorionic triamniotic or dichorionic 
+triamniotic triplet pr egnancy t hat continuing t he pr egnancy be yond 35+6 weeks 
+increases t he risk of f etal deat h. [2019] 
+1.9.8 Explain t o women wit h a monochorionic triamniotic triplet pr egnancy or a triplet 
+pregnancy t hat in volves a shar ed amnion t hat t he timing of bir th will be decided 
+and discussed wit h each w oman individually . [2019] 
+When to o ffer planne d bir th 
+1.9.9 Offer planned bir th at 37 weeks t o women wit h an uncomplicat ed dichorionic 
+diamniotic twin pr egnancy . [2019] 
+1.9.10 Offer planned bir th as f ollows, aft er a course of ant enatal cor ticost eroids has 
+been consider ed (see t he section on mat ernal cor ticost eroids in NICE's guideline 
+on pr eterm labour and bir th): 
+• at 36 weeks f or women wit h an uncomplicat ed monochorionic diamniotic 
+twin pr egnancy 
+• betw een 32+0 and 33+6 weeks f or women wit h an uncomplicat ed 
+monochorionic monoamniotic twin pr egnancy 
+• at 35 weeks f or women wit h an uncomplicat ed trichorionic triamniotic or 
+dichorionic triamniotic triplet pr egnancy . [2019] 
+1.9.11 Offer an individual assessment t o det ermine t he timing of planned bir th in w omen 
+with any of t he following: 
+• a complicat ed twin or triplet pr egnancy 
+• a monochorionic triamniotic triplet pr egnancy Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 27 of
+68• a triplet pr egnancy t hat in volves a shar ed amnion. [2019] 
+1.9.12 For women who decline planned bir th at t he timing r ecommended in 
+recommendations 1 .9.9 and 1 .9.10, offer weekly appointment s wit h the specialist 
+obstetrician. A t each appointment, off er an ultrasound scan and per form 
+assessment s of amniotic fluid le vel and Doppler of t he umbilical ar tery flow for 
+each bab y in addition t o fortnight ly fetal gr owth scans. [2019] 
+For a shor t explanation of wh y the committ ee made t he 2019 r ecommendations and 
+how they might aff ect practice, see t he rationale and impact section on timing of 
+birth. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview J: 
+timing of bir th. 
+1.10 M ode o f bir th 
+Twin pr egnanc y: dichorionic diamniotic or monochorionic 
+diamniotic 
+1.10.1 Explain t o women wit h an uncomplicat ed twin pr egnancy planning t heir mode of 
+birth that planned v aginal bir th and planned caesar ean section ar e bot h saf e 
+choices f or them and t heir babies if all of t he following apply: 
+• the pr egnancy r emains uncomplicat ed and has pr ogressed be yond 32 weeks 
+• there are no obst etric contraindications t o labour 
+• the first bab y is in a cephalic (head-first) pr esentation 
+• there is no significant siz e discor dance betw een t he twins. [2019] 
+1.10.2 Explain t o women wit h an uncomplicat ed twin pr egnancy t hat f or women giving 
+birth aft er 32 weeks (see r ecommendation 1 .10.1): 
+• more than a t hird of w omen who plan a v aginal bir th go on t o have a Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 28 of
+68caesar ean section 
+• almost all w omen who plan a caesar ean section do ha ve one, but a f ew 
+women ha ve a v aginal bir th bef ore caesar ean section can be carried out 
+• a small number of w omen who plan a v aginal bir th will need an emer gency 
+caesar ean section t o deliv er the second twin aft er vaginal bir th of t he first 
+twin. [2019] 
+1.10.3 Offer caesar ean section t o women if t he first twin is not cephalic at t he time of 
+planned bir th. [2019] 
+1.10.4 Offer caesar ean section t o women in established pr eterm labour betw een 26 and 
+32 weeks if t he first twin is not cephalic. [2019] 
+1.10.5 Offer an individualised assessment of mode of bir th to women in suspect ed, 
+diagnosed or established pr eterm labour bef ore 26 weeks. T ake into account t he 
+risks of caesar ean section (see NICE's guideline on pr eterm labour and bir th) and 
+the chance of sur vival of t he babies. [2019] 
+Twin pr egnanc y: monochorionic monoamniotic 
+1.10.6 Offer a caesar ean section t o women wit h a monochorionic monoamniotic twin 
+pregnancy: 
+• at the time of planned bir th (betw een 32+0 and 33+6 weeks) or 
+• after an y complication is diagnosed in her pr egnancy r equiring earlier deliv ery 
+or 
+• if she is in established pr eterm labour , and gestational age suggest s there is 
+a reasonable chance of sur vival of t he babies (unless t he first twin is close t o 
+vaginal bir th and a senior obst etrician advises continuing t o vaginal bir th). 
+[2019] Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 29 of
+68Triplet pregnanc y 
+1.10.7 Offer a caesar ean section t o women wit h a triplet pr egnancy: 
+• at the time of planned bir th (35 weeks) or 
+• after an y complication is diagnosed in her pr egnancy r equiring earlier deliv ery 
+or 
+• if she is in established pr eterm labour , and gestational age suggest s there is 
+a reasonable chance of sur vival of t he babies. [2019] 
+For a shor t explanation of wh y the committ ee made t he 2019 r ecommendations and 
+how they might aff ect practice, see t he rationale and impact section on mode of bir th. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview F: 
+mode of bir th. 
+1.11 F etal moni toring during labour in t win 
+pregnanc y 
+Antena tal inf orma tion f or w omen 
+1.11.1 By 28 weeks of pr egnancy , discuss continuous car diotocograph y wit h women 
+with a twin pr egnancy and t heir f amily members or car ers (as appr opriat e) and 
+addr ess an y concerns. Explain t hat t he recommendations on car diotocograph y 
+are based on e vidence fr om w omen wit h a singlet on pr egnancy because t here is 
+a lack of e vidence specific t o twin pr egnancy or pr eterm babies. [2019] 
+1.11.2 Explain t o the w oman t hat continuous car diotocograph y is used t o monit or the 
+babies' hear tbeat s and her labour contractions, and t hat: 
+• it allo ws simultaneous monit oring of bot h babies 
+• it might r estrict her mobility 
+• normal traces sho w the babies ar e coping w ell wit h labour; if traces ar e not Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 30 of
+68normal, t here will be less cer tainty about t he babies' condition 
+• it is normal t o see changes t o the fetal hear t rate patt ern during labour and 
+this does not necessarily mean t here is a pr oblem 
+• findings fr om t he car diotocograph ar e used t o help mak e decisions during 
+labour and bir th, but t hese will also be based on her wishes, her condition 
+and t hat of her babies. [2019] 
+Intrapar tum moni toring 
+1.11.3 Offer continuous car diotocograph y to women wit h a twin pr egnancy who ar e in 
+established labour and ar e mor e than 26 weeks pr egnant. [2019] 
+1.11.4 Perform a por table ultrasound scan when established labour star ts, to confirm 
+which twin is which, t he pr esentation of each twin, and t o locat e the fetal hear ts. 
+[2019] 
+1.11.5 Do not off er int ermitt ent auscultation t o women wit h a twin pr egnancy who ar e in 
+established labour and ar e mor e than 26 weeks pr egnant. [2019] 
+1.11.6 For women betw een 23+0 and 25+6 w eeks of pr egnancy who ar e in established 
+labour , involve a senior obst etrician in discussions wit h the w oman and her f amily 
+members or car ers about ho w to monit or the fetal hear t rates. [2019] 
+1.11.7 When carr ying out car diotocograph y: 
+• use dual channel car diotocograph y monit ors t o allo w simultaneous 
+monit oring of bot h fetal hear ts 
+• document on t he car diotocograph and in t he clinical r ecords which 
+cardiotocograph y trace belongs t o which bab y 
+• monit or the mat ernal pulse electr onically and displa y it simultaneously on t he 
+same car diotocograph y trace. [2019] 
+1.11.8 Consider separating t he fetal hear t rates by 20 beat s/minut e if t here is difficulty Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 31 of
+68differentiating betw een t hem. [2019] 
+1.11.9 Classify and int erpret car diotocograph y in line wit h the section on t he use of 
+cardiotocograph y for monit oring during labour in t he NICE guideline on f etal 
+monit oring in labour , taking int o account t hat: 
+• twin pr egnancy should be consider ed a f etal clinical risk f actor when 
+classifying a car diotocograph y trace as 'abnormal' v ersus 'non-r eassuring' 
+• fetal scalp stimulation should not be per formed in twin pr egnancy t o gain 
+reassurance aft er a car diotocograph y trace t hat is cat egorised as 
+'pathological' . [2019] 
+Reviewing c ardiotoc ography 
+1.11.10 Carry out syst ematic assessment s of bot h car diotocographs at least hourly , and 
+more frequent ly if t here are concerns. [2019] 
+1.11.11 At each syst ematic assessment, document which car diotocograph y trace 
+belongs t o which bab y. [2019] 
+1.11.12 Be awar e of t he possibility of monit oring t he same bab y twice. A t each 
+cardiotocograph y review , ensur e that twin synchr onicity is not occurring. [2019] 
+Manag emen t base d on c ardiotoc ography 
+For definitions of 'suspicious' and 'pat hological' car diotocograph traces, see t he 
+recommendations on cat egorisation of car diotocograph y traces in NICE's guideline on 
+fetal monit oring in labour . 
+1.11.13 If abdominal monit oring is unsuccessful or t here are concerns about 
+synchr onicity of t he fetal hear ts: 
+• involve a senior obst etrician and senior midwif e Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 32 of
+68• apply a f etal scalp electr ode t o the first bab y (only aft er 34 weeks and if 
+there are no contraindications) while continuing abdominal monit oring of t he 
+second bab y 
+• perform a bedside ultrasound scan t o confirm bot h fetal hear t rates 
+• if monit oring r emains unsatisf actory, consider a caesar ean section. [2019] 
+1.11.14 If the car diotocograph trace is cat egorised as 'suspicious' in t he first bab y during 
+established labour: 
+• involve the senior obst etrician and senior midwif e 
+• correct an y reversible causes 
+• apply a f etal scalp electr ode t o the first bab y (only aft er 34 weeks and if 
+there are no contraindications) while continuing abdominal monit oring of t he 
+second bab y. [2019] 
+1.11.15 If the car diotocograph trace is cat egorised as 'pat hological' in t he first bab y 
+during established labour: 
+• involve the senior obst etrician and senior midwif e 
+• discuss wit h the w oman and her f amily members or car ers t he possible use 
+of fetal blood sampling of t he first bab y from 34 weeks if t he benefit s are 
+likely to outw eigh t he pot ential risks. [2019] 
+1.11.16 When off ering f etal blood sampling in twin pr egnancy , discuss wit h the w oman 
+and her f amily members or car ers t hat if a blood sample cannot be obtained t hen 
+she is lik ely to need a caesar ean section. [2019] 
+1.11.17 If the result s of f etal blood sampling ar e not a vailable wit hin 20 minut es or f etal 
+blood sampling is contraindicat ed, off er an immediat e caesar ean section t o 
+women wit h a twin pr egnancy . [2019] 
+1.11.18 If the car diotocograph trace is cat egorised as 'pat hological' in t he first bab y 
+during t he second stage of labour: 
+• involve the senior obst etrician and senior midwif e Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 33 of
+68• assess whet her an assist ed vaginal bir th is an option 
+• if vaginal bir th is not an option or cannot be achie ved wit hin 20 minut es, off er 
+an immediat e caesar ean section. [2019] 
+1.11.19 If the car diotocograph trace of t he second bab y is cat egorised as 'suspicious' or 
+'pathological' during established labour bef ore the first bab y is born: 
+• involve the senior obst etrician and senior midwif e 
+• if vaginal bir th of t he second bab y cannot be achie ved wit hin 20 minut es, 
+discuss per forming a caesar ean section wit h the w oman and her f amily 
+members or car ers. [2019] 
+1.11.20 After the bir th of t he first bab y: 
+• continue t o monit or the second bab y using car diotocograph y 
+• if there is 'suspicious' or 'pat hological' car diotocograph y, and v aginal bir th 
+cannot be achie ved wit hin 20 minut es, discuss per forming a caesar ean 
+section wit h the w oman and her f amily members or car ers. [2019] 
+1.11.21 After the bir th of bot h babies, consider double clamping t he cor d to allo w 
+umbilical cor d blood gases t o be sampled. Ensur e that t he samples ar e corr ectly 
+labelled f or each bab y. [2019] 
+For a shor t explanation of wh y the committ ee made t he 2019 r ecommendations and 
+how they might aff ect practice, see t he rationale and impact section on f etal 
+monit oring during labour . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview G: 
+fetal monit oring . 
+1.12 A nalg esia 
+1.12.1 Discuss options f or analgesia and anaest hesia wit h women (and t heir f amily 
+members or car ers, as appr opriat e), whet her t hey are planning a v aginal bir th or Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 34 of
+68caesar ean section. Ensur e this discussion tak es place b y 28 w eeks at t he lat est. 
+[2019] 
+1.12.2 Offer an epidural t o women wit h a twin or triplet pr egnancy who choose t o have a 
+vaginal bir th. Explain t hat t his is lik ely to: 
+• improve the chance of success and optimal timing of assist ed vaginal bir th of 
+all the babies 
+• enable a quick er bir th by emer gency caesar ean section if needed. [2019] 
+1.12.3 Offer regional anaest hesia t o women wit h a twin or triplet pr egnancy who ar e 
+having a caesar ean section. [2019] 
+For a shor t explanation of wh y the committ ee made t he 2019 r ecommendations and 
+how they might aff ect practice, see t he rationale and impact section on analgesia . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview H: 
+analgesia . 
+1.13 M anag ing the thir d stag e of labour 
+Assessing risk 
+1.13.1 Start assessing t he risk of postpar tum haemorrhage in w omen wit h a twin or 
+triplet pr egnancy in t he ant enatal period and continue t hroughout labour and t he 
+third stage (see t he section on risk f actors f or postpar tum haemorrhage in NICE's 
+guideline on intrapar tum car e). [2019] 
+1.13.2 Offer each w oman an individualised assessment of her risk of postpar tum 
+haemorrhage and e xplain t hat multiple pr egnancy is a risk f actor for incr eased 
+blood loss at deliv ery. [2019] Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 35 of
+68Manag emen t 
+1.13.3 By 28 weeks of pr egnancy , discuss options f or managing t he third stage of labour 
+with women wit h a twin or triplet pr egnancy . [2019] 
+1.13.4 Do not off er ph ysiological management of t he third stage t o women wit h a twin or 
+triplet pr egnancy . [2019] 
+1.13.5 Offer women wit h a twin or triplet pr egnancy activ e management of t he third 
+stage . Explain t hat it is associat ed wit h a lo wer risk of postpar tum haemorrhage 
+and/or blood transfusion. [2019] 
+1.13.6 Consider activ e management of t he third stage wit h additional ut erotonics f or 
+women who ha ve 1 or mor e risk f actors (in addition t o a twin or triplet pr egnancy) 
+for postpar tum haemorrhage. [2019] 
+Blood tr ansfusion 
+1.13.7 By 28 weeks of pr egnancy , discuss wit h women wit h a twin or triplet pr egnancy 
+the pot ential need f or blood transfusion, including t he need f or intra venous 
+access. Document t his discussion in t he w oman's not es. [2019] 
+1.13.8 At the star t of established labour in w omen wit h a twin or triplet pr egnancy: 
+• ensur e that intra venous access is a vailable so t hat pr ompt blood transfusion 
+and intra venous fluids can be giv en if needed 
+• take a mat ernal blood sample f or a full blood count and group and sa ve. 
+[2019] 
+1.13.9 Ensur e that t he appr opriat e blood transfusion is a vailable f or ur gent 
+administration. [2019] Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 36 of
+68For a shor t explanation of wh y the committ ee made t he 2019 r ecommendations and 
+how they might aff ect practice, see t he rationale and impact section on managing t he 
+third stage of labour . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview I: 
+interventions t o prevent postpar tum haemorrhage in t he third stage of labour . 
+Terms use d in this guideline 
+Active manag emen t of the thir d stag e 
+In a v aginal bir th, activ e management consist s of 10 IU of o xytocin b y intramuscular 
+injection immediat ely aft er the bir th of t he last bab y and bef ore the cor d is clamped and 
+cut. In a caesar ean section, it consist s of 5 IU of o xytocin b y intra venous injection 
+immediat ely aft er the bir th of t he last bab y and bef ore the cor d is clamped and cut. 
+Amnionici ty 
+The number of amnions (inner membranes) t hat surr ound babies in a multiple pr egnancy . 
+Pregnancies wit h 1 amnion (so t hat all babies shar e an amniotic sac) ar e described as 
+monoamniotic; pr egnancies wit h 2 amnions ar e diamniotic; and pr egnancies wit h 
+3 amnions ar e triamniotic. Also see t he box on chorionicity and amnionicity in twin and 
+triplet pr egnancy . 
+Chorionici ty 
+The number of chorionic ( outer) membranes t hat surr ound babies in a multiple pr egnancy . 
+If there is only 1 membrane, t he pr egnancy is described as monochorionic; if t here are 2, 
+the pr egnancy is dichorionic; and if t here are 3, the pr egnancy is trichorionic. 
+Monochorionic twin pr egnancies and monochorionic or dichorionic triplet pr egnancies 
+carry higher risks because babies shar e a placenta. Also see t he box on chorionicity and 
+amnionicity in twin and triplet pr egnancy . Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 37 of
+68Feto-fetal tr ansfusion syndr ome 
+Feto-fetal transfusion syndr ome (FFTS) occurs when blood mo ves from one bab y to 
+anot her. The bab y that loses t he blood is called t he donor and t he bab y receiving t he 
+blood is called t he recipient. F eto-fetal transfusion syndr ome is a complication of 
+monochorionic multiple pr egnancies arising fr om shar ed placental cir culation. It is also 
+referred to as twin-t o-twin transfusion syndr ome in twin pr egnancies. 
+Group and sa ve 
+This is a blood sampling pr ocess. It consist s of a blood gr oup and an antibody scr een t o 
+determine t he w oman's blood gr oup and whet her she has atypical r ed cell antibodies in 
+her blood. If atypical antibodies ar e present, t he laborat ory will do additional w ork t o 
+identify t hem. This will allo w blood t o be issued in an emer gency v ery quickly . 
+Specialist obste trician 
+An obst etrician wit h a special int erest, e xperience and kno wledge of managing multiple 
+pregnancy , and who w orks r egularly wit h women wit h a multiple pr egnancy . 
+Tertiary level fetal me dicine c entre 
+A specialist r egional ( or supra-r egional) f etal medicine centr e that has a multidisciplinar y 
+team wit h the exper tise and infrastructur e to assess and manage complicat ed twin and 
+triplet pr egnancies. This includes pr oviding comple x fetal int erventions or t herapies, f or 
+example, f etoscopic laser ablation f or feto-fetal transfusion syndr ome; and selectiv e 
+termination of pr egnancy using t echniques such as f etoscopic cor d occlusion or 
+radiofr equency ablation. 
+Twin anaemia po lycythaemia se quenc es 
+Twin anaemia poly cythaemia sequences (T APS) is a complication aff ecting monochorionic 
+twin or triplet pr egnancies. It is a rar e, chr onic f orm of f eto-fetal transfusion caused b y the 
+joining of fine blood v essels connecting t he fetal cir culations on t he placenta. It pr esent s 
+when t here are unequal blood count s betw een t he twins in t he w omb. When T APS occurs, 
+the recipient twin is at risk f or successiv ely incr easing blood count, called poly cythaemia, 
+and t he donor twin f or pr ogressiv e blood loss, or anaemia. T APS occurs wit hout t he 
+differences in le vels of amniotic fluids betw een t he fetuses (polyh ydramnios-Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 38 of
+68oligoh ydramnios) t hat is usually seen in FFTS. Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 39 of
+68Recommenda tions f or research 
+The guideline committ ee has made t he following r ecommendations f or resear ch. 
+As par t of t he 2019 updat e, the guideline committ ee made an additional r ecommendation 
+for resear ch on t he identification on twin anaemia poly cythaemia sequence (T APS). The 
+committ ee removed 6 of the 2011 r ecommendations on scr eening f or chr omosomal 
+conditions, scr eening f or feto-fetal transfusion syndr ome, defining f etal gr owth restriction, 
+predicting and pr eventing spontaneous pr eterm bir th, and perinatal and neonatal morbidity 
+and mor tality in babies born b y electiv e bir th. 
+Key recommenda tions f or research 
+1 Scr eening to de tect twin anaemia po lycythaemia se quenc e 
+What is t he most accurat e prenatal scr eening mark er for TAPS, including middle cer ebral 
+artery peak syst olic v elocity (MCA-PSV)? [2019] 
+For a shor t explanation of wh y the committ ee made t he recommendation f or resear ch, 
+see t he rationale section on diagnostic monit oring f or twin anaemia poly cythaemia 
+sequence . 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview C: 
+screening f or TAPS. 
+2 Informa tion and suppor t 
+Does additional inf ormation and emotional suppor t impr ove out comes in twin and triplet 
+pregnancies? [2011] 
+3 Specialist c are 
+Does specialist ant enatal car e for women wit h twin and triplet pr egnancies impr ove 
+outcomes f or women and t heir babies? [2011] Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 40 of
+684 Indic ations f or referral to a ter tiary level fetal me dicine c entre 
+What is t he incidence of monochorionic monoamniotic twin and triplet pr egnancies, and 
+what clinical management strat egies ar e most eff ectiv e in such pr egnancies? [2011] 
+5 Progester one in pr eventing spon tane ous pr eterm bir th in t win 
+and trip let pregnancies 
+What is t he clinical and cost eff ectiv eness of pr ogest erone in pr eventing spontaneous 
+preterm bir th in w omen or pr egnant people wit h twin and triplet pr egnancies and a hist ory 
+of pr evious pr eterm bir th? [202 4] 
+For a shor t explanation of wh y the committ ee made t he recommendation f or resear ch, 
+see t he rationale section on pr eventing pr eterm bir th. 
+Full details of t he evidence and t he committ ee's discussion ar e in evidence r eview K: 
+progest erone f or pr eventing spontaneous pr eterm bir th in twin and triplet pr egnancy . 
+Other r ecommenda tions f or research 
+6 Gesta tional ag e 
+How should gestational age be estimat ed in twin and triplet pr egnancies? [2011] 
+7 Chorionici ty 
+What is t he most accurat e met hod of det ermining chorionicity in twin and triplet 
+pregnancies at diff erent gestational ages, and ho w does operat or experience aff ect t he 
+accuracy of diff erent met hods? [2011] 
+8 Nutritional supp lemen ts 
+Is dietar y supplementation wit h vitamins or minerals, or dietar y manipulation in t erms of 
+calorie intak e, eff ectiv e in twin and triplet pr egnancies? [2011] Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 4 1 of
+689 Diet and lif estyle ad vice 
+Is dietar y advice specific t o twin and triplet pr egnancies eff ectiv e in impr oving mat ernal 
+and f etal healt h and w ellbeing? [2011] 
+10 Scr eening f or struc tural abnormali ties 
+When and ho w should scr eening f or structural abnormalities be conduct ed in twin and 
+triplet pr egnancies? [2011] 
+11 Hyper tension 
+Which clinical f actors, laborat ory scr eening t ests, and ultrasound t ests are predictiv e of 
+hyper tensiv e disor ders in twin and triplet pr egnancies? [2011] 
+12 Untargeted corticoster oids 
+What is t he clinical and cost eff ectiv eness, and saf ety, of r outine ant enatal administration 
+of a single course of cor ticost eroids f or women wit h twin and triplet pr egnancies who ar e 
+not in labour and in whom labour and bir th are not imminent? [2011] 
+13 Indic ations f or referral to a ter tiary level fetal me dicine c entre 
+What is t he clinical and cost eff ectiv eness of r eferral t o tertiary level fetal medicine centr es 
+for twin and triplet pr egnancies complicat ed by discor dant f etal gr owth, discor dant f etal 
+anomaly or discor dant f etal deat h? [2011] Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 42 of
+68Rationale and im pact 
+These sections briefly e xplain wh y the committ ee made t he recommendations and ho w 
+they might aff ect practice. The y link t o details of t he evidence and a full description of t he 
+committ ee's discussion. 
+Intrapar tum c are 
+Recommendation 1 .3.6 
+Why the c ommi ttee made the r ecommenda tion 
+The committ ee recognised t hat t he cor e multidisciplinar y team r ecommended b y the 
+previous guideline (see r ecommendation 1 .3.1) provides car e during t he ant enatal period 
+and w ould not be t he same t eam pr oviding intrapar tum car e. Because intrapar tum car e 
+was added t o the guideline updat e, they made a r ecommendation t o clarify t hat healt hcare 
+professionals suppor ting w omen when t hey are giving bir th should also ha ve kno wledge 
+and e xperience in multiple pr egnancy . 
+How the r ecommenda tion mig ht affect practice 
+The r ecommendation r einforces curr ent practice. 
+Return t o recommendation 
+Screening f or chr omosomal c ondi tions 
+Recommendations 1 .4.3 to 1.4.8 
+Why the c ommi ttee made the r ecommenda tions 
+Since t he 2011 guideline, t he National Scr eening Committ ee's r ecommendations on 
+screening for fetal chr omosomal conditions ha ve been published and ha ve been 
+implement ed by the NHS f etal anomaly scr eening pr ogramme (FASP). These apply t o 
+women wit h bot h singlet on and twin pr egnancies, so t he 2011 r ecommendations w ere Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 43 of
+68replaced b y a cr oss r eference t o this scr eening pr ogramme. The committ ee recognised 
+that no curr ent guidance e xists for triplet s so t hey retained a r ecommendation on triplet s 
+from t he 2011 guideline. Ho wever, based on t heir e xper tise t hey decided t his e xisting 
+recommendation w ould apply only t o scr eening in trichorionic triplet s so t hey made an 
+additional r ecommendation about dichorionic and monochorionic triplet pr egnancies. 
+Because of t he comple xity of scr eening t hese types of triplet pr egnancies, t his scr eening 
+should only be carried out aft er referral t o a tertiary level fetal medicine centr e. 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendations r einforce curr ent best practice. 
+Return t o recommendations 
+Screening f or pr eterm bir th 
+Recommendations 1 .4.13 to 1.4.15 
+Why the c ommi ttee made the r ecommenda tions 
+The committ ee agr eed, based on t heir e xperience and e xper tise, t hat w omen and 
+pregnant people should be giv en inf ormation about t he higher risk of pr eterm bir th in twin 
+and triplet pr egnancy compar ed wit h singlet on pr egnancy , and about f actors t hat ma y 
+further incr ease t his risk. 
+The committ ee retained t he existing 2011 r ecommendations t hat f etal fibr onectin t esting 
+and home ut erine activity monit oring should not be used t o predict t he risk of spontaneous 
+preterm bir th because t here was still no e vidence suggesting t hey were accurat e. 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendations r einforce curr ent best practice. 
+Return t o recommendations 
+Screening f or fetal gr owth r estric tion and f eto-fetal Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 44 of
+68transfusion syndr ome in the fir st trimester 
+Recommendation 1 .4.16 
+Why the c ommi ttee made the r ecommenda tion 
+Fetal gr owth restriction 
+Ther e was e vidence t hat discor dance in eit her cr own–rump lengt h or nuchal translucency 
+during t he first trimest er is not an accurat e predict or of gr owth discor dance in t he second 
+and t hird trimest er. The committ ee discussed t he evidence f or ot her ultrasound scr eening 
+measur es in t he first trimest er and decided t hat because of it s low quality t hey were not 
+confident in r ecommending an y scr eening t ests in t he first trimest er. 
+Feto-fetal tr ansfusion syndr ome 
+The e vidence sho wed that none of t he first trimest er scr eening t ests were able t o det ect 
+the risk of f eto-fetal transfusion syndr ome de veloping lat er in t he pr egnancy . Although 
+there were uncer tainties in t his e vidence, it was suppor ted by the committ ee's clinical 
+experience and curr ent clinical practice. 
+How the r ecommenda tion mig ht affect practice 
+The r ecommendation r einforces curr ent practice. 
+Return t o recommendations 
+Diagnostic moni toring f or fetal gr owth r estric tion 
+in dichorionic t win and trichorionic trip let 
+pregnancies 
+Recommendations 1 .4.17 to 1.4.23 
+Why the c ommi ttee made the r ecommenda tions 
+Based on e vidence which sho wed that abdominal palpation and symph ysis–fundal height Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 45 of
+68were not accurat e measur ement s to diagnose f etal gr owth restriction, t he committ ee 
+recommended t hat t hese should not be used. 
+Fetal gr owth restriction is associat ed wit h perinatal mor tality , morbidity and pr eterm bir th. 
+The committ ee agr eed t hat monit oring using ultrasound scanning is essential t o identify 
+women in t his high-risk gr oup. 
+Frequency of ultr asound scanning 
+The e vidence was limit ed on t he fr equency of ultrasound scanning f or women wit h 
+dichorionic twin pr egnancies but, based on t heir e xper tise, t he committ ee agr eed t hat 
+women wit h a dichorionic twin pr egnancy should ha ve scans no mor e than 28 days apar t. 
+They also r ecommended ultrasound monit oring at least e very 14 days for women wit h all 
+types of triplet pr egnancy (r ecommendations 1 .4.19 and 1 .4.32) because t hey are at higher 
+risk of f etal gr owth restriction. 
+Fetal w eight discor dance and estimat ed fetal w eight belo w 10t h centile f or 
+gestational age: diagnostic monit oring and r eferral 
+Based on bot h the evidence and t heir e xper tise, t he committ ee recommended using at 
+least 2 different biometric paramet ers as w ell as amniotic fluid le vel assessment t o provide 
+greater accuracy in calculating estimat ed fetal w eight (EFW). 
+The Royal College of Obst etricians and Gynaecologist s' Gr een T op guideline on 
+monochorionic twin pr egnancy recommends r eferring w omen 'f or assessment and 
+management in f etal medicine unit s wit h recognised r elevant e xper tise' if t here is an EFW 
+discor dance of mor e than 20%. In t he committ ee's e xperience, t his le vel of discor dance 
+should cause concern in all types of twin and triplet pr egnancy and should pr ompt 
+increased monit oring. Ho wever, they recommended inst ead incr easing t o weekly 
+monit oring and adding t he extra paramet er of a Doppler assessment. This w ould be 
+equiv alent t o the specialist assessment r ecommended b y the Gr een T op guideline 
+because it w ould need t o be carried out b y the specialist cor e team (in line wit h 
+recommendation 1 .3.1) who ha ve experience and kno wledge of managing twin and triplet 
+pregnancies. The committ ee agr eed t hat t his w ould not be inconsist ent wit h the Gr een 
+Top guideline. 
+The committ ee also agr eed t hat t he EFW s themselv es should be tak en int o account. Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 46 of
+68Based on t he evidence and t heir e xper tise t hey recommended t he 10t h centile f or 
+gestational age as a t hreshold f or concern t hat should pr ompt incr eased monit oring. 
+The e vidence was inconclusiv e about an e xact t hreshold f or referral t o a tertiary level fetal 
+medicine centr e, so based on t heir o wn e xperience t he committ ee decided t hat an EFW 
+discor dance of 25% or mor e (along wit h an EFW belo w the 10t h centile f or gestational age) 
+should warrant r eferral. A t this le vel of discor dance, t here would be an incr eased risk of 
+perinatal morbidity and mor tality t hat should pr ompt int ervention rat her t han incr eased 
+assessment. The t ertiary level fetal medicine centr e would ha ve the exper tise t o weigh up 
+the benefit s and risks of conser vative management, bir th or in vasive fetal t herap y to 
+improve the chance of a positiv e pregnancy out come. 
+How the r ecommenda tions mig ht affect practice 
+These r ecommendations ar e largely r einforcing curr ent practice in twin pr egnancy and 
+should ha ve a minimal impact on local ultrasound r esour cing. The y are consist ent wit h 
+other national and int ernational guidance. 
+The r ecommendations t o monit or all w omen wit h a triplet pr egnancy at no mor e than 
+14-da y intervals (irr espectiv e of chorionicity) ar e a change in practice, par ticularly f or 
+women wit h a trichorionic triamniotic pr egnancy . For these w omen, pr evious 
+recommendations suggest ed 4-w eekly scans. Ho wever, the change is justified because all 
+types of triplet pr egnancy ar e at high risk of f etal gr owth restriction. The r ecommendation 
+should not ha ve a significant impact on clinical r esour ces because of t he lo w number of 
+women wit h a triplet pr egnancy . 
+Return t o recommendations 
+Diagnostic moni toring f or feto-fetal tr ansfusion 
+syndr ome 
+Recommendations 1 .4.24 to 1.4.29 
+Why the c ommi ttee made the r ecommenda tions 
+The committ ee agr eed t hat f eto-fetal transfusion syndr ome is difficult t o det ect using 
+amniotic fluid discor dance bef ore 16 weeks of pr egnancy . After this stage, amniotic fluid Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 47 of
+68levels ha ve incr eased and diff erences betw een t hem can be used t o diagnose f eto-fetal 
+transfusion syndr ome. Monit oring f ortnight ly from 16 weeks should ensur e that f eto-fetal 
+transfusion syndr ome is diagnosed as early as possible. The committ ee decided based on 
+their e xper tise, and on limit ed evidence fr om studies t hat conduct ed diagnostic scans 
+after 24 weeks, t hat continuing f ortnight ly monit oring until bir th would impr ove out comes 
+for women who de velop f eto-fetal transfusion syndr ome lat er in pr egnancy (alt hough it is 
+less common aft er 26 weeks). The committ ee also agr eed t hat off ering w omen wit h a 
+monochorionic pr egnancy scans at 14-da y intervals means t hat t he w oman can be 
+monit ored efficient ly for all t he complications in r ecommendation 1 .4.24 at each scan. 
+To suppor t this fr equency of monit oring, t he committ ee also incr eased t he number of 
+reviews b y the specialist obst etrician fr om at least 2 (in t he 2011 guideline) t o at least 5 for 
+dichorionic and monochorionic triamniotic triplet pr egnancies (r ecommendation 1 .3.10). 
+Dichorionic triamniotic triplet s have an incr eased risk of adv erse out comes compar ed wit h 
+monochorionic diamniotic twins if f eto-fetal transfusion occurs. The risk of complications 
+of monochorionicity , and of adv erse out comes if complications occur , is higher in triplet s 
+than in twins. Mor e frequent r eview b y the specialist obst etrician w ould ensur e optimal 
+critical assessment of ultrasound findings (including findings r elated to feto-fetal 
+transfusion syndr ome) and an y need f or mor e frequent monit oring. 
+The committ ee agr eed t hat making sur e the amniotic membrane is visible in t he scan 
+reduces t he chance of measuring t he same sac twice in err or and impr oves accuracy in 
+identifying a diff erence betw een t he babies' amniotic fluid le vels. 
+Based on t heir kno wledge and e xperience, t he committ ee agr eed t hat w omen should be 
+referred immediat ely to a tertiary level fetal medicine centr e when diff erences in amniotic 
+fluid le vels meet t he crit eria f or diagnosing f eto-fetal transfusion syndr ome. The clinical 
+course of f eto-fetal transfusion syndr ome can be unpr edictable so t his w ould allo w prompt 
+assessment and early int ervention. The y also agr eed t hat when diff erences in amniotic 
+fluid le vels ar e measur ed that do not y et meet t he threshold f or feto-fetal transfusion 
+syndr ome, w omen should be seen b y their named specialist obst etrician f or multiple 
+pregnancy and off ered mor e frequent monit oring, using Doppler assessment t o help 
+detect f eto-fetal transfusion syndr ome as early as possible. 
+How the r ecommenda tions mig ht affect practice 
+Monit oring f or feto-fetal transfusion syndr ome fr om 16 weeks of pr egnancy until bir th is a 
+change t o curr ent practice, in which monit oring is only carried out until w eek 24. Early Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 48 of
+68detection w ould enable pr ompt management, and t his w ould outw eigh t he cost of 
+additional ultrasound. 
+Return t o recommendations 
+Diagnostic moni toring f or fetal gr owth r estric tion 
+in monochorionic t win and trip let pregnanc y 
+Recommendations 1 .4.30 to 1.4.36 
+A monochorionic twin or triplet pr egnancy is one in which an y of t he babies shar e a 
+placenta and a chorionic ( outer) membrane. This includes monochorionic twins and 
+dichorionic and monochorionic triplet s. 
+Why the c ommi ttee made the r ecommenda tions 
+Based on e vidence which sho wed that abdominal palpation and symph ysis–fundal height 
+were not accurat e measur ement s to diagnose f etal gr owth restriction, t he committ ee 
+recommended t hat t hese should not be used. 
+Fetal gr owth restriction is associat ed wit h perinatal mor tality , morbidity and pr eterm bir th. 
+The committ ee agr eed t hat monit oring using ultrasound scanning is essential t o identify 
+women in t his high-risk gr oup. 
+Frequency of ultr asound scanning 
+The e vidence was limit ed on t he fr equency of ultrasound scanning f or women wit h 
+monochorionic pr egnancies, so t he committ ee used t heir e xper tise t o mak e 
+recommendations. The y agr eed t hat w omen wit h a monochorionic twin pr egnancy need 
+more frequent scans t han w omen wit h a dichorionic twin pr egnancy because t hey have a 
+higher risk of se vere growth discor dance. 
+Scanning at no mor e than 14-da y intervals w ould allo w the w oman t o be r eferred pr ompt ly 
+either t o her specialist obst etrician f or multiple pr egnancy or t o a tertiary level fetal 
+medicine centr e depending on t he EFW s (see belo w). The committ ee also agr eed t hat 
+because w omen wit h a monochorionic pr egnancy should be ha ving scans at 14-da y 
+intervals to monit or for feto-fetal transfusion syndr ome, t hese timings mean t hey can be Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 49 of
+68monit ored for bot h of t hese complications at t he same time (in line wit h recommendation 
+1.4.24). 
+The committ ee also r ecommended ultrasound monit oring at least e very 14 days for women 
+with all types of triplet pr egnancy (r ecommendations 1 .4.19 and 1 .4.32) because t hey are 
+at higher risk of f etal gr owth restriction. 
+Fetal w eight discor dance and estimat ed fetal w eight belo w 10t h centile f or 
+gestational age: diagnostic monit oring and r eferral 
+Based on bot h the evidence and t heir e xper tise, t he committ ee recommended using at 
+least 2 different biometric paramet ers as w ell as amniotic fluid le vel assessment t o provide 
+greater accuracy in calculating EFW . 
+The Royal College of Obst etricians and Gynaecologist s' Gr een T op guideline on 
+monochorionic twin pr egnancy recommends r eferring w omen 'f or assessment and 
+management in f etal medicine unit s wit h recognised r elevant e xper tise' if t here is an EFW 
+discor dance of mor e than 20%. The committ ee agr eed wit h the Gr een T op guideline t hat 
+this le vel should cause concern and pr ompt incr eased monit oring, but t hey recommended 
+instead incr easing t o weekly monit oring and adding t he extra paramet er of a Doppler 
+assessment. This w ould be equiv alent t o the specialist assessment r ecommended b y the 
+Green T op guideline because it w ould need t o be carried out b y the specialist cor e team 
+(in line wit h recommendation 1 .3.1) who ha ve experience and kno wledge of managing twin 
+and triplet pr egnancies. The committ ee agr eed t hat t his w ould not be inconsist ent wit h the 
+Green T op guideline. 
+The committ ee also agr eed t hat t he estimat ed fetal w eight s themselv es should be tak en 
+into account. Based on t he evidence t hey recommended t he 10t h centile f or gestational 
+age as a t hreshold f or concern t hat should pr ompt incr eased monit oring. 
+The e vidence was inconclusiv e about an e xact t hreshold f or referral t o a tertiary level fetal 
+medicine centr e, so based on t heir o wn e xperience t he committ ee decided t hat an EFW 
+discor dance of 25% or mor e (along wit h an EFW belo w the 10t h centile) should warrant 
+referral. A t this le vel of discor dance, t here would be an incr eased risk of perinatal 
+morbidity and mor tality t hat should pr ompt int ervention rat her t han incr eased assessment. 
+The t ertiary level fetal medicine centr e would ha ve the exper tise t o weigh up t he benefit s 
+and risks of conser vative management, bir th or in vasive fetal t herap y to try to impr ove the 
+chance of a positiv e pregnancy out come. Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 50 of
+68How the r ecommenda tions mig ht affect practice 
+These r ecommendations ar e largely r einforcing curr ent practice in twin pr egnancy and 
+should ha ve a minimal impact on local ultrasound r esour cing. The y are consist ent wit h 
+other national and int ernational guidance. 
+The r ecommendation t o monit or all w omen wit h a triplet pr egnancy at no mor e than 
+14-da y intervals (irr espectiv e of chorionicity) is a change in practice, par ticularly f or 
+women wit h a trichorionic triamniotic pr egnancy . For these w omen, pr evious 
+recommendations suggest ed 4-w eekly scans. Ho wever, the change is justified because all 
+types of triplet pr egnancy ar e at high risk of f etal gr owth restriction. The r ecommendation 
+should not ha ve a significant impact on clinical r esour ces because of t he lo w number of 
+women wit h a triplet pr egnancy . 
+Return t o recommendations 
+Diagnostic moni toring f or twin anaemia 
+polycythaemia se quenc e 
+Recommendations 1 .4.37 and 1 .4.38 
+Why the c ommi ttee made the r ecommenda tions 
+Ther e was limit ed evidence f or scr eening and diagnostic monit oring f or twin anaemia 
+polycythaemia sequence (T APS). The committ ee discussed, based on t heir e xper tise, t hat 
+there is also limit ed evidence on t he natural hist ory of spontaneous T APS and eff ectiv e 
+interventions f or it in uncomplicat ed monochorionic pr egnancies. The y agr eed t hat it s 
+incidence is lik ely to be lo w, so t hey could not r ecommend scr eening f or it in w omen 
+whose monochorionic pr egnancy is uncomplicat ed. 
+The committ ee agr eed t hat monit oring w ould be beneficial f or women wit h the 
+complications in r ecommendations 1 .4.37 and 1 .4.38. The y recommended scr eening f or 
+TAPS in t his population f or 2 r easons: 
+• Complicat ed monochorionic pr egnancies ha ve an incr eased risk of f etal and neonatal 
+deat h and morbidity . Diagnosing T APS as a fur ther complication is lik ely to influence 
+how the w oman's pr egnancy is managed, including t he timing of pr eterm bir th. Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 51 of
+68• Advanced T APS (stages 3 and 4) is associat ed wit h abnormal f etal umbilical ar tery 
+and ductus v enosus Doppler paramet ers, or signs of f etal car diac f ailure in t he 
+anaemic bab y. These can also occur in a number of ot her conditions, so t he diagnosis 
+of se vere TAPS ( either alone or as a comorbidity) ma y be missed if it is not specifically 
+screened f or. 
+The committ ee concluded t hat f or women who ha ve a pr egnancy in which T APS is a 
+comorbid complication or is of adv anced stage, t he risk t o the babies wit hout diagnosis 
+and int ervention is lik ely to be gr eater than t he pot ential harms of int erventions. These 
+include pr eterm bir th or pot ential in-ut ero therapies, such as in-ut ero transfusion, in pr e-
+viable or e xtremely pr ematur e pregnancies. 
+The committ ee agr eed t hat when T APS is suspect ed, w omen should be r eferred to a 
+tertiary level fetal medicine centr e. The y felt that t he benefit s of managing complicat ed 
+monochorionic pr egnancies in t his setting w ould outw eigh t he pot ential disadv antages of 
+incon venience of tra vel and transf er to unit s awa y from home. The committ ee decided not 
+to specify diagnostic crit eria because t hey want ed to emphasise t he impor tance of r eferral 
+to a tertiary level referral centr e when T APS is suspect ed, so t hat decisions about fur ther 
+assessment and management can be made wit h each individual w oman. 
+Given the limit ed evidence on t he diagnostic accuracy of middle cer ebral ar tery peak 
+systolic v elocity (MCA-PSV) f or all types of monochorionic twins, r egar dless of 
+complications, and uncer tainties about t he natural hist ory of T APS and it s management, 
+the committ ee decided t o mak e a recommendation f or resear ch on scr eening t o det ect 
+twin anaemia poly cythaemia sequence to inform futur e guidance. 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendation ma y incr ease t he number of assessment s of w omen wit h 
+complicat ed monochorionic pr egnancies and r eferral f or appr opriat e management. 
+However, the committ ee agr eed t hat an y incr ease in r eferrals w ould be off set b y the 
+benefit s of bett er det ection and management of complicat ed monochorionic pr egnancies. 
+Return t o recommendations 
+Preventing pr eterm bir th 
+Recommendations 1 .5.1 to 1.5.6 Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 52 of
+68Why the c ommi ttee made the r ecommenda tions 
+Ther e was e vidence of benefit f or vaginal pr ogest erone, wit h reduced pr eterm bir th and 
+reduced serious neonatal complications in w omen or pr egnant people wit h a twin 
+pregnancy and a shor t cer vix (defined as 25 mm or less). Ther e was no e vidence of 
+benefit f or vaginal pr ogest erone in w omen or pr egnant people wit hout a shor t cer vix. 
+Ther e was also no e vidence of benefit in t hose wit h or wit hout a pr evious hist ory of 
+preterm bir th, but t his diff ered fr om t he evidence f or singlet on pr egnancies so t he 
+committ ee made a recommendation f or resear ch on pr ogest erone in pr eventing 
+spontaneous pr eterm bir th in twin and triplet pr egnancies . Ther e was no e vidence 
+available f or vaginal pr ogest erone in w omen or pr egnant people wit h a triplet pr egnancy , 
+but t he committ ee agr eed t hat it was r easonable t o extrapolat e on a ph ysiological basis 
+that benefit s in twin pr egnancies w ould also be seen in triplet pr egnancies. 
+The committ ee not ed that all t he included studies had administ ered pr ogest erone up t o 
+34 weeks of pr egnancy , so t hey included t his in t heir r ecommendation, and t hat t he 
+majority of t he studies had used a dose of v aginal pr ogest erone 200 mg daily and t hat t his 
+was t he dose appr oved in singlet on pr egnancies, so t hey recommended t his dose. 
+The committ ee agr eed t hat, t o det ermine which w omen and pr egnant people w ould 
+benefit fr om tr eatment, it w ould be necessar y to det ermine cer vical lengt h. Consequent ly, 
+they made a r ecommendation t o carr y out a single cer vical lengt h scan in w omen and 
+pregnant people wit h a twin or triplet pr egnancy . The committ ee not ed that in t he 
+evidence, cer vical lengt h scanning had been carried out bef ore 20 weeks of pr egnancy , 
+but t he committ ee w ere awar e that cer vical lengt h scans w ere usually carried out betw een 
+16 and 20 weeks, so t hey included t his range in t heir r ecommendation. This ma y also giv e 
+units the fle xibility t o arrange t he cer vical lengt h scan t o coincide wit h other ant enatal 
+appointment s and scans. Ho wever, the committ ee not ed that sometimes cer vical lengt h 
+measur ement w ould be carried out lat er in pr egnancy , for example if a w oman or pr egnant 
+person pr esent ed wit h threatened pr eterm labour , or if t hey were late booking. In t his 
+case, t he committ ee agr eed t o recommend t hat pr ogest erone could be star ted up t o 
+24 weeks (as t here was e vidence of benefit when star ted at t his time). 
+The e vidence f or intramuscular pr ogest erone in t he pr evention of spontaneous pr eterm 
+birth sho wed it had no clinical benefit and, in some instances, had negativ e or unpleasant 
+side eff ects, so it was not r ecommended. 
+The committ ee retained t he existing 2011 r ecommendation t hat arabin pessar y, bed r est, Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 53 of
+68cervical cer clage and oral t ocolytics should not be used r outinely t o prevent spontaneous 
+preterm bir th because t here was still no e vidence t o suppor t their use. 
+How the r ecommenda tions mig ht affect practice 
+The committ ee not ed that t here would be a r esour ce impact of carr ying out cer vical lengt h 
+screening f or all w omen or pr egnant people wit h a twin or triplet pr egnancy and tr eating 
+those wit h a shor t cer vix wit h vaginal pr ogest erone. Ho wever, the healt h economic 
+modelling conduct ed for this review sho wed that carr ying out cer vical lengt h scr eening of 
+women or pr egnant people wit h a twin or triplet pr egnancy and off ering v aginal 
+progest erone t o those wit h a shor t cer vix w ould r educe pr eterm bir ths and t he associat ed 
+neonatal morbidity and was a cost -effectiv e use of NHS r esour ces. 
+The r ecommendations f or intramuscular pr ogest erone, arabin pessar y, bed r est, cer vical 
+cerclage and oral t ocolytics r einforce curr ent practice. 
+Return t o recommendations 
+Planning bir th: inf orma tion and suppor t 
+Recommendations 1 .8.1 to 1.8.3 
+Why the c ommi ttee made the r ecommenda tions 
+The committ ee discussed t he impor tance of pr oviding car e that is w oman-centr ed, in 
+which shar ed decision-making betw een t he w oman and her healt hcare professional is 
+essential. The committ ee agr eed on t he topics t hat need t o be discussed wit h women t o 
+explain t he available options and find out t heir wishes. Inf ormation needs t o be tailor ed to 
+each w oman's pr egnancy because some twin and triplet pr egnancies carr y mor e risks t han 
+others. 
+The committ ee ackno wledged equality considerations f or women who ma y have additional 
+needs (such as needing an int erpreter) in t he cont ext of pr oviding inf ormation and 
+communication. The y cross-r eferred to NICE's guideline on patient e xperience in adult 
+NHS ser vices , which describes general good practice on ho w to do t his. 
+Return t o recommendations Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 54 of
+68Timing o f bir th 
+Recommendations 1 .9.1 to 1.9.12 
+Why the c ommi ttee made the r ecommenda tions 
+Antenatal inf ormation f or w omen 
+The committ ee agr eed t hat it was critical t o giv e women t he inf ormation t hey need t o 
+participat e in shar ed decisions about when t heir babies ar e born. This includes e xplaining 
+the kno wn risk of spontaneous pr eterm bir th in twin and triplet pr egnancy and it s possible 
+consequences, such as admission t o a neonatal unit. The committ ee retained t his advice 
+from t he 2011 guideline because it was consist ent wit h their e xperience and kno wledge. 
+They agr eed t hat t his inf ormation is impor tant f or planning t he timing of bir th. 
+Women also need t o kno w wh y it is r ecommended f or them t o have a planned bir th by a 
+particular w eek of pr egnancy (also see when t o off er planned bir th). Ther e is a trade-off 
+betw een clinical benefit s and harms when w omen ha ve not giv en bir th spontaneously b y a 
+given gestational age. These include t he risks of neonatal mor tality and morbidity 
+associat ed wit h planned bir th compar ed wit h the risks of stillbir th from continued 
+pregnancy . The committ ee agr eed t hat bot h timing and mode of bir th should be discussed 
+with women in t he cont ext of t hese pot ential risks. W omen can use t his advice t o mak e an 
+informed choice. 
+When t o off er planned bir th 
+Ther e was not enough good e vidence t o conclusiv ely identify t he optimal timing of bir th 
+accor ding t o chorionicity and amnionicity , so t he committ ee also used t heir e xper tise and 
+experience t o mak e recommendations. 
+Twin pr egnancy 
+Evidence suggest s a consist ently higher f etal deat h rat e (at all gestational ages) in 
+monochorionic twin pr egnancies t han in dichorionic twin pr egnancies. The committ ee 
+therefore recommended earlier planned bir th, at 36 weeks, f or women wit h a 
+monochorionic diamniotic pr egnancy t o reflect t he higher risk and comple xity of t his type 
+of pr egnancy . This was consist ent wit h the 2011 guideline and t herefore corr esponds t o Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 55 of
+68current clinical practice. 
+The committ ee also clarified t he timing of bir th for monochorionic monoamniotic twins, 
+which was not e xplicit ly co vered by the 2011 guideline – t he pr evious guideline did not 
+divide monochorionic twins int o diamniotic or monoamniotic gr oups. Based on some 
+evidence and t heir o wn kno wledge and e xperience, t he committ ee recommended off ering 
+planned bir th betw een 32+0 and 33+6 weeks because t his timing did not appear t o be 
+associat ed wit h an incr eased risk of serious neonatal adv erse out comes. 
+Uncomplicat ed trichorionic triamniotic or dichorionic triamniotic triplet 
+pregnancy 
+The committ ee clarified t he recommendations fr om t he 2011 guideline b y considering 
+triplet pr egnancies b y type rat her t han as a single gr oup. No e vidence was f ound on timing 
+of bir th in triplet pr egnancy but t he committ ee agr eed based on t heir o wn clinical 
+experience t hat continuing an uncomplicat ed trichorionic triamniotic or a dichorionic 
+triamniotic triplet pr egnancy be yond 35+6 weeks of pr egnancy w ould lead t o an incr eased 
+risk of f etal deat h (recommendation 1 .9.7). Planned bir th should t herefore be off ered at 
+35 weeks (r ecommendation 1 .9.10). 
+Individual assessment t o det ermine timing of bir th 
+Because of significant risks f or the babies in complicat ed twin and triplet pr egnancies, and 
+the rar eness of monochorionic triamniotic triplet pr egnancies and triplet pr egnancies wit h 
+a shar ed amnion, timing of bir th should be assessed and discussed individually 
+(recommendations 1 .9.8 and 1 .9.11). 
+When planned bir th is declined 
+The committ ee highlight ed that w omen's choice needs t o be r espect ed and t hat if a 
+woman declines planned bir th at t he recommended time, she should be off ered w eekly 
+appointment s to minimise risk, monit or pr ogress and help t o identify an y complications as 
+soon as possible. 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendations clarify t he timing of when w omen wit h a monochorionic 
+monoamniotic pr egnancy should be off ered planned bir th. Alt hough t his is a change fr om Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 56 of
+68the 2011 guideline, it r einforces curr ent practice. 
+Return t o recommendations 
+Mode o f bir th 
+Recommendations 1 .10.1 to 1.10.7 
+Why the c ommi ttee made the r ecommenda tions 
+Twin pr egnancy: dichorionic diamniotic and monochorionic diamniotic 
+For women who ar e mor e than 32 weeks pr egnant and ha ve an uncomplicat ed pr egnancy , 
+the evidence sho wed there is no significant diff erence in risk betw een v aginal bir th and 
+caesar ean section, bot h for the w oman and her babies. The committ ee's e xperience 
+suppor ted this, so t hey agr eed t hat healt hcare professionals should e xplain t his to the 
+woman and suppor t her choice as long as t he conditions in r ecommendation 1 .10.1 are met 
+and t he first bab y is in a head-first position. 
+Ther e was only limit ed evidence about mode of bir th when t he first bab y is not head first. 
+The committ ee agr eed t hat in t heir clinical e xperience, t his carries a higher risk of 
+problems such as cor d accident s during bir th. Because of t his, a caesar ean section is t he 
+safest option t o off er women aft er 32 weeks and f or women in established pr eterm labour 
+betw een 26 and 32 weeks. 
+Accor ding t o the evidence, not all w omen giv e bir th accor ding t o their bir th plan. The 
+committ ee decided it was impor tant t o explain t his to women so t hat t hey are prepar ed for 
+the possibility of not giving bir th in t he wa y they prefer. 
+Monochorionic monoamniotic twin pr egnancy and triplet pr egnancy 
+Monochorionic monoamniotic twin pr egnancies and triplet pr egnancies ar e the least 
+common and highest -risk types of pr egnancy and e vidence about mode of bir th was 
+limited for these w omen. Ho wever, the committ ee agr eed fr om t heir e xperience t hat 
+caesar ean section should be t he pr eferred option and should be off ered at t he time t he 
+birth is planned t o happen or aft er the diagnosis of established labour . If the first twin is 
+close t o being born v aginally t here can be risks f or the babies, so t he committ ee decided Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 57 of
+68that senior obst etric assessment w ould be needed. 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendations lar gely r eflect curr ent practice. Suppor ting t he w oman's pr eferred 
+mode of bir th might incr ease t he number of planned v aginal bir ths, which ma y reduce 
+costs. This is lik ely to be par tly off set b y the fact t hat a pr opor tion of t hese w omen w ould 
+go on t o giv e bir th by caesar ean section f or one or bot h twins. 
+Return t o recommendations 
+Fetal moni toring during labour in t win pr egnanc y 
+Recommendations 1 .11.1 to 1.11.21 
+Why the c ommi ttee made the r ecommenda tions 
+Twin pr egnancy 
+Ther e was no e vidence on t he most eff ectiv e met hod of f etal monit oring in labour f or 
+improving out comes in w omen wit h a twin pr egnancy and t heir babies, so t he committ ee 
+used t heir e xper tise and e xperience along wit h NICE guidance on f etal monit oring in 
+singlet on pr egnancy ( NICE's guideline on intrapar tum car e) to mak e recommendations. 
+They agr eed t hat clinically it is w ell recognised t hat twins ar e at incr eased risk of 
+complications during labour , especially t he second twin, so t hey recommended continuous 
+fetal monit oring. Continuous car diotocograph y monit oring is t he only modality t hat can 
+assess bot h twin f etal hear t rates simultaneously during established labour . 
+Antenatal inf ormation f or w omen 
+The committ ee agr eed on t he impor tance of e xplaining t o women t he lack of e vidence 
+about monit oring wit h car diotocograph y specifically in twins, and t hat r ecommendations 
+are based on NICE guidance f or singlet on pr egnancy (intrapar tum car e). Healt hcare 
+professionals should pr ovide a detailed e xplanation of what car diotocograph y involves and 
+why it is used and giv e women a chance t o discuss t heir wishes and concerns. 
+Recommending t his bef ore 28 weeks giv es w omen time t o mak e an inf ormed decision and 
+takes int o account t he fact t hat man y twins ar e born pr ematur ely. Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 58 of
+68Intrapar tum monit oring 
+The committ ee recommended off ering continuous car diotocograph y to women in 
+established labour wit h a twin pr egnancy o ver 26 weeks because at t his gestational age, 
+neonatal sur vival rat es impr ove and t he risks of neonatal morbidity fr om pr eterm bir th are 
+falling. The adv antages of using car diotocograph y over int ermitt ent auscultation 
+monit oring include t he ability t o assess baseline v ariability and monit or continuously . 
+Performing a por table ultrasound (bedside) scan at t he star t of established labour not only 
+helps t o confirm which is t he first and which t he second twin and locat e the fetal hear ts 
+but also confirms pr esentation – malpr esentation is mor e common in twin pr egnancy t han 
+singlet on pr egnancy and an emer gency caesar ean section ma y be indicat ed if t he first 
+twin pr esent s in t he br eech position. 
+The committ ee recommended in volving a senior obst etrician t o decide ho w twins ar e 
+monit ored in established e xtreme pr ematur e labour (23+0 t o 25+6 w eeks of pr egnancy) in 
+line wit h NICE's guideline on pr ematur e labour and bir th in singlet on pr egnancies. 
+The committ ee recommended dual channel monit ors t o mak e sur e bot h fetal hear t rates 
+could be monit ored and displa yed accurat ely at t he same time on t he same r ecord during 
+labour . Mat ernal pulse monit oring should be displa yed on t he same continuous 
+cardiotocograph y trace t o ensur e 2 fetal hear t rates w ere being r ecorded (wit hout 
+mistaking t he mat ernal hear t rate for a f etal hear t rate). 
+The committ ee recommended classifying and int erpreting car diotocograph y in a wa y that 
+is broadly consist ent wit h the NICE guideline on intrapar tum car e, but wit h additional 
+considerations specific t o twins. These include r egar ding twin pr egnancy as a f etal clinical 
+risk f actor when classifying a car diotocograph finding as 'abnormal' or 'non-r eassuring' . 
+This w ould r esult in a lo wer threshold f or classifying a car diotocograph as pat hological. 
+Management based on car diot ocogr aphy 
+Failing t o successfully monit or one or bot h babies could lead t o adv erse perinatal 
+outcomes so t he committ ee recommended in volving a senior healt hcare professional. 
+They also r ecommended applying a f etal scalp electr ode t o the first bab y while continuing 
+abdominal monit oring of t he second bab y if abdominal monit oring is unsuccessful or t here 
+are concerns about synchr onicity of t he fetal hear ts. This should only be carried out aft er 
+34 weeks of pr egnancy and if t here are no contraindications such as HIV , hepatitis or 
+maternal t hrombocyt openia. Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 59 of
+68If there is 'suspicious' car diotocograph y in t he first bab y during established labour , the 
+committ ee recommended in volving a senior healt hcare professional t o help manage 
+reversible causes such as deh ydration, inf ection or positional loss of contact, bef ore 
+applying a f etal scalp electr ode t o the first bab y (in t he absence of contraindications) 
+while continuing abdominal monit oring of t he second bab y. 
+In case of 'pat hological' car diotocograph y in t he first bab y, a senior healt hcare 
+professional should discuss wit h the w oman using f etal blood sampling in t he first bab y if 
+the benefit s are likely to outw eigh t he pot ential risks – t hese include a voiding a second-
+stage caesar ean section, which incr eases mat ernal morbidity and mor tality . 
+After the first bab y is born, car diotocographic monit oring of t he second bab y should 
+continue t o det ect an y 'suspicious' or 'pat hological' car diotocograph y that could lead t o 
+the need f or a caesar ean section. 
+Triplet pr egnancy 
+The committ ee did not mak e recommendations f or women wit h a triplet pr egnancy 
+because most of t hese w omen giv e bir th by caesar ean section. Monit oring in labour w ould 
+therefore be rar e and decisions w ould be made on an individual basis. 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendations ar e consist ent wit h the NICE guideline on intrapar tum car e taking 
+into account t he twin-specific measur es. It is not anticipat ed that t he recommendations 
+will lead t o major changes in curr ent clinical practice. 
+Return t o recommendations 
+Analg esia 
+Recommendations 1 .12.1 to 1.12.3 
+Why the c ommi ttee made the r ecommenda tions 
+Ther e is limit ed evidence on analgesia in labour f or women wit h a twin pr egnancy , and no 
+evidence f or women wit h a triplet pr egnancy , so t he committ ee used t heir e xper tise and Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 60 of
+68experience along wit h the very limit ed evidence t o mak e recommendations. The y agr eed 
+that t here is v ariation in practice in r elation t o when healt hcare professionals discuss 
+analgesia and anaest hesia wit h women and what t hey should discuss, so t hey specified 
+when t his should happen during pr egnancy and what t o cover. 
+Women wit h a twin or triplet pr egnancy ha ve an incr eased risk of int ervention in labour , 
+including assist ed bir th or caesar ean section f or 1 or mor e of t he babies, and additional 
+internal manoeuvr es. Ha ving an epidural in place allo ws analgesia or anaest hesia t o be 
+given quickly when it is needed, r educing t he pot ential need f or emer gency general 
+anaest hesia. 
+The limit ed evidence suggest ed that ha ving an epidural in place also r educes t he need f or 
+emer gency caesar ean section f or the second twin aft er vaginal bir th of t he first twin, 
+possibly b y allo wing mor e eff ectiv e internal manoeuvr es to allo w the second twin t o be 
+born v aginally . 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendations r einforce curr ent best practice. 
+Return t o recommendations 
+Manag ing the thir d stag e of labour 
+Recommendations 1 .13.1 to 1.13.9 
+Why the c ommi ttee made the r ecommenda tions 
+The e vidence was v ery limit ed, so t he committ ee used t heir clinical e xper tise and 
+experience t o mak e recommendations. Multiple pr egnancy is a risk f actor for postpar tum 
+haemorrhage (see NICE's guideline on intrapar tum car e) because of o ver-dist ension of t he 
+uterus and enlar ged placenta(s). The committ ee agr eed t hat healt hcare professionals 
+should e xplain t his to women in t he ant enatal period and assess and r e-evaluat e each 
+woman's individual risk as her pr egnancy pr ogresses. 
+Because of t he risk of postpar tum haemorrhage, t he committ ee agr eed t hat activ e 
+management of t he third stage of labour using ut erotonics should be off ered to all w omen, Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 61 of
+68and ph ysiological management should not be off ered. 
+It is alr eady w ell-established as curr ent practice and is suppor ted by the committ ee's 
+experience t hat when w omen ha ve mor e than 1 risk f actor for postpar tum haemorrhage, 
+additional ut erotonics can r educe t his risk. Ther e is no clear e vidence on t he comparativ e 
+effectiv eness of diff erent ut erotonics in twin or triplet pr egnancy . Each ut erotonic has risk 
+factors and contraindications, so t he committ ee did not r ecommend a specific one. 
+The committ ee agr eed on t he impor tance of ha ving e xisting intra venous access and blood 
+product s readily a vailable in case a postpar tum haemorrhage does occur . 
+How the r ecommenda tions mig ht affect practice 
+The r ecommendations r einforce curr ent best practice. 
+Return t o recommendations Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 62 of
+68Context 
+Twins or triplet s occur in appr oximat ely 1 in 60 pr egnancies (16 in e very 1,000 w omen 
+giving bir th in 2015 had a multiple bir th), and 3% of liv e-born babies ar e from multiple 
+gestations. The incidence of multiple bir ths has risen in t he past 30 years. This is due 
+mainly t o incr easing use of assist ed reproduction t echniques, including in vitro fertilisation 
+(IVF), and also t o changing demographics as w omen def er pr egnancy and twins ar e mor e 
+common at lat er ages (102 in e very 1,000 w omen giving bir th in 2015 w ere aged 45 or 
+over). 
+Women wit h a twin or triplet pr egnancy ar e at higher risk compar ed wit h women wit h a 
+singlet on pr egnancy . Adv erse out comes ar e mor e likely, bot h for the w oman and her 
+babies, during t he pr enatal and intrapar tum periods. Because of t his, w omen need 
+increased monit oring and mor e contact wit h healt hcare professionals during t heir 
+pregnancy . 
+Assessment and planning star t as soon as t he twin or triplet pr egnancy is det ected and 
+continue t hroughout pr egnancy at each ant enatal contact. Det ermining t he chorionicity 
+and amnionicity of t he pr egnancy allo ws the risk t o be stratified and t he number of 
+antenatal visit s and ultrasound e xaminations t o be planned. It is impor tant t hat ultrasound 
+surveillance is car efully scheduled t o monit or for complications including selectiv e fetal 
+growth restriction, f eto-fetal transfusion syndr ome and twin anaemia poly cythaemia 
+sequence (T APS). 
+Identifying complications earlier means t hat decisions can be made pr ompt ly about 
+referring t he w oman t o a tertiary level fetal medicine centr e. It also inf orms discussions 
+with women in t heir second and t hird trimest ers about t heir hopes and wishes in r elation 
+to timing and mode of bir th, and t he management of t he intrapar tum period (including f etal 
+monit oring, analgesia and t he third stage of labour). 
+This guideline r eplaces t he pr evious NICE guideline on multiple pr egnancy (CG129). The 
+surveillance pr ocess f ound new e vidence and identified a need t o include intrapar tum 
+care, an ar ea that was not included in t he original guideline. In curr ent practice, a 
+significant pr opor tion of multiple pr egnancy losses occur intrapar tum and t he risk of 
+adverse perinatal out comes is gr eater in multiple t han in singlet on pr egnancies. 
+The guideline updat es recommendations on scr eening and monit oring f or selectiv e fetal Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 63 of
+68growth restriction and f eto-fetal transfusion syndr ome, and mak es new r ecommendations 
+on scr eening and monit oring f or TAPS; scr eening f or and pr eventing pr eterm bir th; and 
+timing of bir th. New r ecommendations on intrapar tum car e cover mode of bir th, fetal 
+monit oring, analgesia and managing t he third stage of labour . Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 64 of
+68Finding mor e inf orma tion and c ommi ttee 
+details 
+To find NICE guidance on r elated topics, including guidance in de velopment, see t he NICE 
+topic page on pr egnancy . 
+For full details of t he evidence and t he guideline committ ee's discussions, see t he full 
+guideline and e vidence r eviews . You can also find inf ormation about how the guideline was 
+developed , including details of t he committ ee. 
+NICE has pr oduced tools and r esour ces t o help y ou put t his guideline int o practice . For 
+general help and advice on putting NICE guidelines int o practice, see resour ces t o help 
+you put guidance int o practice . Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 65 of
+68Update inf orma tion 
+April 202 4: We have review ed the evidence and made new and updat ed 
+recommendations, and a r ecommendation f or resear ch, on int erventions t o prevent 
+spontaneous pr eterm bir th and pr ogest erone f or pr eventing spontaneous pr eterm bir th in 
+twin and triplet pr egnancy . These r ecommendations ar e mark ed [2019 , amended 202 4] or 
+[202 4]. 
+Sept ember 2019: We have review ed the evidence and made new r ecommendations on 
+fetal complications, pr eterm bir th, timing of bir th and intrapar tum car e. These 
+recommendations ar e mark ed [2019] . 
+We have also made some changes wit hout an e vidence r eview: 
+• Amnionicity was added t o relevant r ecommendations in section 1 .1 (and 
+recommendation 1 .4.2) in addition t o chorionicity because monoamnionicity is an 
+additional complication t hat w ould need t o be det ermined t o inform management. 
+• 'Down's syndr ome' has been r emoved fr om recommendation 1 .1.1 because scr eening 
+for chr omosomal conditions is co vered in a separat e section. 
+• The appr oximat e timing of t he first trimest er ultrasound scan has been updat ed in line 
+with NHS f etal anomaly scr eening pr ogramme (FASP) r ecommendations in 
+recommendations 1 .3.7, 1.3.8, 1.3.9, 1.3.10 and 1 .4.5. 
+• 'The pr esence of amniotic membrane(s)' was added t o recommendations 1 .1.3 and 1 .1.5 
+because t he number as w ell as t hickness of membranes needs t o be det ermined. 
+• 'Antenatal' was added t o recommendation 1 .3.1 to distinguish t his recommendation 
+from t he new intrapar tum car e section t hat was added in t his updat e. The whole t eam 
+providing ant enatal car e would not be needed or r elevant f or intrapar tum car e. 
+• Two additional scans and appointment s were added t o recommendations 1 .3.8 and 
+1.3.9 (at 26 and 30 weeks) because of new r ecommendations on incr eased scr eening 
+and monit oring. 
+• The types of pr egnancy co vered by recommendation 1 .3.10 ar e usually complicat ed so 
+'uncomplicat ed' was r emoved. The number of appointment s wit h the specialist 
+obstetrician was also changed fr om 2 t o 5 because mor e frequent r eview is needed: Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 66 of
+68monochorionic triamniotic triplet pr egnancies ar e very rar e and ha ve a higher pot ential 
+for adv erse out comes fr om complications of monochorionicity t han monochorionic 
+twins. 
+• In the section on 'scr eening f or chr omosomal conditions': 
+－ Edwar ds' syndr ome and Patau's syndr ome w ere added t o Do wn's syndr ome 
+because since 2011 t here is no w a combined t est for all of t hem. 
+－ Twin pr egnancies ha ve been r emoved fr om recommendations in t his section 
+because t hey are covered by the NHS f etal anomaly scr eening pr ogramme (FASP). 
+• Recommendation 1 .6.2 no w simply cr oss-r efers t o the hyper tension in pr egnancy 
+guideline. 
+• Recommendation 1 .7.1 was updat ed to reflect changes in t he fetal gr owth restriction 
+section as w ell as t he addition of suspect ed twin anaemia poly cythaemia sequence 
+(TAPS) t o the guideline. T win r everse ar terial per fusion sequence (TRAP) and 
+conjoined twins or triplet s were added because t hey would alwa ys need consultant 
+opinion fr om a t ertiary level fetal medicine centr e. 
+These r ecommendations ar e mark ed [2011 , amended 2019] . 
+Recommendations mark ed [2011] last had an e vidence r eview in 2011 . In some cases 
+minor changes ha ve been made t o the w ording t o bring t he language and style up t o dat e, 
+without changing t he meaning. 
+Minor changes since publication 
+October 2023: We updat ed links t o the NICE guideline on intrapar tum car e, which has 
+been updat ed. 
+December 2022: We updat ed the links in r ecommendation 1 .11.9 to refer to the NICE 
+guideline on f etal monit oring in labour . 
+November 2022: We added '× 100' t o the formula f or calculating estimat ed fetal w eight 
+discor dance in twins and triplet s to giv e the result as a per centage. See r ecommendations 
+1.4.20, 1.4.21 and 1 .4.33. 
+December 2019: We updat ed the name of t he Twins and Multiple Bir ths Association t o Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 67 of
+68Twins T rust. 
+ISBN: 9 78-1-47 31-5885-6 Twin and triplet pr egnancy (NG137)
+© NICE 2025 . All right s reserved. Subject t o Notice of right s (https://www .nice.or g.uk/t erms-and-
+conditions#notice-of -right s).Page 68 of
+68

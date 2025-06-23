@@ -1,0 +1,389 @@
+# Extracted from: CG23001 Support Infant Feeding in CCU.pdf
+# Guideline ID: cg23001-support-infant-feeding-in-ccu
+# Content length: 17895 characters
+# Processing date: 1750066900.6585093
+
+Page 1 of 12 
+CG23001 Guideline to Support Infant Feeding and Bonding Following Admission to Critical Care Unit 
+(CCU) v 1.0 March 2023 
+Please check on the intranet that this printout is the most recent versi on of this document before use . 
+ 
+Guideline to Support Infant Feedin g and Bonding Following 
+Admission to Critical Care Unit (HDU/ITU) 
+ 
+Summary statement: How does the 
+document support patient care? 
+ The purpose of this guideline is to ensure that all 
+clinical staff working within CCU are equipp ed 
+with guidance on the care and management of 
+women/people who are transferred to their care 
+in the immediate postnatal period. 
+Staff/stakeholders involved in 
+development: Infant Feeding Team 
+Division: Women and Child ren’s 
+Department: Materni ty 
+Responsible Person: Chief of Service 
+Author: Infant Feeding Lead 
+For use by: All CCU, Obstetric and Midwifery staff 
+Purpose: To provide evidence based guidanc e in the care 
+of postnatal women /people in CCU to prevent 
+mother -baby separation and prot ect 
+breastfeeding. 
+This document supports: 
+Standards and legislation 
+Skin-to-Skin (Parent -to-Baby) Contact Gu ideline 
+(2021) ; Newborn Feeding Guideline ; 
+Unicef UK Baby Friendly Initiative Standards 
+
+Key related documents: UH Sussex (SRH & WH) Maternity Guidelines 
+Labour Risk Assessment, Antenatal Care and 
+Patient Information, Postnatal Car e, Severely 
+ill/High Dependency Care, Non Obstetric 
+Emergency Care 
+Approved by: 
+Divisional Governance/Management 
+Group Maternity Joint Obstetric Guideline Group 
+(JOGG) 
+Approval date: 15TH March 2023 
+Date uplo aded: 22nd March 2023 
+Ratified by Board of Directors/ 
+Committee of the Board of Directors N/A 
+Ratification Date: N/A 
+Expiry Date: March 2026 
+Review date: September 2025 
+If you require this document in another format such as Braille, large print, 
+audio or another language please contact the Trusts Communications Team 
+Reference Number: CG23001 
+ Page 2 of 12 
+CG23001 Guideline to Support Infant Feeding and Bonding Following Admission to Critical Care Unit 
+(CCU) v 1.0 March 2023 
+Please check on the intranet that this printout is the most recent versi on of this document before use . 
+ 
+Version Date Author Status Comment 
+1.0 March 2023 Fran 
+Humberstone & 
+Sarah Harris 
+ 
+Infant Feeding 
+Team Live New guideline 
+
+The interpretation and app lication of clinical guidelines will remain 
+the responsibility of the individual clinician. 
+ 
+If in doubt contact a senior colleague or expert . 
+ Page 3 of 12 
+CG23001 Guideline to Support Infant Feeding and Bonding Following Admission to Critical Care Unit 
+(CCU) v 1.0 March 2023 
+Please check on the intranet that this printout is the most recent versi on of this document before use . 
+Contents 
+ 
+1.0 Aim ................................ ................................ ................................ ............................. 4 
+2.0 Scope ................................ ................................ ................................ ......................... 4 
+3.0 Abbreviations used within this guideline ................................ ................................ ...... 4 
+4.0 Responsibilities ................................ ................................ ................................ ........... 4 
+5.0 Introduction ................................ ................................ ................................ ................. 5 
+6.0 Fundamentals of care ................................ ................................ ................................ . 5 
+7.0 Postnatal care of women/birthing p arents in CCU ................................ ....................... 5 
+7.1 Mother/birthing parent - baby separation ................................ ................................ .... 5 
+7.2 Skin-to-skin contact ................................ ................................ ................................ .... 5 
+7.3 Sudden unexpected postnatal collapse (SUPC): ................................ ........................ 6 
+7.4 Breastfeeding Support ................................ ................................ ............................... 6 
+7.5 If patient is on th e CCU and sedated ................................ ................................ .......... 7 
+7.6 Medication and breastfeeding compatibility ................................ ................................ 7 
+8.0 Infection Control ................................ ................................ ................................ .......... 7 
+References ................................ ................................ ................................ ............................ 9 
+Appendix 1: Standard Operating Procedure (SOP) ................................ .............................. 10 
+Appendix 2: Parent Information on sa fe skin -to-skin care/ SUPC ................................ ......... 11 
+ ................................ ................................ ................................ ................................ ............. 11 
+
+ Page 4 of 12 
+CG23001 Guideline to Support Infant Feeding and Bonding Following Admission to Critical Care Unit 
+(CCU) v 1.0 March 2023 
+Please check on the intranet that this printout is the most recent versi on of this document before use . 
+Guideline to Support Infant Feeding and Bonding Following 
+Admission to the Critical Care Unit (CCU) 
+ 
+1.0 Aim 
+ 
+The purpose of this document is to ensu re that staff within the Critical Care Unit (CCU) are 
+provided with guidance on the care and management of women/people w ho are transferred 
+in the immediate postnatal period. 
+ 
+To promote consistency in delivery of care to the required standard across the service. 
+ 
+To provide a key e lement of information to assist staff in delivering their roles and 
+responsibilities in this area of the service. 
+
+2.0 Scope 
+ 
+This guideline applies to: 
+ 
+ All medical and clinical staff wo rking within CCU 
+ Maternity staff 
+
+3.0 Abbreviations used within this guideline 
+ 
+UH Sussex - University Hospitals 
+Sussex SUPC - Sudden Unexpected Postnatal 
+Collapse 
+SCBU - Special Care Baby Unit CCU - Critical Care Unit 
+SOP - Standard Operating Procedure 
+ 
+4.0 Responsibilit ies 
+ 
+CCU and maternity staff: 
+ 
+ To access and follow this guideline and associated standard operating procedure . 
+ To use their professional judg ement in application of this guideline . 
+ 
+Management: 
+ 
+ To ensure this guideline is reviewed as req uired in line with Trust and National 
+recomm endations. 
+ To ensure this guideline is accessible to all relevant staff . 
+
+ Page 5 of 12 
+CG23001 Guideline to Support Infant Feeding and Bonding Following Admission to Critical Care Unit 
+(CCU) v 1.0 March 2023 
+Please check on the intranet that this printout is the most recent versi on of this document before use . 
+5.0 Introduction 
+ 
+Keeping mothers /birthing parents and their babies together is hugely important for b oth the 
+mother /birthing parent and the newborn, there is a physiological need for both 
+mothers /birthing parents and babies to be together at the moment of birth and in the hours 
+and days that follow. Patient centred care, as highlighted in the UK National Maternity 
+Review (2015), is vital. 
+
+6.0 Fundamentals of care 
+ 
+All mothers /birthing parents should be supported to remain with their baby whilst in CCU with 
+the support of a birth partner or a member of the maternity team . Where possible and 
+clinically suitab le, a side -room should be provided t o enable the birth part ner to stay with the 
+mother and care for the baby. 
+
+7.0 Postnatal care of women /birthing parents in CCU 
+ 
+7.1 Mother /birthing parent - baby separation 
+ 
+Mothers/birthing parents and babies to be kept together in CCU unless separation is 
+unavoidable (for example, if the baby is being cared for on the Special Care Baby Unit 
+(SCBU) ). 
+ 
+Separating infants from their mothers /birthing parents after birth will reduc e the frequency of 
+breastfeeds . This can have long -term impact on breast mi lk supply and breast feeding 
+duration. 
+ 
+7.2 Skin -to-skin contact 
+ 
+The Baby Friendly Initiative Standards require that skin -to-skin contact is valued and 
+supported in hospitals. 
+ 
+BENEFITS of skin -to-skin care include: 
+ 
+ Calms and relaxes both mother /birthing parent and baby. 
+ Regulates the baby’s heart rate and breathing, helping them to better adapt to life 
+outside the womb. 
+ Stimulates digestion and an interest in feeding. 
+ Regulates temperature. 
+ Enables colonisation of the baby’s skin with the mother’s friendly bacteria, thus 
+providing protection against infection. 
+ Stimulates the release of hormones to support breastfeeding and 
+mothering /parenting . 
+ 
+ Page 6 of 12 
+CG23001 Guideline to Support Infant Feeding and Bonding Following Admission to Critical Care Unit 
+(CCU) v 1.0 March 2023 
+Please check on the intranet that this printout is the most recent versi on of this document before use . 
+Mothers /birthing parents should be supported to have skin -to-skin care as often as possible 
+whilst on the CCU , under the supervision of the birth partner or member of the maternity 
+team. Please note : the responsibility of the ba by does not fall to the CCU staff. 
+ 
+There may be occasion s where it is not appropriate/ possible for skin -to skin to take place 
+such as : 
+ 
+ The mother /birthing parent does not feel well enough . 
+ The mother /birthing parent is not conscious or has had sleep -inducing medication . 
+ Baby is being cared for on SCBU . 
+ 
+Mothers /birthing parents and babies who are unable to have skin cont act immediately after 
+birth are e ncouraged to commence skin contact as soon as they are able. 
+ 
+7.3 Sudden unexpected postnatal collap se (SUPC): 
+ 
+SUPC is a rare but potentially fatal collapse in babies that appear otherwise healthy. Whilst 
+remaining in a room with the mother /birthing parent reduces the chances of SUPC, i n some 
+cases the positioning of the baby during skin -to-skin contact may have contributed to it 
+(Healthcare Safety Investigation Branch , 2020 ). The following c onsiderations must be made 
+to ensure that the baby is safe while skin -to-skin with the mother /birthing parent : 
+ 
+ Observation of the mother /birthing parent and baby by the birth partner , or 
+maternity staff member , with prompt removal of the baby if the health of either 
+raises concern. 
+ Mothers /birthing parents should be encouraged to be in a semi -recumbent (half 
+lying, half sitting) position to hold and feed their baby , ensuring the mother /birthing 
+parent can see the baby’s face. 
+ Care should be taken by the birth partner or maternity staff member to ensure that 
+the baby’s position is such that their airway remains clear an d does not become 
+obstructed. 
+ A maternity staff member should have a conversation with the mother /birthing 
+parent and their companion about recognising any changes in the baby’s 
+condition. 
+ Always listen to parents and respond immediately to any concerns raised. 
+ Medicines given to the mother should be co nsidered when discussing skin -to-skin 
+contact. Pain relief given to mothers can affect their ability to observe and care for 
+their baby. 
+ 
+The following leaflet on Parent information on Sudden Unexpected Postnatal Collapse 
+(SUPC ) should be provided to the p arents prior to any skin -to-skin contact on CCU 
+(Appendix 2) . 
+ 
+7.4 Breastfeeding Support 
+ 
+All women /people that intend to breastfeed their baby should be supported in doing so . Once 
+the mother /birthing parent is rea dy for visitors, CCU to contact the Midwife in Charge on the 
+ Page 7 of 12 
+CG23001 Guideline to Support Infant Feeding and Bonding Following Admission to Critical Care Unit 
+(CCU) v 1.0 March 2023 
+Please check on the intranet that this printout is the most recent versi on of this document before use . 
+postnatal ward. The Midwife in Charge will then arrange for a member of the maternity team 
+to assist with breastfeeding . 
+ 
+Contact information: 
+ 
+Bramber Ward – ext.84837 
+Tangmere Ward – ext. 3294 2 
+ 
+The Infant feeding lead can be contacted by the ward should further input be required. 
+ 
+7.5 If patient is on the CCU and s edated 
+ 
+It should be a collaborative decision between the birth partner, supported by nursing and 
+maternity staff, to facilitate contact with the baby if the birth partner feels this is appropriate to 
+the wishes of the mother /birthing parent . 
+ 
+If the baby is not able to be with the mother /birthing parent hand expression should be 
+encouraged and supported by a member of the maternity team . Once confident, the birth 
+partner can assist with the hand expressing /feeding where necessary. 
+ 
+After 24 hours, a hospital -grade breast pump can be used to express breastmilk. These can 
+be provided by the maternity postnatal ward. 
+ 
+STORAGE of brea st milk: 
+ 
+ Breastmilk can remain at room temperature for 6 hours. 
+ If milk needs to be stored for future use, it can be taken to the postnatal ward (by 
+the birth partner or member of the maternity team) and stored in the Infant Feeding 
+fridge/freezer. A ma ternity staff member must label the milk appropriately, prior to 
+transfer (name/date and time of expressing) . 
+ 
+7.6 Medication and breastfeeding compatibility 
+ 
+Please ensure maternity staff are made aware of any medications the patient is receiving , as 
+some may not be compatible with breas tfeeding. 
+ 
+For more information on individual medication compatibility with breastfeeding, please use 
+the website below: 
+ 
+https://www.breastfeedingn etwork.org.uk/drugs -factsheets 
+ 
+8.0 Infection Control 
+ 
+Skin-to-skin contact e nables colonisation of the baby’s skin with the mother’s /birthing 
+parent’s friendly bacteria, thus providing protection against infection. Similarly, breast milk 
+contains antibodies and other immunomodulary subs tances in response to pathogens to 
+ Page 8 of 12 
+CG23001 Guideline to Support Infant Feeding and Bonding Following Admission to Critical Care Unit 
+(CCU) v 1.0 March 2023 
+Please check on the intranet that this printout is the most recent versi on of this document before use . 
+which she or her baby is exposed. Keeping mother /birthing parent and baby together is 
+particularly important to protect against healthcare -associated infections for a hospitalised 
+baby. 
+ 
+ Page 9 of 12 
+CG23001 Guideline to Support Infant Feeding and Bonding Following Admission to Critical Care Unit 
+(CCU) v 1.0 March 2023 
+Please check on the intranet that this printout is the most recent versi on of this document before use . 
+References 
+ 
+Feldman -Winter, L., Goldsmith J.P. (2016). Committee On Fetus and Newborn, Task Force 
+On Sudden Infant Death Syndrome. Safe sleep and skin -to-skin care in the neonatal period 
+for healthy term newborns. Pediatrics ,138:e20161889. 
+ 
+Healthcare Safet y Investigation Branch (2020), National Learning Report Neonatal collapse 
+alongside skin -to-skin contact. [Online]. Available at https://hsib -kqcco125 -
+media.s3.amazonaws.com/assets/documents/hsib -national -learning -report -neonatal -
+collapse -alongside -skin-to-skin-contact.pdf . [Accessed 6th July 2022.] 
+ 
+Maternity Review (2015) Better births: Improving outcomes of maternity services in England. 
+A five year forward view for maternity care. [Online] Available at: 
+https://www.england.nhs.uk/wp -content/u ploads/2016/02/national -maternity -review -
+report.pdf . Accessed 6th July 2022. 
+
+ Page 10 of 12 
+CG23001 Guideline to Support Infant Feeding and Bonding Following Admission to Critical Care Unit 
+(CCU) v 1.0 March 2023 
+Please check on the intranet that this printout is the most recent versi on of this document before use . 
+Appendix 1: Standard Operating Procedure (SOP) 
+
+ Mother /birthing parent 
+transferred to CCU from 
+maternity care 
+Once mother /birthing parent is 
+ready, CCU to contact Midwife in 
+Charge on postnatal ward. 
+Breastfeeding mothers /birthing 
+parents : 
+ 
+Mothers/birthing parents intending 
+to breastfeed should be supported 
+to do so as soon as possible, with 
+the assistance of the maternity 
+staff member. 
+ Care taken to reduce risk of SU PC 
+during skin -to-skin contact - parent 
+information to be provided by 
+CCU. Under supervision - birth partner/ 
+maternity staff member: 
+ 
+Baby is placed skin -to-skin on the 
+mother /birthing parent as soon as 
+possible. 
+ 
+If baby does not latch or is not 
+present on CCU (e.g. on SCBU ), the 
+maternity staff member will support 
+mother /birthing parent to hand 
+express. 
+ 
+Maternity staff member does not 
+need to attend for every feed as long 
+as a birth partner is present. Midwife in Charge to arrange for 
+a maternity staff member to 
+escort birth partner and baby to 
+CCU . Wherever possible, the family will be 
+place d in a side room for the duration 
+of their stay. 
+Bramber Ward (Worthing) ext.84837 
+ 
+Tangmere Ward (ST Richard’s) ext. 
+32942 
+ 
+If > 24 hours old , maternity staff to 
+provide breast pump and assist with 
+use. 
+If patient is on the CCU and sedated: 
+It should be a collaborative decision between the birth partner, supported by nursing and 
+maternity staff, to facilitate contact with the baby if the birth partner feels this is appropriate 
+to the wishes of the mother /birthing parent . 
+ 
+ Page 11 of 12 
+CG23001 Guideline to Support Infant Feeding and Bonding Following Admission to Critical Care Unit 
+(CCU) v 1.0 March 2023 
+Please check on the intranet that this printout is the most recent versi on of this document before use . 
+Appendix 2: Parent Information on safe skin -to-skin care/ SUPC 
+DO NOT PRINT FROM GUIDELINE 
+
+ Page 12 of 12 
+CG23001 Guideline to Support Infant Feeding and Bonding Following Admission to Critical Care Unit 
+(CCU) v 1.0 March 2023 
+Please check on the intranet that this printout is the most recent versi on of this document before use .
