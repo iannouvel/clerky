@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 24/34",
+  "transcriptLength": 2634,
+  "transcriptPreview": "SITUATION: 29-year-old G2P1 at 11+3 weeks gestation presenting with vaginal bleeding and cramping consistent with inevitable miscarriage\n\nBACKGROUND: Mrs Peterson has experienced light vaginal bleeding for the past 3 days, initially spotting that she hoped was implantation bleeding. However, bleeding has increased to moderate flow with dark red blood and small clots. She developed cramping lower abdominal pain yesterday, described as severe period-like pain occurring in waves every 10-15 minutes...",
+  "chunkGuidelines": [
+    "mp072-newborn-feeding-pdf: MP072 Newborn Feeding",
+    "mp073-pregnancy-loss-pdf: MP073 Pregnancy Loss",
+    "mp074-assessment-and-management-of-babies-accidently-dropped-in-hospital-pdf: MP074 Assessment and Management of babies accidently dropped in Hospital",
+    "mp077-cervical-cerclage-cervical-sutre-pdf: MP077 Cervical Cerclage (Cervical Sutre)",
+    "mp079-newborn-blood-spot-screening-pdf: MP079 Newborn Blood Spot Screening",
+    "nice-2021-antenatal-care-pdf: Antenatal Care Guideline",
+    "nice-guidance-2010-hysterectomy-for-endometrial-cancer-pdf: Laparoscopic Hysterectomy for Endometrial Cancer",
+    "nice-guidance-2023-ectopic-pdf: Ectopic Pregnancy and Miscarriage: Diagnosis and Initial Management Guideline"
+  ],
+  "chunkIndex": 24,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"nice-guidance-2023-ectopic-pdf\", \"title\": \"Ectopic Pregnancy and Miscarriage: Diagnosis and Initial Management Guideline\", \"relevance\": \"0.95\"},\n    {\"id\": \"mp073-pregnancy-loss-pdf\", \"title\": \"Pregnancy Loss > 14 Weeks Maternity Protocol\", \"relevance\": \"0.85\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"nice-2021-antenatal-care-pdf\", \"title\": \"Antenatal Care Guideline\", \"relevance\": \"0.65\"},\n    {\"id\": \"mp077-cervical-cerclage-cervical-sutre-pdf\", \"title\": \"Cervical Cerclage (Cervical Sutre)\", \"relevance\": \"0.55\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"mp072-newborn-feeding-pdf\", \"title\": \"Newborn Feeding\", \"relevance\": \"0.3\"},\n    {\"id\": \"mp079-newborn-blood-spot-screening-pdf\", \"title\": \"Newborn Blood Spot Screening\", \"relevance\": \"0.2\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"mp074-assessment-and-management-of-babies-accidently-dropped-in-hospital-pdf\", \"title\": \"Assessment and Management of babies accidently dropped in Hospital\", \"relevance\": \"0.1\"},\n    {\"id\": \"nice-guidance-2010-hysterectomy-for-endometrial-cancer-pdf\", \"title\": \"Laparoscopic Hysterectomy for Endometrial Cancer\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1169
+}
