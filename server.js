@@ -6246,16 +6246,35 @@ async function migrateNullMetadata() {
           console.log(`[DEBUG] Generated new guidelineId for ${id}:`, updates.guidelineId);
         }
 
+        // Check and generate missing content/condensed text
+        try {
+          console.log(`[DEBUG] Checking content generation needs for ${id}`);
+          const contentUpdated = await checkAndGenerateContent(data, id);
+          if (contentUpdated) {
+            console.log(`[DEBUG] Content/condensed generated for ${id}`);
+            needsUpdate = true; // Mark as updated even if only content was generated
+          }
+        } catch (contentError) {
+          console.error(`[ERROR] Content generation failed for ${id}:`, contentError);
+          // Continue with other processing
+        }
+
         // Update the document if we found any metadata
         if (needsUpdate) {
-          const guidelineRef = db.collection('guidelines').doc(id);
-          batch.update(guidelineRef, updates);
+          // Only update metadata fields via batch if we have metadata updates
+          if (Object.keys(updates).length > 0) {
+            const guidelineRef = db.collection('guidelines').doc(id);
+            batch.update(guidelineRef, updates);
+            hasChanges = true;
+          }
           
-          hasChanges = true;
           results.updated++;
           results.details.push({
             id,
-            updates
+            updates: {
+              ...updates,
+              contentGenerated: 'Checked and generated if missing'
+            }
           });
         }
       } catch (error) {

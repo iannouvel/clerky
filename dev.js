@@ -905,6 +905,85 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
         }
 
+        // Handle content repair button
+        const repairContentBtn = document.getElementById('repairContentBtn');
+        if (repairContentBtn) {
+            repairContentBtn.addEventListener('click', async () => {
+                if (!confirm('Are you sure you want to repair content issues? This will check all guidelines for missing content/condensed text and attempt to generate them from PDFs. This may take several minutes.')) {
+                    return;
+                }
+                
+                try {
+                    // Update button state
+                    const originalText = repairContentBtn.textContent;
+                    repairContentBtn.textContent = '🔄 Repairing...';
+                    repairContentBtn.disabled = true;
+                    
+                    // Get the current user
+                    const user = auth.currentUser;
+                    if (!user) {
+                        alert('You must be logged in to repair content');
+                        return;
+                    }
+                    
+                    // Get Firebase token
+                    const token = await user.getIdToken();
+                    
+                    console.log('Starting content repair process...');
+                    
+                    // Call the existing migrateNullMetadata endpoint
+                    const response = await fetch(`${SERVER_URL}/migrateNullMetadata`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        }
+                    });
+                    
+                    if (!response.ok) {
+                        const errorText = await response.text();
+                        throw new Error(`Server error: ${response.status} - ${errorText}`);
+                    }
+                    
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        let message = `🎉 Content Repair Complete!\n\n`;
+                        message += `📊 Results:\n`;
+                        message += `• Total guidelines processed: ${result.results.total}\n`;
+                        message += `• Guidelines updated: ${result.results.updated}\n`;
+                        message += `• Migration errors: ${result.results.errors}\n\n`;
+                        
+                        if (result.results.details && result.results.details.length > 0) {
+                            message += `🔧 Updated Guidelines (first 10):\n`;
+                            result.results.details.slice(0, 10).forEach(detail => {
+                                if (detail.updates) {
+                                    const updatedFields = Object.keys(detail.updates).join(', ');
+                                    message += `• ${detail.id}: ${updatedFields}\n`;
+                                }
+                            });
+                            if (result.results.details.length > 10) {
+                                message += `• ... and ${result.results.details.length - 10} more\n`;
+                            }
+                        }
+                        
+                        alert(message);
+                        console.log('Content repair completed successfully:', result);
+                    } else {
+                        throw new Error(result.error || 'Content repair failed');
+                    }
+                    
+                } catch (error) {
+                    console.error('Error repairing content:', error);
+                    alert(`❌ Content repair failed: ${error.message}`);
+                } finally {
+                    // Reset button state
+                    repairContentBtn.textContent = originalText;
+                    repairContentBtn.disabled = false;
+                }
+            });
+        }
+
     } catch (error) {
         console.error('Error in main script:', error);
         alert('An error occurred while initializing the page: ' + error.message);

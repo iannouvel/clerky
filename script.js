@@ -763,6 +763,61 @@ async function loadGuidelinesFromFirestore() {
         const averageCompleteness = guidelines.length > 0 ? totalCompletenessScore / guidelines.length : 0;
         console.log(`[METADATA] Metadata completeness summary: ${incompleteCount}/${guidelines.length} guidelines need enhancement (average: ${averageCompleteness.toFixed(1)}%)`);
         
+        // NEW: Check content status and offer repair if needed
+        const contentStatus = checkContentStatus(guidelines);
+        console.log('[CONTENT_STATUS] Content analysis:', contentStatus.stats);
+        
+        // Alert user if significant content issues are found
+        const contentIssueThreshold = Math.max(5, Math.floor(guidelines.length * 0.1)); // 10% or minimum 5 guidelines
+        const hasSignificantContentIssues = contentStatus.stats.missingBoth > contentIssueThreshold || 
+                                           contentStatus.stats.nullContent > contentIssueThreshold * 2;
+        
+        if (hasSignificantContentIssues) {
+            console.warn('[CONTENT_STATUS] Significant content issues detected:', {
+                nullContent: contentStatus.stats.nullContent,
+                nullCondensed: contentStatus.stats.nullCondensed,
+                missingBoth: contentStatus.stats.missingBoth,
+                threshold: contentIssueThreshold
+            });
+            
+            // Show content repair option
+            showMetadataProgress(`⚠️ Found ${contentStatus.stats.missingBoth} guidelines missing content - repair available`, false);
+            
+            // Add repair button to the interface
+            setTimeout(() => {
+                const repairHtml = `
+                    <div id="content-repair-notice" style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; margin: 10px 0; border-radius: 5px;">
+                        <h4 style="color: #856404; margin: 0 0 10px 0;">⚠️ Content Issues Detected</h4>
+                        <p style="margin: 0 0 10px 0; color: #856404;">
+                            Found <strong>${contentStatus.stats.nullContent}</strong> guidelines with missing content and 
+                            <strong>${contentStatus.stats.nullCondensed}</strong> with missing condensed text.
+                            Only <strong>${contentStatus.stats.fullyPopulated}</strong> out of <strong>${contentStatus.stats.total}</strong> guidelines are fully populated.
+                        </p>
+                        <p style="margin: 0 0 15px 0; color: #856404;">
+                            This severely impacts AI analysis quality. The repair process will extract text from PDFs and generate condensed versions automatically.
+                        </p>
+                        <button onclick="diagnoseAndRepairContent()" style="background: #28a745; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">
+                            🔧 Repair Content Issues
+                        </button>
+                        <button onclick="document.getElementById('content-repair-notice').style.display='none'" style="background: #6c757d; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; margin-left: 10px;">
+                            Dismiss
+                        </button>
+                    </div>
+                `;
+                
+                // Try to add the repair notice to the summary area
+                const summary1 = document.getElementById('summary1');
+                if (summary1 && !document.getElementById('content-repair-notice')) {
+                    summary1.insertAdjacentHTML('afterbegin', repairHtml);
+                }
+            }, 1000);
+        } else {
+            console.log('[CONTENT_STATUS] Content quality looks good:', {
+                fullyPopulated: contentStatus.stats.fullyPopulated,
+                percentComplete: Math.round((contentStatus.stats.fullyPopulated / contentStatus.stats.total) * 100)
+            });
+        }
+        
                  // NEW: Automatically enhance metadata for guidelines with low completeness
          if (incompleteCount > 0) {
              console.log('[METADATA] Starting background metadata enhancement...');
@@ -5274,3 +5329,148 @@ async function displayCombinedInteractiveSuggestions(suggestions, guidelinesSumm
     // Update the decisions summary
     updateDecisionsSummary();
 }
+
+// Use existing migrateNullMetadata endpoint for content repair
+async function diagnoseAndRepairContent() {
+    console.log('[CONTENT_REPAIR] Starting content repair using existing migrateNullMetadata endpoint...');
+    
+    try {
+        // Get user ID token
+        const user = auth.currentUser;
+        if (!user) {
+            throw new Error('User not authenticated');
+        }
+        
+        const idToken = await user.getIdToken();
+        
+        // Show progress
+        showMetadataProgress('🔍 Migrating null metadata and generating missing content...', false);
+        
+        // Call the existing migrateNullMetadata endpoint
+        const response = await fetch(`${window.SERVER_URL}/migrateNullMetadata`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${idToken}`
+            }
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(`Server error: ${response.status} - ${errorText}`);
+        }
+
+        const result = await response.json();
+        
+        console.log('[CONTENT_REPAIR] Migration complete:', result);
+        
+        if (result.success) {
+            // Display results from the existing migration function
+            let message = `🎉 Content Repair Complete!\n\n`;
+            message += `📊 Migration Results:\n`;
+            message += `• Total guidelines processed: ${result.total}\n`;
+            message += `• Guidelines updated: ${result.updated}\n`;
+            message += `• Migration errors: ${result.errors}\n\n`;
+            
+            if (result.details && result.details.length > 0) {
+                message += `🔧 Updated Guidelines:\n`;
+                result.details.slice(0, 5).forEach(detail => {
+                    if (detail.updates) {
+                        const updatedFields = Object.keys(detail.updates).join(', ');
+                        message += `• ${detail.id}: ${updatedFields}\n`;
+                    }
+                });
+                if (result.details.length > 5) {
+                    message += `• ... and ${result.details.length - 5} more\n`;
+                }
+            }
+            
+            console.log('[CONTENT_REPAIR] Full results:', message);
+            showMetadataProgress(`✅ Migration completed! Updated ${result.updated} guidelines`, true);
+            
+            // Reload guidelines to reflect the repairs
+            setTimeout(() => {
+                console.log('[CONTENT_REPAIR] Reloading guidelines after migration...');
+                loadGuidelinesFromFirestore();
+            }, 2000);
+            
+            return result;
+        } else {
+            throw new Error(result.error || 'Metadata migration failed');
+        }
+        
+    } catch (error) {
+        console.error('[CONTENT_REPAIR] Error:', error);
+        showMetadataProgress(`❌ Content repair failed: ${error.message}`, true);
+        throw error;
+    }
+}
+
+// Function to check content status during load
+function checkContentStatus(guidelines) {
+    const stats = {
+        total: guidelines.length,
+        nullContent: 0,
+        nullCondensed: 0,
+        missingBoth: 0,
+        hasContent: 0,
+        hasCondensed: 0,
+        fullyPopulated: 0
+    };
+    
+    const problematicGuidelines = [];
+    
+    guidelines.forEach(guideline => {
+        const hasContent = guideline.content && guideline.content !== null && guideline.content.trim().length > 0;
+        const hasCondensed = guideline.condensed && guideline.condensed !== null && guideline.condensed.trim().length > 0;
+        
+        if (hasContent) stats.hasContent++;
+        if (hasCondensed) stats.hasCondensed++;
+        if (hasContent && hasCondensed) stats.fullyPopulated++;
+        
+        if (!hasContent) {
+            stats.nullContent++;
+            problematicGuidelines.push({
+                id: guideline.id,
+                title: guideline.title || guideline.humanFriendlyName || 'Unknown',
+                issue: 'null_content'
+            });
+        }
+        
+        if (!hasCondensed) {
+            stats.nullCondensed++;
+            if (!problematicGuidelines.find(p => p.id === guideline.id)) {
+                problematicGuidelines.push({
+                    id: guideline.id,
+                    title: guideline.title || guideline.humanFriendlyName || 'Unknown',
+                    issue: 'null_condensed'
+                });
+            } else {
+                // Update existing entry to indicate both are missing
+                const existing = problematicGuidelines.find(p => p.id === guideline.id);
+                existing.issue = 'missing_both';
+            }
+        }
+        
+        if (!hasContent && !hasCondensed) {
+            stats.missingBoth++;
+        }
+    });
+    
+    return { stats, problematicGuidelines };
+}
+
+// Global function for manual content repair (can be called from console)
+window.repairContent = async function() {
+    console.log('🔧 Manual content repair triggered from console...');
+    try {
+        await diagnoseAndRepairContent();
+        console.log('✅ Manual content repair completed successfully!');
+    } catch (error) {
+        console.error('❌ Manual content repair failed:', error);
+    }
+};
+
+// Make content status checking available globally for debugging
+window.checkContentStatus = checkContentStatus;
+window.diagnoseAndRepairContent = diagnoseAndRepairContent;
