@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 6/34",
+  "transcriptLength": 1405,
+  "transcriptPreview": "39+6, P0\n1st episode reduced fetal movements - ongoing slight reduction since earlier today\nno bleeding\nno abnormal vaginal discharge\nno PET symptoms\nno pain\nhaving irregular tightenings - not painful\n\nBG:\nMacrosomic baby on USS in 3rd trimester, normal fluid, hasn't been counselled re macrosomia\n\nObs: N\nUrine: N\nCTG: Stable FHR, didn't meet Dawes-Redman criteria after 1 hour, STV 5, didn't meet due to \n\"No episodes of high variation \"\n\"long term variation during episodes of high variation below...",
+  "chunkGuidelines": [
+    "cg1139-obesity-in-pregnancy-pdf: CG1139 Obesity in Pregnancy",
+    "cg1145-fetal-abnormality-guideline-including-fetal-echo-referral-criteria-pdf: CG1145 Fetal Abnormality Guideline (including fetal echo referral criteria)",
+    "cg1147-maternal-sepsis-pdf: CG1147 Maternal Sepsis",
+    "cg1151-uterine-rupture-pdf: CG1151 Uterine Rupture",
+    "cg1152-birth-after-caesarean-bac-guideline-pdf: CG1152 Birth After Caesarean (BAC) Guideline",
+    "cg1192-large-for-gestational-age-pdf: CG1192 Large for Gestational Age",
+    "cg1195-anti-d-guideline-pdf: CG1195 ANTI D guideline",
+    "cg1196-care-in-labour-pdf: CG1196 Care in labour"
+  ],
+  "chunkIndex": 6,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"cg1192-large-for-gestational-age-pdf\", \"title\": \"Large for Gestational Age\", \"relevance\": \"0.95\"},\n    {\"id\": \"cg1196-care-in-labour-pdf\", \"title\": \"Care in labour\", \"relevance\": \"0.90\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"cg1152-birth-after-caesarean-bac-guideline-pdf\", \"title\": \"Birth After Caesarean (BAC) Guideline\", \"relevance\": \"0.70\"},\n    {\"id\": \"cg1139-obesity-in-pregnancy-pdf\", \"title\": \"Obesity in Pregnancy\", \"relevance\": \"0.60\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"cg1145-fetal-abnormality-guideline-including-fetal-echo-referral-criteria-pdf\", \"title\": \"Fetal Abnormality Guideline (including fetal echo referral criteria)\", \"relevance\": \"0.30\"},\n    {\"id\": \"cg1195-anti-d-guideline-pdf\", \"title\": \"ANTI D guideline\", \"relevance\": \"0.20\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"cg1147-maternal-sepsis-pdf\", \"title\": \"Maternal Sepsis\", \"relevance\": \"0.10\"},\n    {\"id\": \"cg1151-uterine-rupture-pdf\", \"title\": \"Uterine Rupture\", \"relevance\": \"0.05\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1020
+}
