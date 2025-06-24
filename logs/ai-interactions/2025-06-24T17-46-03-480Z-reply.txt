@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 12/34",
+  "transcriptLength": 1405,
+  "transcriptPreview": "39+6, P0\n1st episode reduced fetal movements - ongoing slight reduction since earlier today\nno bleeding\nno abnormal vaginal discharge\nno PET symptoms\nno pain\nhaving irregular tightenings - not painful\n\nBG:\nMacrosomic baby on USS in 3rd trimester, normal fluid, hasn't been counselled re macrosomia\n\nObs: N\nUrine: N\nCTG: Stable FHR, didn't meet Dawes-Redman criteria after 1 hour, STV 5, didn't meet due to \n\"No episodes of high variation \"\n\"long term variation during episodes of high variation below...",
+  "chunkGuidelines": [
+    "figo-2015-intrapartum-fetal-monitoring-cardiotocography-pdf: FIGO Consensus Guidelines on Intrapartum Fetal Monitoring: Cardiotocography",
+    "gau-proforma-july-19-pdf: GAU Proforma JULY 19",
+    "gp001-management-of-confirmed-ectopic-pregnancy-pdf: GP001 - Management of Confirmed Ectopic Pregnancy",
+    "gp001-management-of-miscarriage-pdf: GP001 - Management of Miscarriage",
+    "gp001-management-of-pregnancy-of-unknown-location-pdf: GP001 - Management of Pregnancy of Unknown Location",
+    "gp003-pelvic-inflammatory-disease-pid-pdf: GP003 Pelvic Inflammatory Disease (PID)",
+    "gp004-diagnosis-and-management-of-gestational-trophoblastic-disease-gtd-pdf: GP004 Diagnosis and Management of Gestational Trophoblastic Disease (GTD)",
+    "gp005-emergency-gynaecology-admissions-gau-ready-pdf: GP005 Emergency Gynaecology Admissions  GAU READY"
+  ],
+  "chunkIndex": 12,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"figo-2015-intrapartum-fetal-monitoring-cardiotocography-pdf\", \"title\": \"FIGO Consensus Guidelines on Intrapartum Fetal Monitoring: Cardiotocography\", \"relevance\": \"0.95\"}\n  ],\n  \"potentiallyRelevant\": [],\n  \"lessRelevant\": [\n    {\"id\": \"gau-proforma-july-19-pdf\", \"title\": \"GAU Proforma JULY 19\", \"relevance\": \"0.3\"},\n    {\"id\": \"gp001-management-of-confirmed-ectopic-pregnancy-pdf\", \"title\": \"GP001 - Management of Confirmed Ectopic Pregnancy\", \"relevance\": \"0.1\"},\n    {\"id\": \"gp001-management-of-miscarriage-pdf\", \"title\": \"GP001 - Management of Miscarriage\", \"relevance\": \"0.1\"},\n    {\"id\": \"gp001-management-of-pregnancy-of-unknown-location-pdf\", \"title\": \"GP001 - Management of Pregnancy of Unknown Location\", \"relevance\": \"0.1\"},\n    {\"id\": \"gp003-pelvic-inflammatory-disease-pid-pdf\", \"title\": \"GP003 Pelvic Inflammatory Disease (PID)\", \"relevance\": \"0.1\"},\n    {\"id\": \"gp004-diagnosis-and-management-of-gestational-trophoblastic-disease-gtd-pdf\", \"title\": \"GP004 Diagnosis and Management of Gestational Trophoblastic Disease (GTD)\", \"relevance\": \"0.1\"},\n    {\"id\": \"gp005-emergency-gynaecology-admissions-gau-ready-pdf\", \"title\": \"GP005 Emergency Gynaecology Admissions GAU READY\", \"relevance\": \"0.2\"}\n  ],\n  \"notRelevant\": []\n}\n```",
+  "responseType": "string",
+  "responseLength": 1283
+}
