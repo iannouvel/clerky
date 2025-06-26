@@ -781,36 +781,48 @@ async function loadGuidelinesFromFirestore() {
             });
             
             // Show content repair option
-            showMetadataProgress(`⚠️ Found ${contentStatus.stats.missingBoth} guidelines missing content - repair available`, false);
+            showMetadataProgress(`⚠️ Found ${contentStatus.stats.missingBoth} guidelines missing content - starting automatic repair...`, false);
             
-            // Add repair button to the interface
-            setTimeout(() => {
-                const repairHtml = `
-                    <div id="content-repair-notice" style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; margin: 10px 0; border-radius: 5px;">
-                        <h4 style="color: #856404; margin: 0 0 10px 0;">⚠️ Content Issues Detected</h4>
-                        <p style="margin: 0 0 10px 0; color: #856404;">
-                            Found <strong>${contentStatus.stats.nullContent}</strong> guidelines with missing content and 
-                            <strong>${contentStatus.stats.nullCondensed}</strong> with missing condensed text.
-                            Only <strong>${contentStatus.stats.fullyPopulated}</strong> out of <strong>${contentStatus.stats.total}</strong> guidelines are fully populated.
-                        </p>
-                        <p style="margin: 0 0 15px 0; color: #856404;">
-                            This severely impacts AI analysis quality. The repair process will extract text from PDFs and generate condensed versions automatically.
-                        </p>
-                        <button onclick="diagnoseAndRepairContent()" style="background: #28a745; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">
-                            🔧 Repair Content Issues
-                        </button>
-                        <button onclick="document.getElementById('content-repair-notice').style.display='none'" style="background: #6c757d; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; margin-left: 10px;">
-                            Dismiss
-                        </button>
-                    </div>
-                `;
-                
-                // Try to add the repair notice to the summary area
-                const summary1 = document.getElementById('summary1');
-                if (summary1 && !document.getElementById('content-repair-notice')) {
-                    summary1.insertAdjacentHTML('afterbegin', repairHtml);
+            // AUTOMATICALLY trigger content repair when significant issues are detected
+            console.log('[CONTENT_STATUS] Starting automatic content repair...');
+            setTimeout(async () => {
+                try {
+                    await diagnoseAndRepairContent();
+                    console.log('[CONTENT_STATUS] Automatic content repair completed successfully');
+                } catch (error) {
+                    console.error('[CONTENT_STATUS] Automatic content repair failed:', error);
+                    
+                    // If automatic repair fails, show manual repair button
+                    const repairHtml = `
+                        <div id="content-repair-notice" style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; margin: 10px 0; border-radius: 5px;">
+                            <h4 style="color: #856404; margin: 0 0 10px 0;">⚠️ Content Issues Detected</h4>
+                            <p style="margin: 0 0 10px 0; color: #856404;">
+                                Found <strong>${contentStatus.stats.nullContent}</strong> guidelines with missing content and 
+                                <strong>${contentStatus.stats.nullCondensed}</strong> with missing condensed text.
+                                Only <strong>${contentStatus.stats.fullyPopulated}</strong> out of <strong>${contentStatus.stats.total}</strong> guidelines are fully populated.
+                            </p>
+                            <p style="margin: 0 0 10px 0; color: #856404;">
+                                Automatic repair failed: ${error.message}
+                            </p>
+                            <p style="margin: 0 0 15px 0; color: #856404;">
+                                This severely impacts AI analysis quality. Try manual repair below.
+                            </p>
+                            <button onclick="diagnoseAndRepairContent()" style="background: #28a745; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">
+                                🔧 Retry Content Repair
+                            </button>
+                            <button onclick="document.getElementById('content-repair-notice').style.display='none'" style="background: #6c757d; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; margin-left: 10px;">
+                                Dismiss
+                            </button>
+                        </div>
+                    `;
+                    
+                    // Try to add the repair notice to the summary area
+                    const summary1 = document.getElementById('summary1');
+                    if (summary1 && !document.getElementById('content-repair-notice')) {
+                        summary1.insertAdjacentHTML('afterbegin', repairHtml);
+                    }
                 }
-            }, 1000);
+            }, 2000);
         } else {
             console.log('[CONTENT_STATUS] Content quality looks good:', {
                 fullyPopulated: contentStatus.stats.fullyPopulated,
@@ -5530,20 +5542,24 @@ async function displayCombinedInteractiveSuggestions(suggestions, guidelinesSumm
 
 // Use existing migrateNullMetadata endpoint for content repair
 async function diagnoseAndRepairContent() {
-    console.log('[CONTENT_REPAIR] Starting content repair using existing migrateNullMetadata endpoint...');
+    console.log('[REPAIR] 🔧 Starting comprehensive content repair process...');
+    console.log('[REPAIR] This will check all guidelines for missing content/condensed text and attempt to generate them');
     
     try {
         // Get user ID token
         const user = auth.currentUser;
         if (!user) {
+            console.error('[REPAIR] ❌ User not authenticated');
             throw new Error('User not authenticated');
         }
         
+        console.log('[REPAIR] ✅ User authenticated, getting ID token...');
         const idToken = await user.getIdToken();
         
         // Show progress
-        showMetadataProgress('🔍 Migrating null metadata and generating missing content...', false);
+        showMetadataProgress('🔧 Starting content repair - extracting text from PDFs and generating condensed versions...', false);
         
+        console.log('[REPAIR] 📡 Calling migrateNullMetadata endpoint...');
         // Call the existing migrateNullMetadata endpoint
         const response = await fetch(`${window.SERVER_URL}/migrateNullMetadata`, {
             method: 'POST',
@@ -5553,17 +5569,27 @@ async function diagnoseAndRepairContent() {
             }
         });
 
+        console.log('[REPAIR] 📨 Server response status:', response.status);
+        
         if (!response.ok) {
             const errorText = await response.text();
+            console.error('[REPAIR] ❌ Server error response:', errorText);
             throw new Error(`Server error: ${response.status} - ${errorText}`);
         }
 
         const result = await response.json();
         
-        console.log('[CONTENT_REPAIR] Migration complete:', result);
+        console.log('[REPAIR] 📊 Server response:', result);
         
         if (result.success) {
             // Display results from the existing migration function
+            console.log('[REPAIR] ✅ Content repair completed successfully!');
+            console.log('[REPAIR] 📈 Repair Statistics:', {
+                total: result.total,
+                updated: result.updated,
+                errors: result.errors
+            });
+            
             let message = `🎉 Content Repair Complete!\n\n`;
             message += `📊 Migration Results:\n`;
             message += `• Total guidelines processed: ${result.total}\n`;
@@ -5571,7 +5597,15 @@ async function diagnoseAndRepairContent() {
             message += `• Migration errors: ${result.errors}\n\n`;
             
             if (result.details && result.details.length > 0) {
-                message += `🔧 Updated Guidelines:\n`;
+                console.log('[REPAIR] 🔧 Updated Guidelines Details:');
+                result.details.forEach((detail, index) => {
+                    if (detail.updates && index < 10) { // Log first 10 in detail
+                        const updatedFields = Object.keys(detail.updates).join(', ');
+                        console.log(`[REPAIR]   ${index + 1}. ${detail.id}: ${updatedFields}`);
+                    }
+                });
+                
+                message += `🔧 Updated Guidelines (first 5):\n`;
                 result.details.slice(0, 5).forEach(detail => {
                     if (detail.updates) {
                         const updatedFields = Object.keys(detail.updates).join(', ');
@@ -5583,22 +5617,22 @@ async function diagnoseAndRepairContent() {
                 }
             }
             
-            console.log('[CONTENT_REPAIR] Full results:', message);
-            showMetadataProgress(`✅ Migration completed! Updated ${result.updated} guidelines`, true);
+            showMetadataProgress(`✅ Content repair completed! Updated ${result.updated}/${result.total} guidelines`, true);
             
             // Reload guidelines to reflect the repairs
+            console.log('[REPAIR] 🔄 Reloading guidelines to reflect the repairs...');
             setTimeout(() => {
-                console.log('[CONTENT_REPAIR] Reloading guidelines after migration...');
                 loadGuidelinesFromFirestore();
-            }, 2000);
+            }, 3000);
             
             return result;
         } else {
-            throw new Error(result.error || 'Metadata migration failed');
+            console.error('[REPAIR] ❌ Server returned failure:', result);
+            throw new Error(result.error || 'Content repair failed');
         }
         
     } catch (error) {
-        console.error('[CONTENT_REPAIR] Error:', error);
+        console.error('[REPAIR] ❌ Content repair error:', error);
         showMetadataProgress(`❌ Content repair failed: ${error.message}`, true);
         throw error;
     }
