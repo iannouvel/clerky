@@ -1,0 +1,56 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Please analyze the clinical note against the provided guideline and suggest improvements to better align with the guideline recommendations.\n\nFor each recommendation, specify:\n1. The type of recommendation:\n   - Additional information needed (history/examination/investigations)\n   - Improved patient advice (options/statistics/patient information)\n   - Different management plan\n2. The specific recommendation\n3. The reason for the recommendation (referencing the guideline)\n\nCategorize each recommendation by importance:\n- Very Important: Critical for patient safety or guideline compliance\n- Somewhat Important: Significant for optimal care but not critical\n- Less Important: Would improve care but not essential\n- Unimportant: Minor suggestions that could be considered\n\nFormat the response as follows:\n\n### Very Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Somewhat Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Less Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Unimportant Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\nClinical Note:\nSITUATION: 30-year-old G1P0 with dichorionic diamniotic twin pregnancy at 32+2 weeks presenting with preterm labor and growth discordance\n\nBACKGROUND: Mrs Liu conceived via IVF after 2 years of unexplained infertility, single embryo transfer resulted in spontaneous splitting to monozygotic twins. Pregnancy has been closely monitored with fortnightly scans. Recent growth scans show developing growth discordance between twins - Twin A estimated 1.8kg (50th centile), Twin B estimated 1.4kg (10th centile), representing 22% weight difference. She presented today with regular uterine contractions every 4-5 minutes for past 3 hours, accompanied by lower back ache and pelvic pressure. No bleeding, no rupture of membranes, both babies moving well. Previous antenatal care has been uncomplicated apart from gestational diabetes diagnosed at 26 weeks, well controlled with diet. She works as a teacher, supportive partner, anxious about early delivery.\n\nASSESSMENT: Maternal vital signs stable: BP 132/84 mmHg, HR 92 bpm, temp 36.8°C. Abdomen shows regular contractions palpable every 4-5 minutes, both twins in longitudinal lie, Twin A cephalic presentation, Twin B breech. CTG monitoring shows both twins with reassuring patterns - Twin A baseline 140 bpm, Twin B baseline 155 bpm, both with good variability. Cervical assessment reveals 3cm dilatation, 60% effacement, soft consistency. Ultrasound confirms presentations and estimated fetal weights as above. Twin-to-twin transfusion syndrome excluded - both twins have adequate liquor volume. Bloods normal including FBC and inflammatory markers.\n\nRECOMMENDATION: Preterm labor in twin pregnancy with growth discordance requiring immediate management. Tocolysis with nifedipine commenced to delay delivery. Antenatal corticosteroids (betamethasone) administered for fetal lung maturation. Magnesium sulfate given for neuroprotection. Pediatric team alerted for twin delivery. Anesthetic consultation for potential operative delivery. Given growth discordance, immediate delivery not indicated unless fetal compromise develops. Plan for cesarean section if further cervical change or if Twin B becomes compromised. Continuous monitoring of both twins. Growth discordance investigation post-delivery to exclude underlying causes.\n\nGuideline:\n[ID] cg12030-caesarean-birth-guideline-pdf\nTitle: CG12030 Caesarean Birth Guideline\nContent: No content available",
+  "system_prompt": "You are a medical guidelines compliance checker. Your task is to analyze if the given clinical note follows the specified guideline and suggest improvements.",
+  "guideline_id": "cg12030-caesarean-birth-guideline-pdf",
+  "guideline_title": "CG12030 Caesarean Birth Guideline"
+}
+
+A: Since the guideline content (CG12030 Caesarean Birth Guideline) is not available, I cannot provide specific recommendations based on that guideline. However, I can analyze the clinical note for general best practices in preterm labor management for twin pregnancies with growth discordance and suggest improvements where appropriate.
+
+### Very Important Recommendations  
+1. **Additional information needed** - Document the exact timing of corticosteroid administration (betamethasone) and planned second dose (if applicable).  
+   Reason: Completing the full course of antenatal corticosteroids is critical for fetal lung maturation in preterm labor.  
+
+2. **Different management plan** - Consider adding fetal Doppler studies (umbilical artery, middle cerebral artery) to assess for placental insufficiency in Twin B.  
+   Reason: Growth discordance >20% warrants further hemodynamic assessment to guide delivery timing (ACOG/SMFM guidelines on twin gestations).  
+
+3. **Improved patient advice** - Explicitly counsel the patient on:  
+   - Risks/benefits of tocolysis (e.g., nifedipine contraindications, expected duration of delay)  
+   - Neuroprotection limitations of magnesium sulfate  
+   Reason: Required for informed consent in preterm labor management (ACOG #171).  
+
+### Somewhat Important Recommendations  
+1. **Additional information needed** - Document cervical length on recent ultrasounds and whether vaginal progesterone was used.  
+   Reason: Helps stratify preterm labor risk in twins (SMFM #8).  
+
+2. **Improved patient advice** - Provide written information on:  
+   - Expected NICU outcomes at 32 weeks  
+   - Specific risks of growth-discordant twins (e.g., hypoglycemia in Twin B)  
+   Reason: Patient anxiety reduction and preparation (AAP NICU counseling guidelines).  
+
+### Less Important Recommendations  
+1. **Additional information needed** - Include detailed fluid balance monitoring given concurrent tocolysis/magnesium sulfate.  
+   Reason: Prevents pulmonary edema risk in twin pregnancies.  
+
+2. **Different management plan** - Consider adding CRP trend monitoring given prolonged preterm labor risk.  
+   Reason: Helps detect subclinical chorioamnionitis.  
+
+### Unimportant Recommendations  
+1. **Additional information needed** - Document parental height/weights for customized growth charts.  
+   Reason: Less impactful at this gestational age with established growth discordance.  
+
+Without the specific CG12030 guideline content, these recommendations are based on general twin pregnancy/obstetric guidelines (ACOG, SMFM, RCOG). For precise compliance checking, the actual guideline content regarding:  
+- Criteria for cesarean vs. vaginal delivery in twins  
+- Specific documentation requirements  
+- Institutional protocols for growth discordance management  
+would be necessary.  
+
+Would you be able to provide the content of CG12030 or clarify if another guideline should be referenced?
+
+--- Token Usage Report ---
+Prompt tokens: 775
+Completion tokens: 570
+Total tokens: 1345
+Estimated cost: $0.000673
