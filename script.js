@@ -665,7 +665,17 @@ async function loadGuidelinesFromFirestore() {
     // Prevent multiple simultaneous guideline loads
     if (window.guidelinesLoading || window.guidelinesLoaded) {
         console.log('[DEBUG] ⏭️ Guidelines loading already in progress or completed, skipping...');
-        return;
+        
+        // Return cached guidelines if available
+        if (window.guidelines && window.guidelines.length > 0) {
+            console.log('[DEBUG] Returning cached guidelines:', window.guidelines.length);
+            return window.guidelines;
+        }
+        
+        // If we don't have cached guidelines but think they're loaded, reset the flag
+        console.log('[DEBUG] Guidelines marked as loaded but cache is empty, resetting...');
+        window.guidelinesLoaded = false;
+        window.guidelinesLoading = false;
     }
     
     window.guidelinesLoading = true;
