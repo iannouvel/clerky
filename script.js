@@ -3022,17 +3022,15 @@ async function showClinicalIssuesDropdown() {
     console.log('[DEBUG] showClinicalIssuesDropdown called');
     
     try {
-        // Load clinical issues from JSON file
-        const response = await fetch('./clinical_issues.json');
-        if (!response.ok) {
-            throw new Error(`Failed to load clinical issues: ${response.status}`);
+        // Load clinical conditions from Firebase (with fallback to JSON)
+        await ClinicalConditionsService.loadConditions();
+        const clinicalConditions = ClinicalConditionsService.getConditions();
+        
+        if (!clinicalConditions) {
+            throw new Error('Failed to load clinical conditions');
         }
         
-        const clinicalIssues = await response.json();
-        console.log('[DEBUG] Loaded clinical issues:', {
-            obstetrics: clinicalIssues.obstetrics?.length,
-            gynecology: clinicalIssues.gynecology?.length
-        });
+        console.log('[DEBUG] Loaded clinical conditions:', ClinicalConditionsService.getSummary());
         
         // Create dropdown HTML
         let dropdownHtml = `
@@ -3047,19 +3045,19 @@ async function showClinicalIssuesDropdown() {
                         <optgroup label="Obstetrics">
         `;
         
-        // Add obstetrics options
-        clinicalIssues.obstetrics.forEach((issue, index) => {
-            dropdownHtml += `<option value="${issue}">${issue}</option>`;
-        });
-        
-        dropdownHtml += `
+        // Add options from Firebase data
+        Object.entries(clinicalConditions).forEach(([category, conditions]) => {
+            const categoryLabel = category.charAt(0).toUpperCase() + category.slice(1);
+            
+            dropdownHtml += `
                         </optgroup>
-                        <optgroup label="Gynecology">
-        `;
-        
-        // Add gynecology options
-        clinicalIssues.gynecology.forEach((issue, index) => {
-            dropdownHtml += `<option value="${issue}">${issue}</option>`;
+                        <optgroup label="${categoryLabel}">
+            `;
+            
+            Object.entries(conditions).forEach(([conditionName, conditionData]) => {
+                const hasTranscript = conditionData.hasTranscript ? ' ✓' : '';
+                dropdownHtml += `<option value="${conditionName}" data-condition-id="${conditionData.id}">${conditionName}${hasTranscript}</option>`;
+            });
         });
         
         dropdownHtml += `
@@ -3138,55 +3136,62 @@ async function generateFakeClinicalInteraction(selectedIssue) {
         if (generateText) generateText.textContent = 'Loading...';
         if (statusDiv) {
             statusDiv.style.display = 'block';
-            statusDiv.innerHTML = `<p>📋 Loading pre-generated clinical interaction for: <strong>${selectedIssue}</strong></p>`;
+            statusDiv.innerHTML = `<p>📋 Loading clinical interaction for: <strong>${selectedIssue}</strong></p>`;
         }
         
-        // Load pre-generated fake transcripts from JSON file
-        console.log('[DEBUG] Loading fake transcripts...');
-        const transcriptsResponse = await fetch('./fake_transcripts.json');
-        if (!transcriptsResponse.ok) {
-            throw new Error(`Failed to load fake transcripts: ${transcriptsResponse.status}`);
+        // Find the condition in our cached data
+        const condition = ClinicalConditionsService.findCondition(selectedIssue);
+        
+        if (!condition) {
+            throw new Error(`Clinical condition not found: ${selectedIssue}`);
         }
         
-        const fakeTranscripts = await transcriptsResponse.json();
-        console.log('[DEBUG] Loaded fake transcripts:', {
-            obstetrics: Object.keys(fakeTranscripts.obstetrics || {}).length,
-            gynecology: Object.keys(fakeTranscripts.gynecology || {}).length
+        console.log('[DEBUG] Found condition:', {
+            id: condition.id,
+            name: condition.name,
+            category: condition.category,
+            hasTranscript: condition.hasTranscript
         });
         
-        // Find the transcript for the selected issue
         let transcript = null;
-        let category = null;
+        let isGenerated = false;
         
-        // Check obstetrics category
-        if (fakeTranscripts.obstetrics && fakeTranscripts.obstetrics[selectedIssue]) {
-            transcript = fakeTranscripts.obstetrics[selectedIssue];
-            category = 'obstetrics';
+        // Check if we have a cached transcript
+        if (condition.hasTranscript && condition.transcript) {
+            transcript = condition.transcript;
+            console.log('[DEBUG] Using cached transcript:', {
+                transcriptLength: transcript.length,
+                lastGenerated: condition.lastGenerated
+            });
+        } else {
+            // Generate new transcript using Firebase service
+            console.log('[DEBUG] Generating new transcript...');
+            if (statusDiv) {
+                statusDiv.innerHTML = `<p>🔄 Generating new clinical interaction for: <strong>${selectedIssue}</strong></p>`;
+            }
+            
+            const result = await ClinicalConditionsService.generateTranscript(condition.id, false);
+            transcript = result.transcript;
+            isGenerated = !result.cached;
+            
+            console.log('[DEBUG] Generated transcript result:', {
+                success: !!result.transcript,
+                cached: result.cached,
+                transcriptLength: result.transcript?.length
+            });
         }
-        // Check gynecology category
-        else if (fakeTranscripts.gynecology && fakeTranscripts.gynecology[selectedIssue]) {
-            transcript = fakeTranscripts.gynecology[selectedIssue];
-            category = 'gynecology';
-        }
-        
-        console.log('[DEBUG] Transcript lookup result:', {
-            selectedIssue,
-            foundTranscript: !!transcript,
-            category,
-            transcriptLength: transcript?.length,
-            transcriptPreview: transcript ? transcript.substring(0, 200) + '...' : 'NO TRANSCRIPT'
-        });
         
         if (!transcript) {
-            throw new Error(`No pre-generated transcript found for clinical issue: ${selectedIssue}`);
+            throw new Error(`Failed to get transcript for clinical issue: ${selectedIssue}`);
         }
         
         // Update status
         if (statusDiv) {
-            statusDiv.innerHTML = `<p>✅ Successfully loaded pre-generated clinical interaction for: <strong>${selectedIssue}</strong></p>`;
+            const statusText = isGenerated ? 'Generated new' : 'Loaded cached';
+            statusDiv.innerHTML = `<p>✅ ${statusText} clinical interaction for: <strong>${selectedIssue}</strong></p>`;
         }
         
-        // Put the pre-generated transcript in the user input textarea
+        // Put the transcript in the user input textarea
         const userInput = document.getElementById('userInput');
         console.log('[DEBUG] userInput element check:', {
             elementFound: !!userInput,
@@ -3213,12 +3218,13 @@ async function generateFakeClinicalInteraction(selectedIssue) {
         }
         
         // Show success message in summary1 (append, don't clear)
-        const successMessage = `## ✅ Clinical Interaction Loaded (Fast Mode)\n\n` +
+        const performanceText = isGenerated ? '🔄 Generated using AI' : '⚡ Instant loading from Firebase cache';
+        const successMessage = `## ✅ Clinical Interaction Loaded\n\n` +
                               `**Clinical Issue:** ${selectedIssue}\n\n` +
-                              `**Category:** ${category}\n\n` +
-                              `**Status:** Successfully loaded pre-generated clinical interaction scenario\n\n` +
+                              `**Category:** ${condition.category}\n\n` +
+                              `**Status:** Successfully loaded clinical interaction scenario\n\n` +
                               `**Transcript Length:** ${transcript.length} characters (~${Math.round(transcript.split(' ').length)} words)\n\n` +
-                              `**Performance:** ⚡ Instant loading from pre-generated database\n\n` +
+                              `**Performance:** ${performanceText}\n\n` +
                               `**Next Steps:** The transcript has been placed in the input area. You can now:\n` +
                               `- Use "Dynamic Advice" to get interactive suggestions based on clinical guidelines\n` +
                               `- Edit the transcript if needed before analysis\n` +
@@ -3859,6 +3865,16 @@ async function initializeMainApp() {
         // Initialize chat history
         console.log('[DEBUG] Calling initializeChatHistory...');
         await initializeChatHistory();
+        
+        // Load clinical conditions from Firebase (with fallback to JSON)
+        console.log('[DEBUG] Loading clinical conditions...');
+        try {
+            await ClinicalConditionsService.loadConditions();
+            const summary = ClinicalConditionsService.getSummary();
+            console.log('[DEBUG] Clinical conditions loaded successfully:', summary);
+        } catch (error) {
+            console.error('[DEBUG] Failed to load clinical conditions:', error);
+        }
         
         // Load guidelines from Firestore on app initialization
         console.log('[DEBUG] Loading guidelines from Firestore...');
@@ -5999,5 +6015,235 @@ console.log('  - window.debugMultiGuideline() - Check current state');
 console.log('  - window.testMultiGuidelineSetup() - Validate setup');
 console.log('  - window.runMultiGuidelineAdvice() - Manual trigger');
 console.log('  - window.clearMultiGuidelineState() - Reset state');
+
+// ============================================
+// FIREBASE-BASED CLINICAL CONDITIONS SERVICE
+// ============================================
+
+// Global cache for clinical conditions from Firebase
+let clinicalConditionsFirebaseCache = null;
+let clinicalConditionsFirebaseLoadPromise = null;
+
+// Service to manage clinical conditions from Firebase
+const ClinicalConditionsService = {
+    // Load clinical conditions from server on startup
+    async loadConditions() {
+        if (clinicalConditionsFirebaseLoadPromise) {
+            return clinicalConditionsFirebaseLoadPromise;
+        }
+        
+        clinicalConditionsFirebaseLoadPromise = this._fetchConditionsFromServer();
+        return clinicalConditionsFirebaseLoadPromise;
+    },
+    
+    async _fetchConditionsFromServer() {
+        try {
+            console.log('[CLINICAL-SERVICE] Loading clinical conditions from Firebase...');
+            
+            const user = auth.currentUser;
+            if (!user) {
+                throw new Error('User not authenticated');
+            }
+            
+            const idToken = await user.getIdToken();
+            
+            const response = await fetch(`${window.SERVER_URL}/clinicalConditions`, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${idToken}`,
+                    'Content-Type': 'application/json'
+                }
+            });
+            
+            if (!response.ok) {
+                throw new Error(`Failed to load clinical conditions: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            
+            if (!data.success) {
+                throw new Error(data.error || 'Failed to load clinical conditions');
+            }
+            
+            clinicalConditionsFirebaseCache = data.conditions;
+            
+            console.log('[CLINICAL-SERVICE] Successfully loaded clinical conditions:', {
+                totalCategories: Object.keys(clinicalConditionsFirebaseCache).length,
+                totalConditions: data.summary.totalConditions,
+                categoriesWithCounts: data.summary.categoriesWithCounts
+            });
+            
+            return clinicalConditionsFirebaseCache;
+            
+        } catch (error) {
+            console.error('[CLINICAL-SERVICE] Error loading clinical conditions:', error);
+            // Fallback to JSON file if Firebase fails
+            return this._loadFromJsonFallback();
+        }
+    },
+    
+    async _loadFromJsonFallback() {
+        console.log('[CLINICAL-SERVICE] Falling back to JSON file...');
+        
+        try {
+            const response = await fetch('./clinical_issues.json');
+            if (!response.ok) {
+                throw new Error(`Failed to load clinical issues JSON: ${response.status}`);
+            }
+            
+            const clinicalIssues = await response.json();
+            
+            // Convert to the same format as Firebase
+            const conditions = {};
+            for (const [category, issues] of Object.entries(clinicalIssues)) {
+                conditions[category] = {};
+                issues.forEach(issue => {
+                    conditions[category][issue] = {
+                        id: `${category}-${issue.toLowerCase().replace(/[^a-z0-9]/g, '-')}`,
+                        name: issue,
+                        category: category,
+                        transcript: null, // No pre-generated transcripts in fallback
+                        hasTranscript: false,
+                        metadata: {
+                            source: 'json-fallback'
+                        }
+                    };
+                });
+            }
+            
+            clinicalConditionsFirebaseCache = conditions;
+            
+            console.log('[CLINICAL-SERVICE] Loaded from JSON fallback:', {
+                totalCategories: Object.keys(conditions).length,
+                totalConditions: Object.values(conditions).reduce((sum, cat) => sum + Object.keys(cat).length, 0)
+            });
+            
+            return conditions;
+            
+        } catch (error) {
+            console.error('[CLINICAL-SERVICE] Error loading JSON fallback:', error);
+            throw error;
+        }
+    },
+    
+    // Get all conditions (cached)
+    getConditions() {
+        return clinicalConditionsFirebaseCache;
+    },
+    
+    // Get conditions by category
+    getConditionsByCategory(category) {
+        return clinicalConditionsFirebaseCache?.[category] || {};
+    },
+    
+    // Find a specific condition
+    findCondition(conditionName) {
+        if (!clinicalConditionsFirebaseCache) return null;
+        
+        for (const [category, conditions] of Object.entries(clinicalConditionsFirebaseCache)) {
+            if (conditions[conditionName]) {
+                return conditions[conditionName];
+            }
+        }
+        return null;
+    },
+    
+    // Generate transcript for a specific condition
+    async generateTranscript(conditionId, forceRegenerate = false) {
+        try {
+            console.log('[CLINICAL-SERVICE] Generating transcript for condition:', conditionId);
+            
+            const user = auth.currentUser;
+            if (!user) {
+                throw new Error('User not authenticated');
+            }
+            
+            const idToken = await user.getIdToken();
+            
+            const response = await fetch(`${window.SERVER_URL}/generateTranscript/${conditionId}`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${idToken}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ forceRegenerate })
+            });
+            
+            if (!response.ok) {
+                throw new Error(`Failed to generate transcript: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            
+            if (!data.success) {
+                throw new Error(data.error || 'Failed to generate transcript');
+            }
+            
+            // Update cache if transcript was generated/retrieved
+            if (data.transcript && clinicalConditionsFirebaseCache) {
+                const condition = this.findConditionById(conditionId);
+                if (condition) {
+                    // Find and update the condition in cache
+                    for (const [category, conditions] of Object.entries(clinicalConditionsFirebaseCache)) {
+                        for (const [name, cond] of Object.entries(conditions)) {
+                            if (cond.id === conditionId) {
+                                clinicalConditionsFirebaseCache[category][name].transcript = data.transcript;
+                                clinicalConditionsFirebaseCache[category][name].hasTranscript = true;
+                                clinicalConditionsFirebaseCache[category][name].lastGenerated = data.generated || data.lastGenerated;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+            
+            return data;
+            
+        } catch (error) {
+            console.error('[CLINICAL-SERVICE] Error generating transcript:', error);
+            throw error;
+        }
+    },
+    
+    // Helper to find condition by ID
+    findConditionById(conditionId) {
+        if (!clinicalConditionsFirebaseCache) return null;
+        
+        for (const [category, conditions] of Object.entries(clinicalConditionsFirebaseCache)) {
+            for (const [name, condition] of Object.entries(conditions)) {
+                if (condition.id === conditionId) {
+                    return condition;
+                }
+            }
+        }
+        return null;
+    },
+    
+    // Get summary statistics
+    getSummary() {
+        if (!clinicalConditionsFirebaseCache) return null;
+        
+        const summary = {
+            totalCategories: Object.keys(clinicalConditionsFirebaseCache).length,
+            totalConditions: 0,
+            conditionsWithTranscripts: 0,
+            categoriesWithCounts: {}
+        };
+        
+        for (const [category, conditions] of Object.entries(clinicalConditionsFirebaseCache)) {
+            const categoryCount = Object.keys(conditions).length;
+            const categoryWithTranscripts = Object.values(conditions).filter(c => c.hasTranscript).length;
+            
+            summary.totalConditions += categoryCount;
+            summary.conditionsWithTranscripts += categoryWithTranscripts;
+            summary.categoriesWithCounts[category] = {
+                total: categoryCount,
+                withTranscripts: categoryWithTranscripts
+            };
+        }
+        
+        return summary;
+    }
+};
 
 
