@@ -662,6 +662,14 @@ async function autoEnhanceIncompleteMetadata(guidelines, options = {}) {
 }
 
 async function loadGuidelinesFromFirestore() {
+    // Prevent multiple simultaneous guideline loads
+    if (window.guidelinesLoading || window.guidelinesLoaded) {
+        console.log('[DEBUG] ⏭️ Guidelines loading already in progress or completed, skipping...');
+        return;
+    }
+    
+    window.guidelinesLoading = true;
+    
     try {
         console.log('[DEBUG] Loading guidelines from Firestore...');
         
@@ -896,10 +904,13 @@ async function loadGuidelinesFromFirestore() {
         }, {});
 
         console.log('[DEBUG] Guidelines loaded and stored in global variables');
+        window.guidelinesLoaded = true;
         return guidelines;
     } catch (error) {
         console.error('[DEBUG] Error loading guidelines from Firestore:', error);
         throw error;
+    } finally {
+        window.guidelinesLoading = false;
     }
 }
 
@@ -3784,6 +3795,13 @@ function renderChatHistory() {
 }
 
 async function initializeChatHistory() {
+    // Prevent multiple simultaneous chat history initializations
+    if (window.chatHistoryInitializing || window.chatHistoryInitialized) {
+        console.log('[DEBUG] ⏭️ Chat history initialization already in progress or completed, skipping...');
+        return;
+    }
+    
+    window.chatHistoryInitializing = true;
     console.log('[DEBUG] Initializing chat history...');
     
     // Check if required elements exist
@@ -3842,11 +3860,22 @@ async function initializeChatHistory() {
     
     console.log('[DEBUG] About to call renderChatHistory...');
     renderChatHistory();
+    
+    window.chatHistoryInitialized = true;
     console.log('[DEBUG] Chat history initialization completed');
+    window.chatHistoryInitializing = false;
 }
 
 // Add debugging to the main app initialization
 async function initializeMainApp() {
+    // Prevent multiple simultaneous initializations
+    if (window.mainAppInitializing || window.mainAppInitialized) {
+        console.log('[DEBUG] ⏭️ Main app initialization already in progress or completed, skipping...');
+        return;
+    }
+    
+    window.mainAppInitializing = true;
+    
     try {
         console.log('[DEBUG] Initializing main app features...');
         console.log('[DEBUG] DOM ready state:', document.readyState);
@@ -3872,10 +3901,13 @@ async function initializeMainApp() {
             // Don't throw - allow app to continue functioning even if guidelines fail to load
         }
         
+        window.mainAppInitialized = true;
         console.log('[DEBUG] Main app initialization completed');
     } catch (error) {
         console.error('[DEBUG] Error initializing main app:', error);
         console.error('[DEBUG] Error stack:', error.stack);
+    } finally {
+        window.mainAppInitializing = false;
     }
 }
 
