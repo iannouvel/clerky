@@ -381,7 +381,7 @@ async function fetchAndExtractPDFText(pdfFileName) {
         console.log(`[FETCH_PDF] Attempting to fetch PDF from Firebase Storage: ${pdfFileName}`);
         
         try {
-            const bucket = admin.storage().bucket();
+            const bucket = admin.storage().bucket('clerky-b3be8.appspot.com');
             const file = bucket.file(`pdfs/${pdfFileName}`);
             
             const [exists] = await file.exists();
@@ -6410,7 +6410,7 @@ async function uploadPDFsToFirebaseStorage() {
   try {
     console.log('[PDF_STORAGE] Starting PDF upload to Firebase Storage...');
     
-    const bucket = admin.storage().bucket();
+    const bucket = admin.storage().bucket('clerky-b3be8.appspot.com');
     let uploadedCount = 0;
     let errorCount = 0;
     const results = [];
