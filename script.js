@@ -3397,12 +3397,119 @@ async function processWorkflow() {
 
 let saveStateTimeout = null;
 
+// Firestore chat history functions
+async function saveChatToFirestore(chat) {
+    const user = window.auth.currentUser;
+    if (!user) {
+        console.warn('Cannot save chat to Firestore: user not authenticated');
+        return false;
+    }
+
+    try {
+        const chatRef = window.db.collection('users').doc(user.uid).collection('chatHistory').doc(chat.id.toString());
+        await chatRef.set({
+            ...chat,
+            lastUpdated: new Date(),
+            userId: user.uid
+        });
+        console.log(`[FIRESTORE] Saved chat: ${chat.id}`);
+        return true;
+    } catch (error) {
+        console.error('[FIRESTORE] Error saving chat:', error);
+        return false;
+    }
+}
+
+async function loadChatHistoryFromFirestore() {
+    const user = window.auth.currentUser;
+    if (!user) {
+        console.warn('Cannot load chat history from Firestore: user not authenticated');
+        return [];
+    }
+
+    try {
+        const chatHistoryRef = window.db.collection('users').doc(user.uid).collection('chatHistory');
+        const snapshot = await chatHistoryRef.orderBy('lastUpdated', 'desc').get();
+        
+        const chats = [];
+        snapshot.forEach(doc => {
+            const chat = doc.data();
+            // Ensure the chat has the required structure
+            if (chat.id && chat.state) {
+                chats.push(chat);
+            }
+        });
+        
+        console.log(`[FIRESTORE] Loaded ${chats.length} chats from Firestore`);
+        return chats;
+    } catch (error) {
+        console.error('[FIRESTORE] Error loading chat history:', error);
+        return [];
+    }
+}
+
+async function deleteChatFromFirestore(chatId) {
+    const user = window.auth.currentUser;
+    if (!user) {
+        console.warn('Cannot delete chat from Firestore: user not authenticated');
+        return false;
+    }
+
+    try {
+        const chatRef = window.db.collection('users').doc(user.uid).collection('chatHistory').doc(chatId.toString());
+        await chatRef.delete();
+        console.log(`[FIRESTORE] Deleted chat: ${chatId}`);
+        return true;
+    } catch (error) {
+        console.error('[FIRESTORE] Error deleting chat:', error);
+        return false;
+    }
+}
+
+async function migrateChatHistoryToFirestore() {
+    const user = window.auth.currentUser;
+    if (!user) return;
+
+    try {
+        const savedHistory = localStorage.getItem('chatHistory');
+        if (!savedHistory) return;
+
+        const localChats = JSON.parse(savedHistory);
+        console.log(`[MIGRATION] Migrating ${localChats.length} chats to Firestore...`);
+
+        // Check if we already have chats in Firestore to avoid duplicates
+        const existingChats = await loadChatHistoryFromFirestore();
+        const existingChatIds = new Set(existingChats.map(chat => chat.id));
+
+        let migratedCount = 0;
+        for (const chat of localChats) {
+            if (!existingChatIds.has(chat.id)) {
+                const success = await saveChatToFirestore(chat);
+                if (success) migratedCount++;
+            }
+        }
+
+        if (migratedCount > 0) {
+            console.log(`[MIGRATION] Successfully migrated ${migratedCount} chats to Firestore`);
+            // Clear localStorage after successful migration
+            localStorage.removeItem('chatHistory');
+            console.log('[MIGRATION] Cleared localStorage chat history after migration');
+        }
+    } catch (error) {
+        console.error('[MIGRATION] Error migrating chat history:', error);
+    }
+}
+
 function debouncedSaveState() {
     if (saveStateTimeout) {
         clearTimeout(saveStateTimeout);
     }
-    saveStateTimeout = setTimeout(() => {
-        saveCurrentChatState();
+    saveStateTimeout = setTimeout(async () => {
+        try {
+            await saveCurrentChatState();
+        } catch (error) {
+            console.error('[CHAT] Error in debounced save:', error);
+        }
     }, 1500); // Save 1.5 seconds after the last change
 }
 
@@ -3432,7 +3539,7 @@ function loadChatState(state) {
     window.lastUpdatedTranscript = state.lastUpdatedTranscript || null;
 }
 
-function saveCurrentChatState() {
+async function saveCurrentChatState() {
     if (!currentChatId) return;
 
     const chatIndex = chatHistory.findIndex(chat => chat.id === currentChatId);
@@ -3451,13 +3558,35 @@ function saveCurrentChatState() {
     const currentChat = chatHistory.splice(chatIndex, 1)[0];
     chatHistory.unshift(currentChat);
     
-    localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+    // Save to Firestore (with fallback to localStorage)
+    const firestoreSuccess = await saveChatToFirestore(currentChat);
+    if (!firestoreSuccess) {
+        // Fallback to localStorage if Firestore fails
+        try {
+            localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+            console.log(`[CHAT] Saved to localStorage as fallback for chat: ${currentChatId}`);
+        } catch (localStorageError) {
+            console.error('[CHAT] Both Firestore and localStorage save failed:', localStorageError);
+            // If localStorage is full, clear it and try again
+            if (localStorageError.name === 'QuotaExceededError') {
+                localStorage.removeItem('chatHistory');
+                console.log('[CHAT] Cleared localStorage due to quota exceeded');
+                try {
+                    localStorage.setItem('chatHistory', JSON.stringify([currentChat]));
+                    console.log('[CHAT] Saved current chat only to localStorage');
+                } catch (retryError) {
+                    console.error('[CHAT] Failed to save even after clearing localStorage:', retryError);
+                }
+            }
+        }
+    }
+    
     renderChatHistory(); // Re-render to show updated preview and order
     console.log(`[CHAT] Saved state for chat: ${currentChatId}`);
 }
 
-function startNewChat() {
-    saveCurrentChatState(); // Save the state of the chat we are leaving
+async function startNewChat() {
+    await saveCurrentChatState(); // Save the state of the chat we are leaving
 
     const newChatId = Date.now();
     currentChatId = newChatId;
@@ -3475,16 +3604,25 @@ function startNewChat() {
     chatHistory.unshift(newChat);
     loadChatState(newChat.state);
 
-    localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+    // Save new chat to Firestore (with localStorage fallback)
+    const firestoreSuccess = await saveChatToFirestore(newChat);
+    if (!firestoreSuccess) {
+        try {
+            localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+        } catch (error) {
+            console.error('[CHAT] Failed to save new chat:', error);
+        }
+    }
+    
     renderChatHistory();
     document.getElementById('userInput').focus();
     console.log(`[CHAT] Started new chat: ${newChatId}`);
 }
 
-function switchChat(chatId) {
+async function switchChat(chatId) {
     if (chatId === currentChatId) return;
 
-    saveCurrentChatState(); // Save the current chat before switching
+    await saveCurrentChatState(); // Save the current chat before switching
 
     const chat = chatHistory.find(c => c.id === chatId);
     if (chat) {
@@ -3497,20 +3635,30 @@ function switchChat(chatId) {
     }
 }
 
-function deleteChat(chatId, event) {
+async function deleteChat(chatId, event) {
     event.stopPropagation(); // Prevent switchChat from firing
 
     if (!confirm('Are you sure you want to delete this chat?')) return;
 
+    // Delete from Firestore first
+    await deleteChatFromFirestore(chatId);
+    
+    // Remove from local array
     chatHistory = chatHistory.filter(c => c.id !== chatId);
-    localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+    
+    // Update localStorage as backup
+    try {
+        localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+    } catch (error) {
+        console.warn('[CHAT] Failed to update localStorage after delete:', error);
+    }
 
     if (currentChatId === chatId) {
         // If we deleted the active chat, load the newest one or start fresh
         if (chatHistory.length > 0) {
-            switchChat(chatHistory[0].id);
+            await switchChat(chatHistory[0].id);
         } else {
-            startNewChat();
+            await startNewChat();
         }
     }
     
@@ -3569,7 +3717,7 @@ function renderChatHistory() {
     console.log('[DEBUG] renderChatHistory completed, historyList.children.length:', historyList.children.length);
 }
 
-function initializeChatHistory() {
+async function initializeChatHistory() {
     console.log('[DEBUG] Initializing chat history...');
     
     // Check if required elements exist
@@ -3582,39 +3730,45 @@ function initializeChatHistory() {
         historyColumnDisplay: historyColumn ? getComputedStyle(historyColumn).display : 'not found'
     });
     
-    // Check localStorage
-    const savedHistory = localStorage.getItem('chatHistory');
-    console.log('[DEBUG] localStorage check:', {
-        hasSavedHistory: !!savedHistory,
-        savedHistoryLength: savedHistory ? savedHistory.length : 0,
-        savedHistoryPreview: savedHistory ? savedHistory.substring(0, 200) + '...' : 'none'
-    });
+    // First, try to migrate any existing localStorage data to Firestore
+    await migrateChatHistoryToFirestore();
     
-    if (savedHistory) {
-        try {
-            chatHistory = JSON.parse(savedHistory);
-            console.log('[DEBUG] Loaded chat history from localStorage:', {
-                count: chatHistory.length,
-                chatIds: chatHistory.map(c => c.id),
-                firstChatPreview: chatHistory[0] ? {
-                    id: chatHistory[0].id,
-                    title: chatHistory[0].title,
-                    preview: chatHistory[0].preview
-                } : 'none'
-            });
-        } catch (error) {
-            console.error('[DEBUG] Error parsing saved chat history:', error);
+    // Load chat history from Firestore
+    try {
+        chatHistory = await loadChatHistoryFromFirestore();
+        console.log('[DEBUG] Loaded chat history from Firestore:', {
+            count: chatHistory.length,
+            chatIds: chatHistory.map(c => c.id),
+            firstChatPreview: chatHistory[0] ? {
+                id: chatHistory[0].id,
+                title: chatHistory[0].title,
+                preview: chatHistory[0].preview
+            } : 'none'
+        });
+    } catch (error) {
+        console.error('[DEBUG] Error loading chat history from Firestore:', error);
+        
+        // Fallback to localStorage if Firestore fails
+        const savedHistory = localStorage.getItem('chatHistory');
+        if (savedHistory) {
+            try {
+                chatHistory = JSON.parse(savedHistory);
+                console.log('[DEBUG] Loaded chat history from localStorage (fallback):', {
+                    count: chatHistory.length
+                });
+            } catch (parseError) {
+                console.error('[DEBUG] Error parsing saved chat history:', parseError);
+                chatHistory = [];
+            }
+        } else {
             chatHistory = [];
         }
-    } else {
-        console.log('[DEBUG] No saved chat history found');
-        chatHistory = [];
     }
 
     // Always start with a fresh chat on client load
     console.log('[DEBUG] Starting fresh chat on client load');
     try {
-        startNewChat();
+        await startNewChat();
         console.log('[DEBUG] Started new chat, currentChatId:', currentChatId);
     } catch (error) {
         console.error('[DEBUG] Error starting new chat:', error);
@@ -3640,7 +3794,7 @@ async function initializeMainApp() {
         
         // Initialize chat history
         console.log('[DEBUG] Calling initializeChatHistory...');
-        initializeChatHistory();
+        await initializeChatHistory();
         
         // Load guidelines from Firestore on app initialization
         console.log('[DEBUG] Loading guidelines from Firestore...');
@@ -5474,6 +5628,74 @@ window.repairContent = async function() {
 // Make content status checking available globally for debugging
 window.checkContentStatus = checkContentStatus;
 window.diagnoseAndRepairContent = diagnoseAndRepairContent;
+
+// Make chat history functions available globally for debugging
+window.testFirestoreChat = async function() {
+    console.log('🧪 Testing Firestore chat history...');
+    try {
+        const user = window.auth.currentUser;
+        if (!user) {
+            console.error('❌ You must be logged in to test Firestore chat history');
+            return;
+        }
+        
+        console.log('📊 Current chat history status:', {
+            currentChatId: currentChatId,
+            chatHistoryLength: chatHistory.length,
+            userAuthenticated: !!user,
+            userId: user.uid
+        });
+        
+        // Test loading from Firestore
+        const firestoreChats = await loadChatHistoryFromFirestore();
+        console.log('📥 Loaded from Firestore:', firestoreChats.length, 'chats');
+        
+        // Test saving current chat
+        if (currentChatId) {
+            const currentChat = chatHistory.find(c => c.id === currentChatId);
+            if (currentChat) {
+                const saveSuccess = await saveChatToFirestore(currentChat);
+                console.log('💾 Save test result:', saveSuccess ? '✅ Success' : '❌ Failed');
+            }
+        }
+        
+        console.log('✅ Firestore chat history test completed!');
+    } catch (error) {
+        console.error('❌ Firestore chat history test failed:', error);
+    }
+};
+
+window.clearAllChatHistory = async function() {
+    if (!confirm('Are you sure you want to delete ALL chat history? This cannot be undone.')) {
+        return;
+    }
+    
+    console.log('🗑️ Clearing all chat history...');
+    try {
+        const user = window.auth.currentUser;
+        if (!user) {
+            console.error('❌ You must be logged in to clear chat history');
+            return;
+        }
+        
+        // Delete all chats from Firestore
+        const firestoreChats = await loadChatHistoryFromFirestore();
+        for (const chat of firestoreChats) {
+            await deleteChatFromFirestore(chat.id);
+        }
+        
+        // Clear local data
+        chatHistory = [];
+        localStorage.removeItem('chatHistory');
+        
+        // Start fresh
+        await startNewChat();
+        
+        console.log('✅ All chat history cleared successfully!');
+    } catch (error) {
+        console.error('❌ Failed to clear chat history:', error);
+    }
+};
 
 // Global PDF upload function for console use
 window.uploadPDFContent = async function() {

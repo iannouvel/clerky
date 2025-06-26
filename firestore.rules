@@ -68,6 +68,16 @@ service cloud.firestore {
       allow delete: if isAuthenticated() && isOwner(resource.data.userId);
     }
 
+    // User data collection (for chat history and preferences)
+    match /users/{userId} {
+      allow read, write: if isAuthenticated() && isOwner(userId);
+      
+      // Chat history subcollection
+      match /chatHistory/{chatId} {
+        allow read, write: if isAuthenticated() && isOwner(userId);
+      }
+    }
+
     // Existing rules
     match /disclaimerAcceptance/{userId} {
       allow read, write: if isAuthenticated() && isOwner(userId);
