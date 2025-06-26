@@ -1,0 +1,41 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Please analyze the clinical note against the provided guideline and suggest improvements to better align with the guideline recommendations.\n\nFor each recommendation, specify:\n1. The type of recommendation:\n   - Additional information needed (history/examination/investigations)\n   - Improved patient advice (options/statistics/patient information)\n   - Different management plan\n2. The specific recommendation\n3. The reason for the recommendation (referencing the guideline)\n\nCategorize each recommendation by importance:\n- Very Important: Critical for patient safety or guideline compliance\n- Somewhat Important: Significant for optimal care but not critical\n- Less Important: Would improve care but not essential\n- Unimportant: Minor suggestions that could be considered\n\nFormat the response as follows:\n\n### Very Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Somewhat Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Less Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Unimportant Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\nClinical Note:\nSITUATION: 27-year-old G3P0+2 at 22+3 weeks gestation presenting with painless cervical dilatation and possible cervical insufficiency\n\nBACKGROUND: Mrs Davis has a significant obstetric history of two previous second-trimester losses. First pregnancy ended at 19 weeks with sudden painless dilatation and delivery following spontaneous rupture of membranes. Second pregnancy was similar at 21 weeks despite attempted cervical cerclage at 14 weeks, which was unsuccessful. Both losses were attributed to cervical insufficiency. Current pregnancy was planned with preconception counselling. She was commenced on vaginal progesterone from 16 weeks and had prophylactic cervical cerclage inserted at 13 weeks. Serial cervical length monitoring has shown gradual shortening from 35mm at 16 weeks to 18mm at 20 weeks. She presented today after noticing increased clear vaginal discharge and pelvic pressure for 2 days. No bleeding, no contractions, no urinary symptoms.\n\nASSESSMENT: On examination, patient appears well but anxious. Vital signs stable. Speculum examination reveals cervix 2-3cm dilated with visible membranes bulging through cervical os. Cerclage suture remains in situ but appears loose. No bleeding, clear amniotic fluid visible. Transvaginal ultrasound confirms cervical length of 8mm with funneling. Fetal biometry appropriate for dates, amniotic fluid volume normal, fetal heart rate 148 bpm. No evidence of chorioamnionitis - maternal temperature 36.8°C, WCC 8.2 x10⁹/L, CRP <5 mg/L.\n\nRECOMMENDATION: Emergency rescue cerclage considered but challenging given advanced dilatation and bulging membranes. Admitted for strict bed rest and close monitoring. Tocolytics (nifedipine) commenced to reduce uterine activity. Antibiotics (erythromycin) started prophylactically. Antenatal corticosteroids (betamethasone) given for fetal lung maturity. Daily monitoring for signs of infection or labor. Neonatal team consulted regarding extremely preterm delivery risks. Difficult discussion with parents regarding poor prognosis at current gestation but potential for prolongation of pregnancy.\n\nGuideline:\n[ID] cg20013-preterm-birth-risk-pathway-pdf\nTitle: CG20013 Preterm birth risk pathway\nContent: No content available",
+  "system_prompt": "You are a medical guidelines compliance checker. Your task is to analyze if the given clinical note follows the specified guideline and suggest improvements.",
+  "guideline_id": "cg20013-preterm-birth-risk-pathway-pdf",
+  "guideline_title": "CG20013 Preterm birth risk pathway"
+}
+
+A: Since the guideline content (CG20013 Preterm birth risk pathway) is not available for reference, I cannot directly analyze the clinical note against specific guideline recommendations. However, based on standard obstetric practices for cervical insufficiency and preterm birth prevention, I can provide general recommendations for improvement:
+
+### Very Important Recommendations
+1. [Additional information needed] - Document detailed counseling regarding risks/benefits of emergency cerclage versus expectant management  
+Reason: Standard of care requires thorough informed consent given the high-risk nature of the procedure with bulging membranes
+
+2. [Different management plan] - Consider adding magnesium sulfate for neuroprotection given gestational age 22+3 weeks  
+Reason: ACOG recommends MgSO4 for fetal neuroprotection when delivery is anticipated <32 weeks
+
+### Somewhat Important Recommendations
+1. [Improved patient advice] - Provide written information about signs of preterm labor and infection  
+Reason: Enhances patient awareness for early recognition of complications
+
+2. [Additional information needed] - Document discussion about termination of pregnancy as an option  
+Reason: Ethical obligation to discuss all management options at this borderline viability gestation
+
+### Less Important Recommendations
+1. [Additional information needed] - Consider adding serial inflammatory markers monitoring  
+Reason: May help detect subclinical chorioamnionitis earlier
+
+2. [Improved patient advice] - Offer psychological support services  
+Reason: Significant emotional impact of recurrent losses and current high-risk situation
+
+Without access to the specific CG20013 guideline content, these recommendations are based on general obstetric principles rather than guideline-specific requirements. To provide more targeted analysis, the full guideline content would need to be available.
+
+Would you be able to provide the full text of the CG20013 guideline? This would allow for a proper guideline-compliance analysis.
+
+--- Token Usage Report ---
+Prompt tokens: 740
+Completion tokens: 351
+Total tokens: 1091
+Estimated cost: $0.000545

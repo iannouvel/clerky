@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 5/34",
+  "transcriptLength": 2101,
+  "transcriptPreview": "SITUATION: 27-year-old G3P0+2 at 22+3 weeks gestation presenting with painless cervical dilatation and possible cervical insufficiency\n\nBACKGROUND: Mrs Davis has a significant obstetric history of two previous second-trimester losses. First pregnancy ended at 19 weeks with sudden painless dilatation and delivery following spontaneous rupture of membranes. Second pregnancy was similar at 21 weeks despite attempted cervical cerclage at 14 weeks, which was unsuccessful. Both losses were attributed ...",
+  "chunkGuidelines": [
+    "cg1119-iol-augmentation-of-labour-use-of-oxytocin-pdf: CG1119 IOL & Augmentation of Labour & Use of Oxytocin",
+    "cg1122-maternal-transfer-onsite-handover-of-care-pdf: CG1122 Maternal Transfer & Onsite Handover of Care",
+    "cg1126-multiple-pregnancy-and-birth-pdf: CG1126 Multiple Pregnancy and Birth",
+    "cg1127-neonatal-abstinence-scoring-pdf: CG1127 Neonatal Abstinence Scoring",
+    "cg1128-neonatal-resuscitation-pdf: CG1128 Neonatal Resuscitation",
+    "cg1129-newborn-feeding-pdf: CG1129 Newborn Feeding",
+    "cg1130-assisted-vaginal-birth-guideline-pdf: CG1130 Assisted Vaginal Birth Guideline",
+    "cg1134-postnatal-care-pdf: CG1134 Postnatal Care"
+  ],
+  "chunkIndex": 5,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"cg1126-multiple-pregnancy-and-birth-pdf\", \"title\": \"Multiple Pregnancy and Birth\", \"relevance\": \"0.9\"},\n    {\"id\": \"cg1128-neonatal-resuscitation-pdf\", \"title\": \"Neonatal Resuscitation\", \"relevance\": \"0.85\"},\n    {\"id\": \"cg1129-newborn-feeding-pdf\", \"title\": \"Newborn Feeding\", \"relevance\": \"0.8\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"cg1134-postnatal-care-pdf\", \"title\": \"Postnatal Care\", \"relevance\": \"0.7\"},\n    {\"id\": \"cg1122-maternal-transfer-onsite-handover-of-care-pdf\", \"title\": \"Maternal Transfer & Onsite Handover of Care\", \"relevance\": \"0.6\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"cg1130-assisted-vaginal-birth-guideline-pdf\", \"title\": \"Assisted Vaginal Birth Guideline\", \"relevance\": \"0.4\"},\n    {\"id\": \"cg1119-iol-augmentation-of-labour-use-of-oxytocin-pdf\", \"title\": \"IOL & Augmentation of Labour & Use of Oxytocin\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"cg1127-neonatal-abstinence-scoring-pdf\", \"title\": \"Neonatal Abstinence Scoring\", \"relevance\": \"0.1\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1045
+}
