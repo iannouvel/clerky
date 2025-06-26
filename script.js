@@ -3406,14 +3406,33 @@ async function saveChatToFirestore(chat) {
     }
 
     try {
-        const chatRef = window.db.collection('users').doc(user.uid).collection('chatHistory').doc(chat.id.toString());
-        await chatRef.set({
-            ...chat,
-            lastUpdated: new Date(),
-            userId: user.uid
+        const idToken = await user.getIdToken();
+        const response = await fetch(`${window.SERVER_URL}/saveChatHistory`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${idToken}`
+            },
+            body: JSON.stringify({
+                chat: {
+                    ...chat,
+                    lastUpdated: new Date().toISOString(),
+                    userId: user.uid
+                }
+            })
         });
-        console.log(`[FIRESTORE] Saved chat: ${chat.id}`);
-        return true;
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const result = await response.json();
+        if (result.success) {
+            console.log(`[FIRESTORE] Saved chat: ${chat.id}`);
+            return true;
+        } else {
+            throw new Error(result.error || 'Unknown error saving chat');
+        }
     } catch (error) {
         console.error('[FIRESTORE] Error saving chat:', error);
         return false;
@@ -3428,20 +3447,26 @@ async function loadChatHistoryFromFirestore() {
     }
 
     try {
-        const chatHistoryRef = window.db.collection('users').doc(user.uid).collection('chatHistory');
-        const snapshot = await chatHistoryRef.orderBy('lastUpdated', 'desc').get();
-        
-        const chats = [];
-        snapshot.forEach(doc => {
-            const chat = doc.data();
-            // Ensure the chat has the required structure
-            if (chat.id && chat.state) {
-                chats.push(chat);
+        const idToken = await user.getIdToken();
+        const response = await fetch(`${window.SERVER_URL}/getChatHistory`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${idToken}`
             }
         });
-        
-        console.log(`[FIRESTORE] Loaded ${chats.length} chats from Firestore`);
-        return chats;
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const result = await response.json();
+        if (result.success) {
+            const chats = result.chats || [];
+            console.log(`[FIRESTORE] Loaded ${chats.length} chats from Firestore`);
+            return chats;
+        } else {
+            throw new Error(result.error || 'Unknown error loading chat history');
+        }
     } catch (error) {
         console.error('[FIRESTORE] Error loading chat history:', error);
         return [];
@@ -3456,10 +3481,29 @@ async function deleteChatFromFirestore(chatId) {
     }
 
     try {
-        const chatRef = window.db.collection('users').doc(user.uid).collection('chatHistory').doc(chatId.toString());
-        await chatRef.delete();
-        console.log(`[FIRESTORE] Deleted chat: ${chatId}`);
-        return true;
+        const idToken = await user.getIdToken();
+        const response = await fetch(`${window.SERVER_URL}/deleteChatHistory`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${idToken}`
+            },
+            body: JSON.stringify({
+                chatId: chatId.toString()
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const result = await response.json();
+        if (result.success) {
+            console.log(`[FIRESTORE] Deleted chat: ${chatId}`);
+            return true;
+        } else {
+            throw new Error(result.error || 'Unknown error deleting chat');
+        }
     } catch (error) {
         console.error('[FIRESTORE] Error deleting chat:', error);
         return false;
