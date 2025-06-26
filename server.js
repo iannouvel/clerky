@@ -449,12 +449,38 @@ async function checkAndGenerateContent(guidelineData, guidelineId) {
         
         // Check if content is missing
         if (!guidelineData.content) {
-            console.log(`[CONTENT_GEN] Content missing for ${guidelineId}`);
-            console.log(`[CONTENT_GEN] Note: Content should be pre-uploaded to Firestore using the upload script`);
-            console.log(`[CONTENT_GEN] Run: python scripts/upload_pdfs_to_firestore.py to populate PDF content`);
+            console.log(`[CONTENT_GEN] Content missing for ${guidelineId}, attempting to extract from PDF`);
             
-            // Skip PDF extraction - content should be pre-uploaded
-            // This avoids GitHub API issues entirely
+            try {
+                // Determine PDF filename
+                let pdfFileName = null;
+                if (guidelineData.filename && guidelineData.filename.toLowerCase().endsWith('.pdf')) {
+                    pdfFileName = guidelineData.filename;
+                } else if (guidelineData.originalFilename && guidelineData.originalFilename.toLowerCase().endsWith('.pdf')) {
+                    pdfFileName = guidelineData.originalFilename;
+                } else if (guidelineData.filename) {
+                    pdfFileName = guidelineData.filename.replace(/\.[^.]+$/, '.pdf');
+                } else if (guidelineData.title) {
+                    pdfFileName = guidelineData.title + '.pdf';
+                }
+                
+                if (pdfFileName) {
+                    console.log(`[CONTENT_GEN] Attempting to extract text from PDF: ${pdfFileName}`);
+                    const extractedContent = await fetchAndExtractPDFText(pdfFileName);
+                    
+                    if (extractedContent && extractedContent.trim().length > 0) {
+                        updates.content = extractedContent;
+                        console.log(`[CONTENT_GEN] Successfully extracted content for ${guidelineId}: ${extractedContent.length} chars`);
+                        updated = true;
+                    } else {
+                        console.log(`[CONTENT_GEN] PDF extraction returned empty content for ${guidelineId}`);
+                    }
+                } else {
+                    console.log(`[CONTENT_GEN] Could not determine PDF filename for ${guidelineId}`);
+                }
+            } catch (pdfError) {
+                console.log(`[CONTENT_GEN] PDF extraction failed for ${guidelineId}: ${pdfError.message}`);
+            }
         }
         
         // Check if condensed is missing (check both document and condensed collection)
@@ -476,6 +502,10 @@ async function checkAndGenerateContent(guidelineData, guidelineId) {
                             generatedDate: new Date().toISOString(),
                             sourceType: updates.content ? 'extracted_pdf' : 'existing_content'
                         });
+                        
+                        // Also save to main document for easier access
+                        updates.condensed = condensedText;
+                        
                         console.log(`[CONTENT_GEN] Generated condensed text for ${guidelineId}: ${condensedText.length} chars`);
                         updated = true;
                     }
@@ -6513,21 +6543,32 @@ async function getAllGuidelines() {
 
     const result = [];
     
-    // Process guidelines - all data is now in single collection
+    // Also fetch condensed data from separate collection to ensure completeness
+    const condensedCollection = await db.collection('condensed').get();
+    const condensedMap = new Map();
+    condensedCollection.forEach(doc => {
+      condensedMap.set(doc.id, doc.data().condensed);
+    });
+    
+    // Process guidelines - merge data from all sources
     guidelines.forEach(doc => {
       const data = doc.data();
+      const condensedFromCollection = condensedMap.get(doc.id);
+      
       console.log(`[DEBUG] Processing guideline: ${doc.id}`, {
         hasGuidelineId: !!data.guidelineId,
         guidelineId: data.guidelineId,
         hasContent: !!data.content,
         hasSummary: !!data.summary,
         hasKeywords: !!data.keywords,
-        hasCondensed: !!data.condensed
+        hasCondensed: !!data.condensed,
+        hasCondensedFromCollection: !!condensedFromCollection
       });
       
       result.push({
         ...data,
-        id: doc.id
+        id: doc.id,
+        condensed: data.condensed || condensedFromCollection || null // Prefer document field, fallback to collection
       });
     });
     console.log('[DEBUG] Returning', result.length, 'guidelines');
