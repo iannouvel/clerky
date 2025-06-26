@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 26/34",
+  "transcriptLength": 2280,
+  "transcriptPreview": "SITUATION: 30-year-old G1P0 with dichorionic diamniotic twin pregnancy at 32+2 weeks presenting with preterm labor and growth discordance\n\nBACKGROUND: Mrs Liu conceived via IVF after 2 years of unexplained infertility, single embryo transfer resulted in spontaneous splitting to monozygotic twins. Pregnancy has been closely monitored with fortnightly scans. Recent growth scans show developing growth discordance between twins - Twin A estimated 1.8kg (50th centile), Twin B estimated 1.4kg (10th ce...",
+  "chunkGuidelines": [
+    "pp14002-newborn-blood-spot-screening-pdf: PP14002 Newborn Blood Spot Screening",
+    "pph-prompt-card-ed-rsch-prh-pdf: PPH prompt card ED RSCH PRH",
+    "proforma-shoulder-dystocia-uhsx-pdf: Proforma Shoulder Dystocia UHSx",
+    "rcog-2025-gtg-76-management-of-thyroid-disorders-in-pregnancy-pdf: Management of Thyroid Disorders in Pregnancy",
+    "rcog-birth-after-previous-caesarean-section-2015-pdf: Birth After Previous Caesarean Birth.",
+    "reduced-fetal-movements-guideline-pdf: Reduced Fetal Movements guideline",
+    "releasing-placentas-to-parents-form-pdf: Releasing placentas to parents form",
+    "risk-assessment-obstetric-vte-non-maternity-wards-pdf: Risk Assessment Obstetric VTE  non-maternity wards"
+  ],
+  "chunkIndex": 26,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"pph-prompt-card-ed-rsch-prh-pdf\", \"title\": \"PPH prompt card ED RSCH PRH\", \"relevance\": \"0.9\"},\n    {\"id\": \"proforma-shoulder-dystocia-uhsx-pdf\", \"title\": \"Proforma Shoulder Dystocia UHSx\", \"relevance\": \"0.8\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"reduced-fetal-movements-guideline-pdf\", \"title\": \"Reduced Fetal Movements guideline\", \"relevance\": \"0.7\"},\n    {\"id\": \"risk-assessment-obstetric-vte-non-maternity-wards-pdf\", \"title\": \"Risk Assessment Obstetric VTE non-maternity wards\", \"relevance\": \"0.6\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"rcog-birth-after-previous-caesarean-section-2015-pdf\", \"title\": \"Birth After Previous Caesarean Birth.\", \"relevance\": \"0.4\"},\n    {\"id\": \"releasing-placentas-to-parents-form-pdf\", \"title\": \"Releasing placentas to parents form\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"rcog-2025-gtg-76-management-of-thyroid-disorders-in-pregnancy-pdf\", \"title\": \"Management of Thyroid Disorders in Pregnancy\", \"relevance\": \"0.1\"},\n    {\"id\": \"pp14002-newborn-blood-spot-screening-pdf\", \"title\": \"PP14002 Newborn Blood Spot Screening\", \"relevance\": \"0.1\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1152
+}
