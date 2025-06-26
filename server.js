@@ -7638,3 +7638,81 @@ app.post('/migrate-guideline-urls', authenticateUser, async (req, res) => {
         res.status(500).json({ success: false, error: error.message });
     }
 });
+
+// Chat history endpoints
+app.post('/saveChatHistory', authenticateUser, async (req, res) => {
+    try {
+        const userId = req.user.uid;
+        const { chat } = req.body;
+        
+        if (!chat || !chat.id) {
+            return res.status(400).json({ success: false, error: 'Chat data and ID are required' });
+        }
+        
+        // Ensure the chat belongs to the authenticated user
+        const chatData = {
+            ...chat,
+            userId: userId,
+            lastUpdated: admin.firestore.FieldValue.serverTimestamp()
+        };
+        
+        // Save to Firestore
+        const chatRef = db.collection('users').doc(userId).collection('chatHistory').doc(chat.id.toString());
+        await chatRef.set(chatData);
+        
+        console.log(`[CHAT_HISTORY] Saved chat ${chat.id} for user ${userId}`);
+        res.json({ success: true, message: 'Chat saved successfully' });
+        
+    } catch (error) {
+        console.error('[CHAT_HISTORY] Error saving chat:', error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+app.get('/getChatHistory', authenticateUser, async (req, res) => {
+    try {
+        const userId = req.user.uid;
+        
+        // Load chat history from Firestore
+        const chatHistoryRef = db.collection('users').doc(userId).collection('chatHistory');
+        const snapshot = await chatHistoryRef.orderBy('lastUpdated', 'desc').get();
+        
+        const chats = [];
+        snapshot.forEach(doc => {
+            const chat = doc.data();
+            // Ensure the chat has the required structure
+            if (chat.id && chat.state) {
+                chats.push(chat);
+            }
+        });
+        
+        console.log(`[CHAT_HISTORY] Loaded ${chats.length} chats for user ${userId}`);
+        res.json({ success: true, chats });
+        
+    } catch (error) {
+        console.error('[CHAT_HISTORY] Error loading chat history:', error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+app.delete('/deleteChatHistory', authenticateUser, async (req, res) => {
+    try {
+        const userId = req.user.uid;
+        const { chatId } = req.body;
+        
+        if (!chatId) {
+            return res.status(400).json({ success: false, error: 'Chat ID is required' });
+        }
+        
+        // Delete from Firestore
+        const chatRef = db.collection('users').doc(userId).collection('chatHistory').doc(chatId.toString());
+        await chatRef.delete();
+        
+        console.log(`[CHAT_HISTORY] Deleted chat ${chatId} for user ${userId}`);
+        res.json({ success: true, message: 'Chat deleted successfully' });
+        
+    } catch (error) {
+        console.error('[CHAT_HISTORY] Error deleting chat:', error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
