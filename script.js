@@ -781,29 +781,23 @@ async function loadGuidelinesFromFirestore() {
         const averageCompleteness = guidelines.length > 0 ? totalCompletenessScore / guidelines.length : 0;
         console.log(`[METADATA] Metadata completeness summary: ${incompleteCount}/${guidelines.length} guidelines need enhancement (average: ${averageCompleteness.toFixed(1)}%)`);
         
-        // NEW: Check content status and offer repair if needed
+        // NEW: Check content status and trigger immediate repair for any missing content
         const contentStatus = checkContentStatus(guidelines);
         console.log('[CONTENT_STATUS] Content analysis:', contentStatus.stats);
         
-        // Alert user if significant content issues are found
-        const contentIssueThreshold = Math.max(5, Math.floor(guidelines.length * 0.1)); // 10% or minimum 5 guidelines
-        const hasSignificantContentIssues = contentStatus.stats.missingBoth > contentIssueThreshold || 
-                                           contentStatus.stats.nullContent > contentIssueThreshold * 2;
-        
-        if (hasSignificantContentIssues) {
-            console.warn('[CONTENT_STATUS] Significant content issues detected:', {
+        // If ANY guidelines have missing content, trigger repair immediately
+        if (contentStatus.stats.nullContent > 0 || contentStatus.stats.nullCondensed > 0) {
+            console.warn('[CONTENT_STATUS] Missing content detected:', {
                 nullContent: contentStatus.stats.nullContent,
                 nullCondensed: contentStatus.stats.nullCondensed,
-                missingBoth: contentStatus.stats.missingBoth,
-                threshold: contentIssueThreshold
+                missingBoth: contentStatus.stats.missingBoth
             });
             
-            // Show content repair option
-            showMetadataProgress(`⚠️ Found ${contentStatus.stats.missingBoth} guidelines missing content - starting automatic repair...`, false);
+            // Show content repair starting
+            showMetadataProgress(`🔧 Found ${contentStatus.stats.nullContent + contentStatus.stats.nullCondensed} guidelines with missing content - starting automatic repair...`, false);
             
-            // AUTOMATICALLY trigger content repair when significant issues are detected (with debouncing)
-            if (!window.contentRepairInProgress && !window.autoRepairTriggered) {
-                window.autoRepairTriggered = true;
+            // IMMEDIATELY trigger content repair for any missing content (with debouncing)
+            if (!window.contentRepairInProgress) {
                 console.log('[CONTENT_STATUS] Starting automatic content repair...');
                 setTimeout(async () => {
                     try {
@@ -811,48 +805,13 @@ async function loadGuidelinesFromFirestore() {
                         console.log('[CONTENT_STATUS] Automatic content repair completed successfully');
                     } catch (error) {
                         console.error('[CONTENT_STATUS] Automatic content repair failed:', error);
-                        
-                        // If automatic repair fails, show manual repair button
-                        const repairHtml = `
-                            <div id="content-repair-notice" style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; margin: 10px 0; border-radius: 5px;">
-                                <h4 style="color: #856404; margin: 0 0 10px 0;">⚠️ Content Issues Detected</h4>
-                                <p style="margin: 0 0 10px 0; color: #856404;">
-                                    Found <strong>${contentStatus.stats.nullContent}</strong> guidelines with missing content and 
-                                    <strong>${contentStatus.stats.nullCondensed}</strong> with missing condensed text.
-                                    Only <strong>${contentStatus.stats.fullyPopulated}</strong> out of <strong>${contentStatus.stats.total}</strong> guidelines are fully populated.
-                                </p>
-                                <p style="margin: 0 0 10px 0; color: #856404;">
-                                    Automatic repair failed: ${error.message}
-                                </p>
-                                <p style="margin: 0 0 15px 0; color: #856404;">
-                                    This severely impacts AI analysis quality. Try manual repair below.
-                                </p>
-                                <button onclick="diagnoseAndRepairContent()" style="background: #28a745; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">
-                                    🔧 Retry Content Repair
-                                </button>
-                                <button onclick="document.getElementById('content-repair-notice').style.display='none'" style="background: #6c757d; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; margin-left: 10px;">
-                                    Dismiss
-                                </button>
-                            </div>
-                        `;
-                        
-                        // Try to add the repair notice to the summary area
-                        const summary1 = document.getElementById('summary1');
-                        if (summary1 && !document.getElementById('content-repair-notice')) {
-                            summary1.insertAdjacentHTML('afterbegin', repairHtml);
-                        }
-                    } finally {
-                        // Reset flags to allow future repairs
-                        setTimeout(() => {
-                            window.autoRepairTriggered = false;
-                        }, 300000); // 5 minutes
                     }
-                }, 2000);
+                }, 1000); // Start immediately
             } else {
-                console.log('[CONTENT_STATUS] Auto-repair already triggered or in progress, skipping to prevent loops');
+                console.log('[CONTENT_STATUS] Content repair already in progress, skipping...');
             }
         } else {
-            console.log('[CONTENT_STATUS] Content quality looks good:', {
+            console.log('[CONTENT_STATUS] All guidelines have complete content:', {
                 fullyPopulated: contentStatus.stats.fullyPopulated,
                 percentComplete: Math.round((contentStatus.stats.fullyPopulated / contentStatus.stats.total) * 100)
             });
