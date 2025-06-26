@@ -1,0 +1,20 @@
+{
+  "prompt": {
+    "guidelineId": "cg14004-miscarriage-guideline-pdf",
+    "fieldsProcessed": [
+      "humanFriendlyName",
+      "organisation",
+      "yearProduced",
+      "summary"
+    ],
+    "enhancedFields": 0,
+    "contentLength": 2106
+  },
+  "response": "{\n  \"success\": false,\n  \"enhancedFields\": []\n}",
+  "endpoint": "enhanceGuidelineMetadata",
+  "timestamp": "2025-06-26T12-01-36",
+  "textContent": "AI: DeepSeek (deepseek-chat)\n\nQ: {\n  \"guidelineId\": \"cg14004-miscarriage-guideline-pdf\",\n  \"fieldsProcessed\": [\n    \"humanFriendlyName\",\n    \"organisation\",\n    \"yearProduced\",\n    \"summary\"\n  ],\n  \"enhancedFields\": 0,\n  \"contentLength\": 2106\n}\n\nA: {\n  \"success\": false,\n  \"enhancedFields\": []\n}",
+  "ai_provider": "DeepSeek",
+  "ai_model": "deepseek-chat",
+  "token_usage": null
+}
