@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 8/34",
+  "transcriptLength": 2280,
+  "transcriptPreview": "SITUATION: 30-year-old G1P0 with dichorionic diamniotic twin pregnancy at 32+2 weeks presenting with preterm labor and growth discordance\n\nBACKGROUND: Mrs Liu conceived via IVF after 2 years of unexplained infertility, single embryo transfer resulted in spontaneous splitting to monozygotic twins. Pregnancy has been closely monitored with fortnightly scans. Recent growth scans show developing growth discordance between twins - Twin A estimated 1.8kg (50th centile), Twin B estimated 1.4kg (10th ce...",
+  "chunkGuidelines": [
+    "cg13019-triage-of-maternity-patients-guideline-pdf: CG13019 Triage of Maternity Patients Guideline",
+    "cg13026-epilepsy-management-in-pregnancy-pdf: CG13026 Epilepsy Management in Pregnancy",
+    "cg14004-miscarriage-guideline-pdf: CG14004 Miscarriage Guideline",
+    "cg14005-water-birth-guideline-pdf: CG14005 Water Birth guideline",
+    "cg14009-pcea-epidural-in-labour-guideline-pdf: CG14009 PCEA (Epidural) in Labour Guideline",
+    "cg14020-female-genital-mutilation-fgm-pdf: CG14020 Female Genital Mutilation (FGM)",
+    "cg14021-birth-centre-guideline-pdf: CG14021 Birth Centre guideline",
+    "cg15006-baby-abduction-guidance-pdf: CG15006 Baby Abduction Guidance"
+  ],
+  "chunkIndex": 8,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"cg13019-triage-of-maternity-patients-guideline-pdf\", \"title\": \"CG13019 Triage of Maternity Patients Guideline\", \"relevance\": \"0.9\"},\n    {\"id\": \"cg14021-birth-centre-guideline-pdf\", \"title\": \"CG14021 Birth Centre guideline\", \"relevance\": \"0.8\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"cg14005-water-birth-guideline-pdf\", \"title\": \"CG14005 Water Birth guideline\", \"relevance\": \"0.6\"},\n    {\"id\": \"cg14009-pcea-epidural-in-labour-guideline-pdf\", \"title\": \"CG14009 PCEA (Epidural) in Labour Guideline\", \"relevance\": \"0.6\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"cg14020-female-genital-mutilation-fgm-pdf\", \"title\": \"CG14020 Female Genital Mutilation (FGM)\", \"relevance\": \"0.3\"},\n    {\"id\": \"cg15006-baby-abduction-guidance-pdf\", \"title\": \"CG15006 Baby Abduction Guidance\", \"relevance\": \"0.3\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"cg13026-epilepsy-management-in-pregnancy-pdf\", \"title\": \"CG13026 Epilepsy Management in Pregnancy\", \"relevance\": \"0.1\"},\n    {\"id\": \"cg14004-miscarriage-guideline-pdf\", \"title\": \"CG14004 Miscarriage Guideline\", \"relevance\": \"0.1\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1110
+}
