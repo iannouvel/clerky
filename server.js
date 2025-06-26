@@ -673,7 +673,8 @@ try {
   
   console.log('[DEBUG] Firebase: Initializing Firebase Admin SDK...');
   admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount)
+    credential: admin.credential.cert(serviceAccount),
+    storageBucket: 'clerky-b3be8.appspot.com'
   });
   
   console.log('[DEBUG] Firebase: Firebase Admin SDK initialized successfully');
