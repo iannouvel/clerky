@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 21/34",
+  "transcriptLength": 1405,
+  "transcriptPreview": "39+6, P0\n1st episode reduced fetal movements - ongoing slight reduction since earlier today\nno bleeding\nno abnormal vaginal discharge\nno PET symptoms\nno pain\nhaving irregular tightenings - not painful\n\nBG:\nMacrosomic baby on USS in 3rd trimester, normal fluid, hasn't been counselled re macrosomia\n\nObs: N\nUrine: N\nCTG: Stable FHR, didn't meet Dawes-Redman criteria after 1 hour, STV 5, didn't meet due to \n\"No episodes of high variation \"\n\"long term variation during episodes of high variation below...",
+  "chunkGuidelines": [
+    "mp035-care-of-women-in-labour-pdf: MP035 Care of Women in Labour",
+    "mp036-care-of-women-with-haemoglobinopathies-pdf: MP036 Care of Women with Haemoglobinopathies",
+    "mp037-fetal-heart-monitoring-guideline-2023final-pdf: MP037 Fetal Heart Monitoring guideline 2023_Final",
+    "mp038-fetal-blood-sampling-pdf: MP038 Fetal Blood Sampling",
+    "mp039-waterbirth-pdf: MP039 Waterbirth",
+    "mp041-2024-delay-in-labour-and-use-of-oxytocin-v41-pdf: MP041 (2024) Delay in Labour and use of Oxytocin v4.1",
+    "mp042-epidurals-in-labour-pdf: MP042 Epidurals in Labour",
+    "mp043-prevention-of-acid-aspiration-pdf: MP043 Prevention of Acid Aspiration"
+  ],
+  "chunkIndex": 21,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"mp037-fetal-heart-monitoring-guideline-2023final-pdf\", \"title\": \"Fetal Heart Monitoring guideline 2023_Final\", \"relevance\": \"0.95\"},\n    {\"id\": \"mp035-care-of-women-in-labour-pdf\", \"title\": \"Care of Women in Labour\", \"relevance\": \"0.90\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"mp041-2024-delay-in-labour-and-use-of-oxytocin-v41-pdf\", \"title\": \"Delay in Labour and use of Oxytocin v4.1\", \"relevance\": \"0.70\"},\n    {\"id\": \"mp038-fetal-blood-sampling-pdf\", \"title\": \"Fetal Blood Sampling\", \"relevance\": \"0.65\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"mp042-epidurals-in-labour-pdf\", \"title\": \"Epidurals in Labour\", \"relevance\": \"0.40\"},\n    {\"id\": \"mp043-prevention-of-acid-aspiration-pdf\", \"title\": \"Prevention of Acid Aspiration\", \"relevance\": \"0.30\"},\n    {\"id\": \"mp039-waterbirth-pdf\", \"title\": \"Waterbirth\", \"relevance\": \"0.25\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"mp036-care-of-women-with-haemoglobinopathies-pdf\", \"title\": \"Care of Women with Haemoglobinopathies\", \"relevance\": \"0.10\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1043
+}

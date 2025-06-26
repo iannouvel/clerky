@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 3/34",
+  "transcriptLength": 2465,
+  "transcriptPreview": "SITUATION: 25-year-old G1P0 at 12+3 weeks gestation presenting with excessive nausea, vomiting, and suspected molar pregnancy\n\nBACKGROUND: Miss Adams has experienced severe hyperemesis since 8 weeks gestation, significantly worse than typical morning sickness described by friends. She reports vomiting 15-20 times daily, unable to keep down solid food for 2 weeks, and has lost 6kg since pregnancy confirmation. She also noticed vaginal spotting for 3 days, initially light pink but now brown discha...",
+  "chunkGuidelines": [
+    "bjog-2021-navaratnam-amniocentesis-and-chorionic-villus-sampling-pdf: Guidelines for Amniocentesis and Chorionic Villus Sampling in Pregnancy",
+    "bjog-2022-girling-intrahepatic-cholestasis-of-pregnancy-pdf: Intrahepatic Cholestasis of Pregnancy: Diagnosis and Management",
+    "bjog-2022-shennan-cervical-cerclage-pdf: Cervical Cerclage",
+    "bjog-2022-stock-antenatal-corticosteroids-to-reduce-neonatal-morbidity-and-mortality-pdf: Antenatal Corticosteroids for Improving Neonatal Outcomes in Preterm Birth",
+    "bjog-2024-de-silva-outpatient-hysteroscopy-pdf: Outpatient Hysteroscopy",
+    "bms-2024-management-of-unscheduled-bleeding-on-hrt-pdf: Management of Unscheduled Bleeding on Hormone Replacement Therapy (HRT)",
+    "carbetocin-to-prevent-pph-at-cs-uhs-cg-0009-2023-pdf: Carbetocin to prevent PPH at CS UHS-CG-0009-2023",
+    "cg1103-antenatal-care-patient-info-pdf: CG1103 Antenatal Care & Patient Info"
+  ],
+  "chunkIndex": 3,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"cg1103-antenatal-care-patient-info-pdf\", \"title\": \"CG1103 Antenatal Care & Patient Info\", \"relevance\": \"0.9\"},\n    {\"id\": \"carbetocin-to-prevent-pph-at-cs-uhs-cg-0009-2023-pdf\", \"title\": \"Carbetocin to prevent PPH at CS UHS-CG-0009-2023\", \"relevance\": \"0.7\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"bjog-2022-girling-intrahepatic-cholestasis-of-pregnancy-pdf\", \"title\": \"Intrahepatic Cholestasis of Pregnancy: Diagnosis and Management\", \"relevance\": \"0.5\"},\n    {\"id\": \"bjog-2022-shennan-cervical-cerclage-pdf\", \"title\": \"Cervical Cerclage\", \"relevance\": \"0.3\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"bjog-2022-stock-antenatal-corticosteroids-to-reduce-neonatal-morbidity-and-mortality-pdf\", \"title\": \"Antenatal Corticosteroids for Improving Neonatal Outcomes in Preterm Birth\", \"relevance\": \"0.2\"},\n    {\"id\": \"bjog-2024-de-silva-outpatient-hysteroscopy-pdf\", \"title\": \"Outpatient Hysteroscopy\", \"relevance\": \"0.1\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"bjog-2021-navaratnam-amniocentesis-and-chorionic-villus-sampling-pdf\", \"title\": \"Guidelines for Amniocentesis and Chorionic Villus Sampling in Pregnancy\", \"relevance\": \"0.0\"},\n    {\"id\": \"bms-2024-management-of-unscheduled-bleeding-on-hrt-pdf\", \"title\": \"Management of Unscheduled Bleeding on Hormone Replacement Therapy (HRT)\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1355
+}

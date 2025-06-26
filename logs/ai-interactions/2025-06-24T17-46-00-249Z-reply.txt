@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 25/34",
+  "transcriptLength": 1405,
+  "transcriptPreview": "39+6, P0\n1st episode reduced fetal movements - ongoing slight reduction since earlier today\nno bleeding\nno abnormal vaginal discharge\nno PET symptoms\nno pain\nhaving irregular tightenings - not painful\n\nBG:\nMacrosomic baby on USS in 3rd trimester, normal fluid, hasn't been counselled re macrosomia\n\nObs: N\nUrine: N\nCTG: Stable FHR, didn't meet Dawes-Redman criteria after 1 hour, STV 5, didn't meet due to \n\"No episodes of high variation \"\n\"long term variation during episodes of high variation below...",
+  "chunkGuidelines": [
+    "nice-guidance-2024-endometriosis-pdf: Endometriosis: diagnosis and management",
+    "nice-guideline-2021-iol-pdf: Inducing labour",
+    "ns001-newborn-hearing-screening-programme-pdf: NS001 Newborn Hearing Screening Programme",
+    "p19005-locsop-for-obstetric-procedural-counts-pdf: P19005 LocSOP for Obstetric Procedural Counts",
+    "p19011-referral-for-low-platelets-in-pregnancy-protocol-pdf: P19011 Referral for low platelets in pregnancy protocol",
+    "penthrox-use-of-in-ambulatory-gynaecology-guideline-pdf: Penthrox (use of) in ambulatory gynaecology guideline",
+    "pid-proforma-june-2011v2-pdf: PID Proforma - June 2011v2",
+    "piis0002937822004781-pdf: PIIS0002937822004781"
+  ],
+  "chunkIndex": 25,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"nice-guideline-2021-iol-pdf\", \"title\": \"Inducing labour\", \"relevance\": \"0.95\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"p19005-locsop-for-obstetric-procedural-counts-pdf\", \"title\": \"LocSOP for Obstetric Procedural Counts\", \"relevance\": \"0.65\"},\n    {\"id\": \"p19011-referral-for-low-platelets-in-pregnancy-protocol-pdf\", \"title\": \"Referral for low platelets in pregnancy protocol\", \"relevance\": \"0.55\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"ns001-newborn-hearing-screening-programme-pdf\", \"title\": \"Newborn Hearing Screening Programme\", \"relevance\": \"0.35\"},\n    {\"id\": \"penthrox-use-of-in-ambulatory-gynaecology-guideline-pdf\", \"title\": \"Penthrox (use of) in ambulatory gynaecology guideline\", \"relevance\": \"0.25\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"nice-guidance-2024-endometriosis-pdf\", \"title\": \"Endometriosis: diagnosis and management\", \"relevance\": \"0.1\"},\n    {\"id\": \"pid-proforma-june-2011v2-pdf\", \"title\": \"PID Proforma - June 2011v2\", \"relevance\": \"0.1\"},\n    {\"id\": \"piis0002937822004781-pdf\", \"title\": \"PIIS0002937822004781\", \"relevance\": \"0.1\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1110
+}

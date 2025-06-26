@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 9/34",
+  "transcriptLength": 2280,
+  "transcriptPreview": "SITUATION: 30-year-old G1P0 with dichorionic diamniotic twin pregnancy at 32+2 weeks presenting with preterm labor and growth discordance\n\nBACKGROUND: Mrs Liu conceived via IVF after 2 years of unexplained infertility, single embryo transfer resulted in spontaneous splitting to monozygotic twins. Pregnancy has been closely monitored with fortnightly scans. Recent growth scans show developing growth discordance between twins - Twin A estimated 1.8kg (50th centile), Twin B estimated 1.4kg (10th ce...",
+  "chunkGuidelines": [
+    "cg16016-management-of-pregnancies-with-previous-bariatric-surgery-pdf: CG16016 Management of pregnancies with previous Bariatric Surgery",
+    "cg17003-nipe-guideline-pdf: CG17003 NIPE guideline",
+    "cg17004-newborn-hearing-screening-programme-sop-pdf: CG17004 Newborn Hearing Screening Programme SOP",
+    "cg18005-newborn-bcg-immunisation-guideline-pdf: CG18005 Newborn BCG Immunisation guideline",
+    "cg18006-nipe-sop-pdf: CG18006 NIPE SOP",
+    "cg18007-newborn-screening-failsafes-pdf: CG18007 Newborn screening failsafes",
+    "cg19002-accidentally-dropped-babies-in-hospital-pdf: CG19002 Accidentally dropped babies in hospital",
+    "cg20003-first-trimester-dating-uss-protocol-pdf: CG20003 First Trimester Dating USS Protocol"
+  ],
+  "chunkIndex": 9,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [],\n  \"potentiallyRelevant\": [\n    {\"id\": \"cg20003-first-trimester-dating-uss-protocol-pdf\", \"title\": \"First Trimester Dating USS Protocol\", \"relevance\": \"0.6\"},\n    {\"id\": \"cg18006-nipe-sop-pdf\", \"title\": \"NIPE SOP\", \"relevance\": \"0.5\"},\n    {\"id\": \"cg17003-nipe-guideline-pdf\", \"title\": \"NIPE guideline\", \"relevance\": \"0.5\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"cg18007-newborn-screening-failsafes-pdf\", \"title\": \"Newborn screening failsafes\", \"relevance\": \"0.4\"},\n    {\"id\": \"cg19002-accidentally-dropped-babies-in-hospital-pdf\", \"title\": \"Accidentally dropped babies in hospital\", \"relevance\": \"0.3\"},\n    {\"id\": \"cg17004-newborn-hearing-screening-programme-sop-pdf\", \"title\": \"Newborn Hearing Screening Programme SOP\", \"relevance\": \"0.3\"},\n    {\"id\": \"cg18005-newborn-bcg-immunisation-guideline-pdf\", \"title\": \"Newborn BCG Immunisation guideline\", \"relevance\": \"0.2\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"cg16016-management-of-pregnancies-with-previous-bariatric-surgery-pdf\", \"title\": \"Management of pregnancies with previous Bariatric Surgery\", \"relevance\": \"0.0\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1108
+}

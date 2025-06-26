@@ -1,0 +1,26 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Chunk 19/34",
+  "transcriptLength": 2280,
+  "transcriptPreview": "SITUATION: 30-year-old G1P0 with dichorionic diamniotic twin pregnancy at 32+2 weeks presenting with preterm labor and growth discordance\n\nBACKGROUND: Mrs Liu conceived via IVF after 2 years of unexplained infertility, single embryo transfer resulted in spontaneous splitting to monozygotic twins. Pregnancy has been closely monitored with fortnightly scans. Recent growth scans show developing growth discordance between twins - Twin A estimated 1.8kg (50th centile), Twin B estimated 1.4kg (10th ce...",
+  "chunkGuidelines": [
+    "mp015-substance-use-in-pregnancy-pdf: MP015 Substance Use in Pregnancy",
+    "mp017-dna-appointments-pdf: MP017 DNA Appointments",
+    "mp018-diabetes-in-pregnancy-sr-pdf: MP018 Diabetes in Pregnancy SR",
+    "mp019-hypertension-and-pre-eclampsia-in-pregnancy-pdf: MP019 Hypertension and Pre-eclampsia in Pregnancy",
+    "mp020-multiple-pregnancy-and-birth-pdf: MP020 Multiple Pregnancy and Birth",
+    "mp022-emergency-maternity-admissions-pdf: MP022 Emergency Maternity Admissions",
+    "mp023-maternal-and-in-utero-transfers-pdf: MP023 Maternal and In Utero Transfers",
+    "mp025-day-assessment-unit-dau-pdf: MP025 Day Assessment Unit (DAU)"
+  ],
+  "chunkIndex": 19,
+  "totalChunks": 34
+}
+
+A: {
+  "success": true,
+  "aiResponse": "```json\n{\n  \"mostRelevant\": [\n    {\"id\": \"mp020-multiple-pregnancy-and-birth-pdf\", \"title\": \"Multiple Pregnancy and Birth\", \"relevance\": \"0.95\"},\n    {\"id\": \"mp018-diabetes-in-pregnancy-sr-pdf\", \"title\": \"Diabetes in Pregnancy SR\", \"relevance\": \"0.85\"},\n    {\"id\": \"mp022-emergency-maternity-admissions-pdf\", \"title\": \"Emergency Maternity Admissions\", \"relevance\": \"0.80\"}\n  ],\n  \"potentiallyRelevant\": [\n    {\"id\": \"mp019-hypertension-and-pre-eclampsia-in-pregnancy-pdf\", \"title\": \"Hypertension and Pre-eclampsia in Pregnancy\", \"relevance\": \"0.65\"},\n    {\"id\": \"mp025-day-assessment-unit-dau-pdf\", \"title\": \"Day Assessment Unit (DAU)\", \"relevance\": \"0.60\"},\n    {\"id\": \"mp023-maternal-and-in-utero-transfers-pdf\", \"title\": \"Maternal and In Utero Transfers\", \"relevance\": \"0.55\"}\n  ],\n  \"lessRelevant\": [\n    {\"id\": \"mp017-dna-appointments-pdf\", \"title\": \"DNA Appointments\", \"relevance\": \"0.30\"}\n  ],\n  \"notRelevant\": [\n    {\"id\": \"mp015-substance-use-in-pregnancy-pdf\", \"title\": \"Substance Use in Pregnancy\", \"relevance\": \"0.10\"}\n  ]\n}\n```",
+  "responseType": "string",
+  "responseLength": 1040
+}

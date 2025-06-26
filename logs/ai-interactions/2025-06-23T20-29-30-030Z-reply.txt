@@ -1,0 +1,43 @@
+AI: DeepSeek (deepseek-chat)
+
+Q: {
+  "prompt": "Please analyze the clinical note against the provided guideline and suggest improvements to better align with the guideline recommendations.\n\nFor each recommendation, specify:\n1. The type of recommendation:\n   - Additional information needed (history/examination/investigations)\n   - Improved patient advice (options/statistics/patient information)\n   - Different management plan\n2. The specific recommendation\n3. The reason for the recommendation (referencing the guideline)\n\nCategorize each recommendation by importance:\n- Very Important: Critical for patient safety or guideline compliance\n- Somewhat Important: Significant for optimal care but not critical\n- Less Important: Would improve care but not essential\n- Unimportant: Minor suggestions that could be considered\n\nFormat the response as follows:\n\n### Very Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Somewhat Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Less Important Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\n### Unimportant Recommendations\n[Type] - [Specific recommendation]\nReason: [Reference to guideline ID and relevant section]\n\nClinical Note:\nSITUATION: 25-year-old G1P0 at 12+3 weeks gestation presenting with excessive nausea, vomiting, and suspected molar pregnancy\n\nBACKGROUND: Miss Adams has experienced severe hyperemesis since 8 weeks gestation, significantly worse than typical morning sickness described by friends. She reports vomiting 15-20 times daily, unable to keep down solid food for 2 weeks, and has lost 6kg since pregnancy confirmation. She also noticed vaginal spotting for 3 days, initially light pink but now brown discharge. Her symptoms seem disproportionately severe for gestational age. Last menstrual period was 13 weeks ago, home pregnancy tests have been consistently strongly positive. No previous pregnancies, conceived naturally after 4 months of trying. Family history includes thyroid disease (maternal). She appears significantly dehydrated and has been unable to work for 1 week due to severity of symptoms.\n\nASSESSMENT: Patient appears dehydrated and unwell, with obvious weight loss. Vital signs: BP 108/68 mmHg, HR 102 bpm, temp 36.9°C. Weight 52kg (down from 58kg at GP booking). Thyrotoxic signs present: mild tremor, warm skin, tachycardia. Abdominal examination reveals uterine size larger than expected for dates (approximately 16-week size). Speculum shows brown discharge from cervical os, no active bleeding. Transvaginal ultrasound demonstrates characteristic 'snowstorm' appearance with multiple cystic spaces throughout uterine cavity, no fetal pole visible. Quantitative β-hCG markedly elevated at 186,000 mIU/mL (much higher than expected for gestational age). Thyroid function tests show suppressed TSH <0.1 mU/L, elevated free T4 28 pmol/L indicating gestational thyrotoxicosis. Chest X-ray clear, no evidence of pulmonary metastases.\n\nRECOMMENDATION: Diagnosis of complete hydatidiform mole requiring urgent evacuation. Pre-operative investigations including FBC, coagulation screen, cross-match for 2 units blood. Surgical evacuation arranged urgently via suction curettage under general anesthetic. IV fluid resuscitation commenced. Antiemetics for symptom control. Propranolol considered for thyrotoxicosis symptoms. Post-evacuation histology confirmation and registration with regional trophoblastic screening center mandatory. Serial β-hCG monitoring weekly until negative then monthly for 6 months. Reliable contraception essential during follow-up period. Patient counseled regarding excellent prognosis with appropriate follow-up and monitoring.\n\nGuideline:\n[ID] cg13019-triage-of-maternity-patients-guideline-pdf\nTitle: CG13019 Triage of Maternity Patients Guideline\nContent: No content available",
+  "system_prompt": "You are a medical guidelines compliance checker. Your task is to analyze if the given clinical note follows the specified guideline and suggest improvements.",
+  "guideline_id": "cg13019-triage-of-maternity-patients-guideline-pdf",
+  "guideline_title": "CG13019 Triage of Maternity Patients Guideline"
+}
+
+A: Since the guideline content (CG13019 Triage of Maternity Patients Guideline) is not available for reference, I cannot provide specific recommendations tied to that guideline. However, based on standard clinical practice and general guidelines for molar pregnancy management, I can provide some general recommendations for improvement:
+
+### Very Important Recommendations
+1. [Additional information needed] - Document whether the patient has been screened for trophoblastic disease risk factors (e.g., prior molar pregnancy, maternal age >35 or <20, Asian ethnicity).
+   Reason: Risk factor assessment is critical for prognosis and follow-up planning in molar pregnancies.
+
+2. [Different management plan] - Consider adding methotrexate prophylaxis for high-risk complete moles (based on hCG >100,000 mIU/mL and uterine size > dates).
+   Reason: High-risk moles may benefit from prophylactic chemotherapy to prevent persistent trophoblastic disease.
+
+### Somewhat Important Recommendations
+1. [Improved patient advice] - Provide written information about molar pregnancy and the importance of follow-up, including specific warning signs of complications (persistent bleeding, respiratory symptoms, abdominal pain).
+   Reason: Patient education improves compliance with long-term monitoring requirements.
+
+2. [Additional information needed] - Document whether Rh status was checked and if Rhogam was given if patient is Rh-negative.
+   Reason: Rh sensitization prevention is important after uterine evacuation procedures.
+
+### Less Important Recommendations
+1. [Additional information needed] - Consider adding baseline liver/kidney function tests prior to potential chemotherapy.
+   Reason: Important baseline if patient develops persistent trophoblastic disease requiring treatment.
+
+2. [Improved patient advice] - Discuss fertility implications and optimal timing for future pregnancies.
+   Reason: While prognosis is excellent, patients benefit from clear conception planning guidance.
+
+### Unimportant Recommendations
+1. [Improved patient advice] - Consider providing contact information for support groups for molar pregnancy.
+   Reason: While not medically essential, psychosocial support can be valuable.
+
+Without access to the specific CG13019 guideline content, I cannot confirm whether these recommendations align with that particular protocol. The note appears comprehensive overall, with appropriate urgent management and follow-up planning for this high-risk molar pregnancy case.
+
+--- Token Usage Report ---
+Prompt tokens: 808
+Completion tokens: 434
+Total tokens: 1242
+Estimated cost: $0.000621
