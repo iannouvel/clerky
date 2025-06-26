@@ -5775,48 +5775,4 @@ window.clearAllChatHistory = async function() {
     }
 };
 
-// Global PDF upload function for console use
-window.uploadPDFContent = async function() {
-    console.log('📄 Manual PDF content upload triggered from console...');
-    try {
-        const user = auth.currentUser;
-        if (!user) {
-            console.error('❌ You must be logged in to upload PDF content');
-            return;
-        }
-        
-        console.log('📄 Starting PDF content upload to Firestore...');
-        
-        const token = await user.getIdToken();
-        const response = await fetch(`${window.SERVER_URL}/uploadPDFContent`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            }
-        });
-        
-        const result = await response.json();
-        
-        if (result.success) {
-            console.log('✅ PDF upload completed successfully!');
-            console.log('📄 Output:', result.output);
-            
-            // Reload guidelines to reflect the new content
-            setTimeout(() => {
-                console.log('🔄 Reloading guidelines after PDF upload...');
-                loadGuidelinesFromFirestore();
-            }, 2000);
-        } else {
-            console.error('❌ PDF upload failed:', result.error);
-            if (result.errorOutput) {
-                console.error('Error details:', result.errorOutput);
-            }
-        }
-        
-        return result;
-    } catch (error) {
-        console.error('❌ Error uploading PDF content:', error);
-        throw error;
-    }
-};
+

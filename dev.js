@@ -905,6 +905,94 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
         }
 
+        // Handle PDF upload to Firebase Storage button
+        const uploadPDFsToStorageBtn = document.getElementById('uploadPDFsToStorageBtn');
+        if (uploadPDFsToStorageBtn) {
+            uploadPDFsToStorageBtn.addEventListener('click', async () => {
+                if (!confirm('Are you sure you want to upload all PDFs from GitHub to Firebase Storage? This will download all PDF files from the GitHub repository and upload them to Firebase Storage for faster access. This may take several minutes.')) {
+                    return;
+                }
+                
+                try {
+                    // Update button state
+                    const originalText = uploadPDFsToStorageBtn.textContent;
+                    uploadPDFsToStorageBtn.textContent = '⏳ Uploading PDFs...';
+                    uploadPDFsToStorageBtn.disabled = true;
+                    
+                    console.log('🗂️ [PDF_STORAGE] Starting PDF upload to Firebase Storage...');
+                    
+                    // Get the current user
+                    const user = auth.currentUser;
+                    if (!user) {
+                        alert('You must be logged in to upload PDFs');
+                        return;
+                    }
+                    
+                    // Get Firebase token
+                    const token = await user.getIdToken();
+                    
+                    console.log('Starting PDF upload to Firebase Storage...');
+                    
+                    // Call the new uploadPDFsToStorage endpoint
+                    const response = await fetch(`${SERVER_URL}/uploadPDFsToStorage`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        }
+                    });
+                    
+                    if (!response.ok) {
+                        const errorText = await response.text();
+                        throw new Error(`Server error: ${response.status} - ${errorText}`);
+                    }
+                    
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        console.log('✅ [PDF_STORAGE] PDF upload to Firebase Storage completed successfully!', result);
+                        
+                        let message = `🎉 PDF Upload to Firebase Storage Complete!\n\n`;
+                        message += `📊 Results:\n`;
+                        message += `• Total PDF files found: ${result.results.totalFiles}\n`;
+                        message += `• Successfully uploaded: ${result.results.uploaded}\n`;
+                        message += `• Already existed: ${result.results.results.filter(r => r.status === 'already_exists').length}\n`;
+                        message += `• Errors: ${result.results.errors}\n\n`;
+                        
+                        if (result.results.results && result.results.results.length > 0) {
+                            message += `📁 Upload Details (first 10):\n`;
+                            result.results.results.slice(0, 10).forEach(item => {
+                                if (item.status === 'uploaded') {
+                                    message += `• ✅ ${item.name} (${Math.round(item.size / 1024)} KB)\n`;
+                                } else if (item.status === 'already_exists') {
+                                    message += `• 📂 ${item.name} (already exists)\n`;
+                                } else if (item.status === 'error') {
+                                    message += `• ❌ ${item.name} (${item.error})\n`;
+                                }
+                            });
+                            if (result.results.results.length > 10) {
+                                message += `• ... and ${result.results.results.length - 10} more\n`;
+                            }
+                        }
+                        
+                        // Show success message and detailed logs
+                        alert(message);
+                        console.log('📊 [PDF_STORAGE] Detailed results:', result.results);
+                    } else {
+                        throw new Error(result.error || 'PDF upload to Firebase Storage failed');
+                    }
+                    
+                } catch (error) {
+                    console.error('Error uploading PDFs to Firebase Storage:', error);
+                    alert(`❌ PDF upload to Firebase Storage failed: ${error.message}`);
+                } finally {
+                    // Reset button state
+                    uploadPDFsToStorageBtn.textContent = originalText;
+                    uploadPDFsToStorageBtn.disabled = false;
+                }
+            });
+        }
+
         // Handle content repair button
         const repairContentBtn = document.getElementById('repairContentBtn');
         if (repairContentBtn) {
@@ -989,81 +1077,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             });
         }
 
-        // Handle PDF upload button
-        const uploadPDFContentBtn = document.getElementById('uploadPDFContentBtn');
-        if (uploadPDFContentBtn) {
-            uploadPDFContentBtn.addEventListener('click', async () => {
-                if (!confirm('Are you sure you want to upload PDF content to Firestore? This will extract text from all PDF files in the guidance directory and store them in Firestore. This may take several minutes.')) {
-                    return;
-                }
-                
-                try {
-                    // Update button state
-                    const originalText = uploadPDFContentBtn.textContent;
-                    uploadPDFContentBtn.textContent = '📄 Uploading...';
-                    uploadPDFContentBtn.disabled = true;
-                    
-                    console.log('📄 [PDF_UPLOAD] Starting PDF content upload to Firestore...');
-                    
-                    // Get the current user
-                    const user = auth.currentUser;
-                    if (!user) {
-                        alert('You must be logged in to upload PDF content');
-                        return;
-                    }
-                    
-                    // Get Firebase token
-                    const token = await user.getIdToken();
-                    
-                    console.log('Starting PDF upload process...');
-                    
-                    // Call the PDF upload endpoint
-                    const response = await fetch(`${SERVER_URL}/uploadPDFContent`, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Authorization': `Bearer ${token}`
-                        }
-                    });
-                    
-                    if (!response.ok) {
-                        const errorText = await response.text();
-                        throw new Error(`Server error: ${response.status} - ${errorText}`);
-                    }
-                    
-                    const result = await response.json();
-                    
-                    if (result.success) {
-                        console.log('✅ [PDF_UPLOAD] PDF upload completed successfully!', result);
-                        
-                        let message = `🎉 PDF Upload Complete!\n\n`;
-                        message += `📄 Python Script Output:\n`;
-                        message += result.output;
-                        
-                        // Show success message
-                        alert(message);
-                        console.log('📊 [PDF_UPLOAD] Full output:', result.output);
-                    } else {
-                        let errorMessage = `PDF upload failed: ${result.error}`;
-                        if (result.output) {
-                            errorMessage += `\n\nOutput:\n${result.output}`;
-                        }
-                        if (result.errorOutput) {
-                            errorMessage += `\n\nError Output:\n${result.errorOutput}`;
-                        }
-                        throw new Error(errorMessage);
-                    }
-                    
-                } catch (error) {
-                    console.error('Error uploading PDF content:', error);
-                    alert(`❌ PDF upload failed: ${error.message}`);
-                } finally {
-                    // Reset button state
-                    uploadPDFContentBtn.textContent = '📄 Upload PDF Content to Firestore';
-                    uploadPDFContentBtn.disabled = false;
-                }
-            });
-        }
+
 
         // Handle database migration button
         const migrateDatabaseBtn = document.getElementById('migrateDatabaseBtn');
