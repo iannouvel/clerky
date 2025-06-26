@@ -5592,7 +5592,7 @@ async function displayCombinedInteractiveSuggestions(suggestions, guidelinesSumm
     updateDecisionsSummary();
 }
 
-// Use existing migrateNullMetadata endpoint for content repair
+// Process guidelines one at a time for content repair
 async function diagnoseAndRepairContent() {
     // Prevent multiple simultaneous repairs
     if (window.contentRepairInProgress) {
@@ -5602,7 +5602,7 @@ async function diagnoseAndRepairContent() {
     
     window.contentRepairInProgress = true;
     console.log('[REPAIR] 🔧 Starting comprehensive content repair process...');
-    console.log('[REPAIR] This will check all guidelines for missing content/condensed text and attempt to generate them');
+    console.log('[REPAIR] This will process guidelines one at a time to avoid timeouts');
     
     try {
         // Get user ID token
@@ -5615,12 +5615,9 @@ async function diagnoseAndRepairContent() {
         console.log('[REPAIR] ✅ User authenticated, getting ID token...');
         const idToken = await user.getIdToken();
         
-        // Show progress
-        showMetadataProgress('🔧 Starting content repair - extracting text from PDFs and generating condensed versions...', false);
-        
-        console.log('[REPAIR] 📡 Calling migrateNullMetadata endpoint...');
-        // Call the existing migrateNullMetadata endpoint
-        const response = await fetch(`${window.SERVER_URL}/migrateNullMetadata`, {
+        // First, get the list of guidelines needing content
+        console.log('[REPAIR] 📋 Getting list of guidelines needing content...');
+        const listResponse = await fetch(`${window.SERVER_URL}/getGuidelinesNeedingContent`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -5628,76 +5625,103 @@ async function diagnoseAndRepairContent() {
             }
         });
 
-        console.log('[REPAIR] 📨 Server response status:', response.status);
-        
-        if (!response.ok) {
-            const errorText = await response.text();
-            console.error('[REPAIR] ❌ Server error response:', errorText);
-            throw new Error(`Server error: ${response.status} - ${errorText}`);
+        if (!listResponse.ok) {
+            const errorText = await listResponse.text();
+            throw new Error(`Failed to get guidelines list: ${listResponse.status} - ${errorText}`);
         }
 
-        const result = await response.json();
+        const listResult = await listResponse.json();
+        const guidelinesNeedingContent = listResult.guidelines || [];
         
-        console.log('[REPAIR] 📊 Server response:', result);
+        console.log(`[REPAIR] 📊 Found ${guidelinesNeedingContent.length} guidelines needing content processing`);
         
-        if (result.success) {
-            // Display results from the existing migration function
-            console.log('[REPAIR] ✅ Content repair completed successfully!');
-            console.log('[REPAIR] 📈 Repair Statistics:', {
-                total: result.total,
-                updated: result.updated,
-                errors: result.errors
-            });
-            
-            let message = `🎉 Content Repair Complete!\n\n`;
-            message += `📊 Migration Results:\n`;
-            message += `• Total guidelines processed: ${result.total}\n`;
-            message += `• Guidelines updated: ${result.updated}\n`;
-            message += `• Migration errors: ${result.errors}\n\n`;
-            
-            if (result.details && result.details.length > 0) {
-                console.log('[REPAIR] 🔧 Updated Guidelines Details:');
-                result.details.forEach((detail, index) => {
-                    if (detail.updates && index < 10) { // Log first 10 in detail
-                        const updatedFields = Object.keys(detail.updates).join(', ');
-                        console.log(`[REPAIR]   ${index + 1}. ${detail.id}: ${updatedFields}`);
-                    }
-                });
+        if (guidelinesNeedingContent.length === 0) {
+            showMetadataProgress('✅ All guidelines already have complete content!', true);
+            setTimeout(() => hideMetadataProgress(), 3000);
+            return;
+        }
+        
+        // Process guidelines one at a time
+        let processed = 0;
+        let successful = 0;
+        let failed = 0;
+        
+        for (const guideline of guidelinesNeedingContent) {
+            try {
+                processed++;
+                const progress = `🔧 Processing ${processed}/${guidelinesNeedingContent.length}: ${guideline.title}`;
+                showMetadataProgress(progress, false);
                 
-                message += `🔧 Updated Guidelines (first 5):\n`;
-                result.details.slice(0, 5).forEach(detail => {
-                    if (detail.updates) {
-                        const updatedFields = Object.keys(detail.updates).join(', ');
-                        message += `• ${detail.id}: ${updatedFields}\n`;
-                    }
+                console.log(`[REPAIR] 📄 Processing guideline ${processed}/${guidelinesNeedingContent.length}: ${guideline.id}`);
+                
+                const processResponse = await fetch(`${window.SERVER_URL}/processGuidelineContent`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${idToken}`
+                    },
+                    body: JSON.stringify({
+                        guidelineId: guideline.id
+                    })
                 });
-                if (result.details.length > 5) {
-                    message += `• ... and ${result.details.length - 5} more\n`;
+
+                if (processResponse.ok) {
+                    const processResult = await processResponse.json();
+                    if (processResult.success && processResult.updated) {
+                        successful++;
+                        console.log(`[REPAIR] ✅ Successfully processed: ${guideline.title}`);
+                    } else {
+                        console.log(`[REPAIR] ⏭️ No processing needed for: ${guideline.title}`);
+                    }
+                } else {
+                    failed++;
+                    const errorText = await processResponse.text();
+                    console.error(`[REPAIR] ❌ Failed to process ${guideline.title}: ${errorText}`);
                 }
+                
+                // Small delay between requests to avoid overwhelming the server
+                await new Promise(resolve => setTimeout(resolve, 500));
+                
+            } catch (error) {
+                failed++;
+                console.error(`[REPAIR] ❌ Error processing ${guideline.title}:`, error);
             }
-            
-            showMetadataProgress(`✅ Content repair completed! Updated ${result.updated}/${result.total} guidelines`, true);
-            
-            // Reload guidelines to reflect the repairs
-            console.log('[REPAIR] 🔄 Reloading guidelines to reflect the repairs...');
-            setTimeout(() => {
-                loadGuidelinesFromFirestore();
-            }, 3000);
-            
-            return result;
+        }
+        
+        console.log(`[REPAIR] 📈 Processing complete: ${successful} successful, ${failed} failed, ${processed} total`);
+        
+        if (failed === 0) {
+            showMetadataProgress(`✅ Content repair completed! Successfully processed ${successful} guidelines.`, true);
         } else {
-            console.error('[REPAIR] ❌ Server returned failure:', result);
-            throw new Error(result.error || 'Content repair failed');
+            showMetadataProgress(`⚠️ Content repair completed with some issues: ${successful} successful, ${failed} failed.`, true);
+        }
+        
+        // Auto-hide after 5 seconds
+        setTimeout(() => {
+            hideMetadataProgress();
+        }, 5000);
+        
+        // Reload guidelines to see the updates
+        if (successful > 0) {
+            console.log('[REPAIR] 🔄 Reloading guidelines to reflect changes...');
+            await loadGuidelinesFromFirestore();
         }
         
     } catch (error) {
         console.error('[REPAIR] ❌ Content repair error:', error);
+        
         showMetadataProgress(`❌ Content repair failed: ${error.message}`, true);
+        
+        // Auto-hide error after 10 seconds
+        setTimeout(() => {
+            hideMetadataProgress();
+        }, 10000);
+        
         throw error;
+        
     } finally {
-        // Always reset the flag when repair completes or fails
-        window.contentRepairInProgress = false;
         console.log('[REPAIR] 🏁 Content repair process finished, flag reset');
+        window.contentRepairInProgress = false;
     }
 }
 

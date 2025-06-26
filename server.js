@@ -6387,8 +6387,8 @@ async function migrateNullMetadata() {
   }
 }
 
-// Add endpoint to trigger metadata migration
-app.post('/migrateNullMetadata', authenticateUser, async (req, res) => {
+// Add endpoint to process single guideline content
+app.post('/processGuidelineContent', authenticateUser, async (req, res) => {
   try {
     // Check if user is admin
     const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
@@ -6396,11 +6396,75 @@ app.post('/migrateNullMetadata', authenticateUser, async (req, res) => {
       return res.status(403).json({ error: 'Unauthorized' });
     }
 
-    console.log('[DEBUG] Admin user authorized for metadata migration:', req.user.email);
-    const results = await migrateNullMetadata();
-    res.json({ success: true, results });
+    const { guidelineId } = req.body;
+    if (!guidelineId) {
+      return res.status(400).json({ error: 'guidelineId is required' });
+    }
+
+    console.log(`[SINGLE_PROCESS] Processing single guideline: ${guidelineId}`);
+    
+    // Get the guideline from Firestore
+    const guidelineRef = db.collection('guidelines').doc(guidelineId);
+    const guidelineDoc = await guidelineRef.get();
+    
+    if (!guidelineDoc.exists) {
+      return res.status(404).json({ error: 'Guideline not found' });
+    }
+    
+    const guidelineData = guidelineDoc.data();
+    const updated = await checkAndGenerateContent(guidelineData, guidelineId);
+    
+    res.json({ 
+      success: true, 
+      guidelineId,
+      updated,
+      message: updated ? 'Content generated successfully' : 'No content generation needed'
+    });
+    
   } catch (error) {
-    console.error('[ERROR] Error in migrateNullMetadata endpoint:', error);
+    console.error(`[ERROR] Error processing guideline content:`, error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+// Add endpoint to get guidelines needing content processing
+app.post('/getGuidelinesNeedingContent', authenticateUser, async (req, res) => {
+  try {
+    // Check if user is admin
+    const isAdmin = req.user.admin || req.user.email === 'inouvel@gmail.com';
+    if (!isAdmin) {
+      return res.status(403).json({ error: 'Unauthorized' });
+    }
+
+    console.log('[DEBUG] Getting guidelines needing content processing');
+    
+    // Get all guidelines
+    const guidelinesSnapshot = await db.collection('guidelines').get();
+    const needingContent = [];
+    
+    for (const doc of guidelinesSnapshot.docs) {
+      const data = doc.data();
+      const id = doc.id;
+      
+      // Check if missing content or condensed
+      if (!data.content || !data.condensed) {
+        needingContent.push({
+          id,
+          title: data.title || data.humanFriendlyName || id,
+          missingContent: !data.content,
+          missingCondensed: !data.condensed
+        });
+      }
+    }
+    
+    res.json({ 
+      success: true, 
+      guidelines: needingContent,
+      total: needingContent.length
+    });
+    
+  } catch (error) {
+    console.error('[ERROR] Error getting guidelines needing content:', error);
     res.status(500).json({ error: error.message });
   }
 });
