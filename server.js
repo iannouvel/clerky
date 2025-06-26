@@ -1396,6 +1396,409 @@ app.post('/newActionEndpoint', async (req, res) => {
     }
 });
 
+// ============================================
+// FIREBASE-BASED CLINICAL CONDITIONS MANAGEMENT
+// ============================================
+
+// Endpoint to get all clinical conditions with transcripts
+app.get('/clinicalConditions', authenticateUser, async (req, res) => {
+    try {
+        console.log('[CLINICAL-CONDITIONS] Fetching all clinical conditions from Firebase...');
+        
+        const clinicalConditionsRef = admin.firestore().collection('clinicalConditions');
+        const snapshot = await clinicalConditionsRef.get();
+        
+        const conditions = {};
+        
+        snapshot.forEach(doc => {
+            const data = doc.data();
+            const category = data.category || 'uncategorized';
+            
+            if (!conditions[category]) {
+                conditions[category] = {};
+            }
+            
+            conditions[category][data.name] = {
+                id: doc.id,
+                name: data.name,
+                category: data.category,
+                transcript: data.transcript || null,
+                lastGenerated: data.lastGenerated || null,
+                hasTranscript: !!data.transcript,
+                metadata: {
+                    createdAt: data.createdAt,
+                    updatedAt: data.updatedAt,
+                    version: data.version || 1
+                }
+            };
+        });
+        
+        console.log('[CLINICAL-CONDITIONS] Fetched conditions:', {
+            totalCategories: Object.keys(conditions).length,
+            totalConditions: Object.values(conditions).reduce((sum, category) => sum + Object.keys(category).length, 0),
+            categoriesWithCounts: Object.fromEntries(
+                Object.entries(conditions).map(([cat, conds]) => [cat, Object.keys(conds).length])
+            )
+        });
+        
+        res.json({
+            success: true,
+            conditions,
+            summary: {
+                totalCategories: Object.keys(conditions).length,
+                totalConditions: Object.values(conditions).reduce((sum, category) => sum + Object.keys(category).length, 0),
+                categoriesWithCounts: Object.fromEntries(
+                    Object.entries(conditions).map(([cat, conds]) => [cat, Object.keys(conds).length])
+                )
+            }
+        });
+        
+    } catch (error) {
+        console.error('[CLINICAL-CONDITIONS] Error fetching clinical conditions:', error);
+        res.status(500).json({
+            success: false,
+            error: 'Failed to fetch clinical conditions',
+            details: error.message
+        });
+    }
+});
+
+// Endpoint to generate/regenerate transcript for a specific condition
+app.post('/generateTranscript/:conditionId', authenticateUser, async (req, res) => {
+    try {
+        const { conditionId } = req.params;
+        const { forceRegenerate = false } = req.body;
+        
+        console.log('[GENERATE-TRANSCRIPT] Request for condition:', {
+            conditionId,
+            forceRegenerate,
+            userId: req.user.uid
+        });
+        
+        // Get the condition document from Firebase
+        const conditionRef = admin.firestore().collection('clinicalConditions').doc(conditionId);
+        const conditionDoc = await conditionRef.get();
+        
+        if (!conditionDoc.exists) {
+            return res.status(404).json({
+                success: false,
+                error: 'Clinical condition not found',
+                conditionId
+            });
+        }
+        
+        const conditionData = conditionDoc.data();
+        
+        // Check if transcript already exists and we're not forcing regeneration
+        if (conditionData.transcript && !forceRegenerate) {
+            console.log('[GENERATE-TRANSCRIPT] Transcript already exists, returning cached version');
+            return res.json({
+                success: true,
+                transcript: conditionData.transcript,
+                cached: true,
+                condition: {
+                    id: conditionId,
+                    name: conditionData.name,
+                    category: conditionData.category
+                },
+                lastGenerated: conditionData.lastGenerated
+            });
+        }
+        
+        // Generate new transcript using AI
+        console.log('[GENERATE-TRANSCRIPT] Generating new transcript...');
+        
+        // Load the test transcript prompt
+        const testPrompt = createDefaultPrompts().testTranscript.prompt;
+        const fullPrompt = testPrompt + conditionData.name;
+        
+        console.log('[GENERATE-TRANSCRIPT] Calling AI with prompt for condition:', conditionData.name);
+        
+        const aiResponse = await routeToAI(fullPrompt, req.user.uid);
+        
+        if (!aiResponse || !aiResponse.content) {
+            throw new Error('Failed to generate transcript from AI');
+        }
+        
+        const transcript = aiResponse.content;
+        
+        // Update the document in Firebase with the new transcript
+        const updateData = {
+            transcript: transcript,
+            lastGenerated: admin.firestore.FieldValue.serverTimestamp(),
+            updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+            version: admin.firestore.FieldValue.increment(1)
+        };
+        
+        await conditionRef.update(updateData);
+        
+        console.log('[GENERATE-TRANSCRIPT] Successfully generated and saved transcript:', {
+            conditionId,
+            conditionName: conditionData.name,
+            transcriptLength: transcript.length
+        });
+        
+        res.json({
+            success: true,
+            transcript: transcript,
+            cached: false,
+            condition: {
+                id: conditionId,
+                name: conditionData.name,
+                category: conditionData.category
+            },
+            generated: new Date().toISOString()
+        });
+        
+    } catch (error) {
+        console.error('[GENERATE-TRANSCRIPT] Error generating transcript:', error);
+        res.status(500).json({
+            success: false,
+            error: 'Failed to generate transcript',
+            details: error.message
+        });
+    }
+});
+
+// Endpoint to batch generate all missing transcripts
+app.post('/generateAllTranscripts', authenticateUser, async (req, res) => {
+    try {
+        const { forceRegenerate = false, maxConcurrent = 3 } = req.body;
+        
+        console.log('[GENERATE-ALL] Starting batch transcript generation:', {
+            forceRegenerate,
+            maxConcurrent,
+            userId: req.user.uid
+        });
+        
+        // Get all clinical conditions
+        const clinicalConditionsRef = admin.firestore().collection('clinicalConditions');
+        const snapshot = await clinicalConditionsRef.get();
+        
+        if (snapshot.empty) {
+            return res.json({
+                success: true,
+                message: 'No clinical conditions found to generate transcripts for',
+                results: []
+            });
+        }
+        
+        const conditions = [];
+        snapshot.forEach(doc => {
+            const data = doc.data();
+            // Only include conditions that need transcripts
+            if (!data.transcript || forceRegenerate) {
+                conditions.push({
+                    id: doc.id,
+                    name: data.name,
+                    category: data.category,
+                    hasTranscript: !!data.transcript
+                });
+            }
+        });
+        
+        if (conditions.length === 0) {
+            return res.json({
+                success: true,
+                message: 'All clinical conditions already have transcripts',
+                skipped: snapshot.size
+            });
+        }
+        
+        console.log('[GENERATE-ALL] Found conditions to generate:', {
+            totalConditions: snapshot.size,
+            needingGeneration: conditions.length,
+            forceRegenerate
+        });
+        
+        // Start the batch generation process (don't wait for completion)
+        res.json({
+            success: true,
+            message: `Started batch generation for ${conditions.length} clinical conditions`,
+            totalConditions: conditions.length,
+            status: 'processing'
+        });
+        
+        // Process conditions in batches (async, don't block response)
+        processBatchGeneration(conditions, req.user.uid, maxConcurrent, forceRegenerate);
+        
+    } catch (error) {
+        console.error('[GENERATE-ALL] Error starting batch generation:', error);
+        res.status(500).json({
+            success: false,
+            error: 'Failed to start batch transcript generation',
+            details: error.message
+        });
+    }
+});
+
+// Helper function to process batch generation
+async function processBatchGeneration(conditions, userId, maxConcurrent = 3, forceRegenerate = false) {
+    console.log('[BATCH-GENERATION] Starting processing:', {
+        totalConditions: conditions.length,
+        maxConcurrent,
+        forceRegenerate
+    });
+    
+    const results = {
+        successful: [],
+        failed: [],
+        skipped: []
+    };
+    
+    // Load the test transcript prompt once
+    const testPrompt = createDefaultPrompts().testTranscript.prompt;
+    
+    // Process conditions in chunks to limit concurrent AI calls
+    for (let i = 0; i < conditions.length; i += maxConcurrent) {
+        const chunk = conditions.slice(i, i + maxConcurrent);
+        
+        console.log('[BATCH-GENERATION] Processing chunk:', {
+            chunkNumber: Math.floor(i / maxConcurrent) + 1,
+            totalChunks: Math.ceil(conditions.length / maxConcurrent),
+            chunkSize: chunk.length
+        });
+        
+        // Process chunk concurrently
+        const chunkPromises = chunk.map(async (condition) => {
+            try {
+                const fullPrompt = testPrompt + condition.name;
+                
+                console.log('[BATCH-GENERATION] Generating transcript for:', condition.name);
+                
+                const aiResponse = await routeToAI(fullPrompt, userId);
+                
+                if (!aiResponse || !aiResponse.content) {
+                    throw new Error('Failed to generate transcript from AI');
+                }
+                
+                const transcript = aiResponse.content;
+                
+                // Update the document in Firebase
+                const conditionRef = admin.firestore().collection('clinicalConditions').doc(condition.id);
+                await conditionRef.update({
+                    transcript: transcript,
+                    lastGenerated: admin.firestore.FieldValue.serverTimestamp(),
+                    updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+                    version: admin.firestore.FieldValue.increment(1)
+                });
+                
+                results.successful.push({
+                    id: condition.id,
+                    name: condition.name,
+                    category: condition.category,
+                    transcriptLength: transcript.length
+                });
+                
+                console.log('[BATCH-GENERATION] Successfully generated transcript for:', condition.name);
+                
+            } catch (error) {
+                console.error('[BATCH-GENERATION] Failed to generate transcript for:', condition.name, error);
+                results.failed.push({
+                    id: condition.id,
+                    name: condition.name,
+                    category: condition.category,
+                    error: error.message
+                });
+            }
+        });
+        
+        // Wait for chunk to complete before processing next chunk
+        await Promise.allSettled(chunkPromises);
+        
+        // Add small delay between chunks to avoid overwhelming the AI service
+        if (i + maxConcurrent < conditions.length) {
+            await new Promise(resolve => setTimeout(resolve, 1000));
+        }
+    }
+    
+    console.log('[BATCH-GENERATION] Batch generation completed:', {
+        totalProcessed: conditions.length,
+        successful: results.successful.length,
+        failed: results.failed.length,
+        skipped: results.skipped.length
+    });
+    
+    // Could optionally store results or notify admin
+    return results;
+}
+
+// Endpoint to initialize clinical conditions collection from JSON files
+app.post('/initializeClinicalConditions', authenticateUser, async (req, res) => {
+    try {
+        console.log('[INIT-CONDITIONS] Initializing clinical conditions collection...');
+        
+        // Check if user has admin privileges (you might want to add admin check here)
+        
+        // Load clinical issues from the JSON file structure
+        const fs = require('fs').promises;
+        const path = require('path');
+        
+        const clinicalIssuesPath = path.join(__dirname, 'clinical_issues.json');
+        const clinicalIssuesData = await fs.readFile(clinicalIssuesPath, 'utf8');
+        const clinicalIssues = JSON.parse(clinicalIssuesData);
+        
+        const batch = admin.firestore().batch();
+        const conditions = [];
+        
+        // Create documents for each clinical condition
+        for (const [category, issues] of Object.entries(clinicalIssues)) {
+            for (const issueName of issues) {
+                const docId = `${category}-${issueName.toLowerCase().replace(/[^a-z0-9]/g, '-')}`;
+                const docRef = admin.firestore().collection('clinicalConditions').doc(docId);
+                
+                const conditionData = {
+                    name: issueName,
+                    category: category,
+                    transcript: null, // Will be generated on demand
+                    lastGenerated: null,
+                    createdAt: admin.firestore.FieldValue.serverTimestamp(),
+                    updatedAt: admin.firestore.FieldValue.serverTimestamp(),
+                    version: 1
+                };
+                
+                batch.set(docRef, conditionData);
+                conditions.push({
+                    id: docId,
+                    name: issueName,
+                    category: category
+                });
+            }
+        }
+        
+        // Commit the batch
+        await batch.commit();
+        
+        console.log('[INIT-CONDITIONS] Successfully initialized clinical conditions:', {
+            totalConditions: conditions.length,
+            categoriesWithCounts: Object.fromEntries(
+                Object.entries(clinicalIssues).map(([cat, issues]) => [cat, issues.length])
+            )
+        });
+        
+        res.json({
+            success: true,
+            message: 'Clinical conditions collection initialized successfully',
+            totalConditions: conditions.length,
+            conditions: conditions,
+            summary: {
+                categories: Object.keys(clinicalIssues),
+                categoriesWithCounts: Object.fromEntries(
+                    Object.entries(clinicalIssues).map(([cat, issues]) => [cat, issues.length])
+                )
+            }
+        });
+        
+    } catch (error) {
+        console.error('[INIT-CONDITIONS] Error initializing clinical conditions:', error);
+        res.status(500).json({
+            success: false,
+            error: 'Failed to initialize clinical conditions collection',
+            details: error.message
+        });
+    }
+});
+
 // Function to check specific GitHub permissions
 async function checkGitHubPermissions() {
     console.log('[DEBUG] checkGitHubPermissions: Starting GitHub permissions check...');
@@ -3283,6 +3686,11 @@ function createDefaultPrompts() {
     },
     issues: {
       system_prompt: "You are a medical AI assistant helping identify clinical issues from patient information."
+    },
+    testTranscript: {
+      title: "Medical SBAR Transcript Generation",
+      description: "Used to generate medical-grade clinical clerkings with heavy medical jargon and abbreviations",
+      prompt: "Create a professional medical clerking using SBAR format (Situation, Background, Assessment, Recommendation) for the following clinical scenario. Use extensive medical terminology, abbreviations, and jargon as would be used in real hospital documentation.\n\nRequirements:\n- Use proper medical abbreviations (e.g., G2P1, BP, HR, CTG, USS, FBC, CRP, LFTs, U&Es, etc.)\n- Include specific measurements, values, and clinical observations with units\n- Follow realistic hospital workflow and terminology\n- Make it detailed and clinically authentic with realistic patient demographics\n- Use appropriate specialty-specific language (obstetric/gynecological terminology)\n- Include investigations, observations, and comprehensive management plans\n- Use medical time notation (e.g., 34+2 weeks, 0800 hours)\n- Include relevant risk factors and clinical decision-making\n- This is for educational/testing purposes only - entirely fictional\n\nFormat as:\nSITUATION: [Demographics, presentation, key clinical issue]\nBACKGROUND: [Relevant history, previous episodes, risk factors, medications]\nASSESSMENT: [Clinical findings, vital signs, test results, differential diagnosis]\nRECOMMENDATION: [Management plan, monitoring, follow-up, further investigations]\n\nClinical scenario: "
     }
   };
 }
